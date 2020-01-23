@@ -2,66 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B928146568
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:12:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AE3814656E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:13:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Fur1U4PmCQTrCabNHflb2i+GxUiazabV4nhCWEjdGo=; b=S8apMuXG+I27VN
-	lWDi6qJEhSymPpu0tpJzjQpKjPptXsBgBxUV/jfi/Ba0CDqWplWEN+uzdoWaUb9AF4Rf+QOpHV9sl
-	rskxwYx4G2c0Oyz6keMbsQLzSJITzpOKqw0eFw5kcK8AFQNbaDJ2VDLsI+HDEhBVwMFvhH7flsPNI
-	AOSsMytL/ttH7ez/GM/WW8lYzSR2Zt9PBf4XLRZYHsWCNGOvn4qpn+kkxre3w7cvOdoGNemsp0Aso
-	1oHLtQ3ZPN38AK69DfLwJ2lh8gASfolHseoZY/micHng91IkL0ABiBynf8LQ+shamjBnu9TYKJw2C
-	T9+MjZVjSok6ruWhziOg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DJ/kDJ68k1x0VVufzxUCUet8yPWPJzo6uYWDBiwCCZ4=; b=DCv9hni2G4L3Vw
+	mSGXbyl0NUjb9A3wCknnPpoGb2yTg322xXQ0h/+CldyQU8GWaMyc7R4KT/Qvi6/9+4rqfggm1MEOL
+	6/npIeiLQFQjK0oiDjBZVR+kOiX96THw1OzvXYmkUPsSCujXg9C5aRZCUrapWQNDil3GOoQ9HnjqI
+	4tiG2sen5tUQKsGNeZVsfd+Xq+iGhvV7rLh3+25Lv1tCSKBBbiH/NCzkxeWB/Ph+sTyrQBqIpK1b4
+	4Kjj8DeaKNM3u7oFC9rDhv5/48P16/4TeoX1OsUVDh+GkqGLIgKpWLjFWZGITRmbLGmCv4UJiUUNN
+	nx15xmywpl8L+lplbDXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuZTg-0001kE-Am; Thu, 23 Jan 2020 10:12:44 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1iuZUL-000290-Ps; Thu, 23 Jan 2020 10:13:25 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuZTW-0001ja-RZ
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:12:36 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1iuZTP-0003Cm-4i; Thu, 23 Jan 2020 11:12:27 +0100
-Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1iuZTN-0005Lu-7j; Thu, 23 Jan 2020 11:12:25 +0100
-Date: Thu, 23 Jan 2020 11:12:25 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: STM32MP1 level triggered interrupts
-Message-ID: <20200123101225.nscpc5t4nmlarbw2@pengutronix.de>
-References: <20bb72d0-8258-abc0-e729-4d3d5a75c41c@denx.de>
- <d6e02817-2464-51b9-246a-7720b607b8d6@st.com>
- <65a1c5b2-c1b9-322f-338c-e6ff6379d8d1@denx.de>
- <129d04a0-c846-506d-5726-4a1024d977a6@st.com>
- <80db762c-3b3d-f007-2f9b-dadbffd95782@denx.de>
- <360b1adc-32f1-7993-c463-e52c7a5a8a67@st.com>
- <c4f08f59acd31951527ef1d6e9409e6f@kernel.org>
+ id 1iuZUB-00027N-Tz
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:13:17 +0000
+Received: by mail-lf1-x141.google.com with SMTP id b15so1872450lfc.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 Jan 2020 02:13:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=4wQ9deVteYqlHZm83bOhSrDXjF79dKTeR9wrXt2k3ek=;
+ b=sGzMcBOzhTqNZ9cLyh+uNoAhFnEU0E/MgamCqEyHhkoT3AMNv3EnunHUwqOeBubxiV
+ /eCySRaeCUHfiQ2p5Ejff1gUmv4glnNaPxqsxorzVcCKxUkuMEvZ8bFVBLoKXfJQ8gQ0
+ p3PmBG/VRN98rxJuxDmS+QAHJSXVousgyu+mtLjoYinBgsHu9a4DqR+3N2nP2cziGfEI
+ QLg5QTgbldf7Qbcvf3OOkSvOvs9XnuTu3+y8uemLnYixDAAaHXVnYfX5do41YS9k7rCx
+ zMXEiYPxpAS05OlEFO7UY20z7BOp2/gvy3mlqZP5vHdZiig19ZYBrzAEvvppTg6Wh+X/
+ UH9Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=4wQ9deVteYqlHZm83bOhSrDXjF79dKTeR9wrXt2k3ek=;
+ b=fxLMOgKJ0j1X/0Xk3KiVHakLdhyU6/Q8aCjGEQu7+P7LF3hVQeY416LrqATVRMmV6c
+ wWGmrvMHu9Pw7IzbLNo7mneEEqMsymiyTe9ldY43qu4HI0pK5oY4/eO7PRm/kiO9Ecj3
+ mPLyjSlflDPwRrgzevqXElxHM++zR4QvEXaivruVVSog5lLL7CUZSAkhbf4+wSGLpz3E
+ JqdunwSxFoP/IGwUWFqNbFD5Bga/mms/AaIj4JueCX0vB+BPAWRZ2gi9FAfD7Kv/y4xx
+ vnOmJj0vQvxlpP2WayzZ2eBqehEmusksvNddU81rq4rLzXHqOp1t448eYJ1yZIRQ9Szq
+ qdIA==
+X-Gm-Message-State: APjAAAWDrHnYOkwNpTP0OPwAaqRIwBIELwNnwk+BvcCY7DooHvILy0ST
+ +u1scxOrSMCWvgY/QDvwojsxDQ==
+X-Google-Smtp-Source: APXvYqz+AonGwRFNf1MyGq1jaClp+4wgw/P8hISb6+lfs3B3LpXl+eHn4A5+oxtVpKsqEwPOZxGEXw==
+X-Received: by 2002:a19:4a:: with SMTP id 71mr4356482lfa.50.1579774393698;
+ Thu, 23 Jan 2020 02:13:13 -0800 (PST)
+Received: from jax (h-249-223.A175.priv.bahnhof.se. [98.128.249.223])
+ by smtp.gmail.com with ESMTPSA id t13sm898056ljk.78.2020.01.23.02.13.12
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 23 Jan 2020 02:13:12 -0800 (PST)
+Date: Thu, 23 Jan 2020 11:13:11 +0100
+From: Jens Wiklander <jens.wiklander@linaro.org>
+To: arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] optee driver another fix for v5.5
+Message-ID: <20200123101310.GA10320@jax>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <c4f08f59acd31951527ef1d6e9409e6f@kernel.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_021234_894110_14D48E8D 
-X-CRM114-Status: GOOD (  20.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200123_021316_003802_AEACAD31 
+X-CRM114-Status: GOOD (  10.82  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,87 +94,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Alexandre Torgue <alexandre.torgue@st.com>,
- Patrick Delaunay <patrick.delaunay@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
+Cc: tee-dev@lists.linaro.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 23, 2020 at 09:22:48AM +0000, Marc Zyngier wrote:
-> On 2020-01-23 08:27, Alexandre Torgue wrote:
-> > On 1/22/20 8:29 PM, Marek Vasut wrote:
-> > > On 1/22/20 6:19 PM, Alexandre Torgue wrote:
-> > > =
+Hello arm-soc maintainers,
 
-> > > Hi,
-> > > =
+Please pull this OP-TEE driver fix with an added dependency to MMU in order
+to avoid compile errors on nommu configurations.
 
-> > > [...]
-> > > =
+Thanks,
+Jens
 
-> > > > > > Concerning, your question:
-> > > > > > =
+The following changes since commit d1eef1c619749b2a57e514a3fa67d9a516ffa919:
 
-> > > > > > Setting your gpioC interruption as "falling edge" should
-> > > > > > be enough. On
-> > > > > > gpioCx falling edge, a high-level signal is generated by
-> > > > > > exti and sent
-> > > > > > to GIC (which triggers GIC interrupt). This signal
-> > > > > > remains high until
-> > > > > > stm32_irq_ack is called.
-> > > > > > =
+  Linux 5.5-rc2 (2019-12-15 15:16:08 -0800)
 
-> > > > > > So you only need: (ex for gpioc 1).
-> > > > > > =
+are available in the Git repository at:
 
-> > > > > > interrupt-parent =3D <&gpioc>;
-> > > > > > interrupts =3D <1 IRQ_TYPE_EDGE_FALLING>;
-> > > > > =
+  https://git.linaro.org:/people/jens.wiklander/linux-tee.git tags/tee-optee-fix2-for-5.5
 
-> > > > > How does this deal with the case where the device holds the
-> > > > > interrupt
-> > > > > line low (since it's level-sensitive, active low) after the driver
-> > > > > interrupt handler finishes ? Does such condition generate another
-> > > > > interrupt and call the driver interrupt handler again ? I
-> > > > > would expect
-> > > > > the answer is no, because the interrupt is edge-triggered
-> > > > > and there is
-> > > > > no edge.
-> > > > =
+for you to fetch changes up to 9e0caab8e0f96f0af7d1dd388e62f44184a75372:
 
-> > > > Your assumption is good. If your device continue to hold the
-> > > > line to low
-> > > > at the end of your interrupt handler, no more interrupt will be
-> > > > generated.
-> > > =
+  tee: optee: Fix compilation issue with nommu (2020-01-23 10:55:20 +0100)
 
-> > > But does that basically mean that such a device cannot be used with
-> > > STM32MP1 or am I fundamentally mistaken and don't understand how a
-> > > level-triggered interrupt works ? :)
-> > =
+----------------------------------------------------------------
+Fix OP-TEE compile error with nommu
 
-> > You need to release the line in your device interrupt handler. If not,
-> > yes, you will miss interrupts :$
-> =
+----------------------------------------------------------------
+Vincenzo Frascino (1):
+      tee: optee: Fix compilation issue with nommu
 
-> So to sum it up, this SoC doesn't support external level interrupts
-> on its own, full stop. You'd need some additional external sampling
-> HW to retrigger an edge on EOI.
-
-Or you need software support that marks the irq pending again if on
-unmask the irq line is still active.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
+ drivers/tee/optee/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
