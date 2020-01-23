@@ -2,58 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD0E0146F2D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 18:07:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F7C1146F45
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 18:13:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ga4W/6i8tvLtwfVNJAMUJrjRImLI77nZyaGH9YAL6Yk=; b=fjhEDMHsA1qq6U
-	yz6iP/VMMnKIeTidZitpDMmdD0btnc8uLXpl9WBpAfivarKvO3gU7nOHYkQSekjfgsGuQx0/tRt7F
-	NQE9S+Pl0T7a220VDYwgzbZR7Y9dlRycQVN0dyxiHPjVEbxXrlh3mXbjVunJajlXOg3pX94qkywCq
-	i98dz1k4ekfEjFk0q3m/aoOQCp/pJcKhFJyeNXjxb8MhneTsEsKEd5Y3xshrhdUGYWvpaWRxE32y/
-	If1MttzFFyTYcRwVzhMF7ye2Bq76tM0M3LQ5XMdw3UR+fxLHtZychQsL9JB9CBEpujW9f4x8EUthS
-	NLo6eG9G9wKswGglCYDA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a5+iKRdtmDz/NNijknbciJ+QeTv904p0J8W0YSxkYHM=; b=QWUcH6toqCbhn3
+	7FOLba04GarypXuQggjCHdPw/kWHiaXZJJW3B0hoUKWsAGQ6PASya6G9AZEBEqgrYr7pXrursnZcb
+	y1hE49ODqrayXOJ9OJA7khscIJYLvtpZQI3RgZro5P/4nsTTniCE0f4JCMvYjwdj7St1h4UTO7et4
+	/JN20YtmRhYWtWEt9OfAhzwL+ZHNA68gvuIQYJf4En5MDNtYnhwWYJ+Aac9rJdDlfIMNi6zhubeXV
+	aPauor6CW/GdSzLraib4JnvTjnfUJcPwp0u83HIXETqjv5QM51aA46o0/gKgkmITTZqYE1b0W25it
+	5FFqL2wJBEDIRwDZAlsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iufx3-0005RI-C8; Thu, 23 Jan 2020 17:07:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iufwu-0005QJ-VQ
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 17:07:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6C8961FB;
- Thu, 23 Jan 2020 09:07:18 -0800 (PST)
-Received: from localhost (e108754-lin.cambridge.arm.com [10.1.199.79])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0C39F3F6C4;
- Thu, 23 Jan 2020 09:07:17 -0800 (PST)
-Date: Thu, 23 Jan 2020 17:07:16 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Lukasz Luba <lukasz.luba@arm.com>
-Subject: Re: [PATCH v2 6/6] arm64: use activity monitors for frequency
- invariance
-Message-ID: <20200123170716.GA28719@arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-7-ionela.voinescu@arm.com>
- <0ca05a2d-918b-0c70-6dc6-ef1f5f58f388@arm.com>
+	id 1iug2U-00087X-23; Thu, 23 Jan 2020 17:13:06 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iug2K-00082X-En
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 17:12:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1579799574;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=2gQFOE3eZCJDYvBNgH30Kf453Z08E1vS+GpfLhJCCns=;
+ b=Md4n9dpaA6JK/iVlscx6JNWQzwuoQsPwkdlHVlni+sg6kBaHtMw0MESOG88ButNcUPsFOu
+ XKbDAJOBOil0g57M8mKz5TIV/Ya+fO/yqVzRgKS5ODM7EFNvuuM9GQVPZfcnUQS8v7+K7Z
+ FRr/I5m7BVTqg5h8bmxh9Q9vEhgJQjw=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-87-Nj5iUlfuN1GS-F4u-sFSkw-1; Thu, 23 Jan 2020 12:11:05 -0500
+X-MC-Unique: Nj5iUlfuN1GS-F4u-sFSkw-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 64AA618B6396;
+ Thu, 23 Jan 2020 17:11:04 +0000 (UTC)
+Received: from llong.remote.csb (dhcp-17-59.bos.redhat.com [10.18.17.59])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 8B4CB8CCE3;
+ Thu, 23 Jan 2020 17:11:03 +0000 (UTC)
+Subject: Re: [PATCH -next] arm64/spinlock: fix a -Wunused-function warning
+To: Qian Cai <cai@lca.pw>, peterz@infradead.org
+References: <20200123162945.7705-1-cai@lca.pw>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <2fe3a534-feb6-490c-71c6-208607e6cdf6@redhat.com>
+Date: Thu, 23 Jan 2020 12:11:03 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0ca05a2d-918b-0c70-6dc6-ef1f5f58f388@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200123162945.7705-1-cai@lca.pw>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_090721_101543_DA470AAA 
-X-CRM114-Status: GOOD (  38.44  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200123_091256_574140_3BD86D97 
+X-CRM114-Status: GOOD (  17.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,136 +93,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- sudeep.holla@arm.com, will@kernel.org, dietmar.eggemann@arm.com,
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, mingo@redhat.com, will@kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Lukasz,
-
-Thank you for taking a look over the patches.
-
-On Thursday 23 Jan 2020 at 11:49:29 (+0000), Lukasz Luba wrote:
-> Hi Ionela,
-> 
-> Please find my few comments below.
-> 
-> On 12/18/19 6:26 PM, Ionela Voinescu wrote:
-> > The Frequency Invariance Engine (FIE) is providing a frequency
-> > scaling correction factor that helps achieve more accurate
-> > load-tracking.
-> > 
-> > So far, for arm and arm64 platforms, this scale factor has been
-> > obtained based on the ratio between the current frequency and the
-> > maximum supported frequency recorded by the cpufreq policy. The
-> > setting of this scale factor is triggered from cpufreq drivers by
-> > calling arch_set_freq_scale. The current frequency used in computation
-> > is the frequency requested by a governor, but it may not be the
-> > frequency that was implemented by the platform.
-> > 
-> > This correction factor can also be obtained using a core counter and a
-> > constant counter to get information on the performance (frequency based
-> > only) obtained in a period of time. This will more accurately reflect
-> > the actual current frequency of the CPU, compared with the alternative
-> > implementation that reflects the request of a performance level from
-> > the OS.
-> > 
-> > Therefore, implement arch_scale_freq_tick to use activity monitors, if
-> > present, for the computation of the frequency scale factor.
-> > 
-> > The use of AMU counters depends on:
-> >   - CONFIG_ARM64_AMU_EXTN - depents on the AMU extension being present
-> >   - CONFIG_CPU_FREQ - the current frequency obtained using counter
-> >     information is divided by the maximum frequency obtained from the
-> >     cpufreq policy.
-> > 
-> > While it is possible to have a combination of CPUs in the system with
-> > and without support for activity monitors, the use of counters for
-> > frequency invariance is only enabled for a CPU, if all related CPUs
-> > (CPUs in the same frequency domain) support and have enabled the core
-> 
-> This looks like an edge case scenario, for which we are designing the
-> whole machinery with workqueues. AFAIU we cannot run the code in
-> arch_set_freq_scale() and you want to be check all CPUs upfront.
-> 
-
-Unfortunately, I don't believe it to be be an edge-case. Given that this
-is an optional feature, I do believe that people might skip on
-implementing it on some CPUs(LITTLEs) while keeping it for CPUs(bigs)
-where power and thermal mitigation is more probable to happen in firmware.
-This is the main reason to be conservative in the validation of CPUs and
-cpufreq policies.
-
-In regards to arch_set_freq_scale, I want to be able to tell, when that
-function is called, if I should return a scale factor based on cpufreq
-for the current policy. If activity monitors are useable for the CPUs in
-the full policy, than I'm bailing out and leave the AMU FIE machinery
-set the scale factor. Unfortunately this works at policy granularity.
-
-This could  be done in a nicer way by setting the scale factor per cpu
-and not for all CPUs in a policy in this arch_set_freq_scale function.
-But this would require some rewriting for the full frequency invariance
-support in drivers which we've talked about for a while but it was not
-the purpose of this patch set. But it would eliminate the policy
-verification I do with the second workqueue.
-
-> Maybe you can just wait till all CPUs boot and then set the proper
-> flags and finish initialization. Something like:
-> per_cpu(s8, amu_feat) /* form the patch 1/6 */
-> OR
-> per_cpu(u8, amu_scale_freq) /* from this patch */
-> with maybe some values:
-> 0 - not checked yet
-> 1 - checked and present
-> -1 - checked and not available
-> -2 - checked but in conflict with others in the freq domain
-> -3..-k - other odd configurations
-> 
-> could potentially eliminate the need of workqueues.
-> 
-> Then, if we could trigger this from i.e. late_initcall, the CPUs
-> should be online and you can validate them.
-> 
-
-I did initially give such a state machine a try but it proved to be
-quite messy. A big reason for this is that the activity monitors unit
-has multiple counters that can be used for different purposes.
-
-The amu_feat per_cpu variable only flags that you have the AMU present
-for potential users (in this case FIE) to validate the counters they
-need for their respective usecase. For this reason I don't want to
-overload the meaning of amu_feat. For the same reason I'm not doing the
-validation of the counters in a generic way, but I'm tying it to the
-usecase for particular counters. For example, it would not matter if
-the instructions retired counter is not enabled from firmware for the
-usecase of FIE. For frequency invariance we only need the core and
-constant cycle counters and I'm making it the job of the user (arm64
-topology code) to do the checking.
-
-Secondly, for amu_scale_freq I could have added such a state machine,
-but I did not think it was useful. The only thing it would change is
-that I would not have to use the cpu_amu_fie variable in the data
-structure that gets passed to the work functions. The only way I would
-eliminate the second workqueue was if I did not do a check of all CPUs
-in a policy, as described above, and rewrite frequency invariance to
-work at CPU granularity and not policy granularity. This would eliminate
-the dependency on cpufreq policy all-together, so it would be worth
-doing if only for this reason alone :).
-
-But even in that case, it's probably not needed to have more than two
-states for amu_freq_scale.
-
-What do you think?
-
-Thank you,
-Ionela.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMS8yMy8yMCAxMToyOSBBTSwgUWlhbiBDYWkgd3JvdGU6Cj4gVGhlIGNvbW1pdCBmNWJmZGM4
+ZTM5NDcgKCJsb2NraW5nL29zcTogVXNlIG9wdGltaXplZCBzcGlubmluZyBsb29wIGZvcgo+IGFy
+bTY0IikgaW50cm9kdWNlZCBhIHdhcm5pbmcgZnJvbSBDbGFuZyBiZWNhdXNlIHZjcHVfaXNfcHJl
+ZW1wdGVkKCkgaXMKPiBjb21waWxlZCBhd2F5LAo+Cj4ga2VybmVsL2xvY2tpbmcvb3NxX2xvY2su
+YzoyNToxOTogd2FybmluZzogdW51c2VkIGZ1bmN0aW9uICdub2RlX2NwdScKPiBbLVd1bnVzZWQt
+ZnVuY3Rpb25dCj4gc3RhdGljIGlubGluZSBpbnQgbm9kZV9jcHUoc3RydWN0IG9wdGltaXN0aWNf
+c3Bpbl9ub2RlICpub2RlKQo+ICAgICAgICAgICAgICAgICAgIF4KPiAxIHdhcm5pbmcgZ2VuZXJh
+dGVkLgo+Cj4gU2luY2UgdmNwdV9pc19wcmVlbXB0ZWQoKSBoYWQgYWxyZWFkeSBiZWVuIGRlZmlu
+ZWQgaW4KPiBpbmNsdWRlL2xpbnV4L3NjaGVkLmggYXMgZmFsc2UsIGp1c3QgY29tbWVudCBvdXQg
+dGhlIHJlZHVuZGFudCBtYWNybywgc28KPiBpdCBjYW4gc3RpbGwgYmUgc2VydmVkIGZvciB0aGUg
+ZG9jdW1lbnRhdGlvbiBwdXJwb3NlLgo+Cj4gRml4ZXM6IGY1YmZkYzhlMzk0NyAoImxvY2tpbmcv
+b3NxOiBVc2Ugb3B0aW1pemVkIHNwaW5uaW5nIGxvb3AgZm9yIGFybTY0IikKPiBTaWduZWQtb2Zm
+LWJ5OiBRaWFuIENhaSA8Y2FpQGxjYS5wdz4KPiAtLS0KPiAgYXJjaC9hcm02NC9pbmNsdWRlL2Fz
+bS9zcGlubG9jay5oIHwgMyArKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwg
+MSBkZWxldGlvbigtKQo+Cj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vc3Bp
+bmxvY2suaCBiL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vc3BpbmxvY2suaAo+IGluZGV4IDEwMjQw
+NGRjMWUxMy4uYjA1ZjgyZThiYTE5IDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtNjQvaW5jbHVkZS9h
+c20vc3BpbmxvY2suaAo+ICsrKyBiL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vc3BpbmxvY2suaAo+
+IEBAIC0xNyw3ICsxNyw4IEBACj4gICAqCj4gICAqIFNlZToKPiAgICogaHR0cHM6Ly9sb3JlLmtl
+cm5lbC5vcmcvbGttbC8yMDIwMDExMDEwMDYxMi5HQzI4MjdAaGlyZXoucHJvZ3JhbW1pbmcua2lj
+a3MtYXNzLm5ldAo+ICsgKgo+ICsgKiAjZGVmaW5lIHZjcHVfaXNfcHJlZW1wdGVkKGNwdSkJZmFs
+c2UKPiAgICovCj4gLSNkZWZpbmUgdmNwdV9pc19wcmVlbXB0ZWQoY3B1KQlmYWxzZQo+ICAKPiAg
+I2VuZGlmIC8qIF9fQVNNX1NQSU5MT0NLX0ggKi8KCkRvZXMgYWRkaW5nIGEgX19tYXliZV91bnVz
+ZWQgdGFnIGhlbHAgdG8gcHJldmVudCB0aGUgd2FybmluZz8gTGlrZQoKZGlmZiAtLWdpdCBhL2tl
+cm5lbC9sb2NraW5nL29zcV9sb2NrLmMgYi9rZXJuZWwvbG9ja2luZy9vc3FfbG9jay5jCmluZGV4
+IDZlZjYwMGFhMGY0Ny4uMDcyMjY1NWFmMzRmIDEwMDY0NAotLS0gYS9rZXJuZWwvbG9ja2luZy9v
+c3FfbG9jay5jCisrKyBiL2tlcm5lbC9sb2NraW5nL29zcV9sb2NrLmMKQEAgLTIyLDcgKzIyLDcg
+QEAgc3RhdGljIGlubGluZSBpbnQgZW5jb2RlX2NwdShpbnQgY3B1X25yKQrCoMKgwqDCoMKgwqDC
+oCByZXR1cm4gY3B1X25yICsgMTsKwqB9CsKgCi1zdGF0aWMgaW5saW5lIGludCBub2RlX2NwdShz
+dHJ1Y3Qgb3B0aW1pc3RpY19zcGluX25vZGUgKm5vZGUpCitzdGF0aWMgaW5saW5lIGludCBfX21h
+eWJlX3VudXNlZCBub2RlX2NwdShzdHJ1Y3Qgb3B0aW1pc3RpY19zcGluX25vZGUKKm5vZGUpCsKg
+ewrCoMKgwqDCoMKgwqDCoCByZXR1cm4gbm9kZS0+Y3B1IC0gMTsKwqB9CgpDaGVlcnMsCkxvbmdt
+YW4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
