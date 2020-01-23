@@ -2,87 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AE3814656E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:13:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 339C3146571
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:13:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DJ/kDJ68k1x0VVufzxUCUet8yPWPJzo6uYWDBiwCCZ4=; b=DCv9hni2G4L3Vw
-	mSGXbyl0NUjb9A3wCknnPpoGb2yTg322xXQ0h/+CldyQU8GWaMyc7R4KT/Qvi6/9+4rqfggm1MEOL
-	6/npIeiLQFQjK0oiDjBZVR+kOiX96THw1OzvXYmkUPsSCujXg9C5aRZCUrapWQNDil3GOoQ9HnjqI
-	4tiG2sen5tUQKsGNeZVsfd+Xq+iGhvV7rLh3+25Lv1tCSKBBbiH/NCzkxeWB/Ph+sTyrQBqIpK1b4
-	4Kjj8DeaKNM3u7oFC9rDhv5/48P16/4TeoX1OsUVDh+GkqGLIgKpWLjFWZGITRmbLGmCv4UJiUUNN
-	nx15xmywpl8L+lplbDXA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uqVGtWMcchHnaSLKIbM/n4JpvJyiwSQVbRLncToYjko=; b=YQtP8WeziK7GlO
+	9nhbV6jY5mIGj9OaJJMyzuH5YXj2T2im0GwTOAn12IletxUOM4zavwqyUz8uaF5jN7x2QpYm3HBwJ
+	N2UBmsN2UVXtoWG6ODprfYLKW+2qW14Su18Vp5ZfstpKZqGNAbXNAWEf6bRoJVjgTEaCyAOW7hegc
+	+f3feijPeiiq50sVTJOk46CdCC3YOHgc+gJJDIQ1bysb455uTXvd4fZjgWC2UdvprRdShV0qPnnxg
+	p+LsflRn7KPXXoX2aa7mmsA3JL4aiOKZ3+3KsbyX40DBiagGdABTPjgckFhMDS/OA1B76dXpMgIMF
+	CnUTVCzXveUznNhYrf/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuZUL-000290-Ps; Thu, 23 Jan 2020 10:13:25 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1iuZUj-0002Oc-5Y; Thu, 23 Jan 2020 10:13:49 +0000
+Received: from ns.iliad.fr ([212.27.33.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuZUB-00027N-Tz
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:13:17 +0000
-Received: by mail-lf1-x141.google.com with SMTP id b15so1872450lfc.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Jan 2020 02:13:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=4wQ9deVteYqlHZm83bOhSrDXjF79dKTeR9wrXt2k3ek=;
- b=sGzMcBOzhTqNZ9cLyh+uNoAhFnEU0E/MgamCqEyHhkoT3AMNv3EnunHUwqOeBubxiV
- /eCySRaeCUHfiQ2p5Ejff1gUmv4glnNaPxqsxorzVcCKxUkuMEvZ8bFVBLoKXfJQ8gQ0
- p3PmBG/VRN98rxJuxDmS+QAHJSXVousgyu+mtLjoYinBgsHu9a4DqR+3N2nP2cziGfEI
- QLg5QTgbldf7Qbcvf3OOkSvOvs9XnuTu3+y8uemLnYixDAAaHXVnYfX5do41YS9k7rCx
- zMXEiYPxpAS05OlEFO7UY20z7BOp2/gvy3mlqZP5vHdZiig19ZYBrzAEvvppTg6Wh+X/
- UH9Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=4wQ9deVteYqlHZm83bOhSrDXjF79dKTeR9wrXt2k3ek=;
- b=fxLMOgKJ0j1X/0Xk3KiVHakLdhyU6/Q8aCjGEQu7+P7LF3hVQeY416LrqATVRMmV6c
- wWGmrvMHu9Pw7IzbLNo7mneEEqMsymiyTe9ldY43qu4HI0pK5oY4/eO7PRm/kiO9Ecj3
- mPLyjSlflDPwRrgzevqXElxHM++zR4QvEXaivruVVSog5lLL7CUZSAkhbf4+wSGLpz3E
- JqdunwSxFoP/IGwUWFqNbFD5Bga/mms/AaIj4JueCX0vB+BPAWRZ2gi9FAfD7Kv/y4xx
- vnOmJj0vQvxlpP2WayzZ2eBqehEmusksvNddU81rq4rLzXHqOp1t448eYJ1yZIRQ9Szq
- qdIA==
-X-Gm-Message-State: APjAAAWDrHnYOkwNpTP0OPwAaqRIwBIELwNnwk+BvcCY7DooHvILy0ST
- +u1scxOrSMCWvgY/QDvwojsxDQ==
-X-Google-Smtp-Source: APXvYqz+AonGwRFNf1MyGq1jaClp+4wgw/P8hISb6+lfs3B3LpXl+eHn4A5+oxtVpKsqEwPOZxGEXw==
-X-Received: by 2002:a19:4a:: with SMTP id 71mr4356482lfa.50.1579774393698;
- Thu, 23 Jan 2020 02:13:13 -0800 (PST)
-Received: from jax (h-249-223.A175.priv.bahnhof.se. [98.128.249.223])
- by smtp.gmail.com with ESMTPSA id t13sm898056ljk.78.2020.01.23.02.13.12
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 23 Jan 2020 02:13:12 -0800 (PST)
-Date: Thu, 23 Jan 2020 11:13:11 +0100
-From: Jens Wiklander <jens.wiklander@linaro.org>
-To: arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL] optee driver another fix for v5.5
-Message-ID: <20200123101310.GA10320@jax>
+ id 1iuZUV-0002NX-1I
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:13:36 +0000
+Received: from ns.iliad.fr (localhost [127.0.0.1])
+ by ns.iliad.fr (Postfix) with ESMTP id 903D120108;
+ Thu, 23 Jan 2020 11:13:33 +0100 (CET)
+Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
+ by ns.iliad.fr (Postfix) with ESMTP id 7A4FF200B9;
+ Thu, 23 Jan 2020 11:13:33 +0100 (CET)
+Subject: Re: [RFC PATCH v2] clk: Use a new helper in managed functions
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+References: <56c7b6d5-1248-15bd-8441-5d80557455b3@free.fr>
+ <CAMuHMdX3kZoEfCeGamreeWq0-Tu2+Mw8MYEbRUZV8wBS+e2K=A@mail.gmail.com>
+From: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Message-ID: <8f1f01a1-b0c7-77d5-7d01-dd53811fa217@free.fr>
+Date: Thu, 23 Jan 2020 11:13:33 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CAMuHMdX3kZoEfCeGamreeWq0-Tu2+Mw8MYEbRUZV8wBS+e2K=A@mail.gmail.com>
+Content-Language: en-US
+X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
+ Thu Jan 23 11:13:33 2020 +0100 (CET)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_021316_003802_AEACAD31 
-X-CRM114-Status: GOOD (  10.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200123_021335_363680_B1DE00E4 
+X-CRM114-Status: GOOD (  23.98  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [212.27.33.1 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [marc.w.gonzalez[at]free.fr]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,43 +68,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tee-dev@lists.linaro.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Sudip Mukherjee <sudipm.mukherjee@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ LKML <linux-kernel@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Guenter Roeck <linux@roeck-us.net>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-clk <linux-clk@vger.kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello arm-soc maintainers,
+On 22/01/2020 14:33, Geert Uytterhoeven wrote:
 
-Please pull this OP-TEE driver fix with an added dependency to MMU in order
-to avoid compile errors on nommu configurations.
+> On Wed, Jan 22, 2020 at 2:02 PM Marc Gonzalez wrote:
+>
+>> Introduce devm_add() to factorize devres_alloc/devres_add calls.
+>>
+>> Using that helper produces simpler code and smaller object size:
+>>
+>> 1 file changed, 27 insertions(+), 66 deletions(-)
+>>
+>>     text           data     bss     dec     hex filename
+>> -   1708             80       0    1788     6fc drivers/clk/clk-devres.o
+>> +   1508             80       0    1588     634 drivers/clk/clk-devres.o
+>>
+>> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
+> 
+> Thanks for your patch!
+> 
+>> --- a/drivers/base/devres.c
+>> +++ b/drivers/base/devres.c
+>> @@ -685,6 +685,20 @@ int devres_release_group(struct device *dev, void *id)
+>>  }
+>>  EXPORT_SYMBOL_GPL(devres_release_group);
+>>
+>> +void *devm_add(struct device *dev, dr_release_t func, void *arg, size_t size)
+> 
+> Is there any advantage of using dr_release_t over "void (*action)(void *)",
+> like devm_add_action() does?  The latter lacks the "device *" parameter.
 
-Thanks,
-Jens
+(I did forget to mention that v1 used devm_add_action.)
+https://patchwork.kernel.org/patch/11262685/
 
-The following changes since commit d1eef1c619749b2a57e514a3fa67d9a516ffa919:
+A limitation of devm_add_action is that it stores the void *data argument "as is".
+Users cannot pass the address of a struct on the stack. devm_add() addresses that
+specific use-case, while being a minimal wrapper around devres_alloc + devres_add.
+(devm_add_action adds an extra level of indirection.)
 
-  Linux 5.5-rc2 (2019-12-15 15:16:08 -0800)
+>> +{
+>> +       void *data = devres_alloc(func, size, GFP_KERNEL);
+>> +
+>> +       if (data) {
+>> +               memcpy(data, arg, size);
+>> +               devres_add(dev, data);
+>> +       } else
+>> +               func(dev, arg);
+> 
+> Both branchs should use { ...}
 
-are available in the Git repository at:
+Ah yes, scripts/checkpatch.pl needs --strict to point this out.
 
-  https://git.linaro.org:/people/jens.wiklander/linux-tee.git tags/tee-optee-fix2-for-5.5
+>> +
+>> +       return data;
+> 
+> Why return data or NULL, instead of 0 or -Efoo, like devm_add_action()?
 
-for you to fetch changes up to 9e0caab8e0f96f0af7d1dd388e62f44184a75372:
+My intent is to make devm_add a minimal wrapper (it even started out as
+a macro). As such, I just transparently pass the result of devres_alloc.
 
-  tee: optee: Fix compilation issue with nommu (2020-01-23 10:55:20 +0100)
+Do you see an advantage in processing the result?
 
-----------------------------------------------------------------
-Fix OP-TEE compile error with nommu
+>> @@ -33,10 +25,7 @@ struct clk *devm_clk_get_optional(struct device *dev, const char *id)
+>>  {
+>>         struct clk *clk = devm_clk_get(dev, id);
+>>
+>> -       if (clk == ERR_PTR(-ENOENT))
+>> -               return NULL;
+>> -
+>> -       return clk;
+>> +       return clk == ERR_PTR(-ENOENT) ? NULL : clk;
+> 
+> Unrelated change (which is less readable than the original, IMHO).
 
-----------------------------------------------------------------
-Vincenzo Frascino (1):
-      tee: optee: Fix compilation issue with nommu
+I'd like to hear the maintainers' opinion. I defer to their preference.
 
- drivers/tee/optee/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+>> +
+>> +       if (!ret)
+>> +               if (!devm_add(dev, wrap_clk_bulk_put, &arg, sizeof(arg)))
+>> +                       ret = -ENOMEM;
+> 
+> Nested ifs are easier to read when the outer one uses curly braces:
+> 
+>         if (!ret) {
+>                 if (!devm_add(dev, wrap_clk_bulk_put, &arg, sizeof(arg)))
+>                         ret = -ENOMEM;
+>         }
+> 
+> Or merge the condition with &&.
+> 
+>>
+>>         return ret;
+> 
+> But in this case, I would write it as:
+> 
+>         if (ret)
+>                 return ret;
+> 
+>         if (!devm_add(dev, wrap_clk_bulk_put, &arg, sizeof(arg)))
+>                 return -ENOMEM;
+> 
+>         return 0;
+
+I like the simplicity of this code.
+
+
+> (+ consider devm_add() returning the error code instead, cfr. above).
+
+Some functions return an int, some a pointer, some might store the
+result through a pointer.
+
+
+> BTW, I'm still wondering if the varargs macro discussed on #armlinux would
+> help.  I.e.
+> 
+>     devm_add(dev, wrap_clk_bulk_put, struct clk_bulk_devres, clks, num_clks)
+> 
+> would create and populate the temporary arg variable.
+> 
+> That would require defining an argument struct for the use in devm_clk_get(),
+> though.
+
+There could be a helper for the "pass-a-struct" use-case, using a compound literal:
+
+#define helper(dev, func, type, args...) devm_add(dev, func, &(type){args}, sizeof(type))
+
+Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
