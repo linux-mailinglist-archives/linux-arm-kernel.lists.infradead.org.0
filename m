@@ -2,63 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA35E147071
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 19:06:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E58391470A9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 19:22:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MYAk9JlCdi02Yj9t/5Mv5n3hhjfY62SwHFJlh6AjLKk=; b=Ocb5rR3RtHjzMO
-	dIHlp9kgNKUhVaWl1mmLPouRfvIBPRqoIrRPuz9oRXIToAp+1SnPS1O3MCqj1CTWxUoW7Esn13jhw
-	8axlEKiZrDECF9jWkxkTkH9ddyEuLUVViPWJ7YJdTeiUPRH4Gdq6wDIa8+XM+aBUYsINRFfZkw5Nx
-	8kCbvGibNPzOnsTbuzflRv51tpfU/Gs/o3SuBKV4qC/cSDkc1lCh4dbrB3WrywG2mm4H4wRe/IyBa
-	PDKmX+PDhZH/kStRaae8SHghS5TUdZI31eZNVbRLFnf5+WJL7E6dFeyu/xsUGSAjTlWEcf8Ph0niL
-	ZdD6O0xIoFFSxQp4tsCg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tTYJ+n9ts650kpOaLymZhs8r2qZce56Sni5eWPr2Cpg=; b=ncW9PDEXJTk9w6
+	vnXqDtPqbwo0Jqc7ZsNmzbTs73wOuM6mppclDfzMEySJOnB6efPUCEbNZm24koYQhj3OH79Rfrlgm
+	q980tqWDs2YRUQKuKc2+VjWN8SMVTNsjUhkHqATOSCR+uonHAXCoeH4Oq+31RkhSwyJvMm3Y+HhM5
+	keEJQDg7MvbpnrmZ5rzEG8R6hQlBz5zTMt4+izT6IHicuAVOzM/ajtDhMmyc45137D+M6eRC8fN1k
+	mxTGVg3Tu6Mc1AX14WJ0fdR4J6IRhSHmYguTMIrT/uFi37CrH6YBI8FkNtCsOJhUkmSV7TyzQYHTN
+	n4zLeR3zMN4OwWH64s3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iugs8-0002G1-8Y; Thu, 23 Jan 2020 18:06:28 +0000
-Received: from asavdk3.altibox.net ([109.247.116.14])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iugrx-0002EX-IG
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 18:06:19 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk3.altibox.net (Postfix) with ESMTPS id F25A020031;
- Thu, 23 Jan 2020 19:06:04 +0100 (CET)
-Date: Thu, 23 Jan 2020 19:06:03 +0100
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Marcel Ziswiler <marcel@ziswiler.com>
-Subject: Re: [PATCH v4 1/3] dt-bindings: add vendor prefix for logic
- technologies limited
-Message-ID: <20200123180603.GB17233@ravnborg.org>
-References: <20200120080100.170294-1-marcel@ziswiler.com>
+	id 1iuh7f-00072e-7z; Thu, 23 Jan 2020 18:22:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuh7R-00072G-Oa
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 18:22:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 932B01FB;
+ Thu, 23 Jan 2020 10:22:16 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1125E3F52E;
+ Thu, 23 Jan 2020 10:22:15 -0800 (PST)
+From: Mark Brown <broonie@kernel.org>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Subject: [PATCH] arm64: vdso: Convert to modern assembler annotations
+Date: Thu, 23 Jan 2020 18:22:01 +0000
+Message-Id: <20200123182201.10555-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200120080100.170294-1-marcel@ziswiler.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=eMA9ckh1 c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=jpOVt7BSZ2e4Z31A5e1TngXxSK0=:19 a=kj9zAlcOel0A:10 a=m8ToADvmAAAA:8
- a=6h0QpovlAAAA:8 a=k76NmfXvAAAA:8 a=VwQbUJbxAAAA:8 a=5161Qnb4PEtQmF6y4tUA:9
- a=_A8lN0e7biOy-kDP:21 a=1vGcD8wBxvxDrBQY:21 a=CjuIK1q_8ugA:10
- a=kCrBFHLFDAq2jDEeoMj9:22 a=UMgBrLottiFGRxIVDUvr:22
- a=xklTzJp5TIrWR6y8xC-k:22 a=AjGcO6oz07-iQ99wixmX:22
- a=pHzHmUro8NiASowvMSCR:22 a=6VlIyEUom7LUIeUMNQJH:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_100617_785764_C0F31F48 
-X-CRM114-Status: GOOD (  16.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200123_102217_844932_3C01E395 
+X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.14 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -71,73 +63,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Rob Herring <robh@kernel.org>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, j.bauer@endrich.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Maxime Ripard <mripard@kernel.org>,
- Philippe Schenker <philippe.schenker@toradex.com>, info@logictechno.com,
- Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marcel.
+In an effort to clarify and simplify the annotation of assembly
+functions new macros have been introduced. These replace ENTRY and
+ENDPROC with two different annotations for normal functions and those
+with unusual calling conventions. Convert the assembly function in the
+arm64 VDSO to the new macros.
 
-On Mon, Jan 20, 2020 at 09:00:58AM +0100, Marcel Ziswiler wrote:
-> From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-> 
-> Add vendor prefix for Logic Technologies Limited [1] which is a Chinese
-> display manufacturer e.g. distributed by German Endrich Bauelemente
-> Vertriebs GmbH [2].
-> 
-> [1] https://logictechno.com/contact-us/
-> [2] https://www.endrich.com/isi50_isi30_tft-displays/lt170410-1whc_isi30
-> 
-> Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
-> Reviewed-by: Philippe Schenker <philippe.schenker@toradex.com>
-> Acked-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ arch/arm64/kernel/vdso/sigreturn.S | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Thanks for the quick revision.
-All three patches applied to drm-misc-next.
+diff --git a/arch/arm64/kernel/vdso/sigreturn.S b/arch/arm64/kernel/vdso/sigreturn.S
+index 0723aa398d6e..12324863d5c2 100644
+--- a/arch/arm64/kernel/vdso/sigreturn.S
++++ b/arch/arm64/kernel/vdso/sigreturn.S
+@@ -14,7 +14,7 @@
+ 	.text
+ 
+ 	nop
+-ENTRY(__kernel_rt_sigreturn)
++SYM_FUNC_START(__kernel_rt_sigreturn)
+ 	.cfi_startproc
+ 	.cfi_signal_frame
+ 	.cfi_def_cfa	x29, 0
+@@ -23,4 +23,4 @@ ENTRY(__kernel_rt_sigreturn)
+ 	mov	x8, #__NR_rt_sigreturn
+ 	svc	#0
+ 	.cfi_endproc
+-ENDPROC(__kernel_rt_sigreturn)
++SYM_FUNC_END(__kernel_rt_sigreturn)
+-- 
+2.20.1
 
-I applied patch 2 by hand due to conflicts caused
-by another patch I added just minutes ago.
-
-	Sam
-
-> 
-> ---
-> 
-> Changes in v4: None
-> Changes in v3: None
-> Changes in v2:
-> - Added Philippe's reviewed-by.
-> - Added Rob's acked-by.
-> 
->  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-> index f9b84f24a382..ac4804d0a991 100644
-> --- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
-> +++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
-> @@ -549,6 +549,8 @@ patternProperties:
->      description: Linear Technology Corporation
->    "^logicpd,.*":
->      description: Logic PD, Inc.
-> +  "^logictechno,.*":
-> +    description: Logic Technologies Limited
->    "^longcheer,.*":
->      description: Longcheer Technology (Shanghai) Co., Ltd.
->    "^lsi,.*":
-> -- 
-> 2.24.1
 
 _______________________________________________
 linux-arm-kernel mailing list
