@@ -2,47 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67305146305
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 09:06:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C9A3146367
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 09:23:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E1mrP8Dnt1BhVKVy/+QHKFp6jdBzRkTBLSuaKX33isM=; b=LNvMbhdLVCc1oq
-	pZfKqhAx8eGhitnRrj7/lFE5GP3wULQrPZLIdGf6miskghbCSIKFJFo+qusXZgdgnYEemyD1Uok8K
-	yk5mOnjSTcysmeCSwasAqdIh9F5GTPjKT9R9BTLvroN6XI7KexxiGJKeT9Sbh1Dd4hov7G60Xo+0X
-	oZwBuhOlo3X7bJTpoKt93Z+uxB+fGYrlCKK7j8VqzukiZS5tJaX0AA6tQCkRr33ghpgrz4VUk73T4
-	Z0eZOlWGpj7eQByCv/bks+WSti6MKAb1Vq0Ce8Wb4N7Ahzczo6YUGyTWXLJlGel4Q02s0gsdqOGkR
-	Ng/C1ol1kTvmx+3UugJA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8kmpLRbXmvA87YFG/QqeTU3bFX6z7pi2FUz9j0XDnyQ=; b=r3JwzJdOu2qxUZ
+	K8zXxFgaiiw2MXitZyANSC+Cg5vLk4j603yrxRrlYAZnOjcj6UrdIL+spiUdNt8rlldwUVols6/Zm
+	ImugPc+M3O0WLm8iZf0kQ8LIg4q/RRo/d6R2UCfrX/rl3QKt5TViejgFCYBZL5Nc2MxqilzVsTPdj
+	Ll6fqWN9OmXjpGs1FMnU96QKAf76NvKNvCqIlRlxbLSriYQTGqEmCR/K1Fum6s6QGT7wgcba3y1Sg
+	4BAv/GBMEbnSzwZm00M6/bxLx3IOz4F1tR23g4esAJpRitD8UnFwbg4zHraqMesXsWeRBTBMnxuf1
+	EydbOldIuBHSAwWg00QA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuXVi-0003IV-Ne; Thu, 23 Jan 2020 08:06:42 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuXVT-0003HK-Rg; Thu, 23 Jan 2020 08:06:30 +0000
-Received: from ip092042140082.rev.nessus.at ([92.42.140.82] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iuXVN-0004gu-Fu; Thu, 23 Jan 2020 09:06:21 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Ezequiel Garcia <ezequiel@collabora.com>
-Subject: Re: [PATCH] drm/rockchip: Add GEM create ioctl support
-Date: Thu, 23 Jan 2020 09:06:20 +0100
-Message-ID: <2150585.39Qbo98K5S@phil>
-In-Reply-To: <20200122190855.20385-1-ezequiel@collabora.com>
-References: <20200122190855.20385-1-ezequiel@collabora.com>
+	id 1iuXlr-00013v-HP; Thu, 23 Jan 2020 08:23:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuXlj-00013C-NT
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 08:23:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4AADB1FB;
+ Thu, 23 Jan 2020 00:23:12 -0800 (PST)
+Received: from [10.162.16.32] (p8cg001049571a15.blr.arm.com [10.162.16.32])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CA1773F6C4;
+ Thu, 23 Jan 2020 00:26:43 -0800 (PST)
+Subject: Re: [PATCH 0/2] mm/thp: rework the pmd protect changing flow
+To: Xuefeng Wang <wxf.wang@hisilicon.com>, catalin.marinas@arm.com,
+ will@kernel.org, mark.rutland@arm.com, arnd@arndb.de,
+ akpm@linux-foundation.org
+References: <20200123075514.15142-1-wxf.wang@hisilicon.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <50493410-c44c-7ef0-81f9-d4ce9a525c1f@arm.com>
+Date: Thu, 23 Jan 2020 13:54:32 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <20200123075514.15142-1-wxf.wang@hisilicon.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_000628_045769_962DE5B8 
-X-CRM114-Status: GOOD (  25.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200123_002315_807954_106E7A91 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -55,229 +65,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Douglas Anderson <dianders@chromium.org>, David Airlie <airlied@linux.ie>,
- Sandy Huang <hjc@rock-chips.com>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Tomasz Figa <tfiga@chromium.org>, Daniel Vetter <daniel@ffwll.ch>,
- kernel@collabora.com, linux-arm-kernel@lists.infradead.org,
- Mark Yao <mark.yao@rock-chips.com>
+Cc: linux-arch@vger.kernel.org, linux-mm@kvack.org, chenzhou10@huawei.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ezquiel,
 
-Am Mittwoch, 22. Januar 2020, 20:08:55 CET schrieb Ezequiel Garcia:
-> From: Mark Yao <mark.yao@rock-chips.com>
+
+On 01/23/2020 01:25 PM, Xuefeng Wang wrote:
+> On KunPeng920 board. When changing permission of a large range region,
+> pmdp_invalidate() takes about 65% in profile (with hugepages) in JIT tool.
+> Kernel will flush tlb twice: first flush happens in pmdp_invalidate, second
+> flush happens at the end of change_protect_range(). The first pmdp_invalidate
+> is not necessary if the hardware support atomic pmdp changing. The atomic
+> changing pimd to zero can prevent the hardware from update asynchronous.
+> So reconstruct it and remove the first pmdp_invalidate. And the second tlb
+> flush can make sure the new tlb entry valid.
 > 
-> Add driver-specific GEM create/offset ioctls, to allow users
-> to create objects of arbitrary size.
-> 
-> These are required to allocate buffers to be shared with
-> video decoder block, with hardware-specific needs such as
-> macroblock alignment and extra room for motion vectors.
+> This patch series add a pmdp_modify_prot transaction abstraction firstly.
+> Then add pmdp_modify_prot_start() in arm64, which uses pmdp_huge_get_and_clear()
+> to atomically fetch the pmd and zero the entry.
 
-Previously the use of this ioctl was to allow a custom xserver
-to allocate memory to hand over to a binary mali blob for rendering.
-The counter argument was that these dumb buffer should not be
-rendered into at all.
+There is a comment section in change_huge_pmd() which details how clearing
+the PMD entry there (in prot_numa case) can potentially race with another
+concurrent madvise(MADV_DONTNEED, ..) call. Here is the comment block for
+reference.
 
-Nowadays we have prime for buffer sharing between display ip
-and 3d-renderer, and somehow this seems to work also with
-binary blobs via libgbm or so. Not sure how this behaves with X11
-though but at least up to wayland that seems to work, so in current
-display pipelines there doesn't seem to be a need for such an ioctl
-anymore.
+        /*
+         * In case prot_numa, we are under down_read(mmap_sem). It's critical
+         * to not clear pmd intermittently to avoid race with MADV_DONTNEED
+         * which is also under down_read(mmap_sem):
+         *
+         *      CPU0:                           CPU1:
+         *                              change_huge_pmd(prot_numa=1)
+         *                               pmdp_huge_get_and_clear_notify()
+         * madvise_dontneed()
+         *  zap_pmd_range()
+         *   pmd_trans_huge(*pmd) == 0 (without ptl)
+         *   // skip the pmd
+         *                               set_pmd_at();
+         *                               // pmd is re-established
+         *
+         * The race makes MADV_DONTNEED miss the huge pmd and don't clear it
+         * which may break userspace.
+         *
+         * pmdp_invalidate() is required to make sure we don't miss
+         * dirty/young flags set by hardware.
+         */
 
-So I guess my question to understand this is, shouldn't there be
-something similar done when sharing buffers with a video decoder?
-Instead of userspace requesting a buffer and then handing it to
-the hardware video decoder?
+By defining the new override with pmdp_huge_get_and_clear(), are not we
+now exposed to above race condition ?
 
-Thanks
-Heiko
-
-> Signed-off-by: Mark Yao <mark.yao@rock-chips.com>
-> Signed-off-by: Douglas Anderson <dianders@chromium.org>
-> Signed-off-by: Ezequiel Garcia <ezequiel@collabora.com>
-> ---
->  drivers/gpu/drm/rockchip/rockchip_drm_drv.c | 11 ++++
->  drivers/gpu/drm/rockchip/rockchip_drm_gem.c | 21 +++++++
->  drivers/gpu/drm/rockchip/rockchip_drm_gem.h | 13 +++++
->  include/uapi/drm/rockchip_drm.h             | 61 +++++++++++++++++++++
->  4 files changed, 106 insertions(+)
->  create mode 100644 include/uapi/drm/rockchip_drm.h
-> 
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_drv.c b/drivers/gpu/drm/rockchip/rockchip_drm_drv.c
-> index ca12a35483f9..bd35a0b1aa5a 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_drv.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_drv.c
-> @@ -22,6 +22,7 @@
->  #include <drm/drm_of.h>
->  #include <drm/drm_probe_helper.h>
->  #include <drm/drm_vblank.h>
-> +#include <drm/rockchip_drm.h>
->  
->  #include "rockchip_drm_drv.h"
->  #include "rockchip_drm_fb.h"
-> @@ -206,6 +207,14 @@ static void rockchip_drm_unbind(struct device *dev)
->  	drm_dev_put(drm_dev);
->  }
->  
-> +static const struct drm_ioctl_desc rockchip_ioctls[] = {
-> +	DRM_IOCTL_DEF_DRV(ROCKCHIP_GEM_CREATE, rockchip_gem_create_ioctl,
-> +			  DRM_UNLOCKED | DRM_AUTH),
-> +	DRM_IOCTL_DEF_DRV(ROCKCHIP_GEM_MAP_OFFSET,
-> +			  rockchip_gem_map_offset_ioctl,
-> +			  DRM_UNLOCKED | DRM_AUTH),
-> +};
-> +
->  static const struct file_operations rockchip_drm_driver_fops = {
->  	.owner = THIS_MODULE,
->  	.open = drm_open,
-> @@ -230,6 +239,8 @@ static struct drm_driver rockchip_drm_driver = {
->  	.gem_prime_vmap		= rockchip_gem_prime_vmap,
->  	.gem_prime_vunmap	= rockchip_gem_prime_vunmap,
->  	.gem_prime_mmap		= rockchip_gem_mmap_buf,
-> +	.ioctls			= rockchip_ioctls,
-> +	.num_ioctls		= ARRAY_SIZE(rockchip_ioctls),
->  	.fops			= &rockchip_drm_driver_fops,
->  	.name	= DRIVER_NAME,
->  	.desc	= DRIVER_DESC,
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-> index 0d1884684dcb..315fa67d5668 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.c
-> @@ -12,6 +12,7 @@
->  #include <drm/drm_gem.h>
->  #include <drm/drm_prime.h>
->  #include <drm/drm_vma_manager.h>
-> +#include <drm/rockchip_drm.h>
->  
->  #include "rockchip_drm_drv.h"
->  #include "rockchip_drm_gem.h"
-> @@ -428,6 +429,26 @@ int rockchip_gem_dumb_create(struct drm_file *file_priv,
->  	return PTR_ERR_OR_ZERO(rk_obj);
->  }
->  
-> +int rockchip_gem_map_offset_ioctl(struct drm_device *drm, void *data,
-> +				  struct drm_file *file_priv)
-> +{
-> +	struct drm_rockchip_gem_map_off *args = data;
-> +
-> +	return drm_gem_dumb_map_offset(file_priv, drm, args->handle,
-> +				       &args->offset);
-> +}
-> +
-> +int rockchip_gem_create_ioctl(struct drm_device *dev, void *data,
-> +			      struct drm_file *file_priv)
-> +{
-> +	struct drm_rockchip_gem_create *args = data;
-> +	struct rockchip_gem_object *rk_obj;
-> +
-> +	rk_obj = rockchip_gem_create_with_handle(file_priv, dev, args->size,
-> +						 &args->handle);
-> +	return PTR_ERR_OR_ZERO(rk_obj);
-> +}
-> +
->  /*
->   * Allocate a sg_table for this GEM object.
->   * Note: Both the table's contents, and the sg_table itself must be freed by
-> diff --git a/drivers/gpu/drm/rockchip/rockchip_drm_gem.h b/drivers/gpu/drm/rockchip/rockchip_drm_gem.h
-> index 7ffc541bea07..87fe58b05bf6 100644
-> --- a/drivers/gpu/drm/rockchip/rockchip_drm_gem.h
-> +++ b/drivers/gpu/drm/rockchip/rockchip_drm_gem.h
-> @@ -50,4 +50,17 @@ void rockchip_gem_free_object(struct drm_gem_object *obj);
->  int rockchip_gem_dumb_create(struct drm_file *file_priv,
->  			     struct drm_device *dev,
->  			     struct drm_mode_create_dumb *args);
-> +
-> +/*
-> + * request gem object creation and buffer allocation as the size
-> + * that it is calculated with framebuffer information such as width,
-> + * height and bpp.
-> + */
-> +int rockchip_gem_create_ioctl(struct drm_device *dev, void *data,
-> +			      struct drm_file *file_priv);
-> +
-> +/* get buffer offset to map to user space. */
-> +int rockchip_gem_map_offset_ioctl(struct drm_device *dev, void *data,
-> +				  struct drm_file *file_priv);
-> +
->  #endif /* _ROCKCHIP_DRM_GEM_H */
-> diff --git a/include/uapi/drm/rockchip_drm.h b/include/uapi/drm/rockchip_drm.h
-> new file mode 100644
-> index 000000000000..3185f72f36b9
-> --- /dev/null
-> +++ b/include/uapi/drm/rockchip_drm.h
-> @@ -0,0 +1,61 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +
-> +/*
-> + * Copyright (c) Fuzhou Rockchip Electronics Co.Ltd
-> + * Authors:
-> + *       Mark Yao <yzq@rock-chips.com>
-> + *
-> + * base on exynos_drm.h
-> + */
-> +
-> +#ifndef _ROCKCHIP_DRM_H
-> +#define _ROCKCHIP_DRM_H
-> +
-> +#include <drm/drm.h>
-> +
-> +#if defined(__cplusplus)
-> +extern "C" {
-> +#endif
-> +
-> +/**
-> + * User-desired buffer creation information structure.
-> + *
-> + * @size: user-desired memory allocation size.
-> + * @flags: user request for setting memory type or cache attributes.
-> + * @handle: returned a handle to created gem object.
-> + *     - this handle will be set by gem module of kernel side.
-> + */
-> +struct drm_rockchip_gem_create {
-> +	uint64_t size;
-> +	uint32_t flags;
-> +	uint32_t handle;
-> +};
-> +
-> +/**
-> + * A structure for getting buffer offset.
-> + *
-> + * @handle: a pointer to gem object created.
-> + * @pad: just padding to be 64-bit aligned.
-> + * @offset: relatived offset value of the memory region allocated.
-> + *     - this value should be set by user.
-> + */
-> +struct drm_rockchip_gem_map_off {
-> +	uint32_t handle;
-> +	uint32_t pad;
-> +	uint64_t offset;
-> +};
-> +
-> +#define DRM_ROCKCHIP_GEM_CREATE		0x00
-> +#define DRM_ROCKCHIP_GEM_MAP_OFFSET	0x01
-> +
-> +#define DRM_IOCTL_ROCKCHIP_GEM_CREATE	DRM_IOWR(DRM_COMMAND_BASE + \
-> +		DRM_ROCKCHIP_GEM_CREATE, struct drm_rockchip_gem_create)
-> +
-> +#define DRM_IOCTL_ROCKCHIP_GEM_MAP_OFFSET	DRM_IOWR(DRM_COMMAND_BASE + \
-> +		DRM_ROCKCHIP_GEM_MAP_OFFSET, struct drm_rockchip_gem_map_off)
-> +
-> +#if defined(__cplusplus)
-> +}
-> +#endif
-> +
-> +#endif /* _ROCKCHIP_DRM_H */
-> 
-
-
-
-
+- Anshuman
 
 _______________________________________________
 linux-arm-kernel mailing list
