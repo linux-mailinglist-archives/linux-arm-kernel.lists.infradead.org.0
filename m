@@ -2,87 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E2A314739A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 23:10:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 852FC1473B2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 23:21:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RfqEDorQQZiHIaf6SpEYpBAyHQSxHZIKMWhjxEVRg34=; b=lyItmSOIwWOZeM
-	5/uaVbttdJIQz7gCwKtPSao+Rd1TK08SZkTrfqzGf8jC3fP6j5NnKjHBrTVJaS2H67KoCId31Ur1X
-	s9gJBm26U+Q2n+v64pJwarIv1Q/h+JxLNg+XIepfnLIPXfoDYbvPlcnLWhQsLT+1VfM6iiR8wqgsu
-	DjtrtZn5QaR5EaOhIbwTOxuIDVWYgJLviuHwniVhwYr9M01WcnHzK6Edkg5KKfHbrlXoRM8gE0Z3n
-	nJoNKdgrj7omvxTmYZfzFTmsM5sPoZZSVP23Ytj58I8DI6hA6J/C93X7/5mCysACyHQSeY74HLbyt
-	dCNF13AimtERLqfpc4sA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UJaPqQypiR5pq5jBF49Y1bToR+xx7diLupN1XqVl3EM=; b=Yortd8NcrsjmOY
+	ApQUbqbHDcT1+xAxxckwF/fQNUkm1LQm6tktxUDMFbKOG15FNzZaJyvorBcKTlatCA0ChuSLazc9t
+	WL+StA+fhSXe3nhvea8iqKp6PHazwG53FX0pdGidZ9Zcx9B9RBwe9Ky8a07ChJl/NHwi9o8tZIdVZ
+	rDJ1kghhx6fJeO0kcdQvh9AsNeifr7O0rhkhs5+5R8HZZOSuGKCKBuul6m5fo3QiYTWe74i074uV4
+	SfugOMW6A53KrKQCsq1IfXrqUXhVXDzkP5zxfN1xp2fcR0wkTjymOJEYkfw5dYxpdMqnJC6eYnykT
+	o/Skk3z33L7x9xHrb8mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iukgI-0003eE-Ms; Thu, 23 Jan 2020 22:10:30 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1iukr8-00079X-SF; Thu, 23 Jan 2020 22:21:42 +0000
+Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iukgA-0003df-9Z
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 22:10:24 +0000
-Received: by mail-ot1-x341.google.com with SMTP id 66so4331737otd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Jan 2020 14:10:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yDW4eNC3KeswQXJexI/cQft97nYabOSfO7WM788bKA8=;
- b=q7q8Q8LUbSkBX1SG1WGnzySEyKzVEXUDRXEx7uEifLNI6q79ck0A7a3LfrMaC7ihgv
- ktNcnDax1bUAiz3R6W64zjiP95N+ckzInJIx5kvcm6xswMljg4mCvBRnccNRFPdFixm+
- by8abOx/fhlUiuIbGv5jX/Z1oDVJDsBE7mJdOGCmqac1Z3ZaaGgBo8UsdHqQZ/5hKSA0
- qF1E1RlJDMpvYz7ngjPDQCaAGb3reZn8Z11sDofUo6j4WSnrg7UgjRsUA5eFODuWmJ7e
- 7v+l8vmRGfabKaEc6xDzMBSFdl5oL1nX2lq2Vfm6gAdUHUqm6EQXOBbtIEKReE9CDHcq
- vkKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yDW4eNC3KeswQXJexI/cQft97nYabOSfO7WM788bKA8=;
- b=E19TrspGxtqRetHjb+Pqd1Tlv1rugKYs0WtFhZuhfZNpJ8v7afYc6L7ghCeSF2svbj
- 9A+6FqjNSXyGmCLWJ1tt68Tcqg70wZtBOymez/51ECAIVoMENQc1mAI3Z8UtdpicNeNZ
- UfuM7AUh/nYpGMGV+sDx+nAxfUriF7DhTljT9BlSOWRX6tN8C92mgPEj6oOu5iEpiGDW
- K735KcpVxtdksja2o/HY7h4+TtdARazGrLNldXImmzUNq3l/4Xq33Fs8I34RmOiSdSnF
- e+V+DsXRQ/GFDnnIuDkVLQ3l3ID8dXw4O2kqf+0ggbyzUMF3ILShczeshRaAqaGTCnx6
- 5rjw==
-X-Gm-Message-State: APjAAAXHKAEjD2g4bpb+KnYI5QCPh8z6hH9qQTLr5EPdXTB4d570M29t
- 8qPd8ZEB+9lbFBaqkaZLBlY2VD5wMDX3qmB6PM8=
-X-Google-Smtp-Source: APXvYqxg42q49vwZ4t7IPhYmNvVO+1rqtdUl3/lztVPtz9PUfHBTIjFIruan+M0VjwZ6kFLGNuHl3VlQNofuPunXQdg=
-X-Received: by 2002:a05:6830:1615:: with SMTP id
- g21mr438063otr.49.1579817420199; 
- Thu, 23 Jan 2020 14:10:20 -0800 (PST)
+ id 1iukr1-00079C-Hr
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 22:21:37 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 483cF65fWcz1rVvM;
+ Thu, 23 Jan 2020 23:21:30 +0100 (CET)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 483cF654Fpz1qql2;
+ Thu, 23 Jan 2020 23:21:30 +0100 (CET)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id qMBT7xXHgD9X; Thu, 23 Jan 2020 23:21:29 +0100 (CET)
+X-Auth-Info: 6ZBYsfcqxYA+jp8vBwwuLtW6C4RkxnXCQL33+f28CBU=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Thu, 23 Jan 2020 23:21:29 +0100 (CET)
+Subject: Re: STM32MP1 level triggered interrupts
+To: Marc Zyngier <maz@kernel.org>,
+ =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>
+References: <20bb72d0-8258-abc0-e729-4d3d5a75c41c@denx.de>
+ <d6e02817-2464-51b9-246a-7720b607b8d6@st.com>
+ <65a1c5b2-c1b9-322f-338c-e6ff6379d8d1@denx.de>
+ <129d04a0-c846-506d-5726-4a1024d977a6@st.com>
+ <80db762c-3b3d-f007-2f9b-dadbffd95782@denx.de>
+ <360b1adc-32f1-7993-c463-e52c7a5a8a67@st.com>
+ <c4f08f59acd31951527ef1d6e9409e6f@kernel.org>
+ <20200123101225.nscpc5t4nmlarbw2@pengutronix.de>
+ <03fd1cb7b5985b3221f66c6b0058adc8@kernel.org>
+ <20200123105214.ru4j76xbisjtbtgw@pengutronix.de>
+ <cf98f4fd257ba4f34c75fe1656bd341b@kernel.org>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <e1fffd57-4814-ec36-68b4-4207e3d4ae5d@denx.de>
+Date: Thu, 23 Jan 2020 23:21:28 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20191211124608.887-1-kishon@ti.com>
- <20191211124608.887-5-kishon@ti.com>
-In-Reply-To: <20191211124608.887-5-kishon@ti.com>
-From: Ramon Fried <rfried.dev@gmail.com>
-Date: Fri, 24 Jan 2020 00:10:09 +0200
-Message-ID: <CAGi-RUJCkEuqukEawjh_TqmWTYeYP7Qimaz3OTgpWnTZr9bZPA@mail.gmail.com>
-Subject: Re: [PATCH 4/4] PCI: cadence: Add MSI-X support to Endpoint driver
-To: Kishon Vijay Abraham I <kishon@ti.com>
+In-Reply-To: <cf98f4fd257ba4f34c75fe1656bd341b@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_141022_362108_A3809671 
-X-CRM114-Status: GOOD (  25.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200123_142135_887105_8E6DA498 
+X-CRM114-Status: GOOD (  29.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rfried.dev[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,275 +85,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Xiaowei Bao <xiaowei.bao@nxp.com>, Jingoo Han <jingoohan1@gmail.com>,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- Murali Karicheri <m-karicheri2@ti.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 2:47 PM Kishon Vijay Abraham I <kishon@ti.com> wrote:
->
-> From: Alan Douglas <adouglas@cadence.com>
->
-> Implement ->set_msix() and ->get_msix() callback functions in order
-> to configure MSIX capability in the PCIe endpoint controller.
->
-> Add cdns_pcie_ep_send_msix_irq() to send MSIX interrupts to Host.
-> cdns_pcie_ep_send_msix_irq() gets the MSIX table address (virtual
-> address) from "struct cdns_pcie_epf" that gets initialized in
-> ->set_bar() call back function.
->
-> [kishon@ti.com: Re-implement MSIX support in accordance with the
->  re-designed core MSI-X interfaces]
-> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
-> Signed-off-by: Alan Douglas <adouglas@cadence.com>
-> ---
->  .../pci/controller/cadence/pcie-cadence-ep.c  | 112 +++++++++++++++++-
->  drivers/pci/controller/cadence/pcie-cadence.h |  10 ++
->  2 files changed, 121 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/pci/controller/cadence/pcie-cadence-ep.c b/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> index 088394b6be04..c3081e8e52a4 100644
-> --- a/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> +++ b/drivers/pci/controller/cadence/pcie-cadence-ep.c
-> @@ -52,6 +52,7 @@ static int cdns_pcie_ep_set_bar(struct pci_epc *epc, u8 fn,
->                                 struct pci_epf_bar *epf_bar)
->  {
->         struct cdns_pcie_ep *ep = epc_get_drvdata(epc);
-> +       struct cdns_pcie_epf *epf = &ep->epf[fn];
->         struct cdns_pcie *pcie = &ep->pcie;
->         dma_addr_t bar_phys = epf_bar->phys_addr;
->         enum pci_barno bar = epf_bar->barno;
-> @@ -112,6 +113,8 @@ static int cdns_pcie_ep_set_bar(struct pci_epc *epc, u8 fn,
->                 CDNS_PCIE_LM_EP_FUNC_BAR_CFG_BAR_CTRL(b, ctrl));
->         cdns_pcie_writel(pcie, reg, cfg);
->
-> +       epf->epf_bar[bar] = epf_bar;
-> +
->         return 0;
->  }
->
-> @@ -119,6 +122,7 @@ static void cdns_pcie_ep_clear_bar(struct pci_epc *epc, u8 fn,
->                                    struct pci_epf_bar *epf_bar)
->  {
->         struct cdns_pcie_ep *ep = epc_get_drvdata(epc);
-> +       struct cdns_pcie_epf *epf = &ep->epf[fn];
->         struct cdns_pcie *pcie = &ep->pcie;
->         enum pci_barno bar = epf_bar->barno;
->         u32 reg, cfg, b, ctrl;
-> @@ -140,6 +144,8 @@ static void cdns_pcie_ep_clear_bar(struct pci_epc *epc, u8 fn,
->
->         cdns_pcie_writel(pcie, CDNS_PCIE_AT_IB_EP_FUNC_BAR_ADDR0(fn, bar), 0);
->         cdns_pcie_writel(pcie, CDNS_PCIE_AT_IB_EP_FUNC_BAR_ADDR1(fn, bar), 0);
-> +
-> +       epf->epf_bar[bar] = NULL;
->  }
->
->  static int cdns_pcie_ep_map_addr(struct pci_epc *epc, u8 fn, phys_addr_t addr,
-> @@ -225,6 +231,50 @@ static int cdns_pcie_ep_get_msi(struct pci_epc *epc, u8 fn)
->         return mme;
->  }
->
-> +static int cdns_pcie_ep_get_msix(struct pci_epc *epc, u8 func_no)
-> +{
-> +       struct cdns_pcie_ep *ep = epc_get_drvdata(epc);
-> +       struct cdns_pcie *pcie = &ep->pcie;
-> +       u32 cap = CDNS_PCIE_EP_FUNC_MSIX_CAP_OFFSET;
-> +       u32 val, reg;
-> +
-> +       reg = cap + PCI_MSIX_FLAGS;
-> +       val = cdns_pcie_ep_fn_readw(pcie, func_no, reg);
-> +       if (!(val & PCI_MSIX_FLAGS_ENABLE))
-> +               return -EINVAL;
-> +
-> +       val &= PCI_MSIX_FLAGS_QSIZE;
-> +
-> +       return val;
-> +}
-> +
-> +static int cdns_pcie_ep_set_msix(struct pci_epc *epc, u8 fn, u16 interrupts,
-> +                                enum pci_barno bir, u32 offset)
-> +{
-> +       struct cdns_pcie_ep *ep = epc_get_drvdata(epc);
-> +       struct cdns_pcie *pcie = &ep->pcie;
-> +       u32 cap = CDNS_PCIE_EP_FUNC_MSIX_CAP_OFFSET;
-> +       u32 val, reg;
-> +
-> +       reg = cap + PCI_MSIX_FLAGS;
-> +       val = cdns_pcie_ep_fn_readw(pcie, fn, reg);
-> +       val &= ~PCI_MSIX_FLAGS_QSIZE;
-> +       val |= interrupts;
-> +       cdns_pcie_ep_fn_writew(pcie, fn, reg, val);
-> +
-> +       /* Set MSIX BAR and offset */
-> +       reg = cap + PCI_MSIX_TABLE;
-> +       val = offset | bir;
-> +       cdns_pcie_ep_fn_writel(pcie, fn, reg, val);
-> +
-> +       /* Set PBA BAR and offset.  BAR must match MSIX BAR */
-> +       reg = cap + PCI_MSIX_PBA;
-> +       val = (offset + (interrupts * PCI_MSIX_ENTRY_SIZE)) | bir;
-> +       cdns_pcie_ep_fn_writel(pcie, fn, reg, val);
-> +
-> +       return 0;
-> +}
-> +
->  static void cdns_pcie_ep_assert_intx(struct cdns_pcie_ep *ep, u8 fn,
->                                      u8 intx, bool is_asserted)
->  {
-> @@ -331,6 +381,56 @@ static int cdns_pcie_ep_send_msi_irq(struct cdns_pcie_ep *ep, u8 fn,
->         return 0;
->  }
->
-> +static int cdns_pcie_ep_send_msix_irq(struct cdns_pcie_ep *ep, u8 fn,
-> +                                     u16 interrupt_num)
-> +{
-> +       u32 cap = CDNS_PCIE_EP_FUNC_MSIX_CAP_OFFSET;
-> +       u32 tbl_offset, msg_data, reg, vec_ctrl;
-> +       struct cdns_pcie *pcie = &ep->pcie;
-> +       struct pci_epf_msix_tbl *msix_tbl;
-> +       struct pci_epf_bar *epf_bar;
-> +       struct cdns_pcie_epf *epf;
-> +       u64 pci_addr_mask = 0xff;
-> +       u64 msg_addr;
-> +       u16 flags;
-> +       u8 bir;
-> +
-> +       /* Check whether the MSI-X feature has been enabled by the PCI host. */
-> +       flags = cdns_pcie_ep_fn_readw(pcie, fn, cap + PCI_MSIX_FLAGS);
-> +       if (!(flags & PCI_MSIX_FLAGS_ENABLE))
-> +               return -EINVAL;
-> +
-> +       reg = cap + PCI_MSIX_TABLE;
-> +       tbl_offset = cdns_pcie_ep_fn_readl(pcie, fn, reg);
-> +       bir = tbl_offset & PCI_MSIX_TABLE_BIR;
-> +       tbl_offset &= PCI_MSIX_TABLE_OFFSET;
-> +
-> +       epf = &ep->epf[fn];
-> +       epf_bar = epf->epf_bar[bir];
-> +       msix_tbl = epf_bar->addr;
-> +       msix_tbl = (struct pci_epf_msix_tbl *)((char *)msix_tbl + tbl_offset);
-> +
-> +       msg_addr = msix_tbl[(interrupt_num - 1)].msg_addr;
-> +       msg_data = msix_tbl[(interrupt_num - 1)].msg_data;
-> +       vec_ctrl = msix_tbl[(interrupt_num - 1)].vector_ctrl;
-> +
-> +       /* Set the outbound region if needed. */
-> +       if (unlikely(ep->irq_pci_addr != (msg_addr & ~pci_addr_mask) ||
-I'm not sure about this _unlikely_, because unlike MSI, msg_addr will
-be different for every vector.
-It's interesting if safe to assume that host will allocate all message
-address in linear fashion,
-in that case maybe it's wiser to map all the the area at once and just
-offset into it.
-
-Thanks,
-Ramon.
-
-> +                    ep->irq_pci_fn != fn)) {
-> +               /* First region was reserved for IRQ writes. */
-> +               cdns_pcie_set_outbound_region(pcie, fn, 0,
-> +                                             false,
-> +                                             ep->irq_phys_addr,
-> +                                             msg_addr & ~pci_addr_mask,
-> +                                             pci_addr_mask + 1);
-> +               ep->irq_pci_addr = (msg_addr & ~pci_addr_mask);
-> +               ep->irq_pci_fn = fn;
-> +       }
-> +       writel(msg_data, ep->irq_cpu_addr + (msg_addr & pci_addr_mask));
-> +
-> +       return 0;
-> +}
-> +
->  static int cdns_pcie_ep_raise_irq(struct pci_epc *epc, u8 fn,
->                                   enum pci_epc_irq_type type,
->                                   u16 interrupt_num)
-> @@ -344,6 +444,9 @@ static int cdns_pcie_ep_raise_irq(struct pci_epc *epc, u8 fn,
->         case PCI_EPC_IRQ_MSI:
->                 return cdns_pcie_ep_send_msi_irq(ep, fn, interrupt_num);
->
-> +       case PCI_EPC_IRQ_MSIX:
-> +               return cdns_pcie_ep_send_msix_irq(ep, fn, interrupt_num);
-> +
->         default:
->                 break;
->         }
-> @@ -381,7 +484,7 @@ static int cdns_pcie_ep_start(struct pci_epc *epc)
->  static const struct pci_epc_features cdns_pcie_epc_features = {
->         .linkup_notifier = false,
->         .msi_capable = true,
-> -       .msix_capable = false,
-> +       .msix_capable = true,
->  };
->
->  static const struct pci_epc_features*
-> @@ -398,6 +501,8 @@ static const struct pci_epc_ops cdns_pcie_epc_ops = {
->         .unmap_addr     = cdns_pcie_ep_unmap_addr,
->         .set_msi        = cdns_pcie_ep_set_msi,
->         .get_msi        = cdns_pcie_ep_get_msi,
-> +       .set_msix       = cdns_pcie_ep_set_msix,
-> +       .get_msix       = cdns_pcie_ep_get_msix,
->         .raise_irq      = cdns_pcie_ep_raise_irq,
->         .start          = cdns_pcie_ep_start,
->         .get_features   = cdns_pcie_ep_get_features,
-> @@ -457,6 +562,11 @@ int cdns_pcie_ep_setup(struct cdns_pcie_ep *ep)
->         if (of_property_read_u8(np, "max-functions", &epc->max_functions) < 0)
->                 epc->max_functions = 1;
->
-> +       ep->epf = devm_kcalloc(dev, epc->max_functions, sizeof(*ep->epf),
-> +                              GFP_KERNEL);
-> +       if (!ep->epf)
-> +               return -ENOMEM;
-> +
->         ret = pci_epc_mem_init(epc, pcie->mem_res->start,
->                                resource_size(pcie->mem_res));
->         if (ret < 0) {
-> diff --git a/drivers/pci/controller/cadence/pcie-cadence.h b/drivers/pci/controller/cadence/pcie-cadence.h
-> index ffa8b9f78ff8..207d6ba03f70 100644
-> --- a/drivers/pci/controller/cadence/pcie-cadence.h
-> +++ b/drivers/pci/controller/cadence/pcie-cadence.h
-> @@ -99,6 +99,7 @@
->  #define CDNS_PCIE_EP_FUNC_BASE(fn)     (((fn) << 12) & GENMASK(19, 12))
->
->  #define CDNS_PCIE_EP_FUNC_MSI_CAP_OFFSET       0x90
-> +#define CDNS_PCIE_EP_FUNC_MSIX_CAP_OFFSET      0xb0
->
->  /*
->   * Root Port Registers (PCI configuration space for the root port function)
-> @@ -281,6 +282,14 @@ struct cdns_pcie_rc {
->         u16                     device_id;
->  };
->
-> +/**
-> + * struct cdns_pcie_epf - Structure to hold info about endpoint function
-> + * @epf_bar: reference to the pci_epf_bar for the six Base Address Registers
-> + */
-> +struct cdns_pcie_epf {
-> +       struct pci_epf_bar *epf_bar[PCI_STD_NUM_BARS];
-> +};
-> +
->  /**
->   * struct cdns_pcie_ep - private data for this PCIe endpoint controller driver
->   * @pcie: Cadence PCIe controller
-> @@ -308,6 +317,7 @@ struct cdns_pcie_ep {
->         u64                     irq_pci_addr;
->         u8                      irq_pci_fn;
->         u8                      irq_pending;
-> +       struct cdns_pcie_epf    *epf;
->  };
->
->
-> --
-> 2.17.1
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMS8yMy8yMCAxMjoxOCBQTSwgTWFyYyBaeW5naWVyIHdyb3RlOgo+IE9uIDIwMjAtMDEtMjMg
+MTA6NTIsIFV3ZSBLbGVpbmUtS8O2bmlnIHdyb3RlOgo+PiBPbiBUaHUsIEphbiAyMywgMjAyMCBh
+dCAxMDo0NDowM0FNICswMDAwLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4+PiBPbiAyMDIwLTAxLTIz
+IDEwOjEyLCBVd2UgS2xlaW5lLUvDtm5pZyB3cm90ZToKPj4+ID4gT24gVGh1LCBKYW4gMjMsIDIw
+MjAgYXQgMDk6MjI6NDhBTSArMDAwMCwgTWFyYyBaeW5naWVyIHdyb3RlOgo+Pj4gPiA+IE9uIDIw
+MjAtMDEtMjMgMDg6MjcsIEFsZXhhbmRyZSBUb3JndWUgd3JvdGU6Cj4+PiA+ID4gPiBPbiAxLzIy
+LzIwIDg6MjkgUE0sIE1hcmVrIFZhc3V0IHdyb3RlOgo+Pj4gPiA+ID4gPiBPbiAxLzIyLzIwIDY6
+MTkgUE0sIEFsZXhhbmRyZSBUb3JndWUgd3JvdGU6Cj4+PiA+ID4gPiA+Cj4+PiA+ID4gPiA+IEhp
+LAo+Pj4gPiA+ID4gPgo+Pj4gPiA+ID4gPiBbLi4uXQo+Pj4gPiA+ID4gPgo+Pj4gPiA+ID4gPiA+
+ID4gPiBDb25jZXJuaW5nLCB5b3VyIHF1ZXN0aW9uOgo+Pj4gPiA+ID4gPiA+ID4gPgo+Pj4gPiA+
+ID4gPiA+ID4gPiBTZXR0aW5nIHlvdXIgZ3Bpb0MgaW50ZXJydXB0aW9uIGFzICJmYWxsaW5nIGVk
+Z2UiIHNob3VsZAo+Pj4gPiA+ID4gPiA+ID4gPiBiZSBlbm91Z2guIE9uCj4+PiA+ID4gPiA+ID4g
+PiA+IGdwaW9DeCBmYWxsaW5nIGVkZ2UsIGEgaGlnaC1sZXZlbCBzaWduYWwgaXMgZ2VuZXJhdGVk
+IGJ5Cj4+PiA+ID4gPiA+ID4gPiA+IGV4dGkgYW5kIHNlbnQKPj4+ID4gPiA+ID4gPiA+ID4gdG8g
+R0lDICh3aGljaCB0cmlnZ2VycyBHSUMgaW50ZXJydXB0KS4gVGhpcyBzaWduYWwKPj4+ID4gPiA+
+ID4gPiA+ID4gcmVtYWlucyBoaWdoIHVudGlsCj4+PiA+ID4gPiA+ID4gPiA+IHN0bTMyX2lycV9h
+Y2sgaXMgY2FsbGVkLgo+Pj4gPiA+ID4gPiA+ID4gPgo+Pj4gPiA+ID4gPiA+ID4gPiBTbyB5b3Ug
+b25seSBuZWVkOiAoZXggZm9yIGdwaW9jIDEpLgo+Pj4gPiA+ID4gPiA+ID4gPgo+Pj4gPiA+ID4g
+PiA+ID4gPiBpbnRlcnJ1cHQtcGFyZW50ID0gPCZncGlvYz47Cj4+PiA+ID4gPiA+ID4gPiA+IGlu
+dGVycnVwdHMgPSA8MSBJUlFfVFlQRV9FREdFX0ZBTExJTkc+Owo+Pj4gPiA+ID4gPiA+ID4KPj4+
+ID4gPiA+ID4gPiA+IEhvdyBkb2VzIHRoaXMgZGVhbCB3aXRoIHRoZSBjYXNlIHdoZXJlIHRoZSBk
+ZXZpY2UgaG9sZHMgdGhlCj4+PiA+ID4gPiA+ID4gPiBpbnRlcnJ1cHQKPj4+ID4gPiA+ID4gPiA+
+IGxpbmUgbG93IChzaW5jZSBpdCdzIGxldmVsLXNlbnNpdGl2ZSwgYWN0aXZlIGxvdykgYWZ0ZXIK
+Pj4+IHRoZSBkcml2ZXIKPj4+ID4gPiA+ID4gPiA+IGludGVycnVwdCBoYW5kbGVyIGZpbmlzaGVz
+ID8gRG9lcyBzdWNoIGNvbmRpdGlvbiBnZW5lcmF0ZQo+Pj4gYW5vdGhlcgo+Pj4gPiA+ID4gPiA+
+ID4gaW50ZXJydXB0IGFuZCBjYWxsIHRoZSBkcml2ZXIgaW50ZXJydXB0IGhhbmRsZXIgYWdhaW4g
+PyBJCj4+PiA+ID4gPiA+ID4gPiB3b3VsZCBleHBlY3QKPj4+ID4gPiA+ID4gPiA+IHRoZSBhbnN3
+ZXIgaXMgbm8sIGJlY2F1c2UgdGhlIGludGVycnVwdCBpcyBlZGdlLXRyaWdnZXJlZAo+Pj4gPiA+
+ID4gPiA+ID4gYW5kIHRoZXJlIGlzCj4+PiA+ID4gPiA+ID4gPiBubyBlZGdlLgo+Pj4gPiA+ID4g
+PiA+Cj4+PiA+ID4gPiA+ID4gWW91ciBhc3N1bXB0aW9uIGlzIGdvb2QuIElmIHlvdXIgZGV2aWNl
+IGNvbnRpbnVlIHRvIGhvbGQgdGhlCj4+PiA+ID4gPiA+ID4gbGluZSB0byBsb3cKPj4+ID4gPiA+
+ID4gPiBhdCB0aGUgZW5kIG9mIHlvdXIgaW50ZXJydXB0IGhhbmRsZXIsIG5vIG1vcmUgaW50ZXJy
+dXB0Cj4+PiB3aWxsIGJlCj4+PiA+ID4gPiA+ID4gZ2VuZXJhdGVkLgo+Pj4gPiA+ID4gPgo+Pj4g
+PiA+ID4gPiBCdXQgZG9lcyB0aGF0IGJhc2ljYWxseSBtZWFuIHRoYXQgc3VjaCBhIGRldmljZSBj
+YW5ub3QgYmUKPj4+IHVzZWQgd2l0aAo+Pj4gPiA+ID4gPiBTVE0zMk1QMSBvciBhbSBJIGZ1bmRh
+bWVudGFsbHkgbWlzdGFrZW4gYW5kIGRvbid0IHVuZGVyc3RhbmQKPj4+IGhvdyBhCj4+PiA+ID4g
+PiA+IGxldmVsLXRyaWdnZXJlZCBpbnRlcnJ1cHQgd29ya3MgPyA6KQo+Pj4gPiA+ID4KPj4+ID4g
+PiA+IFlvdSBuZWVkIHRvIHJlbGVhc2UgdGhlIGxpbmUgaW4geW91ciBkZXZpY2UgaW50ZXJydXB0
+IGhhbmRsZXIuCj4+PiBJZiBub3QsCj4+PiA+ID4gPiB5ZXMsIHlvdSB3aWxsIG1pc3MgaW50ZXJy
+dXB0cyA6JAo+Pj4gPiA+Cj4+PiA+ID4gU28gdG8gc3VtIGl0IHVwLCB0aGlzIFNvQyBkb2Vzbid0
+IHN1cHBvcnQgZXh0ZXJuYWwgbGV2ZWwgaW50ZXJydXB0cwo+Pj4gPiA+IG9uIGl0cyBvd24sIGZ1
+bGwgc3RvcC4gWW91J2QgbmVlZCBzb21lIGFkZGl0aW9uYWwgZXh0ZXJuYWwgc2FtcGxpbmcKPj4+
+ID4gPiBIVyB0byByZXRyaWdnZXIgYW4gZWRnZSBvbiBFT0kuCj4+PiA+Cj4+PiA+IE9yIHlvdSBu
+ZWVkIHNvZnR3YXJlIHN1cHBvcnQgdGhhdCBtYXJrcyB0aGUgaXJxIHBlbmRpbmcgYWdhaW4gaWYg
+b24KPj4+ID4gdW5tYXNrIHRoZSBpcnEgbGluZSBpcyBzdGlsbCBhY3RpdmUuCj4+Pgo+Pj4gQXNz
+dW1pbmcgeW91IGNhbiBhY3R1YWxseSBvYnNlcnZlIHRoZSBzdGF0ZSBvZiB0aGUgbGluZSBkaXJl
+Y3RseSwKPj4+IHdpdGhvdXQgaGF2aW5nIHRvIGFkZCBzcGVjaWZpYyBrbm93bGVkZ2Ugb2YgdGhl
+IGdlbmVyYXRpbmcgZGV2aWNlLgo+Pgo+PiBBY2ssIHlvdSB3b24ndCB3YW50IHRvIGxvb2sgaW50
+byB0aGUgcmVnaXN0ZXJzIG9mIHRoZSBpcnEgZ2VuZXJhdGluZwo+PiBkZXZpY2UgZm9yIHRoYXQu
+IEkgYXNzdW1lZCB0aGUgbGluZSdzIHN0YXRlIGlzIG9ic2VydmFibGUgaW4gYW4KPj4gaXJxLWNv
+bnRyb2xsZXIgc3BlY2lmaWMgd2F5Lgo+IAo+IFVuZm9ydHVuYXRlbHksIHRoYXQncyBub3QgYWx3
+YXlzIHRoZSBjYXNlLiBBbmQgaWYgdGhlIG11eCBoYXMgYmVlbgo+IGRlc2lnbmVkIGZvciBlZGdl
+LXNpZ25hbGxpbmcgb25seSwgdGhpcyBwYXJ0aWN1bGFyIGZlYXR1cmUgaXMgdW5saWtlbHkKPiB0
+byBleGlzdCBiZWNhdXNlIGl0IG1ha2VzIGxpdHRsZSBzZW5zZSBpbiB0aGlzIGNvbnRleHQgKHRo
+ZSBpbnB1dAo+IGV2ZW50cyBhcmUgb25seSB0cmFuc2llbnQsIHNvIHlvdSB3b3VsZG4ndCBvYnNl
+cnZlIG11Y2gpLiBJbnN0ZWFkLCB5b3UKPiB3b3VsZCBpbXBsZW1lbnQgYSBzZXQgb2YgbGF0Y2hl
+cy4KPiAKPiBCdXQgd2hvIGtub3dzLCBtYXliZSBhcyBhIGRlYnVnIGZlYXR1cmUgKGFsdGhvdWdo
+IGxvb2tpbmcgYXQgdGhlIFRSTQo+IGRpZG4ndCBsZWFkIHRvIGFueXRoaW5nIHVzZWZ1bCkuLi4K
+PiAKPj4+IERvaW5nIHRoaXMga2luZCBvZiB0cmlja3MgaW4gMjAyMCBpcyBwcmV0dHkgcG9vciBm
+b3IgYSBtb2Rlcm4gU29DLgo+Pgo+PiBXaXRoIHRoZSBhYm92ZSBhc3N1bXB0aW9uIGdpdmVuLCBJ
+IHRoaW5rIHRoYXQgaXMgb2sgZXZlbiBpbiAyMDIwLiAoQnV0IEkKPj4gd29uZGVyIGFib3V0IFNv
+Q3MgaW4gMjAyMCBub3QgYmVpbmcgYWJsZSB0byBoYW5kbGUgbGV2ZWwgc2Vuc2l0aXZlIGlycXMK
+Pj4gOi0pCj4gCj4gUXVpdGUuIFNlZW1zIGluY3JlZGlibHkgcmVzdHJpY3RpdmUsIGFuZCB2ZXJ5
+IHVuZm9ydHVuYXRlLgoKU28gSSB3b25kZXIsIHRoZSBFWFRJIHNob3VsZCBiZSBhYmxlIHRvIHJl
+YWQgdGhlIEdQSU8gbGluZSB3aGljaCBjYXVzZWQKdGhlIGludGVycnVwdCB3aGVuIHRoZSBpbnRl
+cnJ1cHQgaGFuZGxlciByZXR1cm5zLCBhbmQgdHJpZ2dlciB0aGUKaW50ZXJydXB0IGFnYWluIGlm
+IHRoZSBsaW5lIGlzIHN0aWxsIGxvdy4gVGhpcyBtaWdodCBuZWVkIHNvbWUgcGhhbmRsZQpmcm9t
+IHRoZSBFWFRJIHRvIEdQSU8gYmFuayBpbiBEVCwgYnV0IHNob3VsZCBiZSBnZW5lcmFsbHkgZG9h
+YmxlLCBubyA/Ckl0J3MgYSBjcnV0Y2ggYWxsIHJpZ2h0LgoKQnV0IEkgc3RpbGwgd29uZGVyLCB3
+aGF0IGlzIHRoZSBwdXJwb3NlIG9mIHRoZSBFWFRJbXV4IGluIHRoYXQgU29DPwpTaG91bGRuJ3Qg
+dGhhdCBwZXJtaXQgcm91dGluZyBHUElPcyBkaXJlY3RseSBpbnRvIEdJQyBTUElzLCB3aGljaCB3
+b3VsZAp0aGVuIHBlcm1pdCBkZXRlY3RpbmcgYXQgbGVhc3QgbGV2ZWwtaGlnaCBpbnRlcnJ1cHRz
+ID8KCi0tIApCZXN0IHJlZ2FyZHMsCk1hcmVrIFZhc3V0CgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
+aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
