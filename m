@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D372147436
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 23:59:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AEEE147437
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 23:59:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yMXfCJnbl+JgIdiD/16aPjDAVcdoXL+TBeSQ8iEEF0M=; b=YaYv8fiad9cz+W
-	20ru51UXx8bsV4Snh0Jkm4n54bXJhoRRV/R+EEK0P3hjSITu2GOVE1Rvov0M43DujVbEd0RPV6kqf
-	QX7wIYcon+fXVtKEp0i5/7OhToOZmlAZTb/bN+/hPo0QQXcf1kKqpdhk6KXbkdUO37ALaYwvFlThr
-	qq+Mydm+thfajmQ0wCnAY+CYm+jddeDyTmluR44A7xrFsg2XNd742Rcn9jqEEyGeCMABIT0HR85Ue
-	Dt6WKDfFuWyASQ6QDcW3J9/FND2hxPopbWLZ7hu3lqSrONBK9Ra1xlcUrdScKqBZwMYVaeaCcVnR0
-	VaYelSpJw+QAWQxDItKg==;
+	List-Owner; bh=+dlmyVJv7ODOAhYRiljC5+NhxwSMcVfX4COLXaGBu7k=; b=ZN/CIAFuh+0esh
+	LHGlFpTl90idX+idZL9qZ3zzPC/oEH9fizeqQSF+5UKZV1g2HsTCzC4hKOkeh4ZtmdQAJ+uNcppGH
+	VSi4rtvzINErq2c69J9Pr6BkxmNyxW4oZWx1vb5VehiDBHypXJHy3/R1LKrmPoeFrKWQvGsjRR961
+	/C/v+O+myVyrnLppMg9eKfMTWG8JJLiUut5NjRfm6LvDfLtT8exiWj/ZifCYON6Kf18MR8iv4Cxpk
+	FTSuNLlTnLvDFAR26UBIB/JY5s5Q6BLhNwA3KJ84lblTA3c2i3DOUzFVziaekNZNCqcMNf+iY7Szo
+	rIdpU/W/wldKxp2so26w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iulRN-0001AK-G2; Thu, 23 Jan 2020 22:59:09 +0000
+	id 1iulRc-0001TB-GE; Thu, 23 Jan 2020 22:59:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iulQz-00015q-OP
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 22:58:47 +0000
+ id 1iulR3-0001Ae-RH
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 22:58:51 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E7EF021D7D;
- Thu, 23 Jan 2020 22:58:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 64FF422522;
+ Thu, 23 Jan 2020 22:58:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579820325;
- bh=nqyAn+k//cppuY1vQFi8Y79KM+6wFbIlIZtyopOiBL0=;
+ s=default; t=1579820329;
+ bh=Ma7mr84NfXsNfnp/ICmqGQRnXoWqBHa1vhN/R+arV44=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=Gh6n8JsETgFNjzbgwg67lZty0nl3M912MhrZIypM7/DqPCfpMwjF2OH0jD9vB+Jua
- tmd3fr+FTt70fX7rXxRYqfahPPhfnbGrxykQBuJKPVgMeH++RStiGJqYONW6epYMUS
- qXFdXQmTi/kv2bNCXfZgew0W3ve+snA+iLo69iSM=
+ b=iKtw1ctzjapyoZ9ydaYq5z4fUuJODkHiwCgh++gqBmXnc0ScjOy0FHH26IbuBf6dY
+ tzWcyVNyTRVwyNSZ79S08oUfRMXzqx9V9ZyqOwscJUW0pHwsH8K9LiKjJZRNCAQwoy
+ uezSQDbWZ7Vb2rFaur+8jd5yyLDsIk2ptmssdUUk=
 MIME-Version: 1.0
-In-Reply-To: <1575527759-26452-3-git-send-email-rajan.vaja@xilinx.com>
+In-Reply-To: <1575527759-26452-4-git-send-email-rajan.vaja@xilinx.com>
 References: <1574415814-19797-1-git-send-email-rajan.vaja@xilinx.com>
  <1575527759-26452-1-git-send-email-rajan.vaja@xilinx.com>
- <1575527759-26452-3-git-send-email-rajan.vaja@xilinx.com>
-Subject: Re: [PATCH v3 2/6] clk: zynqmp: Extend driver for versal
+ <1575527759-26452-4-git-send-email-rajan.vaja@xilinx.com>
+Subject: Re: [PATCH v3 3/6] clk: zynqmp: Warn user if clock user are more than
+ allowed
 From: Stephen Boyd <sboyd@kernel.org>
 To: Rajan Vaja <rajan.vaja@xilinx.com>, gustavo@embeddedor.com,
  jolly.shah@xilinx.com, m.tretter@pengutronix.de, mark.rutland@arm.com,
  mdf@kernel.org, michal.simek@xilinx.com, mturquette@baylibre.com,
  nava.manne@xilinx.com, robh+dt@kernel.org, tejas.patel@xilinx.com
 User-Agent: alot/0.8.1
-Date: Thu, 23 Jan 2020 14:58:44 -0800
-Message-Id: <20200123225844.E7EF021D7D@mail.kernel.org>
+Date: Thu, 23 Jan 2020 14:58:48 -0800
+Message-Id: <20200123225849.64FF422522@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_145845_986326_7BD7970A 
-X-CRM114-Status: UNSURE (   5.82  )
+X-CRM114-CacheID: sfid-20200123_145850_023925_46EEDD9E 
+X-CRM114-Status: UNSURE (   8.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -89,11 +90,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Rajan Vaja (2019-12-04 22:35:55)
-> Add Versal compatible string to support Versal
-> binding.
+Quoting Rajan Vaja (2019-12-04 22:35:56)
+> Warn user if clock is used by more than allowed devices.
+> This check is done by firmware and returns respective
+> error code. Upon receiving error code for excessive user,
+> warn user for the same.
 > 
-> Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
+> This change is done to restrict VPLL use count. It is
+> assumed that VPLL is used by one user only.
+> 
 > Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 > Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
 > ---
