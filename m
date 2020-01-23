@@ -2,57 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D233D147426
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 23:59:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D372147436
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 23:59:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xWJ8ZKrCM7V5XwkWHFCJ7agzF/E7lxgPUL0g2m5fvX4=; b=OsLWjkx45Ofphv
-	q0BQ53asDHymRcc3Z/32es+11q/oUbFa/rW65wZ+UKAzzGk3tpMK1ab6wlb7TYScCs/VbHT+ZcLSw
-	1ekbBjkWnZv59F38RSNvNTcgU50Q0oTw118fexrBGUALX5rLuRBZAcMKj/QJXZhVekwF9ZTetv5nl
-	OBNKAM6LCnTij/DGZBBH+xGbUwnLPnRYVajd4Gu5uZOn3CQZXWStzwI3RVdn6WMAwn8p7hfEYznbJ
-	hqDJpkY7IeegaxsfGsa8jocpGgLGeYN9tPuEhPKNmq0DMs2dXrj1lZDhugyNDnzmQkSZpBoB9VsYS
-	UhPOdaorlT7WiZQYyelw==;
+	List-Owner; bh=yMXfCJnbl+JgIdiD/16aPjDAVcdoXL+TBeSQ8iEEF0M=; b=YaYv8fiad9cz+W
+	20ru51UXx8bsV4Snh0Jkm4n54bXJhoRRV/R+EEK0P3hjSITu2GOVE1Rvov0M43DujVbEd0RPV6kqf
+	QX7wIYcon+fXVtKEp0i5/7OhToOZmlAZTb/bN+/hPo0QQXcf1kKqpdhk6KXbkdUO37ALaYwvFlThr
+	qq+Mydm+thfajmQ0wCnAY+CYm+jddeDyTmluR44A7xrFsg2XNd742Rcn9jqEEyGeCMABIT0HR85Ue
+	Dt6WKDfFuWyASQ6QDcW3J9/FND2hxPopbWLZ7hu3lqSrONBK9Ra1xlcUrdScKqBZwMYVaeaCcVnR0
+	VaYelSpJw+QAWQxDItKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iulR2-00011e-RM; Thu, 23 Jan 2020 22:58:48 +0000
+	id 1iulRN-0001AK-G2; Thu, 23 Jan 2020 22:59:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iulQs-00010w-RN
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 22:58:39 +0000
+ id 1iulQz-00015q-OP
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 22:58:47 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D2EEC20718;
- Thu, 23 Jan 2020 22:58:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E7EF021D7D;
+ Thu, 23 Jan 2020 22:58:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579820317;
- bh=+vO8N90FVF3xL+pii7NOSq2FtfZu7Erby6E+v2V6kuQ=;
+ s=default; t=1579820325;
+ bh=nqyAn+k//cppuY1vQFi8Y79KM+6wFbIlIZtyopOiBL0=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=2Zns5AlZe0m8NGkGX2ryWE8GWo44d309PozzHP/DAv5lMlw3goyDdq1WwrzUdjnOE
- TPQa27nTpE7YHTFCdOj54Y55C9SUqf+9qGKRBd52neO9DK7/VXIamyGiHvmJTQ9Gro
- UX1/GxHwEpg83VQ64d70xfk4XQhnfKXWmQ2iM6S8=
+ b=Gh6n8JsETgFNjzbgwg67lZty0nl3M912MhrZIypM7/DqPCfpMwjF2OH0jD9vB+Jua
+ tmd3fr+FTt70fX7rXxRYqfahPPhfnbGrxykQBuJKPVgMeH++RStiGJqYONW6epYMUS
+ qXFdXQmTi/kv2bNCXfZgew0W3ve+snA+iLo69iSM=
 MIME-Version: 1.0
-In-Reply-To: <1575527759-26452-2-git-send-email-rajan.vaja@xilinx.com>
+In-Reply-To: <1575527759-26452-3-git-send-email-rajan.vaja@xilinx.com>
 References: <1574415814-19797-1-git-send-email-rajan.vaja@xilinx.com>
  <1575527759-26452-1-git-send-email-rajan.vaja@xilinx.com>
- <1575527759-26452-2-git-send-email-rajan.vaja@xilinx.com>
-Subject: Re: [PATCH v3 1/6] dt-bindings: clock: Add bindings for versal clock
- driver
+ <1575527759-26452-3-git-send-email-rajan.vaja@xilinx.com>
+Subject: Re: [PATCH v3 2/6] clk: zynqmp: Extend driver for versal
 From: Stephen Boyd <sboyd@kernel.org>
 To: Rajan Vaja <rajan.vaja@xilinx.com>, gustavo@embeddedor.com,
  jolly.shah@xilinx.com, m.tretter@pengutronix.de, mark.rutland@arm.com,
  mdf@kernel.org, michal.simek@xilinx.com, mturquette@baylibre.com,
  nava.manne@xilinx.com, robh+dt@kernel.org, tejas.patel@xilinx.com
 User-Agent: alot/0.8.1
-Date: Thu, 23 Jan 2020 14:58:37 -0800
-Message-Id: <20200123225837.D2EEC20718@mail.kernel.org>
+Date: Thu, 23 Jan 2020 14:58:44 -0800
+Message-Id: <20200123225844.E7EF021D7D@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_145838_909103_D2477758 
-X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-CacheID: sfid-20200123_145845_986326_7BD7970A 
+X-CRM114-Status: UNSURE (   5.82  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -90,12 +89,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Rajan Vaja (2019-12-04 22:35:54)
-> Add documentation to describe Xilinx Versal clock driver
-> bindings.
+Quoting Rajan Vaja (2019-12-04 22:35:55)
+> Add Versal compatible string to support Versal
+> binding.
 > 
+> Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
+> Signed-off-by: Michal Simek <michal.simek@xilinx.com>
 > Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
 > ---
 
 Applied to clk-next
