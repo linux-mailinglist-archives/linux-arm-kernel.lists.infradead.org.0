@@ -2,76 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4FAC1465CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:33:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 158D91465EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:44:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=as8+0uV651sQmD3S1JgYgq6zmnK14jcl15psvdytf/0=; b=T9iVRy/QOMi3VI
-	gKeY+KszWuNnvbcMRRh2CxiD8keuXxfULInxK9X8/Y1QzRZcULJtfTvWS0xDiu8Gv1fdOC7NEIx/b
-	tYdmNw1XpJCPLXPYV/1xAU2nS9mGb3ECeVT94++/hqn+0G11XFf1tGHBGtfn5faWHqU18y/Ge//wb
-	89xFE48J82FX9NRMNjC8halA+0nHHHUFK0IPya5XIAZXFzyMP2mA092t5Dd1d4WhLR36rvNNZvVmV
-	S5Qccf4HkrZT18J8GKWur4c+bbI8CM2uZ1j3aw4YzCUnplz7KliINnVQSoUVRsP6IoefdMq7QAa2h
-	5JYBpfrV3X+CqaU3X2+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=X3mKt0sdFe3I7WFfff83nR1CwKr7DRRVeKocLTA+bJ8=; b=opK/reYTofTwQjheCLDe1m8bV
+	gWZW+ROkKoF/1ZPqueJ3FP8ARAsrvxPZtiMCeiYxk/+Dk1AwvL8coIR9MYTOL+A90jQkcTmJqy6Cx
+	d5gBsA+EEPgr8567aUgMv4Txe1uaxrgmRmkHy0L7l5kPN3vDwfGtV6H963/ef2SlazrXulSR263qY
+	Vh20dp0WnPip1OXSwqatvRtP9j0V9lMOisa3vnqtuAJYdjUgqDmwynpR287HGR1A9Q4ngY6B/WqxT
+	K6rJUSC7eCnsR/Kr1Srz0qo+q6t4kFnaRcAMb0lIwQeWYZOPeVmgtuunqXQRo4v1QndnqKQxfnTE+
+	/Y2F5DRWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuZnD-0005Rw-GN; Thu, 23 Jan 2020 10:32:55 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1iuZy9-0000I9-Ob; Thu, 23 Jan 2020 10:44:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuZn4-0005RA-2v
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:32:47 +0000
-Received: by mail-oi1-f194.google.com with SMTP id d62so2398487oia.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Jan 2020 02:32:45 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QcZp4gfVUSDInEQle12WovyUYPuFeimVii8rBuqstqk=;
- b=MtgtZ+dObdbd8Np7KSDqIiNZ0EQmXpmh+SR0yvhB3NPI8BoxcVgV3NYIIVpEsB0Sbo
- HCH9g0PVwfLzce80rafn25ZZLZC2NVqIWJensVEsqHbJeEuEf/ukUGVzUnnkNq3gw5n/
- eyHxAHtH2IYBKiptflK+daLOndRrnuTqAN1nokhfsok8OAIpMwIS3oYYxj31eIG+feVE
- E4Aeh1K2B8eKyy+kvc43M8mYp5Ti9vHcdzo88v+UyRLx4YvqnD89OnnJ2nsQkkw8cIZk
- HixggILl0mASpEY7sdbWxylvkwtv4eXJV8sMqCgojJohLd7l6q6MAsYufzh2DlehbsHE
- Na5w==
-X-Gm-Message-State: APjAAAXquAfrfOl9b927m8iHbXbptac97iKbmROqkBE79nDYBgEdF4PC
- 5fSIlIq/3vubu85c72i5MXyyI9qpGGcY1KqD/Rw=
-X-Google-Smtp-Source: APXvYqy2H34MWaUdGdf1bbSGCmjx+hi8NQGrCSPpVJ9h7cLecMi626nnbrNMNEVvCTAVxOtrtW3m1l6awh+14xF2ZtM=
-X-Received: by 2002:aca:1a06:: with SMTP id a6mr9548275oia.148.1579775564167; 
- Thu, 23 Jan 2020 02:32:44 -0800 (PST)
+ id 1iuZy1-0000Hq-Qs
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:44:07 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EE65124125;
+ Thu, 23 Jan 2020 10:44:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579776245;
+ bh=m4u2YDQG2/L2dB0BvcFaUw0MzYEvAvAvZWF+DtGDh9Q=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=zxbn1JXTdGSJSpwe2vLF5wOX/zG00r5C/ZtqdD4OLkydFLFyptoYPz7i02XQYGxYd
+ yD100QX8eX7094oCfh9vllw9ghLDMY0uJkFo9i/OOZu1mibvQ569p+7oMK+KyXqtBk
+ y8y+2V4ySFwTZfGyZLqWExj2bNvgj2irVSWC6xp0=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1iuZxz-000vRH-6i; Thu, 23 Jan 2020 10:44:03 +0000
 MIME-Version: 1.0
-References: <56c7b6d5-1248-15bd-8441-5d80557455b3@free.fr>
- <CAMuHMdX3kZoEfCeGamreeWq0-Tu2+Mw8MYEbRUZV8wBS+e2K=A@mail.gmail.com>
- <8f1f01a1-b0c7-77d5-7d01-dd53811fa217@free.fr>
-In-Reply-To: <8f1f01a1-b0c7-77d5-7d01-dd53811fa217@free.fr>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 23 Jan 2020 11:32:32 +0100
-Message-ID: <CAMuHMdW=0Qf=bdE8Vy75wySRV5wzWhgM=-vhXjc0RhLGwomF_g@mail.gmail.com>
-Subject: Re: [RFC PATCH v2] clk: Use a new helper in managed functions
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
+Date: Thu, 23 Jan 2020 10:44:03 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: Re: STM32MP1 level triggered interrupts
+In-Reply-To: <20200123101225.nscpc5t4nmlarbw2@pengutronix.de>
+References: <20bb72d0-8258-abc0-e729-4d3d5a75c41c@denx.de>
+ <d6e02817-2464-51b9-246a-7720b607b8d6@st.com>
+ <65a1c5b2-c1b9-322f-338c-e6ff6379d8d1@denx.de>
+ <129d04a0-c846-506d-5726-4a1024d977a6@st.com>
+ <80db762c-3b3d-f007-2f9b-dadbffd95782@denx.de>
+ <360b1adc-32f1-7993-c463-e52c7a5a8a67@st.com>
+ <c4f08f59acd31951527ef1d6e9409e6f@kernel.org>
+ <20200123101225.nscpc5t4nmlarbw2@pengutronix.de>
+Message-ID: <03fd1cb7b5985b3221f66c6b0058adc8@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: u.kleine-koenig@pengutronix.de, alexandre.torgue@st.com,
+ marex@denx.de, mcoquelin.stm32@gmail.com, patrick.delaunay@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_023246_126763_703A10E4 
-X-CRM114-Status: GOOD (  19.96  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200123_024405_913587_0F81EE06 
+X-CRM114-Status: GOOD (  20.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,98 +96,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>,
- Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- linux-clk <linux-clk@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Marek Vasut <marex@denx.de>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On Thu, Jan 23, 2020 at 11:13 AM Marc Gonzalez <marc.w.gonzalez@free.fr> wrote:
-> On 22/01/2020 14:33, Geert Uytterhoeven wrote:
-> > On Wed, Jan 22, 2020 at 2:02 PM Marc Gonzalez wrote:
-> >> Introduce devm_add() to factorize devres_alloc/devres_add calls.
-> >>
-> >> Using that helper produces simpler code and smaller object size:
-> >>
-> >> 1 file changed, 27 insertions(+), 66 deletions(-)
-> >>
-> >>     text           data     bss     dec     hex filename
-> >> -   1708             80       0    1788     6fc drivers/clk/clk-devres.o
-> >> +   1508             80       0    1588     634 drivers/clk/clk-devres.o
-> >>
-> >> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
-
-> >> --- a/drivers/base/devres.c
-> >> +++ b/drivers/base/devres.c
-> >> @@ -685,6 +685,20 @@ int devres_release_group(struct device *dev, void *id)
-> >>  }
-> >>  EXPORT_SYMBOL_GPL(devres_release_group);
-> >>
-> >> +void *devm_add(struct device *dev, dr_release_t func, void *arg, size_t size)
-> >
-> > Is there any advantage of using dr_release_t over "void (*action)(void *)",
-> > like devm_add_action() does?  The latter lacks the "device *" parameter.
->
-> (I did forget to mention that v1 used devm_add_action.)
-> https://patchwork.kernel.org/patch/11262685/
->
-> A limitation of devm_add_action is that it stores the void *data argument "as is".
-> Users cannot pass the address of a struct on the stack. devm_add() addresses that
-> specific use-case, while being a minimal wrapper around devres_alloc + devres_add.
-> (devm_add_action adds an extra level of indirection.)
-
-I didn't mean the advantage of devm_add() over devm_add_action(),
-but the advantage of dr_release_t, which has a device pointer.
-
-> >> +{
-> >> +       void *data = devres_alloc(func, size, GFP_KERNEL);
-> >> +
-> >> +       if (data) {
-> >> +               memcpy(data, arg, size);
-> >> +               devres_add(dev, data);
-> >> +       } else
-> >> +               func(dev, arg);
-> >> +
-> >> +       return data;
-> >
-> > Why return data or NULL, instead of 0 or -Efoo, like devm_add_action()?
->
-> My intent is to make devm_add a minimal wrapper (it even started out as
-> a macro). As such, I just transparently pass the result of devres_alloc.
->
-> Do you see an advantage in processing the result?
-
-There are actually two questions to consider here:
-  1. Is there a use case for returning the data pointer?
-     I.e. will the caller ever use it?
-  2. Can there be another failure mode than out-of-memory?
-     Changing from NULL to ERR_PTR() later means that all callers
-     need to be updated.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAyMC0wMS0yMyAxMDoxMiwgVXdlIEtsZWluZS1Lw7ZuaWcgd3JvdGU6Cj4gT24gVGh1LCBK
+YW4gMjMsIDIwMjAgYXQgMDk6MjI6NDhBTSArMDAwMCwgTWFyYyBaeW5naWVyIHdyb3RlOgo+PiBP
+biAyMDIwLTAxLTIzIDA4OjI3LCBBbGV4YW5kcmUgVG9yZ3VlIHdyb3RlOgo+PiA+IE9uIDEvMjIv
+MjAgODoyOSBQTSwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+ID4gPiBPbiAxLzIyLzIwIDY6MTkgUE0s
+IEFsZXhhbmRyZSBUb3JndWUgd3JvdGU6Cj4+ID4gPgo+PiA+ID4gSGksCj4+ID4gPgo+PiA+ID4g
+Wy4uLl0KPj4gPiA+Cj4+ID4gPiA+ID4gPiBDb25jZXJuaW5nLCB5b3VyIHF1ZXN0aW9uOgo+PiA+
+ID4gPiA+ID4KPj4gPiA+ID4gPiA+IFNldHRpbmcgeW91ciBncGlvQyBpbnRlcnJ1cHRpb24gYXMg
+ImZhbGxpbmcgZWRnZSIgc2hvdWxkCj4+ID4gPiA+ID4gPiBiZSBlbm91Z2guIE9uCj4+ID4gPiA+
+ID4gPiBncGlvQ3ggZmFsbGluZyBlZGdlLCBhIGhpZ2gtbGV2ZWwgc2lnbmFsIGlzIGdlbmVyYXRl
+ZCBieQo+PiA+ID4gPiA+ID4gZXh0aSBhbmQgc2VudAo+PiA+ID4gPiA+ID4gdG8gR0lDICh3aGlj
+aCB0cmlnZ2VycyBHSUMgaW50ZXJydXB0KS4gVGhpcyBzaWduYWwKPj4gPiA+ID4gPiA+IHJlbWFp
+bnMgaGlnaCB1bnRpbAo+PiA+ID4gPiA+ID4gc3RtMzJfaXJxX2FjayBpcyBjYWxsZWQuCj4+ID4g
+PiA+ID4gPgo+PiA+ID4gPiA+ID4gU28geW91IG9ubHkgbmVlZDogKGV4IGZvciBncGlvYyAxKS4K
+Pj4gPiA+ID4gPiA+Cj4+ID4gPiA+ID4gPiBpbnRlcnJ1cHQtcGFyZW50ID0gPCZncGlvYz47Cj4+
+ID4gPiA+ID4gPiBpbnRlcnJ1cHRzID0gPDEgSVJRX1RZUEVfRURHRV9GQUxMSU5HPjsKPj4gPiA+
+ID4gPgo+PiA+ID4gPiA+IEhvdyBkb2VzIHRoaXMgZGVhbCB3aXRoIHRoZSBjYXNlIHdoZXJlIHRo
+ZSBkZXZpY2UgaG9sZHMgdGhlCj4+ID4gPiA+ID4gaW50ZXJydXB0Cj4+ID4gPiA+ID4gbGluZSBs
+b3cgKHNpbmNlIGl0J3MgbGV2ZWwtc2Vuc2l0aXZlLCBhY3RpdmUgbG93KSBhZnRlciB0aGUgZHJp
+dmVyCj4+ID4gPiA+ID4gaW50ZXJydXB0IGhhbmRsZXIgZmluaXNoZXMgPyBEb2VzIHN1Y2ggY29u
+ZGl0aW9uIGdlbmVyYXRlIGFub3RoZXIKPj4gPiA+ID4gPiBpbnRlcnJ1cHQgYW5kIGNhbGwgdGhl
+IGRyaXZlciBpbnRlcnJ1cHQgaGFuZGxlciBhZ2FpbiA/IEkKPj4gPiA+ID4gPiB3b3VsZCBleHBl
+Y3QKPj4gPiA+ID4gPiB0aGUgYW5zd2VyIGlzIG5vLCBiZWNhdXNlIHRoZSBpbnRlcnJ1cHQgaXMg
+ZWRnZS10cmlnZ2VyZWQKPj4gPiA+ID4gPiBhbmQgdGhlcmUgaXMKPj4gPiA+ID4gPiBubyBlZGdl
+Lgo+PiA+ID4gPgo+PiA+ID4gPiBZb3VyIGFzc3VtcHRpb24gaXMgZ29vZC4gSWYgeW91ciBkZXZp
+Y2UgY29udGludWUgdG8gaG9sZCB0aGUKPj4gPiA+ID4gbGluZSB0byBsb3cKPj4gPiA+ID4gYXQg
+dGhlIGVuZCBvZiB5b3VyIGludGVycnVwdCBoYW5kbGVyLCBubyBtb3JlIGludGVycnVwdCB3aWxs
+IGJlCj4+ID4gPiA+IGdlbmVyYXRlZC4KPj4gPiA+Cj4+ID4gPiBCdXQgZG9lcyB0aGF0IGJhc2lj
+YWxseSBtZWFuIHRoYXQgc3VjaCBhIGRldmljZSBjYW5ub3QgYmUgdXNlZCB3aXRoCj4+ID4gPiBT
+VE0zMk1QMSBvciBhbSBJIGZ1bmRhbWVudGFsbHkgbWlzdGFrZW4gYW5kIGRvbid0IHVuZGVyc3Rh
+bmQgaG93IGEKPj4gPiA+IGxldmVsLXRyaWdnZXJlZCBpbnRlcnJ1cHQgd29ya3MgPyA6KQo+PiA+
+Cj4+ID4gWW91IG5lZWQgdG8gcmVsZWFzZSB0aGUgbGluZSBpbiB5b3VyIGRldmljZSBpbnRlcnJ1
+cHQgaGFuZGxlci4gSWYgbm90LAo+PiA+IHllcywgeW91IHdpbGwgbWlzcyBpbnRlcnJ1cHRzIDok
+Cj4+IAo+PiBTbyB0byBzdW0gaXQgdXAsIHRoaXMgU29DIGRvZXNuJ3Qgc3VwcG9ydCBleHRlcm5h
+bCBsZXZlbCBpbnRlcnJ1cHRzCj4+IG9uIGl0cyBvd24sIGZ1bGwgc3RvcC4gWW91J2QgbmVlZCBz
+b21lIGFkZGl0aW9uYWwgZXh0ZXJuYWwgc2FtcGxpbmcKPj4gSFcgdG8gcmV0cmlnZ2VyIGFuIGVk
+Z2Ugb24gRU9JLgo+IAo+IE9yIHlvdSBuZWVkIHNvZnR3YXJlIHN1cHBvcnQgdGhhdCBtYXJrcyB0
+aGUgaXJxIHBlbmRpbmcgYWdhaW4gaWYgb24KPiB1bm1hc2sgdGhlIGlycSBsaW5lIGlzIHN0aWxs
+IGFjdGl2ZS4KCkFzc3VtaW5nIHlvdSBjYW4gYWN0dWFsbHkgb2JzZXJ2ZSB0aGUgc3RhdGUgb2Yg
+dGhlIGxpbmUgZGlyZWN0bHksCndpdGhvdXQgaGF2aW5nIHRvIGFkZCBzcGVjaWZpYyBrbm93bGVk
+Z2Ugb2YgdGhlIGdlbmVyYXRpbmcgZGV2aWNlLgoKRG9pbmcgdGhpcyBraW5kIG9mIHRyaWNrcyBp
+biAyMDIwIGlzIHByZXR0eSBwb29yIGZvciBhIG1vZGVybiBTb0MuCgogICAgICAgICBNLgotLSAK
+SmF6eiBpcyBub3QgZGVhZC4gSXQganVzdCBzbWVsbHMgZnVubnkuLi4KCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
