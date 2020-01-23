@@ -2,58 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68EDF14673A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:50:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D6A2146749
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:55:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:Subject:From:References:To:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/eeE9YecxFuDRZxAC8LP2d1nZRzNOlum0oin/HTTCdY=; b=osDfOVsBk7rRJPccUOJPTK5sN
-	48OocL1gVFXtFZQCeKi9x3BnBGguxJl1rehjmxOgFXLUtI/SyhZ26D40+6TwAkN8MNGqeRwDERgid
-	Vx9z0vWLYjAjHQu3OH97uxXpylQbuMwKm7mlNrDD0FEr2Qirx2Ha2pSi4/dvRdhQSnQjSWmYfcExZ
-	ZfCnlY/Y6BPmu9TAGXVcETN53k47kA6fVoOwAxMwdGxugWDrUt9o6wHv2JeYvl8vGCQOJqXLa7wLj
-	qGubuahUpWmfOndaQfNd8886iPkd3IOmHrGLjoe0HYAkL6DIhbu1RVmc3oY6PTspIZoEvWwI75n9y
-	2LOULlr7Q==;
+	 bh=+yPQ2UkPtm3Lnyz7N0aFaERtjczt8ylQdP+Gk9DqGsY=; b=ZlLRv070f7vJgLRLdXpuP1H8y
+	alicGOb9QK5gXegVL0fJJI50Y7Z7TWnfNDlE096cYZC5iFx1SQZW8aDK+CxBUm6g9Zx3Vg+jqgb/w
+	llUVutaj5Wv3WNZ8EEzUwvGjaCZ2Kmjg+IcchmnJjyDOGKxCnzxFwlaC+RSrpMnvsPxTQEsM3RO/u
+	GNirvRDwJHAs0l7cysTjNqa0Z45i202vfUvYMFZ/ntR+V9pOze2BgZHJF0/Ajmh85sj7fb960ioBk
+	XIuEmCSM1BF3OzANRRFRquNhHCMTqInHIUfR0bACc7IqxTOQtuZGj+wHM9V/O1BJIFUoAq7av9FqV
+	inVbSSZ0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuazg-00054N-JW; Thu, 23 Jan 2020 11:49:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuazR-00053U-RT
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:49:39 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 24C03328;
- Thu, 23 Jan 2020 03:49:35 -0800 (PST)
-Received: from [10.37.12.160] (unknown [10.37.12.160])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6E5E53F6C4;
- Thu, 23 Jan 2020 03:49:31 -0800 (PST)
-From: Lukasz Luba <lukasz.luba@arm.com>
-Subject: Re: [PATCH v2 6/6] arm64: use activity monitors for frequency
- invariance
-To: Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
- will@kernel.org, mark.rutland@arm.com, maz@kernel.org,
- suzuki.poulose@arm.com, sudeep.holla@arm.com, dietmar.eggemann@arm.com
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-7-ionela.voinescu@arm.com>
-Message-ID: <0ca05a2d-918b-0c70-6dc6-ef1f5f58f388@arm.com>
-Date: Thu, 23 Jan 2020 11:49:29 +0000
+	id 1iub4X-00074f-PA; Thu, 23 Jan 2020 11:54:53 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iub4L-00074A-T9
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:54:43 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=bjornoya.blackshift.org)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mkl@pengutronix.de>)
+ id 1iub4G-0007cn-FW; Thu, 23 Jan 2020 12:54:36 +0100
+Received: from [IPv6:2a03:f580:87bc:d400:197e:2d9b:882c:b51d] (unknown
+ [IPv6:2a03:f580:87bc:d400:197e:2d9b:882c:b51d])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256 client-signature RSA-PSS (4096 bits) client-digest SHA256)
+ (Client CN "mkl@blackshift.org",
+ Issuer "StartCom Class 1 Client CA" (not verified))
+ (Authenticated sender: mkl@blackshift.org)
+ by smtp.blackshift.org (Postfix) with ESMTPSA id 23BAF4A8E22;
+ Thu, 23 Jan 2020 11:54:32 +0000 (UTC)
+To: Faiz Abbas <faiz_abbas@ti.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ netdev@vger.kernel.org, linux-can@vger.kernel.org
+References: <20200122080310.24653-1-faiz_abbas@ti.com>
+ <e3025ab6-04b5-3eba-5e0d-70caabee26fb@pengutronix.de>
+ <f6bf75f0-68ea-0b61-ed43-9ad894016cfd@ti.com>
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mkl@pengutronix.de; prefer-encrypt=mutual; keydata=
+ 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
+Subject: Re: [PATCH 0/3] Add Support for MCAN in AM654x-idk
+Message-ID: <8316b645-72a8-7348-ad4c-1a84535b8b3f@pengutronix.de>
+Date: Thu, 23 Jan 2020 12:54:27 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20191218182607.21607-7-ionela.voinescu@arm.com>
-Content-Language: en-US
+In-Reply-To: <f6bf75f0-68ea-0b61-ed43-9ad894016cfd@ti.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: mkl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_034937_976710_0A27C579 
-X-CRM114-Status: GOOD (  39.30  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200123_035442_108547_3C81530D 
+X-CRM114-Status: GOOD (  18.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,412 +140,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, peterz@infradead.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: mark.rutland@arm.com, nm@ti.com, catalin.marinas@arm.com,
+ sriram.dash@samsung.com, t-kristo@ti.com, robh+dt@kernel.org, dmurphy@ti.com,
+ davem@davemloft.net, wg@grandegger.com
+Content-Type: multipart/mixed; boundary="===============3079353256574713158=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ionela,
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3079353256574713158==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="ZekFneOlWau0d0DimzpZ8ix6vmezbf04K"
 
-Please find my few comments below.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--ZekFneOlWau0d0DimzpZ8ix6vmezbf04K
+Content-Type: multipart/mixed; boundary="dZh96g5yZPeAk3UDgD43pvfcj6xxa9jF3";
+ protected-headers="v1"
+From: Marc Kleine-Budde <mkl@pengutronix.de>
+To: Faiz Abbas <faiz_abbas@ti.com>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
+ netdev@vger.kernel.org, linux-can@vger.kernel.org
+Cc: catalin.marinas@arm.com, mark.rutland@arm.com, robh+dt@kernel.org,
+ davem@davemloft.net, wg@grandegger.com, sriram.dash@samsung.com,
+ dmurphy@ti.com, nm@ti.com, t-kristo@ti.com
+Message-ID: <8316b645-72a8-7348-ad4c-1a84535b8b3f@pengutronix.de>
+Subject: Re: [PATCH 0/3] Add Support for MCAN in AM654x-idk
+References: <20200122080310.24653-1-faiz_abbas@ti.com>
+ <e3025ab6-04b5-3eba-5e0d-70caabee26fb@pengutronix.de>
+ <f6bf75f0-68ea-0b61-ed43-9ad894016cfd@ti.com>
+In-Reply-To: <f6bf75f0-68ea-0b61-ed43-9ad894016cfd@ti.com>
 
-On 12/18/19 6:26 PM, Ionela Voinescu wrote:
-> The Frequency Invariance Engine (FIE) is providing a frequency
-> scaling correction factor that helps achieve more accurate
-> load-tracking.
-> 
-> So far, for arm and arm64 platforms, this scale factor has been
-> obtained based on the ratio between the current frequency and the
-> maximum supported frequency recorded by the cpufreq policy. The
-> setting of this scale factor is triggered from cpufreq drivers by
-> calling arch_set_freq_scale. The current frequency used in computation
-> is the frequency requested by a governor, but it may not be the
-> frequency that was implemented by the platform.
-> 
-> This correction factor can also be obtained using a core counter and a
-> constant counter to get information on the performance (frequency based
-> only) obtained in a period of time. This will more accurately reflect
-> the actual current frequency of the CPU, compared with the alternative
-> implementation that reflects the request of a performance level from
-> the OS.
-> 
-> Therefore, implement arch_scale_freq_tick to use activity monitors, if
-> present, for the computation of the frequency scale factor.
-> 
-> The use of AMU counters depends on:
->   - CONFIG_ARM64_AMU_EXTN - depents on the AMU extension being present
->   - CONFIG_CPU_FREQ - the current frequency obtained using counter
->     information is divided by the maximum frequency obtained from the
->     cpufreq policy.
-> 
-> While it is possible to have a combination of CPUs in the system with
-> and without support for activity monitors, the use of counters for
-> frequency invariance is only enabled for a CPU, if all related CPUs
-> (CPUs in the same frequency domain) support and have enabled the core
+--dZh96g5yZPeAk3UDgD43pvfcj6xxa9jF3
+Content-Type: text/plain; charset=utf-8
+Content-Language: de-DE
+Content-Transfer-Encoding: quoted-printable
 
-This looks like an edge case scenario, for which we are designing the
-whole machinery with workqueues. AFAIU we cannot run the code in
-arch_set_freq_scale() and you want to be check all CPUs upfront.
+On 1/23/20 12:46 PM, Faiz Abbas wrote:
+> Marc,
+>=20
+> On 23/01/20 4:47 pm, Marc Kleine-Budde wrote:
+>> On 1/22/20 9:03 AM, Faiz Abbas wrote:
+>>> This series adds driver patches to support MCAN in TI's AM654x-idk.
+>>>
+>>> Faiz Abbas (3):
+>>>   dt-bindings: net: can: m_can: Add Documentation for stb-gpios
+>>>   can: m_can: m_can_platform: Add support for enabling transceiver
+>>>     through the STB line
+>>>   arm64: defconfig: Add Support for Bosch M_CAN controllers
+>>>
+>>>  Documentation/devicetree/bindings/net/can/m_can.txt |  2 ++
+>>>  arch/arm64/configs/defconfig                        |  3 +++
+>>>  drivers/net/can/m_can/m_can_platform.c              | 12 +++++++++++=
++
+>>>  3 files changed, 17 insertions(+)
+>>
+>> What about adding support for xceiver-supply as done in several other
+>> drivers (ti_hecc.c, flexcan.c, mcp251x.c)? And using this for the stb =
+line?
+>=20
+> Looks like you had given this feedback a long time ago and I forgot
+> about it. Sorry about that :-)
+>=20
+> https://lore.kernel.org/patchwork/patch/1006238/
+>=20
+> But now that I think about it, its kinda weird that we are modelling
+> part of the transceiver as a separate child node
+> (Documentation/devicetree/bindings/net/can/can-transceiver.txt) and the=
 
-Maybe you can just wait till all CPUs boot and then set the proper
-flags and finish initialization. Something like:
-per_cpu(s8, amu_feat) /* form the patch 1/6 */
-OR
-per_cpu(u8, amu_scale_freq) /* from this patch */
-with maybe some values:
-0 - not checked yet
-1 - checked and present
--1 - checked and not available
--2 - checked but in conflict with others in the freq domain
--3..-k - other odd configurations
+> other parts as a regulator.
 
-could potentially eliminate the need of workqueues.
+We need a regulator, as there are dual phy chips with a single enable lin=
+e.
 
-Then, if we could trigger this from i.e. late_initcall, the CPUs
-should be online and you can validate them.
+> Anyone looking at the transceiver node would figure thats where the
+> enable gpio/regulator node needs to go instead of the parent node.
+> Shouldn't we have all transceiver properties under the same node?
 
-> and constant activity monitor counters. In this way, there is a clear
-> separation between the policies for which arch_set_freq_scale
-> (cpufreq based FIE) is used, and the policies for which
-> arch_scale_freq_tick (counter based FIE) is used to set the frequency
-> scale factor. For this purpose, a cpufreq notifier is registered to
-> trigger validation work for CPUs and policies at policy creation that
-> will enable or disable the use of AMU counters for frequency invariance.
-> 
-> Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Sudeep Holla <sudeep.holla@arm.com>
-> ---
->   arch/arm64/include/asm/topology.h |   9 ++
->   arch/arm64/kernel/topology.c      | 233 ++++++++++++++++++++++++++++++
->   drivers/base/arch_topology.c      |  16 ++
->   3 files changed, 258 insertions(+)
-> 
-> diff --git a/arch/arm64/include/asm/topology.h b/arch/arm64/include/asm/topology.h
-> index a4d945db95a2..98412dd27565 100644
-> --- a/arch/arm64/include/asm/topology.h
-> +++ b/arch/arm64/include/asm/topology.h
-> @@ -19,6 +19,15 @@ int pcibus_to_node(struct pci_bus *bus);
->   /* Replace task scheduler's default frequency-invariant accounting */
->   #define arch_scale_freq_capacity topology_get_freq_scale
->   
-> +#if defined(CONFIG_ARM64_AMU_EXTN) && defined(CONFIG_CPU_FREQ)
-> +void topology_scale_freq_tick(void);
-> +/*
-> + * Replace task scheduler's default counter-based frequency-invariance
-> + * scale factor setting.
-> + */
-> +#define arch_scale_freq_tick topology_scale_freq_tick
-> +#endif
-> +
->   /* Replace task scheduler's default cpu-invariant accounting */
->   #define arch_scale_cpu_capacity topology_get_cpu_scale
->   
-> diff --git a/arch/arm64/kernel/topology.c b/arch/arm64/kernel/topology.c
-> index fa9528dfd0ce..61f8264afec9 100644
-> --- a/arch/arm64/kernel/topology.c
-> +++ b/arch/arm64/kernel/topology.c
-> @@ -14,6 +14,7 @@
->   #include <linux/acpi.h>
->   #include <linux/arch_topology.h>
->   #include <linux/cacheinfo.h>
-> +#include <linux/cpufreq.h>
->   #include <linux/init.h>
->   #include <linux/percpu.h>
->   
-> @@ -120,4 +121,236 @@ int __init parse_acpi_topology(void)
->   }
->   #endif
->   
-> +#if defined(CONFIG_ARM64_AMU_EXTN) && defined(CONFIG_CPU_FREQ)
->   
-> +#undef pr_fmt
-> +#define pr_fmt(fmt) "AMU: " fmt
-> +
-> +static void init_fie_counters_done_workfn(struct work_struct *work);
-> +static DECLARE_WORK(init_fie_counters_done_work,
-> +		    init_fie_counters_done_workfn);
-> +
-> +static struct workqueue_struct *policy_amu_fie_init_wq;
-> +static struct workqueue_struct *cpu_amu_fie_init_wq;
-> +
-> +struct cpu_amu_work {
-> +	struct work_struct cpu_work;
-> +	struct work_struct policy_work;
-> +	unsigned int cpuinfo_max_freq;
-> +	struct cpumask policy_cpus;
-> +	bool cpu_amu_fie;
-> +};
-> +static struct cpu_amu_work __percpu *works;
-> +static cpumask_var_t cpus_to_visit;
-> +
-> +static DEFINE_PER_CPU_READ_MOSTLY(unsigned long, arch_max_freq_scale);
-> +static DEFINE_PER_CPU(u64, arch_const_cycles_prev);
-> +static DEFINE_PER_CPU(u64, arch_core_cycles_prev);
-> +DECLARE_PER_CPU(u8, amu_scale_freq);
-> +
-> +static void cpu_amu_fie_init_workfn(struct work_struct *work)
-> +{
-> +	u64 core_cnt, const_cnt, ratio;
-> +	struct cpu_amu_work *amu_work;
-> +	int cpu = smp_processor_id();
-> +
-> +	if (!cpu_has_amu_feat()) {
-> +		pr_debug("CPU%d: counters are not supported.\n", cpu);
-> +		return;
-> +	}
-> +
-> +	core_cnt = read_sysreg_s(SYS_AMEVCNTR0_CORE_EL0);
-> +	const_cnt = read_sysreg_s(SYS_AMEVCNTR0_CONST_EL0);
-> +
-> +	if (unlikely(!core_cnt || !const_cnt)) {
-> +		pr_err("CPU%d: cycle counters are not enabled.\n", cpu);
-> +		return;
-> +	}
-> +
-> +	amu_work = container_of(work, struct cpu_amu_work, cpu_work);
-> +	if (unlikely(!(amu_work->cpuinfo_max_freq))) {
-> +		pr_err("CPU%d: invalid maximum frequency.\n", cpu);
-> +		return;
-> +	}
-> +
-> +	/*
-> +	 * Pre-compute the fixed ratio between the frequency of the
-> +	 * constant counter and the maximum frequency of the CPU (hz).
-> +	 */
-> +	ratio = (u64)arch_timer_get_rate() << (2 * SCHED_CAPACITY_SHIFT);
-> +	ratio = div64_u64(ratio, amu_work->cpuinfo_max_freq * 1000);
-> +	this_cpu_write(arch_max_freq_scale, (unsigned long)ratio);
-> +
-> +	this_cpu_write(arch_core_cycles_prev, core_cnt);
-> +	this_cpu_write(arch_const_cycles_prev, const_cnt);
-> +	amu_work->cpu_amu_fie = true;
-> +}
-> +
-> +static void policy_amu_fie_init_workfn(struct work_struct *work)
-> +{
-> +	struct cpu_amu_work *amu_work;
-> +	u8 enable;
-> +	int cpu;
-> +
-> +	amu_work = container_of(work, struct cpu_amu_work, policy_work);
-> +
-> +	flush_workqueue(cpu_amu_fie_init_wq);
-> +
-> +	for_each_cpu(cpu, &amu_work->policy_cpus)
-> +		if (!(per_cpu_ptr(works, cpu)->cpu_amu_fie))
-> +			break;
-> +
-> +	enable = (cpu >= nr_cpu_ids) ? 1 : 0;
-> +
-> +	for_each_cpu(cpu, &amu_work->policy_cpus)
-> +		per_cpu(amu_scale_freq, cpu) = enable;
-> +
-> +	pr_info("CPUs[%*pbl]: counters %s be used for FIE.",
-> +		cpumask_pr_args(&amu_work->policy_cpus),
-> +		enable ? "will" : "WON'T");
-> +}
-> +
-> +static int init_fie_counters_callback(struct notifier_block *nb,
-> +				      unsigned long val,
-> +				      void *data)
-> +{
-> +	struct cpufreq_policy *policy = data;
-> +	struct cpu_amu_work *work;
-> +	int cpu;
-> +
-> +	if (val != CPUFREQ_CREATE_POLICY)
-> +		return 0;
-> +
-> +	/* Return if not all related CPUs are online */
-> +	if (!cpumask_equal(policy->cpus, policy->related_cpus)) {
-> +		pr_info("CPUs[%*pbl]: counters WON'T be used for FIE.",
-> +			cpumask_pr_args(policy->related_cpus));
-> +		return 0;
-> +	}
-> +
-> +	/*
-> +	 * Queue functions on all online CPUs from policy to:
-> +	 *  - Check support and enablement for AMU counters
-> +	 *  - Store system freq to max freq ratio per cpu
-> +	 *  - Flag CPU as valid for use of counters for FIE
-> +	 */
-> +	for_each_cpu(cpu, policy->cpus) {
-> +		work = per_cpu_ptr(works, cpu);
-> +		work->cpuinfo_max_freq = policy->cpuinfo.max_freq;
-> +		work->cpu_amu_fie = false;
-> +		INIT_WORK(&work->cpu_work, cpu_amu_fie_init_workfn);
-> +		queue_work_on(cpu, cpu_amu_fie_init_wq, &work->cpu_work);
-> +	}
-> +
-> +	/*
-> +	 * Queue function to validate support at policy level:
-> +	 *  - Flush all work on online policy CPUs
-> +	 *  - Verify that all online policy CPUs are flagged as
-> +	 *    valid for use of counters for FIE
-> +	 *  - Enable or disable use of counters for FIE on CPUs
-> +	 */
-> +	work = per_cpu_ptr(works, cpumask_first(policy->cpus));
-> +	cpumask_copy(&work->policy_cpus, policy->cpus);
-> +	INIT_WORK(&work->policy_work, policy_amu_fie_init_workfn);
-> +	queue_work(policy_amu_fie_init_wq, &work->policy_work);
-> +
-> +	cpumask_andnot(cpus_to_visit, cpus_to_visit, policy->cpus);
-> +	if (cpumask_empty(cpus_to_visit))
-> +		schedule_work(&init_fie_counters_done_work);
-> +
-> +	return 0;
-> +}
-> +
-> +static struct notifier_block init_fie_counters_notifier = {
-> +	.notifier_call = init_fie_counters_callback,
-> +};
-> +
-> +static void init_fie_counters_done_workfn(struct work_struct *work)
-> +{
-> +	cpufreq_unregister_notifier(&init_fie_counters_notifier,
-> +				    CPUFREQ_POLICY_NOTIFIER);
-> +
-> +	/*
-> +	 * Destroy policy_amu_fie_init_wq first to ensure all policy
-> +	 * work is finished, which includes flushing of the per-CPU
-> +	 * work, before cpu_amu_fie_init_wq is destroyed.
-> +	 */
-> +	destroy_workqueue(policy_amu_fie_init_wq);
-> +	destroy_workqueue(cpu_amu_fie_init_wq);
-> +
-> +	free_percpu(works);
-> +	free_cpumask_var(cpus_to_visit);
-> +}
-> +
-> +static int __init register_fie_counters_cpufreq_notifier(void)
-> +{
-> +	int ret = -ENOMEM;
-> +
-> +	if (!alloc_cpumask_var(&cpus_to_visit, GFP_KERNEL))
-> +		goto out;
-> +
-> +	cpumask_copy(cpus_to_visit, cpu_possible_mask);
-> +
-> +	cpu_amu_fie_init_wq = create_workqueue("cpu_amu_fie_init_wq");
-> +	if (!cpu_amu_fie_init_wq)
-> +		goto free_cpumask;
-> +
-> +	policy_amu_fie_init_wq = create_workqueue("policy_amu_fie_init_wq");
-> +	if (!cpu_amu_fie_init_wq)
-> +		goto free_cpu_wq;
-> +
-> +	works = alloc_percpu(struct cpu_amu_work);
-> +	if (!works)
-> +		goto free_policy_wq;
-> +
-> +	ret = cpufreq_register_notifier(&init_fie_counters_notifier,
-> +					CPUFREQ_POLICY_NOTIFIER);
-> +	if (ret)
-> +		goto free_works;
-> +
-> +	return 0;
-> +
-> +free_works:
-> +	free_percpu(works);
-> +free_policy_wq:
-> +	destroy_workqueue(policy_amu_fie_init_wq);
-> +free_cpu_wq:
-> +	destroy_workqueue(cpu_amu_fie_init_wq);
-> +free_cpumask:
-> +	free_cpumask_var(cpus_to_visit);
-> +out:
-> +	return ret;
-> +}
-> +core_initcall(register_fie_counters_cpufreq_notifier);
+Feel free to add support for the regulator to the transceiver node and
+convert the existing drivers to accept both bindings.
 
-If we move it to a bit later stage maybe it could solve the
-issue with not-all-CPUs-online? Is it needed at this stage?
-The device_initcall or late_initcall is not an option for it?
+Marc
+
+--=20
+Pengutronix e.K.                 | Marc Kleine-Budde           |
+Embedded Linux                   | https://www.pengutronix.de  |
+Vertretung West/Dortmund         | Phone: +49-231-2826-924     |
+Amtsgericht Hildesheim, HRA 2686 | Fax:   +49-5121-206917-5555 |
 
 
-> +
-> +void topology_scale_freq_tick(void)
-> +{
-> +	u64 prev_core_cnt, prev_const_cnt;
-> +	u64 core_cnt, const_cnt, scale;
-> +
-> +	if (!this_cpu_read(amu_scale_freq))
-> +		return;
-> +
-> +	const_cnt = read_sysreg_s(SYS_AMEVCNTR0_CONST_EL0);
-> +	core_cnt = read_sysreg_s(SYS_AMEVCNTR0_CORE_EL0);
-> +	prev_const_cnt = this_cpu_read(arch_const_cycles_prev);
-> +	prev_core_cnt = this_cpu_read(arch_core_cycles_prev);
-> +
-> +	if (unlikely(core_cnt <= prev_core_cnt ||
-> +		     const_cnt <= prev_const_cnt))
-> +		goto store_and_exit;
-> +
-> +	scale = core_cnt - prev_core_cnt;
-> +	scale *= this_cpu_read(arch_max_freq_scale);
-> +	scale = div64_u64(scale >> SCHED_CAPACITY_SHIFT,
-> +			  const_cnt - prev_const_cnt);
-> +
-> +	scale = min_t(unsigned long, scale, SCHED_CAPACITY_SCALE);
-> +	this_cpu_write(freq_scale, (unsigned long)scale);
-> +
-> +store_and_exit:
-> +	this_cpu_write(arch_core_cycles_prev, core_cnt);
-> +	this_cpu_write(arch_const_cycles_prev, const_cnt);
-> +}
-> +
-> +#endif
-> diff --git a/drivers/base/arch_topology.c b/drivers/base/arch_topology.c
-> index 1eb81f113786..3ae6091d845e 100644
-> --- a/drivers/base/arch_topology.c
-> +++ b/drivers/base/arch_topology.c
-> @@ -23,12 +23,28 @@
->   
->   DEFINE_PER_CPU(unsigned long, freq_scale) = SCHED_CAPACITY_SCALE;
->   
-> +#if defined(CONFIG_ARM64_AMU_EXTN) && defined(CONFIG_CPU_FREQ)
-> +DEFINE_PER_CPU_READ_MOSTLY(u8, amu_scale_freq);
-> +#endif
-> +
->   void arch_set_freq_scale(struct cpumask *cpus, unsigned long cur_freq,
->   			 unsigned long max_freq)
->   {
->   	unsigned long scale;
->   	int i;
->   
-> +#if defined(CONFIG_ARM64_AMU_EXTN) && defined(CONFIG_CPU_FREQ)
+--dZh96g5yZPeAk3UDgD43pvfcj6xxa9jF3--
 
-This kind of #ifdef is probably not the best option inside drivers/base/
-The function is called from cpufreq drivers, could we react earlier
-and keep this function untouched?
+--ZekFneOlWau0d0DimzpZ8ix6vmezbf04K
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCgAdFiEEmvEkXzgOfc881GuFWsYho5HknSAFAl4piXMACgkQWsYho5Hk
+nSDbYQf9FulmhfP1PMrOxVuC+lmRBuENjjVM3uSBabZp45CsDtFmdtNkuZzC49V5
+UmJ+iQda6TF3lki1QR4qjPV2zsjh7Gu/b6YKGryqKsieWNoQ6fwmpltKSqHw4YA/
+fSZzbIalXxRQ1M8hMhpR06IP0PR91Ge4f/ABv4To72wKAaEMeC0bVCWKUNPpisHT
+rObprWj1W2gh/Bh5vMg6zPHY5+HQYzr8qcsbt1l5LbxQMN7kiwuDHp4/fWA7RemE
+21nv/dd6B24RIJ3b0Urq4zXVvXguoZbQmH0Ay1T8xo4ck64RVDfP2rK6oK1lgIqq
+TCfcyvxUxGE2tusFiMy/PV/ps7uvfQ==
+=vRTh
+-----END PGP SIGNATURE-----
+
+--ZekFneOlWau0d0DimzpZ8ix6vmezbf04K--
 
 
-> +	/*
-> +	 * This function will only be called from CPUFREQ drivers.
-> +	 * If the use of counters for FIE is enabled, establish if a CPU,
-> +	 * the first one, supports counters and if they are valid. If they
-> +	 * are, just return as we don't want to update with information
-> +	 * from CPUFREQ. In this case the scale factor will be updated
-> +	 * from arch_scale_freq_tick.
-> +	 */
-> +	if (per_cpu(amu_scale_freq, cpumask_first(cpus)))
-> +		return;
-> +#endif
->   	scale = (cur_freq << SCHED_CAPACITY_SHIFT) / max_freq;
->   
->   	for_each_cpu(i, cpus)
-> 
-
-
-Regards,
-Lukasz
+--===============3079353256574713158==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3079353256574713158==--
+
