@@ -2,57 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 809A8146489
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 10:24:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA83F146490
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 10:27:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EMgpwTGMVHstLV70Pkt90a9/RShOzuURU2zLdE0DzzU=; b=ldsyR4lUXqL+8J
-	x1eJHNQo2scojEqA02mv6dsPfDZD6imRLl6Uo49DWkVAUZgzKUDhj4RroKYoazjdHUL53H/2Xtg5h
-	t5f92wjog086/odQAgEavmRlzehUGC4zfT8VqXMdM9xA5uSI1b2QRrugQt2XDZAO+QodGo+LfamOK
-	zBUbx4UvgiXfbhRShSUJLyTdLh9WSRvPVFRKwX+5q+V5SunDn+cG5xoEgETpBuLQ3Qv9MKJKg3Voc
-	Ox+RwLtWZNTIqQD0bOSzC5HqDfWgJg6rhFIB3swkFArUXTUDuSaqCaODZ+/YYyAV7bbojR8pIQ9zj
-	Ee/7SfTYUAWYLPOc6fug==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f+jmMrR/MTjUQiWlQv4BnYPe935EEeuFZiK3FSQM3iQ=; b=DR+vmfkYwjURe8
+	WkYR1cbEBV7XuKE9SXMKT5KEtdmW4oxyMZjGmHZsas5yNJHIYkBbTLCUkt6814HyZFUxkRRv4BGn+
+	5QHrT5jbaEaZ9rrIfSWeB4u2sCmmbyY/8bYdukO/SW7leTihGs/HmXI6FMIhD16/Cb9v+4sG8Z7HH
+	x8GyCv27gnPDAgdEvH0qmDLwOJ2dBm0lPuiukukTpTw8/CEWs2VmZO20p6ZMEVavqVO7BlGXnzhKe
+	LzVv5OMg0zdNT1wv0uVHxVZXtS5uSLt/R65zGImccneBST70w75tUVc8/W914oCVTNRywVoDlHjU0
+	Na3hwAhHd44sqKJyLLIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuYik-0006HZ-PN; Thu, 23 Jan 2020 09:24:14 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuYia-0006Gk-5t
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 09:24:05 +0000
-Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
- by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <colin.king@canonical.com>)
- id 1iuYiV-0007Nd-Vi; Thu, 23 Jan 2020 09:24:00 +0000
-From: Colin King <colin.king@canonical.com>
-To: Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Dan Williams <dan.j.williams@intel.com>, Vinod Koul <vkoul@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- dmaengine@vger.kernel.org
-Subject: [PATCH] dmaengine: fix spelling mistake "to" -> "too"
-Date: Thu, 23 Jan 2020 09:23:59 +0000
-Message-Id: <20200123092359.10714-1-colin.king@canonical.com>
-X-Mailer: git-send-email 2.24.0
+	id 1iuYlb-0007pc-AY; Thu, 23 Jan 2020 09:27:11 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuYlR-0007ow-GR; Thu, 23 Jan 2020 09:27:01 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 482F7304121;
+ Thu, 23 Jan 2020 10:25:18 +0100 (CET)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 1A8E82B6FD00E; Thu, 23 Jan 2020 10:26:58 +0100 (CET)
+Date: Thu, 23 Jan 2020 10:26:58 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: Alex Kogan <alex.kogan@oracle.com>
+Subject: Re: [PATCH v9 3/5] locking/qspinlock: Introduce CNA into the slow
+ path of qspinlock
+Message-ID: <20200123092658.GC14879@hirez.programming.kicks-ass.net>
+References: <20200115035920.54451-1-alex.kogan@oracle.com>
+ <20200115035920.54451-4-alex.kogan@oracle.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_012404_356414_057A8388 
-X-CRM114-Status: GOOD (  10.30  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+Content-Disposition: inline
+In-Reply-To: <20200115035920.54451-4-alex.kogan@oracle.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,37 +54,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
+Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
+ dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
+ will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
+ linux-kernel@vger.kernel.org, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
+ longman@redhat.com, tglx@linutronix.de, daniel.m.jordan@oracle.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Colin Ian King <colin.king@canonical.com>
+On Tue, Jan 14, 2020 at 10:59:18PM -0500, Alex Kogan wrote:
+> +/* this function is called only when the primary queue is empty */
+> +static inline bool cna_try_change_tail(struct qspinlock *lock, u32 val,
+> +				       struct mcs_spinlock *node)
+> +{
+> +	struct mcs_spinlock *head_2nd, *tail_2nd;
+> +	u32 new;
+> +
+> +	/* If the secondary queue is empty, do what MCS does. */
+> +	if (node->locked <= 1)
+> +		return __try_clear_tail(lock, val, node);
+> +
+> +	/*
+> +	 * Try to update the tail value to the last node in the secondary queue.
+> +	 * If successful, pass the lock to the first thread in the secondary
+> +	 * queue. Doing those two actions effectively moves all nodes from the
+> +	 * secondary queue into the main one.
+> +	 */
+> +	tail_2nd = decode_tail(node->locked);
+> +	head_2nd = tail_2nd->next;
+> +	new = ((struct cna_node *)tail_2nd)->encoded_tail + _Q_LOCKED_VAL;
+> +
+> +	if (atomic_try_cmpxchg_relaxed(&lock->val, &val, new)) {
+> +		/*
+> +		 * Try to reset @next in tail_2nd to NULL, but no need to check
+> +		 * the result - if failed, a new successor has updated it.
+> +		 */
 
-There is a spelling mistake in a dev_err message. Fix it.
+I think you actually have an ordering bug here; the load of head_2nd
+*must* happen before the atomic_try_cmpxchg(), otherwise it might
+observe the new next and clear a valid next pointer.
 
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
----
- drivers/dma/s3c24xx-dma.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+What would be the best fix for that; I'm thinking:
 
-diff --git a/drivers/dma/s3c24xx-dma.c b/drivers/dma/s3c24xx-dma.c
-index 1ed5dc1f597c..26fa863a709e 100644
---- a/drivers/dma/s3c24xx-dma.c
-+++ b/drivers/dma/s3c24xx-dma.c
-@@ -826,7 +826,7 @@ static struct dma_async_tx_descriptor *s3c24xx_dma_prep_memcpy(
- 			len, s3cchan->name);
- 
- 	if ((len & S3C24XX_DCON_TC_MASK) != len) {
--		dev_err(&s3cdma->pdev->dev, "memcpy size %zu to large\n", len);
-+		dev_err(&s3cdma->pdev->dev, "memcpy size %zu too large\n", len);
- 		return NULL;
- 	}
- 
--- 
-2.24.0
+	head_2nd = smp_load_acquire(&tail_2nd->next);
 
+Will?
+
+> +		cmpxchg_relaxed(&tail_2nd->next, head_2nd, NULL);
+> +		arch_mcs_pass_lock(&head_2nd->locked, 1);
+> +		return true;
+> +	}
+> +
+> +	return false;
+> +}
 
 _______________________________________________
 linux-arm-kernel mailing list
