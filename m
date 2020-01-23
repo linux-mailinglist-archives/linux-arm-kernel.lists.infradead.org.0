@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F003146DE0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 17:09:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1C16146DE1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 17:10:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jl+Yuv50y7itz2YHvMI6oiW10+nhGr9kX4ZXu0vvd3o=; b=j2gMdWYmEPenQk
-	7WwXbSmRV0G3p4SKMFScqSNkGMipvKlfCd8S+N+W9CJ/DTekD8UHEYXVgoKFREUQm7abIL7DW2S//
-	Jvr6BI/hdBBfsmNE9+bwt4jFdUq0q0wbGxg2kZ0LfZzyW7JgLKvWKASeHgRbE4oglqtOmCO8FecUB
-	wzu7Bn1mgWvT32WSDLBJVlN7nEqp12QTdeBR5+yeSgR3mYRtTIUQylOQTOkATR/LhyyKw/HN/LJ71
-	bkNlzgpRU1eO149KJiUiwWjUdY2QkpNyzt81zK+5AIw0cwiGACmouUMbgHORrql6TtOlRnJk0uyw8
-	5sBv5DGZpuy4OU/GLHVg==;
+	List-Owner; bh=SQIgUsQqLdtpc9BJjGJERm63Mtn1VBvZnngV4itD4v4=; b=bbgBRI/2YNhbfj
+	EvXrMDqiSZWeCCSxqFqW+d9J7vXBVD+q+KnJ+JWRNV8mnCE/+fUhmEjofnmAXbOb7rlIlwzhkD7j5
+	1VPbu3Xw7a8+AbSyR3ZO2Z+9aGw7hcAWVnCU20aNq6v4du9Pkiqamn1Bt//cg9+vuqTyzSrE/El97
+	9cUK8fPnaiWPobB55bdQlqz8TBAHsZ7wU7nHohGqGnqhhp1IDxBoAD8flg5CDnb6nFAvPRDUbC8Wu
+	JPsB5T7eiVDRMLL/2q+FqNmVGgDuhTKKBvs8qVxPSF/0Lz5TrKUy+8DLAAGu8ZTaParvohKP6iLuu
+	lHv8fyCkq9z7N8UX7jzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuf37-0006ii-Hc; Thu, 23 Jan 2020 16:09:41 +0000
+	id 1iuf3T-0006tL-98; Thu, 23 Jan 2020 16:10:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuf1t-0005tn-TW
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 16:08:27 +0000
+ id 1iuf23-000613-Ir
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 16:08:37 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C42B4106F;
- Thu, 23 Jan 2020 08:08:24 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0BDE51FB;
+ Thu, 23 Jan 2020 08:08:35 -0800 (PST)
 Received: from e112479-lin.arm.com (unknown [10.37.9.147])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C8E223F68E;
- Thu, 23 Jan 2020 08:08:19 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 24D503F68E;
+ Thu, 23 Jan 2020 08:08:24 -0800 (PST)
 From: James Clark <james.clark@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 4/7] perf tools: Support "branch-misses:pp" on arm64
-Date: Thu, 23 Jan 2020 16:07:31 +0000
-Message-Id: <20200123160734.3775-5-james.clark@arm.com>
+Subject: [PATCH v2 5/7] perf tools: add perf_evlist__terminate() for terminate
+Date: Thu, 23 Jan 2020 16:07:32 +0000
+Message-Id: <20200123160734.3775-6-james.clark@arm.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200123160734.3775-1-james.clark@arm.com>
 References: <20200123160734.3775-1-james.clark@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_080826_200371_DF668676 
-X-CRM114-Status: GOOD (  14.21  )
+X-CRM114-CacheID: sfid-20200123_080835_745683_F9646039 
+X-CRM114-Status: GOOD (  13.04  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -77,45 +77,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tan Xiaojun <tanxiaojun@huawei.com>
+From: Wei Li <liwei391@huawei.com>
 
-At the suggestion of James Clark, use spe to support the precise
-ip of some events. Currently its support event is:
-branch-misses.
+In __cmd_record(), when receiving SIGINT(ctrl + c), a done flag will
+be set and the event list will be disabled by perf_evlist__disable()
+once.
 
-Example usage:
+While in auxtrace_record.read_finish(), the related events will be
+enabled again, if they are continuous, the recording seems to be endless.
 
-$ ./perf record -e branch-misses:pp dd if=/dev/zero of=/dev/null count=10000
-(:p/pp/ppp is same for this case.)
+Mark the evlist's state as terminated, preparing for the following fix.
 
-$ ./perf report --stdio
-("--stdio is not necessary")
-
---------------------------------------------------------------------
-...
- # Samples: 14  of event 'branch-misses:pp'
- # Event count (approx.): 14
- #
- # Children      Self  Command  Shared Object      Symbol
- # ........  ........  .......  .................  ..........................
- #
-    14.29%    14.29%  dd       [kernel.kallsyms]  [k] __arch_copy_from_user
-    14.29%    14.29%  dd       libc-2.28.so       [.] _dl_addr
-     7.14%     7.14%  dd       [kernel.kallsyms]  [k] __free_pages
-     7.14%     7.14%  dd       [kernel.kallsyms]  [k] __pi_memcpy
-     7.14%     7.14%  dd       [kernel.kallsyms]  [k] pagecache_get_page
-     7.14%     7.14%  dd       [kernel.kallsyms]  [k] unmap_single_vma
-     7.14%     7.14%  dd       dd                 [.] 0x00000000000025ec
-     7.14%     7.14%  dd       ld-2.28.so         [.] _dl_lookup_symbol_x
-     7.14%     7.14%  dd       ld-2.28.so         [.] check_match
-     7.14%     7.14%  dd       libc-2.28.so       [.] __mpn_rshift
-     7.14%     7.14%  dd       libc-2.28.so       [.] _nl_intern_locale_data
-     7.14%     7.14%  dd       libc-2.28.so       [.] read_alias_file
-...
---------------------------------------------------------------------
-
-Signed-off-by: Tan Xiaojun <tanxiaojun@huawei.com>
-Suggested-by: James Clark <James.Clark@arm.com>
+Signed-off-by: Wei Li <liwei391@huawei.com>
 Tested-by: Qi Liu <liuqi115@hisilicon.com>
 Signed-off-by: James Clark <james.clark@arm.com>
 Cc: Will Deacon <will@kernel.org>
@@ -129,113 +102,73 @@ Cc: Tan Xiaojun <tanxiaojun@huawei.com>
 Cc: Al Grant <al.grant@arm.com>
 Cc: Namhyung Kim <namhyung@kernel.org>
 ---
- tools/perf/util/arm-spe.c | 41 +++++++++++++++++++++++++++++++++++++++
- tools/perf/util/arm-spe.h |  3 +++
- tools/perf/util/evlist.c  |  2 ++
- 3 files changed, 46 insertions(+)
+ tools/perf/builtin-record.c |  1 +
+ tools/perf/util/evlist.c    | 14 ++++++++++++++
+ tools/perf/util/evlist.h    |  1 +
+ tools/perf/util/evsel.h     |  1 +
+ 4 files changed, 17 insertions(+)
 
-diff --git a/tools/perf/util/arm-spe.c b/tools/perf/util/arm-spe.c
-index c99814c58745..0fcaefd386a6 100644
---- a/tools/perf/util/arm-spe.c
-+++ b/tools/perf/util/arm-spe.c
-@@ -35,6 +35,19 @@
- 
- #define MAX_TIMESTAMP (~0ULL)
- 
-+#define SPE_ATTR_TS_ENABLE		BIT(0)
-+#define SPE_ATTR_PA_ENABLE		BIT(1)
-+#define SPE_ATTR_PCT_ENABLE		BIT(2)
-+#define SPE_ATTR_JITTER			BIT(16)
-+#define SPE_ATTR_BRANCH_FILTER		BIT(32)
-+#define SPE_ATTR_LOAD_FILTER		BIT(33)
-+#define SPE_ATTR_STORE_FILTER		BIT(34)
-+
-+#define SPE_ATTR_EV_RETIRED		BIT(1)
-+#define SPE_ATTR_EV_CACHE		BIT(3)
-+#define SPE_ATTR_EV_TLB			BIT(5)
-+#define SPE_ATTR_EV_BRANCH		BIT(7)
-+
- struct arm_spe {
- 	struct auxtrace			auxtrace;
- 	struct auxtrace_queues		queues;
-@@ -778,6 +791,15 @@ arm_spe_synth_events(struct arm_spe *spe, struct perf_session *session)
- 	attr.sample_id_all = evsel->core.attr.sample_id_all;
- 	attr.read_format = evsel->core.attr.read_format;
- 
-+	/* If it is in the precise ip mode, there is no need to
-+	 * synthesize new events. */
-+	if (!strncmp(evsel->name, "branch-misses", 13)) {
-+		spe->sample_branch_miss = true;
-+		spe->branch_miss_id = evsel->core.id[0];
-+
-+		return 0;
-+	}
-+
- 	/* create new id val to be a fixed offset from evsel id */
- 	id = evsel->core.id[0] + 1000000000;
- 
-@@ -899,3 +921,22 @@ int arm_spe_process_auxtrace_info(union perf_event *event,
- 	free(spe);
- 	return err;
- }
-+
-+void arm_spe_precise_ip_support(struct evlist *evlist, struct evsel *evsel)
-+{
-+	struct perf_pmu *pmu;
-+
-+	/* Currently only supports precise_ip for branch-misses on arm64 */
-+	if (!strcmp(perf_env__arch(evlist->env), "arm64")
-+			&& evsel->core.attr.config == PERF_COUNT_HW_BRANCH_MISSES
-+			&& evsel->core.attr.precise_ip) {
-+		pmu = perf_pmu__find("arm_spe_0");
-+		if (pmu) {
-+			evsel->pmu_name = pmu->name;
-+			evsel->core.attr.type = pmu->type;
-+			evsel->core.attr.config = SPE_ATTR_TS_ENABLE
-+						| SPE_ATTR_BRANCH_FILTER;
-+			evsel->core.attr.config1 = SPE_ATTR_EV_BRANCH;
-+		}
-+	}
-+}
-diff --git a/tools/perf/util/arm-spe.h b/tools/perf/util/arm-spe.h
-index 98d3235781c3..8b1fb191d03a 100644
---- a/tools/perf/util/arm-spe.h
-+++ b/tools/perf/util/arm-spe.h
-@@ -20,6 +20,8 @@ enum {
- union perf_event;
- struct perf_session;
- struct perf_pmu;
-+struct evlist;
-+struct evsel;
- 
- struct auxtrace_record *arm_spe_recording_init(int *err,
- 					       struct perf_pmu *arm_spe_pmu);
-@@ -28,4 +30,5 @@ int arm_spe_process_auxtrace_info(union perf_event *event,
- 				  struct perf_session *session);
- 
- struct perf_event_attr *arm_spe_pmu_default_config(struct perf_pmu *arm_spe_pmu);
-+void arm_spe_precise_ip_support(struct evlist *evlist, struct evsel *evsel);
- #endif
+diff --git a/tools/perf/builtin-record.c b/tools/perf/builtin-record.c
+index 4c301466101b..e7c917f9534d 100644
+--- a/tools/perf/builtin-record.c
++++ b/tools/perf/builtin-record.c
+@@ -1722,6 +1722,7 @@ static int __cmd_record(struct record *rec, int argc, const char **argv)
+ 		if (done && !disabled && !target__none(&opts->target)) {
+ 			trigger_off(&auxtrace_snapshot_trigger);
+ 			evlist__disable(rec->evlist);
++			evlist__terminate(rec->evlist);
+ 			disabled = true;
+ 		}
+ 	}
 diff --git a/tools/perf/util/evlist.c b/tools/perf/util/evlist.c
-index 1548237b6558..b9c7e5271611 100644
+index b9c7e5271611..b04794cd8586 100644
 --- a/tools/perf/util/evlist.c
 +++ b/tools/perf/util/evlist.c
-@@ -9,6 +9,7 @@
- #include <errno.h>
- #include <inttypes.h>
- #include <poll.h>
-+#include "arm-spe.h"
- #include "cpumap.h"
- #include "util/mmap.h"
- #include "thread_map.h"
-@@ -179,6 +180,7 @@ void perf_evlist__splice_list_tail(struct evlist *evlist,
- 	struct evsel *evsel, *temp;
+@@ -377,6 +377,20 @@ bool evsel__cpu_iter_skip(struct evsel *ev, int cpu)
+ 	return true;
+ }
  
- 	__evlist__for_each_entry_safe(list, temp, evsel) {
-+		arm_spe_precise_ip_support(evlist, evsel);
- 		list_del_init(&evsel->core.node);
- 		evlist__add(evlist, evsel);
- 	}
++void evlist__terminate(struct evlist *evlist)
++{
++	struct evsel *pos;
++
++	evlist__for_each_entry(evlist, pos) {
++		if (pos->disabled || !perf_evsel__is_group_leader(pos) || !pos->core.fd)
++			continue;
++		evsel__disable(pos);
++		pos->terminated = true;
++	}
++
++	evlist->enabled = false;
++}
++
+ void evlist__disable(struct evlist *evlist)
+ {
+ 	struct evsel *pos;
+diff --git a/tools/perf/util/evlist.h b/tools/perf/util/evlist.h
+index f5bd5c386df1..9fbd0ce2a1c4 100644
+--- a/tools/perf/util/evlist.h
++++ b/tools/perf/util/evlist.h
+@@ -206,6 +206,7 @@ void evlist__munmap(struct evlist *evlist);
+ 
+ size_t evlist__mmap_size(unsigned long pages);
+ 
++void evlist__terminate(struct evlist *evlist);
+ void evlist__disable(struct evlist *evlist);
+ void evlist__enable(struct evlist *evlist);
+ void perf_evlist__toggle_enable(struct evlist *evlist);
+diff --git a/tools/perf/util/evsel.h b/tools/perf/util/evsel.h
+index dc14f4a823cd..8e8a2cb41de8 100644
+--- a/tools/perf/util/evsel.h
++++ b/tools/perf/util/evsel.h
+@@ -104,6 +104,7 @@ struct evsel {
+ 		perf_evsel__sb_cb_t	*cb;
+ 		void			*data;
+ 	} side_band;
++	bool			terminated;
+ };
+ 
+ struct perf_missing_features {
 -- 
 2.25.0
 
