@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DED5C146593
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:22:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98CFF146594
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:22:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=r8I8es666koRo/TMYFTf56c4KtWqSYz206fHqd45f/k=; b=Qe2LmnzL7kk7dsMy2s0ncnPFGZ
-	kxfh0jebi6baGoTrqVA8T5LKu6AL3EQ+zmyCdmeIRTnDmBHAz0nA5hgw3aZwwQQKsw3Qe3kGf1A3p
-	dUrtiYyaaZu4kKPlsVH8wIsPKSvU83qHxYBcdR59+pi/1KccQcenuwqzUoxkBkWUX8n1RMd3VzXXP
-	s92cpozKUl5qONOzPj3RImVk+JqwwsySXhPW0j6u+lXtY8pyauKAiM6s1eaxbJL1JjUoDafligYNX
-	FB7E6hzQ2n+7JdToxQHUz60Z4WVUA3ruzO62D1QQVf20z2k/qGIl3/hj6jWiBXY5/iJQxbUHTozeZ
-	lw3mBg5g==;
+	bh=JBTBsMk1u7zUIOQEYHkFCRA7UxTlNrXjy5Zy6x31NDA=; b=iPrGmCildAC/jOL/kJ/m5c5fvv
+	E4u8B9pYTapCObP9c6zfJAm+dmSWjekmLsHQAGVvzx8nCEBsi4KVRzobWQEHmzZp2anvY9mWv9ADi
+	xvIG2T2ljEWZ9oct0G03F2daBbi+JAEtVRtv2FZdk9bev7hMzuYX4EbemMrFVXyNxjV045MockLcf
+	LL/au8T2pHY2Mm00Uc0rQbh2BSmXzOHjOfHPcUPhviNOWNTEpTS8yumGg3ye/Og8GcL7825paJ8ET
+	5Y2jjWR9bwK7rAS6F7gQDGg7uelRN+k9WwcFZlJ3/UCwwKg5vgwRHDYVUwQ+gB3GbfWXGN9k9WMMF
+	bQDQ0P4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuZd0-0006Tu-4e; Thu, 23 Jan 2020 10:22:22 +0000
+	id 1iuZdH-0006kI-7x; Thu, 23 Jan 2020 10:22:39 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuZbp-000621-7f
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:21:11 +0000
+ id 1iuZbt-00065H-Gb
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:21:15 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 83A7431B;
- Thu, 23 Jan 2020 02:21:08 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A71CB31B;
+ Thu, 23 Jan 2020 02:21:12 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.79])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D1C693F6C4;
- Thu, 23 Jan 2020 02:21:04 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id F401F3F6C4;
+ Thu, 23 Jan 2020 02:21:08 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 02/17] arm64: cpufeature: add pointer auth meta-capabilities
-Date: Thu, 23 Jan 2020 15:50:24 +0530
-Message-Id: <1579774839-19562-3-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v4 03/17] arm64: rename ptrauth key structures to be
+ user-specific
+Date: Thu, 23 Jan 2020 15:50:25 +0530
+Message-Id: <1579774839-19562-4-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1579774839-19562-1-git-send-email-amit.kachhap@arm.com>
 References: <1579774839-19562-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_022109_516501_5739D5D3 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20200123_022113_666853_ED4080BA 
+X-CRM114-Status: GOOD (  15.42  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -79,131 +80,199 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Kristina Martsenko <kristina.martsenko@arm.com>
 
-To enable pointer auth for the kernel, we're going to need to check for
-the presence of address auth and generic auth using alternative_if. We
-currently have two cpucaps for each, but alternative_if needs to check a
-single cpucap. So define meta-capabilities that are present when either
-of the current two capabilities is present.
+We currently enable ptrauth for userspace, but do not use it within the
+kernel. We're going to enable it for the kernel, and will need to manage
+a separate set of ptrauth keys for the kernel.
 
-Leave the existing four cpucaps in place, as they are still needed to
-check for mismatched systems where one CPU has the architected algorithm
-but another has the IMP DEF algorithm.
+We currently keep all 5 keys in struct ptrauth_keys. However, as the
+kernel will only need to use 1 key, it is a bit wasteful to allocate a
+whole ptrauth_keys struct for every thread.
 
-Note, the meta-capabilities were present before but were removed in
-commit a56005d32105 ("arm64: cpufeature: Reduce number of pointer auth
-CPU caps from 6 to 4") and commit 1e013d06120c ("arm64: cpufeature: Rework
-ptr auth hwcaps using multi_entry_cap_matches"), as they were not needed
-then. Note, unlike before, the current patch checks the cpucap values
-directly, instead of reading the CPU ID register value.
+Therefore, a subsequent patch will define a separate struct, with only 1
+key, for the kernel. In preparation for that, rename the existing struct
+(and associated macros and functions) to reflect that they are specific
+to userspace.
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-Reviewed-by: Kees Cook <keescook@chromium.org>
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
-[Amit: commit message and macro rebase, use system_has_cap]
+[Amit: Re-positioned the patch to reduce the diff]
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Changes since v3:
- * uses the new helper system_has_cap added earlier.
+ *) Added Catalin's Acked-by.
 
- arch/arm64/include/asm/cpucaps.h    |  4 +++-
- arch/arm64/include/asm/cpufeature.h |  6 ++----
- arch/arm64/kernel/cpufeature.c      | 25 ++++++++++++++++++++++++-
- 3 files changed, 29 insertions(+), 6 deletions(-)
+ arch/arm64/include/asm/pointer_auth.h | 12 ++++++------
+ arch/arm64/include/asm/processor.h    |  2 +-
+ arch/arm64/kernel/pointer_auth.c      |  8 ++++----
+ arch/arm64/kernel/ptrace.c            | 16 ++++++++--------
+ 4 files changed, 19 insertions(+), 19 deletions(-)
 
-diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-index b926838..6674ad1 100644
---- a/arch/arm64/include/asm/cpucaps.h
-+++ b/arch/arm64/include/asm/cpucaps.h
-@@ -56,7 +56,9 @@
- #define ARM64_WORKAROUND_CAVIUM_TX2_219_PRFM	46
- #define ARM64_WORKAROUND_1542419		47
- #define ARM64_WORKAROUND_1319367		48
-+#define ARM64_HAS_ADDRESS_AUTH			49
-+#define ARM64_HAS_GENERIC_AUTH			50
+diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
+index 7a24bad..799b079 100644
+--- a/arch/arm64/include/asm/pointer_auth.h
++++ b/arch/arm64/include/asm/pointer_auth.h
+@@ -22,7 +22,7 @@ struct ptrauth_key {
+  * We give each process its own keys, which are shared by all threads. The keys
+  * are inherited upon fork(), and reinitialised upon exec*().
+  */
+-struct ptrauth_keys {
++struct ptrauth_keys_user {
+ 	struct ptrauth_key apia;
+ 	struct ptrauth_key apib;
+ 	struct ptrauth_key apda;
+@@ -30,7 +30,7 @@ struct ptrauth_keys {
+ 	struct ptrauth_key apga;
+ };
  
--#define ARM64_NCAPS				49
-+#define ARM64_NCAPS				51
- 
- #endif /* __ASM_CPUCAPS_H */
-diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-index 695e538..8579427 100644
---- a/arch/arm64/include/asm/cpufeature.h
-+++ b/arch/arm64/include/asm/cpufeature.h
-@@ -591,15 +591,13 @@ static inline bool system_supports_cnp(void)
- static inline bool system_supports_address_auth(void)
+-static inline void ptrauth_keys_init(struct ptrauth_keys *keys)
++static inline void ptrauth_keys_init_user(struct ptrauth_keys_user *keys)
  {
- 	return IS_ENABLED(CONFIG_ARM64_PTR_AUTH) &&
--		(cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH_ARCH) ||
--		 cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH_IMP_DEF));
-+		cpus_have_const_cap(ARM64_HAS_ADDRESS_AUTH);
- }
+ 	if (system_supports_address_auth()) {
+ 		get_random_bytes(&keys->apia, sizeof(keys->apia));
+@@ -50,7 +50,7 @@ do {								\
+ 	write_sysreg_s(__pki_v.hi, SYS_ ## k ## KEYHI_EL1);	\
+ } while (0)
  
- static inline bool system_supports_generic_auth(void)
+-static inline void ptrauth_keys_switch(struct ptrauth_keys *keys)
++static inline void ptrauth_keys_switch_user(struct ptrauth_keys_user *keys)
  {
- 	return IS_ENABLED(CONFIG_ARM64_PTR_AUTH) &&
--		(cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH_ARCH) ||
--		 cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH_IMP_DEF));
-+		cpus_have_const_cap(ARM64_HAS_GENERIC_AUTH);
+ 	if (system_supports_address_auth()) {
+ 		__ptrauth_key_install(APIA, keys->apia);
+@@ -80,12 +80,12 @@ static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
+ #define ptrauth_thread_init_user(tsk)					\
+ do {									\
+ 	struct task_struct *__ptiu_tsk = (tsk);				\
+-	ptrauth_keys_init(&__ptiu_tsk->thread.keys_user);		\
+-	ptrauth_keys_switch(&__ptiu_tsk->thread.keys_user);		\
++	ptrauth_keys_init_user(&__ptiu_tsk->thread.keys_user);		\
++	ptrauth_keys_switch_user(&__ptiu_tsk->thread.keys_user);		\
+ } while (0)
+ 
+ #define ptrauth_thread_switch(tsk)	\
+-	ptrauth_keys_switch(&(tsk)->thread.keys_user)
++	ptrauth_keys_switch_user(&(tsk)->thread.keys_user)
+ 
+ #else /* CONFIG_ARM64_PTR_AUTH */
+ #define ptrauth_prctl_reset_keys(tsk, arg)	(-EINVAL)
+diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+index 5ba6320..496a928 100644
+--- a/arch/arm64/include/asm/processor.h
++++ b/arch/arm64/include/asm/processor.h
+@@ -146,7 +146,7 @@ struct thread_struct {
+ 	unsigned long		fault_code;	/* ESR_EL1 value */
+ 	struct debug_info	debug;		/* debugging */
+ #ifdef CONFIG_ARM64_PTR_AUTH
+-	struct ptrauth_keys	keys_user;
++	struct ptrauth_keys_user	keys_user;
+ #endif
+ };
+ 
+diff --git a/arch/arm64/kernel/pointer_auth.c b/arch/arm64/kernel/pointer_auth.c
+index c507b58..af5a638 100644
+--- a/arch/arm64/kernel/pointer_auth.c
++++ b/arch/arm64/kernel/pointer_auth.c
+@@ -9,7 +9,7 @@
+ 
+ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
+ {
+-	struct ptrauth_keys *keys = &tsk->thread.keys_user;
++	struct ptrauth_keys_user *keys = &tsk->thread.keys_user;
+ 	unsigned long addr_key_mask = PR_PAC_APIAKEY | PR_PAC_APIBKEY |
+ 				      PR_PAC_APDAKEY | PR_PAC_APDBKEY;
+ 	unsigned long key_mask = addr_key_mask | PR_PAC_APGAKEY;
+@@ -18,8 +18,8 @@ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
+ 		return -EINVAL;
+ 
+ 	if (!arg) {
+-		ptrauth_keys_init(keys);
+-		ptrauth_keys_switch(keys);
++		ptrauth_keys_init_user(keys);
++		ptrauth_keys_switch_user(keys);
+ 		return 0;
+ 	}
+ 
+@@ -41,7 +41,7 @@ int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg)
+ 	if (arg & PR_PAC_APGAKEY)
+ 		get_random_bytes(&keys->apga, sizeof(keys->apga));
+ 
+-	ptrauth_keys_switch(keys);
++	ptrauth_keys_switch_user(keys);
+ 
+ 	return 0;
+ }
+diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+index 6771c39..ddaff0f 100644
+--- a/arch/arm64/kernel/ptrace.c
++++ b/arch/arm64/kernel/ptrace.c
+@@ -986,7 +986,7 @@ static struct ptrauth_key pac_key_from_user(__uint128_t ukey)
  }
  
- static inline bool system_uses_irq_prio_masking(void)
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 74d6c13..378329d6 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1249,6 +1249,20 @@ static void cpu_enable_address_auth(struct arm64_cpu_capabilities const *cap)
- 	sysreg_clear_set(sctlr_el1, 0, SCTLR_ELx_ENIA | SCTLR_ELx_ENIB |
- 				       SCTLR_ELx_ENDA | SCTLR_ELx_ENDB);
+ static void pac_address_keys_to_user(struct user_pac_address_keys *ukeys,
+-				     const struct ptrauth_keys *keys)
++				     const struct ptrauth_keys_user *keys)
+ {
+ 	ukeys->apiakey = pac_key_to_user(&keys->apia);
+ 	ukeys->apibkey = pac_key_to_user(&keys->apib);
+@@ -994,7 +994,7 @@ static void pac_address_keys_to_user(struct user_pac_address_keys *ukeys,
+ 	ukeys->apdbkey = pac_key_to_user(&keys->apdb);
  }
-+
-+static bool has_address_auth(const struct arm64_cpu_capabilities *entry,
-+			     int __unused)
-+{
-+	return system_has_cap(ARM64_HAS_ADDRESS_AUTH_ARCH) ||
-+	       system_has_cap(ARM64_HAS_ADDRESS_AUTH_IMP_DEF);
-+}
-+
-+static bool has_generic_auth(const struct arm64_cpu_capabilities *entry,
-+			     int __unused)
-+{
-+	return system_has_cap(ARM64_HAS_GENERIC_AUTH_ARCH) ||
-+	       system_has_cap(ARM64_HAS_GENERIC_AUTH_IMP_DEF);
-+}
- #endif /* CONFIG_ARM64_PTR_AUTH */
  
- #ifdef CONFIG_ARM64_PSEUDO_NMI
-@@ -1518,7 +1532,6 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.field_pos = ID_AA64ISAR1_APA_SHIFT,
- 		.min_field_value = ID_AA64ISAR1_APA_ARCHITECTED,
- 		.matches = has_cpuid_feature,
--		.cpu_enable = cpu_enable_address_auth,
- 	},
- 	{
- 		.desc = "Address authentication (IMP DEF algorithm)",
-@@ -1529,6 +1542,11 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.field_pos = ID_AA64ISAR1_API_SHIFT,
- 		.min_field_value = ID_AA64ISAR1_API_IMP_DEF,
- 		.matches = has_cpuid_feature,
-+	},
-+	{
-+		.capability = ARM64_HAS_ADDRESS_AUTH,
-+		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-+		.matches = has_address_auth,
- 		.cpu_enable = cpu_enable_address_auth,
- 	},
- 	{
-@@ -1551,6 +1569,11 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.min_field_value = ID_AA64ISAR1_GPI_IMP_DEF,
- 		.matches = has_cpuid_feature,
- 	},
-+	{
-+		.capability = ARM64_HAS_GENERIC_AUTH,
-+		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-+		.matches = has_generic_auth,
-+	},
- #endif /* CONFIG_ARM64_PTR_AUTH */
- #ifdef CONFIG_ARM64_PSEUDO_NMI
- 	{
+-static void pac_address_keys_from_user(struct ptrauth_keys *keys,
++static void pac_address_keys_from_user(struct ptrauth_keys_user *keys,
+ 				       const struct user_pac_address_keys *ukeys)
+ {
+ 	keys->apia = pac_key_from_user(ukeys->apiakey);
+@@ -1008,7 +1008,7 @@ static int pac_address_keys_get(struct task_struct *target,
+ 				unsigned int pos, unsigned int count,
+ 				void *kbuf, void __user *ubuf)
+ {
+-	struct ptrauth_keys *keys = &target->thread.keys_user;
++	struct ptrauth_keys_user *keys = &target->thread.keys_user;
+ 	struct user_pac_address_keys user_keys;
+ 
+ 	if (!system_supports_address_auth())
+@@ -1025,7 +1025,7 @@ static int pac_address_keys_set(struct task_struct *target,
+ 				unsigned int pos, unsigned int count,
+ 				const void *kbuf, const void __user *ubuf)
+ {
+-	struct ptrauth_keys *keys = &target->thread.keys_user;
++	struct ptrauth_keys_user *keys = &target->thread.keys_user;
+ 	struct user_pac_address_keys user_keys;
+ 	int ret;
+ 
+@@ -1043,12 +1043,12 @@ static int pac_address_keys_set(struct task_struct *target,
+ }
+ 
+ static void pac_generic_keys_to_user(struct user_pac_generic_keys *ukeys,
+-				     const struct ptrauth_keys *keys)
++				     const struct ptrauth_keys_user *keys)
+ {
+ 	ukeys->apgakey = pac_key_to_user(&keys->apga);
+ }
+ 
+-static void pac_generic_keys_from_user(struct ptrauth_keys *keys,
++static void pac_generic_keys_from_user(struct ptrauth_keys_user *keys,
+ 				       const struct user_pac_generic_keys *ukeys)
+ {
+ 	keys->apga = pac_key_from_user(ukeys->apgakey);
+@@ -1059,7 +1059,7 @@ static int pac_generic_keys_get(struct task_struct *target,
+ 				unsigned int pos, unsigned int count,
+ 				void *kbuf, void __user *ubuf)
+ {
+-	struct ptrauth_keys *keys = &target->thread.keys_user;
++	struct ptrauth_keys_user *keys = &target->thread.keys_user;
+ 	struct user_pac_generic_keys user_keys;
+ 
+ 	if (!system_supports_generic_auth())
+@@ -1076,7 +1076,7 @@ static int pac_generic_keys_set(struct task_struct *target,
+ 				unsigned int pos, unsigned int count,
+ 				const void *kbuf, const void __user *ubuf)
+ {
+-	struct ptrauth_keys *keys = &target->thread.keys_user;
++	struct ptrauth_keys_user *keys = &target->thread.keys_user;
+ 	struct user_pac_generic_keys user_keys;
+ 	int ret;
+ 
 -- 
 2.7.4
 
