@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76BAA1465B6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:25:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA0CB1465B7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:26:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=nNBLigQ1wy3qoolPL0EF++C0XtC7RYzAZOuVTMfCLC0=; b=fUB13bdCwL+5pl/c3C70Xmca0D
-	+dn6/4zIG2oXKhQsqor48suGHjOWJp97rwJj/s4pbzvse6qvVxrs+YZwnE/K7Aw/RDN+JfmihP1K3
-	b9ro5ql0k/5N3jwYBUEnm0gotQka31IvTy3gfg9aq1p/W1VUmZVueRY7Wf2HouYLWaezm2Nd2zDvD
-	lHRkzirzI8nF3tEsMBVFlFVVAeD4W6zGWei/NzM//twV48fG2pmBe6UO/PR3U7r4VIvq3jK3GMg4u
-	aD0T95judVaSFh83JSvmi2bLND+xI7B4im4TVdF3vyChNBGYZhfY5IqQypEZ729ikkUWwh+iPzWEO
-	zODySXjw==;
+	bh=8H8ZEunw7rFxF0eLDyDVx2yZYbbclQxO24DmYekqzXU=; b=IFwKl5UyEMdOJ+BPU598zpSuPW
+	qdOD/rYaSF7xS5c2MU56M4DvtoRSJH96JIQOBWGJoFoo0UU+G/9DWNkeG1ZYh/GF09KedWv2UvZo7
+	yfPlW/LTAn9j1I+sJjA9i5J3YbzzYgIsPccxis3re4vX/8wjLTRC4Pad6A2WjXS3mmini1yOyyBpj
+	9XSQSl+VKC8F6XpJiaANR/m0r1gUR8y4+FvtvS7WbKFELCcYfL7bc4LKR/vM1qHKiCgzSXSRgL/Xt
+	+MuNs05TRaEc/EIfTgCwJ7ytPehDajtG58HmaRQmCu2RzrOXZPhzmp40BXKYgfzVG5MwkBD3UvfqR
+	6KTWVrRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuZg4-0001Pm-SD; Thu, 23 Jan 2020 10:25:32 +0000
+	id 1iuZgO-0001n4-L7; Thu, 23 Jan 2020 10:25:53 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuZcm-0006c7-AF
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:22:10 +0000
+ id 1iuZcq-0006eB-Kh
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:22:14 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E341131B;
- Thu, 23 Jan 2020 02:22:07 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 18FCB31B;
+ Thu, 23 Jan 2020 02:22:12 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.79])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id C09F13F6C4;
- Thu, 23 Jan 2020 02:22:03 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5E6633F6C4;
+ Thu, 23 Jan 2020 02:22:08 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 16/17] arm64: compile the kernel with ptrauth return
- address signing
-Date: Thu, 23 Jan 2020 15:50:38 +0530
-Message-Id: <1579774839-19562-17-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v4 17/17] lkdtm: arm64: test kernel pointer authentication
+Date: Thu, 23 Jan 2020 15:50:39 +0530
+Message-Id: <1579774839-19562-18-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1579774839-19562-1-git-send-email-amit.kachhap@arm.com>
 References: <1579774839-19562-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_022208_480779_57593935 
-X-CRM114-Status: GOOD (  18.40  )
+X-CRM114-CacheID: sfid-20200123_022212_813522_AABBC8D4 
+X-CRM114-Status: GOOD (  14.23  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -66,12 +65,11 @@ Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  Kristina Martsenko <kristina.martsenko@arm.com>,
- Dave Martin <Dave.Martin@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>,
  Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
  Amit Daniel Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
  Ard Biesheuvel <ardb@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -79,128 +77,114 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Kristina Martsenko <kristina.martsenko@arm.com>
+This test is specific for arm64. When in-kernel Pointer Authentication
+config is enabled, the return address stored in the stack is signed.
+This feature helps in ROP kind of attack. If any parameters used to
+generate the pac (<key, sp, lr>) is modified then this will fail in
+the authentication stage and will lead to abort.
 
-Compile all functions with two ptrauth instructions: PACIASP in the
-prologue to sign the return address, and AUTIASP in the epilogue to
-authenticate the return address (from the stack). If authentication
-fails, the return will cause an instruction abort to be taken, followed
-by an oops and killing the task.
+This test changes the input parameter APIA kernel keys to cause abort.
+The pac computed from the new key can be same as last due to hash
+collision so this is retried for few times as there is no reliable way
+to compare the pacs. Even though this test may fail even after retries
+but this may cause authentication failure at a later stage in earlier
+function returns.
 
-This should help protect the kernel against attacks using
-return-oriented programming. As ptrauth protects the return address, it
-can also serve as a replacement for CONFIG_STACKPROTECTOR, although note
-that it does not protect other parts of the stack.
+This test can be invoked as,
+echo CORRUPT_PAC > /sys/kernel/debug/provoke-crash/DIRECT
 
-The new instructions are in the HINT encoding space, so on a system
-without ptrauth they execute as NOPs.
+or as below if inserted as a module,
+insmod lkdtm.ko cpoint_name=DIRECT cpoint_type=CORRUPT_PAC cpoint_count=1
 
-CONFIG_ARM64_PTR_AUTH now not only enables ptrauth for userspace and KVM
-guests, but also automatically builds the kernel with ptrauth
-instructions if the compiler supports it. If there is no compiler
-support, we do not warn that the kernel was built without ptrauth
-instructions.
+[   13.118166] lkdtm: Performing direct entry CORRUPT_PAC
+[   13.118298] lkdtm: Clearing PAC from the return address
+[   13.118466] Unable to handle kernel paging request at virtual address bfff8000108648ec
+[   13.118626] Mem abort info:
+[   13.118666]   ESR = 0x86000004
+[   13.118866]   EC = 0x21: IABT (current EL), IL = 32 bits
+[   13.118966]   SET = 0, FnV = 0
+[   13.119117]   EA = 0, S1PTW = 0
 
-GCC 7 and 8 support the -msign-return-address option, while GCC 9
-deprecates that option and replaces it with -mbranch-protection. Support
-both options.
-
-Clang uses an external assembler hence this patch makes sure that the
-correct parameters (-march=armv8.3-a) are passed down to help it recognize
-the ptrauth instructions. This option is not used for GNU toolchain.
-
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
-Reviewed-by: Kees Cook <keescook@chromium.org>
-Co-developed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Signed-off-by: Kristina Martsenko <kristina.martsenko@arm.com>
-[Amit: Cover leaf function, comments]
+Cc: Kees Cook <keescook@chromium.org>
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
 Changes since v3:
-*) Removed compiler version check and added compiler Kconfig dependencies
-    as pointed by Catalin [1].
-*) Enabling warnings for incompatile compilers/assemblers will be done separately.
+ *) Added Catalin's Acked-by.
 
-[1]: http://lists.infradead.org/pipermail/linux-arm-kernel/2020-January/706623.html
+ drivers/misc/lkdtm/bugs.c  | 36 ++++++++++++++++++++++++++++++++++++
+ drivers/misc/lkdtm/core.c  |  1 +
+ drivers/misc/lkdtm/lkdtm.h |  1 +
+ 3 files changed, 38 insertions(+)
 
- arch/arm64/Kconfig  | 20 +++++++++++++++++++-
- arch/arm64/Makefile | 11 +++++++++++
- 2 files changed, 30 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index beded60..da04b78 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1467,6 +1467,7 @@ config ARM64_PTR_AUTH
- 	bool "Enable support for pointer authentication"
- 	default y
- 	depends on !KVM || ARM64_VHE
-+	depends on (CC_HAS_SIGN_RETURN_ADDRESS || CC_HAS_BRANCH_PROT_PAC_RET) && AS_HAS_PAC
- 	help
- 	  Pointer authentication (part of the ARMv8.3 Extensions) provides
- 	  instructions for signing and authenticating pointers against secret
-@@ -1474,11 +1475,17 @@ config ARM64_PTR_AUTH
- 	  and other attacks.
- 
- 	  This option enables these instructions at EL0 (i.e. for userspace).
--
- 	  Choosing this option will cause the kernel to initialise secret keys
- 	  for each process at exec() time, with these keys being
- 	  context-switched along with the process.
- 
-+	  If the compiler supports the -mbranch-protection or
-+	  -msign-return-address flag (e.g. GCC 7 or later), then this option
-+	  will also cause the kernel itself to be compiled with return address
-+	  protection. In this case, and if the target hardware is known to
-+	  support pointer authentication, then CONFIG_STACKPROTECTOR can be
-+	  disabled with minimal loss of protection.
+diff --git a/drivers/misc/lkdtm/bugs.c b/drivers/misc/lkdtm/bugs.c
+index de87693..cc92bc3 100644
+--- a/drivers/misc/lkdtm/bugs.c
++++ b/drivers/misc/lkdtm/bugs.c
+@@ -378,3 +378,39 @@ void lkdtm_DOUBLE_FAULT(void)
+ 	pr_err("XFAIL: this test is ia32-only\n");
+ #endif
+ }
 +
- 	  The feature is detected at runtime. If the feature is not present in
- 	  hardware it will not be advertised to userspace/KVM guest nor will it
- 	  be enabled. However, KVM guest also require VHE mode and hence
-@@ -1490,6 +1497,17 @@ config ARM64_PTR_AUTH
- 	  but with the feature disabled. On such a system, this option should
- 	  not be selected.
++#ifdef CONFIG_ARM64_PTR_AUTH
++static noinline void change_pac_parameters(void)
++{
++	/* Reset the keys of current task */
++	ptrauth_thread_init_kernel(current);
++	ptrauth_thread_switch_kernel(current);
++}
++
++#define CORRUPT_PAC_ITERATE	10
++noinline void lkdtm_CORRUPT_PAC(void)
++{
++	int i;
++
++	if (!system_supports_address_auth()) {
++		pr_err("FAIL: arm64 pointer authentication feature not present\n");
++		return;
++	}
++
++	pr_info("Change the PAC parameters to force function return failure\n");
++	/*
++	 * Pac is a hash value computed from input keys, return address and
++	 * stack pointer. As pac has fewer bits so there is a chance of
++	 * collision, so iterate few times to reduce the collision probability.
++	 */
++	for (i = 0; i < CORRUPT_PAC_ITERATE; i++)
++		change_pac_parameters();
++
++	pr_err("FAIL: %s test failed. Kernel may be unstable from here\n", __func__);
++}
++#else /* !CONFIG_ARM64_PTR_AUTH */
++noinline void lkdtm_CORRUPT_PAC(void)
++{
++	pr_err("FAIL: arm64 pointer authentication config disabled\n");
++}
++#endif
+diff --git a/drivers/misc/lkdtm/core.c b/drivers/misc/lkdtm/core.c
+index ee0d6e7..5ce4ac8 100644
+--- a/drivers/misc/lkdtm/core.c
++++ b/drivers/misc/lkdtm/core.c
+@@ -116,6 +116,7 @@ static const struct crashtype crashtypes[] = {
+ 	CRASHTYPE(STACK_GUARD_PAGE_LEADING),
+ 	CRASHTYPE(STACK_GUARD_PAGE_TRAILING),
+ 	CRASHTYPE(UNSET_SMEP),
++	CRASHTYPE(CORRUPT_PAC),
+ 	CRASHTYPE(UNALIGNED_LOAD_STORE_WRITE),
+ 	CRASHTYPE(OVERWRITE_ALLOCATION),
+ 	CRASHTYPE(WRITE_AFTER_FREE),
+diff --git a/drivers/misc/lkdtm/lkdtm.h b/drivers/misc/lkdtm/lkdtm.h
+index c56d23e..8d13d01 100644
+--- a/drivers/misc/lkdtm/lkdtm.h
++++ b/drivers/misc/lkdtm/lkdtm.h
+@@ -31,6 +31,7 @@ void lkdtm_UNSET_SMEP(void);
+ #ifdef CONFIG_X86_32
+ void lkdtm_DOUBLE_FAULT(void);
+ #endif
++void lkdtm_CORRUPT_PAC(void);
  
-+config CC_HAS_BRANCH_PROT_PAC_RET
-+	# GCC 9 or later, clang 8 or later
-+	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
-+
-+config CC_HAS_SIGN_RETURN_ADDRESS
-+	# GCC 7, 8
-+	def_bool $(cc-option,-msign-return-address=all)
-+
-+config AS_HAS_PAC
-+	def_bool $(as-option,-Wa$(comma)-march=armv8.3-a)
-+
- endmenu
- 
- config ARM64_SVE
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index 1fbe24d..6a1da59 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -72,6 +72,17 @@ stack_protector_prepare: prepare0
- 					include/generated/asm-offsets.h))
- endif
- 
-+ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
-+branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
-+branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
-+# -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the compiler
-+# to generate them and consequently to break the single image contract we pass it
-+# only to the assembler when clang is selected as a compiler. For the GNU toolchain
-+# this option is not used.
-+branch-prot-flags-$(CONFIG_AS_HAS_PAC) += -Wa,-march=armv8.3-a
-+KBUILD_CFLAGS += $(branch-prot-flags-y)
-+endif
-+
- ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
- KBUILD_CPPFLAGS	+= -mbig-endian
- CHECKFLAGS	+= -D__AARCH64EB__
+ /* lkdtm_heap.c */
+ void __init lkdtm_heap_init(void);
 -- 
 2.7.4
 
