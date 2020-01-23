@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C34B21465B3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:25:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15D821465B4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:25:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=kzqaNGiB4OSTZPzp/minbeFXUunw/vyUWBbdjZu2pXw=; b=SdPeZ3S/p/4vinUngbkzEPXAHW
-	xeRlcbbbj3mqIJfzSDpIJD+uXcuYF41rs97Rb2vw5OzD4RmhWDJZ8hJArQVZcGW4Z3aELl+J6Bg7I
-	SbEsu9Okr6U6vHv/Gyr5vKwZ0AnrCXHkoPk5TZrihW/moN8tfBVaa6pY3/RXXlBJp0W9m53snsACW
-	Vy28sNpgSHvyA8NNiGrBtFuOwnD4SmmDcWsrHbFxnRmEncNOiuex0UAiL3lulFM1aIno7pNIS56d5
-	U7NPfmPaDi3B+wl04ilAfCX3AVqu3lsj6iOc0o89if8iDaEp1H8/u1ytXe1+s/3bCRUJIQRXrNGKv
-	zkwfxY0g==;
+	bh=2Gqw8AYmaqzkRU3xviCszloso5y4KoPwObNvM2c/peM=; b=D6EHQUPn43impODKL9D+hJJy8X
+	chk7fX1VpFknovS97YMkT7Nu8PRsJCLJ97MFK3HZ3XpgsbHBEZWSpocSWdK9Mp/O6prEpirnYpSR+
+	6uZnoyYRYDSU8h13sw9Vt5KEiYjXzoO0ocE4S4CEysuf4uj3YHmvznGaCVrFRyYNeVq1B47ulWRNp
+	o7GBX+8PkNE9aYhmIHXv2YPJ/D/EEvvT0ed1xqPc+Io75W3YkCHjWs/UgustdT0RsUs7yr1KqaRr8
+	+HpyR+QQ5obB17McNHHL9UC5hojVVcgqPJpVm8g1vxazIy2THNVs7F9lKe5yo+Ir4TfRs3CwZ1Mfb
+	Rss+l25g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuZfX-0000hI-Gc; Thu, 23 Jan 2020 10:24:59 +0000
+	id 1iuZfj-0000wA-L4; Thu, 23 Jan 2020 10:25:11 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuZcY-0006Tc-Un
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:21:56 +0000
+ id 1iuZcd-0006WE-G1
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:22:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4B52231B;
- Thu, 23 Jan 2020 02:21:54 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 77F6231B;
+ Thu, 23 Jan 2020 02:21:58 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.79])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8D06F3F6C4;
- Thu, 23 Jan 2020 02:21:50 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BB25D3F6C4;
+ Thu, 23 Jan 2020 02:21:54 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 13/17] arm64: __show_regs: strip PAC from lr in printk
-Date: Thu, 23 Jan 2020 15:50:35 +0530
-Message-Id: <1579774839-19562-14-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v4 14/17] arm64: suspend: restore the kernel ptrauth keys
+Date: Thu, 23 Jan 2020 15:50:36 +0530
+Message-Id: <1579774839-19562-15-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1579774839-19562-1-git-send-email-amit.kachhap@arm.com>
 References: <1579774839-19562-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_022155_061400_E65C7E51 
-X-CRM114-Status: GOOD (  10.03  )
+X-CRM114-CacheID: sfid-20200123_022159_627314_A7730765 
+X-CRM114-Status: UNSURE (   8.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -77,35 +78,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-lr is printed with %pS which will try to find an entry in kallsyms.
-After enabling pointer authentication, this match will fail due to
-PAC present in the lr.
+This patch restores the kernel keys from current task during
+cpu resume after the mmu is turned on and ptrauth is enabled.
 
-Strip PAC from the lr to display the correct symbol name.
-
-Suggested-by: James Morse <james.morse@arm.com>
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
-Changes since v3:
- *) Added Catalin's Acked-by.
+ arch/arm64/kernel/sleep.S | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
- arch/arm64/kernel/process.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 58b4736..883bc2a0 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -262,7 +262,7 @@ void __show_regs(struct pt_regs *regs)
+diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
+index 7b2f2e6..f9db925 100644
+--- a/arch/arm64/kernel/sleep.S
++++ b/arch/arm64/kernel/sleep.S
+@@ -2,6 +2,7 @@
+ #include <linux/errno.h>
+ #include <linux/linkage.h>
+ #include <asm/asm-offsets.h>
++#include <asm/asm_pointer_auth.h>
+ #include <asm/assembler.h>
+ #include <asm/smp.h>
  
- 	if (!user_mode(regs)) {
- 		printk("pc : %pS\n", (void *)regs->pc);
--		printk("lr : %pS\n", (void *)lr);
-+		printk("lr : %pS\n", (void *)ptrauth_strip_insn_pac(lr));
- 	} else {
- 		printk("pc : %016llx\n", regs->pc);
- 		printk("lr : %016llx\n", lr);
+@@ -134,6 +135,11 @@ ENTRY(_cpu_resume)
+ 	 */
+ 	bl	cpu_do_resume
+ 
++#ifdef CONFIG_ARM64_PTR_AUTH
++	get_current_task x1
++	ptrauth_keys_install_kernel x1, x2, x3, x4
++#endif
++
+ #ifdef CONFIG_KASAN
+ 	mov	x0, sp
+ 	bl	kasan_unpoison_task_stack_below
 -- 
 2.7.4
 
