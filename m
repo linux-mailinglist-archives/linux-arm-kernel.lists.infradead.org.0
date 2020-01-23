@@ -2,116 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 157CC146B9E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 15:45:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 069A1146BB9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 15:49:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZEZRt2IvJGMhVwaw1B5h1x8yBa8hsaCYlt49prv2/EM=; b=ZJpCPhYE5F0xDY
-	VteLv9rM1GaUKDElJYS6XfyVgptgUl0UWVo3CbArTYStriC527dd2apKLWIOb0ueECZh+C/oTH2X2
-	RJfFeQxF/vk8tKiN9fDpkdeCydXqmDA6ZX4bRT7M658lvqWl89CPB/Prcqz7oUF4UWGOfUrhuqtjz
-	5Vtti/TcYD3zoeSprlWYdtq3NscG4eaFSG5STFUWcvYgB+cJcFf9Z7iqoaE21YS0y/iO+FvWsGtzP
-	uVt9os2Wlva73F+Grt7f1U/KsRPIcn6CWjWTzF72Ma8B0qR2UjD5dty/PekflBV2YMyYcEVhNHJAp
-	9YR7FsqeIB5N90WRswzQ==;
+	List-Owner; bh=pbZI8u1JUGlixwaCiN/qRcp4jgS6DNf/n9Qa6J/5RCQ=; b=BQ+xQt7+35Kv3Q
+	B3dNhMHuvX2yhyHywgbguTx+sa314hExHIBYDib4wwDuc/6slpoZnen9KsHDBNjwERkBdtjAsB74u
+	814FJxq1nTc/AwCyJFMrB33Zo1TMw87YMUeWo4SeI71An6RMwVmQh6NwV3bvu5XbTFBS+HgK5kxdk
+	NYFQVv7keHkcFc0YMYTrqLpPlfjZQ3ZTM5v0BxpGMDcX74WbIeZ1TwnmfISFc87JwRSlTEn9Z1ktG
+	xj9YlzWDwBAkPRi9+b5wNjTZcUDhQYF8zIRelLHbl6SFJf8I9tyD1/pYJkQ1CW0kOm81Wbe5dpBL7
+	s2cMAUszfHF3JzA/GpVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iudjr-0007f6-SU; Thu, 23 Jan 2020 14:45:43 +0000
-Received: from mail-eopbgr80099.outbound.protection.outlook.com ([40.107.8.99]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1iudnR-00085A-SH; Thu, 23 Jan 2020 14:49:25 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iudji-0007eD-4o
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 14:45:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ie6al1RmL5nWswLTHQxrAKkHyWNhdd1KlBp9QkWsLdYIl4Si5yrU8oFJY03vB28iA6gXxj7tFypVZIuYwHmgZf1r18vZ7GMHIhmJ8mIz2YDvSDqNNYID0ILxlMV9+xkP5PrN4ngG0WVOTvN1K1h7V6k9xqGljoJhVl2j52MG/Vr3BQ7Sa487AK2rIXy9RTvjfYAL6JByMg6YumzX3R7H+opNjC0t00f40uHrbrDbJmWuW3KE1769An+GnvukjtCHSHVXQ6sgm1S2ldJMky8HGEIAL6rwx4+35pyVQjekooQWMEkBQfUHLA9vks+d+R0iMR7zKIofbLrpsw4gPh92Rg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mFsGCrLedaPH7ntniz0lqgtuCFCWTxRCSv6KwxszsHc=;
- b=bC1/jfQf/nYyHTXafvppFc7c1T7t8rQCAck61/LZTjZbhkKm/WdD60Nj+nARKjC88hgP/KBw9w+CsvJPB+u+JRryWmd/mIb4+ZwKE0eMRElAxQ4L+b33yQj4iejY7M/EShGRSLHCd82Eccc4iV54P5WpVAhVvb+9BpiYmEZwRHv9Wgv71XvuIkDRyUuGP/kIjhCAW0xRaubTTLgsqDDb1l9RDbKY12hOS0/JQPheYpZ0+cpigGm1mvT/AaVIA+sfB7zegBdGdLgrvccZDylHI0mYd9nRkEBUyA8KBheqZsaq86lCjQ4FsdYyxbDTRF9Lvin4NcoJX7soyzvhvbUyuQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mFsGCrLedaPH7ntniz0lqgtuCFCWTxRCSv6KwxszsHc=;
- b=TV4nOYNji4n0HJFRR/7q+AWDgXikL1tnBMzmy3FB57QiNH+o5cysbt9KoQWuF5qkQWWN81gxrCw8Yysy0Sb6ahJU2Fti/w7PXi3FvoLFtdn57tw+ar8BkzcP37paDG4IGBleiVSG14IxLyd5/ZYTIkIb8EpvxX0oll7llbJbjq4=
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
- DB3PR0202MB3338.eurprd02.prod.outlook.com (52.134.72.156) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.25; Thu, 23 Jan 2020 14:45:28 +0000
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::cd85:a8a5:da14:db13]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::cd85:a8a5:da14:db13%7]) with mapi id 15.20.2644.027; Thu, 23 Jan 2020
- 14:45:28 +0000
-Received: from [192.168.13.3] (213.112.138.4) by
- HE1P18901CA0019.EURP189.PROD.OUTLOOK.COM (2603:10a6:3:8b::29) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2644.20 via Frontend Transport; Thu, 23 Jan 2020 14:45:28 +0000
-From: Peter Rosin <peda@axentia.se>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH] ARM: dts: at91: nattis 2: remove unnecessary include
-Thread-Topic: [PATCH] ARM: dts: at91: nattis 2: remove unnecessary include
-Thread-Index: AQHVvod43Bw201Hu2UKhmyhbyxCTNqf4em+A
-Date: Thu, 23 Jan 2020 14:45:28 +0000
-Message-ID: <a0d80517-5528-8646-91c1-60a7c24511f9@axentia.se>
-References: <20191229203503.336593-1-alexandre.belloni@bootlin.com>
-In-Reply-To: <20191229203503.336593-1-alexandre.belloni@bootlin.com>
-Accept-Language: en-US, sv-SE
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-x-originating-ip: [213.112.138.4]
-x-clientproxiedby: HE1P18901CA0019.EURP189.PROD.OUTLOOK.COM
- (2603:10a6:3:8b::29) To DB3PR0202MB3434.eurprd02.prod.outlook.com
- (2603:10a6:8:5::30)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peda@axentia.se; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ddfe978a-40c1-49a6-a0d1-08d7a012e3a2
-x-ms-traffictypediagnostic: DB3PR0202MB3338:
-x-microsoft-antispam-prvs: <DB3PR0202MB3338AF0CAA0CD68069F6FFC3BC0F0@DB3PR0202MB3338.eurprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5236;
-x-forefront-prvs: 029174C036
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(396003)(136003)(366004)(376002)(39830400003)(346002)(189003)(199004)(26005)(508600001)(66476007)(66946007)(4326008)(66446008)(64756008)(66556008)(16526019)(53546011)(6486002)(36756003)(6916009)(2906002)(52116002)(186003)(956004)(2616005)(81166006)(4744005)(8936002)(54906003)(5660300002)(71200400001)(4001150100001)(31686004)(316002)(81156014)(8676002)(31696002)(86362001)(16576012);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3338;
- H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: axentia.se does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: SU5htzVeZCSH3UvBUWC6YWl/y1g7ntWcj/5LVk/Ulum/AovnzP5LIDKXYP0aZCifipg4qytMseabXkLPI4Be+nKcI9haCMNJFVFTS4xjeN30Cc2nVP+hIcSBRELhWBptTI7Uo9Jdjf9GeVKXC5USiHTxkQwk4MPw4cREfMsOMFE319p6U5ei2ZeJnO7ByHkap7OhEn3Ad7j4TFubnm4Dq/YNvd62B03RFiEcXl6kQ78YC+NCwGUoCEUqwrjlmaOaU2vmDY4AjEuG2L2q3zz9GSkILfFplXYAZnyTaKR3WtMGdMldz3bDiuwakmN10B3pkw9gfcmJnuC/ApD4bScNbu6uh+/vZIJwaXwqiFrCx7OvGi5Uq1WO+X7Nu3ET7C5aGhJ9Mn/lONi5KVrQHSI/1HteBx5fX77FqJJsvjHFW8LMrIIZNJ6/NgsyUy8GDoo/
-x-ms-exchange-transport-forked: True
-Content-ID: <95C48D244022944F9746CC17890F5003@eurprd02.prod.outlook.com>
+ id 1iudnC-00084f-7t
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 14:49:11 +0000
+Received: by mail-lf1-x141.google.com with SMTP id f24so2503372lfh.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 Jan 2020 06:49:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=BPPW9IU+ruAV1uOimTrGBs92WdNG36xmqhTz53FGFdY=;
+ b=mrGCJles1c7f58DkPrSG6gSnjtp08QKxaeou5MDQFp9ZwRSjQ2cb36mHC/aMna475B
+ a5JV6HMjF9u/6McqYd2t4tJqDpogKUq4BEwcERUaDcCQISLlkwKBK80W/XNvST7IK/mV
+ bsYZJLqBEQVGDCva4J5hT3OYJqSkEJsTeqvGrja/0WYmmQ4z2spTq3/SdOc0wJtA761p
+ UB+pYRTSmONEJoMt1rCoPqindyXeSYUUIhG6l8yvhvVK5oD7h4fF7RUXiMyJn6AS7D3p
+ DNxkQthVpAqnV3SfxeQiT3Zl5r6NoTSyoyLdic80YG0GOOTUUiOv6Cp+b5CBp0SoUqTA
+ bK0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=BPPW9IU+ruAV1uOimTrGBs92WdNG36xmqhTz53FGFdY=;
+ b=jG9JhUwPNXUG+1uAOcT93Y3ES/fsOO7Oap3eq8Pi7lZBDo4wmYH8UoPEadynZJ4qaI
+ iSSwY1Om86GH6QoZotPB9iZAEThgs+GqYztj/d8+mJSEbI/RY2CJAJTIc1EqBxQoWwXn
+ GehbXFe4KBbzHK4FPB/zqRLKPdZIia4ndMm4nmYsvnFb6nziNrsfvk++NZbdfi4J/fUO
+ 7+5YWXDSyZy4ytj+mmlSZTuHoK/5DaWozoNYVE6GjgVjqPD+Jiw/srkEJTgPisg2QnES
+ qoAZkxjEhg3h5IMrgURNZmYym/3sydNw6G2n7I8X0gATA6UghizcjrbbQh8Zw7fEZt91
+ OYeQ==
+X-Gm-Message-State: APjAAAUNG/dUUDB4gmSx/fPAYRuEnvj9cAb26U1MHsQEa5U/VO+fyrMo
+ uxuG2J5LgvT1OxRGUIHccryWsa0Kxd+LGQnILiZZgnDqCiM=
+X-Google-Smtp-Source: APXvYqwviesfBDZBeKob892qIy6qBAac09CjXqBfPvQ19xi38mTIEOFcWe9pDLJSINtpV6mS8x6bctvvmZYw+cMcqCs=
+X-Received: by 2002:ac2:4909:: with SMTP id n9mr4796395lfi.21.1579790948052;
+ Thu, 23 Jan 2020 06:49:08 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: ddfe978a-40c1-49a6-a0d1-08d7a012e3a2
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Jan 2020 14:45:28.7035 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: KysZujrL1/8uxUKfo5xRoZPV5lBgw++drh0slssKMy9Jq95KnHiMfJjllKMUVcp6
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3338
+References: <1579052348-32167-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1579052348-32167-1-git-send-email-Anson.Huang@nxp.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 23 Jan 2020 15:48:57 +0100
+Message-ID: <CACRpkdaX9amSA88=L7VSF9VDKxD_ed1gN4whJ3FriUwW1EB7jw@mail.gmail.com>
+Subject: Re: [PATCH V9 1/3] dt-bindings: imx: Add pinctrl binding doc for
+ i.MX8MP
+To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_064534_392656_94CF386E 
-X-CRM114-Status: GOOD (  12.17  )
+X-CRM114-CacheID: sfid-20200123_064910_322716_404D5EE6 
+X-CRM114-Status: GOOD (  10.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.99 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -130,46 +91,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Stefan Agner <stefan@agner.ch>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ NXP Linux Team <Linux-imx@nxp.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, maxime@cerno.tech,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Dong Aisheng <aisheng.dong@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Dinh Nguyen <dinguyen@kernel.org>, Sascha Hauer <kernel@pengutronix.de>,
+ Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-12-29 21:35, Alexandre Belloni wrote:
-> sama5d3_lcd.dtsi is already included by sama5d31.dtsi, itself included by
-> at91-linea.dtsi.
+On Wed, Jan 15, 2020 at 2:43 AM Anson Huang <Anson.Huang@nxp.com> wrote:
 
-Right, good catch.
-
-Acked-by: Peter Rosin <peda@axentia.se>
-
-Cheers,
-Peter
-
-[Sorry for the delay, the patch was marked as spam over here and I failed to
-notice it until now...]
-
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Add binding doc for i.MX8MP pinctrl driver.
+>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
 > ---
->  arch/arm/boot/dts/at91-nattis-2-natte-2.dts | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/arch/arm/boot/dts/at91-nattis-2-natte-2.dts b/arch/arm/boot/dts/at91-nattis-2-natte-2.dts
-> index f245944bd5d7..4f123477e631 100644
-> --- a/arch/arm/boot/dts/at91-nattis-2-natte-2.dts
-> +++ b/arch/arm/boot/dts/at91-nattis-2-natte-2.dts
-> @@ -8,7 +8,6 @@
->   */
->  /dts-v1/;
->  #include "at91-linea.dtsi"
-> -#include "sama5d3_lcd.dtsi"
->  #include "at91-natte.dtsi"
->  
->  / {
-> 
+> Changes since V8:
+>         - the lisence should be GPL-2.0
+
+Patch applied.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
