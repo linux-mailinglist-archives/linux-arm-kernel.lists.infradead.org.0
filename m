@@ -2,71 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D035C146733
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:48:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E52E8146734
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:48:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OevKPvSLh5tDiuJ6sSrAgXAA3NVzK4gbGGxZhxKXIsY=; b=aXr4aVnl+B6B+c
-	CSkhLi2Lajz1CunbSieWsFHE3kXDYNXRK0rXkmTfxCnWuQ4j9rtyJWxeoa5YDtmaHwY/2897NXOjZ
-	SksLSaRbYDVKfHI2jRnrzx/QK32BgGM+a7h2jQPudQp9h/FjH1rlBKoMvl+BlNLSI1vm8yeBiO/ee
-	n0dZgHtw+N6Lw6AqTlU8biWA5/Tb+vxjuXuBTc5nOuWU+L24V/Srwm0gFbNRUX/SCmyW+vN3KCuoC
-	c4h6U7ZmwGeZaEDIcPG7urUMTVL0FH5tm+q+qDboFGmkEWm95aIv1Zg7f7Tr0+ng3Y9Pp6t5TpPNc
-	CBvNtQnypwINQuqXHatg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GYzIoz51nJK02V34oUG9VR4+ekEocNkVRP8l04NDGEc=; b=tihRdoNecUrGun3sK+5tnWbgh
+	yz2FodIX0/OsJTBF/vOibkAv6v60RIBxnCtjRh4eNO4yJ6P6j7iHnMrcSDcO0kUyrJUr33As2oCyh
+	vmmcKFp3hleEYDPwrekXe+osDTAO93rwXmcz7yYfIahiFt0jQ/co7bQUX8kXRcvgs4IfldIfAilu9
+	qjxesEtRL0nlAHpL4mIky+nLr0a/7R8rs0WhZn7oePd9DRXVrDXSFQVIltCAecCjsXS8bVcfbptcq
+	OpCioBMTBf4VtNZ+5m9a0ZbfObRHMc5TBPNZB5s85AMNGAMgcWEYGv6NUMTVNSEnqAeufdz98JKq0
+	3g5D3yMew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuayE-0003va-38; Thu, 23 Jan 2020 11:48:22 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iuayU-0004Fq-7v; Thu, 23 Jan 2020 11:48:38 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuavC-0001NL-20
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:45:17 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00NBj96J014080;
- Thu, 23 Jan 2020 05:45:09 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579779909;
- bh=63sAqn5erf4xNEvqueAvduHlLaJiBo1Ph/nn0rBGpS0=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=a1Yp1/LmaH/K5nuHV3mMI4CLud4GFaOh8WEqtj0PujxKMDJay9ZaqpdQdNEklWwpa
- jWnZLTn81AJEkdpdQJJFgGvDbuvecxPXr0P6y9BwJCbe5lQ4SpEe1Med00G4DkCnDd
- VOhez4t++4C85i68J2X0pz5ya80ddNCyJoc05wn8=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBj9cq060995;
- Thu, 23 Jan 2020 05:45:09 -0600
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 23
- Jan 2020 05:45:08 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 23 Jan 2020 05:45:08 -0600
-Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBijBM114078;
- Thu, 23 Jan 2020 05:45:06 -0600
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <t-kristo@ti.com>, <nm@ti.com>, <lokeshvutla@ti.com>
-Subject: [PATCH v3 9/9] arm64: dts: ti: k3-j721e-main: Add McASP nodes
-Date: Thu, 23 Jan 2020 13:45:28 +0200
-Message-ID: <20200123114528.26552-10-peter.ujfalusi@ti.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200123114528.26552-1-peter.ujfalusi@ti.com>
-References: <20200123114528.26552-1-peter.ujfalusi@ti.com>
+ id 1iuavn-000260-Ur
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:45:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1579779948;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=snyDmTf7CBCw1wnH6HPrXaSpHlhW2BCaG6gTHi350h0=;
+ b=LXh0vze4bKB5+GkEoCnOY7aUBwwE3FiMbELTKHvinw2q7UXfQQv+3mwJsd6NJRwBlm75Qk
+ AZG463UWN78tQJP2r7Nv7OQuwmRqd8zekjhKpt2MsRNEhn/8/1QL24EYPuhbdCn/fk9+57
+ VCTlcIIIUTqEp+UGzdrgBXVdt9U1fpc=
+Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
+ [209.85.128.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-409-puUstfPlP-alreSPH82Knw-1; Thu, 23 Jan 2020 06:45:45 -0500
+Received: by mail-wm1-f71.google.com with SMTP id m21so294229wmg.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 Jan 2020 03:45:45 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=snyDmTf7CBCw1wnH6HPrXaSpHlhW2BCaG6gTHi350h0=;
+ b=Mi/yCKiaX03g1VUofVOZgIy8OpqvsdkwwJreBWpm2cFP5QSYS2MJsAC0UUebbHeqyW
+ zxeCF2Uh3+OhTIqPoA4H7Kw01LYozxfaMGkNv1AI80CsPyurJTfd9MxIzerNTVh0hmga
+ HGEe4PihYCMS4LRUpLLEZjm1nOJxrWggT08KYU8WJO4BCtA+i9W4Z6sgT1SA64jA4t7g
+ tX49J35yZeTfrRaoT2Hm30KKdCXmcin8CsBlugZhSEYKHXSu5RaVW/CAmADo6GpE5oGq
+ WT2PmU4FBgTcW6VTMNZ7wEvsXgS93Fi2OxINNefjWgj+kT3yB5KzCgs9OfTLpFwxrLcA
+ OJ4w==
+X-Gm-Message-State: APjAAAX5GNXt+ipUUGSukM3IPWfbnJZiaCbma2bo78DJd6GsR1oXNjrU
+ z1OFuVaxXdZHz1W7Tqw8iD/NDdfaLcQoSQcNSAk4O7IMk9TmH4pCbOFHYfRNpT6QVE6zfg6UDVE
+ pUOXfMF/G6+ApWvUiQ6R3HTL6iLNoPmzl5j4=
+X-Received: by 2002:a05:600c:48a:: with SMTP id
+ d10mr3806701wme.87.1579779944254; 
+ Thu, 23 Jan 2020 03:45:44 -0800 (PST)
+X-Google-Smtp-Source: APXvYqwo5inKTgvBc+mV0kyUUFtWKnKpn/c8kgV9a7x3qOk7KCsOT9oh7insLR6xbWgPYU9HP5HyOQ==
+X-Received: by 2002:a05:600c:48a:: with SMTP id
+ d10mr3806671wme.87.1579779944005; 
+ Thu, 23 Jan 2020 03:45:44 -0800 (PST)
+Received: from [192.168.1.81]
+ (host81-140-166-164.range81-140.btcentralplus.com. [81.140.166.164])
+ by smtp.gmail.com with ESMTPSA id u18sm2739453wrt.26.2020.01.23.03.45.42
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 23 Jan 2020 03:45:43 -0800 (PST)
+Subject: Re: [RFC v5 04/57] objtool: check: Ignore empty alternative groups
+To: Josh Poimboeuf <jpoimboe@redhat.com>
+References: <20200109160300.26150-1-jthierry@redhat.com>
+ <20200109160300.26150-5-jthierry@redhat.com>
+ <20200121163011.tk5koyg24gzuhoaa@treble>
+From: Julien Thierry <jthierry@redhat.com>
+Message-ID: <35333a67-cf5b-450f-0f9b-c75ae1f9be8b@redhat.com>
+Date: Thu, 23 Jan 2020 11:45:42 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20200121163011.tk5koyg24gzuhoaa@treble>
+Content-Language: en-US
+X-MC-Unique: puUstfPlP-alreSPH82Knw-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_034514_357089_2DCE192E 
-X-CRM114-Status: GOOD (  11.22  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200123_034552_086434_2C708CCF 
+X-CRM114-Status: GOOD (  15.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,263 +114,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, robh+dt@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: peterz@infradead.org, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ raphael.gault@arm.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the nodes for McASP 0-11 and keep them disabled because several
-required properties are not present as they are board specific.
 
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
- arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 228 ++++++++++++++++++++++
- 1 file changed, 228 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-index 6c909bd98a6b..0b9d14b838a1 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-@@ -735,4 +735,232 @@ ufs@4e84000 {
- 			dma-coherent;
- 		};
- 	};
-+
-+	mcasp0: mcasp@2b00000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b00000 0x0 0x2000>,
-+			<0x0 0x02b08000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 544 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 545 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc400>, <&main_udmap 0x4400>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 174 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 174 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp1: mcasp@2b10000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b10000 0x0 0x2000>,
-+			<0x0 0x02b18000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 546 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 547 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc401>, <&main_udmap 0x4401>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 175 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 175 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp2: mcasp@2b20000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b20000 0x0 0x2000>,
-+			<0x0 0x02b28000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 548 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 549 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc402>, <&main_udmap 0x4402>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 176 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 176 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp3: mcasp@2b30000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b30000 0x0 0x2000>,
-+			<0x0 0x02b38000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 550 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 551 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc500>, <&main_udmap 0x4500>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 177 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 177 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp4: mcasp@2b40000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b40000 0x0 0x2000>,
-+			<0x0 0x02b48000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 552 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 553 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc501>, <&main_udmap 0x4501>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 178 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 178 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp5: mcasp@2b50000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b50000 0x0 0x2000>,
-+			<0x0 0x02b58000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 554 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 555 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc502>, <&main_udmap 0x4502>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 179 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 179 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp6: mcasp@2b60000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b60000 0x0 0x2000>,
-+			<0x0 0x02b68000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 556 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 557 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc503>, <&main_udmap 0x4503>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 180 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 180 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp7: mcasp@2b70000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b70000 0x0 0x2000>,
-+			<0x0 0x02b78000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 558 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 559 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc504>, <&main_udmap 0x4504>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 181 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 181 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp8: mcasp@2b80000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b80000 0x0 0x2000>,
-+			<0x0 0x02b88000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 560 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 561 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc505>, <&main_udmap 0x4505>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 182 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 182 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp9: mcasp@2b90000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02b90000 0x0 0x2000>,
-+			<0x0 0x02b98000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 562 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 563 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc506>, <&main_udmap 0x4506>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 183 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 183 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp10: mcasp@2ba0000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02ba0000 0x0 0x2000>,
-+			<0x0 0x02ba8000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 564 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 565 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc507>, <&main_udmap 0x4507>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 184 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 184 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
-+
-+	mcasp11: mcasp@2bb0000 {
-+		compatible = "ti,am33xx-mcasp-audio";
-+		reg = <0x0 0x02bb0000 0x0 0x2000>,
-+			<0x0 0x02bb8000 0x0 0x1000>;
-+		reg-names = "mpu","dat";
-+		interrupts = <GIC_SPI 566 IRQ_TYPE_LEVEL_HIGH>,
-+				<GIC_SPI 567 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "tx", "rx";
-+
-+		dmas = <&main_udmap 0xc508>, <&main_udmap 0x4508>;
-+		dma-names = "tx", "rx";
-+
-+		clocks = <&k3_clks 185 1>;
-+		clock-names = "fck";
-+		power-domains = <&k3_pds 185 TI_SCI_PD_EXCLUSIVE>;
-+
-+		status = "disabled";
-+	};
- };
+On 1/21/20 4:30 PM, Josh Poimboeuf wrote:
+> On Thu, Jan 09, 2020 at 04:02:07PM +0000, Julien Thierry wrote:
+>> Atlernative section can contain entries for alternatives with no
+>> instructions. Objtool will currently crash when handling such an entry.
+>>
+>> Just skip that entry, but still give a warning to discourage useless
+>> entries.
+>>
+>> Signed-off-by: Julien Thierry <jthierry@redhat.com>
+>> ---
+>>   tools/objtool/check.c | 7 +++++++
+>>   1 file changed, 7 insertions(+)
+>>
+>> diff --git a/tools/objtool/check.c b/tools/objtool/check.c
+>> index 5968e6f08891..27e5380e0e0b 100644
+>> --- a/tools/objtool/check.c
+>> +++ b/tools/objtool/check.c
+>> @@ -866,6 +866,13 @@ static int add_special_section_alts(struct objtool_file *file)
+>>   		}
+>>   
+>>   		if (special_alt->group) {
+>> +			if (!special_alt->orig_len) {
+>> +				WARN("empty alternative entry at %s+0x%lx",
+>> +				     orig_insn->sec->name,
+>> +				     orig_insn->offset);
+>> +				continue;
+>> +			}
+>> +
+> 
+> I think WARN_FUNC() can be used here instead.
+> 
+
+I'll do that.
+
+Thanks,
+
 -- 
-Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Julien Thierry
 
 
 _______________________________________________
