@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9928E1465F6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:48:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 005C51465FD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:52:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9ZsGbhOy/c06nE5NBWgZs4RhJr61YKBaOxvQdKM7gx0=; b=KyZDEB7YPKWDHnKVbpgvKFZG1
-	O8e5n1znEv6gHkQCtelp9Ck+BgN7F2LoU3PLHWyf8FD0OVfj6nb15Oy3OH7AMIv94wpK4zGeEnfmX
-	q066k1gyKBkKkeR81iRaNJcvae2h0vQriLmqcf1N0fQyWHxN0L1bI+4qKv0EAJETaXvyuVnUSOL6+
-	vsSlu/SFHQPa39cAeschauNnCsFUxXOuyUT139MvipvqSrqC44VwmgsKGS3+DFMcdJ9aWAAxYYKIA
-	HeNCADGUaSat4t+kUI+h+HvJOUQuok2Io4843VhOxEHvc4Vufo1Y22raQDt+dBlkrNfdhKbPza8Rp
-	3u+5TyzFw==;
+	 bh=wT55SY0UL6iypAtpas77JfQHrtw1lL2x4uYtnWq7xX8=; b=YwAykzTB02Ckw6Cm28DwLe9vo
+	n7tPnQrZg83zmAW6ONuYkrlzjLS7uilNa8IR9QZdzY6uELVl/J85Xh6ez5GR3Qe0Phz62E+Gy4RSQ
+	ICPu/WfEvdo85JAAMxryF1+3GJqFC3Y4w1+toHS9sqBGmlD6Apo/5c/d6ySsNjjHQnY0wtJQ8dfkZ
+	2fG3Wp2T2x4SY0/LOxzvueVMLJ4E+rI8X7vVFWtZP90at/obaCv1SpS4HPZ2ZmIDyqUZKLR+pN+ub
+	MvlmrLKL9REnmII4W5Ct+FBPcSGpQCxGbZS7ajvMtFSwi/jQxJWth38Vj0o4m+oN9q99P4kbOKxgL
+	oBx0kaEZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iua29-0002RQ-FT; Thu, 23 Jan 2020 10:48:21 +0000
+	id 1iua61-0004Db-JN; Thu, 23 Jan 2020 10:52:21 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iua20-0002Qh-9n
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:48:13 +0000
+ id 1iua5p-0004D8-Li
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:52:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2B21231B;
- Thu, 23 Jan 2020 02:48:10 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 967D731B;
+ Thu, 23 Jan 2020 02:52:08 -0800 (PST)
 Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5E2493F6C4;
- Thu, 23 Jan 2020 02:48:08 -0800 (PST)
-Subject: Re: [RFC 0/6] vDSO support for Hyper-V guest on ARM64
-To: Boqun Feng <boqun.feng@gmail.com>, linux-hyperv@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-References: <20191216001922.23008-1-boqun.feng@gmail.com>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 956AF3F6C4;
+ Thu, 23 Jan 2020 02:52:06 -0800 (PST)
+Subject: Re: [PATCH v4 15/17] kconfig: Add support for 'as-option'
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>
+References: <1579774839-19562-1-git-send-email-amit.kachhap@arm.com>
+ <1579774839-19562-16-git-send-email-amit.kachhap@arm.com>
+ <CAKv+Gu-r4d1bBNJK0BZAX=b2+SDqMztAHx+cpq1dxB2q8O1YJA@mail.gmail.com>
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-Pep-Version: 2.0
-Message-ID: <ef6cb7ba-b448-cfa5-abbb-1d99d1396ce5@arm.com>
-Date: Thu, 23 Jan 2020 10:48:07 +0000
+Message-ID: <0640c3c6-8b5f-8c29-692c-a9acdda01a6c@arm.com>
+Date: Thu, 23 Jan 2020 10:52:05 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20191216001922.23008-1-boqun.feng@gmail.com>
-Content-Type: multipart/mixed; boundary="------------F3BF51483F6DFE9DDF869D68"
+In-Reply-To: <CAKv+Gu-r4d1bBNJK0BZAX=b2+SDqMztAHx+cpq1dxB2q8O1YJA@mail.gmail.com>
+Content-Type: multipart/mixed; boundary="------------D41B56BBB8DDDD8892682DBA"
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_024812_429395_E862309D 
-X-CRM114-Status: GOOD (  16.10  )
+X-CRM114-CacheID: sfid-20200123_025209_819006_A3CC9B2C 
+X-CRM114-Status: GOOD (  13.16  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -66,100 +68,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Stefano Stabellini <sstabellini@kernel.org>,
- Stephen Hemminger <sthemmin@microsoft.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Haiyang Zhang <haiyangz@microsoft.com>,
- Michael Kelley <mikelley@microsoft.com>, xen-devel@lists.xenproject.org,
- Thomas Gleixner <tglx@linutronix.de>, "K. Y. Srinivasan" <kys@microsoft.com>,
- Will Deacon <will@kernel.org>
+ Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This is a multi-part message in MIME format.
---------------F3BF51483F6DFE9DDF869D68
+--------------D41B56BBB8DDDD8892682DBA
 Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
-Hi Boqun Feng,
+On 23/01/2020 10:30, Ard Biesheuvel wrote:
+> On Thu, 23 Jan 2020 at 11:22, Amit Daniel Kachhap <amit.kachhap@arm.com=
+> wrote:
+>>
+>> From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+>>
+>> Currently kconfig does not have a feature that allows to detect if the=
 
-sorry for the late reply.
+>> used assembler supports a specific compilation option.
+>>
+>> Introduce 'as-option' to serve this purpose in the context of Kconfig:=
 
-On 16/12/2019 00:19, Boqun Feng wrote:
-> Hi,
+>>
+>>         config X
+>>                 def_bool $(as-option,...)
+>>
+>> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+>> Cc: linux-kbuild@vger.kernel.org
+>> Acked-by: Masahiro Yamada <masahiroy@kernel.org>
+>> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+>> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+>> ---
+>> Changes since v3:
+>> *) Changed the assembler option to -c instead of earlier -E.
+>> *) Added Masahiro Acked-by.
+>>
+>>  scripts/Kconfig.include | 4 ++++
+>>  1 file changed, 4 insertions(+)
+>>
+>> diff --git a/scripts/Kconfig.include b/scripts/Kconfig.include
+>> index d4adfbe..c4b4424 100644
+>> --- a/scripts/Kconfig.include
+>> +++ b/scripts/Kconfig.include
+>> @@ -31,6 +31,10 @@ cc-option =3D $(success,$(CC) -Werror $(CLANG_FLAGS=
+) $(1) -E -x c /dev/null -o /de
+>>  # Return y if the linker supports <flag>, n otherwise
+>>  ld-option =3D $(success,$(LD) -v $(1))
+>>
+>> +# $(as-option,<flag>)
+>> +# Return y if the assembler supports <flag>, n otherwise
+>> +as-option =3D $(success, $(CC) $(CLANG_FLAGS) $(1) -c -x assembler /d=
+ev/null -o /dev/zero)
 >=20
-> This is the RFC patchset for vDSO support in ARM64 Hyper-V guest. To
-> test it, Michael's ARM64 support patchset:
->=20
-> 	https://lore.kernel.org/linux-arm-kernel/1570129355-16005-1-git-send-e=
-mail-mikelley@microsoft.com/
->=20
-> is needed.
->=20
-> Similar as x86, Hyper-V on ARM64 use a TSC page for guests to read
-> the virtualized hardware timer, this TSC page is read-only for the
-> guests, so could be used for vDSO data page. And the vDSO (userspace)
-> code could use the same code for timer reading as kernel, since
-> they read the same TSC page.
->=20
+> Did you mean '-o /dev/null' here?
+>
 
-I had a look to your patches and overall, I could not understand why we c=
-an't
-use the arch_timer to do the same things you are doing with the one you
-introduced in this series. What confuses me is that KVM works just fine w=
-ith the
-arch_timer which was designed with virtualization in mind. Why do we need=
+No /dev/zero because otherwise I get a warning that says that I am trying=
+ to
+compile an object into the same file.
 
-another one? Could you please explain?
+If I invert /dev/zero and /dev/null this trashes the compilation. It took=
+ me a
+while to get the right combination.
 
-> This patchset therefore extends ARM64's __vsdo_init() to allow multiple=
-
-> data pages and introduces the vclock_mode concept similar to x86 to
-> allow different platforms (bare-metal, Hyper-V, etc.) to switch to
-> different __arch_get_hw_counter() implementations. The rest of this
-> patchset does the necessary setup for Hyper-V guests: mapping tsc page,=
-
-> enabling userspace to read cntvct, etc. to enable vDSO.
->=20
-> This patchset consists of 6 patches:
->=20
-> patch #1 allows hv_get_raw_timer() definition to be overridden for
-> userspace and kernel to share the same hv_read_tsc_page() definition.
->=20
-> patch #2 extends ARM64 to support multiple vDSO data pages.
->=20
-> patch #3 introduces vclock_mode similiar to x86 to allow different
-> __arch_get_hw_counter() implementations for different clocksources.
->=20
-> patch #4 maps Hyper-V TSC page into vDSO data page.
->=20
-> patch #5 allows userspace to read cntvct, so that userspace can
-> efficiently read the clocksource.
->=20
-> patch #6 enables the vDSO for ARM64 Hyper-V guest.
->=20
-> The whole patchset is based on v5.5-rc1 plus Michael's ARM64 support
-> patchset, and I've done a few tests with:
->=20
-> 	https://github.com/nlynch-mentor/vdsotest
->=20
-> Comments and suggestions are welcome!
->=20
-> Regards,
-> Boqun
->=20
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
->=20
+>> +
+>>  # check if $(CC) and $(LD) exist
+>>  $(error-if,$(failure,command -v $(CC)),compiler '$(CC)' not found)
+>>  $(error-if,$(failure,command -v $(LD)),linker '$(LD)' not found)
+>> --
+>> 2.7.4
+>>
 
 --=20
 Regards,
 Vincenzo
 
---------------F3BF51483F6DFE9DDF869D68
+--------------D41B56BBB8DDDD8892682DBA
 Content-Type: application/pgp-keys;
  name="pEpkey.asc"
 Content-Transfer-Encoding: quoted-printable
@@ -387,7 +381,7 @@ GrFxzNOCDuNG1w=3D=3D
 =3DVSiF
 -----END PGP PUBLIC KEY BLOCK-----
 
---------------F3BF51483F6DFE9DDF869D68
+--------------D41B56BBB8DDDD8892682DBA
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -398,5 +392,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---------------F3BF51483F6DFE9DDF869D68--
+--------------D41B56BBB8DDDD8892682DBA--
 
