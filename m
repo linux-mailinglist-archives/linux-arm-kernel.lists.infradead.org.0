@@ -2,70 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D120914671D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:45:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2521B146711
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:45:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4iQvf7J8sRwhHznML2ha3SuwW4mAfsMywR81SeD6ql4=; b=hNf6P9qYphqAHt
-	EWbqokJrpgsbR0xHB1gA9sLP2AzH6rPZ6ZAAomcQ0SIM+wyAs9kotrTzBJhXgRY4hFPLBBUMRYXT+
-	GCK0mK/wCGXnztMnh4ZaaSyca/J78/Fvnoc0yVASiE8fFiE0KcICX5tZc+Z7VZjbTb+5zJrmLbyzU
-	2yGGDtG+tQbHCf1V3wrRmD/5sfqfN4H/HI2bHYX7/6zcMyVhQovw/LlRjTRlLQSp2lun2/f5x0lRn
-	b1RwSprt3YAr97WdPkpp5ltFWeD+WYX5kE6AFC+hra3EJXIjwQFlrvp7ODrVHEwT2THfc5D56TLrc
-	j4+LbpZV3XOOEejzRW6Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tT5l/E4uESo6OLiVeSvdrzgh9wyH/R4dICZRelo1PdM=; b=qAhXhk0ATh52KV
+	0pgcorqSBibpU2/1Lwl+bGlSRWxnFAxOQE+m5ci9POlLQTRE4SEEAtwWqPgQ+/d5JXYhKR1c50tvt
+	MJ2RgNgnhh7id51jf+pxTL6mf6Lu7XF2hnTM8VUGHKmHzv5+zRAERjrpS7OXlqCWMWbumpcxfRdcl
+	qP3uU8b1u9hDZylHtQKV8MEDIXIwgwNkffCUaVCY0wwS5IaKhLqfPJAq+lfaNfkbAbHVBo/dllR/8
+	XJ8PQpSZKP8RYzoTdC53GzlsLQM3hPzsmf1uEiTyl82nGtA+NN9p0moDelPs8NimRrZepTpnfCNhC
+	fyjT8d6BSnCb7/QMD+/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuavZ-0001kN-Hc; Thu, 23 Jan 2020 11:45:37 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iuavH-0000HP-Fe; Thu, 23 Jan 2020 11:45:19 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuaut-0000GZ-I4
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:44:57 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00NBinIw023470;
- Thu, 23 Jan 2020 05:44:49 -0600
+ id 1iuaut-0000Ga-Ha
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:44:56 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00NBip87129993;
+ Thu, 23 Jan 2020 05:44:51 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579779889;
- bh=056yP0wQc7y1OMqVn54WtC4Yn6DYkshBLN9I0yRi7e8=;
- h=From:To:CC:Subject:Date;
- b=cUIkrbLol1zXrJYj+GSwPOJQauBCLtHn6ZqwzVlf4XZMxM9vcmV9zXYdeFC8Yz4yS
- edVrO//9G754yHYpOj6iw4XbW9nzbpUzBgW907Qk7JqWmMGZfBDBO5A7I3g8JfwQY8
- L9TKwkR43NYxF+PugcyaiePOoFHoo9J/2MhG2YRU=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00NBimiW016993
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 23 Jan 2020 05:44:49 -0600
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ s=ti-com-17Q1; t=1579779891;
+ bh=TQxJOkllZRM/u+My4lOJpaDn2K7FzjpSKQ+ZfGHnqnw=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=UTnoAprYrY7UKJedUUIFAdWlBX0HziZyzoxF9hFDX5Huqp63r8F9SqdqKBPAkGrSY
+ 4TcQ6Kgk7c+s226i0hFCfnZ54lq6KYOY+iP95wZJJwnSvurYUg9ofxVPQd+TfRyix5
+ bKiTJBEh/mZB1pRkcv/g60DTPpAsnrPhTUx3gZEA=
+Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBipJL060521;
+ Thu, 23 Jan 2020 05:44:51 -0600
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 23
- Jan 2020 05:44:47 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ Jan 2020 05:44:50 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 23 Jan 2020 05:44:47 -0600
+ Frontend Transport; Thu, 23 Jan 2020 05:44:50 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBijBD114078;
- Thu, 23 Jan 2020 05:44:45 -0600
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBijBE114078;
+ Thu, 23 Jan 2020 05:44:48 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <t-kristo@ti.com>, <nm@ti.com>, <lokeshvutla@ti.com>
-Subject: [PATCH v3 0/9] arm64: dts: ti: UDMAP and McASP support
-Date: Thu, 23 Jan 2020 13:45:19 +0200
-Message-ID: <20200123114528.26552-1-peter.ujfalusi@ti.com>
+Subject: [PATCH v3 1/9] arm64: dts: ti: k3-am65-main: Correct main NAVSS
+ representation
+Date: Thu, 23 Jan 2020 13:45:20 +0200
+Message-ID: <20200123114528.26552-2-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200123114528.26552-1-peter.ujfalusi@ti.com>
+References: <20200123114528.26552-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_034455_673342_D9138B9C 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20200123_034455_643006_39E877B1 
+X-CRM114-Status: GOOD (  11.30  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,54 +96,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+NAVSS is a subsystem containing different IPs, it is not really a bus.
+Change the compatible from "simple-bus" to "simple-mfd" to reflect that.
 
-Changes since v2:
-- Correct unit addresses for the McASP nodes
-- Remove unit address and label for MAIN and MCU NAVSS
-
-Changes since v1:
-- rebased on ti-k3-next
-- Corrected j721e mcu_udma node: s/udmap/dma-controller
-- Moved the two McASP node patch at the end of the series
-
-The ringacc and UDMA documentation and drivers are in next-20200122.
-
-While adding the DMA support I have noticed few issues which is also fixed by
-this series.
-
-Tero: I have included the McASP nodes as well to have examples for other
-peripherals on how he binding should be used.
-The patches for the McASP driver is not in next, but they are only internal
-driver changes (and Kconfig), not adding new DT dependencies.
-Since the McASP is disabled in SoC dtsi due to board level configuration needs
-it is not going to erroneously probe drivers.
-
-It is up to you if you pick them or not, but I believe they serve a safe and
-nice example how the dma binding should be used for UDMA.
-
-Regards,
-Peter
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
-Peter Ujfalusi (9):
-  arm64: dts: ti: k3-am65-main: Correct main NAVSS representation
-  arm64: dts: ti: k3-am65-main: Move secure proxy under cbass_main_navss
-  arm64: dts: ti: k3-am65: DMA support
-  arm64: dts: ti: k3-j721e: Correct the address for MAIN NAVSS
-  arm64: dts: ti: k3-j721e-main: Correct main NAVSS representation
-  arm64: dts: ti: k3-j721e-main: Move secure proxy and smmu under
-    main_navss
-  arm64: dts: ti: k3-j721e: DMA support
-  arm64: dts: ti: k3-am654-main: Add McASP nodes
-  arm64: dts: ti: k3-j721e-main: Add McASP nodes
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
- arch/arm64/boot/dts/ti/k3-am65-main.dtsi      | 122 ++++++-
- arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi       |  46 +++
- arch/arm64/boot/dts/ti/k3-j721e-main.dtsi     | 313 ++++++++++++++++--
- .../boot/dts/ti/k3-j721e-mcu-wakeup.dtsi      |  45 +++
- arch/arm64/boot/dts/ti/k3-j721e.dtsi          |   2 +-
- 5 files changed, 491 insertions(+), 37 deletions(-)
-
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+index efb24579922c..972e14bf9478 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+@@ -385,8 +385,8 @@ intr_main_gpio: interrupt-controller0 {
+ 		ti,sci-rm-range-girq = <0x1>;
+ 	};
+ 
+-	cbass_main_navss: interconnect0 {
+-		compatible = "simple-bus";
++	main_navss {
++		compatible = "simple-mfd";
+ 		#address-cells = <2>;
+ 		#size-cells = <2>;
+ 		ranges;
 -- 
 Peter
 
