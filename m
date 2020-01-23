@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90F66146B8D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 15:42:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFE83146B93
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 15:43:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y8SYqMQQiNDgIitk4hr3bKuW8xiB8uuZHxlFu6xHJDs=; b=IHTSzu0gCqWDk2
-	Ezm0eo5QCjrxZfi10zwMaGEknzcfi4K3niiL6iZWM3MukXGB3zVCxI6/aNYOa3A02/MlfePpz9m+8
-	Ju5OYiTktjp//4Sb2DW/SY2LkEd1tYYw/yIrA8xp9FtixTTMOakDC9vNVtjXMAq9PhUj4QjHAj8Qw
-	h0uzxWC68oMVwPlAZyLyQxpbNqLVflGMzyU30jufUgnsV/5Z3CRc6Mgq8eTjz+VfOKe8sEtCDBySI
-	MFJAOtZsJ2uSYZApBCcr7uDDtdDS5pvIMmsOH9VklwJtoLQox4/+htTNsSVoAK6++cwfV8rrBSxvw
-	8vlWuxIgPSPwD07t8XVA==;
+	List-Owner; bh=ZcLWzhhSDnIvTBPRr9N9n+u3D/lQCxV7QPY6Z4OuaWg=; b=sZj4H4NfQszt97
+	MBFJ7QEnma07JKVnS6P1fWveujDfLQGQNH92xdg5HovQXaCghOx2ltqSMA6UcBZkF3lYpCTFLk0Jd
+	cHFtCgxSoL0flJ0t1EbRiewMdlB0MB3b5ZyR1hW2OvYUX3KRZhlZcNhW81lIfNF9lzzeq5NsxAPbo
+	Vj/OLdrWs3rVVKg3xwU/8QA2V7LeNoGZOwShuNv+4zQvB0NfjboMB2hk7EckefkhEp+017ItjVJtb
+	TsmcQd3RmBLuOvGSMJi9Ws99GpcMn00uaLxyK/7/BRN6lDFBAE1SgutMTTwLIrYXgFviTJht6hbUz
+	ZrcO7e7cMn/T9Zz3RtSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iudgq-0005Zh-Eq; Thu, 23 Jan 2020 14:42:36 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
+	id 1iudht-0005vu-OQ; Thu, 23 Jan 2020 14:43:41 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iudgg-0005ZN-S0
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 14:42:28 +0000
-Received: by mail-ot1-f66.google.com with SMTP id 59so2884414otp.12
+ id 1iudhk-0005vT-Iw
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 14:43:33 +0000
+Received: by mail-oi1-f195.google.com with SMTP id n16so3056512oie.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Jan 2020 06:42:26 -0800 (PST)
+ Thu, 23 Jan 2020 06:43:32 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=VojjtS7akMpAwcay/UmymGiR2hr9tFaDHzEASOXUD8w=;
- b=Z3w0h/g/0/FTt0ZsAxT1Au0Z/sCHs3qLcBp0AqhVTKwkLRl1LT0E1vVKmVWc5YFlhZ
- lCuHHAV0SzvKofnRfw+N6lVEs3fBylHT6+uNdRBHCKzkXMeOq8GoFCVut3/DCixA9yXQ
- 9jK2ghOmy7RL5XKKr9gY4EnvOn1SPN/FGRazWuYwFLOr/6WZQK+UbrRKZcwoyCJE71vS
- RLtepHfHUlzDm2TJB9UUpm+qakblzQNMm5eYFpUiXYiC3FOlAJk9W/fnJhM3erI60HqM
- h9dby88UKt/3gEueXIoCU+w06PSaZ3hlRrIf+G5ncJdKCEgkRnhWCzx/uBjRPNlj9mcc
- m7MA==
-X-Gm-Message-State: APjAAAUNmjn8AYdnEDEIAtTELPbUFwkr4XuRv6VT5c0axW3bsJK9Gmvm
- hQCiI5mLpw3+629Amof4YA==
-X-Google-Smtp-Source: APXvYqxykG4E/5TrCk67dHt8GjjUfo7u0vBc/K5VrQHFHH+0sZpSZGqLdxDBl66PpWm84FUIUxD2uw==
-X-Received: by 2002:a9d:3e16:: with SMTP id a22mr12080775otd.259.1579790545677; 
- Thu, 23 Jan 2020 06:42:25 -0800 (PST)
+ bh=7SayZJgIXHjCdU3TAFI8Ocs5cvmGh8wgxSjfDXiqUmU=;
+ b=Vq57Wz2U1bLn2185xX1QoQSgYzAQ01P+d9KQb3Wzj36M0E/pmvy/CyZMuFPaRJJt2i
+ UZkRKke4AADaEa7qZrHU9SdMbotSRT9vDy+HXcBC8PgIkM3isl/qSar8al8Rda0HmtiC
+ jOgu5OjofuwnXvVIAeso/WNn62T8km5yPxuUe1hTBap8vEiIj4aVAc0j5W84/hqFsMVw
+ AA42LshdIcK2SVDR5+QPh5NvI63Q+npP3qXk04LK6o/HDCQyt5pkCpBvrlxU/DpW8jW0
+ +t2Eku0TAmsCC+QkHYB+8bWUKqsAXPDnPGOsRyhPfUIArEEVVglGnNXXZZsEFeTuKJNH
+ 2Djw==
+X-Gm-Message-State: APjAAAX1FThdov+oST73Zgbd3DLE5qK6MaW3+l5LBpD3qfIuTcrq2hqv
+ FINVtJxCsh9LQIdudmzEFw==
+X-Google-Smtp-Source: APXvYqzGbdY9oCHH7SiwtERsp5ylmchXaof2S8Eo3kpOm01m82P1WOVc0ecY+Jf3C0L3OyPvAH5Kzg==
+X-Received: by 2002:aca:1c1a:: with SMTP id c26mr10845348oic.75.1579790607604; 
+ Thu, 23 Jan 2020 06:43:27 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id n16sm845782otk.25.2020.01.23.06.42.24
+ by smtp.gmail.com with ESMTPSA id s6sm849207otd.72.2020.01.23.06.43.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 23 Jan 2020 06:42:25 -0800 (PST)
-Received: (nullmailer pid 9469 invoked by uid 1000);
- Thu, 23 Jan 2020 14:42:24 -0000
-Date: Thu, 23 Jan 2020 08:42:24 -0600
+ Thu, 23 Jan 2020 06:43:26 -0800 (PST)
+Received: (nullmailer pid 12444 invoked by uid 1000);
+ Thu, 23 Jan 2020 14:43:26 -0000
+Date: Thu, 23 Jan 2020 08:43:26 -0600
 From: Rob Herring <robh@kernel.org>
 To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Re: [PATCH v2 1/2] dt-bindings: serial: Convert rs485 bindings to
+Subject: Re: [PATCH v2 2/2] dt-bindings: serial: Convert STM32 UART to
  json-schema
-Message-ID: <20200123144224.GA9094@bogus>
+Message-ID: <20200123144326.GA12392@bogus>
 References: <20200122095558.22553-1-benjamin.gaignard@st.com>
- <20200122095558.22553-2-benjamin.gaignard@st.com>
+ <20200122095558.22553-3-benjamin.gaignard@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200122095558.22553-2-benjamin.gaignard@st.com>
+In-Reply-To: <20200122095558.22553-3-benjamin.gaignard@st.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_064226_904071_36F80402 
-X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-CacheID: sfid-20200123_064332_618136_3C19EF45 
+X-CRM114-Status: UNSURE (   8.85  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -80,11 +80,10 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,19 +106,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 22 Jan 2020 10:55:57 +0100, Benjamin Gaignard wrote:
-> Convert rs485 binding to yaml style file.
+On Wed, 22 Jan 2020 10:55:58 +0100, Benjamin Gaignard wrote:
+> Convert STM32 UART bindings to json-schema.
 > 
 > Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 > ---
-> version 2:
-> - remove types inside rs485-rts-delay property and add a maximum for delay
->   values
-> 
->  Documentation/devicetree/bindings/serial/rs485.txt | 32 +--------------
->  .../devicetree/bindings/serial/rs485.yaml          | 45 ++++++++++++++++++++++
->  2 files changed, 46 insertions(+), 31 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/serial/rs485.yaml
+>  .../devicetree/bindings/serial/st,stm32-uart.yaml  | 80 ++++++++++++++++++++++
+>  .../devicetree/bindings/serial/st,stm32-usart.txt  | 57 ---------------
+>  2 files changed, 80 insertions(+), 57 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/serial/st,stm32-usart.txt
 > 
 
 Applied, thanks.
