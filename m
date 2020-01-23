@@ -2,90 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E57C5146094
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 02:54:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C88C1460C5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 03:39:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tDPc2jRlL02LoCZRB4BQob/wO704V+24mGU6RgZKRsg=; b=UZmClB8aMeQL2M
-	Lqe97NuhoGy38vzR7VkCcSG9coYdZ9eUlYX5+SDRAS8HK+FHwlbe+RbKRLmqATp1sREZWs6C+5zth
-	Inv4mAbzwrwm3bMeCwGj220QvEJY10OYRT/mhhaiFYqo14VQbLK4a9rfYa0NyWezRSbsSOku6fimY
-	/B7388U3VHgvdXuW0R/nzIFEDRmhflJTjGxuq5AmXid2dHTmwmjwI53IdjF3aMwunEaoOHfvbOxki
-	QcNgHTlys4fW5gZ3dqbD22fkW+PPxcf3TlE6xoX7/WbcsCQp+Sa6jwRtf4YQM2VACKI3A1DgIK63h
-	k4SCWYuO+mdBrQeLueAg==;
+	List-Owner; bh=nn6Hvvp8hvwvwV3n7pt3eT0gukCr5AxVCjmoqr/bU6I=; b=tHdXMWYR7rU8an
+	AdG8OndbH+tqxRzfZs0I45O8ZNCWIw+vVTh+8bvxUtBJ5UgnTM5OszWqZSkBSTGvSCO6/YDGV+D1O
+	VPJwx5rIqqXcKsrhySBadnZN4pGaBU1/9lKwLhWozB+Rzgg0o8+x5ZXnsB5j6rBsPXb3CHLfsOysQ
+	YJLMIGNl1S1Ij3Z0pauvgznu7f6JK66SEGHvR+x+Jzfk2cyFw2JLj4EQmfbNidg/jOG9L7G5pdH+E
+	ZrGPLA/1H0fCIaCCQ3woqCE/uy82jwpWhjorccr95LfL20OiqzFa/pNCR7HI9ysyDmmHqVqCZRIHC
+	HqLRlGLSKNF1GGjVXNkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuRh9-00019e-W0; Thu, 23 Jan 2020 01:54:07 +0000
-Received: from new3-smtp.messagingengine.com ([66.111.4.229])
+	id 1iuSPF-0005VJ-76; Thu, 23 Jan 2020 02:39:41 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuRh1-000190-DF
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 01:54:01 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id D8A6A6D87;
- Wed, 22 Jan 2020 20:53:51 -0500 (EST)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 22 Jan 2020 20:53:51 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm1; bh=ujZkvtF9majEmku/Gxs4rZoUakuhfzp
- hD8ol/URHilo=; b=qsshw+6MxBNBzlpsVfUQJvzPlg1mYf034IOSuoePEBVtHNN
- ehE++KC/RbpuXEATKpEmSmmnCDp1WFqj7zSqqmQaLd1P/XsqZQpuulLziDntGcEi
- Zl24Kqe7K5broi96LBy5wFhNHIwNwXyEvvLMp9EqS/6nsF/A1gBvZHTJSR+ZCTq8
- jWvOnveizc8TEi4FFYrl6/b6ptzaBi4KjnepiyPNrzEAfiFHFKqfnudBBcXcd+Vl
- 1Q6FBERhKPJL2nFTyOkGQPs5b8QvcnoAzkZn2Br4y2nAbo2Du0g3lZgqPa6+xHCl
- fQ1vp8LM4m3v8l5So9ZZ5kwWz2cHB6+LstSxB/A==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=ujZkvt
- F9majEmku/Gxs4rZoUakuhfzphD8ol/URHilo=; b=DN6OGW/SMqdXSI8jjtOzO2
- pGGVbrE9JRzGYsU3PcIOiobOZj1lO91DbwO31coNzfzM79yWYDsfaH1z/FrE4pOw
- K1cSpis2xl8x04ImWo4vZfPpa6T2R2jbu6OXfyod2Hi9b39uZVhOzKR8R0hG5A/N
- pUc9U3pDRSgmijNImgE+OK81Ohewqo/E9GWP5dUvTYMhLzWSWl9uJyv9P6EMFbBA
- g9nO1fp1IBXJUNrvbSrHxWw/xir2jOWs+Mub7vIioYbyUbYPRtBaAkBrcb7BhOTB
- fSY/RMQ+yIIyPB8wd9BHAvboR+hwUPsKTXljq72DPmDKDp0NAzJYOwmNdvlrtwAA
- ==
-X-ME-Sender: <xms:rvwoXnPmSRFRoFSuOm7H2Q4DecD6HAwCBDdiFFGSAvJj6zxaqmvceQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrvddugdefiecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucevlhhush
- htvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghj
- rdhiugdrrghu
-X-ME-Proxy: <xmx:rvwoXvx-psYu7LL5r4lFE6gYjRtdJY7jDu8sCdwsxIUqEXwemxeeCg>
- <xmx:rvwoXguvi3BjUj3AREX18fnbuZnb3eAzM5mUb7BWgebWP_w_zFRS2A>
- <xmx:rvwoXo63d6GAWwmGVoM4TP7Mnn-5xB2vKVnbwUhGjRvT8NIoJVAvjw>
- <xmx:r_woXnavh1Sem4tw8dB6XhIxw3Uv0cmbKNPj4_UAE9VF6956A8QC-w>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 7543AE00A2; Wed, 22 Jan 2020 20:53:50 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-754-g09d1619-fmstable-20200113v1
-Mime-Version: 1.0
-Message-Id: <575811fd-24ca-409c-8d33-c2152ee401d7@www.fastmail.com>
-In-Reply-To: <4446ffb694c7742ca9492c7360856789@neuralgames.com>
-References: <20200120150113.2565-1-linux@neuralgames.com>
- <CACPK8XfuVN3Q=npEoOP-amQS0-wemxcx6LKaHHZEsBAHzq1wzA@mail.gmail.com>
- <4446ffb694c7742ca9492c7360856789@neuralgames.com>
-Date: Thu, 23 Jan 2020 12:23:29 +1030
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Oscar A Perez" <linux@neuralgames.com>, "Joel Stanley" <joel@jms.id.au>
-Subject: Re: [PATCH 1/2] hwrng: Add support for ASPEED RNG
+ id 1iuSP4-0005Ue-IV
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 02:39:32 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id r67so486454pjb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 22 Jan 2020 18:39:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=bTqNrmZc4XwB7mbH5XKk8hIXReWiy2o/x14mzISIa8Y=;
+ b=byikFvWWlkqO1f5z4PSmmOvGSP4X745Zi5Zxzm8EBh0qZ8UWn56+B0yzEt6K61kzgH
+ UIH4OHaJLtDSr4LI+pVWG+YieX7Ut4IOOluIanj5iVpOVFuSMZjaB2ma+d15j1F5z671
+ LH3wlYrHF15Xms+98W2VTz1Q68Lk1JKy3zffRSylF7hbM1lQGXsrNljDC7N/y8OwPr8L
+ 1pXPyvW9a+MC72GbEGM1+4t45D36jbtqH1BA195w/YehECEagnR8xW4NbY8HOGsp2jgF
+ x2VyyxV7PoqCGSv4p6vcZGJ1Pyat9mZznroY9sX+kV3dv0/aqNm9j3DPzxic1emFqhPv
+ 05/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=bTqNrmZc4XwB7mbH5XKk8hIXReWiy2o/x14mzISIa8Y=;
+ b=tLnKP11gPqPZiEjUZK3Ab7fHkyqn7H0XJeE3P8odV1iOdWZ4hZqFlEmF2LsRXMiLcs
+ zFnvQiX2iVhw9MiATW26Th5CZ6JPTi8VWYedSUwvCBSGVUBklVsGn/Vn6owv7qWuMsBD
+ 3kE/anu0Lhay/4qxEsxXA+eyR3daZhTJDGLI36FuYi+is5mzRj3p0v5eWK2lSwtggHBO
+ t/ZpVBjR8/ImDSwAbOZCI9m09dPJEb5NFHXBSPlhP+2KuDYOTXjGYYxdHHaNtINYe7s2
+ IdXgMFaH7LIdKR0CIBtw2LnZHpIIlFSWpKPBoTDNkBw3DSjDl6W0auCc6MomOyTfQujs
+ SpNQ==
+X-Gm-Message-State: APjAAAVK3aBkjW+dO5E6LOb6x6TSiGrlViDMYKB2BlmFr59p7oS5UqLP
+ /rXugYJn9381j9/kBkuFltdWpA==
+X-Google-Smtp-Source: APXvYqy7I+trccw5AXOWtnefRTubn87fuxIQql4VUIPbEhXpw2iqsLDrMfyucFrbZ7GI1P996ynOSA==
+X-Received: by 2002:a17:90a:c301:: with SMTP id
+ g1mr1870273pjt.88.1579747167904; 
+ Wed, 22 Jan 2020 18:39:27 -0800 (PST)
+Received: from localhost ([122.167.18.14])
+ by smtp.gmail.com with ESMTPSA id w11sm386820pgs.60.2020.01.22.18.39.26
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 22 Jan 2020 18:39:26 -0800 (PST)
+Date: Thu, 23 Jan 2020 08:09:24 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH V3] firmware: arm_scmi: Make scmi core independent of the
+ transport type
+Message-ID: <20200123023924.roqc2iyx4wmukk4p@vireshk-i7>
+References: <4b74f1b6c1f9653241a1b5754525e230b3d76a3f.1579595093.git.viresh.kumar@linaro.org>
+ <3a8836dd-99d3-faff-af05-2032d609f594@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <3a8836dd-99d3-faff-af05-2032d609f594@arm.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200122_175359_668216_C33763CA 
-X-CRM114-Status: GOOD (  10.82  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200122_183930_642424_753DF7C0 
+X-CRM114-Status: GOOD (  14.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.229 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -104,43 +97,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Matt Mackall <mpm@selenic.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: peng.fan@nxp.com, arnd@arndb.de, jassisinghbrar@gmail.com,
+ linux-kernel@vger.kernel.org, peter.hilber@opensynergy.com,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 22-01-20, 12:44, Cristian Marussi wrote:
+> On 21/01/2020 08:27, Viresh Kumar wrote:
+> commment is obsolete
 
-> Thanks for reviewing the patch.
+Right, they need to be checked everywhere again. Sorry for missing
+that earlier.
+
+> > +struct scmi_chan_info {
+> > +	struct scmi_info *info;
+> > +	struct device *dev;
+> > +	struct scmi_handle *handle;
+> > +	void *transport_info;
+> > +};
+> > +
+> > +/**
+> > + * struct scmi_transport_ops - Structure representing a SCMI transport ops
+> > + *
+> > + * @send_message: Callback to send a message
+> > + * @mark_txdone: Callback to mark tx as done
+> > + * @chan_setup: Callback to allocate and setup a channel
+> > + * @chan_free: Callback to free a channel
+> > + */
+> commment is obsolete but I would also ask: are all of these operations supposed to be mandatory supported
+> on any possible foreseeable transport ? (beside the obviously needed like send_message)
 > 
-> The RNG on Aspeed hardware allows eight different modes for combining 
-> its four internal Ring Oscillators that together generate a stream of 
-> random bits. However, the timeriomem-rng driver does not allow for mode 
-> selection so, the Aspeed RNG with this generic driver runs always on 
-> mode 'seven' (The default value for mode according to the AspeedTech 
-> datasheets).
+> I'm asking because they are all called straight away from the driver core without any NULL check
+> so that if a new transport should not need one of them it will be forced to anyway implement a dummy one
+> to comply, which it will be needlessly invoked every time.
+
+They are kept as mandatory for now as we don't really know how it
+will look for other transport types. Lets make them optional only when
+someone don't need to define them. It would be a simple change anyway.
+
+> >  /* Each compatible listed below must have descriptor associated with it */
+> >  static const struct of_device_id scmi_of_match[] = {
+> > -	{ .compatible = "arm,scmi", .data = &scmi_generic_desc },
+> > +	{ .compatible = "arm,scmi", .data = &scmi_mailbox_desc },
+> >  	{ /* Sentinel */ },
+> >  };
 > 
-> I've performed some testings on this Aspeed RNG using the NIST 
-> Statistical Test Suite (NIST 800-22r1a) and, the results I got show that 
-> the default mode 'seven' isn't producing the best entropy and linear 
-> rank when compared against the other modes available on these SOCs.  On 
-> the other hand, the driver that I'm proposing here allows for mode 
-> selection which would help improve the random output for those looking 
-> to get the best out of this Aspeed RNG.
+> minor thing: shouldn't the chosen transport being configurable at compile time with some
+> option like CONFIG_SCMI_TRANSPORT_MBOX ? or via DT ?
 
-Have you published the data and results of this study somewhere? This
-really should be mentioned in the commit message as justification for
-not using timeriomem-rng.
+It is configurable via DT. The compatible should look different in
+that case, something like: "arm,scmi-<newtranport>".
 
-Andrew
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
