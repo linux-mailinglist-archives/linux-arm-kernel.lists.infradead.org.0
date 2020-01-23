@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C20BE146DD5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 17:08:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 753F6146DCD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 17:08:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=H4fElbSfpWdjmCiQvlan/PUX3NrN61fSFLH1OCxAlE8=; b=nfdQpQUagTX3is
-	9bC28PRmt/HGHBXHVf4bTlvYpsr/aoYV3guhnCQ7o8vtE9vGPCtcnw7ahx5swsLPeyrjTfSVSIvMx
-	TLfCdjZYpzHY/nswBUR7IQ4nf+EkizfzOHSe/Pjv5FrFL8IZhqKyMt7yhzh4ExuWQcOSzJnKdYKWD
-	p2tSF+tOsYJwnL8DeyOoplNhflE8lbhy7tC3r26Gexp21egJxPNoqfOAJOkoBPT6PSQsezcFvWR4T
-	eRJ5oh+TeqILeUGDVPdlVV+IWjLLmbqTralMWYX4/XoGVfvWR4hybVAP+DGfe/F0UZYx4IGEfYLVU
-	XlLxVhun8YZGMXXJz2LA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7AHB3B5fd/bZDCY8xLTJKhyA9tl0Ax4LKHr0xM7+8jA=; b=OLxEs06CLetrI8
+	G+keZ3IS0MAIx1kodROdt0Zerum7FRT9BNEqiockFn/B1SYUJCQ7eNLJR1WrqaNjEs3GUIklAyVy2
+	eJ939agB3qEBCODKZtusvhCZ2nqt1B6fRjNWgN43qqau87GfpZm5dpi5fsELMm1ehWrOrqPgvCR3m
+	5mf16hAIfhgBGN+qaOcJrSN5/l5cmPwO+oKcekROulpXh4qiryDUxRsChw7IFxuwDpxtezxWT0oQO
+	S0bD1J4zsuXvOBGdiQ/StVykEfx1aPa50SC95lHW+91F3/H+SJOSLL98YuGpjcyLNy4pOIMsMfatJ
+	vVegU+4gsxVNZoe22Hsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuf2I-0005sk-Kq; Thu, 23 Jan 2020 16:08:50 +0000
+	id 1iuf1r-0005he-Qw; Thu, 23 Jan 2020 16:08:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuf1d-0005ge-Nm
+ id 1iuf1d-0005gn-MP
  for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 16:08:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 487961FB;
- Thu, 23 Jan 2020 08:08:01 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A16DF328;
+ Thu, 23 Jan 2020 08:08:06 -0800 (PST)
 Received: from e112479-lin.arm.com (unknown [10.37.9.147])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5EA113F68E;
- Thu, 23 Jan 2020 08:07:56 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AEFD13F68E;
+ Thu, 23 Jan 2020 08:08:01 -0800 (PST)
 From: James Clark <james.clark@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 0/7] perf tools: Add support for some spe events and
- precise ip
-Date: Thu, 23 Jan 2020 16:07:27 +0000
-Message-Id: <20200123160734.3775-1-james.clark@arm.com>
+Subject: [PATCH v2 1/7] perf tools: Move arm-spe-pkt-decoder.h/c to the new dir
+Date: Thu, 23 Jan 2020 16:07:28 +0000
+Message-Id: <20200123160734.3775-2-james.clark@arm.com>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200123160734.3775-1-james.clark@arm.com>
+References: <20200123160734.3775-1-james.clark@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_080809_857447_A1EE7C28 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20200123_080809_823239_5A1C329A 
+X-CRM114-Status: GOOD (  13.13  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -76,24 +77,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-After the commit ffd3d18c20b8 ("perf tools: Add ARM Statistical
-Profiling Extensions (SPE) support") was merged, "perf record" and
-"perf report --dump-raw-trace" are supported. However, the
-raw data that is dumped cannot be used without parsing.
+From: Tan Xiaojun <tanxiaojun@huawei.com>
 
-This patchset is to improve the "perf report" support for SPE, and
-further process the data. Currently, support for the three events
-of llc-miss, tlb-miss, branch-miss and remote-access is added.
+Create a new arm-spe-decoder directory for subsequent extensions and
+move arm-spe-pkt-decoder.h/c to this directory. No code changes.
 
-The macro definition was modified under Jeremy's suggestion, and
-the "event:pp" approach was used under James' suggestion to achieve
-the precise ip of some events on arm64. Currently, only branch-misses
-are implemented, and other event support will be added later.
-
-In addition, we also found that when recording large multi-threaded
-programs, ctrl + c could not end recording, so it was fixed and two
-patches were added.
-
+Signed-off-by: Tan Xiaojun <tanxiaojun@huawei.com>
+Tested-by: Qi Liu <liuqi115@hisilicon.com>
+Signed-off-by: James Clark <james.clark@arm.com>
 Cc: Will Deacon <will@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Peter Zijlstra <peterz@infradead.org>
@@ -104,45 +95,58 @@ Cc: Jiri Olsa <jolsa@redhat.com>
 Cc: Tan Xiaojun <tanxiaojun@huawei.com>
 Cc: Al Grant <al.grant@arm.com>
 Cc: Namhyung Kim <namhyung@kernel.org>
-
-James Clark (1):
-  perf tools: Unset precise_ip when using SPE
-
-Tan Xiaojun (4):
-  perf tools: Move arm-spe-pkt-decoder.h/c to the new dir
-  perf tools: Add support for "report" for some spe events
-  perf report: Add --spe options for arm-spe
-  perf tools: Support "branch-misses:pp" on arm64
-
-Wei Li (2):
-  perf tools: add perf_evlist__terminate() for terminate
-  perf tools: arm-spe: fix record hang after being terminated
-
- tools/perf/Documentation/perf-report.txt      |  10 +
- tools/perf/arch/arm64/util/arm-spe.c          |  10 +-
- tools/perf/builtin-record.c                   |   1 +
- tools/perf/builtin-report.c                   |   5 +
- tools/perf/util/Build                         |   2 +-
- tools/perf/util/arm-spe-decoder/Build         |   1 +
- .../util/arm-spe-decoder/arm-spe-decoder.c    | 225 +++++
- .../util/arm-spe-decoder/arm-spe-decoder.h    |  66 ++
- .../arm-spe-pkt-decoder.c                     |   0
- .../arm-spe-pkt-decoder.h                     |   2 +
- tools/perf/util/arm-spe.c                     | 789 +++++++++++++++++-
- tools/perf/util/arm-spe.h                     |   3 +
- tools/perf/util/auxtrace.c                    |  49 ++
- tools/perf/util/auxtrace.h                    |  29 +
- tools/perf/util/evlist.c                      |  16 +
- tools/perf/util/evlist.h                      |   1 +
- tools/perf/util/evsel.h                       |   1 +
- tools/perf/util/session.h                     |   2 +
- 18 files changed, 1170 insertions(+), 42 deletions(-)
+---
+ tools/perf/util/Build                                       | 2 +-
+ tools/perf/util/arm-spe-decoder/Build                       | 1 +
+ tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.c | 0
+ tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.h | 0
+ tools/perf/util/arm-spe.c                                   | 2 +-
+ 5 files changed, 3 insertions(+), 2 deletions(-)
  create mode 100644 tools/perf/util/arm-spe-decoder/Build
- create mode 100644 tools/perf/util/arm-spe-decoder/arm-spe-decoder.c
- create mode 100644 tools/perf/util/arm-spe-decoder/arm-spe-decoder.h
  rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.c (100%)
- rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.h (96%)
+ rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.h (100%)
 
+diff --git a/tools/perf/util/Build b/tools/perf/util/Build
+index 07da6c790b63..0184510083c2 100644
+--- a/tools/perf/util/Build
++++ b/tools/perf/util/Build
+@@ -104,7 +104,7 @@ perf-$(CONFIG_AUXTRACE) += intel-pt-decoder/
+ perf-$(CONFIG_AUXTRACE) += intel-pt.o
+ perf-$(CONFIG_AUXTRACE) += intel-bts.o
+ perf-$(CONFIG_AUXTRACE) += arm-spe.o
+-perf-$(CONFIG_AUXTRACE) += arm-spe-pkt-decoder.o
++perf-$(CONFIG_AUXTRACE) += arm-spe-decoder/
+ perf-$(CONFIG_AUXTRACE) += s390-cpumsf.o
+ 
+ ifdef CONFIG_LIBOPENCSD
+diff --git a/tools/perf/util/arm-spe-decoder/Build b/tools/perf/util/arm-spe-decoder/Build
+new file mode 100644
+index 000000000000..16efbc245028
+--- /dev/null
++++ b/tools/perf/util/arm-spe-decoder/Build
+@@ -0,0 +1 @@
++perf-$(CONFIG_AUXTRACE) += arm-spe-pkt-decoder.o
+diff --git a/tools/perf/util/arm-spe-pkt-decoder.c b/tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.c
+similarity index 100%
+rename from tools/perf/util/arm-spe-pkt-decoder.c
+rename to tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.c
+diff --git a/tools/perf/util/arm-spe-pkt-decoder.h b/tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.h
+similarity index 100%
+rename from tools/perf/util/arm-spe-pkt-decoder.h
+rename to tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.h
+diff --git a/tools/perf/util/arm-spe.c b/tools/perf/util/arm-spe.c
+index 53be12b23ff4..f3382a38d48e 100644
+--- a/tools/perf/util/arm-spe.c
++++ b/tools/perf/util/arm-spe.c
+@@ -23,7 +23,7 @@
+ #include "debug.h"
+ #include "auxtrace.h"
+ #include "arm-spe.h"
+-#include "arm-spe-pkt-decoder.h"
++#include "arm-spe-decoder/arm-spe-pkt-decoder.h"
+ 
+ struct arm_spe {
+ 	struct auxtrace			auxtrace;
 -- 
 2.25.0
 
