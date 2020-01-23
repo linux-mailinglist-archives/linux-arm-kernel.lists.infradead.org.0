@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52BD3146DE2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 17:10:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CB90146DE5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 17:10:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0EorGqgnAGudRhcHGhxwhp49mxvfeYuEHxn0dhVAwug=; b=lVJ/WVjOy8PrxJ
-	+gylrwaLBAfg+0DNkX1V2oxZWWCfN3E9hxDxdDVvcndnxRwfbVIaGqWRdRHF2Yi7t5+Y2jRn2SmDd
-	cqrwmizjQrSGP/xQZWjz7zRRa0eBvvdgldrZ8gk/E+WViMdIQt2f5DYGteYNHqzIzqP0ViPbl6rF9
-	XADquSgxWzo16ixVc+tuVvjkgDJIA0ke5mX/OvA1VEuEzR7OSSF9ZfpxBsxvpTp4Cl6eErqo8IECo
-	UCSF+jydEajQkvmmPgaxbFE4rYjdm/8CL7be2Bz6a1ubtemh6mgY0QwP8eleP6dW6IS9S1GUpp6ZJ
-	uhig9Kqgv/eMtTDvkDpA==;
+	List-Owner; bh=g7nKL+SpaQaFEiTt8bo021ywfgWoMPhFUJIN0wtPcIk=; b=bZSiTg0rBsymv1
+	OJqWV+HtyYorqvZchT5SotHKbLNK+yPz87vmqW6iEqUy29viT0NxxyNnx4R9kKfTORZVYj+KRpg2x
+	o+QFFLAzyg4DjVam5THoo+ncLRUbkIKlnWiMwVqKBOtqkp6oCTu9vGVREijMlpPHzzoNaS+gO6/8/
+	LQA1mI44qOd+X5ct+I5hW25aayP63Ter0lFCs7bCVFT2UY0q0/W4CEili2w5m0ehlssKnjbLJTGwY
+	z7e5qy/hgsTZIv0JTnXFmf7BPFOFOERFRtf0VbSFyMOIZf4wqF1GHN8+SeCkXFWL+U5gCpEEZCBaJ
+	Eo/U99B+R3oQBrx/lQmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuf3l-0007VW-Sp; Thu, 23 Jan 2020 16:10:21 +0000
+	id 1iuf42-0000DC-MD; Thu, 23 Jan 2020 16:10:38 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuf2A-00066Y-Op
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 16:08:44 +0000
+ id 1iuf2I-0006B1-EP
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 16:08:52 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2F4C1328;
- Thu, 23 Jan 2020 08:08:42 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C9519328;
+ Thu, 23 Jan 2020 08:08:49 -0800 (PST)
 Received: from e112479-lin.arm.com (unknown [10.37.9.147])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5EDBD3F68E;
- Thu, 23 Jan 2020 08:08:35 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A3FB03F68E;
+ Thu, 23 Jan 2020 08:08:42 -0800 (PST)
 From: James Clark <james.clark@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 6/7] perf tools: arm-spe: fix record hang after being
- terminated
-Date: Thu, 23 Jan 2020 16:07:33 +0000
-Message-Id: <20200123160734.3775-7-james.clark@arm.com>
+Subject: [PATCH v2 7/7] perf tools: Unset precise_ip when using SPE
+Date: Thu, 23 Jan 2020 16:07:34 +0000
+Message-Id: <20200123160734.3775-8-james.clark@arm.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200123160734.3775-1-james.clark@arm.com>
 References: <20200123160734.3775-1-james.clark@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_080842_898062_E5B32EA9 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20200123_080850_545819_CEBA6311 
+X-CRM114-Status: GOOD (  11.39  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -78,12 +77,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Wei Li <liwei391@huawei.com>
+precise_ip is not supported on Arm and the kernel may be
+updated to reflect this. So unset it when we know we can use
+SPE to get precise data instead.
 
-If the spe event is terminated, we don't enable it again here.
-
-Signed-off-by: Wei Li <liwei391@huawei.com>
-Tested-by: Qi Liu <liuqi115@hisilicon.com>
 Signed-off-by: James Clark <james.clark@arm.com>
 Cc: Will Deacon <will@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
@@ -96,29 +93,20 @@ Cc: Tan Xiaojun <tanxiaojun@huawei.com>
 Cc: Al Grant <al.grant@arm.com>
 Cc: Namhyung Kim <namhyung@kernel.org>
 ---
- tools/perf/arch/arm64/util/arm-spe.c | 10 +++++++---
- 1 file changed, 7 insertions(+), 3 deletions(-)
+ tools/perf/util/arm-spe.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/tools/perf/arch/arm64/util/arm-spe.c b/tools/perf/arch/arm64/util/arm-spe.c
-index eba6541ec0f1..629badda724d 100644
---- a/tools/perf/arch/arm64/util/arm-spe.c
-+++ b/tools/perf/arch/arm64/util/arm-spe.c
-@@ -165,9 +165,13 @@ static int arm_spe_read_finish(struct auxtrace_record *itr, int idx)
- 	struct evsel *evsel;
- 
- 	evlist__for_each_entry(sper->evlist, evsel) {
--		if (evsel->core.attr.type == sper->arm_spe_pmu->type)
--			return perf_evlist__enable_event_idx(sper->evlist,
--							     evsel, idx);
-+		if (evsel->core.attr.type == sper->arm_spe_pmu->type) {
-+			if (evsel->terminated)
-+				return 0;
-+			else
-+				return perf_evlist__enable_event_idx(
-+						sper->evlist, evsel, idx);
-+		}
+diff --git a/tools/perf/util/arm-spe.c b/tools/perf/util/arm-spe.c
+index 0fcaefd386a6..0ed2a68db0b3 100644
+--- a/tools/perf/util/arm-spe.c
++++ b/tools/perf/util/arm-spe.c
+@@ -937,6 +937,7 @@ void arm_spe_precise_ip_support(struct evlist *evlist, struct evsel *evsel)
+ 			evsel->core.attr.config = SPE_ATTR_TS_ENABLE
+ 						| SPE_ATTR_BRANCH_FILTER;
+ 			evsel->core.attr.config1 = SPE_ATTR_EV_BRANCH;
++			evsel->core.attr.precise_ip = 0;
+ 		}
  	}
- 	return -EINVAL;
  }
 -- 
 2.25.0
