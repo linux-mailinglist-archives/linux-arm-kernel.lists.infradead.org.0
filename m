@@ -2,64 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DE4D146539
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 10:59:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33944146544
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:01:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KpbbZplksvyfdYT/NEFN4nADiZ8BHptWE5qkUGsVS04=; b=r8Qw1v1XgwgLRv
-	IOmWXpn568Vy3sk0kohSsk3GDv3OuoPAIt07h7RSCgeloJJdKE1F95nuB4HlXHcVuBqHJC7Eam0b7
-	1tmfWYC3FZXvP+nIYJNKwsRx9fYX+WFo89/flke6juC19J9AmtfoM83KnlIKxFuYB5gCW7mWGQa+X
-	PnOIXhm7WMyXLou4dOZavgq1wtPvhPfG2JV+z+F1Fu00pkcjCSkP0XxZvmcRjty7B+HVWUb1PzjqH
-	Tnn15TRNERMrGVIhJ5X3KN7Y5KPOZK1IJRWkgltHAdzRV5pUp5CJs1itP4DCa5+9albLs0V5Hg2FL
-	BBQ6Mcy+bBTuPTXoIBHQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3WQkS8hPCCtDlutxVGtA80LwgxsOzBXw8/cC8nq7mkg=; b=BiYenYPko/CLy4
+	9sqC2TNWq9E+2bLwjHYkRjfrzGfT5Ck+sB1VfqhZeXsYtfyPECf8SYCUIeK52vZhB6oDp1ZL4rMud
+	0Dad+fgfPxa+XY9rCp0TAfWegw0dx9RH9oGQnvJfhRQa4fwKVL+tBaoMiqQviXIzQPYuyk9QEAPaG
+	NnrdqPD4urChDqYK6ZOjwMU+GQy3gdfLr7cmzlP6WbWUD8Rnlvr3ihYAQa4bs5LykKarhA8TD6wnX
+	LkydrnKHGB8SgMgzq/OvIMMk7r1G0itFJpFG4Ol0MY9l1Ueg5hSdz6Yy6PsKABTpt9vzbBchgEJAI
+	qYswSmBdxEMqhazCqInw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuZGP-0004dX-9P; Thu, 23 Jan 2020 09:59:01 +0000
-Received: from ns.iliad.fr ([212.27.33.1])
+	id 1iuZIE-0006Ht-4A; Thu, 23 Jan 2020 10:00:54 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuZGE-0004d1-Un
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 09:58:53 +0000
-Received: from ns.iliad.fr (localhost [127.0.0.1])
- by ns.iliad.fr (Postfix) with ESMTP id A3B732046B;
- Thu, 23 Jan 2020 10:58:47 +0100 (CET)
-Received: from [192.168.108.51] (freebox.vlq16.iliad.fr [213.36.7.13])
- by ns.iliad.fr (Postfix) with ESMTP id 87A1E200B9;
- Thu, 23 Jan 2020 10:58:47 +0100 (CET)
-Subject: Re: sparse warnings for arch/arm64/kernel/vdso/vgettimeofday.c
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>
-References: <bc4cc5c0-5192-4772-5444-17bba3ab74fa@free.fr>
- <848ca352-ea77-9840-d94a-96cc78b79795@arm.com>
- <23a4ac1c-40c2-94ba-63ff-8c74c26fdbf2@free.fr>
- <40d07c7d-5d43-534d-759e-1fe7766f8d04@arm.com>
-From: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Message-ID: <89ebe43d-e2df-fcfb-f31f-bd6dca528c02@free.fr>
-Date: Thu, 23 Jan 2020 10:58:47 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1iuZI4-0006Gh-AC
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:00:47 +0000
+Received: by mail-ed1-f65.google.com with SMTP id v28so2672837edw.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 Jan 2020 02:00:43 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Vf2LEPghHkSvKBrXWZPAO0VwLPzYKVKYFia5aNnUKic=;
+ b=Bsdf/hV/mqKI+mbgaDjvsEL4qt4Riq4nlbPDBInKRAhxG7WrHG75Jb0vPxkfm8AFqC
+ IHslSrRb8orGvXjihSulE9QAvZyPzW0SSJbsD6vjnNYISRY3vALnXFsBgZHdZDC1yRL4
+ 6aSxLPEnXgGK1pP3o3W5PqBUaNBdwlKn53H0BndCzDHm3oREuieEoAxQYMYnio/qvcOP
+ 9+jmN6PN1bX8c+5pRj2n2II0bfTAaVhb1G/ZUYenQogUnA/N86GDGoC0VkMLCJERQDHg
+ vkOXfhafs9WGME+OZyU3/LmrA2vtgvjS1zdGbQoLNunpZsurwLpnIxhRCtTuozp9FuKv
+ cYZw==
+X-Gm-Message-State: APjAAAWKnrALRy3Ab0BkziXoWc4ckWfOBInf5oFzxhatTO7ZNwY72Lvf
+ 59kFLqNiX8KKtkcW30qs0GE=
+X-Google-Smtp-Source: APXvYqwg6hvXvf9VIf9L/M232l4c4678SdLLT/iriy2Shu2alAX41WXTpnBjPFK2hZjvXrRcm3n3kQ==
+X-Received: by 2002:a17:906:19d8:: with SMTP id
+ h24mr6143965ejd.166.1579773642698; 
+ Thu, 23 Jan 2020 02:00:42 -0800 (PST)
+Received: from pi3 ([194.230.155.229])
+ by smtp.googlemail.com with ESMTPSA id r24sm10440edp.15.2020.01.23.02.00.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 23 Jan 2020 02:00:41 -0800 (PST)
+Date: Thu, 23 Jan 2020 11:00:39 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Wolfram Sang <wsa@the-dreams.de>
+Subject: Re: [PATCH v2 1/2] i2c: Enable compile testing for some of drivers
+Message-ID: <20200123100039.GA2465@pi3>
+References: <1578384779-15487-1-git-send-email-krzk@kernel.org>
+ <20200123091228.GB1105@ninjato> <20200123093120.GA2365@pi3>
+ <20200123094107.GD1105@ninjato>
 MIME-Version: 1.0
-In-Reply-To: <40d07c7d-5d43-534d-759e-1fe7766f8d04@arm.com>
-Content-Language: en-US
-X-Virus-Scanned: ClamAV using ClamSMTP ; ns.iliad.fr ;
- Thu Jan 23 10:58:47 2020 +0100 (CET)
+Content-Disposition: inline
+In-Reply-To: <20200123094107.GD1105@ninjato>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_015851_285350_77382509 
-X-CRM114-Status: GOOD (  15.97  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200123_020044_354568_A7E4F002 
+X-CRM114-Status: GOOD (  16.99  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [212.27.33.1 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [marc.w.gonzalez[at]free.fr]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ provider [k.kozlowski.k[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,85 +89,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Russell King <linux@armlinux.org.uk>, Dave Martin <dave.martin@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Stephen Rothwell <sfr@canb.auug.org.au>, Greg KH <greg@kroah.com>,
+ linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Jarkko Nikula <jarkko.nikula@linux.intel.com>, linux-i2c@vger.kernel.org,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Jean Delvare <jdelvare@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/11/2019 13:29, Vincenzo Frascino wrote:
-
-> On 28/11/2019 12:24, Marc Gonzalez wrote:
->
->> On 28/11/2019 11:44, Vincenzo Frascino wrote:
->>
->>> On 26/11/2019 10:42, Marc Gonzalez wrote:
->>>
->>>> Running 'make C=2' on v5.4 (arm64 defconfig) outputs:
->>>>
->>>>   CHECK   arch/arm64/kernel/vdso/vgettimeofday.c
->>>
->>> [...]
->>>
->>>> Are the above warnings all false positives?
->>>> Do I need to update my version of sparse maybe?
->>>>
->>>
->>> I downloaded the latest git of sparse and seems that the only warning I am
->>> getting is:
->>>
->>> linux/lib/vdso/gettimeofday.c:224:5: warning: symbol '__cvdso_clock_getres' was
->>> not declared. Should it be static?
->>
->> Interesting. Dunno which version I'm running, as sparse appears
->> to ignores the --version flag.
->>
->> $ apt list --installed | grep ^sparse
->> sparse/bionic,now 0.5.1-2 amd64 [installed]
->>
->> https://sparse.wiki.kernel.org/index.php/Main_Page
->>
->> I appear to be running a 2 year old version.
->>
+On Thu, Jan 23, 2020 at 10:41:07AM +0100, Wolfram Sang wrote:
+> On Thu, Jan 23, 2020 at 10:31:20AM +0100, Krzysztof Kozlowski wrote:
+> > On Thu, Jan 23, 2020 at 10:12:28AM +0100, Wolfram Sang wrote:
+> > > 
+> > > >  config I2C_ZX2967
+> > > >  	tristate "ZTE ZX2967 I2C support"
+> > > > -	depends on ARCH_ZX
+> > > > -	default y
+> > > > +	depends on ARCH_ZX || (COMPILE_TEST && (ARC || ARM || ARM64 || M68K || RISCV || SUPERH || SPARC))
+> > > > +	# COMPILE_TEST needs architectures with readsX()/writesX() primitives
+> > > 
+> > > The list of archs neither looks pretty nor very maintainable. My
+> > > suggestion is that we leave this out of COMPILE_TEST until we have
+> > > something like ARCH_HAS_READS or something. What do you think?
+> > 
+> > Indeed it does not look good. However having compile testing allows
+> > kbuild to run sparse and smatch which already started pointing minor
+> > issues in existing drivers.
+> > 
+> > Yeah... pros and cons... I don't have a strong opinion to keep it. Since
+> > patch is important, maybe let's just skip this part?
 > 
-> I thought so ;)
-> 
->> Sorry for the noise. I need to figure out how to upgrade this without
->> breaking apt...
->>
-> 
-> No problem. I use the latest version built from git in my dev environment and
-> export it in the PATH. This does not break apt. An alternative could be to
-> create a package and install it, but I find the first easier to update.
+> Yeah, let's skip it for now. If you or someone is keen on having it,
+> something like ARCH_HAS_READS (<- needs better name) should be
+> introduced so we can use it here. But that can/should be handled
+> incrementally.
 
-I haven't upgraded sparse yet, but I've been playing with make W=1 lately,
-using gcc 9.2. On v5.5-rc1, I see the following warnings:
+Shall I send v3 or mayybe can you apply without this hunk?
 
-  CC      arch/arm64/kernel/vdso/vgettimeofday.o
-In file included from <command-line>:
-/home/mgonzalez/linux/lib/vdso/gettimeofday.c:224:5: warning: no previous prototype for '__cvdso_clock_getres' [-Wmissing-prototypes]
-  224 | int __cvdso_clock_getres(clockid_t clock, struct __kernel_timespec *res)
-      |     ^~~~~~~~~~~~~~~~~~~~
-arch/arm64/kernel/vdso/vgettimeofday.c:11:5: warning: no previous prototype for '__kernel_clock_gettime' [-Wmissing-prototypes]
-   11 | int __kernel_clock_gettime(clockid_t clock,
-      |     ^~~~~~~~~~~~~~~~~~~~~~
-arch/arm64/kernel/vdso/vgettimeofday.c:17:5: warning: no previous prototype for '__kernel_gettimeofday' [-Wmissing-prototypes]
-   17 | int __kernel_gettimeofday(struct __kernel_old_timeval *tv,
-      |     ^~~~~~~~~~~~~~~~~~~~~
-arch/arm64/kernel/vdso/vgettimeofday.c:23:5: warning: no previous prototype for '__kernel_clock_getres' [-Wmissing-prototypes]
-   23 | int __kernel_clock_getres(clockid_t clock_id,
-      |     ^~~~~~~~~~~~~~~~~~~~~
+Best regards,
+Krzysztof
 
 
-I suppose the __cvdso_clock_getres warning is fixed in v5.6?
-
-The other warnings might be false positives?
-
-Regards.
 
 _______________________________________________
 linux-arm-kernel mailing list
