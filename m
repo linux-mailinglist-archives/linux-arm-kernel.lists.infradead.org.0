@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5387814657D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:17:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3866C14658C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 11:21:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iOJuPW/XtwZoRmQVCBzGvGXZOOQuQO4ixQoNY0gJa3A=; b=TWtYBfvUMF4Euv
-	vjs6JsjhHQZI+zYGrWbXM7K5pP2KsxnQVy3K7nQGPIzuN7UF3CUuaLRg/YLZXYufLDrMnL9JtheFC
-	fOTMcKTHVfk9ntBKdXyPgf3exdGWNCxgsYuCv3oesiMJrNvG50/XbEKTS2DzKHoUhgg5QewSx16J9
-	ZUsoWPywfhuJsBMPulx7fbDr0yzt5/d7B93mdI4Wsot5VgpvEXtxmG6xdMni9t2h3WDz4MDS8puiK
-	HLRVnS81Ai3TF8lFOrHlkc4i4LNiNShExH4ICcGJZYooSsepJR4t3XXd/Nz3H5smOZsXdn15khkDc
-	ZQWGS3yhcp8CuEb6jsHw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=gb1AL3yaCN29IOh/KnWK9iXbPahTK3Knj3FnV/9dQPE=; b=C9a
+	ONtYC6/C/YYP5uVPikJm5EtIZjjyQegUZeGdvBy4qdJs5TZ3bIZAt629OijPtcU8fT/4MA0jGnq8t
+	Sd4/+ImfSIVqc62qa2h995guR641wy8mIuKAqQIR/MHFS2UQQUD4L0QHl549SElyabFpCYraO3c3F
+	Gaj+swReHF3u4KW7xcXnCM6Q7F8IdCFeYoomX5aFt7gSGjt6NU0BpiIr86HOBRNWBzSMiV46nQJbI
+	/VdoECAmRoLLzaZtGEIp8CU0qP2xmMQs1Gb3dQ4HByxgttOOIbaFW+PvolRsj4YeGqMJuWWRZx8yR
+	mkDPCVqB7ya8tFe9v1/994OwW0lF5+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuZXp-0003zh-M9; Thu, 23 Jan 2020 10:17:01 +0000
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuZXg-0003zH-5U; Thu, 23 Jan 2020 10:16:52 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 75C23304121;
- Thu, 23 Jan 2020 11:15:09 +0100 (CET)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 73B9A2B6E79F5; Thu, 23 Jan 2020 11:16:49 +0100 (CET)
-Date: Thu, 23 Jan 2020 11:16:49 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: Alex Kogan <alex.kogan@oracle.com>
-Subject: Re: [PATCH v9 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-Message-ID: <20200123101649.GF14946@hirez.programming.kicks-ass.net>
-References: <20200115035920.54451-1-alex.kogan@oracle.com>
- <20200115035920.54451-4-alex.kogan@oracle.com>
- <20200123092658.GC14879@hirez.programming.kicks-ass.net>
- <20200123100635.GE14946@hirez.programming.kicks-ass.net>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200123100635.GE14946@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1iuZc4-0005zQ-TD; Thu, 23 Jan 2020 10:21:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuZbj-0005yX-2z
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 10:21:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40D1E31B;
+ Thu, 23 Jan 2020 02:21:00 -0800 (PST)
+Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.79])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8A6273F6C4;
+ Thu, 23 Jan 2020 02:20:56 -0800 (PST)
+From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v4 00/17] arm64: return address signing
+Date: Thu, 23 Jan 2020 15:50:22 +0530
+Message-Id: <1579774839-19562-1-git-send-email-amit.kachhap@arm.com>
+X-Mailer: git-send-email 2.7.4
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200123_022103_219574_C4F410BE 
+X-CRM114-Status: GOOD (  13.89  )
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.7 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,76 +58,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- will.deacon@arm.com, linux@armlinux.org.uk, steven.sistare@oracle.com,
- linux-kernel@vger.kernel.org, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
- longman@redhat.com, tglx@linutronix.de, daniel.m.jordan@oracle.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Ramana Radhakrishnan <ramana.radhakrishnan@arm.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 23, 2020 at 11:06:35AM +0100, Peter Zijlstra wrote:
-> On Thu, Jan 23, 2020 at 10:26:58AM +0100, Peter Zijlstra wrote:
-> > On Tue, Jan 14, 2020 at 10:59:18PM -0500, Alex Kogan wrote:
-> > > +/* this function is called only when the primary queue is empty */
-> > > +static inline bool cna_try_change_tail(struct qspinlock *lock, u32 val,
-> > > +				       struct mcs_spinlock *node)
-> > > +{
-> > > +	struct mcs_spinlock *head_2nd, *tail_2nd;
-> > > +	u32 new;
-> > > +
-> > > +	/* If the secondary queue is empty, do what MCS does. */
-> > > +	if (node->locked <= 1)
-> > > +		return __try_clear_tail(lock, val, node);
-> > > +
-> > > +	/*
-> > > +	 * Try to update the tail value to the last node in the secondary queue.
-> > > +	 * If successful, pass the lock to the first thread in the secondary
-> > > +	 * queue. Doing those two actions effectively moves all nodes from the
-> > > +	 * secondary queue into the main one.
-> > > +	 */
-> > > +	tail_2nd = decode_tail(node->locked);
-> > > +	head_2nd = tail_2nd->next;
-> > > +	new = ((struct cna_node *)tail_2nd)->encoded_tail + _Q_LOCKED_VAL;
-> > > +
-> > > +	if (atomic_try_cmpxchg_relaxed(&lock->val, &val, new)) {
-> > > +		/*
-> > > +		 * Try to reset @next in tail_2nd to NULL, but no need to check
-> > > +		 * the result - if failed, a new successor has updated it.
-> > > +		 */
-> > 
-> > I think you actually have an ordering bug here; the load of head_2nd
-> > *must* happen before the atomic_try_cmpxchg(), otherwise it might
-> > observe the new next and clear a valid next pointer.
-> > 
-> > What would be the best fix for that; I'm thinking:
-> > 
-> > 	head_2nd = smp_load_acquire(&tail_2nd->next);
-> > 
-> > Will?
-> 
-> Hmm, given we've not passed the lock around yet; why wouldn't something
-> like this work:
-> 
-> 	smp_store_release(&tail_2nd->next, NULL);
+Hi,
 
-Argh, make that:
+This series improves function return address protection for the arm64 kernel, by
+compiling the kernel with ARMv8.3 Pointer Authentication instructions (referred
+ptrauth hereafter). This should help protect the kernel against attacks using
+return-oriented programming.
 
-	tail_2nd->next = NULL;
+This series is based on Linux version v5.5-rc7.
 
-	smp_wmb();
+High-level changes since v3 [1] (detailed change descriptions are in individual patches):
+ - Fixed some clang related compilation issues.
+ - Added a new patch "arm64: cpufeature: Fix meta-capability cpufeature check"
+ - Dropped the patch "arm64: kprobe: disable probe of ptrauth instruction". This will
+   be sent with armv8.6 ptrauth enhanced features patch in future.
+ - Several Reviewed-by and Acked-by. 
+ - Several fixes suggested by Catalin.
 
-> 	if (!atomic_try_cmpxchg_relaxed(&lock, &val, new)) {
-> 		tail_2nd->next = head_2nd;
-> 		return false;
-> 	}
-> 
-> The whole second queue is only ever modified by the lock owner, and that
-> is us, so we can pre-terminate the secondary queue (break the circular
-> link), try the cmpxchg and fix it back up when it fails.
+This series do not implement few things:
+ - kdump tools may need some rework to work with ptrauth. The kdump
+   tools may need the ptrauth information to strip PAC bits. This will
+   be sent in a separate patch.
+ - Few more ptrauth generic lkdtm tests as requested by Kees Cook.
+ - Generate compile time warnings if requested Kconfig feature not 
+   supported by compilers.
+
+Feedback welcome!
+
+Thanks,
+Amit Daniel
+
+[1]: http://lists.infradead.org/pipermail/linux-arm-kernel/2019-December/700169.html
+
+Amit Daniel Kachhap (8):
+  arm64: cpufeature: Fix meta-capability cpufeature check
+  arm64: create macro to park cpu in an infinite loop
+  arm64: ptrauth: Add bootup/runtime flags for __cpu_setup
+  arm64: initialize ptrauth keys for kernel booting task
+  arm64: mask PAC bits of __builtin_return_address
+  arm64: __show_regs: strip PAC from lr in printk
+  arm64: suspend: restore the kernel ptrauth keys
+  lkdtm: arm64: test kernel pointer authentication
+
+Kristina Martsenko (7):
+  arm64: cpufeature: add pointer auth meta-capabilities
+  arm64: rename ptrauth key structures to be user-specific
+  arm64: install user ptrauth keys at kernel exit time
+  arm64: cpufeature: handle conflicts based on capability
+  arm64: enable ptrauth earlier
+  arm64: initialize and switch ptrauth kernel keys
+  arm64: compile the kernel with ptrauth return address signing
+
+Mark Rutland (1):
+  arm64: unwind: strip PAC from kernel addresses
+
+Vincenzo Frascino (1):
+  kconfig: Add support for 'as-option'
+
+ arch/arm64/Kconfig                        | 27 +++++++++++-
+ arch/arm64/Makefile                       | 11 +++++
+ arch/arm64/include/asm/asm_pointer_auth.h | 63 ++++++++++++++++++++++++++++
+ arch/arm64/include/asm/compiler.h         | 20 +++++++++
+ arch/arm64/include/asm/cpucaps.h          |  4 +-
+ arch/arm64/include/asm/cpufeature.h       | 34 ++++++++++++---
+ arch/arm64/include/asm/pointer_auth.h     | 54 ++++++++++++------------
+ arch/arm64/include/asm/processor.h        |  3 +-
+ arch/arm64/include/asm/smp.h              | 10 +++++
+ arch/arm64/include/asm/stackprotector.h   |  5 +++
+ arch/arm64/kernel/asm-offsets.c           | 16 +++++++
+ arch/arm64/kernel/cpufeature.c            | 66 +++++++++++++++++++----------
+ arch/arm64/kernel/entry.S                 |  6 +++
+ arch/arm64/kernel/head.S                  | 28 +++++++------
+ arch/arm64/kernel/pointer_auth.c          |  7 +---
+ arch/arm64/kernel/process.c               |  5 ++-
+ arch/arm64/kernel/ptrace.c                | 16 +++----
+ arch/arm64/kernel/sleep.S                 |  8 ++++
+ arch/arm64/kernel/smp.c                   | 10 +++++
+ arch/arm64/kernel/stacktrace.c            |  3 ++
+ arch/arm64/mm/proc.S                      | 69 ++++++++++++++++++++++++++-----
+ drivers/misc/lkdtm/bugs.c                 | 36 ++++++++++++++++
+ drivers/misc/lkdtm/core.c                 |  1 +
+ drivers/misc/lkdtm/lkdtm.h                |  1 +
+ include/linux/stackprotector.h            |  2 +-
+ scripts/Kconfig.include                   |  4 ++
+ 26 files changed, 411 insertions(+), 98 deletions(-)
+ create mode 100644 arch/arm64/include/asm/asm_pointer_auth.h
+ create mode 100644 arch/arm64/include/asm/compiler.h
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
