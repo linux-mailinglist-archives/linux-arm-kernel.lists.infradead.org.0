@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEEF314672F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:47:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AB64146731
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 23 Jan 2020 12:48:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+DBAPXkrLYA4KyU3w+Nadr1nFw7rk6bEMiDf3ioGvqY=; b=h8ZeNgOfXGbF6C
-	nUlXp5tYCQLwKEIXhgYwY+AomHzqiZv30SqP/b4KLHJ+KWhyH5jTzMgU/qKBum60Az8I56Nkz+Kib
-	hHxD6CU7X07vrFvyXaVNGqoJ7iEuKX2LLgoDsc0TvRp9OUJPIFtz2a6r3b60zQNwvEr9AETZs5skj
-	PsFLek7Gamt+b66oa6vtPWMDuQOmtWjIKKOHKz6eyOtnlc6NrpLE0bQ1coiaJhnMXSuG/t7QdiNUp
-	ehwLU18ls8nhTd8dGL6XCcel3rQHt56bZxG/llbca5Q2p5zjD496Dv7b7XqlURp6rtCK/2yOTwqLc
-	xAxcRq7eD2WEF3MepD+Q==;
+	List-Owner; bh=vb49+fCjgVJRAyZAvKzlYB0QpP4tKM8dSr0m2yRcEhY=; b=Hd2M5k0DiHOQGb
+	L5aUzkjIbj1qEUP+YGVFkOVdR+7atEZdVEklWHPV56B4dAZM72zwmcitB003didfw0b0jCPaCxPHm
+	slbeXluSTaf+eWwMWARF+Jlh/sX0TSjlY5ou8WDz1R0Hs/HLUBic1QA1o9RbUIeiI2PbVmu1/6Uiu
+	D9CJtR7tGlLans5OJHPIQGoZpnWgxLDyxVzFF/EWvh2ELAWVIP71nUPSRuBgcjelvu82H2ka1n77N
+	R+Dl0TRw33OXPNfQ+nFqXsHvKt4FEuEGYWDJK5QyFvwVFXfFPiLombBNZa509XV7Quk0ph2/zxpDx
+	GvKB5TZIvUed+3vXXMDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuaxS-0003DW-Ix; Thu, 23 Jan 2020 11:47:34 +0000
+	id 1iuaxv-0003gs-VR; Thu, 23 Jan 2020 11:48:04 +0000
 Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuav8-00010A-9m
- for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:45:12 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00NBj4tI130189;
- Thu, 23 Jan 2020 05:45:04 -0600
+ id 1iuavA-0001Ab-0k
+ for linux-arm-kernel@lists.infradead.org; Thu, 23 Jan 2020 11:45:14 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00NBj6T3130198;
+ Thu, 23 Jan 2020 05:45:06 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579779904;
- bh=vouppn/xgP6OR5NLL8cCpLLbTNcHl8pNlYNtl20AbR0=;
+ s=ti-com-17Q1; t=1579779906;
+ bh=slJUxoHOZxqRaOqSsOs68bAi+ruE2FhXGRk8o8t+2V8=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=csEyRH4dSY98dt8jmVzn+CgpCjcvhCikIE3PS63oM77nrHmqMqHek9gOJKwGBoCza
- HvFcvd16dm2FAmtpRUG4Ezi8KFI8/uKdET5Q7Ii1GMV71e0hW3KAlpqiUM9LWaaw/+
- B2CGlbHH8O3esEOnW0WtYj1E+QUQJggjwbOoOq7Y=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00NBj46Q051861
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 23 Jan 2020 05:45:04 -0600
-Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ b=TQrwpIbWn9ichmcVtqPeQjZzV5OZ9ELaFuMl2TWYOLrlePx9/yhmRMBl1yLBwNy0d
+ mLgFMLCRwiMkrB3d1j5FRGM3i/vzg+ZjQwr5Wtwt+6U2Flf5bGtts6aXYnGYQtBfjo
+ Gmh+L07eOwM3+rOFPIT78bRte5NRMc9Ti040LcOM=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBj6Od060907;
+ Thu, 23 Jan 2020 05:45:06 -0600
+Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 23
- Jan 2020 05:45:03 -0600
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
+ Jan 2020 05:45:06 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 23 Jan 2020 05:45:03 -0600
+ Frontend Transport; Thu, 23 Jan 2020 05:45:06 -0600
 Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBijBK114078;
- Thu, 23 Jan 2020 05:45:01 -0600
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00NBijBL114078;
+ Thu, 23 Jan 2020 05:45:04 -0600
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
 To: <t-kristo@ti.com>, <nm@ti.com>, <lokeshvutla@ti.com>
-Subject: [PATCH v3 7/9] arm64: dts: ti: k3-j721e: DMA support
-Date: Thu, 23 Jan 2020 13:45:26 +0200
-Message-ID: <20200123114528.26552-8-peter.ujfalusi@ti.com>
+Subject: [PATCH v3 8/9] arm64: dts: ti: k3-am654-main: Add McASP nodes
+Date: Thu, 23 Jan 2020 13:45:27 +0200
+Message-ID: <20200123114528.26552-9-peter.ujfalusi@ti.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200123114528.26552-1-peter.ujfalusi@ti.com>
 References: <20200123114528.26552-1-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_034510_816604_D9EE53F9 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20200123_034512_242637_0AD5BC21 
+X-CRM114-Status: GOOD (  10.86  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -96,124 +95,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the ringacc and udmap nodes for main and mcu NAVSS.
+Add the nodes for McASP 0-2 and keep them disabled because several
+required properties are not present as they are board specific.
 
 Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- arch/arm64/boot/dts/ti/k3-j721e-main.dtsi     | 40 +++++++++++++++++
- .../boot/dts/ti/k3-j721e-mcu-wakeup.dtsi      | 45 +++++++++++++++++++
- 2 files changed, 85 insertions(+)
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 57 ++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-index 97b194e0bcba..6c909bd98a6b 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-@@ -56,6 +56,10 @@ main_navss {
- 		#address-cells = <2>;
- 		#size-cells = <2>;
- 		ranges;
-+		dma-coherent;
-+		dma-ranges;
-+
-+		ti,sci-dev-id = <199>;
- 
- 		main_navss_intr: interrupt-controller1 {
- 			compatible = "ti,sci-intr";
-@@ -214,6 +218,42 @@ mailbox0_cluster11: mailbox@31f8b000 {
- 			ti,mbox-num-fifos = <16>;
- 			interrupt-parent = <&main_navss_intr>;
- 		};
-+
-+		main_ringacc: ringacc@3c000000 {
-+			compatible = "ti,am654-navss-ringacc";
-+			reg =	<0x0 0x3c000000 0x0 0x400000>,
-+				<0x0 0x38000000 0x0 0x400000>,
-+				<0x0 0x31120000 0x0 0x100>,
-+				<0x0 0x33000000 0x0 0x40000>;
-+			reg-names = "rt", "fifos", "proxy_gcfg", "proxy_target";
-+			ti,num-rings = <1024>;
-+			ti,sci-rm-range-gp-rings = <0x1>; /* GP ring range */
-+			ti,sci = <&dmsc>;
-+			ti,sci-dev-id = <211>;
-+			msi-parent = <&main_udmass_inta>;
-+		};
-+
-+		main_udmap: dma-controller@31150000 {
-+			compatible = "ti,j721e-navss-main-udmap";
-+			reg =	<0x0 0x31150000 0x0 0x100>,
-+				<0x0 0x34000000 0x0 0x100000>,
-+				<0x0 0x35000000 0x0 0x100000>;
-+			reg-names = "gcfg", "rchanrt", "tchanrt";
-+			msi-parent = <&main_udmass_inta>;
-+			#dma-cells = <1>;
-+
-+			ti,sci = <&dmsc>;
-+			ti,sci-dev-id = <212>;
-+			ti,ringacc = <&main_ringacc>;
-+
-+			ti,sci-rm-range-tchan = <0x0d>, /* TX_CHAN */
-+						<0x0f>, /* TX_HCHAN */
-+						<0x10>; /* TX_UHCHAN */
-+			ti,sci-rm-range-rchan = <0x0a>, /* RX_CHAN */
-+						<0x0b>, /* RX_HCHAN */
-+						<0x0c>; /* RX_UHCHAN */
-+			ti,sci-rm-range-rflow = <0x00>; /* GP RFLOW */
-+		};
- 	};
- 
- 	main_pmx0: pinmux@11c000 {
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-index 7cf1490f3928..16c874bfd49a 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-@@ -225,4 +225,49 @@ adc {
- 			compatible = "ti,am3359-adc";
- 		};
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+index 7c4853a8a02c..a856079c4fa9 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+@@ -663,4 +663,61 @@ pcie1_ep: pcie-ep@5600000 {
+ 		dma-coherent;
+ 		interrupts = <GIC_SPI 355 IRQ_TYPE_EDGE_RISING>;
  	};
 +
-+	mcu_navss {
-+		compatible = "simple-mfd";
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+		dma-coherent;
-+		dma-ranges;
++	mcasp0: mcasp@2b00000 {
++		compatible = "ti,am33xx-mcasp-audio";
++		reg = <0x0 0x02b00000 0x0 0x2000>,
++			<0x0 0x02b08000 0x0 0x1000>;
++		reg-names = "mpu","dat";
++		interrupts = <GIC_SPI 208 IRQ_TYPE_LEVEL_HIGH>,
++				<GIC_SPI 209 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-names = "tx", "rx";
 +
-+		ti,sci-dev-id = <232>;
++		dmas = <&main_udmap 0xc400>, <&main_udmap 0x4400>;
++		dma-names = "tx", "rx";
 +
-+		mcu_ringacc: ringacc@2b800000 {
-+			compatible = "ti,am654-navss-ringacc";
-+			reg =	<0x0 0x2b800000 0x0 0x400000>,
-+				<0x0 0x2b000000 0x0 0x400000>,
-+				<0x0 0x28590000 0x0 0x100>,
-+				<0x0 0x2a500000 0x0 0x40000>;
-+			reg-names = "rt", "fifos", "proxy_gcfg", "proxy_target";
-+			ti,num-rings = <286>;
-+			ti,sci-rm-range-gp-rings = <0x1>; /* GP ring range */
-+			ti,sci = <&dmsc>;
-+			ti,sci-dev-id = <235>;
-+			msi-parent = <&main_udmass_inta>;
-+		};
++		clocks = <&k3_clks 104 0>;
++		clock-names = "fck";
++		power-domains = <&k3_pds 104 TI_SCI_PD_EXCLUSIVE>;
 +
-+		mcu_udmap: dma-controller@285c0000 {
-+			compatible = "ti,j721e-navss-mcu-udmap";
-+			reg =	<0x0 0x285c0000 0x0 0x100>,
-+				<0x0 0x2a800000 0x0 0x40000>,
-+				<0x0 0x2aa00000 0x0 0x40000>;
-+			reg-names = "gcfg", "rchanrt", "tchanrt";
-+			msi-parent = <&main_udmass_inta>;
-+			#dma-cells = <1>;
++		status = "disabled";
++	};
 +
-+			ti,sci = <&dmsc>;
-+			ti,sci-dev-id = <236>;
-+			ti,ringacc = <&mcu_ringacc>;
++	mcasp1: mcasp@2b10000 {
++		compatible = "ti,am33xx-mcasp-audio";
++		reg = <0x0 0x02b10000 0x0 0x2000>,
++			<0x0 0x02b18000 0x0 0x1000>;
++		reg-names = "mpu","dat";
++		interrupts = <GIC_SPI 210 IRQ_TYPE_LEVEL_HIGH>,
++				<GIC_SPI 211 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-names = "tx", "rx";
 +
-+			ti,sci-rm-range-tchan = <0x0d>, /* TX_CHAN */
-+						<0x0f>; /* TX_HCHAN */
-+			ti,sci-rm-range-rchan = <0x0a>, /* RX_CHAN */
-+						<0x0b>; /* RX_HCHAN */
-+			ti,sci-rm-range-rflow = <0x00>; /* GP RFLOW */
-+		};
++		dmas = <&main_udmap 0xc401>, <&main_udmap 0x4401>;
++		dma-names = "tx", "rx";
++
++		clocks = <&k3_clks 105 0>;
++		clock-names = "fck";
++		power-domains = <&k3_pds 105 TI_SCI_PD_EXCLUSIVE>;
++
++		status = "disabled";
++	};
++
++	mcasp2: mcasp@2b20000 {
++		compatible = "ti,am33xx-mcasp-audio";
++		reg = <0x0 0x02b20000 0x0 0x2000>,
++			<0x0 0x02b28000 0x0 0x1000>;
++		reg-names = "mpu","dat";
++		interrupts = <GIC_SPI 212 IRQ_TYPE_LEVEL_HIGH>,
++				<GIC_SPI 213 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-names = "tx", "rx";
++
++		dmas = <&main_udmap 0xc402>, <&main_udmap 0x4402>;
++		dma-names = "tx", "rx";
++
++		clocks = <&k3_clks 106 0>;
++		clock-names = "fck";
++		power-domains = <&k3_pds 106 TI_SCI_PD_EXCLUSIVE>;
++
++		status = "disabled";
 +	};
  };
 -- 
