@@ -2,70 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1E46147A56
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 10:23:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ACE6147A5C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 10:25:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mjiqasdQbfCD/hibzdqCzCCfJe8MCbZNeBMzphE0BoA=; b=Dt/SPM7w5PpRxL
-	iIXT+9r0vACMHabmJEXGnUj6UFZK6mHt8n8uGtgFCJpeSLA+TjFy5yc+2MI22RrXcZHAIrKKwUROY
-	5kilHOqHgbSVCXSp8AHND3bxo8LPbN3Vz1YM9TRVFTTh68gh8rXA55GTd1rYXG+tNwhBnZUtKK1WJ
-	xAmlqYfdI7E6ObDNoVcIlRhIZH/LkjD04djlg9W07r+Hfod9IE7NtXqd9PN/X1KrrkyOUDrIuRXmt
-	GS9H82qIK2IViWyva62p1os6ZuCYUi1ECvZyQca9VsitLApVpJRZ9lFza/FoOpV79QeqPdlHoyQIH
-	QCDolj/3bsIDDTZcl7CQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=VMro2HeilWcqfSpWcWVt9xKdHaf4N2/XiF7cxP+Tv8w=; b=gUYqjRwEhQuzWczFbAhRRVIvp
+	hPVh5z30HYNRqsf3gjctklvb59QbrRiuhC+Rm8UUJQfbDJSuaXUXBa+HbfnIwxoTmXPBWnI9HCYMy
+	Cz3dM1dV5XdFOt9vMgVyti2LC8BCH4zLw/ogJ/D+lZGE580Qbob4Ru4aJrV7XSsvrQnWlKjOr05qt
+	+aQJ9k8VPpTgWSUORPyAb5yagUxHfe6bu2k1FRhxdDevJ/qtD0Zs6HlMUruSpv1AkcDUKTJQGeTX/
+	YVcOG+CaznepGgDBDcjsETUNLx5frXOtyruhqMXVCR4fLJd5MV0ceugK3PMbuJA15oykHN8H86dql
+	/84MGSBbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuvBi-0006Uw-3U; Fri, 24 Jan 2020 09:23:38 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iuvD7-0006p7-7s; Fri, 24 Jan 2020 09:25:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuvBY-0006UO-5w
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 09:23:29 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00O9NIeA077545;
- Fri, 24 Jan 2020 03:23:19 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579857799;
- bh=PKLdQgBAWNuEFj6zeHDzEvtdhk+JONPJ53CQRbLkK7o=;
- h=From:To:CC:Subject:Date;
- b=qB2R50uM8lvgd9HrgAw1crklWgJ/1JeTDp2i4GFDVFeXJb3XmerFA9esw/q3h5yCj
- mWzp3YJ7OxErIGUTiTiz0gdxfaSAOIoCdBBkv/+3naDSnrp5vIQ47QUD8HTv/SPtfv
- MuoLB4Y49JXvqNIL0bxTX8v1aeuy2dlQLVojVVFA=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00O9NIYU045144
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 24 Jan 2020 03:23:18 -0600
-Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 24
- Jan 2020 03:23:18 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 24 Jan 2020 03:23:18 -0600
-Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00O9NF73007440;
- Fri, 24 Jan 2020 03:23:16 -0600
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <catalin.marinas@arm.com>, <will@kernel.org>
-Subject: [PATCH] arm64: defconfig: Enable Texas Instruments UDMA driver
-Date: Fri, 24 Jan 2020 11:23:59 +0200
-Message-ID: <20200124092359.12429-1-peter.ujfalusi@ti.com>
-X-Mailer: git-send-email 2.25.0
+ id 1iuvCx-0006oj-Gx
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 09:24:56 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DD47F20838;
+ Fri, 24 Jan 2020 09:24:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579857895;
+ bh=KAQIFs6u9SBGFnCamms5w0xzDzQWfopkjaUvvNlAAHE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=lEeIpAUTF7HgSMbNvTsm053c2RkRuunrm0fhiPRMDvd81FTrDrMl1+M6QAF4pGjMx
+ NXuyLJNVm6ncBLT4zyLNfPO3CrmttWgKa7g/KcoAjwYJiuzpbLf8un1aFzix4KfPvD
+ iG05KoHrVuFEQAB0nsEIdRH4mkE+kbxK0CfkkX3o=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1iuvCv-00168F-3Z; Fri, 24 Jan 2020 09:24:53 +0000
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Date: Fri, 24 Jan 2020 09:24:53 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Alexandre Torgue <alexandre.torgue@st.com>
+Subject: Re: STM32MP1 level triggered interrupts
+In-Reply-To: <f9d98afc-6cb8-ef7b-cff7-a04e14dba4c8@st.com>
+References: <20bb72d0-8258-abc0-e729-4d3d5a75c41c@denx.de>
+ <d6e02817-2464-51b9-246a-7720b607b8d6@st.com>
+ <65a1c5b2-c1b9-322f-338c-e6ff6379d8d1@denx.de>
+ <129d04a0-c846-506d-5726-4a1024d977a6@st.com>
+ <80db762c-3b3d-f007-2f9b-dadbffd95782@denx.de>
+ <360b1adc-32f1-7993-c463-e52c7a5a8a67@st.com>
+ <c4f08f59acd31951527ef1d6e9409e6f@kernel.org>
+ <20200123101225.nscpc5t4nmlarbw2@pengutronix.de>
+ <03fd1cb7b5985b3221f66c6b0058adc8@kernel.org>
+ <20200123105214.ru4j76xbisjtbtgw@pengutronix.de>
+ <cf98f4fd257ba4f34c75fe1656bd341b@kernel.org>
+ <e1fffd57-4814-ec36-68b4-4207e3d4ae5d@denx.de>
+ <f9d98afc-6cb8-ef7b-cff7-a04e14dba4c8@st.com>
+Message-ID: <7e0ce712f7e34b38c8f541644026c52e@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: alexandre.torgue@st.com, marex@denx.de,
+ u.kleine-koenig@pengutronix.de, patrick.delaunay@st.com,
+ mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_012328_304130_638F705F 
-X-CRM114-Status: GOOD (  11.36  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200124_012455_583226_BF11E8FE 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,49 +103,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, arnd@arndb.de, soc@kernel.org,
- linux-kernel@vger.kernel.org, t-kristo@ti.com, vkoul@kernel.org,
- olof@lixom.net, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Marek Vasut <marex@denx.de>, Patrick Delaunay <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The UDMA driver is used on K3 platforms (am654 and j721e).
+On 2020-01-24 09:17, Alexandre Torgue wrote:
+> On 1/23/20 11:21 PM, Marek Vasut wrote:
 
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
-Hi,
+[...]
 
-The drivers for UDMA are already in linu-next and the DT patches are going to be
-also heading for 5.6.
-The only missing piece is to enable the drivers in defconfig so clients can use
-the DMA.
+>> But I still wonder, what is the purpose of the EXTImux in that SoC?
+>> Shouldn't that permit routing GPIOs directly into GIC SPIs, which 
+>> would
+>> then permit detecting at least level-high interrupts ?
+>> 
+> 
+> For this SoC, EXTI block detects external line edges and rises a GIC
+> SPI interrupt. This EXTi block is mainly used to handle HW events like
+> buttons, clocks ... So first issue seems more to be a design issue
+> (your design doesn't fit with MP1 datasheet).
+> 
+> Now, let's find a solution. I'll have a look on your proposition:
+> "check the line in EOI callback and retrig".
+> 
+> Marc, this kind a solution could be acceptable on your side ?
 
-Regards,
-Peter
+It will depend on the nature of the hack you will have to put in there.
+If it is 100% reliable, why not? Anything short of that, probably not.
 
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 4631a1190719..a325a296d94c 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -698,6 +698,7 @@ CONFIG_QCOM_HIDMA_MGMT=y
- CONFIG_QCOM_HIDMA=y
- CONFIG_RCAR_DMAC=y
- CONFIG_RENESAS_USB_DMAC=m
-+CONFIG_TI_K3_UDMA=y
- CONFIG_VFIO=y
- CONFIG_VFIO_PCI=y
- CONFIG_VIRTIO_PCI=y
+         M.
 -- 
-Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
