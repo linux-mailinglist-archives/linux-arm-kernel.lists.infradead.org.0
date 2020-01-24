@@ -2,83 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C09B6148560
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 13:47:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C94EF148576
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 13:55:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:MIME-Version
-	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=63LX2C2mhpG0ffzgodrT6zTEuAjqX9wOLNARcIGU2Nc=; b=btzyxQH/1csaLr
-	4E2QJ9J7x87/6tppdgnQkKZvaSueBYFZJbsCqzF43B4TqG57pVt9hOw0Ttt7V963qV5Ugan7iW2V9
-	WUaiXdX9CJzPHOuq91C8P1gGKC+C70oq5ZmMfboEt0KtQTaXid6AFMRrFUtEIYF0/4mSzkcXSYauv
-	wPPUB8Hn0v3bna6CRA4NW81+3a7ZmE1HLUS4AviEAFMDZ+aGEfuCI2tIxP1efAOnSpkVCwJhEo0yp
-	sNawb7VyH6vrtLiCnD6LkZxYS0V2XG5Cvg0hFyzI5M+VmXsFdaFK7KOiZfGnmqB4SvtafNYYdlVZN
-	rJl4Atfiw2zHgqrjucFA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/D1+63+LKbmVLfpO6TJ8xsfbOvbJvX09OTGUN7r1N4c=; b=mZlA0TFQoK/jvyExq2N3W8SZt
+	UsqmQdFQdHrMqqJPgIvv4D31txcOfkuHcFOW5w4uAlWTpFaV4Jm5U6q5vziS1zchMu+3zgnB0bh/l
+	/bkVN4Rn1EhxLKmByITOV5aDLe1hLVAOxp5QMhCf30OGEXOaAbkv1pTyDg3H0kefSBGc79OszgX+s
+	ffufApLwUVGGTmbZQH6Rk27nPy4Li7i4mbXmhLKhCQRWtyKReR5pZ6V8OIF78gjxDWXaDzfOcWnVC
+	cCCqUR8hdJ8V0Vc8XvGoPlvFbNvf6RrXGezWjyzRAOKGVTMHbBd5NIR6D0qeI+lXty/E/Dr9RzSD1
+	c4s2l9ZXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuyMU-0003uo-0e; Fri, 24 Jan 2020 12:46:58 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1iuyUv-0007ES-TU; Fri, 24 Jan 2020 12:55:41 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuyMH-0003tt-Mb
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 12:46:47 +0000
-Received: by mail-pg1-x542.google.com with SMTP id u131so974991pgc.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Jan 2020 04:46:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:user-agent:in-reply-to:references:mime-version
- :content-transfer-encoding:subject:to:cc:from:message-id;
- bh=bO48eiH7w0Y2sZOOFKprs0ltyE2e6nrqdGsFGOFXj5I=;
- b=ye4hi+rkXwPk9YJ1XFg/PX1X22xo1Gf5esAK3g+a3U9Yl70bIBvs04TEKukmmSSjC4
- 3SCqwnzwPvMp7yOJ4RpMJINjDwLI6pxgLEKtMgiagAHNFv0Cct+LWSmWDdLuGpyzGiUM
- YQ7riz8KCjPdWySoLId5HrEjrkHQsNzHFtu0wPda1PLpEIJn+rR57+26SegF469MCs7i
- Zh4FPhelPywCPteAalLUyt0ON8xRlAh7M7Uc2tPNzyedyaWZbSozGlWrNE48JNQ3xyot
- rlVLMMkh4GMcopCKtFKFCibdd+oS66t96ySuH8lP51mNUhB+4rJvLplbclhVFo8lP9XX
- KiXQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:user-agent:in-reply-to:references
- :mime-version:content-transfer-encoding:subject:to:cc:from
- :message-id;
- bh=bO48eiH7w0Y2sZOOFKprs0ltyE2e6nrqdGsFGOFXj5I=;
- b=NlwN+x6CaJg0BrjD/0p8qH3dRClgheWZ8QIA5NdnZgXOs/LjcX6B71GaKvp+e6mhs4
- cXclC4S78O3+WX8aAbbM+1c+8Cx5/qw++8BNLzmsAdEix+q7U8gWU/o5nctvVu77tdWc
- 6wd7ygLtk3iues9jRtBisfCPQSm4/pghrFfOpuvpGOEquO12mjfql+fOu2UguuMZ2llj
- Sc3rx71dzdJX2K12WlkKopPhufwbT4d3OQ6aaBbju/zKktkawIFMGx+dy7F6qMpOAHWO
- tmy2AY2yxDnEyIH5iXto+Ix/E5O/3zO5sYRXOgleQwkjHr+1Mx1B2vnzDdHyJhqZRdzZ
- opFA==
-X-Gm-Message-State: APjAAAWbiMhCc8rahLDpBJxrzOJQvuLSjoT02m6v7Uv+s0bCYinmRfAR
- jxfFVfyDmulYGI3r4VTkoZuc
-X-Google-Smtp-Source: APXvYqxvKHr2BJZ+0Lz1nXRHRTswPoI20Qc0waDRQOjeiUJ3hC1gi59XWnLjOKi5Ht9zfbA4J+W+WA==
-X-Received: by 2002:aa7:864a:: with SMTP id a10mr3246358pfo.233.1579870003097; 
- Fri, 24 Jan 2020 04:46:43 -0800 (PST)
-Received: from ?IPv6:2409:4072:18d:860f:a1d1:1fe2:8bbe:4ade?
- ([2409:4072:18d:860f:a1d1:1fe2:8bbe:4ade])
- by smtp.gmail.com with ESMTPSA id o2sm6678718pjo.26.2020.01.24.04.46.41
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 24 Jan 2020 04:46:42 -0800 (PST)
-Date: Fri, 24 Jan 2020 18:16:32 +0530
-User-Agent: K-9 Mail for Android
-In-Reply-To: <20200124031819.608217-1-matheus@castello.eng.br>
-References: <20200124031819.608217-1-matheus@castello.eng.br>
+ id 1iuyUl-0007Df-W4
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 12:55:33 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00OCsTCw012368; Fri, 24 Jan 2020 13:55:24 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=HsT5XOh0k0Oip5e4q1QwfFV3XVw3YKpi81ECZxj8y6Q=;
+ b=aqxG94s1vaUPEi7oDUwgOsYy3ksvsgGOaWryEalFEw+6Zgdpn66PA45Wk9YnaG06YC0O
+ aBklNAsLyjk63X/6JayBKfFWnPoajK64SDY5dhXmGZ5SYJXnDEuGIwkrxaDGKW7Lqoxu
+ 5imLP6Ba6rd3VLxeGfE5eELqunxfwIp/TEo6qOT1oIRrHt8ADdzIe97YYl01EGefCZ68
+ 8tbO7EMpd0mYn/mc8D923WscSRyQv2abfuiZbik1+S7JawA9NuI1C8Ct9ZKLLcp5B7N1
+ ApvOKGuEbrfLmwvcTx3KpafV0loMaKPLNCmf9fnU1DQyWTdhTUdaAVSVhzPPor7hJXBG Cw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xkrc5g12e-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 24 Jan 2020 13:55:24 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CE8E310002A;
+ Fri, 24 Jan 2020 13:55:23 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B75A72A847D;
+ Fri, 24 Jan 2020 13:55:23 +0100 (CET)
+Received: from lmecxl0923.lme.st.com (10.75.127.48) by SFHDAG6NODE1.st.com
+ (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 24 Jan
+ 2020 13:55:23 +0100
+Subject: Re: [PATCH 0/9] mmc: mmci: sdmmc: add sdr104 support
+To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
+References: <20200110134823.14882-1-ludovic.barre@st.com>
+From: Ludovic BARRE <ludovic.barre@st.com>
+Message-ID: <6d859def-351e-abd7-0d5f-962ad935dff2@st.com>
+Date: Fri, 24 Jan 2020 13:55:22 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-Subject: Re: [PATCH] pinctrl actions: Fix functions groups names
-To: Matheus Castello <matheus@castello.eng.br>, afaerber@suse.de,
- linus.walleij@linaro.org
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Message-ID: <900334CE-3A85-443D-99EC-4DD169BBCB65@linaro.org>
+In-Reply-To: <20200110134823.14882-1-ludovic.barre@st.com>
+Content-Language: fr
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG1NODE2.st.com (10.75.127.2) To SFHDAG6NODE1.st.com
+ (10.75.127.16)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-24_03:2020-01-24,
+ 2020-01-24 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_044645_772833_92921707 
-X-CRM114-Status: GOOD (  11.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200124_045532_518233_9F49A919 
+X-CRM114-Status: GOOD (  13.67  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -99,719 +96,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, pn@denx.de, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ srinivas.kandagatla@linaro.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hey,
-
-+Parthi, who is the author of s700 driver. 
-
-On 24 January 2020 8:48:19 AM IST, Matheus Castello <matheus@castello.eng.br> wrote:
->Group names by function do not match their respective structures and
->documentation defined names.
->
->This fixes following errors observed on s500-based Labrador board when
->groups names defined on documentation are used:
->[    4.262778] pinctrl-s700 b01b0040.pinctrl: invalid group
->"sd0_d1_mfp" for function "sd0"
->[    4.271394] pinctrl-s700 b01b0040.pinctrl: invalid group
->"sd0_d2_d3_mfp" for function "sd0"
->[    4.280248] pinctrl-s700 b01b0040.pinctrl: invalid group
->"sd1_d0_d3_mfp" for function "sd0"
->[    4.289122] pinctrl-s700 b01b0040.pinctrl: invalid group
->"sd0_cmd_mfp" for function "sd0"
->
-
-Doh, I'm not sure how I missed this obvious mistake during review. Sorry for that. 
-
-The change looks good but the commit message needs to be reworked a bit. It doesn't make sense to use s700 driver on s500 based board. Even though you could've modified it for s500, it should not be mentioned. So just mention the issue. Also you're missing colon after pinctrl in subject. 
-
-Btw, are you planning to contribute s500 driver? 
-
-Thanks, 
-Mani
-
->Fixes: 81c9d563cc74 (pinctrl: actions: Add Actions Semi S700 pinctrl
->driver)
->Signed-off-by: Matheus Castello <matheus@castello.eng.br>
->---
-> drivers/pinctrl/actions/pinctrl-s700.c | 510 ++++++++++++-------------
-> 1 file changed, 255 insertions(+), 255 deletions(-)
->
->diff --git a/drivers/pinctrl/actions/pinctrl-s700.c
->b/drivers/pinctrl/actions/pinctrl-s700.c
->index 8b8121e35edb..1182b38ff4dc 100644
->--- a/drivers/pinctrl/actions/pinctrl-s700.c
->+++ b/drivers/pinctrl/actions/pinctrl-s700.c
->@@ -1125,317 +1125,317 @@ static const struct owl_pingroup
->s700_groups[] = {
-> };
-> 
-> static const char * const nor_groups[] = {
->-	"lcd0_d18",
->-	"i2s_d0",
->-	"i2s0_pcm0",
->-	"i2s1_pcm0",
->-	"i2s_d1",
->-	"ks_in2",
->-	"ks_in1",
->-	"ks_in0",
->-	"ks_in3",
->-	"ks_out0",
->-	"ks_out1",
->-	"ks_out2",
->-	"lcd0_d2",
->-	"lvds_ee_pn",
->-	"uart2_rx_tx",
->-	"spi0_i2c_pcm",
->-	"lvds_e_pn",
->-	"sd0_d0",
->-	"sd0_d1",
->-	"sd0_d2_d3",
->-	"sd1_d0_d3",
->-	"sd0_cmd",
->-	"sd1_cmd",
->-	"sens0_ckout",
->-	"sen0_pclk",
->+	"lcd0_d18_mfp",
->+	"i2s_d0_mfp",
->+	"i2s0_pcm0_mfp",
->+	"i2s1_pcm0_mfp",
->+	"i2s_d1_mfp",
->+	"ks_in2_mfp",
->+	"ks_in1_mfp",
->+	"ks_in0_mfp",
->+	"ks_in3_mfp",
->+	"ks_out0_mfp",
->+	"ks_out1_mfp",
->+	"ks_out2_mfp",
->+	"lcd0_d2_mfp",
->+	"lvds_ee_pn_mfp",
->+	"uart2_rx_tx_mfp",
->+	"spi0_i2c_pcm_mfp",
->+	"lvds_e_pn_mfp",
->+	"sd0_d0_mfp",
->+	"sd0_d1_mfp",
->+	"sd0_d2_d3_mfp",
->+	"sd1_d0_d3_mfp",
->+	"sd0_cmd_mfp",
->+	"sd1_cmd_mfp",
->+	"sens0_ckout_mfp",
->+	"sen0_pclk_mfp",
-> };
-> 
-> static const char * const eth_rmii_groups[] = {
->-	"rgmii_txd23",
->-	"rgmii_rxd2",
->-	"rgmii_rxd3",
->-	"rgmii_txd01",
->-	"rgmii_txd0",
->-	"rgmii_txd1",
->-	"rgmii_txen",
->-	"rgmii_rxen",
->-	"rgmii_rxd1",
->-	"rgmii_rxd0",
->-	"rgmii_ref_clk",
->+	"rgmii_txd23_mfp",
->+	"rgmii_rxd2_mfp",
->+	"rgmii_rxd3_mfp",
->+	"rgmii_txd01_mfp",
->+	"rgmii_txd0_mfp",
->+	"rgmii_txd1_mfp",
->+	"rgmii_txen_mfp",
->+	"rgmii_rxen_mfp",
->+	"rgmii_rxd1_mfp",
->+	"rgmii_rxd0_mfp",
->+	"rgmii_ref_clk_mfp",
-> 	"eth_smi_dummy",
-> };
-> 
-> static const char * const eth_smii_groups[] = {
->-	"rgmii_txd0",
->-	"rgmii_txd1",
->-	"rgmii_rxd0",
->-	"rgmii_rxd1",
->-	"rgmii_ref_clk",
->+	"rgmii_txd0_mfp",
->+	"rgmii_txd1_mfp",
->+	"rgmii_rxd0_mfp",
->+	"rgmii_rxd1_mfp",
->+	"rgmii_ref_clk_mfp",
-> 	"eth_smi_dummy",
-> };
-> 
-> static const char * const spi0_groups[] = {
->-	"dsi_dn0",
->-	"dsi_dp2",
->-	"dsi_dp0",
->-	"uart2_rx_tx",
->-	"spi0_i2c_pcm",
->-	"dsi_dn2",
->+	"dsi_dn0_mfp",
->+	"dsi_dp2_mfp",
->+	"dsi_dp0_mfp",
->+	"uart2_rx_tx_mfp",
->+	"spi0_i2c_pcm_mfp",
->+	"dsi_dn2_mfp",
-> };
-> 
-> static const char * const spi1_groups[] = {
->-	"uart0_rx",
->-	"uart0_tx",
->+	"uart0_rx_mfp",
->+	"uart0_tx_mfp",
-> 	"i2c0_mfp",
-> };
-> 
-> static const char * const spi2_groups[] = {
->-	"rgmii_txd01",
->-	"rgmii_txd0",
->-	"rgmii_txd1",
->-	"rgmii_ref_clk",
->-	"dnand_acle_ce0",
->+	"rgmii_txd01_mfp",
->+	"rgmii_txd0_mfp",
->+	"rgmii_txd1_mfp",
->+	"rgmii_ref_clk_mfp",
->+	"dnand_acle_ce0_mfp",
-> };
-> 
-> static const char * const spi3_groups[] = {
->-	"rgmii_txen",
->-	"rgmii_rxen",
->-	"rgmii_rxd1",
->-	"rgmii_rxd0",
->+	"rgmii_txen_mfp",
->+	"rgmii_rxen_mfp",
->+	"rgmii_rxd1_mfp",
->+	"rgmii_rxd0_mfp",
-> };
-> 
-> static const char * const sens0_groups[] = {
->-	"csi_cn_cp",
->-	"sens0_ckout",
->-	"csi_dn_dp",
->-	"sen0_pclk",
->+	"csi_cn_cp_mfp",
->+	"sens0_ckout_mfp",
->+	"csi_dn_dp_mfp",
->+	"sen0_pclk_mfp",
-> };
-> 
-> static const char * const sens1_groups[] = {
->-	"lcd0_d18",
->-	"ks_in2",
->-	"ks_in1",
->-	"ks_in0",
->-	"ks_in3",
->-	"ks_out0",
->-	"ks_out1",
->-	"ks_out2",
->-	"sens0_ckout",
->-	"pcm1_in",
->-	"pcm1_clk",
->-	"pcm1_sync",
->-	"pcm1_out",
->+	"lcd0_d18_mfp",
->+	"ks_in2_mfp",
->+	"ks_in1_mfp",
->+	"ks_in0_mfp",
->+	"ks_in3_mfp",
->+	"ks_out0_mfp",
->+	"ks_out1_mfp",
->+	"ks_out2_mfp",
->+	"sens0_ckout_mfp",
->+	"pcm1_in_mfp",
->+	"pcm1_clk_mfp",
->+	"pcm1_sync_mfp",
->+	"pcm1_out_mfp",
-> };
-> 
-> static const char * const uart0_groups[] = {
->-	"uart2_rtsb",
->-	"uart2_ctsb",
->-	"uart0_rx",
->-	"uart0_tx",
->+	"uart2_rtsb_mfp",
->+	"uart2_ctsb_mfp",
->+	"uart0_rx_mfp",
->+	"uart0_tx_mfp",
-> };
-> 
-> static const char * const uart1_groups[] = {
->-	"sd0_d2_d3",
->+	"sd0_d2_d3_mfp",
-> 	"i2c0_mfp",
-> };
-> 
-> static const char * const uart2_groups[] = {
->-	"rgmii_txen",
->-	"rgmii_rxen",
->-	"rgmii_rxd1",
->-	"rgmii_rxd0",
->-	"dsi_dn0",
->-	"dsi_dp2",
->-	"dsi_dp0",
->-	"uart2_rx_tx",
->-	"dsi_dn2",
->-	"uart2_rtsb",
->-	"uart2_ctsb",
->-	"sd0_d0",
->-	"sd0_d1",
->-	"sd0_d2_d3",
->-	"uart0_rx",
->-	"uart0_tx",
->+	"rgmii_txen_mfp",
->+	"rgmii_rxen_mfp",
->+	"rgmii_rxd1_mfp",
->+	"rgmii_rxd0_mfp",
->+	"dsi_dn0_mfp",
->+	"dsi_dp2_mfp",
->+	"dsi_dp0_mfp",
->+	"uart2_rx_tx_mfp",
->+	"dsi_dn2_mfp",
->+	"uart2_rtsb_mfp",
->+	"uart2_ctsb_mfp",
->+	"sd0_d0_mfp",
->+	"sd0_d1_mfp",
->+	"sd0_d2_d3_mfp",
->+	"uart0_rx_mfp",
->+	"uart0_tx_mfp",
-> 	"i2c0_mfp",
-> 	"uart2_dummy"
-> };
-> 
-> static const char * const uart3_groups[] = {
->-	"rgmii_txd23",
->-	"rgmii_rxd2",
->-	"rgmii_rxd3",
->-	"uart3_rtsb",
->-	"uart3_ctsb",
->+	"rgmii_txd23_mfp",
->+	"rgmii_rxd2_mfp",
->+	"rgmii_rxd3_mfp",
->+	"uart3_rtsb_mfp",
->+	"uart3_ctsb_mfp",
-> 	"uart3_dummy"
-> };
-> 
-> static const char * const uart4_groups[] = {
->-	"rgmii_txd01",
->-	"rgmii_ref_clk",
->-	"ks_out0",
->-	"ks_out1",
->+	"rgmii_txd01_mfp",
->+	"rgmii_ref_clk_mfp",
->+	"ks_out0_mfp",
->+	"ks_out1_mfp",
-> };
-> 
-> static const char * const uart5_groups[] = {
->-	"rgmii_rxd1",
->-	"rgmii_rxd0",
->-	"ks_out0",
->-	"ks_out2",
->-	"uart3_rtsb",
->-	"uart3_ctsb",
->-	"sd0_d0",
->-	"sd0_d1",
->+	"rgmii_rxd1_mfp",
->+	"rgmii_rxd0_mfp",
->+	"ks_out0_mfp",
->+	"ks_out2_mfp",
->+	"uart3_rtsb_mfp",
->+	"uart3_ctsb_mfp",
->+	"sd0_d0_mfp",
->+	"sd0_d1_mfp",
-> };
-> 
-> static const char * const uart6_groups[] = {
->-	"rgmii_txd0",
->-	"rgmii_txd1",
->+	"rgmii_txd0_mfp",
->+	"rgmii_txd1_mfp",
-> };
-> 
-> static const char * const i2s0_groups[] = {
->-	"i2s_d0",
->-	"i2s_pcm1",
->-	"i2s0_pcm0",
->+	"i2s_d0_mfp",
->+	"i2s_pcm1_mfp",
->+	"i2s0_pcm0_mfp",
-> };
-> 
-> static const char * const i2s1_groups[] = {
->-	"i2s1_pcm0",
->-	"i2s_d1",
->+	"i2s1_pcm0_mfp",
->+	"i2s_d1_mfp",
-> 	"i2s1_dummy",
->-	"spi0_i2c_pcm",
->-	"uart0_rx",
->-	"uart0_tx",
->+	"spi0_i2c_pcm_mfp",
->+	"uart0_rx_mfp",
->+	"uart0_tx_mfp",
-> };
-> 
-> static const char * const pcm1_groups[] = {
->-	"i2s_pcm1",
->-	"spi0_i2c_pcm",
->-	"uart0_rx",
->-	"uart0_tx",
->-	"pcm1_in",
->-	"pcm1_clk",
->-	"pcm1_sync",
->-	"pcm1_out",
->+	"i2s_pcm1_mfp",
->+	"spi0_i2c_pcm_mfp",
->+	"uart0_rx_mfp",
->+	"uart0_tx_mfp",
->+	"pcm1_in_mfp",
->+	"pcm1_clk_mfp",
->+	"pcm1_sync_mfp",
->+	"pcm1_out_mfp",
-> };
-> 
-> static const char * const pcm0_groups[] = {
->-	"i2s0_pcm0",
->-	"i2s1_pcm0",
->-	"uart2_rx_tx",
->-	"spi0_i2c_pcm",
->+	"i2s0_pcm0_mfp",
->+	"i2s1_pcm0_mfp",
->+	"uart2_rx_tx_mfp",
->+	"spi0_i2c_pcm_mfp",
-> };
-> 
-> static const char * const ks_groups[] = {
->-	"ks_in2",
->-	"ks_in1",
->-	"ks_in0",
->-	"ks_in3",
->-	"ks_out0",
->-	"ks_out1",
->-	"ks_out2",
->+	"ks_in2_mfp",
->+	"ks_in1_mfp",
->+	"ks_in0_mfp",
->+	"ks_in3_mfp",
->+	"ks_out0_mfp",
->+	"ks_out1_mfp",
->+	"ks_out2_mfp",
-> };
-> 
-> static const char * const jtag_groups[] = {
->-	"ks_in2",
->-	"ks_in1",
->-	"ks_in0",
->-	"ks_in3",
->-	"ks_out1",
->-	"sd0_d0",
->-	"sd0_d2_d3",
->-	"sd0_cmd",
->-	"sd0_clk",
->+	"ks_in2_mfp",
->+	"ks_in1_mfp",
->+	"ks_in0_mfp",
->+	"ks_in3_mfp",
->+	"ks_out1_mfp",
->+	"sd0_d0_mfp",
->+	"sd0_d2_d3_mfp",
->+	"sd0_cmd_mfp",
->+	"sd0_clk_mfp",
-> };
-> 
-> static const char * const pwm0_groups[] = {
->-	"rgmii_rxd2",
->-	"rgmii_txen",
->-	"ks_in2",
->-	"sen0_pclk",
->+	"rgmii_rxd2_mfp",
->+	"rgmii_txen_mfp",
->+	"ks_in2_mfp",
->+	"sen0_pclk_mfp",
-> };
-> 
-> static const char * const pwm1_groups[] = {
->-	"rgmii_rxen",
->-	"ks_in1",
->-	"ks_in3",
->-	"sens0_ckout",
->+	"rgmii_rxen_mfp",
->+	"ks_in1_mfp",
->+	"ks_in3_mfp",
->+	"sens0_ckout_mfp",
-> };
-> 
-> static const char * const pwm2_groups[] = {
->-	"lcd0_d18",
->-	"rgmii_rxd3",
->-	"rgmii_rxd1",
->-	"ks_out0",
->-	"ks_out2",
->+	"lcd0_d18_mfp",
->+	"rgmii_rxd3_mfp",
->+	"rgmii_rxd1_mfp",
->+	"ks_out0_mfp",
->+	"ks_out2_mfp",
-> };
-> 
-> static const char * const pwm3_groups[] = {
->-	"rgmii_rxd0",
->-	"ks_out1",
->-	"lcd0_d2",
->+	"rgmii_rxd0_mfp",
->+	"ks_out1_mfp",
->+	"lcd0_d2_mfp",
-> };
-> 
-> static const char * const pwm4_groups[] = {
->-	"lcd0_d18",
->-	"rgmii_txd01",
->-	"rgmii_txd0",
->-	"ks_in0",
->-	"pcm1_in",
->-	"nand_ceb3",
->+	"lcd0_d18_mfp",
->+	"rgmii_txd01_mfp",
->+	"rgmii_txd0_mfp",
->+	"ks_in0_mfp",
->+	"pcm1_in_mfp",
->+	"nand_ceb3_mfp",
-> };
-> 
-> static const char * const pwm5_groups[] = {
->-	"rgmii_txd1",
->-	"ks_in1",
->-	"pcm1_clk",
->-	"nand_ceb2",
->+	"rgmii_txd1_mfp",
->+	"ks_in1_mfp",
->+	"pcm1_clk_mfp",
->+	"nand_ceb2_mfp",
-> };
-> 
-> static const char * const p0_groups[] = {
->-	"ks_in2",
->-	"ks_in0",
->+	"ks_in2_mfp",
->+	"ks_in0_mfp",
-> };
-> 
-> static const char * const sd0_groups[] = {
->-	"ks_out0",
->-	"ks_out1",
->-	"ks_out2",
->-	"lcd0_d2",
->-	"dsi_dp3",
->-	"dsi_dp0",
->-	"sd0_d0",
->-	"sd0_d1",
->-	"sd0_d2_d3",
->-	"sd1_d0_d3",
->-	"sd0_cmd",
->-	"sd0_clk",
->+	"ks_out0_mfp",
->+	"ks_out1_mfp",
->+	"ks_out2_mfp",
->+	"lcd0_d2_mfp",
->+	"dsi_dp3_mfp",
->+	"dsi_dp0_mfp",
->+	"sd0_d0_mfp",
->+	"sd0_d1_mfp",
->+	"sd0_d2_d3_mfp",
->+	"sd1_d0_d3_mfp",
->+	"sd0_cmd_mfp",
->+	"sd0_clk_mfp",
-> };
-> 
-> static const char * const sd1_groups[] = {
->-	"dsi_dp2",
->-	"mfp1_16_14",
->-	"lcd0_d2",
->-	"mfp1_16_14_d17",
->-	"dsi_dp3",
->-	"dsi_dn3",
->-	"dsi_dnp1_cp_d2",
->-	"dsi_dnp1_cp_d17",
->-	"dsi_dn2",
->-	"sd1_d0_d3",
->-	"sd1_cmd",
->+	"dsi_dp2_mfp",
->+	"mfp1_16_14_mfp",
->+	"lcd0_d2_mfp",
->+	"mfp1_16_14_d17_mfp",
->+	"dsi_dp3_mfp",
->+	"dsi_dn3_mfp",
->+	"dsi_dnp1_cp_d2_mfp",
->+	"dsi_dnp1_cp_d17_mfp",
->+	"dsi_dn2_mfp",
->+	"sd1_d0_d3_mfp",
->+	"sd1_cmd_mfp",
-> 	"sd1_dummy",
-> };
-> 
-> static const char * const sd2_groups[] = {
->-	"dnand_data_wr",
->+	"dnand_data_wr_mfp",
-> };
-> 
-> static const char * const i2c0_groups[] = {
->-	"uart0_rx",
->-	"uart0_tx",
->-	"i2c0_mfp",
->+	"uart0_rx_mfp",
->+	"uart0_tx_mfp",
->+	"i2c0_mfp_mfp",
-> };
-> 
-> static const char * const i2c1_groups[] = {
->@@ -1448,85 +1448,85 @@ static const char * const i2c2_groups[] = {
-> };
-> 
-> static const char * const i2c3_groups[] = {
->-	"uart2_rx_tx",
->-	"pcm1_sync",
->-	"pcm1_out",
->+	"uart2_rx_tx_mfp",
->+	"pcm1_sync_mfp",
->+	"pcm1_out_mfp",
-> };
-> 
-> static const char * const lvds_groups[] = {
->-	"lvds_o_pn",
->-	"lvds_ee_pn",
->-	"lvds_e_pn",
->+	"lvds_o_pn_mfp",
->+	"lvds_ee_pn_mfp",
->+	"lvds_e_pn_mfp",
-> };
-> 
-> static const char * const bt_groups[] = {
->-	"i2s_pcm1",
->-	"i2s0_pcm0",
->-	"i2s1_pcm0",
->-	"ks_in2",
->-	"ks_in1",
->-	"ks_in0",
->-	"ks_in3",
->-	"ks_out0",
->-	"ks_out1",
->-	"ks_out2",
->-	"lvds_o_pn",
->-	"lvds_ee_pn",
->-	"pcm1_in",
->-	"pcm1_clk",
->-	"pcm1_sync",
->-	"pcm1_out",
->+	"i2s_pcm1_mfp",
->+	"i2s0_pcm0_mfp",
->+	"i2s1_pcm0_mfp",
->+	"ks_in2_mfp",
->+	"ks_in1_mfp",
->+	"ks_in0_mfp",
->+	"ks_in3_mfp",
->+	"ks_out0_mfp",
->+	"ks_out1_mfp",
->+	"ks_out2_mfp",
->+	"lvds_o_pn_mfp",
->+	"lvds_ee_pn_mfp",
->+	"pcm1_in_mfp",
->+	"pcm1_clk_mfp",
->+	"pcm1_sync_mfp",
->+	"pcm1_out_mfp",
-> };
-> 
-> static const char * const lcd0_groups[] = {
->-	"lcd0_d18",
->-	"lcd0_d2",
->-	"mfp1_16_14_d17",
->-	"lvds_o_pn",
->-	"dsi_dp3",
->-	"dsi_dn3",
->-	"lvds_ee_pn",
->-	"dsi_dnp1_cp_d2",
->-	"dsi_dnp1_cp_d17",
->-	"lvds_e_pn",
->+	"lcd0_d18_mfp",
->+	"lcd0_d2_mfp",
->+	"mfp1_16_14_d17_mfp",
->+	"lvds_o_pn_mfp",
->+	"dsi_dp3_mfp",
->+	"dsi_dn3_mfp",
->+	"lvds_ee_pn_mfp",
->+	"dsi_dnp1_cp_d2_mfp",
->+	"dsi_dnp1_cp_d17_mfp",
->+	"lvds_e_pn_mfp",
-> };
-> 
-> 
-> static const char * const usb30_groups[] = {
->-	"ks_in1",
->+	"ks_in1_mfp",
-> };
-> 
-> static const char * const clko_25m_groups[] = {
->-	"clko_25m",
->+	"clko_25m_mfp",
-> };
-> 
-> static const char * const mipi_csi_groups[] = {
->-	"csi_cn_cp",
->-	"csi_dn_dp",
->+	"csi_cn_cp_mfp",
->+	"csi_dn_dp_mfp",
-> };
-> 
-> static const char * const dsi_groups[] = {
->-	"dsi_dn0",
->-	"dsi_dp2",
->-	"dsi_dp3",
->-	"dsi_dn3",
->-	"dsi_dp0",
->-	"dsi_dnp1_cp_d2",
->-	"dsi_dnp1_cp_d17",
->-	"dsi_dn2",
->+	"dsi_dn0_mfp",
->+	"dsi_dp2_mfp",
->+	"dsi_dp3_mfp",
->+	"dsi_dn3_mfp",
->+	"dsi_dp0_mfp",
->+	"dsi_dnp1_cp_d2_mfp",
->+	"dsi_dnp1_cp_d17_mfp",
->+	"dsi_dn2_mfp",
-> 	"dsi_dummy",
-> };
-> 
-> static const char * const nand_groups[] = {
->-	"dnand_data_wr",
->-	"dnand_acle_ce0",
->-	"nand_ceb2",
->-	"nand_ceb3",
->+	"dnand_data_wr_mfp",
->+	"dnand_acle_ce0_mfp",
->+	"nand_ceb2_mfp",
->+	"nand_ceb3_mfp",
-> 	"nand_dummy",
-> };
-> 
-> static const char * const spdif_groups[] = {
->-	"uart0_tx",
->+	"uart0_tx_mfp",
-> };
-> 
-> static const char * const sirq0_groups[] = {
-
--- 
-Sent from my Android device with K-9 Mail. Please excuse my brevity.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+aGkgVWxmCgpKdXN0IGEgImdlbnRsZW1hbiBwaW5nIiBvbiB0aGlzIHNlcmllcwpodHRwczovL2xr
+bWwub3JnL2xrbWwvMjAyMC8xLzEwLzM5MgoKUmVnYXJkcwpMdWRvCgpMZSAxLzEwLzIwIMOgIDI6
+NDggUE0sIEx1ZG92aWMgQmFycmUgYSDDqWNyaXTCoDoKPiBUbyBzdXBwb3J0IHRoZSBzZHIxMDQg
+bW9kZSwgc2RtbWMgdmFyaWFudCBuZWVkczoKPiAtSGFyZHdhcmUgZGVsYXkgYmxvY2sgc3VwcG9y
+dCBmb3Igc2RtbWMgdmFyaWFudAo+ICAgd2l0aCB0dW5pbmcgcHJvY2VkdXJlCj4gLVZvbHRhZ2Ug
+c3dpdGNoIGNhbGxiYWNrcwo+IC1zZG1tYyByZXZpc2lvbiAyLjAKPiAKPiBMdWRvdmljIEJhcnJl
+ICg5KToKPiAgICBtbWM6IG1tY2k6IHNkbW1jOiByZXBsYWNlIHNnX2RtYV94eHggbWFjcm9zCj4g
+ICAgbW1jOiBtbWNpOiBzZG1tYzogcmVuYW1lIHNkbW1jX3ByaXYgc3RydWN0IHRvIHNkbW1jX2lk
+bWEKPiAgICBtbWM6IG1tY2k6IGFkZCBhIHJlZmVyZW5jZSBhdCBtbWNfaG9zdF9vcHMgaW4gbW1j
+aSBzdHJ1Y3QKPiAgICBtbWM6IG1tY2k6IGFkZCBwcml2YXRlIHBvaW50ZXIgZm9yIHZhcmlhbnQK
+PiAgICBkdC1iaW5kaW5nczogbW1jOiBtbWNpOiBhZGQgZGVsYXkgYmxvY2sgYmFzZSByZWdpc3Rl
+ciBmb3Igc2RtbWMKPiAgICBtbWM6IG1tY2k6IHNkbW1jOiBhZGQgZXhlY3V0ZSB0dW5pbmcgd2l0
+aCBkZWxheSBibG9jawo+ICAgIG1tYzogbW1jaTogYWRkIHZvbHRfc3dpdGNoIGNhbGxiYWNrcwo+
+ICAgIG1tYzogbW1jaTogc2RtbWM6IGFkZCB2b2x0YWdlIHN3aXRjaCBmdW5jdGlvbnMKPiAgICBt
+bWM6IG1tY2k6IGFkZCBzZG1tYyB2YXJpYW50IHJldmlzaW9uIDIuMAo+IAo+ICAgLi4uL2Rldmlj
+ZXRyZWUvYmluZGluZ3MvbW1jL21tY2kudHh0ICAgICAgICAgIHwgICAyICsKPiAgIGRyaXZlcnMv
+bW1jL2hvc3QvbW1jaS5jICAgICAgICAgICAgICAgICAgICAgICB8ICAzOSArKysrCj4gICBkcml2
+ZXJzL21tYy9ob3N0L21tY2kuaCAgICAgICAgICAgICAgICAgICAgICAgfCAgIDggKwo+ICAgZHJp
+dmVycy9tbWMvaG9zdC9tbWNpX3N0bTMyX3NkbW1jLmMgICAgICAgICAgIHwgMTk5ICsrKysrKysr
+KysrKysrKysrLQo+ICAgNCBmaWxlcyBjaGFuZ2VkLCAyNDEgaW5zZXJ0aW9ucygrKSwgNyBkZWxl
+dGlvbnMoLSkKPiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
