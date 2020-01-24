@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDBB6147605
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 02:17:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE57A147609
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 02:17:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5KtO0+TTICo+rlx7dvpmMi+Kbt7gxcmjPaeb+uLiQt4=; b=qB5a6+jhm2BHON
-	Be9wcBl1qsNRT62IugN8L5ohfreSvCXrqwia62KW2lg8T3DM853Pv6e4+wuC4j1vzXST+kDtk/qw1
-	JHG8+Ndlx3o7FJzGjt9a4Tou+7Q8Jz8M0PgD6KPanEWcM25YNB6Uz59dD1HswL1eENvUnmYw1AWKA
-	tkX2KahJS+9uQGoqqMYBLu6e6tvrGGQFkOB+jRvjpjoicnrHCKLGSHK/neRlai2vc/hCOI8q3z3rH
-	JoFq0iFkEne4WJHKVJs/uwbSNEfsr+6Fy2W3/p4ZtIxGJW3LJhTB0G/RU3i0TZJA2Xyw0HT+hrSk/
-	VP6vdn9EvsAt7SflBCFw==;
+	List-Owner; bh=v6A36pgHc8OaOzsRJuFy5jEZaH8X+XuASYxKOQJdlcU=; b=tob6M5FnZDzQG9
+	p3UzHg0IJc0tVKTT7nETzfupG24qlESQx6S2JJTwRWKTpZh9dM02NYWbcaUpCGfn4eRC/4hV+RqB3
+	Utl4aj+kOF2Q8s0jRUV8aRsI3/Ifu0krRy6ak0zitGzIQ/neGtBgWDrzk+QyIUihxtC/pRPZA56ks
+	63kJIi+rKs/aPcpmoAHNvkXeT6Gi7ITMYY17SU5BnevNyNkjDkVn5S1T881ybG5jqzWZCbix0D4jN
+	ZlRV/pPaSqCWaCkGNvhitnsagjRAbrVXqgJDkDH7H2LYCXAp9giiZjmQAPR4oLfowQ4ZDR9znt9fJ
+	pWoTUDzDWkgExMdlc8fQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iunbJ-0002Xm-Nq; Fri, 24 Jan 2020 01:17:33 +0000
+	id 1iunbe-0002eZ-8J; Fri, 24 Jan 2020 01:17:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iunbA-0002WH-PZ
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 01:17:26 +0000
+ id 1iunbC-0002XC-Hz
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 01:17:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2C7D72087E;
- Fri, 24 Jan 2020 01:17:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9431E21D7D;
+ Fri, 24 Jan 2020 01:17:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579828642;
- bh=z0Eloz/7uH30N/JaCMyrHQ6PHSsN/zgQzEJaOUFKGCk=;
+ s=default; t=1579828646;
+ bh=YgsZRwJQo5NDjLt5Mz+9Gt6+Z3gsDcXgk385OZZSpSo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=jccYSLQ1LmqUy9YDf/7GAgZnou0SKt+kEvDD4Dy/t8PjhkdataAD3TuzWbA4Mksha
- zNnhBZmmmCcmqbwvc1S09wIAQmN0P4T9u18yofnNB25PWCHgnojVavQusuLPO/WbYs
- OC0DRiB4ipNTllwizMrJCZ0CJt8T59GLd2owa7y8=
+ b=gRKXkNMr90SG3qiom6HQ/MM7zJDYFVbpkmKVSwTaSYvUCUvIAQUpgGhZg9l1uLyLb
+ Jta+68oL4OekJXt4mHoJqs9GiQfPNCZmuJhQXMHjwDTKI91UXblPq8wgJ+WFWrNTbA
+ fWMhfaRMFLSWs1O82cKC9cYVrkJaQ/VupM6lpGOw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 12/33] spi: pxa2xx: Add support for Intel Comet
- Lake-H
-Date: Thu, 23 Jan 2020 20:16:47 -0500
-Message-Id: <20200124011708.18232-12-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 15/33] perf/imx_ddr: Add enhanced AXI ID filter
+ support
+Date: Thu, 23 Jan 2020 20:16:50 -0500
+Message-Id: <20200124011708.18232-15-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200124011708.18232-1-sashal@kernel.org>
 References: <20200124011708.18232-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_171724_850385_CBF10905 
-X-CRM114-Status: UNSURE (   8.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200123_171726_635380_75271C2B 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,43 +80,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Mark Brown <broonie@kernel.org>,
- Jarkko Nikula <jarkko.nikula@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org, linux-spi@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, Will Deacon <will@kernel.org>,
+ Joakim Zhang <qiangqing.zhang@nxp.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
+From: Joakim Zhang <qiangqing.zhang@nxp.com>
 
-[ Upstream commit f0cf17ed76cffa365001d263ced1f130ec794917 ]
+[ Upstream commit 44f8bd014a94ed679ddb77d0b92350d4ac4f23a5 ]
 
-Add Intel Comet Lake-H LPSS SPI PCI IDs.
+With DDR_CAP_AXI_ID_FILTER quirk, indicating HW supports AXI ID filter
+which only can get bursts from DDR transaction, i.e. DDR read/write
+requests.
 
-Signed-off-by: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Link: https://lore.kernel.org/r/20191029115802.6779-1-jarkko.nikula@linux.intel.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+This patch add DDR_CAP_AXI_ID_ENHANCED_FILTER quirk, indicating HW
+supports AXI ID filter which can get bursts and bytes from DDR
+transaction at the same time. We hope PMU always return bytes in the
+driver due to it is more meaningful for users.
+
+Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/spi/spi-pxa2xx.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/perf/fsl_imx8_ddr_perf.c | 63 +++++++++++++++++++++-----------
+ 1 file changed, 42 insertions(+), 21 deletions(-)
 
-diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-index 9f92165fe09f8..2fd843b18297d 100644
---- a/drivers/spi/spi-pxa2xx.c
-+++ b/drivers/spi/spi-pxa2xx.c
-@@ -1461,6 +1461,10 @@ static const struct pci_device_id pxa2xx_spi_pci_compound_match[] = {
- 	{ PCI_VDEVICE(INTEL, 0x02aa), LPSS_CNL_SSP },
- 	{ PCI_VDEVICE(INTEL, 0x02ab), LPSS_CNL_SSP },
- 	{ PCI_VDEVICE(INTEL, 0x02fb), LPSS_CNL_SSP },
-+	/* CML-H */
-+	{ PCI_VDEVICE(INTEL, 0x06aa), LPSS_CNL_SSP },
-+	{ PCI_VDEVICE(INTEL, 0x06ab), LPSS_CNL_SSP },
-+	{ PCI_VDEVICE(INTEL, 0x06fb), LPSS_CNL_SSP },
- 	/* TGL-LP */
- 	{ PCI_VDEVICE(INTEL, 0xa0aa), LPSS_CNL_SSP },
- 	{ PCI_VDEVICE(INTEL, 0xa0ab), LPSS_CNL_SSP },
+diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
+index ce7345745b42c..2a3966d059e70 100644
+--- a/drivers/perf/fsl_imx8_ddr_perf.c
++++ b/drivers/perf/fsl_imx8_ddr_perf.c
+@@ -45,7 +45,8 @@
+ static DEFINE_IDA(ddr_ida);
+ 
+ /* DDR Perf hardware feature */
+-#define DDR_CAP_AXI_ID_FILTER          0x1     /* support AXI ID filter */
++#define DDR_CAP_AXI_ID_FILTER			0x1     /* support AXI ID filter */
++#define DDR_CAP_AXI_ID_FILTER_ENHANCED		0x3     /* support enhanced AXI ID filter */
+ 
+ struct fsl_ddr_devtype_data {
+ 	unsigned int quirks;    /* quirks needed for different DDR Perf core */
+@@ -178,6 +179,36 @@ static const struct attribute_group *attr_groups[] = {
+ 	NULL,
+ };
+ 
++static bool ddr_perf_is_filtered(struct perf_event *event)
++{
++	return event->attr.config == 0x41 || event->attr.config == 0x42;
++}
++
++static u32 ddr_perf_filter_val(struct perf_event *event)
++{
++	return event->attr.config1;
++}
++
++static bool ddr_perf_filters_compatible(struct perf_event *a,
++					struct perf_event *b)
++{
++	if (!ddr_perf_is_filtered(a))
++		return true;
++	if (!ddr_perf_is_filtered(b))
++		return true;
++	return ddr_perf_filter_val(a) == ddr_perf_filter_val(b);
++}
++
++static bool ddr_perf_is_enhanced_filtered(struct perf_event *event)
++{
++	unsigned int filt;
++	struct ddr_pmu *pmu = to_ddr_pmu(event->pmu);
++
++	filt = pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER_ENHANCED;
++	return (filt == DDR_CAP_AXI_ID_FILTER_ENHANCED) &&
++		ddr_perf_is_filtered(event);
++}
++
+ static u32 ddr_perf_alloc_counter(struct ddr_pmu *pmu, int event)
+ {
+ 	int i;
+@@ -209,27 +240,17 @@ static void ddr_perf_free_counter(struct ddr_pmu *pmu, int counter)
+ 
+ static u32 ddr_perf_read_counter(struct ddr_pmu *pmu, int counter)
+ {
+-	return readl_relaxed(pmu->base + COUNTER_READ + counter * 4);
+-}
+-
+-static bool ddr_perf_is_filtered(struct perf_event *event)
+-{
+-	return event->attr.config == 0x41 || event->attr.config == 0x42;
+-}
++	struct perf_event *event = pmu->events[counter];
++	void __iomem *base = pmu->base;
+ 
+-static u32 ddr_perf_filter_val(struct perf_event *event)
+-{
+-	return event->attr.config1;
+-}
+-
+-static bool ddr_perf_filters_compatible(struct perf_event *a,
+-					struct perf_event *b)
+-{
+-	if (!ddr_perf_is_filtered(a))
+-		return true;
+-	if (!ddr_perf_is_filtered(b))
+-		return true;
+-	return ddr_perf_filter_val(a) == ddr_perf_filter_val(b);
++	/*
++	 * return bytes instead of bursts from ddr transaction for
++	 * axid-read and axid-write event if PMU core supports enhanced
++	 * filter.
++	 */
++	base += ddr_perf_is_enhanced_filtered(event) ? COUNTER_DPCR1 :
++						       COUNTER_READ;
++	return readl_relaxed(base + counter * 4);
+ }
+ 
+ static int ddr_perf_event_init(struct perf_event *event)
 -- 
 2.20.1
 
