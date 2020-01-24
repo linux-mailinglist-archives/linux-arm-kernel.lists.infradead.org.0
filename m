@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 394D7148A6C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:47:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D300148A78
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:48:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XYxadSYk3DMw3DJQ9CmPU0RBSqiIm772YDjqyooFRd4=; b=XCskOZ1wSm0dqD
-	/6aH3eKDFOkXjexqJLjTGAta1MJZZYVmMjJ+D0OVjmtL26RNHTxkezhiN5mtLOUzU66JigLRbnWaW
-	Wvu66sqnoRzerbXP4uC9lNyCDCGBR1dLMP6VdkmlrztNrtc0SeVZI5Su/AgAEzoLLjJlkAHXwMbeI
-	DjFQssQwQSrgHzDRoZv/tM1MjriA9xHrJk5Uoai7S4KlwaBpubeFULywFjkr4UuoXwKFObWNdl+BQ
-	DJzhn1QtwO1GX8kskLvIEwEKCDgaf2gVHmtyYbzDGYri4Jg9FpQ+U9rBhGQbLXjzcJRqtbjA5sV2Y
-	2XtvFK9WsUL2TRaRxs2w==;
+	List-Owner; bh=kYn9ZzoaqMNWU2Xj9/vi6QcFLuftetMYtVTfaLmhzL0=; b=SCg24507HclSIW
+	OF1kPk7+liECU2LuVYB6ANf4h4Y53gc/QE7ZXBYMw3ikHpg7odBpa/pxBc3rXBr90apNNsd9+Kgpr
+	acv7gSl/oBjYa4o+6mtqVXqMj/7qbLlj/RSNvmsolDOlxSpNJuYO4k6/Tf2QOk6gtrOHdHGZZ4VU0
+	HyvHVMukK4MFrBfGYLhuQaPGYl0Z0/r6O7newMpqCTp0rjYxQYLHibuHRmIPlXKa9UcYZRWj9OiZt
+	k5s2WkiBBpyg5VFTc/hc9n+08WZAQyGxCu/Sx/XoErNTSQpbHk7xnfwasiBh68FDH8h0chIGZ9Klo
+	tLCa0TwYzzcpOkNQmfCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iv0FS-0008Lx-Ik; Fri, 24 Jan 2020 14:47:50 +0000
+	id 1iv0G9-0000Y4-G8; Fri, 24 Jan 2020 14:48:33 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iv0EC-0007bi-Qn; Fri, 24 Jan 2020 14:46:35 +0000
+ id 1iv0ED-0007cD-Gc; Fri, 24 Jan 2020 14:46:35 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 90665AFCB;
- Fri, 24 Jan 2020 14:46:31 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 45E65B12D;
+ Fri, 24 Jan 2020 14:46:32 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: gregkh@linuxfoundation.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 03/22] staging: vc04_services: Get rid of resume_blocker
+Subject: [PATCH 04/22] staging: vc04_services: get rid of blocked_blocker
  completion in struct vchiq_arm_state
-Date: Fri, 24 Jan 2020 15:45:57 +0100
-Message-Id: <20200124144617.2213-4-nsaenzjulienne@suse.de>
+Date: Fri, 24 Jan 2020 15:45:58 +0100
+Message-Id: <20200124144617.2213-5-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200124144617.2213-1-nsaenzjulienne@suse.de>
 References: <20200124144617.2213-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_064633_005268_ED7268E9 
-X-CRM114-Status: GOOD (  10.82  )
+X-CRM114-CacheID: sfid-20200124_064633_704693_C44CFA46 
+X-CRM114-Status: GOOD (  10.58  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,58 +71,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Nobody is waiting on it, so delete all relevant code.
+Nobody is waiting on it, so delete it.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- .../vc04_services/interface/vchiq_arm/vchiq_arm.c     | 11 -----------
- .../vc04_services/interface/vchiq_arm/vchiq_arm.h     |  4 ----
- 2 files changed, 15 deletions(-)
+ .../staging/vc04_services/interface/vchiq_arm/vchiq_arm.c    | 5 -----
+ .../staging/vc04_services/interface/vchiq_arm/vchiq_arm.h    | 1 -
+ 2 files changed, 6 deletions(-)
 
 diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-index af4dc23f5510..311df3d85494 100644
+index 311df3d85494..9264bb5d0bbe 100644
 --- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
 +++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
 @@ -2386,11 +2386,6 @@ vchiq_arm_init_state(struct vchiq_state *state,
  		 * completion while videocore is suspended. */
  		set_resume_state(arm_state, VC_RESUME_RESUMED);
  
--		init_completion(&arm_state->resume_blocker);
+-		init_completion(&arm_state->blocked_blocker);
 -		/* Initialise to 'done' state.  We only want to block on this
--		 * completion while resume is blocked */
--		complete_all(&arm_state->resume_blocker);
+-		 * completion while things are waiting on the resume blocker */
+-		complete_all(&arm_state->blocked_blocker);
 -
- 		init_completion(&arm_state->blocked_blocker);
- 		/* Initialise to 'done' state.  We only want to block on this
- 		 * completion while things are waiting on the resume blocker */
-@@ -2560,12 +2555,6 @@ need_resume(struct vchiq_state *state)
- 			vchiq_videocore_wanted(state);
- }
- 
--static inline void
--unblock_resume(struct vchiq_arm_state *arm_state)
--{
--	complete_all(&arm_state->resume_blocker);
--}
--
- /* Initiate suspend via slot handler. Should be called with the write lock
-  * held */
- enum vchiq_status
+ 		arm_state->suspend_timer_timeout = SUSPEND_TIMER_TIMEOUT_MS;
+ 		arm_state->suspend_timer_running = 0;
+ 		arm_state->state = state;
 diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
-index c904f7be9084..7d1316875343 100644
+index 7d1316875343..6bab241313b8 100644
 --- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
 +++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
-@@ -70,10 +70,6 @@ struct vchiq_arm_state {
+@@ -70,7 +70,6 @@ struct vchiq_arm_state {
  	*/
  	int peer_use_count;
  
--	/* Flag to indicate whether resume is blocked.  This happens when the
--	** ARM is suspending
--	*/
--	struct completion resume_blocker;
- 	struct completion blocked_blocker;
+-	struct completion blocked_blocker;
  	int blocked_count;
  
+ 	/* Flag to indicate that the first vchiq connect has made it through.
 -- 
 2.25.0
 
