@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C347D148821
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:27:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1D51148823
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:27:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SiVtNHWWqsoY5AGdgpKjBfv1vpb/sdnG1rNqVyxz1cc=; b=tF4Bv11vApAojX
-	Jhd1sw0rN5oLCo0TKGZUj1Vli/m/8kXUodW3/z7LRc1oKpXPlihDnzimRhmifOsBN/2niCUIdftgd
-	g1xybAUpqJcUnIWaGIE/VS5ZEhaN7Al4ruU/nn2e7dNTtsbJCkz+v70oQXGkxrxSSyjBDNXzw6J87
-	pHKA5rtBxXkjhYxbkOdFV6AdaHurcLaCrLmX9MurkTUhEOQdgnIV9lD5dBGUIyGc0vap2V1Ozp16Y
-	CrW1TGYfL4nOIA8q5aPPk1l10gjE50mTyRvTAmLT40E2dbcOhiTqFQR2knO2wUFNEZAcDPv899REk
-	vpzqwp1QqKhSZnhmUWFQ==;
+	List-Owner; bh=nhRMVh4I+ifdoCT+G6JtMD/03BLN5V0jW5Ctcw8TJpo=; b=Rq4zRhSuyfh3YS
+	R2xAQ6X1zeTrmGJ7g3YVEP9EgfAmXqQ02zlPytiWKfvNZp737rHT8BR+6CmTfeiiwTBGuHhkmCMdZ
+	s1SJkEXmj91qVPawLA3Mh32OckcgbYGWD/p43afT2kMghs7RRnEpuSXxoUZxqCqpXLSqzUjC/a5TE
+	d/P/+DUJ5iuj2Zesee9e83WZW5eTDRnMMYZH4Wk2BRtAwydZQEZw9Vrtt/Kb5gwIgOfb/IfSesPOW
+	l7eNYfQQ99GO94P1+u6qQrWLY7BvDnF1ntSjC7MgR481hwErTTHO7cQXTCBnVRldJvtQnSCt6cFbj
+	gHXWlzi293vjak+tE3jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuzvZ-0002YD-VZ; Fri, 24 Jan 2020 14:27:17 +0000
+	id 1iuzvn-0002o6-Ox; Fri, 24 Jan 2020 14:27:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuzoq-0003D9-Ut
+ id 1iuzor-0003EH-K6
  for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:20:23 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3F1CE21569;
- Fri, 24 Jan 2020 14:20:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6CFB322464;
+ Fri, 24 Jan 2020 14:20:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579875620;
- bh=NrobwdqGaNU0yOau8EcxQ97LyAVOpcmmB++1rcAI2n4=;
+ s=default; t=1579875621;
+ bh=GgwK2xKL5rzWEjTGTjQrmNbNFmz6oL1dId/NMqfwA/c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zdVUufX9DJT1Z4I18buVOtzHr3l3tzDfB5DAPhdSEh8UQDq8WOW1D22HZnt6oxd4t
- TgRmnBRUAtAXXMpn2oDE6Yc2yY+3+owqOS3KheKq52MKOW0O6UOsVU+pL6MS6HfUFA
- 1FugVEDAZI5NPemhcZ8+2hGskVxWnDwd/VUx82BI=
+ b=embHEnez+G1QHQqnadfkYtWTzDoJaxP9gNNRFl5LjzYscirOcUZm130qSyED3sOzb
+ dMiwxh16P5nru3LTW054tMKCitfPXA9OqjZpPn3wi8D6C8c6LeirPmR8qY6fiu7uUZ
+ Skktski+3c5nS3dxmVn2d54CHIfrYvFbRvrbsSEg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 06/56] ARM: dts: beagle-x15-common: Model 5V0
- regulator
-Date: Fri, 24 Jan 2020 09:19:22 -0500
-Message-Id: <20200124142012.29752-6-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 07/56] soc: ti: wkup_m3_ipc: Fix race condition
+ with rproc_boot
+Date: Fri, 24 Jan 2020 09:19:23 -0500
+Message-Id: <20200124142012.29752-7-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200124142012.29752-1-sashal@kernel.org>
 References: <20200124142012.29752-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_062021_052011_62703FF3 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20200124_062021_724926_92F96E72 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,62 +80,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Tony Lindgren <tony@atomide.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Dave Gerlach <d-gerlach@ti.com>,
+ Tony Lindgren <tony@atomide.com>, Santosh Shilimkar <ssantosh@kernel.org>,
+ Suman Anna <s-anna@ti.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Kishon Vijay Abraham I <kishon@ti.com>
+From: Dave Gerlach <d-gerlach@ti.com>
 
-[ Upstream commit e17e7c498d4f734df93c300441e100818ed58168 ]
+[ Upstream commit 03729cfa0d543bc996bf959e762ec999afc8f3d2 ]
 
-On am57xx-beagle-x15, 5V0 is connected to P16, P17, P18 and P19
-connectors. On am57xx-evm, 5V0 regulator is used to get 3V6 regulator
-which is connected to the COMQ port. Model 5V0 regulator here in order
-for it to be used in am57xx-evm to model 3V6 regulator.
+Any user of wkup_m3_ipc calls wkup_m3_ipc_get to get a handle and this
+checks the value of the static variable m3_ipc_state to see if the
+wkup_m3 is ready. Currently this is populated during probe before
+rproc_boot has been called, meaning there is a window of time that
+wkup_m3_ipc_get can return a valid handle but the wkup_m3 itself is not
+ready, leading to invalid IPC calls to the wkup_m3 and system
+instability.
 
-Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+To avoid this, move the population of the m3_ipc_state variable until
+after rproc_boot has succeeded to guarantee a valid and usable handle
+is always returned.
+
+Reported-by: Suman Anna <s-anna@ti.com>
+Signed-off-by: Dave Gerlach <d-gerlach@ti.com>
+Acked-by: Santosh Shilimkar <ssantosh@kernel.org>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- .../boot/dts/am57xx-beagle-x15-common.dtsi    | 21 +++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ drivers/soc/ti/wkup_m3_ipc.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi b/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi
-index 872382bd043f8..0051b2e05c2d5 100644
---- a/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi
-+++ b/arch/arm/boot/dts/am57xx-beagle-x15-common.dtsi
-@@ -32,6 +32,27 @@
- 		reg = <0x0 0x80000000 0x0 0x80000000>;
- 	};
+diff --git a/drivers/soc/ti/wkup_m3_ipc.c b/drivers/soc/ti/wkup_m3_ipc.c
+index f5cb8c0af09f3..c1fda6acb670a 100644
+--- a/drivers/soc/ti/wkup_m3_ipc.c
++++ b/drivers/soc/ti/wkup_m3_ipc.c
+@@ -426,6 +426,8 @@ static void wkup_m3_rproc_boot_thread(struct wkup_m3_ipc *m3_ipc)
+ 	ret = rproc_boot(m3_ipc->rproc);
+ 	if (ret)
+ 		dev_err(dev, "rproc_boot failed\n");
++	else
++		m3_ipc_state = m3_ipc;
  
-+	main_12v0: fixedregulator-main_12v0 {
-+		/* main supply */
-+		compatible = "regulator-fixed";
-+		regulator-name = "main_12v0";
-+		regulator-min-microvolt = <12000000>;
-+		regulator-max-microvolt = <12000000>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+
-+	evm_5v0: fixedregulator-evm_5v0 {
-+		/* Output of TPS54531D */
-+		compatible = "regulator-fixed";
-+		regulator-name = "evm_5v0";
-+		regulator-min-microvolt = <5000000>;
-+		regulator-max-microvolt = <5000000>;
-+		vin-supply = <&main_12v0>;
-+		regulator-always-on;
-+		regulator-boot-on;
-+	};
-+
- 	vdd_3v3: fixedregulator-vdd_3v3 {
- 		compatible = "regulator-fixed";
- 		regulator-name = "vdd_3v3";
+ 	do_exit(0);
+ }
+@@ -512,8 +514,6 @@ static int wkup_m3_ipc_probe(struct platform_device *pdev)
+ 		goto err_put_rproc;
+ 	}
+ 
+-	m3_ipc_state = m3_ipc;
+-
+ 	return 0;
+ 
+ err_put_rproc:
 -- 
 2.20.1
 
