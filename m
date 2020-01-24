@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58177147730
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 04:37:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D482B147736
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 04:40:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9+r94aTNTAfQ88cgtqw3HFb/O2l/0Ecra39FwGiMpP0=; b=mIAoywB3wEQRdl
-	VarfzIcjItbegtu9BjyyyhGp3qP0/Vz+RktFAB9Faw8WO+FPqQpsEWtZ9ZEu34vWDmnPEvjCL1nk4
-	kFDN0dikIPYx9Eea+9MwlzUKRT7sNusg2mPoOcVHxYMuvmrYRP6vZj8rzDGyDHC/SH8Myngdv4+it
-	IVD36A6CxN+Y1k08Hzr9yZ7uxcSuWq3+qH7bd7oVwiaa1PrzNWEiZ7FmeQWMKfwxL/Yghi9gRiUzC
-	FCXY99yHrm5d4ddqk7Q88b2outnGlvce6YPKCXTQERC59Cl7VP5xpYYi/t9LThtEBP7zp5wRz6Gh7
-	gxWQ7VzADQMLvUxISbnw==;
+	List-Owner; bh=MkUnkLJ+FuWM4pZ2jmthak7uNq7ytZY23yeGIZZDB6Y=; b=k8DR5Yq+HQ1549
+	QTiq5W+IeOhMBWXyAHZGX7FdQB6qnmCK2sV1IdNYVIKRR3h19GxYSjiodD3RBj3MOJaRvDDwbJj28
+	x6OybWJCfv2yqT4CJd7ikPIPwhPaWl1BM7n0xD+p6X0EZOgdYfTZupKo4m4ncXWELHuVq/5gzNrYw
+	R9L5+aYLsmKUoMJMDKHTeqOiq3+GtYWws2faGqtOA3RnCyiE2R9SZTD446fpj+iTKzeu6HBYICJcz
+	FghhA2U/dr8hjqnyt6On9oBXMn9f8qZA5En6lkvxWk57UIMi4peJxyWGbU3iRHPgG7FkaQncPIXC+
+	ss/MG00QBR2SCe7wGcYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iupmh-0005r7-3W; Fri, 24 Jan 2020 03:37:27 +0000
+	id 1iuppZ-0007S1-Eg; Fri, 24 Jan 2020 03:40:25 +0000
 Received: from conssluserg-02.nifty.com ([210.131.2.81])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iupmU-0005qA-It
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 03:37:16 +0000
-Received: from mail-vs1-f41.google.com (mail-vs1-f41.google.com
- [209.85.217.41]) (authenticated)
- by conssluserg-02.nifty.com with ESMTP id 00O3akO1006095
- for <linux-arm-kernel@lists.infradead.org>; Fri, 24 Jan 2020 12:36:47 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com 00O3akO1006095
+ id 1iuppN-0007Re-A1
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 03:40:14 +0000
+Received: from mail-vk1-f173.google.com (mail-vk1-f173.google.com
+ [209.85.221.173]) (authenticated)
+ by conssluserg-02.nifty.com with ESMTP id 00O3djCg007546
+ for <linux-arm-kernel@lists.infradead.org>; Fri, 24 Jan 2020 12:39:46 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com 00O3djCg007546
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1579837007;
- bh=chlER5pUjChdgEZWVw3HaCka4WX6vPliYp05kErac5o=;
+ s=dec2015msa; t=1579837186;
+ bh=s3lkUpOhniK8jQRTTs1U4BOtTESo73cdDDpCBPoFEGA=;
  h=From:Date:Subject:To:Cc:From;
- b=nbvWfBFzvpK3rBSHRcDyY6BifgF2wf7pdh4HhvtpXS3FVfChwHp90JapqE6ZvylkA
- bRssfQo8kACXA/5B/R+sWFjmF4iXwfhZDwiPJV9O90nsessrIDOq1gL3bWIHR1gR2C
- 6+VxD2y9W/V45BWfpCyAeHQ1tF5Tx3ihyvpe7lhx4/btiT7dS5WYyIsdT9DdEK8YZX
- tBl8joox2T7IgoWUg0luWr5braI2u89kLdFsl+Rnrm34mLBfHvlCyyeLVnTTk4t2tM
- A7e+fvNey310JF5jQczNzeRKCyOGtsnt0yHwRnQPAkRKzYfSobvqEr0KgvU+qNknZk
- hIrQKsDPHMm1A==
-X-Nifty-SrcIP: [209.85.217.41]
-Received: by mail-vs1-f41.google.com with SMTP id p6so389989vsj.11
+ b=hdNcnu9jmDkLWPWwL7yrLPvX+xgWCIEMrG/iBaSlggoRCYQnn0ilyj2uVOWrJWLBg
+ sRb5GMmodqntvtdfOkC3IrTri+VeKgi8KkCQW1t3X2W4DZkDxqTfT/xvkpW3byI5Y5
+ W+ZkaLgRqdB8u0iNqe3OqBzFfrQABBEhm5IhnX5KaxAkDMgIwg28gGuDb4OfjmVvYl
+ 6brPd3H4rGoKOPvcGnt4KZyOg6oa/o4cLncoddDiWbnT0Ge40Jr5IbR3PfgeifsS21
+ yvWxG2uNeF3RAlkCSxma/YryNcyolgCu5nPfsn3MG1EuMihGSDdJ2Zn/O+kfIRMXiR
+ F87llQDOHdIQA==
+X-Nifty-SrcIP: [209.85.221.173]
+Received: by mail-vk1-f173.google.com with SMTP id b129so171924vka.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Jan 2020 19:36:47 -0800 (PST)
-X-Gm-Message-State: APjAAAV3xWyIytDOyzC6n7gGWSDrc34a0dZKoGcKqygogO6W8OJG6mrs
- heuOc5CuOyo/8s3NVKI4kQSxnPZCy1TV9Ft6vwk=
-X-Google-Smtp-Source: APXvYqy/3sLs4nkX6yiO6kZcQfWXSBoGVFCwBd5TPBt7Lt2QNvKAs4sEQNUn1y8usOFTg4JrXZXwSAZs+XCXhbtM1d8=
-X-Received: by 2002:a05:6102:3102:: with SMTP id
- e2mr949801vsh.179.1579837006036; 
- Thu, 23 Jan 2020 19:36:46 -0800 (PST)
+ Thu, 23 Jan 2020 19:39:46 -0800 (PST)
+X-Gm-Message-State: APjAAAWkl6P8en7wRi4g2tq4p/gHVJCVDt9phih+l41Ju1w9m0CT4tto
+ ieh+KBzdPBl5PAmY/sKUCc9mWxbgAIAIohLH9Z4=
+X-Google-Smtp-Source: APXvYqw1ZG0E84h4+qv6BgKdO/rj/ZOnhDN9r048cMXacxVlBB9RfIEywlchzHZs9uX2OLTp4nfEZ6rtvSmpKgAQwa0=
+X-Received: by 2002:a1f:6344:: with SMTP id x65mr819981vkb.26.1579837185307;
+ Thu, 23 Jan 2020 19:39:45 -0800 (PST)
 MIME-Version: 1.0
 From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Fri, 24 Jan 2020 12:36:10 +0900
-X-Gmail-Original-Message-ID: <CAK7LNARYrzv4QU-eXxqYCcC9dziJmx9F02YNZ3mMnF47EfL3fA@mail.gmail.com>
-Message-ID: <CAK7LNARYrzv4QU-eXxqYCcC9dziJmx9F02YNZ3mMnF47EfL3fA@mail.gmail.com>
-Subject: [GIT PULL (RESEND)] ARM: dts: uniphier: UniPhier DT updates for v5.6
+Date: Fri, 24 Jan 2020 12:39:09 +0900
+X-Gmail-Original-Message-ID: <CAK7LNASehDHWgOug=Rz0uBBSP2ntJnNLiarfSdj97tZu+OXLkA@mail.gmail.com>
+Message-ID: <CAK7LNASehDHWgOug=Rz0uBBSP2ntJnNLiarfSdj97tZu+OXLkA@mail.gmail.com>
+Subject: [GIT PULL (RESEND)] arm64: dts: uniphier: UniPhier DT updates for v5.6
 To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
  soc@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_193714_851694_2A601C91 
-X-CRM114-Status: GOOD (  10.67  )
+X-CRM114-CacheID: sfid-20200123_194013_565500_1DC35CD4 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -92,10 +92,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Olof, Arnd,
 
-Here are UniPhier DT (32bit) updates for the v5.6 merge window.
+Here are UniPhier DT (64bit) updates for the v5.6 merge window.
 (I am resending this with soc@kernel.org in the To: list)
 
 Please pull!
+
 
 
 The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
@@ -105,32 +106,26 @@ The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
 are available in the Git repository at:
 
   git://git.kernel.org/pub/scm/linux/kernel/git/masahiroy/linux-uniphier.git
-tags/uniphier-dt-v5.6
+tags/uniphier-dt64-v5.6
 
-for you to fetch changes up to 37f3e0096f716b06338a4771633b32b8e2a36f7f:
+for you to fetch changes up to e98d5023fe1f062bb549354a2428d930775fd67e:
 
-  ARM: dts: uniphier: add reset-names to NAND controller node
-(2020-01-18 00:56:09 +0900)
+  arm64: dts: uniphier: add reset-names to NAND controller node
+(2020-01-18 00:56:18 +0900)
 
 ----------------------------------------------------------------
-UniPhier ARM SoC DT updates for v5.6
-
-- Add pinmux nodes for I2C ch5, ch6
+UniPhier ARM64 SoC DT updates for v5.6
 
 - Add reset-names to NAND controller node
 
 ----------------------------------------------------------------
-Masahiro Yamada (2):
-      ARM: dts: uniphier: add pinmux nodes for I2C ch5, ch6
-      ARM: dts: uniphier: add reset-names to NAND controller node
+Masahiro Yamada (1):
+      arm64: dts: uniphier: add reset-names to NAND controller node
 
- arch/arm/boot/dts/uniphier-ld4.dtsi     |  3 ++-
- arch/arm/boot/dts/uniphier-pinctrl.dtsi | 10 ++++++++++
- arch/arm/boot/dts/uniphier-pro4.dtsi    |  3 ++-
- arch/arm/boot/dts/uniphier-pro5.dtsi    |  3 ++-
- arch/arm/boot/dts/uniphier-pxs2.dtsi    |  3 ++-
- arch/arm/boot/dts/uniphier-sld8.dtsi    |  3 ++-
- 6 files changed, 20 insertions(+), 5 deletions(-)
+ arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi | 3 ++-
+ arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi | 3 ++-
+ arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi | 3 ++-
+ 3 files changed, 6 insertions(+), 3 deletions(-)
 
 -- 
 Best Regards
