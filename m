@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F1951489FC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:40:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64C3C1489FA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:39:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jPak2zTq+mMw5dk2irz5HScpapwBvegTNR1wAW9oDXE=; b=o2qa+b3pOStN6i
-	79fOFHoREp62P4Vf6J6C5U2ssbq8kop7b14brUkbWCGUpz3G8NHMsjm8aTbEYUbeweFzAr9GWZa/1
-	skGGk6a05JBRsNsy1EhaOZ/4l1pRl5+N19iw8c9rzjzLZi1s2LoePKM7PTw13RKXH22vsrag6P8eN
-	xD9Ke1AkkeJbNuN23AozucP485gzy2DxEHzVRrWLHYu1tRSd96bjGGupjJD64xb43uqz75/dmOnZP
-	Ipb/eT/kU3SxHKfW+3FLbRTiIhWsXk6ipKl+mU1dWw3WHv9a2MuBRmqoEDpa7HHgsEJM7EyOMFjw6
-	/cP6Jn3gehA0M5yE9QPg==;
+	List-Owner; bh=vbJ09DQ4uzKhaYf8CkIw9Y7wb+llsQiXbETo/szi5V4=; b=LN/Lb8XzfKav9d
+	xlsh/NMV1u3V1IQ4oyxsRobKjVwJUXk6oiiHL3RKIuTX04pb4X/Wa7PFNZ5m6017hvza/Is+sn/SH
+	xRFdNmYGkXJZJrVr72OJhVhTCmu9PIwlse3oZF5/eFC1kyyQnTPrPGX/c8mOHyUSwdr3N3UHL0uhX
+	yTtWlk5QKWGUfqKxsBL8SeP39PD6Y2QyWXB0+Qx2Vx9oNcq95SVRqLUt0lEHWmkzCJtUTUm4uUNwu
+	nIHgJmlI13Cq/PnLus1CNFZT1f6apLc7R1+lP41SXH7llH22TiAUWRTcsHc6CqUpTXnMj1cY8++LS
+	Qc/zC+fTcYBKlnLDinCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iv087-0002rd-Ix; Fri, 24 Jan 2020 14:40:15 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1iv07f-0002Nc-JY; Fri, 24 Jan 2020 14:39:47 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iv073-00029V-Rg
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:39:11 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 7C03E325B45E66E3C637;
+ id 1iv073-00029R-4E
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:39:10 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 587E2253B7DCCCBE7187;
  Fri, 24 Jan 2020 22:39:03 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.58) by
  DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
@@ -34,9 +34,9 @@ To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
  <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
  <jolsa@redhat.com>, <namhyung@kernel.org>, <will@kernel.org>,
  <ak@linux.intel.com>
-Subject: [PATCH RFC 1/7] perf jevents: Add support for an extra directory level
-Date: Fri, 24 Jan 2020 22:34:59 +0800
-Message-ID: <1579876505-113251-2-git-send-email-john.garry@huawei.com>
+Subject: [PATCH RFC 2/7] perf vendor events arm64: Relocate hip08 core events
+Date: Fri, 24 Jan 2020 22:35:00 +0800
+Message-ID: <1579876505-113251-3-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
 In-Reply-To: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
 References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
@@ -44,15 +44,16 @@ MIME-Version: 1.0
 X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_063910_060055_ED1DD887 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20200124_063909_328805_E631994B 
+X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,59 +76,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently we support upto a level 2 directory, and level 2 would be in the
-form vendor/platform.
-
-Add support for a further level, to hold specific categories of events for
-when we want to segregate them for matching purposes.
+Relocate the core events JSONs to match to future structure, which will
+have separate folders for CPU and uncore/system events.
 
 Signed-off-by: John Garry <john.garry@huawei.com>
 ---
- tools/perf/pmu-events/jevents.c | 11 ++++++++---
- 1 file changed, 8 insertions(+), 3 deletions(-)
+ .../arch/arm64/hisilicon/hip08/{ => cpu}/core-imp-def.json      | 0
+ tools/perf/pmu-events/arch/arm64/mapfile.csv                    | 2 +-
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => cpu}/core-imp-def.json (100%)
 
-diff --git a/tools/perf/pmu-events/jevents.c b/tools/perf/pmu-events/jevents.c
-index 079c77b6a2fd..8af05b94a37d 100644
---- a/tools/perf/pmu-events/jevents.c
-+++ b/tools/perf/pmu-events/jevents.c
-@@ -960,15 +960,20 @@ static int process_one_file(const char *fpath, const struct stat *sb,
- 	int level   = ftwbuf->level;
- 	int err = 0;
- 
--	if (level == 2 && is_dir) {
-+	if (level >= 2 && is_dir) {
-+		int count = 0;
- 		/*
- 		 * For level 2 directory, bname will include parent name,
- 		 * like vendor/platform. So search back from platform dir
- 		 * to find this.
-+		 * Something similar for level 3 directory, but we're a PMU
-+		 * category folder, like vendor/platform/cpu.
- 		 */
- 		bname = (char *) fpath + ftwbuf->base - 2;
- 		for (;;) {
- 			if (*bname == '/')
-+				count++;
-+			if (count == level - 1)
- 				break;
- 			bname--;
- 		}
-@@ -981,13 +986,13 @@ static int process_one_file(const char *fpath, const struct stat *sb,
- 		 level, sb->st_size, bname, fpath);
- 
- 	/* base dir or too deep */
--	if (level == 0 || level > 3)
-+	if (level == 0 || level > 4)
- 		return 0;
- 
- 
- 	/* model directory, reset topic */
- 	if ((level == 1 && is_dir && is_leaf_dir(fpath)) ||
--	    (level == 2 && is_dir)) {
-+	    (level >= 2 && is_dir && is_leaf_dir(fpath))) {
- 		if (close_table)
- 			print_events_table_suffix(eventsfp);
- 
+diff --git a/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/core-imp-def.json b/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/cpu/core-imp-def.json
+similarity index 100%
+rename from tools/perf/pmu-events/arch/arm64/hisilicon/hip08/core-imp-def.json
+rename to tools/perf/pmu-events/arch/arm64/hisilicon/hip08/cpu/core-imp-def.json
+diff --git a/tools/perf/pmu-events/arch/arm64/mapfile.csv b/tools/perf/pmu-events/arch/arm64/mapfile.csv
+index 0d609149b82a..c92cb3b519fc 100644
+--- a/tools/perf/pmu-events/arch/arm64/mapfile.csv
++++ b/tools/perf/pmu-events/arch/arm64/mapfile.csv
+@@ -20,5 +20,5 @@
+ 0x00000000410fd0c0,v1,arm/cortex-a76-n1,core
+ 0x00000000420f5160,v1,cavium/thunderx2,core
+ 0x00000000430f0af0,v1,cavium/thunderx2,core
+-0x00000000480fd010,v1,hisilicon/hip08,core
++0x00000000480fd010,v1,hisilicon/hip08/cpu,core
+ 0x00000000500f0000,v1,ampere/emag,core
 -- 
 2.17.1
 
