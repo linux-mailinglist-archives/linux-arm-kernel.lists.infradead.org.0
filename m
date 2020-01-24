@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45E411491C0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 00:20:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E11D51491DE
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 00:21:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WlWap1t+0Ga2AZCJJU1UndKUmsyJNDn4EOBgp/d0IfE=; b=hhN/uCvxreS2fX
-	i+XBh7IiU2HofwcimD7l6uezSUZcnLXR2leAWWp5U3056AJzzE3QHH6ZEJ0syiOZA1VYqEpfzOXe7
-	+wAvz+3T1Ba7UBrpBUCWkUhxdRBJeTUli1lvqE7vSk35dh5BGWsn7tQY7G8zUK/cGGtfb/pVMTHmq
-	bRBPhG2/LBemvAsgxFxTYP1hj6b1DX5NZlZuHXc10lC/QzzzwX6zlMkHg3pyWQLfk3Fq1f5x+B/1Y
-	hk38kDeD+jcigzGSRWqWF65OcBPeCQVZ3je0g41l7Fcn4T5awDNXtUtrLADXq+Ie8xCan/kvpcM+y
-	pfYrBdjON0MTDmYncIzg==;
+	List-Owner; bh=QmJMBW3XAEJ+xz0Gx/311J8bK66v24lEF8dudxn6L7c=; b=R3ybtcoal84tFw
+	M0yejfFGppI/KX5z8Tzdh8RmZ/clxVL6UiM4lCqXqVgSFYm0mhYbHaq4bm8uu1pDiw1xqwCK7ASBZ
+	DzI9ADgeF3mUosIxtTujysBx9GRPX01gb3564maO9VKlqB3Xjl/X5gv73YdFmsb5ioJA9BSyOckz1
+	NOs+akMbVkMBpLJU2UQgjJHuDM+uGK8yUPuhFHxuQ8alz/OYqB2IsIbg7UlA/QJPwQb3wNfXRb9UL
+	vafn1p9PLF72rXjEw4meY8vuX1y43oxi1TQt1KpySmtd9hHu+AnzNnV7JZU8lMJ60FWsmYboPmnHi
+	hcll6qomnMYUfnJGoTIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iv8Fq-0001ZH-MP; Fri, 24 Jan 2020 23:20:46 +0000
-Received: from mailoutvs21.siol.net ([185.57.226.212] helo=mail.siol.net)
+	id 1iv8GQ-00022M-1f; Fri, 24 Jan 2020 23:21:22 +0000
+Received: from mailoutvs55.siol.net ([185.57.226.246] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iv8Fc-0001XC-Gn
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 23:20:34 +0000
+ id 1iv8Fc-0001XZ-Oq
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 23:20:35 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTP id 5935D5227DE;
- Sat, 25 Jan 2020 00:20:28 +0100 (CET)
+ by mail.siol.net (Zimbra) with ESMTP id C2796522844;
+ Sat, 25 Jan 2020 00:20:30 +0100 (CET)
 X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id lnLDxxhC6oQY; Sat, 25 Jan 2020 00:20:28 +0100 (CET)
+ with ESMTP id oCHcyPFtp5FI; Sat, 25 Jan 2020 00:20:30 +0100 (CET)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTPS id F22115227E3;
- Sat, 25 Jan 2020 00:20:27 +0100 (CET)
+ by mail.siol.net (Zimbra) with ESMTPS id 5DDB8522899;
+ Sat, 25 Jan 2020 00:20:30 +0100 (CET)
 Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
  [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Zimbra) with ESMTPSA id 4C65F522806;
- Sat, 25 Jan 2020 00:20:25 +0100 (CET)
+ by mail.siol.net (Zimbra) with ESMTPSA id 03FC6522844;
+ Sat, 25 Jan 2020 00:20:28 +0100 (CET)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mripard@kernel.org,
 	wens@csie.org
-Subject: [PATCH 1/8] clk: sunxi-ng: sun8i-de2: Swap A64 and H6 definitions
-Date: Sat, 25 Jan 2020 00:20:07 +0100
-Message-Id: <20200124232014.574989-2-jernej.skrabec@siol.net>
+Subject: [PATCH 2/8] clk: sunxi-ng: sun8i-de2: Fix A83T clocks and reset
+Date: Sat, 25 Jan 2020 00:20:08 +0100
+Message-Id: <20200124232014.574989-3-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200124232014.574989-1-jernej.skrabec@siol.net>
 References: <20200124232014.574989-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_152032_723953_F2F2A70C 
-X-CRM114-Status: GOOD (  10.24  )
+X-CRM114-CacheID: sfid-20200124_152032_964173_ABADBDD9 
+X-CRM114-Status: GOOD (  10.96  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.212 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.246 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,79 +81,104 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For some reason, A64 and H6 have swapped clocks and resets definitions.
-H6 doesn't have rotation unit while A64 has. Swap around to correct the
-issue.
+A83T also contains rotation core, but related clocks and reset are
+missing. Add them.
+
+With that fixed, H3 and V3s capabilities no longer match (they don't
+have rotation core), so create new struct for them.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- drivers/clk/sunxi-ng/ccu-sun8i-de2.c | 18 +++++++++---------
- 1 file changed, 9 insertions(+), 9 deletions(-)
+ drivers/clk/sunxi-ng/ccu-sun8i-de2.c | 31 ++++++++++++++++++++++------
+ 1 file changed, 25 insertions(+), 6 deletions(-)
 
 diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-index d9668493c3f9..08074d935317 100644
+index 08074d935317..800659cf7347 100644
 --- a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
 +++ b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-@@ -51,7 +51,7 @@ static SUNXI_CCU_M(mixer1_div_a83_clk, "mixer1-div", "pll-de", 0x0c, 4, 4,
+@@ -50,6 +50,8 @@ static SUNXI_CCU_M(mixer1_div_a83_clk, "mixer1-div", "pll-de", 0x0c, 4, 4,
+ 		   CLK_SET_RATE_PARENT);
  static SUNXI_CCU_M(wb_div_a83_clk, "wb-div", "pll-de", 0x0c, 8, 4,
  		   CLK_SET_RATE_PARENT);
++static SUNXI_CCU_M(rot_div_a83_clk, "rot-div", "pll-de", 0x0c, 0x0c, 4,
++		   CLK_SET_RATE_PARENT);
  
--static struct ccu_common *sun50i_h6_de3_clks[] = {
-+static struct ccu_common *sun50i_a64_de2_clks[] = {
+ static struct ccu_common *sun50i_a64_de2_clks[] = {
  	&mixer0_clk.common,
- 	&mixer1_clk.common,
- 	&wb_clk.common,
-@@ -156,7 +156,7 @@ static struct clk_hw_onecell_data sun8i_v3s_de2_hw_clks = {
- 	.num	= CLK_NUMBER_WITHOUT_ROT,
+@@ -81,6 +83,10 @@ static struct ccu_common *sun8i_a83t_de2_clks[] = {
+ 	&mixer0_div_a83_clk.common,
+ 	&mixer1_div_a83_clk.common,
+ 	&wb_div_a83_clk.common,
++
++	&bus_rot_clk.common,
++	&rot_clk.common,
++	&rot_div_a83_clk.common,
  };
  
--static struct clk_hw_onecell_data sun50i_h6_de3_hw_clks = {
-+static struct clk_hw_onecell_data sun50i_a64_de2_hw_clks = {
- 	.hws	= {
+ static struct ccu_common *sun8i_h3_de2_clks[] = {
+@@ -113,16 +119,19 @@ static struct clk_hw_onecell_data sun8i_a83t_de2_hw_clks = {
  		[CLK_MIXER0]		= &mixer0_clk.common.hw,
  		[CLK_MIXER1]		= &mixer1_clk.common.hw,
-@@ -190,13 +190,13 @@ static struct ccu_reset_map sun50i_a64_de2_resets[] = {
+ 		[CLK_WB]		= &wb_clk.common.hw,
++		[CLK_ROT]		= &rot_clk.common.hw,
+ 
+ 		[CLK_BUS_MIXER0]	= &bus_mixer0_clk.common.hw,
+ 		[CLK_BUS_MIXER1]	= &bus_mixer1_clk.common.hw,
+ 		[CLK_BUS_WB]		= &bus_wb_clk.common.hw,
++		[CLK_BUS_ROT]		= &bus_rot_clk.common.hw,
+ 
+ 		[CLK_MIXER0_DIV]	= &mixer0_div_a83_clk.common.hw,
+ 		[CLK_MIXER1_DIV]	= &mixer1_div_a83_clk.common.hw,
+ 		[CLK_WB_DIV]		= &wb_div_a83_clk.common.hw,
++		[CLK_ROT_DIV]		= &rot_div_a83_clk.common.hw,
+ 	},
+-	.num	= CLK_NUMBER_WITHOUT_ROT,
++	.num	= CLK_NUMBER_WITH_ROT,
+ };
+ 
+ static struct clk_hw_onecell_data sun8i_h3_de2_hw_clks = {
+@@ -179,8 +188,18 @@ static struct clk_hw_onecell_data sun50i_a64_de2_hw_clks = {
+ static struct ccu_reset_map sun8i_a83t_de2_resets[] = {
  	[RST_MIXER0]	= { 0x08, BIT(0) },
- 	[RST_MIXER1]	= { 0x08, BIT(1) },
- 	[RST_WB]	= { 0x08, BIT(2) },
+ 	/*
+-	 * For A83T, H3 and R40, mixer1 reset line is shared with wb, so
++	 * A83T and R40 mixer1 reset line is shared with wb, so
+ 	 * only RST_WB is exported here.
++	 */
++	[RST_WB]	= { 0x08, BIT(2) },
 +	[RST_ROT]	= { 0x08, BIT(3) },
- };
- 
- static struct ccu_reset_map sun50i_h6_de3_resets[] = {
- 	[RST_MIXER0]	= { 0x08, BIT(0) },
- 	[RST_MIXER1]	= { 0x08, BIT(1) },
++};
++
++static struct ccu_reset_map sun8i_h3_de2_resets[] = {
++	[RST_MIXER0]	= { 0x08, BIT(0) },
++	/*
++	 * H3 mixer1 reset line is shared with wb, so only RST_WB
++	 * is exported here.
+ 	 * For V3s there's just no mixer1, so it also shares this struct.
+ 	 */
  	[RST_WB]	= { 0x08, BIT(2) },
--	[RST_ROT]	= { 0x08, BIT(3) },
- };
+@@ -215,8 +234,8 @@ static const struct sunxi_ccu_desc sun8i_h3_de2_clk_desc = {
  
- static const struct sunxi_ccu_desc sun8i_a83t_de2_clk_desc = {
-@@ -220,20 +220,20 @@ static const struct sunxi_ccu_desc sun8i_h3_de2_clk_desc = {
+ 	.hw_clks	= &sun8i_h3_de2_hw_clks,
+ 
+-	.resets		= sun8i_a83t_de2_resets,
+-	.num_resets	= ARRAY_SIZE(sun8i_a83t_de2_resets),
++	.resets		= sun8i_h3_de2_resets,
++	.num_resets	= ARRAY_SIZE(sun8i_h3_de2_resets),
  };
  
  static const struct sunxi_ccu_desc sun50i_a64_de2_clk_desc = {
--	.ccu_clks	= sun8i_h3_de2_clks,
--	.num_ccu_clks	= ARRAY_SIZE(sun8i_h3_de2_clks),
-+	.ccu_clks	= sun50i_a64_de2_clks,
-+	.num_ccu_clks	= ARRAY_SIZE(sun50i_a64_de2_clks),
+@@ -245,8 +264,8 @@ static const struct sunxi_ccu_desc sun8i_v3s_de2_clk_desc = {
  
--	.hw_clks	= &sun8i_h3_de2_hw_clks,
-+	.hw_clks	= &sun50i_a64_de2_hw_clks,
+ 	.hw_clks	= &sun8i_v3s_de2_hw_clks,
  
- 	.resets		= sun50i_a64_de2_resets,
- 	.num_resets	= ARRAY_SIZE(sun50i_a64_de2_resets),
+-	.resets		= sun8i_a83t_de2_resets,
+-	.num_resets	= ARRAY_SIZE(sun8i_a83t_de2_resets),
++	.resets		= sun8i_h3_de2_resets,
++	.num_resets	= ARRAY_SIZE(sun8i_h3_de2_resets),
  };
  
- static const struct sunxi_ccu_desc sun50i_h6_de3_clk_desc = {
--	.ccu_clks	= sun50i_h6_de3_clks,
--	.num_ccu_clks	= ARRAY_SIZE(sun50i_h6_de3_clks),
-+	.ccu_clks	= sun8i_h3_de2_clks,
-+	.num_ccu_clks	= ARRAY_SIZE(sun8i_h3_de2_clks),
- 
--	.hw_clks	= &sun50i_h6_de3_hw_clks,
-+	.hw_clks	= &sun8i_h3_de2_hw_clks,
- 
- 	.resets		= sun50i_h6_de3_resets,
- 	.num_resets	= ARRAY_SIZE(sun50i_h6_de3_resets),
+ static int sunxi_de2_clk_probe(struct platform_device *pdev)
 -- 
 2.25.0
 
