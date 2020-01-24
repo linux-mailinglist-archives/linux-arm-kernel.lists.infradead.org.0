@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 879C814872C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:21:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C02514872E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:21:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5wkxx6TkDuLoPNrLn7YrI7SQBncJExsL0K0NfKMtulY=; b=X8c8Jwa1oEIwlX
-	V3Y46kLxKGRZEQ5zA/QFcIU6oSlL7Kiixst2yVVs8nnPAPL73hjsSO7Yey+76fypJydKF9zn4a926
-	8x6C4fdn6ZMQYo1TIjIc4KLrSeG26iRqXI6DfrZADrGQJR5UEivInvcR+nktR3T3/qKjPXoXOSa49
-	HqRe+mPrbKxDkXyssywv/TfcNFH9kz7ax0WPkc8Y3LrwSRM7R93seyafY4SMp+CDBed57uzkDJ+um
-	hIxGY4lmg6FxQSif7fdTCFHYKNsJn0E6Mb/9F8iMmOVpqQJSJgEZwijm501+oZZmRNjTSCqiJYddZ
-	PKL3GphqUDxympzrTw2Q==;
+	List-Owner; bh=IxACaLHOXh0r5dPnRP16v4xFDyvb57PLtCccmqyKBBc=; b=djh7dPNPvABjRk
+	R4AhuRwXkGyUNxP5YdeHRtD9XuR1Vy5Wb85Chn7EO6rjDcKFRt61pLeCiQYanmccGkqOfu5/Kc1i6
+	LJSY3YROm6AyM5JqTmMbOcQQDniOCKAgLiUgbZ4dr+S9p3PC6UfossJLkim5VmcmmWA0oo1UkQ3uv
+	UJhEiQW4dXEZ18FNfBBJ4K+GfhdX0SW3ma1ZuclBIL/2zLTa1xyuPljZfiLi/TFzEsU7pPNkMicxP
+	F+8KlHZ5BQsGh9aqiNfOKVJDFfAsHxVSuRRijGDt5ibdEYdQupHGA13W57ClRwndpSSMOQrQ3EA4o
+	h518ecNG+7EKEU4Neweg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuzpz-0003tM-Ar; Fri, 24 Jan 2020 14:21:31 +0000
+	id 1iuzqC-0004Cw-Fg; Fri, 24 Jan 2020 14:21:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuzn4-0000bV-UW
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:18:32 +0000
+ id 1iuzn7-0000dm-EC
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:18:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9DB58208C4;
- Fri, 24 Jan 2020 14:18:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 09983214DB;
+ Fri, 24 Jan 2020 14:18:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579875510;
- bh=7uUGsk4n0XXVgZsu9YNHGZEaSX4/OsqDtUdjcRoeTZY=;
+ s=default; t=1579875512;
+ bh=m50/OUe2xxBl9ap4i6GvXtg5TbSS//D+WuXbEtrqyBU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=etqrt8Nry6TimpWEieuEZL7LsqI8bmGnruxTCAw+gOHrKQz9c+QQkJmq9a6DNoohi
- /FEkjziHDdhxH49QNjkUeEk5oV6ia6EwKmqFcEtUliogQtJReZAVnm3Bj+MuK8XKFl
- lf6X6Z8dBBUp4PwWfp0rGSk5tnmfU87eLjIAMD+Y=
+ b=qnuHbv4w5H8IGIIkpACzs8EpBUJqgDKCXCC6LeLNXDSBu/Nl7IwJG/br7xjpUURCj
+ Q3dICElUzHaBOBgLwXV+n78Qgi1BC/lyzqjjXrb8qPSJ/whjFQskJAzrCRnfmGpcB3
+ 1ZjRAVyaoxMF4n9Ftw2CEHeDXpm9JI76Ew8X7JMc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 011/107] soc: ti: wkup_m3_ipc: Fix race condition
- with rproc_boot
-Date: Fri, 24 Jan 2020 09:16:41 -0500
-Message-Id: <20200124141817.28793-11-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 013/107] ARM: dts: imx6q-dhcom: fix rtc compatible
+Date: Fri, 24 Jan 2020 09:16:43 -0500
+Message-Id: <20200124141817.28793-13-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200124141817.28793-1-sashal@kernel.org>
 References: <20200124141817.28793-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_061831_071385_A0B06A6F 
-X-CRM114-Status: GOOD (  12.40  )
+X-CRM114-CacheID: sfid-20200124_061833_541145_688FF7B9 
+X-CRM114-Status: GOOD (  12.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,61 +79,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Dave Gerlach <d-gerlach@ti.com>,
- Tony Lindgren <tony@atomide.com>, Santosh Shilimkar <ssantosh@kernel.org>,
- Suman Anna <s-anna@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dave Gerlach <d-gerlach@ti.com>
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 
-[ Upstream commit 03729cfa0d543bc996bf959e762ec999afc8f3d2 ]
+[ Upstream commit 7d7778b1396bc9e2a3875009af522beb4ea9355a ]
 
-Any user of wkup_m3_ipc calls wkup_m3_ipc_get to get a handle and this
-checks the value of the static variable m3_ipc_state to see if the
-wkup_m3 is ready. Currently this is populated during probe before
-rproc_boot has been called, meaning there is a window of time that
-wkup_m3_ipc_get can return a valid handle but the wkup_m3 itself is not
-ready, leading to invalid IPC calls to the wkup_m3 and system
-instability.
+The only correct and documented compatible string for the rv3029 is
+microcrystal,rv3029. Fix it up.
 
-To avoid this, move the population of the m3_ipc_state variable until
-after rproc_boot has succeeded to guarantee a valid and usable handle
-is always returned.
-
-Reported-by: Suman Anna <s-anna@ti.com>
-Signed-off-by: Dave Gerlach <d-gerlach@ti.com>
-Acked-by: Santosh Shilimkar <ssantosh@kernel.org>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
+Fixes: 52c7a088badd ("ARM: dts: imx6q: Add support for the DHCOM iMX6 SoM and PDK2")
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/soc/ti/wkup_m3_ipc.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/imx6q-dhcom-som.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/soc/ti/wkup_m3_ipc.c b/drivers/soc/ti/wkup_m3_ipc.c
-index 378369d9364ae..e9ece45d7a333 100644
---- a/drivers/soc/ti/wkup_m3_ipc.c
-+++ b/drivers/soc/ti/wkup_m3_ipc.c
-@@ -419,6 +419,8 @@ static void wkup_m3_rproc_boot_thread(struct wkup_m3_ipc *m3_ipc)
- 	ret = rproc_boot(m3_ipc->rproc);
- 	if (ret)
- 		dev_err(dev, "rproc_boot failed\n");
-+	else
-+		m3_ipc_state = m3_ipc;
+diff --git a/arch/arm/boot/dts/imx6q-dhcom-som.dtsi b/arch/arm/boot/dts/imx6q-dhcom-som.dtsi
+index 387801dde02e2..08a2e17e0539b 100644
+--- a/arch/arm/boot/dts/imx6q-dhcom-som.dtsi
++++ b/arch/arm/boot/dts/imx6q-dhcom-som.dtsi
+@@ -206,7 +206,7 @@
+ 	};
  
- 	do_exit(0);
- }
-@@ -505,8 +507,6 @@ static int wkup_m3_ipc_probe(struct platform_device *pdev)
- 		goto err_put_rproc;
- 	}
- 
--	m3_ipc_state = m3_ipc;
--
- 	return 0;
- 
- err_put_rproc:
+ 	rtc@56 {
+-		compatible = "rv3029c2";
++		compatible = "microcrystal,rv3029";
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&pinctrl_rtc_hw300>;
+ 		reg = <0x56>;
 -- 
 2.20.1
 
