@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C02514872E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:21:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CDD9714876B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:23:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IxACaLHOXh0r5dPnRP16v4xFDyvb57PLtCccmqyKBBc=; b=djh7dPNPvABjRk
-	R4AhuRwXkGyUNxP5YdeHRtD9XuR1Vy5Wb85Chn7EO6rjDcKFRt61pLeCiQYanmccGkqOfu5/Kc1i6
-	LJSY3YROm6AyM5JqTmMbOcQQDniOCKAgLiUgbZ4dr+S9p3PC6UfossJLkim5VmcmmWA0oo1UkQ3uv
-	UJhEiQW4dXEZ18FNfBBJ4K+GfhdX0SW3ma1ZuclBIL/2zLTa1xyuPljZfiLi/TFzEsU7pPNkMicxP
-	F+8KlHZ5BQsGh9aqiNfOKVJDFfAsHxVSuRRijGDt5ibdEYdQupHGA13W57ClRwndpSSMOQrQ3EA4o
-	h518ecNG+7EKEU4Neweg==;
+	List-Owner; bh=U1Ihbqj6jiLPG1usZLE4osISJvFw6OHQOPZvEG4EwaM=; b=Eo6MdbmIpbwX3p
+	GoJGRw4BXXhE3JU+E1iMwyz7/wCWZ0nizcZGQldmc0Gi8zLo/n0Rril5v9D3h9KtkegTehIJodE0d
+	ZqYAejoJY0bsLkQjf+7O8gTXdKNXhkYahjBoI4Q3ExvSuwnpkCXw6yyJvhSLuuOmx0hUJkhh3CVRc
+	JRLW8DrNSw7iPuk8CRs+0f1rnoPRa/azwhJST0Caa/Yc3GLraebMVgT0c7l63lJV0hUHpR4ZxK+9Z
+	VzTUIm/HpZ/3eAlgbbemSu8lD6z/5kJ8daORS2n8sYbg+kpueb8HCzydgG7hNlCe6OTO/vYw55W1X
+	Yj1lrnmw9DkeIp32Pxig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuzqC-0004Cw-Fg; Fri, 24 Jan 2020 14:21:44 +0000
+	id 1iuzrY-0005VA-Qy; Fri, 24 Jan 2020 14:23:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuzn7-0000dm-EC
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:18:34 +0000
+ id 1iuzn8-0000ez-I9
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:18:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 09983214DB;
- Fri, 24 Jan 2020 14:18:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 20BBB2077C;
+ Fri, 24 Jan 2020 14:18:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579875512;
- bh=m50/OUe2xxBl9ap4i6GvXtg5TbSS//D+WuXbEtrqyBU=;
+ s=default; t=1579875514;
+ bh=rFxetqqAGgGIApkXEQ4TCZBigV4FicIGqLM3MuDnDD8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=qnuHbv4w5H8IGIIkpACzs8EpBUJqgDKCXCC6LeLNXDSBu/Nl7IwJG/br7xjpUURCj
- Q3dICElUzHaBOBgLwXV+n78Qgi1BC/lyzqjjXrb8qPSJ/whjFQskJAzrCRnfmGpcB3
- 1ZjRAVyaoxMF4n9Ftw2CEHeDXpm9JI76Ew8X7JMc=
+ b=Cui+bZaybZZ/vVA6Zh+rG1xTrH4n5B2E819CVv3nhtga/WN7MeUzMMl76iXo7IHBX
+ tmjDQDVuYH2xkb+bquIhD5x057OmsktmK9m3Ib8yuMavvjFYuQXSUwIBvjs0qyCNfd
+ gCPYWAlZ/vyo0RKT6P2lip1/xS9inK+aDsecaung=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 013/107] ARM: dts: imx6q-dhcom: fix rtc compatible
-Date: Fri, 24 Jan 2020 09:16:43 -0500
-Message-Id: <20200124141817.28793-13-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 014/107] arm64: dts: ls1028a: fix endian setting
+ for dcfg
+Date: Fri, 24 Jan 2020 09:16:44 -0500
+Message-Id: <20200124141817.28793-14-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200124141817.28793-1-sashal@kernel.org>
 References: <20200124141817.28793-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_061833_541145_688FF7B9 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20200124_061834_741387_F241E149 
+X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,41 +81,42 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Yangbo Lu <yangbo.lu@nxp.com>, Yinbo Zhu <yinbo.zhu@nxp.com>,
  Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+From: Yinbo Zhu <yinbo.zhu@nxp.com>
 
-[ Upstream commit 7d7778b1396bc9e2a3875009af522beb4ea9355a ]
+[ Upstream commit 33eae7fb2e593fdbaac15d843e2558379c6d1149 ]
 
-The only correct and documented compatible string for the rv3029 is
-microcrystal,rv3029. Fix it up.
+DCFG block uses little endian.  Fix it so that register access becomes
+correct.
 
-Fixes: 52c7a088badd ("ARM: dts: imx6q: Add support for the DHCOM iMX6 SoM and PDK2")
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Yinbo Zhu <yinbo.zhu@nxp.com>
+Acked-by: Yangbo Lu <yangbo.lu@nxp.com>
+Fixes: 8897f3255c9c ("arm64: dts: Add support for NXP LS1028A SoC")
 Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx6q-dhcom-som.dtsi | 2 +-
+ arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/imx6q-dhcom-som.dtsi b/arch/arm/boot/dts/imx6q-dhcom-som.dtsi
-index 387801dde02e2..08a2e17e0539b 100644
---- a/arch/arm/boot/dts/imx6q-dhcom-som.dtsi
-+++ b/arch/arm/boot/dts/imx6q-dhcom-som.dtsi
-@@ -206,7 +206,7 @@
- 	};
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+index bb960fe2bb64c..9589b15693d6e 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+@@ -158,7 +158,7 @@
+ 		dcfg: syscon@1e00000 {
+ 			compatible = "fsl,ls1028a-dcfg", "syscon";
+ 			reg = <0x0 0x1e00000 0x0 0x10000>;
+-			big-endian;
++			little-endian;
+ 		};
  
- 	rtc@56 {
--		compatible = "rv3029c2";
-+		compatible = "microcrystal,rv3029";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&pinctrl_rtc_hw300>;
- 		reg = <0x56>;
+ 		rst: syscon@1e60000 {
 -- 
 2.20.1
 
