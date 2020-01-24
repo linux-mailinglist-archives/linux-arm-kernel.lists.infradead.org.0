@@ -2,79 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F34814773A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 04:44:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4B7614786F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 07:04:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VWhKoUV69uPC5seuivQ856MgdWIqEgPEXW+BJS2pzeI=; b=Yo5xJazuDNB9eW
-	p6WY1RApvc68uMb/CS8MC7EEFijK/OFBQTpu7KsLwzx+lPaFZ2ACBKQP9L+YwQCFlK+Gv3PO9NZlR
-	puBWnfrpTmEeX1pQh5p1bCmLh8X3Q+aS5gX67e/JLX97NYy/C7PDUhgkZmkCxIYzIV4obCFo5gUx+
-	5Tubs8AeF8nU+VwGY4QFHT3esz0j1/zcO/sCn8pua7swyF51GE9tgy22EHwDaOTkvg/MZXne4kd/G
-	v5Kf+sdh4HfJU7eEYEVt/PacDCE8JthRvh0j8GlLZMDfXdw7OVV6nRR9tAVsnjfK03fjZ2IS+ZR/r
-	CvjxndpuZggsiuXXC7hg==;
+	List-Owner; bh=pPG6YDm8JQLudT0Ao6FPCWPl0XERxlooUtFf97JhgMo=; b=VCuG+g+VqpAI60
+	zWL7z2mjU4GEXsuPItYl0WunzJD+x7BqvsvPtpk2KUh8TkzBqXbmYOJDVwNFyCf1RWPjVYb+5Y83R
+	UucItpgXbITje+RyCTHh7fznjsW+uYGACgcBJ2xC+tPqMmZJkVbjVkyjc77gO2pApCrUaWl+aSW03
+	amVRhIoYkKveLJ9KIcchWumwBd/cBNWFBb9BNhiNdOSw+oy5UQVMVem4EHqnatjnyjE27/35NbLev
+	UT+fpZ6R/63krM1Pd3L4l11JsQBGoaTAaov4DP0Rt2KumOV7yS0oY/wE0iiKTLqAwVMKgf3iSmHf4
+	ELU6TZCiJ+89eGp781QQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuptr-0007yP-J1; Fri, 24 Jan 2020 03:44:51 +0000
-Received: from conssluserg-01.nifty.com ([210.131.2.80])
+	id 1ius4L-0005O8-Lz; Fri, 24 Jan 2020 06:03:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuptg-0007y0-0I
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 03:44:41 +0000
-Received: from mail-ua1-f49.google.com (mail-ua1-f49.google.com
- [209.85.222.49]) (authenticated)
- by conssluserg-01.nifty.com with ESMTP id 00O3iBJX025637
- for <linux-arm-kernel@lists.infradead.org>; Fri, 24 Jan 2020 12:44:11 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com 00O3iBJX025637
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1579837451;
- bh=ZciN3pdou+Uxxprysqmu7s1MHJ/ph/kv6GDPRv1quYk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=nK61UGKbxmxCm8NTN73uU+ntDikTe3yu3tbJTwcN3htJvnam6Xz3XOfF+OvfHmjxT
- 1F+dGEbbNZc/hV1+jq2PIuX6QDdfjq+wJh783MzOu9cp2TrtoGvMLolPT45Wh+WctO
- e90bSlaeTqDigkGGPY6ABFPEhSr5Pheak4wTuTrdRXAVE0e94Kuk5bKUNjjtVfAUjN
- sLDnoWcFK3ve8yK1wzzfuvYHvz7ZFwhAeHqPgGgnM2vGwMbfxnOY9qFDacCsWOufWR
- a4njBgGTbVZAIGelZDz04PrdJTdDb1QJiZHrgmTMhMSzCLsKkUzFnF7OD4m5ootccL
- UYjT8isEK4lAQ==
-X-Nifty-SrcIP: [209.85.222.49]
-Received: by mail-ua1-f49.google.com with SMTP id c7so327914uaf.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Jan 2020 19:44:11 -0800 (PST)
-X-Gm-Message-State: APjAAAVpAeA/zGwcWWnZJ44CTHUKN7RbYITvqwLMjnzgOjp/yFmCgK2d
- wjfp9pd2yexr8jiwKdMTmmQ/FX1UwtDA+xkcPj8=
-X-Google-Smtp-Source: APXvYqyPABcHjkE7LphB8AFi82zW6lt8MeVEc6Mzrd111/JuQRIL1R1KIWXilIUSJZKLMiQpcGh2uuZp/WTYDvUMVUs=
-X-Received: by 2002:ab0:6509:: with SMTP id w9mr709242uam.121.1579837450310;
- Thu, 23 Jan 2020 19:44:10 -0800 (PST)
+ id 1ius4F-0005N2-O1
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 06:03:45 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 215952071A;
+ Fri, 24 Jan 2020 06:03:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579845821;
+ bh=HAs60DRf5BSFHERMbxGfL8THT/7QSUVWC8FVp+r5kJ0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=WTnayUFvm/P59mIIby5Mw0VHpLV+3UlZ4TGy7oj/xQ8AxjuBh1R/L5zGor66DNiDR
+ FH7hId5xi3GZ7L03i9ZMOrUIT/ualF3cNXjcjIrPQP5vl2SJI2QZo3wNOStNe2/QIV
+ jhratH4nic3QIarXZs2a1gaJZE45f1nKTydd8UGc=
+Date: Fri, 24 Jan 2020 07:03:39 +0100
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Jolly Shah <JOLLYS@xilinx.com>
+Subject: Re: [PATCH v2 1/4] firmware: xilinx: Add sysfs interface
+Message-ID: <20200124060339.GB2906795@kroah.com>
+References: <1578527663-10243-1-git-send-email-jolly.shah@xilinx.com>
+ <1578527663-10243-2-git-send-email-jolly.shah@xilinx.com>
+ <20200114145257.GA1910108@kroah.com>
+ <BYAPR02MB5992FC37E0D2AD9946414417B80F0@BYAPR02MB5992.namprd02.prod.outlook.com>
 MIME-Version: 1.0
-References: <CAK7LNASEaiFia8NKZN8++-9RfGXOPKSFuCkdukBk9Jy7+nHecQ@mail.gmail.com>
- <CAK7LNAT721bVwVQif--UY1dXMhq8NSRpkPOYTN-=nxyBSBOn2Q@mail.gmail.com>
- <CAOesGMgyh2NmR_AbEzC2jQe070e_u3zozWi=v7RjMXszXgetZg@mail.gmail.com>
-In-Reply-To: <CAOesGMgyh2NmR_AbEzC2jQe070e_u3zozWi=v7RjMXszXgetZg@mail.gmail.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Fri, 24 Jan 2020 12:43:34 +0900
-X-Gmail-Original-Message-ID: <CAK7LNATj8EP_vSDSbknQsYp5V=7EfdQzTQbobhNjXS5Y8YOjqg@mail.gmail.com>
-Message-ID: <CAK7LNATj8EP_vSDSbknQsYp5V=7EfdQzTQbobhNjXS5Y8YOjqg@mail.gmail.com>
-Subject: Re: [GIT PULL] arm64: dts: uniphier: UniPhier DT updates for v5.6
-To: Olof Johansson <olof@lixom.net>
+Content-Disposition: inline
+In-Reply-To: <BYAPR02MB5992FC37E0D2AD9946414417B80F0@BYAPR02MB5992.namprd02.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_194440_270371_7172548F 
-X-CRM114-Status: GOOD (  18.86  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200123_220343_824764_4A20744A 
+X-CRM114-Status: GOOD (  33.88  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.80 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [210.131.2.80 listed in wl.mailspike.net]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,64 +75,205 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Arnd Bergmann <arnd@arndb.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: "keescook@chromium.org" <keescook@chromium.org>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ "matt@codeblueprint.co.uk" <matt@codeblueprint.co.uk>,
+ "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rajan Vaja <RAJANV@xilinx.com>, Michal Simek <michals@xilinx.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "hkallweit1@gmail.com" <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olof,
+On Thu, Jan 23, 2020 at 11:47:57PM +0000, Jolly Shah wrote:
+> Hi Greg,
+> 
+> Thanks for the review.
+> 
+> > -----Original Message-----
+> > From: Greg KH <gregkh@linuxfoundation.org>
+> > Sent: Tuesday, January 14, 2020 6:53 AM
+> > To: Jolly Shah <JOLLYS@xilinx.com>
+> > Cc: ard.biesheuvel@linaro.org; mingo@kernel.org; matt@codeblueprint.co.uk;
+> > sudeep.holla@arm.com; hkallweit1@gmail.com; keescook@chromium.org;
+> > dmitry.torokhov@gmail.com; Michal Simek <michals@xilinx.com>; Rajan Vaja
+> > <RAJANV@xilinx.com>; linux-arm-kernel@lists.infradead.org; linux-
+> > kernel@vger.kernel.org; Rajan Vaja <RAJANV@xilinx.com>; Jolly Shah
+> > <JOLLYS@xilinx.com>
+> > Subject: Re: [PATCH v2 1/4] firmware: xilinx: Add sysfs interface
+> > 
+> > On Wed, Jan 08, 2020 at 03:54:20PM -0800, Jolly Shah wrote:
+> > > From: Rajan Vaja <rajan.vaja@xilinx.com>
+> > >
+> > > Add Firmware-ggs sysfs interface which provides read/write
+> > > interface to global storage registers.
+> > >
+> > > Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
+> > > Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+> > > Signed-off-by: Jolly Shah <jollys@xilinx.com>
+> > > ---
+> > > Changes in v2:
+> > >  - Updated Linux kernel version in documentation.
+> > >  - Used DEVICE_ATTR_* and ATTRIBUTE_GROUPS macros.
+> > >  - Free Kobject structure in case of error.
+> > >  - Resolved smatch errors.
+> > >  - Updated Signed-off-by sequence.
+> > > ---
+> > >  Documentation/ABI/stable/sysfs-firmware-zynqmp |  50 +++++
+> > >  drivers/firmware/xilinx/Makefile               |   2 +-
+> > >  drivers/firmware/xilinx/zynqmp-ggs.c           | 284
+> > +++++++++++++++++++++++++
+> > >  drivers/firmware/xilinx/zynqmp.c               |  32 +++
+> > >  include/linux/firmware/xlnx-zynqmp.h           |  10 +
+> > >  5 files changed, 377 insertions(+), 1 deletion(-)
+> > >  create mode 100644 Documentation/ABI/stable/sysfs-firmware-zynqmp
+> > >  create mode 100644 drivers/firmware/xilinx/zynqmp-ggs.c
+> > >
+> > > diff --git a/Documentation/ABI/stable/sysfs-firmware-zynqmp
+> > b/Documentation/ABI/stable/sysfs-firmware-zynqmp
+> > > new file mode 100644
+> > > index 0000000..cffa2fc
+> > > --- /dev/null
+> > > +++ b/Documentation/ABI/stable/sysfs-firmware-zynqmp
+> > > @@ -0,0 +1,50 @@
+> > > +What:		/sys/firmware/zynqmp/ggs*
+> > 
+> > Why are these attributes just not hanging off of the platform device for
+> > the firmware controller?  Why do you need a new subdir under "firmware"?
+> 
+> Firmware driver was changed later to be platform driver but these interfaces were defined 
+> earlier and are in use.
 
+Defined and in use where?  Not in the upstream kernel tree, right?  Or
+am I missing them somewhere else?
 
-On Fri, Jan 24, 2020 at 12:22 PM Olof Johansson <olof@lixom.net> wrote:
->
-> Hi,
->
-> On Thu, Jan 23, 2020 at 6:49 PM Masahiro Yamada
-> <yamada.masahiro@socionext.com> wrote:
-> >
-> > Hi Arnd and Olof,
-> >
-> > I know it is already -rc7, but
-> > it would be nice if you could pull this for the next MW.
-> >
-> > Thanks
-> >
-> > Masahiro
->
-> If you don't email us at soc@kernel.org, we're unlikely to see your
-> pull requests. :(
+> > > +	ret = kstrtol(tok, 16, &value);
+> > > +	if (ret) {
+> > > +		ret = -EFAULT;
+> > > +		goto err;
+> > > +	}
+> > > +
+> > > +	ret = eemi_ops->ioctl(0, read_ioctl, reg, 0, ret_payload);
+> > 
+> > This feels "tricky", if you tie this to the device you have your driver
+> > bound to, will this make it easier instead of having to go through the
+> > ioctl callback?
+> > 
+> 
+> GGS(general global storage) registers are in PMU space and linux doesn't have access to it 
+> Hence ioctl is used.
 
-Oh, I just remembered this!
+Why not just a "real" call to the driver to make this type of reading?
+You don't have ioctls within the kernel for other drivers to call,
+that's not needed at all.
 
->
-> In this case that's what happened. Please do so -- that way it gets
-> caught in the patchtracker. I sort the patches to that alias in a
-> special folder to make sure I see them too, since I get too much in my
-> inbox and it easily gets lost.
->
-> Mind resending the two pull requests to that alias?
+> > > +int zynqmp_pm_ggs_init(struct kobject *parent_kobj)
+> > > +{
+> > > +	return sysfs_create_group(parent_kobj, zynqmp_ggs_groups[0]);
+> > 
+> > You might be racing userspace here and loosing :(
+> 
+> Prob is called before user space is notified about sysfs so racing shouldn't happen.
 
-Sure. Done.
+"shouldn't"?  How do you know this?
 
+> Or you are referring to some other race condition?
 
+Your kobject was created, and notified userspace that it was present and
+then sometime after that you add more attributes which userspace has no
+idea are there.
 
-> That way you get
-> the notification email when it's merged -- if I bounce it here I don't
-> think you'll get it.
->
->
-> Thanks,
->
-> -Olof
+If you use the proper device model interfaces, none of these problems
+would be there.
 
+> 
+> > 
+> > > +}
+> > > diff --git a/drivers/firmware/xilinx/zynqmp.c
+> > b/drivers/firmware/xilinx/zynqmp.c
+> > > index 75bdfaa..4c1117d 100644
+> > > --- a/drivers/firmware/xilinx/zynqmp.c
+> > > +++ b/drivers/firmware/xilinx/zynqmp.c
+> > > @@ -473,6 +473,10 @@ static inline int zynqmp_is_valid_ioctl(u32 ioctl_id)
+> > >  	case IOCTL_GET_PLL_FRAC_MODE:
+> > >  	case IOCTL_SET_PLL_FRAC_DATA:
+> > >  	case IOCTL_GET_PLL_FRAC_DATA:
+> > > +	case IOCTL_WRITE_GGS:
+> > > +	case IOCTL_READ_GGS:
+> > > +	case IOCTL_WRITE_PGGS:
+> > > +	case IOCTL_READ_PGGS:
+> > 
+> > Huh???
+> 
+> Sorry not sure about your concern here. These registers are in PMU space and hence
+> Ioctl is needed to let linux access them.
 
+userspace or kernelspace?
 
--- 
-Best Regards
-Masahiro Yamada
+You seem to be mixing them both here.
+
+> 
+> > 
+> > >  		return 1;
+> > >  	default:
+> > >  		return 0;
+> > > @@ -704,6 +708,28 @@ const struct zynqmp_eemi_ops
+> > *zynqmp_pm_get_eemi_ops(void)
+> > >  }
+> > >  EXPORT_SYMBOL_GPL(zynqmp_pm_get_eemi_ops);
+> > >
+> > > +static int zynqmp_pm_sysfs_init(void)
+> > > +{
+> > > +	struct kobject *zynqmp_kobj;
+> > > +	int ret;
+> > > +
+> > > +	zynqmp_kobj = kobject_create_and_add("zynqmp", firmware_kobj);
+> > > +	if (!zynqmp_kobj) {
+> > > +		pr_err("zynqmp: Firmware kobj add failed.\n");
+> > > +		return -ENOMEM;
+> > > +	}
+> > > +
+> > > +	ret = zynqmp_pm_ggs_init(zynqmp_kobj);
+> > > +	if (ret) {
+> > > +		kobject_put(zynqmp_kobj);
+> > > +		pr_err("%s() GGS init fail with error %d\n",
+> > > +		       __func__, ret);
+> > > +		goto err;
+> > > +	}
+> > > +err:
+> > > +	return ret;
+> > > +}
+> > > +
+> > >  static int zynqmp_firmware_probe(struct platform_device *pdev)
+> > >  {
+> > >  	struct device *dev = &pdev->dev;
+> > > @@ -751,6 +777,12 @@ static int zynqmp_firmware_probe(struct
+> > platform_device *pdev)
+> > >  	/* Assign eemi_ops_table */
+> > >  	eemi_ops_tbl = &eemi_ops;
+> > >
+> > > +	ret = zynqmp_pm_sysfs_init();
+> > 
+> > See, you have a platform device, hang the attributes off of that instead
+> > of making a kobject and detatching yourself from the global device tree!
+> > 
+> > Please redo this, I think it will make it a lot simpler and more
+> > obvious.
+> 
+> Agree it will be simpler but to as firmware driver was changed to be platform driver,
+> to keep paths same, we used sysfs.
+
+Keep them same from what?  Use the platform device as that is what it is
+there for, do not go create new apis when they are not needed at all.
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
