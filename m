@@ -2,56 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DF6C148639
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 14:34:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8695814863C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 14:34:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=z8QxLjGEHr5H8nljG8YLA2LOe0kt13a1KvFjmD0GVV0=; b=ZXG
-	iHHm8gANSi7KvcnWLEHaD0pGSmZDi/1CH6qjlY8ZFGqwzwJROop3J2G4m89VAZ6CWIX+Wa0RN9Fbd
-	eAl9vxsjn5M/k0Jebt2kB+Ow3X/IyUNlj46GusDpLLPMO7kDG/5EXP2c+MoUjzIsAqD9uF3Ijxapf
-	miBVta0q7Yp97dyTrRjdGzzgwQ/HxHqPU8DpH5lWeIF9Er5TsepBujagghcctEHUZ7UhqJOPhIE8a
-	WKa09aqUvtq2OjGAc9Of2I0vl+I9cKLQZDgSeiG1Q7h65R/rldt3kR0HMh0DrEYlqN9rEhBSud9zi
-	tGI6PCcz5VE+dHxzya9z9VB22QSR2/A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4EMPs+5TZVWugRKwUEypmZLRj4lEy5C7/hEcGCCjdSk=; b=LqNHuSmfMALaVR1sSaJxuecEP
+	GjxwmoaLuZnKesL+f0qAaxAOcQ5HGF6sORBR2vGVXF82Zs9JLhkUQjjFraPS1piFymSe/1rE/k80v
+	U1PU64GLP3S4G6krrEfqoCPHCIrGkUTiuzS+ZaJYQvGLnL5RqzHWWxuuyOtbNMYseadK72510P+YN
+	JlMNvvG+1lBUr5N60cqNypjylaqtqbUjM8geVMUytHKkfcBpX1bwlzK7ynKuKp2YGraTOK2R6+cLR
+	K1FNZrkiDk/Bq2ThfFZgR3pcQQ9tYNVsRKeRNU2FFxmKLg6fCmZkT2v6TuTKfSF58sOr2iTI1fQch
+	ryGlDGL4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuz5t-0000OU-7i; Fri, 24 Jan 2020 13:33:53 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+	id 1iuz6s-0000gz-Fq; Fri, 24 Jan 2020 13:34:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuz5k-0000NR-Ed
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 13:33:46 +0000
-Received: from ramsan ([84.195.182.253]) by laurent.telenet-ops.be with bizsmtp
- id uDZX210025USYZQ01DZX3g; Fri, 24 Jan 2020 14:33:33 +0100
-Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1iuz5X-0007fb-2B; Fri, 24 Jan 2020 14:33:31 +0100
-Received: from geert by rox.of.borg with local (Exim 4.90_1)
- (envelope-from <geert@linux-m68k.org>)
- id 1iuz5X-0004DK-0M; Fri, 24 Jan 2020 14:33:31 +0100
-From: Geert Uytterhoeven <geert+renesas@glider.be>
-To: Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH] arm64: dts: renesas: rcar-gen3: Add CCREE nodes
-Date: Fri, 24 Jan 2020 14:33:30 +0100
-Message-Id: <20200124133330.16121-1-geert+renesas@glider.be>
-X-Mailer: git-send-email 2.17.1
+ id 1iuz6c-0000gR-FB
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 13:34:39 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 45D6A2087E;
+ Fri, 24 Jan 2020 13:34:37 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1579872877;
+ bh=7L3LQxwcMn0sL99Kg9Iw/6y7YYRrD0myNYQr201fsnk=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=0C+Q1CJKCYngonwYHsFw0cvUJaGwCYR31GdsPpHgLdcp/LB8OLUFNNDmAHxHHGpIS
+ SWhInojOa2FB8a+OAO/a+YkLO9er7YMVTdy13fyo6MxGzveKs+gGtIqazSMn7xXyHh
+ jGcMTIIkXJyvx5FXhwLAP8xmJPXwPSNy6dpASKT4=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1iuz6Z-001Bnc-HH; Fri, 24 Jan 2020 13:34:35 +0000
+MIME-Version: 1.0
+Date: Fri, 24 Jan 2020 13:34:35 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Quentin Perret <qperret@google.com>
+Subject: Re: [PATCH v2 0/1] arm/arm64: add support for folded p4d page tables
+In-Reply-To: <20200124122053.GA150292@google.com>
+References: <20200113111323.10463-1-rppt@kernel.org>
+ <20200122185017.GA17321@willie-the-truck>
+ <cb6357040bd5d9fa061a8d3bd96fb571@kernel.org>
+ <20200124122053.GA150292@google.com>
+Message-ID: <af9e7292f723f808406510f437d5b0eb@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: qperret@google.com, will@kernel.org, rppt@kernel.org,
+ anshuman.khandual@arm.com, catalin.marinas@arm.com, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ linux-arm-kernel@lists.infradead.org, rppt@linux.ibm.com,
+ kvmarm@lists.cs.columbia.edu, kernel-team@android.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_053344_649598_91F8CA47 
-X-CRM114-Status: UNSURE (   8.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200124_053438_551098_FC2E7A4F 
+X-CRM114-Status: GOOD (  15.21  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a02:1800:110:4:0:0:f00:19 listed in] [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,143 +94,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org, Gilad Ben-Yossef <gilad@benyossef.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: kernel-team@android.com, Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, linux-mm@kvack.org,
+ linux-arm-kernel@lists.infradead.org, Mike Rapoport <rppt@linux.ibm.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Mike Rapoport <rppt@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device nodes for the CryptoCell instances on the various Renesas
-R-Car Gen3 SoCs that do not have support for them yet in their device
-trees (M3-W, M3-W+, M3-N, E3, D3).
+Hi Quentin,
 
-The R-Car H3 device tree already supports this device.
+On 2020-01-24 12:20, Quentin Perret wrote:
+> Hi Marc,
+> 
+> On Wednesday 22 Jan 2020 at 18:56:38 (+0000), Marc Zyngier wrote:
+>> But maybe this is the reason we've all been waiting for, for which we
+>> sacrifice 32bit KVM host on the altar of progress, and finally move 
+>> along.
+>> 
+>> Will and I are the only known users, and that'd be a good incentive to
+>> experience some if this 64bit goodness... ;-)
 
-Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
----
-Tested on:
-  - Salvator-X with R-Car M3-W ES1.0,
-  - Salvator-XS with R-Car M3-W+ ES3.0,
-  - Salvator-XS with R-Car M3-N ES1.0,
-  - Ebisu-4D with R-Car E3 ES1.0,
-  - Draak with R-Car D3 ES1.0.
+[future work for which 32bit support gets in the way]
 
-$ grep selftest /proc/crypto | sort | uniq -c
-    116 selftest     : passed
----
- arch/arm64/boot/dts/renesas/r8a77960.dtsi | 9 +++++++++
- arch/arm64/boot/dts/renesas/r8a77961.dtsi | 9 +++++++++
- arch/arm64/boot/dts/renesas/r8a77965.dtsi | 9 +++++++++
- arch/arm64/boot/dts/renesas/r8a77990.dtsi | 9 +++++++++
- arch/arm64/boot/dts/renesas/r8a77995.dtsi | 9 +++++++++
- 5 files changed, 45 insertions(+)
+> This would a be perfectly reasonable and acceptable overhead if this 
+> had
+> to be done to keep 32bit KVM host support for a real user community, 
+> but
+> since it doesn't seem to exist (?), fighting with the above options
+> feels like a lot of wasted efforts. (Note: I am not implying that Will
+> and you are not real persons, but well, you see what I mean ;-)).
 
-diff --git a/arch/arm64/boot/dts/renesas/r8a77960.dtsi b/arch/arm64/boot/dts/renesas/r8a77960.dtsi
-index 988b83fe62d485eb..ea03b91bdf9d9cbc 100644
---- a/arch/arm64/boot/dts/renesas/r8a77960.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a77960.dtsi
-@@ -862,6 +862,15 @@
- 			status = "disabled";
- 		};
- 
-+		arm_cc630p: crypto@e6601000 {
-+			compatible = "arm,cryptocell-630p-ree";
-+			interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
-+			reg = <0x0 0xe6601000 0 0x1000>;
-+			clocks = <&cpg CPG_MOD 229>;
-+			resets = <&cpg 229>;
-+			power-domains = <&sysc R8A7796_PD_ALWAYS_ON>;
-+		};
-+
- 		dmac0: dma-controller@e6700000 {
- 			compatible = "renesas,dmac-r8a7796",
- 				     "renesas,rcar-dmac";
-diff --git a/arch/arm64/boot/dts/renesas/r8a77961.dtsi b/arch/arm64/boot/dts/renesas/r8a77961.dtsi
-index be3824bda632233e..b6915319a61c8bf0 100644
---- a/arch/arm64/boot/dts/renesas/r8a77961.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a77961.dtsi
-@@ -629,6 +629,15 @@
- 			/* placeholder */
- 		};
- 
-+		arm_cc630p: crypto@e6601000 {
-+			compatible = "arm,cryptocell-630p-ree";
-+			interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
-+			reg = <0x0 0xe6601000 0 0x1000>;
-+			clocks = <&cpg CPG_MOD 229>;
-+			resets = <&cpg 229>;
-+			power-domains = <&sysc R8A77961_PD_ALWAYS_ON>;
-+		};
-+
- 		dmac0: dma-controller@e6700000 {
- 			compatible = "renesas,dmac-r8a77961",
- 				     "renesas,rcar-dmac";
-diff --git a/arch/arm64/boot/dts/renesas/r8a77965.dtsi b/arch/arm64/boot/dts/renesas/r8a77965.dtsi
-index 7d2b283b7f556b1d..1a20ebe9ea5be5da 100644
---- a/arch/arm64/boot/dts/renesas/r8a77965.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a77965.dtsi
-@@ -717,6 +717,15 @@
- 			status = "disabled";
- 		};
- 
-+		arm_cc630p: crypto@e6601000 {
-+			compatible = "arm,cryptocell-630p-ree";
-+			interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
-+			reg = <0x0 0xe6601000 0 0x1000>;
-+			clocks = <&cpg CPG_MOD 229>;
-+			resets = <&cpg 229>;
-+			power-domains = <&sysc R8A77965_PD_ALWAYS_ON>;
-+		};
-+
- 		dmac0: dma-controller@e6700000 {
- 			compatible = "renesas,dmac-r8a77965",
- 				     "renesas,rcar-dmac";
-diff --git a/arch/arm64/boot/dts/renesas/r8a77990.dtsi b/arch/arm64/boot/dts/renesas/r8a77990.dtsi
-index 80e8ef3007c5b646..c05ee98043b2c7a5 100644
---- a/arch/arm64/boot/dts/renesas/r8a77990.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a77990.dtsi
-@@ -667,6 +667,15 @@
- 			dma-channels = <2>;
- 		};
- 
-+		arm_cc630p: crypto@e6601000 {
-+			compatible = "arm,cryptocell-630p-ree";
-+			interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
-+			reg = <0x0 0xe6601000 0 0x1000>;
-+			clocks = <&cpg CPG_MOD 229>;
-+			resets = <&cpg 229>;
-+			power-domains = <&sysc R8A77990_PD_ALWAYS_ON>;
-+		};
-+
- 		dmac0: dma-controller@e6700000 {
- 			compatible = "renesas,dmac-r8a77990",
- 				     "renesas,rcar-dmac";
-diff --git a/arch/arm64/boot/dts/renesas/r8a77995.dtsi b/arch/arm64/boot/dts/renesas/r8a77995.dtsi
-index 2b5c39bd86856579..7d3102dccac96e42 100644
---- a/arch/arm64/boot/dts/renesas/r8a77995.dtsi
-+++ b/arch/arm64/boot/dts/renesas/r8a77995.dtsi
-@@ -389,6 +389,15 @@
- 			dma-channels = <2>;
- 		};
- 
-+		arm_cc630p: crypto@e6601000 {
-+			compatible = "arm,cryptocell-630p-ree";
-+			interrupts = <GIC_SPI 71 IRQ_TYPE_LEVEL_HIGH>;
-+			reg = <0x0 0xe6601000 0 0x1000>;
-+			clocks = <&cpg CPG_MOD 229>;
-+			resets = <&cpg 229>;
-+			power-domains = <&sysc R8A77995_PD_ALWAYS_ON>;
-+		};
-+
- 		canfd: can@e66c0000 {
- 			compatible = "renesas,r8a77995-canfd",
- 				     "renesas,rcar-gen3-canfd";
+I don't disagree at all. To be honest, I've been on the cusp of getting
+rid of it for a while, for multiple reasons:
+
+- It has no users (as you noticed)
+- It is hardly tested (a consequence of the above)
+- It isn't feature complete (no debug, no PMU)
+- It doesn't follow any of the evolution of the architecture (a more
+   generic feature of the 32bit port, probably because people run their
+   64bit-capable cores in 64bit mode)
+- It is becoming a mess of empty stubs
+
+The maintenance aspect hasn't been a real problem so far. Even the NV
+support is only about 200 lines of stubs. But what you have in mind is
+going to be much more invasive, and I wouldn't want an unused feature to
+get in the way.
+
+What I may end-up doing is to send a RFC series to remove the 32bit host
+support from the tree during in the 5.6 cycle, targeting 5.7. If someone
+shouts loudly during that time frame, we keep it and you'll have to work
+around it. If nobody cares, then dropping it is the right thing to do.
+
+Would that be OK with you?
+
+         M.
 -- 
-2.17.1
-
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
