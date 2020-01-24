@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90A7D148842
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:28:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1442B148845
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:28:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bX/NOuh/ObB5PY0hFMFqIMkg0ROB+lYKx0yecA14PtA=; b=NFUwelGLUlj7sS
-	FuJ9HIsJ7nrG9L5cToXjKUuxXOzaHnBRAhLqDXXTioqtn2rLywBKBWu1zovhnCzEo2CKb9OhUQO3O
-	ytop1+LW1v9Wjo+ymTQQ9acqEl1xmRnbEXP6R4Y2wZl+uLryob1//8x0yUr+vHi5YrDXK/t2cqRKW
-	9WsGDxj2BqywkHy7piKTeiZwdBgCmsHxxBYbCpD/MEjqB5rOsJ+RbYUxNbl7uCD7F7EkqiIClmWc9
-	oD9cvaT5HSx+s998RN5AEC6C5+O3pR1c4yiMPQiiMxLXEctyFWuYlU2M6b8eqblgv+zeFoqsxW4ai
-	12jUlsoln3ndMl8lJJig==;
+	List-Owner; bh=dJVeHsw7HppmXYMKfeVcVdTGkeYamJRrTRW+/4jebaA=; b=uXHteta29wsMA4
+	+aErJzHPiRw2I+/UnZf666KjqvOAsJnZMIxvw7BHNcIbdbgFlIph5uM4FUKwpIEgbO7PBbP8GwNxE
+	zM/7j0AgpEjuopLEGLwnZDUFBsu/eIBl4AobNIEuSyH3E1RX3eXgEUxzjzWhn6+VfpEeHe/AfDQ0j
+	vktehQ/NEgBZcEtC1rh11+qsp6nF4JymXAZgACE/7jSkGnHIagUAKCa7qU/VNNmP/ZHrfpUa9dXrq
+	0q+UKVJlk9bvhWhCHtXpt5IuVzUVTqgipfN3mdL1Tq4FFMbDsFF43e5zOhRoZYJ8/tmLIJx6i2roD
+	kmTNdfczkecEOldiR0uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuzwI-0003Gp-3S; Fri, 24 Jan 2020 14:28:02 +0000
+	id 1iuzwY-0003Y3-8L; Fri, 24 Jan 2020 14:28:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuzov-0003HD-Ce
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:20:26 +0000
+ id 1iuzoy-0003Jx-Uw
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:20:30 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DFFD024682;
- Fri, 24 Jan 2020 14:20:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9E61A21569;
+ Fri, 24 Jan 2020 14:20:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579875625;
- bh=Rw6tVfC2c6QLdOPEUQ6KBAa5nQZ0ZZvMUWY3ziIiaFo=;
+ s=default; t=1579875628;
+ bh=7yves8TjxduWUO08r7fbAwx8OgmvxDGlAZ6NoGUW03I=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lWohjO3Cb/KydxuMy3cmZPxOMFTeC04Nnr7YAxFdHeTSx3wgQ5LkHcztgfvkCtIiv
- NdUPS3NWFTquMzdscfuNVUcEWh5LX9r0THnP5B5RCHLFoB9h2FsWFd1y/RD1TgibCv
- JspS53O/zXK8tLnGJqd5AtZog9fqxTCvInBx7X7M=
+ b=W3YFs65x/FKi9nMuu+EWX1WYHhVuc5tIrZ7GoIbO5oZcr+dQQKlBSpOJrtEkOHaL/
+ 5VJn+etVDx3C2WNM0a7V9TFTRmwNjdLM2aKXVJe1gMAv0PdZT0UQ5FTePx34L5GwCO
+ 56sh5w6qiplnV5TVoQuB4CI6jpCB7OL05yvPQpPo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 10/56] ARM: dts: imx6q-dhcom: Fix SGTL5000 VDDIO
- regulator connection
-Date: Fri, 24 Jan 2020 09:19:26 -0500
-Message-Id: <20200124142012.29752-10-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 13/56] clk: sunxi-ng: h6-r: Fix AR100/R_APB2
+ parent order
+Date: Fri, 24 Jan 2020 09:19:29 -0500
+Message-Id: <20200124142012.29752-13-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200124142012.29752-1-sashal@kernel.org>
 References: <20200124142012.29752-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_062025_466204_85A25766 
-X-CRM114-Status: GOOD (  12.25  )
+X-CRM114-CacheID: sfid-20200124_062029_036258_BCDFBDBE 
+X-CRM114-Status: GOOD (  12.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,47 +80,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Sasha Levin <sashal@kernel.org>,
- devicetree@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
- Ludwig Zenz <lzenz@dh-electronics.com>, NXP Linux Team <linux-imx@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-clk@vger.kernel.org,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
+ Samuel Holland <samuel@sholland.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Marek Vasut <marex@denx.de>
+From: Samuel Holland <samuel@sholland.org>
 
-[ Upstream commit fe6a6689d1815b63528796886853890d8ee7f021 ]
+[ Upstream commit 0c545240aebc2ccb8f661dc54283a14d64659804 ]
 
-The SGTL5000 VDDIO is connected to the PMIC SW2 output, not to
-a fixed 3V3 rail. Describe this correctly in the DT.
+According to the BSP source code, both the AR100 and R_APB2 clocks have
+PLL_PERIPH0 as mux index 3, not 2 as it was on previous chips. The pre-
+divider used for PLL_PERIPH0 should be changed to index 3 to match.
 
-Fixes: 52c7a088badd ("ARM: dts: imx6q: Add support for the DHCOM iMX6 SoM and PDK2")
-Signed-off-by: Marek Vasut <marex@denx.de>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: Ludwig Zenz <lzenz@dh-electronics.com>
-Cc: NXP Linux Team <linux-imx@nxp.com>
-To: linux-arm-kernel@lists.infradead.org
-Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+This was verified by running a rough benchmark on the AR100 with various
+clock settings:
+
+        | mux | pre-divider | iterations/second | clock source |
+        |=====|=============|===================|==============|
+        |   0 |           0 |  19033   (stable) |       osc24M |
+        |   2 |           5 |  11466 (unstable) |  iosc/osc16M |
+        |   2 |          17 |  11422 (unstable) |  iosc/osc16M |
+        |   3 |           5 |  85338   (stable) |  pll-periph0 |
+        |   3 |          17 |  27167   (stable) |  pll-periph0 |
+
+The relative performance numbers all match up (with pll-periph0 running
+at its default 600MHz).
+
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/imx6q-dhcom-pdk2.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx6q-dhcom-pdk2.dts b/arch/arm/boot/dts/imx6q-dhcom-pdk2.dts
-index 9c61e3be2d9a3..1c46df6827f50 100644
---- a/arch/arm/boot/dts/imx6q-dhcom-pdk2.dts
-+++ b/arch/arm/boot/dts/imx6q-dhcom-pdk2.dts
-@@ -55,7 +55,7 @@
- 		#sound-dai-cells = <0>;
- 		clocks = <&clk_ext_audio_codec>;
- 		VDDA-supply = <&reg_3p3v>;
--		VDDIO-supply = <&reg_3p3v>;
-+		VDDIO-supply = <&sw2_reg>;
- 	};
+diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
+index 27554eaf69298..3f78035ff85af 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
++++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
+@@ -23,9 +23,9 @@
+  */
+ 
+ static const char * const ar100_r_apb2_parents[] = { "osc24M", "osc32k",
+-					     "pll-periph0", "iosc" };
++						     "iosc", "pll-periph0" };
+ static const struct ccu_mux_var_prediv ar100_r_apb2_predivs[] = {
+-	{ .index = 2, .shift = 0, .width = 5 },
++	{ .index = 3, .shift = 0, .width = 5 },
  };
  
+ static struct ccu_div ar100_clk = {
 -- 
 2.20.1
 
