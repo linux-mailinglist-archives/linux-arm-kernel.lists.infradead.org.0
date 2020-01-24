@@ -2,84 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13D1D1485A7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 14:10:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 319B71485AB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 14:12:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UNtVHo1tWElFe/skyITjtJd7XCZvg4+9CqDdVGUAXtA=; b=ALhfqFSbyMmBYT
-	NdiVIfUc+FSXMTRkvzEuB2B/wq6VUQO9VhzZhN5S0QCOdVSb4bSPxMpO+sxyaYCP4qVD5p31qkwY7
-	Lo3IA2EOImO708Xqy/o7eEz9/n8yoP/pI2/4skSs2haBdUj+OAAuGpSe8+gsS7itITTl3S15ziqVI
-	MV2HrXfCgLJz94rCkIS+hH7rtCYLtyGWCl5Su01S0m+zv1xBhnRvDPDy5ylXR/stSpfK3xZBesF98
-	FW+0X3E+KxLzlJSGUmRV3sK2PWtLmVBSuadccCNrNqaLuFb+6jYGX0+kAeOQijXU4TtGQKXn0SEI8
-	8t3OPRFmzyXWe6WPg+rg==;
+	List-Owner; bh=n/2VXF3fKSMysTXuyG9QEHT74QcRwNs1GscYatRkRzA=; b=DJB3OWWzIGQN3F
+	6FVUAnfYpOlg6Hel7bK2FYwMHkndHhIHoVWzGiTh81ZheleZ7iwMxfEvY99D+1ubhgrJ7EeBayL/w
+	XzF3PSHZjsC+uIkuI81kRD9nwPBwKQp5zWQNFYCPKsD9Mg9pp1xhKFwqC5qRUKNCB3LkAfYN3jKA+
+	MuTce+zLDhD66ddPfqZGoS9WXDDD7sYE/62thWUwmAQMrSutO3WyKN+lCgVUTihQqprFac3gbV94n
+	7VvKef+PtgQB9YeTvYnggthQpTGmk/aisvOV6gHFeaQyiSxSLiqJ2M5eDAPw1BQDRzj6Xt4jyPX2Q
+	iwB+Wb3oGoZrUWv5R/FA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuyjg-000568-C2; Fri, 24 Jan 2020 13:10:56 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuyjR-00053k-75
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 13:10:43 +0000
-Received: by mail-ua1-x943.google.com with SMTP id z24so751084uam.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 24 Jan 2020 05:10:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tgn2//ZSCDORj0Cvv0XkC07XnrcMfFKutZKQkSYkRvE=;
- b=P1ptjq0UUFrZNorymbhq7kV35sq5owXkbsBz2Z/uV8WPXbLJ5uQ3B2ViXLKowV1t4n
- OGYAGWrDff83Df/xTZf6Xqz3amQPxOoz7twXZ1HrfcrTe1Hl3DddpV09/DCq0+zbGT9D
- +OR/KWLfC9esWVC9q3c30jXezsCPLhxQlXG9FrCNNZEmNGDeKmlsFjjoxRlSi+T6NHgN
- PbazLUQyVyQqaQ+h7um1L7ztpGIO/Y7jLDI1VuxnTSl01wRpC5taw+kkIGuyPHzFbBnY
- mBJbKacELjl+Nh1DBnOdg/B2VVARdL1SLJSNfdkTWrbkDj2vwBV1aeO3NgMJI49WPKfc
- hGiQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tgn2//ZSCDORj0Cvv0XkC07XnrcMfFKutZKQkSYkRvE=;
- b=gKmwyZ88g23SHacp9VGHGdrXxf70J6/Kni9FVzvDonJopSodg5fznNn13fZKFYO3ud
- uWRzei167YI7ZlQEW3yYBn5vkNiOCKgVIPaNXoxDxkaKGQxjIpzumYY59MlL3mtqS6V9
- MXC8/l2Et67oTPH9obyi75/MKdzI8ydtEUo9y+jzzLIQGpuW3feXk9d4AWUYRv7uwC0O
- SJl/8Us59TILcEFoeYl1jK2wB5dovJtXX8WIYdk1nBtnOwT2NCMdwPjFLFgKRW1DFmVW
- wbUdQqb7Z++QE0NkOeyK4sZHsWifWFSTQO7cSGvUvpO2IUjQbMMb4xVnMx+OqvCTMrex
- HwVg==
-X-Gm-Message-State: APjAAAVZJJBNMkgDcI7mdZgtXrG9bbiqpzTC5gCe2fZcHY9x7elBolJ5
- /xxKiaU1t1M8omuvFOMlzSDi4yEwh5Wgs3h8X+SUtQ==
-X-Google-Smtp-Source: APXvYqwVP13ejaA0SZhnfERB+1opa8r8kAAKrFN61gAqwPEvErTSb83VmAPiMo2c8U3Uv0fsr6pZWSU0PpeB8z5BJt4=
-X-Received: by 2002:ab0:740e:: with SMTP id r14mr1740357uap.104.1579871439759; 
- Fri, 24 Jan 2020 05:10:39 -0800 (PST)
+	id 1iuylL-0005TH-Si; Fri, 24 Jan 2020 13:12:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iuyl8-0005SP-Iq
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 13:12:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A4D731FB;
+ Fri, 24 Jan 2020 05:12:25 -0800 (PST)
+Received: from localhost (e108754-lin.cambridge.arm.com [10.1.199.79])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 466C13F68E;
+ Fri, 24 Jan 2020 05:12:25 -0800 (PST)
+Date: Fri, 24 Jan 2020 13:12:23 +0000
+From: Ionela Voinescu <ionela.voinescu@arm.com>
+To: Lukasz Luba <lukasz.luba@arm.com>
+Subject: Re: [PATCH v2 6/6] arm64: use activity monitors for frequency
+ invariance
+Message-ID: <20200124131134.GA15164@arm.com>
+References: <20191218182607.21607-1-ionela.voinescu@arm.com>
+ <20191218182607.21607-7-ionela.voinescu@arm.com>
+ <0ca05a2d-918b-0c70-6dc6-ef1f5f58f388@arm.com>
+ <20200123170716.GA28719@arm.com>
+ <bddfdb83-c6cb-a809-8781-80e1117a2d6c@arm.com>
 MIME-Version: 1.0
-References: <20200110134823.14882-1-ludovic.barre@st.com>
- <20200110134823.14882-7-ludovic.barre@st.com>
-In-Reply-To: <20200110134823.14882-7-ludovic.barre@st.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 24 Jan 2020 14:10:03 +0100
-Message-ID: <CAPDyKFq25C6W3df5LRsYAcV71rM0YYx9xd=isURKVkbCiN+fBw@mail.gmail.com>
-Subject: Re: [PATCH 6/9] mmc: mmci: sdmmc: add execute tuning with delay block
-To: Ludovic Barre <ludovic.barre@st.com>
+Content-Disposition: inline
+In-Reply-To: <bddfdb83-c6cb-a809-8781-80e1117a2d6c@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_051041_296470_5B6491AE 
-X-CRM114-Status: GOOD (  19.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200124_051226_716690_769D3B83 
+X-CRM114-Status: GOOD (  55.65  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,192 +67,314 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
+ peterz@infradead.org, catalin.marinas@arm.com, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
+ sudeep.holla@arm.com, will@kernel.org, dietmar.eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 10 Jan 2020 at 14:49, Ludovic Barre <ludovic.barre@st.com> wrote:
->
-> The hardware delay block is used to align the sampling clock on
-> the data received by SDMMC. It is mandatory for SDMMC to
-> support the SDR104 mode. The delay block is used to generate
-> an output clock which is dephased from the input clock.
-> The phase of the output clock must be programmed by the execute
-> tuning interface.
->
-> Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
-> ---
->  drivers/mmc/host/mmci_stm32_sdmmc.c | 147 ++++++++++++++++++++++++++++
->  1 file changed, 147 insertions(+)
->
-> diff --git a/drivers/mmc/host/mmci_stm32_sdmmc.c b/drivers/mmc/host/mmci_stm32_sdmmc.c
-> index df08f6662431..10059fa19f4a 100644
-> --- a/drivers/mmc/host/mmci_stm32_sdmmc.c
-> +++ b/drivers/mmc/host/mmci_stm32_sdmmc.c
-> @@ -3,10 +3,13 @@
->   * Copyright (C) STMicroelectronics 2018 - All Rights Reserved
->   * Author: Ludovic.barre@st.com for STMicroelectronics.
+Hi Lukasz,
+
+On Friday 24 Jan 2020 at 01:19:31 (+0000), Lukasz Luba wrote:
+> 
+> 
+> On 1/23/20 5:07 PM, Ionela Voinescu wrote:
+> > Hi Lukasz,
+> > 
+> > Thank you for taking a look over the patches.
+> > 
+> > On Thursday 23 Jan 2020 at 11:49:29 (+0000), Lukasz Luba wrote:
+> > > Hi Ionela,
+> > > 
+> > > Please find my few comments below.
+> > > 
+> > > On 12/18/19 6:26 PM, Ionela Voinescu wrote:
+> > > > The Frequency Invariance Engine (FIE) is providing a frequency
+> > > > scaling correction factor that helps achieve more accurate
+> > > > load-tracking.
+> > > > 
+> > > > So far, for arm and arm64 platforms, this scale factor has been
+> > > > obtained based on the ratio between the current frequency and the
+> > > > maximum supported frequency recorded by the cpufreq policy. The
+> > > > setting of this scale factor is triggered from cpufreq drivers by
+> > > > calling arch_set_freq_scale. The current frequency used in computation
+> > > > is the frequency requested by a governor, but it may not be the
+> > > > frequency that was implemented by the platform.
+> > > > 
+> > > > This correction factor can also be obtained using a core counter and a
+> > > > constant counter to get information on the performance (frequency based
+> > > > only) obtained in a period of time. This will more accurately reflect
+> > > > the actual current frequency of the CPU, compared with the alternative
+> > > > implementation that reflects the request of a performance level from
+> > > > the OS.
+> > > > 
+> > > > Therefore, implement arch_scale_freq_tick to use activity monitors, if
+> > > > present, for the computation of the frequency scale factor.
+> > > > 
+> > > > The use of AMU counters depends on:
+> > > >    - CONFIG_ARM64_AMU_EXTN - depents on the AMU extension being present
+> > > >    - CONFIG_CPU_FREQ - the current frequency obtained using counter
+> > > >      information is divided by the maximum frequency obtained from the
+> > > >      cpufreq policy.
+> > > > 
+> > > > While it is possible to have a combination of CPUs in the system with
+> > > > and without support for activity monitors, the use of counters for
+> > > > frequency invariance is only enabled for a CPU, if all related CPUs
+> > > > (CPUs in the same frequency domain) support and have enabled the core
+> > > 
+> > > This looks like an edge case scenario, for which we are designing the
+> > > whole machinery with workqueues. AFAIU we cannot run the code in
+> > > arch_set_freq_scale() and you want to be check all CPUs upfront.
+> > > 
+> > 
+> > Unfortunately, I don't believe it to be be an edge-case. Given that this
+> > is an optional feature, I do believe that people might skip on
+> > implementing it on some CPUs(LITTLEs) while keeping it for CPUs(bigs)
+> > where power and thermal mitigation is more probable to happen in firmware.
+> > This is the main reason to be conservative in the validation of CPUs and
+> > cpufreq policies.
+> > 
+> > In regards to arch_set_freq_scale, I want to be able to tell, when that
+> > function is called, if I should return a scale factor based on cpufreq
+> > for the current policy. If activity monitors are useable for the CPUs in
+> > the full policy, than I'm bailing out and leave the AMU FIE machinery
+> > set the scale factor. Unfortunately this works at policy granularity.
+> > 
+> > This could  be done in a nicer way by setting the scale factor per cpu
+> > and not for all CPUs in a policy in this arch_set_freq_scale function.
+> > But this would require some rewriting for the full frequency invariance
+> > support in drivers which we've talked about for a while but it was not
+> > the purpose of this patch set. But it would eliminate the policy
+> > verification I do with the second workqueue.
+> > 
+> > > Maybe you can just wait till all CPUs boot and then set the proper
+> > > flags and finish initialization. Something like:
+> > > per_cpu(s8, amu_feat) /* form the patch 1/6 */
+> > > OR
+> > > per_cpu(u8, amu_scale_freq) /* from this patch */
+> > > with maybe some values:
+> > > 0 - not checked yet
+> > > 1 - checked and present
+> > > -1 - checked and not available
+> > > -2 - checked but in conflict with others in the freq domain
+> > > -3..-k - other odd configurations
+> > > 
+> > > could potentially eliminate the need of workqueues.
+> > > 
+> > > Then, if we could trigger this from i.e. late_initcall, the CPUs
+> > > should be online and you can validate them.
+> > > 
+> > 
+> > I did initially give such a state machine a try but it proved to be
+> > quite messy. A big reason for this is that the activity monitors unit
+> > has multiple counters that can be used for different purposes.
+> > 
+> > The amu_feat per_cpu variable only flags that you have the AMU present
+> > for potential users (in this case FIE) to validate the counters they
+> > need for their respective usecase. For this reason I don't want to
+> > overload the meaning of amu_feat. For the same reason I'm not doing the
+> > validation of the counters in a generic way, but I'm tying it to the
+> > usecase for particular counters. For example, it would not matter if
+> > the instructions retired counter is not enabled from firmware for the
+> > usecase of FIE. For frequency invariance we only need the core and
+> > constant cycle counters and I'm making it the job of the user (arm64
+> > topology code) to do the checking.
+> > 
+> > Secondly, for amu_scale_freq I could have added such a state machine,
+> > but I did not think it was useful. The only thing it would change is
+> > that I would not have to use the cpu_amu_fie variable in the data
+> > structure that gets passed to the work functions. The only way I would
+> > eliminate the second workqueue was if I did not do a check of all CPUs
+> > in a policy, as described above, and rewrite frequency invariance to
+> > work at CPU granularity and not policy granularity. This would eliminate
+> > the dependency on cpufreq policy all-together, so it would be worth
+> > doing if only for this reason alone :).
+> > 
+> > But even in that case, it's probably not needed to have more than two
+> > states for amu_freq_scale.
+> > 
+> > What do you think?
+> 
+> I think currently we are the only users for this AMU and if there will
+> be another in the future, then we can start thinking about his proposed
+> changes. Let's cross that bridge when we come to it.
+> 
+> Regarding the code, in the arch/arm64/cpufeature.c you can already
+> read the cycle registers. All the CPUs are going through that code
+> during start. If you use this fact in the late_initcall() all CPUs
+> should be checked and you can just ask for cpufreq policy, calculate the
+> max_freq ratio, set the per cpu config value to 'ready' state.
+> 
+> Something like in the code below, it is on top of your patch set.
+> 
+> ------------------------>8-------------------------------------
+> 
+> 
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index c639b3e052d7..837ea46d8867 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -1168,19 +1168,26 @@ static bool has_hw_dbm(const struct
+> arm64_cpu_capabilities *cap,
+>   * from the current cpu.
+>   *  - cpu_has_amu_feat()
 >   */
-> +#include <linux/bitfield.h>
->  #include <linux/delay.h>
->  #include <linux/dma-mapping.h>
-> +#include <linux/iopoll.h>
->  #include <linux/mmc/host.h>
->  #include <linux/mmc/card.h>
-> +#include <linux/of_address.h>
->  #include <linux/reset.h>
->  #include <linux/scatterlist.h>
->  #include "mmci.h"
-> @@ -14,6 +17,20 @@
->  #define SDMMC_LLI_BUF_LEN      PAGE_SIZE
->  #define SDMMC_IDMA_BURST       BIT(MMCI_STM32_IDMABNDT_SHIFT)
->
-> +#define DLYB_CR                        0x0
-> +#define DLYB_CR_DEN            BIT(0)
-> +#define DLYB_CR_SEN            BIT(1)
-> +
-> +#define DLYB_CFGR              0x4
-> +#define DLYB_CFGR_SEL_MASK     GENMASK(3, 0)
-> +#define DLYB_CFGR_UNIT_MASK    GENMASK(14, 8)
-> +#define DLYB_CFGR_LNG_MASK     GENMASK(27, 16)
-> +#define DLYB_CFGR_LNGF         BIT(31)
-> +
-> +#define DLYB_NB_DELAY          11
-> +#define DLYB_CFGR_SEL_MAX      (DLYB_NB_DELAY + 1)
-> +#define DLYB_CFGR_UNIT_MAX     127
-
-[...]
-
-> +static int sdmmc_dlyb_lng_tuning(struct mmci_host *host)
-> +{
-> +       struct sdmmc_dlyb *dlyb = host->variant_priv;
-> +       u32 cfgr;
-> +       int i, lng, ret;
-> +
-> +       for (i = 0; i <= DLYB_CFGR_UNIT_MAX; i++) {
-> +               sdmmc_dlyb_set_cfgr(dlyb, i, DLYB_CFGR_SEL_MAX, true);
-> +
-> +               ret = readl_relaxed_poll_timeout(dlyb->base + DLYB_CFGR, cfgr,
-> +                                                (cfgr & DLYB_CFGR_LNGF),
-> +                                                1, 1000);
-
-I suggest you introduce a define for this timeout, in the top of the file.
-
-> +               if (ret) {
-> +                       dev_warn(mmc_dev(host->mmc),
-> +                                "delay line cfg timeout unit:%d cfgr:%d\n",
-> +                                i, cfgr);
-> +                       continue;
-> +               }
-> +
-> +               lng = FIELD_GET(DLYB_CFGR_LNG_MASK, cfgr);
-> +               if (lng < BIT(DLYB_NB_DELAY) && lng > 0)
-> +                       break;
-> +       }
-> +
-> +       if (i > DLYB_CFGR_UNIT_MAX)
-> +               return -EINVAL;
-> +
-> +       dlyb->unit = i;
-> +       dlyb->max = __fls(lng);
-> +
-> +       return 0;
-> +}
-> +
-> +static int sdmmc_dlyb_phase_tuning(struct mmci_host *host, u32 opcode)
-> +{
-> +       struct sdmmc_dlyb *dlyb = host->variant_priv;
-> +       int cur_len = 0, max_len = 0, end_of_len = 0;
-> +       int phase;
-> +
-> +       for (phase = 0; phase <= dlyb->max; phase++) {
-> +               sdmmc_dlyb_set_cfgr(dlyb, dlyb->unit, phase, false);
-> +
-> +               if (mmc_send_tuning(host->mmc, opcode, NULL)) {
-> +                       cur_len = 0;
-> +               } else {
-> +                       cur_len++;
-> +                       if (cur_len > max_len) {
-> +                               max_len = cur_len;
-> +                               end_of_len = phase;
-> +                       }
-> +               }
-> +       }
-> +
-> +       if (!max_len) {
-> +               dev_err(mmc_dev(host->mmc), "no tuning point found\n");
-> +               return -EINVAL;
-> +       }
-> +
-> +       phase = end_of_len - max_len / 2;
-> +       sdmmc_dlyb_set_cfgr(dlyb, dlyb->unit, phase, false);
-> +
-> +       dev_dbg(mmc_dev(host->mmc), "unit:%d max_dly:%d phase:%d\n",
-> +               dlyb->unit, dlyb->max, phase);
-> +
-> +       return 0;
-> +}
-> +
-> +static int sdmmc_execute_tuning(struct mmc_host *mmc, u32 opcode)
-> +{
-> +       struct mmci_host *host = mmc_priv(mmc);
-> +       struct sdmmc_dlyb *dlyb = host->variant_priv;
-> +
-> +       if (!dlyb || !dlyb->base)
-> +               return -EINVAL;
-> +
-> +       if (sdmmc_dlyb_lng_tuning(host))
-> +               return -EINVAL;
-> +
-> +       return sdmmc_dlyb_phase_tuning(host, opcode);
-
-What happens to the tuning registers when the controller device
-becomes runtime suspended? Would it possible that the values gets lost
-and then they need to be restored in runtime resume?
-
-> +}
-> +
->  static struct mmci_host_ops sdmmc_variant_ops = {
->         .validate_data = sdmmc_idma_validate_data,
->         .prep_data = sdmmc_idma_prep_data,
-> @@ -338,5 +469,21 @@ static struct mmci_host_ops sdmmc_variant_ops = {
->
->  void sdmmc_variant_init(struct mmci_host *host)
+> -static DEFINE_PER_CPU_READ_MOSTLY(u8, amu_feat);
+> -
+> -inline bool cpu_has_amu_feat(void)
+> -{
+> -	return !!this_cpu_read(amu_feat);
+> -}
+> +DECLARE_PER_CPU(u64, arch_const_cycles_prev);
+> +DECLARE_PER_CPU(u64, arch_core_cycles_prev);
+> +DECLARE_PER_CPU(u8, amu_scale_freq);
+> 
+>  static void cpu_amu_enable(struct arm64_cpu_capabilities const *cap)
 >  {
-> +       struct device_node *np = host->mmc->parent->of_node;
-> +       void __iomem *base_dlyb;
-> +       struct sdmmc_dlyb *dlyb;
+> +	u64 core_cnt, const_cnt;
 > +
->         host->ops = &sdmmc_variant_ops;
+>  	if (has_cpuid_feature(cap, SCOPE_LOCAL_CPU)) {
+>  		pr_info("detected CPU%d: Activity Monitors Unit (AMU)\n",
+>  			smp_processor_id());
+> -		this_cpu_write(amu_feat, 1);
+> +		core_cnt = read_sysreg_s(SYS_AMEVCNTR0_CORE_EL0);
+> +		const_cnt = read_sysreg_s(SYS_AMEVCNTR0_CONST_EL0);
 > +
-> +       base_dlyb = devm_of_iomap(mmc_dev(host->mmc), np, 1, NULL);
-> +       if (IS_ERR(base_dlyb))
-> +               return;
+> +		this_cpu_write(arch_core_cycles_prev, core_cnt);
+> +		this_cpu_write(arch_const_cycles_prev, const_cnt);
 > +
-> +       dlyb = devm_kzalloc(mmc_dev(host->mmc), sizeof(*dlyb), GFP_KERNEL);
-> +       if (!dlyb)
-> +               return;
-> +
-> +       dlyb->base = base_dlyb;
-> +       host->variant_priv = dlyb;
-> +       host->mmc_ops->execute_tuning = sdmmc_execute_tuning;
+> +		this_cpu_write(amu_scale_freq, 1);
+> +	} else {
+> +		this_cpu_write(amu_scale_freq, 2);
+>  	}
 >  }
-> --
-> 2.17.1
->
 
-Kind regards
-Uffe
+
+Yes, functionally this can be done here (it would need some extra checks
+on the initial values of core_cnt and const_cnt), but what I was saying
+in my previous comment is that I don't want to mix generic feature
+detection, which should happen here, with counter validation for
+frequency invariance. As you see, this would already bring here per-cpu
+variables for counters and amu_scale_freq flag, and I only see this
+getting more messy with the future use of more counters. I don't believe
+this code belongs here.
+
+Looking a bit more over the code and checking against the new frequency
+invariance code for x86, there is a case of either doing this CPU
+validation in smp_prepare_cpus (separately for arm64 and x86) or calling
+an arch_init_freq_invariance() maybe in sched_init_smp to be defined with
+the proper frequency invariance counter initialisation code separately
+for x86 and arm64. I'll have to look more over the details to make sure
+this is feasible.
+
+> 
+> diff --git a/arch/arm64/kernel/topology.c b/arch/arm64/kernel/topology.c
+> index 61f8264afec9..95b34085ae64 100644
+> --- a/arch/arm64/kernel/topology.c
+> +++ b/arch/arm64/kernel/topology.c
+> @@ -144,8 +144,8 @@ static struct cpu_amu_work __percpu *works;
+>  static cpumask_var_t cpus_to_visit;
+> 
+>  static DEFINE_PER_CPU_READ_MOSTLY(unsigned long, arch_max_freq_scale);
+> -static DEFINE_PER_CPU(u64, arch_const_cycles_prev);
+> -static DEFINE_PER_CPU(u64, arch_core_cycles_prev);
+> +DEFINE_PER_CPU(u64, arch_const_cycles_prev);
+> +DEFINE_PER_CPU(u64, arch_core_cycles_prev);
+>  DECLARE_PER_CPU(u8, amu_scale_freq);
+> 
+>  static void cpu_amu_fie_init_workfn(struct work_struct *work)
+> @@ -323,12 +323,64 @@ static int __init
+> register_fie_counters_cpufreq_notifier(void)
+>  }
+>  core_initcall(register_fie_counters_cpufreq_notifier);
+> 
+> +static int __init init_amu_feature(void)
+> +{
+> +	struct cpufreq_policy *policy;
+> +	struct cpumask *checked_cpus;
+> +	int count, total;
+> +	int cpu, i;
+> +	s8 amu_config;
+> +	u64 ratio;
+> +
+> +	checked_cpus = kzalloc(cpumask_size(), GFP_KERNEL);
+> +	if (!checked_cpus)
+> +		return -ENOMEM;
+> +
+> +	for_each_possible_cpu(cpu) {
+> +		if (cpumask_test_cpu(cpu, checked_cpus))
+> +			continue;
+> +
+> +		policy = cpufreq_cpu_get(cpu);
+> +		if (!policy) {
+> +			pr_warn("No cpufreq policy found for CPU%d\n", cpu);
+> +			continue;
+> +		}
+> +
+> +		count = total = 0;
+> +
+> +		for_each_cpu(i, policy->related_cpus) {
+> +			amu_config = per_cpu(amu_scale_freq, i);
+> +			if (amu_config == 1)
+> +				count++;
+> +			total++;
+> +		}
+> +
+> +		amu_config = (total == count) ? 3 : 4;
+> +
+> +		ratio = (u64)arch_timer_get_rate() << (2 * SCHED_CAPACITY_SHIFT);
+> +		ratio = div64_u64(ratio, policy->cpuinfo.max_freq * 1000);
+> +
+> +		for_each_cpu(i, policy->related_cpus) {
+> +			per_cpu(arch_max_freq_scale, i) = (unsigned long)ratio;
+> +			per_cpu(amu_scale_freq, i) = amu_config;
+> +			cpumask_set_cpu(i, checked_cpus);
+> +		}
+> +
+> +		cpufreq_cpu_put(policy);
+> +	}
+> +
+> +	kfree(checked_cpus);
+> +
+> +	return 0;
+> +}
+> +late_initcall(init_amu_feature);
+> +
+
+Yes, with the design I mentioned above, this CPU policy validation could
+move to a late_initcall and I could drop the workqueues and the extra
+data structure. Thanks for this!
+
+Let me know what you think!
+
+Thank you,
+Ionela.
+
+>  void topology_scale_freq_tick(void)
+>  {
+>  	u64 prev_core_cnt, prev_const_cnt;
+>  	u64 core_cnt, const_cnt, scale;
+> 
+> -	if (!this_cpu_read(amu_scale_freq))
+> +	if (this_cpu_read(amu_scale_freq) != 3)
+>  		return;
+> 
+>  	const_cnt = read_sysreg_s(SYS_AMEVCNTR0_CONST_EL0);
+> 
+> 
+> -------------------------8<------------------------------------
+> 
+> Regards,
+> Lukasz
+> 
+> > 
+> > Thank you,
+> > Ionela.
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
