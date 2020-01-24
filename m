@@ -2,60 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68079147668
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 02:19:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C442114769E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 02:22:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YGfMOT+Whgt22vzAQKrC0bnZ7tHLqHbspvdVqwWCSHk=; b=bKFTaj/e05d6h0oP8ozG3NXph
-	73vLAw2P5HlnXTHrLb/xtOFGkwinADQmamFwWjYoy47WImVguGA2TmgNR9cUbfRiW+3Xaor7uXu5t
-	65kk8GaSyWg7uT3JtqpA14evyW2Kzc1KIu5j5NxXxnl3HG0tl7bl4aOvcA4dWvko2R8g+Ur7ctipe
-	DVpWKWNV3T6TTSGlaHinUSpMbmVCHjpYZ9aWab4UNW58HORRFozaI2ggYaZIZ/fhbGPwq32XUp3gy
-	pua4vGkb+JyFjN+Ohb1Uaaa8xvPEj/5kPjHy6ttGPoEDODmVKlPiHo0/YXYPtI7j3EkUo23gjkLRM
-	NTPP6Q9Fw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z8KDcPzpQET86AoKJGIA45mwvwyCj252Nv2plNzcFak=; b=SM3DC7m9AnJ40E
+	iymKyOQD0gwX2OSr4kyU0iuRGU6G6p7p9e8sSJ1ywKm+3iJiJqqMu/Fv0G+OwxD9XvuItC/raQy6e
+	MrYUULMuaIxEP+r8228PHKISg7VwMXl1ooOVyAfWgWopQSobj9hGs1oFP6KeCJqZQ8GfWQDKieF2S
+	6RdarUCE2EQj28y1qXC+Qt6UjuFiYvh79IOs7r0q5fSB2TYcJry8oVTb1k4tNVUMfQu20bxXzxgl7
+	Som3mBvh1Sp3UYOvzLjSui7etEitY9PZGVca2+SgXhFVkv9hf56t+ZJM9IoQEjjyTDR9rrvOjgFWy
+	oTB/Ro0LUjNhZs21AShg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iundX-0004GY-MI; Fri, 24 Jan 2020 01:19:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iundL-0004Fi-VQ
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 01:19:41 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CE6A6328;
- Thu, 23 Jan 2020 17:19:38 -0800 (PST)
-Received: from [10.37.12.50] (unknown [10.37.12.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A0D2E3F68E;
- Thu, 23 Jan 2020 17:19:35 -0800 (PST)
-Subject: Re: [PATCH v2 6/6] arm64: use activity monitors for frequency
- invariance
-To: Ionela Voinescu <ionela.voinescu@arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-7-ionela.voinescu@arm.com>
- <0ca05a2d-918b-0c70-6dc6-ef1f5f58f388@arm.com>
- <20200123170716.GA28719@arm.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <bddfdb83-c6cb-a809-8781-80e1117a2d6c@arm.com>
-Date: Fri, 24 Jan 2020 01:19:31 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iunff-0005ri-Eq; Fri, 24 Jan 2020 01:22:03 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iunfX-0005r5-JK
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 01:21:56 +0000
+Received: by mail-qk1-x742.google.com with SMTP id d10so567490qke.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 23 Jan 2020 17:21:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=17LlDvr3P+aPnbiTd/Xv0AEpyX3plN5wLIAiiiLM3JM=;
+ b=T9dkl4o2yEUKj+mpTrje5F4r+Sy39rUUnsVelGI8H1iTPAY9q6tnTk2rdnu78ranin
+ 99U0gCXbQ0OQCO7ibpHdBQz5Lw/mACQcGZDkkH7VDcUUYiR1rmPWJNCcorE5kEOsIyuF
+ +HWUw6W8WnOVeB5jH81Wh5l37Sh4JwGP9V1JI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=17LlDvr3P+aPnbiTd/Xv0AEpyX3plN5wLIAiiiLM3JM=;
+ b=MIfX1hRGk43/0HndRBHvutQ3BIeWcMOr/iYqktUPbn067QQandjDg4mtdacW3wcOA+
+ Eody9hppNkhfCLI9wCvqQVpuYjh1pQuKc8Q4Cdxhl8Z3VaThxRNIhALy8xQBvM4AZcOw
+ Ufbi3MzZ8eaKWxH0SNcKVNb4wwOiPG1xS/LR828Hk8+qw9C6iRDtdfponasrLuzR1ntd
+ nQMPXGSl/0iQfX+yoFWqO6fkwtn4DycK3I3Ova5R5tAW1qxp9Vbr7U+P6gEopun1qjIN
+ rFMWkkh/YCwCkj9LcRmTscNICiVL+yCZvwDiQBtXDQTUF9e7jEulJHgU/DrBWeFCnnvw
+ O2aw==
+X-Gm-Message-State: APjAAAVnKLt97fxug3UXsUgeiox74TqoYUl//8JIX5au6WYbrwNIPqOC
+ CdIHxeOwYsuTtopJQXds8P+Eu3oaw6ldeuUxGA+1Zg==
+X-Google-Smtp-Source: APXvYqyNwDovBIOpVeX3aeLO2sskA0EZZmPzVBRqgbojfXQFpYEHw2wY9F00g8420CfluzcZbzVJOCQFPD7svOkBKtQ=
+X-Received: by 2002:a37:9dc8:: with SMTP id g191mr322080qke.171.1579828913107; 
+ Thu, 23 Jan 2020 17:21:53 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200123170716.GA28719@arm.com>
-Content-Language: en-US
+References: <20200124011747.18575-1-sashal@kernel.org>
+ <20200124011747.18575-5-sashal@kernel.org>
+In-Reply-To: <20200124011747.18575-5-sashal@kernel.org>
+From: Joel Stanley <joel@jms.id.au>
+Date: Fri, 24 Jan 2020 01:21:40 +0000
+Message-ID: <CACPK8XeGLW6cm9UV7gqrOF18BzsRBppzLQLY6G=Y2MDj2Yrnhw@mail.gmail.com>
+Subject: Re: [PATCH AUTOSEL 4.19 05/11] ARM: config: aspeed-g5: Enable 8250_DW
+ quirks
+To: Sasha Levin <sashal@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_171940_097973_C47C9302 
-X-CRM114-Status: GOOD (  48.25  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200123_172155_675036_87C75D41 
+X-CRM114-Status: GOOD (  13.55  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [joel.stan[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,284 +94,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- sudeep.holla@arm.com, will@kernel.org, dietmar.eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ stable@vger.kernel.org, =?UTF-8?Q?C=C3=A9dric_Le_Goater?= <clg@kaod.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 1/23/20 5:07 PM, Ionela Voinescu wrote:
-> Hi Lukasz,
-> 
-> Thank you for taking a look over the patches.
-> 
-> On Thursday 23 Jan 2020 at 11:49:29 (+0000), Lukasz Luba wrote:
->> Hi Ionela,
->>
->> Please find my few comments below.
->>
->> On 12/18/19 6:26 PM, Ionela Voinescu wrote:
->>> The Frequency Invariance Engine (FIE) is providing a frequency
->>> scaling correction factor that helps achieve more accurate
->>> load-tracking.
->>>
->>> So far, for arm and arm64 platforms, this scale factor has been
->>> obtained based on the ratio between the current frequency and the
->>> maximum supported frequency recorded by the cpufreq policy. The
->>> setting of this scale factor is triggered from cpufreq drivers by
->>> calling arch_set_freq_scale. The current frequency used in computation
->>> is the frequency requested by a governor, but it may not be the
->>> frequency that was implemented by the platform.
->>>
->>> This correction factor can also be obtained using a core counter and a
->>> constant counter to get information on the performance (frequency based
->>> only) obtained in a period of time. This will more accurately reflect
->>> the actual current frequency of the CPU, compared with the alternative
->>> implementation that reflects the request of a performance level from
->>> the OS.
->>>
->>> Therefore, implement arch_scale_freq_tick to use activity monitors, if
->>> present, for the computation of the frequency scale factor.
->>>
->>> The use of AMU counters depends on:
->>>    - CONFIG_ARM64_AMU_EXTN - depents on the AMU extension being present
->>>    - CONFIG_CPU_FREQ - the current frequency obtained using counter
->>>      information is divided by the maximum frequency obtained from the
->>>      cpufreq policy.
->>>
->>> While it is possible to have a combination of CPUs in the system with
->>> and without support for activity monitors, the use of counters for
->>> frequency invariance is only enabled for a CPU, if all related CPUs
->>> (CPUs in the same frequency domain) support and have enabled the core
->>
->> This looks like an edge case scenario, for which we are designing the
->> whole machinery with workqueues. AFAIU we cannot run the code in
->> arch_set_freq_scale() and you want to be check all CPUs upfront.
->>
-> 
-> Unfortunately, I don't believe it to be be an edge-case. Given that this
-> is an optional feature, I do believe that people might skip on
-> implementing it on some CPUs(LITTLEs) while keeping it for CPUs(bigs)
-> where power and thermal mitigation is more probable to happen in firmware.
-> This is the main reason to be conservative in the validation of CPUs and
-> cpufreq policies.
-> 
-> In regards to arch_set_freq_scale, I want to be able to tell, when that
-> function is called, if I should return a scale factor based on cpufreq
-> for the current policy. If activity monitors are useable for the CPUs in
-> the full policy, than I'm bailing out and leave the AMU FIE machinery
-> set the scale factor. Unfortunately this works at policy granularity.
-> 
-> This could  be done in a nicer way by setting the scale factor per cpu
-> and not for all CPUs in a policy in this arch_set_freq_scale function.
-> But this would require some rewriting for the full frequency invariance
-> support in drivers which we've talked about for a while but it was not
-> the purpose of this patch set. But it would eliminate the policy
-> verification I do with the second workqueue.
-> 
->> Maybe you can just wait till all CPUs boot and then set the proper
->> flags and finish initialization. Something like:
->> per_cpu(s8, amu_feat) /* form the patch 1/6 */
->> OR
->> per_cpu(u8, amu_scale_freq) /* from this patch */
->> with maybe some values:
->> 0 - not checked yet
->> 1 - checked and present
->> -1 - checked and not available
->> -2 - checked but in conflict with others in the freq domain
->> -3..-k - other odd configurations
->>
->> could potentially eliminate the need of workqueues.
->>
->> Then, if we could trigger this from i.e. late_initcall, the CPUs
->> should be online and you can validate them.
->>
-> 
-> I did initially give such a state machine a try but it proved to be
-> quite messy. A big reason for this is that the activity monitors unit
-> has multiple counters that can be used for different purposes.
-> 
-> The amu_feat per_cpu variable only flags that you have the AMU present
-> for potential users (in this case FIE) to validate the counters they
-> need for their respective usecase. For this reason I don't want to
-> overload the meaning of amu_feat. For the same reason I'm not doing the
-> validation of the counters in a generic way, but I'm tying it to the
-> usecase for particular counters. For example, it would not matter if
-> the instructions retired counter is not enabled from firmware for the
-> usecase of FIE. For frequency invariance we only need the core and
-> constant cycle counters and I'm making it the job of the user (arm64
-> topology code) to do the checking.
-> 
-> Secondly, for amu_scale_freq I could have added such a state machine,
-> but I did not think it was useful. The only thing it would change is
-> that I would not have to use the cpu_amu_fie variable in the data
-> structure that gets passed to the work functions. The only way I would
-> eliminate the second workqueue was if I did not do a check of all CPUs
-> in a policy, as described above, and rewrite frequency invariance to
-> work at CPU granularity and not policy granularity. This would eliminate
-> the dependency on cpufreq policy all-together, so it would be worth
-> doing if only for this reason alone :).
-> 
-> But even in that case, it's probably not needed to have more than two
-> states for amu_freq_scale.
-> 
-> What do you think?
-
-I think currently we are the only users for this AMU and if there will
-be another in the future, then we can start thinking about his proposed
-changes. Let's cross that bridge when we come to it.
-
-Regarding the code, in the arch/arm64/cpufeature.c you can already
-read the cycle registers. All the CPUs are going through that code
-during start. If you use this fact in the late_initcall() all CPUs
-should be checked and you can just ask for cpufreq policy, calculate the 
-max_freq ratio, set the per cpu config value to 'ready' state.
-
-Something like in the code below, it is on top of your patch set.
-
------------------------->8-------------------------------------
-
-
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index c639b3e052d7..837ea46d8867 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1168,19 +1168,26 @@ static bool has_hw_dbm(const struct 
-arm64_cpu_capabilities *cap,
-   * from the current cpu.
-   *  - cpu_has_amu_feat()
-   */
--static DEFINE_PER_CPU_READ_MOSTLY(u8, amu_feat);
--
--inline bool cpu_has_amu_feat(void)
--{
--	return !!this_cpu_read(amu_feat);
--}
-+DECLARE_PER_CPU(u64, arch_const_cycles_prev);
-+DECLARE_PER_CPU(u64, arch_core_cycles_prev);
-+DECLARE_PER_CPU(u8, amu_scale_freq);
-
-  static void cpu_amu_enable(struct arm64_cpu_capabilities const *cap)
-  {
-+	u64 core_cnt, const_cnt;
-+
-  	if (has_cpuid_feature(cap, SCOPE_LOCAL_CPU)) {
-  		pr_info("detected CPU%d: Activity Monitors Unit (AMU)\n",
-  			smp_processor_id());
--		this_cpu_write(amu_feat, 1);
-+		core_cnt = read_sysreg_s(SYS_AMEVCNTR0_CORE_EL0);
-+		const_cnt = read_sysreg_s(SYS_AMEVCNTR0_CONST_EL0);
-+
-+		this_cpu_write(arch_core_cycles_prev, core_cnt);
-+		this_cpu_write(arch_const_cycles_prev, const_cnt);
-+
-+		this_cpu_write(amu_scale_freq, 1);
-+	} else {
-+		this_cpu_write(amu_scale_freq, 2);
-  	}
-  }
-
-diff --git a/arch/arm64/kernel/topology.c b/arch/arm64/kernel/topology.c
-index 61f8264afec9..95b34085ae64 100644
---- a/arch/arm64/kernel/topology.c
-+++ b/arch/arm64/kernel/topology.c
-@@ -144,8 +144,8 @@ static struct cpu_amu_work __percpu *works;
-  static cpumask_var_t cpus_to_visit;
-
-  static DEFINE_PER_CPU_READ_MOSTLY(unsigned long, arch_max_freq_scale);
--static DEFINE_PER_CPU(u64, arch_const_cycles_prev);
--static DEFINE_PER_CPU(u64, arch_core_cycles_prev);
-+DEFINE_PER_CPU(u64, arch_const_cycles_prev);
-+DEFINE_PER_CPU(u64, arch_core_cycles_prev);
-  DECLARE_PER_CPU(u8, amu_scale_freq);
-
-  static void cpu_amu_fie_init_workfn(struct work_struct *work)
-@@ -323,12 +323,64 @@ static int __init 
-register_fie_counters_cpufreq_notifier(void)
-  }
-  core_initcall(register_fie_counters_cpufreq_notifier);
-
-+static int __init init_amu_feature(void)
-+{
-+	struct cpufreq_policy *policy;
-+	struct cpumask *checked_cpus;
-+	int count, total;
-+	int cpu, i;
-+	s8 amu_config;
-+	u64 ratio;
-+
-+	checked_cpus = kzalloc(cpumask_size(), GFP_KERNEL);
-+	if (!checked_cpus)
-+		return -ENOMEM;
-+
-+	for_each_possible_cpu(cpu) {
-+		if (cpumask_test_cpu(cpu, checked_cpus))
-+			continue;
-+
-+		policy = cpufreq_cpu_get(cpu);
-+		if (!policy) {
-+			pr_warn("No cpufreq policy found for CPU%d\n", cpu);
-+			continue;
-+		}
-+
-+		count = total = 0;
-+
-+		for_each_cpu(i, policy->related_cpus) {
-+			amu_config = per_cpu(amu_scale_freq, i);
-+			if (amu_config == 1)
-+				count++;
-+			total++;
-+		}
-+
-+		amu_config = (total == count) ? 3 : 4;
-+
-+		ratio = (u64)arch_timer_get_rate() << (2 * SCHED_CAPACITY_SHIFT);
-+		ratio = div64_u64(ratio, policy->cpuinfo.max_freq * 1000);
-+
-+		for_each_cpu(i, policy->related_cpus) {
-+			per_cpu(arch_max_freq_scale, i) = (unsigned long)ratio;
-+			per_cpu(amu_scale_freq, i) = amu_config;
-+			cpumask_set_cpu(i, checked_cpus);
-+		}
-+
-+		cpufreq_cpu_put(policy);
-+	}
-+
-+	kfree(checked_cpus);
-+
-+	return 0;
-+}
-+late_initcall(init_amu_feature);
-+
-  void topology_scale_freq_tick(void)
-  {
-  	u64 prev_core_cnt, prev_const_cnt;
-  	u64 core_cnt, const_cnt, scale;
-
--	if (!this_cpu_read(amu_scale_freq))
-+	if (this_cpu_read(amu_scale_freq) != 3)
-  		return;
-
-  	const_cnt = read_sysreg_s(SYS_AMEVCNTR0_CONST_EL0);
-
-
--------------------------8<------------------------------------
-
-Regards,
-Lukasz
-
-> 
-> Thank you,
-> Ionela.
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SEkgU2FzaGEsCgpPbiBGcmksIDI0IEphbiAyMDIwIGF0IDAxOjE3LCBTYXNoYSBMZXZpbiA8c2Fz
+aGFsQGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4gRnJvbTogSm9lbCBTdGFubGV5IDxqb2VsQGptcy5p
+ZC5hdT4KPgo+IFsgVXBzdHJlYW0gY29tbWl0IGE1MzMxYTdhODdlYzgxZDUyMjhiNzQyMWFjZjgz
+MWIyZDBjMGRlMjYgXQo+Cj4gVGhpcyBkcml2ZXIgb3B0aW9uIGlzIHVzZWQgYnkgdGhlIEFTVDI2
+MDAgQTAgYm9hcmRzIHRvIHdvcmsgYXJvdW5kIGEKPiBoYXJkd2FyZSBpc3N1ZS4KClRoaXMgaGFy
+ZHdhcmUgd2FzIG9ubHkgc3VwcG9ydGVkIGZyb20gNS40Kywgc28gSSB0aGluayB3ZSBjYW4gZHJv
+cCB0aGlzIHBhdGNoLgoKQ2hlZXJzLAoKSm9lbAoKPgo+IFJldmlld2VkLWJ5OiBDw6lkcmljIExl
+IEdvYXRlciA8Y2xnQGthb2Qub3JnPgo+IEFja2VkLWJ5OiBBcm5kIEJlcmdtYW5uIDxhcm5kQGFy
+bmRiLmRlPgo+IFNpZ25lZC1vZmYtYnk6IEpvZWwgU3RhbmxleSA8am9lbEBqbXMuaWQuYXU+Cj4g
+U2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4gPHNhc2hhbEBrZXJuZWwub3JnPgo+IC0tLQo+ICBh
+cmNoL2FybS9jb25maWdzL2FzcGVlZF9nNV9kZWZjb25maWcgfCAxICsKPiAgMSBmaWxlIGNoYW5n
+ZWQsIDEgaW5zZXJ0aW9uKCspCj4KPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vY29uZmlncy9hc3Bl
+ZWRfZzVfZGVmY29uZmlnIGIvYXJjaC9hcm0vY29uZmlncy9hc3BlZWRfZzVfZGVmY29uZmlnCj4g
+aW5kZXggMDJmYTNhNDFhZGQ1Yy4uMjQ3YmU2YzIzZDJjNiAxMDA2NDQKPiAtLS0gYS9hcmNoL2Fy
+bS9jb25maWdzL2FzcGVlZF9nNV9kZWZjb25maWcKPiArKysgYi9hcmNoL2FybS9jb25maWdzL2Fz
+cGVlZF9nNV9kZWZjb25maWcKPiBAQCAtMTM4LDYgKzEzOCw3IEBAIENPTkZJR19TRVJJQUxfODI1
+MF9SVU5USU1FX1VBUlRTPTYKPiAgQ09ORklHX1NFUklBTF84MjUwX0VYVEVOREVEPXkKPiAgQ09O
+RklHX1NFUklBTF84MjUwX0FTUEVFRF9WVUFSVD15Cj4gIENPTkZJR19TRVJJQUxfODI1MF9TSEFS
+RV9JUlE9eQo+ICtDT05GSUdfU0VSSUFMXzgyNTBfRFc9eQo+ICBDT05GSUdfU0VSSUFMX09GX1BM
+QVRGT1JNPXkKPiAgQ09ORklHX0FTUEVFRF9LQ1NfSVBNSV9CTUM9eQo+ICBDT05GSUdfQVNQRUVE
+X0JUX0lQTUlfQk1DPXkKPiAtLQo+IDIuMjAuMQo+CgpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
+eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
