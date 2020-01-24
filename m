@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72B5B1486E3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:19:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B4051486F0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:19:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+qInf2u/0A9g0eytQqoC6DVnRoHBxWKE5kdR+aNWmVo=; b=HKh53JKrkLr9uD
-	wyYic47znLMCL4Pl0QIPl7jmq6JE8GvEAqACLVll3szDX/rrFRgYVfI1AejZrIXoK9ScxyPugHA8n
-	QveER6mco/OW8avO90rKfjKSmDtLA8iGPNcuJKMPlM0attBDb4ukC7bp7P9lzeef+pt9UOLsaWPgv
-	w5phcjbpQnkENEHMIH1HFrzYGvF8ZKiXLsrZEciJ7U9GaUNzWYpIh4YNhAUaRXzNDyoGkKl/yter/
-	yAFFokN8a6ZYotUG6VyGWupzCvmMdjb0STOe5u9+oikzDMJAgCnDLxHBaMMKDH9Ua+yQaTvzXc2BP
-	e7d7hCyldgE7L0boYjZw==;
+	List-Owner; bh=zoTEvDPh9IgWg9jnpkMudAQdhntERrcEVq5mETBlz4s=; b=OVTziir9erJ/Eo
+	SprXJnjYAjYA8tLL9gCbx1eCxUBe9KqHXFHtUVoCjLGH590Nxz2p18+v2oPV82AvnGKBjvE2l57eP
+	i/IW8X8Y803/beYlPAH2Zy4YK+ZE8qcKrvPHYth0d2kmUtTYOwWR/y7ukMr72JHGFwPOiR4SCnVsO
+	kZ4j/d1Mgl+wZx3sDTT+PisO8h0zaWN0Ybcxv3z+amOkC4QfmCgshFhDEPPk0MNYvlnR+go7gSQRD
+	4boqvJoKt7lCs+DGa78GRHNREdDodmlKYLUqPSLSLyrLrGry+PM69v02ca9je106YbZH5BqhzJPPY
+	5f8sHRiQ/5aSqdpBl+Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuzns-00013V-Iy; Fri, 24 Jan 2020 14:19:20 +0000
+	id 1iuzoG-0001Il-BI; Fri, 24 Jan 2020 14:19:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuzmx-0000T7-1D
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:18:24 +0000
+ id 1iuzmy-0000UC-5R
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:18:25 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 00176208C4;
- Fri, 24 Jan 2020 14:18:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 197D021556;
+ Fri, 24 Jan 2020 14:18:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579875502;
- bh=KndByeN2uIX8Cxi149zR4DZ0hFI8P9TGSbIMN+1I9RM=;
+ s=default; t=1579875503;
+ bh=57FOBy08qBEXlKgCxiaToUjk/k0ohn9GFat1iPhq1H0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=p0aXeZEwsvLnp00ZtTG3Taps7TYlkhDsSoB14lefRQV8g77l7OmRC2WB8XzodaYhj
- YxN95AgLqc21TV/oTNgmU6s4CvdYOT4NHu7iqvdsDMMdR9M2nb3wtMe7+VeAKF3/D/
- AnxlZSAcAa3nh3s2RSleVovgHXQBB1rERx8P71go=
+ b=a1UmPzfAk4DFfv5pZgrb9tDHTQEOYPK9FVf9bvDDOLiH5AC7sSCXv2xIyNOMbv4Hm
+ CjW9r6ndUYdwtDEsA+IJzOxvAT1ql1pGC7JuK5o5AewL/7gp0im7h6O6KkzTO93+7L
+ bUj3PPl2A14cIAhcYwmun+jv0ln7BlVXIByLrPes=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 004/107] dt-bindings: reset: meson8b: fix
- duplicate reset IDs
-Date: Fri, 24 Jan 2020 09:16:34 -0500
-Message-Id: <20200124141817.28793-4-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 005/107] arm64: dts: meson-sm1-sei610: add gpio
+ bluetooth interrupt
+Date: Fri, 24 Jan 2020 09:16:35 -0500
+Message-Id: <20200124141817.28793-5-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200124141817.28793-1-sashal@kernel.org>
 References: <20200124141817.28793-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_061823_098117_8D10352E 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20200124_061824_274732_CD47BAD6 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,52 +81,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Sasha Levin <sashal@kernel.org>
+Cc: Sasha Levin <sashal@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ Guillaume La Roque <glaroque@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+From: Guillaume La Roque <glaroque@baylibre.com>
 
-[ Upstream commit 4881873f4cc1460f63d85fa81363d56be328ccdc ]
+[ Upstream commit 30388cc075720aa0af4f2cb5933afa1f8f39d313 ]
 
-According to the public S805 datasheet the RESET2 register uses the
-following bits for the PIC_DC, PSC and NAND reset lines:
-- PIC_DC is at bit 3 (meaning: RESET_VD_RMEM + 3)
-- PSC is at bit 4 (meaning: RESET_VD_RMEM + 4)
-- NAND is at bit 5 (meaning: RESET_VD_RMEM + 4)
+add gpio irq to support interrupt trigger mode.
 
-Update the reset IDs of these three reset lines so they don't conflict
-with PIC_DC and map to the actual hardware reset lines.
-
-Fixes: 79795e20a184eb ("dt-bindings: reset: Add bindings for the Meson SoC Reset Controller")
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Signed-off-by: Guillaume La Roque <glaroque@baylibre.com>
 Signed-off-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- include/dt-bindings/reset/amlogic,meson8b-reset.h | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/include/dt-bindings/reset/amlogic,meson8b-reset.h b/include/dt-bindings/reset/amlogic,meson8b-reset.h
-index c614438bcbdb8..fbc524a900da1 100644
---- a/include/dt-bindings/reset/amlogic,meson8b-reset.h
-+++ b/include/dt-bindings/reset/amlogic,meson8b-reset.h
-@@ -46,9 +46,9 @@
- #define RESET_VD_RMEM			64
- #define RESET_AUDIN			65
- #define RESET_DBLK			66
--#define RESET_PIC_DC			66
--#define RESET_PSC			66
--#define RESET_NAND			66
-+#define RESET_PIC_DC			67
-+#define RESET_PSC			68
-+#define RESET_NAND			69
- #define RESET_GE2D			70
- #define RESET_PARSER_REG		71
- #define RESET_PARSER_FETCH		72
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
+index 3435aaa4e8db5..5d6a8dafe8dc0 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
+@@ -361,6 +361,8 @@
+ 
+ 	bluetooth {
+ 		compatible = "brcm,bcm43438-bt";
++		interrupt-parent = <&gpio_intc>;
++		interrupts = <95 IRQ_TYPE_LEVEL_HIGH>;
+ 		shutdown-gpios = <&gpio GPIOX_17 GPIO_ACTIVE_HIGH>;
+ 		max-speed = <2000000>;
+ 		clocks = <&wifi32k>;
 -- 
 2.20.1
 
