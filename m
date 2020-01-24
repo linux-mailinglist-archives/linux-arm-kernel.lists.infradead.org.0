@@ -2,74 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69A52148D72
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 19:06:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9129148DC5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 19:29:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mX9qZ6SacbTYPc5oho25XMiPyyo7ex1Bl/A6KDo2qwA=; b=gho2vDXF10+Gmt
-	NXClnaT9ppRXQ7LKvmB6ak2swplK/mRal4LsIq968W6+BcUwnkZ5WomDFYaBbr/Cf0krvF+OoeEWZ
-	iCRUnSa1kaC3Ezv6bAn+rZBpVgUaaJvsjGwUyrShaxvj/WNyRCpAIzmK70RMKTdL42bCIO4EUXyj6
-	e+X/c+L87bN/+134rNMj7ERbhFcA3RDLHrfDjFVn3UozVpRXEiwY97+YBQJvThJLI6paWhbKjC0Zo
-	o+OBSn2Dt46d4tQ8iMVoHS5THh2iR/EpFJqHh38+rPhkHMNS+bErMjj+zn2oxeidEYJzEbho9u2lj
-	HdCcH3ElehZrIJSJMJSg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wLQZIS8lYvT6elS4pzkQsX4mPLq8yLpTlbth2WUtvWw=; b=QhEJDJ2IZqmyvX
+	8Kwzv9rDRONM4Ooyffb5M2tv8Hp28SwzmiTlwxAux9zjfvgNsGhFPNa1tvAyhKklibx1p9w8Kidll
+	ipDg08dOsAZnd/KsdLME8JI2//Nm/eEmllNfE3l4TCDHjiKZQD2u9sbs7aY48PkMvw8LQcu9mePaS
+	Gg+blqZAvtOjbYLkSPMvIRccbUlFA5kKfegw4a5NVNyYxh+pcVl/WUTbPLdZtq2r96zx+bapL+13t
+	81LW7+y+UMxf9PMIxR/YhOIFWMDJV3Y+Q19PUTzxGvRo8dO0idKyKJHQ4bN6xDXrMRx15nxY08Ckh
+	mxxLxhg3fzyIXs08vSBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iv3LI-0005xg-Gz; Fri, 24 Jan 2020 18:06:04 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1iv3hm-0004DL-Bc; Fri, 24 Jan 2020 18:29:18 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iv3L7-0005wi-CJ; Fri, 24 Jan 2020 18:05:55 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00OI5kqa057284;
- Fri, 24 Jan 2020 12:05:46 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1579889146;
- bh=OTh91vvqx5FkwJrVpzCRzAv6h7V2/gVJYW+HKZ6IZhk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=Yqe3fCW4F0O3F0vumSdxgo2GnRdaUfq0AWbDcXGU+dqLjOP3xlCcCBhJ16Aca+MfL
- E/gWOMP7bcC4dGea61P/6/F39CAi8K9HbX6fOPyFH5TvUw0Se9JHvDYgeqOaV9e16M
- /I5Dwto69rOrxwTdIuOOXDUdv3BAdtg7tMD4dp9w=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00OI5kiS098350;
- Fri, 24 Jan 2020 12:05:46 -0600
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 24
- Jan 2020 12:05:45 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 24 Jan 2020 12:05:45 -0600
-Received: from [192.168.2.10] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00OI5gfU118628;
- Fri, 24 Jan 2020 12:05:43 -0600
-Subject: Re: [PATCH for-next] arm64: defconfig: Set bcm2835-dma as built-in
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Ulf Hansson
- <ulf.hansson@linaro.org>
-References: <C043QOCZ7SMB.2XXX2ESS1ZJ98@linux-9qgx>
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <e29e23fd-cb60-56b9-e53d-ecbafc12bf8c@ti.com>
-Date: Fri, 24 Jan 2020 20:07:51 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1iv3hW-0004AB-Dg
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 18:29:03 +0000
+Received: by mail-il1-x142.google.com with SMTP id g12so2393276ild.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 24 Jan 2020 10:29:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MzOM8tQ3sP2cY0Y79Mb3RBeF9aKri/D2BrjJwln0ZMk=;
+ b=qe6QhTRtRrfS7XZjwODUAHPJVsjCM7EAv1BjXiq8vM+wyGaCkf4ErXr1JG2IlwFwOD
+ u9RXwRrLDgt+3Al0S/p2qQa78Jqw8xeD6aw7OKJTdzYfO21xbkAMxuIBwXxB5oGdJDOR
+ vgC7zdZzKXIxKofOKx4A4zZFsoy8v/4Vsv6ZFNGBkXSMNzkUBvMWq1x88QB6YZ8tLWDN
+ PxgSBlWQpLAQDRCyl5VvPuB56xlaqSqwFl69bfgH2FHRS2YVyqD5fiP5lzC0g/RizWfR
+ grFWnAsZ7bfZoCsMIIHYNFamLzeNBsDIigyYkDnz73UXkrbz/nLMOhHe8fwYy41V3B6X
+ beNw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MzOM8tQ3sP2cY0Y79Mb3RBeF9aKri/D2BrjJwln0ZMk=;
+ b=r8ft/cjrNoRvWTkgkF7Q03myL21bDsSmuUVew4aqseLfZlGJ6NMpAHPJvxT/QLul9l
+ rA3DqZChAAQKkeWZJ5XdSiJ56TNQYRINSFzrDxdK1rnW1K9LGsT99OcWysgkY2GIQLBt
+ 1h74qCi26TjtQhQeNuFtv46OeLaSHWmJJTbjAM/tvkfEArHQ1iHbJ+4Z4O0hRf4dViFB
+ JJq9BiE9VAMrxPbdZn+CYuQeF9MOa3f35sVK0bAnC0Sz6TyTcGipAlYC9iu6N9+UcEwx
+ XLUXsy8ZuoFI3elyGLDJkfCr1Edv4F3HNDJJhgXFY09e0st4qXC9CQLcJ8JOdvjOXAgq
+ ubvQ==
+X-Gm-Message-State: APjAAAUopyxQ7nEgOiBbBx/X0G6G67nfmH/ZXnfmYLG8NnCF+Qjs2wjS
+ Rn31O0+t+0j1za5cPb5eCu+c7WrKUpw9zjtZ59vo9Dvu
+X-Google-Smtp-Source: APXvYqxaAPHLhuxZk4MZgvxEeRmsPUpBjqMp5p2m0Tmj39XLUqYOZMT9HvIrl7aTnzyNTIZx4Cg0AGdcAuoquaxzo80=
+X-Received: by 2002:a92:bf10:: with SMTP id z16mr4386101ilh.87.1579890540913; 
+ Fri, 24 Jan 2020 10:29:00 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <C043QOCZ7SMB.2XXX2ESS1ZJ98@linux-9qgx>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20200121183818.GA11522@bogus>
+ <a9ec58818b5e0c982810e74efe3f5f22b930ae40.1579660436.git.viresh.kumar@linaro.org>
+ <82e1181a-b1ff-eccc-d61d-2da0e7afec25@opensynergy.com>
+In-Reply-To: <82e1181a-b1ff-eccc-d61d-2da0e7afec25@opensynergy.com>
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Fri, 24 Jan 2020 12:28:50 -0600
+Message-ID: <CABb+yY3ZrzgH8q8Nz+VGjz9X9GOs+1_RxB7qgtyeLTZd8BR_0w@mail.gmail.com>
+Subject: Re: [PATCH V4] firmware: arm_scmi: Make scmi core independent of the
+ transport type
+To: Peter Hilber <peter.hilber@opensynergy.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_100553_542821_665D2200 
-X-CRM114-Status: GOOD (  16.15  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200124_102902_484698_A88E6004 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jassisinghbrar[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -78,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,54 +96,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Peng Fan <peng.fan@nxp.com>, Arnd Bergmann <arnd@arndb.de>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ ALKML <linux-arm-kernel@lists.infradead.org>,
+ Sudeep Holla <Sudeep.Holla@arm.com>,
+ Cristian Marussi <cristian.marussi@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nicolas,
-
-On 1/24/20 4:47 PM, Nicolas Saenz Julienne wrote:
->> If you need MMC rootfs then the DMA needs to be built in or have initrd
->> with the modules.
->> The driver expects to have DMA channel and it is going to wait for it to
->> appear unless the request fails.
->>
->> Without moving the DMA as built in and removing the deferred probe
->> handling form the MMC driver, one can just remove the DMA support from
->> the mmc-bcm2835 as it is not used at all.
-> 
-> Oh sorry, I meant to ask if the 'Fixes:' tag was really needed.
-
-Complements: or Needed-for: would be better, but with the Fixed tag this
-patch would be picked in case the dma_request_chan() conversion patch
-gets backported for stable.
-
-> The
-> patch itself is very much needed since not everyone uses initrds in the
-> RPi world, and we want to keep being compatible as much as possible with
-> older device-trees.
-
-Sure. Just checked on my RPi with libreELEC that at least they have the
-DMA built in, I assume other distros do the same.
-
-It would be great if this patch would make it to linux-next as soon as
-it is possible for sure.
-
->> I wonder why this is not signaled by automated boot testing, if any
->> exists for bcm2835>
-> Actually now that you mention it, it's failing since today here:
-> https://kernelci.org/boot/bcm2837-rpi-3-b/
-
-Oh, so you can even have a bug report to back this patch ;)
-
-- Peter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+On Fri, Jan 24, 2020 at 6:15 AM Peter Hilber
+<peter.hilber@opensynergy.com> wrote:
+....
+>
+> I would have preferred (to have an option) to use as data passing
+> interface to the transport just the struct scmi_xfer. A transport using
+> this option would not implement ops (read|write)32 and memcpy_(from|to).
+> The transport would also not call scmi_tx_prepare(), but instead take
+> data from struct scmi_xfer directly. The transport would use a modified
+> scmi_rx_callback() to notify that it updated the struct scmi_xfer. A
+> helper to derive the struct scmi_xfer * from the message header would be
+> extracted from scmi_rx_callback(). The scmi_xfer_poll_done() would
+> become an (optional) transport op.
+>
++1
+I have pointed out many times the SCMI needs to realize not every
+transport layer can conform to its expectations, the scmi_xfer must
+have some transport specific element to it. Or there would be
+emulation/pretend modes implemented in controller drivers.
 
 _______________________________________________
 linux-arm-kernel mailing list
