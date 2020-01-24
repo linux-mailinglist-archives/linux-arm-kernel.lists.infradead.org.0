@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03E631487C7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:25:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EB6E1487FE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:26:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZAyhPXWlJqM6gcwxTC9osn5b8dcr58KV32DEowPdm2M=; b=B9y26EfrAXH3kb
-	YOUvBTWj3Jj5QcGwUDIqj57jZM2kC2MEt9KnRbDWZ+1of/CQn70nh3kM4lgyAOMhQ8zeI8A+iG7nH
-	QoJFY1Rt2APWP+eeqY9nMGL5dwl5cfu7IGsd8UB8rE/4qJxB58Pg4WRNqT36LkxyVvq1v6QDSy9qj
-	ut0/tsSezC4ciEIjv2YHldpVeqhO3gnPJPlE6kEA/q6VnwI8pPtGrygVfQzqoJndYOwqzQ502MIDV
-	/sAhM/9EUoTFTpFZOeU9WrHepCT1NvC0oeCRZ7P+6xCxlXqMWFdn5R6pItOPnjtbI6pBG9RouCW6u
-	pniVuts8kXuxhG8cR4cQ==;
+	List-Owner; bh=y5UDsRottnJfRXDPNY37mW4KYg8moumH8cH5YUnjrao=; b=evu1tmzqVVpNNe
+	cT3hPtBkRaO/QVsb/ZbZ4VNv3KTIyZJia4Wcy6+si9bCTkp95fynOXUzKowqBJ9k7uGuYDRHJjVgs
+	fq3URnSJB9cLUj1iAF5JdrnwWQbcUlyH0oRMAt7mP31djYFVLm2WR4Dl35dM06QyuuUByHFGfg061
+	vKSvbzzPgCLdv+rf2nkCwkHsxGyFe22gi3Sm21nGFJUUvBz27Y4vBaJpC2icU+FBeg++U8luaXVVR
+	Gc9bBMh6EkZ2kF+wjI/HKCL3hSzrkyWPYp3WncRGotlhtP+jgnRh08FAEbFKPQoSNiGwrmmaWAClz
+	quW9rk+DUgNY2BKKKkfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuzuB-00015J-EA; Fri, 24 Jan 2020 14:25:51 +0000
+	id 1iuzuh-0001ar-PJ; Fri, 24 Jan 2020 14:26:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuznk-0001A3-0Z
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:19:14 +0000
+ id 1iuzom-00034q-6b
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:20:17 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E597121734;
- Fri, 24 Jan 2020 14:19:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C2B7B2087E;
+ Fri, 24 Jan 2020 14:20:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579875551;
- bh=rsD6dVCbhIVA3iFuTz0rQzx5Xzdw3U6roCRQR2mAAGM=;
+ s=default; t=1579875615;
+ bh=P4zl6VgXUyjKwIgpzBo1I+kQ4xYgQbJdKQlwOSGS0mI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=v3IjhIpc9gGeSWscm+KC+R5yruMMPtOXh3qXX2bK4yFIANXSjC+Z2xa3QaV9bNTZC
- WetaE2ZWz+9dW/gd4STD8AQdFpIAp7WK/JCBQttqdfl/4KHEy5KoMzgqzBt96b+VBP
- HMqzgah8WXWmVq/7fuMg85lfelcpMWxvOHJkhY4U=
+ b=Mg1XbiSwms/Kc/RZR0it9tpRZSc8qrp9V0u1o7pXwQJxlr8rA2x0h1hkVEPSKapYI
+ RaKbun9e2/N4RUDTf7Q0pzeYssgpxSBTzmzQkbdGAr7mxxU0ef/r7h6p/3Sf4E9zDi
+ vsqLdLvuAZsnsYj80QRd/OQ4eX8/bb0VzE5xetSM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 046/107] ASoC: stm32: dfsdm: fix 16 bits record
-Date: Fri, 24 Jan 2020 09:17:16 -0500
-Message-Id: <20200124141817.28793-46-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 02/56] ARM: dts: meson8: fix the size of the PMU
+ registers
+Date: Fri, 24 Jan 2020 09:19:18 -0500
+Message-Id: <20200124142012.29752-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200124141817.28793-1-sashal@kernel.org>
-References: <20200124141817.28793-1-sashal@kernel.org>
+In-Reply-To: <20200124142012.29752-1-sashal@kernel.org>
+References: <20200124142012.29752-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_061912_208124_C349F4EE 
-X-CRM114-Status: GOOD (  10.58  )
+X-CRM114-CacheID: sfid-20200124_062016_314275_6FA5F544 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,74 +80,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- Mark Brown <broonie@kernel.org>, Olivier Moysan <olivier.moysan@st.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Sasha Levin <sashal@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Olivier Moysan <olivier.moysan@st.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
-[ Upstream commit 8e55ea19125b65cffe42747359af99d545e85f2f ]
+[ Upstream commit 46c9585ed4af688ff1be6d4e76d7ed2f04de4fba ]
 
-In stm32_afsdm_pcm_cb function, the transfer size is provided in bytes.
-However, samples are copied as 16 bits words from iio buffer.
-Divide by two the transfer size, to copy the right number of samples.
+The PMU registers are at least 0x18 bytes wide. Meson8b already uses a
+size of 0x18. The structure of the PMU registers on Meson8 and Meson8b
+is similar but not identical.
 
-Fixes: 1e7f6e1c69f0 ("ASoC: stm32: dfsdm: add 16 bits audio record support")
+Meson8 and Meson8b have the following registers in common (starting at
+AOBUS + 0xe0):
+  #define AO_RTI_PWR_A9_CNTL0 0xe0 (0x38 << 2)
+  #define AO_RTI_PWR_A9_CNTL1 0xe4 (0x39 << 2)
+  #define AO_RTI_GEN_PWR_SLEEP0 0xe8 (0x3a << 2)
+  #define AO_RTI_GEN_PWR_ISO0 0x4c (0x3b << 2)
 
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Link: https://lore.kernel.org/r/20200110131131.3191-1-olivier.moysan@st.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Meson8b additionally has these three registers:
+  #define AO_RTI_GEN_PWR_ACK0 0xf0 (0x3c << 2)
+  #define AO_RTI_PWR_A9_MEM_PD0 0xf4 (0x3d << 2)
+  #define AO_RTI_PWR_A9_MEM_PD1 0xf8 (0x3e << 2)
+
+Thus we can assume that the register size of the PMU IP blocks is
+identical on both SoCs (and Meson8 just contains some reserved registers
+in that area) because the CEC registers start right after the PMU
+(AO_RTI_*) registers at AOBUS + 0x100 (0x40 << 2).
+
+The upcoming power domain driver will need to read and write the
+AO_RTI_GEN_PWR_SLEEP0 and AO_RTI_GEN_PWR_ISO0 registers, so the updated
+size is needed for that driver to work.
+
+Fixes: 4a5a27116b447d ("ARM: dts: meson8: add support for booting the secondary CPU cores")
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Signed-off-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- sound/soc/stm/stm32_adfsdm.c | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ arch/arm/boot/dts/meson8.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/sound/soc/stm/stm32_adfsdm.c b/sound/soc/stm/stm32_adfsdm.c
-index 3c9a9deec9af4..4ecea4913f427 100644
---- a/sound/soc/stm/stm32_adfsdm.c
-+++ b/sound/soc/stm/stm32_adfsdm.c
-@@ -153,13 +153,13 @@ static const struct snd_soc_component_driver stm32_adfsdm_dai_component = {
- 	.name = "stm32_dfsdm_audio",
- };
+diff --git a/arch/arm/boot/dts/meson8.dtsi b/arch/arm/boot/dts/meson8.dtsi
+index 7162e0ca05b0a..ba78170e70274 100644
+--- a/arch/arm/boot/dts/meson8.dtsi
++++ b/arch/arm/boot/dts/meson8.dtsi
+@@ -139,7 +139,7 @@
+ &aobus {
+ 	pmu: pmu@e0 {
+ 		compatible = "amlogic,meson8-pmu", "syscon";
+-		reg = <0xe0 0x8>;
++		reg = <0xe0 0x18>;
+ 	};
  
--static void memcpy_32to16(void *dest, const void *src, size_t n)
-+static void stm32_memcpy_32to16(void *dest, const void *src, size_t n)
- {
- 	unsigned int i = 0;
- 	u16 *d = (u16 *)dest, *s = (u16 *)src;
- 
- 	s++;
--	for (i = n; i > 0; i--) {
-+	for (i = n >> 1; i > 0; i--) {
- 		*d++ = *s++;
- 		s++;
- 	}
-@@ -186,8 +186,8 @@ static int stm32_afsdm_pcm_cb(const void *data, size_t size, void *private)
- 
- 	if ((priv->pos + src_size) > buff_size) {
- 		if (format == SNDRV_PCM_FORMAT_S16_LE)
--			memcpy_32to16(&pcm_buff[priv->pos], src_buff,
--				      buff_size - priv->pos);
-+			stm32_memcpy_32to16(&pcm_buff[priv->pos], src_buff,
-+					    buff_size - priv->pos);
- 		else
- 			memcpy(&pcm_buff[priv->pos], src_buff,
- 			       buff_size - priv->pos);
-@@ -196,8 +196,8 @@ static int stm32_afsdm_pcm_cb(const void *data, size_t size, void *private)
- 	}
- 
- 	if (format == SNDRV_PCM_FORMAT_S16_LE)
--		memcpy_32to16(&pcm_buff[priv->pos],
--			      &src_buff[src_size - cur_size], cur_size);
-+		stm32_memcpy_32to16(&pcm_buff[priv->pos],
-+				    &src_buff[src_size - cur_size], cur_size);
- 	else
- 		memcpy(&pcm_buff[priv->pos], &src_buff[src_size - cur_size],
- 		       cur_size);
+ 	pinctrl_aobus: pinctrl@84 {
 -- 
 2.20.1
 
