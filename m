@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D58171486CB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:19:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72B5B1486E3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:19:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s8BiN5J1stefBJJ9khqrQ8T+j79csgKAVcuaczgXN/Q=; b=aOtB9zMlu5wqDM
-	XSHT+m9eh0aM9pwZ/GvsXHzH3Ic79Bs5qvgVDAknGE5GOjCW3a1GGGc5ujQjDQ9pGAID29LNgq4Jn
-	SYxdcIP0QZcuu4SqoX18o3zqkItOZCZptU2THratPRXSrixd15IGNbkGU92fXuqhcRbImB8kNqOUW
-	AOz9rCPacybom54XQAUhNkNRXvMHEtz9fvKc54PEtxDVTkILPXkna/6146BSuBe4nFr9xrVF/lWnt
-	lb8fiN/mootOdIcWTnws2fPuVNdnkGWnBg2gbDcD4va7qgWXujWawfbm6Pa99/oy6CnIBUe9Kc5QA
-	cfxpKwUKCNqhJONe8Jlg==;
+	List-Owner; bh=+qInf2u/0A9g0eytQqoC6DVnRoHBxWKE5kdR+aNWmVo=; b=HKh53JKrkLr9uD
+	wyYic47znLMCL4Pl0QIPl7jmq6JE8GvEAqACLVll3szDX/rrFRgYVfI1AejZrIXoK9ScxyPugHA8n
+	QveER6mco/OW8avO90rKfjKSmDtLA8iGPNcuJKMPlM0attBDb4ukC7bp7P9lzeef+pt9UOLsaWPgv
+	w5phcjbpQnkENEHMIH1HFrzYGvF8ZKiXLsrZEciJ7U9GaUNzWYpIh4YNhAUaRXzNDyoGkKl/yter/
+	yAFFokN8a6ZYotUG6VyGWupzCvmMdjb0STOe5u9+oikzDMJAgCnDLxHBaMMKDH9Ua+yQaTvzXc2BP
+	e7d7hCyldgE7L0boYjZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuznb-0000lv-DM; Fri, 24 Jan 2020 14:19:03 +0000
+	id 1iuzns-00013V-Iy; Fri, 24 Jan 2020 14:19:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuzmv-0000Sj-TQ
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:18:23 +0000
+ id 1iuzmx-0000T7-1D
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:18:24 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D15F42087E;
- Fri, 24 Jan 2020 14:18:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 00176208C4;
+ Fri, 24 Jan 2020 14:18:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579875501;
- bh=dUHXIG6MtZiAEHdpM8ABRLLmWi1FRJw9J1lJsLzRkpA=;
+ s=default; t=1579875502;
+ bh=KndByeN2uIX8Cxi149zR4DZ0hFI8P9TGSbIMN+1I9RM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=0Lxw9QeM1KY0qjR6LqFUXoAzhApDXwVR86iE/ZYtP5535dz+jJ5MQcmmWqiz1lMmN
- dVV/QQuxKh8c9PjlEqcjY7WjCPW972bQAHEeJmyfGO3J/34GTovE1RZQses8k673j+
- 2Qqm9qoylzU+lW1sPT2/jQ8ZLyYT1gvXpZw+mKCs=
+ b=p0aXeZEwsvLnp00ZtTG3Taps7TYlkhDsSoB14lefRQV8g77l7OmRC2WB8XzodaYhj
+ YxN95AgLqc21TV/oTNgmU6s4CvdYOT4NHu7iqvdsDMMdR9M2nb3wtMe7+VeAKF3/D/
+ AnxlZSAcAa3nh3s2RSleVovgHXQBB1rERx8P71go=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 003/107] ARM: dts: meson8: fix the size of the PMU
- registers
-Date: Fri, 24 Jan 2020 09:16:33 -0500
-Message-Id: <20200124141817.28793-3-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 004/107] dt-bindings: reset: meson8b: fix
+ duplicate reset IDs
+Date: Fri, 24 Jan 2020 09:16:34 -0500
+Message-Id: <20200124141817.28793-4-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200124141817.28793-1-sashal@kernel.org>
 References: <20200124141817.28793-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_061821_970140_CF35C7DB 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20200124_061823_098117_8D10352E 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,54 +90,42 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
-[ Upstream commit 46c9585ed4af688ff1be6d4e76d7ed2f04de4fba ]
+[ Upstream commit 4881873f4cc1460f63d85fa81363d56be328ccdc ]
 
-The PMU registers are at least 0x18 bytes wide. Meson8b already uses a
-size of 0x18. The structure of the PMU registers on Meson8 and Meson8b
-is similar but not identical.
+According to the public S805 datasheet the RESET2 register uses the
+following bits for the PIC_DC, PSC and NAND reset lines:
+- PIC_DC is at bit 3 (meaning: RESET_VD_RMEM + 3)
+- PSC is at bit 4 (meaning: RESET_VD_RMEM + 4)
+- NAND is at bit 5 (meaning: RESET_VD_RMEM + 4)
 
-Meson8 and Meson8b have the following registers in common (starting at
-AOBUS + 0xe0):
-  #define AO_RTI_PWR_A9_CNTL0 0xe0 (0x38 << 2)
-  #define AO_RTI_PWR_A9_CNTL1 0xe4 (0x39 << 2)
-  #define AO_RTI_GEN_PWR_SLEEP0 0xe8 (0x3a << 2)
-  #define AO_RTI_GEN_PWR_ISO0 0x4c (0x3b << 2)
+Update the reset IDs of these three reset lines so they don't conflict
+with PIC_DC and map to the actual hardware reset lines.
 
-Meson8b additionally has these three registers:
-  #define AO_RTI_GEN_PWR_ACK0 0xf0 (0x3c << 2)
-  #define AO_RTI_PWR_A9_MEM_PD0 0xf4 (0x3d << 2)
-  #define AO_RTI_PWR_A9_MEM_PD1 0xf8 (0x3e << 2)
-
-Thus we can assume that the register size of the PMU IP blocks is
-identical on both SoCs (and Meson8 just contains some reserved registers
-in that area) because the CEC registers start right after the PMU
-(AO_RTI_*) registers at AOBUS + 0x100 (0x40 << 2).
-
-The upcoming power domain driver will need to read and write the
-AO_RTI_GEN_PWR_SLEEP0 and AO_RTI_GEN_PWR_ISO0 registers, so the updated
-size is needed for that driver to work.
-
-Fixes: 4a5a27116b447d ("ARM: dts: meson8: add support for booting the secondary CPU cores")
+Fixes: 79795e20a184eb ("dt-bindings: reset: Add bindings for the Meson SoC Reset Controller")
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Signed-off-by: Kevin Hilman <khilman@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/meson8.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ include/dt-bindings/reset/amlogic,meson8b-reset.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/boot/dts/meson8.dtsi b/arch/arm/boot/dts/meson8.dtsi
-index 5a7e3e5caebe2..3c534cd50ee3b 100644
---- a/arch/arm/boot/dts/meson8.dtsi
-+++ b/arch/arm/boot/dts/meson8.dtsi
-@@ -253,7 +253,7 @@
- &aobus {
- 	pmu: pmu@e0 {
- 		compatible = "amlogic,meson8-pmu", "syscon";
--		reg = <0xe0 0x8>;
-+		reg = <0xe0 0x18>;
- 	};
- 
- 	pinctrl_aobus: pinctrl@84 {
+diff --git a/include/dt-bindings/reset/amlogic,meson8b-reset.h b/include/dt-bindings/reset/amlogic,meson8b-reset.h
+index c614438bcbdb8..fbc524a900da1 100644
+--- a/include/dt-bindings/reset/amlogic,meson8b-reset.h
++++ b/include/dt-bindings/reset/amlogic,meson8b-reset.h
+@@ -46,9 +46,9 @@
+ #define RESET_VD_RMEM			64
+ #define RESET_AUDIN			65
+ #define RESET_DBLK			66
+-#define RESET_PIC_DC			66
+-#define RESET_PSC			66
+-#define RESET_NAND			66
++#define RESET_PIC_DC			67
++#define RESET_PSC			68
++#define RESET_NAND			69
+ #define RESET_GE2D			70
+ #define RESET_PARSER_REG		71
+ #define RESET_PARSER_FETCH		72
 -- 
 2.20.1
 
