@@ -2,75 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 854F3147700
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 03:49:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3DA5514770F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 04:02:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nHO89XOgDgJPfI9kvQWB3O+/yGTCL2S4/7kjVm13P4M=; b=Syw/zVigtJSFX3
-	p+oh+zGfoqFRyHnj2/ushhrOrPwwHNQGw//ZzMU8u6aVnxCtbW+Soss3FcOT5YKPRm0wy0tk05vFM
-	haHeyh/P8AC1Bh/njXnmGQ0XE2AjLnpNoZZLE0SukFqrndxaSv+kPyZYQ6kNvSqaxY4q9kXXsDHS1
-	44UeJTC0mO5V0XZaOF+aFbRDxnN1o+cyyqBuIQZjjvtmC7rnWwnuRU5zGGZ9YibC2xUHQCAgsg01w
-	OI5IBsC2zHgr+vhU7s1EI5aCktMOrg9XLPp2QSjn0t4nid4kuzaaL4gfUw0gERHFp8PKzXMF7/lWd
-	oXDuLYykPE6zZZ1KRZLA==;
+	List-Owner; bh=iPGjWUVWz6Rl7Tplns85g1Sj6mDebioMRLSWDwAIGyI=; b=iK2Abc0L5GpTKV
+	FphQfB+khSaoormnTMonmmh31SCmLpAUmn2dGeAsBkdZ9c4Ld298GtjLsvFYS2Z/SNx/9fnnYcEo/
+	9LQpClQ3oZ6QXpMOwIBn22mZY9d8nknn6YOy3CqA8PruseOoBIQj6h2lAb65wxBUqPG1dSBR64vrJ
+	NhruiA65Va6U6d43YmOlNeYa8RutIZ9UpLigWuIi3NHfZ63tPHjoXW/mDlLkw5Pcrl+0BmS4PHQmV
+	NzFQQf1qo2AFj899UB5quB27GdxWzLvom3C7+5YLDRzMmsLSg+WgMcCsZ6Aaw39+vtkOAp4kvSSCO
+	ILwqxOhT4uiDTxsFMiYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iup2L-0005Qr-FD; Fri, 24 Jan 2020 02:49:33 +0000
-Received: from conssluserg-03.nifty.com ([210.131.2.82])
+	id 1iupEo-0002fB-TW; Fri, 24 Jan 2020 03:02:26 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iup2B-0005Q7-MP
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 02:49:25 +0000
-Received: from mail-vk1-f177.google.com (mail-vk1-f177.google.com
- [209.85.221.177]) (authenticated)
- by conssluserg-03.nifty.com with ESMTP id 00O2mu5I029734
- for <linux-arm-kernel@lists.infradead.org>; Fri, 24 Jan 2020 11:48:57 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com 00O2mu5I029734
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1579834137;
- bh=fgdYLukdlEYXMD3VBQ4VxMdRlI/yjUSeaDi+4lfkCjE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Q+FTstpafcV8F+hlZSNnpLo/bgF9ddwS3JoBuD3Sv5/ebipJjSpb6kw+m/oPjiDlF
- PMzN0bsZ8Uf7Ewdqf1qWffPodbkMGEi2ryCmHQNIazD0mY9VqgwNKkqaCD3WC7HtGq
- U4dWeLEoctRHRCtzbNxh127TaGJUT6Lltgx8ZTsZyh6IJdFYKZSh6N973CRsRTOLhq
- ZAmqOHUEE8Mdcz5ew5czC2rKZk16bypKOlYKnx/nxBDVNOA77epIsoc46I3JXHc+HG
- DZw9sje+7MaHuq5ZeBG0AqeJQOMm4Xpd0ltlBbNS1BvTzZ5XShWLpsUxwq20YmS8tT
- jcbDY+P2c93fQ==
-X-Nifty-SrcIP: [209.85.221.177]
-Received: by mail-vk1-f177.google.com with SMTP id i4so232845vkc.3
+ id 1iupEf-0002eR-3m
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 03:02:18 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id r67so393128pjb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Jan 2020 18:48:56 -0800 (PST)
-X-Gm-Message-State: APjAAAW6gK0BnYgHAVv+mE1qWmoGZpnRqsPyQRxKkyQI5uBxNBBBQ1ar
- xRyktaZ5RaE2KtqYoogMNDUSN+o8BWa43yZfQ6g=
-X-Google-Smtp-Source: APXvYqw73o8Lg4XxHWHTAaXgs8weOQ1oCX6Ih9rzdMg/Fy/BRjtW98hfNn9vKQrXn/WsIl6YfMwWb377nOPY08AzxK4=
-X-Received: by 2002:a1f:72c3:: with SMTP id n186mr763524vkc.12.1579834135531; 
- Thu, 23 Jan 2020 18:48:55 -0800 (PST)
+ Thu, 23 Jan 2020 19:02:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=vTpqRdteOFP7ZcUKKdjIBwigRkGTjIfqlFVk01LKeUs=;
+ b=AWLYeAtQi+DDW+tQOMkc23VJYZNYDwCGM1IVtnrGRGaFNMOla/hH2Vou0nCBvIQmjf
+ YcDzV0SCP2nK9OxCkILwOybQSLYbGkUyvVvJvkk+77Rth+MRvlobNyHkjSULTYLJyNzE
+ uhSAGwwHPXEcN5uOdYI34kEB2c7m8UJ3t+kWvzunHmlg3sV6J97JLTJJzAwyvBu7Qs1p
+ K6Rmj6RmO/FGB9n4vAQr+LstTBdURtNnSleaRwgyqNdifUBujb/SkopMMvbEf48ctpPu
+ dDoB9r3QSA89vOLu7YeDPFZTWLaguagfmV+1V3eDrnwVjj1/aLk74nGznbvgLlYWVtk1
+ 1rRg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=vTpqRdteOFP7ZcUKKdjIBwigRkGTjIfqlFVk01LKeUs=;
+ b=XJffN5xRMEo/BKL06xqvPmwxAzqmACIp4R9cEKBsXPVwuWFMz1EpuUAHNN3+U2a1RY
+ XqvmL3FKrhCxcoYLYnUDPNN62htIl82x4GOJ5BuOJtdjfVBsYbdSVT1hfQQgHmT+oKIm
+ CpxOe1x1+4SGNBrPX8/wt0ZLGTYhFCFo/vYUbShzxnpvrft8PNz49Yp4HA/jpyIToMfp
+ HGHFOpVY9PqXLfml2g5sn4zyyQp5+0iNErDEf1jPi2HOLXe9+gSSc5+oEkDfcS0mX9Ip
+ Eo54zjWkqs4BMk/wsp74HYVAeGKo2OtZYt+uYCST23F7V57oeZyFbmpIM1p5F1lu7gQz
+ ONjQ==
+X-Gm-Message-State: APjAAAUHaOmnTylxnaM6VhgGqCuzZ9w/XBaM1eyShUtsTL8BA1nc5sgJ
+ 8ugvPugBnfI/19ksN064qzzfSA==
+X-Google-Smtp-Source: APXvYqxFmHyQNmdE9Cw5xHuQqhPiMRcWFPKciwPTJk2JTeinIi9gmZqfrNUUJiK4j5ttuD1ioSjAZA==
+X-Received: by 2002:a17:902:708c:: with SMTP id
+ z12mr1285339plk.15.1579834934905; 
+ Thu, 23 Jan 2020 19:02:14 -0800 (PST)
+Received: from localhost ([122.167.18.14])
+ by smtp.gmail.com with ESMTPSA id o184sm4239310pgo.62.2020.01.23.19.02.13
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 23 Jan 2020 19:02:13 -0800 (PST)
+Date: Fri, 24 Jan 2020 08:32:12 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH V4] firmware: arm_scmi: Make scmi core independent of the
+ transport type
+Message-ID: <20200124030212.qjlzz75dgt5kla7t@vireshk-i7>
+References: <20200121183818.GA11522@bogus>
+ <a9ec58818b5e0c982810e74efe3f5f22b930ae40.1579660436.git.viresh.kumar@linaro.org>
+ <20200122121538.GA31240@bogus> <20200123103033.GA7511@bogus>
 MIME-Version: 1.0
-References: <CAK7LNASEaiFia8NKZN8++-9RfGXOPKSFuCkdukBk9Jy7+nHecQ@mail.gmail.com>
-In-Reply-To: <CAK7LNASEaiFia8NKZN8++-9RfGXOPKSFuCkdukBk9Jy7+nHecQ@mail.gmail.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Fri, 24 Jan 2020 11:48:19 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAT721bVwVQif--UY1dXMhq8NSRpkPOYTN-=nxyBSBOn2Q@mail.gmail.com>
-Message-ID: <CAK7LNAT721bVwVQif--UY1dXMhq8NSRpkPOYTN-=nxyBSBOn2Q@mail.gmail.com>
-Subject: Re: [GIT PULL] arm64: dts: uniphier: UniPhier DT updates for v5.6
-To: Arnd Bergmann <arnd@arndb.de>, Olof Johansson <olof@lixom.net>
+Content-Disposition: inline
+In-Reply-To: <20200123103033.GA7511@bogus>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_184923_954991_A6FDFC49 
-X-CRM114-Status: GOOD (  18.32  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200123_190217_166305_4F10C033 
+X-CRM114-Status: GOOD (  15.94  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.82 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,71 +98,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masahiro Yamada <masahiroy@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: peng.fan@nxp.com, arnd@arndb.de, jassisinghbrar@gmail.com,
+ linux-kernel@vger.kernel.org, peter.hilber@opensynergy.com,
+ linux-arm-kernel@lists.infradead.org, cristian.marussi@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd and Olof,
+On 23-01-20, 10:30, Sudeep Holla wrote:
+> WARNING: CPU: 1 PID: 187 at drivers/base/dd.c:519 really_probe+0x11c/0x418
+> Modules linked in:
+> CPU: 1 PID: 187 Comm: kworker/1:2 Not tainted 5.5.0-rc7-00026-gf7231cd3108d-dirty #20
+> Hardware name: ARM LTD ARM Juno Development Platform/ARM Juno Development Platform, BIOS EDK II Jan 16 2020
+> Workqueue: events deferred_probe_work_func
+> pstate: 80000005 (Nzcv daif -PAN -UAO)
+> pc : really_probe+0x11c/0x418
+> lr : really_probe+0x10c/0x418
+> Call trace:
+>  really_probe+0x11c/0x418
+>  driver_probe_device+0xe4/0x138
+>  __device_attach_driver+0x90/0x110
+>  bus_for_each_drv+0x80/0xd0
+>  __device_attach+0xdc/0x160
+>  device_initial_probe+0x18/0x20
+>  bus_probe_device+0x98/0xa0
+>  deferred_probe_work_func+0x90/0xe0
+>  process_one_work+0x1ec/0x4a8
+>  worker_thread+0x210/0x490
+>  kthread+0x110/0x118
+>  ret_from_fork+0x10/0x18
+> ---[ end trace 06f96d55ce6093a8 ]---
 
-I know it is already -rc7, but
-it would be nice if you could pull this for the next MW.
+linux-next didn't had a WARN at line 519 and so I looked at the
+difference between your and my branch and reached to this patch:
 
-Thanks
+commit 7c35e699c88bd60734277b26962783c60e04b494
+Author: Geert Uytterhoeven <geert+renesas@glider.be>
+Date:   Fri Dec 6 14:22:19 2019 +0100
 
-Masahiro
+    driver core: Print device when resources present in really_probe()
+    
+    If a device already has devres items attached before probing, a warning
+    backtrace is printed.  However, this backtrace does not reveal the
+    offending device, leaving the user uninformed.  Furthermore, using
+    WARN_ON() causes systems with panic-on-warn to reboot.
+    
+    Fix this by replacing the WARN_ON() by a dev_crit() message.
+    Abort probing the device, to prevent doing more damage to the device's
+    resources.
+    
+    Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+    Link: https://lore.kernel.org/r/20191206132219.28908-1-geert+renesas@glider.be
+    Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+---
+ drivers/base/dd.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-On Sat, Jan 18, 2020 at 1:20 AM Masahiro Yamada
-<yamada.masahiro@socionext.com> wrote:
->
-> Hi Arnd, Olof,
->
-> Here are UniPhier DT (64bit) updates for the v5.6 merge window.
-> Please pull!
->
->
->
-> The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
->
->   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
->
-> are available in the Git repository at:
->
->   git://git.kernel.org/pub/scm/linux/kernel/git/masahiroy/linux-uniphier.git
-> tags/uniphier-dt64-v5.6
->
-> for you to fetch changes up to e98d5023fe1f062bb549354a2428d930775fd67e:
->
->   arm64: dts: uniphier: add reset-names to NAND controller node
-> (2020-01-18 00:56:18 +0900)
->
-> ----------------------------------------------------------------
-> UniPhier ARM64 SoC DT updates for v5.6
->
-> - Add reset-names to NAND controller node
->
-> ----------------------------------------------------------------
-> Masahiro Yamada (1):
->       arm64: dts: uniphier: add reset-names to NAND controller node
->
->  arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi | 3 ++-
->  arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi | 3 ++-
->  arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi | 3 ++-
->  3 files changed, 6 insertions(+), 3 deletions(-)
->
->
-> --
-> Best Regards
-> Masahiro Yamada
+diff --git a/drivers/base/dd.c b/drivers/base/dd.c
+index d811e60610d3..b25bcab2a26b 100644
+--- a/drivers/base/dd.c
++++ b/drivers/base/dd.c
+@@ -516,7 +516,10 @@ static int really_probe(struct device *dev, struct device_driver *drv)
+        atomic_inc(&probe_count);
+        pr_debug("bus: '%s': %s: probing driver %s with device %s\n",
+                 drv->bus->name, __func__, drv->name, dev_name(dev));
+-       WARN_ON(!list_empty(&dev->devres_head));
++       if (!list_empty(&dev->devres_head)) {
++               dev_crit(dev, "Resources present before probing\n");
++               return -EBUSY;
++       }
+ 
+ re_probe:
+        dev->driver = drv;
 
 
+-------------------------8<-------------------------
+
+I think this defines the problem somewhat, though I wasn't able to
+reproduce the problem on my platform :)
 
 -- 
-Best Regards
-Masahiro Yamada
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
