@@ -2,70 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D482B147736
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 04:40:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F34814773A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 04:44:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MkUnkLJ+FuWM4pZ2jmthak7uNq7ytZY23yeGIZZDB6Y=; b=k8DR5Yq+HQ1549
-	QTiq5W+IeOhMBWXyAHZGX7FdQB6qnmCK2sV1IdNYVIKRR3h19GxYSjiodD3RBj3MOJaRvDDwbJj28
-	x6OybWJCfv2yqT4CJd7ikPIPwhPaWl1BM7n0xD+p6X0EZOgdYfTZupKo4m4ncXWELHuVq/5gzNrYw
-	R9L5+aYLsmKUoMJMDKHTeqOiq3+GtYWws2faGqtOA3RnCyiE2R9SZTD446fpj+iTKzeu6HBYICJcz
-	FghhA2U/dr8hjqnyt6On9oBXMn9f8qZA5En6lkvxWk57UIMi4peJxyWGbU3iRHPgG7FkaQncPIXC+
-	ss/MG00QBR2SCe7wGcYw==;
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VWhKoUV69uPC5seuivQ856MgdWIqEgPEXW+BJS2pzeI=; b=Yo5xJazuDNB9eW
+	p6WY1RApvc68uMb/CS8MC7EEFijK/OFBQTpu7KsLwzx+lPaFZ2ACBKQP9L+YwQCFlK+Gv3PO9NZlR
+	puBWnfrpTmEeX1pQh5p1bCmLh8X3Q+aS5gX67e/JLX97NYy/C7PDUhgkZmkCxIYzIV4obCFo5gUx+
+	5Tubs8AeF8nU+VwGY4QFHT3esz0j1/zcO/sCn8pua7swyF51GE9tgy22EHwDaOTkvg/MZXne4kd/G
+	v5Kf+sdh4HfJU7eEYEVt/PacDCE8JthRvh0j8GlLZMDfXdw7OVV6nRR9tAVsnjfK03fjZ2IS+ZR/r
+	CvjxndpuZggsiuXXC7hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuppZ-0007S1-Eg; Fri, 24 Jan 2020 03:40:25 +0000
-Received: from conssluserg-02.nifty.com ([210.131.2.81])
+	id 1iuptr-0007yP-J1; Fri, 24 Jan 2020 03:44:51 +0000
+Received: from conssluserg-01.nifty.com ([210.131.2.80])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuppN-0007Re-A1
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 03:40:14 +0000
-Received: from mail-vk1-f173.google.com (mail-vk1-f173.google.com
- [209.85.221.173]) (authenticated)
- by conssluserg-02.nifty.com with ESMTP id 00O3djCg007546
- for <linux-arm-kernel@lists.infradead.org>; Fri, 24 Jan 2020 12:39:46 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com 00O3djCg007546
+ id 1iuptg-0007y0-0I
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 03:44:41 +0000
+Received: from mail-ua1-f49.google.com (mail-ua1-f49.google.com
+ [209.85.222.49]) (authenticated)
+ by conssluserg-01.nifty.com with ESMTP id 00O3iBJX025637
+ for <linux-arm-kernel@lists.infradead.org>; Fri, 24 Jan 2020 12:44:11 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com 00O3iBJX025637
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1579837186;
- bh=s3lkUpOhniK8jQRTTs1U4BOtTESo73cdDDpCBPoFEGA=;
- h=From:Date:Subject:To:Cc:From;
- b=hdNcnu9jmDkLWPWwL7yrLPvX+xgWCIEMrG/iBaSlggoRCYQnn0ilyj2uVOWrJWLBg
- sRb5GMmodqntvtdfOkC3IrTri+VeKgi8KkCQW1t3X2W4DZkDxqTfT/xvkpW3byI5Y5
- W+ZkaLgRqdB8u0iNqe3OqBzFfrQABBEhm5IhnX5KaxAkDMgIwg28gGuDb4OfjmVvYl
- 6brPd3H4rGoKOPvcGnt4KZyOg6oa/o4cLncoddDiWbnT0Ge40Jr5IbR3PfgeifsS21
- yvWxG2uNeF3RAlkCSxma/YryNcyolgCu5nPfsn3MG1EuMihGSDdJ2Zn/O+kfIRMXiR
- F87llQDOHdIQA==
-X-Nifty-SrcIP: [209.85.221.173]
-Received: by mail-vk1-f173.google.com with SMTP id b129so171924vka.4
+ s=dec2015msa; t=1579837451;
+ bh=ZciN3pdou+Uxxprysqmu7s1MHJ/ph/kv6GDPRv1quYk=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=nK61UGKbxmxCm8NTN73uU+ntDikTe3yu3tbJTwcN3htJvnam6Xz3XOfF+OvfHmjxT
+ 1F+dGEbbNZc/hV1+jq2PIuX6QDdfjq+wJh783MzOu9cp2TrtoGvMLolPT45Wh+WctO
+ e90bSlaeTqDigkGGPY6ABFPEhSr5Pheak4wTuTrdRXAVE0e94Kuk5bKUNjjtVfAUjN
+ sLDnoWcFK3ve8yK1wzzfuvYHvz7ZFwhAeHqPgGgnM2vGwMbfxnOY9qFDacCsWOufWR
+ a4njBgGTbVZAIGelZDz04PrdJTdDb1QJiZHrgmTMhMSzCLsKkUzFnF7OD4m5ootccL
+ UYjT8isEK4lAQ==
+X-Nifty-SrcIP: [209.85.222.49]
+Received: by mail-ua1-f49.google.com with SMTP id c7so327914uaf.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 23 Jan 2020 19:39:46 -0800 (PST)
-X-Gm-Message-State: APjAAAWkl6P8en7wRi4g2tq4p/gHVJCVDt9phih+l41Ju1w9m0CT4tto
- ieh+KBzdPBl5PAmY/sKUCc9mWxbgAIAIohLH9Z4=
-X-Google-Smtp-Source: APXvYqw1ZG0E84h4+qv6BgKdO/rj/ZOnhDN9r048cMXacxVlBB9RfIEywlchzHZs9uX2OLTp4nfEZ6rtvSmpKgAQwa0=
-X-Received: by 2002:a1f:6344:: with SMTP id x65mr819981vkb.26.1579837185307;
- Thu, 23 Jan 2020 19:39:45 -0800 (PST)
+ Thu, 23 Jan 2020 19:44:11 -0800 (PST)
+X-Gm-Message-State: APjAAAVpAeA/zGwcWWnZJ44CTHUKN7RbYITvqwLMjnzgOjp/yFmCgK2d
+ wjfp9pd2yexr8jiwKdMTmmQ/FX1UwtDA+xkcPj8=
+X-Google-Smtp-Source: APXvYqyPABcHjkE7LphB8AFi82zW6lt8MeVEc6Mzrd111/JuQRIL1R1KIWXilIUSJZKLMiQpcGh2uuZp/WTYDvUMVUs=
+X-Received: by 2002:ab0:6509:: with SMTP id w9mr709242uam.121.1579837450310;
+ Thu, 23 Jan 2020 19:44:10 -0800 (PST)
 MIME-Version: 1.0
+References: <CAK7LNASEaiFia8NKZN8++-9RfGXOPKSFuCkdukBk9Jy7+nHecQ@mail.gmail.com>
+ <CAK7LNAT721bVwVQif--UY1dXMhq8NSRpkPOYTN-=nxyBSBOn2Q@mail.gmail.com>
+ <CAOesGMgyh2NmR_AbEzC2jQe070e_u3zozWi=v7RjMXszXgetZg@mail.gmail.com>
+In-Reply-To: <CAOesGMgyh2NmR_AbEzC2jQe070e_u3zozWi=v7RjMXszXgetZg@mail.gmail.com>
 From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Fri, 24 Jan 2020 12:39:09 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASehDHWgOug=Rz0uBBSP2ntJnNLiarfSdj97tZu+OXLkA@mail.gmail.com>
-Message-ID: <CAK7LNASehDHWgOug=Rz0uBBSP2ntJnNLiarfSdj97tZu+OXLkA@mail.gmail.com>
-Subject: [GIT PULL (RESEND)] arm64: dts: uniphier: UniPhier DT updates for v5.6
-To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
- soc@kernel.org
+Date: Fri, 24 Jan 2020 12:43:34 +0900
+X-Gmail-Original-Message-ID: <CAK7LNATj8EP_vSDSbknQsYp5V=7EfdQzTQbobhNjXS5Y8YOjqg@mail.gmail.com>
+Message-ID: <CAK7LNATj8EP_vSDSbknQsYp5V=7EfdQzTQbobhNjXS5Y8YOjqg@mail.gmail.com>
+Subject: Re: [GIT PULL] arm64: dts: uniphier: UniPhier DT updates for v5.6
+To: Olof Johansson <olof@lixom.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200123_194013_565500_1DC35CD4 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200123_194440_270371_7172548F 
+X-CRM114-Status: GOOD (  18.86  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.81 listed in list.dnswl.org]
+ no trust [210.131.2.80 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.80 listed in wl.mailspike.net]
  1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -82,50 +86,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masahiro Yamada <masahiroy@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olof, Arnd,
-
-Here are UniPhier DT (64bit) updates for the v5.6 merge window.
-(I am resending this with soc@kernel.org in the To: list)
-
-Please pull!
+Hi Olof,
 
 
+On Fri, Jan 24, 2020 at 12:22 PM Olof Johansson <olof@lixom.net> wrote:
+>
+> Hi,
+>
+> On Thu, Jan 23, 2020 at 6:49 PM Masahiro Yamada
+> <yamada.masahiro@socionext.com> wrote:
+> >
+> > Hi Arnd and Olof,
+> >
+> > I know it is already -rc7, but
+> > it would be nice if you could pull this for the next MW.
+> >
+> > Thanks
+> >
+> > Masahiro
+>
+> If you don't email us at soc@kernel.org, we're unlikely to see your
+> pull requests. :(
 
-The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
+Oh, I just remembered this!
 
-  Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
+>
+> In this case that's what happened. Please do so -- that way it gets
+> caught in the patchtracker. I sort the patches to that alias in a
+> special folder to make sure I see them too, since I get too much in my
+> inbox and it easily gets lost.
+>
+> Mind resending the two pull requests to that alias?
 
-are available in the Git repository at:
+Sure. Done.
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/masahiroy/linux-uniphier.git
-tags/uniphier-dt64-v5.6
 
-for you to fetch changes up to e98d5023fe1f062bb549354a2428d930775fd67e:
 
-  arm64: dts: uniphier: add reset-names to NAND controller node
-(2020-01-18 00:56:18 +0900)
+> That way you get
+> the notification email when it's merged -- if I bounce it here I don't
+> think you'll get it.
+>
+>
+> Thanks,
+>
+> -Olof
 
-----------------------------------------------------------------
-UniPhier ARM64 SoC DT updates for v5.6
 
-- Add reset-names to NAND controller node
-
-----------------------------------------------------------------
-Masahiro Yamada (1):
-      arm64: dts: uniphier: add reset-names to NAND controller node
-
- arch/arm64/boot/dts/socionext/uniphier-ld11.dtsi | 3 ++-
- arch/arm64/boot/dts/socionext/uniphier-ld20.dtsi | 3 ++-
- arch/arm64/boot/dts/socionext/uniphier-pxs3.dtsi | 3 ++-
- 3 files changed, 6 insertions(+), 3 deletions(-)
 
 -- 
 Best Regards
