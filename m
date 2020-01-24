@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1442B148845
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:28:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00F18148846
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 24 Jan 2020 15:28:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dJVeHsw7HppmXYMKfeVcVdTGkeYamJRrTRW+/4jebaA=; b=uXHteta29wsMA4
-	+aErJzHPiRw2I+/UnZf666KjqvOAsJnZMIxvw7BHNcIbdbgFlIph5uM4FUKwpIEgbO7PBbP8GwNxE
-	zM/7j0AgpEjuopLEGLwnZDUFBsu/eIBl4AobNIEuSyH3E1RX3eXgEUxzjzWhn6+VfpEeHe/AfDQ0j
-	vktehQ/NEgBZcEtC1rh11+qsp6nF4JymXAZgACE/7jSkGnHIagUAKCa7qU/VNNmP/ZHrfpUa9dXrq
-	0q+UKVJlk9bvhWhCHtXpt5IuVzUVTqgipfN3mdL1Tq4FFMbDsFF43e5zOhRoZYJ8/tmLIJx6i2roD
-	kmTNdfczkecEOldiR0uQ==;
+	List-Owner; bh=hPgpJkPU3JCoBaMkGertObYYP+WB08HgrlGN/jvUlGg=; b=il/P2yitLJKZnT
+	/3WABwwW2ophI27k8GW4NJK11/JpXpA43s3ygr/h+Y8r4sbIpzH7Q7UFD93Q7ZKRn+OrYzTtKOgIL
+	bbPbd65sYSfhzwocCovsVyNb97RkkLZ23IJ2NmgjkvdKtLcegv2bl3X4PFOGvLf9mFRtiES1Mjes7
+	dqknd3EzmqW6+kB1Mckx12OABaioXpTtNGBzzuIKuHIPdVsy1qaMCg1AHyLLqoy4fMSfUjRNl0NyV
+	lbrG/t4AT7eL3DShtvQppxnjMezRJuRHT7a2Yx9Nbce6IyhlDiH2wqt2TdmL+UvWX57fMZ3tI+0o6
+	kZSGYSflTugRNDkOtHAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iuzwY-0003Y3-8L; Fri, 24 Jan 2020 14:28:18 +0000
+	id 1iuzwo-0003oZ-3l; Fri, 24 Jan 2020 14:28:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iuzoy-0003Jx-Uw
- for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:20:30 +0000
+ id 1iuzp5-0003Oc-GX
+ for linux-arm-kernel@lists.infradead.org; Fri, 24 Jan 2020 14:20:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E61A21569;
- Fri, 24 Jan 2020 14:20:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 62FE121569;
+ Fri, 24 Jan 2020 14:20:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1579875628;
- bh=7yves8TjxduWUO08r7fbAwx8OgmvxDGlAZ6NoGUW03I=;
+ s=default; t=1579875635;
+ bh=yYkdvZfWRqRnTJkQxbICX9j233kcKaHvQHhe2M4H1gs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=W3YFs65x/FKi9nMuu+EWX1WYHhVuc5tIrZ7GoIbO5oZcr+dQQKlBSpOJrtEkOHaL/
- 5VJn+etVDx3C2WNM0a7V9TFTRmwNjdLM2aKXVJe1gMAv0PdZT0UQ5FTePx34L5GwCO
- 56sh5w6qiplnV5TVoQuB4CI6jpCB7OL05yvPQpPo=
+ b=V7Fcwnh6bn+jPMi0/5RlL7+UG9/V9gqq4m1tRjrAa5JfwoLRDO9krM7JQb2xGtLqA
+ sXKq0sb/MWAeK1AEhkABI5kGovc6CkoCd+CPhlkbACNWlsW2pAH/Ju1Zp4efQQcI48
+ Fsd5h8GFAwC8/5jRUR4bjxcqIuompgMo+TCdbqaY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 13/56] clk: sunxi-ng: h6-r: Fix AR100/R_APB2
- parent order
-Date: Fri, 24 Jan 2020 09:19:29 -0500
-Message-Id: <20200124142012.29752-13-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 19/56] ARM: dts: imx7: Fix Toradex Colibri iMX7S
+ 256MB NAND flash support
+Date: Fri, 24 Jan 2020 09:19:35 -0500
+Message-Id: <20200124142012.29752-19-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200124142012.29752-1-sashal@kernel.org>
 References: <20200124142012.29752-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_062029_036258_BCDFBDBE 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200124_062035_591850_965E584B 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,59 +81,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-clk@vger.kernel.org,
- Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
- Samuel Holland <samuel@sholland.org>
+Cc: Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Sasha Levin <sashal@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Samuel Holland <samuel@sholland.org>
+From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
 
-[ Upstream commit 0c545240aebc2ccb8f661dc54283a14d64659804 ]
+[ Upstream commit 4b0b97e651ecf29f20248420b52b6864fbd40bc2 ]
 
-According to the BSP source code, both the AR100 and R_APB2 clocks have
-PLL_PERIPH0 as mux index 3, not 2 as it was on previous chips. The pre-
-divider used for PLL_PERIPH0 should be changed to index 3 to match.
+Turns out when introducing the eMMC version the gpmi node required for
+NAND flash support got enabled exclusively on Colibri iMX7D 512MB.
 
-This was verified by running a rough benchmark on the AR100 with various
-clock settings:
-
-        | mux | pre-divider | iterations/second | clock source |
-        |=====|=============|===================|==============|
-        |   0 |           0 |  19033   (stable) |       osc24M |
-        |   2 |           5 |  11466 (unstable) |  iosc/osc16M |
-        |   2 |          17 |  11422 (unstable) |  iosc/osc16M |
-        |   3 |           5 |  85338   (stable) |  pll-periph0 |
-        |   3 |          17 |  27167   (stable) |  pll-periph0 |
-
-The relative performance numbers all match up (with pll-periph0 running
-at its default 600MHz).
-
-Signed-off-by: Samuel Holland <samuel@sholland.org>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Fixes: f928a4a377e4 ("ARM: dts: imx7: add Toradex Colibri iMX7D 1GB (eMMC) support")
+Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/imx7s-colibri.dtsi | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
-index 27554eaf69298..3f78035ff85af 100644
---- a/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c
-@@ -23,9 +23,9 @@
-  */
- 
- static const char * const ar100_r_apb2_parents[] = { "osc24M", "osc32k",
--					     "pll-periph0", "iosc" };
-+						     "iosc", "pll-periph0" };
- static const struct ccu_mux_var_prediv ar100_r_apb2_predivs[] = {
--	{ .index = 2, .shift = 0, .width = 5 },
-+	{ .index = 3, .shift = 0, .width = 5 },
+diff --git a/arch/arm/boot/dts/imx7s-colibri.dtsi b/arch/arm/boot/dts/imx7s-colibri.dtsi
+index 1fb1ec5d3d707..6d16e32aed899 100644
+--- a/arch/arm/boot/dts/imx7s-colibri.dtsi
++++ b/arch/arm/boot/dts/imx7s-colibri.dtsi
+@@ -49,3 +49,7 @@
+ 		reg = <0x80000000 0x10000000>;
+ 	};
  };
- 
- static struct ccu_div ar100_clk = {
++
++&gpmi {
++	status = "okay";
++};
 -- 
 2.20.1
 
