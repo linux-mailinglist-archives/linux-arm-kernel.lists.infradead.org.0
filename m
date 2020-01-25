@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E2F1149510
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:04:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF516149517
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:05:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2cdOJK8tDfq0iy2/0XP1hbUKRg0nLK9a87h5UJmtdNE=; b=HIQjeWmi32dsIC
-	6Rz2kcBQYjALbGZbPuCQOuMWOvSqhWv1UkFrNmoBtVxSQ2pyOTPJxwq6xVY3JA2vuNhDz3loZVoGY
-	m2g3setlSsB6SJM4YeAX9S3seg3U3DzdkOYzj87JjzOqZLAMm43atVmD52LdXdxnOFfy6a4xBh3ft
-	gotfWHKtqVZTaUM84jTucpAM7gQWJxaaqQ/wJIVrzFw5i2InASmuPSNpxHV3XyLtOx6Ygu5SqRW9I
-	3w/gaJuFFXaqmK5ZqJdXZIbA5qc9yMYZ/zg/rqYELiHO569OX5aFOCA5npBLDS4/E/OPSfY2tm3NA
-	EiFbzME4OZmfT+DAmA3A==;
+	List-Owner; bh=wgK1nTCMccVieFLz3pwA/3vR4EhyjcO5Pzn/Sj3t6Kg=; b=O8ZTHH/PfebOaS
+	Gqqnc5Vs1n+B6dmeskceJ5GLfMN+QCihJZUFURwMutjRbZk8t8yu+EzXJ7s2q4xnBRErNH2DsNX1l
+	M8dTHV5G1lIckYzj4O/0YPsJeIlw58m8JUWuAKlKySEfK3MRhPz0UPip7C22kcUSytPoIcZji2zqs
+	0HmT1PzmTGIzRZhkyXo8LekQH0GQYB6bjpJWiTerQKSOXcSI3W/TjpFo976isEeSgjX03npIlzAY5
+	CxdLahyapgCyGpVp9IXelNhzlG5tuuUHCu/OUEclrgUl+Ahda7WeeOoGfHpoIijQir2swudMUiUOi
+	AzL2jEM//OlgZkRiYoag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivJEi-0005rn-2s; Sat, 25 Jan 2020 11:04:20 +0000
-Received: from mailoutvs21.siol.net ([185.57.226.212] helo=mail.siol.net)
+	id 1ivJFb-0006Vt-Q3; Sat, 25 Jan 2020 11:05:15 +0000
+Received: from mailoutvs43.siol.net ([185.57.226.234] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivJEW-0005qJ-1G
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 11:04:09 +0000
+ id 1ivJEX-0005qf-8N
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 11:04:11 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id EB49E520F74;
- Sat, 25 Jan 2020 12:04:04 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTP id 45619520F99;
+ Sat, 25 Jan 2020 12:04:07 +0100 (CET)
 X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id ATAfSBqQ2TVe; Sat, 25 Jan 2020 12:04:04 +0100 (CET)
+ with ESMTP id EefBMFvBfySl; Sat, 25 Jan 2020 12:04:07 +0100 (CET)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id A6D08520EEE;
- Sat, 25 Jan 2020 12:04:04 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPS id 004BE520EEE;
+ Sat, 25 Jan 2020 12:04:07 +0100 (CET)
 Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
  [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 5D856520F7D;
- Sat, 25 Jan 2020 12:04:02 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPSA id AC158520F72;
+ Sat, 25 Jan 2020 12:04:04 +0100 (CET)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mripard@kernel.org,
 	wens@csie.org
-Subject: [PATCH 2/5] clk: sunxi-ng: a64: Export MBUS clock
-Date: Sat, 25 Jan 2020 12:03:50 +0100
-Message-Id: <20200125110353.591658-3-jernej.skrabec@siol.net>
+Subject: [PATCH 3/5] arm64: dts: allwinner: a64: Add MBUS controller node
+Date: Sat, 25 Jan 2020 12:03:51 +0100
+Message-Id: <20200125110353.591658-4-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200125110353.591658-1-jernej.skrabec@siol.net>
 References: <20200125110353.591658-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200125_030408_240554_D8FF94D0 
-X-CRM114-Status: UNSURE (   9.35  )
+X-CRM114-CacheID: sfid-20200125_030409_452045_9C9CB86A 
+X-CRM114-Status: UNSURE (   9.40  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -58,7 +58,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.212 listed in list.dnswl.org]
+ low trust [185.57.226.234 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,44 +81,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MBUS clock will be referenced in MBUS controller node.
+A64 contains MBUS, which is the bus used by DMA devices to access
+system memory.
 
-Export it.
+MBUS controller is responsible for arbitration between channels based
+on set priority and can do some other things as well, like report
+bandwidth used. It also maps RAM region to different address than CPU.
 
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- drivers/clk/sunxi-ng/ccu-sun50i-a64.h      | 4 ----
- include/dt-bindings/clock/sun50i-a64-ccu.h | 2 +-
- 2 files changed, 1 insertion(+), 5 deletions(-)
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-a64.h b/drivers/clk/sunxi-ng/ccu-sun50i-a64.h
-index 116e6f826d04..54d1f96f4b68 100644
---- a/drivers/clk/sunxi-ng/ccu-sun50i-a64.h
-+++ b/drivers/clk/sunxi-ng/ccu-sun50i-a64.h
-@@ -55,10 +55,6 @@
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+index 862b47dc9dc9..d225ea1f3b87 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
+@@ -1061,6 +1061,14 @@ pwm: pwm@1c21400 {
+ 			status = "disabled";
+ 		};
  
- /* All the DRAM gates are exported */
- 
--/* Some more module clocks are exported */
--
--#define CLK_MBUS			112
--
- /* And the DSI and GPU module clock is exported */
- 
- #define CLK_NUMBER			(CLK_GPU + 1)
-diff --git a/include/dt-bindings/clock/sun50i-a64-ccu.h b/include/dt-bindings/clock/sun50i-a64-ccu.h
-index e512a1c9b0fc..318eb15c414c 100644
---- a/include/dt-bindings/clock/sun50i-a64-ccu.h
-+++ b/include/dt-bindings/clock/sun50i-a64-ccu.h
-@@ -131,7 +131,7 @@
- #define CLK_AVS			109
- #define CLK_HDMI		110
- #define CLK_HDMI_DDC		111
--
-+#define CLK_MBUS		112
- #define CLK_DSI_DPHY		113
- #define CLK_GPU			114
- 
++		mbus: dram-controller@1c62000 {
++			compatible = "allwinner,sun50i-a64-mbus";
++			reg = <0x01c62000 0x1000>;
++			clocks = <&ccu CLK_MBUS>;
++			dma-ranges = <0x00000000 0x40000000 0xc0000000>;
++			#interconnect-cells = <1>;
++		};
++
+ 		csi: csi@1cb0000 {
+ 			compatible = "allwinner,sun50i-a64-csi";
+ 			reg = <0x01cb0000 0x1000>;
 -- 
 2.25.0
 
