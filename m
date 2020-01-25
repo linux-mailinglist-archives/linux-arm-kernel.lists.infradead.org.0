@@ -2,73 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07F21149784
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 20:42:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4054B1497AE
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 20:58:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TDuACAx7jw7wcZ0X9DgAJBHsLF/pXyA/fafMmaccyyk=; b=TVB7c5zXuYkNy0
-	vgmvycEXEIaexxS0Byw3rdLWtwh8eAYx7TXaod4ZeyPx5j5L4opXITcmaukPlOn5UFwQ3J5JBL6O9
-	Mp/+S+RdBX/rno9ZrENvDRAvQWdum4HVV8NFYvOq9koT3JuKWV1WIy/S1/erunhVbMZXWsMv3/8hl
-	8c0wSKdxdS9Ncortt/NkCis91nxrzVOxkkwUA/ADPY6or94VGuA3cHQj4g+dOyzoO163ETGlDfL83
-	isyDkt1mvN4KIVor9y89H4gZAkCN+5OtHCy1v/kxVwmBf4LJb4vltzioVII6rT/e+UR0s5LXYgSSq
-	BJ0fklz108fHrsiDyXeQ==;
+	List-Owner; bh=F6wxlnFKdWahy1zwVI3nnuY9R78rQzRb7aiCz4hvOGE=; b=UK1CdIEkuxTiz1
+	63ef6UUGTNIBEHR1LD1BQs2HaT0TuifORVwqIS3/uFjW8QnDV9ZM927z5Dn1NUGa0xDqyxRmTw5fr
+	QrADtlwqLZijt1OpIsX3G1hFMS7bD6XKHfg6AtZSNw8X9KepR37Z8xS5xZTQgvChpf2iz/5RcSvF4
+	fZs9SGh6LT6h4HC0LjV4sVP0bn9e+cT2lIn4sqRSgjn20A51K37wVKr/Z/a8j5tsY+L2GLrxT0bjO
+	f9s28Ko5Fqtqyfk/vR8Iq49LP2mlZ0EbQHmH+cfweJnRQv9wMznUyNWYDf6aXGyD0A1jQJk4PmCEa
+	wy4W2Gqf9XSehGw9/VSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivRJj-00043H-T1; Sat, 25 Jan 2020 19:42:03 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+	id 1ivRZC-0000DV-UV; Sat, 25 Jan 2020 19:58:02 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivRJb-00042G-F2
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 19:41:57 +0000
+ id 1ivRZ4-0000Cb-2H
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 19:57:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1579981310;
+ s=mimecast20190719; t=1579982272;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=AgpWBVZ2Zmngb4zlRI3WuIHZKM7LDWwyVepAeoXIIIw=;
- b=UobfgHjSGNTtIUqscxGN8TjnsxspaL94gUHshVjkPCwfPbOKBZ8SUam0fsMxfMVU8+HH6l
- /q+/USV+aO4eWam0aTX7ncXzbykl1eDUjuDvcVQBBoAC9rFSeqVLb0fMUw2owT9I7Q3QLv
- btWRP/moFjN6MisvnnUZ/RqQGiIIFCw=
+ bh=rCFExYBqRuTQVgkc1w2zE0sP2/6i9VF6QWac6tDmMtY=;
+ b=B5vYXqllSZiA3J+f2Tmkn0heL0SdA2aFsjAl+lg35JiG96m4EW74nj+m6qYHI4rlSePY/f
+ e0wdUj19SxsRLYwr3sjIPNBeUYy9jhUTK/sWZqZnVlru+1aiALNVuqkgJOkjAfNoWCcySp
+ mChFnsCpV/mvaiu5x2CiokGyAbsOupA=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-214-9INydv1jPCy2zEZg_D8bFQ-1; Sat, 25 Jan 2020 14:41:45 -0500
-X-MC-Unique: 9INydv1jPCy2zEZg_D8bFQ-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
+ us-mta-346-40Jl93FAMqitlcDrNK8sMg-1; Sat, 25 Jan 2020 14:57:45 -0500
+X-MC-Unique: 40Jl93FAMqitlcDrNK8sMg-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 22CD91800D48;
- Sat, 25 Jan 2020 19:41:42 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 75D3C10054E3;
+ Sat, 25 Jan 2020 19:57:42 +0000 (UTC)
 Received: from llong.remote.csb (ovpn-121-36.rdu2.redhat.com [10.10.121.36])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 0F9172718F;
- Sat, 25 Jan 2020 19:41:37 +0000 (UTC)
-Subject: Re: [PATCH v9 0/5] Add NUMA-awareness to qspinlock
-To: paulmck@kernel.org
-References: <20200115035920.54451-1-alex.kogan@oracle.com>
- <20200124222434.GA7196@paulmck-ThinkPad-P72>
- <6AAE7FC6-F5DE-4067-8BC4-77F27948CD09@oracle.com>
- <20200125005713.GZ2935@paulmck-ThinkPad-P72>
- <02defadb-217d-7803-88a1-ec72a37eda28@redhat.com>
- <adb4fb09-f374-4d64-096b-ba9ad8b35fd5@redhat.com>
- <20200125045844.GC2935@paulmck-ThinkPad-P72>
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 83F1F60BEC;
+ Sat, 25 Jan 2020 19:57:39 +0000 (UTC)
+Subject: Re: [PATCH v8 4/5] locking/qspinlock: Introduce starvation avoidance
+ into CNA
 From: Waiman Long <longman@redhat.com>
+To: Alex Kogan <alex.kogan@oracle.com>
+References: <20191230194042.67789-1-alex.kogan@oracle.com>
+ <20191230194042.67789-5-alex.kogan@oracle.com>
+ <20200121132949.GL14914@hirez.programming.kicks-ass.net>
+ <cfdf635d-be2e-9d4b-c4ca-6bcbddc6868f@redhat.com>
+ <3862F8A1-FF9B-40AD-A88E-2C0BA7AF6F58@oracle.com>
+ <20200124075235.GX14914@hirez.programming.kicks-ass.net>
+ <2c6741c5-d89d-4b2c-cebe-a7c7f6eed884@redhat.com>
+ <48ce49e5-98a7-23cd-09f4-8290a65abbb5@redhat.com>
+ <8D3AFB47-B595-418C-9568-08780DDC58FF@oracle.com>
+ <714892cd-d96f-4d41-ae8b-d7b7642a6e3c@redhat.com>
+ <1669BFDE-A1A5-4ED8-B586-035460BBF68A@oracle.com>
+ <45660873-731a-a810-8c57-1a5a19d266b4@redhat.com>
+ <b26837a9-d0cd-4413-95ec-1deaca184324@redhat.com>
 Organization: Red Hat
-Message-ID: <967f99ee-b781-43f4-d8ba-af83786c429c@redhat.com>
-Date: Sat, 25 Jan 2020 14:41:39 -0500
+Message-ID: <5ffb74f6-c635-cfc8-ab01-fb990f12a93a@redhat.com>
+Date: Sat, 25 Jan 2020 14:57:41 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20200125045844.GC2935@paulmck-ThinkPad-P72>
+In-Reply-To: <b26837a9-d0cd-4413-95ec-1deaca184324@redhat.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200125_114155_580817_9C425B91 
-X-CRM114-Status: GOOD (  15.23  )
+X-CRM114-CacheID: sfid-20200125_115754_193442_73462255 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,51 +104,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com,
+Cc: linux-arch@vger.kernel.org, Hanjun Guo <guohanjun@huawei.com>,
  Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
+ dave.dice@oracle.com, Jan Glauber <jglauber@marvell.com>, x86@kernel.org,
  Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>, bp@alien8.de,
- hpa@zytor.com, Alex Kogan <alex.kogan@oracle.com>, steven.sistare@oracle.com,
- tglx@linutronix.de, daniel.m.jordan@oracle.com,
+ linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, hpa@zytor.com,
+ Steven Sistare <steven.sistare@oracle.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Daniel Jordan <daniel.m.jordan@oracle.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/24/20 11:58 PM, Paul E. McKenney wrote:
-> On Fri, Jan 24, 2020 at 09:17:05PM -0500, Waiman Long wrote:
->> On 1/24/20 8:59 PM, Waiman Long wrote:
->>>> You called it!  I will play with QEMU's -numa argument to see if I can get
->>>> CNA to run for me.  Please accept my apologies for the false alarm.
->>>>
->>>> 							Thanx, Paul
->>>>
->>> CNA is not currently supported in a VM guest simply because the numa
->>> information is not reliable. You will have to run it on baremetal to
->>> test it. Sorry for that.
->> Correction. There is a command line option to force CNA lock to be used
->> in a VM. Use the "numa_spinlock=on" boot command line parameter.
-> As I understand it, I need to use a series of -numa arguments to qemu
-> combined with the numa_spinlock=on (or =1) on the kernel command line.
-> If the kernel thinks that there is only one NUMA node, it appears to
-> avoid doing CNA.
->
-> Correct?
->
-> 							Thanx, Paul
->
-In auto-detection mode (the default), CNA will only be turned on when
-paravirt qspinlock is not enabled first and there are at least 2 numa
-nodes. The "numa_spinlock=on" option will force it on even when both of
-the above conditions are false.
-
-Cheers,
-Longman
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMS8yNC8yMCAxOjUxIFBNLCBXYWltYW4gTG9uZyB3cm90ZToKPj4gWW91IGNhbiB1c2UgdGhl
+IGluX3Rhc2soKSBtYWNybyBpbiBpbmNsdWRlL2xpbnV4L3ByZWVtcHQuaC4gVGhpcyBpcwo+PiBq
+dXN0IGEgcGVyY3B1IHByZWVtcHRfY291bnQgcmVhZCBhbmQgdGVzdC4gSWYgaW5fdGFzaygpIGlz
+IGZhbHNlLCBpdAo+PiBpcyBpbiBhIHtzb2Z0fGhhcmR9aXJxIG9yIG5taSBjb250ZXh0LiBJZiBp
+dCBpcyB0cnVlLCB5b3UgY2FuIGNoZWNrCj4+IHRoZSBydF90YXNrKCkgbWFjcm8gdG8gc2VlIGlm
+IGl0IGlzIGFuIFJUIHRhc2suIFRoYXQgd2lsbCBhY2Nlc3MgdG8KPj4gdGhlIGN1cnJlbnQgdGFz
+ayBzdHJ1Y3R1cmUuIFNvIGl0IG1heSBjb3N0IGEgbGl0dGxlIGJpdCBtb3JlIGlmIHlvdQo+PiB3
+YW50IHRvIGhhbmRsZSB0aGUgUlQgdGFzayB0aGUgc2FtZSB3YXkuCj4+Cj4gV2UgbWF5IG5vdCBu
+ZWVkIHRvIGRvIHRoYXQgZm9yIHNvZnRJUlEgY29udGV4dC4gSWYgdGhhdCBpcyB0aGUgY2FzZSwg
+eW91Cj4gY2FuIHVzZSBpbl9pcnEoKSB3aGljaCBjaGVja3MgZm9yIGhhcmRpcnEgYW5kIG5taSBv
+bmx5LiBQZXRlciwgd2hhdCBpcwo+IHlvdXIgdGhvdWdodCBvbiB0aGF0PwoKSW4gc2Vjb25kIHRo
+b3VnaHQsIHdlIHNob3VsZCBkbyB0aGF0IGZvciBzb2Z0SVJRIGFzIHdlbGwuIEFsc28sIHdlIG1h
+eQp3YW50IHRvIGFsc28gY2hlY2sgaWYgaXJxc19kaXNhYmxlZCgpIGlzIHRydWUgYXMgd2VsbCBi
+eSBjYWxscyBsaWtlCnNwaW5fbG9ja19pcnEoKSBvciBzcGluX2xvY2tfaXJxc2F2ZSgpLsKgIFdl
+IGRvIG5vdCB3YW50IHRvIHVubmVjZXNzYXJpbHkKcHJvbG9uZyB0aGUgaXJxIG9mZiBwZXJpb2Qu
+CgpDaGVlcnMsCkxvbmdtYW4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
