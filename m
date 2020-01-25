@@ -2,48 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E15C149530
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:20:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5ED46149533
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:23:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wj6PIw/gJhdvwPNuwkmudcEL9dup2CLG3R/BEyTOyxs=; b=scUpFMBVso/6zE
-	JgOkjgjfCLEUF4i+0GibSFxpA5bOER5mdiJci4IAgstgreuJy0FgZ7dWN/HuivmZKqSvl77A9/Gu8
-	4zLyAoHzKqiOYgY+a+jEgTElM0Ivhh03iAj84p818seXmtABczgOclRXmbGyMs3VLS2CuYH/fBH0z
-	63hnYYegawZVF/90QCxx0MckbmUdx7it/Df4nwtT0GZQjUF83wI1V8kS5iIySa405hRfSQV/2RAQd
-	qIlWDUtqGM5BWAjZomrxmQeC9sAr7SuuyO/YySrVrous4zX35cJ9SH2dx7qiEVgUOKiWxu9MplWsB
-	zwna+k53tZ4zJD4IybhA==;
+	List-Owner; bh=7BUuCntQ97BR11LPVANzFtM0HINy+oFp6W+H9IvZGSU=; b=JrTv7mCNvIL3+6
+	xyG9u+BQph7YJMys7jAHDXLJ7k4qXMAscL5ugCjWqVXsE8yyZGOajUKik5iGyWwOxOpWXZDUNjnh1
+	Uq60hfgH5qkLKXuUbu1oI79LM8+OIkBaWl4Gvh8y5oYpUbCi3ylNhDhPrQvKa4osPdWfGApU7YL2a
+	/4LrHk/WMNzIRbwZjMuGeZt1yfFb45y/qrfhlnN56eULI6zliXVgZHpKqaaF/u6SLGTf01RXzLu7N
+	gdIExbf8xtulX4BjAxoPrTbR/GKap+v9LiR9K8AO7OsNIMwxv5Xcx2YPz10LK9WP8fnULjIgaTRwA
+	zeJCkssqtLuvP4u0QuTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivJUi-0005dz-EA; Sat, 25 Jan 2020 11:20:52 +0000
+	id 1ivJXg-00065L-4t; Sat, 25 Jan 2020 11:23:56 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ivJXX-00065F-Jy
+ for linux-arm-kernel@bombadil.infradead.org; Sat, 25 Jan 2020 11:23:47 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Transfer-Encoding:
+ Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+ Sender:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=PhH/Bei9yqMj6egnkFuJIFtrTs5hg8forCAjWaNH6eQ=; b=lZpV46ccENddjfWybH99y/x/yc
+ TzsfYeADsfzrDY5l0QKM6D3J6I9x7tbfdn1c/tHMcTCzoW77CcAcKeIJnm/9R56lJZGLtf8Yt5yDz
+ G9+3pDPOD2At24Tb+QeqY7xjCk3+b2fwYSV11OJA9NjYipT2ES/AStvYIjbcNQaohmtSv+JRiy5TO
+ sFSBSd3b2qhqIl9wZJjdgh70DmrIP3oDzig+3YOW9b9di1vzjGVw192a9O93hwqROj2KYdIWlpPNv
+ NFRbzGsokvvEsopCwu6xmAmlKRy4eTqRIJm62+tUMHhE7c261ZjmYL0as88zVFECz3EJe/o8eeKhL
+ ba6hJiyw==;
 Received: from j217100.upc-j.chello.nl ([24.132.217.100]
  helo=worktop.programming.kicks-ass.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivJUY-0005d4-0o; Sat, 25 Jan 2020 11:20:42 +0000
+ by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ivJXU-00050c-0N; Sat, 25 Jan 2020 11:23:44 +0000
 Received: by worktop.programming.kicks-ass.net (Postfix, from userid 1000)
- id 1F4A2980BB0; Sat, 25 Jan 2020 12:20:39 +0100 (CET)
-Date: Sat, 25 Jan 2020 12:20:39 +0100
+ id 67911980BB0; Sat, 25 Jan 2020 12:23:41 +0100 (CET)
+Date: Sat, 25 Jan 2020 12:23:41 +0100
 From: Peter Zijlstra <peterz@infradead.org>
-To: Waiman Long <longman@redhat.com>
-Subject: Re: [PATCH v8 4/5] locking/qspinlock: Introduce starvation avoidance
- into CNA
-Message-ID: <20200125112039.GX11457@worktop.programming.kicks-ass.net>
-References: <cfdf635d-be2e-9d4b-c4ca-6bcbddc6868f@redhat.com>
- <3862F8A1-FF9B-40AD-A88E-2C0BA7AF6F58@oracle.com>
- <20200124075235.GX14914@hirez.programming.kicks-ass.net>
- <2c6741c5-d89d-4b2c-cebe-a7c7f6eed884@redhat.com>
- <48ce49e5-98a7-23cd-09f4-8290a65abbb5@redhat.com>
- <8D3AFB47-B595-418C-9568-08780DDC58FF@oracle.com>
- <714892cd-d96f-4d41-ae8b-d7b7642a6e3c@redhat.com>
- <1669BFDE-A1A5-4ED8-B586-035460BBF68A@oracle.com>
- <45660873-731a-a810-8c57-1a5a19d266b4@redhat.com>
- <b26837a9-d0cd-4413-95ec-1deaca184324@redhat.com>
+To: Alex Kogan <alex.kogan@oracle.com>
+Subject: Re: [PATCH v7 1/5] locking/qspinlock: Rename mcs lock/unlock macros
+ and make them more generic
+Message-ID: <20200125112341.GY11457@worktop.programming.kicks-ass.net>
+References: <20191125210709.10293-1-alex.kogan@oracle.com>
+ <20191125210709.10293-2-alex.kogan@oracle.com>
+ <20200122091547.GU14879@hirez.programming.kicks-ass.net>
+ <C608A39E-CAFC-4C79-9EB6-3DFD9621E3F6@oracle.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <b26837a9-d0cd-4413-95ec-1deaca184324@redhat.com>
+In-Reply-To: <C608A39E-CAFC-4C79-9EB6-3DFD9621E3F6@oracle.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -56,39 +66,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Hanjun Guo <guohanjun@huawei.com>,
- Arnd Bergmann <arnd@arndb.de>, dave.dice@oracle.com,
- Jan Glauber <jglauber@marvell.com>, x86@kernel.org,
+Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com, arnd@arndb.de,
+ dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
  Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, hpa@zytor.com,
- Alex Kogan <alex.kogan@oracle.com>, Steven Sistare <steven.sistare@oracle.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Daniel Jordan <daniel.m.jordan@oracle.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ steven.sistare@oracle.com, linux-kernel@vger.kernel.org,
+ rahul.x.yadav@oracle.com, mingo@redhat.com, bp@alien8.de, hpa@zytor.com,
+ longman@redhat.com, tglx@linutronix.de, daniel.m.jordan@oracle.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 24, 2020 at 01:51:34PM -0500, Waiman Long wrote:
-
-< 71 lines of garbage >
-
-> > You can use the in_task() macro in include/linux/preempt.h. This is
-> > just a percpu preempt_count read and test. If in_task() is false, it
-> > is in a {soft|hard}irq or nmi context. If it is true, you can check
-> > the rt_task() macro to see if it is an RT task. That will access to
-> > the current task structure. So it may cost a little bit more if you
-> > want to handle the RT task the same way.
-> >
-> We may not need to do that for softIRQ context. If that is the case, you
-> can use in_irq() which checks for hardirq and nmi only. Peter, what is
-> your thought on that?
-
-Can you lot please start trimming emails when you reply?
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBKYW4gMjMsIDIwMjAgYXQgMDY6NTE6MTFQTSAtMDUwMCwgQWxleCBLb2dhbiB3cm90
+ZToKPiA+IE9uIEphbiAyMiwgMjAyMCwgYXQgNDoxNSBBTSwgUGV0ZXIgWmlqbHN0cmEgPHBldGVy
+ekBpbmZyYWRlYWQub3JnPiB3cm90ZToKCj4gPiBBbHNvLCBwYXNzX2xvY2sgc2VlbXMgdW5mb3J0
+dW5hdGVseSBuYW1lZOKApgoKPiBXZWxsLCBJIGtub3cgdGhlIGd1eSB3aG8gc2hvdWxkIGJlIGJs
+YW1lZCBmb3IgdGhhdCBvbmUgOikKPiBodHRwczovL2xrbWwub3JnL2xrbWwvMjAxOS83LzE2LzIx
+MiA8aHR0cHM6Ly9sa21sLm9yZy9sa21sLzIwMTkvNy8xNi8yMTI+CgpIYSwgeWVzLCB0aGF0IGd1
+eSBpcyBhbiBpZGlvdCBzb21ldGltZXMgOy0pCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
