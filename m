@@ -2,65 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8578E14952F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:20:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E15C149530
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:20:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CmWx6ABKtq6u8CO46Y1869NIjS18ES/4Rgh2zA7LU/M=; b=CYC+UiKWLQXIs7
-	s5Sf+Q4e4rYaBIRYDs5SlZVo8T2M6yPSaYgfqi8CbOjnfzay377QYV2fwlqJ49okLgwIhaP94hU9o
-	4AMSDSQ8x306acPXYPTfDhrt8s9fDKRJlfltvVqkR3uySWI+rFZm8zJacujMULnxQdg9/QTpt0gPO
-	ksn2GbIP1i2/OiqgxuvYnSBjozeWWJ42ZTtJ94/kgFLUg90nm+6r9sVTFKVLJxHaKvvzP4WSUdSmy
-	elghAjUYTiFf2tep64AXBQ1P/0pXgyeFJGiQyRdjNmaKipECKLgqPmXL0Y7n/XtUfErnd9CEi1geu
-	WQPIxEeQwZ5U4mPFSbMQ==;
+	List-Owner; bh=wj6PIw/gJhdvwPNuwkmudcEL9dup2CLG3R/BEyTOyxs=; b=scUpFMBVso/6zE
+	JgOkjgjfCLEUF4i+0GibSFxpA5bOER5mdiJci4IAgstgreuJy0FgZ7dWN/HuivmZKqSvl77A9/Gu8
+	4zLyAoHzKqiOYgY+a+jEgTElM0Ivhh03iAj84p818seXmtABczgOclRXmbGyMs3VLS2CuYH/fBH0z
+	63hnYYegawZVF/90QCxx0MckbmUdx7it/Df4nwtT0GZQjUF83wI1V8kS5iIySa405hRfSQV/2RAQd
+	qIlWDUtqGM5BWAjZomrxmQeC9sAr7SuuyO/YySrVrous4zX35cJ9SH2dx7qiEVgUOKiWxu9MplWsB
+	zwna+k53tZ4zJD4IybhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivJUQ-0005P2-37; Sat, 25 Jan 2020 11:20:34 +0000
-Received: from mailoutvs43.siol.net ([185.57.226.234] helo=mail.siol.net)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivJUD-0005OV-Rb
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 11:20:23 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 7DE3B520C74;
- Sat, 25 Jan 2020 12:20:19 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta10.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta10.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id ydjZDDwb9wfv; Sat, 25 Jan 2020 12:20:19 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 2BF84520C7E;
- Sat, 25 Jan 2020 12:20:19 +0100 (CET)
-Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
- [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id AF879520C74;
- Sat, 25 Jan 2020 12:20:18 +0100 (CET)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [linux-sunxi] [PATCH 1/8] clk: sunxi-ng: sun8i-de2: Swap A64 and
- H6 definitions
-Date: Sat, 25 Jan 2020 12:20:18 +0100
-Message-ID: <2008374.irdbgypaU6@jernej-laptop>
-In-Reply-To: <CAGb2v6680yWT8KtjK0uKM00+6ed4NoPpsMaDyfYERwOXgb8Vbg@mail.gmail.com>
-References: <20200124232014.574989-1-jernej.skrabec@siol.net>
- <20200124232014.574989-2-jernej.skrabec@siol.net>
- <CAGb2v6680yWT8KtjK0uKM00+6ed4NoPpsMaDyfYERwOXgb8Vbg@mail.gmail.com>
+	id 1ivJUi-0005dz-EA; Sat, 25 Jan 2020 11:20:52 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=worktop.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ivJUY-0005d4-0o; Sat, 25 Jan 2020 11:20:42 +0000
+Received: by worktop.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 1F4A2980BB0; Sat, 25 Jan 2020 12:20:39 +0100 (CET)
+Date: Sat, 25 Jan 2020 12:20:39 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: Waiman Long <longman@redhat.com>
+Subject: Re: [PATCH v8 4/5] locking/qspinlock: Introduce starvation avoidance
+ into CNA
+Message-ID: <20200125112039.GX11457@worktop.programming.kicks-ass.net>
+References: <cfdf635d-be2e-9d4b-c4ca-6bcbddc6868f@redhat.com>
+ <3862F8A1-FF9B-40AD-A88E-2C0BA7AF6F58@oracle.com>
+ <20200124075235.GX14914@hirez.programming.kicks-ass.net>
+ <2c6741c5-d89d-4b2c-cebe-a7c7f6eed884@redhat.com>
+ <48ce49e5-98a7-23cd-09f4-8290a65abbb5@redhat.com>
+ <8D3AFB47-B595-418C-9568-08780DDC58FF@oracle.com>
+ <714892cd-d96f-4d41-ae8b-d7b7642a6e3c@redhat.com>
+ <1669BFDE-A1A5-4ED8-B586-035460BBF68A@oracle.com>
+ <45660873-731a-a810-8c57-1a5a19d266b4@redhat.com>
+ <b26837a9-d0cd-4413-95ec-1deaca184324@redhat.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200125_032022_051203_43556A6C 
-X-CRM114-Status: GOOD (  13.53  )
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.234 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+Content-Disposition: inline
+In-Reply-To: <b26837a9-d0cd-4413-95ec-1deaca184324@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,52 +56,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Mike Turquette <mturquette@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- Rob Herring <robh+dt@kernel.org>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: linux-arch@vger.kernel.org, Hanjun Guo <guohanjun@huawei.com>,
+ Arnd Bergmann <arnd@arndb.de>, dave.dice@oracle.com,
+ Jan Glauber <jglauber@marvell.com>, x86@kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, hpa@zytor.com,
+ Alex Kogan <alex.kogan@oracle.com>, Steven Sistare <steven.sistare@oracle.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Daniel Jordan <daniel.m.jordan@oracle.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi!
+On Fri, Jan 24, 2020 at 01:51:34PM -0500, Waiman Long wrote:
 
-Dne sobota, 25. januar 2020 ob 04:05:33 CET je Chen-Yu Tsai napisal(a):
-> On Sat, Jan 25, 2020 at 7:20 AM Jernej Skrabec <jernej.skrabec@siol.net> 
-wrote:
-> > For some reason, A64 and H6 have swapped clocks and resets definitions.
-> > H6 doesn't have rotation unit while A64 has. Swap around to correct the
-> > issue.
-> > 
-> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> 
-> Could you add Fixes tags for this one?
+< 71 lines of garbage >
 
-I'm not sure which commit to reference. H6 one? or also initial A64 one?
+> > You can use the in_task() macro in include/linux/preempt.h. This is
+> > just a percpu preempt_count read and test. If in_task() is false, it
+> > is in a {soft|hard}irq or nmi context. If it is true, you can check
+> > the rt_task() macro to see if it is an RT task. That will access to
+> > the current task structure. So it may cost a little bit more if you
+> > want to handle the RT task the same way.
+> >
+> We may not need to do that for softIRQ context. If that is the case, you
+> can use in_irq() which checks for hardirq and nmi only. Peter, what is
+> your thought on that?
 
-I just found out that H5 compatible uses A64 structure, which is not correct. 
-H5 doesn't contain rotate core.
-
-Do you have any better idea how to nicely solve this mess? I'm thinking that 
-for v2 I would first decouple some compatibles, like this for H5 and R40 and 
-V3s from A83T (as it can be seen in the next patch). After that, rather than 
-switching definitions I would fix each compatible one by one. At the end, if any 
-entry is duplicated, I can add one commit to merge same structures.
-
-What do you think?
-
-Best regards,
-Jernej
-
-
-
+Can you lot please start trimming emails when you reply?
 
 _______________________________________________
 linux-arm-kernel mailing list
