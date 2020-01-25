@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77BF7149516
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:04:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67643149515
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:04:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zOeGWrgfSD9BhnKX9HsccgdkRHwo4BTAHeqXSZy5JeM=; b=iBLhp60osN2bNR
-	xzn8ZMl2uCI++oxDu9be/5sR6biF1NsqcilWWj6sZPjJ2LpM/L5dHm82O1tF8vvjktgX43kMITI77
-	Ah+OxJrdpKaZOJyJX4EAl8w5bKiLZqhEGmF0tUlTaOHJKhWc3g4OVvTWXMBNor5V0wm2zexijy9jr
-	tmfVUjwB4Toa+9DiMO2N5Ld+XXxIWmhwUvPftJzq7D4NP0r6pA/uSg7CtonHl/EkF5AO7skVGJoeN
-	9Hk0HMV7aw68muOqUz4twLthAqxaHOvIqPwqAEgkKt6pPhSDi/xzQ+KqIbgfiS4D0UYwaiY9IgD0P
-	xVe+dsBCBlrh5EELt3bA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6xmfo5l/l3SsNA9hOz30gJm1XFfUlbmoHkvyZbSCxK4=; b=Ktrq6QF1XFzBEN
+	XPDxPLRNaCl+MfF5fW3ebrkVCgUxye/ZcHpRJ+uLjPiW+aqP9dDZvojXo9tWr5p44tC9j0yIs0V5H
+	ePUIRMUXzYncQGk/9c7M0HpibGLs1FdENFZSZnN0cmPzfqg8IAHJ15p2m4dwic/TXLRoagGx35U7V
+	BaNh3tXenn+F/kj8+seeogKflHj8ixi75fGRBneGGkq2yxN3DjpKW3SGNDOrml+15VKoSmgFGPuM8
+	vp7f5w0flE5CJqC4gXr2ZJtmwk9kPB4v56Usx0Xv8az2GUZAf6WA3K4GB3xXgW26qTgzoZiCKXDxA
+	8V3AzN9uCwYtEEOP9ydg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivJFG-0006Jb-TC; Sat, 25 Jan 2020 11:04:54 +0000
-Received: from mailoutvs48.siol.net ([185.57.226.239] helo=mail.siol.net)
+	id 1ivJF2-00063P-Q8; Sat, 25 Jan 2020 11:04:40 +0000
+Received: from mailoutvs57.siol.net ([185.57.226.248] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivJEW-0005qI-1I
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 11:04:11 +0000
+ id 1ivJEW-0005qK-1l
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 11:04:09 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 4D8D6520E6B;
- Sat, 25 Jan 2020 12:04:00 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTP id 9ABF5520F58;
+ Sat, 25 Jan 2020 12:04:02 +0100 (CET)
 X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id VMz4BJPEy_mv; Sat, 25 Jan 2020 12:04:00 +0100 (CET)
+ with ESMTP id eslvSnbMlTF3; Sat, 25 Jan 2020 12:04:02 +0100 (CET)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 04A71520EEE;
- Sat, 25 Jan 2020 12:04:00 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPS id 571D3520F74;
+ Sat, 25 Jan 2020 12:04:02 +0100 (CET)
 Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
  [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 75B65520E6B;
- Sat, 25 Jan 2020 12:03:59 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPSA id 0B436520F58;
+ Sat, 25 Jan 2020 12:04:00 +0100 (CET)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mripard@kernel.org,
 	wens@csie.org
-Subject: [PATCH 0/5] arm64: dts: allwinner: a64: Enable deinterlace core
-Date: Sat, 25 Jan 2020 12:03:48 +0100
-Message-Id: <20200125110353.591658-1-jernej.skrabec@siol.net>
+Subject: [PATCH 1/5] dt-bindings: interconnect: sunxi: Add A64 MBUS compatible
+Date: Sat, 25 Jan 2020 12:03:49 +0100
+Message-Id: <20200125110353.591658-2-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200125110353.591658-1-jernej.skrabec@siol.net>
+References: <20200125110353.591658-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200125_030408_244227_49239B32 
-X-CRM114-Status: UNSURE (   7.64  )
+X-CRM114-CacheID: sfid-20200125_030408_252368_AD854B71 
+X-CRM114-Status: UNSURE (   8.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -56,7 +58,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.239 listed in list.dnswl.org]
+ low trust [185.57.226.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,28 +81,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allwinner A64 contains deinterlace core, compatible to the one found in
-H3. It can be used in combination with VPU to playback interlaced videos.
+A64 contains MBUS controller. Add a compatible for it.
 
-Please take a look.
+Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+---
+ .../devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml  | 1 +
+ 1 file changed, 1 insertion(+)
 
-Best regards,
-Jernej
-
-Jernej Skrabec (5):
-  dt-bindings: interconnect: sunxi: Add A64 MBUS compatible
-  clk: sunxi-ng: a64: Export MBUS clock
-  arm64: dts: allwinner: a64: Add MBUS controller node
-  media: dt-bindings: media: Add Allwinner A64 deinterlace compatible
-  arm64: dts: allwinner: a64: Add deinterlace core node
-
- .../arm/sunxi/allwinner,sun4i-a10-mbus.yaml   |  1 +
- .../media/allwinner,sun8i-h3-deinterlace.yaml |  6 ++++-
- arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 22 +++++++++++++++++++
- drivers/clk/sunxi-ng/ccu-sun50i-a64.h         |  4 ----
- include/dt-bindings/clock/sun50i-a64-ccu.h    |  2 +-
- 5 files changed, 29 insertions(+), 6 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
+index 9370e64992dd..aa0738b4d534 100644
+--- a/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
++++ b/Documentation/devicetree/bindings/arm/sunxi/allwinner,sun4i-a10-mbus.yaml
+@@ -30,6 +30,7 @@ properties:
+     enum:
+       - allwinner,sun5i-a13-mbus
+       - allwinner,sun8i-h3-mbus
++      - allwinner,sun50i-a64-mbus
+ 
+   reg:
+     maxItems: 1
 -- 
 2.25.0
 
