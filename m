@@ -2,67 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 290DD1493E0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 08:15:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A25414946B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 11:43:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:MIME-Version:
+	Subject:To:From:Date:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Vnk0WB5i4FCTscndyBPuuZtcYP+Ege+ICQOeDXpKjMA=; b=NH5ZAnOepYN9Jt
-	6UiDSXOdcK5+V17gFWZciBsobo2LVDnv7a8JBGPPVg/tphmt0mj2+8fCVUtPvKZLYIf+eXuumTnpv
-	h8VvUuCeSd9ou+tvL6SsJ1Qh3JSnqfEh6jvFqDNahD/VpzXPX2DXRGDsEwFSdJGDLWwNiICIhL9Zj
-	EbNbCGhs+z4KbEH+vZQnlVAm4Uwfa4CVRp7QYem9HDXEwLQWpoXX64kxRHZrPUOFpQtUj2njYO7pJ
-	5/nYo0TCgekRl+O/X/N7E9HIauRhlJssHI5ffxJ6Oa4XjkFy+/gh5K27WEzlaKB0sU9qdR3sdU/fR
-	yi+6m8SZVeg8H+tS8KFw==;
+	List-Owner; bh=44dFautL6WaXXJ0Mt5XUWKQgnx03WQDLXBo5el4oYqM=; b=dGHaN5GLJdmPYy
+	GvvwcF/qjlN8DOIZt1DZAYWiRvPmzm1bRKq/+rBiD5SZB2OcjzqpFIXLP8Ae4cpR8Z5J7rJC8edN7
+	T76CATiPO1pc9ALMvO5k3qmtZ+6pbXYVsbwWRakEYjnE57xDgzj9PFZx4FK2fgJnXHGrWFxQwtAN4
+	E1/6pkNqigTIIs9dfNTMuLjP2mePRK40fTSoGXGMnxSgjCR7XXMuOLKRiqAMoOnEv5eX4NaBZhPEM
+	+UXLeVW1Uns0g7qVXwM4CdUYHsmBcW4+7258WOEnLhCChWAiMGqUVG8nbbeCifiK/OUsqcrZbwBmB
+	Q+r90lezIjdg/Dr8jU/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivFf2-0006LY-3V; Sat, 25 Jan 2020 07:15:16 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1ivIuY-0007V1-Bt; Sat, 25 Jan 2020 10:43:30 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivFem-00068H-I4
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 07:15:02 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga003.jf.intel.com ([10.7.209.27])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 24 Jan 2020 23:14:57 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,360,1574150400"; d="scan'208";a="228517702"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga003.jf.intel.com with ESMTP; 24 Jan 2020 23:14:55 -0800
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1ivFeh-000DLC-BA; Sat, 25 Jan 2020 15:14:55 +0800
-Date: Sat, 25 Jan 2020 15:14:47 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Olof Johansson <olof@lixom.net>
-Subject: [arm-soc:arm/fixes] BUILD SUCCESS
- 6716cb162deb9d474095a57d7a515edc13926ea7
-Message-ID: <5e2beae7.8SswSpqgEHUQJdyX%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1ivIuQ-0007Tj-OZ; Sat, 25 Jan 2020 10:43:24 +0000
+Received: from [5.158.153.53] (helo=tip-bot2.lab.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tip-bot2@linutronix.de>)
+ id 1ivIu5-0008V2-8j; Sat, 25 Jan 2020 11:43:01 +0100
+Received: from [127.0.1.1] (localhost [IPv6:::1])
+ by tip-bot2.lab.linutronix.de (Postfix) with ESMTP id 74CF51C1A72;
+ Sat, 25 Jan 2020 11:42:48 +0100 (CET)
+Date: Sat, 25 Jan 2020 10:42:48 -0000
+From: "tip-bot2 for Paul E. McKenney" <tip-bot2@linutronix.de>
+To: linux-tip-commits@vger.kernel.org
+Subject: [tip: core/rcu] wireless/mediatek: Replace rcu_swap_protected() with
+ rcu_replace_pointer()
 MIME-Version: 1.0
+Message-ID: <157994896823.396.3709123757914257242.tip-bot2@tip-bot2>
+X-Mailer: tip-git-log-daemon
+Robot-ID: <tip-bot2.linutronix.de>
+Robot-Unsubscribe: Contact <mailto:tglx@linutronix.de> to get blacklisted from
+ these emails
+Precedence: bulk
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200124_231500_648930_79072383 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20200125_024322_938274_3B221F63 
+X-CRM114-Status: UNSURE (   9.78  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -4.0 (----)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-4.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -71,179 +68,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Reply-To: linux-kernel@vger.kernel.org
+Cc: Ryder Lee <ryder.lee@mediatek.com>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ "Paul E. McKenney" <paulmck@kernel.org>, netdev@vger.kernel.org,
+ x86 <x86@kernel.org>, linux-wireless@vger.kernel.org,
+ LKML <linux-kernel@vger.kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Roy Luo <royluo@google.com>, Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ "David S. Miller" <davem@davemloft.net>, Kalle Valo <kvalo@codeaurora.org>,
+ Felix Fietkau <nbd@nbd.name>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/fixes
-branch HEAD: 6716cb162deb9d474095a57d7a515edc13926ea7  Merge tag 'omap-for-fixes-whenever-signed' of git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap into arm/fixes
+The following commit has been merged into the core/rcu branch of tip:
 
-elapsed time: 648m
+Commit-ID:     a191c9e9f73a78e8801b5eeb3d43bbd6fd73b86f
+Gitweb:        https://git.kernel.org/tip/a191c9e9f73a78e8801b5eeb3d43bbd6fd73b86f
+Author:        Paul E. McKenney <paulmck@kernel.org>
+AuthorDate:    Wed, 11 Dec 2019 10:30:21 -08:00
+Committer:     Paul E. McKenney <paulmck@kernel.org>
+CommitterDate: Thu, 12 Dec 2019 10:20:51 -08:00
 
-configs tested: 152
-configs skipped: 0
+wireless/mediatek: Replace rcu_swap_protected() with rcu_replace_pointer()
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+This commit replaces the use of rcu_swap_protected() with the more
+intuitively appealing rcu_replace_pointer() as a step towards removing
+rcu_swap_protected().
 
-i386                             alldefconfig
-i386                              allnoconfig
-i386                             allyesconfig
-i386                                defconfig
-h8300                     edosk2674_defconfig
-h8300                    h8300h-sim_defconfig
-h8300                       h8s-sim_defconfig
-m68k                             allmodconfig
-m68k                       m5475evb_defconfig
-m68k                          multi_defconfig
-m68k                           sun3_defconfig
-s390                             alldefconfig
-s390                             allmodconfig
-s390                              allnoconfig
-s390                             allyesconfig
-s390                          debug_defconfig
-s390                                defconfig
-s390                       zfcpdump_defconfig
-x86_64               randconfig-a001-20200125
-x86_64               randconfig-a002-20200125
-x86_64               randconfig-a003-20200125
-i386                 randconfig-a001-20200125
-i386                 randconfig-a002-20200125
-i386                 randconfig-a003-20200125
-ia64                                defconfig
-powerpc                             defconfig
-sparc                            allyesconfig
-sparc                               defconfig
-sparc64                          allmodconfig
-sparc64                           allnoconfig
-sparc64                          allyesconfig
-sparc64                             defconfig
-x86_64               randconfig-b001-20200125
-x86_64               randconfig-b002-20200125
-x86_64               randconfig-b003-20200125
-i386                 randconfig-b001-20200125
-i386                 randconfig-b002-20200125
-i386                 randconfig-b003-20200125
-arc                  randconfig-a001-20200125
-arm                  randconfig-a001-20200125
-arm64                randconfig-a001-20200125
-ia64                 randconfig-a001-20200125
-powerpc              randconfig-a001-20200125
-sparc                randconfig-a001-20200125
-csky                 randconfig-a001-20200125
-openrisc             randconfig-a001-20200125
-s390                 randconfig-a001-20200125
-xtensa               randconfig-a001-20200125
-ia64                             alldefconfig
-ia64                             allmodconfig
-ia64                              allnoconfig
-ia64                             allyesconfig
-x86_64               randconfig-f001-20200125
-x86_64               randconfig-f002-20200125
-x86_64               randconfig-f003-20200125
-i386                 randconfig-f001-20200125
-i386                 randconfig-f002-20200125
-i386                 randconfig-f003-20200125
-parisc                            allnoconfig
-parisc                            allyesonfig
-parisc                         b180_defconfig
-parisc                        c3000_defconfig
-parisc                              defconfig
-riscv                            allmodconfig
-riscv                             allnoconfig
-riscv                            allyesconfig
-riscv                               defconfig
-riscv                    nommu_virt_defconfig
-riscv                          rv32_defconfig
-sh                               allmodconfig
-sh                                allnoconfig
-sh                          rsk7269_defconfig
-sh                  sh7785lcr_32bit_defconfig
-sh                            titan_defconfig
-arc                              allyesconfig
-arc                                 defconfig
-microblaze                      mmu_defconfig
-microblaze                    nommu_defconfig
-powerpc                           allnoconfig
-powerpc                       ppc64_defconfig
-powerpc                          rhel-kconfig
-um                                  defconfig
-um                             i386_defconfig
-um                           x86_64_defconfig
-mips                           32r2_defconfig
-mips                         64r6el_defconfig
-mips                             allmodconfig
-mips                              allnoconfig
-mips                             allyesconfig
-mips                      fuloong2e_defconfig
-mips                      malta_kvm_defconfig
-alpha                               defconfig
-csky                                defconfig
-nds32                             allnoconfig
-nds32                               defconfig
-x86_64               randconfig-e001-20200125
-x86_64               randconfig-e002-20200125
-x86_64               randconfig-e003-20200125
-i386                 randconfig-e001-20200125
-i386                 randconfig-e002-20200125
-i386                 randconfig-e003-20200125
-x86_64               randconfig-g001-20200125
-x86_64               randconfig-g002-20200125
-x86_64               randconfig-g003-20200125
-i386                 randconfig-g001-20200125
-i386                 randconfig-g002-20200125
-i386                 randconfig-g003-20200125
-c6x                  randconfig-a001-20200125
-h8300                randconfig-a001-20200125
-microblaze           randconfig-a001-20200125
-nios2                randconfig-a001-20200125
-sparc64              randconfig-a001-20200125
-x86_64               randconfig-c001-20200125
-x86_64               randconfig-c002-20200125
-x86_64               randconfig-c003-20200125
-i386                 randconfig-c001-20200125
-i386                 randconfig-c002-20200125
-i386                 randconfig-c003-20200125
-c6x                              allyesconfig
-c6x                        evmc6678_defconfig
-nios2                         10m50_defconfig
-nios2                         3c120_defconfig
-openrisc                    or1ksim_defconfig
-openrisc                 simple_smp_defconfig
-xtensa                       common_defconfig
-xtensa                          iss_defconfig
-arm                              allmodconfig
-arm                               allnoconfig
-arm                              allyesconfig
-arm                         at91_dt_defconfig
-arm                           efm32_defconfig
-arm                          exynos_defconfig
-arm                        multi_v5_defconfig
-arm                        multi_v7_defconfig
-arm                        shmobile_defconfig
-arm                           sunxi_defconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-arm64                            allyesconfig
-arm64                               defconfig
-x86_64                              fedora-25
-x86_64                                  kexec
-x86_64                                    lkp
-x86_64                                   rhel
-x86_64                         rhel-7.2-clear
-x86_64                               rhel-7.6
-alpha                randconfig-a001-20200125
-m68k                 randconfig-a001-20200125
-mips                 randconfig-a001-20200125
-nds32                randconfig-a001-20200125
-parisc               randconfig-a001-20200125
-riscv                randconfig-a001-20200125
-
+Link: https://lore.kernel.org/lkml/CAHk-=wiAsJLw1egFEE=Z7-GGtM6wcvtyytXZA1+BHqta4gg6Hw@mail.gmail.com/
+Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
+Reported-by: "Martin K. Petersen" <martin.petersen@oracle.com>
+[ paulmck: Apply Matthias Brugger feedback. ]
+Signed-off-by: Paul E. McKenney <paulmck@kernel.org>
+Reviewed-by: "Martin K. Petersen" <martin.petersen@oracle.com>
+Acked-by: Kalle Valo <kvalo@codeaurora.org>
+Cc: Felix Fietkau <nbd@nbd.name>
+Cc: Lorenzo Bianconi <lorenzo.bianconi83@gmail.com>
+Cc: Ryder Lee <ryder.lee@mediatek.com>
+Cc: Roy Luo <royluo@google.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: <linux-wireless@vger.kernel.org>
+Cc: <netdev@vger.kernel.org>
+Cc: <linux-arm-kernel@lists.infradead.org>
+Cc: <linux-mediatek@lists.infradead.org>
 ---
-0-DAY kernel test infrastructure                 Open Source Technology Center
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
+ drivers/net/wireless/mediatek/mt76/agg-rx.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/mediatek/mt76/agg-rx.c b/drivers/net/wireless/mediatek/mt76/agg-rx.c
+index 53b5a4b..59c1878 100644
+--- a/drivers/net/wireless/mediatek/mt76/agg-rx.c
++++ b/drivers/net/wireless/mediatek/mt76/agg-rx.c
+@@ -281,8 +281,8 @@ void mt76_rx_aggr_stop(struct mt76_dev *dev, struct mt76_wcid *wcid, u8 tidno)
+ {
+ 	struct mt76_rx_tid *tid = NULL;
+ 
+-	rcu_swap_protected(wcid->aggr[tidno], tid,
+-			   lockdep_is_held(&dev->mutex));
++	tid = rcu_replace_pointer(wcid->aggr[tidno], tid,
++				  lockdep_is_held(&dev->mutex));
+ 	if (tid) {
+ 		mt76_rx_aggr_shutdown(dev, tid);
+ 		kfree_rcu(tid, rcu_head);
 
 _______________________________________________
 linux-arm-kernel mailing list
