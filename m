@@ -2,69 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AB4514949B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 11:46:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77BF7149516
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:04:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X6CkrVR1bt8mu/hlWwUaMmDucfoutkb+/kHAa7UN4ek=; b=oHsLM2p9hEM4ei
-	EkfQ7VFpyZzDcaSQLm3ilK7w+DcGINleikA6HuIlSvXTvNr0NlYBqSumzeEPT2igHuMp+wiVHT5Ek
-	E3u6u1qiZxzm3T/2gdY/DII2fNV0UqX8taGk1EfMnqlwcarXyxQ06lL0ABZxaPdZQwTxxIkGjxfpz
-	1M6zxJCiTXjqY/OiyYwI51ZN87/easZGZL0cTYHmFHwD9ssj+2a6oyg7JQkZ4qj/VBKSi5YT21zLR
-	IBXoKKbkzKcKnRBByvvLy/4XLdwyqh0IqQ1EbFqoBwiLnScuQHxh6yCW0U4736CD5cL1gTB2megou
-	SiC5SDmiB9pvNWts1zhg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zOeGWrgfSD9BhnKX9HsccgdkRHwo4BTAHeqXSZy5JeM=; b=iBLhp60osN2bNR
+	xzn8ZMl2uCI++oxDu9be/5sR6biF1NsqcilWWj6sZPjJ2LpM/L5dHm82O1tF8vvjktgX43kMITI77
+	Ah+OxJrdpKaZOJyJX4EAl8w5bKiLZqhEGmF0tUlTaOHJKhWc3g4OVvTWXMBNor5V0wm2zexijy9jr
+	tmfVUjwB4Toa+9DiMO2N5Ld+XXxIWmhwUvPftJzq7D4NP0r6pA/uSg7CtonHl/EkF5AO7skVGJoeN
+	9Hk0HMV7aw68muOqUz4twLthAqxaHOvIqPwqAEgkKt6pPhSDi/xzQ+KqIbgfiS4D0UYwaiY9IgD0P
+	xVe+dsBCBlrh5EELt3bA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivIxb-0001H7-2b; Sat, 25 Jan 2020 10:46:39 +0000
-Received: from onstation.org ([52.200.56.107])
+	id 1ivJFG-0006Jb-TC; Sat, 25 Jan 2020 11:04:54 +0000
+Received: from mailoutvs48.siol.net ([185.57.226.239] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivIxQ-0001GW-M9
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 10:46:29 +0000
-Received: from localhost (c-98-239-145-235.hsd1.wv.comcast.net
- [98.239.145.235])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id C7F323EA42;
- Sat, 25 Jan 2020 10:46:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
- s=default; t=1579949186;
- bh=20OLpT9AQImoBtwxHWnQUH6B+FTQGj1F0WZXTR5Jw4U=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=K3SyMX5cFR0sr1VBUvV0khHYzaXHHW/So/Kx2ccr2Yv2fYzu7jfEfFzybpz850Oov
- N5vmlOnIY3GOaFALeSK5M2fqmHFVBybX8GzsQhb5lsaQiq5c/jSRoAH0xGLFwEABuN
- 3ktfx6GbKoZhHN46ngr80N0fqG38WVmUDdSV49Ko=
-Date: Sat, 25 Jan 2020 05:46:25 -0500
-From: Brian Masney <masneyb@onstation.org>
-To: Luca Weiss <luca@z3ntu.xyz>
-Subject: Re: [PATCH 2/2] ARM: qcom_defconfig: Enable QRTR
-Message-ID: <20200125104625.GB5646@onstation.org>
-References: <20191104210943.101393-1-luca@z3ntu.xyz>
- <20191104210943.101393-2-luca@z3ntu.xyz>
+ id 1ivJEW-0005qI-1I
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 11:04:11 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 4D8D6520E6B;
+ Sat, 25 Jan 2020 12:04:00 +0100 (CET)
+X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id VMz4BJPEy_mv; Sat, 25 Jan 2020 12:04:00 +0100 (CET)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 04A71520EEE;
+ Sat, 25 Jan 2020 12:04:00 +0100 (CET)
+Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
+ [194.152.20.232]) (Authenticated sender: 031275009)
+ by mail.siol.net (Postfix) with ESMTPSA id 75B65520E6B;
+ Sat, 25 Jan 2020 12:03:59 +0100 (CET)
+From: Jernej Skrabec <jernej.skrabec@siol.net>
+To: mripard@kernel.org,
+	wens@csie.org
+Subject: [PATCH 0/5] arm64: dts: allwinner: a64: Enable deinterlace core
+Date: Sat, 25 Jan 2020 12:03:48 +0100
+Message-Id: <20200125110353.591658-1-jernej.skrabec@siol.net>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191104210943.101393-2-luca@z3ntu.xyz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200125_024628_783231_E16EA280 
-X-CRM114-Status: GOOD (  15.33  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200125_030408_244227_49239B32 
+X-CRM114-Status: UNSURE (   7.64  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [52.200.56.107 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.239 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,52 +70,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Jordan Crouse <jcrouse@codeaurora.org>, Andy Gross <agross@kernel.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com, robh+dt@kernel.org,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Luca,
+Allwinner A64 contains deinterlace core, compatible to the one found in
+H3. It can be used in combination with VPU to playback interlaced videos.
 
-On Mon, Nov 04, 2019 at 10:09:41PM +0100, Luca Weiss wrote:
-> This option is useful on msm8974, so enable it.
-> 
-> Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
-> ---
->  arch/arm/configs/qcom_defconfig | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/arch/arm/configs/qcom_defconfig b/arch/arm/configs/qcom_defconfig
-> index 94d5e1a8c61a..a71201fdc8c9 100644
-> --- a/arch/arm/configs/qcom_defconfig
-> +++ b/arch/arm/configs/qcom_defconfig
-> @@ -45,6 +45,8 @@ CONFIG_IP_ROUTE_VERBOSE=y
->  CONFIG_IP_PNP=y
->  CONFIG_IP_PNP_DHCP=y
->  # CONFIG_IPV6 is not set
-> +CONFIG_QRTR=y
-> +CONFIG_QRTR_SMD=y
+Please take a look.
 
-Both of these should be modules. I verified on the Nexus 5 that booting
-the modem works in this configuration.
+Best regards,
+Jernej
 
-Thanks for your work on the modem!
+Jernej Skrabec (5):
+  dt-bindings: interconnect: sunxi: Add A64 MBUS compatible
+  clk: sunxi-ng: a64: Export MBUS clock
+  arm64: dts: allwinner: a64: Add MBUS controller node
+  media: dt-bindings: media: Add Allwinner A64 deinterlace compatible
+  arm64: dts: allwinner: a64: Add deinterlace core node
 
-Brian
+ .../arm/sunxi/allwinner,sun4i-a10-mbus.yaml   |  1 +
+ .../media/allwinner,sun8i-h3-deinterlace.yaml |  6 ++++-
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 22 +++++++++++++++++++
+ drivers/clk/sunxi-ng/ccu-sun50i-a64.h         |  4 ----
+ include/dt-bindings/clock/sun50i-a64-ccu.h    |  2 +-
+ 5 files changed, 29 insertions(+), 6 deletions(-)
 
->  CONFIG_CFG80211=m
->  CONFIG_MAC80211=m
->  CONFIG_RFKILL=y
-> -- 
-> 2.23.0
-> 
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
