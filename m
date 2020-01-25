@@ -2,92 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CB47149550
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 12:34:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1F95149646
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 25 Jan 2020 16:34:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NR8ihYBswE9tPqX8BBlOzal56FjeSx+badkfNimeXyM=; b=bh8ak9iHuxNKjI
-	X16qExWHUajCTkaldRl3KdQfI3HGjYX2D7HWo2VO71V4nAxgsG9ky+hQil6BAHwhCP82rafWdMn1G
-	nmusN1JYn68pWvNeDep+iFd+AmELS8wGXTYQ1OEuAtXqHMcRxjNWaZgZeuzdEbKfjGXLNjyPkWLWj
-	Ytir+Zye9Xgd/uWg+fr6HCg1b55qGCUqexFpQWArZlOm3DomZ4zgbtRsbPao9fklVYic4d9WV6L1i
-	xhuHiKsjYGlh/p5vbQ+FbW5yNNSH4uj1Pu4QEiOLIL2RuYPjERVn2wL2/v7XcA8zgn/KxRmk+P7P+
-	ydUpteoqYiPiZWFJ/9FA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=i9JCK12szXQ4F7ZLvJFwWORp4Ga065eW1IjreG/OgZk=; b=QxpqVaAWDT5zqA
+	XNmwcf6j+rcPARRJZ2dj2zvOvi1iOY0V6PimiVgz28W3XUoaUSh/OCd79KMf0HEbywr8duAG3Hq/Q
+	ZbkuorUn6gaiB0qv1iyVEdY2DSvPA8y2wgxIgCQTY7jTWcuE9WNFi9tS/p+GTRaTccQTJZD+XL2Gr
+	5zjySt8AAEWSz9shv0y/x7iqMk1U/N9AIf6fgm/wwlhbLhpRP71gwpRR17fA+73osA//wAfLgKFsC
+	IkfxsaJp87mxH3foFl/cljmfVreFMWRjamaBjXQhgLoJbVGe4iuiGsUhSlWVIxSBudi65xy0QcaWe
+	QVk68kjteAaRN4KOJ3vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivJhj-000106-FD; Sat, 25 Jan 2020 11:34:19 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1ivNSH-0005Zo-Bm; Sat, 25 Jan 2020 15:34:37 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivJhY-0000zT-BD
- for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 11:34:10 +0000
-Received: by mail-pl1-x642.google.com with SMTP id a6so1900358plm.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 25 Jan 2020 03:34:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=I/SbAU7Mxnx0tx7ru42ZvtxyMPx7VKLEDaci5G9/z/I=;
- b=JpTlvowUSpCpniIjbrrQWDpGdPNObBvlMiYL/V3vdGPTXxqQfTAjv8pT1z4p+kbwu0
- GKp7gxNEYR48Mj20wSFDWm85HEOJbL8vlnH1KE+v0a66vWnCxjzbuT4KAR0Z1bRd8Ijo
- tX+ga7hBTVdRZGKtSGYLjMg5IQM0e+nsnR+WCWvSk3XdkTiC8xZoDN6nFDmeEnYpeb+n
- XqNGCH8HPPjGVNQRVHfXIRohW1EZIxIJDdUnbQf5DTldgcpQYiqZ793xByM2FxL250Nr
- vlL3KfCMHVLyPGIUB/z4bxWZM4h9LNuXf2gMloagJ1Pzjv2rwcwtfRzJHdKQAZBcjaNz
- MTsQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=I/SbAU7Mxnx0tx7ru42ZvtxyMPx7VKLEDaci5G9/z/I=;
- b=pFpnKEdWeXHKw0rbS/XGKGPw6qUCsQrI71GmK+slJsj7YFaP1d5fvD3yFBLR/4EkuS
- Y9EOUGiyp9tvB/P+3oVaxF6oIdYSf0iJ56mKvJS9lDUWvL0P2EsogOJSfyQKUciSRHui
- A6DLg8bsOm4JV6Y9HozAnRr0LFwtsgMwkwyHvLFmj6Jh4v7TvyuM5Btn4hetYPd6v0PW
- 0+J0nbkHOq8MkNmQ0UKTQ0pn9GmAoBQR6/bwIAOM2v5WBd7oIgzFbZ9c5/DCSSQXF9OE
- AT9Hp9fS2euoL58Dyb3GGAzRFj2jzUjeFyb6OlEURK4pFL8pGg7TXihk0bDzZAen579j
- AGfA==
-X-Gm-Message-State: APjAAAXAhpZgKCFpjwa8olTVMkH+e/NuW9Dcgh69+MbL4nszt6F8YuZe
- XtNRpF4ziotGRKfKG0vxgDOSTbA9ZN+v
-X-Google-Smtp-Source: APXvYqzNnb1DL3YHC4J73GJYcUNYQdGoebhwbUDHQSM7IuOe1LFYT8FT+qTXBd6fRiu1OMl9LqZa/w==
-X-Received: by 2002:a17:90a:7f86:: with SMTP id
- m6mr4346753pjl.143.1579952046819; 
- Sat, 25 Jan 2020 03:34:06 -0800 (PST)
-Received: from Mani-XPS-13-9360 ([2409:4072:606:2d17:8c3b:978d:aab4:c772])
- by smtp.gmail.com with ESMTPSA id x11sm9121128pfn.53.2020.01.25.03.34.02
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sat, 25 Jan 2020 03:34:06 -0800 (PST)
-Date: Sat, 25 Jan 2020 17:03:58 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Matheus Castello <matheus@castello.eng.br>
-Subject: Re: [PATCH v2] pinctrl: actions: Fix functions groups names
-Message-ID: <20200125113355.GA22220@Mani-XPS-13-9360>
-References: <838d8378-1a6a-11c4-fad8-aeb4b861478b@castello.eng.br>
- <20200124133758.10089-1-matheus@castello.eng.br>
+ id 1ivNS6-0005Ym-3O
+ for linux-arm-kernel@lists.infradead.org; Sat, 25 Jan 2020 15:34:28 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 25 Jan 2020 07:34:24 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,361,1574150400"; d="scan'208";a="400936942"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by orsmga005.jf.intel.com with ESMTP; 25 Jan 2020 07:34:22 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1ivNS2-000E5Y-Tn; Sat, 25 Jan 2020 23:34:22 +0800
+Date: Sat, 25 Jan 2020 23:34:12 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: [arm-soc:arm/dt] BUILD SUCCESS
+ d030a0dd01306d45569c6a4449dee603f994744a
+Message-ID: <5e2c5ff4.Ib6d3ZfetR95ttmz%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200124133758.10089-1-matheus@castello.eng.br>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200125_033408_423948_BC32F97F 
-X-CRM114-Status: GOOD (  14.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200125_073426_195418_F455AD74 
+X-CRM114-Status: GOOD (  10.63  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 HEXHASH_WORD           Multiple instances of word + hexadecimal hash
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,709 +67,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, pn@denx.de, afaerber@suse.de,
- linux-arm-kernel@lists.infradead.org
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 24, 2020 at 10:37:58AM -0300, Matheus Castello wrote:
-> Group names by function do not match their respective structures and
-> documentation defined names.
-> 
-> This fixes following errors when groups names defined on documentation are used:
-> [    4.262778] pinctrl-s700 e01b0000.pinctrl: invalid group "sd0_d1_mfp" for function "sd0"
-> [    4.271394] pinctrl-s700 e01b0000.pinctrl: invalid group "sd0_d2_d3_mfp" for function "sd0"
-> [    4.280248] pinctrl-s700 e01b0000.pinctrl: invalid group "sd1_d0_d3_mfp" for function "sd0"
-> [    4.289122] pinctrl-s700 e01b0000.pinctrl: invalid group "sd0_cmd_mfp" for function "sd0"
-> 
-> Fixes: 81c9d563cc74 (pinctrl: actions: Add Actions Semi S700 pinctrl driver)
-> Signed-off-by: Matheus Castello <matheus@castello.eng.br>
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/dt
+branch HEAD: d030a0dd01306d45569c6a4449dee603f994744a  Merge tag 'ti-k3-soc-for-v5.6-part2' of git://git.kernel.org/pub/scm/linux/kernel/git/kristo/linux into arm/dt
 
-Nitpick, better to mention S700 in the subject as below:
+elapsed time: 1147m
 
-pinctrl: actions: Fix functions groups names for S700 SoC
+configs tested: 165
+configs skipped: 0
 
-With that,
-Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Linus can you fix that while applying?
+i386                             alldefconfig
+i386                              allnoconfig
+i386                             allyesconfig
+i386                                defconfig
+riscv                            allmodconfig
+riscv                             allnoconfig
+riscv                            allyesconfig
+riscv                               defconfig
+riscv                    nommu_virt_defconfig
+riscv                          rv32_defconfig
+h8300                     edosk2674_defconfig
+h8300                    h8300h-sim_defconfig
+h8300                       h8s-sim_defconfig
+m68k                             allmodconfig
+m68k                       m5475evb_defconfig
+m68k                          multi_defconfig
+m68k                           sun3_defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                         rhel-7.2-clear
+x86_64                               rhel-7.6
+sh                               allmodconfig
+sh                                allnoconfig
+sh                          rsk7269_defconfig
+sh                  sh7785lcr_32bit_defconfig
+sh                            titan_defconfig
+x86_64               randconfig-h001-20200125
+x86_64               randconfig-h002-20200125
+x86_64               randconfig-h003-20200125
+i386                 randconfig-h001-20200125
+i386                 randconfig-h002-20200125
+i386                 randconfig-h003-20200125
+x86_64               randconfig-f001-20200125
+x86_64               randconfig-f002-20200125
+x86_64               randconfig-f003-20200125
+i386                 randconfig-f001-20200125
+i386                 randconfig-f002-20200125
+i386                 randconfig-f003-20200125
+arc                  randconfig-a001-20200125
+arm                  randconfig-a001-20200125
+arm64                randconfig-a001-20200125
+ia64                 randconfig-a001-20200125
+powerpc              randconfig-a001-20200125
+sparc                randconfig-a001-20200125
+sparc                            allyesconfig
+sparc                               defconfig
+sparc64                          allmodconfig
+sparc64                           allnoconfig
+sparc64                          allyesconfig
+sparc64                             defconfig
+s390                             alldefconfig
+s390                             allmodconfig
+s390                              allnoconfig
+s390                             allyesconfig
+s390                          debug_defconfig
+s390                                defconfig
+s390                       zfcpdump_defconfig
+x86_64               randconfig-a001-20200125
+x86_64               randconfig-a002-20200125
+x86_64               randconfig-a003-20200125
+i386                 randconfig-a001-20200125
+i386                 randconfig-a002-20200125
+i386                 randconfig-a003-20200125
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm                         at91_dt_defconfig
+arm                           efm32_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                        multi_v7_defconfig
+arm                        shmobile_defconfig
+arm                           sunxi_defconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm64                               defconfig
+um                                  defconfig
+um                             i386_defconfig
+um                           x86_64_defconfig
+ia64                                defconfig
+powerpc                             defconfig
+alpha                randconfig-a001-20200125
+m68k                 randconfig-a001-20200125
+mips                 randconfig-a001-20200125
+nds32                randconfig-a001-20200125
+parisc               randconfig-a001-20200125
+riscv                randconfig-a001-20200125
+x86_64               randconfig-b001-20200125
+x86_64               randconfig-b002-20200125
+x86_64               randconfig-b003-20200125
+i386                 randconfig-b001-20200125
+i386                 randconfig-b002-20200125
+i386                 randconfig-b003-20200125
+csky                 randconfig-a001-20200125
+openrisc             randconfig-a001-20200125
+s390                 randconfig-a001-20200125
+xtensa               randconfig-a001-20200125
+alpha                               defconfig
+csky                                defconfig
+nds32                             allnoconfig
+nds32                               defconfig
+ia64                             alldefconfig
+ia64                             allmodconfig
+ia64                              allnoconfig
+ia64                             allyesconfig
+x86_64               randconfig-g001-20200125
+x86_64               randconfig-g002-20200125
+x86_64               randconfig-g003-20200125
+i386                 randconfig-g001-20200125
+i386                 randconfig-g002-20200125
+i386                 randconfig-g003-20200125
+x86_64               randconfig-d001-20200125
+x86_64               randconfig-d002-20200125
+x86_64               randconfig-d003-20200125
+i386                 randconfig-d001-20200125
+i386                 randconfig-d002-20200125
+i386                 randconfig-d003-20200125
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                              allnoconfig
+mips                             allyesconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+arc                              allyesconfig
+arc                                 defconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+powerpc                           allnoconfig
+powerpc                       ppc64_defconfig
+powerpc                          rhel-kconfig
+parisc                            allnoconfig
+parisc                            allyesonfig
+parisc                         b180_defconfig
+parisc                        c3000_defconfig
+parisc                              defconfig
+x86_64               randconfig-e001-20200125
+x86_64               randconfig-e002-20200125
+x86_64               randconfig-e003-20200125
+i386                 randconfig-e001-20200125
+i386                 randconfig-e002-20200125
+i386                 randconfig-e003-20200125
+c6x                  randconfig-a001-20200125
+h8300                randconfig-a001-20200125
+microblaze           randconfig-a001-20200125
+nios2                randconfig-a001-20200125
+sparc64              randconfig-a001-20200125
+x86_64               randconfig-c001-20200125
+x86_64               randconfig-c002-20200125
+x86_64               randconfig-c003-20200125
+i386                 randconfig-c001-20200125
+i386                 randconfig-c002-20200125
+i386                 randconfig-c003-20200125
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                       common_defconfig
+xtensa                          iss_defconfig
+sh                   randconfig-a001-20200125
 
-Thanks,
-Mani
-
-> ---
->  drivers/pinctrl/actions/pinctrl-s700.c | 510 ++++++++++++-------------
->  1 file changed, 255 insertions(+), 255 deletions(-)
-> 
-> diff --git a/drivers/pinctrl/actions/pinctrl-s700.c b/drivers/pinctrl/actions/pinctrl-s700.c
-> index 8b8121e35edb..1182b38ff4dc 100644
-> --- a/drivers/pinctrl/actions/pinctrl-s700.c
-> +++ b/drivers/pinctrl/actions/pinctrl-s700.c
-> @@ -1125,317 +1125,317 @@ static const struct owl_pingroup s700_groups[] = {
->  };
->  
->  static const char * const nor_groups[] = {
-> -	"lcd0_d18",
-> -	"i2s_d0",
-> -	"i2s0_pcm0",
-> -	"i2s1_pcm0",
-> -	"i2s_d1",
-> -	"ks_in2",
-> -	"ks_in1",
-> -	"ks_in0",
-> -	"ks_in3",
-> -	"ks_out0",
-> -	"ks_out1",
-> -	"ks_out2",
-> -	"lcd0_d2",
-> -	"lvds_ee_pn",
-> -	"uart2_rx_tx",
-> -	"spi0_i2c_pcm",
-> -	"lvds_e_pn",
-> -	"sd0_d0",
-> -	"sd0_d1",
-> -	"sd0_d2_d3",
-> -	"sd1_d0_d3",
-> -	"sd0_cmd",
-> -	"sd1_cmd",
-> -	"sens0_ckout",
-> -	"sen0_pclk",
-> +	"lcd0_d18_mfp",
-> +	"i2s_d0_mfp",
-> +	"i2s0_pcm0_mfp",
-> +	"i2s1_pcm0_mfp",
-> +	"i2s_d1_mfp",
-> +	"ks_in2_mfp",
-> +	"ks_in1_mfp",
-> +	"ks_in0_mfp",
-> +	"ks_in3_mfp",
-> +	"ks_out0_mfp",
-> +	"ks_out1_mfp",
-> +	"ks_out2_mfp",
-> +	"lcd0_d2_mfp",
-> +	"lvds_ee_pn_mfp",
-> +	"uart2_rx_tx_mfp",
-> +	"spi0_i2c_pcm_mfp",
-> +	"lvds_e_pn_mfp",
-> +	"sd0_d0_mfp",
-> +	"sd0_d1_mfp",
-> +	"sd0_d2_d3_mfp",
-> +	"sd1_d0_d3_mfp",
-> +	"sd0_cmd_mfp",
-> +	"sd1_cmd_mfp",
-> +	"sens0_ckout_mfp",
-> +	"sen0_pclk_mfp",
->  };
->  
->  static const char * const eth_rmii_groups[] = {
-> -	"rgmii_txd23",
-> -	"rgmii_rxd2",
-> -	"rgmii_rxd3",
-> -	"rgmii_txd01",
-> -	"rgmii_txd0",
-> -	"rgmii_txd1",
-> -	"rgmii_txen",
-> -	"rgmii_rxen",
-> -	"rgmii_rxd1",
-> -	"rgmii_rxd0",
-> -	"rgmii_ref_clk",
-> +	"rgmii_txd23_mfp",
-> +	"rgmii_rxd2_mfp",
-> +	"rgmii_rxd3_mfp",
-> +	"rgmii_txd01_mfp",
-> +	"rgmii_txd0_mfp",
-> +	"rgmii_txd1_mfp",
-> +	"rgmii_txen_mfp",
-> +	"rgmii_rxen_mfp",
-> +	"rgmii_rxd1_mfp",
-> +	"rgmii_rxd0_mfp",
-> +	"rgmii_ref_clk_mfp",
->  	"eth_smi_dummy",
->  };
->  
->  static const char * const eth_smii_groups[] = {
-> -	"rgmii_txd0",
-> -	"rgmii_txd1",
-> -	"rgmii_rxd0",
-> -	"rgmii_rxd1",
-> -	"rgmii_ref_clk",
-> +	"rgmii_txd0_mfp",
-> +	"rgmii_txd1_mfp",
-> +	"rgmii_rxd0_mfp",
-> +	"rgmii_rxd1_mfp",
-> +	"rgmii_ref_clk_mfp",
->  	"eth_smi_dummy",
->  };
->  
->  static const char * const spi0_groups[] = {
-> -	"dsi_dn0",
-> -	"dsi_dp2",
-> -	"dsi_dp0",
-> -	"uart2_rx_tx",
-> -	"spi0_i2c_pcm",
-> -	"dsi_dn2",
-> +	"dsi_dn0_mfp",
-> +	"dsi_dp2_mfp",
-> +	"dsi_dp0_mfp",
-> +	"uart2_rx_tx_mfp",
-> +	"spi0_i2c_pcm_mfp",
-> +	"dsi_dn2_mfp",
->  };
->  
->  static const char * const spi1_groups[] = {
-> -	"uart0_rx",
-> -	"uart0_tx",
-> +	"uart0_rx_mfp",
-> +	"uart0_tx_mfp",
->  	"i2c0_mfp",
->  };
->  
->  static const char * const spi2_groups[] = {
-> -	"rgmii_txd01",
-> -	"rgmii_txd0",
-> -	"rgmii_txd1",
-> -	"rgmii_ref_clk",
-> -	"dnand_acle_ce0",
-> +	"rgmii_txd01_mfp",
-> +	"rgmii_txd0_mfp",
-> +	"rgmii_txd1_mfp",
-> +	"rgmii_ref_clk_mfp",
-> +	"dnand_acle_ce0_mfp",
->  };
->  
->  static const char * const spi3_groups[] = {
-> -	"rgmii_txen",
-> -	"rgmii_rxen",
-> -	"rgmii_rxd1",
-> -	"rgmii_rxd0",
-> +	"rgmii_txen_mfp",
-> +	"rgmii_rxen_mfp",
-> +	"rgmii_rxd1_mfp",
-> +	"rgmii_rxd0_mfp",
->  };
->  
->  static const char * const sens0_groups[] = {
-> -	"csi_cn_cp",
-> -	"sens0_ckout",
-> -	"csi_dn_dp",
-> -	"sen0_pclk",
-> +	"csi_cn_cp_mfp",
-> +	"sens0_ckout_mfp",
-> +	"csi_dn_dp_mfp",
-> +	"sen0_pclk_mfp",
->  };
->  
->  static const char * const sens1_groups[] = {
-> -	"lcd0_d18",
-> -	"ks_in2",
-> -	"ks_in1",
-> -	"ks_in0",
-> -	"ks_in3",
-> -	"ks_out0",
-> -	"ks_out1",
-> -	"ks_out2",
-> -	"sens0_ckout",
-> -	"pcm1_in",
-> -	"pcm1_clk",
-> -	"pcm1_sync",
-> -	"pcm1_out",
-> +	"lcd0_d18_mfp",
-> +	"ks_in2_mfp",
-> +	"ks_in1_mfp",
-> +	"ks_in0_mfp",
-> +	"ks_in3_mfp",
-> +	"ks_out0_mfp",
-> +	"ks_out1_mfp",
-> +	"ks_out2_mfp",
-> +	"sens0_ckout_mfp",
-> +	"pcm1_in_mfp",
-> +	"pcm1_clk_mfp",
-> +	"pcm1_sync_mfp",
-> +	"pcm1_out_mfp",
->  };
->  
->  static const char * const uart0_groups[] = {
-> -	"uart2_rtsb",
-> -	"uart2_ctsb",
-> -	"uart0_rx",
-> -	"uart0_tx",
-> +	"uart2_rtsb_mfp",
-> +	"uart2_ctsb_mfp",
-> +	"uart0_rx_mfp",
-> +	"uart0_tx_mfp",
->  };
->  
->  static const char * const uart1_groups[] = {
-> -	"sd0_d2_d3",
-> +	"sd0_d2_d3_mfp",
->  	"i2c0_mfp",
->  };
->  
->  static const char * const uart2_groups[] = {
-> -	"rgmii_txen",
-> -	"rgmii_rxen",
-> -	"rgmii_rxd1",
-> -	"rgmii_rxd0",
-> -	"dsi_dn0",
-> -	"dsi_dp2",
-> -	"dsi_dp0",
-> -	"uart2_rx_tx",
-> -	"dsi_dn2",
-> -	"uart2_rtsb",
-> -	"uart2_ctsb",
-> -	"sd0_d0",
-> -	"sd0_d1",
-> -	"sd0_d2_d3",
-> -	"uart0_rx",
-> -	"uart0_tx",
-> +	"rgmii_txen_mfp",
-> +	"rgmii_rxen_mfp",
-> +	"rgmii_rxd1_mfp",
-> +	"rgmii_rxd0_mfp",
-> +	"dsi_dn0_mfp",
-> +	"dsi_dp2_mfp",
-> +	"dsi_dp0_mfp",
-> +	"uart2_rx_tx_mfp",
-> +	"dsi_dn2_mfp",
-> +	"uart2_rtsb_mfp",
-> +	"uart2_ctsb_mfp",
-> +	"sd0_d0_mfp",
-> +	"sd0_d1_mfp",
-> +	"sd0_d2_d3_mfp",
-> +	"uart0_rx_mfp",
-> +	"uart0_tx_mfp",
->  	"i2c0_mfp",
->  	"uart2_dummy"
->  };
->  
->  static const char * const uart3_groups[] = {
-> -	"rgmii_txd23",
-> -	"rgmii_rxd2",
-> -	"rgmii_rxd3",
-> -	"uart3_rtsb",
-> -	"uart3_ctsb",
-> +	"rgmii_txd23_mfp",
-> +	"rgmii_rxd2_mfp",
-> +	"rgmii_rxd3_mfp",
-> +	"uart3_rtsb_mfp",
-> +	"uart3_ctsb_mfp",
->  	"uart3_dummy"
->  };
->  
->  static const char * const uart4_groups[] = {
-> -	"rgmii_txd01",
-> -	"rgmii_ref_clk",
-> -	"ks_out0",
-> -	"ks_out1",
-> +	"rgmii_txd01_mfp",
-> +	"rgmii_ref_clk_mfp",
-> +	"ks_out0_mfp",
-> +	"ks_out1_mfp",
->  };
->  
->  static const char * const uart5_groups[] = {
-> -	"rgmii_rxd1",
-> -	"rgmii_rxd0",
-> -	"ks_out0",
-> -	"ks_out2",
-> -	"uart3_rtsb",
-> -	"uart3_ctsb",
-> -	"sd0_d0",
-> -	"sd0_d1",
-> +	"rgmii_rxd1_mfp",
-> +	"rgmii_rxd0_mfp",
-> +	"ks_out0_mfp",
-> +	"ks_out2_mfp",
-> +	"uart3_rtsb_mfp",
-> +	"uart3_ctsb_mfp",
-> +	"sd0_d0_mfp",
-> +	"sd0_d1_mfp",
->  };
->  
->  static const char * const uart6_groups[] = {
-> -	"rgmii_txd0",
-> -	"rgmii_txd1",
-> +	"rgmii_txd0_mfp",
-> +	"rgmii_txd1_mfp",
->  };
->  
->  static const char * const i2s0_groups[] = {
-> -	"i2s_d0",
-> -	"i2s_pcm1",
-> -	"i2s0_pcm0",
-> +	"i2s_d0_mfp",
-> +	"i2s_pcm1_mfp",
-> +	"i2s0_pcm0_mfp",
->  };
->  
->  static const char * const i2s1_groups[] = {
-> -	"i2s1_pcm0",
-> -	"i2s_d1",
-> +	"i2s1_pcm0_mfp",
-> +	"i2s_d1_mfp",
->  	"i2s1_dummy",
-> -	"spi0_i2c_pcm",
-> -	"uart0_rx",
-> -	"uart0_tx",
-> +	"spi0_i2c_pcm_mfp",
-> +	"uart0_rx_mfp",
-> +	"uart0_tx_mfp",
->  };
->  
->  static const char * const pcm1_groups[] = {
-> -	"i2s_pcm1",
-> -	"spi0_i2c_pcm",
-> -	"uart0_rx",
-> -	"uart0_tx",
-> -	"pcm1_in",
-> -	"pcm1_clk",
-> -	"pcm1_sync",
-> -	"pcm1_out",
-> +	"i2s_pcm1_mfp",
-> +	"spi0_i2c_pcm_mfp",
-> +	"uart0_rx_mfp",
-> +	"uart0_tx_mfp",
-> +	"pcm1_in_mfp",
-> +	"pcm1_clk_mfp",
-> +	"pcm1_sync_mfp",
-> +	"pcm1_out_mfp",
->  };
->  
->  static const char * const pcm0_groups[] = {
-> -	"i2s0_pcm0",
-> -	"i2s1_pcm0",
-> -	"uart2_rx_tx",
-> -	"spi0_i2c_pcm",
-> +	"i2s0_pcm0_mfp",
-> +	"i2s1_pcm0_mfp",
-> +	"uart2_rx_tx_mfp",
-> +	"spi0_i2c_pcm_mfp",
->  };
->  
->  static const char * const ks_groups[] = {
-> -	"ks_in2",
-> -	"ks_in1",
-> -	"ks_in0",
-> -	"ks_in3",
-> -	"ks_out0",
-> -	"ks_out1",
-> -	"ks_out2",
-> +	"ks_in2_mfp",
-> +	"ks_in1_mfp",
-> +	"ks_in0_mfp",
-> +	"ks_in3_mfp",
-> +	"ks_out0_mfp",
-> +	"ks_out1_mfp",
-> +	"ks_out2_mfp",
->  };
->  
->  static const char * const jtag_groups[] = {
-> -	"ks_in2",
-> -	"ks_in1",
-> -	"ks_in0",
-> -	"ks_in3",
-> -	"ks_out1",
-> -	"sd0_d0",
-> -	"sd0_d2_d3",
-> -	"sd0_cmd",
-> -	"sd0_clk",
-> +	"ks_in2_mfp",
-> +	"ks_in1_mfp",
-> +	"ks_in0_mfp",
-> +	"ks_in3_mfp",
-> +	"ks_out1_mfp",
-> +	"sd0_d0_mfp",
-> +	"sd0_d2_d3_mfp",
-> +	"sd0_cmd_mfp",
-> +	"sd0_clk_mfp",
->  };
->  
->  static const char * const pwm0_groups[] = {
-> -	"rgmii_rxd2",
-> -	"rgmii_txen",
-> -	"ks_in2",
-> -	"sen0_pclk",
-> +	"rgmii_rxd2_mfp",
-> +	"rgmii_txen_mfp",
-> +	"ks_in2_mfp",
-> +	"sen0_pclk_mfp",
->  };
->  
->  static const char * const pwm1_groups[] = {
-> -	"rgmii_rxen",
-> -	"ks_in1",
-> -	"ks_in3",
-> -	"sens0_ckout",
-> +	"rgmii_rxen_mfp",
-> +	"ks_in1_mfp",
-> +	"ks_in3_mfp",
-> +	"sens0_ckout_mfp",
->  };
->  
->  static const char * const pwm2_groups[] = {
-> -	"lcd0_d18",
-> -	"rgmii_rxd3",
-> -	"rgmii_rxd1",
-> -	"ks_out0",
-> -	"ks_out2",
-> +	"lcd0_d18_mfp",
-> +	"rgmii_rxd3_mfp",
-> +	"rgmii_rxd1_mfp",
-> +	"ks_out0_mfp",
-> +	"ks_out2_mfp",
->  };
->  
->  static const char * const pwm3_groups[] = {
-> -	"rgmii_rxd0",
-> -	"ks_out1",
-> -	"lcd0_d2",
-> +	"rgmii_rxd0_mfp",
-> +	"ks_out1_mfp",
-> +	"lcd0_d2_mfp",
->  };
->  
->  static const char * const pwm4_groups[] = {
-> -	"lcd0_d18",
-> -	"rgmii_txd01",
-> -	"rgmii_txd0",
-> -	"ks_in0",
-> -	"pcm1_in",
-> -	"nand_ceb3",
-> +	"lcd0_d18_mfp",
-> +	"rgmii_txd01_mfp",
-> +	"rgmii_txd0_mfp",
-> +	"ks_in0_mfp",
-> +	"pcm1_in_mfp",
-> +	"nand_ceb3_mfp",
->  };
->  
->  static const char * const pwm5_groups[] = {
-> -	"rgmii_txd1",
-> -	"ks_in1",
-> -	"pcm1_clk",
-> -	"nand_ceb2",
-> +	"rgmii_txd1_mfp",
-> +	"ks_in1_mfp",
-> +	"pcm1_clk_mfp",
-> +	"nand_ceb2_mfp",
->  };
->  
->  static const char * const p0_groups[] = {
-> -	"ks_in2",
-> -	"ks_in0",
-> +	"ks_in2_mfp",
-> +	"ks_in0_mfp",
->  };
->  
->  static const char * const sd0_groups[] = {
-> -	"ks_out0",
-> -	"ks_out1",
-> -	"ks_out2",
-> -	"lcd0_d2",
-> -	"dsi_dp3",
-> -	"dsi_dp0",
-> -	"sd0_d0",
-> -	"sd0_d1",
-> -	"sd0_d2_d3",
-> -	"sd1_d0_d3",
-> -	"sd0_cmd",
-> -	"sd0_clk",
-> +	"ks_out0_mfp",
-> +	"ks_out1_mfp",
-> +	"ks_out2_mfp",
-> +	"lcd0_d2_mfp",
-> +	"dsi_dp3_mfp",
-> +	"dsi_dp0_mfp",
-> +	"sd0_d0_mfp",
-> +	"sd0_d1_mfp",
-> +	"sd0_d2_d3_mfp",
-> +	"sd1_d0_d3_mfp",
-> +	"sd0_cmd_mfp",
-> +	"sd0_clk_mfp",
->  };
->  
->  static const char * const sd1_groups[] = {
-> -	"dsi_dp2",
-> -	"mfp1_16_14",
-> -	"lcd0_d2",
-> -	"mfp1_16_14_d17",
-> -	"dsi_dp3",
-> -	"dsi_dn3",
-> -	"dsi_dnp1_cp_d2",
-> -	"dsi_dnp1_cp_d17",
-> -	"dsi_dn2",
-> -	"sd1_d0_d3",
-> -	"sd1_cmd",
-> +	"dsi_dp2_mfp",
-> +	"mfp1_16_14_mfp",
-> +	"lcd0_d2_mfp",
-> +	"mfp1_16_14_d17_mfp",
-> +	"dsi_dp3_mfp",
-> +	"dsi_dn3_mfp",
-> +	"dsi_dnp1_cp_d2_mfp",
-> +	"dsi_dnp1_cp_d17_mfp",
-> +	"dsi_dn2_mfp",
-> +	"sd1_d0_d3_mfp",
-> +	"sd1_cmd_mfp",
->  	"sd1_dummy",
->  };
->  
->  static const char * const sd2_groups[] = {
-> -	"dnand_data_wr",
-> +	"dnand_data_wr_mfp",
->  };
->  
->  static const char * const i2c0_groups[] = {
-> -	"uart0_rx",
-> -	"uart0_tx",
-> -	"i2c0_mfp",
-> +	"uart0_rx_mfp",
-> +	"uart0_tx_mfp",
-> +	"i2c0_mfp_mfp",
->  };
->  
->  static const char * const i2c1_groups[] = {
-> @@ -1448,85 +1448,85 @@ static const char * const i2c2_groups[] = {
->  };
->  
->  static const char * const i2c3_groups[] = {
-> -	"uart2_rx_tx",
-> -	"pcm1_sync",
-> -	"pcm1_out",
-> +	"uart2_rx_tx_mfp",
-> +	"pcm1_sync_mfp",
-> +	"pcm1_out_mfp",
->  };
->  
->  static const char * const lvds_groups[] = {
-> -	"lvds_o_pn",
-> -	"lvds_ee_pn",
-> -	"lvds_e_pn",
-> +	"lvds_o_pn_mfp",
-> +	"lvds_ee_pn_mfp",
-> +	"lvds_e_pn_mfp",
->  };
->  
->  static const char * const bt_groups[] = {
-> -	"i2s_pcm1",
-> -	"i2s0_pcm0",
-> -	"i2s1_pcm0",
-> -	"ks_in2",
-> -	"ks_in1",
-> -	"ks_in0",
-> -	"ks_in3",
-> -	"ks_out0",
-> -	"ks_out1",
-> -	"ks_out2",
-> -	"lvds_o_pn",
-> -	"lvds_ee_pn",
-> -	"pcm1_in",
-> -	"pcm1_clk",
-> -	"pcm1_sync",
-> -	"pcm1_out",
-> +	"i2s_pcm1_mfp",
-> +	"i2s0_pcm0_mfp",
-> +	"i2s1_pcm0_mfp",
-> +	"ks_in2_mfp",
-> +	"ks_in1_mfp",
-> +	"ks_in0_mfp",
-> +	"ks_in3_mfp",
-> +	"ks_out0_mfp",
-> +	"ks_out1_mfp",
-> +	"ks_out2_mfp",
-> +	"lvds_o_pn_mfp",
-> +	"lvds_ee_pn_mfp",
-> +	"pcm1_in_mfp",
-> +	"pcm1_clk_mfp",
-> +	"pcm1_sync_mfp",
-> +	"pcm1_out_mfp",
->  };
->  
->  static const char * const lcd0_groups[] = {
-> -	"lcd0_d18",
-> -	"lcd0_d2",
-> -	"mfp1_16_14_d17",
-> -	"lvds_o_pn",
-> -	"dsi_dp3",
-> -	"dsi_dn3",
-> -	"lvds_ee_pn",
-> -	"dsi_dnp1_cp_d2",
-> -	"dsi_dnp1_cp_d17",
-> -	"lvds_e_pn",
-> +	"lcd0_d18_mfp",
-> +	"lcd0_d2_mfp",
-> +	"mfp1_16_14_d17_mfp",
-> +	"lvds_o_pn_mfp",
-> +	"dsi_dp3_mfp",
-> +	"dsi_dn3_mfp",
-> +	"lvds_ee_pn_mfp",
-> +	"dsi_dnp1_cp_d2_mfp",
-> +	"dsi_dnp1_cp_d17_mfp",
-> +	"lvds_e_pn_mfp",
->  };
->  
->  
->  static const char * const usb30_groups[] = {
-> -	"ks_in1",
-> +	"ks_in1_mfp",
->  };
->  
->  static const char * const clko_25m_groups[] = {
-> -	"clko_25m",
-> +	"clko_25m_mfp",
->  };
->  
->  static const char * const mipi_csi_groups[] = {
-> -	"csi_cn_cp",
-> -	"csi_dn_dp",
-> +	"csi_cn_cp_mfp",
-> +	"csi_dn_dp_mfp",
->  };
->  
->  static const char * const dsi_groups[] = {
-> -	"dsi_dn0",
-> -	"dsi_dp2",
-> -	"dsi_dp3",
-> -	"dsi_dn3",
-> -	"dsi_dp0",
-> -	"dsi_dnp1_cp_d2",
-> -	"dsi_dnp1_cp_d17",
-> -	"dsi_dn2",
-> +	"dsi_dn0_mfp",
-> +	"dsi_dp2_mfp",
-> +	"dsi_dp3_mfp",
-> +	"dsi_dn3_mfp",
-> +	"dsi_dp0_mfp",
-> +	"dsi_dnp1_cp_d2_mfp",
-> +	"dsi_dnp1_cp_d17_mfp",
-> +	"dsi_dn2_mfp",
->  	"dsi_dummy",
->  };
->  
->  static const char * const nand_groups[] = {
-> -	"dnand_data_wr",
-> -	"dnand_acle_ce0",
-> -	"nand_ceb2",
-> -	"nand_ceb3",
-> +	"dnand_data_wr_mfp",
-> +	"dnand_acle_ce0_mfp",
-> +	"nand_ceb2_mfp",
-> +	"nand_ceb3_mfp",
->  	"nand_dummy",
->  };
->  
->  static const char * const spdif_groups[] = {
-> -	"uart0_tx",
-> +	"uart0_tx_mfp",
->  };
->  
->  static const char * const sirq0_groups[] = {
-> -- 
-> 2.25.0
-> 
+---
+0-DAY kernel test infrastructure                 Open Source Technology Center
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org Intel Corporation
 
 _______________________________________________
 linux-arm-kernel mailing list
