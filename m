@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58CD2149AFB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Jan 2020 15:11:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34BBD149AF9
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Jan 2020 15:10:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lypzq7XHv4JEwuLxT2KixZs5AFIpUwb4EibDm2INV7Y=; b=WTXmTa7O9Aqyum
-	ilWWqaCR1kmG4gcLvHY/UJfNegFbQAbpOY1BPI/jhdSEUSA1UDWH80oRDFVwcOyhcFY5SovEaSQAN
-	5DgULd9pIHNR48gu0F5CfzSDlKPHMJyYiyLJ7UmWibdAAVbgDmYM6Rs22AGuwMDT3mvgC/KciB70z
-	2pa1XQTe0VHpweqzohj1PhDcmA42RBehQQMspu7HZUsxQ29f5K10qjRtUh6huG+NJqPflnmI17TAV
-	vwj4tk0K/sSAjcbvQYqrOMTd9uBqOfw9dJjdpmcUuDc0TgMTqhO+czD94WkU0NRLqG6U4v6WY8rmM
-	nttNKPBPdHfMQ7GnJsAg==;
+	List-Owner; bh=DqrZmmpM8RGpzRyRNWRB66f/GKBqRuu/h9Gv7Nd/yn8=; b=sOWl6NSnd9FJbX
+	D0FMA4J9HsfkoebSWjVjqZfz9aVnlHGIqVPY+SY7AYLDOvih7cZjDQ91+l+JiywYS82/cm5PtG7xn
+	8/xoWC/l39OuOgBCdmsCzRamQ3U00bL+/yEWT7TMUACCiVi0hHsKJFV+TuLXZYSE656qrPlMxA+hV
+	PppnkkVuZlgF60LEO/qfQpnJc0grhSVUVJBYPZYKh4+VIZPj2UVRpAMQdluJeAWjYDhcw04tJwkiu
+	ku/h/ng5DJNAFPD2oaDKV+chL3c93/EA6O77TPqtKh8YwXJvVx5CRVV4plNraSQsxUDe3LrCUD1cN
+	Ue/qTycCOdnRkC/NgSNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivicl-0003KV-0N; Sun, 26 Jan 2020 14:10:51 +0000
-Received: from mail-yw1-xc33.google.com ([2607:f8b0:4864:20::c33])
+	id 1ivicN-0002pp-Mc; Sun, 26 Jan 2020 14:10:27 +0000
+Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iviba-00017g-Np
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Jan 2020 14:09:40 +0000
-Received: by mail-yw1-xc33.google.com with SMTP id l22so3467981ywc.8
+ id 1ivibb-0001A5-U5
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Jan 2020 14:09:41 +0000
+Received: by mail-yb1-xb42.google.com with SMTP id p129so3611060ybc.13
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Jan 2020 06:09:37 -0800 (PST)
+ Sun, 26 Jan 2020 06:09:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=6ZHxAfX3Xl6MKW4bncP+VkEHGeKBmUb+6NPJXOCTjuU=;
- b=AwLGpNYcsS7qaP2kfjXCQkOJaqqUJBsbEzRWANhEt5/OrZzxbCDZDLB/OayyRM5HGz
- CEODHwEt2bNhFRu6QEuhXYqFsTteK0817t8C7TP4s3+Hr6elp/1cy4+KKmYXNuJuQwfC
- m2tuRoZKEL+YN+bjiltULlRwgQ0uD0drmO4P8tyERO0oimdR2m0Pyd4FYCDLDN/mY6+Y
- lMzyvzMzGfUDyTOkVVx6n4HHL7ikL5byMEGHTuyGSUGaVROZI7krzNlw3/VRFeaRPyp6
- r6XaGY92QlMA2DIvBNXTHiVtWs7G9VXyhReIb8Etk8R7lSz/eFBXj+ySuRFbqN3up6kV
- ou7A==
+ bh=0waTrM+p0MNxst8w9Z5JQMayoehG4IUq+pQpCkmEaO8=;
+ b=Y/whYoNP5vb88jRBSS1HcGmlCT6z7yURB0WKKZu9ViIR1Ye/BPkoagOfjw6OfNzaL3
+ KhDtMjA0we0C62kLbl1CANuDAOtxC0LVFs2YF3I7W37x6F9kH8nID3XO6uy3MyBKepyS
+ cuXXX4qPn9UXTvCW5NoalPXUv+8DMHnDaH8Gg8/WyEnaLJJYbVf7yfqZEiJXsR1J+Np5
+ d0Vht7U4UMe5Sku2R58lebhMMFygcxKzke537fW7C3GrfWnhgxGpk1tARgl9vty8d/gn
+ SGbEwJ8jx1lodEuq07i//FH9+0vdgpLG6s/Cc3CNs2TQr7nIS5edeOo8FIVf0QZz6o6D
+ Pqwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=6ZHxAfX3Xl6MKW4bncP+VkEHGeKBmUb+6NPJXOCTjuU=;
- b=b7Ov3cA6nk+m+X2KTXg1B5NxTRr/gQzSQYukkEIPl9UeZ28tnffJ4+I3xAXCiMKzuh
- Fue6WKufsDdegIAxKEhYHVpxTNXumyrnErhieBlEfffcKs3ISDfCVmJs2qnSXqK5h71/
- 2Bx76eUD8KUDrD6olfB0ECOehTDFyFytdPmoR65Mpac0DlaZGkXAQFH2EfMH8GzSJWKN
- xWZktMmpBm3s6PzgZRXjsIDCHv6hBRYkLyxtOttF6nObNIQUzFTx6JkMetFZEHtdY2AB
- 0UbpOFMmF9Rq+pQH9CFgzD1hnD9/Nk3Ml7kNU0uWAgH4pMJPxOB82nKgSuDjhLYs/9kv
- FhVQ==
-X-Gm-Message-State: APjAAAUgF4lqruvukzeg7uHFONHpQxnMyAZFlJC6XSsEO0FKyT6GbLYy
- VokvamiPWPTTibIL45oDgoOsU4MVYGE=
-X-Google-Smtp-Source: APXvYqxAXLFzS6e1uHJOkGKuUKH4syBdGutgLsnCvPMkTMI9Cv5OIx4fObe+2P64lD6bn+Fh2SQq/A==
-X-Received: by 2002:a81:3a06:: with SMTP id h6mr8962704ywa.170.1580047776433; 
- Sun, 26 Jan 2020 06:09:36 -0800 (PST)
+ bh=0waTrM+p0MNxst8w9Z5JQMayoehG4IUq+pQpCkmEaO8=;
+ b=SAvln6QEgloG5PQKk1Ip1tUqrElnlTbIb1hkeeJmDq1j4Pvz5SWd5ORBP3JQUZNL/d
+ jJhjFAv7Axx3mqVBvtSMi8J99hjgwzqpjNddZrCtAqsqZptDVMSQ1RBMjzJDUo9+OPtU
+ EAsGBfq8idvQrM7L1287zvNIzIl3VbljQqpzVfSfhfAFccL9ANUayuWsdXVlWK2rlI2l
+ y8eCnRzMvIWGTwtm2u5YmjcWRtTO14Y/DJDAacu+E2GKcq29zXOpn88Myp/RWp4vFzTe
+ sNi5z2sHZ6kfwwgiOgA/eCDfXNlbXxnxDkKJIvocSJISNyQnmsy2C7I8ZGfFQOb0nyGZ
+ OeHA==
+X-Gm-Message-State: APjAAAXS+WR+lK40LDKX7fHdkmqimX+EzAdmuKARskd8IjVmTMM/FZWp
+ Ae7M+hd/vLOSZr1Oi8PqetI=
+X-Google-Smtp-Source: APXvYqzlMdUSQYdwJJeaz15msbfWK+Z3P5aEgzbxzTYJ+IDLEk+5tn/w/276UKI8pyR+W6+/cki/aQ==
+X-Received: by 2002:a25:d1c9:: with SMTP id i192mr9426559ybg.493.1580047778366; 
+ Sun, 26 Jan 2020 06:09:38 -0800 (PST)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id a12sm5237214ywa.95.2020.01.26.06.09.34
+ by smtp.gmail.com with ESMTPSA id a12sm5237214ywa.95.2020.01.26.06.09.36
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 26 Jan 2020 06:09:35 -0800 (PST)
+ Sun, 26 Jan 2020 06:09:37 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
 To: linux-spi@vger.kernel.org
-Subject: [PATCH 4/5] dt-bindings: spi: spi-nxp-fspi: Add support for imx8mm,
- imx8qxp
-Date: Sun, 26 Jan 2020 08:09:11 -0600
-Message-Id: <20200126140913.2139260-4-aford173@gmail.com>
+Subject: [PATCH 5/5] arm64: dts: enable fspi in imx8mm dts
+Date: Sun, 26 Jan 2020 08:09:12 -0600
+Message-Id: <20200126140913.2139260-5-aford173@gmail.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20200126140913.2139260-1-aford173@gmail.com>
 References: <20200126140913.2139260-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200126_060938_801135_03CB8A5E 
-X-CRM114-Status: UNSURE (   9.54  )
+X-CRM114-CacheID: sfid-20200126_060939_993898_FB73C103 
+X-CRM114-Status: UNSURE (   9.92  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -77,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c33 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -116,25 +115,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for nxp,imx8qxp-fspi and nxp,imx8mm-fspi do the bindings
-document.
+Pull in upstream patch from NXP repo to:
+enable fspi in imx8mm DT file
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
+Signed-off-by: Han Xu <han.xu@nxp.com>
 
-diff --git a/Documentation/devicetree/bindings/spi/spi-nxp-fspi.txt b/Documentation/devicetree/bindings/spi/spi-nxp-fspi.txt
-index 2cd67eb727d4..7ac60d9fe357 100644
---- a/Documentation/devicetree/bindings/spi/spi-nxp-fspi.txt
-+++ b/Documentation/devicetree/bindings/spi/spi-nxp-fspi.txt
-@@ -2,6 +2,9 @@
- 
- Required properties:
-   - compatible : Should be "nxp,lx2160a-fspi"
-+			    "nxp,imx8qxp-fspi"
-+			    "nxp,imx8mm-fspi"
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 1e5e11592f7b..679769fe6cab 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -558,7 +558,21 @@ aips3: bus@30800000 {
+ 			compatible = "simple-bus";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+-			ranges = <0x30800000 0x30800000 0x400000>;
++			ranges = <0x30800000 0x30800000 0x400000>,
++				 <0x8000000 0x8000000 0x10000000>;
 +
-   - reg :        First contains the register location and length,
-                  Second contains the memory mapping address and length
-   - reg-names :  Should contain the resource reg names:
++			flexspi: spi@30bb0000 {
++				#address-cells = <1>;
++				#size-cells = <0>;
++				compatible = "nxp,imx8mm-fspi";
++				reg = <0x30bb0000 0x10000>, <0x8000000 0x10000000>;
++				reg-names = "fspi_base", "fspi_mmap";
++				interrupts = <GIC_SPI 107 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MM_CLK_QSPI_ROOT>,
++					 <&clk IMX8MM_CLK_QSPI_ROOT>;
++				clock-names = "fspi", "fspi_en";
++				status = "disabled";
++			};
+ 
+ 			ecspi1: spi@30820000 {
+ 				compatible = "fsl,imx8mm-ecspi", "fsl,imx51-ecspi";
 -- 
 2.24.0
 
