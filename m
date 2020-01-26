@@ -2,64 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E44B914997A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Jan 2020 08:00:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14B26149A8F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Jan 2020 13:33:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lRlhMIcgUYx9zgMl+W8yro/IeBrMbyY9e9bgGyF2W8Y=; b=UU4afTeBhdGhAB
-	E5j2uVEyB5/87U+GJEVdb4RIC1G49SExH33bkEmKeSbGBVY00BxrXd1lhVJAgfYUEqNa+z0LUTZQM
-	S5xtdYRwe07oI1x4bzsPj2azSH/pwrez7U+RbMyXslY+jeBxnY2+0yGdVRdxdYzplY/MCun9nDM1H
-	j1kG6RVw8A4v4gTaps9vBi/Gsb6oof2PfCitoQSR2olutwvB8ogZMCM7Ve2unk/tDRl0rU78y1h3U
-	7yrUtQNyMUC1/jhOuL0xodLD5OByKipLmEFJBGhEhAJKbUwpSw1t4EHkxN1vfiaxk2tZLmWxzT26p
-	sIjj3NHIupQwEpTMYU4A==;
+	List-Owner; bh=e6xUp5vKXXO2Xecse9/leN1dazJirx/79HoR1B+AnZ8=; b=uBBI6hUbJdxvQ2
+	GtL1Y3CllfgFYy806jhfVdO5WiatiMGzk8zVhBNQHu3MyXuIigbXWyzdsfKUZQHmAuJmqZsfvuY0c
+	CzjjYLYkQfXg0OJWOzdh1U29O0wv1vCUmFCFrvapSgZkBjuRKsQPXWyB9NS/szFZyRrqXXSKGKMOX
+	myB0vSXn031crMeU/AoB2fUInG4uJsUDXABHkHK9OSiAlxkdze6OdkuzaQDfjazEOlkEu6vRi3uMx
+	QIry7bgvMuI7MrtDw51wUCJnDh7oHB/68R4E66Wvf51HUOTiVQ/8oivi0D5X9bqDzQuJIL7IhrJt5
+	XtNSj9+p6bMkrWYZqBgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivbu1-0001MF-B1; Sun, 26 Jan 2020 07:00:13 +0000
-Received: from mailoutvs56.siol.net ([185.57.226.247] helo=mail.siol.net)
+	id 1ivh6c-0006lk-0K; Sun, 26 Jan 2020 12:33:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivbtn-00019x-93
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Jan 2020 07:00:01 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 9F43E522717;
- Sun, 26 Jan 2020 07:59:48 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id L66nzIyDXhLa; Sun, 26 Jan 2020 07:59:48 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 57D7F522718;
- Sun, 26 Jan 2020 07:59:48 +0100 (CET)
-Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
- [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 6298F522717;
- Sun, 26 Jan 2020 07:59:46 +0100 (CET)
-From: Jernej Skrabec <jernej.skrabec@siol.net>
-To: mripard@kernel.org,
-	wens@csie.org,
-	paul.kocialkowski@bootlin.com
-Subject: [PATCH] Revert "drm/sun4i: drv: Allow framebuffer modifiers in mode
- config"
-Date: Sun, 26 Jan 2020 07:59:37 +0100
-Message-Id: <20200126065937.9564-1-jernej.skrabec@siol.net>
-X-Mailer: git-send-email 2.25.0
+ id 1ivh6T-0006lG-Am; Sun, 26 Jan 2020 12:33:26 +0000
+Received: from ziggy.de (unknown [95.169.235.131])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DF5AA2071A;
+ Sun, 26 Jan 2020 12:33:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1580042002;
+ bh=jiPyg4xMYng3XTyef+gtnfbqk1VNKvF8MyDPzuNMtWU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=oY/V6N+Bk295aS5GBBQ4hYmTuZJaC2Ikx3wC+D4nFi0kXAvZTX1gTtF0TS0ljn4r0
+ Rhw8kURC/bEaPBnvaduzUuX751qYa/n9Dacm6ArLhMp+CYfDfnMbwZdqwmWbJoKqV3
+ BJgFkNHZb6mcfOsRROAYBekXYeC0mxv6U2x4NQmE=
+From: matthias.bgg@kernel.org
+To: gregkh@linuxfoundation.org,
+	jslaby@suse.com,
+	nsaenzjulienne@suse.de
+Subject: [PATCH] serial: 8250_early: Add earlycon for BCM2835 aux uart
+Date: Sun, 26 Jan 2020 13:33:14 +0100
+Message-Id: <20200126123314.3558-1-matthias.bgg@kernel.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200125_225959_474293_FF5928DE 
-X-CRM114-Status: GOOD (  13.15  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200126_043325_396210_D08D3B3C 
+X-CRM114-Status: GOOD (  11.49  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.247 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,43 +74,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, daniel@ffwll.ch,
+Cc: Matthias Brugger <mbrugger@suse.com>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-serial@vger.kernel.org, matthias.bgg@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit 9db9c0cf5895e4ddde2814360cae7bea9282edd2.
+From: Matthias Brugger <mbrugger@suse.com>
 
-Setting mode_config.allow_fb_modifiers manually is completely
-unnecessary. It is set automatically by drm_universal_plane_init() based
-on the fact if modifier list is provided or not. Even more, it breaks
-DE2 and DE3 as they don't support any modifiers beside linear. Modifiers
-aware applications can be confused by provided empty modifier list - at
-least linear modifier should be included, but it's not for DE2 and DE3.
+Define the OF early console for BCM2835 aux UART, which can be enabled
+by passing "earlycon" on the boot command line. This UART is found on
+BCM283x and BCM27xx SoCs, a.k.a. Raspberry Pi in its variants.
 
-Fixes: 9db9c0cf5895 ("drm/sun4i: drv: Allow framebuffer modifiers in mode config")
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+
 ---
- drivers/gpu/drm/sun4i/sun4i_drv.c | 1 -
- 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/sun4i_drv.c
-index 5ae67d526b1d..328272ff77d8 100644
---- a/drivers/gpu/drm/sun4i/sun4i_drv.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
-@@ -85,7 +85,6 @@ static int sun4i_drv_bind(struct device *dev)
- 	}
+ drivers/tty/serial/8250/8250_bcm2835aux.c | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+diff --git a/drivers/tty/serial/8250/8250_bcm2835aux.c b/drivers/tty/serial/8250/8250_bcm2835aux.c
+index 8ce700c1a7fc..6769cea2964a 100644
+--- a/drivers/tty/serial/8250/8250_bcm2835aux.c
++++ b/drivers/tty/serial/8250/8250_bcm2835aux.c
+@@ -135,6 +135,24 @@ static struct platform_driver bcm2835aux_serial_driver = {
+ };
+ module_platform_driver(bcm2835aux_serial_driver);
  
- 	drm_mode_config_init(drm);
--	drm->mode_config.allow_fb_modifiers = true;
- 
- 	ret = component_bind_all(drm->dev, drm);
- 	if (ret) {
++#ifdef CONFIG_SERIAL_8250_CONSOLE
++
++static int __init early_bcm2835aux_setup(struct earlycon_device *device,
++					const char *options)
++{
++	if (!device->port.membase)
++		return -ENODEV;
++
++	device->port.iotype = UPIO_MEM32;
++	device->port.regshift = 2;
++
++	return early_serial8250_setup(device, NULL);
++}
++
++OF_EARLYCON_DECLARE(bcm2835aux, "brcm,bcm2835-aux-uart",
++		    early_bcm2835aux_setup);
++#endif
++
+ MODULE_DESCRIPTION("BCM2835 auxiliar UART driver");
+ MODULE_AUTHOR("Martin Sperl <kernel@martin.sperl.org>");
+ MODULE_LICENSE("GPL v2");
 -- 
-2.25.0
+2.24.1
 
 
 _______________________________________________
