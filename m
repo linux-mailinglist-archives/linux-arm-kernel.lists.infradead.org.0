@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BC44149AF8
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Jan 2020 15:10:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF987149AFA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 26 Jan 2020 15:10:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7lTDh9hdW+uQf7tI06az1BUksbZ+HxV5d3KktOIVgFw=; b=qCBTsQP37yPi9P
-	nB9v4HFNmqMBkm37jDEwHEV00Q7JqtZkNwTSutOtB3RLUNX/O/pwSMRfsXAdizcpm1ruZPEQBf8/h
-	3FQ2ouRMHKaIjV4f0ksNplLnV6B0X/gWud1jn3h6MwjNVgCro7UzLQU+hGWMCGwm+oWvmz/M0ydGs
-	f6Byvs6Ex5NsNWV2oLtgywBq1UrJu9VecsmSndAkiCS6o9YrHrZgHNV+p12HodPy9+zkcGF+Vh4xk
-	kL5A60ALkITkFVHnotCkCAQgy/5Ww0nsILwthfJCAXLP/pzXQcGiNRFvXg26O1TXO4xJVfanS8g07
-	4HK0lGBYpNkqEgm7gn7g==;
+	List-Owner; bh=okcVTBcPMe82BSh32Fk5ANl94SAB+iPp1mlBDXYmgDg=; b=PZD9M6pNfG8k1i
+	ABAt/Cx9cg5yaxLRAjUUw5Vexb4AOAAysjzyCYWDB+dDMdMdDtDNnKJJesFTfdg6aDaECSDEhcUlt
+	D0AJccH3ZFXG9/EDWDQVEvNPQw69Y+FsY2qTkY4FPrCsuQFYlM88qGFeO/zlCyp6iOZ1gYhYV9GE6
+	I8FLNJfrQs5mEebwddPeO6qEJLb7duMYqHhCPeXrS8BM2yrnqGL3LDVnjdOvfxoO0cYg1P+LSmO48
+	wfKjepOfaFmzUPM8tvvnji1jZaBBaUVdCF1E6muC3+gz0Jc3z8bp72/scBi9Bq/200sFzONJNMBhG
+	oR9aLGkTJJgt02nkb26A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivic5-0001Jg-MK; Sun, 26 Jan 2020 14:10:09 +0000
-Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
+	id 1ivicZ-000378-4g; Sun, 26 Jan 2020 14:10:39 +0000
+Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivibV-00015j-VT
- for linux-arm-kernel@lists.infradead.org; Sun, 26 Jan 2020 14:09:35 +0000
-Received: by mail-yb1-xb43.google.com with SMTP id w17so3652468ybm.1
+ id 1iviba-000164-9m
+ for linux-arm-kernel@lists.infradead.org; Sun, 26 Jan 2020 14:09:39 +0000
+Received: by mail-yb1-xb44.google.com with SMTP id l197so3627330ybf.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Jan 2020 06:09:33 -0800 (PST)
+ Sun, 26 Jan 2020 06:09:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=0znyjyYbiAbfIQWL1oHWminydK6nnqolmIPai4FHJsc=;
- b=R4GqoCH0iaDMWEwxpz1GR5oUF1M/PE+kqz3xfrZFKD3jO36TKruKc+faOYkaorNk/D
- DeQeNy5D9BzFVEmzmhmt7ldcFyWlbkECndL6WYGi+2dHcJmOTM5hphD7ATLRFTHy0Clv
- 6qug8RknOAOytZhosq2Mj6lbC7hNAdXnvnb/SZKEd6FrVJpcReBRiXvxv4VFKSalqBaI
- 2AHJWwykNlWagqtgLAPvXb+ELm74R8e314A3RWKmipUwoPfEt2/fq1rHwUZH3v8E/Kcq
- YZkCH887Srp+xO+17qyxEA6A/5aUKdXRIu8TH+J9BVYQsb9e8Ax8qDRDur1Vawvob5vT
- QyBg==
+ bh=daWWos5KtEMJA9FX6DD1ge3+gsTuCafldU15qCzNObg=;
+ b=JBg6jHKqCfQ/EPovFt5dmZcVRxMFRPh8xCo34IYw8p/FF56RVql3n/M0SsO4INFDCR
+ te2K8GaEWuhx+Ancr5eGaWriyJ72lmhYBW5sAi9WbkZn5KEOw+UgzL/A7MoC+DvaNijP
+ izDIGH2klMvbB+ZbGcr+KZydyTsmDuK5VboPPHhXV0nAD6fO57Q+keFVe9yZMYHHpa1b
+ EyAPIfHZdRSIfX37fE6fezEJ7jYQeE11WqBzts6+KUapnfFV1EWWMtwBCAaitVCfov5M
+ 82DrpIgm44Ov44l+bRUeSRJAiJ+/0sOc4DfSU89F+IDqcdOwV/IYx6/Ptq6pnJE0slYF
+ qsoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=0znyjyYbiAbfIQWL1oHWminydK6nnqolmIPai4FHJsc=;
- b=VPt0NdV8tO1D0FG03Sht3KPNs2j9K07UewGOYFzIS4dorInnR+C4tPJSCzu/6y3OQD
- cS+lYAHh3glFIYqwf3eJB41gyuSzsh0ZhlxqhzJvFVHsQtpjsm7xjV8Qfob3MoALMGQY
- OSV1SwfaMtNnoR+tOvbJKreMV7zCZoWppV+v3f8p4xw02v5W60MQfsY/zrCJYDLm+VmK
- DTKSkJ059n+Lcu+1bsHkUrv6kvG65iFaVrADmO10BSGzNeDF+RSh4iWuyP2O5+bmvRAf
- oBtcRS+qizImHbZ+9K2WnzmI0+mZjR3hLUSjaJzR4PZin5pNBv1E8UZfzvthCix3RQKM
- cQJQ==
-X-Gm-Message-State: APjAAAVN/zvtl/l0OZFK9aVI0kikkxYw8QQFHjq13BbNXTPpwiuDHpHB
- 855y4jeiHh6FUR31bI/ylpg=
-X-Google-Smtp-Source: APXvYqyZvLUQmp2PTyVD65ywAO78sFlydfcTzGCK8FC8Fn/wQl9dllTay7iP+Tj7BKw2LabEC8Xomw==
-X-Received: by 2002:a25:d252:: with SMTP id j79mr9269996ybg.311.1580047772582; 
- Sun, 26 Jan 2020 06:09:32 -0800 (PST)
+ bh=daWWos5KtEMJA9FX6DD1ge3+gsTuCafldU15qCzNObg=;
+ b=TJqJ5sODjiC/kfo6z5y+pumvS1lyccVm8/wpgRoWO09xMjIzIZ5F0urQu6TYewCNMC
+ kHjay+NlU4VTwaZnk11dluQHwGGhln/+8o+jP049wcARToUE4zxqy+nJyrCJA3fqjLeq
+ UvcJ7S6sehkqVmKXnbXXz+Px2c8aPiDsVUGmQQAUNPQb8agT6rcZ9Lteh7FeW7K+xVrI
+ ke5S4M3faQLQNQgdatsd1vBqryp7fnGSLce2f8QPGit+JVbR8SFSNjol8XFhyQgD+p4e
+ m0zZ4U9G4Q9dExNnmCYBdIUcS77jZu47hkgbjulnbvncFKWk5WZ6CSYKYQRBH6oZqNpL
+ h0yw==
+X-Gm-Message-State: APjAAAUjOGlU2rBNXikXgBY64QYOq5Xt+AhQ+roeQDB5dadn/hkdBz9Q
+ GWpqeS4qXFY6Rps12b2XTlA=
+X-Google-Smtp-Source: APXvYqxbwclW7C7Ka+4RV7Kdv3OLTse91pIEErfd8duwb0LYIXWxyxCJjLGPfw2Do4AwA4IIR6O3pw==
+X-Received: by 2002:a25:d4c4:: with SMTP id
+ m187mr10061540ybf.109.1580047774540; 
+ Sun, 26 Jan 2020 06:09:34 -0800 (PST)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id a12sm5237214ywa.95.2020.01.26.06.09.31
+ by smtp.gmail.com with ESMTPSA id a12sm5237214ywa.95.2020.01.26.06.09.33
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 26 Jan 2020 06:09:32 -0800 (PST)
+ Sun, 26 Jan 2020 06:09:34 -0800 (PST)
 From: Adam Ford <aford173@gmail.com>
 To: linux-spi@vger.kernel.org
-Subject: [PATCH 2/5] spi: fspi: dynamically alloc AHB memory
-Date: Sun, 26 Jan 2020 08:09:09 -0600
-Message-Id: <20200126140913.2139260-2-aford173@gmail.com>
+Subject: [PATCH 3/5] spi: spi-nxp-fspi: Enable the Octal Mode in MCR0
+Date: Sun, 26 Jan 2020 08:09:10 -0600
+Message-Id: <20200126140913.2139260-3-aford173@gmail.com>
 X-Mailer: git-send-email 2.24.0
 In-Reply-To: <20200126140913.2139260-1-aford173@gmail.com>
 References: <20200126140913.2139260-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200126_060934_013335_E7698771 
-X-CRM114-Status: GOOD (  15.06  )
+X-CRM114-CacheID: sfid-20200126_060938_380235_C2B91B5E 
+X-CRM114-Status: UNSURE (   9.16  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -117,101 +119,27 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 From: Han Xu <han.xu@nxp.com>
 
 Apply patch from NXP upstream repo to
-dynamically allocate AHB memory as needed.
+Enable the octal combination mode in MCR0
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
 Signed-off-by: Han Xu <han.xu@nxp.com>
 
 diff --git a/drivers/spi/spi-nxp-fspi.c b/drivers/spi/spi-nxp-fspi.c
-index 00c7899428a1..23abf5ae318e 100644
+index 23abf5ae318e..019f40e2917c 100644
 --- a/drivers/spi/spi-nxp-fspi.c
 +++ b/drivers/spi/spi-nxp-fspi.c
-@@ -307,6 +307,7 @@
+@@ -913,8 +913,9 @@ static int nxp_fspi_default_setup(struct nxp_fspi *f)
+ 	fspi_writel(f, FSPI_DLLBCR_OVRDEN, base + FSPI_DLLBCR);
  
- #define POLL_TOUT		5000
- #define NXP_FSPI_MAX_CHIPSELECT		4
-+#define NXP_FSPI_MIN_IOMAP	SZ_4M
+ 	/* enable module */
+-	fspi_writel(f, FSPI_MCR0_AHB_TIMEOUT(0xFF) | FSPI_MCR0_IP_TIMEOUT(0xFF),
+-		 base + FSPI_MCR0);
++	fspi_writel(f, FSPI_MCR0_AHB_TIMEOUT(0xFF) |
++		    FSPI_MCR0_IP_TIMEOUT(0xFF) | (u32) FSPI_MCR0_OCTCOMB_EN,
++		    base + FSPI_MCR0);
  
- struct nxp_fspi_devtype_data {
- 	unsigned int rxfifo;
-@@ -345,6 +346,8 @@ struct nxp_fspi {
- 	void __iomem *ahb_addr;
- 	u32 memmap_phy;
- 	u32 memmap_phy_size;
-+	u32 memmap_start;
-+	u32 memmap_len;
- 	struct clk *clk, *clk_en;
- 	struct device *dev;
- 	struct completion c;
-@@ -657,12 +660,35 @@ static void nxp_fspi_select_mem(struct nxp_fspi *f, struct spi_device *spi)
- 	f->selected = spi->chip_select;
- }
- 
--static void nxp_fspi_read_ahb(struct nxp_fspi *f, const struct spi_mem_op *op)
-+static int nxp_fspi_read_ahb(struct nxp_fspi *f, const struct spi_mem_op *op)
- {
-+	u32 start = op->addr.val;
- 	u32 len = op->data.nbytes;
- 
-+	/* if necessary, ioremap before AHB read */
-+	if ((!f->ahb_addr) || start < f->memmap_start ||
-+	     start + len > f->memmap_start + f->memmap_len) {
-+		if (f->ahb_addr)
-+			iounmap(f->ahb_addr);
-+
-+		f->memmap_start = start;
-+		f->memmap_len = len > NXP_FSPI_MIN_IOMAP ?
-+				len : NXP_FSPI_MIN_IOMAP;
-+
-+		f->ahb_addr = ioremap_wc(f->memmap_phy + f->memmap_start,
-+					 f->memmap_len);
-+
-+		if (!f->ahb_addr) {
-+			dev_err(f->dev, "failed to alloc memory\n");
-+			return -ENOMEM;
-+		}
-+	}
-+
- 	/* Read out the data directly from the AHB buffer. */
--	memcpy_fromio(op->data.buf.in, (f->ahb_addr + op->addr.val), len);
-+	memcpy_fromio(op->data.buf.in,
-+		      f->ahb_addr + start - f->memmap_start, len);
-+
-+	return 0;
- }
- 
- static void nxp_fspi_fill_txfifo(struct nxp_fspi *f,
-@@ -822,7 +848,7 @@ static int nxp_fspi_exec_op(struct spi_mem *mem, const struct spi_mem_op *op)
- 	 */
- 	if (op->data.nbytes > (f->devtype_data->rxfifo - 4) &&
- 	    op->data.dir == SPI_MEM_DATA_IN) {
--		nxp_fspi_read_ahb(f, op);
-+		err = nxp_fspi_read_ahb(f, op);
- 	} else {
- 		if (op->data.nbytes && op->data.dir == SPI_MEM_DATA_OUT)
- 			nxp_fspi_fill_txfifo(f, op);
-@@ -992,9 +1018,8 @@ static int nxp_fspi_probe(struct platform_device *pdev)
- 
- 	/* find the resources - controller memory mapped space */
- 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "fspi_mmap");
--	f->ahb_addr = devm_ioremap_resource(dev, res);
--	if (IS_ERR(f->ahb_addr)) {
--		ret = PTR_ERR(f->ahb_addr);
-+	if (IS_ERR(res)) {
-+		ret = PTR_ERR(res);
- 		goto err_put_ctrl;
- 	}
- 
-@@ -1073,6 +1098,9 @@ static int nxp_fspi_remove(struct platform_device *pdev)
- 
- 	mutex_destroy(&f->lock);
- 
-+	if (f->ahb_addr)
-+		iounmap(f->ahb_addr);
-+
- 	return 0;
- }
- 
+ 	/*
+ 	 * Disable same device enable bit and configure all slave devices
 -- 
 2.24.0
 
