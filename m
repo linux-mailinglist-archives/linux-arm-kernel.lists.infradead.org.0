@@ -2,77 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1B1F14A822
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 17:33:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F92914A84E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 17:47:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rjoT2TlMkruBAG7oVVdq0sPo+DB4eVjokMYhIgfgbEY=; b=tw+wQhAsMmGC4v
-	4qq0zuZb9pFIM+3OZGjLjTjPocZOFRsKINetrtqN4Dxs/W4bXtDb8VRBdGJWlKRF1tdTfJrNPEQ0R
-	mPS6IZvCo8wD+HE7CYDVG9Q+bh7/JXDtAm8RRQJftxOQbJjsTg5SdTBeUCSTX4nyfRBg+KRFoHskJ
-	6GG8bm+0Q1XOtMuZYhlOTh/7n9HmiYUxyNJc1qDCwkoDO/tB7fZ6WlffETH5AmuLF+UGFVckllIrX
-	rSBX+Vo2bbh2592dSgG+j14OY5J4qMxwFjESPgIERgO4MBjF9lHBDW4HpnG5DiyFohNICqdTdG51l
-	7yMwzBRrN/uG0mtOpkDg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KWWKyDkS5h4r0Y0mSuk1bvQZ6r/7Xknb38SgQAXZSHU=; b=tdqVehR7+zCXgl
+	DAN9RA4uJ0520+XOfKkZdTzuqJi9x4iLv9JqBvWIDQBajAnkJnJe6uoV7DfgEMiXENVp+jyh8tZle
+	VUJIUwB1lXVHsAlB1UfmMQYJnz5/+b63z3ddQK59Y5odtamZ1PZjg0XKW7s9ACaTOyR/WnOAzFZp1
+	lrJmWCmybe+DhfWPKPE4RpnTeESRwzqT9177i7/BaGAswjjA5QGuLO9i/gX6aQlN3wN29Y9SUOmF/
+	EVva9saM5INijBOkpW5jS9DyGCCIXroqPawPDdHPhets+rl6L/ldNfpy6AHwU4+46s0OtCe3ilYyX
+	L6Rpt9Im5dsHWFwZIg0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw7Jv-0000y7-Ql; Mon, 27 Jan 2020 16:33:03 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw7Jl-0000x7-Qy
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 16:32:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=BnSfaZk62rOeNYfQ6Q5vO9fhE1qKEGe75T8dAanwXwk=; b=KrVk633erhN4xaEPpKrr+NevW2
- GsJ+AKkyK8sVkRdsD/oFOpNTSOHRW9t7+JGjKS/CZTNF4DyHMsjPNisewktHT41HFxJA/CGFjsS4/
- 6MzWUO0URxpXbITMLaq1V2Hgi+n9e/2rRb/+LVN6fdjUE9+HVzr666Nc6N9uYoC1ESkQ=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1iw7JZ-0007C7-U2; Mon, 27 Jan 2020 17:32:41 +0100
-Date: Mon, 27 Jan 2020 17:32:41 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [RFC net-next 6/8] net: phylink: Configure MAC/PCS when link is
- up without PHY
-Message-ID: <20200127163241.GK13647@lunn.ch>
-References: <cover.1580122909.git.Jose.Abreu@synopsys.com>
- <9a2136885d9a892ff170be88fdffeda82c778a10.1580122909.git.Jose.Abreu@synopsys.com>
- <20200127112102.GT25745@shell.armlinux.org.uk>
- <BN8PR12MB3266714AE9EC1A97218120B3D30B0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <20200127114600.GU25745@shell.armlinux.org.uk>
- <20200127140038.GD13647@lunn.ch>
- <20200127140834.GW25745@shell.armlinux.org.uk>
- <20200127145107.GE13647@lunn.ch>
- <20200127161132.GX25745@shell.armlinux.org.uk>
+	id 1iw7Y8-0007Jw-7Y; Mon, 27 Jan 2020 16:47:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iw7Y0-0007J5-0u
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 16:47:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2A9A331B;
+ Mon, 27 Jan 2020 08:47:33 -0800 (PST)
+Received: from [10.1.194.46] (e113632-lin.cambridge.arm.com [10.1.194.46])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3545F3F67D;
+ Mon, 27 Jan 2020 08:47:31 -0800 (PST)
+Subject: Re: [PATCH v2 4/6] Documentation: arm64: document support for the AMU
+ extension
+To: Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
+ will@kernel.org, mark.rutland@arm.com, maz@kernel.org,
+ suzuki.poulose@arm.com, sudeep.holla@arm.com, dietmar.eggemann@arm.com
+References: <20191218182607.21607-1-ionela.voinescu@arm.com>
+ <20191218182607.21607-5-ionela.voinescu@arm.com>
+From: Valentin Schneider <valentin.schneider@arm.com>
+Message-ID: <b63b6f10-22c8-79be-cc97-08484874bd62@arm.com>
+Date: Mon, 27 Jan 2020 16:47:29 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200127161132.GX25745@shell.armlinux.org.uk>
+In-Reply-To: <20191218182607.21607-5-ionela.voinescu@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_083253_877927_C0DF0F8B 
-X-CRM114-Status: UNSURE (   7.33  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200127_084736_153424_450209A4 
+X-CRM114-Status: GOOD (  23.04  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,40 +67,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>, Jakub Kicinski <kuba@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: linux-doc@vger.kernel.org, peterz@infradead.org,
+ Jonathan Corbet <corbet@lwn.net>, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, ggherdovich@suse.cz, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Presumably, all these should be visible on the ZII rev B as well?
+On 18/12/2019 18:26, Ionela Voinescu wrote:
+> +Basic support
+> +-------------
+> +
+> +The kernel can safely run a mix of CPUs with and without support for the
+> +activity monitors extension. Therefore, when CONFIG_ARM64_AMU_EXTN is
+> +selected we unconditionally enable the capability to allow any late CPU
+> +(secondary or hotplugged) to detect and use the feature.
+> +
+> +When the feature is detected on a CPU, a per-CPU variable (amu_feat) is
+> +set, but this does not guarantee the correct functionality of the
+> +counters, only the presence of the extension.
+> +
+> +Firmware (code running at higher exception levels, e.g. arm-tf) support is
+> +needed to:
+> + - Enable access for lower exception levels (EL2 and EL1) to the AMU
+> +   registers.
+> + - Enable the counters. If not enabled these will read as 0.
 
-Maybe. The two SFF mounted on most rev B are connected to ports which
-only do SGMII, not 1000Base X. They tend to work by chance, and as
-such, i've never taken them seriously.
+Just to make sure I understand - if AMUs are physically present but not
+enabled by FW, we'll still
+- see them as implemented in ID_AA64PFR0_EL1.AMU
+- see some counters as available with e.g. AMCGCR_ELO.CG0NC > 0
 
-If i remember correctly, you modified your board, moved the SFF over
-to the normally unpopulated slots, and removed a resistor. That setup
-then has the SFF connected to the 6352, which can do both SGMII and
-1000BaseX.
+But reading some AMEVCNTR<g><n> will return 0?
 
-It could also be that the 6352 does have pass through from the PCS to
-the MAC, where as the 6390 does not? The 6390 is much more capable,
-having 2.5G and 10G support. The SERDES registers are very different,
-C45 vs C22 of the 6352.
+> + - Save/restore the counters before/after the CPU is being put/brought up
+> +   from the 'off' power state.
+> +
+> +When using kernels that have this configuration enabled but boot with
+> +broken firmware the user may experience panics or lockups when accessing
+> +the counter registers.
 
-    Andrew
+Yikes
+
+> Even if these symptoms are not observed, the
+> +values returned by the register reads might not correctly reflect reality.
+> +Most commonly, the counters will read as 0, indicating that they are not
+> +enabled. If proper support is not provided in firmware it's best to disable
+> +CONFIG_ARM64_AMU_EXTN.
+> +
+
+I haven't seen something that would try to catch this on the kernel side.
+Can we try to detect that (e.g. at least one counter returns > 0) in
+cpu_amu_enable() and thus not write to the CPU-local 'amu_feat'?
+
+While we're on the topic of detecting broken stuff, what if some CPUs
+implement some auxiliary counters that some others don't?
+
+> +The fixed counters of AMUv1 are accessible though the following system
+> +register definitions:
+> + - SYS_AMEVCNTR0_CORE_EL0
+> + - SYS_AMEVCNTR0_CONST_EL0
+> + - SYS_AMEVCNTR0_INST_RET_EL0
+> + - SYS_AMEVCNTR0_MEM_STALL_EL0
+> +
+> +Auxiliary platform specific counters can be accessed using
+> +SYS_AMEVCNTR1_EL0(n), where n is a value between 0 and 15.
+> +
+> +Details can be found in: arch/arm64/include/asm/sysreg.h.
+> +
+> diff --git a/Documentation/arm64/booting.rst b/Documentation/arm64/booting.rst
+> index 5d78a6f5b0ae..a3f1a47b6f1c 100644
+> --- a/Documentation/arm64/booting.rst
+> +++ b/Documentation/arm64/booting.rst
+> @@ -248,6 +248,20 @@ Before jumping into the kernel, the following conditions must be met:
+>      - HCR_EL2.APK (bit 40) must be initialised to 0b1
+>      - HCR_EL2.API (bit 41) must be initialised to 0b1
+>  
+> +  For CPUs with Activity Monitors Unit v1 (AMUv1) extension present:
+> +  - If EL3 is present:
+> +    CPTR_EL3.TAM (bit 30) must be initialised to 0b0
+> +    CPTR_EL2.TAM (bit 30) must be initialised to 0b0
+> +    AMCNTENSET0_EL0 must be initialised to 0b1111
+
+Nit: Or be a superset of the above, right? AIUI v1 only mandates the lower
+4 bits to be set. Probably doesn't matter that much...
+
 
 _______________________________________________
 linux-arm-kernel mailing list
