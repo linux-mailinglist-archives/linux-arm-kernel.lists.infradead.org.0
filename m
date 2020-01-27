@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6CF314A2A8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 12:10:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3B2614A2AF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 12:12:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ktJ9XWM/OCTJq7MSFvQgmA1hoJ4uShnugP+IcJDTr1I=; b=j2vTGJzhmvPOc1sS8I4XfUOqqM
-	yKSxRlwATKQ5WSW+i+cZBHvR7J40H+C2z2RWrh4ummss3LpmxwMJCIM+0gZ9HuygH161riwLh8Z/y
-	mdZ3d5JZ8pm3ufkZLxq+EvS3jFXLJQrFDLZT6w/7Rde4c7DGEqKorXherzRYgEDwKo1Eq2T802Zwt
-	eXS1S+jyZfntXiAFs0x9P6T98UXZk5L1kfoXiXBkEskNFIyLpAtLaztsr3VoQDkY84hMWxgAomWQf
-	+SvNldj7VcnmescbRHTK6rUoT7W+JcP0YaeTvAEkHEV4UWYd0IDA6NuuYIDAdHq3mJwh7ZrD3tSSl
-	PSPSwdjw==;
+	bh=y8n9MzYnYo/DhZzwzs5P6ym//Jh6LJVG9NfOREHjKU0=; b=jLk0rM4eV/nz/2+6HAPhNUJpZt
+	YWXPUUnXmkyGGq4VdldvnitGnTQQXZUkrzyGlphGtzBdHZZbIwUme62OIh+kBX4UPaWhRuLG7gomv
+	mW7oiFkb/RXdLovIPUKjRrPw2dCmTNK0rKn67Ly6HUsWPaAZ2cu2wzbT/BI7bXshBhyur/Vc/EHbu
+	mNs5YPFNskkey0cjOJ+sdCTPMqK9ztoCjt0jiYah8P0aelvEtz3pCq+P1SE5DyV+y4QQkCl5awyQq
+	psO1CbuFLY4eoqBRP0d7/wA+rfRQqPHKvOMxcIEdH/iIpWcS+YKOmyvR7MA2vFtixOxiw/HU8R7mM
+	zbpHKr6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw2HY-0005bn-79; Mon, 27 Jan 2020 11:10:16 +0000
+	id 1iw2JE-0000D4-Q5; Mon, 27 Jan 2020 11:12:00 +0000
 Received: from sv2-smtprelay2.synopsys.com ([149.117.73.133]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw2Gt-0005QK-DH
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 11:09:36 +0000
+ id 1iw2Gt-0005Rs-OL
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 11:09:40 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 2424240681;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 30CF8407A1;
  Mon, 27 Jan 2020 11:09:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1580123371; bh=cO+g3Kr2uxEqhz3b3YZ0amNPqSvwwFt7LtKb3+gOCo4=;
+ t=1580123375; bh=NixIYL9DJLQ1EjTICLfMWuieQcujDdoMHw59TKyyS8M=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=MYoby/cG1j0uNTuOKPe4zJEkqEzPfmiwzwVbWaZq+bb1EzFQCP+Kx6E9MAQojvvHx
- WSR0NwS5UAGinV0n1bPOhiezeOQuSQ1SfM+hZ1bH/p5TnGkAcWUkqMJneYTiZ8lhu1
- O2XSEXo7CddZoJBPXNlbCIuQGcq3UMKSs2qgaGpSTfVM3lrOf6r/AKFo2cwvSUO2R1
- rVnTTr+s5DKYWOqznGWsfDzBK77mEkvj/daJSX+WdFssDZgBgE+cFQvBrf/NQzj/6G
- 5hLcjyw5UPU5jaQ5L4bfvXveCCoIyo0XqiuvLU3DCBYiIkVKxPosmYjQ2LfpHiNATt
- Py4csElTLqj0Q==
+ b=TfOTD3c61jySU590rkw/WFPmnX4b3Yp1lziig60p8MtXl/WVBNxXo6Eesngx+eomY
+ QwzQcFIQEBQT5yFCCWbIYUgPd/Gf6bquxFUnrJzgLahK/AMKBrYhn8TK8iXfLEXQBE
+ 1uWntPc45cgt/P611nE6So2fe0aScGXMFPM9bvqOQK+xi9p5SBRa9J6PnCYtBUNmbb
+ B+kXNx8qSeg2RXFaVHbaPzhvqv6jX8y9HInABcF+DsAvrx3OX/rpSknvCBn4nMkS57
+ R129Qv3KRyueOvdsntraQascjwgfEXhYZJco/6HdkiKXUdmHHeyx6SIr0d9ysgYuFa
+ sZWoAJcRwq+Bg==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id B4F04A0098;
+ by mailhost.synopsys.com (Postfix) with ESMTP id BD0F3A009B;
  Mon, 27 Jan 2020 11:09:28 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [RFC net-next 5/8] net: phylink: Add missing Backplane speeds
-Date: Mon, 27 Jan 2020 12:09:10 +0100
-Message-Id: <52404355acc97d174abb1c85d39ec1a56f96593a.1580122909.git.Jose.Abreu@synopsys.com>
+Subject: [RFC net-next 6/8] net: phylink: Configure MAC/PCS when link is up
+ without PHY
+Date: Mon, 27 Jan 2020 12:09:11 +0100
+Message-Id: <9a2136885d9a892ff170be88fdffeda82c778a10.1580122909.git.Jose.Abreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1580122909.git.Jose.Abreu@synopsys.com>
 References: <cover.1580122909.git.Jose.Abreu@synopsys.com>
 In-Reply-To: <cover.1580122909.git.Jose.Abreu@synopsys.com>
 References: <cover.1580122909.git.Jose.Abreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_030935_475865_7EE1BD5D 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20200127_030935_793155_4D87E2CB 
+X-CRM114-Status: GOOD (  13.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,7 +99,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-USXGMII also supports these missing backplane speeds.
+When we don't have any real PHY driver connected and we get link up from
+PCS we shall configure MAC and PCS for the desired speed and also
+resolve the flow control settings from MAC side.
 
 Signed-off-by: Jose Abreu <Jose.Abreu@synopsys.com>
 
@@ -118,27 +121,36 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/phy/phylink.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/net/phy/phylink.c | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
-index 70b9a143db84..4174d874b1f7 100644
+index 4174d874b1f7..75dbaf80d7a5 100644
 --- a/drivers/net/phy/phylink.c
 +++ b/drivers/net/phy/phylink.c
-@@ -308,11 +308,13 @@ static int phylink_parse_mode(struct phylink *pl, struct fwnode_handle *fwnode)
- 			phylink_set(pl->supported, 1000baseT_Half);
- 			phylink_set(pl->supported, 1000baseT_Full);
- 			phylink_set(pl->supported, 1000baseX_Full);
-+			phylink_set(pl->supported, 1000baseKX_Full);
- 			phylink_set(pl->supported, 2500baseT_Full);
- 			phylink_set(pl->supported, 2500baseX_Full);
- 			phylink_set(pl->supported, 5000baseT_Full);
- 			phylink_set(pl->supported, 10000baseT_Full);
- 			phylink_set(pl->supported, 10000baseKR_Full);
-+			phylink_set(pl->supported, 10000baseKX4_Full);
- 			phylink_set(pl->supported, 10000baseCR_Full);
- 			phylink_set(pl->supported, 10000baseSR_Full);
- 			phylink_set(pl->supported, 10000baseLR_Full);
+@@ -533,10 +533,20 @@ static void phylink_resolve(struct work_struct *w)
+ 
+ 	if (link_changed) {
+ 		pl->old_link_state = link_state.link;
+-		if (!link_state.link)
++		if (!link_state.link) {
+ 			phylink_mac_link_down(pl);
+-		else
++		} else {
++			/* If no PHY is connected, we still need to configure
++			 * MAC/PCS for flow control and speed.
++			 */
++			if (!pl->phydev) {
++				phylink_resolve_flow(pl, &link_state);
++				phylink_mac_config(pl, &link_state);
++			}
++
+ 			phylink_mac_link_up(pl, link_state);
++		}
++
+ 	}
+ 	if (!link_state.link && pl->mac_link_dropped) {
+ 		pl->mac_link_dropped = false;
 -- 
 2.7.4
 
