@@ -2,131 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5048214A284
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 12:03:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1BDD14A290
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 12:07:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WR7xE8K/CGlEgB4OEsCre5BvPaJ4qFwROSnxa/rQDPE=; b=tg2RhOtsMJt+ZU
-	cz2x69CsQoyTskupStgCqxhfjSTxIBFTvl3Wu09w04NC8KaMiIeg4DKQ2kFh7Tyc+XF8oPOmOfBZz
-	FbGP8BDu3jmAb1t5DRra4oq79FGhBl1lCPu1b5aSL7rjJvDrlGaLIbHQxiQE+XpFDmqzoYa9Db6pJ
-	pjVGGwduq1NzS3wInShZK24qWUal+rJ7yBa4Hu8Bb2seuTw/rH6W1T4SzOLg7W2OLc8DZUMaWdO8a
-	QD8oOb9B1qAypUH1TWxPNYfbpNf+eIwgntuaMo02OKlPir85wtX1iYsFevFrvIrzN8pfWbFEwQNYw
-	MV7HVKUDe7YvfNuBpybA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gidjWFwHSIT9PtkKhqImMcVBOAGOHLqt2Qd1t5a7Xq4=; b=fz2m94DvvdMsD4uCsg80bKo31
+	IM7dY9fTW3UjG+xMwqSRUijJ5ihlIQedErH+07xqrp+GRjpnr4fR/Y8ewZdr2z5suUhJLuMhMB+wW
+	sxuaNZoQ05TYqjJ2DaZQ8XmjGSLsXEnQCpqnD+y3oFqSft881jjRj88Zz2mRE5c1mr3Zxbvv5ip2g
+	GQqxiG9rQ2sdaLRPi7rTt34c4Gc3KlfUmYJCPGzhn/ooa+qlS1lSLp2o4CdO6SRJjzh+SB8oBjR6H
+	+mRtRNkKNTP+M5+rVashWUM9xBNJcGy8ERBo2bg47fRyxNdsbLR5l5mXir6ky8BOsgoJ2GhrgKNH1
+	h65ytFV+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw2Ax-00036U-Oy; Mon, 27 Jan 2020 11:03:27 +0000
-Received: from mail-dm6nam11on2069.outbound.protection.outlook.com
- ([40.107.223.69] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
+	id 1iw2ES-0004k9-Ne; Mon, 27 Jan 2020 11:07:04 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw2An-000369-2Q
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 11:03:18 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JFGcpbJcJ88abxxedtjrYOBrA9uajU3/K7SICe1H9asyGgzk6DyH83QgJV5djZ/wQWr/2cu4lMwsOzlhbBwhlwVqxQhDZCQOLNCfOZYiQH/evJrnBTCbgdDN1SKDJWJrj6tXqTUvs0TSq0OJjQr/1SYGd/FJXoEjssN4jUOV0qUkyrzBX6KJh3CKB0aNjJpZh0D57eNn6PhHVr599V8vsvGKuUFXrlfot4Iz9b8TKH+w47CToahiSwH9H2rPahGDMZt4qjxuUNLrlrBojOamvGP+SFRqVloqj9C/UDMP3S+Wn6sCcJWvB0jyPyYtAYIcIdqhZxTnfPGW4sXfXV8y/Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0yqPztloZmppVt9Hi6ktff4iJeI6Sd5afmyTsEES3P8=;
- b=SFFxMrLSZn+l1aARj0TiDgx2Ma3AazB/yARG5SIc8S51x39Ea/2h6MCqIRPjRgWTBygkBVQcK/ARMiFcdo2YnyXx9Ej5gVvniZZg4iN5C2BbZiMQ+8FctgJVAJWIQrwtvHe8VUOtM6zjWcCfu9bKW4Yl6djqgnRs9juv4iaX1W39qrc26elUFoHk825L8pZ6LEeMxK/Azr2tHFIHkCZ9gQRIKLGVAKyOejLRyVGqzVzYAuxh1jTg5BZ59gQ31X8QYox8TOwfmTaZwhRhanq8Xo0xDfe+tmY4L33+D7FZ8hj04+0Ag/Gx+6Wi7T5oDEhHKoPc8KF5Qcc8sRNozenxFw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0yqPztloZmppVt9Hi6ktff4iJeI6Sd5afmyTsEES3P8=;
- b=CR0MHc9uRgHFCGgL4kZKlEfr44L0IMW72Dz5YfXP5BzzXC9uKPPC1ZM4Vh9Tfj7p05BlByU3xtbRGhlRvvfgk3sMBegt8lWNmzYFbgKHkzGLrGrtOpQLNnQflc6+HhLSmL1aGnygc2FWZMTgH31fJfMk/sm79LX7FSf9QgPE8aI=
-Received: from MWHPR02CA0024.namprd02.prod.outlook.com (2603:10b6:300:4b::34)
- by BYAPR02MB5430.namprd02.prod.outlook.com (2603:10b6:a03:a4::25)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2665.22; Mon, 27 Jan
- 2020 11:03:14 +0000
-Received: from SN1NAM02FT023.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::204) by MWHPR02CA0024.outlook.office365.com
- (2603:10b6:300:4b::34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2665.22 via Frontend
- Transport; Mon, 27 Jan 2020 11:03:14 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT023.mail.protection.outlook.com (10.152.72.156) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2665.18
- via Frontend Transport; Mon, 27 Jan 2020 11:03:13 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1iw2Aj-0000cJ-H5; Mon, 27 Jan 2020 03:03:13 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1iw2Ae-0002VD-DQ; Mon, 27 Jan 2020 03:03:08 -0800
-Received: from [172.30.17.107] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1iw2Aa-0002UC-GI; Mon, 27 Jan 2020 03:03:04 -0800
-Subject: Re: [PATCH][next][V2] i2c: xiic: fix indentation issue
-To: Colin King <colin.king@canonical.com>,
- Michal Simek <michal.simek@xilinx.com>,
- linux-arm-kernel@lists.infradead.org, linux-i2c@vger.kernel.org
-References: <20200127102303.44133-1-colin.king@canonical.com>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <2dd84ab2-a7a3-fdd8-6bd6-07f1b3d5cd00@xilinx.com>
-Date: Mon, 27 Jan 2020 12:03:02 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1iw2EK-0004jl-9Z; Mon, 27 Jan 2020 11:06:57 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id AE5BBB119;
+ Mon, 27 Jan 2020 11:06:54 +0000 (UTC)
+Message-ID: <f66483db33f8c190030ba0b66e0d85e549691cf0.camel@suse.de>
+Subject: Re: [PATCH 06/22] staging: vc04_services: get rid of
+ vchiq_platform_use_suspend_timer()
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org
+Date: Mon, 27 Jan 2020 12:06:53 +0100
+In-Reply-To: <20200124144617.2213-7-nsaenzjulienne@suse.de>
+References: <20200124144617.2213-1-nsaenzjulienne@suse.de>
+ <20200124144617.2213-7-nsaenzjulienne@suse.de>
+User-Agent: Evolution 3.34.3 
 MIME-Version: 1.0
-In-Reply-To: <20200127102303.44133-1-colin.king@canonical.com>
-Content-Language: en-US
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(346002)(136003)(396003)(39850400004)(189003)(199004)(426003)(26005)(186003)(336012)(44832011)(2616005)(36756003)(31696002)(2906002)(70206006)(70586007)(31686004)(478600001)(356004)(81156014)(4326008)(110136005)(8676002)(316002)(81166006)(5660300002)(8936002)(9786002)(4744005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB5430; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 34c96d88-7001-4ed7-d3f7-08d7a3188156
-X-MS-TrafficTypeDiagnostic: BYAPR02MB5430:
-X-Microsoft-Antispam-PRVS: <BYAPR02MB5430C90234407F056070FC08C60B0@BYAPR02MB5430.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:425;
-X-Forefront-PRVS: 02951C14DC
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: A6mf5Fsl5b0gjZvcCwaI8XRDHtt3IA28RldYB+/d609QkvhXZDFCcBIuJn7s7AT+x1BsuHEDyLf8qtcP3mwHUmWNolxXrTcJlnS+QnGWJtaz76iofuU5g9+9EfXNXVgBGu1z1fh5oKFbmXkLegxOiZ2idFT46DxIXoSOn4SkbmduvmFxZL7cdKs1rPKE44rDgChmRgRK7/0j8fW4GqC5qzmP/LdpVpryRvR1MtK2m1Lp+1kzZlc+oSIQqon6YS8p7B7IEuVJqTrwnYGBOKaPaQwTDuRQ4RZ6WikorPurAv13onkLjy8EliOeCNMj5YygEtz7dWpYmgejVmUehXFjh2OFgGdspFJR6sOp1WfLdY5yMILiRb3zMAakKkM2+ywg0KbHDBEvBo1jKmOJGYiNtMBgKuAgdwkP44wRRgKeAAkq8XgUWkVyNfezW2Ft44eX
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jan 2020 11:03:13.9337 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 34c96d88-7001-4ed7-d3f7-08d7a3188156
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5430
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_030317_114220_6EFD2EC3 
-X-CRM114-Status: GOOD (  15.50  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200127_030656_485209_551C13E3 
+X-CRM114-Status: UNSURE (   8.06  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.223.69 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -138,47 +64,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5472139326787269204=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27. 01. 20 11:23, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
-> 
-> There is a statement that is indented one level too deeply, remove
-> the extraneous tab.
-> 
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
-> ---
-> V2: fix type in commit message
-> ---
->  drivers/i2c/busses/i2c-xiic.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/i2c/busses/i2c-xiic.c b/drivers/i2c/busses/i2c-xiic.c
-> index b17d30c9ab40..90c1c362394d 100644
-> --- a/drivers/i2c/busses/i2c-xiic.c
-> +++ b/drivers/i2c/busses/i2c-xiic.c
-> @@ -261,7 +261,7 @@ static int xiic_clear_rx_fifo(struct xiic_i2c *i2c)
->  		xiic_getreg8(i2c, XIIC_DRR_REG_OFFSET);
->  		if (time_after(jiffies, timeout)) {
->  			dev_err(i2c->dev, "Failed to clear rx fifo\n");
-> -				return -ETIMEDOUT;
-> +			return -ETIMEDOUT;
->  		}
+
+--===============5472139326787269204==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-jfVbXwfzGkRKU6Ms0WbO"
+
+
+--=-jfVbXwfzGkRKU6Ms0WbO
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, 2020-01-24 at 15:46 +0100, Nicolas Saenz Julienne wrote:
+> @@ -3059,7 +2986,6 @@ vchiq_check_service(struct vchiq_service *service)
+>  			arm_state->videocore_use_count,
+>  			suspend_state_names[arm_state->vc_suspend_state +
+>  						VC_SUSPEND_NUM_OFFSET]);
+> -		vchiq_dump_service_use_state(service->state);
 >  	}
->  
-> 
+>  out:
+>  	return ret;
 
-As was suggested by Peter you should also add Fixes: <sha1> ("patch
-subject")
+As highlighted by the kbuild test robot, this shouldn't be removed. Sorry i=
+t
+slipped through the cracks. Happened because of it similarities with
+vchiq_dump_platform_use_state(), which is being rightfully removed.
 
-Thanks,
-Michal
+I'll give some time for further feedback, and send a v2.
+
+Regards,
+Nicolas
+
+
+--=-jfVbXwfzGkRKU6Ms0WbO
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl4uxE0ACgkQlfZmHno8
+x/7IcwgAlexqcFZf/vJCGPkHlxL6iHIKlCfhykAprlaYxplMz0io9YbfEMoxiaKj
+tuttGtiS8cVZgpJpMQA76Rc0iz6m05eSOxnLnxj1s7l9NTFobSU9BA06HsA1Hgg6
+h7GcQ/N71IY7vADTVX2zYWTt91KNKtBR5MBgJjudSe3E//DSHyC2SGOe3ZEWnjos
+2JKz/rW9X8bqTiaxS7e6YBzgd5ZRuuHVFWQ0iujbo+ymCiItZ1XeI3CxfkpJIdjn
+5y3vcKQkoMbWKaoKfQ9UlPdFHhacB28ukVCCcZPAQ3nCHCOYgteDrEtHmhu0Xive
+zkSOKBZTUF2Ku9R9JWUmDa3lqph9vg==
+=WPcc
+-----END PGP SIGNATURE-----
+
+--=-jfVbXwfzGkRKU6Ms0WbO--
+
+
+
+--===============5472139326787269204==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5472139326787269204==--
+
+
