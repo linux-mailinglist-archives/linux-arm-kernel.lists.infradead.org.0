@@ -2,118 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14EE314A11D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 10:46:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A9D914A11F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 10:47:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VzFGYDmG07kgsrN1ZGVdB5An/e+RCEHaC4zWbYhgfKA=; b=kwY9M/6wns2NTH
-	0WJr1MO16XnA3fkn3j7Ds+BWQRNbOs8JYt7IedkWUHcfViejepgj3irXtr46COukjo2RysXEFvEen
-	jtjAfqKGbvV0bpQ76bsgHpcdaWTOTnYN0pofNQM922VzFkQorItiAmSzkaE9okXG1btAQybgWTY+h
-	9PrYrUMBu3jJDiSR7POz17hpXlRStQXaUKOFUPB669vWiLICfC2JPUnjQCwIzLTWqSZaZASjjpSL1
-	SzthR3BUACJ20jgl9RVDXD91ykuDiuMBStgcxBJPUl/M2SEYSGYMIoyOXYHc+r8Mx2okGRGUiIrWf
-	C84ybloRuIji26kDRW1g==;
+	List-Owner; bh=penvS2TvQky2q5wc2ax2x7vjyxwarDHdtei03+BKskw=; b=J+ahvXYhO79BY9
+	4TW+EMNWEsP42rF2qrJKQiMbeusNwkpA61bRm41VlXRUbNSNWwUcVks74bhwxAVCYXGe4gEJqTyof
+	itrJf3lrIHhC/UOiPmGk37RwTsW6grsTTGx6xueOUW4NGM9w4l9moTR1i0hc38V7kjT83KOaT7egk
+	ztDmiyJLkjPhfPqkwQZhhf5yNQM/FYZ6xUdIVPSvsHXBDTH/RpCKwCx/HACfbtB/ffDOcNCe+L2Zj
+	C5XSN1B3SbRTYLXcUhUcIalcqRIVhDNPC8CUdxaatusHl7+7YicpcW0hVWwfOLeEdjUroM5m6A6NU
+	cUHPnpt0S3aK5qlx764g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw0yT-00015b-Ec; Mon, 27 Jan 2020 09:46:29 +0000
-Received: from mail-eopbgr70085.outbound.protection.outlook.com ([40.107.7.85]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1iw0yq-0001Xh-I9; Mon, 27 Jan 2020 09:46:52 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw0x6-00073r-Ae
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 09:45:06 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WUraadDbSiVv4TaQfZKQE1xPVhP48yaUgdd9TTP7/Qxqv6fjIRI98fRqGgKXMzTv1TFPTx2C8D2V6WBL9xh5eF8+SFvIeX2Xd8HI2oldvfmYBil1MU/BCosT27OBzyyEo56LKfUGbPHYBxSh6jAqMSNY549Z56ddEcJyDI97qrA5Rj/qSaeer9KBfUJ933ZcYOfwhAzuZGAqdt6bubZf9FaSrvWz2nUdspY9SoN4ZAO/TOe85HbWHnwqe/Uo3Z0BOmD+NbRNgsvXNQF11VFOoZh9mNurpWI5fI5gqyN0mJUqK15XO5wO+Z6Rf5D0p8PUDGIePgq73YE5HBE5jt9fcQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oruJh1UZ9aI4S4Cr//tsvOQj7lS+fs86nsfUA3UDxyQ=;
- b=AEqGJGgDc6n48Z5Mtxzmcmmr4yTMNQAmS7ab7nhmgbh9kf1CrKajAwK47s5J3mGT5HM2nku7eUD+v082/bqt1I8UbICN8usl7XU2CIiLAKpx2YIcuKWSg02IoL+82i0m2b9g9SHld0GbYHq3ZyreRN/eC1IEDL6KnLeMPc2JrwPI1lfpBjtx1X1WJhSUyfPU6sa/N8dAWAAXbjb5N74NHPcuj5F27dD/Fyo57bWDS0Ext96Tb9A6wJNDHepuCR5tGhQ5SBFHIz3xHYzzcCA7d1KfYmseRwH2LrlQvQuUCLaaXJtAQskRV8dHCcqw65nIYki1JcfZ2dNAY68wulsW5Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=oruJh1UZ9aI4S4Cr//tsvOQj7lS+fs86nsfUA3UDxyQ=;
- b=cm7PSKT5nCioKQKgK+RmXJfVvMUHSVoIv1MOcHh4OuGxTUBLrT1b190Y69w2uYQPp6dCHqu94vGkUqXhUvWpA6j8WwucDxVzVEX8TrrWgG3s8EWu6Dw0ETyTV7aRuNYlWFrUGbk4zCo/7TgIEjyMKKH0ito6WKWh0WMUZHwAYT0=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6436.eurprd04.prod.outlook.com (20.179.252.146) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2665.24; Mon, 27 Jan 2020 09:45:02 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2665.017; Mon, 27 Jan 2020
- 09:45:02 +0000
-Received: from localhost.localdomain (119.31.174.66) by
- HK2PR0401CA0005.apcprd04.prod.outlook.com (2603:1096:202:2::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.2665.24 via Frontend
- Transport; Mon, 27 Jan 2020 09:44:58 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "will@kernel.org"
- <will@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "arnd@arndb.de"
- <arnd@arndb.de>
-Subject: [PATCH V2 5/5] soc: imx: Use CONFIG_SOC_IMX8M as build gate
-Thread-Topic: [PATCH V2 5/5] soc: imx: Use CONFIG_SOC_IMX8M as build gate
-Thread-Index: AQHV1PZyuHBfhoyUvU61rkGglIKXvQ==
-Date: Mon, 27 Jan 2020 09:45:02 +0000
-Message-ID: <1580117979-4629-6-git-send-email-peng.fan@nxp.com>
-References: <1580117979-4629-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1580117979-4629-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR0401CA0005.apcprd04.prod.outlook.com
- (2603:1096:202:2::15) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 11a1a077-a4c7-4ec1-7064-08d7a30d94bf
-x-ms-traffictypediagnostic: AM0PR04MB6436:|AM0PR04MB6436:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB643640E09BFF5A1726BF50B1880B0@AM0PR04MB6436.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4502;
-x-forefront-prvs: 02951C14DC
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(136003)(39860400002)(396003)(346002)(376002)(189003)(199004)(81166006)(81156014)(8676002)(6666004)(71200400001)(8936002)(2906002)(6512007)(4326008)(44832011)(7416002)(69590400006)(86362001)(36756003)(110136005)(54906003)(316002)(52116002)(66446008)(5660300002)(478600001)(6506007)(64756008)(66476007)(66946007)(6486002)(2616005)(956004)(186003)(16526019)(26005)(66556008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6436;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: YREVEAnVsZuxEEb+6iUjSMdeHX3atsgVxug8fdveVGFriSTPr8DtQdNAV+J5x14uhPWnL4gk7/24uz/zoYy2xhFeQqhWZlAl6awFr0RCZ8fc5FwnoMA9RHgzQ9CIYON1PePUfXVHyVO9V2LHLwbxwjUspXDHyaG1Tj/qO/2dm4iyT6l8eAsH5OGDJv+7/niL7FcoM4O+bdmHagncYhYVpwTfb6LTI5zaQsLG5zKtTlAA983dn3iqoo5xE0PQEccPomoZeMqp9F2VFxdS9ltrSdhTQn2hP88Ed1ONpcUviF7Pe1Gmz3eEN2Khc6WRhEDwHaiqLLHkIVhQmfk3xgrfCrEvZaBiiZz6snGTZFJjADwCsH7qXCNARXk86f8qeTr9sjBUnd9fdGjaDQXyqvvzGHMEJZC1IKLmRiEf2516613cftdujTHK1Ru30oZ6kOmQj83/I5enOM19a4TOIRPCAsLfZEeGNle/5OmCN0VxTGImCbeYrC5Iby/mGVt6OXl7
-x-ms-exchange-antispam-messagedata: rKeqPZSFpus6B+RYnU4TGO77gUMu9zDTKXC/1t66CaFiS0/l+uPPJWVfanUvFVqVUqNXWhfUsJE+eXo5TBTzMpJ95JqT0V6pvQrwPfJV1zYdlgzFD+X5jybgKS3zfel/fhW1WmyMJfedS5513I8uwg==
+ id 1iw0ye-0001Ut-8K
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 09:46:42 +0000
+Received: by mail-pf1-x441.google.com with SMTP id y5so1591525pfb.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Jan 2020 01:46:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=3Cm7Q5qzKRSI5iiYtrFdNoM+jC44DmDk+4BVP7MJ9Zg=;
+ b=TpYJh/exjltRCH5MaUqukcoU35cpYu4IuEiuVHoJprcgTTXo9U/FcLTjUK/nXQ3fDz
+ 6559/RJgNO0g3sLmU+rHSiUR2HGYTwLDvjiGdRTnxdtyP2X3wc5drkyP6dwwcCk40WaZ
+ 6Aey153QXTKHD/rXHU/kUZAkaWOsT8oaXxg71fAYko/Fo+knlW8ZewVpbEKF8HYuSmTO
+ zDK/nhC3bVFz8H2ttpc7x42Qvp9pPqv/Zy9+PGPN0tEpCWa1bZEUpjUxKt3SmW7UF6B1
+ PPl9+f2dfb/Z18xZgVEsR0SG74VwlPqgLnTECYbn949Aa84mw037tsNGH+QpGwX6UX+a
+ /TSg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=3Cm7Q5qzKRSI5iiYtrFdNoM+jC44DmDk+4BVP7MJ9Zg=;
+ b=WTCdcLrLM6nmbTu7jmS8QxundeMclF3GGSlV3FMWeFrW7eynmpF3XOxDKk5/WEUPBE
+ cJgYC+X4xh2UnO6kNN8b6PMojwK35Mo2mZZjwoKReYXZUKLF7UZKe+MsXcT+aEqi9Wo0
+ 7Mu8f6gGNbruGBKnzu//ueg6XLogwn1zRzXF5jdQF+8a0wModxnkDaJg6g1DNyfZh1Rn
+ 14NSynSHvmTpBYTSxW4UJqKLzUaCmGArR3HhVAjZd1XSkqQRbDVfwA69WSOulCXs0sa0
+ uuC5YsQSidNAfowjv55YUIZqrnfrYFtAFNZIs+zIb++M97/ydLI3Zuxk4UqAGNpG87at
+ r/NA==
+X-Gm-Message-State: APjAAAWsmQPN/ahhv74LBP0y7F7zmUSfS49EjPk62Pkr9sfTJMxAQ1BP
+ U/whhB7lCzJ+QbyFMhwFivVf9gB5yPXRyNZx2UsQvw==
+X-Google-Smtp-Source: APXvYqzxAmZHmgdppWLSwzJ8z6LS1RNMsDSWdXzZNhIxbL6muJXHr3snth4+9kFim+A0KHQR+fGA6ETjYsUICdwc1Rg=
+X-Received: by 2002:a63:480f:: with SMTP id v15mr18178906pga.201.1580118396834; 
+ Mon, 27 Jan 2020 01:46:36 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 11a1a077-a4c7-4ec1-7064-08d7a30d94bf
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jan 2020 09:45:02.5683 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: rD83tkWEdI7bf6THpwcpzn/xqM0GKBw5gDuUWD6GRjG8uY+ps81agjy7SdMLiY2x2ohJyCshtVh6nNshHOqv0g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6436
+References: <20191211192742.95699-1-brendanhiggins@google.com>
+ <20191211192742.95699-8-brendanhiggins@google.com>
+ <CACPK8XctCb9Q2RaFVHEDuWxKDXpCWMWs-+vnKZ=SeTa3xRnT_g@mail.gmail.com>
+ <CAFd5g45MFYMK-eZWPC5fhm2OkynUXKfArUVhbanYVH+qKRUwPg@mail.gmail.com>
+In-Reply-To: <CAFd5g45MFYMK-eZWPC5fhm2OkynUXKfArUVhbanYVH+qKRUwPg@mail.gmail.com>
+From: Brendan Higgins <brendanhiggins@google.com>
+Date: Mon, 27 Jan 2020 01:46:25 -0800
+Message-ID: <CAFd5g454tX9zxRAq5T_pDGzcWt7u5r119wjo-BCGVq+=Ej4bGQ@mail.gmail.com>
+Subject: Re: [PATCH v1 7/7] fsi: aspeed: add unspecified HAS_IOMEM dependency
+To: Joel Stanley <joel@jms.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_014504_383470_60786050 
-X-CRM114-Status: GOOD (  10.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200127_014640_295211_9A398999 
+X-CRM114-Status: GOOD (  15.82  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -122,6 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -133,52 +99,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Abel Vesa <abel.vesa@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "krzk@kernel.org" <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "olof@lixom.net" <olof@lixom.net>, Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ Andrew Jeffery <andrew@aj.id.au>, Richard Weinberger <richard@nod.at>,
+ Jeff Dike <jdike@addtoit.com>, Eddie James <eajames@linux.ibm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-um <linux-um@lists.infradead.org>, Jeremy Kerr <jk@ozlabs.org>,
+ David Gow <davidgow@google.com>, Alistar Popple <alistair@popple.id.au>,
+ linux-fsi@lists.ozlabs.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Anton Ivanov <anton.ivanov@cambridgegreys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+On Wed, Dec 11, 2019 at 4:30 PM Brendan Higgins
+<brendanhiggins@google.com> wrote:
+>
+> On Wed, Dec 11, 2019 at 4:12 PM Joel Stanley <joel@jms.id.au> wrote:
+> >
+> > On Wed, 11 Dec 2019 at 19:28, Brendan Higgins <brendanhiggins@google.com> wrote:
+> > >
+> > > Currently CONFIG_FSI_MASTER_ASPEED=y implicitly depends on
+> > > CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we get
+> > > the following build error:
+> > >
+> > > ld: drivers/fsi/fsi-master-aspeed.o: in function `fsi_master_aspeed_probe':
+> > > drivers/fsi/fsi-master-aspeed.c:436: undefined reference to `devm_ioremap_resource'
+> > >
+> > > Fix the build error by adding the unspecified dependency.
+> > >
+> > > Reported-by: Brendan Higgins <brendanhiggins@google.com>
+> > > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
+> >
+> > Nice. I hit this when attempting to force on CONFIG_COMPILE_TEST in
+> > order to build some ARM drivers under UM. Do you have plans to fix
+> > that too?
+>
+> The only broken configs I found for UML are all listed on the cover
+> letter of this patch. I think fixing COMPILE_TEST on UM could be
+> worthwhile. Did you see any brokenness other than what I mentioned on
+> the cover letter?
+>
+> > Do you want to get this in a fix for 5.5?
+>
+> Preferably, yes.
+>
+> > Acked-by: Joel Stanley <joel@jms.id.au>
 
-The soc-imx8.c driver is actually for i.MX8M family, so rename it
-to soc-imx8m.c.
-Use CONFIG_SOC_IMX8M as build gate, not CONFIG_ARCH_MXC, to control
-whether build this driver, also make it possible for compile test.
+Hey, I know I owe you a reply about debugging your kunitconfig (I'll
+try to get to that this week); nevertheless, it looks like this patch
+didn't make it into 5.5. Can you make sure it gets into 5.6? It
+shouldn't depend on anything else.
 
-Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/soc/imx/Makefile                    | 2 +-
- drivers/soc/imx/{soc-imx8.c => soc-imx8m.c} | 0
- 2 files changed, 1 insertion(+), 1 deletion(-)
- rename drivers/soc/imx/{soc-imx8.c => soc-imx8m.c} (100%)
-
-diff --git a/drivers/soc/imx/Makefile b/drivers/soc/imx/Makefile
-index cf9ca42ff739..103e2c93c342 100644
---- a/drivers/soc/imx/Makefile
-+++ b/drivers/soc/imx/Makefile
-@@ -1,5 +1,5 @@
- # SPDX-License-Identifier: GPL-2.0-only
- obj-$(CONFIG_HAVE_IMX_GPC) += gpc.o
- obj-$(CONFIG_IMX_GPCV2_PM_DOMAINS) += gpcv2.o
--obj-$(CONFIG_ARCH_MXC) += soc-imx8.o
-+obj-$(CONFIG_SOC_IMX8M) += soc-imx8m.o
- obj-$(CONFIG_IMX_SCU_SOC) += soc-imx-scu.o
-diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8m.c
-similarity index 100%
-rename from drivers/soc/imx/soc-imx8.c
-rename to drivers/soc/imx/soc-imx8m.c
--- 
-2.16.4
-
+Cheers
 
 _______________________________________________
 linux-arm-kernel mailing list
