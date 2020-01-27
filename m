@@ -2,93 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6EDDA14A5C9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 15:12:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3109314A5D0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 15:13:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3T49eDre/wA6lzIksChdf+8+84goikx6L46x5EQbPrc=; b=YjbTDCE1ZUwEJb
-	ryStJ9EU2kJEjoZUwg8TrXFdFod+8IEcWppj+ih6m0wS2PBoTsKB3fbFrpTa+NjfK1r6WamfVLe5r
-	lgDMkX75TIBOxcuvB9PI6vNMVFHZBtuTKBbul8U9BwK7aKf7HeLxbcwaNLTdhRsjz2NedgSnsIsBd
-	mpGMdQQWkWZh255H8rkC0UA9Rkx5hRP74/EGhSQk/OVPx5edrue8j7xPOUkokpe0hfbPjuPIPvvjJ
-	IwVWLSGirR7EDHOpRPzKrBHcuK7qebwb1q5LRW4C7a5zEG1MsKUaddVWLCY3xg1zK8xq2wTdDdo/e
-	G5sYqq17C6OcNoODg7Yg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iYqC0Nqaaql9GFvrsIGc3RRPkdTYMXIvLj28TM6DrEU=; b=EePr3feOO5Rg7s
+	QG84sDtx8qXHMRGPNHhABsOQKvOKp4PjkYVfnVfbsqPjPlFaLIIaZr+Oqzb0PaIglunbH16gXAGmi
+	kj8Kno+8Rj8KstYnyHlhmsd1ZkxiezXcj6DnFru/iNw1SNNqnikQ0hlyU642tvKy7ocKmyQcFV7Gs
+	IbOB8FT2nzYj20n3pdRETqkldroU1wxbP40cc3A3Sdz+8s5nJmRe7PIfdumzMfWGSVW/bUlIxZezt
+	DHLEZ2mUby2Cjky47TaU2vRLRyV0GfRsNJFu+JaoC7/1rhQLUXaNaLIaVO+6G/K4AcSTqn3W4+aPL
+	An2jVLe5CkFNLGua1l8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw57Z-0002d6-2q; Mon, 27 Jan 2020 14:12:09 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iw58G-000310-Jr; Mon, 27 Jan 2020 14:12:52 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw57N-0002cI-CL
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 14:11:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580134313;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=Kh2pcEVP2+3UdtdW1VSYX4yZOf7ucW5oyPwHUzLPaSA=;
- b=F1Vk4cl5xGcb9Ie99jZKUBNMZNO2fXXJewCO57C2tE3zvH8pXPkzWOBA+4JyUmBCnE7Dzf
- DgPopo+tndTeo298Y/+oYwCeQg4PU2hxfnbjnd6Jj+R5s7sY4scEuD+qSFLuwWf/YvA2ya
- nMU6TqYt2GRBv0ypSiaaJAkP/nEZ5bI=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-108-Ae2NuINDN5iB58AHVSPbbA-1; Mon, 27 Jan 2020 09:11:49 -0500
-X-MC-Unique: Ae2NuINDN5iB58AHVSPbbA-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CFBF21005510;
- Mon, 27 Jan 2020 14:11:46 +0000 (UTC)
-Received: from llong.remote.csb (dhcp-17-59.bos.redhat.com [10.18.17.59])
- by smtp.corp.redhat.com (Postfix) with ESMTP id E227C1001B2D;
- Mon, 27 Jan 2020 14:11:43 +0000 (UTC)
-Subject: Re: [PATCH v9 0/5] Add NUMA-awareness to qspinlock
-To: paulmck@kernel.org
-References: <20200115035920.54451-1-alex.kogan@oracle.com>
- <20200124222434.GA7196@paulmck-ThinkPad-P72>
- <6AAE7FC6-F5DE-4067-8BC4-77F27948CD09@oracle.com>
- <20200125005713.GZ2935@paulmck-ThinkPad-P72>
- <02defadb-217d-7803-88a1-ec72a37eda28@redhat.com>
- <adb4fb09-f374-4d64-096b-ba9ad8b35fd5@redhat.com>
- <20200125045844.GC2935@paulmck-ThinkPad-P72>
- <967f99ee-b781-43f4-d8ba-af83786c429c@redhat.com>
- <20200126153535.GL2935@paulmck-ThinkPad-P72>
- <20200126224245.GA22901@paulmck-ThinkPad-P72>
-From: Waiman Long <longman@redhat.com>
-Organization: Red Hat
-Message-ID: <2e552fad-79c0-ec06-3b8c-d13f1b67f57d@redhat.com>
-Date: Mon, 27 Jan 2020 09:11:43 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1iw586-00030L-Bs
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 14:12:43 +0000
+Received: from mail-qk1-f181.google.com ([209.85.222.181]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1Myb09-1jo37j3ABZ-00z0Mz for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 27 Jan 2020 15:12:38 +0100
+Received: by mail-qk1-f181.google.com with SMTP id h23so9718196qkh.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Jan 2020 06:12:38 -0800 (PST)
+X-Gm-Message-State: APjAAAWRCeDDANo4Og9P1tlj9l/cgs5jh4XzMGmNWX0+eXLCvo/BGNYd
+ HmZWO7lXhAVEBJr0c4EdNCPPwUQ6YPf7cLmJjNc=
+X-Google-Smtp-Source: APXvYqyqkXSPHKaHYaA/H+oE3DOuo2nHc6OjSUgoQDX3Sn/WOCgNZb3dWH6MiCz5XzO50aznK8fftZ2JxIouPMX9yfU=
+X-Received: by 2002:a37:84a:: with SMTP id 71mr16274917qki.138.1580134357497; 
+ Mon, 27 Jan 2020 06:12:37 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200126224245.GA22901@paulmck-ThinkPad-P72>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+References: <1580117979-4629-1-git-send-email-peng.fan@nxp.com>
+ <CAK8P3a2YLo4rNBXu9NhvKv6QOFUcZhCVXNR4XJe_0Kc_RJ=ubA@mail.gmail.com>
+ <AM0PR04MB4481E1AACAC4285D49E721AD880B0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <CAK8P3a30vieqOdend-o+_1AesAQCN97cW6KtQmAgV3uhDWi_jw@mail.gmail.com>
+ <AM0PR04MB4481724FC5F8345502860B08880B0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR04MB4481724FC5F8345502860B08880B0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 27 Jan 2020 15:12:21 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a3VcPhPDskzrGL2UZJz1YK+7nGLC3S0soY0c78j3=LVwg@mail.gmail.com>
+Message-ID: <CAK8P3a3VcPhPDskzrGL2UZJz1YK+7nGLC3S0soY0c78j3=LVwg@mail.gmail.com>
+Subject: Re: [PATCH V2 0/5] soc: imx: increase build coverage for imx8 soc
+ driver
+To: Peng Fan <peng.fan@nxp.com>
+X-Provags-ID: V03:K1:brkF5o1rTJjvE/o4G/LdI1QgH7TeywfK/q/HEsxl1ORje8HNdjT
+ HfVijSvsGTbzm11/T/khRGOahobtw1kWTcTkPvlx8WxPc3MnUKMaSuUOjf/9FMI8PzHQS3J
+ BxDwm6565kU4jEASgfdZtzVof3psoFKQUNVFSK0FYktzUtk5iXrhupmxF391kWpILeFHa/9
+ R11sbig6yspbN6lj4C06w==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:tdLQhLB1yM8=:x2YimBxIuFzntD0m/QKCd7
+ 54yQXkWywzgN6CtslZUl1h9BuJc/9tmvo0Tp7z5+aYi9WGnNyEX5APjwW0GeS8HYpCripFj/U
+ oGx/Kmk8OJnHFqRtbA47cxtSokff1GtLWjgC8buT9ed1fLrriyyU07d0ytQiHiduuMYWxuW37
+ Unf7uhrtE6FasVR4Hi/avP5PT8XX0vpG9rREasNLGiFnqzFDk9x/8/d2V/qEineFqEH42nYFs
+ ZfRPqI3vNuWX7zw4ijgP5sotMnCLDA5bl2r/3TFzWXUfcDSx3zYTjVIP18mkX6CMNKVKmZDbn
+ jagr9+EwPNJOAa0/BJsKph8ICjRjyWho1u08Y4S+G/W6tD2XrNbI2EOJ+3ziVxtr62gzc9uD7
+ gWBlIUb8VfzN32+GAFGBIYPIO8CaGveYxhPb/wnyGNs8yacn/Tw5eBmlNLFJ1R+nwut71Hwou
+ zkX8Y9O9DG/E6sFoorZYGeotQiv2b8W+qkou2xPmql79pl7BSA9xKT7tWPriCysh6AJyB/ecP
+ OrcRAeLnjDFejaTpLIsicdKslHF73uxj1eQm5NHs0PlForP4fi3Ry7RA//kBir3c7+ZnBzs5E
+ OAqDpBhgplPcSgUeSzkGGcLQpcF9swP6cO2INwjyUUCojuOrVyLAYspJ0mJMYP6vymGePS/k0
+ khqCUCRoXRz6aagUkK2/vpUHDS/+nBta/4ZMyNzi39kZVICY4yf1yzz+7WIt/X51VQD1rujEI
+ SHVL1kPNGNduj/TSGfTgO4/Ks5afl8OZEqcgmkboAbnYWfh8mX8gS8En9cEIkEqikKe2AMfpb
+ hHgSIxpkb2rSOLUOfML92OdoJnxi9HxvNC2bU7LU7TQmqa8Wt0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_061157_499525_FA01BB00 
-X-CRM114-Status: GOOD (  22.70  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200127_061242_696129_9D5DF5F2 
+X-CRM114-Status: GOOD (  20.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,94 +90,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com,
- Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
- dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
- Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>, bp@alien8.de,
- hpa@zytor.com, Alex Kogan <alex.kogan@oracle.com>, steven.sistare@oracle.com,
- tglx@linutronix.de, daniel.m.jordan@oracle.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "krzk@kernel.org" <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "olof@lixom.net" <olof@lixom.net>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/26/20 5:42 PM, Paul E. McKenney wrote:
-> On Sun, Jan 26, 2020 at 07:35:35AM -0800, Paul E. McKenney wrote:
->> On Sat, Jan 25, 2020 at 02:41:39PM -0500, Waiman Long wrote:
->>> On 1/24/20 11:58 PM, Paul E. McKenney wrote:
->>>> On Fri, Jan 24, 2020 at 09:17:05PM -0500, Waiman Long wrote:
->>>>> On 1/24/20 8:59 PM, Waiman Long wrote:
->>>>>>> You called it!  I will play with QEMU's -numa argument to see if I can get
->>>>>>> CNA to run for me.  Please accept my apologies for the false alarm.
->>>>>>>
->>>>>>> 							Thanx, Paul
->>>>>>>
->>>>>> CNA is not currently supported in a VM guest simply because the numa
->>>>>> information is not reliable. You will have to run it on baremetal to
->>>>>> test it. Sorry for that.
->>>>> Correction. There is a command line option to force CNA lock to be used
->>>>> in a VM. Use the "numa_spinlock=on" boot command line parameter.
->>>> As I understand it, I need to use a series of -numa arguments to qemu
->>>> combined with the numa_spinlock=on (or =1) on the kernel command line.
->>>> If the kernel thinks that there is only one NUMA node, it appears to
->>>> avoid doing CNA.
->>>>
->>>> Correct?
->>>>
->>>> 							Thanx, Paul
->>>>
->>> In auto-detection mode (the default), CNA will only be turned on when
->>> paravirt qspinlock is not enabled first and there are at least 2 numa
->>> nodes. The "numa_spinlock=on" option will force it on even when both of
->>> the above conditions are false.
->> Hmmm...
->>
->> Here is my kernel command line taken from the console log:
->>
->> console=ttyS0 locktorture.onoff_interval=0 numa_spinlock=on locktorture.stat_interval=15 locktorture.shutdown_secs=1800 locktorture.verbose=1
->>
->> Yet the string "Enabling CNA spinlock" does not appear.
->>
->> Ah, idiot here needs to enable CONFIG_NUMA_AWARE_SPINLOCKS in his build.
->> Trying again with "--kconfig "CONFIG_NUMA_AWARE_SPINLOCKS=y"...
-> And after fixing that, plus adding the other three Kconfig options required
-> to enable this, I really do see "Enabling CNA spinlock" in the console log.
-> Yay!
+On Mon, Jan 27, 2020 at 2:22 PM Peng Fan <peng.fan@nxp.com> wrote:
 >
-> At the end of the 30-minute locktorture exclusive-lock run, I see this:
+> > Subject: Re: [PATCH V2 0/5] soc: imx: increase build coverage for imx8 soc
+> > driver
+> >
+> > On Mon, Jan 27, 2020 at 1:33 PM Peng Fan <peng.fan@nxp.com> wrote:
+> > >
+> > > > Subject: Re: [PATCH V2 0/5] soc: imx: increase build coverage for
+> > > > imx8 soc driver
+> > > >
+> > > > On Mon, Jan 27, 2020 at 10:44 AM Peng Fan <peng.fan@nxp.com> wrote:
+> > > > >
+> > > > > From: Peng Fan <peng.fan@nxp.com>
+> > > > >
+> > > > >
+> > > > > V2:
+> > > > >  Include Leonard's patch to fix build break after enable compile
+> > > > > test Add Leonard's R-b tag
+> > > > >
+> > > > > Rename soc-imx8.c to soc-imx8m.c which is for i.MX8M family Add
+> > > > > SOC_IMX8M for build gate soc-imx8m.c Increase build coverage for
+> > > > > i.MX SoC driver
+> > > >
+> > > > The changes all look good to me, but I'd just do it all in one
+> > > > combined patch, as the changes are all logically part of the same
+> > > > thing. You can leave Leonard's fix as a [PATCH 1/2]  if you want, but the
+> > rest should clearly be a single change.
+> > >
+> > > There is a arm64 defconfig change, should it be also included in the single
+> > change?
+> >
+> > Good point, that one is probably better left separate indeed.
 >
-> Writes:  Total: 572176565  Max/Min: 54167704/10878216 ???  Fail: 0
+> Since the defconfig change needs stay alone in a patch,
+> merge other patches into one might not be good. The patchset
+> I did is to make sure the soc-imx8m.c could always be built. If
+> I merge the others into one, without the defconfig patch set CONFIG
+> option to y, soc-imx8m.c will not be built. This might break git bisect
+> to check the soc-imx8m.c
 >
-> This is about a five-to-one ratio.  Is this expected behavior, given a
-> single NUMA node on a single-socket system with 12 hardware threads?
-Do you mean within the VM, lscpu showed that the system has one node and
-12 threads per node? If that is the case, it should behave like regular
-qspinlock and be fair.
->
-> I will try reader-writer lock next.
->
-> Again, should I be using qemu's -numa command-line option to create nodes?
-> If so, what would be a sane configuration given 12 CPUs and 512MB of
-> memory for the VM?  If not, what is a good way to exercise CNA's NUMA
-> capabilities within a guest OS?
+> So I prefer not to merge the others into one patch. Do you agree?
 
-You can certainly play around with CNA in a VM. However, it is generally
-not recommended to use CNA in a VM unless the VM cpu topology matches
-the host with 1-to-1 vcpu pinning and there is no vcpu overcommit. In
-this case, one may see some performance improvement using CNA by using
-the "numa_spinlock=on" option to explicitly turn it on.
+I'm generally not too worried about intermittent defconfig breaks during
+bisection, as the defconfig is not use all that much in practice. Splitting
+the other changes into separate patches wouldn't help here either
+unless you want to spread it out over multiple merge windows.
 
-Because of the shuffling of queue entries, CNA is inherently less fair
-than the regular qspinlock. However, a ratio of 5 seems excessive to me.
-vcpu preemption may be a factor in contributing to this large variation.
-My testing on bare metal only showed a throughput variation within
-10-20% at most.
+I'd probably just put it all in one patch (including the defconfig change)
+in this case, alternatively you could add a 'default ARCH_MXC && ARM64'
+to the Kconfig symbol.
 
-Cheers,
-Longman
-
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
