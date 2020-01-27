@@ -2,76 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1B5F14ACAA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 00:42:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A016114ACC1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 00:55:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Hjh3FAfCkAGB5T4lIfFyjkxDVudzW6vzDLpyvKKqPmk=; b=RaazRcduVP71FyhD2u83hA+P3
-	wyjusFaph3fjLiu2S3ewiCijcf3PL4KIpJnZIz4y4doHbtpDyfJ4CKk3KUTlx7J4aEH1K1oEzHuJs
-	yPlaXJQ87/ue2B19enL4Vk+A3SZ5pJgOi514jI3g7XsO0TvgQffFEF1RLrsKQoHTt6/ih575XrwpQ
-	Thl1phIyEeDmGmTVqhX0Ic69qlAfwMvcsZE01I720ts92cAbioOHGomoZGiiYUZi8iSBOrtbVt6Pp
-	425SPMNsJnWsZi5RGgtvo/dXPJHa75kcvE8nKOhXJUlSV2kLpGvsXbGBj8Q8WLve9cURCv7Rj5YTr
-	fsBOMKbcQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=v/XDH3DZs0Q0UiE+27h/RzWKJHBpi2016ylvh5bNbKA=; b=XcjIT/TugTSeZR
+	0wpuiVwOxW+o7tAk2dz2LZ9mSkcRZ/uFF+1cO3fNVGAsAx9cg0YfJ1dYDketSqKXF/AAk0WCBKy/G
+	I0VoZlHTAKb3isgSJO0tT4ii10WCDzoFeMXaQVbb6tq3VuEEDNgwYKot5t49Tvhgbqja9wF0jmkEw
+	vO8qOM6XvdCrCGTXcu930M9iAFlzqYgIQzr9d2K83f389LLIYYJ5AecWn8kB5WZGe6uUIxsIrgn4N
+	5bUa/6pbJoS3gl4FflcrgI4CR4G8BSpv7dQxE6PyHcBaF09JCdLQ6BMXsLtFXKjiiv7z1TR/kK1+e
+	Nsl3UbF8jRwEVxEyXT9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwE0y-0002fg-Gv; Mon, 27 Jan 2020 23:41:56 +0000
-Received: from vern.gendns.com ([98.142.107.122])
+	id 1iwEDd-0006BC-Mz; Mon, 27 Jan 2020 23:55:01 +0000
+Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwE0n-0002dy-H2
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 23:41:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=3Cnuq19Xwl7haKLZpaPTEJKb0hDaQOWCuXCekp4VNfM=; b=l0sAfEczAKEPYs1aRPoEgcniDM
- PQj672CVbH2XvtXnD7+M+J5osaZIajyo2dUruscPmy03mpZ76qkoe5KDWeO0tdsD57Dw1LOjjTAsC
- Gu1CuHebCZX2+Kg7c1wuKXumS6AXAVhwku/jLr9AkK9f/Trb5sDWTVtGLhR/X/rdcdHRhtw8TD6WV
- cf8qn/J+/E8eHVifCAOfzUDBqsAkwTcDVy5Gm0zGOpoLa23CRVo8Cr7mbc1LNWx7D8S29Dw07Q2qs
- 5yVyB0wMZzGkAOfw2XeYNEJThvSjGnJo9LljKCOGzq7fyYtcT4vYko+wWKSvhX/sKva1zMV+yOx/U
- S1H4nBYw==;
-Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
- ([108.198.5.147]:56512 helo=[192.168.0.134])
- by vern.gendns.com with esmtpsa (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
- (Exim 4.92) (envelope-from <david@lechnology.com>)
- id 1iwE01-0003wj-IZ; Mon, 27 Jan 2020 18:40:57 -0500
-Subject: Re: [PATCH v2] mfd: syscon: Use a unique name with regmap_config
-To: Suman Anna <s-anna@ti.com>, Lee Jones <lee.jones@linaro.org>
-References: <20200127231208.1443-1-s-anna@ti.com>
-From: David Lechner <david@lechnology.com>
-Message-ID: <217993e5-5e1d-79a1-7684-c6bb964379f0@lechnology.com>
-Date: Mon, 27 Jan 2020 17:40:54 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <20200127231208.1443-1-s-anna@ti.com>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - vern.gendns.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - lechnology.com
-X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id:
- davidmain+lechnology.com/only user confirmed/virtual account not confirmed
-X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+ id 1iwEDK-00069d-Ll
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 23:54:44 +0000
+Received: by mail-pg1-x54a.google.com with SMTP id v30so7451760pga.22
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Jan 2020 15:54:39 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=0WVlBZ9h/3UAmHAjFKk1i1lby5ArQALhCHp8vRDwf6s=;
+ b=B0D4GdH37zFLkAB6DLlyqBHlLmNEXHfnkYgFffeTOmOr475hSOENtNB8TIo3G4sGe0
+ FGQeW1LRFZFwEwZe0xYBNGSrbzuvSB/n522fs6/iqw0svGmiqpGIgfsGVIAnWpo0xe6b
+ BoM87ucGn23bNOQFBFwtOThLn+0+3twkPtHYFFqqNHT27mvPiaZYPxgu4N/l/e8eaXcg
+ 7jQiGP//cNxEUu+McL7virtX6XQNY1Tl0esKP2c/WrVvCyn1rDqO+BVfbr+AnTAAodm8
+ 8eaZUZJdgvoPLStiKNbl0DHxWBNzGU98A6D6t+uV4+grA51Z1w5tPzJYd+kP7DcwXnGr
+ FQyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=0WVlBZ9h/3UAmHAjFKk1i1lby5ArQALhCHp8vRDwf6s=;
+ b=q70ETSE062teJmITmtYX2wFpI0K8VjYWFP508FYrpPWCTV3z3agwgOb/2VJrzYm69y
+ UbndwCYuMam2gbzjEYiHVadY/oQiArAupmvUAfX/a+jk24sZpGjJ2b5jXMP2Tirnwt0z
+ y2IjYouSdNJj4+QilhMHE91CLqYVqPyOHbKAD5uGY/hhtZoBFoGHFIft5lvTe26cjSqz
+ B9aqIWRKpEX3Pp6i/v4LmXOyjtJxB9zS2JyI3HLofmU2TMA8rckATmd24pPrL8UIsgkJ
+ o8mMlIU/OAPJz8wiNRvoTb0H2Iud+/1KV7xUGlDRf2KeITLd1NjmZ13F/G3EHFCNsMyY
+ rBoA==
+X-Gm-Message-State: APjAAAV5akHebFlLjiAkKOkiG/oGxAO5GN+DojYredJCGRQIT1KL0rkD
+ 66a10OdKfyJG87/nDvQq6qokbbgdqACmDcTRwZSutg==
+X-Google-Smtp-Source: APXvYqxuHlif8YoC09sMp36DADFxZKUEjmOezwoOELE8SswXmvcrc2Cpl4SiqOBpXxHMb1qSYM81/g2GJjm81WrtmsBS6w==
+X-Received: by 2002:a63:ea4c:: with SMTP id l12mr20867620pgk.29.1580169278383; 
+ Mon, 27 Jan 2020 15:54:38 -0800 (PST)
+Date: Mon, 27 Jan 2020 15:53:51 -0800
+Message-Id: <20200127235356.122031-1-brendanhiggins@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
+Subject: [PATCH v1 0/5] uml: add more unspecified HAS_IOMEM dependencies
+From: Brendan Higgins <brendanhiggins@google.com>
+To: jdike@addtoit.com, richard@nod.at, anton.ivanov@cambridgegreys.com, 
+ Kevin Hilman <khilman@kernel.org>, Nishanth Menon <nm@ti.com>, 
+ Richard Cochran <richardcochran@gmail.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, 
+ "David S . Miller" <davem@davemloft.net>,
+ Michal Simek <michal.simek@xilinx.com>, 
+ Andrew Lunn <andrew@lunn.ch>, Robert Hancock <hancock@sedsystems.ca>, 
+ Esben Haabendal <esben@geanix.com>, Thomas Gleixner <tglx@linutronix.de>, 
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_154145_652027_12444A68 
-X-CRM114-Status: GOOD (  15.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200127_155442_709448_D5F3711C 
+X-CRM114-Status: GOOD (  12.34  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -79,7 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ valid -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,57 +98,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Tony Lindgren <tony@atomide.com>,
- linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
+Cc: heidifahim@google.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-pm@vger.kernel.org, Brendan Higgins <brendanhiggins@google.com>,
+ linux-kernel@vger.kernel.org, linux-um@lists.infradead.org,
+ davidgow@google.com, netdev@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/27/20 5:12 PM, Suman Anna wrote:
-> The DT node full name is currently being used in regmap_config
-> which in turn is used to create the regmap debugfs directories.
-> This name however is not guaranteed to be unique and the regmap
-> debugfs registration can fail in the cases where the syscon nodes
-> have the same unit-address but are present in different DT node
-> hierarchies. Replace this logic using the syscon reg resource
-> address instead (inspired from logic used while creating platform
-> devices) to ensure a unique name is given for each syscon.
-> 
-> Signed-off-by: Suman Anna <s-anna@ti.com>
-> ---
-> v2: Fix build warning reported by kbuild test bot
-> v1: https://patchwork.kernel.org/patch/11346363/
-> 
->   drivers/mfd/syscon.c | 4 +++-
->   1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/mfd/syscon.c b/drivers/mfd/syscon.c
-> index e22197c832e8..f0815d8e6e95 100644
-> --- a/drivers/mfd/syscon.c
-> +++ b/drivers/mfd/syscon.c
-> @@ -101,12 +101,14 @@ static struct syscon *of_syscon_register(struct device_node *np, bool check_clk)
->   		}
->   	}
->   
-> -	syscon_config.name = of_node_full_name(np);
-> +	syscon_config.name = kasprintf(GFP_KERNEL, "%pOFn@%llx", np,
-> +				       (u64)res.start);
+# TL;DR
 
-Would it make sense to also include the node name along with the
-pointer address so that the name is still easily identifiable?
+This patchset adds a missing HAS_IOMEM dependency to several drivers in
+an attempt to get allyesconfig closer to working for ARCH=um. Although I
+had caught all the broken ones in early 5.5[1], some new ones have
+broken since then.
 
->   	syscon_config.reg_stride = reg_io_width;
->   	syscon_config.val_bits = reg_io_width * 8;
->   	syscon_config.max_register = resource_size(&res) - reg_io_width;
->   
->   	regmap = regmap_init_mmio(NULL, base, &syscon_config);
-> +	kfree(syscon_config.name);
->   	if (IS_ERR(regmap)) {
->   		pr_err("regmap init failed\n");
->   		ret = PTR_ERR(regmap);
-> 
+# What am I trying to do?
+
+This patchset is part of my attempt to get `make ARCH=um allyesconfig`
+to produce a config that will build *and* boot to init, so that I can
+use it as a mechanism to run tests[2].
+
+# Why won't allyesconfig break again after this series of fixes?
+
+Well, in short, it will break again; however, as I mentioned above, I am
+using UML for testing the kernel, and I am currently working on getting
+my tests to run on KernelCI. As part of our testing procedure for
+KernelCI, we are planning on building a UML kernel using allyesconfig
+and running our tests on it. Thus, we will find out very quickly once
+someone breaks allyesconfig again once we get this all working. So this
+will keep breaking until we have a build test on KernelCI running, but
+we will need to send out these fixes anyway.
+
+Brendan Higgins (5):
+  net: axienet: add unspecified HAS_IOMEM dependency
+  reset: brcmstb-rescal: add unspecified HAS_IOMEM dependency
+  reset: intel: add unspecified HAS_IOMEM dependency
+  ptp: 1588_clock_ines: add unspecified HAS_IOMEM dependency
+  power: avs: qcom-cpr: add unspecified HAS_IOMEM dependency
+
+ drivers/net/ethernet/xilinx/Kconfig | 1 +
+ drivers/power/avs/Kconfig           | 2 +-
+ drivers/ptp/Kconfig                 | 1 +
+ drivers/reset/Kconfig               | 3 ++-
+ 4 files changed, 5 insertions(+), 2 deletions(-)
+
+[1] https://lore.kernel.org/lkml/20191211192742.95699-1-brendanhiggins@google.com/
+[2] https://bugzilla.kernel.org/show_bug.cgi?id=205223
+
+-- 
+2.25.0.341.g760bfbb309-goog
 
 
 _______________________________________________
