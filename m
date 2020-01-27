@@ -2,87 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 687CA14A7D4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 17:12:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B17814A7DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 17:13:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8B81JJaZoMd66PzvGv8YdFKevlDh9MSh9RWARZc8FPk=; b=h5/+yZYZMoKnnq
-	1BNEh30EwEizAcKY+ALMqXCShAAGvQF1qisZ8ZRqxBiouVizKrKjyJzzCHke+AaDtpmycJua4dKBU
-	FqEueFLwpoYXkQTV8l78vPajtjCnP7tSColNDGJoemXpj2NxtY536TV5YPscUsNIpzNGS4/Bt794z
-	jaPWCBVAXPFdAxSnPwnoV3H4LvBa5csefleF1VXB8nPCefDOiLRzldPbY+WpfQCIrqyJOuXUcWCFv
-	FnwFy50y7DnHOtI1rORIiMtycInxC2EMKmA6K8H0yLWYZa4hYchy/dsGMljvFO9ln/rxT2tuqkQEX
-	Iysz1mnK1CqQxPVYgpmQ==;
+	List-Owner; bh=CQieirpjMItlH+u/wauXM28m9BqnVpOWBk/1ZCYJbxg=; b=PHK6oZgWHFLwZX
+	ETjN5zbtE3kFTA/yTfSiKpunC9RoDW5kdAdz5AOHHXuOZGWjiZ/iIyhCgmpIEuVpN9xWnNR3HxWVh
+	Hp44ixuMjM9KOwhVHgXSBeTkXt66+OZbeI8hi0K0qdJhA3invwk1CLDuIkaarhLnDM+xqzCeBTCJn
+	0Ks2mW13vTAHRS0xUSibI8IyOu+zG264GQN78TDOJhrPxzI9ncJg9WRoc/FxTIh/BAhy6x5rXDPue
+	s7LYzD7dR5umnj1q4y50gdvPEBayY3TscXHfqNXsuU6XYaX42sVbYEs6aCX2Z4YA8mZN7C92+UOur
+	0fpwOgfcIH58SncmKEoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw6zg-0000oa-QH; Mon, 27 Jan 2020 16:12:08 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iw71I-00018K-0G; Mon, 27 Jan 2020 16:13:48 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw6zV-0000oB-L2
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 16:11:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=gEl6tSo6zZ7fDJ2My+QHjzpT/cnxKFaOYeklSZ0cvYE=; b=ul6LkH0cilXWVwQ+Ixv2rqWTE
- sBu0kntPb7nVSZT+OAF5OG0rQZ7OKnxVWLHPOEBYgcRxOeKJ1Cvq/8zQGjEe7t87FQSly+RKzpMvC
- WwyofFvrDFCUkDc8Tk5ChmaGRQhZdivcjzOzMNv6Dr7gw0KKrCO2hDLXQfTkqWKGAzI7VACqxNltE
- fur5lbEKHc3R7tpVF5phn4V9yoAHFU+B5KPcmP+1hmRMXAGcP5pavf3WyxhgoGi1Z//l9qY7a2kXo
- WzBkbDBGPl0BVDF/zmh7gbJbcbiv0cX/CKSN05m7wIH5R+jF1SgEon7Re/Xe0lI65uiy/eFRM8XX2
- kkyJHe9FQ==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:44044)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iw6zB-0002LM-Ik; Mon, 27 Jan 2020 16:11:37 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iw6z6-0001Xp-TY; Mon, 27 Jan 2020 16:11:32 +0000
-Date: Mon, 27 Jan 2020 16:11:32 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: Re: [RFC net-next 6/8] net: phylink: Configure MAC/PCS when link is
- up without PHY
-Message-ID: <20200127161132.GX25745@shell.armlinux.org.uk>
-References: <cover.1580122909.git.Jose.Abreu@synopsys.com>
- <9a2136885d9a892ff170be88fdffeda82c778a10.1580122909.git.Jose.Abreu@synopsys.com>
- <20200127112102.GT25745@shell.armlinux.org.uk>
- <BN8PR12MB3266714AE9EC1A97218120B3D30B0@BN8PR12MB3266.namprd12.prod.outlook.com>
- <20200127114600.GU25745@shell.armlinux.org.uk>
- <20200127140038.GD13647@lunn.ch>
- <20200127140834.GW25745@shell.armlinux.org.uk>
- <20200127145107.GE13647@lunn.ch>
+ id 1iw714-00017M-F4; Mon, 27 Jan 2020 16:13:35 +0000
+Received: by mail-ot1-f68.google.com with SMTP id i6so5014462otr.7;
+ Mon, 27 Jan 2020 08:13:34 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=JNhU3ozUFErUx+4UTT5ltSBuP2mFt3zi7r84jg0CNoc=;
+ b=t1bncv+m2a1zuWGJ/PEVc+5878OIZnXArIzYZbJhZdJ0GD3eOvWBgJikB/QNEfB0AE
+ pdet3YGZDlucE0e+AavsYxr6ivuOsjKn9Fuk7Rw5h3O8bBnrUrKOYxt97RO4BWyinmz5
+ SBHQd+GSfrArXAD2GQYZjjBErZFLaaX9Npg67+XR9GvhGWoqgw/1rP9pV7rbcKy+RHTs
+ KBKvL8VJlDKP5MWG0xDRxrD/XDK1H4GkWQJNeynU+FnE+1+ACRS/g1CaXm+B6qrH1vF1
+ kKgVSyoaMh7dqc8oJIUWaAHk97NnUVGHK1ic/iwmnn+kBca7M6ViOUQCUQ7dAoqQYrvr
+ aY6g==
+X-Gm-Message-State: APjAAAU480ynmEJjeZj10hEEHx4a6MrlJjkmW3jJmaoOXvBVvlEWzqma
+ ZCuUWcicZYUMlSjP8k8hpQ==
+X-Google-Smtp-Source: APXvYqx+crNryziVOs9TPZ584wS5oJiSpLsXp+K6NXnR1XqPGiQwSyxOkcd4SFNU/i5Tt2bP+RwJrw==
+X-Received: by 2002:a9d:7305:: with SMTP id e5mr12473441otk.64.1580141613803; 
+ Mon, 27 Jan 2020 08:13:33 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id e6sm5649617otl.12.2020.01.27.08.13.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 27 Jan 2020 08:13:33 -0800 (PST)
+Received: (nullmailer pid 20252 invoked by uid 1000);
+ Mon, 27 Jan 2020 16:13:31 -0000
+Date: Mon, 27 Jan 2020 10:13:31 -0600
+From: Rob Herring <robh@kernel.org>
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Subject: Re: [PATCH v3] dt-bindings: convert rockchip-drm.txt to
+ rockchip-drm.yaml
+Message-ID: <20200127161331.GA20191@bogus>
+References: <20200121154314.3444-1-dafna.hirschfeld@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200127145107.GE13647@lunn.ch>
+In-Reply-To: <20200121154314.3444-1-dafna.hirschfeld@collabora.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_081157_838019_4ADC1A12 
-X-CRM114-Status: GOOD (  23.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200127_081334_501573_1E4167D4 
+X-CRM114-Status: GOOD (  13.19  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,112 +92,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>, Jakub Kicinski <kuba@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ dafna.hirschfeld@collabora.com, heiko@sntech.de, airlied@linux.ie,
+ dafna3@gmail.com, hjc@rock-chips.com, dri-devel@lists.freedesktop.org,
+ linux-rockchip@lists.infradead.org, helen.koike@collabora.com,
+ robh+dt@kernel.org, daniel@ffwll.ch, kernel@collabora.com,
+ ezequiel@collabora.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 27, 2020 at 03:51:07PM +0100, Andrew Lunn wrote:
-> > Can you give a hint which platform this is and how to reproduce it
-> > please?
+On Tue, 21 Jan 2020 16:43:14 +0100, Dafna Hirschfeld wrote:
+> convert the binding file rockchip-drm.txt to yaml format.
+> This was tested and verified on ARM and ARM64 with:
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 > 
-> Hi Russell
+> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+> ---
+> the detail of the ARM tests:
+> export ARCH=arm KBUILD_OUTPUT=../kbuild/arm-test-dtc/ CROSS_COMPILE=arm-linux-gnueabi-
+> make menuconfig # set rockchip system
+> make clean
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 > 
-> Devel C has issues with its fibre ports. I tend to test with
-> sff2/port9 not sff3/port3, because i also have the copper port plugged
-> in. If the copper gets link before the fibre, copper is used.
+> the detail of the ARM64 tests:
+> export ARCH=arm64 KBUILD_OUTPUT=../kbuild/arm64-test-dtc/ CROSS_COMPILE=aarch64-linux-gnu-
+> make menuconfig # set rockchip system
+> make clean
+> make dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
 > 
-> What i see is that after the SERDES syncs, its registers indicate a 1G
-> link, full duplex, etc. But the MAC is using 10/Half. And hence no
-> packets go through. If i set the MAC to the same as the PCS, i can at
-> least transmit. Receive does not work, but i think that is something
-> else. The statistics counters indicate the SERDES is receiving frames,
-> but the MAC statistic counters suggests the MAC never sees them.
 > 
-> I've also had issues with the DSA links, also being configured to
-> 10/Half. That seems to be related to having a phy-mode property in
-> device tree. I need to add a fixed-link property to set the correct
-> speed. Something is broken here, previously the fixed-link was only
-> needed if the speed needed to be lower than the ports maximum. I think
-> that is a separate issue i need to dig into, not part of the PCS to
-> MAC transfer.
+> Changes since v1:
+> - fixed worng sign-off
+> - fixed the path of the $id property to be the path of the yaml file
+> Changes since v2:
+> - add a missing ">" sign in maintainers list
+> - change the licens to GPL-2.0-only
+> - add "additionalProperties: false"
+> - change the commit message to conform that it was tested on both ARM and ARM64
+> 
+> 
+>  .../display/rockchip/rockchip-drm.txt         | 19 ---------
+>  .../display/rockchip/rockchip-drm.yaml        | 40 +++++++++++++++++++
+>  2 files changed, 40 insertions(+), 19 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/rockchip/rockchip-drm.yaml
+> 
 
-Presumably, all these should be visible on the ZII rev B as well?
-I've not noticed any issues there, and I have 5.4 built from my
-tree on December 22nd which would've included most of what is in
-5.5, and quite a bit of what's queued in net-next.
-
-There, I see:
-
-mv88e6xxx.0/regs:    GLOBAL GLOBAL2 SERDES     0    1    2    3    4    5    6
-mv88e6xxx.0/regs: 1:     2    8007     149     3    3    3    3    3 403e   3d
-mv88e6xxx.1/regs:    GLOBAL GLOBAL2 SERDES     0    1    2    3    4    5    6
-mv88e6xxx.1/regs: 1:     2    8807     14d     3    3    3    3    3 403e 403e
-mv88e6xxx.2/regs:    GLOBAL GLOBAL2 SERDES     0    1    2    3    4    5    6    7    8    9
-regs: 1:  7209       0    ffff  c503 c503 c503 2403 2403 2403 2403 2403 2403 c13e
-
-which looks fine to me:
-- switch 0
-   - port 5 is the DSA port, which is forced to 1G.
-   - port 6 is the CPU port, which is forced to 100M.
-- switch 1
-   - ports 5 and 6 are DSA ports, forced to 1G
-- switch 2
-   - port 9 is the DSA port, forced to 1G.
-
-Booting 5.5 is more noisy than 5.4 - there's loads of complaints about
-"already a member of VLAN 1".  As far as the port MAC settings go, it
-looks just the same as the 5.4 settings I quoted above.
-
-Now, I do have some differences between what is in mainline and my tree
-and one of them involves adding a whole bunch of "phylink_mac_config"
-and "phylink_link_force" methods to the mv88e6xxx_ops for Marvell DSA
-switches.  Without these, dsa_port_phylink_mac_config() will ignore
-phylink's attempts to configure the MAC.
-
-Quite why this is, I don't know; these are patches I've carried for
-ages, since trying to get the SFF modules working on these platforms,
-before mainline gained phylink support for DSA.  I seem to remember
-that mainline's work was based on what I'd done, or was very similar,
-but I never really understood why bits such as this were left out.
-Since this work has been published online in my git tree since day 1,
-I find it really strange that people go off and do what seems to be a
-half-hearted implementation.  See the "zii" branch.
-
-Mainline did diverge on the issue of how the SFF modules should be
-driven; whether to drive them with the SFP code or whether to use
-a fixed-link instead.  I've kept my original approach, which is less
-than perfect since we don't have a link interrupt to trigger the call
-to phylink_mac_change().  However, I'm suspecting that once we solve
-the PCS/MAC split issue, and use the clause 37 phylink PCS helpers
-I've proposed in the last few weeks, this will be resolvable.
-
-> Heiner has another device which has an Aquantia PHY running in an odd
-> mode so that it does 1G over a T2 link. It uses SGMII for this, and
-> that is where we first noticed the issue of the MAC and PCS having
-> different configurations.
-
-Do you know when the issue appeared?
-
-It sounds like this regression has been known for some time, yet this
-is the first I've heard about it.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
