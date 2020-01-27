@@ -2,103 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFCB414A124
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 10:48:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9497D14A12F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 10:50:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fkZO+k1RuOxnHX73AI+IFC82yxSJyTT+biqHyfHHR+A=; b=PWhPrMAYLsqMnoTFC6wvcbQvj
-	8nFi0mGwciq+UPlZdU/gS7FjPYikk6gLgbYh9P0Z0H3AUNSUcILE63oRPjcKAUtO90Rbo65aF50UH
-	fRB+FfsVG7WxzD4hB0Y0I9Cqt4Bd/Ai1rsV0YTvTWFDXUco87Z4i0XM51oSnQNvpwOSjOsT9NOStg
-	Nk+c/Xhvg3oslRu2pMnzje9SehPKw0twS8zsGauNw+dlV4pE/Y0qnj6teRk6UeDa6EpuhkL4N0oZ+
-	2Bc5OfD+5k1dNb2XBTzglN3mX8+57JVKAfK0gRLP1xjn/O3sPwXPOUtyYih2PTdss92aG9UV1fgHr
-	2f+usjBhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=u23yORh/gxsDBcWwacRatEuZ/Gr28TOBs5cPLGJpalM=; b=PjF
+	mmhVL+rEOEYzypJHBZWnebvgkoVyeWmv1Ew4zoofm0cv5wh0P9gbZ8VE2FhsIeNuCOJxlE+GG6tC1
+	ZEADBF8ocs3OY3yZj10v5vE4P7B/RE1Hm4nR+8Ok5lp5lpQnRT4Hi6vY+SemDItXfbmxKuPJw6NRG
+	SRjgXnO9HnnjU9JKOHMPfccHgG7kdFplP8ftG+rk4HYxYZoQbWL07wybhdRT2n5ZC5A0hEYN9KsQF
+	wBxg5CnL7zcb/OS129BBrxicxsdFEJm/4qtpcosL98M5A5UPdDzZVuFT6T2kqA1+28mfmsVDWDefF
+	QQlIQbDiEQBf9uOE0kjf6NnpTAX0t/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw106-0001rs-2c; Mon, 27 Jan 2020 09:48:10 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw0zw-0001qr-Nw
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 09:48:02 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id EA8158706;
- Mon, 27 Jan 2020 04:47:57 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Mon, 27 Jan 2020 04:47:57 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm1; bh=D0agDfMES+f5sz8FtNMBMOC9b25
- uS9ZmYckjSQrkMEY=; b=gFSDjyyDFqLlM+dXDPSJzHdThqw7dWggT6q+A1hAOP4
- 3fqxBj0kpgkLKVADimwtkVpZY58c1YQM6eErFprywq/epCUxIDkl57xPLbb8A6w/
- kqCfKSkkDQYZxTn4wdqc+iX3SRCBZ2MC3jfX2U7xwMJgHHqDhK0QSDyxY8Q9v22G
- fcR1tiaZoFYj01G0gYWyTr5iZtonLlWaKueMQc+kOBt1k3s9gwz5PVQlejQtKBfh
- Nyp+3ZzZN162bwtzzbo++WNTKh8S/3/pImX0mbCLzJ3cGAhn3EBUzHgOjCGlVCQv
- 16aSuE0eX3wC7vT1TH0xrARXYbD73VLKC6JD/13PezQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=D0agDf
- MES+f5sz8FtNMBMOC9b25uS9ZmYckjSQrkMEY=; b=JzwOaY8RsRV8d4XIhFGIjJ
- 5NSPq5SFXo9HTN5iCOzdgz/jSyz/Ig55R/QgZ2cYSvn85exPDBKF6SDzuIOWH/XC
- 5n6+Ol4Yrw53jY/mJWxdLFf6Kfoa/Tb28Ml1SCvu7/372X9knABHudBfmeeFmXZX
- P7rQx8O+r04pK6fDgTl2FwNlDinVXGezBAn5zwy/0K8+Xtruf6cVQYsqClX/8oNh
- RmeMCQkHMSDTdNnDz+ONEpkS5PrPXD0u+pzMEvpH9P5jQHf1YcXbKVcTuCIgiIi9
- 8PgZXddrb1qMI8+F6iZYTWgXo3oqTe+jRs0IBllXVkg2DhXwpn/nXmBAvMk7NXcQ
- ==
-X-ME-Sender: <xms:zLEuXgfgLnl7eE_v9KdkAxCwQoLe0tOmhPu_1z8qaJtcoI5PbfCAaQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrfedvgddtkecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:zLEuXoUcdZjzaRZOlDnmLuWWcZU6sLbIr7GqNbs-CDCX6J-mPCzz8Q>
- <xmx:zLEuXofHOipnjLbf6s1xGS7a1c7sSiguq0meZO8keXkeOYSBr-HtFg>
- <xmx:zLEuXtG75JtN5G42Cw4EVRkP5t0nadXYv14t4lYDdw7B4iIYs8WiSA>
- <xmx:zbEuXj_a599ETY-xBwnSAxkuC2vh8ZgvguKfy1WWPZwWQr2gHdLjpg>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 96D40306965C;
- Mon, 27 Jan 2020 04:47:56 -0500 (EST)
-Date: Mon, 27 Jan 2020 10:47:54 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Frank Lee <tiny.windzz@gmail.com>
-Subject: Re: [PATCH v2 2/2] ARM: dts: sun8i-r40: Add thermal sensor and
- thermal zones
-Message-ID: <20200127094754.w4wacqgtdodxayln@gilmour.lan>
-References: <20200106174639.20862-1-tiny.windzz@gmail.com>
- <20200106174639.20862-2-tiny.windzz@gmail.com>
- <20200107075816.ly6exfd4qtvfxxua@gilmour.lan>
- <662e157a-603f-7423-0491-f26f0fc8d7b6@linaro.org>
- <20200109131343.mjyuj5ed2xwvmwd4@gilmour.lan>
- <af4bca3b-ba95-aa10-5601-753f1c5275b3@linaro.org>
- <CAEExFWtmUtzBje-DKt71W46rs3PTF_Di_x3YQCz+tg8+W1kyAA@mail.gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <CAEExFWtmUtzBje-DKt71W46rs3PTF_Di_x3YQCz+tg8+W1kyAA@mail.gmail.com>
+	id 1iw12K-0003Qv-CW; Mon, 27 Jan 2020 09:50:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iw12B-0003EX-97
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 09:50:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5390731B;
+ Mon, 27 Jan 2020 01:50:16 -0800 (PST)
+Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
+ [10.162.16.32])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EF42C3F52E;
+ Mon, 27 Jan 2020 01:50:13 -0800 (PST)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: Drop do_el0_ia_bp_hardening() & do_sp_pc_abort()
+ declarations
+Date: Mon, 27 Jan 2020 15:19:35 +0530
+Message-Id: <1580118575-1705-1-git-send-email-anshuman.khandual@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_014800_923385_E892671C 
-X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-CacheID: sfid-20200127_015019_370051_A5059687 
+X-CRM114-Status: UNSURE (   8.90  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ low trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,65 +62,58 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- devicetree <devicetree@vger.kernel.org>, Linux PM <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Zhang Rui <rui.zhang@intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============6687144801152889954=="
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+There is a redundant do_sp_pc_abort() declaration in exceptions.h which can
+be removed. Also do_el0_ia_bp_hardening() as been already been dropped with
+the commit bfe298745afc ("arm64: entry-common: don't touch daif before
+bp-hardening") and hence does not need a declaration any more. This should
+not introduce any functional change.
 
---===============6687144801152889954==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="rh4ccto7d4lp6y3i"
-Content-Disposition: inline
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: James Morse <james.morse@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: linux-kernel@vger.kernel.org
+Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+---
+ arch/arm64/include/asm/exception.h | 4 ----
+ 1 file changed, 4 deletions(-)
 
+diff --git a/arch/arm64/include/asm/exception.h b/arch/arm64/include/asm/exception.h
+index b87c6e276ab1..7a6e81ca23a8 100644
+--- a/arch/arm64/include/asm/exception.h
++++ b/arch/arm64/include/asm/exception.h
+@@ -33,7 +33,6 @@ static inline u32 disr_to_esr(u64 disr)
+ 
+ asmlinkage void enter_from_user_mode(void);
+ void do_mem_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
+-void do_sp_pc_abort(unsigned long addr, unsigned int esr, struct pt_regs *regs);
+ void do_undefinstr(struct pt_regs *regs);
+ asmlinkage void bad_mode(struct pt_regs *regs, int reason, unsigned int esr);
+ void do_debug_exception(unsigned long addr_if_watchpoint, unsigned int esr,
+@@ -47,7 +46,4 @@ void bad_el0_sync(struct pt_regs *regs, int reason, unsigned int esr);
+ void do_cp15instr(unsigned int esr, struct pt_regs *regs);
+ void do_el0_svc(struct pt_regs *regs);
+ void do_el0_svc_compat(struct pt_regs *regs);
+-void do_el0_ia_bp_hardening(unsigned long addr,  unsigned int esr,
+-			    struct pt_regs *regs);
+-
+ #endif	/* __ASM_EXCEPTION_H */
+-- 
+2.20.1
 
---rh4ccto7d4lp6y3i
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-On Sun, Jan 26, 2020 at 09:01:01PM +0800, Frank Lee wrote:
-> HI Chen-Yu and Maxime,
->
-> Can you pick this up again?
-
-Sorry, I'm not quite sure what happened to this patch... I've picked
-it up for 5.7 (for real this time, hopefully).
-
-Maxime
-
---rh4ccto7d4lp6y3i
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXi6xygAKCRDj7w1vZxhR
-xUkmAP9DgDEkdFW+faazJdPD1Gp2sjOOP/a14Whm0wZv6t0dYgD/fPBVqAvI3326
-HCBqMcPz39j+iwdM+UuywN8uLjHD2Ag=
-=E275
------END PGP SIGNATURE-----
-
---rh4ccto7d4lp6y3i--
-
-
---===============6687144801152889954==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6687144801152889954==--
-
