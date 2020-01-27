@@ -2,67 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0B95149F9C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 09:15:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78A25149FF6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 09:40:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=9qsqglg7YBbkbcXNT9FlQQD5D73Oo47R7ag+nYOn2zg=; b=GSD+ac2/lXthTGu/pnnTmw7nZ
-	PIp6uixN4J7ONNLiTE6Fj76s41dxhJYZOgE0BxPhMB0Dv+wwB10dJCw7X3USxHev8rXHv+E/uN/41
-	isNU9OtX75/IFGophK0kEdMVljwsMYvB04TNfQvRuiNS1Y3rH58zEWqFiIBDQz4AwaEw3qr/yn28t
-	WsxAJxbEwhb4sWE8/n44OfVR0DKYz7eOxCY9pSVQCwPOKcpBix+OiiF1y4ZzqrtvybHbxIx21lwQ9
-	UFkT5bUhUi1EQtM8Uue3lHFvenWjsyr1W1ZT0EeYkdDbKdKJKjUeuD8aL2wDqEhNwc4XJ0Z6gTMoh
-	KlH8UJzoQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qvtWIKsBzt8rVDNcx3NY+q7f8vQEZCOXBeiy9ibUPXo=; b=B8XgFMUZm2ZZVd
+	GcvTWN191zoIQGpbnUFPAy3ERGQI5eOWnT9v+exQg+y7VRV/A3YocL3RdIjT8hy1cSRvQB8Xnmtrs
+	Xa/4r845iMAf5KirIk7+RSTIaYhUysk+AQ3KUYUkdE5EqQifHAS1DmXjxNqE8yYHLWOjyTyRgfGIM
+	abVBUNEkdjkA+LceJwWLvu+tEpPGMt5Su3qlAVa4LISMTnCuyoC8H9gWH70EPpm3ugY3yh/aUn4bt
+	f83Oz5GnSEu8gR/nYVhOLdP6agQN2zxx4Ntrl+QwHZO5GfZOVyl1nZReo0NsCmS6oVpNX4SaVLo4W
+	+mbrOTgq7ndHJ9P5sRAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivzYD-0008EC-Jk; Mon, 27 Jan 2020 08:15:17 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1ivzww-0007Wq-N6; Mon, 27 Jan 2020 08:40:50 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivzY2-0007oi-Ug
- for linux-arm-kernel@bombadil.infradead.org; Mon, 27 Jan 2020 08:15:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=G3fcsoTdkiBCTD3GqYOsAJ4fBLKH+/7q6VR4FKQCUz0=; b=IQWiXfOeLBI29GwCr/X6ilhkM
- T2qTs5dw88H1rS2iFyyzJt0z0fApEwXcc1TuwCBj7QltOX1zVFBOvwKu5tGkyiB7/mjDIk2qj3YrK
- 5j97qcl1NTaO2PxKcy+amr1W/LSWZRg1zZamJLO1Yl6C8eT1UTd59BgolBdTyj3zTdK73eGsJsAlK
- C8kEuvWvMdXKmsf/xGfg4NsnN9NQesZ7kIIHXMYMJINzYC8cF5kIxIFUjzrNSD9yf6CQwDv4FhuIL
- 89/GviQXojQKilyhF8703d7fAxznuho+5Y1nWTiONqj6Nd5PaM8wN4T1qiNH7oHwMlAigK+1cCnac
- OMLP/HZDQ==;
-Received: from relay11.mail.gandi.net ([217.70.178.231])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivzXz-0004bE-74
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 08:15:04 +0000
-Received: from aptenodytes (lfbn-tou-1-1151-102.w90-76.abo.wanadoo.fr
- [90.76.211.102])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id D6AE0100016;
- Mon, 27 Jan 2020 08:14:19 +0000 (UTC)
-Date: Mon, 27 Jan 2020 09:14:19 +0100
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH] Revert "drm/sun4i: drv: Allow framebuffer modifiers in
- mode config"
-Message-ID: <20200127081419.GA25668@aptenodytes>
-References: <20200126065937.9564-1-jernej.skrabec@siol.net>
+ id 1ivzwm-0007WR-JL
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 08:40:42 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00R8eRCo088203;
+ Mon, 27 Jan 2020 02:40:27 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1580114427;
+ bh=xa0xzafvFH8SqiFAfVmhyJyrA8824lRN+gl7HwxGaOs=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=syNmAyoPBOFuScGZ385BJZjO1IQHsGn8sNA2sgHvwgwaQUx3bMGmhlKuykMMmqbK9
+ QRsy0LqbKdlMK4RScXWQ8nv41NyI+//WzPPXPYEAjTh1ihCHoXyIaTBXuKb1CaRDsC
+ oWXx8Ngbn67wQTNP24QfipWAZP2s4Uy7QZkcZJHw=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00R8eRrj063297
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 27 Jan 2020 02:40:27 -0600
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 27
+ Jan 2020 02:40:27 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 27 Jan 2020 02:40:27 -0600
+Received: from [172.24.145.246] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00R8eNNL043988;
+ Mon, 27 Jan 2020 02:40:25 -0600
+Subject: Re: [PATCH 09/20] ARM: davinci: Drop unneeded select of TIMER_OF
+To: Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann
+ <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>, Olof Johansson
+ <olof@lixom.net>
+References: <20200121103413.1337-1-geert+renesas@glider.be>
+ <20200121103722.1781-1-geert+renesas@glider.be>
+ <20200121103722.1781-9-geert+renesas@glider.be>
+From: Sekhar Nori <nsekhar@ti.com>
+Message-ID: <be193d29-2787-d22c-1d65-6887a49bebbe@ti.com>
+Date: Mon, 27 Jan 2020 14:10:23 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200126065937.9564-1-jernej.skrabec@siol.net>
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+In-Reply-To: <20200121103722.1781-9-geert+renesas@glider.be>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200127_004040_741051_7B5B398F 
+X-CRM114-Status: GOOD (  10.67  )
+X-Spam-Score: -2.5 (--)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,107 +95,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, wens@csie.org, mripard@kernel.org,
- daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7973062796899664321=="
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 21/01/20 4:07 PM, Geert Uytterhoeven wrote:
+> Support for TI DaVinci SoCs depends on ARCH_MULTI_V5, and thus on
+> ARCH_MULTIPLATFORM.
+> As the latter selects TIMER_OF, there is no need for MACH_DA8XX_DT to
+> select TIMER_OF.
+> 
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> Cc: Sekhar Nori <nsekhar@ti.com>
+> Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
---===============7973062796899664321==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="zYM0uCDKw75PZbzx"
-Content-Disposition: inline
+Acked-by: Sekhar Nori <nsekhar@ti.com>
 
-
---zYM0uCDKw75PZbzx
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Jernej,
-
-On Sun 26 Jan 20, 07:59, Jernej Skrabec wrote:
-> This reverts commit 9db9c0cf5895e4ddde2814360cae7bea9282edd2.
->=20
-> Setting mode_config.allow_fb_modifiers manually is completely
-> unnecessary. It is set automatically by drm_universal_plane_init() based
-> on the fact if modifier list is provided or not. Even more, it breaks
-> DE2 and DE3 as they don't support any modifiers beside linear. Modifiers
-> aware applications can be confused by provided empty modifier list - at
-> least linear modifier should be included, but it's not for DE2 and DE3.
-
-Makes sense and it's apparently the norm to not report any modifier blob
-when only linear is supported, so let's stick to that.
-
-Note that when the reverted patch was applied, the core didn't set
-allow_fb_modifiers on its own yet. But it does now so let's rely on it inst=
-ead.
-
-Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-
-Cheers,
-
-Paul
-
-> Fixes: 9db9c0cf5895 ("drm/sun4i: drv: Allow framebuffer modifiers in mode=
- config")
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
->  drivers/gpu/drm/sun4i/sun4i_drv.c | 1 -
->  1 file changed, 1 deletion(-)
->=20
-> diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/su=
-n4i_drv.c
-> index 5ae67d526b1d..328272ff77d8 100644
-> --- a/drivers/gpu/drm/sun4i/sun4i_drv.c
-> +++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
-> @@ -85,7 +85,6 @@ static int sun4i_drv_bind(struct device *dev)
->  	}
-> =20
->  	drm_mode_config_init(drm);
-> -	drm->mode_config.allow_fb_modifiers =3D true;
-> =20
->  	ret =3D component_bind_all(drm->dev, drm);
->  	if (ret) {
-> --=20
-> 2.25.0
->=20
-
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
-
---zYM0uCDKw75PZbzx
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl4um9sACgkQ3cLmz3+f
-v9GVMgf+Kc3KZDcNNctctpvlPceDVaF7D4PqnI4YqaMprQkDYXgo2FwW/lu16lNQ
-NrFx8PXex2bkporLkE2jcJRIA9B1A0Wbfoy86MagAJtCtFCgCaQIXM+Y/7yGSbn6
-wfDytjFPdpngw7hZrfh9AljDP6w907SmNvvugVTG6eEKH8xRtYl3NYDFDvms1Fns
-2jQTT67palIJs10fIPCfTU0HJd2fN92lqVDiwzx0HReR4nCqVA4BTd6wxn5sieiQ
-iI3AIXJawMv0xdUs0idpRfKavaPoRWVxolUPg4Umr1RHJmxV/HS4ERRK+T4KlJmk
-EdW2EIlo4bmuFeFhog1Q8X1XURDJ1g==
-=lFH+
------END PGP SIGNATURE-----
-
---zYM0uCDKw75PZbzx--
-
-
---===============7973062796899664321==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Sekhar
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7973062796899664321==--
-
