@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76A0D14A890
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 18:05:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 264D214A8B1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 18:07:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gX3ADPwh56uiwLyg3R3S12675tNIyJ4Pp9rwbnr+YCA=; b=H0QgD35CZY1dmk
-	nXn7GsXEOtcLE4wStgrke03PxUvpE27woAjWUTWVSflhYAk4IdGw9D80tY67Tuh2n4EndP8+zv7gf
-	8j+wjXK8C3oBU9g6EzCIGOaxVX5mLMkopmn1Xk3/3PJzj+H/jzrUcn5tfTS2T1S81hUoHZUok2O3X
-	lvrZQTe6SlHYGJTYiaEFvBEYH84NjUsj2V1+MGr7WEEUvEJz4m35nP1zM8taAI1hlihfsA/HdGSfJ
-	4ZbLkGckl/sHFtdr3Lhv++65gJc1YCqh3Mnjg03+oimAa43o7iQJ/6rpLbbQtLrXqBMWj+QSUvrSY
-	qTEykP36QlqqxaUzzhFA==;
+	List-Owner; bh=DB4Va7HwBebu3W44maPmOmDmmjLqUyu508gT6suiGjI=; b=V2goQJrXoIHXOc
+	Wia1ZSIWZO7HPd1rV5WspXsM93CV2tk6VSddd1HqnKqQCPQqwGPX3e4sIF5XL/9FfwW4/8gq+aRF5
+	pRXG/kArujoQl0NVdyep4Mem6ufDU2XPERg1lYLGuGTB4S7SZhz6LDGlrBIvN2yG1fjur51Y7p10q
+	+jLPjgimG61MMgKjm7Qmz6sxRdmoVr83ex+6m+B3sAVaWLpjELdY90Dn7wNQgtDt4PW3P/M6rG+sS
+	MzOPYksu4FZClqcZCvOnGzEjHfovgm0hhdEUGebzwhlJX6i3O+x8bAI5rc5/Qiz15UEsxcCer19Lz
+	jmL/YaV3dCNHeRBtXG4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw7oj-0003wR-Gq; Mon, 27 Jan 2020 17:04:53 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw7oY-0003vf-PG
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 17:04:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4B1E931B;
- Mon, 27 Jan 2020 09:04:40 -0800 (PST)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 13EDC3F67D;
- Mon, 27 Jan 2020 09:04:38 -0800 (PST)
-Date: Mon, 27 Jan 2020 17:04:36 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH 07/14] net: axienet: Fix SGMII support
-Message-ID: <20200127170436.5d88ca4f@donnerap.cambridge.arm.com>
-In-Reply-To: <20200120154554.GD25745@shell.armlinux.org.uk>
-References: <20200110115415.75683-1-andre.przywara@arm.com>
- <20200110115415.75683-8-andre.przywara@arm.com>
- <20200110140415.GE19739@lunn.ch>
- <20200110142038.2ed094ba@donnerap.cambridge.arm.com>
- <20200110150409.GD25745@shell.armlinux.org.uk>
- <20200110152215.GF25745@shell.armlinux.org.uk>
- <20200110170457.GH25745@shell.armlinux.org.uk>
- <20200118112258.GT25745@shell.armlinux.org.uk>
- <3b28dcb4-6e52-9a48-bf9c-ddad4cf5e98a@arm.com>
- <20200120154554.GD25745@shell.armlinux.org.uk>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1iw7rH-0005cK-VM; Mon, 27 Jan 2020 17:07:31 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iw7r6-0005b9-5L
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 17:07:21 +0000
+Received: from lhreml701-cah.china.huawei.com (unknown [172.18.7.106])
+ by Forcepoint Email with ESMTP id 7D538FE425EF68D12A98;
+ Mon, 27 Jan 2020 17:07:16 +0000 (GMT)
+Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
+ lhreml701-cah.china.huawei.com (10.201.108.42) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 27 Jan 2020 17:07:15 +0000
+Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
+ (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Mon, 27 Jan
+ 2020 17:07:16 +0000
+Date: Mon, 27 Jan 2020 17:07:13 +0000
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [RFC PATCH 01/11] firmware: arm_scmi: Add receive buffer
+ support for notifications
+Message-ID: <20200127170713.000013ee@Huawei.com>
+In-Reply-To: <20200120122333.46217-2-cristian.marussi@arm.com>
+References: <20200120122333.46217-1-cristian.marussi@arm.com>
+ <20200120122333.46217-2-cristian.marussi@arm.com>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
+X-Originating-IP: [10.202.226.57]
+X-ClientProxiedBy: lhreml737-chm.china.huawei.com (10.201.108.187) To
+ lhreml710-chm.china.huawei.com (10.201.108.61)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_090442_908098_D989C131 
-X-CRM114-Status: GOOD (  51.20  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200127_090720_352044_8C24D46F 
+X-CRM114-Status: GOOD (  19.43  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -72,342 +72,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, netdev@vger.kernel.org,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
- Robert Hancock <hancock@sedsystems.ca>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: james.quinlan@broadcom.com, lukasz.luba@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ sudeep.holla@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 20 Jan 2020 15:45:54 +0000
-Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
+On Mon, 20 Jan 2020 12:23:23 +0000
+Cristian Marussi <cristian.marussi@arm.com> wrote:
 
-Hi Russell,
+> From: Sudeep Holla <sudeep.holla@arm.com>
+> 
+> With all the plumbing in place, let's just add the separate dedicated
+> receive buffers to handle notifications that can arrive asynchronously
+> from the platform firmware to OS.
+> 
+> Also add check to see if the platform supports any receive channels
+> before allocating the receive buffers.
 
-sorry for the delay, some other stuff bubbling up, then I couldn't access the board ...
+Perhaps hand hold the reader a tiny bit more by saying that we need
+to move the initialization later so that we can know *if* the receive
+channels are supported.  Took me a moment to figure out why you did that ;)
 
-> On Mon, Jan 20, 2020 at 02:50:28PM +0000, Andre Przywara wrote:
-> > On 18/01/2020 11:22, Russell King - ARM Linux admin wrote:  
-> > > On Fri, Jan 10, 2020 at 05:04:57PM +0000, Russell King - ARM Linux admin wrote:  
-> > >> Maybe something like the below will help?
-> > >>
-> > >> Basically, use phylink_mii_pcs_get_state() instead of
-> > >> axienet_mac_pcs_get_state(), and setup lp->phylink_config.pcs_mii
-> > >> to point at the MII bus, and lp->phylink_config.pcs_mii_addr to
-> > >> access the internal PHY (as per C_PHYADDR parameter.)
-> > >>
-> > >> You may have some fuzz (with gnu patch) while trying to apply this,
-> > >> as you won't have the context for the first and last hunks in this
-> > >> patch.
-> > >>
-> > >> This will probably not be the final version of the patch anyway;
-> > >> there's some possibility to pull some of the functionality out of
-> > >> phylib into a more general library which would avoid some of the
-> > >> functional duplication.  
-> > > 
-> > > Hi Andre,
-> > > 
-> > > Did you have a chance to see whether this helps?  
-> > 
-> > Sorry, I needed some time to wrap my head around your reply first. Am I am still not fully finished with this process ;-)
-> > Anyway I observed that when I add 'managed = "in-band-status"' to the DT, it seems to work, because it actually calls axienet_mac_pcs_get_state() to learn the actual negotiated parameters. Then in turn it calls mac_config with the proper speed instead of -1:
-> > [  151.682532] xilinx_axienet 7fe00000.ethernet eth0: configuring for inband/sgmii link mode
-> > [  151.710743] axienet_mac_config(config, mode=2, speed=-1, duplex=255, pause=16)
-> > ...
-> > [  153.818568] axienet_mac_pcs_get_state(config): speed=1000, interface=4, pause=0
-> > [  153.842244] axienet_mac_config(config, mode=2, speed=1000, duplex=1, pause=0)
-> > 
-> > Without that DT property it never called mac_pcs_get_state(), so never learnt about the actual settings.
-> > But the actual MAC setting was already right (1 GBps, FD). Whether this was by chance (reset value?) or because this was set by the PHY via SGMII, I don't know.
-> > So in my case I think I *need* to have the managed = ... property in my DT.  
-> 
-> I really don't like this guess-work.  The specifications are freely
-> available out there, so there's really no need for this.
-> 
-> pg051-tri-mode-eth-mac.pdf describes the ethernet controller, and
-> Table 2-32 therein describes the EMMC register.
-> 
-> Bits 31 and 30 comprise a two-bit field which indicates the speed that
-> has been configured.  When the Xilinx IP has been configured for a
-> fixed speed, it adopts a hard-coded value (in other words, it is read-
-> only).  When it is read-writable, it defaults to "10" - 1G speed.
-> 
-> So, I think this just works by coincidence, not by proper design,
-> and therefore your patch in this sub-thread is incorrect since it's
-> masking the problem.
-> 
-> > But I was wondering if we need this patch anyway, regardless of the proper way to check for the connection setting in this case. Because at the moment calling mac_config with speed=-1 will *delete* the current MAC speed setting and leave it as 10 Mbps (because this is encoded as 0), when speed is not one of the well-known values. I am not sure that is desired behaviour, or speed=-1 just means: don't touch the speed setting. After all we call mac_config with speed=-1 first, even when later fixing this up (see above).  
-> 
-> Have you tested 100M and 10M speeds as well - I suspect you'll find
-> that, as you're relying on the IP default EMMC register setting, it
-> just won't work with your patches as they stand, because there is
-> nothing to read the in-band result.  I also don't see anything in
-> either pg051-tri-mode-eth-mac.pdf or pg047-gig-eth-pcs-pma.pdf which
-> indicates that the PCS negotiation results are passed automatically
-> between either IP blocks.
-> 
-> Therefore, I think you _will_ need something like the patch I've
-> proposed to make this Xilinx IP work properly.
+One minor suggestion inline.
 
-OK, I think I begin to understand where you are coming from: Despite using SGMII there is *no* automatic in-band passing of the PHY link status to the MAC (I was working on that assumption and was treating the default 1Gbps as a result of that auto-negotiation).
-And since the registers that the manual mentions are actually PHY registers, we need to use MDIO to access them.
-And just when I was wondering how I should do this I realised that this is exactly what your patch does ...
-
-So I filled the gaps in there, and that indeed seems to improve now.
-Some questions:
-- I still always see mac_config() being called with speed=-1 first. With the current mac_config implementation this screws up the MAC setup, but is later corrected (see below). But I would still get that "Speed other than 10, 100 or 1Gbps is not supported" message. So if this speed=-1 some special case that needs extra handling? Where does it actually come from?
-- Checking the phylink doc for mac_config() I understand that when using MLO_AN_INBAND, I should "place the link into inband negotiation mode". Does that mean that it should call phylink_mii_pcs_an_restart()? Or is this the responsibility of phylink?
-- When using managed = "in-band-status", I see a second call to mac_config() having the right parameters (1Gbps, FD) now, as read by phylink_mii_pcs_get_state(). So this gets eventually set up correctly now, thanks to your patch.
-- I initialise "lp->phylink_config.pcs_mii = lp->mii_bus;" in axienet_probe(), just before calling phylink_create(). Where would be the best place to set the PHY address (phylink_config.pcs_mii_addr)? That is not known yet at this point, I guess? (I hacked it to 1 just to test your code).
-- When *not* using managed = "in-band-status", I see mac_config still being called with MLO_AN_PHY and speed=-1. Is that expected? Is there something else missing, possibly in the DT? Shouldn't phylink ask the PHY via MDIO about the status first, then come back with the results as parameters to mac_config()? The phylink mac_config() doc just says that we should configure the MAC according to speed, duplex and pause passed in.
-
-Regarding 10/100 Mbps: I can't test any other speeds, because this is on an FPGA in some data centre, and I can't control the other side. I am already happy that I have *some* Ethernet cable connected to it ;-)
-
-Cheers,
-Andre.
- 
-> I've augmented the patch with further 1000BASE-X support, including
-> adding support for configuring the advertisement in the PG047 PCS
-> registers.  To allow this IP to support 1000BASE-X, from what I
-> read in these documents, that will also be necessary.
 > 
-> 8<===
-> From: Russell King <rmk+kernel@armlinux.org.uk>
-> Subject: [PATCH] net: phylink: helpers for 802.3 clause 37/SGMII register sets
-> 
-> Implement helpers for PCS accessed via the MII bus using register
-> sets conforming to 802.3 clause 37. Advertisements for clause 37
-> and Cisco SGMII are supported by these helpers.
-> 
-> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 > ---
->  drivers/net/phy/phylink.c | 186 ++++++++++++++++++++++++++++++++++++++
->  include/linux/phylink.h   |   9 ++
->  2 files changed, 195 insertions(+)
+>  drivers/firmware/arm_scmi/driver.c | 24 ++++++++++++++++++------
+>  1 file changed, 18 insertions(+), 6 deletions(-)
 > 
-> diff --git a/drivers/net/phy/phylink.c b/drivers/net/phy/phylink.c
-> index e260098d3719..ed82407240b8 100644
-> --- a/drivers/net/phy/phylink.c
-> +++ b/drivers/net/phy/phylink.c
-> @@ -2081,4 +2081,190 @@ phy_interface_t phylink_select_serdes_interface(unsigned long *interfaces,
+> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+> index 2c96f6b5a7d8..9611e8037d77 100644
+> --- a/drivers/firmware/arm_scmi/driver.c
+> +++ b/drivers/firmware/arm_scmi/driver.c
+> @@ -123,6 +123,7 @@ struct scmi_chan_info {
+>   * @version: SCMI revision information containing protocol version,
+>   *	implementation version and (sub-)vendor identification.
+>   * @tx_minfo: Universal Transmit Message management info
+> + * @rx_minfo: Universal Receive Message management info
+>   * @tx_idr: IDR object to map protocol id to Tx channel info pointer
+>   * @rx_idr: IDR object to map protocol id to Rx channel info pointer
+>   * @protocols_imp: List of protocols implemented, currently maximum of
+> @@ -136,6 +137,7 @@ struct scmi_info {
+>  	struct scmi_revision_info version;
+>  	struct scmi_handle handle;
+>  	struct scmi_xfers_info tx_minfo;
+> +	struct scmi_xfers_info rx_minfo;
+>  	struct idr tx_idr;
+>  	struct idr rx_idr;
+>  	u8 *protocols_imp;
+> @@ -690,13 +692,13 @@ int scmi_handle_put(const struct scmi_handle *handle)
+>  	return 0;
 >  }
->  EXPORT_SYMBOL_GPL(phylink_select_serdes_interface);
 >  
-> +static void phylink_decode_advertisement(struct phylink_link_state *state)
-> +{
-> +	__ETHTOOL_DECLARE_LINK_MODE_MASK(u);
-> +
-> +	linkmode_and(u, state->lp_advertising, state->advertising);
-> +
-> +	if (linkmode_test_bit(ETHTOOL_LINK_MODE_Pause_BIT, u)) {
-> +		state->pause = MLO_PAUSE_RX | MLO_PAUSE_TX;
-> +	} else if (linkmode_test_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT, u)) {
-> +		if (linkmode_test_bit(ETHTOOL_LINK_MODE_Pause_BIT,
-> +				      state->lp_advertising))
-> +			state->pause |= MLO_PAUSE_TX;
-> +		if (linkmode_test_bit(ETHTOOL_LINK_MODE_Pause_BIT,
-> +				      state->advertising))
-> +			state->pause |= MLO_PAUSE_RX;
-> +	}
-> +
-> +	if (linkmode_test_bit(ETHTOOL_LINK_MODE_2500baseX_Full_BIT, u)) {
-> +		state->speed = SPEED_2500;
-> +		state->duplex = DUPLEX_FULL;
-> +	} else if (linkmode_test_bit(ETHTOOL_LINK_MODE_1000baseX_Full_BIT, u)) {
-> +		state->pause = SPEED_1000;
-> +		state->duplex = DUPLEX_FULL;
-> +	} else {
-> +		state->link = false;
-> +	}
-> +}
-> +
-> +static void phylink_decode_sgmii_word(struct phylink_link_state *state,
-> +				      uint16_t config_reg)
-> +{
-> +	if (!(lpa & BIT(15))) {
-> +		state->link = false;
-> +		return;
-> +	}
-> +
-> +	switch (lpa & 0x0c00) {
-> +	case 0x0000:
-> +		state->speed = SPEED_10;
-> +		state->duplex = lpa & 0x1000 ? DUPLEX_FULL : DUPLEX_HALF;
-> +		break;
-> +	case 0x0400:
-> +		state->speed = SPEED_100;
-> +		state->duplex = lpa & 0x1000 ? DUPLEX_FULL : DUPLEX_HALF;
-> +		break;
-> +	case 0x0800:
-> +		state->speed = SPEED_1000;
-> +		state->duplex = lpa & 0x1000 ? DUPLEX_FULL : DUPLEX_HALF;
-> +		break;
-> +	default:
-> +		state->link = false;
-> +		break;
-> +	}
-> +}
-> +
-> +/**
-> + * phylink_mii_pcs_get_state - read the MAC PCS state
-> + * @config: a pointer to a &struct phylink_config.
-> + * @state: a pointer to a &struct phylink_link_state.
-> + *
-> + * Helper for MAC PCS supporting the 802.3 register set for clause 37
-> + * negotiation and/or SGMII control.
-> + *
-> + * Read the MAC PCS state from the MII device configured in @config and
-> + * parse the Clause 37 or Cisco SGMII link partner negotiation word into
-> + * the phylink @state structure. This is suitable to be directly plugged
-> + * into the mac_pcs_get_state() member of the struct phylink_mac_ops
-> + * structure.
-> + */
-> +void phylink_mii_pcs_get_state(struct phylink_config *config,
-> +			       struct phylink_link_state *state)
-> +{
-> +	struct mii_bus *bus = config->pcs_mii;
-> +	int addr = config->pcs_mii_addr;
-> +	int bmsr, lpa;
-> +
-> +	bmsr = mdiobus_read(bus, addr, MII_BMSR);
-> +	lpa = mdiobus_read(bus, addr, MII_LPA);
-> +	if (bmsr < 0 || lpa < 0) {
-> +		state->link = false;
-> +		return;
-> +	}
-> +
-> +	state->link = !!(bmsr & BMSR_LSTATUS);
-> +	state->an_complete = !!(bmsr & BMSR_ANEGCOMPLETE);
-> +	if (!state->link)
-> +		return;
-> +
-> +	switch (state->interface) {
-> +	case PHY_INTERFACE_MODE_1000BASEX:
-> +		if (lpa & LPA_1000XFULL)
-> +			linkmode_set_bit(ETHTOOL_LINK_MODE_1000baseX_Full_BIT,
-> +					 state->lp_advertising);
-> +		goto lpa_8023z;
-> +
-> +	case PHY_INTERFACE_MODE_2500BASEX:
-> +		if (lpa & LPA_1000XFULL)
-> +			linkmode_set_bit(ETHTOOL_LINK_MODE_2500baseX_Full_BIT,
-> +					 state->lp_advertising);
-> +	lpa_8023z:
-> +		if (lpa & LPA_1000XPAUSE)
-> +			linkmode_set_bit(ETHTOOL_LINK_MODE_Pause_BIT,
-> +					 state->lp_advertising);
-> +		if (lpa & LPA_1000XPAUSE_ASYM)
-> +			linkmode_set_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT,
-> +					 state->lp_advertising);
-> +		if (lpa & LPA_LPACK)
-> +			linkmode_set_bit(ETHTOOL_LINK_MODE_Autoneg_BIT,
-> +					 state->lp_advertising);
-> +		phylink_decode_advertisement(state);
-> +		break;
-> +
-> +	case PHY_INTERFACE_MODE_SGMII:
-> +		phylink_decode_sgmii_word(state, lpa);
-> +		break;
-> +
-> +	default:
-> +		state->link = false;
-> +		break;
-> +	}
-> +}
-> +EXPORT_SYMBOL_GPL(phylink_mii_pcs_get_state);
-> +
-> +/**
-> + * phylink_mii_pcs_set_advertisement - configure the clause 37 PCS advertisement
-> + * @config: a pointer to a &struct phylink_config.
-> + * @state: a pointer to the state being configured.
-> + *
-> + * Helper for MAC PCS supporting the 802.3 register set for clause 37
-> + * negotiation and/or SGMII control.
-> + *
-> + * Configure the clause 37 PCS advertisement as specified by @state. This
-> + * does not trigger a renegotiation; phylink will do that via the
-> + * mac_an_restart() method of the struct phylink_mac_ops structure.
-> + */
-> +int phylink_mii_pcs_set_advertisement(struct phylink_config *config,
-> +				      const struct phylink_link_state *state)
-> +{
-> +	struct mii_bus *bus = config->pcs_mii;
-> +	int addr = config->pcs_mii_addr;
-> +	u16 adv;
-> +
-> +	switch (state->interface) {
-> +	case PHY_INTERFACE_MODE_1000BASEX:
-> +	case PHY_INTERFACE_MODE_2500BASEX:
-> +		adv = ADVERTISE_1000XFULL;
-> +		if (linkmode_test_bit(ETHTOOL_LINK_MODE_Pause_BIT,
-> +				      state->advertising))
-> +			adv |= ADVERTISE_1000XPAUSE;
-> +		if (linkmode_test_bit(ETHTOOL_LINK_MODE_Asym_Pause_BIT,
-> +				      state->advertising))
-> +			adv |= ADVERTISE_1000XPSE_ASYM;
-> +		return mdiobus_write(bus, addr, MII_ADVERTISE, adv);
-> +
-> +	default:
-> +		/* Nothing to do for other modes */
-> +		return 0;
-> +	}
-> +}
-> +EXPORT_SYMBOL_GPL(phylink_mii_pcs_set_advertisement);
-> +
-> +/**
-> + * phylink_mii_pcs_an_restart - restart 802.3z autonegotiation
-> + * @config: a pointer to a &struct phylink_config.
-> + *
-> + * Helper for MAC PCS supporting the 802.3 register set for clause 37
-> + * negotiation.
-> + *
-> + * Restart the clause 37 negotiation with the link partner. This is
-> + * suitable to be directly plugged into the mac_pcs_get_state() member
-> + * of the struct phylink_mac_ops structure.
-> + */
-> +void phylink_mii_pcs_an_restart(struct phylink_config *config)
-> +{
-> +	struct mii_bus *bus = config->pcs_mii;
-> +	int val, addr = config->pcs_mii_addr;
-> +
-> +	val = mdiobus_read(bus, addr, MII_BMCR);
-> +	if (val >= 0) {
-> +		val |= BMCR_ANRESTART;
-> +
-> +		mdiobus_write(bus, addr, MII_BMCR, val);
-> +	}
-> +}
-> +EXPORT_SYMBOL_GPL(phylink_mii_pcs_an_restart);
-> +
->  MODULE_LICENSE("GPL v2");
-> diff --git a/include/linux/phylink.h b/include/linux/phylink.h
-> index 4ea76e083847..d51f45fc5f9a 100644
-> --- a/include/linux/phylink.h
-> +++ b/include/linux/phylink.h
-> @@ -65,6 +65,9 @@ enum phylink_op_type {
->  struct phylink_config {
->  	struct device *dev;
->  	enum phylink_op_type type;
-> +
-> +	struct mii_bus *pcs_mii;
-> +	int pcs_mii_addr;
->  };
+> -static int scmi_xfer_info_init(struct scmi_info *sinfo)
+> +static int __scmi_xfer_info_init(struct scmi_info *sinfo, bool tx)
+>  {
+>  	int i;
+>  	struct scmi_xfer *xfer;
+>  	struct device *dev = sinfo->dev;
+>  	const struct scmi_desc *desc = sinfo->desc;
+> -	struct scmi_xfers_info *info = &sinfo->tx_minfo;
+> +	struct scmi_xfers_info *info = tx ? &sinfo->tx_minfo : &sinfo->rx_minfo;
+
+Perhaps cleaner to just pass in the relevant info structure rather than a boolean
+to pick it.  Saves people having to check if the boolean is saying it's
+tx or rx when reading the call sites.
+
 >  
->  /**
-> @@ -292,4 +295,10 @@ phy_interface_t phylink_select_serdes_interface(unsigned long *interfaces,
->  						const phy_interface_t *pref,
->  						size_t nprefs);
+>  	/* Pre-allocated messages, no more than what hdr.seq can support */
+>  	if (WARN_ON(desc->max_msg >= MSG_TOKEN_MAX)) {
+> @@ -731,6 +733,16 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
+>  	return 0;
+>  }
 >  
-> +void phylink_mii_pcs_get_state(struct phylink_config *config,
-> +			       struct phylink_link_state *state);
-> +int phylink_mii_pcs_set_advertisement(struct phylink_config *config,
-> +				      const struct phylink_link_state *state);
-> +void phylink_mii_pcs_an_restart(struct phylink_config *config);
+> +static int scmi_xfer_info_init(struct scmi_info *sinfo)
+> +{
+> +	int ret = __scmi_xfer_info_init(sinfo, true);
 > +
->  #endif
+> +	if (!ret && idr_find(&sinfo->rx_idr, SCMI_PROTOCOL_BASE))
+> +		ret = __scmi_xfer_info_init(sinfo, false);
+> +
+> +	return ret;
+> +}
+> +
+>  static int scmi_mailbox_check(struct device_node *np, int idx)
+>  {
+>  	return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells",
+> @@ -908,10 +920,6 @@ static int scmi_probe(struct platform_device *pdev)
+>  	info->desc = desc;
+>  	INIT_LIST_HEAD(&info->node);
+>  
+> -	ret = scmi_xfer_info_init(info);
+> -	if (ret)
+> -		return ret;
+> -
+>  	platform_set_drvdata(pdev, info);
+>  	idr_init(&info->tx_idr);
+>  	idr_init(&info->rx_idr);
+> @@ -924,6 +932,10 @@ static int scmi_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		return ret;
+>  
+> +	ret = scmi_xfer_info_init(info);
+> +	if (ret)
+> +		return ret;
+> +
+>  	ret = scmi_base_protocol_init(handle);
+>  	if (ret) {
+>  		dev_err(dev, "unable to communicate with SCMI(%d)\n", ret);
+
 
 
 _______________________________________________
