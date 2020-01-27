@@ -2,60 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F17B814A73D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 16:33:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 875DB14A74C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 16:37:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X7KMFctm5g39Vv/FQjrv1JLnciuw85J1ZYgks1BQoKw=; b=gHcu+SKa+vj19o
-	cIvKSL5PhaB3WF3B2kCj6wdgCrWGvcF0eerS75dbpKwrfl5V0KiNtZkZU5bVB0k1zDcLgBiOSUIAi
-	xrppeo3wsAtjKzoIpZyZZjlT0J1GbhUjJpMlp1m0ibdyr7OGsUO+qt4+jeh47QAtJ1Ibs3HOwaJ4/
-	+ZUNBzSEuS6jtoOSSioK4oBQwg2LDa+jx3YsQN9+85o20f1XBx9ojIdSLWvk3YYT76DfSwwyXU0Rs
-	MgIS8YKS9YbyLjLkscqwaad6VifDi5Z5MlZvjT0tjn/+IA80BxeLgOzgEmQaxJ1wAdnhaceHh6YnR
-	xfr0+GMUsjsopTfTYK+w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8I8XKDlIV3YkYDzv/+JMtAbV/D+p6tFOHKmXGX+xqfc=; b=eggCjngL3iLx8o
+	WIRFyIBPRrgHvqx9EAV8AtYumkzkUlqOWSXVGNizHzNxWiIrBg0MP97QJ85/F3Q0xVhxT3dhsuLAb
+	z0/jeXXmxPJ3kQaJDIyQ8cTcqse7NIRLQDsQT20p/RC4jlyKJpnROhoCXcbJx68bReRrhQohXR0BQ
+	IU5RA5EhbZ1sdu294AlXi9pPSqZE/hhfkSsxOfPqh4lrh0RHsXQMgUxWY11GqpmMt2q3NnV3Esu2+
+	a6FGxw8NkAYX05rD23qi1kI30/XkM5rZdy2uYnPKAuerQYmc3sAVKrJpdcprgj2VBF84jnpERaCLS
+	U5uLPtpRjA4HUqE4mXow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw6OX-0002KV-5D; Mon, 27 Jan 2020 15:33:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw6OM-0002JV-QA
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 15:33:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2219E31B;
- Mon, 27 Jan 2020 07:33:30 -0800 (PST)
-Received: from [10.1.194.46] (e113632-lin.cambridge.arm.com [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 249D73F67D;
- Mon, 27 Jan 2020 07:33:28 -0800 (PST)
-Subject: Re: [PATCH v2 3/6] arm64/kvm: disable access to AMU registers from
- kvm guests
-To: Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
- will@kernel.org, mark.rutland@arm.com, maz@kernel.org,
- suzuki.poulose@arm.com, sudeep.holla@arm.com, dietmar.eggemann@arm.com
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-4-ionela.voinescu@arm.com>
-From: Valentin Schneider <valentin.schneider@arm.com>
-Message-ID: <bc3f582c-9aed-8052-d0cb-b39c76c8ce73@arm.com>
-Date: Mon, 27 Jan 2020 15:33:26 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iw6Rk-0003z7-Ch; Mon, 27 Jan 2020 15:37:04 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iw6RX-0003y5-8d; Mon, 27 Jan 2020 15:36:52 +0000
+Received: by mail-oi1-f193.google.com with SMTP id b18so3083645oie.2;
+ Mon, 27 Jan 2020 07:36:50 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=2tMp6J7RhsN6lAcTje3kjguQsBuUD423RsgoOzLk7mU=;
+ b=t7oUW1Zv5ShILiYUrbH7F32UA9SvazBjmaNZD4654cIf5nOLKqQLg3qGsi3MUTzhDM
+ G80w9vGEra795TCBQsDGHOm+c41J7Bl8AogoIQhJjxD62SZM5I99Dj5d8XmnpztT0/yp
+ ONqhUyITHeGiM2I2fv0xoeul/kmsWpROJ3B3/IOr3QSp/Szz3IsyXfGaAGxWKj8oMDYs
+ Qx3P+3gV0e15MIDTgY7M6C7x2j15KlusVT+vfN5wp7UwECyFnhueqS46iqFnW1XCQHyK
+ UFIk/z9pMm1CmGijCZR6GjEKSnUCfslvl69CCO8IT1o0k3PP3z1K9KrzWEhQT+hVxeWJ
+ QguQ==
+X-Gm-Message-State: APjAAAWS+wjaglxQG03Uz1a8VwdqQrBz5utbeZ89H7uVqYwgiqGe6nGe
+ 7r4jCNcVdsL5BR/i9lS8rQ==
+X-Google-Smtp-Source: APXvYqzGekj/ZFmSdDOyY4AAWBk440EzsKOKyc1gewORI8sKL5QW+luY/btzprKvUk099ZEBhUGrkQ==
+X-Received: by 2002:aca:1c0d:: with SMTP id c13mr7487529oic.44.1580139409565; 
+ Mon, 27 Jan 2020 07:36:49 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id u18sm5637408otq.26.2020.01.27.07.36.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 27 Jan 2020 07:36:48 -0800 (PST)
+Received: (nullmailer pid 32549 invoked by uid 1000);
+ Mon, 27 Jan 2020 15:36:47 -0000
+Date: Mon, 27 Jan 2020 09:36:47 -0600
+From: Rob Herring <robh@kernel.org>
+To: Akash Gajjar <akash@openedev.com>
+Subject: Re: [PATCH v4, 1/1] arm64: dts: rockchip: add ROCK Pi S DTS support
+Message-ID: <20200127153647.GA32343@bogus>
+References: <20200125063153.2720-1-akash@openedev.com>
 MIME-Version: 1.0
-In-Reply-To: <20191218182607.21607-4-ionela.voinescu@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200125063153.2720-1-akash@openedev.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_073334_939536_EC09A07D 
-X-CRM114-Status: GOOD (  20.82  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200127_073651_307226_2D87F618 
+X-CRM114-Status: GOOD (  15.11  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,140 +90,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, peterz@infradead.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Jagan Teki <jagan@amarulasolutions.com>, linux-kernel@vger.kernel.org,
+ heiko@sntech.de, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>,
+ Douglas Anderson <dianders@chromium.org>,
+ Kever Yang <kever.yang@rock-chips.com>, Markus Reichl <m.reichl@fivetechno.de>,
+ linux-rockchip@lists.infradead.org, Matthias Kaehlcke <mka@chromium.org>,
+ Akash Gajjar <akash@openedev.com>, Nick Xie <nick@khadas.com>,
+ Andy Yan <andy.yan@rock-chips.com>, jagan@openedev.com,
+ Vivek Unune <npcomplete13@gmail.com>, Alexis Ballier <aballier@gentoo.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18/12/2019 18:26, Ionela Voinescu wrote:
-> diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
-> index 6e5d839f42b5..dd20fb185d56 100644
-> --- a/arch/arm64/include/asm/kvm_arm.h
-> +++ b/arch/arm64/include/asm/kvm_arm.h
-> @@ -266,10 +266,11 @@
->  #define CPTR_EL2_TFP_SHIFT 10
+On Sat, 25 Jan 2020 12:01:37 +0530, Akash Gajjar wrote:
+> ROCK Pi S is RK3308 based SBC from radxa.com. ROCK Pi S has a,
+> - 256MB/512MB DDR3 RAM
+> - SD, NAND flash (optional on board 1/2/4/8Gb)
+> - 100MB ethernet, PoE (optional)
+> - Onboard 802.11 b/g/n wifi + Bluetooth 4.0 Module
+> - USB2.0 Type-A HOST x1
+> - USB3.0 Type-C OTG x1
+> - 26-pin expansion header
+> - USB Type-C DC 5V Power Supply
+> 
+> This patch enables
+> - Console
+> - NAND Flash
+> - SD Card
+> 
+> Signed-off-by: Akash Gajjar <akash@openedev.com>
+> ---
+> Changes in v4
+> - remove supports-sd/sdio, nums-slots property
+> - use vmmc-supply for emmc node
+> 
+> Changes in v3
+> - Use small S on dts file name
+> - Add missing semicolon
+> - Remove USB2.0 node support
+> 
+> Changes in v2
+> - Use pwm-supply for vdd_core node instead of vi-supply
+> - Add USB2.0 node support
 >  
->  /* Hyp Coprocessor Trap Register */
-> -#define CPTR_EL2_TCPAC	(1 << 31)
-> -#define CPTR_EL2_TTA	(1 << 20)
-> -#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
->  #define CPTR_EL2_TZ	(1 << 8)
-> +#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
-> +#define CPTR_EL2_TTA	(1 << 20)
-> +#define CPTR_EL2_TAM	(1 << 30)
-> +#define CPTR_EL2_TCPAC	(1 << 31)
+>  .../devicetree/bindings/arm/rockchip.yaml     |   5 +
+>  arch/arm64/boot/dts/rockchip/Makefile         |   1 +
+>  .../boot/dts/rockchip/rk3308-rock-pi-s.dts    | 216 ++++++++++++++++++
+>  3 files changed, 222 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/rockchip/rk3308-rock-pi-s.dts
+> 
 
-Nit: why the #define movement? Couldn't that just be added beneath
-CPTR_EL2_TCPAC?
+Please add Acked-by/Reviewed-by tags when posting new versions. However,
+there's no need to repost patches *only* to add the tags. The upstream
+maintainer will do that for acks received on the version they apply.
 
->  #define CPTR_EL2_RES1	0x000032ff /* known RES1 bits in CPTR_EL2 */
->  #define CPTR_EL2_DEFAULT	CPTR_EL2_RES1
->  
-> diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-> index 72fbbd86eb5e..0bca87a2621f 100644
-> --- a/arch/arm64/kvm/hyp/switch.c
-> +++ b/arch/arm64/kvm/hyp/switch.c
-> @@ -90,6 +90,17 @@ static void activate_traps_vhe(struct kvm_vcpu *vcpu)
->  	val = read_sysreg(cpacr_el1);
->  	val |= CPACR_EL1_TTA;
->  	val &= ~CPACR_EL1_ZEN;
-> +
-> +	/*
-> +	 * With VHE enabled, we have HCR_EL2.{E2H,TGE} = {1,1}. Note that in
-> +	 * this case CPACR_EL1 has the same bit layout as CPTR_EL2, and
-> +	 * CPACR_EL1 accessing instructions are redefined to access CPTR_EL2.
-> +	 * Therefore use CPTR_EL2.TAM bit reference to activate AMU register
-> +	 * traps.
-> +	 */
-> +
-> +	val |= CPTR_EL2_TAM;
-> +
-
-Hmm so this is a bit confusing for me, I've rewritten that part of the
-email too many times (didn't help that I'm far from being a virt guru).
-Rectifications are most welcome.
-
-
-First, AFAICT we *don't* have HCR_EL2.TGE set anymore at this point, it's
-cleared just a bit earlier in __activate_traps().
-
-
-Then, your comment suggests that when we're running this code, CPACR_EL1
-accesses are rerouted to CPTR_EL2. Annoyingly this isn't mentioned in
-the doc of CPACR_EL1, but D5.6.3 does say
-
-"""
-When ARMv8.1-VHE is implemented, and HCR_EL2.E2H is set to 1, when executing
-at EL2, some EL1 System register access instructions are redefined to access
-the equivalent EL2 register.
-"""
-
-And CPACR_EL1 is part of these, so far so good. Now, the thing is
-the doc for CPACR_EL1 *doesn't* mention any TAM bit - but CPTR_EL2 does.
-I believe what *do* want here is to set CPTR_EL2.TAM (which IIUC we end
-up doing via the rerouting).
-
-So, providing I didn't get completely lost on the way, I have to ask:
-why do we use CPACR_EL1 here? Couldn't we use CPTR_EL2 directly?
-
-
->  	if (update_fp_enabled(vcpu)) {
->  		if (vcpu_has_sve(vcpu))
->  			val |= CPACR_EL1_ZEN;
-> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-> index 9f2165937f7d..940ab9b4c98b 100644
-> --- a/arch/arm64/kvm/sys_regs.c
-> +++ b/arch/arm64/kvm/sys_regs.c
-> @@ -1003,6 +1003,20 @@ static bool access_pmuserenr(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
->  	{ SYS_DESC(SYS_PMEVTYPERn_EL0(n)),					\
->  	  access_pmu_evtyper, reset_unknown, (PMEVTYPER0_EL0 + n), }
->  
-> +static bool access_amu(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
-> +			     const struct sys_reg_desc *r)
-> +{
-> +	kvm_inject_undefined(vcpu);
-> +
-> +	return false;
-> +}
-> +
-> +/* Macro to expand the AMU counter and type registers*/
-> +#define AMU_AMEVCNTR0_EL0(n) { SYS_DESC(SYS_AMEVCNTR0_EL0(n)), access_amu }
-> +#define AMU_AMEVTYPE0_EL0(n) { SYS_DESC(SYS_AMEVTYPE0_EL0(n)), access_amu }
-> +#define AMU_AMEVCNTR1_EL0(n) { SYS_DESC(SYS_AMEVCNTR1_EL0(n)), access_amu }
-> +#define AMU_AMEVTYPE1_EL0(n) { SYS_DESC(SYS_AMEVTYPE1_EL0(n)), access_amu }
-> +
-
-You could save a *whopping* two lines with something like:
-
-#define AMU_AMEVCNTR_EL0(group, n) { SYS_DESC(SYS_AMEVCNTR##group##_EL0(n)), access_amu }
-#define AMU_AMEVTYPE_EL0(group, n) { SYS_DESC(SYS_AMEVTYPE##group##_EL0(n)), access_amu }
-
-Though it doesn't help shortening the big register list below.
-
->  static bool trap_ptrauth(struct kvm_vcpu *vcpu,
->  			 struct sys_reg_params *p,
->  			 const struct sys_reg_desc *rd)
-> @@ -1078,8 +1092,12 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
->  			 (u32)r->CRn, (u32)r->CRm, (u32)r->Op2);
->  	u64 val = raz ? 0 : read_sanitised_ftr_reg(id);
->  
-> -	if (id == SYS_ID_AA64PFR0_EL1 && !vcpu_has_sve(vcpu)) {
-> -		val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
-> +	if (id == SYS_ID_AA64PFR0_EL1) {
-> +		if (!vcpu_has_sve(vcpu))
-> +			val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
-> +		val &= ~(0xfUL << ID_AA64PFR0_AMU_SHIFT);
-> +	} else if (id == SYS_ID_PFR0_EL1) {
-> +		val &= ~(0xfUL << ID_PFR0_AMU_SHIFT);
->  	} else if (id == SYS_ID_AA64ISAR1_EL1 && !vcpu_has_ptrauth(vcpu)) {
->  		val &= ~((0xfUL << ID_AA64ISAR1_APA_SHIFT) |
->  			 (0xfUL << ID_AA64ISAR1_API_SHIFT) |
-
-Could almost turn the thing into a switch case at this point.
+If a tag was not added on purpose, please state why and what changed.
 
 _______________________________________________
 linux-arm-kernel mailing list
