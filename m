@@ -2,81 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A02814A737
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 16:31:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F17B814A73D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 16:33:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M2TTt4vd+fIQNJJtNM3MyN5b6sr6HsDNUhOAOwyG04A=; b=Yl0+Zp2jRqmKIi
-	jk+owGSf5lnQcelqZW7aqPsvkr9Gjt4111JAK02qx2vRKVFijPlCMPu5gEnYh+p29es1Yflxb4vhv
-	xEBp4Bf93h9V1gTKJN2LJbJcTDE4IGI/lBhvEJh7XRihX+BF6IzSum8s+UKy+Ao/G/29HvJXKHNHc
-	OK8NhRj+pRZDgYSBh9PMRXJ7rw0am9/wrS5wNMeF5XQsFAvKQ/pQzrwzu8C7GKSvSbuleQ42Op9+5
-	al44wQqJUwx3lnBiuV6njKYSf8vqrS0Cy1HW3pcRM/GvKmD2Q/4Vtr1SPSkmEjAfu+Lx3nUiLOjQR
-	lU+Xb2IT60LLK5C93Vqg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=X7KMFctm5g39Vv/FQjrv1JLnciuw85J1ZYgks1BQoKw=; b=gHcu+SKa+vj19o
+	cIvKSL5PhaB3WF3B2kCj6wdgCrWGvcF0eerS75dbpKwrfl5V0KiNtZkZU5bVB0k1zDcLgBiOSUIAi
+	xrppeo3wsAtjKzoIpZyZZjlT0J1GbhUjJpMlp1m0ibdyr7OGsUO+qt4+jeh47QAtJ1Ibs3HOwaJ4/
+	+ZUNBzSEuS6jtoOSSioK4oBQwg2LDa+jx3YsQN9+85o20f1XBx9ojIdSLWvk3YYT76DfSwwyXU0Rs
+	MgIS8YKS9YbyLjLkscqwaad6VifDi5Z5MlZvjT0tjn/+IA80BxeLgOzgEmQaxJ1wAdnhaceHh6YnR
+	xfr0+GMUsjsopTfTYK+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw6Mc-00020N-0g; Mon, 27 Jan 2020 15:31:46 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw6MP-0001zr-3L
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 15:31:34 +0000
-Received: by mail-io1-xd43.google.com with SMTP id s24so8902664iog.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Jan 2020 07:31:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wZcHaTZrpp0lawR3GVqPBRKtc340w6izk1X9AeM0tys=;
- b=nvSzcH1Xw7GOlXuNwsORWXRC/m0RWJ3mbBUNb3p1i0GNqi0ywJkeOETyFvVkBKYObE
- Cgb2HM2FjwusqDbbOtR9PU0CZKX3lNLeuvCuw77kxNBqCuOpO8nv6LhHettTcrHCl6hR
- NxEuO4OgmrYm7iV7mz5pU/VK2+uy9/fwL1tLj7KlmgGhLuQLYb1F0SIBOjZHwsF8OMYa
- Q9yFjzfwTRNEYcOvYltkHY0KGhSXs1eZ9rUey3urJvl6xrZ1s59qiZkwxm0ybINVUD+r
- lRG8nvLj/KjTkFcXau+buOgfpkrPNM+3/lHyfHltis2wyMcs65vmPoAD8hVVa4U5EVQt
- lM/g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wZcHaTZrpp0lawR3GVqPBRKtc340w6izk1X9AeM0tys=;
- b=k5pGfPxo1yDA3DXaKlD6LzzL7GmYmEOucTXx3mPi6uESJANOGC6C0NN8FfYu6lK0Dm
- 36PkPP8K3Y2goQ8mEvQNA+rMexi2ZUbt88TnWI63CGCVV+PFvtov7N2frGi8/bbgo29L
- vFs5esdJ/5XODTkyqLtjdaykqXFooobQDW7G3wg+09tWYWQplTeyHjd87uUB+yynsQW1
- ZvvD5vZlD3rsAaaXPYxGSOFIW0P/nHFPphyuPFq2MO0fwVs7n3XsR9Fmafd8a5SULggE
- PuXvL03cv6VBF8UpyLiPfvOr4YWrD2FUPcAuO+KO+HmBeHCViIBmpuu+OA2QjeYW+f8x
- IYqg==
-X-Gm-Message-State: APjAAAVuLFeJIizA1J21+Lpzl38FH8XqhEeIhywG8F+s9j4P7e4/Dms8
- ccqMj5Bozj9sc76ISiPqip4LTjgrefyPVLKHDPS20Aj4
-X-Google-Smtp-Source: APXvYqyMcGQOVpPrRqmndzHbICrmTzpBtqo7gVvyN5KQ6FS38oEewn3YPTazGr2cisDl7epkP7znrZ+knCDZ9WJ+jaY=
-X-Received: by 2002:a5e:da0d:: with SMTP id x13mr11830080ioj.123.1580139091245; 
- Mon, 27 Jan 2020 07:31:31 -0800 (PST)
+	id 1iw6OX-0002KV-5D; Mon, 27 Jan 2020 15:33:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iw6OM-0002JV-QA
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 15:33:36 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2219E31B;
+ Mon, 27 Jan 2020 07:33:30 -0800 (PST)
+Received: from [10.1.194.46] (e113632-lin.cambridge.arm.com [10.1.194.46])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 249D73F67D;
+ Mon, 27 Jan 2020 07:33:28 -0800 (PST)
+Subject: Re: [PATCH v2 3/6] arm64/kvm: disable access to AMU registers from
+ kvm guests
+To: Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
+ will@kernel.org, mark.rutland@arm.com, maz@kernel.org,
+ suzuki.poulose@arm.com, sudeep.holla@arm.com, dietmar.eggemann@arm.com
+References: <20191218182607.21607-1-ionela.voinescu@arm.com>
+ <20191218182607.21607-4-ionela.voinescu@arm.com>
+From: Valentin Schneider <valentin.schneider@arm.com>
+Message-ID: <bc3f582c-9aed-8052-d0cb-b39c76c8ce73@arm.com>
+Date: Mon, 27 Jan 2020 15:33:26 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <043eb5b2-a302-4de6-a3e8-8238e49483b1@ti.com>
- <0b4efa9c-b811-1083-ce9c-8a92903e3680@ti.com>
-In-Reply-To: <0b4efa9c-b811-1083-ce9c-8a92903e3680@ti.com>
-From: Olof Johansson <olof@lixom.net>
-Date: Mon, 27 Jan 2020 07:31:20 -0800
-Message-ID: <CAOesGMh4w0w5Q-VTtHxSBU5rRUtaN--4oB3xfXPTk_Z+Aeru0Q@mail.gmail.com>
-Subject: Re: [GIT PULL] DaVinci SoC updates for v5.6
-To: Sekhar Nori <nsekhar@ti.com>
+In-Reply-To: <20191218182607.21607-4-ionela.voinescu@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_073133_141726_A5614DA1 
-X-CRM114-Status: GOOD (  11.91  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200127_073334_939536_EC09A07D 
+X-CRM114-Status: GOOD (  20.82  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,43 +67,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Peter Ujfalusi <peter.ujfalusi@ti.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- ARM-SoC Maintainers <soc@kernel.org>, ARM-SoC Maintainers <arm@kernel.org>,
- Linux ARM Kernel List <linux-arm-kernel@lists.infradead.org>
+Cc: linux-doc@vger.kernel.org, peterz@infradead.org,
+ linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 27, 2020 at 12:54 AM Sekhar Nori <nsekhar@ti.com> wrote:
->
-> Hi Arnd, Olof,
->
-> On 14/01/20 11:48 PM, Sekhar Nori wrote:
-> > The following changes since commit e42617b825f8073569da76dc4510bfa019b1c35a:
-> >
-> >   Linux 5.5-rc1 (2019-12-08 14:57:55 -0800)
-> >
-> > are available in the Git repository at:
-> >
-> >   git://git.kernel.org/pub/scm/linux/kernel/git/nsekhar/linux-davinci.git tags/davinci-for-v5.6/soc
-> >
-> > for you to fetch changes up to 5e06d19694a463a012c2589e29078196eb209448:
-> >
-> >   ARM: davinci: dm644x-evm: Add Fixed regulators needed for tlv320aic33 (2020-01-13 17:36:26 +0530)
->
-> Can you please pull in this for v5.6? I have not seen it in linux-next
-> still.
+On 18/12/2019 18:26, Ionela Voinescu wrote:
+> diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
+> index 6e5d839f42b5..dd20fb185d56 100644
+> --- a/arch/arm64/include/asm/kvm_arm.h
+> +++ b/arch/arm64/include/asm/kvm_arm.h
+> @@ -266,10 +266,11 @@
+>  #define CPTR_EL2_TFP_SHIFT 10
+>  
+>  /* Hyp Coprocessor Trap Register */
+> -#define CPTR_EL2_TCPAC	(1 << 31)
+> -#define CPTR_EL2_TTA	(1 << 20)
+> -#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
+>  #define CPTR_EL2_TZ	(1 << 8)
+> +#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
+> +#define CPTR_EL2_TTA	(1 << 20)
+> +#define CPTR_EL2_TAM	(1 << 30)
+> +#define CPTR_EL2_TCPAC	(1 << 31)
 
-Odd, it does not seem to have been picked up by patchwork, so I missed
-tracking it.
+Nit: why the #define movement? Couldn't that just be added beneath
+CPTR_EL2_TCPAC?
 
-Merging it now into arm/late.
+>  #define CPTR_EL2_RES1	0x000032ff /* known RES1 bits in CPTR_EL2 */
+>  #define CPTR_EL2_DEFAULT	CPTR_EL2_RES1
+>  
+> diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+> index 72fbbd86eb5e..0bca87a2621f 100644
+> --- a/arch/arm64/kvm/hyp/switch.c
+> +++ b/arch/arm64/kvm/hyp/switch.c
+> @@ -90,6 +90,17 @@ static void activate_traps_vhe(struct kvm_vcpu *vcpu)
+>  	val = read_sysreg(cpacr_el1);
+>  	val |= CPACR_EL1_TTA;
+>  	val &= ~CPACR_EL1_ZEN;
+> +
+> +	/*
+> +	 * With VHE enabled, we have HCR_EL2.{E2H,TGE} = {1,1}. Note that in
+> +	 * this case CPACR_EL1 has the same bit layout as CPTR_EL2, and
+> +	 * CPACR_EL1 accessing instructions are redefined to access CPTR_EL2.
+> +	 * Therefore use CPTR_EL2.TAM bit reference to activate AMU register
+> +	 * traps.
+> +	 */
+> +
+> +	val |= CPTR_EL2_TAM;
+> +
+
+Hmm so this is a bit confusing for me, I've rewritten that part of the
+email too many times (didn't help that I'm far from being a virt guru).
+Rectifications are most welcome.
 
 
--Olof
+First, AFAICT we *don't* have HCR_EL2.TGE set anymore at this point, it's
+cleared just a bit earlier in __activate_traps().
+
+
+Then, your comment suggests that when we're running this code, CPACR_EL1
+accesses are rerouted to CPTR_EL2. Annoyingly this isn't mentioned in
+the doc of CPACR_EL1, but D5.6.3 does say
+
+"""
+When ARMv8.1-VHE is implemented, and HCR_EL2.E2H is set to 1, when executing
+at EL2, some EL1 System register access instructions are redefined to access
+the equivalent EL2 register.
+"""
+
+And CPACR_EL1 is part of these, so far so good. Now, the thing is
+the doc for CPACR_EL1 *doesn't* mention any TAM bit - but CPTR_EL2 does.
+I believe what *do* want here is to set CPTR_EL2.TAM (which IIUC we end
+up doing via the rerouting).
+
+So, providing I didn't get completely lost on the way, I have to ask:
+why do we use CPACR_EL1 here? Couldn't we use CPTR_EL2 directly?
+
+
+>  	if (update_fp_enabled(vcpu)) {
+>  		if (vcpu_has_sve(vcpu))
+>  			val |= CPACR_EL1_ZEN;
+> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+> index 9f2165937f7d..940ab9b4c98b 100644
+> --- a/arch/arm64/kvm/sys_regs.c
+> +++ b/arch/arm64/kvm/sys_regs.c
+> @@ -1003,6 +1003,20 @@ static bool access_pmuserenr(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
+>  	{ SYS_DESC(SYS_PMEVTYPERn_EL0(n)),					\
+>  	  access_pmu_evtyper, reset_unknown, (PMEVTYPER0_EL0 + n), }
+>  
+> +static bool access_amu(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
+> +			     const struct sys_reg_desc *r)
+> +{
+> +	kvm_inject_undefined(vcpu);
+> +
+> +	return false;
+> +}
+> +
+> +/* Macro to expand the AMU counter and type registers*/
+> +#define AMU_AMEVCNTR0_EL0(n) { SYS_DESC(SYS_AMEVCNTR0_EL0(n)), access_amu }
+> +#define AMU_AMEVTYPE0_EL0(n) { SYS_DESC(SYS_AMEVTYPE0_EL0(n)), access_amu }
+> +#define AMU_AMEVCNTR1_EL0(n) { SYS_DESC(SYS_AMEVCNTR1_EL0(n)), access_amu }
+> +#define AMU_AMEVTYPE1_EL0(n) { SYS_DESC(SYS_AMEVTYPE1_EL0(n)), access_amu }
+> +
+
+You could save a *whopping* two lines with something like:
+
+#define AMU_AMEVCNTR_EL0(group, n) { SYS_DESC(SYS_AMEVCNTR##group##_EL0(n)), access_amu }
+#define AMU_AMEVTYPE_EL0(group, n) { SYS_DESC(SYS_AMEVTYPE##group##_EL0(n)), access_amu }
+
+Though it doesn't help shortening the big register list below.
+
+>  static bool trap_ptrauth(struct kvm_vcpu *vcpu,
+>  			 struct sys_reg_params *p,
+>  			 const struct sys_reg_desc *rd)
+> @@ -1078,8 +1092,12 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
+>  			 (u32)r->CRn, (u32)r->CRm, (u32)r->Op2);
+>  	u64 val = raz ? 0 : read_sanitised_ftr_reg(id);
+>  
+> -	if (id == SYS_ID_AA64PFR0_EL1 && !vcpu_has_sve(vcpu)) {
+> -		val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
+> +	if (id == SYS_ID_AA64PFR0_EL1) {
+> +		if (!vcpu_has_sve(vcpu))
+> +			val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
+> +		val &= ~(0xfUL << ID_AA64PFR0_AMU_SHIFT);
+> +	} else if (id == SYS_ID_PFR0_EL1) {
+> +		val &= ~(0xfUL << ID_PFR0_AMU_SHIFT);
+>  	} else if (id == SYS_ID_AA64ISAR1_EL1 && !vcpu_has_ptrauth(vcpu)) {
+>  		val &= ~((0xfUL << ID_AA64ISAR1_APA_SHIFT) |
+>  			 (0xfUL << ID_AA64ISAR1_API_SHIFT) |
+
+Could almost turn the thing into a switch case at this point.
 
 _______________________________________________
 linux-arm-kernel mailing list
