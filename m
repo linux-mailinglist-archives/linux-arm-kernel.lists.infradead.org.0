@@ -2,94 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFDEE14A5F2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 15:24:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5DFE14A609
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 15:27:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+wydgmLeQbe5rluc+9uF0eFTAN8NFqBKBFHUfx+8iqQ=; b=CkpinpALuJAA40YYDcPyFLATq
-	H6++tBMt8IE3F5N4NPdGrcMX1JD4ZgQGc3i6xKBa9vyI+kWTGztTTiv7Q2VG9SmhFDYRgeoFaUrmW
-	vQYNfpcvBYYAqMAsRhrlr7+4+h46xleMKEI5IhV3eDPIIh/jhmDmoZDhkbgjY6PNfYWaXcDlWnlIr
-	RRx5XQtnWmh6Xr5Bgd2v80YmF0rt0DlErAOd/Ywb9tYIMA+MYyb/X6txsOO8XdkJKUDYjtqjyuved
-	Omwlm5h55BD8VY5l5HVwVbjF29KIETjxFdp/R47ro7+Gi6GZTIc8+PpCYB8EojBww89zM6xd/goJG
-	rWmlu21qA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qHPuWejOw9gJUUAPb0HptJLQqhPhQSRSY2CHuU13wbU=; b=G7yV+kNTrC1hlt
+	EWkTrVcT+f5SEb4QZ1HA74C9gMsAdc9B8UaH+T7SIbTxUdcvjv9tSXCNJXAP+Kd7xCGLD7YxG1vz1
+	dk4wZSi956ZNAja9vjxHrXK6a7o1XYUlS+KdQr6OQ/9LQcUwxYg9wngQtUpYLfKNCD0tg1Dca+Z0Y
+	LSCQEbPQ3fvYMtJ85kjlRZpgkRqpeWHPo6K1w/lkbGT/K87EOtL4/2/ngOoQK/dB2QTT07xcka0Si
+	lBgGx4qhNtRsa8tJgkVlWu5qFNe0ZsJ0bM3k7SzqLYNPtFe0P1+YJZLQeCYAVi+6EB0JYNSee9aQO
+	ThX17ZefkOy+Pz+IUV/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw5Iu-0006wu-Nh; Mon, 27 Jan 2020 14:23:52 +0000
-Received: from out3-smtp.messagingengine.com ([66.111.4.27])
+	id 1iw5Mi-0000Fp-PK; Mon, 27 Jan 2020 14:27:48 +0000
+Received: from mail-eopbgr00048.outbound.protection.outlook.com ([40.107.0.48]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw5Ik-0006vc-C9
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 14:23:43 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 7F3D6220E4;
- Mon, 27 Jan 2020 09:23:41 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Mon, 27 Jan 2020 09:23:41 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm1; bh=6nVE0kCyNJt9qWBWbOEKXHwSwow
- EKCywtD9brS7Cseg=; b=jSd+KVp02RKwQqPOorW+yQlhQtgIyI5GqkLKAEGj54b
- VPHJNyxapcInzFerkE3dJs2dhmszb/mrNDbHIS6y5614b+yH9VnDC8T0ksTehpjz
- Lkgjt8RVRotnnu8kQBagY3uugjb+JSY1/YRn18NbsdNI8n/b6/Un3G6feKx5pN9z
- XVuvLYxRk0/H+olW0rAHD87ANjdCgUrkDb/qDdXPPGRV8WHZVV6oUPSQURmba+8Y
- h1MOaAY7+0+ur0G4Y5TTGMrtyN3GXW8ey9bmjvDna6Gamdk93UeDMy3G5x+EVe+s
- t6J6rONmRjNahF57o1GyH4vod4rCP+HCmzFs/ZuP6VA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=6nVE0k
- CyNJt9qWBWbOEKXHwSwowEKCywtD9brS7Cseg=; b=D7EzLR7lxn0OcIw0cH2BLp
- 7CXRBRI4NSjaUx6TlrGbgMaRbt9MnAtKKTg5hBclY8hI3j64++fNEieLivCCtzte
- 3mSLvHOD6e/bBp3ZayhVRAZNgSZl9oTATcQhssdFw+b5xTgSbAWKV+/DEIgf2P89
- yTi1OA4hhsaaR+I79LeLQebUaMzLuF+IBuNiHrPOcmWtFYf+UQUL9qH3WjRrvHCS
- +/1AMx7SM7sdJYB8ODYCjFpM7tYlvW0QQnljqBRlHKwik/cT5C9wigVue3wzuiHt
- IHncMW1BS8aqxRlc3RVJmGX9NeDRvpapzSeL3wbSxA8L6TRpc7cCe8nGUbdIexBw
- ==
-X-ME-Sender: <xms:bfIuXjumlbnjk2u_C1w6XJ4Se3pJzIY_US3xcycy-6jZxRRfIWrWvw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrfedvgdeifecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtjeenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:bfIuXm3v5sNBERXLPgckY-tKb8uutWlW7awBLTWTxLP3ddnzDrKpfg>
- <xmx:bfIuXgDhfhzfoCbgX8lQt1FhbIAwnqCW72eXZ-vamuB8CasVo17M0g>
- <xmx:bfIuXlV47Bf5kEkVqvIb-RYhddj7ukYQufeEBYKGImnVsWezO-GTBw>
- <xmx:bfIuXucAErhGZsMH9hHPsXAmB1UPZzfwU75CZN9C2DRmlWahFJHGew>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 313263069F0E;
- Mon, 27 Jan 2020 09:23:41 -0500 (EST)
-Date: Mon, 27 Jan 2020 15:23:39 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@gmail.com>
-Subject: Re: [PATCH 3/3] arm64: dts: allwinner: h6: Add IOMMU
-Message-ID: <20200127142339.crxsuunzec5drfe2@gilmour.lan>
-References: <cover.b2a9e1507135d81e726fcbb65137665a7f0ab74f.1579696927.git-series.maxime@cerno.tech>
- <54e22e25c2c13cb1b73cc7ecb645b5d62f325b63.1579696927.git-series.maxime@cerno.tech>
- <5320339.DvuYhMxLoT@jernej-laptop>
+ id 1iw5MW-0000E9-4X
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 14:27:37 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HcJ8YOsr+MgNsZulCjgj5+b5tcoLX4Jmxh/441MaPPCD8RgT7PUXRajt33h/sDMKbRdUAEGC3CnGYIrJd/iQyEFXmWjAxbwRYBMiW5R6Nmb0Id1/YYN6uFKEhTBPTUIQtCxq5hGLi8n0fYcDiD7TEtWD1uZR/olfr93bTp1ehKc0fXGo606j+xT4G0UU8W2JjxS1Lwr/6NGlinjijvge9mevS6Oo0IZblVg+KMuDcxeQpkdWyvY8Zb194ASE3fqIWqFzr+549UzGnl83Gb7YUAYHIMAjhxpCTRK/1u14OPZ6kXl5gXg/iv1iyrv6RhD/GpbjPicrX/m42nesqDZOGg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/KD2Q4/h6XGP/DalqA/JxOWpEjd4ULXrLedbMET6M3w=;
+ b=oAjHqq8Hwt8TkUCO9wbLw2SVbL+jZwD9A53WtrbprRwN13209vUcwQTxOkFUwUvTMUf9uEL/G69+kxw8jgJLzHUr3eebt1aE412sgoakvMKrRdjdCvBhWbPxcIRWiL/yhdnbYnpguwpo0Ipb0BqK9rY7Nwyv94DNaeQE1XugK0+KQAirRZX3v+81Yp/qgwmHY7onkNb0M/YEgGKLm4QCRb7JGiehCDVT9JCHrR9gO0hJtZWIUSe7YK4RX//xrVRhPR8yNexu9Yx+XoIDFulXN5qZD69iM/+npJjHpP/deeEKuzk87VmZNA5hwAFyZXzugKP4MPljTIU84NFEjR8HOw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
+ s=selector2-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/KD2Q4/h6XGP/DalqA/JxOWpEjd4ULXrLedbMET6M3w=;
+ b=R8g2FIVwX941V2NqbIRpg4GiLvDF315HKnkvkLAaRH2xD4c7JInXHusejBJSl0sZxnFw4ktynE3NvpNwP/eSEsRx71rxbjROI43vDvW8GVJtsE+mauySx4O3OrJq5WO/ZABzNJ5G+6K1DV8XDdBCOx3HrHGEnlQkdE01y7rNYDc=
+Received: from VI1PR0402MB3839.eurprd04.prod.outlook.com (52.134.16.147) by
+ VI1PR0402MB3664.eurprd04.prod.outlook.com (52.134.15.18) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2665.24; Mon, 27 Jan 2020 14:27:30 +0000
+Received: from VI1PR0402MB3839.eurprd04.prod.outlook.com
+ ([fe80::8881:e155:f058:c0d1]) by VI1PR0402MB3839.eurprd04.prod.outlook.com
+ ([fe80::8881:e155:f058:c0d1%4]) with mapi id 15.20.2665.017; Mon, 27 Jan 2020
+ 14:27:30 +0000
+Received: from fsr-ub1864-103.ro-buh02.nxp.com (89.37.124.34) by
+ AM3PR05CA0141.eurprd05.prod.outlook.com (2603:10a6:207:3::19) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2665.21 via Frontend Transport; Mon, 27 Jan 2020 14:27:29 +0000
+From: "Daniel Baluta (OSS)" <daniel.baluta@oss.nxp.com>
+To: "shawnguo@kernel.org" <shawnguo@kernel.org>
+Subject: [PATCH 0/2] Add more power domains
+Thread-Topic: [PATCH 0/2] Add more power domains
+Thread-Index: AQHV1R3oVnys6XlKE0yxPQVJPt7+1w==
+Date: Mon, 27 Jan 2020 14:27:30 +0000
+Message-ID: <20200127142717.27570-1-daniel.baluta@oss.nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM3PR05CA0141.eurprd05.prod.outlook.com
+ (2603:10a6:207:3::19) To VI1PR0402MB3839.eurprd04.prod.outlook.com
+ (2603:10a6:803:21::19)
+x-mailer: git-send-email 2.17.1
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=daniel.baluta@oss.nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [89.37.124.34]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 7b424bff-6d01-4b48-c855-08d7a3350a64
+x-ms-traffictypediagnostic: VI1PR0402MB3664:|VI1PR0402MB3664:
+x-ms-exchange-sharedmailbox-routingagent-processed: True
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR0402MB36649EF4EE2F20B0DA3FB16FB80B0@VI1PR0402MB3664.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3631;
+x-forefront-prvs: 02951C14DC
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(346002)(136003)(39860400002)(366004)(376002)(189003)(199004)(1076003)(8936002)(66476007)(66946007)(6916009)(66446008)(54906003)(81156014)(81166006)(2616005)(316002)(956004)(66556008)(64756008)(478600001)(52116002)(5660300002)(6506007)(2906002)(8676002)(16526019)(186003)(6666004)(86362001)(6512007)(6486002)(71200400001)(4326008)(26005)(4744005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3664;
+ H:VI1PR0402MB3839.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:0; 
+received-spf: None (protection.outlook.com: oss.nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: bqR3CPGtQNW++dHR5s0aniS+/5lJg2SdWKmQlUk5sS5iEaMDoEjrj0yw9iKb+lrGt+zNPUyePYizgx77C96+J2AjBWjQv60eHdeeYQjlyp0gY8VR+iCra4jSX0TavJAK5dj9AFaPVDbwTgwAV5WVBOWrDTVW/lQdGGySm4t3GL4oZNhjIrGHn72RQ80s7JJlyoyamAa/0gsEvekocSsPw/LI3owMkzP3zoNFN/Tq4OURth7ON39ojSHFUQ8fozacw/PqQEXIiyL90xn1KhJ8fsITbQXuTQx2L4F5y5D/N/XPKv9N6emWe+/8fyYetrDYBZBF1hpU5ADMWGkONdBFUHA66/DK8l4/Go6DvDFWm9SsY21YclKvB+U3oVvht2oGvXtiate0OKMq2zv00cuu0i+o9k48nA5JX0hK5uv8L0FwlZz714CuNIcCcw0+VaHE
+x-ms-exchange-antispam-messagedata: hR9pqWj94uqBS91/AzcZch7ndcH4CJUgC16+4IhbU/ozim7uNCTNDJ3enQS10YTKLI4yOBrSW1D5Y0FJmrSCo7w9TTqE7QLirtO+wKu0HfA1mbaQmKqnrrb3vTpS3KcVxM1D6zUfCDh8kgooqguuqQ==
 MIME-Version: 1.0
-In-Reply-To: <5320339.DvuYhMxLoT@jernej-laptop>
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7b424bff-6d01-4b48-c855-08d7a3350a64
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jan 2020 14:27:30.2459 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: S6GxhdEPpnHDMLdtROY8ssUC2yUjL4YdvyioVjxpB1bjztl10TrAZxHkkLJxQVlGZ3gjuUu8WfVEkriM3o69jg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3664
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_062342_551918_99DEB6BA 
-X-CRM114-Status: GOOD (  14.42  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200127_062736_327026_C5DA0C2C 
+X-CRM114-Status: UNSURE (   6.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.27 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.0.48 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -104,84 +126,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6141327176888937612=="
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ Sebastien Fagard <sebastien.fagard@nxp.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Daniel Baluta <daniel.baluta@nxp.com>
 
---===============6141327176888937612==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="23dys2vkg5qz4fja"
-Content-Disposition: inline
+This patch series adds some missing audio PD domain and enlarges
+the power domain range for MU side B.
 
+Daniel Baluta (1):
+  firmware: imx: scu-pd: Add missing audio PD ranges
 
---23dys2vkg5qz4fja
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Sebastien Fagard (1):
+  firmware: imx: scu-pd: enlarge PD range for mu_b
 
-Hi Jernej,
+ drivers/firmware/imx/scu-pd.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
-On Fri, Jan 24, 2020 at 09:54:23PM +0100, Jernej =C5=A0krabec wrote:
-> Dne sreda, 22. januar 2020 ob 13:44:09 CET je Maxime Ripard napisal(a):
-> > Now that we have a driver for the IOMMU, let's start using it.
-> >
-> > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> > ---
-> >  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 11 +++++++++++
-> >  1 file changed, 11 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> > b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi index
-> > 29824081b43b..8608bcf1c52c 100644
-> > --- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-> > @@ -53,6 +53,7 @@
-> >  	de: display-engine {
-> >  		compatible =3D "allwinner,sun50i-h6-display-engine";
-> >  		allwinner,pipelines =3D <&mixer0>;
-> > +		iommus =3D <&iommu 0>;
-> >  		status =3D "disabled";
-> >  	};
->
-> Isn't iommu property of the mixer node? After all, mixer is the one which
-> reads one or more framebuffers. Once second mixer is defined, would you p=
-ut
-> another iommu phandle here?
+-- 
+2.17.1
 
-You're right. I added it during the early dev, and forgot to remove
-it. Thanks!
-
-Maxime
-
---23dys2vkg5qz4fja
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXi7yawAKCRDj7w1vZxhR
-xeztAP9pfvFOvLl0WNETETdOGyGO/pBPPZtOCEHsIaOgcIfqCwEA61DgtSFMFRSM
-4UmZO6xgB73HVB6s09UFT59ZuHSWMgg=
-=/MfB
------END PGP SIGNATURE-----
-
---23dys2vkg5qz4fja--
-
-
---===============6141327176888937612==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6141327176888937612==--
-
