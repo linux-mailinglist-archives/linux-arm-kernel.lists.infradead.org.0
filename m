@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FA1A14A7F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 17:22:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1B1F14A822
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 17:33:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F668teYVeQpz42CHz/Y/8vqryDq+uzhZCUyF3Z8KZwI=; b=g1iaNGNJOe7zy5
-	53X9gsPE0JVPPZaF0DLmHReFaqHFF4r6TC57frCEIHeQ9xqfbmO8/nYMwcvyaR7z9n+y70yq3uoT/
-	fzdFBwl3YKvDZ7dmDCRKfE6zYFiEJ9hNJzx9/KcZnL6C0hLuNeFbqAXkrIQn3yltDQkp93PNRplMg
-	nTQ+/o2o2O2gusOlTWLwTdnFyDimR9D9mknnyMzuxdyEeNjEDkBYfPbxtxOKytgoeGH/RZTmbqstz
-	FQyrEtQvC4PC/X39TPyCpIAlejMZNotAzlnl0h573beAWqaiNN1WHB563p/Ux4/93FUv17ibVze6X
-	5TG0fFeEH3jWY4QGQ+Ig==;
+	List-Owner; bh=rjoT2TlMkruBAG7oVVdq0sPo+DB4eVjokMYhIgfgbEY=; b=tw+wQhAsMmGC4v
+	4qq0zuZb9pFIM+3OZGjLjTjPocZOFRsKINetrtqN4Dxs/W4bXtDb8VRBdGJWlKRF1tdTfJrNPEQ0R
+	mPS6IZvCo8wD+HE7CYDVG9Q+bh7/JXDtAm8RRQJftxOQbJjsTg5SdTBeUCSTX4nyfRBg+KRFoHskJ
+	6GG8bm+0Q1XOtMuZYhlOTh/7n9HmiYUxyNJc1qDCwkoDO/tB7fZ6WlffETH5AmuLF+UGFVckllIrX
+	rSBX+Vo2bbh2592dSgG+j14OY5J4qMxwFjESPgIERgO4MBjF9lHBDW4HpnG5DiyFohNICqdTdG51l
+	7yMwzBRrN/uG0mtOpkDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw79e-0005Jl-K7; Mon, 27 Jan 2020 16:22:26 +0000
+	id 1iw7Jv-0000y7-Ql; Mon, 27 Jan 2020 16:33:03 +0000
 Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw79V-00058e-2d
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 16:22:18 +0000
+ id 1iw7Jl-0000x7-Qy
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 16:32:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
  s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
  Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
  :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
  List-Post:List-Owner:List-Archive;
- bh=jqVwM+IjEqXkV9M8NMwyyP0+f47l+p41i+3R+JYJ8V0=; b=mqlDVbcQuEeg/xh8juESDnyTCA
- EV2SZgsM9/mfEMZJntjYI9HKbPXJqaMO9Wb8xI61gyQhiLVoN8pYugGUCzVwVVMARE5yqbfHIgc4C
- n36zZTIJ9TfLD0EB81WznFHWH9SK9Znf3960J3xkKLzQOT64vsdoDoDqD9p11Av2TsOU=;
+ bh=BnSfaZk62rOeNYfQ6Q5vO9fhE1qKEGe75T8dAanwXwk=; b=KrVk633erhN4xaEPpKrr+NevW2
+ GsJ+AKkyK8sVkRdsD/oFOpNTSOHRW9t7+JGjKS/CZTNF4DyHMsjPNisewktHT41HFxJA/CGFjsS4/
+ 6MzWUO0URxpXbITMLaq1V2Hgi+n9e/2rRb/+LVN6fdjUE9+HVzr666Nc6N9uYoC1ESkQ=;
 Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
  (envelope-from <andrew@lunn.ch>)
- id 1iw79K-0007AO-8b; Mon, 27 Jan 2020 17:22:06 +0100
-Date: Mon, 27 Jan 2020 17:22:06 +0100
+ id 1iw7JZ-0007C7-U2; Mon, 27 Jan 2020 17:32:41 +0100
+Date: Mon, 27 Jan 2020 17:32:41 +0100
 From: Andrew Lunn <andrew@lunn.ch>
 To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 Subject: Re: [RFC net-next 6/8] net: phylink: Configure MAC/PCS when link is
  up without PHY
-Message-ID: <20200127162206.GJ13647@lunn.ch>
+Message-ID: <20200127163241.GK13647@lunn.ch>
 References: <cover.1580122909.git.Jose.Abreu@synopsys.com>
  <9a2136885d9a892ff170be88fdffeda82c778a10.1580122909.git.Jose.Abreu@synopsys.com>
  <20200127112102.GT25745@shell.armlinux.org.uk>
@@ -54,8 +54,8 @@ MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <20200127161132.GX25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_082217_123907_E27DC30F 
-X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-CacheID: sfid-20200127_083253_877927_C0DF0F8B 
+X-CRM114-Status: UNSURE (   7.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -101,17 +101,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> > Heiner has another device which has an Aquantia PHY running in an odd
-> > mode so that it does 1G over a T2 link. It uses SGMII for this, and
-> > that is where we first noticed the issue of the MAC and PCS having
-> > different configurations.
-> 
-> Do you know when the issue appeared?
+> Presumably, all these should be visible on the ZII rev B as well?
 
-As far as i understand, it never worked, it is not a regression as
-such. But Heiner probably knows more.
+Maybe. The two SFF mounted on most rev B are connected to ports which
+only do SGMII, not 1000Base X. They tend to work by chance, and as
+such, i've never taken them seriously.
 
-      Andrew
+If i remember correctly, you modified your board, moved the SFF over
+to the normally unpopulated slots, and removed a resistor. That setup
+then has the SFF connected to the 6352, which can do both SGMII and
+1000BaseX.
+
+It could also be that the 6352 does have pass through from the PCS to
+the MAC, where as the 6390 does not? The 6390 is much more capable,
+having 2.5G and 10G support. The SERDES registers are very different,
+C45 vs C22 of the 6352.
+
+    Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
