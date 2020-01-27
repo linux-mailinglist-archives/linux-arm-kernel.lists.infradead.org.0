@@ -2,94 +2,162 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0372514A013
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 09:51:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA25B14A01F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 09:53:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fXYqOVgowgWS1GQ9GHohwTCH08bAaiAQWb3Wu5RHwxU=; b=da6j25P6QdALI3
-	OplNvQnpzdVLhGfLH+a498AuiwHmOo+G460/GDQqch49CQGYX0aG6KUBryw1oBzU4hxMj3ogjZDOe
-	ToShIfGgBKzLvqB0mxAr1nt81F6EZfBustxNCXlcH7zt8Cvc9U+aJlCEBHapfIkYlXANVNGmlWl5D
-	4s9q0U/ZNU/QqlrkWfq/5PrJl7iLz6HN1Bk30Sl64hyPJhEf6MdxiljzFb/dzKRnN7oaoVruguAoQ
-	xZzZEfpjM75OWRLc3v0GtGWcYZF2LpxhBQPub2jnpp6d1fJ6LbayFjq3ACCREwqfJtP7zD5uB//VC
-	7ZnrZ+VzJ1YYBcc+2Mpg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Qwy1DYA7+r6c0rlLchmiBmjsu6bYBSWVBbCaqbTzjk0=; b=PchonG4/eWFAR2
+	cQV8eikQioL2AcycDHEmcq+7C+eoJqJUqk1rdzd8zGToFjNVauFb4B/W3ZZn1owDHqXvqxXBYghDx
+	74tKBpVbD8VsfEyvInFjsBEU1uxz1JDWrEDJh0cpgGOZ/sNX19L5tWrKw2xizmK1znG6FHF9Cb4LU
+	ySB7fqn4HegxMJftyfkU8Ey2IeNmX+4f7kYDYPgvd5hnwrLlFmnZ5NxaP5AI2qAejSlH0dVc78gxG
+	nULe4Qqnz8Y9fEjKzB5uJlsYJVrzIZpMvjjpHrPRFbTsODrae/EOQFA/zxNjXg2tTq18HbiQWKUmm
+	hDjsLIsx38pC9Q6n2h1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw07K-0002NE-F4; Mon, 27 Jan 2020 08:51:34 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1iw09D-0002mv-4r; Mon, 27 Jan 2020 08:53:31 +0000
+Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw079-0002ME-BO
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 08:51:24 +0000
-Received-SPF: Pass (esa4.microchip.iphmx.com: domain of
- Ludovic.Desroches@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="Ludovic.Desroches@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa4.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa4.microchip.iphmx.com;
- envelope-from="Ludovic.Desroches@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa4.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: AxAwd0T3ZOmV0XLI2LYNOrI/YJoJkdhfnjSn5h5cXH3thlUN4Ju0axioMoSydwZrDv6iNwH1Y1
- UTnNmsXFX98ErPpA6hBTBPvCO70Rgu0z03tDTMuejhrkdicshIX7J9EBM6eB0cCQdynEQdnlJw
- y2vCPb12x4FERSVS7YSztdAjU4wE56wK1aT89TfpXsYXzPRKhDg/wIXDdTUudyGnhpt6phFFmA
- G9XTTHWYBrKAMsNt0zHR37PMj+vv7g1ppC0SS2VQ8sYDlFNNkIw6fjoa5cwMIMlrALNJoZy4cm
- TdE=
-X-IronPort-AV: E=Sophos;i="5.70,369,1574146800"; d="scan'208";a="62246076"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 27 Jan 2020 01:51:16 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 27 Jan 2020 01:51:14 -0700
-Received: from localhost (10.10.85.251) by chn-vm-ex02.mchp-main.com
- (10.10.85.144) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Mon, 27 Jan 2020 01:51:14 -0700
-Date: Mon, 27 Jan 2020 09:50:49 +0100
-From: Ludovic Desroches <ludovic.desroches@microchip.com>
-To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-Subject: Re: [PATCH v3 2/6] i2c: at91: implement i2c bus recovery
-Message-ID: <20200127085049.itsxvqm5dlypzc4x@M43218.corp.atmel.com>
-Mail-Followup-To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
- linux-i2c@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- kamel.bouhara@bootlin.com, wsa@the-dreams.de,
- Nicolas.Ferre@microchip.com, alexandre.belloni@bootlin.com,
- robh@kernel.org, peda@axentia.se, linux@armlinux.org.uk
-References: <20200115115422.17097-1-codrin.ciubotariu@microchip.com>
- <20200115115422.17097-3-codrin.ciubotariu@microchip.com>
+ id 1iw092-0002m7-JL
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 08:53:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1580115137;
+ bh=5J3yFAs/di5oKgW1gMmea+vs9/kXgj7kul9UGWXzJDI=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=VMM/NbVJG7Kw6ZTrKLFnAP1UestTNoHBei4c68L/RMO3FcWjF8q3Wf/no9c2dV9wf
+ 1bF8qbtP9+cY/rqxLF2/Y6NSw2RHC+OqFXXtyBIM5clttjZXVhGIkfTC21yzJEdGfn
+ TXwsgk/LAw+LtArm7fwkgVaQkkSmnLKxYewcMarQ=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.20.60] ([92.116.146.84]) by mail.gmx.com (mrgmx005
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1MHXBj-1irrPM2OBt-00DV4v; Mon, 27
+ Jan 2020 09:52:17 +0100
+Subject: Re: [PATCH v4 7/9] parisc/perf: open access for CAP_SYS_PERFMON
+ privileged process
+To: Alexey Budankov <alexey.budankov@linux.intel.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@redhat.com>,
+ "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
+ "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
+ "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
+ Alexei Starovoitov <ast@kernel.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ "james.bottomley@hansenpartnership.com"
+ <james.bottomley@hansenpartnership.com>, Serge Hallyn <serge@hallyn.com>,
+ James Morris <jmorris@namei.org>, Will Deacon <will.deacon@arm.com>,
+ Mark Rutland <mark.rutland@arm.com>, Casey Schaufler
+ <casey@schaufler-ca.com>, Robert Richter <rric@kernel.org>
+References: <c0460c78-b1a6-b5f7-7119-d97e5998f308@linux.intel.com>
+ <806e4881-5c22-5914-a656-5eeb65130dbe@linux.intel.com>
+From: Helge Deller <deller@gmx.de>
+Autocrypt: addr=deller@gmx.de; keydata=
+ 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
+ c2TFWAS8k6RLkk41ZUU8ENX8+qZx/Q==
+Message-ID: <00d0213a-dce8-45b1-1905-11ea4af2d207@gmx.de>
+Date: Mon, 27 Jan 2020 09:52:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200115115422.17097-3-codrin.ciubotariu@microchip.com>
+In-Reply-To: <806e4881-5c22-5914-a656-5eeb65130dbe@linux.intel.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:aIpVETSkQFdyEHqjZO3h7rjr8aYRDxnS7V9FaZk2Tm7dLtDU63A
+ IqqI0FrCVX1l2wUjdNPMhrS7zbwhyFSFduTdfuFttOI/a7pD2/g2QldnaBBwAGjDI+98JC3
+ TLPxWC9yPiQPO2UM/tzq5s+LhzGIoRXQBWMlcqqBjhWSWyt9CeSVBnNpC+X0NNNAgsGwQCC
+ Co1FNj38ObcObdv3FA0Jg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:BOEbCTgCEy4=:MwUtX7VDuQ8Pm7Q9fXXE3y
+ m6+Wzto5tVfFi84hTj75AXbPx0rySVkPXUl7S5AfRF+i5wCQvON7B5L9LXn3rSXwkRHjJL2bc
+ zNKd3lWjpRsaYJo3PCag6iVs8J8juB0/n4cM6O/nYIaEouHl4vaU4U1O52oPikrt/Hqss9YDd
+ UoowL2mu7pUWWiqdR7rYxnvTvNa4OL5w20rxfoWKig2+SxvgsARrv90cxNEU/d9WGPygKMR9Y
+ ry6d6abMhxbrfz3aEtq4H2rsvgQhGq3yBjrekxferXfr0GFnlOcQyiedKOZD4osJfSI1sh7ja
+ t/LQhSiYULP46aPhFbbGpDlbHoBX7NA8OKm60GLclBc8WDbSsZRQKUL1zQNproIVTOeqJS8Xb
+ Fxdeyjs07y0WxdaqUcf/5BdbyFhR1fwW61FP7m03Pkw63CWKawDuZE3ECXCo1BtiDAblzUfyN
+ Q1pNIILT9HnVN5Ono64xI5E74+TQ8auzrPfmhU5cp+g4xGLIjW3gmPi5UI0ar7GBoyNjyXXR0
+ Sfjh7BVjtvQx7m92ZMq3WCzjGS2iYIMy/JgPcs0KkppMrYhIp4+7bfGsgaSjn6C6lW3ABQ9Pi
+ CFolfuw8jNu98IoIyngd9Dwm9aaUvlOjg5Kf6JSEHuEZbLIN5cUmvVPab4O5OCyVMVXhCWaK1
+ CYMow24k1P4brb2DXmVpnUjbKrFktbYkt71F+SCk6KxBj6TwhbV9BdJSmlvfpuzfJ4ckRUgfM
+ iHasreYa1aiiwM6umPLnET9pEk+WNxt7xVCNXoaRWviI/+uRL8cKkLkrx9KByu3gdgMS25mll
+ zqNcvQh/c/fWmlUF6X7GuVcGRedQxvyP91eKACPPUCm2XNn8TOgZeVG3uoOj09f5LUCMrKgLi
+ UjrwOhmoHC5mrvVVqUUC/YOE+9JRnSvPAmDKSyTofGWIynqC6ayY9xnggeBIgpvASFVn9IYYT
+ zIQvinZfsWvecb2nMvc6pLBpAIhlYcUj/yB8hf5HpYooG2U2gCOg7O23gHgj95I3fHL3CI2dI
+ F7t7gG66GsxfbCVv8gUw3g5wOvZ+kx3fNRlR2a6z9jfN2rwOO+vqPf6kc9LqudtZGusdmFkjl
+ kzibafMuSHXTYZv0t5QXAA7yL4VZiJ5/2F9itXzks4WhJiqPTKVW7i3mgUy7ri43OFnEPRbHs
+ PMtWRD4UdppG0SwcIMbve/Z8rmAbldeOLcJXubwNcUY4+KUPuKq29jPy82M+s6qHeH2Zb9Edk
+ gjF8tb2EunU8U+2vR
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_005123_430499_C91F1A4B 
-X-CRM114-Status: GOOD (  17.81  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200127_005320_963582_F6855F72 
+X-CRM114-Status: GOOD (  14.96  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.15.18 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [deller[at]gmx.de]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,180 +169,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alexandre.belloni@bootlin.com,
- kamel.bouhara@bootlin.com, wsa@the-dreams.de, linux-kernel@vger.kernel.org,
- linux-i2c@vger.kernel.org, peda@axentia.se, linux@armlinux.org.uk,
- robh@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Song Liu <songliubraving@fb.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Stephane Eranian <eranian@google.com>, Jiri Olsa <jolsa@redhat.com>,
+ Andi Kleen <ak@linux.intel.com>, Igor Lubashev <ilubashe@akamai.com>,
+ oprofile-list@lists.sf.net, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>,
+ "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Tvrtko Ursulin <tvrtko.ursulin@linux.intel.com>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>,
+ "bpf@vger.kernel.org" <bpf@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jan 15, 2020 at 01:54:18PM +0200, Codrin Ciubotariu wrote:
-> From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> 
-> Implement i2c bus recovery when slaves devices might hold SDA low.
-> In this case re-assign SCL/SDA to gpios and issue 9 dummy clock pulses
-> until the slave release SDA.
-> 
-> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
-> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
+On 18.12.19 10:29, Alexey Budankov wrote:
+>
+> Open access to monitoring for CAP_SYS_PERFMON privileged processes.
+> For backward compatibility reasons access to the monitoring remains open
+> for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN usage for secure
+> monitoring is discouraged with respect to CAP_SYS_PERFMON capability.
+>
+> Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
+
+Acked-by: Helge Deller <deller@gmx.de>
 
 > ---
-> 
-> Changes in v3:
->  - removed unnecessary condition from info print;
->  - removed unneded declarations;
-> 
-> Changes in v2:
->  - called i2c_recover_bus() after an error occurs, if SDA is down;
->  - release gpios if recovery information is incomplete;
-> 
->  drivers/i2c/busses/i2c-at91-master.c | 78 ++++++++++++++++++++++++++++
->  drivers/i2c/busses/i2c-at91.h        |  4 ++
->  2 files changed, 82 insertions(+)
-> 
-> diff --git a/drivers/i2c/busses/i2c-at91-master.c b/drivers/i2c/busses/i2c-at91-master.c
-> index 7a862e00b475..0aba51a7df32 100644
-> --- a/drivers/i2c/busses/i2c-at91-master.c
-> +++ b/drivers/i2c/busses/i2c-at91-master.c
-> @@ -18,11 +18,13 @@
->  #include <linux/dma-mapping.h>
->  #include <linux/dmaengine.h>
->  #include <linux/err.h>
-> +#include <linux/gpio/consumer.h>
->  #include <linux/i2c.h>
->  #include <linux/interrupt.h>
->  #include <linux/io.h>
->  #include <linux/of.h>
->  #include <linux/of_device.h>
-> +#include <linux/pinctrl/consumer.h>
->  #include <linux/platform_device.h>
->  #include <linux/platform_data/dma-atmel.h>
->  #include <linux/pm_runtime.h>
-> @@ -478,6 +480,7 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
->  	unsigned long time_left;
->  	bool has_unre_flag = dev->pdata->has_unre_flag;
->  	bool has_alt_cmd = dev->pdata->has_alt_cmd;
-> +	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
->  
->  	/*
->  	 * WARNING: the TXCOMP bit in the Status Register is NOT a clear on
-> @@ -637,6 +640,13 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
->  		at91_twi_write(dev, AT91_TWI_CR,
->  			       AT91_TWI_THRCLR | AT91_TWI_LOCKCLR);
->  	}
-> +
-> +	if (rinfo->get_sda && !(rinfo->get_sda(&dev->adapter))) {
-> +		dev_dbg(dev->dev,
-> +			"SDA is down; clear bus using gpio\n");
-> +		i2c_recover_bus(&dev->adapter);
-> +	}
-> +
->  	return ret;
->  }
->  
-> @@ -806,6 +816,70 @@ static int at91_twi_configure_dma(struct at91_twi_dev *dev, u32 phy_addr)
->  	return ret;
->  }
->  
-> +static void at91_prepare_twi_recovery(struct i2c_adapter *adap)
-> +{
-> +	struct at91_twi_dev *dev = i2c_get_adapdata(adap);
-> +
-> +	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_gpio);
-> +}
-> +
-> +static void at91_unprepare_twi_recovery(struct i2c_adapter *adap)
-> +{
-> +	struct at91_twi_dev *dev = i2c_get_adapdata(adap);
-> +
-> +	pinctrl_select_state(dev->pinctrl, dev->pinctrl_pins_default);
-> +}
-> +
-> +static int at91_init_twi_recovery_info(struct platform_device *pdev,
-> +				       struct at91_twi_dev *dev)
-> +{
-> +	struct i2c_bus_recovery_info *rinfo = &dev->rinfo;
-> +
-> +	dev->pinctrl = devm_pinctrl_get(&pdev->dev);
-> +	if (!dev->pinctrl || IS_ERR(dev->pinctrl)) {
-> +		dev_info(dev->dev, "can't get pinctrl, bus recovery not supported\n");
-> +		return PTR_ERR(dev->pinctrl);
-> +	}
-> +
-> +	dev->pinctrl_pins_default = pinctrl_lookup_state(dev->pinctrl,
-> +							 PINCTRL_STATE_DEFAULT);
-> +	dev->pinctrl_pins_gpio = pinctrl_lookup_state(dev->pinctrl,
-> +						      "gpio");
-> +	rinfo->sda_gpiod = devm_gpiod_get(&pdev->dev, "sda", GPIOD_IN);
-> +	if (PTR_ERR(rinfo->sda_gpiod) == -EPROBE_DEFER)
-> +		return -EPROBE_DEFER;
-> +
-> +	rinfo->scl_gpiod = devm_gpiod_get(&pdev->dev, "scl",
-> +					  GPIOD_OUT_HIGH_OPEN_DRAIN);
-> +	if (PTR_ERR(rinfo->scl_gpiod) == -EPROBE_DEFER)
-> +		return -EPROBE_DEFER;
-> +
-> +	if (IS_ERR(rinfo->sda_gpiod) ||
-> +	    IS_ERR(rinfo->scl_gpiod) ||
-> +	    IS_ERR(dev->pinctrl_pins_default) ||
-> +	    IS_ERR(dev->pinctrl_pins_gpio)) {
-> +		dev_info(&pdev->dev, "recovery information incomplete\n");
-> +		if (!IS_ERR(rinfo->sda_gpiod)) {
-> +			gpiod_put(rinfo->sda_gpiod);
-> +			rinfo->sda_gpiod = NULL;
-> +		}
-> +		if (!IS_ERR(rinfo->scl_gpiod)) {
-> +			gpiod_put(rinfo->scl_gpiod);
-> +			rinfo->scl_gpiod = NULL;
-> +		}
-> +		return -EINVAL;
-> +	}
-> +
-> +	dev_info(&pdev->dev, "using scl, sda for recovery\n");
-> +
-> +	rinfo->prepare_recovery = at91_prepare_twi_recovery;
-> +	rinfo->unprepare_recovery = at91_unprepare_twi_recovery;
-> +	rinfo->recover_bus = i2c_generic_scl_recovery;
-> +	dev->adapter.bus_recovery_info = rinfo;
-> +
-> +	return 0;
-> +}
-> +
->  int at91_twi_probe_master(struct platform_device *pdev,
->  			  u32 phy_addr, struct at91_twi_dev *dev)
->  {
-> @@ -838,6 +912,10 @@ int at91_twi_probe_master(struct platform_device *pdev,
->  						     "i2c-analog-filter");
->  	at91_calc_twi_clock(dev);
->  
-> +	rc = at91_init_twi_recovery_info(pdev, dev);
-> +	if (rc == -EPROBE_DEFER)
-> +		return rc;
-> +
->  	dev->adapter.algo = &at91_twi_algorithm;
->  	dev->adapter.quirks = &at91_twi_quirks;
->  
-> diff --git a/drivers/i2c/busses/i2c-at91.h b/drivers/i2c/busses/i2c-at91.h
-> index 977a67bc0f88..f57a6cab96b4 100644
-> --- a/drivers/i2c/busses/i2c-at91.h
-> +++ b/drivers/i2c/busses/i2c-at91.h
-> @@ -151,6 +151,10 @@ struct at91_twi_dev {
->  	u32 fifo_size;
->  	struct at91_twi_dma dma;
->  	bool slave_detected;
-> +	struct i2c_bus_recovery_info rinfo;
-> +	struct pinctrl *pinctrl;
-> +	struct pinctrl_state *pinctrl_pins_default;
-> +	struct pinctrl_state *pinctrl_pins_gpio;
->  #ifdef CONFIG_I2C_AT91_SLAVE_EXPERIMENTAL
->  	unsigned smr;
->  	struct i2c_client *slave;
-> -- 
-> 2.20.1
-> 
+>  arch/parisc/kernel/perf.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/arch/parisc/kernel/perf.c b/arch/parisc/kernel/perf.c
+> index 676683641d00..c4208d027794 100644
+> --- a/arch/parisc/kernel/perf.c
+> +++ b/arch/parisc/kernel/perf.c
+> @@ -300,7 +300,7 @@ static ssize_t perf_write(struct file *file, const char __user *buf,
+>  	else
+>  		return -EFAULT;
+>
+> -	if (!capable(CAP_SYS_ADMIN))
+> +	if (!perfmon_capable())
+>  		return -EACCES;
+>
+>  	if (count != sizeof(uint32_t))
+>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
