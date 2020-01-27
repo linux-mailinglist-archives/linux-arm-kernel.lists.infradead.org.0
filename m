@@ -2,56 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD1C414ABDB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 22:56:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D10D314AC40
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 23:46:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=NnUQhb9k2LTZpp17lmuXQLRLtSoIT9mbIuLFJPM9oUY=; b=jVcigjmOE/HaXjFnBCsrVAgObw
-	6bRGf2MI91ZakPO0RiQJmwpWmWBmAjsLMsMTbrtGdgTNKrH75x/QgU73TZPu+D84LimNAC7pN6VIY
-	gdtmw2IVMMlIK7qPFZmU9y+HQMwVkUnAUAh2K7vHHU6SdwtBUSKAu1J1aZyGw6O6ovKjNbMeLln75
-	Ixj2Y8KOkmy5ODbovStQetGleAghFPzNtjJowxRoyPtrB7sPfiKNN5i87UfuT+RVb8KpfTESTFyWR
-	KCK1M4kk+FPJb29L9xWsp73nZUaYT0N65aAUxrMvhsGU7MTwMJnySJdjVOJAYi/3d84lEIK0cADoi
-	3JJY71qQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qupp2WULnIfFFaYXpRAWuWvRau+VlaUovJ7WWP5/wm4=; b=VMFuCG8GE1AqvZ
+	g5LZ+Hua+yltpcypuT3klm/eTw8Xp5ry0FvyD93W7rm/fB/OmRVQI4bQeYkgbOZf0e/Y+e/PtS/yn
+	iWjNscMOpj3x8R/QkapvAbp5u+bdERrVsnqwtmh2gYhv3vWFEk7z+3cej6cSZX6Ot55dX9J4wkckD
+	p8CPi6yCmf2fBkMxqz58VsKFvPoGoVQ/Ifon/Cx/oQMh/PnK5W83fiGUOR65oQZeSbobLjSrdgoGw
+	TIwhUEJrByvRCyb/g3zTDBGc5v7YP2Ye4WOpxTJorhn8NYQxH1QiRiWJe3Urc0CeEofC5F17dI7rI
+	k+2CfttUSbE96edB7caQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwCMo-0000Ka-32; Mon, 27 Jan 2020 21:56:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwCM4-0008GQ-QX
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 21:55:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1DD1031B;
- Mon, 27 Jan 2020 13:55:35 -0800 (PST)
-Received: from e123648.arm.com (unknown [10.37.12.150])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9E54B3F68E;
- Mon, 27 Jan 2020 13:55:29 -0800 (PST)
-From: lukasz.luba@arm.com
-To: kgene@kernel.org, krzk@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, linux-pm@vger.kernel.org
-Subject: [PATCH 3/3] ARM: exynos_defconfig: Enable Energy Model framework
-Date: Mon, 27 Jan 2020 21:54:53 +0000
-Message-Id: <20200127215453.15144-4-lukasz.luba@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200127215453.15144-1-lukasz.luba@arm.com>
-References: <20200127215453.15144-1-lukasz.luba@arm.com>
+	id 1iwD99-0000NJ-8q; Mon, 27 Jan 2020 22:46:19 +0000
+Received: from mail-dm6nam12on2065.outbound.protection.outlook.com
+ ([40.107.243.65] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iwD8z-0000MI-R4
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 22:46:11 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=IuxqzCt+PmpCdc2y2FEty//8dxxQaE0iGtTUlyL7vws4lw49wH7kofDUM2o9SfICmCW46vdphiifJlSjsOXfJF5o3TrfjXraqCkTGnL7usgHHtRVHC3/eutUW7GTZzr0/mZNZUGaDxjdkc5LNGZWUirQaD4cbteZPgKdzRaEXKcsMNhGh2N25h0RSTgBE3L1Ik9q8YdLK7WamJJR2scJgMSYJB6MNvNxn0nzNu4euG3NXKISP+2f7Ai/8S3qtiNNLe85IMJdoKhmva58x7jtmlj5+CaFEyApIHrl9thEqToclDGTQ10NfI3Q5EcEhc8g0yaRlo1VTfuWs3bUFiOLng==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tiOrWKmePsiUTc8axMcl8P9nytKGavYQFmREBGOtLkg=;
+ b=f5J1HtG/JgRz9qXnbqVk6D7fiuKlGrtjIrQRNA/M7CUkump9tOjqrN5wJzZrmWKjrrwWGdM1+vpV5ZioCRgku43qpMIfDWVbTxjvRHO4vJbUEJOEIhMKJSIfxip8dU0MaDk1oIB8nhJgDsOuoEuSOqwBHGz2xsRRFsHIws+b1W+47Yx9qFSxBLZ09LMY9AIZUxQnFMbyaShHVhoIm8IIUChx6qYfJ1kx5K0sF12JjWOqU6G002xNfZwB/sBQG42brzuybj1XxQLa3s3IqTuZQ6DI3+97XynbWCgGnRYmgy8XHW8qM0x5iY6XU75wlFWBNq/6tuyFSRFKShU7R60tKA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tiOrWKmePsiUTc8axMcl8P9nytKGavYQFmREBGOtLkg=;
+ b=alXdq8qATDX5LZsJZqbmt86hUl/TjbgvWgdWlITNxM6LuGF3Py+WoHzt9OzaGPxiwePk6+O/W8YnDY/g9xw2ZvMk0RbuLTsBVa6lAvLG9h7nHWnxVpW3SQzv7AG277VRTb//B9BkshReFZ9gcZAeBriwjPp6YvjfDWuUVEDzYP8=
+Received: from BYAPR02MB5992.namprd02.prod.outlook.com (20.179.89.80) by
+ BYAPR02MB4598.namprd02.prod.outlook.com (52.135.239.213) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2665.22; Mon, 27 Jan 2020 22:46:03 +0000
+Received: from BYAPR02MB5992.namprd02.prod.outlook.com
+ ([fe80::f5fd:4723:4a89:3ed9]) by BYAPR02MB5992.namprd02.prod.outlook.com
+ ([fe80::f5fd:4723:4a89:3ed9%7]) with mapi id 15.20.2665.017; Mon, 27 Jan 2020
+ 22:46:03 +0000
+From: Jolly Shah <JOLLYS@xilinx.com>
+To: Sudeep Holla <sudeep.holla@arm.com>, Greg KH <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH v2 1/4] firmware: xilinx: Add sysfs interface
+Thread-Topic: [PATCH v2 1/4] firmware: xilinx: Add sysfs interface
+Thread-Index: AQHVxn8DFx2mcD2XT0SouhH9uTzcjqfqR5+AgA6zcwCAAG/7gIAAW+yAgATtBgA=
+Date: Mon, 27 Jan 2020 22:46:03 +0000
+Message-ID: <4DFDEBC9-9055-41A4-8BFB-D1EFB6EFE2DC@xilinx.com>
+References: <1578527663-10243-1-git-send-email-jolly.shah@xilinx.com>
+ <1578527663-10243-2-git-send-email-jolly.shah@xilinx.com>
+ <20200114145257.GA1910108@kroah.com>
+ <BYAPR02MB5992FC37E0D2AD9946414417B80F0@BYAPR02MB5992.namprd02.prod.outlook.com>
+ <20200124060339.GB2906795@kroah.com> <20200124113239.GB40307@bogus>
+In-Reply-To: <20200124113239.GB40307@bogus>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=JOLLYS@xilinx.com; 
+x-originating-ip: [149.199.62.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: dbf4eb9d-3783-493a-2f9c-08d7a37ab034
+x-ms-traffictypediagnostic: BYAPR02MB4598:|BYAPR02MB4598:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BYAPR02MB459894539230FC42CC322ED3B80B0@BYAPR02MB4598.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 02951C14DC
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(396003)(376002)(346002)(366004)(136003)(199004)(189003)(4326008)(76116006)(86362001)(186003)(26005)(36756003)(2906002)(81166006)(6512007)(81156014)(7416002)(316002)(478600001)(6486002)(8676002)(54906003)(66446008)(64756008)(66476007)(8936002)(6506007)(66556008)(66946007)(110136005)(71200400001)(33656002)(5660300002)(2616005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB4598;
+ H:BYAPR02MB5992.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: P3GQo5ILW0fv0QeJpEmFkp26wUtA4MzLRQyhgnIhZlP53qMaTP0PVgqSsG44f7eeU+/7Vnal1SOfyCm+gOaA4yQsy8+xa9Jas9PzOKFoyxUp2g5gGDB18aNgxsBYe2kQoJSLpfkBHjL+P0tCzXcchzdijutokReENlr8BsPGBs7MS/VN9yFE68gcNB5Hh0UkxvWtqwmLWTEGl0P+A70+3O7EBIKQPeAVLKyD/E0BnW+tJonPe5qxYV+syAtsiW86Pj1hsF2JaIWCbpIaf5aAgYh2dIqz9tefBVyuwowBj+JjWEbtgtH+MQDvoeworXFqREU+kfsn3YVh9jbs+zkAKJZdl0vn98kXpaN2EFvgY6zG5MB8GKrjfOBxvEY7r4A97lYYqdTgNL0LpcWRSdYFu/zMIpaW3eDKS7/WKZKN4YPaSGz7Qu99vwY0uxBSJCP7
+x-ms-exchange-antispam-messagedata: qPsFS7x9Gaa1rUo8QpXFdQbsqIHVIwQYwElGilAcUkgn6fb1eWq7T7BYJjMVRprd79IqtQCoLFdCnTP/XAsG7HfwlqzTplBH+FQe1ZmQ0vPQ36EmCnMEyvL6XO+Mze4z4j7CrclD2jDgUm1BRnXDsQ==
+Content-ID: <6747B6FFE8F3A445A1E28DDF72478AF2@namprd02.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dbf4eb9d-3783-493a-2f9c-08d7a37ab034
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jan 2020 22:46:03.2153 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: hR+Ic6kcHZ9xuSEiEWAiGavS4PeP2bdZZzmsumO7CEU01pHfQPtrY8EoSJua54Auu89LO3MQveYEUAX+kExRHw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB4598
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_135536_918901_94B50ADC 
-X-CRM114-Status: GOOD (  11.75  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200127_144609_882112_C358AE0F 
+X-CRM114-Status: GOOD (  21.82  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.243.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.243.65 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,73 +125,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, b.zolnierkie@samsung.com, robh+dt@kernel.org,
- cw00.choi@samsung.com, kyungmin.park@samsung.com, myungjoo.ham@samsung.com,
- dietmar.eggemann@arm.com, lukasz.luba@arm.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "keescook@chromium.org" <keescook@chromium.org>,
+ "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
+ "matt@codeblueprint.co.uk" <matt@codeblueprint.co.uk>,
+ "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rajan Vaja <RAJANV@xilinx.com>, Michal Simek <michals@xilinx.com>,
+ "mingo@kernel.org" <mingo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "hkallweit1@gmail.com" <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lukasz Luba <lukasz.luba@arm.com>
-
-Enable the Energy Model (EM) brings possibility to use Energy Aware
-Scheduler (EAS). This compiles the EM but does not enable to run EAS in
-default. The EAS only works with SchedUtil - a CPUFreq governor which
-handles direct requests from the scheduler for the frequency change. Thus,
-to make EAS working in default, the SchedUtil governor should be
-configured as default CPUFreq governor. Although, the EAS might be enabled
-in runtime, when the EM is present for CPUs, the SchedUtil is compiled and
-then set as CPUFreq governor, i.e.:
-
-echo schedutil > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-echo schedutil > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
-
-To check if EAS is ready to work, the read output from the command below
-should show '1':
-cat /proc/sys/kernel/sched_energy_aware
-
-To disable EAS in runtime simply 'echo 0' to the file above.
-
-Some test results, which stress the scheduler on Odroid-XU3:
-hackbench -l 500 -s 4096
-With mainline code and with this patch set.
-
-The tests have been made with and without CONFIG_PROVE_LOCKING (PL)
-(which is set to =y in default exynos_defconfig)
-
-		|		this patch set			| mainline
-		|-----------------------------------------------|---------------
-		| performance	| SchedUtil	| SchedUtil	| performance
-		| governor	| governor	| governor	| governor
-		|		| w/o EAS	| w/ EAS	|
-----------------|---------------|---------------|---------------|---------------
-hackbench w/ PL | 12.7s		| 11.7s		| 12.0s		| 13.0s - 12.2s
-hackbench w/o PL| 9.2s		| 8.1s		| 8.2s		| 9.2s - 8.4s
-
-Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
----
- arch/arm/configs/exynos_defconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm/configs/exynos_defconfig b/arch/arm/configs/exynos_defconfig
-index 1db857056992..c0f8ecabc607 100644
---- a/arch/arm/configs/exynos_defconfig
-+++ b/arch/arm/configs/exynos_defconfig
-@@ -18,6 +18,7 @@ CONFIG_ZBOOT_ROM_BSS=0x0
- CONFIG_ARM_APPENDED_DTB=y
- CONFIG_ARM_ATAG_DTB_COMPAT=y
- CONFIG_CMDLINE="root=/dev/ram0 rw ramdisk=8192 initrd=0x41000000,8M console=ttySAC1,115200 init=/linuxrc mem=256M"
-+CONFIG_ENERGY_MODEL=y
- CONFIG_CPU_FREQ=y
- CONFIG_CPU_FREQ_STAT=y
- CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND=y
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgU3VkZWVwLA0KDQrvu79PbiAxLzI0LzIwLCAzOjMyIEFNLCAiU3VkZWVwIEhvbGxhIiA8c3Vk
+ZWVwLmhvbGxhQGFybS5jb20+IHdyb3RlOg0KDQogICAgSGkgR3JlZywNCiAgICANCiAgICBUaGFu
+a3MgZm9yIHJhaXNpbmcgdmFyaW91cyBpc3N1ZXMgdGhhdCBJIGhhdmUgcmVwZWF0ZWRseSBhc2tl
+ZCBhbmQNCiAgICBjb25zdGFudGx5IGlnbm9yZWQuDQoNClNvcnJ5LCBuZXZlciBpbnRlbmRlZCB0
+byBpZ25vcmUgeW91LiBXZSBhZ3JlZWQgdG8geW91ciBjb21tZW50cyBmb3IgcmVnIGFjY2VzcyBh
+bmQgdGhhdCBwYXRjaCBpcyBhbHJlYWR5IHJlbW92ZWQuIEdHUyBhbmQgUEdHUyByZWdpc3RlcnMg
+YXJlIGZvciBnZW5lcmFsIHB1cnBvc2UgcmVnaXN0ZXJzKHNldCBvZiA0KSBmb3IgdXNlcnMuIFNp
+bmNlIHRoaXMgcmVnaXN0ZXJzIGJlbG9uZ3MgdG8gUE1VIHJlZ2lzdGVyIHNwYWNlLCBpbnRlcmZh
+Y2UgaXMgcHJvdmlkZWQgdG8gcmVhZCBvciB3cml0ZSB0aGUgd2F5IHVzZXIgd2FudHMuIA0KICAg
+IA0KICAgIE9uIEZyaSwgSmFuIDI0LCAyMDIwIGF0IDA3OjAzOjM5QU0gKzAxMDAsIEdyZWcgS0gg
+d3JvdGU6DQogICAgPiBPbiBUaHUsIEphbiAyMywgMjAyMCBhdCAxMTo0Nzo1N1BNICswMDAwLCBK
+b2xseSBTaGFoIHdyb3RlOg0KICAgID4gPiBIaSBHcmVnLA0KICAgID4gPg0KICAgIA0KICAgIFsu
+Li5dDQogICAgDQogICAgPiA+IEZpcm13YXJlIGRyaXZlciB3YXMgY2hhbmdlZCBsYXRlciB0byBi
+ZSBwbGF0Zm9ybSBkcml2ZXIgYnV0IHRoZXNlDQogICAgPiA+IGludGVyZmFjZXMgd2VyZSBkZWZp
+bmVkIGVhcmxpZXIgYW5kIGFyZSBpbiB1c2UuDQogICAgPg0KICAgID4gRGVmaW5lZCBhbmQgaW4g
+dXNlIHdoZXJlPyAgTm90IGluIHRoZSB1cHN0cmVhbSBrZXJuZWwgdHJlZSwgcmlnaHQ/ICBPcg0K
+ICAgID4gYW0gSSBtaXNzaW5nIHRoZW0gc29tZXdoZXJlIGVsc2U/DQogICAgPg0KICAgIA0KICAg
+IEV4YWN0bHkgYW5kIHRoZXkga2VlcCBzYXlpbmcgdGhlcmUgcGFydG5lcnMgYXJlIHVzaW5nIHRo
+ZXNlIGZvciAzLTQgeWVhcnMNCiAgICBhbmQgdGhleSB3YW50IHRvIHJldGFpbiB0aGF0LiBJIGhh
+dmUgdG9sZCB0aGVtIHRvIGNoYW5nZSBzZXZlcmFsIHRpbWVzLg0KDQpTb3JyeSB3ZSBtaWdodCBo
+YXZlIG1pc3NlZCB5b3VyIGNvbW1lbnRzIGZvciB0aGlzIGNoYW5nZS4gV2UgYWdyZWUgdG8geW91
+ciBhbmQgZ3JlZydzIGNvbW1lbnQgYW5kIHdpbGwgdXBkYXRlIHN5c2ZzIHBhdGguDQoNCg0KICAg
+ID4gPiA+ID4gKwlyZXQgPSBrc3RydG9sKHRvaywgMTYsICZ2YWx1ZSk7DQogICAgPiA+ID4gPiAr
+CWlmIChyZXQpIHsNCiAgICA+ID4gPiA+ICsJCXJldCA9IC1FRkFVTFQ7DQogICAgPiA+ID4gPiAr
+CQlnb3RvIGVycjsNCiAgICA+ID4gPiA+ICsJfQ0KICAgID4gPiA+ID4gKw0KICAgID4gPiA+ID4g
+KwlyZXQgPSBlZW1pX29wcy0+aW9jdGwoMCwgcmVhZF9pb2N0bCwgcmVnLCAwLCByZXRfcGF5bG9h
+ZCk7DQogICAgPiA+ID4NCiAgICA+ID4gPiBUaGlzIGZlZWxzICJ0cmlja3kiLCBpZiB5b3UgdGll
+IHRoaXMgdG8gdGhlIGRldmljZSB5b3UgaGF2ZSB5b3VyIGRyaXZlcg0KICAgID4gPiA+IGJvdW5k
+IHRvLCB3aWxsIHRoaXMgbWFrZSBpdCBlYXNpZXIgaW5zdGVhZCBvZiBoYXZpbmcgdG8gZ28gdGhy
+b3VnaCB0aGUNCiAgICA+ID4gPiBpb2N0bCBjYWxsYmFjaz8NCiAgICA+ID4gPg0KICAgID4gPg0K
+ICAgID4gPiBHR1MoZ2VuZXJhbCBnbG9iYWwgc3RvcmFnZSkgcmVnaXN0ZXJzIGFyZSBpbiBQTVUg
+c3BhY2UgYW5kIGxpbnV4IGRvZXNuJ3QgaGF2ZSBhY2Nlc3MgdG8gaXQNCiAgICA+ID4gSGVuY2Ug
+aW9jdGwgaXMgdXNlZC4NCiAgICA+DQogICAgPiBXaHkgbm90IGp1c3QgYSAicmVhbCIgY2FsbCB0
+byB0aGUgZHJpdmVyIHRvIG1ha2UgdGhpcyB0eXBlIG9mIHJlYWRpbmc/DQogICAgPiBZb3UgZG9u
+J3QgaGF2ZSBpb2N0bHMgd2l0aGluIHRoZSBrZXJuZWwgZm9yIG90aGVyIGRyaXZlcnMgdG8gY2Fs
+bCwNCiAgICA+IHRoYXQncyBub3QgbmVlZGVkIGF0IGFsbC4NCiAgICA+DQogICAgDQogICAgT2gg
+eWVzLCB0aGlzIGlzIHNvIGJyb2tlbiBpbiBkZXNpZ24uIFRoaXMgZmlybXdhcmUgaXMgZGVzaWdu
+ZWQgdG8gYWJzdHJhY3QNCiAgICB0aGUgcG93ZXIgYW5kIGNvbmZpZ3VyYXRpb24gbWFuYWdlbWVu
+dCBvbiB0aGVpciBwbGF0Zm9ybSwgYnV0IHRoZXkgZGVjaWRlZA0KICAgIHRvIGFkZCBkaXJlY3Qg
+cmVnaXN0ZXIgYWNjZXNzIHRvIHNvbWUgcmVnaXN0ZXJzIGFueXdheS4gV2VpcmQgdXNlIGNhc2Us
+DQogICAgZG9uJ3QgZXZlbiBhc2suIEJ1dCBJIHN0cm9uZ2x5IG9iamVjdGVkIHN1Y2ggaW50ZXJm
+YWNlIGluIHN5c2ZzIGV2ZW4gaWYNCiAgICB0aGV5IG1vdmVkIHVuZGVyIHBsYXRmb3JtIGRldmlj
+ZS4gSWYgdGhleSBuZWVkIHRoaXMgYXQgYW55IGNvc3QsIEkgaGF2ZQ0KICAgIHN1Z2dlc3RlZCBk
+ZWJ1Z2ZzLg0KICAgIA0KQXMgbWVudGlvbmVkLCB0aGVzZSByZWdpc3RlcnMgYXJlIGZvciB1c2Vy
+cyAgYW5kIGZvciBzcGVjaWFsIG5lZWRzIHdoZXJlIHVzZXJzIHdhbnRzIHRvIHJldGFpbiB2YWx1
+ZXMgb3ZlciByZXNldHMuIGJ1dCBhcyB0aGV5IGJlbG9uZyB0byBQTVUgYWRkcmVzcyBzcGFjZSwg
+ICAgIHRoZXNlIGludGVyZmFjZSBBUElzIGFyZSBwcm92aWRlZC4gVGhleSBkb27igJl0IGFsbG93
+IGFjY2VzcyB0byBhbnkgb3RoZXIgcmVnaXN0ZXJzLg0KDQoNCiAgICBbLi4uXQ0KICAgIA0KICAg
+ID4gPg0KICAgID4gPiBBZ3JlZSBpdCB3aWxsIGJlIHNpbXBsZXIgYnV0IHRvIGFzIGZpcm13YXJl
+IGRyaXZlciB3YXMgY2hhbmdlZCB0byBiZQ0KICAgID4gPiBwbGF0Zm9ybSBkcml2ZXIsIHRvIGtl
+ZXAgcGF0aHMgc2FtZSwgd2UgdXNlZCBzeXNmcy4NCiAgICA+DQogICAgPiBLZWVwIHRoZW0gc2Ft
+ZSBmcm9tIHdoYXQ/ICBVc2UgdGhlIHBsYXRmb3JtIGRldmljZSBhcyB0aGF0IGlzIHdoYXQgaXQg
+aXMNCiAgICA+IHRoZXJlIGZvciwgZG8gbm90IGdvIGNyZWF0ZSBuZXcgYXBpcyB3aGVuIHRoZXkg
+YXJlIG5vdCBuZWVkZWQgYXQgYWxsLg0KICAgID4NCiAgICANCiAgICArMSwgYW5kIHBsZWFzZSBk
+b24ndCBhZGQgYW55IHN5c2ZzIHRoYXQgY2FuIHJlYWQvd3JpdGUgdGhvc2UgR0dTIHJlZ2lzdGVy
+cw0KICAgIGRpcmVjdGx5IGZyb20gdXNlcnNwYWNlLiBNb3ZlIHRoZW0gdG8gZGVidWdmcyBpZiB5
+b3UgYXJlIGRlc3BlcmF0ZSB0byBoYXZlDQogICAgc29tZXRoaW5nLg0KDQoNClRoYW5rcywNCkpv
+bGx5IFNoYWgNCg0KICAgIA0KICAgIC0tDQogICAgUmVnYXJkcywNCiAgICBTdWRlZXANCiAgICAN
+Cg0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
