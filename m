@@ -2,82 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A9D914A11F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 10:47:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFCB414A124
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 10:48:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=penvS2TvQky2q5wc2ax2x7vjyxwarDHdtei03+BKskw=; b=J+ahvXYhO79BY9
-	4TW+EMNWEsP42rF2qrJKQiMbeusNwkpA61bRm41VlXRUbNSNWwUcVks74bhwxAVCYXGe4gEJqTyof
-	itrJf3lrIHhC/UOiPmGk37RwTsW6grsTTGx6xueOUW4NGM9w4l9moTR1i0hc38V7kjT83KOaT7egk
-	ztDmiyJLkjPhfPqkwQZhhf5yNQM/FYZ6xUdIVPSvsHXBDTH/RpCKwCx/HACfbtB/ffDOcNCe+L2Zj
-	C5XSN1B3SbRTYLXcUhUcIalcqRIVhDNPC8CUdxaatusHl7+7YicpcW0hVWwfOLeEdjUroM5m6A6NU
-	cUHPnpt0S3aK5qlx764g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fkZO+k1RuOxnHX73AI+IFC82yxSJyTT+biqHyfHHR+A=; b=PWhPrMAYLsqMnoTFC6wvcbQvj
+	8nFi0mGwciq+UPlZdU/gS7FjPYikk6gLgbYh9P0Z0H3AUNSUcILE63oRPjcKAUtO90Rbo65aF50UH
+	fRB+FfsVG7WxzD4hB0Y0I9Cqt4Bd/Ai1rsV0YTvTWFDXUco87Z4i0XM51oSnQNvpwOSjOsT9NOStg
+	Nk+c/Xhvg3oslRu2pMnzje9SehPKw0twS8zsGauNw+dlV4pE/Y0qnj6teRk6UeDa6EpuhkL4N0oZ+
+	2Bc5OfD+5k1dNb2XBTzglN3mX8+57JVKAfK0gRLP1xjn/O3sPwXPOUtyYih2PTdss92aG9UV1fgHr
+	2f+usjBhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw0yq-0001Xh-I9; Mon, 27 Jan 2020 09:46:52 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1iw106-0001rs-2c; Mon, 27 Jan 2020 09:48:10 +0000
+Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw0ye-0001Ut-8K
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 09:46:42 +0000
-Received: by mail-pf1-x441.google.com with SMTP id y5so1591525pfb.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Jan 2020 01:46:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3Cm7Q5qzKRSI5iiYtrFdNoM+jC44DmDk+4BVP7MJ9Zg=;
- b=TpYJh/exjltRCH5MaUqukcoU35cpYu4IuEiuVHoJprcgTTXo9U/FcLTjUK/nXQ3fDz
- 6559/RJgNO0g3sLmU+rHSiUR2HGYTwLDvjiGdRTnxdtyP2X3wc5drkyP6dwwcCk40WaZ
- 6Aey153QXTKHD/rXHU/kUZAkaWOsT8oaXxg71fAYko/Fo+knlW8ZewVpbEKF8HYuSmTO
- zDK/nhC3bVFz8H2ttpc7x42Qvp9pPqv/Zy9+PGPN0tEpCWa1bZEUpjUxKt3SmW7UF6B1
- PPl9+f2dfb/Z18xZgVEsR0SG74VwlPqgLnTECYbn949Aa84mw037tsNGH+QpGwX6UX+a
- /TSg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3Cm7Q5qzKRSI5iiYtrFdNoM+jC44DmDk+4BVP7MJ9Zg=;
- b=WTCdcLrLM6nmbTu7jmS8QxundeMclF3GGSlV3FMWeFrW7eynmpF3XOxDKk5/WEUPBE
- cJgYC+X4xh2UnO6kNN8b6PMojwK35Mo2mZZjwoKReYXZUKLF7UZKe+MsXcT+aEqi9Wo0
- 7Mu8f6gGNbruGBKnzu//ueg6XLogwn1zRzXF5jdQF+8a0wModxnkDaJg6g1DNyfZh1Rn
- 14NSynSHvmTpBYTSxW4UJqKLzUaCmGArR3HhVAjZd1XSkqQRbDVfwA69WSOulCXs0sa0
- uuC5YsQSidNAfowjv55YUIZqrnfrYFtAFNZIs+zIb++M97/ydLI3Zuxk4UqAGNpG87at
- r/NA==
-X-Gm-Message-State: APjAAAWsmQPN/ahhv74LBP0y7F7zmUSfS49EjPk62Pkr9sfTJMxAQ1BP
- U/whhB7lCzJ+QbyFMhwFivVf9gB5yPXRyNZx2UsQvw==
-X-Google-Smtp-Source: APXvYqzxAmZHmgdppWLSwzJ8z6LS1RNMsDSWdXzZNhIxbL6muJXHr3snth4+9kFim+A0KHQR+fGA6ETjYsUICdwc1Rg=
-X-Received: by 2002:a63:480f:: with SMTP id v15mr18178906pga.201.1580118396834; 
- Mon, 27 Jan 2020 01:46:36 -0800 (PST)
+ id 1iw0zw-0001qr-Nw
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 09:48:02 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id EA8158706;
+ Mon, 27 Jan 2020 04:47:57 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Mon, 27 Jan 2020 04:47:57 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm1; bh=D0agDfMES+f5sz8FtNMBMOC9b25
+ uS9ZmYckjSQrkMEY=; b=gFSDjyyDFqLlM+dXDPSJzHdThqw7dWggT6q+A1hAOP4
+ 3fqxBj0kpgkLKVADimwtkVpZY58c1YQM6eErFprywq/epCUxIDkl57xPLbb8A6w/
+ kqCfKSkkDQYZxTn4wdqc+iX3SRCBZ2MC3jfX2U7xwMJgHHqDhK0QSDyxY8Q9v22G
+ fcR1tiaZoFYj01G0gYWyTr5iZtonLlWaKueMQc+kOBt1k3s9gwz5PVQlejQtKBfh
+ Nyp+3ZzZN162bwtzzbo++WNTKh8S/3/pImX0mbCLzJ3cGAhn3EBUzHgOjCGlVCQv
+ 16aSuE0eX3wC7vT1TH0xrARXYbD73VLKC6JD/13PezQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=D0agDf
+ MES+f5sz8FtNMBMOC9b25uS9ZmYckjSQrkMEY=; b=JzwOaY8RsRV8d4XIhFGIjJ
+ 5NSPq5SFXo9HTN5iCOzdgz/jSyz/Ig55R/QgZ2cYSvn85exPDBKF6SDzuIOWH/XC
+ 5n6+Ol4Yrw53jY/mJWxdLFf6Kfoa/Tb28Ml1SCvu7/372X9knABHudBfmeeFmXZX
+ P7rQx8O+r04pK6fDgTl2FwNlDinVXGezBAn5zwy/0K8+Xtruf6cVQYsqClX/8oNh
+ RmeMCQkHMSDTdNnDz+ONEpkS5PrPXD0u+pzMEvpH9P5jQHf1YcXbKVcTuCIgiIi9
+ 8PgZXddrb1qMI8+F6iZYTWgXo3oqTe+jRs0IBllXVkg2DhXwpn/nXmBAvMk7NXcQ
+ ==
+X-ME-Sender: <xms:zLEuXgfgLnl7eE_v9KdkAxCwQoLe0tOmhPu_1z8qaJtcoI5PbfCAaQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrfedvgddtkecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:zLEuXoUcdZjzaRZOlDnmLuWWcZU6sLbIr7GqNbs-CDCX6J-mPCzz8Q>
+ <xmx:zLEuXofHOipnjLbf6s1xGS7a1c7sSiguq0meZO8keXkeOYSBr-HtFg>
+ <xmx:zLEuXtG75JtN5G42Cw4EVRkP5t0nadXYv14t4lYDdw7B4iIYs8WiSA>
+ <xmx:zbEuXj_a599ETY-xBwnSAxkuC2vh8ZgvguKfy1WWPZwWQr2gHdLjpg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 96D40306965C;
+ Mon, 27 Jan 2020 04:47:56 -0500 (EST)
+Date: Mon, 27 Jan 2020 10:47:54 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Frank Lee <tiny.windzz@gmail.com>
+Subject: Re: [PATCH v2 2/2] ARM: dts: sun8i-r40: Add thermal sensor and
+ thermal zones
+Message-ID: <20200127094754.w4wacqgtdodxayln@gilmour.lan>
+References: <20200106174639.20862-1-tiny.windzz@gmail.com>
+ <20200106174639.20862-2-tiny.windzz@gmail.com>
+ <20200107075816.ly6exfd4qtvfxxua@gilmour.lan>
+ <662e157a-603f-7423-0491-f26f0fc8d7b6@linaro.org>
+ <20200109131343.mjyuj5ed2xwvmwd4@gilmour.lan>
+ <af4bca3b-ba95-aa10-5601-753f1c5275b3@linaro.org>
+ <CAEExFWtmUtzBje-DKt71W46rs3PTF_Di_x3YQCz+tg8+W1kyAA@mail.gmail.com>
 MIME-Version: 1.0
-References: <20191211192742.95699-1-brendanhiggins@google.com>
- <20191211192742.95699-8-brendanhiggins@google.com>
- <CACPK8XctCb9Q2RaFVHEDuWxKDXpCWMWs-+vnKZ=SeTa3xRnT_g@mail.gmail.com>
- <CAFd5g45MFYMK-eZWPC5fhm2OkynUXKfArUVhbanYVH+qKRUwPg@mail.gmail.com>
-In-Reply-To: <CAFd5g45MFYMK-eZWPC5fhm2OkynUXKfArUVhbanYVH+qKRUwPg@mail.gmail.com>
-From: Brendan Higgins <brendanhiggins@google.com>
-Date: Mon, 27 Jan 2020 01:46:25 -0800
-Message-ID: <CAFd5g454tX9zxRAq5T_pDGzcWt7u5r119wjo-BCGVq+=Ej4bGQ@mail.gmail.com>
-Subject: Re: [PATCH v1 7/7] fsi: aspeed: add unspecified HAS_IOMEM dependency
-To: Joel Stanley <joel@jms.id.au>
+In-Reply-To: <CAEExFWtmUtzBje-DKt71W46rs3PTF_Di_x3YQCz+tg8+W1kyAA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_014640_295211_9A398999 
-X-CRM114-Status: GOOD (  15.82  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200127_014800_923385_E892671C 
+X-CRM114-Status: UNSURE (   8.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.230 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -86,8 +99,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,61 +110,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- Andrew Jeffery <andrew@aj.id.au>, Richard Weinberger <richard@nod.at>,
- Jeff Dike <jdike@addtoit.com>, Eddie James <eajames@linux.ibm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ devicetree <devicetree@vger.kernel.org>, Linux PM <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-um <linux-um@lists.infradead.org>, Jeremy Kerr <jk@ozlabs.org>,
- David Gow <davidgow@google.com>, Alistar Popple <alistair@popple.id.au>,
- linux-fsi@lists.ozlabs.org, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Anton Ivanov <anton.ivanov@cambridgegreys.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Zhang Rui <rui.zhang@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============6687144801152889954=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Dec 11, 2019 at 4:30 PM Brendan Higgins
-<brendanhiggins@google.com> wrote:
->
-> On Wed, Dec 11, 2019 at 4:12 PM Joel Stanley <joel@jms.id.au> wrote:
-> >
-> > On Wed, 11 Dec 2019 at 19:28, Brendan Higgins <brendanhiggins@google.com> wrote:
-> > >
-> > > Currently CONFIG_FSI_MASTER_ASPEED=y implicitly depends on
-> > > CONFIG_HAS_IOMEM=y; consequently, on architectures without IOMEM we get
-> > > the following build error:
-> > >
-> > > ld: drivers/fsi/fsi-master-aspeed.o: in function `fsi_master_aspeed_probe':
-> > > drivers/fsi/fsi-master-aspeed.c:436: undefined reference to `devm_ioremap_resource'
-> > >
-> > > Fix the build error by adding the unspecified dependency.
-> > >
-> > > Reported-by: Brendan Higgins <brendanhiggins@google.com>
-> > > Signed-off-by: Brendan Higgins <brendanhiggins@google.com>
-> >
-> > Nice. I hit this when attempting to force on CONFIG_COMPILE_TEST in
-> > order to build some ARM drivers under UM. Do you have plans to fix
-> > that too?
->
-> The only broken configs I found for UML are all listed on the cover
-> letter of this patch. I think fixing COMPILE_TEST on UM could be
-> worthwhile. Did you see any brokenness other than what I mentioned on
-> the cover letter?
->
-> > Do you want to get this in a fix for 5.5?
->
-> Preferably, yes.
->
-> > Acked-by: Joel Stanley <joel@jms.id.au>
 
-Hey, I know I owe you a reply about debugging your kunitconfig (I'll
-try to get to that this week); nevertheless, it looks like this patch
-didn't make it into 5.5. Can you make sure it gets into 5.6? It
-shouldn't depend on anything else.
+--===============6687144801152889954==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="rh4ccto7d4lp6y3i"
+Content-Disposition: inline
 
-Cheers
+
+--rh4ccto7d4lp6y3i
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Sun, Jan 26, 2020 at 09:01:01PM +0800, Frank Lee wrote:
+> HI Chen-Yu and Maxime,
+>
+> Can you pick this up again?
+
+Sorry, I'm not quite sure what happened to this patch... I've picked
+it up for 5.7 (for real this time, hopefully).
+
+Maxime
+
+--rh4ccto7d4lp6y3i
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXi6xygAKCRDj7w1vZxhR
+xUkmAP9DgDEkdFW+faazJdPD1Gp2sjOOP/a14Whm0wZv6t0dYgD/fPBVqAvI3326
+HCBqMcPz39j+iwdM+UuywN8uLjHD2Ag=
+=E275
+-----END PGP SIGNATURE-----
+
+--rh4ccto7d4lp6y3i--
+
+
+--===============6687144801152889954==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6687144801152889954==--
+
