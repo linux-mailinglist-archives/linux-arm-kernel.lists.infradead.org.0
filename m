@@ -2,114 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C52F149E74
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 04:58:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AD70149E89
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 06:00:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=X0Xfq9sWiYYAMLHhBn6xlT6WqFSWOl+DrIyNGRQqVfc=; b=KBi0aC7AkPegcs
-	piHt2LfXZz9tTMlgPhYEfz2IjZIy5P7ldnUbFN7ayGuCfkCZfXaKRo4+B5bcxhbTsXo61IDYpqyUm
-	Ieil7XdWujNdLDj639mJ8gXoO8STz86hQTz0aQhZa8gk/VKPOJdnkeb31XUPPcm59kdlmjSd+zWGD
-	fppit7g/ExKy8n6ThfxK5oy0Jmr4Kh9tHIGZFIvy1tGBvvDzasJvbCm0Hye90/uVmvbjLcT4WywkK
-	mKCMk6ZDKIgRZGeedxXpy/j0edCa2OHnzrVJqHgXzjKa85iLgqi+5L+Rt+//N+/xBwqLLepypw4k6
-	emUEvtHUQz03RfyIh8yw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n6WZqgDNUWAquOCO1Yk13rakRJFPy0/JIYTJc5sXJas=; b=RSWZMomF0l42lY
+	2hu20jNMJ5Cj+9m07CDOY6l8XQFjxgOng24WGWkhcbTilj2+kqO11+FwX3ZW+HdRU8SqSEGBYiehp
+	Vr3EUGwVaVXGdpWT1Zd7iNM2sIifgZs7wOSFp3PVj5+TvIVmwvtdSW6qul46vFwEdshQB0z+pu34Q
+	DGQ0St4faiEONIs8odYN+ehiKjwWtHQ9y0aVyv9Dy1wXwyRguHaG0MubLF+MeMiz3hz/PBsLVnJmt
+	Ott9EL+DTfact3fSC4D45zQs96GNJGQHDcOt7C1qF++B1P8JE0zg8MHmCrvMSG8XPFOK9pABBZhvX
+	yh2g+U8jty8gZm4TnOQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivvY5-0006N5-B1; Mon, 27 Jan 2020 03:58:53 +0000
-Received: from mail-eopbgr80089.outbound.protection.outlook.com ([40.107.8.89]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1ivwVw-0008Kq-JK; Mon, 27 Jan 2020 05:00:44 +0000
+Received: from mail-eopbgr140049.outbound.protection.outlook.com
+ ([40.107.14.49] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivvXu-0006Lr-OD
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 03:58:44 +0000
+ id 1ivwVj-0008KI-J0
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 05:00:34 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=iDetR2aBvqvZotziqMPYSgd8tcm+yUFbCGiXgCz1QeX36B821E09akeL6rRIMHlgCnV4GZ+KGDdcCru3RaXK1FITTdmlqxjSyD9bGim5Ip5eLoZq12geSoxn+ylYMrmw8+XtrrFXH17YBySvRm6lw4H02byiCtF7Qtl9tD2kbMH8WtHgWpIYdSZTsIapzRhY3YjAiezxXORu4/iSN3W8e0HJ6IBb99uGgFvjdvT/kmqpDql3upqGtyyZuDT6yRYWcDAB6H1VDR52jIG9jJz3AQS5w7M5ENywjxCGEYpfIA1AHoC8DbOh3/oRNxRekDWcusF05lXqHsbVgbwDnKyCxQ==
+ b=ixbrgpBkZ+qPCNrScidjSBbX4zuOaE6FkD38wewDhomfbpsAeIJm4snWNx6XILnWDaC+GA3zzhlSm4wSqDMIFn5zMVYRjA06B3gaMU/pfxVJcAdAYvfA4N2UHmzMTTGLqLepjLKRCKGygQzR0aLoV4q8N74cOqq+zFZSXbHcwNj2lfz31nMB2Ob7k8MxgihiFMO5UIuu4p4wJfWh8dkerXQ/JCrw4cTlRVcbsUWu04UaTD7IRFQ/xKt5l2r7RGIYz70XMWjJNQYskpfevKQBoV9HAMkdKYEv9TG+RpR1LJ5df2Ma0mRY7PUyhy1q/AoOm1HVQ79wb064Rdsp+spJ3g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V6srGNlTOr1MGrDea/RMImTjWkNd4HAnJevtwK8GqS8=;
- b=MO9u5E0uFMVn6C8IfT/P4wABHVMhb+scKz3E+LZgliJdoEO19y3+DDwG57NcmnKi7OCDmTFyt620/T/gXtxP5kmL6zvRB1PpZgvINp1qHulzZ3A2zR9AUhlj/5+JjBmvktEC3lAsbp+z/fNRuOh+0e7YMRjEZsNxSSh35za0F6SeTKt3t4zXpDFqhn99EWExVkk2LAI74M+P7pLpBQIkiDZBhid+IzsDVfInU7EGS8stg1bjhynRklwnID+ZJithNO2brsShbLqBRzP+wWW/8pyOUK1UKAtgmA9IQ3UGubNfB/zJEWJCpt3oRTzy5tCcCembmrAuNEc3XlIdNm8geQ==
+ bh=H6VWt2dUTfR+eYglH/8RzaKXrQPUuZ2/G07u54Uknco=;
+ b=fYsSajpebAFnmEbBnLB8gnznFZ1pGEep95nvVqPCH/q1uYlSCayZ6KEI4m5oqbTw7SrrSp84Aan91KCm2hxadsELkIjGr6N+MNPt45Cds/8OcC9/EpKhJPEBJSHjidRgkklF27bVFcc0857f6JGIgXzFbZh8lEiRlU2K5CwgLfs7Gegabe60sOidfBw1l2HOslV0XmNRqPQmVmtENNBCCcxmtPaRCexwmj2gf+7knu9i8elYqtuURZdrc3BPnYnClvJIoCZJUM0hnaLH3qjZAy8eAEj4rEozW3i+fBrHWIMwtLBUUUnv6BLY1EuxB+cSPBSNeJgDPxykUMGzcTGjqg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=V6srGNlTOr1MGrDea/RMImTjWkNd4HAnJevtwK8GqS8=;
- b=DBGWuN0kNZJKHbbv21p5MG3k8jbF7jN+rda/c9P4YrK4olduTG1JDMzkMh+iJFsYBHhIYPNCSPvW8cM6gH+e+ODl94HSuqKNZvUaKEs7JgEOLWA39PlvY12rMbfFirmLFs2oUsIyr4/YUi7cl4vQBiasi0Ga0L/igDFkZIooIsM=
+ bh=H6VWt2dUTfR+eYglH/8RzaKXrQPUuZ2/G07u54Uknco=;
+ b=X4VO6Hm5IcE0hWGfM8qr5uXajbFH7gkZ5J0Ao2iA8utHZpV10504Gd/RSt19a2JKN8AMlTBqdNuZPkex3SCW9Y8D3ADp4FOQ8jsfJMdLgdzKRr1eTQ9I/Y+Ca8J1tcLIVmhmNjDniJamgdhXr2bvHiV7SpYOg2ynlLWql86CX6w=
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4260.eurprd04.prod.outlook.com (52.134.124.32) with Microsoft SMTP
+ AM0PR04MB6883.eurprd04.prod.outlook.com (52.132.212.142) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2665.24; Mon, 27 Jan 2020 03:58:37 +0000
+ 15.20.2665.23; Mon, 27 Jan 2020 05:00:26 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2665.017; Mon, 27 Jan 2020
- 03:58:37 +0000
-Received: from localhost.localdomain (119.31.174.66) by
- HK2PR0401CA0009.apcprd04.prod.outlook.com (2603:1096:202:2::19) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.2665.20 via Frontend
- Transport; Mon, 27 Jan 2020 03:58:34 +0000
+ 05:00:26 +0000
 From: Peng Fan <peng.fan@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-Subject: [PATCH V2] dt-bindings: soc: imx: add binding doc for aips bus
-Thread-Topic: [PATCH V2] dt-bindings: soc: imx: add binding doc for aips bus
-Thread-Index: AQHV1MYNqsV5ejfpvUOhCfy0vYYg4g==
-Date: Mon, 27 Jan 2020 03:58:37 +0000
-Message-ID: <1580097227-4364-1-git-send-email-peng.fan@nxp.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>
+Subject: RE: [PATCH V3 2/4] clk: imx: imx8mq: use imx8m_clk_hw_composite_core
+Thread-Topic: [PATCH V3 2/4] clk: imx: imx8mq: use imx8m_clk_hw_composite_core
+Thread-Index: AQHVzBLhTw2vfOWK6k2th/PMm5Cat6f+BJtQ
+Date: Mon, 27 Jan 2020 05:00:26 +0000
+Message-ID: <AM0PR04MB4481A8AF4694F539FBED0D54880B0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1579140562-8060-1-git-send-email-peng.fan@nxp.com>
+ <1579140562-8060-3-git-send-email-peng.fan@nxp.com>
+ <VI1PR04MB70239267F223F63918362DDCEE320@VI1PR04MB7023.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR04MB70239267F223F63918362DDCEE320@VI1PR04MB7023.eurprd04.prod.outlook.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR0401CA0009.apcprd04.prod.outlook.com
- (2603:1096:202:2::19) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
+x-originating-ip: [119.31.174.68]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 40618552-b452-4767-721a-08d7a2dd3010
-x-ms-traffictypediagnostic: AM0PR04MB4260:|AM0PR04MB4260:
+x-ms-office365-filtering-correlation-id: 4ce7a854-e73f-4a91-5b03-08d7a2e5d2ac
+x-ms-traffictypediagnostic: AM0PR04MB6883:|AM0PR04MB6883:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB42606D66FF2519DEBEDDCA0B880B0@AM0PR04MB4260.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3631;
+x-microsoft-antispam-prvs: <AM0PR04MB6883DFBCF04FEBCC70E27EB8880B0@AM0PR04MB6883.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2958;
 x-forefront-prvs: 02951C14DC
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(136003)(39860400002)(376002)(346002)(396003)(199004)(189003)(52116002)(8936002)(478600001)(36756003)(8676002)(81156014)(81166006)(4326008)(2616005)(66446008)(6486002)(5660300002)(956004)(16526019)(44832011)(26005)(186003)(66946007)(66556008)(66476007)(64756008)(71200400001)(110136005)(54906003)(6506007)(69590400006)(316002)(86362001)(6512007)(966005)(2906002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4260;
+ SFS:(10009020)(4636009)(136003)(376002)(39860400002)(396003)(346002)(366004)(199004)(189003)(52536014)(8936002)(5660300002)(55016002)(9686003)(66556008)(64756008)(66446008)(66476007)(76116006)(53546011)(66946007)(8676002)(81156014)(81166006)(44832011)(71200400001)(6506007)(186003)(86362001)(33656002)(26005)(110136005)(4326008)(316002)(54906003)(2906002)(7696005)(478600001)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6883;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 6UsbYdyYUq4PIAk5i5lRPwaoqIUIk985DpeUXxSTtwKKSB8v2ubZIajtvOVoiet9iTV9neRt29xAUr335Dfr5PEXchlvGbqmZ0JEJ05pEsVOhteu12zeiKx0eapFCZR/YVcg4nEEVPiKKkGN8DZ9mcOosh2vxqd+st1xC9m8Sf7MMBjhxbxhonvMDM6a7NTYSXCwvqVBMNaUQJKe2SH+Fd6za4T38UsgtY5mw7RMbbbzaGYqjw/B0FgJkjlxh0CJBGHCjNZ585UcbQdlfaLHX405uBY3H8Ptyz4f1b4lwR5gP2QwQWkP6AGdmo8WpeGarpt8r70IZBKn95OHr1PvXh6KU/edjxFnA0vjiH6gxMrneXvjQ5n7Ukdom3Xt/eyr7mQnGfU8Pv2fTEPuYEj5a77cFiDFoq+If29MJC822emKZi3FBd1cluX55TE/CCBXCU/4+j29pgfUe8yXj8NDEvVj97UPXWN8aC54j4M6pA/aqwgFvqkM52PwioQpOi305mMy/jiIACTsjCAxtUkb4l/i+L63Pk7SmZKBl1qxx5A=
-x-ms-exchange-antispam-messagedata: wvy8GiAx4iK75dMM8w83YfjDgpOdDdoOmI9FxIr5klbDQuGhfJ2BsnxHhL2zZE6vcJnHu6Tmb0MvKwR8xnsiVzxoi0bT3CS9VnYU7T7kDg3NaReuj0c7mu11u+YBsfj0cBcM0OSbYBwX2bkEFkzBJg==
+x-microsoft-antispam-message-info: bpvQNh9p/rff4/IjTUKSeOcHbVaZidA+wfdjC9Gh7O72axqc2BVotyIcwx2B2v+fBqHEioqr9W5MOi854Spjct9pzOpRbQS0wGtTJGkf4m09vcYuDNBgYPmIhFI293QIHkxUG3jddhnatp8UhJ/owDcmyxj/0U0TtaSjL/1tkfiz+MXQkEDmnKbw/m7Ahh9uhSPSvYuOtcG1Rj4jhlYS6B+Sxm/VRoNNglI/78bzCegO7EQvsGe75mVhmo1NWVf8qE7phTAqsESwUs+Q2TdwBTRa4870mkY1qMqsuDbqO2TALf9RYrPqL9cRxi99+m2Z1mHEn2fGqXVEIETX5Yimhnnz6vHGH38hEE3REsxVm9CTejidUJEIYAeA5RoWch/lUi5wtdbypOOER316yz9JLVIW6qs8rZsoPreLk5BrT/wbVdeF9gd3Cf3LpSSaeuPjbggQSAefvW85pV2mE522iTmplXlm7s+MiEPoKBlhLJTAn+AXPE0KvkTEMAaFOwM9
+x-ms-exchange-antispam-messagedata: AL2/2jhIcb+mdH+t+ggQWgjeAyP/5dJuALdezdX3RjKnibrgcP+Zir9UCckcc7tqA7SuSeUQrLXZ4g3kVDDfqXAmy4zl07A3ViQmOIZcYcGn52aliH7vKJzNUVPh4godnHM0C5QmfVVzYu0enFgn/g==
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 40618552-b452-4767-721a-08d7a2dd3010
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jan 2020 03:58:37.5842 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4ce7a854-e73f-4a91-5b03-08d7a2e5d2ac
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jan 2020 05:00:26.1232 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 7FmgMrwC24gRON7EBcZWXLhwSMOxmk/GY3z6f/SaFUaXLfgf1TahS5XXLDKc8z0LpssZsyDjcxGS3AncKggvkQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4260
+X-MS-Exchange-CrossTenant-userprincipalname: AGgAQMofhNrsHMUOu5PGHFJj+2dxXROloxcP4sygsKnPVi3gM/q5sZaoVTYi8xyXrRiEgfR1Eeq0PZz4FlqY6g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6883
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200126_195842_887586_6638B752 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200126_210031_735360_B8B179E4 
+X-CRM114-Status: GOOD (  13.53  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.89 listed in list.dnswl.org]
+ no trust [40.107.14.49 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -130,88 +123,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  dl-linux-imx <linux-imx@nxp.com>,
  "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+> Subject: Re: [PATCH V3 2/4] clk: imx: imx8mq: use
+> imx8m_clk_hw_composite_core
+> 
+> On 16.01.2020 04:15, Peng Fan wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > Use imx8m_clk_hw_composite_core to simplify code.
+> >
+> > Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >   drivers/clk/imx/clk-imx8mq.c | 22 ++++++++--------------
+> >   1 file changed, 8 insertions(+), 14 deletions(-)
+> >
+> > diff --git a/drivers/clk/imx/clk-imx8mq.c
+> > b/drivers/clk/imx/clk-imx8mq.c index 4c0edca1a6d0..e928c1355ad8
+> 100644
+> > --- a/drivers/clk/imx/clk-imx8mq.c
+> > +++ b/drivers/clk/imx/clk-imx8mq.c
+> > @@ -403,22 +403,16 @@ static int imx8mq_clocks_probe(struct
+> > platform_device *pdev)
+> >
+> >   	/* CORE */
+> >   	hws[IMX8MQ_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src",
+> base + 0x8000, 24, 3, imx8mq_a53_sels, ARRAY_SIZE(imx8mq_a53_sels));
+> > -	hws[IMX8MQ_CLK_M4_SRC] = imx_clk_hw_mux2("arm_m4_src", base
+> + 0x8080, 24, 3, imx8mq_arm_m4_sels, ARRAY_SIZE(imx8mq_arm_m4_sels));
+> > -	hws[IMX8MQ_CLK_VPU_SRC] = imx_clk_hw_mux2("vpu_src", base +
+> 0x8100, 24, 3, imx8mq_vpu_sels, ARRAY_SIZE(imx8mq_vpu_sels));
+> > -	hws[IMX8MQ_CLK_GPU_CORE_SRC] =
+> imx_clk_hw_mux2("gpu_core_src", base + 0x8180, 24, 3,
+> imx8mq_gpu_core_sels, ARRAY_SIZE(imx8mq_gpu_core_sels));
+> > -	hws[IMX8MQ_CLK_GPU_SHADER_SRC] =
+> imx_clk_hw_mux2("gpu_shader_src", base + 0x8200, 24, 3,
+> imx8mq_gpu_shader_sels,  ARRAY_SIZE(imx8mq_gpu_shader_sels));
+> > -
+> >   	hws[IMX8MQ_CLK_A53_CG] =
+> imx_clk_hw_gate3_flags("arm_a53_cg", "arm_a53_src", base + 0x8000, 28,
+> CLK_IS_CRITICAL);
+> > -	hws[IMX8MQ_CLK_M4_CG] = imx_clk_hw_gate3("arm_m4_cg",
+> "arm_m4_src", base + 0x8080, 28);
+> > -	hws[IMX8MQ_CLK_VPU_CG] = imx_clk_hw_gate3("vpu_cg", "vpu_src",
+> base + 0x8100, 28);
+> > -	hws[IMX8MQ_CLK_GPU_CORE_CG] = imx_clk_hw_gate3("gpu_core_cg",
+> "gpu_core_src", base + 0x8180, 28);
+> > -	hws[IMX8MQ_CLK_GPU_SHADER_CG] =
+> imx_clk_hw_gate3("gpu_shader_cg", "gpu_shader_src", base + 0x8200, 28);
+> > -
+> >   	hws[IMX8MQ_CLK_A53_DIV] =
+> imx_clk_hw_divider2("arm_a53_div", "arm_a53_cg", base + 0x8000, 0, 3);
+> > -	hws[IMX8MQ_CLK_M4_DIV] = imx_clk_hw_divider2("arm_m4_div",
+> "arm_m4_cg", base + 0x8080, 0, 3);
+> > -	hws[IMX8MQ_CLK_VPU_DIV] = imx_clk_hw_divider2("vpu_div",
+> "vpu_cg", base + 0x8100, 0, 3);
+> > -	hws[IMX8MQ_CLK_GPU_CORE_DIV] =
+> imx_clk_hw_divider2("gpu_core_div", "gpu_core_cg", base + 0x8180, 0, 3);
+> > -	hws[IMX8MQ_CLK_GPU_SHADER_DIV] =
+> imx_clk_hw_divider2("gpu_shader_div", "gpu_shader_cg", base + 0x8200, 0,
+> 3);
+> > +
+> > +	hws[IMX8MQ_CLK_M4_DIV] =
+> imx8m_clk_hw_composite_core("arm_m4_div", imx8mq_arm_m4_sels, base
+> + 0x8080);
+> > +	hws[IMX8MQ_CLK_VPU_DIV] =
+> imx8m_clk_hw_composite_core("vpu_div", imx8mq_vpu_sels, base +
+> 0x8100);
+> > +	hws[IMX8MQ_CLK_GPU_CORE_DIV] =
+> imx8m_clk_hw_composite_core("gpu_core_div", imx8mq_gpu_core_sels,
+> base + 0x8180);
+> > +	hws[IMX8MQ_CLK_GPU_SHADER_DIV] =
+> > +imx8m_clk_hw_composite("gpu_shader_div", imx8mq_gpu_shader_sels,
+> base
+> > ++ 0x8200);
+> 
+> > +	/* For DTS which still assign parents for gpu core src clk */
+> > +	hws[IMX8MQ_CLK_GPU_CORE_SRC] =
+> hws[IMX8MQ_CLK_GPU_CORE_DIV];
+> > +	hws[IMX8MQ_CLK_GPU_SHADER_SRC] =
+> hws[IMX8MQ_CLK_GPU_SHADER_DIV];
+> 
+> Why not assign to all the old clocks?
 
-Add binding doc for fsl,aips-bus
+Are those clocks expect the GPU ones needed?
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
+Currently only the gpu clocks are needed, others are not used in dts.
 
-V2:
- Add 'select' to pass dt_binding_check
+For dts update to use the SRC clocks should be avoided in future for Linux,
+DIV clocks should be used.
 
- .../devicetree/bindings/soc/imx/fsl,aips-bus.yaml  | 47 ++++++++++++++++++++++
- 1 file changed, 47 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/soc/imx/fsl,aips-bus.yaml
+How do you think?
 
-diff --git a/Documentation/devicetree/bindings/soc/imx/fsl,aips-bus.yaml b/Documentation/devicetree/bindings/soc/imx/fsl,aips-bus.yaml
-new file mode 100644
-index 000000000000..3cbf2d28a188
---- /dev/null
-+++ b/Documentation/devicetree/bindings/soc/imx/fsl,aips-bus.yaml
-@@ -0,0 +1,47 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/soc/imx/fsl,aips-bus.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: i.MX AHB to IP Bridge
-+
-+maintainers:
-+  - Peng Fan <peng.fan@nxp.com>
-+
-+description: |
-+  This particular peripheral is designed as the bridge between
-+  AHB bus and peripherals with the lower bandwidth IP Slave (IPS)
-+  buses.
-+
-+select:
-+  properties:
-+    compatible:
-+      contains:
-+        const: fsl,aips-bus
-+  required:
-+    - compatible
-+
-+properties:
-+  compatible:
-+    items:
-+      - const: fsl,aips-bus
-+      - const: simple-bus
-+
-+  reg:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+
-+examples:
-+  - |
-+    bus@30000000 {
-+      compatible = "fsl,aips-bus", "simple-bus";
-+      reg = <0x30000000 0x400000>;
-+      #address-cells = <1>;
-+      #size-cells = <1>;
-+      ranges;
-+    };
-+...
--- 
-2.16.4
-
+Thanks,
+Peng.
 
 _______________________________________________
 linux-arm-kernel mailing list
