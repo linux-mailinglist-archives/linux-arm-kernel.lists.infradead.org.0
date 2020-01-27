@@ -2,48 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21F5214A20B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 11:33:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B516D14A215
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 11:37:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FYREFzvmEp+KC2bB3YdqLunxl2bKmu/JLNG6Um2voco=; b=QbHKOU2Jslv8Ww
-	J4v4s2O56Qbgf72DBMV0ZPFrCbmnS45ltqEDROkho1wx3SymKoHPhKnQ6ZiuIcQXDWrLSDCXKZdbI
-	0hHTUw0DPEJpv32lS9C9vCI4Bb15+dU7+W0uEoCV3xW/h3MinQ0LclLi+XoE4lAMI3mGQR8drhGIu
-	Vxporo7St7Ckep96jYrSLs0qodNRHbCzUNSqgobqgB5tXurcwcBtvTjRFMbDdFwgOQsCMlYRE8Si9
-	CKn70R7oWs8hc9lTcrWRXFe6irbCYMsrY/I+GDngWr7kSTDBO9/wpnvFiRTxN9OYHuU72ueH7wWGx
-	1tCmDA0DZ++Sn3UWSpyQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jvxxgqaNpLBHW1JDw+mdBrDqMwv6jkltSMgtX3qnKJQ=; b=EnAh7qeTQLMiNE
+	v2WMzorRDT3ChaYBVRdchJFPxfYn7giBFtCLsY9s/sZnBoPmFcWMA9uWXMLSuxg8dD5MaF179cKoc
+	e9BEL6c38Te67n2MfUHv9aqnqjUhLNFD6hhxoc/yuv2zwdj/1Olgzn+GLyvQLjBtnOCdsQb3T/X24
+	OMWneAJij+2vE2LsqlL8U2tFAD84OvszH5GwfXL/T8K5vPBSYrzD11UiVkQ+AWzwEEdgxCl16pioW
+	nKZwQDMn0VVIbjChAvSOlapnc/+x6VqnV2oYHcuhY7XBMnndkDN4xmW5NEKvdQDI+kSiMf42EDdOH
+	cBusrM3epUaEzM1w+vug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw1i2-0000pf-AX; Mon, 27 Jan 2020 10:33:34 +0000
+	id 1iw1lx-0002Uo-0G; Mon, 27 Jan 2020 10:37:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw1hs-0000ob-FT
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 10:33:26 +0000
+ id 1iw1lm-0002Tu-6I
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 10:37:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7371F30E;
- Mon, 27 Jan 2020 02:33:19 -0800 (PST)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F09093F52E;
- Mon, 27 Jan 2020 02:33:17 -0800 (PST)
-Date: Mon, 27 Jan 2020 10:33:08 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH] PCI: brcmstb: fix resource_size.cocci warnings
-Message-ID: <20200127103300.GA25542@e121166-lin.cambridge.arm.com>
-References: <20200126200939.k3vcseaccp3buh4z@f53c9c00458a>
- <C06GWEBMF4LE.2DU8RMRR4F9Q8@linux-9qgx>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C23F030E;
+ Mon, 27 Jan 2020 02:37:23 -0800 (PST)
+Received: from e123195-lin.cambridge.arm.com (e123195-lin.cambridge.arm.com
+ [10.1.196.63])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BE6EB3F52E;
+ Mon, 27 Jan 2020 02:37:22 -0800 (PST)
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] KVM: arm64: Treat emulated TVAL TimerValue as a signed 32-bit
+ integer
+Date: Mon, 27 Jan 2020 10:36:52 +0000
+Message-Id: <20200127103652.2326-1-alexandru.elisei@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <C06GWEBMF4LE.2DU8RMRR4F9Q8@linux-9qgx>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_023324_565451_116F96B6 
-X-CRM114-Status: GOOD (  14.34  )
+X-CRM114-CacheID: sfid-20200127_023726_277347_7BADF1B6 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -64,68 +62,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, kbuild-all@lists.01.org,
- kbuild test robot <lkp@intel.com>, linux-pci@vger.kernel.org,
- Jeremy Linton <jeremy.linton@arm.com>, Bjorn Helgaas <helgaas@kernel.org>,
- Jim Quinlan <james.quinlan@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, Andrew Murray <andrew.murray@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: maz@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 27, 2020 at 10:31:22AM +0100, Nicolas Saenz Julienne wrote:
-> On Mon Jan 27, 2020 at 4:09 AM, kbuild test robot wrote:
-> > From: kbuild test robot <lkp@intel.com>
-> >
-> > drivers/pci/controller/pcie-brcmstb.c:552:13-16: ERROR: Missing
-> > resource_size with res
-> >
-> >
-> > Use resource_size function on resource object
-> > instead of explicit computation.
-> >
-> > Generated by: scripts/coccinelle/api/resource_size.cocci
-> >
-> > Fixes: 8ad90d975e00 ("PCI: brcmstb: Add Broadcom STB PCIe host
-> > controller driver")
-> > CC: Jim Quinlan <james.quinlan@broadcom.com>
-> > Signed-off-by: kbuild test robot <lkp@intel.com>
-> > ---
-> 
-> Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+According to the ARM ARM, registers CNT{P,V}_TVAL_EL0 have bits [63:32]
+RES0 [1]. When reading the register, the value is truncated to the least
+significant 32 bits [2], and on writes, TimerValue is treated as a signed
+32-bit integer [1, 2].
 
-Applied on top on pci/brcmstb, thanks.
+When the guest behaves correctly and writes 32-bit values, treating TVAL
+as an unsigned 64 bit register works as expected. However, things start
+to break down when the guest writes larger values, because
+(u64)0x1_ffff_ffff = 8589934591. but (s32)0x1_ffff_ffff = -1, and the
+former will cause the timer interrupt to be asserted in the future, but
+the latter will cause it to be asserted now.  Let's treat TVAL as a
+signed 32-bit register on writes, to match the behaviour described in
+the architecture, and the behaviour experimentally exhibited by the
+virtual timer on a non-vhe host.
 
-Lorenzo
+[1] Arm DDI 0487E.a, section D13.8.18
+[2] Arm DDI 0487E.a, section D11.2.4
 
-> Regards,
-> Nicolas
-> 
-> >
-> > tree:
-> > https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
-> > master
-> > head: 702ccea170f07783bd002055a353a0866c062267
-> > commit: 8ad90d975e00c297a198f6ecbd65e414fbb06dc9 [8319/11283] PCI:
-> > brcmstb: Add Broadcom STB PCIe host controller driver
-> >
-> > pcie-brcmstb.c | 2 +-
-> > 1 file changed, 1 insertion(+), 1 deletion(-)
-> >
-> > --- a/drivers/pci/controller/pcie-brcmstb.c
-> > +++ b/drivers/pci/controller/pcie-brcmstb.c
-> > @@ -549,7 +549,7 @@ static int brcm_pcie_setup(struct brcm_p
-> >  
-> > brcm_pcie_set_outbound_win(pcie, num_out_wins, res->start,
-> > res->start - entry->offset,
-> > - res->end - res->start + 1);
-> > + resource_size(res));
-> > num_out_wins++;
-> > }
-> >  
-> 
+Signed-off-by: Alexandru Elisei <alexandru.elisei@arm.com>
+---
+ include/kvm/arm_arch_timer.h | 2 ++
+ virt/kvm/arm/arch_timer.c    | 3 ++-
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/include/kvm/arm_arch_timer.h b/include/kvm/arm_arch_timer.h
+index d120e6c323e7..be912176b7a3 100644
+--- a/include/kvm/arm_arch_timer.h
++++ b/include/kvm/arm_arch_timer.h
+@@ -10,6 +10,8 @@
+ #include <linux/clocksource.h>
+ #include <linux/hrtimer.h>
+ 
++#define ARCH_TIMER_TVAL_MASK	((1ULL << 32) - 1)
++
+ enum kvm_arch_timers {
+ 	TIMER_PTIMER,
+ 	TIMER_VTIMER,
+diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
+index f182b2380345..5d40f17f7024 100644
+--- a/virt/kvm/arm/arch_timer.c
++++ b/virt/kvm/arm/arch_timer.c
+@@ -805,6 +805,7 @@ static u64 kvm_arm_timer_read(struct kvm_vcpu *vcpu,
+ 	switch (treg) {
+ 	case TIMER_REG_TVAL:
+ 		val = timer->cnt_cval - kvm_phys_timer_read() + timer->cntvoff;
++		val &= ARCH_TIMER_TVAL_MASK;
+ 		break;
+ 
+ 	case TIMER_REG_CTL:
+@@ -850,7 +851,7 @@ static void kvm_arm_timer_write(struct kvm_vcpu *vcpu,
+ {
+ 	switch (treg) {
+ 	case TIMER_REG_TVAL:
+-		timer->cnt_cval = kvm_phys_timer_read() - timer->cntvoff + val;
++		timer->cnt_cval = kvm_phys_timer_read() - timer->cntvoff + (s32)val;
+ 		break;
+ 
+ 	case TIMER_REG_CTL:
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
