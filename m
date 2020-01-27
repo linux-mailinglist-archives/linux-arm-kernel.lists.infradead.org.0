@@ -2,138 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF01014A38C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 13:12:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EFC714A391
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 13:13:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L2D/TH3JkgRmHzZfwcyeg3oGAUH1mynC0NWzQ2yVZ0U=; b=B8MduMCzu0O1Uj
-	Y9CFI/LWzA8xNzDPuQ1545jRrHMM+JZdkQxcbbmca0O+cEke+iVSxQkNbedUFmcQFiLVw0tcCL/D1
-	x+lNhmoPMspL8iY56d6fRKl9UHFimdXk/BB85pf87PqEBPZfPyiu/YmMejiRvD5yLbYxG6L0ESZ5V
-	pj3BjMV7Oju1feySRAzq7QXYrvLgiznZsRLOOHOvXoG4GfSiWnXwTrc20Ya+5R/i+c8EC45sh8aly
-	zz9hLYHFIshcwnJNx8RnEauelIrjb7vm5vIcfsCxq8gK9dz6LALNZIA1IpC6ZPcbHJa3uF6r3GYmP
-	+PiS5niPnPyj+mDl97+g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y6rQBMpVqyJmE73WtLXNu/Gq0pavjrG9pXscEHnTwuk=; b=Flo+wiYtWi755N
+	+gKm2Hlr5y3v/rRm763gdfzabZVakA9i8/iQnnp4c34mpMy5etIeGDNqCWG+PjN23oh+54pmagq1G
+	0Hu0IMsM30AtJ2a7da8/0bRZj8Cl4tWxjGhmrPfK1uArip2A0Q9Qs2VWilD865ddDYl5hI1S8nx79
+	Z0fc/GGniV21IcpFwFQWQ19u9N1Ugv53xywKMmGBz+Eaktwgob1o/3uB07y70Mf2Aj7+tYYzXlItE
+	2fWNFHAypcQ1/Xfs0i60X9QO09MtLSqgpQTL0Ua7HPtSI8O9r6dg7btBs/oe3ehKTANbWEJXeYeJr
+	yTsIWTaJlgeoLXubxDrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw3FL-00077t-Fa; Mon, 27 Jan 2020 12:12:03 +0000
-Received: from mail-bn8nam11on2056.outbound.protection.outlook.com
- ([40.107.236.56] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1iw3Gb-0007Pp-3r; Mon, 27 Jan 2020 12:13:21 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw3FA-000771-3T
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 12:11:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=HvfLzPuEbANJAWdG2z2ywkPllIBdRRAlLSqVEPbytggWVR41eiA01F2Cnw+HNhFXm6gXJwcgI0ZnZw7dT69DfyGo2p5EaxQeuGUXiFyc6H4hdXD2k8UBjShWubFK1xvXr53cN6iWtrKLIQHeNMTwz7Yg2l5CCyrOMZ5vG/Iq6ID5XxixH6xnx3z0KBRrRSsY/ENDFaPIKXiAHCEmZw3YJpDP1eETj7DT3PLlus/lrpmsDAwbsUDlcYCvB7bS15mK06PL8GgrBkMHkJaSHg4Lab2aTz04JgK3xY4lf44YKvwmnNO9zq49md2I2+hJxNcTu3dyyfg3jBz4nI0OQeIGsQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BjxfuVJjE4dmON3PnMehkwdp+s98UjU5VxXK8cGEVSY=;
- b=AAywvrW2PRXhAXdTWauw+LSjpUEGmAC9dGLG5fUwBEKUJ0wyvm12dSGPOh6e02d5+NuGLyFxxx8u+it4hoY2ViHcFu2s42zadppmXyUMZ0iy7wKitYGuDNw0JPBEr5BpAHXujBaYiY00WcA1vaHSkr/pSvOQQVFJ0ix9G+m0hxmTXGVs/DrJmNxZmUqoBZvFrAM9xe+McgMKRUC0MFORr2KzBVEvNIPWVPLsmZrIZ1rK8hxsR8WuvTvXdfZ8+rbyrclmp3ORFfOAXvR9HgP94o2aCYzSigOVkd/eCDv/D9Ob10JEaOPOGubUNaNqm1LVMFg1CWkLsL1eqgjkYAgFTQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=canonical.com smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=BjxfuVJjE4dmON3PnMehkwdp+s98UjU5VxXK8cGEVSY=;
- b=l+5ZFkqowiHofTRQcH12Goi1ueFZV1l9GhyD6/t3pC2OxZ334XHThCvNSPNXfXTkSgiZHxg6S5Z3V/NXY71pwYatscJFwWcHx0lJVQUHIWJr60Aji7g7exazw6xfEHd4iLYPlbv4s3IQjZ1n8RHJ1Zx1tQ+4xFbPmBbykgtaSdo=
-Received: from CY4PR02CA0016.namprd02.prod.outlook.com (2603:10b6:903:18::26)
- by DM6PR02MB4923.namprd02.prod.outlook.com (2603:10b6:5:fa::27) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2665.22; Mon, 27 Jan
- 2020 12:11:47 +0000
-Received: from BL2NAM02FT029.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::205) by CY4PR02CA0016.outlook.office365.com
- (2603:10b6:903:18::26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2665.24 via Frontend
- Transport; Mon, 27 Jan 2020 12:11:47 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; canonical.com; dkim=none (message not signed)
- header.d=none;canonical.com; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- BL2NAM02FT029.mail.protection.outlook.com (10.152.77.100) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2665.18
- via Frontend Transport; Mon, 27 Jan 2020 12:11:46 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1iw3F4-0001Rx-DO; Mon, 27 Jan 2020 04:11:46 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1iw3Ez-00010Z-9a; Mon, 27 Jan 2020 04:11:41 -0800
-Received: from xsj-pvapsmtp01 (mail.xilinx.com [149.199.38.66] (may be forged))
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 00RCBWw3024733; 
- Mon, 27 Jan 2020 04:11:32 -0800
-Received: from [172.30.17.107] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1iw3Ep-0000yg-4i; Mon, 27 Jan 2020 04:11:32 -0800
-Subject: Re: [PATCH][next][V2] i2c: xiic: fix indentation issue
-To: Colin Ian King <colin.king@canonical.com>,
- Dan Carpenter <dan.carpenter@oracle.com>,
- Michal Simek <michal.simek@xilinx.com>
-References: <20200127102303.44133-1-colin.king@canonical.com>
- <2dd84ab2-a7a3-fdd8-6bd6-07f1b3d5cd00@xilinx.com>
- <20200127120535.GC1847@kadam>
- <89661e5e-7662-81a5-ec36-57367825de5e@canonical.com>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <3b71a397-3539-1081-54e0-a7b63bc9ed26@xilinx.com>
-Date: Mon, 27 Jan 2020 13:11:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1iw3GO-0007P0-Gx
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 12:13:10 +0000
+Received: from lhreml706-cah.china.huawei.com (unknown [172.18.7.107])
+ by Forcepoint Email with ESMTP id E7EE9CF9B90E00A3F073;
+ Mon, 27 Jan 2020 12:13:01 +0000 (GMT)
+Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
+ lhreml706-cah.china.huawei.com (10.201.108.47) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Mon, 27 Jan 2020 12:13:01 +0000
+Received: from localhost (10.202.226.57) by lhreml710-chm.china.huawei.com
+ (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Mon, 27 Jan
+ 2020 12:13:01 +0000
+Date: Mon, 27 Jan 2020 12:13:00 +0000
+From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+To: <Eugen.Hristev@microchip.com>
+Subject: Re: [PATCH v2 2/3] iio: adc: at91-sama5d2_adc: handle unfinished
+ conversions
+Message-ID: <20200127121300.00002a38@Huawei.com>
+In-Reply-To: <b8eb32be-a3dd-795c-8352-a4155621d10c@microchip.com>
+References: <1578917098-9674-1-git-send-email-eugen.hristev@microchip.com>
+ <1578917098-9674-3-git-send-email-eugen.hristev@microchip.com>
+ <20200117173424.0000244f@Huawei.com>
+ <b8eb32be-a3dd-795c-8352-a4155621d10c@microchip.com>
+Organization: Huawei Technologies Research and Development (UK) Ltd.
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
 MIME-Version: 1.0
-In-Reply-To: <89661e5e-7662-81a5-ec36-57367825de5e@canonical.com>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(346002)(136003)(376002)(39860400002)(199004)(189003)(81156014)(8676002)(336012)(81166006)(9786002)(53546011)(70586007)(70206006)(26005)(31696002)(36756003)(8936002)(44832011)(5660300002)(186003)(110136005)(6666004)(356004)(316002)(478600001)(4326008)(2906002)(426003)(31686004)(2616005)(42866002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR02MB4923; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 940d6868-0ecb-4a03-02a6-08d7a32214ec
-X-MS-TrafficTypeDiagnostic: DM6PR02MB4923:
-X-Microsoft-Antispam-PRVS: <DM6PR02MB4923A91FD1B1219229FF7713C60B0@DM6PR02MB4923.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:439;
-X-Forefront-PRVS: 02951C14DC
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 2R/7yzjslt2YGa8isf63Gm/bLqQc1DzZN1mOVXvNKPMeNm6Nocsc1KfwJ6/cPeNyxXZH/Jord5Uxv/FwVryvlmavMp9k5okZ1Rx1Jld8OhX59xnaOoyiXnDZybK7v56gCskDdyA96QkpTN04o95VBoN4bc8h4tcyxdAWkB+1BPlida63rjS31j1vEgjlTciYpstqr0La5rjS7eXgeTyUr7jMDk1J8huW4fdyte5aoFvVFEX8WOp4G76VMYOcsAYkPj1Ow1MFt7JrjVQ5clLCYXKRS5D91tKriyHOx8+vJvH0EjdpCxw6PL5ch2pH5ea1nbb76q5zqwg/vHz0mJVjlom+jNtOVIBEf3ziveguyLpcBgawu6xfdQeJdGXSecAPYOHQCGNnnCmlqH6taowW2byweFMxYvJ5fWA7kac5pVI4PrjbuVpyC4CfxLKxyLwPEA8a6JV3k5v9TQfF28dtZJKKwUnfcOt/OVbXxLYcGoafhevFVxoqJTeY4b7BhPVb
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Jan 2020 12:11:46.9710 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 940d6868-0ecb-4a03-02a6-08d7a32214ec
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB4923
+X-Originating-IP: [10.202.226.57]
+X-ClientProxiedBy: lhreml737-chm.china.huawei.com (10.201.108.187) To
+ lhreml710-chm.china.huawei.com (10.201.108.61)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_041152_150835_D8D8B9AE 
-X-CRM114-Status: GOOD (  13.42  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200127_041308_859254_DD54BD77 
+X-CRM114-Status: GOOD (  33.59  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.236.56 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,56 +74,233 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: linux-iio@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ linux-arm-kernel@lists.infradead.org, jic23@kernel.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27. 01. 20 13:08, Colin Ian King wrote:
-> On 27/01/2020 12:05, Dan Carpenter wrote:
->> On Mon, Jan 27, 2020 at 12:03:02PM +0100, Michal Simek wrote:
->>> On 27. 01. 20 11:23, Colin King wrote:
->>>> From: Colin Ian King <colin.king@canonical.com>
->>>>
->>>> There is a statement that is indented one level too deeply, remove
->>>> the extraneous tab.
->>>>
->>>> Signed-off-by: Colin Ian King <colin.king@canonical.com>
->>>> ---
->>>> V2: fix type in commit message
->>>> ---
->>>>  drivers/i2c/busses/i2c-xiic.c | 2 +-
->>>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>>>
->>>> diff --git a/drivers/i2c/busses/i2c-xiic.c b/drivers/i2c/busses/i2c-xiic.c
->>>> index b17d30c9ab40..90c1c362394d 100644
->>>> --- a/drivers/i2c/busses/i2c-xiic.c
->>>> +++ b/drivers/i2c/busses/i2c-xiic.c
->>>> @@ -261,7 +261,7 @@ static int xiic_clear_rx_fifo(struct xiic_i2c *i2c)
->>>>  		xiic_getreg8(i2c, XIIC_DRR_REG_OFFSET);
->>>>  		if (time_after(jiffies, timeout)) {
->>>>  			dev_err(i2c->dev, "Failed to clear rx fifo\n");
->>>> -				return -ETIMEDOUT;
->>>> +			return -ETIMEDOUT;
->>>>  		}
->>>>  	}
->>>>  
->>>>
->>>
->>> As was suggested by Peter you should also add Fixes: <sha1> ("patch
->>> subject")
->>>
->>
->> It's not really a bugfix, it's just a cleanup.
+On Mon, 20 Jan 2020 07:27:00 +0000
+<Eugen.Hristev@microchip.com> wrote:
+
+> On 17.01.2020 19:34, Jonathan Cameron wrote:
 > 
-> I'm surprised i wasn't asked for a bug number too.
+> > On Mon, 13 Jan 2020 12:07:09 +0000
+> > <Eugen.Hristev@microchip.com> wrote:
+> >   
+> >> From: Eugen Hristev <eugen.hristev@microchip.com>
+> >>
+> >> It can happen that on IRQ trigger, not all conversions are done if
+> >> we are enabling multiple channels.
+> >> The IRQ is triggered on first EOC (end of channel), but it can happen
+> >> that not all channels are done. This leads into erroneous reports to
+> >> userspace (zero values or previous values).
+> >> To solve this, in trigger handler, check if the mask of done channels
+> >> is the same as the mask of active scan channels.
+> >> If it's the same, proceed and push to buffers. Otherwise, use usleep
+> >> to sleep until the conversion is done or we timeout.
+> >> Normally, it should happen that in a short time fashion, all channels are
+> >> ready, since the first IRQ triggered.
+> >> If a hardware fault happens (for example the clock suddently dissappears),
+> >> the handler will not be completed, in which case we do not report anything to
+> >> userspace anymore.
+> >> Also, change from using the EOC interrupts to DRDY interrupt.
+> >> This helps with the fact that not 'n' interrupt statuses are enabled,
+> >> each being able to trigger an interrupt, and instead only data ready
+> >> interrupt can wake up the CPU. Like this, when data is ready, check in
+> >> handler which and how many channels are done. While the DRDY is raised,
+> >> other IRQs cannot occur. Once the channel data is being read, we ack the
+> >> IRQ and finish the conversion.
+> >>
+> >> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+> >> ---
+> >> Changes in v2:
+> >> - move start of conversion to threaded irq, removed specific at91 pollfunc
+> >> - add timeout to channel mask readiness check in trigger handler
+> >> - use DRDY irq instead of EOC irqs.
+> >> - move enable irq after DRDY has been acked in reenable_trigger
+> >>
+> >>   drivers/iio/adc/at91-sama5d2_adc.c | 62 ++++++++++++++++++++++++++++----------
+> >>   1 file changed, 46 insertions(+), 16 deletions(-)
+> >>
+> >> diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
+> >> index 2a6950a..454a493 100644
+> >> --- a/drivers/iio/adc/at91-sama5d2_adc.c
+> >> +++ b/drivers/iio/adc/at91-sama5d2_adc.c
+> >> @@ -8,6 +8,7 @@
+> >>
+> >>   #include <linux/bitops.h>
+> >>   #include <linux/clk.h>
+> >> +#include <linux/delay.h>
+> >>   #include <linux/dma-mapping.h>
+> >>   #include <linux/dmaengine.h>
+> >>   #include <linux/interrupt.h>
+> >> @@ -100,6 +101,8 @@
+> >>   #define AT91_SAMA5D2_IER_YRDY   BIT(21)
+> >>   /* Interrupt Enable Register - TS pressure measurement ready */
+> >>   #define AT91_SAMA5D2_IER_PRDY   BIT(22)
+> >> +/* Interrupt Enable Register - Data ready */
+> >> +#define AT91_SAMA5D2_IER_DRDY   BIT(24)
+> >>   /* Interrupt Enable Register - general overrun error */
+> >>   #define AT91_SAMA5D2_IER_GOVRE BIT(25)
+> >>   /* Interrupt Enable Register - Pen detect */
+> >> @@ -486,6 +489,21 @@ static inline int at91_adc_of_xlate(struct iio_dev *indio_dev,
+> >>        return at91_adc_chan_xlate(indio_dev, iiospec->args[0]);
+> >>   }
+> >>
+> >> +static unsigned int at91_adc_active_scan_mask_to_reg(struct iio_dev *indio_dev)
+> >> +{
+> >> +     u32 mask = 0;
+> >> +     u8 bit;
+> >> +
+> >> +     for_each_set_bit(bit, indio_dev->active_scan_mask,
+> >> +                      indio_dev->num_channels) {
+> >> +             struct iio_chan_spec const *chan =
+> >> +                      at91_adc_chan_get(indio_dev, bit);
+> >> +             mask |= BIT(chan->channel);
+> >> +     }
+> >> +
+> >> +     return mask & GENMASK(11, 0);
+> >> +}
+> >> +
+> >>   static void at91_adc_config_emr(struct at91_adc_state *st)
+> >>   {
+> >>        /* configure the extended mode register */
+> >> @@ -746,24 +764,19 @@ static int at91_adc_configure_trigger(struct iio_trigger *trig, bool state)
+> >>                        at91_adc_writel(st, AT91_SAMA5D2_COR, cor);
+> >>                }
+> >>
+> >> -             if (state) {
+> >> +             if (state)
+> >>                        at91_adc_writel(st, AT91_SAMA5D2_CHER,
+> >>                                        BIT(chan->channel));
+> >> -                     /* enable irq only if not using DMA */
+> >> -                     if (!st->dma_st.dma_chan) {
+> >> -                             at91_adc_writel(st, AT91_SAMA5D2_IER,
+> >> -                                             BIT(chan->channel));
+> >> -                     }
+> >> -             } else {
+> >> -                     /* disable irq only if not using DMA */
+> >> -                     if (!st->dma_st.dma_chan) {
+> >> -                             at91_adc_writel(st, AT91_SAMA5D2_IDR,
+> >> -                                             BIT(chan->channel));
+> >> -                     }
+> >> +             else
+> >>                        at91_adc_writel(st, AT91_SAMA5D2_CHDR,
+> >>                                        BIT(chan->channel));
+> >> -             }
+> >>        }
+> >> +     /* enable irq only if not using DMA */
+> >> +     if (state && !st->dma_st.dma_chan)
+> >> +             at91_adc_writel(st, AT91_SAMA5D2_IER, AT91_SAMA5D2_IER_DRDY);
+> >> +     /* disable irq only if not using DMA */
+> >> +     if (!state && !st->dma_st.dma_chan)
+> >> +             at91_adc_writel(st, AT91_SAMA5D2_IDR, AT91_SAMA5D2_IER_DRDY);  
+> > Hmm. Would have been nicer to avoid the refactor and just have the change to
+> > what was written. If you want to keep it, perhaps:
+> > 
+> >          /* Nothing to do if using DMA */
+> >          if (!st->dma_st.dma_chan)
+> >                  return 0;
+> > 
+> >          if (state)
+> >                  at91...
+> >          else
+> >                  at91...
+> >   
+> 
+> Hi Jonathan,
+> 
+> Ok I will rework it in next version
+> 
+> >>
+> >>        return 0;
+> >>   }
+> >> @@ -777,10 +790,10 @@ static int at91_adc_reenable_trigger(struct iio_trigger *trig)
+> >>        if (st->dma_st.dma_chan)
+> >>                return 0;
+> >>
+> >> -     enable_irq(st->irq);
+> >> -
+> >>        /* Needed to ACK the DRDY interruption */
+> >>        at91_adc_readl(st, AT91_SAMA5D2_LCDR);
+> >> +
+> >> +     enable_irq(st->irq);  
+> > 
+> > Why this change?  I'm not totally following the description above.
+> >   
+> 
+> The ' reading of the LCDR register ' makes the DRDY bit in ISR 
+> (interrupt status register) to be cleared.
+> So, reading that clears the IRQ, but, if we enable the IRQs before this 
+> clearance, there is a race chance that we get the DRDY IRQ triggered again.
+> It is best to clear the DRDY first, and then re enable the IRQs.
+> 
+> Does it make sense ?
 
-ok. Up2you.
+Why is it an issue if dataready is triggered again?
+That should only happen if there really is new data.  In that case we
+want to call the interrupt handler again.
 
-Thanks,
-Michal
+Normally hardware will only generate a new interrupt after the status
+register is cleared.  If that's not the case here than the hardware is
+racy whatever order we do it in.  If not, the old order is correct as
+we don't want to potentially miss the interrupt.
+
+Chances are this is a level interrupt so it won't make any difference
+either way, we either trigger at or after the readl (original code)
+or it's still set when we hit the enable_irq and trigger then
+(with reordered code).
+
+So unless I'm missing something, original code order was more 'standard'
+but it may make not difference.
+
+Jonathan
+   
+> 
+> >>        return 0;
+> >>   }
+> >>
+> >> @@ -1015,6 +1028,22 @@ static void at91_adc_trigger_handler_nodma(struct iio_dev *indio_dev,
+> >>        int i = 0;
+> >>        int val;
+> >>        u8 bit;
+> >> +     u32 mask = at91_adc_active_scan_mask_to_reg(indio_dev);
+> >> +     unsigned int timeout = 50;
+> >> +
+> >> +     /*
+> >> +      * Check if the conversion is ready. If not, wait a little bit, and
+> >> +      * in case of timeout exit with an error.
+> >> +      */
+> >> +     while ((at91_adc_readl(st, AT91_SAMA5D2_ISR) & mask) != mask &&
+> >> +            timeout) {
+> >> +             usleep_range(50, 100);
+> >> +             timeout--;
+> >> +     }
+> >> +
+> >> +     /* Cannot read data, not ready. Continue without reporting data */
+> >> +     if (!timeout)
+> >> +             return;
+> >>
+> >>        for_each_set_bit(bit, indio_dev->active_scan_mask,
+> >>                         indio_dev->num_channels) {
+> >> @@ -1281,7 +1310,8 @@ static irqreturn_t at91_adc_interrupt(int irq, void *private)
+> >>                status = at91_adc_readl(st, AT91_SAMA5D2_XPOSR);
+> >>                status = at91_adc_readl(st, AT91_SAMA5D2_YPOSR);
+> >>                status = at91_adc_readl(st, AT91_SAMA5D2_PRESSR);
+> >> -     } else if (iio_buffer_enabled(indio) && !st->dma_st.dma_chan) {
+> >> +     } else if (iio_buffer_enabled(indio) &&
+> >> +                (status & AT91_SAMA5D2_IER_DRDY)) {
+> >>                /* triggered buffer without DMA */
+> >>                disable_irq_nosync(irq);
+> >>                iio_trigger_poll(indio->trig);  
+> > 
+> > 
+> >  
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
