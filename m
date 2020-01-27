@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AB8614A3ED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 13:31:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B91E14A3EF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 13:32:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c8U8EMyYqCFN/GXZqR2Clmmrtsi83iMvwfzJflNHa5E=; b=hhISkCciBjzXhA
-	Nbjnz0wnft5gWOiAkQ2VQiRSs0THyRkbcUyxVNqUayQUQW/SWxcqwKSVwCSP6yLbwNaf4/Bdiked1
-	IksETmrSDXf7ZJOtbUTw7wgvEhaycYHE8u+Gs+F3KVe9FAwY/hyqA5BGHBhuOxnUvswOYoQjY4jw8
-	UJn8VKcr4hAlFGPeZIxpq332M30DACBvcNIoaOSJ/b62FYOArLTKqpC9pf9bMM7XP3BQeOWWTRmKd
-	/33cRuZ5iFDSf+MLj78OjiqVIiwtx+907xJuD30mFrXzMh2rCFSOt8YY76UDKBVntM77kECuheP58
-	d6d65i9VovZHl5yMCFRQ==;
+	List-Owner; bh=RXwrIn2Jlgc84JGOJrIf6uA7nTiB0TC4c258uqAOy8E=; b=k5sUCTgIJmosdg
+	1yEcLv0whM60rz7pK+iImk8tf0ChBt4JqS4ld/5WgZInXF9qbOqSMFQaHAYJEKizWxZ7tGe4A5Dnb
+	5kn021BUDBs5yKddkxcki+ylrALQGXe3iW4wJCesVr5qoilXsX8gvBi6VRtBjV3NDBubHiisyU2dU
+	tIMwVBy57nywPiDHhitjNFbjIRjYnjNKDHUsURu+q85TMo+uM07R5jBoH/zE6MOl+uKXAZ1OcbAW8
+	IvnQRRCMl+5VZU/n1HHKevDqYOUIu7gNFwY/zkkrtzqtBuwVlchhczTDws3yrKYvDik/9lmm7pxwi
+	EU84WEXo/VI/WWeCZDfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw3YG-0005s3-8K; Mon, 27 Jan 2020 12:31:36 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iw3Yc-000675-2w; Mon, 27 Jan 2020 12:31:58 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw3Y5-0005rD-1j
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 12:31:26 +0000
+ id 1iw3YE-0005x2-O1
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 12:31:36 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580128282;
+ s=mimecast20190719; t=1580128292;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=oAnLNIAG1HbXrAdqHTG2NFjfY/aBl0jW6qpN4f74QF4=;
- b=I3Kt9i3ZmW7j/9LKjNK2bZXgUYV3IfeWOWGj3ow6UK2xyyBiD89TDZp+4FUss/JLLAiUCk
- n+JgGMzpsAQOXR09Vra7AA3tpCezREuW9uE+YEw5TI7E/f905xAWj7SkBsoTXVGdP9OJfj
- T2H0XO60G4Qi56vULdEWN7Vzi+8WtWo=
+ bh=1hhEdcDWCEgGN0YrQx/xF84TmWOWm/XDVRZuqvlPeOI=;
+ b=JfbsiiPNDqlc02HG5vHt43/sRsb7/cCU59wRNbHZaLbcYEAlaM58nb+dagt9LeSvNEy11i
+ 6l76cqnODbwJeA0IL95uUGW7kd6vrjrTc2/42ia4WhDe4VfyeBzt83UrrnKvbM+n/OLfBi
+ PlNfQtTBgElSCMi6DGT1b5C8uLPfWaQ=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-57-61GjJgf0OiuHdPJRgJqX5Q-1; Mon, 27 Jan 2020 07:31:17 -0500
-X-MC-Unique: 61GjJgf0OiuHdPJRgJqX5Q-1
+ us-mta-270-XumPK1NYNvKbzopPmVyKfg-1; Mon, 27 Jan 2020 07:31:28 -0500
+X-MC-Unique: XumPK1NYNvKbzopPmVyKfg-1
 Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
  [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D651613E1;
- Mon, 27 Jan 2020 12:31:14 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 001F31005510;
+ Mon, 27 Jan 2020 12:31:25 +0000 (UTC)
 Received: from krava (unknown [10.43.17.48])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 956628E60E;
- Mon, 27 Jan 2020 12:31:10 +0000 (UTC)
-Date: Mon, 27 Jan 2020 13:31:08 +0100
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 7EBA98E60E;
+ Mon, 27 Jan 2020 12:31:22 +0000 (UTC)
+Date: Mon, 27 Jan 2020 13:31:20 +0100
 From: Jiri Olsa <jolsa@redhat.com>
 To: James Clark <james.clark@arm.com>
-Subject: Re: [PATCH v2 5/7] perf tools: add perf_evlist__terminate() for
- terminate
-Message-ID: <20200127123108.GC1114818@krava>
+Subject: Re: [PATCH v2 4/7] perf tools: Support "branch-misses:pp" on arm64
+Message-ID: <20200127123120.GD1114818@krava>
 References: <20200123160734.3775-1-james.clark@arm.com>
- <20200123160734.3775-6-james.clark@arm.com>
+ <20200123160734.3775-5-james.clark@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200123160734.3775-6-james.clark@arm.com>
+In-Reply-To: <20200123160734.3775-5-james.clark@arm.com>
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_043125_165681_A50FB483 
-X-CRM114-Status: GOOD (  19.13  )
+X-CRM114-CacheID: sfid-20200127_043134_893215_C0E1CCC1 
+X-CRM114-Status: GOOD (  12.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.139.110.120 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -104,74 +105,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 23, 2020 at 04:07:32PM +0000, James Clark wrote:
-> From: Wei Li <liwei391@huawei.com>
-> 
-> In __cmd_record(), when receiving SIGINT(ctrl + c), a done flag will
-> be set and the event list will be disabled by perf_evlist__disable()
-> once.
-> 
-> While in auxtrace_record.read_finish(), the related events will be
-> enabled again, if they are continuous, the recording seems to be endless.
-> 
-> Mark the evlist's state as terminated, preparing for the following fix.
-> 
-> Signed-off-by: Wei Li <liwei391@huawei.com>
-> Tested-by: Qi Liu <liuqi115@hisilicon.com>
-> Signed-off-by: James Clark <james.clark@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Peter Zijlstra <peterz@infradead.org>
-> Cc: Ingo Molnar <mingo@redhat.com>
-> Cc: Arnaldo Carvalho de Melo <acme@kernel.org>
-> Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-> Cc: Jiri Olsa <jolsa@redhat.com>
-> Cc: Tan Xiaojun <tanxiaojun@huawei.com>
-> Cc: Al Grant <al.grant@arm.com>
-> Cc: Namhyung Kim <namhyung@kernel.org>
-> ---
->  tools/perf/builtin-record.c |  1 +
->  tools/perf/util/evlist.c    | 14 ++++++++++++++
->  tools/perf/util/evlist.h    |  1 +
->  tools/perf/util/evsel.h     |  1 +
->  4 files changed, 17 insertions(+)
-> 
-> diff --git a/tools/perf/builtin-record.c b/tools/perf/builtin-record.c
-> index 4c301466101b..e7c917f9534d 100644
-> --- a/tools/perf/builtin-record.c
-> +++ b/tools/perf/builtin-record.c
-> @@ -1722,6 +1722,7 @@ static int __cmd_record(struct record *rec, int argc, const char **argv)
->  		if (done && !disabled && !target__none(&opts->target)) {
->  			trigger_off(&auxtrace_snapshot_trigger);
->  			evlist__disable(rec->evlist);
-> +			evlist__terminate(rec->evlist);
->  			disabled = true;
->  		}
->  	}
+On Thu, Jan 23, 2020 at 04:07:31PM +0000, James Clark wrote:
+
+SNIP
+
 > diff --git a/tools/perf/util/evlist.c b/tools/perf/util/evlist.c
-> index b9c7e5271611..b04794cd8586 100644
+> index 1548237b6558..b9c7e5271611 100644
 > --- a/tools/perf/util/evlist.c
 > +++ b/tools/perf/util/evlist.c
-> @@ -377,6 +377,20 @@ bool evsel__cpu_iter_skip(struct evsel *ev, int cpu)
->  	return true;
->  }
+> @@ -9,6 +9,7 @@
+>  #include <errno.h>
+>  #include <inttypes.h>
+>  #include <poll.h>
+> +#include "arm-spe.h"
+>  #include "cpumap.h"
+>  #include "util/mmap.h"
+>  #include "thread_map.h"
+> @@ -179,6 +180,7 @@ void perf_evlist__splice_list_tail(struct evlist *evlist,
+>  	struct evsel *evsel, *temp;
 >  
-> +void evlist__terminate(struct evlist *evlist)
-> +{
-> +	struct evsel *pos;
-> +
-> +	evlist__for_each_entry(evlist, pos) {
-> +		if (pos->disabled || !perf_evsel__is_group_leader(pos) || !pos->core.fd)
-> +			continue;
-> +		evsel__disable(pos);
-> +		pos->terminated = true;
-> +	}
+>  	__evlist__for_each_entry_safe(list, temp, evsel) {
+> +		arm_spe_precise_ip_support(evlist, evsel);
 
-how is this different from evlist__disable? other than it does not
-follow the cpu affinity ;-) can't you just call evlist__disable and
-check later on evlist->enabled instead of evlist->terminated?
+this is 'splice' function, you can't configure precise in here
 
+do you need this 'config thing' to be executed on arm only?
+
+if yes, please add something like arch_evsel__config, make it
+weak for generic code and define it for arm
+
+if no, just add the call at the end perf_evsel__config I guess
+
+thanks,
 jirka
+
+>  		list_del_init(&evsel->core.node);
+>  		evlist__add(evlist, evsel);
+>  	}
+> -- 
+> 2.25.0
+> 
 
 
 _______________________________________________
