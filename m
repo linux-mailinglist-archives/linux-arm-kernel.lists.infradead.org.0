@@ -2,88 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D39D149F5C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 08:56:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0B95149F9C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 09:15:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ATeGZmY5qLXTYDXsHJb3XS8Hxpql7gAHrn0e/e8flME=; b=APqVD2Xg34SciD
-	FFZeU+F87ttvkNMeLtZq//wXXs4IuqCELY0IK3yB5m36AfY7PSupGABXdaqVZ/Bqdf3+2T5AEPngi
-	rxnU46wx/4vMBVrmeq6pExnf6Uqaslbp1O4Tj2ZXh+V6NjbvQ4xZ0FGpbcVsjGZyM3OvULb/8Yl/w
-	7iaY9QHqAFRz8yjONde/5utc7ZR2+U9OKNEdGkV61UyvMOjeDLzwvU7akjVUT/py430rUMNAM/SGr
-	An6+eBQ+alp+JZjSuIZYdc4Sw2sbXIo8Yx3FLpGGLejk11yu3HtLRqb2p4bS9awVO4F4mheBquf19
-	+9vvhOfksCt1hK+h2d3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9qsqglg7YBbkbcXNT9FlQQD5D73Oo47R7ag+nYOn2zg=; b=GSD+ac2/lXthTGu/pnnTmw7nZ
+	PIp6uixN4J7ONNLiTE6Fj76s41dxhJYZOgE0BxPhMB0Dv+wwB10dJCw7X3USxHev8rXHv+E/uN/41
+	isNU9OtX75/IFGophK0kEdMVljwsMYvB04TNfQvRuiNS1Y3rH58zEWqFiIBDQz4AwaEw3qr/yn28t
+	WsxAJxbEwhb4sWE8/n44OfVR0DKYz7eOxCY9pSVQCwPOKcpBix+OiiF1y4ZzqrtvybHbxIx21lwQ9
+	UFkT5bUhUi1EQtM8Uue3lHFvenWjsyr1W1ZT0EeYkdDbKdKJKjUeuD8aL2wDqEhNwc4XJ0Z6gTMoh
+	KlH8UJzoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ivzFV-00022H-Jy; Mon, 27 Jan 2020 07:55:57 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1ivzYD-0008EC-Jk; Mon, 27 Jan 2020 08:15:17 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ivzFM-00021e-5Z
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 07:55:49 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id p6so5024376vsj.11
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 26 Jan 2020 23:55:47 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=JisW5FdHqDfpueRuACrKxki3mS2+DqkIGJ6tqvYKBYg=;
- b=kSO/uE+41usEvH7ebSjUhk6e1/GR1kdSgxZbiRxsCAhlZoPKgznwup/h/2aiurqXba
- seFxgj3oUfrgEWcKa+G614+LeCAaTNBjCdbjJPXw0HZTQ7jIJIx56MVRyj5idy2Njihw
- 1lvg7u/sCsRI9lQAUgiE+1pj3eYt3mM8RKqpvOqGY4GoQ8WpnDC8loBTB3RIAdXpJd1t
- uvhGn77x1mkhssxugQBP4QZX/BGJNtXHXbfds528PcECqhauXzE+uRrC+XgHw3VmoWxm
- cfiAWEvIJOhatU7LA2qPT3/WwEw8MlcDjWSC/qZE6TC9IgUl8qSgQSK+hpv1LKGzU+vi
- 04YQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=JisW5FdHqDfpueRuACrKxki3mS2+DqkIGJ6tqvYKBYg=;
- b=h0XwAZXU6+EgX/4vdn1wP7UgpcUtmlrCe09hj8kgyTbMeszg1EuHhfrdrya3o9gTqG
- 49I5+ZY6dn7wPkG5wptUAfpWX81DJytqERrbka+HU53aCzZbXFhkODwmCyELfTQO7P6Z
- j7ZNepeBEsZ0od33GONbIIVQ24UCgwf33jdqKqjickGdq0yg4YYRtaAuk2mF7fSACQmI
- 638+6I6EWb9UIhNTLosqFKwXI6a4ZNIG5UvIv5gZT7aXN/JmuvM4o8PQM0bOYBmevqLc
- 9XFBycruzmC6RZCThFb2stgrHJFsi9nnu/L9C21MRyyA1xlEtqIUmXkoi6NXXBRt1VyW
- a6/Q==
-X-Gm-Message-State: APjAAAX6EmgiOkbwXJkxSaxSrgf0B6U4AFADIjnXCznbKI4Frb6x/orI
- WCJEpt/kCi+dW9MxrTEdWGc0GXSWHtHfFr2kENgVYg==
-X-Google-Smtp-Source: APXvYqyL1TCg49AaeGX4CVUErd9kezem7knF5p9I+JWV1m4AIpmUm9yBXdiHxcp8rC0t9W4QBLYziKJLuXWuYii+iQs=
-X-Received: by 2002:a67:ee02:: with SMTP id f2mr584267vsp.165.1580111746386;
- Sun, 26 Jan 2020 23:55:46 -0800 (PST)
+ id 1ivzY2-0007oi-Ug
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 27 Jan 2020 08:15:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=G3fcsoTdkiBCTD3GqYOsAJ4fBLKH+/7q6VR4FKQCUz0=; b=IQWiXfOeLBI29GwCr/X6ilhkM
+ T2qTs5dw88H1rS2iFyyzJt0z0fApEwXcc1TuwCBj7QltOX1zVFBOvwKu5tGkyiB7/mjDIk2qj3YrK
+ 5j97qcl1NTaO2PxKcy+amr1W/LSWZRg1zZamJLO1Yl6C8eT1UTd59BgolBdTyj3zTdK73eGsJsAlK
+ C8kEuvWvMdXKmsf/xGfg4NsnN9NQesZ7kIIHXMYMJINzYC8cF5kIxIFUjzrNSD9yf6CQwDv4FhuIL
+ 89/GviQXojQKilyhF8703d7fAxznuho+5Y1nWTiONqj6Nd5PaM8wN4T1qiNH7oHwMlAigK+1cCnac
+ OMLP/HZDQ==;
+Received: from relay11.mail.gandi.net ([217.70.178.231])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ivzXz-0004bE-74
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 08:15:04 +0000
+Received: from aptenodytes (lfbn-tou-1-1151-102.w90-76.abo.wanadoo.fr
+ [90.76.211.102])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id D6AE0100016;
+ Mon, 27 Jan 2020 08:14:19 +0000 (UTC)
+Date: Mon, 27 Jan 2020 09:14:19 +0100
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Jernej Skrabec <jernej.skrabec@siol.net>
+Subject: Re: [PATCH] Revert "drm/sun4i: drv: Allow framebuffer modifiers in
+ mode config"
+Message-ID: <20200127081419.GA25668@aptenodytes>
+References: <20200126065937.9564-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
-References: <20200108052337.65916-1-drinkcat@chromium.org>
- <20200108052337.65916-6-drinkcat@chromium.org>
- <b58a8cf9-3275-cf89-6dff-596aceeb8000@arm.com>
- <CANMq1KBcNr=1_poBHrA_SDo_h-5i3e5TMqASEVaDj5LevsRcOQ@mail.gmail.com>
-In-Reply-To: <CANMq1KBcNr=1_poBHrA_SDo_h-5i3e5TMqASEVaDj5LevsRcOQ@mail.gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 27 Jan 2020 08:55:10 +0100
-Message-ID: <CAPDyKFr4Vz1ihuFQNnhDLEnOs=BZ1n2wzw3CATgPcDXs9g54uA@mail.gmail.com>
-Subject: Re: [PATCH v2 5/7] drm/panfrost: Add support for multiple power
- domain support
-To: Nicolas Boichat <drinkcat@chromium.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200126_235548_206184_F5CD4EF6 
-X-CRM114-Status: GOOD (  21.98  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+In-Reply-To: <20200126065937.9564-1-jernej.skrabec@siol.net>
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,88 +74,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, Liam Girdwood <lgirdwood@gmail.com>,
- David Airlie <airlied@linux.ie>, Mark Brown <broonie@kernel.org>,
- lkml <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Steven Price <steven.price@arm.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, wens@csie.org, mripard@kernel.org,
+ daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7973062796899664321=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 10 Jan 2020 at 02:53, Nicolas Boichat <drinkcat@chromium.org> wrote:
->
-> +Ulf to keep me honest on the power domains
->
-> On Thu, Jan 9, 2020 at 10:08 PM Steven Price <steven.price@arm.com> wrote:
-> >
-> > On 08/01/2020 05:23, Nicolas Boichat wrote:
-> > > When there is a single power domain per device, the core will
-> > > ensure the power domains are all switched on.
-> > >
-> > > However, when there are multiple ones, as in MT8183 Bifrost GPU,
-> > > we need to handle them in driver code.
-> > >
-> > >
-> > > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
-> > > ---
-> > >
-> > > The downstream driver we use on chromeos-4.19 currently uses 2
-> > > additional devices in device tree to accomodate for this [1], but
-> > > I believe this solution is cleaner.
-> >
-> > I'm not sure what is best, but it seems odd to encode this into the Panfrost driver itself - it doesn't have any knowledge of what to do with these power domains. The naming of the domains looks suspiciously like someone thought that e.g. only half of the cores could be powered, but it doesn't look like that was implemented in the chromeos driver linked and anyway that is *meant* to be automatic in the hardware! (I.e. if you only power up one cores in one core stack then the PDC should only enable the power domain for that set of cores).
->
-> This is actually implemented in the Chrome OS driver [1]. IMHO power
-> domains are a bit confusing [2]:
->  i. If there's only 1 power domain in the device, then the core takes
-> care of power on the domain (based on pm_runtime)
->  ii. If there's more than 1 power domain, then the device needs to
-> link the domains manually.
->
-> So the Chrome OS [1] driver takes approach (i), by creating 3 devices,
-> each with 1 power domain that is switched on/off automatically using
-> pm_runtime.
->
-> This patch takes approach (ii) with device links to handle the extra domains.
->
-> I believe the latter is more upstream-friendly, but, as always,
-> suggestions welcome.
 
-Apologies for the late reply. A few comments below.
+--===============7973062796899664321==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="zYM0uCDKw75PZbzx"
+Content-Disposition: inline
 
-If the device is partitioned across multiple PM domains (it may need
-several power rails), then that should be described with the "multi PM
-domain" approach in the DTS. As in (ii).
 
-Using "device links" is however optional, as it may depend on the use
-case. If all multiple PM domains needs to be powered on/off together,
-then it's certainly recommended to use device links.
+--zYM0uCDKw75PZbzx
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-However, if the PM domains can be powered on/off independently (one
-can be on while another is off), then it's probably easier to operate
-directly with runtime PM, on the returned struct *device from
-dev_pm_domain_attach_by_id().
+Hi Jernej,
 
-Also note, there is dev_pm_domain_attach_by_name(), which allows us to
-specify a name for the PM domain in the DTS, rather than using an
-index. This may be more future proof to use.
+On Sun 26 Jan 20, 07:59, Jernej Skrabec wrote:
+> This reverts commit 9db9c0cf5895e4ddde2814360cae7bea9282edd2.
+>=20
+> Setting mode_config.allow_fb_modifiers manually is completely
+> unnecessary. It is set automatically by drm_universal_plane_init() based
+> on the fact if modifier list is provided or not. Even more, it breaks
+> DE2 and DE3 as they don't support any modifiers beside linear. Modifiers
+> aware applications can be confused by provided empty modifier list - at
+> least linear modifier should be included, but it's not for DE2 and DE3.
 
-[...]
+Makes sense and it's apparently the norm to not report any modifier blob
+when only linear is supported, so let's stick to that.
 
-Hope this helps.
+Note that when the reverted patch was applied, the core didn't set
+allow_fb_modifiers on its own yet. But it does now so let's rely on it inst=
+ead.
 
-Kind regards
-Uffe
+Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+
+Cheers,
+
+Paul
+
+> Fixes: 9db9c0cf5895 ("drm/sun4i: drv: Allow framebuffer modifiers in mode=
+ config")
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> ---
+>  drivers/gpu/drm/sun4i/sun4i_drv.c | 1 -
+>  1 file changed, 1 deletion(-)
+>=20
+> diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i/su=
+n4i_drv.c
+> index 5ae67d526b1d..328272ff77d8 100644
+> --- a/drivers/gpu/drm/sun4i/sun4i_drv.c
+> +++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
+> @@ -85,7 +85,6 @@ static int sun4i_drv_bind(struct device *dev)
+>  	}
+> =20
+>  	drm_mode_config_init(drm);
+> -	drm->mode_config.allow_fb_modifiers =3D true;
+> =20
+>  	ret =3D component_bind_all(drm->dev, drm);
+>  	if (ret) {
+> --=20
+> 2.25.0
+>=20
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--zYM0uCDKw75PZbzx
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl4um9sACgkQ3cLmz3+f
+v9GVMgf+Kc3KZDcNNctctpvlPceDVaF7D4PqnI4YqaMprQkDYXgo2FwW/lu16lNQ
+NrFx8PXex2bkporLkE2jcJRIA9B1A0Wbfoy86MagAJtCtFCgCaQIXM+Y/7yGSbn6
+wfDytjFPdpngw7hZrfh9AljDP6w907SmNvvugVTG6eEKH8xRtYl3NYDFDvms1Fns
+2jQTT67palIJs10fIPCfTU0HJd2fN92lqVDiwzx0HReR4nCqVA4BTd6wxn5sieiQ
+iI3AIXJawMv0xdUs0idpRfKavaPoRWVxolUPg4Umr1RHJmxV/HS4ERRK+T4KlJmk
+EdW2EIlo4bmuFeFhog1Q8X1XURDJ1g==
+=lFH+
+-----END PGP SIGNATURE-----
+
+--zYM0uCDKw75PZbzx--
+
+
+--===============7973062796899664321==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7973062796899664321==--
+
