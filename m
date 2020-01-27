@@ -2,147 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2E9A14AA09
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 19:48:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EBDB14AA18
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 19:53:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oLQWif+84EEL0lLDRMi1gBrzKAgDONFGm4O5RyF11hI=; b=spgdo5TuVELYbi
-	XmSqznDUtVo0f00HKBohYmtrVMVk/6uRGNIBSEfLwdmRqHFx0xfr4JtaA/zE4TZFLPDCo+Xaohwtp
-	Kag+DeZ3EounntWsfRNZdrROXp3VdwefgUSa4nV9FT3mxw562Jbl3d63cSMtgoJ6xhEKRelpO2CQG
-	aTuZEQzYSOu2xGF1uBlrYQZ1gZaiKYgruNUfaN3+ZOhFMMcsMmhfquEFqewBU5xOudZA6xPetKWeL
-	bK4sglgWqaV4waKA7pzjcoXq9Lvf0m++p9e10wUH2kpcWxxZmLcTwZ68tv1riOH1iC3BpX8lijf1q
-	SPVd5woT8NtzPWnZuung==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=dkoMQfulFKJPcN9LqmlCEQUfSe3Mt4a/EXH0tzwfdH0=; b=Rw9hfWhE9l2fN8qk9J8Xd1joh
+	ZQfTPlBiuzRZih+rYV20NV81QP2TjW3/71Pn+KB8m8uM/oZdxmn05xMkrqvGzYU+E5Y3xrhBP2dYG
+	h82SiyBcTHmuLUPZSfbHR184EFQyOsx4F8BZ7WPKSHwvnueuI5WslcceAkkoO3RVpy5rM9f6lttHv
+	ZReMZ36rFI0pWhB3kxYsy9tvIlCBPKRUAmzjxGMYqXnoAiEzonNlOD0Of4AvGWQcaUaCkbc9kHVdo
+	jdiKX89lzhyscUIaj+E9EpmufxKKm/Yvvd4tSUrWbrC+v4cdLx0FWSw1DKrKFPOne2lBSEtyLMsRW
+	T266af9uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw9Qc-0002Sw-SY; Mon, 27 Jan 2020 18:48:06 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw9QT-0002Sd-IM
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 18:47:58 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id 12so2064410pjb.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Jan 2020 10:47:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=srYbtCDEGV/WxHrV6MuHQ32O3r1jyERWbs4eZucN3Mk=;
- b=oDAO4/fE5HEOEIt0C75vwXUc3590RH2zMXGhqB46LIXuyBeobl2o5lVlv+jtIgaLr4
- NETCYgG7jd9RAEdBuxojr6tq+1lBBaGQ/sl6wmFhQS1jtfprA2v0xOzc/lNInQXhV+5+
- iVehr/qT1CYFF7kgBTUre2QSK0TOt6q3tpjjq3sxwrEXrH5oEE0ruaCkRbdb8II/ya5K
- m66e53cZqDLXXQpNbSRCd1yeVH2v3v+86zy8Wy+p1Xt9AgjfjtrJvgsAnq+9ZdBQiARC
- JU/RYetBqweKidxLuV2AsuFtYmUZ4U3o5lAk9FiF69cbTLsQDgoNkac4pM2CRnfQ51qs
- NZ0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=srYbtCDEGV/WxHrV6MuHQ32O3r1jyERWbs4eZucN3Mk=;
- b=h1emVowfVThs66f0CttpMeyalRNrYnHtXkaWaWzQsOQeVK3Udie8pSRBPMms/ZmYV+
- xJTiYQvpxgKQD7qLW+UMdtoSykqFMnYIg+OYaQ4LaR1RURn5q0WE06i5eVXm1Z6UxzYz
- D7lr20347icTPXynewpM4Hk7UYM2MFS99n9VmBGSjfipiEIQtBjiW2aY9M7hHnEEfyOz
- mwM/+VuXlTBWd0noZfTtjlhj8J+oB/Zuud96tUJ9wCubMRwQWpegobhb+bOQ0V720bwD
- TEAUFP7hB+Dx86JDvh/WWQ7DXkDGH/6r+irk4FzzLcq+aTJqnkUfn83v0f7qKfjMQYji
- x2mw==
-X-Gm-Message-State: APjAAAV0M187b5U8PkRR3eYyrW1yUdLOd772WVoRmGmEX/NAe094h1QV
- 7nDSYnWYRty0eGk2ZQt+8s38WG5s
-X-Google-Smtp-Source: APXvYqxRiDxHJdCyA6EZzBBWmTUqtOtzso2sxiMBjkSB0F3ffFDI/clVIfDUptX5gdFVVQb1UsS1xQ==
-X-Received: by 2002:a17:90a:3ae5:: with SMTP id b92mr72133pjc.26.1580150875531; 
- Mon, 27 Jan 2020 10:47:55 -0800 (PST)
-Received: from [10.67.50.115] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id d73sm5965332pfd.109.2020.01.27.10.47.54
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 27 Jan 2020 10:47:54 -0800 (PST)
-Subject: Re: Request to backport "Documentation: Document arm64 kpti control"
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sasha Levin <sashal@kernel.org>
-References: <520fee3a-4d14-9a78-e542-cce98acae9f6@gmail.com>
- <20200126135233.GB11467@sasha-vm> <20200127155106.GA668073@kroah.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <406719bd-1d6f-d19e-fae4-4da3f0f76138@gmail.com>
-Date: Mon, 27 Jan 2020 10:47:53 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1iw9VP-0004kf-TL; Mon, 27 Jan 2020 18:53:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iw9VC-0004ic-VO
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 18:52:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6A44530E;
+ Mon, 27 Jan 2020 10:52:47 -0800 (PST)
+Received: from [10.37.8.210] (unknown [10.37.8.210])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1DA0C3F52E;
+ Mon, 27 Jan 2020 10:52:43 -0800 (PST)
+Subject: Re: [RFC PATCH 04/11] firmware: arm_scmi: Add core notifications
+ support
+To: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+References: <20200120122333.46217-1-cristian.marussi@arm.com>
+ <20200120122333.46217-5-cristian.marussi@arm.com>
+ <20200127181148.00006dc5@Huawei.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <1e671c9f-2ef4-36fc-d741-a3cfe93a56d9@arm.com>
+Date: Mon, 27 Jan 2020 18:52:48 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200127155106.GA668073@kroah.com>
+In-Reply-To: <20200127181148.00006dc5@Huawei.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_104757_608818_243A57B7 
-X-CRM114-Status: GOOD (  13.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200127_105251_156022_74CB6A2B 
+X-CRM114-Status: GOOD (  30.77  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -154,52 +66,1169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, stable@vger.kernel.org,
- Jeremy Linton <jeremy.linton@arm.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: james.quinlan@broadcom.com, lukasz.luba@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ sudeep.holla@arm.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/27/20 7:51 AM, Greg Kroah-Hartman wrote:
-> On Sun, Jan 26, 2020 at 08:52:33AM -0500, Sasha Levin wrote:
->> On Sat, Jan 25, 2020 at 08:03:25PM -0800, Florian Fainelli wrote:
->>> Hi Greg, Sasha,
->>>
->>> Could you backport upstream commit
->>> de19055564c8f8f9d366f8db3395836da0b2176c ("Documentation: Document arm64
->>> kpti control") to the stable 4.9, 4.14 and 4.19 kernels since they all
->>> support the command line parameter.
->>
->> Hey Florian,
->>
->> We don't normally take documentation patches into stable trees.
+Hi Jonathan
+
+Thanks for the review first of all (no matter how partial) !
+
+On 1/27/20 6:11 PM, Jonathan Cameron wrote:
+> On Mon, 20 Jan 2020 12:23:26 +0000
+> Cristian Marussi <cristian.marussi@arm.com> wrote:
 > 
-> Normally we do not, but this is simple enough I've queued it up for 4.19
-> and 4.14.  Are you sure it is ok for 4.9?  If so, Florian, can you
-> provide a backported version of it?
+>> Add basic support for SCMI Notifications, using Kernel notification chains
+>> mechanism.
+>>
+>> Each SCMI Protocol has a dedicated events' queue and deferred worker which
+>> is in charge of delivering the notifications to the interested users
+>> invoking the users' registered callbacks.
+>>
+>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> 
+> I'm not keen on the huge asymmetry on the setup and tear down paths.
+> For instance the lack of a scmi_unregister_protocol events.
+>
+Yes it's something I thought about, but it seems that SCMI protocols are never
+explicitly shutdown as it is now, so I bound init of notification core
+to the bus/protocols going up and notification exit to the bus shutdown itself.
+I'll have another thought about it, maybe reviewing a bit protocols shutdown
+procedure too.
 
-Yes, I am positive this parameter is relevant for the stable-4.9 tree, too:
+  
+> The idr usage is not standard.  They aren't the right structure
+> if you known the value you want.
 
-git show linux-stable/linux-4.9.y
+I agree, it was the most ready-to-use in kernel hash-likish structure so I went for that,
+but it is a bit of an abuse used this way....I want to switch to real hashtables in V2 to
+match dynamically events described by (proto_id, evt_id, src_id) to their data structs.
+  
+> 
+> Not a particularly thorough review otherwise. Out of time for today and
+> may not get back to this for a while.
+> 
+> Thanks,
+> 
+> Jonathan
+> 
 
-static int __init parse_kpti(char *str)
-{
-        bool enabled;
-        int ret = strtobool(str, &enabled);
+Thanks a lot.
 
-        if (ret)
-                return ret;
+Regards
 
-        __kpti_forced = enabled ? 1 : -1;
-        return 0;
-}
-early_param("kpti", parse_kpti);
+Cristian
 
-I will be sending you a targeted patch in a short while.
--- 
-Florian
+>> ---
+>>   drivers/firmware/arm_scmi/Makefile |   2 +-
+>>   drivers/firmware/arm_scmi/common.h |   4 +
+>>   drivers/firmware/arm_scmi/driver.c |   2 +
+>>   drivers/firmware/arm_scmi/notify.c | 904 +++++++++++++++++++++++++++++
+>>   drivers/firmware/arm_scmi/notify.h |  79 +++
+>>   5 files changed, 990 insertions(+), 1 deletion(-)
+>>   create mode 100644 drivers/firmware/arm_scmi/notify.c
+>>   create mode 100644 drivers/firmware/arm_scmi/notify.h
+>>
+>> diff --git a/drivers/firmware/arm_scmi/Makefile b/drivers/firmware/arm_scmi/Makefile
+>> index 5f298f00a82e..26587ea4661f 100644
+>> --- a/drivers/firmware/arm_scmi/Makefile
+>> +++ b/drivers/firmware/arm_scmi/Makefile
+>> @@ -1,6 +1,6 @@
+>>   # SPDX-License-Identifier: GPL-2.0-only
+>>   obj-y	= scmi-bus.o scmi-driver.o scmi-protocols.o
+>>   scmi-bus-y = bus.o
+>> -scmi-driver-y = driver.o
+>> +scmi-driver-y = driver.o notify.o
+>>   scmi-protocols-y = base.o clock.o perf.o power.o reset.o sensors.o
+>>   obj-$(CONFIG_ARM_SCMI_POWER_DOMAIN) += scmi_pm_domain.o
+>> diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
+>> index df35358ff324..2621c05e9149 100644
+>> --- a/drivers/firmware/arm_scmi/common.h
+>> +++ b/drivers/firmware/arm_scmi/common.h
+>> @@ -6,6 +6,8 @@
+>>    *
+>>    * Copyright (C) 2018 ARM Ltd.
+>>    */
+>> +#ifndef _SCMI_COMMON_H
+>> +#define _SCMI_COMMON_H
+>>   
+>>   #include <linux/bitfield.h>
+>>   #include <linux/completion.h>
+>> @@ -113,3 +115,5 @@ void scmi_setup_protocol_implemented(const struct scmi_handle *handle,
+>>   				     u8 *prot_imp);
+>>   
+>>   int scmi_base_protocol_init(struct scmi_handle *h);
+>> +
+>> +#endif /* _SCMI_COMMON_H */
+>> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+>> index 28ed1f0cb417..a43fad29de11 100644
+>> --- a/drivers/firmware/arm_scmi/driver.c
+>> +++ b/drivers/firmware/arm_scmi/driver.c
+>> @@ -350,12 +350,14 @@ __scmi_xfer_put(struct scmi_xfers_info *minfo, struct scmi_xfer *xfer)
+>>   
+>>   static void scmi_handle_notification(struct scmi_chan_info *cinfo, u32 msg_hdr)
+>>   {
+>> +	ktime_t ts;
+>>   	struct scmi_xfer *xfer;
+>>   	struct device *dev = cinfo->dev;
+>>   	struct scmi_info *info = handle_to_scmi_info(cinfo->handle);
+>>   	struct scmi_xfers_info *minfo = &info->rx_minfo;
+>>   	struct scmi_shared_mem __iomem *mem = cinfo->payload;
+>>   
+>> +	ts = ktime_get_boottime();
+>>   	xfer = scmi_xfer_get(cinfo->handle, minfo);
+>>   	if (IS_ERR(xfer)) {
+>>   		dev_err(dev, "failed to get free message slot (%ld)\n",
+>> diff --git a/drivers/firmware/arm_scmi/notify.c b/drivers/firmware/arm_scmi/notify.c
+>> new file mode 100644
+>> index 000000000000..da342f43021e
+>> --- /dev/null
+>> +++ b/drivers/firmware/arm_scmi/notify.c
+>> @@ -0,0 +1,904 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * System Control and Management Interface (SCMI) Notification support
+>> + *
+>> + * Copyright (C) 2019 ARM Ltd.
+>> + *
+>> + * SCMI Protocol specification allows the platform to signal events to
+>> + * interested agents via notification messages: this in an implementation
+>> + * of the dispatch and delivery of such notifications to the interested users
+>> + * inside the Linux kernel.
+>> + *
+>> + * Each SCMI Protocol implementation, during its initialization, registers with
+>> + * this core notification framework its set of supported events via
+>> + * @scmi_register_protocol_events(), while Kernel users interested in some
+>> + * specific event can register their associated callbacks providing the usual
+>> + * notifier_block descriptor, since the notification system internally supports
+>> + * events delivery using customized notification chains.
+>> + *
+>> + * Given the number of possible events defined by SCMI and the extensibility
+>> + * of the SCMI Protocol itself, such underlying notification chains are created
+>> + * and destroyed dynamically on demand depending on the number of users
+>> + * effectively registered for an event, so that no structures or chains are
+>> + * allocated until at least one user has registered a notifier_block for such
+>> + * event. Similarly, events' generation itself is enabled at the platform level
+>> + * only after at least one user has registered, and it is shutdown after the
+>> + * last user for that event has gone.
+>> + *
+>> + * An event is identified univocally by the tuple (proto_id, evt_id, src_id)
+>> + * and is served by its own dedicated notification chain: given that such chain
+>> + * is dynamically created, the registration API simply let the users associate
+>> + * their callbacks with the above tuple.
+>> + *
+>> + * Here proto_id and evt_id are simply the protocol_id and message_id numbers as
+>> + * reported in the SCMI Protocol specification, while src_id represents an
+>> + * optional, protocol dependent, source identifier (like domain_id, perf_id
+>> + * or sensor_id and so forth), so that a user can register its callbacks for a
+>> + * particular event coming only from a defined source (like CPU vs GPU).
+>> + * When the source is not specified the user callback will be registered for
+>> + * all existing sources for that event (if any).
+>> + *
+>> + * Upon reception of a notification message from the platform the SCMI RX ISR
+>> + * passes the received message payload and some ancillary information (including
+>> + * an arrival timestamp in nanoseconds) to the core via @scmi_notify(), which,
+>> + * in turn, after having looked up the event in the registered events mapping,
+>> + * pushes the event-data itself on a protocol dedicated kfifo queue for deferred
+>> + * processing.
+>> + *
+>> + * Such dedicated protocols' queues are allocated once for all at initialization
+>> + * time, together with a dedicated work_item running the common delivery logic
+>> + * of @scmi_events_dispatcher(), so that each protocol has it own dedicated
+>> + * worker which, once kicked by the ISR, takes care to empty is own dedicated
+>> + * queue deliverying the queued items into the proper notification chain.
+>> + * Note that since the underlying cmwq workers run one distinct work_item per
+>> + * protocol and there are a number of max-active workers equal to the number of
+>> + * protocols, notifications processing can proceed concurrently only between
+>> + * events belonging to different protocols, while delivery of events within the
+>> + * same protocol is still strictly sequentially ordered by time of arrival; this
+>> + * separation effectively avoids the possibility that one particularly verbose
+>> + * protocol, flooding the queues with events, can cause other protocols' events
+>> + * to be lost or their processing starved.
+>> + *
+>> + * Event's information is converted to a custom per-event report struct before
+>> + * being fed as void *data param to the user callback embedded in the registered
+>> + * notifier_block so that it looks like as follow from the user perspective:
+>> + *
+>> + * int user_cb(struct notifier_block *nb, unsigned long event_id, void *report)
+>> + *
+> No point in having blank lines at the end of a comment block.
+>> + *
+>> + */
+>> +
+>> +#define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
+>> +
+>> +#include <linux/bug.h>
+>> +#include <linux/bitfield.h>
+>> +#include <linux/err.h>
+>> +#include <linux/idr.h>
+>> +#include <linux/kernel.h>
+>> +#include <linux/kfifo.h>
+>> +#include <linux/notifier.h>
+>> +#include <linux/refcount.h>
+>> +#include <linux/slab.h>
+>> +#include <linux/scmi_protocol.h>
+>> +#include <linux/types.h>
+>> +#include <linux/workqueue.h>
+>> +
+>> +#include "notify.h"
+>> +
+>> +#define SCMI_NOTIF_MAX_ACTIVE_QUEUES	7
+>> +
+>> +/*
+>> + * Builds an unsigned 32bit key from the given input tuple to be used as a key
+>> + * in IDR mappings; note that if __src_p is passed in as NULL, the returned key
+>> + * is built using SCMI_ALL_SRC_IDS as src_id.
+>> + */
+>> +#define MAKE_EVT_KEY(__proto, __evt, __src_p)				\
+>> +	({								\
+>> +		u32 __evt_key, __src_id;				\
+>> +									\
+>> +		__src_id = ((__src_p)) ?				\
+>> +			    (*((u32 *)(__src_p)) & SCMI_ALL_SRC_IDS) :	\
+>> +			    SCMI_ALL_SRC_IDS;				\
+>> +		__evt_key = ((__proto) << 24) |				\
+>> +				((__evt) << 16) | __src_id;		\
+>> +		__evt_key;						\
+>> +	})
+>> +
+>> +#define PROTO_ID_MASK			GENMASK(31, 24)
+>> +#define EVT_ID_MASK			GENMASK(23, 16)
+>> +#define SRC_ID_MASK			GENMASK(15, 0)
+>> +#define KEY_XTRACT_PROTO_ID(key)	FIELD_GET(PROTO_ID_MASK, (key))
+>> +#define KEY_XTRACT_EVT_ID(key)		FIELD_GET(EVT_ID_MASK, (key))
+>> +#define KEY_XTRACT_SRC_ID(key)		FIELD_GET(SRC_ID_MASK, (key))
+>> +
+>> +/**
+>> + * events_queue  - Describes a queue and its associated worker
+> 
+> Not valid kernel-doc.    I'll assume all other instances will get fixed
+> and not bother talking about them.
+> 
+>> + *
+>> + * Each protocol has its own dedicated events_queue descriptor.
+>> + *
+>> + * @sz: Size in bytes of the related kfifo
+>> + * @kfifo: A dedicated Kernel kfifo
+>> + * @notify_work: A custom work item bound to this queue
+>> + * @wq: A reference to the related workqueue
+>> + */
+>> +struct events_queue {
+>> +	size_t			sz;
+>> +	struct kfifo		kfifo;
+>> +	struct work_struct	notify_work;
+>> +	struct workqueue_struct	*wq;
+>> +};
+>> +
+>> +/**
+>> + * scmi_registered_protocol_events_desc  - Protocol Specific information
+>> + *
+>> + * All protocols that registers at least an event have their protocol-specific
+>> + * information stored here, together with a pointer to the allocated
+>> + * events_queue.
+>> + *
+>> + * @id: Protocol ID
+>> + * @ops: Protocol specific and event-related operations
+>> + * @equeue: A reference to the associated per-protocol events_queue
+>> + */
+>> +struct scmi_registered_protocol_events_desc {
+>> +	u8					id;
+>> +	const struct scmi_protocol_event_ops	*ops;
+>> +	struct events_queue			*equeue;
+>> +};
+>> +
+>> +/**
+>> + * scmi_registered_event  - Event Specific Information
+>> + *
+>> + * All registered events are represented by one of these structures.
+>> + *
+>> + * @proto: A reference to the associated protocol descriptor
+>> + * @evt: A reference to the associated event descriptor (as provided at
+>> + *       registration time)
+>> + * @scratch_isr: A pre-allocated buffer to be used as a scratch area by ISR
+>> + * @scratch_isr: A pre-allocated buffer to be used as a scratch area by the
+>> + *		 deferred worker
+> scratch_bh.
+> 
+>> + * @report: A pre-allocated buffer used by the deferred workr to fill a
+> 
+> worker
+> 
+>> + *	    customized event report
+>> + */
+>> +struct scmi_registered_event {
+>> +	struct scmi_registered_protocol_events_desc	*proto;
+>> +	const struct scmi_event				*evt;
+>> +	void						*scratch_isr;
+>> +	void						*scratch_bh;
+>> +	void						*report;
+>> +};
+>> +
+>> +/**
+>> + * scmi_event_handler  - Event handler information
+>> + *
+>> + * This structure collects all the information needed to process a received
+>> + * event, calling all the registered notifier callbacks.
+>> + * Note this an event handler is associated to a tuple of values like:
+>> + *	(proto_id, evt_id, src_id)
+>> + * through the means of a key and an IDR mapping.
+>> + *
+>> + * @evt_key: The unsigned 32bit key associated to this descriptor in the
+>> + *	     related IDR mapping
+>> + * @r_evt: A reference to the underlying registered event
+>> + * @chain: The notification chain dedicated to this specific event tuple
+>> + */
+>> +struct scmi_event_handler {
+>> +	u32				evt_key;
+>> +	bool				enabled;
+>> +	refcount_t			users;
+>> +	struct scmi_registered_event	*r_evt;
+>> +	struct blocking_notifier_head	chain;
+>> +};
+>> +
+>> +/**
+>> + * scmi_event_header  - A utility header
+> 
+> That's not a good description.
+> 
+>> + *
+>> + * This header is prepended to each received event message payload before
+>> + * being queued on the related events_queue, and describes the attached event
+>> + * message.
+>> + *
+>> + * @timestamp: The timestamp, innanoseconds (boottime), which was associated
+>> + *	       to this event as soon as it entered the SCMI RX ISR
+>> + * @proto_id: Protocol ID
+>> + * @evt_id: Event ID (corresponds to the Event MsgID for this Protocol)
+>> + * @payld_sz: Effective size of the attached message payload which follows
+>> + * @payld: A reference to the included Event payload
+>> + */
+>> +struct scmi_event_header {
+>> +	u64	timestamp;
+>> +	u8	proto_id;
+>> +	u8	evt_id;
+>> +	size_t	payld_sz;
+>> +	u8	payld[];
+>> +} __packed;
+>> +
+>> +/*
+>> + * A few IDR maps to track:
+>> + *
+>> + * - @scmi_registered_events: All event's descriptors registered by the
+>> + *			      protocols, together with their ancillary data
+>> + * - @scmi_registered_events_handlers: All event's handlers descriptors, created
+>> + *				       to collect all the users' notifier_block
+>> + *				       callbacks and related notification chains
+>> + * - @scmi_registered_protocols: All protocol-level specific information related
+>> + *				 to events' handling
+>> + */
+>> +static struct idr scmi_registered_events;
+>> +static struct idr scmi_registered_events_handlers;
+>> +static DEFINE_MUTEX(scmi_registered_events_handler_mtx);
+>> +static struct idr scmi_registered_protocols;
+>> +
+>> +/* Common Kernel cmwq workqueue used by notifications core */
+>> +static struct workqueue_struct *scmi_notify_wq;
+>> +
+>> +static bool scmi_notifications_initialized;
+>> +
+>> +static struct scmi_event_handler *scmi_get_event_handler(u32 evt_key);
+>> +static void scmi_put_event_handler(struct scmi_event_handler *hndl);
+>> +
+>> +/**
+>> + * scmi_discard_bad_evt_payloadi() - Discard data from a kfifo
+> 
+> function name is wrong.
+> 
+>> + *
+>> + * @kq: The kfifo to act on
+>> + * @count: Number of bytes to flush
+>> + */
+>> +static inline void scmi_discard_bad_evt_payload(struct kfifo *kq,
+>> +						const unsigned int count)
+>> +{
+>> +	int i = 0;
+>> +
+>> +	pr_warn("SCMI Notification WQ :: skipping bad EVT Payload - %d bytes\n",
+>> +		count);
+>> +	/* Discard stale pending queued payload. */
+>> +	for (i = 0; i < count; i++)
+>> +		kfifo_skip(kq);
+>> +}
+>> +
+>> +/**
+>> + * scmi_lookup_and_call_event_chain  - Lookup the proper chain and call it
+>> + *
+>> + * @evt_key: The event key to use to lookup the related notification chain
+>> + * @report: The customized event-specific report to pass down to the callbacks
+>> + *	    as their *data parameter.
+>> + */
+>> +static inline void scmi_lookup_and_call_event_chain(u32 evt_key, void *report)
+>> +{
+>> +	int ret;
+>> +	struct scmi_event_handler *hndl;
+>> +
+>> +	hndl = scmi_get_event_handler(evt_key);
+>> +	if (IS_ERR_OR_NULL(hndl))
+>> +		return;
+>> +
+>> +	ret = blocking_notifier_call_chain(&hndl->chain,
+>> +					   KEY_XTRACT_EVT_ID(evt_key),
+>> +					   report);
+>> +	/* Notifiers are NOT supposed to cut the chain */
+>> +	WARN_ON_ONCE(ret & NOTIFY_STOP_MASK);
+>> +
+>> +	scmi_put_event_handler(hndl);
+>> +}
+>> +
+>> +/**
+>> + * scmi_events_dispatcher  - Common worker logic for all work items.
+>> + *
+>> + * In turn:
+>> + *  1. dequeue one pending RX notification (queued in SCMI RX ISR context)
+>> + *  2. generate a custom event report from the received event message
+>> + *  3. lookup for any registered ALL_SRC_IDs handler
+>> + *     - > call the related notification chain passing in the report
+>> + *  4. lookup for any registered specific SRC_ID handler
+>> + *     - > call the related notification chain passing in the report
+>> + *
+>> + * Note that:
+>> + * - a dedicated per-protocol kfifo queue is used: in this way an anomalous
+>> + *   flood of events cannot saturate other protocols' queues.
+>> + *
+>> + * - each per-protocol queue is associated to a distinct work_item, which
+>> + *   means, in turn, that:
+>> + *   + all protocol can process their dedicated queues concurrently
+>> + *     (since scmi_notify_wq:max_active > 1)
+>> + *   + anyway at most one worker instance is allowed to run on the same queue
+>> + *     concurrently: this ensures that we can have only one concurrent
+>> + *     reader/writer on the associated kfifo (needed for lock-less access)
+>> + *
+>> + * @work: The work item to use, which is associated to the proper events_queue
+>> + */
+>> +static void scmi_events_dispatcher(struct work_struct *work)
+>> +{
+>> +	struct events_queue *equeue;
+>> +	struct scmi_event_header eh;
+>> +
+>> +	equeue = container_of(work, struct events_queue, notify_work);
+>> +	while (kfifo_out(&equeue->kfifo, &eh, sizeof(eh))) {
+>> +		u32 src_id, evt_key;
+>> +		unsigned int outs;
+>> +		struct scmi_registered_event *r_evt;
+>> +		void *report = NULL;
+>> +
+>> +		evt_key = MAKE_EVT_KEY(eh.proto_id, eh.evt_id, NULL);
+>> +		r_evt = idr_find(&scmi_registered_events, evt_key);
+>> +		if (!r_evt) {
+>> +			scmi_discard_bad_evt_payload(&equeue->kfifo,
+>> +						     eh.payld_sz);
+>> +			continue;
+>> +		}
+>> +
+>> +		outs = kfifo_out(&equeue->kfifo, r_evt->scratch_bh,
+>> +				 eh.payld_sz);
+>> +		if (outs != eh.payld_sz) {
+>> +			pr_warn("SCMI Notification WQ :: SKIP corrupted EVT Payload.\n");
+>> +			continue;
+>> +		}
+>> +
+>> +		/* Reset and fill custom report */
+>> +		memset(r_evt->report, 0x00, r_evt->evt->max_report_sz);
+>> +		report = r_evt->proto->ops->fill_custom_report(eh.evt_id,
+>> +							eh.timestamp,
+>> +							r_evt->scratch_bh,
+>> +							eh.payld_sz,
+>> +							r_evt->report,
+>> +							&src_id);
+>> +		if (!report)
+>> +			continue;
+>> +
+>> +		/* At first search for a generic ALL src_ids handler... */
+>> +		scmi_lookup_and_call_event_chain(evt_key, report);
+>> +		if (src_id != SCMI_ALL_SRC_IDS) {
+>> +			u32 *__sub_p = &src_id;
+>> +
+>> +			evt_key = MAKE_EVT_KEY(eh.proto_id, eh.evt_id, __sub_p);
+>> +			scmi_lookup_and_call_event_chain(evt_key, report);
+>> +		}
+>> +	}
+>> +}
+>> +
+>> +/**
+>> + * scmi_notify  - Queues a notification for further deferred processing
+>> + *
+>> + * This is called in interrupt context to queue a received event for
+>> + * deferred processing.
+>> + *
+>> + * @proto_id: Protocol ID
+>> + * @evt_id: Event ID (msgID)
+>> + * @buf: Event Message Payload (without the header)
+>> + * @len: Event Message Payload size
+>> + * @ts: RX Timestamp in nanoseconds (boottime)
+>> + *
+>> + * Return: 0 on Success
+>> + */
+>> +int scmi_notify(u8 proto_id, u8 evt_id, const void *buf, size_t len, u64 ts)
+>> +{
+>> +	struct scmi_registered_event *r_evt;
+>> +	struct scmi_event_header *eh;
+>> +
+>> +	if (unlikely(!scmi_notifications_initialized))
+>> +		return 0;
+>> +
+>> +	r_evt = idr_find(&scmi_registered_events,
+>> +			 MAKE_EVT_KEY(proto_id, evt_id, NULL));
+>> +	if (unlikely(!r_evt || !r_evt->proto->equeue))
+>> +		return -EINVAL;
+>> +
+>> +	if (unlikely(len > r_evt->evt->max_payld_sz)) {
+>> +		pr_err("SCMI Notification discard badly sized message\n");
+>> +		return -EINVAL;
+>> +	}
+>> +	if (unlikely(kfifo_avail(&r_evt->proto->equeue->kfifo) <
+>> +		     sizeof(*eh) + len)) {
+>> +		pr_warn("SCMI Notification queue full: dropping proto_id:%d  evt_id:%d  ts:%lld\n",
+>> +			proto_id, evt_id, ts);
+>> +		return -ENOMEM;
+>> +	}
+>> +
+>> +	/*
+>> +	 * Note that we can use the per protocol kfifo in a lock-less manner
+>> +	 * since we have only one concurrent reader and writer but, in order
+>> +	 * to avoid any trouble on the reader side, here we perform one single
+>> +	 * write, so we have to collate event header and payload in a scratch
+>> +	 * area at first.
+>> +	 */
+>> +	eh = r_evt->scratch_isr;
+>> +	eh->timestamp = ts;
+>> +	eh->proto_id = proto_id;
+>> +	eh->evt_id = evt_id;
+>> +	eh->payld_sz = len;
+>> +	memcpy(eh->payld, buf, eh->payld_sz);
+>> +	kfifo_in(&r_evt->proto->equeue->kfifo, eh, sizeof(*eh) + eh->payld_sz);
+>> +	queue_work(r_evt->proto->equeue->wq,
+>> +		   &r_evt->proto->equeue->notify_work);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +/**
+>> + * scmi_allocate_events_queue  - Allocate an events_queue descriptor
+>> + *
+>> + * @sz: Size of the kfifo to initialize
+>> + *
+>> + * Return: A valid pointer to the allocated events_queue on Success
+>> + */
+>> +static struct events_queue *scmi_allocate_events_queue(size_t sz)
+>> +{
+>> +	int ret;
+>> +	struct events_queue *equeue;
+>> +
+>> +	equeue = kzalloc(sizeof(*equeue), GFP_KERNEL);
+>> +	if (!equeue)
+>> +		return ERR_PTR(-ENOMEM);
+>> +	ret = kfifo_alloc(&equeue->kfifo, sz, GFP_KERNEL);
+>> +	if (ret) {
+>> +		kfree(equeue);
+>> +		return ERR_PTR(ret);
+>> +	}
+>> +	equeue->sz = sz;
+>> +	INIT_WORK(&equeue->notify_work, scmi_events_dispatcher);
+>> +	equeue->wq = scmi_notify_wq;
+>> +
+>> +	return equeue;
+>> +}
+>> +
+>> +/**
+>> + * scmi_deallocate_events_queue  - Deallocate am events_queue descriptor
+>> + *
+>> + * @equeue: The events_queue to free
+>> + */
+>> +static void scmi_deallocate_events_queue(struct events_queue *equeue)
+>> +{
+>> +	kfifo_free(&equeue->kfifo);
+>> +	kfree(equeue);
+>> +}
+>> +
+>> +/**
+>> + * scmi_allocate_registered_protocol_desc  - Allocate a registered protocol
+>> + * events' descriptor
+>> + *
+>> + * Used to keep protocol specific information related to events handling for any
+>> + * protocl which has registered at least one event.
+> 
+> protocol
+> 
+>> + *
+>> + * @proto_id: Protocol ID
+>> + * @queue_sz: Size of the associated queue to allocate
+>> + * @ops: Pointer to a struct holding references to protocol specific helpers
+>> + *	 needed during events handling
+>> + */
+>> +static struct scmi_registered_protocol_events_desc *
+>> +scmi_allocate_registered_protocol_desc(u8 proto_id, size_t queue_sz,
+>> +				const struct scmi_protocol_event_ops *ops)
+>> +{
+>> +	int ret;
+>> +	struct scmi_registered_protocol_events_desc *pdesc;
+>> +
+>> +	pdesc = idr_find(&scmi_registered_protocols, proto_id);
+> 
+> Perhaps add a comment here on why this might get called multiple times
+> but is still safe from point of view of release path.
+> 
+>> +	if (pdesc)
+>> +		return pdesc;
+> 
+> 
+>> +
+>> +	pdesc = kzalloc(sizeof(*pdesc), GFP_KERNEL);
+>> +	if (!pdesc)
+>> +		return ERR_PTR(-ENOMEM);
+>> +	pdesc->id = proto_id;
+>> +	pdesc->ops = ops;
+>> +
+>> +	pdesc->equeue = scmi_allocate_events_queue(queue_sz);
+>> +	if (IS_ERR(pdesc->equeue)) {
+>> +		kfree(pdesc);
+>> +		return ERR_CAST(pdesc->equeue);
+>> +	}
+>> +
+>> +	ret = idr_alloc(&scmi_registered_protocols, pdesc,
+>> +			pdesc->id, pdesc->id + 1, GFP_KERNEL);
+>> +	if (ret < 0) {
+>> +		pr_err("SCMI Failed to allocate PDESC IDR - key:%d - err:%d\n",
+>> +		       pdesc->id, ret);
+>> +		scmi_deallocate_events_queue(pdesc->equeue);
+>> +		kfree(pdesc);
+>> +		return ERR_PTR(ret);
+>> +	}
+>> +
+>> +	return pdesc;
+>> +}
+>> +
+>> +/**
+>> + * scmi_register_protocol_events  - Register Protocol Events with the core
+>> + *
+>> + * Used by SCMI Protocols initialization code to register with the notification
+>> + * core the list of supported events and their description: this takes care to
+>> + * pre-allocate all needed scratch buffers and link the proper event queue to
+>> + * this event.
+>> + *
+>> + * @proto_id: Protocol ID
+>> + * @queue_sz: Size in bytes of the associated queue to be allocated
+>> + * @ops: Protocol specific event-related operations
+>> + * @evt: Event descriptor array
+>> + * @num_events: Number of events in @evt array
+>> + *
+>> + * Return: 0 on Success
+>> + */
+>> +int scmi_register_protocol_events(u8 proto_id, size_t queue_sz,
+>> +				  const struct scmi_protocol_event_ops *ops,
+>> +				  const struct scmi_event *evt, int num_events)
+>> +{
+>> +	int i;
+>> +	struct scmi_registered_protocol_events_desc *pdesc;
+>> +
+>> +	if (!scmi_notifications_initialized)
+>> +		return -EAGAIN;
+>> +
+>> +	if (!ops || !evt)
+>> +		return -EINVAL;
+>> +
+>> +	pdesc = scmi_allocate_registered_protocol_desc(proto_id, queue_sz, ops);
+>> +	if (IS_ERR(pdesc))
+>> +		return -ENOMEM;
+>> +
+>> +	for (i = 0; i < num_events; i++, evt++) {
+>> +		int ret;
+>> +		u32 key;
+>> +		struct scmi_registered_event *r_evt;
+>> +
+>> +		r_evt = kzalloc(sizeof(*r_evt), GFP_KERNEL);
+>> +		if (!r_evt)
+>> +			continue;
+>> +		r_evt->proto = pdesc;
+>> +		r_evt->evt = evt;
+>> +
+>> +		r_evt->scratch_isr = kzalloc(sizeof(struct scmi_event_header) +
+>> +					     evt->max_payld_sz, GFP_KERNEL);
+>> +		if (!r_evt->scratch_isr)
+>> +			goto continue_isr_fail;
+>> +
+>> +		r_evt->scratch_bh = kzalloc(evt->max_payld_sz, GFP_KERNEL);
+>> +		if (!r_evt->scratch_bh)
+>> +			goto continue_bh_fail;
+>> +
+>> +		r_evt->report = kzalloc(evt->max_report_sz, GFP_KERNEL);
+>> +		if (!r_evt->report)
+>> +			goto continue_report_fail;
+>> +
+>> +		key = MAKE_EVT_KEY(r_evt->proto->id, evt->evt_id, NULL);
+>> +		ret = idr_alloc(&scmi_registered_events, r_evt,
+>> +				key, key + 1, GFP_KERNEL);
+>> +		if (ret < 0) {
+>> +			pr_err("SCMI Failed to allocate EVENT IDR - key:%X - err:%d\n",
+>> +			       key, ret);
+>> +			goto continue_idr_fail;
+>> +		}
+>> +
+>> +		pr_info("SCMI Notification registered event - key:%X\n", key);
+>> +		continue;
+>> +
+>> +	/* yes, this is not nice ... */
+>> +continue_idr_fail:
+>> +		kfree(r_evt->report);
+>> +continue_report_fail:
+>> +		kfree(r_evt->scratch_bh);
+>> +continue_bh_fail:
+>> +		kfree(r_evt->scratch_isr);
+>> +continue_isr_fail:
+>> +		kfree(r_evt);
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +/**
+>> + * scmi_register_event_handler  - Allocate an Event handler
+>> + *
+>> + * Allocate an event handler and related notification chain associated with
+>> + * the event identified by the provided event key. Fails if the associated
+>> + * event is unknown to the core (i.e. it had not been successfully registered
+>> + * upfront by some protocol)
+>> + *
+>> + * @evt_key: 32bit key uniquely bind to the event identified by the tuple
+>> + *	     (proto_id, evt_id, src_id)
+>> + *
+>> + * Return: the freshly allocated structure on Success
+>> + */
+>> +static struct scmi_event_handler *scmi_register_event_handler(u32 evt_key)
+>> +{
+>> +	int id;
+>> +	u8 proto_id, evt_id;
+>> +	struct scmi_registered_event *r_evt;
+>> +	struct scmi_event_handler *hndl;
+>> +
+>> +	proto_id = KEY_XTRACT_PROTO_ID(evt_key);
+>> +	evt_id = KEY_XTRACT_EVT_ID(evt_key);
+>> +	r_evt = idr_find(&scmi_registered_events,
+>> +			 MAKE_EVT_KEY(proto_id, evt_id, NULL));
+>> +	if (!r_evt)
+>> +		return ERR_PTR(-EINVAL);
+>> +
+>> +	hndl = kzalloc(sizeof(*hndl), GFP_KERNEL);
+>> +	if (!hndl)
+>> +		return ERR_PTR(-ENOMEM);
+>> +	hndl->r_evt = r_evt;
+>> +	hndl->evt_key = evt_key;
+>> +	BLOCKING_INIT_NOTIFIER_HEAD(&hndl->chain);
+>> +	refcount_set(&hndl->users, 1);
+>> +
+>> +	/* Register freshly allocated event handler */
+>> +	id = idr_alloc(&scmi_registered_events_handlers, hndl,
+>> +		       evt_key, evt_key + 1, GFP_KERNEL);
+> 
+> Umm. That's not using an idr for what it is meant for. You aren't allocating an id, you
+> are using it as a poor wrapper around an xarray.
+> 
+>> +	if (id < 0) {
+>> +		pr_err("SCMI Failed to allocate HNDL IDR - key:%X  err:%d\n",
+>> +		       evt_key, id);
+>> +		kfree(hndl);
+>> +		return ERR_PTR(id);
+>> +	}
+>> +
+>> +	return hndl;
+>> +}
+>> +
+>> +/**
+>> + * scmi_unregister_event_handler  - Free the provided Event handler
+>> + *
+>> + * @hndl: The event handler structure to free
+>> + */
+>> +static void scmi_unregister_event_handler(struct scmi_event_handler *hndl)
+>> +{
+>> +	idr_remove(&scmi_registered_events_handlers, hndl->evt_key);
+>> +	kfree(hndl);
+>> +}
+>> +
+>> +/**
+>> + * __scmi_event_handler_get_ops  - Get or create an event handler
+>> + *
+>> + * After having got exclusive access to the registered events map, searches for
+>> + * the desired handler matching the key: when found adjust refcount, when not
+>> + * create and register a new handler is asked to do so.
+>> + * Events generation is NOT enabled within this routine since at creation time
+>> + * we usually want to have all setup and registered before events starts
+>> + * flowing.
+>> + *
+>> + * @evt_key: The event key to use
+>> + * @create: A boolean flag to specify if a handler must be created
+>> + *	    when not found
+>> + */
+>> +static inline struct scmi_event_handler *
+>> +__scmi_event_handler_get_ops(u32 evt_key, bool create)
+>> +{
+>> +	struct scmi_event_handler *hndl = NULL;
+>> +
+>> +	mutex_lock(&scmi_registered_events_handler_mtx);
+>> +	hndl = idr_find(&scmi_registered_events_handlers, evt_key);
+>> +	if (hndl)
+>> +		refcount_inc(&hndl->users);
+>> +	else if (create)
+>> +		hndl = scmi_register_event_handler(evt_key);
+>> +	mutex_unlock(&scmi_registered_events_handler_mtx);
+>> +
+>> +	return hndl;
+>> +}
+>> +
+>> +static struct scmi_event_handler *scmi_get_event_handler(u32 evt_key)
+>> +{
+>> +	return __scmi_event_handler_get_ops(evt_key, false);
+>> +}
+>> +
+>> +static struct scmi_event_handler *scmi_get_or_create_event_handler(u32 evt_key)
+>> +{
+>> +	return __scmi_event_handler_get_ops(evt_key, true);
+>> +}
+>> +
+>> +/**
+>> + * __scmi_enable_events_ops  - Enable/disable events generation
+>> + *
+>> + * @hndl: The handler specifying the events enable/disable
+>> + * @action: The action to perform: true->Enable false->Disable
+>> + *
+>> + * Return: True when the required @action has been successfully executed
+>> + */
+>> +static inline bool __scmi_enable_events_ops(struct scmi_event_handler *hndl,
+>> +					    bool action)
+>> +{
+>> +	bool ret = true;
+>> +
+>> +	if (hndl->enabled != action) {
+>> +		u8 evt_id;
+>> +		u32 src_id;
+>> +
+>> +		evt_id = KEY_XTRACT_EVT_ID(hndl->evt_key);
+>> +		src_id = KEY_XTRACT_SRC_ID(hndl->evt_key);
+>> +		ret = hndl->r_evt->proto->ops->set_notify_enabled(evt_id,
+>> +			      src_id != SCMI_ALL_SRC_IDS ? &src_id : NULL,
+>> +			      action);
+>> +		if (ret)
+>> +			hndl->enabled = action;
+>> +	}
+>> +
+>> +	return ret;
+>> +}
+>> +
+>> +static bool scmi_enable_events(struct scmi_event_handler *hndl)
+>> +{
+>> +	return __scmi_enable_events_ops(hndl, true);
+>> +}
+>> +
+>> +static bool scmi_disable_events(struct scmi_event_handler *hndl)
+>> +{
+>> +	return __scmi_enable_events_ops(hndl, false);
+>> +}
+>> +
+>> +/**
+>> + * scmi_put_event_handler  - Put an event handler
+>> + *
+>> + * After having got exclusive access to the registered events map, update
+>> + * the refcount and if @hndl is no more in use by anyone:
+>> + *  - disable the events generation
+>> + *  - unregister and free the handler itself
+>> + *
+>> + * @hndl: The handler to act upon
+>> + */
+>> +static void scmi_put_event_handler(struct scmi_event_handler *hndl)
+>> +{
+>> +	mutex_lock(&scmi_registered_events_handler_mtx);
+>> +	if (refcount_dec_and_test(&hndl->users)) {
+>> +		scmi_disable_events(hndl);
+>> +		scmi_unregister_event_handler(hndl);
+>> +	}
+>> +	mutex_unlock(&scmi_registered_events_handler_mtx);
+>> +}
+>> +
+>> +/**
+>> + * scmi_register_event_notifier  - Register a notifier_block for an event
+>> + *
+>> + * Generic helper to register a notifier_block attached to a protocol event.
+>> + *
+>> + * A notifier_block @nb will be registered for each distinct event identified
+>> + * by the tuple (proto_id, evt_id, src_id) on a dedicated notification chain
+>> + * so that:
+>> + *
+>> + *	(proto_X, evt_Y, src_Z) --> chain_X_Y_Z
+>> + *
+>> + * @src_id meaning is protocol specific and identifies the origin of the event
+>> + * (like domain_id, sensor_id and os forth); @src_id can be NULL to signify that
+> 
+> so
+> 
+>> + * the caller is interested in receiving notifications from ALL the available
+>> + * sources for that protocol OR simply that the protocol does not support
+>> + * distinct sources: in these cases @nb will be attached to a generic
+>> + * notification chain defined for ALL src_id of that proto_id/evt_id pair like:
+>> + *
+>> + *	(proto_X, evt_Y, NULL) --> chain_X_Y_ALL
+>> + *
+>> + * Any received event will be then dispatched to both such chains if at least
+>> + * one user had registered an @nb on them.
+> 
+> both should be all I think.
+> 
+>> + *
+>> + * Note also that notification chains are created dynamically: a new chain is
+>> + * created each time a new distinct tuple is detected and then the provided @nb
+>> + * is bound to such chain; at creation time the related SCMI notifications are
+>> + * also enabled: this way, only when at least one user has registered its
+>> + * interest for a specific event tuple, the underlying notification chain is
+>> + * created and the related notifications are enabled in the platform.
+> 
+> That's one of the most complex bits of punctuation I've seenin a comment for
+> a long time.   Please break that sentence up for readability.
+> 
+>> + *
+>> + * @proto_id: Protocol ID
+>> + * @evt_id: Event ID
+>> + * @src_id: Source ID
+>> + * @nb: A standard notifier block to register for the specified event
+>> + *
+>> + * Return: Return 0 on Success
+>> + */
+>> +int scmi_register_event_notifier(u8 proto_id, u8 evt_id, u32 *src_id,
+>> +				 struct notifier_block *nb)
+>> +{
+>> +	u32 evt_key;
+>> +	struct scmi_event_handler *hndl;
+>> +
+>> +	evt_key = MAKE_EVT_KEY(proto_id, evt_id, src_id);
+>> +	hndl = scmi_get_or_create_event_handler(evt_key);
+>> +	if (IS_ERR_OR_NULL(hndl))
+>> +		return PTR_ERR(hndl);
+>> +
+>> +	blocking_notifier_chain_register(&hndl->chain, nb);
+>> +
+>> +	if (!scmi_enable_events(hndl)) {
+>> +		pr_err("SCMI Failed to ENABLE events for key:%X !\n", evt_key);
+>> +		blocking_notifier_chain_unregister(&hndl->chain, nb);
+>> +		scmi_put_event_handler(hndl);
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +/**
+>> + * scmi_unregister_event_notifier  - Unregister a notifier_block for an event
+>> + *
+>> + * Takes care to unregister the provided @nb from the notification chain
+>> + * associated to the specified event and, if there are no more users for the
+>> + * event handler, frees also the associated event handler structures.
+>> + *
+>> + * @proto_id: Protocol ID
+>> + * @evt_id: Event ID
+>> + * @src_id: Source ID
+>> + * @nb: The notifier_block to unregister
+>> + *
+>> + * Return: 0 on Success
+>> + */
+>> +int scmi_unregister_event_notifier(u8 proto_id, u8 evt_id, u32 *src_id,
+>> +				   struct notifier_block *nb)
+>> +{
+>> +	u32 evt_key;
+>> +	struct scmi_event_handler *hndl;
+>> +
+>> +	evt_key = MAKE_EVT_KEY(proto_id, evt_id, src_id);
+>> +	hndl = scmi_get_event_handler(evt_key);
+>> +	if (IS_ERR_OR_NULL(hndl))
+>> +		return -EINVAL;
+>> +
+>> +	blocking_notifier_chain_unregister(&hndl->chain, nb);
+>> +
+>> +	scmi_put_event_handler(hndl);
+>> +	/*
+>> +	 * If this was the last user callback for this handler, this last put
+>> +	 * will force the handler to be freed.
+>> +	 * Note that if a call_chain walk is ongoing it will be the call_chain
+>> +	 * put request which will finally free the handler; note also that any
+>> +	 * operation on the inner notifier_block chain is protected on its own.
+>> +	 */
+>> +	scmi_put_event_handler(hndl);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +/**
+>> + * scmi_notification_init  - Initializes Notification Core Support
+>> + *
+>> + * Return: 0 on Success
+>> + */
+>> +int __init scmi_notification_init(void)
+>> +{
+>> +	scmi_notify_wq = alloc_workqueue("scmi_notify",
+>> +					 WQ_UNBOUND | WQ_FREEZABLE,
+>> +					 SCMI_NOTIF_MAX_ACTIVE_QUEUES);
+>> +	if (!scmi_notify_wq)
+>> +		return -ENOMEM;
+>> +	idr_init(&scmi_registered_events);
+>> +	idr_init(&scmi_registered_events_handlers);
+>> +	idr_init(&scmi_registered_protocols);
+>> +
+>> +	scmi_notifications_initialized = true;
+>> +
+>> +	pr_info("SCMI Notifications enabled.\n");
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +/**
+>> + * scmi_notification_exit  - Shutdown and clean Notification core
+>> + */
+>> +void __exit scmi_notification_exit(void)
+>> +{
+>> +	int k;
+>> +	struct scmi_event_handler *hndl;
+>> +	struct scmi_registered_protocol_events_desc *pdesc;
+>> +	struct scmi_registered_event *r_evt;
+>> +
+>> +	scmi_notifications_initialized = false;
+>> +
+>> +	/* Disable notifications' generation */
+>> +	idr_for_each_entry(&scmi_registered_events_handlers, hndl, k)
+>> +		scmi_disable_events(hndl);
+>> +
+>> +	/* Let pending work complete */
+>> +	destroy_workqueue(scmi_notify_wq);
+>> +
+>> +	/* Remove ALL events handlers */
+>> +	idr_for_each_entry(&scmi_registered_events_handlers, hndl, k)
+>> +		scmi_put_event_handler(hndl);
+>> +	idr_destroy(&scmi_registered_events_handlers);
+>> +
+>> +	/* Finally remove all registered events */
+> 
+> Finally seems a bit premature here ;)
+> 
+>> +	idr_for_each_entry(&scmi_registered_events, r_evt, k) {
+>> +		idr_remove(&scmi_registered_events, k);
+>> +		kfree(r_evt->report);
+>> +		kfree(r_evt->scratch_isr);
+>> +		kfree(r_evt->scratch_bh);
+>> +		kfree(r_evt);
+>> +	}
+>> +	idr_destroy(&scmi_registered_events);
+>> +
+>> +	/* free any remaining protocol data */
+>> +	idr_for_each_entry(&scmi_registered_protocols, pdesc, k) {
+>> +		idr_remove(&scmi_registered_protocols, k);
+>> +		scmi_deallocate_events_queue(pdesc->equeue);
+>> +		kfree(pdesc);
+>> +	}
+>> +	idr_destroy(&scmi_registered_protocols);
+>> +}
+>> diff --git a/drivers/firmware/arm_scmi/notify.h b/drivers/firmware/arm_scmi/notify.h
+>> new file mode 100644
+>> index 000000000000..6fa07b244b14
+>> --- /dev/null
+>> +++ b/drivers/firmware/arm_scmi/notify.h
+>> @@ -0,0 +1,79 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +/*
+>> + * System Control and Management Interface (SCMI) Message Protocol
+>> + * notification header file containing some definitions, structures
+>> + * and function prototypes related to SCMI Notification handling.
+>> + *
+>> + * Copyright (C) 2019 ARM Ltd.
+>> + */
+>> +#ifndef _SCMI_NOTIFY_H
+>> +#define _SCMI_NOTIFY_H
+>> +
+>> +#include <linux/bug.h>
+>> +#include <linux/notifier.h>
+>> +#include <linux/types.h>
+>> +
+>> +#define	SCMI_ALL_SRC_IDS		0x0000ffffL
+>> +
+>> +#define MAP_EVT_TO_ENABLE_CMD(id, map)			\
+>> +({							\
+>> +	int ret = -1;					\
+>> +							\
+>> +	if (likely((id) < ARRAY_SIZE((map))))		\
+>> +		ret = (map)[(id)];			\
+>> +	else						\
+>> +		WARN(1, "UN-KNOWN evt_id:%d\n", (id));	\
+>> +	ret;						\
+>> +})
+>> +
+>> +/**
+>> + * scmi_event  - Describes an event to be supported
+> 
+> I don't think this is valid kernel-doc.  Make sure to point the scripts at the
+> file and check and fix any warnings.
+> 
+>> + *
+>> + * Each SCMI protocol, during its initialization phase, can describe the events
+>> + * it wishes to support in a few struct scmi_event and pass them to the core
+>> + * using scmi_register_protocol_events().
+>> + *
+>> + * @evt_id: Event ID
+>> + * @max_payld_sz: Max possible size for the payload of a notif msg of this kind
+>> + * @max_report_sz: Max possible size for the report of a notif msg of this kind
+>> + */
+>> +struct scmi_event {
+>> +	u8	evt_id;
+>> +	size_t	max_payld_sz;
+>> +	size_t	max_report_sz;
+>> +
+>> +};
+>> +
+>> +/**
+>> + * scmi_protocol_event_ops  - Helpers called by notification core.
+>> + *
+>> + * These are called only in process context.
+>> + *
+>> + * @set_notify_enabled: Enable/disable the required evt_id/src_id notifications
+>> + *			using the proper custom protocol commands.
+>> + *			Return true if at least one the required src_id
+>> + *			has been successfully enabled/disabled
+>> + * @fill_custom_report: fills a custom event report from the provided
+> 
+> Nitpick.  Inconsistent capitalization after the :
+> 
+>> + *			event message payld identifying the event
+>> + *			specific src_id.
+>> + *			Return NULL on failure otherwise @report now fully
+>> + *			populated
+>> + */
+>> +struct scmi_protocol_event_ops {
+>> +	bool (*set_notify_enabled)(u8 evt_id, const u32 *src_id, bool enabled);
+>> +	void *(*fill_custom_report)(u8 evt_id, u64 timestamp, const void *payld,
+>> +				    size_t payld_sz, void *report, u32 *src_id);
+>> +};
+>> +
+>> +int scmi_notification_init(void);
+>> +void scmi_notification_exit(void);
+>> +int scmi_register_protocol_events(u8 proto_id, size_t queue_sz,
+>> +				  const struct scmi_protocol_event_ops *ops,
+>> +				  const struct scmi_event *evt, int num_events);
+>> +int scmi_register_event_notifier(u8 proto_id, u8 evt_id, u32 *sub_id,
+>> +				 struct notifier_block *nb);
+>> +int scmi_unregister_event_notifier(u8 proto_id, u8 evt_id, u32 *sub_id,
+>> +				   struct notifier_block *nb);
+>> +int scmi_notify(u8 proto_id, u8 evt_id, const void *buf, size_t len, u64 ts);
+>> +
+>> +#endif /* _SCMI_NOTIFY_H */
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
