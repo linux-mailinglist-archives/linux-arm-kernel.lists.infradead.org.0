@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 485DC14A3F0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 13:32:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F7A314A3F3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 13:32:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=06mv8IU/8dJ/5EJtrXSICE2Uaz+BqEwHWyvVVMXgH5Q=; b=aogHdbFuZUJ4wK
-	VyAyvf6aQinMBrdnuq3JshrdgncoJTmU1WP2NaaMtF9iZgCJI4lwvh0UMQ2gz11mPUi8tZ/NvXOKK
-	lK6rZJDDh2UQ0EpS5x2U7n8/ZgwTwGPssRh4tQUjeiRzkZ9O5g1Zzs/O5iKhTfXgHENquWg4mB5xT
-	qxbbLFLreBIref9+LVn8GFG8bGErytdkOXKopC3bOL6m7M1AsqKqRVU+smoKY+fqVlyJbYvodliJC
-	tvtjlyKfiWfvGGiVbdN5kjU7zDuqCqnBzT0c9FBuB2QLt9roK9m2AXLLVLVLmj9D4KtnGje5Ql0nI
-	EUDRqeFQuiuyblhN7APQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3sO+Yy+wKm3zybnI0DkPIJOvltx/mrROx1fTWynRqLs=; b=rjCoNdSPZucFnsLxuKHnMjA1q
+	INmKzerhwlrfITjkenGO4LGa5ri13fDUWaEDfLpYU5NeQ+X71rj0ukskSYWmT0gaQ30A5S6HefSDU
+	5ss+xLOOZMJyYv/I6188yM5buKqAoasjwFP5XjnWRZnAkYjB1bHDkEaqeUm7d7C+FURUayVodCQLL
+	BuMenevcVPTwKgJEM0db9MNeKf7O7/TeUptH1OAvfXLTJC/SmaSjlZOIGKppQXxJ3w/eijqT7CqOT
+	cPtWX19KdWm2qCvoTgXBKL9lGO7uFiOFg8QANeZXo7PddwAsMKKY9gVShMI147YROax/RnHxqE0Hr
+	CM0nsd5fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw3Yp-0006Ls-Q6; Mon, 27 Jan 2020 12:32:11 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iw3ZC-0006hi-M0; Mon, 27 Jan 2020 12:32:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw3YQ-000698-IK
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 12:31:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580128305;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=RKjG1/5cA7SZH1QMU5AvJ91rZVjHPgjPOojbBcC6/cs=;
- b=gpjLwG+chdkYTmdvdRbceOsRrYlw/+VOYMRKP0eBERjPdMoJ+DxpBHNVozcrOBInaECcGM
- rBQ6SvLvOpLnGWSUypG7v4NudueYCLSOB3MYSrZhYZglPX80htglM8GMiUstbA4+CTQ4W/
- gaPoOnUDpqLSl9+aCKlhAE+/Dyu3M9M=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-259-7tc7XUzxOJe_owBE1WQQ9Q-1; Mon, 27 Jan 2020 07:31:39 -0500
-X-MC-Unique: 7tc7XUzxOJe_owBE1WQQ9Q-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1iw3Z3-0006hB-50
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 12:32:26 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id A6CEE8017CC;
- Mon, 27 Jan 2020 12:31:35 +0000 (UTC)
-Received: from krava (unknown [10.43.17.48])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 2EADC451F;
- Mon, 27 Jan 2020 12:31:32 +0000 (UTC)
-Date: Mon, 27 Jan 2020 13:31:29 +0100
-From: Jiri Olsa <jolsa@redhat.com>
-To: James Clark <james.clark@arm.com>
-Subject: Re: [PATCH v2 2/7] perf tools: Add support for "report" for some spe
- events
-Message-ID: <20200127123129.GE1114818@krava>
-References: <20200123160734.3775-1-james.clark@arm.com>
- <20200123160734.3775-3-james.clark@arm.com>
+ by mail.kernel.org (Postfix) with ESMTPSA id 54E10206F0;
+ Mon, 27 Jan 2020 12:32:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1580128344;
+ bh=E0Rndhv4n8+31UjpDo5c6otkcmH+yPSSM/NvvxVcoEk=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=WsK7TKXANvoO+hyaTCDZjlq/GlfY2FDvsaRPLLfAlC0Kj4cx+XcKPVte4YoBzhtzL
+ eSR+ucBmICnO1WjFrV2bZ0UTgfr/v/dS7MbRZ3aRUxEGbyX1DZRKAgRc7/6ZZEjrzu
+ PVIcQanlWx6Oveb2Cy1wbwhMHiaD9RzswVGWV+wc=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1iw3Z0-001boM-D8; Mon, 27 Jan 2020 12:32:22 +0000
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200123160734.3775-3-james.clark@arm.com>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+Date: Mon, 27 Jan 2020 12:32:22 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v5 3/3] arm64: perf: Add support for ARMv8.5-PMU 64-bit
+ counters
+In-Reply-To: <1580125469-23887-4-git-send-email-andrew.murray@arm.com>
+References: <1580125469-23887-1-git-send-email-andrew.murray@arm.com>
+ <1580125469-23887-4-git-send-email-andrew.murray@arm.com>
+Message-ID: <c948d8202b82bccbac0ec2a4f71ce94b@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: andrew.murray@arm.com, catalin.marinas@arm.com,
+ will@kernel.org, mark.rutland@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, Suzuki.Poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_043146_684302_5960CC6A 
-X-CRM114-Status: GOOD (  14.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200127_043225_237769_ED1AA431 
+X-CRM114-Status: GOOD (  28.57  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -89,80 +91,284 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Al Grant <al.grant@arm.com>,
- wxf.wang@hisilicon.com, Peter Zijlstra <peterz@infradead.org>,
- Will Deacon <will@kernel.org>, suzuki.poulose@arm.com,
- linux-kernel@vger.kernel.org, Arnaldo Carvalho de Melo <acme@kernel.org>,
- gengdongjiu@huawei.com, linux-perf-users@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, liuqi115@hisilicon.com,
- Tan Xiaojun <tanxiaojun@huawei.com>, huawei.libin@huawei.com,
- Namhyung Kim <namhyung@kernel.org>, nd@arm.com, liwei391@huawei.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Suzuki.Poulose@arm.com,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 23, 2020 at 04:07:29PM +0000, James Clark wrote:
-
-SNIP
-
-> diff --git a/tools/perf/util/auxtrace.h b/tools/perf/util/auxtrace.h
-> index 749d72cd9c7b..b47108599280 100644
-> --- a/tools/perf/util/auxtrace.h
-> +++ b/tools/perf/util/auxtrace.h
-> @@ -111,6 +111,22 @@ struct itrace_synth_opts {
->  	int			range_num;
->  };
->  
-> +/**
-> + * struct arm_spe_synth_opts - ARM SPE tracing synthesis options.
-> + * @set: indicates whether or not options have been set
-> + * @llc_miss: whether to synthesize last level cache miss events
-> + * @tlb_miss: whether to synthesize TLB miss events
-> + * @branch_miss: whether to synthesize Branch miss events
-> + * @remote_access: whether to synthesize Remote access events
-> + */
-> +struct arm_spe_synth_opts {
-> +	bool			set;
-> +	bool			llc_miss;
-> +	bool			tlb_miss;
-> +	bool			branch_miss;
-> +	bool			remote_access;
-
-hum, why don't you add that to itrace_synth_opts instead? seems generic enough
-
-I don't follow the code much, but I assume itrace_synth_opts is generic object,
-as it's already used by some of the s390 and x86 code.. also I don't like new
-pointer to synth_ops in perf_session
-
-jirka
-
-> diff --git a/tools/perf/util/session.h b/tools/perf/util/session.h
-> index f76480166d38..cee134d7643f 100644
-> --- a/tools/perf/util/session.h
-> +++ b/tools/perf/util/session.h
-> @@ -19,6 +19,7 @@ struct thread;
->  
->  struct auxtrace;
->  struct itrace_synth_opts;
-> +struct arm_spe_synth_opts;
->  
->  struct perf_session {
->  	struct perf_header	header;
-> @@ -26,6 +27,7 @@ struct perf_session {
->  	struct evlist	*evlist;
->  	struct auxtrace		*auxtrace;
->  	struct itrace_synth_opts *itrace_synth_opts;
-> +	struct arm_spe_synth_opts *arm_spe_synth_opts;
->  	struct list_head	auxtrace_index;
->  	struct trace_event	tevent;
->  	struct perf_record_time_conv	time_conv;
-> -- 
-> 2.25.0
+On 2020-01-27 11:44, Andrew Murray wrote:
+> At present ARMv8 event counters are limited to 32-bits, though by
+> using the CHAIN event it's possible to combine adjacent counters to
+> achieve 64-bits. The perf config1:0 bit can be set to use such a
+> configuration.
 > 
+> With the introduction of ARMv8.5-PMU support, all event counters can
+> now be used as 64-bit counters.
+> 
+> Let's enable 64-bit event counters where support exists. Unless the
+> user sets config1:0 we will adjust the counter value such that it
+> overflows upon 32-bit overflow. This follows the same behaviour as
+> the cycle counter which has always been (and remains) 64-bits.
+> 
+> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> ---
+>  arch/arm64/include/asm/perf_event.h |  3 +-
+>  arch/arm64/include/asm/sysreg.h     |  1 +
+>  arch/arm64/kernel/perf_event.c      | 86 
+> +++++++++++++++++++++++++++++--------
+>  include/linux/perf/arm_pmu.h        |  1 +
+>  4 files changed, 73 insertions(+), 18 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/perf_event.h
+> b/arch/arm64/include/asm/perf_event.h
+> index 2bdbc79..e7765b6 100644
+> --- a/arch/arm64/include/asm/perf_event.h
+> +++ b/arch/arm64/include/asm/perf_event.h
+> @@ -176,9 +176,10 @@
+>  #define ARMV8_PMU_PMCR_X	(1 << 4) /* Export to ETM */
+>  #define ARMV8_PMU_PMCR_DP	(1 << 5) /* Disable CCNT if non-invasive 
+> debug*/
+>  #define ARMV8_PMU_PMCR_LC	(1 << 6) /* Overflow on 64 bit cycle counter 
+> */
+> +#define ARMV8_PMU_PMCR_LP	(1 << 7) /* Long event counter enable */
+>  #define	ARMV8_PMU_PMCR_N_SHIFT	11	 /* Number of counters supported */
+>  #define	ARMV8_PMU_PMCR_N_MASK	0x1f
+> -#define	ARMV8_PMU_PMCR_MASK	0x7f	 /* Mask for writable bits */
+> +#define	ARMV8_PMU_PMCR_MASK	0xff	 /* Mask for writable bits */
+> 
+>  /*
+>   * PMOVSR: counters overflow flag status reg
+> diff --git a/arch/arm64/include/asm/sysreg.h 
+> b/arch/arm64/include/asm/sysreg.h
+> index 1009878..30c1e18 100644
+> --- a/arch/arm64/include/asm/sysreg.h
+> +++ b/arch/arm64/include/asm/sysreg.h
+> @@ -675,6 +675,7 @@
+>  #define ID_DFR0_PERFMON_SHIFT		24
+> 
+>  #define ID_DFR0_EL1_PMUVER_8_1		4
+> +#define ID_DFR0_EL1_PMUVER_8_4		5
 
+This doesn't seem right, see below.
+
+>  #define ID_AA64DFR0_EL1_PMUVER_8_1	4
+> 
+>  #define ID_ISAR5_RDM_SHIFT		24
+> diff --git a/arch/arm64/kernel/perf_event.c 
+> b/arch/arm64/kernel/perf_event.c
+> index e40b656..4e27f90 100644
+> --- a/arch/arm64/kernel/perf_event.c
+> +++ b/arch/arm64/kernel/perf_event.c
+> @@ -285,6 +285,17 @@ static struct attribute_group
+> armv8_pmuv3_format_attr_group = {
+>  #define	ARMV8_IDX_COUNTER_LAST(cpu_pmu) \
+>  	(ARMV8_IDX_CYCLE_COUNTER + cpu_pmu->num_events - 1)
+> 
+> +
+> +/*
+> + * We unconditionally enable ARMv8.5-PMU long event counter support
+> + * (64-bit events) where supported. Indicate if this arm_pmu has long
+> + * event counter support.
+> + */
+> +static bool armv8pmu_has_long_event(struct arm_pmu *cpu_pmu)
+> +{
+> +	return (cpu_pmu->pmuver > ID_DFR0_EL1_PMUVER_8_4);
+
+Isn't the ID_DFR0 prefix for AArch32? Although this doesn't change much
+the final result (the values happen to be the same on both 
+architectures),
+it is nonetheless a bit confusing.
+
+> +}
+> +
+>  /*
+>   * We must chain two programmable counters for 64 bit events,
+>   * except when we have allocated the 64bit cycle counter (for CPU
+> @@ -294,9 +305,11 @@ static struct attribute_group
+> armv8_pmuv3_format_attr_group = {
+>  static inline bool armv8pmu_event_is_chained(struct perf_event *event)
+>  {
+>  	int idx = event->hw.idx;
+> +	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+> 
+>  	return !WARN_ON(idx < 0) &&
+>  	       armv8pmu_event_is_64bit(event) &&
+> +	       !armv8pmu_has_long_event(cpu_pmu) &&
+>  	       (idx != ARMV8_IDX_CYCLE_COUNTER);
+>  }
+> 
+> @@ -345,7 +358,7 @@ static inline void armv8pmu_select_counter(int idx)
+>  	isb();
+>  }
+> 
+> -static inline u32 armv8pmu_read_evcntr(int idx)
+> +static inline u64 armv8pmu_read_evcntr(int idx)
+>  {
+>  	armv8pmu_select_counter(idx);
+>  	return read_sysreg(pmxevcntr_el0);
+> @@ -362,6 +375,44 @@ static inline u64 armv8pmu_read_hw_counter(struct
+> perf_event *event)
+>  	return val;
+>  }
+> 
+> +/*
+> + * The cycle counter is always a 64-bit counter. When 
+> ARMV8_PMU_PMCR_LP
+> + * is set the event counters also become 64-bit counters. Unless the
+> + * user has requested a long counter (attr.config1) then we want to
+> + * interrupt upon 32-bit overflow - we achieve this by applying a 
+> bias.
+> + */
+> +static bool armv8pmu_event_needs_bias(struct perf_event *event)
+> +{
+> +	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+> +	struct hw_perf_event *hwc = &event->hw;
+> +	int idx = hwc->idx;
+> +
+> +	if (armv8pmu_event_is_64bit(event))
+> +		return false;
+> +
+> +	if (armv8pmu_has_long_event(cpu_pmu) ||
+> +	    idx == ARMV8_IDX_CYCLE_COUNTER)
+> +		return true;
+> +
+> +	return false;
+> +}
+> +
+> +static u64 armv8pmu_bias_long_counter(struct perf_event *event, u64 
+> value)
+> +{
+> +	if (armv8pmu_event_needs_bias(event))
+> +		value |= GENMASK(63, 32);
+> +
+> +	return value;
+> +}
+> +
+> +static u64 armv8pmu_unbias_long_counter(struct perf_event *event, u64 
+> value)
+> +{
+> +	if (armv8pmu_event_needs_bias(event))
+> +		value &= ~GENMASK(63, 32);
+> +
+> +	return value;
+> +}
+> +
+>  static u64 armv8pmu_read_counter(struct perf_event *event)
+>  {
+>  	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+> @@ -377,10 +428,10 @@ static u64 armv8pmu_read_counter(struct 
+> perf_event *event)
+>  	else
+>  		value = armv8pmu_read_hw_counter(event);
+> 
+> -	return value;
+> +	return  armv8pmu_unbias_long_counter(event, value);
+>  }
+> 
+> -static inline void armv8pmu_write_evcntr(int idx, u32 value)
+> +static inline void armv8pmu_write_evcntr(int idx, u64 value)
+>  {
+>  	armv8pmu_select_counter(idx);
+>  	write_sysreg(value, pmxevcntr_el0);
+> @@ -405,20 +456,14 @@ static void armv8pmu_write_counter(struct
+> perf_event *event, u64 value)
+>  	struct hw_perf_event *hwc = &event->hw;
+>  	int idx = hwc->idx;
+> 
+> +	value = armv8pmu_bias_long_counter(event, value);
+> +
+>  	if (!armv8pmu_counter_valid(cpu_pmu, idx))
+>  		pr_err("CPU%u writing wrong counter %d\n",
+>  			smp_processor_id(), idx);
+> -	else if (idx == ARMV8_IDX_CYCLE_COUNTER) {
+> -		/*
+> -		 * The cycles counter is really a 64-bit counter.
+> -		 * When treating it as a 32-bit counter, we only count
+> -		 * the lower 32 bits, and set the upper 32-bits so that
+> -		 * we get an interrupt upon 32-bit overflow.
+> -		 */
+> -		if (!armv8pmu_event_is_64bit(event))
+> -			value |= 0xffffffff00000000ULL;
+> +	else if (idx == ARMV8_IDX_CYCLE_COUNTER)
+>  		write_sysreg(value, pmccntr_el0);
+> -	} else
+> +	else
+>  		armv8pmu_write_hw_counter(event, value);
+>  }
+> 
+> @@ -743,7 +788,8 @@ static int armv8pmu_get_event_idx(struct
+> pmu_hw_events *cpuc,
+>  	/*
+>  	 * Otherwise use events counters
+>  	 */
+> -	if (armv8pmu_event_is_64bit(event))
+> +	if (armv8pmu_event_is_64bit(event) &&
+> +	    !armv8pmu_has_long_event(cpu_pmu))
+>  		return	armv8pmu_get_chain_idx(cpuc, cpu_pmu);
+>  	else
+>  		return armv8pmu_get_single_idx(cpuc, cpu_pmu);
+> @@ -815,7 +861,7 @@ static int armv8pmu_filter_match(struct perf_event 
+> *event)
+>  static void armv8pmu_reset(void *info)
+>  {
+>  	struct arm_pmu *cpu_pmu = (struct arm_pmu *)info;
+> -	u32 idx, nb_cnt = cpu_pmu->num_events;
+> +	u32 idx, pmcr, nb_cnt = cpu_pmu->num_events;
+> 
+>  	/* The counter and interrupt enable registers are unknown at reset. 
+> */
+>  	for (idx = ARMV8_IDX_CYCLE_COUNTER; idx < nb_cnt; ++idx) {
+> @@ -830,8 +876,13 @@ static void armv8pmu_reset(void *info)
+>  	 * Initialize & Reset PMNC. Request overflow interrupt for
+>  	 * 64 bit cycle counter but cheat in armv8pmu_write_counter().
+>  	 */
+> -	armv8pmu_pmcr_write(ARMV8_PMU_PMCR_P | ARMV8_PMU_PMCR_C |
+> -			    ARMV8_PMU_PMCR_LC);
+> +	pmcr = ARMV8_PMU_PMCR_P | ARMV8_PMU_PMCR_C | ARMV8_PMU_PMCR_LC;
+> +
+> +	/* Enable long event counter support where available */
+> +	if (armv8pmu_has_long_event(cpu_pmu))
+> +		pmcr |= ARMV8_PMU_PMCR_LP;
+> +
+> +	armv8pmu_pmcr_write(pmcr);
+>  }
+> 
+>  static int __armv8_pmuv3_map_event(struct perf_event *event,
+> @@ -914,6 +965,7 @@ static void __armv8pmu_probe_pmu(void *info)
+>  	if (pmuver == 0xf || pmuver == 0)
+>  		return;
+> 
+> +	cpu_pmu->pmuver = pmuver;
+
+And pmuver comes from ID_AA64DFR0_PMUVER_SHIFT, so the above really
+needs fixing in the name of consistency.
+
+>  	probe->present = true;
+> 
+>  	/* Read the nb of CNTx counters supported from PMNC */
+> diff --git a/include/linux/perf/arm_pmu.h 
+> b/include/linux/perf/arm_pmu.h
+> index 71f525a..5b616dd 100644
+> --- a/include/linux/perf/arm_pmu.h
+> +++ b/include/linux/perf/arm_pmu.h
+> @@ -80,6 +80,7 @@ struct arm_pmu {
+>  	struct pmu	pmu;
+>  	cpumask_t	supported_cpus;
+>  	char		*name;
+> +	int		pmuver;
+>  	irqreturn_t	(*handle_irq)(struct arm_pmu *pmu);
+>  	void		(*enable)(struct perf_event *event);
+>  	void		(*disable)(struct perf_event *event);
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
