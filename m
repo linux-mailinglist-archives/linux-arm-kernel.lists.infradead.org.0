@@ -2,55 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B516D14A215
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 11:37:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A8E814A247
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 11:53:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jvxxgqaNpLBHW1JDw+mdBrDqMwv6jkltSMgtX3qnKJQ=; b=EnAh7qeTQLMiNE
-	v2WMzorRDT3ChaYBVRdchJFPxfYn7giBFtCLsY9s/sZnBoPmFcWMA9uWXMLSuxg8dD5MaF179cKoc
-	e9BEL6c38Te67n2MfUHv9aqnqjUhLNFD6hhxoc/yuv2zwdj/1Olgzn+GLyvQLjBtnOCdsQb3T/X24
-	OMWneAJij+2vE2LsqlL8U2tFAD84OvszH5GwfXL/T8K5vPBSYrzD11UiVkQ+AWzwEEdgxCl16pioW
-	nKZwQDMn0VVIbjChAvSOlapnc/+x6VqnV2oYHcuhY7XBMnndkDN4xmW5NEKvdQDI+kSiMf42EDdOH
-	cBusrM3epUaEzM1w+vug==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NyQMOCiyvyz/qkUehAwQvgktaRxgRGptX3AIqsReeno=; b=tLGfuXVQo/W7TF
+	BE16t+niQffbuY3a6YGdQ1BlAHsw/A0VNn9ZskAS105uJV1vQ0MwliF3HjDkaLlboJLQgAlXgs2SV
+	18Tfm8UeeuMAN4yq4DYBs9Bl0shsAZaJoFkXJaxj2w0ND1KJK77GD7GmcVYewgdwHwjk2xgIx1X+o
+	75NWPqftp/Q9HApWrKejd9C7M2ZRdvkllaCv+Hzfl8WWzo/FJco865CCzTHA2chuxIYP6hPkbcMpL
+	sYZU5E6DEVQ+KWL3kNSKQVTpQgjjQrJ/rSSEhunqLJMtDplDwqVOyEkm8JAfe25GCkJdfodgRfJUi
+	l+sc6RAde7JKhzez2wDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw1lx-0002Uo-0G; Mon, 27 Jan 2020 10:37:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw1lm-0002Tu-6I
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 10:37:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C23F030E;
- Mon, 27 Jan 2020 02:37:23 -0800 (PST)
-Received: from e123195-lin.cambridge.arm.com (e123195-lin.cambridge.arm.com
- [10.1.196.63])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BE6EB3F52E;
- Mon, 27 Jan 2020 02:37:22 -0800 (PST)
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] KVM: arm64: Treat emulated TVAL TimerValue as a signed 32-bit
- integer
-Date: Mon, 27 Jan 2020 10:36:52 +0000
-Message-Id: <20200127103652.2326-1-alexandru.elisei@arm.com>
-X-Mailer: git-send-email 2.20.1
+	id 1iw21L-0007wn-R8; Mon, 27 Jan 2020 10:53:32 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iw21B-0007w2-1E
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 10:53:22 +0000
+Received: from mail-qk1-f180.google.com ([209.85.222.180]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1M2wCi-1iskE62K3I-003Iw2 for <linux-arm-kernel@lists.infradead.org>; Mon,
+ 27 Jan 2020 11:53:18 +0100
+Received: by mail-qk1-f180.google.com with SMTP id v195so9073004qkb.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Jan 2020 02:53:17 -0800 (PST)
+X-Gm-Message-State: APjAAAXRcWsCtkrITbd6Nh8lwr5SEY6M5sYnE2ocWmMte0oAxifBI9qk
+ nKV+6fHa1XLNyIASCvoPfIJZ9NBY/Nx+2upgSr0=
+X-Google-Smtp-Source: APXvYqw+sNYd7tg/7ZuXY3v+6ebsuCG0e8arDEWW9YJZhMhyGqIT3XzhzapxsRzTZz5mxB6btWsOiYkrSj0kdtMTaHs=
+X-Received: by 2002:a05:620a:16a7:: with SMTP id s7mr373783qkj.3.1580122396308; 
+ Mon, 27 Jan 2020 02:53:16 -0800 (PST)
 MIME-Version: 1.0
+References: <1580117979-4629-1-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1580117979-4629-1-git-send-email-peng.fan@nxp.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 27 Jan 2020 11:53:00 +0100
+X-Gmail-Original-Message-ID: <CAK8P3a2YLo4rNBXu9NhvKv6QOFUcZhCVXNR4XJe_0Kc_RJ=ubA@mail.gmail.com>
+Message-ID: <CAK8P3a2YLo4rNBXu9NhvKv6QOFUcZhCVXNR4XJe_0Kc_RJ=ubA@mail.gmail.com>
+Subject: Re: [PATCH V2 0/5] soc: imx: increase build coverage for imx8 soc
+ driver
+To: Peng Fan <peng.fan@nxp.com>
+X-Provags-ID: V03:K1:oZJ4bsjEK0kXQ2LO5Amf5LAqoDpJg5TMkm/E0ATgqnCeb6x2rLR
+ cDlVskLlxP1BoZHV4WQvtNg4DbQruUlX5XHr6i8OK0QeERiSgc1wQkviTQ0mdhDjVynoc00
+ IxeggP7n/UjghyWfTybUKIYYHZTkJv2x1Jk9m6e40Az/Q6+mPTVQuGLMcZQZROYNTHhM9zb
+ MHwio+VW57qRJn6B3+WYA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:n5VFo64zXAs=:UTfwnPr7j3AerNW//A+4Ef
+ U1ZvgQ8sKeuA8FYHyQW+MPqNTE6E9DUJAeemAiRcEV0MJYGESIqwzMgiursyMlNaPJEy0rrUY
+ KHydWM5jFh0zlK//atLQ6uW7egpQ0aQEdpPu/jUu7dJ+zGF9VGThEEVVyZjVZJFWJAt9GL5l4
+ cMzv1hEDYFp0MHXOhHqP7chKhgslydlT9NpZUl1r8tZWQ4OfHnbrS3ce9ZyMNDXs9NrgHEXoy
+ /3HIsizM39A62A2joScOdL88mpGlTYqPyFnWIFIS4CQcb3+qi+SVcz7dlokFxw4A5fCj9ZrEF
+ k0Z6M6zCHV6J+JeZDyr7KmZAO7OvWqgqvj6sLHh1lEppSP4dKardwuWHX6a9pDqhmORoWREjm
+ OEwBPgNyqVeen+IKLECRbigQ0b1hMhh8IN/mFCd8oe/Rdfct43ACBPjuPS7nU3q2/8/R294HB
+ xMakbrGM/qqV2vlQIWrbDDAe1+P1iCJg50//PelVyzVgzKkw+oXrjEXlmgF5yGHiKcTYaKpHy
+ NN9ZAK3IVrJajx9QEM8kO7iCsBAV/DbivDOg+6HLtUX5GeBgNzdhPd4qjsteQQg+5mv2Q23Jp
+ eXV4dsXgBLlC5FoHAPahyPpSuv9fDHc803Adq0MNeiOdkxR7eyy4gCzuh3PEy4clEx6yNvHfO
+ 8IC6xTSA/vU9qwYd8xeiKtWJaKdXRPhgjusLbblc5BC7dw0pzZRgGIzauqxOm7jt5048sqwsW
+ li+MjrCUnUIuHF/pFp5WWosnrq7uKF2UgTH8afsf7U2qoZUo2UT8A6iCmc0lDIESlSk6UjmHk
+ +kVxFAL53TLjQJ7LC0eWhuVX3dddFKt+QI+XxKJcEWxtmbk7eE=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_023726_277347_7BADF1B6 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200127_025321_369849_78C112DA 
+X-CRM114-Status: GOOD (  11.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.131 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,74 +86,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maz@kernel.org, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "krzk@kernel.org" <krzk@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "olof@lixom.net" <olof@lixom.net>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to the ARM ARM, registers CNT{P,V}_TVAL_EL0 have bits [63:32]
-RES0 [1]. When reading the register, the value is truncated to the least
-significant 32 bits [2], and on writes, TimerValue is treated as a signed
-32-bit integer [1, 2].
+On Mon, Jan 27, 2020 at 10:44 AM Peng Fan <peng.fan@nxp.com> wrote:
+>
+> From: Peng Fan <peng.fan@nxp.com>
+>
+>
+> V2:
+>  Include Leonard's patch to fix build break after enable compile test
+>  Add Leonard's R-b tag
+>
+> Rename soc-imx8.c to soc-imx8m.c which is for i.MX8M family
+> Add SOC_IMX8M for build gate soc-imx8m.c
+> Increase build coverage for i.MX SoC driver
 
-When the guest behaves correctly and writes 32-bit values, treating TVAL
-as an unsigned 64 bit register works as expected. However, things start
-to break down when the guest writes larger values, because
-(u64)0x1_ffff_ffff = 8589934591. but (s32)0x1_ffff_ffff = -1, and the
-former will cause the timer interrupt to be asserted in the future, but
-the latter will cause it to be asserted now.  Let's treat TVAL as a
-signed 32-bit register on writes, to match the behaviour described in
-the architecture, and the behaviour experimentally exhibited by the
-virtual timer on a non-vhe host.
+The changes all look good to me, but I'd just do it all in one combined
+patch, as the changes are all logically part of the same thing. You
+can leave Leonard's fix as a [PATCH 1/2]  if you want, but the rest
+should clearly be a single change.
 
-[1] Arm DDI 0487E.a, section D13.8.18
-[2] Arm DDI 0487E.a, section D11.2.4
-
-Signed-off-by: Alexandru Elisei <alexandru.elisei@arm.com>
----
- include/kvm/arm_arch_timer.h | 2 ++
- virt/kvm/arm/arch_timer.c    | 3 ++-
- 2 files changed, 4 insertions(+), 1 deletion(-)
-
-diff --git a/include/kvm/arm_arch_timer.h b/include/kvm/arm_arch_timer.h
-index d120e6c323e7..be912176b7a3 100644
---- a/include/kvm/arm_arch_timer.h
-+++ b/include/kvm/arm_arch_timer.h
-@@ -10,6 +10,8 @@
- #include <linux/clocksource.h>
- #include <linux/hrtimer.h>
- 
-+#define ARCH_TIMER_TVAL_MASK	((1ULL << 32) - 1)
-+
- enum kvm_arch_timers {
- 	TIMER_PTIMER,
- 	TIMER_VTIMER,
-diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
-index f182b2380345..5d40f17f7024 100644
---- a/virt/kvm/arm/arch_timer.c
-+++ b/virt/kvm/arm/arch_timer.c
-@@ -805,6 +805,7 @@ static u64 kvm_arm_timer_read(struct kvm_vcpu *vcpu,
- 	switch (treg) {
- 	case TIMER_REG_TVAL:
- 		val = timer->cnt_cval - kvm_phys_timer_read() + timer->cntvoff;
-+		val &= ARCH_TIMER_TVAL_MASK;
- 		break;
- 
- 	case TIMER_REG_CTL:
-@@ -850,7 +851,7 @@ static void kvm_arm_timer_write(struct kvm_vcpu *vcpu,
- {
- 	switch (treg) {
- 	case TIMER_REG_TVAL:
--		timer->cnt_cval = kvm_phys_timer_read() - timer->cntvoff + val;
-+		timer->cnt_cval = kvm_phys_timer_read() - timer->cntvoff + (s32)val;
- 		break;
- 
- 	case TIMER_REG_CTL:
--- 
-2.20.1
-
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
