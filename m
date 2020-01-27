@@ -2,75 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D384714A5BE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 15:09:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EDDA14A5C9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 15:12:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pFjk1A9ee6W19pRaG4oFIUwkAZLSKThW4FJNQ3MqI08=; b=Z81cnKMG2JENq7
-	8c0w42qXUNIjTMWb2Puj4PT7+FVEx4KSKef0biVEECNHGSuOAhg2ftuLm+jqYpKqG5eUj+vITK2N1
-	76/m3lk+2MUDI7/gYds8o/ANFhjCLMAgnG76yPNNdrCi853FAZt7mEOoqy6v1G8L18+yJWH8Ee0xf
-	ZDwMlyJvc9iuCk4cvLMBjWJRbMw3EPo26aD+19FMAe2ujAoCVyGifOV6J8XrIkAhzQWF+qIS56rYC
-	FonKrH47xzSSKOj3jkkCbMGG8bnjMX1a6f+yqhxb31izv3mr2LikwIz4YkdhTUYr+xyxsXzmpPrTp
-	ypmgZEAi/gJkR6lsDP1w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3T49eDre/wA6lzIksChdf+8+84goikx6L46x5EQbPrc=; b=YjbTDCE1ZUwEJb
+	ryStJ9EU2kJEjoZUwg8TrXFdFod+8IEcWppj+ih6m0wS2PBoTsKB3fbFrpTa+NjfK1r6WamfVLe5r
+	lgDMkX75TIBOxcuvB9PI6vNMVFHZBtuTKBbul8U9BwK7aKf7HeLxbcwaNLTdhRsjz2NedgSnsIsBd
+	mpGMdQQWkWZh255H8rkC0UA9Rkx5hRP74/EGhSQk/OVPx5edrue8j7xPOUkokpe0hfbPjuPIPvvjJ
+	IwVWLSGirR7EDHOpRPzKrBHcuK7qebwb1q5LRW4C7a5zEG1MsKUaddVWLCY3xg1zK8xq2wTdDdo/e
+	G5sYqq17C6OcNoODg7Yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw54W-0000nZ-AO; Mon, 27 Jan 2020 14:09:00 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1iw57Z-0002d6-2q; Mon, 27 Jan 2020 14:12:09 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw54M-0000n3-W4
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 14:08:52 +0000
-Received: by mail-oi1-f194.google.com with SMTP id d62so6696570oia.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Jan 2020 06:08:50 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5tsmFts7T7BI9vGyWUX2iu19lpSC8/BqHOFJ4HpyIlg=;
- b=RVYMUSLAkNs0CT8TqxqZFOuWyDCWVJCl6Ci6lW7SJvXcOBUySx7CfR36K6/7b3T9j5
- Wl7QXWaLgDBdxwr39TjZendwvLr7B1+kC7tqEERZL7BscAQpTK7ifbYS4C5GCwAIDTqk
- XNpOxXvZ3NYXnfGzqfR6hpNmmrdPqTRE6/MZd0CBLivJMs+FsjIaLLWPTwy9+c/xGO0B
- ovx9hJ9QXbzP7qorPsJrssyQjuI9qnik4xKPo973aK4SQNyNwgY3V+LxMl6ocS+iL7Sn
- HtJf5oD0QbpLM17InOrYXu56FcoGbrBjRWl6uDpATjaKAd3c2k8oR+PiHTh47PucQDru
- fWnA==
-X-Gm-Message-State: APjAAAUQs7hMwW/YC3cCGhtdKIbcC1/XxYI5iyoPsnNtY+fl/X8VUu7U
- rrL1YjLtF9Vo2vjD3pHI2PcI60H7TGzYkhe4E3I=
-X-Google-Smtp-Source: APXvYqyXcgXQJlvo6qqMaF08C0viKon2y0punbKg7jdZBGvbXL+AC2XFGIoByoZpNLHINnJMWkPEqX8udLowyjc/EjE=
-X-Received: by 2002:aca:5905:: with SMTP id n5mr7649001oib.54.1580134129342;
- Mon, 27 Jan 2020 06:08:49 -0800 (PST)
+ id 1iw57N-0002cI-CL
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 14:11:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580134313;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=Kh2pcEVP2+3UdtdW1VSYX4yZOf7ucW5oyPwHUzLPaSA=;
+ b=F1Vk4cl5xGcb9Ie99jZKUBNMZNO2fXXJewCO57C2tE3zvH8pXPkzWOBA+4JyUmBCnE7Dzf
+ DgPopo+tndTeo298Y/+oYwCeQg4PU2hxfnbjnd6Jj+R5s7sY4scEuD+qSFLuwWf/YvA2ya
+ nMU6TqYt2GRBv0ypSiaaJAkP/nEZ5bI=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-108-Ae2NuINDN5iB58AHVSPbbA-1; Mon, 27 Jan 2020 09:11:49 -0500
+X-MC-Unique: Ae2NuINDN5iB58AHVSPbbA-1
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CFBF21005510;
+ Mon, 27 Jan 2020 14:11:46 +0000 (UTC)
+Received: from llong.remote.csb (dhcp-17-59.bos.redhat.com [10.18.17.59])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id E227C1001B2D;
+ Mon, 27 Jan 2020 14:11:43 +0000 (UTC)
+Subject: Re: [PATCH v9 0/5] Add NUMA-awareness to qspinlock
+To: paulmck@kernel.org
+References: <20200115035920.54451-1-alex.kogan@oracle.com>
+ <20200124222434.GA7196@paulmck-ThinkPad-P72>
+ <6AAE7FC6-F5DE-4067-8BC4-77F27948CD09@oracle.com>
+ <20200125005713.GZ2935@paulmck-ThinkPad-P72>
+ <02defadb-217d-7803-88a1-ec72a37eda28@redhat.com>
+ <adb4fb09-f374-4d64-096b-ba9ad8b35fd5@redhat.com>
+ <20200125045844.GC2935@paulmck-ThinkPad-P72>
+ <967f99ee-b781-43f4-d8ba-af83786c429c@redhat.com>
+ <20200126153535.GL2935@paulmck-ThinkPad-P72>
+ <20200126224245.GA22901@paulmck-ThinkPad-P72>
+From: Waiman Long <longman@redhat.com>
+Organization: Red Hat
+Message-ID: <2e552fad-79c0-ec06-3b8c-d13f1b67f57d@redhat.com>
+Date: Mon, 27 Jan 2020 09:11:43 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-References: <20200121192741.20597-1-geert+renesas@glider.be>
- <nycvar.YSQ.7.76.2001211437240.1655@knanqh.ubzr>
-In-Reply-To: <nycvar.YSQ.7.76.2001211437240.1655@knanqh.ubzr>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 27 Jan 2020 15:08:37 +0100
-Message-ID: <CAMuHMdVrCyjTgJoef4HE0COEKRNYTNKXkmtRVizv6gLi2rfL8w@mail.gmail.com>
-Subject: Re: [PATCH] ARM: boot: Obtain start of physical memory from DTB
-To: Nicolas Pitre <nico@fluxnic.net>
+In-Reply-To: <20200126224245.GA22901@paulmck-ThinkPad-P72>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_060851_034465_B6FC4EA5 
-X-CRM114-Status: GOOD (  26.09  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200127_061157_499525_FA01BB00 
+X-CRM114-Status: GOOD (  22.70  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,151 +100,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
- Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, guohanjun@huawei.com,
+ Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
+ dave.dice@oracle.com, jglauber@marvell.com, x86@kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>, bp@alien8.de,
+ hpa@zytor.com, Alex Kogan <alex.kogan@oracle.com>, steven.sistare@oracle.com,
+ tglx@linutronix.de, daniel.m.jordan@oracle.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Nicolas,
-
-On Tue, Jan 21, 2020 at 11:44 PM Nicolas Pitre <nico@fluxnic.net> wrote:
-> On Tue, 21 Jan 2020, Geert Uytterhoeven wrote:
-> > Currently, the start address of physical memory is obtained by masking
-> > the program counter with a fixed mask of 0xf8000000.  This mask value
-> > was chosen as a balance between the requirements of different platforms.
-> > However, this does require that the start address of physical memory is
-> > a multiple of 128 MiB, precluding booting Linux on platforms where this
-> > requirement is not fulfilled.
-> >
-> > Fix this limitation by obtaining the start address from the passed DTB
-> > instead, if available.  Note that for now this is limited to DTBs passed
-> > explicitly by the boot loader.  DTBs appended to a zImage or uImage are
-> > not inspected.  Fall back to the traditional method when needed.
-> >
-> > This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
-> > on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
-> > i.e. not at a multiple of 128 MiB.
-> >
-> > Suggested-by: Nicolas Pitre <nico@fluxnic.net>
-> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> > ---
-> > Against arm/for-next.
-> >
-> > Tested with the following configurations:
-> >   - zImage + DTB (r8a7791/koelsch): physical memory start address
-> >     obtained from DT,
-> >   - uImage + DTB (r8a73a4/ape6evm, r7s72100/rskrza1, r7s9210/rza2mevb):
-> >     physical memory start address obtained from DT,
-> >   - zImage with appended DTB (r8a7740/armadillo, sh73a0/kzm9g): physical
-> >     memory start address obtained by masking, as before.
-> >
-> > An appended DTB is currently processed after the start of physical
-> > memory is obtained.  Hence obtaining that address from an appended DTB
-> > requires moving/copying that copy.  Given the complexity w.r.t. the
-> > "restart" label, and the lack of a need for me to support this, I didn't
-> > implement that part.
+On 1/26/20 5:42 PM, Paul E. McKenney wrote:
+> On Sun, Jan 26, 2020 at 07:35:35AM -0800, Paul E. McKenney wrote:
+>> On Sat, Jan 25, 2020 at 02:41:39PM -0500, Waiman Long wrote:
+>>> On 1/24/20 11:58 PM, Paul E. McKenney wrote:
+>>>> On Fri, Jan 24, 2020 at 09:17:05PM -0500, Waiman Long wrote:
+>>>>> On 1/24/20 8:59 PM, Waiman Long wrote:
+>>>>>>> You called it!  I will play with QEMU's -numa argument to see if I can get
+>>>>>>> CNA to run for me.  Please accept my apologies for the false alarm.
+>>>>>>>
+>>>>>>> 							Thanx, Paul
+>>>>>>>
+>>>>>> CNA is not currently supported in a VM guest simply because the numa
+>>>>>> information is not reliable. You will have to run it on baremetal to
+>>>>>> test it. Sorry for that.
+>>>>> Correction. There is a command line option to force CNA lock to be used
+>>>>> in a VM. Use the "numa_spinlock=on" boot command line parameter.
+>>>> As I understand it, I need to use a series of -numa arguments to qemu
+>>>> combined with the numa_spinlock=on (or =1) on the kernel command line.
+>>>> If the kernel thinks that there is only one NUMA node, it appears to
+>>>> avoid doing CNA.
+>>>>
+>>>> Correct?
+>>>>
+>>>> 							Thanx, Paul
+>>>>
+>>> In auto-detection mode (the default), CNA will only be turned on when
+>>> paravirt qspinlock is not enabled first and there are at least 2 numa
+>>> nodes. The "numa_spinlock=on" option will force it on even when both of
+>>> the above conditions are false.
+>> Hmmm...
+>>
+>> Here is my kernel command line taken from the console log:
+>>
+>> console=ttyS0 locktorture.onoff_interval=0 numa_spinlock=on locktorture.stat_interval=15 locktorture.shutdown_secs=1800 locktorture.verbose=1
+>>
+>> Yet the string "Enabling CNA spinlock" does not appear.
+>>
+>> Ah, idiot here needs to enable CONFIG_NUMA_AWARE_SPINLOCKS in his build.
+>> Trying again with "--kconfig "CONFIG_NUMA_AWARE_SPINLOCKS=y"...
+> And after fixing that, plus adding the other three Kconfig options required
+> to enable this, I really do see "Enabling CNA spinlock" in the console log.
+> Yay!
 >
-> Well, not exactly. You don't have to move anything. But more on that
-> later.
+> At the end of the 30-minute locktorture exclusive-lock run, I see this:
 >
-> One important detail: you didn't set up the stack pointer. That means
-> you're relying on whatever value left in sp by the bootloader. If you're
-> lucky that might be fine, but it isn't a good idea to leave things to
-> luck.
+> Writes:  Total: 572176565  Max/Min: 54167704/10878216 ???  Fail: 0
 >
-> Before calling the C code, you should probably do:
+> This is about a five-to-one ratio.  Is this expected behavior, given a
+> single NUMA node on a single-socket system with 12 hardware threads?
+Do you mean within the VM, lscpu showed that the system has one node and
+12 threads per node? If that is the case, it should behave like regular
+qspinlock and be fair.
 >
->         adr     r0, LC0
->         ldr     r1, [r0]
->         ldr     sp, [r0, #28]
->         sub     r0, r0, r1
->         add     sp, sp, r0
+> I will try reader-writer lock next.
 >
-> But if there is an appended dtb then you'll overwrite it. So you need
-> to look for one and account for its size.
+> Again, should I be using qemu's -numa command-line option to create nodes?
+> If so, what would be a sane configuration given 12 CPUs and 512MB of
+> memory for the VM?  If not, what is a good way to exercise CNA's NUMA
+> capabilities within a guest OS?
 
-Thank you very much for the very constructive feedback!
+You can certainly play around with CNA in a VM. However, it is generally
+not recommended to use CNA in a VM unless the VM cpu topology matches
+the host with 1-to-1 vcpu pinning and there is no vcpu overcommit. In
+this case, one may see some performance improvement using CNA by using
+the "numa_spinlock=on" option to explicitly turn it on.
 
-> Something like this:
->
->         adr     r0, LC0
->         ldr     r1, [r0]                @ get absolute LC0
->         ldr     sp, [r0, #28]           @ get stack location
->         sub     r1, r0, r1              @ compute relocation offset
->         add     sp, sp, r1              @ apply relocation
->
-> #ifdef CONFIG_ARM_APPENDED_DTB
->         /*
->          * Look for an appended DTB. If found, use it and
->          * move stack away from it.
->          */
->         ldr     r6, [r0, #12]           @ get &_end
+Because of the shuffling of queue entries, CNA is inherently less fair
+than the regular qspinlock. However, a ratio of 5 seems excessive to me.
+vcpu preemption may be a factor in contributing to this large variation.
+My testing on bare metal only showed a throughput variation within
+10-20% at most.
 
-[r0, #12] is actually &_edata, not &_end.
+Cheers,
+Longman
 
->         add     r6, r6, r1              @ relocate it
->         ldmia   r6, {r0, r5}            @ get DTB signature and size
-> #ifndef __ARMEB__
->         ldr     r1, =0xedfe0dd0         @ sig is 0xd00dfeed big endian
->         /* convert DTB size to little endian */
->         eor     r2, r5, r5, ror #16
->         bic     r2, r2, #0x00ff0000
->         mov     r5, r5, ror #8
->         eor     r5, r5, r2, lsr #8
-> #else
->         ldr     r1, =0xd00dfeed
-> #endif
->         cmp     r0, r1                  @ do we have a DTB there?
->         moveq   r8, r0                  @ use it if so
-
-moveq r8, r6
-
->         addeq   sp, sp, r5              @ and move stack above it
-
-Care must be taken to keep sp 64-bit aligned.
-
-> #endif
->
->         bl      fdt_get_mem_start
->         ...
->
-> This is a little involved but there is no way around that for a safe
-> stack. Benefit is that you get appended DTB support with a single
-> additional instruction.
-
-True.
-
-> Also one minor nit:
->
-> > +             bl      fdt_get_mem_start
-> > +             mov     r4, r0
-> > +             cmn     r0, #1
->
-> Please just use "cmp r0 #-1" here. The assembler will convert it for
-> you.
-
-OK, thanks.
-
-Sent v2...
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
