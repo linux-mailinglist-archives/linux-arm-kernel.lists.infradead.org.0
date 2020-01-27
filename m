@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C58C14A117
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 10:46:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14EE314A11D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 10:46:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CjB/0Wc/VPgiMNJ1Z+UWG664D6BWoBZYTXRNgb6QMrg=; b=lDVN4UhlV9woYd
-	wOcSUVf8jfHUuSOU9MDuXOwzZ3txcMOREmJN/GIHnLe0+9cEntlHJgwgIsWZt3G/9Hrs/8D7LDkNg
-	RcWAK+4rXV982RubUMLFg3e0/2/y4cSo7WzL5TzRpIFPb3CIDFCtZ/cUPJ8oWZHDrGpG/pIECd03J
-	CXm3Ci3iRnGVIPKYlT5pLihsQsj+4weftJR1LTuOgydg+/s3zPjYcS6VHSIW6AMEix6vDC2FCPnOz
-	fRaGo5Fp2KQHygKaxsXeFxHebiWBRre7IUnaF4vd9Yf83T6wZKcx9XuSUkA9QHvZpiU9oTtq+08Fy
-	RkW8nB1fh5KgHuJU7y8Q==;
+	List-Owner; bh=VzFGYDmG07kgsrN1ZGVdB5An/e+RCEHaC4zWbYhgfKA=; b=kwY9M/6wns2NTH
+	0WJr1MO16XnA3fkn3j7Ds+BWQRNbOs8JYt7IedkWUHcfViejepgj3irXtr46COukjo2RysXEFvEen
+	jtjAfqKGbvV0bpQ76bsgHpcdaWTOTnYN0pofNQM922VzFkQorItiAmSzkaE9okXG1btAQybgWTY+h
+	9PrYrUMBu3jJDiSR7POz17hpXlRStQXaUKOFUPB669vWiLICfC2JPUnjQCwIzLTWqSZaZASjjpSL1
+	SzthR3BUACJ20jgl9RVDXD91ykuDiuMBStgcxBJPUl/M2SEYSGYMIoyOXYHc+r8Mx2okGRGUiIrWf
+	C84ybloRuIji26kDRW1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw0yF-0000sB-RX; Mon, 27 Jan 2020 09:46:15 +0000
+	id 1iw0yT-00015b-Ec; Mon, 27 Jan 2020 09:46:29 +0000
 Received: from mail-eopbgr70085.outbound.protection.outlook.com ([40.107.7.85]
  helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw0x3-00073r-7U
- for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 09:45:03 +0000
+ id 1iw0x6-00073r-Ae
+ for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 09:45:06 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GwF6rZUPqgoz8FaQ6kO6qKxYVwpGnx130jIi56hUEFUMA5hac0aVe2SimhNV4bGArPpzaQgiqZrEUyUucpe2CcqGyPshkW+IYKmQmUf8BrYnXKM42xvhFdmZpV5nm/tuIoHeoopYpskqS3bFZ+vMdsdUL9SeH1YNy4cIR523FcO1HwexnNw5Eql+Rso4nhCDkn3s7/PF4k6N/H49JRu2nTvn50uEyokdWCt0vJqxf6rBRcNd2Y25GMSwyFUfEji9bS77237Ue2+ZO2aSYn1HnG+PUdOqh7cjJht5SaW8FaxQMfVYxJWoeCObOyvNzjfZ9goxN0JIJEpSUVg8YT8U7g==
+ b=WUraadDbSiVv4TaQfZKQE1xPVhP48yaUgdd9TTP7/Qxqv6fjIRI98fRqGgKXMzTv1TFPTx2C8D2V6WBL9xh5eF8+SFvIeX2Xd8HI2oldvfmYBil1MU/BCosT27OBzyyEo56LKfUGbPHYBxSh6jAqMSNY549Z56ddEcJyDI97qrA5Rj/qSaeer9KBfUJ933ZcYOfwhAzuZGAqdt6bubZf9FaSrvWz2nUdspY9SoN4ZAO/TOe85HbWHnwqe/Uo3Z0BOmD+NbRNgsvXNQF11VFOoZh9mNurpWI5fI5gqyN0mJUqK15XO5wO+Z6Rf5D0p8PUDGIePgq73YE5HBE5jt9fcQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mlZpygzK/k9J+YwhyuXjvtbmE4EeQxGwrIc6hX/MHzw=;
- b=MUFqxE6SXbT4PdGnPTsb/FcieUhi0Cx6E6h35QLvVXJ6+iNwXz54hLzvlwDoGo4g69PQJ1fcZSOQy2dPPIwWFQpRXU03H6GOTOlIJKhM/0fEGCA6Q1GPaoVPsLdZplAHJMKIxtZz5W3TRuodHbutKx9TiLlFcO3sKdjr2tQBK2d+7mXAv2wevBBwuEXMM2O376qfTyae035NmG8lTAqEF/a2QD3H7dL/wJmPJEWn7Xm+1Q/PaA7STHjW3gg/hDqrXaBDVQqyv4qPVw4MH6EUJnFtlsUCdPp/pe16w62iJApSGwKFv5NOIHlLDP71iP3R5UeBaVKJ46Z49+Jd2eBMhg==
+ bh=oruJh1UZ9aI4S4Cr//tsvOQj7lS+fs86nsfUA3UDxyQ=;
+ b=AEqGJGgDc6n48Z5Mtxzmcmmr4yTMNQAmS7ab7nhmgbh9kf1CrKajAwK47s5J3mGT5HM2nku7eUD+v082/bqt1I8UbICN8usl7XU2CIiLAKpx2YIcuKWSg02IoL+82i0m2b9g9SHld0GbYHq3ZyreRN/eC1IEDL6KnLeMPc2JrwPI1lfpBjtx1X1WJhSUyfPU6sa/N8dAWAAXbjb5N74NHPcuj5F27dD/Fyo57bWDS0Ext96Tb9A6wJNDHepuCR5tGhQ5SBFHIz3xHYzzcCA7d1KfYmseRwH2LrlQvQuUCLaaXJtAQskRV8dHCcqw65nIYki1JcfZ2dNAY68wulsW5Q==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mlZpygzK/k9J+YwhyuXjvtbmE4EeQxGwrIc6hX/MHzw=;
- b=rGY+AuTd8LdaKlydd1s59ooOrPMETmWJCZjkZ1PSdUytLpzdSyJkSbOvDitZQGzUNzRfyDODbAAn2L3EvFoX4vrLu6VlKZH+kSmuhzLjFKsQlYr7atjOk8Qqa8n2XiT4f4uDubmFyCdiqap4j/AmOIWj+hyzCpvlq5VPM7mJIOA=
+ bh=oruJh1UZ9aI4S4Cr//tsvOQj7lS+fs86nsfUA3UDxyQ=;
+ b=cm7PSKT5nCioKQKgK+RmXJfVvMUHSVoIv1MOcHh4OuGxTUBLrT1b190Y69w2uYQPp6dCHqu94vGkUqXhUvWpA6j8WwucDxVzVEX8TrrWgG3s8EWu6Dw0ETyTV7aRuNYlWFrUGbk4zCo/7TgIEjyMKKH0ito6WKWh0WMUZHwAYT0=
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB6436.eurprd04.prod.outlook.com (20.179.252.146) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2665.24; Mon, 27 Jan 2020 09:44:57 +0000
+ 15.20.2665.24; Mon, 27 Jan 2020 09:45:02 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2665.017; Mon, 27 Jan 2020
- 09:44:57 +0000
+ 09:45:02 +0000
 Received: from localhost.localdomain (119.31.174.66) by
  HK2PR0401CA0005.apcprd04.prod.outlook.com (2603:1096:202:2::15) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.2665.24 via Frontend
- Transport; Mon, 27 Jan 2020 09:44:53 +0000
+ Transport; Mon, 27 Jan 2020 09:44:58 +0000
 From: Peng Fan <peng.fan@nxp.com>
 To: "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "will@kernel.org"
  <will@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
  "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "arnd@arndb.de"
  <arnd@arndb.de>
-Subject: [PATCH V2 4/5] soc: Makefile: increase build coverage for i.MX
-Thread-Topic: [PATCH V2 4/5] soc: Makefile: increase build coverage for i.MX
-Thread-Index: AQHV1PZv67IYkgl6NE6QVwElj/wbFg==
-Date: Mon, 27 Jan 2020 09:44:57 +0000
-Message-ID: <1580117979-4629-5-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V2 5/5] soc: imx: Use CONFIG_SOC_IMX8M as build gate
+Thread-Topic: [PATCH V2 5/5] soc: imx: Use CONFIG_SOC_IMX8M as build gate
+Thread-Index: AQHV1PZyuHBfhoyUvU61rkGglIKXvQ==
+Date: Mon, 27 Jan 2020 09:45:02 +0000
+Message-ID: <1580117979-4629-6-git-send-email-peng.fan@nxp.com>
 References: <1580117979-4629-1-git-send-email-peng.fan@nxp.com>
 In-Reply-To: <1580117979-4629-1-git-send-email-peng.fan@nxp.com>
 Accept-Language: en-US
@@ -77,14 +77,14 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 1756bc26-8351-4701-3d61-08d7a30d91d4
+x-ms-office365-filtering-correlation-id: 11a1a077-a4c7-4ec1-7064-08d7a30d94bf
 x-ms-traffictypediagnostic: AM0PR04MB6436:|AM0PR04MB6436:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB64369A7905D637E4976265A7880B0@AM0PR04MB6436.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:843;
+x-microsoft-antispam-prvs: <AM0PR04MB643640E09BFF5A1726BF50B1880B0@AM0PR04MB6436.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4502;
 x-forefront-prvs: 02951C14DC
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(136003)(39860400002)(396003)(346002)(376002)(189003)(199004)(81166006)(81156014)(8676002)(71200400001)(8936002)(2906002)(6512007)(4326008)(44832011)(7416002)(69590400006)(86362001)(36756003)(110136005)(54906003)(316002)(52116002)(4744005)(66446008)(5660300002)(478600001)(6506007)(64756008)(66476007)(66946007)(6486002)(2616005)(956004)(186003)(16526019)(26005)(66556008);
+ SFS:(10009020)(4636009)(366004)(136003)(39860400002)(396003)(346002)(376002)(189003)(199004)(81166006)(81156014)(8676002)(6666004)(71200400001)(8936002)(2906002)(6512007)(4326008)(44832011)(7416002)(69590400006)(86362001)(36756003)(110136005)(54906003)(316002)(52116002)(66446008)(5660300002)(478600001)(6506007)(64756008)(66476007)(66946007)(6486002)(2616005)(956004)(186003)(16526019)(26005)(66556008);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6436;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -92,20 +92,20 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: CPHtDDTg61CwNCPOz39WpAsub7Cg20d5cpTDmLNvPGn32cCIdRsWHSD/hEugA8EcfZVwPjmYf6LJEsqpd1yzXjOQoGXoVRFndiKgMN4CK9JZQxKGHP8Hys6md9VNu8O+Fa8J2EiyxF1JltuUKZSQw33dytTyK1UZxboSlwHW6rLeDgvwe6HLXZTphAcvFDiLhLuJyDiuVqtm5zzMIVO9Hpylx8jHUCTaS8XgyDv5A4B9H9clX64ZQZd0pnrqIPks7rcCGpnoA+02dvG7cpUQaG+PIIAWXw/Et6S+iNxCb6Ya3yYfpC5xhZlJkW0SsJKEEwhe1VFuTun+7kw4Zp/bGWezauNoP0wE+eCtOepprUx6+DEB31ULBoRPZsZ2liP7WupiOb+1QppgdSYkcQJ+2LdKX9hjYmxRbFvL7I4XDyW+joaDwDxkq7PDUaUksjOOj5LWG6y7HJlRBMvj+/HAKaK4knS0pdvpGcEeWQzMjYr16Ye1ztcnJGOJ40XrJsXJ
-x-ms-exchange-antispam-messagedata: lkhDd0SG+CF2gXYVxT1vCr0EeMYVKm48YB0njpM6SSCjqT4eJ5UcQSp9AzDYv1TX/GhwDCbUhCCAsMnfnUtVmp5kgs5NglmRE2GU8SlQYrvmi+xNBGZybvYvJ3CuswBsMG8GNNU7EkLhIrWM0nBIhQ==
+x-microsoft-antispam-message-info: YREVEAnVsZuxEEb+6iUjSMdeHX3atsgVxug8fdveVGFriSTPr8DtQdNAV+J5x14uhPWnL4gk7/24uz/zoYy2xhFeQqhWZlAl6awFr0RCZ8fc5FwnoMA9RHgzQ9CIYON1PePUfXVHyVO9V2LHLwbxwjUspXDHyaG1Tj/qO/2dm4iyT6l8eAsH5OGDJv+7/niL7FcoM4O+bdmHagncYhYVpwTfb6LTI5zaQsLG5zKtTlAA983dn3iqoo5xE0PQEccPomoZeMqp9F2VFxdS9ltrSdhTQn2hP88Ed1ONpcUviF7Pe1Gmz3eEN2Khc6WRhEDwHaiqLLHkIVhQmfk3xgrfCrEvZaBiiZz6snGTZFJjADwCsH7qXCNARXk86f8qeTr9sjBUnd9fdGjaDQXyqvvzGHMEJZC1IKLmRiEf2516613cftdujTHK1Ru30oZ6kOmQj83/I5enOM19a4TOIRPCAsLfZEeGNle/5OmCN0VxTGImCbeYrC5Iby/mGVt6OXl7
+x-ms-exchange-antispam-messagedata: rKeqPZSFpus6B+RYnU4TGO77gUMu9zDTKXC/1t66CaFiS0/l+uPPJWVfanUvFVqVUqNXWhfUsJE+eXo5TBTzMpJ95JqT0V6pvQrwPfJV1zYdlgzFD+X5jybgKS3zfel/fhW1WmyMJfedS5513I8uwg==
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1756bc26-8351-4701-3d61-08d7a30d91d4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jan 2020 09:44:57.6889 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 11a1a077-a4c7-4ec1-7064-08d7a30d94bf
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Jan 2020 09:45:02.5683 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: +WIWVsyS49WD02XEXSPJciPsCTvAkmjZZdfvPPVNAweeljz2GH2PHmtrLWRVUnsqxJrVWMbj2ks9gskDI8P4IQ==
+X-MS-Exchange-CrossTenant-userprincipalname: rD83tkWEdI7bf6THpwcpzn/xqM0GKBw5gDuUWD6GRjG8uY+ps81agjy7SdMLiY2x2ohJyCshtVh6nNshHOqv0g==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6436
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_014501_334410_FF65BEF6 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20200127_014504_383470_60786050 
+X-CRM114-Status: GOOD (  10.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -148,27 +148,34 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-Increase build coverage for i.MX SoC drivers.
+The soc-imx8.c driver is actually for i.MX8M family, so rename it
+to soc-imx8m.c.
+Use CONFIG_SOC_IMX8M as build gate, not CONFIG_ARCH_MXC, to control
+whether build this driver, also make it possible for compile test.
 
 Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- drivers/soc/Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/soc/imx/Makefile                    | 2 +-
+ drivers/soc/imx/{soc-imx8.c => soc-imx8m.c} | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename drivers/soc/imx/{soc-imx8.c => soc-imx8m.c} (100%)
 
-diff --git a/drivers/soc/Makefile b/drivers/soc/Makefile
-index 2ec355003524..614986cd1713 100644
---- a/drivers/soc/Makefile
-+++ b/drivers/soc/Makefile
-@@ -11,7 +11,7 @@ obj-$(CONFIG_ARCH_DOVE)		+= dove/
- obj-$(CONFIG_MACH_DOVE)		+= dove/
- obj-y				+= fsl/
- obj-$(CONFIG_ARCH_GEMINI)	+= gemini/
--obj-$(CONFIG_ARCH_MXC)		+= imx/
-+obj-y				+= imx/
- obj-$(CONFIG_ARCH_IXP4XX)	+= ixp4xx/
- obj-$(CONFIG_SOC_XWAY)		+= lantiq/
- obj-y				+= mediatek/
+diff --git a/drivers/soc/imx/Makefile b/drivers/soc/imx/Makefile
+index cf9ca42ff739..103e2c93c342 100644
+--- a/drivers/soc/imx/Makefile
++++ b/drivers/soc/imx/Makefile
+@@ -1,5 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ obj-$(CONFIG_HAVE_IMX_GPC) += gpc.o
+ obj-$(CONFIG_IMX_GPCV2_PM_DOMAINS) += gpcv2.o
+-obj-$(CONFIG_ARCH_MXC) += soc-imx8.o
++obj-$(CONFIG_SOC_IMX8M) += soc-imx8m.o
+ obj-$(CONFIG_IMX_SCU_SOC) += soc-imx-scu.o
+diff --git a/drivers/soc/imx/soc-imx8.c b/drivers/soc/imx/soc-imx8m.c
+similarity index 100%
+rename from drivers/soc/imx/soc-imx8.c
+rename to drivers/soc/imx/soc-imx8m.c
 -- 
 2.16.4
 
