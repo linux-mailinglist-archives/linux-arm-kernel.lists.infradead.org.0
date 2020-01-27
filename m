@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E519114A043
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 09:56:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A30814A039
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 27 Jan 2020 09:54:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/roI0meNe7OzXjMpdpkPBgG9fjlgutS2OrnI8/jPgeg=; b=RVC9FJvnv8cHai
-	m+GuRecKDBMqmqu/nkX/9/URB8ytZ50Xjn3JQVj02hx3Oe3dAa7uu6DqTrBipvadLluKb4T3Y2fJa
-	hMggibW+a7UOg/Ch42EAjP6PpBkdr5VUriaSATIzo+H6Ui62kaf9s2EE1jKTVmPQffs+O/BR0B48D
-	bBSxQY7++MIxveQLoBy7sLHH4gi4g42Vog1Vh9sIdDvbZkmk7QNQg4DSWFt6LwxbmhteTwbOIMkc1
-	bqvVhxa23CR7vmB7fzW2C7tXIbuxiV0joy3zS7WLwBAvjxjLVX5j5QnBrrdgMMOPiJGDPlQlzaWkn
-	1siRWTYMF9Dzf1+17CFQ==;
+	List-Owner; bh=+/AmtEXDid4Vw9kP2VKre2g+9FMcKedypPQ661c44Go=; b=M/T9TwZu4apoKY
+	H7BDgfOBjC5TO327kWjaR1kZAGQjxUJM1Sm7mGf3mOCQxx/J8gZYXNz6eRT2oc06ZzACeMYobx8g6
+	6BC5l2oYlCXryfS//ME/0ShnMABoHonDTMChlWvRWxCbrh+TjB442zPs1HxsyrwSlu0IUuXoYy+v/
+	T5y0H7krWt3cDTfE7ppGtE3abj+uzBD35ybveRdQkt3CUJAhyWAD5bdD9ZlrG6hlRot2iAhI9xH4u
+	Fw9SLhXwKtZKt+c1QZdAsguJLcMAORQnJisNEH+gKvSkV/RJ7FyjxZFrm9RRKmjObX3IdWGJqjcS6
+	yLoFTT5Ljm6nFi0UdRIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iw0Bg-0004b6-UX; Mon, 27 Jan 2020 08:56:04 +0000
+	id 1iw0AO-0003bO-Ic; Mon, 27 Jan 2020 08:54:44 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iw09e-00037F-HY
+ id 1iw09e-00037H-HC
  for linux-arm-kernel@lists.infradead.org; Mon, 27 Jan 2020 08:54:01 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00R8rKu2011537; Mon, 27 Jan 2020 09:53:49 +0100
+ 00R8qifV031730; Mon, 27 Jan 2020 09:53:49 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=d0DekDJ1zvoLH3rRFnt/nO3/KohuERZXWlQkB9inrfo=;
- b=AJ8Ol0bIN0qZ94UyTsXG2BlgU9T09DW4ExsfIAmE9S4ypHsOeAXk48hksvvYQ6F1yPgW
- 9QtvCX8yithY7/5yCqMMKOd7M/GhKe0NM7h6B/uPcIjYy0Y8kK25py2sTwRvzSjj5e9j
- RFNH9BH7vUGG1VXmoUQmbC59fURzmb7PdIwegbtpDJHmc1Chw9QCTxF4rx2cLYy1R79H
- rfF1Xtmk9EMv9Sd7Jy7xqEsQfA1ZpebwRvu50+SNDHJ1kmzdraNS1rl+nkbaL9KFkIcM
- M2jXt6Ztk0ES1mO2EkihzeFGmLUB6Sbsn/lpenfZ60xonm1U/a0ozkrwabj7V73eDZkA Iw== 
+ bh=jX92yodowvq0X+wN/iB1cefd5N695QA/mW6VRMfU52M=;
+ b=0RxnEf+PDs4l6Jt7vFC9p/9bEgkDAiSE9hDan9ya6sf0WNX8ZeM6Pbi+8v/VdkNuQ/M3
+ VjOeSDa2wAQN00SlQrvJMSi6dTcG9jrPXyHXJiyqIqs4/YG9CtPp2gC+lXAxzZ7ZR+JB
+ OotVFr9oMWobsOuTB1ZPE7EYPDoSCHekbnANMTrpb9UZGG93Wjs6pT665b5SseeuWGCc
+ Y/oRMbekYFFWpTi9XTRwfsSE6HXRKO95Wd+KvMMEv5lI2qzs1hXzDGCYP90QetjlvjsB
+ aJmjcWoGKU5ZnvKwzHzTDRWf4bMFnDXwWGI5ScYwNs9umfsZoUzB5RmTKWYLcLynQ7Qr cA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xrbpar4t2-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xrdek7tsf-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
  Mon, 27 Jan 2020 09:53:49 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C67DC100042;
- Mon, 27 Jan 2020 09:53:44 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7180310002A;
+ Mon, 27 Jan 2020 09:53:45 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BB48121CA6A;
- Mon, 27 Jan 2020 09:53:44 +0100 (CET)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6635321CA6A;
+ Mon, 27 Jan 2020 09:53:45 +0100 (CET)
 Received: from localhost (10.75.127.47) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 27 Jan 2020 09:53:44
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 27 Jan 2020 09:53:45
  +0100
 From: Amelie Delaunay <amelie.delaunay@st.com>
 To: Vinod Koul <vkoul@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
  <alexandre.torgue@st.com>
-Subject: [PATCH 4/6] dmaengine: stm32-mdma: driver defers probe for clock and
- reset
-Date: Mon, 27 Jan 2020 09:53:32 +0100
-Message-ID: <20200127085334.13163-5-amelie.delaunay@st.com>
+Subject: [PATCH 5/6] dmaengine: stm32-mdma: enable descriptor_reuse
+Date: Mon, 27 Jan 2020 09:53:33 +0100
+Message-ID: <20200127085334.13163-6-amelie.delaunay@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200127085334.13163-1-amelie.delaunay@st.com>
 References: <20200127085334.13163-1-amelie.delaunay@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG3NODE2.st.com
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-27_02:2020-01-24,
  2020-01-27 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_005358_879532_6B815F8F 
-X-CRM114-Status: GOOD (  17.13  )
+X-CRM114-CacheID: sfid-20200127_005358_884025_9AE8F053 
+X-CRM114-Status: GOOD (  12.10  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -106,46 +105,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch changes error log when failing to get the clock so that it is
-not printed on failure with probe deferring.
+From: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
 
-It also defers probe when reset controller is expected but has not been
-probed yet when MDMA device is probed.
+Enable descriptor reuse to allow client to resubmit already processed
+descriptors in order to save descriptor creation time.
 
-Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
+Signed-off-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
 Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
 ---
- drivers/dma/stm32-mdma.c | 10 +++++++---
- 1 file changed, 7 insertions(+), 3 deletions(-)
+ drivers/dma/stm32-mdma.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/dma/stm32-mdma.c b/drivers/dma/stm32-mdma.c
-index f23c82e3990c..2dbd1f38a6f5 100644
+index 2dbd1f38a6f5..f2043f47ae9e 100644
 --- a/drivers/dma/stm32-mdma.c
 +++ b/drivers/dma/stm32-mdma.c
-@@ -1579,8 +1579,8 @@ static int stm32_mdma_probe(struct platform_device *pdev)
- 	dmadev->clk = devm_clk_get(&pdev->dev, NULL);
- 	if (IS_ERR(dmadev->clk)) {
- 		ret = PTR_ERR(dmadev->clk);
--		if (ret == -EPROBE_DEFER)
--			dev_info(&pdev->dev, "Missing controller clock\n");
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Missing clock controller\n");
- 		return ret;
- 	}
- 
-@@ -1591,7 +1591,11 @@ static int stm32_mdma_probe(struct platform_device *pdev)
- 	}
- 
- 	rst = devm_reset_control_get(&pdev->dev, NULL);
--	if (!IS_ERR(rst)) {
-+	if (IS_ERR(rst)) {
-+		ret = PTR_ERR(rst);
-+		if (ret == -EPROBE_DEFER)
-+			goto err_clk;
-+	} else {
- 		reset_control_assert(rst);
- 		udelay(2);
- 		reset_control_deassert(rst);
+@@ -1618,6 +1618,8 @@ static int stm32_mdma_probe(struct platform_device *pdev)
+ 	dd->device_resume = stm32_mdma_resume;
+ 	dd->device_terminate_all = stm32_mdma_terminate_all;
+ 	dd->device_synchronize = stm32_mdma_synchronize;
++	dd->descriptor_reuse = true;
++
+ 	dd->src_addr_widths = BIT(DMA_SLAVE_BUSWIDTH_1_BYTE) |
+ 		BIT(DMA_SLAVE_BUSWIDTH_2_BYTES) |
+ 		BIT(DMA_SLAVE_BUSWIDTH_4_BYTES) |
 -- 
 2.17.1
 
