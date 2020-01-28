@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E4E614AF76
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 07:11:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3773A14AF7C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 07:11:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6IIE3n/MnSK1BhavVgw5X3ekvTv5QTY06e6aifn4ejU=; b=fOc+OA6BVIUway
-	Dr5zYnmjpT1q+H0yZhwj4/qd7KL+9zJjrLWMMHdeaBOP3S66PhcrL4v2dpEXo9VapV4TXu52zuJ0l
-	h3NtmGCF+C6b9a4/+cTkcwXDpriGs+aSyWc048C6wYod7R8Xl/c8I1z6Ymw/dsBBDK820tuJbS4Y4
-	ZfPf+eiHr8KP48GfHJ/zj/ahOweVFw6d7hKvvvN0OQnsnLHVDntu/xQWuGXwOrkEeJaGZmYig+MQw
-	T3MxEAmw7Iroaq+yCoAl2abXIR+yNwY+WS9dPGO4pusF+QJg4kPfJZMwRTHmnmMNpOaDNwnVRej1S
-	vkNc9rIu9q0xM7nqZEew==;
+	List-Owner; bh=iwRO/agRcHrfTojJcR8Xt+x5KX2kQ/sVkF+ThDKP2e4=; b=nH6k0b4DpV7eTj
+	Q10w9gPp5ssLOFMcYsAmQX7xeTyYgfJAxHx77yXfzx5O91X5iNWWhjjPbE4I8+AqziLwhLH+S30hj
+	qDg4vEilRiJNNYU0P+lfp6milHdPJN/A2rPQnF+7soD22SNCbULEB/zOYMquvfv66N7Mk6bKCYA3H
+	uSromH1opFb7jKQNgrr3xVJbeDkZO2buTU5e2M5/5anXavWp9V7/6/kzrzyWgOj67au+XPZDflW0J
+	XrfhBeO/mvh7AclWte4phqYD5QAiOSzbqeucj5LXNbAQ32HXXiyyayTxtqvp6nojAAhkoXSyMp/Ow
+	yTFLgmRK0dtXzMvMdrzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwK5X-0003TY-Ne; Tue, 28 Jan 2020 06:11:03 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1iwK6K-0003kE-NP; Tue, 28 Jan 2020 06:11:52 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwK5L-0003Se-PF
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 06:10:55 +0000
+ id 1iwK6A-0003jt-34
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 06:11:43 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 27 Jan 2020 22:10:50 -0800
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 27 Jan 2020 22:11:41 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,372,1574150400"; d="scan'208";a="308988573"
+X-IronPort-AV: E=Sophos;i="5.70,372,1574150400"; d="scan'208";a="252178707"
 Received: from linux.intel.com ([10.54.29.200])
- by orsmga001.jf.intel.com with ESMTP; 27 Jan 2020 22:10:50 -0800
+ by fmsmga004.fm.intel.com with ESMTP; 27 Jan 2020 22:11:40 -0800
 Received: from [10.252.25.124] (abudanko-mobl.ccr.corp.intel.com
  [10.252.25.124])
- by linux.intel.com (Postfix) with ESMTP id C1EAD5803C1;
- Mon, 27 Jan 2020 22:10:42 -0800 (PST)
-Subject: [PATCH v6 05/10] drm/i915/perf: open access for CAP_PERFMON
+ by linux.intel.com (Postfix) with ESMTP id CAF7D580277;
+ Mon, 27 Jan 2020 22:11:32 -0800 (PST)
+Subject: [PATCH v6 06/10] trace/bpf_trace: open access for CAP_PERFMON
  privileged process
 From: Alexey Budankov <alexey.budankov@linux.intel.com>
 To: Peter Zijlstra <peterz@infradead.org>,
@@ -49,25 +49,28 @@ To: Peter Zijlstra <peterz@infradead.org>,
  Alexei Starovoitov <ast@kernel.org>
 References: <74d524ab-ac11-a7b8-1052-eba10f117e09@linux.intel.com>
 Organization: Intel Corp.
-Message-ID: <2929ab4a-5f01-c078-0fcf-eb0cd306b454@linux.intel.com>
-Date: Tue, 28 Jan 2020 09:10:41 +0300
+Message-ID: <4fdbe164-d83d-a52f-4e8c-fe8bd15c6f8c@linux.intel.com>
+Date: Tue, 28 Jan 2020 09:11:31 +0300
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
 In-Reply-To: <74d524ab-ac11-a7b8-1052-eba10f117e09@linux.intel.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_221054_041268_9DC0D3FD 
-X-CRM114-Status: GOOD (  14.87  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200127_221142_184554_7F295B6F 
+X-CRM114-Status: GOOD (  16.01  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.24 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,7 +103,7 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-Open access to i915_perf monitoring for CAP_PERFMON privileged process.
+Open access to bpf_trace monitoring for CAP_PERFMON privileged process.
 Providing the access under CAP_PERFMON capability singly, without the
 rest of CAP_SYS_ADMIN credentials, excludes chances to misuse the
 credentials and makes operation more secure.
@@ -112,63 +115,29 @@ or program be granted only those privileges (e.g., capabilities) necessary
 to accomplish its legitimate function, and only for the time that such
 privileges are actually required)
 
-For backward compatibility reasons access to i915_events subsystem remains
+For backward compatibility reasons access to bpf_trace monitoring remains
 open for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN usage for
-secure i915_events monitoring is discouraged with respect to CAP_PERFMON
+secure bpf_trace monitoring is discouraged with respect to CAP_PERFMON
 capability.
 
 Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
 ---
- drivers/gpu/drm/i915/i915_perf.c | 13 ++++++-------
- 1 file changed, 6 insertions(+), 7 deletions(-)
+ kernel/trace/bpf_trace.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/i915/i915_perf.c b/drivers/gpu/drm/i915/i915_perf.c
-index 2ae14bc14931..d89347861b7d 100644
---- a/drivers/gpu/drm/i915/i915_perf.c
-+++ b/drivers/gpu/drm/i915/i915_perf.c
-@@ -3375,10 +3375,10 @@ i915_perf_open_ioctl_locked(struct i915_perf *perf,
- 	/* Similar to perf's kernel.perf_paranoid_cpu sysctl option
- 	 * we check a dev.i915.perf_stream_paranoid sysctl option
- 	 * to determine if it's ok to access system wide OA counters
--	 * without CAP_SYS_ADMIN privileges.
-+	 * without CAP_PERFMON or CAP_SYS_ADMIN privileges.
- 	 */
- 	if (privileged_op &&
--	    i915_perf_stream_paranoid && !capable(CAP_SYS_ADMIN)) {
-+	    i915_perf_stream_paranoid && !perfmon_capable()) {
- 		DRM_DEBUG("Insufficient privileges to open i915 perf stream\n");
- 		ret = -EACCES;
- 		goto err_ctx;
-@@ -3571,9 +3571,8 @@ static int read_properties_unlocked(struct i915_perf *perf,
- 			} else
- 				oa_freq_hz = 0;
+diff --git a/kernel/trace/bpf_trace.c b/kernel/trace/bpf_trace.c
+index e5ef4ae9edb5..334f1d71ebb1 100644
+--- a/kernel/trace/bpf_trace.c
++++ b/kernel/trace/bpf_trace.c
+@@ -1395,7 +1395,7 @@ int perf_event_query_prog_array(struct perf_event *event, void __user *info)
+ 	u32 *ids, prog_cnt, ids_len;
+ 	int ret;
  
--			if (oa_freq_hz > i915_oa_max_sample_rate &&
--			    !capable(CAP_SYS_ADMIN)) {
--				DRM_DEBUG("OA exponent would exceed the max sampling frequency (sysctl dev.i915.oa_max_sample_rate) %uHz without root privileges\n",
-+			if (oa_freq_hz > i915_oa_max_sample_rate && !perfmon_capable()) {
-+				DRM_DEBUG("OA exponent would exceed the max sampling frequency (sysctl dev.i915.oa_max_sample_rate) %uHz without CAP_PERFMON or CAP_SYS_ADMIN privileges\n",
- 					  i915_oa_max_sample_rate);
- 				return -EACCES;
- 			}
-@@ -3994,7 +3993,7 @@ int i915_perf_add_config_ioctl(struct drm_device *dev, void *data,
+-	if (!capable(CAP_SYS_ADMIN))
++	if (!perfmon_capable())
+ 		return -EPERM;
+ 	if (event->attr.type != PERF_TYPE_TRACEPOINT)
  		return -EINVAL;
- 	}
- 
--	if (i915_perf_stream_paranoid && !capable(CAP_SYS_ADMIN)) {
-+	if (i915_perf_stream_paranoid && !perfmon_capable()) {
- 		DRM_DEBUG("Insufficient privileges to add i915 OA config\n");
- 		return -EACCES;
- 	}
-@@ -4141,7 +4140,7 @@ int i915_perf_remove_config_ioctl(struct drm_device *dev, void *data,
- 		return -ENOTSUPP;
- 	}
- 
--	if (i915_perf_stream_paranoid && !capable(CAP_SYS_ADMIN)) {
-+	if (i915_perf_stream_paranoid && !perfmon_capable()) {
- 		DRM_DEBUG("Insufficient privileges to remove i915 OA config\n");
- 		return -EACCES;
- 	}
 -- 
 2.20.1
 
