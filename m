@@ -2,49 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEDCD14BDBD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 17:29:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D714E14BDC9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 17:32:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9+rxuU5WwNYQTOyZ6oE05Xlb0Jfnr7Pt4oBvSBsl/MY=; b=T56EHBhxeFVU3K
-	i+ieN/fBX8e1eYUBxH9C2VFHoBT81NFibSppyNZk3Lln62eRi1d9LULgUz9r/bNQIbG1lOCbTGIcd
-	UaNAeQHstgA/0KSzJD1x7Isreu6HJ4iK9V3xiiR1ClkLyO9rUDCpIDpEnZCBCjV0OrL8aW51NXMSK
-	I1/3WmB6D0BsOerifhZSuJSVfVNWp+XCe7s+ypa2dNY/m+v9QBareYW1jMXqf2A4raOcAucfAPL0m
-	aXHWaixgIdgGlvmnHLbuwI8W/a/CFoL6B+4FDVB/VJ4YSwXYklkK4f6ZXjt5cJqaaHI0Z7kjLe5I/
-	vIUlowmU03DDAII3GkRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NokjdXLcNFEThMlPDIVOiXYKqMJwFeooRwyi+W9JMaE=; b=g8SfDynoUofhBjKH+1BuWigIJ
+	VBPsVPUDkvRpUGZcIgZ6KEyR35u2DsaKpx596mDEHCLlQRoLg81aZC04HdAga+Rp8GFvOm5Vd5JOn
+	Beu+c6+R9QSmxhlkMoHOHq8vl8PEFkZkeSfhyLm25fSLFV86SQIIZKlMrlr3F8fnYSZgnHtirQngB
+	ocGYUZxreNZAdITgaVhWNH8ijH3xoVV8Goh6kX2WZXvBrx/ujNGnHOQPdRPD8B5lSNoEZPF6/0i3A
+	NPjHTcJOasQoJLXrp8krp0xyjhPtaZuxJqyLrixBsNC/Y0UGcEJH0ErbjEwxhJuAEvgnDx8jduOwq
+	8VwjF8QWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwTk4-0000HJ-Bh; Tue, 28 Jan 2020 16:29:32 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1iwTmY-0001xQ-47; Tue, 28 Jan 2020 16:32:06 +0000
+Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwTjs-0000Fn-2m; Tue, 28 Jan 2020 16:29:21 +0000
-Received: from p57b77a13.dip0.t-ipconnect.de ([87.183.122.19]
- helo=phil.localnet)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iwTje-0001cp-2j; Tue, 28 Jan 2020 17:29:06 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 1/3] clk: rockchip: convert rk3399 pll type to use
- readl_poll_timeout
-Date: Tue, 28 Jan 2020 17:29:05 +0100
-Message-ID: <12366580.SORy7UBWfn@phil>
-In-Reply-To: <f8001dbb-ebbc-ebe3-d1db-c75d3888fd38@arm.com>
-References: <20200128100204.1318450-1-heiko@sntech.de>
- <f8001dbb-ebbc-ebe3-d1db-c75d3888fd38@arm.com>
+ id 1iwTmO-0001wH-Lx
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 16:31:57 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 28 Jan 2020 08:31:51 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,374,1574150400"; d="scan'208";a="232004557"
+Received: from cauduong-mobl1.amr.corp.intel.com (HELO [10.254.184.245])
+ ([10.254.184.245])
+ by orsmga006.jf.intel.com with ESMTP; 28 Jan 2020 08:31:50 -0800
+Subject: Re: [PATCH 0/4] Add a better separation between i.MX8 families
+To: "Daniel Baluta (OSS)" <daniel.baluta@oss.nxp.com>,
+ "broonie@kernel.org" <broonie@kernel.org>,
+ "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>
+References: <20200128080518.29970-1-daniel.baluta@oss.nxp.com>
+From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
+Message-ID: <7246ae53-a542-2726-78e5-db43318dd44b@linux.intel.com>
+Date: Tue, 28 Jan 2020 10:08:27 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200128080518.29970-1-daniel.baluta@oss.nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_082920_273371_FF6DCFB9 
-X-CRM114-Status: GOOD (  21.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200128_083156_768220_B522111F 
+X-CRM114-Status: GOOD (  18.91  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.65 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -58,80 +70,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, mturquette@baylibre.com, zhangqing@rock-chips.com,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- christoph.muellner@theobroma-systems.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Daniel Baluta <daniel.baluta@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Dienstag, 28. Januar 2020, 16:28:44 CET schrieb Robin Murphy:
-> On 28/01/2020 10:02 am, Heiko Stuebner wrote:
-> > From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> > 
-> > Instead of open coding the polling of the lock status, use the
-> > handy readl_poll_timeout for this. As the pll locking is normally
-> > blazingly fast and we don't want to incur additional delays, we're
-> > not doing any sleeps similar to for example the imx clk-pllv4
-> > and define a very safe but still short timeout of 1ms.
-> > 
-> > Suggested-by: Stephen Boyd <sboyd@kernel.org>
-> > Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
-> > ---
-> >   drivers/clk/rockchip/clk-pll.c | 21 ++++++++++-----------
-> >   1 file changed, 10 insertions(+), 11 deletions(-)
-> > 
-> > diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
-> > index 198417d56300..43c9fd0086a2 100644
-> > --- a/drivers/clk/rockchip/clk-pll.c
-> > +++ b/drivers/clk/rockchip/clk-pll.c
-> > @@ -585,19 +585,18 @@ static const struct clk_ops rockchip_rk3066_pll_clk_ops = {
-> >   static int rockchip_rk3399_pll_wait_lock(struct rockchip_clk_pll *pll)
-> >   {
-> >   	u32 pllcon;
-> > -	int delay = 24000000;
-> > +	int ret;
-> >   
-> > -	/* poll check the lock status in rk3399 xPLLCON2 */
-> > -	while (delay > 0) {
-> > -		pllcon = readl_relaxed(pll->reg_base + RK3399_PLLCON(2));
-> > -		if (pllcon & RK3399_PLLCON2_LOCK_STATUS)
-> > -			return 0;
-> > +	/*
-> > +	 * Lock time typical 250, max 500 input clock cycles @24MHz
-> > +	 * So define a very safe maximum of 1000us, meaning 24000 cycles.
-> > +	 */
-> > +	ret = readl_poll_timeout(pll->reg_base + RK3399_PLLCON(2), pllcon,
-> > +				 pllcon & RK3399_PLLCON2_LOCK_STATUS, 0, 1000);
-> 
-> Note that the existing I/O accessor was readl_relaxed(), but using plain 
-> readl_poll_timeout() switches it to regular readl(). It may well not 
-> matter, but since it's not noted as an intentional change it seemed 
-> worth pointing out.
-
-So we end up with an additional __iormb() after each readl_relaxed call.
-So except for a small speed-penalty per iteration is there some other
-memory-barrier wirednes that could come into play? (Somehow I always
-forget the contents of Will's memory-barrier talks after a time)
-
-
-From a bit of non-scientific testing, rk3328 seems to need at max 20
-iterations in the wait_lock loop for the pll to lock, when doing cpufreq
-scaling.
-
-While interestingly px30 takes somewhere between 900 and 2000 iterations
-on the same pll type.
-[Though sleeps are not really possible anyway due to pll rates also getting
-set during of_clk_register early during boot which results in errors about
-scheduling the idle thread, so in the end it doesn't really matter]
-
-Heiko
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAxLzI4LzIwIDI6MDYgQU0sIERhbmllbCBCYWx1dGEgKE9TUykgd3JvdGU6Cj4gRnJvbTog
+RGFuaWVsIEJhbHV0YSA8ZGFuaWVsLmJhbHV0YUBueHAuY29tPgo+IAo+IFNvIGZhciB0aGUgaW1w
+bGVtZW50YXRpb24gd2FzIGRlc2lnbmVkIHRvIHN1cHBvcnQgIGEgZ2VuZXJpYyBwbGF0Zm9ybQo+
+IG5hbWVkIGkuTVg4LiBBbnlob3csIG5vdyB3b3JraW5nIHdpdGggc3BlY2lmaWMgaS5NWDggaW5z
+dGFuY2VzIHdlIG5lZWQKPiB0byBhY2NvdW50IGZvciB0aGUgZGlmZmVyZW5jZXMuCj4gCj4gaS5N
+WDggbmFtaW5nIGNhbiBiZSBjb25mdXNpbmcgYXQgdGhlIGZpcnN0IGdsYW5jZSwgc28gd2UgbmVl
+ZCB0byBoYXZlCj4gYSBjbGVhbiBzZXBhcmF0aW9uIGJldHdlZW4gZGlmZmVyZW50IHBsYXRmb3Jt
+cy4KPiAKPiBIZXJlIGlzIHRoZSBzcGxpdCBvZiBpLk1YOCBwZXIgcGxhdGZvcm1zLiBOb3RpY2Ug
+dGhhdCBpLk1YOCBuYW1lcwo+IHRoZSBlbnRpcmUgZmFtaWx5LCBidXQgYWxzbyBhIHN1Yi1mYW1p
+bHkuCj4gCj4gaW14OAo+IOKUnOKUgOKUgCBpbXg4Cj4g4pSCwqDCoCDilJTilIDilIAgaW14OHFt
+ICgqKQo+IOKUnOKUgOKUgCBpbXg4bQo+IOKUgsKgwqAg4pSc4pSA4pSAIGlteDhtbQo+IOKUgsKg
+wqAg4pSc4pSA4pSAIGlteDhtbgo+IOKUgsKgwqAg4pSc4pSA4pSAIGlteDhtcCAoKikKPiDilILC
+oMKgIOKUlOKUgOKUgCBpbXg4bXEKPiDilJTilIDilIAgaW14OHgKPiAgICAgIOKUlOKUgOKUgCBp
+bXg4cXhwICgqKQo+IAo+IFBsYXRmb3JtcyBtYXJrZWQgd2l0aCAoKikgY29udGFpbiBhIERTUC4g
+SW4gdGhlIGZ1dHVyZSB0aGVyZSBtaWdodCBiZQo+IG1vcmUgcGxhdGZvcm1zLgo+IAo+IFRoaXMg
+cGF0Y2hzZXJpZXMgZG9lcyB0aGUgZm9sbG93aW5nOgo+IAkqIHJlbmFtZXMgaW14OCB0byBpbXg4
+eCAoYmVjYXVzZSB0aGUgb25seSBzdXBwb3J0ZWQgcGxhdGZvcm0gbm93Cj4gICAgICAgICAgaXMg
+aW14OHF4cCkuCj4gICAgICAgICAgKiBhZGRzIHN1cHBvcnQgZm9yIGlteDggKHdoaWNoIGlzIGlt
+eDhxbSkKPiAKPiBBIGZ1dHVyZSBwYXRjaHNldCB3aWxsIGFkZCBzdXBwcm90IGZvciBpLk1YOE1Q
+Lgo+IAo+IFBhdWwgT2xhcnUgKDQpOgo+ICAgIEFTb0M6IFNPRjogUmVuYW1lIGkuTVg4IHBsYXRm
+b3JtIHRvIGkuTVg4WAo+ICAgIEFTb0M6IFNPRjogaW14ODogQWRkIG9wcyBmb3IgaS5NWDhRTQo+
+ICAgIEFTb0M6IFNPRjogQWRkIGkuTVg4UU0gZGV2aWNlIGRlc2NyaXB0b3IKPiAgICBkdC1iaW5k
+aW5nczogZHNwOiBmc2w6IEFkZCBmc2wsaW14OHFtLWRzcCBlbnRyeQoKVGhpcyBwYXRjaHNldCB3
+YXMgcmV2aWV3ZWQgb24gdGhlIFNPRiBHaXRIdWIuIEkgYXNrZWQgRGFuaWVsIHRvIHNlbmQgaXQg
+CmRpcmVjdGx5IHRvIHRoZSByZWxldmFudCBtYWlsaW5nIGxpc3QgZm9yIEFSTS9EZXZpY2UgVHJl
+ZS4KClJldmlld2VkLWJ5OiBQaWVycmUtTG91aXMgQm9zc2FydCA8cGllcnJlLWxvdWlzLmJvc3Nh
+cnRAbGludXguaW50ZWwuY29tPgoKPiAKPiAgIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL2RzcC9m
+c2wsZHNwLnlhbWwgICAgICB8ICAxICsKPiAgIHNvdW5kL3NvYy9zb2YvaW14L2lteDguYyAgICAg
+ICAgICAgICAgICAgICAgICB8IDU3ICsrKysrKysrKysrKysrKysrKy0KPiAgIHNvdW5kL3NvYy9z
+b2Yvc29mLW9mLWRldi5jICAgICAgICAgICAgICAgICAgICB8IDEwICsrKysKPiAgIDMgZmlsZXMg
+Y2hhbmdlZCwgNjUgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKPiAKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
