@@ -2,139 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 543F614C0ED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 20:26:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2480514C108
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 20:32:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BxRVuKJQT1S6ArQlC0Vjc2M8PKYr/cPSRy1uRxfvaZ0=; b=tQFr6qnzmeF0d5
-	Ed/TGlpWF5qqQJZfMj17ux8ecgCQntJjBg85lBXbaQMfB0iUipQcYrwxt4H/GfsDhkVp+plqdmwbl
-	0UaoVmnJJt1jiGpxJk2fOr6uEXDOoRm0/PlG8MXS6vgzVgujIj8WpD+92RX07O6470IEek42kOi0m
-	lCo2H4VNhSRlJn6a4JAeLRV0fj2zP//YakhxQsbpRvC8PzUyg+UwrcFf8cpw4L0XXBEk9kabgey7+
-	07Wp5T1w+N0bfd/kM8hbweX9ZYcs2l1/plSloieowt/DdCGvyRtppVrEfi/IDhTTgxFv2eQd+eZnA
-	GksDHOdU5rIjIy+XNnmg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8HB45myilotHZET9Uwg+hyL6nMGAYur2Uh9IUidpYWY=; b=bdm48HU6WLnPep
+	LGUFoIs1nwu4lPG05Nn7MzIHO7qTAWHj6H7CuMsFlOWAaX5FLbgXzjMY6+ptnx3qXlm7ylA2dp6TE
+	XNvRn3Q0BAVqWTYLbSwrR1i5l798Pru7RpXtjyHiv1tTF3APT/cZVckv1kUnYLoOzVflZT/0y40p9
+	wkTtpijNazdDSBc/R1u1/YfiW9vMPJu2IYLIBrgSAOkKra/38D9rEVPg+yrb7SU257op2OIwCBhnC
+	Liv8qDxavrSs3Szrsu4/AVCE8u5AucDY8UFQHwIjJK42BUQ3PFizawy/K8bG+5dLVaGfYE0nC+BB+
+	D5jz78OcI5+dXMxr/h5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwWVR-0007yV-Vf; Tue, 28 Jan 2020 19:26:37 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iwWbB-00028C-Uc; Tue, 28 Jan 2020 19:32:33 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwWVE-0007y4-Gx
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 19:26:25 +0000
-Received: by mail-pg1-x544.google.com with SMTP id u131so7523920pgc.10
+ id 1iwWay-00025v-6K
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 19:32:21 +0000
+Received: by mail-qk1-x741.google.com with SMTP id 21so14588936qky.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Jan 2020 11:26:23 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=+EryWDkvZ0dGHmprUsONyuE1YN1P3kBDh4CCkc7g+MM=;
- b=YnbP9bZ/dD92cF2Z/GPhUXw8EKj8U57rIrKuAjhgSFM3AwF9iMEKDkUjt12YirtYfI
- o5ELCTEXWLqlFWomuaAw2OJFr0TufDJgWDRy29Jd3d2Ysvrd8c5X2FPqzfRu3B2fsXMI
- 1zhPb1k98rwVJYfEDfjDnGjHx45lWKRbm/WZfwrv3//xhJGaBCXAIrn8YfSrkZrrjVb7
- So5J5JLdsIYJlZEYVx6MyWxytvVJMJ8jM9LlW/47BFX3xgoFh2UmE4IELqf2+uDspPjo
- j0I9RML97a8tllMZitLBqrlLeWSk3CF6kkosGmXjno1nPCjng39R7qElW+P25CZX7qNo
- 6Znw==
+ Tue, 28 Jan 2020 11:32:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=k16PGj1qUUwziMfMyn3s5qm2lit+ozL0yN14mkzck48=;
+ b=VCuq4zNQI3kDYT7a2bEUe7emt8NIOG2ziynarqCfccw/g+7AtujVoRAlWhtU6S6M1a
+ NV+pVh9dmzFPKybyCSQ5aS684JZkjevxgY6nX5F/aOosdYj5nlltq4EfLIZS4aONWGqC
+ 3MuERsazOp//jGrl2k6VckYP5c/IO09HqrOXCHwH8INvTHTf3vdbCBHw5XhqTmf0Yv4y
+ 1fpEVTrAx14NpqYWJPElYomJel2KlOMrouExyhNavBdJYTgf0K/Uq4kDjlr9evj/LqLy
+ wK1P3tLF9OitxoSEF9VCwru8N5lZZGYI4uXOCN0QaUNjS66pXwnAdioIsa+y9WPcAYBk
+ rVPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=+EryWDkvZ0dGHmprUsONyuE1YN1P3kBDh4CCkc7g+MM=;
- b=iCwAI/fjrAQQvE6Y7lJVWQUtbTZYiD0no6dvuQvSqeZhX2ggC/ayzDG+qEe15MWYFw
- TuiQwBtfT+fFvkIzVJTD7tlAkwhalMLf4QBeRV60s0BUe63Nmr57cfJka6ei9WwoB0Uv
- hdoe7+X1XTAF00d1ywpVHvIq9RFWruoSB3SjqOIA2o3LbWHvZmKmSHKesfamDAwobNWT
- fqp6siFx7MwPSBjMvRnikwFHk2AfROyPY1y394gsxuFen873jUE/vxWCMcqTi133pjtS
- 0w3/BMWvDpCKKHrdZ9vnF+pQo/UMesOwidYsVoAeLlloAe/G0YLTkmCs2USK591srXwL
- LmfQ==
-X-Gm-Message-State: APjAAAU3MEtBqWp/0aWBa5XeDjya04uUw9GEh+/I3YLvtC1GRpAPfMcK
- FlzkXtAEPLyQ+i4DoTnp5Cc=
-X-Google-Smtp-Source: APXvYqyOozvPp5uLbP21fTKQY1D6VhDCnyyfL5v+uwLRtEpq5GZRiHw4KwoX8if45nBOzdQ8Y/3pcA==
-X-Received: by 2002:a63:5c10:: with SMTP id q16mr26852933pgb.35.1580239583233; 
- Tue, 28 Jan 2020 11:26:23 -0800 (PST)
-Received: from [10.69.78.90] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id x11sm14149676pfd.168.2020.01.28.11.26.21
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 28 Jan 2020 11:26:22 -0800 (PST)
-Subject: Re: [PATCH] ARM: VDSO: Match ARMv8 timer in cntvct_functional()
-To: linux-arm-kernel@lists.infradead.org
-References: <20200116235731.22395-1-f.fainelli@gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; keydata=
- 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
- a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <9efff584-5e2f-df15-3eea-9cf4f31f8f27@gmail.com>
-Date: Tue, 28 Jan 2020 11:26:20 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=k16PGj1qUUwziMfMyn3s5qm2lit+ozL0yN14mkzck48=;
+ b=U2YrV1B9dYKwb7p3N/0ojEfXnEBGk3AnzIyN1cQqh+YwjwA5Dy8fN7NbNiJEzLMCnP
+ yk3ileNAzfUs+Seh2W2U1gAhItxOc8Zz62sdb/2dUWFzdmUG93HUkyUWsuCJLU5YzfnH
+ 9OZzyB1BU5ePVVcfTwIe8E+no7T8utO2KO+rYS5zh2QbFEZccLAW9E4ryCvsEOATxZpS
+ dqOz5tkqrNloZZtdX3ezPYcMJUa/FNDcAWz1tM4xKr6jVkwxHBdM6AZ1pfACON8N+isR
+ JVzz+pQFSO9E9wPZiUZEtao5nhAJcI2tvno1ERL/idcY+26QEvneifUx8wKRE8yKpYxd
+ vU8w==
+X-Gm-Message-State: APjAAAWLZIYWTehPIZoVbFTR4BUfmzTss4EuzBTEtEuKjTion5VCAA8F
+ AYBq8QaDQwC2EdJKJgw7gsHJR/1s9EyZ+n66yckUtw==
+X-Google-Smtp-Source: APXvYqzjFiCsOsyFZYRIARaX+Cxwp6joYRuRYTlShoJmbGYCjLP+Q9xdZCbgZRx/xiZxfmZYvodgjgU8Xat5WYUFZ3Y=
+X-Received: by 2002:a37:9c8a:: with SMTP id
+ f132mr23481931qke.432.1580239937466; 
+ Tue, 28 Jan 2020 11:32:17 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200116235731.22395-1-f.fainelli@gmail.com>
-Content-Language: en-US
+References: <20200113213149.25599-1-mike.leach@linaro.org>
+ <20200113213149.25599-9-mike.leach@linaro.org>
+ <396fc3a2-083b-29ef-2bb6-2fca066ea0ef@arm.com>
+In-Reply-To: <396fc3a2-083b-29ef-2bb6-2fca066ea0ef@arm.com>
+From: Mike Leach <mike.leach@linaro.org>
+Date: Tue, 28 Jan 2020 19:32:06 +0000
+Message-ID: <CAJ9a7VghcnAR7V9moPRAFRCTLvce-8qroZ23pG6Z9B3PSM4feQ@mail.gmail.com>
+Subject: Re: [PATCH v8 08/15] coresight: cti: Enable CTI associated with
+ devices.
+To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_112624_564768_C8F3A75D 
-X-CRM114-Status: GOOD (  12.02  )
+X-CRM114-CacheID: sfid-20200128_113220_260348_68E0A34C 
+X-CRM114-Status: GOOD (  28.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -155,36 +94,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opendmb@gmail.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Nathan Lynch <nathan_lynch@mentor.com>,
- open list <linux-kernel@vger.kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Alexios Zavras <alexios.zavras@intel.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Enrico Weigelt <info@metux.net>
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
+ linux-arm-msm@vger.kernel.org, Coresight ML <coresight@lists.linaro.org>,
+ Jonathan Corbet <corbet@lwn.net>, Liviu Dudau <liviu.dudau@arm.com>,
+ Andy Gross <agross@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Maxime Ripard <maxime@cerno.tech>, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Suzuki,
 
+On Wed, 15 Jan 2020 at 11:14, Suzuki Kuruppassery Poulose
+<suzuki.poulose@arm.com> wrote:
+>
+> On 13/01/2020 21:31, Mike Leach wrote:
+> > The CoreSight subsystem enables a path of devices from source to sink.
+> > Any CTI devices associated with the path devices must be enabled at the
+> > same time.
+> >
+> > This patch adds an associated coresight_device element to the main
+> > coresight device structure, and uses this to create associations between
+> > the CTI and other devices based on the device tree data. The associated
+> > device element is used to enable CTI in conjunction with the path elements.
+> >
+> > CTI devices are reference counted so where a single CTI is associated with
+> > multiple elements on the path, it will be enabled on the first associated
+> > device enable, and disabled with the last associated device disable.
+> >
+> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> > Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> > ---
+> >   drivers/hwtracing/coresight/coresight-cti.c   | 129 ++++++++++++++++++
+> >   drivers/hwtracing/coresight/coresight-cti.h   |   1 +
+> >   .../hwtracing/coresight/coresight-platform.c  |   1 +
+> >   drivers/hwtracing/coresight/coresight-priv.h  |  12 ++
+> >   drivers/hwtracing/coresight/coresight.c       |  71 +++++++++-
+> >   include/linux/coresight.h                     |   4 +
+> >   6 files changed, 213 insertions(+), 5 deletions(-)
+> >
+> > diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+> > index 77c2af247917..2be1b310e854 100644
+> > --- a/drivers/hwtracing/coresight/coresight-cti.c
+> > +++ b/drivers/hwtracing/coresight/coresight-cti.c
+> > @@ -4,6 +4,7 @@
+> >    * Author: Mike Leach <mike.leach@linaro.org>
+> >    */
+> >
+> > +#include <linux/property.h>
+> >   #include "coresight-cti.h"
+> >
+> >   /**
+> > @@ -440,6 +441,131 @@ int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
+> >       return err;
+> >   }
+> >
+> > +/*
+> > + * Look for a matching connection device name in the list of connections.
+> > + * If found then swap in the csdev name, set trig con association pointer
+> > + * and return found.
+> > + */
+> > +static bool
+> > +cti_match_fixup_csdev(struct cti_device *ctidev, const char *node_name,
+> > +                   struct coresight_device *csdev)
+> > +{
+> > +     struct cti_trig_con *trig_con;
+>
+> super minor nit: Please use "struct cti_trig_con *tc;" consistent with
+> the naming everywhere else. Helps a lot in reading the code, especially
+> which has a lot of different structures.
+>
+> > +     const char *csdev_name;
+> > +
+> > +     list_for_each_entry(trig_con, &ctidev->trig_cons, node) {
+> > +             if (trig_con->con_dev_name) {
+>
+> This was allocated via devm_* and ...
+>
+> > +                     if (!strcmp(node_name, trig_con->con_dev_name)) {
+> > +                             /* match: so swap in csdev name & dev */
+> > +                             kfree(trig_con->con_dev_name);
+>
+> ... we free it here using kfree() without devm_ being aware. This could
+> cause double-free when the device is removed. This should either be
+> devm_kfree() or simply overwritten with the new string and leave
+> the device cleanup to free it.
+>
 
-On 1/16/2020 3:57 PM, Florian Fainelli wrote:
-> It is possible for a system with an ARMv8 timer to run a 32-bit kernel.
-> When this happens we will unconditionally have the vDSO code remove the
-> __vdso_gettimeofday and __vdso_clock_gettime symbols because
-> cntvct_functional() returns false since it does not match that
-> compatibility string.
-> 
-> Fixes: ecf99a439105 ("ARM: 8331/1: VDSO initialization, mapping, and synchronization")
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Agreed - fixed up in v9.
 
-Submitted:
-https://www.armlinux.org.uk/developer/patches/viewpatch.php?id=8957/1
+> > +                             csdev_name = dev_name(&csdev->dev);
+> > +                             trig_con->con_dev_name =
+> > +                                     kstrdup(csdev_name, GFP_KERNEL);
+>
+> Please use devm_kstrdup() here on the CTI device to have a consistent
+> allocation.
+>
+>
+> > +                             trig_con->con_dev = csdev;
+> > +                             return true;
+> > +                     }
+> > +             }
+> > +     }
+> > +     return false;
+> > +}
+> >
+>
+>
+> > +/*
+> > + * Removing the associated devices is easier.
+> > + * A CTI will not have a value for csdev->ect_dev.
+> > + */
+> > +void cti_remove_assoc_from_csdev(struct coresight_device *csdev)
+> > +{
+> > +     struct cti_drvdata *ctidrv;
+> > +     struct cti_trig_con *tc;
+> > +     struct cti_device *ctidev;
+> > +
+> > +     mutex_lock(&ect_mutex);
+> > +     if (csdev->ect_dev) {
+> > +             ctidrv = csdev_to_cti_drvdata(csdev->ect_dev);
+> > +             ctidev = &ctidrv->ctidev;
+> > +             list_for_each_entry(tc, &ctidev->trig_cons, node) {
+> > +                     if (tc->con_dev == csdev->ect_dev) {
+> > +                             tc->con_dev = NULL;
+>
+> Should we clear/free the name too ?
+>
+
+Not now devm_ allocation is being used.
+
+> > +                             break;
+> > +                     }
+> > +             }
+> > +             csdev->ect_dev = NULL;
+> > +     }
+> > +     mutex_unlock(&ect_mutex);
+> > +}
+> > +EXPORT_SYMBOL_GPL(cti_remove_assoc_from_csdev);
+> > +
+>
+> ...
+>
+> > diff --git a/drivers/hwtracing/coresight/coresight-cti.h b/drivers/hwtracing/coresight/coresight-cti.h
+> > index 469a06a1bb78..578d7e9ac67e 100644
+> > --- a/drivers/hwtracing/coresight/coresight-cti.h
+> > +++ b/drivers/hwtracing/coresight/coresight-cti.h
+> > @@ -216,6 +216,7 @@ int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
+> >                     u32 channel_idx);
+> >   struct coresight_platform_data *
+> >   coresight_cti_get_platform_data(struct device *dev);
+> > +const char *cti_plat_get_node_name(struct fwnode_handle *fwnode);
+> >
+> >   /* cti powered and enabled */
+> >   static inline bool cti_active(struct cti_config *cfg)
+> > diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
+> > index 43418a2126ff..421d4fc95f41 100644
+> > --- a/drivers/hwtracing/coresight/coresight-platform.c
+> > +++ b/drivers/hwtracing/coresight/coresight-platform.c
+> > @@ -313,6 +313,7 @@ static int of_get_coresight_platform_data(struct device *dev,
+> >
+> >       return 0;
+> >   }
+> > +
+>
+> nit : spurious hunk ?
+>
+> >   #else
+> >   static inline int
+> >   of_get_coresight_platform_data(struct device *dev,
+>
+> Otherwise looks good to me
+>
+> Suzuki
+
+Thanks.
+
+Mike
+
 -- 
-Florian
+Mike Leach
+Principal Engineer, ARM Ltd.
+Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
