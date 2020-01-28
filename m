@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06B7214C288
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 23:02:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50A4414C28D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 23:04:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,81 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qvP0oMnnnRtN0EAfw7YsIXnGw22rvSBTP3JXsN0WAug=; b=CYcs2iEluI1UFz1g+xdmPnxX/0
-	uoYaebOqueLntPizXjhIDQLTrFejKf8QFuIwhneh5mayo12c6CoEES30zvdKC1IeBZ3x/fgAj/bOk
-	EcJ2gd+k1K/LvbTNEFCyzKUxMEsnoImxas9y6nF30EnpkVof1+rWNLHrFoskQlOJd0+nyXNuxoxyD
-	/FpkC3kLvxTT6rR6LwVR3Q7xqeTBb9rsoVcIKFX9zVinhVGROR5tVCePoEeJV0IIGQ6uP/amF2k+9
-	VdCPMtyB5D3BafvUsEGysaICZMltvQaQxUmtxsbktu4MxGimu3WuKogDHYN3hT8Yqa8CT2ism7SPV
-	pvrNYw1Q==;
+	bh=Yi8vfZxk+XrHb3FFXpRgxNavMQCdbTBlDQZMrKMhwS4=; b=EYgaNjwf0amt2+2FWdXa3RSmSg
+	3BLvfuQ/U52u9FurVJ++h9FrFYceMuIm/mX5PoWudI+aWL7NJdfMyiMXKY82uwVM9wRX1dn01wboH
+	saU0cnyl7Kuw08r05xcLtRVBtd9wTfGu9qUJhyqlJPg1sxq7t/dvsuFyMzdIlpcr4hHlwR1MMeTyS
+	XKsWg5CWZBq8iZ4D9A6wu4THd5CMws8JH+ndB5gp6Qv7lAhBlQSgOc3cuBe8SSj+72OznEgfW386S
+	BBbc3rqXqEM3d/bxFLTUjamnKMGjAErcT9le7P/HjKxiVGntogDXqymANvxo6cibA4B0Dvn4LOXcY
+	cJmc1o1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwYve-0004TJ-PK; Tue, 28 Jan 2020 22:01:50 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1iwYyM-0005aT-5l; Tue, 28 Jan 2020 22:04:38 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwYuh-0003ki-NE
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 22:00:54 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1580248852; h=References: In-Reply-To: Message-Id: Date:
- Subject: Cc: To: From: Sender;
- bh=yghdhlFiZU77aOY7g/N4Y1I7xkAvDvSkr40c3b2zObg=;
- b=RgLNP6qw7HO6XeMnwwTMRs6s2MU2YxPRf7yjxGHOuC1pC6pLiR3tOsOF29d4cR8adY2rVxnM
- PX5U/jowsWLEWIvB+X4NiBUyj9rNk5rwc2x48oh/pPfQ7L7I3FGp5pPXIpkzEgwY/ukEOPll
- qfubpvIDmrdC0t2SH34v+1ZYlcQ=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e30af0e.7f3f59537fb8-smtp-out-n02;
- Tue, 28 Jan 2020 22:00:46 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 1030DC447A5; Tue, 28 Jan 2020 22:00:44 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: jcrouse)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 14A37C4479C;
- Tue, 28 Jan 2020 22:00:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 14A37C4479C
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=jcrouse@codeaurora.org
-From: Jordan Crouse <jcrouse@codeaurora.org>
-To: iommu@lists.linux-foundation.org
-Subject: [PATCH v5 5/5] drm/msm/a6xx: Support split pagetables
-Date: Tue, 28 Jan 2020 15:00:19 -0700
-Message-Id: <1580248819-12644-6-git-send-email-jcrouse@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1580248819-12644-1-git-send-email-jcrouse@codeaurora.org>
-References: <1580248819-12644-1-git-send-email-jcrouse@codeaurora.org>
+ id 1iwYyA-0005a3-KJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 22:04:27 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 4so7732816pgd.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Jan 2020 14:04:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=DblaotVrzmiJAt9+53QxoLYrUdovyBVm302zCUUqNls=;
+ b=rWPko/byJB87I49+00Q3KlR4jrifheZTiFsxG2JcsG5fcLPjIYHOPcExcjdLHA4Ekb
+ xdUFWgMnMQzspqDKLljFRRe8nTyKHLitIZ/+R5FlJgnf/T9YZNy6hIs/P/ZEzFSR7/UF
+ 9b3N6RFxb23BLihLWj9cXneJel3Gh93P1K6Wb0YTC232j0IWQtKpQMLNXJdhi9jgoXsQ
+ taOITzUWLJ0eKmK6OzyItm8Tz9nbXq6ljYxfFJ40K6vkJ2Y6vuxtBJNwfk1GxT6USzFO
+ P06M4uRKcj5AvPCEDctF/2onv8ILLd5QuTUDrMcMtahQU8zYCmcBOP3e5bva2+tgrgXL
+ Ud6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=DblaotVrzmiJAt9+53QxoLYrUdovyBVm302zCUUqNls=;
+ b=PWa0o0nZ3Wvy21GxhhAdKkFy8/JUKVMI3Dl63j9FmoOLvRYtoPMrmUsp8eVwLWD3GO
+ 5z3fvqmxcc/NDJzll5sRFMg+m2imTRpxqmVrGsLtUSsV4QvmrWgUXyzU+Yav4FAbxWSe
+ tEMFDn64xeNy8Ahkm/zf4Gl/ngpzt/JKX0CCKDoPd4UJ/W/UWVYWyv7LBrXDkb0ggeU/
+ uDz6PZW/fG3CLxKA6HGjqCq2aYqPPIczcoSeyBx6W2OseOh9ybnzRHpuboiIOsQB9FJO
+ cuoAieY5KvORv090s8gNPj+d8QcHJDFvXnefdK0piTnaYT9kyz3erUk/O9Elts8rOMQL
+ P4YQ==
+X-Gm-Message-State: APjAAAWHtk7aNjXlJOcjDr56O507Pspdw6Or7FQhlEDEBupifisXNt/9
+ /6XJ2NUUGYF+vSaXIRXuhog=
+X-Google-Smtp-Source: APXvYqyvV28ePW6IB/gvAeu01eoPTXaCsy3lsyFfIjUxoiLsSbpZ45sJav0udDnUbZz8mQUtqgfPnQ==
+X-Received: by 2002:a63:465b:: with SMTP id v27mr27929484pgk.257.1580249065809; 
+ Tue, 28 Jan 2020 14:04:25 -0800 (PST)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id b5sm20047pfb.179.2020.01.28.14.04.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Jan 2020 14:04:24 -0800 (PST)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: bcm-kernel-feedback-list@broadcom.com,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: Re: [PATCH] arm64: bcm2835: Drop select of nonexistent
+ HAVE_ARM_ARCH_TIMER
+Date: Tue, 28 Jan 2020 14:04:23 -0800
+Message-Id: <20200128220423.13270-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200121100150.31660-1-geert+renesas@glider.be>
+References: <20200121100150.31660-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_140052_648247_2537EE26 
-X-CRM114-Status: GOOD (  18.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200128_140426_692591_DE465056 
+X-CRM114-Status: GOOD (  10.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -90,102 +100,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: freedreno@lists.freedesktop.org, David Airlie <airlied@linux.ie>,
- will@kernel.org, Sharat Masetty <smasetty@codeaurora.org>,
- robin.murphy@arm.com, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-msm@vger.kernel.org,
- Sean Paul <sean@poorly.run>, linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <masahiroy@kernel.org>, Eric Anholt <eric@anholt.net>,
+ Gerd Hoffmann <kraxel@redhat.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Attempt to enable split pagetables if the arm-smmu driver supports it.
-This will move the default address space from the default region to
-the address range assigned to TTBR1. The behavior should be transparent
-to the driver for now but it gets the default buffers out of the way
-when we want to start swapping TTBR0 for context-specific pagetables.
+On Tue, 21 Jan 2020 11:01:50 +0100, Geert Uytterhoeven <geert+renesas@glider.be> wrote:
+> Unlike on arm32, the HAVE_ARM_ARCH_TIMER config symbol does not exist on
+> arm64.
+> 
+> Note that the toplevel ARM64 symbol always selects ARM_ARCH_TIMER, so
+> support for it is always included.
+> 
+> Fixes: 628d30d1ccb897fe ("arm64: Add platform selection for BCM2835.")
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> ---
 
-Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
----
-
- drivers/gpu/drm/msm/adreno/a6xx_gpu.c | 52 ++++++++++++++++++++++++++++++++++-
- 1 file changed, 51 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
-index a2c5412..9bec603c 100644
---- a/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
-+++ b/drivers/gpu/drm/msm/adreno/a6xx_gpu.c
-@@ -878,6 +878,56 @@ static unsigned long a6xx_gpu_busy(struct msm_gpu *gpu)
- 	return (unsigned long)busy_time;
- }
- 
-+static struct msm_gem_address_space *
-+a6xx_create_address_space(struct msm_gpu *gpu, struct platform_device *pdev)
-+{
-+	struct iommu_domain *iommu = iommu_domain_alloc(&platform_bus_type);
-+	struct msm_gem_address_space *aspace;
-+	struct msm_mmu *mmu;
-+	u64 start, size;
-+	u32 val = 1;
-+	int ret;
-+
-+	if (!iommu)
-+		return ERR_PTR(-ENOMEM);
-+
-+	/*
-+	 * Try to request split pagetables - the request has to be made before
-+	 * the domian is attached
-+	 */
-+	iommu_domain_set_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
-+
-+	mmu = msm_iommu_new(&pdev->dev, iommu);
-+	if (IS_ERR(mmu)) {
-+		iommu_domain_free(iommu);
-+		return ERR_CAST(mmu);
-+	}
-+
-+	/*
-+	 * After the domain is attached, see if the split tables were actually
-+	 * successful.
-+	 */
-+	ret = iommu_domain_get_attr(iommu, DOMAIN_ATTR_SPLIT_TABLES, &val);
-+	if (!ret && val) {
-+		/*
-+		 * The aperture start will be at the beginning of the TTBR1
-+		 * space so use that as a base
-+		 */
-+		start = iommu->geometry.aperture_start;
-+		size = 0xffffffff;
-+	} else {
-+		/* Otherwise use the legacy 32 bit region */
-+		start = SZ_16M;
-+		size = 0xffffffff - SZ_16M;
-+	}
-+
-+	aspace = msm_gem_address_space_create(mmu, "gpu", start, size);
-+	if (IS_ERR(aspace))
-+		iommu_domain_free(iommu);
-+
-+	return aspace;
-+}
-+
- static const struct adreno_gpu_funcs funcs = {
- 	.base = {
- 		.get_param = adreno_get_param,
-@@ -900,7 +950,7 @@ static const struct adreno_gpu_funcs funcs = {
- 		.gpu_state_get = a6xx_gpu_state_get,
- 		.gpu_state_put = a6xx_gpu_state_put,
- #endif
--		.create_address_space = adreno_iommu_create_address_space,
-+		.create_address_space = a6xx_create_address_space,
- 	},
- 	.get_timestamp = a6xx_get_timestamp,
- };
--- 
-2.7.4
+Applied to soc-arm64/next, thanks!
+--
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
