@@ -2,71 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B285314B1ED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:43:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A254B14B1EC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:43:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Hxu2mKr0S+vaT+Ncr62jGjRhlmMw1eXRd30af/632oE=; b=h3etiIHmIr6lmB
-	4Id5NL0O1aLdFp+BxJa5+MCm2+dv4Xmcdw0N7P29aYfTUGpySHovKh49HI8bGbiqA2m/lmhOUOsmO
-	tSpswSd477Yyj71hbCZ2LNZ8Ky+I0DDtZ8TcKoMRaw9ymUUxtKfutG9GvOUcd+DLYwAwcjXt+Gdcy
-	EXUedM3+J0l3zA66OTppuHbYoKTNaUYscWiQIxMuVT6DFRDWpNY8TxvlDE3nlm/VJnrQAN/xcqfFz
-	G/l85WSgxUlh2S6enifdHAZVBbUOI6CIIbWdcaCi4tYfWS2dQu0qn94kIOcFp4sfEvRgIr9b80v0C
-	RbESaNGyHQ3486UxDmmw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+ilxFB+e9YEY5INLfI3QJu7m+QkKcOfj4eWTroVhqBE=; b=qd9L0l7sLfcnpx
+	Ba+xcTBFdl7gi38gmpeW3/bFCLgDol2giWOx6gOthKD8uWz0iwdTKtdT4tQLiWy2ZrS8lR6uwG8ND
+	/Vwdh3T8BbNkp4BVWMlq9/NuvIH++vyqvvX/dsaNckgrF4FYFDFWl9miWcPng/oE2wzpOMUrTKsA2
+	Fr1ZLQTwH8gyT0f6l/JEeXZPXEyu+Q8vFXr0idlbjPnlHAJ3q96jn7qxFWZMCsD3s6kp79N3A3RC6
+	j6uJuSA37rRqajdgaRKlGk2cPVELnGNhy3AFpuzzLfSHjuaaR1Klnnjt/gnrjNES3GMCVqtb7NqJ7
+	oWxhu+8rC4/Em9kNhZaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwNOm-00082q-Lx; Tue, 28 Jan 2020 09:43:08 +0000
+	id 1iwNOY-0007lh-7a; Tue, 28 Jan 2020 09:42:54 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwNO0-0007ZU-Gv
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 09:42:23 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ id 1iwNO0-0007ZW-IA
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 09:42:22 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00S9XRJJ026097; Tue, 28 Jan 2020 10:42:11 +0100
+ 00S9WY2Y031223; Tue, 28 Jan 2020 10:42:11 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=Kmmsnt0GP19LNEdrBchAyZ2FdgB00aCxXbF9RNsjpVY=;
- b=L75TFrdwxinDcyog/Ny+M12HWHDQn6p/hu+wpK++jUkFR3mHiXuSzx1jJUgXOLmowAly
- SbpW6ULAXjmvz8CVKMRvE5OmhJH5990xBQaD/dfxgKbksxwsm6MaALEd1S20HQeE5TES
- aEXQ9UL3jNu6m7zFcU7XvXRIcsyg7VoVviwEE3ky8D69BEiI1hUoqGNRb3owDfq2h9KE
- jsImpwzSBBEMEDDxr0Mb1NQQEh7MBOLYGeGmF/eolceW84EvpOkHIS4kvdn4e/5mHmlG
- 38Cx7W3ogTGatTcYpMp8+qkOvs2KQzjeo9+YiXPIbpwDPeJrTlmyHTyIUx6k5j+lsITO sg== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=+sBJ5wscdYLYeiF4DeuorI/LsDqHFHp2G8EwB/5qkCw=;
+ b=OZPFB8fOFpQ0iagujnOK0ewnRVGKCKaqL3mAGlE+IZkMVt9HEPM5Qxy915L+cPzmFnyp
+ GEcHANaXEDp/7t7OZFXVZOy6Q8B7Y3lRBAS0BQvl9mKHp8/kV0y8vPfWpGvywrG1sUrL
+ 3iyRS2U229GhPZu/iCI3dnEBVJD+bOvnFt5JgKquriv4wYXUaWDh2mrj2dppixVkHpOi
+ eFbilKrzu0HM8ipZbckUeQ8ROnlKn7p8ojYtmvkqn34B+jd4I9OArJ4xNhWIv5uIGnZ9
+ WU4C994/o3vN2RGIWv/BBs3SKyyxSzNVdcAI2BNOgG+6NX+q0uPT1Wxj8611hRtBE9cA pw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xrbpaw9xb-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xrdekd0me-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
  Tue, 28 Jan 2020 10:42:11 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C18FD100034;
- Tue, 28 Jan 2020 10:42:07 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 16B5110003E;
+ Tue, 28 Jan 2020 10:42:08 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B396921D3C0;
- Tue, 28 Jan 2020 10:42:07 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG3NODE2.st.com (10.75.127.8)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0B10521D3C0;
+ Tue, 28 Jan 2020 10:42:08 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE2.st.com (10.75.127.8)
  with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 28 Jan 2020 10:42:07
  +0100
 From: Amelie Delaunay <amelie.delaunay@st.com>
 To: Vinod Koul <vkoul@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
  <alexandre.torgue@st.com>
-Subject: [PATCH 0/4] STM32 DMAMUX driver fixes and improvements
-Date: Tue, 28 Jan 2020 10:41:54 +0100
-Message-ID: <20200128094158.20361-1-amelie.delaunay@st.com>
+Subject: [PATCH 1/4] dmaengine: stm32-dmamux: add suspend/resume power
+ management support
+Date: Tue, 28 Jan 2020 10:41:55 +0100
+Message-ID: <20200128094158.20361-2-amelie.delaunay@st.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200128094158.20361-1-amelie.delaunay@st.com>
+References: <20200128094158.20361-1-amelie.delaunay@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-28_02:2020-01-24,
  2020-01-28 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_014220_926884_6D938D78 
-X-CRM114-Status: GOOD (  10.36  )
+X-CRM114-CacheID: sfid-20200128_014220_916396_0FBB291F 
+X-CRM114-Status: GOOD (  15.15  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -102,20 +106,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series brings improvements to the DMAMUX driver with support of power
-management and probe function gets a cleanup.
+From: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
 
-Etienne Carriere (3):
-  dmaengine: stm32-dmamux: fix clock handling in probe sequence
-  dmaengine: stm32-dmamux: use reset controller only at probe time
-  dmaengine: stm32-dmamux: driver defers probe for clock and reset
+Add suspend/resume power management relying on PM Runtime engine.
 
-Pierre-Yves MORDRET (1):
-  dmaengine: stm32-dmamux: add suspend/resume power management support
+Signed-off-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
+---
+ drivers/dma/stm32-dmamux.c | 50 ++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
 
- drivers/dma/stm32-dmamux.c | 93 +++++++++++++++++++++++++++++++-------
- 1 file changed, 77 insertions(+), 16 deletions(-)
-
+diff --git a/drivers/dma/stm32-dmamux.c b/drivers/dma/stm32-dmamux.c
+index 3c89bd39e096..08d2395c8943 100644
+--- a/drivers/dma/stm32-dmamux.c
++++ b/drivers/dma/stm32-dmamux.c
+@@ -41,6 +41,9 @@ struct stm32_dmamux_data {
+ 	u32 dmamux_requests; /* Number of DMA requests routed toward DMAs */
+ 	spinlock_t lock; /* Protects register access */
+ 	unsigned long *dma_inuse; /* Used DMA channel */
++	u32 ccr[STM32_DMAMUX_MAX_DMA_REQUESTS]; /* Used to backup CCR register
++						 * in suspend
++						 */
+ 	u32 dma_reqs[]; /* Number of DMA Request per DMA masters.
+ 			 *  [0] holds number of DMA Masters.
+ 			 *  To be kept at very end end of this structure
+@@ -318,7 +321,54 @@ static int stm32_dmamux_runtime_resume(struct device *dev)
+ }
+ #endif
+ 
++#ifdef CONFIG_PM_SLEEP
++static int stm32_dmamux_suspend(struct device *dev)
++{
++	struct platform_device *pdev = to_platform_device(dev);
++	struct stm32_dmamux_data *stm32_dmamux = platform_get_drvdata(pdev);
++	int i, ret;
++
++	ret = pm_runtime_get_sync(dev);
++	if (ret < 0)
++		return ret;
++
++	for (i = 0; i < stm32_dmamux->dma_requests; i++)
++		stm32_dmamux->ccr[i] = stm32_dmamux_read(stm32_dmamux->iomem,
++							 STM32_DMAMUX_CCR(i));
++
++	pm_runtime_put_sync(dev);
++
++	pm_runtime_force_suspend(dev);
++
++	return 0;
++}
++
++static int stm32_dmamux_resume(struct device *dev)
++{
++	struct platform_device *pdev = to_platform_device(dev);
++	struct stm32_dmamux_data *stm32_dmamux = platform_get_drvdata(pdev);
++	int i, ret;
++
++	ret = pm_runtime_force_resume(dev);
++	if (ret < 0)
++		return ret;
++
++	ret = pm_runtime_get_sync(dev);
++	if (ret < 0)
++		return ret;
++
++	for (i = 0; i < stm32_dmamux->dma_requests; i++)
++		stm32_dmamux_write(stm32_dmamux->iomem, STM32_DMAMUX_CCR(i),
++				   stm32_dmamux->ccr[i]);
++
++	pm_runtime_put_sync(dev);
++
++	return 0;
++}
++#endif
++
+ static const struct dev_pm_ops stm32_dmamux_pm_ops = {
++	SET_SYSTEM_SLEEP_PM_OPS(stm32_dmamux_suspend, stm32_dmamux_resume)
+ 	SET_RUNTIME_PM_OPS(stm32_dmamux_runtime_suspend,
+ 			   stm32_dmamux_runtime_resume, NULL)
+ };
 -- 
 2.17.1
 
