@@ -2,31 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1EB914B492
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 13:58:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9044014B495
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 13:59:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bbG1IukZCM4/7dWOkG1ZsnHP0Ci5PC49RTgoSoanPhI=; b=koIhkFJDyulWAX
-	d/85dpL21rVm+j560EYMFwN9uoeyWmjgGcfkA0Sjx8Y256FHGQkRQ/4QWlrukTNzg2k5xeEYXZXWr
-	RFhhcNPcvI6QoNWaAxFAA/080Gsq7tACA3EyobV8TpijiCgy6cCgQbWuabN4Oi2rN1b9mDLW0E582
-	l2pbqvgXbdHmuglLoH9sbtGLxZeN1iJPYKuKvG/vZj8AFPEOKUkgj+xiIVh5A+070X7i01sgyMR8g
-	Yh0D7gzDhxFAU86ULb+v4zVeBpbtmvjktKPPW+Ky+EtPL1ejWH9ncf+bT599YxmBDxoegQKf8aNnp
-	y2PyxS2+1H+1u+05W5jA==;
+	List-Owner; bh=ozuEeaKHZAlbtW8xkU81oTU8xH3tWO7aXgvzeEXExQo=; b=fy8nwh/DNxY8Jt
+	a6tAUK7Aya4R2WNPL1/oIg3kog2JVKTi8Yg14ifpaeogO3pVUX5m+5si9XmvK6FAbblUm1Ut5Vde9
+	HYH3NOH95+zdfGouk8qR5i3JBv1byw+ROXCPyCHYq4Hfvbj/f85IzD7LmoutgAQ+1G1/kCz4Eapsb
+	o+Er4IHfuLKuSlBEhlojLZ5rh8K2CY4roZo3QzSzMLRv6MARS2QPmJbc64A8wjIV9V6bIsX+t+XMb
+	sFo9YbFMpm9bQlb5rZvPzkPeI609IDWkbnYaiTgHpqAqPTebFm0ojQsQKDSZt1GC4EKnoBaMuw+dH
+	HS10QOgnTCU1MPUobLbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwQS0-0001yX-Vo; Tue, 28 Jan 2020 12:58:41 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1iwQSG-0002GB-28; Tue, 28 Jan 2020 12:58:56 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwQR9-0001R8-JJ
+ id 1iwQR7-0001RS-Hp
  for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 12:57:50 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
  Eugen.Hristev@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Eugen.Hristev@microchip.com";
  x-sender="Eugen.Hristev@microchip.com";
  x-conformance=spf_only; x-record-type="v=spf1";
@@ -34,43 +34,42 @@ Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
  a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
  include:servers.mcsv.net include:mktomail.com
  include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
+Received-SPF: None (esa5.microchip.iphmx.com: no sender
  authenticity information available from domain of
  postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
  envelope-from="Eugen.Hristev@microchip.com";
  x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
+Authentication-Results: esa5.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: yJeJrQQS2wudXFx8egHKFuwSZL+ITCBGtpOo4Nq9ASWpiXMTpIq9pEE2OE+p5fyX3+lDb8cTd2
- uIoaiUESSvb4mn32a2tTjWwKgsCI+IEACmc1TpzoYKLqaSmjpGHI60i15H/3kOybegF4mUyYpG
- 8Qcu2Qe6PewDjyU0DdfA1/P5mraWFMbLX1p35kdP/Gb7gXlQzGrQV6Mfvq+BgEzad69UdGL2J9
- X3viKgx7p4rHPvqrE3esb+umk1HSf77VqSMF8rExEPhnK2wLSbPR9qLZ5zJsIxxN0OwM4+XPZZ
- z80=
-X-IronPort-AV: E=Sophos;i="5.70,373,1574146800"; d="scan'208";a="63960361"
+IronPort-SDR: By85+VsfmKy+Hv10hUMGHNbaN8ANer1f9F42+SNL0dJ2ii2+7bgUCiZehE5Er2n+U0EsOjqoUY
+ uDQ1XgjyBJ9koY4XJ+XbqtAwVsgHxrJBpbGjIUM9wU0YaRembIYg8eqaLYZpI3uHVoX2GjtHIT
+ 2hX/Wc492bD/gzofGnNsFgEJ2G5JzvJVor3aplImeAwECAKI6IFKXPFH4OA9B0kVQcdQ63CD1Z
+ OpwO7/ElAJJ4YGF6RkZCD4qT99zXs3xCHjvw8lnovvTQXJeZpTJROzKXGKozzE80YuFiSEmsYn
+ L3g=
+X-IronPort-AV: E=Sophos;i="5.70,373,1574146800"; d="scan'208";a="63324879"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 28 Jan 2020 05:57:41 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 28 Jan 2020 05:57:43 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 28 Jan 2020 05:57:41 -0700
-Received: from NAM10-DM6-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.71) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Tue, 28 Jan 2020 05:57:43 -0700
+ 15.1.1713.5; Tue, 28 Jan 2020 05:57:43 -0700
+Received: from NAM12-DM6-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Tue, 28 Jan 2020 05:57:43 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=EPh7QefmcHMjkrDW1F1lYr0angopmLAI6gZLKibx9oZGy+eSJGW8Mx+up8Ki5rOt996PoH82wFeV40O2Fw3QQK0H/c5j6ptmLg/t4ligzclpdpkkLGcntrxzE378qU5G2ab4XzUDZ8KLP9yI+Mqql6eaesHjgKQ6w7/Ug4FMkTUz/jnZLfJFKuOqVWz3cY5tB9iGbowEx2+BeAxvB254dItvtFvUHlsShGT4VtrK80qtzTe31YsRDTJPmP7rzcmDDzuS0A6Z3ZRW7QVRyiYnHoE7mfXtOWGU3xl4apjOMsyZ+TwJdM2v3Pu2XefB116ByIPjNOwts1AdceH8oIHz2w==
+ b=Nr3VdBy8RROARs9ZrEQywcfRZU0VwD0IJq/6mzn4PvahDztV8hQcvFIyHW89L3wkz0rgB2rqC2qlGCoWF8y6gotzpFeYLLIITsnm4zw7U8Bkc6cokiAVhYbFqNx1mWlX6Y6sD+uN6oI4pVHJo4JPLRx89mdP3sdBxupC15nem01wr9Ct6QfFtnzcweQ1ck6nnwtjlVdCb6K4iv3qtGU/6LG6FFTBBIjnd/jVUX03HZZHtgHc2hdrgNgTs2nwGzT4ad4q339sc5fSwRWNz0WtCR5aZbObBbjSkysK1y4sgc7wAAFlqmZOhbxki42BDQXjIzZFS8BS4O829RsZN2wXRg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YsDOGwusY3ugm44gVoe1kiU0ohp+RZiDxrWXx7vkb5w=;
- b=J0seDG3/Qx4htsWP9jiDsb5MdgLEzuSSh/hVgPe82UC8KyblsnV7HymLUESNq3ORGiqJQwUtKMvyTSb+57tFo9vAHrCE55Nfdb3ufbWbv1qKQU9okiL92C6EzEJvvwECca4DUk+1qSkpyDUytT+AklMCQDLH715PDYsO0Esjp7ukr5/toU9s7oY6xuZURO1mfCYQ+IhLEkk+jaOqnbIX+oyty4ew1nUP6IbEXpluF12YC/IGnocfEO6wrgi+Qd2R26czUevsfh0222WhxcdbjUzr5/viI/AR/+Y3hIUTO4a0sk02Jm7EPthLysEq4BpVJa/WJ4v1Xvp+ySOTISVlag==
+ bh=c4jBKIuwOxmBMrknvGW6sroidfWtc4NmUdFm4P9iVT8=;
+ b=Z6uCyAJNK80NwxcIQAXBizUT7dRzZ6t8x64hWH572v5HObWuVYWLIMpYAU35L1D01NE6m0Ec420Tr+mz2IHUygPwAO+CMTWoSgE0FU30CBJuWS074iS1CJubv8SudYoNXoG7w255g9m6TzdSXjQ8IcsQalUSviZkbqAYYBvJhOgTDLLOMx8WdXNo60GU36/6zWzajWDp/i/cXyyVW/39Q2iOHYOieI4HykyAmyv7rWz6uMMc+Xl3fHM8Yk4cHFvr/GG4ZPUZjMX3eFw9PMEU03p41ijWXwrKdkuBGZvxGDvudqekUTBlqCPx08KGB8ea9LNOZUSBTrM6AlpIDZBglQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -78,26 +77,26 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YsDOGwusY3ugm44gVoe1kiU0ohp+RZiDxrWXx7vkb5w=;
- b=LuucnVkoGS1vC1/RLYDQmxEw2ZBu0HpQ6w0i9veAQGhiV1OY1YKnneGVggi3HyjWDFjAEMgIhbR9AkSyEl3Mu2k+c9kcIszxNzx7zjjAgH49TXEcULj9Pbijllo5WM5YZ2/uf5PiG7Goz/jRyjOdt/tQDhowFIZswMMCx4Wm/Mw=
+ bh=c4jBKIuwOxmBMrknvGW6sroidfWtc4NmUdFm4P9iVT8=;
+ b=MCb8WQmAM4eeHoQu9OYUcz8+TwPPnJezHy5jJDK7wic6F01cblfOD2/Ch2oQ8Y5JQ8UOjAklaDKE+Y9+rkil+7LSfx6cr8hYfjVGFoBCdgJWAfDUEErJmqHSY/mSK21USlkZ2DkxNe5/z40EdhV/RLVXBGZ5daWit41++Kyrnjw=
 Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
- DM5PR11MB1852.namprd11.prod.outlook.com (10.175.90.8) with Microsoft SMTP
+ DM5PR11MB1612.namprd11.prod.outlook.com (10.172.37.149) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2665.24; Tue, 28 Jan 2020 12:57:40 +0000
+ 15.20.2665.24; Tue, 28 Jan 2020 12:57:41 +0000
 Received: from DM5PR11MB1242.namprd11.prod.outlook.com
  ([fe80::e5f6:d07d:d7de:ce79]) by DM5PR11MB1242.namprd11.prod.outlook.com
  ([fe80::e5f6:d07d:d7de:ce79%6]) with mapi id 15.20.2665.026; Tue, 28 Jan 2020
- 12:57:40 +0000
+ 12:57:41 +0000
 From: <Eugen.Hristev@microchip.com>
 To: <jic23@kernel.org>, <linux-iio@vger.kernel.org>,
  <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v3 2/3] iio: adc: at91-sama5d2_adc: handle unfinished
- conversions
-Thread-Topic: [PATCH v3 2/3] iio: adc: at91-sama5d2_adc: handle unfinished
- conversions
-Thread-Index: AQHV1dqFbCPx79TfoEqT0jQK5BBdgw==
-Date: Tue, 28 Jan 2020 12:57:40 +0000
-Message-ID: <1580216189-27418-3-git-send-email-eugen.hristev@microchip.com>
+Subject: [PATCH v3 3/3] iio: adc: at91-sama5d2_adc: update for other trigger
+ usage
+Thread-Topic: [PATCH v3 3/3] iio: adc: at91-sama5d2_adc: update for other
+ trigger usage
+Thread-Index: AQHV1dqGOUCBlFaurEGFIEUerZ28kA==
+Date: Tue, 28 Jan 2020 12:57:41 +0000
+Message-ID: <1580216189-27418-4-git-send-email-eugen.hristev@microchip.com>
 References: <1580216189-27418-1-git-send-email-eugen.hristev@microchip.com>
 In-Reply-To: <1580216189-27418-1-git-send-email-eugen.hristev@microchip.com>
 Accept-Language: en-US, ro-RO
@@ -107,41 +106,41 @@ X-MS-TNEF-Correlator:
 x-mailer: git-send-email 2.7.4
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 3784100a-ce25-4ba6-29ce-08d7a3f1a8b4
-x-ms-traffictypediagnostic: DM5PR11MB1852:
+x-ms-office365-filtering-correlation-id: ac2e5b73-d78e-448c-a971-08d7a3f1a8f6
+x-ms-traffictypediagnostic: DM5PR11MB1612:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM5PR11MB18524BA9BEFD873AB77E35E1E80A0@DM5PR11MB1852.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-microsoft-antispam-prvs: <DM5PR11MB1612DAB43A3BE937084D33F4E80A0@DM5PR11MB1612.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 029651C7A1
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(376002)(366004)(39860400002)(136003)(396003)(346002)(199004)(189003)(6512007)(2616005)(107886003)(76116006)(54906003)(91956017)(110136005)(66446008)(64756008)(66556008)(66476007)(66946007)(316002)(8936002)(6486002)(186003)(5660300002)(71200400001)(81156014)(4326008)(2906002)(81166006)(478600001)(36756003)(86362001)(6506007)(8676002)(26005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1852;
+ SFS:(10009020)(366004)(39860400002)(136003)(376002)(346002)(396003)(189003)(199004)(6506007)(71200400001)(8676002)(5660300002)(2616005)(316002)(81166006)(26005)(81156014)(66446008)(4326008)(110136005)(54906003)(91956017)(478600001)(64756008)(2906002)(66556008)(6512007)(66946007)(86362001)(6486002)(107886003)(76116006)(8936002)(36756003)(66476007)(186003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1612;
  H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
+ PTR:InfoNoRecords; MX:1; A:1; 
 received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: oWJjfWvDvCCQadEilKoPLCiwPNRK0XhxlfeUVX+A1xz0+vLDXypl9r4R/0DSvJ60GoT0DMaCZR/oW59KbqduexTw/0MtU6gqqsSt81dZttDB6Av2XE5YI/uifALJQSOwZadBr6iYkGEjBG+kBe3nHxRZ3xfEZbQYcVejteNWesUC9/khJN3rUA3VM4VScS1EFaAHQukBEtcA56EAIIsWbR31WQmEuXg8KEDwRD6s9lsDdRCOsJvSqmVbPsVCUDpG4j0ZZEE41SuBcKWNR6aXQaeyDjPiSRXdVRIbPexzgGhWzaqkVM7Cjl8ALjWCZsukSr61uepsWIU1XlLiiDzvzeUeOEstHBpMoBoo69w4zrodVgmytm30afrnsyRVOqCWds77NmZyRLtCHk342xYlXScVGG97dtDiuWfliSFamqotiGFO8fJ9FDn6BHpeuzqG
-x-ms-exchange-antispam-messagedata: wbZnnKHKulGMvYMxNKN51pEdnTyZGIloeSOoEnbgCuE2jQruFrxQSNsut1QhcxyVOjc8GX89PQ2x3gvHRI4Y2ubtC0A1lauSoqGd/WSnNFIK2WGQ31g7DLjwmYg1Fco8+2C0EoratAOSrVrKpZiRDg==
+x-microsoft-antispam-message-info: NY0a1tcTLXIHOMUTV2pgLY9tMe58faWOrjHlPeoYa5IMTwjNHV+jl1iPHQWl1b+JAQT9dkG4f7xBgx71H61ATL+gZ+/4Dt88jOpIXKoYjnpj1czOGPIpiMK1peRwtut7MSwSlMRu+bRUXnJyzIyralE1k1e8rinONFSMuuZFFg/D2S5IQ/VxCi4a7lyehvbYucwDpIDIOuffPPa0rpY/ySkAp0ERM5tfTLPqz+UbCOkoiQgXPDfNomXvZmXzL8JCjrOSq+H+QyZLmfWaLGbK3moGLJsokNTF/t0ffKpFV3BPsS498xcvepzg7ENxCpFz9ryGpfo/nu6YHhdAer44P9CXzqggE5bQrpH/vZADf7eYv26hpPF7aQHwKW5CHTvW05JX/250+hHogbSzISgoIfvlSU4c8DbnA0U7I8lntH+R/zYhVXEXfTXX1cB14RJm
+x-ms-exchange-antispam-messagedata: 87SABN5L4K3A7jp6M6x2DknTKi1/dEeWM37XvGPIXWjWeMRHc40SuG4U0bQmb7XWuVqIE/krTeJrQoMjo2h6QR3hja789CT34ukUbRtm69wM2iYZ97r/ctNiUO1SqOgaUEc2BxzJar3q+DlNkq6KKA==
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3784100a-ce25-4ba6-29ce-08d7a3f1a8b4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jan 2020 12:57:40.4711 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ac2e5b73-d78e-448c-a971-08d7a3f1a8f6
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jan 2020 12:57:41.0859 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Awa0eQYIg6q3o9KvpMUkoZkj0wFXFLPHJqHvqCUwg0crhCCBidfP+dJ11ZAT0Q30KK4wde/nxqesmkvk5iuUvPQl5TSJ9HkKNGVAn9p9Meg=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1852
+X-MS-Exchange-CrossTenant-userprincipalname: yuFA1br1xhP3i/Vi+bqJ8aH1SIR9RWpxz+WDl+g1xdCdWb1KCh69CYxfd9H0cRZjPrGMX7W1+J5LE812z37n5rzRKd7AtxNmAwN6jYhmPyg=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1612
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_045747_697039_57DF1A77 
-X-CRM114-Status: GOOD (  17.32  )
+X-CRM114-CacheID: sfid-20200128_045745_594489_82C94354 
+X-CRM114-Status: GOOD (  18.71  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -167,166 +166,250 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Eugen Hristev <eugen.hristev@microchip.com>
 
-It can happen that on IRQ trigger, not all conversions are done if
-we are enabling multiple channels.
-The IRQ is triggered on first EOC (end of channel), but it can happen
-that not all channels are done. This leads into erroneous reports to
-userspace (zero values or previous values).
-To solve this, in trigger handler, check if the mask of done channels
-is the same as the mask of active scan channels.
-If it's the same, proceed and push to buffers. Otherwise, use usleep
-to sleep until the conversion is done or we timeout.
-Normally, it should happen that in a short time fashion, all channels are
-ready, since the first IRQ triggered.
-If a hardware fault happens (for example the clock suddently dissappears),
-the handler will not be completed, in which case we do not report anything to
-userspace anymore.
-Also, change from using the EOC interrupts to DRDY interrupt.
-This helps with the fact that not 'n' interrupt statuses are enabled,
-each being able to trigger an interrupt, and instead only data ready
-interrupt can wake up the CPU. Like this, when data is ready, check in
-handler which and how many channels are done. While the DRDY is raised,
-other IRQs cannot occur. Once the channel data is being read, we ack the
-IRQ and finish the conversion.
+This change will allow the at91-sama5d2_adc driver to use other triggers
+than it's own.
+In particular, tested with the sysfs trigger.
+To be able to achieve this functionality, some changes were required:
+1) Do not enable/disable channels when enabling/disabling the trigger.
+This is because the trigger is enabled/disabled only for our trigger
+(obviously). We need channels enabled/disabled regardless of what trigger is
+being used.
+2) Cope with DMA : DMA cannot be used when using another type of trigger.
+Other triggers work through pollfunc, so we get polled anyway on every trigger.
+Thus we have to obtain data at every trigger.
+3) When to start conversion? The usual pollfunc (store time from subsystem)
+would be in hard irq and this would be a good way, but current iio subsystem
+recommends to have it in the threaded irq. Thus adding software start
+code in this handler.
+4) Buffer config: we need to setup buffer regardless of our own device's
+trigger. We may get one attached later.
+5) IRQ handling: we use our own device IRQ only if it's our own trigger
+and we do not use DMA . If we use DMA, we use the DMA controller's IRQ.
 
 Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
 ---
 Changes in v3:
-- rewrite some code as suggested by Jonathan (w.r.t. state and dma enabled in
-configure_trigger
-- move back enable_irq in reenable_trigger : looks like it was a leftover,
-thanks Jonathan
+- remove useless call to iio_triggered_buffer_predisable
 
 Changes in v2:
-- move start of conversion to threaded irq, removed specific at91 pollfunc
-- add timeout to channel mask readiness check in trigger handler
-- use DRDY irq instead of EOC irqs.
-- move enable irq after DRDY has been acked in reenable_trigger
+- adapt to the situation of having the previous two patches ahead in the series
 
- drivers/iio/adc/at91-sama5d2_adc.c | 62 +++++++++++++++++++++++++++++---------
- 1 file changed, 48 insertions(+), 14 deletions(-)
+ drivers/iio/adc/at91-sama5d2_adc.c | 142 +++++++++++++++++++------------------
+ 1 file changed, 72 insertions(+), 70 deletions(-)
 
 diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
-index 2a6950a..49c2b9d 100644
+index 49c2b9d..03ceab4 100644
 --- a/drivers/iio/adc/at91-sama5d2_adc.c
 +++ b/drivers/iio/adc/at91-sama5d2_adc.c
-@@ -8,6 +8,7 @@
+@@ -728,7 +728,6 @@ static int at91_adc_configure_trigger(struct iio_trigger *trig, bool state)
+ 	struct iio_dev *indio = iio_trigger_get_drvdata(trig);
+ 	struct at91_adc_state *st = iio_priv(indio);
+ 	u32 status = at91_adc_readl(st, AT91_SAMA5D2_TRGR);
+-	u8 bit;
  
- #include <linux/bitops.h>
- #include <linux/clk.h>
-+#include <linux/delay.h>
- #include <linux/dma-mapping.h>
- #include <linux/dmaengine.h>
- #include <linux/interrupt.h>
-@@ -100,6 +101,8 @@
- #define AT91_SAMA5D2_IER_YRDY   BIT(21)
- /* Interrupt Enable Register - TS pressure measurement ready */
- #define AT91_SAMA5D2_IER_PRDY   BIT(22)
-+/* Interrupt Enable Register - Data ready */
-+#define AT91_SAMA5D2_IER_DRDY   BIT(24)
- /* Interrupt Enable Register - general overrun error */
- #define AT91_SAMA5D2_IER_GOVRE BIT(25)
- /* Interrupt Enable Register - Pen detect */
-@@ -486,6 +489,21 @@ static inline int at91_adc_of_xlate(struct iio_dev *indio_dev,
- 	return at91_adc_chan_xlate(indio_dev, iiospec->args[0]);
+ 	/* clear TRGMOD */
+ 	status &= ~AT91_SAMA5D2_TRGR_TRGMOD_MASK;
+@@ -739,48 +738,6 @@ static int at91_adc_configure_trigger(struct iio_trigger *trig, bool state)
+ 	/* set/unset hw trigger */
+ 	at91_adc_writel(st, AT91_SAMA5D2_TRGR, status);
+ 
+-	for_each_set_bit(bit, indio->active_scan_mask, indio->num_channels) {
+-		struct iio_chan_spec const *chan = at91_adc_chan_get(indio, bit);
+-		u32 cor;
+-
+-		if (!chan)
+-			continue;
+-		/* these channel types cannot be handled by this trigger */
+-		if (chan->type == IIO_POSITIONRELATIVE ||
+-		    chan->type == IIO_PRESSURE)
+-			continue;
+-
+-		if (state) {
+-			cor = at91_adc_readl(st, AT91_SAMA5D2_COR);
+-
+-			if (chan->differential)
+-				cor |= (BIT(chan->channel) |
+-					BIT(chan->channel2)) <<
+-					AT91_SAMA5D2_COR_DIFF_OFFSET;
+-			else
+-				cor &= ~(BIT(chan->channel) <<
+-				       AT91_SAMA5D2_COR_DIFF_OFFSET);
+-
+-			at91_adc_writel(st, AT91_SAMA5D2_COR, cor);
+-		}
+-
+-		if (state)
+-			at91_adc_writel(st, AT91_SAMA5D2_CHER,
+-					BIT(chan->channel));
+-		else
+-			at91_adc_writel(st, AT91_SAMA5D2_CHDR,
+-					BIT(chan->channel));
+-	}
+-
+-	/* Nothing to do if using DMA */
+-	if (st->dma_st.dma_chan)
+-		return 0;
+-
+-	if (state)
+-		at91_adc_writel(st, AT91_SAMA5D2_IER, AT91_SAMA5D2_IER_DRDY);
+-	else
+-		at91_adc_writel(st, AT91_SAMA5D2_IDR, AT91_SAMA5D2_IER_DRDY);
+-
+ 	return 0;
  }
  
-+static unsigned int at91_adc_active_scan_mask_to_reg(struct iio_dev *indio_dev)
+@@ -905,9 +862,22 @@ static int at91_adc_dma_start(struct iio_dev *indio_dev)
+ 	return 0;
+ }
+ 
++static bool at91_adc_buffer_check_use_irq(struct iio_dev *indio,
++					  struct at91_adc_state *st)
 +{
-+	u32 mask = 0;
-+	u8 bit;
++	/* if using DMA, we do not use our own IRQ (we use DMA-controller) */
++	if (st->dma_st.dma_chan)
++		return false;
++	/* if the trigger is not ours, then it has its own IRQ */
++	if (iio_trigger_validate_own_device(indio->trig, indio))
++		return false;
++	return true;
++}
 +
+ static int at91_adc_buffer_postenable(struct iio_dev *indio_dev)
+ {
+ 	int ret;
++	u8 bit;
+ 	struct at91_adc_state *st = iio_priv(indio_dev);
+ 
+ 	/* check if we are enabling triggered buffer or the touchscreen */
+@@ -928,6 +898,36 @@ static int at91_adc_buffer_postenable(struct iio_dev *indio_dev)
+ 		return ret;
+ 	}
+ 
 +	for_each_set_bit(bit, indio_dev->active_scan_mask,
 +			 indio_dev->num_channels) {
 +		struct iio_chan_spec const *chan =
-+			 at91_adc_chan_get(indio_dev, bit);
-+		mask |= BIT(chan->channel);
-+	}
++					at91_adc_chan_get(indio_dev, bit);
++		u32 cor;
 +
-+	return mask & GENMASK(11, 0);
-+}
++		if (!chan)
++			continue;
++		/* these channel types cannot be handled by this trigger */
++		if (chan->type == IIO_POSITIONRELATIVE ||
++		    chan->type == IIO_PRESSURE)
++			continue;
 +
- static void at91_adc_config_emr(struct at91_adc_state *st)
- {
- 	/* configure the extended mode register */
-@@ -746,25 +764,23 @@ static int at91_adc_configure_trigger(struct iio_trigger *trig, bool state)
- 			at91_adc_writel(st, AT91_SAMA5D2_COR, cor);
- 		}
- 
--		if (state) {
-+		if (state)
- 			at91_adc_writel(st, AT91_SAMA5D2_CHER,
- 					BIT(chan->channel));
--			/* enable irq only if not using DMA */
--			if (!st->dma_st.dma_chan) {
--				at91_adc_writel(st, AT91_SAMA5D2_IER,
--						BIT(chan->channel));
--			}
--		} else {
--			/* disable irq only if not using DMA */
--			if (!st->dma_st.dma_chan) {
--				at91_adc_writel(st, AT91_SAMA5D2_IDR,
--						BIT(chan->channel));
--			}
++		cor = at91_adc_readl(st, AT91_SAMA5D2_COR);
++
++		if (chan->differential)
++			cor |= (BIT(chan->channel) | BIT(chan->channel2)) <<
++				AT91_SAMA5D2_COR_DIFF_OFFSET;
 +		else
- 			at91_adc_writel(st, AT91_SAMA5D2_CHDR,
- 					BIT(chan->channel));
--		}
- 	}
- 
-+	/* Nothing to do if using DMA */
-+	if (st->dma_st.dma_chan)
-+		return 0;
++			cor &= ~(BIT(chan->channel) <<
++			       AT91_SAMA5D2_COR_DIFF_OFFSET);
 +
-+	if (state)
-+		at91_adc_writel(st, AT91_SAMA5D2_IER, AT91_SAMA5D2_IER_DRDY);
-+	else
-+		at91_adc_writel(st, AT91_SAMA5D2_IDR, AT91_SAMA5D2_IER_DRDY);
++		at91_adc_writel(st, AT91_SAMA5D2_COR, cor);
 +
- 	return 0;
- }
- 
-@@ -781,6 +797,7 @@ static int at91_adc_reenable_trigger(struct iio_trigger *trig)
- 
- 	/* Needed to ACK the DRDY interruption */
- 	at91_adc_readl(st, AT91_SAMA5D2_LCDR);
-+
- 	return 0;
- }
- 
-@@ -1015,6 +1032,22 @@ static void at91_adc_trigger_handler_nodma(struct iio_dev *indio_dev,
- 	int i = 0;
- 	int val;
- 	u8 bit;
-+	u32 mask = at91_adc_active_scan_mask_to_reg(indio_dev);
-+	unsigned int timeout = 50;
-+
-+	/*
-+	 * Check if the conversion is ready. If not, wait a little bit, and
-+	 * in case of timeout exit with an error.
-+	 */
-+	while ((at91_adc_readl(st, AT91_SAMA5D2_ISR) & mask) != mask &&
-+	       timeout) {
-+		usleep_range(50, 100);
-+		timeout--;
++		at91_adc_writel(st, AT91_SAMA5D2_CHER, BIT(chan->channel));
 +	}
 +
-+	/* Cannot read data, not ready. Continue without reporting data */
-+	if (!timeout)
-+		return;
++	if (at91_adc_buffer_check_use_irq(indio_dev, st))
++		at91_adc_writel(st, AT91_SAMA5D2_IER, AT91_SAMA5D2_IER_DRDY);
++
+ 	return iio_triggered_buffer_postenable(indio_dev);
+ }
  
+@@ -948,21 +948,11 @@ static int at91_adc_buffer_predisable(struct iio_dev *indio_dev)
+ 	if (!(indio_dev->currentmode & INDIO_ALL_TRIGGERED_MODES))
+ 		return -EINVAL;
+ 
+-	/* continue with the triggered buffer */
+-	ret = iio_triggered_buffer_predisable(indio_dev);
+-	if (ret < 0)
+-		dev_err(&indio_dev->dev, "buffer predisable failed\n");
+-
+-	if (!st->dma_st.dma_chan)
+-		return ret;
+-
+-	/* if we are using DMA we must clear registers and end DMA */
+-	dmaengine_terminate_sync(st->dma_st.dma_chan);
+-
+ 	/*
+-	 * For each enabled channel we must read the last converted value
++	 * For each enable channel we must disable it in hardware.
++	 * In the case of DMA, we must read the last converted value
+ 	 * to clear EOC status and not get a possible interrupt later.
+-	 * This value is being read by DMA from LCDR anyway
++	 * This value is being read by DMA from LCDR anyway, so it's not lost.
+ 	 */
  	for_each_set_bit(bit, indio_dev->active_scan_mask,
  			 indio_dev->num_channels) {
-@@ -1281,7 +1314,8 @@ static irqreturn_t at91_adc_interrupt(int irq, void *private)
- 		status = at91_adc_readl(st, AT91_SAMA5D2_XPOSR);
- 		status = at91_adc_readl(st, AT91_SAMA5D2_YPOSR);
- 		status = at91_adc_readl(st, AT91_SAMA5D2_PRESSR);
--	} else if (iio_buffer_enabled(indio) && !st->dma_st.dma_chan) {
-+	} else if (iio_buffer_enabled(indio) &&
-+		   (status & AT91_SAMA5D2_IER_DRDY)) {
- 		/* triggered buffer without DMA */
- 		disable_irq_nosync(irq);
- 		iio_trigger_poll(indio->trig);
+@@ -975,12 +965,28 @@ static int at91_adc_buffer_predisable(struct iio_dev *indio_dev)
+ 		if (chan->type == IIO_POSITIONRELATIVE ||
+ 		    chan->type == IIO_PRESSURE)
+ 			continue;
++
++		at91_adc_writel(st, AT91_SAMA5D2_CHDR, BIT(chan->channel));
++
+ 		if (st->dma_st.dma_chan)
+ 			at91_adc_readl(st, chan->address);
+ 	}
+ 
++	if (at91_adc_buffer_check_use_irq(indio_dev, st))
++		at91_adc_writel(st, AT91_SAMA5D2_IDR, AT91_SAMA5D2_IER_DRDY);
++
+ 	/* read overflow register to clear possible overflow status */
+ 	at91_adc_readl(st, AT91_SAMA5D2_OVER);
++
++	/* continue with the triggered buffer */
++	ret = iio_triggered_buffer_predisable(indio_dev);
++	if (ret < 0)
++		dev_err(&indio_dev->dev, "buffer predisable failed\n");
++
++	/* if we are using DMA we must clear registers and end DMA */
++	if (st->dma_st.dma_chan)
++		dmaengine_terminate_sync(st->dma_st.dma_chan);
++
+ 	return ret;
+ }
+ 
+@@ -1135,6 +1141,13 @@ static irqreturn_t at91_adc_trigger_handler(int irq, void *p)
+ 	struct iio_dev *indio_dev = pf->indio_dev;
+ 	struct at91_adc_state *st = iio_priv(indio_dev);
+ 
++	/*
++	 * If it's not our trigger, start a conversion now, as we are
++	 * actually polling the trigger now.
++	 */
++	if (iio_trigger_validate_own_device(indio_dev->trig, indio_dev))
++		at91_adc_writel(st, AT91_SAMA5D2_CR, AT91_SAMA5D2_CR_START);
++
+ 	if (st->dma_st.dma_chan)
+ 		at91_adc_trigger_handler_dma(indio_dev);
+ 	else
+@@ -1147,20 +1160,9 @@ static irqreturn_t at91_adc_trigger_handler(int irq, void *p)
+ 
+ static int at91_adc_buffer_init(struct iio_dev *indio)
+ {
+-	struct at91_adc_state *st = iio_priv(indio);
+-
+-	if (st->selected_trig->hw_trig) {
+-		return devm_iio_triggered_buffer_setup(&indio->dev, indio,
+-			&iio_pollfunc_store_time,
+-			&at91_adc_trigger_handler, &at91_buffer_setup_ops);
+-	}
+-	/*
+-	 * we need to prepare the buffer ops in case we will get
+-	 * another buffer attached (like a callback buffer for the touchscreen)
+-	 */
+-	indio->setup_ops = &at91_buffer_setup_ops;
+-
+-	return 0;
++	return devm_iio_triggered_buffer_setup(&indio->dev, indio,
++		&iio_pollfunc_store_time,
++		&at91_adc_trigger_handler, &at91_buffer_setup_ops);
+ }
+ 
+ static unsigned at91_adc_startup_time(unsigned startup_time_min,
 -- 
 2.7.4
 
