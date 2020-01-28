@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D58B14C209
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 22:19:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFE3714C219
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 22:20:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aaYiXbG/l1gTcPzAvv5YdN/naKH8OZNneiV3rBaNt6E=; b=gzmFArw1OmJjnT
-	kugxOwU+yHq8yZeVFyGys4cRIsoMoFOtZI0JH8ie1lmVDW7cF15OkVqDAdI6RWuh8o7m+7gDpMUS3
-	SvIEcAO4k+WksTgTPsiUAPzHlGI2cqX43iqufc0VgUKl6j/zu6ZEJxmt/AIQ/t2yFK1f/rLRtuOde
-	fPgyU+CKGnxTI0Xx8SK9UCkMPazLyKhhH+kruk0ZCnTKqcc9y7S9pBhU6bA+m1l9p+lCwTHRY31Zq
-	XKSl4B0eWd+IHu/moUX1gHrSSDT3wt1r+yaDRdxpr9rHfvhmyyaHx48P9wJmSgNW6jdG4aINpNYde
-	rKMGfqLU2t8fg4WSL9vg==;
+	List-Owner; bh=R0Ufuarm/u1R0aMFFfmF+7C/geTqWxIgfydcKDEI+go=; b=t+Ds3/aHnJExW5
+	pUPDQoLGxG+GtS4c3nVtZzB92NrlvbfmhE3hueBJO4j0nrTTnZUf/HSxJdN/Ve02ElF6/3jCUVf64
+	j7vJj6vyiMQq+/Jfn2uWwtHJNNwftC4pxmzV+MUYMmsfgZaBTYg+71apdCk0LI0RhKoJicEmqAo/c
+	PVgtMRspt0XgDML6HIt1xWVOxu3tgPCGZ3Z/2Nm2yL6y6RndL7I7OwAw6UfVrP7yLppFIiN//DSbg
+	n+ObcBYaz+yUeSjDQtFd7AQASDXLGmN0YSDV7zbprfN59q6nj9V1Lw2eQJd7Y3MKe0QsnVhYOqCHw
+	S5aF1JUhEy6ntRsPn0CQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwYGv-0004Lb-MC; Tue, 28 Jan 2020 21:19:45 +0000
+	id 1iwYHV-0004hN-Hk; Tue, 28 Jan 2020 21:20:21 +0000
 Received: from namei.org ([65.99.196.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwYGh-0004IF-Fj
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 21:19:32 +0000
+ id 1iwYH5-0004fe-Eg
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 21:19:56 +0000
 Received: from localhost (localhost [127.0.0.1])
- by namei.org (8.14.4/8.14.4) with ESMTP id 00SLHB5E004552;
- Tue, 28 Jan 2020 21:17:11 GMT
-Date: Wed, 29 Jan 2020 08:17:11 +1100 (AEDT)
+ by namei.org (8.14.4/8.14.4) with ESMTP id 00SLHXhJ004567;
+ Tue, 28 Jan 2020 21:17:33 GMT
+Date: Wed, 29 Jan 2020 08:17:33 +1100 (AEDT)
 From: James Morris <jmorris@namei.org>
 To: Alexey Budankov <alexey.budankov@linux.intel.com>
-Subject: Re: [PATCH v6 06/10] trace/bpf_trace: open access for CAP_PERFMON
+Subject: Re: [PATCH v6 07/10] powerpc/perf: open access for CAP_PERFMON
  privileged process
-In-Reply-To: <4fdbe164-d83d-a52f-4e8c-fe8bd15c6f8c@linux.intel.com>
-Message-ID: <alpine.LRH.2.21.2001290816510.2204@namei.org>
+In-Reply-To: <3ce8fc61-a61f-5efc-9167-94f5d39b6f1b@linux.intel.com>
+Message-ID: <alpine.LRH.2.21.2001290817160.2204@namei.org>
 References: <74d524ab-ac11-a7b8-1052-eba10f117e09@linux.intel.com>
- <4fdbe164-d83d-a52f-4e8c-fe8bd15c6f8c@linux.intel.com>
+ <3ce8fc61-a61f-5efc-9167-94f5d39b6f1b@linux.intel.com>
 User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_131931_604860_5BE3F2E1 
-X-CRM114-Status: GOOD (  10.26  )
+X-CRM114-CacheID: sfid-20200128_131955_569464_55783ABC 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -88,30 +88,37 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Tue, 28 Jan 2020, Alexey Budankov wrote:
 
-> 
 > Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
 > ---
->  kernel/trace/bpf_trace.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  arch/powerpc/perf/imc-pmu.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-> diff --git a/kernel/trace/bpf_trace.c b/kernel/trace/bpf_trace.c
-> index e5ef4ae9edb5..334f1d71ebb1 100644
-> --- a/kernel/trace/bpf_trace.c
-> +++ b/kernel/trace/bpf_trace.c
-> @@ -1395,7 +1395,7 @@ int perf_event_query_prog_array(struct perf_event *event, void __user *info)
->  	u32 *ids, prog_cnt, ids_len;
->  	int ret;
+> diff --git a/arch/powerpc/perf/imc-pmu.c b/arch/powerpc/perf/imc-pmu.c
+> index cb50a9e1fd2d..e837717492e4 100644
+> --- a/arch/powerpc/perf/imc-pmu.c
+> +++ b/arch/powerpc/perf/imc-pmu.c
+> @@ -898,7 +898,7 @@ static int thread_imc_event_init(struct perf_event *event)
+>  	if (event->attr.type != event->pmu->type)
+>  		return -ENOENT;
 >  
 > -	if (!capable(CAP_SYS_ADMIN))
 > +	if (!perfmon_capable())
->  		return -EPERM;
->  	if (event->attr.type != PERF_TYPE_TRACEPOINT)
->  		return -EINVAL;
+>  		return -EACCES;
+>  
+>  	/* Sampling not supported */
+> @@ -1307,7 +1307,7 @@ static int trace_imc_event_init(struct perf_event *event)
+>  	if (event->attr.type != event->pmu->type)
+>  		return -ENOENT;
+>  
+> -	if (!capable(CAP_SYS_ADMIN))
+> +	if (!perfmon_capable())
+>  		return -EACCES;
+>  
+>  	/* Return if this is a couting event */
 > 
 
 
 Acked-by: James Morris <jamorris@linux.microsoft.com>
-
 
 -- 
 James Morris
