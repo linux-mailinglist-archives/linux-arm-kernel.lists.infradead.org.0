@@ -2,58 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61DA414BD38
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 16:48:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69FFD14BD41
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 16:50:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pLaQD8m6bY2KBT5iaN8TAI6ITTrJTOhRepWEs/ESCzA=; b=Qmb29WOhuJCT6p
-	IQYy77ux2i6notZVDCeV/frvBdG/8iBuonVzq3s3hJzllnAOBpo0pQvmA0AlptZVY/9eoXCb3Ghfx
-	sUk6nqufbyUYUd4p2hemhmG2Cgw4PeEm9vJhnWTg+Qcfz8MA6f+/w312vsPpxxNMgX1zt1gQX6veL
-	Ez3NZz9ZKTp+FHsMBF3obwWY4RakH/XN8rVqcSmVAE+hJ+SHaKi3q8Lh82BTC1kWlJ7nzfxlWYl0o
-	LqjhScd7Xu+XFoIjmsNyUyac6fwiT9UU3VKk3HqHRxmz266SWDS7ObFfffzk78I5kyf94UTNbDRkS
-	IGnu2d/L9HlI4VFlroJg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=p3BOxxuSn86inTW3PV6cG3obN8PMd5EIR0Ot9EE5zBE=; b=VnnuDL36O5GS1h
+	BIbgkoj2KExB0RtWJVFf9DtPIJutNtPjbQzwLTQ3YtrrXjWUnopHD5Ow/hARZIl+YwRrKddY+ugPw
+	NgkvMFhWMf9rgVjr10N3oFMC0SKxgsdi/bAqDGM5DtuUllvdxnM5B4bkfV+uyjbxVMzgLZ/nwbjQq
+	DEz5CXXMpRkidR8XoMBM/1yi6HnyBdgpohocsKIpAKrh8xLI8dA7oODEjZxpE1DgJkCvl32NNRwqC
+	MpRe1aC3FiQFVg0YUUJPhvlnoLHHdajnbEZH1gQ1ibAyAUUzQ0ZJVjqrcEvPe5jN3pcA9Hzkzal7y
+	4L6I9niz+WUvR1KqM/mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwT6X-0001Ci-2U; Tue, 28 Jan 2020 15:48:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwT6N-0001Ai-FE
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 15:48:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 49F9A31B;
- Tue, 28 Jan 2020 07:48:28 -0800 (PST)
-Received: from localhost (unknown [10.1.198.81])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DF8AA3F68E;
- Tue, 28 Jan 2020 07:48:27 -0800 (PST)
-Date: Tue, 28 Jan 2020 15:48:26 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH v2 3/6] arm64/kvm: disable access to AMU registers from
- kvm guests
-Message-ID: <20200128154826.GB17411@arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-4-ionela.voinescu@arm.com>
- <bc3f582c-9aed-8052-d0cb-b39c76c8ce73@arm.com>
+	id 1iwT8H-00034R-VP; Tue, 28 Jan 2020 15:50:29 +0000
+Received: from mail-eopbgr140080.outbound.protection.outlook.com
+ ([40.107.14.80] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iwT88-00033Q-5i
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 15:50:22 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=By7BIZ2shaqK1TwbdlkTf/hJIg8KAgQFtGb/v18GY2OfVgrZyhlC1Hawfy004cCsY7Qg1cck2b34RzKUUSwy1P0TeEqCh/28VSSETuOJqH/scFzJ68PjgOie0cJvadjjUa8C8ayCyDpcDtNkiweerWKEtL7j4CI+zmeSOl3PyU31NI805umdIWW2ikdkvhPZwb0Aif9XZWFRBcoDNL1eLEzqx5SFBlVlHplHh2Tt4pCyVzz8VL0ot5zCw1trTnadYZjEC+g8H4MkXieATZa5oMSi4w1vybO06QeRKwPK8P5BQxjML3jYdLQFCzNqPJuvdCQ4vjmuhPczeafEvaWg9w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mOzm/0tavGiYMUY2uMY5N4bzxWJs+ul+QnJrYXCt4AQ=;
+ b=Dv7XC6hm7KGWSfUPG2k3yJXzWbOCtAeFfSLxke7hp6oZLVZL+weh5fN7H/726cqCrMK/66Wg1ayN8gNqFKKBcHAEMKnZ8UODj9CY5Ll7FUzUiEGWQr2Gu15Gl9m74cX0n1GofUi2s5p4rVfr2yModQaL0aShJCmOSd6XEJkkZBMY1xuwxwu5y7iPEdz+bVZO863p4wBUl3fr7ESweHgtS0MWYOKcFmLEwWBe64tVdPu5VBk5fnAGy7P+UF8XwxWE5pyk6tKmZkTN8VBT+RiAzlYTDw6lBMlchChEzDPmBECZ+J8AgzJzKfoi66WqlC8FPNrP2rS5Mbhbdshd89NnLQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mOzm/0tavGiYMUY2uMY5N4bzxWJs+ul+QnJrYXCt4AQ=;
+ b=l/3sqy9mBO4B+AQHUcuw0b3TuOiu974cH5DM/EBpTYbIeowyv+1ws0miirO6S09PTWO5fuXzcnC75pzvlvGONVL1S/iWGMppxxkhrhT1BS5HpZfhfqETMhvUDegqhKfbCQCPu3IcBU9cbKnRWwAS3l23YQLQWbK9M2409KM55m4=
+Received: from VI1PR0402MB3485.eurprd04.prod.outlook.com (52.134.3.153) by
+ VI1PR0402MB3758.eurprd04.prod.outlook.com (52.134.14.155) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2665.23; Tue, 28 Jan 2020 15:50:14 +0000
+Received: from VI1PR0402MB3485.eurprd04.prod.outlook.com
+ ([fe80::85e9:f844:f8b0:27d]) by VI1PR0402MB3485.eurprd04.prod.outlook.com
+ ([fe80::85e9:f844:f8b0:27d%7]) with mapi id 15.20.2665.026; Tue, 28 Jan 2020
+ 15:50:14 +0000
+From: Horia Geanta <horia.geanta@nxp.com>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>, "davem@davemloft.net"
+ <davem@davemloft.net>, "herbert@gondor.apana.org.au"
+ <herbert@gondor.apana.org.au>, "mripard@kernel.org" <mripard@kernel.org>,
+ "wens@csie.org" <wens@csie.org>, Iuliana Prodan <iuliana.prodan@nxp.com>
+Subject: Re: [PATCH 1/9] crypto: engine: workqueue can only be processed one
+ by one
+Thread-Topic: [PATCH 1/9] crypto: engine: workqueue can only be processed one
+ by one
+Thread-Index: AQHV0RErU4XkhL83r0qysobyMlLYdA==
+Date: Tue, 28 Jan 2020 15:50:14 +0000
+Message-ID: <VI1PR0402MB3485B787EA6BCDD5A5600BAA980A0@VI1PR0402MB3485.eurprd04.prod.outlook.com>
+References: <20200122104528.30084-1-clabbe.montjoie@gmail.com>
+ <20200122104528.30084-2-clabbe.montjoie@gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=horia.geanta@nxp.com; 
+x-originating-ip: [212.146.100.6]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: f11a6f60-1b53-48d3-4620-08d7a409c41d
+x-ms-traffictypediagnostic: VI1PR0402MB3758:|VI1PR0402MB3758:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR0402MB3758AA4CC3AA84A217F2FC9D980A0@VI1PR0402MB3758.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 029651C7A1
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(346002)(39860400002)(136003)(376002)(396003)(189003)(199004)(5660300002)(7696005)(26005)(186003)(44832011)(33656002)(71200400001)(2906002)(8936002)(55016002)(53546011)(6506007)(64756008)(66446008)(52536014)(91956017)(478600001)(76116006)(9686003)(66946007)(66476007)(6636002)(86362001)(81156014)(54906003)(81166006)(110136005)(316002)(8676002)(66556008)(4326008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3758;
+ H:VI1PR0402MB3485.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 5HLvYAl8kq+OkduLeeWErPQ75E2C3JzpZaNoewmoJawzV1HHYXMotZuGCF6/A00A9d4qeVZV5c0m2nu65ngKx9jz0DthFeqdyOs71Dxw9QZ1U129Jt6cVgdq7iF6nFL25OtyCw8BwCnd4pqWsm0kFQOWBb5ftYtBEGV7TS8Bei4v8Ss6Z7U5MbP7z2zVg+3/iYq3hbOMX5YwIVpvRn75j7xdfLDgEqDMt5agnh0iu0ooVpNLqzZQ9GieamMX+omhNoXg89/JUogZbqxoEbuQrzEPpStaEJQQnca+3f2TBaJz9l3yaJHcI+AXAGxkT1XOGx7Upfn8GTvKbkTG73dbFf/+a33OFBJ5dNBnHKAi3DPZw+k3HkzH5XYjtsdBOMi0Jsh4RCr1PXZub7V7iW+fZpAb1qOC6rXq8PfxWK3nBQbmt2NHzQxT3XyDh5abI6Yo
+x-ms-exchange-antispam-messagedata: H0VihkBo2rCWd4HjHzTDJSbeKrCARRGiQBYiZxXbZZ0NsqtgEtzMdhRSSs0NteY1k9H9AFN6tDs261g7d7d9lrxK6y80T/FhoxQjT7dVParfo3ovRV2+cAalSXRQMyRwBx2wBpeLvghaV2kDPCZQkw==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <bc3f582c-9aed-8052-d0cb-b39c76c8ce73@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f11a6f60-1b53-48d3-4620-08d7a409c41d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jan 2020 15:50:14.6441 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: +kNzlJIgiV16h0AQ1A94J101UrsS34r1J0/QYd5oOQ47SUGR89DSHG7vRNFc5hgL4I+GIhzAIqLwu2coHHW0/A==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3758
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_074831_603633_FAE280A5 
-X-CRM114-Status: GOOD (  35.87  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200128_075020_325787_146CC864 
+X-CRM114-Status: GOOD (  10.27  )
+X-Spam-Score: 1.6 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.14.80 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 1.8 LONGWORDS              Long string of long words
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,213 +125,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- Julien Thierry <julien.thierry.kdev@gmail.com>, sudeep.holla@arm.com,
- James Morse <james.morse@arm.com>, will@kernel.org, dietmar.eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-sunxi@googlegroups.com" <linux-sunxi@googlegroups.com>,
+ "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Monday 27 Jan 2020 at 15:33:26 (+0000), Valentin Schneider wrote:
-> On 18/12/2019 18:26, Ionela Voinescu wrote:
-> > diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
-> > index 6e5d839f42b5..dd20fb185d56 100644
-> > --- a/arch/arm64/include/asm/kvm_arm.h
-> > +++ b/arch/arm64/include/asm/kvm_arm.h
-> > @@ -266,10 +266,11 @@
-> >  #define CPTR_EL2_TFP_SHIFT 10
-> >  
-> >  /* Hyp Coprocessor Trap Register */
-> > -#define CPTR_EL2_TCPAC	(1 << 31)
-> > -#define CPTR_EL2_TTA	(1 << 20)
-> > -#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
-> >  #define CPTR_EL2_TZ	(1 << 8)
-> > +#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
-> > +#define CPTR_EL2_TTA	(1 << 20)
-> > +#define CPTR_EL2_TAM	(1 << 30)
-> > +#define CPTR_EL2_TCPAC	(1 << 31)
-> 
-> Nit: why the #define movement? Couldn't that just be added beneath
-> CPTR_EL2_TCPAC?
->
+On 1/22/2020 12:46 PM, Corentin Labbe wrote:
+> Some bykeshedding are unnecessary since a workqueue can only be executed
+> one by one.
+> This behaviour is documented in:
+> - kernel/kthread.c: comment of kthread_worker_fn()
+> - Documentation/core-api/workqueue.rst: the functions associated with the work items one after the other
+[...]
+> @@ -73,16 +73,6 @@ static void crypto_pump_requests(struct crypto_engine *engine,
+>  
+>  	spin_lock_irqsave(&engine->queue_lock, flags);
+>  
+> -	/* Make sure we are not already running a request */
+> -	if (engine->cur_req)
+> -		goto out;
+> -
+This check is here for a good reason, namely because crypto engine
+cannot currently handle multiple crypto requests being in "flight"
+in parallel.
 
-It was a 'while here' thing done wrong. I was looking at the CPACR bits
-and it led me to believe that the order of bits in the rest of the file
-was from least significant to most significant and I thought I'll
-reorder this as well. But looking again I see that it was done
-correctly the first time, according to most of the file. My bad!
+More exactly, if this check is removed the following sequence could occur:
+crypto_pump_work() -> crypto_pump_requests() -> .do_one_request(areq1)
+crypto_pump_work() -> crypto_pump_requests() -> .do_one_request(areq2)
+crypto_finalize_request(areq1)
+crypto_finalize_request(areq2)
 
-> >  #define CPTR_EL2_RES1	0x000032ff /* known RES1 bits in CPTR_EL2 */
-> >  #define CPTR_EL2_DEFAULT	CPTR_EL2_RES1
-> >  
-> > diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-> > index 72fbbd86eb5e..0bca87a2621f 100644
-> > --- a/arch/arm64/kvm/hyp/switch.c
-> > +++ b/arch/arm64/kvm/hyp/switch.c
-> > @@ -90,6 +90,17 @@ static void activate_traps_vhe(struct kvm_vcpu *vcpu)
-> >  	val = read_sysreg(cpacr_el1);
-> >  	val |= CPACR_EL1_TTA;
-> >  	val &= ~CPACR_EL1_ZEN;
-> > +
-> > +	/*
-> > +	 * With VHE enabled, we have HCR_EL2.{E2H,TGE} = {1,1}. Note that in
-> > +	 * this case CPACR_EL1 has the same bit layout as CPTR_EL2, and
-> > +	 * CPACR_EL1 accessing instructions are redefined to access CPTR_EL2.
-> > +	 * Therefore use CPTR_EL2.TAM bit reference to activate AMU register
-> > +	 * traps.
-> > +	 */
-> > +
-> > +	val |= CPTR_EL2_TAM;
-> > +
-> 
-> Hmm so this is a bit confusing for me, I've rewritten that part of the
-> email too many times (didn't help that I'm far from being a virt guru).
-> Rectifications are most welcome.
-> 
+This isn't correctly handled in crypto_finalize_request(),
+since .unprepare_request will be called only for areq2.
 
-Yes, this is definitely not straight-forward. It took me a while to
-retrace my steps in regards to this functionality as well.
+/**
+ * crypto_finalize_request - finalize one request if the request is done
+ * @engine: the hardware engine
+ * @req: the request need to be finalized
+ * @err: error number
+ */
+static void crypto_finalize_request(struct crypto_engine *engine,
+			     struct crypto_async_request *req, int err)
+{
+	unsigned long flags;
+	bool finalize_cur_req = false;
+	int ret;
+	struct crypto_engine_ctx *enginectx;
 
-> 
-> First, AFAICT we *don't* have HCR_EL2.TGE set anymore at this point, it's
-> cleared just a bit earlier in __activate_traps().
-> 
+	spin_lock_irqsave(&engine->queue_lock, flags);
+	if (engine->cur_req == req)
+		finalize_cur_req = true;
+	spin_unlock_irqrestore(&engine->queue_lock, flags);
 
-First of all when I wrote the above I believed that when this function is
-called we'll have HCR_EL2.{E2H,TGE} = {1,1}, which reflects running on
-the host with general exceptions trapped to EL2. So thank you for the
-correction.
+	if (finalize_cur_req) {
+		enginectx = crypto_tfm_ctx(req->tfm);
+		if (engine->cur_req_prepared &&
+		    enginectx->op.unprepare_request) {
+			ret = enginectx->op.unprepare_request(engine, req);
+			if (ret)
+				dev_err(engine->dev, "failed to unprepare request\n");
+		}
+		spin_lock_irqsave(&engine->queue_lock, flags);
+		engine->cur_req = NULL;
+		engine->cur_req_prepared = false;
+		spin_unlock_irqrestore(&engine->queue_lock, flags);
+	}
 
-But I don't believe running with TGE cleared changes anything at this
-point. First of all I think we can only run the code here at EL2.
-Initially I thought we might run it at EL1 for nested virtualisation
-but for nested OSs we'll use NVHE so that problem goes away.
+	req->complete(req, err);
 
-So when we run this code at EL2, accesses to EL1 registers are
-redirected to their EL2 equivalents due to HCR_EL2.{E2H} = {1}, with no
-impact from HCR_EL2.{TGE} = {0} in regards to the setting of the TAM bit
-for CPACR_EL1/CPTR_EL2. Therefore, this code will result in AMU accesses
-being trapped to EL2 when coming from EL0 or EL1 on the guest side, once
-we enter guest.
+	kthread_queue_work(engine->kworker, &engine->pump_requests);
+}
 
-> Then, your comment suggests that when we're running this code, CPACR_EL1
-> accesses are rerouted to CPTR_EL2. Annoyingly this isn't mentioned in
-> the doc of CPACR_EL1, but D5.6.3 does say
-> 
-> """
-> When ARMv8.1-VHE is implemented, and HCR_EL2.E2H is set to 1, when executing
-> at EL2, some EL1 System register access instructions are redefined to access
-> the equivalent EL2 register.
-> """
-> 
-> And CPACR_EL1 is part of these, so far so good. Now, the thing is
-> the doc for CPACR_EL1 *doesn't* mention any TAM bit - but CPTR_EL2 does.
-> I believe what *do* want here is to set CPTR_EL2.TAM (which IIUC we end
-> up doing via the rerouting).
-> 
-
-Right! The error of my comment is that I believed that E2H and TGE
-together determine the re-mapping or CPACR_EL1 to CPTR_EL2. But
-actually, E2H determines this redirection when running at EL2, while TGE
-only determines the current trapping behaviour: if we run with TGE=0,
-we're running on the guest and CPACR_EL1 takes effect, and when we run
-on the host with TGE=1, CPTR_EL2 takes effect.
-
-I believe the reason CPACR_EL1 does not have a TAM bit is that for
-trapping at EL1 we have the AMU register AMUSERENR_EL0 to trap accesses
-from EL0.
-
-When we run on the host side with HCR_EL2.{E2H,TGE} = {1,1}, the
-CPTR_EL2.TAM bit takes effect.
-
-I will modify my comment.
-
-> So, providing I didn't get completely lost on the way, I have to ask:
-> why do we use CPACR_EL1 here? Couldn't we use CPTR_EL2 directly?
->
-
-No, all good so far :). I believe the reason is to keep the kernel as
-generic as possible with the accesses to EL1 registers where a generic
-kernel should be running. The fact that with VHE we know to be running
-at EL2 and this code is only called at EL2 is more of an implementation
-detail that should be hidden behind the VHE abstraction.
-
-
-This being said I'm still not sure if I should be using here a
-CPTR_EL2.TAM bit or a CPACR_EL1.TAM bit. Functionally it would be the
-same but the use of one or another will 'break' some kind of
-abstraction logic :).
-
-Let me know if you have a preference.
-
-
->
-> >  	if (update_fp_enabled(vcpu)) {
-> >  		if (vcpu_has_sve(vcpu))
-> >  			val |= CPACR_EL1_ZEN;
-> > diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-> > index 9f2165937f7d..940ab9b4c98b 100644
-> > --- a/arch/arm64/kvm/sys_regs.c
-> > +++ b/arch/arm64/kvm/sys_regs.c
-> > @@ -1003,6 +1003,20 @@ static bool access_pmuserenr(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
-> >  	{ SYS_DESC(SYS_PMEVTYPERn_EL0(n)),					\
-> >  	  access_pmu_evtyper, reset_unknown, (PMEVTYPER0_EL0 + n), }
-> >  
-> > +static bool access_amu(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
-> > +			     const struct sys_reg_desc *r)
-> > +{
-> > +	kvm_inject_undefined(vcpu);
-> > +
-> > +	return false;
-> > +}
-> > +
-> > +/* Macro to expand the AMU counter and type registers*/
-> > +#define AMU_AMEVCNTR0_EL0(n) { SYS_DESC(SYS_AMEVCNTR0_EL0(n)), access_amu }
-> > +#define AMU_AMEVTYPE0_EL0(n) { SYS_DESC(SYS_AMEVTYPE0_EL0(n)), access_amu }
-> > +#define AMU_AMEVCNTR1_EL0(n) { SYS_DESC(SYS_AMEVCNTR1_EL0(n)), access_amu }
-> > +#define AMU_AMEVTYPE1_EL0(n) { SYS_DESC(SYS_AMEVTYPE1_EL0(n)), access_amu }
-> > +
-> 
-> You could save a *whopping* two lines with something like:
-> 
-> #define AMU_AMEVCNTR_EL0(group, n) { SYS_DESC(SYS_AMEVCNTR##group##_EL0(n)), access_amu }
-> #define AMU_AMEVTYPE_EL0(group, n) { SYS_DESC(SYS_AMEVTYPE##group##_EL0(n)), access_amu }
-> 
-
-Will do!
-
-> Though it doesn't help shortening the big register list below.
-> 
-> >  static bool trap_ptrauth(struct kvm_vcpu *vcpu,
-> >  			 struct sys_reg_params *p,
-> >  			 const struct sys_reg_desc *rd)
-> > @@ -1078,8 +1092,12 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
-> >  			 (u32)r->CRn, (u32)r->CRm, (u32)r->Op2);
-> >  	u64 val = raz ? 0 : read_sanitised_ftr_reg(id);
-> >  
-> > -	if (id == SYS_ID_AA64PFR0_EL1 && !vcpu_has_sve(vcpu)) {
-> > -		val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
-> > +	if (id == SYS_ID_AA64PFR0_EL1) {
-> > +		if (!vcpu_has_sve(vcpu))
-> > +			val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
-> > +		val &= ~(0xfUL << ID_AA64PFR0_AMU_SHIFT);
-> > +	} else if (id == SYS_ID_PFR0_EL1) {
-> > +		val &= ~(0xfUL << ID_PFR0_AMU_SHIFT);
-> >  	} else if (id == SYS_ID_AA64ISAR1_EL1 && !vcpu_has_ptrauth(vcpu)) {
-> >  		val &= ~((0xfUL << ID_AA64ISAR1_APA_SHIFT) |
-> >  			 (0xfUL << ID_AA64ISAR1_API_SHIFT) |
-> 
-> Could almost turn the thing into a switch case at this point.
-
-
-Right! It would definitely read better.
-
-Thanks,
-Ionela.
+Horia
 
 _______________________________________________
 linux-arm-kernel mailing list
