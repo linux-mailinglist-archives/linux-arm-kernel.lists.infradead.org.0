@@ -2,69 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7C6514B16E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:07:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7506514B15E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:07:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WThhaaGy0W07qjGWZdMnjZ4QKKjKWVktddIs/NEjzPg=; b=Jhk5BnAWBAXK2Z
-	8Orfn5eM6QGpydC3NUgwYvNkkt7m497Go/t6TW12Xa9vo1F0mMPeO7HcjjYk1Obv/CII4QRnZFJ6h
-	6bDdSPcOoDDfSg+foNa0f7RqE/1ljtV1kimYD/5jRd/g0PciYTTqpcxar5Ixq/WFUthIl/YAI2WOg
-	G8eeXeG4tghx+GgjAb/dfWmomkWA0Pu7G8dRslB2TRE820MwzNZ0pIy8NWF0HH07jrmCQkIYGF4LL
-	e1XyxHP2ohsc6TnvYvPHgntnEmvf7uVA8e2gqjc196QQGyCUaxO88Oe91oLQAH/ivD7jOQNNPjTz6
-	1ginAlPBvNkQOwjl2wRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=30B0yrtju5lUtE6IuJGLmtCJHKCh2pvxrADIyFxUjcs=; b=kVG29uFYyX8Zzj
+	9wUtsfypduLtoWsNNIP/sHpBPuJs48ATNmcewCxH1yxYSsCQE2yGpOOrIluTUHQVGe4ucbtbqdu6q
+	wXgNW02n+dVIsU24NQnKC+GAs5ukHEc+89hKY31C7Ca+NDJTUWpGPq4SWPIM5w9vjZI+gYBxpYSPa
+	GwvZ4cYUS/sayNM0IHU6VWydKh9hJKlgNkmL602USRM8NCPG99WoWEXA8CjgQ9PXZDFBvTh3Ntao1
+	DnS6Y7zJBV97bWD9bHZc1zAWYP/bcrmPR/rQMqeU8XN+LqYCG1MQLADQAloXchgfCc2TxMwPalhkX
+	NsdEV28EGiMnXBXaxdIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwMqG-0001RU-P2; Tue, 28 Jan 2020 09:07:28 +0000
+	id 1iwMps-00012r-Vs; Tue, 28 Jan 2020 09:07:05 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwMpd-000111-Na
+ id 1iwMpd-00011Q-Nb
  for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 09:06:51 +0000
 Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00S92kWS021535; Tue, 28 Jan 2020 10:06:40 +0100
+ 00S92i9c021525; Tue, 28 Jan 2020 10:06:44 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=dM4EBFGBDxEbKJ3rgoXqLG+/SBlJ9gkuXeRvPF/9krE=;
- b=nMdIWhzp+SqKhb3FySeBN89jovlV4Q/x1JwFEEwrgv+3cy6ssAqH+0H6NsD2ne8AtCj4
- Ln5lX3LBrfaIsjlMfJjazhItRY8/UbmCL2Sg19FstvtIcZZMpiYvvlMDIf7URiGKIEp1
- Dn0jSO0kf02NMdJi89lywq/Ch4VaWk1OaaCUjQZZHjtGDz3ftv5c7zZxcbiJnJJRXSpn
- Cot4u5++wXTHxmRAnMUOdPHM8BZM86JqMosORJUrRLP7QLW75BrBFef7xK+lNcyE5Tq3
- 5wSUAZBezsgnEj+RRbbGxS9dZnaAu4DG6LFr6GP5ND5X1/zlATJvHEPGnXpUPfunpafI KA== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=osJmv1TofsLiqLia+94YgpW5rj8JhzwPxMGK3NL9Llg=;
+ b=bk06kxhVT9niKdowr/sJozA1K1H5u4/CpemQFHGURTB2SJePjg/ChM4ZbRhtiPPYpquc
+ QZy1k6v3Ih0a/swDDtHmqaPpfzFpvTD/onLQF6OQ0mFT11V9FBi1AxhBo1cywPgwvj9E
+ Yedi75xWmv5ThLB/8R2yDHwosIkcK/QFKVTVCTLuPuSt37IndIJv3Q0gYmGk/BkzsvHS
+ WekHwDJIegsAI9fDZdEf2a/8kFCVec+OLHk9iH5cB6QQ2p918WSlPJQ9KzTCmeOuVtVO
+ M+7I+BXXwc5VesIXw/LJ2ps/fyFLqcXThmrDmDIL4QtrfyNOrHs1RnsuTnZhSfwYzRNZ Gg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xrdekcugb-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xrdekcugq-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 28 Jan 2020 10:06:40 +0100
+ Tue, 28 Jan 2020 10:06:44 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9D790100034;
- Tue, 28 Jan 2020 10:06:39 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 5AF6E10002A;
+ Tue, 28 Jan 2020 10:06:40 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8B6CB212A35;
- Tue, 28 Jan 2020 10:06:39 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG6NODE1.st.com (10.75.127.16)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4E7CA212A38;
+ Tue, 28 Jan 2020 10:06:40 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG6NODE1.st.com (10.75.127.16)
  with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 28 Jan 2020 10:06:38 +0100
+ Tue, 28 Jan 2020 10:06:39 +0100
 From: Ludovic Barre <ludovic.barre@st.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH V2 0/9] mmc: mmci: sdmmc: add sdr104 support
-Date: Tue, 28 Jan 2020 10:06:27 +0100
-Message-ID: <20200128090636.13689-1-ludovic.barre@st.com>
+Subject: [PATCH V2 1/9] mmc: mmci: sdmmc: replace sg_dma_xxx macros
+Date: Tue, 28 Jan 2020 10:06:28 +0100
+Message-ID: <20200128090636.13689-2-ludovic.barre@st.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200128090636.13689-1-ludovic.barre@st.com>
+References: <20200128090636.13689-1-ludovic.barre@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG6NODE1.st.com
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG6NODE1.st.com
  (10.75.127.16)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-28_02:2020-01-24,
  2020-01-28 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_010650_127048_084AABEC 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20200128_010650_127220_3F04B6D9 
+X-CRM114-Status: GOOD (  15.31  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -102,36 +105,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To support the sdr104 mode, sdmmc variant needs:
--Hardware delay block support for sdmmc variant
- with tuning procedure
--Voltage switch callbacks
--sdmmc revision 2.0
+sg_dma_xxx should be used after a dma_map_sg call has been done
+to get bus addresses of each of the SG entries and their lengths.
+But mmci_host_ops validate_data can be called before dma_map_sg.
+This patch replaces theses macros by sg->offset and sg->length
+which are always defined.
 
-V2:
--regroup host->mmc_ops & mmc->ops assignment
--add timeout define
--rename prep_volt_switch to pre_sig_volt_switch
--rename volt_switch to post_sig_volt_switch
--add 'why' comment for "mmc: mmci: add volt_switch callbacks"
+Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
+---
+ drivers/mmc/host/mmci_stm32_sdmmc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-Ludovic Barre (9):
-  mmc: mmci: sdmmc: replace sg_dma_xxx macros
-  mmc: mmci: sdmmc: rename sdmmc_priv struct to sdmmc_idma
-  mmc: mmci: add a reference at mmc_host_ops in mmci struct
-  mmc: mmci: add private pointer for variant
-  dt-bindings: mmc: mmci: add delay block base register for sdmmc
-  mmc: mmci: sdmmc: add execute tuning with delay block
-  mmc: mmci: add volt_switch callbacks
-  mmc: mmci: sdmmc: add voltage switch functions
-  mmc: mmci: add sdmmc variant revision 2.0
-
- .../devicetree/bindings/mmc/mmci.txt          |   2 +
- drivers/mmc/host/mmci.c                       |  42 +++-
- drivers/mmc/host/mmci.h                       |   8 +
- drivers/mmc/host/mmci_stm32_sdmmc.c           | 204 +++++++++++++++++-
- 4 files changed, 248 insertions(+), 8 deletions(-)
-
+diff --git a/drivers/mmc/host/mmci_stm32_sdmmc.c b/drivers/mmc/host/mmci_stm32_sdmmc.c
+index a4f7e8e689d3..6ccfbbc82c77 100644
+--- a/drivers/mmc/host/mmci_stm32_sdmmc.c
++++ b/drivers/mmc/host/mmci_stm32_sdmmc.c
+@@ -36,8 +36,8 @@ static int sdmmc_idma_validate_data(struct mmci_host *host,
+ 	 * excepted the last element which has no constraint on idmasize
+ 	 */
+ 	for_each_sg(data->sg, sg, data->sg_len - 1, i) {
+-		if (!IS_ALIGNED(sg_dma_address(data->sg), sizeof(u32)) ||
+-		    !IS_ALIGNED(sg_dma_len(data->sg), SDMMC_IDMA_BURST)) {
++		if (!IS_ALIGNED(data->sg->offset, sizeof(u32)) ||
++		    !IS_ALIGNED(data->sg->length, SDMMC_IDMA_BURST)) {
+ 			dev_err(mmc_dev(host->mmc),
+ 				"unaligned scatterlist: ofst:%x length:%d\n",
+ 				data->sg->offset, data->sg->length);
+@@ -45,7 +45,7 @@ static int sdmmc_idma_validate_data(struct mmci_host *host,
+ 		}
+ 	}
+ 
+-	if (!IS_ALIGNED(sg_dma_address(data->sg), sizeof(u32))) {
++	if (!IS_ALIGNED(data->sg->offset, sizeof(u32))) {
+ 		dev_err(mmc_dev(host->mmc),
+ 			"unaligned last scatterlist: ofst:%x length:%d\n",
+ 			data->sg->offset, data->sg->length);
 -- 
 2.17.1
 
