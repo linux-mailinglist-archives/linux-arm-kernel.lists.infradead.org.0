@@ -2,80 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7351A14C2FB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 23:34:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BDB914C327
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 23:50:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=6Fnt1NmkKOWDT4k05Pdo0ZqGavqKk1WKgrbZ4ohDppQ=; b=ZPQ
-	GuZVZDXx52mzrRXpbRN0Fnz+MkuM+5qM4/6PNI2BHKdbB171MIuO7mQk+SL2hjwbGdIvNVenj0Xqx
-	I4RDyN6FZ+WR/Th4a1s27/C6mun/TX7YtLB2qGiebxEWY4HSdUKDkrLvkF+QaL4qV4wELJ/5+aoxX
-	5ae7TZ5d3HMpwt9zB5Ab+8s6RqFuZr3KbnKhIiLbT/UdPdXj2zHhWXuD221WP1o3lpKV9Y/WVKc4Y
-	2D+cyc5HnK8ITj+MhxHMN2/lKmCfwjczz884lSrKvBfU45y2u/Q4hGMHEuv88zAUk9PzWGjocoI0k
-	3zdWhTEz4jRLFC/271abnSQkADBK2Cg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PiG7/rQQkyMRQ1L7tnmzhKRAOhtA530prcvP9FislI4=; b=h8kYZ2j820baG0
+	RIPQZhodCnM0dzM+GmlM0U0S5dxwEqwjghgubuG1VMx+80EeDVIUNn2nzUMIg/X4/DC+YXXAsguiK
+	ldywfyfM/65Opol5xO7BJJIoTj0nmwpyWRjzI5vPjWHoxzRTTm64yhh1g58x9hg5A5nJqujy6fS8E
+	4mG9TFKdSrU/e5W5JLSl3fCJ/Y+8l+/wUV68Q0+KfdEFzpzCyriBxVDyo69Yt2vwKgVDX0w5SnoCh
+	WGMDo/REovGV5pEynJNTksfID9o02onOgAbXTjNw9oOjy2KE1fMSIXQ/AeKeqIQGRAzN+0+7lL3Kz
+	QFGBHn70WUc5bkaQo27A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwZRF-00018a-2d; Tue, 28 Jan 2020 22:34:29 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1iwZgX-0006wB-Hc; Tue, 28 Jan 2020 22:50:17 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwZR3-00017N-2t
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 22:34:21 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1580250859; h=Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=KPGUQcF0y0b6zGbjLTPz7+ZC/IF0jWlRKWGLcU9qULU=;
- b=QiPRvCvIl/VXHB2y3EH6jz7+za6rBYpPgBGMxlanrXzl7vyt3UnpiPkD1m4cG+5JJgPEJd6u
- yUxfJ5dkpFWNCaoF1VfAiTKemecj84wvzPnZCrbDJVSTw7m1/7lm4zT7j4IrdVc3nDnVppXV
- H0BH6xXkANBNSDV8y9w68niut5Y=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e30b6e0.7fe1326d3928-smtp-out-n03;
- Tue, 28 Jan 2020 22:34:08 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 7190AC447A2; Tue, 28 Jan 2020 22:34:07 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: jcrouse)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id D9F38C43383;
- Tue, 28 Jan 2020 22:34:05 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org D9F38C43383
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=jcrouse@codeaurora.org
-From: Jordan Crouse <jcrouse@codeaurora.org>
-To: iommu@lists.linux-foundation.org,
-	Rob Clark <robdclark@gmail.com>
-Subject: [RFC PATCH v1] iommu/arm-smmu: Allow domains to choose a context bank
-Date: Tue, 28 Jan 2020 15:33:43 -0700
-Message-Id: <1580250823-30739-1-git-send-email-jcrouse@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
+ id 1iwZgJ-0006Tw-M2
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 22:50:05 +0000
+Received: by mail-pg1-x541.google.com with SMTP id l24so7800842pgk.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Jan 2020 14:50:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=eHEMtu7LgfkFmyO7oGGN1Lq9IQ3mukp2v1f/r5o0L0s=;
+ b=T1hFsGEO0/ylAav9HFUtgqeRhLCk+8mN4axKzOMQw6onWhdziR92MjVxq99AAlFqvU
+ kku1dM+53W1OlgPVvAdZpJUQQFRFZXSDYoFSRxG+GgXnjw7uLYw9w3Uwi+5GnyvWh7Zr
+ AS8uPHr3/+DROwe5Czh3qwOMmnX6Zh6aNF314=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=eHEMtu7LgfkFmyO7oGGN1Lq9IQ3mukp2v1f/r5o0L0s=;
+ b=CG3N8eYMnZ9l3N2yKSv9vdWOz9JKin9muU7WYAUT7YDkmUiYE7hsO6LORGoiTdQM8p
+ mrSddZKXmf6S09mwFM2G7Fi0JWGrIsopZFB+qvbvO08oWloHJEvLrwtgTT4FVn0uomeO
+ lILr/EtvKLPUJou/6EHja702PaqdFbxfTHfYcd29LrGeBpmI9I6HixtmnwYFFM+u+wo8
+ RqcqPGhsuzH6hjX1I/5auDAkDLv5nDL7m/MbuQyyeNQrYyx2DAmUguuE7F842WOCUs9p
+ h4/QmgjkjAJzL8tdD3+znqadkPf/lrmWeB3jYJAnOxcfUa3X2XhS6E3/IH5S1+5R6/p/
+ DjBA==
+X-Gm-Message-State: APjAAAUnP3BEEjLuP85Iq8orvzgrZQaHSihhpjohof5aT/+0OyeaAkm8
+ he3sesngEvCo+DoibCsxzprguQ==
+X-Google-Smtp-Source: APXvYqx9wzHAeZmTEPl0AGnf9TAiBUX0F1ZcpzaNR4O6MA9xWbzMW0w2pC5Y4TVfo8+2jVMqh5iIHw==
+X-Received: by 2002:a65:5786:: with SMTP id b6mr27614437pgr.316.1580251802779; 
+ Tue, 28 Jan 2020 14:50:02 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id s23sm2178658pjq.17.2020.01.28.14.50.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Jan 2020 14:50:02 -0800 (PST)
+Date: Tue, 28 Jan 2020 14:50:00 -0800
+From: Kees Cook <keescook@chromium.org>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH v7 04/11] scs: disable when function graph tracing is
+ enabled
+Message-ID: <202001281449.FB1671805E@keescook>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200128184934.77625-1-samitolvanen@google.com>
+ <20200128184934.77625-5-samitolvanen@google.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200128184934.77625-5-samitolvanen@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_143419_487611_8AEE6280 
-X-CRM114-Status: GOOD (  19.10  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200128_145003_746890_B12B5669 
+X-CRM114-Status: GOOD (  18.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,130 +97,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robin.murphy@arm.com, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, will@kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, clang-built-linux@googlegroups.com,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>, james.morse@arm.com,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ kernel-hardening@lists.openwall.com, Laura Abbott <labbott@redhat.com>,
+ Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Domains which are being set up for split pagetables usually want to be
-on a specific context bank for hardware reasons. Force the context
-bank for domains with the split-pagetable quirk to context bank 0.
-If context bank 0 is taken, move that context bank to another unused
-bank and rewrite the stream matching registers accordingly.
+On Tue, Jan 28, 2020 at 10:49:27AM -0800, Sami Tolvanen wrote:
+> The graph tracer hooks returns by modifying frame records on the
+> (regular) stack, but with SCS the return address is taken from the
+> shadow stack, and the value in the frame record has no effect. As we
+> don't currently have a mechanism to determine the corresponding slot
+> on the shadow stack (and to pass this through the ftrace
+> infrastructure), for now let's disable SCS when the graph tracer is
+> enabled.
+> 
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
 
-This is be used by [1] and [2] to leave context bank 0 open so that
-the Adreno GPU can program it.
+Reviewed-by: Kees Cook <keescook@chromium.org>
 
-[1] https://lists.linuxfoundation.org/pipermail/iommu/2020-January/041438.html
-[2] https://lists.linuxfoundation.org/pipermail/iommu/2020-January/041444.html
+-Kees
 
-Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
----
+> ---
+>  arch/Kconfig | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/arch/Kconfig b/arch/Kconfig
+> index 1b16aa9a3fe5..0d746373c52e 100644
+> --- a/arch/Kconfig
+> +++ b/arch/Kconfig
+> @@ -530,6 +530,7 @@ config ARCH_SUPPORTS_SHADOW_CALL_STACK
+>  
+>  config SHADOW_CALL_STACK
+>  	bool "Clang Shadow Call Stack"
+> +	depends on !FUNCTION_GRAPH_TRACER
+>  	depends on ARCH_SUPPORTS_SHADOW_CALL_STACK
+>  	help
+>  	  This option enables Clang's Shadow Call Stack, which uses a
+> -- 
+> 2.25.0.341.g760bfbb309-goog
+> 
 
- drivers/iommu/arm-smmu.c | 63 +++++++++++++++++++++++++++++++++++++++++++++---
- 1 file changed, 59 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index 85a6773..799a254 100644
---- a/drivers/iommu/arm-smmu.c
-+++ b/drivers/iommu/arm-smmu.c
-@@ -254,6 +254,43 @@ static int __arm_smmu_alloc_bitmap(unsigned long *map, int start, int end)
- 	return idx;
- }
- 
-+static void arm_smmu_write_s2cr(struct arm_smmu_device *smmu, int idx);
-+
-+static int __arm_smmu_alloc_cb(struct arm_smmu_device *smmu, int start,
-+		int target)
-+{
-+	int new, i;
-+
-+       /* Allocate a new context bank id */
-+	new = __arm_smmu_alloc_bitmap(smmu->context_map, start,
-+		smmu->num_context_banks);
-+
-+	if (new < 0)
-+		return new;
-+
-+	/* If no target is set or we actually got the bank index we wanted */
-+	if (target == -1 || new == target)
-+		return new;
-+
-+	/* Copy the context configuration to the new index */
-+	memcpy(&smmu->cbs[new], &smmu->cbs[target], sizeof(*smmu->cbs));
-+	smmu->cbs[new].cfg->cbndx = new;
-+
-+	/* FIXME: Do we need locking here? */
-+	for (i = 0; i < smmu->num_mapping_groups; i++) {
-+		if (smmu->s2crs[i].cbndx == target) {
-+			smmu->s2crs[i].cbndx = new;
-+			arm_smmu_write_s2cr(smmu, i);
-+		}
-+	}
-+
-+	/*
-+	 * FIXME: Does getting here imply that 'target' is already set in the
-+	 * context_map?
-+	 */
-+	return target;
-+}
-+
- static void __arm_smmu_free_bitmap(unsigned long *map, int idx)
- {
- 	clear_bit(idx, map);
-@@ -770,6 +807,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
- 	struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
- 	struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
- 	unsigned long quirks = 0;
-+	int forcecb = -1;
- 
- 	mutex_lock(&smmu_domain->init_mutex);
- 	if (smmu_domain->smmu)
-@@ -844,8 +882,25 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
- 			 * SEP_UPSTREAM so we don't need to reduce the size of
- 			 * the ias to account for the sign extension bit
- 			 */
--			if (smmu_domain->split_pagetables)
--				quirks |= IO_PGTABLE_QUIRK_ARM_TTBR1;
-+			if (smmu_domain->split_pagetables) {
-+				/*
-+				 * If split pagetables are enabled, assume that
-+				 * the user's intent is to use per-instance
-+				 * pagetables which, at least on a QCOM target,
-+				 * means that this domain should be on context
-+				 * bank 0.
-+				 */
-+
-+				/*
-+				 * If we can't force to context bank 0 then
-+				 * don't bother enabling split pagetables which
-+				 * then would not allow aux domains
-+				 */
-+				if (start == 0) {
-+					forcecb = 0;
-+					quirks |= IO_PGTABLE_QUIRK_ARM_TTBR1;
-+				}
-+			}
- 		} else if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_L) {
- 			fmt = ARM_32_LPAE_S1;
- 			ias = min(ias, 32UL);
-@@ -883,8 +938,8 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
- 		ret = -EINVAL;
- 		goto out_unlock;
- 	}
--	ret = __arm_smmu_alloc_bitmap(smmu->context_map, start,
--				      smmu->num_context_banks);
-+
-+	ret = __arm_smmu_alloc_cb(smmu, start, forcecb);
- 	if (ret < 0)
- 		goto out_unlock;
- 
 -- 
-2.7.4
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
