@@ -2,92 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F42414B10B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 09:41:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38E8F14B126
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 09:54:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5mTsQSrdeJ9zVByjXRmsJp4ETdLNjssYuEhDXCsd0V8=; b=ewOh/Snz4EDcWz
-	X0OIgFXjdO2rt7lQ1FHV+QqQ1OW7guBOAHMlzovk6IPtFfkDCq8RWKXxs4kZ/I+KqEHTO+dAH1nfk
-	/rAm853q95Lee616Az0glEY5iwe9EoKF6UVPts/qYelrIt+L0QCDHKMh7fZO+tDIFQcnu6cX9fbAy
-	iuN8VG3hwI9SuPOeIK2OFCwLOyygO7Ho5uH6SE62RCXib75H4CP7q6XrFIu108C5WKgmeBaa651yh
-	kyhiLF6/OfIDOKmof3ZbkXf8Ork/LzKw4AMvMSPj9Ro8yOgIN1zMo1hyUuOkxfaoXlu6seEnLGU1v
-	6qTse7TYs/PY5iNv9aXg==;
+	List-Owner; bh=NDwAZzZM22XiuamODTzjMyKqJQjytMCh5FzeQXD58c8=; b=qy2kfEiitBU4bF
+	mg+AaN7eHVWKIsRxYpznsGyo6qFWgTaNucE9wZ+K1PCfYfQ0HnyUwwowVMfQpSlFMyCgxTFZBk5+l
+	iYAgK235Y5BurxD4dxRuGJ2My+HDU9f4PGYDJ3wIU38ZiOsxGT5poqadz1quhKTbH9maOiwn1xdb5
+	/A7E0rKZthQdIKFYOScAGsvB0npeHSZd9aSEf2LVTzMvB3R4oZPg97PQwKctCSqi6DQyVe/XJ/naU
+	pNwc7bWhffYy/96CJAQxJJq2Oe5YK8SwZm/Yldz7a2e9KSvs/Xi+T3aMmBXNaJYN9igzqnhW44y2I
+	cTOeSG0Nwm8Rhe+yO4Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwMQZ-0001SS-VE; Tue, 28 Jan 2020 08:40:55 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1iwMdU-0004un-2S; Tue, 28 Jan 2020 08:54:16 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwMQP-0001Rk-FX
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 08:40:47 +0000
-Received: by mail-wm1-x342.google.com with SMTP id g1so1507683wmh.4
+ id 1iwMdE-0004uN-CW
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 08:54:05 +0000
+Received: by mail-wr1-x443.google.com with SMTP id c14so15016755wrn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Jan 2020 00:40:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ Tue, 28 Jan 2020 00:53:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=thegoodpenguin-co-uk.20150623.gappssmtp.com; s=20150623;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=CY0t0Jh4KmNVk3ml8hjXW8Vdas/J0r5nTkeZF74pSy0=;
- b=s/LpWYEIcfGMYj16YRbqin5Jwv6iYr8gbOvilsGF5E0NS2RZAtMwaA1QgmEQYJer9l
- 4ljNiptvd8t9Ch8FcAtJMGOpsZC7Bk7cAq3uEWy1XgHr05QqOkG6/Z6FAc7pG4YfH7/f
- y9qhiHNjmpiPoEq73qxiikV+5Ddl2RuzTXiI9MNBrQpPAQtdZb+B3rJl8wIXq8z0Nx3E
- +sVt1BFSfbt6uPe8R6WoRQ2YkRtvFsJmeyPNmYHYoRXj1G+qvKS6+DUj+TcOhTLsJ5IF
- nErwzIEFNvxk5WUgdwfBJoaDEgVql8oToASv3JMQT5Ey6g/Pgpv9BMAeN6vhVLAV2gW/
- 5xkg==
+ :content-disposition:in-reply-to;
+ bh=Kgp9Jwiz1uKaQL/OUlkTuFc8Er2g+wCKlj7MsI5NStg=;
+ b=a/k2f9RDaC3rFRttMu+hwVSU2nr+XZ+Rdsjg87QW8toXPmkR3/tTvMqzdofJQtYc+v
+ dD2XOuh8lLvC7rH0cIyxf9vU/R/RiuOgo5tovo2DQSMuH1ewph9lQfHujM4xC3ChEQAp
+ 2RDN/sAsAHJL3bGEux+oCZCWQBrA2qxxUZPek4sKiEiNPaogwLeAz1wj3pJfq0rFbUV+
+ LQbVAzJwXvBBxsidb0Qh2TRt17dvCaq1IgvufnyGjsTtLaYiJ7aXMZxLH86Se5Ajo+9X
+ bo14QaigH7CWCheby1whxsJRa22ocVwSL4cxucETxrpyCMZfNsqmRAbapJXkOhYEyzlF
+ sm/Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=CY0t0Jh4KmNVk3ml8hjXW8Vdas/J0r5nTkeZF74pSy0=;
- b=nJ0BfOZmP9EgIXI8llFtcQLqb2NgoWUQe/TNfvUuRwejgwxKBJXEIutG5Fh7yN1rLl
- Z5l5C53sxzjrdknHDSFBuCqJsG1UDABAQG4XZZPNYG+zb9BXFVSaQOOOUx0iaxdJ8Dlx
- j2eqcFsfXSWhlEI5ey/dniVmKuUdn2lvHkURDe8pk8UPkybpaR65Od51JKQc4OKUCmH/
- mFGa2KMnzeJfMMWjkFjB2nWd3+qhEvKfaBfxtfeWZx4B6CNLPxgEQ/rImx7Kw7yWZ7DI
- PlK8HgeVzFuE94S4tnVQKxjtcPJbPQ1PsdvFuBeO4DX5r8VOXqXC/fIKpylsAoPUCBaD
- rm0A==
-X-Gm-Message-State: APjAAAUv3e0Kb0mQ3cZq+GqJqNW9HenonpY1S2kAgoYKTJCYizDucqa+
- GoVnrxc+7hK2DRZOwc0GajM=
-X-Google-Smtp-Source: APXvYqydtAPMTd8VYXMiKc/zqY0XzwWworu4R59xBUl28EjN007x2C/d4Omf/55dw5k8RxiP/TVZCQ==
-X-Received: by 2002:a1c:81d3:: with SMTP id c202mr3533111wmd.14.1580200843638; 
- Tue, 28 Jan 2020 00:40:43 -0800 (PST)
-Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id d16sm28065304wrg.27.2020.01.28.00.40.42
+ :mime-version:content-disposition:in-reply-to;
+ bh=Kgp9Jwiz1uKaQL/OUlkTuFc8Er2g+wCKlj7MsI5NStg=;
+ b=bYgtJg7Jfb5n7MZWHoXSog1t2D2yk2rU5k4NMkEQ6PqAA4Q59YWoMUMsXBk1boy+TC
+ c/tPmAb3War3DXggSo9RJ6AGO8F2b3bFVOLHBdbQjMWUROFh8ItRrArRX5dz65t8MrM6
+ CSfojdSSljd3h+es/5d5HJSExAyJNAt9MLYadfsu++NeV2Wwa8czsK9DBabvJYM9FU4F
+ COA3tG3EX4aIIqh3MY1XbMNtoqcm4Fc0G5qE0w52zyZgQpr9ePrBYVGhfH7HyQR3uFHQ
+ upRuMtYTFcTAyw2JMb6oRJZCpv9zYF7oi4UjXPAk11enzSzhfArbvvvon4YPpX7p2E3B
+ j+JA==
+X-Gm-Message-State: APjAAAWHlMJ4++lAGTopXygq0FchAlLkbI+L4rwZViLpQjSSQZXakxIu
+ 4USQIlWcqzcN7Az0u1eLU5twLQ==
+X-Google-Smtp-Source: APXvYqxlQbYz8+ShyJJuzTJuznkR9goNX0263z9i3QDmTgg0gUqt/myN5Fxp1PDtZqfRgz34/puwIw==
+X-Received: by 2002:a05:6000:118d:: with SMTP id
+ g13mr26196125wrx.141.1580201637988; 
+ Tue, 28 Jan 2020 00:53:57 -0800 (PST)
+Received: from big-machine ([2a00:23c5:dd80:8400:9d15:2a7c:ad89:e0d1])
+ by smtp.gmail.com with ESMTPSA id e8sm24508612wrt.7.2020.01.28.00.53.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Jan 2020 00:40:42 -0800 (PST)
-Date: Tue, 28 Jan 2020 09:40:41 +0100
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: Iuliana Prodan <iuliana.prodan@nxp.com>
-Subject: Re: [PATCH 5/9] crypto: engine: add enqueue_request/can_do_more
-Message-ID: <20200128084041.GA10493@Red>
-References: <20200122104528.30084-1-clabbe.montjoie@gmail.com>
- <20200122104528.30084-6-clabbe.montjoie@gmail.com>
- <AM0PR04MB717155300E3575C07D31E1D08C0B0@AM0PR04MB7171.eurprd04.prod.outlook.com>
+ Tue, 28 Jan 2020 00:53:57 -0800 (PST)
+Date: Tue, 28 Jan 2020 08:53:55 +0000
+From: Andrew Murray <amurray@thegoodpenguin.co.uk>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v5 3/3] arm64: perf: Add support for ARMv8.5-PMU 64-bit
+ counters
+Message-ID: <20200128085355.GB20189@big-machine>
+References: <1580125469-23887-1-git-send-email-andrew.murray@arm.com>
+ <1580125469-23887-4-git-send-email-andrew.murray@arm.com>
+ <c948d8202b82bccbac0ec2a4f71ce94b@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <AM0PR04MB717155300E3575C07D31E1D08C0B0@AM0PR04MB7171.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <c948d8202b82bccbac0ec2a4f71ce94b@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_004045_517732_EDAA31CE 
-X-CRM114-Status: GOOD (  26.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200128_005400_840595_141619A6 
+X-CRM114-Status: GOOD (  32.39  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [clabbe.montjoie[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -102,110 +97,303 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "herbert@gondor.apana.org.au" <herbert@gondor.apana.org.au>,
- "linux-sunxi@googlegroups.com" <linux-sunxi@googlegroups.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mripard@kernel.org" <mripard@kernel.org>, "wens@csie.org" <wens@csie.org>,
- "linux-crypto@vger.kernel.org" <linux-crypto@vger.kernel.org>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBKYW4gMjcsIDIwMjAgYXQgMTA6NTg6MzZQTSArMDAwMCwgSXVsaWFuYSBQcm9kYW4g
-d3JvdGU6Cj4gT24gMS8yMi8yMDIwIDEyOjQ1IFBNLCBDb3JlbnRpbiBMYWJiZSB3cm90ZToKPiA+
-IFRoaXMgcGF0Y2hzIGFkZHMgdHdvIG5ldyBmdW5jdGlvbiB3cmFwcGVyIGluIGNyeXB0b19lbmdp
-bmUuCj4gPiAtIGVucXVldWVfcmVxdWVzdCgpIGZvciBkcml2ZXJzIGVucXVldWluZyByZXF1ZXN0
-IHRvIGhhcmR3YXJlLgo+ID4gLSBjYW5fcXVldWVfbW9yZSgpIGZvciBsZXR0aW5nIGRyaXZlcnMg
-dG8gdGVsbCBpZiB0aGV5IGNhbgo+ID4gZW5xdWV1ZS9wcmVwYXJlIG1vcmUuCj4gPiAKPiA+IFNp
-bmNlIHNvbWUgZHJpdmVycyAobGlrZSBjYWFtKSBvbmx5IGVucXVldWUgcmVxdWVzdCB3aXRob3V0
-ICJkb2luZyIKPiA+IHRoZW0sIGRvX29uZV9yZXF1ZXN0KCkgaXMgbm93IG9wdGlvbmFsLgo+ID4g
-Cj4gPiBTaWduZWQtb2ZmLWJ5OiBDb3JlbnRpbiBMYWJiZSA8Y2xhYmJlLm1vbnRqb2llQGdtYWls
-LmNvbT4KPiA+IC0tLQo+ID4gICBjcnlwdG8vY3J5cHRvX2VuZ2luZS5jICB8IDI1ICsrKysrKysr
-KysrKysrKysrKysrKystLS0KPiA+ICAgaW5jbHVkZS9jcnlwdG8vZW5naW5lLmggfCAxNCArKysr
-KysrKy0tLS0tLQo+ID4gICAyIGZpbGVzIGNoYW5nZWQsIDMwIGluc2VydGlvbnMoKyksIDkgZGVs
-ZXRpb25zKC0pCj4gPiAKPiA+IGRpZmYgLS1naXQgYS9jcnlwdG8vY3J5cHRvX2VuZ2luZS5jIGIv
-Y3J5cHRvL2NyeXB0b19lbmdpbmUuYwo+ID4gaW5kZXggNWJjYjFlNzQwZmQ5Li40YTI4NTQ4YzQ5
-YWEgMTAwNjQ0Cj4gPiAtLS0gYS9jcnlwdG8vY3J5cHRvX2VuZ2luZS5jCj4gPiArKysgYi9jcnlw
-dG8vY3J5cHRvX2VuZ2luZS5jCj4gPiBAQCAtODMsNiArODMsNyBAQCBzdGF0aWMgdm9pZCBjcnlw
-dG9fcHVtcF9yZXF1ZXN0cyhzdHJ1Y3QgY3J5cHRvX2VuZ2luZSAqZW5naW5lLAo+ID4gICAJCWdv
-dG8gb3V0Owo+ID4gICAJfQo+ID4gICAKPiA+ICtyZXRyeToKPiA+ICAgCS8qIEdldCB0aGUgZmlz
-dCByZXF1ZXN0IGZyb20gdGhlIGVuZ2luZSBxdWV1ZSB0byBoYW5kbGUgKi8KPiA+ICAgCWJhY2ts
-b2cgPSBjcnlwdG9fZ2V0X2JhY2tsb2coJmVuZ2luZS0+cXVldWUpOwo+ID4gICAJYXN5bmNfcmVx
-ID0gY3J5cHRvX2RlcXVldWVfcmVxdWVzdCgmZW5naW5lLT5xdWV1ZSk7Cj4gPiBAQCAtMTE4LDEw
-ICsxMTksMjggQEAgc3RhdGljIHZvaWQgY3J5cHRvX3B1bXBfcmVxdWVzdHMoc3RydWN0IGNyeXB0
-b19lbmdpbmUgKmVuZ2luZSwKPiA+ICAgCQkJZ290byByZXFfZXJyMjsKPiA+ICAgCQl9Cj4gPiAg
-IAl9Cj4gPiArCj4gPiArCWlmIChlbmdpbmVjdHgtPm9wLmVucXVldWVfcmVxdWVzdCkgewo+ID4g
-KwkJcmV0ID0gZW5naW5lY3R4LT5vcC5lbnF1ZXVlX3JlcXVlc3QoZW5naW5lLCBhc3luY19yZXEp
-Owo+ID4gKwkJaWYgKHJldCkgewo+ID4gKwkJCWRldl9lcnIoZW5naW5lLT5kZXYsICJmYWlsZWQg
-dG8gZW5xdWV1ZSByZXF1ZXN0OiAlZFxuIiwKPiA+ICsJCQkJcmV0KTsKPiA+ICsJCQlnb3RvIHJl
-cV9lcnI7Cj4gPiArCQl9Cj4gPiArCX0KPiA+ICsJaWYgKGVuZ2luZWN0eC0+b3AuY2FuX3F1ZXVl
-X21vcmUgJiYgZW5naW5lLT5xdWV1ZS5xbGVuID4gMCkgewo+ID4gKwkJcmV0ID0gZW5naW5lY3R4
-LT5vcC5jYW5fcXVldWVfbW9yZShlbmdpbmUsIGFzeW5jX3JlcSk7Cj4gPiArCQlpZiAocmV0ID4g
-MCkgewo+ID4gKwkJCXNwaW5fbG9ja19pcnFzYXZlKCZlbmdpbmUtPnF1ZXVlX2xvY2ssIGZsYWdz
-KTsKPiA+ICsJCQlnb3RvIHJldHJ5Owo+ID4gKwkJfQo+ID4gKwkJaWYgKHJldCA8IDApIHsKPiA+
-ICsJCQlkZXZfZXJyKGVuZ2luZS0+ZGV2LCAiZmFpbGVkIHRvIGNhbGwgY2FuX3F1ZXVlX21vcmVc
-biIpOwo+ID4gKwkJCS8qIFRPRE8gKi8KPiA+ICsJCX0KPiA+ICsJfQo+ID4gICAJaWYgKCFlbmdp
-bmVjdHgtPm9wLmRvX29uZV9yZXF1ZXN0KSB7Cj4gPiAtCQlkZXZfZXJyKGVuZ2luZS0+ZGV2LCAi
-ZmFpbGVkIHRvIGRvIHJlcXVlc3RcbiIpOwo+ID4gLQkJcmV0ID0gLUVJTlZBTDsKPiA+IC0JCWdv
-dG8gcmVxX2VycjsKPiA+ICsJCXJldHVybjsKPiA+ICAgCX0KPiA+ICAgCXJldCA9IGVuZ2luZWN0
-eC0+b3AuZG9fb25lX3JlcXVlc3QoZW5naW5lLCBhc3luY19yZXEpOwo+ID4gICAJaWYgKHJldCkg
-ewo+ID4gZGlmZiAtLWdpdCBhL2luY2x1ZGUvY3J5cHRvL2VuZ2luZS5oIGIvaW5jbHVkZS9jcnlw
-dG8vZW5naW5lLmgKPiA+IGluZGV4IDAzZDlmOWVjMWNlYS4uOGFiOWQyNmUzMGZlIDEwMDY0NAo+
-ID4gLS0tIGEvaW5jbHVkZS9jcnlwdG8vZW5naW5lLmgKPiA+ICsrKyBiL2luY2x1ZGUvY3J5cHRv
-L2VuZ2luZS5oCj4gPiBAQCAtNjMsMTQgKzYzLDE2IEBAIHN0cnVjdCBjcnlwdG9fZW5naW5lIHsK
-PiA+ICAgICogQHByZXBhcmVfX3JlcXVlc3Q6IGRvIHNvbWUgcHJlcGFyZSBpZiBuZWVkIGJlZm9y
-ZSBoYW5kbGUgdGhlIGN1cnJlbnQgcmVxdWVzdAo+ID4gICAgKiBAdW5wcmVwYXJlX3JlcXVlc3Q6
-IHVuZG8gYW55IHdvcmsgZG9uZSBieSBwcmVwYXJlX3JlcXVlc3QoKQo+ID4gICAgKiBAZG9fb25l
-X3JlcXVlc3Q6IGRvIGVuY3J5cHRpb24gZm9yIGN1cnJlbnQgcmVxdWVzdAo+ID4gKyAqIEBlbnF1
-ZXVlX3JlcXVlc3Q6CUVucXVldWUgdGhlIHJlcXVlc3QgaW4gdGhlIGhhcmR3YXJlCj4gPiArICog
-QGNhbl9xdWV1ZV9tb3JlOglpZiB0aGlzIGZ1bmN0aW9uIHJldHVybiA+IDAsIGl0IHdpbGwgdGVs
-bCB0aGUgY3J5cHRvCj4gPiArICogCWVuZ2luZSB0aGF0IG1vcmUgc3BhY2UgYXJlIGF2YWlsbGFi
-bGUgZm9yIHByZXBhcmUvZW5xdWV1ZSByZXF1ZXN0Cj4gPiAgICAqLwo+ID4gICBzdHJ1Y3QgY3J5
-cHRvX2VuZ2luZV9vcCB7Cj4gPiAtCWludCAoKnByZXBhcmVfcmVxdWVzdCkoc3RydWN0IGNyeXB0
-b19lbmdpbmUgKmVuZ2luZSwKPiA+IC0JCQkgICAgICAgdm9pZCAqYXJlcSk7Cj4gPiAtCWludCAo
-KnVucHJlcGFyZV9yZXF1ZXN0KShzdHJ1Y3QgY3J5cHRvX2VuZ2luZSAqZW5naW5lLAo+ID4gLQkJ
-CQkgdm9pZCAqYXJlcSk7Cj4gPiAtCWludCAoKmRvX29uZV9yZXF1ZXN0KShzdHJ1Y3QgY3J5cHRv
-X2VuZ2luZSAqZW5naW5lLAo+ID4gLQkJCSAgICAgIHZvaWQgKmFyZXEpOwo+ID4gKwlpbnQgKCpw
-cmVwYXJlX3JlcXVlc3QpKHN0cnVjdCBjcnlwdG9fZW5naW5lICplbmdpbmUsIHZvaWQgKmFyZXEp
-Owo+ID4gKwlpbnQgKCp1bnByZXBhcmVfcmVxdWVzdCkoc3RydWN0IGNyeXB0b19lbmdpbmUgKmVu
-Z2luZSwgdm9pZCAqYXJlcSk7Cj4gPiArCWludCAoKmRvX29uZV9yZXF1ZXN0KShzdHJ1Y3QgY3J5
-cHRvX2VuZ2luZSAqZW5naW5lLCB2b2lkICphcmVxKTsKPiA+ICsJaW50ICgqZW5xdWV1ZV9yZXF1
-ZXN0KShzdHJ1Y3QgY3J5cHRvX2VuZ2luZSAqZW5naW5lLCB2b2lkICphcmVxKTsKPiA+ICsJaW50
-ICgqY2FuX3F1ZXVlX21vcmUpKHN0cnVjdCBjcnlwdG9fZW5naW5lICplbmdpbmUsIHZvaWQgKmFy
-ZXEpOwo+ID4gICB9Owo+IAo+IEFzIEkgbWVudGlvbmVkIGluIGFub3RoZXIgdGhyZWFkIFsxXSwg
-dGhlc2UgY3J5cHRvLWVuZ2luZSBwYXRjaGVzICgjMSAtIAo+ICM1KSBpbXBseSBtb2RpZmljYXRp
-b25zIGluIGFsbCB0aGUgZHJpdmVycyB0aGF0IHVzZSBjcnlwdG8tZW5naW5lLgo+IEl0J3Mgbm90
-IGJhY2t3YXJkcyBjb21wYXRpYmxlLgoKVGhpcyBpcyB3cm9uZy4gVGhpcyBpcyBmYWxzZS4KQVMg
-SSBIQVZFIEFMUkVBRFkgU0FJRCwgSSBoYXZlIHRlc3RlZCBhbmQgZGlkbnQgc2VlIGFueSBiZWhh
-dm91ciBjaGFuZ2UgaW4gdGhlIGN1cnJlbnQgdXNlciBvZiBjcnlwdG8gZW5naW5lLgpJIGhhdmUg
-dGVzdGVkIG15IHNlcmllIHdpdGggb21hcCwgdmlydGlvLCBhbWxvZ2ljLCBzdW44aS1zcywgc3Vu
-OGktY2UgYW5kIGRpZG50IHNlZSBhbnkgY2hhbmdlIGluIGJlaGF2b3VyIFdJVEhPVVQgQ0hBTkdJ
-TkcgdGhlbS4KSSByZXNhaWQsIEkgZGlkbnQgdG91Y2ggb21hcCwgdmlydGlvLCBldGMuLi4KT25s
-eSBzdG0zMiBpcyBub3QgdGVzdGVkIGJlY2F1c2Ugc2ltcGx5IHRoZXJlIGFyZSBub3QgYm9hcmQg
-d2l0aCB0aGlzIGRyaXZlciBlbmFibGVkLgoKSSBoYXZlIGFsc28gdGVzdGVkIHlvdXIgc2VyaWUg
-d2hpY2ggYWRkcyBzdXBwb3J0IGZvciBjcnlwdG8gZW5naW5lIHRvIGNhYW0sIGFuZCB0aGUgY3Jh
-c2ggaXMgdGhlIHNhbWUgd2l0aC93aXRob3V0IG15IHNlcmllLgpTbyBubyBiZWhhdm91ciBjaGFu
-Z2UuCgo+IFlvdXIgY2hhbmdlcyBpbXBseSB0aGF0IGRvX29uZV9yZXF1ZXN0IGV4ZWN1dGVzIHRo
-ZSByZXF1ZXN0ICYgd2FpdHMgZm9yIAo+IGNvbXBsZXRpb24gYW5kIGVucXVldWVfcmVxdWVzdCBz
-ZW5kcyBpdCB0byBoYXJkd2FyZS4gVGhhdCBtZWFucyB0aGF0IGFsbCAKPiB0aGUgb3RoZXIgZHJp
-dmVycyBuZWVkIHRvIGJlIG1vZGlmeSwgdG8gaW1wbGVtZW50IGVucXVldWVfcmVxdWVzdCwgCj4g
-aW5zdGVhZCBvZiBkb19vbmVfcmVxdWVzdC4gVGhleSBuZWVkIHRvIGJlIGNvbXBsaWFudCB3aXRo
-IHRoZSBuZXcgCj4gY2hhbmdlcywgbmV3IEFQSS4gT3RoZXJ3aXNlLCB0aGV5IGFyZSBub3QgdXNp
-bmcgY3J5cHRvLWVuZ2luZSByaWdodCwgCj4gZG9uJ3QgeW91IHRoaW5rPwo+IAoKTXkgY2hhbmdl
-IGltcGx5IG5vdGhpbmcsIGN1cnJlbnQgdXNlciB3b3JrIHRoZSBzYW1lLgpCdXQgaWYgdGhleSB3
-YW50LCB0aGV5IENPVUxEIHN3aXRjaCB0byBlbnF1ZXVlX3JlcXVlc3QoKS4KCj4gQWxzbywgZG9f
-b25lX3JlcXVlc3QgaXQgc2hvdWxkbuKAmXQgYmUgYmxvY2tpbmcuIFdlIGdvdCB0aGlzIGNvbmZp
-cm1hdGlvbiAKPiBmcm9tIEhlcmJlcnQgWzJdLgoKUmUtcmVhZCB3aGF0IEhlcmJlcnQgc2FpZCwg
-Ikl0IGNlcnRhaW5seSBzaG91bGRuJ3QgYmUgYmxvY2tpbmcgaW4gdGhlIGdlbmVyYWwgY2FzZS4i
-IEJ1dCB0aGF0IG1lYW5zIGl0IGNvdWxkLgpCdXQgdGhpcyB3b250IGNoYW5nZSBteSBwYXRjaCBz
-aW5jZSBib3RoIGJlaGF2b3VyIGFyZSBzdXBwb3J0ZWQuCgo+IAo+IFsxXSAKPiBodHRwczovL2xv
-cmUua2VybmVsLm9yZy9sa21sL1ZJMVBSMDRNQjQ0NDU1MzQzMjMwQ0JBNzQwMEQyMUM5OThDMEMw
-QFZJMVBSMDRNQjQ0NDUuZXVycHJkMDQucHJvZC5vdXRsb29rLmNvbS8KPiBbMl0gCj4gaHR0cHM6
-Ly9sb3JlLmtlcm5lbC5vcmcvbGttbC8yMDIwMDEyMjE0NDEzNC5heHFwd3g2NWo3eHlzeXkzQGdv
-bmRvci5hcGFuYS5vcmcuYXUvCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, Jan 27, 2020 at 12:32:22PM +0000, Marc Zyngier wrote:
+> On 2020-01-27 11:44, Andrew Murray wrote:
+> > At present ARMv8 event counters are limited to 32-bits, though by
+> > using the CHAIN event it's possible to combine adjacent counters to
+> > achieve 64-bits. The perf config1:0 bit can be set to use such a
+> > configuration.
+> > 
+> > With the introduction of ARMv8.5-PMU support, all event counters can
+> > now be used as 64-bit counters.
+> > 
+> > Let's enable 64-bit event counters where support exists. Unless the
+> > user sets config1:0 we will adjust the counter value such that it
+> > overflows upon 32-bit overflow. This follows the same behaviour as
+> > the cycle counter which has always been (and remains) 64-bits.
+> > 
+> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> > ---
+> >  arch/arm64/include/asm/perf_event.h |  3 +-
+> >  arch/arm64/include/asm/sysreg.h     |  1 +
+> >  arch/arm64/kernel/perf_event.c      | 86
+> > +++++++++++++++++++++++++++++--------
+> >  include/linux/perf/arm_pmu.h        |  1 +
+> >  4 files changed, 73 insertions(+), 18 deletions(-)
+> > 
+> > diff --git a/arch/arm64/include/asm/perf_event.h
+> > b/arch/arm64/include/asm/perf_event.h
+> > index 2bdbc79..e7765b6 100644
+> > --- a/arch/arm64/include/asm/perf_event.h
+> > +++ b/arch/arm64/include/asm/perf_event.h
+> > @@ -176,9 +176,10 @@
+> >  #define ARMV8_PMU_PMCR_X	(1 << 4) /* Export to ETM */
+> >  #define ARMV8_PMU_PMCR_DP	(1 << 5) /* Disable CCNT if non-invasive
+> > debug*/
+> >  #define ARMV8_PMU_PMCR_LC	(1 << 6) /* Overflow on 64 bit cycle counter
+> > */
+> > +#define ARMV8_PMU_PMCR_LP	(1 << 7) /* Long event counter enable */
+> >  #define	ARMV8_PMU_PMCR_N_SHIFT	11	 /* Number of counters supported */
+> >  #define	ARMV8_PMU_PMCR_N_MASK	0x1f
+> > -#define	ARMV8_PMU_PMCR_MASK	0x7f	 /* Mask for writable bits */
+> > +#define	ARMV8_PMU_PMCR_MASK	0xff	 /* Mask for writable bits */
+> > 
+> >  /*
+> >   * PMOVSR: counters overflow flag status reg
+> > diff --git a/arch/arm64/include/asm/sysreg.h
+> > b/arch/arm64/include/asm/sysreg.h
+> > index 1009878..30c1e18 100644
+> > --- a/arch/arm64/include/asm/sysreg.h
+> > +++ b/arch/arm64/include/asm/sysreg.h
+> > @@ -675,6 +675,7 @@
+> >  #define ID_DFR0_PERFMON_SHIFT		24
+> > 
+> >  #define ID_DFR0_EL1_PMUVER_8_1		4
+> > +#define ID_DFR0_EL1_PMUVER_8_4		5
+> 
+> This doesn't seem right, see below.
+
+Yes you're right - I'll rename this to ID_AA64DFR0_EL1_PMUVER_8_4
+
+
+> 
+> >  #define ID_AA64DFR0_EL1_PMUVER_8_1	4
+> > 
+> >  #define ID_ISAR5_RDM_SHIFT		24
+> > diff --git a/arch/arm64/kernel/perf_event.c
+> > b/arch/arm64/kernel/perf_event.c
+> > index e40b656..4e27f90 100644
+> > --- a/arch/arm64/kernel/perf_event.c
+> > +++ b/arch/arm64/kernel/perf_event.c
+> > @@ -285,6 +285,17 @@ static struct attribute_group
+> > armv8_pmuv3_format_attr_group = {
+> >  #define	ARMV8_IDX_COUNTER_LAST(cpu_pmu) \
+> >  	(ARMV8_IDX_CYCLE_COUNTER + cpu_pmu->num_events - 1)
+> > 
+> > +
+> > +/*
+> > + * We unconditionally enable ARMv8.5-PMU long event counter support
+> > + * (64-bit events) where supported. Indicate if this arm_pmu has long
+> > + * event counter support.
+> > + */
+> > +static bool armv8pmu_has_long_event(struct arm_pmu *cpu_pmu)
+> > +{
+> > +	return (cpu_pmu->pmuver > ID_DFR0_EL1_PMUVER_8_4);
+> 
+> Isn't the ID_DFR0 prefix for AArch32? Although this doesn't change much
+> the final result (the values happen to be the same on both architectures),
+> it is nonetheless a bit confusing.
+
+Yes - ID_DFR0 is the AArch32 register relating to the AArch32 state, that's
+mapped onto the AArch64 ID_DFR0_EL1 register. The ID_AA64DFR0_EL1 register
+relates to the AArch64 state.
+
+
+> 
+> > +}
+> > +
+> >  /*
+> >   * We must chain two programmable counters for 64 bit events,
+> >   * except when we have allocated the 64bit cycle counter (for CPU
+> > @@ -294,9 +305,11 @@ static struct attribute_group
+> > armv8_pmuv3_format_attr_group = {
+> >  static inline bool armv8pmu_event_is_chained(struct perf_event *event)
+> >  {
+> >  	int idx = event->hw.idx;
+> > +	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+> > 
+> >  	return !WARN_ON(idx < 0) &&
+> >  	       armv8pmu_event_is_64bit(event) &&
+> > +	       !armv8pmu_has_long_event(cpu_pmu) &&
+> >  	       (idx != ARMV8_IDX_CYCLE_COUNTER);
+> >  }
+> > 
+> > @@ -345,7 +358,7 @@ static inline void armv8pmu_select_counter(int idx)
+> >  	isb();
+> >  }
+> > 
+> > -static inline u32 armv8pmu_read_evcntr(int idx)
+> > +static inline u64 armv8pmu_read_evcntr(int idx)
+> >  {
+> >  	armv8pmu_select_counter(idx);
+> >  	return read_sysreg(pmxevcntr_el0);
+> > @@ -362,6 +375,44 @@ static inline u64 armv8pmu_read_hw_counter(struct
+> > perf_event *event)
+> >  	return val;
+> >  }
+> > 
+> > +/*
+> > + * The cycle counter is always a 64-bit counter. When ARMV8_PMU_PMCR_LP
+> > + * is set the event counters also become 64-bit counters. Unless the
+> > + * user has requested a long counter (attr.config1) then we want to
+> > + * interrupt upon 32-bit overflow - we achieve this by applying a bias.
+> > + */
+> > +static bool armv8pmu_event_needs_bias(struct perf_event *event)
+> > +{
+> > +	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+> > +	struct hw_perf_event *hwc = &event->hw;
+> > +	int idx = hwc->idx;
+> > +
+> > +	if (armv8pmu_event_is_64bit(event))
+> > +		return false;
+> > +
+> > +	if (armv8pmu_has_long_event(cpu_pmu) ||
+> > +	    idx == ARMV8_IDX_CYCLE_COUNTER)
+> > +		return true;
+> > +
+> > +	return false;
+> > +}
+> > +
+> > +static u64 armv8pmu_bias_long_counter(struct perf_event *event, u64
+> > value)
+> > +{
+> > +	if (armv8pmu_event_needs_bias(event))
+> > +		value |= GENMASK(63, 32);
+> > +
+> > +	return value;
+> > +}
+> > +
+> > +static u64 armv8pmu_unbias_long_counter(struct perf_event *event, u64
+> > value)
+> > +{
+> > +	if (armv8pmu_event_needs_bias(event))
+> > +		value &= ~GENMASK(63, 32);
+> > +
+> > +	return value;
+> > +}
+> > +
+> >  static u64 armv8pmu_read_counter(struct perf_event *event)
+> >  {
+> >  	struct arm_pmu *cpu_pmu = to_arm_pmu(event->pmu);
+> > @@ -377,10 +428,10 @@ static u64 armv8pmu_read_counter(struct perf_event
+> > *event)
+> >  	else
+> >  		value = armv8pmu_read_hw_counter(event);
+> > 
+> > -	return value;
+> > +	return  armv8pmu_unbias_long_counter(event, value);
+> >  }
+> > 
+> > -static inline void armv8pmu_write_evcntr(int idx, u32 value)
+> > +static inline void armv8pmu_write_evcntr(int idx, u64 value)
+> >  {
+> >  	armv8pmu_select_counter(idx);
+> >  	write_sysreg(value, pmxevcntr_el0);
+> > @@ -405,20 +456,14 @@ static void armv8pmu_write_counter(struct
+> > perf_event *event, u64 value)
+> >  	struct hw_perf_event *hwc = &event->hw;
+> >  	int idx = hwc->idx;
+> > 
+> > +	value = armv8pmu_bias_long_counter(event, value);
+> > +
+> >  	if (!armv8pmu_counter_valid(cpu_pmu, idx))
+> >  		pr_err("CPU%u writing wrong counter %d\n",
+> >  			smp_processor_id(), idx);
+> > -	else if (idx == ARMV8_IDX_CYCLE_COUNTER) {
+> > -		/*
+> > -		 * The cycles counter is really a 64-bit counter.
+> > -		 * When treating it as a 32-bit counter, we only count
+> > -		 * the lower 32 bits, and set the upper 32-bits so that
+> > -		 * we get an interrupt upon 32-bit overflow.
+> > -		 */
+> > -		if (!armv8pmu_event_is_64bit(event))
+> > -			value |= 0xffffffff00000000ULL;
+> > +	else if (idx == ARMV8_IDX_CYCLE_COUNTER)
+> >  		write_sysreg(value, pmccntr_el0);
+> > -	} else
+> > +	else
+> >  		armv8pmu_write_hw_counter(event, value);
+> >  }
+> > 
+> > @@ -743,7 +788,8 @@ static int armv8pmu_get_event_idx(struct
+> > pmu_hw_events *cpuc,
+> >  	/*
+> >  	 * Otherwise use events counters
+> >  	 */
+> > -	if (armv8pmu_event_is_64bit(event))
+> > +	if (armv8pmu_event_is_64bit(event) &&
+> > +	    !armv8pmu_has_long_event(cpu_pmu))
+> >  		return	armv8pmu_get_chain_idx(cpuc, cpu_pmu);
+> >  	else
+> >  		return armv8pmu_get_single_idx(cpuc, cpu_pmu);
+> > @@ -815,7 +861,7 @@ static int armv8pmu_filter_match(struct perf_event
+> > *event)
+> >  static void armv8pmu_reset(void *info)
+> >  {
+> >  	struct arm_pmu *cpu_pmu = (struct arm_pmu *)info;
+> > -	u32 idx, nb_cnt = cpu_pmu->num_events;
+> > +	u32 idx, pmcr, nb_cnt = cpu_pmu->num_events;
+> > 
+> >  	/* The counter and interrupt enable registers are unknown at reset. */
+> >  	for (idx = ARMV8_IDX_CYCLE_COUNTER; idx < nb_cnt; ++idx) {
+> > @@ -830,8 +876,13 @@ static void armv8pmu_reset(void *info)
+> >  	 * Initialize & Reset PMNC. Request overflow interrupt for
+> >  	 * 64 bit cycle counter but cheat in armv8pmu_write_counter().
+> >  	 */
+> > -	armv8pmu_pmcr_write(ARMV8_PMU_PMCR_P | ARMV8_PMU_PMCR_C |
+> > -			    ARMV8_PMU_PMCR_LC);
+> > +	pmcr = ARMV8_PMU_PMCR_P | ARMV8_PMU_PMCR_C | ARMV8_PMU_PMCR_LC;
+> > +
+> > +	/* Enable long event counter support where available */
+> > +	if (armv8pmu_has_long_event(cpu_pmu))
+> > +		pmcr |= ARMV8_PMU_PMCR_LP;
+> > +
+> > +	armv8pmu_pmcr_write(pmcr);
+> >  }
+> > 
+> >  static int __armv8_pmuv3_map_event(struct perf_event *event,
+> > @@ -914,6 +965,7 @@ static void __armv8pmu_probe_pmu(void *info)
+> >  	if (pmuver == 0xf || pmuver == 0)
+> >  		return;
+> > 
+> > +	cpu_pmu->pmuver = pmuver;
+> 
+> And pmuver comes from ID_AA64DFR0_PMUVER_SHIFT, so the above really
+> needs fixing in the name of consistency.
+> 
+
+No problem, I'll respin next week.
+
+Thanks,
+
+Andrew Murray
+
+> >  	probe->present = true;
+> > 
+> >  	/* Read the nb of CNTx counters supported from PMNC */
+> > diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
+> > index 71f525a..5b616dd 100644
+> > --- a/include/linux/perf/arm_pmu.h
+> > +++ b/include/linux/perf/arm_pmu.h
+> > @@ -80,6 +80,7 @@ struct arm_pmu {
+> >  	struct pmu	pmu;
+> >  	cpumask_t	supported_cpus;
+> >  	char		*name;
+> > +	int		pmuver;
+> >  	irqreturn_t	(*handle_irq)(struct arm_pmu *pmu);
+> >  	void		(*enable)(struct perf_event *event);
+> >  	void		(*disable)(struct perf_event *event);
+> 
+> Thanks,
+> 
+>         M.
+> -- 
+> Jazz is not dead. It just smells funny...
+> _______________________________________________
+> kvmarm mailing list
+> kvmarm@lists.cs.columbia.edu
+> https://lists.cs.columbia.edu/mailman/listinfo/kvmarm
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
