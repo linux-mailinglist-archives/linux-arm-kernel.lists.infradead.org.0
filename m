@@ -2,60 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74EC814BEF1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 18:52:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C3AF14BF49
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 19:10:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cThIGFEAhbeGtNLSZYlxV+nAfeuQwIXc2Ve8s7HAUsQ=; b=QNM1F2+4SnC5m0
-	Rh7+Z4e2AFvyvf5+rHsItNDG5nW5p4oDWTIz8Q+KO6oEmbLYZa8oZAsyppa+dO+5Joyd22UYnoK+b
-	sFqMKcnURBSQ9M1Vs+vmJGX6Ws1WzJsX9ZfuOCHmRUT66B9Lh7oy6llRGcUfiHeeJDxCzOqzqxT+S
-	lmyh3ycogJFAHv+DuMo43Et9oGCJzy9/FR+WxM5OB8S/c04K9VwRS05z+Zh9kGy0mnr8NtOn7HLca
-	/qID+SbsutsfM9dR3S2t71WpWCYRKk/BVbe1QfbGgrc/WOSWSATgkx3TQB7+5u1iNr+lvY8BwoEZX
-	zemXy1K8ocpObOYLWf2Q==;
+	List-Owner; bh=ERlkQhKl0zbdsSdfaewQwBUDIsl6QWUIwABldu4u49o=; b=e28mu9GaRU2QLu
+	5JrgJF0Ot0jWDTefJDrHAONnXeomVMFM38w691th3sEY16n0eFaiQ8RQ8ivZHMtEkSmt4G6J7Vs7R
+	BUncR79awD+r4zNzq4m3BpgJ12ODUpMY6ixygPVrbR/vIJ5SNFrptgmPjsoavsCtojaWe3cKiwNF8
+	4MMFb5If3TCsEOHxvl+u47IqfYa2dBYhhLxNWqsmenlfuYARxMot71mJKAT73YZwP7bCTdfbX8pXd
+	w91xfARCVYFcwx1I/27XfKkd65WjRuO2qSIXmNc92NPcfMpG6QDFMI8F2KKtDe52dKch9YvN1zffy
+	jYCyXjI1TXp9o2ta8kbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwV2R-0003nZ-SV; Tue, 28 Jan 2020 17:52:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwV2I-0003n2-9f
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 17:52:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C69B1FEC;
- Tue, 28 Jan 2020 09:52:25 -0800 (PST)
-Received: from localhost (unknown [10.1.198.81])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 683E73F52E;
- Tue, 28 Jan 2020 09:52:25 -0800 (PST)
-Date: Tue, 28 Jan 2020 17:52:23 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH v2 3/6] arm64/kvm: disable access to AMU registers from
- kvm guests
-Message-ID: <20200128175223.GA31241@arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-4-ionela.voinescu@arm.com>
- <bc3f582c-9aed-8052-d0cb-b39c76c8ce73@arm.com>
- <0690745f-fa38-f623-30a5-42d0eadfb668@arm.com>
- <5de3d3c7-2d78-9d18-f3ca-7cb6cf9ce36c@arm.com>
+	id 1iwVK0-00029x-Lg; Tue, 28 Jan 2020 18:10:44 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iwVJs-0000iw-Ls
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 18:10:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=27BCOIqr/wU+I4IrmORaozwu+T70UyCl4JtrDd+CI94=; b=gdIevUZ2qK6OpxHho3MufWbPt
+ BAR6uXvIytSdD3mS/dJD8OEbTCxNlo+SuFbDltAklslGG5ORJQI5oY0XhpLsmd41S+k3JOAcWaEBW
+ +qrs0ZAor9GYpxnR9GXp6+VIP6VwicXFHpu/bPZZmkew4W+jAgYv9X4UqMX5avJH7sy+8WApdAnFL
+ En6RDgB4j2zlk+EkA6R0xyPLLJZqEc3UNI75Vo0tYLiFCVfyoRfE9aQqS05qpyloeFTQTOMXZtiiz
+ 1Y9ORiDoYgTq8sE0nA1dSdYKIMr/AkfSgmVM+LTMQA4iTk/YzC6rFA2cLC6PqkAthxzzpXk1QGI0b
+ 5aCCeNOaA==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:32880)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1iwVHT-0000c0-EH; Tue, 28 Jan 2020 18:08:10 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1iwVHP-0002ak-1h; Tue, 28 Jan 2020 18:08:03 +0000
+Date: Tue, 28 Jan 2020 18:08:03 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [RFC net-next 6/8] net: phylink: Configure MAC/PCS when link is
+ up without PHY
+Message-ID: <20200128180802.GD25745@shell.armlinux.org.uk>
+References: <cover.1580122909.git.Jose.Abreu@synopsys.com>
+ <9a2136885d9a892ff170be88fdffeda82c778a10.1580122909.git.Jose.Abreu@synopsys.com>
+ <20200127112102.GT25745@shell.armlinux.org.uk>
+ <BN8PR12MB3266714AE9EC1A97218120B3D30B0@BN8PR12MB3266.namprd12.prod.outlook.com>
+ <20200127114600.GU25745@shell.armlinux.org.uk>
+ <20200127140038.GD13647@lunn.ch>
+ <20200127140834.GW25745@shell.armlinux.org.uk>
+ <20200127145107.GE13647@lunn.ch>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5de3d3c7-2d78-9d18-f3ca-7cb6cf9ce36c@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200127145107.GE13647@lunn.ch>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_095226_380397_094B8654 
-X-CRM114-Status: GOOD (  16.31  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200128_101036_717671_100B9CB4 
+X-CRM114-Status: GOOD (  15.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,49 +94,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org,
- Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>, peterz@infradead.org,
- catalin.marinas@arm.com, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- Julien Thierry <julien.thierry.kdev@gmail.com>, sudeep.holla@arm.com,
- James Morse <james.morse@arm.com>, will@kernel.org, dietmar.eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, Jakub Kicinski <kuba@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlc2RheSAyOCBKYW4gMjAyMCBhdCAxNzozNzowNCAoKzAwMDApLCBWYWxlbnRpbiBTY2hu
-ZWlkZXIgd3JvdGU6Cj4gSGkgU3V6dWtpLAo+IAo+IE9uIDI4LzAxLzIwMjAgMTc6MjYsIFN1enVr
-aSBLdXJ1cHBhc3NlcnkgUG91bG9zZSB3cm90ZToKPiA+PiBTbywgcHJvdmlkaW5nIEkgZGlkbid0
-IGdldCBjb21wbGV0ZWx5IGxvc3Qgb24gdGhlIHdheSwgSSBoYXZlIHRvIGFzazoKPiA+PiB3aHkg
-ZG8gd2UgdXNlIENQQUNSX0VMMSBoZXJlPyBDb3VsZG4ndCB3ZSB1c2UgQ1BUUl9FTDIgZGlyZWN0
-bHk/Cj4gPiAKPiA+IFBhcnQgb2YgdGhlIHJlYXNvbiBpcywgQ1BUUl9FTDIgaGFzIGRpZmZlcmVu
-dCBsYXlvdXQgZGVwZW5kaW5nIG9uCj4gPiB3aGV0aGVyIEhDUl9FTDIuRTJIID09IDEuIGUuZywg
-Q1BUUl9FTDIuVFRBIG1vdmUgZnJvbSBCaXRbMjhdIHRvIEJpdFsyMF0uCj4gPiAKPiA+IFNvLCB0
-byBrZWVwIGl0IHNpbXBsZSwgQ1BUUl9FTDIgaXMgdXNlZCBmb3Igbm9uLVZIRSBjb2RlIHdpdGgg
-dGhlIHNoaWZ0cwo+ID4gYXMgZGVmaW5lZCBieSB0aGUgIkNQVFJfRUwyIHdoZW4gRTJIPTAiCj4g
-PiAKPiA+IGlmIEUySCA9PSAxLCBDUFRSX0VMMiB0YWtlcyB0aGUgbGF5b3V0IG9mIENQQUNSX0VM
-MSBhbmQgIm92ZXJyaWRlcyIgc29tZQo+ID4gb2YgdGhlIFJFUzAgYml0cyBpbiBDUEFDUl9FTDEg
-d2l0aCBFTDIgY29udHJvbHMgKGUuZzogVEFNLCBUQ1BBQykuCj4gPiBUaHVzIHdlIHVzZSBDUEFD
-Ul9FTDEgdG8ga2VlcCB0aGUgInNoaWZ0cyIgbm9uLWNvbmZsaWN0aW5nIChlLmcsIFpFTikKPiA+
-IGFuZCBpcyB0aGUgcmlnaHQgdGhpbmcgdG8gZG8uCj4gPiAKPiA+IEl0IGlzIGEgYml0IGNvbmZ1
-c2luZywgYnV0IHdlIGFyZSBkb2luZyB0aGUgcmlnaHQgdGhpbmcuIE1heSBiZSB3ZSBjb3VsZCBp
-bXByb3ZlIHRoZSBjb21tZW50IGxpa2UgOgo+ID4gCj4gPiDCoMKgwqDCoC8qCj4gPiDCoMKgwqDC
-oCAqIFdpdGggVkhFIChIQ1IuRTJIID09IDEpLCBDUFRSX0VMMiBoYXMgdGhlIHNhbWUgbGF5b3V0
-IGFzCj4gPiDCoMKgwqDCoCAqIENQQUNSX0VMMSwgZXhjZXB0IGZvciBzb21lIG1pc3NpbmcgY29u
-dHJvbHMsIHN1Y2ggYXMgVEFNLgo+ID4gwqDCoMKgwqAgKiBBbmQgYWNjZXNzZXMgdG8gQ1BBQ1Jf
-RUwxIGFyZSByb3V0ZWQgdG8gQ1BUUl9FTDIuCj4gPiDCoMKgwqDCoCAqIEFsc28gQ1BUUl9FTDIu
-VEFNIGhhcyB0aGUgc2FtZSBwb3NpdGlvbiB3aXRoIG9yIHdpdGhvdXQKPiA+IMKgwqDCoMKgICog
-SENSLkUySCA9PSAxLiBUaGVyZWZvcmUsIHVzZSBDUFRSX0VMMi5UQU0gaGVyZSBmb3IKPiA+IMKg
-wqDCoMKgICogdHJhcHBpbmcgdGhlIEFNVSBhY2Nlc3Nlcy4KPiA+IMKgwqDCoMKgICovCj4gPgoK
-VGhhbmtzIFN1enVraSwgdGhpcyBtYWtlcyBzZW5zZSEKCklvbmVsYS4KCj4gCj4gVGhhbmtzIGZv
-ciBjbGVhcmluZyB0aGlzIHVwISBJIGFsc28gYm90aGVyZWQgTWFyY1ogaW4gdGhlIG1lYW50aW1l
-IHdobwo+IGFsc28gY2xlYXJlZCB1cCBzb21lIG9mIG15IGNvbmZ1c2lvbiAoaW5jbHVkaW5nIHdo
-aWNoIGxheW91dCB0YWtlcyBlZmZlY3QpLgo+IAo+IFNvIHllYWgsIEkgdGhpbmsgd2hhdCB3ZSB3
-YW50IGhlcmUgaXMgdG8ga2VlcCB1c2luZyBDUFRSX0VMMl9UQU0gYnV0IGhhdmUgYQo+IGNvbW1l
-bnQgdGhhdCBleHBsYWlucyB3aHkgKHdoaWNoIHlvdSBqdXN0IHByb3ZpZGVkISkuCj4gCj4gPiBT
-dXp1a2kKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+On Mon, Jan 27, 2020 at 03:51:07PM +0100, Andrew Lunn wrote:
+> I've also had issues with the DSA links, also being configured to
+> 10/Half. That seems to be related to having a phy-mode property in
+> device tree. I need to add a fixed-link property to set the correct
+> speed. Something is broken here, previously the fixed-link was only
+> needed if the speed needed to be lower than the ports maximum. I think
+> that is a separate issue i need to dig into, not part of the PCS to
+> MAC transfer.
+
+I think I understand what is happening on this one more fully.
+
+When DSA initialises, the DSA and CPU ports are initially configured to
+maximum speed via mv88e6xxx_setup_port(), called via mv88e6xxx_setup(),
+the .setup method, dsa_switch_setup(), and dsa_tree_setup_switches().
+
+dsa_tree_setup_switches() then moves on to calling dsa_port_setup().
+dsa_port_setup() calls dsa_port_link_register_of() for the DSA and CPU
+ports, which calls into dsa_port_phylink_register().
+
+That calls phylink_create(), and then attempts to attach a PHY using
+phylink_of_phy_connect() - which itself is rather weird - since when
+has a DSA or CPU port been allowed to have a PHY in its DT node?
+
+The upshot is, phylink_create() will (and always has) treated a node
+without a fixed-link or in-band specification as a "phy" mode link.
+Moving on, phylink_start() will be called.
+
+phylink_start() attempts to set an initial configuration.  As there
+is no PHY attached, phylink has no idea what parameters to set, but
+it needs to set an initial configuration, so it does so.  The result
+is, dsa_port_phylink_mac_config() gets called without the speed and
+duplex being set as one would expect.
+
+That hasn't changed in phylink yet - so it's a bug that dates back
+to the phylink integration into the DSA core, and is a regression
+resulting from that.
+
+The reason my patch above appears to solve it is because I'm ignoring
+calls to mac_config() with mode == MLO_AN_PHY in various circumstances,
+which results in the initial configuration by mv88e6xxx_setup_port()
+remaining.
+
+I'm not yet sure what to do about that; and I'm out of time to think
+about that anymore today - but I thought I'd post my analysis so far
+in the hope that it helps.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
