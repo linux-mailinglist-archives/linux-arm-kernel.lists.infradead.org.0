@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 423D514B182
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:09:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 457CF14B183
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:09:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yGpH8q++U3zpnIu8nzdNrtendVi6/mBIRW9kUm+XjK4=; b=Qu250q91E12yZz
-	MX6rNB9t3wu8MIEBH2JswrOv4JcUmy0k406OklUso/3prbicSUkgulTygxalfmz2D8+NkwCqF4SuZ
-	F0rarXYptZsiYnXIhtyQGO0bebFLiULwiU9O9f1b6FZ18dD37wZs5ISDVTzBrcUoOlMgGRehIROkj
-	gVeKRp74tv0qxhMjsaTzZZwHk/9Y4jpHeaxHLFnZuQFKuFOtPaR64WJp9xb4oDzb4HZ0dQNRQBtoF
-	A0ArQpsbpqvW2F3lEXsyGv3yf5L2Cnli9AHcNxBQfMNsHIMIos/zbW6hg+2ALTvklyvEvBg2QldrC
-	U4VHHr42HQehcOfQbl1g==;
+	List-Owner; bh=Ur9HBMcZXRuigf3aB92VZgHUCwI9q0GeDqcK9IoygY4=; b=fS8Ow+LaOqqTpL
+	TxK2oG3SlM5iN5BRqhU7Mn9AGB49D0N4IiGagP+K7KGEIa91c5K6Ozab3J67QB3QztK/S8HN4sbdc
+	gWTbRHm2QOX++Gy56epnclt4TNY3jrGjwjF8A1t9qGzLrnbK5YCcKQkBDhXxjkiP4ImWWkTxC6E5u
+	XQ0kwroUhzbePujGNQ3MDMz5CyKFNs6m7nGL4Fk70WsS0jJwVggpegUrLDsvooNwuqLyMSyIXbQ8e
+	N7Og7No60XXecCrpghsDPQ1sX7g1BLFThKSf11Q/aiZsQyOoVo4zD3ells3wsC86hdkTA4w+ES8O5
+	RhB6hXH7sxkHF9XlQJCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwMrr-0003Nj-28; Tue, 28 Jan 2020 09:09:07 +0000
+	id 1iwMs8-0003eA-FS; Tue, 28 Jan 2020 09:09:24 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwMpj-00013u-IP
+ id 1iwMpk-00015x-Dz
  for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 09:07:00 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00S92i9h021525; Tue, 28 Jan 2020 10:06:51 +0100
+ 00S93bVh014413; Tue, 28 Jan 2020 10:06:52 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=vtrn8oNy0V5D1ILXEJrxYxOG5XROr16TBAvgkYNGlRY=;
- b=x0WzuSX1XndC0p5+b/E9nBVt0GDgGIhqCQGfXcQhkI62U5g99DIsTWQU5GjbXfvpnhAt
- dvHO8vmO2I2FwWyGG7N2vpP6mTWOasDL3CnrNj4iNp3X+lx25Gw6TstD6JCR+72J132q
- hu0uszTgG4FNlRw8rYRrFSzLJa52/GohXtmSyC6/wLsBwH0eoYTm8WQEldOupLsCQiRB
- lcvEdVbePm0Dffha/2XFFvjjB3UPmp7IDwTv+kOW+nmINFVvyq5Z8LIIef5avVD/+CX7
- v6pX6i1oXu60WoQ4GyI59d8wZB6CJINrdDENJacBd42oaqJEa5ttqtZjt56rujVFMVfY 4g== 
+ bh=1xJlCzc7tviB9Z4P2IWtyyQ33TkrXRbDCDdaIxI2D64=;
+ b=a5ue5qnl6GRcDtqnP22SVjq2bnZW/hithJ/z/ndfuTOqVrJ0xjMRWHGxZOty27OTHfy3
+ 4ucXBR46wUt3fNV2B7dLl1Q82Pneh7ekWWciiGzJbl3rJtpg9vCk5fo6lxjql4vs+9RI
+ 4OEHBpDfChUy7xUJ8N6uHsLDbrLpd0//gtjyhJgxTRXEjUgPwo/7EgG/BA3+EvE0EF+t
+ 4N7+7Nl4UBGFlYSGmubvQzpr2HqqWduZ3wTmzJsLIuH72ZVglV14dyJY7B5l7MObCAln
+ aEVcRo5jIsULjnmtAze7vmnTSGTrWMSKBvGJbKt5/w3yvJr+RUzUjsSJb1aLauy6/KMC Sg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xrdekcuhv-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xrbpaw4t8-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 28 Jan 2020 10:06:51 +0100
+ Tue, 28 Jan 2020 10:06:52 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1063910003B;
- Tue, 28 Jan 2020 10:06:47 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3282B100057;
+ Tue, 28 Jan 2020 10:06:48 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 033EE212A38;
- Tue, 28 Jan 2020 10:06:47 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG6NODE1.st.com (10.75.127.16)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 241D5212A3A;
+ Tue, 28 Jan 2020 10:06:48 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG6NODE1.st.com (10.75.127.16)
  with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 28 Jan 2020 10:06:46 +0100
+ Tue, 28 Jan 2020 10:06:47 +0100
 From: Ludovic Barre <ludovic.barre@st.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH V2 7/9] mmc: mmci: add volt_switch callbacks
-Date: Tue, 28 Jan 2020 10:06:34 +0100
-Message-ID: <20200128090636.13689-8-ludovic.barre@st.com>
+Subject: [PATCH V2 8/9] mmc: mmci: sdmmc: add voltage switch functions
+Date: Tue, 28 Jan 2020 10:06:35 +0100
+Message-ID: <20200128090636.13689-9-ludovic.barre@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200128090636.13689-1-ludovic.barre@st.com>
 References: <20200128090636.13689-1-ludovic.barre@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG6NODE1.st.com
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG6NODE1.st.com
  (10.75.127.16)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-28_02:2020-01-24,
  2020-01-28 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_010655_940099_7ED08B6F 
-X-CRM114-Status: GOOD (  15.97  )
+X-CRM114-CacheID: sfid-20200128_010656_793233_DD92564C 
+X-CRM114-Status: GOOD (  17.01  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -105,74 +105,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A variant may need to define some actions before and after
-a voltage switch.
-
-This patch adds 2 voltage switch callbacks in mmci_host_ops:
--pre_sig_volt_switch allows to prepare voltage switch before to
- sent the SD_SWITCH_VOLTAGE command (cmd11).
--post_sig_volt_switch callback allows to define specific action after
- regulator set voltage.
+To prepare the voltage switch procedure, the VSWITCHEN bit must be
+set before sending the cmd11.
+To confirm completion of voltage switch, the VSWEND flag must be
+checked.
 
 Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
 ---
- drivers/mmc/host/mmci.c | 8 ++++++++
- drivers/mmc/host/mmci.h | 2 ++
- 2 files changed, 10 insertions(+)
+ drivers/mmc/host/mmci.h             |  4 +++
+ drivers/mmc/host/mmci_stm32_sdmmc.c | 43 +++++++++++++++++++++++++++++
+ 2 files changed, 47 insertions(+)
 
-diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
-index d0a041c9e6cd..24e630183ed4 100644
---- a/drivers/mmc/host/mmci.c
-+++ b/drivers/mmc/host/mmci.c
-@@ -22,6 +22,7 @@
- #include <linux/mmc/pm.h>
- #include <linux/mmc/host.h>
- #include <linux/mmc/card.h>
-+#include <linux/mmc/sd.h>
- #include <linux/mmc/slot-gpio.h>
- #include <linux/amba/bus.h>
- #include <linux/clk.h>
-@@ -1217,6 +1218,9 @@ mmci_start_command(struct mmci_host *host, struct mmc_command *cmd, u32 c)
- 		writel_relaxed(clks, host->base + MMCIDATATIMER);
- 	}
- 
-+	if (host->ops->pre_sig_volt_switch && cmd->opcode == SD_SWITCH_VOLTAGE)
-+		host->ops->pre_sig_volt_switch(host);
-+
- 	if (/*interrupt*/0)
- 		c |= MCI_CPSM_INTERRUPT;
- 
-@@ -1830,6 +1834,7 @@ static int mmci_get_cd(struct mmc_host *mmc)
- 
- static int mmci_sig_volt_switch(struct mmc_host *mmc, struct mmc_ios *ios)
- {
-+	struct mmci_host *host = mmc_priv(mmc);
- 	int ret = 0;
- 
- 	if (!IS_ERR(mmc->supply.vqmmc)) {
-@@ -1849,6 +1854,9 @@ static int mmci_sig_volt_switch(struct mmc_host *mmc, struct mmc_ios *ios)
- 			break;
- 		}
- 
-+		if (!ret && host->ops && host->ops->post_sig_volt_switch)
-+			ret = host->ops->post_sig_volt_switch(host, ios);
-+
- 		if (ret)
- 			dev_warn(mmc_dev(mmc), "Voltage switch failed\n");
- 	}
 diff --git a/drivers/mmc/host/mmci.h b/drivers/mmc/host/mmci.h
-index ddcdfb827996..c3bc0a38d4cb 100644
+index c3bc0a38d4cb..e1a9b96a3396 100644
 --- a/drivers/mmc/host/mmci.h
 +++ b/drivers/mmc/host/mmci.h
-@@ -377,6 +377,8 @@ struct mmci_host_ops {
- 	void (*set_clkreg)(struct mmci_host *host, unsigned int desired);
- 	void (*set_pwrreg)(struct mmci_host *host, unsigned int pwr);
- 	bool (*busy_complete)(struct mmci_host *host, u32 status, u32 err_msk);
-+	void (*pre_sig_volt_switch)(struct mmci_host *host);
-+	int (*post_sig_volt_switch)(struct mmci_host *host, struct mmc_ios *ios);
+@@ -165,6 +165,7 @@
+ /* Extended status bits for the STM32 variants */
+ #define MCI_STM32_BUSYD0	BIT(20)
+ #define MCI_STM32_BUSYD0END	BIT(21)
++#define MCI_STM32_VSWEND	BIT(25)
+ 
+ #define MMCICLEAR		0x038
+ #define MCI_CMDCRCFAILCLR	(1 << 0)
+@@ -182,6 +183,9 @@
+ #define MCI_ST_SDIOITC		(1 << 22)
+ #define MCI_ST_CEATAENDC	(1 << 23)
+ #define MCI_ST_BUSYENDC		(1 << 24)
++/* Extended clear bits for the STM32 variants */
++#define MCI_STM32_VSWENDC	BIT(25)
++#define MCI_STM32_CKSTOPC	BIT(26)
+ 
+ #define MMCIMASK0		0x03c
+ #define MCI_CMDCRCFAILMASK	(1 << 0)
+diff --git a/drivers/mmc/host/mmci_stm32_sdmmc.c b/drivers/mmc/host/mmci_stm32_sdmmc.c
+index fa875febcc85..f76e82f8f12f 100644
+--- a/drivers/mmc/host/mmci_stm32_sdmmc.c
++++ b/drivers/mmc/host/mmci_stm32_sdmmc.c
+@@ -32,6 +32,7 @@
+ #define DLYB_CFGR_UNIT_MAX	127
+ 
+ #define DLYB_LNG_TIMEOUT_US	1000
++#define SDMMC_VSWEND_TIMEOUT_US 10000
+ 
+ struct sdmmc_lli_desc {
+ 	u32 idmalar;
+@@ -265,6 +266,7 @@ static void mmci_sdmmc_set_pwrreg(struct mmci_host *host, unsigned int pwr)
+ 	struct mmc_ios ios = host->mmc->ios;
+ 	struct sdmmc_dlyb *dlyb = host->variant_priv;
+ 
++	/* adds OF options */
+ 	pwr = host->pwr_reg_add;
+ 
+ 	sdmmc_dlyb_input_ck(dlyb);
+@@ -291,6 +293,10 @@ static void mmci_sdmmc_set_pwrreg(struct mmci_host *host, unsigned int pwr)
+ 		writel(MCI_IRQENABLE | host->variant->start_err,
+ 		       host->base + MMCIMASK0);
+ 
++		/* preserves voltage switch bits */
++		pwr |= host->pwr_reg & (MCI_STM32_VSWITCHEN |
++					MCI_STM32_VSWITCH);
++
+ 		/*
+ 		 * After a power-cycle state, we must set the SDMMC in
+ 		 * Power-off. The SDMMC_D[7:0], SDMMC_CMD and SDMMC_CK are
+@@ -456,6 +462,41 @@ static int sdmmc_execute_tuning(struct mmc_host *mmc, u32 opcode)
+ 	return sdmmc_dlyb_phase_tuning(host, opcode);
+ }
+ 
++static void sdmmc_pre_sig_volt_vswitch(struct mmci_host *host)
++{
++	/* clear the voltage switch completion flag */
++	writel_relaxed(MCI_STM32_VSWENDC, host->base + MMCICLEAR);
++	/* enable Voltage switch procedure */
++	mmci_write_pwrreg(host, host->pwr_reg | MCI_STM32_VSWITCHEN);
++}
++
++static int sdmmc_post_sig_volt_switch(struct mmci_host *host,
++				      struct mmc_ios *ios)
++{
++	unsigned long flags;
++	u32 status;
++	int ret = 0;
++
++	if (ios->signal_voltage == MMC_SIGNAL_VOLTAGE_180) {
++		spin_lock_irqsave(&host->lock, flags);
++		mmci_write_pwrreg(host, host->pwr_reg | MCI_STM32_VSWITCH);
++		spin_unlock_irqrestore(&host->lock, flags);
++
++		/* wait voltage switch completion while 10ms */
++		ret = readl_relaxed_poll_timeout(host->base + MMCISTATUS,
++						 status,
++						 (status & MCI_STM32_VSWEND),
++						 10, SDMMC_VSWEND_TIMEOUT_US);
++
++		writel_relaxed(MCI_STM32_VSWENDC | MCI_STM32_CKSTOPC,
++			       host->base + MMCICLEAR);
++		mmci_write_pwrreg(host, host->pwr_reg &
++				  ~(MCI_STM32_VSWITCHEN | MCI_STM32_VSWITCH));
++	}
++
++	return ret;
++}
++
+ static struct mmci_host_ops sdmmc_variant_ops = {
+ 	.validate_data = sdmmc_idma_validate_data,
+ 	.prep_data = sdmmc_idma_prep_data,
+@@ -467,6 +508,8 @@ static struct mmci_host_ops sdmmc_variant_ops = {
+ 	.set_clkreg = mmci_sdmmc_set_clkreg,
+ 	.set_pwrreg = mmci_sdmmc_set_pwrreg,
+ 	.busy_complete = sdmmc_busy_complete,
++	.pre_sig_volt_switch = sdmmc_pre_sig_volt_vswitch,
++	.post_sig_volt_switch = sdmmc_post_sig_volt_switch,
  };
  
- struct mmci_host {
+ void sdmmc_variant_init(struct mmci_host *host)
 -- 
 2.17.1
 
