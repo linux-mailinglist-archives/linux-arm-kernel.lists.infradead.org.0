@@ -2,53 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3F2214BE7B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 18:26:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08E4114BEA8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 18:35:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5TJIf1TUN2Q1/s+8POV6l6eVhz0E8TE9XtP2cX0jGUk=; b=MFiQZGs8D1AtcSV7g0TFZyhEo
-	XwvvDJWqu3lBILAJj6KqWnihf5cAVAtTNT+LBzPeOoZU90OAldjgD8jPd2Na5yvqggBwToccPA/hy
-	63GbNyMhpoHphDYK1NBioc0pqk+orO98YPm1JKYVHqS+1E4HcHk33ClrDotVIT2Fzj1A3tj6yvkqb
-	NC9cq1w/1xWmJ+mPiyPix250H6pQkZfP9K8S36iS+IIS8A+lbtm83Fns3nEW4ai6c47+ubl4AJ71L
-	PYKfi0egHYXDXm/V8sMEpWr28/bcF6rOdPMl+VxPEV70B3oZrbU3RpMlAu2e/1REdHeqJ+QZQ4f9w
-	ofXvDpb6g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RYzv5oxBuYjEN9fznCXXo0Hgen3BAWfP1M2lXx+HzsU=; b=t4/BgHb2oytAt6
+	a1O+e5wq1uFYYyHAHXn6376qQmgMeXJiO/rw67odjD3QLJVXdtAY92dwz5aVC5qNJocxOMTXr3dcs
+	gSZxvwRM4L3UtYTQyOZrkE8LIfgITFr3DXE/ESfTNDgnMbK3uxEyrP1GcS9ltmF3K1iU48WQTiR0n
+	Ul7/smwRE2HRy5p54Scxesh5yCH1ZSdJlYLY1ZhojHw8CLEMTwdJMF8gEa+LTAiW4Md3RpjlKuazc
+	KpEyyPxU1Ze44/kEU8ljrlJR5XxYtmLOHccfKqimQIj9+MGMrFB5b0eHVPZ6uUyJS94kqDzxa/gnI
+	EO0H10PyifFMsCg42a1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwUda-0000Qc-5G; Tue, 28 Jan 2020 17:26:54 +0000
+	id 1iwUm2-000699-Rs; Tue, 28 Jan 2020 17:35:38 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwUdP-0000Pn-7k
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 17:26:44 +0000
+ id 1iwUlu-00068S-2b
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 17:35:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 496B9328;
- Tue, 28 Jan 2020 09:26:42 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 47B503F52E;
- Tue, 28 Jan 2020 09:26:40 -0800 (PST)
-Subject: Re: [PATCH v2 3/6] arm64/kvm: disable access to AMU registers from
- kvm guests
-To: Valentin Schneider <valentin.schneider@arm.com>,
- Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
- will@kernel.org, mark.rutland@arm.com, maz@kernel.org, sudeep.holla@arm.com,
- dietmar.eggemann@arm.com
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-4-ionela.voinescu@arm.com>
- <bc3f582c-9aed-8052-d0cb-b39c76c8ce73@arm.com>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <0690745f-fa38-f623-30a5-42d0eadfb668@arm.com>
-Date: Tue, 28 Jan 2020 17:26:39 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E7DB7328;
+ Tue, 28 Jan 2020 09:35:27 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 97E773F52E;
+ Tue, 28 Jan 2020 09:35:26 -0800 (PST)
+Date: Tue, 28 Jan 2020 17:35:24 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH V5] firmware: arm_scmi: Make scmi core independent of the
+ transport type
+Message-ID: <20200128173524.GB36496@bogus>
+References: <f170b33989b426ac095952634fcd1bf45b86a7a3.1580208329.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <bc3f582c-9aed-8052-d0cb-b39c76c8ce73@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <f170b33989b426ac095952634fcd1bf45b86a7a3.1580208329.git.viresh.kumar@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_092643_365316_9D7E65A1 
-X-CRM114-Status: GOOD (  21.88  )
+X-CRM114-CacheID: sfid-20200128_093530_205508_250B16C2 
+X-CRM114-Status: GOOD (  22.46  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -69,111 +63,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, peterz@infradead.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: peng.fan@nxp.com, arnd@arndb.de, jassisinghbrar@gmail.com,
+ linux-kernel@vger.kernel.org, peter.hilber@opensynergy.com,
+ linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>,
+ cristian.marussi@arm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/01/2020 15:33, Valentin Schneider wrote:
-> On 18/12/2019 18:26, Ionela Voinescu wrote:
->> diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
->> index 6e5d839f42b5..dd20fb185d56 100644
->> --- a/arch/arm64/include/asm/kvm_arm.h
->> +++ b/arch/arm64/include/asm/kvm_arm.h
->> @@ -266,10 +266,11 @@
->>   #define CPTR_EL2_TFP_SHIFT 10
->>   
->>   /* Hyp Coprocessor Trap Register */
->> -#define CPTR_EL2_TCPAC	(1 << 31)
->> -#define CPTR_EL2_TTA	(1 << 20)
->> -#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
->>   #define CPTR_EL2_TZ	(1 << 8)
->> +#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
->> +#define CPTR_EL2_TTA	(1 << 20)
->> +#define CPTR_EL2_TAM	(1 << 30)
->> +#define CPTR_EL2_TCPAC	(1 << 31)
-> 
-> Nit: why the #define movement? Couldn't that just be added beneath
-> CPTR_EL2_TCPAC?
-> 
->>   #define CPTR_EL2_RES1	0x000032ff /* known RES1 bits in CPTR_EL2 */
->>   #define CPTR_EL2_DEFAULT	CPTR_EL2_RES1
->>   
->> diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
->> index 72fbbd86eb5e..0bca87a2621f 100644
->> --- a/arch/arm64/kvm/hyp/switch.c
->> +++ b/arch/arm64/kvm/hyp/switch.c
->> @@ -90,6 +90,17 @@ static void activate_traps_vhe(struct kvm_vcpu *vcpu)
->>   	val = read_sysreg(cpacr_el1);
->>   	val |= CPACR_EL1_TTA;
->>   	val &= ~CPACR_EL1_ZEN;
->> +
->> +	/*
->> +	 * With VHE enabled, we have HCR_EL2.{E2H,TGE} = {1,1}. Note that in
->> +	 * this case CPACR_EL1 has the same bit layout as CPTR_EL2, and
->> +	 * CPACR_EL1 accessing instructions are redefined to access CPTR_EL2.
->> +	 * Therefore use CPTR_EL2.TAM bit reference to activate AMU register
->> +	 * traps.
->> +	 */
->> +
->> +	val |= CPTR_EL2_TAM;
->> +
-> 
-> Hmm so this is a bit confusing for me, I've rewritten that part of the
-> email too many times (didn't help that I'm far from being a virt guru).
-> Rectifications are most welcome.
-> 
-> 
-> First, AFAICT we *don't* have HCR_EL2.TGE set anymore at this point, it's
-> cleared just a bit earlier in __activate_traps().
-> 
-> 
-> Then, your comment suggests that when we're running this code, CPACR_EL1
-> accesses are rerouted to CPTR_EL2. Annoyingly this isn't mentioned in
-> the doc of CPACR_EL1, but D5.6.3 does say
-> 
-> """
-> When ARMv8.1-VHE is implemented, and HCR_EL2.E2H is set to 1, when executing
-> at EL2, some EL1 System register access instructions are redefined to access
-> the equivalent EL2 register.
-> """
-> 
-> And CPACR_EL1 is part of these, so far so good. Now, the thing is
-> the doc for CPACR_EL1 *doesn't* mention any TAM bit - but CPTR_EL2 does.
-> I believe what *do* want here is to set CPTR_EL2.TAM (which IIUC we end
-> up doing via the rerouting).
-> 
-> So, providing I didn't get completely lost on the way, I have to ask:
-> why do we use CPACR_EL1 here? Couldn't we use CPTR_EL2 directly?
+On Tue, Jan 28, 2020 at 04:24:19PM +0530, Viresh Kumar wrote:
+> The SCMI specification is fairly independent of the transport protocol,
+> which can be a simple mailbox (already implemented) or anything else.
+> The current Linux implementation however is very much dependent on the
+> mailbox transport layer.
+>
+> This patch makes the SCMI core code (driver.c) independent of the
+> mailbox transport layer and moves all mailbox related code to a new
+> file: mailbox.c.
+>
+> We can now implement more transport protocols to transport SCMI
+> messages.
+>
+> The transport protocols just need to provide struct scmi_transport_ops,
+> with its version of the callbacks to enable exchange of SCMI messages.
+>
+> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
+> ---
+> @Sudeep: Please help getting this tested as well :)
+>
 
-Part of the reason is, CPTR_EL2 has different layout depending on
-whether HCR_EL2.E2H == 1. e.g, CPTR_EL2.TTA move from Bit[28] to Bit[20].
+I did a quick test and it just works fine ;)
 
-So, to keep it simple, CPTR_EL2 is used for non-VHE code with the shifts
-as defined by the "CPTR_EL2 when E2H=0"
+> diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
+> index df35358ff324..805482c41ab4 100644
+> --- a/drivers/firmware/arm_scmi/common.h
+> +++ b/drivers/firmware/arm_scmi/common.h
+> @@ -13,6 +13,7 @@
+>  #include <linux/errno.h>
+>  #include <linux/kernel.h>
+>  #include <linux/scmi_protocol.h>
+> +#include <linux/stddef.h>
 
-if E2H == 1, CPTR_EL2 takes the layout of CPACR_EL1 and "overrides" some
-of the RES0 bits in CPACR_EL1 with EL2 controls (e.g: TAM, TCPAC).
-Thus we use CPACR_EL1 to keep the "shifts" non-conflicting (e.g, ZEN)
-and is the right thing to do.
+May be not needed anymore ? IIUC you had added it for offset and friends.
 
-It is a bit confusing, but we are doing the right thing. May be we could 
-improve the comment like :
+>  #include <linux/types.h>
+>
+>  #include <asm/unaligned.h>
+> @@ -33,8 +34,8 @@ enum scmi_common_cmd {
+>  /**
+>   * struct scmi_msg_resp_prot_version - Response for a message
+>   *
+> - * @major_version: Major version of the ABI that firmware supports
+>   * @minor_version: Minor version of the ABI that firmware supports
+> + * @major_version: Major version of the ABI that firmware supports
+>   *
+>   * In general, ABI version changes follow the rule that minor version increments
+>   * are backward compatible. Major revision changes in ABI may not be
+> @@ -47,6 +48,19 @@ struct scmi_msg_resp_prot_version {
+>  	__le16 major_version;
+>  };
+>
+> +#define MSG_ID_MASK		GENMASK(7, 0)
+> +#define MSG_XTRACT_ID(hdr)	FIELD_GET(MSG_ID_MASK, (hdr))
+> +#define MSG_TYPE_MASK		GENMASK(9, 8)
+> +#define MSG_XTRACT_TYPE(hdr)	FIELD_GET(MSG_TYPE_MASK, (hdr))
+> +#define MSG_TYPE_COMMAND	0
+> +#define MSG_TYPE_DELAYED_RESP	2
+> +#define MSG_TYPE_NOTIFICATION	3
+> +#define MSG_PROTOCOL_ID_MASK	GENMASK(17, 10)
+> +#define MSG_XTRACT_PROT_ID(hdr)	FIELD_GET(MSG_PROTOCOL_ID_MASK, (hdr))
+> +#define MSG_TOKEN_ID_MASK	GENMASK(27, 18)
+> +#define MSG_XTRACT_TOKEN(hdr)	FIELD_GET(MSG_TOKEN_ID_MASK, (hdr))
+> +#define MSG_TOKEN_MAX		(MSG_XTRACT_TOKEN(MSG_TOKEN_ID_MASK) + 1)
+> +
+>  /**
+>   * struct scmi_msg_hdr - Message(Tx/Rx) header
+>   *
+> @@ -67,6 +81,33 @@ struct scmi_msg_hdr {
+>  	bool poll_completion;
+>  };
+>
+> +/**
+> + * pack_scmi_header() - packs and returns 32-bit header
+> + *
+> + * @hdr: pointer to header containing all the information on message id,
+> + *	protocol id and sequence id.
+> + *
+> + * Return: 32-bit packed message header to be sent to the platform.
+> + */
+> +static inline u32 pack_scmi_header(struct scmi_msg_hdr *hdr)
+> +{
+> +	return FIELD_PREP(MSG_ID_MASK, hdr->id) |
+> +		FIELD_PREP(MSG_TOKEN_ID_MASK, hdr->seq) |
+> +		FIELD_PREP(MSG_PROTOCOL_ID_MASK, hdr->protocol_id);
+> +}
+> +
+> +/**
+> + * unpack_scmi_header() - unpacks and records message and protocol id
+> + *
+> + * @msg_hdr: 32-bit packed message header sent from the platform
+> + * @hdr: pointer to header to fetch message and protocol id.
+> + */
+> +static inline void unpack_scmi_header(u32 msg_hdr, struct scmi_msg_hdr *hdr)
+> +{
+> +	hdr->id = MSG_XTRACT_ID(msg_hdr);
+> +	hdr->protocol_id = MSG_XTRACT_PROT_ID(msg_hdr);
+> +}
+> +
 
-	/*
-	 * With VHE (HCR.E2H == 1), CPTR_EL2 has the same layout as
-	 * CPACR_EL1, except for some missing controls, such as TAM.
-	 * And accesses to CPACR_EL1 are routed to CPTR_EL2.
-	 * Also CPTR_EL2.TAM has the same position with or without
-	 * HCR.E2H == 1. Therefore, use CPTR_EL2.TAM here for
-	 * trapping the AMU accesses.
-	 */
+I prefer this moving of the above code to header as separate patch,
+just to keep it easy for bisection in case we break anything with new
+transport layer. There's nothing I see, but to be safer. You can also
+claim no functionality change with that patch then ;)
 
-Suzuki
+>  /**
+>   * struct scmi_info - Structure representing a SCMI instance
+>   *
+>   * @dev: Device pointer
+>   * @desc: SoC description for this instance
+> - * @handle: Instance of SCMI handle to send to clients
+>   * @version: SCMI revision information containing protocol version,
+>   *	implementation version and (sub-)vendor identification.
+> + * @handle: Instance of SCMI handle to send to clients
+
+I saw this and couple other doc changes that are not related to this patch
+but are fixed to existing code ? Can be separate patch again if I am not
+wrong.
+
+Otherwise looks good. Since we are not adding module support, I am fine
+even if we have to make changes to transport ops bit later if required
+and realised when adding new transport. Let us see if Peter has any major
+objections.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
