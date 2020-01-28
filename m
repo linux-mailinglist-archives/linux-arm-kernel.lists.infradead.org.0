@@ -2,51 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DCDF14BFF5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 19:36:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6685714C00F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 19:43:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5hAlfJBbu+cftqI8FJaIfPthmQe9jjTSVYfNPIZZKqo=; b=B/XYNBxFKtgZkL
-	692gcJDjW/KypyN0NsQL1vMEayos2ddFgzzgHCsRDvXDTlo2pUjQTdg/gzGZbUK6QJHE/WhepBMtZ
-	lSvAbjf4HxHKWMNM+fdzFa/RPqx3MMSfSH5kpgNjg98i8vTaCK5EK/i5PvS+HDDbflCEnSSotV4ZL
-	vvKjO0Or+j3FHoZ7Pwush70c9ILG1WIoHbLiHE1nuAJwcI1u6MN3Dzl2W64us3g8gGeTTxU8I+TK5
-	L18E3Bl1q38FNqwUoU0Nbo5LnmL30pW+YxrxSjQn+UJd3tfi3FQt9uCbn+RD1Wq/V+VClec2DvG9I
-	jY3srRRAQjmLHkgvxevA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7YkpdQ2umqgekm49iiH4gBg2sBsPL+yc0aA/TZGjiZI=; b=KKEsk+Ei7sVNwHiIyDXaPp/i2
+	3F3/AywnVpezvHtkXiLZiHTz/9pgOkmS16vwRg66IMOIVRrqcH+ouj88bKazkS2Z6qG0iRJVWvdfR
+	q4pzRm7Nm9Vhc0kobyb4VnOWV7ocmeOxWCd/8Bk50Ac3bo8hDjXTCljXyKnWrjPW3MGOtVOQ5YTfg
+	JcWA4EPJHz7BRfnv/dKGk64/UqsTZLceK8ugdUjHCTFv4DA850IdeO7N46rv6aR9+oVYqC1li/yaI
+	/w9L6IujIGiV9TLzrCZUZXEJIjrCuTBTPKroBYrchiD+IfwyiU9LChZXiPqc+JkhT+jAtW3mdGyXy
+	skwfJ71xQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwVj5-0003Rm-Qw; Tue, 28 Jan 2020 18:36:39 +0000
+	id 1iwVpz-0005h3-Kw; Tue, 28 Jan 2020 18:43:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwViv-0003Lg-Uj
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 18:36:31 +0000
+ id 1iwVpr-0005gg-52; Tue, 28 Jan 2020 18:43:40 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 082E3328;
- Tue, 28 Jan 2020 10:36:27 -0800 (PST)
-Received: from [10.1.194.46] (e113632-lin.cambridge.arm.com [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2538C3F52E;
- Tue, 28 Jan 2020 10:36:25 -0800 (PST)
-Subject: Re: [PATCH v2 4/6] Documentation: arm64: document support for the AMU
- extension
-To: Ionela Voinescu <ionela.voinescu@arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-5-ionela.voinescu@arm.com>
- <b63b6f10-22c8-79be-cc97-08484874bd62@arm.com>
- <20200128165325.GA16417@arm.com>
-From: Valentin Schneider <valentin.schneider@arm.com>
-Message-ID: <487a8af1-a1b8-5a16-6487-968049bfc12f@arm.com>
-Date: Tue, 28 Jan 2020 18:36:23 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F3784328;
+ Tue, 28 Jan 2020 10:43:37 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D25713F52E;
+ Tue, 28 Jan 2020 10:43:36 -0800 (PST)
+Subject: Re: [PATCH 1/3] clk: rockchip: convert rk3399 pll type to use
+ readl_poll_timeout
+To: Heiko Stuebner <heiko@sntech.de>
+References: <20200128100204.1318450-1-heiko@sntech.de>
+ <f8001dbb-ebbc-ebe3-d1db-c75d3888fd38@arm.com> <12366580.SORy7UBWfn@phil>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <6349f721-60ae-b494-85c5-c1be8a669799@arm.com>
+Date: Tue, 28 Jan 2020 18:43:31 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200128165325.GA16417@arm.com>
-Content-Language: en-US
+In-Reply-To: <12366580.SORy7UBWfn@phil>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_103630_079565_8351A387 
-X-CRM114-Status: GOOD (  25.68  )
+X-CRM114-CacheID: sfid-20200128_104339_279933_272A8E91 
+X-CRM114-Status: GOOD (  21.24  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -67,77 +64,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- sudeep.holla@arm.com, Jonathan Corbet <corbet@lwn.net>, will@kernel.org,
- dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: sboyd@kernel.org, mturquette@baylibre.com, zhangqing@rock-chips.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ christoph.muellner@theobroma-systems.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/01/2020 16:53, Ionela Voinescu wrote:
-> Or you won't be able to access them at all. Lacking firmware support
-> accesses to AMU registers could be trapped in EL3. If access for EL1 and
-> EL2 is enabled from EL3, it's still possible that the counters
-> themselves are not enabled - that means they are not enabled to count
-> the events they are designed to be counting. That's why in this case the
-> event counter register could read 0.
-> 
-> But if we read 0, it does not necessarily mean that the counter is
-> disabled. It could also mean that the events is meant to count did not
-> happen yet.
-> 
-
-Right, which (as we discussed offline) is quite likely to happen if/when
-we get stuff like SVE counters and we try to read them at boot time. Might
-be worth adding a small note about that (0 != disabled).
-
->> I haven't seen something that would try to catch this on the kernel side.
->> Can we try to detect that (e.g. at least one counter returns > 0) in
->> cpu_amu_enable() and thus not write to the CPU-local 'amu_feat'?
+On 28/01/2020 4:29 pm, Heiko Stuebner wrote:
+> Am Dienstag, 28. Januar 2020, 16:28:44 CET schrieb Robin Murphy:
+>> On 28/01/2020 10:02 am, Heiko Stuebner wrote:
+>>> From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+>>>
+>>> Instead of open coding the polling of the lock status, use the
+>>> handy readl_poll_timeout for this. As the pll locking is normally
+>>> blazingly fast and we don't want to incur additional delays, we're
+>>> not doing any sleeps similar to for example the imx clk-pllv4
+>>> and define a very safe but still short timeout of 1ms.
+>>>
+>>> Suggested-by: Stephen Boyd <sboyd@kernel.org>
+>>> Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+>>> ---
+>>>    drivers/clk/rockchip/clk-pll.c | 21 ++++++++++-----------
+>>>    1 file changed, 10 insertions(+), 11 deletions(-)
+>>>
+>>> diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
+>>> index 198417d56300..43c9fd0086a2 100644
+>>> --- a/drivers/clk/rockchip/clk-pll.c
+>>> +++ b/drivers/clk/rockchip/clk-pll.c
+>>> @@ -585,19 +585,18 @@ static const struct clk_ops rockchip_rk3066_pll_clk_ops = {
+>>>    static int rockchip_rk3399_pll_wait_lock(struct rockchip_clk_pll *pll)
+>>>    {
+>>>    	u32 pllcon;
+>>> -	int delay = 24000000;
+>>> +	int ret;
+>>>    
+>>> -	/* poll check the lock status in rk3399 xPLLCON2 */
+>>> -	while (delay > 0) {
+>>> -		pllcon = readl_relaxed(pll->reg_base + RK3399_PLLCON(2));
+>>> -		if (pllcon & RK3399_PLLCON2_LOCK_STATUS)
+>>> -			return 0;
+>>> +	/*
+>>> +	 * Lock time typical 250, max 500 input clock cycles @24MHz
+>>> +	 * So define a very safe maximum of 1000us, meaning 24000 cycles.
+>>> +	 */
+>>> +	ret = readl_poll_timeout(pll->reg_base + RK3399_PLLCON(2), pllcon,
+>>> +				 pllcon & RK3399_PLLCON2_LOCK_STATUS, 0, 1000);
 >>
+>> Note that the existing I/O accessor was readl_relaxed(), but using plain
+>> readl_poll_timeout() switches it to regular readl(). It may well not
+>> matter, but since it's not noted as an intentional change it seemed
+>> worth pointing out.
 > 
-> I'm reluctant to do this especially given that platforms might choose to
-> keep some counters disabled while enabling some counters that might not
-> have counted any events by the time we reach cpu_enable. We would end up
-> mistakenly disabling the feature. I would rather leave the validation of
-> the counters to be done at the location and for the purpose of their
-> use: see patch 6/6 - the use of counters for frequency invariance.
-> 
+> So we end up with an additional __iormb() after each readl_relaxed call.
+> So except for a small speed-penalty per iteration is there some other
+> memory-barrier wirednes that could come into play? (Somehow I always
+> forget the contents of Will's memory-barrier talks after a time)
 
-Hmph, I'm a bit torn on that one. It would be really nice to provide *some*
-amount of sanity checking at core level - e.g. by checking that at least
-one of the four architected counters reads non-zero. But as you say these
-could be disabled, while some other arch/aux counter is enabled, and we
-could then mistakenly disable the feature. So we can't really do much
-unless we handle *each* individual counter. Oh well :/
+For the current arm64 implementation, probably not. For 32-bit it's 
+still a DSB, which might in theory generate a bunch of coherency traffic 
+synchronising with all the other CPUs each time, although unless you're 
+counting every last microWatt even that's unlikely to be anything to 
+worry about in practice. You *could* keep consistency with 
+readl_relaxed_poll_timeout() instead, but you could equally argue the 
+"use regular accessors for simplicity unless there's a provable benefit 
+to using relaxed ones" angle. Up to you :)
 
->> While we're on the topic of detecting broken stuff, what if some CPUs
->> implement some auxiliary counters that some others don't?
->>
-> 
-> I think it should be up to the user of that counter to decide if the
-> usecase is at CPU level or system level. My intention of this base
-> support was to keep it simple and allow users of some counters to
-> decide on their own how to validate and make use of either architected
-> or auxiliary counters.
-> 
-> For example, in the case of frequency invariance, given a platform that
-> does not support cpufreq based invariance, I would validate all CPUs for
-> the use of AMU core and constant counters. If it happens that some CPUs
-> do not support those counters or they are not enabled, we'd have to
-> disable frequency invariance at system level.
-> 
-> For some other scenarios only partial support is needed - only a subset
-> of CPUs need to support the counters for their use to be feasible.
-> 
-> But I believe only the user of the counters can decide, whether this is
-> happening in architecture code, driver code, generic code.
-> 
+Robin.
 
-Right, the FIE support is actually a good example of that, I think.
+>  From a bit of non-scientific testing, rk3328 seems to need at max 20
+> iterations in the wait_lock loop for the pll to lock, when doing cpufreq
+> scaling.
+> 
+> While interestingly px30 takes somewhere between 900 and 2000 iterations
+> on the same pll type.
+> [Though sleeps are not really possible anyway due to pll rates also getting
+> set during of_clk_register early during boot which results in errors about
+> scheduling the idle thread, so in the end it doesn't really matter]
+> 
+> Heiko
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
