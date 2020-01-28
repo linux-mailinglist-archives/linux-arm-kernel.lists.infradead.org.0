@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D53E14AF83
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 07:12:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3460C14AF8A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 07:13:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9wSAAhhMDC6Epeozo5AGG1CKnb90E8iFYAC2iTZO7+Y=; b=m2BRE3mGF0Xo1L
-	BneXUrA1mtHCgyHJw9SbzZXA431RPeLNq9m3rSQKL8QIv/UKQ+O6ujxFtCu8Ix6n54pKaNVWoWkAu
-	Qe9QDS1dbIrbNPOSmFH2O1qRees4je7NUx5paqv1wxhHM5Y+bXP8aUPjfV4MmzpQtodnD6QOYJtZ6
-	IjUGF5sREps5P+qmK5oN2I/4Cc1eZcm4VeZ0UbvvBgSRdl5c8qgZ80Pys45eZHM0J8x8mwjbfLhTS
-	KiuZYqVbVmItdTBV0DZOd5alog3HGTa4hx24PAsgipcPi1zWVJ9d/88f0Qa2EIyUJtMzwnRlvZVC2
-	Q4pGnkZE4cvUID5xIEXA==;
+	List-Owner; bh=dKS6TQrr34kZ+kXNiOilljsS5BMq/u4VerGzs34/n10=; b=Flfksl2+d51SQx
+	ZUvbrSKDF9nueeJjqjsvs5vKYCiYxoWIxVtPyLNnZ5xC5gxoyLLUxE06n8tYoQMol/+1fYN2EwNs0
+	OFteZy8Wq7aj+hHJc6RopyUTKCBemhJpNMcRbOlI7blNfNVPL/1EzYWY9prpx39PizouD8jGQJCWu
+	xRqbZKTbnctrF7kMjcUPgnFhi6iTokbM2BER3Z2R0ErKvJ8s/JbGDuA+m0vZL2epax1GUDKzF3O8W
+	1XV/zUBJy+0HgIdZVpXdonCy7eO88/caLJ8ANnr74bRLrAJ9MOSDXb9B5WVo5smaGWnbRFiZat9bb
+	3bjm2sNQelLjkPPMtlIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwK75-00041u-4u; Tue, 28 Jan 2020 06:12:39 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1iwK7r-0004NQ-SR; Tue, 28 Jan 2020 06:13:27 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwK6u-00041X-7G
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 06:12:29 +0000
+ id 1iwK7a-0004N4-Cj
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 06:13:11 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 27 Jan 2020 22:12:27 -0800
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 27 Jan 2020 22:13:09 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,372,1574150400"; d="scan'208";a="221990078"
+X-IronPort-AV: E=Sophos;i="5.70,372,1574150400"; d="scan'208";a="231802051"
 Received: from linux.intel.com ([10.54.29.200])
- by orsmga008.jf.intel.com with ESMTP; 27 Jan 2020 22:12:27 -0800
+ by orsmga006.jf.intel.com with ESMTP; 27 Jan 2020 22:13:09 -0800
 Received: from [10.252.25.124] (abudanko-mobl.ccr.corp.intel.com
  [10.252.25.124])
- by linux.intel.com (Postfix) with ESMTP id 909725803C1;
- Mon, 27 Jan 2020 22:12:19 -0800 (PST)
-Subject: [PATCH v6 07/10] powerpc/perf: open access for CAP_PERFMON privileged
+ by linux.intel.com (Postfix) with ESMTP id C4312580277;
+ Mon, 27 Jan 2020 22:13:01 -0800 (PST)
+Subject: [PATCH v6 08/10] parisc/perf: open access for CAP_PERFMON privileged
  process
 From: Alexey Budankov <alexey.budankov@linux.intel.com>
 To: Peter Zijlstra <peterz@infradead.org>,
@@ -49,23 +49,23 @@ To: Peter Zijlstra <peterz@infradead.org>,
  Alexei Starovoitov <ast@kernel.org>
 References: <74d524ab-ac11-a7b8-1052-eba10f117e09@linux.intel.com>
 Organization: Intel Corp.
-Message-ID: <3ce8fc61-a61f-5efc-9167-94f5d39b6f1b@linux.intel.com>
-Date: Tue, 28 Jan 2020 09:12:18 +0300
+Message-ID: <17be72ff-dc52-72ef-fbcc-0e9ec8b61604@linux.intel.com>
+Date: Tue, 28 Jan 2020 09:12:59 +0300
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
 In-Reply-To: <74d524ab-ac11-a7b8-1052-eba10f117e09@linux.intel.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_221228_314551_7992EFD3 
-X-CRM114-Status: GOOD (  13.69  )
+X-CRM114-CacheID: sfid-20200127_221310_438630_4043576B 
+X-CRM114-Status: GOOD (  13.89  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -118,31 +118,22 @@ monitoring is discouraged with respect to CAP_PERFMON capability.
 
 Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
 ---
- arch/powerpc/perf/imc-pmu.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/parisc/kernel/perf.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/powerpc/perf/imc-pmu.c b/arch/powerpc/perf/imc-pmu.c
-index cb50a9e1fd2d..e837717492e4 100644
---- a/arch/powerpc/perf/imc-pmu.c
-+++ b/arch/powerpc/perf/imc-pmu.c
-@@ -898,7 +898,7 @@ static int thread_imc_event_init(struct perf_event *event)
- 	if (event->attr.type != event->pmu->type)
- 		return -ENOENT;
+diff --git a/arch/parisc/kernel/perf.c b/arch/parisc/kernel/perf.c
+index 676683641d00..c4208d027794 100644
+--- a/arch/parisc/kernel/perf.c
++++ b/arch/parisc/kernel/perf.c
+@@ -300,7 +300,7 @@ static ssize_t perf_write(struct file *file, const char __user *buf,
+ 	else
+ 		return -EFAULT;
  
 -	if (!capable(CAP_SYS_ADMIN))
 +	if (!perfmon_capable())
  		return -EACCES;
  
- 	/* Sampling not supported */
-@@ -1307,7 +1307,7 @@ static int trace_imc_event_init(struct perf_event *event)
- 	if (event->attr.type != event->pmu->type)
- 		return -ENOENT;
- 
--	if (!capable(CAP_SYS_ADMIN))
-+	if (!perfmon_capable())
- 		return -EACCES;
- 
- 	/* Return if this is a couting event */
+ 	if (count != sizeof(uint32_t))
 -- 
 2.20.1
 
