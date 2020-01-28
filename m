@@ -2,126 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BDA614C24F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 22:45:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C954E14C286
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 23:01:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KyPOtEGQfu4pRH1mOldqSpa9P3tcUwCfZQC3UXcCVow=; b=DprJWNTWaNcM1M
-	tzdnkoT6zGO/sq1WPC9nq4xlvhyovgpz3rKLOUyFBf/EmMB/EX4amIDJ3wTWR00d8s1M/VCXwdrEb
-	czgutLfAkRYtikmV8Te6OoaTFUs6+Fi8tKKd+rfRmzFCJHJNyuYAY4sGFeGpLz2OP7UHaGNpBHlRI
-	Z1UVbKvz1XRuf+thTa1CaFtsRjYpuNgyz75oFun5WmVS8AShZqwD2mgBhU+OuJXYVj/SrEDGNH+5A
-	EOl72R1Xqr7qDqAwDbDY4dijxMPdLx2j1SbAKo0HHevyRaEkcQFUmHXlznZpxj6Q0WfzP4Smt90Td
-	R4VnPnOzMjM6ilLZV61g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=MPzXdeOk+1rhIHTaI4haWrWHen6qYZbhGSePjy5Whlg=; b=uqm
+	l51eMIGCCO1K8r9+UHnomJt5UrsVpjGM3MTehdSnVWhKw0JAnK+WK5cmEo/3C7qKjPcOIo1xp+cf0
+	on+QBoev0V+L1N0shBw3PvQFZ1nb6UFoRYY14iFgK0O974lOXjGlL7STzD7Vp5mGO8kP6ESd/YGQP
+	1Djvd9rYwXNhLIdHNn5qa3Mg3M8+LJGc59I/5EhW8l/cxJYRDH2OTC0VD8d+Z3bfp9BGdPCC99w0s
+	loyOHjqQQwe5y6NFm+68qwZbE7xjHNDsBZVelqsDMxMFBHz8SSa3n6gJ3NLMrwpslBL5rDGQ7doL8
+	9JRiGOIaDndNQKZcO5uk1s6kOJ3n4bA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwYg3-0006y5-5O; Tue, 28 Jan 2020 21:45:43 +0000
-Received: from mail-eopbgr150095.outbound.protection.outlook.com
- ([40.107.15.95] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
+	id 1iwYv5-0003wa-SR; Tue, 28 Jan 2020 22:01:15 +0000
+Received: from mail25.static.mailgun.info ([104.130.122.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwYft-0006wZ-1Q
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 21:45:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GhIZaeayxZfPek2QkKKCAP/fDIJYQ2llofP2ohAm81jZEbvGid7h3jkQH1PKWh93q96mLpsgz6vvw3s3OnYWNWgdELJw4c0YWxtbvmLslD6iEKwa1v3Lxi2XWGjf151J9DqyTZy4JZ4DTAXcbGrIXvGe2pq3va0h5n1+kNzph+mavSPEBBv94h652YYePe0oR0A3a/KBbX1MHyolOFrPnAaCfgMZkNFh6SKTVbrz0gUmm4Ez6lWAWKqFKm8A1WCVhiFcC5qieJQn/PSuQefi7F5PswjPNZG9mruPt3QqWEMYwUFid0YUz0GT9WBiuk8QmQeZKu0SjJ0pTpFXWXIkbA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=htIqDUmDB/HkjJLnaky6uCfhtrGm0jQ51y4ZfpwlidM=;
- b=deECpXI87GjG+U2Xn9WQspafk9NGrVVaKZIF/0p0yDfmGhmOUM6esnpmUVt91pDMmS+jSMEKzYg6w1fUBNOAp0icZzdA8pk+MvxEek8YMFSUPXIfuCYOMvdskrXQO9YPOD80zyQo65iIHFFSR2cupq5dkzyltZJQ6lSRSrK6z79sYlTGinlPO7aWkmvWGcxNUM0VjVPnORRZpe0v9M1AUNJWC9yqbiYWzw6nsIJ6U9b04DS6eGFZ9y2XDWWEKBvl3uvZbcR6ypxe/Hb34J9eGkYsQmGkiMZ8KJkit1XsmsIrQQGzsM29NHkgb0EQ8a4llOgJhZUbyszcW+OREx22Ng==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=htIqDUmDB/HkjJLnaky6uCfhtrGm0jQ51y4ZfpwlidM=;
- b=dFZhbDjx9xCcBWKmPyCYpM3qeWgIN+IfEl0MXYDUCtT8BShk/3mTb5JraqKBuMvFj/OtnoGCh+hlGPBDFncPr079FBMiUnopI4r1ef6XSNhG+6IGvTD72gsteCA3jb8Vw7RyUS0WkzFIDxa9bGgHJHov7g22+nLTNCk+O2nEWbU=
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
- DB3PR0202MB3306.eurprd02.prod.outlook.com (52.134.70.13) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2665.24; Tue, 28 Jan 2020 21:45:24 +0000
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::cd85:a8a5:da14:db13]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::cd85:a8a5:da14:db13%7]) with mapi id 15.20.2665.026; Tue, 28 Jan 2020
- 21:45:24 +0000
-Received: from [192.168.13.3] (213.112.137.122) by
- HE1P189CA0036.EURP189.PROD.OUTLOOK.COM (2603:10a6:7:53::49) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2665.22 via Frontend Transport; Tue, 28 Jan 2020 21:45:23 +0000
-From: Peter Rosin <peda@axentia.se>
-To: Colin Ian King <colin.king@canonical.com>, Dan Carpenter
- <dan.carpenter@oracle.com>, Michal Simek <michal.simek@xilinx.com>, Johan
- Hovold <johan@kernel.org>
-Subject: Re: [PATCH][next][V2] i2c: xiic: fix indentation issue
-Thread-Topic: [PATCH][next][V2] i2c: xiic: fix indentation issue
-Thread-Index: AQHV1PvGmbkS3JsMKku+pbwF3sqcKKf+WLcAgAAReoCAAADJgIACM4iA
-Date: Tue, 28 Jan 2020 21:45:24 +0000
-Message-ID: <35ed6501-3b26-36a9-d332-d4ed3366ebd8@axentia.se>
-References: <20200127102303.44133-1-colin.king@canonical.com>
- <2dd84ab2-a7a3-fdd8-6bd6-07f1b3d5cd00@xilinx.com>
- <20200127120535.GC1847@kadam>
- <89661e5e-7662-81a5-ec36-57367825de5e@canonical.com>
-In-Reply-To: <89661e5e-7662-81a5-ec36-57367825de5e@canonical.com>
-Accept-Language: en-US, sv-SE
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-x-originating-ip: [213.112.137.122]
-x-clientproxiedby: HE1P189CA0036.EURP189.PROD.OUTLOOK.COM (2603:10a6:7:53::49)
- To DB3PR0202MB3434.eurprd02.prod.outlook.com
- (2603:10a6:8:5::30)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peda@axentia.se; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 61d0b376-f696-4ccf-83a1-08d7a43b618c
-x-ms-traffictypediagnostic: DB3PR0202MB3306:
-x-microsoft-antispam-prvs: <DB3PR0202MB33064B43FA7EFD46D89FC50FBC0A0@DB3PR0202MB3306.eurprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:644;
-x-forefront-prvs: 029651C7A1
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(366004)(39830400003)(376002)(346002)(136003)(396003)(189003)(199004)(86362001)(31696002)(54906003)(66556008)(110136005)(52116002)(26005)(316002)(6486002)(66446008)(66476007)(4326008)(31686004)(66946007)(53546011)(16576012)(2906002)(64756008)(36756003)(186003)(81166006)(16526019)(81156014)(8676002)(956004)(5660300002)(508600001)(2616005)(8936002)(71200400001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3306;
- H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: axentia.se does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: cx0gO0oEphHe4jvfcR5Vko6CJaKzrkbM0Je6K+qVjBVppbsvCNWsSArKGtG7ECuQ64QiAQgQwaiAh5NJv3/KliJKxRyQud/KOd6owJnbeablr0vRvh81txjYpb5WbZnqtnP9Z+TQ/UjzdNuDrHcmvAXo1fU8r8ReZXWbZ+jDNwOFVFOmvvQmMTicIA2AIeb3jsSYd5CskPH6p4GEcXYfo1yuRI26YouYogd62JLHzRxkgHhWwZOf59ZXSEzJ9ZI4kh/fJSGyK/On5cCwn8iycexYMUVkpBSQMJa5o0+Q7sPGwBlog/+Znb4X7HmIWmbr5K3UflDswrCe3fRKgNN8waA1vyRhDiXOIg74ms6EkJqHCiSGWR3cFk87SWN7HO+D1CHntSqoo2P7BShXtq0tDL8KlsK72gt+mGEdbN8ircnyAp8Z+ADP3FCui7KRb+fA
-x-ms-exchange-antispam-messagedata: +RJttpQ7vyqtRIPRZ5vFEsCXU8foIiVpQgGGs13OubyrtZgD7UxxN5/eKaqXiGMOaVIP3PwbD8wNGj89Hii301n2TC5rZOqG9jHJryIVugXwhoR1uDdsmkkBjcKZgRcyJRr7R5jERFjAw+ozlZwqwg==
-x-ms-exchange-transport-forked: True
-Content-ID: <46710B87C475CD45A9ED51494BE6860C@eurprd02.prod.outlook.com>
-MIME-Version: 1.0
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: 61d0b376-f696-4ccf-83a1-08d7a43b618c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jan 2020 21:45:24.4857 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: nv2YsKb43HlgiZBhN6f0NrX2asVE5+XMbMAlZD88o09hiInjS3H2k+AFT7kVOntI
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3306
+ id 1iwYua-0003jr-6e
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 22:00:46 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1580248845; h=Message-Id: Date: Subject: Cc: To: From:
+ Sender; bh=Mf6gK8Pui4SYiZYwgie2fpyV4QvxBlRoxDwIb21t6R0=;
+ b=wUDJk1GiF7vPm2aaPE/vLTS2+48SZJ7v/b55y2C15q0zBPIxIDQTHOkxX/Jt4F+DEZkC6lEs
+ dDilwmgNUn3Xq7g3bh1MIP4Vw4vnCrvlins8p62fzJ4EtGC5OksVabF6niFATzQMwxUBvGg9
+ aKPa9EYhB1N+O+PxLLQlOXMewes=
+X-Mailgun-Sending-Ip: 104.130.122.25
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e30af05.7f1ad865d500-smtp-out-n01;
+ Tue, 28 Jan 2020 22:00:37 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 44729C433A2; Tue, 28 Jan 2020 22:00:35 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: jcrouse)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 914EAC43383;
+ Tue, 28 Jan 2020 22:00:29 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 914EAC43383
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=jcrouse@codeaurora.org
+From: Jordan Crouse <jcrouse@codeaurora.org>
+To: iommu@lists.linux-foundation.org
+Subject: [PATCH v5 0/5] iommu/arm-smmu: Split pagetable support for arm-smmu-v2
+Date: Tue, 28 Jan 2020 15:00:14 -0700
+Message-Id: <1580248819-12644-1-git-send-email-jcrouse@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_134533_280916_9E1BC234 
-X-CRM114-Status: GOOD (  14.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200128_140045_141936_38525121 
+X-CRM114-Status: GOOD (  13.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.15.95 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [104.130.122.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -136,78 +86,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: Jeffrey Hugo <jeffrey.l.hugo@gmail.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ AngeloGioacchino Del Regno <kholk11@gmail.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Wen Yang <wen.yang99@zte.com.cn>,
+ will@kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Ben Dooks <ben.dooks@codethink.co.uk>, linux-arm-kernel@lists.infradead.org,
+ Wambui Karuga <wambui.karugax@gmail.com>, freedreno@lists.freedesktop.org,
+ Fritz Koenig <frkoenig@google.com>, linux-arm-msm@vger.kernel.org,
+ Sharat Masetty <smasetty@codeaurora.org>,
+ Jeykumar Sankaran <jsanka@codeaurora.org>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Sean Paul <sean@poorly.run>,
+ Allison Randal <allison@lohutok.net>, Enrico Weigelt <info@metux.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Douglas Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
+ zhengbin <zhengbin13@huawei.com>, Rob Clark <robdclark@gmail.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Drew Davenport <ddavenport@chromium.org>,
+ Brian Masney <masneyb@onstation.org>, robin.murphy@arm.com,
+ Georgi Djakov <georgi.djakov@linaro.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-01-27 13:08, Colin Ian King wrote:
-> On 27/01/2020 12:05, Dan Carpenter wrote:
->> On Mon, Jan 27, 2020 at 12:03:02PM +0100, Michal Simek wrote:
->>> On 27. 01. 20 11:23, Colin King wrote:
->>>> From: Colin Ian King <colin.king@canonical.com>
->>>>
->>>> There is a statement that is indented one level too deeply, remove
->>>> the extraneous tab.
->>>>
->>>> Signed-off-by: Colin Ian King <colin.king@canonical.com>
->>>> ---
->>>> V2: fix type in commit message
->>>> ---
->>>>  drivers/i2c/busses/i2c-xiic.c | 2 +-
->>>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>>>
->>>> diff --git a/drivers/i2c/busses/i2c-xiic.c b/drivers/i2c/busses/i2c-xiic.c
->>>> index b17d30c9ab40..90c1c362394d 100644
->>>> --- a/drivers/i2c/busses/i2c-xiic.c
->>>> +++ b/drivers/i2c/busses/i2c-xiic.c
->>>> @@ -261,7 +261,7 @@ static int xiic_clear_rx_fifo(struct xiic_i2c *i2c)
->>>>  		xiic_getreg8(i2c, XIIC_DRR_REG_OFFSET);
->>>>  		if (time_after(jiffies, timeout)) {
->>>>  			dev_err(i2c->dev, "Failed to clear rx fifo\n");
->>>> -				return -ETIMEDOUT;
->>>> +			return -ETIMEDOUT;
->>>>  		}
->>>>  	}
->>>>  
->>>>
->>>
->>> As was suggested by Peter you should also add Fixes: <sha1> ("patch
->>> subject")
->>>
->>
->> It's not really a bugfix, it's just a cleanup.
-> 
-> I'm surprised i wasn't asked for a bug number too.
+This is another iteration for the split pagetable support based on the
+suggestions from Robin and Will [1].
 
-Very funny.
+Background: In order to support per-context pagetables the GPU needs to enable
+split tables so that we can store global buffers in the TTBR1 space leaving the
+GPU free to program the TTBR0 register with the address of a context specific
+pagetable.
 
-I realize that you, the three complainers (Johan, Dan and Colin), together
-have almost 10000 commits. So, I feel a bit outranked.
+If the DOMAIN_ATTR_SPLIT_TABLES attribute is set on the domain before attaching,
+the context bank assigned to the domain will be programmed to allow translations
+in the TTBR1 space. Translations in the TTBR0 region will be disallowed because,
+as Robin pointe out, having a un-programmed TTBR0 register is dangerous.
 
-However, this ridicule is unfair.
+The driver can determine if TTBR1 was successfully programmed by querying
+DOMAIN_ATTR_SPLIT_TABLES after attaching. The domain geometry will also be
+updated to reflect the virtual address space for the TTBR1 range.
 
-The problem here is that Colin sent a v2, ignoring my suggestion to add
-a fixes-tag without mentioning that my suggestion was in fact ignored
-(and why). That is a sure way to invite someone else to point out what
-seemed like an omission. Which happened. And then this farce ensued.
+Upcoming changes will allow auxiliary domains to be attached to the device which
+will enable and program TTBR0.
 
-So, Colin, take a long look in the mirror and direct your sarcasm in
-whatever direction you feel appropriate.
+This patchset is based on top of linux-next-20200127.
 
-I also maintain that noone writes code like this on purpose (at least
-not without some ulterior motive). This is the kind of stuff that cause
-problems and wastes time later when someone mis-reads the code. You three
-people, with all those commits, should know that. My point is that this
-is more than just cleanup and is indeed fixing a bug. Claiming otherwise
-is just silly. The compiler is not the only consumer of the code.
+Change log:
 
-Cheers,
-Peter
+v4: Only program TTBR1 when split pagetables are requested. TTBR0 will be
+enabled later when an auxiliary domain is attached
+v3: Remove the implementation specific and make split pagetable support
+part of the generic configuration
+
+[1] https://lists.linuxfoundation.org/pipermail/iommu/2020-January/041373.html
+
+Jordan Crouse (5):
+  iommu: Add DOMAIN_ATTR_SPLIT_TABLES
+  iommu/arm-smmu: Add support for TTBR1
+  drm/msm: Attach the IOMMU device during initialization
+  drm/msm: Refactor address space initialization
+  drm/msm/a6xx: Support split pagetables
+
+ drivers/gpu/drm/msm/adreno/a2xx_gpu.c    | 16 ++++++++++
+ drivers/gpu/drm/msm/adreno/a3xx_gpu.c    |  1 +
+ drivers/gpu/drm/msm/adreno/a4xx_gpu.c    |  1 +
+ drivers/gpu/drm/msm/adreno/a5xx_gpu.c    |  1 +
+ drivers/gpu/drm/msm/adreno/a6xx_gpu.c    | 51 ++++++++++++++++++++++++++++++++
+ drivers/gpu/drm/msm/adreno/adreno_gpu.c  | 23 ++++++++++----
+ drivers/gpu/drm/msm/adreno/adreno_gpu.h  |  8 +++++
+ drivers/gpu/drm/msm/disp/dpu1/dpu_kms.c  | 18 ++++-------
+ drivers/gpu/drm/msm/disp/mdp4/mdp4_kms.c | 18 +++++------
+ drivers/gpu/drm/msm/disp/mdp5/mdp5_cfg.c |  4 ---
+ drivers/gpu/drm/msm/disp/mdp5/mdp5_kms.c | 18 +++++------
+ drivers/gpu/drm/msm/msm_drv.h            |  8 ++---
+ drivers/gpu/drm/msm/msm_gem_vma.c        | 36 ++++------------------
+ drivers/gpu/drm/msm/msm_gpu.c            | 49 ++----------------------------
+ drivers/gpu/drm/msm/msm_gpu.h            |  4 +--
+ drivers/gpu/drm/msm/msm_gpummu.c         |  6 ----
+ drivers/gpu/drm/msm/msm_iommu.c          | 18 ++++++-----
+ drivers/gpu/drm/msm/msm_mmu.h            |  1 -
+ drivers/iommu/arm-smmu.c                 | 48 +++++++++++++++++++++++++-----
+ drivers/iommu/arm-smmu.h                 | 22 ++++++++++----
+ include/linux/iommu.h                    |  2 ++
+ 21 files changed, 198 insertions(+), 155 deletions(-)
+
+-- 
+2.7.4
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
