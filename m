@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A48C14AF19
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 06:29:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B04B614AF1A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 06:29:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p2IlPSMFNcbbMt0i4zkWtDpcyjlWbp8LbOwIAd/Yr00=; b=irfco0F9JZpov+
-	EroyhmZwkKHjDEvuetba4CykvNnG130tCOr7tLkuc/Uf8VgFwMhHH0BvuZooely0AEn/mBLfZFUfN
-	T8G01N44AMt6q9Jgnwsedw2pYvR6PL6Pu6B4PYVCi06yEgkNJj/RjP3taFxaO8pUQKw98GlMXWaA8
-	9i8etPvONImRzedgEuBtD0Rss/DWYD5iUB9uM1y0Xbck1HC7Smiquv9PYz42s+ddcfOSM3Ugu6qlg
-	oc+VIclpxtikegEGf1t50T4+X4ENf7UoAXvCLoGCZyUx3+5k/QI/wxfq9oQu66FktfJeiBJreA1Kg
-	tSGCASisCM4Me1TTN9Sw==;
+	List-Owner; bh=sN4ZyFRPssEFEAwgYPeH5RN6hmN+pwfsUoGIlW9wVh4=; b=YC5c2jpdOYHXgq
+	OCSvfuhuO2GKo53/M36UMbnDLlmYPVEv1GNbkErjPWne/S9lGLUObanLKxipnZsoRLleRfGrthB67
+	OR/L64iUgDvuJGPht6Q9kHIu0Gis/FRymxKCoCy2e81sING+gS75E2z1uTdO8MmxsZeVGCXDXISOE
+	mw5d24bAy4FE3Dqe1km6NC287JAhLnNwbxt/ZrZEQfL7ODb/b4WvsBLEkhmUXQRNB9lYGC8TMD7d4
+	FbvK19H0C/odTlAnZSLktV4OG2zSZbWbKYOVEcTbqgJO3NddW+VsMXWLGPdfX7DImLHTuMTHEoEHw
+	rUD+NdQs8xpucH2jGCYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwJRB-00021x-69; Tue, 28 Jan 2020 05:29:21 +0000
+	id 1iwJRQ-0002H5-5F; Tue, 28 Jan 2020 05:29:36 +0000
 Received: from mail-eopbgr80041.outbound.protection.outlook.com ([40.107.8.41]
  helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwJQY-0001nt-18
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 05:28:43 +0000
+ id 1iwJQZ-0001nt-Qq
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 05:28:45 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=SO6lY2WYULVMnmKIsW8arATFaqfPs3rI1hHgCHu3o9IICLyVQ4uHNLGfOFdQvJjP3HXfePZrkIy3c4d0YfEpg+WDwTQJZOhJrmmIi3oIHcCin+gvW5HnQ3mKC/nrkecqrgfv/uKuhIlKH0VlTq3QdUyzPkspY449wOADNBnoxGY39+MDPq9WnTOksxC5tENPKY9sl7jB2KEpr1y6/BkWEJlqIxFPUlKFX11vsZ7fm4bLSb6l588HIs4TFpKABlyb2EmHwiI/VIp+EaOd3QcOEAriB5uuFbDgHE+k3cmj/kryJWi7lWXIoHM02QIDlt6sESFPy7rakFjDh4yZtXfsYw==
+ b=GjK12UOq3qwvCpDSwcgnWEeHjV0o759YfgnB1Qv2HrxHsjCfM0b7f0Yf2Cp3FFiq2P1as2h21laUmWiANRSlhB9Ccn4Gli88QzSqkw4/fBYoKGZdYAK7bPppo+9fAU1f56sMJSW2VW4Kmhc644ptB4B4AwenA1+mUr+CW9X3RzsHX1qQbJAtwbS10mAUCShDC2no/i+OhSvwtIz1EExwd3oCHIMUTvbKI3e4ctMMuM+E0u24YqbnPhi8FDUAj0BP0pcCUbcvqze4nvebsA29kd1tvXEz2WK3SLuKD0yFn4lx2e0p1r7tm+JhMqeO86tBMdbuJQPolzBxL/4TnADEFQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xQ3zTQ6kFuym5Bl6y1u2gUNP0cH+hU/PnWj9x9N0zpQ=;
- b=CaD97y98u/r79SPqn5gXyXDo4y5qn7n81Kb1WPLAJQ+BHwPo9MHUcoe4xWq1oZk/Hd4hz+tN1PV6XtFYVAfsIE2IK1VkXWdxwESW2c8P7jG0z6Bs2uEMb/XJ3qVaGQYk4+m4q8ft3ZdX+fCaIWSMcFYKpCpu6AeirbcA5klvHbyzyVy1OGVS/S/93zxOFYDNxwCWuEXkjqEtSja+u1NxcmWSqcx7jRow+KeYlBISicmlW+VUntfNXp1dpyLNZlKvUP5XQH/4oXh/bf+RWqTounrzhWmnvkYplWKU/5FJtcHgz1jUhpViOeCA/G2dQLCUAUQVhcz33v9LNYKw1Zq7YA==
+ bh=7QomV2iyuDdDfBBb+S8qw0VS/XK5vknZpvEXh1RbFdk=;
+ b=kr5YneypvK0RuJh4zdYgBOa6nY09bbsPqI1/3fS/XvkhgFpvNtMKpNcnAnQtKslYtH7YhFe5JIxd1cm2YMpXW3q+dP1NMAEnuF/KYok+mn8c9Ad58vML7UrZi39p1Svshk1jSxUEayaibEAlaKJ1HVvcubZf6Y/lfZGuiSv2aw7GIyfuImwYejUDjED++oXjoqUaZ2pmiwQYIrDGp/vzmWlHJkFnhlfiOy2Y4/6GuIuEuxeu9dJq73alW62unOw/oC8Il8+aCrb5Ji8fFSkFhANGb4YxhjYD3lbNuwMRSyrrtfkLJfSYYA6HQqP4mgj+wOaJqf3bp9NChPTDDaUarg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=xQ3zTQ6kFuym5Bl6y1u2gUNP0cH+hU/PnWj9x9N0zpQ=;
- b=bzSft2iJf182/PCA8HEfPMwPWl/+BrZAa9MDNTsRQq3uhRn8VFTkSwQmqq7CD0aEGgW47bd8zvLZ7s+meay7/JqjekCQtwIcN0F3+XoarHibl2RlO5IG0Zb81nQN+mGjxX6wZ/FZG/J14DOy4uhiu2rYFoa9AbvYqawp5lr24S4=
+ bh=7QomV2iyuDdDfBBb+S8qw0VS/XK5vknZpvEXh1RbFdk=;
+ b=VtCd2wMemMAJjCon/SF8+8veWgiqq8XVC3wOp96mOepRcUsBkJX/IKS4zepHl5M4IkO9y3i+4ctdHbZF3yZg86asE2TfgQcccVOAHbAwLrb0bg21X4L46DWP09Gl0v8izCdeLiX08Dypaw9nfAVZIjk9EZTnYgCSK3TkYoBilqc=
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB5890.eurprd04.prod.outlook.com (20.178.202.92) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2665.22; Tue, 28 Jan 2020 05:28:37 +0000
+ 15.20.2665.22; Tue, 28 Jan 2020 05:28:41 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2665.026; Tue, 28 Jan 2020
- 05:28:37 +0000
+ 05:28:41 +0000
 Received: from localhost.localdomain (119.31.174.66) by
  HK0PR03CA0113.apcprd03.prod.outlook.com (2603:1096:203:b0::29) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2665.22 via Frontend Transport; Tue, 28 Jan 2020 05:28:32 +0000
+ 15.20.2665.22 via Frontend Transport; Tue, 28 Jan 2020 05:28:37 +0000
 From: Peng Fan <peng.fan@nxp.com>
 To: "sboyd@kernel.org" <sboyd@kernel.org>, "shawnguo@kernel.org"
  <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "festevam@gmail.com" <festevam@gmail.com>, Abel Vesa <abel.vesa@nxp.com>,
  Leonard Crestez <leonard.crestez@nxp.com>
-Subject: [PATCH V4 1/4] clk: imx: composite-8m: add imx8m_clk_hw_composite_core
-Thread-Topic: [PATCH V4 1/4] clk: imx: composite-8m: add
- imx8m_clk_hw_composite_core
-Thread-Index: AQHV1ZvKDxq3UpFxMEyFV9hEtp7TTw==
-Date: Tue, 28 Jan 2020 05:28:36 +0000
-Message-ID: <1580189015-5744-2-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V4 2/4] clk: imx: imx8mq: use imx8m_clk_hw_composite_core
+Thread-Topic: [PATCH V4 2/4] clk: imx: imx8mq: use imx8m_clk_hw_composite_core
+Thread-Index: AQHV1ZvNSuPHrnVkw0ajxH2uX1Z86Q==
+Date: Tue, 28 Jan 2020 05:28:41 +0000
+Message-ID: <1580189015-5744-3-git-send-email-peng.fan@nxp.com>
 References: <1580189015-5744-1-git-send-email-peng.fan@nxp.com>
 In-Reply-To: <1580189015-5744-1-git-send-email-peng.fan@nxp.com>
 Accept-Language: en-US
@@ -77,14 +76,14 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: c51b3319-ea4d-4768-30d1-08d7a3b2eca9
+x-ms-office365-filtering-correlation-id: 2dbaf1f0-d39f-4b0d-c087-08d7a3b2ef78
 x-ms-traffictypediagnostic: AM0PR04MB5890:|AM0PR04MB5890:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB58908C3B49BE1CC6419D7D78880A0@AM0PR04MB5890.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3276;
+x-microsoft-antispam-prvs: <AM0PR04MB5890046B19CA96EAB2FD36AF880A0@AM0PR04MB5890.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2657;
 x-forefront-prvs: 029651C7A1
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(346002)(366004)(376002)(136003)(396003)(189003)(199004)(36756003)(69590400006)(110136005)(54906003)(4326008)(71200400001)(52116002)(44832011)(66556008)(64756008)(478600001)(66476007)(66946007)(66446008)(2616005)(5660300002)(956004)(316002)(86362001)(6486002)(186003)(8676002)(16526019)(6512007)(81156014)(81166006)(6506007)(6636002)(2906002)(26005)(8936002);
+ SFS:(10009020)(4636009)(39860400002)(346002)(366004)(376002)(136003)(396003)(189003)(199004)(36756003)(69590400006)(110136005)(54906003)(4326008)(71200400001)(52116002)(44832011)(66556008)(64756008)(478600001)(66476007)(66946007)(66446008)(2616005)(5660300002)(956004)(316002)(86362001)(6486002)(186003)(8676002)(16526019)(6512007)(81156014)(81166006)(6506007)(6636002)(2906002)(26005)(8936002)(6666004)(32563001);
  DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5890;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
@@ -92,20 +91,20 @@ received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: hp9H5PyO5Nv42ftq7ZcRvqq5A74BQ4h0S+fhMwseNB+RqdH2ZUK5da8ArQ9COfHBqv/MPqrr2TpXt/FZQ6KAJKPMRJpBh1+nUp392ryEFThR7THOqaeF5kcr4/qy30ZwbvczvexEV3DhTOqb5jy9JUWt5eVfEEWXV4CU6OtvDQLO56PbguF/ofFaHpEhldgVvQspvmyfvNJAJo8EevP8HYNHtZiJSMjT+ZIm9M3ybUKDDu4ueG6LCKh8CPMFChrfOM2qDJbDb4qbvtAJoTS5XP3CstQ0oOlXsDQG/jylq/0J3fgluJNxwgZ8d4ape+GIXdm21xllyqD/kwLNhtJv/mZ+1EFhl6fPpJjFtEqV5VGR5ApNcMda6/JIzAq+JDWI79kGZY7IKdXX54MpKrNQEALnbvs3nxTJYIdIgRXn3Pf1WeVMnQw6EI+yxraP74V36vOahRrz1dJj6deVyGQ76Ou0Vb43flYHvFkk5LP+pnT2F4TFyaqBVJzvexX+7Pmv9sLhLlsEBTIRORgl0JWvOX9nkE1PDJfNiKtRms/1nYA=
-x-ms-exchange-antispam-messagedata: QFeah0X2Fc6NwW0jMZlZVpxeUllN6RtuUp+w1u7Cs9fILZUAkQTHipmxWwlyyxZob1nLEvAm8L9fmnMx/sEEEj5dR3HM0jmSiiHQNT1AXQT8Lttmb8Gf4iIywErs8t7K619Rlm8W7kMbxVYQrSmNNg==
+x-microsoft-antispam-message-info: iqPfC4ptr+voFBIKtlbehC19mm6orQ9n7P0jqI+lDcGeUAZPRWbV8pirUeD4fpr9FdP78x73NAYl5feigbS+Qx5YrJH8oVEmEtSN2z7H3NhLfLiKVqPWsa79aM7sixEo2LIRPkIIkiobXb6oNmThpUcIeFYUAdUYSjQFuIyLO8jN0DHaqvdvWIq9NoJCel1a2leL3rhth08FUGcUIq/uNG2jFM76vK5aJC5VPnJoO5EQt5Bf6Y5L458agWzDqRO6AMZ6h/abJ9mxpdMfgi1352OKKeCr39XQ7hztPql3rQBHv0nnoqAHXlAYphBeM4pn8++YI0yGNDIlH3iAXDXbjjkabaxaMzMXD6rLafM2mxnHRAQU1ujIKjQ77CssVavVFXrU8IkX0Qj05D298bnXp5wtUF1FQkfJuYdydYVQAImQRJdJQ3PBXH5Vw+bUufkGA791OO09o2OVPwxLugcm9LYu35pW/Wgj3V+QJywJrbyl1QxGHfm/87gDdV3wkDJ/BpcbFQlEJBzUL1oydsANyNEufZMQYU0VhIk5HtvWyyHdiKnWk34mJVjmSC+hMMzX
+x-ms-exchange-antispam-messagedata: bBNq8eCF0XuJBRlYfHlM66Ubi3Sh/gGhLHY0DIq84awREVnq/6tBMbj28SZwNi2VZ7IPoWloZUK1+GlPcvRTwMnrkANf9qwoYGW86NX786fKKDQ3VPJrzDWCL5NHLqVY6CNlO0PtiXNTQD4aXt5Qtw==
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c51b3319-ea4d-4768-30d1-08d7a3b2eca9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jan 2020 05:28:36.8312 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2dbaf1f0-d39f-4b0d-c087-08d7a3b2ef78
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jan 2020 05:28:41.4961 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: TE+6gdJb+4v8mGQcEB0XN3XYXBhe557OHGo7hDgGPPvLxfVzDyBXGVubwhWWPMZNcSCkDAlMzfCQsSBahapKRQ==
+X-MS-Exchange-CrossTenant-userprincipalname: oz20OC00wc1tNQySHbAA7x4ma60SPzVqPOmnEtCoQYY0ShFLXlxnJrLpdB9YsHlLghVOWYz/BTvowog3rJ+7MA==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5890
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_212842_074790_5A90B9AA 
-X-CRM114-Status: GOOD (  13.77  )
+X-CRM114-CacheID: sfid-20200127_212843_886901_02443A43 
+X-CRM114-Status: GOOD (  11.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -148,116 +147,89 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-There are several clock slices, current composite code
-only support bus/ip clock slices, it could not support core
-slice.
+Use imx8m_clk_hw_composite_core to simplify code.
 
-So introduce a new API imx8m_clk_hw_composite_core to support
-core slice. To core slice, post divider with 3 bits width and
-no pre divider. Other fields are same as bus/ip slices.
-
-Add a flag IMX_COMPOSITE_CORE for the usecase.
+Add new definitions, and X_SRC/CG/DIV will be alias to the new
+definitions for backwards compatibility
 
 Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- drivers/clk/imx/clk-composite-8m.c | 18 ++++++++++++++----
- drivers/clk/imx/clk.h              | 13 +++++++++++--
- 2 files changed, 25 insertions(+), 6 deletions(-)
+ drivers/clk/imx/clk-imx8mq.c             | 34 ++++++++++++++++++--------------
+ include/dt-bindings/clock/imx8mq-clock.h |  7 ++++++-
+ 2 files changed, 25 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/clk/imx/clk-composite-8m.c b/drivers/clk/imx/clk-composite-8m.c
-index 20f7c91c03d2..4869c16376bf 100644
---- a/drivers/clk/imx/clk-composite-8m.c
-+++ b/drivers/clk/imx/clk-composite-8m.c
-@@ -15,6 +15,7 @@
- #define PCG_PREDIV_MAX		8
+diff --git a/drivers/clk/imx/clk-imx8mq.c b/drivers/clk/imx/clk-imx8mq.c
+index 4c0edca1a6d0..ac9452cd9a82 100644
+--- a/drivers/clk/imx/clk-imx8mq.c
++++ b/drivers/clk/imx/clk-imx8mq.c
+@@ -403,22 +403,26 @@ static int imx8mq_clocks_probe(struct platform_device *pdev)
  
- #define PCG_DIV_SHIFT		0
-+#define PCG_CORE_DIV_WIDTH	3
- #define PCG_DIV_WIDTH		6
- #define PCG_DIV_MAX		64
- 
-@@ -126,6 +127,7 @@ static const struct clk_ops imx8m_clk_composite_divider_ops = {
- struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
- 					const char * const *parent_names,
- 					int num_parents, void __iomem *reg,
-+					u32 composite_flags,
- 					unsigned long flags)
- {
- 	struct clk_hw *hw = ERR_PTR(-ENOMEM), *mux_hw;
-@@ -133,6 +135,7 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
- 	struct clk_divider *div = NULL;
- 	struct clk_gate *gate = NULL;
- 	struct clk_mux *mux = NULL;
-+	const struct clk_ops *divider_ops;
- 
- 	mux = kzalloc(sizeof(*mux), GFP_KERNEL);
- 	if (!mux)
-@@ -150,8 +153,16 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
- 
- 	div_hw = &div->hw;
- 	div->reg = reg;
--	div->shift = PCG_PREDIV_SHIFT;
--	div->width = PCG_PREDIV_WIDTH;
-+	if (composite_flags & IMX_COMPOSITE_CORE) {
-+		div->shift = PCG_DIV_SHIFT;
-+		div->width = PCG_CORE_DIV_WIDTH;
-+		divider_ops = &clk_divider_ops;
-+	} else {
-+		div->shift = PCG_PREDIV_SHIFT;
-+		div->width = PCG_PREDIV_WIDTH;
-+		divider_ops = &imx8m_clk_composite_divider_ops;
-+	}
+ 	/* CORE */
+ 	hws[IMX8MQ_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src", base + 0x8000, 24, 3, imx8mq_a53_sels, ARRAY_SIZE(imx8mq_a53_sels));
+-	hws[IMX8MQ_CLK_M4_SRC] = imx_clk_hw_mux2("arm_m4_src", base + 0x8080, 24, 3, imx8mq_arm_m4_sels, ARRAY_SIZE(imx8mq_arm_m4_sels));
+-	hws[IMX8MQ_CLK_VPU_SRC] = imx_clk_hw_mux2("vpu_src", base + 0x8100, 24, 3, imx8mq_vpu_sels, ARRAY_SIZE(imx8mq_vpu_sels));
+-	hws[IMX8MQ_CLK_GPU_CORE_SRC] = imx_clk_hw_mux2("gpu_core_src", base + 0x8180, 24, 3,  imx8mq_gpu_core_sels, ARRAY_SIZE(imx8mq_gpu_core_sels));
+-	hws[IMX8MQ_CLK_GPU_SHADER_SRC] = imx_clk_hw_mux2("gpu_shader_src", base + 0x8200, 24, 3, imx8mq_gpu_shader_sels,  ARRAY_SIZE(imx8mq_gpu_shader_sels));
+-
+ 	hws[IMX8MQ_CLK_A53_CG] = imx_clk_hw_gate3_flags("arm_a53_cg", "arm_a53_src", base + 0x8000, 28, CLK_IS_CRITICAL);
+-	hws[IMX8MQ_CLK_M4_CG] = imx_clk_hw_gate3("arm_m4_cg", "arm_m4_src", base + 0x8080, 28);
+-	hws[IMX8MQ_CLK_VPU_CG] = imx_clk_hw_gate3("vpu_cg", "vpu_src", base + 0x8100, 28);
+-	hws[IMX8MQ_CLK_GPU_CORE_CG] = imx_clk_hw_gate3("gpu_core_cg", "gpu_core_src", base + 0x8180, 28);
+-	hws[IMX8MQ_CLK_GPU_SHADER_CG] = imx_clk_hw_gate3("gpu_shader_cg", "gpu_shader_src", base + 0x8200, 28);
+-
+ 	hws[IMX8MQ_CLK_A53_DIV] = imx_clk_hw_divider2("arm_a53_div", "arm_a53_cg", base + 0x8000, 0, 3);
+-	hws[IMX8MQ_CLK_M4_DIV] = imx_clk_hw_divider2("arm_m4_div", "arm_m4_cg", base + 0x8080, 0, 3);
+-	hws[IMX8MQ_CLK_VPU_DIV] = imx_clk_hw_divider2("vpu_div", "vpu_cg", base + 0x8100, 0, 3);
+-	hws[IMX8MQ_CLK_GPU_CORE_DIV] = imx_clk_hw_divider2("gpu_core_div", "gpu_core_cg", base + 0x8180, 0, 3);
+-	hws[IMX8MQ_CLK_GPU_SHADER_DIV] = imx_clk_hw_divider2("gpu_shader_div", "gpu_shader_cg", base + 0x8200, 0, 3);
 +
- 	div->lock = &imx_ccm_lock;
- 	div->flags = CLK_DIVIDER_ROUND_CLOSEST;
++	hws[IMX8MQ_CLK_M4_CORE] = imx8m_clk_hw_composite_core("arm_m4_core", imx8mq_arm_m4_sels, base + 0x8080);
++	hws[IMX8MQ_CLK_VPU_CORE] = imx8m_clk_hw_composite_core("vpu_core", imx8mq_vpu_sels, base + 0x8100);
++	hws[IMX8MQ_CLK_GPU_CORE] = imx8m_clk_hw_composite_core("gpu_core", imx8mq_gpu_core_sels, base + 0x8180);
++	hws[IMX8MQ_CLK_GPU_SHADER] = imx8m_clk_hw_composite("gpu_shader", imx8mq_gpu_shader_sels, base + 0x8200);
++	/* For backwards compatibility */
++	hws[IMX8MQ_CLK_M4_SRC] = hws[IMX8MQ_CLK_M4_CORE];
++	hws[IMX8MQ_CLK_M4_CG] = hws[IMX8MQ_CLK_M4_CORE];
++	hws[IMX8MQ_CLK_M4_DIV] = hws[IMX8MQ_CLK_M4_CORE];
++	hws[IMX8MQ_CLK_VPU_SRC] = hws[IMX8MQ_CLK_VPU_CORE];
++	hws[IMX8MQ_CLK_VPU_CG] = hws[IMX8MQ_CLK_VPU_CORE];
++	hws[IMX8MQ_CLK_VPU_DIV] = hws[IMX8MQ_CLK_VPU_CORE];
++	hws[IMX8MQ_CLK_GPU_CORE_SRC] = hws[IMX8MQ_CLK_GPU_CORE];
++	hws[IMX8MQ_CLK_GPU_CORE_CG] = hws[IMX8MQ_CLK_GPU_CORE];
++	hws[IMX8MQ_CLK_GPU_CORE_DIV] = hws[IMX8MQ_CLK_GPU_CORE];
++	hws[IMX8MQ_CLK_GPU_SHADER_SRC] = hws[IMX8MQ_CLK_GPU_SHADER];
++	hws[IMX8MQ_CLK_GPU_SHADER_CG] = hws[IMX8MQ_CLK_GPU_SHADER];
++	hws[IMX8MQ_CLK_GPU_SHADER_DIV] = hws[IMX8MQ_CLK_GPU_SHADER];
  
-@@ -166,8 +177,7 @@ struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
+ 	/* BUS */
+ 	hws[IMX8MQ_CLK_MAIN_AXI] = imx8m_clk_hw_composite_critical("main_axi", imx8mq_main_axi_sels, base + 0x8800);
+@@ -567,7 +571,7 @@ static int imx8mq_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MQ_CLK_WDOG2_ROOT] = imx_clk_hw_gate4("wdog2_root_clk", "wdog", base + 0x4540, 0);
+ 	hws[IMX8MQ_CLK_WDOG3_ROOT] = imx_clk_hw_gate4("wdog3_root_clk", "wdog", base + 0x4550, 0);
+ 	hws[IMX8MQ_CLK_VPU_G1_ROOT] = imx_clk_hw_gate2_flags("vpu_g1_root_clk", "vpu_g1", base + 0x4560, 0, CLK_SET_RATE_PARENT | CLK_OPS_PARENT_ENABLE);
+-	hws[IMX8MQ_CLK_GPU_ROOT] = imx_clk_hw_gate4("gpu_root_clk", "gpu_core_div", base + 0x4570, 0);
++	hws[IMX8MQ_CLK_GPU_ROOT] = imx_clk_hw_gate4("gpu_root_clk", "gpu_core", base + 0x4570, 0);
+ 	hws[IMX8MQ_CLK_VPU_G2_ROOT] = imx_clk_hw_gate2_flags("vpu_g2_root_clk", "vpu_g2", base + 0x45a0, 0, CLK_SET_RATE_PARENT | CLK_OPS_PARENT_ENABLE);
+ 	hws[IMX8MQ_CLK_DISP_ROOT] = imx_clk_hw_gate2_shared2("disp_root_clk", "disp_dc8000", base + 0x45d0, 0, &share_count_dcss);
+ 	hws[IMX8MQ_CLK_DISP_AXI_ROOT]  = imx_clk_hw_gate2_shared2("disp_axi_root_clk", "disp_axi", base + 0x45d0, 0, &share_count_dcss);
+diff --git a/include/dt-bindings/clock/imx8mq-clock.h b/include/dt-bindings/clock/imx8mq-clock.h
+index 3bab9b21c8d7..2b88723310bd 100644
+--- a/include/dt-bindings/clock/imx8mq-clock.h
++++ b/include/dt-bindings/clock/imx8mq-clock.h
+@@ -424,6 +424,11 @@
+ #define IMX8MQ_SYS2_PLL_500M_CG			283
+ #define IMX8MQ_SYS2_PLL_1000M_CG		284
  
- 	hw = clk_hw_register_composite(NULL, name, parent_names, num_parents,
- 			mux_hw, &clk_mux_ops, div_hw,
--			&imx8m_clk_composite_divider_ops,
--			gate_hw, &clk_gate_ops, flags);
-+			divider_ops, gate_hw, &clk_gate_ops, flags);
- 	if (IS_ERR(hw))
- 		goto fail;
- 
-diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
-index b05213b91dcf..f074dd8ec42e 100644
---- a/drivers/clk/imx/clk.h
-+++ b/drivers/clk/imx/clk.h
-@@ -477,20 +477,29 @@ struct clk_hw *imx_clk_hw_cpu(const char *name, const char *parent_name,
- 		struct clk *div, struct clk *mux, struct clk *pll,
- 		struct clk *step);
- 
-+#define IMX_COMPOSITE_CORE	BIT(0)
+-#define IMX8MQ_CLK_END				285
++#define IMX8MQ_CLK_GPU_CORE			285
++#define IMX8MQ_CLK_GPU_SHADER			286
++#define IMX8MQ_CLK_M4_CORE			287
++#define IMX8MQ_CLK_VPU_CORE			288
 +
- struct clk_hw *imx8m_clk_hw_composite_flags(const char *name,
- 					    const char * const *parent_names,
- 					    int num_parents,
- 					    void __iomem *reg,
-+					    u32 composite_flags,
- 					    unsigned long flags);
++#define IMX8MQ_CLK_END				289
  
-+#define imx8m_clk_hw_composite_core(name, parent_names, reg)	\
-+	imx8m_clk_hw_composite_flags(name, parent_names, \
-+			ARRAY_SIZE(parent_names), reg, \
-+			IMX_COMPOSITE_CORE, \
-+			CLK_SET_RATE_NO_REPARENT | CLK_OPS_PARENT_ENABLE)
-+
- #define imx8m_clk_composite_flags(name, parent_names, num_parents, reg, \
- 				  flags) \
- 	to_clk(imx8m_clk_hw_composite_flags(name, parent_names, \
--				num_parents, reg, flags))
-+				num_parents, reg, 0, flags))
- 
- #define __imx8m_clk_hw_composite(name, parent_names, reg, flags) \
- 	imx8m_clk_hw_composite_flags(name, parent_names, \
--		ARRAY_SIZE(parent_names), reg, \
-+		ARRAY_SIZE(parent_names), reg, 0, \
- 		flags | CLK_SET_RATE_NO_REPARENT | CLK_OPS_PARENT_ENABLE)
- 
- #define __imx8m_clk_composite(name, parent_names, reg, flags) \
+ #endif /* __DT_BINDINGS_CLOCK_IMX8MQ_H */
 -- 
 2.16.4
 
