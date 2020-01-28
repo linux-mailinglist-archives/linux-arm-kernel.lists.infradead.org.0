@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D60214B1EE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:43:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55FDB14B1E0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:42:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X+Zq3RxOfyk0ngMuHVz2myyD1uDy/Bn3uKxH8K4Hxac=; b=PCC6XeRNYJ2YtC
-	SBFbRT2Bmpe/59epJUrMEUlZIYrFJR++6gHtV4ZK1gNnKjKJwpK5uQknp3brL4GQlo25XYsa+rzby
-	ZYLLSHIWVnKdt6/SSdq7RcmzvYbrbK+bJ4mSEtYb7kMH89xxFysd2/aOCyVLZO/IqNwATsHC0HfYY
-	9CMqzPJgCW7bEij2p37sSwu7tSu6ZbikiJ0iyAA7wIzN29lr+AN9zmts4sIoCcLXDuCh5EMPf7y6Y
-	1FrkQi55Otm2iG8+T3izN1+qve03caELbAoaajc1Cn7/Z1u6B/9SSfsvO+u5RNvf/vTEGq0488fCu
-	r6i7hluBchihztvf7qsg==;
+	List-Owner; bh=4TyupaceUFm2AnfP5uH6nMyxs1wJtutVW2+V5Qikvmc=; b=b2oTZeCNedGlDa
+	pTGdELylCZwAdXNJw++Qpl9XeYIYrVqtaOHY5XNkaweV92eP6ssxtj1e8Jyz/+HT7mma5/AUwxmWf
+	KJciV5rseWvVu3SryFLURsgAdAt+TrYmzzfyniapxXHRxyg5Ov4UunzfCGOoXYU+r8VqPAbZZA5m+
+	Tlr7bhc+Ao+w1B9kVXavdn//OfOA93pU3WPmXJKGaF7svMIBxEuZ1Oy+ice5yt5tMelD48ovZDjv8
+	UTy5GwIFjNWG9/mEpZas9VFG1iPM+tC3Nd1gtM3nqVjCX6tFV01eY2EXOLl5164zPADuCCru3tmNS
+	6GBye8H9/2CW0j8G3ptA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwNOx-0008HA-1s; Tue, 28 Jan 2020 09:43:19 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iwNOB-0007bL-9Y; Tue, 28 Jan 2020 09:42:31 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwNO0-0007ZY-JX
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 09:42:23 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ id 1iwNO0-0007ZV-IV
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 09:42:22 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00S9g9Eo007603; Tue, 28 Jan 2020 10:42:11 +0100
+ 00S9XRtS026096; Tue, 28 Jan 2020 10:42:11 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=meXrSPvvSNZwM5HWiSKL727KyNlCOtYyZ+UfmgFHvs0=;
- b=TzTK4D9ABmvIvWE5xh+svbw84ZDLMsf/RxoEK2U5EJVzxHoOe8WfLeXcnMizLgsdvoxx
- VYZ5MowTqIWcpOQTRHF0dr3yM2CZXUcsU9SrJwsqV5rydTS3R+scTBzXsYYpA6Wj5S95
- SRJf8ssKZArx/dw2NKJFVb9eEEgVGIXDxIhhC19bkjiinXoPoZeSmfkHDmgEEovx2NId
- 5PAErDjGWAlLRO7cTksCTNNA9V4kKtp0MsyLcb9lj7uTrMZ48JS8jHP/dnDqRgyAdvYN
- Fbufn/DFQ8wOmWA4Q+F1x6qQFWQc1RlRaFV4sr3qksIPXHu0MSTgn19x3yBlKWJiNts5 yw== 
+ bh=IyA5aTp3/+pbmYuqWZPjub3ixeGxRIPZ8Nm8rzvgpb8=;
+ b=b/fgh1LlFXyxNZt/aSiCsjSeGpZ36W1tqi2x7a9AraqiNcRNsDlXahk+WdJum3DFBW8E
+ b1DII+LWKUk6aEAYby5KujlnOpI/1+IIEg+iF8hXgC7XXyP8OGiLJSgNkYu+QFnUjsot
+ oT25orxBvaL31iv4xcXRiBZymHACFjnPFquvzvS9U7Ggeitjp2ZFJxy+k+HFCD5wcyGU
+ 6Ob1HxXuUzBQdTgRBFtk+A109PW7oUdidplJ2tgKij7rnQmH/6FLT4iEXRyrHhac8bdR
+ UUuGseDvph6jWmYRYAhimj3BO0xAaS4H8kNnbwhxZJsXJM5OEQfLR4MuunBuSGhcQ7gX Lg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xrc1353nm-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xrbpaw9xa-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
  Tue, 28 Jan 2020 10:42:11 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B038E100039;
- Tue, 28 Jan 2020 10:42:08 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 726A6100040;
+ Tue, 28 Jan 2020 10:42:09 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A20F321D3C0;
- Tue, 28 Jan 2020 10:42:08 +0100 (CET)
-Received: from localhost (10.75.127.46) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 28 Jan 2020 10:42:08
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 67D3221D3C0;
+ Tue, 28 Jan 2020 10:42:09 +0100 (CET)
+Received: from localhost (10.75.127.47) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 28 Jan 2020 10:42:09
  +0100
 From: Amelie Delaunay <amelie.delaunay@st.com>
 To: Vinod Koul <vkoul@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
  <alexandre.torgue@st.com>
-Subject: [PATCH 2/4] dmaengine: stm32-dmamux: fix clock handling in probe
- sequence
-Date: Tue, 28 Jan 2020 10:41:56 +0100
-Message-ID: <20200128094158.20361-3-amelie.delaunay@st.com>
+Subject: [PATCH 3/4] dmaengine: stm32-dmamux: use reset controller only at
+ probe time
+Date: Tue, 28 Jan 2020 10:41:57 +0100
+Message-ID: <20200128094158.20361-4-amelie.delaunay@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200128094158.20361-1-amelie.delaunay@st.com>
 References: <20200128094158.20361-1-amelie.delaunay@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-28_02:2020-01-24,
  2020-01-28 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_014220_945155_EA60A87E 
-X-CRM114-Status: GOOD (  16.72  )
+X-CRM114-CacheID: sfid-20200128_014220_923029_177F5201 
+X-CRM114-Status: GOOD (  16.01  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -107,61 +108,51 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Etienne Carriere <etienne.carriere@st.com>
 
-This change ensures the DMAMUX device is reset only once it is clocked
-and that clock is released in a safe state when probe operation fails.
+Remove reset controller reference from device instance since it is
+used only at probe time.
 
 Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
 Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
 ---
- drivers/dma/stm32-dmamux.c | 20 +++++++++++---------
- 1 file changed, 11 insertions(+), 9 deletions(-)
+ drivers/dma/stm32-dmamux.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/dma/stm32-dmamux.c b/drivers/dma/stm32-dmamux.c
-index 08d2395c8943..a862d3339fb7 100644
+index a862d3339fb7..1dfecbac64cf 100644
 --- a/drivers/dma/stm32-dmamux.c
 +++ b/drivers/dma/stm32-dmamux.c
-@@ -259,6 +259,12 @@ static int stm32_dmamux_probe(struct platform_device *pdev)
+@@ -35,7 +35,6 @@ struct stm32_dmamux {
+ struct stm32_dmamux_data {
+ 	struct dma_router dmarouter;
+ 	struct clk *clk;
+-	struct reset_control *rst;
+ 	void __iomem *iomem;
+ 	u32 dma_requests; /* Number of DMA requests connected to DMAMUX */
+ 	u32 dmamux_requests; /* Number of DMA requests routed toward DMAs */
+@@ -182,6 +181,7 @@ static int stm32_dmamux_probe(struct platform_device *pdev)
+ 	struct stm32_dmamux_data *stm32_dmamux;
+ 	struct resource *res;
+ 	void __iomem *iomem;
++	struct reset_control *rst;
+ 	int i, count, ret;
+ 	u32 dma_req;
+ 
+@@ -265,11 +265,11 @@ static int stm32_dmamux_probe(struct platform_device *pdev)
  		return ret;
  	}
  
-+	ret = clk_prepare_enable(stm32_dmamux->clk);
-+	if (ret < 0) {
-+		dev_err(&pdev->dev, "clk_prep_enable error: %d\n", ret);
-+		return ret;
-+	}
-+
- 	stm32_dmamux->rst = devm_reset_control_get(&pdev->dev, NULL);
- 	if (!IS_ERR(stm32_dmamux->rst)) {
- 		reset_control_assert(stm32_dmamux->rst);
-@@ -274,14 +280,6 @@ static int stm32_dmamux_probe(struct platform_device *pdev)
- 	pm_runtime_set_active(&pdev->dev);
- 	pm_runtime_enable(&pdev->dev);
+-	stm32_dmamux->rst = devm_reset_control_get(&pdev->dev, NULL);
+-	if (!IS_ERR(stm32_dmamux->rst)) {
+-		reset_control_assert(stm32_dmamux->rst);
++	rst = devm_reset_control_get(&pdev->dev, NULL);
++	if (!IS_ERR(rst)) {
++		reset_control_assert(rst);
+ 		udelay(2);
+-		reset_control_deassert(stm32_dmamux->rst);
++		reset_control_deassert(rst);
+ 	}
  
--	if (!IS_ERR(stm32_dmamux->clk)) {
--		ret = clk_prepare_enable(stm32_dmamux->clk);
--		if (ret < 0) {
--			dev_err(&pdev->dev, "clk_prep_enable error: %d\n", ret);
--			return ret;
--		}
--	}
--
- 	pm_runtime_get_noresume(&pdev->dev);
- 
- 	/* Reset the dmamux */
-@@ -290,8 +288,12 @@ static int stm32_dmamux_probe(struct platform_device *pdev)
- 
- 	pm_runtime_put(&pdev->dev);
- 
--	return of_dma_router_register(node, stm32_dmamux_route_allocate,
-+	ret = of_dma_router_register(node, stm32_dmamux_route_allocate,
- 				     &stm32_dmamux->dmarouter);
-+	if (ret)
-+		clk_disable_unprepare(stm32_dmamux->clk);
-+
-+	return ret;
- }
- 
- #ifdef CONFIG_PM
+ 	stm32_dmamux->iomem = iomem;
 -- 
 2.17.1
 
