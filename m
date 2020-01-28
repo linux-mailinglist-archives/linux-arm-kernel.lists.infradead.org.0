@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A392114BD19
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 16:40:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3274814BD1A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 16:41:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=baD1d4+jfsueRBk32cYXVlNHqMiVAFTHjNWoI1AtbOE=; b=QJrFuascodfMuU
-	5ABnFs1wMsCiUVlhiPIiww5LGYY0xdsr8IxiJ+yoRFUIUK73Oq+k4sJsw/7AayeesnHTtAexYrGXu
-	1CrbRIB5ARVmQyZoAzeewBGjPfXfSGu2WJtkaEx2wc3ofr0AA6HkBk8JBd7AYEuX85XDbqbK6PCoH
-	bq/8i0hvm9OB/3KTW5CubbO3pnk0qTgwZ4hceIzOrPZkrtr34yxOBpbTMFROPslyhqAINP4KO2154
-	/Akb6RQpwx5/B4CJUQrtgSTraCGHz8PaHc0nH1B5Kl+TveeM4TsR16dzoljkeG2jNBmGMPyU5ls+c
-	isk7Seqsy2s8ImSU6A7Q==;
+	List-Owner; bh=vweTSGU2ONxI20hHoYNddVmIT4HPupy21Edzc3Z82j0=; b=XtZD6wtzFpovO8
+	LuW9hOy5bgj3u3qQg4hVA1iVXNikOEA3u+nu4nVbOyESyMnBgAefz3xMoK4UTeZ1WMGYGp7Rkmdu2
+	yHQedGdhYVHuC30BynhvPeEvsTd0ZhllobLzgzU3VmvIl7fkiPZLLdBIrYwclrthHP/g9bWQaPbOc
+	unMop4FnYV3q4UkFdSDyuawe2C74/Ey1fJ4gu57uVBWzO8HQ2WU+DNZjoKEev+7CmYMxV/fE1lW+1
+	HnTFab1oaoqFnCcO0rsvGeciCiljpBng94YNR0MsxjZS502uzLa6ayHkAHikhisKAXfqXJET7g7FM
+	jJlZx7cRz97rkoz0uNyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwSyl-0006WZ-Tk; Tue, 28 Jan 2020 15:40:39 +0000
+	id 1iwSyz-0006nH-3A; Tue, 28 Jan 2020 15:40:53 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwSwk-0003qG-99
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 15:38:35 +0000
+ id 1iwSwo-0003tF-Hr
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 15:38:40 +0000
 Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00SFX6T6021991; Tue, 28 Jan 2020 16:38:29 +0100
+ 00SFX6T7021991; Tue, 28 Jan 2020 16:38:30 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=BYJzgUMk733kauvTheIZCyk54aZylmh0QOl0v2b0GrM=;
- b=FirNxXdnv49pNeVN1usCbem2Cb2nRu2k4Tw4PsQujj7GM8CmdqSeR+fy5T6U6fuL92CN
- CgupI1Hyz0yV8cXqR1FRnKkOvfrD0PROALtQDWZfX5pffmVw+ZAJuNjaQuGnizWk6LR3
- 7Y8dZNYWahYPZWjXpSHNZPHzP43Allr2xocKcwv0dAN2KtbwCdB9iiJOiwnpnvmTuMT/
- oTY6aGLyrfP5dQgYiv4mg2xtu/TzxbLs0Qvc9faObd49LcyaK8lI9/Izo4Zs8nnNK3cm
- q0T3I+Xykq6+9rG9UL3n8KtqornDLYjSrjoOphBaXUie3yuPeMSvHVqiE71/1QKz0BX3 cA== 
+ bh=EpLaj1uTqlqIXOijIZ+YGkBlgBoIhfiPnvEapUy+Zj4=;
+ b=OP6eHigrOq+xTQR2TTmyl+frb0fPBLoISPaZptCGJaX+DwZ4da5qsIAY3YV+aSTpDz1P
+ f0tPorxPoFl8Na68wFAjKxy9L7iIIG72UGAWe+BHrfEiDs3vt8Nal1sY03gTlnCR6GV5
+ Ju++ZXpGgAs5kmhdKk14W//VCxyvtXvSARjDBXI38Yd1OD82xi+os+JpFO/G/Ieu2kBL
+ RDmPf0arI+R41qBGlrEZZEMlsA5M5tgBNuuoBnPyruAdT2oj5Sxs40fweoSjB5NgCYjN
+ 1IHLPm9RDol8mjtz44wodaPB9m0QCvbzSVcOEKqCvufo2TpLo6PTptHSz4/uKk58YsKI Pw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xrcaxxmdt-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xrcaxxmdw-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 28 Jan 2020 16:38:29 +0100
+ Tue, 28 Jan 2020 16:38:30 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 351F710002A;
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D8BB3100038;
  Tue, 28 Jan 2020 16:38:25 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 22FDE2BF9D0;
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id C5DAD2BF9D0;
  Tue, 28 Jan 2020 16:38:25 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 28 Jan 2020 16:38:24
+Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 28 Jan 2020 16:38:25
  +0100
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <broonie@kernel.org>, <robh@kernel.org>, <arnd@arndb.de>,
  <shawnguo@kernel.org>, <s.hauer@pengutronix.de>,
  <fabio.estevam@nxp.com>, <sudeep.holla@arm.com>, <lkml@metux.net>
-Subject: [PATCH v2 6/7] ARM: dts: stm32: Add firewall node for stm32mp157 SoC
-Date: Tue, 28 Jan 2020 16:38:05 +0100
-Message-ID: <20200128153806.7780-7-benjamin.gaignard@st.com>
+Subject: [PATCH v2 7/7] ARM: dts: stm32: enable firewall controller node on
+ stm32mp157c-ed1
+Date: Tue, 28 Jan 2020 16:38:06 +0100
+Message-ID: <20200128153806.7780-8-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
 In-Reply-To: <20200128153806.7780-1-benjamin.gaignard@st.com>
 References: <20200128153806.7780-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG3NODE3.st.com (10.75.127.9) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-28_05:2020-01-28,
  2020-01-28 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_073834_635400_C8148716 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200128_073838_914131_3C698306 
+X-CRM114-Status: GOOD (  13.18  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -105,31 +106,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Declare ETZPC device as a firewall controller node for stm32mp157 SoC
+Enable ETZPC and set configuration for CEC node
 
 Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 ---
- arch/arm/boot/dts/stm32mp157c.dtsi | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm/boot/dts/stm32mp157c-ev1.dts | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
-index ed8b258256d7..8a00dad9688e 100644
---- a/arch/arm/boot/dts/stm32mp157c.dtsi
-+++ b/arch/arm/boot/dts/stm32mp157c.dtsi
-@@ -1499,6 +1499,13 @@
- 			};
- 		};
+diff --git a/arch/arm/boot/dts/stm32mp157c-ev1.dts b/arch/arm/boot/dts/stm32mp157c-ev1.dts
+index 3789312c8539..5b72ef2a54df 100644
+--- a/arch/arm/boot/dts/stm32mp157c-ev1.dts
++++ b/arch/arm/boot/dts/stm32mp157c-ev1.dts
+@@ -6,6 +6,7 @@
+ /dts-v1/;
  
-+		etzpc: etzpc@5c007000 {
-+			compatible = "st,stm32-etzpc";
-+			reg = <0x5c007000 0x400>;
-+			#firewall-cells = <2>;
-+			status = "okay";
-+		};
-+
- 		i2c6: i2c@5c009000 {
- 			compatible = "st,stm32f7-i2c";
- 			reg = <0x5c009000 0x400>;
+ #include "stm32mp157c-ed1.dts"
++#include <dt-bindings/bus/firewall/stm32-etzpc.h>
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/input/input.h>
+ 
+@@ -77,6 +78,7 @@
+ &cec {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&cec_pins_a>;
++	firewall-0 = <&etzpc STM32_ETZPC_CEC STM32_ETZPC_NON_SECURE>;
+ 	status = "okay";
+ };
+ 
 -- 
 2.15.0
 
