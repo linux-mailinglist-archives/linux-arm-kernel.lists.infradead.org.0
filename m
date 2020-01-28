@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2625D14B177
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:08:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A60A114B181
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 10:09:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h4BYNc98I8RFsGXs/iQYEKT9KMN0Tbf7cbdeMgRw/E4=; b=nOmhGSIsalzT5P
-	35fjGwr8sHSVlHGVXfaCWl1k1r2AILCAUWoOgAY6lHbz7Ltn8EaEav4gixVikcZKyqmFkhoJTXnxe
-	zZMVpMdI2igmvgCMBfyRWPSxd1oCQluFE/57NJw+hZy5NbHipLmI3D+gS/8eyfD3QRScFKxtUvnVq
-	yMkhklhNsKanAi5coRmVUCKQW9+F83Qjic60ynYWOvYLjlMdraEJjySef4krwYIhjkoSjGLqqm+1P
-	gNQu5gxpmb+FvA8hCS19xW/w5M4Z0NQS7YRJ6Avwvzos5UotYQZpqJxVqm8uFM+ejCLVc+CZtOS4j
-	F0ck8+/D9vvFneyF2C+g==;
+	List-Owner; bh=5iFosE+uiLQf0PY8kgNoNrvk+MT8xiiMY+wWYRBiBfg=; b=cbnKlsPphlca6y
+	OTB2e8LiAw38gVIrjh4AB3CMwLD2suufrOFMoXiOJSW/ZNMImQ3hbnExfLii0T1Zpg4v4reDbTI2p
+	ardT/YVKuT2lOn39a20RTAHnPXxXaplnxWP5hGsw9uUubq+n1uZf0STnq+pngiPmD+8kFs9VylK+S
+	i9BzelW5Hf2w+rmyjvIBe2XPYBqUJOsdNPJ/sKRo9damM/fSDXTjYJVhCHYW3f34dgAPiT+E+xAtg
+	EI681dfup+nrmG7rt9K5HgBTckNhAkf/UV6PQvL33ZDe7VHGdI5AF4R6KbpiB/WWzchh4H/lOwDEX
+	+fOGpJtxv6HakiDtf+pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwMqu-00026i-Iu; Tue, 28 Jan 2020 09:08:08 +0000
+	id 1iwMrd-00034D-DG; Tue, 28 Jan 2020 09:08:53 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwMph-00012f-FB
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 09:06:55 +0000
+ id 1iwMpj-00013a-Ev
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 09:06:59 +0000
 Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00S93bVd014413; Tue, 28 Jan 2020 10:06:49 +0100
+ 00S93bVg014413; Tue, 28 Jan 2020 10:06:51 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=uwVKjFIFlaDhQtYabxIoz0B6CJflTfSuEcRda3jxomk=;
- b=POcqSICWxXBkWXwU3yLBQ4gMYEIjmvGMVpDFsQm0QJ1SuIRpDWyS8fTq2D41GMXsJXXh
- ByPep/f8kaPqPvMxhXFxveXNTwOVN0yxXNR7W4EFCbDOW0cTnzZBkjmHLGiX6qDrhMQl
- EfXz+2E3Z/StkbpnGnyZhWaqcAocPmgW6we8pQ7tyFIQof8DBOlj70ctqesWfP6mrQe1
- efQQU5+mwgaYQ+jA7ahIOdGW1rc0ai+76/CsMNZoXeEoKMuOik63c+G1kXvRtNUPX2rI
- x3CmD5fcoKghtVufNh4Yl4OZBtjTl/NzferOfwyuAOAqhN1oqEZC/exmP6itvHYvXAZ+ 1g== 
+ bh=2rv368pE4g4zz6kp57DPDD0CXhY4gWUUealEUKO5UXo=;
+ b=MjTccmsswg7XdUI+bIb23dLtsJ/i1ae3KT+vW+spslVJmeQADEbcVu0S9lO6LJEkbF/0
+ IxTMr5kh5sihtLS+gTRP8SiQcJfwwO1wKb3bQh2MWLbPjtU8OtMl3uyFur6kqKanv+4i
+ qOzImuTRnu7h43EyjsBvWzLx1+3EhBJ/XXf6ce3+UNQU4VjHdT/+3pRdFqHPx7/rLlUi
+ 1FOU074lKe3ShOGyGkGuP1ISdYEd1jbsRLWUiHHLmpNuCxKBr+GwKPzcCfnfyhK5gUpi
+ szx3TeDZkfmOU4SJpFhEfj33aX718Kd2NvtBlBnHrE5mQqBglmbxntFXNduwDnE8YZXV BQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xrbpaw4sv-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xrbpaw4t4-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 28 Jan 2020 10:06:49 +0100
+ Tue, 28 Jan 2020 10:06:50 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 88D6B100044;
- Tue, 28 Jan 2020 10:06:42 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 95F3D10004B;
+ Tue, 28 Jan 2020 10:06:43 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7A0A4212A35;
- Tue, 28 Jan 2020 10:06:42 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG6NODE1.st.com (10.75.127.16)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 84D7B212A38;
+ Tue, 28 Jan 2020 10:06:43 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG6NODE1.st.com (10.75.127.16)
  with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 28 Jan 2020 10:06:42 +0100
+ Tue, 28 Jan 2020 10:06:43 +0100
 From: Ludovic Barre <ludovic.barre@st.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH V2 3/9] mmc: mmci: add a reference at mmc_host_ops in mmci
- struct
-Date: Tue, 28 Jan 2020 10:06:30 +0100
-Message-ID: <20200128090636.13689-4-ludovic.barre@st.com>
+Subject: [PATCH V2 4/9] mmc: mmci: add private pointer for variant
+Date: Tue, 28 Jan 2020 10:06:31 +0100
+Message-ID: <20200128090636.13689-5-ludovic.barre@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200128090636.13689-1-ludovic.barre@st.com>
 References: <20200128090636.13689-1-ludovic.barre@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG6NODE1.st.com
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG6NODE1.st.com
  (10.75.127.16)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-28_02:2020-01-24,
  2020-01-28 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_010653_810144_23A04C47 
-X-CRM114-Status: GOOD (  15.60  )
+X-CRM114-CacheID: sfid-20200128_010655_819714_827CB903 
+X-CRM114-Status: GOOD (  12.99  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -106,51 +105,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The variant init function may need to add a mmc_host_ops,
-for example to add the execute_tuning support if this feature
-is available.
-This patch adds mmc_host_ops pointer in mmci struct.
+In variant init function, some references may be allocated for
+variant specific usage. Add a private void* to mmci_host struct
+allows at variant functions to access on this references by
+mmci_host structure.
 
 Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
 ---
- drivers/mmc/host/mmci.c | 4 ++--
  drivers/mmc/host/mmci.h | 1 +
- 2 files changed, 3 insertions(+), 2 deletions(-)
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/mmc/host/mmci.c b/drivers/mmc/host/mmci.c
-index e9ffce8d41ea..d0a041c9e6cd 100644
---- a/drivers/mmc/host/mmci.c
-+++ b/drivers/mmc/host/mmci.c
-@@ -1933,6 +1933,8 @@ static int mmci_probe(struct amba_device *dev,
- 
- 	host = mmc_priv(mmc);
- 	host->mmc = mmc;
-+	host->mmc_ops = &mmci_ops;
-+	mmc->ops = &mmci_ops;
- 
- 	/*
- 	 * Some variant (STM32) doesn't have opendrain bit, nevertheless
-@@ -2072,8 +2074,6 @@ static int mmci_probe(struct amba_device *dev,
- 	host->stop_abort.arg = 0;
- 	host->stop_abort.flags = MMC_RSP_R1B | MMC_CMD_AC;
- 
--	mmc->ops = &mmci_ops;
--
- 	/* We support these PM capabilities. */
- 	mmc->pm_caps |= MMC_PM_KEEP_POWER;
- 
 diff --git a/drivers/mmc/host/mmci.h b/drivers/mmc/host/mmci.h
-index ea6a0b5779d4..55acc0971a44 100644
+index 55acc0971a44..ddcdfb827996 100644
 --- a/drivers/mmc/host/mmci.h
 +++ b/drivers/mmc/host/mmci.h
-@@ -407,6 +407,7 @@ struct mmci_host {
- 	u32			mask1_reg;
- 	u8			vqmmc_enabled:1;
- 	struct mmci_platform_data *plat;
-+	struct mmc_host_ops	*mmc_ops;
+@@ -410,6 +410,7 @@ struct mmci_host {
+ 	struct mmc_host_ops	*mmc_ops;
  	struct mmci_host_ops	*ops;
  	struct variant_data	*variant;
++	void			*variant_priv;
  	struct pinctrl		*pinctrl;
+ 	struct pinctrl_state	*pins_opendrain;
+ 
 -- 
 2.17.1
 
