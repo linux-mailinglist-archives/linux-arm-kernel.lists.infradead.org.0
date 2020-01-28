@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8CBC14C05C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 19:52:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34CCE14C05D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 19:52:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BRvUN0kUZrfBaYHik0gXXl2jgISIzsgyPG4SjY1o+1o=; b=kffPnuEne16Fhh
-	iTTXi/6a8XCv1YTMz+ABu4M72kO0iZVgjh2ZxC/GzRGByHkWmuSC/e9sVE2UC4UQB4s9Ou5FR5qNd
-	Kfqz1aI7cyH/mLhMkmMxpMhtPyX3pmqNq+Xmp5jqb3z5lGAGNlFMBtmxADkvZdCCQxJ5+zEQGHHcO
-	WoJsi0toHQSm2r3kb/RLNf3LlKMtjYENTIQ9fkldKgkPkb3ZuhhpEFrum5F4nwWpcGEhEfQGSxP1X
-	1ykTPrCD3Xu8VCsmVJFhRtbI9G7Ua3HkyHxjet2KBt5e4nUx0D+k5DMnh/B6KYIouRnd6xuKqEP8f
-	lzgz3WAsFV2ovFjJuxUw==;
+	List-Owner; bh=/Os7yYRE15OzR+FINFPKua1Akl8A8yeeAmc3WXP8ZrY=; b=d/VXiQF2M4KfGa
+	/6b+/+k5brXFZ9Yqhl21h5edK7Ho4GviyuJ/pxKyrNIucwWa/2htL+B6tkTzOVmyKGrSzUqjAEdmP
+	SxzX+D3dE6KscWc6ODqNy1gd689OFMmJmEyMEFxSFrONdfCo/KbvdJl7jVh9cbaQGJ1zMZpelEAMs
+	Cu6jTIPiuN5XPSYrFpDlWHofaj7tnTHbD9Xx48WLsqivNZ1oMI3uWF+VawRR/t72ZDH0jPs302fFL
+	zFB2XOVBIiDsFe82F22VBpc5WAxq+zVNPbg4CIpP4hfUcWbq6AlOuQyHFIQYfIsdNRkZZge9zENZ6
+	YatFM7+bYdl5RhypC/sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwVxy-00027q-VU; Tue, 28 Jan 2020 18:52:02 +0000
+	id 1iwVyC-0002Mx-JL; Tue, 28 Jan 2020 18:52:16 +0000
 Received: from mail-qk1-x74a.google.com ([2607:f8b0:4864:20::74a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwVvw-0007qR-5r
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 18:49:57 +0000
-Received: by mail-qk1-x74a.google.com with SMTP id 24so8966671qka.16
+ id 1iwVvy-0007sr-Ff
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 18:49:59 +0000
+Received: by mail-qk1-x74a.google.com with SMTP id i135so9004354qke.14
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Jan 2020 10:49:55 -0800 (PST)
+ Tue, 28 Jan 2020 10:49:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=7qZDsX8PGWVYt4iEMt/hEQ+wAm1UsjKf1d+2vHZ6hPI=;
- b=KS9unC98BEN8reSNsSatSdGOyj9rhjRIhLpWA4Oym2iRcIbRcgujukrAJVafuptIVG
- 4EooaqgtRT4z7P+gwfQEa6aLMk1SNJwyZKwX2crlZuGyjCIlB019qhZdYW5KDGB7SEtd
- 0PuR+pszsgeqyBZrTkpSnRyXr+6t67faREc4ZftAuETIwNEYKpHUPeqa0nonCQaAHyP2
- wD25AjVMJD2kosLIy8FOnX8wGleJoEeAginjYdtC6nC2di6uwR2ExHm37hyKDxKy72du
- p8OwOQ+2vYq84iwfEx6zX7e/LJhw9x1StdJnITGBGfd8VptfiMqFNL8peyNZv1qVoP+e
- +6qw==
+ :cc; bh=SyMS6kTKxjGvSfy1yskMuy1o1NPxNd1pRRReN/eh/Yw=;
+ b=iDoWJGqwVEP2tHMWm4+bS9TCXvecvsiZmIGPR2wyOSJfmTsLMvUaQm2ursorFU3Ra7
+ NuHDNghwRgHXAAk9m9KAPMbK4uTyIcT9xr9wE2QiZ1dUFfX57GqHyiEoehb3XJLjS98N
+ YFNOY7pkup2SOO21fY5am9qSl3hqr7M+8fKeSXR1JT8QJuNrKvAgik306CX6uTTelKVO
+ jSwC4WXDfkQ4RkIwPUjXYeg4cRSfyvTDlYYopLdqGGEns5H+6Co2aSHsmd2TRUBwb4ST
+ Jn0rsT+JOm35IDm2DnWe8BFGBEW8Lny+TWpjqr/yQiw7tMRlFt978M/BMe3aSyd1G4ZY
+ ck+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=7qZDsX8PGWVYt4iEMt/hEQ+wAm1UsjKf1d+2vHZ6hPI=;
- b=FFsuR0uRm/eQQ6+mA/b0OmTh3XIXF7oJ4OQVQiKpLZvKkH3urHU8SPFnlwTrCJtIky
- RdzbmzvW005CZ4oUwt4H99ykO3ZT8TDFlOZqzSNgyEezIObrNml3WKLLiyNE5wXjX/Ii
- aG4uiYl0VTxh6l7msOvI5eQzl5MK8wOSI1IOcwy8AXXoXuKj8MC0fp994zEnH6qOQ2oX
- 5Fadp7Pu+BcX7Yh/KQf8/hwV5u7Qqr10i1LywOHqZnSTSAWDKFhwio708GSU3NKsT+5o
- Y0D4x/jtTlcfJOpiWyLb3RLRFnGMQ07ksdWcO2NDIVwf591BrRbMKCSM5R6dR9lAShAg
- Frgw==
-X-Gm-Message-State: APjAAAXFFH6dwJjPtel/Ox1G8ntrZoqnw+WJWBOXg2r+OOYDeRUUkNiC
- urHWhmn+5ULjpXfqKzywn45MC20ACnUa03lzP4E=
-X-Google-Smtp-Source: APXvYqz1ANohbb/5vvdBoYWBYp5QONjn2Th3Usy5pRDWtLh7ROCJORzEP/CMHwmepkxfOG/b7sXyq/Vz+8AN5R27oWY=
-X-Received: by 2002:a05:6214:965:: with SMTP id
- do5mr23635758qvb.202.1580237393882; 
- Tue, 28 Jan 2020 10:49:53 -0800 (PST)
-Date: Tue, 28 Jan 2020 10:49:29 -0800
+ bh=SyMS6kTKxjGvSfy1yskMuy1o1NPxNd1pRRReN/eh/Yw=;
+ b=c2Xa+1Y+zTpKjGgwO8V8LQ3T77roe9AQyDbdd2vQLt0URT176kXFx66Cd3jll+U2/K
+ bw1fz8qB7rRciIEvqpANEPb1v07H+QZAJ5Z0665ercmsS7ixZv1oL12y06/rAw4voI4x
+ 7FpppYdLxHMzQydXywv31+HM/qXkjf8NKYhuhagn/9srfBglAGViaDOBm/VCZYn/22tj
+ GupWSB6Lxr6xY3UwwOI5vHrd24JORGDq5dEJ9+E951wrmD9QM8Q/ALIceDdAg7sXaE/j
+ QBLK8Iy69dogydAopYU7rOFrT5xR4wvWH4pQasQ9X5iUCzHMiTWyzAw/gAiJVWO1Lxwq
+ p0hw==
+X-Gm-Message-State: APjAAAVMqrH3J8TYLtj2g4da2V7xUnzv9MeN6mgN6/u3gCZXI2FdZThx
+ ptonH2tCW1hzZVSfMDnRCIzwC8dh5lqEAfm6YiY=
+X-Google-Smtp-Source: APXvYqwBDfyzeAgl4Hbq75PkVeA00YwL16x26LdN4T6C4RXjAAHG16RhCosHW83/V2HMDMrDJF1ZlFrzqFIRTexeGxM=
+X-Received: by 2002:a0c:eacb:: with SMTP id y11mr24452398qvp.68.1580237396348; 
+ Tue, 28 Jan 2020 10:49:56 -0800 (PST)
+Date: Tue, 28 Jan 2020 10:49:30 -0800
 In-Reply-To: <20200128184934.77625-1-samitolvanen@google.com>
-Message-Id: <20200128184934.77625-7-samitolvanen@google.com>
+Message-Id: <20200128184934.77625-8-samitolvanen@google.com>
 Mime-Version: 1.0
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20200128184934.77625-1-samitolvanen@google.com>
 X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
-Subject: [PATCH v7 06/11] arm64: preserve x18 when CPU is suspended
+Subject: [PATCH v7 07/11] arm64: efi: restore x18 if it was corrupted
 From: Sami Tolvanen <samitolvanen@google.com>
 To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>, 
  Steven Rostedt <rostedt@goodmis.org>,
@@ -67,8 +66,8 @@ To: Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
  Ard Biesheuvel <ard.biesheuvel@linaro.org>, Mark Rutland <mark.rutland@arm.com>,
  james.morse@arm.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_104956_258137_C8B30F6C 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20200128_104958_546077_754EB5DF 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
@@ -112,70 +111,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Don't lose the current task's shadow stack when the CPU is suspended.
+If we detect a corrupted x18, restore the register before jumping back
+to potentially SCS instrumented code. This is safe, because the wrapper
+is called with preemption disabled and a separate shadow stack is used
+for interrupt handling.
 
 Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
 Reviewed-by: Kees Cook <keescook@chromium.org>
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-Acked-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/suspend.h |  2 +-
- arch/arm64/mm/proc.S             | 14 ++++++++++++++
- 2 files changed, 15 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/efi-rt-wrapper.S | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/suspend.h b/arch/arm64/include/asm/suspend.h
-index 8939c87c4dce..0cde2f473971 100644
---- a/arch/arm64/include/asm/suspend.h
-+++ b/arch/arm64/include/asm/suspend.h
-@@ -2,7 +2,7 @@
- #ifndef __ASM_SUSPEND_H
- #define __ASM_SUSPEND_H
- 
--#define NR_CTX_REGS 12
-+#define NR_CTX_REGS 13
- #define NR_CALLEE_SAVED_REGS 12
- 
- /*
-diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index aafed6902411..7d37e3c70ff5 100644
---- a/arch/arm64/mm/proc.S
-+++ b/arch/arm64/mm/proc.S
-@@ -56,6 +56,8 @@
-  * cpu_do_suspend - save CPU registers context
-  *
-  * x0: virtual address of context pointer
-+ *
-+ * This must be kept in sync with struct cpu_suspend_ctx in <asm/suspend.h>.
-  */
- SYM_FUNC_START(cpu_do_suspend)
- 	mrs	x2, tpidr_el0
-@@ -80,6 +82,11 @@ alternative_endif
- 	stp	x8, x9, [x0, #48]
- 	stp	x10, x11, [x0, #64]
- 	stp	x12, x13, [x0, #80]
-+	/*
-+	 * Save x18 as it may be used as a platform register, e.g. by shadow
-+	 * call stack.
-+	 */
-+	str	x18, [x0, #96]
+diff --git a/arch/arm64/kernel/efi-rt-wrapper.S b/arch/arm64/kernel/efi-rt-wrapper.S
+index 3fc71106cb2b..6ca6c0dc11a1 100644
+--- a/arch/arm64/kernel/efi-rt-wrapper.S
++++ b/arch/arm64/kernel/efi-rt-wrapper.S
+@@ -34,5 +34,14 @@ ENTRY(__efi_rt_asm_wrapper)
+ 	ldp	x29, x30, [sp], #32
+ 	b.ne	0f
  	ret
- SYM_FUNC_END(cpu_do_suspend)
- 
-@@ -96,6 +103,13 @@ SYM_FUNC_START(cpu_do_resume)
- 	ldp	x9, x10, [x0, #48]
- 	ldp	x11, x12, [x0, #64]
- 	ldp	x13, x14, [x0, #80]
+-0:	b	efi_handle_corrupted_x18	// tail call
++0:
 +	/*
-+	 * Restore x18, as it may be used as a platform register, and clear
-+	 * the buffer to minimize the risk of exposure when used for shadow
-+	 * call stack.
++	 * With CONFIG_SHADOW_CALL_STACK, the kernel uses x18 to store a
++	 * shadow stack pointer, which we need to restore before returning to
++	 * potentially instrumented code. This is safe because the wrapper is
++	 * called with preemption disabled and a separate shadow stack is used
++	 * for interrupts.
 +	 */
-+	ldr	x18, [x0, #96]
-+	str	xzr, [x0, #96]
- 	msr	tpidr_el0, x2
- 	msr	tpidrro_el0, x3
- 	msr	contextidr_el1, x4
++	mov	x18, x2
++	b	efi_handle_corrupted_x18	// tail call
+ ENDPROC(__efi_rt_asm_wrapper)
 -- 
 2.25.0.341.g760bfbb309-goog
 
