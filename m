@@ -2,73 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AA0C14AF36
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 06:52:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4314014AF4B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 06:59:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KzUGOk95Gjm1JZyOd+VzzGKMaTgHtX2zjUCIdwzDeUo=; b=UyEIkNH+iPjXsm
-	ZUXGfDFoTyritINm3Jc/f/KbLzIF6bxrGLLOB+6zV+W1ZHfvexJ8Cod/EFHOEBzmyaYSgjdactcHc
-	nd5IiqJGwZC0vDtpEdI5MmHptKfUePsxerekKnRcqNZKqbIQrSBNCvX/FQwUt9JvJCMbt9bZmbOCM
-	gPmv1qXLHWSB0IWXy6h1416f669OULkGIukOpCvLb3gsPiaW/RhjERFL1Iz2TMqYgbcpeXrTaD9ZZ
-	+U+5HiRlp7Fkr9+nlguMNDfVOQTXd4EuySDOS+QwiXuLcCwV4y6XRDyHRe6KU+A3l0sBGLarMetM8
-	mMopKCFU/HWFvZ4Y5NiQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SzFK5katTjDBf0JvlBKYB0s6zhKzKMkIEIvZFAOB/zU=; b=gyDOIj4HydriLm
+	CDWQPn4Y9AEppcv9MVpDTZiskN5HrrveZuCeSl4K33G+ph5yGmxjIwex4nwJ3mb4/p9ZrJ+1bFiOz
+	UIYVCMO2ux7lOj1Zbv4WqhPO0ZMN9nboLRuSuzHfYBJ5nYHRsGEXU+tTbbeJWpC7ne1yUQc43DOWg
+	b5lDO7d06xcWpSi1BiJc4e5gy3VpSBGnlCjE4DP6S1TM4kVDednHqB8REMAuiTMVHqJOq7DvShS7v
+	h9+OHfyQhxHgckVh735UhE1jUrtucmBrJwIzR5q5NEWWLazsHPXbX9DOp7XhO4QUxVcgu13AtjC3K
+	Oj9LAgKXaBXjycbQ2mKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwJni-0002fE-8M; Tue, 28 Jan 2020 05:52:38 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1iwJtw-0005QJ-Hl; Tue, 28 Jan 2020 05:59:04 +0000
+Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwJnV-0002el-FA
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 05:52:27 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 27 Jan 2020 21:52:24 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,372,1574150400"; d="scan'208";a="277101581"
-Received: from linux.intel.com ([10.54.29.200])
- by FMSMGA003.fm.intel.com with ESMTP; 27 Jan 2020 21:52:23 -0800
-Received: from [10.252.25.124] (abudanko-mobl.ccr.corp.intel.com
- [10.252.25.124])
- by linux.intel.com (Postfix) with ESMTP id 63AD1580277;
- Mon, 27 Jan 2020 21:52:15 -0800 (PST)
-From: Alexey Budankov <alexey.budankov@linux.intel.com>
-Subject: [PATCH v6 00/10] Introduce CAP_PERFMON to secure system performance
- monitoring and observability
-To: Peter Zijlstra <peterz@infradead.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- "benh@kernel.crashing.org" <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
- "james.bottomley@hansenpartnership.com"
- <james.bottomley@hansenpartnership.com>, Serge Hallyn <serge@hallyn.com>,
- Will Deacon <will@kernel.org>, Robert Richter <rric@kernel.org>,
- Alexei Starovoitov <ast@kernel.org>
-Organization: Intel Corp.
-Message-ID: <74d524ab-ac11-a7b8-1052-eba10f117e09@linux.intel.com>
-Date: Tue, 28 Jan 2020 08:52:13 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1iwJtl-0005PP-AN
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 05:58:54 +0000
+Received: by mail-qv1-xf42.google.com with SMTP id o18so5726702qvf.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Jan 2020 21:58:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=c0h7rYcoZ0lnrGD/XxyJMfaoFLjp1NniklKakWoray4=;
+ b=EglEFcMYyd98Eida6AY+NMphbBS8kJsP0X0ApI59nOpqCn3Nl1Szl1bHShgwoferSf
+ 1hZVx3Q5C0Q8xxWepxz1a4Ur3vT2JFINgCQ3nQ1oKHHE5tU/OE6EjD35QSPDEZlG/AZL
+ rD9qRyuv6VbbVu8EbRHGDQIV4Liim7MuRZU2tIUqbbdRModzVoa1JJDtra+JLMB2sB+5
+ HcOtgV2k0cRotMveWVwFwff8QtCBqjdDLfGs4BEQSU+iDmPNgoS2D7MI+BN6wpt7cmsM
+ 7GNehJKcMqlwv4JIx123sDwt+fpYXTzFR9XNgP9s1g17k0NS+OhUSc50Fhgnw0d/mV2O
+ Jnmw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=c0h7rYcoZ0lnrGD/XxyJMfaoFLjp1NniklKakWoray4=;
+ b=aNkdjoPQZH+lG7kRnFIgZc/A/qZR6E70zg38okP3oTlzIt+j7JooUS3+q3VPrsrWD8
+ 6HUOdVDknhqBnA0/GLeCbck+V/2pRvzTAhvlrr8ZOAZSPBtuFt5peVae8vnpa2ZAU2YJ
+ ljNje62vNnuqVBGsyzzqtOwcV2SD5dr1EpGujqz6cAiijVfEmlKZa9/HlhkG+05DO6T7
+ iSLWqVlFer1FIGxVW12lNk+6NMVR+TjLLIxrRqeFr9m0IvHZHixJ21b4ya1dO1quxrYB
+ 6XAvnwCGvc0ZSb+enjONHuDVLEJm0EzzzbxVwiDn6j51TyOByxLPEvsrOhP77x41pRUO
+ 55lg==
+X-Gm-Message-State: APjAAAXegVzXyMpxpvkWYeYxda0aYQQwZUS2+kq0rJoNnk34qhoHNb72
+ hsGjFiUC7G3NwYrHrWUq8rA=
+X-Google-Smtp-Source: APXvYqwzXesaPphmgkW9JDTlcbBg1qU7k/gLMQ7NBODzOVvGB7rzmf2XegdXu1cqnPdt8fItzyH+fA==
+X-Received: by 2002:a0c:8149:: with SMTP id 67mr20879339qvc.146.1580191131891; 
+ Mon, 27 Jan 2020 21:58:51 -0800 (PST)
+Received: from auth1-smtp.messagingengine.com (auth1-smtp.messagingengine.com.
+ [66.111.4.227])
+ by smtp.gmail.com with ESMTPSA id q5sm11696534qkf.14.2020.01.27.21.58.50
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 27 Jan 2020 21:58:51 -0800 (PST)
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailauth.nyi.internal (Postfix) with ESMTP id 2FF2B21F57;
+ Tue, 28 Jan 2020 00:58:49 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Tue, 28 Jan 2020 00:58:49 -0500
+X-ME-Sender: <xms:mM0vXhy1k0rqP3N2FaLwbZiAhUCyVZJmfcSWQVC-2TBHbkndq8QpYg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrfeefgdeklecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggugfgjsehtkeertddttdejnecuhfhrohhmpeeuohhquhhn
+ ucfhvghnghcuoegsohhquhhnrdhfvghnghesghhmrghilhdrtghomheqnecuffhomhgrih
+ hnpehkvghrnhgvlhdrohhrghenucfkphephedvrdduheehrdduuddurdejudenucevlhhu
+ shhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegsohhquhhnodhmvg
+ hsmhhtphgruhhthhhpvghrshhonhgrlhhithihqdeiledvgeehtdeigedqudejjeekheeh
+ hedvqdgsohhquhhnrdhfvghngheppehgmhgrihhlrdgtohhmsehfihigmhgvrdhnrghmvg
+X-ME-Proxy: <xmx:mM0vXuMC-EZ8Dl0ZwftIanMJYfeundzl_Luiphfhne_U03f08rRpLw>
+ <xmx:mM0vXm9KXgJkqG7MmJvv0fAat9DncJoq77zQVi1J__F3fQ7hRbkPFw>
+ <xmx:mM0vXr75l8HEboSTz3ODhnZ7QNzbh0ZE-hr2kAuh1FRjJZxqJ3gF9g>
+ <xmx:mc0vXvc-5hiSbBlHUaXhTqglAifLLqbpCg6U9MDHPnWC4uq-yNKvoHqb1FY>
+Received: from localhost (unknown [52.155.111.71])
+ by mail.messagingengine.com (Postfix) with ESMTPA id F2345306B27D;
+ Tue, 28 Jan 2020 00:58:47 -0500 (EST)
+Date: Tue, 28 Jan 2020 13:58:46 +0800
+From: Boqun Feng <boqun.feng@gmail.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [RFC 0/6] vDSO support for Hyper-V guest on ARM64
+Message-ID: <20200128055846.GA83200@debian-boqun.qqnc3lrjykvubdpftowmye0fmh.lx.internal.cloudapp.net>
+References: <20191216001922.23008-1-boqun.feng@gmail.com>
+ <ef6cb7ba-b448-cfa5-abbb-1d99d1396ce5@arm.com>
+ <20200124063215.GA93938@debian-boqun.qqnc3lrjykvubdpftowmye0fmh.lx.internal.cloudapp.net>
+ <4cdf2188-8909-4b90-ca78-92cef520b23d@arm.com>
 MIME-Version: 1.0
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <4cdf2188-8909-4b90-ca78-92cef520b23d@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200127_215225_522811_C49A5C60 
-X-CRM114-Status: GOOD (  17.06  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200127_215853_358616_E451D1DB 
+X-CRM114-Status: GOOD (  22.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [boqun.feng[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,218 +122,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Song Liu <songliubraving@fb.com>, Andi Kleen <ak@linux.intel.com>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- Igor Lubashev <ilubashe@akamai.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Stephane Eranian <eranian@google.com>,
- "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>, oprofile-list@lists.sf.net,
- Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Sasha Levin <sashal@kernel.org>, linux-hyperv@vger.kernel.org,
+ Stefano Stabellini <sstabellini@kernel.org>,
+ Stephen Hemminger <sthemmin@microsoft.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Haiyang Zhang <haiyangz@microsoft.com>, linux-kernel@vger.kernel.org,
+ Michael Kelley <mikelley@microsoft.com>, xen-devel@lists.xenproject.org,
+ Thomas Gleixner <tglx@linutronix.de>, "K. Y. Srinivasan" <kys@microsoft.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-Currently access to perf_events, i915_perf and other performance monitoring and
-observability subsystems of the kernel is open only for a privileged process [1]
-with CAP_SYS_ADMIN capability enabled in the process effective set [2].
-
-This patch set introduces CAP_PERFMON capability designed to secure system
-performance monitoring and observability operations so that CAP_PERFMON would
-assist CAP_SYS_ADMIN capability in its governing role for performance monitoring
-and observability subsystems of the kernel.
-
-CAP_PERFMON intends to harden system security and integrity during system
-performance monitoring and observability operations by decreasing attack surface
-that is available to a CAP_SYS_ADMIN privileged process [2]. Providing the access
-to system performance monitoring and observability operations under CAP_PERFMON
-capability singly, without the rest of CAP_SYS_ADMIN credentials, excludes chances
-to misuse the credentials and makes the operation more secure. Thus, CAP_PERFMON
-implements the principal of least privilege for performance monitoring and
-observability operations (POSIX IEEE 1003.1e: 2.2.2.39 principle of least
-privilege: A security design principle that states that a process or program be
-granted only those privileges (e.g., capabilities) necessary to accomplish its
-legitimate function, and only for the time that such privileges are actually
-required)
-
-CAP_PERFMON intends to meet the demand to secure system performance monitoring
-and observability operations for adoption in security sensitive, restricted,
-multiuser production environments (e.g. HPC clusters, cloud and virtual compute
-environments), where root or CAP_SYS_ADMIN credentials are not available to mass
-users of a system, and securely unblock applicability and scalability of system
-performance monitoring and observability operations beyond root or CAP_SYS_ADMIN
-process use cases.
-
-CAP_PERFMON intends to take over CAP_SYS_ADMIN credentials related to system
-performance monitoring and observability operations and balance amount of
-CAP_SYS_ADMIN credentials following the recommendations in the capabilities man
-page [2] for CAP_SYS_ADMIN: "Note: this capability is overloaded; see Notes to
-kernel developers, below." For backward compatibility reasons access to system
-performance monitoring and observability subsystems of the kernel remains open
-for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN capability usage for
-secure system performance monitoring and observability operations is discouraged
-with respect to the designed CAP_PERFMON capability.
-
-Possible alternative solution to this system security hardening, capabilities
-balancing task of making performance monitoring and observability operations
-more accessible could be to use the existing CAP_SYS_PTRACE capability to govern
-system performance monitoring and observability subsystems. However CAP_SYS_PTRACE
-capability still provides users with more credentials than are required for secure
-performance monitoring and observability operations and this excess is avoided by
-the designed CAP_PERFMON capability.
-
-Although software running under CAP_PERFMON can not ensure avoidance of related
-hardware issues, the software can still mitigate those issues following the official
-embargoed hardware issues mitigation procedure [3]. The bugs in the software itself
-can be fixed following the standard kernel development process [4] to maintain and
-harden security of system performance monitoring and observability operations.
-Finally, the patch set is shaped in the way that simplifies backtracking procedure
-of possible induced issues [5] as much as possible.
-
-The patch set is for tip perf/core repository:
-git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip perf/core
-sha1: 56ee04aa63285d6bc8a995a26e2441ae3d419bcd
-
----
-Changes in v6:
-- avoided noaudit checks in perfmon_capable() to explicitly advertise CAP_PERFMON
-  usage thru audit logs to secure system performance monitoring and observability
-Changes in v5:
-- renamed CAP_SYS_PERFMON to CAP_PERFMON
-- extended perfmon_capable() with noaudit checks
-Changes in v4:
-- converted perfmon_capable() into an inline function
-- made perf_events kprobes, uprobes, hw breakpoints and namespaces data available
-  to CAP_SYS_PERFMON privileged processes
-- applied perfmon_capable() to drivers/perf and drivers/oprofile
-- extended __cmd_ftrace() with support of CAP_SYS_PERFMON
-Changes in v3:
-- implemented perfmon_capable() macros aggregating required capabilities checks
-Changes in v2:
-- made perf_events trace points available to CAP_SYS_PERFMON privileged processes
-- made perf_event_paranoid_check() treat CAP_SYS_PERFMON equally to CAP_SYS_ADMIN
-- applied CAP_SYS_PERFMON to i915_perf, bpf_trace, powerpc and parisc system
-  performance monitoring and observability related subsystems
-
----
-Alexey Budankov (10):
-  capabilities: introduce CAP_PERFMON to kernel and user space
-  perf/core: open access to the core for CAP_PERFMON privileged process
-  perf/core: open access to probes for CAP_PERFMON privileged process
-  perf tool: extend Perf tool with CAP_PERFMON capability support
-  drm/i915/perf: open access for CAP_PERFMON privileged process
-  trace/bpf_trace: open access for CAP_PERFMON privileged process
-  powerpc/perf: open access for CAP_PERFMON privileged process
-  parisc/perf: open access for CAP_PERFMON privileged process
-  drivers/perf: open access for CAP_PERFMON privileged process
-  drivers/oprofile: open access for CAP_PERFMON privileged process
-
- arch/parisc/kernel/perf.c           |  2 +-
- arch/powerpc/perf/imc-pmu.c         |  4 ++--
- drivers/gpu/drm/i915/i915_perf.c    | 13 ++++++-------
- drivers/oprofile/event_buffer.c     |  2 +-
- drivers/perf/arm_spe_pmu.c          |  4 ++--
- include/linux/capability.h          |  4 ++++
- include/linux/perf_event.h          |  6 +++---
- include/uapi/linux/capability.h     |  8 +++++++-
- kernel/events/core.c                |  6 +++---
- kernel/trace/bpf_trace.c            |  2 +-
- security/selinux/include/classmap.h |  4 ++--
- tools/perf/builtin-ftrace.c         |  5 +++--
- tools/perf/design.txt               |  3 ++-
- tools/perf/util/cap.h               |  4 ++++
- tools/perf/util/evsel.c             | 10 +++++-----
- tools/perf/util/util.c              |  1 +
- 16 files changed, 47 insertions(+), 31 deletions(-)
-
----
-Testing and validation (Intel Skylake, 8 cores, Fedora 29, 5.5.0-rc3+, x86_64):
-
-libcap library [6], [7], [8] and Perf tool can be used to apply CAP_PERFMON 
-capability for secure system performance monitoring and observability beyond the
-scope permitted by the system wide perf_event_paranoid kernel setting [9] and
-below are the steps for evaluation:
-
-  - patch, build and boot the kernel
-  - patch, build Perf tool e.g. to /home/user/perf
-  ...
-  # git clone git://git.kernel.org/pub/scm/libs/libcap/libcap.git libcap
-  # pushd libcap
-  # patch libcap/include/uapi/linux/capabilities.h with [PATCH 1]
-  # make
-  # pushd progs
-  # ./setcap "cap_perfmon,cap_sys_ptrace,cap_syslog=ep" /home/user/perf
-  # ./setcap -v "cap_perfmon,cap_sys_ptrace,cap_syslog=ep" /home/user/perf
-  /home/user/perf: OK
-  # ./getcap /home/user/perf
-  /home/user/perf = cap_sys_ptrace,cap_syslog,cap_perfmon+ep
-  # echo 2 > /proc/sys/kernel/perf_event_paranoid
-  # cat /proc/sys/kernel/perf_event_paranoid 
-  2
-  ...
-  $ /home/user/perf top
-    ... works as expected ...
-  $ cat /proc/`pidof perf`/status
-  Name:	perf
-  Umask:	0002
-  State:	S (sleeping)
-  Tgid:	2958
-  Ngid:	0
-  Pid:	2958
-  PPid:	9847
-  TracerPid:	0
-  Uid:	500	500	500	500
-  Gid:	500	500	500	500
-  FDSize:	256
-  ...
-  CapInh:	0000000000000000
-  CapPrm:	0000004400080000
-  CapEff:	0000004400080000 => 01000100 00000000 00001000 00000000 00000000
-                                     cap_perfmon,cap_sys_ptrace,cap_syslog
-  CapBnd:	0000007fffffffff
-  CapAmb:	0000000000000000
-  NoNewPrivs:	0
-  Seccomp:	0
-  Speculation_Store_Bypass:	thread vulnerable
-  Cpus_allowed:	ff
-  Cpus_allowed_list:	0-7
-  ...
-
-Usage of cap_perfmon effectively avoids unused credentials excess:
-
-- with cap_sys_admin:
-  CapEff:	0000007fffffffff => 01111111 11111111 11111111 11111111 11111111
-
-- with cap_perfmon:
-  CapEff:	0000004400080000 => 01000100 00000000 00001000 00000000 00000000
-                                    38   34               19
-                               perfmon   syslog           sys_ptrace
-
----
-[1] https://www.kernel.org/doc/html/latest/admin-guide/perf-security.html
-[2] http://man7.org/linux/man-pages/man7/capabilities.7.html
-[3] https://www.kernel.org/doc/html/latest/process/embargoed-hardware-issues.html
-[4] https://www.kernel.org/doc/html/latest/admin-guide/security-bugs.html
-[5] https://www.kernel.org/doc/html/latest/process/management-style.html#decisions
-[6] http://man7.org/linux/man-pages/man8/setcap.8.html
-[7] https://git.kernel.org/pub/scm/libs/libcap/libcap.git
-[8] https://sites.google.com/site/fullycapable/, posix_1003.1e-990310.pdf
-[9] http://man7.org/linux/man-pages/man2/perf_event_open.2.html
-
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCBKYW4gMjQsIDIwMjAgYXQgMTA6MjQ6NDRBTSArMDAwMCwgVmluY2Vuem8gRnJhc2Np
+bm8gd3JvdGU6Cj4gSGkgQm9xdW4gRmVuZywKPiAKPiBPbiAyNC8wMS8yMDIwIDA2OjMyLCBCb3F1
+biBGZW5nIHdyb3RlOgo+ID4gSGkgVmluY2Vuem8sCj4gPiAKPiAKPiBbLi4uXQo+IAo+ID4+Cj4g
+Pj4gSSBoYWQgYSBsb29rIHRvIHlvdXIgcGF0Y2hlcyBhbmQgb3ZlcmFsbCwgSSBjb3VsZCBub3Qg
+dW5kZXJzdGFuZCB3aHkgd2UgY2FuJ3QKPiA+PiB1c2UgdGhlIGFyY2hfdGltZXIgdG8gZG8gdGhl
+IHNhbWUgdGhpbmdzIHlvdSBhcmUgZG9pbmcgd2l0aCB0aGUgb25lIHlvdQo+ID4+IGludHJvZHVj
+ZWQgaW4gdGhpcyBzZXJpZXMuIFdoYXQgY29uZnVzZXMgbWUgaXMgdGhhdCBLVk0gd29ya3MganVz
+dCBmaW5lIHdpdGggdGhlCj4gPj4gYXJjaF90aW1lciB3aGljaCB3YXMgZGVzaWduZWQgd2l0aCB2
+aXJ0dWFsaXphdGlvbiBpbiBtaW5kLiBXaHkgZG8gd2UgbmVlZAo+ID4+IGFub3RoZXIgb25lPyBD
+b3VsZCB5b3UgcGxlYXNlIGV4cGxhaW4/Cj4gPj4KPiA+IAo+ID4gUGxlYXNlIG5vdGUgdGhhdCB0
+aGUgZ3Vlc3QgVk0gb24gSHlwZXItViBmb3IgQVJNNjQgZG9lc24ndCB1c2UKPiA+IGFyY2hfdGlt
+ZXIgYXMgdGhlIGNsb2Nrc291cmNlLiBTZWU6Cj4gPiAKPiA+IAlodHRwczovL2xvcmUua2VybmVs
+Lm9yZy9saW51eC1hcm0ta2VybmVsLzE1NzAxMjkzNTUtMTYwMDUtNy1naXQtc2VuZC1lbWFpbC1t
+aWtlbGxleUBtaWNyb3NvZnQuY29tLwo+ID4gCj4gPiAsICBBQ1BJX1NJR19HVERUIGlzIHVzZWQg
+Zm9yIHNldHRpbmcgdXAgSHlwZXItViBzeW50aGV0aWMgY2xvY2tzb3VyY2UKPiA+IGFuZCBvdGhl
+ciBpbml0aWFsaXphdGlvbiB3b3JrLgo+ID4KPiAKPiBJIGhhZCBhIGxvb2sgYSBsb29rIGF0IGl0
+IGFuZCBteSBxdWVzdGlvbiBzdGFuZHMsIHdoeSBkbyB3ZSBuZWVkIGFub3RoZXIgdGltZXIKPiBv
+biBhcm02ND8KPiAKClNvcnJ5IGZvciB0aGUgbGF0ZSByZXNwb25zZS4gSXQncyB3ZWVrZW5kIGFu
+ZCBDaGluZXNlIE5ldyBZZWFyLCBzbyBJIGdvdAp0byBzcGVuZCBzb21lIHRpbWUgbWFraW5nIChh
+bmQgbW9zdGx5IGVhdGluZykgZHVtcGxpbmdzIDstKQoKQWZ0ZXIgZGlzY3Vzc2lvbiB3aXRoIE1p
+Y2hhZWwsIGhlcmUgaXMgc29tZSBleHBsYW5hdGlvbiB3aHkgd2UgbmVlZAphbm90aGVyIHRpbWVy
+OgoKVGhlIHN5bnRoZXRpYyBjbG9ja3MgdGhhdCBIeXBlci1WIHByZXNlbnRzIGluIGEgZ3Vlc3Qg
+Vk0gd2VyZSBvcmlnaW5hbGx5CmNyZWF0ZWQgZm9yIHRoZSB4ODYgYXJjaGl0ZWN0dXJlLiBUaGV5
+IHByb3ZpZGUgYSBsZXZlbCBvZiBhYnN0cmFjdGlvbgp0aGF0IHNvbHZlcyBwcm9ibGVtcyBsaWtl
+IGNvbnRpbnVpdHkgYWNyb3NzIGxpdmUgbWlncmF0aW9ucyB3aGVyZSB0aGUKaGFyZHdhcmUgY2xv
+Y2sgKGkuZS4sIFRTQyBpbiB0aGUgY2FzZSB4ODYpIGZyZXF1ZW5jeSBtYXkgYmUgZGlmZmVyZW50
+CmFjcm9zcyB0aGUgbWlncmF0aW9uLiBXaGVuIEh5cGVyLVYgd2FzIGJyb3VnaHQgdG8gQVJNNjQs
+IHRoaXMKYWJzdHJhY3Rpb24gd2FzIG1haW50YWluZWQgdG8gcHJvdmlkZSBjb25zaXN0ZW5jeSBh
+Y3Jvc3MgdGhlIHg4NiBhbmQKQVJNNjQgYXJjaGl0ZWN0dXJlcywgYW5kIGZvciBib3RoIFdpbmRv
+d3MgYW5kIExpbnV4IGd1ZXN0IFZNcy4gICBUaGUKY29yZSBMaW51eCBjb2RlIGZvciB0aGUgSHlw
+ZXItViBjbG9ja3MgKGluCmRyaXZlcnMvY2xvY2tzb3VyY2UvaHlwZXJ2X3RpbWVyLmMpIGlzIGFy
+Y2hpdGVjdHVyZSBuZXV0cmFsIGFuZCB3b3JrcyBvbgpib3RoIHg4NiBhbmQgQVJNNjQuIEFzIHlv
+dSBjYW4gc2VlLCB0aGlzIHBhcnQgaXMgZG9uZSBpbiBNaWNoYWVsJ3MKcGF0Y2hzZXQuCgpBcmd1
+YWJseSwgSHlwZXItViBmb3IgQVJNNjQgc2hvdWxkIGhhdmUgb3B0aW1pemVkIGZvciBjb25zaXN0
+ZW5jeSB3aXRoCnRoZSBBUk02NCBjb21tdW5pdHkgcmF0aGVyIHdpdGggdGhlIGV4aXN0aW5nIHg4
+NiBpbXBsZW1lbnRhdGlvbiBhbmQKZXhpc3RpbmcgZ3Vlc3QgY29kZSBpbiBXaW5kb3dzLiBCdXQg
+YXQgdGhpcyBwb2ludCwgaXQgaXMgd2hhdCBpdCBpcywKYW5kIHRoZSBIeXBlci1WIGNsb2NrcyBk
+byBzb2x2ZSBwcm9ibGVtcyBsaWtlIG1pZ3JhdGlvbiB0aGF0IGFyZW7igJl0CmFkZHJlc3NlZCBp
+biBBUk02NCB1bnRpbCB2OC40IG9mIHRoZSBhcmNoaXRlY3R1cmUgd2l0aCB0aGUgYWRkaXRpb24g
+b2YKdGhlIGNvdW50ZXIgaGFyZHdhcmUgc2NhbGluZyBmZWF0dXJlLiBIeXBlci1WIGRvZXNu4oCZ
+dCBjdXJyZW50bHkgbWFwIHRoZQpBUk0gYXJjaCB0aW1lciBpbnRlcnJ1cHRzIGludG8gZ3Vlc3Qg
+Vk1zLCBzbyB3ZSBuZWVkIHRvIHVzZSB0aGUgZXhpc3RpbmcKSHlwZXItViBjbG9ja3MgYW5kIHRo
+ZSBjb21tb24gY29kZSB0aGF0IGFscmVhZHkgZXhpc3RzLgoKCkRvZXMgdGhlIGFib3ZlIGFuc3dl
+ciB5b3VyIHF1ZXN0aW9uPwoKUmVnYXJkcywKQm9xdW4KCj4gPiBTbyBqdXN0IHRvIGJlIGNsZWFy
+LCB5b3VyIHN1Z2dlc3Rpb24gaXMKPiA+IAo+ID4gMSkgSHlwZXItViBndWVzdCBvbiBBUk02NCBz
+aG91bGQgdXNlIGFyY2hfdGltZXIgYXMgY2xvY2tzb3VyY2UgYW5kIHZEU08KPiA+IHdpbGwganVz
+dCB3b3JrLgo+ID4gCj4gPiBvcgo+ID4gCj4gPiAyKSBFdmVuIHRob3VnaCBhcmNoX3RpbWVyIGlz
+IG5vdCB1c2VkIGFzIHRoZSBjbG9ja3NvdXJjZSwgd2UgY2FuIHN0aWxsCj4gPiB1c2UgaXQgZm9y
+IHZEU08uCj4gPiAKPiA+ID8KPiA+IAo+IAo+IE9wdGlvbiAjMSB3b3VsZCBiZSB0aGUgcHJlZmVy
+cmVkIHNvbHV0aW9uLCB1bmxlc3MgdGhlcmUgaXMgYSBnb29kIHJlYXNvbiBhZ2FpbnN0Lgo+IAo+
+ID4gUmVnYXJkcywKPiA+IEJvcXVuCj4gPiAKPiAKPiAtLSAKPiBSZWdhcmRzLAo+IFZpbmNlbnpv
+CgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
