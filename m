@@ -2,79 +2,139 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85FB014C0D6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 20:20:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 543F614C0ED
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 20:26:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gic4Dd9C9X9OSkVltKfe1kaekOrj/GfCTgEIZqMnsdo=; b=fORNcAoV8bp+91
-	K+I7u4s3/7hdZixgHRiXk9rYcYIamG6G7nl2u1t6psYBkis5TlbgthRRVE82m8ItgjF0xHv6WMGlA
-	ZOO/gwfNOsLvnW+hpKXZV6DwL6DfoEAhn23joI9kU9O4mqv3P114om7RW4yEMvc/i1IjtMB1vKFYv
-	wVLlM7tHeyE9uTaoU07EmWS4dk97tbPXKytfLBpbhqiLbk/u+jIoPtKspGhJ3pXrQOK5EUWc99/oV
-	AUT4bMmrdc+/U0GFC288GQdsIOfbehH3h4ksPpeQqtDgR0pEjRPPj0b4xsi8DkJanZd5IoABUnjpd
-	a7/iAAKCjLK4bM+P/bmg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BxRVuKJQT1S6ArQlC0Vjc2M8PKYr/cPSRy1uRxfvaZ0=; b=tQFr6qnzmeF0d5
+	Ed/TGlpWF5qqQJZfMj17ux8ecgCQntJjBg85lBXbaQMfB0iUipQcYrwxt4H/GfsDhkVp+plqdmwbl
+	0UaoVmnJJt1jiGpxJk2fOr6uEXDOoRm0/PlG8MXS6vgzVgujIj8WpD+92RX07O6470IEek42kOi0m
+	lCo2H4VNhSRlJn6a4JAeLRV0fj2zP//YakhxQsbpRvC8PzUyg+UwrcFf8cpw4L0XXBEk9kabgey7+
+	07Wp5T1w+N0bfd/kM8hbweX9ZYcs2l1/plSloieowt/DdCGvyRtppVrEfi/IDhTTgxFv2eQd+eZnA
+	GksDHOdU5rIjIy+XNnmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwWPg-00065P-66; Tue, 28 Jan 2020 19:20:40 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iwWVR-0007yV-Vf; Tue, 28 Jan 2020 19:26:37 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwWPX-00064Z-FB
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 19:20:32 +0000
-Received: by mail-pl1-x642.google.com with SMTP id b22so5482379pls.12
+ id 1iwWVE-0007y4-Gx
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 19:26:25 +0000
+Received: by mail-pg1-x544.google.com with SMTP id u131so7523920pgc.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Jan 2020 11:20:29 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=LYew2jkDUlCfpmqi8UqP0MWvgK08mQLJ5QipcXk94Nw=;
- b=glPmxTzfm4zSXwo1RsCFH9zx4U29Qc+s6KSPIHJMi2jbjXSMEVSOjw0/UqU4VnHzPM
- eohNZW//0zQfzufKpO9a95QWtX13bd8YVoMKRF0gJwmWRB051bfN23hlNI0paEW/h/AG
- eOHU3WiH0S/gbabgW+QPPE8OkyF1OiL7OokTs=
+ Tue, 28 Jan 2020 11:26:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=+EryWDkvZ0dGHmprUsONyuE1YN1P3kBDh4CCkc7g+MM=;
+ b=YnbP9bZ/dD92cF2Z/GPhUXw8EKj8U57rIrKuAjhgSFM3AwF9iMEKDkUjt12YirtYfI
+ o5ELCTEXWLqlFWomuaAw2OJFr0TufDJgWDRy29Jd3d2Ysvrd8c5X2FPqzfRu3B2fsXMI
+ 1zhPb1k98rwVJYfEDfjDnGjHx45lWKRbm/WZfwrv3//xhJGaBCXAIrn8YfSrkZrrjVb7
+ So5J5JLdsIYJlZEYVx6MyWxytvVJMJ8jM9LlW/47BFX3xgoFh2UmE4IELqf2+uDspPjo
+ j0I9RML97a8tllMZitLBqrlLeWSk3CF6kkosGmXjno1nPCjng39R7qElW+P25CZX7qNo
+ 6Znw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=LYew2jkDUlCfpmqi8UqP0MWvgK08mQLJ5QipcXk94Nw=;
- b=gcwFWCG3zSjW0EGlmiDxrhKIFy0SRrMuP/6gqYb9UCjz5PMTna9Z6/iSn6crASB9xD
- 5aeSF8npH1OMk1KzC22u9K+Ce0tVY4QQqsyCg8IiuLAxuPyyn6ewDgQ8/lFtPhn/qp6B
- 3vs1VIfLpBLdgauqMXvnyiayT5xnqXzHRduI8Sp9lRtqDAD3wEWeTUNQ6xqqPrBzTgEj
- cPSXErHDZDqFxiNn/AS6LKfuC/LyExB4apsCkGlw/F3gsgEYDXGImpXEF/WVL73AXIni
- GV2hkDW8f1llM1LzSLU0CZJHYYhgtDGVYpfyJwRUcOp1TAykNZJpxqlaAt6ipKSI3tSv
- +wLQ==
-X-Gm-Message-State: APjAAAUc8dLHpDcLO2KyRghglYfN+KcvvXsecCaOz956Us1qBtl8kwjO
- mp2XVc9DdW6oNYQLAVCQ9t0M8g==
-X-Google-Smtp-Source: APXvYqxkt5ByEhDoG7VUZvlRrj1lUICrxMnGZlHApMda1UlKyNQiei8yE1/b5ej/6G+z0l1bn2aQzA==
-X-Received: by 2002:a17:90a:191:: with SMTP id 17mr6579887pjc.88.1580239229274; 
- Tue, 28 Jan 2020 11:20:29 -0800 (PST)
-Received: from localhost ([2620:15c:202:1:4fff:7a6b:a335:8fde])
- by smtp.gmail.com with ESMTPSA id l37sm3886086pjb.15.2020.01.28.11.20.28
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=+EryWDkvZ0dGHmprUsONyuE1YN1P3kBDh4CCkc7g+MM=;
+ b=iCwAI/fjrAQQvE6Y7lJVWQUtbTZYiD0no6dvuQvSqeZhX2ggC/ayzDG+qEe15MWYFw
+ TuiQwBtfT+fFvkIzVJTD7tlAkwhalMLf4QBeRV60s0BUe63Nmr57cfJka6ei9WwoB0Uv
+ hdoe7+X1XTAF00d1ywpVHvIq9RFWruoSB3SjqOIA2o3LbWHvZmKmSHKesfamDAwobNWT
+ fqp6siFx7MwPSBjMvRnikwFHk2AfROyPY1y394gsxuFen873jUE/vxWCMcqTi133pjtS
+ 0w3/BMWvDpCKKHrdZ9vnF+pQo/UMesOwidYsVoAeLlloAe/G0YLTkmCs2USK591srXwL
+ LmfQ==
+X-Gm-Message-State: APjAAAU3MEtBqWp/0aWBa5XeDjya04uUw9GEh+/I3YLvtC1GRpAPfMcK
+ FlzkXtAEPLyQ+i4DoTnp5Cc=
+X-Google-Smtp-Source: APXvYqyOozvPp5uLbP21fTKQY1D6VhDCnyyfL5v+uwLRtEpq5GZRiHw4KwoX8if45nBOzdQ8Y/3pcA==
+X-Received: by 2002:a63:5c10:: with SMTP id q16mr26852933pgb.35.1580239583233; 
+ Tue, 28 Jan 2020 11:26:23 -0800 (PST)
+Received: from [10.69.78.90] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id x11sm14149676pfd.168.2020.01.28.11.26.21
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 28 Jan 2020 11:20:28 -0800 (PST)
-Date: Tue, 28 Jan 2020 11:20:27 -0800
-From: Matthias Kaehlcke <mka@chromium.org>
-To: Rakesh Pillai <pillair@codeaurora.org>
-Subject: Re: [PATCH v4] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
- device node
-Message-ID: <20200128192027.GB46072@google.com>
-References: <1580207617-818-1-git-send-email-pillair@codeaurora.org>
+ Tue, 28 Jan 2020 11:26:22 -0800 (PST)
+Subject: Re: [PATCH] ARM: VDSO: Match ARMv8 timer in cntvct_functional()
+To: linux-arm-kernel@lists.infradead.org
+References: <20200116235731.22395-1-f.fainelli@gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ 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
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <9efff584-5e2f-df15-3eea-9cf4f31f8f27@gmail.com>
+Date: Tue, 28 Jan 2020 11:26:20 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1580207617-818-1-git-send-email-pillair@codeaurora.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200116235731.22395-1-f.fainelli@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_112031_532302_DEDFBD3F 
-X-CRM114-Status: GOOD (  18.72  )
+X-CRM114-CacheID: sfid-20200128_112624_564768_C8F3A75D 
+X-CRM114-Status: GOOD (  12.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,7 +144,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,99 +155,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
+Cc: opendmb@gmail.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nathan Lynch <nathan_lynch@mentor.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Enrico Weigelt <info@metux.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rakesh,
 
-On Tue, Jan 28, 2020 at 04:03:37PM +0530, Rakesh Pillai wrote:
-> Add device node for the ath10k SNOC platform driver probe
-> and add resources required for WCN3990 on sc7180 soc.
+
+On 1/16/2020 3:57 PM, Florian Fainelli wrote:
+> It is possible for a system with an ARMv8 timer to run a 32-bit kernel.
+> When this happens we will unconditionally have the vDSO code remove the
+> __vdso_gettimeofday and __vdso_clock_gettime symbols because
+> cntvct_functional() returns false since it does not match that
+> compatibility string.
 > 
-> Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
-> ---
->  arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
->  arch/arm64/boot/dts/qcom/sc7180.dtsi    | 28 ++++++++++++++++++++++++++++
->  2 files changed, 33 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> index 189254f..151b489 100644
-> --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> @@ -248,6 +248,11 @@
->  	status = "okay";
->  };
->  
-> +&wifi {
-> +	status = "okay";
-> +	qcom,msa-fixed-perm;
-> +};
-> +
->  /* PINCTRL - additions to nodes defined in sc7180.dtsi */
->  
->  &qup_i2c2_default {
-> diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> index 666e9b9..7efb97f 100644
-> --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> @@ -42,6 +42,12 @@
->  			compatible = "qcom,cmd-db";
->  			no-map;
->  		};
-> +
-> +		wlan_fw_mem: memory@93900000 {
-> +			compatible = "removed-dma-pool";
-> +			no-map;
-> +			reg = <0 0x93900000 0 0x200000>;
-> +		};
->  	};
+> Fixes: ecf99a439105 ("ARM: 8331/1: VDSO initialization, mapping, and synchronization")
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 
-This part doesn't apply cleanly on qcom/for-next, looks like you have to
-rebase.
-
->  	cpus {
-> @@ -1119,6 +1125,28 @@
->  				#clock-cells = <1>;
->  			};
->  		};
-> +
-> +		wifi: wifi@18800000 {
-
-You added this node at the end of the file, outside of the 'soc' node.
-It should be inside the 'soc' node, the sub-nodes are ordered by address,
-so (currently) this node should be inserted after 'cpufreq@18323000'.
-
-> +			compatible = "qcom,wcn3990-wifi";
-> +			reg = <0 0x18800000 0 0x800000>;
-> +			reg-names = "membase";
-> +			iommus = <&apps_smmu 0xC0 0x1>;
-
-nit: the convention is to use lowercase characters for hex adresses.
-
-> +			interrupts =
-> +				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
-> +				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
-> +				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
-> +				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
-> +				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
-> +				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
-> +				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
-> +				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
-> +				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
-> +				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
-> +				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
-> +				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
-
-not sure these 'CEx' comments after each interrupt add much value. What does
-'CE' stand for in the first place?
-
-Thanks
-
-Matthias
+Submitted:
+https://www.armlinux.org.uk/developer/patches/viewpatch.php?id=8957/1
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
