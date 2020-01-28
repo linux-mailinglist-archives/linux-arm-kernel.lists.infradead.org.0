@@ -2,59 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4202D14B0B3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 09:10:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B528A14B0BF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 09:15:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=kB+uJWcWStxfKPkUmodXwyntf4qJ0cMwDHFt/OwIh0c=; b=DdY
-	cdH+nKBmZ7dlS2LUx1JNj2+H17t1yHfZL8wwMMbjulPVAgpDDjB9tmJ/2Hez40d/r92aEND8dNn29
-	5buAf+rkHWkLlPEs+m/C0qVpuAejEnB3As/m35ulQfBUh6vxzUhBvdZS1BkZIGwyeWyc0Fr9ss7pY
-	TT/FV+TJ68bvE+4LWLTwuICtFnNh/sQP7jDz3/uToZvwuEBr+nrZMD2QTGyAnYHUmeaTGZrgVyj9L
-	U2IaDwy5RyJSISP7+bIL3nMPWuuOe6Xn+VRU/Yh9WDJU2R8CXLwZLr6YUaPy8Xy4AcTS6CuHHC79+
-	WfKeekpXz4oFlWHmF0Zya431Jc9KOyQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rMOgX6b/ggO3r9/JDwlc8ot2KNeHGxistHfFRUQBrD4=; b=hGmA5WhCrM/uqb
+	o9eIvNxTolTxDzJp21l+nIrCIrgF3JG/kIRASybs+xUiAjjW6d3RhlTC4d2dgz4tYA6RVbpjJ+pln
+	cvx73L3fYIjZHvWDg3xM7DYTQUchkAcmy9Rawn/kOO9IjwzyC5Bqd31xvEShuwwN7SILYR/SSPiiN
+	NVaNDJ6RNZLVuvAG8NCSMnScEpbc//R4x0GHTJBDyo+hD5X43orlN1RjMyOByl79/deXmYdGUU3Mc
+	60K0mSPtwwAszNik77E4Y7Ksguam6UvUhIPv+N4gXAzpwAfHcz1hovHJH7PEzOC07LTGi0trVeii4
+	uxXWfOHKvUZiCfjj85sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwLww-0006AD-5c; Tue, 28 Jan 2020 08:10:18 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1iwM21-0008T1-Ll; Tue, 28 Jan 2020 08:15:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwLwj-00050C-KI
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 08:10:08 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 00CB01A0EE6;
- Tue, 28 Jan 2020 09:10:01 +0100 (CET)
-Received: from inv0113.in-blr01.nxp.com (inv0113.in-blr01.nxp.com
- [165.114.116.118])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 731061A0A8E;
- Tue, 28 Jan 2020 09:10:00 +0100 (CET)
-Received: from lsv0210.swis.in-blr01.nxp.com (lsv0210.swis.in-blr01.nxp.com
- [92.120.145.207])
- by inv0113.in-blr01.nxp.com (Postfix) with ESMTP id D4379327;
- Tue, 28 Jan 2020 13:39:59 +0530 (IST)
-From: Makarand Pawagi <makarand.pawagi@nxp.com>
-To: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-acpi@vger.kernel.org,
- linux@armlinux.org.uk
-Subject: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-Date: Tue, 28 Jan 2020 13:38:45 +0530
-Message-Id: <1580198925-50411-1-git-send-email-makarand.pawagi@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1iwM1s-0008SN-SQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 08:15:26 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1C17F2467B;
+ Tue, 28 Jan 2020 08:15:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1580199324;
+ bh=ds5dM3AIAtcb+wm25J2UVNjJPJLyE/L9V/4RrPyIPr4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=PM0n0JNfC02/ZfV8nuuf67Ms78ascFZ+WMQ2LKb//+/97/4TikoCyrQyrW9Rwum99
+ agE1xWJ5j0yke0UVRfsGHZHF6cqfs0teMaIg+MOsWTYt0xqjW4ddj+E32jHZKNGO/U
+ jXnLwO4iz2ET5qHawKynoZsChqX39LSj11BhnSUc=
+Date: Tue, 28 Jan 2020 09:15:20 +0100
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+Subject: Re: [stable] [PATCH 1/2] coresight: etb10: Do not call
+ smp_processor_id from preemptible
+Message-ID: <20200128081520.GL2105706@kroah.com>
+References: <20200108110541.318672-1-suzuki.poulose@arm.com>
+ <20200109143537.GE1706@sasha-vm>
+ <a183da32-b933-6ed0-f8b8-703e27d3f15e@arm.com>
+ <20200115151118.GC3740793@kroah.com>
+ <d3cd59e0-8fa2-9e69-534f-15f13cb14897@arm.com>
+ <20200115172126.GB4127163@kroah.com>
+ <b8c38ac4-4b47-59b3-e0d4-22be3f6aca42@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <b8c38ac4-4b47-59b3-e0d4-22be3f6aca42@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_001005_972334_BA1D47A9 
-X-CRM114-Status: GOOD (  18.50  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200128_001524_960911_7897E59E 
+X-CRM114-Status: GOOD (  24.69  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,451 +79,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maz@kernel.org, lorenzo.pieralisi@arm.com, calvin.johnson@nxp.com,
- stuyoder@gmail.com, rjw@rjwysocki.net, pankaj.bansal@nxp.com,
- guohanjun@huawei.com, jon@solid-run.com, robin.murphy@arm.com,
- shameerali.kolothum.thodi@huawei.com, sudeep.holla@arm.com,
- Makarand Pawagi <makarand.pawagi@nxp.com>, cristian.sovaiala@nxp.com,
- V.Sethi@nxp.com, ioana.ciornei@nxp.com, tglx@linutronix.de, lenb@kernel.org,
- will@kernel.org, nleeder@codeaurora.org, jason@lakedaemon.net,
- laurentiu.tudor@nxp.com
-MIME-Version: 1.0
+Cc: Sasha Levin <sashal@kernel.org>, mathieu.poirier@linaro.org,
+ linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ACPI support is added in the fsl-mc driver. Driver will parse
-MC DSDT table to extract memory and other resorces.
+On Wed, Jan 15, 2020 at 05:28:19PM +0000, Suzuki Kuruppassery Poulose wrote:
+> On 15/01/2020 17:21, Greg KH wrote:
+> > On Wed, Jan 15, 2020 at 04:44:29PM +0000, Suzuki Kuruppassery Poulose wrote:
+> > > 
+> > > Hi Greg,
+> > > 
+> > > On 15/01/2020 15:11, Greg KH wrote:
+> > > > On Thu, Jan 09, 2020 at 02:36:17PM +0000, Suzuki Kuruppassery Poulose wrote:
+> > > > > On 09/01/2020 14:35, Sasha Levin wrote:
+> > > > > > On Wed, Jan 08, 2020 at 11:05:40AM +0000, Suzuki K Poulose wrote:
+> > > > > > > [ Upstream commit 730766bae3280a25d40ea76a53dc6342e84e6513 ]
+> > > > > > > 
+> > > > > > > During a perf session we try to allocate buffers on the "node" associated
+> > > > > > > with the CPU the event is bound to. If it is not bound to a CPU, we
+> > > > > > > use the current CPU node, using smp_processor_id(). However this is
+> > > > > > > unsafe
+> > > > > > > in a pre-emptible context and could generate the splats as below :
+> > > > > > > 
+> > > > > > > BUG: using smp_processor_id() in preemptible [00000000] code: perf/2544
+> > > > > > > 
+> > > > > > > Use NUMA_NO_NODE hint instead of using the current node for events
+> > > > > > > not bound to CPUs.
+> > > > > > > 
+> > > > > > > Fixes: 2997aa4063d97fdb39 ("coresight: etb10: implementing AUX API")
+> > > > > > > Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+> > > > > > > Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> > > > > > > Cc: stable <stable@vger.kernel.org> # v4.9 to v4.19
+> > > > > > > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> > > > > > > Link: https://lore.kernel.org/r/20190620221237.3536-5-mathieu.poirier@linaro.org
+> > > > > > > 
+> > > > > > 
+> > > > > > I've queued this for 4.9-4.19. There was a simple conflict on 4.9 which
+> > > > > > also had to be resolved.
+> > > > > > 
+> > > > > 
+> > > > > 
+> > > > > Thanks Sasha !
+> > > > 
+> > > > Note, these had to all be dropped as they broke the build :(
+> > > > 
+> > > > So can you please send us patches that at least build?  :)
+> > > > 
+> > > 
+> > > Do you have a build failure log ? I did build test it before sending it
+> > > over. I tried it again on 4.9, 4.14 and 4.19. I don't hit any build
+> > > failures here.
+> > > 
+> > > Please could you share the log if you have it handy ?
+> > 
+> > It was in the stable -rc review emails, I don't have it handy, sorry.
+> > 
+> 
+> I think there is a bit of confusion here. If you're referring to
+> 
+> https://lkml.org/lkml/2020/1/11/634
+> 
+> as the build failure report, this is precisely my series fixes.
+> I sent this series to address the build break reported by Nathan.
+> The original patches were picked up from the "Fixes" tag automatically
+> which broke the build due to missing "event" parameter. This series
+> fixes those build issues and for sure builds fine for the affected
+> versions. Trust me ;-)
 
-Interrupt (GIC ITS) information will be extracted from MADT table
-by drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c.
+Ok, for some reason it looked like the "original" commits were added to
+the tree, not your backports.  I've queued up your backports now, that
+should solve the issue.
 
-IORT table will be parsed to configure DMA.
+thanks,
 
-Signed-off-by: Makarand Pawagi <makarand.pawagi@nxp.com>
----
- drivers/acpi/arm64/iort.c                   | 53 +++++++++++++++++++++
- drivers/bus/fsl-mc/dprc-driver.c            |  3 +-
- drivers/bus/fsl-mc/fsl-mc-bus.c             | 48 +++++++++++++------
- drivers/bus/fsl-mc/fsl-mc-msi.c             | 10 +++-
- drivers/bus/fsl-mc/fsl-mc-private.h         |  4 +-
- drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c | 71 ++++++++++++++++++++++++++++-
- include/linux/acpi_iort.h                   |  5 ++
- 7 files changed, 174 insertions(+), 20 deletions(-)
-
-diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-index 33f7198..beb9cd5 100644
---- a/drivers/acpi/arm64/iort.c
-+++ b/drivers/acpi/arm64/iort.c
-@@ -15,6 +15,7 @@
- #include <linux/kernel.h>
- #include <linux/list.h>
- #include <linux/pci.h>
-+#include <linux/fsl/mc.h>
- #include <linux/platform_device.h>
- #include <linux/slab.h>
- 
-@@ -622,6 +623,29 @@ static int iort_dev_find_its_id(struct device *dev, u32 req_id,
- }
- 
- /**
-+ * iort_get_fsl_mc_device_domain() - Find MSI domain related to a device
-+ * @dev: The device.
-+ * @mc_icid: ICID for the fsl_mc device.
-+ *
-+ * Returns: the MSI domain for this device, NULL otherwise
-+ */
-+struct irq_domain *iort_get_fsl_mc_device_domain(struct device *dev,
-+							u32 mc_icid)
-+{
-+	struct fwnode_handle *handle;
-+	int its_id;
-+
-+	if (iort_dev_find_its_id(dev, mc_icid, 0, &its_id))
-+		return NULL;
-+
-+	handle = iort_find_domain_token(its_id);
-+	if (!handle)
-+		return NULL;
-+
-+	return irq_find_matching_fwnode(handle, DOMAIN_BUS_FSL_MC_MSI);
-+}
-+
-+/**
-  * iort_get_device_domain() - Find MSI domain related to a device
-  * @dev: The device.
-  * @req_id: Requester ID for the device.
-@@ -924,6 +948,21 @@ static int iort_pci_iommu_init(struct pci_dev *pdev, u16 alias, void *data)
- 	return iort_iommu_xlate(info->dev, parent, streamid);
- }
- 
-+static int iort_fsl_mc_iommu_init(struct device *dev,
-+				struct acpi_iort_node *node, u32 *streamid)
-+{
-+	struct acpi_iort_node *parent;
-+	struct fsl_mc_device *mc_dev = to_fsl_mc_device(dev);
-+
-+	parent = iort_node_map_id(node, mc_dev->icid, streamid,
-+						IORT_IOMMU_TYPE);
-+
-+	if (parent)
-+		return iort_iommu_xlate(dev, parent, *streamid);
-+
-+	return 0;
-+}
-+
- /**
-  * iort_iommu_configure - Set-up IOMMU configuration for a device.
-  *
-@@ -962,6 +1001,20 @@ const struct iommu_ops *iort_iommu_configure(struct device *dev)
- 
- 		if (!err && iort_pci_rc_supports_ats(node))
- 			dev->iommu_fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
-+	} else if (dev_is_fsl_mc(dev)) {
-+		struct device *dma_dev = dev;
-+
-+		if (!(to_acpi_device_node(dma_dev->fwnode))) {
-+			while (dev_is_fsl_mc(dma_dev))
-+				dma_dev = dma_dev->parent;
-+		}
-+
-+		node = iort_scan_node(ACPI_IORT_NODE_NAMED_COMPONENT,
-+					iort_match_node_callback, dma_dev);
-+		if (!node)
-+			return NULL;
-+
-+		err = iort_fsl_mc_iommu_init(dev, node, &streamid);
- 	} else {
- 		int i = 0;
- 
-diff --git a/drivers/bus/fsl-mc/dprc-driver.c b/drivers/bus/fsl-mc/dprc-driver.c
-index c8b1c38..31dd790 100644
---- a/drivers/bus/fsl-mc/dprc-driver.c
-+++ b/drivers/bus/fsl-mc/dprc-driver.c
-@@ -4,6 +4,7 @@
-  *
-  * Copyright (C) 2014-2016 Freescale Semiconductor, Inc.
-  * Author: German Rivera <German.Rivera@freescale.com>
-+ * Copyright 2018-2020 NXP
-  *
-  */
- 
-@@ -638,7 +639,7 @@ static int dprc_probe(struct fsl_mc_device *mc_dev)
- 			return -EINVAL;
- 
- 		error = fsl_mc_find_msi_domain(parent_dev,
--					       &mc_msi_domain);
-+					&mc_msi_domain, mc_dev);
- 		if (error < 0) {
- 			dev_warn(&mc_dev->dev,
- 				 "WARNING: MC bus without interrupt support\n");
-diff --git a/drivers/bus/fsl-mc/fsl-mc-bus.c b/drivers/bus/fsl-mc/fsl-mc-bus.c
-index a07cc19..5d388e4 100644
---- a/drivers/bus/fsl-mc/fsl-mc-bus.c
-+++ b/drivers/bus/fsl-mc/fsl-mc-bus.c
-@@ -4,11 +4,13 @@
-  *
-  * Copyright (C) 2014-2016 Freescale Semiconductor, Inc.
-  * Author: German Rivera <German.Rivera@freescale.com>
-+ * Copyright 2018-2020 NXP
-  *
-  */
- 
- #define pr_fmt(fmt) "fsl-mc: " fmt
- 
-+#include <linux/acpi.h>
- #include <linux/module.h>
- #include <linux/of_device.h>
- #include <linux/of_address.h>
-@@ -129,12 +131,25 @@ static int fsl_mc_bus_uevent(struct device *dev, struct kobj_uevent_env *env)
- 
- static int fsl_mc_dma_configure(struct device *dev)
- {
-+	enum dev_dma_attr attr;
- 	struct device *dma_dev = dev;
-+	int err = -ENODEV;
- 
- 	while (dev_is_fsl_mc(dma_dev))
- 		dma_dev = dma_dev->parent;
- 
--	return of_dma_configure(dev, dma_dev->of_node, 0);
-+	if (dma_dev->of_node)
-+		err = of_dma_configure(dev, dma_dev->of_node, 1);
-+	else {
-+		if (has_acpi_companion(dma_dev)) {
-+			attr = acpi_get_dma_attr(to_acpi_device_node
-+							(dma_dev->fwnode));
-+			if (attr != DEV_DMA_NOT_SUPPORTED)
-+				err = acpi_dma_configure(dev, attr);
-+		}
-+	}
-+
-+	return err;
- }
- 
- static ssize_t modalias_show(struct device *dev, struct device_attribute *attr,
-@@ -863,7 +878,7 @@ static int fsl_mc_bus_probe(struct platform_device *pdev)
- 	phys_addr_t mc_portal_phys_addr;
- 	u32 mc_portal_size;
- 	struct mc_version mc_version;
--	struct resource res;
-+	struct resource *plat_res;
- 
- 	mc = devm_kzalloc(&pdev->dev, sizeof(*mc), GFP_KERNEL);
- 	if (!mc)
-@@ -874,16 +889,9 @@ static int fsl_mc_bus_probe(struct platform_device *pdev)
- 	/*
- 	 * Get physical address of MC portal for the root DPRC:
- 	 */
--	error = of_address_to_resource(pdev->dev.of_node, 0, &res);
--	if (error < 0) {
--		dev_err(&pdev->dev,
--			"of_address_to_resource() failed for %pOF\n",
--			pdev->dev.of_node);
--		return error;
--	}
--
--	mc_portal_phys_addr = res.start;
--	mc_portal_size = resource_size(&res);
-+	plat_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	mc_portal_phys_addr = plat_res->start;
-+	mc_portal_size = resource_size(plat_res);
- 	error = fsl_create_mc_io(&pdev->dev, mc_portal_phys_addr,
- 				 mc_portal_size, NULL,
- 				 FSL_MC_IO_ATOMIC_CONTEXT_PORTAL, &mc_io);
-@@ -900,11 +908,13 @@ static int fsl_mc_bus_probe(struct platform_device *pdev)
- 	dev_info(&pdev->dev, "MC firmware version: %u.%u.%u\n",
- 		 mc_version.major, mc_version.minor, mc_version.revision);
- 
--	error = get_mc_addr_translation_ranges(&pdev->dev,
-+	if (dev_of_node(&pdev->dev)) {
-+		error = get_mc_addr_translation_ranges(&pdev->dev,
- 					       &mc->translation_ranges,
- 					       &mc->num_translation_ranges);
--	if (error < 0)
--		goto error_cleanup_mc_io;
-+		if (error < 0)
-+			goto error_cleanup_mc_io;
-+	}
- 
- 	error = dprc_get_container_id(mc_io, 0, &container_id);
- 	if (error < 0) {
-@@ -931,6 +941,7 @@ static int fsl_mc_bus_probe(struct platform_device *pdev)
- 		goto error_cleanup_mc_io;
- 
- 	mc->root_mc_bus_dev = mc_bus_dev;
-+	mc_bus_dev->dev.fwnode = pdev->dev.fwnode;
- 	return 0;
- 
- error_cleanup_mc_io:
-@@ -964,11 +975,18 @@ static const struct of_device_id fsl_mc_bus_match_table[] = {
- 
- MODULE_DEVICE_TABLE(of, fsl_mc_bus_match_table);
- 
-+static const struct acpi_device_id fsl_mc_bus_acpi_match_table[] = {
-+	{"NXP0008", 0 },
-+	{ }
-+};
-+MODULE_DEVICE_TABLE(acpi, fsl_mc_bus_acpi_match_table);
-+
- static struct platform_driver fsl_mc_bus_driver = {
- 	.driver = {
- 		   .name = "fsl_mc_bus",
- 		   .pm = NULL,
- 		   .of_match_table = fsl_mc_bus_match_table,
-+		   .acpi_match_table = fsl_mc_bus_acpi_match_table,
- 		   },
- 	.probe = fsl_mc_bus_probe,
- 	.remove = fsl_mc_bus_remove,
-diff --git a/drivers/bus/fsl-mc/fsl-mc-msi.c b/drivers/bus/fsl-mc/fsl-mc-msi.c
-index 8b9c66d..bd10952 100644
---- a/drivers/bus/fsl-mc/fsl-mc-msi.c
-+++ b/drivers/bus/fsl-mc/fsl-mc-msi.c
-@@ -4,6 +4,7 @@
-  *
-  * Copyright (C) 2015-2016 Freescale Semiconductor, Inc.
-  * Author: German Rivera <German.Rivera@freescale.com>
-+ * Copyright 2020 NXP
-  *
-  */
- 
-@@ -13,6 +14,7 @@
- #include <linux/irq.h>
- #include <linux/irqdomain.h>
- #include <linux/msi.h>
-+#include <linux/acpi_iort.h>
- 
- #include "fsl-mc-private.h"
- 
-@@ -178,13 +180,19 @@ struct irq_domain *fsl_mc_msi_create_irq_domain(struct fwnode_handle *fwnode,
- }
- 
- int fsl_mc_find_msi_domain(struct device *mc_platform_dev,
--			   struct irq_domain **mc_msi_domain)
-+			   struct irq_domain **mc_msi_domain,
-+				struct fsl_mc_device *mc_dev)
- {
- 	struct irq_domain *msi_domain;
- 	struct device_node *mc_of_node = mc_platform_dev->of_node;
- 
- 	msi_domain = of_msi_get_domain(mc_platform_dev, mc_of_node,
- 				       DOMAIN_BUS_FSL_MC_MSI);
-+
-+	if (!msi_domain)
-+		msi_domain = iort_get_fsl_mc_device_domain(mc_platform_dev,
-+								mc_dev->icid);
-+
- 	if (!msi_domain) {
- 		pr_err("Unable to find fsl-mc MSI domain for %pOF\n",
- 		       mc_of_node);
-diff --git a/drivers/bus/fsl-mc/fsl-mc-private.h b/drivers/bus/fsl-mc/fsl-mc-private.h
-index 21ca8c756..e8f4c0f 100644
---- a/drivers/bus/fsl-mc/fsl-mc-private.h
-+++ b/drivers/bus/fsl-mc/fsl-mc-private.h
-@@ -3,6 +3,7 @@
-  * Freescale Management Complex (MC) bus private declarations
-  *
-  * Copyright (C) 2016 Freescale Semiconductor, Inc.
-+ * Copyright 2020 NXP
-  *
-  */
- #ifndef _FSL_MC_PRIVATE_H_
-@@ -596,7 +597,8 @@ int fsl_mc_msi_domain_alloc_irqs(struct device *dev,
- void fsl_mc_msi_domain_free_irqs(struct device *dev);
- 
- int fsl_mc_find_msi_domain(struct device *mc_platform_dev,
--			   struct irq_domain **mc_msi_domain);
-+			   struct irq_domain **mc_msi_domain,
-+				struct fsl_mc_device *mc_dev);
- 
- int fsl_mc_populate_irq_pool(struct fsl_mc_bus *mc_bus,
- 			     unsigned int irq_count);
-diff --git a/drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c b/drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c
-index 606efa6..df99170 100644
---- a/drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c
-+++ b/drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c
-@@ -4,9 +4,11 @@
-  *
-  * Copyright (C) 2015-2016 Freescale Semiconductor, Inc.
-  * Author: German Rivera <German.Rivera@freescale.com>
-+ * Copyright 2020 NXP
-  *
-  */
- 
-+#include <linux/acpi_iort.h>
- #include <linux/of_device.h>
- #include <linux/of_address.h>
- #include <linux/irq.h>
-@@ -66,7 +68,66 @@ static const struct of_device_id its_device_id[] = {
- 	{},
- };
- 
--static int __init its_fsl_mc_msi_init(void)
-+static int __init its_fsl_mc_msi_init_one(struct fwnode_handle *handle,
-+					const char *name)
-+{
-+	struct irq_domain *parent;
-+	struct irq_domain *mc_msi_domain;
-+
-+	parent = irq_find_matching_fwnode(handle, DOMAIN_BUS_NEXUS);
-+	if (!parent || !msi_get_domain_info(parent)) {
-+		pr_err("%s: Unable to locate ITS domain\n", name);
-+		return -ENXIO;
-+	}
-+
-+	mc_msi_domain = fsl_mc_msi_create_irq_domain(
-+					 handle,
-+					 &its_fsl_mc_msi_domain_info,
-+					 parent);
-+	if (!mc_msi_domain)
-+		pr_err("ACPIF: unable to create fsl-mc domain\n");
-+
-+	pr_info("fsl-mc MSI: domain created\n");
-+
-+	return 0;
-+}
-+
-+static int __init
-+its_fsl_mc_msi_parse_madt(union acpi_subtable_headers *header,
-+			const unsigned long end)
-+{
-+	struct acpi_madt_generic_translator *its_entry;
-+	struct fwnode_handle *dom_handle;
-+	const char *node_name;
-+	int err = -ENXIO;
-+
-+	its_entry = (struct acpi_madt_generic_translator *)header;
-+	node_name = kasprintf(GFP_KERNEL, "ITS@0x%lx",
-+				(long)its_entry->base_address);
-+
-+	dom_handle = iort_find_domain_token(its_entry->translation_id);
-+	if (!dom_handle) {
-+		pr_err("%s: Unable to locate ITS domain handle\n", node_name);
-+		goto out;
-+	}
-+
-+	err = its_fsl_mc_msi_init_one(dom_handle, node_name);
-+	if (!err)
-+		pr_info("fsl-mc MSI: %s domain created\n", node_name);
-+
-+out:
-+	kfree(node_name);
-+	return err;
-+}
-+
-+static int __init its_fsl_mc_acpi_msi_init(void)
-+{
-+	acpi_table_parse_madt(ACPI_MADT_TYPE_GENERIC_TRANSLATOR,
-+				its_fsl_mc_msi_parse_madt, 0);
-+	return 0;
-+}
-+
-+static int __init its_fsl_mc_of_msi_init(void)
- {
- 	struct device_node *np;
- 	struct irq_domain *parent;
-@@ -96,8 +157,14 @@ static int __init its_fsl_mc_msi_init(void)
- 
- 		pr_info("fsl-mc MSI: %pOF domain created\n", np);
- 	}
--
- 	return 0;
- }
- 
-+static int __init its_fsl_mc_msi_init(void)
-+{
-+	its_fsl_mc_of_msi_init();
-+	its_fsl_mc_acpi_msi_init();
-+
-+	return 0;
-+}
- early_initcall(its_fsl_mc_msi_init);
-diff --git a/include/linux/acpi_iort.h b/include/linux/acpi_iort.h
-index 8e7e2ec..0afc608 100644
---- a/include/linux/acpi_iort.h
-+++ b/include/linux/acpi_iort.h
-@@ -30,6 +30,8 @@ struct fwnode_handle *iort_find_domain_token(int trans_id);
- void acpi_iort_init(void);
- u32 iort_msi_map_rid(struct device *dev, u32 req_id);
- struct irq_domain *iort_get_device_domain(struct device *dev, u32 req_id);
-+struct irq_domain *iort_get_fsl_mc_device_domain(struct device *dev,
-+								u32 req_id);
- void acpi_configure_pmsi_domain(struct device *dev);
- int iort_pmsi_get_dev_id(struct device *dev, u32 *dev_id);
- /* IOMMU interface */
-@@ -40,6 +42,9 @@ int iort_iommu_msi_get_resv_regions(struct device *dev, struct list_head *head);
- static inline void acpi_iort_init(void) { }
- static inline u32 iort_msi_map_rid(struct device *dev, u32 req_id)
- { return req_id; }
-+static inline struct irq_domain *iort_get_fsl_mc_device_domain
-+					(struct device *dev, u32 req_id)
-+{ return NULL; }
- static inline struct irq_domain *iort_get_device_domain(struct device *dev,
- 							u32 req_id)
- { return NULL; }
--- 
-2.7.4
+greg k-h
 
 
 _______________________________________________
