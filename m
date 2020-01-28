@@ -2,150 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9044014B495
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 13:59:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 042AE14B4BC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 14:17:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ozuEeaKHZAlbtW8xkU81oTU8xH3tWO7aXgvzeEXExQo=; b=fy8nwh/DNxY8Jt
-	a6tAUK7Aya4R2WNPL1/oIg3kog2JVKTi8Yg14ifpaeogO3pVUX5m+5si9XmvK6FAbblUm1Ut5Vde9
-	HYH3NOH95+zdfGouk8qR5i3JBv1byw+ROXCPyCHYq4Hfvbj/f85IzD7LmoutgAQ+1G1/kCz4Eapsb
-	o+Er4IHfuLKuSlBEhlojLZ5rh8K2CY4roZo3QzSzMLRv6MARS2QPmJbc64A8wjIV9V6bIsX+t+XMb
-	sFo9YbFMpm9bQlb5rZvPzkPeI609IDWkbnYaiTgHpqAqPTebFm0ojQsQKDSZt1GC4EKnoBaMuw+dH
-	HS10QOgnTCU1MPUobLbA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:To:From:
+	Subject:Date:In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=ieerhoPVc2L5u2n+f5zj+jTG4b1aSpuCwTTEvubxRqk=; b=df/Gpd0KVlTN6C
+	r7iXY2wjR4sCOBprXikyKfkfmSzJUXFnWrxReKzCYcMYmR/YzmV4PL7KpQvC2yeY3lIQFRzF8et89
+	SNA5UTxHcadX0Yypqi9PPywKE89CC6/Bfz+K7hKQiyFTqdvTWzVNpOrW7XwFNenl7u1TDSzmZqOpv
+	GW+ATUxmQ/PUBEYLvtHF+eHCZKE5JUYhNmVbU0grMjPB/sdWN9sR6IVjjqpN3a9VPoqghgXSHwRvE
+	PqqawS30n1NTo4K6vi0dOV73SAUGDAQf+mM79q4zWlrLLRaBsYEIdp8aoOMwqodlfLvBUkvADVck2
+	I3Xcn7PTN4bl5UPuqyrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwQSG-0002GB-28; Tue, 28 Jan 2020 12:58:56 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1iwQk5-0001D0-F0; Tue, 28 Jan 2020 13:17:21 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwQR7-0001RS-Hp
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 12:57:50 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Eugen.Hristev@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="Eugen.Hristev@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: By85+VsfmKy+Hv10hUMGHNbaN8ANer1f9F42+SNL0dJ2ii2+7bgUCiZehE5Er2n+U0EsOjqoUY
- uDQ1XgjyBJ9koY4XJ+XbqtAwVsgHxrJBpbGjIUM9wU0YaRembIYg8eqaLYZpI3uHVoX2GjtHIT
- 2hX/Wc492bD/gzofGnNsFgEJ2G5JzvJVor3aplImeAwECAKI6IFKXPFH4OA9B0kVQcdQ63CD1Z
- OpwO7/ElAJJ4YGF6RkZCD4qT99zXs3xCHjvw8lnovvTQXJeZpTJROzKXGKozzE80YuFiSEmsYn
- L3g=
-X-IronPort-AV: E=Sophos;i="5.70,373,1574146800"; d="scan'208";a="63324879"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 28 Jan 2020 05:57:43 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 28 Jan 2020 05:57:43 -0700
-Received: from NAM12-DM6-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Tue, 28 Jan 2020 05:57:43 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Nr3VdBy8RROARs9ZrEQywcfRZU0VwD0IJq/6mzn4PvahDztV8hQcvFIyHW89L3wkz0rgB2rqC2qlGCoWF8y6gotzpFeYLLIITsnm4zw7U8Bkc6cokiAVhYbFqNx1mWlX6Y6sD+uN6oI4pVHJo4JPLRx89mdP3sdBxupC15nem01wr9Ct6QfFtnzcweQ1ck6nnwtjlVdCb6K4iv3qtGU/6LG6FFTBBIjnd/jVUX03HZZHtgHc2hdrgNgTs2nwGzT4ad4q339sc5fSwRWNz0WtCR5aZbObBbjSkysK1y4sgc7wAAFlqmZOhbxki42BDQXjIzZFS8BS4O829RsZN2wXRg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=c4jBKIuwOxmBMrknvGW6sroidfWtc4NmUdFm4P9iVT8=;
- b=Z6uCyAJNK80NwxcIQAXBizUT7dRzZ6t8x64hWH572v5HObWuVYWLIMpYAU35L1D01NE6m0Ec420Tr+mz2IHUygPwAO+CMTWoSgE0FU30CBJuWS074iS1CJubv8SudYoNXoG7w255g9m6TzdSXjQ8IcsQalUSviZkbqAYYBvJhOgTDLLOMx8WdXNo60GU36/6zWzajWDp/i/cXyyVW/39Q2iOHYOieI4HykyAmyv7rWz6uMMc+Xl3fHM8Yk4cHFvr/GG4ZPUZjMX3eFw9PMEU03p41ijWXwrKdkuBGZvxGDvudqekUTBlqCPx08KGB8ea9LNOZUSBTrM6AlpIDZBglQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=c4jBKIuwOxmBMrknvGW6sroidfWtc4NmUdFm4P9iVT8=;
- b=MCb8WQmAM4eeHoQu9OYUcz8+TwPPnJezHy5jJDK7wic6F01cblfOD2/Ch2oQ8Y5JQ8UOjAklaDKE+Y9+rkil+7LSfx6cr8hYfjVGFoBCdgJWAfDUEErJmqHSY/mSK21USlkZ2DkxNe5/z40EdhV/RLVXBGZ5daWit41++Kyrnjw=
-Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
- DM5PR11MB1612.namprd11.prod.outlook.com (10.172.37.149) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2665.24; Tue, 28 Jan 2020 12:57:41 +0000
-Received: from DM5PR11MB1242.namprd11.prod.outlook.com
- ([fe80::e5f6:d07d:d7de:ce79]) by DM5PR11MB1242.namprd11.prod.outlook.com
- ([fe80::e5f6:d07d:d7de:ce79%6]) with mapi id 15.20.2665.026; Tue, 28 Jan 2020
- 12:57:41 +0000
-From: <Eugen.Hristev@microchip.com>
-To: <jic23@kernel.org>, <linux-iio@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v3 3/3] iio: adc: at91-sama5d2_adc: update for other trigger
- usage
-Thread-Topic: [PATCH v3 3/3] iio: adc: at91-sama5d2_adc: update for other
- trigger usage
-Thread-Index: AQHV1dqGOUCBlFaurEGFIEUerZ28kA==
-Date: Tue, 28 Jan 2020 12:57:41 +0000
-Message-ID: <1580216189-27418-4-git-send-email-eugen.hristev@microchip.com>
-References: <1580216189-27418-1-git-send-email-eugen.hristev@microchip.com>
-In-Reply-To: <1580216189-27418-1-git-send-email-eugen.hristev@microchip.com>
-Accept-Language: en-US, ro-RO
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ac2e5b73-d78e-448c-a971-08d7a3f1a8f6
-x-ms-traffictypediagnostic: DM5PR11MB1612:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM5PR11MB1612DAB43A3BE937084D33F4E80A0@DM5PR11MB1612.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 029651C7A1
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(39860400002)(136003)(376002)(346002)(396003)(189003)(199004)(6506007)(71200400001)(8676002)(5660300002)(2616005)(316002)(81166006)(26005)(81156014)(66446008)(4326008)(110136005)(54906003)(91956017)(478600001)(64756008)(2906002)(66556008)(6512007)(66946007)(86362001)(6486002)(107886003)(76116006)(8936002)(36756003)(66476007)(186003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1612;
- H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: NY0a1tcTLXIHOMUTV2pgLY9tMe58faWOrjHlPeoYa5IMTwjNHV+jl1iPHQWl1b+JAQT9dkG4f7xBgx71H61ATL+gZ+/4Dt88jOpIXKoYjnpj1czOGPIpiMK1peRwtut7MSwSlMRu+bRUXnJyzIyralE1k1e8rinONFSMuuZFFg/D2S5IQ/VxCi4a7lyehvbYucwDpIDIOuffPPa0rpY/ySkAp0ERM5tfTLPqz+UbCOkoiQgXPDfNomXvZmXzL8JCjrOSq+H+QyZLmfWaLGbK3moGLJsokNTF/t0ffKpFV3BPsS498xcvepzg7ENxCpFz9ryGpfo/nu6YHhdAer44P9CXzqggE5bQrpH/vZADf7eYv26hpPF7aQHwKW5CHTvW05JX/250+hHogbSzISgoIfvlSU4c8DbnA0U7I8lntH+R/zYhVXEXfTXX1cB14RJm
-x-ms-exchange-antispam-messagedata: 87SABN5L4K3A7jp6M6x2DknTKi1/dEeWM37XvGPIXWjWeMRHc40SuG4U0bQmb7XWuVqIE/krTeJrQoMjo2h6QR3hja789CT34ukUbRtm69wM2iYZ97r/ctNiUO1SqOgaUEc2BxzJar3q+DlNkq6KKA==
-MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: ac2e5b73-d78e-448c-a971-08d7a3f1a8f6
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jan 2020 12:57:41.0859 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: yuFA1br1xhP3i/Vi+bqJ8aH1SIR9RWpxz+WDl+g1xdCdWb1KCh69CYxfd9H0cRZjPrGMX7W1+J5LE812z37n5rzRKd7AtxNmAwN6jYhmPyg=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1612
+ id 1iwQju-0001BD-PR; Tue, 28 Jan 2020 13:17:12 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 18C54B246;
+ Tue, 28 Jan 2020 13:17:07 +0000 (UTC)
+In-Reply-To: <88af0fca-90d1-58ff-406d-73f185eb8b7e@gmail.com>
+Date: Tue, 28 Jan 2020 13:42:21 +0100
+Subject: Re: [PATCH] serial: 8250_early: Add earlycon for BCM2835 aux uart
+From: "Nicolas Saenz Julienne" <nsaenzjulienne@suse.de>
+To: "Matthias Brugger" <matthias.bgg@gmail.com>, "Lukas Wunner"
+ <lukas@wunner.de>, <matthias.bgg@kernel.org>
+Message-Id: <C07FL64L9QNN.357K7JAUOSNA2@linux-9qgx>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_045745_594489_82C94354 
-X-CRM114-Status: GOOD (  18.71  )
+X-CRM114-CacheID: sfid-20200128_051711_154996_1553582E 
+X-CRM114-Status: GOOD (  23.77  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,261 +59,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eugen.Hristev@microchip.com, Ludovic.Desroches@microchip.com,
- linux-kernel@vger.kernel.org, alexandru.ardelean@analog.com
+Cc: Matthias Brugger <mbrugger@suse.com>, Scott Branden <sbranden@broadcom.com>,
+ gregkh@linuxfoundation.org, jslaby@suse.com, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, nsaenzjulienne@suse.de, Florian
+ Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
+ Ray Jui <rjui@broadcom.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Eugen Hristev <eugen.hristev@microchip.com>
+On Sun Jan 26, 2020 at 9:20 PM, Matthias Brugger wrote:
+>
+>
+> On 26/01/2020 14:12, Lukas Wunner wrote:
+> > On Sun, Jan 26, 2020 at 01:33:14PM +0100, matthias.bgg@kernel.org wrote:
+> >> +#ifdef CONFIG_SERIAL_8250_CONSOLE
+> >> +
+> >> +static int __init early_bcm2835aux_setup(struct earlycon_device *device,
+> >> +					const char *options)
+> >> +{
+> >> +	if (!device->port.membase)
+> >> +		return -ENODEV;
+> >> +
+> >> +	device->port.iotype = UPIO_MEM32;
+> >> +	device->port.regshift = 2;
+> >> +
+> >> +	return early_serial8250_setup(device, NULL);
+> >> +}
+> >> +
+> >> +OF_EARLYCON_DECLARE(bcm2835aux, "brcm,bcm2835-aux-uart",
+> >> +		    early_bcm2835aux_setup);
+> >> +#endif
+> > 
+> > Does this really work?  I also tried to get it working recently and
+> > the system just hung on boot.  Looking at it with a JTAG debugger
+> > showed that the bcm2835aux registers were inaccessible because
+> > the mini UART wasn't enabled in the AUXENB register.
+> > 
+> > Maybe if you use OF_EARLYCON_DECLARE, the firmware recognizes that
+> > serial1 is set as stdout-path and performs enablement of the mini UART?
+> > Or are you using U-Boot which perhaps does the enablement?
+>
+> Yes I'm using U-Boot which enables the console for me. My understanding
+> is that
+> the early console is thought as a re-use of the console the boot FW used
+> for
+> logging. AFAIK for example it does not enable any needed clocks but
+> expects
+> these to be enabled already.
+>
+> Looking on the source code of U-Boot [1] I don't see that the AUXENB is
+> written
+> somewhere, so I suppose that the FW should already has enabled the
+> aux-uart.
+>
+> I any case if it's just to set one bit, I think we can do that in
+> early_bcm2835aux_setup().
+>
+> [1]
+> https://gitlab.denx.de/u-boot/u-boot/blob/master/drivers/serial/serial_bcm283x_mu.c
+>
+> > 
+> > I also saw in the JTAG debugger that the uartclk member contained
+> > an incorrect value, so I'd expect that it has to be set as well in
+> > early_bcm2835aux_setup().
+>
+> In my case the clock was set by U-Boot already.
 
-This change will allow the at91-sama5d2_adc driver to use other triggers
-than it's own.
-In particular, tested with the sysfs trigger.
-To be able to achieve this functionality, some changes were required:
-1) Do not enable/disable channels when enabling/disabling the trigger.
-This is because the trigger is enabled/disabled only for our trigger
-(obviously). We need channels enabled/disabled regardless of what trigger is
-being used.
-2) Cope with DMA : DMA cannot be used when using another type of trigger.
-Other triggers work through pollfunc, so we get polled anyway on every trigger.
-Thus we have to obtain data at every trigger.
-3) When to start conversion? The usual pollfunc (store time from subsystem)
-would be in hard irq and this would be a good way, but current iio subsystem
-recommends to have it in the threaded irq. Thus adding software start
-code in this handler.
-4) Buffer config: we need to setup buffer regardless of our own device's
-trigger. We may get one attached later.
-5) IRQ handling: we use our own device IRQ only if it's our own trigger
-and we do not use DMA . If we use DMA, we use the DMA controller's IRQ.
+I'm testing this by booting directly from RPi4's bootloader. And it
+works as long as I add this to config.txt:
 
-Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
----
-Changes in v3:
-- remove useless call to iio_triggered_buffer_predisable
+enable_uart=1
+gpu_freq=500
 
-Changes in v2:
-- adapt to the situation of having the previous two patches ahead in the series
+Which AFAIK blocks frequency scalin on the GPU and fixes the clock to a
+point where the serial is set at 115200 bauds.
 
- drivers/iio/adc/at91-sama5d2_adc.c | 142 +++++++++++++++++++------------------
- 1 file changed, 72 insertions(+), 70 deletions(-)
+Ideally it'd be nice to be able to query the clock frequency, and
+recalculate the divisors based on that. But I don't know if it's
+feasible at that point in the boot process.
 
-diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
-index 49c2b9d..03ceab4 100644
---- a/drivers/iio/adc/at91-sama5d2_adc.c
-+++ b/drivers/iio/adc/at91-sama5d2_adc.c
-@@ -728,7 +728,6 @@ static int at91_adc_configure_trigger(struct iio_trigger *trig, bool state)
- 	struct iio_dev *indio = iio_trigger_get_drvdata(trig);
- 	struct at91_adc_state *st = iio_priv(indio);
- 	u32 status = at91_adc_readl(st, AT91_SAMA5D2_TRGR);
--	u8 bit;
- 
- 	/* clear TRGMOD */
- 	status &= ~AT91_SAMA5D2_TRGR_TRGMOD_MASK;
-@@ -739,48 +738,6 @@ static int at91_adc_configure_trigger(struct iio_trigger *trig, bool state)
- 	/* set/unset hw trigger */
- 	at91_adc_writel(st, AT91_SAMA5D2_TRGR, status);
- 
--	for_each_set_bit(bit, indio->active_scan_mask, indio->num_channels) {
--		struct iio_chan_spec const *chan = at91_adc_chan_get(indio, bit);
--		u32 cor;
--
--		if (!chan)
--			continue;
--		/* these channel types cannot be handled by this trigger */
--		if (chan->type == IIO_POSITIONRELATIVE ||
--		    chan->type == IIO_PRESSURE)
--			continue;
--
--		if (state) {
--			cor = at91_adc_readl(st, AT91_SAMA5D2_COR);
--
--			if (chan->differential)
--				cor |= (BIT(chan->channel) |
--					BIT(chan->channel2)) <<
--					AT91_SAMA5D2_COR_DIFF_OFFSET;
--			else
--				cor &= ~(BIT(chan->channel) <<
--				       AT91_SAMA5D2_COR_DIFF_OFFSET);
--
--			at91_adc_writel(st, AT91_SAMA5D2_COR, cor);
--		}
--
--		if (state)
--			at91_adc_writel(st, AT91_SAMA5D2_CHER,
--					BIT(chan->channel));
--		else
--			at91_adc_writel(st, AT91_SAMA5D2_CHDR,
--					BIT(chan->channel));
--	}
--
--	/* Nothing to do if using DMA */
--	if (st->dma_st.dma_chan)
--		return 0;
--
--	if (state)
--		at91_adc_writel(st, AT91_SAMA5D2_IER, AT91_SAMA5D2_IER_DRDY);
--	else
--		at91_adc_writel(st, AT91_SAMA5D2_IDR, AT91_SAMA5D2_IER_DRDY);
--
- 	return 0;
- }
- 
-@@ -905,9 +862,22 @@ static int at91_adc_dma_start(struct iio_dev *indio_dev)
- 	return 0;
- }
- 
-+static bool at91_adc_buffer_check_use_irq(struct iio_dev *indio,
-+					  struct at91_adc_state *st)
-+{
-+	/* if using DMA, we do not use our own IRQ (we use DMA-controller) */
-+	if (st->dma_st.dma_chan)
-+		return false;
-+	/* if the trigger is not ours, then it has its own IRQ */
-+	if (iio_trigger_validate_own_device(indio->trig, indio))
-+		return false;
-+	return true;
-+}
-+
- static int at91_adc_buffer_postenable(struct iio_dev *indio_dev)
- {
- 	int ret;
-+	u8 bit;
- 	struct at91_adc_state *st = iio_priv(indio_dev);
- 
- 	/* check if we are enabling triggered buffer or the touchscreen */
-@@ -928,6 +898,36 @@ static int at91_adc_buffer_postenable(struct iio_dev *indio_dev)
- 		return ret;
- 	}
- 
-+	for_each_set_bit(bit, indio_dev->active_scan_mask,
-+			 indio_dev->num_channels) {
-+		struct iio_chan_spec const *chan =
-+					at91_adc_chan_get(indio_dev, bit);
-+		u32 cor;
-+
-+		if (!chan)
-+			continue;
-+		/* these channel types cannot be handled by this trigger */
-+		if (chan->type == IIO_POSITIONRELATIVE ||
-+		    chan->type == IIO_PRESSURE)
-+			continue;
-+
-+		cor = at91_adc_readl(st, AT91_SAMA5D2_COR);
-+
-+		if (chan->differential)
-+			cor |= (BIT(chan->channel) | BIT(chan->channel2)) <<
-+				AT91_SAMA5D2_COR_DIFF_OFFSET;
-+		else
-+			cor &= ~(BIT(chan->channel) <<
-+			       AT91_SAMA5D2_COR_DIFF_OFFSET);
-+
-+		at91_adc_writel(st, AT91_SAMA5D2_COR, cor);
-+
-+		at91_adc_writel(st, AT91_SAMA5D2_CHER, BIT(chan->channel));
-+	}
-+
-+	if (at91_adc_buffer_check_use_irq(indio_dev, st))
-+		at91_adc_writel(st, AT91_SAMA5D2_IER, AT91_SAMA5D2_IER_DRDY);
-+
- 	return iio_triggered_buffer_postenable(indio_dev);
- }
- 
-@@ -948,21 +948,11 @@ static int at91_adc_buffer_predisable(struct iio_dev *indio_dev)
- 	if (!(indio_dev->currentmode & INDIO_ALL_TRIGGERED_MODES))
- 		return -EINVAL;
- 
--	/* continue with the triggered buffer */
--	ret = iio_triggered_buffer_predisable(indio_dev);
--	if (ret < 0)
--		dev_err(&indio_dev->dev, "buffer predisable failed\n");
--
--	if (!st->dma_st.dma_chan)
--		return ret;
--
--	/* if we are using DMA we must clear registers and end DMA */
--	dmaengine_terminate_sync(st->dma_st.dma_chan);
--
- 	/*
--	 * For each enabled channel we must read the last converted value
-+	 * For each enable channel we must disable it in hardware.
-+	 * In the case of DMA, we must read the last converted value
- 	 * to clear EOC status and not get a possible interrupt later.
--	 * This value is being read by DMA from LCDR anyway
-+	 * This value is being read by DMA from LCDR anyway, so it's not lost.
- 	 */
- 	for_each_set_bit(bit, indio_dev->active_scan_mask,
- 			 indio_dev->num_channels) {
-@@ -975,12 +965,28 @@ static int at91_adc_buffer_predisable(struct iio_dev *indio_dev)
- 		if (chan->type == IIO_POSITIONRELATIVE ||
- 		    chan->type == IIO_PRESSURE)
- 			continue;
-+
-+		at91_adc_writel(st, AT91_SAMA5D2_CHDR, BIT(chan->channel));
-+
- 		if (st->dma_st.dma_chan)
- 			at91_adc_readl(st, chan->address);
- 	}
- 
-+	if (at91_adc_buffer_check_use_irq(indio_dev, st))
-+		at91_adc_writel(st, AT91_SAMA5D2_IDR, AT91_SAMA5D2_IER_DRDY);
-+
- 	/* read overflow register to clear possible overflow status */
- 	at91_adc_readl(st, AT91_SAMA5D2_OVER);
-+
-+	/* continue with the triggered buffer */
-+	ret = iio_triggered_buffer_predisable(indio_dev);
-+	if (ret < 0)
-+		dev_err(&indio_dev->dev, "buffer predisable failed\n");
-+
-+	/* if we are using DMA we must clear registers and end DMA */
-+	if (st->dma_st.dma_chan)
-+		dmaengine_terminate_sync(st->dma_st.dma_chan);
-+
- 	return ret;
- }
- 
-@@ -1135,6 +1141,13 @@ static irqreturn_t at91_adc_trigger_handler(int irq, void *p)
- 	struct iio_dev *indio_dev = pf->indio_dev;
- 	struct at91_adc_state *st = iio_priv(indio_dev);
- 
-+	/*
-+	 * If it's not our trigger, start a conversion now, as we are
-+	 * actually polling the trigger now.
-+	 */
-+	if (iio_trigger_validate_own_device(indio_dev->trig, indio_dev))
-+		at91_adc_writel(st, AT91_SAMA5D2_CR, AT91_SAMA5D2_CR_START);
-+
- 	if (st->dma_st.dma_chan)
- 		at91_adc_trigger_handler_dma(indio_dev);
- 	else
-@@ -1147,20 +1160,9 @@ static irqreturn_t at91_adc_trigger_handler(int irq, void *p)
- 
- static int at91_adc_buffer_init(struct iio_dev *indio)
- {
--	struct at91_adc_state *st = iio_priv(indio);
--
--	if (st->selected_trig->hw_trig) {
--		return devm_iio_triggered_buffer_setup(&indio->dev, indio,
--			&iio_pollfunc_store_time,
--			&at91_adc_trigger_handler, &at91_buffer_setup_ops);
--	}
--	/*
--	 * we need to prepare the buffer ops in case we will get
--	 * another buffer attached (like a callback buffer for the touchscreen)
--	 */
--	indio->setup_ops = &at91_buffer_setup_ops;
--
--	return 0;
-+	return devm_iio_triggered_buffer_setup(&indio->dev, indio,
-+		&iio_pollfunc_store_time,
-+		&at91_adc_trigger_handler, &at91_buffer_setup_ops);
- }
- 
- static unsigned at91_adc_startup_time(unsigned startup_time_min,
--- 
-2.7.4
+We could maybe leave a comment explaining what is expected from the
+bootloader, given the different options around.
+
+Regards,
+Nicolas
 
 _______________________________________________
 linux-arm-kernel mailing list
