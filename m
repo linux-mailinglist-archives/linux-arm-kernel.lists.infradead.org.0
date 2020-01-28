@@ -2,122 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3035214BD21
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 16:41:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61DA414BD38
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Jan 2020 16:48:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GBN2a4AIeo5Gc2xtDbyiI7/2j0qWQK3GGsBuIBdeF4M=; b=F9EdW0ZnVyvThX
-	YDJHEXVfv7l5S65Jy0DRJ+9yqEs53niyu/f6HIMZsbLadrv7Tc573ukSskhGQL8/kK5GGS5qhW+El
-	iX4FyJVaRN0aRMuJz84og+VIri1NvTugEdzTyeqXccACU8TrXMb9vB/XyLN/Qk0a9fO0D7Ni1yHxp
-	1zI81CTElC+ijZkMWwByTBvJczXjb/X+BdnB0XchDh7se6RxtHD5NXjjiF6FccgfWfVa86Lriv25L
-	sQBVoJkt4sbDjoulcEjDkMVXa/wG/2cFNaL0+kyquZjFQ7W0if/qSXlDUBExvb7XBi9rFDk0xZDCs
-	3l5IPWnJrGCbCdUL5jjA==;
+	List-Owner; bh=pLaQD8m6bY2KBT5iaN8TAI6ITTrJTOhRepWEs/ESCzA=; b=Qmb29WOhuJCT6p
+	IQYy77ux2i6notZVDCeV/frvBdG/8iBuonVzq3s3hJzllnAOBpo0pQvmA0AlptZVY/9eoXCb3Ghfx
+	sUk6nqufbyUYUd4p2hemhmG2Cgw4PeEm9vJhnWTg+Qcfz8MA6f+/w312vsPpxxNMgX1zt1gQX6veL
+	Ez3NZz9ZKTp+FHsMBF3obwWY4RakH/XN8rVqcSmVAE+hJ+SHaKi3q8Lh82BTC1kWlJ7nzfxlWYl0o
+	LqjhScd7Xu+XFoIjmsNyUyac6fwiT9UU3VKk3HqHRxmz266SWDS7ObFfffzk78I5kyf94UTNbDRkS
+	IGnu2d/L9HlI4VFlroJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwSzO-0007H3-Al; Tue, 28 Jan 2020 15:41:18 +0000
-Received: from mail-mw2nam10on2049.outbound.protection.outlook.com
- ([40.107.94.49] helo=NAM10-MW2-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwSws-0003vo-1v; Tue, 28 Jan 2020 15:38:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JtZW/HbWaJphMsno//sfK1o4jLtjy75AXJcRi6q30HB8npEelrXh439JuanKIdMaVO8FD0ytfJrtzWsmrZJz+WWrSjYg46h1C+lz1UmaCYJ9evRaatSXL1XoV05HqCgrFW9HZjtCDiDXLoAZLdmcq4Qw6m6IZlsgM6ol+eUWqtNnubWE2/80Flgvfc4Bnr7PIUle+gfbPaTaFC1k8ojNLflvF5aUIyTlSbge2WPaMYZfBLMcqREPAzsrPY2MF18ua8PxVZhXrpWujbJlQwbR/ryUDf9tdQFYO8og3/FhKbsy2RHvRNQ4uqFUrZ89pTzUoY+L4woyQ71XuXFNOV8xcQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Y1Ebke6eveyxao7m6TM2J+k5u29xj8tTIql2r8ll4bY=;
- b=AbAe4p4mYdM7OW71LpwkN16xOdiYIAPZ2vDsAuh9quPpQhjhC1t+Rm7hRyudGd1zA4ZkxYFKScYFfe9SzSPaUPXmbnCyNHD5shubjM3dnNgsOuKc/n94OYGHlUy3RwxBCD2AA5dmGvT3hlbbJ4jE74WCtwqjSimQbGBfNWDSfKLDl96Okh5/P1VTyLyIGMOH+LIvOIQFs4RUmYpZuXFSL39v/ZPVJK+W4V7ThiPW+Il8+yKZ9iI8h803yhaZR8wUiiHfqOFGlHcRMSw2dyGIl+YOmdYtkVsd/M1sdldUD8OlPvE+e7QL07Ubea0YVnYLRjdV7FWs3UFsgsXt8tiVOQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=micron.com; dmarc=pass action=none header.from=micron.com;
- dkim=pass header.d=micron.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=micron.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Y1Ebke6eveyxao7m6TM2J+k5u29xj8tTIql2r8ll4bY=;
- b=pKpikirxO6t+XQFv/XlaFpGY9PpbXvzFJNvcOT+wSAg4iFgAHO8mHApIDi23rbV5oLn3Ts9kGTmm0yuvm6z50MD/zMFVENYwokp/tUWOKK4bAF1GI/nUkJlXbS8g+C5I1GP52bLSSyah3xqR48uWYf6bIUeNoHSILwJUpFQpEPU=
-Received: from BN7PR08MB5684.namprd08.prod.outlook.com (20.176.179.87) by
- BN7PR08MB4324.namprd08.prod.outlook.com (52.135.251.143) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2665.22; Tue, 28 Jan 2020 15:38:38 +0000
-Received: from BN7PR08MB5684.namprd08.prod.outlook.com
- ([fe80::981f:90d7:d45f:fd11]) by BN7PR08MB5684.namprd08.prod.outlook.com
- ([fe80::981f:90d7:d45f:fd11%7]) with mapi id 15.20.2665.026; Tue, 28 Jan 2020
- 15:38:38 +0000
-From: "Bean Huo (beanhuo)" <beanhuo@micron.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "avri.altman@wdc.com" <avri.altman@wdc.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>, "jejb@linux.ibm.com"
- <jejb@linux.ibm.com>
-Subject: RE: [EXT] [PATCH v2 3/5] scsi: ufs: add
- ufshcd_is_auto_hibern8_enabled facility
-Thread-Topic: [EXT] [PATCH v2 3/5] scsi: ufs: add
- ufshcd_is_auto_hibern8_enabled facility
-Thread-Index: AQHV0sgOxlbzOPcdrkKbef6h38DLDqgAOCsw
-Date: Tue, 28 Jan 2020 15:38:38 +0000
-Message-ID: <BN7PR08MB5684D9F9D37F3031F3FEDAC7DB0A0@BN7PR08MB5684.namprd08.prod.outlook.com>
-References: <20200124150743.15110-1-stanley.chu@mediatek.com>
- <20200124150743.15110-4-stanley.chu@mediatek.com>
-In-Reply-To: <20200124150743.15110-4-stanley.chu@mediatek.com>
-Accept-Language: en-150, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=beanhuo@micron.com; 
-x-originating-ip: [165.225.81.21]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8b574952-6181-4547-cfe8-08d7a408253b
-x-ms-traffictypediagnostic: BN7PR08MB4324:|BN7PR08MB4324:|BN7PR08MB4324:
-x-microsoft-antispam-prvs: <BN7PR08MB4324B61BCE1F54DF75E686D2DB0A0@BN7PR08MB4324.namprd08.prod.outlook.com>
-x-ms-exchange-transport-forked: True
-x-ms-oob-tlc-oobclassifiers: OLM:400;
-x-forefront-prvs: 029651C7A1
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(366004)(346002)(396003)(39860400002)(136003)(189003)(199004)(7696005)(478600001)(55236004)(64756008)(66446008)(66476007)(66556008)(7416002)(316002)(76116006)(186003)(66946007)(6506007)(8936002)(558084003)(8676002)(81166006)(81156014)(26005)(54906003)(71200400001)(2906002)(55016002)(9686003)(110136005)(52536014)(86362001)(33656002)(4326008)(5660300002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR08MB4324;
- H:BN7PR08MB5684.namprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: micron.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: BCeAsdyQracZ4gx9LOV9/M6dXjFHgc4HvZFyIB6wJKZ7KJBvaYrUG/njEb8GbLTQuRodyX3eMjHPOFav27RGxxeRg4zIdQCDzj/IUVCZV52bcDZJ6lLKwdqetQ619RFDpMqKil0rhPdzfLHZNBXacHOmxTFaPD8YDAOws5RUlliZ0ILudLyPySisNyHF5UhBt2HlndWiC1zIendc9Sqs9gGTC7mXz3jJQmYS5+MdSYVdmCc5NKaXGprdivIXWWTzNYbZPY4RpEe0SW+kdfH8JZ6XxAnvVvAqzERLI8EOCRbFVZnWa2zqM+cQAk3pN2WRLvarqjAUsvduIbmwuwHls2coMyy+QR2q80WLHt15CQ3YLBFV2zUGeKS2xEyTn6JS3gPaQ6kd1EVx3Q1iks9/x6pDeA0OdmejxFI08T49FOd5km/lelg3XqOjUKM+10WI
-x-ms-exchange-antispam-messagedata: ZY0/V0+/aP8/Nvw2+RGe4ngsKTKQ8D7NKnubTXiYPu6vphgp40DWSHRtaCPQ30jEWBDvSFj40qCrYAaisQ+MESCLBmVMQOtog2JRU/UUVSEap3vhXq6kyl5W5RgkTM1IJZK9CFsrUZTnGcsewSe/5g==
+	id 1iwT6X-0001Ci-2U; Tue, 28 Jan 2020 15:48:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iwT6N-0001Ai-FE
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Jan 2020 15:48:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 49F9A31B;
+ Tue, 28 Jan 2020 07:48:28 -0800 (PST)
+Received: from localhost (unknown [10.1.198.81])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DF8AA3F68E;
+ Tue, 28 Jan 2020 07:48:27 -0800 (PST)
+Date: Tue, 28 Jan 2020 15:48:26 +0000
+From: Ionela Voinescu <ionela.voinescu@arm.com>
+To: Valentin Schneider <valentin.schneider@arm.com>
+Subject: Re: [PATCH v2 3/6] arm64/kvm: disable access to AMU registers from
+ kvm guests
+Message-ID: <20200128154826.GB17411@arm.com>
+References: <20191218182607.21607-1-ionela.voinescu@arm.com>
+ <20191218182607.21607-4-ionela.voinescu@arm.com>
+ <bc3f582c-9aed-8052-d0cb-b39c76c8ce73@arm.com>
 MIME-Version: 1.0
-X-OriginatorOrg: micron.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8b574952-6181-4547-cfe8-08d7a408253b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Jan 2020 15:38:38.5646 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: f38a5ecd-2813-4862-b11b-ac1d563c806f
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: vWrtZB/D9EB8lEQWXO5q33XsKm53aIXqCfyXrSCZ3IbS+SSqfjSu3fNSTPKjFFEhM8FeKqVcE5Cg6agmyBfvLQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR08MB4324
+Content-Disposition: inline
+In-Reply-To: <bc3f582c-9aed-8052-d0cb-b39c76c8ce73@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_073842_261807_4FC1C16D 
-X-CRM114-Status: UNSURE (   3.65  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.4 (+++)
+X-CRM114-CacheID: sfid-20200128_074831_603633_FAE280A5 
+X-CRM114-Status: GOOD (  35.87  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (3.4 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [165.225.81.21 listed in zen.spamhaus.org]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.94.49 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,24 +65,213 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
+ peterz@infradead.org, catalin.marinas@arm.com, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, sudeep.holla@arm.com,
+ James Morse <james.morse@arm.com>, will@kernel.org, dietmar.eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Bean Huo <beanhuo@micron.com>
+On Monday 27 Jan 2020 at 15:33:26 (+0000), Valentin Schneider wrote:
+> On 18/12/2019 18:26, Ionela Voinescu wrote:
+> > diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
+> > index 6e5d839f42b5..dd20fb185d56 100644
+> > --- a/arch/arm64/include/asm/kvm_arm.h
+> > +++ b/arch/arm64/include/asm/kvm_arm.h
+> > @@ -266,10 +266,11 @@
+> >  #define CPTR_EL2_TFP_SHIFT 10
+> >  
+> >  /* Hyp Coprocessor Trap Register */
+> > -#define CPTR_EL2_TCPAC	(1 << 31)
+> > -#define CPTR_EL2_TTA	(1 << 20)
+> > -#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
+> >  #define CPTR_EL2_TZ	(1 << 8)
+> > +#define CPTR_EL2_TFP	(1 << CPTR_EL2_TFP_SHIFT)
+> > +#define CPTR_EL2_TTA	(1 << 20)
+> > +#define CPTR_EL2_TAM	(1 << 30)
+> > +#define CPTR_EL2_TCPAC	(1 << 31)
+> 
+> Nit: why the #define movement? Couldn't that just be added beneath
+> CPTR_EL2_TCPAC?
+>
+
+It was a 'while here' thing done wrong. I was looking at the CPACR bits
+and it led me to believe that the order of bits in the rest of the file
+was from least significant to most significant and I thought I'll
+reorder this as well. But looking again I see that it was done
+correctly the first time, according to most of the file. My bad!
+
+> >  #define CPTR_EL2_RES1	0x000032ff /* known RES1 bits in CPTR_EL2 */
+> >  #define CPTR_EL2_DEFAULT	CPTR_EL2_RES1
+> >  
+> > diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+> > index 72fbbd86eb5e..0bca87a2621f 100644
+> > --- a/arch/arm64/kvm/hyp/switch.c
+> > +++ b/arch/arm64/kvm/hyp/switch.c
+> > @@ -90,6 +90,17 @@ static void activate_traps_vhe(struct kvm_vcpu *vcpu)
+> >  	val = read_sysreg(cpacr_el1);
+> >  	val |= CPACR_EL1_TTA;
+> >  	val &= ~CPACR_EL1_ZEN;
+> > +
+> > +	/*
+> > +	 * With VHE enabled, we have HCR_EL2.{E2H,TGE} = {1,1}. Note that in
+> > +	 * this case CPACR_EL1 has the same bit layout as CPTR_EL2, and
+> > +	 * CPACR_EL1 accessing instructions are redefined to access CPTR_EL2.
+> > +	 * Therefore use CPTR_EL2.TAM bit reference to activate AMU register
+> > +	 * traps.
+> > +	 */
+> > +
+> > +	val |= CPTR_EL2_TAM;
+> > +
+> 
+> Hmm so this is a bit confusing for me, I've rewritten that part of the
+> email too many times (didn't help that I'm far from being a virt guru).
+> Rectifications are most welcome.
+> 
+
+Yes, this is definitely not straight-forward. It took me a while to
+retrace my steps in regards to this functionality as well.
+
+> 
+> First, AFAICT we *don't* have HCR_EL2.TGE set anymore at this point, it's
+> cleared just a bit earlier in __activate_traps().
+> 
+
+First of all when I wrote the above I believed that when this function is
+called we'll have HCR_EL2.{E2H,TGE} = {1,1}, which reflects running on
+the host with general exceptions trapped to EL2. So thank you for the
+correction.
+
+But I don't believe running with TGE cleared changes anything at this
+point. First of all I think we can only run the code here at EL2.
+Initially I thought we might run it at EL1 for nested virtualisation
+but for nested OSs we'll use NVHE so that problem goes away.
+
+So when we run this code at EL2, accesses to EL1 registers are
+redirected to their EL2 equivalents due to HCR_EL2.{E2H} = {1}, with no
+impact from HCR_EL2.{TGE} = {0} in regards to the setting of the TAM bit
+for CPACR_EL1/CPTR_EL2. Therefore, this code will result in AMU accesses
+being trapped to EL2 when coming from EL0 or EL1 on the guest side, once
+we enter guest.
+
+> Then, your comment suggests that when we're running this code, CPACR_EL1
+> accesses are rerouted to CPTR_EL2. Annoyingly this isn't mentioned in
+> the doc of CPACR_EL1, but D5.6.3 does say
+> 
+> """
+> When ARMv8.1-VHE is implemented, and HCR_EL2.E2H is set to 1, when executing
+> at EL2, some EL1 System register access instructions are redefined to access
+> the equivalent EL2 register.
+> """
+> 
+> And CPACR_EL1 is part of these, so far so good. Now, the thing is
+> the doc for CPACR_EL1 *doesn't* mention any TAM bit - but CPTR_EL2 does.
+> I believe what *do* want here is to set CPTR_EL2.TAM (which IIUC we end
+> up doing via the rerouting).
+> 
+
+Right! The error of my comment is that I believed that E2H and TGE
+together determine the re-mapping or CPACR_EL1 to CPTR_EL2. But
+actually, E2H determines this redirection when running at EL2, while TGE
+only determines the current trapping behaviour: if we run with TGE=0,
+we're running on the guest and CPACR_EL1 takes effect, and when we run
+on the host with TGE=1, CPTR_EL2 takes effect.
+
+I believe the reason CPACR_EL1 does not have a TAM bit is that for
+trapping at EL1 we have the AMU register AMUSERENR_EL0 to trap accesses
+from EL0.
+
+When we run on the host side with HCR_EL2.{E2H,TGE} = {1,1}, the
+CPTR_EL2.TAM bit takes effect.
+
+I will modify my comment.
+
+> So, providing I didn't get completely lost on the way, I have to ask:
+> why do we use CPACR_EL1 here? Couldn't we use CPTR_EL2 directly?
+>
+
+No, all good so far :). I believe the reason is to keep the kernel as
+generic as possible with the accesses to EL1 registers where a generic
+kernel should be running. The fact that with VHE we know to be running
+at EL2 and this code is only called at EL2 is more of an implementation
+detail that should be hidden behind the VHE abstraction.
+
+
+This being said I'm still not sure if I should be using here a
+CPTR_EL2.TAM bit or a CPACR_EL1.TAM bit. Functionally it would be the
+same but the use of one or another will 'break' some kind of
+abstraction logic :).
+
+Let me know if you have a preference.
+
+
+>
+> >  	if (update_fp_enabled(vcpu)) {
+> >  		if (vcpu_has_sve(vcpu))
+> >  			val |= CPACR_EL1_ZEN;
+> > diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+> > index 9f2165937f7d..940ab9b4c98b 100644
+> > --- a/arch/arm64/kvm/sys_regs.c
+> > +++ b/arch/arm64/kvm/sys_regs.c
+> > @@ -1003,6 +1003,20 @@ static bool access_pmuserenr(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
+> >  	{ SYS_DESC(SYS_PMEVTYPERn_EL0(n)),					\
+> >  	  access_pmu_evtyper, reset_unknown, (PMEVTYPER0_EL0 + n), }
+> >  
+> > +static bool access_amu(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
+> > +			     const struct sys_reg_desc *r)
+> > +{
+> > +	kvm_inject_undefined(vcpu);
+> > +
+> > +	return false;
+> > +}
+> > +
+> > +/* Macro to expand the AMU counter and type registers*/
+> > +#define AMU_AMEVCNTR0_EL0(n) { SYS_DESC(SYS_AMEVCNTR0_EL0(n)), access_amu }
+> > +#define AMU_AMEVTYPE0_EL0(n) { SYS_DESC(SYS_AMEVTYPE0_EL0(n)), access_amu }
+> > +#define AMU_AMEVCNTR1_EL0(n) { SYS_DESC(SYS_AMEVCNTR1_EL0(n)), access_amu }
+> > +#define AMU_AMEVTYPE1_EL0(n) { SYS_DESC(SYS_AMEVTYPE1_EL0(n)), access_amu }
+> > +
+> 
+> You could save a *whopping* two lines with something like:
+> 
+> #define AMU_AMEVCNTR_EL0(group, n) { SYS_DESC(SYS_AMEVCNTR##group##_EL0(n)), access_amu }
+> #define AMU_AMEVTYPE_EL0(group, n) { SYS_DESC(SYS_AMEVTYPE##group##_EL0(n)), access_amu }
+> 
+
+Will do!
+
+> Though it doesn't help shortening the big register list below.
+> 
+> >  static bool trap_ptrauth(struct kvm_vcpu *vcpu,
+> >  			 struct sys_reg_params *p,
+> >  			 const struct sys_reg_desc *rd)
+> > @@ -1078,8 +1092,12 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
+> >  			 (u32)r->CRn, (u32)r->CRm, (u32)r->Op2);
+> >  	u64 val = raz ? 0 : read_sanitised_ftr_reg(id);
+> >  
+> > -	if (id == SYS_ID_AA64PFR0_EL1 && !vcpu_has_sve(vcpu)) {
+> > -		val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
+> > +	if (id == SYS_ID_AA64PFR0_EL1) {
+> > +		if (!vcpu_has_sve(vcpu))
+> > +			val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
+> > +		val &= ~(0xfUL << ID_AA64PFR0_AMU_SHIFT);
+> > +	} else if (id == SYS_ID_PFR0_EL1) {
+> > +		val &= ~(0xfUL << ID_PFR0_AMU_SHIFT);
+> >  	} else if (id == SYS_ID_AA64ISAR1_EL1 && !vcpu_has_ptrauth(vcpu)) {
+> >  		val &= ~((0xfUL << ID_AA64ISAR1_APA_SHIFT) |
+> >  			 (0xfUL << ID_AA64ISAR1_API_SHIFT) |
+> 
+> Could almost turn the thing into a switch case at this point.
+
+
+Right! It would definitely read better.
+
+Thanks,
+Ionela.
 
 _______________________________________________
 linux-arm-kernel mailing list
