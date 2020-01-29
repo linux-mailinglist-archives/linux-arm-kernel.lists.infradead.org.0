@@ -2,94 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1AB214D305
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 23:21:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13CDE14D329
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 23:39:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Si9+e6aFaFA91PklIshhH42W6tqti8YXUJfSIcYj03E=; b=JFLqHNJ20hdmhf
-	9NN7Y8qfDLAsmtpQ7/BzH9TkENG4XKxKJ4vomnusggJ8Ljg4DvjT9WgkaiY2EZHrXE7nNaiq13z6x
-	gV830IembYUo8APlwevMu1QsYMkudx7TVIyhwCeSANRRWoECkyUXFYUlRvgKPDA0P94xoinHKIOkc
-	QYt5WhdWwLTJad00EBFz28/VnEHoQ59v6JfDAJ7H3KchtPw7bPplaLHAtrDmw+Ydg1vyrzgp8rcx5
-	Z28VxbnCpjEKW7Xk3RoIRWIp+FQvk/JnNjA1CCEtp/dD/ZjEQnoMnzX6MOLfW6nhpZlx5lore81iq
-	8LpUGNnHuoE74dvkHlpA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=JBSL9k4B/JEnTNI+RzFekTf0qXRv3VqNcSUsnuQqpVw=; b=jf3
+	1qEyRhRCvvTju7ZrAtfST7Mp78rCtalakqCgWBIwmEFAIzlIyJAIfImaGWGXFKMQ5Sr3XmKmmf+87
+	rA/NPh11VwXpycvAK9IeXGya1MhzbyUfh22ypipoM3rsEoIwyAliC3/C95BaO87AIGuPfqpIfq9Yu
+	+pZZpPWF9wQJxXsxfdL9M9WsUs7HunT9ij51zmlWo1Y3FXFJ9GbmDXTCrKO6R4I15vD9uiCIVZKDT
+	OYOb0OaXNPiI/KNXgN9C1d4oe03VyoKmiED0vIHyAyKjlcNOV9QF7jkVdiYxGba8ZOrKPPmpRVX5O
+	R9UFEJQPczm8PQjBmap8hCi62UDpL4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwvi4-0005Bo-7y; Wed, 29 Jan 2020 22:21:20 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1iwvzZ-00031M-FW; Wed, 29 Jan 2020 22:39:25 +0000
+Received: from lists.gateworks.com ([108.161.130.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwvhk-00057h-Sx
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Jan 2020 22:21:02 +0000
-Received: from pps.filterd (m0098414.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00TMKDvR139517
- for <linux-arm-kernel@lists.infradead.org>; Wed, 29 Jan 2020 17:21:00 -0500
-Received: from e06smtp04.uk.ibm.com (e06smtp04.uk.ibm.com [195.75.94.100])
- by mx0b-001b2d01.pphosted.com with ESMTP id 2xubcsq1yd-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 29 Jan 2020 17:21:00 -0500
-Received: from localhost
- by e06smtp04.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <gerald.schaefer@de.ibm.com>; 
- Wed, 29 Jan 2020 22:20:57 -0000
-Received: from b06avi18626390.portsmouth.uk.ibm.com (9.149.26.192)
- by e06smtp04.uk.ibm.com (192.168.101.134) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 29 Jan 2020 22:20:47 -0000
-Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
- [9.149.105.232])
- by b06avi18626390.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
- id 00TMJtGT43974988
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 29 Jan 2020 22:19:55 GMT
-Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id E97D85204E;
- Wed, 29 Jan 2020 22:20:46 +0000 (GMT)
-Received: from thinkpad (unknown [9.152.96.253])
- by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTP id BB14952052;
- Wed, 29 Jan 2020 22:20:45 +0000 (GMT)
-Date: Wed, 29 Jan 2020 23:20:44 +0100
-From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
-To: Qian Cai <cai@lca.pw>
-Subject: Re: [PATCH V12] mm/debug: Add tests validating architecture page
- table helpers
-In-Reply-To: <016A776F-EFD9-4D2B-A3A9-788008617D95@lca.pw>
-References: <1580174873-18117-1-git-send-email-anshuman.khandual@arm.com>
- <14882A91-17DE-4ABD-ABF2-08E7CCEDF660@lca.pw>
- <214c0d53-eb34-9b0c-2e4e-1aa005146331@arm.com>
- <016A776F-EFD9-4D2B-A3A9-788008617D95@lca.pw>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
-MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-x-cbid: 20012922-0016-0000-0000-000002E1DF70
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 20012922-0017-0000-0000-00003344A733
-Message-Id: <20200129232044.2d133d98@thinkpad>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-29_07:2020-01-28,
- 2020-01-29 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- bulkscore=0 mlxlogscore=999
- clxscore=1015 adultscore=0 phishscore=0 suspectscore=60 malwarescore=0
- priorityscore=1501 spamscore=0 mlxscore=0 lowpriorityscore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-1911200001 definitions=main-2001290171
+ id 1iwvzN-000311-WA
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Jan 2020 22:39:15 +0000
+Received: from 68-189-91-139.static.snlo.ca.charter.com ([68.189.91.139]
+ helo=rjones.pdc.gateworks.com)
+ by lists.gateworks.com with esmtp (Exim 4.82)
+ (envelope-from <rjones@gateworks.com>)
+ id 1iwvxA-0007j9-Ne; Wed, 29 Jan 2020 22:36:56 +0000
+From: Robert Jones <rjones@gateworks.com>
+To: Sunil Goutham <sgoutham@marvell.com>,
+ Robert Richter <rrichter@marvell.com>, David Miller <davem@davemloft.net>
+Subject: [PATCH net] net: thunderx: workaround BGX TX Underflow issue
+Date: Wed, 29 Jan 2020 14:36:09 -0800
+Message-Id: <20200129223609.9327-1-rjones@gateworks.com>
+X-Mailer: git-send-email 2.9.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_142101_078706_F986545E 
-X-CRM114-Status: GOOD (  23.53  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200129_143914_074696_D1856287 
+X-CRM114-Status: GOOD (  10.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,67 +56,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- Linux-MM <linux-mm@kvack.org>, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
- linux-snps-arc@lists.infradead.org, Ingo Molnar <mingo@kernel.org>,
- Kees Cook <keescook@chromium.org>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dave Hansen <dave.hansen@intel.com>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: netdev@vger.kernel.org, Tim Harvey <tharvey@gateworks.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 27 Jan 2020 22:33:08 -0500
-Qian Cai <cai@lca.pw> wrote:
+From: Tim Harvey <tharvey@gateworks.com>
 
-> > 
-> >> Did those tests ever find any regression or this is almost only useful for new
-> > 
-> > The test has already found problems with s390 page table helpers.
-> 
-> Hmm, that is pretty weak where s390 is not even official supported with this version.
-> 
+While it is not yet understood why a TX underflow can easily occur
+for SGMII interfaces resulting in a TX wedge. It has been found that
+disabling/re-enabling the LMAC resolves the issue.
 
-I first had to get the three patches upstream, each fixing non-conform
-behavior on s390, and each issue was found by this extremely useful test:
+Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+Reviewed-by: Robert Jones <rjones@gateworks.com>
+---
+ drivers/net/ethernet/cavium/thunder/thunder_bgx.c | 54 +++++++++++++++++++++++
+ drivers/net/ethernet/cavium/thunder/thunder_bgx.h |  9 ++++
+ 2 files changed, 63 insertions(+)
 
-2416cefc504b s390/mm: add mm_pxd_folded() checks to pxd_free()
-2d1fc1eb9b54 s390/mm: simplify page table helpers for large entries
-1c27a4bc817b s390/mm: make pmd/pud_bad() report large entries as bad
+diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+index c4f6ec0..078ecea 100644
+--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+@@ -74,6 +74,7 @@ struct bgx {
+ 	struct pci_dev		*pdev;
+ 	bool                    is_dlm;
+ 	bool                    is_rgx;
++	char			irq_name[7];
+ };
 
-I did not see any direct effect of this misbehavior yet, but I am
-very happy that this could be found and fixed in order to prevent
-future issues. And this is exactly the value of this test, to make
-sure that all architectures have a common understanding of how
-the various page table helpers are supposed to work.
+ static struct bgx *bgx_vnic[MAX_BGX_THUNDER];
+@@ -1535,6 +1536,53 @@ static int bgx_init_phy(struct bgx *bgx)
+ 	return bgx_init_of_phy(bgx);
+ }
 
-For example, who would have thought that pXd_bad() is supposed to
-report large entries as bad? It's not really documented anywhere,
-so we just checked them for sanity like normal entries, which
-apparently worked fine so far, but for how long?
++static irqreturn_t bgx_intr_handler(int irq, void *data)
++{
++	struct bgx *bgx = (struct bgx *)data;
++	struct device *dev = &bgx->pdev->dev;
++	u64 status, val;
++	int lmac;
++
++	for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
++		status = bgx_reg_read(bgx, lmac, BGX_GMP_GMI_TXX_INT);
++		if (status & GMI_TXX_INT_UNDFLW) {
++			dev_err(dev, "BGX%d lmac%d UNDFLW\n", bgx->bgx_id,
++				lmac);
++			val = bgx_reg_read(bgx, lmac, BGX_CMRX_CFG);
++			val &= ~CMR_EN;
++			bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
++			val |= CMR_EN;
++			bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
++		}
++		/* clear interrupts */
++		bgx_reg_write(bgx, lmac, BGX_GMP_GMI_TXX_INT, status);
++	}
++
++	return IRQ_HANDLED;
++}
++
++static int bgx_register_intr(struct pci_dev *pdev)
++{
++	struct bgx *bgx = pci_get_drvdata(pdev);
++	struct device *dev = &pdev->dev;
++	int num_vec, ret;
++
++	/* Enable MSI-X */
++	num_vec = pci_msix_vec_count(pdev);
++	ret = pci_alloc_irq_vectors(pdev, num_vec, num_vec, PCI_IRQ_MSIX);
++	if (ret < 0) {
++		dev_err(dev, "Req for #%d msix vectors failed\n", num_vec);
++		return 1;
++	}
++	sprintf(bgx->irq_name, "BGX%d", bgx->bgx_id);
++	ret = request_irq(pci_irq_vector(pdev, GMPX_GMI_TX_INT),
++		bgx_intr_handler, 0, bgx->irq_name, bgx);
++	if (ret)
++		return 1;
++
++	return 0;
++}
++
+ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+ {
+ 	int err;
+@@ -1604,6 +1652,8 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+
+ 	bgx_init_hw(bgx);
+
++	bgx_register_intr(pdev);
++
+ 	/* Enable all LMACs */
+ 	for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
+ 		err = bgx_lmac_enable(bgx, lmac);
+@@ -1614,6 +1664,10 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+ 				bgx_lmac_disable(bgx, --lmac);
+ 			goto err_enable;
+ 		}
++
++		/* enable TX FIFO Underflow interrupt */
++		bgx_reg_modify(bgx, lmac, BGX_GMP_GMI_TXX_INT_ENA_W1S,
++			       GMI_TXX_INT_UNDFLW);
+ 	}
+
+ 	return 0;
+diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
+index 2588870..cdea493 100644
+--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
+@@ -180,6 +180,15 @@
+ #define BGX_GMP_GMI_TXX_BURST		0x38228
+ #define BGX_GMP_GMI_TXX_MIN_PKT		0x38240
+ #define BGX_GMP_GMI_TXX_SGMII_CTL	0x38300
++#define BGX_GMP_GMI_TXX_INT		0x38500
++#define BGX_GMP_GMI_TXX_INT_W1S		0x38508
++#define BGX_GMP_GMI_TXX_INT_ENA_W1C	0x38510
++#define BGX_GMP_GMI_TXX_INT_ENA_W1S	0x38518
++#define  GMI_TXX_INT_PTP_LOST			BIT_ULL(4)
++#define  GMI_TXX_INT_LATE_COL			BIT_ULL(3)
++#define  GMI_TXX_INT_XSDEF			BIT_ULL(2)
++#define  GMI_TXX_INT_XSCOL			BIT_ULL(1)
++#define  GMI_TXX_INT_UNDFLW			BIT_ULL(0)
+
+ #define BGX_MSIX_VEC_0_29_ADDR		0x400000 /* +(0..29) << 4 */
+ #define BGX_MSIX_VEC_0_29_CTL		0x400008
+--
+2.9.2
 
 
 _______________________________________________
