@@ -2,50 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDF5914CE86
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 17:39:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7973214CE95
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 17:43:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t8V9XYpqrFU3lz0juzVp+fyaqLFL5ZqyYh5Tjn52pJA=; b=uCUKQ7/shGM6Yc
-	dNqdZ1xaHos3mJVbINZBcq0jPU0e+4yzF+RV6PzUaa0ioddF32o3Sy3lfTo1DOb9pNqSCslfuTvlK
-	HGqE/7smpyVamWT+rabG4C993/04qG+R3C0nfZ3+byeeRinbXGm11PSuV+r8Ax+LMuTTMOrajn04c
-	ZMhl/4lKnKUOae7T1f6me7I+yRaRyzOmZKL/IeFHnXaXGdJGZ4ZCrJJ2MBDnKqo7BZ9vBxXsplHhT
-	GKr546xm2qLMrKqjuXLTN3NxQxB61EHFjvXB2ylarK2epjtByBpAwZ8tJK9bKvg72QSFuLeAsMchD
-	NAza7a4ydfbCEzwcIaFQ==;
+	List-Owner; bh=Va2D90KuuHep2MReFrKOOVv7OZ2BGAO6qlpz+Y0q3LA=; b=achX8v/VIZ8gzn
+	wV1IHkWY/jUYOlAq9CxjQR2vT2XK0anTS3lub9xisdM/eD2Hs3/a7Fjdug+AALsFCP1tLG1ZX0w2/
+	WXGMpCLgvfTYmwJmrZfGkBYhWQiUeLO/uEtauzrnQaXEYxcRL4n98PjzI/zYnikJ4WR7iN8smEbEY
+	92m9K6B9RoLJ3pDJWMVwk45dxI1m+paSS0rIkBv4HsTD+35cFn8QAq/U7EwtIe0QV9pf8m0+hK5gF
+	5oNyhgtSPRBqI7igg8WnGDSZRLUHqq5skJP4fWCZ2jpDtyaCDDouvF2f4ZaC6TKN9Hv9y+fq0eqTG
+	JuNVU76rkeMe5iMDKu1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwqMf-00054V-GF; Wed, 29 Jan 2020 16:38:53 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwqMW-0004y5-G4; Wed, 29 Jan 2020 16:38:45 +0000
-Received: from p508fd499.dip0.t-ipconnect.de ([80.143.212.153]
- helo=phil.sntech)
- by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.89) (envelope-from <heiko@sntech.de>)
- id 1iwqMO-0006rE-SM; Wed, 29 Jan 2020 17:38:36 +0100
-From: Heiko Stuebner <heiko@sntech.de>
-To: linux-clk@vger.kernel.org
-Subject: [PATCH v3 3/3] clk: rockchip: convert rk3036 pll type to use internal
- lock status
-Date: Wed, 29 Jan 2020 17:38:21 +0100
-Message-Id: <20200129163821.1547295-3-heiko@sntech.de>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200129163821.1547295-1-heiko@sntech.de>
-References: <20200129163821.1547295-1-heiko@sntech.de>
+	id 1iwqQc-0008AF-E8; Wed, 29 Jan 2020 16:42:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iwqQR-00089U-CY
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Jan 2020 16:42:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A1D1328;
+ Wed, 29 Jan 2020 08:42:44 -0800 (PST)
+Received: from localhost (unknown [10.1.198.81])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AD8723F52E;
+ Wed, 29 Jan 2020 08:42:43 -0800 (PST)
+Date: Wed, 29 Jan 2020 16:42:42 +0000
+From: Ionela Voinescu <ionela.voinescu@arm.com>
+To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v2 1/6] arm64: add support for the AMU extension v1
+Message-ID: <20200129164242.GA5251@arm.com>
+References: <20191218182607.21607-1-ionela.voinescu@arm.com>
+ <20191218182607.21607-2-ionela.voinescu@arm.com>
+ <2b62c575-3396-3332-2e39-1c3cce2c4bf0@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <2b62c575-3396-3332-2e39-1c3cce2c4bf0@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_083844_686111_BFEB1D79 
-X-CRM114-Status: GOOD (  14.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200129_084247_517429_EACF2893 
+X-CRM114-Status: GOOD (  23.06  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
+ 2.5 URIBL_DBL_ABUSE_MALW   Contains an abused malware URL listed in
+ the Spamhaus DBL blocklist [URIs: infradead.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -58,97 +66,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: heiko@sntech.de, sboyd@kernel.org,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>, mturquette@baylibre.com,
- zhangqing@rock-chips.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org, christoph.muellner@theobroma-systems.com
+Cc: mark.rutland@arm.com, maz@kernel.org, linux-doc@vger.kernel.org,
+ peterz@infradead.org, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, ggherdovich@suse.cz, sudeep.holla@arm.com, will@kernel.org,
+ dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+Hi Suzuki,
 
-The rk3036 pll type exposes its lock status in both its pllcon registers
-as well as the General Register Files. To remove one dependency convert
-it to the "internal" lock status, similar to how rk3399 handles it.
+On Tuesday 28 Jan 2020 at 16:34:24 (+0000), Suzuki Kuruppassery Poulose wrote:
+> > --- a/arch/arm64/kernel/cpufeature.c
+> > +++ b/arch/arm64/kernel/cpufeature.c
+> > @@ -156,6 +156,7 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
+> >   	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_CSV3_SHIFT, 4, 0),
+> >   	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_CSV2_SHIFT, 4, 0),
+> >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_DIT_SHIFT, 4, 0),
+> > +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_AMU_SHIFT, 4, 0),
+> >   	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_SVE),
+> >   				   FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_SVE_SHIFT, 4, 0),
+> >   	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_RAS_SHIFT, 4, 0),
+> > @@ -314,10 +315,11 @@ static const struct arm64_ftr_bits ftr_id_mmfr4[] = {
+> >   };
+> >   static const struct arm64_ftr_bits ftr_id_pfr0[] = {
+> > -	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 12, 4, 0),		/* State3 */
+> > -	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 8, 4, 0),		/* State2 */
+> > -	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 4, 4, 0),		/* State1 */
+> > -	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 0, 4, 0),		/* State0 */
+> > +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_PFR0_AMU_SHIFT, 4, 0),
+> 
+> Why is this STRICT while the aa64pfr0 field is NON_STRICT ? On the other
+> hand, do we need this entry ? Do we plan to support 32bit guests using
+> AMU counters ? If we do, we may need to cap this field for the guests.
+>
 
-Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
----
-changes in v3:
-- switch to readl_relaxed_poll_timeout
-changes in v2:
-- use readl_poll_timeout instead of opencoding
+No, we do not need this entry at all. This is an artifact left from
+testing which I'll remove. The ID register is already modified to hide
+the presence of AMU for both 32bit and 64bit guests (patch 3/6), and
+this was supposed to be here just to validate that the capping of this
+field for the guest does its job.
 
- drivers/clk/rockchip/clk-pll.c | 26 +++++++++++++++++++++++---
- 1 file changed, 23 insertions(+), 3 deletions(-)
+> Also, fyi, please note that there may be conflicts with another series from
+> Anshuman which cleans up the tables and "naming" the shifts. [1].
+> [1] purposefully hides the AMU from ID_PFR0 due to the above reasoning.
+> 
 
-diff --git a/drivers/clk/rockchip/clk-pll.c b/drivers/clk/rockchip/clk-pll.c
-index c7c3848d68e8..eccd9d49ee59 100644
---- a/drivers/clk/rockchip/clk-pll.c
-+++ b/drivers/clk/rockchip/clk-pll.c
-@@ -12,6 +12,7 @@
- #include <linux/io.h>
- #include <linux/delay.h>
- #include <linux/clk-provider.h>
-+#include <linux/iopoll.h>
- #include <linux/regmap.h>
- #include <linux/clk.h>
- #include "clk.h"
-@@ -109,12 +110,31 @@ static int rockchip_pll_wait_lock(struct rockchip_clk_pll *pll)
- #define RK3036_PLLCON1_REFDIV_SHIFT		0
- #define RK3036_PLLCON1_POSTDIV2_MASK		0x7
- #define RK3036_PLLCON1_POSTDIV2_SHIFT		6
-+#define RK3036_PLLCON1_LOCK_STATUS		BIT(10)
- #define RK3036_PLLCON1_DSMPD_MASK		0x1
- #define RK3036_PLLCON1_DSMPD_SHIFT		12
-+#define RK3036_PLLCON1_PWRDOWN			BIT(13)
- #define RK3036_PLLCON2_FRAC_MASK		0xffffff
- #define RK3036_PLLCON2_FRAC_SHIFT		0
- 
--#define RK3036_PLLCON1_PWRDOWN			(1 << 13)
-+static int rockchip_rk3036_pll_wait_lock(struct rockchip_clk_pll *pll)
-+{
-+	u32 pllcon;
-+	int ret;
-+
-+	/*
-+	 * Lock time typical 250, max 500 input clock cycles @24MHz
-+	 * So define a very safe maximum of 1000us, meaning 24000 cycles.
-+	 */
-+	ret = readl_relaxed_poll_timeout(pll->reg_base + RK3036_PLLCON(1),
-+					 pllcon,
-+					 pllcon & RK3036_PLLCON1_LOCK_STATUS,
-+					 0, 1000);
-+	if (ret)
-+		pr_err("%s: timeout waiting for pll to lock\n", __func__);
-+
-+	return ret;
-+}
- 
- static void rockchip_rk3036_pll_get_params(struct rockchip_clk_pll *pll,
- 					struct rockchip_pll_rate_table *rate)
-@@ -212,7 +232,7 @@ static int rockchip_rk3036_pll_set_params(struct rockchip_clk_pll *pll,
- 	writel_relaxed(pllcon, pll->reg_base + RK3036_PLLCON(2));
- 
- 	/* wait for the pll to lock */
--	ret = rockchip_pll_wait_lock(pll);
-+	ret = rockchip_rk3036_pll_wait_lock(pll);
- 	if (ret) {
- 		pr_warn("%s: pll update unsuccessful, trying to restore old params\n",
- 			__func__);
-@@ -251,7 +271,7 @@ static int rockchip_rk3036_pll_enable(struct clk_hw *hw)
- 
- 	writel(HIWORD_UPDATE(0, RK3036_PLLCON1_PWRDOWN, 0),
- 	       pll->reg_base + RK3036_PLLCON(1));
--	rockchip_pll_wait_lock(pll);
-+	rockchip_rk3036_pll_wait_lock(pll);
- 
- 	return 0;
- }
--- 
-2.24.1
+Thanks, that's fine.
+
+> > +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_PFR0_STATE3_SHIFT, 4, 0),
+> > +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_PFR0_STATE2_SHIFT, 4, 0),
+> > +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_PFR0_STATE1_SHIFT, 4, 0),
+> > +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_PFR0_STATE0_SHIFT, 4, 0),
+> >   	ARM64_FTR_END,
+> >   };
+> > @@ -1150,6 +1152,59 @@ static bool has_hw_dbm(const struct arm64_cpu_capabilities *cap,
+> >   #endif
+> > +#ifdef CONFIG_ARM64_AMU_EXTN
+> > +
+> > +/*
+> > + * This per cpu variable only signals that the CPU implementation supports
+> > + * the Activity Monitors Unit (AMU) but does not provide information
+> > + * regarding all the events that it supports.
+> > + * When this amu_feat per CPU variable is true, the user of this feature
+> > + * can only rely on the presence of the 4 fixed counters. But this does
+> > + * not guarantee that the counters are enabled or access to these counters
+> > + * is provided by code executed at higher exception levels.
+> > + *
+> > + * Also, to ensure the safe use of this per_cpu variable, the following
+> > + * accessor is defined to allow a read of amu_feat for the current cpu only
+> > + * from the current cpu.
+> > + *  - cpu_has_amu_feat()
+> > + */
+> > +static DEFINE_PER_CPU_READ_MOSTLY(u8, amu_feat);
+> > +
+> > +inline bool cpu_has_amu_feat(void)
+> > +{
+> > +	return !!this_cpu_read(amu_feat);
+> > +}
+> > +
+> 
+> minor nit: Or you may use a cpumask_t set of CPUs where AMU is
+> available. But if you plan to extend this for the future AMU version
+> tracking the mask may not be sufficient.
+> 
+
+To be honest, I would like not to have to use information about AMU
+version for future support, but yes, it would be good to have the
+possibility, just in case.
+
+
+> [1] http://lists.infradead.org/pipermail/linux-arm-kernel/2020-January/708287.html
+> 
+> 
+> The rest looks fine to me.
+> 
+> Suzuki
+
+Thank you very much for the review,
+Ionela.
 
 
 _______________________________________________
