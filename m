@@ -2,87 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D923C14D050
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 19:19:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93AC514D07A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 19:29:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MHwzucUpzE/njqHVll3hYV+mqk7spf0UXPlCrYWMRW4=; b=SHd7QQIB3Qyq3YGn5/E2xlGU8
-	mbANAoXEGgL++ixxA+de7Uhd6YhJO55R6J+ihSWZost0STY13blko9zSt2izo7MtZ3VNmCtUvDCiU
-	O9I8cWrfvVY/0vl2Cjc3gWMXs/JOoFMGcyCDJaYvZYqGVU1HQop9/+DATcEcpsVfddQ9wEQzFx1Di
-	ozf6wyB8PJXhkXKGZvAvR0NHpmHddDb/xDnjhGwJLT+xxdJaK3dM/V9nK58QGtV7CpUg1p6bb20jn
-	7JPa3ZXkzAB8gljMpVOoMjmp2V/pAReOS/oOYXtfNfIipF4I1bHrwzzYkc8iT4jvdfq0+Hz4gvB+5
-	/Q1sASSNw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GpDELpgupxEpg8jOZGv6IkyP9t3EZaUPa1qFiU1eiro=; b=BPtHXLbDCMocOS
+	w7L6s04U+nBsSD7vPS39JFFQGRzZJULYBtk9UC3JEhY2ZIKubOaKXdJlKNl2iOYbsPZQ7UresqqVw
+	WMbua9NTQsSUIMCs64htVg0RZeHJwOmkmOUS8vP6iV25olTckvVzVbAifX/gIH/njzMwmfpEz6oTz
+	2qxY9R1pCLibVNc+7z4YsYzUWA3LVJG1a2CNGewpZ0flZ+w0brkoNt9B9U/ZeoFdrrr1XgD5mcprB
+	emJ6xj6V+vP6kL08nRFSxTJBl1ZsvIwDp2q1y2xhqdYuVsk7mD4fRSHECfhmBx9LDTkRf0RQoVsN4
+	+844vzdYgbFZRpsnDf2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwrvl-0008WO-HX; Wed, 29 Jan 2020 18:19:13 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1iws5l-0003z8-7Y; Wed, 29 Jan 2020 18:29:33 +0000
+Received: from mail-ed1-f43.google.com ([209.85.208.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwrvX-0008VY-6l
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Jan 2020 18:19:03 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1580321941; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=rNueugt7+ShJvXDNSBQmIyNMaj5LO03LUNGcC7CqzMg=;
- b=SVe+SHYeUVfcIlZF+MBXjwXo2eeOOWwFdyMrC0OCJBtfAUk9ZM70qJ++TNyFKzCyamgpca7/
- Vi25BUea64QdkJPE/OcLfPPmFqRQ5rqGUBILndNUUSqqXkYjB4P0b5FkbEsWj2H1CdcYRyqu
- ixr1V+TePR8BY2Gnokvfds0pnys=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e31cc8f.7f1bc7e64fb8-smtp-out-n03;
- Wed, 29 Jan 2020 18:18:55 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 8535CC43383; Wed, 29 Jan 2020 18:18:55 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [10.71.154.194] (i-global254.qualcomm.com [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: asutoshd)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 37EFCC43383;
- Wed, 29 Jan 2020 18:18:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 37EFCC43383
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=asutoshd@codeaurora.org
-Subject: Re: [PATCH RESEND v3 3/4] scsi: ufs: fix Auto-Hibern8 error detection
-To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
- martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
- jejb@linux.ibm.com, beanhuo@micron.com
-References: <20200129105251.12466-1-stanley.chu@mediatek.com>
- <20200129105251.12466-4-stanley.chu@mediatek.com>
-From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
-Message-ID: <daaf442c-1fad-b6dc-8206-beb535c21ec3@codeaurora.org>
-Date: Wed, 29 Jan 2020 10:18:52 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1iws5c-0003yj-CD
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Jan 2020 18:29:25 +0000
+Received: by mail-ed1-f43.google.com with SMTP id e10so782397edv.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Jan 2020 10:29:22 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=4qkJva2WsjlzXbLrXwOCyzngWVPfhRPEm+QIF0TxRCs=;
+ b=gIgUQecfyBor0MIG5EHXDJQ+ZXt2KzwZzLulpbmAoHFR9X8bsROVBQo8mPqtEm38oI
+ BVdN6eemvZ7hmpC3ezZgmN/vot0PJgOQA2KJ118XZrm6ySUSixIWNPUBUCpaTk3nS9A+
+ KPsIZ9X+9paW65atXB8ySuViLSeiCrA5DZDQTW9TjWHhHFePxLK9cMKxFLj9ddxylkE4
+ XZF8fuBjQ8/t8N9/DF4SeeDBccmmgqHyeeKAyfX2eeK2j9T0JD/Mwjw8zpwilv6aaVgY
+ SaihvT2ue+c4E1ZdHfOijMmdfLW7MD8XpOYMDmERdYZyLrZQBrHORDGR3ek3mN0T92w1
+ p2Nw==
+X-Gm-Message-State: APjAAAUVf5ypYHwQMnNr3C7YkWAzDst6uU9oIsqRGhF4s3JFyjo8Fj5i
+ dnM4mbONKsS6il/GoOBzqk64CxwD
+X-Google-Smtp-Source: APXvYqz1/cdG+k42XUqB4QSIVvZhpddvdczacL56EyIVANpjoiUGIhsZmLCd2Gpp1rr/aNnryIFmnw==
+X-Received: by 2002:a17:906:3cea:: with SMTP id
+ d10mr719187ejh.32.1580322561227; 
+ Wed, 29 Jan 2020 10:29:21 -0800 (PST)
+Received: from kozik-lap ([194.230.155.229])
+ by smtp.googlemail.com with ESMTPSA id x2sm311343edi.95.2020.01.29.10.29.19
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 29 Jan 2020 10:29:20 -0800 (PST)
+Date: Wed, 29 Jan 2020 19:29:18 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: next/master boot: 148 boots: 10 failed, 136 passed with 2
+ untried/unknown (next-20200129)
+Message-ID: <20200129182918.GA13626@kozik-lap>
+References: <5e31aaaa.1c69fb81.a7667.f187@mx.google.com>
+ <20200129161113.GE3928@sirena.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20200129105251.12466-4-stanley.chu@mediatek.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200129161113.GE3928@sirena.org.uk>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_101901_806237_B25607D1 
-X-CRM114-Status: GOOD (  21.15  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200129_102924_416654_FBBF34A0 
+X-CRM114-Status: GOOD (  12.63  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ no trust [209.85.208.43 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.43 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,82 +90,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, linux-samsung-soc@vger.kernel.org,
+ kernel-build-reports@lists.linaro.org, Sangbeom Kim <sbkim73@samsung.com>,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/29/2020 2:52 AM, Stanley Chu wrote:
-> Auto-Hibern8 may be disabled by some vendors or sysfs
-> in runtime even if Auto-Hibern8 capability is supported
-> by host. If Auto-Hibern8 capability is supported by host
-> but not actually enabled, Auto-Hibern8 error shall not happen.
+On Wed, Jan 29, 2020 at 04:11:13PM +0000, Mark Brown wrote:
+> On Wed, Jan 29, 2020 at 07:54:18AM -0800, kernelci.org bot wrote:
 > 
-> To fix this, provide a way to detect if Auto-Hibern8 is
-> actually enabled first, and bypass Auto-Hibern8 disabling
-> case in ufshcd_is_auto_hibern8_error().
+> Today's -next fails to boot on Odroid X2 and XU3 with exynos_defconfig
+> or multi_v7_defconfig with SMP=n.  It appears to get stuck in a loop
+> probing the I2S secondary DAI for some reason:
 > 
-> Fixes: 821744403913 ("scsi: ufs: Add error-handling of Auto-Hibernate")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> Reviewed-by: Bean Huo <beanhuo@micron.com>
-> ---
-
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-
->   drivers/scsi/ufs/ufshcd.c | 3 ++-
->   drivers/scsi/ufs/ufshcd.h | 6 ++++++
->   2 files changed, 8 insertions(+), 1 deletion(-)
+> 12:07:05.997409  <6>[    6.421596] exynos-bus: new bus device registered: soc:bus_mscl ( 84000 KHz ~ 666000 KHz)
+> 12:07:05.997653  <4>[    6.429763] samsung-i2s 3830000.i2s-sec: DMA channels sourced from device 3830000.i2s
+> 12:07:06.006838  <4>[    6.439652] samsung-i2s 3830000.i2s-sec: DMA channels sourced from device 3830000.i2s
+> 12:07:06.015764  <4>[    6.448666] samsung-i2s 3830000.i2s-sec: DMA channels sourced from device 3830000.i2s
 > 
-> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> index abd0e6b05f79..214a3f373dd8 100644
-> --- a/drivers/scsi/ufs/ufshcd.c
-> +++ b/drivers/scsi/ufs/ufshcd.c
-> @@ -5479,7 +5479,8 @@ static irqreturn_t ufshcd_update_uic_error(struct ufs_hba *hba)
->   static bool ufshcd_is_auto_hibern8_error(struct ufs_hba *hba,
->   					 u32 intr_mask)
->   {
-> -	if (!ufshcd_is_auto_hibern8_supported(hba))
-> +	if (!ufshcd_is_auto_hibern8_supported(hba) ||
-> +	    !ufshcd_is_auto_hibern8_enabled(hba))
->   		return false;
->   
->   	if (!(intr_mask & UFSHCD_UIC_HIBERN8_MASK))
-> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-> index 2ae6c7c8528c..81c71a3e3474 100644
-> --- a/drivers/scsi/ufs/ufshcd.h
-> +++ b/drivers/scsi/ufs/ufshcd.h
-> @@ -55,6 +55,7 @@
->   #include <linux/clk.h>
->   #include <linux/completion.h>
->   #include <linux/regulator/consumer.h>
-> +#include <linux/bitfield.h>
->   #include "unipro.h"
->   
->   #include <asm/irq.h>
-> @@ -773,6 +774,11 @@ static inline bool ufshcd_is_auto_hibern8_supported(struct ufs_hba *hba)
->   	return (hba->capabilities & MASK_AUTO_HIBERN8_SUPPORT);
->   }
->   
-> +static inline bool ufshcd_is_auto_hibern8_enabled(struct ufs_hba *hba)
-> +{
-> +	return FIELD_GET(UFSHCI_AHIBERN8_TIMER_MASK, hba->ahit) ? true : false;
-> +}
-> +
->   #define ufshcd_writel(hba, val, reg)	\
->   	writel((val), (hba)->mmio_base + (reg))
->   #define ufshcd_readl(hba, reg)	\
+> and so on ad infinitum.  Vanilla multi_v7_defconfig is fine and just
+> displays a saingle copy of that log message.  Full logs and other
+> details here:
 > 
+> 	https://kernelci.org/boot/id/5e3176467f121dbdef2824fc/
+> 	https://kernelci.org/boot/id/5e317b7322dcdaa3e5282500/
+> 	https://kernelci.org/boot/id/5e317c0f6bfd765fb42824f1/
+> 	https://kernelci.org/boot/id/5e317517be8559c7542824f1/
+> 
+> I don't *think* it's an audio issue as mainline seems fine and all the
+> ASoC changes have already landed in mainline for this merge window.
 
+Thanks for the report.
 
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-Linux Foundation Collaborative Project
+Marek spotted it as well and sent a patch
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
