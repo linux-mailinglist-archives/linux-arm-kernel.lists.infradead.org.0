@@ -2,56 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C535914C6B9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 08:01:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFD4C14C6C1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 08:14:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=wCNt+yKgOHccIlv4XAJ58lGO/Uy4WEFoPPcWQ56C4pc=; b=pB6
-	9d+/0/XtVpu7s3TM9miCAhN9gncRhBhfXyQX5RFPV6rFUxGz3ouuQrbp+2g60PdtFfkL8YkkBh2sA
-	b8TE/NynyeuK+e19grsw92YpKbnHGPXs/QfWoBxvqiRFOV12v7b/DOYo8cpzklHAgxZem9dUpqZIw
-	J0/SoUJibuAi445/b0AN9IXiQO7w2DZe/yCKgQMdYxJ9xYjUiA/szWgJYUfprP6Du412MtEkIJU9D
-	pKRcFYZiGdx+8iguW8BcLHERpWdExG+/6gtv544s2nqDu0wd9ho3lUrgVd7SSeFTlq3/E6APkVmpI
-	i7CSMQfj3HRtf8AzIknwiVLQ5G1ASpQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jP2mzjZnOQRnyPhnjx76wSg/vaH6xw7CHc3Lo5eX/nA=; b=KFZJGl6t/rmq8m
+	CtQWnSdIDXE0Dvs2TgnlrgonVp4Gi9v5qeug8td7Ajg3Xmt8+jqTCLfwZOmnvjuCBC4ka4NeF4DPm
+	i5k2aWHjTPvnpYQXsS3be1rFohwDp1mY/8TIEaPYGQPjVMwwv8uc6rpJxxXq1U147/7tNd52cpUQl
+	bk229FcY/5mSahHZpH8SJ09KnphQrPQ1TPUpp/G2aol4WsjB8wKYpPwjPN/+XG8ZfYyoWePVy0FUU
+	ZCO+yVFu1SZyOVzwhJcxr4yqa6o1+Efj95WRHEZzfeLrrKBM0DhIv6uRMlaLgWm6d3AWkpk1t/RsZ
+	DNvs/+XHC15xpzi9B4Fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwhLL-0005rd-6I; Wed, 29 Jan 2020 07:00:55 +0000
-Received: from alexa-out-blr-01.qualcomm.com ([103.229.18.197])
+	id 1iwhYq-0000qM-1d; Wed, 29 Jan 2020 07:14:52 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwhLB-0005rA-N7
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Jan 2020 07:00:47 +0000
-Received: from ironmsg01-blr.qualcomm.com ([10.86.208.130])
- by alexa-out-blr-01.qualcomm.com with ESMTP/TLS/AES256-SHA;
- 29 Jan 2020 12:30:39 +0530
-Received: from pillair-linux.qualcomm.com ([10.204.116.193])
- by ironmsg01-blr.qualcomm.com with ESMTP; 29 Jan 2020 12:30:28 +0530
-Received: by pillair-linux.qualcomm.com (Postfix, from userid 452944)
- id 892CA3930; Wed, 29 Jan 2020 12:30:27 +0530 (IST)
-From: Rakesh Pillai <pillair@codeaurora.org>
-To: devicetree@vger.kernel.org
-Subject: [PATCH v5] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module device
- node
-Date: Wed, 29 Jan 2020 12:30:23 +0530
-Message-Id: <1580281223-2759-1-git-send-email-pillair@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
+ id 1iwhYj-0000pz-6m
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Jan 2020 07:14:46 +0000
+Received: from p5b06da22.dip0.t-ipconnect.de ([91.6.218.34]
+ helo=nanos.tec.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1iwhYR-0003r2-Ta; Wed, 29 Jan 2020 08:14:28 +0100
+Received: by nanos.tec.linutronix.de (Postfix, from userid 1000)
+ id 66BB8101227; Wed, 29 Jan 2020 08:14:27 +0100 (CET)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Andy Lutomirski <luto@kernel.org>
+Subject: Re: [RFC PATCH v4 10/11] lib: vdso: Allow arches to override the ns
+ shift operation
+In-Reply-To: <CALCETrX5B0SEJN2WG7rzuzbGhWa_dEwVVpMu6deXof3H+K_LdQ@mail.gmail.com>
+References: <cover.1579196675.git.christophe.leroy@c-s.fr>
+ <c8ce9baaef0dc7273e4bcc31f353b17b655113d1.1579196675.git.christophe.leroy@c-s.fr>
+ <CALCETrWJcB9=MuSw5yx6arcb_np=E=awTyLRSi=r8BJySf_aXw@mail.gmail.com>
+ <877e1rfa40.fsf@nanos.tec.linutronix.de>
+ <CALCETrX5B0SEJN2WG7rzuzbGhWa_dEwVVpMu6deXof3H+K_LdQ@mail.gmail.com>
+Date: Wed, 29 Jan 2020 08:14:27 +0100
+Message-ID: <87mua64tv0.fsf@nanos.tec.linutronix.de>
+MIME-Version: 1.0
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200128_230046_279674_0D630A94 
-X-CRM114-Status: UNSURE (   7.58  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.0 (--)
+X-CRM114-CacheID: sfid-20200128_231445_391233_7EE02FDE 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [103.229.18.197 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,87 +70,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Rakesh Pillai <pillair@codeaurora.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Christophe Leroy <christophe.leroy@c-s.fr>, nathanl@linux.ibm.com,
+ Arnd Bergmann <arnd@arndb.de>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, X86 ML <x86@kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ "open list:MIPS" <linux-mips@vger.kernel.org>,
+ Paul Mackerras <paulus@samba.org>, Andrew Lutomirski <luto@kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device node for the ath10k SNOC platform driver probe
-and add resources required for WCN3990 on sc7180 soc.
+Andy Lutomirski <luto@kernel.org> writes:
 
-Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
----
- arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
- arch/arm64/boot/dts/qcom/sc7180.dtsi    | 28 ++++++++++++++++++++++++++++
- 2 files changed, 33 insertions(+)
+> On Thu, Jan 16, 2020 at 11:57 AM Thomas Gleixner <tglx@linutronix.de> wrote:
+>>
+>> Andy Lutomirski <luto@kernel.org> writes:
+>> > On Thu, Jan 16, 2020 at 9:58 AM Christophe Leroy
+>> >
+>> > Would mul_u64_u64_shr() be a good alternative?  Could we adjust it to
+>> > assume the shift is less than 32?  That function exists to benefit
+>> > 32-bit arches.
+>>
+>> We'd want mul_u64_u32_shr() for this. The rules for mult and shift are:
+>>
+>
+> That's what I meant to type...
 
-diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-index 388f50a..167f68ac 100644
---- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-+++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-@@ -287,6 +287,11 @@
- 	vdda-pll-supply = <&vreg_l4a_0p8>;
- };
- 
-+&wifi {
-+	status = "okay";
-+	qcom,msa-fixed-perm;
-+};
-+
- /* PINCTRL - additions to nodes defined in sc7180.dtsi */
- 
- &qspi_clk {
-diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-index 8011c5f..0a00c94 100644
---- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-@@ -75,6 +75,12 @@
- 			reg = <0x0 0x80900000 0x0 0x200000>;
- 			no-map;
- 		};
-+
-+		wlan_fw_mem: memory@93900000 {
-+			compatible = "removed-dma-pool";
-+			no-map;
-+			reg = <0 0x93900000 0 0x200000>;
-+		};
- 	};
- 
- 	cpus {
-@@ -1490,6 +1496,28 @@
- 
- 			#freq-domain-cells = <1>;
- 		};
-+
-+		wifi: wifi@18800000 {
-+			compatible = "qcom,wcn3990-wifi";
-+			reg = <0 0x18800000 0 0x800000>;
-+			reg-names = "membase";
-+			iommus = <&apps_smmu 0xc0 0x1>;
-+			interrupts =
-+				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
-+				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
-+				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
-+				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
-+				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
-+				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
-+				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
-+				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
-+				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
-+				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
-+				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
-+				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
-+			memory-region = <&wlan_fw_mem>;
-+			status = "disabled";
-+		};
- 	};
- 
- 	thermal-zones {
--- 
-2.7.4
+Just that it does not work. The math is:
+
+     ns = d->nsecs;   // That's the nsec value shifted left by d->shift
+
+     ns += ((cur - d->last) & d->mask) * mult;
+
+     ns >>= d->shift;
+
+So we cannot use mul_u64_u32_shr() because we need the addition there
+before shifting. And no, we can't drop the fractional part of
+d->nsecs. Been there, done that, got sporadic time going backwards
+problems as a reward. Need to look at that again as stuff has changed
+over time.
+
+On x86 we enforce that mask is 64bit, so the & operation is not there,
+but due to the nasties of TSC we have that conditional
+
+    if (cur > last)
+       return (cur - last) * mult;
+    return 0;
+
+Christophe, on PPC the decrementer/RTC clocksource masks are 64bit as
+well, so you can spare that & operation there too.
+
+Thanks,
+
+        tglx
+
+
 
 
 _______________________________________________
