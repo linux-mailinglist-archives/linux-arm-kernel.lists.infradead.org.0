@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E194514CDA2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 16:38:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92CF914CDA9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Jan 2020 16:39:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=STLMysRpmVmzLKBWP/khDVJS+HV/J3t08f2GJhuItdw=; b=ExzPiLnO3hD/ls
-	vWhiwRROrsVNnbm459jazPHsDs0Tqv12qtiyJSgrwNoMV37hTJl/7IO7hxSXBqHNwKu7BjkV7rhVb
-	Zf1HHBohT7kSrNcI+m6f4LMG9mmRFtt1t6m4RppcoadzglwYvZT0zxQ9Zanu92pGkQvXP6rqJPy0r
-	n7jwp57cXT9MHN33tPFIJUg32uFkp7uanKLJtH9BqX1fSuFXTKPJyxMQlnstTe7aqTouy0AFzQCta
-	v8DINTg6/0diHcUQu0OllkqtbwKhq1iEbdq+XzmV/kWix2BxLrS1AOF8YLDOrum5Byv5od/TmW0E1
-	b92sfYbVPplZqHozb9hA==;
+	List-Owner; bh=vlZs5hNxs1FQ1aE3Pwx6MSu1wAmyn0rPaOMrzvfVaxM=; b=k0ml0Mt87htA7e
+	arzsD38fS2fGM/fVJbqpRSQu5HQnLha1/+CbSk7/pIhUaqxx9O5scEc6tT+IPWnCwjvIEOBZ04+WU
+	/gIg4MaMp6V8Nh6ZYMJFGdKmM2ucGT8ykX/eYXygeKQHQpVfeQYjjGrxE3AQJS4K7vpbNDjLLErdI
+	T99g81VIpVxxEqb+eSAm0B9zWxSNQpFr7bWOzV4wgiG+CqPaxJGYGS7dMwRBHKZteUH0+GHzQkRNZ
+	Qs7YHqSDgiXmX9OvJ7arVCWUbWDPHc0dMH2q9IakoOxfRayOJ0MySH9i/sNDY1056NFORsyXY5CJI
+	nOaTe9ZvBwknZ7n6TMxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iwpPs-0005XT-KL; Wed, 29 Jan 2020 15:38:08 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iwpRA-0006wH-0w; Wed, 29 Jan 2020 15:39:28 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iwpOa-0004jV-8H
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Jan 2020 15:36:51 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ id 1iwpOa-0004jj-W6
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Jan 2020 15:36:53 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00TFNdPW030994; Wed, 29 Jan 2020 16:36:39 +0100
+ 00TFNArm019435; Wed, 29 Jan 2020 16:36:40 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=fNTUXAf+YlisbazBqB3yomSG66KZ61nDeHHXPvZUmB0=;
- b=VKAuCipx3bFKSSGXXWVDJuLxcNNSl9Rfa+ZSyFdvEi9ZoEJLKa8rngoQLq6VCq431w4E
- TZ9uOx5nx5W6+sISmZZO9zR57ATVy0M6hnJZHnv0gUMsKhyLLuJmKmeiEIVzc9gl50Ie
- sXX6TYJYeTkwlDfiWcW6Sqj6Q4O2xTJKkqg0qOh/SQcxyiQ1zHPLPL7I6BUbdNkN4KJs
- OoIGQk7aCVRpH985TybpinzkFXcuCAOwwSgiSI45iUWRa20unJoVu0Wc6lOggXjpRAo2
- sfxnxjcUcAgFMS6tEEsKH+PD4AcY1yjrTk7DjxVZW7iErP64/9bYPRBPjLOB2Q5DCJ/P nQ== 
+ bh=vGtBudjNx6L0Bif2GlT7GRdzDPa/Yv2/z0Y5HH4v5qQ=;
+ b=nm7n2Cr43o+71a44OQNGZea0xkO4CYasOZfS080j2NeTorJxpdBswUuvJPUx2t33cSZN
+ J0amRXk72bn6UXTbyP+4udi2p6wBWsJU3t/7utE0OphCdR1oTDNudbAgurah/rManvqG
+ i/1rIUUwjl02EIDIMIXceqWNzZG08Ov8TOI/xVwE+4DiV0LZONiqiN0U2c28xtMLr/dI
+ Zo1u3qi7CKeMpcpf1ezM0HdlMrPIxPmS2qXjtdwP6Ir015mS1KqiVILjQ4/5KFLFgrRs
+ HlIL5ymie/2ZuqFtepdZ71FaeUW2ZnGaJLR9stpCzQlFLlT4jaQnjHa0WPJ53tF/Bf7q 2w== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xrbpb45ee-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xrcay3vbb-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 29 Jan 2020 16:36:39 +0100
+ Wed, 29 Jan 2020 16:36:40 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E2FE7100039;
- Wed, 29 Jan 2020 16:36:38 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9A22C10002A;
+ Wed, 29 Jan 2020 16:36:39 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D1E002BC7C2;
- Wed, 29 Jan 2020 16:36:38 +0100 (CET)
-Received: from localhost (10.75.127.46) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 29 Jan 2020 16:36:38
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 899062BC7C2;
+ Wed, 29 Jan 2020 16:36:39 +0100 (CET)
+Received: from localhost (10.75.127.45) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 29 Jan 2020 16:36:39
  +0100
 From: Amelie Delaunay <amelie.delaunay@st.com>
 To: Vinod Koul <vkoul@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
  <alexandre.torgue@st.com>
-Subject: [PATCH 7/8] dmaengine: stm32-dma: fix sleeping function called from
- invalid context
-Date: Wed, 29 Jan 2020 16:36:27 +0100
-Message-ID: <20200129153628.29329-8-amelie.delaunay@st.com>
+Subject: [PATCH 8/8] dmaengine: stm32-dma: use vchan_terminate_vdesc() in
+ .terminate_all
+Date: Wed, 29 Jan 2020 16:36:28 +0100
+Message-ID: <20200129153628.29329-9-amelie.delaunay@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200129153628.29329-1-amelie.delaunay@st.com>
 References: <20200129153628.29329-1-amelie.delaunay@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
+X-Originating-IP: [10.75.127.45]
 X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-01-29_03:2020-01-28,
  2020-01-29 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_073648_802486_328A3B8F 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20200129_073649_362326_0E3A42A8 
+X-CRM114-Status: GOOD (  14.33  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,80 +105,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch fixes BUG: sleeping function called from invalid context in
-stm32_dma_disable_chan function.
+To avoid race with vchan_complete, use the race free way to terminate
+running transfer.
 
-The goal of this function is to force channel disable if it has not been
-disabled by hardware. This consists in clearing STM32_DMA_SCR_EN bit and
-read it as 0 to ensure the channel is well disabled and the last transfer
-is over.
-
-In previous implementation, the waiting loop was based on a do...while (1)
-with a call to cond_resched to give the scheduler a chance to run a higher
-priority process.
-
-But in some conditions, stm32_dma_disable_chan can be called while
-preemption is disabled, on a stm32_dma_stop call for example. So
-cond_resched must not be used.
-
-To avoid this, use readl_relaxed_poll_timeout_atomic to poll
-STM32_DMA_SCR_EN bit cleared.
+Move vdesc->node list_del in stm32_dma_start_transfer instead of in
+stm32_mdma_chan_complete to avoid another race in vchan_dma_desc_free_list.
 
 Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
 ---
- drivers/dma/stm32-dma.c | 27 +++++++++------------------
- 1 file changed, 9 insertions(+), 18 deletions(-)
+ drivers/dma/stm32-dma.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/dma/stm32-dma.c b/drivers/dma/stm32-dma.c
-index 01a2374ae03a..b585e11c2168 100644
+index b585e11c2168..0ddbaa4b4f0b 100644
 --- a/drivers/dma/stm32-dma.c
 +++ b/drivers/dma/stm32-dma.c
-@@ -15,6 +15,7 @@
- #include <linux/dma-mapping.h>
- #include <linux/err.h>
- #include <linux/init.h>
-+#include <linux/iopoll.h>
- #include <linux/jiffies.h>
- #include <linux/list.h>
- #include <linux/module.h>
-@@ -421,29 +422,19 @@ static void stm32_dma_irq_clear(struct stm32_dma_chan *chan, u32 flags)
- static int stm32_dma_disable_chan(struct stm32_dma_chan *chan)
- {
- 	struct stm32_dma_device *dmadev = stm32_dma_get_dev(chan);
--	unsigned long timeout = jiffies + msecs_to_jiffies(5000);
--	u32 dma_scr, id;
-+	u32 dma_scr, id, reg;
+@@ -478,8 +478,10 @@ static int stm32_dma_terminate_all(struct dma_chan *c)
  
- 	id = chan->id;
--	dma_scr = stm32_dma_read(dmadev, STM32_DMA_SCR(id));
-+	reg = STM32_DMA_SCR(id);
-+	dma_scr = stm32_dma_read(dmadev, reg);
+ 	spin_lock_irqsave(&chan->vchan.lock, flags);
  
- 	if (dma_scr & STM32_DMA_SCR_EN) {
- 		dma_scr &= ~STM32_DMA_SCR_EN;
--		stm32_dma_write(dmadev, STM32_DMA_SCR(id), dma_scr);
--
--		do {
--			dma_scr = stm32_dma_read(dmadev, STM32_DMA_SCR(id));
--			dma_scr &= STM32_DMA_SCR_EN;
--			if (!dma_scr)
--				break;
--
--			if (time_after_eq(jiffies, timeout)) {
--				dev_err(chan2dev(chan), "%s: timeout!\n",
--					__func__);
--				return -EBUSY;
--			}
--			cond_resched();
--		} while (1);
-+		stm32_dma_write(dmadev, reg, dma_scr);
-+
-+		return readl_relaxed_poll_timeout_atomic(dmadev->base + reg,
-+					dma_scr, !(dma_scr & STM32_DMA_SCR_EN),
-+					10, 1000000);
+-	if (chan->busy) {
+-		stm32_dma_stop(chan);
++	if (chan->desc) {
++		vchan_terminate_vdesc(&chan->desc->vdesc);
++		if (chan->busy)
++			stm32_dma_stop(chan);
+ 		chan->desc = NULL;
  	}
  
- 	return 0;
+@@ -535,6 +537,8 @@ static void stm32_dma_start_transfer(struct stm32_dma_chan *chan)
+ 		if (!vdesc)
+ 			return;
+ 
++		list_del(&vdesc->node);
++
+ 		chan->desc = to_stm32_dma_desc(vdesc);
+ 		chan->next_sg = 0;
+ 	}
+@@ -613,7 +617,6 @@ static void stm32_dma_handle_chan_done(struct stm32_dma_chan *chan)
+ 		} else {
+ 			chan->busy = false;
+ 			if (chan->next_sg == chan->desc->num_sgs) {
+-				list_del(&chan->desc->vdesc.node);
+ 				vchan_cookie_complete(&chan->desc->vdesc);
+ 				chan->desc = NULL;
+ 			}
 -- 
 2.17.1
 
