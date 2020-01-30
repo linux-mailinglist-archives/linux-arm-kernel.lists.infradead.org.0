@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A8DA14E42D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 21:43:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE35314E452
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 21:54:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T/DOFX7NAfljT6fHclctDeWj4lR2rnVZPsPAZWvyIjU=; b=ENflVvMGvG6jQy
-	AJi+yn1EljIuIFGFO0380HXpXz8hSnPR1xZOSrzE+NroPC0HYIFU+TfD2R37dayp5rHdrrlcxAC7w
-	SZ9ghy9s/v1MVnGkZfqnFRcZmqHchzPHajomGbPROwQ5AOAjH3hbjYG8XCl3kltLLuLBJSvbMATN0
-	KmYdLlEglxUzQi5IXH+PN5xBUfID67trLIzrX9hLEeVTLPvCSwfIdSkRYvI4/yA+PxP/qfef1lzpp
-	94VdzTrRG4Dyj0kh9HmZA3H8jj3twMnY119gUW2WjCeCT8lN4YrW2kLPWU/pSSEc9BiC1AFlNOJwz
-	qQdYFjJj+JyyxbdYKXig==;
+	List-Owner; bh=RBgi3gI0AQboovVHYHT7KrwZpL9diaYq1BukieRALgk=; b=CKse5II72LKe5h
+	J2SNQB9ZIF703KE5GJU+gztjVAlLP+/pio5fHgOLIS+BeoP43KO/iztt5DB8S8blDdcVzMhFIyOjF
+	dXfcm84TKUNOg4OcAT4gxt8dYSsX74rbBdFmxknVn4mdA55SHk2VPSEzS8GyFCJloTZGk26SpO5cN
+	p0GnSMNQ2OCfaorztKZ1opkFmv/NV+45ef1qyGY52tCxEzDMxT4SWXxG/S6vG36Z/y6nHrQuZoSDI
+	m92hYABL+TPsqW3fogebWLPF6OTON6vbgdF1RX6xA3ZYmd5qlzD2LKQYNRHHiRLnlztpBc2ePDeC0
+	sUiRbOlbG4chRDOfachg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixGfD-0002ML-FX; Thu, 30 Jan 2020 20:43:47 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ixGpu-0007Hh-Fq; Thu, 30 Jan 2020 20:54:50 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixGf5-0002LQ-Ju
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 20:43:40 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 84so2089822pfy.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Jan 2020 12:43:36 -0800 (PST)
+ id 1ixGpl-0007Gc-Ji; Thu, 30 Jan 2020 20:54:44 +0000
+Received: by mail-ot1-x343.google.com with SMTP id g15so4476704otp.3;
+ Thu, 30 Jan 2020 12:54:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0dxYpvbP3+MitgaCJiQJwbd1PLgONyG5Ng5sN3hHzdc=;
- b=AdqtidcT3UyXX4tOAnsEgclFfQ+sfOYmLxjGeZOjbsO1dNlm6Hz+JFf3TvhvlJO9Wb
- 5BJ2UbFzD2Se8VVQoiKvNLl0DnbchDFaZdaJqxkSyQxgvFmmjH9a3K++2MGLrghdgSRL
- Vh6blAXKV1tyNP/0cZ1GHUeWdo4iAjFITjZieOeI/feu6Uws5jf60Iaex3J4hmyys4V8
- oXZEaG83wKW9I9CeNi1f1M5obf9FmqBLfuvYu9FsTKePYFap4zG8nLNrwGg/OkySyAdQ
- WSUjOe8GXmKd6TR2AZOEvfBnzl/THm8g8oIRZhLAjGg1Ydqa7PoaL66Eq2VA/ZgCt4L7
- aV8w==
+ :cc; bh=gywvdJG4S8zg1F0N8TnRS+h5mKkXnwAKlRZJYdtt1ZA=;
+ b=fqfQnsIOmo8FmmJdsz2QjZwzZa6CYUyDAHwdulBh0jkPnMA2cImjHHcOxHjDXmQxpK
+ T6gAsbqbhlv3FqXjp2FtLtncpIuSJcy8c0KH8OQQJTA88lgBhyNTywMuTRS39yqoLn9e
+ otCeRvbEC+QbtcPgCrRsBKdFutoKjpNJThPflcqDwcA6dn9elZQwW4cAmhwrC0l8nrWf
+ yuiA5qOtgXUUsuFXmYRkCEKFgLvGn+d6kknn2KBw3Y513xLJzFWTdVL5+bfddX62jeJc
+ U1SjOTbI/s0t/d877OkaPGV10zeH/1DLghuVq4hmhPkuDAIUTiTWYoPaMvWgvAXhqAx7
+ aSHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0dxYpvbP3+MitgaCJiQJwbd1PLgONyG5Ng5sN3hHzdc=;
- b=ak0z+DqpMtbg2afONMD000bV8x5QdUaPahipl3cL16gu/XuVPPoRUj/7G/EP/4evRq
- qBFQoTCtYb7H3rJBYW7ouADeGNhsYK0zKXBOMxGD4NQUVhJo3Bk9z02SRWT0NIQwp7Zq
- AFrw5J3ZA0YeVSj2DH3sC+t5S8gQPDn+8zZJ2BkSrohTHtYlMYKzsw9aY/0dN555x4zZ
- Rmi5T+Gg4aaWb5PO9WQJhznL+sVd613gXb+wiSsx6BKgIMBD2NVNjE1pzZkx9nCs+c7j
- cFOt1kLv1xhv4bPfnC83fYRIT+P9zOJHmaa4OvqqdmehrhU0HQlUiZnDT6vs/bJRjOQH
- k9Lg==
-X-Gm-Message-State: APjAAAXo4Wc231AzAG9Pdk4JQwEQHZwg/EpO0WqUYOoJXY+tP9PDG7/S
- p+fdFPzUiNWGJ8F69+dfgVfoguhYg5Fb6U6X6ob2JdGFvnoe8A==
-X-Google-Smtp-Source: APXvYqxtungvuJiW+tQaf+Q4OiC4fCw/m5Y6NFIJtHQbGTC2Ce2BKAtg6nHhDwrtGEnA52l43PrAt1t3SwmrQzwCwg4=
-X-Received: by 2002:a65:5242:: with SMTP id q2mr6412421pgp.74.1580417015788;
- Thu, 30 Jan 2020 12:43:35 -0800 (PST)
+ bh=gywvdJG4S8zg1F0N8TnRS+h5mKkXnwAKlRZJYdtt1ZA=;
+ b=dz2LbxJJsO1nfWXI2GdkRQhceNr+IA9FbSvNItXYW/glBot+WzNFGyg+ZYPxSFIdco
+ FiTO3aNQF50531XOuoXji2hIVcBD18XR9BrvJsMpTyfpIV3pNebpc8sW2JZeqbujcJnh
+ AVDRmDP5+m+VB9mfsx3eAKwG6twFXj6JSaOvgZ4133rDwUSxfP/7ogk2zwguTV/r2d4B
+ TvkyS/ELI8xxveOguHCotVGG2+cYjXPwkrbnfIpndT5cTZkkGsQxM677OFxL1NS8byKZ
+ PUIY7hJzBp7VgwbMrSGPvSp4JHf0ZXsbXUdbc18C4bPLdVx2LQ+TdsBiHAhc1k96suFl
+ PKGA==
+X-Gm-Message-State: APjAAAXeZcpk6NCNsOJPGSnUmPtS2X8W/xtHd9zsXMqMwWZ4cvZA/Bcf
+ TU/l5KwBJZSl4bs/t4uizYwQkeLMBuMf8IcwuIQ=
+X-Google-Smtp-Source: APXvYqwBCKF8eCODlztMB8ORP0u3uiwR5t2s2nCfZgKiHWS07FIMyZ3kn6caD7U18ugZfY2NZqr0ejOUQrOc2egVDVs=
+X-Received: by 2002:a9d:64ca:: with SMTP id n10mr5023218otl.325.1580417680064; 
+ Thu, 30 Jan 2020 12:54:40 -0800 (PST)
 MIME-Version: 1.0
-References: <20200127231208.1443-1-s-anna@ti.com>
- <CAHp75VfaOfBZYjQa960keORW=VjOn2PdwoYpJMG7SsN83daSJg@mail.gmail.com>
- <99a04c52-1ff6-1611-5cf6-2c71b810ba43@ti.com>
-In-Reply-To: <99a04c52-1ff6-1611-5cf6-2c71b810ba43@ti.com>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Thu, 30 Jan 2020 22:43:25 +0200
-Message-ID: <CAHp75VfhLDpuJD+ftdEWt3bwooRD5U=KfOnKZeKm9d4N21HOtw@mail.gmail.com>
-Subject: Re: [PATCH v2] mfd: syscon: Use a unique name with regmap_config
-To: Suman Anna <s-anna@ti.com>
+References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
+ <9c65eb7a-539b-1fa3-f988-40c32aa8dfe3@ti.com>
+In-Reply-To: <9c65eb7a-539b-1fa3-f988-40c32aa8dfe3@ti.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Thu, 30 Jan 2020 20:54:13 +0000
+Message-ID: <CA+V-a8th3eysn0s2q9EEAqQb7vfd3bNcL=ow_z8tSWAC6K=iJw@mail.gmail.com>
+Subject: Re: [v3 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
+ endpoint controller
+To: Rob Herring <robh+dt@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_124339_677858_1AC3A13B 
-X-CRM114-Status: GOOD (  15.44  )
+X-CRM114-CacheID: sfid-20200130_125441_674236_0433D11D 
+X-CRM114-Status: GOOD (  23.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andy.shevchenko[at]gmail.com]
+ provider [prabhakar.csengg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -94,47 +94,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Lechner <david@lechnology.com>, Arnd Bergmann <arnd@arndb.de>,
- Tony Lindgren <tony@atomide.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux OMAP Mailing List <linux-omap@vger.kernel.org>,
- Lee Jones <lee.jones@linaro.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Roger Quadros <rogerq@ti.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
+ Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
+ LAK <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Tom Joseph <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 30, 2020 at 7:09 PM Suman Anna <s-anna@ti.com> wrote:
-> On 1/30/20 9:34 AM, Andy Shevchenko wrote:
-> > On Tue, Jan 28, 2020 at 1:14 AM Suman Anna <s-anna@ti.com> wrote:
+Hi Rob,
 
-...
-
-> >> -       syscon_config.name = of_node_full_name(np);
-> >> +       syscon_config.name = kasprintf(GFP_KERNEL, "%pOFn@%llx", np,
-> >> +                                      (u64)res.start);
+On Wed, Jan 22, 2020 at 8:13 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
+>
+> Hi Prabhakar,
+>
+> On 21/01/20 11:27 PM, Lad, Prabhakar wrote:
+> > Hi Rob/Kishon,
 > >
-> > Explicit castings in printf() usually tell us that something is not okay.
+> > On Wed, Jan 8, 2020 at 4:22 PM Lad Prabhakar <prabhakar.csengg@gmail.com> wrote:
+> >>
+> >> This patch adds the bindings for the R-Car PCIe endpoint driver.
+> >>
+> >> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> >> ---
+> >>  .../devicetree/bindings/pci/rcar-pci-ep.yaml  | 76 +++++++++++++++++++
+> >>  1 file changed, 76 insertions(+)
+> >>  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+> >>
+> >> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+> >> new file mode 100644
+> >> index 000000000000..99c2a1174463
+> >> --- /dev/null
+> >> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+> >> @@ -0,0 +1,76 @@
+> >> +# SPDX-License-Identifier: GPL-2.0
+> >> +# Copyright (C) 2020 Renesas Electronics Europe GmbH - https://www.renesas.com/eu/en/
+> >> +%YAML 1.2
+> >> +---
+> >> +$id: http://devicetree.org/schemas/pci/rcar-pcie-ep.yaml#
+> >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> >> +
+> >> +title: Renesas R-Car PCIe Endpoint
+> >> +
+> >> +maintainers:
+> >> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> >> +
+> >> +properties:
+> >> +  compatible:
+> >> +    items:
+> >> +      - const: renesas,r8a774c0-pcie-ep
+> >> +      - const: renesas,rcar-gen3-pcie-ep
+> >> +
+> >> +  reg:
+> >> +    maxItems: 5
+> >> +
+> >> +  reg-names:
+> >> +    items:
+> >> +      - const: apb-base
+> >> +      - const: memory0
+> >> +      - const: memory1
+> >> +      - const: memory2
+> >> +      - const: memory3
 >
-> Yes, I agree in general.
+> As I had mentioned in the other patch, I'd prefer if we can create
+> standard binding for representing the memory regions. IMHO we should
+> create subnode for memory regions Each sub-node itself may or may not
+> have more than one memory region.
 >
-> > Yes, for resource_size_t we have %pa.
+> In your platform, since there can be only one allocation in a memory
+> region, there should be 4 sub-nodes for each of the memory region and
+> each node should have page_size (or some equivalent property) property
+> to indicate page_size (= region_size).
 >
-> And that was the first thing I tried when doing v2, before moving away
-> from it. This is not for a console printf statement, but is rather for
-> the regmap debugfs name. Using a %pa adds the 0x and leading zeros in
-> the debugfs name, when compared to the name before this patch. The
-> typecast retains the current format, and replaces the unit-address
-> without the leading 0s either. Introducing a local-variable to avoid the
-> typecast is overkill.
+> For a platform that doesn't have the restriction, there can be a single
+> sub-node containing all the memory region.
+>
+> Let's wait for Rob's comment though.
+>
+Gentle ping.on the suggestions above.
 
-Thanks for the clarification.
+Cheers,
+--Prabhakar
 
--- 
-With Best Regards,
-Andy Shevchenko
+> Thanks
+> Kishon
+> >> +
+> >> +  power-domains:
+> >> +    maxItems: 1
+> >> +
+> >> +  resets:
+> >> +    maxItems: 1
+> >> +
+> >> +  clocks:
+> >> +    maxItems: 1
+> >> +
+> >> +  clock-names:
+> >> +    items:
+> >> +      - const: pcie
+> >> +
+> >> +  max-functions:
+> >> +    minimum: 1
+> >> +    maximum: 6
+> >> +
+> >> +required:
+> >> +  - compatible
+> >> +  - reg
+> >> +  - reg-names
+> >> +  - resets
+> >> +  - power-domains
+> >> +  - clocks
+> >> +  - clock-names
+> >> +  - max-functions
+> >> +
+> > apart from dt_binding_check error are we OK with dt bindings ?
+> >
+> > Cheers,
+> > --Prabhakar
+> >
+> >> +examples:
+> >> +  - |
+> >> +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
+> >> +    #include <dt-bindings/power/r8a774c0-sysc.h>
+> >> +
+> >> +     pcie0_ep: pcie-ep@fe000000 {
+> >> +            compatible = "renesas,r8a774c0-pcie-ep",
+> >> +                         "renesas,rcar-gen3-pcie-ep";
+> >> +            reg = <0 0xfe000000 0 0x80000>,
+> >> +                  <0x0 0xfe100000 0 0x100000>,
+> >> +                  <0x0 0xfe200000 0 0x200000>,
+> >> +                  <0x0 0x30000000 0 0x8000000>,
+> >> +                  <0x0 0x38000000 0 0x8000000>;
+> >> +            reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
+> >> +            resets = <&cpg 319>;
+> >> +            power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
+> >> +            clocks = <&cpg CPG_MOD 319>;
+> >> +            clock-names = "pcie";
+> >> +            max-functions = /bits/ 8 <1>;
+> >> +    };
+> >> --
+> >> 2.20.1
+> >>
 
 _______________________________________________
 linux-arm-kernel mailing list
