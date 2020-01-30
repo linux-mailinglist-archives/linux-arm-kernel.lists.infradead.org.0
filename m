@@ -2,87 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A76414DC56
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:53:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89A3C14DC96
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 15:12:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+qhcXyQVnpxp7Z46n5/lmEwizwpXKQp0nhwdUtfIpvk=; b=DVeaYIgKGj3ckt
-	GoovzqF6Ev93GWMKj/iHSqknwIK5u1M/MOfZ49dX3/kUsH4362HZ64jLguyVWMw9ftxlYLggOFk48
-	CdrHuiEbQo+2IzUa/BWi/tX3d0mFsVEYpJdFnJ8WpQK2LrzGSj9pP4HA2lS7VjpT4hmCd+muBjPO5
-	IVKWXm+y3CmT8zYXnH7+3vj+v2MqS0UKWXOOeF97puselXqLcfIp03BqrlJrEoQnA4ZV+z+mG4b52
-	09RV+yFeV4fqQuXI9nfMrw9c5X0rEEDX0v6kf3x2OFaA2X5jF3W+QLHbaMYdsrdDvbP/o+3jL9n5M
-	x3YWJLdynMf5UNh/4h9g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hdWidS+rQSfriPN3Ui8FbN2SBwi3m84V+oWRMzzJA5A=; b=MIGwAnlJf6cdKr
+	lVBoTlEX2hybNqUy7xXlWNG/8+2Wma0vsiBG484mVxlgl3bZHxqhZY1w3Cv3nzEGVdwNnowRhMukF
+	VHvXmddjimszSQpFv/KL/D/wF93vjNfwUsBS5FCSlhI4w0ln2yD1INxygOPjWbd4hwDvfG0DtGaIo
+	Xm1YnfHN2xMjCY+if5fJJsnz7ePIWednC4ZV82v5N4BuzCLiPHn4509rWqqAT/NJTKGSj5cBb9mSK
+	I/HkvgjDdv+Ovv9xBGbIBF509XhRqQXrs8TthjfQGnjsFeDJs64szpKL3VGlvJy0xM29v7GvVJbD8
+	YxUxPI8VKuDyc7IMLBLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixAG1-000394-Kz; Thu, 30 Jan 2020 13:53:21 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixAFu-00037o-FN
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:53:15 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 00UDnSjw004657; Thu, 30 Jan 2020 14:53:07 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=SD9ONTcrqh7sLptkSCNzDFwyy/VkjsecS0bueRwE0no=;
- b=IEmCqz7FmwowZpTDCN3w3Kl6DEuQx9oD4MhHEI2UZ4UB17EWonGLODlAL1QvIVvKHZ8k
- 64YPxPkmuNMvRsXT3JSDbTgHE1EhWTSjcsfJy7C+dQaiBVhNxJp8HLGVmjTLS/c3Qtdg
- v4siMxrzYhs6iq3NRSL8W4G4CEiKlwVLWvstJ20YRAKGNAY1Kj4wktOlP7D6S+s8X+8B
- fF5hW6+EFVD1MReO3+R3kaJFUYfaEj48SjOIagmy0Yg4YhENTZ3qrMaswId4upEFdC1B
- FC2A/hbxIuprQR1E/75/KbflZ4IzSOf594k5t0fJTETvpfj8BdkQDhVlRvy99zbOESwC Gg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xrbpb8w2x-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 30 Jan 2020 14:53:07 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B256710002A;
- Thu, 30 Jan 2020 14:53:06 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A045D2D792D;
- Thu, 30 Jan 2020 14:53:06 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 30 Jan 2020 14:53:05
- +0100
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
- <robh+dt@kernel.org>, <mark.rutland@arm.com>
-Subject: [PATCH] ARM: dts: stm32: remove useless properties in
- stm32mp157a-avenger96 stmpic node
-Date: Thu, 30 Jan 2020 14:53:04 +0100
-Message-ID: <20200130135304.27842-1-benjamin.gaignard@st.com>
-X-Mailer: git-send-email 2.15.0
+	id 1ixAYK-0002w5-62; Thu, 30 Jan 2020 14:12:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixAYA-0002uw-DH
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 14:12:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B6FF91FB;
+ Thu, 30 Jan 2020 06:11:59 -0800 (PST)
+Received: from [10.1.36.201] (e121566-lin.cambridge.arm.com [10.1.36.201])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DF61F3F68E;
+ Thu, 30 Jan 2020 06:11:54 -0800 (PST)
+Subject: Re: [PATCH 23/23] KVM: arm64: Treat emulated TVAL TimerValue as a
+ signed 32-bit integer
+To: Marc Zyngier <maz@kernel.org>, Paolo Bonzini <pbonzini@redhat.com>
+References: <20200130132558.10201-1-maz@kernel.org>
+ <20200130132558.10201-24-maz@kernel.org>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <aec2c75e-24d0-8157-14bd-72883a9df6bf@arm.com>
+Date: Thu, 30 Jan 2020 14:11:47 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE3.st.com
- (10.75.127.9)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-01-30_04:2020-01-28,
- 2020-01-30 signatures=0
+In-Reply-To: <20200130132558.10201-24-maz@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_055314_802294_EA3F0AE4 
-X-CRM114-Status: GOOD (  11.25  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200130_061206_535409_953284ED 
+X-CRM114-Status: GOOD (  18.75  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,39 +65,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Jones <drjones@redhat.com>,
+ Gavin Shan <gshan@redhat.com>, Beata Michalska <beata.michalska@linaro.org>,
+ kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ YueHaibing <yuehaibing@huawei.com>,
+ Christoffer Dall <christoffer.dall@arm.com>,
+ Steven Price <steven.price@arm.com>,
+ Shannon Zhao <shannon.zhao@linux.alibaba.com>,
+ Eric Auger <eric.auger@redhat.com>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Haibin Wang <wanghaibin.wang@huawei.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, Andrew Murray <andrew.murray@arm.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Theses 3 properties are not coded in driver so remove them from the DTS.
+Hi,
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
----
- arch/arm/boot/dts/stm32mp157a-avenger96.dts | 4 ----
- 1 file changed, 4 deletions(-)
+On 1/30/20 1:25 PM, Marc Zyngier wrote:
+> From: Alexandru Elisei <alexandru.elisei@arm.com>
+>
+> According to the ARM ARM, registers CNT{P,V}_TVAL_EL0 have bits [63:32]
+> RES0 [1]. When reading the register, the value is truncated to the least
+> significant 32 bits [2], and on writes, TimerValue is treated as a signed
+> 32-bit integer [1, 2].
+>
+> When the guest behaves correctly and writes 32-bit values, treating TVAL
+> as an unsigned 64 bit register works as expected. However, things start
+> to break down when the guest writes larger values, because
+> (u64)0x1_ffff_ffff = 8589934591. but (s32)0x1_ffff_ffff = -1, and the
+> former will cause the timer interrupt to be asserted in the future, but
+> the latter will cause it to be asserted now.  Let's treat TVAL as a
+> signed 32-bit register on writes, to match the behaviour described in
+> the architecture, and the behaviour experimentally exhibited by the
+> virtual timer on a non-vhe host.
+>
+> [1] Arm DDI 0487E.a, section D13.8.18
+> [2] Arm DDI 0487E.a, section D11.2.4
+>
+> Signed-off-by: Alexandru Elisei <alexandru.elisei@arm.com>
+> [maz: replaced the read-side mask with lower_32_bits]
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> Fixes: 8fa761624871 ("KVM: arm/arm64: arch_timer: Fix CNTP_TVAL calculation")
+> Link: https://lore.kernel.org/r/20200127103652.2326-1-alexandru.elisei@arm.com
+> ---
+>  virt/kvm/arm/arch_timer.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+>
+> diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
+> index f182b2380345..c6c2a9dde00c 100644
+> --- a/virt/kvm/arm/arch_timer.c
+> +++ b/virt/kvm/arm/arch_timer.c
+> @@ -805,6 +805,7 @@ static u64 kvm_arm_timer_read(struct kvm_vcpu *vcpu,
+>  	switch (treg) {
+>  	case TIMER_REG_TVAL:
+>  		val = timer->cnt_cval - kvm_phys_timer_read() + timer->cntvoff;
+> +		val &= lower_32_bits(val);
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 628c74a45a25..e2d9febaa661 100644
---- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -134,10 +134,6 @@
- 		#interrupt-cells = <2>;
- 		status = "okay";
- 
--		st,main-control-register = <0x04>;
--		st,vin-control-register = <0xc0>;
--		st,usb-control-register = <0x30>;
--
- 		regulators {
- 			compatible = "st,stpmic1-regulators";
- 
--- 
-2.15.0
+This is correct, but how about making it val = lower_32_bits(val) for more
+clarity? Apologies for not spotting it earlier :(
 
+Thanks,
+Alex
+>  		break;
+>  
+>  	case TIMER_REG_CTL:
+> @@ -850,7 +851,7 @@ static void kvm_arm_timer_write(struct kvm_vcpu *vcpu,
+>  {
+>  	switch (treg) {
+>  	case TIMER_REG_TVAL:
+> -		timer->cnt_cval = kvm_phys_timer_read() - timer->cntvoff + val;
+> +		timer->cnt_cval = kvm_phys_timer_read() - timer->cntvoff + (s32)val;
+>  		break;
+>  
+>  	case TIMER_REG_CTL:
 
 _______________________________________________
 linux-arm-kernel mailing list
