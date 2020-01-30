@@ -2,52 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 290C414D736
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 09:03:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBBF914D7CD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 09:37:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=V2WcLSfHeWTGB/CpPEX4dKcrMJya1T9bCCD+lbhEjUw=; b=l3xfNmTQ1ABVCBa3GOhUjzqCC
-	gN2CZDx6+kqAtVco/z7yL8XiCdXgfY8BUr26TmFdfkg3g9o2P889/TcyXI+MLXX1IPwnh9R/bwnQL
-	8mZ/7Z99v4IU9fj66UjqS4PQC1PRevMDYudBXbM2Im59AsDMQ7WjM6rV58II1m5k+q89ej7zLDt3C
-	8z6RjLp0PUD2N7KR+sjHc4lX8ZeOwQZSAj9BeYqQNIYHIa46OT0QTpPwwq+FErrX4HAvUFCoL3TTS
-	FOnCMl1F3By3nNRucFmiqanptmG9y9+89PreMxFbw0vHBAzp3j05mIsXgPgJCO/V6+uAtwnpOQeaS
-	tQCIGrKQQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7i/9iewq8j2oeG5Dv0qHWB2D0/Q6LJTTh8hhRj8fMhw=; b=AARiIdD5RP0HLG
+	0L8bQww2LLw9NrZ21d/rNou5aLAp5vDYeme0doUauX/U0RVdBhd+s2/HTVMye5sP6y1Vqa+i13S+T
+	udrrQ8zmZs+E8VjzXFzNK6OiXeeSk5dDM5zF/4aasFmOv+47owdTg+YGH9gRAy8fhdQhkm3K9+Ly5
+	tKOipPZaEXTA5Iua4Sbp7YCLf+JPkfERiXxJAF6x2TgK/+5lJij6W+DafBnvBOBZRDXl+YVfHQRHk
+	zCO7rijavNlLT8F9tgXmdJwIuVKsHPNMlTJIcgMhffpJsNLIHEvilL/WqaLtM4o8LrsjYMQNY+prA
+	r5CxzCWkJt2RsFC6/Nvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix4nK-0005Hp-1a; Thu, 30 Jan 2020 08:03:22 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix4nB-0005HM-5l
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 08:03:14 +0000
-Received: from localhost (p54B33261.dip0.t-ipconnect.de [84.179.50.97])
- by pokefinder.org (Postfix) with ESMTPSA id 6EABE2C0697;
- Thu, 30 Jan 2020 09:03:11 +0100 (CET)
-Date: Thu, 30 Jan 2020 09:03:07 +0100
-From: Wolfram Sang <wsa@the-dreams.de>
-To: alex.williams@ettus.com
-Subject: Re: [PATCH] i2c: cadence: Handle transfer_size rollover
-Message-ID: <20200130080307.GA2208@ninjato>
-References: <20190131213957.11568-1-alex.williams@ettus.com>
+	id 1ix5Kb-00019j-IR; Thu, 30 Jan 2020 08:37:45 +0000
+Received: from mga17.intel.com ([192.55.52.151])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ix5KN-00018X-0f
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 08:37:35 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga006.jf.intel.com ([10.7.209.51])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 30 Jan 2020 00:37:30 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,381,1574150400"; d="scan'208";a="232837098"
+Received: from kvehmane-mobl.ger.corp.intel.com (HELO jsakkine-mobl1)
+ ([10.237.50.119])
+ by orsmga006.jf.intel.com with ESMTP; 30 Jan 2020 00:37:26 -0800
+Message-ID: <a3720028f46885e806f201b6fa6ea6f8ef6b0d44.camel@linux.intel.com>
+Subject: Re: [PATCH v2 2/2] tpm: tis: add support for MMIO TPM on SynQuacer
+From: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Thu, 30 Jan 2020 10:37:25 +0200
+In-Reply-To: <CAKv+Gu-9KvzLEcNQnRfsOkU=5oc1otY_NS15fR5Oi4Z4UVvurw@mail.gmail.com>
+References: <20200114141647.109347-1-ardb@kernel.org>
+ <20200114141647.109347-3-ardb@kernel.org>
+ <ada03416b1b362fa255feb45257414655d8ab023.camel@linux.intel.com>
+ <CAKv+Gu-9KvzLEcNQnRfsOkU=5oc1otY_NS15fR5Oi4Z4UVvurw@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Evolution 3.34.1-2 
 MIME-Version: 1.0
-In-Reply-To: <20190131213957.11568-1-alex.williams@ettus.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_000313_364251_4CBEEA21 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200130_003734_148538_20B3814F 
+X-CRM114-Status: GOOD (  15.67  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,77 +69,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Alex Williams <alex.williams@ni.com>,
- linux-arm-kernel@lists.infradead.org, mical.simek@xilinx.com,
- linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============7830630967765592191=="
+Cc: Devicetree List <devicetree@vger.kernel.org>,
+ Peter =?ISO-8859-1?Q?H=FCwe?= <peterhuewe@gmx.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Masahisa Kojima <masahisa.kojima@linaro.org>,
+ linux-integrity <linux-integrity@vger.kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 2020-01-23 at 13:29 +0100, Ard Biesheuvel wrote:
+> On Thu, 23 Jan 2020 at 13:27, Jarkko Sakkinen
+> <jarkko.sakkinen@linux.intel.com> wrote:
+> > On Tue, 2020-01-14 at 15:16 +0100, Ard Biesheuvel wrote:
+> > > When fitted, the SynQuacer platform exposes its SPI TPM via a MMIO
+> > > window that is backed by the SPI command sequencer in the SPI bus
+> > > controller. This arrangement has the limitation that only byte size
+> > > accesses are supported, and so we'll need to provide a separate set
+> > > of read and write accessors that take this into account.
+> > 
+> > What is SynQuacer platform?
+> > 
+> 
+> It is an arm64 SoC manufactured by Socionext.
+> 
+> > I'm also missing a resolution why tpm_tis.c is extended to handle both
+> > and not add tpm_tis_something.c instead. It does not follow the pattern
+> > we have in place (e.g. look up tpm_tis_spi.c).
+> > 
+> 
+> We could easily do that instead, if preferred. It's just that it would
+> duplicate a bit of code.
 
---===============7830630967765592191==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="J/dobhs11T7y2rNN"
-Content-Disposition: inline
+I'm fine with that. Overally I think it is cleaner flow.
 
+/Jarkko
 
---J/dobhs11T7y2rNN
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Jan 31, 2019 at 01:39:57PM -0800, alex.williams@ettus.com wrote:
-> From: Alex Williams <alex.williams@ni.com>
->=20
-> Under certain conditions, Cadence's I2C controller's transfer_size
-> register will roll over and generate invalid read transactions. Before
-> this change, the ISR relied solely on the RXDV bit to determine when to
-> write more data to the user's buffer. The invalid read data would cause
-> overruns, smashing stacks and worse.
->=20
-> This change stops the buffer writes to the requested boundary and
-> reports the error. The controller will be reset so normal transactions
-> may resume.
->=20
-> Signed-off-by: Alex Williams <alex.williams@ni.com>
-
-Applied to for-next with another Rev-by from Michal given in another
-thread, thanks!
-
-
---J/dobhs11T7y2rNN
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl4yjbcACgkQFA3kzBSg
-Kbb8RxAAiCoAtge6yROLbqYc4Ruq1gKWnE76UU2AbpwSK1GEFdyKat70l9hN0Edb
-7ISc+b+z9X8gYfm8Sx8CjKoqC+B4ldxyZM+hNCOzkMfzbIGUNTllajhZIAb5MEhI
-E405O36pd94ogiFGcTALsgtLgfaC2HDzVTqm5xOyJqJRte+W0palPx4UL6+33PbR
-QYmMkPhA+6AUlnCXsrtDjM13eg3u6gRn/IG/ZfztOPufyzsE3sHaMgyqLhE1puI/
-5N3kjDQQAfespuTspjLm8S7J4cqSxEYpieog6II6NGCRFQTsfiYv6iHCzyywJ5Xk
-t5CgEaqnqZBzr8WFWmpgngz33RrYBTEOPbM5WScvVKaMfm3bKAP20Q23yEaDwZAC
-SfI0SQJAyJ9EZi/z2NuDRi8QgED5hoqchWN0MT9VYhGsSEfZA4q4LiECkHL8Zg85
-VxZMCZcfQHzER3epg0P3imvP5slj6L4LhSzg2mu9JdHUSqcsjIA16E+Di9kZ/eCF
-rJkh8Sb4tK1ClVlnTW4/YtmfC7Ru0XrN5ZFeugZxUurByG5Q3NtezkJHAzrVJGFz
-L3AbX0Fl7lA3/nX/astrsUgG4sXoOG7bWW/7FiA0jWPrX+WglbEbXZQ64I6MXN5E
-TOjyGoxiXCU2zyrlqeiHwf7XDRmzMpxAOLYZjmKgibcX1OcjLBw=
-=WTaX
------END PGP SIGNATURE-----
-
---J/dobhs11T7y2rNN--
-
-
---===============7830630967765592191==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7830630967765592191==--
-
