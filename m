@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 289E014DBEB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:31:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA48E14DBF6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:32:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WLcxmJKWGkUVBG/oqh58WvKvJfkKdSyvCurIBRp3/hk=; b=pH1M6Utn3ZuEux
-	MmMW3eUTmCTLHhWZul2/LE80vxB3nUnAi+gbkPziRVhMtLiDaukrvNLeGXPV+y0M2OCjBKys2LbfE
-	Kg78efji4tEjHSbVf4qCOUk05G4PgXu5NsgMJCUsmko5Vbum15Zsl3j1g3eyG+DZjizYMectlXeD+
-	H4esrvzpGDZI5FxZWhYnpwjrhvyGD2ORsYoDfzQGO37FXmwpODbUCAPfTUEoMMwQwgobljTaE44tH
-	BFS2pW9dtk+vO+KGDlWHLu+Xyh32DWrRkKPCCYhjWmXw7XG2l2gnEwKogK7THTDc1I55mHB2LIHsm
-	SNHCexoRTT8dieWIdcOg==;
+	List-Owner; bh=JYXFyXd194KCVyQ5lnKmNyBQF1QJKNbKgtpRdMwOAHU=; b=RCm+H43x+j5RoJ
+	pTaypNW1F8obB4lHrX5oa+ON0D5WgwPadm5WORNn86AFacfuL6ThObZffpBrKeRAnitHNFDhTx7AW
+	87LoKoi143Z3og5gUaN8otVsoHfPF4bwxPXC8KtzSwG+VXdbjwn/xdAlpItSz/01CSRLQNJsXD0Ul
+	rv9wPCRIWXujXD1wQej2Q652T2zFQ0VeniOPkvtT91lKNSXoORuK+P1qAODjpa/CuSUYrmUXpLma7
+	8dh/jjib8cCSZ+3ceFJfaZmmUPE+9PJKkyjn9QHI3EosW90n/LNp+AOQZNReoXR6byKiHwBaJjz7T
+	N/qxeKIeXwfjbzLJTzAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix9uF-0008Eq-Ug; Thu, 30 Jan 2020 13:30:51 +0000
+	id 1ix9vn-0002Rq-Ib; Thu, 30 Jan 2020 13:32:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix9sk-0007Fd-6t
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:29:20 +0000
+ id 1ix9sv-0007RN-SM
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:29:32 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 79EB1214AF;
- Thu, 30 Jan 2020 13:29:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3A52D206D3;
+ Thu, 30 Jan 2020 13:29:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580390957;
- bh=AxpqAinrqMqcSc1J5l+Lh01LGoqatehtYQ3jSu83bmE=;
+ s=default; t=1580390969;
+ bh=QGmoD2g147nn2rXQotyPQlmpUS1aCJlneMZQNHauFhw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=YQHKmHwDbcO0+V9Gnnu7/QajLLMEUruOslRDCZauCaKshGtbJOc9Sm9mJtnvCTgHp
- x55jp5xndll4VNALZACVz3F/1zv17eJjPLVPm3gRCQkObs+g5iZwSKSPSnbn67+NYs
- H22nIXcfBobhD/mgUTrlczkxSLn38fDzJpRq62dY=
+ b=K/T3DV9793fRN0Lqcry0p0lpZmnmsieQCmXNKEi8q3O9nmOTKAvs16zlpdo1tZt2i
+ KcJ+RkYMLYlXRcezty7yq/J+T06aHM0pM3QjDd4Ooy5KKIG1iK6LUObYkfdNmRNTD1
+ 3qQW1I6mGTIgE6JBUxwhRm5z8aOEludcAD6Xc4LE=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1ix9pz-002BmW-To; Thu, 30 Jan 2020 13:26:28 +0000
+ id 1ix9q0-002BmW-Vp; Thu, 30 Jan 2020 13:26:29 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 17/23] KVM: arm: Fix DFSR setting for non-LPAE aarch32 guests
-Date: Thu, 30 Jan 2020 13:25:52 +0000
-Message-Id: <20200130132558.10201-18-maz@kernel.org>
+Subject: [PATCH 18/23] KVM: arm: Make inject_abt32() inject an external abort
+ instead
+Date: Thu, 30 Jan 2020 13:25:53 +0000
+Message-Id: <20200130132558.10201-19-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200130132558.10201-1-maz@kernel.org>
 References: <20200130132558.10201-1-maz@kernel.org>
@@ -64,8 +65,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_052918_307125_E4D72455 
-X-CRM114-Status: GOOD (  14.76  )
+X-CRM114-CacheID: sfid-20200130_052929_987828_DE9F3213 
+X-CRM114-Status: GOOD (  14.41  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -114,51 +115,54 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: James Morse <james.morse@arm.com>
 
-Beata reports that KVM_SET_VCPU_EVENTS doesn't inject the expected
-exception to a non-LPAE aarch32 guest.
+KVM's inject_abt64() injects an external-abort into an aarch64 guest.
+The KVM_CAP_ARM_INJECT_EXT_DABT is intended to do exactly this, but
+for an aarch32 guest inject_abt32() injects an implementation-defined
+exception, 'Lockdown fault'.
 
-The host intends to inject DFSR.FS=0x14 "IMPLEMENTATION DEFINED fault
-(Lockdown fault)", but the guest receives DFSR.FS=0x04 "Fault on
-instruction cache maintenance". This fault is hooked by
-do_translation_fault() since ARMv6, which goes on to silently 'handle'
-the exception, and restart the faulting instruction.
-
-It turns out, when TTBCR.EAE is clear DFSR is split, and FS[4] has
-to shuffle up to DFSR[10].
-
-As KVM only does this in one place, fix up the static values. We
-now get the expected:
-| Unhandled fault: lock abort (0x404) at 0x9c800f00
+Change this to external abort. For non-LPAE we now get the documented:
+| Unhandled fault: external abort on non-linefetch (0x008) at 0x9c800f00
+and for LPAE:
+| Unhandled fault: synchronous external abort (0x210) at 0x9c800f00
 
 Fixes: 74a64a981662a ("KVM: arm/arm64: Unify 32bit fault injection")
 Reported-by: Beata Michalska <beata.michalska@linaro.org>
 Signed-off-by: James Morse <james.morse@arm.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Link: https://lore.kernel.org/r/20200121123356.203000-2-james.morse@arm.com
+Link: https://lore.kernel.org/r/20200121123356.203000-3-james.morse@arm.com
 ---
- virt/kvm/arm/aarch32.c | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
+ virt/kvm/arm/aarch32.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
 
 diff --git a/virt/kvm/arm/aarch32.c b/virt/kvm/arm/aarch32.c
-index 631d397ac81b..2da482ca7067 100644
+index 2da482ca7067..0a356aa91aa1 100644
 --- a/virt/kvm/arm/aarch32.c
 +++ b/virt/kvm/arm/aarch32.c
-@@ -181,10 +181,12 @@ static void inject_abt32(struct kvm_vcpu *vcpu, bool is_pabt,
+@@ -15,6 +15,10 @@
+ #include <asm/kvm_emulate.h>
+ #include <asm/kvm_hyp.h>
  
++#define DFSR_FSC_EXTABT_LPAE	0x10
++#define DFSR_FSC_EXTABT_nLPAE	0x08
++#define DFSR_LPAE		BIT(9)
++
+ /*
+  * Table taken from ARMv8 ARM DDI0487B-B, table G1-10.
+  */
+@@ -182,10 +186,10 @@ static void inject_abt32(struct kvm_vcpu *vcpu, bool is_pabt,
  	/* Give the guest an IMPLEMENTATION DEFINED exception */
  	is_lpae = (vcpu_cp15(vcpu, c2_TTBCR) >> 31);
--	if (is_lpae)
-+	if (is_lpae) {
- 		*fsr = 1 << 9 | 0x34;
--	else
--		*fsr = 0x14;
-+	} else {
-+		/* Surprise! DFSR's FS[4] lives in bit 10 */
-+		*fsr = BIT(10) | 0x4; /* 0x14 */
-+	}
+ 	if (is_lpae) {
+-		*fsr = 1 << 9 | 0x34;
++		*fsr = DFSR_LPAE | DFSR_FSC_EXTABT_LPAE;
+ 	} else {
+-		/* Surprise! DFSR's FS[4] lives in bit 10 */
+-		*fsr = BIT(10) | 0x4; /* 0x14 */
++		/* no need to shuffle FS[4] into DFSR[10] as its 0 */
++		*fsr = DFSR_FSC_EXTABT_nLPAE;
+ 	}
  }
  
- void kvm_inject_dabt32(struct kvm_vcpu *vcpu, unsigned long addr)
 -- 
 2.20.1
 
