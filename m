@@ -2,59 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0239814DE32
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 16:49:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8004514DE74
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 17:09:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qIlTFvp2JylskqLA3afCd89AAUqnajIRJZMdhXrx1X8=; b=kcVhPvf1U8Er2k
-	euGEwNAUU2l+/eoYWfleHxJ0tSxm7y+QNfqLLlxuny5GM+X4lMMkuso8REaqMLS6Bgz2GXLn4rtQf
-	r4ebave5t27GpO2hpZs58OZI5KkhiqVz758iBSnjqpKyZUtpJyQPHAxFupM5BYweMtKhUMSkKbeBV
-	6XkAYm4w1OtCTyrsXBcrEL5aQX1aJL08pZ6b14HHFoy6e4s4ixuCzKF0yFdlaSpHfVFMv8/t8hxh+
-	9uwLBuJ7vFMtlpFukV7wdMkXJYkESJn2WyD+LNi1k0Ew0ehwLVAHHtA3yml0LrVHFry3G1sB4o/vn
-	AxZ/T1lQ1kqo7z0VngdQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:To:Subject:
+	From:Message-Id:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=/UR+KZj/co0dz962dI2ry+zZnIc8l8Lp0jY7iybOqEo=; b=UaD
+	HA/+CKdfJmPkVMIxnEsB7Ep5adfHJmLwYll4Fn0NpN7MOO1kYU6qWVurNrV+qLDanp+LE3gw+DxKA
+	sGkhnzZnbVOMaFz4+jt1k5FO964SLUpecrNGOamfKxUtxDSC+MCoqCpAqmmyKpdZ1YN41yYHwHemH
+	JimGgM6IiYfiFvIeNaSNOHyGa6aVRNOVwb8ugtMZGJm2Nb7hgRBo3ihOIlVDlnYWXZLgUP9k9/uWt
+	RnG8jp4dDSPzwFWjpYIv/QjJYcV6AhQE5LeeeifVNqmno7bdEOKzOM+UbkDr50OVUq+uYBAL8zNMM
+	QEUA26Bs1SdD0wK3o/reRti+nb9lsVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixC4U-0000yP-Sa; Thu, 30 Jan 2020 15:49:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixC4M-0000xp-27
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 15:49:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5867731B;
- Thu, 30 Jan 2020 07:49:25 -0800 (PST)
-Received: from localhost (unknown [10.1.198.81])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ED9E53F67D;
- Thu, 30 Jan 2020 07:49:24 -0800 (PST)
-Date: Thu, 30 Jan 2020 15:49:23 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH v2 6/6] arm64: use activity monitors for frequency
- invariance
-Message-ID: <20200130154923.GB5208@arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-7-ionela.voinescu@arm.com>
- <96fdead6-9896-5695-6744-413300d424f5@arm.com>
- <3ed9af08-82ef-e30c-b1ec-3a1dac0d2091@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3ed9af08-82ef-e30c-b1ec-3a1dac0d2091@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+	id 1ixCNF-0000Zg-Sm; Thu, 30 Jan 2020 16:08:57 +0000
+Received: from pegase1.c-s.fr ([93.17.236.30])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixCMx-0000W5-SW
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 16:08:41 +0000
+Received: from localhost (mailhub1-int [192.168.12.234])
+ by localhost (Postfix) with ESMTP id 487ldY3xydz9v6KM;
+ Thu, 30 Jan 2020 17:08:33 +0100 (CET)
+Authentication-Results: localhost; dkim=pass
+ reason="1024-bit key; insecure key"
+ header.d=c-s.fr header.i=@c-s.fr header.b=FQUlvhVm; dkim-adsp=pass;
+ dkim-atps=neutral
+X-Virus-Scanned: Debian amavisd-new at c-s.fr
+Received: from pegase1.c-s.fr ([192.168.12.234])
+ by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
+ with ESMTP id wIEqw9oDIA6F; Thu, 30 Jan 2020 17:08:33 +0100 (CET)
+Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
+ by pegase1.c-s.fr (Postfix) with ESMTP id 487ldY2t0xz9v6KL;
+ Thu, 30 Jan 2020 17:08:33 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
+ t=1580400513; bh=4gy05PHuez6bivrIGkJNuEVnZ24TDpRGy3B+DHczM3E=;
+ h=From:Subject:To:Cc:Date:From;
+ b=FQUlvhVmZKvZxXxg7cK4U5Cfll3ntifWapTKxoZctIQ9egTmZuqdjZGKPp9nTug6Y
+ SFhbCQOntoMGKsAkvyYbYKF1dVGaz47UChW4nIF7Q8ug/ClNbVsLD3QigiDc3CoiJ3
+ 0QSsV+tT2aHX7KbBaYenl5hgYHuwpiiX8gCCS4LI=
+Received: from localhost (localhost [127.0.0.1])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id E0CFD8B87B;
+ Thu, 30 Jan 2020 17:08:34 +0100 (CET)
+X-Virus-Scanned: amavisd-new at c-s.fr
+Received: from messagerie.si.c-s.fr ([127.0.0.1])
+ by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
+ with ESMTP id paLKA8Pe3ank; Thu, 30 Jan 2020 17:08:34 +0100 (CET)
+Received: from po14934vm.idsi0.si.c-s.fr (unknown [192.168.4.90])
+ by messagerie.si.c-s.fr (Postfix) with ESMTP id 9C3CD8B877;
+ Thu, 30 Jan 2020 17:08:34 +0100 (CET)
+Received: by po14934vm.idsi0.si.c-s.fr (Postfix, from userid 0)
+ id 2FE7465283; Thu, 30 Jan 2020 16:08:34 +0000 (UTC)
+Message-Id: <cover.1580399657.git.christophe.leroy@c-s.fr>
+From: Christophe Leroy <christophe.leroy@c-s.fr>
+Subject: [PATCH v5 0/6] powerpc: switch VDSO to C implementation.
+To: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>, 
+ nathanl@linux.ibm.com, arnd@arndb.de, tglx@linutronix.de,
+ vincenzo.frascino@arm.com, luto@kernel.org
+Date: Thu, 30 Jan 2020 16:08:34 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_074926_193139_E0FD2046 
-X-CRM114-Status: GOOD (  23.61  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200130_080840_231261_50E7C97E 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [93.17.236.30 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,68 +93,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- sudeep.holla@arm.com, will@kernel.org, dietmar.eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: x86@kernel.org, linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgVmFsZW50aW4sCgpPbiBXZWRuZXNkYXkgMjkgSmFuIDIwMjAgYXQgMjM6Mzk6MTEgKCswMDAw
-KSwgVmFsZW50aW4gU2NobmVpZGVyIHdyb3RlOgo+IE9uIDI5LzAxLzIwMjAgMTc6MTMsIFZhbGVu
-dGluIFNjaG5laWRlciB3cm90ZToKPiA+IEkgaGFkIGEgYnJpZWYgbG9vayBhdCB0aGUgQXJtIEFS
-TSwgZm9yIHRoZSBhcmNoIHRpbWVyIGl0IHNheXMgaXQgaXMKPiA+ICJ0eXBpY2FsbHkgaW4gdGhl
-IHJhbmdlIDEtNTBNSHoiLCBidXQgdGhlbiBhbHNvIGdpdmVzIGFuIGV4YW1wbGUgd2l0aCAyMEtI
-ego+ID4gaW4gYSBsb3ctcG93ZXIgbW9kZS4KPiA+IAo+ID4gSWYgd2UgdGFrZSBzYXkgNUdIeiBt
-YXggQ1BVIGZyZXF1ZW5jeSwgb3VyIGxvd2VyIGJvdW5kIGZvciB0aGUgYXJjaCB0aW1lcgo+ID4g
-KHdpdGggdGhhdCBTQ0hFRF9DQVBBQ0lUWV9TQ0FMRcKyIHRyaWNrKSBpcyBhYm91dCB+NC43NjhL
-SHouIEl0J3Mgbm90ICp0b28qCj4gPiBmYXIgZnJvbSB0aGF0IDIwS0h6LCBidXQgSSdtIG5vdCBz
-dXJlIHdlIHdvdWxkIGFjdHVhbGx5IGJlIGV4ZWN1dGluZyBzdHVmZgo+ID4gaW4gdGhhdCBsb3ct
-cG93ZXIgbW9kZS4KPiA+IAo+IAo+IEkgbWl4ZWQgdXAgYSBmZXcgdGhpbmdzIGluIHRoZXJlOyB0
-aGF0IGxvdy1wb3dlciBtb2RlIGlzIHN1cHBvc2VkIHRvIGRvCj4gaGlnaGVyIGluY3JlbWVudHMs
-IHNvIGl0IHdvdWxkIGVtdWxhdGUgYSBzaW1pbGFyIGZyZXF1ZW5jeSBhcyB0aGUgbm9uLWxvdy1w
-b3dlcgo+IG1vZGUuIFRodXMgdGhlIGFjdHVhbCBmcmVxdWVuY3kgbWF0dGVycyBsZXNzIHRoYW4g
-d2hhdCBpcyByZXBvcnRlZCBpbiBDTlRGUlEKPiAodGhvdWdoIHdlIGhvcGUgdG8gZ2V0IHRoZSBi
-ZWhhdmlvdXIgd2UncmUgdG9sZCB3ZSBzaG91bGQgc2VlKSwgc28gd2Ugc2hvdWxkCj4gYmUgcXVp
-dGUgc2FmZSBmcm9tIHRoYXQgfjVLSHogdmFsdWUuIFN0aWxsLCB0byBtYWtlIGl0IG9idmlvdXMs
-IEkgZG9uJ3QgdGhpbmsKPiBzb21ldGhpbmcgbGlrZSB0aGlzIHdvdWxkIGh1cnQ6Cj4gCj4gLS0t
-Cj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvY2xvY2tzb3VyY2UvYXJtX2FyY2hfdGltZXIuYyBiL2Ry
-aXZlcnMvY2xvY2tzb3VyY2UvYXJtX2FyY2hfdGltZXIuYwo+IGluZGV4IDlhNTQ2NGM2MjViNDUu
-LmE3MjgzMjA5MzU3NWEgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9jbG9ja3NvdXJjZS9hcm1fYXJj
-aF90aW1lci5jCj4gKysrIGIvZHJpdmVycy9jbG9ja3NvdXJjZS9hcm1fYXJjaF90aW1lci5jCj4g
-QEAgLTg4NSw2ICs4ODUsMTcgQEAgc3RhdGljIGludCBhcmNoX3RpbWVyX3N0YXJ0aW5nX2NwdSh1
-bnNpZ25lZCBpbnQgY3B1KQo+ICAJcmV0dXJuIDA7Cj4gIH0KPiAgCj4gK3N0YXRpYyBpbnQgdmFs
-aWRhdGVfdGltZXJfcmF0ZSh2b2lkKQo+ICt7Cj4gKwlpZiAoIWFyY2hfdGltZXJfcmF0ZSkKPiAr
-CQlyZXR1cm4gMTsKPiArCj4gKwkvKiBBcmNoIHRpbWVyIGZyZXF1ZW5jeSA8IDFNSHogaXMgc2hh
-ZHkgKi8KPiArCVdBUk5fT04oYXJjaF90aW1lcl9yYXRlIDwgMTAwMDAwMCk7Cj4gKwo+ICsJcmV0
-dXJuIDA7Cj4gK30KPiArCj4gIC8qCj4gICAqIEZvciBoaXN0b3JpY2FsIHJlYXNvbnMsIHdoZW4g
-cHJvYmluZyB3aXRoIERUIHdlIHVzZSB3aGljaGV2ZXIgKG5vbi16ZXJvKQo+ICAgKiByYXRlIHdh
-cyBwcm9iZWQgZmlyc3QsIGFuZCBkb24ndCB2ZXJpZnkgdGhhdCBvdGhlcnMgbWF0Y2guIElmIHRo
-ZSBmaXJzdCBub2RlCj4gQEAgLTkwMCw3ICs5MTEsNyBAQCBzdGF0aWMgdm9pZCBhcmNoX3RpbWVy
-X29mX2NvbmZpZ3VyZV9yYXRlKHUzMiByYXRlLCBzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wKQo+ICAJ
-CWFyY2hfdGltZXJfcmF0ZSA9IHJhdGU7Cj4gIAo+ICAJLyogQ2hlY2sgdGhlIHRpbWVyIGZyZXF1
-ZW5jeS4gKi8KPiAtCWlmIChhcmNoX3RpbWVyX3JhdGUgPT0gMCkKPiArCWlmICh2YWxpZGF0ZV90
-aW1lcl9yYXRlKCkpCj4gIAkJcHJfd2FybigiZnJlcXVlbmN5IG5vdCBhdmFpbGFibGVcbiIpOwo+
-ICB9Cj4gIAo+IEBAIC0xNTk0LDcgKzE2MDUsNyBAQCBzdGF0aWMgaW50IF9faW5pdCBhcmNoX3Rp
-bWVyX2FjcGlfaW5pdChzdHJ1Y3QgYWNwaV90YWJsZV9oZWFkZXIgKnRhYmxlKQo+ICAJICogQ05U
-RlJRIHZhbHVlLiBUaGlzICptdXN0KiBiZSBjb3JyZWN0Lgo+ICAJICovCj4gIAlhcmNoX3RpbWVy
-X3JhdGUgPSBhcmNoX3RpbWVyX2dldF9jbnRmcnEoKTsKPiAtCWlmICghYXJjaF90aW1lcl9yYXRl
-KSB7Cj4gKwlpZiAodmFsaWRhdGVfdGltZXJfcmF0ZSgpKSB7Cj4gIAkJcHJfZXJyKEZXX0JVRyAi
-ZnJlcXVlbmN5IG5vdCBhdmFpbGFibGUuXG4iKTsKPiAgCQlyZXR1cm4gLUVJTlZBTDsKPiAgCX0K
-PiAtLS0KPiAKCk9rYXksIEknbGwgYWRkIHRoaXMgYXMgYSBzZXBhcmF0ZSBwYXRjaCB0byB0aGUg
-c2VyaWVzIGFuZCBwdXQgeW91IGFzCmF1dGhvci4gVGhhdCBpcyBpZiB5b3Ugd2FudCBtZSB0byB0
-aWUgdGhpcyBjaGVjayB0byB0aGlzIHVzZWNhc2UgdGhhdApwcm92ZXMgaXRzIHVzZWZ1bG5lc3Mu
-IE90aGVyd2lzZSBpdCBjYW4gc3RhbmQgb24gaXRzIG93biBhcyB3ZWxsIGlmCnlvdSB3YW50IHRv
-IHN1Ym1pdCBpdCBzZXBhcmF0ZWx5LgoKSW4gcmVnYXJkcyB0byB0aGUgcmF0aW8gY29tcHV0YXRp
-b24gZm9yIGZyZXF1ZW5jeSBpbnZhcmlhbmNlIHdoZXJlIHRoaXMKcGxheXMgYSByb2xlLCBJJ2xs
-IGRvIGEgY2hlY2sgYW5kIGJhaWwgb3V0IGlmIHRoZSByYXRpbyBpcyAwLCB3aGljaCBJJ20KYXNo
-YW1lZCB0byBub3QgaGF2ZSBhZGRlZCBiZWZvcmUgOikuCgpUaGFua3MsCklvbmVsYS4KCgo+ID4g
-TG9uZyBzdG9yeSBzaG9ydCwgd2UncmUgcHJvYmFibHkgZmluZSwgYnV0IGl0IHdvdWxkIG5pY2Ug
-dG8gc2hvdmUgc29tZSBvZgo+ID4gdGhlIGFib3ZlIGludG8gY29tbWVudHMgKGVzcGVjaWFsbHkg
-dGhlIFNDSEVEX0NBUEFDSVRZX1NDQUxFwrIgdHJpY2spCj4gPiAKCl9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
-aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
-cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+This is a fifth version of a series to switch powerpc VDSO to generic
+C implementation. All previous where RFCs. This one has reached a
+mature status.
+
+It is tested on PPC32 (mpc885 and mpc8321E).
+It is build tested on kisskb
+(http://kisskb.ellerman.id.au/kisskb/head/abf15916bd65f808b07fe9a2377db965a37071e4/)
+In PPC64 mode it now builds both VDSO64 and VDSO32.
+
+The two first patches are optimisation around the way vdso datapage is
+handled. They are worth merging now even if we want to wait a little
+more for the entire series.
+
+The next three patches are optimisations to the GENERIC C VDSO code.
+Without them, the performance of the VDSO time functions are too
+degraded compared to the current ASM version to be worth switching
+the C VDSO.
+
+This series applies on today's powerpc/merge branch.
+
+See the last patch for details on changes and performance.
+
+Christophe Leroy (6):
+  powerpc/vdso64: Switch from __get_datapage() to get_datapage inline
+    macro
+  powerpc/vdso: Remove __kernel_datapage_offset and simplify
+    __get_datapage()
+  lib/vdso: Allow architectures to provide the vdso data pointer
+  lib/vdso: Allow fixed clock mode
+  lib/vdso: Allow architectures to override the ns shift operation
+  powerpc/vdso: Switch VDSO to generic C implementation.
+
+ arch/powerpc/Kconfig                         |   2 +
+ arch/powerpc/include/asm/vdso/gettimeofday.h | 158 ++++++++++
+ arch/powerpc/include/asm/vdso/vsyscall.h     |  25 ++
+ arch/powerpc/include/asm/vdso_datapage.h     |  51 ++--
+ arch/powerpc/kernel/asm-offsets.c            |  49 +---
+ arch/powerpc/kernel/time.c                   |  90 ------
+ arch/powerpc/kernel/vdso.c                   |  58 +---
+ arch/powerpc/kernel/vdso32/Makefile          |  32 +-
+ arch/powerpc/kernel/vdso32/cacheflush.S      |   2 +-
+ arch/powerpc/kernel/vdso32/config-fake32.h   |  34 +++
+ arch/powerpc/kernel/vdso32/datapage.S        |   7 +-
+ arch/powerpc/kernel/vdso32/gettimeofday.S    | 291 +------------------
+ arch/powerpc/kernel/vdso32/vdso32.lds.S      |   7 +-
+ arch/powerpc/kernel/vdso32/vgettimeofday.c   |  29 ++
+ arch/powerpc/kernel/vdso64/Makefile          |  23 +-
+ arch/powerpc/kernel/vdso64/cacheflush.S      |   9 +-
+ arch/powerpc/kernel/vdso64/datapage.S        |  31 +-
+ arch/powerpc/kernel/vdso64/gettimeofday.S    | 243 +---------------
+ arch/powerpc/kernel/vdso64/vdso64.lds.S      |   7 +-
+ arch/powerpc/kernel/vdso64/vgettimeofday.c   |  29 ++
+ lib/vdso/gettimeofday.c                      |  98 +++++--
+ 21 files changed, 467 insertions(+), 808 deletions(-)
+ create mode 100644 arch/powerpc/include/asm/vdso/gettimeofday.h
+ create mode 100644 arch/powerpc/include/asm/vdso/vsyscall.h
+ create mode 100644 arch/powerpc/kernel/vdso32/config-fake32.h
+ create mode 100644 arch/powerpc/kernel/vdso32/vgettimeofday.c
+ create mode 100644 arch/powerpc/kernel/vdso64/vgettimeofday.c
+
+-- 
+2.25.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
