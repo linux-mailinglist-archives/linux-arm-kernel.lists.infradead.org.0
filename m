@@ -2,55 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3612014D65F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 07:21:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5309514D66B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 07:31:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=r3uEA2EM4KAOAc5xjOh9WNqM5E5/I7KWQqhzbTpQmrw=; b=jztC/65j7qYY9zZf+PUFcHqdQ
-	0rpo7iZiDbrRb7NntjZV4UKrXBzH1d/oigz/Nd52HbfF7NIGeoqKa7HoU5X4cG+7Xq9XUAtFHQCcP
-	LQmhBTFbeckfh586zr4kDOMdvsuVfJwBxrpRB8bx6o4sgewP29d9+7zeD79aidk84G+l8zd0erlVb
-	AMqanUDcY9xaC0t4ZOvyrEH0H5BU1ulrBfb+7WYD6xQ8guOCqdcp064PaWOFUYyGP6gjRd/81356e
-	6AgEfij4ME9JLB1shqL6tDe3Ny3s2YRKCRzx+n7xUs/h/ELHLga0jt823GQ8CIICbLT3TQyH1Iczi
-	Nfg3xH7sw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Date:From:To:Subject:References:
+	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6G5u6BeCQE4iAbQOi/yIGGFobLid4RV4SSuUV/4L+VE=; b=rGBe97gWVD537d
+	JOHxe7LGMXv9LOeXE6nu5mG+k+hg1CaLDLZ5bSQF2PW7Rkmymj2jpZM5WQRdN4VuRrnmLu1u9c2WS
+	+6z375mBKBhK+tpnOT4ep3UsYCq5VaQyXUUi5dvzCKEB8Owkt/ZV6DosJ2DuPRQlIKk78vmSVI6Tr
+	wN9+qXu6e9UNeJyY8gzLa9Vc6bld9Fyfu9czvHe/wRw9W40JgSw+DN47FycXmYoy4K/JsRL2hq6sO
+	8NZPUNdR19DVbOWXsNABFORtLRaZzKT6g+uERrf9+AMHl+DJVY7+ec9aYT9SV5QrfsorCXv/ZJxfX
+	y3WVqqM8vkfI4O9Uj/HQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix3CY-00033G-19; Thu, 30 Jan 2020 06:21:18 +0000
-Received: from olimex.com ([2001:470:0:1f2::b869:4820])
+	id 1ix3M8-0006at-JX; Thu, 30 Jan 2020 06:31:12 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix3CL-00032d-Qh
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 06:21:07 +0000
-Received: from 94.155.250.134 ([94.155.250.134]) by olimex.com with ESMTPSA
- (ECDHE-RSA-AES128-GCM-SHA256:TLSv1.2:Kx=ECDH:Au=RSA:Enc=AESGCM(128):Mac=AEAD)
- (SMTP-AUTH username stefan@olimex.com, mechanism PLAIN)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 29 Jan 2020 22:20:58 -0800
-Subject: Re: [PATCH v3 1/1] drm: sun4i: hdmi: Add support for sun4i HDMI
- encoder audio
-To: Maxime Ripard <maxime@cerno.tech>, Stefan Mavrodiev <stefan@olimex.com>
-References: <20200128140642.8404-1-stefan@olimex.com>
- <20200128140642.8404-2-stefan@olimex.com>
- <20200129164321.34mornbi3xvx5dys@gilmour.lan>
-From: Stefan Mavrodiev <stefan@olimex.com>
-Message-ID: <64676a4b-e149-146c-81b4-7fd5e792efc5@olimex.com>
-Date: Thu, 30 Jan 2020 08:20:55 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1ix3Lw-0006aH-Qx
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 06:31:02 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 4so952859pfz.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Jan 2020 22:30:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=message-id:mime-version:content-transfer-encoding:in-reply-to
+ :references:subject:to:from:cc:user-agent:date;
+ bh=0tFsYcjfOOa4j0wNofi5s1JbHK10UxRY/7iGvUSf+kk=;
+ b=KbnW8hcVBL+cjoPJI4C8c4WYYBRdr3lVrJlK+VN35PtAz96+RJuL/ELLxdLSp0mLQr
+ U9iIpV6CcuvgD2XX6SiYM16zJwlenQUU/44+VCqojADOc8i5f1SrK9zHJA1yIoDzcTsb
+ JyPMx/3lnzwjm2LBn+HJSPUK6x2NxxcpNjT24=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:mime-version
+ :content-transfer-encoding:in-reply-to:references:subject:to:from:cc
+ :user-agent:date;
+ bh=0tFsYcjfOOa4j0wNofi5s1JbHK10UxRY/7iGvUSf+kk=;
+ b=j5s48l0ZYHwsoXE5VEtv/Qry6laFRSYPREyxEJ/AEhm6crxv2aYV3rhvoSoetZN4NN
+ +OGK8sf2yCYUEIeixsmGSO5ad3eF80I57yY/cdflGWZEd44QyQWWOxpkbg0fW6q3Cxkz
+ UmeGtVD/39R8xzr4e6EQexpe+l0VT+UrN89FOMqvCoeL0o0othHAYBvcrZJGnzCmHCGP
+ j0DtTdU5qjZAWbOFkXDSkpLpLhbUsW2LMcUUMebYASL0Vqg3qdYa0qt6Slsmjyqpmty5
+ sDWQyj0cmjFs3brcuq9vUl9V3yXvfkTIkU1ALFaAh8wIU+mMh7E10AZpj3Ux3JenR92t
+ KsHw==
+X-Gm-Message-State: APjAAAXqWJuHO3fy53Gz3vWYhl0pSDAIaPHgKOy2vYH6ZDDY4LRaoY0v
+ JViTmhfd/8iZIZETDMWaOd0D1A==
+X-Google-Smtp-Source: APXvYqxkoOSz3EElUiJyrS7XLxT4E2RrTKPRQZsLo3gTD8kEkuzwObe1rg6ylHw8yiou5ZegP9TqoA==
+X-Received: by 2002:a63:e911:: with SMTP id i17mr3199910pgh.42.1580365859422; 
+ Wed, 29 Jan 2020 22:30:59 -0800 (PST)
+Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
+ by smtp.gmail.com with ESMTPSA id q12sm4862272pfh.158.2020.01.29.22.30.58
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 29 Jan 2020 22:30:58 -0800 (PST)
+Message-ID: <5e327822.1c69fb81.80136.dfc1@mx.google.com>
 MIME-Version: 1.0
-In-Reply-To: <20200129164321.34mornbi3xvx5dys@gilmour.lan>
-Content-Language: en-US
+In-Reply-To: <202001271525.E6EB4FDD6@keescook>
+References: <20200123160031.9853-1-saiprakash.ranjan@codeaurora.org>
+ <202001271525.E6EB4FDD6@keescook>
+Subject: Re: [PATCH] pstore: Fix printing of duplicate boot messages to console
+To: Kees Cook <keescook@chromium.org>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+From: Stephen Boyd <swboyd@chromium.org>
+User-Agent: alot/0.8.1
+Date: Wed, 29 Jan 2020 22:30:57 -0800
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_222105_868146_C191F46D 
-X-CRM114-Status: GOOD (  16.26  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200129_223100_899033_256B8C33 
+X-CRM114-Status: GOOD (  13.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,73 +97,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-sunxi@googlegroups.com,
- open list <linux-kernel@vger.kernel.org>,
- "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
- Chen-Yu Tsai <wens@csie.org>, Daniel Vetter <daniel@ffwll.ch>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Tony Luck <tony.luck@intel.com>, linux-arm-msm@vger.kernel.org,
+ Anton Vorontsov <anton@enomsg.org>, linux-kernel@vger.kernel.org,
+ Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
+ Colin Cross <ccross@android.com>, Joel Fernandes <joel@joelfernandes.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Quoting Kees Cook (2020-01-27 15:27:33)
+> On Thu, Jan 23, 2020 at 09:30:31PM +0530, Sai Prakash Ranjan wrote:
+> > Since commit f92b070f2dc8 ("printk: Do not miss new messages
+> > when replaying the log"), CON_PRINTBUFFER flag causes the
+> > duplicate boot messages to be printed on the console when
+> > PSTORE_CONSOLE and earlycon (boot console) is enabled.
+> > Pstore console registers to boot console when earlycon is
+> > enabled during pstore_register_console as a part of ramoops
+> > initialization in postcore_initcall and the printk core
+> > checks for CON_PRINTBUFFER flag and replays the log buffer
+> > to registered console (in this case pstore console which
+> > just registered to boot console) causing duplicate messages
+> > to be printed. Remove the CON_PRINTBUFFER flag from pstore
+> > console since pstore is not concerned with the printing of
+> > buffer to console but with writing of the buffer to the
+> > backend.
+> 
+> I agree this patch isn't the solution, but I'm trying to understand
+> where better logic could be added. Is the issue that printk sees both
+> earlycon and CON_PRINTBUFFER active? Can we add a new CON_* flag that
+> means "not actually printing anything"? (Or maybe a new flag for
+> non-printing to replace CON_PRINTBUFFER that lets pstore still work?)
+> 
 
-On 1/29/20 6:43 PM, Maxime Ripard wrote:
-> Hi,
->
-> On Tue, Jan 28, 2020 at 04:06:42PM +0200, Stefan Mavrodiev wrote:
->> diff --git a/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c b/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
->> index 68d4644ac2dc..4cd35c97c503 100644
->> --- a/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
->> +++ b/drivers/gpu/drm/sun4i/sun4i_hdmi_enc.c
->> @@ -23,6 +23,8 @@
->>   #include <drm/drm_print.h>
->>   #include <drm/drm_probe_helper.h>
->>
->> +#include <sound/soc.h>
->> +
->>   #include "sun4i_backend.h"
->>   #include "sun4i_crtc.h"
->>   #include "sun4i_drv.h"
->> @@ -87,6 +89,10 @@ static void sun4i_hdmi_disable(struct drm_encoder *encoder)
->>
->>   	DRM_DEBUG_DRIVER("Disabling the HDMI Output\n");
->>
->> +#ifdef CONFIG_DRM_SUN4I_HDMI_AUDIO
->> +	sun4i_hdmi_audio_destroy(hdmi);
->> +#endif
->> +
->>   	val = readl(hdmi->base + SUN4I_HDMI_VID_CTRL_REG);
->>   	val &= ~SUN4I_HDMI_VID_CTRL_ENABLE;
->>   	writel(val, hdmi->base + SUN4I_HDMI_VID_CTRL_REG);
->> @@ -114,6 +120,11 @@ static void sun4i_hdmi_enable(struct drm_encoder *encoder)
->>   		val |= SUN4I_HDMI_VID_CTRL_HDMI_MODE;
->>
->>   	writel(val, hdmi->base + SUN4I_HDMI_VID_CTRL_REG);
->> +
->> +#ifdef CONFIG_DRM_SUN4I_HDMI_AUDIO
->> +	if (hdmi->hdmi_audio && sun4i_hdmi_audio_create(hdmi))
->> +		DRM_ERROR("Couldn't create the HDMI audio adapter\n");
->> +#endif
-> I really don't think we should be creating / removing the audio card
-> at enable / disable time.
+This seems to be fixed by commit def97da13651 ("printk: fix
+exclusive_console replaying"). I think there's nothing to do.
 
-For me it's unnatural to have sound card all the time, even when the HDMI
-is not plugged-in.
-
-I'll follow your suggestion. Besides it's easier for me just to drop this
-register/unregister mechanism.
-
-Best regards,
-Stefan Mavrodiev
-
->
-> To fix the drvdata pointer, you just need to use the card pointer in
-> the unbind, and that's it.
->
-> Maxime
 
 _______________________________________________
 linux-arm-kernel mailing list
