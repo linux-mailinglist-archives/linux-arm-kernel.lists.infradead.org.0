@@ -2,87 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE35314E452
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 21:54:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E78F614E4CF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 22:33:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RBgi3gI0AQboovVHYHT7KrwZpL9diaYq1BukieRALgk=; b=CKse5II72LKe5h
-	J2SNQB9ZIF703KE5GJU+gztjVAlLP+/pio5fHgOLIS+BeoP43KO/iztt5DB8S8blDdcVzMhFIyOjF
-	dXfcm84TKUNOg4OcAT4gxt8dYSsX74rbBdFmxknVn4mdA55SHk2VPSEzS8GyFCJloTZGk26SpO5cN
-	p0GnSMNQ2OCfaorztKZ1opkFmv/NV+45ef1qyGY52tCxEzDMxT4SWXxG/S6vG36Z/y6nHrQuZoSDI
-	m92hYABL+TPsqW3fogebWLPF6OTON6vbgdF1RX6xA3ZYmd5qlzD2LKQYNRHHiRLnlztpBc2ePDeC0
-	sUiRbOlbG4chRDOfachg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ZBTiikfU538u3PqLBlqW9FFN76FrlG3wiXrN8yiyc7g=; b=sC3
+	4QwrqQB0hFMAHry317roRJ91RRtcxvvMjwx6nfowzTeCjRAA1WRGnShJZClN+Nu7CC+uTET1S9Mnd
+	fQ38L7svelS4QHT8KO/QP5m9FIO23ud8CKm4/Sm7NarbvJAzbnXskXYmvlsPbqNm5g9FqhmFKdK3G
+	MrPpHGpGyU8/6UTltlhkecb9Nx2rjq56UWMeGiMYmqeKc9vdROBvziDePJfbEroNgm7Esebh0nmce
+	CoYTtnM2WeWb3TnfCOmoTL5SjtbTNZr9E1KKRBzxMb4yZJo06DSNrtvV4w81xnVX9xDiSTyTylh6o
+	xk3xdMifVAfbmP+hRH6mxnoyic/xs0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixGpu-0007Hh-Fq; Thu, 30 Jan 2020 20:54:50 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1ixHR5-0003qE-9f; Thu, 30 Jan 2020 21:33:15 +0000
+Received: from lists.gateworks.com ([108.161.130.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixGpl-0007Gc-Ji; Thu, 30 Jan 2020 20:54:44 +0000
-Received: by mail-ot1-x343.google.com with SMTP id g15so4476704otp.3;
- Thu, 30 Jan 2020 12:54:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gywvdJG4S8zg1F0N8TnRS+h5mKkXnwAKlRZJYdtt1ZA=;
- b=fqfQnsIOmo8FmmJdsz2QjZwzZa6CYUyDAHwdulBh0jkPnMA2cImjHHcOxHjDXmQxpK
- T6gAsbqbhlv3FqXjp2FtLtncpIuSJcy8c0KH8OQQJTA88lgBhyNTywMuTRS39yqoLn9e
- otCeRvbEC+QbtcPgCrRsBKdFutoKjpNJThPflcqDwcA6dn9elZQwW4cAmhwrC0l8nrWf
- yuiA5qOtgXUUsuFXmYRkCEKFgLvGn+d6kknn2KBw3Y513xLJzFWTdVL5+bfddX62jeJc
- U1SjOTbI/s0t/d877OkaPGV10zeH/1DLghuVq4hmhPkuDAIUTiTWYoPaMvWgvAXhqAx7
- aSHA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gywvdJG4S8zg1F0N8TnRS+h5mKkXnwAKlRZJYdtt1ZA=;
- b=dz2LbxJJsO1nfWXI2GdkRQhceNr+IA9FbSvNItXYW/glBot+WzNFGyg+ZYPxSFIdco
- FiTO3aNQF50531XOuoXji2hIVcBD18XR9BrvJsMpTyfpIV3pNebpc8sW2JZeqbujcJnh
- AVDRmDP5+m+VB9mfsx3eAKwG6twFXj6JSaOvgZ4133rDwUSxfP/7ogk2zwguTV/r2d4B
- TvkyS/ELI8xxveOguHCotVGG2+cYjXPwkrbnfIpndT5cTZkkGsQxM677OFxL1NS8byKZ
- PUIY7hJzBp7VgwbMrSGPvSp4JHf0ZXsbXUdbc18C4bPLdVx2LQ+TdsBiHAhc1k96suFl
- PKGA==
-X-Gm-Message-State: APjAAAXeZcpk6NCNsOJPGSnUmPtS2X8W/xtHd9zsXMqMwWZ4cvZA/Bcf
- TU/l5KwBJZSl4bs/t4uizYwQkeLMBuMf8IcwuIQ=
-X-Google-Smtp-Source: APXvYqwBCKF8eCODlztMB8ORP0u3uiwR5t2s2nCfZgKiHWS07FIMyZ3kn6caD7U18ugZfY2NZqr0ejOUQrOc2egVDVs=
-X-Received: by 2002:a9d:64ca:: with SMTP id n10mr5023218otl.325.1580417680064; 
- Thu, 30 Jan 2020 12:54:40 -0800 (PST)
-MIME-Version: 1.0
-References: <20200108162211.22358-1-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200108162211.22358-5-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CA+V-a8s1Jx8uZiSr0uiryS492EbFRoFg9QTwkosZsuyfRYp-3g@mail.gmail.com>
- <9c65eb7a-539b-1fa3-f988-40c32aa8dfe3@ti.com>
-In-Reply-To: <9c65eb7a-539b-1fa3-f988-40c32aa8dfe3@ti.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Thu, 30 Jan 2020 20:54:13 +0000
-Message-ID: <CA+V-a8th3eysn0s2q9EEAqQb7vfd3bNcL=ow_z8tSWAC6K=iJw@mail.gmail.com>
-Subject: Re: [v3 4/6] dt-bindings: PCI: rcar: Add bindings for R-Car PCIe
- endpoint controller
-To: Rob Herring <robh+dt@kernel.org>
+ id 1ixHQy-0003po-UY
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 21:33:10 +0000
+Received: from 68-189-91-139.static.snlo.ca.charter.com ([68.189.91.139]
+ helo=rjones.pdc.gateworks.com)
+ by lists.gateworks.com with esmtp (Exim 4.82)
+ (envelope-from <rjones@gateworks.com>)
+ id 1ixHRL-00011c-SA; Thu, 30 Jan 2020 21:33:31 +0000
+From: Robert Jones <rjones@gateworks.com>
+To: Sunil Goutham <sgoutham@marvell.com>,
+ Robert Richter <rrichter@marvell.com>, David Miller <davem@davemloft.net>
+Subject: [PATCH net v2] net: thunderx: workaround BGX TX Underflow issue
+Date: Thu, 30 Jan 2020 13:32:52 -0800
+Message-Id: <20200130213252.17005-1-rjones@gateworks.com>
+X-Mailer: git-send-email 2.9.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_125441_674236_0433D11D 
-X-CRM114-Status: GOOD (  23.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200130_133309_026313_71FC40EF 
+X-CRM114-Status: GOOD (  11.78  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,165 +56,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- linux-pci <linux-pci@vger.kernel.org>, Shawn Lin <shawn.lin@rock-chips.com>,
- Frank Rowand <frowand.list@gmail.com>,
- Marek Vasut <marek.vasut+renesas@gmail.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Will Deacon <will@kernel.org>,
- Magnus Damm <magnus.damm@gmail.com>, Kishon Vijay Abraham I <kishon@ti.com>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Chris Paterson <Chris.Paterson2@renesas.com>,
- Arnd Bergmann <arnd@arndb.de>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Simon Horman <horms@verge.net.au>, Bjorn Helgaas <bhelgaas@google.com>,
- LAK <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>, Jingoo Han <jingoohan1@gmail.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>
+Cc: Maciej Fijalkowski <maciej.fijalkowski@intel.com>, netdev@vger.kernel.org,
+ Tim Harvey <tharvey@gateworks.com>, linux-kernel@vger.kernel.org,
+ Jakub Kicinski <kuba@kernel.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+From: Tim Harvey <tharvey@gateworks.com>
 
-On Wed, Jan 22, 2020 at 8:13 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
->
-> Hi Prabhakar,
->
-> On 21/01/20 11:27 PM, Lad, Prabhakar wrote:
-> > Hi Rob/Kishon,
-> >
-> > On Wed, Jan 8, 2020 at 4:22 PM Lad Prabhakar <prabhakar.csengg@gmail.com> wrote:
-> >>
-> >> This patch adds the bindings for the R-Car PCIe endpoint driver.
-> >>
-> >> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> >> ---
-> >>  .../devicetree/bindings/pci/rcar-pci-ep.yaml  | 76 +++++++++++++++++++
-> >>  1 file changed, 76 insertions(+)
-> >>  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> >> new file mode 100644
-> >> index 000000000000..99c2a1174463
-> >> --- /dev/null
-> >> +++ b/Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
-> >> @@ -0,0 +1,76 @@
-> >> +# SPDX-License-Identifier: GPL-2.0
-> >> +# Copyright (C) 2020 Renesas Electronics Europe GmbH - https://www.renesas.com/eu/en/
-> >> +%YAML 1.2
-> >> +---
-> >> +$id: http://devicetree.org/schemas/pci/rcar-pcie-ep.yaml#
-> >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> >> +
-> >> +title: Renesas R-Car PCIe Endpoint
-> >> +
-> >> +maintainers:
-> >> +  - Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> >> +
-> >> +properties:
-> >> +  compatible:
-> >> +    items:
-> >> +      - const: renesas,r8a774c0-pcie-ep
-> >> +      - const: renesas,rcar-gen3-pcie-ep
-> >> +
-> >> +  reg:
-> >> +    maxItems: 5
-> >> +
-> >> +  reg-names:
-> >> +    items:
-> >> +      - const: apb-base
-> >> +      - const: memory0
-> >> +      - const: memory1
-> >> +      - const: memory2
-> >> +      - const: memory3
->
-> As I had mentioned in the other patch, I'd prefer if we can create
-> standard binding for representing the memory regions. IMHO we should
-> create subnode for memory regions Each sub-node itself may or may not
-> have more than one memory region.
->
-> In your platform, since there can be only one allocation in a memory
-> region, there should be 4 sub-nodes for each of the memory region and
-> each node should have page_size (or some equivalent property) property
-> to indicate page_size (= region_size).
->
-> For a platform that doesn't have the restriction, there can be a single
-> sub-node containing all the memory region.
->
-> Let's wait for Rob's comment though.
->
-Gentle ping.on the suggestions above.
+While it is not yet understood why a TX underflow can easily occur
+for SGMII interfaces resulting in a TX wedge. It has been found that
+disabling/re-enabling the LMAC resolves the issue.
 
-Cheers,
---Prabhakar
+Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+Reviewed-by: Robert Jones <rjones@gateworks.com>
+---
+Changes in v2:
+ - Changed bgx_register_intr() to a void return
+ - Added pci_free_irq_vectors() calls to free irq if named/allocated
+ - Use snprintf instead of sprintf for irq names
 
-> Thanks
-> Kishon
-> >> +
-> >> +  power-domains:
-> >> +    maxItems: 1
-> >> +
-> >> +  resets:
-> >> +    maxItems: 1
-> >> +
-> >> +  clocks:
-> >> +    maxItems: 1
-> >> +
-> >> +  clock-names:
-> >> +    items:
-> >> +      - const: pcie
-> >> +
-> >> +  max-functions:
-> >> +    minimum: 1
-> >> +    maximum: 6
-> >> +
-> >> +required:
-> >> +  - compatible
-> >> +  - reg
-> >> +  - reg-names
-> >> +  - resets
-> >> +  - power-domains
-> >> +  - clocks
-> >> +  - clock-names
-> >> +  - max-functions
-> >> +
-> > apart from dt_binding_check error are we OK with dt bindings ?
-> >
-> > Cheers,
-> > --Prabhakar
-> >
-> >> +examples:
-> >> +  - |
-> >> +    #include <dt-bindings/clock/r8a774c0-cpg-mssr.h>
-> >> +    #include <dt-bindings/power/r8a774c0-sysc.h>
-> >> +
-> >> +     pcie0_ep: pcie-ep@fe000000 {
-> >> +            compatible = "renesas,r8a774c0-pcie-ep",
-> >> +                         "renesas,rcar-gen3-pcie-ep";
-> >> +            reg = <0 0xfe000000 0 0x80000>,
-> >> +                  <0x0 0xfe100000 0 0x100000>,
-> >> +                  <0x0 0xfe200000 0 0x200000>,
-> >> +                  <0x0 0x30000000 0 0x8000000>,
-> >> +                  <0x0 0x38000000 0 0x8000000>;
-> >> +            reg-names = "apb-base", "memory0", "memory1", "memory2", "memory3";
-> >> +            resets = <&cpg 319>;
-> >> +            power-domains = <&sysc R8A774C0_PD_ALWAYS_ON>;
-> >> +            clocks = <&cpg CPG_MOD 319>;
-> >> +            clock-names = "pcie";
-> >> +            max-functions = /bits/ 8 <1>;
-> >> +    };
-> >> --
-> >> 2.20.1
-> >>
+ drivers/net/ethernet/cavium/thunder/thunder_bgx.c | 59 +++++++++++++++++++++++
+ drivers/net/ethernet/cavium/thunder/thunder_bgx.h |  9 ++++
+ 2 files changed, 68 insertions(+)
+
+diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+index c4f6ec0..cbf8596 100644
+--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
+@@ -74,6 +74,7 @@ struct bgx {
+ 	struct pci_dev		*pdev;
+ 	bool                    is_dlm;
+ 	bool                    is_rgx;
++	char			irq_name[7];
+ };
+ 
+ static struct bgx *bgx_vnic[MAX_BGX_THUNDER];
+@@ -1535,6 +1536,53 @@ static int bgx_init_phy(struct bgx *bgx)
+ 	return bgx_init_of_phy(bgx);
+ }
+ 
++static irqreturn_t bgx_intr_handler(int irq, void *data)
++{
++	struct bgx *bgx = (struct bgx *)data;
++	struct device *dev = &bgx->pdev->dev;
++	u64 status, val;
++	int lmac;
++
++	for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
++		status = bgx_reg_read(bgx, lmac, BGX_GMP_GMI_TXX_INT);
++		if (status & GMI_TXX_INT_UNDFLW) {
++			dev_err(dev, "BGX%d lmac%d UNDFLW\n", bgx->bgx_id,
++				lmac);
++			val = bgx_reg_read(bgx, lmac, BGX_CMRX_CFG);
++			val &= ~CMR_EN;
++			bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
++			val |= CMR_EN;
++			bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
++		}
++		/* clear interrupts */
++		bgx_reg_write(bgx, lmac, BGX_GMP_GMI_TXX_INT, status);
++	}
++
++	return IRQ_HANDLED;
++}
++
++static void bgx_register_intr(struct pci_dev *pdev)
++{
++	struct bgx *bgx = pci_get_drvdata(pdev);
++	struct device *dev = &pdev->dev;
++	int num_vec, ret;
++
++	/* Enable MSI-X */
++	num_vec = pci_msix_vec_count(pdev);
++	ret = pci_alloc_irq_vectors(pdev, num_vec, num_vec, PCI_IRQ_MSIX);
++	if (ret < 0) {
++		dev_err(dev, "Req for #%d msix vectors failed\n", num_vec);
++		return;
++	}
++	snprintf(bgx->irq_name, sizeof(bgx->irqname), "BGX%d", bgx->bgx_id);
++	ret = request_irq(pci_irq_vector(pdev, GMPX_GMI_TX_INT),
++			  bgx_intr_handler, 0, bgx->irq_name, bgx);
++	if (ret) {
++		if (bgx->irq_name[0])
++			pci_free_irq_vectors(pdev);
++	}
++}
++
+ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+ {
+ 	int err;
+@@ -1604,6 +1652,8 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+ 
+ 	bgx_init_hw(bgx);
+ 
++	bgx_register_intr(pdev);
++
+ 	/* Enable all LMACs */
+ 	for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
+ 		err = bgx_lmac_enable(bgx, lmac);
+@@ -1614,12 +1664,18 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+ 				bgx_lmac_disable(bgx, --lmac);
+ 			goto err_enable;
+ 		}
++
++		/* enable TX FIFO Underflow interrupt */
++		bgx_reg_modify(bgx, lmac, BGX_GMP_GMI_TXX_INT_ENA_W1S,
++			       GMI_TXX_INT_UNDFLW);
+ 	}
+ 
+ 	return 0;
+ 
+ err_enable:
+ 	bgx_vnic[bgx->bgx_id] = NULL;
++	if (bgx->irq_name[0])
++		pci_free_irq_vectors(pdev);
+ err_release_regions:
+ 	pci_release_regions(pdev);
+ err_disable_device:
+@@ -1637,6 +1693,9 @@ static void bgx_remove(struct pci_dev *pdev)
+ 	for (lmac = 0; lmac < bgx->lmac_count; lmac++)
+ 		bgx_lmac_disable(bgx, lmac);
+ 
++	if (bgx->irq_name[0])
++		pci_free_irq_vectors(pdev);
++
+ 	bgx_vnic[bgx->bgx_id] = NULL;
+ 	pci_release_regions(pdev);
+ 	pci_disable_device(pdev);
+diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
+index 2588870..cdea493 100644
+--- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
++++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
+@@ -180,6 +180,15 @@
+ #define BGX_GMP_GMI_TXX_BURST		0x38228
+ #define BGX_GMP_GMI_TXX_MIN_PKT		0x38240
+ #define BGX_GMP_GMI_TXX_SGMII_CTL	0x38300
++#define BGX_GMP_GMI_TXX_INT		0x38500
++#define BGX_GMP_GMI_TXX_INT_W1S		0x38508
++#define BGX_GMP_GMI_TXX_INT_ENA_W1C	0x38510
++#define BGX_GMP_GMI_TXX_INT_ENA_W1S	0x38518
++#define  GMI_TXX_INT_PTP_LOST			BIT_ULL(4)
++#define  GMI_TXX_INT_LATE_COL			BIT_ULL(3)
++#define  GMI_TXX_INT_XSDEF			BIT_ULL(2)
++#define  GMI_TXX_INT_XSCOL			BIT_ULL(1)
++#define  GMI_TXX_INT_UNDFLW			BIT_ULL(0)
+ 
+ #define BGX_MSIX_VEC_0_29_ADDR		0x400000 /* +(0..29) << 4 */
+ #define BGX_MSIX_VEC_0_29_CTL		0x400008
+-- 
+2.9.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
