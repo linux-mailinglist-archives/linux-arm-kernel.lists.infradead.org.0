@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 967D914DBFD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:32:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A512E14DBE6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:30:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5WZ2HCBgGOOblG1kdNLfW1LObi+zG/F88dCDgWwUEoI=; b=Laeg7lHADn7O9f
-	EZE+SH2MxyAEmFSOfnnBrfLvOPwjmJv9PmH0DHyjEY82lMCLMsxinsOe1H4quh4JJBfF2SbyAwtAJ
-	VVZdPED7HXtD3QR2Tgn/5OmeGz7knpgtEi0+cqdxgYoNI1Gw6/NDsCmWAzSIaaERHGSzjQcbn47ul
-	429l6KgIaBV1phZFoMNyQ0ZRBLo0jw765SvAK7LmIXES8pZdPFWGyXF6WgvvY3yclNbyeNjgexDKr
-	fWlwn+zawwIo/n3FareC1/muUayy8WP7fCa64TCE6PVyZqOlLnv+ZhNGm1z76uCRQX8j/HdZksRBc
-	u2yVJH6N6KlrTuPUUPkg==;
+	List-Owner; bh=Tq3G1yxqyXWt2uVDV3BqUyE60ACu+nvJusN+olQT7eE=; b=EWZ8e55kXX8sF6
+	7B41ylX20TFQgj3sUWTvunak2AlAEdnCpPcGx/Y1WSLeZTR/YJEAAy9UMD2kPpWiWI+J8as91R8q0
+	kHJjPc7lJvKqRMw17D+I+SKnBQ94E6di/0JN5BozXkGLp7vCFy+s0RVdqae8u4Z8JJl5YQKV9WO2p
+	aNpfY/YKi9Qf8GNr7XgOdsFvc/lh9olhRFkaAoGpiXD5KyOQK+W8DEFBYabNWNVEwTc1rOmvXn9TI
+	SMbyo5U8uCBXO2VMEa7rKwXy8BvxoPpjGKwqfK4MaU7Otblam+HhCo3+KPJcEwiJGhfvjZ63RSVyD
+	44ryHxDEYBCxAYd2wdlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix9w5-0002ff-3W; Thu, 30 Jan 2020 13:32:45 +0000
+	id 1ix9tr-0007zH-GP; Thu, 30 Jan 2020 13:30:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix9sy-0007T4-0J
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:29:34 +0000
+ id 1ix9si-0007E5-Dt
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:29:18 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 12A78214AF;
- Thu, 30 Jan 2020 13:29:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 88289214DB;
+ Thu, 30 Jan 2020 13:29:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580390971;
- bh=xHtHzO8cRVxYRBLAuIiNG+FZL/sF3xqztmdfjYOK934=;
+ s=default; t=1580390955;
+ bh=CbHPtKyFMFA04kYNssF+KSdsLNo857UpAUH3+sLYGIA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=TSPeRR6nq/KXOqu4I67O4fmY9WbZbcebGN1nLURHurneVZl4w+KHG3+SvUBkYERwq
- WucbQPWuxQuZ+JMcX5WvwcCE2RaEeaJCM5XgRkxgut+FALKM+qePKvMkh1nJYe4Wst
- 76JZBvb++EfCnuYGHAOAmuFxVhM63Dttu/Qhjd4E=
+ b=le+aD9REqLdsgjil37xhXT7cIq94yWkXuMK0l2vqeDcxZ4U+P4XEbCgAVccrgY4SJ
+ CjHBxbQeMN11XGhs749HXQMnOQBlzOKl+i9xX04CVijrKcdnq1+4s9i24hKB71rEeT
+ ABjHUkpK9P/J9ANynN9AnAo3ztYxWfeWtbf7NE40=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1ix9pr-002BmW-Eq; Thu, 30 Jan 2020 13:26:19 +0000
+ id 1ix9pv-002BmW-Gq; Thu, 30 Jan 2020 13:26:23 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 11/23] KVM: arm/arm64: vgic-its: Properly check the unmapped
- coll in DISCARD handler
-Date: Thu, 30 Jan 2020 13:25:46 +0000
-Message-Id: <20200130132558.10201-12-maz@kernel.org>
+Subject: [PATCH 14/23] arm64: KVM: Add UAPI notes for swapped registers
+Date: Thu, 30 Jan 2020 13:25:49 +0000
+Message-Id: <20200130132558.10201-15-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200130132558.10201-1-maz@kernel.org>
 References: <20200130132558.10201-1-maz@kernel.org>
@@ -65,8 +64,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_052932_110773_BB0A65A7 
-X-CRM114-Status: GOOD (  14.74  )
+X-CRM114-CacheID: sfid-20200130_052916_567118_3550234B 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -113,40 +112,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Zenghui Yu <yuzenghui@huawei.com>
+From: Andrew Jones <drjones@redhat.com>
 
-Discard is supposed to fail if the collection is not mapped to any
-target redistributor. We currently check if the collection is mapped
-by "ite->collection" but this is incomplete (e.g., mapping a LPI to
-an unmapped collection also results in a non NULL ite->collection).
-What actually needs to be checked is its_is_collection_mapped(), let's
-turn to it.
+Two UAPI system register IDs do not derive their values from the
+ARM system register encodings. This is because their values were
+accidentally swapped. As the IDs are API, they cannot be changed.
+Add WARNING notes to point them out.
 
-Also take this chance to remove an extra blank line.
-
-Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+Suggested-by: Marc Zyngier <maz@kernel.org>
+Signed-off-by: Andrew Jones <drjones@redhat.com>
+[maz: turned XXX into WARNING]
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Reviewed-by: Eric Auger <eric.auger@redhat.com>
-Link: https://lore.kernel.org/r/20200114112212.1411-1-yuzenghui@huawei.com
+Link: https://lore.kernel.org/r/20200120130825.28838-1-drjones@redhat.com
 ---
- virt/kvm/arm/vgic/vgic-its.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ Documentation/virt/kvm/api.txt    |  9 +++++++++
+ arch/arm64/include/uapi/asm/kvm.h | 12 ++++++++++--
+ 2 files changed, 19 insertions(+), 2 deletions(-)
 
-diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-index 17920d1b350a..d53d34a33e35 100644
---- a/virt/kvm/arm/vgic/vgic-its.c
-+++ b/virt/kvm/arm/vgic/vgic-its.c
-@@ -839,9 +839,8 @@ static int vgic_its_cmd_handle_discard(struct kvm *kvm, struct vgic_its *its,
- 	u32 event_id = its_cmd_get_id(its_cmd);
- 	struct its_ite *ite;
+diff --git a/Documentation/virt/kvm/api.txt b/Documentation/virt/kvm/api.txt
+index ebb37b34dcfc..3a0c819c3573 100644
+--- a/Documentation/virt/kvm/api.txt
++++ b/Documentation/virt/kvm/api.txt
+@@ -2196,6 +2196,15 @@ arm64 CCSIDR registers are demultiplexed by CSSELR value:
+ arm64 system registers have the following id bit patterns:
+   0x6030 0000 0013 <op0:2> <op1:3> <crn:4> <crm:4> <op2:3>
  
--
- 	ite = find_ite(its, device_id, event_id);
--	if (ite && ite->collection) {
-+	if (ite && its_is_collection_mapped(ite->collection)) {
- 		/*
- 		 * Though the spec talks about removing the pending state, we
- 		 * don't bother here since we clear the ITTE anyway and the
++WARNING:
++     Two system register IDs do not follow the specified pattern.  These
++     are KVM_REG_ARM_TIMER_CVAL and KVM_REG_ARM_TIMER_CNT, which map to
++     system registers CNTV_CVAL_EL0 and CNTVCT_EL0 respectively.  These
++     two had their values accidentally swapped, which means TIMER_CVAL is
++     derived from the register encoding for CNTVCT_EL0 and TIMER_CNT is
++     derived from the register encoding for CNTV_CVAL_EL0.  As this is
++     API, it must remain this way.
++
+ arm64 firmware pseudo-registers have the following bit pattern:
+   0x6030 0000 0014 <regno:16>
+ 
+diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+index 820e5751ada7..ba85bb23f060 100644
+--- a/arch/arm64/include/uapi/asm/kvm.h
++++ b/arch/arm64/include/uapi/asm/kvm.h
+@@ -220,10 +220,18 @@ struct kvm_vcpu_events {
+ #define KVM_REG_ARM_PTIMER_CVAL		ARM64_SYS_REG(3, 3, 14, 2, 2)
+ #define KVM_REG_ARM_PTIMER_CNT		ARM64_SYS_REG(3, 3, 14, 0, 1)
+ 
+-/* EL0 Virtual Timer Registers */
++/*
++ * EL0 Virtual Timer Registers
++ *
++ * WARNING:
++ *      KVM_REG_ARM_TIMER_CVAL and KVM_REG_ARM_TIMER_CNT are not defined
++ *      with the appropriate register encodings.  Their values have been
++ *      accidentally swapped.  As this is set API, the definitions here
++ *      must be used, rather than ones derived from the encodings.
++ */
+ #define KVM_REG_ARM_TIMER_CTL		ARM64_SYS_REG(3, 3, 14, 3, 1)
+-#define KVM_REG_ARM_TIMER_CNT		ARM64_SYS_REG(3, 3, 14, 3, 2)
+ #define KVM_REG_ARM_TIMER_CVAL		ARM64_SYS_REG(3, 3, 14, 0, 2)
++#define KVM_REG_ARM_TIMER_CNT		ARM64_SYS_REG(3, 3, 14, 3, 2)
+ 
+ /* KVM-as-firmware specific pseudo-registers */
+ #define KVM_REG_ARM_FW			(0x0014 << KVM_REG_ARM_COPROC_SHIFT)
 -- 
 2.20.1
 
