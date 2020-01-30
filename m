@@ -2,59 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4296914E0C8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 19:27:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC53614E2FC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 20:16:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vMRxGnm7hMlw888X/4ZF7xcGo5F+xcxbEU2oYa536Ow=; b=ZvlpXQAU3dNRG3
-	aiF3qeRJ1aX28usYHuXaNzLz7L1V2bxYo6WLKtGQwILzFfcgMHH6HAmqBgXrtNFYJ/5K8Z/P+3xci
-	7er31sfgALYebXmky8ec9QeTsC8U3o4TfixBNm7IPONQPoTktLu3TWb0mib+d9+e/VZGy1uzDfFDD
-	8HJqV2r2/SQE+Y20LafpxuvpodSO7kP1nhXwb3gJCUaDVjZmNCL2BpPLLMano4UU1xmviVXPA27dC
-	cI21g3aPrGiWbPFgzc2NzTDgyX8L/pGcNn3YbAAFdh1QYv4mHiECeryndlk4H+lhnx1zRj7Cko5TZ
-	KArkQABKYzt/JVTxYX7Q==;
+	List-Owner; bh=H3ZmR9ilHqYrS6UA5+ofjP3BotQ9qg+FLkMQcBwxzdA=; b=MRbH0EVhox1lQg
+	TCTsRfHlIF1E8v2gt80/khN9BqC9aVsp7dFknrcI7DGxjdGb4RL/HGuDAhnh7ui4rk6LakW02YzlF
+	r9ykP6mPR+klnP5RJd7KPi9AssTrDhf011YYlPyfuS0UW0klieTgM3fUGymRBHwTdueP2D82j9Irf
+	osVqU8L10MUZP4Fl0T0qEZEeYrqHgyugDVBwWw/npRiF1DGmfnbwL/UQgxtVGgW8KOcE+YxBdmd2X
+	dscjlu6VeiM7MEP14irzb7QT+khJamPyeSwkw1BjEmoKrD/O1dfrcUVdCZFo+b8PmudmhqGV6kghP
+	9QrAYavfPEAEx60II4Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixEXG-0004EA-Bb; Thu, 30 Jan 2020 18:27:26 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixEWt-000468-5h
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 18:27:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9902331B;
- Thu, 30 Jan 2020 10:27:00 -0800 (PST)
-Received: from ewhatever.cambridge.arm.com (ewhatever.cambridge.arm.com
- [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B71A63F67D;
- Thu, 30 Jan 2020 10:26:58 -0800 (PST)
-Date: Thu, 30 Jan 2020 18:26:53 +0000
-From: Suzuki K Poulose <Suzuki.Poulose@arm.com>
-To: Ionela Voinescu <ionela.voinescu@arm.com>
-Subject: Re: [PATCH v2 4/6] Documentation: arm64: document support for the
- AMU extension
-Message-ID: <20200130182653.GA123407@ewhatever.cambridge.arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-5-ionela.voinescu@arm.com>
- <c9f80a08-7f0d-59e9-eb90-466b1314e1f1@arm.com>
- <20200130164542.GC5208@arm.com>
+	id 1ixFJ2-0000zY-JG; Thu, 30 Jan 2020 19:16:48 +0000
+Received: from mga09.intel.com ([134.134.136.24])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixFIt-0000z8-EH
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 19:16:40 +0000
+X-Amp-Result: UNSCANNABLE
+X-Amp-File-Uploaded: False
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 30 Jan 2020 11:16:35 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,382,1574150400"; d="scan'208";a="262281101"
+Received: from ranger.igk.intel.com ([10.102.21.164])
+ by fmsmga002.fm.intel.com with ESMTP; 30 Jan 2020 11:16:33 -0800
+Date: Thu, 30 Jan 2020 13:07:30 +0100
+From: Maciej Fijalkowski <maciej.fijalkowski@intel.com>
+To: Jakub Kicinski <kuba@kernel.org>
+Subject: Re: [PATCH net] net: thunderx: workaround BGX TX Underflow issue
+Message-ID: <20200130120730.GA60572@ranger.igk.intel.com>
+References: <20200129223609.9327-1-rjones@gateworks.com>
+ <20200130091055.159d63ed@cakuba>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200130164542.GC5208@arm.com>
+In-Reply-To: <20200130091055.159d63ed@cakuba>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_102703_312743_2EF614F0 
-X-CRM114-Status: GOOD (  39.52  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200130_111639_530179_C20DEE0B 
+X-CRM114-Status: GOOD (  19.94  )
+X-Spam-Score: -3.9 (---)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-3.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.1 DATE_IN_PAST_06_12     Date: is 6 to 12 hours before Received: date
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.24 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,176 +70,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, linux-doc@vger.kernel.org,
- peterz@infradead.org, catalin.marinas@arm.com,
- Jonathan Corbet <corbet@lwn.net>, linux-kernel@vger.kernel.org,
- mingo@redhat.com, ggherdovich@suse.cz, sudeep.holla@arm.com, will@kernel.org,
- dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Robert Jones <rjones@gateworks.com>, netdev@vger.kernel.org,
+ Tim Harvey <tharvey@gateworks.com>, linux-kernel@vger.kernel.org,
+ Robert Richter <rrichter@marvell.com>, Sunil Goutham <sgoutham@marvell.com>,
+ David Miller <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ionela,
+On Thu, Jan 30, 2020 at 09:10:55AM -0800, Jakub Kicinski wrote:
+> On Wed, 29 Jan 2020 14:36:09 -0800, Robert Jones wrote:
+> > From: Tim Harvey <tharvey@gateworks.com>
+> > 
+> > While it is not yet understood why a TX underflow can easily occur
+> > for SGMII interfaces resulting in a TX wedge. It has been found that
+> > disabling/re-enabling the LMAC resolves the issue.
+> > 
+> > Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> > Reviewed-by: Robert Jones <rjones@gateworks.com>
+> 
+> Sunil or Robert (i.e. one of the maintainers) will have to review this
+> patch (as indicated by Dave by marking it with "Needs Review / ACK" in
+> patchwork).
+> 
+> At a quick look there are some things which jump out at me:
+> 
+> > +static int bgx_register_intr(struct pci_dev *pdev)
+> > +{
+> > +	struct bgx *bgx = pci_get_drvdata(pdev);
+> > +	struct device *dev = &pdev->dev;
+> > +	int num_vec, ret;
+> > +
+> > +	/* Enable MSI-X */
+> > +	num_vec = pci_msix_vec_count(pdev);
+> > +	ret = pci_alloc_irq_vectors(pdev, num_vec, num_vec, PCI_IRQ_MSIX);
+> > +	if (ret < 0) {
+> > +		dev_err(dev, "Req for #%d msix vectors failed\n", num_vec);
+> > +		return 1;
+> 
+> Please propagate real error codes, or make this function void as the
+> caller never actually checks the return value.
+> 
+> > +	}
+> > +	sprintf(bgx->irq_name, "BGX%d", bgx->bgx_id);
 
-On Thu, Jan 30, 2020 at 04:45:42PM +0000, Ionela Voinescu wrote:
-> Hi Suzuki,
-> 
-> On Thursday 30 Jan 2020 at 15:04:27 (+0000), Suzuki Kuruppassery Poulose wrote:
-> > Hi Ionela,
-> > 
-> > On 18/12/2019 18:26, Ionela Voinescu wrote:
-> > > The activity monitors extension is an optional extension introduced
-> > > by the ARMv8.4 CPU architecture.
-> > > 
-> > > Add initial documentation for the AMUv1 extension:
-> > >   - arm64/amu.txt: AMUv1 documentation
-> > >   - arm64/booting.txt: system registers initialisation
-> > >   - arm64/cpu-feature-registers.txt: visibility to userspace
-> > 
-> > We have stopped adding "invisible" fields to the list. So, you
-> > can drop the changes to cpu-feature-registers.txt.
-> > 
-> > > 
-> > > Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > > Cc: Will Deacon <will@kernel.org>
-> > > Cc: Jonathan Corbet <corbet@lwn.net>
-> > > ---
-> > >   Documentation/arm64/amu.rst                   | 107 ++++++++++++++++++
-> > >   Documentation/arm64/booting.rst               |  14 +++
-> > >   Documentation/arm64/cpu-feature-registers.rst |   2 +
-> > >   Documentation/arm64/index.rst                 |   1 +
-> > >   4 files changed, 124 insertions(+)
-> > >   create mode 100644 Documentation/arm64/amu.rst
-> > > 
-> > > diff --git a/Documentation/arm64/amu.rst b/Documentation/arm64/amu.rst
-> > > new file mode 100644
-> > > index 000000000000..62a6635522e1
-> > > --- /dev/null
-> > > +++ b/Documentation/arm64/amu.rst
-> > > @@ -0,0 +1,107 @@
-> > > +-------------
-> > > +
-> > > +The kernel can safely run a mix of CPUs with and without support for the
-> > > +activity monitors extension.
-> > 
-> > 
-> >  Therefore, when CONFIG_ARM64_AMU_EXTN is
-> > > +selected we unconditionally enable the capability to allow any late CPU
-> > > +(secondary or hotplugged) to detect and use the feature.
-> > > +
-> > > +When the feature is detected on a CPU, a per-CPU variable (amu_feat) is
-> > > +set, but this does not guarantee the correct functionality of the
-> > > +counters, only the presence of the extension.
-> > 
-> > nit: I would rather omit the implementation details (esp variable names)
-> > in the documentation. It may become a pain to keep this in sync with the
-> > code changes. You could simply mention, "we keep track of the availability
-> > of the feature" per CPU. If someone wants to figure out
-> > how, they can always read the code.
-> > 
-> > > +
-> > > +Firmware (code running at higher exception levels, e.g. arm-tf) support is
-> > > +needed to:
-> > > + - Enable access for lower exception levels (EL2 and EL1) to the AMU
-> > > +   registers.
-> > > + - Enable the counters. If not enabled these will read as 0.
-> > > + - Save/restore the counters before/after the CPU is being put/brought up
-> > > +   from the 'off' power state.
-> > > +
-> > > +When using kernels that have this configuration enabled but boot with
-> > > +broken firmware the user may experience panics or lockups when accessing
-> > > +the counter registers. Even if these symptoms are not observed, the
-> > > +values returned by the register reads might not correctly reflect reality.
-> > > +Most commonly, the counters will read as 0, indicating that they are not
-> > > +enabled. If proper support is not provided in firmware it's best to disable
-> > > +CONFIG_ARM64_AMU_EXTN.
-> > 
-> > For the sake of one kernel runs everywhere, do we need some other
-> > mechanism to disable the AMU. e.g kernel parameter to disable amu
-> > at runtime ?
-> >
-> 
-> The reason I've not added this is twofold:
->  - Even if we add this, it should be in order to disable the use of the
->    counters for a certain purpose, in this case  frequency invariance.
->    On its own AMU provides the counters but it does not mandate their
->    use.
->  - I could add something to disable the use of the core and cycle
->    counters for frequency invariance at runtime, but I doubt that
->    anyone would use it. Logically it makes sense to use the counters
->    order to have a more accurate view of the performance that the CPUs
->    are actually providing. Therefore, until anyone asks for this, I
->    thought it's better to keep it simple and not add extra switches,
->    until there is a use for them.
-> 
-> Does it make sense?
+Another quick look: use snprintf so that you won't overflow the
+bgx->irq_name in case bgx->bgx_id has some weird big number.
 
-The comment is about addressing someone who must run an "AMU" enabled
-kernel ("one kernel") on a system with potentially "broken firmware",
-where there is no option to use the system as you mention above,
-the firmware could panic. How common is the "broken firmware" ?
-Right now there is no way to ensure "firmware" is sane and if
-someone detects that firmware is broken, there is no way to
-disable the AMU if they are running a standard distro kernel.
-A kernel parameter could prevent the AMU capability from
-being detected on a broken system and thus make it usable
-(without the AMU of course). Now, if the "broken firmware"
-is extremely rare, we could simply ignore this case and
-ignore the suggestion.
-
-Suzuki
-
-
-
+> > +	ret = request_irq(pci_irq_vector(pdev, GMPX_GMI_TX_INT),
 > 
-> P.S. I'll make all the other changes you've suggested in v3. 
+> There is a alloc_irq and request_irq call added in this patch but there
+> is never any freeing. Are you sure this is fine? Devices can be
+> reprobed (unbound and bound to drivers via sysfs).
 > 
-> Thank you,
-> Ionela.
+> > +		bgx_intr_handler, 0, bgx->irq_name, bgx);
 > 
+> Please align the continuation line with the opening bracket (checkpatch
+> --strict should help catch this).
 > 
-> 
-> > > diff --git a/Documentation/arm64/booting.rst b/Documentation/arm64/booting.rst
-> > > index 5d78a6f5b0ae..a3f1a47b6f1c 100644
-> > > --- a/Documentation/arm64/booting.rst
-> > > +++ b/Documentation/arm64/booting.rst
-> > > @@ -248,6 +248,20 @@ Before jumping into the kernel, the following conditions must be met:
-> > >       - HCR_EL2.APK (bit 40) must be initialised to 0b1
-> > >       - HCR_EL2.API (bit 41) must be initialised to 0b1
-> > > +  For CPUs with Activity Monitors Unit v1 (AMUv1) extension present:
-> > > +  - If EL3 is present:
-> > > +    CPTR_EL3.TAM (bit 30) must be initialised to 0b0
-> > > +    CPTR_EL2.TAM (bit 30) must be initialised to 0b0
-> > > +    AMCNTENSET0_EL0 must be initialised to 0b1111
-> > > +    AMCNTENSET1_EL0 must be initialised to a platform specific value
-> > > +    having 0b1 set for the corresponding bit for each of the auxiliary
-> > > +    counters present.
-> > > +  - If the kernel is entered at EL1:
-> > > +    AMCNTENSET0_EL0 must be initialised to 0b1111
-> > > +    AMCNTENSET1_EL0 must be initialised to a platform specific value
-> > > +    having 0b1 set for the corresponding bit for each of the auxiliary
-> > > +    counters present.
-> > > +
-> > >   The requirements described above for CPU mode, caches, MMUs, architected
-> > >   timers, coherency and system registers apply to all CPUs.  All CPUs must
-> > >   enter the kernel in the same exception level.
-> > > diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
-> > > index b6e44884e3ad..4770ae54032b 100644
-> > > --- a/Documentation/arm64/cpu-feature-registers.rst
-> > > +++ b/Documentation/arm64/cpu-feature-registers.rst
-> > > @@ -150,6 +150,8 @@ infrastructure:
-> > >        +------------------------------+---------+---------+
-> > >        | DIT                          | [51-48] |    y    |
-> > >        +------------------------------+---------+---------+
-> > > +     | AMU                          | [47-44] |    n    |
-> > > +     +------------------------------+---------+---------+
-> > 
-> > As mentioned above, please drop it.
-> > 
-> > 
-> > Suzuki
+> > +	if (ret)
+> > +		return 1;
+> > +
+> > +	return 0;
+> > +}
 
 _______________________________________________
 linux-arm-kernel mailing list
