@@ -2,82 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5309514D66B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 07:31:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D693914D6DA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 07:55:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:From:To:Subject:References:
-	In-Reply-To:MIME-Version:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6G5u6BeCQE4iAbQOi/yIGGFobLid4RV4SSuUV/4L+VE=; b=rGBe97gWVD537d
-	JOHxe7LGMXv9LOeXE6nu5mG+k+hg1CaLDLZ5bSQF2PW7Rkmymj2jpZM5WQRdN4VuRrnmLu1u9c2WS
-	+6z375mBKBhK+tpnOT4ep3UsYCq5VaQyXUUi5dvzCKEB8Owkt/ZV6DosJ2DuPRQlIKk78vmSVI6Tr
-	wN9+qXu6e9UNeJyY8gzLa9Vc6bld9Fyfu9czvHe/wRw9W40JgSw+DN47FycXmYoy4K/JsRL2hq6sO
-	8NZPUNdR19DVbOWXsNABFORtLRaZzKT6g+uERrf9+AMHl+DJVY7+ec9aYT9SV5QrfsorCXv/ZJxfX
-	y3WVqqM8vkfI4O9Uj/HQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=14pKGsFBg3COuwPH0mEnl48H+qJPiKAS9jwE4gIm4rE=; b=TFsIhJq84KQK37
+	ecvVeBSgGE6LQKpEed1M4Tps3VdmotD0wTq8eJ2/davtHz5cNKx8PZ2GuQ6JyosJAN9GNIL0M0mgD
+	T7N4fshyEdKNCQFsnIx6pqBLR8aWfJa4tIVWP6kmodN1LzLnNwMIpP764SBl3763+CQ70fwHl40Lm
+	cFsm6z/3y9UdECyWBIVzb/VSOfeTaUoS9CgFB48Ea3cCwH7oZthM0HMqIW6+jARJ8Eay7uTTD/9Qt
+	0CcMjegjQ5siwb2yq5wppN3FQBkp0l4ZAjzLhvOOkELTOyI3UlENEu4L2LKSs/y9pSVeFw/e239Dq
+	WVtSSrkNESBf8sJ7ro+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix3M8-0006at-JX; Thu, 30 Jan 2020 06:31:12 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1ix3jl-0000RA-MU; Thu, 30 Jan 2020 06:55:37 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix3Lw-0006aH-Qx
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 06:31:02 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 4so952859pfz.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Jan 2020 22:30:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=message-id:mime-version:content-transfer-encoding:in-reply-to
- :references:subject:to:from:cc:user-agent:date;
- bh=0tFsYcjfOOa4j0wNofi5s1JbHK10UxRY/7iGvUSf+kk=;
- b=KbnW8hcVBL+cjoPJI4C8c4WYYBRdr3lVrJlK+VN35PtAz96+RJuL/ELLxdLSp0mLQr
- U9iIpV6CcuvgD2XX6SiYM16zJwlenQUU/44+VCqojADOc8i5f1SrK9zHJA1yIoDzcTsb
- JyPMx/3lnzwjm2LBn+HJSPUK6x2NxxcpNjT24=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:mime-version
- :content-transfer-encoding:in-reply-to:references:subject:to:from:cc
- :user-agent:date;
- bh=0tFsYcjfOOa4j0wNofi5s1JbHK10UxRY/7iGvUSf+kk=;
- b=j5s48l0ZYHwsoXE5VEtv/Qry6laFRSYPREyxEJ/AEhm6crxv2aYV3rhvoSoetZN4NN
- +OGK8sf2yCYUEIeixsmGSO5ad3eF80I57yY/cdflGWZEd44QyQWWOxpkbg0fW6q3Cxkz
- UmeGtVD/39R8xzr4e6EQexpe+l0VT+UrN89FOMqvCoeL0o0othHAYBvcrZJGnzCmHCGP
- j0DtTdU5qjZAWbOFkXDSkpLpLhbUsW2LMcUUMebYASL0Vqg3qdYa0qt6Slsmjyqpmty5
- sDWQyj0cmjFs3brcuq9vUl9V3yXvfkTIkU1ALFaAh8wIU+mMh7E10AZpj3Ux3JenR92t
- KsHw==
-X-Gm-Message-State: APjAAAXqWJuHO3fy53Gz3vWYhl0pSDAIaPHgKOy2vYH6ZDDY4LRaoY0v
- JViTmhfd/8iZIZETDMWaOd0D1A==
-X-Google-Smtp-Source: APXvYqxkoOSz3EElUiJyrS7XLxT4E2RrTKPRQZsLo3gTD8kEkuzwObe1rg6ylHw8yiou5ZegP9TqoA==
-X-Received: by 2002:a63:e911:: with SMTP id i17mr3199910pgh.42.1580365859422; 
- Wed, 29 Jan 2020 22:30:59 -0800 (PST)
-Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id q12sm4862272pfh.158.2020.01.29.22.30.58
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 29 Jan 2020 22:30:58 -0800 (PST)
-Message-ID: <5e327822.1c69fb81.80136.dfc1@mx.google.com>
+ id 1ix3is-0006v2-13; Thu, 30 Jan 2020 06:54:43 +0000
+X-UUID: a92aa108a944468384a247f7a86f6134-20200129
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=nT9JMqdZL40d6DpIqTDz/AwubrwRPPy0W7SQItA5Q+w=; 
+ b=bvCPjljzGWgWhxaHBpAEAwLoBNL0M/XBXFDOuYs9dwX9R7Mzz27QgkmpWPa/ufJdtzi78/cHh2h5fCwFpMZ/Guwjgu1g3ONybeWWG7Iqi8YsNugJw9VCLvlGTdFmSU5L7OXFhmAva8lMJAxZOj/lY42RLOJyHvU+d91nqB/zfks=;
+X-UUID: a92aa108a944468384a247f7a86f6134-20200129
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 389337364; Wed, 29 Jan 2020 22:54:35 -0800
+Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 29 Jan 2020 22:44:57 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 30 Jan 2020 14:44:31 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Thu, 30 Jan 2020 14:43:35 +0800
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Thomas Gleixner <tglx@linutronix.de>, "Alexander
+ Potapenko" <glider@google.com>, Josh Poimboeuf <jpoimboe@redhat.com>, "Greg
+ Kroah-Hartman" <gregkh@linuxfoundation.org>, Kate Stewart
+ <kstewart@linuxfoundation.org>
+Subject: [PATCH v3] lib/stackdepot: Fix global out-of-bounds in stackdepot
+Date: Thu, 30 Jan 2020 14:44:30 +0800
+Message-ID: <20200130064430.17198-1-walter-zh.wu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <202001271525.E6EB4FDD6@keescook>
-References: <20200123160031.9853-1-saiprakash.ranjan@codeaurora.org>
- <202001271525.E6EB4FDD6@keescook>
-Subject: Re: [PATCH] pstore: Fix printing of duplicate boot messages to console
-To: Kees Cook <keescook@chromium.org>,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-From: Stephen Boyd <swboyd@chromium.org>
-User-Agent: alot/0.8.1
-Date: Wed, 29 Jan 2020 22:30:57 -0800
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_223100_899033_256B8C33 
-X-CRM114-Status: GOOD (  13.79  )
+X-CRM114-CacheID: sfid-20200129_225442_241252_B0D10B67 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -85,7 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,44 +88,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Luck <tony.luck@intel.com>, linux-arm-msm@vger.kernel.org,
- Anton Vorontsov <anton@enomsg.org>, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
- Colin Cross <ccross@android.com>, Joel Fernandes <joel@joelfernandes.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Walter Wu <walter-zh.wu@mediatek.com>, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ wsd_upstream <wsd_upstream@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Kees Cook (2020-01-27 15:27:33)
-> On Thu, Jan 23, 2020 at 09:30:31PM +0530, Sai Prakash Ranjan wrote:
-> > Since commit f92b070f2dc8 ("printk: Do not miss new messages
-> > when replaying the log"), CON_PRINTBUFFER flag causes the
-> > duplicate boot messages to be printed on the console when
-> > PSTORE_CONSOLE and earlycon (boot console) is enabled.
-> > Pstore console registers to boot console when earlycon is
-> > enabled during pstore_register_console as a part of ramoops
-> > initialization in postcore_initcall and the printk core
-> > checks for CON_PRINTBUFFER flag and replays the log buffer
-> > to registered console (in this case pstore console which
-> > just registered to boot console) causing duplicate messages
-> > to be printed. Remove the CON_PRINTBUFFER flag from pstore
-> > console since pstore is not concerned with the printing of
-> > buffer to console but with writing of the buffer to the
-> > backend.
-> 
-> I agree this patch isn't the solution, but I'm trying to understand
-> where better logic could be added. Is the issue that printk sees both
-> earlycon and CON_PRINTBUFFER active? Can we add a new CON_* flag that
-> means "not actually printing anything"? (Or maybe a new flag for
-> non-printing to replace CON_PRINTBUFFER that lets pstore still work?)
-> 
+If the depot_index = STACK_ALLOC_MAX_SLABS - 2 and next_slab_inited = 0,
+then it will cause array out-of-bounds access, so that we should modify
+the detection to avoid this array out-of-bounds bug.
 
-This seems to be fixed by commit def97da13651 ("printk: fix
-exclusive_console replaying"). I think there's nothing to do.
+Assume depot_index = STACK_ALLOC_MAX_SLABS - 3
+Consider following call flow sequence:
 
+stack_depot_save()
+   depot_alloc_stack()
+      if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) //pass
+      depot_index++  //depot_index = STACK_ALLOC_MAX_SLABS - 2
+      if (depot_index + 1 < STACK_ALLOC_MAX_SLABS) //enter
+         smp_store_release(&next_slab_inited, 0); //next_slab_inited = 0
+      init_stack_slab()
+         if (stack_slabs[depot_index] == NULL) //enter and exit
 
+stack_depot_save()
+   depot_alloc_stack()
+      if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) //pass
+      depot_index++  //depot_index = STACK_ALLOC_MAX_SLABS - 1
+      init_stack_slab(&prealloc)
+         stack_slabs[depot_index + 1]  //here get global out-of-bounds
+
+Cc: Dmitry Vyukov <dvyukov@google.com>
+Cc: Matthias Brugger <matthias.bgg@gmail.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Alexander Potapenko <glider@google.com>
+Cc: Josh Poimboeuf <jpoimboe@redhat.com>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>
+Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+---
+changes in v2:
+modify call flow sequence and preconditon
+
+changes in v3:
+add some reviewers
+---
+ lib/stackdepot.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/stackdepot.c b/lib/stackdepot.c
+index ed717dd08ff3..7e8a15e41600 100644
+--- a/lib/stackdepot.c
++++ b/lib/stackdepot.c
+@@ -106,7 +106,7 @@ static struct stack_record *depot_alloc_stack(unsigned long *entries, int size,
+ 	required_size = ALIGN(required_size, 1 << STACK_ALLOC_ALIGN);
+ 
+ 	if (unlikely(depot_offset + required_size > STACK_ALLOC_SIZE)) {
+-		if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) {
++		if (unlikely(depot_index + 2 >= STACK_ALLOC_MAX_SLABS)) {
+ 			WARN_ONCE(1, "Stack depot reached limit capacity");
+ 			return NULL;
+ 		}
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
