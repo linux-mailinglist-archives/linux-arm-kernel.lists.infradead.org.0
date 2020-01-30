@@ -2,85 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 893DF14DB3E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:06:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5642414DB5B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:12:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YivNtztQa7Did0GGkZ08HEITseaXLIcdaqt0KWMjNZM=; b=rlDddBSnmwup9S
-	DosFj96OYBFQ2qfPePAPIg/7+TB0EhUdMJ2mv7TRDiUPiTV8q2zA8n0ubCZ3wD7oVvLpNEXxNEykw
-	nwbJp+1i9USR+G8baB+q9qbWdnSfeMZmQMH1GtGdg0tJvKDVtSpyoYC7f7rJf3XwOHgv8iC2ive6/
-	v/e5CXNQ8YqtTAfu5NWjvdxzGom3PXKUeIW2JdgLPCQTcBadXpCUntsiv37KvRVmzDVWbLqwv/XpG
-	tdor/AjE0QCaFt8EAptzsUDfPhpzWh2Ban015DS2+yF6LUac7aXwNzH1ZBAUxoIV3mXgkXQzwUki9
-	j5IKKxDpa85UHiRBsF2Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1gPRgfiAaAgpOfWOSjM5e+hVcCEzuk+6TialVy3teg4=; b=J7ylLMuQARTsxf
+	Jsf2KYBRET7gGjBivQpUQ74wQ7LuUN8oR4itR5/XGfOSRveslVLMbmrNA6jw3QRqneqRYIc+1RHhp
+	fYbI1HWhXLEuzUl6Iqwrz6upui8lyPljhnC5qNMUOBAwMiCnh2Nu5k4y4iM2gtpS5fBnnD693I1Ek
+	aJIxhe5r5Vm1RwmkrtaKO32mUT95rXKmhaevVIsGcVH11E2FIjfxJPmUFrmmo1xtnFhwVhayDM7rZ
+	Su76+xL0wfD7DafxP/epJi5RQpuWfXGw1uRsunnjl2d4qIWLSN+OlZW1pLmtxR1F6Ypav9xk1fJ2G
+	CFvkWwUZ/95ElqdURYVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix9WI-00053H-H1; Thu, 30 Jan 2020 13:06:06 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix9W8-00052s-2B
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:05:58 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
- Codrin.Ciubotariu@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="Codrin.Ciubotariu@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Codrin.Ciubotariu@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Codrin.Ciubotariu@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: BkINU+vNvBMEuPmGTZME0oxSyx9tcuNT89zZky2VclTmF1rdGfxPq2NaOpAHELikB8EOoOdifG
- qnY131M4ZO+7LrKRQnIk4FKyhGaIwArXLQn3eIwXpumbl6SnhYyW89nJ1EGbAq34wLkBK6Xfo/
- DQ4STD4aiq28SH5HtNUaIhbCKFnoWkhQxwqjrc1OO/n9hWXxOvbVya5vpT/RrwPfqihXPi2hm/
- +1h6n9FDFt8jmyoB9w1DNu3GR+02Nfg8WvU0Vlllk36lnzbeLv2aQo4iE4VMdxSAbLQr4hIR1m
- 0hg=
-X-IronPort-AV: E=Sophos;i="5.70,382,1574146800"; d="scan'208";a="64232611"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 30 Jan 2020 06:05:52 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Thu, 30 Jan 2020 06:05:52 -0700
-Received: from rob-ult-m19940.microchip.com (10.10.85.251) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Thu, 30 Jan 2020 06:05:49 -0700
-From: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-To: <alsa-devel@alsa-project.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [RESEND PATCH] ASoC: atmel: fix atmel_ssc_set_audio link failure
-Date: Thu, 30 Jan 2020 15:05:45 +0200
-Message-ID: <20200130130545.31148-1-codrin.ciubotariu@microchip.com>
-X-Mailer: git-send-email 2.20.1
+	id 1ix9cL-0007Se-62; Thu, 30 Jan 2020 13:12:21 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ix9cC-0007Rs-DC; Thu, 30 Jan 2020 13:12:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 087D6328;
+ Thu, 30 Jan 2020 05:12:11 -0800 (PST)
+Received: from [192.168.0.129] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AAD5D3F68E;
+ Thu, 30 Jan 2020 05:11:57 -0800 (PST)
+Subject: Re: [PATCH V12] mm/debug: Add tests validating architecture page
+ table helpers
+To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
+References: <1580174873-18117-1-git-send-email-anshuman.khandual@arm.com>
+ <20200129232028.5a27e656@thinkpad>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <5baed7e2-fc83-6223-8bb4-dcd771f9a4ea@arm.com>
+Date: Thu, 30 Jan 2020 18:41:49 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <20200129232028.5a27e656@thinkpad>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_050556_136490_C5FE9204 
-X-CRM114-Status: UNSURE (   7.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200130_051212_533081_5AEF02C5 
+X-CRM114-Status: GOOD (  20.11  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,80 +64,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, Arnd Bergmann <arnd@arndb.de>,
- mirq-linux@rere.qmqm.pl, ludovic.desroches@microchip.com, broonie@kernel.org,
- Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ James Hogan <jhogan@kernel.org>,
+ Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
+ linux-snps-arc@lists.infradead.org, Ingo Molnar <mingo@kernel.org>,
+ Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Arnd Bergmann <arnd@arndb.de>
 
-The ssc audio driver can call into both pdc and dma backends.  With the
-latest rework, the logic to do this in a safe way avoiding link errors
-was removed, bringing back link errors that were fixed long ago in commit
-061981ff8cc8 ("ASoC: atmel: properly select dma driver state") such as
 
-sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
-atmel_ssc_dai.c:(.text+0xac): undefined reference to `atmel_pcm_pdc_platform_register'
+On 01/30/2020 03:50 AM, Gerald Schaefer wrote:
+> On Tue, 28 Jan 2020 06:57:53 +0530
+> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+> 
+>> This adds tests which will validate architecture page table helpers and
+>> other accessors in their compliance with expected generic MM semantics.
+>> This will help various architectures in validating changes to existing
+>> page table helpers or addition of new ones.
+>>
+>> This test covers basic page table entry transformations including but not
+>> limited to old, young, dirty, clean, write, write protect etc at various
+>> level along with populating intermediate entries with next page table page
+>> and validating them.
+>>
+>> Test page table pages are allocated from system memory with required size
+>> and alignments. The mapped pfns at page table levels are derived from a
+>> real pfn representing a valid kernel text symbol. This test gets called
+>> right after page_alloc_init_late().
+>>
+>> This gets build and run when CONFIG_DEBUG_VM_PGTABLE is selected along with
+>> CONFIG_VM_DEBUG. Architectures willing to subscribe this test also need to
+>> select CONFIG_ARCH_HAS_DEBUG_VM_PGTABLE which for now is limited to x86 and
+>> arm64. Going forward, other architectures too can enable this after fixing
+>> build or runtime problems (if any) with their page table helpers.
+>>
+>> Folks interested in making sure that a given platform's page table helpers
+>> conform to expected generic MM semantics should enable the above config
+>> which will just trigger this test during boot. Any non conformity here will
+>> be reported as an warning which would need to be fixed. This test will help
+>> catch any changes to the agreed upon semantics expected from generic MM and
+>> enable platforms to accommodate it thereafter.
+>>
+> 
+> [...]
+> 
+>>
+>> Tested-by: Christophe Leroy <christophe.leroy@c-s.fr>		#PPC32
+> 
+> Tested-by: Gerald Schaefer <gerald.schaefer@de.ibm.com> # s390
 
-Fix it this time using Makefile hacks and a comment to prevent this
-from accidentally getting removed again rather than Kconfig hacks.
+Thanks for testing.
 
-Fixes: 18291410557f ("ASoC: atmel: enable SOC_SSC_PDC and SOC_SSC_DMA in Kconfig")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
----
+> 
+> Thanks again for this effort, and for keeping up the spirit against
+> all odds and even after 12 iterations :-)
+> 
+>>
+>> diff --git a/Documentation/features/debug/debug-vm-pgtable/arch-support.txt b/Documentation/features/debug/debug-vm-pgtable/arch-support.txt
+>> new file mode 100644
+>> index 000000000000..f3f8111edbe3
+>> --- /dev/null
+>> +++ b/Documentation/features/debug/debug-vm-pgtable/arch-support.txt
+>> @@ -0,0 +1,35 @@
+>> +#
+>> +# Feature name:          debug-vm-pgtable
+>> +#         Kconfig:       ARCH_HAS_DEBUG_VM_PGTABLE
+>> +#         description:   arch supports pgtable tests for semantics compliance
+>> +#
+>> +    -----------------------
+>> +    |         arch |status|
+>> +    -----------------------
+>> +    |       alpha: | TODO |
+>> +    |         arc: |  ok  |
+>> +    |         arm: | TODO |
+>> +    |       arm64: |  ok  |
+>> +    |         c6x: | TODO |
+>> +    |        csky: | TODO |
+>> +    |       h8300: | TODO |
+>> +    |     hexagon: | TODO |
+>> +    |        ia64: | TODO |
+>> +    |        m68k: | TODO |
+>> +    |  microblaze: | TODO |
+>> +    |        mips: | TODO |
+>> +    |       nds32: | TODO |
+>> +    |       nios2: | TODO |
+>> +    |    openrisc: | TODO |
+>> +    |      parisc: | TODO |
+>> +    |  powerpc/32: |  ok  |
+>> +    |  powerpc/64: | TODO |
+>> +    |       riscv: | TODO |
+>> +    |        s390: | TODO |
+> 
+> s390 is ok now, with my patches included in v5.5-rc1. So you can now add
+> 
+> --- a/Documentation/features/debug/debug-vm-pgtable/arch-support.txt
+> +++ b/Documentation/features/debug/debug-vm-pgtable/arch-support.txt
+> @@ -25,7 +25,7 @@
+>      |  powerpc/32: |  ok  |
+>      |  powerpc/64: | TODO |
+>      |       riscv: | TODO |
+> -    |        s390: | TODO |
+> +    |        s390: |  ok  |
+>      |          sh: | TODO |
+>      |       sparc: | TODO |
+>      |          um: | TODO |
+> --- a/arch/s390/Kconfig
+> +++ b/arch/s390/Kconfig
+> @@ -59,6 +59,7 @@ config KASAN_SHADOW_OFFSET
+>  config S390
+>  	def_bool y
+>  	select ARCH_BINFMT_ELF_STATE
+> +	select ARCH_HAS_DEBUG_VM_PGTABLE
+>  	select ARCH_HAS_DEVMEM_IS_ALLOWED
+>  	select ARCH_HAS_ELF_RANDOMIZE
+>  	select ARCH_HAS_FORTIFY_SOURCE
 
-Added my signed-off because I sent the patch, no other changes.
-
- sound/soc/atmel/Kconfig  |  4 ++--
- sound/soc/atmel/Makefile | 10 ++++++++--
- 2 files changed, 10 insertions(+), 4 deletions(-)
-
-diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
-index d1dc8e6366dc..71f2d42188c4 100644
---- a/sound/soc/atmel/Kconfig
-+++ b/sound/soc/atmel/Kconfig
-@@ -10,11 +10,11 @@ config SND_ATMEL_SOC
- if SND_ATMEL_SOC
- 
- config SND_ATMEL_SOC_PDC
--	tristate
-+	bool
- 	depends on HAS_DMA
- 
- config SND_ATMEL_SOC_DMA
--	tristate
-+	bool
- 	select SND_SOC_GENERIC_DMAENGINE_PCM
- 
- config SND_ATMEL_SOC_SSC
-diff --git a/sound/soc/atmel/Makefile b/sound/soc/atmel/Makefile
-index 1f6890ed3738..c7d2989791be 100644
---- a/sound/soc/atmel/Makefile
-+++ b/sound/soc/atmel/Makefile
-@@ -6,8 +6,14 @@ snd-soc-atmel_ssc_dai-objs := atmel_ssc_dai.o
- snd-soc-atmel-i2s-objs := atmel-i2s.o
- snd-soc-mchp-i2s-mcc-objs := mchp-i2s-mcc.o
- 
--obj-$(CONFIG_SND_ATMEL_SOC_PDC) += snd-soc-atmel-pcm-pdc.o
--obj-$(CONFIG_SND_ATMEL_SOC_DMA) += snd-soc-atmel-pcm-dma.o
-+# pdc and dma need to both be built-in if any user of
-+# ssc is built-in.
-+ifdef CONFIG_SND_ATMEL_SOC_PDC
-+obj-$(CONFIG_SND_ATMEL_SOC_SSC) += snd-soc-atmel-pcm-pdc.o
-+endif
-+ifdef CONFIG_SND_ATMEL_SOC_DMA
-+obj-$(CONFIG_SND_ATMEL_SOC_SSC) += snd-soc-atmel-pcm-dma.o
-+endif
- obj-$(CONFIG_SND_ATMEL_SOC_SSC) += snd-soc-atmel_ssc_dai.o
- obj-$(CONFIG_SND_ATMEL_SOC_I2S) += snd-soc-atmel-i2s.o
- obj-$(CONFIG_SND_MCHP_SOC_I2S_MCC) += snd-soc-mchp-i2s-mcc.o
--- 
-2.20.1
-
+Sure, will add this up.
 
 _______________________________________________
 linux-arm-kernel mailing list
