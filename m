@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CC3414DBAC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:27:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4D6E14DBB7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:28:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YvjEUaIZO7UefDDlgbMwNeOOmTSL82Qu+kaC4TaEcRo=; b=qwULrpHRs2CTjj
-	x2DHcDGoPLHEohZVNQgJPuw4cJElBQ++9jW3nPE6GICmh6vFlePWQBG5iaTUyst/sgB21oTFl6mhz
-	BC9o9YT1OdNfPBPkpHygaz9JFS2qcqpNoM1a29/aXjK//ZCRTL1b4J2bPUd3KJLgT6HnB6A/8CNWE
-	lDoQk8xxbeB765jEmyACOGDvHfMbq1jQLjAQmJAizyHhyak2A+xhhUz3WXjlV4OueONy6s4gG+UJn
-	Qw4OjfiztO7KAJnGAfdkEhk8A0c/DVu1yu2zLBEOVuviKrxiAmaVNbBVdRrHXDpptdkYeR6AK4J6s
-	6P00M422P5DV7G08l8YQ==;
+	List-Owner; bh=5Ao1QEqITLRGsKw1i++ZbcTxSbqfEkTVlouKeNWRZVg=; b=Y/e2hEwsxKEP+v
+	37RgTwKnyr+8gx+1eIOoYU3SMVfHmKwt9m6UsZaGFKFpDKPU6R20YvC3kqGYmyLw1vkDKgOZm8TrU
+	eFkZy0dKOIYpHwV6AESn3f+KF4lo86Mvoxc/K/e5l/Ouj39rARFBKmze1zqqk8h3xSHNwo3t7RAqR
+	R0Sp6u4VpHwty9ay1vwlvplSFeWkHQGsqGH8iFV/3j1uDFOHVyITa8u+mrhRH7AokVk7QT/o3EtcL
+	ZC55Sso9s9uFFRV1Sp01wVmfjMXA+nNcA64bEkFwQ+j4j9pw9+D2X6ttm2xsFj0pKfsQBD1usGIHf
+	Nu+4aTT3SjViVvW1tHbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix9r5-00056d-QG; Thu, 30 Jan 2020 13:27:35 +0000
+	id 1ix9rV-0005Zk-Ha; Thu, 30 Jan 2020 13:28:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix9pk-00049Y-EW
+ id 1ix9pk-00049Z-Ic
  for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:26:15 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1EF07214AF;
- Thu, 30 Jan 2020 13:26:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 26C16214D8;
+ Thu, 30 Jan 2020 13:26:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580390771;
- bh=2maXhHpvHeXGT6VCr6i2o40Sa2UBf9PlCCMOh4sQSGk=;
+ s=default; t=1580390772;
+ bh=zlVMJm7ZdL3zGtiLfAsUgIDE3Fn4F2HO34ea79xeAiE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=paDcUnlu5wrAO1hSeJSE3y51rYHGmDAFmBFT/2HolYFk3v5e/JHujvzyBLkp67fUn
- 2GXRmRuNoI1SDopDqFSJYhEW91RxC9+GCfvqF4oL9npttHjvfEY59NK+D7hKDv5kUy
- ZpjtHboTmX4g/kLDGvEMPszpxRKRjq/fLd6JarRs=
+ b=VfaCcDRo7TLjbW0uCOTPMB7VEvd3nxQcQ7EMVJS24cz99EezgS7p+9gQ6N+eo6Rb+
+ 5Z3UxIg4ycWkJSlFUmlRl6Rz9ylm4EAgkjxvixBIOm+KY2n41ZCqjJnu/k7MtxHnU2
+ Pq+nRxnane8FtrooyxM7oMLNjLQVhzK5koyAgR94=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1ix9ph-002BmW-FD; Thu, 30 Jan 2020 13:26:09 +0000
+ id 1ix9pi-002BmW-Ga; Thu, 30 Jan 2020 13:26:10 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 02/23] KVM: arm/arm64: vgic-its: Fix restoration of unmapped
- collections
-Date: Thu, 30 Jan 2020 13:25:37 +0000
-Message-Id: <20200130132558.10201-3-maz@kernel.org>
+Subject: [PATCH 03/23] KVM: arm/arm64: vgic: Handle GICR_PENDBASER.PTZ filed
+ as RAZ
+Date: Thu, 30 Jan 2020 13:25:38 +0000
+Message-Id: <20200130132558.10201-4-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200130132558.10201-1-maz@kernel.org>
 References: <20200130132558.10201-1-maz@kernel.org>
@@ -65,8 +65,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_052612_533636_81FBA2AC 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20200130_052612_667227_E17D4BD5 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -113,37 +113,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Eric Auger <eric.auger@redhat.com>
+From: Zenghui Yu <yuzenghui@huawei.com>
 
-Saving/restoring an unmapped collection is a valid scenario. For
-example this happens if a MAPTI command was sent, featuring an
-unmapped collection. At the moment the CTE fails to be restored.
-Only compare against the number of online vcpus if the rdist
-base is set.
+Although guest will hardly read and use the PTZ (Pending Table Zero)
+bit in GICR_PENDBASER, let us emulate the architecture strictly.
+As per IHI 0069E 9.11.30, PTZ field is WO, and reads as 0.
 
-Fixes: ea1ad53e1e31a ("KVM: arm64: vgic-its: Collection table save/restore")
-Signed-off-by: Eric Auger <eric.auger@redhat.com>
+Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
-Link: https://lore.kernel.org/r/20191213094237.19627-1-eric.auger@redhat.com
+Reviewed-by: Eric Auger <eric.auger@redhat.com>
+Link: https://lore.kernel.org/r/20191220111833.1422-1-yuzenghui@huawei.com
 ---
- virt/kvm/arm/vgic/vgic-its.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ virt/kvm/arm/vgic/vgic-mmio-v3.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-index 98c7360d9fb7..17920d1b350a 100644
---- a/virt/kvm/arm/vgic/vgic-its.c
-+++ b/virt/kvm/arm/vgic/vgic-its.c
-@@ -2475,7 +2475,8 @@ static int vgic_its_restore_cte(struct vgic_its *its, gpa_t gpa, int esz)
- 	target_addr = (u32)(val >> KVM_ITS_CTE_RDBASE_SHIFT);
- 	coll_id = val & KVM_ITS_CTE_ICID_MASK;
+diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+index 7dfd15dbb308..ebc218840fc2 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
++++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+@@ -414,8 +414,11 @@ static unsigned long vgic_mmio_read_pendbase(struct kvm_vcpu *vcpu,
+ 					     gpa_t addr, unsigned int len)
+ {
+ 	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
++	u64 value = vgic_cpu->pendbaser;
  
--	if (target_addr >= atomic_read(&kvm->online_vcpus))
-+	if (target_addr != COLLECTION_NOT_MAPPED &&
-+	    target_addr >= atomic_read(&kvm->online_vcpus))
- 		return -EINVAL;
+-	return extract_bytes(vgic_cpu->pendbaser, addr & 7, len);
++	value &= ~GICR_PENDBASER_PTZ;
++
++	return extract_bytes(value, addr & 7, len);
+ }
  
- 	collection = find_collection(its, coll_id);
+ static void vgic_mmio_write_pendbase(struct kvm_vcpu *vcpu,
 -- 
 2.20.1
 
