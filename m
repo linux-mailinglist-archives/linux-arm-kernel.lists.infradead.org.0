@@ -2,81 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE94714E3EB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 21:26:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A8DA14E42D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 21:43:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D7Zcbow2Ut0Wmaku3NHDEwoweyNfxrGHF2r8twfswFM=; b=Bcr0KeRXJrdeg4
-	SGjJIg3shIcx6a8mWxl/EjOherP3xcHuhZeDsyhXQylenKN1wRtMA5j4J0wvD4YrFBhW4FO/JeMKd
-	TpvNyj7qQxccoT/OduEwRdcw+hHP3/K6cBUIkUMOwLNytyJ0vdtgssoWkrBvZ2DP2EC1kxrxgSPPE
-	pkI8DpaPxj2099ihJ10JRhYeFYMqhthGyk4fvpstwNEgpkaJ7SS0F/x5NXlX/4FEq/M/On2K086px
-	uX4D10Q/NPvPCfmyBwXVE3prYXDsAkSLAkRXCMLM992tqZJyXPHo2sKZ6BNuSnOEEzIz2CsgGVViI
-	qLF7sIcLGIielXx5pM9Q==;
+	List-Owner; bh=T/DOFX7NAfljT6fHclctDeWj4lR2rnVZPsPAZWvyIjU=; b=ENflVvMGvG6jQy
+	AJi+yn1EljIuIFGFO0380HXpXz8hSnPR1xZOSrzE+NroPC0HYIFU+TfD2R37dayp5rHdrrlcxAC7w
+	SZ9ghy9s/v1MVnGkZfqnFRcZmqHchzPHajomGbPROwQ5AOAjH3hbjYG8XCl3kltLLuLBJSvbMATN0
+	KmYdLlEglxUzQi5IXH+PN5xBUfID67trLIzrX9hLEeVTLPvCSwfIdSkRYvI4/yA+PxP/qfef1lzpp
+	94VdzTrRG4Dyj0kh9HmZA3H8jj3twMnY119gUW2WjCeCT8lN4YrW2kLPWU/pSSEc9BiC1AFlNOJwz
+	qQdYFjJj+JyyxbdYKXig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixGOL-0003Jo-4G; Thu, 30 Jan 2020 20:26:21 +0000
-Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1ixGfD-0002ML-FX; Thu, 30 Jan 2020 20:43:47 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixGOD-0003JH-5Z
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 20:26:14 +0000
-Received: by mail-il1-x142.google.com with SMTP id l4so4246947ilj.1
+ id 1ixGf5-0002LQ-Ju
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 20:43:40 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 84so2089822pfy.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Jan 2020 12:26:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gateworks-com.20150623.gappssmtp.com; s=20150623;
+ Thu, 30 Jan 2020 12:43:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mMmbTPRv5n9fcnTR4JD/Hiobk7HR6X/mODzSmDElFRk=;
- b=UJG07q0ZvllEgVwuAoevdh4W2PsMLK8OB4w5jNu08HE+oqaV0dPCzf6G0s28627iHX
- MAeM0+1hO7Q2rcZRlzA757D7sD7JXrirx/PgZPiMwHhbj9oInkKx0RKNdrD7wlxxP3HN
- 8H8GRgU6guwk3DDN9gxR7XFi8L9Fu+IuylCY9CCcIViFiuQnch7A4mOtzRzlLvDD64xC
- 5EM4anhFUfbutFIJc+/Kq+JL6zrAp6xok25sEwrImK0K1jVsjqykH1fnKHssrE6VaZ74
- ujMrhqsKK0AHG3KYqLz2HkDkWvBm5V4I3H+jqJzqGlGiLwL5z60horRKkm5RSuYM1SLV
- IzzQ==
+ :cc; bh=0dxYpvbP3+MitgaCJiQJwbd1PLgONyG5Ng5sN3hHzdc=;
+ b=AdqtidcT3UyXX4tOAnsEgclFfQ+sfOYmLxjGeZOjbsO1dNlm6Hz+JFf3TvhvlJO9Wb
+ 5BJ2UbFzD2Se8VVQoiKvNLl0DnbchDFaZdaJqxkSyQxgvFmmjH9a3K++2MGLrghdgSRL
+ Vh6blAXKV1tyNP/0cZ1GHUeWdo4iAjFITjZieOeI/feu6Uws5jf60Iaex3J4hmyys4V8
+ oXZEaG83wKW9I9CeNi1f1M5obf9FmqBLfuvYu9FsTKePYFap4zG8nLNrwGg/OkySyAdQ
+ WSUjOe8GXmKd6TR2AZOEvfBnzl/THm8g8oIRZhLAjGg1Ydqa7PoaL66Eq2VA/ZgCt4L7
+ aV8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=mMmbTPRv5n9fcnTR4JD/Hiobk7HR6X/mODzSmDElFRk=;
- b=muUcV4xBE7CNzswGuAhkAAowvt0QHzMbF56VIEwOORFWwegnAR67WlxW+9r067As2f
- eSwB9MioVd5Y3fUESX+GcqaaE6Jp0PYy/L9LUW/pJ7B6UZnfbrc2p1mZEVH9GgbOq36l
- aNY/ecV5Jav2NlS7A88A2J1cqftFtYIH6DkrACZC4PvBnnjKA+cykoGVGza+Rmsf1Fbc
- dxeDKwfo93l2mpA5TsPdkd5RV3TeaLPFs/LoM3jsSnqmTlsYpGPhVT9P98zMLuxmhwge
- M8bvaEGAN3Wy7BadN9uGqrDAEeNxOWp2ALkO7TPytB5T0AAvxHEbwIVe3GiT2yxRzIb0
- WnlA==
-X-Gm-Message-State: APjAAAU55r4W9PCEW85IAdRghV/p68mmRCgQ4WGaw5DaXF3NrWt8y6xP
- KxYS8nOr13fHkfeM7KIjBfCBa6UPFYEU8Rv+c5LuJA==
-X-Google-Smtp-Source: APXvYqyLkAz/Xj41rF8RDGjF+NXQgzOwtixw6VtvNiEJGbHaCdRsXwh3NpcbcJY/YLZlte51umpHDg/clYxyTtxmrpU=
-X-Received: by 2002:a92:3a8d:: with SMTP id i13mr6549486ilf.112.1580415971935; 
- Thu, 30 Jan 2020 12:26:11 -0800 (PST)
+ bh=0dxYpvbP3+MitgaCJiQJwbd1PLgONyG5Ng5sN3hHzdc=;
+ b=ak0z+DqpMtbg2afONMD000bV8x5QdUaPahipl3cL16gu/XuVPPoRUj/7G/EP/4evRq
+ qBFQoTCtYb7H3rJBYW7ouADeGNhsYK0zKXBOMxGD4NQUVhJo3Bk9z02SRWT0NIQwp7Zq
+ AFrw5J3ZA0YeVSj2DH3sC+t5S8gQPDn+8zZJ2BkSrohTHtYlMYKzsw9aY/0dN555x4zZ
+ Rmi5T+Gg4aaWb5PO9WQJhznL+sVd613gXb+wiSsx6BKgIMBD2NVNjE1pzZkx9nCs+c7j
+ cFOt1kLv1xhv4bPfnC83fYRIT+P9zOJHmaa4OvqqdmehrhU0HQlUiZnDT6vs/bJRjOQH
+ k9Lg==
+X-Gm-Message-State: APjAAAXo4Wc231AzAG9Pdk4JQwEQHZwg/EpO0WqUYOoJXY+tP9PDG7/S
+ p+fdFPzUiNWGJ8F69+dfgVfoguhYg5Fb6U6X6ob2JdGFvnoe8A==
+X-Google-Smtp-Source: APXvYqxtungvuJiW+tQaf+Q4OiC4fCw/m5Y6NFIJtHQbGTC2Ce2BKAtg6nHhDwrtGEnA52l43PrAt1t3SwmrQzwCwg4=
+X-Received: by 2002:a65:5242:: with SMTP id q2mr6412421pgp.74.1580417015788;
+ Thu, 30 Jan 2020 12:43:35 -0800 (PST)
 MIME-Version: 1.0
-References: <20200129223609.9327-1-rjones@gateworks.com>
- <20200130091055.159d63ed@cakuba>
-In-Reply-To: <20200130091055.159d63ed@cakuba>
-From: Bobby Jones <rjones@gateworks.com>
-Date: Thu, 30 Jan 2020 12:26:01 -0800
-Message-ID: <CALAE=UBu=9ieHytFqD7PPMSr3hv+aCC7naLN5Bh6pB4ODEDCsw@mail.gmail.com>
-Subject: Re: [PATCH net] net: thunderx: workaround BGX TX Underflow issue
-To: Jakub Kicinski <kuba@kernel.org>
+References: <20200127231208.1443-1-s-anna@ti.com>
+ <CAHp75VfaOfBZYjQa960keORW=VjOn2PdwoYpJMG7SsN83daSJg@mail.gmail.com>
+ <99a04c52-1ff6-1611-5cf6-2c71b810ba43@ti.com>
+In-Reply-To: <99a04c52-1ff6-1611-5cf6-2c71b810ba43@ti.com>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Thu, 30 Jan 2020 22:43:25 +0200
+Message-ID: <CAHp75VfhLDpuJD+ftdEWt3bwooRD5U=KfOnKZeKm9d4N21HOtw@mail.gmail.com>
+Subject: Re: [PATCH v2] mfd: syscon: Use a unique name with regmap_config
+To: Suman Anna <s-anna@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_122613_272276_8EF32F2E 
-X-CRM114-Status: GOOD (  18.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200130_124339_677858_1AC3A13B 
+X-CRM114-Status: GOOD (  15.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,84 +94,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Tim Harvey <tharvey@gateworks.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Robert Richter <rrichter@marvell.com>, Sunil Goutham <sgoutham@marvell.com>,
- David Miller <davem@davemloft.net>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: David Lechner <david@lechnology.com>, Arnd Bergmann <arnd@arndb.de>,
+ Tony Lindgren <tony@atomide.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux OMAP Mailing List <linux-omap@vger.kernel.org>,
+ Lee Jones <lee.jones@linaro.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 30, 2020 at 9:10 AM Jakub Kicinski <kuba@kernel.org> wrote:
->
-> On Wed, 29 Jan 2020 14:36:09 -0800, Robert Jones wrote:
-> > From: Tim Harvey <tharvey@gateworks.com>
+On Thu, Jan 30, 2020 at 7:09 PM Suman Anna <s-anna@ti.com> wrote:
+> On 1/30/20 9:34 AM, Andy Shevchenko wrote:
+> > On Tue, Jan 28, 2020 at 1:14 AM Suman Anna <s-anna@ti.com> wrote:
+
+...
+
+> >> -       syscon_config.name = of_node_full_name(np);
+> >> +       syscon_config.name = kasprintf(GFP_KERNEL, "%pOFn@%llx", np,
+> >> +                                      (u64)res.start);
 > >
-> > While it is not yet understood why a TX underflow can easily occur
-> > for SGMII interfaces resulting in a TX wedge. It has been found that
-> > disabling/re-enabling the LMAC resolves the issue.
-> >
-> > Signed-off-by: Tim Harvey <tharvey@gateworks.com>
-> > Reviewed-by: Robert Jones <rjones@gateworks.com>
+> > Explicit castings in printf() usually tell us that something is not okay.
 >
-> Sunil or Robert (i.e. one of the maintainers) will have to review this
-> patch (as indicated by Dave by marking it with "Needs Review / ACK" in
-> patchwork).
+> Yes, I agree in general.
 >
-> At a quick look there are some things which jump out at me:
+> > Yes, for resource_size_t we have %pa.
 >
-> > +static int bgx_register_intr(struct pci_dev *pdev)
-> > +{
-> > +     struct bgx *bgx = pci_get_drvdata(pdev);
-> > +     struct device *dev = &pdev->dev;
-> > +     int num_vec, ret;
-> > +
-> > +     /* Enable MSI-X */
-> > +     num_vec = pci_msix_vec_count(pdev);
-> > +     ret = pci_alloc_irq_vectors(pdev, num_vec, num_vec, PCI_IRQ_MSIX);
-> > +     if (ret < 0) {
-> > +             dev_err(dev, "Req for #%d msix vectors failed\n", num_vec);
-> > +             return 1;
->
-> Please propagate real error codes, or make this function void as the
-> caller never actually checks the return value.
->
-> > +     }
-> > +     sprintf(bgx->irq_name, "BGX%d", bgx->bgx_id);
-> > +     ret = request_irq(pci_irq_vector(pdev, GMPX_GMI_TX_INT),
->
-> There is a alloc_irq and request_irq call added in this patch but there
-> is never any freeing. Are you sure this is fine? Devices can be
-> reprobed (unbound and bound to drivers via sysfs).
+> And that was the first thing I tried when doing v2, before moving away
+> from it. This is not for a console printf statement, but is rather for
+> the regmap debugfs name. Using a %pa adds the 0x and leading zeros in
+> the debugfs name, when compared to the name before this patch. The
+> typecast retains the current format, and replaces the unit-address
+> without the leading 0s either. Introducing a local-variable to avoid the
+> typecast is overkill.
 
-I agree there needs to be accompanying free calls. I'm referencing
-drivers/net/ethernet/cavium/thunder/nic_main.c and see instances of
-both pci_free_irq_vectors() and free_irq(). My initial thought was
-that I should use pci_free_irq_vectors() in the error check
-conditional of the above request irq and also in the bgx_remove()
-function. Would that be appropriate in this case?
+Thanks for the clarification.
 
-I'd also plan on using a conditional like this for the free calls:
-
-if (bgx->irq_name)
-    pci_free_irq_vectors(pdev);
-
-I'm new to kernel development so suggestions are welcome.
-
->
-> > +             bgx_intr_handler, 0, bgx->irq_name, bgx);
->
-> Please align the continuation line with the opening bracket (checkpatch
-> --strict should help catch this).
->
-> > +     if (ret)
-> > +             return 1;
-> > +
-> > +     return 0;
-> > +}
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
