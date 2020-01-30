@@ -2,57 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5642414DB5B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:12:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1224C14DB96
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:26:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1gPRgfiAaAgpOfWOSjM5e+hVcCEzuk+6TialVy3teg4=; b=J7ylLMuQARTsxf
-	Jsf2KYBRET7gGjBivQpUQ74wQ7LuUN8oR4itR5/XGfOSRveslVLMbmrNA6jw3QRqneqRYIc+1RHhp
-	fYbI1HWhXLEuzUl6Iqwrz6upui8lyPljhnC5qNMUOBAwMiCnh2Nu5k4y4iM2gtpS5fBnnD693I1Ek
-	aJIxhe5r5Vm1RwmkrtaKO32mUT95rXKmhaevVIsGcVH11E2FIjfxJPmUFrmmo1xtnFhwVhayDM7rZ
-	Su76+xL0wfD7DafxP/epJi5RQpuWfXGw1uRsunnjl2d4qIWLSN+OlZW1pLmtxR1F6Ypav9xk1fJ2G
-	CFvkWwUZ/95ElqdURYVQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ec/gR2vWEm4Mm5y9BxuDS11ezJLh3if2Q7rHAcpvy/g=; b=BB/bhhOz+qnmUc
+	uncNLQWkXRrDvKPm/33PUdPNBcBsFzYUI+dEYpCAzSXEaQzp01VJNjhdwjU1rYeyI5soXd04ngm8k
+	nthJCrRzomPASWhRb2pdpnrobSYK1bUkdkBqF/iFj4ulis++7Ot4eUokJUFB+607Bwr7ks6tvtuaC
+	X4bU1uEKy6irJxqNROMZqHNZTUJfHZKZc/iM6qk13MzhnWwoIjBv5Fk/Y6u9kWnGqZoU5O8e23mb6
+	IDNyEC+wZ+R5pTSpQ88DxQXYDaCGAl+KX39/Q2pVmFdOjxap9lGX4irGQrYEW+v2MRt5tDW6ZP7Sw
+	o64V3WbuDxFr9z4hgMYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix9cL-0007Se-62; Thu, 30 Jan 2020 13:12:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix9cC-0007Rs-DC; Thu, 30 Jan 2020 13:12:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 087D6328;
- Thu, 30 Jan 2020 05:12:11 -0800 (PST)
-Received: from [192.168.0.129] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AAD5D3F68E;
- Thu, 30 Jan 2020 05:11:57 -0800 (PST)
-Subject: Re: [PATCH V12] mm/debug: Add tests validating architecture page
- table helpers
-To: Gerald Schaefer <gerald.schaefer@de.ibm.com>
-References: <1580174873-18117-1-git-send-email-anshuman.khandual@arm.com>
- <20200129232028.5a27e656@thinkpad>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <5baed7e2-fc83-6223-8bb4-dcd771f9a4ea@arm.com>
-Date: Thu, 30 Jan 2020 18:41:49 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1ix9pz-0004BO-Vw; Thu, 30 Jan 2020 13:26:28 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ix9pk-00049U-EI
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:26:13 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2754A206D3;
+ Thu, 30 Jan 2020 13:26:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1580390769;
+ bh=wwlEwadKKbbQ4/WckEF80j+eU2hpJMPZGA/aKsa3POQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=jSqZF95ckvt9gdNJuT243V8zugVLpABPUMBdW4NqpSyGGVpFU/aHtSZGYVcNPdvE8
+ w5kmbUEAyxiu94L5y3jA6U7tsKcKDNnG96HWp1K4wJCTn5rvEoKOiUfEIrbyAymjIH
+ vNznXx3SiApMGAXzuCuPydw82vsVIcd36oCzEO+Q=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why.lan) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1ix9pf-002BmW-5a; Thu, 30 Jan 2020 13:26:07 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Paolo Bonzini <pbonzini@redhat.com>
+Subject: [GIT PULL 00/23] KVM/arm updates for 5.6
+Date: Thu, 30 Jan 2020 13:25:35 +0000
+Message-Id: <20200130132558.10201-1-maz@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20200129232028.5a27e656@thinkpad>
-Content-Language: en-US
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: pbonzini@redhat.com, alexandru.elisei@arm.com,
+ drjones@redhat.com, andrew.murray@arm.com, beata.michalska@linaro.org,
+ christoffer.dall@arm.com, eric.auger@redhat.com, gshan@redhat.com,
+ wanghaibin.wang@huawei.com, james.morse@arm.com, broonie@kernel.org,
+ mark.rutland@arm.com, rmk+kernel@armlinux.org.uk,
+ shannon.zhao@linux.alibaba.com, steven.price@arm.com, will@kernel.org,
+ yuehaibing@huawei.com, yuzenghui@huawei.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_051212_533081_5AEF02C5 
-X-CRM114-Status: GOOD (  20.11  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200130_052612_530440_4CAD46AE 
+X-CRM114-Status: GOOD (  15.17  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,147 +92,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Jason Gunthorpe <jgg@ziepe.ca>, linux-arm-kernel@lists.infradead.org,
- linux-snps-arc@lists.infradead.org, Ingo Molnar <mingo@kernel.org>,
- Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: Mark Rutland <mark.rutland@arm.com>, Gavin Shan <gshan@redhat.com>,
+ Beata Michalska <beata.michalska@linaro.org>, kvm@vger.kernel.org,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ YueHaibing <yuehaibing@huawei.com>, Steven Price <steven.price@arm.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, Haibin Wang <wanghaibin.wang@huawei.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Andrew Jones <drjones@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Shannon Zhao <shannon.zhao@linux.alibaba.com>,
+ Eric Auger <eric.auger@redhat.com>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Mark Brown <broonie@kernel.org>, Alexandru Elisei <alexandru.elisei@arm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
+ Andrew Murray <andrew.murray@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Paolo,
 
+Please find below the pull request for KVM/arm for Linux 5.6.
 
-On 01/30/2020 03:50 AM, Gerald Schaefer wrote:
-> On Tue, 28 Jan 2020 06:57:53 +0530
-> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
-> 
->> This adds tests which will validate architecture page table helpers and
->> other accessors in their compliance with expected generic MM semantics.
->> This will help various architectures in validating changes to existing
->> page table helpers or addition of new ones.
->>
->> This test covers basic page table entry transformations including but not
->> limited to old, young, dirty, clean, write, write protect etc at various
->> level along with populating intermediate entries with next page table page
->> and validating them.
->>
->> Test page table pages are allocated from system memory with required size
->> and alignments. The mapped pfns at page table levels are derived from a
->> real pfn representing a valid kernel text symbol. This test gets called
->> right after page_alloc_init_late().
->>
->> This gets build and run when CONFIG_DEBUG_VM_PGTABLE is selected along with
->> CONFIG_VM_DEBUG. Architectures willing to subscribe this test also need to
->> select CONFIG_ARCH_HAS_DEBUG_VM_PGTABLE which for now is limited to x86 and
->> arm64. Going forward, other architectures too can enable this after fixing
->> build or runtime problems (if any) with their page table helpers.
->>
->> Folks interested in making sure that a given platform's page table helpers
->> conform to expected generic MM semantics should enable the above config
->> which will just trigger this test during boot. Any non conformity here will
->> be reported as an warning which would need to be fixed. This test will help
->> catch any changes to the agreed upon semantics expected from generic MM and
->> enable platforms to accommodate it thereafter.
->>
-> 
-> [...]
-> 
->>
->> Tested-by: Christophe Leroy <christophe.leroy@c-s.fr>		#PPC32
-> 
-> Tested-by: Gerald Schaefer <gerald.schaefer@de.ibm.com> # s390
+No new feature this time around, but a large spectrum of interesting
+fixes. I'm certainly pleased that people are focussing on these corner
+cases, as some of them are pretty hard to debug. So kudos to them!
 
-Thanks for testing.
+Please pull,
 
-> 
-> Thanks again for this effort, and for keeping up the spirit against
-> all odds and even after 12 iterations :-)
-> 
->>
->> diff --git a/Documentation/features/debug/debug-vm-pgtable/arch-support.txt b/Documentation/features/debug/debug-vm-pgtable/arch-support.txt
->> new file mode 100644
->> index 000000000000..f3f8111edbe3
->> --- /dev/null
->> +++ b/Documentation/features/debug/debug-vm-pgtable/arch-support.txt
->> @@ -0,0 +1,35 @@
->> +#
->> +# Feature name:          debug-vm-pgtable
->> +#         Kconfig:       ARCH_HAS_DEBUG_VM_PGTABLE
->> +#         description:   arch supports pgtable tests for semantics compliance
->> +#
->> +    -----------------------
->> +    |         arch |status|
->> +    -----------------------
->> +    |       alpha: | TODO |
->> +    |         arc: |  ok  |
->> +    |         arm: | TODO |
->> +    |       arm64: |  ok  |
->> +    |         c6x: | TODO |
->> +    |        csky: | TODO |
->> +    |       h8300: | TODO |
->> +    |     hexagon: | TODO |
->> +    |        ia64: | TODO |
->> +    |        m68k: | TODO |
->> +    |  microblaze: | TODO |
->> +    |        mips: | TODO |
->> +    |       nds32: | TODO |
->> +    |       nios2: | TODO |
->> +    |    openrisc: | TODO |
->> +    |      parisc: | TODO |
->> +    |  powerpc/32: |  ok  |
->> +    |  powerpc/64: | TODO |
->> +    |       riscv: | TODO |
->> +    |        s390: | TODO |
-> 
-> s390 is ok now, with my patches included in v5.5-rc1. So you can now add
-> 
-> --- a/Documentation/features/debug/debug-vm-pgtable/arch-support.txt
-> +++ b/Documentation/features/debug/debug-vm-pgtable/arch-support.txt
-> @@ -25,7 +25,7 @@
->      |  powerpc/32: |  ok  |
->      |  powerpc/64: | TODO |
->      |       riscv: | TODO |
-> -    |        s390: | TODO |
-> +    |        s390: |  ok  |
->      |          sh: | TODO |
->      |       sparc: | TODO |
->      |          um: | TODO |
-> --- a/arch/s390/Kconfig
-> +++ b/arch/s390/Kconfig
-> @@ -59,6 +59,7 @@ config KASAN_SHADOW_OFFSET
->  config S390
->  	def_bool y
->  	select ARCH_BINFMT_ELF_STATE
-> +	select ARCH_HAS_DEBUG_VM_PGTABLE
->  	select ARCH_HAS_DEVMEM_IS_ALLOWED
->  	select ARCH_HAS_ELF_RANDOMIZE
->  	select ARCH_HAS_FORTIFY_SOURCE
+	M.
 
-Sure, will add this up.
+The following changes since commit fd6988496e79a6a4bdb514a4655d2920209eb85d:
+
+  Linux 5.5-rc4 (2019-12-29 15:29:16 -0800)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/kvmarm/kvmarm.git tags/kvmarm-5.6
+
+for you to fetch changes up to 4a267aa707953a9a73d1f5dc7f894dd9024a92be:
+
+  KVM: arm64: Treat emulated TVAL TimerValue as a signed 32-bit integer (2020-01-28 13:09:31 +0000)
+
+----------------------------------------------------------------
+KVM/arm updates for Linux 5.6
+
+- Fix MMIO sign extension
+- Fix HYP VA tagging on tag space exhaustion
+- Fix PSTATE/CPSR handling when generating exception
+- Fix MMU notifier's advertizing of young pages
+- Fix poisoned page handling
+- Fix PMU SW event handling
+- Fix TVAL register access
+- Fix AArch32 external abort injection
+- Fix ITS unmapped collection handling
+- Various cleanups
+
+----------------------------------------------------------------
+Alexandru Elisei (1):
+      KVM: arm64: Treat emulated TVAL TimerValue as a signed 32-bit integer
+
+Andrew Jones (1):
+      arm64: KVM: Add UAPI notes for swapped registers
+
+Christoffer Dall (1):
+      KVM: arm64: Only sign-extend MMIO up to register width
+
+Eric Auger (5):
+      KVM: arm/arm64: vgic-its: Fix restoration of unmapped collections
+      KVM: arm64: pmu: Don't increment SW_INCR if PMCR.E is unset
+      KVM: arm64: pmu: Don't mark a counter as chained if the odd one is disabled
+      KVM: arm64: pmu: Fix chained SW_INCR counters
+      KVM: arm64: pmu: Only handle supported event counters
+
+Gavin Shan (1):
+      KVM: arm/arm64: Fix young bit from mmu notifier
+
+James Morse (3):
+      KVM: arm/arm64: Re-check VMA on detecting a poisoned page
+      KVM: arm: Fix DFSR setting for non-LPAE aarch32 guests
+      KVM: arm: Make inject_abt32() inject an external abort instead
+
+Marc Zyngier (1):
+      KVM: arm/arm64: Cleanup MMIO handling
+
+Mark Brown (1):
+      arm64: KVM: Annotate guest entry/exit as a single function
+
+Mark Rutland (3):
+      KVM: arm64: Correct PSTATE on exception entry
+      KVM: arm/arm64: Correct CPSR on exception entry
+      KVM: arm/arm64: Correct AArch32 SPSR on exception entry
+
+Russell King (1):
+      arm64: kvm: Fix IDMAP overlap with HYP VA
+
+Shannon Zhao (1):
+      KVM: ARM: Call hyp_cpu_pm_exit at the right place
+
+YueHaibing (1):
+      KVM: arm: Remove duplicate include
+
+Zenghui Yu (3):
+      KVM: arm/arm64: vgic: Handle GICR_PENDBASER.PTZ filed as RAZ
+      KVM: arm/arm64: vgic-its: Properly check the unmapped coll in DISCARD handler
+      KVM: arm/arm64: vgic: Drop the kvm_vgic_register_mmio_region()
+
+ Documentation/virt/kvm/api.txt       |   9 +++
+ arch/arm/include/asm/kvm_emulate.h   |  27 +++++++-
+ arch/arm/include/asm/kvm_host.h      |  12 ++--
+ arch/arm/include/asm/kvm_hyp.h       |   1 +
+ arch/arm/include/asm/kvm_mmio.h      |  26 -------
+ arch/arm64/include/asm/kvm_emulate.h |  40 ++++++++++-
+ arch/arm64/include/asm/kvm_host.h    |  12 ++--
+ arch/arm64/include/asm/kvm_mmio.h    |  29 --------
+ arch/arm64/include/asm/ptrace.h      |   1 +
+ arch/arm64/include/uapi/asm/kvm.h    |  12 +++-
+ arch/arm64/include/uapi/asm/ptrace.h |   1 +
+ arch/arm64/kvm/hyp/entry.S           |   7 +-
+ arch/arm64/kvm/inject_fault.c        |  70 +++++++++++++++++--
+ arch/arm64/kvm/va_layout.c           |  56 +++++++--------
+ virt/kvm/arm/aarch32.c               | 131 ++++++++++++++++++++++++++++++-----
+ virt/kvm/arm/arch_timer.c            |   3 +-
+ virt/kvm/arm/arm.c                   |   4 +-
+ virt/kvm/arm/mmio.c                  |  68 +++++++-----------
+ virt/kvm/arm/mmu.c                   |  24 +++----
+ virt/kvm/arm/pmu.c                   | 114 ++++++++++++++++++------------
+ virt/kvm/arm/vgic/vgic-its.c         |   6 +-
+ virt/kvm/arm/vgic/vgic-mmio-v3.c     |   5 +-
+ virt/kvm/arm/vgic/vgic-mmio.h        |   5 --
+ 23 files changed, 421 insertions(+), 242 deletions(-)
+ delete mode 100644 arch/arm/include/asm/kvm_mmio.h
+ delete mode 100644 arch/arm64/include/asm/kvm_mmio.h
 
 _______________________________________________
 linux-arm-kernel mailing list
