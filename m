@@ -2,57 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1875914D721
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 08:54:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 290C414D736
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 09:03:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gag2ATcCoArrS5/L+0nWVNmcW+IQyyA/rSmVdHEgBRs=; b=ZuRqW75Q3+I5n8
-	MMBlNylw5L0zZoJntNC+TXw0xDAUzORMFOSauEhFrjT+75l7JO4yyof11CMoliNNkB0ECqS1mT33R
-	J7N99ypEBFQnP2oS1OqZkgZgxw3GsRQUgnKCJICmI4bjL+LblCHg+pkpm2O5N5mLoLhe65OcVPtWh
-	SSNTUd1OQzZ/RRUE/5Z4VFQLcEHoZfs/yJwKh158DZhmxO6gYopTpdZr1U3j+hJ0sNLysToTfaxSf
-	pa3Dq7MjjcBnD6t4f4+MtHKOQAYQ82FklHijiDHx0u+f+OOTurXDHuRruXYmM3YvH41lXZjyCmk+0
-	dKIkUn76famHqmKO4Cnw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=V2WcLSfHeWTGB/CpPEX4dKcrMJya1T9bCCD+lbhEjUw=; b=l3xfNmTQ1ABVCBa3GOhUjzqCC
+	gN2CZDx6+kqAtVco/z7yL8XiCdXgfY8BUr26TmFdfkg3g9o2P889/TcyXI+MLXX1IPwnh9R/bwnQL
+	8mZ/7Z99v4IU9fj66UjqS4PQC1PRevMDYudBXbM2Im59AsDMQ7WjM6rV58II1m5k+q89ej7zLDt3C
+	8z6RjLp0PUD2N7KR+sjHc4lX8ZeOwQZSAj9BeYqQNIYHIa46OT0QTpPwwq+FErrX4HAvUFCoL3TTS
+	FOnCMl1F3By3nNRucFmiqanptmG9y9+89PreMxFbw0vHBAzp3j05mIsXgPgJCO/V6+uAtwnpOQeaS
+	tQCIGrKQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix4e4-0001bc-VE; Thu, 30 Jan 2020 07:53:48 +0000
-Received: from verein.lst.de ([213.95.11.211])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix4dv-0001ax-AO
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 07:53:41 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 57B3C68B05; Thu, 30 Jan 2020 08:53:32 +0100 (CET)
-Date: Thu, 30 Jan 2020 08:53:32 +0100
-From: Christoph Hellwig <hch@lst.de>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PoC] arm: dma-mapping: direct: Apply dma_pfn_offset only when
- it is valid
-Message-ID: <20200130075332.GA30735@lst.de>
-References: <8eb68140-97b2-62ce-3e06-3761984aa5b1@ti.com>
- <20200114164332.3164-1-peter.ujfalusi@ti.com>
- <f8121747-8840-e279-8c7c-75a9d4becce8@arm.com>
- <28ee3395-baed-8d59-8546-ab7765829cc8@ti.com>
- <4f0e307f-29a9-44cd-eeaa-3b999e03871c@arm.com>
- <75843c71-1718-8d61-5e3d-edba6e1b10bd@ti.com>
+	id 1ix4nK-0005Hp-1a; Thu, 30 Jan 2020 08:03:22 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ix4nB-0005HM-5l
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 08:03:14 +0000
+Received: from localhost (p54B33261.dip0.t-ipconnect.de [84.179.50.97])
+ by pokefinder.org (Postfix) with ESMTPSA id 6EABE2C0697;
+ Thu, 30 Jan 2020 09:03:11 +0100 (CET)
+Date: Thu, 30 Jan 2020 09:03:07 +0100
+From: Wolfram Sang <wsa@the-dreams.de>
+To: alex.williams@ettus.com
+Subject: Re: [PATCH] i2c: cadence: Handle transfer_size rollover
+Message-ID: <20200130080307.GA2208@ninjato>
+References: <20190131213957.11568-1-alex.williams@ettus.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <75843c71-1718-8d61-5e3d-edba6e1b10bd@ti.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <20190131213957.11568-1-alex.williams@ettus.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200129_235339_508876_DB040E62 
-X-CRM114-Status: GOOD (  16.52  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200130_000313_364251_4CBEEA21 
+X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,48 +59,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, vigneshr@ti.com, konrad.wilk@oracle.com,
- linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
- hch@lst.de, linux-arm-kernel@lists.infradead.org, rogerq@ti.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-kernel@vger.kernel.org, Alex Williams <alex.williams@ni.com>,
+ linux-arm-kernel@lists.infradead.org, mical.simek@xilinx.com,
+ linux-i2c@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============7830630967765592191=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[skipping the DT bits, as I'm everything but an expert on that..]
 
-On Mon, Jan 27, 2020 at 04:00:30PM +0200, Peter Ujfalusi wrote:
-> I agree on the phys_to_dma(). It should fail for addresses which does
-> not fall into any of the ranges.
-> It is just a that we in Linux don't have the concept atm for ranges, we
-> have only _one_ range which applies to every memory address.
+--===============7830630967765592191==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="J/dobhs11T7y2rNN"
+Content-Disposition: inline
 
-what does atm here mean?
 
-We have needed multi-range support for quite a while, as common broadcom
-SOCs do need it.  So patches for that are welcome at least from the
-DMA layer perspective (kinda similar to your pseudo code earlier)
+--J/dobhs11T7y2rNN
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> > Nobody's disputing that the current dma_direct_supported()
-> > implementation is broken for the case where ZONE_DMA itself is offset
-> > from PA 0; the more pressing question is why Christoph's diff, which was
-> > trying to take that into account, still didn't work.
-> 
-> I understand that this is a bit more complex than I interpret it, but
-> the k2g is broken and currently the simplest way to make it work is to
-> use the arm dma_ops in case the pfn_offset is not 0.
-> It will be easy to test dma-direct changes trying to address the issue
-> in hand, but will allow k2g to be usable at the same time.
+On Thu, Jan 31, 2019 at 01:39:57PM -0800, alex.williams@ettus.com wrote:
+> From: Alex Williams <alex.williams@ni.com>
+>=20
+> Under certain conditions, Cadence's I2C controller's transfer_size
+> register will roll over and generate invalid read transactions. Before
+> this change, the ISR relied solely on the RXDV bit to determine when to
+> write more data to the user's buffer. The invalid read data would cause
+> overruns, smashing stacks and worse.
+>=20
+> This change stops the buffer writes to the requested boundary and
+> reports the error. The controller will be reset so normal transactions
+> may resume.
+>=20
+> Signed-off-by: Alex Williams <alex.williams@ni.com>
 
-Well, using the legacy arm dma ops means we can't use swiotlb if there
-is an offset, which is also wrong for lots of common cases, including
-the Rpi 4.  I'm still curious why my patch didn't work, as I thought
-it should.  We'll need to find the minimum change to make it work
-for now without switching ops, even if it isn't the correct one, and
-then work from there.
+Applied to for-next with another Rev-by from Michal given in another
+thread, thanks!
+
+
+--J/dobhs11T7y2rNN
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl4yjbcACgkQFA3kzBSg
+Kbb8RxAAiCoAtge6yROLbqYc4Ruq1gKWnE76UU2AbpwSK1GEFdyKat70l9hN0Edb
+7ISc+b+z9X8gYfm8Sx8CjKoqC+B4ldxyZM+hNCOzkMfzbIGUNTllajhZIAb5MEhI
+E405O36pd94ogiFGcTALsgtLgfaC2HDzVTqm5xOyJqJRte+W0palPx4UL6+33PbR
+QYmMkPhA+6AUlnCXsrtDjM13eg3u6gRn/IG/ZfztOPufyzsE3sHaMgyqLhE1puI/
+5N3kjDQQAfespuTspjLm8S7J4cqSxEYpieog6II6NGCRFQTsfiYv6iHCzyywJ5Xk
+t5CgEaqnqZBzr8WFWmpgngz33RrYBTEOPbM5WScvVKaMfm3bKAP20Q23yEaDwZAC
+SfI0SQJAyJ9EZi/z2NuDRi8QgED5hoqchWN0MT9VYhGsSEfZA4q4LiECkHL8Zg85
+VxZMCZcfQHzER3epg0P3imvP5slj6L4LhSzg2mu9JdHUSqcsjIA16E+Di9kZ/eCF
+rJkh8Sb4tK1ClVlnTW4/YtmfC7Ru0XrN5ZFeugZxUurByG5Q3NtezkJHAzrVJGFz
+L3AbX0Fl7lA3/nX/astrsUgG4sXoOG7bWW/7FiA0jWPrX+WglbEbXZQ64I6MXN5E
+TOjyGoxiXCU2zyrlqeiHwf7XDRmzMpxAOLYZjmKgibcX1OcjLBw=
+=WTaX
+-----END PGP SIGNATURE-----
+
+--J/dobhs11T7y2rNN--
+
+
+--===============7830630967765592191==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7830630967765592191==--
+
