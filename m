@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A70E814DF67
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 17:46:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DDA614DFA6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 18:10:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DNvUTDEFFihWTn1mqY8yikHbfgnhw4o1uoAqXdfQMS0=; b=amEa0PR8WquR92
-	XS4mnNtVcc4DVUg9xjKrxs7M+y0bRQaXF5RwS5Anr1tJ/KOo74ARXKokbbvrYQ9fnUFGL18CBJ9lB
-	nUdbHhVSVIjY1av04rHzTL/zi1s8GXzGSbYsFb8RgQr8VBgqLc4yS/npgRZ5ZEEyOYG87hA84/ucJ
-	j8e8fxTxEVT7kSdQM2+dBqCxBSE8EYhN7kn6j7q4DtzOvdNgLFuJADiLlCzs7J799wKwuLBhxQ5yW
-	1suzaB2a7WSp20UW6YK2li0DHzErbXKCvPh/DcSbLjq9b+SlpWB5TUldxZSHCVjSMGVO6M5MVMzc0
-	fVRD+APf3qJBJvytv5Fg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bw1X8VHgUsZl1Jbh58ceLPD4NjfbAsoNblIVuNQ/wNE=; b=uJKbNmamhwnhxL
+	sMc03jrxQXBq8cWUEoCtHLJg5/CC09YZOHAx2oDxzjWksxM/EV50mzv1ZOnahcMlYqYjz33LN+xc/
+	4SwJ1ixHC7ZJE3Q3V7PH3fwb9wymzDtcjDytg8hkP8u/OP6djFgTHVJvf6bhunypww3C1uPSc55Q2
+	FwOrhjAP62iBM9HRSL5CZL9zUU/gHlJ8zZhG1Yq2HPXJnIORC0TY2rQ4Ee+Vng5st4424hKWT+Gic
+	olVV9kQknKxLXKGTFRGgIfijGaxg0wxY95IFKDT7CazZrdd5ujXAiRs0vi0ireZwEJ3R+01b3F1f7
+	iZq/ZePSIkgeMeymzF5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixCx3-0001yV-Nw; Thu, 30 Jan 2020 16:45:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixCwt-0001wt-QH
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 16:45:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3159131B;
- Thu, 30 Jan 2020 08:45:44 -0800 (PST)
-Received: from localhost (unknown [10.1.198.81])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C72EC3F67D;
- Thu, 30 Jan 2020 08:45:43 -0800 (PST)
-Date: Thu, 30 Jan 2020 16:45:42 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH v2 4/6] Documentation: arm64: document support for the
- AMU extension
-Message-ID: <20200130164542.GC5208@arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-5-ionela.voinescu@arm.com>
- <c9f80a08-7f0d-59e9-eb90-466b1314e1f1@arm.com>
+	id 1ixDKL-000267-DW; Thu, 30 Jan 2020 17:10:01 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixDKD-00024x-Hz
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 17:09:55 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00UH8sTu120578;
+ Thu, 30 Jan 2020 11:08:54 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1580404134;
+ bh=zCnXxzU/EUyxz2StGAYBKDJKmkVjS0wWM+yswum6tEc=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=G39DJeW9wpm9C/7pNqXSda95uaioGn1Ihy5r/RUiX0c+l58jt9GtlfYrZ95LFcKMw
+ 9+h3vai439QcZ6jcMzv2NnByN4gaI/JerdlZMNDzipRa5I0EiNxXxm9DEA3t9hs2hP
+ A/ylH5/pLGwg2/PYQYczua4RutEdnmo+sOk08g3A=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00UH8sdK126653
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 30 Jan 2020 11:08:54 -0600
+Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 30
+ Jan 2020 11:08:54 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 30 Jan 2020 11:08:54 -0600
+Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00UH8rQO026105;
+ Thu, 30 Jan 2020 11:08:53 -0600
+Subject: Re: [PATCH v2] mfd: syscon: Use a unique name with regmap_config
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+References: <20200127231208.1443-1-s-anna@ti.com>
+ <CAHp75VfaOfBZYjQa960keORW=VjOn2PdwoYpJMG7SsN83daSJg@mail.gmail.com>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <99a04c52-1ff6-1611-5cf6-2c71b810ba43@ti.com>
+Date: Thu, 30 Jan 2020 11:08:53 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c9f80a08-7f0d-59e9-eb90-466b1314e1f1@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CAHp75VfaOfBZYjQa960keORW=VjOn2PdwoYpJMG7SsN83daSJg@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_084547_942485_73FA01EC 
-X-CRM114-Status: GOOD (  37.62  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200130_090953_696712_3EDCD96D 
+X-CRM114-Status: GOOD (  15.81  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,201 +92,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, linux-doc@vger.kernel.org,
- peterz@infradead.org, catalin.marinas@arm.com,
- Jonathan Corbet <corbet@lwn.net>, linux-kernel@vger.kernel.org,
- mingo@redhat.com, ggherdovich@suse.cz, sudeep.holla@arm.com, will@kernel.org,
- dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: David Lechner <david@lechnology.com>, Arnd Bergmann <arnd@arndb.de>,
+ Tony Lindgren <tony@atomide.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux OMAP Mailing List <linux-omap@vger.kernel.org>,
+ Lee Jones <lee.jones@linaro.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
+Hi Andy,
 
-On Thursday 30 Jan 2020 at 15:04:27 (+0000), Suzuki Kuruppassery Poulose wrote:
-> Hi Ionela,
+On 1/30/20 9:34 AM, Andy Shevchenko wrote:
+> On Tue, Jan 28, 2020 at 1:14 AM Suman Anna <s-anna@ti.com> wrote:
+>>
+>> The DT node full name is currently being used in regmap_config
+>> which in turn is used to create the regmap debugfs directories.
+>> This name however is not guaranteed to be unique and the regmap
+>> debugfs registration can fail in the cases where the syscon nodes
+>> have the same unit-address but are present in different DT node
+>> hierarchies. Replace this logic using the syscon reg resource
+>> address instead (inspired from logic used while creating platform
+>> devices) to ensure a unique name is given for each syscon.
 > 
-> On 18/12/2019 18:26, Ionela Voinescu wrote:
-> > The activity monitors extension is an optional extension introduced
-> > by the ARMv8.4 CPU architecture.
-> > 
-> > Add initial documentation for the AMUv1 extension:
-> >   - arm64/amu.txt: AMUv1 documentation
-> >   - arm64/booting.txt: system registers initialisation
-> >   - arm64/cpu-feature-registers.txt: visibility to userspace
+>> -       syscon_config.name = of_node_full_name(np);
+>> +       syscon_config.name = kasprintf(GFP_KERNEL, "%pOFn@%llx", np,
+>> +                                      (u64)res.start);
 > 
-> We have stopped adding "invisible" fields to the list. So, you
-> can drop the changes to cpu-feature-registers.txt.
-> 
-> > 
-> > Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Jonathan Corbet <corbet@lwn.net>
-> > ---
-> >   Documentation/arm64/amu.rst                   | 107 ++++++++++++++++++
-> >   Documentation/arm64/booting.rst               |  14 +++
-> >   Documentation/arm64/cpu-feature-registers.rst |   2 +
-> >   Documentation/arm64/index.rst                 |   1 +
-> >   4 files changed, 124 insertions(+)
-> >   create mode 100644 Documentation/arm64/amu.rst
-> > 
-> > diff --git a/Documentation/arm64/amu.rst b/Documentation/arm64/amu.rst
-> > new file mode 100644
-> > index 000000000000..62a6635522e1
-> > --- /dev/null
-> > +++ b/Documentation/arm64/amu.rst
-> > @@ -0,0 +1,107 @@
-> > +=======================================================
-> > +Activity Monitors Unit (AMU) extension in AArch64 Linux
-> > +=======================================================
-> > +
-> > +Author: Ionela Voinescu <ionela.voinescu@arm.com>
-> > +
-> > +Date: 2019-09-10
-> > +
-> > +This document briefly describes the provision of Activity Monitors Unit
-> > +support in AArch64 Linux.
-> > +
-> > +
-> > +Architecture overview
-> > +---------------------
-> > +
-> > +The activity monitors extension is an optional extension introduced by the
-> > +ARMv8.4 CPU architecture.
-> > +
-> > +The activity monitors unit, implemented in each CPU, provides performance
-> > +counters intended for system management use. The AMU extension provides a
-> > +system register interface to the counter registers and also supports an
-> > +optional external memory-mapped interface.
-> > +
-> > +Version 1 of the Activity Monitors architecture implements a counter group
-> > +of four fixed and architecturally defined 64-bit event counters.
-> > +  - CPU cycle counter: increments at the frequency of the CPU.
-> > +  - Constant counter: increments at the fixed frequency of the system
-> > +    clock.
-> > +  - Instructions retired: increments with every architecturally executed
-> > +    instruction.
-> > +  - Memory stall cycles: counts instruction dispatch stall cycles caused by
-> > +    misses in the last level cache within the clock domain.
-> > +
-> > +When in WFI or WFE these counters do not increment.
-> > +
-> > +The Activity Monitors architecture provides space for up to 16 architected
-> > +event counters. Future versions of the architecture may use this space to
-> > +implement additional architected event counters.
-> > +
-> > +Additionally, version 1 implements a counter group of up to 16 auxiliary
-> > +64-bit event counters.
-> > +
-> > +On cold reset all counters reset to 0.
-> > +
-> > +
-> > +Basic support
-> > +-------------
-> > +
-> > +The kernel can safely run a mix of CPUs with and without support for the
-> > +activity monitors extension.
-> 
-> 
->  Therefore, when CONFIG_ARM64_AMU_EXTN is
-> > +selected we unconditionally enable the capability to allow any late CPU
-> > +(secondary or hotplugged) to detect and use the feature.
-> > +
-> > +When the feature is detected on a CPU, a per-CPU variable (amu_feat) is
-> > +set, but this does not guarantee the correct functionality of the
-> > +counters, only the presence of the extension.
-> 
-> nit: I would rather omit the implementation details (esp variable names)
-> in the documentation. It may become a pain to keep this in sync with the
-> code changes. You could simply mention, "we keep track of the availability
-> of the feature" per CPU. If someone wants to figure out
-> how, they can always read the code.
-> 
-> > +
-> > +Firmware (code running at higher exception levels, e.g. arm-tf) support is
-> > +needed to:
-> > + - Enable access for lower exception levels (EL2 and EL1) to the AMU
-> > +   registers.
-> > + - Enable the counters. If not enabled these will read as 0.
-> > + - Save/restore the counters before/after the CPU is being put/brought up
-> > +   from the 'off' power state.
-> > +
-> > +When using kernels that have this configuration enabled but boot with
-> > +broken firmware the user may experience panics or lockups when accessing
-> > +the counter registers. Even if these symptoms are not observed, the
-> > +values returned by the register reads might not correctly reflect reality.
-> > +Most commonly, the counters will read as 0, indicating that they are not
-> > +enabled. If proper support is not provided in firmware it's best to disable
-> > +CONFIG_ARM64_AMU_EXTN.
-> 
-> For the sake of one kernel runs everywhere, do we need some other
-> mechanism to disable the AMU. e.g kernel parameter to disable amu
-> at runtime ?
->
+> Explicit castings in printf() usually tell us that something is not okay.
 
-The reason I've not added this is twofold:
- - Even if we add this, it should be in order to disable the use of the
-   counters for a certain purpose, in this case  frequency invariance.
-   On its own AMU provides the counters but it does not mandate their
-   use.
- - I could add something to disable the use of the core and cycle
-   counters for frequency invariance at runtime, but I doubt that
-   anyone would use it. Logically it makes sense to use the counters
-   order to have a more accurate view of the performance that the CPUs
-   are actually providing. Therefore, until anyone asks for this, I
-   thought it's better to keep it simple and not add extra switches,
-   until there is a use for them.
+Yes, I agree in general.
 
-Does it make sense?
+> Yes, for resource_size_t we have %pa.
 
-P.S. I'll make all the other changes you've suggested in v3. 
+And that was the first thing I tried when doing v2, before moving away
+from it. This is not for a console printf statement, but is rather for
+the regmap debugfs name. Using a %pa adds the 0x and leading zeros in
+the debugfs name, when compared to the name before this patch. The
+typecast retains the current format, and replaces the unit-address
+without the leading 0s either. Introducing a local-variable to avoid the
+typecast is overkill.
 
-Thank you,
-Ionela.
-
-
-
-> > diff --git a/Documentation/arm64/booting.rst b/Documentation/arm64/booting.rst
-> > index 5d78a6f5b0ae..a3f1a47b6f1c 100644
-> > --- a/Documentation/arm64/booting.rst
-> > +++ b/Documentation/arm64/booting.rst
-> > @@ -248,6 +248,20 @@ Before jumping into the kernel, the following conditions must be met:
-> >       - HCR_EL2.APK (bit 40) must be initialised to 0b1
-> >       - HCR_EL2.API (bit 41) must be initialised to 0b1
-> > +  For CPUs with Activity Monitors Unit v1 (AMUv1) extension present:
-> > +  - If EL3 is present:
-> > +    CPTR_EL3.TAM (bit 30) must be initialised to 0b0
-> > +    CPTR_EL2.TAM (bit 30) must be initialised to 0b0
-> > +    AMCNTENSET0_EL0 must be initialised to 0b1111
-> > +    AMCNTENSET1_EL0 must be initialised to a platform specific value
-> > +    having 0b1 set for the corresponding bit for each of the auxiliary
-> > +    counters present.
-> > +  - If the kernel is entered at EL1:
-> > +    AMCNTENSET0_EL0 must be initialised to 0b1111
-> > +    AMCNTENSET1_EL0 must be initialised to a platform specific value
-> > +    having 0b1 set for the corresponding bit for each of the auxiliary
-> > +    counters present.
-> > +
-> >   The requirements described above for CPU mode, caches, MMUs, architected
-> >   timers, coherency and system registers apply to all CPUs.  All CPUs must
-> >   enter the kernel in the same exception level.
-> > diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
-> > index b6e44884e3ad..4770ae54032b 100644
-> > --- a/Documentation/arm64/cpu-feature-registers.rst
-> > +++ b/Documentation/arm64/cpu-feature-registers.rst
-> > @@ -150,6 +150,8 @@ infrastructure:
-> >        +------------------------------+---------+---------+
-> >        | DIT                          | [51-48] |    y    |
-> >        +------------------------------+---------+---------+
-> > +     | AMU                          | [47-44] |    n    |
-> > +     +------------------------------+---------+---------+
 > 
-> As mentioned above, please drop it.
-> 
-> 
-> Suzuki
+> On top of that, I would rather see %pfwn to avoid modification for
+> other fwnode types.
+
+Did you mean %pfwP? That can probably be handled when syscon code is
+updated to use fwnode API.
+
+regards
+Suman
 
 _______________________________________________
 linux-arm-kernel mailing list
