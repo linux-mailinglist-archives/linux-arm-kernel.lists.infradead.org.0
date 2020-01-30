@@ -2,78 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B52414DBED
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:31:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B2E414DC05
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:33:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yHYc54pRg5/m0bwmcJfKBJ+Mn8dGsVcOaqggfcQpZrk=; b=bbN4GhwrYiH4iv
-	cESr1XuexhxOegxIS1fPbk2BrTQbd2s55re8/QC8gzOF3ucI4JALJoYZQfFeK2gb4hoNwfUdnLdqN
-	6PS5EXQiQHd9tjLYiaLbX+265KYNirb2nQYp8Tbt1WOWbx1+EWFyuj+WaHaVXPXNbWrNFmVzeoSSU
-	/0N2UPcGyhrWtOznQjTYOA9YPH4c1RUi48uv+GTuRs+wQRZ6AFhhfcADHa3mXbbLYRU1snIuqfyK8
-	FiFy+InzhvNNT8N+/pnMS5c2C5FUoWEUasILyxpqgaW0BARWeGl9tT565tO+DvwT9tX87MbOutTQT
-	9wHXoboYHwjJJIiHmfxw==;
+	List-Owner; bh=8asNTRV/lk1kvAAeDAz4gtgtkD/QLPSYynoDCsgrLXI=; b=kweESG8owJnQ83
+	Qr3C/MAd7Cicy+aYRcyspUB4xTQ53lGVUBW/7/ZWAKwhD+ee0QnhnjuKWfrDo5Pp8OlI9eRwdyVes
+	ZJ2S77l3lecixFBZCg17+AHUAIgshRX6fqbOFxUTDYQLEATsyoAco/EAsxnlJMwwoU6fBVDQTwvLi
+	BP2iflSRihj3RWeU6AZxRWX5LyLQoTll5Ap/PVNDDIvVlju2iHwF0Lte780p+kMAYwZHu1N2KNW/q
+	XmKYiSAOXFkp6URUcSieD/JqrFfcp33wUViu75ldaerFSZCFput3AHQlNPz1gtyX03BWAAlXjBmBH
+	t/yuPMW/LXX5G2bfWAzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix9uX-00007F-Tj; Thu, 30 Jan 2020 13:31:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1ix9x1-0003ez-0V; Thu, 30 Jan 2020 13:33:43 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix9sm-0007HB-1F
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:29:21 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 52977214D8;
- Thu, 30 Jan 2020 13:29:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580390959;
- bh=dh8dergRizxwfhKXTRtQc9cB5ErpuOCTez5+NklVjS8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Z+nIVy8Wl+yoeXRp7CAA4BKuc7kQqPHaPC+7dti3zJ3PBhMjCVP07saX/qvMMy4sL
- Z8GqJruaedRUhtDWRSGi715OylUKb+piEIZQhfVhjX4cL+fm09mWNtWPv820OFOYRS
- e9CwBVjz2HW1zkr8iRr3ZVduXJgUBecTJik/sjNI=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1ix9q7-002BmW-97; Thu, 30 Jan 2020 13:26:35 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 23/23] KVM: arm64: Treat emulated TVAL TimerValue as a signed
- 32-bit integer
-Date: Thu, 30 Jan 2020 13:25:58 +0000
-Message-Id: <20200130132558.10201-24-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200130132558.10201-1-maz@kernel.org>
-References: <20200130132558.10201-1-maz@kernel.org>
+ id 1ix9ti-00083W-PH
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:30:26 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 00UDNhRE005759; Thu, 30 Jan 2020 14:30:10 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=DDE7wRVrKC8L3nY1nmBlLG8DjibQ4CfnKv8w7/2QhPU=;
+ b=T2ffEgEjN/DMXOY2HgMx42+9Qeuasz4Zl5qAECuKJeXBe0JiI+Z5YfCa6AouqnQm5mcv
+ ZlHUuDE/xzlUlF/DiZhmpY1vNaS9E7RbPuNIFaJCYKkjeJtpXt/OvtaDohE362vHhGKJ
+ 40fribYB498l3vlZFqz/qoTfwcnfgFffuuOdUWnwm0DPOO+NPunxz41cKYRroq3qbiVD
+ 4x8DLE4Ji32iPI2wG7F6I319uTcRJD7Xqc+4oQWEoUA6hllvmW8T6IYged0JrXW72AAv
+ S9izNaMquA24kcdPLuuLXzgw8c9RRaoauvVBwpyKL/Yba1LdVLzi+8EkQGV5YqMA+4Oo Dg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xrbpb8sp2-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 30 Jan 2020 14:30:10 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 21FCE10002A;
+ Thu, 30 Jan 2020 14:30:05 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CA4BF2D5CFA;
+ Thu, 30 Jan 2020 14:30:05 +0100 (CET)
+Received: from SFHDAG5NODE3.st.com (10.75.127.15) by SFHDAG3NODE3.st.com
+ (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 30 Jan
+ 2020 14:30:05 +0100
+Received: from SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47]) by
+ SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47%20]) with mapi id
+ 15.00.1473.003; Thu, 30 Jan 2020 14:30:05 +0100
+From: Christophe ROULLIER <christophe.roullier@st.com>
+To: David Miller <davem@davemloft.net>
+Subject: Re: [PATCH 1/1] net: ethernet: stmmac: simplify phy modes management
+ for stm32
+Thread-Topic: [PATCH 1/1] net: ethernet: stmmac: simplify phy modes management
+ for stm32
+Thread-Index: AQHV1pIW1y791lwjMUusjpFyRZvewKgDJNKA
+Date: Thu, 30 Jan 2020 13:30:05 +0000
+Message-ID: <05adc7cc-19cb-7e6e-f6df-07ec8f5e841f@st.com>
+References: <20200128083942.17823-1-christophe.roullier@st.com>
+ <20200129.115131.1101786807458791369.davem@davemloft.net>
+In-Reply-To: <20200129.115131.1101786807458791369.davem@davemloft.net>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.51]
+Content-ID: <C6EE503FF153424FB0ED17B9583F7CA4@st.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: pbonzini@redhat.com, alexandru.elisei@arm.com,
- drjones@redhat.com, andrew.murray@arm.com, beata.michalska@linaro.org,
- christoffer.dall@arm.com, eric.auger@redhat.com, gshan@redhat.com,
- wanghaibin.wang@huawei.com, james.morse@arm.com, broonie@kernel.org,
- mark.rutland@arm.com, rmk+kernel@armlinux.org.uk,
- shannon.zhao@linux.alibaba.com, steven.price@arm.com, will@kernel.org,
- yuehaibing@huawei.com, yuzenghui@huawei.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-01-30_03:2020-01-28,
+ 2020-01-30 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_052920_158275_E94536FB 
-X-CRM114-Status: GOOD (  13.75  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200130_053019_200765_8856051F 
+X-CRM114-Status: GOOD (  15.05  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,7 +98,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,78 +109,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Gavin Shan <gshan@redhat.com>,
- Beata Michalska <beata.michalska@linaro.org>, kvm@vger.kernel.org,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- YueHaibing <yuehaibing@huawei.com>, Steven Price <steven.price@arm.com>,
- Zenghui Yu <yuzenghui@huawei.com>, Haibin Wang <wanghaibin.wang@huawei.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Andrew Jones <drjones@redhat.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Shannon Zhao <shannon.zhao@linux.alibaba.com>,
- Eric Auger <eric.auger@redhat.com>, Russell King <rmk+kernel@armlinux.org.uk>,
- Mark Brown <broonie@kernel.org>, Alexandru Elisei <alexandru.elisei@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Christoffer Dall <christoffer.dall@arm.com>, James Morse <james.morse@arm.com>,
- Andrew Murray <andrew.murray@arm.com>
+Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "joabreu@synopsys.com" <joabreu@synopsys.com>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ Peppe CAVALLARO <peppe.cavallaro@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-
-According to the ARM ARM, registers CNT{P,V}_TVAL_EL0 have bits [63:32]
-RES0 [1]. When reading the register, the value is truncated to the least
-significant 32 bits [2], and on writes, TimerValue is treated as a signed
-32-bit integer [1, 2].
-
-When the guest behaves correctly and writes 32-bit values, treating TVAL
-as an unsigned 64 bit register works as expected. However, things start
-to break down when the guest writes larger values, because
-(u64)0x1_ffff_ffff = 8589934591. but (s32)0x1_ffff_ffff = -1, and the
-former will cause the timer interrupt to be asserted in the future, but
-the latter will cause it to be asserted now.  Let's treat TVAL as a
-signed 32-bit register on writes, to match the behaviour described in
-the architecture, and the behaviour experimentally exhibited by the
-virtual timer on a non-vhe host.
-
-[1] Arm DDI 0487E.a, section D13.8.18
-[2] Arm DDI 0487E.a, section D11.2.4
-
-Signed-off-by: Alexandru Elisei <alexandru.elisei@arm.com>
-[maz: replaced the read-side mask with lower_32_bits]
-Signed-off-by: Marc Zyngier <maz@kernel.org>
-Fixes: 8fa761624871 ("KVM: arm/arm64: arch_timer: Fix CNTP_TVAL calculation")
-Link: https://lore.kernel.org/r/20200127103652.2326-1-alexandru.elisei@arm.com
----
- virt/kvm/arm/arch_timer.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
-index f182b2380345..c6c2a9dde00c 100644
---- a/virt/kvm/arm/arch_timer.c
-+++ b/virt/kvm/arm/arch_timer.c
-@@ -805,6 +805,7 @@ static u64 kvm_arm_timer_read(struct kvm_vcpu *vcpu,
- 	switch (treg) {
- 	case TIMER_REG_TVAL:
- 		val = timer->cnt_cval - kvm_phys_timer_read() + timer->cntvoff;
-+		val &= lower_32_bits(val);
- 		break;
- 
- 	case TIMER_REG_CTL:
-@@ -850,7 +851,7 @@ static void kvm_arm_timer_write(struct kvm_vcpu *vcpu,
- {
- 	switch (treg) {
- 	case TIMER_REG_TVAL:
--		timer->cnt_cval = kvm_phys_timer_read() - timer->cntvoff + val;
-+		timer->cnt_cval = kvm_phys_timer_read() - timer->cntvoff + (s32)val;
- 		break;
- 
- 	case TIMER_REG_CTL:
--- 
-2.20.1
-
-
+On 1/29/20 11:51 AM, David Miller wrote:
+> From: Christophe Roullier <christophe.roullier@st.com>
+> Date: Tue, 28 Jan 2020 09:39:42 +0100
+>
+>> No new feature, just to simplify stm32 part to be easier to use.
+>> Add by default all Ethernet clocks in DT, and activate or not in function
+>> of phy mode, clock frequency, if property "st,ext-phyclk" is set or not.
+>> Keep backward compatibility
+>> -----------------------------------------------------------------------
+>> |PHY_MODE | Normal | PHY wo crystal|   PHY wo crystal   |  No 125Mhz  |
+>> |         |        |      25MHz    |        50MHz       |  from PHY   |
+>> -----------------------------------------------------------------------
+>> |  MII    |	 -    |     eth-ck    |       n/a          |	    n/a  |
+>> |         |        | st,ext-phyclk |                    |             |
+>> -----------------------------------------------------------------------
+>> |  GMII   |	 -    |     eth-ck    |       n/a          |	    n/a  |
+>> |         |        | st,ext-phyclk |                    |             |
+>> -----------------------------------------------------------------------
+>> | RGMII   |	 -    |     eth-ck    |       n/a          |      eth-ck  |
+>> |         |        | st,ext-phyclk |                    |st,eth-clk-sel|
+>> |         |        |               |                    |       or     |
+>> |         |        |               |                    | st,ext-phyclk|
+>> ------------------------------------------------------------------------
+>> | RMII    |	 -    |     eth-ck    |      eth-ck        |	     n/a  |
+>> |         |        | st,ext-phyclk | st,eth-ref-clk-sel |              |
+>> |         |        |               | or st,ext-phyclk   |              |
+>> ------------------------------------------------------------------------
+>>
+>> Signed-off-by: Christophe Roullier <christophe.roullier@st.com>
+> If anything, this is more of a cleanup, and therefore only appropriate for
+> net-next when it opens back up.
+Thanks David, It is not urgent, do you want that I re-push it with 
+"PATCH net next" ?
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
