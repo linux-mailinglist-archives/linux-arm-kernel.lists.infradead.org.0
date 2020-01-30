@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA48E14DBF6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:32:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D2A2214DBF0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:31:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JYXFyXd194KCVyQ5lnKmNyBQF1QJKNbKgtpRdMwOAHU=; b=RCm+H43x+j5RoJ
-	pTaypNW1F8obB4lHrX5oa+ON0D5WgwPadm5WORNn86AFacfuL6ThObZffpBrKeRAnitHNFDhTx7AW
-	87LoKoi143Z3og5gUaN8otVsoHfPF4bwxPXC8KtzSwG+VXdbjwn/xdAlpItSz/01CSRLQNJsXD0Ul
-	rv9wPCRIWXujXD1wQej2Q652T2zFQ0VeniOPkvtT91lKNSXoORuK+P1qAODjpa/CuSUYrmUXpLma7
-	8dh/jjib8cCSZ+3ceFJfaZmmUPE+9PJKkyjn9QHI3EosW90n/LNp+AOQZNReoXR6byKiHwBaJjz7T
-	N/qxeKIeXwfjbzLJTzAw==;
+	List-Owner; bh=yLV5MlUuem2Qvr9R6nVIjX0ifUGc5sN6s1sRBhg0jLM=; b=VMGYcPjR0sSgIK
+	ZNfBWFuv+2uL6fIIoHzuylP/xGuBpQ/z2+TJXFN+eL89xFCmnbKWtvnSNcM7QdCi4+YmF/AU4sesd
+	u95n9HXaUynUmZyLv8kvfiQHG7D02i7bnIe70vhevZg5CVoi25c8jteqKq4QdcNng5MMDWkozWxxV
+	OjUzS++4PI8KmXNslXKxE7hKKdFnBPn+O2BmcS6ddMK+MBBO4AM9on6luaHakPQ+Inv8mdgWVGq6X
+	2uCElJos3CKIxo4gEubX/sqUnlXYA79mmfSoC7Fdo7kTJ8cmUS/t7OYaTyvqZ5TDuufo1SHUrO2t8
+	pAtFqTkLoWpNCBkNsTQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix9vn-0002Rq-Ib; Thu, 30 Jan 2020 13:32:27 +0000
+	id 1ix9uq-0000K7-6Y; Thu, 30 Jan 2020 13:31:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix9sv-0007RN-SM
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:29:32 +0000
+ id 1ix9sn-0007J0-Oo
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:29:23 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3A52D206D3;
- Thu, 30 Jan 2020 13:29:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2F2C0215A4;
+ Thu, 30 Jan 2020 13:29:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580390969;
- bh=QGmoD2g147nn2rXQotyPQlmpUS1aCJlneMZQNHauFhw=;
+ s=default; t=1580390961;
+ bh=d9x4S66Ey4CIXpCN2s+iO/2nx8679dBTfse6yMAAItQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=K/T3DV9793fRN0Lqcry0p0lpZmnmsieQCmXNKEi8q3O9nmOTKAvs16zlpdo1tZt2i
- KcJ+RkYMLYlXRcezty7yq/J+T06aHM0pM3QjDd4Ooy5KKIG1iK6LUObYkfdNmRNTD1
- 3qQW1I6mGTIgE6JBUxwhRm5z8aOEludcAD6Xc4LE=
+ b=oUED5L20w0DXl6v03FB5E2BPimGugCRBnWPHHJHPJ/MsPLpd52iJ7uMY7PsIsPWaX
+ 8uL8O+iHx9IPYmeAi8P2WOqS+yzGmmWuXXKqhd4E2cfgVIkYzdtdOH0fc3sI51hByf
+ eSEV75hULqGBqPU16B+lyfXHAXYKUi1mGXHNzosU=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1ix9q0-002BmW-Vp; Thu, 30 Jan 2020 13:26:29 +0000
+ id 1ix9q4-002BmW-0Q; Thu, 30 Jan 2020 13:26:32 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 18/23] KVM: arm: Make inject_abt32() inject an external abort
- instead
-Date: Thu, 30 Jan 2020 13:25:53 +0000
-Message-Id: <20200130132558.10201-19-maz@kernel.org>
+Subject: [PATCH 20/23] KVM: arm64: pmu: Don't mark a counter as chained if the
+ odd one is disabled
+Date: Thu, 30 Jan 2020 13:25:55 +0000
+Message-Id: <20200130132558.10201-21-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200130132558.10201-1-maz@kernel.org>
 References: <20200130132558.10201-1-maz@kernel.org>
@@ -65,8 +65,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_052929_987828_DE9F3213 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20200130_052922_007392_A0F991D0 
+X-CRM114-Status: GOOD (  16.77  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -113,56 +113,152 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: James Morse <james.morse@arm.com>
+From: Eric Auger <eric.auger@redhat.com>
 
-KVM's inject_abt64() injects an external-abort into an aarch64 guest.
-The KVM_CAP_ARM_INJECT_EXT_DABT is intended to do exactly this, but
-for an aarch32 guest inject_abt32() injects an implementation-defined
-exception, 'Lockdown fault'.
+At the moment we update the chain bitmap on type setting. This
+does not take into account the enable state of the odd register.
 
-Change this to external abort. For non-LPAE we now get the documented:
-| Unhandled fault: external abort on non-linefetch (0x008) at 0x9c800f00
-and for LPAE:
-| Unhandled fault: synchronous external abort (0x210) at 0x9c800f00
+Let's make sure a counter is never considered as chained if
+the high counter is disabled.
 
-Fixes: 74a64a981662a ("KVM: arm/arm64: Unify 32bit fault injection")
-Reported-by: Beata Michalska <beata.michalska@linaro.org>
-Signed-off-by: James Morse <james.morse@arm.com>
+We recompute the chain state on enable/disable and type changes.
+
+Also let create_perf_event() use the chain bitmap and not use
+kvm_pmu_idx_has_chain_evtype().
+
+Suggested-by: Marc Zyngier <maz@kernel.org>
+Signed-off-by: Eric Auger <eric.auger@redhat.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Link: https://lore.kernel.org/r/20200121123356.203000-3-james.morse@arm.com
+Link: https://lore.kernel.org/r/20200124142535.29386-3-eric.auger@redhat.com
 ---
- virt/kvm/arm/aarch32.c | 10 +++++++---
- 1 file changed, 7 insertions(+), 3 deletions(-)
+ virt/kvm/arm/pmu.c | 62 ++++++++++++++++++++++++----------------------
+ 1 file changed, 33 insertions(+), 29 deletions(-)
 
-diff --git a/virt/kvm/arm/aarch32.c b/virt/kvm/arm/aarch32.c
-index 2da482ca7067..0a356aa91aa1 100644
---- a/virt/kvm/arm/aarch32.c
-+++ b/virt/kvm/arm/aarch32.c
-@@ -15,6 +15,10 @@
- #include <asm/kvm_emulate.h>
- #include <asm/kvm_hyp.h>
+diff --git a/virt/kvm/arm/pmu.c b/virt/kvm/arm/pmu.c
+index c3f8b059881e..9f605e0b8dd7 100644
+--- a/virt/kvm/arm/pmu.c
++++ b/virt/kvm/arm/pmu.c
+@@ -15,6 +15,8 @@
+ #include <kvm/arm_vgic.h>
  
-+#define DFSR_FSC_EXTABT_LPAE	0x10
-+#define DFSR_FSC_EXTABT_nLPAE	0x08
-+#define DFSR_LPAE		BIT(9)
-+
- /*
-  * Table taken from ARMv8 ARM DDI0487B-B, table G1-10.
+ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx);
++static void kvm_pmu_update_pmc_chained(struct kvm_vcpu *vcpu, u64 select_idx);
++static void kvm_pmu_stop_counter(struct kvm_vcpu *vcpu, struct kvm_pmc *pmc);
+ 
+ #define PERF_ATTR_CFG1_KVM_PMU_CHAINED 0x1
+ 
+@@ -75,6 +77,13 @@ static struct kvm_pmc *kvm_pmu_get_canonical_pmc(struct kvm_pmc *pmc)
+ 
+ 	return pmc;
+ }
++static struct kvm_pmc *kvm_pmu_get_alternate_pmc(struct kvm_pmc *pmc)
++{
++	if (kvm_pmu_idx_is_high_counter(pmc->idx))
++		return pmc - 1;
++	else
++		return pmc + 1;
++}
+ 
+ /**
+  * kvm_pmu_idx_has_chain_evtype - determine if the event type is chain
+@@ -294,15 +303,9 @@ void kvm_pmu_enable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
+ 
+ 		pmc = &pmu->pmc[i];
+ 
+-		/*
+-		 * For high counters of chained events we must recreate the
+-		 * perf event with the long (64bit) attribute set.
+-		 */
+-		if (kvm_pmu_pmc_is_chained(pmc) &&
+-		    kvm_pmu_idx_is_high_counter(i)) {
+-			kvm_pmu_create_perf_event(vcpu, i);
+-			continue;
+-		}
++		/* A change in the enable state may affect the chain state */
++		kvm_pmu_update_pmc_chained(vcpu, i);
++		kvm_pmu_create_perf_event(vcpu, i);
+ 
+ 		/* At this point, pmc must be the canonical */
+ 		if (pmc->perf_event) {
+@@ -335,15 +338,9 @@ void kvm_pmu_disable_counter_mask(struct kvm_vcpu *vcpu, u64 val)
+ 
+ 		pmc = &pmu->pmc[i];
+ 
+-		/*
+-		 * For high counters of chained events we must recreate the
+-		 * perf event with the long (64bit) attribute unset.
+-		 */
+-		if (kvm_pmu_pmc_is_chained(pmc) &&
+-		    kvm_pmu_idx_is_high_counter(i)) {
+-			kvm_pmu_create_perf_event(vcpu, i);
+-			continue;
+-		}
++		/* A change in the enable state may affect the chain state */
++		kvm_pmu_update_pmc_chained(vcpu, i);
++		kvm_pmu_create_perf_event(vcpu, i);
+ 
+ 		/* At this point, pmc must be the canonical */
+ 		if (pmc->perf_event)
+@@ -585,15 +582,14 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
+ 
+ 	counter = kvm_pmu_get_pair_counter_value(vcpu, pmc);
+ 
+-	if (kvm_pmu_idx_has_chain_evtype(vcpu, pmc->idx)) {
++	if (kvm_pmu_pmc_is_chained(pmc)) {
+ 		/**
+ 		 * The initial sample period (overflow count) of an event. For
+ 		 * chained counters we only support overflow interrupts on the
+ 		 * high counter.
+ 		 */
+ 		attr.sample_period = (-counter) & GENMASK(63, 0);
+-		if (kvm_pmu_counter_is_enabled(vcpu, pmc->idx + 1))
+-			attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
++		attr.config1 |= PERF_ATTR_CFG1_KVM_PMU_CHAINED;
+ 
+ 		event = perf_event_create_kernel_counter(&attr, -1, current,
+ 							 kvm_pmu_perf_overflow,
+@@ -624,25 +620,33 @@ static void kvm_pmu_create_perf_event(struct kvm_vcpu *vcpu, u64 select_idx)
+  * @select_idx: The number of selected counter
+  *
+  * Update the chained bitmap based on the event type written in the
+- * typer register.
++ * typer register and the enable state of the odd register.
   */
-@@ -182,10 +186,10 @@ static void inject_abt32(struct kvm_vcpu *vcpu, bool is_pabt,
- 	/* Give the guest an IMPLEMENTATION DEFINED exception */
- 	is_lpae = (vcpu_cp15(vcpu, c2_TTBCR) >> 31);
- 	if (is_lpae) {
--		*fsr = 1 << 9 | 0x34;
-+		*fsr = DFSR_LPAE | DFSR_FSC_EXTABT_LPAE;
- 	} else {
--		/* Surprise! DFSR's FS[4] lives in bit 10 */
--		*fsr = BIT(10) | 0x4; /* 0x14 */
-+		/* no need to shuffle FS[4] into DFSR[10] as its 0 */
-+		*fsr = DFSR_FSC_EXTABT_nLPAE;
+ static void kvm_pmu_update_pmc_chained(struct kvm_vcpu *vcpu, u64 select_idx)
+ {
+ 	struct kvm_pmu *pmu = &vcpu->arch.pmu;
+-	struct kvm_pmc *pmc = &pmu->pmc[select_idx];
++	struct kvm_pmc *pmc = &pmu->pmc[select_idx], *canonical_pmc;
++	bool new_state, old_state;
++
++	old_state = kvm_pmu_pmc_is_chained(pmc);
++	new_state = kvm_pmu_idx_has_chain_evtype(vcpu, pmc->idx) &&
++		    kvm_pmu_counter_is_enabled(vcpu, pmc->idx | 0x1);
+ 
+-	if (kvm_pmu_idx_has_chain_evtype(vcpu, pmc->idx)) {
++	if (old_state == new_state)
++		return;
++
++	canonical_pmc = kvm_pmu_get_canonical_pmc(pmc);
++	kvm_pmu_stop_counter(vcpu, canonical_pmc);
++	if (new_state) {
+ 		/*
+ 		 * During promotion from !chained to chained we must ensure
+ 		 * the adjacent counter is stopped and its event destroyed
+ 		 */
+-		if (!kvm_pmu_pmc_is_chained(pmc))
+-			kvm_pmu_stop_counter(vcpu, pmc);
+-
++		kvm_pmu_stop_counter(vcpu, kvm_pmu_get_alternate_pmc(pmc));
+ 		set_bit(pmc->idx >> 1, vcpu->arch.pmu.chained);
+-	} else {
+-		clear_bit(pmc->idx >> 1, vcpu->arch.pmu.chained);
++		return;
  	}
++	clear_bit(pmc->idx >> 1, vcpu->arch.pmu.chained);
  }
  
+ /**
 -- 
 2.20.1
 
