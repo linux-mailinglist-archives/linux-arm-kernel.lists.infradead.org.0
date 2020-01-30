@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 095B314DBF5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:32:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F315C14DBF4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 14:32:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dwjSt958eRxJ+cBwQVzzyV9Ala+W8qd24L4h3UCmLv4=; b=t/wEVWJ4Mu/Bk7
-	F+EcNHG0c+BGVUXYz9c2/HcfelTaXy6weVdYuERafkkI7j5VvEpGPtj6a5ehtIPXkz3TFPthARx7b
-	edHY4RTOs2D62SmVPVNtRwnBEhXEVKsNxj3i63472aedBIlGo7T5MEJv0YLxteXSKf7kilMLv4+Ni
-	wI2gLIPVZ3Tp7m7v2Ky5G5omgYQjdjbxsMhUpq7AHlXp9/EPMeqFrUK89vlPJWe4wSPmqzPZL8Otb
-	11ebeNOg8EoaIGl0D0JSqX8jTil3ctBkh0r083FCUaymDewywbYJ82baeEMCJIoHr6Hr2epeSd8Jz
-	utpFGv0bGy9IVWBYCWoA==;
+	List-Owner; bh=yJNvWUCA5loMi8b3DNlt49gG6xGW4OiW7oDAPrvdeVA=; b=kokr1iV6tTaEeY
+	XhO8ZN+1hGi+KDt2ENE50udUzexfpvDHYNeFk4ymYpLy50IbYkrWVWrr8R3U9CZePf0Z+akWfyi2z
+	xOf09QtM2IJPTpWe2I4DQwMs5gV4/yDoPZGr3wewJ11NjlZFdKGRxNvI78Ph6P4IadLOoVrwuGlV8
+	q0iXnihSJRDrjHroYJEn8MVnREJs6ZFBV8gGSlqCUHnZ4VBRzFxrvZsxeneId44uRZ2Ev6Da4uHRa
+	HHxU70YXwoC8zDbBkNU2zBHrjuDjFNTu+aSUoqzQyFm90Jk25VjL4NkexlcWwNNrfHEfn3MbKv2yr
+	ke6EYLHONF/D2r5zHIYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ix9vb-0002GQ-R2; Thu, 30 Jan 2020 13:32:15 +0000
+	id 1ix9vP-00020V-2z; Thu, 30 Jan 2020 13:32:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ix9st-0007Pe-VR
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:29:30 +0000
+ id 1ix9ss-0007Nk-0C
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 13:29:27 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 326CC217BA;
- Thu, 30 Jan 2020 13:29:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5826821734;
+ Thu, 30 Jan 2020 13:29:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580390967;
- bh=JDdi5H6y9oYJHPQRhe1DKLwTvdhQqHtercYpr+kJ/kg=;
+ s=default; t=1580390965;
+ bh=EHxBFcbcRclt2fmVZvlSdsfqC5iOved/jkw6NRwzA7s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=KaJgpOn4y6FwW4ncPwQBJsCOLNvWabqhFzFDNhUUK0Z6BIkYiY2IYqk0x2ZHUKzni
- IWGbhl6/GgDtUEtK3eDgPjlNfipzqY8DNMFZN132m709++PuFfBVnYX0zsT/X4mRf5
- MsjPzcnm7d+h6ymLVAPK2dNJ5w0w8Vq9pjXeu0KY=
+ b=dxsdNL71Db27oyMCLb3Iooq+e+Fjz/IchvuLIbwXId8jIJPmgLChwJRUvfqvJYWfr
+ eVrx8W0we/lPeJZ5US0zHnS2z3dspGpTlS3FLAR004ckNY2wuaFDX6CaQgtZUGwTqp
+ TD40jjCfrFmj9kFlog0Ktt3izopWum3IFWhNIc5c=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1ix9px-002BmW-Em; Thu, 30 Jan 2020 13:26:25 +0000
+ id 1ix9py-002BmW-GS; Thu, 30 Jan 2020 13:26:26 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 15/23] arm64: KVM: Annotate guest entry/exit as a single
- function
-Date: Thu, 30 Jan 2020 13:25:50 +0000
-Message-Id: <20200130132558.10201-16-maz@kernel.org>
+Subject: [PATCH 16/23] KVM: arm/arm64: Fix young bit from mmu notifier
+Date: Thu, 30 Jan 2020 13:25:51 +0000
+Message-Id: <20200130132558.10201-17-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200130132558.10201-1-maz@kernel.org>
 References: <20200130132558.10201-1-maz@kernel.org>
@@ -65,8 +64,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_052928_090054_7E573528 
-X-CRM114-Status: GOOD (  12.55  )
+X-CRM114-CacheID: sfid-20200130_052926_178246_56019845 
+X-CRM114-Status: GOOD (  12.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -113,58 +112,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mark Brown <broonie@kernel.org>
+From: Gavin Shan <gshan@redhat.com>
 
-In an effort to clarify and simplify the annotations of assembly
-functions in the kernel new macros have been introduced replacing ENTRY
-and ENDPROC. There are separate annotations SYM_FUNC_ for normal C
-functions and SYM_CODE_ for other code. Currently __guest_enter and
-__guest_exit are annotated as standard functions but this is not
-entirely correct as the former doesn't do a normal return and the latter
-is not entered in a normal fashion. From the point of view of the
-hypervisor the guest entry/exit may be viewed as a single
-function which happens to have an eret in the middle of it so let's
-annotate it as such.
+kvm_test_age_hva() is called upon mmu_notifier_test_young(), but wrong
+address range has been passed to handle_hva_to_gpa(). With the wrong
+address range, no young bits will be checked in handle_hva_to_gpa().
+It means zero is always returned from mmu_notifier_test_young().
 
-Suggested-by: Mark Rutland <mark.rutland@arm.com>
-Signed-off-by: Mark Brown <broonie@kernel.org>
+This fixes the issue by passing correct address range to the underly
+function handle_hva_to_gpa(), so that the hardware young (access) bit
+will be visited.
+
+Fixes: 35307b9a5f7e ("arm/arm64: KVM: Implement Stage-2 page aging")
+Signed-off-by: Gavin Shan <gshan@redhat.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Acked-by: Will Deacon <will@kernel.org>
-Link: https://lore.kernel.org/r/20200120124706.8681-1-broonie@kernel.org
+Link: https://lore.kernel.org/r/20200121055659.19560-1-gshan@redhat.com
 ---
- arch/arm64/kvm/hyp/entry.S | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
+ virt/kvm/arm/mmu.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
-index e5cc8d66bf53..5b76a89939b1 100644
---- a/arch/arm64/kvm/hyp/entry.S
-+++ b/arch/arm64/kvm/hyp/entry.S
-@@ -44,7 +44,7 @@
-  * u64 __guest_enter(struct kvm_vcpu *vcpu,
-  *		     struct kvm_cpu_context *host_ctxt);
-  */
--ENTRY(__guest_enter)
-+SYM_FUNC_START(__guest_enter)
- 	// x0: vcpu
- 	// x1: host context
- 	// x2-x17: clobbered by macros
-@@ -96,9 +96,8 @@ alternative_else_nop_endif
- 	// Do not touch any register after this!
- 	eret
- 	sb
--ENDPROC(__guest_enter)
+diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+index a4fa81d75e84..8a9db95d1e42 100644
+--- a/virt/kvm/arm/mmu.c
++++ b/virt/kvm/arm/mmu.c
+@@ -2144,7 +2144,8 @@ int kvm_test_age_hva(struct kvm *kvm, unsigned long hva)
+ 	if (!kvm->arch.pgd)
+ 		return 0;
+ 	trace_kvm_test_age_hva(hva);
+-	return handle_hva_to_gpa(kvm, hva, hva, kvm_test_age_hva_handler, NULL);
++	return handle_hva_to_gpa(kvm, hva, hva + PAGE_SIZE,
++				 kvm_test_age_hva_handler, NULL);
+ }
  
--ENTRY(__guest_exit)
-+SYM_INNER_LABEL(__guest_exit, SYM_L_GLOBAL)
- 	// x0: return code
- 	// x1: vcpu
- 	// x2-x29,lr: vcpu regs
-@@ -192,4 +191,4 @@ abort_guest_exit_end:
- 	msr	spsr_el2, x4
- 	orr	x0, x0, x5
- 1:	ret
--ENDPROC(__guest_exit)
-+SYM_FUNC_END(__guest_enter)
+ void kvm_mmu_free_memory_caches(struct kvm_vcpu *vcpu)
 -- 
 2.20.1
 
