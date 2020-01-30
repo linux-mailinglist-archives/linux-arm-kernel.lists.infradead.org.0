@@ -2,106 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EB1414E54A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 23:03:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E93914E550
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 23:06:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l9Xtnm+50wpFPjALX3qCUGhLaRKkISkrNpqSTmth/h8=; b=rh2zPCGv1lLh1l
-	9CIfIqX34vscwRFR46cl/Q1VAj/GbR8IOOlaBcN/7EWUVzllgwXxIpuTCamGEU44/k+RBn/RcU9uo
-	dWS2YVkyp/VP9+eMKeHslNMIGSq7EtELX981a2Azbov+lJGu28aI74iMlAOTwbTQ6YDmzUPjRPks2
-	R+WsojSua2OYCkptzJXpOmXhnTqpPp1Nmlr6J/DeakZtsVqJ3sEmBqiFrzgiz4zI/5DaNqpthazCL
-	Gf2g/1NZxDTY0qLf9W6VSMywXj66E4RqrOHAIT8rWCD/vw3QTb4SO2IqNNA/c4RfLFrydG44vLQoW
-	H+DPsJCjZ3dPGxXWamhw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AFaWZ0/MYM9kSvTd63qdHSY3WHEO0NeT6mmRO+Q4Tx0=; b=ANWufAVJDNhqtU
+	SKJFyG5JeuiBaHKnth75IauEi4yLLlUgONnZ/zOCr1MuG6eZaMyledKPbFr6zGEb6R7DQq0OPPu0P
+	dZmf6CCQinrg3dRxKdMYuFkML73DxWzjujcoVkI1Drgu+0fIWNEM9tF9sZl8KoGf0JNcgc0gcUlKB
+	Gq1Vx+Twycm3ZSl49AybZQljEgpD1nnHcrV8y1CF2vLKccY6nCpYFvi656yr2xrJ7B71szKffse5J
+	LJUDgdHNmX/7IbOVAcvRVjHgBiODLr7MHVeHB8o4cBD3eE2dOUZTIyJlsdItG24mKLqP9Ucsws0ya
+	KYbrCBECUlzdcEMli3pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixHuK-0007dE-EQ; Thu, 30 Jan 2020 22:03:28 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1ixHx8-0000k3-N6; Thu, 30 Jan 2020 22:06:22 +0000
+Received: from smtprelay0187.hostedemail.com ([216.40.44.187]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixHu9-0007cP-Vh
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 22:03:20 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00ULhlOC079552;
- Thu, 30 Jan 2020 22:01:30 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=content-type :
- mime-version : subject : from : in-reply-to : date : cc :
- content-transfer-encoding : message-id : references : to;
- s=corp-2019-08-05; bh=rMUfdDzstS4LSczZgmKyH7mZO2ID0QOzN/Bwj50fWVI=;
- b=IZexjZzugXiArHCRSol8PPaadWCLWPdc47tcsl8izRO/qwbGDivLeFPwBeJuoiQzDwBE
- zeZKluQgEN1NMc9K2WoioYJG9qpDrDs2c5ZlbyvUsZHOeZ1HDBkvwGmRj24SKcdHy5OE
- bJ6oR7FsX/4F0BE4LhLBgwYg17VP7m9xvJoUR0wJUrALowyn8WJf+1e6yWxSRQA75IJ4
- n+b+rVJBnp0QErZQGwPI+A2oIFfHOoQQ6YrJNKrdnJUBE2fQwcx+W0IR4kpB2G2RKxEU
- FFskkeSEgnZbGDAY3RaraDgePLtFnVQeiY9TDmzf3vTFIDUCWN/tQRdOpFQEEFrQsJna ag== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 2xrearpw09-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 30 Jan 2020 22:01:30 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00ULiKZ4097408;
- Thu, 30 Jan 2020 22:01:29 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 2xuc3107aq-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 30 Jan 2020 22:01:29 +0000
-Received: from abhmp0010.oracle.com (abhmp0010.oracle.com [141.146.116.16])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00UM1Ijq028394;
- Thu, 30 Jan 2020 22:01:18 GMT
-Received: from [10.39.234.252] (/10.39.234.252)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 30 Jan 2020 14:01:18 -0800
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Subject: Re: [PATCH v7 3/5] locking/qspinlock: Introduce CNA into the slow
- path of qspinlock
-From: Alex Kogan <alex.kogan@oracle.com>
-In-Reply-To: <20200122170456.GY14879@hirez.programming.kicks-ass.net>
-Date: Thu, 30 Jan 2020 17:01:15 -0500
-Message-Id: <D6ED40A0-E96D-41F6-AA74-0901C2C37476@oracle.com>
-References: <20191125210709.10293-1-alex.kogan@oracle.com>
- <20191125210709.10293-4-alex.kogan@oracle.com>
- <20200121202919.GM11457@worktop.programming.kicks-ass.net>
- <20200122095127.GC14946@hirez.programming.kicks-ass.net>
- <20200122170456.GY14879@hirez.programming.kicks-ass.net>
-To: Peter Zijlstra <peterz@infradead.org>
-X-Mailer: Apple Mail (2.3445.104.11)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9516
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-2001300146
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9516
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-2001300146
+ id 1ixHx0-0000jS-5O
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 22:06:15 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay02.hostedemail.com (Postfix) with ESMTP id 0503849961A;
+ Thu, 30 Jan 2020 22:06:00 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2,
+X-HE-Tag: heat78_8b0a421ba2a53
+X-Filterd-Recvd-Size: 11101
+Received: from XPS-9350.home (unknown [47.151.135.224])
+ (Authenticated sender: joe@perches.com)
+ by omf09.hostedemail.com (Postfix) with ESMTPA;
+ Thu, 30 Jan 2020 22:05:55 +0000 (UTC)
+Message-ID: <9f8a0a8e09893e7087d2212fb0eeb94a908b7be1.camel@perches.com>
+Subject: Re: [PATCH 2/2] ARM: configs: Cleanup old Kconfig options
+From: Joe Perches <joe@perches.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>, Russell King
+ <linux@armlinux.org.uk>,  Alexander Shiyan <shc_work@mail.ru>, Uwe
+ =?ISO-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, Shawn Guo
+ <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>, Fabio Estevam
+ <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>, Vladimir
+ Zapolskiy <vz@mleia.com>, Aaro Koskinen <aaro.koskinen@iki.fi>, Tony
+ Lindgren <tony@atomide.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,  Liviu Dudau
+ <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>, Lorenzo
+ Pieralisi <lorenzo.pieralisi@arm.com>, Avi Fishman
+ <avifishman70@gmail.com>, Tomer Maimon <tmaimon77@gmail.com>, Tali Perry
+ <tali.perry1@gmail.com>, Patrick Venture <venture@google.com>, Nancy Yuen
+ <yuenn@google.com>, Benjamin Fair <benjaminfair@google.com>, Olof Johansson
+ <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ linux-arm-kernel@lists.infradead.org,  linux-kernel@vger.kernel.org,
+ linux-omap@vger.kernel.org,  linux-stm32@st-md-mailman.stormreply.com,
+ openbmc@lists.ozlabs.org,  arm@kernel.org, soc@kernel.org
+Date: Thu, 30 Jan 2020 14:04:49 -0800
+In-Reply-To: <20200130195525.4525-2-krzk@kernel.org>
+References: <20200130195525.4525-1-krzk@kernel.org>
+ <20200130195525.4525-2-krzk@kernel.org>
+User-Agent: Evolution 3.34.1-2 
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_140318_153508_EB4494A7 
-X-CRM114-Status: GOOD (  40.30  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200130_140614_328760_23B1A474 
+X-CRM114-Status: GOOD (  10.41  )
+X-Spam-Score: 1.2 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (1.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.187 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.40.44.187 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 1.2 UPPERCASE_75_100       message body is 75-100% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,231 +90,396 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Hanjun Guo <guohanjun@huawei.com>,
- Arnd Bergmann <arnd@arndb.de>, dave.dice@oracle.com,
- Jan Glauber <jglauber@marvell.com>, x86@kernel.org,
- Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
- Steven Sistare <steven.sistare@oracle.com>, linux-kernel@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>, hpa@zytor.com,
- Waiman Long <longman@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Daniel Jordan <daniel.m.jordan@oracle.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIFBldGVyLgoKSXQgbG9va3MgZ29vZCDigJQgdGhhbmtzIGZvciB5b3VyIHJldmlldyEKCkkg
-aGF2ZSBhIGNvdXBsZSBvZiBjb21tZW50cyBhbmQgc3VnZ2VzdGlvbnMuClBsZWFzZSwgc2VlIGJl
-bG93LgoKPiBPbiBKYW4gMjIsIDIwMjAsIGF0IDEyOjA0IFBNLCBQZXRlciBaaWpsc3RyYSA8cGV0
-ZXJ6QGluZnJhZGVhZC5vcmc+IHdyb3RlOgo+IAo+IE9uIFdlZCwgSmFuIDIyLCAyMDIwIGF0IDEw
-OjUxOjI3QU0gKzAxMDAsIFBldGVyIFppamxzdHJhIHdyb3RlOgo+PiBPbiBUdWUsIEphbiAyMSwg
-MjAyMCBhdCAwOToyOToxOVBNICswMTAwLCBQZXRlciBaaWpsc3RyYSB3cm90ZToKPj4+IAo+Pj4g
-dmFyaW91cyBub3RlcyBhbmQgY2hhbmdlcyBpbiB0aGUgYmVsb3cuCj4+IAo+PiBBbHNvLCBzb3Jy
-eSBmb3IgcmVwbHlpbmcgdG8gdjcgYW5kIHY4LCBJIGZvcmdvdCB0byByZWZyZXNoIGVtYWlsIG9u
-IHRoZQo+PiBsYXB0b3AgYW5kIGhhZCBzcG90dHkgY2VsbCBzZXJ2aWNlIGxhc3QgbmlnaHQgYW5k
-IG9ubHkgZm91bmQgdjcgaW4gdGhhdAo+PiBtYWlsYm94Lgo+PiAKPj4gQWZhaWN0IG5vbmUgb2Yg
-dGhlIHRoaW5ncyBJIGNvbW1lbnRlZCBvbiB3ZXJlIGZ1bmRhbWVudGFsbHkgY2hhbmdlZAo+PiB0
-aG91Z2guCk5vdGhpbmcgZnVuZGFtZW50YWwsIGJ1dCBzb21lIHRoaW5ncyB5b3UgbWF5IGZpbmQg
-b2JqZWN0aW9uYWJsZSwgbGlrZSAKdGhlIG5hbWVzIG9mIG5ldyBlbnVtIGVsZW1lbnRzIDopCgo+
-IAo+IEJ1dCBzaW5jZSBJIHdhcyBlZGl0aW5nLCBoZXJlIGlzIHRoZSBsYXRlc3QgdmVyc2lvbi4u
-Cj4gCj4gLS0tCj4gCj4gSW5kZXg6IGxpbnV4LTIuNi9rZXJuZWwvbG9ja2luZy9xc3BpbmxvY2tf
-Y25hLmgKPiA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09Cj4gLS0tIC9kZXYvbnVsbAo+ICsrKyBsaW51eC0yLjYva2VybmVs
-L2xvY2tpbmcvcXNwaW5sb2NrX2NuYS5oCj4gQEAgLTAsMCArMSwyNjEgQEAKPiArLyogU1BEWC1M
-aWNlbnNlLUlkZW50aWZpZXI6IEdQTC0yLjAgKi8KPiArI2lmbmRlZiBfR0VOX0NOQV9MT0NLX1NM
-T1dQQVRICj4gKyNlcnJvciAiZG8gbm90IGluY2x1ZGUgdGhpcyBmaWxlIgo+ICsjZW5kaWYKPiAr
-Cj4gKyNpbmNsdWRlIDxsaW51eC90b3BvbG9neS5oPgo+ICsKPiArLyoKPiArICogSW1wbGVtZW50
-IGEgTlVNQS1hd2FyZSB2ZXJzaW9uIG9mIE1DUyAoYWthIENOQSwgb3IgY29tcGFjdCBOVU1BLWF3
-YXJlIGxvY2spLgo+ICsgKgo+ICsgKiBJbiBDTkEsIHNwaW5uaW5nIHRocmVhZHMgYXJlIG9yZ2Fu
-aXplZCBpbiB0d28gcXVldWVzLCBhIHByaW1hcnkgcXVldWUgZm9yCj4gKyAqIHRocmVhZHMgcnVu
-bmluZyBvbiB0aGUgc2FtZSBOVU1BIG5vZGUgYXMgdGhlIGN1cnJlbnQgbG9jayBob2xkZXIsIGFu
-ZCBhCj4gKyAqIHNlY29uZGFyeSBxdWV1ZSBmb3IgdGhyZWFkcyBydW5uaW5nIG9uIG90aGVyIG5v
-ZGVzLiBTY2hlbWF0aWNhbGx5LCBpdCBsb29rcwo+ICsgKiBsaWtlIHRoaXM6Cj4gKyAqCj4gKyAq
-ICAgIGNuYV9ub2RlCj4gKyAqICAgKy0tLS0tLS0tLS0rICAgICArLS0tLS0tLS0rICAgICAgICAg
-Ky0tLS0tLS0tKwo+ICsgKiAgIHxtY3M6bmV4dCAgfCAtLT4gfG1jczpuZXh0fCAtLT4gLi4uIHxt
-Y3M6bmV4dHwgLS0+IE5VTEwgIFtQcmltYXJ5IHF1ZXVlXQo+ICsgKiAgIHxtY3M6bG9ja2VkfCAt
-LiAgKy0tLS0tLS0tKyAgICAgICAgICstLS0tLS0tLSsKPiArICogICArLS0tLS0tLS0tLSsgIHwK
-PiArICogICAgICAgICAgICAgICAgIGAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLgo+ICsgKiAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2Cj4gKyAqICAgICAgICAgICAgICAg
-ICArLS0tLS0tLS0rICAgICAgICAgKy0tLS0tLS0tKwo+ICsgKiAgICAgICAgICAgICAgICAgfG1j
-czpuZXh0fCAtLT4gLi4uIHxtY3M6bmV4dHwgICAgICAgICAgICBbU2Vjb25kYXJ5IHF1ZXVlXQo+
-ICsgKiAgICAgICAgICAgICAgICAgKy0tLS0tLS0tKyAgICAgICAgICstLS0tLS0tLSsKPiArICog
-ICAgICAgICAgICAgICAgICAgICBeICAgICAgICAgICAgICAgICAgICB8Cj4gKyAqICAgICAgICAg
-ICAgICAgICAgICAgYC0tLS0tLS0tLS0tLS0tLS0tLS0tJwo+ICsgKgo+ICsgKiBOLkIuIGxvY2tl
-ZCA6PSAxIGlmIHNlY29uZGFyeSBxdWV1ZSBpcyBhYnNlbnQuIE90aGVyd2lzZSwgaXQgY29udGFp
-bnMgdGhlCj4gKyAqIGVuY29kZWQgcG9pbnRlciB0byB0aGUgdGFpbCBvZiB0aGUgc2Vjb25kYXJ5
-IHF1ZXVlLCB3aGljaCBpcyBvcmdhbml6ZWQgYXMgYQo+ICsgKiBjaXJjdWxhciBsaXN0Lgo+ICsg
-Kgo+ICsgKiBBZnRlciBhY3F1aXJpbmcgdGhlIE1DUyBsb2NrIGFuZCBiZWZvcmUgYWNxdWlyaW5n
-IHRoZSBzcGlubG9jaywgdGhlIGxvY2sKPiArICogaG9sZGVyIHNjYW5zIHRoZSBwcmltYXJ5IHF1
-ZXVlIGxvb2tpbmcgZm9yIGEgdGhyZWFkIHJ1bm5pbmcgb24gdGhlIHNhbWUgbm9kZQo+ICsgKiAo
-cHJlLXNjYW4pLiBJZiBmb3VuZCAoY2FsbCBpdCB0aHJlYWQgVCksIGFsbCB0aHJlYWRzIGluIHRo
-ZSBwcmltYXJ5IHF1ZXVlCj4gKyAqIGJldHdlZW4gdGhlIGN1cnJlbnQgbG9jayBob2xkZXIgYW5k
-IFQgYXJlIG1vdmVkIHRvIHRoZSBlbmQgb2YgdGhlIHNlY29uZGFyeQo+ICsgKiBxdWV1ZS4gIElm
-IHN1Y2ggVCBpcyBub3QgZm91bmQsIHdlIG1ha2UgYW5vdGhlciBzY2FuIG9mIHRoZSBwcmltYXJ5
-IHF1ZXVlCj4gKyAqIHdoZW4gdW5sb2NraW5nIHRoZSBNQ1MgbG9jayAocG9zdC1zY2FuKSwgc3Rh
-cnRpbmcgYXQgdGhlIG5vZGUgd2hlcmUgcHJlLXNjYW4KPiArICogc3RvcHBlZC4gSWYgYm90aCBz
-Y2FucyBmYWlsIHRvIGZpbmQgc3VjaCBULCB0aGUgTUNTIGxvY2sgaXMgcGFzc2VkIHRvIHRoZQo+
-ICsgKiBmaXJzdCB0aHJlYWQgaW4gdGhlIHNlY29uZGFyeSBxdWV1ZS4gSWYgdGhlIHNlY29uZGFy
-eSBxdWV1ZSBpcyBlbXB0eSwgdGhlCj4gKyAqIGxvY2sgaXMgcGFzc2VkIHRvIHRoZSBuZXh0IHRo
-cmVhZCBpbiB0aGUgcHJpbWFyeSBxdWV1ZS4KPiArICoKPiArICogRm9yIG1vcmUgZGV0YWlscywg
-c2VlIGh0dHBzOi8vdXJsZGVmZW5zZS5wcm9vZnBvaW50LmNvbS92Mi91cmw/dT1odHRwcy0zQV9f
-YXJ4aXYub3JnX2Fic18xODEwLjA1NjAwJmQ9RHdJQkFnJmM9Um9QMVl1bUNYQ2dhV0h2bFpZUjhQ
-Wmg4QnY3cUlyTVVCNjVlYXBJX0puRSZyPUh2aGszRjRvbWRDay1HRTFQVE9tM0tuMEE3QXBXT1oy
-YVpMVHVWeEZLNGsmbT00OU5kU2xSWFF4bFBpZk5xVWtfRTdwN1EtbkowX0hQOWZrRl9GX0dzQ19Z
-JnM9MGMyNWdFNnI2Y0twT0MzSjBLYVBubmtVZDR3Rlh3UE5pbEJmbERuTk9TUSZlPSAuCj4gKyAq
-Cj4gKyAqIEF1dGhvcnM6IEFsZXggS29nYW4gPGFsZXgua29nYW5Ab3JhY2xlLmNvbT4KPiArICog
-ICAgICAgICAgRGF2ZSBEaWNlIDxkYXZlLmRpY2VAb3JhY2xlLmNvbT4KPiArICovCj4gKwo+ICtz
-dHJ1Y3QgY25hX25vZGUgewo+ICsJc3RydWN0IG1jc19zcGlubG9jawltY3M7Cj4gKwlpbnQJCQlu
-dW1hX25vZGU7Cj4gKwl1MzIJCQllbmNvZGVkX3RhaWw7ICAgIC8qIHNlbGYgKi8KPiArCXUzMgkJ
-CXBhcnRpYWxfb3JkZXI7Ckkgd2lsbCBub3QgYXJndWUgYWJvdXQgbmFtZXMsIGp1c3QgcG9pbnQg
-b3V0IHRoYXQgSSB0aGluayBwcmVfc2Nhbl9yZXN1bHQKaXMgbW9yZSBzZWxmLWV4cGxhbmF0b3J5
-LgoKPiArfTsKPiArCj4gK3N0YXRpYyB2b2lkIF9faW5pdCBjbmFfaW5pdF9ub2Rlc19wZXJfY3B1
-KHVuc2lnbmVkIGludCBjcHUpCj4gK3sKPiArCXN0cnVjdCBtY3Nfc3BpbmxvY2sgKmJhc2UgPSBw
-ZXJfY3B1X3B0cigmcW5vZGVzWzBdLm1jcywgY3B1KTsKPiArCWludCBudW1hX25vZGUgPSBjcHVf
-dG9fbm9kZShjcHUpOwo+ICsJaW50IGk7Cj4gKwo+ICsJZm9yIChpID0gMDsgaSA8IE1BWF9OT0RF
-UzsgaSsrKSB7Cj4gKwkJc3RydWN0IGNuYV9ub2RlICpjbiA9IChzdHJ1Y3QgY25hX25vZGUgKiln
-cmFiX21jc19ub2RlKGJhc2UsIGkpOwo+ICsKPiArCQljbi0+bnVtYV9ub2RlID0gbnVtYV9ub2Rl
-Owo+ICsJCWNuLT5lbmNvZGVkX3RhaWwgPSBlbmNvZGVfdGFpbChjcHUsIGkpOwo+ICsJCS8qCj4g
-KwkJICogQGVuY29kZWRfdGFpbCBoYXMgdG8gYmUgbGFyZ2VyIHRoYW4gMSwgc28gd2UgZG8gbm90
-IGNvbmZ1c2UKPiArCQkgKiBpdCB3aXRoIG90aGVyIHZhbGlkIHZhbHVlcyBmb3IgQGxvY2tlZCBv
-ciBAcGFydGlhbF9vcmRlcgo+ICsJCSAqICgwIG9yIDEpCj4gKwkJICovCj4gKwkJV0FSTl9PTihj
-bi0+ZW5jb2RlZF90YWlsIDw9IDEpOwo+ICsJfQo+ICt9Cj4gKwo+ICtzdGF0aWMgaW50IF9faW5p
-dCBjbmFfaW5pdF9ub2Rlcyh2b2lkKQo+ICt7Cj4gKwl1bnNpZ25lZCBpbnQgY3B1Owo+ICsKPiAr
-CS8qCj4gKwkgKiB0aGlzIHdpbGwgYnJlYWsgb24gMzJiaXQgYXJjaGl0ZWN0dXJlcywgc28gd2Ug
-cmVzdHJpY3QKPiArCSAqIHRoZSB1c2Ugb2YgQ05BIHRvIDY0Yml0IG9ubHkgKHNlZSBhcmNoL3g4
-Ni9LY29uZmlnKQo+ICsJICovCj4gKwlCVUlMRF9CVUdfT04oc2l6ZW9mKHN0cnVjdCBjbmFfbm9k
-ZSkgPiBzaXplb2Yoc3RydWN0IHFub2RlKSk7Cj4gKwkvKiB3ZSBzdG9yZSBhbiBlY29kZWQgdGFp
-bCB3b3JkIGluIHRoZSBub2RlJ3MgQGxvY2tlZCBmaWVsZCAqLwo+ICsJQlVJTERfQlVHX09OKHNp
-emVvZih1MzIpID4gc2l6ZW9mKHVuc2lnbmVkIGludCkpOwo+ICsKPiArCWZvcl9lYWNoX3Bvc3Np
-YmxlX2NwdShjcHUpCj4gKwkJY25hX2luaXRfbm9kZXNfcGVyX2NwdShjcHUpOwo+ICsKPiArCXJl
-dHVybiAwOwo+ICt9Cj4gK2Vhcmx5X2luaXRjYWxsKGNuYV9pbml0X25vZGVzKTsKPiArCj4gKy8q
-Cj4gKyAqIGNuYV9zcGxpY2VfdGFpbCAtLSBzcGxpY2Ugbm9kZXMgaW4gdGhlIHByaW1hcnkgcXVl
-dWUgYmV0d2VlbiBbZmlyc3QsIGxhc3RdCj4gKyAqIG9udG8gdGhlIHNlY29uZGFyeSBxdWV1ZS4K
-PiArICovCj4gK3N0YXRpYyB2b2lkIGNuYV9zcGxpY2VfdGFpbChzdHJ1Y3QgbWNzX3NwaW5sb2Nr
-ICpub2RlLAo+ICsJCQkgICAgc3RydWN0IG1jc19zcGlubG9jayAqZmlyc3QsCj4gKwkJCSAgICBz
-dHJ1Y3QgbWNzX3NwaW5sb2NrICpsYXN0KQo+ICt7Cj4gKwkvKiByZW1vdmUgW2ZpcnN0LGxhc3Rd
-ICovCj4gKwlub2RlLT5uZXh0ID0gbGFzdC0+bmV4dDsKPiArCj4gKwkvKiBzdGljayBbZmlyc3Qs
-bGFzdF0gb24gdGhlIHNlY29uZGFyeSBxdWV1ZSB0YWlsICovCj4gKwlpZiAobm9kZS0+bG9ja2Vk
-IDw9IDEpIHsgLyogaWYgc2Vjb25kYXJ5IHF1ZXVlIGlzIGVtcHR5ICovCj4gKwkJLyogY3JlYXRl
-IHNlY29uZGFyeSBxdWV1ZSAqLwo+ICsJCWxhc3QtPm5leHQgPSBmaXJzdDsKPiArCX0gZWxzZSB7
-Cj4gKwkJLyogYWRkIHRvIHRoZSB0YWlsIG9mIHRoZSBzZWNvbmRhcnkgcXVldWUgKi8KPiArCQlz
-dHJ1Y3QgbWNzX3NwaW5sb2NrICp0YWlsXzJuZCA9IGRlY29kZV90YWlsKG5vZGUtPmxvY2tlZCk7
-Cj4gKwkJc3RydWN0IG1jc19zcGlubG9jayAqaGVhZF8ybmQgPSB0YWlsXzJuZC0+bmV4dDsKPiAr
-Cj4gKwkJdGFpbF8ybmQtPm5leHQgPSBmaXJzdDsKPiArCQlsYXN0LT5uZXh0ID0gaGVhZF8ybmQ7
-Cj4gKwl9Cj4gKwo+ICsJbm9kZS0+bG9ja2VkID0gKChzdHJ1Y3QgY25hX25vZGUgKilsYXN0KS0+
-ZW5jb2RlZF90YWlsOwo+ICt9Cj4gKwo+ICsvKgo+ICsgKiBjbmFfb3JkZXJfcXVldWUgLSBzY2Fu
-IHRoZSBwcmltYXJ5IHF1ZXVlIGxvb2tpbmcgZm9yIHRoZSBmaXJzdCBsb2NrIG5vZGUgb24KPiAr
-ICogdGhlIHNhbWUgTlVNQSBub2RlIGFzIHRoZSBsb2NrIGhvbGRlciBhbmQgbW92ZSBhbnkgc2tp
-cHBlZCBub2RlcyBvbnRvIHRoZQo+ICsgKiBzZWNvbmRhcnkgcXVldWUuCk9oIG1hbiwgeW91IHRv
-b2sgb3V0IHRoZSBhc2NpaSBmaWd1cmUgSSB3YXMgd29ya2luZyBzbyBoYXJkIHRvIHB1dCBpbi4g
-T2ggd2VsbC4KCj4gKyAqCj4gKyAqIFJldHVybnMgMCBpZiBhIG1hdGNoaW5nIG5vZGUgaXMgZm91
-bmQ7IG90aGVyd2lzZSByZXR1cm4gdGhlIGVuY29kZWQgcG9pbnRlcgo+ICsgKiB0byB0aGUgbGFz
-dCBlbGVtZW50IGluc3BlY3RlZCAoc3VjaCB0aGF0IGEgc3Vic2VxdWVudCBzY2FuIGNhbiBjb250
-aW51ZSB0aGVyZSkuCj4gKyAqCj4gKyAqIFRoZSB3b3JzdCBjYXNlIGNvbXBsZXhpdHkgb2YgdGhl
-IHNjYW4gaXMgTyhuKSwgd2hlcmUgbiBpcyB0aGUgbnVtYmVyCj4gKyAqIG9mIGN1cnJlbnQgd2Fp
-dGVycy4gSG93ZXZlciwgdGhlIGFtb3J0aXplZCBjb21wbGV4aXR5IGlzIGNsb3NlIHRvIE8oMSks
-Cj4gKyAqIGFzIHRoZSBpbW1lZGlhdGUgc3VjY2Vzc29yIGlzIGxpa2VseSB0byBiZSBydW5uaW5n
-IG9uIHRoZSBzYW1lIG5vZGUgb25jZQo+ICsgKiB0aHJlYWRzIGZyb20gb3RoZXIgbm9kZXMgYXJl
-IG1vdmVkIHRvIHRoZSBzZWNvbmRhcnkgcXVldWUuCj4gKyAqCj4gKyAqIFhYWCBkb2VzIG5vdCBj
-b21wdXRlOyBnaXZlbiBlcXVhbCBjb250ZW50aW9uIGl0IHNob3VsZCBhdmVyYWdlIHRvIE8obnJf
-bm9kZXMpLgpMZXQgbWUgdHJ5IHRvIGNvbnZpbmNlIHlvdS4gVW5kZXIgY29udGVudGlvbiwgdGhl
-IGltbWVkaWF0ZSB3YWl0ZXIgd291bGQgYmUKYSBsb2NhbCBvbmUuIFNvIHRoZSBzY2FuIHdvdWxk
-IHR5cGljYWxseSB0YWtlIE8oMSkgc3RlcHMuIFdlIG5lZWQgdG8gY29uc2lkZXIKdGhlIGV4dHJh
-IHdvcmsvc3RlcHMgd2UgdGFrZSB0byBtb3ZlIG5vZGVzIHRvIHRoZSBzZWNvbmRhcnkgcXVldWUu
-IFRoZQpudW1iZXIgb2Ygc3VjaCBub2RlcyBpcyBPKG4pICh0byBiZSBtb3JlIHByZWNpc2UsIGl0
-IGlzIE8obi1tKSwgd2hlcmUgbQppcyBucl9jcHVzX3Blcl9ub2RlKSwgYW5kIHdlIHNwZW5kIGEg
-Y29uc3RhbnQgYW1vdW50IG9mIHdvcmssIHBlciBub2RlLCAKdG8gc2NhbiB0aG9zZSBub2RlcyBh
-bmQgbW92ZSB0aGVtIHRvIHRoZSBzZWNvbmRhcnkgcXVldWUuIFNvIGluIDJedGhyZXNob2xkcwps
-b2NrIGhhbmRvdmVycywgd2Ugc2NhbiAyXnRocmVzaG9sZHMgeCAxICsgbi1tIG5vZGVzLiBBc3N1
-bWluZyAKMl50aHJlc2hvbGRzID4gbiwgdGhlIGFtb3J0aXplZCBjb21wbGV4aXR5IG9mIHRoaXMg
-ZnVuY3Rpb24gdGhlbiBpcyBPKDEpLgoKPiArICovCj4gK3N0YXRpYyB1MzIgY25hX29yZGVyX3F1
-ZXVlKHN0cnVjdCBtY3Nfc3BpbmxvY2sgKm5vZGUsCj4gKwkJCSAgIHN0cnVjdCBtY3Nfc3Bpbmxv
-Y2sgKml0ZXIpCj4gK3sKPiArCXN0cnVjdCBjbmFfbm9kZSAqY25pID0gKHN0cnVjdCBjbmFfbm9k
-ZSAqKVJFQURfT05DRShpdGVyLT5uZXh0KTsKPiArCXN0cnVjdCBjbmFfbm9kZSAqY24gPSAoc3Ry
-dWN0IGNuYV9ub2RlICopbm9kZTsKPiArCWludCBuaWQgPSBjbi0+bnVtYV9ub2RlOwo+ICsJc3Ry
-dWN0IGNuYV9ub2RlICpsYXN0Owo+ICsKPiArCS8qIGZpbmQgYW55IG5leHQgd2FpdGVyIG9uICdv
-dXInIE5VTUEgbm9kZSAqLwo+ICsJZm9yIChsYXN0ID0gY247Cj4gKwkgICAgIGNuaSAmJiBjbmkt
-Pm51bWFfbm9kZSAhPSBuaWQ7Cj4gKwkgICAgIGxhc3QgPSBjbmksIGNuaSA9IChzdHJ1Y3QgY25h
-X25vZGUgKilSRUFEX09OQ0UoY25pLT5tY3MubmV4dCkpCj4gKwkJOwo+ICsKPiArCWlmICghY25h
-KQpTaG91bGQgYmUg4oCYY25p4oCZCgo+ICsJCXJldHVybiBsYXN0LT5lbmNvZGVkX3RhaWw7IC8q
-IGNvbnRpbnVlIGZyb20gaGVyZSAqLwo+ICsKPiArCWlmIChsYXN0ICE9IGNuKQkvKiBkaWQgd2Ug
-c2tpcCBhbnkgd2FpdGVycz8gKi8KPiArCQljbmFfc3BsaWNlX3RhaWwobm9kZSwgbm9kZS0+bmV4
-dCwgKHN0cnVjdCBtY3Nfc3BpbmxvY2sgKilsYXN0KTsKPiArCj4gKwlyZXR1cm4gMDsKPiArfQo+
-ICsKPiArLyoKPiArICogY25hX3NwbGljZV9oZWFkIC0tIHNwbGljZSB0aGUgZW50aXJlIHNlY29u
-ZGFyeSBxdWV1ZSBvbnRvIHRoZSBoZWFkIG9mIHRoZQo+ICsgKiBwcmltYXJ5IHF1ZXVlLgo+ICsg
-Ki8KPiArc3RhdGljIGNuYV9zcGxpY2VfaGVhZChzdHJ1Y3QgcXNwaW5sb2NrICpsb2NrLCB1MzIg
-dmFsLAo+ICsJCSAgICAgICBzdHJ1Y3QgbWNzX3NwaW5sb2NrICpub2RlLCBzdHJ1Y3QgbWNzX3Nw
-aW5sb2NrICpuZXh0KQpNaXNzaW5nIHJldHVybiB2YWx1ZSB0eXBlIChzdHJ1Y3QgbWNzX3NwaW5s
-b2NrICopLgoKPiArewo+ICsJc3RydWN0IG1jc19zcGlubG9jayAqaGVhZF8ybmQsICp0YWlsXzJu
-ZDsKPiArCj4gKwl0YWlsXzJuZCA9IGRlY29kZV90YWlsKG5vZGUtPmxvY2tlZCk7Cj4gKwloZWFk
-XzJuZCA9IHRhaWxfMm5kLT5uZXh0OwpJIHVuZGVyc3RhbmQgdGhhdCB5b3UgYXJlIHRyeWluZyB0
-byBhdm9pZCByZXBlYXRpbmcgdGhvc2UgdHdvIGxpbmVzCmluIGJvdGggcGxhY2VzIHRoaXMgZnVu
-Y3Rpb24gaXMgY2FsbGVkIGZyb20sIGJ1dCB5b3UgZG8gaXQgYXQgdGhlIGNvc3QKb2YgYWRkaW5n
-IHRoZSBmb2xsb3dpbmcgdW5uZWNlc3NhcnkgaWYtc3RhdGVtZW50LCBhbmQgaW4gZ2VuZXJhbCB0
-aGlzIGZ1bmN0aW9uCmxvb2tzIGNsdW5reS4KCk1heWJlIG1vdmUgdGhvc2UgdHdvIGxpbmVzIGlu
-dG8gYSBzZXBhcmF0ZSBmdW5jdGlvbiwgZS5nLiwKCnN0YXRpYyBzdHJ1Y3QgbWNzX3NwaW5sb2Nr
-ICpjbmFfZXh0cmFjdF8yZGFyeV9oZWFkX3RhaWwodW5zaWduZWQgaW50IGxvY2tlZCwKCQkJCQkJ
-CQlzdHJ1Y3QgbWNzX3NwaW5sb2NrICoqdGFpbF8ybmQpCgphbmQgdGhlbiBjYWxsIHRoaXMgZnVu
-Y3Rpb24gZnJvbSBjbmFfcGFzc19sb2NrKCksIHdoaWxlIGhlcmUgeW91IGNhbiBkbzoKCgkgIHN0
-cnVjdCBtY3Nfc3BpbmxvY2sgKmhlYWRfMm5kLCAqdGFpbF8ybmQ7CgoJICBoZWFkXzJuZCA9IGNu
-YV9leHRyYWN0XzJkYXJ5X2hlYWRfdGFpbChsb2NrLCAmdGFpbF8ybmQpOwoKCSAgdTMyIG5ldyA9
-ICgoc3RydWN0IGNuYV9ub2RlICopdGFpbF8ybmQpLT5lbmNvZGVkX3RhaWwgfCBfUV9MT0NLRURf
-VkFMOwoJICDigKYKCgo+ICsKPiArCWlmIChsb2NrKSB7Cj4gKwkJdTMyIG5ldyA9ICgoc3RydWN0
-IGNuYV9ub2RlICopdGFpbF8ybmQpLT5lbmNvZGVkX3RhaWwgfCBfUV9MT0NLRURfVkFMOwo+ICsJ
-CWlmICghYXRvbWljX3RyeV9jbXB4Y2hnX3JlbGF4ZWQoJmxvY2stPnZhbCwgJnZhbCwgbmV3KSkK
-PiArCQkJcmV0dXJuIE5VTEw7Cj4gKwo+ICsJCS8qCj4gKwkJICogVGhlIG1vbWVudCB3ZSd2ZSBs
-aW5rZWQgdGhlIHByaW1hcnkgdGFpbCB3ZSBjYW4gcmFjZSB3aXRoCj4gKwkJICogdGhlIFdSSVRF
-X09OQ0UocHJldi0+bmV4dCwgbm9kZSkgc3RvcmUgZnJvbSBuZXcgd2FpdGVycy4KPiArCQkgKiBU
-aGF0IHN0b3JlIG11c3Qgd2luLgo+ICsJCSAqLwo+ICsJCWNtcHhjaGdfcmVsYXhlZCgmdGFpbF8y
-bmQtPm5leHQsIGhlYWRfMm5kLCBuZXh0KTsKPiArCX0gZWxzZSB7Cj4gKwkJdGFpbF8ybmQtPm5l
-eHQgPSBuZXh0Owo+ICsJfQo+ICsKPiArCXJldHVybiBoZWFkXzJuZDsKPiArfQo+ICsKPiArLyog
-QWJ1c2UgdGhlIHB2X3dhaXRfaGVhZF9vcl9sb2NrKCkgaG9vayB0byBnZXQgc29tZSB3b3JrIGRv
-bmUgKi8KPiArc3RhdGljIF9fYWx3YXlzX2lubGluZSB1MzIgY25hX3dhaXRfaGVhZF9vcl9sb2Nr
-KHN0cnVjdCBxc3BpbmxvY2sgKmxvY2ssCj4gKwkJCQkJCSBzdHJ1Y3QgbWNzX3NwaW5sb2NrICpu
-b2RlKQo+ICt7Cj4gKwlzdHJ1Y3QgY25hX25vZGUgKmNuID0gKHN0cnVjdCBjbmFfbm9kZSAqKW5v
-ZGU7Cj4gKwo+ICsJLyoKPiArCSAqIFRyeSBhbmQgcHV0IHRoZSB0aW1lIG90aGVyd2lzZSBzcGVu
-ZCBzcGluIHdhaXRpbmcgb24KPiArCSAqIF9RX0xPQ0tFRF9QRU5ESU5HX01BU0sgdG8gdXNlIGJ5
-IHNvcnRpbmcgb3VyIGxpc3RzLgo+ICsJICovCj4gKwljbi0+cGFydGlhbF9vcmRlciA9IGNuYV9v
-cmRlcl9xdWV1ZShub2RlLCBub2RlKTsKPiArCj4gKwlyZXR1cm4gMDsgLyogd2UgbGllZDsgd2Ug
-ZGlkbid0IHdhaXQsIGdvIGRvIHNvIG5vdyAqLwo+ICt9Cj4gKwo+ICtzdGF0aWMgaW5saW5lIGJv
-b2wgY25hX3RyeV9jbGVhcl90YWlsKHN0cnVjdCBxc3BpbmxvY2sgKmxvY2ssIHUzMiB2YWwsCj4g
-KwkJCQkgICAgICBzdHJ1Y3QgbWNzX3NwaW5sb2NrICpub2RlKQo+ICt7Cj4gKwlzdHJ1Y3QgbWNz
-X3NwaW5sb2NrICpuZXh0Owo+ICsKPiArCS8qCj4gKwkgKiBXZSdyZSBoZXJlIGJlY2F1c2UgdGhl
-IHByaW1hcnkgcXVldWUgaXMgZW1wdHk7IGNoZWNrIHRoZSBzZWNvbmRhcnkKPiArCSAqIHF1ZXVl
-IGZvciByZW1vdGUgd2FpdGVycy4KPiArCSAqLwo+ICsJaWYgKG5vZGUtPmxvY2tlZCA+IDEpIHsK
-PiArCQkvKgo+ICsJCSAqIFdoZW4gdGhlcmUgYXJlIHdhaXRlcnMgb24gdGhlIHNlY29uZGFyeSBx
-dWV1ZSBtb3ZlIHRoZW0gYmFjawo+ICsJCSAqIG9udG8gdGhlIHByaW1hcnkgcXVldWUgYW5kIGxl
-dCB0aGVtIHJpcC4KPiArCQkgKi8KPiArCQluZXh0ID0gY25hX3NwbGljZV9oZWFkKGxvY2ssIHZh
-bCwgbm9kZSwgTlVMTCk7Cj4gKwkJaWYgKG5leHQpIHsKQW5kLCBhZ2FpbiwgdGhpcyBpZi1zdGF0
-ZW1lbnQgaXMgaGVyZSBvbmx5IGJlY2F1c2UgeW91IG1vdmVkIHRoZSByZXN0IG9mIHRoZSBjb2Rl
-CmludG8gY25hX3NwbGljZV9oZWFkKCkuIFBlcmhhcHMsIHdpdGggY25hX2V4dHJhY3RfMmRhcnlf
-aGVhZF90YWlsKCkgeW91IGNhbgpicmluZyB0aGF0IGNvZGUgYmFjaz8KCj4gKwkJCWFyY2hfbWNz
-X3Bhc3NfbG9jaygmaGVhZF8ybmQtPmxvY2tlZCwgMSk7ClNob3VsZCBiZSBuZXh0LT5sb2NrZWQu
-IEJldHRlciB5ZXQsIOKAmG5leHQnIHNob3VsZCBiZSBjYWxsZWQg4oCYaGVhZF8ybmTigJkuCj4g
-KwkJCXJldHVybiB0cnVlOwo+ICsJCX0KPiArCj4gKwkJcmV0dXJuIGZhbHNlOwo+ICsJfQo+ICsK
-PiArCS8qIEJvdGggcXVldWVzIGVtcHR5LiAqLwo+ICsJcmV0dXJuIF9fdHJ5X2NsZWFyX3RhaWwo
-bG9jaywgdmFsLCBub2RlKTsKPiArfQo+ICsKPiArc3RhdGljIGlubGluZSB2b2lkIGNuYV9wYXNz
-X2xvY2soc3RydWN0IG1jc19zcGlubG9jayAqbm9kZSwKPiArCQkJCSBzdHJ1Y3QgbWNzX3NwaW5s
-b2NrICpuZXh0KQo+ICt7Cj4gKwlzdHJ1Y3QgY25hX25vZGUgKmNuID0gKHN0cnVjdCBjbmFfbm9k
-ZSAqKW5vZGU7Cj4gKwl1MzIgcGFydGlhbF9vcmRlciA9IGNuLT5wYXJ0aWFsX29yZGVyOwo+ICsJ
-dTMyIHZhbCA9IF9RX0xPQ0tFRF9WQUw7Cj4gKwo+ICsJLyogY25hX3dhaXRfaGVhZF9vcl9sb2Nr
-KCkgbGVmdCB3b3JrIGZvciB1cy4gKi8KPiArCWlmIChwYXJ0aWFsX29yZGVyKSB7Cj4gKwkJcGFy
-dGlhbF9vcmRlciA9IGNuYV9vcmRlcl9xdWV1ZShub2RlLCBkZWNvZGVfdGFpbChwYXJ0aWFsX29y
-ZGVyKSk7Cj4gKwo+ICsJaWYgKCFwYXJ0aWFsX29yZGVyKSB7Cj4gKwkJLyoKPiArCQkgKiBXZSBm
-b3VuZCBhIGxvY2FsIHdhaXRlcjsgcmVsb2FkIEBuZXh0IGluIGNhc2Ugd2UgY2FsbGVkCj4gKwkJ
-ICogY25hX29yZGVyX3F1ZXVlKCkgYWJvdmUuCj4gKwkJICovCj4gKwkJbmV4dCA9IG5vZGUtPm5l
-eHQ7Cj4gKwkJdmFsIHw9IG5vZGUtPmxvY2tlZDsJLyogcHJlc2V2ZSBzZWNvbmRhcnkgcXVldWUg
-Ki8KVGhpcyBpcyB3cm9uZy4gbm9kZS0+bG9ja2VkIGNhbiBiZSAwLCAxIG9yIGFuIGVuY29kZWQg
-dGFpbCBhdCB0aGlzIHBvaW50LCBhbmQKdGhlIGxhdHRlciBjYXNlIHdpbGwgYmUgaGFuZGxlZCBp
-bmNvcnJlY3RseS4KClNob3VsZCBiZSAKCQkgIGlmIChub2RlLT5sb2NrZWQpIHZhbCA9IG5vZGUt
-PmxvY2tlZDsKaW5zdGVhZC4KCj4gKwo+ICsJfSBlbHNlIGlmIChub2RlLT5sb2NrZWQgPiAxKSB7
-Cj4gKwkJLyoKPiArCQkgKiBXaGVuIHRoZXJlIGFyZSBubyBsb2NhbCB3YWl0ZXJzIG9uIHRoZSBw
-cmltYXJ5IHF1ZXVlLCBzcGxpY2UKPiArCQkgKiB0aGUgc2Vjb25kYXJ5IHF1ZXVlIG9udG8gdGhl
-IHByaW1hcnkgcXVldWUgYW5kIHBhc3MgdGhlIGxvY2sKPiArCQkgKiB0byB0aGUgbG9uZ2VzdCB3
-YWl0aW5nIHJlbW90ZSB3YWl0ZXIuCj4gKwkJICovCj4gKwkJbmV4dCA9IGNuYV9zcGxpY2VfaGVh
-ZChOVUxMLCAwLCBub2RlLCBuZXh0KTsKPiArCX0KPiArCj4gKwlhcmNoX21jc19wYXNzX2xvY2so
-Jm5leHQtPmxvY2tlZCwgdmFsKTsKPiArfQoKUmVnYXJkcywK4oCUIEFsZXgKCgpfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
-aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Thu, 2020-01-30 at 20:55 +0100, Krzysztof Kozlowski wrote:
+> CONFIG_MMC_BLOCK_BOUNCE is gone since commit c3dccb74be28 ("mmc: core:
+> Delete bounce buffer Kconfig option").
+> 
+> CONFIG_LBDAF is gone since commit 72deb455b5ec ("block: remove
+> CONFIG_LBDAF").
+> 
+> CONFIG_IOSCHED_DEADLINE and CONFIG_IOSCHED_CFQ are gone since
+> commit f382fb0bcef4 ("block: remove legacy IO schedulers").
+> 
+> The IOSCHED_DEADLINE was replaced by MQ_IOSCHED_DEADLINE and it will be
+> now enabled by default (along with MQ_IOSCHED_KYBER).
+> 
+> The IOSCHED_BFQ seems to replace IOSCHED_CFQ so select it in configs
+> previously choosing the latter.
+> 
+> CONFIG_CROSS_COMPILE is gone since commit f1089c92da79 ("kbuild: remove
+> CONFIG_CROSS_COMPILE support").
+
+Hi Krzysztof.
+
+There seems there are a lot more of these unused CONFIG_<foo>
+symbols in various defconfigs. (just for arm and treewide below)
+
+ARM defconfigs:
+
+--------------------------------------------------------------------
+
+# find all defined config symbols in Kconfig files
+
+$ git grep -P -oh '^\s*(?:menu)?config\s+\w+' -- '*/Kconfig*' | \
+  sed -r -e 's/\s*config\s+//' -e 's/\s*menuconfig\s+//' | \
+  sort | uniq > config_symbols
+
+# find CONFIG_ symbols in arm defconfigs
+
+$ git grep -w -oh -P 'CONFIG_\w+' 'arch/arm*/*defconfig*' | \
+  sort | uniq > used_in_arm_defconfigs
+
+# find all the unused symbols
+
+$ cat used_in_arm_defconfigs | \
+  while read line ; do \
+    echo -n "$line " ; grep -w -c ${line/CONFIG_/} config_symbols ; \
+  done | \
+  grep " 0" | \
+  sed 's/ 0//'
+CONFIG_ARCH_AUTCPU12
+CONFIG_ARCH_CDB89712
+CONFIG_ARCH_CLEP7312
+CONFIG_ARCH_EDB7211
+CONFIG_ARCH_P720T
+CONFIG_ARCH_R8A7796
+CONFIG_BT_HCIBTUART
+CONFIG_CC_STACKPROTECTOR_REGULAR
+CONFIG_CHR_DEV_OSST
+CONFIG_CIFS_STATS
+CONFIG_CROSS_COMPILE
+CONFIG_DEBUG_SPINLOCK_SLEEP
+CONFIG_DETECT_SOFTLOCKUP
+CONFIG_DM9000_DEBUGLEVEL
+CONFIG_DRM_TINYDRM
+CONFIG_EXT3_DEFAULTS_TO_ORDERED
+CONFIG_EXT3_FS_XATTR
+CONFIG_FB_XGI
+CONFIG_GPIO_MOXART
+CONFIG_HOTPLUG
+CONFIG_INET6_XFRM_MODE_BEET
+CONFIG_INET6_XFRM_MODE_TRANSPORT
+CONFIG_INET6_XFRM_MODE_TUNNEL
+CONFIG_INET_XFRM_MODE_BEET
+CONFIG_INET_XFRM_MODE_TRANSPORT
+CONFIG_INET_XFRM_MODE_TUNNEL
+CONFIG_IOSCHED_CFQ
+CONFIG_IOSCHED_DEADLINE
+CONFIG_IP_NF_MATCH_ADDRTYPE
+CONFIG_IP_NF_TARGET_LOG
+CONFIG_IPX
+CONFIG_IRCOMM
+CONFIG_IRDA
+CONFIG_IRDA_CACHE_LAST_LSAP
+CONFIG_IRDA_DEBUG
+CONFIG_IRDA_FAST_RR
+CONFIG_IRDA_ULTRA
+CONFIG_IRLAN
+CONFIG_IRNET
+CONFIG_IRTTY_SIR
+CONFIG_KALLSYMS_EXTRA_PASS
+CONFIG_LBDAF
+CONFIG_LEDS_CPU
+CONFIG_LEDS_TIMER
+CONFIG_MAC80211_RC_PID
+CONFIG_MACH_BIGDISK
+CONFIG_MACH_D2NET
+CONFIG_MACH_DOVE_DT
+CONFIG_MACH_EDMINI_V2_DT
+CONFIG_MACH_LINKSTATION_LSCHL
+CONFIG_MACH_MSS2
+CONFIG_MACH_U300_SPIDUMMY
+CONFIG_MACH_VOICEBLUE
+CONFIG_MEDIA_TUNER_CUSTOMISE
+CONFIG_MMC_BLOCK_BOUNCE
+CONFIG_MMP_SPI
+CONFIG_MTD_DEBUG
+CONFIG_MTD_DEBUG_VERBOSE
+CONFIG_MTD_DOC2000
+CONFIG_MTD_DOC2001
+CONFIG_MTD_DOC2001PLUS
+CONFIG_MTD_DOCPROBE_ADDRESS
+CONFIG_MTD_DOCPROBE_ADVANCED
+CONFIG_MTD_DOCPROBE_HIGH
+CONFIG_MTD_M25P80
+CONFIG_NET_CADENCE
+CONFIG_NET_DMA
+CONFIG_NET_ETHERNET
+CONFIG_NET_PCI
+CONFIG_NET_PCMCIA
+CONFIG_NET_VENDOR_SMC
+CONFIG_NF_CONNTRACK_IPV4
+CONFIG_NF_CONNTRACK_IPV6
+CONFIG_PCIE_AXXIA
+CONFIG_PM_RUNTIME
+CONFIG_PROC_DEVICETREE
+CONFIG_PXA_FICP
+CONFIG_QCOM_ADSP_PIL
+CONFIG_QCOM_Q6V5_PIL
+CONFIG_SA1100_FIR
+CONFIG_SCSI_MULTI_LUN
+CONFIG_SMB_FS
+CONFIG_SMB_NLS_DEFAULT
+CONFIG_SOC_CAMERA_OV2640
+CONFIG_SOC_CAMERA_PLATFORM
+CONFIG_SOUND_DMAP
+CONFIG_SOUND_OSS
+CONFIG_SOUND_PRIME
+CONFIG_SOUND_TRACEINIT
+CONFIG_SOUND_VIDC
+CONFIG_SOUND_WAVEARTIST
+CONFIG_SOUND_YM3812
+CONFIG_SUSPEND_TIME
+CONFIG_SYSCTL_SYSCALL
+CONFIG_TIMER_STATS
+CONFIG_UID_STAT
+CONFIG_USB_CHIPIDEA_ULPI
+CONFIG_USB_EHCI_HCD_AXXIA
+CONFIG_USB_EHCI_MSM
+CONFIG_USB_GADGET_DUMMY_HCD
+CONFIG_USB_MSM_OTG
+CONFIG_V4L_USB_DRIVERS
+CONFIG_VIDEO_HELPER_CHIPS_AUTO
+CONFIG_WAN_ROUTER
+CONFIG_WAN_ROUTER_DRIVERS
+CONFIG_WINBOND_FIR
+
+--------------------------------------------------------------------
+
+And treewide defconfigs:
+
+$ git grep -P -oh '^\s*(?:menu)?config\s+\w+' -- '*/Kconfig*' | \
+  sed -r -e 's/\s*config\s+//' -e 's/\s*menuconfig\s+//' | \
+  sort | uniq > config_symbols
+
+$ git grep -w -oh -P 'CONFIG_\w+' '*defconfig*' | \
+  sort | uniq >  used_in_defconfigs
+
+$ cat used_in_defconfigs | \
+  while read line ; do \
+    echo -n "$line " ; grep -w -c ${line/CONFIG_/} config_symbols ;  \
+  done | \
+  grep " 0" | \
+  sed 's/ 0//'
+CONFIG_ALI_FIR
+CONFIG_ARCH_AUTCPU12
+CONFIG_ARCH_CDB89712
+CONFIG_ARCH_CLEP7312
+CONFIG_ARCH_EDB7211
+CONFIG_ARCH_P720T
+CONFIG_ARCH_R8A7796
+CONFIG_ARCPGU_DISPTYPE
+CONFIG_ARCPGU_RGB888
+CONFIG_ARPD
+CONFIG_ATH79_MACH_AP121
+CONFIG_ATH79_MACH_AP136
+CONFIG_ATH79_MACH_AP81
+CONFIG_ATH79_MACH_DB120
+CONFIG_ATH79_MACH_PB44
+CONFIG_ATH79_MACH_UBNT_XM
+CONFIG_BLK_DEV_RAM_DAX
+CONFIG_BOARD_EVM6457
+CONFIG_BOARD_EVM6472
+CONFIG_BOARD_EVM6474
+CONFIG_BOARD_EVM6678
+CONFIG_BT_HCIBTUART
+CONFIG_CC_STACKPROTECTOR_REGULAR
+CONFIG_CFQ_GROUP_IOSCHED
+CONFIG_CGROUP_MEMCG
+CONFIG_CGROUP_MEMCG_SWAP
+CONFIG_CHR_DEV_OSST
+CONFIG_CIFS_STATS
+CONFIG_CROSS_COMPILE
+CONFIG_CRYPTO_AES_586
+CONFIG_CSKY_MPTIMER
+CONFIG_DEBUG_SPINLOCK_SLEEP
+CONFIG_DEFAULT_DEADLINE
+CONFIG_DEFAULT_NOOP
+CONFIG_DETECT_SOFTLOCKUP
+CONFIG_DEVPTS_MULTIPLE_INSTANCES
+CONFIG_DM9000_DEBUGLEVEL
+CONFIG_DRM_TINYDRM
+CONFIG_DSCC4
+CONFIG_DVB_FE_CUSTOMISE
+CONFIG_ENABLE_WARN_DEPRECATED
+CONFIG_EXOFS_FS
+CONFIG_EXPERIMENTAL
+CONFIG_EXT2_FS_XIP
+CONFIG_EXT3_DEFAULTS_TO_ORDERED
+CONFIG_EXT3_FS_XATTR
+CONFIG_FB_SH7785FB
+CONFIG_FB_XGI
+CONFIG_GPIO_MOXART
+CONFIG_HEADERS_CHECK
+CONFIG_HID_SUPPORT
+CONFIG_HOTPLUG
+CONFIG_I2C_PARPORT_LIGHT
+CONFIG_INET6_XFRM_MODE_BEET
+CONFIG_INET6_XFRM_MODE_ROUTEOPTIMIZATION
+CONFIG_INET6_XFRM_MODE_TRANSPORT
+CONFIG_INET6_XFRM_MODE_TUNNEL
+CONFIG_INET_LRO
+CONFIG_INET_XFRM_MODE_BEET
+CONFIG_INET_XFRM_MODE_TRANSPORT
+CONFIG_INET_XFRM_MODE_TUNNEL
+CONFIG_INFINIBAND_CXGB3
+CONFIG_IOSCHED_CFQ
+CONFIG_IOSCHED_DEADLINE
+CONFIG_IP_NF_MATCH_ADDRTYPE
+CONFIG_IP_NF_TARGET_LOG
+CONFIG_IPV6_PRIVACY
+CONFIG_IPX
+CONFIG_IRCOMM
+CONFIG_IRDA
+CONFIG_IRDA_CACHE_LAST_LSAP
+CONFIG_IRDA_DEBUG
+CONFIG_IRDA_FAST_RR
+CONFIG_IRDA_ULTRA
+CONFIG_IRLAN
+CONFIG_IRNET
+CONFIG_IRTTY_SIR
+CONFIG_KALLSYMS_EXTRA_PASS
+CONFIG_KINGSUN_DONGLE
+CONFIG_KS959_DONGLE
+CONFIG_KSDAZZLE_DONGLE
+CONFIG_LBDAF
+CONFIG_LEDS_CPU
+CONFIG_LEDS_TIMER
+CONFIG_MAC80211_RC_PID
+CONFIG_MACH_BIGDISK
+CONFIG_MACH_D2NET
+CONFIG_MACH_DOVE_DT
+CONFIG_MACH_EDMINI_V2_DT
+CONFIG_MACH_LINKSTATION_LSCHL
+CONFIG_MACH_MSS2
+CONFIG_MACH_U300_SPIDUMMY
+CONFIG_MACH_VOICEBLUE
+CONFIG_MCS_FIR
+CONFIG_MEDIA_TUNER_CUSTOMISE
+CONFIG_MFD_SH_MOBILE_SDHI
+CONFIG_MMC_BLOCK_BOUNCE
+CONFIG_MMP_SPI
+CONFIG_MTD_CHAR
+CONFIG_MTD_DEBUG
+CONFIG_MTD_DEBUG_VERBOSE
+CONFIG_MTD_DOC2000
+CONFIG_MTD_DOC2001
+CONFIG_MTD_DOC2001PLUS
+CONFIG_MTD_DOCPROBE_ADDRESS
+CONFIG_MTD_DOCPROBE_ADVANCED
+CONFIG_MTD_DOCPROBE_HIGH
+CONFIG_MTD_M25P80
+CONFIG_MTD_PARTITIONS
+CONFIG_NCP_FS
+CONFIG_NCPFS_EXTRAS
+CONFIG_NCPFS_IOCTL_LOCKING
+CONFIG_NCPFS_NFS_NS
+CONFIG_NCPFS_NLS
+CONFIG_NCPFS_OS2_NS
+CONFIG_NCPFS_PACKET_SIGNING
+CONFIG_NCPFS_SMALLDOS
+CONFIG_NCPFS_STRONG
+CONFIG_NET_CADENCE
+CONFIG_NET_DCCPPROBE
+CONFIG_NETDEV_1000
+CONFIG_NETDEV_10000
+CONFIG_NET_DMA
+CONFIG_NET_ETHERNET
+CONFIG_NET_PACKET_ENGINE
+CONFIG_NET_PCI
+CONFIG_NET_PCMCIA
+CONFIG_NET_TCPPROBE
+CONFIG_NET_VENDOR_EXAR
+CONFIG_NET_VENDOR_SMC
+CONFIG_NF_CONNTRACK_IPV4
+CONFIG_NF_CONNTRACK_IPV6
+CONFIG_NF_NAT_IPV4
+CONFIG_NF_NAT_IPV6
+CONFIG_NR_DMA_CHANNELS
+CONFIG_NR_DMA_CHANNELS_BOOL
+CONFIG_NSC_FIR
+CONFIG_OCTEON_ETHERNET
+CONFIG_OCTEON_USB
+CONFIG_PCIEASPM_DEBUG
+CONFIG_PCIE_AXXIA
+CONFIG_PCI_LEGACY
+CONFIG_PERF_COUNTERS
+CONFIG_PHONE
+CONFIG_PM_RUNTIME
+CONFIG_PROC_DEVICETREE
+CONFIG_PUV3_AC97
+CONFIG_PUV3_MMC
+CONFIG_PUV3_MUSB
+CONFIG_PUV3_NAND
+CONFIG_PUV3_UART
+CONFIG_PUV3_UMAL
+CONFIG_PXA_FICP
+CONFIG_QCOM_ADSP_PIL
+CONFIG_QCOM_Q6V5_PIL
+CONFIG_RCU_CPU_STALL_INFO
+CONFIG_SA1100_FIR
+CONFIG_SBC834x
+CONFIG_SCSI_MULTI_LUN
+CONFIG_SCSI_OSD_INITIATOR
+CONFIG_SCSI_OSD_ULD
+CONFIG_SECURITY_SELINUX_BOOTPARAM_VALUE
+CONFIG_SH_SIR
+CONFIG_SIGMATEL_FIR
+CONFIG_SMB_FS
+CONFIG_SMB_NLS_DEFAULT
+CONFIG_SMC_IRCC_FIR
+CONFIG_SND_FSI_AK4642
+CONFIG_SND_FSI_DA7210
+CONFIG_SOC_CAMERA_MT9T112
+CONFIG_SOC_CAMERA_OV2640
+CONFIG_SOC_CAMERA_OV772X
+CONFIG_SOC_CAMERA_PLATFORM
+CONFIG_SOC_CAMERA_TW9910
+CONFIG_SOUND_DMAP
+CONFIG_SOUND_OSS
+CONFIG_SOUND_PRIME
+CONFIG_SOUND_TRACEINIT
+CONFIG_SOUND_VIDC
+CONFIG_SOUND_WAVEARTIST
+CONFIG_SOUND_YM3812
+CONFIG_SPI_XILINX_PLTFM
+CONFIG_STAGING_EXCLUDE_BUILD
+CONFIG_SUSPEND_TIME
+CONFIG_SYSCTL_SYSCALL
+CONFIG_TIMER_STATS
+CONFIG_TOSHIBA_FIR
+CONFIG_TREE_PREEMPT_RCU
+CONFIG_UID_STAT
+CONFIG_UIO_PDRV
+CONFIG_USB_CHIPIDEA_ULPI
+CONFIG_USB_CMMB_INNOFIDEI
+CONFIG_USB_EHCI_HCD_AXXIA
+CONFIG_USB_EHCI_MSM
+CONFIG_USB_GADGET_DUMMY_HCD
+CONFIG_USB_GADGET_M66592
+CONFIG_USB_IRDA
+CONFIG_USB_MSM_OTG
+CONFIG_USB_WLAN_HED_AQ3
+CONFIG_V4L_USB_DRIVERS
+CONFIG_VIA_FIR
+CONFIG_VIDEO_ALLOW_V4L1
+CONFIG_VIDEO_HELPER_CHIPS_AUTO
+CONFIG_VIDEO_SH_MOBILE_CEU
+CONFIG_VLSI_FIR
+CONFIG_W1_SLAVE_DS2760
+CONFIG_WAN_ROUTER
+CONFIG_WAN_ROUTER_DRIVERS
+CONFIG_WINBOND_FIR
+CONFIG_WLAN_80211
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
