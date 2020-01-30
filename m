@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3B1914DDEA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 16:33:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 523CB14DDF1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Jan 2020 16:34:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VaNdtxLkQzhBJssw1tkEH9RCW7Q9fv2fAl6EXFcF9xw=; b=MAARS36Yt8yDR6
-	44fF9GQpaKg+CWmu5OMxQURsPAKIM8gBFQndi0CXsTdglEfe995AGuziB66RuPX1zwUxqFQg+mF+J
-	To71o2OFExdcmfBaaFnaEeav4IVHhflK4CVigY4WdzmKBBr4Ok6erJdH//TBqTVAqCJcsblAJeDRA
-	QEaiQfwxrxxk7WnNaoV2ySyKmgLifTWisT1qJRKUFQDcQnqarC0xOmJEp4hdLOQBqWEILEjYwPPKC
-	rtC8JJ3ALb2L/9KiFigQYDYobv0YZuu8Azz8sDAKqPH5uyKk3N5yfJWh+Qq4E9mfJkxwtUtqPik9m
-	FlrGhaU+hcu/4i3i5isg==;
+	List-Owner; bh=+fIzB7oLUZMnErkYg3phQ2U4LYiO+/PNchC6y3akuWw=; b=KnX0N6QQsRVBpy
+	Hd961/meKPIREfgb3ZBgFw0QRtUUasw8IDbN1JEDNHhn7BVyQRlznibq/77Hrryp9sQUVHiwHXZ9E
+	lp1h0e3s46GrLMMU6lEpkgrKwN6bCIMyDkB2tB9IIG5do+vKa9yGpW5axeu50du0Kn0cPd4uI924i
+	Ddy9/eHBc5Wda1BrQhzDiVja39MTlW/R8qaGOGyVPgdLzF0zMONgmSAuapg7KW4PmjuuwsVmgsWej
+	SU+Ckm/kM6+mlhhcLcncCx+lY+knyovxaRxNFrreRBnYO+yG6d8PeO3bL4cn8liWY0ijLEDGHaJSY
+	SI/R1CPV3kWZMpCECtxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixBp6-00020C-HY; Thu, 30 Jan 2020 15:33:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixBov-0001yH-Pd
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 15:33:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 838EB31B;
- Thu, 30 Jan 2020 07:33:27 -0800 (PST)
-Received: from localhost (unknown [10.1.198.81])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 24FC23F68E;
- Thu, 30 Jan 2020 07:33:27 -0800 (PST)
-Date: Thu, 30 Jan 2020 15:33:25 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH v2 5/6] TEMP: sched: add interface for counter-based
- frequency invariance
-Message-ID: <20200130153325.GA5208@arm.com>
-References: <20191218182607.21607-1-ionela.voinescu@arm.com>
- <20191218182607.21607-6-ionela.voinescu@arm.com>
- <20200129193741.GU14914@hirez.programming.kicks-ass.net>
+	id 1ixBq0-0002Kv-Qo; Thu, 30 Jan 2020 15:34:36 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixBpo-0002Jo-NC
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Jan 2020 15:34:25 +0000
+Received: by mail-pg1-x541.google.com with SMTP id z124so1814006pgb.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 30 Jan 2020 07:34:24 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=InrNXti2tqCcgdnGdrLOWWm7wwHdQlyKW3JTIC/mJg0=;
+ b=QFVo/muvtC0B6YIUO9y0xdoojxpuOFjX+qqo2YlJf53v2Gk6pJQsUNVZ4SXXSbVnnX
+ N80G3hHiF4ARB3umz0Wu5SdiQiizhRz9wCUYaN03fP4i0RFEbVMjFXpqQMyMAguWFQit
+ EI13GLwLJ/F5/OqFXMvHtZbKSY6gmxuyuacNovVFxahOHVoiVyoSyz2cIsrNG2sAtRD8
+ Qpcu2GRpvFh7RuULb82Qc14M6mAM4t7JyT5bsgoC73WGc4g+Rqj2kfpBkd6lemq/7JmG
+ 44O1Oq7r5/KZhTWjpy7Y5VDqJZuH9yB/BKSlYyNzhhFHZCdEeQrMR38Ru6EEPbQ0ah7p
+ aHYg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=InrNXti2tqCcgdnGdrLOWWm7wwHdQlyKW3JTIC/mJg0=;
+ b=PSAoZ7BivxB3wHefQSGvezfqK7N4eFQJNB2yYB1W7Xh7kweelLPbC0bFZ6wCgAZcbm
+ GQIjaLEHCPE/6yWUBK84iBOVgsPD2Dyp8dwr6jEG5bP66oHtiDPfjnbnrp27BkgtyY0l
+ tF4RfIKRHCPS1aSFy133tOJTZh38kI3ssfh4nSqWgrHBXIWizZfroe4f2PptFzCTZiWy
+ dHUdOWZgvic+nKUEUYPAJxCWe8b/Co2NzXJOj+mSk+iIDvpWUtMTnBGlun8UWtUDEW5e
+ SGm54/+cscH1pLorXy9qCwLXCcOc9UkvEmCN2zUts5YuKVKwQAiNkmNMPvx1DzcY4tpk
+ rkIg==
+X-Gm-Message-State: APjAAAWD1d1JE0vmgshSfjjCph1J8mtzTfMohUSP8XsYfLnBr0BrYWqV
+ CBGgUUSoqoZF4mcuoUyq6TRImc2vgnHf4iYoE8U=
+X-Google-Smtp-Source: APXvYqxVfCmeNmg1JmwHBQ7U3+tNZs6aDkq/CssViwtzjKsDbuZf7DhdPYWehXmBapOg3jXG2EdG0Z8BxH5TGreo6D0=
+X-Received: by 2002:a63:5a23:: with SMTP id o35mr5262942pgb.4.1580398463707;
+ Thu, 30 Jan 2020 07:34:23 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200129193741.GU14914@hirez.programming.kicks-ass.net>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200127231208.1443-1-s-anna@ti.com>
+In-Reply-To: <20200127231208.1443-1-s-anna@ti.com>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Thu, 30 Jan 2020 17:34:15 +0200
+Message-ID: <CAHp75VfaOfBZYjQa960keORW=VjOn2PdwoYpJMG7SsN83daSJg@mail.gmail.com>
+Subject: Re: [PATCH v2] mfd: syscon: Use a unique name with regmap_config
+To: Suman Anna <s-anna@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_073329_877183_F67714FA 
-X-CRM114-Status: GOOD (  16.42  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200130_073424_776225_6B2D75DD 
+X-CRM114-Status: GOOD (  10.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,53 +92,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, Juri Lelli <juri.lelli@redhat.com>,
- suzuki.poulose@arm.com, catalin.marinas@arm.com, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com, ggherdovich@suse.cz,
- sudeep.holla@arm.com, will@kernel.org, dietmar.eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: David Lechner <david@lechnology.com>, Arnd Bergmann <arnd@arndb.de>,
+ Tony Lindgren <tony@atomide.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux OMAP Mailing List <linux-omap@vger.kernel.org>,
+ Lee Jones <lee.jones@linaro.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wednesday 29 Jan 2020 at 20:37:41 (+0100), Peter Zijlstra wrote:
-> On Wed, Dec 18, 2019 at 06:26:06PM +0000, Ionela Voinescu wrote:
-> > To be noted that this patch is a temporary one. It introduces the
-> > interface added by the patches at [1] to allow update of the frequency
-> > invariance scale factor based on counters. If [1] is merged there is
-> > not need for this patch.
-> > 
-> > For platforms that support counters (x86 - APERF/MPERF, arm64 - AMU
-> > counters) the frequency invariance correction factor can be obtained
-> > using a core counter and a fixed counter to get information on the
-> > performance (frequency based only) obtained in a period of time. This
-> > will more accurately reflect the actual current frequency of the CPU,
-> > compared with the alternative implementation that reflects the request
-> > of a performance level from the OS through the cpufreq framework
-> > (arch_set_freq_scale).
-> > 
-> > Therefore, introduce an interface - arch_scale_freq_tick, to be
-> > implemented by each architecture and called for each CPU on the tick
-> > to update the scale factor based on the delta in the counter values,
-> > if counter support is present on the CPU.
-> > 
-> > Either because reading counters is expensive or because reading
-> > counters from remote CPUs is not possible or is expensive, only
-> > update the counter based frequency scale factor on the tick for
-> > now. A tick based update will definitely be necessary either due to
-> > it being the only point of update for certain architectures or in
-> > order to cache the counter values for a particular CPU, if a
-> > further update from that CPU is not possible.
-> > 
-> > [1]
-> > https://lore.kernel.org/lkml/20191113124654.18122-1-ggherdovich@suse.cz/
-> 
-> FWIW, those patches just landed in tip/sched/core
+On Tue, Jan 28, 2020 at 1:14 AM Suman Anna <s-anna@ti.com> wrote:
+>
+> The DT node full name is currently being used in regmap_config
+> which in turn is used to create the regmap debugfs directories.
+> This name however is not guaranteed to be unique and the regmap
+> debugfs registration can fail in the cases where the syscon nodes
+> have the same unit-address but are present in different DT node
+> hierarchies. Replace this logic using the syscon reg resource
+> address instead (inspired from logic used while creating platform
+> devices) to ensure a unique name is given for each syscon.
 
-Thanks, Peter, I'll drop this one next time around.
+> -       syscon_config.name = of_node_full_name(np);
+> +       syscon_config.name = kasprintf(GFP_KERNEL, "%pOFn@%llx", np,
+> +                                      (u64)res.start);
 
-Ionela.
+Explicit castings in printf() usually tell us that something is not okay.
+Yes, for resource_size_t we have %pa.
+
+On top of that, I would rather see %pfwn to avoid modification for
+other fwnode types.
+
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
