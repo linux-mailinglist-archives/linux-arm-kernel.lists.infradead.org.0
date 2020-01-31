@@ -2,102 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DF9214E90D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 08:09:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 623B814E976
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 09:14:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S7eMrZQfS8mPrKO87Uk/GnokikJwVdeWJDHMgqXaW+4=; b=Ybb1Z5WHvaMeRD
-	KpEeuvSyMRruG1NnK4Z25na4KY76GnVVlhUjORs5Yn1R/68j8fZV5hnSFBypd3LuNmjyNDS8jGW00
-	ExUMhaGXeLGnMHDISeYtQH4g+nas5XSn+zArh90I7LjmF3cPRmx44j0+VnqsdG02NC+FKjI+OeRvk
-	y/9FoJUvjYth029/RhJEKJ6NMPm50zsyFv9emMzRg3RW6Q1BaXJsHgYlrlZ0sAVUhZ2zf/0Bp0HHC
-	LDGumIS4vNBLw0EjlurN7I3d5zjuSEnkGGka/sjgUf0bzoWbTx6/Bp45815242KXT54LO0+HWyjOJ
-	L04yO7sX7pPYdwexvHGA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kM2dRSBTLpjUP8pk9o9Q6GT8Dg2E63whDPkjRopBmyE=; b=c+SeVMYDGx+1qT
+	g2sQEjhXM4JNDhDJtZyQOhEByk4xRb6NFN5++aySA7qEYY9cEeWaSuip8pB4wSHLDc5iqDgVkGYQd
+	wbVpdHxOLuotshXln82VPl8CUoWa040VmKSOcWzuHYfsBkvfRmNpX7zfL8rahFfyKexXy/wZxX62w
+	nD3+5OoRd/f4qrb16qMjQ09Cs9tJDI8ecc8bJ+YXOY577TlCWtGW3zjIpZt8rCDx9oxNCAfgsDfkB
+	o0OnrwQChgck5KH1wSNSolNbB7wm8Z+NITXrf/kmO8nYlXH25zTYITHvam99KadiH7U0sHSv5fFtN
+	QZmJUa6NRzoSq1FY3hBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixQQU-0000cV-9W; Fri, 31 Jan 2020 07:09:14 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
+	id 1ixRRI-0004gC-Gk; Fri, 31 Jan 2020 08:14:08 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixQQK-0000br-Mw
- for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 07:09:06 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00V78IS6092043;
- Fri, 31 Jan 2020 07:08:58 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : mime-version : content-type; s=corp-2019-08-05;
- bh=f/Rgr4Btt/dvUzQREUmef9cDteWWv4N/UoaunYa5ktY=;
- b=aYqHKz56nl8eZWkf3fSiSUcZBKb8z94tlD7FiSJ3dDMEmVNQ7LUxz+2ISqPAYfOrD629
- 5Iq3/V3KZ1gFTPOM8d9L3aIuKep4WUMiGMUnhqLnuvDDlZgdj3E27XCRXnIqAaatPJdG
- aEnGrvKHvoi1HW8d1yIJdUUV0XQQq1kH6gKgSgRXDFHulvdCSGy0+G3RNLTJmiWKaKOI
- dXrixAuiPCCaAiSxR2RRfPESiAZ5YsEJtpdCWMRM2KpgBQ/px3uVRL1fcftQkSnocJeV
- fhuJqeiDw7SEOWs1QLLrz+/cJH4yPyMK+gFuKDZG5UK8glzodjuFSZ6aZYse8kKYXRKd +Q== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2130.oracle.com with ESMTP id 2xrd3urhbb-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 31 Jan 2020 07:08:57 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00V78sak150714;
- Fri, 31 Jan 2020 07:08:57 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by userp3020.oracle.com with ESMTP id 2xva6pwx7t-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 31 Jan 2020 07:08:55 +0000
-Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00V78kfE022915;
- Fri, 31 Jan 2020 07:08:46 GMT
-Received: from kili.mountain (/129.205.23.165)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 30 Jan 2020 23:08:45 -0800
-Date: Fri, 31 Jan 2020 10:08:38 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: grygorii.strashko@ti.com
-Subject: [bug report] soc: ti: k3: add navss ringacc driver
-Message-ID: <20200131070838.umaillib2nxujzsh@kili.mountain>
+ id 1ixRRA-0004XL-Oa
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 08:14:03 +0000
+Received: by mail-oi1-f195.google.com with SMTP id q81so6516093oig.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 31 Jan 2020 00:14:00 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=whAXdHdznYjIr0eEK/ikQOAsAYBnA7TNWNtods2FE2c=;
+ b=TrbIKPH1EqP2PBrPwkk2pcRmDmvF3cZeN2xyjju9HlVFUzc+UbvOAHhrYjONQKR7J/
+ iTqf7sTdjB0vuDiNprosDebkcXvLNAWW07tu8sFqNeefL/BUh1p8PVEX33Q5Ame2MAZ+
+ qcgA80ZyTJCgFe3vQKzfRmyjMWQipPVdzcUGpLOEacpjglWEzR1FWX67h4Afx6kYkvDH
+ 2m/txw8HxBx+S8odhWctMJsCLGJDfkCpYMfrbU9ERN1MZSv2QeSzP3DLmXknFx2hPCI4
+ cyrj9Yq47KC8EjXcxgAMydJP9HSAGW1UNFVCZlE5StkhT6Sa9HdzfHVxvCl4ITErnXqq
+ dYyw==
+X-Gm-Message-State: APjAAAXzXej/A1mJWACWeTqKO+HZ4pEf2k9TXwS0HozF+WzhSDXW5RhJ
+ whoMe4maQW5gHigZpOrouzxIih9jW7YFwY9oNxs=
+X-Google-Smtp-Source: APXvYqxVsELFIbYc2E/Dk5r14mT05UKx5Y5iElcBd1BjTk4T4kMv0zIzqRCoNBGqWWZoA1rxpFFIVrR1UIOSbIHgmLQ=
+X-Received: by 2002:a54:4707:: with SMTP id k7mr5313336oik.153.1580458438520; 
+ Fri, 31 Jan 2020 00:13:58 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9516
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=1
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=495
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1911140001 definitions=main-2001310063
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9516
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=1 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=569 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
- definitions=main-2001310063
+References: <20200121103413.1337-1-geert+renesas@glider.be>
+ <20200121103722.1781-1-geert+renesas@glider.be>
+ <20200121103722.1781-4-geert+renesas@glider.be>
+ <78f934a3-ec7a-479e-9f63-4df7c4428ae5@www.fastmail.com>
+ <CACPK8XfUG08CmxK7_V=PGp1SBO2UE6CSyKPSi9Hiwz2td4Lq1w@mail.gmail.com>
+In-Reply-To: <CACPK8XfUG08CmxK7_V=PGp1SBO2UE6CSyKPSi9Hiwz2td4Lq1w@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 31 Jan 2020 09:13:47 +0100
+Message-ID: <CAMuHMdXK0_5VbUe2Zo364YNx0kQzt+ESr2GcVSYZc_VW2tn36g@mail.gmail.com>
+Subject: Re: [PATCH 04/20] ARM: aspeed: Drop unneeded select of HAVE_SMP
+To: Joel Stanley <joel@jms.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_230904_892759_0D200AA7 
-X-CRM114-Status: UNSURE (   9.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200131_001400_801468_1977FC0D 
+X-CRM114-Status: GOOD (  13.43  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,39 +85,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>, Arnd Bergmann <arnd@arndb.de>,
+ Kevin Hilman <khilman@kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Olof Johansson <olof@lixom.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Grygorii Strashko,
+Hi Joel,
 
-This is a semi-automatic email about new static checker warnings.
+On Fri, Jan 31, 2020 at 4:50 AM Joel Stanley <joel@jms.id.au> wrote:
+> On Tue, 28 Jan 2020 at 01:05, Andrew Jeffery <andrew@aj.id.au> wrote:
+> > On Tue, 21 Jan 2020, at 21:07, Geert Uytterhoeven wrote:
+> > > Support for the 6th generation Aspeed SoCs depends on ARCH_MULTI_V7.
+> > > As the latter selects HAVE_SMP, there is no need for MACH_ASPEED_G6 to
+> > > select HAVE_SMP.
+> > >
+> > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > > Cc: Joel Stanley <joel@jms.id.au>
+> > > Cc: Andrew Jeffery <andrew@aj.id.au>
+> >
+> > Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+>
+> Acked-by: Joel Stanley <joel@jms.id.au>
+>
+> Geert, did you intend for these to be picked up by Arnd and Olof?
 
-The patch 3277e8aa2504: "soc: ti: k3: add navss ringacc driver" from 
-Jan 15, 2020, leads to the following Smatch complaint:
+Feel free to pick it up.
+I'll resend the remaining patches to the arm-soc maintainers later.
 
-    ./drivers/soc/ti/k3-ringacc.c:562 k3_ringacc_ring_cfg()
-     warn: variable dereferenced before check 'ring' (see line 559)
+Gr{oetje,eeting}s,
 
-./drivers/soc/ti/k3-ringacc.c
-   558	{
-   559		struct k3_ringacc *ringacc = ring->parent;
-                                             ^^^^^^^^^^^^
-dereference
+                        Geert
 
-   560		int ret = 0;
-   561	
-   562		if (!ring || !cfg)
-                     ^^^^
-too late
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-   563			return -EINVAL;
-   564		if (cfg->elm_size > K3_RINGACC_RING_ELSIZE_256 ||
-
-regards,
-dan carpenter
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
