@@ -2,69 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC13914ED85
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 14:38:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F316814ED8A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 14:39:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2CT+5WlTQKTHFT/vjcJ3ZgoiICxQZiOtZO8FhKTGVww=; b=fueg8kAcAeH7ai
-	L4Rk82gctdqXNZMF51AXcJ+ZpLEZmuQovQJjI7mCEJ4VS9K7BllAtw0KaEuTqx2mRdNnOFbNwuJwI
-	/+oNPS5bz3bCHtOcuC4KJ7smkiLUWUH27I9VhpCFYiBZBckJaMq+8EaDMkjLl78wtOTQHEEtWUJOH
-	KP0VYVScrkBGEH/w58F3gpiG3+doHa0AimVB3ZuoOdKKVLu42kvgO/Aip2lTuIxurgxIQGD7QaLVO
-	YmcYNLRUrTQiBmXh9tuCFR/daVey7jhZ5jOOXXKxYyFfPxQi1ByS1EUpWlthxe5+sQ67CE7LxpQU3
-	YR3KfbKFMg7Sd/EtwTiA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FJbcNuvnmxOF9T1HAOsctJa0uQog6xPvnGKMl6b3ayY=; b=Eqc6gnfM98b80mwiuff8a/H8i
+	9HfFmr7Pok74QR58Guda7AyfwAkB1VubE3WpMlNBX0PC6Wmqk6ozbvd39mJ0gd5JxRqrM7RvQqWeS
+	mzPzo8X6pWh4P1desKfYeyL/u2r3rUNgvk87QcOnu5zx47BuBVnyNdG19mapaH9Hu3O0ZfLq7bV/j
+	WCWk7BV29bef3/xi6IfgsGa2YgkreM5Zz56g4B7c/rZIAdhQB7jsCnu+dxFOuKh3nVx+HDXMPrbak
+	H7VmxZBxn4ZmOie2B4rq8d0m2oxegoqVycoFvGutOLq5V2sF6r5xZSbt4e3WssWeF/05cU+XTqON6
+	V9w9jawUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixWUm-0000mH-Dl; Fri, 31 Jan 2020 13:38:04 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixWUd-0000jV-83
- for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 13:37:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=bIL6s2tX20+CxxGQWJaV4RM/8y4pIfyAI9ZZqon5Vnw=; b=E+2UXLkAfhDVjyx79E0W5Yy+kM
- ivc9G26et7iRj2QkOXbpbz13uvKT9wn1zaNL1LXL51O3Idl1v+7ssyR9LMzPt66jrN3djYAO9+EDV
- z+rgCDIUJ7NkrPxrotASSbQvL/QFN96xnbf07fQ2fPjnnMSGnK6IXHotJ9wv7PB4m9uI=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1ixWUR-0007Iw-4I; Fri, 31 Jan 2020 14:37:43 +0100
-Date: Fri, 31 Jan 2020 14:37:42 +0100
-From: Andrew Lunn <andrew@lunn.ch>
-To: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Subject: Re: [PATCH v3 -next 3/4] net: emaclite: Fix arm64 compilation warnings
-Message-ID: <20200131133742.GD9639@lunn.ch>
-References: <1580471270-16262-1-git-send-email-radhey.shyam.pandey@xilinx.com>
- <1580471270-16262-4-git-send-email-radhey.shyam.pandey@xilinx.com>
+	id 1ixWWC-00018h-QK; Fri, 31 Jan 2020 13:39:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixWW1-000181-K5
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 13:39:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 69451106F;
+ Fri, 31 Jan 2020 05:39:20 -0800 (PST)
+Received: from [192.168.1.123] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 00EBF3F67D;
+ Fri, 31 Jan 2020 05:39:15 -0800 (PST)
+Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
+To: Jon Nettleton <jon@solid-run.com>
+References: <1580198925-50411-1-git-send-email-makarand.pawagi@nxp.com>
+ <20200128110916.GA491@e121166-lin.cambridge.arm.com>
+ <DB8PR04MB7164DDF48480956F05886DABEB070@DB8PR04MB7164.eurprd04.prod.outlook.com>
+ <12531d6c569c7e14dffe8e288d9f4a0b@kernel.org>
+ <CAKv+Gu8uaJBmy5wDgk=uzcmC4vkEyOjW=JRvhpjfsdh-HcOCLg@mail.gmail.com>
+ <CABdtJHsu9R9g4mn25=9EW3jkCMhnej_rfkiRzo3OCX4cv4hpUQ@mail.gmail.com>
+ <0680c2ce-cff0-d163-6bd9-1eb39be06eee@arm.com>
+ <CABdtJHuLZeNd9bQZ-cmQi00WnObYPvM=BdWNw4EMpOFHjRd70w@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <b136adc4-be48-82df-0592-97b4ba11dd79@arm.com>
+Date: Fri, 31 Jan 2020 13:39:16 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1580471270-16262-4-git-send-email-radhey.shyam.pandey@xilinx.com>
+In-Reply-To: <CABdtJHuLZeNd9bQZ-cmQi00WnObYPvM=BdWNw4EMpOFHjRd70w@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_053755_288518_6CF3B359 
-X-CRM114-Status: UNSURE (   5.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200131_053921_752411_09810FE6 
+X-CRM114-Status: GOOD (  29.08  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [185.16.172.187 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,31 +70,223 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gregkh@linuxfoundation.org, anirudha.sarangi@xilinx.com,
- michal.simek@xilinx.com, linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
- mchehab+samsung@kernel.org, john.linn@xilinx.com, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Calvin Johnson <calvin.johnson@nxp.com>, stuyoder@gmail.com,
+ nleeder@codeaurora.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
+ Will Deacon <will@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Pankaj Bansal <pankaj.bansal@nxp.com>,
+ Russell King <linux@armlinux.org.uk>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Len Brown <lenb@kernel.org>, Jason Cooper <jason@lakedaemon.net>,
+ Andy Wang <Andy.Wang@arm.com>, Makarand Pawagi <makarand.pawagi@nxp.com>,
+ Varun Sethi <V.Sethi@nxp.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>, Paul Yang <Paul.Yang@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ "<netdev@vger.kernel.org>" <netdev@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ Sudeep Holla <sudeep.holla@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 31, 2020 at 05:17:49PM +0530, Radhey Shyam Pandey wrote:
->  
->  /* BUFFER_ALIGN(adr) calculates the number of bytes to the next alignment. */
-> -#define BUFFER_ALIGN(adr) ((ALIGNMENT - ((u32)adr)) % ALIGNMENT)
-> +#define BUFFER_ALIGN(adr) ((ALIGNMENT - ((ulong)adr)) % ALIGNMENT)
+On 2020-01-31 1:11 pm, Jon Nettleton wrote:
+> On Fri, Jan 31, 2020 at 1:48 PM Robin Murphy <robin.murphy@arm.com> wrote:
+>>
+>> On 2020-01-31 12:28 pm, Jon Nettleton wrote:
+>>> On Fri, Jan 31, 2020 at 1:02 PM Ard Biesheuvel
+>>> <ard.biesheuvel@linaro.org> wrote:
+>>>>
+>>>> On Fri, 31 Jan 2020 at 12:06, Marc Zyngier <maz@kernel.org> wrote:
+>>>>>
+>>>>> On 2020-01-31 10:35, Makarand Pawagi wrote:
+>>>>>>> -----Original Message-----
+>>>>>>> From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+>>>>>>> Sent: Tuesday, January 28, 2020 4:39 PM
+>>>>>>> To: Makarand Pawagi <makarand.pawagi@nxp.com>
+>>>>>>> Cc: netdev@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
+>>>>>>> kernel@lists.infradead.org; linux-acpi@vger.kernel.org;
+>>>>>>> linux@armlinux.org.uk;
+>>>>>>> jon@solid-run.com; Cristi Sovaiala <cristian.sovaiala@nxp.com>;
+>>>>>>> Laurentiu
+>>>>>>> Tudor <laurentiu.tudor@nxp.com>; Ioana Ciornei
+>>>>>>> <ioana.ciornei@nxp.com>;
+>>>>>>> Varun Sethi <V.Sethi@nxp.com>; Calvin Johnson
+>>>>>>> <calvin.johnson@nxp.com>;
+>>>>>>> Pankaj Bansal <pankaj.bansal@nxp.com>; guohanjun@huawei.com;
+>>>>>>> sudeep.holla@arm.com; rjw@rjwysocki.net; lenb@kernel.org;
+>>>>>>> stuyoder@gmail.com; tglx@linutronix.de; jason@lakedaemon.net;
+>>>>>>> maz@kernel.org; shameerali.kolothum.thodi@huawei.com; will@kernel.org;
+>>>>>>> robin.murphy@arm.com; nleeder@codeaurora.org
+>>>>>>> Subject: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
+>>>>>>>
+>>>>>>> Caution: EXT Email
+>>>>>>>
+>>>>>>> On Tue, Jan 28, 2020 at 01:38:45PM +0530, Makarand Pawagi wrote:
+>>>>>>>> ACPI support is added in the fsl-mc driver. Driver will parse MC DSDT
+>>>>>>>> table to extract memory and other resorces.
+>>>>>>>>
+>>>>>>>> Interrupt (GIC ITS) information will be extracted from MADT table by
+>>>>>>>> drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c.
+>>>>>>>>
+>>>>>>>> IORT table will be parsed to configure DMA.
+>>>>>>>>
+>>>>>>>> Signed-off-by: Makarand Pawagi <makarand.pawagi@nxp.com>
+>>>>>>>> ---
+>>>>>>>>    drivers/acpi/arm64/iort.c                   | 53 +++++++++++++++++++++
+>>>>>>>>    drivers/bus/fsl-mc/dprc-driver.c            |  3 +-
+>>>>>>>>    drivers/bus/fsl-mc/fsl-mc-bus.c             | 48 +++++++++++++------
+>>>>>>>>    drivers/bus/fsl-mc/fsl-mc-msi.c             | 10 +++-
+>>>>>>>>    drivers/bus/fsl-mc/fsl-mc-private.h         |  4 +-
+>>>>>>>>    drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c | 71
+>>>>>>> ++++++++++++++++++++++++++++-
+>>>>>>>>    include/linux/acpi_iort.h                   |  5 ++
+>>>>>>>>    7 files changed, 174 insertions(+), 20 deletions(-)
+>>>>>>>>
+>>>>>>>> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+>>>>>>>> index 33f7198..beb9cd5 100644
+>>>>>>>> --- a/drivers/acpi/arm64/iort.c
+>>>>>>>> +++ b/drivers/acpi/arm64/iort.c
+>>>>>>>> @@ -15,6 +15,7 @@
+>>>>>>>>    #include <linux/kernel.h>
+>>>>>>>>    #include <linux/list.h>
+>>>>>>>>    #include <linux/pci.h>
+>>>>>>>> +#include <linux/fsl/mc.h>
+>>>>>>>>    #include <linux/platform_device.h>
+>>>>>>>>    #include <linux/slab.h>
+>>>>>>>>
+>>>>>>>> @@ -622,6 +623,29 @@ static int iort_dev_find_its_id(struct device
+>>>>>>>> *dev, u32 req_id,  }
+>>>>>>>>
+>>>>>>>>    /**
+>>>>>>>> + * iort_get_fsl_mc_device_domain() - Find MSI domain related to a
+>>>>>>>> +device
+>>>>>>>> + * @dev: The device.
+>>>>>>>> + * @mc_icid: ICID for the fsl_mc device.
+>>>>>>>> + *
+>>>>>>>> + * Returns: the MSI domain for this device, NULL otherwise  */ struct
+>>>>>>>> +irq_domain *iort_get_fsl_mc_device_domain(struct device *dev,
+>>>>>>>> +                                                     u32 mc_icid) {
+>>>>>>>> +     struct fwnode_handle *handle;
+>>>>>>>> +     int its_id;
+>>>>>>>> +
+>>>>>>>> +     if (iort_dev_find_its_id(dev, mc_icid, 0, &its_id))
+>>>>>>>> +             return NULL;
+>>>>>>>> +
+>>>>>>>> +     handle = iort_find_domain_token(its_id);
+>>>>>>>> +     if (!handle)
+>>>>>>>> +             return NULL;
+>>>>>>>> +
+>>>>>>>> +     return irq_find_matching_fwnode(handle, DOMAIN_BUS_FSL_MC_MSI);
+>>>>>>>> +}
+>>>>>>>
+>>>>>>> NAK
+>>>>>>>
+>>>>>>> I am not willing to take platform specific code in the generic IORT
+>>>>>>> layer.
+>>>>>>>
+>>>>>>> ACPI on ARM64 works on platforms that comply with SBSA/SBBR
+>>>>>>> guidelines:
+>>>>>>>
+>>>>>>>
+>>>>>>> https://developer.arm.com/architectures/platform-design/server-systems
+>>>>>>>
+>>>>>>> Deviating from those requires butchering ACPI specifications (ie IORT)
+>>>>>>> and
+>>>>>>> related kernel code which goes totally against what ACPI is meant for
+>>>>>>> on ARM64
+>>>>>>> systems, so there is no upstream pathway for this code I am afraid.
+>>>>>>>
+>>>>>> Reason of adding this platform specific function in the generic IORT
+>>>>>> layer is
+>>>>>> That iort_get_device_domain() only deals with PCI bus
+>>>>>> (DOMAIN_BUS_PCI_MSI).
+>>>>>>
+>>>>>> fsl-mc objects when probed, need to find irq_domain which is associated
+>>>>>> with
+>>>>>> the fsl-mc bus (DOMAIN_BUS_FSL_MC_MSI). It will not be possible to do
+>>>>>> that
+>>>>>> if we do not add this function because there are no other suitable APIs
+>>>>>> exported
+>>>>>> by IORT layer to do the job.
+>>>>>
+>>>>> I think we all understood the patch. What both Lorenzo and myself are
+>>>>> saying is
+>>>>> that we do not want non-PCI support in IORT.
+>>>>>
+>>>>
+>>>> IORT supports platform devices (aka named components) as well, and
+>>>> there is some support for platform MSIs in the GIC layer.
+>>>>
+>>>> So it may be possible to hide your exotic bus from the OS entirely,
+>>>> and make the firmware instantiate a DSDT with device objects and
+>>>> associated IORT nodes that describe whatever lives on that bus as
+>>>> named components.
+>>>>
+>>>> That way, you will not have to change the OS at all, so your hardware
+>>>> will not only be supported in linux v5.7+, it will also be supported
+>>>> by OSes that commercial distro vendors are shipping today. *That* is
+>>>> the whole point of using ACPI.
+>>>>
+>>>> If you are going to bother and modify the OS, you lose this advantage,
+>>>> and ACPI gives you no benefit over DT at all.
+>>>
+>>> You beat me to it, but thanks for the clarification Ard.  No where in
+>>> the SBSA spec that I have read does it state that only PCIe devices
+>>> are supported by the SMMU.  It uses PCIe devices as an example, but
+>>> the SMMU section is very generic in term and only says "devices".
+>>>
+>>> I feel the SBSA omission of SerDes best practices is an oversight in
+>>> the standard and something that probably needs to be revisited.
+>>> Forcing high speed networking interfaces to be hung off a bus just for
+>>> the sake of having a "standard" PCIe interface seems like a step
+>>> backward in this regard.  I would much rather have the Spec include a
+>>> common standard that could be exposed in a consistent manner.  But
+>>> this is a conversation for a different place.
+>>
+>> Just to clarify further, it's not about serdes or high-speed networking
+>> per se - describing a fixed-function network adapter as a named
+>> component is entirely within scope. The issue is when the hardware is
+>> merely a pool of accelerator components that can be dynamically
+>> configured at runtime into something that looks like one or more
+>> 'virtual' network adapters - there is no standard interface for *that*
+>> for SBSA to consider.
+>>
+>> Robin.
+>>
+>>>
+>>> I will work with NXP and find a better way to implement this.
+>>>
+>>> -Jon
+>>>
+> 
+> But by design SFP, SFP+, and QSFP cages are not fixed function network
+> adapters.  They are physical and logical devices that can adapt to
+> what is plugged into them.  How the devices are exposed should be
+> irrelevant to this conversation it is about the underlying
+> connectivity.
 
-Hi Radhey
+Apologies - I was under the impression that SFP and friends were a 
+physical-layer thing and that a MAC in the SoC would still be fixed such 
+that its DMA and interrupt configuration could be statically described 
+regardless of what transceiver was plugged in (even if some 
+configurations might not use every interrupt/stream ID/etc.) If that 
+isn't the case I shall go and educate myself further.
 
-linux/kernel.h has a few interesting macros, like
+>  For instance if this were an accelerator block on a
+> PCIe card then we wouldn't be having this discussion, even if it did
+> run a firmware and have a third party driver that exposed virtual
+> network interfaces.
 
-#define ALIGN(x, a)             __ALIGN_KERNEL((x), (a))
+Right, because in that case the interrupts and DMA have to travel 
+through the PCIe layer, and thus generic code only needs to worry about 
+things from the point of the PCI host bridge. That's rather the point of 
+having an industry-standard interface.
 
-These are more likely to be correct across all architectures than
-anything you role yourself.
-
-	 Andrew
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
