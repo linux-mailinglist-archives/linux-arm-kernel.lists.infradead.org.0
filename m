@@ -2,150 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAFDC14EB44
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 11:47:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2186514EB6F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 12:06:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=D6UAzCnwsWp7ZcGR9rH8QOxDd5vujtWE+25cgYmw7/0=; b=SfxpkV/HVabRJc
-	y4jZEYIJWKrNvLfpLSpkIDnouOhynMhRzyA1F8CUqdfno6Zn0MpkHvzoegT3ocYMIokCsHexPfNzF
-	IPwC29/FyR/9BTb+ccLDXM5xjaKVVDYVlc7RFeZiE2KUgQ32jzddqaDSic2BjO8mhy77sdWbom9LG
-	8HzMnLXDN67ubnbjwtHB4QZTGA+PZdrBm6KoPOZ9Gpy3JY2uwQgdj2rY+Dzu+C+UfJHk+zF3i38Uq
-	ydZLha5sJLbL/8ePtCNZTFZ7evOmgaCvCVDrys+0BNuUkauIWhfae/i9AvihdBBO9+v5OU16A+dfq
-	tFu3in2MLEso7Kb5b5mg==;
+	List-Owner; bh=IHmVcXxSOGxPbia7fwNtiuTXT91pA9unHpn3GoJ9iOo=; b=JCfZbcYVR+Ggj6
+	5vdJvNfQEGCjMLGZjpu6cYMfl4uMVH6SghM+ZOQZ22vxtqUv2NGde5FWv82fTzXvazXK00I0W74cp
+	17Iw/4IiD7GYQDtrCgUixtbyPR7bRjITuPbqSymRH5fjz8D10Lib2zy6x+0oclSOtYGKB4CUiGx4o
+	ZU82FGDr/cKeWI16oPxZ2crjjoxAO//n1gq0kc6DlWfkNO0qWksfhLR6MWIiRavch85inctxJpglb
+	6e/EikLhCCZJijjBUEtY3n0lKPKpOE8rCvsyIrStvEY21sY39hwr3i//WejRu2kx9ETVAD/UHCQ2E
+	ziYCkF7e/13GJ4GEbp6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixTpm-0004W7-IJ; Fri, 31 Jan 2020 10:47:34 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixTkg-00073g-1t
- for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 10:42:21 +0000
-Received-SPF: Pass (esa5.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa5.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa5.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa5.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: cCZxNusCWvHyik7PobtKgvspYQRYjdK9Dew06kxUK86DR3BEdUYUy5p52hWCkAglgMC+1ZX3Ou
- 8oLgXwYk3V9agtal9a9SP3maexoDYhQoamIDeB1kk2iB3IP2DMJZuv3VQT/JOCt6iS7viE2e1B
- 8Dn42kQ5s1jbd/wLzZ52g5wRoBUjMQiGxryd/Ca8DYLOJmbyKq9RzPieuQeOcxrflYBOUQALhh
- 9JG1dewCS1hlMQHC12hdzu3QP9yDR7noV7v/2KZfVVlR/VyYLs+UPvOba9NN9RejUy6AN543AS
- +Yk=
-X-IronPort-AV: E=Sophos;i="5.70,385,1574146800"; d="scan'208";a="63779480"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 31 Jan 2020 03:42:11 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 31 Jan 2020 03:42:07 -0700
-Received: from NAM10-MW2-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Fri, 31 Jan 2020 03:42:08 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=irnAHaR2RbfQoHtT4xLfW1GMnJ879p+yj1L/7Ao8aXkSElfUzBUZkticsw9tQe7Q2AyyXDwQUqZPdG4fByc4Z/HQ354ldMrPn03JA8QTNk1I30NB0IwBJ15mg6fgP36MVa8oJOeIweGTvnc5IhRszEHWBR4ck7BDLpoFBplRvUmFDHl/jmW8orFQ/g8HZikIA+KlZxj1kVwEXFEr7qb0kd3/rQsJYFvtMbfAB9/tFBo+FiJqECeg17l6Q8gWjVF/CSIvd9QGWUQZvYJgw6Uc3Gcp5wdIvcm1fj3qXC68j/HmK7L24w2U2nBw2Rf9zd0oZKl1LGah3vO2KouVCiOlvw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KaGXC2X9lxY07hM5v8cUn7WHVgzgDy9au2r77LMllUI=;
- b=Mt/UOvcJ5c/qbgRMIWkGvht64YK/YJ4nL0y+r7DybwtKdOtUDRb+MCo3brOSRPBYMk+PQdK4G30dR4aHovGIhCej2zqU+BWT0gzY+EYonVLYVUkLAST6W8dUxMy4wbPB9K7uvl7wJHd68FvXRL5GxsO3dzlDaAvYaGx+i046PSM+HPqoNPOlYXeONO78OnXVJ22aW7CVmlrSSbKDxpzZaaglrPIhQRWPA/6e2Qcpfdnw5LdsAbkmjfbVIez6fU91hG8zLQUAqpKnQe1nwo4mwz028ADfPvV/TW0y3VqDFtkN4xVvd8vjcGmoq45wIR6mdtn2IOzawF+g37sXzuk9ow==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KaGXC2X9lxY07hM5v8cUn7WHVgzgDy9au2r77LMllUI=;
- b=kpmyHINl0Ix1du9wgCOlTirc+3Z4gnKRqw2z8SVI1HSlvpbXdLWghth4lo2kEQpHy9mZDJYId60mIFMHeEZI8kQ6nD8Tq4KC+gv/Y4yMcRl03U6uWVlYJcMyKFgFWdoP3EUrypWKXAv/EBad+BA90RdlCIytFyqC3in4qjq1fss=
-Received: from DM6PR11MB3225.namprd11.prod.outlook.com (20.176.120.224) by
- DM6PR11MB3995.namprd11.prod.outlook.com (10.255.61.204) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2686.29; Fri, 31 Jan 2020 10:42:06 +0000
-Received: from DM6PR11MB3225.namprd11.prod.outlook.com
- ([fe80::dc6b:1191:3a76:8b6a]) by DM6PR11MB3225.namprd11.prod.outlook.com
- ([fe80::dc6b:1191:3a76:8b6a%7]) with mapi id 15.20.2686.028; Fri, 31 Jan 2020
- 10:42:06 +0000
-From: <Claudiu.Beznea@microchip.com>
-To: <Codrin.Ciubotariu@microchip.com>, <linux-clk@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH] clk: at91: sam9x60: Don't use audio PLL
-Thread-Topic: [PATCH] clk: at91: sam9x60: Don't use audio PLL
-Thread-Index: AQHV2CMUTS9+vTc4bU+e0LC8TLKFlA==
-Date: Fri, 31 Jan 2020 10:42:06 +0000
-Message-ID: <72d97d68-690b-7f18-0dca-a5aa131e1c29@microchip.com>
-References: <20200130174708.12448-1-codrin.ciubotariu@microchip.com>
-In-Reply-To: <20200130174708.12448-1-codrin.ciubotariu@microchip.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 81b3ab8f-1ed0-4d9a-e06c-08d7a63a377f
-x-ms-traffictypediagnostic: DM6PR11MB3995:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR11MB3995700FDF7AC95EBE975DCE87070@DM6PR11MB3995.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5236;
-x-forefront-prvs: 029976C540
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10001)(10009020)(366004)(189003)(199004)(966005)(5660300002)(53546011)(66476007)(66556008)(26005)(107886003)(76116006)(66946007)(2616005)(186003)(66446008)(64756008)(6506007)(91956017)(36756003)(498600001)(86362001)(71200400001)(31686004)(4326008)(2906002)(6486002)(54906003)(31696002)(6512007)(8936002)(8676002)(110136005)(81166006)(81156014);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR11MB3995;
- H:DM6PR11MB3225.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: m1yaoiMbVYDcnKlO0N5tUZfPPIh9pRf4C3xkpIuYMf4l8MXlsvq6NjVtNngReZvnJdxgkisn/DEDTLmzM8IuGYuw3ZxE+cWpUxvCxHsTT9onWYK4FlAXl5MNEJzfAZOfyNGNh9JyCS+w+Kb1V2oEi/a5wFubDWZX1h98c4Mu5mtLAxyEhds3xX0EnRKBMJ4CbQY0txT4AGot+1LZqKtzcesaFa7bDKNNE3baWJqQM8DDUnW9gATbezkeNy6DYl84Ob9av677cIl5sVVel3waXnrdnSah0TVNFgF0GB3fLU3ElDs3pHF4wPJuXGwh6hEvi31ppQRTkp0SnOo4R+ekKhvUyH8WfjUkezbepdodt/PK+ZlvSQebkex0q4cLDy2aZDPOTw3ub85umGB2kFf19Q5ztvQa6ykE/J3Vs0DA1GwKhNFe9NnBdCAFr9Pf5ZnKXcjnX/iRbnoxAD8NNr5ycpj7xPd/AD+N8RtoOON4eXsxh3DCmuiyGLxBNc2b14a1IqovswseD39b3O6BYYcuKaweY3WBlnyJbGzDy8cZaBnnwjJPh52uevZnihgAojDRy46cH769Go+esSkOoEGth4uryocBf5hw9fMxgBj5HAhVO9rEWpzAKNRLU1B59ajqDoteCMSEb6hIvrgTvnHqVtTB1gFgLtyumo5KmSlJb637Xq45HkiJya+afKoGx+St7Yyjy23uvMVv3Sxc1bajePN/l3qCzgoJaHfDUa1+WDI=
-x-ms-exchange-antispam-messagedata: VY8x0AQnzVvLf3HHwbRibd+la7xm9Ch3yFM0oJcgRMFuy4/0nZqzhcEYInVIZ/n0furTKy0SYu4E8FPItODBJ0hUsNJXg5mv5q3GEQk+vhQaMhQ7hGC+SziO7jHA0RfPqAnsowGuniL1C/5bhw6V3w==
-Content-ID: <8DCE96E21A9E4943A93D07954D23D9C5@namprd11.prod.outlook.com>
+	id 1ixU8C-0003Ow-G0; Fri, 31 Jan 2020 11:06:36 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixU81-0003N0-0e
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 11:06:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D0A7231B;
+ Fri, 31 Jan 2020 03:06:18 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 976083F67D;
+ Fri, 31 Jan 2020 03:06:15 -0800 (PST)
+Date: Fri, 31 Jan 2020 11:06:10 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Makarand Pawagi <makarand.pawagi@nxp.com>
+Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
+Message-ID: <20200131110610.GA32701@e121166-lin.cambridge.arm.com>
+References: <1580198925-50411-1-git-send-email-makarand.pawagi@nxp.com>
+ <20200128110916.GA491@e121166-lin.cambridge.arm.com>
+ <DB8PR04MB7164DDF48480956F05886DABEB070@DB8PR04MB7164.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 81b3ab8f-1ed0-4d9a-e06c-08d7a63a377f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 31 Jan 2020 10:42:06.4186 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: /fajoQ4Ad2PPdMqxBtap6egqLWltMRxqVNSCenjfBCwvt+XQo5fJf+8dnB9FV9u4RgK1//sTBu52gAGrQP8sW/3XR7hd7GlBXbXfbSVlBlk=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB3995
+Content-Disposition: inline
+In-Reply-To: <DB8PR04MB7164DDF48480956F05886DABEB070@DB8PR04MB7164.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_024218_126859_B6DFFABE 
-X-CRM114-Status: GOOD (  12.17  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200131_030625_148745_1423858A 
+X-CRM114-Status: GOOD (  28.78  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 2.5 URIBL_DBL_ABUSE_MALW   Contains an abused malware URL listed in
- the Spamhaus DBL blocklist [URIs: infradead.org]
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,62 +65,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, Eugen.Hristev@microchip.com,
- alexandre.belloni@bootlin.com, Ludovic.Desroches@microchip.com
+Cc: Calvin Johnson <calvin.johnson@nxp.com>,
+ "stuyoder@gmail.com" <stuyoder@gmail.com>,
+ "nleeder@codeaurora.org" <nleeder@codeaurora.org>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ "guohanjun@huawei.com" <guohanjun@huawei.com>,
+ "will@kernel.org" <will@kernel.org>, "maz@kernel.org" <maz@kernel.org>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, "jon@solid-run.com" <jon@solid-run.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
+ "lenb@kernel.org" <lenb@kernel.org>,
+ "jason@lakedaemon.net" <jason@lakedaemon.net>, Andy Wang <Andy.Wang@arm.com>,
+ Varun Sethi <V.Sethi@nxp.com>, "tglx@linutronix.de" <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>, Paul Yang <Paul.Yang@arm.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "shameerali.kolothum.thodi@huawei.com" <shameerali.kolothum.thodi@huawei.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Codrin,
+On Fri, Jan 31, 2020 at 10:35:48AM +0000, Makarand Pawagi wrote:
+> > -----Original Message-----
+> > From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > Sent: Tuesday, January 28, 2020 4:39 PM
+> > To: Makarand Pawagi <makarand.pawagi@nxp.com>
+> > Cc: netdev@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
+> > kernel@lists.infradead.org; linux-acpi@vger.kernel.org; linux@armlinux.org.uk;
+> > jon@solid-run.com; Cristi Sovaiala <cristian.sovaiala@nxp.com>; Laurentiu
+> > Tudor <laurentiu.tudor@nxp.com>; Ioana Ciornei <ioana.ciornei@nxp.com>;
+> > Varun Sethi <V.Sethi@nxp.com>; Calvin Johnson <calvin.johnson@nxp.com>;
+> > Pankaj Bansal <pankaj.bansal@nxp.com>; guohanjun@huawei.com;
+> > sudeep.holla@arm.com; rjw@rjwysocki.net; lenb@kernel.org;
+> > stuyoder@gmail.com; tglx@linutronix.de; jason@lakedaemon.net;
+> > maz@kernel.org; shameerali.kolothum.thodi@huawei.com; will@kernel.org;
+> > robin.murphy@arm.com; nleeder@codeaurora.org
+> > Subject: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
+> > 
+> > Caution: EXT Email
+> > 
+> > On Tue, Jan 28, 2020 at 01:38:45PM +0530, Makarand Pawagi wrote:
+> > > ACPI support is added in the fsl-mc driver. Driver will parse MC DSDT
+> > > table to extract memory and other resorces.
+> > >
+> > > Interrupt (GIC ITS) information will be extracted from MADT table by
+> > > drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c.
+> > >
+> > > IORT table will be parsed to configure DMA.
+> > >
+> > > Signed-off-by: Makarand Pawagi <makarand.pawagi@nxp.com>
+> > > ---
+> > >  drivers/acpi/arm64/iort.c                   | 53 +++++++++++++++++++++
+> > >  drivers/bus/fsl-mc/dprc-driver.c            |  3 +-
+> > >  drivers/bus/fsl-mc/fsl-mc-bus.c             | 48 +++++++++++++------
+> > >  drivers/bus/fsl-mc/fsl-mc-msi.c             | 10 +++-
+> > >  drivers/bus/fsl-mc/fsl-mc-private.h         |  4 +-
+> > >  drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c | 71
+> > ++++++++++++++++++++++++++++-
+> > >  include/linux/acpi_iort.h                   |  5 ++
+> > >  7 files changed, 174 insertions(+), 20 deletions(-)
+> > >
+> > > diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+> > > index 33f7198..beb9cd5 100644
+> > > --- a/drivers/acpi/arm64/iort.c
+> > > +++ b/drivers/acpi/arm64/iort.c
+> > > @@ -15,6 +15,7 @@
+> > >  #include <linux/kernel.h>
+> > >  #include <linux/list.h>
+> > >  #include <linux/pci.h>
+> > > +#include <linux/fsl/mc.h>
+> > >  #include <linux/platform_device.h>
+> > >  #include <linux/slab.h>
+> > >
+> > > @@ -622,6 +623,29 @@ static int iort_dev_find_its_id(struct device
+> > > *dev, u32 req_id,  }
+> > >
+> > >  /**
+> > > + * iort_get_fsl_mc_device_domain() - Find MSI domain related to a
+> > > +device
+> > > + * @dev: The device.
+> > > + * @mc_icid: ICID for the fsl_mc device.
+> > > + *
+> > > + * Returns: the MSI domain for this device, NULL otherwise  */ struct
+> > > +irq_domain *iort_get_fsl_mc_device_domain(struct device *dev,
+> > > +                                                     u32 mc_icid) {
+> > > +     struct fwnode_handle *handle;
+> > > +     int its_id;
+> > > +
+> > > +     if (iort_dev_find_its_id(dev, mc_icid, 0, &its_id))
+> > > +             return NULL;
+> > > +
+> > > +     handle = iort_find_domain_token(its_id);
+> > > +     if (!handle)
+> > > +             return NULL;
+> > > +
+> > > +     return irq_find_matching_fwnode(handle, DOMAIN_BUS_FSL_MC_MSI);
+> > > +}
+> > 
+> > NAK
+> > 
+> > I am not willing to take platform specific code in the generic IORT layer.
+> > 
+> > ACPI on ARM64 works on platforms that comply with SBSA/SBBR guidelines:
+> > 
+> > 
+> > https://developer.arm.com/architectures/platform-design/server-systems
+> >
+> > Deviating from those requires butchering ACPI specifications (ie IORT) and
+> > related kernel code which goes totally against what ACPI is meant for on ARM64
+> > systems, so there is no upstream pathway for this code I am afraid.
+> > 
+> Reason of adding this platform specific function in the generic IORT
+> layer is That iort_get_device_domain() only deals with PCI bus
+> (DOMAIN_BUS_PCI_MSI).
+> 
+> fsl-mc objects when probed, need to find irq_domain which is
+> associated with the fsl-mc bus (DOMAIN_BUS_FSL_MC_MSI). It will not be
+> possible to do that if we do not add this function because there are
+> no other suitable APIs exported by IORT layer to do the job.
 
-On 30.01.2020 19:47, Codrin Ciubotariu wrote:
-> On sam9x60, there is not audio PLL and so I2S and classD have to use one
-> of the best matching parents for their generated clock.
-> 
-> Fixes: 01e2113de9a5 ("clk: at91: add sam9x60 pmc driver")
-> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-> ---
->  drivers/clk/at91/sam9x60.c | 6 ++----
->  1 file changed, 2 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/clk/at91/sam9x60.c b/drivers/clk/at91/sam9x60.c
-> index 77398aefeb6d..0aeb44fed9de 100644
-> --- a/drivers/clk/at91/sam9x60.c
-> +++ b/drivers/clk/at91/sam9x60.c
-> @@ -144,11 +144,9 @@ static const struct {
->         { .n = "sdmmc1_gclk", .id = 26, .r = { .min = 0, .max = 105000000 }, },
->         { .n = "flex11_gclk", .id = 32, },
->         { .n = "flex12_gclk", .id = 33, },
-> -       { .n = "i2s_gclk",    .id = 34, .r = { .min = 0, .max = 105000000 },
-> -               .pll = true, },
-> +       { .n = "i2s_gclk",    .id = 34, .r = { .min = 0, .max = 105000000 }, },
->         { .n = "pit64b_gclk", .id = 37, },
-> -       { .n = "classd_gclk", .id = 42, .r = { .min = 0, .max = 100000000 },
-> -               .pll = true, },
-> +       { .n = "classd_gclk", .id = 42, .r = { .min = 0, .max = 100000000 }, },
->         { .n = "tcb1_gclk",   .id = 45, },
->         { .n = "dbgu_gclk",   .id = 47, },
->  };
+And that's by design.
 
-Please remove also the pll member of:
+I don't know what the FSL bus is and I don't want to know, what
+I am telling you is that the ACPI code in the mainline is sufficient
+to support SBSA compliant HW and that's what we support with ACPI
+on ARM64.
 
-static const struct {                                                           
-        char *n;                                                                
-        u8 id;                                                                  
-        struct clk_range r;                                                     
-        bool pll;                                                               
-}                                                      
+We won't hack the kernel (and ACPI tables) up to boot with ACPI on
+non-compliant platforms, I don't know how I can be any clearer than
+that.
 
-> --
-> 2.20.1
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+All is needed to configure the (platform dev/PCI->IOMMU->ITS) chain is
+in the ACPI/IORT specifications and again, that's by design, adding
+DSDT objects and hacking the kernel to make it work "like DT" won't
+cut it, you are solving the wrong problem here, boot this platform
+with a device tree, it is a problem that has been solved a long time
+ago and it is supported in the mainline kernel.
+
+Thanks,
+Lorenzo
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
