@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E15C314EE17
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 14:59:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FEF814EE1B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 15:00:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I3ihNHjc/H5g6ZWKGEG9zGAYRjbUw4918+jHdYEUnOU=; b=UAzjTLcW4XH/YR
-	euQeuHNRPwF6Hc7vnqSnrUHVh5tmJa3+5PnDSQGAmRCBc1YMTn5+wogG0BbrBrxIOzYVYDQhKA9hz
-	rTTDKpnvxnomiqS0jArpZ8MIrTZf9jvjRRB+upZ7aZiuXwXehdB+yAyZTzUqm/L+19VH7MBFWt8o/
-	+PqY24gzm/8u8eUM9tqAjYW4+B0hzs/JShn8U8BXNW3nrYELwfCYDgO7XFMPHLm1ENAu3wtw43mPF
-	snSxYV/10gfHP6Y+iSqwJAxchUjpHvkHN0NLyTDJGxbyNWnVyM95GgAgj2zPhjvUpLm/JLxqIGRiu
-	P8vG56I17VHS45KwilHA==;
+	List-Owner; bh=8Btzc0z+GeW/NWrRNR/21QiwkJTMWL3mBzMZkOw3uQ4=; b=h3cEsb3eUGyJMP
+	x73/a38QzNQ/MVAjWX3s4OIGPBScOIFnCun1QxE0VwCnfSUcypD9IdWhd/7FWSpYjlgbPFTAd+SPX
+	jL9J4Cu9iVPqbftZJ5oWNPu5KUGqDZE1dr0nVul2ZKLd12EYHFpYQqC6pe71DQ1Cn9VwQzvFdC9Lv
+	W2bZ4JZiDmjKMXO4ALNTljY8tVOZlbvs0qTcKXwmEK9G6Mz5zf8NegKIvUSCeMrnrWtJFmwDdK2LU
+	/KfoSupDAv52LhRPEbxBir5FxMW1xpDmL1HyMCCzjsVQ+LJMS1iGmoast1CjSXBylwsVVy6oi6y8k
+	HcfKSlAx83wNHOqQgD3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixWpe-0001g9-LX; Fri, 31 Jan 2020 13:59:38 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1ixWqH-0001wG-RN; Fri, 31 Jan 2020 14:00:17 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixWpP-0001f6-TK
- for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 13:59:27 +0000
+ id 1ixWpS-0001fk-OC
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 13:59:28 +0000
 Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00VDx8o1031096;
- Fri, 31 Jan 2020 07:59:08 -0600
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 00VDxHZ3022821;
+ Fri, 31 Jan 2020 07:59:17 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1580479148;
- bh=tAlhuEualNFoc+RRTeAtbYLAYLYM2y9/NLW0BARkMn0=;
+ s=ti-com-17Q1; t=1580479157;
+ bh=5lxWpBZ6G8w1tWs1wN9YxQXc/V6PgNi2wuwT6eWlKGQ=;
  h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=e50YOjuqIZ/V6/M0xTH9BwiLlInhEsyEFydBGBO0CI3PPnP2lD2mRvX6ZFhf99AEF
- mleTF+a+f8SwfEquT9bJoE5G8hP8+JI5yKQw4ferDIShB9zMa6vnelBEkBpERqLSY4
- aGhoDd38OV5mzza9WWfFtp6UYHZzy91z6T6nRYAg=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00VDx8xT041735
+ b=nDv9VPoNMvUFQB/fhBlINJPFughuTy4qLXzRoy8NKPu5AHZmq9CW/ikGcRnKtAX6i
+ +G6WJny+pq7aAR2+pBFgSfN4kfGa5afgJETWWcAWgvIOyEow8EsOOJlBSTZTS1iaWy
+ J4cdoC0r1cuxU+OjptsIcZse+VjVOowd+if2GX04=
+Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 00VDxHMY041900
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 31 Jan 2020 07:59:08 -0600
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ Fri, 31 Jan 2020 07:59:17 -0600
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 31
- Jan 2020 07:59:08 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ Jan 2020 07:59:17 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 31 Jan 2020 07:59:08 -0600
+ Frontend Transport; Fri, 31 Jan 2020 07:59:17 -0600
 Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00VDx59W069331;
- Fri, 31 Jan 2020 07:59:06 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 00VDxEIn021608;
+ Fri, 31 Jan 2020 07:59:15 -0600
 Subject: Re: [PoC] arm: dma-mapping: direct: Apply dma_pfn_offset only when it
  is valid
 To: Christoph Hellwig <hch@lst.de>
@@ -59,8 +59,8 @@ References: <8eb68140-97b2-62ce-3e06-3761984aa5b1@ti.com>
  <75843c71-1718-8d61-5e3d-edba6e1b10bd@ti.com> <20200130075332.GA30735@lst.de>
  <b2b1cb21-3aae-2181-fd79-f63701f283c0@ti.com> <20200130164010.GA6472@lst.de>
 From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <f0a84aa1-0f9c-8f4c-b159-f875ae2a37be@ti.com>
-Date: Fri, 31 Jan 2020 15:59:54 +0200
+Message-ID: <54af6531-705f-a31c-c5b8-479261a5454e@ti.com>
+Date: Fri, 31 Jan 2020 16:00:03 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
@@ -68,15 +68,15 @@ In-Reply-To: <20200130164010.GA6472@lst.de>
 Content-Language: en-US
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_055924_056303_B02CFAFB 
-X-CRM114-Status: GOOD (  29.30  )
+X-CRM114-CacheID: sfid-20200131_055926_865258_D6ED58AA 
+X-CRM114-Status: GOOD (  29.24  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -172,15 +172,15 @@ CgpJdCBkb2VzOiBhdWRpbyBhbmQgZG1hdGVzdCBtZW1jcHkgdGVzdHMgYXJlIGp1c3QgZmluZSB3
 aXRoIHRoaXMsIE1NQwphbHNvIHByb2JlZCB3aXRoIEFETUEgZW5hYmxlZC4KCkFzIGZhciBhcyBJ
 IGNhbiB0ZWxsIGl0IHdvcmtzIGFzIHdlbGwgYXMgZmFsbGluZyBiYWNrIHRvIHRoZSBvbGQgYXJt
 IG9wcwppbiBjYXNlIG9mIExQQUUgJiYgZG1hX3Bmbl9vZmZzZXQgIT0gMAoKRndpdzoKVGVzdGVk
-LWJ5OiBQZXRlciBVamZhbHVzaSA8cGV0ZXIudWpmYWx1c2lAdGkuY29tPgoKV291bGQgeW8gYmUg
-Y29tZm9ydGFibGUgdG8gc2VuZCBhcHBseSB0aGlzIHBhdGNoIHRvIG1haW5saW5lIHdpdGgKRml4
-ZXM6IGFkM2M3YjE4YzViMyAoImFybTogdXNlIHN3aW90bGIgZm9yIGJvdW5jZSBidWZmZXJpbmcg
-b24gTFBBRQpjb25maWdzIikKClNvIGl0IGdldHMgcGlja2VkIGZvciBzdGFibGUga2VybmVscyBh
-cyB3ZWxsPwoKPiAgCWlmIChJU19FTkFCTEVEKENPTkZJR19aT05FX0RNQSkpCj4gIAkJbWluX21h
-c2sgPSBETUFfQklUX01BU0soem9uZV9kbWFfYml0cyk7Cj4gIAllbHNlCj4gCgpUaGFuayB5b3Us
-Ci0gUMOpdGVyCgpUZXhhcyBJbnN0cnVtZW50cyBGaW5sYW5kIE95LCBQb3Jra2FsYW5rYXR1IDIy
-LCAwMDE4MCBIZWxzaW5raS4KWS10dW5udXMvQnVzaW5lc3MgSUQ6IDA2MTU1MjEtNC4gS290aXBh
-aWtrYS9Eb21pY2lsZTogSGVsc2lua2kKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
-ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
-bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+LWJ5OiBQZXRlciBVamZhbHVzaSA8cGV0ZXIudWpmYWx1c2lAdGkuY29tPgoKV291bGQgeW91IGJl
+IGNvbWZvcnRhYmxlIHRvIHNlbmQgYXBwbHkgdGhpcyBwYXRjaCB0byBtYWlubGluZSB3aXRoCkZp
+eGVzOiBhZDNjN2IxOGM1YjMgKCJhcm06IHVzZSBzd2lvdGxiIGZvciBib3VuY2UgYnVmZmVyaW5n
+IG9uIExQQUUKY29uZmlncyIpCgpTbyBpdCBnZXRzIHBpY2tlZCBmb3Igc3RhYmxlIGtlcm5lbHMg
+YXMgd2VsbD8KCj4gIAlpZiAoSVNfRU5BQkxFRChDT05GSUdfWk9ORV9ETUEpKQo+ICAJCW1pbl9t
+YXNrID0gRE1BX0JJVF9NQVNLKHpvbmVfZG1hX2JpdHMpOwo+ICAJZWxzZQo+IAoKVGhhbmsgeW91
+LAotIFDDqXRlcgoKVGV4YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAy
+MiwgMDAxODAgSGVsc2lua2kuClktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlw
+YWlra2EvRG9taWNpbGU6IEhlbHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
