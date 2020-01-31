@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 786DB14EB27
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 11:45:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11A7B14EB38
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 11:46:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0z6VLVyfAhtVDu5OIOi5XdQDyq0eWt7yyT7gIde8W4c=; b=N/SUdNxmLeqYEI
-	3iuut9LwK9NaXMJZjay71IN/t7xGYF205iBPfYU5AzEFQw54upsYSty+Y7rEpmfbrpeCsbIvc3zNq
-	btFZfOyqrmDQjuLExoRhCLe7SZfR+d46he6rrVXE1yyZkYURMwdoyh6BzX480qQ8f8/ycczlrEcPA
-	l49MFRGhNBSvq0ioiajavDWS1stQRdISEWlkVrriGuTygySMfjd5NUUxsx+udgx2h8ydrmJjIqyEy
-	02b3E4y3IkGnf8ky3c8/beP0rnQrJXwudBDpiQo6dG/49RgWtStN9+IAMlFY6jnIr3Clb3/x4qXOC
-	nDu2b1brwLnKMHIVwoeg==;
+	List-Owner; bh=juUrl8B6WY/kSlxcoCv0Ug0tZtRzn9PesjWTT4jkj3U=; b=DR8zaX6tKZ4Lyq
+	inJgPYaPMImyvUHy8/7L4PC110EsH7n9hdJsixfY8UOxo5ubfGlOkFwU2gEBCrYXQtQ0GCiPF+75c
+	DdwIkSMZiirG82d9wKMpv5+YyS/7F87zTqvJ5Ws6RcWftk63mT7Its4QmXH/AcfudH8Txt3U6ZzzP
+	kihY+vVA/WkuVF23FEmBOQjwUIiT1XpJTDV0Gi0GsSseKoNg+Wr1VO91pO+jJYOvalvD5hvOeaaNu
+	YNSQsSMYYiUgRFz9iRJ6lrcMGVQaf+BbM+rhtt2O+MdwMWxDVB12Im8KRMJCJD9wLks69tLbF2CWp
+	VjuGn1zmu4KfLKu0ppyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixTne-0002L5-QE; Fri, 31 Jan 2020 10:45:22 +0000
+	id 1ixToa-0003Na-04; Fri, 31 Jan 2020 10:46:20 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixTho-0003eW-BA; Fri, 31 Jan 2020 10:39:21 +0000
+ id 1ixTho-0003fQ-UF; Fri, 31 Jan 2020 10:39:22 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 85A3CAFFC;
- Fri, 31 Jan 2020 10:39:18 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 67526AF96;
+ Fri, 31 Jan 2020 10:39:19 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: gregkh@linuxfoundation.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 18/21] staging: vc04_services: Get rid of
- USE_TYPE_SERVICE_NO_RESUME
-Date: Fri, 31 Jan 2020 11:38:34 +0100
-Message-Id: <20200131103836.14312-19-nsaenzjulienne@suse.de>
+Subject: [PATCH v2 19/21] staging: vc04_services: Delete
+ vchiq_platform_check_suspend()
+Date: Fri, 31 Jan 2020 11:38:35 +0100
+Message-Id: <20200131103836.14312-20-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200131103836.14312-1-nsaenzjulienne@suse.de>
 References: <20200131103836.14312-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_023920_607698_4FE53657 
-X-CRM114-Status: UNSURE (   9.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200131_023921_235108_A80B5195 
+X-CRM114-Status: GOOD (  10.07  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,24 +71,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's not used anywhere.
+The function does nothing.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h | 1 -
- 1 file changed, 1 deletion(-)
+ .../vc04_services/interface/vchiq_arm/vchiq_arm.c | 15 ---------------
+ .../interface/vchiq_arm/vchiq_core.c              |  3 ---
+ .../interface/vchiq_arm/vchiq_core.h              |  3 ---
+ 3 files changed, 21 deletions(-)
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
-index 54c8796d5004..795fd82a1d00 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
-@@ -16,7 +16,6 @@
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
+index e753ccffd588..81b1c98cae3c 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
+@@ -2345,21 +2345,6 @@ vchiq_arm_init_state(struct vchiq_state *state,
+ 	return VCHIQ_SUCCESS;
+ }
  
- enum USE_TYPE_E {
- 	USE_TYPE_SERVICE,
--	USE_TYPE_SERVICE_NO_RESUME,
- 	USE_TYPE_VCHIQ
- };
+-void
+-vchiq_platform_check_suspend(struct vchiq_state *state)
+-{
+-	struct vchiq_arm_state *arm_state = vchiq_platform_get_arm_state(state);
+-
+-	if (!arm_state)
+-		goto out;
+-
+-	vchiq_log_trace(vchiq_susp_log_level, "%s", __func__);
+-
+-out:
+-	vchiq_log_trace(vchiq_susp_log_level, "%s exit", __func__);
+-	return;
+-}
+-
+ enum vchiq_status
+ vchiq_use_internal(struct vchiq_state *state, struct vchiq_service *service,
+ 		   enum USE_TYPE_E use_type)
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
+index c5493dee6dd7..d5957411d906 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
+@@ -1866,9 +1866,6 @@ slot_handler_func(void *v)
+ 
+ 		DEBUG_TRACE(SLOT_HANDLER_LINE);
+ 		if (state->poll_needed) {
+-			/* Check if we need to suspend - may change our
+-			 * conn_state */
+-			vchiq_platform_check_suspend(state);
+ 
+ 			state->poll_needed = 0;
+ 
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
+index 11037a499408..604d0c330819 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
+@@ -590,9 +590,6 @@ vchiq_complete_bulk(struct vchiq_bulk *bulk);
+ extern void
+ remote_event_signal(struct remote_event *event);
+ 
+-void
+-vchiq_platform_check_suspend(struct vchiq_state *state);
+-
+ extern int
+ vchiq_dump(void *dump_context, const char *str, int len);
  
 -- 
 2.25.0
