@@ -2,44 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0DD714EB2A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 11:45:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 786DB14EB27
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 11:45:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DDIuFhbj8U2eLYC5ywZkd3pNZVC55uG/5HHNjOcZ9qs=; b=Tqqm666iewxBhH
-	HSx+aZduZAQxWWS0kMe5TCdwQ6u0UsQk2gu7bcvhfOlo2hGYkrGXHETsafd24REz79L6Mk0itJFyZ
-	KhMoI22XDAqLi6iKiyrRMvJ3INpmecfkPfv0+Mx+3cVYrb/YI/DkRrcvXUsyDAfcGfNnPxYhJwCSK
-	xlwz0wTpc/TCtnPXjs4TV1TMtM2EagQTEhjqBzPJYMd9DXsKoZuUiuA/vyMV1F/wdnF3CQch0RuzJ
-	f2UX/j3hDwELQ2O4sxa5fODpi0XZOnx4Mfk+MxKWwgF5DnaDNtVcZ5l6QwK9sa8iJwdX/eW9FAQKR
-	fdNGUvnH63EZHayzraEQ==;
+	List-Owner; bh=0z6VLVyfAhtVDu5OIOi5XdQDyq0eWt7yyT7gIde8W4c=; b=N/SUdNxmLeqYEI
+	3iuut9LwK9NaXMJZjay71IN/t7xGYF205iBPfYU5AzEFQw54upsYSty+Y7rEpmfbrpeCsbIvc3zNq
+	btFZfOyqrmDQjuLExoRhCLe7SZfR+d46he6rrVXE1yyZkYURMwdoyh6BzX480qQ8f8/ycczlrEcPA
+	l49MFRGhNBSvq0ioiajavDWS1stQRdISEWlkVrriGuTygySMfjd5NUUxsx+udgx2h8ydrmJjIqyEy
+	02b3E4y3IkGnf8ky3c8/beP0rnQrJXwudBDpiQo6dG/49RgWtStN9+IAMlFY6jnIr3Clb3/x4qXOC
+	nDu2b1brwLnKMHIVwoeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixTnw-0002nn-E0; Fri, 31 Jan 2020 10:45:40 +0000
+	id 1ixTne-0002L5-QE; Fri, 31 Jan 2020 10:45:22 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixThn-0003dv-6g; Fri, 31 Jan 2020 10:39:21 +0000
+ id 1ixTho-0003eW-BA; Fri, 31 Jan 2020 10:39:21 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id D4430AFF6;
- Fri, 31 Jan 2020 10:39:17 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 85A3CAFFC;
+ Fri, 31 Jan 2020 10:39:18 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: gregkh@linuxfoundation.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH v2 17/21] staging: vc04_services: Get rid of the rest of
- suspend/resume state handling
-Date: Fri, 31 Jan 2020 11:38:33 +0100
-Message-Id: <20200131103836.14312-18-nsaenzjulienne@suse.de>
+Subject: [PATCH v2 18/21] staging: vc04_services: Get rid of
+ USE_TYPE_SERVICE_NO_RESUME
+Date: Fri, 31 Jan 2020 11:38:34 +0100
+Message-Id: <20200131103836.14312-19-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200131103836.14312-1-nsaenzjulienne@suse.de>
 References: <20200131103836.14312-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_023919_672394_1291952F 
-X-CRM114-Status: GOOD (  13.78  )
+X-CRM114-CacheID: sfid-20200131_023920_607698_4FE53657 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,156 +72,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The only remaining state doesn't provide any information anymore nor the
-completion that depends on it, which is set to complete_all() before any
-user may wait on it.
+It's not used anywhere.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- .../interface/vchiq_arm/vchiq_arm.c           | 52 -------------------
- .../interface/vchiq_arm/vchiq_arm.h           | 11 ----
- 2 files changed, 63 deletions(-)
+ drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-index cee643a33642..e753ccffd588 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-@@ -48,10 +48,6 @@
- int vchiq_arm_log_level = VCHIQ_LOG_DEFAULT;
- int vchiq_susp_log_level = VCHIQ_LOG_ERROR;
- 
--#define VC_RESUME_NUM_OFFSET 1 /* number of values before idle which are -ve */
--static const char *const resume_state_names[] = {
--	"VC_RESUME_RESUMED"
--};
- /* The number of times we allow force suspend to timeout before actually
- ** _forcing_ suspend.  This is to cater for SW which fails to release vchiq
- ** correctly - we don't want to prevent ARM suspend indefinitely in this case.
-@@ -2342,11 +2338,6 @@ vchiq_arm_init_state(struct vchiq_state *state,
- 		atomic_set(&arm_state->ka_use_ack_count, 0);
- 		atomic_set(&arm_state->ka_release_count, 0);
- 
--		init_completion(&arm_state->vc_resume_complete);
--		/* Initialise to 'done' state.  We only want to block on resume
--		 * completion while videocore is suspended. */
--		set_resume_state(arm_state, VC_RESUME_RESUMED);
--
- 		arm_state->state = state;
- 		arm_state->first_connect = 0;
- 
-@@ -2354,24 +2345,6 @@ vchiq_arm_init_state(struct vchiq_state *state,
- 	return VCHIQ_SUCCESS;
- }
- 
--void
--set_resume_state(struct vchiq_arm_state *arm_state,
--		 enum vc_resume_status new_state)
--{
--	/* set the state in all cases */
--	arm_state->vc_resume_state = new_state;
--
--	/* state specific additional actions */
--	switch (new_state) {
--	case VC_RESUME_RESUMED:
--		complete_all(&arm_state->vc_resume_complete);
--		break;
--	default:
--		BUG();
--		break;
--	}
--}
--
- void
- vchiq_platform_check_suspend(struct vchiq_state *state)
- {
-@@ -2427,22 +2400,6 @@ vchiq_use_internal(struct vchiq_state *state, struct vchiq_service *service,
- 
- 	write_unlock_bh(&arm_state->susp_res_lock);
- 
--	/* Completion is in a done state when we're not suspended, so this won't
--	 * block for the non-suspended case. */
--	if (!try_wait_for_completion(&arm_state->vc_resume_complete)) {
--		vchiq_log_info(vchiq_susp_log_level, "%s %s wait for resume",
--			__func__, entity);
--		if (wait_for_completion_killable(
--				&arm_state->vc_resume_complete)) {
--			vchiq_log_error(vchiq_susp_log_level, "%s %s wait for "
--				"resume interrupted", __func__, entity);
--			ret = VCHIQ_ERROR;
--			goto out;
--		}
--		vchiq_log_info(vchiq_susp_log_level, "%s %s resumed", __func__,
--			entity);
--	}
--
- 	if (ret == VCHIQ_SUCCESS) {
- 		enum vchiq_status status = VCHIQ_SUCCESS;
- 		long ack_cnt = atomic_xchg(&arm_state->ka_use_ack_count, 0);
-@@ -2634,7 +2591,6 @@ vchiq_dump_service_use_state(struct vchiq_state *state)
- 	int only_nonzero = 0;
- 	static const char *nz = "<-- preventing suspend";
- 
--	enum vc_resume_status  vc_resume_state;
- 	int peer_count;
- 	int vc_use_count;
- 	int active_services;
-@@ -2648,7 +2604,6 @@ vchiq_dump_service_use_state(struct vchiq_state *state)
- 		return;
- 
- 	read_lock_bh(&arm_state->susp_res_lock);
--	vc_resume_state  = arm_state->vc_resume_state;
- 	peer_count = arm_state->peer_use_count;
- 	vc_use_count = arm_state->videocore_use_count;
- 	active_services = state->unused_service;
-@@ -2677,13 +2632,6 @@ vchiq_dump_service_use_state(struct vchiq_state *state)
- 
- 	read_unlock_bh(&arm_state->susp_res_lock);
- 
--	vchiq_log_warning(vchiq_susp_log_level,
--		"-- Videcore suspend state: %s --",
--		suspend_state_names[vc_suspend_state + VC_SUSPEND_NUM_OFFSET]);
--	vchiq_log_warning(vchiq_susp_log_level,
--		"-- Videcore resume state: %s --",
--		resume_state_names[vc_resume_state + VC_RESUME_NUM_OFFSET]);
--
- 	if (only_nonzero)
- 		vchiq_log_warning(vchiq_susp_log_level, "Too many active "
- 			"services (%d).  Only dumping up to first %d services "
 diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
-index b1fad282db04..54c8796d5004 100644
+index 54c8796d5004..795fd82a1d00 100644
 --- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
 +++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.h
-@@ -14,10 +14,6 @@
- #include "vchiq_core.h"
- #include "vchiq_debugfs.h"
+@@ -16,7 +16,6 @@
  
--enum vc_resume_status {
--	VC_RESUME_RESUMED      /* Videocore resumed successfully (active) */
--};
--
  enum USE_TYPE_E {
  	USE_TYPE_SERVICE,
- 	USE_TYPE_SERVICE_NO_RESUME,
-@@ -32,10 +28,7 @@ struct vchiq_arm_state {
- 	atomic_t ka_use_ack_count;
- 	atomic_t ka_release_count;
+-	USE_TYPE_SERVICE_NO_RESUME,
+ 	USE_TYPE_VCHIQ
+ };
  
--	struct completion vc_resume_complete;
--
- 	rwlock_t susp_res_lock;
--	enum vc_resume_status vc_resume_state;
- 
- 	struct vchiq_state *state;
- 
-@@ -122,8 +115,4 @@ vchiq_instance_get_trace(struct vchiq_instance *instance);
- extern void
- vchiq_instance_set_trace(struct vchiq_instance *instance, int trace);
- 
--extern void
--set_resume_state(struct vchiq_arm_state *arm_state,
--		 enum vc_resume_status new_state);
--
- #endif /* VCHIQ_ARM_H */
 -- 
 2.25.0
 
