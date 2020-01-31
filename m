@@ -2,83 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45E1D14E7BF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 04:58:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EDDE14E7E7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 05:33:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3v8xt87BU9QfiT4Df+bMmRZrAZVai4oD1UgsUx0o8Eg=; b=GAcDBgxBq8YMkk
-	7NDKn/cGCkmnPBB/TIFFG2UvPM2XVMJ1GBsoemrR7wu7oY3UaD4vo9cd3HFseSDsoZRhKaokoYAl2
-	enlc0tWaDBPG9avHF0ScMMN2uuPO1JP/PunpvMy+MH73Cz9+xWGRunyneRsOBOuGw/3ckiijxQkA3
-	xr/+TAcQuVYA2ZK7xiEMAOn5INoiRdv9DktFeseAr2wow3saE3C6aBUzhatJKFdS7/IWJVSsnRXwI
-	3TUB44bxpUKJWYCH43Qb7xm02qifOkLVKmQPqVY0Urw9OL/1n3n1QFJf8Zcn6ecdJYUq3bzG2zGSN
-	9RsRFm6Z47Dj7DjEnlcw==;
+	List-Owner; bh=xDk7HZFZdcmJyI0VlRDTfJz3gVDPjMxGrOUmiYdy6M8=; b=JOgh2cvYCHcJ4o
+	IbPZWd9aJHNgkqHKw3+eMIn9kFlbqrlm+JNNZVlCCpmjgP27e4fhLc418F4H+ms9eplCc/aj/41dC
+	8dcfaaF9mR6hk2Ro99BdIDVih9nJC1twIsFHFKSqmLvV3/N3m19tn5bsBaiIgudH0Sp8voFtELjNs
+	l9olBEGlYCpOH8ffIgscgDprymyftOZyt4RktKqtfKH6ug7EH1ZfLSdkSBltqe6+ro/vKBk3oITV6
+	6Gdjg16nyCjo9ga12VazhcBLRl/sGO8GW2i9X7Av6PjsJeqNLxbSkgPUsUQsUnWzHjI40lhcR9A/0
+	2IdkwO+Mny5WWbdfBJkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixNRK-0003Sj-Nu; Fri, 31 Jan 2020 03:57:54 +0000
-Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
+	id 1ixNzd-0005oX-Pw; Fri, 31 Jan 2020 04:33:21 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixNRA-0003SE-2S
- for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 03:57:45 +0000
-Received: by mail-qv1-xf43.google.com with SMTP id g6so2653393qvy.5
+ id 1ixNzU-0005o3-Uy
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 04:33:14 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 84so2648772pfy.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Jan 2020 19:57:43 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OS9mBViSnpsx15jMubvsBFiHBkNyIzUT3w9rd7Dkm/4=;
- b=noyHcUPqJ0I5pWCEXCl8lIoSgyMPfW1Alr3FH8Icy2qTfIQG6tC7f5iR6GJJgBlvBH
- Zj7O6G0hnO+elulx3q0wMDv6N602q09EdFidsG+RazZIn6kKV15MIrMncnKEIg7BjvDf
- MGBpMYvNY0vc8PhsLTtRl7c4xih/i7Kz7jHZM=
+ Thu, 30 Jan 2020 20:33:12 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=5YBPz1R1Tq8ogjk4q4yHg3F3OHJSAN1Ceopqmh7+8Ms=;
+ b=YAnnKWp5jcufgnbgPcv7AKk75oBjxglaEg8N0nURW7KbIivjyueLQAlm+afiAEsTht
+ caqFkHkcyvRXrfBNPprCTG+99uObZzuJBYBbTgFmc4sJrU/pSxgqtzEE14G82M9gK571
+ aAzjd1LChFuhfpOBh/eJSX3ICmG9xLLGjb924fwTPG+O8qzY6s/NrZ8tDPYQsSzpGOWE
+ +LZy5oJGpqYPGfyrxxSxkQtVFY+EwLgAhswTruf1iUqO2eOwt0bveKVSEhILIGyA1iil
+ RYRSvuaqA+HZVgtyxbVZPZ5PlE3wNr+AFrw57j1fystiU4DG+cP6lpqeeWnd3lV6QPo3
+ CYSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OS9mBViSnpsx15jMubvsBFiHBkNyIzUT3w9rd7Dkm/4=;
- b=fllS5Bf73N//I2aDpcsIh0y2Gez5wBRIUu1lh19+ddb9PH8RYE+qytwVMe/DOhWyQP
- iJw6TrkcLGWVLWEKKomxy+eDHqoMT3Vs07ylUyllGhzH8WpB9NnUjfdvPM8xLtXvZ32U
- RQ4NxGwrqDw+XVpzOcUZYYLNAgCv0iQhp/w781t3kQPODiSLtcE0tf4dEyLgqiRJb6Gm
- L90LUmWod1WecNLIJIs+C95IMIhYQeX1zJKzJocPI8rEwE52eZ811Zfz4+G51rQ8KFns
- y/WhJW8s3iwJk3gKc/YgceUXMorJ6XY9CS5Zk35AKxDh6ThLRLfictdJTYC2/o0Fua3E
- 92Qw==
-X-Gm-Message-State: APjAAAUg863SmVgnnZ7ZMwfKrYdnMavViRAHtJHIKDzupeaVB3EYODtW
- kA2PscOIP6IaJol4MBXqwNyhwWbE7YUeiqbtP5g=
-X-Google-Smtp-Source: APXvYqwa+52T6lEl42UR4l4JCqYs01dXPTl8h5GnRqow8oHgCFNPqL4JOACxrc1HcV1odaRzFYIi256vZzydv0SSYWQ=
-X-Received: by 2002:a0c:ead1:: with SMTP id y17mr8055946qvp.210.1580443062931; 
- Thu, 30 Jan 2020 19:57:42 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5YBPz1R1Tq8ogjk4q4yHg3F3OHJSAN1Ceopqmh7+8Ms=;
+ b=kdclxo8lpBej8/BUb3lcLqbfLA+GnHASGuwxrJVs//pafrzywtV0EJgPi6ZSe33uuP
+ BX9o9/Z1u8Q/2yLla+3DOms9eeK2XzZ3hCc35Z9tY01WMr+nj9/ZdCQnCCaVVupWqOuT
+ ulthMd3QIqIObBUBO2zJ8deEl0kr7xVUM7/CVAT2IlA6yFZENX220cNZwUvjOX9uAy7g
+ nTRaOPpQc660KmA9MN+YSv2dbfZ6YExeu6a+KyCzoTFzq+SpsiKik/OhDAXNj2BNz6qx
+ BPY0oEHDqblC66cfFOxLalPmA0H+PeTgUacbiSYV+FMa5jBJvi7VQYmLP1gm5eMVPsr0
+ pPBQ==
+X-Gm-Message-State: APjAAAUW1q0c66gL0orAg301e111ecuAc92L5f+01Ipr4BK3d4qsVzVP
+ ryz1jqNFja0EMU3TZpgMTa2OCg==
+X-Google-Smtp-Source: APXvYqwEN17hrZK69xPBYl4VAlSoCipA5jd/df38BHlKebya8QekoVxPecktD08Jwc9BQOd4P5p+ag==
+X-Received: by 2002:a62:e30f:: with SMTP id g15mr8470354pfh.124.1580445191433; 
+ Thu, 30 Jan 2020 20:33:11 -0800 (PST)
+Received: from localhost ([122.172.141.204])
+ by smtp.gmail.com with ESMTPSA id w18sm3860635pfq.167.2020.01.30.20.33.10
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 30 Jan 2020 20:33:10 -0800 (PST)
+Date: Fri, 31 Jan 2020 10:03:08 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Peter Hilber <peter.hilber@opensynergy.com>
+Subject: Re: [PATCH V5] firmware: arm_scmi: Make scmi core independent of the
+ transport type
+Message-ID: <20200131043308.gxcekh2tioydurq7@vireshk-i7>
+References: <f170b33989b426ac095952634fcd1bf45b86a7a3.1580208329.git.viresh.kumar@linaro.org>
+ <20200128173524.GB36496@bogus>
+ <b970542b-0c05-5401-46be-5f585bdafb09@opensynergy.com>
 MIME-Version: 1.0
-References: <20200128011817.4095682-1-vijaykhemka@fb.com>
-In-Reply-To: <20200128011817.4095682-1-vijaykhemka@fb.com>
-From: Joel Stanley <joel@jms.id.au>
-Date: Fri, 31 Jan 2020 03:57:31 +0000
-Message-ID: <CACPK8XfJYVH6EotMQcuuoV5hWnkA79oHSCvQBx5gr4np8Y59og@mail.gmail.com>
-Subject: Re: [PATCH v2] ARM: dts: aspeed: tiogapass: Add gpio line names
-To: Vijay Khemka <vijaykhemka@fb.com>
+Content-Disposition: inline
+In-Reply-To: <b970542b-0c05-5401-46be-5f585bdafb09@opensynergy.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_195744_112423_4C8249D9 
-X-CRM114-Status: GOOD (  14.22  )
-X-Spam-Score: 1.2 (+)
+X-CRM114-CacheID: sfid-20200130_203313_053668_00F31068 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.2 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [122.172.141.204 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [joel.stan[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 WEIRD_QUOTING          BODY: Weird repeated double-quotation marks
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,118 +103,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Sai Dasari <sdasari@fb.com>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>, Andrew Jeffery <andrew@aj.id.au>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: peng.fan@nxp.com, arnd@arndb.de, jassisinghbrar@gmail.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Sudeep Holla <sudeep.holla@arm.com>, cristian.marussi@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 28 Jan 2020 at 01:18, Vijay Khemka <vijaykhemka@fb.com> wrote:
->
-> Added GPIO line names for all gpio used in tiogapass platform,
-> these line names will be used by libgpiod to control GPIOs
->
-> Signed-off-by: Vijay Khemka <vijaykhemka@fb.com>
+On 30-01-20, 12:58, Peter Hilber wrote:
+> Maybe the mark_txdone, fetch_response, and poll_done ops should also get
+> a `u32 msg_hdr' parameter? I thought it could be required in case of
+> concurrent xfers, or maybe I don't understand the imposed concurrency
+> limitations properly.
 
-The verbosity of the bindings is unfortunate, but I think it's the
-only option we have to date.
+I would like to avoid doing that unless we have some upstreamed
+transport which is going to need it. The parameter won't be used by
+mailbox.c for now and so better add it later only.
 
-Reviewed-by: Joel Stanley <joel@jms.id.au>
-
-I will merge this through the aspeed tree for 5.7.
-
-Cheers,
-
-Joel
-
-> ---
-> v2 : Added BIOS_SPI_BMC_CTRL gpio line name
->
->  .../dts/aspeed-bmc-facebook-tiogapass.dts     | 63 +++++++++++++++++++
->  1 file changed, 63 insertions(+)
->
-> diff --git a/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts b/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts
-> index 682f729ea25e..fb7f034d5db2 100644
-> --- a/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts
-> +++ b/arch/arm/boot/dts/aspeed-bmc-facebook-tiogapass.dts
-> @@ -121,6 +121,69 @@
->         kcs_addr = <0xca2>;
->  };
->
-> +&gpio {
-> +       status = "okay";
-> +       gpio-line-names =
-> +       /*A0-A7*/       "BMC_CPLD_FPGA_SEL","","","","","","","",
-> +       /*B0-B7*/       "","BMC_DEBUG_EN","","","","BMC_PPIN","PS_PWROK",
-> +                       "IRQ_PVDDQ_GHJ_VRHOT_LVT3",
-> +       /*C0-C7*/       "","","","","","","","",
-> +       /*D0-D7*/       "BIOS_MRC_DEBUG_MSG_DIS","BOARD_REV_ID0","",
-> +                       "BOARD_REV_ID1","IRQ_DIMM_SAVE_LVT3","BOARD_REV_ID2",
-> +                       "CPU_ERR0_LVT3_BMC","CPU_ERR1_LVT3_BMC",
-> +       /*E0-E7*/       "RESET_BUTTON","RESET_OUT","POWER_BUTTON",
-> +                       "POWER_OUT","NMI_BUTTON","","CPU0_PROCHOT_LVT3_ BMC",
-> +                       "CPU1_PROCHOT_LVT3_ BMC",
-> +       /*F0-F7*/       "IRQ_PVDDQ_ABC_VRHOT_LVT3","",
-> +                       "IRQ_PVCCIN_CPU0_VRHOT_LVC3",
-> +                       "IRQ_PVCCIN_CPU1_VRHOT_LVC3",
-> +                       "IRQ_PVDDQ_KLM_VRHOT_LVT3","","P3VBAT_BRIDGE_EN","",
-> +       /*G0-G7*/       "CPU_ERR2_LVT3","CPU_CATERR_LVT3","PCH_BMC_THERMTRIP",
-> +                       "CPU0_SKTOCC_LVT3","","","","BIOS_SMI_ACTIVE",
-> +       /*H0-H7*/       "LED_POST_CODE_0","LED_POST_CODE_1","LED_POST_CODE_2",
-> +                       "LED_POST_CODE_3","LED_POST_CODE_4","LED_POST_CODE_5",
-> +                       "LED_POST_CODE_6","LED_POST_CODE_7",
-> +       /*I0-I7*/       "CPU0_FIVR_FAULT_LVT3","CPU1_FIVR_FAULT_LVT3",
-> +                       "FORCE_ADR","UV_ADR_TRIGGER_EN","","","","",
-> +       /*J0-J7*/       "","","","","","","","",
-> +       /*K0-K7*/       "","","","","","","","",
-> +       /*L0-L7*/       "IRQ_UV_DETECT","IRQ_OC_DETECT","HSC_TIMER_EXP","",
-> +                       "MEM_THERM_EVENT_PCH","PMBUS_ALERT_BUF_EN","","",
-> +       /*M0-M7*/       "CPU0_RC_ERROR","CPU1_RC_ERROR","","OC_DETECT_EN",
-> +                       "CPU0_THERMTRIP_LATCH_LVT3",
-> +                       "CPU1_THERMTRIP_LATCH_LVT3","","",
-> +       /*N0-N7*/       "","","","CPU_MSMI_LVT3","","BIOS_SPI_BMC_CTRL","","",
-> +       /*O0-O7*/       "","","","","","","","",
-> +       /*P0-P7*/       "BOARD_SKU_ID0","BOARD_SKU_ID1","BOARD_SKU_ID2",
-> +                       "BOARD_SKU_ID3","BOARD_SKU_ID4","BMC_PREQ",
-> +                       "BMC_PWR_DEBUG","RST_RSMRST",
-> +       /*Q0-Q7*/       "","","","","UARTSW_LSB","UARTSW_MSB",
-> +                       "POST_CARD_PRES_BMC","PE_BMC_WAKE",
-> +       /*R0-R7*/       "","","BMC_TCK_MUX_SEL","BMC_PRDY",
-> +                       "BMC_XDP_PRSNT_IN","RST_BMC_PLTRST_BUF","SLT_CFG0",
-> +                       "SLT_CFG1",
-> +       /*S0-S7*/       "THROTTLE","BMC_READY","","HSC_SMBUS_SWITCH_EN","",
-> +                       "","","",
-> +       /*T0-T7*/       "","","","","","","","",
-> +       /*U0-U7*/       "","","","","","BMC_FAULT","","",
-> +       /*V0-V7*/       "","","","FAST_PROCHOT_EN","","","","",
-> +       /*W0-W7*/       "","","","","","","","",
-> +       /*X0-X7*/       "","","","GLOBAL_RST_WARN",
-> +                       "CPU0_MEMABC_MEMHOT_LVT3_BMC",
-> +                       "CPU0_MEMDEF_MEMHOT_LVT3_BMC",
-> +                       "CPU1_MEMGHJ_MEMHOT_LVT3_BMC",
-> +                       "CPU1_MEMKLM_MEMHOT_LVT3_BMC",
-> +       /*Y0-Y7*/       "SIO_S3","SIO_S5","BMC_JTAG_SEL","SIO_ONCONTROL","",
-> +                       "","","",
-> +       /*Z0-Z7*/       "","SIO_POWER_GOOD","IRQ_PVDDQ_DEF_VRHOT_LVT3","",
-> +                       "","","","",
-> +       /*AA0-AA7*/     "CPU1_SKTOCC_LVT3","IRQ_SML1_PMBUS_ALERT",
-> +                       "SERVER_POWER_LED","","PECI_MUX_SELECT","UV_HIGH_SET",
-> +                       "","POST_COMPLETE",
-> +       /*AB0-AB7*/     "IRQ_HSC_FAULT","OCP_MEZZA_PRES","","","","","","",
-> +       /*AC0-AC7*/     "","","","","","","","";
-> +};
-> +
->  &mac0 {
->         status = "okay";
->
-> --
-> 2.17.1
->
+-- 
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
