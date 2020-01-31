@@ -2,74 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C24FA14EA24
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 10:37:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1475814EA4A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 10:54:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/V5+kgcL9Ovw3EmAcqkA9SA+b1fhjTO9UeGm5w8rRiU=; b=cHKGxiIQE5ssvQ
-	bwGjf/pgP4J3YDUUgc1KHQbEv/ImKxm2sDG9NHC/BOdrNZdvjfFCv3ZjRLgvi1bAqOTtt+ruCCehK
-	O3rYa9mldMRzun4eZtx65TQr+JPRDcgNqOcwC9eHwOVir4m1JO9Pz7VvNRo/lbva5+8m5XRW7ymRY
-	e4+UQ1wauaYxLG/APWlG/lfET35MgJupEcX40O6FB7vjOUcbYpZZg0t4MrDg3GN3oGxnQQGvRTvya
-	KL0PmwioCpj2afwqwErW6j11M0kC60TtbB6Z7S+hcjFsAp/XUwmtstEbvTV6HLiGEVvwLq33+VVA8
-	vHquciL9tR6/vKrinKiQ==;
+	List-Owner; bh=QGAAKcxh8eOSfurACt1ijGKVQD5CleDp6QyWP10heMM=; b=l8qKtQ7x6d2gWT
+	N1nd+2Wz9xkPkt2GBdWASsSQT4Rs2HBCGW3fl2LNQishP+Rgz0HebeBzF49gnOtuVCvoRQ2JR9ouz
+	PCWYaYidzvTRGpnc9AajHbR0Rpd3AsLCto+SN1Sb5t92xV11o0km39HOj6+dHA0KSfqNI82+hmsZE
+	nsC1xgyX0hhrUyAb23qbYXvS6DL1VEgdAfRnW289sF7zPkrF5DM3xgRKM+4pYBidSf4WOMBrO/j7D
+	5i9RToi3N6QWLnA9tJ3wYN5aBhUDHNXI4H0YOGz0Z/ke4hk5Cz9XhFFnLoR0f0jD9D1QaGmq7BLed
+	qSXppZPQbRTTmgU6Ggjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixSjX-0000tf-8E; Fri, 31 Jan 2020 09:37:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixSjJ-0000tK-K5
- for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 09:36:51 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6E37E20707;
- Fri, 31 Jan 2020 09:36:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580463408;
- bh=kKkl7IIdkI45Xq+BxUMl2TT+5Wgp8VCsHvXb8zf/eV4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jI5GJpZLenzLyhKfww2wcwTl8g9WY5wtHDwCm1LOK7DK1rQ11N3u4zgVi7ZJHDm4z
- jgm+p2j6DXzOdQjVmfhv/y5objkwk7vC8ugEwQnINUavbvAtukxYnYL2ENTlUU3xZr
- rfGUApsMb+eRMv3LWV3zKfUMoFyqpuoyJGzvSGEM=
-Date: Fri, 31 Jan 2020 10:36:46 +0100
-From: 'Greg KH' <gregkh@linuxfoundation.org>
-To: Rajan Vaja <RAJANV@xilinx.com>
-Subject: Re: [PATCH v2 1/4] firmware: xilinx: Add sysfs interface
-Message-ID: <20200131093646.GA2271937@kroah.com>
-References: <1578527663-10243-1-git-send-email-jolly.shah@xilinx.com>
- <1578527663-10243-2-git-send-email-jolly.shah@xilinx.com>
- <20200114145257.GA1910108@kroah.com>
- <BYAPR02MB5992FC37E0D2AD9946414417B80F0@BYAPR02MB5992.namprd02.prod.outlook.com>
- <20200124060339.GB2906795@kroah.com>
- <2D4B924A-D10C-4A90-A8E6-507BF6C30654@xilinx.com>
- <20200128062814.GA2097606@kroah.com>
- <4EF659A1-2844-46B9-9ED6-5A6A20401D9D@xilinx.com>
- <20200131061038.GA2180358@kroah.com>
- <BYAPR02MB40559D6B62C4532C0EAD0281B7070@BYAPR02MB4055.namprd02.prod.outlook.com>
+	id 1ixT0L-0005k8-62; Fri, 31 Jan 2020 09:54:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixT0C-0005jG-Cf
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 09:54:18 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21ACA31B;
+ Fri, 31 Jan 2020 01:54:14 -0800 (PST)
+Received: from localhost (e108754-lin.cambridge.arm.com [10.1.198.81])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B88FC3F68E;
+ Fri, 31 Jan 2020 01:54:13 -0800 (PST)
+Date: Fri, 31 Jan 2020 09:54:12 +0000
+From: Ionela Voinescu <ionela.voinescu@arm.com>
+To: Suzuki K Poulose <Suzuki.Poulose@arm.com>
+Subject: Re: [PATCH v2 4/6] Documentation: arm64: document support for the
+ AMU extension
+Message-ID: <20200131095412.GA17655@arm.com>
+References: <20191218182607.21607-1-ionela.voinescu@arm.com>
+ <20191218182607.21607-5-ionela.voinescu@arm.com>
+ <c9f80a08-7f0d-59e9-eb90-466b1314e1f1@arm.com>
+ <20200130164542.GC5208@arm.com>
+ <20200130182653.GA123407@ewhatever.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <BYAPR02MB40559D6B62C4532C0EAD0281B7070@BYAPR02MB4055.namprd02.prod.outlook.com>
+In-Reply-To: <20200130182653.GA123407@ewhatever.cambridge.arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_013649_724889_904188AF 
-X-CRM114-Status: GOOD (  22.97  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200131_015416_552919_12BBA216 
+X-CRM114-Status: GOOD (  30.15  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,74 +67,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "keescook@chromium.org" <keescook@chromium.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- "matt@codeblueprint.co.uk" <matt@codeblueprint.co.uk>,
- "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jolly Shah <JOLLYS@xilinx.com>, Michal Simek <michals@xilinx.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "hkallweit1@gmail.com" <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, maz@kernel.org, linux-doc@vger.kernel.org,
+ peterz@infradead.org, catalin.marinas@arm.com,
+ Jonathan Corbet <corbet@lwn.net>, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, ggherdovich@suse.cz, sudeep.holla@arm.com, will@kernel.org,
+ dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBKYW4gMzEsIDIwMjAgYXQgMDk6MDU6MTVBTSArMDAwMCwgUmFqYW4gVmFqYSB3cm90
-ZToKPiBIaSBHcmVnLAo+IAo+ID4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiA+IEZyb206
-IEdyZWcgS0ggPGdyZWdraEBsaW51eGZvdW5kYXRpb24ub3JnPgo+ID4gU2VudDogMzEgSmFudWFy
-eSAyMDIwIDExOjQxIEFNCj4gPiBUbzogSm9sbHkgU2hhaCA8Sk9MTFlTQHhpbGlueC5jb20+Cj4g
-PiBDYzogYXJkLmJpZXNoZXV2ZWxAbGluYXJvLm9yZzsgbWluZ29Aa2VybmVsLm9yZzsgbWF0dEBj
-b2RlYmx1ZXByaW50LmNvLnVrOwo+ID4gc3VkZWVwLmhvbGxhQGFybS5jb207IGhrYWxsd2VpdDFA
-Z21haWwuY29tOyBrZWVzY29va0BjaHJvbWl1bS5vcmc7Cj4gPiBkbWl0cnkudG9yb2tob3ZAZ21h
-aWwuY29tOyBNaWNoYWwgU2ltZWsgPG1pY2hhbHNAeGlsaW54LmNvbT47IFJhamFuIFZhamEKPiA+
-IDxSQUpBTlZAeGlsaW54LmNvbT47IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZzsgbGludXgtCj4gPiBrZXJuZWxAdmdlci5rZXJuZWwub3JnCj4gPiBTdWJqZWN0OiBSZTogW1BB
-VENIIHYyIDEvNF0gZmlybXdhcmU6IHhpbGlueDogQWRkIHN5c2ZzIGludGVyZmFjZQo+ID4gCj4g
-PiBFWFRFUk5BTCBFTUFJTAo+ID4gCj4gPiBPbiBUaHUsIEphbiAzMCwgMjAyMCBhdCAxMTo1OTow
-M1BNICswMDAwLCBKb2xseSBTaGFoIHdyb3RlOgo+ID4gPiBIaSBHcmVnLAo+ID4gPgo+ID4gPiDv
-u79PbiAxLzI3LzIwLCAxMDoyOCBQTSwgImxpbnV4LWtlcm5lbC1vd25lckB2Z2VyLmtlcm5lbC5v
-cmcgb24gYmVoYWxmIG9mIEdyZWcKPiA+IEtIIiA8bGludXgta2VybmVsLW93bmVyQHZnZXIua2Vy
-bmVsLm9yZyBvbiBiZWhhbGYgb2YKPiA+IGdyZWdraEBsaW51eGZvdW5kYXRpb24ub3JnPiB3cm90
-ZToKPiA+ID4KPiA+ID4gICAgIE9uIE1vbiwgSmFuIDI3LCAyMDIwIGF0IDExOjAxOjI3UE0gKzAw
-MDAsIEpvbGx5IFNoYWggd3JvdGU6Cj4gPiA+ICAgICA+ICAgICA+ID4gPiArICAgICByZXQgPSBr
-c3RydG9sKHRvaywgMTYsICZ2YWx1ZSk7Cj4gPiA+ICAgICA+ICAgICA+ID4gPiArICAgICBpZiAo
-cmV0KSB7Cj4gPiA+ICAgICA+ICAgICA+ID4gPiArICAgICAgICAgICAgIHJldCA9IC1FRkFVTFQ7
-Cj4gPiA+ICAgICA+ICAgICA+ID4gPiArICAgICAgICAgICAgIGdvdG8gZXJyOwo+ID4gPiAgICAg
-PiAgICAgPiA+ID4gKyAgICAgfQo+ID4gPiAgICAgPiAgICAgPiA+ID4gKwo+ID4gPiAgICAgPiAg
-ICAgPiA+ID4gKyAgICAgcmV0ID0gZWVtaV9vcHMtPmlvY3RsKDAsIHJlYWRfaW9jdGwsIHJlZywg
-MCwgcmV0X3BheWxvYWQpOwo+ID4gPiAgICAgPiAgICAgPiA+Cj4gPiA+ICAgICA+ICAgICA+ID4g
-VGhpcyBmZWVscyAidHJpY2t5IiwgaWYgeW91IHRpZSB0aGlzIHRvIHRoZSBkZXZpY2UgeW91IGhh
-dmUgeW91ciBkcml2ZXIKPiA+ID4gICAgID4gICAgID4gPiBib3VuZCB0bywgd2lsbCB0aGlzIG1h
-a2UgaXQgZWFzaWVyIGluc3RlYWQgb2YgaGF2aW5nIHRvIGdvIHRocm91Z2ggdGhlCj4gPiA+ICAg
-ICA+ICAgICA+ID4gaW9jdGwgY2FsbGJhY2s/Cj4gPiA+ICAgICA+ICAgICA+ID4KPiA+ID4gICAg
-ID4gICAgID4KPiA+ID4gICAgID4gICAgID4gR0dTKGdlbmVyYWwgZ2xvYmFsIHN0b3JhZ2UpIHJl
-Z2lzdGVycyBhcmUgaW4gUE1VIHNwYWNlIGFuZCBsaW51eAo+ID4gZG9lc24ndCBoYXZlIGFjY2Vz
-cyB0byBpdAo+ID4gPiAgICAgPiAgICAgPiBIZW5jZSBpb2N0bCBpcyB1c2VkLgo+ID4gPiAgICAg
-Pgo+ID4gPiAgICAgPiAgICAgV2h5IG5vdCBqdXN0IGEgInJlYWwiIGNhbGwgdG8gdGhlIGRyaXZl
-ciB0byBtYWtlIHRoaXMgdHlwZSBvZiByZWFkaW5nPwo+ID4gPiAgICAgPiAgICAgWW91IGRvbid0
-IGhhdmUgaW9jdGxzIHdpdGhpbiB0aGUga2VybmVsIGZvciBvdGhlciBkcml2ZXJzIHRvIGNhbGws
-Cj4gPiA+ICAgICA+ICAgICB0aGF0J3Mgbm90IG5lZWRlZCBhdCBhbGwuCj4gPiA+ICAgICA+Cj4g
-PiA+ICAgICA+IHRoZXNlIHJlZ2lzdGVycyBhcmUgZm9yIHVzZXJzICBhbmQgZm9yIHNwZWNpYWwg
-bmVlZHMgd2hlcmUgdXNlcnMgd2FudHMKPiA+ID4gICAgID4gdG8gcmV0YWluIHZhbHVlcyBvdmVy
-IHJlc2V0cy4gYnV0IGFzIHRoZXkgYmVsb25nIHRvIFBNVSBhZGRyZXNzIHNwYWNlLAo+ID4gPiAg
-ICAgPiB0aGVzZSBpbnRlcmZhY2UgQVBJcyBhcmUgcHJvdmlkZWQuIFRoZXkgZG9u4oCZdCBhbGxv
-dyBhY2Nlc3MgdG8gYW55Cj4gPiA+ICAgICA+IG90aGVyIHJlZ2lzdGVycy4KPiA+ID4KPiA+ID4g
-ICAgIFRoYXQncyBub3QgdGhlIGlzc3VlIGhlcmUuICBUaGUgaXNzdWUgaXMgeW91IGFyZSB1c2lu
-ZyBhbiAiaW50ZXJuYWwiCj4gPiA+ICAgICBpb2N0bCwgaW5zdGVhZCBqdXN0IG1ha2UgYSAicmVh
-bCIgY2FsbC4KPiA+ID4KPiA+ID4gU29ycnkgSSBhbSBub3QgY2xlYXIuIERvIHlvdSBtZWFuIHRo
-YXQgd2Ugc2hvdWxkIHVzZSBsaW51eCBzdGFuZGFyZAo+ID4gPiBpb2N0bCBpbnRlcmZhY2UgaW5z
-dGVhZCBvZiBpbnRlcm5hbCBpb2N0bCBieSBtZW50aW9uaW5nICJyZWFsIiA/Cj4gPiAKPiA+IE5v
-LCB5b3Ugc2hvdWxkIGp1c3QgbWFrZSBhICJyZWFsIiBmdW5jdGlvbiBjYWxsIHRvIHRoZSBleGFj
-dCB0aGluZyB5b3UKPiA+IHdhbnQgdG8gZG8uICBOb3QgaGF2ZSBhbiBpbnRlcm5hbCBtdWx0aS1w
-bGV4b3IgaW9jdGwoKSBjYWxsIHRoYXQgb3RoZXJzCj4gPiB0aGVuIGNhbGwuICBUaGlzIGlzbid0
-IGEgbWljcm9rZXJuZWwgOikKPiBbUmFqYW5dIFNvcnJ5IGZvciBtdWx0aXBsZSBiYWNrIGFuZCBm
-b3J0aCBidXQgYXMgSSB1bmRlcnN0YW5kLCB5b3UgYXJlIHN1Z2dlc3RpbmcgdG8gY3JlYXRlIGEg
-bmV3IEFQSSBmb3IKPiBSZWFkL3dyaXRlIG9mIEdHUyByZWdpc3RlciBpbnN0ZWFkIG9mIHVzaW5n
-IFBNX0lPQ1RMIEFQSSAoZWVtaV9vcHMtPmlvY3RsKSBmb3IgbXVsdGlwbGUgcHVycG9zZS4gSXMg
-bXkgdW5kZXJzdGFuZGluZyBjb3JyZWN0PwoKVGhhdCBpcyBjb3JyZWN0LgoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thursday 30 Jan 2020 at 18:26:53 (+0000), Suzuki K Poulose wrote:
+[..]
+> > > > +Firmware (code running at higher exception levels, e.g. arm-tf) support is
+> > > > +needed to:
+> > > > + - Enable access for lower exception levels (EL2 and EL1) to the AMU
+> > > > +   registers.
+> > > > + - Enable the counters. If not enabled these will read as 0.
+> > > > + - Save/restore the counters before/after the CPU is being put/brought up
+> > > > +   from the 'off' power state.
+> > > > +
+> > > > +When using kernels that have this configuration enabled but boot with
+> > > > +broken firmware the user may experience panics or lockups when accessing
+> > > > +the counter registers. Even if these symptoms are not observed, the
+> > > > +values returned by the register reads might not correctly reflect reality.
+> > > > +Most commonly, the counters will read as 0, indicating that they are not
+> > > > +enabled. If proper support is not provided in firmware it's best to disable
+> > > > +CONFIG_ARM64_AMU_EXTN.
+> > > 
+> > > For the sake of one kernel runs everywhere, do we need some other
+> > > mechanism to disable the AMU. e.g kernel parameter to disable amu
+> > > at runtime ?
+> > >
+> > 
+> > The reason I've not added this is twofold:
+> >  - Even if we add this, it should be in order to disable the use of the
+> >    counters for a certain purpose, in this case  frequency invariance.
+> >    On its own AMU provides the counters but it does not mandate their
+> >    use.
+> >  - I could add something to disable the use of the core and cycle
+> >    counters for frequency invariance at runtime, but I doubt that
+> >    anyone would use it. Logically it makes sense to use the counters
+> >    order to have a more accurate view of the performance that the CPUs
+> >    are actually providing. Therefore, until anyone asks for this, I
+> >    thought it's better to keep it simple and not add extra switches,
+> >    until there is a use for them.
+> > 
+> > Does it make sense?
+> 
+> The comment is about addressing someone who must run an "AMU" enabled
+> kernel ("one kernel") on a system with potentially "broken firmware",
+> where there is no option to use the system as you mention above,
+> the firmware could panic. How common is the "broken firmware" ?
+> Right now there is no way to ensure "firmware" is sane and if
+> someone detects that firmware is broken, there is no way to
+> disable the AMU if they are running a standard distro kernel.
+> A kernel parameter could prevent the AMU capability from
+> being detected on a broken system and thus make it usable
+> (without the AMU of course). Now, if the "broken firmware"
+> is extremely rare, we could simply ignore this case and
+> ignore the suggestion.
+> 
+> Suzuki
+> 
+>
+
+Sorry Suzuki, I initially interpreted the question independently from
+the context and only thought about cases where they are working
+correctly but users might want to disable the use of them.
+
+In this case, I don't see any harm in adding a command line parameter
+to disable the use of the unit, even if it's only to support firmware
+that does not support AMU at all, rather than the implementation being
+broken.
+
+I'm not really sure how common bad firmware would be. I suppose that
+firmware as bad as to cause firmware panics and lockups would be quite
+rare, but scenarios where firmware might not properly support AMU and
+result in kernel lockups could be more often, and this would handle
+both.
+
+Thank you,
+Ionela.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
