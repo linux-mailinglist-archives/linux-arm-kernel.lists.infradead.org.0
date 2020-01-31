@@ -2,77 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DBF014EC29
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 13:02:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FD4314EC4C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 13:08:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lzcIcJFtmNQV5MXjfileLkaFjnJdi6fZIiPzZOIUh0I=; b=K70y+419tD8hxd
-	tOlkn9X2fcPiKjbqx+UxU/Al2wVelnXax9gK5ooGjz/7+zUTK6dLJOFylqIApmlkn61AGKw8aDU9d
-	drDfVAS7gFRWpXwKGwy20pQ4bMYeid2XKPUOR/NZTWfxSR1xr5xhq3wxNHKCXKbScStfm/d9MOMPB
-	6GypmDd6Wwwnv3Cni+hHwqBDkW5oVzUPPloyakQsVaGnUborc6o7K6uKlrnyz/X3FcR9P5feR2Ytl
-	WTMc8Mrq3PpxyLkJ2AIPZJfbfTXGwxUnTUM3wNSK0Wa2wPe0Te6jPMn8vnavpTmS9dkyMa0To3Fbs
-	a2FjthebR3bZJo/N2Krw==;
+	List-Owner; bh=x36rT51BZN1QX9rGR8y3SimOf0pO9yk+20X6h5hRflY=; b=GLHv0cj+Ow0fDC
+	oSCRcMuZgtutLEamQs9KZnuonaPOvDLd4QcwSkE5pJ3iGt4Whv3f4VmJTqQ5NK1ZIzZBp1qT4P6Zn
+	kHt3RMuhqrDBC5VbQJnriEZ8Mh3EoxWTO0g6Kd/o20sdMxfC69uJ/OQ3CovBuc2+v32cIsAmger71
+	BdHsaklVEfu+ISNzFzJ2aCCnhV9DP1q+gP/8bSP+Tk48IWPniGbPmRogpimW2eFaonZae7aULORC5
+	/rPRTawgNKiMteDmgvXP56EQw1T1TIdB83noS6VThCYYj2NzDcAhewmMM8nyvkiHvdW9wFYO7HuNh
+	/KLx14eZ8DLY7V1hHREg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixV06-00078B-9U; Fri, 31 Jan 2020 12:02:18 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1ixV6J-00014S-9E; Fri, 31 Jan 2020 12:08:43 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixUzv-00077Z-7U
- for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 12:02:09 +0000
-Received: by mail-wm1-x343.google.com with SMTP id c84so8360983wme.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 31 Jan 2020 04:02:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mbDxoFJm2oj+qhmVC/5UqLWBu4cSJFdbmCZh1//SVQ4=;
- b=mYoMDYgfxsoqJFWW3pc1GvButWs7I+ctO4pZCarC+mZtnIJe0Gdqgy27ddJxZxcrz7
- SVx7e5lutA81dKlggkTmmmtmSVncGLDGm0cC6fKfjlA0u6DzPGaoLKOEdiEu8oIvwOUT
- +1x0QGJQD7mIOcsV4HkaPQeHYUxlekwTim81WrJ50UNbhnGtjcOSdsxF8V5n9g7ndF4C
- 74zpfo3MZvg3Z8jbr0DqnZXLAoAU+CLGgVQmrV2UUQaaNtSZy204apfDLTeEZ9JAzQQw
- pEXULMN0WgEbIONtu00fIhLezf5FgM3nUMS84Vj5W2qW+vA+qYnJE4psO6bRKgt8WDHH
- 9sRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mbDxoFJm2oj+qhmVC/5UqLWBu4cSJFdbmCZh1//SVQ4=;
- b=YvfekX7UVig0Fy+apev07G80reQ6sLX5WyKGkYCuL3xOta2PfnWV7QaXdfG0dHfV/P
- 57TOdreaESHDu0wbKh8iXj1bayjo6TomM2VrEYqs/q/HogMr1GNnuDttAPgBwzS0LBgg
- ITLW5K8v1iZqqT/DEwbmcn0k8Ki8YGXXvfBSUNsjcLKGkps1hHXLjM621GK9tddtJvPg
- 8DVNjNvteFrvBTdWQ4CAszcri3Urk7j+OpaBCXUvYMBR9jjSezAPxiQTc3dfIoE4Kph8
- PD/SWB5ZIgKl+kJ8esegKbu1ISDw71IzxNsLdnOCQZ0IIPt3xtfqtZrwPGpjHuPKwaJk
- ujHA==
-X-Gm-Message-State: APjAAAX6m3/Un8lnT+m954KongYAnDTD5FUExIt4UXMOpV3feM7EIAkf
- ycwu4Yz6vUzJtK/DQhvcSyPOtcQUUL8gIhHUA0RCOQ==
-X-Google-Smtp-Source: APXvYqyLtANt7wYq0lzcfnJ4oPim2jg3zsq8GEIuplfKm8PZP6V4fWF6UhT0UKkmPz3Joc4FOM6mQXP4R6uiWrkIJbw=
-X-Received: by 2002:a05:600c:248:: with SMTP id 8mr11681147wmj.1.1580472123485; 
- Fri, 31 Jan 2020 04:02:03 -0800 (PST)
+ id 1ixV68-000140-Mv
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 12:08:35 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580472510;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=O8Za+S+RT8N2UwLMl2kq7dZ6BHikmL9Pgno023mZKr8=;
+ b=dLrpOCao8Ad6VfdE8Otqi7oyHOqzC07Xf1ypnmlTiVhmslj0/M1ZeoDTWM6KyJl+WATqqh
+ KF2CBVlZMf+zr+hsyc7+KnsbCAWx8PgG/rRDO4+IJT1lf6LGPjGYJ/3K212nHqeR0dtrQD
+ zLA6bg8C+WlYFunLtqfN2cS713GFa/c=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-136-Ih36PAVQOHGA5sgccpxLOw-1; Fri, 31 Jan 2020 07:06:36 -0500
+X-MC-Unique: Ih36PAVQOHGA5sgccpxLOw-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 738599275B;
+ Fri, 31 Jan 2020 12:06:33 +0000 (UTC)
+Received: from gondolin (dhcp-192-195.str.redhat.com [10.33.192.195])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 46DCC5C3FA;
+ Fri, 31 Jan 2020 12:06:18 +0000 (UTC)
+Date: Fri, 31 Jan 2020 13:06:15 +0100
+From: Cornelia Huck <cohuck@redhat.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>
+Subject: Re: [PATCH 1/5] KVM: Pass kvm_init()'s opaque param to additional
+ arch funcs
+Message-ID: <20200131130615.3b21b28d.cohuck@redhat.com>
+In-Reply-To: <20200130001023.24339-2-sean.j.christopherson@intel.com>
+References: <20200130001023.24339-1-sean.j.christopherson@intel.com>
+ <20200130001023.24339-2-sean.j.christopherson@intel.com>
+Organization: Red Hat GmbH
 MIME-Version: 1.0
-References: <1580198925-50411-1-git-send-email-makarand.pawagi@nxp.com>
- <20200128110916.GA491@e121166-lin.cambridge.arm.com>
- <DB8PR04MB7164DDF48480956F05886DABEB070@DB8PR04MB7164.eurprd04.prod.outlook.com>
- <12531d6c569c7e14dffe8e288d9f4a0b@kernel.org>
-In-Reply-To: <12531d6c569c7e14dffe8e288d9f4a0b@kernel.org>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Fri, 31 Jan 2020 13:01:51 +0100
-Message-ID: <CAKv+Gu8uaJBmy5wDgk=uzcmC4vkEyOjW=JRvhpjfsdh-HcOCLg@mail.gmail.com>
-Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-To: Marc Zyngier <maz@kernel.org>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_040207_284063_F459A225 
-X-CRM114-Status: GOOD (  27.76  )
+X-CRM114-CacheID: sfid-20200131_040832_966751_A51D611A 
+X-CRM114-Status: GOOD (  16.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -82,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,161 +90,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Calvin Johnson <calvin.johnson@nxp.com>, stuyoder@gmail.com,
- nleeder@codeaurora.org, Ioana Ciornei <ioana.ciornei@nxp.com>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
- Will Deacon <will@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>, jon@solid-run.com,
- Russell King <linux@armlinux.org.uk>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Len Brown <lenb@kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- Andy Wang <Andy.Wang@arm.com>, Makarand Pawagi <makarand.pawagi@nxp.com>,
- Varun Sethi <V.Sethi@nxp.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>, Paul Yang <Paul.Yang@arm.com>,
- "<netdev@vger.kernel.org>" <netdev@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>
+Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
+ kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-mips@vger.kernel.org,
+ kvm-ppc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 31 Jan 2020 at 12:06, Marc Zyngier <maz@kernel.org> wrote:
->
-> On 2020-01-31 10:35, Makarand Pawagi wrote:
-> >> -----Original Message-----
-> >> From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> >> Sent: Tuesday, January 28, 2020 4:39 PM
-> >> To: Makarand Pawagi <makarand.pawagi@nxp.com>
-> >> Cc: netdev@vger.kernel.org; linux-kernel@vger.kernel.org; linux-arm-
-> >> kernel@lists.infradead.org; linux-acpi@vger.kernel.org;
-> >> linux@armlinux.org.uk;
-> >> jon@solid-run.com; Cristi Sovaiala <cristian.sovaiala@nxp.com>;
-> >> Laurentiu
-> >> Tudor <laurentiu.tudor@nxp.com>; Ioana Ciornei
-> >> <ioana.ciornei@nxp.com>;
-> >> Varun Sethi <V.Sethi@nxp.com>; Calvin Johnson
-> >> <calvin.johnson@nxp.com>;
-> >> Pankaj Bansal <pankaj.bansal@nxp.com>; guohanjun@huawei.com;
-> >> sudeep.holla@arm.com; rjw@rjwysocki.net; lenb@kernel.org;
-> >> stuyoder@gmail.com; tglx@linutronix.de; jason@lakedaemon.net;
-> >> maz@kernel.org; shameerali.kolothum.thodi@huawei.com; will@kernel.org;
-> >> robin.murphy@arm.com; nleeder@codeaurora.org
-> >> Subject: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-> >>
-> >> Caution: EXT Email
-> >>
-> >> On Tue, Jan 28, 2020 at 01:38:45PM +0530, Makarand Pawagi wrote:
-> >> > ACPI support is added in the fsl-mc driver. Driver will parse MC DSDT
-> >> > table to extract memory and other resorces.
-> >> >
-> >> > Interrupt (GIC ITS) information will be extracted from MADT table by
-> >> > drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c.
-> >> >
-> >> > IORT table will be parsed to configure DMA.
-> >> >
-> >> > Signed-off-by: Makarand Pawagi <makarand.pawagi@nxp.com>
-> >> > ---
-> >> >  drivers/acpi/arm64/iort.c                   | 53 +++++++++++++++++++++
-> >> >  drivers/bus/fsl-mc/dprc-driver.c            |  3 +-
-> >> >  drivers/bus/fsl-mc/fsl-mc-bus.c             | 48 +++++++++++++------
-> >> >  drivers/bus/fsl-mc/fsl-mc-msi.c             | 10 +++-
-> >> >  drivers/bus/fsl-mc/fsl-mc-private.h         |  4 +-
-> >> >  drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c | 71
-> >> ++++++++++++++++++++++++++++-
-> >> >  include/linux/acpi_iort.h                   |  5 ++
-> >> >  7 files changed, 174 insertions(+), 20 deletions(-)
-> >> >
-> >> > diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-> >> > index 33f7198..beb9cd5 100644
-> >> > --- a/drivers/acpi/arm64/iort.c
-> >> > +++ b/drivers/acpi/arm64/iort.c
-> >> > @@ -15,6 +15,7 @@
-> >> >  #include <linux/kernel.h>
-> >> >  #include <linux/list.h>
-> >> >  #include <linux/pci.h>
-> >> > +#include <linux/fsl/mc.h>
-> >> >  #include <linux/platform_device.h>
-> >> >  #include <linux/slab.h>
-> >> >
-> >> > @@ -622,6 +623,29 @@ static int iort_dev_find_its_id(struct device
-> >> > *dev, u32 req_id,  }
-> >> >
-> >> >  /**
-> >> > + * iort_get_fsl_mc_device_domain() - Find MSI domain related to a
-> >> > +device
-> >> > + * @dev: The device.
-> >> > + * @mc_icid: ICID for the fsl_mc device.
-> >> > + *
-> >> > + * Returns: the MSI domain for this device, NULL otherwise  */ struct
-> >> > +irq_domain *iort_get_fsl_mc_device_domain(struct device *dev,
-> >> > +                                                     u32 mc_icid) {
-> >> > +     struct fwnode_handle *handle;
-> >> > +     int its_id;
-> >> > +
-> >> > +     if (iort_dev_find_its_id(dev, mc_icid, 0, &its_id))
-> >> > +             return NULL;
-> >> > +
-> >> > +     handle = iort_find_domain_token(its_id);
-> >> > +     if (!handle)
-> >> > +             return NULL;
-> >> > +
-> >> > +     return irq_find_matching_fwnode(handle, DOMAIN_BUS_FSL_MC_MSI);
-> >> > +}
-> >>
-> >> NAK
-> >>
-> >> I am not willing to take platform specific code in the generic IORT
-> >> layer.
-> >>
-> >> ACPI on ARM64 works on platforms that comply with SBSA/SBBR
-> >> guidelines:
-> >>
-> >>
-> >> https://developer.arm.com/architectures/platform-design/server-systems
-> >>
-> >> Deviating from those requires butchering ACPI specifications (ie IORT)
-> >> and
-> >> related kernel code which goes totally against what ACPI is meant for
-> >> on ARM64
-> >> systems, so there is no upstream pathway for this code I am afraid.
-> >>
-> > Reason of adding this platform specific function in the generic IORT
-> > layer is
-> > That iort_get_device_domain() only deals with PCI bus
-> > (DOMAIN_BUS_PCI_MSI).
-> >
-> > fsl-mc objects when probed, need to find irq_domain which is associated
-> > with
-> > the fsl-mc bus (DOMAIN_BUS_FSL_MC_MSI). It will not be possible to do
-> > that
-> > if we do not add this function because there are no other suitable APIs
-> > exported
-> > by IORT layer to do the job.
->
-> I think we all understood the patch. What both Lorenzo and myself are
-> saying is
-> that we do not want non-PCI support in IORT.
->
+On Wed, 29 Jan 2020 16:10:19 -0800
+Sean Christopherson <sean.j.christopherson@intel.com> wrote:
 
-IORT supports platform devices (aka named components) as well, and
-there is some support for platform MSIs in the GIC layer.
+> Pass @opaque to kvm_arch_hardware_setup() and
+> kvm_arch_check_processor_compat() to allow architecture specific code to
+> reference @opaque without having to stash it away in a temporary global
+> variable.  This will enable x86 to separate its vendor specific callback
+> ops, which are passed via @opaque, into "init" and "runtime" ops without
+> having to stash away the "init" ops.
+> 
+> No functional change intended.
+> 
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+> ---
+>  arch/mips/kvm/mips.c       |  4 ++--
+>  arch/powerpc/kvm/powerpc.c |  4 ++--
+>  arch/s390/kvm/kvm-s390.c   |  4 ++--
+>  arch/x86/kvm/x86.c         |  4 ++--
+>  include/linux/kvm_host.h   |  4 ++--
+>  virt/kvm/arm/arm.c         |  4 ++--
+>  virt/kvm/kvm_main.c        | 18 ++++++++++++++----
+>  7 files changed, 26 insertions(+), 16 deletions(-)
 
-So it may be possible to hide your exotic bus from the OS entirely,
-and make the firmware instantiate a DSDT with device objects and
-associated IORT nodes that describe whatever lives on that bus as
-named components.
+> diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
+> index eb3709d55139..5ad252defa54 100644
+> --- a/virt/kvm/kvm_main.c
+> +++ b/virt/kvm/kvm_main.c
+> @@ -4345,14 +4345,22 @@ struct kvm_vcpu * __percpu *kvm_get_running_vcpus(void)
+>          return &kvm_running_vcpu;
+>  }
+>  
+> -static void check_processor_compat(void *rtn)
+> +struct kvm_cpu_compat_check {
+> +	void *opaque;
+> +	int *ret;
+> +};
+> +
+> +static void check_processor_compat(void *data)
+>  {
+> -	*(int *)rtn = kvm_arch_check_processor_compat();
+> +	struct kvm_cpu_compat_check *c = data;
+> +
+> +	*c->ret = kvm_arch_check_processor_compat(c->opaque);
+>  }
 
-That way, you will not have to change the OS at all, so your hardware
-will not only be supported in linux v5.7+, it will also be supported
-by OSes that commercial distro vendors are shipping today. *That* is
-the whole point of using ACPI.
+This function also looks better now :)
 
-If you are going to bother and modify the OS, you lose this advantage,
-and ACPI gives you no benefit over DT at all.
+Reviewed-by: Cornelia Huck <cohuck@redhat.com>
+Tested-by: Cornelia Huck <cohuck@redhat.com> #s390
+
 
 _______________________________________________
 linux-arm-kernel mailing list
