@@ -2,53 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0671714E8FE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 07:57:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DF9214E90D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 31 Jan 2020 08:09:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tjv4AOGBrFZR0PFlv7C4MdKmUHOdolAFqb2C0YS7+cg=; b=JlQFJoEQb0zzWquv+JYGaqLK9
-	rfL2NYcstpLxNWJ9nu1Tcy2x1kOL/PwnJsLFMACgbfiL0goi6ZJcpThWUGzcu3LHAn3pBMWk0Uqc6
-	9sx7HDqSErZQdOm+LWG6/GK0b0kOdCdleAPTCKLVzkeLIPitboVe++OXZ/I2SOLtQPiLAE1dp1fnK
-	6kbhS0CfjHPiGm6LvclNkFgoiSYoX4Ikijuuy7mdYSVHvN8+EjoMgIwsa+he2T3xwuJEbclqukVxr
-	FPzBsrKQMr/OvH8tVST+ca+BOlqrpt+jl2WFzvTHP/g9aeFF0xSOW1JAwi8bXXq8KO+BNXAkt2GkX
-	vRIAhhl9Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=S7eMrZQfS8mPrKO87Uk/GnokikJwVdeWJDHMgqXaW+4=; b=Ybb1Z5WHvaMeRD
+	KpEeuvSyMRruG1NnK4Z25na4KY76GnVVlhUjORs5Yn1R/68j8fZV5hnSFBypd3LuNmjyNDS8jGW00
+	ExUMhaGXeLGnMHDISeYtQH4g+nas5XSn+zArh90I7LjmF3cPRmx44j0+VnqsdG02NC+FKjI+OeRvk
+	y/9FoJUvjYth029/RhJEKJ6NMPm50zsyFv9emMzRg3RW6Q1BaXJsHgYlrlZ0sAVUhZ2zf/0Bp0HHC
+	LDGumIS4vNBLw0EjlurN7I3d5zjuSEnkGGka/sjgUf0bzoWbTx6/Bp45815242KXT54LO0+HWyjOJ
+	L04yO7sX7pPYdwexvHGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixQEm-0004q0-HP; Fri, 31 Jan 2020 06:57:08 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixQEe-0004pK-6j
- for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 06:57:02 +0000
-Received: from localhost (p54B333AF.dip0.t-ipconnect.de [84.179.51.175])
- by pokefinder.org (Postfix) with ESMTPSA id 721C42C0830;
- Fri, 31 Jan 2020 07:56:55 +0100 (CET)
-Date: Fri, 31 Jan 2020 07:56:55 +0100
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Alain Volmat <alain.volmat@st.com>
-Subject: Re: [PATCH 5/6] i2c: i2c-stm32f7: allow controller to be wakeup-source
-Message-ID: <20200131065654.GB1028@ninjato>
-References: <1578317314-17197-1-git-send-email-alain.volmat@st.com>
- <1578317314-17197-6-git-send-email-alain.volmat@st.com>
- <20200130083927.GH2208@ninjato>
+	id 1ixQQU-0000cV-9W; Fri, 31 Jan 2020 07:09:14 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixQQK-0000br-Mw
+ for linux-arm-kernel@lists.infradead.org; Fri, 31 Jan 2020 07:09:06 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00V78IS6092043;
+ Fri, 31 Jan 2020 07:08:58 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : mime-version : content-type; s=corp-2019-08-05;
+ bh=f/Rgr4Btt/dvUzQREUmef9cDteWWv4N/UoaunYa5ktY=;
+ b=aYqHKz56nl8eZWkf3fSiSUcZBKb8z94tlD7FiSJ3dDMEmVNQ7LUxz+2ISqPAYfOrD629
+ 5Iq3/V3KZ1gFTPOM8d9L3aIuKep4WUMiGMUnhqLnuvDDlZgdj3E27XCRXnIqAaatPJdG
+ aEnGrvKHvoi1HW8d1yIJdUUV0XQQq1kH6gKgSgRXDFHulvdCSGy0+G3RNLTJmiWKaKOI
+ dXrixAuiPCCaAiSxR2RRfPESiAZ5YsEJtpdCWMRM2KpgBQ/px3uVRL1fcftQkSnocJeV
+ fhuJqeiDw7SEOWs1QLLrz+/cJH4yPyMK+gFuKDZG5UK8glzodjuFSZ6aZYse8kKYXRKd +Q== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2xrd3urhbb-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 31 Jan 2020 07:08:57 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 00V78sak150714;
+ Fri, 31 Jan 2020 07:08:57 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3020.oracle.com with ESMTP id 2xva6pwx7t-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 31 Jan 2020 07:08:55 +0000
+Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 00V78kfE022915;
+ Fri, 31 Jan 2020 07:08:46 GMT
+Received: from kili.mountain (/129.205.23.165)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Thu, 30 Jan 2020 23:08:45 -0800
+Date: Fri, 31 Jan 2020 10:08:38 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: grygorii.strashko@ti.com
+Subject: [bug report] soc: ti: k3: add navss ringacc driver
+Message-ID: <20200131070838.umaillib2nxujzsh@kili.mountain>
 MIME-Version: 1.0
-In-Reply-To: <20200130083927.GH2208@ninjato>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9516
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=1
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=495
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-2001310063
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9516
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=1 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=569 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-2001310063
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200130_225700_395246_D0C7F7D9 
-X-CRM114-Status: GOOD (  12.55  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200130_230904_892759_0D200AA7 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,96 +109,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com, robh+dt@kernel.org,
- linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1056936816586026472=="
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello Grygorii Strashko,
 
---===============1056936816586026472==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="kORqDWCi7qDJ0mEj"
-Content-Disposition: inline
+This is a semi-automatic email about new static checker warnings.
 
+The patch 3277e8aa2504: "soc: ti: k3: add navss ringacc driver" from 
+Jan 15, 2020, leads to the following Smatch complaint:
 
---kORqDWCi7qDJ0mEj
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+    ./drivers/soc/ti/k3-ringacc.c:562 k3_ringacc_ring_cfg()
+     warn: variable dereferenced before check 'ring' (see line 559)
 
-On Thu, Jan 30, 2020 at 09:39:27AM +0100, Wolfram Sang wrote:
-> On Mon, Jan 06, 2020 at 02:28:33PM +0100, Alain Volmat wrote:
-> > Allow the i2c-stm32f7 controller to become a wakeup-source
-> > of the system. In such case, when a slave is registered to the
-> > I2C controller, receiving a I2C message targeting that registered
-> > slave address wakes up the suspended system.
-> >=20
-> > In order to be able to wake-up, the I2C controller DT node
-> > must have the property wakeup-source defined and a slave
-> > must be registered.
-> >=20
-> > Signed-off-by: Alain Volmat <alain.volmat@st.com>
->=20
-> Applied to for-next, thanks!
+./drivers/soc/ti/k3-ringacc.c
+   558	{
+   559		struct k3_ringacc *ringacc = ring->parent;
+                                             ^^^^^^^^^^^^
+dereference
 
-And I will drop it again because buildbot rightfully complains:
+   560		int ret = 0;
+   561	
+   562		if (!ring || !cfg)
+                     ^^^^
+too late
 
+   563			return -EINVAL;
+   564		if (cfg->elm_size > K3_RINGACC_RING_ELSIZE_256 ||
 
-> Reported-by: kbuild test robot <lkp@intel.com>
->=20
-> All errors (new ones prefixed by >>):
->=20
->    drivers/i2c/busses/i2c-stm32f7.c: In function 'stm32f7_i2c_suspend':
-> >> drivers/i2c/busses/i2c-stm32f7.c:2199:44: error: 'struct dev_pm_info' =
-has no member named 'wakeup_path'
->      if (!device_may_wakeup(dev) && !dev->power.wakeup_path) {
->                                                ^
->    drivers/i2c/busses/i2c-stm32f7.c: In function 'stm32f7_i2c_resume':
->    drivers/i2c/busses/i2c-stm32f7.c:2218:44: error: 'struct dev_pm_info' =
-has no member named 'wakeup_path'
->      if (!device_may_wakeup(dev) && !dev->power.wakeup_path) {
->                                                ^
-
-wakeup_path is only there if CONFIG_PM. Please fix and send a new
-version.
-
-
---kORqDWCi7qDJ0mEj
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl4zz7YACgkQFA3kzBSg
-KbaWShAAsD5Gaj6lEFcuVH415Va4PzT6S2H3CUZIfq7iTBdNKWV8nvABcAaS18FA
-WY9qmpili5WRVugYU+1X4rxzEnSPiO6Sx5s9HGZHPefRlr2B99BknwPRCRkwWb6g
-vGNROAZh+qQuTayJ2UH33dSGtjXQ09KH4uDrIeRBoxWRuOlhxOe1FBmwudzEC4UM
-g3nCUq94rccym19fNkWxATy1RCwd2LZF4RRjj2CQLW+o41hUa/Vtb953oxjKPZHo
-p6lNncLSls4myb0yyqLEfnyFgOaopM7kOaTsgZAElto7WptLPtrcv0M6pCuZGeQx
-jFEqtZqSGNQsnlv4kZIei/Cnwp/zP1wgsHblLH20w1AuKAwq0G91kysEIH6OYak/
-HUL09BSJ25ZVEKDOonq/bIVPlxSvO5C0SYkq+YjgY5ojSCWWLF8ThkUCayynCEu1
-qsLn6oY7bB/8qqpiqPb+rx6M5ZuLLz3RKQmv28WuV2Oyl/KPgjtBXQ4KDG8l5fxI
-bUGHLyMdiyGFoK64lppvjAWp3WSsN8IvcVfRrl7HfTgZ+iGONbCs+ZYVQ9Y3i1gw
-APQl4R/vack7OumxG6wFjRvEpPDfwDvaR6A4yxpi62mp+YwP9NZ93pduvhqrF/DB
-XMvJqyy4aMLZFDC1ioWldHX8FuFEXLqc2BULX/o0S92ZKSRYVc4=
-=wM4/
------END PGP SIGNATURE-----
-
---kORqDWCi7qDJ0mEj--
-
-
---===============1056936816586026472==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+regards,
+dan carpenter
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1056936816586026472==--
-
