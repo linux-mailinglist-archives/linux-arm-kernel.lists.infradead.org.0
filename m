@@ -2,78 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CC7114F92D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Feb 2020 18:36:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 325CA14F931
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Feb 2020 18:46:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jyjCKL9LABs4AIt4R1Ka9OlbZ7TvZgygHIXGlZ2Lu3o=; b=fnAryHeLNWDWmw
-	7k1eqd5lMC7W2K2fPf9MSjSUCkC4j/TOzi/Un5PMDS7t6XrQDzul/ezoMIGc2tS3MtMa+cIKayTCs
-	BxsQFlsKJkZUms0wvIJszAIIBVk16jnGbJ9ZLpYFJpF15BPPvmqLBuR6krr7272JVDn2tWpLeFPoz
-	v4nlGBPCJFGF32+DcunxVE3ojm8B5zfVSi+1R9B+1AWxaCnKdK/F0AAuOhhDLWJ1iCQ/efB8MCl4+
-	RkZFEqqYEf9ClEpg3WWNNKFSa2GNWpiul9FCgH16FE2aPYX88Hu3YAt54jHK7CVdnDIW/AcdopGQ8
-	JEovW7/FWuFYm9w1dOqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=39XNbw1GvuwZSkFB/bPB3/B3qosVkksVZkc4tSaz1BY=; b=Lx/bIex8ChsF1bmmEjPRYz8Xh
+	+0uPqsvoQKiZ8EPVS8WSy5PnW/zq5YepRXcx8kvkL/MwTJHtv3iMRxt64NNYx9GqDqOU9EbYi7Q0N
+	WpXOkl/NxBDJj4l93nR7oqqZJ2j1FKxRBVodhOlRyJeDBlpr2xHxn1DQDH0fzDm4dKEjXgXhE0ZjI
+	Uv6fsC6i/kaBYYNTEIiatNhlrp4idf9bslqa/JmWt/hyy5JJO/RRHrtdiczvn6C2APDPQSMzp+VDC
+	ZjztcHQ3N8uBKtIczq16/12fAVSufQzcH47WvcGZrL01zZwIQyfuF847tA7m9XEWTpI2B3+v6kabh
+	6RsDlIGmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixwh4-0003Iu-Qu; Sat, 01 Feb 2020 17:36:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixwgy-0003IU-4K
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Feb 2020 17:36:25 +0000
-Received: from cakuba.hsd1.ca.comcast.net (c-73-93-4-247.hsd1.ca.comcast.net
- [73.93.4.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3A7DC20678;
- Sat,  1 Feb 2020 17:36:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580578582;
- bh=KuaxtJRw14v59ff+I3CJb9O7IIbfHXwjQfiE5sV/mdE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=npYR5SuSSCd/RxiufbwuT5b4Zl8DzXdHMvm2gczI+LuLTrmyTyRHAxb8GqPRusVOi
- Nksy1LlWZ878WB0PdUdrVy/8Ii2I44Uj6dzZknH6IzTQTsdL+SqTTz+l5y69hwYEb7
- /5shIJwIWw2mwK7nG7bHMe+sX4ZF1a4Tus98IhLg=
-Date: Sat, 1 Feb 2020 09:36:20 -0800
-From: Jakub Kicinski <kuba@kernel.org>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-Message-ID: <20200201093620.4b55d6fa@cakuba.hsd1.ca.comcast.net>
-In-Reply-To: <20200201114919.GQ25745@shell.armlinux.org.uk>
-References: <DB8PR04MB7164DDF48480956F05886DABEB070@DB8PR04MB7164.eurprd04.prod.outlook.com>
- <12531d6c569c7e14dffe8e288d9f4a0b@kernel.org>
- <CAKv+Gu8uaJBmy5wDgk=uzcmC4vkEyOjW=JRvhpjfsdh-HcOCLg@mail.gmail.com>
- <CABdtJHsu9R9g4mn25=9EW3jkCMhnej_rfkiRzo3OCX4cv4hpUQ@mail.gmail.com>
- <0680c2ce-cff0-d163-6bd9-1eb39be06eee@arm.com>
- <CABdtJHuLZeNd9bQZ-cmQi00WnObYPvM=BdWNw4EMpOFHjRd70w@mail.gmail.com>
- <b136adc4-be48-82df-0592-97b4ba11dd79@arm.com>
- <20200131142906.GG9639@lunn.ch>
- <20200131151500.GO25745@shell.armlinux.org.uk>
- <20200131074050.38d78ff0@cakuba.hsd1.ca.comcast.net>
- <20200201114919.GQ25745@shell.armlinux.org.uk>
+	id 1ixwqn-0006GK-5l; Sat, 01 Feb 2020 17:46:33 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1ixwqg-0006Fr-BC; Sat, 01 Feb 2020 17:46:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EF933101E;
+ Sat,  1 Feb 2020 09:46:23 -0800 (PST)
+Received: from [192.168.1.123] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 445113F68E;
+ Sat,  1 Feb 2020 09:46:23 -0800 (PST)
+Subject: Re: [PATCH] arm64: dts: rockchip: Fix rk3328-roc-cc sdmmcio-regulator
+To: Adam Van Ymeren <adam@vany.ca>, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+References: <87imkryz5t.fsf@vany.ca>
+ <7b9829b3-e2d2-95b1-03cb-1af7a3c6acad@arm.com>
+ <4a6a9d81-c831-4167-7fbf-64805940fb6f@vany.ca>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <d8a8b696-268b-1ea8-7b5e-406a651011ff@arm.com>
+Date: Sat, 1 Feb 2020 17:46:24 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
+In-Reply-To: <4a6a9d81-c831-4167-7fbf-64805940fb6f@vany.ca>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200201_093624_216526_DFA5A070 
-X-CRM114-Status: GOOD (  13.78  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200201_094626_427993_BE1B2755 
+X-CRM114-Status: GOOD (  17.39  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,64 +65,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Calvin Johnson <calvin.johnson@nxp.com>,
- stuyoder@gmail.com, nleeder@codeaurora.org,
- Ioana Ciornei <ioana.ciornei@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
- Will Deacon <will@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Marc Zyngier <maz@kernel.org>, Pankaj Bansal <pankaj.bansal@nxp.com>,
- Jon Nettleton <jon@solid-run.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Len Brown <lenb@kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- Andy Wang <Andy.Wang@arm.com>, Makarand Pawagi <makarand.pawagi@nxp.com>,
- Varun Sethi <V.Sethi@nxp.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>, Paul Yang <Paul.Yang@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- "<netdev@vger.kernel.org>" <netdev@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Jiri Pirko <jiri@mellanox.com>,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Heiko Stuebner <heiko@sntech.de>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 1 Feb 2020 11:49:19 +0000, Russell King - ARM Linux admin wrote:
-> What if someone decides to do:
-> 
-> 	devlink port split device/1 count 2
-> 
-> what do we end up with?  Presumably two network devices running with
-> two serdes lanes each (if supported by the hardware).  At that point
-> can they then do:
-> 
-> 	devlink port split device/2 count 2
-> 
-> and end up with one network device with two 10G serdes lanes, and two
-> network devices each with one 10G serdes lane, 
-
-I think all your guesses are correct, it's a pretty straight forward
-API, but it's also pretty thin, and some of the logic is in FW, so
-there isn't much in a way of a standard on how things should behave :S
-
-> or can port splitting only be used on the "master" device/port ?
-
-I think both mlxsw and the NFP rejects re-split/further splitting.
-Ports have to be unsplit first. So there is only one device for
-splitting, and unsplitting can be done on any of the sub-devices.
-
-> Unfortunately, I don't think I have any network devices that support
-> this so I can't experiment to find out how this should work; yes, I
-> have a Mellanox card, but it supports a single 10G SFP+, and therefore
-> does not support port splitting.
-
-I think you'd need a mlxsw or an nfp to play with this.
-
-Maybe Jiri can clarify further :)
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAyMC0wMi0wMSAzOjQxIHBtLCBBZGFtIFZhbiBZbWVyZW4gd3JvdGU6Cj4gCj4gT24gMjAy
+MC0wMi0wMSA1OjUxIGEubS4sIFJvYmluIE11cnBoeSB3cm90ZToKPj4gSGkgQWRhbSwKPj4KPj4g
+T24gMjAyMC0wMS0zMSAxMTozOCBwbSwgQWRhbSBWYW4gWW1lcmVuIHdyb3RlOgo+Pj4gV2l0aCB0
+aGlzIGNoYW5nZSB0aGUga2VybmVsIHN1Y2Nlc3NmdWxseSBmaW5kcyB0aGUgU0QgQ2FyZCBhbmQg
+Y2FuIGxvYWQKPj4+IGEgcm9vdGZzIGZyb20gaXQuwqAgVGVzdGVkIG9uIGhhcmR3YXJlLgo+Pj4K
+Pj4+IFNpZ25lZC1vZmYtYnk6IEFkYW0gVmFuIFltZXJlbiA8YWRhbUB2YW55LmNhPgo+Pj4KPj4+
+IGRpZmYgLXVwck4gLVggbGludXgtNS41L0RvY3VtZW50YXRpb24vZG9udGRpZmYKPj4+IGxpbnV4
+LTUuNS1vcmlnL2FyY2gvYXJtNjQvYm9vdC9kdHMvcm9ja2NoaXAvcmszMzI4LXJvYy1jYy5kdHMK
+Pj4+IGxpbnV4LTUuNS9hcmNoL2FybTY0L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzMyOC1yb2MtY2Mu
+ZHRzCj4+PiAtLS0gbGludXgtNS41LW9yaWcvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9y
+azMzMjgtcm9jLWNjLmR0cwo+Pj4gMjAyMC0wMS0yNiAxOToyMzowMy4wMDAwMDAwMDAgLTA1MDAK
+Pj4+ICsrKyBsaW51eC01LjUvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzMjgtcm9j
+LWNjLmR0cwo+Pj4gMjAyMC0wMS0zMSAxNjoyNjozNS4zNzcwNzU0MTkgLTA1MDAKPj4+IEBAIC00
+NCw3ICs0NCw3IEBACj4+PiAgwqAgwqDCoMKgwqDCoCB2Y2Nfc2Rpbzogc2RtbWNpby1yZWd1bGF0
+b3Igewo+Pj4gIMKgwqDCoMKgwqDCoMKgwqDCoCBjb21wYXRpYmxlID0gInJlZ3VsYXRvci1ncGlv
+IjsKPj4+IC3CoMKgwqDCoMKgwqDCoCBncGlvcyA9IDwmZ3JmX2dwaW8gMCBHUElPX0FDVElWRV9I
+SUdIPjsKPj4+ICvCoMKgwqDCoMKgwqDCoCBncGlvcyA9IDwmZ3BpbzAgUktfUEQxIEdQSU9fQUNU
+SVZFX0hJR0g+Owo+Pgo+PiBHaXZlbiB0aGF0IHRoZSBSSzMzMjggZGF0YXNoZWV0IGhhcyBubyBt
+ZW50aW9uIG9mIEdQSU8wX0QxIGV4aXN0aW5nIGF0Cj4+IGFsbCwgaG93IHN1cmUgYXJlIHlvdSB0
+aGF0IHRoaXMgaXMgY29ycmVjdCAtIGhhdmUgeW91IHRlc3RlZCBjYXJkcyBpbgo+PiBib3RoIDMu
+M1YgYW5kIDEuOFYgKFVIUy0xKSBzaWduYWxsaW5nIG1vZGVzPwo+Pgo+PiBUaGUgUk9DLVJLMzMy
+OC1DQyBzY2hlbWF0aWNzIHNob3cgR1BJT19NVVRFIGJlaW5nIHVzZWQgdG8gYmlhcyB0aGUKPj4g
+ZmVlZGJhY2sgcGluIG9mIGFuIGFkanVzdGFibGUgcmVndWxhdG9yIHN1cHBseWluZyB0aGUgU0RN
+TUMwIEkvTwo+PiBkb21haW4sIHNvIGl0IHNlZW1zIG1vcmUgbGlrZWx5IHRoYXQgdGhlIHBpbiBp
+cyBjb3JyZWN0IGJ1dCB0aGUgc3RhdGVzCj4+IChvciB0aGUgcG9sYXJpdHkpIGFyZSBiYWNrd2Fy
+ZHMuCj4gCj4gCj4gSG1tIHllYWggYWZ0ZXIgcmVhZGluZyB0aGUgc2NoZW1hdGljcyB0aGlzIGRv
+ZXNuJ3QgbWFrZSBzZW5zZS7CoCBJIHRvb2sKPiBpdCBmcm9tIHRoZSB2ZW5kb3JzIHNvdXJjZSB0
+cmVlWzFdLCBhbmQgaXQgZGVmaW5pdGVseSBhbGxvd2VkIG15IHN5c3RlbQo+IHRvIGJvb3Qgd2hl
+biBpdCB3b3VsZG4ndCBiZWZvcmUsIGJ1dCBJIG9ubHkgdHJpZWQgYSAzLjNWIGNhcmQuwqAgSSds
+bCB0cnkKPiBqdXN0IGNoYW5naW5nIHRoZSBwb2xhcml0eS7CoCBJJ2xsIGFsc28gZmluZCBhIFVI
+Uy0xIGNhcmQgYW5kIHRlc3QgdGhhdCwKPiBhbnkgYWR2aWNlIG9uIGhvdyB0byB2ZXJpZnkgdGhh
+dCBpdCdzIHJ1bm5pbmcgaW4gdGhlIDEuOFYgbW9kZT8KCk15IHByZWZlcnJlZCBtZXRob2QgaXMg
+dG8gc3RpY2sgYSBtZXRlciBvbiBlaXRoZXIgdGhlIHVTRCBzb2NrZXQgcGlucyBvciAKdGhlIHJl
+Z3VsYXRvciBpdHNlbGYgYW5kIHdpZ2dsZSB0aGUgR1BJTyBmcm9tIHVzZXJzcGFjZSwgYnV0IHBy
+ZWZlcmFibHkgCm9ubHkgaWYgdGhlIGJvYXJkIGNhbiBydW4gd2l0aG91dCBhIGNhcmQgaW5zZXJ0
+ZWQuCgpUaGF0IHNhaWQsIEkganVzdCBzdWRkZW5seSByZW1lbWJlcmVkIGFib3V0IHJlZ3VsYXRv
+ciBHUElPcyBiZWluZyBxdWlya3kgCmZvciBsZWdhY3kgQUJJIHJlYXNvbnMgLSBJJ20gbm93IDk5
+JSBzdXJlIHRoYXQgeW91IHNob3VsZCBzaW1wbHkgbmVlZCB0byAKYWRkIHRoZSAiZW5hYmxlLWFj
+dGl2ZS1oaWdoIiBwcm9wZXJ0eSB0byBtYWtlIGl0IGFjdHVhbGx5IHdvcmsgYXMgZXhwZWN0ZWQu
+CgpSb2Jpbi4KCj4KPiBbMV0KPiBodHRwczovL2dpdGh1Yi5jb20vRmlyZWZseVRlYW0va2VybmVs
+L2Jsb2IvcmszMzI4L2ZpcmVmbHkvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzMjgt
+ZmlyZWZseS1jb3JlLmR0c2kjTDg5Cj4gCj4gCj4gVGhhbmtzIGZvciB0aGUgcmV2aWV3IQo+IAo+
+IC1BZGFtCj4gCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
