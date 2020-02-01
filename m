@@ -2,80 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FE4C14F5E3
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Feb 2020 03:04:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58DED14F726
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  1 Feb 2020 09:04:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ND1kqpoJhWBQJ9hjtm/GpzUzAyZxQHyTNLHUHgadqcg=; b=OLY
-	30G3BJAMjIaQGGKSgWEKDXybN+U2jIzvM2qiLs+WwxQQvJeyI2xHMD8REspBCOpMcWdvdzsCE+Lt/
-	ieey9W/qNjrhOkfuqfYrJQoOkw3cmmAApzCkVJK0wHnehpiltX4uZH01RLfmWSFQUYKI5g0Heeg3s
-	AD6lEPgye5PV5VSE3elvLYPz01SLFDESdU+C3Tt9p79gZBpVEXndM9xOoOwELRg1QJiaej6Hk750j
-	vLHlbmhiWXwTAe/U7PP1VA8QTFLeOjKQr8jUmsT84mhBkcCjF2A3IuDYvXwaUfJjcE7jf6XddxUe1
-	T6EyiDYvD+z2UC39eLpFgtt1Ze9S1Dw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mRIdvREI8pXD/BZRI+g8FkewqnE6msigqePgZ1mAFUI=; b=hId49JA1jc6HE7
+	OrjT/nzYe55RECUxOIUlNpWhJBV12/aO/WjdDEr+jSHwBcb1GJmG34hIXrUAtmrBULakY/lk/QCYp
+	Puy9LOtTvt9c31V0jAcP8OH6g2MJJmA72flqhrAiK2Hf63YsUHyoqVjJ2oF+DuejOQQ//gLfGdlgm
+	GkLOi+c5xBpUcz0xJP2Btsj+YgJGu3ZNHBRDvnWNXwnFeBs44JuxJuVDAgh0yNTYm9NH6PLxVgOzs
+	213SzrJocvR77WyTGyEK0Z9t5Q9eqZgrcqcGM+s0aYK+ZOcxVo3fMoP2rgh6uOK3jPJIfzzFDxZr9
+	9TU7mu3AP7atvsJBGfsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ixi8q-0000Tn-9w; Sat, 01 Feb 2020 02:04:12 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1ixnkv-0005aB-IF; Sat, 01 Feb 2020 08:03:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ixi8g-0000T1-RL
- for linux-arm-kernel@lists.infradead.org; Sat, 01 Feb 2020 02:04:04 +0000
-Received: by mail-pf1-x443.google.com with SMTP id i6so4386409pfc.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 31 Jan 2020 18:04:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=Ro9iu9VNOuWviWh4OwZbe94+Deahhttu3CMtreUHnJg=;
- b=qld644UZy5MSMdAtQDkFv4eR5rOeOIeuYYfxUs23Icnpl5o/mtxhvzILGSb2z3jyMK
- c4iUPxDxY0Yui24NWEKH6kWwdJHWBYIaJbb+XuE5HNcq0q1qMCIs1vanew6u6v1GhJw9
- T2PcbubEr4HNdp7sRw4LVM3gfCDjNnqxxPI5MEdEgxq/gTu7B14se15UnnzgPmYO7Y1F
- Onh2bVuPh9sw+R1MxRUdtJ3k/kMPZ9sED/MwqC3dx7ii9eVo7Fg0SxP6ejCYvW5RGAcO
- xRR9sNJU9jPBC74vhh33HTE/r8mAT9q+SVPXs4nUv4T2HKAfxu1oG4uYc+5fw45hAwru
- Ohgg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=Ro9iu9VNOuWviWh4OwZbe94+Deahhttu3CMtreUHnJg=;
- b=FWRa6jv9W0aFIQkIWoNHdGD49+m9TWUhNkvbrVO+m2idyfM5PAQ1YXwMvlmSuyTPAj
- lyMrONjNxYw6AUWLX7XXHEgsecBEu8uhLklvzFT1YwrCzwhP1EhlHZf7hNG87KlTalW3
- mRIhfLBHRRyqtKLMs92/3USqQsU0LLUsQ1rEIP0gtCHEEc23xbzZGpypODvCtNv5VqwR
- EFBIezbxkWyIHnMYZit0bQazBRZPceKPZl5HUhr7kVk5vlplSEHszmASEKQDSxJqmPci
- sQfnRK8YuU1k+/gz/3+B80Sk4sUQHfdfFL8EXva6cCb53ZNEDIGn2j7rbNr/G9WknPvx
- ikRQ==
-X-Gm-Message-State: APjAAAX6NkTthQHGIhkxEPkeP2w8a/dJ74g3ekQxxxXMgIf3/eWdRq2U
- ktjFB1be/EMxu2VzAQbF/ms=
-X-Google-Smtp-Source: APXvYqx+2t7NY80ATnmYXbW5lMP4yKLfBufkJ9KD/yZ72OykzVDh9Voe5Bf4K1yXya/3K/FKiTxm4w==
-X-Received: by 2002:a63:8e:: with SMTP id 136mr13129030pga.319.1580522641354; 
- Fri, 31 Jan 2020 18:04:01 -0800 (PST)
-Received: from Asurada-Nvidia.nvidia.com (thunderhill.nvidia.com.
- [216.228.112.22])
- by smtp.gmail.com with ESMTPSA id p3sm11744575pfg.184.2020.01.31.18.04.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 31 Jan 2020 18:04:00 -0800 (PST)
-From: Nicolin Chen <nicoleotsuka@gmail.com>
-To: davem@davemloft.net, peppe.cavallaro@st.com, alexandre.torgue@st.com,
- joabreu@synopsys.com
-Subject: [PATCH] net: stmmac: Delete txtimer in suspend()
-Date: Fri, 31 Jan 2020 18:01:24 -0800
-Message-Id: <20200201020124.5989-1-nicoleotsuka@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1ixnkn-0005ZX-Ta
+ for linux-arm-kernel@lists.infradead.org; Sat, 01 Feb 2020 08:03:47 +0000
+Received: from quaco.parlament.guest (catv-212-96-54-169.catv.broadband.hu
+ [212.96.54.169])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 306A42073B;
+ Sat,  1 Feb 2020 08:03:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1580544224;
+ bh=bEa25Z9YLsQ9ciH8lpYiSPusnATq9/VOaC6bosAXhAM=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=ZNP50Oj5EvtRcW+6tW61tpciBw8vNGoEZ0WSDEX8HSfvTjs9FAeOt1QBB/p4E9Tzw
+ X8x33ADFAhILuMUNjo4EnnQ7jzoGNMm6ZxC3oHg18HbXGPVE4PfEYPfH7y1uJ1yWM5
+ aHUInKiP7BOzlB7L5ftiR+AVa9dWGJTjFZ8pEopQ=
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Ingo Molnar <mingo@kernel.org>,
+	Thomas Gleixner <tglx@linutronix.de>
+Subject: [PATCH 1/6] perf parse: Refactor 'struct perf_evsel_config_term'
+Date: Sat,  1 Feb 2020 09:03:25 +0100
+Message-Id: <20200201080330.13211-2-acme@kernel.org>
+X-Mailer: git-send-email 2.21.1
+In-Reply-To: <20200201080330.13211-1-acme@kernel.org>
+References: <20200201080330.13211-1-acme@kernel.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200131_180402_913973_9D8F7F7B 
-X-CRM114-Status: GOOD (  10.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200201_000346_003091_C059B446 
+X-CRM114-Status: GOOD (  14.50  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [nicoleotsuka[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -84,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,80 +77,243 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, mcoquelin.stm32@gmail.com,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Ian Rogers <irogers@google.com>,
+ Andi Kleen <ak@linux.intel.com>, Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>, Clark Williams <williams@redhat.com>,
+ linux-kernel@vger.kernel.org, Adrian Hunter <adrian.hunter@intel.com>,
+ linux-perf-users@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When running v5.5 with a rootfs on NFS, memory abort may happen in
-the system resume stage:
- Unable to handle kernel paging request at virtual address dead00000000012a
- [dead00000000012a] address between user and kernel address ranges
- pc : run_timer_softirq+0x334/0x3d8
- lr : run_timer_softirq+0x244/0x3d8
- x1 : ffff800011cafe80 x0 : dead000000000122
- Call trace:
-  run_timer_softirq+0x334/0x3d8
-  efi_header_end+0x114/0x234
-  irq_exit+0xd0/0xd8
-  __handle_domain_irq+0x60/0xb0
-  gic_handle_irq+0x58/0xa8
-  el1_irq+0xb8/0x180
-  arch_cpu_idle+0x10/0x18
-  do_idle+0x1d8/0x2b0
-  cpu_startup_entry+0x24/0x40
-  secondary_start_kernel+0x1b4/0x208
- Code: f9000693 a9400660 f9000020 b4000040 (f9000401)
- ---[ end trace bb83ceeb4c482071 ]---
- Kernel panic - not syncing: Fatal exception in interrupt
- SMP: stopping secondary CPUs
- SMP: failed to stop secondary CPUs 2-3
- Kernel Offset: disabled
- CPU features: 0x00002,2300aa30
- Memory Limit: none
- ---[ end Kernel panic - not syncing: Fatal exception in interrupt ]---
+From: Leo Yan <leo.yan@linaro.org>
 
-It's found that stmmac_xmit() and stmmac_resume() sometimes might
-run concurrently, possibly resulting in a race condition between
-mod_timer() and setup_timer(), being called by stmmac_xmit() and
-stmmac_resume() respectively.
+The struct perf_evsel_config_term::val is a union which contains fields
+'callgraph', 'drv_cfg' and 'branch' as string pointers.  This leads to
+the complex code logic for handling every type's string separately, and
+it's hard to release string as a general way.
 
-Since the resume() runs setup_timer() every time, it'd be safer to
-have del_timer_sync() in the suspend() as the counterpart.
+This patch refactors the structure to add a common field 'str' in the
+'val' union as string pointer and remove the other three fields
+'callgraph', 'drv_cfg' and 'branch'.  Without passing field name, the
+patch simplifies the string handling with macro ADD_CONFIG_TERM_STR()
+for string pointer assignment.
 
-Signed-off-by: Nicolin Chen <nicoleotsuka@gmail.com>
+This patch fixes multiple warnings of line over 80 characters detected
+by checkpatch tool.
+
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
+Reviewed-by: Andi Kleen <ak@linux.intel.com>
+Acked-by: Jiri Olsa <jolsa@kernel.org>
+Cc: Adrian Hunter <adrian.hunter@intel.com>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Ian Rogers <irogers@google.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Mike Leach <mike.leach@linaro.org>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lore.kernel.org/lkml/20200117055251.24058-1-leo.yan@linaro.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ tools/perf/arch/arm/util/cs-etm.c |  2 +-
+ tools/perf/util/evsel.c           |  6 +--
+ tools/perf/util/evsel_config.h    |  4 +-
+ tools/perf/util/parse-events.c    | 62 ++++++++++++++++++++-----------
+ 4 files changed, 45 insertions(+), 29 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index ff1cbfc834b0..5836b21edd7e 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -4974,6 +4974,7 @@ int stmmac_suspend(struct device *dev)
+diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
+index ede040cf82ad..2898cfdf8fe1 100644
+--- a/tools/perf/arch/arm/util/cs-etm.c
++++ b/tools/perf/arch/arm/util/cs-etm.c
+@@ -226,7 +226,7 @@ static int cs_etm_set_sink_attr(struct perf_pmu *pmu,
+ 		if (term->type != PERF_EVSEL__CONFIG_TERM_DRV_CFG)
+ 			continue;
+ 
+-		sink = term->val.drv_cfg;
++		sink = term->val.str;
+ 		snprintf(path, PATH_MAX, "sinks/%s", sink);
+ 
+ 		ret = perf_pmu__scan_file(pmu, path, "%x", &hash);
+diff --git a/tools/perf/util/evsel.c b/tools/perf/util/evsel.c
+index a69e64236120..549abd43816f 100644
+--- a/tools/perf/util/evsel.c
++++ b/tools/perf/util/evsel.c
+@@ -808,12 +808,12 @@ static void apply_config_terms(struct evsel *evsel,
+ 				perf_evsel__reset_sample_bit(evsel, TIME);
+ 			break;
+ 		case PERF_EVSEL__CONFIG_TERM_CALLGRAPH:
+-			callgraph_buf = term->val.callgraph;
++			callgraph_buf = term->val.str;
+ 			break;
+ 		case PERF_EVSEL__CONFIG_TERM_BRANCH:
+-			if (term->val.branch && strcmp(term->val.branch, "no")) {
++			if (term->val.str && strcmp(term->val.str, "no")) {
+ 				perf_evsel__set_sample_bit(evsel, BRANCH_STACK);
+-				parse_branch_str(term->val.branch,
++				parse_branch_str(term->val.str,
+ 						 &attr->branch_sample_type);
+ 			} else
+ 				perf_evsel__reset_sample_bit(evsel, BRANCH_STACK);
+diff --git a/tools/perf/util/evsel_config.h b/tools/perf/util/evsel_config.h
+index 1f8d2fe0b66e..b4a65201e4f7 100644
+--- a/tools/perf/util/evsel_config.h
++++ b/tools/perf/util/evsel_config.h
+@@ -36,18 +36,16 @@ struct perf_evsel_config_term {
+ 		u64	      period;
+ 		u64	      freq;
+ 		bool	      time;
+-		char	      *callgraph;
+-		char	      *drv_cfg;
+ 		u64	      stack_user;
+ 		int	      max_stack;
+ 		bool	      inherit;
+ 		bool	      overwrite;
+-		char	      *branch;
+ 		unsigned long max_events;
+ 		bool	      percore;
+ 		bool	      aux_output;
+ 		u32	      aux_sample_size;
+ 		u64	      cfg_chg;
++		char	      *str;
+ 	} val;
+ 	bool weak;
+ };
+diff --git a/tools/perf/util/parse-events.c b/tools/perf/util/parse-events.c
+index ed7c008b9c8b..f59f3c8da473 100644
+--- a/tools/perf/util/parse-events.c
++++ b/tools/perf/util/parse-events.c
+@@ -1219,8 +1219,7 @@ static int config_attr(struct perf_event_attr *attr,
+ static int get_config_terms(struct list_head *head_config,
+ 			    struct list_head *head_terms __maybe_unused)
  {
- 	struct net_device *ndev = dev_get_drvdata(dev);
- 	struct stmmac_priv *priv = netdev_priv(ndev);
-+	u32 chan;
- 
- 	if (!ndev || !netif_running(ndev))
- 		return 0;
-@@ -4987,6 +4988,9 @@ int stmmac_suspend(struct device *dev)
- 
- 	stmmac_disable_all_queues(priv);
- 
-+	for (chan = 0; chan < priv->plat->tx_queues_to_use; chan++)
-+		del_timer_sync(&priv->tx_queue[chan].txtimer);
+-#define ADD_CONFIG_TERM(__type, __name, __val)			\
+-do {								\
++#define ADD_CONFIG_TERM(__type)					\
+ 	struct perf_evsel_config_term *__t;			\
+ 								\
+ 	__t = zalloc(sizeof(*__t));				\
+@@ -1229,9 +1228,19 @@ do {								\
+ 								\
+ 	INIT_LIST_HEAD(&__t->list);				\
+ 	__t->type       = PERF_EVSEL__CONFIG_TERM_ ## __type;	\
+-	__t->val.__name = __val;				\
+ 	__t->weak	= term->weak;				\
+-	list_add_tail(&__t->list, head_terms);			\
++	list_add_tail(&__t->list, head_terms)
 +
- 	/* Stop TX/RX DMA */
- 	stmmac_stop_all_dma(priv);
++#define ADD_CONFIG_TERM_VAL(__type, __name, __val)		\
++do {								\
++	ADD_CONFIG_TERM(__type);				\
++	__t->val.__name = __val;				\
++} while (0)
++
++#define ADD_CONFIG_TERM_STR(__type, __val)			\
++do {								\
++	ADD_CONFIG_TERM(__type);				\
++	__t->val.str = __val;					\
+ } while (0)
  
+ 	struct parse_events_term *term;
+@@ -1239,53 +1248,62 @@ do {								\
+ 	list_for_each_entry(term, head_config, list) {
+ 		switch (term->type_term) {
+ 		case PARSE_EVENTS__TERM_TYPE_SAMPLE_PERIOD:
+-			ADD_CONFIG_TERM(PERIOD, period, term->val.num);
++			ADD_CONFIG_TERM_VAL(PERIOD, period, term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_SAMPLE_FREQ:
+-			ADD_CONFIG_TERM(FREQ, freq, term->val.num);
++			ADD_CONFIG_TERM_VAL(FREQ, freq, term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_TIME:
+-			ADD_CONFIG_TERM(TIME, time, term->val.num);
++			ADD_CONFIG_TERM_VAL(TIME, time, term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_CALLGRAPH:
+-			ADD_CONFIG_TERM(CALLGRAPH, callgraph, term->val.str);
++			ADD_CONFIG_TERM_STR(CALLGRAPH, term->val.str);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_BRANCH_SAMPLE_TYPE:
+-			ADD_CONFIG_TERM(BRANCH, branch, term->val.str);
++			ADD_CONFIG_TERM_STR(BRANCH, term->val.str);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_STACKSIZE:
+-			ADD_CONFIG_TERM(STACK_USER, stack_user, term->val.num);
++			ADD_CONFIG_TERM_VAL(STACK_USER, stack_user,
++					    term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_INHERIT:
+-			ADD_CONFIG_TERM(INHERIT, inherit, term->val.num ? 1 : 0);
++			ADD_CONFIG_TERM_VAL(INHERIT, inherit,
++					    term->val.num ? 1 : 0);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_NOINHERIT:
+-			ADD_CONFIG_TERM(INHERIT, inherit, term->val.num ? 0 : 1);
++			ADD_CONFIG_TERM_VAL(INHERIT, inherit,
++					    term->val.num ? 0 : 1);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_MAX_STACK:
+-			ADD_CONFIG_TERM(MAX_STACK, max_stack, term->val.num);
++			ADD_CONFIG_TERM_VAL(MAX_STACK, max_stack,
++					    term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_MAX_EVENTS:
+-			ADD_CONFIG_TERM(MAX_EVENTS, max_events, term->val.num);
++			ADD_CONFIG_TERM_VAL(MAX_EVENTS, max_events,
++					    term->val.num);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_OVERWRITE:
+-			ADD_CONFIG_TERM(OVERWRITE, overwrite, term->val.num ? 1 : 0);
++			ADD_CONFIG_TERM_VAL(OVERWRITE, overwrite,
++					    term->val.num ? 1 : 0);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_NOOVERWRITE:
+-			ADD_CONFIG_TERM(OVERWRITE, overwrite, term->val.num ? 0 : 1);
++			ADD_CONFIG_TERM_VAL(OVERWRITE, overwrite,
++					    term->val.num ? 0 : 1);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_DRV_CFG:
+-			ADD_CONFIG_TERM(DRV_CFG, drv_cfg, term->val.str);
++			ADD_CONFIG_TERM_STR(DRV_CFG, term->val.str);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_PERCORE:
+-			ADD_CONFIG_TERM(PERCORE, percore,
+-					term->val.num ? true : false);
++			ADD_CONFIG_TERM_VAL(PERCORE, percore,
++					    term->val.num ? true : false);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_AUX_OUTPUT:
+-			ADD_CONFIG_TERM(AUX_OUTPUT, aux_output, term->val.num ? 1 : 0);
++			ADD_CONFIG_TERM_VAL(AUX_OUTPUT, aux_output,
++					    term->val.num ? 1 : 0);
+ 			break;
+ 		case PARSE_EVENTS__TERM_TYPE_AUX_SAMPLE_SIZE:
+-			ADD_CONFIG_TERM(AUX_SAMPLE_SIZE, aux_sample_size, term->val.num);
++			ADD_CONFIG_TERM_VAL(AUX_SAMPLE_SIZE, aux_sample_size,
++					    term->val.num);
+ 			break;
+ 		default:
+ 			break;
+@@ -1322,7 +1340,7 @@ static int get_config_chgs(struct perf_pmu *pmu, struct list_head *head_config,
+ 	}
+ 
+ 	if (bits)
+-		ADD_CONFIG_TERM(CFG_CHG, cfg_chg, bits);
++		ADD_CONFIG_TERM_VAL(CFG_CHG, cfg_chg, bits);
+ 
+ #undef ADD_CONFIG_TERM
+ 	return 0;
 -- 
-2.17.1
+2.21.1
 
 
 _______________________________________________
