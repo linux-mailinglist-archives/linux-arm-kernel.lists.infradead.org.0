@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 546E214FF52
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Feb 2020 22:19:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14A7E14FF55
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Feb 2020 22:20:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=BqXG6cNrW4K2PN3dNS5IZVkjqylDwUUFBNVeMCOeVGU=; b=qZmk2U0uYUkstWugNJdm65P/Ks
-	XJ+jionMwQPyDPIpAfb6gFBFIioWSgXiybUQ8kIEtjfqiLelU3L1ntfWlKDJARY3TDkjNMPa36SMu
-	Qq7+5rr/1xpUyDH/At07S9ZOkdCMrrsByYk9m5vWhy/g5gq/cvJMZRY1mPwijv8FUotRLVnmPezYb
-	uKEUCMjaxcYajzY0XKNH4ZghdCldmhKr8vp93vAiPx4IqWrDeuznL9DdIq0eE7YK1Ien+IuQbwwmL
-	PttPvCYifAEyLN6OpwpZJ0HtB3bgthqmkmFi9zYVC5lPXBCiFQd6k7fALlf1cf5/+nzMhnieSCib5
-	/70wYFfQ==;
+	bh=1HFrqphh/igNXNxSX0EnLczp/jeLoU1+vQB9+jPqwe4=; b=coES0R6xP6kTXJXm72TR4OFe7n
+	U3UHee+U6PBG89VmVu9jxRgXZye2Oyidli0vFXTDQFehZeFA+XwCA5W1dNYhP90qY9r4IuNKl6r03
+	mInj1QYETDH7qHFCs8fs0hjOn6Ag+DCjst/8Ocp8AtUUfbtMRneQQs/BZFCtly8ODmncg4gymvMDd
+	burjJ/6iLEhL83kwh0Vge3vbXskr4SjBt5ffRE/mT5q9odWk+pb+PakcDHoO9+TYC//jJNGJBy8ab
+	z1wgRXMkNtTMDSe6fF2beDBe4mYxa4CIwnLbYbfInvNL6ul1n0odAUgmAxDAZwsej1w1MUWuqpbwq
+	51Lg0xbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyMem-0002jC-Ao; Sun, 02 Feb 2020 21:19:52 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iyMez-0002uD-LA; Sun, 02 Feb 2020 21:20:05 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyMe0-0001zd-Ot; Sun, 02 Feb 2020 21:19:07 +0000
-Received: by mail-pf1-x444.google.com with SMTP id i6so6484155pfc.1;
- Sun, 02 Feb 2020 13:18:59 -0800 (PST)
+ id 1iyMe0-0001zp-Hm; Sun, 02 Feb 2020 21:19:06 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id fa20so5397301pjb.1;
+ Sun, 02 Feb 2020 13:19:01 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=0jJJmK4Mx2WfiOTBPLN7HPig/djh+iM8ysjdKEjile4=;
- b=XzDfGelnW4RyxFB+tbeMszGkIjQoew0dqWwvQb5TtIrvYypWSAs6YWT2jyDjP5NqX3
- iBpWhrtf4wWZnK9NzX3vEBW4t5ZXAg0EpAO1iD+fOnXYqanIGNnYXH04nbAKIGU2jR1s
- dhDZeFZn1fLS1chq3kNCkVH12PEM7S+z1r2llw/KjUbmsTbVeRnFFikeE5Sbw/UWxj7m
- sUofKiy7vWBaZgP2VSdQ+GsMqzBioUhtLPgo1Asv6bKfKlBLk9r9velxrqzwxUpZj8rL
- 8mOadA9ciLTlqnP99CdRrzmktHFv/4eLAUoemczu0IdKOei/MvbYGe0CnvX2ueIi0d6T
- wy7g==
+ bh=dVjYnHw70XUXU3c67MvoOFQ8EAFS/KI8ArVkSbB6cxA=;
+ b=nt5+uO3uvQfFH6bhVxg5TiyDngiWIuV3mpB5ejA7TYQrGPuNCusKtAdS5/smr2q+op
+ KW68nkCG1kWC2mqq9EgEaJg/oe3EhIkmkz3b3RX7eWTWn+l8KlPGr2mepfeVPLAwSXCW
+ ye3bt70OFCp86ly/5VTlEbxXu8l6iSHyFb/rDtB+VHIivFhAf4q095pyeFD9Eznk/L2l
+ AICwMBvdPMC+3kYh5Ha9Xdlibd4Iy1Ootb5QOeJ+IJPh03RuuTKVqNpqqrcern5xm/bQ
+ Ki/KKgeS2aenOOqcM7EjKSHA+ugxfZfTH40gVH69VEPJ0L+31zsbv26n4oJs6QkWon0L
+ 8kUA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=0jJJmK4Mx2WfiOTBPLN7HPig/djh+iM8ysjdKEjile4=;
- b=aqDv2M2NQqWF8hykdggyVmE6/ZHJJC3nHind/lZB0xGZBr7IioANfYWCF62hBrm/zg
- 4eRjM+4Ionp2Pfthqg+GGHm+toLA6uUORQByEKMcRJ84kzCZDqOg7AmbP5O/y5lkxjU8
- l1A/ozgmDtcXufCcqnQpV3uFqgzTNn8e+WWWhIWZXsLaIcTA2wDjUz3IQqMqUSOT7V3A
- 4Hn69G0XmNn9FmJUS+F2QHUfNBvCuZfWn2R7s22tnKtH5dys1BnnfIUkP0SEWy4B92Z6
- qJG3EXjf5P38387f1PsTdYIEdIVOr2akegWrI1ITZuPwDR0cJct6tm40GnRysZ8X36mh
- 0V7Q==
-X-Gm-Message-State: APjAAAXA8os7ZFP5Lc018aE6fASUkf4uVpKaNQykFVRBLCwHRr4BOMju
- l73RzTn0qKwzWqriqVIy3jg=
-X-Google-Smtp-Source: APXvYqxRwOkofmsrr6lj+YNgcfcX5JRarYGSg7YEvrBpqLiB0axkrHcOuolx5Rno4QKcbzUacnd0HA==
-X-Received: by 2002:a63:e4d:: with SMTP id 13mr2717798pgo.343.1580678339094;
- Sun, 02 Feb 2020 13:18:59 -0800 (PST)
+ bh=dVjYnHw70XUXU3c67MvoOFQ8EAFS/KI8ArVkSbB6cxA=;
+ b=ITrjO8qti7VrqBOtT2gY0YUiDH/WRXm0SFv6LEvQYtdor/OLYpzXjcGj7rL1fdr2Xh
+ IawsJufp+WzfoaQWETIjh9HbP6YF5ZJO69OaKRKiXmjWyx+IF8ogzXndYnSKTFOkDe22
+ 7RgNtgW0Srg8Av7+uZXLiNfueg/au21O78Y6U52+YngJ4t3DcCxFt8e322ydYKGj4/Fx
+ XzFimzfi5Vt1SfEgHbtUnB2UFs7/SJ2cZ+VK1yVeyQprUIzNjPjKmMT4PoiSxROAQvAr
+ N24bHkv4vf3q9pZ1A+GYtCsNPcFxY3ofxH7fb2QSaOq2wNM37D/sEitv9f2THTcaH0pd
+ b1PQ==
+X-Gm-Message-State: APjAAAXuQguH/ls2ZvQqkjzKyYQkSOXNiG+MBDB4uOKxpgHz8ZvO4BQa
+ kTxfD+k7QBNdQvzrbb3a9R0=
+X-Google-Smtp-Source: APXvYqzPWHOtI91WaVVL+3osBRU9fvO2iHBSn6UYO6hNoS4rzkD4yzEr4HhAzAzO20wyjw3+U49ivw==
+X-Received: by 2002:a17:902:9042:: with SMTP id
+ w2mr20509867plz.269.1580678341205; 
+ Sun, 02 Feb 2020 13:19:01 -0800 (PST)
 Received: from localhost.localdomain (ip68-111-84-250.oc.oc.cox.net.
  [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id y24sm8755639pge.72.2020.02.02.13.18.57
+ by smtp.gmail.com with ESMTPSA id y24sm8755639pge.72.2020.02.02.13.18.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 02 Feb 2020 13:18:58 -0800 (PST)
+ Sun, 02 Feb 2020 13:19:00 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@vger.kernel.org
-Subject: [PATCH 01/12] dt-bindings: arm: bcm: Convert Cygnus to YAML
-Date: Sun,  2 Feb 2020 13:18:16 -0800
-Message-Id: <20200202211827.27682-2-f.fainelli@gmail.com>
+Subject: [PATCH 02/12] dt-bindings: arm: bcm: Convert Hurricane 2 to YAML
+Date: Sun,  2 Feb 2020 13:18:17 -0800
+Message-Id: <20200202211827.27682-3-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200202211827.27682-1-f.fainelli@gmail.com>
 References: <20200202211827.27682-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200202_131904_804606_3B856CA7 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20200202_131904_591544_46931226 
+X-CRM114-Status: GOOD (  14.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
@@ -115,124 +113,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update the Broadocom Cygnus SoC binding document for boards/SoCs to use
+Update the Broadcom Hurricane 2 SoC binding document for boards/SoCs to use
 YAML. Verified with dt_binding_check and dtbs_check.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../bindings/arm/bcm/brcm,cygnus.txt          | 31 ---------
- .../bindings/arm/bcm/brcm,cygnus.yaml         | 66 +++++++++++++++++++
- 2 files changed, 66 insertions(+), 31 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.txt
- create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.yaml
+ .../devicetree/bindings/arm/bcm/brcm,hr2.txt  | 14 ---------
+ .../devicetree/bindings/arm/bcm/brcm,hr2.yaml | 30 +++++++++++++++++++
+ 2 files changed, 30 insertions(+), 14 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,hr2.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,hr2.yaml
 
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.txt
+diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,hr2.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,hr2.txt
 deleted file mode 100644
-index 4c77169bb534..000000000000
---- a/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.txt
+index a124c7fc4dcd..000000000000
+--- a/Documentation/devicetree/bindings/arm/bcm/brcm,hr2.txt
 +++ /dev/null
-@@ -1,31 +0,0 @@
--Broadcom Cygnus device tree bindings
--------------------------------------
+@@ -1,14 +0,0 @@
+-Broadcom Hurricane 2 device tree bindings
+----------------------------------------
 -
+-Broadcom Hurricane 2 family of SoCs are used for switching control. These SoCs
+-are based on Broadcom's iProc SoC architecture and feature a single core Cortex
+-A9 ARM CPUs, DDR2/DDR3 memory, PCIe GEN-2, USB 2.0 and USB 3.0, serial and NAND
+-flash and a PCIe attached integrated switching engine.
 -
--Boards with Cygnus SoCs shall have the following properties:
+-Boards with Hurricane SoCs shall have the following properties:
 -
 -Required root node property:
 -
--BCM11300
--compatible = "brcm,bcm11300", "brcm,cygnus";
--
--BCM11320
--compatible = "brcm,bcm11320", "brcm,cygnus";
--
--BCM11350
--compatible = "brcm,bcm11350", "brcm,cygnus";
--
--BCM11360
--compatible = "brcm,bcm11360", "brcm,cygnus";
--
--BCM58300
--compatible = "brcm,bcm58300", "brcm,cygnus";
--
--BCM58302
--compatible = "brcm,bcm58302", "brcm,cygnus";
--
--BCM58303
--compatible = "brcm,bcm58303", "brcm,cygnus";
--
--BCM58305
--compatible = "brcm,bcm58305", "brcm,cygnus";
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.yaml b/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.yaml
+-BCM53342
+-compatible = "brcm,bcm53342", "brcm,hr2";
+diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,hr2.yaml b/Documentation/devicetree/bindings/arm/bcm/brcm,hr2.yaml
 new file mode 100644
-index 000000000000..2606ca956caf
+index 000000000000..90332ca0c74a
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.yaml
-@@ -0,0 +1,66 @@
++++ b/Documentation/devicetree/bindings/arm/bcm/brcm,hr2.yaml
+@@ -0,0 +1,30 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/arm/bcm/brcm,cygnus.yaml#
++$id: http://devicetree.org/schemas/arm/bcm/brcm,hr2.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Broadcom Cygnus device tree bindings
++title: Broadcom Hurricane 2 device tree bindings
++
++description:
++  Broadcom Hurricane 2 family of SoCs are used for switching control. These SoCs
++  are based on Broadcom's iProc SoC architecture and feature a single core Cortex
++  A9 ARM CPUs, DDR2/DDR3 memory, PCIe GEN-2, USB 2.0 and USB 3.0, serial and NAND
++  flash and a PCIe attached integrated switching engine.
 +
 +maintainers:
-+   - Ray Jui <rjui@broadcom.com>
-+   - Scott Branden <sbranden@broadcom.com>
++  - Florian Fainelli <f.fainelli@gmail.com>
 +
 +properties:
 +  $nodename:
 +    const: '/'
 +  compatible:
 +    oneOf:
-+      - description: BCM11300 based boards
++      - description: BCM53342 based boards
 +        items:
 +          - enum:
-+              - brcm,bcm11300
-+          - const: brcm,cygnus
-+
-+      - description: BCM11320 based boards
-+        items:
-+          - enum:
-+              - brcm,bcm11320
-+          - const: brcm,cygnus
-+
-+      - description: BCM11350 based boards
-+        items:
-+          - enum:
-+              - brcm,bcm11350
-+          - const: brcm,cygnus
-+
-+      - description: BCM11360 based boards
-+        items:
-+          - enum:
-+              - brcm,bcm11360
-+          - const: brcm,cygnus
-+
-+      - description: BCM58300 based boards
-+        items:
-+          - enum:
-+              - brcm,bcm58300
-+          - const: brcm,cygnus
-+
-+      - description: BCM58302 based boards
-+        items:
-+          - enum:
-+              - brcm,bcm58302
-+          - const: brcm,cygnus
-+
-+      - description: BCM58303 based boards
-+        items:
-+          - enum:
-+              - brcm,bcm58303
-+          - const: brcm,cygnus
-+
-+      - description: BCM58305 based boards
-+        items:
-+          - enum:
-+              - brcm,bcm58305
-+          - const: brcm,cygnus
++              - ubnt,unifi-switch8
++          - const: brcm,bcm53342
++          - const: brcm,hr2
 +
 +...
 -- 
