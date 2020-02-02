@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF6CF14FF59
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Feb 2020 22:20:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A55E214FF5A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Feb 2020 22:21:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,62 +11,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=UOds3UXd7cUlCdTyTyWjuTatN1KXWU88bnZDSPZgR+A=; b=GGmCGqaS4T1rOavgiCZknpuy5C
-	Hm8Ptr8+hWW0cUomlfYgpVf/KQyPkpYAOw1IJiK4afCYqr+lCyvk2FUmnRW6uofomrZwpmixC24+L
-	a6b2C9MTw9yBj62b4yKttHUAZ2bHxwDPjMwV4dHCU/wi5WN28Fqcb5d7zaSqqBixjkC+EaSneIvBt
-	SUmc5di63hZWFsc++yry5zy5y8rjv7jt5DqO9QRKRuEpqfmzOkeo7HsssnCQ+zInSPAZxP0yEG7ef
-	1HWzh71e4HDdC4c4IgudhdgTMwoClS+a0vT0GA6KGsb9SX/SEndsUk5ku6oEHKR1C3XyNFMtnhfWU
-	IbdfxunA==;
+	bh=5fNs6t8F3olxJiA0UBHJP7+hHZCNvBrB1+dq5JhD/IM=; b=ipreHzWXDSDAOeFPIIrYixxqWY
+	ZITOo3b6tFwttUhVMuwBdBIUoobnk/UkA8MnGENn0PBPV0lMSde2ww2oSALlCz7DTyN+pMIBB163P
+	ni7wwHGEbOmDPbN75BVZN0lyKBXyxhrGIr3DBMsi1gmVeDwCvrvsndSP0nXRSgI6pOJSyGDiHkN7N
+	GlP5PE4UIpfE71CissB3yEVrtCAlxXLXRO2zS3zGWsvtJXW7BvBXr7J0EQS7GG83KnCBgrqCgcTYA
+	1t7p70prWiW4wmA5WehJOyRZoKsL4Qj412/w9vhvKl1X1zwzExa5EHXEc4W1YiM1YRJxALftzdUS4
+	2T0CCffA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyMfk-000566-9o; Sun, 02 Feb 2020 21:20:52 +0000
-Received: from mail-pj1-x1033.google.com ([2607:f8b0:4864:20::1033])
+	id 1iyMfy-0005LT-5p; Sun, 02 Feb 2020 21:21:06 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyMe7-000277-M5; Sun, 02 Feb 2020 21:19:13 +0000
-Received: by mail-pj1-x1033.google.com with SMTP id q39so5480637pjc.0;
- Sun, 02 Feb 2020 13:19:11 -0800 (PST)
+ id 1iyMe9-00028z-5w; Sun, 02 Feb 2020 21:19:14 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id m13so5484100pjb.2;
+ Sun, 02 Feb 2020 13:19:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=lzwVHc1k/dY+x845Gy9RdQHoQfS2nfs3A+KYo1foc+0=;
- b=H2qx4E2Nhhp/BK97BF1fSINkDJ/idHIamceUiP6CjL6p57LV7ch1P3F1LBIno+/V7C
- JCGivnzqrNKP8ZuMgrYAwPZ+g656v7GkQb1aTxvaeN7Q3paP1QYJDximmditdTZlBGg6
- O+ysRhTLoLXbRm72LcVzhRpCJb1E/XxDI6jfePpFplSwJnqD2AWxXanuNWFGWkCSCFjX
- 7gh6iUcIEutC9wVbOuZZwV3DtyZVkLVBAP+RphWo9XibaOjKaBhnatufScJOlmHto115
- d6g4IUOfrz7sgJDN9L6/nanBoqYiGEz8ofAzQfyfDikuAnIJK8l9J9pW8wYLGArisZCq
- Muog==
+ bh=vT7D46rNtqWVvxbI9rtqz5C9FcqGbTfaLxkBJQBHayw=;
+ b=D2C6PvZVUx9xEL7/rgHr/IvxB9ojCf24EgGUc+9tG5qtVZzq8hpUq/pfSvKaVZ66Gz
+ 1jpIZ9i7KSsBQdAYeGLdYk3AC8hFQiUUakC622rySC8y2Cr/qfQRhADMDuGBv0TWBgFW
+ vUuvKs7/KkczuTaVdDpac53bbtUTsbiiPTGQDaYv/V27Q01hFJUKfpyLx4/YEFucdskr
+ B+WBeccWPjkel4mdeU4luPGLzePpAUPShzjDSFgBCuhU2teTAERseO5EXUIGIzbnp/28
+ ITr4kBaYvj4QYKNDVIV26b1sLoKo+fPzmEKiZbzZvbj3S9WhE2iPj7jGDXai3TXBCAgH
+ gl0g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=lzwVHc1k/dY+x845Gy9RdQHoQfS2nfs3A+KYo1foc+0=;
- b=XcJdHPm2cG3gJwTnapTjsY//RbZBwqKNMzYfW2lxtKqAbuMx5+NDPVu0IQ+j+gF+V0
- Eu4pbXYN+o5mv6KRzOdyXQvdSX2mhV0RC/wOQRpBRKDXP7BHYnKc+/zm5US7uBX7OQnJ
- ysR2C47GE18fJrJnBEAIo7bzojqdV271U0BHgqKrdgCbbkdrI87N/s1j+RZX0lwGQNEu
- RBXL+9iwD5sA4tDw/MKBeSCM/HPZ0drsNGW2pP/Vkbdoxlnxfpn9i+Ceq92W9zbQAqtr
- 7U7ppi8MVfTQ7PpgUnqKOLL2cCAkNF1sR/phdkT+J3PkgWLRUsI+LAzI/BmEiLsZNr2g
- DM0Q==
-X-Gm-Message-State: APjAAAULD5GYm1gHrOt8nKDglD3bChzTho+wYdpFADcFn4tStZyiSyV0
- GKyLcFR+44aaiyiNergiNbw=
-X-Google-Smtp-Source: APXvYqwpg4xdPeG2V0xlCQCQTflLB4Gel0Sq5vaGv2Q+wOl7EIu98sLT2K4/HtfyYhyrZVMx7mAlUA==
-X-Received: by 2002:a17:90a:2545:: with SMTP id
- j63mr26212455pje.128.1580678350712; 
- Sun, 02 Feb 2020 13:19:10 -0800 (PST)
+ bh=vT7D46rNtqWVvxbI9rtqz5C9FcqGbTfaLxkBJQBHayw=;
+ b=PGpmVEweQNwhd+b3TE1IgF4gXBDUUiF/gxHxVUebChDT5/ueRFthucUm4Acr+idERu
+ hok8gspuyXQZRvacH6LdZQ7RRSKUb2XvnF+hKEosCTV0Blgtt0RFZzoOP9iFf43m14dy
+ P7MlohkuRionAVjCik+nPhT71q6n8n6Na4QlLtV+kpbWvkBTnPdB7PKBVbB7HOcjzCI5
+ 5Tpd6TbBwpl5PudsK37pG6zQUQgf7J8GYXG6DaZsvu+vdyyW4/uTObOvEWyLAuHZeKlu
+ zPypP3NkQxf0ruUEs4yoNzQPbXjDwq927SuUZyfTXHdl08o+vJSnlkQtHOgjzT0c1IlE
+ yb8w==
+X-Gm-Message-State: APjAAAVWb0U8cTfOBR9ggsh1NCGa1dzCGc8Tugza6059Say49lqr9BZU
+ hHO0SILJG7LJLW1l2IcD4Uc=
+X-Google-Smtp-Source: APXvYqyssLFpheMWXm8rEhTJhAajigs2uuLN08Ng2ewQylBb4tdQBLGMDdnq7oA15MNZXESAze/1rg==
+X-Received: by 2002:a17:902:6a84:: with SMTP id
+ n4mr20351768plk.294.1580678352669; 
+ Sun, 02 Feb 2020 13:19:12 -0800 (PST)
 Received: from localhost.localdomain (ip68-111-84-250.oc.oc.cox.net.
  [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id y24sm8755639pge.72.2020.02.02.13.19.09
+ by smtp.gmail.com with ESMTPSA id y24sm8755639pge.72.2020.02.02.13.19.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 02 Feb 2020 13:19:10 -0800 (PST)
+ Sun, 02 Feb 2020 13:19:11 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@vger.kernel.org
-Subject: [PATCH 08/12] dt-bindings: arm: bcm: Convert BCM4708 to YAML
-Date: Sun,  2 Feb 2020 13:18:23 -0800
-Message-Id: <20200202211827.27682-9-f.fainelli@gmail.com>
+Subject: [PATCH 09/12] dt-bindings: arm: bcm: Convert BCM11351 to YAML
+Date: Sun,  2 Feb 2020 13:18:24 -0800
+Message-Id: <20200202211827.27682-10-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200202211827.27682-1-f.fainelli@gmail.com>
 References: <20200202211827.27682-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200202_131911_736950_E5241460 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20200202_131913_271730_443EADE7 
+X-CRM114-Status: GOOD (  13.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -113,131 +113,61 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update the Broadcom BCM4708 SoC family binding document for boards/SoCs
+Update the Broadcom BCM11351 SoC family binding document for boards/SoCs
 to use YAML. Verified with dt_binding_check and dtbs_check.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../bindings/arm/bcm/brcm,bcm4708.txt         | 15 ----
- .../bindings/arm/bcm/brcm,bcm4708.yaml        | 88 +++++++++++++++++++
- 2 files changed, 88 insertions(+), 15 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.txt
- create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.yaml
+ .../bindings/arm/bcm/brcm,bcm11351.txt        | 10 --------
+ .../bindings/arm/bcm/brcm,bcm11351.yaml       | 23 +++++++++++++++++++
+ 2 files changed, 23 insertions(+), 10 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.yaml
 
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.txt
+diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.txt
 deleted file mode 100644
-index 8608a776caa7..000000000000
---- a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.txt
+index 0ff6560e6094..000000000000
+--- a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.txt
 +++ /dev/null
-@@ -1,15 +0,0 @@
--Broadcom BCM4708 device tree bindings
+@@ -1,10 +0,0 @@
+-Broadcom BCM11351 device tree bindings
 --------------------------------------------
 -
--Boards with the BCM4708 SoC shall have the following properties:
+-Boards with the bcm281xx SoC family (which includes bcm11130, bcm11140,
+-bcm11351, bcm28145, bcm28155 SoCs) shall have the following properties:
 -
 -Required root node property:
 -
--bcm4708
--compatible = "brcm,bcm4708";
--
--bcm4709
--compatible = "brcm,bcm4709";
--
--bcm53012
--compatible = "brcm,bcm53012";
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.yaml b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.yaml
+-compatible = "brcm,bcm11351";
+-DEPRECATED: compatible = "bcm,bcm11351";
+diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.yaml b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.yaml
 new file mode 100644
-index 000000000000..d48313c7ae45
+index 000000000000..f69605da3e8a
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.yaml
-@@ -0,0 +1,88 @@
++++ b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.yaml
+@@ -0,0 +1,23 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/arm/bcm/brcm,bcm4708.yaml#
++$id: http://devicetree.org/schemas/arm/bcm/brcm,bcm11351.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Broadcom BCM4708 device tree bindings
-+
-+description:
-+  Broadcom BCM4708/47081/4709/47094/53012 Wi-Fi/network SoCs based
-+  on the iProc architecture (Northstar).
++title: Broadcom BCM11351 device tree bindings
 +
 +maintainers:
 +  - Florian Fainelli <f.fainelli@gmail.com>
-+  - Hauke Mehrtens <hauke@hauke-m.de>
-+  - Rafal Milecki <zajec5@gmail.com>
 +
 +properties:
 +  $nodename:
 +    const: '/'
 +  compatible:
 +    oneOf:
-+      - description: BCM4708 based boards
++      - description: BCM11351 based boards
 +        items:
 +          - enum:
-+              - asus,rt-ac56u
-+              - asus,rt-ac68u
-+              - buffalo,wzr-1750dhp
-+              - linksys,ea6300-v1
-+              - linksys,ea6500-v2
-+              - luxul,xap-1510v1
-+              - luxul,xwc-1000
-+              - netgear,r6250v1
-+              - netgear,r6300v2
-+              - smartrg,sr400ac
-+              - brcm,bcm94708
-+          - const: brcm,bcm4708
++              - brcm,bcm28155-ap
++          - const: brcm,bcm11351
 +
-+      - description: BCM47081 based boards
-+        items:
-+          - enum:
-+              - asus,rt-n18u
-+              - buffalo,wzr-600dhp2
-+              - buffalo,wzr-900dhp
-+              - luxul,xap-1410v1
-+              - luxul,xwr-1200v1
-+              - tplink,archer-c5-v2
-+          - const: brcm,bcm47081
-+          - const: brcm,bcm4708
-+
-+      - description: BCM4709 based boards
-+        items:
-+          - enum:
-+              - asus,rt-ac87u
-+              - buffalo,wxr-1900dhp
-+              - linksys,ea9200
-+              - netgear,r7000
-+              - netgear,r8000
-+              - tplink,archer-c9-v1
-+              - brcm,bcm94709
-+          - const: brcm,bcm4709
-+          - const: brcm,bcm4708
-+
-+      - description: BCM47094 based boards
-+        items:
-+          - enum:
-+              - dlink,dir-885l
-+              - linksys,panamera
-+              - luxul,abr-4500-v1
-+              - luxul,xap-1610-v1
-+              - luxul,xbr-4500-v1
-+              - luxul,xwc-2000-v1
-+              - luxul,xwr-3100v1
-+              - luxul,xwr-3150-v1
-+              - netgear,r8500
-+              - phicomm,k3
-+          - const: brcm,bcm47094
-+          - const: brcm,bcm4708
-+
-+      - description: BCM53012 based boards
-+        items:
-+          - enum:
-+              - brcm,bcm953012er
-+              - brcm,bcm953012hr
-+              - brcm,bcm953012k
-+          - const: brcm,brcm53012
-+          - const: brcm,bcm4708
 +...
 -- 
 2.17.1
