@@ -2,93 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A622B14FCE4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Feb 2020 12:26:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A06F14FD0D
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  2 Feb 2020 13:24:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
-	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p6hHSY5eUKATz1Mky0wjZzzaduUNddvSDBzEsxAR90c=; b=TmfN6CLfAuZqQr
-	qUiAsDeT7eGbRJBqYxzLrAozN642V9+/tZDWzKKCG30/MDqCie6pfuRnh2L1A39TstBrbv4COQkBa
-	niFk6uXN3OgXm0Kzp6vphjw7WQ1Fb06Hpv1y0DBbngt2zTWLPXUBQ9HfnunylJBLD7031wom+Nbo7
-	tE6zxCSd4nHn+EXfjTgKD2WCMa4ksAq4lRmw0Bs8GRkr2y5pYfs6Yo6kel3iq07dWk/saaMCYVRSa
-	jxYullaPau2LzQUlmje1k5OaLmEu1jFnqhSM4Rg5JXfIf3pjpzJlEGFaXOk3MO29k1TXNUpm/Wpk0
-	j/j4Jc7ZnsvaK7IHng/A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=G+7TWxvqkQNeq9ZW9aiFiOy0hCv5vrRS7vXF/TuW6eA=; b=ibEZ9w/HDe7o65geiDrqBxgNv
+	W7x69HSdV4wG/25SlcI2hoMPv7xA9N35cx+ImmHvIFaR+6vZSKtQN0+wUhaascUjIOz/royLdjF80
+	SO6MugA1DjaRrX6S9o46p4ChB8vhjgKueX7YQyt/CE66MYgettBMmEspJwcYfq0SfwN9b4eURv25q
+	Oeu6caGHk3GhrLJUHSVrb0iAirDfMeMZAnelSedPUtkFEAC618DS/zuaP9URVwLe3GdnD3axq4tgR
+	nnMikLFcsylip7nnXvWy+BKBpx8ceEniHikePBeOf5Gkm29nIPyW8VROPzjQMfT50o5o8YqU9Hdeq
+	ZN9ge5kYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyDOn-00042O-Cu; Sun, 02 Feb 2020 11:26:45 +0000
-Received: from mail-qk1-f196.google.com ([209.85.222.196])
+	id 1iyEI9-0004Ts-Fo; Sun, 02 Feb 2020 12:23:57 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyDOh-00041Z-Pa
- for linux-arm-kernel@lists.infradead.org; Sun, 02 Feb 2020 11:26:41 +0000
-Received: by mail-qk1-f196.google.com with SMTP id w25so11445819qki.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 02 Feb 2020 03:26:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=content-transfer-encoding:from:mime-version:subject:date:message-id
- :references:cc:in-reply-to:to;
- bh=haUAAZdbmdU3COyJ/sqnDbNti6tUXhiH5WpEb5CUu3o=;
- b=ktqi1Si5IANgowqGSuWt2goxaefj9MArH9hBL4drDxYpQy5gO9eIMpaj4x1g9qz0Ft
- wJg8PZziG/0FMCaYMFvU0R1ed/sRIgt60RVYo/fiPoIuWPHtw5CoKADSbrdPinp59eNX
- GqmqoNXOemL5q0rosXYIx2UJ1orNdlYcFK73Ygg0a/RE2arXPeSnjr+QO/TuQNX54JbP
- bi9ii20//c0h4YooeibM3yZGm2vZjIxTdT2q1agyMmadm90FFuyO+OFJ2urFPdZeXwtw
- AgKWNyLv5Arxyw8debfI90Lt1gaaDIBA8bYeatlKiESPBREuLesS3poug3ybj8+iH21/
- Psqw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:content-transfer-encoding:from:mime-version
- :subject:date:message-id:references:cc:in-reply-to:to;
- bh=haUAAZdbmdU3COyJ/sqnDbNti6tUXhiH5WpEb5CUu3o=;
- b=TJlvabWQWEPQgk1QADtOUo+49Zmf/HhrcXhyJo0B0pvgYikpDnvZsuBCwYbSPwnxNu
- 3GViWLN/Gr+LkLb9MsDOtjwNpd+hP3lKubGeWeQ0aVFuAH/Oy4QmmwuznR2A/7h/9ITM
- U1m87CEDMVEFaNdk25xeNGFkt1T2fLNACXA12uBlnYpow/1ypalyY/bRcF9TSkpvowEt
- uNk8jB48V80tiGDLNq4e1RHn7SQB7bW5f+NrttahqBnP+pSNFBh23Eu7rcPDLSpMHR8K
- QzrW5ZqiijTGJ9dL/kja3l+TbF+rxWlOZXaSlBcnbSarmGWfqoAe7khCinaw+Huz/QsK
- E6tg==
-X-Gm-Message-State: APjAAAXE2+4gdKXkyc74mmuAxp2lJ6Lxs6AdEF0iMoF7qo8804Dq/9Zv
- OEb0B5V9wCIfOTSyR+vIuANpPw==
-X-Google-Smtp-Source: APXvYqz2LMXXgwCpUXH7EnnO/Ck2Cj8Gc2SWzAj6pxocjOsHmdsAhT1kwXiGUD+liMIX2mq/rCkMKw==
-X-Received: by 2002:a05:620a:218d:: with SMTP id
- g13mr19497581qka.286.1580642791619; 
- Sun, 02 Feb 2020 03:26:31 -0800 (PST)
-Received: from [192.168.1.183] (pool-71-184-117-43.bstnma.fios.verizon.net.
- [71.184.117.43])
- by smtp.gmail.com with ESMTPSA id s1sm7274932qkm.84.2020.02.02.03.26.30
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 02 Feb 2020 03:26:30 -0800 (PST)
-From: Qian Cai <cai@lca.pw>
-Mime-Version: 1.0 (1.0)
-Subject: Re: [PATCH V12] mm/debug: Add tests validating architecture page
- table helpers
-Date: Sun, 2 Feb 2020 06:26:29 -0500
-Message-Id: <2C4ADFAE-7BB4-42B7-8F54-F036EA7A4316@lca.pw>
-References: <473d8198-3ac4-af3b-e2ec-c0698a3565d3@c-s.fr>
-In-Reply-To: <473d8198-3ac4-af3b-e2ec-c0698a3565d3@c-s.fr>
-To: Christophe Leroy <christophe.leroy@c-s.fr>
-X-Mailer: iPhone Mail (17C54)
+ id 1iyEI1-0004TZ-VR
+ for linux-arm-kernel@lists.infradead.org; Sun, 02 Feb 2020 12:23:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=yQDGYskfy6d4Ic5b9Ykr6AUmvD96h/wBFQChrF6vatc=; b=pBnPvZMG0NcIWoli8sT3UHktF
+ anTG1iGY05tgNOsFyX5hIPPW/VTGfNYm8/2uCi0UVzUXNa26rMqY4TiyUMAwOtQ1rjxEchHCJyqu1
+ pX82Pfnfb5HOo4BY6OSK2nF20SNSe7qQ4Mpn5idNjKkhfVE8fJHCMn2R5YIgdx+YrOO7I=;
+Received: from [151.216.144.116] (helo=fitzroy.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1iyEHx-0006xw-Bz; Sun, 02 Feb 2020 12:23:45 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id EE321D00D65; Sun,  2 Feb 2020 12:23:44 +0000 (GMT)
+Date: Sun, 2 Feb 2020 12:23:44 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH v2 0/7] Introduce bus firewall controller framework
+Message-ID: <20200202122344.GV3897@sirena.org.uk>
+Mail-Followup-To: Florian Fainelli <f.fainelli@gmail.com>,
+ Benjamin GAIGNARD <benjamin.gaignard@st.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ Mark Rutland <mark.rutland@arm.com>,
+ "robh@kernel.org" <robh@kernel.org>,
+ Loic PALLARDY <loic.pallardy@st.com>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "system-dt@lists.openampproject.org" <system-dt@lists.openampproject.org>,
+ "lkml@metux.net" <lkml@metux.net>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "fabio.estevam@nxp.com" <fabio.estevam@nxp.com>,
+ "stefano.stabellini@xilinx.com" <stefano.stabellini@xilinx.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
+ "Robin.Murphy@arm.com" <Robin.Murphy@arm.com>
+References: <20200128153806.7780-1-benjamin.gaignard@st.com>
+ <20200128163628.GB30489@bogus>
+ <7f54ec36-8022-a57a-c634-45257f4c6984@st.com>
+ <20200128171639.GA36496@bogus>
+ <26eb1fde-5408-43f0-ccba-f0c81e791f54@st.com>
+ <548b1427-cf6e-319a-36e2-c3e9363b930d@gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <548b1427-cf6e-319a-36e2-c3e9363b930d@gmail.com>
+X-Cookie: Programming is an unnatural act.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200202_032639_824427_AD6CD555 
-X-CRM114-Status: GOOD (  10.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200202_042350_017048_D0A02564 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.196 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [172.104.155.198 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.196 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,52 +105,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- kasan-dev <kasan-dev@googlegroups.com>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Jason Gunthorpe <jgg@ziepe.ca>, Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, Ingo Molnar <mingo@kernel.org>,
- Kees Cook <keescook@chromium.org>,
- Anshuman Khandual <Anshuman.Khandual@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- linux-arm-kernel@lists.infradead.org,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dave Hansen <dave.hansen@intel.com>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, "robh@kernel.org" <robh@kernel.org>,
+ "stefano.stabellini@xilinx.com" <stefano.stabellini@xilinx.com>,
+ Benjamin GAIGNARD <benjamin.gaignard@st.com>, "arnd@arndb.de" <arnd@arndb.de>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "lkml@metux.net" <lkml@metux.net>, "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "fabio.estevam@nxp.com" <fabio.estevam@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ Loic PALLARDY <loic.pallardy@st.com>,
+ "system-dt@lists.openampproject.org" <system-dt@lists.openampproject.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "Robin.Murphy@arm.com" <Robin.Murphy@arm.com>
+Content-Type: multipart/mixed; boundary="===============6365716188698619028=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
+--===============6365716188698619028==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="4jz2RIiWkXBLiaBi"
+Content-Disposition: inline
 
-> On Jan 30, 2020, at 9:13 AM, Christophe Leroy <christophe.leroy@c-s.fr> wrote:
-> 
-> config DEBUG_VM_PGTABLE
->    bool "Debug arch page table for semantics compliance" if ARCH_HAS_DEBUG_VM_PGTABLE || EXPERT
->    depends on MMU
->    default 'n' if !ARCH_HAS_DEBUG_VM_PGTABLE
->    default 'y' if DEBUG_VM
 
-Does it really necessary to potentially force all bots to run this? Syzbot, kernel test robot etc? Does it ever pay off for all their machine times there?
+--4jz2RIiWkXBLiaBi
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Fri, Jan 31, 2020 at 12:48:33PM -0800, Florian Fainelli wrote:
+
+> Like Robin and Sudeep here, I do not understand why the kernel should
+> have any business in this, let alone allowing blocks to change owners,
+> that sounds contrary to the purpose of a firewall being controlled under
+> an untrusted entity (Linux).
+
+Can we rely on there being a more trusted level of software than
+Linux on a system?  It wasn't standard to have anything on 32 bit
+Arm systems as far as I remember so you could end up with some IP
+blocks intended to support TrustZone sitting idle.
+
+--4jz2RIiWkXBLiaBi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl42v1AACgkQJNaLcl1U
+h9Ad2Qf/Z89ElUT49FpCeQbf2hYD+rbmBZfToVl5iOvMgypip56DLpLz7Z9pg+fM
+XNUGFiieZuTdvl02zzZNBQxe/G3sdoWmFREGsjq7rhCuoD8DZCYfZa/YYhOm7ME4
+7txqcaZqSxKc1PQg1A6TNr/ItFpaWJ9sJPr61uOnPE0dDASNagjEARUNlV2wqW3f
+z3HmQn3H7y+qffq+pHj11fNLLAMjs90PKztzqOFrhSUe5CBphAYH4mGFk9hpVZUq
+r1kMsN6SjmINlLZ/XI1b03U3QnQMJLjVoDjtBpLKc5MQZMfuqx/Q6X/6Pp4RXUfJ
+2mrNWRU65pMJeuVGwmd5Brs59iLTgA==
+=jc/v
+-----END PGP SIGNATURE-----
+
+--4jz2RIiWkXBLiaBi--
+
+
+--===============6365716188698619028==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6365716188698619028==--
+
