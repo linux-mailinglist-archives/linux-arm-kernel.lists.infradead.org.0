@@ -2,56 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A45A0150E85
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 18:18:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F34BE150EAD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 18:35:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZBWR7OwaiSCoIxwGL1IGsbXK37uoINQQmdwWJfF6Gqc=; b=uLjSwZdlFC6HTiXycaIcYcDtk
-	9aXo2YJMtF+qh0XJdSfHhiqDM9zEO8FmX7w1hdEn30Kt+BiN2hOOydZjxxAenC1UuG6quSgUXeljz
-	oUATsHCQiH8HsZjngVsw4rp1me8rfasrlUzV5Lh4QcT2HJ/wK3rYSLQolNUTPk4iC///oX45IZaay
-	sfLeDy8SUeuBSmGOD75pgpbWR//9aj39zB9uG8KbE13B9RvPEN6GT8V+t8m9YRg7tdpSAUdDv/5h1
-	uXRtzsxp8oJ1V/TtYyl30LN46U2glRj//QoZSjioGFrHE0+U6lwCcluMB2rmFnQkSuyMZE4DlO67A
-	SRX0wmWWw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vEYCCZwawcEtbFgkrXBbPLLOy4YZNLSbLyRtNzR0plg=; b=PzMDGiwuw+JkS9
+	TcJuAo2w7j/C5DX/Nke1eSBrzwBcTyHOtawvwdEsyDqaAckz/8KW4X8niYTj3IL2C5WEzhzUzXcil
+	HORr/NYySIcADpGDsaOXAq3ZcDlryhea3bGsuy7jL4ly77OHQQoGiRzw7cE6fPSaXZy+x/1W/7/E5
+	+WjYk43pJgYFpWa9ettXeufjw7/4+Y422fATZOoGtcBqNqQtjO/jYCWLubDUOHVFIKwniM+TLK3Uj
+	KNOtrlO56tOzUOf42/4XmK+s5IOjKhqEHt0p2HisTB/akTTvht1rSpu1ETjTZ/ZCuG1wJfJXFBcQu
+	xX3umonubHRmeSHVJD3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyfMd-0002iE-Cs; Mon, 03 Feb 2020 17:18:23 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyfMU-0002hK-1g
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 17:18:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E65051045;
- Mon,  3 Feb 2020 09:18:10 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D6BE63F52E;
- Mon,  3 Feb 2020 09:18:09 -0800 (PST)
-Subject: Re: [PATCH 4/4] arm64: Dereference CPU operations indirectly
-To: Gavin Shan <gshan@redhat.com>, linux-arm-kernel@lists.infradead.org
-References: <20200202232437.7626-5-gshan@redhat.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <097551e7-fbbd-98c1-bd32-83cf1cc0278b@arm.com>
-Date: Mon, 3 Feb 2020 17:18:08 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1iyfcv-0000HX-HI; Mon, 03 Feb 2020 17:35:13 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iyfcm-00080t-U2
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 17:35:06 +0000
+Received: by mail-pf1-x444.google.com with SMTP id k29so7913825pfp.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 03 Feb 2020 09:35:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=/2GnHgYEod44KNh5O907qr0Dr3tZt31Xm1Pio0+BUtU=;
+ b=T3/dlEbss69QCdMNMPoph/AGjrLOJywnCDQUDC2crHYwLXIj8gbLjE1Mhh/0AS4Q5i
+ 1AN7ohRk8xc5mWmOgUpM/XP9ETNjwFHjATcQYoN/y6IcTcbeIIKbLoOOtplCNuIlIw6C
+ lt1Al/0QHs4pwiYD+e5S5S6DGygimX8cRV8E3qtmVn0c98qAteldebnd1oAOpSZWRLfg
+ X4hvg2OAdCgQIqlJrR5SZ3IxW3t0aZSQGeM7PWTCFvoCLYqq0Cq4KzyCL5katLBoLA+4
+ hc+utViSzEbgLYkXa9iZmRJ+ZawjFNhlcJ0L48IDNx6YU3dp1OVy3uPvyrzXLMKfamqU
+ h+qQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=/2GnHgYEod44KNh5O907qr0Dr3tZt31Xm1Pio0+BUtU=;
+ b=nXX9r78oi94H3wHnRYNBgEexpnb8K3DebedRXHIItN85A42MURckTNwF/Qkl4pPlHS
+ PgQMyCiLVGHha2vG2XJSJhM/n+If2o5F95v/ilUhZT76Cfug/4+o4Mw0Ux07qRQSQy/N
+ hAac7KkNrSSyI9FdVMKOsYLn3UPV8bKA5fmDeVekExFOHmF9swotC3d55VUnFSTsAnDG
+ D6inNa3UdR5hd8/U8M+N7SCj7WixDjlcXGQnZEXlnzopJwwOOSYkqVos9JIxeHdHecFS
+ MboWnNYRYS/bEpsXKhHMcv0/023CHDsmWtcjN0l5jC+1ozTajBwhRat40rh+xNnRMs3+
+ T5Nw==
+X-Gm-Message-State: APjAAAUPHsEE/dj9F+WRc7ODF6f2RCiiTmLYFmai7JJFra80CSW59iwe
+ 1wX/LSB01sGWDjm934xVGlE0IEwZP0A=
+X-Google-Smtp-Source: APXvYqwHjAZO5+aiba+vTO0oc2CApTMEtmAA4xfo4oGHCw/dpaiKyNl42GAFhoYlHtXUvoagPsmxZg==
+X-Received: by 2002:a63:7e58:: with SMTP id o24mr25705879pgn.214.1580751302915; 
+ Mon, 03 Feb 2020 09:35:02 -0800 (PST)
+Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id s18sm700055pgn.34.2020.02.03.09.35.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 03 Feb 2020 09:35:02 -0800 (PST)
+Date: Mon, 3 Feb 2020 09:35:00 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Rakesh Pillai <pillair@codeaurora.org>
+Subject: Re: [PATCH v5] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
+ device node
+Message-ID: <20200203173500.GB3948@builder>
+References: <1580281223-2759-1-git-send-email-pillair@codeaurora.org>
 MIME-Version: 1.0
-In-Reply-To: <20200202232437.7626-5-gshan@redhat.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <1580281223-2759-1-git-send-email-pillair@codeaurora.org>
+User-Agent: Mutt/1.12.2 (2019-09-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_091814_177962_6FAE44CB 
-X-CRM114-Status: GOOD (  23.09  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200203_093505_014761_3125C53B 
+X-CRM114-Status: GOOD (  16.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,140 +99,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, lorenzo.pieralisi@arm.com,
- will@kernel.org, sudeep.holla@arm.com
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/02/2020 11:24 pm, Gavin Shan wrote:
-> One CPU operations is maintained through array @cpu_ops[NR_CPUS]. 2KB
-> memory is consumed when CONFIG_NR_CPUS is set to 256. It seems too
-> much memory has been used for this.
+On Tue 28 Jan 23:00 PST 2020, Rakesh Pillai wrote:
+
+> Add device node for the ath10k SNOC platform driver probe
+> and add resources required for WCN3990 on sc7180 soc.
 > 
-> This introduces another array (@cpu_ops_index[NR_CPUS]), of which the
-> index to CPU operations array is stored. With this, we just one byte
-> for each CPU, 256 bytes for 256 CPUs, to dereference the CPU operations
-> indirectly.
-
-By extension of the same argument, that's still four times as big as it 
-*needs* to be ;)
-
-How important is the memory saving vs. the runtime overhead of more 
-indirection?
-
-> Signed-off-by: Gavin Shan <gshan@redhat.com>
+> Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
 > ---
->   arch/arm64/kernel/cpu_ops.c | 44 +++++++++++++++++++++----------------
->   1 file changed, 25 insertions(+), 19 deletions(-)
+>  arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
+>  arch/arm64/boot/dts/qcom/sc7180.dtsi    | 28 ++++++++++++++++++++++++++++
+>  2 files changed, 33 insertions(+)
 > 
-> diff --git a/arch/arm64/kernel/cpu_ops.c b/arch/arm64/kernel/cpu_ops.c
-> index e133011f64b5..2a58222a2f24 100644
-> --- a/arch/arm64/kernel/cpu_ops.c
-> +++ b/arch/arm64/kernel/cpu_ops.c
-> @@ -20,39 +20,33 @@ extern const struct cpu_operations acpi_parking_protocol_ops;
->   #endif
->   extern const struct cpu_operations cpu_psci_ops;
->   
-> -static const struct cpu_operations *cpu_ops[NR_CPUS] __ro_after_init;
-> -
-> -static const struct cpu_operations *const dt_supported_cpu_ops[] __initconst = {
-> +static const struct cpu_operations *const cpu_ops[] = {
->   	&smp_spin_table_ops,
-> -	&cpu_psci_ops,
-> -	NULL,
-> -};
-> -
-> -static const struct cpu_operations *const acpi_supported_cpu_ops[] __initconst = {
->   #ifdef CONFIG_ARM64_ACPI_PARKING_PROTOCOL
->   	&acpi_parking_protocol_ops,
->   #endif
->   	&cpu_psci_ops,
->   	NULL,
->   };
-> +static unsigned char cpu_ops_indexes[NR_CPUS] __ro_after_init;
->   
-> -static const struct cpu_operations * __init cpu_get_ops(const char *name)
-> +static unsigned char __init get_cpu_ops_index(const char *name)
->   {
-> -	const struct cpu_operations *const *ops;
-> -
-> -	ops = acpi_disabled ? dt_supported_cpu_ops : acpi_supported_cpu_ops;
-> +	const struct cpu_operations *const *ops = cpu_ops;
-> +	unsigned char index = 0;
->   
->   	while (*ops) {
-
-For a statically-initialised array which isn't exported to other 
-compilation units you don't really need the null-terminator dance; a simple
-
-	for (index = 0; index < ARRAY_SIZE(cpu_ops); index++)
-
-should suffice.
-
->   		if (!strcmp(name, (*ops)->name))
-> -			return *ops;
-> +			return (index + 1);
-
-Also this magic +1 is a bit horrible - I don't see any need for the 
-interface to expose the underlying storage format, so it could just as 
-easily return the actual index as an int with a negative error case.
-
-Robin.
-
->   
->   		ops++;
-> +		index++;
->   	}
->   
-> -	return NULL;
-> +	return 0;
->   }
->   
-> -static const char *__init cpu_read_enable_method(int cpu)
-> +static const char *__init get_cpu_method(int cpu)
->   {
->   	const char *enable_method;
->   
-> @@ -98,21 +92,33 @@ static const char *__init cpu_read_enable_method(int cpu)
->    */
->   int __init init_cpu_ops(int cpu)
->   {
-> -	const char *enable_method = cpu_read_enable_method(cpu);
-> +	const char *enable_method = get_cpu_method(cpu);
-> +	unsigned char index;
->   
->   	if (!enable_method)
->   		return -ENODEV;
->   
-> -	cpu_ops[cpu] = cpu_get_ops(enable_method);
-> -	if (!cpu_ops[cpu]) {
-> +	index = get_cpu_ops_index(enable_method);
-> +	if (!index) {
->   		pr_warn("Unsupported enable-method: %s\n", enable_method);
->   		return -EOPNOTSUPP;
->   	}
->   
-> +	cpu_ops_indexes[cpu] = index;
+> diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> index 388f50a..167f68ac 100644
+> --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> @@ -287,6 +287,11 @@
+>  	vdda-pll-supply = <&vreg_l4a_0p8>;
+>  };
+>  
+> +&wifi {
+> +	status = "okay";
+> +	qcom,msa-fixed-perm;
+> +};
 > +
->   	return 0;
->   }
->   
->   const struct cpu_operations *get_cpu_ops(int cpu)
->   {
-> -	return cpu_ops[cpu];
-> +	unsigned char index = cpu_ops_indexes[cpu];
+>  /* PINCTRL - additions to nodes defined in sc7180.dtsi */
+>  
+>  &qspi_clk {
+> diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> index 8011c5f..0a00c94 100644
+> --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> @@ -75,6 +75,12 @@
+>  			reg = <0x0 0x80900000 0x0 0x200000>;
+>  			no-map;
+>  		};
 > +
-> +	/*
-> +	 * The corresponding CPU operation isn't set when the
-> +	 * index is equal to zero.
-> +	 */
-> +	if (!index)
-> +		return NULL;
+> +		wlan_fw_mem: memory@93900000 {
+> +			compatible = "removed-dma-pool";
+
+Sorry for not spotting this earlier, the "removed-dma-pool" compatible
+is a downstream thing and isn't defined upstream.
+
+> +                     no-map;
+> +                     reg = <0 0x93900000 0 0x200000>;
+
+If you swap the order of no-map and reg in this node it will look like
+all the others.
+
+
+Apart from that the patch looks good.
+
+Regards,
+Bjorn
+
+> +		};
+>  	};
+>  
+>  	cpus {
+> @@ -1490,6 +1496,28 @@
+>  
+>  			#freq-domain-cells = <1>;
+>  		};
 > +
-> +	return cpu_ops[index - 1];
->   }
+> +		wifi: wifi@18800000 {
+> +			compatible = "qcom,wcn3990-wifi";
+> +			reg = <0 0x18800000 0 0x800000>;
+> +			reg-names = "membase";
+> +			iommus = <&apps_smmu 0xc0 0x1>;
+> +			interrupts =
+> +				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
+> +				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
+> +				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
+> +				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
+> +				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
+> +				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
+> +				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
+> +				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
+> +				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
+> +				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
+> +				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
+> +				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
+> +			memory-region = <&wlan_fw_mem>;
+> +			status = "disabled";
+> +		};
+>  	};
+>  
+>  	thermal-zones {
+> -- 
+> 2.7.4
 > 
 
 _______________________________________________
