@@ -2,104 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F544150111
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 06:03:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AA8B150116
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 06:04:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cMNhYjVCuPF1N5PxaVH8oHOkYLveTS7/jIdt+DlZDYI=; b=NVeArR+tcx8pMO
-	3/9kDfwpUeraa3U/kOD3amudINeo4GPu5IMZOcZ/bFnERiijmYqdMmU+rEgRuQJ7XwJMgoiS0yh2z
-	stgNGx8B/8+0+hGNIHFPYN9Dx1IMK+xM7ptH4VvULpf/8kvDJ7zS9aKKtGUilSyNGmGJn7LmkHM8h
-	3LmPzAf1ALHCrWJI/kDQ6MUE2RrMQqehmIKD9oF5tzKazxHtJtT/yqxUH1B4W7VAx46VgwTXNdwIH
-	659jZ8qRp7Btd5vIJy417hF+WRdTRo88d5Qfk+qmk/bvFrNn7FWytjmP1BPJLORrbBWA5oFg0uZfy
-	ylHVCKcbqhGa8vEOXGTw==;
+	List-Owner; bh=qptfkJm46wndZwK8N/bPcM6lxvVyXdzgRCQ8mQJLyLE=; b=X6jHoamOIxOEhV
+	/LEq2ULZ2RtY9DG/FS0fydA27D/Ox26xXRtXPJ64EQC4A9mmD+RfofvsO5f+f6Sp0cTXAHWgc1RXE
+	ImFf5+9SH9LiZsFjl62NvxxIQ1UTfs+0cpAGlhplh9P8UgOQnYVtStw3skvgr96j/DrdotLSoNHqf
+	65UHh1UxdhiUp2SRUuUOAmPUU6+YZodsZ7J+BdeXXL4+zHr7yQlNtMc0nPM57s2AVuipN/zjWVGHp
+	38B+6SjzB7lHOd3L0qsGHRYHdeCvtiLx9o3ESBehp9xh/2GbErZLv1k1EJUeVmyqZRSA+xISgquWV
+	wip3jNo+4XBc6YYnbIXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyTtT-0001Zf-3i; Mon, 03 Feb 2020 05:03:31 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1iyTty-00022U-Lk; Mon, 03 Feb 2020 05:04:02 +0000
+Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyTtL-0001YO-KN
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 05:03:25 +0000
-Received: by mail-qk1-x741.google.com with SMTP id j20so13001475qka.10
+ id 1iyTtL-0001YT-N4
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 05:03:26 +0000
+Received: by mail-qt1-x844.google.com with SMTP id j5so10468011qtq.9
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 02 Feb 2020 21:03:22 -0800 (PST)
+ Sun, 02 Feb 2020 21:03:23 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=PHvPKoaqKtkykZLxCi4TerZ2d6tP9SE0xIIPoaJM2Ow=;
- b=eccQdPSpf1llC7YR5VHHJlf0LJ2SN0WsloaRrCae1eSinKOwjkW30fDu9dVrkM/b0X
- tc5czCv5b2qsqo4/y8zD7jti3aTAVsOiK1vlfWLdLFpdhLaiQ87xOGP8C+Rw5KXILatY
- ZJNmj3gj3Xb9fFMI8+f5ERHG1z0U123/t8ix8s9U/bfD+vy89yDS24hDb0AnyH2aBI9D
- XQjYre6nGFbNHhLGv6lfth2q13VZtFoZTHvidTcOB0xs+0my0Iq3Sb4rixgU08mWUhLT
- Me8f/RKenDIINNa75WEzQniaZH8tnXRn11UCDGzK1bG3xuAk3ktpkVgJtvIOKngImihB
- G4sQ==
+ bh=wYlLiIyZ6xtWSqRHGwj68GlwyY+LYYPTXp6jcsCn+f4=;
+ b=IrF2YhevpTkVJpyh9y4p2B/CLmvflLLrQnU0pce24ImrE6OdK3eSj6cpzNhLpjRf2G
+ uoBW7ahXPhYIokI+kUKf+oRdBvCUOjBCrOPeWaUuCwZXupGVDfeA4OHHmB3A/DQQZoTd
+ UWcI+LCOhWIjJEcCbRJN55mOq6tDb94gd4hwD/dbr2WJjJ0O6If6mO4iavPbMVEerk9v
+ 0tKpECNgOFcqQfdmIgD2N1i3KDDPKFO7j0mIyaLF4JTg24ztcFrkQ+s7z0c9PeaQSB6c
+ mIgt+rf3lA7kUJZmDfp4MpROaIF7U7pjSeOtqxYsAhXP+v2eMNqVudyZ66yIAzNdVX0z
+ jSLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=PHvPKoaqKtkykZLxCi4TerZ2d6tP9SE0xIIPoaJM2Ow=;
- b=iB7jQCcEzV3VCOjpSHMhbYnhR8JmsTG9tUZmKbxqIgkXOCBZqqc0ZMKaWYNJBDNX1f
- OTHk1mOuc5PEQB3mihvPQq91cc66x5uWo/oFZPi38IAh/Dd+k3mfxQ12tCmKU+C/vFXr
- cLKLhz/cPj+MXb2TEu9xh8k4dDfRsne2jYUBEoyLfax9oQ9u9h7opqGRaNU6wAu+5OpO
- Wf0EGoaxvd/mQmeeWS/xWk8GTqTkHr1Zx8nByr5boKV3oqIYADMof0lNaqketoSIL/A+
- hhLK/O6HG+2XJ7h8IdduwO6Vvk9kAO4zzRnbC3gYw98OFzGpzl7Xn8zV3+wgU0Z0EOJm
- ZKxQ==
-X-Gm-Message-State: APjAAAWNGwdZv+Dxwb3TFg8QZxRGa4ymi5Wh1ZR0OOlEhateIKsY/hVX
- u1zklrifiX/OhbZCTHYnic4=
-X-Google-Smtp-Source: APXvYqzKk8N4hCeJ6CJD5TAcL/7v4lfU/s9T8nK42KRRAuCr9IO1YEQgEqAT7joW06yw2CkvdCgQig==
-X-Received: by 2002:a37:a744:: with SMTP id q65mr22115703qke.391.1580706201772; 
- Sun, 02 Feb 2020 21:03:21 -0800 (PST)
+ bh=wYlLiIyZ6xtWSqRHGwj68GlwyY+LYYPTXp6jcsCn+f4=;
+ b=RP3FL7jAnzkFHOZJNwn3xpS+ElkfkDNf5UnPYCCD2vHkHHKfAGK9XvdXw8xp7RUpNx
+ DBuAuvliPFX7Lljv9rXl2fQDPDgTEIKrfRhCE5mOZV6YY7ZT/Mhkt3Krzm3fGX/q36SG
+ 4jG3dyOcTZfBi5j/w2g8kk/kJYVQb+eO6KGLU4vjHVpDP8vorl2/ldSonSSe+i99OdgV
+ lI83qG57AQJSPUZNF79WZTL/y/9I4vNRfZKFMNblse2dw60knW0jUBM8epvGQS03jahk
+ JxXzAhrHPn/BlsHgj5G7fhAcKDBsSL0CH/JByjUD1DTnWGNK+9uWUz1Xp8MshCaIWUPM
+ Euvw==
+X-Gm-Message-State: APjAAAXzR5zKBkpvbhnOxcCQr7Zgtg+I4YhzMollCp6AalfMidnNzBuH
+ Vk1zqkAZnvcBPhweRLTtwOQ=
+X-Google-Smtp-Source: APXvYqw/JSotvpKLRqau3UsOI7GqVAKcDFDEyfckUo5K3AA2BM1FkGqlALOh4m1g+OgHRDNXjnNEuQ==
+X-Received: by 2002:ac8:704:: with SMTP id g4mr22114298qth.197.1580706202773; 
+ Sun, 02 Feb 2020 21:03:22 -0800 (PST)
 Received: from auth1-smtp.messagingengine.com (auth1-smtp.messagingengine.com.
  [66.111.4.227])
- by smtp.gmail.com with ESMTPSA id g6sm9311219qtp.53.2020.02.02.21.03.20
+ by smtp.gmail.com with ESMTPSA id 135sm8837749qkl.68.2020.02.02.21.03.21
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 02 Feb 2020 21:03:21 -0800 (PST)
+ Sun, 02 Feb 2020 21:03:22 -0800 (PST)
 Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailauth.nyi.internal (Postfix) with ESMTP id 33B3E21EEB;
- Mon,  3 Feb 2020 00:03:19 -0500 (EST)
+ by mailauth.nyi.internal (Postfix) with ESMTP id 8519F21F40;
+ Mon,  3 Feb 2020 00:03:21 -0500 (EST)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute6.internal (MEProxy); Mon, 03 Feb 2020 00:03:19 -0500
-X-ME-Sender: <xms:l6k3XqLvV7p5_9WEE4ijQInGUfaeDkGrIxj-Gopqvh5xrgL5qo6mEQ>
+ by compute6.internal (MEProxy); Mon, 03 Feb 2020 00:03:21 -0500
+X-ME-Sender: <xms:mak3XgcyHJ-FHN-KXqn1rRMZozZQhbcbhS4odZa_FiDy0dgtsuaagw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeeigdejjecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenog
  fuohhrthgvugftvggtihhpvdculdegtddmnecujfgurhephffvufffkffojghfggfgsedt
  keertdertddtnecuhfhrohhmpeeuohhquhhnucfhvghnghcuoegsohhquhhnrdhfvghngh
- esghhmrghilhdrtghomheqnecukfhppeehvddrudehhedrudduuddrjedunecuvehluhhs
- thgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepsghoqhhunhdomhgvsh
- hmthhprghuthhhphgvrhhsohhnrghlihhthidqieelvdeghedtieegqddujeejkeehheeh
- vddqsghoqhhunhdrfhgvnhhgpeepghhmrghilhdrtghomhesfhhigihmvgdrnhgrmhgv
-X-ME-Proxy: <xmx:l6k3Xo1lUECvj0i7npwxRp2S9fZxkwXWI6nxXbvx1pEafg3L4_Y3CA>
- <xmx:l6k3XvI_ImMOnuA1Ko0f298f9xhLD07zzizUHL82Gl3WslEcexJxtA>
- <xmx:l6k3Xtn0YP31nZqgxKE_3GaEO4To5uI-Jk_IA8jiLGu3jjmi2ydbCw>
- <xmx:l6k3XuAWvO1bCYjflTM7KSIyGC-HNkZHtzihlje1YTexrtrrBtjE58oYyQE>
+ esghhmrghilhdrtghomheqnecuffhomhgrihhnpehmihgtrhhoshhofhhtrdgtohhmnecu
+ kfhppeehvddrudehhedrudduuddrjedunecuvehluhhsthgvrhfuihiivgeptdenucfrrg
+ hrrghmpehmrghilhhfrhhomhepsghoqhhunhdomhgvshhmthhprghuthhhphgvrhhsohhn
+ rghlihhthidqieelvdeghedtieegqddujeejkeehheehvddqsghoqhhunhdrfhgvnhhgpe
+ epghhmrghilhdrtghomhesfhhigihmvgdrnhgrmhgv
+X-ME-Proxy: <xmx:mak3XmeMjOUEtH951eeh_F7aXNvylSBWXjUOU5gqI2r8pK0wvZ2nuw>
+ <xmx:mak3Xsg-m4WVDsGDpSijgBbaG4zQ3DoVs2J40RPkF_zCBE1YTnuSLw>
+ <xmx:mak3XqR04Lzl0uXzimXsvU6X1YY1xvR01w_vDzkG0uc9GVT4xIbYUA>
+ <xmx:mak3XtmTvx3hcCSM359e_5-vI5d4QRCnq4OJ4FxpNJXjLJV9UQoIm6iEzFk>
 Received: from localhost (unknown [52.155.111.71])
- by mail.messagingengine.com (Postfix) with ESMTPA id 9D14F30600DC;
- Mon,  3 Feb 2020 00:03:18 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 01AFD3060134;
+ Mon,  3 Feb 2020 00:03:20 -0500 (EST)
 From: Boqun Feng <boqun.feng@gmail.com>
 To: linux-pci@vger.kernel.org, linux-hyperv@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/3] PCI: hv: Move hypercall related definitions into tlfs
+Subject: [PATCH v2 2/3] PCI: hv: Move retarget related structures into tlfs
  header
-Date: Mon,  3 Feb 2020 13:03:11 +0800
-Message-Id: <20200203050313.69247-2-boqun.feng@gmail.com>
+Date: Mon,  3 Feb 2020 13:03:12 +0800
+Message-Id: <20200203050313.69247-3-boqun.feng@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200203050313.69247-1-boqun.feng@gmail.com>
 References: <20200203050313.69247-1-boqun.feng@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200202_210323_695033_A5E449D7 
-X-CRM114-Status: GOOD (  12.93  )
+X-CRM114-CacheID: sfid-20200202_210323_750816_AB28980B 
+X-CRM114-Status: GOOD (  14.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -137,58 +138,125 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently HVCALL_RETARGET_INTERRUPT and HV_PARTITION_ID_SELF are defined
-in pci-hyperv.c. However, similar to other hypercall related definitions
-, it makes more sense to put them in the tlfs header file.
+Currently, retarget_msi_interrupt and other structures it relys on are
+defined in pci-hyperv.c. However, those structures are actually defined
+in Hypervisor Top-Level Functional Specification [1] and may be
+different in sizes of fields or layout from architecture to
+architecture. Therefore, this patch moves those definitions into x86's
+tlfs header file to support virtual PCI on non-x86 architectures in the
+future.
 
-Besides, these definitions are arch-dependent, so for the support of
-virtual PCI on non-x86 archs in the future, move them into arch-specific
-tlfs header file.
+Besides, while I'm at it, rename retarget_msi_interrupt to
+hv_retarget_msi_interrupt for the consistent name convention, also
+mirroring the name in TLFS.
+
+[1]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/tlfs
 
 Signed-off-by: Boqun Feng (Microsoft) <boqun.feng@gmail.com>
 ---
- arch/x86/include/asm/hyperv-tlfs.h  | 3 +++
- drivers/pci/controller/pci-hyperv.c | 6 ------
- 2 files changed, 3 insertions(+), 6 deletions(-)
+ arch/x86/include/asm/hyperv-tlfs.h  | 31 ++++++++++++++++++++++++++
+ drivers/pci/controller/pci-hyperv.c | 34 ++---------------------------
+ 2 files changed, 33 insertions(+), 32 deletions(-)
 
 diff --git a/arch/x86/include/asm/hyperv-tlfs.h b/arch/x86/include/asm/hyperv-tlfs.h
-index 5f10f7f2098d..739bd89226a5 100644
+index 739bd89226a5..4a76e442481a 100644
 --- a/arch/x86/include/asm/hyperv-tlfs.h
 +++ b/arch/x86/include/asm/hyperv-tlfs.h
-@@ -376,6 +376,7 @@ struct hv_tsc_emulation_status {
- #define HVCALL_SEND_IPI_EX			0x0015
- #define HVCALL_POST_MESSAGE			0x005c
- #define HVCALL_SIGNAL_EVENT			0x005d
-+#define HVCALL_RETARGET_INTERRUPT		0x007e
- #define HVCALL_FLUSH_GUEST_PHYSICAL_ADDRESS_SPACE 0x00af
- #define HVCALL_FLUSH_GUEST_PHYSICAL_ADDRESS_LIST 0x00b0
- 
-@@ -405,6 +406,8 @@ enum HV_GENERIC_SET_FORMAT {
- 	HV_GENERIC_SET_ALL,
+@@ -911,4 +911,35 @@ struct hv_tlb_flush_ex {
+ struct hv_partition_assist_pg {
+ 	u32 tlb_lock_count;
  };
- 
-+#define HV_PARTITION_ID_SELF                    ((u64)-1)
 +
- #define HV_HYPERCALL_RESULT_MASK	GENMASK_ULL(15, 0)
- #define HV_HYPERCALL_FAST_BIT		BIT(16)
- #define HV_HYPERCALL_VARHEAD_OFFSET	17
++struct hv_interrupt_entry {
++	u32 source;			/* 1 for MSI(-X) */
++	u32 reserved1;
++	u32 address;
++	u32 data;
++} __packed;
++
++/*
++ * flags for hv_device_interrupt_target.flags
++ */
++#define HV_DEVICE_INTERRUPT_TARGET_MULTICAST		1
++#define HV_DEVICE_INTERRUPT_TARGET_PROCESSOR_SET	2
++
++struct hv_device_interrupt_target {
++	u32 vector;
++	u32 flags;
++	union {
++		u64 vp_mask;
++		struct hv_vpset vp_set;
++	};
++} __packed;
++
++/* HvRetargetDeviceInterrupt hypercall */
++struct hv_retarget_device_interrupt {
++	u64 partition_id;
++	u64 device_id;
++	struct hv_interrupt_entry int_entry;
++	u64 reserved2;
++	struct hv_device_interrupt_target int_target;
++} __packed __aligned(8);
+ #endif
 diff --git a/drivers/pci/controller/pci-hyperv.c b/drivers/pci/controller/pci-hyperv.c
-index 9977abff92fc..aacfcc90d929 100644
+index aacfcc90d929..0d9b74503577 100644
 --- a/drivers/pci/controller/pci-hyperv.c
 +++ b/drivers/pci/controller/pci-hyperv.c
-@@ -406,12 +406,6 @@ struct pci_eject_response {
+@@ -406,36 +406,6 @@ struct pci_eject_response {
  
  static int pci_ring_size = (4 * PAGE_SIZE);
  
--/*
-- * Definitions or interrupt steering hypercall.
-- */
--#define HV_PARTITION_ID_SELF		((u64)-1)
--#define HVCALL_RETARGET_INTERRUPT	0x7e
+-struct hv_interrupt_entry {
+-	u32	source;			/* 1 for MSI(-X) */
+-	u32	reserved1;
+-	u32	address;
+-	u32	data;
+-};
 -
- struct hv_interrupt_entry {
- 	u32	source;			/* 1 for MSI(-X) */
- 	u32	reserved1;
+-/*
+- * flags for hv_device_interrupt_target.flags
+- */
+-#define HV_DEVICE_INTERRUPT_TARGET_MULTICAST		1
+-#define HV_DEVICE_INTERRUPT_TARGET_PROCESSOR_SET	2
+-
+-struct hv_device_interrupt_target {
+-	u32	vector;
+-	u32	flags;
+-	union {
+-		u64		 vp_mask;
+-		struct hv_vpset vp_set;
+-	};
+-};
+-
+-struct retarget_msi_interrupt {
+-	u64	partition_id;		/* use "self" */
+-	u64	device_id;
+-	struct hv_interrupt_entry int_entry;
+-	u64	reserved2;
+-	struct hv_device_interrupt_target int_target;
+-} __packed __aligned(8);
+-
+ /*
+  * Driver specific state.
+  */
+@@ -482,7 +452,7 @@ struct hv_pcibus_device {
+ 	struct workqueue_struct *wq;
+ 
+ 	/* hypercall arg, must not cross page boundary */
+-	struct retarget_msi_interrupt retarget_msi_interrupt_params;
++	struct hv_retarget_device_interrupt retarget_msi_interrupt_params;
+ 
+ 	/*
+ 	 * Don't put anything here: retarget_msi_interrupt_params must be last
+@@ -1178,7 +1148,7 @@ static void hv_irq_unmask(struct irq_data *data)
+ {
+ 	struct msi_desc *msi_desc = irq_data_get_msi_desc(data);
+ 	struct irq_cfg *cfg = irqd_cfg(data);
+-	struct retarget_msi_interrupt *params;
++	struct hv_retarget_device_interrupt *params;
+ 	struct hv_pcibus_device *hbus;
+ 	struct cpumask *dest;
+ 	cpumask_var_t tmp;
 -- 
 2.24.1
 
