@@ -2,77 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FA8C151207
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 22:43:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41C8015124D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 23:27:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/PJdqfj/LcCBVbQLFpzw2QznDZPcELzpR/KATQ9o3Xc=; b=aH7
-	JH7NkBa57KlyKT8tLTWC1Y85Bgoe62KE8ZCin2oSYvDaQ1h6hUph4nTH7ePueN4kXnBu4xXbuaYc+
-	QkeOl0uDi61TBpeQ/H9se1MJtBmiIj9yCrq3/SM//f+wEwH0IPIJquPPcVMSWEyMYFEOc5ZMplA4p
-	ew5/Jx/Gm3Uqcm0KbmPdAPCDmQsfdbh6Jxp6dSIZcKmeGsqbqPZn6kZCBrP3QnuyY1Cw7bFUqep+G
-	VGUkHVDEgcK3wxBUuQrAQvM7iRQbb9XfsRn+eBXuY4yEJRhBNW4DM+vSuKUvb9jZQe0+19xE1+fkl
-	xXKYslCh2g2COAzF2SYahP+pWIyIc7A==;
+	References:List-Owner; bh=iaLWAus+dqhKuY+HsBfH/Nn0y60nZXXg6Hs7lQpnflY=; b=B/G
+	88ze68yLI/pxKWEajJOdHVH1AMGkFegW8Qcv0wbiRfsdNDIDQbNCcbiSy0RYvXY112fpJ5AUlQyWN
+	fYqWRCKbxhITsgF4ORjWge978LoOo9IZA9xkPUBQF+MqtFcsAZoHFOzuba3VRhZdH4JB4A2JE8p/q
+	O2EZ+z5CoWG8KlbbCt1N5zeOhlWx00Eqab3N6BdS85UCVBrmC/lxQdfMwvPbkSelr4DlKVkhR12LG
+	12sN+sbBKL+axO4WLQUQ0+/BNoyoUtaGBo2dl9HdbHnlfvAhx495AoZ8fXNw2MgEU2Utsbh8r98Lq
+	v9Ce0sgYHo/5QhEbbrayobbxjbfaQVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyjV3-0007II-5g; Mon, 03 Feb 2020 21:43:21 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iykBL-0005Am-Jk; Mon, 03 Feb 2020 22:27:03 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyjUu-0007HZ-Vw; Mon, 03 Feb 2020 21:43:14 +0000
-Received: by mail-pf1-x444.google.com with SMTP id q8so8259006pfh.7;
- Mon, 03 Feb 2020 13:43:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=4utvhxtA7zvr4Iu+DFpm/vNXzWR8TFP5LHSqSIJBCWo=;
- b=AjF/en/PwCT4W2EHQ5+3AviOlyIo9uYNWYWol1vasV9sf8IdjnbhX0VVoyzxvrEf/D
- GFZdJygPyQAUvAfYJcknUmlv/ZtEEyBxTFc9ZsL0fnmwF2hX+u7HoCsDurh8jvMg1FWI
- ZWHACVb5FbOXuB2KNwYM0j5X+9+pI30sBWK2io4DQOsjatvjLtJ3k8LvU5jD6h+0bApj
- nji7QoFrpIa/EfyS9aE1H8PnCdnd46+Bv/wWa0lI/yY3MRhmscM5HAz8FUe4N0GHhpMf
- AblamewqllV4aFJNX9rqC38Bfrua5qSGpBXfEvK4rxqB8uDXrzrhq3DbRWcLI4ZsALte
- Lfjg==
+ id 1iykAy-00053G-9I
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 22:26:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580768797;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=tV1zdr5mxr4Q8hrQAculXRtNFUc0E7Rj7Ul+Q9aX23s=;
+ b=M6xNJ+iMdH7L2PMz+j+jz1ITXQpwu47exoBMzY2QuIRfX+6TFy20+vron/vO5DQt5XaEAp
+ U4XYk9nWZX944StP4fWHennQhQWsoRI2yT+kf8NfHhomwxQmiMFGP/1USd2dRK6U8lxe0o
+ OQNCQrqj7MRJt8mydUYoKdrueMxMFXE=
+Received: from mail-pf1-f198.google.com (mail-pf1-f198.google.com
+ [209.85.210.198]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-365-YUHC9i92NOiDQTTh-mz1YQ-1; Mon, 03 Feb 2020 17:26:33 -0500
+Received: by mail-pf1-f198.google.com with SMTP id r29so10216749pfl.23
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 03 Feb 2020 14:26:33 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=4utvhxtA7zvr4Iu+DFpm/vNXzWR8TFP5LHSqSIJBCWo=;
- b=cK0CdZohyrWD1ttl/5DdcsulOMWlqPOKdyuLcDpl5BwzNB6bZ2f4p5aXDGn+T6Hmi5
- 8mMa8j8UTBVBj0ljEIdZyQrQy0KfebA0Y4RxXkpzSD+20/06UeOmuSsfov1js/q2gPGS
- wzFq9VBUcRZaPrL3NcpTXgJ8XJRG3qU7R/CBIU33rVV0Reis5wd8ZM5HS2qvt3yhlNmJ
- aDitpvZgOElOfIIJ8byq2HkB/sOXoJxvT3uWLtpNcxcVZla7nMQEIQ+59Vtly3o/v3se
- N7gZG0msfJMe6mm7cfMzQ1cQkwXP5Vl0rO47UNQl+Yprin7BnPYtH/kkiSdGbLgyJks9
- u3gg==
-X-Gm-Message-State: APjAAAXDo26fPDtUFkQp7ee8OI+aZOYvejPrNQ8ZmAOhuguDF5ti1hpz
- CdY8hoCc+z56UgUP04njSBs=
-X-Google-Smtp-Source: APXvYqzqvmjhjyfBbCiXK6ubgSKYGKoWsiXrEE1FSXHo7/8RTwhszxSZmlrQQ8mbNKUBQU48ZmIo+A==
-X-Received: by 2002:a63:6c82:: with SMTP id
- h124mr27098458pgc.328.1580766189626; 
- Mon, 03 Feb 2020 13:43:09 -0800 (PST)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id c26sm2947558pfj.8.2020.02.03.13.43.08
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 03 Feb 2020 13:43:08 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] pwm: bcm2835: Dynamically allocate base
-Date: Mon,  3 Feb 2020 13:35:35 -0800
-Message-Id: <20200203213536.32226-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ bh=PKlVXWvAtzBh0O+OSdcgLrbxm6cHx3rHTWHUYIxhjyE=;
+ b=nb8BeYwv+SyX7/ZNVsE6YIPLWEZTsLM/ncdLPl9Z0w+ZWlxk5Rue4P1vGQQ5bt9q/w
+ 0eijGYOUPLDpq/No5UrlltlP6rYoUsOTEikimrsXxXHj1IJ0SvFe0uD2Y2BTHYYoy+hE
+ 1GfKryrypy5NxigjtRGDcqocret/C7mSvZ5RR2cQyRgjv0HzmKDXNk/nEZOrjYNXMbhN
+ Ngljkx39DwE0whSUFl524wpKPMfPNWsomz2ofOFfdxi0FmNXlozzmnV3sWyZRYaTrK/P
+ b4RAH5BPDLu2mRIplb/d/JcAiISxVvgN5fMSqD9y0umkVZmsbP0HZPyKLGorkAu8f/yE
+ 1LfQ==
+X-Gm-Message-State: APjAAAXIaigoDfVmRdDANcFE7Wy8M5ykh6k4o+Y+EDywt85sjY8bd+ps
+ jVmaJep2SbPN4QlvLkaiuJ7fG6fvV7DyNzYZqJyXhuD5Whj7WTF7rfxUzlZxW7iu2tGCIlcvJhB
+ AwKFwXo42lEKas1k3VzBxGpNVB9muYwr17GE=
+X-Received: by 2002:a63:6607:: with SMTP id a7mr3246869pgc.310.1580768792787; 
+ Mon, 03 Feb 2020 14:26:32 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyLQjUhinPxT4gqFJCuEvTOo0KmNsperkBusji/i/cCiipn9md1/jw11bm4ZjlvtUiTM27tVA==
+X-Received: by 2002:a63:6607:: with SMTP id a7mr3246847pgc.310.1580768792486; 
+ Mon, 03 Feb 2020 14:26:32 -0800 (PST)
+Received: from localhost ([122.177.227.116])
+ by smtp.gmail.com with ESMTPSA id c1sm21606857pfa.51.2020.02.03.14.26.31
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 03 Feb 2020 14:26:32 -0800 (PST)
+From: Bhupesh Sharma <bhsharma@redhat.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/2] Fix some arm64 perf issues
+Date: Tue,  4 Feb 2020 03:56:22 +0530
+Message-Id: <1580768784-25868-1-git-send-email-bhsharma@redhat.com>
+X-Mailer: git-send-email 2.7.4
+X-MC-Unique: YUHC9i92NOiDQTTh-mz1YQ-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_134313_030118_5BDAA0C2 
-X-CRM114-Status: GOOD (  10.39  )
+X-CRM114-CacheID: sfid-20200203_142640_407740_87ED4DC8 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -81,6 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,50 +102,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "open list:PWM SUBSYSTEM" <linux-pwm@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Bart Tanghe <bart.tanghe@thomasmore.be>, Scott Branden <sbranden@broadcom.com>,
- Stephen Warren <swarren@wwwdotorg.org>, Ray Jui <rjui@broadcom.com>,
- Thierry Reding <thierry.reding@gmail.com>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, bhsharma@redhat.com,
+ linux-kernel@vger.kernel.org, bhupesh.linux@gmail.com,
+ Will Deacon <will@kernel.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The newer 2711 and 7211 chips have two PWM controllers and failure to
-dynamically allocate the PWM base would prevent the second PWM
-controller instance being probed for succeeding with an -EEXIST error
-from alloc_pwms().
+This patchset tries to address some arm64 perf issues.
 
-Fixes: e5a06dc5ac1f ("pwm: Add BCM2835 PWM driver")
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- drivers/pwm/pwm-bcm2835.c | 1 +
- 1 file changed, 1 insertion(+)
+While the 1st patch is a generic one and just removes a dead/left-over
+declaration:
+[PATCH 1/2]: hw_breakpoint: Remove unused '__register_perf_hw_breakpoint' declaration
 
-diff --git a/drivers/pwm/pwm-bcm2835.c b/drivers/pwm/pwm-bcm2835.c
-index 91e24f01b54e..d78f86f8e462 100644
---- a/drivers/pwm/pwm-bcm2835.c
-+++ b/drivers/pwm/pwm-bcm2835.c
-@@ -166,6 +166,7 @@ static int bcm2835_pwm_probe(struct platform_device *pdev)
- 
- 	pc->chip.dev = &pdev->dev;
- 	pc->chip.ops = &bcm2835_pwm_ops;
-+	pc->chip.base = -1;
- 	pc->chip.npwm = 2;
- 	pc->chip.of_xlate = of_pwm_xlate_with_flags;
- 	pc->chip.of_pwm_n_cells = 3;
+the 2nd patch addresses 'perf stat -e' like use-cases on arm64 which
+allow per-task address execution h/w breakpoints:
+[PATCH 2/2]: perf/arm64: Allow per-task kernel breakpoints
+
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+
+Bhupesh Sharma (2):
+  hw_breakpoint: Remove unused '__register_perf_hw_breakpoint'
+    declaration
+  perf/arm64: Allow per-task kernel breakpoints
+
+ arch/arm64/kernel/hw_breakpoint.c | 7 -------
+ include/linux/hw_breakpoint.h     | 3 ---
+ 2 files changed, 10 deletions(-)
+
 -- 
-2.17.1
+2.7.4
 
 
 _______________________________________________
