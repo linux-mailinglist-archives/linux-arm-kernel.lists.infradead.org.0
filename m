@@ -2,85 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 547EF1503E8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:10:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB0F91503EF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:11:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kkgWRN5qULV2eaSMe4Zzi6n4MtfkP+sgLo8NrgTzg5s=; b=ACuMdnoQLg7F8U
-	G0JBX+Vyto61tdVwXTbwyVODIhM7Ifgc8Vcif0sHLN/4EKtoJRlLAJyIQbfoGaQdmcGJIjfY1mZvV
-	uG89YVsf9VF2Xyg5Et9uuEsTbugvDVS5TBJJpRgWBKY1ve9Tufw1MbiDAVwlIx/LbE31RrfxzlHjD
-	/Fv99opG+0rwVqYbtSX6+1nGoj24whasC5MD5RzZuzioJsL7/0ASYhO/ouQBMp7olm6TajOvqHWIm
-	qFV/QMIeGCrHTkrEtepAbqOfGhddGqw6FMk7c9GkKgjvqtRvGOBixTunqqSefXcGRiXqZCgtP8aL4
-	xQmsSqG4XTCF/TENCEFg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CZ+3yipq+thZdCNlE5QfWZKphZ26DxPDVNehFnEgtvg=; b=PXjCQ2AC9dbSDJ
+	7WCmNlS9egSLMJAjlE+K2Ga/daDkBiJwM5XH6fPSAexejf7kDsbT9RtShtoVL7ZcKC1pYW30g6tlG
+	vjhSqWGeqC6FwYIPrqkQ4uteZd2/DYZtPNkCwLzDziGT2RgfqRNc0SqX3ZkhikSFu/IXTGaIWRvGo
+	XvbsuSSWGfojbezhyxi+D93OBxHNfOLrcwoF40mTQ69t53htQtFwhlRH9zhl4PHBkW2/sjYHj/tP2
+	SJIqWiGvgjzw8syMs/x0aCTaeZ+BSIhTRyEQ6tg9it0pMwHU1FGEI2kBrew20JTs21FIlY1sIpTHr
+	4PbU5u79gNHwmcGJLDig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyYfz-0003Xq-Hx; Mon, 03 Feb 2020 10:09:55 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1iyYgx-0005jM-Pk; Mon, 03 Feb 2020 10:10:55 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyYfI-0002wT-WD
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 10:09:15 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 0139vM0F024591; Mon, 3 Feb 2020 11:09:05 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=opqGRUisAUeNTFQFarkeIQS2xwkVHOyUZ4dQfSDAHe0=;
- b=wzkVCfKQgstkYyZWedkGMuhFtDHfXlchmK2VomNhoUMd8QdTo2oL3EgpuN/UnPmVByBJ
- nePsgLC02Gk5mQgVk9k6fvpESVBk1Z5vKN7rz0AIdMtNgndTIAvJ4yZHK2qBKCP3QbC9
- FWmk2OTan5xzUKtSPpR3iqVvbUzS4D2GFkuIJE9exMhyzEpH+1BdkWeZCrfStbLueX9r
- 4Z1edlhgoel11mPrHyQnrBZdxknQ63/RDi7pmZvndZTvDc+asF94BPJtNRUhfJY+s1f5
- I+p6O89fGadmuC4QACtZJhnxaX/yKzL6yzj268uWxLjDrjrwa4uhcaLCdCh46H7ccfj7 Aw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xw13ngdpw-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 03 Feb 2020 11:09:05 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B203F10002A;
- Mon,  3 Feb 2020 11:09:04 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A599B2BE22E;
- Mon,  3 Feb 2020 11:09:04 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG6NODE2.st.com (10.75.127.17)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Mon, 3 Feb 2020 11:09:04 +0100
-From: Olivier Moysan <olivier.moysan@st.com>
-To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
- <tiwai@suse.com>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>, <alsa-devel@alsa-project.org>,
- <linux-arm-kernel@lists.infradead.org>,
- <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-kernel@vger.kernel.org>, <olivier.moysan@st.com>
-Subject: [PATCH 6/6] ASoC: stm32: i2s: improve error management on probe
- deferral
-Date: Mon, 3 Feb 2020 11:08:14 +0100
-Message-ID: <20200203100814.22944-7-olivier.moysan@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200203100814.22944-1-olivier.moysan@st.com>
-References: <20200203100814.22944-1-olivier.moysan@st.com>
+ id 1iyYfT-00038K-06
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 10:09:24 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 013A9KwI034849;
+ Mon, 3 Feb 2020 04:09:20 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1580724560;
+ bh=2hUUozdIkXgPq4UCQpd7JyChjZz/QfVlLVWE+xS6/ek=;
+ h=From:To:CC:Subject:Date;
+ b=vCJnleBgkmlugF98liU5HWSItdoPV4r3aHSsVKgVzCaIK+5/u/EjF2/ZCiMF35h/y
+ Iifj9ALiB37FXTVKXUNlCyIa0LdxAHjDfIxJ4eD4WrNEa7p1C0Uqh6fYmIEoDYXOdV
+ pYimNP+Liq1PLp3awnLZSr5HBs9WarHjFRzeOcAU=
+Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 013A9JU2025522
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 3 Feb 2020 04:09:20 -0600
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE100.ent.ti.com
+ (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 3 Feb
+ 2020 04:09:19 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Mon, 3 Feb 2020 04:09:19 -0600
+Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 013A9H5l002834;
+ Mon, 3 Feb 2020 04:09:17 -0600
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: <grygorii.strashko@ti.com>, <ssantosh@kernel.org>,
+ <santosh.shilimkar@oracle.com>
+Subject: [PATCH] soc: ti: k3-ringacc: Fix dereference before NULL check in
+ k3_ringacc_ring_cfg()
+Date: Mon, 3 Feb 2020 12:09:16 +0200
+Message-ID: <20200203100916.19057-1-peter.ujfalusi@ti.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG6NODE2.st.com
- (10.75.127.17)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-03_02:2020-02-02,
- 2020-02-03 signatures=0
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_020913_336038_76E5F59D 
-X-CRM114-Status: GOOD (  13.97  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200203_020923_114346_B066421D 
+X-CRM114-Status: GOOD (  10.71  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,88 +89,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Etienne Carriere <etienne.carriere@st.com>
+Cc: t-kristo@ti.com, dan.carpenter@oracle.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Do not print an error trace when deferring probe for I2S driver.
+Only dereference ring->parent after we have checked that ring is not NULL.
 
-Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+Fixes: 3277e8aa2504 ("soc: ti: k3: add navss ringacc driver")
+Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
+Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
 ---
- sound/soc/stm/stm32_i2s.c | 25 +++++++++++++++++++------
- 1 file changed, 19 insertions(+), 6 deletions(-)
+ drivers/soc/ti/k3-ringacc.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/sound/soc/stm/stm32_i2s.c b/sound/soc/stm/stm32_i2s.c
-index cdcc00d9a67e..2478405727c3 100644
---- a/sound/soc/stm/stm32_i2s.c
-+++ b/sound/soc/stm/stm32_i2s.c
-@@ -831,25 +831,33 @@ static int stm32_i2s_parse_dt(struct platform_device *pdev,
- 	/* Get clocks */
- 	i2s->pclk = devm_clk_get(&pdev->dev, "pclk");
- 	if (IS_ERR(i2s->pclk)) {
--		dev_err(&pdev->dev, "Could not get pclk\n");
-+		if (PTR_ERR(i2s->pclk) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Could not get pclk: %ld\n",
-+				PTR_ERR(i2s->pclk));
- 		return PTR_ERR(i2s->pclk);
- 	}
+diff --git a/drivers/soc/ti/k3-ringacc.c b/drivers/soc/ti/k3-ringacc.c
+index 5fb2ee2ac978..8f90cc56d44d 100644
+--- a/drivers/soc/ti/k3-ringacc.c
++++ b/drivers/soc/ti/k3-ringacc.c
+@@ -556,11 +556,13 @@ static int k3_ringacc_ring_cfg_sci(struct k3_ring *ring)
  
- 	i2s->i2sclk = devm_clk_get(&pdev->dev, "i2sclk");
- 	if (IS_ERR(i2s->i2sclk)) {
--		dev_err(&pdev->dev, "Could not get i2sclk\n");
-+		if (PTR_ERR(i2s->i2sclk) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Could not get i2sclk: %ld\n",
-+				PTR_ERR(i2s->i2sclk));
- 		return PTR_ERR(i2s->i2sclk);
- 	}
+ int k3_ringacc_ring_cfg(struct k3_ring *ring, struct k3_ring_cfg *cfg)
+ {
+-	struct k3_ringacc *ringacc = ring->parent;
++	struct k3_ringacc *ringacc;
+ 	int ret = 0;
  
- 	i2s->x8kclk = devm_clk_get(&pdev->dev, "x8k");
- 	if (IS_ERR(i2s->x8kclk)) {
--		dev_err(&pdev->dev, "missing x8k parent clock\n");
-+		if (PTR_ERR(i2s->x8kclk) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Could not get x8k parent clock: %ld\n",
-+				PTR_ERR(i2s->x8kclk));
- 		return PTR_ERR(i2s->x8kclk);
- 	}
- 
- 	i2s->x11kclk = devm_clk_get(&pdev->dev, "x11k");
- 	if (IS_ERR(i2s->x11kclk)) {
--		dev_err(&pdev->dev, "missing x11k parent clock\n");
-+		if (PTR_ERR(i2s->x11kclk) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Could not get x11k parent clock: %ld\n",
-+				PTR_ERR(i2s->x11kclk));
- 		return PTR_ERR(i2s->x11kclk);
- 	}
- 
-@@ -907,7 +915,9 @@ static int stm32_i2s_probe(struct platform_device *pdev)
- 	i2s->regmap = devm_regmap_init_mmio_clk(&pdev->dev, "pclk",
- 						i2s->base, i2s->regmap_conf);
- 	if (IS_ERR(i2s->regmap)) {
--		dev_err(&pdev->dev, "regmap init failed\n");
-+		if (PTR_ERR(i2s->regmap) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Regmap init error %ld\n",
-+				PTR_ERR(i2s->regmap));
- 		return PTR_ERR(i2s->regmap);
- 	}
- 
-@@ -918,8 +928,11 @@ static int stm32_i2s_probe(struct platform_device *pdev)
- 
- 	ret = devm_snd_dmaengine_pcm_register(&pdev->dev,
- 					      &stm32_i2s_pcm_config, 0);
--	if (ret)
-+	if (ret) {
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "PCM DMA register error %d\n", ret);
- 		return ret;
-+	}
- 
- 	/* Set SPI/I2S in i2s mode */
- 	ret = regmap_update_bits(i2s->regmap, STM32_I2S_CGFR_REG,
+ 	if (!ring || !cfg)
+ 		return -EINVAL;
++
++	ringacc = ring->parent;
+ 	if (cfg->elm_size > K3_RINGACC_RING_ELSIZE_256 ||
+ 	    cfg->mode >= K3_RINGACC_RING_MODE_INVALID ||
+ 	    cfg->size & ~K3_RINGACC_CFG_RING_SIZE_ELCNT_MASK ||
 -- 
-2.17.1
+Peter
+
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 
 _______________________________________________
