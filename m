@@ -2,83 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F34BE150EAD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 18:35:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3663D150EF3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 18:52:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vEYCCZwawcEtbFgkrXBbPLLOy4YZNLSbLyRtNzR0plg=; b=PzMDGiwuw+JkS9
-	TcJuAo2w7j/C5DX/Nke1eSBrzwBcTyHOtawvwdEsyDqaAckz/8KW4X8niYTj3IL2C5WEzhzUzXcil
-	HORr/NYySIcADpGDsaOXAq3ZcDlryhea3bGsuy7jL4ly77OHQQoGiRzw7cE6fPSaXZy+x/1W/7/E5
-	+WjYk43pJgYFpWa9ettXeufjw7/4+Y422fATZOoGtcBqNqQtjO/jYCWLubDUOHVFIKwniM+TLK3Uj
-	KNOtrlO56tOzUOf42/4XmK+s5IOjKhqEHt0p2HisTB/akTTvht1rSpu1ETjTZ/ZCuG1wJfJXFBcQu
-	xX3umonubHRmeSHVJD3g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rAWBPOoN/YvHI2PHJzw4oTvQPNOI+++nW7p35z3GU1o=; b=Ex0eIARjhRO9I9
+	JkT4sNMUNygL3C6KLzMWlypwZbLtCljGxOQO12ZauBo2QCdXQwSVyvsM+kYQNSlBrArSQR7bOdoP9
+	F13cbZ8uMRYXYs3vHifpWLK2xMto70+LKfFASRniKekBBatZ2PEohrHBnmGkuCziBUtilgb3kIGDg
+	lniYMXDbCqxLbQlCbxmEnfT9gkD88m1bGXp3SIAz4HOKXf9WCP7nm9PT2a3QuWnikGvhb78Oy646w
+	18ilJHTct5D/E2vYCu0EU2lS1tuXFmK4sBIjWGOMC4E0CyEzm02KHwfvDGKV86Mk1QHwf9Ogcqxjs
+	4LjSgtBhyi3R8nMOz/Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyfcv-0000HX-HI; Mon, 03 Feb 2020 17:35:13 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iyftZ-0005jz-QO; Mon, 03 Feb 2020 17:52:25 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyfcm-00080t-U2
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 17:35:06 +0000
-Received: by mail-pf1-x444.google.com with SMTP id k29so7913825pfp.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Feb 2020 09:35:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=/2GnHgYEod44KNh5O907qr0Dr3tZt31Xm1Pio0+BUtU=;
- b=T3/dlEbss69QCdMNMPoph/AGjrLOJywnCDQUDC2crHYwLXIj8gbLjE1Mhh/0AS4Q5i
- 1AN7ohRk8xc5mWmOgUpM/XP9ETNjwFHjATcQYoN/y6IcTcbeIIKbLoOOtplCNuIlIw6C
- lt1Al/0QHs4pwiYD+e5S5S6DGygimX8cRV8E3qtmVn0c98qAteldebnd1oAOpSZWRLfg
- X4hvg2OAdCgQIqlJrR5SZ3IxW3t0aZSQGeM7PWTCFvoCLYqq0Cq4KzyCL5katLBoLA+4
- hc+utViSzEbgLYkXa9iZmRJ+ZawjFNhlcJ0L48IDNx6YU3dp1OVy3uPvyrzXLMKfamqU
- h+qQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/2GnHgYEod44KNh5O907qr0Dr3tZt31Xm1Pio0+BUtU=;
- b=nXX9r78oi94H3wHnRYNBgEexpnb8K3DebedRXHIItN85A42MURckTNwF/Qkl4pPlHS
- PgQMyCiLVGHha2vG2XJSJhM/n+If2o5F95v/ilUhZT76Cfug/4+o4Mw0Ux07qRQSQy/N
- hAac7KkNrSSyI9FdVMKOsYLn3UPV8bKA5fmDeVekExFOHmF9swotC3d55VUnFSTsAnDG
- D6inNa3UdR5hd8/U8M+N7SCj7WixDjlcXGQnZEXlnzopJwwOOSYkqVos9JIxeHdHecFS
- MboWnNYRYS/bEpsXKhHMcv0/023CHDsmWtcjN0l5jC+1ozTajBwhRat40rh+xNnRMs3+
- T5Nw==
-X-Gm-Message-State: APjAAAUPHsEE/dj9F+WRc7ODF6f2RCiiTmLYFmai7JJFra80CSW59iwe
- 1wX/LSB01sGWDjm934xVGlE0IEwZP0A=
-X-Google-Smtp-Source: APXvYqwHjAZO5+aiba+vTO0oc2CApTMEtmAA4xfo4oGHCw/dpaiKyNl42GAFhoYlHtXUvoagPsmxZg==
-X-Received: by 2002:a63:7e58:: with SMTP id o24mr25705879pgn.214.1580751302915; 
- Mon, 03 Feb 2020 09:35:02 -0800 (PST)
-Received: from builder (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id s18sm700055pgn.34.2020.02.03.09.35.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 03 Feb 2020 09:35:02 -0800 (PST)
-Date: Mon, 3 Feb 2020 09:35:00 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Rakesh Pillai <pillair@codeaurora.org>
-Subject: Re: [PATCH v5] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
- device node
-Message-ID: <20200203173500.GB3948@builder>
-References: <1580281223-2759-1-git-send-email-pillair@codeaurora.org>
+ id 1iyftT-0005jB-2B
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 17:52:21 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 013HdDWu016570; Mon, 3 Feb 2020 18:52:14 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=j0xx/Vr40+FFZVuRXMdLMe0ryqfyTZ4MJeuGhZs3NCI=;
+ b=c3YWFaz0wjzexJu3xgWel9YKC4LCUOUWdq0d2hsPb+13B8qqPNXyssXku/9H30CZ6J+s
+ +JnlzRe9N8Gi7852TWcnss2azJf8tIvqiSWLmDtNFrLzS/e2pz+dJKW96/NNq/943yKw
+ 8CI0xGZc/+FQdn9HQvcKhK0C5Vn7TL7YRT+bnhQ34sarGybkZOkLGs+BH1X/bJD9BjLZ
+ Tff1kNgNImVuRXsnfUkB/s6Cwjg+bF1JuCA2NCr+HAwPndaUuwLQ4QOSd5vFj+7+qMiM
+ NunqxFmiXWfv98fOB/iQnl4SdJonVyG9UXvdgD3qp1ZXktarHpz68wiZoWHKVONbNYrI Ng== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xw13nj858-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 03 Feb 2020 18:52:14 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C567510002A;
+ Mon,  3 Feb 2020 18:52:09 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B5CCA2C7B79;
+ Mon,  3 Feb 2020 18:52:09 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 3 Feb 2020 18:52:09
+ +0100
+From: Alain Volmat <alain.volmat@st.com>
+To: <wsa@the-dreams.de>, <pierre-yves.mordret@st.com>
+Subject: [PATCHv2] i2c: i2c-stm32f7: allow controller to be wakeup-source
+Date: Mon, 3 Feb 2020 18:52:08 +0100
+Message-ID: <1580752328-26009-1-git-send-email-alain.volmat@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1580281223-2759-1-git-send-email-pillair@codeaurora.org>
-User-Agent: Mutt/1.12.2 (2019-09-21)
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-03_06:2020-02-02,
+ 2020-02-03 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_093505_014761_3125C53B 
-X-CRM114-Status: GOOD (  16.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200203_095219_462581_D09E2E22 
+X-CRM114-Status: GOOD (  21.29  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,103 +92,273 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org
+Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org, alain.volmat@st.com,
+ linux-i2c@vger.kernel.org, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 28 Jan 23:00 PST 2020, Rakesh Pillai wrote:
+Allow the i2c-stm32f7 controller to become a wakeup-source
+of the system. In such case, when a slave is registered to the
+I2C controller, receiving a I2C message targeting that registered
+slave address wakes up the suspended system.
 
-> Add device node for the ath10k SNOC platform driver probe
-> and add resources required for WCN3990 on sc7180 soc.
-> 
-> Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
-> ---
->  arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
->  arch/arm64/boot/dts/qcom/sc7180.dtsi    | 28 ++++++++++++++++++++++++++++
->  2 files changed, 33 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> index 388f50a..167f68ac 100644
-> --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-> @@ -287,6 +287,11 @@
->  	vdda-pll-supply = <&vreg_l4a_0p8>;
->  };
->  
-> +&wifi {
-> +	status = "okay";
-> +	qcom,msa-fixed-perm;
-> +};
-> +
->  /* PINCTRL - additions to nodes defined in sc7180.dtsi */
->  
->  &qspi_clk {
-> diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> index 8011c5f..0a00c94 100644
-> --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-> @@ -75,6 +75,12 @@
->  			reg = <0x0 0x80900000 0x0 0x200000>;
->  			no-map;
->  		};
-> +
-> +		wlan_fw_mem: memory@93900000 {
-> +			compatible = "removed-dma-pool";
+In order to be able to wake-up, the I2C controller DT node
+must have the property wakeup-source defined and a slave
+must be registered.
 
-Sorry for not spotting this earlier, the "removed-dma-pool" compatible
-is a downstream thing and isn't defined upstream.
+Signed-off-by: Alain Volmat <alain.volmat@st.com>
+---
+ v2: - enclose _suspend and _resume functions (and related) with
+       #ifdef CONFIG_PM_SLEEP
+     - remove the __maybe_unused for functions enclosed with CONFIG_PM_SLEEP
+     - move stm32f7_i2c_enable_wakeup function upper in the file to avoid
+       having a prototype.
+ 
+ drivers/i2c/busses/i2c-stm32f7.c | 107 +++++++++++++++++++++++++------
+ 1 file changed, 86 insertions(+), 21 deletions(-)
 
-> +                     no-map;
-> +                     reg = <0 0x93900000 0 0x200000>;
+diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
+index 5c3e8ac6ad92..378956ac6d1d 100644
+--- a/drivers/i2c/busses/i2c-stm32f7.c
++++ b/drivers/i2c/busses/i2c-stm32f7.c
+@@ -29,6 +29,7 @@
+ #include <linux/platform_device.h>
+ #include <linux/pinctrl/consumer.h>
+ #include <linux/pm_runtime.h>
++#include <linux/pm_wakeirq.h>
+ #include <linux/regmap.h>
+ #include <linux/reset.h>
+ #include <linux/slab.h>
+@@ -49,6 +50,7 @@
+ 
+ /* STM32F7 I2C control 1 */
+ #define STM32F7_I2C_CR1_PECEN			BIT(23)
++#define STM32F7_I2C_CR1_WUPEN			BIT(18)
+ #define STM32F7_I2C_CR1_SBC			BIT(16)
+ #define STM32F7_I2C_CR1_RXDMAEN			BIT(15)
+ #define STM32F7_I2C_CR1_TXDMAEN			BIT(14)
+@@ -301,6 +303,7 @@ struct stm32f7_i2c_msg {
+  * @dma: dma data
+  * @use_dma: boolean to know if dma is used in the current transfer
+  * @regmap: holds SYSCFG phandle for Fast Mode Plus bits
++ * @wakeup_src: boolean to know if the device is a wakeup source
+  */
+ struct stm32f7_i2c_dev {
+ 	struct i2c_adapter adap;
+@@ -323,6 +326,7 @@ struct stm32f7_i2c_dev {
+ 	struct stm32_i2c_dma *dma;
+ 	bool use_dma;
+ 	struct regmap *regmap;
++	bool wakeup_src;
+ };
+ 
+ /*
+@@ -1691,6 +1695,24 @@ static int stm32f7_i2c_smbus_xfer(struct i2c_adapter *adapter, u16 addr,
+ 	return ret;
+ }
+ 
++static void stm32f7_i2c_enable_wakeup(struct stm32f7_i2c_dev *i2c_dev,
++				      bool enable)
++{
++	void __iomem *base = i2c_dev->base;
++	u32 mask = STM32F7_I2C_CR1_WUPEN;
++
++	if (!i2c_dev->wakeup_src)
++		return;
++
++	if (enable) {
++		device_set_wakeup_enable(i2c_dev->dev, true);
++		stm32f7_i2c_set_bits(base + STM32F7_I2C_CR1, mask);
++	} else {
++		device_set_wakeup_enable(i2c_dev->dev, false);
++		stm32f7_i2c_clr_bits(base + STM32F7_I2C_CR1, mask);
++	}
++}
++
+ static int stm32f7_i2c_reg_slave(struct i2c_client *slave)
+ {
+ 	struct stm32f7_i2c_dev *i2c_dev = i2c_get_adapdata(slave->adapter);
+@@ -1717,6 +1739,9 @@ static int stm32f7_i2c_reg_slave(struct i2c_client *slave)
+ 	if (ret < 0)
+ 		return ret;
+ 
++	if (!stm32f7_i2c_is_slave_registered(i2c_dev))
++		stm32f7_i2c_enable_wakeup(i2c_dev, true);
++
+ 	if (id == 0) {
+ 		/* Configure Own Address 1 */
+ 		oar1 = readl_relaxed(i2c_dev->base + STM32F7_I2C_OAR1);
+@@ -1758,6 +1783,9 @@ static int stm32f7_i2c_reg_slave(struct i2c_client *slave)
+ 
+ 	ret = 0;
+ pm_free:
++	if (!stm32f7_i2c_is_slave_registered(i2c_dev))
++		stm32f7_i2c_enable_wakeup(i2c_dev, false);
++
+ 	pm_runtime_mark_last_busy(dev);
+ 	pm_runtime_put_autosuspend(dev);
+ 
+@@ -1791,8 +1819,10 @@ static int stm32f7_i2c_unreg_slave(struct i2c_client *slave)
+ 
+ 	i2c_dev->slave[id] = NULL;
+ 
+-	if (!(stm32f7_i2c_is_slave_registered(i2c_dev)))
++	if (!stm32f7_i2c_is_slave_registered(i2c_dev)) {
+ 		stm32f7_i2c_disable_irq(i2c_dev, STM32F7_I2C_ALL_IRQ_MASK);
++		stm32f7_i2c_enable_wakeup(i2c_dev, false);
++	}
+ 
+ 	pm_runtime_mark_last_busy(i2c_dev->dev);
+ 	pm_runtime_put_autosuspend(i2c_dev->dev);
+@@ -1879,6 +1909,9 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
+ 		return irq_error ? : -ENOENT;
+ 	}
+ 
++	i2c_dev->wakeup_src = of_property_read_bool(pdev->dev.of_node,
++						    "wakeup-source");
++
+ 	i2c_dev->clk = devm_clk_get(&pdev->dev, NULL);
+ 	if (IS_ERR(i2c_dev->clk)) {
+ 		dev_err(&pdev->dev, "Error: Missing controller clock\n");
+@@ -1985,6 +2018,16 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
+ 		goto clk_free;
+ 	}
+ 
++	if (i2c_dev->wakeup_src) {
++		device_set_wakeup_capable(i2c_dev->dev, true);
++
++		ret = dev_pm_set_wake_irq(i2c_dev->dev, irq_event);
++		if (ret) {
++			dev_err(i2c_dev->dev, "Failed to set wake up irq\n");
++			goto clr_wakeup_capable;
++		}
++	}
++
+ 	platform_set_drvdata(pdev, i2c_dev);
+ 
+ 	pm_runtime_set_autosuspend_delay(i2c_dev->dev,
+@@ -2014,6 +2057,13 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
+ 	pm_runtime_set_suspended(i2c_dev->dev);
+ 	pm_runtime_dont_use_autosuspend(i2c_dev->dev);
+ 
++	if (i2c_dev->wakeup_src)
++		dev_pm_clear_wake_irq(i2c_dev->dev);
++
++clr_wakeup_capable:
++	if (i2c_dev->wakeup_src)
++		device_set_wakeup_capable(i2c_dev->dev, false);
++
+ 	if (i2c_dev->dma) {
+ 		stm32_i2c_dma_free(i2c_dev->dma);
+ 		i2c_dev->dma = NULL;
+@@ -2032,6 +2082,15 @@ static int stm32f7_i2c_remove(struct platform_device *pdev)
+ 	i2c_del_adapter(&i2c_dev->adap);
+ 	pm_runtime_get_sync(i2c_dev->dev);
+ 
++	if (i2c_dev->wakeup_src) {
++		dev_pm_clear_wake_irq(i2c_dev->dev);
++		/*
++		 * enforce that wakeup is disabled and that the device
++		 * is marked as non wakeup capable
++		 */
++		device_init_wakeup(i2c_dev->dev, false);
++	}
++
+ 	pm_runtime_put_noidle(i2c_dev->dev);
+ 	pm_runtime_disable(i2c_dev->dev);
+ 	pm_runtime_set_suspended(i2c_dev->dev);
+@@ -2073,8 +2132,8 @@ static int __maybe_unused stm32f7_i2c_runtime_resume(struct device *dev)
+ 	return 0;
+ }
+ 
+-static int __maybe_unused
+-stm32f7_i2c_regs_backup(struct stm32f7_i2c_dev *i2c_dev)
++#ifdef CONFIG_PM_SLEEP
++static int stm32f7_i2c_regs_backup(struct stm32f7_i2c_dev *i2c_dev)
+ {
+ 	int ret;
+ 	struct stm32f7_i2c_regs *backup_regs = &i2c_dev->backup_regs;
+@@ -2095,8 +2154,7 @@ stm32f7_i2c_regs_backup(struct stm32f7_i2c_dev *i2c_dev)
+ 	return ret;
+ }
+ 
+-static int __maybe_unused
+-stm32f7_i2c_regs_restore(struct stm32f7_i2c_dev *i2c_dev)
++static int stm32f7_i2c_regs_restore(struct stm32f7_i2c_dev *i2c_dev)
+ {
+ 	u32 cr1;
+ 	int ret;
+@@ -2127,41 +2185,48 @@ stm32f7_i2c_regs_restore(struct stm32f7_i2c_dev *i2c_dev)
+ 	return ret;
+ }
+ 
+-static int __maybe_unused stm32f7_i2c_suspend(struct device *dev)
++static int stm32f7_i2c_suspend(struct device *dev)
+ {
+ 	struct stm32f7_i2c_dev *i2c_dev = dev_get_drvdata(dev);
+ 	int ret;
+ 
+ 	i2c_mark_adapter_suspended(&i2c_dev->adap);
+-	ret = stm32f7_i2c_regs_backup(i2c_dev);
+-	if (ret < 0) {
+-		i2c_mark_adapter_resumed(&i2c_dev->adap);
+-		return ret;
+-	}
+ 
+-	pinctrl_pm_select_sleep_state(dev);
+-	pm_runtime_force_suspend(dev);
++	if (!device_may_wakeup(dev) && !dev->power.wakeup_path) {
++		ret = stm32f7_i2c_regs_backup(i2c_dev);
++		if (ret < 0) {
++			i2c_mark_adapter_resumed(&i2c_dev->adap);
++			return ret;
++		}
++
++		pinctrl_pm_select_sleep_state(dev);
++		pm_runtime_force_suspend(dev);
++	}
+ 
+ 	return 0;
+ }
+ 
+-static int __maybe_unused stm32f7_i2c_resume(struct device *dev)
++static int stm32f7_i2c_resume(struct device *dev)
+ {
+ 	struct stm32f7_i2c_dev *i2c_dev = dev_get_drvdata(dev);
+ 	int ret;
+ 
+-	ret = pm_runtime_force_resume(dev);
+-	if (ret < 0)
+-		return ret;
+-	pinctrl_pm_select_default_state(dev);
++	if (!device_may_wakeup(dev) && !dev->power.wakeup_path) {
++		ret = pm_runtime_force_resume(dev);
++		if (ret < 0)
++			return ret;
++		pinctrl_pm_select_default_state(dev);
++
++		ret = stm32f7_i2c_regs_restore(i2c_dev);
++		if (ret < 0)
++			return ret;
++	}
+ 
+-	ret = stm32f7_i2c_regs_restore(i2c_dev);
+-	if (ret < 0)
+-		return ret;
+ 	i2c_mark_adapter_resumed(&i2c_dev->adap);
+ 
+ 	return 0;
+ }
++#endif
+ 
+ static const struct dev_pm_ops stm32f7_i2c_pm_ops = {
+ 	SET_RUNTIME_PM_OPS(stm32f7_i2c_runtime_suspend,
+-- 
+2.17.1
 
-If you swap the order of no-map and reg in this node it will look like
-all the others.
-
-
-Apart from that the patch looks good.
-
-Regards,
-Bjorn
-
-> +		};
->  	};
->  
->  	cpus {
-> @@ -1490,6 +1496,28 @@
->  
->  			#freq-domain-cells = <1>;
->  		};
-> +
-> +		wifi: wifi@18800000 {
-> +			compatible = "qcom,wcn3990-wifi";
-> +			reg = <0 0x18800000 0 0x800000>;
-> +			reg-names = "membase";
-> +			iommus = <&apps_smmu 0xc0 0x1>;
-> +			interrupts =
-> +				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
-> +				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
-> +				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
-> +				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
-> +				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
-> +				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
-> +				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
-> +				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
-> +				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
-> +				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
-> +				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
-> +				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
-> +			memory-region = <&wlan_fw_mem>;
-> +			status = "disabled";
-> +		};
->  	};
->  
->  	thermal-zones {
-> -- 
-> 2.7.4
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
