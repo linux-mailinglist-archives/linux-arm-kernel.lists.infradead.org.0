@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E6E51504AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:55:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F13D01504AE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:55:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bTt4DcIGT4xb1HhTjnuqxy2ru1KVoQQX93mbFdi2kTo=; b=O601kk/OM5Gi00
-	KVheTXMmMDs4bO0XCjWmr+G+gZvCdfCsbZU7K4ORBxH9sTjNC63u623kD+8VFYdu1XRoAi8Q1CjO5
-	nAjvKhFOjMDYhDdJL6P4nRwLze/JscLSAJ9fZFdN8ALYEIuXDc8IyyQSIgTHwkXLLaKM1T0gLyTqP
-	KNE69IJFSU5bX8YDQ4L48MijQz+Uq9lkeSG84x8LDw2OEH58TH84ST0+Zdi5/zCuI3GlVzn1gHcTf
-	QQIiKJB3a42bKoDQ2jDHTXIGGlNUXuqr+sINQ9B2N4D/Q7mdGazfLtcqmG475S+N6y2GKqMLSJmg2
-	Dr4+/EbhwV8v1TtFK/hA==;
+	List-Owner; bh=4HX2b5cwU63UdxBn51biy7vy4XmNDJRIYhdTJ07mZLQ=; b=rhXkIif6pqtlc7
+	gRz/m9yqvYHa161f92xAGEm4X9fe7KGgNOG6zbOUJShUa+LJtLzwABgRXgzboRgdTF/C8+h34PPbb
+	mTZzL5iZQNI0C8F4D92+4zgmsKNUCmRg/FHf8P8LGn5+04Ff4NHEf43jucGNt3961I3LSn9lrVnwX
+	/AjKB2BU771JmpDBHokUa2HhBm6nf7gCWJ5B5M2RmSjjqtzimyYyuZaHaHUlHS6tml6QWV9znqb4R
+	bROMGPdG1klg4C2mW6NsqfaSwTo1KktKhYMas1J7RX8BYiz56NVt0VOzp1Q8AnlpxGjWs0sfp4efo
+	Ne2mwFI6WyRuo/6yrw2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyZNb-0005xb-DC; Mon, 03 Feb 2020 10:54:59 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1iyZNw-0007B9-Be; Mon, 03 Feb 2020 10:55:20 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyZNJ-0005rb-Im
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 10:54:43 +0000
-Received: by mail-pl1-x642.google.com with SMTP id a6so5711345plm.3
+ id 1iyZNN-0005wF-OR
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 10:54:47 +0000
+Received: by mail-pg1-x543.google.com with SMTP id j4so7628443pgi.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Feb 2020 02:54:41 -0800 (PST)
+ Mon, 03 Feb 2020 02:54:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qdcfeO5K2S+Cod2DP3bBm/qVK9+LuyFJKPE+ozmP7N8=;
- b=CJ30/B5L99FeE/8A8MlJ8DKGA/bta/8h/RXH+V8BikycRyW6Yu+QA7vFAQN3U3pLTo
- KWBN8bUINxvs3p44qFmDDTyQuR/eB/f4BDttHZSdz1sjXGOrZGsd92NDm6Dxzk1c/EXZ
- fIY75n5HfljIQ/uFciOU2qzHNptH5QNJR/JNs=
+ bh=3xwqth0j0JRZwYTHk1uzdteKd9U7z+7i4HoTqeFc82U=;
+ b=KcF50IO/E4F3bV6HRoxGXWkocwgYfL4QHDNpJmohTWE7Mt/7DBO48kGOO4x1nMzBhz
+ 98VjsZNOxigAaq8KC68jlonM1+3zNOLMUu+6sJV4YMF/TBmKuIufMmi0FtKp4LG5P+Er
+ NnIDgXFEMqPXY3DorDvWeMroZ7FFro+6qfhMY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qdcfeO5K2S+Cod2DP3bBm/qVK9+LuyFJKPE+ozmP7N8=;
- b=KO9yqDjhASJrU/ctr0PW+cfCHoNEb6w37p11GGBQNgFbOnACwKX3ZF7qwNJVpvvVBA
- g5VRhQMo5SUwyzbfY/CfST71a9wEAYIxsDKITAEUsajQSORk+Mn4ejBHOZKcgcmHmzy8
- p5CHRgPzutL/SsnkX+aFZYVAOkNR2wg6sgE89tBB96vFVeAmsS3dgFkv9GgbFqK+FapG
- gNC53q1ncsNndHSiKUb1FVTPsKdNqDFXfwYVSLP8soMXyySf2pZ5dt7ns3GKlSd5TCHh
- fNY8m6B/tPXP/02SMuVKl9snhn7mG78U4drGbv3VAj8EM7CFov382O4cRU7y+2xgQV88
- hGDg==
-X-Gm-Message-State: APjAAAUm+lGfUZkT0kdU2sbyPIKgY0Vpt2lOEzZA81L/D+bR6xHc+1LV
- Z/XHjGBi/rRg82zFq9LBAYag3YZneldOjQ==
-X-Google-Smtp-Source: APXvYqwhhb++S662UhMMPJRvXKnxOT2X6ORVM0UluIGDGNCr/JKKEYwit/FK0LXKsLF0cA0obcgWSQ==
-X-Received: by 2002:a17:902:8546:: with SMTP id
- d6mr23392335plo.193.1580727280661; 
- Mon, 03 Feb 2020 02:54:40 -0800 (PST)
+ bh=3xwqth0j0JRZwYTHk1uzdteKd9U7z+7i4HoTqeFc82U=;
+ b=M0xXmwKNL1Ym5DlDggPhzMFg374jWIMUHneC63CA+3MrKL0K80VUVZxWPThtSK0xU3
+ B3lghD1Gb5OzPz4a9v9Zspla1uUInFr3QIiL9iyoi+NKN+p5QdCkQ7FU10DGdvtH97n3
+ dgtlLmjgonE3ya/QEaWXOkGYeRyQB2pom6u0cST6z8VDHUgvUse64mML8yxdCjMAU5xQ
+ ubReQxJ3/+3pMtE03B/RE7mEMfnqtTR5SD4AWOTzEoveKhaX0qxMuJG5eSpzrisk0BqW
+ 5Waie50qns5/8QwxQN8xmKMPFzeH5V+jPIwDpkuwbJnT1ypTXB9gtQbclktSvTUsgPJv
+ E5PQ==
+X-Gm-Message-State: APjAAAXE2jsY1rcc+70yNKCPGAz4ZhvV9dua3v/pixArryBpz7ra66G3
+ uknYxN3yZ3NnTrUQcDLAcUUa0M+ZRHiF0A==
+X-Google-Smtp-Source: APXvYqxeDCmLp2xff3fH5hTl0Vp+K0sL/O47c03M7tcS/eAYUTtC+GbrGGzgODOg24pRPZgw8vEESQ==
+X-Received: by 2002:a62:3304:: with SMTP id z4mr23056111pfz.79.1580727284802; 
+ Mon, 03 Feb 2020 02:54:44 -0800 (PST)
 Received: from hsinyi-z840.tpe.corp.google.com
  ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id 11sm20923835pfz.25.2020.02.03.02.54.38
+ by smtp.gmail.com with ESMTPSA id 11sm20923835pfz.25.2020.02.03.02.54.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 03 Feb 2020 02:54:40 -0800 (PST)
+ Mon, 03 Feb 2020 02:54:44 -0800 (PST)
 From: Hsin-Yi Wang <hsinyi@chromium.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 1/3] dt-bindings: arm64: dts: mediatek: Add mt8173 elm and
- hana
-Date: Mon,  3 Feb 2020 18:53:47 +0800
-Message-Id: <20200203105345.118294-2-hsinyi@chromium.org>
+Subject: [PATCH v5 2/3] arm64: dts: mt8173: add uart aliases
+Date: Mon,  3 Feb 2020 18:53:48 +0800
+Message-Id: <20200203105345.118294-3-hsinyi@chromium.org>
 X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
 In-Reply-To: <20200203105345.118294-1-hsinyi@chromium.org>
 References: <20200203105345.118294-1-hsinyi@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_025441_653204_F8A6BF10 
-X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-CacheID: sfid-20200203_025445_824048_3C9A91D7 
+X-CRM114-Status: UNSURE (   9.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,48 +107,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Elm is Acer Chromebook R13. Hana is Lenovo Chromebook. Both uses mt8173
-SoC.
+Add serial as uart aliases in mt8173.
 
 Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 ---
- .../devicetree/bindings/arm/mediatek.yaml     | 22 +++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ arch/arm64/boot/dts/mediatek/mt8173.dtsi | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/mediatek.yaml b/Documentation/devicetree/bindings/arm/mediatek.yaml
-index 4043c5046441..abc544dde692 100644
---- a/Documentation/devicetree/bindings/arm/mediatek.yaml
-+++ b/Documentation/devicetree/bindings/arm/mediatek.yaml
-@@ -84,6 +84,28 @@ properties:
-           - enum:
-               - mediatek,mt8135-evbp1
-           - const: mediatek,mt8135
-+      - description: Google Elm (Acer Chromebook R13)
-+        items:
-+          - const: google,elm-rev8
-+          - const: google,elm-rev7
-+          - const: google,elm-rev6
-+          - const: google,elm-rev5
-+          - const: google,elm-rev4
-+          - const: google,elm-rev3
-+          - const: google,elm
-+          - const: mediatek,mt8173
-+      - description: Google Hana (Lenovo Chromebook N23 Yoga, C330, 300e,...)
-+        items:
-+          - const: google,hana-rev6
-+          - const: google,hana-rev5
-+          - const: google,hana-rev4
-+          - const: google,hana-rev3
-+          - const: google,hana
-+          - const: mediatek,mt8173
-+      - description: Google Hana rev7 (Poin2 Chromebook 11C)
-+        items:
-+          - const: google,hana-rev7
-+          - const: mediatek,mt8173
-       - items:
-           - enum:
-               - mediatek,mt8173-evb
+diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+index 8b4e806d5119..790cd64aa447 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+@@ -50,6 +50,10 @@ aliases {
+ 		mdp_wdma0 = &mdp_wdma0;
+ 		mdp_wrot0 = &mdp_wrot0;
+ 		mdp_wrot1 = &mdp_wrot1;
++		serial0 = &uart0;
++		serial1 = &uart1;
++		serial2 = &uart2;
++		serial3 = &uart3;
+ 	};
+ 
+ 	cluster0_opp: opp_table0 {
 -- 
 2.25.0.341.g760bfbb309-goog
 
