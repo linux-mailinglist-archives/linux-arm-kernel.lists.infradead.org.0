@@ -2,69 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F00131509CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 16:28:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B31D8150A23
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 16:46:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R+g0R0RZfVhq8PxjpOsAD/N0KaOwejOg+KGbyMmOjQc=; b=X9IOlL+dpMpQEe
-	R1Wbo8dWMs6qOj76wPfe+EX6w8eoY/AvWrpMgDtBPAs4hmdP+Z9eXxx5DYbI4f3VCb7723yR900yO
-	AniEaG3Yn8OzQLfBEfWxoGgjh6wJbijHkwo+hwxXqnjiUqSAdybZ9c3TliqXHFUyX5HZTRedNxqbo
-	g39Rq42bSWuefteV5kJQgjaOqc2w1SNhnelhRG8iI7ovM49zi4LEFSMHdNcbMrcLwSzYciY9Cjxuk
-	rGEiLZb+c4yCZSZ13tRj2CLQbu2xWzQ7uLg7k6Ly+t/DLID8lfVCQpd4YbTH7JAaZSxrLP6AhE1tX
-	uT3mnJ4Ww9Dz9kaUU7OQ==;
+	List-Owner; bh=eaxbneFDLUDoAtFAk4twJUXosOIGuXjkhonyxX0nAhM=; b=ec6Qq6hPLqW4yz
+	YlADJVDifMR2PTXuly6YsFJk8s+aAM23EVKwjcnM5PElMU1HWwoVfnGF8IuA6KF+isxJ037blsoPp
+	YD5JBQB2+3TaktEbDGY6e3/H8wi3g/EqGygW/lNID0kp6coVgL9+3fRnemg01O+oQWHMZEJlqlzhH
+	AJdewqkGKU/hG9Z4L2cdHfcy/loCMquIJ3Nvag7WSr77BQao92DC1dwUKyu4+AsCZo1Yo/kYP+S2O
+	dqyKjSTCcX72ctpFES7Q8EiMo6jyQ5p9RlwWGu3rB08XP7xSa9ZiDe3QugRhtMOR5A0uvC/CXGXb/
+	cdzmm/BTTFtT5kd6W2zQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iydeB-0002p9-HO; Mon, 03 Feb 2020 15:28:23 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1iydvJ-00015B-Nq; Mon, 03 Feb 2020 15:46:05 +0000
+Received: from mail-wm1-f68.google.com ([209.85.128.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyde5-0002p3-8I
- for linux-arm-kernel@bombadil.infradead.org; Mon, 03 Feb 2020 15:28:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=3iiJ/JICrF5NTxzn7wuT2IsOPnz4+UqOFdlWvNO3Zf0=; b=Zn/mb1y/gxBCrOjQU5XbMBdH7K
- sg9zPoWmdgz5bfyJTJQ3kuTg6J0Q+ZDJ9PG1Z1+nPInR+ImVYKmDOgR6XAvWkcjt5EEO1FuK6WKwo
- tKEM/LAcge1kaNz5o+cCB3cMgFrArlxCmHJeAvR6aD3arfH/cJ96wBctqGpKG1JmAGEETundU3yXB
- JU8m+Jc1MSNMszL8s0Pq65IfXUBSmQsSet6JBzvMY9yoPOCJetbODoSnfmOUEUVFMpCe62k8KnJKl
- CXG0huLwJb0TKfjxJpLpuMJ+4URsDxnrE+fZbOkU2pO24olcalb1ehEZA0ALcGl99QNyN9q3RQsq3
- wHx3OFSw==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyddy-0006hm-VW; Mon, 03 Feb 2020 15:28:11 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id AC6913011E0;
- Mon,  3 Feb 2020 16:26:22 +0100 (CET)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id C4BA22B662F00; Mon,  3 Feb 2020 16:28:07 +0100 (CET)
-Date: Mon, 3 Feb 2020 16:28:07 +0100
-From: Peter Zijlstra <peterz@infradead.org>
-To: Waiman Long <longman@redhat.com>
-Subject: Re: [PATCH v8 4/5] locking/qspinlock: Introduce starvation avoidance
- into CNA
-Message-ID: <20200203152807.GK14914@hirez.programming.kicks-ass.net>
-References: <20200124075235.GX14914@hirez.programming.kicks-ass.net>
- <2c6741c5-d89d-4b2c-cebe-a7c7f6eed884@redhat.com>
- <48ce49e5-98a7-23cd-09f4-8290a65abbb5@redhat.com>
- <8D3AFB47-B595-418C-9568-08780DDC58FF@oracle.com>
- <714892cd-d96f-4d41-ae8b-d7b7642a6e3c@redhat.com>
- <1669BFDE-A1A5-4ED8-B586-035460BBF68A@oracle.com>
- <20200125111931.GW11457@worktop.programming.kicks-ass.net>
- <F32558D8-4ACB-483A-AB4C-F565003A02E7@oracle.com>
- <20200203134540.GA14879@hirez.programming.kicks-ass.net>
- <6d11b22b-2fb5-7dea-f88b-b32f1576a5e0@redhat.com>
+ id 1iydv1-0000vS-CU; Mon, 03 Feb 2020 15:45:48 +0000
+Received: by mail-wm1-f68.google.com with SMTP id t14so17747260wmi.5;
+ Mon, 03 Feb 2020 07:45:45 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=i4K3Yw7s0/p2VRy7WZBsheWIHTlpjbUAlC7ufzYvY3E=;
+ b=ouhrK/ki9fL5EGA3f9ARDDTocSx8KpKPYw4igsVHriGfaVq4wWYj4hw6FCX3zlt3My
+ rahn3UmMj9qYbuFyMP2MV3nLLICoJ4FQDEMsmKpqAiGo4x86fi9yaBbJ5bf8BFBAhZDy
+ F72/mI3Q0Dj9zjYbyfQxrgvn7mlZ+YMjR0WON2cASzUQSdBYb2VDVWoYBBDnmk5LpCRe
+ v1KFBvo69+nIsvwoKnTVetP5xQKBvp+xzFVkrC8rDfNsVzB76DRf0bYR7/9QKPzqV377
+ XEVPIiirp07c5xD8WqwYbI6sXl788bYkgbfr+ONr/IRLrma+DUcE5ttJ58w/HWBda+oa
+ yYdA==
+X-Gm-Message-State: APjAAAXTuazjDitIXtAMSq1ebxXg6jCGuC34b1z+8tieXy+j6aiFYR+V
+ z6JEWMq92uWwaCNU/iRBFw==
+X-Google-Smtp-Source: APXvYqzUC53KksT1fJG8MNOZOKWNr3IVl/W0eL/KQgTAaS4Tm5DvJl1BsknoQ94mvSkDJuxs3SUf1Q==
+X-Received: by 2002:a1c:5441:: with SMTP id p1mr31595887wmi.161.1580744744243; 
+ Mon, 03 Feb 2020 07:45:44 -0800 (PST)
+Received: from rob-hp-laptop ([212.187.182.163])
+ by smtp.gmail.com with ESMTPSA id f189sm25558921wmf.16.2020.02.03.07.45.42
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 03 Feb 2020 07:45:43 -0800 (PST)
+Received: (nullmailer pid 17059 invoked by uid 1000);
+ Mon, 03 Feb 2020 15:45:42 -0000
+Date: Mon, 3 Feb 2020 15:45:42 +0000
+From: Rob Herring <robh@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [RFC PATCH v2 01/10] dt-bindings: mtd: add rockchip nand
+ controller bindings
+Message-ID: <20200203154542.GA27866@bogus>
+References: <20200124163001.28910-1-jbx6244@gmail.com>
+ <20200124163001.28910-2-jbx6244@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <6d11b22b-2fb5-7dea-f88b-b32f1576a5e0@redhat.com>
+In-Reply-To: <20200124163001.28910-2-jbx6244@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200203_074547_425865_373ACF43 
+X-CRM114-Status: GOOD (  16.42  )
+X-Spam-Score: 0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (0.7 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.68 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.68 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,43 +91,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Hanjun Guo <guohanjun@huawei.com>,
- Arnd Bergmann <arnd@arndb.de>, dave.dice@oracle.com,
- Jan Glauber <jglauber@marvell.com>, x86@kernel.org,
- Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
- linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, hpa@zytor.com,
- Alex Kogan <alex.kogan@oracle.com>, Steven Sistare <steven.sistare@oracle.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Daniel Jordan <daniel.m.jordan@oracle.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, heiko@sntech.de,
+ richard@nod.at, shawn.lin@rock-chips.com, linux-kernel@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, linux-mtd@lists.infradead.org,
+ miquel.raynal@bootlin.com, yifeng.zhao@rock-chips.com,
+ linux-arm-kernel@lists.infradead.org, vigneshr@ti.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 03, 2020 at 09:59:12AM -0500, Waiman Long wrote:
-> On 2/3/20 8:45 AM, Peter Zijlstra wrote:
-
-> > Presumably you have a workload where CNA is actually a win? That is,
-> > what inspired you to go down this road? Which actual kernel lock is so
-> > contended on NUMA machines that we need to do this?
+On Fri, Jan 24, 2020 at 05:29:52PM +0100, Johan Jonker wrote:
+> Add the Rockchip NAND controller bindings.
 > 
-> Today, a 2-socket Rome server can have 128 cores and 256 threads. If we
-> scale up more, we could easily have more than 1000 threads in a system.
-> With that many logical cpus available, it is easy to envision some heavy
-> spinlock contention can happen fairly regularly. This patch can
-> alleviate the congestion and improve performance under that
-> circumstance. Of course, the specific locks that are contended will
-> depend on the workloads.
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  .../bindings/mtd/rockchip,nand-controller.yaml     | 92 ++++++++++++++++++++++
+>  1 file changed, 92 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml b/Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml
+> new file mode 100644
+> index 000000000..5c725f972
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mtd/rockchip,nand-controller.yaml
+> @@ -0,0 +1,92 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mtd/rockchip,nand-controller.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Rockchip NAND Controller Device Tree Bindings
+> +
+> +allOf:
+> +  - $ref: "nand-controller.yaml#"
+> +
+> +maintainers:
+> +  - Heiko Stuebner <heiko@sntech.de>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - rockchip,px30-nand-controller
+> +      - rockchip,rk3066-nand-controller
+> +      - rockchip,rk3228-nand-controller
+> +      - rockchip,rk3288-nand-controller
+> +      - rockchip,rk3308-nand-controller
+> +      - rockchip,rk3368-nand-controller
+> +      - rockchip,rv1108-nand-controller
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    minItems: 1
+> +    maxItems: 2
+> +
+> +  clock-names:
+> +    minItems: 1
+> +    items:
+> +      - const: hclk_nandc
+> +      - const: clk_nandc
+> +
+> +patternProperties:
+> +  "^nand@[a-f0-9]+$":
+> +    type: object
+> +    properties:
+> +      reg:
+> +        minimum: 0
+> +        maximum: 3
+> +
+> +      nand-is-boot-medium: true
+> +
+> +      rockchip,idb-res-blk-num:
 
-Not the point. If there isn't an issue today, we don't have anything to
-fix.
+What is idb? Rather than define, maybe just 'rockchip,boot-blks'?
 
-Furthermore, we've always adressed specific issues by looking at the
-locking granularity, first.
+> +        minimum: 2
 
-So again, what specific lock inspired all these patches?
+is there a max?
+
+> +        default: 16
+> +        allOf:
+> +        - $ref: /schemas/types.yaml#/definitions/uint32
+> +        description:
+> +          For legacy devices where the bootrom can only handle 24 bit BCH/ECC.
+> +          If specified it indicates the number of erase blocks in use by
+> +          the bootloader that need a lower BCH/ECC setting.
+> +          Only used in combination with 'nand-is-boot-medium'.
+> +
+> +    additionalProperties: false
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/clock/rk3188-cru-common.h>
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/interrupt-controller/irq.h>
+> +    nandc: nand-controller@10500000 {
+> +      compatible = "rockchip,rk3066-nand-controller";
+> +      reg = <0x10500000 0x4000>;
+> +      interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
+> +      clocks = <&cru HCLK_NANDC0>;
+> +      clock-names = "hclk_nandc";
+> +      #address-cells = <1>;
+> +      #size-cells = <0>;
+> +
+> +      nand@0 {
+> +        reg = <0>;
+> +        nand-is-boot-medium;
+> +      };
+> +    };
+> +
+> +...
+> -- 
+> 2.11.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
