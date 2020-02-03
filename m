@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D95B15084E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:23:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F88815086A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:31:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YuhFQHclL8w5jmt4pPMkp/DML3SCfOC7NIckPWXeZnk=; b=RXVuNDbeN6pTTq
-	VM92qNaY8bxNG/PMHYQzOeKCuTnuHkZjW4T2Mtac+ZYi28ImXIi5VtjO+lEGgXQZVyUjyZ9M0JDTb
-	aFWZyRkpTD8Obvefk2yrsdGhlP2pQ8vpGCFo3ZO0RA7Va9l6SDBGFfvjccmQV0WxgdbDsaOwv9iUY
-	y82wAJ6RZCB4vuLkZOUICx9mbsoWxDDhf3vsYgDQItgfepmQUg1U0kREiAvHLH25Pu1yNELrTRFQd
-	H6V9bUgQkmEMazAekWLnUD/TzgMCa0OxqJPpxd6tbXF+goOiHir2w4l8WWJoxRuCuK6AkW6e4/Iax
-	Tp6HZ8T8avAhj0QIECrQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eIz5JCzZmrD2nbyr5WJXD18FWY2pdLT/iPbv94Uvgec=; b=Qrv1jNBPOFLcSi
+	3C/jqJk7t6C1vBkmfemODZUNIm4z2jhyjlZ7Vyc+FZ59yT0A0vPqrBkSMIlqDMvz4wteaKw7BdLgv
+	er7u0LNoSHvHRrnUHHb5IySzek+KNWC06C321k7w2dVBTFDgxhaZbSaYi1riGEmr7TrQiypIOMCM9
+	gNpEzR/LmJPjWswdJY/xM2EdNNmYhZQwbeADznwV+XI3P4XqnNfNSDzYYINpaI4eeY0zQks0qEnWl
+	ukaEJyyUfjJSa/L5spBq5zd+PSOhIbvsYXhv+iM4Ux0n4LiuTlzJ3S0+SBzcRnmTEq5T7DQl38rwf
+	ES2FNqR7bVmFW9A6rChg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyccq-0000Uz-Vr; Mon, 03 Feb 2020 14:22:57 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1iycl7-0003hY-Lb; Mon, 03 Feb 2020 14:31:29 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyccj-0000UI-Bj
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:22:50 +0000
-Received: by mail-lf1-x144.google.com with SMTP id f24so9839628lfh.3
+ id 1iycl0-0003hF-4w
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:31:23 +0000
+Received: by mail-wr1-x444.google.com with SMTP id k11so18417095wrd.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Feb 2020 06:22:48 -0800 (PST)
+ Mon, 03 Feb 2020 06:31:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cQyJZrqDrPD9QQGrUv31P1u0hJiwjVoo5AE0F4uuGCQ=;
- b=aM+vDHpiHu7ZsP9uDCCkEBBjYhrgy6/xxq12THpUqTWsI7iZ+ha8+f2DUT/mgRoIOk
- GJ1cP3I5cf8FnLeqU98LZvLmNys2gevwmDWhWAvr4iGNlkTSdHOCC/j0jGUN6YXuyHR1
- OyE1zXcPvWfmNOWhwybZcPG1xzYo2aOoK3hrsjUlnvPcTWTX1DayvpleSvTg7qhRUvjr
- t/9YPUT7lbSx6q54nf1EtBO/tr/Ov9M2XIAN/srNDz54BpYSaBou9f/QFqVV1YvRN4f4
- s6jDsGcUf+m5j2CSUBKyzmrx/37bsztcQRKUWG8Bt1FwUSp83I7Fn6FCpfnYLgExGhkf
- 1njQ==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nNoMOwJeW8EgketgclxMAlr5i9qU0i3JZKIs7PFn1Vg=;
+ b=EtSDrviMMBX4kOtDykNCJ03p8JV1PS7RyBaz9tvnNPoHM4IbRcZhBtzcuYPpVwB0rY
+ aj2SjTWyf3pKQ7KeX87hGLmuV6UZl9SFp8/BTqqQLkmPn31mj3ZYlAV9rl43fGlcIFT9
+ UcNLBLF150Z559N5By6kgLzLUwPaZjs3aNH+VwRntQKSaswBlrGHpXMjVzBdw/fCK7Sm
+ BR3z3y9l8AmKrY6rdgrfR1DWU7t7lBOYjZYE7PwWsvMkV236FMtapVFKwGfFAcG+Rd+t
+ LTV7R65HwngGvuqo+4HUH1AHh3UK7U620h+VHzaHie0avbUfbglWOv7I+A85bP9gdxE7
+ UnSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cQyJZrqDrPD9QQGrUv31P1u0hJiwjVoo5AE0F4uuGCQ=;
- b=tOT6bHPegknuPBIwpYz6mrLNc7FNRT/sjIusq1ZWSyhNGkx9DgF5WFAN4k9KN/S8K0
- 2vEbabmqtUSQXuekyd/lk8xkQDK7c4FwbL9+1mNGz2IUpleUwXYkJJr5FeGqv0fpQaPd
- F9XD+8o4IZYTIhdAb1w14ohlvtgWZHxRRPNY077bisXyAyAXwvmmEuKjZeXf+WuV9Dz2
- N3mam7Ufg636Pr2ymU750GVoPJI48UzhP9G7HjR+InIUcZehH/m5XlYw1AtP5MC9YQFH
- uUSsp+faRyqmKdY+4ZdlhCVA3ZNjsa3k3HgZTGHtLI9WcIgqglu8wXx0ZfVXUryHjuWK
- lh+A==
-X-Gm-Message-State: APjAAAUX+P2oIwgEBZ9OwYeOQEvd6ZYO45+ilJutaxtjwCq+wigvPGvT
- BWBxzZH3qdDCzvVdHyS1Isiz70UkdgN/XH377v0=
-X-Google-Smtp-Source: APXvYqxu3RquYZLbeVnhZXAa2l6u5wyw7ijwh/U3Xd58fv1kHVLoV2qoyvjjNMMdryAAt03QZsjjKAB8CVu91pU+HeE=
-X-Received: by 2002:a19:3f51:: with SMTP id m78mr11975049lfa.70.1580739762842; 
- Mon, 03 Feb 2020 06:22:42 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=nNoMOwJeW8EgketgclxMAlr5i9qU0i3JZKIs7PFn1Vg=;
+ b=MxuGS71xtCoLixtGhz09RS/1HHMW41QlgJ+BdaTKGiiXhRrtKe0dcDBakZJ8sZBrfh
+ T0u0xFhT06y0vLkdxXEI6KmL+YSxqMIXe+x3UxqWTclHUiOfwxlqvyKzgfTX/gff9b9b
+ og6aJAjeLqCG08AFIxDHy2yeZnAcyi2Sio3T1L3ScfoLyfi+j9W4aANUgwihvW0NNEyD
+ qYbWYvijZONVQwJaafuCyBKkPd8FbvWlV1vC9f2ScDv4noHviyfktdMZdfEkwfQjFHqf
+ UN1uxZELwHwnlHkw1yeMWEjVzb9zEWOjXmMofVX/jpNkMGfkD4bovE8GS9Ham4RkHV5P
+ w0Fg==
+X-Gm-Message-State: APjAAAUmrzu7PeTxcnr++jcljUcV04VGb62v6YkWqi2A67sYzoKSP7tw
+ Fu6EFZ8vyqi0APmCzkR/lO6o6Xcp
+X-Google-Smtp-Source: APXvYqxlS8OBilqfV+m5qHqprzhR41Tb/xT/mrBGW7vYc5+COIwBydhOl3a+0mEeu4J7356ynIiytQ==
+X-Received: by 2002:a5d:56ca:: with SMTP id m10mr16714227wrw.313.1580740279846; 
+ Mon, 03 Feb 2020 06:31:19 -0800 (PST)
+Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
+ by smtp.gmail.com with ESMTPSA id r6sm26388213wrq.92.2020.02.03.06.31.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 03 Feb 2020 06:31:18 -0800 (PST)
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: [PATCH] soc/tegra: fuse: Fix build with Tegra194 configuration
+Date: Mon,  3 Feb 2020 15:31:14 +0100
+Message-Id: <20200203143114.3967295-1-thierry.reding@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-References: <20200202193014.107003-1-stefan@agner.ch>
-In-Reply-To: <20200202193014.107003-1-stefan@agner.ch>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Mon, 3 Feb 2020 11:22:33 -0300
-Message-ID: <CAOMZO5CRwOpNUtUqTmdvV0Yz=fRadjYwpv19KZyhdc-ea0+_ZA@mail.gmail.com>
-Subject: Re: [PATCH] ARM: imx: limit errata selection to Cortex-A9 based
- designs
-To: Stefan Agner <stefan@agner.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_062249_404876_EC0FBCA8 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20200203_063122_460873_375397BF 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
+ provider [thierry.reding[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,40 +96,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yongcai Huang <Anson.Huang@nxp.com>, Arnd Bergmann <arnd@arndb.de>,
- Stefan Agner <stefan.agner@toradex.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-tegra@vger.kernel.org, kbuild test robot <lkp@intel.com>,
+ linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stefan,
+From: Thierry Reding <treding@nvidia.com>
 
-On Sun, Feb 2, 2020 at 4:30 PM Stefan Agner <stefan@agner.ch> wrote:
->
-> From: Stefan Agner <stefan.agner@toradex.com>
->
-> The two erratas 754322 and 775420 are Cortex-A9 specific. Only
-> select the erratas for SoC which use a Cortex-A9.
+If only Tegra194 support is enabled, the tegra30_fuse_read() and
+tegra30_fuse_init() function are not declared and cause a build failure.
+Add Tegra194 to the preprocessor guard to make sure these functions are
+available for Tegra194-only builds as well.
 
-Change looks good.
+Reported-by: kbuild test robot <lkp@intel.com>
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/soc/tegra/fuse/fuse-tegra30.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-It is not clear from the commit log, which SoC selects the errata
-incorrectly though.
+diff --git a/drivers/soc/tegra/fuse/fuse-tegra30.c b/drivers/soc/tegra/fuse/fuse-tegra30.c
+index f68f4e1c215d..e6037f900fb7 100644
+--- a/drivers/soc/tegra/fuse/fuse-tegra30.c
++++ b/drivers/soc/tegra/fuse/fuse-tegra30.c
+@@ -36,7 +36,8 @@
+     defined(CONFIG_ARCH_TEGRA_124_SOC) || \
+     defined(CONFIG_ARCH_TEGRA_132_SOC) || \
+     defined(CONFIG_ARCH_TEGRA_210_SOC) || \
+-    defined(CONFIG_ARCH_TEGRA_186_SOC)
++    defined(CONFIG_ARCH_TEGRA_186_SOC) || \
++    defined(CONFIG_ARCH_TEGRA_194_SOC)
+ static u32 tegra30_fuse_read_early(struct tegra_fuse *fuse, unsigned int offset)
+ {
+ 	if (WARN_ON(!fuse->base))
+-- 
+2.24.1
 
-I would mention that i.MX6UL is based on Cortex-A7 and hence should
-not select them.
-
-Otherwise, only by looking at this patch context and commit log, we
-cannot notice the problem.
-
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
