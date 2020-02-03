@@ -2,129 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6615150416
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:20:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB388150438
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:30:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zl7AtRXcLlVzJrJrG8o4jCPfB0CX1A1Qz4w0m8QX3OE=; b=X2fBQ9alx6nd/b
-	9LvN+Aieo2diQW2/DxLEXA0Pyg6lSsWODQZPliPC3VSagTYXVZrEy1bHTQUb5zLvHrGuBdro40ZjT
-	vfogItZ1NkFNByYA5EuPV0IT9I1xF1MgfqzYc+0lh/tGTcozowy88WGzIMNPco1xulr9pG3CX7LSO
-	tAt1I/hJDHwK+4dd4DEnKi8FFCoJVPBLkDoaWgy8Ts0Hdt7fLt8mfSkLzlJ1lgZgKjFEgIln5eKz6
-	VhEiFdPVSytMUQwHdsiXJRCb7XCIy+BVF9Wwsqm4chkM9qBn9+dzrxvFbMhi3Out0wDfRUxHRAYk4
-	77TkXfhQu2lzI3C1n+dA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ixYtjItOWHW8fvSHDPWqh2lAcqArfOzKKz2c7kJAOaw=; b=V/76aj9whmZLPk
+	VHlrVye6f/FbYjqNlAOdJ+f2bMyEB39Cj+5DnrJihMBuNgkvrd36L8g21Tocn8KOzih6BSD2uurcp
+	aqwRmvBUm4LQIHpNO8gmQ1GhZ5GsKn5VHYLscbF3yPJSRg+fq8CRkgEj2o6xPvBp4woHcxatdZg16
+	ECIA5o+gJfV+l7Nbyg1KXD2+8Ay9Ex0JNd4GcZMKrKaVc0Ld7GQH33IovM4qIeziwsP+D10Yvoi+A
+	B2d8Gi16XenHk0h4AEyz+L2zPMKVrUB/GFaTJHI7chjcnMtNix/UYeXgMU2bq0HoFTNG9rHEqRsux
+	zBvaKHFa1Gl6Th2ieQng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyYqR-0001i0-L9; Mon, 03 Feb 2020 10:20:43 +0000
-Received: from comms.puri.sm ([159.203.221.185])
+	id 1iyZ0H-0005r5-2m; Mon, 03 Feb 2020 10:30:53 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyYqK-0001hF-Fv
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 10:20:37 +0000
-Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id 73BCDE129D;
- Mon,  3 Feb 2020 02:19:47 -0800 (PST)
-Received: from comms.puri.sm ([127.0.0.1])
- by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id KPRgGz4g9guk; Mon,  3 Feb 2020 02:19:46 -0800 (PST)
-Subject: Re: [PATCH] arm64: dts: librem5-devkit: add lsm9ds1 mount matrix
-To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org
-References: <20200120100722.30359-1-martin.kepplinger@puri.sm>
-From: Martin Kepplinger <martin.kepplinger@puri.sm>
-Autocrypt: addr=martin.kepplinger@puri.sm; keydata=
- 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
- ekMtxgNYb/8oDry09UFHbGHLsWn6oBo=
-Message-ID: <26ea325b-5c98-ab3b-dd2b-b91a73482ffa@puri.sm>
-Date: Mon, 3 Feb 2020 11:19:43 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-In-Reply-To: <20200120100722.30359-1-martin.kepplinger@puri.sm>
-Content-Language: en-US
+ id 1iyZ08-0005my-PG
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 10:30:46 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g1so15179328wmh.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 03 Feb 2020 02:30:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dD9fba3D0HqXgOSqJlLFz2muhY16h6Gr+BwVuHnFIv4=;
+ b=UKGNNJxPihSVdDnyfCzDlB+1MVddilSdG2GMCVkiCGZL6D4AXhN/Byg8SWyWW/bnPv
+ ZhR3DWnYrfYRCjJom/Sh/JFBZ7Iwl4epixB/18DbnkFz7yPe8kl55ww3eOTntukb3ppn
+ DJMyUvrIU12QGoinWcbsJ/q0VJC88l8j9qeBE7MvLq2Yj6xHtWBYBAQYNNlPMKQf8Nd5
+ EqLLTWtOUfsnFNR7Kr+L3uZvlKVeimHI/QULdJTHLV8iEpdDqj4VDcz3s7vCA2nKdmiV
+ f+EQ9zpHVS6KalEcfPgv8DBDc6jw7fnqqMZlQjLHwj9n0GfXXn0NPvHjPnaM1pSMxGxT
+ XLKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dD9fba3D0HqXgOSqJlLFz2muhY16h6Gr+BwVuHnFIv4=;
+ b=YpdWYeMaIcKXetGBy2cc/8ciju7ai2Hl1fibOFh2ixPSY8Rg0MVtShfIwsMEJLXyZE
+ dkXxWt5LjHp5f8dWIFTWVizQGZpw4haegdk9ocdwBzxZw0BCjR0ieH9LlHoXm4fswyGr
+ 2q7S8Q0owL7rdIRb8r7jyNTt2S5JaYPHM3if1OOjav6u+mmindzsR+2d1aVJK5sZhivg
+ cGPYHzoYqCYtDifcFSRGR0W2Cr2PS3ov1NNhu9/wcu4W8rSumFgNr5mO4mIEAhdRcyaD
+ jDj8HZVbZJhqbadJ/yYVAsutthWWm/sksw5IJmXc57VloKrl/oAnrP6M8AO8dEyBbCY1
+ LyOg==
+X-Gm-Message-State: APjAAAXGGMuczd6DWJikF9aFtxihBErdJDqULnE6N5+m65gPdq8MsCB7
+ pp6zDcfPPwmARcs1jyNMHchRS5ECiGWFvu3nniMteg==
+X-Google-Smtp-Source: APXvYqxNx7Z0KIvo/FhK4eHPDW3mZ84bqAFnEzCbf8Hd0g8df+eNawGKBotlJvsxIVfVYaHjsPN4BUWk/DfxFPRlw6I=
+X-Received: by 2002:a1c:7907:: with SMTP id l7mr27326507wme.37.1580725840251; 
+ Mon, 03 Feb 2020 02:30:40 -0800 (PST)
+MIME-Version: 1.0
+References: <20200130064430.17198-1-walter-zh.wu@mediatek.com>
+ <CAG_fn=X_jSUJXD932z9oN5hBa--n3Qct4zrjzGaPtb2MwJye7A@mail.gmail.com>
+ <1580436306.11126.16.camel@mtksdccf07>
+ <CAG_fn=X2V0nL=+s38bDbS3UXf2_i61tSevd8vzkV-ZKY=7MHvw@mail.gmail.com>
+ <1580695544.17006.7.camel@mtksdccf07>
+In-Reply-To: <1580695544.17006.7.camel@mtksdccf07>
+From: Alexander Potapenko <glider@google.com>
+Date: Mon, 3 Feb 2020 11:30:28 +0100
+Message-ID: <CAG_fn=UHhZB-2JBdSBAbuNjBZwVwrzhqQvR1nHb+XOqUEvLMsw@mail.gmail.com>
+Subject: Re: [PATCH v3] lib/stackdepot: Fix global out-of-bounds in stackdepot
+To: Walter Wu <walter-zh.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_022036_538630_3C05049F 
-X-CRM114-Status: GOOD (  18.07  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200203_023044_847452_D425BBC0 
+X-CRM114-Status: GOOD (  24.93  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [159.203.221.185 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -136,62 +100,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kernel@pengutronix.de, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ wsd_upstream <wsd_upstream@mediatek.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Josh Poimboeuf <jpoimboe@redhat.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20.01.20 11:07, Martin Kepplinger wrote:
-> The IMU chip on the librem5-devkit is not mounted at the "natural" place
-> that would match normal phone orientation (see the documentation for the
-> details about what that is).
-> 
-> Since the lsm9ds1 driver supports providing a mount matrix, we can describe
-> the orientation on the board in the dts:
-> 
-> Create a right-handed coordinate system (x * -1; see the datasheet for the
-> axis) and rotate 180 degrees around the y axis because the device sits on
-> the back side from the display.
-> 
-> Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
-> ---
-> 
-> tested on the librem5-devkit of course, finally fixing the orientation problem
-> for the accelerometer :)
-> 
-> thanks,
-> 
->                             martin
-> 
-> 
->  arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> index 703254282b96..6c8ab009081b 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> @@ -457,6 +457,9 @@
->  		reg = <0x6a>;
->  		vdd-supply = <&reg_3v3_p>;
->  		vddio-supply = <&reg_3v3_p>;
-> +		mount-matrix =  "1",  "0",  "0",
-> +				"0",  "1",  "0",
-> +				"0",  "0", "-1";
->  	};
->  };
->  
-> 
+On Mon, Feb 3, 2020 at 3:05 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+>
+> On Fri, 2020-01-31 at 19:11 +0100, Alexander Potapenko wrote:
+> > On Fri, Jan 31, 2020 at 3:05 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > >
+> > > On Thu, 2020-01-30 at 13:03 +0100, Alexander Potapenko wrote:
+> > > > On Thu, Jan 30, 2020 at 7:44 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > >
+> > > > Hi Walter,
+> > > >
+> > > > > If the depot_index = STACK_ALLOC_MAX_SLABS - 2 and next_slab_inited = 0,
+> > > > > then it will cause array out-of-bounds access, so that we should modify
+> > > > > the detection to avoid this array out-of-bounds bug.
+> > > > >
+> > > > > Assume depot_index = STACK_ALLOC_MAX_SLABS - 3
+> > > > > Consider following call flow sequence:
+> > > > >
+> > > > > stack_depot_save()
+> > > > >    depot_alloc_stack()
+> > > > >       if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) //pass
+> > > > >       depot_index++  //depot_index = STACK_ALLOC_MAX_SLABS - 2
+> > > > >       if (depot_index + 1 < STACK_ALLOC_MAX_SLABS) //enter
+> > > > >          smp_store_release(&next_slab_inited, 0); //next_slab_inited = 0
+> > > > >       init_stack_slab()
+> > > > >          if (stack_slabs[depot_index] == NULL) //enter and exit
+> > > > >
+> > > > > stack_depot_save()
+> > > > >    depot_alloc_stack()
+> > > > >       if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) //pass
+> > > > >       depot_index++  //depot_index = STACK_ALLOC_MAX_SLABS - 1
+> > > > >       init_stack_slab(&prealloc)
+> > > > >          stack_slabs[depot_index + 1]  //here get global out-of-bounds
+> > > > >
+> > > > > Cc: Dmitry Vyukov <dvyukov@google.com>
+> > > > > Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> > > > > Cc: Thomas Gleixner <tglx@linutronix.de>
+> > > > > Cc: Alexander Potapenko <glider@google.com>
+> > > > > Cc: Josh Poimboeuf <jpoimboe@redhat.com>
+> > > > > Cc: Kate Stewart <kstewart@linuxfoundation.org>
+> > > > > Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> > > > > Cc: Kate Stewart <kstewart@linuxfoundation.org>
+> > > > > Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> > > > > ---
+> > > > > changes in v2:
+> > > > > modify call flow sequence and preconditon
+> > > > >
+> > > > > changes in v3:
+> > > > > add some reviewers
+> > > > > ---
+> > > > >  lib/stackdepot.c | 2 +-
+> > > > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > > > >
+> > > > > diff --git a/lib/stackdepot.c b/lib/stackdepot.c
+> > > > > index ed717dd08ff3..7e8a15e41600 100644
+> > > > > --- a/lib/stackdepot.c
+> > > > > +++ b/lib/stackdepot.c
+> > > > > @@ -106,7 +106,7 @@ static struct stack_record *depot_alloc_stack(unsigned long *entries, int size,
+> > > > >         required_size = ALIGN(required_size, 1 << STACK_ALLOC_ALIGN);
+> > > > >
+> > > > >         if (unlikely(depot_offset + required_size > STACK_ALLOC_SIZE)) {
+> > > > > -               if (unlikely(depot_index + 1 >= STACK_ALLOC_MAX_SLABS)) {
+> > > > > +               if (unlikely(depot_index + 2 >= STACK_ALLOC_MAX_SLABS)) {
+> >
+> > This again means stack_slabs[STACK_ALLOC_MAX_SLABS - 2] gets
+> > initialized, but stack_slabs[STACK_ALLOC_MAX_SLABS - 1] doesn't,
+> > because we'll be bailing out from init_stack_slab() from now on.
+> > Does this patch actually fix the problem (do you have a reliable reproducer?)
+> We get it by reviewing code, because Kasan doesn't scan it and we catch
+> another bug internally, we found it unintentionally.
+>
+> > This addition of 2 is also counterintuitive, I don't think further
+> > readers will understand the logic behind it.
+> >
+> Yes
+>
+> > What if we just check that depot_index + 1 is a valid index before accessing it?
+> >
+> It should fix the problem, do you want to send this patch?
 
-hi,
-
-again, any questions or comments on this fix?
-
-thanks,
-                                       martin
+I've sent the patch. Thanks for the report!
 
 _______________________________________________
 linux-arm-kernel mailing list
