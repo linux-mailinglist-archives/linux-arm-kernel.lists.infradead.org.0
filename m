@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51A38150297
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 09:30:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BB9415029D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 09:30:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fFfMuBQ2iL6Ho6C4wRMbpN/0dsN5YIQODTfSNVHfQBs=; b=AdMetm6frnXM+L
-	VYbAgumuzPGQMM9dk5WDUW6GWeRotez/RUkZKeI881OzMcwnJLvjiplg9anQINBLSARSesqBsseO2
-	r0p3lyGbvn2juK72DJ/GnxjpYUCfq8Ct1qs5CdasLF5uXCaIgzCEVmZOZ94qsH/o/IVXCEtt9upjm
-	cav7JllwMM3FCLDPtbMaY9MLpKdqB/b91//UOtb9qc6ZNKO06XZ2FPz4p22xCV0DX3RXTxsfMVjtM
-	9G7DNDQP5bVAxciCopSmaxmIuvj/hEH4DjsuaAlZxs0OTGl7BdHfThRzGDk4pBSRtSxjXyBz/aIR+
-	OMeNwSb5EFa2qfY+rNLw==;
+	List-Owner; bh=mq2l9+qSuawd62ngThcsDWIJ3P5nHD1dXVhvm+SSuFc=; b=e/CJGO71rdGsQJ
+	qOIUmG7RpeHyWoOYOK1t1Jl+Uj+aNzeohZrkv9m+z3MqBoykps5kAholaN+hYTwQQgW1ol9A2xYMQ
+	5siicrZynS34Irmo7Z6MWVpFmLaxCkEnwyhtkA2g/SaZfaofpPFgeSQxL3hjxSCipMiUPTepKLNgx
+	VJuI5wf87RfkKFvHajobwHWXpP7on0ndLQ/ND9QG0OhwFowm88JmKVKRL5phlbe+l1zQqSlC0zcmZ
+	fE3/Q8jDDCfOE+BUEIDoaV7Zz8Tr0l+6/mrPvMJQGz946Uc+A1rL3N1RYL3hsz3fkpmsKPtSCDY71
+	MUprTRmhnwTgCEJWsP9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyX7I-0007Bz-Sz; Mon, 03 Feb 2020 08:30:00 +0000
+	id 1iyX7s-0000FQ-DQ; Mon, 03 Feb 2020 08:30:36 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyX7C-00079a-2c; Mon, 03 Feb 2020 08:29:56 +0000
+ id 1iyX7m-0000Ex-NT; Mon, 03 Feb 2020 08:30:32 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 3AD526205;
- Mon,  3 Feb 2020 03:29:42 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Mon, 03 Feb 2020 03:29:42 -0500
+ by mailnew.nyi.internal (Postfix) with ESMTP id D79996033;
+ Mon,  3 Feb 2020 03:30:29 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Mon, 03 Feb 2020 03:30:29 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=iQ/ikpIbJ5P9FgOE6AgwAzVNlDM
- fzKU2pcHWjtIVj7g=; b=m1jlfJmENyRlxcyCXEJE3uTVm7HqOR7ONRKBBv2Npf8
- XqrLBjKlVJv0nvC5+vr1MmqCeqaSndPDbcCWMEmBVSArIGLvU/I2ypC5mHo5QmRt
- aacqCgaxopKpFGekpgjNEuvori2LVXVI6xgKPbNoC8AU7Dnzg1bFCqEf0B6sxJZN
- E9MIUyO/F2vvqaJaTjb3qAQoxCEeM64Iv461Gkqr92c+OmnQzcblm6tYGW7a+UH3
- tYrrF6E9M7UAs1YghdYJiBCMs6wbSgZPN42vtELvFqdF0QBZs2Be/dhO2XN4qmze
- 5+038c906DDj57qpsd/w4jg6uj57fM/xhzZgX9LXi5w==
+ :content-type:in-reply-to; s=fm2; bh=5/m6d79XqC9vih4B9gJzt6EMAAq
+ GOFeC4/ftf/InF74=; b=Wc9ETG5YTTVqP2mH7AArIOvpsRa4oqCDhVFHQ7ndmrj
+ OKrRHmubRX1ZmMydSFd9fExYLWMF4tIDSZniv5mPq2/Sg/c/XwE0cBIIEd+64q/y
+ 7KFsjiCkSHFZEvDLa/q07IEDfFgHsr4RQ1GBWlyZ1oH3f1ED6OfDaCstbEm0WiMJ
+ Q9BOtnSjJbqsAeuIBS2kAmL9tDfejt4Z+Uwiyf8KuVZ5l6G/S39wvYQPt+I4Bin+
+ bjRNpd959xj7SmCVtN74hV7K1yivbwLnXSY2av8M9fzAE8wN1X3dwIUAuuhu9V6q
+ OOyBBJgwXJhJFIzSdsdmkkBRaGVQKrlnSqamjRaaxrA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=iQ/ikp
- IbJ5P9FgOE6AgwAzVNlDMfzKU2pcHWjtIVj7g=; b=qZ5egCBpAwIljWiIEiZ4tG
- OzpEtWoIVt3Z3sumZKtm8rrbm404G7BZhHLgxRLx6xtPQbgKFdtWhvMXU769icZf
- i+SRuNVbabeWMxVIfHxjRQJPFQwi5Alxp86+Y2tC7gSoqfu6YLPQhEPGSP9SOF/w
- USIIcmBEjdc6ua1hDYoZiEq5qDaquob5cyDb9WbdxYjd/wGIr9kWMrmNCN5qkRhr
- CqDANzCnnEqZ4Oh/VLL6CCpzQT+hJ+3xUErCafGXElBn7Gk5zp/Gb0g1DvE2vlb2
- 439VEPyt5/YEn8KZ8EnPrLj2lUeuMuqyPv5c6wNwafmxckjGuW5Q9nxb7nXLjAjQ
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=5/m6d7
+ 9XqC9vih4B9gJzt6EMAAqGOFeC4/ftf/InF74=; b=e4SKOejaPuaElhEpZzf++6
+ tDS39Yw9YlE9M0swTTtiAzAZYV2O16wAUWOHfCcZ5iBPANuAbsCE9wXZGqbQzFEc
+ tDZj9vE7wU9+hlcqwuIkGCf4KHEz4pqi8LRnu8q69vmUFKy297Yf0sLPcJ1Bx5GT
+ AwM3sW+dQTa8oFQN/ww3882DVFmnethZs9y9eDWmFTTm5gK5aFzCWrGUU0d9h22F
+ ZsIbA/z/nLkQe2H6fay5UYhWt68bpoRoAnSJMJ4mNfk05Mw28pMT/GjDlRNbP1Pl
+ u5JUUEIE6QNu41CfXs9t4/nohlyZ4hqrHKw4KvK/7cb1j/QrdW+h0FD8SvaSkxfQ
  ==
-X-ME-Sender: <xms:9Nk3XglH6jGRQQrKr1X2zjCYT6pYqpYXDuIof0B2pzyZGKg37gKqRA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeeigdduudejucetufdoteggodetrfdotf
+X-ME-Sender: <xms:Jdo3Xnu3y5Y5o6vYrJgS19KaqK89UoLXaf3jDvhyym23lzAiPxbUaQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeeigdduudelucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhepfffhvffukfhfgggtuggjsehttdertddttddvnecuhfhrohhmpeforgigihhm
@@ -56,27 +56,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeeigdduudejucetufdoteggod
  hnpeguvghvihgtvghtrhgvvgdrohhrghenucfkphepledtrdekledrieekrdejieenucev
  lhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvg
  estggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:9Nk3Xs9qUxHKSs4k81Jh4fD5IpqD3pNZFGhGcxiC7E7y-C-E7m2X_w>
- <xmx:9Nk3XvFbv-lGdOm0yRpEjg7Z_K1kpj9tFqecVNpuG9kET6x3QuViWA>
- <xmx:9Nk3XtksGs-4jPa7-57MCzbMNXkKpkDOlvnGnvBctC7fE-OHZd62Yw>
- <xmx:9tk3Xl1NgDdaOOyy4hB9U9I-oUhabl-kFXNyeFaxTHPziO0E4FvJfg>
+X-ME-Proxy: <xmx:Jdo3XsuWHqy773o6GtBS5pRDDCsUHiroq-gm6Lcw5OnaXKCFkiAugg>
+ <xmx:Jdo3XlyDT5P_uAaHslnEJvHh2391qPtgmNwsfJnQCE-8gOmH2y9-Fg>
+ <xmx:Jdo3XqifrhjYa6UGH3hnidOFRzXW_6BNEWNF9R1N1AdjoN1RR98Z8w>
+ <xmx:Jdo3XiWkI3DmgL0L1mvDLKDHpLzMLYlgY1DhKmd77sTnPU8k3am_Jg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 6E5BA328005A;
- Mon,  3 Feb 2020 03:29:40 -0500 (EST)
-Date: Mon, 3 Feb 2020 09:29:38 +0100
+ by mail.messagingengine.com (Postfix) with ESMTPA id 700D13060134;
+ Mon,  3 Feb 2020 03:30:29 -0500 (EST)
+Date: Mon, 3 Feb 2020 09:30:27 +0100
 From: Maxime Ripard <maxime@cerno.tech>
 To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH 01/12] dt-bindings: arm: bcm: Convert Cygnus to YAML
-Message-ID: <20200203082938.hulyzd3klqq2xqz3@gilmour.lan>
+Subject: Re: [PATCH 06/12] dt-bindings: arm: bcm: Convert BCM21664 to YAML
+Message-ID: <20200203083027.gdlrv7vcv5hir3g7@gilmour.lan>
 References: <20200202211827.27682-1-f.fainelli@gmail.com>
- <20200202211827.27682-2-f.fainelli@gmail.com>
+ <20200202211827.27682-7-f.fainelli@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200202211827.27682-2-f.fainelli@gmail.com>
+In-Reply-To: <20200202211827.27682-7-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_002954_260533_7C92C53E 
-X-CRM114-Status: GOOD (  14.83  )
+X-CRM114-CacheID: sfid-20200203_003030_902018_2CB3F0A3 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -124,114 +124,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Florian,
-
-On Sun, Feb 02, 2020 at 01:18:16PM -0800, Florian Fainelli wrote:
-> Update the Broadocom Cygnus SoC binding document for boards/SoCs to use
+On Sun, Feb 02, 2020 at 01:18:21PM -0800, Florian Fainelli wrote:
+> Update the Broadcom BCM21664 SoC binding document for boards/SoCs to use
 > YAML. Verified with dt_binding_check and dtbs_check.
 >
 > Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 > ---
->  .../bindings/arm/bcm/brcm,cygnus.txt          | 31 ---------
->  .../bindings/arm/bcm/brcm,cygnus.yaml         | 66 +++++++++++++++++++
->  2 files changed, 66 insertions(+), 31 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.txt
->  create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.yaml
+>  .../bindings/arm/bcm/brcm,bcm21664.txt        | 15 ------------
+>  .../bindings/arm/bcm/brcm,bcm21664.yaml       | 23 +++++++++++++++++++
+>  2 files changed, 23 insertions(+), 15 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.txt
+>  create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.yaml
 >
-> diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.txt
+> diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.txt
 > deleted file mode 100644
-> index 4c77169bb534..000000000000
-> --- a/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.txt
+> index e0774255e1a6..000000000000
+> --- a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.txt
 > +++ /dev/null
-> @@ -1,31 +0,0 @@
-> -Broadcom Cygnus device tree bindings
-> -------------------------------------
+> @@ -1,15 +0,0 @@
+> -Broadcom BCM21664 device tree bindings
+> ---------------------------------------
 > -
-> -
-> -Boards with Cygnus SoCs shall have the following properties:
+> -This document describes the device tree bindings for boards with the BCM21664
+> -SoC.
 > -
 > -Required root node property:
+> -  - compatible: brcm,bcm21664
 > -
-> -BCM11300
-> -compatible = "brcm,bcm11300", "brcm,cygnus";
-> -
-> -BCM11320
-> -compatible = "brcm,bcm11320", "brcm,cygnus";
-> -
-> -BCM11350
-> -compatible = "brcm,bcm11350", "brcm,cygnus";
-> -
-> -BCM11360
-> -compatible = "brcm,bcm11360", "brcm,cygnus";
-> -
-> -BCM58300
-> -compatible = "brcm,bcm58300", "brcm,cygnus";
-> -
-> -BCM58302
-> -compatible = "brcm,bcm58302", "brcm,cygnus";
-> -
-> -BCM58303
-> -compatible = "brcm,bcm58303", "brcm,cygnus";
-> -
-> -BCM58305
-> -compatible = "brcm,bcm58305", "brcm,cygnus";
-> diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.yaml b/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.yaml
+> -Example:
+> -	/ {
+> -		model = "BCM21664 SoC";
+> -		compatible = "brcm,bcm21664";
+> -		[...]
+> -	}
+> diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.yaml b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.yaml
 > new file mode 100644
-> index 000000000000..2606ca956caf
+> index 000000000000..8a38a6b68f60
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.yaml
-> @@ -0,0 +1,66 @@
+> +++ b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.yaml
+> @@ -0,0 +1,23 @@
 > +# SPDX-License-Identifier: GPL-2.0
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/arm/bcm/brcm,cygnus.yaml#
+> +$id: http://devicetree.org/schemas/arm/bcm/brcm,bcm21664.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: Broadcom Cygnus device tree bindings
+> +title: Broadcom BCM21664 device tree bindings
 > +
 > +maintainers:
-> +   - Ray Jui <rjui@broadcom.com>
-> +   - Scott Branden <sbranden@broadcom.com>
+> +  - Florian Fainelli <f.fainelli@gmail.com>
 > +
 > +properties:
 > +  $nodename:
 > +    const: '/'
 > +  compatible:
 > +    oneOf:
-> +      - description: BCM11300 based boards
+> +      - description: BCM21664 based boards
 > +        items:
 > +          - enum:
-> +              - brcm,bcm11300
-> +          - const: brcm,cygnus
-> +
-> +      - description: BCM11320 based boards
-> +        items:
-> +          - enum:
-> +              - brcm,bcm11320
-> +          - const: brcm,cygnus
+> +              - brcm,bcm21664-garnet
+> +          - const: brcm,bcm21664
 
-This applies to other patches in your series too, but this can be
-simplified to either (removing the description to make the example
-simpler):
-
-oneOf:
-  - items:
-    - const: brcm,bcm11300
-    - const: brcm,cygnus
-  - items:
-    - const: brcm,bcm11320
-    - const: brcm,cygnus
-
-Or
-
-items:
-  - enum:
-    - brcm,bcm11300
-    - brcm,bcm11320
-  - const: brcm,cygnus
-
-The latter will provide more meaningful errors, so you should probably
-pick this one over the former.
+Do you really need the oneOf here?
 
 Maxime
 
