@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB0F91503EF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:11:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C885150400
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:15:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CZ+3yipq+thZdCNlE5QfWZKphZ26DxPDVNehFnEgtvg=; b=PXjCQ2AC9dbSDJ
-	7WCmNlS9egSLMJAjlE+K2Ga/daDkBiJwM5XH6fPSAexejf7kDsbT9RtShtoVL7ZcKC1pYW30g6tlG
-	vjhSqWGeqC6FwYIPrqkQ4uteZd2/DYZtPNkCwLzDziGT2RgfqRNc0SqX3ZkhikSFu/IXTGaIWRvGo
-	XvbsuSSWGfojbezhyxi+D93OBxHNfOLrcwoF40mTQ69t53htQtFwhlRH9zhl4PHBkW2/sjYHj/tP2
-	SJIqWiGvgjzw8syMs/x0aCTaeZ+BSIhTRyEQ6tg9it0pMwHU1FGEI2kBrew20JTs21FIlY1sIpTHr
-	4PbU5u79gNHwmcGJLDig==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UULUhDbp9YG4iEirZ7gxrbP6gEB7gfECE7itckVUj3U=; b=iJkJdwUx7xvwF+
+	swfaOvQgoBGwNgJOl6Lo1NEQd6N/6SP90GSsD1aG0+B3RsQuqRJluJE4Ogh0XyByNMDlf9C8NdICv
+	KbkfSoIFRfYIJ6CHrXThTykT0nwTv/396Zh7ENsNl+GiU5zLDjIEO7ZfqcT5nq6EEvSuEWwLIBQaW
+	YZsnJoNLsUyIcEpBasJfye/B/Bj3MaK/EHT/ZZF/M0vGYQs6E8B1ZB/N28KgZnw4ouK/0u8fsaEZe
+	Slw5Jmxn4tgae+IS30+g9tg6eX7NqIk2gsHB6Jd/PWyFR8eaqkrvCwO/qZaP3ir3CyN1lyRRSlU6d
+	6StSL8nP5YmcmZ0uapQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyYgx-0005jM-Pk; Mon, 03 Feb 2020 10:10:55 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1iyYkt-0006hd-AQ; Mon, 03 Feb 2020 10:14:59 +0000
+Received: from mail-wr1-f66.google.com ([209.85.221.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyYfT-00038K-06
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 10:09:24 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 013A9KwI034849;
- Mon, 3 Feb 2020 04:09:20 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1580724560;
- bh=2hUUozdIkXgPq4UCQpd7JyChjZz/QfVlLVWE+xS6/ek=;
- h=From:To:CC:Subject:Date;
- b=vCJnleBgkmlugF98liU5HWSItdoPV4r3aHSsVKgVzCaIK+5/u/EjF2/ZCiMF35h/y
- Iifj9ALiB37FXTVKXUNlCyIa0LdxAHjDfIxJ4eD4WrNEa7p1C0Uqh6fYmIEoDYXOdV
- pYimNP+Liq1PLp3awnLZSr5HBs9WarHjFRzeOcAU=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 013A9JU2025522
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 3 Feb 2020 04:09:20 -0600
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 3 Feb
- 2020 04:09:19 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 3 Feb 2020 04:09:19 -0600
-Received: from feketebors.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 013A9H5l002834;
- Mon, 3 Feb 2020 04:09:17 -0600
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: <grygorii.strashko@ti.com>, <ssantosh@kernel.org>,
- <santosh.shilimkar@oracle.com>
-Subject: [PATCH] soc: ti: k3-ringacc: Fix dereference before NULL check in
- k3_ringacc_ring_cfg()
-Date: Mon, 3 Feb 2020 12:09:16 +0200
-Message-ID: <20200203100916.19057-1-peter.ujfalusi@ti.com>
-X-Mailer: git-send-email 2.25.0
+ id 1iyYkj-0006gW-6G; Mon, 03 Feb 2020 10:14:51 +0000
+Received: by mail-wr1-f66.google.com with SMTP id m16so17169142wrx.11;
+ Mon, 03 Feb 2020 02:14:43 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=VeTk9NFWqY2AFFX1U47JHNOnYrtYJUipcDdzTnxdTw4=;
+ b=F/XCLZnb82COr8lATwQElv45b2K3CVoIchX1MLPmJs9hjn4TTD12LNFacA2bfnR+vw
+ rWApZugd3hp00n5ssM/951vxcIIZ2VNid2QFtz3kbucJvuYWB6dEzB1mdbpyudgOz94O
+ f6Bf5hLFgMhgQ+DC1WLy6mt+T6Z3QZ1IynS9pXW2S23cadNkKcZncholEXhhJLHbK3/2
+ sJSO75ZVx+9+YG8zNZcaOk1/9tq+wS2L5x/dKVYfIMIyzfyO1Kvh/uEwd8v6jv7as2Qt
+ WVXoS0mg9Xyyc0Xx2Qk0BKWYBqu2uoaiB3pTb/sTsw2FgToFIM5EipEd9lIWda16+Drq
+ LAHw==
+X-Gm-Message-State: APjAAAVJbpLpnxf3Vcb2NBHAYNE5vQK6NPAi5/0bS5aWJrGCDY0GDrP8
+ XaUxa9n+k8qT9+wtGa2u4A==
+X-Google-Smtp-Source: APXvYqy+FnFfJwsfZztZ3WYAtBH/oqT3NH+T+W2/hO9SuPbGror4fjsAxjEbIcawDdvgCPggf1l6zQ==
+X-Received: by 2002:adf:ff8c:: with SMTP id j12mr14349774wrr.354.1580724882064; 
+ Mon, 03 Feb 2020 02:14:42 -0800 (PST)
+Received: from rob-hp-laptop ([212.187.182.163])
+ by smtp.gmail.com with ESMTPSA id k13sm24011191wrx.59.2020.02.03.02.14.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 03 Feb 2020 02:14:41 -0800 (PST)
+Received: (nullmailer pid 814 invoked by uid 1000);
+ Mon, 03 Feb 2020 10:14:40 -0000
+Date: Mon, 3 Feb 2020 10:14:40 +0000
+From: Rob Herring <robh@kernel.org>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH 12/12] dt-bindings: arm: bcm: Convert BCM2835 firmware
+ binding to YAML
+Message-ID: <20200203101440.GA31848@bogus>
+References: <20200202211827.27682-1-f.fainelli@gmail.com>
+ <20200202211827.27682-13-f.fainelli@gmail.com>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200202211827.27682-13-f.fainelli@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_020923_114346_B066421D 
-X-CRM114-Status: GOOD (  10.71  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200203_021449_231274_CD68338B 
+X-CRM114-Status: GOOD (  10.21  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.66 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.66 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,47 +91,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: t-kristo@ti.com, dan.carpenter@oracle.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ linux-arm-kernel@vger.kernel.org, open list <linux-kernel@vger.kernel.org>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ "moderated list:BROADCOM IPROC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Only dereference ring->parent after we have checked that ring is not NULL.
+On Sun,  2 Feb 2020 13:18:27 -0800, Florian Fainelli wrote:
+> Convert the Raspberry Pi BCM2835 firmware binding document to YAML.
+> Verified with dt_binding_check and dtbs_check.
+> 
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> ---
+>  .../arm/bcm/raspberrypi,bcm2835-firmware.txt  | 14 --------
+>  .../arm/bcm/raspberrypi,bcm2835-firmware.yaml | 33 +++++++++++++++++++
+>  2 files changed, 33 insertions(+), 14 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
+>  create mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+> 
 
-Fixes: 3277e8aa2504 ("soc: ti: k3: add navss ringacc driver")
-Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
-Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
----
- drivers/soc/ti/k3-ringacc.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+My bot found errors running 'make dt_binding_check' on your patch:
 
-diff --git a/drivers/soc/ti/k3-ringacc.c b/drivers/soc/ti/k3-ringacc.c
-index 5fb2ee2ac978..8f90cc56d44d 100644
---- a/drivers/soc/ti/k3-ringacc.c
-+++ b/drivers/soc/ti/k3-ringacc.c
-@@ -556,11 +556,13 @@ static int k3_ringacc_ring_cfg_sci(struct k3_ring *ring)
- 
- int k3_ringacc_ring_cfg(struct k3_ring *ring, struct k3_ring_cfg *cfg)
- {
--	struct k3_ringacc *ringacc = ring->parent;
-+	struct k3_ringacc *ringacc;
- 	int ret = 0;
- 
- 	if (!ring || !cfg)
- 		return -EINVAL;
-+
-+	ringacc = ring->parent;
- 	if (cfg->elm_size > K3_RINGACC_RING_ELSIZE_256 ||
- 	    cfg->mode >= K3_RINGACC_RING_MODE_INVALID ||
- 	    cfg->size & ~K3_RINGACC_CFG_RING_SIZE_ELCNT_MASK ||
--- 
-Peter
+Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
+Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml: $id: path/filename 'arm/bcm/raspberrypi,bcm2835.yaml' doesn't match actual filename
+Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.example.dts' failed
+make[1]: *** [Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.example.dts] Error 1
+Makefile:1263: recipe for target 'dt_binding_check' failed
+make: *** [dt_binding_check] Error 2
 
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
+See https://patchwork.ozlabs.org/patch/1232487
+Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
