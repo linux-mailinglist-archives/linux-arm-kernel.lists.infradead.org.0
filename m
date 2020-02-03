@@ -2,78 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42CC215087B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:35:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE745150881
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:36:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zy0XSfglLMt823DB9jDKgtYycN3s3VxWBMc8rfwYSgw=; b=B6lj+4EcPoSZOW
-	ILKSbk31UoTiQTFcC8yhUekaHIjZMnCaE+Yp3c0rMYVrpfy5QeFz8yM2ATtO89PjnfV48NOKIXksO
-	M00NHSjYIxp3iiq1iky5VZXxbwnOCf4ByJTcxbKDaxYHcDqJX05l/F2vRKjOrOYvHn90P2uDSXycq
-	ryX/8dNE/cr+IZcsss0bGg7i2gyVZhPUCt+Ehd9QhVD9A2fgrFIcKqagAG90vJmlJbKTy59/B8LTM
-	0RQ4JhKCZkW72IMeWhiwHZM2LnxmDDJ5HwogZGxYqOS+UbOHyyQ9A6PJIlmqgjDukhNc3DqJqndat
-	C3xGhAaFUAR+NeJ9ZzpQ==;
+	List-Owner; bh=CxmvwZK3zl6KfnleLsm93LHq0E7hDeb1yO1jR2aJD/E=; b=nLxPvpMFSut4CK
+	QDAU+BMkpLZxwgXcD5OncPbqa7/DbBhp94rZ9mwAgiVCUm4UnvQULEhx1GlyBUccX1TqZ6Uor/bCu
+	ptcLn4gnOiaxxGoIi+G0l+nCOGgZ/vDBoWai42uL6IJ6TIHs3/xxWlAwbd7bfpWr8/Ip77AIgaQpI
+	lnNxHY9EnY+FEWssw8pGJq1txQtwtfz+TSiIrzyRM1Jzz5e6fEtFXq7NhXD4QOtqWyORsRslbjfdq
+	7zm5xgMMxwNwYp3MOk313ACS7HfXLmW+K80vndpJpXW/AOuRwjKJ6KQYSpabhGVq+u6ZxnNEKcp3x
+	2P1m5tPkOsZT5YyOZHSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iycoq-0005SM-AX; Mon, 03 Feb 2020 14:35:20 +0000
-Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1iycpY-0005ls-CL; Mon, 03 Feb 2020 14:36:04 +0000
+Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iycoi-0005Rc-I2
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:35:14 +0000
-Received: by mail-il1-x142.google.com with SMTP id v13so12777750iln.4
+ id 1iycpP-0005lY-Ej
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:35:56 +0000
+Received: by mail-qv1-xf43.google.com with SMTP id y2so6840111qvu.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Feb 2020 06:35:11 -0800 (PST)
+ Mon, 03 Feb 2020 06:35:55 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=PeAE2050RUwA2PhxvSVJSMNprANdC/69hQV8eL+NY48=;
- b=TUaaPrZnYM1tgevoqkuJWFXrJMpt7+22SMpJkevzbwT+vt6EMOU3Sxf5Ll8wF7cWhx
- 7wgPwHJBuaVxTxd2/kVnoxRg3aW8jdNZabM+0Z/6I40M8Hfubj7S1Z5RTdQgDwPFOlFX
- OVICfMVZyyoNxzFIvNvbpQZVApef+W2nMB6qVASrRYzBY8X67KyEq3DacxVLhs9NYN9H
- vqjOWSLE5mRse511pO6UqBzDcy18YqEX0PX3v8nMk5Y+GMUrUyHqK5xTkzftOzmp7jp5
- zRsbdXlVnXf4+DzZwS5E3lmroWXUCCzizzdOG527hxV8gTth11yutKox7zlpOIfLMnZV
- 5aRQ==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=pHZXEZfxcArrJOwFLOO5B25gH5Nf7M6GMePV8H95wz8=;
+ b=AN4jrTsY0Be0qFeBI9ikRLgxslO22TK9D1lt7ekoGyu3ID/zgEWhSNVupxjTkfAwxZ
+ RyklxvFtDIJzsnMWV9zv2YBMZWMtNgNTSG0RhwM7waizdUZJv4Yolq1UseGtKmfN4AlG
+ 523oxjEUuqbaxJghOAZ2wLYFOObEbNB8BYnW43sb7bdgk+n6zPYYiiGZrSiXYaZAJF5U
+ D4dnArJCuHz5mLrlCfrFE5sAmPQcA6ikoOOc/SmeiOyF6oLimoxK+FiVMdIY1FjMIbbp
+ 0XLFnJjUPmrI4YCpuDOGG2azN0IBRGLHF7Ee7qkkwezHahQF5sj8HAx2FTsGIQDMI92c
+ qHFw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=PeAE2050RUwA2PhxvSVJSMNprANdC/69hQV8eL+NY48=;
- b=H1J/Bt1PlSVRqngE7ng08qEym74zVtawUOyUAbCLW2PC/f6P60ErwVENlGPfBDqR/O
- Hb5AFriYYijMp6GdadzXFJsGQKM6nBS7kdpACVn4+QVurJR8xWeSYT6OQT0eI9FpV/Aa
- Q81d6+lQ1to7iHOXgEVG8yeswxJ1SzHNe3aujXWxMPP8T9dUKBMD4WbRrF/jxUl/osG4
- 398qv82s1cQ+ez4itGjjSIISroEbGnsSih5Ti0Mfh3nlJl+BcxMOBo9+Hzzm7UBucq4O
- kcdvxr/BuzpaY4cEVepnnWSH81v1yss4TLIqWc5zsrBPXVBGE3Ko2W5n2/5PBK/YC4aM
- 89Qg==
-X-Gm-Message-State: APjAAAVFgDud95edA53orJqJ+jJL1/xmwYGlbDSpI02coOsR6qp6CZrY
- JIXWwbBH0xueN7BdppE2/TV/4JSltvIK4C70HgU=
-X-Google-Smtp-Source: APXvYqyHSJVh71XbyNxUrseBdDaOrgsCKYEgH80cZsvYCQFfhjuOIwCdgh9E8GWzYcLhFnLBPzjp7kW4MaZ05lXAWdg=
-X-Received: by 2002:a92:981b:: with SMTP id l27mr22497981ili.118.1580740511331; 
- Mon, 03 Feb 2020 06:35:11 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=pHZXEZfxcArrJOwFLOO5B25gH5Nf7M6GMePV8H95wz8=;
+ b=pGsuR7utXU/c7obbGT2MdMtbqS1/PwysQUJ9hgSJXgdIfq3fw0vVddgleWKYy96AHN
+ SRKMEiZCNFUUe+AwjJ9rMc+UXJPCWRgw7ijHkR1BpSSNKNCfTewDbOwEuXBHtN/7f3wa
+ Acp42hrgq6lKbaF+HLit6mvMwS00vEKlpNbHzF3K4vi4B7CsWrnrmx+rRxdRG2eFMH4d
+ 2x6QvO/WO6Sm2DUIit62XyNsmc2xJIXU/7Y6/orIIg11H4mP+x4t0jkocPYlC6dZojcI
+ hJ8BToW3fuLUMx7Pir114/t2YD29UDaJCgHYYEzi8ykIu/KzerBhIycbtvYKQcYWrPe7
+ 6UUw==
+X-Gm-Message-State: APjAAAUXMZ43BY7zpCZ3OC3Zh1GXsoOBhxkhuj+wkC9QQo0C7XySlDYp
+ bROJylr29xHdAS2Tf1u6e00=
+X-Google-Smtp-Source: APXvYqz2HVVFSAa8uHQTrlSI3OhLdRF470sd06dYwwzRxF3/fPsupj9vDFDZEBqMNubVa0aYJMX5hg==
+X-Received: by 2002:ad4:4b08:: with SMTP id r8mr23469453qvw.250.1580740554339; 
+ Mon, 03 Feb 2020 06:35:54 -0800 (PST)
+Received: from auth2-smtp.messagingengine.com (auth2-smtp.messagingengine.com.
+ [66.111.4.228])
+ by smtp.gmail.com with ESMTPSA id y26sm10320882qtc.94.2020.02.03.06.35.53
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 03 Feb 2020 06:35:53 -0800 (PST)
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
+ by mailauth.nyi.internal (Postfix) with ESMTP id F307E22076;
+ Mon,  3 Feb 2020 09:35:52 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute6.internal (MEProxy); Mon, 03 Feb 2020 09:35:53 -0500
+X-ME-Sender: <xms:xy84XttKeqh-gEQBxwPA7O1wcftgh5R6j1HrJc4iCNBRU1xMSuoZGg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeejgdeihecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesthdtredttddtvdenucfhrhhomhepuehoqhhunhcu
+ hfgvnhhguceosghoqhhunhdrfhgvnhhgsehgmhgrihhlrdgtohhmqeenucfkphephedvrd
+ duheehrdduuddurdejudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgr
+ ihhlfhhrohhmpegsohhquhhnodhmvghsmhhtphgruhhthhhpvghrshhonhgrlhhithihqd
+ eiledvgeehtdeigedqudejjeekheehhedvqdgsohhquhhnrdhfvghngheppehgmhgrihhl
+ rdgtohhmsehfihigmhgvrdhnrghmvg
+X-ME-Proxy: <xmx:xy84XrUwqTqDlXrEOy3a-4hDTr1RqwBGNrCO4l3nOYY4diUTEohGaw>
+ <xmx:xy84XmrxUVgY6rxtgT_eM73yjc8rIyKzW2JEtf46MXyzuQgJjmNCLA>
+ <xmx:xy84XmrMHXee9CTrkoNKbXcfj7xPp4QGXyZGcdYPkESWy6NUGo3-aA>
+ <xmx:yC84XrVUQM4PYFvQRz9qqQmG05aMITRnwhR3rbkEWU1bcpyLopjULeXBLiQ>
+Received: from localhost (unknown [52.155.111.71])
+ by mail.messagingengine.com (Postfix) with ESMTPA id BFF233060272;
+ Mon,  3 Feb 2020 09:35:50 -0500 (EST)
+Date: Mon, 3 Feb 2020 22:35:49 +0800
+From: Boqun Feng <boqun.feng@gmail.com>
+To: Andrew Murray <amurray@thegoodpenguin.co.uk>
+Subject: Re: [PATCH v2 3/3] PCI: hv: Introduce hv_msi_entry
+Message-ID: <20200203143549.GG83200@debian-boqun.qqnc3lrjykvubdpftowmye0fmh.lx.internal.cloudapp.net>
+References: <20200203050313.69247-1-boqun.feng@gmail.com>
+ <20200203050313.69247-4-boqun.feng@gmail.com>
+ <20200203095140.GE20189@big-machine>
 MIME-Version: 1.0
-References: <20200203140425.26579-1-erwan.leray@st.com>
-In-Reply-To: <20200203140425.26579-1-erwan.leray@st.com>
-From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Date: Mon, 3 Feb 2020 15:35:00 +0100
-Message-ID: <CAJiuCcfRuHXajo7+cDMpQ73vhGuerW3_ObrfG0YOEzogKaH-sA@mail.gmail.com>
-Subject: Re: [PATCH v3 0/4] STM32 early console
-To: Erwan Le Ray <erwan.leray@st.com>
+Content-Disposition: inline
+In-Reply-To: <20200203095140.GE20189@big-machine>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_063512_602748_24A467FD 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20200203_063555_494295_9340F1AE 
+X-CRM114-Status: GOOD (  23.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [peron.clem[at]gmail.com]
+ provider [boqun.feng[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,42 +120,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sascha Hauer <s.hauer@pengutronix.de>,
- Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Gerald Baeza <gerald.baeza@st.com>, Olof Johansson <olof@lixom.net>,
- Nathan Huckleberry <nhuck15@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>, linux-hyperv@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Stephen Hemminger <sthemmin@microsoft.com>, linux-pci@vger.kernel.org,
+ Haiyang Zhang <haiyangz@microsoft.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, Michael Kelley <mikelley@microsoft.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "H. Peter Anvin" <hpa@zytor.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ "K. Y. Srinivasan" <kys@microsoft.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgRXJ3YW4sCgpPbiBNb24sIDMgRmViIDIwMjAgYXQgMTU6MDQsIEVyd2FuIExlIFJheSA8ZXJ3
-YW4ubGVyYXlAc3QuY29tPiB3cm90ZToKPgo+IEFkZCBVQVJUIGluc3RhbmNlIGNvbmZpZ3VyYXRp
-b24gdG8gU1RNMzIgRjQgYW5kIEY3IGVhcmx5IGNvbnNvbGUuCj4gQWRkIFNUTTMyIEg3IGFuZCBN
-UDEgZWFybHkgY29uc29sZSBzdXBwb3J0Lgo+Cj4gQ2hhbmdlcyBpbiB2MzoKPiAtIGZpeCBhIG1p
-c3NpbmcgY29uZGl0aW9uIGZvciBTVE0zMk1QMQo+Cj4gQ2hhbmdlcyBpbiB2MjoKPiAtIHNwbGl0
-ICJbUEFUQ0hdIEFSTTogZGVidWc6IHN0bTMyOiBhZGQgVUFSVCBlYXJseSBjb25zb2xlIGNvbmZp
-Z3VyYXRpb24iCj4gICBpbnRvIHNlcGFyYXRlIHBhdGNoZXMgYXMgc3VnZ2VzdGVkIGJ5IENsZW1l
-bnQgaW50byBbMV0KClRoYW5rcyBmb3Igc3BsaXR0aW5nIHRoZSBwYXRjaCwgdGhlIHdob2xlIHNl
-cmllcyBsb29rcyBmaW5lIHRvIG1lLgoKQWNrZWQtYnk6IENsw6ltZW50IFDDqXJvbiA8cGVyb24u
-Y2xlbUBnbWFpbC5jb20+CgpDbMOpbWVudAoKCgo+Cj4gWzFdIGh0dHBzOi8vbGttbC5vcmcvbGtt
-bC8yMDE5LzQvMTAvMTk5Cj4KPiBFcndhbiBMZSBSYXkgKDQpOgo+ICAgQVJNOiBkZWJ1Zzogc3Rt
-MzI6IGFkZCBVQVJUIGVhcmx5IGNvbnNvbGUgY29uZmlndXJhdGlvbiBmb3IgU1RNMzJGNAo+ICAg
-QVJNOiBkZWJ1Zzogc3RtMzI6IGFkZCBVQVJUIGVhcmx5IGNvbnNvbGUgY29uZmlndXJhdGlvbiBm
-b3IgU1RNMzJGNwo+ICAgQVJNOiBkZWJ1Zzogc3RtMzI6IGFkZCBVQVJUIGVhcmx5IGNvbnNvbGUg
-c3VwcG9ydCBmb3IgU1RNMzJINwo+ICAgQVJNOiBkZWJ1Zzogc3RtMzI6IGFkZCBVQVJUIGVhcmx5
-IGNvbnNvbGUgc3VwcG9ydCBmb3IgU1RNMzJNUDEKPgo+ICBhcmNoL2FybS9LY29uZmlnLmRlYnVn
-ICAgICAgICAgfCA0MiArKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLS0tCj4gIGFyY2gv
-YXJtL2luY2x1ZGUvZGVidWcvc3RtMzIuUyB8ICA5ICsrKystLS0tCj4gIDIgZmlsZXMgY2hhbmdl
-ZCwgNDAgaW5zZXJ0aW9ucygrKSwgMTEgZGVsZXRpb25zKC0pCj4KPiAtLQo+IDIuMTcuMQo+Cgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+On Mon, Feb 03, 2020 at 09:51:40AM +0000, Andrew Murray wrote:
+> On Mon, Feb 03, 2020 at 01:03:13PM +0800, Boqun Feng wrote:
+> > Add a new structure (hv_msi_entry), which is also defined int tlfs, to
+> 
+> s/int/in the/ ?
+> 
+
+Good catch, will fix.
+
+> > describe the msi entry for HVCALL_RETARGET_INTERRUPT. The structure is
+> > needed because its layout may be different from architecture to
+> > architecture.
+> > 
+> > Also add a new generic interface hv_set_msi_address_from_desc() to allow
+> > different archs to set the msi address from msi_desc.
+> > 
+> > No functional change, only preparation for the future support of virtual
+> > PCI on non-x86 architectures.
+> > 
+> > Signed-off-by: Boqun Feng (Microsoft) <boqun.feng@gmail.com>
+> > ---
+> >  arch/x86/include/asm/hyperv-tlfs.h  | 11 +++++++++--
+> >  arch/x86/include/asm/mshyperv.h     |  5 +++++
+> >  drivers/pci/controller/pci-hyperv.c |  4 ++--
+> >  3 files changed, 16 insertions(+), 4 deletions(-)
+> > 
+> > diff --git a/arch/x86/include/asm/hyperv-tlfs.h b/arch/x86/include/asm/hyperv-tlfs.h
+> > index 4a76e442481a..953b3ad38746 100644
+> > --- a/arch/x86/include/asm/hyperv-tlfs.h
+> > +++ b/arch/x86/include/asm/hyperv-tlfs.h
+> > @@ -912,11 +912,18 @@ struct hv_partition_assist_pg {
+> >  	u32 tlb_lock_count;
+> >  };
+> >  
+> > +union hv_msi_entry {
+> > +	u64 as_uint64;
+> > +	struct {
+> > +		u32 address;
+> > +		u32 data;
+> > +	} __packed;
+> > +};
+> > +
+> >  struct hv_interrupt_entry {
+> >  	u32 source;			/* 1 for MSI(-X) */
+> >  	u32 reserved1;
+> > -	u32 address;
+> > -	u32 data;
+> > +	union hv_msi_entry msi_entry;
+> >  } __packed;
+> >  
+> >  /*
+> > diff --git a/arch/x86/include/asm/mshyperv.h b/arch/x86/include/asm/mshyperv.h
+> > index 6b79515abb82..3bdaa3b6e68f 100644
+> > --- a/arch/x86/include/asm/mshyperv.h
+> > +++ b/arch/x86/include/asm/mshyperv.h
+> > @@ -240,6 +240,11 @@ bool hv_vcpu_is_preempted(int vcpu);
+> >  static inline void hv_apic_init(void) {}
+> >  #endif
+> >  
+> > +#define hv_set_msi_address_from_desc(msi_entry, msi_desc)	\
+> > +do {								\
+> > +	(msi_entry)->address = (msi_desc)->msg.address_lo;	\
+> > +} while (0)
+> 
+> Given that this is a single statement, is there really a need for the do ; while(0) ?
+> 
+
+I choose to use do ; while (0) because I don't want code like the
+following to be able to compile:
+
+	hv_set_msi_address_from_desc(...) /* semicolon is missing */
+	a = b;
+
+But now think more about this, I think it's probably better to define
+this as a function..
+
+> 
+> > +
+> >  #else /* CONFIG_HYPERV */
+> >  static inline void hyperv_init(void) {}
+> >  static inline void hyperv_setup_mmu_ops(void) {}
+> > diff --git a/drivers/pci/controller/pci-hyperv.c b/drivers/pci/controller/pci-hyperv.c
+> > index 0d9b74503577..2240f2b3643e 100644
+> > --- a/drivers/pci/controller/pci-hyperv.c
+> > +++ b/drivers/pci/controller/pci-hyperv.c
+> > @@ -1170,8 +1170,8 @@ static void hv_irq_unmask(struct irq_data *data)
+> >  	memset(params, 0, sizeof(*params));
+> >  	params->partition_id = HV_PARTITION_ID_SELF;
+> >  	params->int_entry.source = 1; /* MSI(-X) */
+> > -	params->int_entry.address = msi_desc->msg.address_lo;
+> > -	params->int_entry.data = msi_desc->msg.data;
+> > +	hv_set_msi_address_from_desc(&params->int_entry.msi_entry, msi_desc);
+> > +	params->int_entry.msi_entry.data = msi_desc->msg.data;
+> 
+> If the layout may differ, then don't we also need a wrapper for data?
+> 
+
+On x86 hv_msi_entry is:
+
+	{
+		u32 address;
+		u32 data;
+	}
+
+and on ARM64 it is:
+
+	{
+		u64 address;
+		u32 data;
+		u32 reserved;
+	}
+
+So currently, setting msi_entry.data doesn't need a wrapper for
+different archs. But now you mention it, probably a better way is to
+provide a wrapper hv_set_msi_entry_from_desc(), which sets both address
+and data instead of hv_set_msi_address_from_desc().
+
+Thanks for looking into the whole patchset!
+
+Regards,
+Boqun
+
+> Thanks,
+> 
+> Andrew Murray
+> 
+> >  	params->device_id = (hbus->hdev->dev_instance.b[5] << 24) |
+> >  			   (hbus->hdev->dev_instance.b[4] << 16) |
+> >  			   (hbus->hdev->dev_instance.b[7] << 8) |
+> > -- 
+> > 2.24.1
+> > 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
