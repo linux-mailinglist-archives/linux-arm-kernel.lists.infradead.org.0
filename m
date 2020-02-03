@@ -2,90 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C571150874
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:33:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42CC215087B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:35:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dtnDm7UU59UNXw9yP/bR38o7Um30ZvJ/IeKC0i+g9W8=; b=JsVhofjnPUB+zU
-	xRSoSdxjHCL2lHamZ7OhZZArkLD66XD/n5E9UGvU4zZWKcSNgkw6HJV/2lDHZgb3sZI0mfAgg+EYX
-	zMF5LfcQTfZz3oL4UkTNOUlidUf8IBIR5gP3YI+RppYtwp97CY+OZ/nIf6zB1CszzjREkV4ZZzuco
-	ZyRSSx6+oAtvHBDFAEMbCVaO4Yzru7ZwsaxFqD9JlyjOpHBETMA/WFyZdtKbx5BFtJl0Z2SBU4GuH
-	E67mLNJzoLuiUiVL/wyBlu48N0Os7wd2Bdmhn1Ed3rAIRuidpSWCTpccXpy9I6mB7Yso9j5Hk6vKY
-	pIHo62iXJEQJ0/fw6rvA==;
+	List-Owner; bh=zy0XSfglLMt823DB9jDKgtYycN3s3VxWBMc8rfwYSgw=; b=B6lj+4EcPoSZOW
+	ILKSbk31UoTiQTFcC8yhUekaHIjZMnCaE+Yp3c0rMYVrpfy5QeFz8yM2ATtO89PjnfV48NOKIXksO
+	M00NHSjYIxp3iiq1iky5VZXxbwnOCf4ByJTcxbKDaxYHcDqJX05l/F2vRKjOrOYvHn90P2uDSXycq
+	ryX/8dNE/cr+IZcsss0bGg7i2gyVZhPUCt+Ehd9QhVD9A2fgrFIcKqagAG90vJmlJbKTy59/B8LTM
+	0RQ4JhKCZkW72IMeWhiwHZM2LnxmDDJ5HwogZGxYqOS+UbOHyyQ9A6PJIlmqgjDukhNc3DqJqndat
+	C3xGhAaFUAR+NeJ9ZzpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iycmc-0003yC-5o; Mon, 03 Feb 2020 14:33:02 +0000
-Received: from wout5-smtp.messagingengine.com ([64.147.123.21])
+	id 1iycoq-0005SM-AX; Mon, 03 Feb 2020 14:35:20 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iycmU-0003xI-NI
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:32:56 +0000
-Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailout.west.internal (Postfix) with ESMTP id 029583F4;
- Mon,  3 Feb 2020 09:32:46 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute6.internal (MEProxy); Mon, 03 Feb 2020 09:32:47 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kroah.com; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm3; bh=dVVz8f519a/6Wo8ts1nwJdClp2T
- 55/rafW7s+KHqhnk=; b=SlBpQvhnkwxNQA5GVKfPFpQWwmfTPrXfHNdEIHnAsZW
- MtKJWd4jl8+GpHZ9UHOTUaTKxThh9mLda3lX64ofX0HmtqbYjTjoEDwBwtrNkMg7
- FHgT+xL8BwI3FOQxFMTiYn13EB3vtZV78dfjbw8NbDJuwZk5tefF9yQyFCouuRab
- adazfnEjP0k2+nhutWNM6OzdnlwnCaysFKxT5j/o5fgr3TcCCA6qJtphGJ9NHSW4
- kPCctvGJnMH6x2PjoYZ5Vj3nDSDLWl6JVXIM1Fv43YfJuuf2Lk0CRiYnvFMR0OX2
- n4eQermht+9JlBf+kIHfudvFrUMGiGjpjjbgnb/8f9w==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=dVVz8f
- 519a/6Wo8ts1nwJdClp2T55/rafW7s+KHqhnk=; b=NMP4CvD2dEKlRVY61F0dj7
- s+rS+cWGv64+D9GiMtiK/1nzLJ2EEsQVgDW8KEi58ThRygQV11QyxrW8DTKzK9t/
- 55+I0pSxX9AR0W0XffGtkq+oGPSN+DDxuLcRujkLjL8X3uRaKrA8Yhtl4d7ckGGv
- 5Y7H6rNz/T3pTl7Ib2mU8qg6+AfxAyKY+U4+y4/3aEysSH/8TbFXubKRnW03O83A
- xrFjyasRy7+OvJYhTbgHM/apBCc/rTsRVZOHZmEXWyoGtTm6k+CBrsdnynghXiDs
- h85BScVYvt7A9QAZH8F0KV1vKTjgWnWZjMb5T2uKhDoLHWuMbjffpsBZooBm08jg
- ==
-X-ME-Sender: <xms:Di84XqpXYxZMELaRk04HUTZm9NHN_KOV8aBBX8CMmRuAVBKctR0KVg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeejgdeigecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesthdtredttddtvdenucfhrhhomhepifhrvghgucfm
- jfcuoehgrhgvgheskhhrohgrhhdrtghomheqnecukfhppedutdegrddufedvrdeghedrle
- elnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepghhr
- vghgsehkrhhorghhrdgtohhm
-X-ME-Proxy: <xmx:Di84XjK3grCZy77gWAA6kdg6_1Ss_WliCBZWb9E_jht_IrnA_hIz3w>
- <xmx:Di84XsKJfBy5uGKmA1wLtLu-K1tPTmjycah1esfDzv-IvY221vTnKQ>
- <xmx:Di84Xsm6D1vgV6651xG1lgonpuB82Guy32jcgrBxL_0nRj8W8Xf6nQ>
- <xmx:Di84XuYQxHkaQ7Cf3f8u6I4zZl4KF33PHopm_Mx9xK-f-GQJh51iVg>
-Received: from localhost (unknown [104.132.45.99])
- by mail.messagingengine.com (Postfix) with ESMTPA id 3919D3060272;
- Mon,  3 Feb 2020 09:32:46 -0500 (EST)
-Date: Mon, 3 Feb 2020 14:32:45 +0000
-From: Greg KH <greg@kroah.com>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH 1/1] media: si470x-i2c: Move free() past last use of
- 'radio'
-Message-ID: <20200203143245.GA3220000@kroah.com>
-References: <20200203132130.12748-1-lee.jones@linaro.org>
+ id 1iycoi-0005Rc-I2
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:35:14 +0000
+Received: by mail-il1-x142.google.com with SMTP id v13so12777750iln.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 03 Feb 2020 06:35:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=PeAE2050RUwA2PhxvSVJSMNprANdC/69hQV8eL+NY48=;
+ b=TUaaPrZnYM1tgevoqkuJWFXrJMpt7+22SMpJkevzbwT+vt6EMOU3Sxf5Ll8wF7cWhx
+ 7wgPwHJBuaVxTxd2/kVnoxRg3aW8jdNZabM+0Z/6I40M8Hfubj7S1Z5RTdQgDwPFOlFX
+ OVICfMVZyyoNxzFIvNvbpQZVApef+W2nMB6qVASrRYzBY8X67KyEq3DacxVLhs9NYN9H
+ vqjOWSLE5mRse511pO6UqBzDcy18YqEX0PX3v8nMk5Y+GMUrUyHqK5xTkzftOzmp7jp5
+ zRsbdXlVnXf4+DzZwS5E3lmroWXUCCzizzdOG527hxV8gTth11yutKox7zlpOIfLMnZV
+ 5aRQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=PeAE2050RUwA2PhxvSVJSMNprANdC/69hQV8eL+NY48=;
+ b=H1J/Bt1PlSVRqngE7ng08qEym74zVtawUOyUAbCLW2PC/f6P60ErwVENlGPfBDqR/O
+ Hb5AFriYYijMp6GdadzXFJsGQKM6nBS7kdpACVn4+QVurJR8xWeSYT6OQT0eI9FpV/Aa
+ Q81d6+lQ1to7iHOXgEVG8yeswxJ1SzHNe3aujXWxMPP8T9dUKBMD4WbRrF/jxUl/osG4
+ 398qv82s1cQ+ez4itGjjSIISroEbGnsSih5Ti0Mfh3nlJl+BcxMOBo9+Hzzm7UBucq4O
+ kcdvxr/BuzpaY4cEVepnnWSH81v1yss4TLIqWc5zsrBPXVBGE3Ko2W5n2/5PBK/YC4aM
+ 89Qg==
+X-Gm-Message-State: APjAAAVFgDud95edA53orJqJ+jJL1/xmwYGlbDSpI02coOsR6qp6CZrY
+ JIXWwbBH0xueN7BdppE2/TV/4JSltvIK4C70HgU=
+X-Google-Smtp-Source: APXvYqyHSJVh71XbyNxUrseBdDaOrgsCKYEgH80cZsvYCQFfhjuOIwCdgh9E8GWzYcLhFnLBPzjp7kW4MaZ05lXAWdg=
+X-Received: by 2002:a92:981b:: with SMTP id l27mr22497981ili.118.1580740511331; 
+ Mon, 03 Feb 2020 06:35:11 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200203132130.12748-1-lee.jones@linaro.org>
+References: <20200203140425.26579-1-erwan.leray@st.com>
+In-Reply-To: <20200203140425.26579-1-erwan.leray@st.com>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Mon, 3 Feb 2020 15:35:00 +0100
+Message-ID: <CAJiuCcfRuHXajo7+cDMpQ73vhGuerW3_ObrfG0YOEzogKaH-sA@mail.gmail.com>
+Subject: Re: [PATCH v3 0/4] STM32 early console
+To: Erwan Le Ray <erwan.leray@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_063254_780708_505EC426 
-X-CRM114-Status: UNSURE (   7.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200203_063512_602748_24A467FD 
+X-CRM114-Status: GOOD (  11.07  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [peron.clem[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.21 listed in list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -104,31 +93,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, stable@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Sascha Hauer <s.hauer@pengutronix.de>,
+ Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
+ Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Gerald Baeza <gerald.baeza@st.com>, Olof Johansson <olof@lixom.net>,
+ Nathan Huckleberry <nhuck15@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 03, 2020 at 01:21:30PM +0000, Lee Jones wrote:
-> A pointer to 'struct si470x_device' is currently used after free:
-> 
->   drivers/media/radio/si470x/radio-si470x-i2c.c:462:25-30: ERROR: reference
->     preceded by free on line 460
-> 
-> Shift the call to free() down past its final use.
-> 
-> NB: Not sending to Mainline, since the problem does not exist there.
-
-It doesn't exist there because of a bad merge?  What commit caused the
-problem?
-
-thanks,
-
-greg k-h
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgRXJ3YW4sCgpPbiBNb24sIDMgRmViIDIwMjAgYXQgMTU6MDQsIEVyd2FuIExlIFJheSA8ZXJ3
+YW4ubGVyYXlAc3QuY29tPiB3cm90ZToKPgo+IEFkZCBVQVJUIGluc3RhbmNlIGNvbmZpZ3VyYXRp
+b24gdG8gU1RNMzIgRjQgYW5kIEY3IGVhcmx5IGNvbnNvbGUuCj4gQWRkIFNUTTMyIEg3IGFuZCBN
+UDEgZWFybHkgY29uc29sZSBzdXBwb3J0Lgo+Cj4gQ2hhbmdlcyBpbiB2MzoKPiAtIGZpeCBhIG1p
+c3NpbmcgY29uZGl0aW9uIGZvciBTVE0zMk1QMQo+Cj4gQ2hhbmdlcyBpbiB2MjoKPiAtIHNwbGl0
+ICJbUEFUQ0hdIEFSTTogZGVidWc6IHN0bTMyOiBhZGQgVUFSVCBlYXJseSBjb25zb2xlIGNvbmZp
+Z3VyYXRpb24iCj4gICBpbnRvIHNlcGFyYXRlIHBhdGNoZXMgYXMgc3VnZ2VzdGVkIGJ5IENsZW1l
+bnQgaW50byBbMV0KClRoYW5rcyBmb3Igc3BsaXR0aW5nIHRoZSBwYXRjaCwgdGhlIHdob2xlIHNl
+cmllcyBsb29rcyBmaW5lIHRvIG1lLgoKQWNrZWQtYnk6IENsw6ltZW50IFDDqXJvbiA8cGVyb24u
+Y2xlbUBnbWFpbC5jb20+CgpDbMOpbWVudAoKCgo+Cj4gWzFdIGh0dHBzOi8vbGttbC5vcmcvbGtt
+bC8yMDE5LzQvMTAvMTk5Cj4KPiBFcndhbiBMZSBSYXkgKDQpOgo+ICAgQVJNOiBkZWJ1Zzogc3Rt
+MzI6IGFkZCBVQVJUIGVhcmx5IGNvbnNvbGUgY29uZmlndXJhdGlvbiBmb3IgU1RNMzJGNAo+ICAg
+QVJNOiBkZWJ1Zzogc3RtMzI6IGFkZCBVQVJUIGVhcmx5IGNvbnNvbGUgY29uZmlndXJhdGlvbiBm
+b3IgU1RNMzJGNwo+ICAgQVJNOiBkZWJ1Zzogc3RtMzI6IGFkZCBVQVJUIGVhcmx5IGNvbnNvbGUg
+c3VwcG9ydCBmb3IgU1RNMzJINwo+ICAgQVJNOiBkZWJ1Zzogc3RtMzI6IGFkZCBVQVJUIGVhcmx5
+IGNvbnNvbGUgc3VwcG9ydCBmb3IgU1RNMzJNUDEKPgo+ICBhcmNoL2FybS9LY29uZmlnLmRlYnVn
+ICAgICAgICAgfCA0MiArKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLS0tCj4gIGFyY2gv
+YXJtL2luY2x1ZGUvZGVidWcvc3RtMzIuUyB8ICA5ICsrKystLS0tCj4gIDIgZmlsZXMgY2hhbmdl
+ZCwgNDAgaW5zZXJ0aW9ucygrKSwgMTEgZGVsZXRpb25zKC0pCj4KPiAtLQo+IDIuMTcuMQo+Cgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
+a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
+bmVsCg==
