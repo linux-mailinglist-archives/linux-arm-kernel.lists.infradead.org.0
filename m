@@ -2,59 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57989150E55
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 18:08:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5604D150E59
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 18:09:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qCy23Kn9uxB9fwGsEl+E7iPi5pdAXEa3hDGBatGrmvU=; b=duG+zk5jWfOjbq
-	QVRN5n//95Zcj9dAfkmDtP9PorFYDtcmeJTCK4jxhIzGMoDtRVme3zfZ7WqoSqftqKKRLKEx1iqYr
-	tiekBM5xqjqLdFVworSgkhZY4lv+P+nqALDD5LMnUx9g/RdFB7jBl7179/vn1btEAvShCmZjMoQ7a
-	FICjSZvggQXJJV4igZDOfo0bm4Mp5mOfb+Dza/9/5Ma6zghy3LJEDk5EB0C8UxwlS3Qvwo2lnPHYT
-	LW6NUYdvuuNVilbTugtVhZqPk3DITVDVRv9m+fu9YvAOxXDM96i+EcnPNipQkCDLrVT0LOBTrbraJ
-	/YDFRrnvldza2DrG5SiA==;
+	List-Owner; bh=bby/9OoMUYTiC9UK4b6zFsjjQVz9J++A9gRwVPfJK1I=; b=LVDbwCLDtnQKzn
+	PTWtMU5ET2dTQOQ6spotKmcUjfIra7TQMP6puTyHRyUNhRR3f8BSfs9Lx3JFK+zG74VCYI25ei1WY
+	ZD7DPR9fa2aqvtsdmpogT345yW9y9kickgioDTwrKt00hgc2peXqfC8y4RzT0qxb3GhBWChA72Qpx
+	AcDh02NUMj9m9Xvr4lxeKZmQuLpVzrbmB6TqlLwENbOxu7oJi73q0YlW2tDc0ffSDKA5VWFyUx3wo
+	HSRo9eUdgypGv49tvtVq7dPJ5yT9iMkwBJ+LgP9/5KwFmX7xwQeh37y3QvLE6LIfw7j2HQmEaGs7/
+	Vx0DJFBT51kI78EvaLbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyfCv-00073g-Br; Mon, 03 Feb 2020 17:08:21 +0000
-Received: from verein.lst.de ([213.95.11.211])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyfCo-00072z-0u
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 17:08:16 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 3F48368BFE; Mon,  3 Feb 2020 18:08:09 +0100 (CET)
-Date: Mon, 3 Feb 2020 18:08:09 +0100
-From: Christoph Hellwig <hch@lst.de>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PoC] arm: dma-mapping: direct: Apply dma_pfn_offset only when
- it is valid
-Message-ID: <20200203170809.GA19293@lst.de>
-References: <8eb68140-97b2-62ce-3e06-3761984aa5b1@ti.com>
- <20200114164332.3164-1-peter.ujfalusi@ti.com>
- <f8121747-8840-e279-8c7c-75a9d4becce8@arm.com>
- <28ee3395-baed-8d59-8546-ab7765829cc8@ti.com>
- <4f0e307f-29a9-44cd-eeaa-3b999e03871c@arm.com>
- <75843c71-1718-8d61-5e3d-edba6e1b10bd@ti.com> <20200130075332.GA30735@lst.de>
- <b2b1cb21-3aae-2181-fd79-f63701f283c0@ti.com> <20200130164010.GA6472@lst.de>
- <c37b12e4-0e0c-afa2-a8e4-782ccd57542d@ti.com>
+	id 1iyfDP-0007Ko-KP; Mon, 03 Feb 2020 17:08:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iyfDG-0007K0-5l
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 17:08:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DDFF330E;
+ Mon,  3 Feb 2020 09:08:40 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AE0763F52E;
+ Mon,  3 Feb 2020 09:08:38 -0800 (PST)
+Date: Mon, 3 Feb 2020 17:08:32 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Maulik Shah <mkshah@codeaurora.org>
+Subject: Re: [PATCH v3 5/7] drivers: firmware: psci: Add hierarchical domain
+ idle states converter
+Message-ID: <20200203170832.GA38466@bogus>
+References: <1580736940-6985-1-git-send-email-mkshah@codeaurora.org>
+ <1580736940-6985-6-git-send-email-mkshah@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <c37b12e4-0e0c-afa2-a8e4-782ccd57542d@ti.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <1580736940-6985-6-git-send-email-mkshah@codeaurora.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_090814_365810_C2F92470 
-X-CRM114-Status: GOOD (  20.89  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200203_090842_307549_CA3AC2C0 
+X-CRM114-Status: GOOD (  29.08  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,68 +64,310 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, vigneshr@ti.com, konrad.wilk@oracle.com,
- linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org,
- rogerq@ti.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: dianders@chromium.org, lsrao@codeaurora.org, Lorenzo.Pieralisi@arm.com,
+ rnayak@codeaurora.org, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, evgreen@chromium.org,
+ swboyd@chromium.org, david.brown@linaro.org, agross@kernel.org,
+ ilina@codeaurora.org, Sudeep Holla <sudeep.holla@arm.com>,
+ ulf.hansson@linaro.org, bjorn.andersson@linaro.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBKYW4gMzEsIDIwMjAgYXQgMDQ6MDA6MjBQTSArMDIwMCwgUGV0ZXIgVWpmYWx1c2kg
-d3JvdGU6Cj4gSSBzZWUuIE15IFBvQyBwYXRjaCB3YXMgbm90IHRvbyBvZmYgdGhlbiA7KQo+IFNv
-IHRoZSBwbGFuIGlzIHRvIGhhdmUgYSBnZW5lcmljIGltcGxlbWVudGF0aW9uIGZvciBhbGwgb2Yg
-dGhlCj4gYXJjaGl0ZWN0dXJlLCByaWdodD8KCtCGIGRvbid0IGtub3cgb2YgYSBjb25jcmV0ZSBw
-bGFuLCBidXQgdGhhdCdzIGRlZmludGl2ZWx5IHdoYXQgSSdkIGxpa2UKdG8gc2VlLgoKPiA+PiBU
-aGUgZG1hX3Bmbl9vZmZzZXQgaXMgX3N0aWxsXyBhcHBsaWVkIHRvIHRoZSBtYXNrIHdlIGFyZSB0
-cnlpbmcgdG8gc2V0Cj4gPj4gKGFuZCB2YWxpZGF0ZSkgdmlhIGRtYS1kaXJlY3QuCj4gPiAKPiA+
-IEFuZCBmb3IgdGhlIGdlbmVyYWwgY2FzZSB0aGF0IGlzIGV4YWN0bHkgdGhlIHJpZ2h0IHRoaW5n
-IHRvIGRvLCB3ZQo+ID4ganVzdCBuZWVkIHRvIGRlYWwgd2l0aCByZWFsbHkgb2RkIFpPTkVfRE1B
-IHBsYWNlbWVudHMgbGlrZSB5b3Vycy4KPiAKPiBJJ20gc3RpbGwgbm90IGNvbnZpbmNlZCwgdGhl
-IHBvaW50IG9mIHRoZSBETUEgbWFzaywgYXQgbGVhc3QgaG93IEkgc2VlCj4gaXQsIHRvIGNoZWNr
-IHRoYXQgdGhlIGRtYSBhZGRyZXNzIGNhbiBiZSBoYW5kbGVkIGJ5IHRoZSBkZXZpY2UgKERNQSwK
-PiBwZXJpcGhlcmFsIHdpdGggYnVpbHQgaW4gRE1BLCBldGMpLCBpdCBpcyBub3QgYWdhaW5zdCBw
-aHlzaWNhbCBhZGRyZXNzLgo+IERvaW5nIHBoeXNfdG9fZG1hKCkgb24gdGhlIG1hc2sgZnJvbSB0
-aGUgZG1hX3NldF9tYXNrKCkgaXMganVzdCB3cm9uZy4KCldlIGhhdmUgYSB0cmFuc2xhdGlvbiBi
-ZXR3ZWVuIHRoZSBhZGRyZXNzZXMgdGhhdCB0aGUgZGV2aWNlIHNlZXMsIGFuZAp0aG9zZSB0aGF0
-IHRoZSBDUFUgc2Vlcy4gIFRoZSBkZXZpY2UgY2FuIGFkZHJlc3MgTiBiaXRzIG9mIGFkZHJlc3Mg
-c3BhY2UKYXMgc2VlbiBmcm9tIHRoZSBkZXZpY2UuICBUaGUgYWRkcmVzc2VzIGVuY29kZWQgaW4g
-bWF4X3BmbiwKem9uZV9kbWFfYml0cyBvciB0aGUgaGFyY29kZWQgMzIgaW4gdGhlIHpvbmUgZG1h
-IDMyIGNhc2UgYXJlIENQVSBhZGRyZXNzLgpTbyBubywgd2UgY2FuJ3QgYmxpbmRseSBjb21wYXJl
-IHRob3NlLgoKCj4gPiBCdXQgdGhhdCB3aWxsIGNhdXNlIHlldCBhbm90aGVyIHJlZ3Jlc3Npb24g
-aW4gd2hhdCB3ZSBoYXZlIGp1c3QgZml4ZWQKPiA+IHdpdGggdXNpbmcgdGhlIGdlbmVyaWMgZGly
-ZWN0IG9wcywgYXQgd2hpY2ggcG9pbnRzIGl0IHR1cm5zIGludG8gd2hvCj4gPiBzY3JlYW1zIGxv
-dWRlci4KPiAKPiBIZWhlLCBJIHNlZS4KPiBJIGdlbnVpbmVseSBjdXJpb3VzIHdoeSBrMiBwbGF0
-Zm9ybSB3b3JrZWQganVzdCBmaW5lIHdpdGggTFBBRSAoaXQgbmVlZHMKPiBpdCksIGJ1dCBndXlz
-IGhhZCBpc3N1ZXMgd2l0aCBMUEFFIG9uIGRyYTcvYW01Lgo+IFRoZSBmaXggZm9yIGRyYTcvYW01
-IGJyb2tlIGsyLgo+IEFzIGZhciBhcyBJIGNhbiBzZWUgdGhlIG1haW4gKG9ubHkpIGRpZmZlcmVu
-Y2UgaXMgdGhhdCBrMiBoYXZlCj4gZG1hX3Bmbl9vZmZzZXQgPSAweDc4MDAwMCwgd2hpbGUgZHJh
-Ny9hbTUgaGF2ZSBpdCAwIChyZWFsbHkgZGlyZWN0IG1hcHBpbmcpLgoKSG93IG11Y2ggbWVtb3J5
-IGRvZXMgdGhlIHBsYXRmb3JtIGhhdmU/ICBPbmNlIHlvdSBhcmUgYWJvdmUgMzItYml0cyB3b3J0
-aApvZiBhZGRyZXNzIHNwYWNlIGRldmljZXMgd2l0aCBhIDMyLWJpdCBETUEgbWFzayBjYW4ndCBh
-ZGRyZXNzIGFsbCB0aGUKbWVtb3J5LiAgTm93IGlmIGsyIGZvciBleGFtcGxlIG9ubHkgaGFkIGxl
-c3MgdGhhbiA0RyBvZiBtZW1vcnksIGJ1dCBhdAphZGRyZXNzZXMgb3ZlciA0RywgYW5kIHRoZSBv
-ZmZzZXQgY29tcGVuc2F0ZXMgZm9yIHRoZSBvZmZzZXQgb2YgdGhlIERSQU0KaXQgd29ya3Mgd2l0
-aG91dCBib3VuY2UgYnVmZmVyaW5nIGFuZCB0aHVzIGRpZG4ndCBuZWVkIHN3aW90bGIuICBCdXQg
-YW55CnBsYXRmb3JtIHRoYXQgaGFzIERSQU0gdGhhdCBpcyBub3QgYWRkcmVzc2FibGUgd2lsbCBu
-ZWVkIHN3aW90bGIuCgo+ID4gIAl1NjQgbWluX21hc2s7Cj4gPiAgCj4gPiArCWlmIChtYXNrID49
-IERNQV9CSVRfTUFTSygzMikpCj4gPiArCQlyZXR1cm4gMTsKPiA+ICsKPiAKPiBSaWdodCwgc28g
-c2tpcHBpbmcgcGh5c190b19kbWEoKSBmb3IgdGhlIG1hc2sgYW5kIGJlbGlldmluZyB0aGF0IGl0
-IHdpbGwKPiB3b3JrLi4KPiAKPiBJdCBkb2VzOiBhdWRpbyBhbmQgZG1hdGVzdCBtZW1jcHkgdGVz
-dHMgYXJlIGp1c3QgZmluZSB3aXRoIHRoaXMsIE1NQwo+IGFsc28gcHJvYmVkIHdpdGggQURNQSBl
-bmFibGVkLgo+IAo+IEFzIGZhciBhcyBJIGNhbiB0ZWxsIGl0IHdvcmtzIGFzIHdlbGwgYXMgZmFs
-bGluZyBiYWNrIHRvIHRoZSBvbGQgYXJtIG9wcwo+IGluIGNhc2Ugb2YgTFBBRSAmJiBkbWFfcGZu
-X29mZnNldCAhPSAwCj4gCj4gRndpdzoKPiBUZXN0ZWQtYnk6IFBldGVyIFVqZmFsdXNpIDxwZXRl
-ci51amZhbHVzaUB0aS5jb20+Cj4gCj4gV291bGQgeW91IGJlIGNvbWZvcnRhYmxlIHRvIHNlbmQg
-dGhpcyBwYXRjaCBmb3IgbWFpbmxpbmUgd2l0aAo+IEZpeGVzOiBhZDNjN2IxOGM1YjMgKCJhcm06
-IHVzZSBzd2lvdGxiIGZvciBib3VuY2UgYnVmZmVyaW5nIG9uIExQQUUKPiBjb25maWdzIikKClRo
-YXQgaXMgdGhlIGJpZyBxdWVzdGlvbi4gIEkgZG9uJ3QgZmVlbCBvdmVybHkgY29tZm9ydGFibGUg
-YXMgSSd2ZSBiZWVuCnRyeWluZyB0byBnZXQgdGhpcyByaWdodCwgYnV0IHNvIGZhciBpdCBzZWVt
-cyBsaWtlIHRoZSBsZWFzdCBiYWQgb3B0aW9uLgpJJ2xsIHNlbmQgb3V0IGEgcHJvcGVyIHBhdGNo
-IHdpdGggdXBkYXRlZCBjb21tZW50cyBhbmQgd2lsbCBzZWUgd2hhdApwZW9wbGUgdGhpbmsuCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+On Mon, Feb 03, 2020 at 07:05:38PM +0530, Maulik Shah wrote:
+> From: Ulf Hansson <ulf.hansson@linaro.org>
+>
+> If the hierarchical CPU topology is used, but the OS initiated mode isn't
+> supported, we need to rely solely on the regular cpuidle framework to
+> manage the idle state selection, rather than using genpd and its
+> governor.
+>
+> For this reason, introduce a new PSCI DT helper function,
+> psci_dt_pm_domains_parse_states(), which parses and converts the
+> hierarchically described domain idle states from DT, into regular flattened
+> cpuidle states. The converted states are added to the existing cpuidle
+> driver's array of idle states, which make them available for cpuidle.
+>
+
+And what's the main motivation for this if OSI is not supported in the
+firmware ?
+
+> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> [applied to new path, resolved conflicts]
+> Signed-off-by: Maulik Shah <mkshah@codeaurora.org>
+> ---
+>  drivers/cpuidle/cpuidle-psci-domain.c | 137 +++++++++++++++++++++++++++++-----
+>  drivers/cpuidle/cpuidle-psci.c        |  41 +++++-----
+>  drivers/cpuidle/cpuidle-psci.h        |  11 +++
+>  3 files changed, 153 insertions(+), 36 deletions(-)
+>
+> diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
+> index 423f03b..3c417f7 100644
+> --- a/drivers/cpuidle/cpuidle-psci-domain.c
+> +++ b/drivers/cpuidle/cpuidle-psci-domain.c
+> @@ -26,13 +26,17 @@ struct psci_pd_provider {
+>  };
+>
+>  static LIST_HEAD(psci_pd_providers);
+> -static bool osi_mode_enabled __initdata;
+> +static bool osi_mode_enabled;
+>
+>  static int psci_pd_power_off(struct generic_pm_domain *pd)
+>  {
+>  	struct genpd_power_state *state = &pd->states[pd->state_idx];
+>  	u32 *pd_state;
+>
+> +	/* If we have failed to enable OSI mode, then abort power off. */
+> +	if ((psci_has_osi_support()) && !osi_mode_enabled)
+> +		return -EBUSY;
+> +
+
+Why is this needed ? IIUC we don't create genpd domains if OSI is not
+enabled.
+
+>  	if (!state->data)
+>  		return 0;
+>
+> @@ -101,6 +105,105 @@ static void psci_pd_free_states(struct genpd_power_state *states,
+>  	kfree(states);
+>  }
+>
+> +static void psci_pd_convert_states(struct cpuidle_state *idle_state,
+> +			u32 *psci_state, struct genpd_power_state *state)
+> +{
+> +	u32 *state_data = state->data;
+> +	u64 target_residency_us = state->residency_ns;
+> +	u64 exit_latency_us = state->power_on_latency_ns +
+> +			state->power_off_latency_ns;
+> +
+> +	*psci_state = *state_data;
+> +	do_div(target_residency_us, 1000);
+> +	idle_state->target_residency = target_residency_us;
+> +	do_div(exit_latency_us, 1000);
+> +	idle_state->exit_latency = exit_latency_us;
+> +	idle_state->enter = &psci_enter_domain_idle_state;
+> +	idle_state->flags |= CPUIDLE_FLAG_TIMER_STOP;
+> +
+> +	strncpy(idle_state->name, to_of_node(state->fwnode)->name,
+> +		CPUIDLE_NAME_LEN - 1);
+> +	strncpy(idle_state->desc, to_of_node(state->fwnode)->name,
+> +		CPUIDLE_NAME_LEN - 1);
+> +}
+> +
+> +static bool psci_pd_is_provider(struct device_node *np)
+> +{
+> +	struct psci_pd_provider *pd_prov, *it;
+> +
+> +	list_for_each_entry_safe(pd_prov, it, &psci_pd_providers, link) {
+> +		if (pd_prov->node == np)
+> +			return true;
+> +	}
+> +
+> +	return false;
+> +}
+> +
+> +int __init psci_dt_pm_domains_parse_states(struct cpuidle_driver *drv,
+> +			struct device_node *cpu_node, u32 *psci_states)
+> +{
+> +	struct genpd_power_state *pd_states;
+> +	struct of_phandle_args args;
+> +	int ret, pd_state_count, i, state_idx, psci_idx;
+> +	u32 cpu_psci_state = psci_states[drv->state_count - 1];
+> +	struct device_node *np = of_node_get(cpu_node);
+> +
+> +	/* Walk the CPU topology to find compatible domain idle states. */
+> +	while (np) {
+> +		ret = of_parse_phandle_with_args(np, "power-domains",
+> +					"#power-domain-cells", 0, &args);
+> +		of_node_put(np);
+> +		if (ret)
+> +			return 0;
+> +
+> +		np = args.np;
+> +
+> +		/* Verify that the node represents a psci pd provider. */
+> +		if (!psci_pd_is_provider(np)) {
+> +			of_node_put(np);
+> +			return 0;
+> +		}
+> +
+> +		/* Parse for compatible domain idle states. */
+> +		ret = psci_pd_parse_states(np, &pd_states, &pd_state_count);
+> +		if (ret) {
+> +			of_node_put(np);
+> +			return ret;
+> +		}
+> +
+> +		i = 0;
+> +		while (i < pd_state_count) {
+> +
+> +			state_idx = drv->state_count;
+> +			if (state_idx >= CPUIDLE_STATE_MAX) {
+> +				pr_warn("exceeding max cpuidle states\n");
+> +				of_node_put(np);
+> +				return 0;
+> +			}
+> +
+> +			psci_idx = state_idx + i;
+> +			psci_pd_convert_states(&drv->states[state_idx + i],
+> +					&psci_states[psci_idx], &pd_states[i]);
+> +
+> +			/*
+> +			 * In the hierarchical CPU topology the master PM domain
+> +			 * idle state's DT property, "arm,psci-suspend-param",
+> +			 * don't contain the bits for the idle state of the CPU,
+> +			 * let's add those here.
+> +			 */
+> +			psci_states[psci_idx] |= cpu_psci_state;
+
+No we can't do that. Refer previous discussions around that.
+
+> +			pr_debug("psci-power-state %#x index %d\n",
+> +				psci_states[psci_idx], psci_idx);
+> +
+> +			drv->state_count++;
+> +			i++;
+> +		}
+> +		psci_pd_free_states(pd_states, pd_state_count);
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+>  static int __init psci_pd_init(struct device_node *np)
+>  {
+>  	struct generic_pm_domain *pd;
+> @@ -125,11 +228,14 @@ static int __init psci_pd_init(struct device_node *np)
+>  	 * Parse the domain idle states and let genpd manage the state selection
+>  	 * for those being compatible with "domain-idle-state".
+>  	 */
+> -	ret = psci_pd_parse_states(np, &states, &state_count);
+> -	if (ret)
+> -		goto free_name;
+>
+> -	pd->free_states = psci_pd_free_states;
+> +	if (psci_has_osi_support()) {
+> +		ret = psci_pd_parse_states(np, &states, &state_count);
+> +		if (ret)
+> +			goto free_name;
+> +		pd->free_states = psci_pd_free_states;
+> +	}
+> +
+>  	pd->name = kbasename(pd->name);
+>  	pd->power_off = psci_pd_power_off;
+>  	pd->states = states;
+> @@ -236,10 +342,6 @@ static int __init psci_idle_init_domains(void)
+>  	if (!np)
+>  		return -ENODEV;
+>
+> -	/* Currently limit the hierarchical topology to be used in OSI mode. */
+> -	if (!psci_has_osi_support())
+> -		goto out;
+> -
+>  	/*
+>  	 * Parse child nodes for the "#power-domain-cells" property and
+>  	 * initialize a genpd/genpd-of-provider pair when it's found.
+> @@ -265,14 +367,16 @@ static int __init psci_idle_init_domains(void)
+>  		goto remove_pd;
+>
+>  	/* Try to enable OSI mode. */
+> -	ret = psci_set_osi_mode();
+> -	if (ret) {
+> -		pr_warn("failed to enable OSI mode: %d\n", ret);
+> -		psci_pd_remove_topology(np);
+> -		goto remove_pd;
+> +	if (psci_has_osi_support()) {
+> +		ret = psci_set_osi_mode();
+> +		if (ret) {
+> +			pr_warn("failed to enable OSI mode: %d\n", ret);
+> +			psci_pd_remove_topology(np);
+> +			goto remove_pd;
+> +		} else
+> +			osi_mode_enabled = true;
+>  	}
+>
+> -	osi_mode_enabled = true;
+>  	of_node_put(np);
+>  	pr_info("Initialized CPU PM domain topology\n");
+>  	return pd_count;
+> @@ -293,9 +397,6 @@ struct device __init *psci_dt_attach_cpu(int cpu)
+>  {
+>  	struct device *dev;
+>
+> -	if (!osi_mode_enabled)
+> -		return NULL;
+> -
+>  	dev = dev_pm_domain_attach_by_name(get_cpu_device(cpu), "psci");
+>  	if (IS_ERR_OR_NULL(dev))
+>  		return dev;
+> diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+> index edd7a54..3fa2aee 100644
+> --- a/drivers/cpuidle/cpuidle-psci.c
+> +++ b/drivers/cpuidle/cpuidle-psci.c
+> @@ -49,7 +49,7 @@ static inline int psci_enter_state(int idx, u32 state)
+>  	return CPU_PM_CPU_IDLE_ENTER_PARAM(psci_cpu_suspend_enter, idx, state);
+>  }
+>
+> -static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
+> +int psci_enter_domain_idle_state(struct cpuidle_device *dev,
+>  					struct cpuidle_driver *drv, int idx)
+>  {
+>  	struct psci_cpuidle_data *data = this_cpu_ptr(&psci_cpuidle_data);
+> @@ -193,24 +193,29 @@ static int __init psci_dt_cpu_init_idle(struct cpuidle_driver *drv,
+>  		goto free_mem;
+>  	}
+>
+> -	/* Currently limit the hierarchical topology to be used in OSI mode. */
+> -	if (psci_has_osi_support()) {
+> -		data->dev = psci_dt_attach_cpu(cpu);
+> -		if (IS_ERR(data->dev)) {
+> -			ret = PTR_ERR(data->dev);
+> +	if (!psci_has_osi_support()) {
+> +		ret = psci_dt_pm_domains_parse_states(drv, cpu_node,
+> +					      psci_states);
+> +		if (ret)
+>  			goto free_mem;
+> -		}
+> -
+> -		/*
+> -		 * Using the deepest state for the CPU to trigger a potential
+> -		 * selection of a shared state for the domain, assumes the
+> -		 * domain states are all deeper states.
+> -		 */
+> -		if (data->dev) {
+> -			drv->states[state_count - 1].enter =
+> -				psci_enter_domain_idle_state;
+> -			psci_cpuidle_use_cpuhp = true;
+> -		}
+> +	}
+> +
+> +	data->dev = psci_dt_attach_cpu(cpu);
+> +	if (IS_ERR(data->dev)) {
+> +		ret = PTR_ERR(data->dev);
+> +		goto free_mem;
+> +	}
+> +
+> +	/*
+> +	 * Using the deepest state for the CPU to trigger a potential
+> +	 * selection of a shared state for the domain, assumes the
+> +	 * domain states are all deeper states.
+> +	 */
+> +
+> +	if (data->dev) {
+> +		drv->states[state_count - 1].enter =
+> +			psci_enter_domain_idle_state;
+> +		psci_cpuidle_use_cpuhp = true;
+>  	}
+>
+>  	/* Idle states parsed correctly, store them in the per-cpu struct. */
+
+--
+Regards,
+Sudeep
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
