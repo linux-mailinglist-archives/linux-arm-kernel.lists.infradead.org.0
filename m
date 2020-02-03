@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 623671508F7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 16:02:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4ACE01508F9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 16:02:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:From:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=TlZzAYT6WlxN72hQU/LduWxEAhgYSWrSTMxTd8XWH/Q=; b=VF6XPuCFb9aPNU
-	4O9PDJCeyUFz2ncjqraEsDf2HQc4fYWqYX8IIf/1VNTiBajzYDfMrZyNGtnE7cE0qLIx4Qpk5KuF/
-	0JGLJM2NjH32fF+Prk8maf7xn9gQMbkyb4MnzcPknDrBV4cGUucdgCbrnKPt5dURQDQteWCrUmhV/
-	aAknqar/pWQStp1XFAK5j2R0Xb6khv0xVjWpOoGSp0xIwm6ipfiqP2OJsj81Moxj3hNM/RrpM4jx3
-	oebjxK9/iWTUKU07aV/V9ARzvw76XI+dQ43qi4xB9CCpdiQv4BxzvzFmE2rKPeGlbLmAO5KNLL7kG
-	OJIZer2zpfxaU/694SaQ==;
+	List-Owner; bh=gffdU0qu7dU9fRt0NccH8CMHUIUffKMAh/FbkLRDDdc=; b=o5744ZG6pWjpUn
+	MfuGMT5U9y4xoG1DLXTfm1z3bYLTQoT4YblNFyt2yxNz+yJZ9lr56PxhZHIuvqAC5zyztF/q3vZxz
+	MZcI0DEG+PxdILVBsP+VyMsVQH9gxvs5AcKEyPEkMxFLULKVB6ei9VIKvzQEb48rm3afqBxtR19eg
+	SYx6D7Ma3I7dUxbew0/yTiCQ2zjBrrecIkKjBErXy6KSEv4fxtLJiAlx3jumIyPg4wdSNpWdHrsUt
+	KenLllt766xplBXrv5t8XCesaHuxQQ5c+mumYZMSZtIrdgZErP/rHtxQZXxT2K4oClH+Gw37SkS+n
+	B1KLFih6w5i838HFwCzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iydEd-0007OJ-9K; Mon, 03 Feb 2020 15:01:59 +0000
+	id 1iydEt-0007dL-4w; Mon, 03 Feb 2020 15:02:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iydES-0007Mb-QJ
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 15:01:50 +0000
+ id 1iydEh-0007an-7K
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 15:02:05 +0000
 Received: from localhost (unknown [104.132.45.99])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 076552082E;
- Mon,  3 Feb 2020 15:01:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6DBBA2082E;
+ Mon,  3 Feb 2020 15:02:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580742108;
- bh=2R6MdJqpLaQFqv/+jmIEcr0kP3L7EllgXrgEb6KOoY8=;
+ s=default; t=1580742122;
+ bh=8RbNC67gnr1zILYYyT9clo1PxHn0lxc4WPGibZ3CqQw=;
  h=Subject:To:Cc:From:Date:In-Reply-To:From;
- b=Vwj6v1K/Xq3in760204sV8UIAE1VQ9s6CS7e4gCXHlPNxosbIU0O0wcb+kyFn8cXb
- 8xcVudNc8rhm/1c+lfqpuXJNGn3vmgkdArWw22kFRivh2pRhxEY3RIMovEwzzpUX69
- eoXNfgg6EnQBD7HBh0SdhTWXrYvwVXLIhyMNrtho=
+ b=sqvwAvme+ldIZuf3WMIN/aF3m2Sgd3uMiuB5NY3EOz9BjYdRCoysLRzBuc78dWVvd
+ ln4nDauhRzKfZfVuaYdF8NO2n+pbwjlp2Txjnei71veaGD9Y3gi8XkkNdKs6dHvf/6
+ Iu2QZrB27DW0q46vQ0Z1JpV3CN0/tueszbzvdVj8=
 Subject: Patch "media: si470x-i2c: Move free() past last use of 'radio'" has
- been added to the 4.14-stable tree
+ been added to the 4.19-stable tree
 To: gregkh@linuxfoundation.org, julia.lawall@lip6.fr, lee.jones@linaro.org,
  linux-arm-kernel@lists.infradead.org, lkp@intel.com
 From: <gregkh@linuxfoundation.org>
-Date: Mon, 03 Feb 2020 15:01:46 +0000
+Date: Mon, 03 Feb 2020 15:02:00 +0000
 In-Reply-To: <20200203132130.12748-1-lee.jones@linaro.org>
-Message-ID: <1580742106247145@kroah.com>
+Message-ID: <15807421201458@kroah.com>
 MIME-Version: 1.0
 X-stable: commit
 X-Patchwork-Hint: ignore 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_070148_889442_833511E4 
+X-CRM114-CacheID: sfid-20200203_070203_284551_57654720 
 X-CRM114-Status: GOOD (  12.79  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -84,12 +84,12 @@ This is a note to let you know that I've just added the patch titled
 
     media: si470x-i2c: Move free() past last use of 'radio'
 
-to the 4.14-stable tree which can be found at:
+to the 4.19-stable tree which can be found at:
     http://www.kernel.org/git/?p=linux/kernel/git/stable/stable-queue.git;a=summary
 
 The filename of the patch is:
      media-si470x-i2c-move-free-past-last-use-of-radio.patch
-and it can be found in the queue-4.14 subdirectory.
+and it can be found in the queue-4.19 subdirectory.
 
 If you, or anyone else, feels it should not be added to the stable tree,
 please let <stable@vger.kernel.org> know about it.
@@ -128,7 +128,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 --- a/drivers/media/radio/si470x/radio-si470x-i2c.c
 +++ b/drivers/media/radio/si470x/radio-si470x-i2c.c
-@@ -453,10 +453,10 @@ static int si470x_i2c_remove(struct i2c_
+@@ -483,10 +483,10 @@ static int si470x_i2c_remove(struct i2c_
  
  	free_irq(client->irq, radio);
  	video_unregister_device(&radio->videodev);
@@ -144,7 +144,7 @@ Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 Patches currently in stable-queue which might be from lee.jones@linaro.org are
 
-queue-4.14/media-si470x-i2c-move-free-past-last-use-of-radio.patch
+queue-4.19/media-si470x-i2c-move-free-past-last-use-of-radio.patch
 
 _______________________________________________
 linux-arm-kernel mailing list
