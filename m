@@ -2,85 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73E141502B7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 09:38:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAB501502EC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 10:04:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mwbAjKkLLYYLTyoVMBfNJTZtJLBjF8PVCUDjrOTzgq8=; b=oakuviV9biDwaNAQ4/D2OG+Ue
-	6uhQ/TcZ39JzS+K0CuDYq+nquSowKezbln/pJKb76/Rj+UXKzC/QmGDLuPqRHdnKLKXLskcIru+Gb
-	bXsy/laebpP5t0L337z/XRM43TmnAFt23G2LfZs1h6Mp7SUcLJp7zNb0RqLSvxsv5/wnNQBYoInGN
-	fEvQ5OLaXHHuOYLDJKAzVXU6oMiacZO0uvv2NyyTu3+k/oq6yxGEz5o4/N1buYNdupsWXW7DLx3cJ
-	2BfuQBa1AJUg/teKjYwF4jqrhfdDWB4lRWxr+V9hTFe9w4LTWT31TNxQwaeGOnJWYN9ZIYRpz0ILR
-	bqtmY899g==;
+	 bh=BVbrptR350fdcMPfdfIdgAKFBGu8bUJhCBfZ3FrwVMY=; b=i3vwHHmF0BlINo1lqZoHHxnBJ
+	fHqcnHQlYos/pd7I3KKTXf9hHxlIa+vICcw1roRI0nDba9xXysbt+IaXPFgIqk4UpanEaiUBp/jJ+
+	TAEM83OflfugSGuVWdg0LrzSxNMnuVvijRS03J4/bTHhTVP6SXQnZ3d0zyk8wVlSlAOcmmM06VIEn
+	eD+DzqjsX8YU4VnfCoOuVezVsgDU4OeiYww9otRDS/IvAFUfp2soGsgNuvK9tQZzik7NcWOEgQMry
+	mJ9kURpm/t6Q9JwQl/QluwxUWamabCI4xmwaz1Tri+3+YA16TsKTUYS0kSEXRErmRzx9aQWgCEEND
+	sTjzfXvWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyXFu-0003jA-VH; Mon, 03 Feb 2020 08:38:54 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1iyXeL-0003r4-8g; Mon, 03 Feb 2020 09:04:09 +0000
+Received: from mail-sz.amlogic.com ([211.162.65.117])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyXFo-0003ik-9H
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 08:38:49 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0138ckDD100871;
- Mon, 3 Feb 2020 02:38:46 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1580719126;
- bh=Tfda4LvuUEYTDvyGlYS6mOHiUVeU9HHASiG1AIAbvcA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=aielRH4sdU7RaEk2GdG9JP1i7St4zjZiS4dkoufB9dlA67dAq+AkPwIbhnA/R+2GP
- 57BXHZUZgiBHZqa2XGSMFuxhEVySL5B+vW8TjKkktaX7409EQ3a/zB8ABoiEIeUCsg
- HIa2udZRK0MVzhbiZrAy6TLnfG7mwFqh3O0/qCRU=
-Received: from DFLE100.ent.ti.com (dfle100.ent.ti.com [10.64.6.21])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0138ckXi124317;
- Mon, 3 Feb 2020 02:38:46 -0600
-Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 3 Feb
- 2020 02:38:46 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 3 Feb 2020 02:38:46 -0600
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0138cipW104965;
- Mon, 3 Feb 2020 02:38:44 -0600
-Subject: Re: [PATCH] firmware: ti_sci: Correct the timeout type in
- ti_sci_do_xfer()
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>, <nm@ti.com>, <ssantosh@kernel.org>,
- <santosh.shilimkar@oracle.com>
-References: <20200122104009.15622-1-peter.ujfalusi@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <a63c23ec-d468-fc9b-3990-becd7c120df6@ti.com>
-Date: Mon, 3 Feb 2020 10:38:43 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ id 1iyXeF-0003qU-4R; Mon, 03 Feb 2020 09:04:04 +0000
+Received: from [10.7.0.4] (10.28.11.250) by mail-sz.amlogic.com (10.28.11.5)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 3 Feb
+ 2020 17:04:25 +0800
+Subject: Re: [PATCH v6 5/5] clk: meson: a1: add support for Amlogic A1
+ Peripheral clock driver
+To: Stephen Boyd <sboyd@kernel.org>, Jerome Brunet <jbrunet@baylibre.com>,
+ Neil Armstrong <narmstrong@baylibre.com>
+References: <20200116080440.118679-1-jian.hu@amlogic.com>
+ <20200116080440.118679-6-jian.hu@amlogic.com>
+ <20200129054253.6F8CD2071E@mail.kernel.org>
+From: Jian Hu <jian.hu@amlogic.com>
+Message-ID: <3e103a45-62d4-1a10-e4af-5a4c588162d6@amlogic.com>
+Date: Mon, 3 Feb 2020 17:04:25 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200122104009.15622-1-peter.ujfalusi@ti.com>
+In-Reply-To: <20200129054253.6F8CD2071E@mail.kernel.org>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Originating-IP: [10.28.11.250]
+X-ClientProxiedBy: mail-sz.amlogic.com (10.28.11.5) To mail-sz.amlogic.com
+ (10.28.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_003848_366807_7F61446C 
-X-CRM114-Status: GOOD (  15.08  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200203_010403_171950_31378AF9 
+X-CRM114-Status: GOOD (  11.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,42 +65,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lokeshvutla@ti.com, linux-kernel@vger.kernel.org,
+Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
+ Jianxin Pan <jianxin.pan@amlogic.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ Qiufang Dai <qiufang.dai@amlogic.com>, Chandle Zou <chandle.zou@amlogic.com>,
+ linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22/01/2020 12:40, Peter Ujfalusi wrote:
-> msecs_to_jiffies() returns 'unsigned long' and the timeout parameter for
-> wait_for_completion_timeout() is also 'unsigned long'
-> 
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Hi, Stephen
 
-Reviewed-by: Tero Kristo <t-kristo@ti.com>
+Thanks for your review
 
-> ---
->   drivers/firmware/ti_sci.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
+On 2020/1/29 13:42, Stephen Boyd wrote:
+> Quoting Jian Hu (2020-01-16 00:04:40)
+>> diff --git a/drivers/clk/meson/a1.c b/drivers/clk/meson/a1.c
+>> new file mode 100644
+>> index 000000000000..2cf20ae1db75
+>> --- /dev/null
+>> +++ b/drivers/clk/meson/a1.c
+>> @@ -0,0 +1,2249 @@
+> [...]
+>> +       &a1_ceca_32k_clkout,
+>> +       &a1_cecb_32k_clkin,
+>> +       &a1_cecb_32k_div,
+>> +       &a1_cecb_32k_sel_pre,
+>> +       &a1_cecb_32k_sel,
+>> +       &a1_cecb_32k_clkout,
+>> +};
+>> +
+>> +static struct regmap_config clkc_regmap_config = {
 > 
-> diff --git a/drivers/firmware/ti_sci.c b/drivers/firmware/ti_sci.c
-> index 3d8241cb6921..361a82817c1f 100644
-> --- a/drivers/firmware/ti_sci.c
-> +++ b/drivers/firmware/ti_sci.c
-> @@ -422,7 +422,7 @@ static inline int ti_sci_do_xfer(struct ti_sci_info *info,
->   				 struct ti_sci_xfer *xfer)
->   {
->   	int ret;
-> -	int timeout;
-> +	unsigned long timeout;
->   	struct device *dev = info->dev;
->   
->   	ret = mbox_send_message(info->chan_tx, &xfer->tx_message);
+> Can this be const?
+OK, I will add const in next v8 version.
 > 
-
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+>> +       .reg_bits       = 32,
+>> +       .val_bits       = 32,
+>> +       .reg_stride     = 4,
+>> +};
+>> +
+>> +static int meson_a1_periphs_probe(struct platform_device *pdev)
+>> +{
+>> +       struct device *dev = &pdev->dev;
+>> +       struct resource *res;
+>> +       void __iomem *base;
+>> +       struct regmap *map;
+>> +       int ret, i;
+>> +
+>> +       res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>> +
+>> +       base = devm_ioremap_resource(dev, res);
+> 
+> Can you use the combination function that does the get resource and
+> ioremap in one function?
+OK, I will use 'devm_platform_ioremap_resource' here.
+> 
+>> +       if (IS_ERR(base))
+>> +               return PTR_ERR(base);
+>> +
+>> +       map = devm_regmap_init_mmio(dev, base, &clkc_regmap_config);
+>> +       if (IS_ERR(map))
+>> +               return PTR_ERR(map);
+>> +
+>> +       /* Populate regmap for the regmap backed clocks */
+> 
+> Seems like a useless comment.
+OK, I will remove it.
+> 
+>> +       for (i = 0; i < ARRAY_SIZE(a1_periphs_regmaps); i++)
+>> +               a1_periphs_regmaps[i]->map = map;
+>> +
+> 
+The same with a1-pll.c file, I will modify, too.
+> .
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
