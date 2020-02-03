@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18FBC1503EB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:10:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F17CF1503EE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 11:10:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qy00914HOEk64Lrylimd07p+wj+5yJFfTRAOCaq2YHo=; b=J2MOVFhPcWkWfh
-	0b2XBkb+zJvnsJ9opOq6nnSXXRF+nspOwcIyNqeOCmf79j2TxcbFNoHb3GNP/GVePuoWoM2jjj9Ea
-	SMlcFDx9C/RV2OIjmKW+FQg+XFwbYJuapqBw19X9DHoZvrlZAPNaWnR8DNK8rDg3N1XvQVn405x6H
-	EBbBWB/BZrj5hL7PuFxjTt5fN8RIiaZzsNWIp2Nqe5Lmbyv1WFgmVFXLuo1kXAqpMgDiRz6IkHlqB
-	nnGDE4kRT21XV2WQQ6uyhUuI04EAJXyE3aAlndu/XspryOL0he5XSxLBeZsxzf79rlzL/ruJXCrDl
-	I1rlsCdKcoY9vXf1ojYw==;
+	List-Owner; bh=Xvls+sX6sRnsfu6Tm6abyz2TcI64+ZH1QS05/bqYSSI=; b=iyj5TO3XJqtRa9
+	ITqECHnN/1NvXFfh6FEtcmX007AUuAStnx8s25T+fSCFg0Ut0nRJpV75Xy8GeAWKUoydPzAnNUoEC
+	nfF6sxeTZCc4TJG1y9e/zMrdgoEuoYW3Ii9d8fbNYKK7wdBQiKEf33K/EI4vRYuK3EPKF88aBDkHm
+	5lH+n1MrqWJqeZBVblFqfEGw1ZjixA1Wb47lutUuQq9BIYmm7UZKSCOL/LI9upqzBZQKMSNOy7OC0
+	Vc3Hz0Cpcob+1M8JTt/kiBCXTusf80SYOFILEwPcX8ZG1RKFM3eaeaeaQNMpRT3o8SQ7v5lJJNHNR
+	IKb07+fZb7/maRuH0OBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyYgK-0003j2-EM; Mon, 03 Feb 2020 10:10:16 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iyYgi-0005NN-Ic; Mon, 03 Feb 2020 10:10:40 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyYfJ-0002wP-5v
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 10:09:15 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ id 1iyYfI-0002vi-2d
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 10:09:13 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 013A7d68002999; Mon, 3 Feb 2020 11:09:03 +0100
+ 013A7o72019717; Mon, 3 Feb 2020 11:09:04 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=M2jnD6diEAiCiDSSKt4lpAXDZaO42lzlkkGu8G6hrk0=;
- b=d1iMBlHTZIAisSNdM50aON9r3VxqSNyPDE0F2aH87mYbz5CVQugjuG14qMgiTmNsIl4x
- DOBs4A8gR9Zl9SDDIRKlCzNGA9Hy5T8HjVEnAc5z95hzH5lMGmo0i5eRQXWZeIIO6jDz
- tTlL5FKV2t0zm0LxaLDs74s29ZXpRdjBQDob/G8X9egkAgSLvA78l1Wd/Kkhzh90oiZl
- VXOaDsQ8mPLUa14dEPFZw5bTttYPob3ljlQZ9POWXtBTOQNMTUry8Rwxsxt3bXribX5j
- ktAxADmqULuHb4VAJIYXy6mMW0O+kSpkDv/mtCl14n5YDBSLIwymc+0ZS4dDR8q/bGHL 4Q== 
+ bh=RBofiPp4R9DTfyooLMsUguafFOqr7As70nNTDt8X928=;
+ b=ShA0NrRqqtRfTilhlu0v+aukPkeGjS3YyKLE5L8y7KB3dQyCga0T1GXRF/UaEwEjw0L1
+ bDQc9ScM7GRWHEvlDcmpCBffUT3kfDJXhhKCwFgSSrTSyn1Ysx2YgqOIe+oEVKAthcxN
+ 8XO5jDfb65l4YSgDEKQ5mo9ifMnZJWhMZPWAtwnhMwE/4pVYTZwJ/8zaifSJ7O09XCZh
+ g1IR8rLNBBCpPPP9sBF0qcCg+TXOEdKzQBAAJgBbH12FNmfeoeBclfukodHA/B+o0HCl
+ vddRti/pmFDo3I9eafpUnuIH10BbUFVrxMsF55RdqHzwsMjGsABNBKXjhAQm0K2sd5e7 PA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xw0010k6f-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xvybdrs7h-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 03 Feb 2020 11:09:03 +0100
+ Mon, 03 Feb 2020 11:09:04 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CEC7B100034;
- Mon,  3 Feb 2020 11:09:00 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 965E210003A;
+ Mon,  3 Feb 2020 11:09:01 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BCC142BE22D;
- Mon,  3 Feb 2020 11:09:00 +0100 (CET)
-Received: from localhost (10.75.127.46) by SFHDAG6NODE2.st.com (10.75.127.17)
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8A0412BE22D;
+ Mon,  3 Feb 2020 11:09:01 +0100 (CET)
+Received: from localhost (10.75.127.47) by SFHDAG6NODE2.st.com (10.75.127.17)
  with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Mon, 3 Feb 2020 11:09:00 +0100
+ Mon, 3 Feb 2020 11:09:01 +0100
 From: Olivier Moysan <olivier.moysan@st.com>
 To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
  <tiwai@suse.com>, <mcoquelin.stm32@gmail.com>,
@@ -56,30 +57,30 @@ To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
  <linux-arm-kernel@lists.infradead.org>,
  <linux-stm32@st-md-mailman.stormreply.com>,
  <linux-kernel@vger.kernel.org>, <olivier.moysan@st.com>
-Subject: [PATCH 3/6] ASoC: stm32: i2s: manage error when getting reset
- controller
-Date: Mon, 3 Feb 2020 11:08:11 +0100
-Message-ID: <20200203100814.22944-4-olivier.moysan@st.com>
+Subject: [PATCH 4/6] ASoC: stm32: sai: improve error management on probe
+ deferral
+Date: Mon, 3 Feb 2020 11:08:12 +0100
+Message-ID: <20200203100814.22944-5-olivier.moysan@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200203100814.22944-1-olivier.moysan@st.com>
 References: <20200203100814.22944-1-olivier.moysan@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG7NODE1.st.com (10.75.127.19) To SFHDAG6NODE2.st.com
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG6NODE2.st.com
  (10.75.127.17)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-02-03_02:2020-02-02,
  2020-02-03 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_020913_536369_0FBE613D 
-X-CRM114-Status: GOOD (  14.67  )
+X-CRM114-CacheID: sfid-20200203_020912_514699_0CD7386B 
+X-CRM114-Status: GOOD (  13.12  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,41 +107,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Return an error when the i2s driver fails to get a reset controller.
-Also add an error trace, except on probe defer status.
+Do not print an error trace when deferring probe for SAI driver.
 
 Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
 Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
 ---
- sound/soc/stm/stm32_i2s.c | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
+ sound/soc/stm/stm32_sai.c     | 12 +++++++++---
+ sound/soc/stm/stm32_sai_sub.c | 11 ++++++++---
+ 2 files changed, 17 insertions(+), 6 deletions(-)
 
-diff --git a/sound/soc/stm/stm32_i2s.c b/sound/soc/stm/stm32_i2s.c
-index 3e7226a53e53..cdcc00d9a67e 100644
---- a/sound/soc/stm/stm32_i2s.c
-+++ b/sound/soc/stm/stm32_i2s.c
-@@ -866,12 +866,16 @@ static int stm32_i2s_parse_dt(struct platform_device *pdev,
+diff --git a/sound/soc/stm/stm32_sai.c b/sound/soc/stm/stm32_sai.c
+index b824ba6cb028..058757c721f0 100644
+--- a/sound/soc/stm/stm32_sai.c
++++ b/sound/soc/stm/stm32_sai.c
+@@ -174,20 +174,26 @@ static int stm32_sai_probe(struct platform_device *pdev)
+ 	if (!STM_SAI_IS_F4(sai)) {
+ 		sai->pclk = devm_clk_get(&pdev->dev, "pclk");
+ 		if (IS_ERR(sai->pclk)) {
+-			dev_err(&pdev->dev, "missing bus clock pclk\n");
++			if (PTR_ERR(sai->pclk) != -EPROBE_DEFER)
++				dev_err(&pdev->dev, "missing bus clock pclk: %ld\n",
++					PTR_ERR(sai->pclk));
+ 			return PTR_ERR(sai->pclk);
+ 		}
  	}
  
- 	/* Reset */
--	rst = devm_reset_control_get_exclusive(&pdev->dev, NULL);
--	if (!IS_ERR(rst)) {
--		reset_control_assert(rst);
--		udelay(2);
--		reset_control_deassert(rst);
-+	rst = devm_reset_control_get_optional_exclusive(&pdev->dev, NULL);
-+	if (IS_ERR(rst)) {
-+		if (PTR_ERR(rst) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Reset controller error %ld\n",
-+				PTR_ERR(rst));
-+		return PTR_ERR(rst);
+ 	sai->clk_x8k = devm_clk_get(&pdev->dev, "x8k");
+ 	if (IS_ERR(sai->clk_x8k)) {
+-		dev_err(&pdev->dev, "missing x8k parent clock\n");
++		if (PTR_ERR(sai->clk_x8k) != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "missing x8k parent clock: %ld\n",
++				PTR_ERR(sai->clk_x8k));
+ 		return PTR_ERR(sai->clk_x8k);
  	}
-+	reset_control_assert(rst);
-+	udelay(2);
-+	reset_control_deassert(rst);
  
- 	return 0;
- }
+ 	sai->clk_x11k = devm_clk_get(&pdev->dev, "x11k");
+ 	if (IS_ERR(sai->clk_x11k)) {
+-		dev_err(&pdev->dev, "missing x11k parent clock\n");
++		if (PTR_ERR(sai->clk_x11k) != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "missing x11k parent clock: %ld\n",
++				PTR_ERR(sai->clk_x11k));
+ 		return PTR_ERR(sai->clk_x11k);
+ 	}
+ 
+diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
+index 30bcd5d3a32a..0bbf9ed5e48b 100644
+--- a/sound/soc/stm/stm32_sai_sub.c
++++ b/sound/soc/stm/stm32_sai_sub.c
+@@ -1380,7 +1380,9 @@ static int stm32_sai_sub_parse_of(struct platform_device *pdev,
+ 	sai->regmap = devm_regmap_init_mmio(&pdev->dev, base,
+ 					    sai->regmap_config);
+ 	if (IS_ERR(sai->regmap)) {
+-		dev_err(&pdev->dev, "Failed to initialize MMIO\n");
++		if (PTR_ERR(sai->regmap) != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "Regmap init error %ld\n",
++				PTR_ERR(sai->regmap));
+ 		return PTR_ERR(sai->regmap);
+ 	}
+ 
+@@ -1471,7 +1473,9 @@ static int stm32_sai_sub_parse_of(struct platform_device *pdev,
+ 	of_node_put(args.np);
+ 	sai->sai_ck = devm_clk_get(&pdev->dev, "sai_ck");
+ 	if (IS_ERR(sai->sai_ck)) {
+-		dev_err(&pdev->dev, "Missing kernel clock sai_ck\n");
++		if (PTR_ERR(sai->sai_ck) != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "Missing kernel clock sai_ck: %ld\n",
++				PTR_ERR(sai->sai_ck));
+ 		return PTR_ERR(sai->sai_ck);
+ 	}
+ 
+@@ -1553,7 +1557,8 @@ static int stm32_sai_sub_probe(struct platform_device *pdev)
+ 
+ 	ret = devm_snd_dmaengine_pcm_register(&pdev->dev, conf, 0);
+ 	if (ret) {
+-		dev_err(&pdev->dev, "Could not register pcm dma\n");
++		if (ret != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "PCM DMA register error %d\n", ret);
+ 		return ret;
+ 	}
+ 
 -- 
 2.17.1
 
