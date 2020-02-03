@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A43D81500DE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 05:08:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A829D1500E4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 05:09:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
 	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/VwHHXrpFvh5JV6smBk0F6wmU5iuk4isBTx/9JOWDTY=; b=SuvyjzcmD0AGZx
-	1Hm4MNah9htZ3V+y3DIYaVonegOBX5NQBCV8ONVw1n0sxWYZA9WVLShlSspSxD5khdBNp0MAsmvX0
-	kBbtZZlUTphoOwwyuhOjYhwJ9DyZrAmsGfK4NtXn170EmLYa4ZjmLpjBo29HzLgOVyFwRFtkKCazZ
-	RgB3uM1b3kjxlhS0cj4WShwhAyObqt4FNp0cHMB4cvCJc3I1Ma+K5dP4V+/vpB3HMHG1oBWEH2xE6
-	6mUPMNSBzAUUnZ+0RwqjP9aCkK9iYcSpOn/Nc2EVFaLaClQn3ujWLHRTF0vHeqAfLOHm+JVdcQDDA
-	5kDqVLPkQX8DKPtT++EA==;
+	List-Owner; bh=bAx9SFmQDrB0L0jT5bcdcVenVbDgLNgKuEtwRdi1Bik=; b=Y6hIsOELtMZLj/
+	CiLo77V0iPPcfvHpPDpN/TZPhnbM8NC2XPNrm3jujmwkc/0XN31ZtKsV5Pm63MdDf2oEnATiC/v+b
+	hC+7T2z1CmApGyaQm3QNlszme++95zxFZMFy/wVlbCF5BZAEZAZLwxZnjuSZ52mPkJ5DsA1tT1cbQ
+	KA4FlVyBOXXKftqbkLLTHRyhcLsnt0+tokiMtQsQxqhYPNn8RB9C3Hh/d0efiQYJV7BuiiMIyv8CM
+	+e4NBaJ/IrimYgrPTFAYVnh14iVPmz29PBOk731UvJmn6db4UQ1G45XUuxc9nCit6UCCcD3HW1Tkc
+	2nG6Ic6+Nknoc7/LtKJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyT1a-0001ze-GW; Mon, 03 Feb 2020 04:07:50 +0000
+	id 1iyT39-0002La-TI; Mon, 03 Feb 2020 04:09:27 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyT1T-0001yy-GM
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 04:07:45 +0000
+ id 1iyT33-0002LF-Oy
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 04:09:23 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 791A8647A;
- Sun,  2 Feb 2020 23:07:37 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id C156E6D27;
+ Sun,  2 Feb 2020 23:09:20 -0500 (EST)
 Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Sun, 02 Feb 2020 23:07:37 -0500
+ by compute4.internal (MEProxy); Sun, 02 Feb 2020 23:09:20 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
  mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm1; bh=L2E9Vl0A6zDfiBzKRlHxwBS22SN7gw8
- Ni7HSCZmgD0c=; b=a0uIK1I16pK/R0L/7jdmO1AfRzmSIFOIAEtcBGZbm+DjudG
- u+HYtskkc5PK1Bmgpjz61fLLRdZJOSA0C3XnPgzxr5L1nxDsuY5B4ilSghrb/AUU
- /CctlVldDLYBhX3I84zBiBdqqGxGl1xgNXIphoQ+xvExSdK3VOEKRRLcJRNCRjyi
- Ww5Xno7JkhzNVXOPM1+UAlhkbjQC2ecJLYMKa6Yo5tNQta2rlWq/6Ie9pvMj2mWE
- J+Zc0rSQOb/+Q1hxc5Bu1QDF3+PH+AyP3ir9CsPx7syyWo/+tYUPC/h3KSLEkzt4
- cm0S3kc10dr0Xrb8cxdCDtmEZLDHVA+I02WG9kQ==
+ :subject:content-type; s=fm1; bh=RjS6hrJkvw6HKnule/qYTODmaAYp/hQ
+ FP4smKfPmKGQ=; b=jLEEj6DuOY9JFldgz6GzluSbsV/j8Jxqp+dWzKfNwmDCsKk
+ NP/mF1lEvBeknCTiyR4uzNfKGEiO3QDXQbc8/kaCqDMH7OqMNHWHqs0RXrXYMLZ0
+ bMH0krwIh9AUdzsI/6YuMa6EgbgrmwclYfUUEgaZwT2QFNQj3tT5cxrKcu41T2Xi
+ 3NOXXV/ugy4b3jHye2tAfpgw5sSAMXIYrVGoedPkwAZ74WhvJuv1FqRtD+MNRQHS
+ 7o1n5mWsHYu0XM961jK+M0LkZjt6d1gnBKL86rfmR0N1djBSWIS5cP/6/bPdlnNd
+ PX1bxHEsSj30BetS5LE01430WIHG9PWyr7oV5+A==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=L2E9Vl
- 0A6zDfiBzKRlHxwBS22SN7gw8Ni7HSCZmgD0c=; b=YDhwdctjhuNrquEhuL6BTd
- q8Zf2pczAhZ5LlXT1volMwZeV6F0j7CGxUgqAHRBcDIRD0Z0Q7pU17bg8rdMukCB
- nDfKF+SmzleJpAe8F2hcxD4frF3IF9t+9TcYi3Rt4Npj8oPHy7KOO85pslrrolKu
- +ltMSZac9gbhCWepvzUOXjcVnuRnLuLOICmc3gYWe1SEt9fC0fMpVDoPNEet1kY9
- NNqz4U3WMRhBpugpfnmsyLKGi2ccgMpakCR2EiqJCheg+2GyUWZoX5o988sMamVB
- t2BymEcwCrXiAx1tEKgLND/t22J99Mh5v3aP8NBXwjFhafZ3m6z4rQraTcKu4A4w
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=RjS6hr
+ Jkvw6HKnule/qYTODmaAYp/hQFP4smKfPmKGQ=; b=DmuPSaKpvAxsFkXQD2TjPV
+ 457IBibzflOvIL/OIV3vx87Qo172/hR1rP41uWk/PS5DXGNAeuKnZWrVYiLIB2Po
+ tHFT7+Yyz0VlzOs+bcxOtK2rGtbFxrifqIxBMb97IOHud5xRNsoLA3jFgbrMna9K
+ ezAp2WRpmdoRJqOYWR+7OuToXToM8VJlnoT599ClS9KaEveGOd6Bk3Ix6EMO8gg3
+ NwjjuJCA9YylBi303dieFUYdkHeiWIf/f7/R0b4n1IxSNhgTWDT6MmhyNJX1OOXC
+ 5rWc8qMmrRiJi0w8Ougj7k8sqzbA5QvAPc+JgtAtjSewhEjcc9TFgzDkyjONC6rw
  ==
-X-ME-Sender: <xms:g5w3XldTLriINYEp-o4JgnHkylXYfVP7EIYxJ9IUZTyHKVJRg5nQaQ>
+X-ME-Sender: <xms:8Jw3Xr1SJOTNsngXqFBtuTDrEzdzuCTzo7B2CDSeJhBr414ExuothQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeeigdeiiecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
  fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucffohhmrg
- hinhepghhithhhuhgsrdgtohhmnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghm
- pehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruh
-X-ME-Proxy: <xmx:g5w3Xob-1bdMRufgDray8pkiN6Dg1biu3CwrBc6gEspBu-auRxJnIQ>
- <xmx:g5w3XvGZnvvVhGL2OBQ7K-prT0jA0jeriCHnot0hde-Dzdpz2pyHgQ>
- <xmx:g5w3Xp0JdFUhJ9hyjkk76S1twLq1zN5k15x2_q3BSEx89jmk1pPKKA>
- <xmx:iZw3XnFd0Y-afvKeeSWV7US9IZzsO_Ba-Y7eh48Gt9kwOv2dft7JcQ>
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucevlhhush
+ htvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghj
+ rdhiugdrrghu
+X-ME-Proxy: <xmx:8Jw3XrUkY22zjYfoyBETKyB-x-H9Zh5jGuEbV2mSyqYdBdkFyOr8JA>
+ <xmx:8Jw3XkVD1fVPMiiaKnDZgRUt8hkIBZgKTmm3s1FuLwEg8xNxAlmnJA>
+ <xmx:8Jw3XnCzSnKK85gkFNgd56lWmuj2Ao3jH1hxFZJidO6xNHF8TIgXmw>
+ <xmx:8Jw3XmszI8conWzhsZjiGRm5Lr_AzefRMi4d4IHNJknWRjABi4ymHA>
 Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 5E131E00A2; Sun,  2 Feb 2020 23:07:31 -0500 (EST)
+ id 965ECE00A2; Sun,  2 Feb 2020 23:09:20 -0500 (EST)
 X-Mailer: MessagingEngine.com Webmail Interface
 User-Agent: Cyrus-JMAP/3.1.7-802-g7a41c81-fmstable-20200203v1
 Mime-Version: 1.0
-Message-Id: <f6beee98-360c-4239-ab01-86ba41629f9b@www.fastmail.com>
-In-Reply-To: <27c5505acd8d09f70ec9cd12982b2e3e@neuralgames.com>
+Message-Id: <42173df3-c060-4c62-a5b9-7f1deade21d1@www.fastmail.com>
+In-Reply-To: <f6beee98-360c-4239-ab01-86ba41629f9b@www.fastmail.com>
 References: <20200120150113.2565-1-linux@neuralgames.com>
  <CACPK8XfuVN3Q=npEoOP-amQS0-wemxcx6LKaHHZEsBAHzq1wzA@mail.gmail.com>
  <4446ffb694c7742ca9492c7360856789@neuralgames.com>
@@ -74,22 +74,24 @@ References: <20200120150113.2565-1-linux@neuralgames.com>
  <136bbab84d13d8d56a5ac297e415975e@neuralgames.com>
  <b83f2a1f-e1be-433c-8dc8-c469cb38f423@www.fastmail.com>
  <27c5505acd8d09f70ec9cd12982b2e3e@neuralgames.com>
-Date: Mon, 03 Feb 2020 14:37:16 +1030
+ <f6beee98-360c-4239-ab01-86ba41629f9b@www.fastmail.com>
+Date: Mon, 03 Feb 2020 14:39:06 +1030
 From: "Andrew Jeffery" <andrew@aj.id.au>
 To: "Oscar A Perez" <linux@neuralgames.com>
 Subject: Re: [PATCH 1/2] hwrng: Add support for ASPEED RNG
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200202_200743_711700_A4D57FCD 
-X-CRM114-Status: GOOD (  11.53  )
+X-CRM114-CacheID: sfid-20200202_200921_952602_5E7D5EDD 
+X-CRM114-Status: UNSURE (   5.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [66.111.4.224 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -123,37 +125,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 Jan 2020, at 10:56, linux@neuralgames.com wrote:
-> On 2020-01-27 18:53, Andrew Jeffery wrote:
-> > Not that I've looked, but is it feasible to augment timeriomem-rng with
-> > the ability to configure the RNG rather than implement a new driver? 
-> > Why
-> > didn't you go that route?
-> > 
+
+
+On Mon, 3 Feb 2020, at 14:37, Andrew Jeffery wrote:
 > 
-> I decided to wrote the Aspeed-RNG driver because was under the 
-> impression that the community would prefer dedicated drivers over 
-> generic ones for these SOCs. 
+> I think we should leverage existing work where we can. Lets not make
+> more extra for ourselves :)
 
-I think we should leverage existing work where we can. Lets not make
-more extra for ourselves :)
+Dammit, replaced the wrong word there - the irony:
 
-> However, enhancing timeriomem-rng module 
-> is not hard at all.  As I matter of fact, I'm currently testing changes 
-> to timeriomem-rng and so far so good. If you would like to have a quick 
-> look to my changes, I just pushed patches to the same repo a couple of 
-> hours ago:  
-> https://github.com/operezmuena/aspeed-rng-testing/tree/master/patches
-
-I think this is a good approach  so long as we can create a clean interface
-to the control MMIO(s) inside the driver, i.e. we shouldn't be baking any
-Aspeed-specific information into generic sections of code. Usually this
-means sticking a pointer to an ops struct in the data member of the
-matching OF ID struct.
-
-Input from the RNG maintainers will be helpful here.
-
-Andrew
+"Lets not make _extra work_ for ourselves"
 
 _______________________________________________
 linux-arm-kernel mailing list
