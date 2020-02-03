@@ -2,110 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F94A150812
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:09:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9C6C150825
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:11:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:To:Subject:Message-ID:Date
+	:From:In-Reply-To:References:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=806uzHFwEnAmZLDjRJD2XjBxe1DxEpVZcUxknWV7HZ8=; b=biNgbURA1/vgB0
-	fIqvA8w1mx/eByuUBpx3k1v6t9NgaXa51P0/kitZLMYb0mA8UoTHoaGlvu766jfP+UExwDhvt2GzR
-	w17d4ItjnYhZuSzWfn/R9zHWFFJhQrKeglCPSiW1mXpDjrbMYjQ2+HwMUULmQQJslzWpF341zxubb
-	aX8Jg3Rm47QEN+5xtXdh8FkSdQ+hTkWzowpKdav8ihYJDLcolCw3TQHrf3PHPxpcM+PRtg5AWqW7M
-	ttw5L1wezGA/v5xhkfKtsKpY0RVB/WknsxP6eQI0FmXuuMjOplaheTmVDRWT7UAkK/d/idSes664B
-	YI4iAq08PumCZL2laxIA==;
+	List-Owner; bh=VY6T+ivf7iGzEo+X3/1SXbAy4vh3aLvQoz9LW0frEjE=; b=Kdc2gWuhy7HnHV
+	51Qm8ys6SeHdQXogtrS9Qfe86iBPCzVEGwAF8k/fC7zz4m4y4akS0+dcfMkigjfXcQ+W3FWW7w3zv
+	o+hovsqZksQpLE+atvl6SwNmlo/SsnjuMCkmdSvR5QDjplHc7qGfppOq5G4IJz1+6hCfbSRkBtj1r
+	7t1sQo9DXIA8WorP0YT7OiHwE220TU7hVW03KurMBfOgXR9MtuN86BpqbSNPHYXKfM2AD2udzLibP
+	caZzY02sE37sLsIkc4IuCyLDd7Jqb/nQyFMccn9mJofrAXPLJjzMWafDnl0TFtYjp1ZvV5oQyNDJs
+	zc0azWAOu3cIHUzHMtEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iycPq-0003Hv-1U; Mon, 03 Feb 2020 14:09:30 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1iycRp-0004sx-39; Mon, 03 Feb 2020 14:11:33 +0000
+Received: from mail-eopbgr70108.outbound.protection.outlook.com
+ ([40.107.7.108] helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iycPX-0003H0-FP
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:09:16 +0000
-Received: by mail-qk1-x742.google.com with SMTP id u19so6608244qku.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Feb 2020 06:09:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=VglaDyUpCkhXx9hrqC8HpF3hY8//yvxe/GnkNqkiuyI=;
- b=MTFWSwdpIUN8fEmK8IEJFk3+2UKh25nl1YOD3Rl+VpzxzZ1bTaYjiIE3C1XRorPZDD
- MCn/mJFqyLTkf4OTPYCPDBfAJUn/OeeSwV6/hedS2cDPjyNGl1WUxmpKaOkEyDROmZ27
- DR5AYFIts5noWIUSJsjy3GhKhecU4K7zA1dTmak0bdSxPLWtCzO1WOZ89OguEkAn3tfY
- lP6rSJ4nXepy5mSPX4rW3jtewtJyBpwDPhJI/L9KHqxuD2ex2vqjq/QjL8DFYwXfYfon
- Mil7GUMoOvKktpinmfVwku9eyKEe+nZYOC/lTRwr/QB9+dyoAfYX7ZZPQc0XcKeCYpww
- ZoLA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=VglaDyUpCkhXx9hrqC8HpF3hY8//yvxe/GnkNqkiuyI=;
- b=XP66sN0k1n/S0iG7znzgE1Lk8WZYDhwGeVCulZi8yWkFfo8l+IatQmkjikaD/R1FWk
- q4QvWRtEn1viZtftv2JbubdaV4asUf8OlDnkumTcRHWYXKKWwyCOgXQg4R/32RQUTSnB
- sr4BBaYdYSVqi+bTAsBRxTQDBCrmfUsuNH7DfL196v+1EbgZm5lYYZPe+0iGI8ojvsgk
- A7JVvhF0WnarjeflkUMHDDRiWbqaJXwztcOCwIraxdMGlwvyuffYaxd9jawLtXnFycPD
- 7QBj3r9QEWVx7dP7MsT0WsFGwkKKRFYTS9bXBj/hQgBBxIlHMJBH9LZFejcVxQX8uF4m
- q2Tw==
-X-Gm-Message-State: APjAAAW/yt31J+LwZ9KpT4DRVhE0Sjz/NGXlx72H+4ezCZG4quB4Kvi8
- fmq5od75GsPuzYgQMrLsDliZutUZ
-X-Google-Smtp-Source: APXvYqwro+2AL5hEDOifKdhLAqsxcMvlGw8iUcKsdC3VPKqmeK7aPmkU6Cq/CQ17knBfz1liZphAhQ==
-X-Received: by 2002:a37:e210:: with SMTP id g16mr23584593qki.413.1580738948923; 
- Mon, 03 Feb 2020 06:09:08 -0800 (PST)
-Received: from auth2-smtp.messagingengine.com (auth2-smtp.messagingengine.com.
- [66.111.4.228])
- by smtp.gmail.com with ESMTPSA id d9sm9658708qth.34.2020.02.03.06.09.07
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 03 Feb 2020 06:09:08 -0800 (PST)
-Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailauth.nyi.internal (Postfix) with ESMTP id 9A0B021B7C;
- Mon,  3 Feb 2020 09:09:05 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute6.internal (MEProxy); Mon, 03 Feb 2020 09:09:05 -0500
-X-ME-Sender: <xms:gCk4XhDQcJFqrMRh9Orcd5rV_WSJhlhwqApM79bryhpDc-52nq0yZQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeejgdehkecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesthdtredttddtvdenucfhrhhomhepuehoqhhunhcu
- hfgvnhhguceosghoqhhunhdrfhgvnhhgsehgmhgrihhlrdgtohhmqeenucffohhmrghinh
- epmhhitghrohhsohhfthdrtghomhenucfkphephedvrdduheehrdduuddurdejudenucev
- lhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegsohhquhhnod
- hmvghsmhhtphgruhhthhhpvghrshhonhgrlhhithihqdeiledvgeehtdeigedqudejjeek
- heehhedvqdgsohhquhhnrdhfvghngheppehgmhgrihhlrdgtohhmsehfihigmhgvrdhnrg
- hmvg
-X-ME-Proxy: <xmx:gCk4Xjk6a0_HdOtJ1hwhQptOVIufrKwz9hJJXQhOcNy5ABrD5nJefw>
- <xmx:gCk4Xtvly7ecra5XvRQml2rympYgF_xxlnhQYeXNu59o7OHN4V3hLw>
- <xmx:gCk4XlL-H2MKZlRh5spFzqzDSH2aUeYkoDF3pgGOC1JRAZorc840EA>
- <xmx:gSk4XoZkaz1RHEYUZsvCvoPgFnccExn8_mMgTMgCYwBAA0jI1CbmjfZV0mY>
-Received: from localhost (unknown [52.155.111.71])
- by mail.messagingengine.com (Postfix) with ESMTPA id 3521F3280060;
- Mon,  3 Feb 2020 09:09:04 -0500 (EST)
-Date: Mon, 3 Feb 2020 22:09:02 +0800
-From: Boqun Feng <boqun.feng@gmail.com>
-To: Andrew Murray <amurray@thegoodpenguin.co.uk>
-Subject: Re: [PATCH v2 2/3] PCI: hv: Move retarget related structures into
- tlfs header
-Message-ID: <20200203140902.GF83200@debian-boqun.qqnc3lrjykvubdpftowmye0fmh.lx.internal.cloudapp.net>
-References: <20200203050313.69247-1-boqun.feng@gmail.com>
- <20200203050313.69247-3-boqun.feng@gmail.com>
- <20200203094118.GD20189@big-machine>
+ id 1iycRf-0004sF-KU
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:11:25 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=crsVhA3j/E6R+QCrcr/xDadxnwu4Ylkr7zJNfrJJXXkIsgGQCElhWW6siFCs8zPMWeO1zksWBQVtSkNWTtJT2y2ns2+DXxSfpJg4AgodE0faGAhFkWaqQLk9C5n34jYC2BysIGgW60XOM7Mx0z+mYgfe9dmQHArK1exhBVOqWXVPu2V9atVRyeweMhFHD5Z1tkW13zS/SnfGLZVdGhag0+3JzucYxEbYFHvh+x4RD8yR1qZwFhcdpZKI6SzBCeueIMjx69ReGaCW3df3EluQwLta30ORRtveuz9XVMFHCB8RtgQ2MJyRl+Uk20weXxO0ufpFjDJ5MGrDgRzL7wCVRQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PeGf/ODDV/kNGT2JI1kVs8ElXRi8dJB6BskXy9uaPVI=;
+ b=Y1SkTR2ZABlluPfXIlzFU2jzUiQ6zXl3JCGaXwfpGqWo1vwFDEg4ptjrfx2qypideuMZF8PGW4xb9+JQ9GD2nMooLmdNIPzm06S8DJR4x5qqIavYNNgEwE4PpE8ndWIvFMGq6yB/zdN6QpLDv0ThBrWLcfFgkxf+/AEJ1C6KrMi4ry6be+hm1oJL/bG8F7dlC0YTZ+cy2NAg4CVqHYR8471gaYSz1QiedHVJH8d0tJXf5JmPtzrXjr5W9NDDPADWx9GXFToPhgtk9mMW4u7/UrqF8ntqNhiDsEiGN9ZsudDGEWpwJtWIVYGCiYXw9piUDpgbrDOPAowGIYbC1yyyVQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PeGf/ODDV/kNGT2JI1kVs8ElXRi8dJB6BskXy9uaPVI=;
+ b=J2oK00n5pTWMhHo6WCdtkRRjGqI+TUu0EALgT1UyxlohoJJyF2UgvIqndf70zhKklWsLemmIYODnvnb8FqChZaTPMyqwfLgE5nk4TF3CLno93J6NUfIYOmlC23uNaMKQCkEWMiwTewyKRdyApsZuftOrp8/XEdEwrYPdjLMvRDw=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=oleksandr.suvorov@toradex.com; 
+Received: from VI1PR05MB3279.eurprd05.prod.outlook.com (10.170.238.24) by
+ VI1PR05MB6303.eurprd05.prod.outlook.com (20.179.28.151) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2686.30; Mon, 3 Feb 2020 14:11:18 +0000
+Received: from VI1PR05MB3279.eurprd05.prod.outlook.com
+ ([fe80::c14f:4592:515f:6e52]) by VI1PR05MB3279.eurprd05.prod.outlook.com
+ ([fe80::c14f:4592:515f:6e52%7]) with mapi id 15.20.2686.031; Mon, 3 Feb 2020
+ 14:11:18 +0000
+X-Gm-Message-State: APjAAAXjzuqUM1WHdWncN/4FBJj5wqBvrsZnknMUyUBNWXeZb/lvD2rg
+ PoSiidJ6I3Yr1i/LCQogd5DtzrX2VNfwD9dWGFs=
+X-Google-Smtp-Source: APXvYqwfT70Xo+U0ryoeOlAKqNqziMmfSjotp+Z+nlKdoBLASvtFNEM32Jq1/sTAQWhdwgeLGv56+/213gvbXfroqk8=
+X-Received: by 2002:ac8:6747:: with SMTP id n7mr23561610qtp.224.1580739071747; 
+ Mon, 03 Feb 2020 06:11:11 -0800 (PST)
+References: <20200202193014.107003-1-stefan@agner.ch>
+In-Reply-To: <20200202193014.107003-1-stefan@agner.ch>
+From: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+Date: Mon, 3 Feb 2020 16:11:00 +0200
+X-Gmail-Original-Message-ID: <CAGgjyvGOUF0n+9kn1bGZUZr1OjbGRXXAGZ2EXyHEJ-FFG=ivfw@mail.gmail.com>
+Message-ID: <CAGgjyvGOUF0n+9kn1bGZUZr1OjbGRXXAGZ2EXyHEJ-FFG=ivfw@mail.gmail.com>
+Subject: Re: [PATCH] ARM: imx: limit errata selection to Cortex-A9 based
+ designs
+To: Stefan Agner <stefan@agner.ch>
+X-ClientProxiedBy: BL0PR0102CA0002.prod.exchangelabs.com
+ (2603:10b6:207:18::15) To VI1PR05MB3279.eurprd05.prod.outlook.com
+ (2603:10a6:802:1c::24)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200203094118.GD20189@big-machine>
+Received: from mail-qt1-f179.google.com (209.85.160.179) by
+ BL0PR0102CA0002.prod.exchangelabs.com (2603:10b6:207:18::15) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2686.27 via Frontend Transport; Mon, 3 Feb 2020 14:11:15 +0000
+Received: by mail-qt1-f179.google.com with SMTP id c24so11504951qtp.5 for
+ <linux-arm-kernel@lists.infradead.org>; Mon, 03 Feb 2020 06:11:15 -0800 (PST)
+X-Gm-Message-State: APjAAAXjzuqUM1WHdWncN/4FBJj5wqBvrsZnknMUyUBNWXeZb/lvD2rg
+ PoSiidJ6I3Yr1i/LCQogd5DtzrX2VNfwD9dWGFs=
+X-Google-Smtp-Source: APXvYqwfT70Xo+U0ryoeOlAKqNqziMmfSjotp+Z+nlKdoBLASvtFNEM32Jq1/sTAQWhdwgeLGv56+/213gvbXfroqk8=
+X-Received: by 2002:ac8:6747:: with SMTP id n7mr23561610qtp.224.1580739071747; 
+ Mon, 03 Feb 2020 06:11:11 -0800 (PST)
+X-Gmail-Original-Message-ID: <CAGgjyvGOUF0n+9kn1bGZUZr1OjbGRXXAGZ2EXyHEJ-FFG=ivfw@mail.gmail.com>
+X-Originating-IP: [209.85.160.179]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 7c765286-b954-488d-457b-08d7a8b2eea6
+X-MS-TrafficTypeDiagnostic: VI1PR05MB6303:
+X-Microsoft-Antispam-PRVS: <VI1PR05MB630390E422D3B108D6A1717CF9000@VI1PR05MB6303.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2803;
+X-Forefront-PRVS: 0302D4F392
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10019020)(4636009)(396003)(39840400004)(346002)(376002)(136003)(366004)(189003)(199004)(81166006)(81156014)(52116002)(66946007)(6666004)(66556008)(66476007)(5660300002)(55446002)(44832011)(2906002)(6862004)(9686003)(107886003)(54906003)(316002)(42186006)(55236004)(26005)(4326008)(53546011)(186003)(8676002)(478600001)(8936002)(86362001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR05MB6303;
+ H:VI1PR05MB3279.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+Received-SPF: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: s+kVsQ+a35zrZOk7+9hxNC2n7eFWcTCxRkqyUEW05F1yx3GYMTaUBY+QxqvIKVgKomGKDqyrptkzxxT6zfZ5v2yiOQgcQmfjDBi5oInBqsp/7wo8Ym3V2C4ImxcWLT36HzV768WVFk0xTp1Rw8GU7BYsYlYbfzQpvHmvKjQUaRPGVWqwQ9z1/a9afJxeEtlvFjB445j/D8rCrwBu0zvjl2PgYClzINfU8scisWP3oMswYQ9Ni3fQbnNdoDRuLlmti2pLBHCbHEv9nLgUnlnpR37r5B8+OVNJgxq143IAqq/ewlilSJSISgwwo15gga85eHwqkvCy7bBNS5xvV2lJP0DwXze9TGMOMYs6UF4Wx48ww37YKk6vb4D3UvDZNrFx++abwUtFJuKZukM7wn6Ym2Co4TUO4pCJGNOJ6nOg9qNMEBS9TwcfesPWErVbbILk
+X-MS-Exchange-AntiSpam-MessageData: pWx5AhvaiFNUlTMQQwTYwVyav1k982y9mm48kEhjxh66WnfDb35gj5Q3tIrYu3SsUY6QQIKyY5exxJOD03ZLR4Fs7vP9rOjTs9SB7E2pUIwBJjqOjqWsUJP1AzX+SeDvfcY7E7nEN0sMP+dZlM45fQ==
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7c765286-b954-488d-457b-08d7a8b2eea6
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Feb 2020 14:11:15.9732 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: QvXSdC9RftOTk2gw5Z88R65EWw865CdESrjDhYUENuiIC4HKyxOrwyaaV4Bkj9t0JVZWqv3YvnSeh0l+jZCX9Ipl/yA1F7fv8CF+aWIpdk4=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB6303
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_060912_257607_B16F0F69 
-X-CRM114-Status: GOOD (  30.30  )
+X-CRM114-CacheID: sfid-20200203_061123_732973_F294F5B3 
+X-CRM114-Status: GOOD (  13.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [boqun.feng[at]gmail.com]
+ no trust [40.107.7.108 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -114,6 +124,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,212 +136,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-hyperv@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Stephen Hemminger <sthemmin@microsoft.com>, linux-pci@vger.kernel.org,
- Haiyang Zhang <haiyangz@microsoft.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, Michael Kelley <mikelley@microsoft.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- "H. Peter Anvin" <hpa@zytor.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- "K. Y. Srinivasan" <kys@microsoft.com>, linux-arm-kernel@lists.infradead.org
+Cc: Anson.Huang@nxp.com, Arnd Bergmann <arnd@arndb.de>,
+ Stefan Agner <stefan.agner@toradex.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 03, 2020 at 09:41:18AM +0000, Andrew Murray wrote:
-> On Mon, Feb 03, 2020 at 01:03:12PM +0800, Boqun Feng wrote:
-> > Currently, retarget_msi_interrupt and other structures it relys on are
-> > defined in pci-hyperv.c. However, those structures are actually defined
-> > in Hypervisor Top-Level Functional Specification [1] and may be
-> > different in sizes of fields or layout from architecture to
-> > architecture. Therefore, this patch moves those definitions into x86's
-> 
-> Nit: Rather than 'Therefore, this patch moves ...' - how about 'Let's move
-> ...'?
-> 
-> > tlfs header file to support virtual PCI on non-x86 architectures in the
-> > future.
-> > 
-> > Besides, while I'm at it, rename retarget_msi_interrupt to
-> 
-> Nit: 'Besides, while I'm at it' - this type of wording describes what
-> *you've* done rather than what the patch is doing. You could replace
-> that quoted text with 'Additionally, '
-> 
-> > hv_retarget_msi_interrupt for the consistent name convention, also
-> 
-> Nit: s/name/naming
-> 
+On Sun, Feb 2, 2020 at 9:31 PM Stefan Agner <stefan@agner.ch> wrote:
+>
+> From: Stefan Agner <stefan.agner@toradex.com>
+>
+> The two erratas 754322 and 775420 are Cortex-A9 specific. Only
+> select the erratas for SoC which use a Cortex-A9.
+>
+> Signed-off-by: Stefan Agner <stefan@agner.ch>
 
-Thanks for the suggestion on wording ;-)
+Reviewed-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
 
-> > mirroring the name in TLFS.
-> > 
-> > [1]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/tlfs
-> > 
-> > Signed-off-by: Boqun Feng (Microsoft) <boqun.feng@gmail.com>
-> > ---
-> >  arch/x86/include/asm/hyperv-tlfs.h  | 31 ++++++++++++++++++++++++++
-> >  drivers/pci/controller/pci-hyperv.c | 34 ++---------------------------
-> >  2 files changed, 33 insertions(+), 32 deletions(-)
-> > 
-> > diff --git a/arch/x86/include/asm/hyperv-tlfs.h b/arch/x86/include/asm/hyperv-tlfs.h
-> > index 739bd89226a5..4a76e442481a 100644
-> > --- a/arch/x86/include/asm/hyperv-tlfs.h
-> > +++ b/arch/x86/include/asm/hyperv-tlfs.h
-> > @@ -911,4 +911,35 @@ struct hv_tlb_flush_ex {
-> >  struct hv_partition_assist_pg {
-> >  	u32 tlb_lock_count;
-> >  };
-> > +
-> > +struct hv_interrupt_entry {
-> > +	u32 source;			/* 1 for MSI(-X) */
-> > +	u32 reserved1;
-> > +	u32 address;
-> > +	u32 data;
-> > +} __packed;
-> 
-> Why have you added __packed here? There is no mention of this change in the
-> commit log? Is it needed?
-> 
+> ---
+>  arch/arm/mach-imx/Kconfig | 10 ++++++++--
+>  1 file changed, 8 insertions(+), 2 deletions(-)
+>
+> diff --git a/arch/arm/mach-imx/Kconfig b/arch/arm/mach-imx/Kconfig
+> index 95584ee02b55..e7d7b90e2cf8 100644
+> --- a/arch/arm/mach-imx/Kconfig
+> +++ b/arch/arm/mach-imx/Kconfig
+> @@ -471,8 +471,6 @@ config      SOC_IMX53
+>  config SOC_IMX6
+>         bool
+>         select ARM_CPU_SUSPEND if (PM || CPU_IDLE)
+> -       select ARM_ERRATA_754322
+> -       select ARM_ERRATA_775420
+>         select ARM_GIC
+>         select HAVE_IMX_ANATOP
+>         select HAVE_IMX_GPC
+> @@ -484,6 +482,8 @@ config SOC_IMX6
+>  config SOC_IMX6Q
+>         bool "i.MX6 Quad/DualLite support"
+>         select ARM_ERRATA_764369 if SMP
+> +       select ARM_ERRATA_754322
+> +       select ARM_ERRATA_775420
+>         select HAVE_ARM_SCU if SMP
+>         select HAVE_ARM_TWD
+>         select PINCTRL_IMX6Q
+> @@ -494,6 +494,8 @@ config SOC_IMX6Q
+>
+>  config SOC_IMX6SL
+>         bool "i.MX6 SoloLite support"
+> +       select ARM_ERRATA_754322
+> +       select ARM_ERRATA_775420
+>         select PINCTRL_IMX6SL
+>         select SOC_IMX6
+>
+> @@ -502,6 +504,8 @@ config SOC_IMX6SL
+>
+>  config SOC_IMX6SLL
+>         bool "i.MX6 SoloLiteLite support"
+> +       select ARM_ERRATA_754322
+> +       select ARM_ERRATA_775420
+>         select PINCTRL_IMX6SLL
+>         select SOC_IMX6
+>
+> @@ -510,6 +514,8 @@ config SOC_IMX6SLL
+>
+>  config SOC_IMX6SX
+>         bool "i.MX6 SoloX support"
+> +       select ARM_ERRATA_754322
+> +       select ARM_ERRATA_775420
+>         select PINCTRL_IMX6SX
+>         select SOC_IMX6
+>
+> --
+> 2.25.0
+>
 
-I'm simply following the convention of hyperv-tlfs.h: most of the
-structures have this "__packed" attribute. I personally don't think this
-attribute is necessary, but I was afraid that I was missing something
-subtle. So a question for folks working on Hyper-V: why we need this
-attribute on TLFS-defined structures? Most of those will have no
-difference with or without this attribute, IIUC.
+-- 
+Best regards
+Oleksandr Suvorov
 
-> > +
-> > +/*
-> > + * flags for hv_device_interrupt_target.flags
-> > + */
-> > +#define HV_DEVICE_INTERRUPT_TARGET_MULTICAST		1
-> > +#define HV_DEVICE_INTERRUPT_TARGET_PROCESSOR_SET	2
-> > +
-> > +struct hv_device_interrupt_target {
-> > +	u32 vector;
-> > +	u32 flags;
-> > +	union {
-> > +		u64 vp_mask;
-> > +		struct hv_vpset vp_set;
-> > +	};
-> > +} __packed;
-> 
-> Same here.
-> 
-> > +
-> > +/* HvRetargetDeviceInterrupt hypercall */
-> > +struct hv_retarget_device_interrupt {
-> > +	u64 partition_id;
-> 
-> Why drop the 'self' comment?
-> 
-
-Good catch, TLFS does say this field must be 'self'. I will add it in
-next version.
-
-> > +	u64 device_id;
-> > +	struct hv_interrupt_entry int_entry;
-> > +	u64 reserved2;
-> > +	struct hv_device_interrupt_target int_target;
-> > +} __packed __aligned(8);
-> >  #endif
-> > diff --git a/drivers/pci/controller/pci-hyperv.c b/drivers/pci/controller/pci-hyperv.c
-> > index aacfcc90d929..0d9b74503577 100644
-> > --- a/drivers/pci/controller/pci-hyperv.c
-> > +++ b/drivers/pci/controller/pci-hyperv.c
-> > @@ -406,36 +406,6 @@ struct pci_eject_response {
-> >  
-> >  static int pci_ring_size = (4 * PAGE_SIZE);
-> >  
-> > -struct hv_interrupt_entry {
-> > -	u32	source;			/* 1 for MSI(-X) */
-> > -	u32	reserved1;
-> > -	u32	address;
-> > -	u32	data;
-> > -};
-> > -
-> > -/*
-> > - * flags for hv_device_interrupt_target.flags
-> > - */
-> > -#define HV_DEVICE_INTERRUPT_TARGET_MULTICAST		1
-> > -#define HV_DEVICE_INTERRUPT_TARGET_PROCESSOR_SET	2
-> > -
-> > -struct hv_device_interrupt_target {
-> > -	u32	vector;
-> > -	u32	flags;
-> > -	union {
-> > -		u64		 vp_mask;
-> > -		struct hv_vpset vp_set;
-> > -	};
-> > -};
-> > -
-> > -struct retarget_msi_interrupt {
-> > -	u64	partition_id;		/* use "self" */
-> > -	u64	device_id;
-> > -	struct hv_interrupt_entry int_entry;
-> > -	u64	reserved2;
-> > -	struct hv_device_interrupt_target int_target;
-> > -} __packed __aligned(8);
-> > -
-> >  /*
-> >   * Driver specific state.
-> >   */
-> > @@ -482,7 +452,7 @@ struct hv_pcibus_device {
-> >  	struct workqueue_struct *wq;
-> >  
-> >  	/* hypercall arg, must not cross page boundary */
-> > -	struct retarget_msi_interrupt retarget_msi_interrupt_params;
-> > +	struct hv_retarget_device_interrupt retarget_msi_interrupt_params;
-> >  
-> >  	/*
-> >  	 * Don't put anything here: retarget_msi_interrupt_params must be last
-> > @@ -1178,7 +1148,7 @@ static void hv_irq_unmask(struct irq_data *data)
-> >  {
-> >  	struct msi_desc *msi_desc = irq_data_get_msi_desc(data);
-> >  	struct irq_cfg *cfg = irqd_cfg(data);
-> > -	struct retarget_msi_interrupt *params;
-> > +	struct hv_retarget_device_interrupt *params;
-> 
-> pci-hyperv.c also makes use of retarget_msi_interrupt_lock - it's really clear
-> from this name what it protects, however your rename now makes this more
-> confusing.
-> 
-> Likewise there is a comment in hv_pci_probe that refers to
-> retarget_msi_interrupt_params which is now stale.
-> 
-
-But 'retarget_msi_interrupt_params' is the name of field in
-hv_pcibus_device, so is 'retarget_msi_interrupt_lock'. And what I change
-is the name of type. I believe people can tell the relationship from
-the name of the fields, and the comment of hv_pci_probe actually refers
-to the field rather than the type.
-
-> It may be helpful to rename hv_retarget_device_interrupt for consistency with
-> the docs - however please make sure you catch all the references - I'd suggest
-> that the move and the rename are in different patches.
-> 
-
-If the renaming requires a lot of work (e.g. need to change multiple
-references), I will follow your suggestion. But seems it's not the case
-for this renaming.
-
-Regards,
-Boqun
-
-> Thanks,
-> 
-> Andrew Murray
-> 
-> >  	struct hv_pcibus_device *hbus;
-> >  	struct cpumask *dest;
-> >  	cpumask_var_t tmp;
-> > -- 
-> > 2.24.1
-> > 
+Toradex AG
+Altsagenstrasse 5 | 6048 Horw/Luzern | Switzerland | T: +41 41 500
+4800 (main line)
 
 _______________________________________________
 linux-arm-kernel mailing list
