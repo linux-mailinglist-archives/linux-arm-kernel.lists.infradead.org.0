@@ -2,83 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C503E150807
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:06:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F94A150812
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 15:09:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ALnSz3jt+6O5T4DDHebraEI8hzqXlzQO+//zIXG5ZxE=; b=FY5BMmYtQgCba4
-	uC3qhVIOjmWrsngYee9u5ctV1Td1S0sV8zyGFA9GA6FAQ+G9qfR1K3mQ6bYHz1o7x+Q1VAKcrG9iq
-	HTDYBwClgzMGLqqhtlSOPQGq8Vb3qtiCYhjqYi4ss/14itYK0mSv16t3UWvuHGuYGd+Qwo5EoAcNx
-	iCaLez4Uzrcz85JoOvY56AeeBNCb4MgZMcwH8fZVX+uqwictgeR0//4hicDmhS+e6FI8wBUwCsg19
-	4tFao2sCRmFSarh4y1wfjjY8vOVYepolaI9VtbRXsBNMlxZtdL4ztysQio18INyGU5hRqa0e8JE0Z
-	/K1NxAhkkjZKZxeD6//A==;
+	List-Owner; bh=806uzHFwEnAmZLDjRJD2XjBxe1DxEpVZcUxknWV7HZ8=; b=biNgbURA1/vgB0
+	fIqvA8w1mx/eByuUBpx3k1v6t9NgaXa51P0/kitZLMYb0mA8UoTHoaGlvu766jfP+UExwDhvt2GzR
+	w17d4ItjnYhZuSzWfn/R9zHWFFJhQrKeglCPSiW1mXpDjrbMYjQ2+HwMUULmQQJslzWpF341zxubb
+	aX8Jg3Rm47QEN+5xtXdh8FkSdQ+hTkWzowpKdav8ihYJDLcolCw3TQHrf3PHPxpcM+PRtg5AWqW7M
+	ttw5L1wezGA/v5xhkfKtsKpY0RVB/WknsxP6eQI0FmXuuMjOplaheTmVDRWT7UAkK/d/idSes664B
+	YI4iAq08PumCZL2laxIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iycMm-0002qW-8b; Mon, 03 Feb 2020 14:06:20 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1iycPq-0003Hv-1U; Mon, 03 Feb 2020 14:09:30 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iycLO-0000k9-Uz
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:04:57 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 013E2qk5021182; Mon, 3 Feb 2020 15:04:47 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=dSvOn8zEFudYBj7GcrolW7Z2iqRoAzVZcowqyt8GqhE=;
- b=XBz7+DsNu6+SKF7QDJ5wDVPsapUPu9hWeGUob9g/HYTdizcNgS/8h6kAsZiIveR6V5dS
- oA0Hg3Eqf01uIDNiP+MUnJaKJs/nL1X3wSP56uj/VFWEzpSvyw6th3k1EtzzMm+3vBAl
- MsuuVYD9ks7YKpcXTCflpi/h76Z819+tKNHShhjgrvwBNZcPqzQj663bU7rWktW6TxC2
- kxNVIO7ZdLNXNE2fBrOS6oM5PpsSsVucXeZr+74tzTnamqToEEp3lV9BBzLm4VxX4IHe
- UMo32LiBi/AabLepF0eSG/1Vj5CQbf3BkrfArL0gJLpZV/SsfCfJaTehysu3DLmlTDCT Wg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xvyp5shja-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 03 Feb 2020 15:04:47 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 34584100038;
- Mon,  3 Feb 2020 15:04:46 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 273E1222C94;
- Mon,  3 Feb 2020 15:04:46 +0100 (CET)
-Received: from localhost (10.75.127.46) by SFHDAG3NODE1.st.com (10.75.127.7)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 3 Feb 2020 15:04:45
- +0100
-From: Erwan Le Ray <erwan.leray@st.com>
-To: Russell King <linux@armlinux.org.uk>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@st.com>,
- Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
- Olof Johansson <olof@lixom.net>
-Subject: [PATCH v3 4/4] ARM: debug: stm32: add UART early console support for
- STM32MP1
-Date: Mon, 3 Feb 2020 15:04:25 +0100
-Message-ID: <20200203140425.26579-5-erwan.leray@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200203140425.26579-1-erwan.leray@st.com>
-References: <20200203140425.26579-1-erwan.leray@st.com>
+ id 1iycPX-0003H0-FP
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 14:09:16 +0000
+Received: by mail-qk1-x742.google.com with SMTP id u19so6608244qku.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 03 Feb 2020 06:09:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=VglaDyUpCkhXx9hrqC8HpF3hY8//yvxe/GnkNqkiuyI=;
+ b=MTFWSwdpIUN8fEmK8IEJFk3+2UKh25nl1YOD3Rl+VpzxzZ1bTaYjiIE3C1XRorPZDD
+ MCn/mJFqyLTkf4OTPYCPDBfAJUn/OeeSwV6/hedS2cDPjyNGl1WUxmpKaOkEyDROmZ27
+ DR5AYFIts5noWIUSJsjy3GhKhecU4K7zA1dTmak0bdSxPLWtCzO1WOZ89OguEkAn3tfY
+ lP6rSJ4nXepy5mSPX4rW3jtewtJyBpwDPhJI/L9KHqxuD2ex2vqjq/QjL8DFYwXfYfon
+ Mil7GUMoOvKktpinmfVwku9eyKEe+nZYOC/lTRwr/QB9+dyoAfYX7ZZPQc0XcKeCYpww
+ ZoLA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=VglaDyUpCkhXx9hrqC8HpF3hY8//yvxe/GnkNqkiuyI=;
+ b=XP66sN0k1n/S0iG7znzgE1Lk8WZYDhwGeVCulZi8yWkFfo8l+IatQmkjikaD/R1FWk
+ q4QvWRtEn1viZtftv2JbubdaV4asUf8OlDnkumTcRHWYXKKWwyCOgXQg4R/32RQUTSnB
+ sr4BBaYdYSVqi+bTAsBRxTQDBCrmfUsuNH7DfL196v+1EbgZm5lYYZPe+0iGI8ojvsgk
+ A7JVvhF0WnarjeflkUMHDDRiWbqaJXwztcOCwIraxdMGlwvyuffYaxd9jawLtXnFycPD
+ 7QBj3r9QEWVx7dP7MsT0WsFGwkKKRFYTS9bXBj/hQgBBxIlHMJBH9LZFejcVxQX8uF4m
+ q2Tw==
+X-Gm-Message-State: APjAAAW/yt31J+LwZ9KpT4DRVhE0Sjz/NGXlx72H+4ezCZG4quB4Kvi8
+ fmq5od75GsPuzYgQMrLsDliZutUZ
+X-Google-Smtp-Source: APXvYqwro+2AL5hEDOifKdhLAqsxcMvlGw8iUcKsdC3VPKqmeK7aPmkU6Cq/CQ17knBfz1liZphAhQ==
+X-Received: by 2002:a37:e210:: with SMTP id g16mr23584593qki.413.1580738948923; 
+ Mon, 03 Feb 2020 06:09:08 -0800 (PST)
+Received: from auth2-smtp.messagingengine.com (auth2-smtp.messagingengine.com.
+ [66.111.4.228])
+ by smtp.gmail.com with ESMTPSA id d9sm9658708qth.34.2020.02.03.06.09.07
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 03 Feb 2020 06:09:08 -0800 (PST)
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
+ by mailauth.nyi.internal (Postfix) with ESMTP id 9A0B021B7C;
+ Mon,  3 Feb 2020 09:09:05 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute6.internal (MEProxy); Mon, 03 Feb 2020 09:09:05 -0500
+X-ME-Sender: <xms:gCk4XhDQcJFqrMRh9Orcd5rV_WSJhlhwqApM79bryhpDc-52nq0yZQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeejgdehkecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesthdtredttddtvdenucfhrhhomhepuehoqhhunhcu
+ hfgvnhhguceosghoqhhunhdrfhgvnhhgsehgmhgrihhlrdgtohhmqeenucffohhmrghinh
+ epmhhitghrohhsohhfthdrtghomhenucfkphephedvrdduheehrdduuddurdejudenucev
+ lhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegsohhquhhnod
+ hmvghsmhhtphgruhhthhhpvghrshhonhgrlhhithihqdeiledvgeehtdeigedqudejjeek
+ heehhedvqdgsohhquhhnrdhfvghngheppehgmhgrihhlrdgtohhmsehfihigmhgvrdhnrg
+ hmvg
+X-ME-Proxy: <xmx:gCk4Xjk6a0_HdOtJ1hwhQptOVIufrKwz9hJJXQhOcNy5ABrD5nJefw>
+ <xmx:gCk4Xtvly7ecra5XvRQml2rympYgF_xxlnhQYeXNu59o7OHN4V3hLw>
+ <xmx:gCk4XlL-H2MKZlRh5spFzqzDSH2aUeYkoDF3pgGOC1JRAZorc840EA>
+ <xmx:gSk4XoZkaz1RHEYUZsvCvoPgFnccExn8_mMgTMgCYwBAA0jI1CbmjfZV0mY>
+Received: from localhost (unknown [52.155.111.71])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 3521F3280060;
+ Mon,  3 Feb 2020 09:09:04 -0500 (EST)
+Date: Mon, 3 Feb 2020 22:09:02 +0800
+From: Boqun Feng <boqun.feng@gmail.com>
+To: Andrew Murray <amurray@thegoodpenguin.co.uk>
+Subject: Re: [PATCH v2 2/3] PCI: hv: Move retarget related structures into
+ tlfs header
+Message-ID: <20200203140902.GF83200@debian-boqun.qqnc3lrjykvubdpftowmye0fmh.lx.internal.cloudapp.net>
+References: <20200203050313.69247-1-boqun.feng@gmail.com>
+ <20200203050313.69247-3-boqun.feng@gmail.com>
+ <20200203094118.GD20189@big-machine>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-03_04:2020-02-02,
- 2020-02-03 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200203094118.GD20189@big-machine>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_060455_399738_D9938D48 
-X-CRM114-Status: GOOD (  11.36  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200203_060912_257607_B16F0F69 
+X-CRM114-Status: GOOD (  30.30  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [boqun.feng[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,79 +125,212 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Clement Peron <peron.clem@gmail.com>, Erwan Le Ray <erwan.leray@st.com>,
- Gerald Baeza <gerald.baeza@st.com>, Nathan Huckleberry <nhuck15@gmail.com>,
- Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, linux-hyperv@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Stephen Hemminger <sthemmin@microsoft.com>, linux-pci@vger.kernel.org,
+ Haiyang Zhang <haiyangz@microsoft.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, Michael Kelley <mikelley@microsoft.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ "H. Peter Anvin" <hpa@zytor.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Andrew Murray <andrew.murray@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
+ "K. Y. Srinivasan" <kys@microsoft.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support of early console for STM32MP1. Default UART instance is UART4,
-but other UART instances can be configured by setting physical and virtual
-base addresses in menuconfig.
+On Mon, Feb 03, 2020 at 09:41:18AM +0000, Andrew Murray wrote:
+> On Mon, Feb 03, 2020 at 01:03:12PM +0800, Boqun Feng wrote:
+> > Currently, retarget_msi_interrupt and other structures it relys on are
+> > defined in pci-hyperv.c. However, those structures are actually defined
+> > in Hypervisor Top-Level Functional Specification [1] and may be
+> > different in sizes of fields or layout from architecture to
+> > architecture. Therefore, this patch moves those definitions into x86's
+> 
+> Nit: Rather than 'Therefore, this patch moves ...' - how about 'Let's move
+> ...'?
+> 
+> > tlfs header file to support virtual PCI on non-x86 architectures in the
+> > future.
+> > 
+> > Besides, while I'm at it, rename retarget_msi_interrupt to
+> 
+> Nit: 'Besides, while I'm at it' - this type of wording describes what
+> *you've* done rather than what the patch is doing. You could replace
+> that quoted text with 'Additionally, '
+> 
+> > hv_retarget_msi_interrupt for the consistent name convention, also
+> 
+> Nit: s/name/naming
+> 
 
-Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
+Thanks for the suggestion on wording ;-)
 
-diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
-index e5e1703a89c0..3357e294a7cc 100644
---- a/arch/arm/Kconfig.debug
-+++ b/arch/arm/Kconfig.debug
-@@ -1235,6 +1235,18 @@ choice
- 
- 		  If unsure, say N.
- 
-+	config STM32MP1_DEBUG_UART
-+		bool "Use STM32MP1 UART for low-level debug"
-+		depends on MACH_STM32MP157
-+		select DEBUG_STM32_UART
-+		help
-+		  Say Y here if you want kernel low-level debugging support
-+		  on STM32MP1 based platforms, wich default UART is wired on
-+		  UART4, but another UART instance can be selected by modifying
-+		  CONFIG_DEBUG_UART_PHYS and CONFIG_DEBUG_UART_VIRT.
-+
-+		  If unsure, say N.
-+
- 	config TEGRA_DEBUG_UART_AUTO_ODMDATA
- 		bool "Kernel low-level debugging messages via Tegra UART via ODMDATA"
- 		depends on ARCH_TEGRA
-@@ -1633,6 +1645,7 @@ config DEBUG_UART_PHYS
- 	default 0x3e000000 if DEBUG_BCM_KONA_UART
- 	default 0x3f201000 if DEBUG_BCM2836
- 	default 0x4000e400 if DEBUG_LL_UART_EFM32
-+	default 0x40010000 if STM32MP1_DEBUG_UART
- 	default 0x40011000 if STM32F4_DEBUG_UART || STM32F7_DEBUG_UART || \
- 				STM32H7_DEBUG_UART
- 	default 0x40028000 if DEBUG_AT91_SAMV7_USART1
-@@ -1795,6 +1808,7 @@ config DEBUG_UART_VIRT
- 	default 0xfcfe8600 if DEBUG_BCM63XX_UART
- 	default 0xfd000000 if DEBUG_SPEAR3XX || DEBUG_SPEAR13XX
- 	default 0xfd883000 if DEBUG_ALPINE_UART0
-+	default 0xfe010000 if STM32MP1_DEBUG_UART
- 	default 0xfe017000 if DEBUG_MMP_UART2
- 	default 0xfe018000 if DEBUG_MMP_UART3
- 	default 0xfe100000 if DEBUG_IMX23_UART || DEBUG_IMX28_UART
-diff --git a/arch/arm/include/debug/stm32.S b/arch/arm/include/debug/stm32.S
-index 5a2e2b065340..f3c4a37210ed 100644
---- a/arch/arm/include/debug/stm32.S
-+++ b/arch/arm/include/debug/stm32.S
-@@ -9,7 +9,8 @@
- #define STM32_USART_TDR_OFF		0x04
- #endif
- 
--#if defined(CONFIG_STM32F7_DEBUG_UART) || defined(CONFIG_STM32H7_DEBUG_UART)
-+#if defined(CONFIG_STM32F7_DEBUG_UART) || defined(CONFIG_STM32H7_DEBUG_UART) || \
-+	defined(CONFIG_STM32MP1_DEBUG_UART)
- #define STM32_USART_SR_OFF		0x1C
- #define STM32_USART_TDR_OFF		0x28
- #endif
--- 
-2.17.1
+> > mirroring the name in TLFS.
+> > 
+> > [1]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/tlfs
+> > 
+> > Signed-off-by: Boqun Feng (Microsoft) <boqun.feng@gmail.com>
+> > ---
+> >  arch/x86/include/asm/hyperv-tlfs.h  | 31 ++++++++++++++++++++++++++
+> >  drivers/pci/controller/pci-hyperv.c | 34 ++---------------------------
+> >  2 files changed, 33 insertions(+), 32 deletions(-)
+> > 
+> > diff --git a/arch/x86/include/asm/hyperv-tlfs.h b/arch/x86/include/asm/hyperv-tlfs.h
+> > index 739bd89226a5..4a76e442481a 100644
+> > --- a/arch/x86/include/asm/hyperv-tlfs.h
+> > +++ b/arch/x86/include/asm/hyperv-tlfs.h
+> > @@ -911,4 +911,35 @@ struct hv_tlb_flush_ex {
+> >  struct hv_partition_assist_pg {
+> >  	u32 tlb_lock_count;
+> >  };
+> > +
+> > +struct hv_interrupt_entry {
+> > +	u32 source;			/* 1 for MSI(-X) */
+> > +	u32 reserved1;
+> > +	u32 address;
+> > +	u32 data;
+> > +} __packed;
+> 
+> Why have you added __packed here? There is no mention of this change in the
+> commit log? Is it needed?
+> 
 
+I'm simply following the convention of hyperv-tlfs.h: most of the
+structures have this "__packed" attribute. I personally don't think this
+attribute is necessary, but I was afraid that I was missing something
+subtle. So a question for folks working on Hyper-V: why we need this
+attribute on TLFS-defined structures? Most of those will have no
+difference with or without this attribute, IIUC.
+
+> > +
+> > +/*
+> > + * flags for hv_device_interrupt_target.flags
+> > + */
+> > +#define HV_DEVICE_INTERRUPT_TARGET_MULTICAST		1
+> > +#define HV_DEVICE_INTERRUPT_TARGET_PROCESSOR_SET	2
+> > +
+> > +struct hv_device_interrupt_target {
+> > +	u32 vector;
+> > +	u32 flags;
+> > +	union {
+> > +		u64 vp_mask;
+> > +		struct hv_vpset vp_set;
+> > +	};
+> > +} __packed;
+> 
+> Same here.
+> 
+> > +
+> > +/* HvRetargetDeviceInterrupt hypercall */
+> > +struct hv_retarget_device_interrupt {
+> > +	u64 partition_id;
+> 
+> Why drop the 'self' comment?
+> 
+
+Good catch, TLFS does say this field must be 'self'. I will add it in
+next version.
+
+> > +	u64 device_id;
+> > +	struct hv_interrupt_entry int_entry;
+> > +	u64 reserved2;
+> > +	struct hv_device_interrupt_target int_target;
+> > +} __packed __aligned(8);
+> >  #endif
+> > diff --git a/drivers/pci/controller/pci-hyperv.c b/drivers/pci/controller/pci-hyperv.c
+> > index aacfcc90d929..0d9b74503577 100644
+> > --- a/drivers/pci/controller/pci-hyperv.c
+> > +++ b/drivers/pci/controller/pci-hyperv.c
+> > @@ -406,36 +406,6 @@ struct pci_eject_response {
+> >  
+> >  static int pci_ring_size = (4 * PAGE_SIZE);
+> >  
+> > -struct hv_interrupt_entry {
+> > -	u32	source;			/* 1 for MSI(-X) */
+> > -	u32	reserved1;
+> > -	u32	address;
+> > -	u32	data;
+> > -};
+> > -
+> > -/*
+> > - * flags for hv_device_interrupt_target.flags
+> > - */
+> > -#define HV_DEVICE_INTERRUPT_TARGET_MULTICAST		1
+> > -#define HV_DEVICE_INTERRUPT_TARGET_PROCESSOR_SET	2
+> > -
+> > -struct hv_device_interrupt_target {
+> > -	u32	vector;
+> > -	u32	flags;
+> > -	union {
+> > -		u64		 vp_mask;
+> > -		struct hv_vpset vp_set;
+> > -	};
+> > -};
+> > -
+> > -struct retarget_msi_interrupt {
+> > -	u64	partition_id;		/* use "self" */
+> > -	u64	device_id;
+> > -	struct hv_interrupt_entry int_entry;
+> > -	u64	reserved2;
+> > -	struct hv_device_interrupt_target int_target;
+> > -} __packed __aligned(8);
+> > -
+> >  /*
+> >   * Driver specific state.
+> >   */
+> > @@ -482,7 +452,7 @@ struct hv_pcibus_device {
+> >  	struct workqueue_struct *wq;
+> >  
+> >  	/* hypercall arg, must not cross page boundary */
+> > -	struct retarget_msi_interrupt retarget_msi_interrupt_params;
+> > +	struct hv_retarget_device_interrupt retarget_msi_interrupt_params;
+> >  
+> >  	/*
+> >  	 * Don't put anything here: retarget_msi_interrupt_params must be last
+> > @@ -1178,7 +1148,7 @@ static void hv_irq_unmask(struct irq_data *data)
+> >  {
+> >  	struct msi_desc *msi_desc = irq_data_get_msi_desc(data);
+> >  	struct irq_cfg *cfg = irqd_cfg(data);
+> > -	struct retarget_msi_interrupt *params;
+> > +	struct hv_retarget_device_interrupt *params;
+> 
+> pci-hyperv.c also makes use of retarget_msi_interrupt_lock - it's really clear
+> from this name what it protects, however your rename now makes this more
+> confusing.
+> 
+> Likewise there is a comment in hv_pci_probe that refers to
+> retarget_msi_interrupt_params which is now stale.
+> 
+
+But 'retarget_msi_interrupt_params' is the name of field in
+hv_pcibus_device, so is 'retarget_msi_interrupt_lock'. And what I change
+is the name of type. I believe people can tell the relationship from
+the name of the fields, and the comment of hv_pci_probe actually refers
+to the field rather than the type.
+
+> It may be helpful to rename hv_retarget_device_interrupt for consistency with
+> the docs - however please make sure you catch all the references - I'd suggest
+> that the move and the rename are in different patches.
+> 
+
+If the renaming requires a lot of work (e.g. need to change multiple
+references), I will follow your suggestion. But seems it's not the case
+for this renaming.
+
+Regards,
+Boqun
+
+> Thanks,
+> 
+> Andrew Murray
+> 
+> >  	struct hv_pcibus_device *hbus;
+> >  	struct cpumask *dest;
+> >  	cpumask_var_t tmp;
+> > -- 
+> > 2.24.1
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
