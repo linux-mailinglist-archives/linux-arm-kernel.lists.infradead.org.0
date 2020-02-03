@@ -2,79 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 523DA15058A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 12:42:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAEB7150598
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 12:45:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1KJb9+N54x/F5emUYl/8QDKkWmVZUyXBoxHhyLlnslY=; b=mOmxiMDT4DWCXb
-	vQk2hmyfB0Eo9Ql4pR3KhmQDfrju13iP3l42gfNxosYA1aC5ckUh0WRa5Q0fPE1S//bScaCUMF3JM
-	Z5ezCALCiYxSqff9QtYLKy1YkmZSN5t1l4FrZoO2LSz0UY52ansu2GT7QxD9cl7N3Q+zGzRgQeDL5
-	JgoIcLrSoA5w6jf5VeQz09vMQOgK/zopOCnVG+MeYDXMOq1ugfBDnIBXMAQM85+LkCO2Mf/IFcZHP
-	Krh6KF7Ki9Yw1izMDa14UYGFXyT8p71Xx+2617QGZdRgZ+/m3U0vf3A4yLyTTeHoU+nFfhNgE+BGg
-	7NpbqS81AUlOwU9FJbWg==;
+	List-Owner; bh=wIi7za8/AlBa3/fAEGtkbTe558h2yXkQt0N8CuCfY6c=; b=Av20PnS13snhqb
+	HlQBbOa78FuFKThEvGeXLmmvrQKsSbm5dHTq8C23mkMrqb3kqR9jC0HRESx29RnMJXzcOh7mC6zua
+	U8oITyORqJ8ePCczh9vtOLph14LXLmDQE+atxMFY/sz0tSarGce1kq+p6MCAMRy+KKtjo+Yl96kyX
+	D8zQg3Rys7veqffNOgwGIDurvR6hh5oPeSqrDrf00OXpl7VTqKtbpAKIjhZ2pKWjUc6WPo9ByfMsU
+	ItSvszC7gMVBrkrmYoGaYTKgMAaBhAEDHBuZItdT4vab5nGy0fFfnB/kGxTgveG4Y5uQQHyaKoh8s
+	g5yYJWajdcKee5OkuRhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iya7K-0007SN-5u; Mon, 03 Feb 2020 11:42:14 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iya65-0006Hw-GD; Mon, 03 Feb 2020 11:41:00 +0000
-X-UUID: 3390e0d50140442080b672235026f7ad-20200203
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=SZXUSyVeH0aCo9D81XkyW0tZw4vbPqUrWCA2iZBbfKA=; 
- b=XIejnjFPXdpFw8QzJdUyYuATCqyH2hXW1P4QYSvmzDq5HrcDUuDyBx9c3AKkdDw0N5qBF6nFb4qpZdrJl0rMKYQ1mDqciBgmAQ7wruVA4sKR9Y4vxwBPrmOSO7eP52a/Ulrh5KgikmrcPMpRza4J8CT3Tg6QBV9JCOw+/RuV2qI=;
-X-UUID: 3390e0d50140442080b672235026f7ad-20200203
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <hsin-hsiung.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 589162808; Mon, 03 Feb 2020 03:40:49 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 3 Feb 2020 03:40:47 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 3 Feb 2020 19:40:03 +0800
-Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 3 Feb 2020 19:40:30 +0800
-From: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-To: Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, Matthias Brugger
- <matthias.bgg@gmail.com>
-Subject: [PATCH v8 5/5] arm64: dts: mt6358: add PMIC MT6358 related nodes
-Date: Mon, 3 Feb 2020 19:40:44 +0800
-Message-ID: <1580730044-30501-6-git-send-email-hsin-hsiung.wang@mediatek.com>
-X-Mailer: git-send-email 2.6.4
-In-Reply-To: <1580730044-30501-1-git-send-email-hsin-hsiung.wang@mediatek.com>
-References: <1580730044-30501-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+	id 1iyaAY-0000uJ-FK; Mon, 03 Feb 2020 11:45:34 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iyaAR-0000t3-AB
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 11:45:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A85BFEC;
+ Mon,  3 Feb 2020 03:45:23 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 500A93F52E;
+ Mon,  3 Feb 2020 03:45:22 -0800 (PST)
+Date: Mon, 3 Feb 2020 11:45:17 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Gavin Shan <gshan@redhat.com>
+Subject: Re: [PATCH] drivers/firmware/psci: Hide ACPI state during
+ initialization
+Message-ID: <20200203114517.GA38195@bogus>
+References: <20200202230626.6598-1-gshan@redhat.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200202230626.6598-1-gshan@redhat.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_034057_550291_36B0BF23 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200203_034527_398515_0B7779F2 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,410 +64,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Alessandro
- Zummo <a.zummo@towertech.it>, Josef Friedl <josef.friedl@speed.at>,
- srv_heupstream@mediatek.com, Frank Wunderlich <frank-w@public-files.de>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>, Ran Bi <ran.bi@mediatek.com>,
- Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
- Richard Fontana <rfontana@redhat.com>, devicetree@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>, linux-rtc@vger.kernel.org
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com,
+ linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PMIC MT6358 related nodes which is for MT8183 platform.
+On Mon, Feb 03, 2020 at 10:06:26AM +1100, Gavin Shan wrote:
+> Either psci_dt_init() or psci_acpi_init() s called depends on ACPI
+> enablement state, which isn't so nice. In this case, two functions
+> have to be exported from PSCI module.
+>
 
-Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
----
- arch/arm64/boot/dts/mediatek/mt6358.dtsi    | 361 ++++++++++++++++++++++++++++
- arch/arm64/boot/dts/mediatek/mt8183-evb.dts |   1 +
- 2 files changed, 362 insertions(+)
- create mode 100644 arch/arm64/boot/dts/mediatek/mt6358.dtsi
+I am confused, we don't export any functions as you mention and both
+are __init functions which can't be exported.
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt6358.dtsi b/arch/arm64/boot/dts/mediatek/mt6358.dtsi
-new file mode 100644
-index 0000000..1c59b8d
---- /dev/null
-+++ b/arch/arm64/boot/dts/mediatek/mt6358.dtsi
-@@ -0,0 +1,361 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR MIT)
-+/*
-+ * Copyright (c) 2019 MediaTek Inc.
-+ */
-+
-+&pwrap {
-+	pmic: mt6358 {
-+		compatible = "mediatek,mt6358";
-+		interrupt-controller;
-+		interrupt-parent = <&pio>;
-+		interrupts = <182 IRQ_TYPE_LEVEL_HIGH>;
-+		#interrupt-cells = <2>;
-+
-+		mt6358codec: mt6358codec {
-+			compatible = "mediatek,mt6358-sound";
-+		};
-+
-+		mt6358regulator: mt6358regulator {
-+			compatible = "mediatek,mt6358-regulator";
-+
-+			mt6358_vdram1_reg: buck_vdram1 {
-+				regulator-compatible = "buck_vdram1";
-+				regulator-name = "vdram1";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <2087500>;
-+				regulator-ramp-delay = <12500>;
-+				regulator-enable-ramp-delay = <0>;
-+				regulator-always-on;
-+				regulator-allowed-modes = <0 1>;
-+			};
-+
-+			mt6358_vcore_reg: buck_vcore {
-+				regulator-name = "vcore";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <1293750>;
-+				regulator-ramp-delay = <6250>;
-+				regulator-enable-ramp-delay = <200>;
-+				regulator-always-on;
-+				regulator-allowed-modes = <0 1>;
-+			};
-+
-+			mt6358_vpa_reg: buck_vpa {
-+				regulator-name = "vpa";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <3650000>;
-+				regulator-ramp-delay = <50000>;
-+				regulator-enable-ramp-delay = <250>;
-+				regulator-allowed-modes = <0 1>;
-+			};
-+
-+			mt6358_vproc11_reg: buck_vproc11 {
-+				regulator-name = "vproc11";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <1293750>;
-+				regulator-ramp-delay = <6250>;
-+				regulator-enable-ramp-delay = <200>;
-+				regulator-always-on;
-+				regulator-allowed-modes = <0 1>;
-+			};
-+
-+			mt6358_vproc12_reg: buck_vproc12 {
-+				regulator-name = "vproc12";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <1293750>;
-+				regulator-ramp-delay = <6250>;
-+				regulator-enable-ramp-delay = <200>;
-+				regulator-always-on;
-+				regulator-allowed-modes = <0 1>;
-+			};
-+
-+			mt6358_vgpu_reg: buck_vgpu {
-+				regulator-name = "vgpu";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <1293750>;
-+				regulator-ramp-delay = <6250>;
-+				regulator-enable-ramp-delay = <200>;
-+				regulator-allowed-modes = <0 1>;
-+			};
-+
-+			mt6358_vs2_reg: buck_vs2 {
-+				regulator-name = "vs2";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <2087500>;
-+				regulator-ramp-delay = <12500>;
-+				regulator-enable-ramp-delay = <0>;
-+				regulator-always-on;
-+			};
-+
-+			mt6358_vmodem_reg: buck_vmodem {
-+				regulator-name = "vmodem";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <1293750>;
-+				regulator-ramp-delay = <6250>;
-+				regulator-enable-ramp-delay = <900>;
-+				regulator-always-on;
-+				regulator-allowed-modes = <0 1>;
-+			};
-+
-+			mt6358_vs1_reg: buck_vs1 {
-+				regulator-name = "vs1";
-+				regulator-min-microvolt = <1000000>;
-+				regulator-max-microvolt = <2587500>;
-+				regulator-ramp-delay = <12500>;
-+				regulator-enable-ramp-delay = <0>;
-+				regulator-always-on;
-+			};
-+
-+			mt6358_vdram2_reg: ldo_vdram2 {
-+				regulator-name = "vdram2";
-+				regulator-min-microvolt = <600000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-enable-ramp-delay = <3300>;
-+			};
-+
-+			mt6358_vsim1_reg: ldo_vsim1 {
-+				regulator-name = "vsim1";
-+				regulator-min-microvolt = <1700000>;
-+				regulator-max-microvolt = <3100000>;
-+				regulator-enable-ramp-delay = <540>;
-+			};
-+
-+			mt6358_vibr_reg: ldo_vibr {
-+				regulator-name = "vibr";
-+				regulator-min-microvolt = <1200000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-enable-ramp-delay = <60>;
-+			};
-+
-+			mt6358_vrf12_reg: ldo_vrf12 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vrf12";
-+				regulator-min-microvolt = <1200000>;
-+				regulator-max-microvolt = <1200000>;
-+				regulator-enable-ramp-delay = <120>;
-+			};
-+
-+			mt6358_vio18_reg: ldo_vio18 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vio18";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-enable-ramp-delay = <2700>;
-+				regulator-always-on;
-+			};
-+
-+			mt6358_vusb_reg: ldo_vusb {
-+				regulator-name = "vusb";
-+				regulator-min-microvolt = <3000000>;
-+				regulator-max-microvolt = <3100000>;
-+				regulator-enable-ramp-delay = <270>;
-+				regulator-always-on;
-+			};
-+
-+			mt6358_vcamio_reg: ldo_vcamio {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vcamio";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-enable-ramp-delay = <325>;
-+			};
-+
-+			mt6358_vcamd_reg: ldo_vcamd {
-+				regulator-name = "vcamd";
-+				regulator-min-microvolt = <900000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-enable-ramp-delay = <325>;
-+			};
-+
-+			mt6358_vcn18_reg: ldo_vcn18 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vcn18";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vfe28_reg: ldo_vfe28 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vfe28";
-+				regulator-min-microvolt = <2800000>;
-+				regulator-max-microvolt = <2800000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vsram_proc11_reg: ldo_vsram_proc11 {
-+				regulator-name = "vsram_proc11";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <1293750>;
-+				regulator-ramp-delay = <6250>;
-+				regulator-enable-ramp-delay = <240>;
-+				regulator-always-on;
-+			};
-+
-+			mt6358_vcn28_reg: ldo_vcn28 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vcn28";
-+				regulator-min-microvolt = <2800000>;
-+				regulator-max-microvolt = <2800000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vsram_others_reg: ldo_vsram_others {
-+				regulator-name = "vsram_others";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <1293750>;
-+				regulator-ramp-delay = <6250>;
-+				regulator-enable-ramp-delay = <240>;
-+				regulator-always-on;
-+			};
-+
-+			mt6358_vsram_gpu_reg: ldo_vsram_gpu {
-+				regulator-name = "vsram_gpu";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <1293750>;
-+				regulator-ramp-delay = <6250>;
-+				regulator-enable-ramp-delay = <240>;
-+			};
-+
-+			mt6358_vxo22_reg: ldo_vxo22 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vxo22";
-+				regulator-min-microvolt = <2200000>;
-+				regulator-max-microvolt = <2200000>;
-+				regulator-enable-ramp-delay = <120>;
-+				regulator-always-on;
-+			};
-+
-+			mt6358_vefuse_reg: ldo_vefuse {
-+				regulator-name = "vefuse";
-+				regulator-min-microvolt = <1700000>;
-+				regulator-max-microvolt = <1900000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vaux18_reg: ldo_vaux18 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vaux18";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vmch_reg: ldo_vmch {
-+				regulator-name = "vmch";
-+				regulator-min-microvolt = <2900000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-enable-ramp-delay = <60>;
-+			};
-+
-+			mt6358_vbif28_reg: ldo_vbif28 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vbif28";
-+				regulator-min-microvolt = <2800000>;
-+				regulator-max-microvolt = <2800000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vsram_proc12_reg: ldo_vsram_proc12 {
-+				regulator-name = "vsram_proc12";
-+				regulator-min-microvolt = <500000>;
-+				regulator-max-microvolt = <1293750>;
-+				regulator-ramp-delay = <6250>;
-+				regulator-enable-ramp-delay = <240>;
-+				regulator-always-on;
-+			};
-+
-+			mt6358_vcama1_reg: ldo_vcama1 {
-+				regulator-name = "vcama1";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3000000>;
-+				regulator-enable-ramp-delay = <325>;
-+			};
-+
-+			mt6358_vemc_reg: ldo_vemc {
-+				regulator-name = "vemc";
-+				regulator-min-microvolt = <2900000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-enable-ramp-delay = <60>;
-+			};
-+
-+			mt6358_vio28_reg: ldo_vio28 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vio28";
-+				regulator-min-microvolt = <2800000>;
-+				regulator-max-microvolt = <2800000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_va12_reg: ldo_va12 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "va12";
-+				regulator-min-microvolt = <1200000>;
-+				regulator-max-microvolt = <1200000>;
-+				regulator-enable-ramp-delay = <270>;
-+				regulator-always-on;
-+			};
-+
-+			mt6358_vrf18_reg: ldo_vrf18 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vrf18";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <1800000>;
-+				regulator-enable-ramp-delay = <120>;
-+			};
-+
-+			mt6358_vcn33_bt_reg: ldo_vcn33_bt {
-+				regulator-name = "vcn33_bt";
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3500000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vcn33_wifi_reg: ldo_vcn33_wifi {
-+				regulator-name = "vcn33_wifi";
-+				regulator-min-microvolt = <3300000>;
-+				regulator-max-microvolt = <3500000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vcama2_reg: ldo_vcama2 {
-+				regulator-name = "vcama2";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3000000>;
-+				regulator-enable-ramp-delay = <325>;
-+			};
-+
-+			mt6358_vmc_reg: ldo_vmc {
-+				regulator-name = "vmc";
-+				regulator-min-microvolt = <1800000>;
-+				regulator-max-microvolt = <3300000>;
-+				regulator-enable-ramp-delay = <60>;
-+			};
-+
-+			mt6358_vldo28_reg: ldo_vldo28 {
-+				regulator-name = "vldo28";
-+				regulator-min-microvolt = <2800000>;
-+				regulator-max-microvolt = <3000000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vaud28_reg: ldo_vaud28 {
-+				compatible = "regulator-fixed";
-+				regulator-name = "vaud28";
-+				regulator-min-microvolt = <2800000>;
-+				regulator-max-microvolt = <2800000>;
-+				regulator-enable-ramp-delay = <270>;
-+			};
-+
-+			mt6358_vsim2_reg: ldo_vsim2 {
-+				regulator-name = "vsim2";
-+				regulator-min-microvolt = <1700000>;
-+				regulator-max-microvolt = <3100000>;
-+				regulator-enable-ramp-delay = <540>;
-+			};
-+		};
-+
-+		mt6358rtc: mt6358rtc {
-+			compatible = "mediatek,mt6358-rtc";
-+		};
-+	};
-+};
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-index 1fb195c..9eb84d7 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-@@ -7,6 +7,7 @@
- 
- /dts-v1/;
- #include "mt8183.dtsi"
-+#include "mt6358.dtsi"
- 
- / {
- 	model = "MediaTek MT8183 evaluation board";
--- 
-2.6.4
+> This hides the ACPI enablement state insides PSCI module so that we
+> only need to export a function, to make the code a bit simplified.
+>
+
+For me it's just the preference. I will leave it to maintainers' taste.
+
+--
+Regards,
+Sudeep
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
