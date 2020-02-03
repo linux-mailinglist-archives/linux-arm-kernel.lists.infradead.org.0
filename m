@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2080A15124C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 23:27:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EF4015124E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 23:27:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,83 +11,80 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9VGZbS5j6whvSJWlk4o3k2OhBQBr4WN7GwbVZmqGtq8=; b=CbaRfvZ2RxOkpBc6padN6luNdW
-	uI+1bb85DPO7GU+uaHxqE5q77WIZLq6KbWsau2WwJvKGnlNeJGJqYRgzdLOYemOxRwRB3SrA4AHPV
-	bk7ykHmhdAPlfaTYGI3k7OtXT3iqdyw/7jo+i9Myc789ALPep+c3vdtkV5O9jhE84MJVZVj6Drysg
-	LM4/9YZVZHb7GE4Y3eWP2WYNyvhq3J3Nr9HrJyz1EjxceTn6zGo8xvTvBV7J/Uwj9D94izujNe+zd
-	GwENTCUpUxXsVME2icWdE1bjVdNQ35XsoavL4cWCmn1Gq5WwAhPLOo5jxoBFd7xXYHonpMxunRS4l
-	sdVFA31g==;
+	bh=uGGtNA0qcJgRBdD3H7O2H8phPQU9gbvSNcXMc2RxXsI=; b=prIMRnbFzKdSNznLK6Sir50L6o
+	ksD5wcmyJxFjLnTMM9ZiZEbkLy8mOOglNDLbl/JG/XsPVTWYVtjeNMZRjgkUEQmkAPMuSijXNboqi
+	+qhH1eDqtVvf5y0VTi87m1ex6ffrsRuA9zMGYMhU27HMMQeWUiYo3nzqNb92qZNzxT2/oTtHrQGBB
+	y5LRMpCS7B2sop5zbqsXmE61xPfBEHM3mgchpwTxAWrbXE9mGPdp/pV/EuJ6M2Y6zoEEm4Rx8rJ7q
+	EI0RSGjITaGlaQUr4AZ3UemRnC1rt6z53d8xmXwfpa4DO28MvNu6iTh9TMif/Mi+eWLSUTbNzJaZS
+	Aq5xmlVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iykB8-00054F-Gq; Mon, 03 Feb 2020 22:26:50 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1iykBV-0005Rs-I9; Mon, 03 Feb 2020 22:27:13 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iykAy-00053I-VU
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 22:26:42 +0000
+ id 1iykB4-00054U-J0
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 22:26:48 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580768798;
+ s=mimecast20190719; t=1580768804;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=+6v32zF5Z6uc1SUKFNpAihv4dxkqp/withmUuDYzLCA=;
- b=QkscwriaYLxHctWga+8MwXsenzl+mvgiRNRAdWqyquC2uVCm7Acr8lHzrUH5Lq1dFLUuVx
- y9aJIYYoArG4FUAzwjFJlPFGLYV1NNdVfjsXx+N6BpXxDDSndAjhUWDPC8Kxc4SRlgEEqR
- rhbKUHBuj+sVHRdcHNvoDjS4inkMhyE=
-Received: from mail-pj1-f70.google.com (mail-pj1-f70.google.com
- [209.85.216.70]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-249-bdP_R7afMBGOrL1QLkL6Yw-1; Mon, 03 Feb 2020 17:26:36 -0500
-Received: by mail-pj1-f70.google.com with SMTP id d22so423164pjz.0
+ bh=nzHQve4QR6vMUj7Ho1xKspdYKTz7TrOfhvLoqaDqffA=;
+ b=HDSTMq5dCiOggfHkvIgHHiTCLGUL6749jncnJZXcaBoiC6kTmVD729OBgZlRWYH2/CdTAn
+ 0sEo3mpo7FxMpgdEC/Akl8alpglC3XHJ5JUcjygAEQ3ZA8KbWK4p9hB8LrgNdnjeJUVLit
+ OtCtfjd7c4U1lEDg4TSOXfGc/SmADLg=
+Received: from mail-pg1-f198.google.com (mail-pg1-f198.google.com
+ [209.85.215.198]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-322-n8CcIwPmMUuVY96Bufaq-w-1; Mon, 03 Feb 2020 17:26:41 -0500
+Received: by mail-pg1-f198.google.com with SMTP id d9so10354822pgd.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 03 Feb 2020 14:26:36 -0800 (PST)
+ Mon, 03 Feb 2020 14:26:40 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=bipqZYiQsQOfSn9eev8SYRXHv6uesR09OSvUzeqSz34=;
- b=pQNlYdEeHHYhV9csIhYlbmIgiswwjUCZBQhGxfJVnCmiimPl3yar51AL7QhW7K1xlm
- i/hf/J35adhMkp7U3uHTzh2aqJihp0NS0lCvvFoGrRtG/nzoymom1iUf8FYSErMORcWF
- uEvx0GWXvlM8nyAWeNRoWCbq2ptzckspT5yGq3TNHqEpmjzGq2ffCSIKX0OH2D9o+aKR
- R8ckIpHLlr3cJmq+Ie/t5/Lz8eS7hWtVxBYAWBPJxLAr4vtPyt64mkoRtQaJNYavpYJ+
- +iKGqP0BuC1PHbKSBfHXS2Ka/5r1XKH2MXG/uNU2aiJDoEWOI5lJosiZMNzKM1BNTiOR
- 7qGw==
-X-Gm-Message-State: APjAAAVrrNO3GQZwsA/f7ouAC8744OlChjwKV5jW4qjHFd+bZMS+hXiM
- XVlXJatcHpn4yh1Mm1fzsm3PCXFlf1ZTYLvmWAiGN6LN4biLfJ/TtVMWMbpSvA9q+zZgnTzYRbJ
- a5zy16sK2dBpl2WkKU0bMBq5UMUHpedmnbac=
-X-Received: by 2002:a17:90a:a416:: with SMTP id
- y22mr1622321pjp.114.1580768795554; 
- Mon, 03 Feb 2020 14:26:35 -0800 (PST)
-X-Google-Smtp-Source: APXvYqxzxd87NdsQ631gX3nIUFpl0YEYV17TA2JfUwibDWFfUrwRjr/zN2Yix+goiedAfyYB7KQ8PQ==
-X-Received: by 2002:a17:90a:a416:: with SMTP id
- y22mr1622294pjp.114.1580768795328; 
- Mon, 03 Feb 2020 14:26:35 -0800 (PST)
+ bh=Yr95hrNi5JfgkOfoS1PjLAI5Z/W4hgT7UGFvqBbgOxM=;
+ b=JIY0X/16TWZWYCK33ePp2V0ruWxsTMlqfTtVZwHeTfkvK3286eVNDItzhW4owSz1x+
+ +OERxpN5nvLFJDLwopW1V0m0F8dmY3tOONaQrZoYtZ68+yRvXyZViWKXJ628fMOW+fHX
+ nnh9hqb6jbgI7iWT6L+7wBsGM2HLwNufw8Vzac+giDahSrnQDL4LRbQhMZZcURjVRqEF
+ mYVEhxO/+Nsb0qCtQGwewZ9Dxird9CxfQko6lyFSY13tVBJgELnt0NZH3LM6VJZ8v2P5
+ qeJ0/liw6qh8FUY/OYeAh/r/O48ukPiOT7ExVyRxZipfa/wyBKJ0JLXJi7QpuPEdxK5/
+ xizw==
+X-Gm-Message-State: APjAAAVRgLtthoFEkGdh2P0knorwA13TDoDlHfY6Ng+TwffSFxKy17Fd
+ v9wNSoE+iK8P+F+20QiAWJDjgoFCdQc0Dzw8dWwmEPTMfG25or7OgUr4XLGaaKgZeY2SjFDkjyq
+ 7wAyIo3h/Yoyds21P0VaSadY4lG/l6BgqcXs=
+X-Received: by 2002:a63:d406:: with SMTP id a6mr28302967pgh.264.1580768799554; 
+ Mon, 03 Feb 2020 14:26:39 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzCYMKSAbNlHwt3YKkhpBg65LATP/cLjqH1DDC2oSxQhzuOsjngoXE8H7XyY+eiYk4eqMEhiA==
+X-Received: by 2002:a63:d406:: with SMTP id a6mr28302937pgh.264.1580768799210; 
+ Mon, 03 Feb 2020 14:26:39 -0800 (PST)
 Received: from localhost ([122.177.227.116])
- by smtp.gmail.com with ESMTPSA id n4sm21155444pgg.88.2020.02.03.14.26.34
+ by smtp.gmail.com with ESMTPSA id v9sm466061pja.26.2020.02.03.14.26.38
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 03 Feb 2020 14:26:34 -0800 (PST)
+ Mon, 03 Feb 2020 14:26:38 -0800 (PST)
 From: Bhupesh Sharma <bhsharma@redhat.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] hw_breakpoint: Remove unused
- '__register_perf_hw_breakpoint' declaration
-Date: Tue,  4 Feb 2020 03:56:23 +0530
-Message-Id: <1580768784-25868-2-git-send-email-bhsharma@redhat.com>
+Subject: [PATCH 2/2] perf/arm64: Allow per-task kernel breakpoints
+Date: Tue,  4 Feb 2020 03:56:24 +0530
+Message-Id: <1580768784-25868-3-git-send-email-bhsharma@redhat.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1580768784-25868-1-git-send-email-bhsharma@redhat.com>
 References: <1580768784-25868-1-git-send-email-bhsharma@redhat.com>
-X-MC-Unique: bdP_R7afMBGOrL1QLkL6Yw-1
+X-MC-Unique: n8CcIwPmMUuVY96Bufaq-w-1
 X-Mimecast-Spam-Score: 0
 X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_142641_086182_415786B2 
-X-CRM114-Status: GOOD (  12.07  )
+X-CRM114-CacheID: sfid-20200203_142646_716599_FFD6786B 
+X-CRM114-Status: GOOD (  11.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -120,12 +117,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-commit b326e9560a28 ("hw-breakpoints: Use overflow handler instead of
-the event callback") removed '__register_perf_hw_breakpoint' function
-usage and replaced it with 'register_perf_hw_breakpoint' function.
+commit 478fcb2cdb23 ("arm64: Debugging support") disallowed per-task
+kernel breakpoints on arm64 since these would have potentially
+complicated the stepping code.
 
-Remove the left-over unused '__register_perf_hw_breakpoint' declaration
-from 'hw_breakpoint.h' as well.
+However, we now have several use-cases (for e.g. perf) which require
+per-task address execution h/w breakpoint to be exercised/set on arm64:
+
+For e.g. we can set address execution h/w breakpoints, using the
+format prescribed by 'perf-list' command:
+mem:<addr>[/len][:access]                          [Hardware breakpoint]
+
+Without this patch, currently 'perf stat -e' reports that per-task
+address execution h/w breakpoints are 'not supported' on arm64. See
+below:
+
+$ TEST_FUNC="vfs_read"
+$ ADDR=0x`cat /proc/kallsyms | grep -P "\\s$TEST_FUNC\$" | cut -f1 -d' '`
+$ perf stat -e mem:$ADDR:x -x';' -- cat /proc/cpuinfo > /dev/null
+
+<not supported>;;mem:0xffff00001031dd68:x;0;100.00;;
+
+After this patch, this use-case can be supported:
+
+$ TEST_FUNC="vfs_read"
+$ ADDR=0x`cat /proc/kallsyms | grep -P "\\s$TEST_FUNC\$" | cut -f1 -d' '`
+$ perf stat -e mem:$ADDR:x -x';' -- cat /proc/cpuinfo > /dev/null
+
+5;;mem:0xfffffe0010361d20:x;912200;100.00;;
 
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Will Deacon <will@kernel.org>
@@ -133,30 +152,27 @@ Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
 ---
- include/linux/hw_breakpoint.h | 3 ---
- 1 file changed, 3 deletions(-)
+ arch/arm64/kernel/hw_breakpoint.c | 7 -------
+ 1 file changed, 7 deletions(-)
 
-diff --git a/include/linux/hw_breakpoint.h b/include/linux/hw_breakpoint.h
-index 6058c3844a76..fe1302da8e0f 100644
---- a/include/linux/hw_breakpoint.h
-+++ b/include/linux/hw_breakpoint.h
-@@ -72,7 +72,6 @@ register_wide_hw_breakpoint(struct perf_event_attr *attr,
- 			    void *context);
+diff --git a/arch/arm64/kernel/hw_breakpoint.c b/arch/arm64/kernel/hw_breakpoint.c
+index 0b727edf4104..c28f04e02845 100644
+--- a/arch/arm64/kernel/hw_breakpoint.c
++++ b/arch/arm64/kernel/hw_breakpoint.c
+@@ -562,13 +562,6 @@ int hw_breakpoint_arch_parse(struct perf_event *bp,
+ 	hw->address &= ~alignment_mask;
+ 	hw->ctrl.len <<= offset;
  
- extern int register_perf_hw_breakpoint(struct perf_event *bp);
--extern int __register_perf_hw_breakpoint(struct perf_event *bp);
- extern void unregister_hw_breakpoint(struct perf_event *bp);
- extern void unregister_wide_hw_breakpoint(struct perf_event * __percpu *cpu_events);
+-	/*
+-	 * Disallow per-task kernel breakpoints since these would
+-	 * complicate the stepping code.
+-	 */
+-	if (hw->ctrl.privilege == AARCH64_BREAKPOINT_EL1 && bp->hw.target)
+-		return -EINVAL;
+-
+ 	return 0;
+ }
  
-@@ -115,8 +114,6 @@ register_wide_hw_breakpoint(struct perf_event_attr *attr,
- 			    void *context)		{ return NULL; }
- static inline int
- register_perf_hw_breakpoint(struct perf_event *bp)	{ return -ENOSYS; }
--static inline int
--__register_perf_hw_breakpoint(struct perf_event *bp) 	{ return -ENOSYS; }
- static inline void unregister_hw_breakpoint(struct perf_event *bp)	{ }
- static inline void
- unregister_wide_hw_breakpoint(struct perf_event * __percpu *cpu_events)	{ }
 -- 
 2.7.4
 
