@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 140BC150780
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 14:38:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEE0E150782
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  3 Feb 2020 14:38:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=1b/JskNQt5XlVi+ENL2tD84L5Cfcq4k0SlhN7YI3UIQ=; b=NOBcskjxLr+RSoynsbn80h+0Xk
-	TaN70hX+ZqCUcAhcsrcvMKfbC7I6uB2y12XFTS0nQtzeF9jg7vJkfzHe12OjaL7bmbhFvHLks4AAO
-	xQHaYsM5PyTQEtOldFcLLwR1ONTqFrrvs+I25DfakV/CASoyIKQrWsxDGJVfMkU37ra4yEX8HwrtA
-	L1scd04K9wYWZaVF5z7m1cHBj//mCV7777ob2X7MDw5LLaskRGcv8Nq7p+w4sOsVLq3f8ieLTBwhn
-	fSVgh+qelGqDNCEKSS1KFek/RwUzs141uxcnTa+IwMtB0w8H5fabhznlTkHigDbO/IUdRcg71y2KH
-	TtA+nIzg==;
+	bh=GraTKSNAiJXx58P6k2RrwGBCg5u+qO5WcQRpzcsxxIg=; b=hsfrDG3LoNX9xQi46d4eCM58BM
+	DJ4c1kBLWL8TffMX9i9vNF+ZNCgsb8xQQ2kRDuifpMu6nJN+WgdOm/bYqgf1z6iBokjC4z3DXxjjM
+	ZwWC/G70JmKrlXDIsPOMJfVi2yDv0ECulh7vwE61aNvW5mk6++k8cVhbxnafc43xug4UeJxtWEJEa
+	fETPH0ez8hKNEiXVSu+SW4xzH0zRQ2UgDsdCP9Df/hecVoNPHm0wgQy7gpHDDF/qTlPUZv0ueIr8/
+	ADU7nZI4LGRQOG4g0iHINiTl5ANyUjOQvwa+CkfbBDIyZEbtgN8HJ9ml4h/2R1ri4MO5ADYY4ZWUc
+	fA3LZ+Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iybvR-00056W-He; Mon, 03 Feb 2020 13:38:05 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1iybvf-0005K1-LL; Mon, 03 Feb 2020 13:38:19 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iybuq-0004QY-Kr
- for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 13:37:32 +0000
+ id 1iybv2-00045X-8w
+ for linux-arm-kernel@lists.infradead.org; Mon, 03 Feb 2020 13:37:45 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1580737048; h=References: In-Reply-To: Message-Id: Date:
+ s=smtp; t=1580737061; h=References: In-Reply-To: Message-Id: Date:
  Subject: Cc: To: From: Sender;
- bh=3oBp+GQXIvHz9eMsTaJ9GKjk778UhbK5cdSMUYMH/24=;
- b=LWu/SqoyiWtY7JwyeUhy8Jom3a+6DTdycC2WdaT31PPEVnnL5QlwJ4meWQR0JWGciLrMyaqX
- c20ys+IMf6QM01rdgTrwwWeRwMOGPzezcTC1sGTu13AqzD+lEoUW/o4tT02wphyBb8dWrvET
- AulbLZfSOhHoY4Mo9PILd9JsbAs=
-X-Mailgun-Sending-Ip: 104.130.122.25
+ bh=aLFDGybZrzGdybXPAc2wN0CFTeQ3z1VmJVG5c8eNtJs=;
+ b=HA9biHMCm4WDcABFyqrZkEePlKRIpJycX9A6IGJCqSWa3f9021aR7kr9xU6uuS+BwwAhbVtT
+ CIcQBCD22c0Cr9yPIKXn1XjanOMLSdJYignUcx6e4she5dvjyzynGVI8ENG5tZL0giXObuaT
+ MHggCC16/yH5sBv/7HQmn02AqRM=
+X-Mailgun-Sending-Ip: 104.130.122.26
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e382217.7f0666142d88-smtp-out-n02;
- Mon, 03 Feb 2020 13:37:27 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e382220.7f291f9ead18-smtp-out-n03;
+ Mon, 03 Feb 2020 13:37:36 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id EFA03C447A5; Mon,  3 Feb 2020 13:37:26 +0000 (UTC)
+ id 51D6DC447AC; Mon,  3 Feb 2020 13:37:34 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
@@ -49,9 +49,9 @@ Received: from mkshah-linux.qualcomm.com
  (blr-c-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.19.19])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: mkshah)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 14511C433CB;
- Mon,  3 Feb 2020 13:37:18 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 14511C433CB
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id ED9A4C447A3;
+ Mon,  3 Feb 2020 13:37:25 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org ED9A4C447A3
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
@@ -59,22 +59,25 @@ Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
 From: Maulik Shah <mkshah@codeaurora.org>
 To: swboyd@chromium.org, agross@kernel.org, david.brown@linaro.org,
  sudeep.holla@arm.com, Lorenzo.Pieralisi@arm.com
-Subject: [PATCH v3 4/7] drivers: qcom: rpmh-rsc: Add RSC power domain support
-Date: Mon,  3 Feb 2020 19:05:37 +0530
-Message-Id: <1580736940-6985-5-git-send-email-mkshah@codeaurora.org>
+Subject: [PATCH v3 5/7] drivers: firmware: psci: Add hierarchical domain idle
+ states converter
+Date: Mon,  3 Feb 2020 19:05:38 +0530
+Message-Id: <1580736940-6985-6-git-send-email-mkshah@codeaurora.org>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1580736940-6985-1-git-send-email-mkshah@codeaurora.org>
 References: <1580736940-6985-1-git-send-email-mkshah@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200203_053728_833003_0E13DC06 
-X-CRM114-Status: GOOD (  15.34  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200203_053742_141130_DDAA4FEF 
+X-CRM114-Status: GOOD (  22.53  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.26 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -102,142 +105,311 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add RSC power domain support. RSC is top level power domain in
-hireachical CPU LPM modes. Once the rsc domain is down flush all
-cached sleep and wake votes from controller.
+From: Ulf Hansson <ulf.hansson@linaro.org>
 
+If the hierarchical CPU topology is used, but the OS initiated mode isn't
+supported, we need to rely solely on the regular cpuidle framework to
+manage the idle state selection, rather than using genpd and its
+governor.
+
+For this reason, introduce a new PSCI DT helper function,
+psci_dt_pm_domains_parse_states(), which parses and converts the
+hierarchically described domain idle states from DT, into regular flattened
+cpuidle states. The converted states are added to the existing cpuidle
+driver's array of idle states, which make them available for cpuidle.
+
+Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+[applied to new path, resolved conflicts]
 Signed-off-by: Maulik Shah <mkshah@codeaurora.org>
 ---
- drivers/soc/qcom/rpmh-internal.h |  2 +
- drivers/soc/qcom/rpmh-rsc.c      | 81 ++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 83 insertions(+)
+ drivers/cpuidle/cpuidle-psci-domain.c | 137 +++++++++++++++++++++++++++++-----
+ drivers/cpuidle/cpuidle-psci.c        |  41 +++++-----
+ drivers/cpuidle/cpuidle-psci.h        |  11 +++
+ 3 files changed, 153 insertions(+), 36 deletions(-)
 
-diff --git a/drivers/soc/qcom/rpmh-internal.h b/drivers/soc/qcom/rpmh-internal.h
-index 6eec32b..3736c14 100644
---- a/drivers/soc/qcom/rpmh-internal.h
-+++ b/drivers/soc/qcom/rpmh-internal.h
-@@ -8,6 +8,7 @@
- #define __RPM_INTERNAL_H__
- 
- #include <linux/bitmap.h>
-+#include <linux/pm_domain.h>
- #include <soc/qcom/tcs.h>
- 
- #define TCS_TYPE_NR			4
-@@ -102,6 +103,7 @@ struct rsc_drv {
- 	DECLARE_BITMAP(tcs_in_use, MAX_TCS_NR);
- 	spinlock_t lock;
- 	struct rpmh_ctrlr client;
-+	struct generic_pm_domain rsc_pd;
+diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
+index 423f03b..3c417f7 100644
+--- a/drivers/cpuidle/cpuidle-psci-domain.c
++++ b/drivers/cpuidle/cpuidle-psci-domain.c
+@@ -26,13 +26,17 @@ struct psci_pd_provider {
  };
  
- int rpmh_rsc_send_data(struct rsc_drv *drv, const struct tcs_request *msg);
-diff --git a/drivers/soc/qcom/rpmh-rsc.c b/drivers/soc/qcom/rpmh-rsc.c
-index e278fc1..92bca4c 100644
---- a/drivers/soc/qcom/rpmh-rsc.c
-+++ b/drivers/soc/qcom/rpmh-rsc.c
-@@ -499,6 +499,32 @@ static int tcs_ctrl_write(struct rsc_drv *drv, const struct tcs_request *msg)
- }
+ static LIST_HEAD(psci_pd_providers);
+-static bool osi_mode_enabled __initdata;
++static bool osi_mode_enabled;
  
- /**
-+ * rpmh_rsc_ctrlr_is_idle: Check if any of the AMCs are busy.
-+ *
-+ * @drv: The controller
-+ *
-+ * Return: false if the TCSes are engaged in handling requests, True otherwise.
-+ */
-+static bool rpmh_rsc_ctrlr_is_idle(struct rsc_drv *drv)
-+{
-+	int m;
-+	struct tcs_group *tcs = get_tcs_of_type(drv, ACTIVE_TCS);
-+	bool ret = true;
-+	unsigned long flags;
-+
-+	spin_lock_irqsave(&drv->lock, flags);
-+	for (m = tcs->offset; m < tcs->offset + tcs->num_tcs; m++) {
-+		if (!tcs_is_free(drv, m)) {
-+			ret = false;
-+			break;
-+		}
-+	}
-+	spin_unlock_irqrestore(&drv->lock, flags);
-+
-+	return ret;
-+}
-+
-+/**
-  * rpmh_rsc_write_ctrl_data: Write request to the controller
-  *
-  * @drv: the controller
-@@ -521,6 +547,50 @@ int rpmh_rsc_write_ctrl_data(struct rsc_drv *drv, const struct tcs_request *msg)
- 	return tcs_ctrl_write(drv, msg);
- }
+ static int psci_pd_power_off(struct generic_pm_domain *pd)
+ {
+ 	struct genpd_power_state *state = &pd->states[pd->state_idx];
+ 	u32 *pd_state;
  
-+static int rpmh_domain_power_off(struct generic_pm_domain *rsc_pd)
-+{
-+	struct rsc_drv *drv = container_of(rsc_pd, struct rsc_drv, rsc_pd);
-+
-+	/*
-+	 * RPMh domain can not be powered off when there is pending ACK for
-+	 * ACTIVE_TCS request. Exit when controller is busy.
-+	 */
-+	if (!rpmh_rsc_ctrlr_is_idle(drv))
++	/* If we have failed to enable OSI mode, then abort power off. */
++	if ((psci_has_osi_support()) && !osi_mode_enabled)
 +		return -EBUSY;
 +
-+	return rpmh_flush(&drv->client);
-+}
-+
-+static int rpmh_probe_power_domain(struct platform_device *pdev,
-+				   struct rsc_drv *drv)
-+{
-+	int ret;
-+	struct generic_pm_domain *rsc_pd = &drv->rsc_pd;
-+	struct device_node *dn = pdev->dev.of_node;
-+
-+	rsc_pd->name = devm_kasprintf(&pdev->dev, GFP_KERNEL, "%s", dn->name);
-+	if (!rsc_pd->name)
-+		return -ENOMEM;
-+
-+	rsc_pd->name = kbasename(rsc_pd->name);
-+	rsc_pd->power_off = rpmh_domain_power_off;
-+	rsc_pd->flags |= GENPD_FLAG_IRQ_SAFE;
-+
-+	ret = pm_genpd_init(rsc_pd, NULL, false);
-+	if (ret)
-+		return ret;
-+
-+	ret = of_genpd_add_provider_simple(dn, rsc_pd);
-+	if (ret)
-+		goto remove_pd;
-+
-+	return ret;
-+
-+remove_pd:
-+	pm_genpd_remove(rsc_pd);
-+	return ret;
-+}
-+
- static int rpmh_probe_tcs_config(struct platform_device *pdev,
- 				 struct rsc_drv *drv)
- {
-@@ -663,6 +733,17 @@ static int rpmh_rsc_probe(struct platform_device *pdev)
- 	if (ret)
- 		return ret;
+ 	if (!state->data)
+ 		return 0;
  
-+	/*
-+	 * Power domain is not required for controllers that support 'solver'
-+	 * mode where they can be in autonomous mode executing low power mode
-+	 * to power down.
-+	 */
-+	if (of_property_read_bool(dn, "#power-domain-cells")) {
-+		ret = rpmh_probe_power_domain(pdev, drv);
-+		if (ret)
-+			return ret;
+@@ -101,6 +105,105 @@ static void psci_pd_free_states(struct genpd_power_state *states,
+ 	kfree(states);
+ }
+ 
++static void psci_pd_convert_states(struct cpuidle_state *idle_state,
++			u32 *psci_state, struct genpd_power_state *state)
++{
++	u32 *state_data = state->data;
++	u64 target_residency_us = state->residency_ns;
++	u64 exit_latency_us = state->power_on_latency_ns +
++			state->power_off_latency_ns;
++
++	*psci_state = *state_data;
++	do_div(target_residency_us, 1000);
++	idle_state->target_residency = target_residency_us;
++	do_div(exit_latency_us, 1000);
++	idle_state->exit_latency = exit_latency_us;
++	idle_state->enter = &psci_enter_domain_idle_state;
++	idle_state->flags |= CPUIDLE_FLAG_TIMER_STOP;
++
++	strncpy(idle_state->name, to_of_node(state->fwnode)->name,
++		CPUIDLE_NAME_LEN - 1);
++	strncpy(idle_state->desc, to_of_node(state->fwnode)->name,
++		CPUIDLE_NAME_LEN - 1);
++}
++
++static bool psci_pd_is_provider(struct device_node *np)
++{
++	struct psci_pd_provider *pd_prov, *it;
++
++	list_for_each_entry_safe(pd_prov, it, &psci_pd_providers, link) {
++		if (pd_prov->node == np)
++			return true;
 +	}
 +
- 	/* Enable the active TCS to send requests immediately */
- 	write_tcs_reg(drv, RSC_DRV_IRQ_ENABLE, 0, drv->tcs[ACTIVE_TCS].mask);
++	return false;
++}
++
++int __init psci_dt_pm_domains_parse_states(struct cpuidle_driver *drv,
++			struct device_node *cpu_node, u32 *psci_states)
++{
++	struct genpd_power_state *pd_states;
++	struct of_phandle_args args;
++	int ret, pd_state_count, i, state_idx, psci_idx;
++	u32 cpu_psci_state = psci_states[drv->state_count - 1];
++	struct device_node *np = of_node_get(cpu_node);
++
++	/* Walk the CPU topology to find compatible domain idle states. */
++	while (np) {
++		ret = of_parse_phandle_with_args(np, "power-domains",
++					"#power-domain-cells", 0, &args);
++		of_node_put(np);
++		if (ret)
++			return 0;
++
++		np = args.np;
++
++		/* Verify that the node represents a psci pd provider. */
++		if (!psci_pd_is_provider(np)) {
++			of_node_put(np);
++			return 0;
++		}
++
++		/* Parse for compatible domain idle states. */
++		ret = psci_pd_parse_states(np, &pd_states, &pd_state_count);
++		if (ret) {
++			of_node_put(np);
++			return ret;
++		}
++
++		i = 0;
++		while (i < pd_state_count) {
++
++			state_idx = drv->state_count;
++			if (state_idx >= CPUIDLE_STATE_MAX) {
++				pr_warn("exceeding max cpuidle states\n");
++				of_node_put(np);
++				return 0;
++			}
++
++			psci_idx = state_idx + i;
++			psci_pd_convert_states(&drv->states[state_idx + i],
++					&psci_states[psci_idx], &pd_states[i]);
++
++			/*
++			 * In the hierarchical CPU topology the master PM domain
++			 * idle state's DT property, "arm,psci-suspend-param",
++			 * don't contain the bits for the idle state of the CPU,
++			 * let's add those here.
++			 */
++			psci_states[psci_idx] |= cpu_psci_state;
++			pr_debug("psci-power-state %#x index %d\n",
++				psci_states[psci_idx], psci_idx);
++
++			drv->state_count++;
++			i++;
++		}
++		psci_pd_free_states(pd_states, pd_state_count);
++	}
++
++	return 0;
++}
++
+ static int __init psci_pd_init(struct device_node *np)
+ {
+ 	struct generic_pm_domain *pd;
+@@ -125,11 +228,14 @@ static int __init psci_pd_init(struct device_node *np)
+ 	 * Parse the domain idle states and let genpd manage the state selection
+ 	 * for those being compatible with "domain-idle-state".
+ 	 */
+-	ret = psci_pd_parse_states(np, &states, &state_count);
+-	if (ret)
+-		goto free_name;
  
+-	pd->free_states = psci_pd_free_states;
++	if (psci_has_osi_support()) {
++		ret = psci_pd_parse_states(np, &states, &state_count);
++		if (ret)
++			goto free_name;
++		pd->free_states = psci_pd_free_states;
++	}
++
+ 	pd->name = kbasename(pd->name);
+ 	pd->power_off = psci_pd_power_off;
+ 	pd->states = states;
+@@ -236,10 +342,6 @@ static int __init psci_idle_init_domains(void)
+ 	if (!np)
+ 		return -ENODEV;
+ 
+-	/* Currently limit the hierarchical topology to be used in OSI mode. */
+-	if (!psci_has_osi_support())
+-		goto out;
+-
+ 	/*
+ 	 * Parse child nodes for the "#power-domain-cells" property and
+ 	 * initialize a genpd/genpd-of-provider pair when it's found.
+@@ -265,14 +367,16 @@ static int __init psci_idle_init_domains(void)
+ 		goto remove_pd;
+ 
+ 	/* Try to enable OSI mode. */
+-	ret = psci_set_osi_mode();
+-	if (ret) {
+-		pr_warn("failed to enable OSI mode: %d\n", ret);
+-		psci_pd_remove_topology(np);
+-		goto remove_pd;
++	if (psci_has_osi_support()) {
++		ret = psci_set_osi_mode();
++		if (ret) {
++			pr_warn("failed to enable OSI mode: %d\n", ret);
++			psci_pd_remove_topology(np);
++			goto remove_pd;
++		} else
++			osi_mode_enabled = true;
+ 	}
+ 
+-	osi_mode_enabled = true;
+ 	of_node_put(np);
+ 	pr_info("Initialized CPU PM domain topology\n");
+ 	return pd_count;
+@@ -293,9 +397,6 @@ struct device __init *psci_dt_attach_cpu(int cpu)
+ {
+ 	struct device *dev;
+ 
+-	if (!osi_mode_enabled)
+-		return NULL;
+-
+ 	dev = dev_pm_domain_attach_by_name(get_cpu_device(cpu), "psci");
+ 	if (IS_ERR_OR_NULL(dev))
+ 		return dev;
+diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+index edd7a54..3fa2aee 100644
+--- a/drivers/cpuidle/cpuidle-psci.c
++++ b/drivers/cpuidle/cpuidle-psci.c
+@@ -49,7 +49,7 @@ static inline int psci_enter_state(int idx, u32 state)
+ 	return CPU_PM_CPU_IDLE_ENTER_PARAM(psci_cpu_suspend_enter, idx, state);
+ }
+ 
+-static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
++int psci_enter_domain_idle_state(struct cpuidle_device *dev,
+ 					struct cpuidle_driver *drv, int idx)
+ {
+ 	struct psci_cpuidle_data *data = this_cpu_ptr(&psci_cpuidle_data);
+@@ -193,24 +193,29 @@ static int __init psci_dt_cpu_init_idle(struct cpuidle_driver *drv,
+ 		goto free_mem;
+ 	}
+ 
+-	/* Currently limit the hierarchical topology to be used in OSI mode. */
+-	if (psci_has_osi_support()) {
+-		data->dev = psci_dt_attach_cpu(cpu);
+-		if (IS_ERR(data->dev)) {
+-			ret = PTR_ERR(data->dev);
++	if (!psci_has_osi_support()) {
++		ret = psci_dt_pm_domains_parse_states(drv, cpu_node,
++					      psci_states);
++		if (ret)
+ 			goto free_mem;
+-		}
+-
+-		/*
+-		 * Using the deepest state for the CPU to trigger a potential
+-		 * selection of a shared state for the domain, assumes the
+-		 * domain states are all deeper states.
+-		 */
+-		if (data->dev) {
+-			drv->states[state_count - 1].enter =
+-				psci_enter_domain_idle_state;
+-			psci_cpuidle_use_cpuhp = true;
+-		}
++	}
++
++	data->dev = psci_dt_attach_cpu(cpu);
++	if (IS_ERR(data->dev)) {
++		ret = PTR_ERR(data->dev);
++		goto free_mem;
++	}
++
++	/*
++	 * Using the deepest state for the CPU to trigger a potential
++	 * selection of a shared state for the domain, assumes the
++	 * domain states are all deeper states.
++	 */
++
++	if (data->dev) {
++		drv->states[state_count - 1].enter =
++			psci_enter_domain_idle_state;
++		psci_cpuidle_use_cpuhp = true;
+ 	}
+ 
+ 	/* Idle states parsed correctly, store them in the per-cpu struct. */
+diff --git a/drivers/cpuidle/cpuidle-psci.h b/drivers/cpuidle/cpuidle-psci.h
+index 7299a04..18c93d7 100644
+--- a/drivers/cpuidle/cpuidle-psci.h
++++ b/drivers/cpuidle/cpuidle-psci.h
+@@ -3,15 +3,26 @@
+ #ifndef __CPUIDLE_PSCI_H
+ #define __CPUIDLE_PSCI_H
+ 
++#include <linux/cpuidle.h>
++
+ struct device_node;
+ 
+ void psci_set_domain_state(u32 state);
+ int __init psci_dt_parse_state_node(struct device_node *np, u32 *state);
++int psci_enter_domain_idle_state(struct cpuidle_device *dev,
++			  struct cpuidle_driver *drv, int idx);
+ 
+ #ifdef CONFIG_PM_GENERIC_DOMAINS_OF
+ struct device __init *psci_dt_attach_cpu(int cpu);
++int psci_dt_pm_domains_parse_states(struct cpuidle_driver *drv,
++				    struct device_node *cpu_node,
++				    u32 *psci_states);
+ #else
+ static inline struct device __init *psci_dt_attach_cpu(int cpu) { return NULL; }
++static inline int psci_dt_pm_domains_parse_states(
++					struct cpuidle_driver *drv,
++					struct device_node *cpu_node,
++					u32 *psci_states) { return 0; }
+ #endif
+ 
+ #endif /* __CPUIDLE_PSCI_H */
 -- 
 QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
 of Code Aurora Forum, hosted by The Linux Foundation
