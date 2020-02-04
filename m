@@ -2,129 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 107AB1517B4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 10:20:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8247A1517CA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 10:26:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QbZndwtYPJxSe/qBZd4IqMiSHLkPf0j49UJ8RIwWaMQ=; b=iG3pVOF+j52/7A
-	X+BcpbXYJrd4bQnPZ4N1bKtmMiqvIrhGVUhN2SXS5eg/YVUnhVZGFAFqvQc/cLx+y7IcVWdVleHBJ
-	xE5Gj9oQfQ7IHsh+oc9AXLn6Fpz4LwJ0nHnlDCDJy8kEqCEL4qbRDp0mzae+1u/kVmM+2pLPbmd6U
-	XeAr4IObe2SwS3YjednD9kWox43zKh7JY80OA74YJVjTNz/KeVJDDHom8sWArpSDdStXnUBifwCOj
-	nqGPSscD/hqUmEZQevNSSd4hhX5EU6K7fqcvjy04o4I/ATmw4XIsu2C2rxd7W6g2C8hTp7VonMCPQ
-	lT7fLhSJUjtkAo/bdvAA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s7ns94p2qZ2NS34tdOJ5PN188HJfHvGAL30Xr8/ZnmU=; b=uCP3MHkId/O0Tx
+	M/GNGQQjOdt0hqgeecVaEjpyPRUZncUZiljMv5lKDDHtb5Hil/cBbWECGswQTia2S/bV4N3prIyKE
+	fQxrG3Cbo/ijyd4WyCAC6tf7jGuL8t3Zn230L/gzhMhn59cq5gX+GEh2czUN0pSgCj3OpVwI95JTf
+	boObOmPL4YNPvYSYwO7hWKtcClJK9t7TIw0jSvjsQD8FYLNpPEmsNO8rsqAQzZdT0Nz7CAK4xF71N
+	OlNokgM/t+aSYIUh/Y0+7LxYnKdHURqJ/gWe2xio6Om1ucsMoi8ll4c/GwxftVKJDxuf2SGQQDbGC
+	ZH77K0mYb51FHF5bWF2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyuNt-0007o8-Pz; Tue, 04 Feb 2020 09:20:41 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iyuTa-0001jc-V2; Tue, 04 Feb 2020 09:26:34 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyuNh-0007m9-SO
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 09:20:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580808026;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=RHvzu8t7DSk7lF1XoO7vsW7bU11o/C+y6p3UFShrwgw=;
- b=R3ioCFZiv+cR+EIi/g7WLC3Z5ezql5txIBZYtdOpDcayGSCQJ56m3yHSoqsG8QFa9VOfu4
- QL//sMJml1d/RBcukqvqqBknRD0YDOUEm8WQkGo88/d1fxjohHdYiS3sRIwfyBnq3Y5rs1
- 07QcQZdrRAF/GJEfSFcdyB/UVaEVDls=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-434-1mNuaWW5M6GcS8aYzpsskg-1; Tue, 04 Feb 2020 04:20:22 -0500
-X-MC-Unique: 1mNuaWW5M6GcS8aYzpsskg-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 12F3E8010F6;
- Tue,  4 Feb 2020 09:20:20 +0000 (UTC)
-Received: from [10.36.117.121] (ovpn-117-121.ams2.redhat.com [10.36.117.121])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 4BF735C1B5;
- Tue,  4 Feb 2020 09:20:17 +0000 (UTC)
-Subject: Re: [PATCH v6 08/10] mm/memory_hotplug: Don't check for "all holes"
- in shrink_zone_span()
-To: Oscar Salvador <osalvador@suse.de>
+ id 1iyuTT-0001jG-Fr
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 09:26:29 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 195CDAC2C;
+ Tue,  4 Feb 2020 09:26:25 +0000 (UTC)
+Date: Tue, 4 Feb 2020 10:26:23 +0100
+From: Oscar Salvador <osalvador@suse.de>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH v6 09/10] mm/memory_hotplug: Drop local variables in
+ shrink_zone_span()
+Message-ID: <20200204092623.GD6494@linux>
 References: <20191006085646.5768-1-david@redhat.com>
- <20191006085646.5768-9-david@redhat.com> <20200204091312.GC6494@linux>
-From: David Hildenbrand <david@redhat.com>
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
-Organization: Red Hat GmbH
-Message-ID: <7d36f4cd-3f5b-8fec-2d8b-83e62a34ec89@redhat.com>
-Date: Tue, 4 Feb 2020 10:20:16 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+ <20191006085646.5768-10-david@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <20200204091312.GC6494@linux>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+Content-Disposition: inline
+In-Reply-To: <20191006085646.5768-10-david@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_012029_993858_36429B47 
-X-CRM114-Status: GOOD (  15.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200204_012627_819530_02C3DB45 
+X-CRM114-Status: GOOD (  21.06  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,36 +76,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04.02.20 10:13, Oscar Salvador wrote:
-> On Sun, Oct 06, 2019 at 10:56:44AM +0200, David Hildenbrand wrote:
->> If we have holes, the holes will automatically get detected and removed
->> once we remove the next bigger/smaller section. The extra checks can
->> go.
->>
->> Cc: Andrew Morton <akpm@linux-foundation.org>
->> Cc: Oscar Salvador <osalvador@suse.de>
->> Cc: Michal Hocko <mhocko@suse.com>
->> Cc: David Hildenbrand <david@redhat.com>
->> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
->> Cc: Dan Williams <dan.j.williams@intel.com>
->> Cc: Wei Yang <richardw.yang@linux.intel.com>
->> Signed-off-by: David Hildenbrand <david@redhat.com>
+On Sun, Oct 06, 2019 at 10:56:45AM +0200, David Hildenbrand wrote:
+> Get rid of the unnecessary local variables.
 > 
-> Heh, I have been here before.
-> I have to confess that when I wrote my version of this I was not really 100%
-> about removing it, because hotplug was a sort of a "catchall" for all sort of weird
-> and corner-cases configurations, but thinking more about it, I cannot think of
-> any situation that would make this blow up.
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Oscar Salvador <osalvador@suse.de>
+> Cc: David Hildenbrand <david@redhat.com>
+> Cc: Michal Hocko <mhocko@suse.com>
+> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
+> Cc: Dan Williams <dan.j.williams@intel.com>
+> Cc: Wei Yang <richardw.yang@linux.intel.com>
+> Signed-off-by: David Hildenbrand <david@redhat.com>
+> ---
+>  mm/memory_hotplug.c | 15 ++++++---------
+>  1 file changed, 6 insertions(+), 9 deletions(-)
 > 
-> Reviewed-by: Oscar Salvador <osalvador@suse.de>
+> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+> index 8dafa1ba8d9f..843481bd507d 100644
+> --- a/mm/memory_hotplug.c
+> +++ b/mm/memory_hotplug.c
+> @@ -374,14 +374,11 @@ static unsigned long find_biggest_section_pfn(int nid, struct zone *zone,
+>  static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
+>  			     unsigned long end_pfn)
+>  {
+> -	unsigned long zone_start_pfn = zone->zone_start_pfn;
+> -	unsigned long z = zone_end_pfn(zone); /* zone_end_pfn namespace clash */
+> -	unsigned long zone_end_pfn = z;
+>  	unsigned long pfn;
+>  	int nid = zone_to_nid(zone);
 
-Thanks for your review Oscar!
+We could also remove the nid, right?
+AFAICS, the nid is only used in find_{smallest/biggest}_section_pfn so we could
+place there as well.
+
+Anyway, nothing to nit-pick about:
+
+Reviewed-by: Oscar Salvador <osalvador@suse.de>
+
+>  
+>  	zone_span_writelock(zone);
+> -	if (zone_start_pfn == start_pfn) {
+> +	if (zone->zone_start_pfn == start_pfn) {
+>  		/*
+>  		 * If the section is smallest section in the zone, it need
+>  		 * shrink zone->zone_start_pfn and zone->zone_spanned_pages.
+> @@ -389,25 +386,25 @@ static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
+>  		 * for shrinking zone.
+>  		 */
+>  		pfn = find_smallest_section_pfn(nid, zone, end_pfn,
+> -						zone_end_pfn);
+> +						zone_end_pfn(zone));
+>  		if (pfn) {
+> +			zone->spanned_pages = zone_end_pfn(zone) - pfn;
+>  			zone->zone_start_pfn = pfn;
+> -			zone->spanned_pages = zone_end_pfn - pfn;
+>  		} else {
+>  			zone->zone_start_pfn = 0;
+>  			zone->spanned_pages = 0;
+>  		}
+> -	} else if (zone_end_pfn == end_pfn) {
+> +	} else if (zone_end_pfn(zone) == end_pfn) {
+>  		/*
+>  		 * If the section is biggest section in the zone, it need
+>  		 * shrink zone->spanned_pages.
+>  		 * In this case, we find second biggest valid mem_section for
+>  		 * shrinking zone.
+>  		 */
+> -		pfn = find_biggest_section_pfn(nid, zone, zone_start_pfn,
+> +		pfn = find_biggest_section_pfn(nid, zone, zone->zone_start_pfn,
+>  					       start_pfn);
+>  		if (pfn)
+> -			zone->spanned_pages = pfn - zone_start_pfn + 1;
+> +			zone->spanned_pages = pfn - zone->zone_start_pfn + 1;
+>  		else {
+>  			zone->zone_start_pfn = 0;
+>  			zone->spanned_pages = 0;
+> -- 
+> 2.21.0
+> 
 
 -- 
-Thanks,
-
-David / dhildenb
-
+Oscar Salvador
+SUSE L3
 
 _______________________________________________
 linux-arm-kernel mailing list
