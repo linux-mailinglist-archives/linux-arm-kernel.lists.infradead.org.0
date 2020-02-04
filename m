@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD5331523E1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 01:10:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E2641523E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 01:10:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uISP2BrjOHTYu1fkXPZDD26JOlpm9r9fpnqSVtIMkfA=; b=h4XWQsydzVOsCD
-	ZrXZ0kMRcRYHpBHWfjCBg4Z0NKKWWpTKZ8El0Vsdfg6NH/EtiQKzqqkSzgXaQ9xYrmCUqGU4pR1L0
-	9jRXY9DIV+IzsTz82FdJVUUCbZA7jyjznFeQXT48hgvIiUqnROkO4SaSIzm+zLzieANr3oIxVqm+E
-	mcJiXv5PiLuIl9lBKwDhNVZhkI93ienOMEb1x7kRIF2NEPf3hR+idcii/sRzGj6fdY/eMGGOTh7/8
-	BZq3shjwfPTxwCT/ks5diuhKAj1ntJ9pvA8T2m+1ko3xMWWakHM7rf/nTIrBBqxor/2y1kh57xTdJ
-	rTURHfOl/GBZPcSNgjcA==;
+	List-Owner; bh=p9hnbwO0t09KFQ+0KNcnATvI1LfyF/oJgdG2Jl2DGGM=; b=PtaczodcFxN2es
+	+qUj5veNjWtCtM+zNm02wiF6xoT1us0tJRoSQXxg/pE6eOau84X7CUSU4M34zR56RlPj8HhnP4rkC
+	88eluBDwDRefB+q2KkWqz2T9o/YvzbBbW9WDYCpeAIWtYXlD1F4idrOStzVyMjNwf935+RFu4JpVl
+	bIXBB94VbtW0ZcxNeIDabDCUtfYdgDE7HbH/rPXrjMU5quU+i5+Cd1xsi3eLB+d7TBgJRcUTNTuOA
+	mlf+DWNA5Wj6QbFqHpa8sij2DDhaS5+OahdPv1RGRMf/p0VsxtENHBI3hHIo6C7ZwLAVJKy9LeEiY
+	DPxWAlVorPOCpQ7j6wOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz8Gv-0000vB-8T; Wed, 05 Feb 2020 00:10:25 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1iz8HC-0001DC-K7; Wed, 05 Feb 2020 00:10:42 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz8EL-0005g4-Fi; Wed, 05 Feb 2020 00:07:47 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id gv17so153926pjb.1;
- Tue, 04 Feb 2020 16:07:45 -0800 (PST)
+ id 1iz8EM-0005hc-Sz; Wed, 05 Feb 2020 00:07:48 +0000
+Received: by mail-pl1-x644.google.com with SMTP id t14so81164plr.8;
+ Tue, 04 Feb 2020 16:07:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=AmvTxWNYbbqRFY29acB0Jj37QMjm3ZpkquLyekHQJRI=;
- b=DNoS8PP9tu+YUPFrfmW6JQUJYXKzBmqjG/9GECCG5e2iKZyK0jsegj9arM84i1hbKD
- E7DT5iFMEXPHF37KztAssbdIJ9qPrYfr24t6iB2dR3fDvlhPLxMYux5kkNf3m5GBQ1Y9
- q94CC2HUwlS1URG+7ogYn0B/MAMArA6/bm5KltugjqVAhS7Rm9Db4/1MItLxgFfIs5ng
- EsDOzpCV83cfDyoAfQsI+fuw6UcVEhW/b6DZLGBoCTxXMMai7ilEAq0211YqT5apFkWl
- OvaQzzCxoyvAxy3w2cUpiiixIL2GGboiuGbYjCfOHTwahWoSvSNbq4E7RjRCHvPvqbcw
- 3MUw==
+ bh=rNgHMA6kv0sEkVkQCHv5m/SCpI5yps7HvaSz94olJGw=;
+ b=FduV5e7HHuIFti5m8veUplRlVddJCO+yldY9RyI4aJLl69t7Q56G9YCzNz/5uK2rqh
+ uKV8J0rtb6IsQZpQj95xIZ0wHnhuRqQVM4HjKZ2u/qr0vxDj+isgnnCifl7sg1xzlQWr
+ PlJ3X/0IlWdSc99RZlKgYNXmhV2KLNP/JaR3Bs0IkRqbERYO4QdyrhsPfCf7dHO2eeQU
+ uQJyJI6YD5YU7LqywP5PA4CYVKAhQpV+7t32Qo4gBLRt8sLQVF9IgkqYZqiwXoncausw
+ 43fG6VTKvbGo8RYi8IciME75p7KCcnjY1FKx3T6GuRvhxlDM/Q1/f6M58xTQ/zYu+NmW
+ cnpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=AmvTxWNYbbqRFY29acB0Jj37QMjm3ZpkquLyekHQJRI=;
- b=NTYkJaEnpUTXBjkG/QVCytmsx8nYAFpWjhPwlh/+jaq8VWHrs2HTwYcNKiS6srVBOs
- lWEkEMUvnzRPSYd3ly/3+Rb15VnD3CnIsPj5sYzK9H3xiCNocUus+ALogjTikQtVP5k6
- nAAPQmDopIjXk/1vRk4ibeC4RTmxObFzV24P5b3JP2hZ4gYchZHNnWw05lfrAav5WuWL
- Zl1tWcY/9IUiJ73zayhtX9+VBgT/eckxksBosCSFKW0uQqmQCTckwP5OqYifnJbqJhnI
- yYufMM54LYBMDsHhOaHR9IkoY+1K5AgOTzSK+HecPDMQACbaPLQA9E+4LrlITDrqoIRk
- pBmw==
-X-Gm-Message-State: APjAAAWrJeLY26ph2zklAiVWN3xkgWA1I/HpO6zs7qGTt/dehrHKHqL2
- l9+kKsCsgpa1rkKUMiwnS2E9Os6V
-X-Google-Smtp-Source: APXvYqyECzfty9WFxy19O/11qgx+ClTmtK+jWrBXYMa0UuRFHceFgyp2EPfw/dGKOEBldi2u1pkVkg==
-X-Received: by 2002:a17:902:8b88:: with SMTP id
- ay8mr31646320plb.202.1580861263934; 
- Tue, 04 Feb 2020 16:07:43 -0800 (PST)
+ bh=rNgHMA6kv0sEkVkQCHv5m/SCpI5yps7HvaSz94olJGw=;
+ b=ArzEGiBBcf6Io0FhV6UgblyU+JlhQb2aBlu/Gvzp5/jhsZnUWXc9kwLwEj305VWbJ4
+ XbsM/qlHlppOIQQ+4AbChrEsizF0nGskZftTvc8SQQOxcCnpdpffYXFz3QZnrP5P99UY
+ JZXB0p004jgdrAsoQRbgDggIGcuI+UXGqygNy8iOe/SmnOKNadqT3K11u9LbZKu4fKkl
+ 7RRhwzGkNrtXrUiGc+yS4vhUdhJi4SxQzHnYiKdYR4KImIg33nH0yjn8AK3PDaIzDnuF
+ EhyT4qwjmlD/y58C9vM4z+q/tLiRRW8UUjU9bHn7eBuAH2P9yLSoEbZXzM6h8W0Qh0V3
+ DQdg==
+X-Gm-Message-State: APjAAAWkSJCuLpLcFth98yhe05i+4Mz2qNIUORSjLhfYdxL4Rul47qQZ
+ ebGfqCjMy8+9jyaE4MlKDppuMNym
+X-Google-Smtp-Source: APXvYqzHjGGFyqHeoAwdAmsvIQYeZobj3KRq8ev1PClEsjo0BTz7/NwXacj13yx/it/VHATevfm1Lw==
+X-Received: by 2002:a17:902:9a42:: with SMTP id
+ x2mr33932389plv.194.1580861265516; 
+ Tue, 04 Feb 2020 16:07:45 -0800 (PST)
 Received: from localhost.localdomain (ip68-111-84-250.oc.oc.cox.net.
  [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id g2sm25575468pgn.59.2020.02.04.16.07.42
+ by smtp.gmail.com with ESMTPSA id g2sm25575468pgn.59.2020.02.04.16.07.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 04 Feb 2020 16:07:43 -0800 (PST)
+ Tue, 04 Feb 2020 16:07:45 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 11/12] dt-bindings: arm: Document Broadcom SoCs
- 'secondary-boot-reg'
-Date: Tue,  4 Feb 2020 15:55:51 -0800
-Message-Id: <20200204235552.7466-12-f.fainelli@gmail.com>
+Subject: [PATCH v2 12/12] dt-bindings: arm: bcm: Convert BCM2835 firmware
+ binding to YAML
+Date: Tue,  4 Feb 2020 15:55:52 -0800
+Message-Id: <20200204235552.7466-13-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20200204235552.7466-1-f.fainelli@gmail.com>
 References: <20200204235552.7466-1-f.fainelli@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_160745_615229_67E48717 
-X-CRM114-Status: GOOD (  15.82  )
+X-CRM114-CacheID: sfid-20200204_160746_965282_6DD9946A 
+X-CRM114-Status: GOOD (  14.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
@@ -115,194 +118,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Consolidate and move the 'secondary-boot-reg' property from the 3
-existing binding documents into the main cpus.yaml documentation, also
-make sure that the property is enforced when relevant.
+Convert the Raspberry Pi BCM2835 firmware binding document to YAML.
+Verified with dt_binding_check and dtbs_check.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../arm/bcm/brcm,bcm11351-cpu-method.txt      | 36 -----------------
- .../arm/bcm/brcm,bcm23550-cpu-method.txt      | 36 -----------------
- .../bindings/arm/bcm/brcm,nsp-cpu-method.txt  | 39 -------------------
- .../devicetree/bindings/arm/cpus.yaml         | 33 ++++++++++++++++
- 4 files changed, 33 insertions(+), 111 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351-cpu-method.txt
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550-cpu-method.txt
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,nsp-cpu-method.txt
+ .../arm/bcm/raspberrypi,bcm2835-firmware.txt  | 14 --------
+ .../arm/bcm/raspberrypi,bcm2835-firmware.yaml | 33 +++++++++++++++++++
+ 2 files changed, 33 insertions(+), 14 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
 
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351-cpu-method.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351-cpu-method.txt
+diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
 deleted file mode 100644
-index e3f996920403..000000000000
---- a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351-cpu-method.txt
+index 6824b3180ffb..000000000000
+--- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
 +++ /dev/null
-@@ -1,36 +0,0 @@
--Broadcom Kona Family CPU Enable Method
----------------------------------------
--This binding defines the enable method used for starting secondary
--CPUs in the following Broadcom SoCs:
--  BCM11130, BCM11140, BCM11351, BCM28145, BCM28155, BCM21664
+@@ -1,14 +0,0 @@
+-Raspberry Pi VideoCore firmware driver
 -
--The enable method is specified by defining the following required
--properties in the "cpu" device tree node:
--  - enable-method = "brcm,bcm11351-cpu-method";
--  - secondary-boot-reg = <...>;
+-Required properties:
 -
--The secondary-boot-reg property is a u32 value that specifies the
--physical address of the register used to request the ROM holding pen
--code release a secondary CPU.  The value written to the register is
--formed by encoding the target CPU id into the low bits of the
--physical start address it should jump to.
+-- compatible:		Should be "raspberrypi,bcm2835-firmware"
+-- mboxes:		Phandle to the firmware device's Mailbox.
+-			  (See: ../mailbox/mailbox.txt for more information)
 -
 -Example:
--	cpus {
--		#address-cells = <1>;
--		#size-cells = <0>;
 -
--		cpu0: cpu@0 {
--			device_type = "cpu";
--			compatible = "arm,cortex-a9";
--			reg = <0>;
--		};
--
--		cpu1: cpu@1 {
--			device_type = "cpu";
--			compatible = "arm,cortex-a9";
--			reg = <1>;
--			enable-method = "brcm,bcm11351-cpu-method";
--			secondary-boot-reg = <0x3500417c>;
--		};
--	};
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550-cpu-method.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550-cpu-method.txt
-deleted file mode 100644
-index a3af54c0e404..000000000000
---- a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550-cpu-method.txt
-+++ /dev/null
-@@ -1,36 +0,0 @@
--Broadcom Kona Family CPU Enable Method
----------------------------------------
--This binding defines the enable method used for starting secondary
--CPUs in the following Broadcom SoCs:
--  BCM23550
--
--The enable method is specified by defining the following required
--properties in the "cpu" device tree node:
--  - enable-method = "brcm,bcm23550";
--  - secondary-boot-reg = <...>;
--
--The secondary-boot-reg property is a u32 value that specifies the
--physical address of the register used to request the ROM holding pen
--code release a secondary CPU.  The value written to the register is
--formed by encoding the target CPU id into the low bits of the
--physical start address it should jump to.
--
--Example:
--	cpus {
--		#address-cells = <1>;
--		#size-cells = <0>;
--
--		cpu0: cpu@0 {
--			device_type = "cpu";
--			compatible = "arm,cortex-a9";
--			reg = <0>;
--		};
--
--		cpu1: cpu@1 {
--			device_type = "cpu";
--			compatible = "arm,cortex-a9";
--			reg = <1>;
--			enable-method = "brcm,bcm23550";
--			secondary-boot-reg = <0x3500417c>;
--		};
--	};
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,nsp-cpu-method.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,nsp-cpu-method.txt
-deleted file mode 100644
-index 677ef9d9f445..000000000000
---- a/Documentation/devicetree/bindings/arm/bcm/brcm,nsp-cpu-method.txt
-+++ /dev/null
-@@ -1,39 +0,0 @@
--Broadcom Northstar Plus SoC CPU Enable Method
-----------------------------------------------
--This binding defines the enable method used for starting secondary
--CPU in the following Broadcom SoCs:
--  BCM58522, BCM58525, BCM58535, BCM58622, BCM58623, BCM58625, BCM88312
--
--The enable method is specified by defining the following required
--properties in the corresponding secondary "cpu" device tree node:
--  - enable-method = "brcm,bcm-nsp-smp";
--  - secondary-boot-reg = <...>;
--
--The secondary-boot-reg property is a u32 value that specifies the
--physical address of the register which should hold the common
--entry point for a secondary CPU. This entry is cpu node specific
--and should be added per cpu. E.g., in case of NSP (BCM58625) which
--is a dual core CPU SoC, this entry should be added to cpu1 node.
--
--
--Example:
--	cpus {
--		#address-cells = <1>;
--		#size-cells = <0>;
--
--		cpu0: cpu@0 {
--			device_type = "cpu";
--			compatible = "arm,cortex-a9";
--			next-level-cache = <&L2>;
--			reg = <0>;
--		};
--
--		cpu1: cpu@1 {
--			device_type = "cpu";
--			compatible = "arm,cortex-a9";
--			next-level-cache = <&L2>;
--			enable-method = "brcm,bcm-nsp-smp";
--			secondary-boot-reg = <0xffff042c>;
--			reg = <1>;
--		};
--	};
-diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
-index c23c24ff7575..d7b181a44789 100644
---- a/Documentation/devicetree/bindings/arm/cpus.yaml
-+++ b/Documentation/devicetree/bindings/arm/cpus.yaml
-@@ -272,6 +272,39 @@ properties:
-       While optional, it is the preferred way to get access to
-       the cpu-core power-domains.
- 
-+  secondary-boot-reg:
-+    $ref: '/schemas/types.yaml#/definitions/uint32'
+-firmware {
+-	compatible = "raspberrypi,bcm2835-firmware";
+-	mboxes = <&mailbox>;
+-};
+diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+new file mode 100644
+index 000000000000..db355d970f2b
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+@@ -0,0 +1,33 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/arm/bcm/raspberrypi,bcm2835-firmware.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Raspberry Pi VideoCore firmware driver
++
++maintainers:
++  - Eric Anholt <eric@anholt.net>
++  - Stefan Wahren <wahrenst@gmx.net>
++
++properties:
++  compatible:
++    const: raspberrypi,bcm2835-firmware simple-bus
++
++  mboxes:
++    $ref: '/schemas/types.yaml#/definitions/phandle'
 +    description: |
-+      Required for systems that have an "enable-method" property value of
-+      "brcm,bcm11351-cpu-method", "brcm,bcm23550" or "brcm,bcm-nsp-smp".
++      Phandle to the firmware device's Mailbox.
++      (See: ../mailbox/mailbox.txt for more information)
 +
-+      This includes the following SoCs: |
-+      BCM11130, BCM11140, BCM11351, BCM28145, BCM28155, BCM21664, BCM23550
-+      BCM58522, BCM58525, BCM58535, BCM58622, BCM58623, BCM58625, BCM88312
++required:
++  - compatible
++  - mboxes
 +
-+      The secondary-boot-reg property is a u32 value that specifies the
-+      physical address of the register used to request the ROM holding pen
-+      code release a secondary CPU. The value written to the register is
-+      formed by encoding the target CPU id into the low bits of the
-+      physical start address it should jump to.
-+
-+if:
-+  # If the enable-method property contains one of those values
-+  properties:
-+    enable-method:
-+      contains:
-+        enum:
-+          - brcm,bcm11351-cpu-method
-+          - brcm,bcm23550
-+          - brcm,bcm-nsp-smp
-+  # and if enable-method is present
-+  required:
-+    - enable-method
-+
-+then:
-+   required:
-+     - secondary-boot-reg
-+
- required:
-   - device_type
-   - reg
++examples:
++  - |
++    firmware {
++        compatible = "raspberrypi,bcm2835-firmware";
++        mboxes = <&mailbox>;
++    };
++...
 -- 
 2.19.1
 
