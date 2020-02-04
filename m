@@ -2,59 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9703151B03
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:14:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3B57151B20
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:20:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Mime-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WmjzPI1JYs/aFcNgYxNcaf0fKjHPaO8wN8VohPs0LTs=; b=SogGOIFp8vrD80
-	n+geDn8pgUgZpCVhtVKtqH1Htk/L6Y+ywGq2k23hRRqYzufqrE64k8hoJOE9tFmdWMchgIF/mlw8e
-	gA4uRwzbUv0FcDMzej1AK6Gr6xe2aYLVnroP7jN8Fd5VL7qv61g2abnv/AgvU9VTljnEXpUpDNaQh
-	cWt0r1/8cHck/ONoz/JjIa53pBV20KmIXkYnfFrs90Z1Hs8RsWjFbYbUjxDjON0hvNYN623J4MSm4
-	xULGEy8ii54WYKEBzZ0IG1ol0+U2uq7a2SMEUD7Ua/mVLxvav+InbVbo4rkbfbgQqS+o6L758bQOB
-	fsFZhfbNf65Wr7elpWMQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Udob6RfU2A+nWju3s8ithDYn0UsKgr/2Y058R1H6vGs=; b=gI2
+	oWFMkN6AeEO+9XQbXv3LelnNbF8cVsld0JDNHxT6fW+y5bnJD/JeUZQUW3kEbZ4nH+0qM79REGdDz
+	X4rvnEW7okg/wpg3aAOtU8BqIjVP8yvXMsmEzv91EnzQGKw66tEv3rq338ds5teTT+mugTZ8/S7tF
+	03+rYLX9AV4AIlRXUwhEbnNDXdOV0ofrIpZP7RwqYf0Vmlz22JwEURK3FmxB9jBsKXEQWKGOOfDVp
+	ro46GJWI9wsJM9bv8LiOuGSHpwX/cC0DGIVZ2+OOqg2/mu5qUaZgdabBIr9DdzufYpuMQ1kGnTxi/
+	Ti8yFjFKguoyIcc9O10i3CppjGZLSCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyy25-0001ln-3C; Tue, 04 Feb 2020 13:14:25 +0000
-Received: from gate.crashing.org ([63.228.1.57])
+	id 1iyy85-0005Vn-Qj; Tue, 04 Feb 2020 13:20:37 +0000
+Received: from alexa-out-blr-02.qualcomm.com ([103.229.18.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyy1w-0001l7-7W
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:14:17 +0000
-Received: from gate.crashing.org (localhost.localdomain [127.0.0.1])
- by gate.crashing.org (8.14.1/8.14.1) with ESMTP id 014DDuF4027799;
- Tue, 4 Feb 2020 07:13:56 -0600
-Received: (from segher@localhost)
- by gate.crashing.org (8.14.1/8.14.1/Submit) id 014DDrtu027796;
- Tue, 4 Feb 2020 07:13:53 -0600
-X-Authentication-Warning: gate.crashing.org: segher set sender to
- segher@kernel.crashing.org using -f
-Date: Tue, 4 Feb 2020 07:13:53 -0600
-From: Segher Boessenkool <segher@kernel.crashing.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v6 10/10] mm/memory_hotplug: Cleanup __remove_pages()
-Message-ID: <20200204131353.GJ22482@gate.crashing.org>
-References: <20191006085646.5768-1-david@redhat.com>
- <20191006085646.5768-11-david@redhat.com> <20200204094652.GE6494@linux>
- <5d698f94-af18-0714-bc97-14b6c520572c@redhat.com>
-Mime-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5d698f94-af18-0714-bc97-14b6c520572c@redhat.com>
-User-Agent: Mutt/1.4.2.3i
+ id 1iyy7z-0005VU-Vn
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:20:33 +0000
+Received: from ironmsg02-blr.qualcomm.com ([10.86.208.131])
+ by alexa-out-blr-02.qualcomm.com with ESMTP/TLS/AES256-SHA;
+ 04 Feb 2020 18:48:35 +0530
+Received: from pillair-linux.qualcomm.com ([10.204.116.193])
+ by ironmsg02-blr.qualcomm.com with ESMTP; 04 Feb 2020 18:48:26 +0530
+Received: by pillair-linux.qualcomm.com (Postfix, from userid 452944)
+ id C315A3963; Tue,  4 Feb 2020 18:48:24 +0530 (IST)
+From: Rakesh Pillai <pillair@codeaurora.org>
+To: devicetree@vger.kernel.org
+Subject: [PATCH v6] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module device
+ node
+Date: Tue,  4 Feb 2020 18:48:20 +0530
+Message-Id: <1580822300-4491-1-git-send-email-pillair@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_051416_417558_3FB1435B 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200204_052032_563953_B5613F43 
+X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [63.228.1.57 listed in list.dnswl.org]
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [103.229.18.198 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,37 +63,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
- linux-sh@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Wei Yang <richardw.yang@linux.intel.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>
+Cc: linux-arm-msm@vger.kernel.org, Rakesh Pillai <pillair@codeaurora.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 04, 2020 at 01:41:06PM +0100, David Hildenbrand wrote:
-> On 04.02.20 10:46, Oscar Salvador wrote:
-> > I have to confess that it took me while to wrap around my head
-> > with the new min() change, but looks ok:
-> 
-> It's a pattern commonly used in compilers and emulators to calculate the
-> number of bytes to the next block/alignment. (we're missing a macro
-> (like we have ALIGN_UP/IS_ALIGNED) for that - but it's hard to come up
-> with a good name (e.g., SIZE_TO_NEXT_ALIGN) .
+Add device node for the ath10k SNOC platform driver probe
+and add resources required for WCN3990 on sc7180 soc.
 
-You can just write the easy to understand
+Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
+---
+ arch/arm64/boot/dts/qcom/sc7180-idp.dts |  5 +++++
+ arch/arm64/boot/dts/qcom/sc7180.dtsi    | 27 +++++++++++++++++++++++++++
+ 2 files changed, 32 insertions(+)
 
-  ...  ALIGN_UP(x) - x  ...
+diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+index 388f50a..167f68ac 100644
+--- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
++++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+@@ -287,6 +287,11 @@
+ 	vdda-pll-supply = <&vreg_l4a_0p8>;
+ };
+ 
++&wifi {
++	status = "okay";
++	qcom,msa-fixed-perm;
++};
++
+ /* PINCTRL - additions to nodes defined in sc7180.dtsi */
+ 
+ &qspi_clk {
+diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+index 8011c5f..e3e8610 100644
+--- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
++++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+@@ -75,6 +75,11 @@
+ 			reg = <0x0 0x80900000 0x0 0x200000>;
+ 			no-map;
+ 		};
++
++		wlan_fw_mem: memory@93900000 {
++			reg = <0 0x93900000 0 0x200000>;
++			no-map;
++		};
+ 	};
+ 
+ 	cpus {
+@@ -1490,6 +1495,28 @@
+ 
+ 			#freq-domain-cells = <1>;
+ 		};
++
++		wifi: wifi@18800000 {
++			compatible = "qcom,wcn3990-wifi";
++			reg = <0 0x18800000 0 0x800000>;
++			reg-names = "membase";
++			iommus = <&apps_smmu 0xc0 0x1>;
++			interrupts =
++				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
++				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
++				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
++				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
++				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
++				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
++				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
++				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
++				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
++				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
++				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
++				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
++			memory-region = <&wlan_fw_mem>;
++			status = "disabled";
++		};
+ 	};
+ 
+ 	thermal-zones {
+-- 
+2.7.4
 
-which is better *without* having a separate name.  Does that not
-generate good machine code for you?
-
-
-Segher
 
 _______________________________________________
 linux-arm-kernel mailing list
