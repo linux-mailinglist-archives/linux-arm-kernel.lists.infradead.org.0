@@ -2,85 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AD8F1517F0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 10:35:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1901515180F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 10:42:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hrsd2puNXxLSekux9lGAYGzq7EKOM5mW6imU6ZPP8f8=; b=itEeLnw/TZVPWo
-	VbN5fcckqh4purG5JOLt9B3QVRYugiZ5vjisWzL8oZAretsfkPFcvIw2jxrh7iubhZ400oGPs6naO
-	5mrCOI6KPpPyWppgJzMGAjpMkx363FNp42gYzQmlG7Cxso4SJGt5kQjO3dQMAScWplNWO7pzqu8cY
-	dJwGst5r+p1VD5HyAo3eZycmlZ4OHoNJwhNhT5KE+uvxaPrmT8zd0k8A1RLX9bF8oIVJGYy4LVqq+
-	tUudGEXZLre1OEaiFK6kFJ3MsZZnpEt8502pQV8PV+9RPVSd2mG2Y05jypkjy3qAwuKP2NeWMm91X
-	EpPZqeasW+jrIqbHp1Ww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8tTVWq8r7gpd6f+eFXZ5KhN3iQ2GJ1nWerZVJfIQqds=; b=j7xfPiUSJ2h4rwb/Ps+C2WYOK
+	9PKAM+QsLSC3NdVFUZ3vKx1oG2sWHillQdFLMSXUeWt2mbuyNp0mDTPEKI8gVmZFApgvX5UBHwjbf
+	OrISdMmz+6+riJYfkTfL0W+6jjAYfD5IV9dfjkC95/Xu4gNYzEMX9E84nk7pXFTtjlv4EhHTNxbAd
+	a1AE7qwEX/VYxaaVc9bGX6qRqweEW9Hf4KZtGWzwgnKYSPcJNK4cAKNUniqG0XGUK1zLj24aQSC6I
+	b0WiGDdUf+MBaFIPZB9iEoaLoEsPLWD6l+xW0m3/hlCb0jJcp1MxBKGR6k6m1OR6sAPPKoiM+DB6k
+	7ONTuQznw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyubf-00044L-Uw; Tue, 04 Feb 2020 09:34:55 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1iyuj0-0007Fs-4s; Tue, 04 Feb 2020 09:42:30 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyubY-00043h-LS
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 09:34:50 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0149YbZM070502;
- Tue, 4 Feb 2020 03:34:37 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1580808877;
- bh=0YLT5G2KDDkaXYmv/lijgenq70L6rJ93LRjbmt0OMok=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=lo3rwbgEe/PjhcxYvDiI14ysBcjXhMf+d211fVU0G0lHMuWdy4vM8sFKX21HJF4rA
- vIGJAK+1evNgkugBYeW0Fi8gNJ9A+zNLHUBoc2TAnS7WS17WyCMP0y3huK1ehAQFTV
- ylfU80fWWkvf5MXpzHIZIT+VOQlZxxG+WTcb9wa8=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0149YbJL077913
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 4 Feb 2020 03:34:37 -0600
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Tue, 4 Feb
- 2020 03:34:37 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Tue, 4 Feb 2020 03:34:37 -0600
-Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0149YZ1A087824;
- Tue, 4 Feb 2020 03:34:35 -0600
-Subject: Re: [PATCH] dma-direct: relax addressability checks in
- dma_direct_supported
-To: Christoph Hellwig <hch@lst.de>, <iommu@lists.linux-foundation.org>
-References: <20200203171601.539254-1-hch@lst.de>
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Message-ID: <1011c272-9527-9e61-4954-c7e27cd1fcb6@ti.com>
-Date: Tue, 4 Feb 2020 11:34:35 +0200
+ id 1iyuit-0007F7-0M; Tue, 04 Feb 2020 09:42:24 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 04 Feb 2020 01:42:22 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,401,1574150400"; d="scan'208";a="310993361"
+Received: from mattu-haswell.fi.intel.com (HELO [10.237.72.170])
+ ([10.237.72.170])
+ by orsmga001.jf.intel.com with ESMTP; 04 Feb 2020 01:42:18 -0800
+Subject: Re: [PATCH] xhci-mtk: Fix NULL pointer dereference with xhci_irq()
+ for shared_hcd
+To: Macpaul Lin <macpaul.lin@mediatek.com>
+References: <1579246910-22736-1-git-send-email-macpaul.lin@mediatek.com>
+ <08f69bab-2ada-d6ab-7bf7-d960e9f148a0@linux.intel.com>
+ <1580556039.10835.3.camel@mtkswgap22>
+From: Mathias Nyman <mathias.nyman@linux.intel.com>
+Message-ID: <39ec1610-1686-6509-02ac-6e73d8be2453@linux.intel.com>
+Date: Tue, 4 Feb 2020 11:44:29 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200203171601.539254-1-hch@lst.de>
+In-Reply-To: <1580556039.10835.3.camel@mtkswgap22>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_013448_829832_7B900D45 
-X-CRM114-Status: GOOD (  26.32  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200204_014223_060259_4707F806 
+X-CRM114-Status: GOOD (  22.59  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,70 +69,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robin.murphy@arm.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sriharsha Allenki <sallenki@codeaurora.org>,
+ Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+ Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQ2hyaXN0b3BoLAoKT24gMDMvMDIvMjAyMCAxOS4xNiwgQ2hyaXN0b3BoIEhlbGx3aWcgd3Jv
-dGU6Cj4gZG1hX2RpcmVjdF9zdXBwb3J0ZWQgdHJpZXMgdG8gZmluZCB0aGUgbWluaW11bSBhZGRy
-ZXNzYWJsZSBiaXRtYXNrCj4gYmFzZWQgb24gdGhlIGVuZCBwZm4gYW5kIG9wdGlvbmFsIG1hZ2lj
-IHRoYXQgYXJjaGl0ZWN0dXJlcyBjYW4gdXNlCj4gdG8gY29tbXVuaWNhdGUgdGhlIHNpemUgb2Yg
-dGhlIG1hZ2ljIFpPTkVfRE1BIHRoYXQgY2FuIGJlIHVzZWQKPiBmb3IgYm91bmNlIGJ1ZmZlcmlu
-Zy4gIEJ1dCBiZXR3ZWVuIHRoZSBETUEgb2Zmc2V0cyB0aGF0IGNhbiBjaGFuZ2UKPiBwZXIgZGV2
-aWNlIChvciBzb21ldGltZXMgZXZlbiByZWdpb24pLCB0aGUgZmFjdCB0aGUgWk9ORV9ETUEgaXNu
-J3QKPiBldmVuIGd1YXJhbnRlZWQgdG8gYmUgdGhlIGxvd2VzdCBhZGRyZXNzZXMgYW5kIGZhaWx1
-cmUgb2YgaGF2aW5nCj4gcHJvcGVyIGludGVyZmFjZXMgdG8gdGhlIE1NIGNvZGUgdGhpcyBmYWls
-cyBhdCBsZWFzdCBmb3Igb25lCj4gYXJtIHN1YmFyY2hpdGVjdHVyZS4KPiAKPiBBcyBhbGwgdGhl
-IGxlZ2FjeSBETUEgaW1wbGVtZW50YXRpb25zIGhhdmUgc3VwcG9ydGVkIDMyLWJpdCBETUEKPiBt
-YXNrcywgYW5kIDMyLWJpdCBtYXNrcyBhcmUgZ3VyYW50ZWVkIHRvIGFsd2F5cyB3b3JrIGJ5IHRo
-ZSBBUEkKPiBjb250cmFjdCAodXNpbmcgYm91bmNlIGJ1ZmZlcnMgaWYgbmVlZGVkKSwgd2UgY2Fu
-IHNob3J0IGN1dCB0aGUKPiBjb21wbGljYXRlZCBjaGVjayBhbmQgYWx3YXlzIHJldHVybiB0cnVl
-IHdpdGhvdXQgYnJlYWtpbmcgZXhpc3RpbmcKPiBhc3N1bXB0aW9ucy4gIEhvcGVmdWxseSB3ZSBj
-YW4gcHJvcGVybHkgY2xlYW4gdXAgdGhlIGludGVyYWN0aW9uCj4gd2l0aCB0aGUgYXJjaCBkZWZp
-bmVkIHpvbmVzIGFuZCB0aGUgYm9vdG1lbSBhbGxvY2F0b3IgZXZlbnR1YWxseS4KPiAKPiBGaXhl
-czogYWQzYzdiMThjNWIzICgiYXJtOiB1c2Ugc3dpb3RsYiBmb3IgYm91bmNlIGJ1ZmZlcmluZyBv
-biBMUEFFIGNvbmZpZ3MiKQo+IFJlcG9ydGVkLWJ5OiBQZXRlciBVamZhbHVzaSA8cGV0ZXIudWpm
-YWx1c2lAdGkuY29tPgo+IFNpZ25lZC1vZmYtYnk6IENocmlzdG9waCBIZWxsd2lnIDxoY2hAbHN0
-LmRlPgo+IFRlc3RlZC1ieTogUGV0ZXIgVWpmYWx1c2kgPHBldGVyLnVqZmFsdXNpQHRpLmNvbT4K
-ClRoYW5rIHlvdSBmb3IgdGhlIHByb3BlciBwYXRjaCwgSSBjYW4gcmVhZmZpcm0gbXkgVGVzdGVk
-LWJ5LgpXZSBoYXZlIGFsc28gdGVzdGVkIHJlbW90ZXByb2Mgb24gazIsIHdoaWNoIGdvdCBicm9r
-ZW4gYXMgd2VsbC4KClRoYW5rcyBhZ2FpbiwKLSBQw6l0ZXIKCj4gLS0tCj4gIGtlcm5lbC9kbWEv
-ZGlyZWN0LmMgfCAyNCArKysrKysrKysrKy0tLS0tLS0tLS0tLS0KPiAgMSBmaWxlIGNoYW5nZWQs
-IDExIGluc2VydGlvbnMoKyksIDEzIGRlbGV0aW9ucygtKQo+IAo+IGRpZmYgLS1naXQgYS9rZXJu
-ZWwvZG1hL2RpcmVjdC5jIGIva2VybmVsL2RtYS9kaXJlY3QuYwo+IGluZGV4IDA0ZjMwOGE0N2Zj
-My4uZWZhYjg5NGMxNjc5IDEwMDY0NAo+IC0tLSBhL2tlcm5lbC9kbWEvZGlyZWN0LmMKPiArKysg
-Yi9rZXJuZWwvZG1hL2RpcmVjdC5jCj4gQEAgLTQ2NCwyOCArNDY0LDI2IEBAIGludCBkbWFfZGly
-ZWN0X21tYXAoc3RydWN0IGRldmljZSAqZGV2LCBzdHJ1Y3Qgdm1fYXJlYV9zdHJ1Y3QgKnZtYSwK
-PiAgfQo+ICAjZW5kaWYgLyogQ09ORklHX01NVSAqLwo+ICAKPiAtLyoKPiAtICogQmVjYXVzZSAz
-Mi1iaXQgRE1BIG1hc2tzIGFyZSBzbyBjb21tb24gd2UgZXhwZWN0IGV2ZXJ5IGFyY2hpdGVjdHVy
-ZSB0byBiZQo+IC0gKiBhYmxlIHRvIHNhdGlzZnkgdGhlbSAtIGVpdGhlciBieSBub3Qgc3VwcG9y
-dGluZyBtb3JlIHBoeXNpY2FsIG1lbW9yeSwgb3IgYnkKPiAtICogcHJvdmlkaW5nIGEgWk9ORV9E
-TUEzMi4gIElmIG5laXRoZXIgaXMgdGhlIGNhc2UsIHRoZSBhcmNoaXRlY3R1cmUgbmVlZHMgdG8K
-PiAtICogdXNlIGFuIElPTU1VIGluc3RlYWQgb2YgdGhlIGRpcmVjdCBtYXBwaW5nLgo+IC0gKi8K
-PiAgaW50IGRtYV9kaXJlY3Rfc3VwcG9ydGVkKHN0cnVjdCBkZXZpY2UgKmRldiwgdTY0IG1hc2sp
-Cj4gIHsKPiAtCXU2NCBtaW5fbWFzazsKPiAtCj4gLQlpZiAoSVNfRU5BQkxFRChDT05GSUdfWk9O
-RV9ETUEpKQo+IC0JCW1pbl9tYXNrID0gRE1BX0JJVF9NQVNLKHpvbmVfZG1hX2JpdHMpOwo+IC0J
-ZWxzZQo+IC0JCW1pbl9tYXNrID0gRE1BX0JJVF9NQVNLKDMyKTsKPiArCXU2NCBtaW5fbWFzayA9
-IChtYXhfcGZuIC0gMSkgPDwgUEFHRV9TSElGVDsKPiAgCj4gLQltaW5fbWFzayA9IG1pbl90KHU2
-NCwgbWluX21hc2ssIChtYXhfcGZuIC0gMSkgPDwgUEFHRV9TSElGVCk7Cj4gKwkvKgo+ICsJICog
-QmVjYXVzZSAzMi1iaXQgRE1BIG1hc2tzIGFyZSBzbyBjb21tb24gd2UgZXhwZWN0IGV2ZXJ5IGFy
-Y2hpdGVjdHVyZQo+ICsJICogdG8gYmUgYWJsZSB0byBzYXRpc2Z5IHRoZW0gLSBlaXRoZXIgYnkg
-bm90IHN1cHBvcnRpbmcgbW9yZSBwaHlzaWNhbAo+ICsJICogbWVtb3J5LCBvciBieSBwcm92aWRp
-bmcgYSBaT05FX0RNQTMyLiAgSWYgbmVpdGhlciBpcyB0aGUgY2FzZSwgdGhlCj4gKwkgKiBhcmNo
-aXRlY3R1cmUgbmVlZHMgdG8gdXNlIGFuIElPTU1VIGluc3RlYWQgb2YgdGhlIGRpcmVjdCBtYXBw
-aW5nLgo+ICsJICovCj4gKwlpZiAobWFzayA+PSBETUFfQklUX01BU0soMzIpKQo+ICsJCXJldHVy
-biAxOwo+ICAKPiAgCS8qCj4gIAkgKiBUaGlzIGNoZWNrIG5lZWRzIHRvIGJlIGFnYWluc3QgdGhl
-IGFjdHVhbCBiaXQgbWFzayB2YWx1ZSwgc28KPiAgCSAqIHVzZSBfX3BoeXNfdG9fZG1hKCkgaGVy
-ZSBzbyB0aGF0IHRoZSBTTUUgZW5jcnlwdGlvbiBtYXNrIGlzbid0Cj4gIAkgKiBwYXJ0IG9mIHRo
-ZSBjaGVjay4KPiAgCSAqLwo+ICsJaWYgKElTX0VOQUJMRUQoQ09ORklHX1pPTkVfRE1BKSkKPiAr
-CQltaW5fbWFzayA9IG1pbl90KHU2NCwgbWluX21hc2ssIERNQV9CSVRfTUFTSyh6b25lX2RtYV9i
-aXRzKSk7Cj4gIAlyZXR1cm4gbWFzayA+PSBfX3BoeXNfdG9fZG1hKGRldiwgbWluX21hc2spOwo+
-ICB9Cj4gIAo+IAoKVGV4YXMgSW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAy
-MiwgMDAxODAgSGVsc2lua2kuClktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlw
-YWlra2EvRG9taWNpbGU6IEhlbHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 1.2.2020 13.20, Macpaul Lin wrote:
+> On Fri, 2020-01-31 at 16:50 +0200, Mathias Nyman wrote:
+>> On 17.1.2020 9.41, Macpaul Lin wrote:
+>>> According to NULL pointer fix: https://tinyurl.com/uqft5ra
+>>> xhci: Fix NULL pointer dereference with xhci_irq() for shared_hcd
+>>> The similar issue has also been found in QC activities in Mediatek.
+>>>
+>>> Here quote the description from the referenced patch as follows.
+>>> "Commit ("f068090426ea xhci: Fix leaking USB3 shared_hcd
+>>> at xhci removal") sets xhci_shared_hcd to NULL without
+>>> stopping xhci host. This results into a race condition
+>>> where shared_hcd (super speed roothub) related interrupts
+>>> are being handled with xhci_irq happens when the
+>>> xhci_plat_remove is called and shared_hcd is set to NULL.
+>>> Fix this by setting the shared_hcd to NULL only after the
+>>> controller is halted and no interrupts are generated."
+>>>
+>>> Signed-off-by: Sriharsha Allenki <sallenki@codeaurora.org>
+>>> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+>>> ---
+>>>    drivers/usb/host/xhci-mtk.c | 2 +-
+>>>    1 file changed, 1 insertion(+), 1 deletion(-)
+>>>
+>>> diff --git a/drivers/usb/host/xhci-mtk.c b/drivers/usb/host/xhci-mtk.c
+>>> index b18a6baef204..c227c67f5dc5 100644
+>>> --- a/drivers/usb/host/xhci-mtk.c
+>>> +++ b/drivers/usb/host/xhci-mtk.c
+>>> @@ -593,11 +593,11 @@ static int xhci_mtk_remove(struct platform_device *dev)
+>>>    	struct usb_hcd  *shared_hcd = xhci->shared_hcd;
+>>>    
+>>>    	usb_remove_hcd(shared_hcd);
+>>> -	xhci->shared_hcd = NULL;
+>>>    	device_init_wakeup(&dev->dev, false);
+>>>    
+>>>    	usb_remove_hcd(hcd);
+>>>    	usb_put_hcd(shared_hcd);
+>>> +	xhci->shared_hcd = NULL;
+>>>    	usb_put_hcd(hcd);
+>>>    	xhci_mtk_sch_exit(mtk);
+>>>    	xhci_mtk_clks_disable(mtk);
+>>>
+>>
+>> Could you share details of the NULL pointer dereference, (backtrace).
+> 
+> This bug was found by our QA staff while doing 500 times plug-in and
+> plug-out devices. The backtrace I have was recorded by QA and I didn't
+> reproduce this issue on my own environment. However, after applied this
+> patch the issue seems resolve. Here is the backtrace:
+> 
+> Exception Class: Kernel (KE)
+> PC is at [<ffffff8008cccbc0>] xhci_irq+0x728/0x2364
+> LR is at [<ffffff8008ccc788>] xhci_irq+0x2f0/0x2364
+> 
+> Current Executing Process:
+> [iptables, 859][netdagent, 770]
+> 
+> Backtrace:
+> [<ffffff80080ead58>] __atomic_notifier_call_chain+0xa8/0x130
+> [<ffffff80080eb6d4>] notify_die+0x84/0xac
+> [<ffffff800808e874>] die+0x1d8/0x3b8
+> [<ffffff80080a89b0>] __do_kernel_fault+0x178/0x188
+> [<ffffff80080a81b4>] do_page_fault+0x44/0x3b0
+> [<ffffff80080a811c>] do_translation_fault+0x44/0x98
+> [<ffffff8008080e08>] do_mem_abort+0x4c/0x128
+> [<ffffff80080832d0>] el1_da+0x24/0x3c
+> [<ffffff8008cccbc0>] xhci_irq+0x728/0x2364
+> [<ffffff8008c98804>] usb_hcd_irq+0x2c/0x44
+> [<ffffff8008179bb0>] __handle_irq_event_percpu+0x26c/0x4a4
+> [<ffffff8008179ec8>] handle_irq_event+0x5c/0xd0
+> [<ffffff800817e3c0>] handle_fasteoi_irq+0x10c/0x1e0
+> [<ffffff80081787b0>] __handle_domain_irq+0x32c/0x738
+> [<ffffff800808159c>] gic_handle_irq+0x174/0x1c4
+> [<ffffff8008083cf8>] el0_irq_naked+0x50/0x5c
+> [<ffffffffffffffff>] 0xffffffffffffffff
+> 
+
+Thanks,
+Could you help me find out which line of code xhci_irq+0x728 is in your case.
+
+As Guenter pointed out there is a risk of turning the NULL pointer dereference
+into a use after free if we just solve this by setting xhci->shared_hcd = NULL
+later.
+
+If you still have that kernel around, and xhci is compiled in:
+gdb vmlinux
+gdb li *(xhci_irq+0x728)
+
+-Mathias
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
