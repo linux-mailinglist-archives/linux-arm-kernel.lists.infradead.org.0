@@ -2,91 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95215152027
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 19:01:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EA151520C8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 20:08:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9dcQugUiB66M5NwPjZubQWwsB4I3AoNFRZKLYf4iuOk=; b=IypsHbkuTmRkarEdzg0H7wBHrA
-	q22uWsrL5oyCjjizRQsvz22FU7ZyVn3Nc7kkAnpcbu/oGrQeJaYr4oVXul+uFGiOFo8IeI0owR5DR
-	za9ieTi1CPjGz24X2FUroOgC4unH7qYpmZnMxKKqHnwWNvCZgitbOSoL2IPWzBgvh5q0Qt/2YewyY
-	BhJmJmngnrnf1ytnrbx7ARuBfGZLFPvAuL+6OfoCOYWQKY39tcdvbQ/XthVd4vJ6pPk1Xz6AvhVm3
-	szAVEaqqPR6e5lMExuTV6SM9aMkrvTutJBjmJBgz2UOBTFFdY04VV5skloNu+KGpWIYKwJeI+aGC4
-	BoAdix2g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=R9Ywd6viR/uoyy3OE22TLZqHomxP3cYNS3tGHGeZWPo=; b=bAR/J11PcNIvgW
+	DjYXOBIvsbCW1kzAQeo0fZEVneRqzg0xOkAzV6cRxvEK9dlM7TRZKVGs6ihPGM2YjqNMTHk0XEnqJ
+	78InPI/bC6KS4YQ2YEXBt4hlQenWqfelkT6xr6sasNqF4cLkSBcK6zizlFVc/+4V0Lc05edxMYwPv
+	hcdnBZyfyrwLI2qVzcFKXgKjsVKs7Z/iaifZ3tX/kSBXJVUYEIaGN39jf7NRzjA4pnVb4VfGqs56a
+	krvL46QUa+KzvDWIkV6M+KxToABbomSS1VSoTaef6NqRBpcBW8bYVutARkl548E7ND+iNcqyIoDAL
+	/CWXEPuJrIyfazTnGTqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz2VK-0001RN-VW; Tue, 04 Feb 2020 18:00:54 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1iz3Z2-0005Ol-UB; Tue, 04 Feb 2020 19:08:48 +0000
+Received: from mail-bn8nam12on2074.outbound.protection.outlook.com
+ ([40.107.237.74] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz2Ty-0007bZ-Sj
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 17:59:32 +0000
-Received: by mail-pf1-x444.google.com with SMTP id k29so9820843pfp.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Feb 2020 09:59:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=JyMzGy1x0Bon4+AzM/Sj0HNrbhuXPMQCx6Z9N3h13AI=;
- b=UI3nq/p9II8ri8gMr7xe4jx5TsTT5VWWhbBR7v+ihCbko9aZN9SZ1sO8nro5JpLhNI
- EK48Cl3ywcSaRhchOJXm1FYtGAJFWf8rKE1of5WvcC1GPSpYi2MAowQyiHBwkhbFJbfv
- 6ns+r7NVnz/0MX1TwyA7zFwrIRmqfiAMNOc3R0/VBdH+p1zKGvql9LZ2yZCRjml/vXGj
- TBsu7RPFMwRMm/WTz3k9ZzWdtVrAJp1YVe/Ha9nPQKj33UPVFNqO7txSOBrzN60lTGQ8
- Zr5EpXwvVtutXXkTyQh9O/bprChPTWnAMhKvx671mDx9/Ye0P/brBW39AT4A7iMZLcOU
- FYjA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=JyMzGy1x0Bon4+AzM/Sj0HNrbhuXPMQCx6Z9N3h13AI=;
- b=DFafEdUclgSwalXTwH4gUu6KvUuXZ0Hq/thL7iTjWvH6holWVtBjV7606whyZRDr8I
- r53znUCM5UY3Z1UPpAC9C0A9k5CVMlFLGQLaiLyOY+x5as4OizX82wejlAAGfiEkQwHa
- 3DVeWKTtLce5oxhqQ/1cR94AjTFgNlU3utj9JZuhcTC486iwiHOpgfPMwEsATb3Gyea1
- Eew1sZXq9OJt3yS9qgRSgOLIhPgzpRWVRgszEPICPCsq3kiwKnU1WEaUhb6P8PZyu0U/
- iydcn1qAct4TVFukbIE6bCHXG/aN2yrJkIS6lrG+h6BGItnqsUHi0353vv9AxngbLWH8
- nHZg==
-X-Gm-Message-State: APjAAAU9IWfrgUMv7819OVt5jA5mg0hBLaB9O7ri2TNP4tnSwYuGhhWT
- HyvEcXUE5LkJSrTkViuX+cI=
-X-Google-Smtp-Source: APXvYqwVVGMbq4U6Mx/8kHYp68Lm5UDq8ejfa6s44BKqQGNs00hDz/L86IOvGdVpIQoM+QmiUsAd+Q==
-X-Received: by 2002:a62:f243:: with SMTP id y3mr32842181pfl.146.1580839169558; 
- Tue, 04 Feb 2020 09:59:29 -0800 (PST)
-Received: from localhost.localdomain ([2620:0:1008:fd00:25a6:3140:768c:a64d])
- by smtp.gmail.com with ESMTPSA id
- d73sm25414465pfd.109.2020.02.04.09.59.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 04 Feb 2020 09:59:28 -0800 (PST)
-From: Andrei Vagin <avagin@gmail.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: [PATCH 5/5] arm64/vdso: Restrict splitting VVAR VMA
-Date: Tue,  4 Feb 2020 09:59:13 -0800
-Message-Id: <20200204175913.74901-6-avagin@gmail.com>
-X-Mailer: git-send-email 2.17.2
-In-Reply-To: <20200204175913.74901-1-avagin@gmail.com>
-References: <20200204175913.74901-1-avagin@gmail.com>
+ id 1iz3Yv-0005N7-LC
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 19:08:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hPkzUghNOWEg5VPXEwtNBi1CaBKVVSvP6XgR0WblZEe4/Yi9qohELrCsVbDmJWCamilzeBFERAyVMyQvkKTWl2ICXScjNyLsOr9usW5sqIjA607Y6tnl2rtHS1iNo0ZHGP+GOyl/OWm04thEPawJHLKapRPwA9oy9XbiCECtPa4RHJsogyfUuvt/KhAeASCP+LsJulbPnR7Fzq/U4MqN2azxKJ8YDzFJTVoC5Oe09WF6oP6dJ1wZhiewRpjha2bZgLHTWk1RR55CuoWcWELEm6llGAtNt7nr/ii9dzu99VafM9ekxSDilM3iQnrAcDo2YslqZfzoyJNadog9D92XNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5Z2WeSN6w+/+6yi8SsUJmbXmRagu9aJzbUdGY+2+m3Q=;
+ b=Be2qB7w1fx7g/IZAWyWVWs18B0DNmYCZFbhpO+tEeTbNAy57jQAonj/a1mPxZHHXDz7cK0KEBysG15zsGphq5X/7gbbU4Md2hnt/D4FvhkaaHaRqgUHHk+z086eTljDtPe6qwBobeK5iy7FKNqZZtgwpdmLSYu+XVFva/4xnlhdDrr+NSkB2UaciGak+wQiiBwM0PQBQ60wG+2Qvu3o8e8I0mVvh6nH9AOEagSp1F8ArOUlB7TBaAOWm6puziyhzs+0ybEQwZqqDLfek9SeLeeBHoTcNjtt41263FmUDA/O2XnhR3s035d2IgVUBsQi5/R0MGJcJZqKtkoaY9tNCjA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5Z2WeSN6w+/+6yi8SsUJmbXmRagu9aJzbUdGY+2+m3Q=;
+ b=kdS8Hdebzv2979Egke08o/VzVrwZv4pvkd5qviLwJulDnNqLrKYYBGbEXkhacyi8q4V7zKkXbfHTmNexpcUSTXfH5EGk4+hXV5doYXTZJDYsPTn7b0s/NOy6jK3QvEzaXUZc4FT/yc+UDRgeTx378XXfISM5QWAZ5Fn7/cVIuBs=
+Received: from MN2PR02MB5727.namprd02.prod.outlook.com (20.179.85.153) by
+ MN2PR02MB6240.namprd02.prod.outlook.com (52.132.174.20) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2686.32; Tue, 4 Feb 2020 19:08:36 +0000
+Received: from MN2PR02MB5727.namprd02.prod.outlook.com
+ ([fe80::e09d:a160:5349:8ed0]) by MN2PR02MB5727.namprd02.prod.outlook.com
+ ([fe80::e09d:a160:5349:8ed0%6]) with mapi id 15.20.2686.031; Tue, 4 Feb 2020
+ 19:08:36 +0000
+From: Mubin Usman Sayyed <MUBINUSM@xilinx.com>
+To: Michal Simek <michals@xilinx.com>, "tglx@linutronix.de"
+ <tglx@linutronix.de>, "jason@lakedaemon.net" <jason@lakedaemon.net>,
+ "maz@kernel.org" <maz@kernel.org>, Michal Simek <michals@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Subject: RE: [PATCH] irqchip: xilinx: Add support for multiple instances
+Thread-Topic: [PATCH] irqchip: xilinx: Add support for multiple instances
+Thread-Index: AQHV2EFy1wtnp2eJaEKfI1gB9M0udKgE1vsAgAaUMeA=
+Date: Tue, 4 Feb 2020 19:08:36 +0000
+Message-ID: <MN2PR02MB5727F3B9694669B10D25E841A1030@MN2PR02MB5727.namprd02.prod.outlook.com>
+References: <1580480338-3361-1-git-send-email-mubin.usman.sayyed@xilinx.com>
+ <28c517f7-9cff-f897-c5a9-2216dd769c64@xilinx.com>
+In-Reply-To: <28c517f7-9cff-f897-c5a9-2216dd769c64@xilinx.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=MUBINUSM@xilinx.com; 
+x-originating-ip: [149.199.50.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: dcdf5ac3-818f-4f87-1d95-08d7a9a5a303
+x-ms-traffictypediagnostic: MN2PR02MB6240:|MN2PR02MB6240:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MN2PR02MB62403AEFF357BA78358997E7A1030@MN2PR02MB6240.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-forefront-prvs: 03030B9493
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(39860400002)(346002)(396003)(136003)(376002)(199004)(189003)(81166006)(33656002)(8936002)(81156014)(8676002)(66476007)(66446008)(5660300002)(66556008)(66946007)(76116006)(7696005)(316002)(64756008)(110136005)(54906003)(478600001)(4326008)(6506007)(53546011)(86362001)(107886003)(55016002)(26005)(52536014)(2906002)(186003)(71200400001)(9686003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR02MB6240;
+ H:MN2PR02MB5727.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: IFsBdaKuDeAXK+R4zowpCkLgXZ0YkLebeb+ixWMs9WU+k/6LwADmpc/UUe9sBPVtafkWCa+AmdXYnH1q1XBQEGvg16FYQAEOI11G/S/vgBGxas1kqU45HxSkEtxrfz82p0NEWHnMYoKPQdupSL6R1E4kOhfi/LoiZ9ZqrfOtYNWeoQf/afa0lbt+HdeKQuE9sncADrWnNgz44UjoqTQCMse+ywwTPnsENVkpYCXUJn65D4wL+FHAs8GW/KXwxWRpNB+C9Ov1mmcx4o17A/Ron6UDjhlH22EjIT8L2f1klrTSycMJLbBGgLXp9USiRGd9Fw2phCACqKoB83gyGNDgMkcr4jEY71tMAslzfQRfQPChlElYNHXYf7bP6Ex8o/nHn3woR4XL8IMS8Y6YrsnghuAk9DiG9XY+ctHMUxceRdDquVw/F/rUVOrzDGJ7yqw6
+x-ms-exchange-antispam-messagedata: s+C8IPZ8tWI52aNkFl6fRv8R4iD0WzMSdpVMLn0QY83SPjXgnAFKvwLR1fv8uB1Trcf7XYNjySktCjOc55gbWRxJI0r2SjUvxdPVLuFu7DaV6GWBB60dIPCjNwDeeSitvWr0KUyNIoQd8DCOiVd9Fw==
+MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dcdf5ac3-818f-4f87-1d95-08d7a9a5a303
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Feb 2020 19:08:36.4793 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: yJ43KNy15s56xFVC21Rn6CcBUbXcZBmIIgggW5WL9ViOWHPAQEtUVs7f4/qSo2jjDiCODo8kGlRfzT1GEigEUw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR02MB6240
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_095931_008415_82AF6827 
-X-CRM114-Status: GOOD (  12.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200204_110841_723750_1BDB46E6 
+X-CRM114-Status: GOOD (  16.98  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [avagin[at]gmail.com]
+ no trust [40.107.237.74 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,69 +122,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Gleixner <tglx@linutronix.de>, Andrei Vagin <avagin@gmail.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Dmitry Safonov <dima@arista.com>
-MIME-Version: 1.0
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Anirudha Sarangi <anirudh@xilinx.com>,
+ Siva Durga Prasad Paladugu <sivadur@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Forbid splitting VVAR VMA resulting in a stricter ABI and reducing the
-amount of corner-cases to consider while working further on VDSO time
-namespace support.
+Hi Michal,
 
-As the offset from timens to VVAR page is computed compile-time, the pages
-in VVAR should stay together and not being partically mremap()'ed.
+> -----Original Message-----
+> From: Michal Simek <michal.simek@xilinx.com>
+> Sent: Friday, January 31, 2020 8:06 PM
+> To: Mubin Usman Sayyed <MUBINUSM@xilinx.com>; tglx@linutronix.de;
+> jason@lakedaemon.net; maz@kernel.org; Michal Simek
+> <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org; Siva Durga Prasad Paladugu
+> <sivadur@xilinx.com>; Anirudha Sarangi <anirudh@xilinx.com>
+> Subject: Re: [PATCH] irqchip: xilinx: Add support for multiple instances
+> 
+> On 31. 01. 20 15:18, Mubin Usman Sayyed wrote:
+> > From: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
+> >
+> > This patch adds support for multiple instances of xilinx interrupt
+> > controller. Below configurations are supported by driver,
+> >
+> > - peripheral->xilinx-intc->xilinx-intc->gic
+> > - peripheral->xilinx-intc->xilinx-intc
+> >
+> > Signed-off-by: Anirudha Sarangi <anirudha.sarangi@xilinx.com>
+> > Signed-off-by: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
+> > ---
+> >  drivers/irqchip/irq-xilinx-intc.c | 143
+> > +++++++++++++++++++++++---------------
+> >  1 file changed, 87 insertions(+), 56 deletions(-)
+> >
+> > diff --git a/drivers/irqchip/irq-xilinx-intc.c
+> > b/drivers/irqchip/irq-xilinx-intc.c
+> > index e3043de..43d6e4e 100644
+> > --- a/drivers/irqchip/irq-xilinx-intc.c
+> > +++ b/drivers/irqchip/irq-xilinx-intc.c
+> > @@ -15,10 +15,11 @@
+> >  #include <linux/irqchip/chained_irq.h>  #include <linux/of_address.h>
+> > #include <linux/io.h> -#include <linux/jump_label.h>  #include
+> > <linux/bug.h>  #include <linux/of_irq.h>
+> >
+> > +static struct xintc_irq_chip *primary_intc;
+> 
+> nit: please place it below xintc_irq_chip.
+[Mubin]:  I will fix it in v2.
+> 
+> > +
+> >  /* No one else should require these constants, so define them locally
+> here. */
+> >  #define ISR 0x00			/* Interrupt Status Register */
+> >  #define IPR 0x04			/* Interrupt Pending Register */
+> > @@ -32,35 +33,40 @@
+> >  #define MER_ME (1<<0)
+> >  #define MER_HIE (1<<1)
+> >
+> > -static DEFINE_STATIC_KEY_FALSE(xintc_is_be);
+> 
+> I am playing with this driver a little bit now and I pretty much dislike remove
+> this. I haven't see any configuration which mixes little and big endian
+> together. That's why I prefer not to create read_fn/write_fn hooks.
+[Mubin]:  Agreed,  I will remove read_fn/write_fn and use xintc_is_be in v2.
 
-Signed-off-by: Andrei Vagin <avagin@gmail.com>
----
- arch/arm64/kernel/vdso.c | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
-
-diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
-index 2e553468b183..e6ebdc184c1e 100644
---- a/arch/arm64/kernel/vdso.c
-+++ b/arch/arm64/kernel/vdso.c
-@@ -229,6 +229,17 @@ static vm_fault_t vvar_fault(const struct vm_special_mapping *sm,
- 	return vmf_insert_pfn(vma, vmf->address, pfn);
- }
- 
-+static int vvar_mremap(const struct vm_special_mapping *sm,
-+		       struct vm_area_struct *new_vma)
-+{
-+	unsigned long new_size = new_vma->vm_end - new_vma->vm_start;
-+
-+	if (new_size != VVAR_NR_PAGES * PAGE_SIZE)
-+		return -EINVAL;
-+
-+	return 0;
-+}
-+
- static int __setup_additional_pages(enum arch_vdso_type arch_index,
- 				    struct mm_struct *mm,
- 				    struct linux_binprm *bprm,
-@@ -311,6 +322,7 @@ static struct vm_special_mapping aarch32_vdso_spec[C_PAGES] = {
- 	{
- 		.name = "[vvar]",
- 		.fault = vvar_fault,
-+		.mremap = vvar_mremap,
- 	},
- 	{
- 		.name = "[vdso]",
-@@ -493,6 +505,7 @@ static struct vm_special_mapping vdso_spec[A_PAGES] __ro_after_init = {
- 	{
- 		.name	= "[vvar]",
- 		.fault = vvar_fault,
-+		.mremap = vvar_mremap,
- 	},
- 	{
- 		.name	= "[vdso]",
--- 
-2.24.1
-
-
+Thanks,
+Mubin
+> 
+> Thanks,
+> Michal
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
