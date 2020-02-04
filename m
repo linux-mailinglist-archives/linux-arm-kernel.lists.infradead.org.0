@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F06421523D8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 01:08:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A2791523D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 01:08:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qx59XRteV6tY/NSVGNVXlUNeVGTYTyYIVT4C/PldzBw=; b=EuSCaT7RD/Rt/9
-	nkD5U7QyG515RSbEVFkKFtApA/fjidleeCu+A6nhDh2oBuvsYo9BqpTRWtMZalK7kj37WEZSzFDRF
-	l6GImC0XV4OeHDYjHQCpKnnOp8djMPvtPhy1sVKOr0Jcic/Rt1Z96ZdYFwgHsRwlfC4vhwY1VWrvG
-	BWd10fZZOlXNwb0TF9K7RVawGOxvmUAk1rz6y4dxz1jdSGxIisdas48q8OmyDn/cx1vCuZeXkCrbQ
-	QCi9HSKp7Sb+Sx2x54Zd9lVFqh9vgDUWBthrNfTxMJMtxfw086OpXr8VfzWBupjCQ43KyTYcCdtV3
-	p0E6avUyvWkRAQWtvhaQ==;
+	List-Owner; bh=J0dEZgyG0egTJe5RiX5ywFAkX8meVWPWJ/41znsxrr4=; b=WTweXc9L2gMUfM
+	jpU1YG2zUYLmZYXrOafKLRsJk65UZ737GlQo6zamOYgqpnPbdA8N/4kvoEzdUfG5gubKGBodjxw7n
+	8wHmZees4x7DpqWj30DFDYaqNbPpMQUh/SZezakQM0F6al5qFv2E9NjSiB+gQcjyC8KrfOMFPvLPT
+	czZVM5uMOCHWTxQm7uuXtsp6FOYz0Y8DiP7F/m4RmwMjdrmS31EdlCw26xJKmTYNPPqlxHNUZRyvd
+	PprlzdRuW/uyhjPwbQeq3QpIVgg87ElSzVizmRkZwMfX/Uwi5Oo/+tHuRDRYDtllvhiM52mGsC70/
+	0W8C69zbEi0Yi7x5ZQ3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz8F0-00069p-VT; Wed, 05 Feb 2020 00:08:26 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1iz8FD-0006MZ-3z; Wed, 05 Feb 2020 00:08:39 +0000
+Received: from mail-pj1-x1034.google.com ([2607:f8b0:4864:20::1034])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz8E6-0005OO-TD; Wed, 05 Feb 2020 00:07:32 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id q39so155770pjc.0;
- Tue, 04 Feb 2020 16:07:30 -0800 (PST)
+ id 1iz8E8-0005Qn-RE; Wed, 05 Feb 2020 00:07:34 +0000
+Received: by mail-pj1-x1034.google.com with SMTP id 12so146478pjb.5;
+ Tue, 04 Feb 2020 16:07:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Xy9neKY+qvsY0GTBRTsRimyTOioxmSqME5XU6N4LU3s=;
- b=Ti2FtfJezQkJeoAyfzKhepKSCTUuIOkCYcaCB4Pl7Wn+7NIpq5ndjx8RrIbkw7P2I+
- nqufOgXEjyQ9yajE6vHccQEKXXbLfsRp52UbiDDKQ77JyYR6ZpEblAvWBvJmLstwVQgt
- Dz7VbK/l/SuhrHdsspb25jOl21o4sM2EUEf3hAqhu8yLh/KrxbYYQCdCOMrVEqJMtxhh
- usjDyE1E9KNltxDx11+0bqxaTpHNsaeywpzKkw3264WZJyJiDbjS3rUkYtXDJ7fN04/6
- m9yA3kMfa55KSnJO8U2lpus+CQVjdKKqGFLyrShq4oRjLY0Lwz8iGTciOd3wmRL7Jt0d
- /X4w==
+ bh=wc/K2VBiaEoAX8ksH2pdKPCsC2it4+zxHWGi9pFTCR0=;
+ b=LpX4vcwIJu2IyTR90vNarI+qCvGoHb1ZlWvp4HFsthjfhAQf+pTPZ9orM/1zzOjeGy
+ IGh1grpjO6hNg1h5TXud/wIV6ZjPVsSa1ZSnQVxwO6BcZDFSt+rlWUKIdtC/UhNu7VXt
+ lepq53wH10uOLMYt5JXvQk+Ps4jVMGIiz6Kw7aX4DzowJ+oCaFSxJN5xnLuPlKCg1BTG
+ 690+NA/POlrwDAohjK0Pz0ee5LJJx63gpaJiN8CZW/TsISwcPOmxhL5MO6wRh7p/t5kH
+ tWskAuCKC3jODHl1IstXhxUHSvDx8hYy8m5iDgSMVnlVcxdJEiM3QMzBrBkXqzNwLM1Y
+ fUcg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Xy9neKY+qvsY0GTBRTsRimyTOioxmSqME5XU6N4LU3s=;
- b=OVyXjw5s8oQymNVAGxCIwaeIw0AC5kHl+Ffaj+zIKiY00ye2PuqD7tfE/k0OM7Qo0z
- uFTImN7EUbyAl9atFpU2q/gr6WDg+NdDBzCJKWiHzta4l2i/VbV4pqalxMxlxfXJSpG2
- ZYKxOlM2a0ypMZtPWt4gTMt70hz4r1wQQPgWae3fPLfRfnXsXBk2fzS9zOQiZjxsttLi
- TM7irZzoWFH6QYjskqIgx0mj+mFmsvcjcMSXJLI82un2E/QxFrnNC1JZLZsyFxEuuQxh
- 6TjiRVisNawgYO9EQGyo1m+StRbsQNEyiCjrATwkTXOr/aySrxg98sljQgC+G3D1EFtO
- sHTg==
-X-Gm-Message-State: APjAAAVnkCn4l+TrkdUi6338CEKbq4jSMm4ypmW4jyxk+vdGvKrGoZHT
- bipJ080CRgYpPcZWeXkoMb275J+r
-X-Google-Smtp-Source: APXvYqyBs/noppCZUBoSmP/i2D6fgztkqlGLtnvnbKInlX4dL6XLl0QIvoeWWFC42Uzl8LEDSrHCjQ==
-X-Received: by 2002:a17:902:6944:: with SMTP id
- k4mr18346685plt.214.1580861250019; 
- Tue, 04 Feb 2020 16:07:30 -0800 (PST)
+ bh=wc/K2VBiaEoAX8ksH2pdKPCsC2it4+zxHWGi9pFTCR0=;
+ b=lWRU/npM8OyQOk4PVFQvZ0vZA9AOGMHJhngtnLPRaMwFB/7hhXxH0fU451MVRh715G
+ 06a1U5UkvUcP+CPB8Q3iHH4DN2LznQivHEyGdI10w5mqNq70rLTFlhWDwRCc0SM8sI3j
+ 0eCKzXVD1qGHwbsbWdWynpPR3B3y2zMKHzSUoRQhOZaJOatvo8auYRD5GOfr2vMIF3Ae
+ se/4iGsIVpH1hx+87TfSPLYpOpUk3nbJSgzKEZ/jDe/526wkAnGgKwaazmJNXjCXSaAG
+ x2vhL6EG2QYWVgYR6wSEri4LuiIS6qYLBL9HVKmboPZ+3uNiUkMrcvxIM+rNDXDMuUfG
+ YAog==
+X-Gm-Message-State: APjAAAWlrhvtTX8Y7ez95s5uTuMOdfZFm7FUFvrmEdV9ZK2Og8Hwg7Gp
+ dGVbi0id4fKKsM6qJDKpCJMKBU2d
+X-Google-Smtp-Source: APXvYqxIpUaGYHjBBZkqBxq9C4gI7LzQDwvfUSTeSLhEkS5m4RgcX30JMcEC+W07zub0VrT5fr8jEw==
+X-Received: by 2002:a17:90a:7307:: with SMTP id
+ m7mr2194523pjk.75.1580861251789; 
+ Tue, 04 Feb 2020 16:07:31 -0800 (PST)
 Received: from localhost.localdomain (ip68-111-84-250.oc.oc.cox.net.
  [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id g2sm25575468pgn.59.2020.02.04.16.07.28
+ by smtp.gmail.com with ESMTPSA id g2sm25575468pgn.59.2020.02.04.16.07.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 04 Feb 2020 16:07:29 -0800 (PST)
+ Tue, 04 Feb 2020 16:07:31 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 03/12] dt-bindings: arm: bcm: Convert Northstar Plus to YAML
-Date: Tue,  4 Feb 2020 15:55:43 -0800
-Message-Id: <20200204235552.7466-4-f.fainelli@gmail.com>
+Subject: [PATCH v2 04/12] dt-bindings: arm: bcm: Convert Northstar 2 to YAML
+Date: Tue,  4 Feb 2020 15:55:44 -0800
+Message-Id: <20200204235552.7466-5-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20200204235552.7466-1-f.fainelli@gmail.com>
 References: <20200204235552.7466-1-f.fainelli@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_160731_022237_9E1C698F 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20200204_160732_913981_CC951C22 
+X-CRM114-Status: GOOD (  14.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -114,78 +114,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update the Broadcom Northstar Plus SoC binding document for boards/SoCs
-to use YAML. Verified with dt_binding_check and dtbs_check.
+Update the Broadcom Northstar 2 SoC binding document for boards/SoCs to
+use YAML. Verified with dt_binding_check and dtbs_check.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../devicetree/bindings/arm/bcm/brcm,nsp.txt  | 34 ------------------
- .../devicetree/bindings/arm/bcm/brcm,nsp.yaml | 36 +++++++++++++++++++
- 2 files changed, 36 insertions(+), 34 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,nsp.txt
- create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,nsp.yaml
+ .../devicetree/bindings/arm/bcm/brcm,ns2.txt  |  9 --------
+ .../devicetree/bindings/arm/bcm/brcm,ns2.yaml | 23 +++++++++++++++++++
+ 2 files changed, 23 insertions(+), 9 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,ns2.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,ns2.yaml
 
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,nsp.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,nsp.txt
+diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,ns2.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,ns2.txt
 deleted file mode 100644
-index eae53e4556be..000000000000
---- a/Documentation/devicetree/bindings/arm/bcm/brcm,nsp.txt
+index 35f056f4a1c3..000000000000
+--- a/Documentation/devicetree/bindings/arm/bcm/brcm,ns2.txt
 +++ /dev/null
-@@ -1,34 +0,0 @@
--Broadcom Northstar Plus device tree bindings
----------------------------------------------
+@@ -1,9 +0,0 @@
+-Broadcom North Star 2 (NS2) device tree bindings
+-------------------------------------------------
 -
--Broadcom Northstar Plus family of SoCs are used for switching control
--and management applications as well as residential router/gateway
--applications. The SoC features dual core Cortex A9 ARM CPUs, integrating
--several peripheral interfaces including multiple Gigabit Ethernet PHYs,
--DDR3 memory, PCIE Gen-2, USB 2.0 and USB 3.0, serial and NAND flash,
--SATA and several other IO controllers.
--
--Boards with Northstar Plus SoCs shall have the following properties:
+-Boards with NS2 shall have the following properties:
 -
 -Required root node property:
 -
--BCM58522
--compatible = "brcm,bcm58522", "brcm,nsp";
--
--BCM58525
--compatible = "brcm,bcm58525", "brcm,nsp";
--
--BCM58535
--compatible = "brcm,bcm58535", "brcm,nsp";
--
--BCM58622
--compatible = "brcm,bcm58622", "brcm,nsp";
--
--BCM58623
--compatible = "brcm,bcm58623", "brcm,nsp";
--
--BCM58625
--compatible = "brcm,bcm58625", "brcm,nsp";
--
--BCM88312
--compatible = "brcm,bcm88312", "brcm,nsp";
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,nsp.yaml b/Documentation/devicetree/bindings/arm/bcm/brcm,nsp.yaml
+-NS2 SVK board
+-compatible = "brcm,ns2-svk", "brcm,ns2";
+diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,ns2.yaml b/Documentation/devicetree/bindings/arm/bcm/brcm,ns2.yaml
 new file mode 100644
-index 000000000000..fe364cebf57f
+index 000000000000..2451704f87f0
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/bcm/brcm,nsp.yaml
-@@ -0,0 +1,36 @@
++++ b/Documentation/devicetree/bindings/arm/bcm/brcm,ns2.yaml
+@@ -0,0 +1,23 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/arm/bcm/brcm,nsp.yaml#
++$id: http://devicetree.org/schemas/arm/bcm/brcm,ns2.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Broadcom Northstar Plus device tree bindings
-+
-+description:
-+  Broadcom Northstar Plus family of SoCs are used for switching control
-+  and management applications as well as residential router/gateway
-+  applications. The SoC features dual core Cortex A9 ARM CPUs, integrating
-+  several peripheral interfaces including multiple Gigabit Ethernet PHYs,
-+  DDR3 memory, PCIE Gen-2, USB 2.0 and USB 3.0, serial and NAND flash,
-+  SATA and several other IO controllers.
++title: Broadcom North Star 2 (NS2) device tree bindings
 +
 +maintainers:
 +  - Ray Jui <rjui@broadcom.com>
@@ -197,14 +164,9 @@ index 000000000000..fe364cebf57f
 +  compatible:
 +    items:
 +      - enum:
-+        - brcm,bcm58522
-+        - brcm,bcm58525
-+        - brcm,bcm58535
-+        - brcm,bcm58622
-+        - brcm,bcm58623
-+        - brcm,bcm58625
-+        - brcm,bcm88312
-+      - const: brcm,nsp
++        - brcm,ns2-svk
++        - brcm,ns2-xmc
++      - const: brcm,ns2
 +
 +...
 -- 
