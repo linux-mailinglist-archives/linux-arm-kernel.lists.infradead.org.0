@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95C69151B84
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:42:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DABE6151B88
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:42:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=puvbFunL+YBQuSPOGkxt+pdIfPDyjoJSQVeAIJzBJUQ=; b=PC4jVok9I9TY/D
-	+3OhWq7uzpAm580fwLXh6TjJOjj1bnR45nIo8CsaZU388HI7OokTXccMXVGB2kqpUM77oG87ZrTqn
-	Cj/CfX9DutpDubvtGaQJfOkgK2OEyoWhNVEy/o4DugboVQ7rTsdOQq1PXTX9r2Tt6kKJZZotheNE1
-	HTrkEC0InCe4EMM8JW6UniQEm0AktdVrSAFNaQgUvh91vnoHNMwceHWjs1CKozdZvfKIuv95DiA9y
-	2xn0TpvQj4GaM1dGIlUF+VobliUWB1BE7OcxCnZoJRTSa4FLhSODv35ko6Xy3RkvQb8ZTKeNVCv92
-	HVb/EGqHDiQhn91QePuQ==;
+	List-Owner; bh=b0mRgN2tbxvWE9jZjj/ZBy/obZuCFYMetgkJDk3Hy4g=; b=oajwzdc2yG2n+j
+	eP9Twdg0sKLCzNqgf9DOr/t3dh07rJTTwAJjtuFB2td/HaTQfGI+o+xMMry2939gQhx5ERX9iIOn9
+	M3mHQWfN4b0tIDL+ct35NZE6UyUef38GWnf4MYRVlcFB+/ihuqUo1/hSorVgqm6NFszBB13aO6nrU
+	yTlV381Nf4RRQ0MXcYQs2GEsRkPc/tyx/FI+F3WNN8J4daYh2HGvLljGnS9hVx5Hl3q39KPdiSNzX
+	JCtDk/mVTSN8cpkLEUe5wmompzfCLSpyUdINyoNOTXRTC86mGpusfFUGdTfpTtv+TEizGo2nGWVi0
+	l4/efOeSusoMaT5SJ8nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyyT5-0006BL-2x; Tue, 04 Feb 2020 13:42:19 +0000
+	id 1iyyTM-0006NW-Cw; Tue, 04 Feb 2020 13:42:36 +0000
 Received: from mail-eopbgr150084.outbound.protection.outlook.com
  ([40.107.15.84] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyySE-0005ZB-E0
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:41:29 +0000
+ id 1iyySH-0005ZB-E6
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:41:31 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ikNl+ZG6DjqdKfvNr9WmM/VSQzCJFnhFmB7LjW7ELBbCN/p5dDbXNRxCDIrevt35ojqGOky7TH2YM0tC2GpWTyij5+Af2ssdxHKLZEZcDhsDlNJ5N9hCRsJGQywuYOX6aWti2NtDeDcf4mgvCNOxDC6FgaiA7VelgMk/RxlG+yXVrLl0Rcu5JZTyCGVh9Tnr80wAt7mf+L8R2eb/jwjEjapNeaB3V0FQ0GPhXbN7dskKSTBl5w6sD31XUewYM5ig9aZVzCAqqOVHIl8DMlA+cOfV9PLSZkq0FCF1kV3QViFbZ5tmAxJw1KZEowWhqUkG1LttU6RHhN4ltf5ls1T4tw==
+ b=R3ftOINwGo+HFxru8tipcMgRpGhcR3H/NSZZLGhFdH9toaVxb6C645WkCcKI4fRz2yAXaA5ye16R63XZ+iAIebnxDBB8gt6MwTIMrj1Fl4pKLFWExw57NgocX9RIyCgFJeOzTNdA5DJKwrQHY844NTML4gpPAVT2/gzGOqMy2DcO/ucs72cIbYLd6aoX/UHzogVF531LZirOoDVgBuwznMDWIya58GVcMqZSiYuqFx8/Eg65LVYieCJuKSv9NnK7wCr0ek5ZpDuoEb0Pj5GECtUWtkq2o2CRHevRDKoiuACvhlPcBVnrwr7pSzefTZRRszQDOVz3+yK10MbKg/fjMA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=gwQeBUQfJB4vEvPaPWLOwmRp6IYIhy/cz/rkO377RO4=;
- b=ofyvhD4Gy8ZUFnm/r5Q6xRgZAEtomK/FZ2AbjeDBhYJ+KPuPmpRdhFiZAW+b7fublsj4XieF0pAl26hraUS8FyCe/Fm0cLigFLLy69PBJbQ0dEQDMmko3n34tA+v7o6nZfst2MHu8QRK5/Yo79MNG6vIvmmFCNkkHi3lgqcPRg1vKlRqenCOmuPTB5Bp1r0BKTEhXyqFAykd2F+7kk+ySojPTrltVMFQbtU3Sg2atigYlKfpNbEKytOd8pyCL/AovBElh0ifV+Ys57tjhxMm/ut7IenTfuSu47b6TmPQbLKrWPEoFMdrMnfXl6M3ge40QCloON1EBLUfa1m7xRhPJA==
+ bh=856MVVHfaue28uC7j+zrjbOHalXQ/kbePxN3row+0Yg=;
+ b=bETpXd+rF5C0zTu3lg6dSw7qR1O1plN+1spl9UthFh4gW6526pHurte48Piqrq/k7/vSpbEpIs9+uSmmp7nC5xHInCP8txpLc2QtUh5zbAlbCh8K2S5OLWJHDhA+RhmQSPFqxQSYvx8mHyUOfLpNKbjDxkc3q3H4j3HaGneZv6BAHeUVZUL9ZBBZGiEThpyn+D7AIHw+J7SQ9JLqqbiXO5ShnFYPWYxXLkVp/YM6QUU4EpGTDw62V3oMXKdXuJiWBkh3wBy/7cUKxPWVSTKTYcpqwAQ0sPh1ugczwVU/39CPekZKu58PmUzGasGtYNIyoATdNSKlGLrYPa7rJyiTEQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=gwQeBUQfJB4vEvPaPWLOwmRp6IYIhy/cz/rkO377RO4=;
- b=mQI/pCcIkjjbfbeUOndxBFVTIONsKdmZkk7YrrGzq2pCuUPnvCKKgs6IMmR42QZ6x/Spy95iNlSvB7CGcV4XN+Qh+lePr3Xfb9Thtl2upyD52C6wOkb1ZO3mFP8dNjAhxwKIr0gywp5CLvaKVK4viZ7zpwsLcWAwLYukg6InyVQ=
+ bh=856MVVHfaue28uC7j+zrjbOHalXQ/kbePxN3row+0Yg=;
+ b=nytRbPL3+ftY8W0um3Q3Jon/NiY6zxsUBSx620L3WOXi68WEaEI6zGsdN+M0lsf0T4lcKwfQFJBhSyPzqVqdBxgXFBuojxG6u3zaL/2gFYftVpHVT1wttFK/V9GsvPN8WNH24Osm1o8mLxvxIT4LIUB55pV80LPy2z7PfeiBY7A=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB4851.eurprd04.prod.outlook.com (20.176.215.16) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2686.32; Tue, 4 Feb 2020 13:41:22 +0000
+ 15.20.2686.32; Tue, 4 Feb 2020 13:41:27 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2686.031; Tue, 4 Feb 2020
- 13:41:22 +0000
+ 13:41:27 +0000
 From: peng.fan@nxp.com
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, sboyd@kernel.org,
  abel.vesa@nxp.com, aisheng.dong@nxp.com, leonard.crestez@nxp.com
-Subject: [PATCH 3/7] clk: imx: pfdv2: determine best parent rate
-Date: Tue,  4 Feb 2020 21:34:33 +0800
-Message-Id: <1580823277-13644-4-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH 4/7] clk: imx: add imx_hw_clk_cpuv2 for i.MX7ULP
+Date: Tue,  4 Feb 2020 21:34:34 +0800
+Message-Id: <1580823277-13644-5-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1580823277-13644-1-git-send-email-peng.fan@nxp.com>
 References: <1580823277-13644-1-git-send-email-peng.fan@nxp.com>
@@ -64,15 +64,15 @@ MIME-Version: 1.0
 Received: from localhost.localdomain (119.31.174.66) by
  HK0PR03CA0107.apcprd03.prod.outlook.com (2603:1096:203:b0::23) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2686.28 via Frontend Transport; Tue, 4 Feb 2020 13:41:18 +0000
+ 15.20.2686.28 via Frontend Transport; Tue, 4 Feb 2020 13:41:23 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 9b078402-46f4-4641-0936-08d7a977ec3c
+X-MS-Office365-Filtering-Correlation-Id: 483429a0-f596-40ef-188c-08d7a977eeee
 X-MS-TrafficTypeDiagnostic: AM0PR04MB4851:|AM0PR04MB4851:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB4851D88309CA43C0A099C84F88030@AM0PR04MB4851.eurprd04.prod.outlook.com>
+X-Microsoft-Antispam-PRVS: <AM0PR04MB4851111B273284B6830D2F3D88030@AM0PR04MB4851.eurprd04.prod.outlook.com>
 X-MS-Oob-TLC-OOBClassifiers: OLM:7691;
 X-Forefront-PRVS: 03030B9493
 X-Forefront-Antispam-Report: SFV:NSPM;
@@ -84,19 +84,19 @@ Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: wS/WT40PMLW/HdoNw8LnyfAhXhf7zM+wr2JdCCI5GOKbb8CCFD5odz69Oc9Lu1Fkxsui0Mh0uraBR5iscqbLgk37mL1e3bAb8ynkTpXWLToiqlNxDFQ6SmSww0HATfADchNpY/enSPWcQ3Geh6TNaEPVU4xXCH1p73FwamKjXH0maNMctaI19mL1V0EQM1h2LSOg44xoylYPXJj9OSshexn29bYYZ8ayDqNCxSDmn3T7pGzB15vxVlxEty+AhL8xhCG1n2+CtQ/uxi0zd8k7H6rneFtmUd/PM2HaR/hG4gKgXvJ91WR8XlvHbABCG6u3p5u13y63nCe4Hg67X2b3pYSDrgERyfZVzhIRm9OnndnUo8bnUWvtlqXQStXcZ9TeA1LnpKrrtDAUmjhVXZY/vuZl1272wsJtFgKYDUDC5MnDi0TT17ogOecS2g53De0AFihRlmjWH1Mh1guzt1AoumWEHJGbeN/6fxpXWftABO6emCH2nRC9bSkuQW0qNdqP9Wzfn7sw9d/vb98TjyljB3SWQA4o5mQUgPqyBkK95UQ=
-X-MS-Exchange-AntiSpam-MessageData: t4FMgWgD3bHDR/aKSFu2vRJ9tr3E4m1kcf7+a2HVyPhlgTrXyvwhKmFu/EssIK9RLlaCxXYbvRM+S+rbq5UTbhuOnhJ7slSlCTz/bsON/dWq2yNDz9KtaQtqTqHNFvSD6uU+wgbw+7zlU6V+nVikzw==
+X-Microsoft-Antispam-Message-Info: ntERt7V2Ae1q9yW6Wb1cXzhnou5gZoHOjuI2B1WKsGIDXetydDN5d/z2pwGXpTjcO8j22FysB6bE2SMF+ERQKcropowPjZvgjJUgdCxsfKsJEtN3gtVX0xUrOsMFrdCczT2G69mZEIthL3ItPtaWMjPKBpf8JI3eQAKAEAuh+Q4oCDkGH2U+PTikave5iDCnhqH0uphCwI3WKgWdRfXyoMOYhLO+dqIyt1Zp26nbTDhaToRRHTnDj0ki+GZsXxvW/OnPgmw+V9lNnAQgspUj4OQn+JrDF7NW5zwRb/I9K/Fac1Ot8ZBZC94/qx2aGKgnX4CoFL/+Rn3nJvx/gwOTsLOXvxOuDLOzKs8XEnF3IuQFlEhRHqolaaDAv4zYnTey6bpvFHj+OU146n3skA1Vbe511uIukn3BoiT5Psf/kVIU1IghMkOTnZ/UNiZ0iutUVsSE8XEldgC7EQOSGlmfqSCOXUv0KetdRCe5TonNE8YKcSinu7MYe8BMGJKBC5k49EC93dR4QQO1Bh72Zx5v4Sgqux5Ar+vL/XsGSZpRQoc=
+X-MS-Exchange-AntiSpam-MessageData: ktK6WV4ic6ZWck9I5qTsKtPADTSIfxySxaXVlD5TFpWsUn93lTMgB7cVmgBbHSXu5LunqOQDhxeQyYiorsmAMiTfT5tXRjhqnOg7uwAEFIbxJK7B4MFb3r3olo6DxzPFKHRi04E1JioEqocI2HgrMg==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9b078402-46f4-4641-0936-08d7a977ec3c
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Feb 2020 13:41:22.7523 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 483429a0-f596-40ef-188c-08d7a977eeee
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Feb 2020 13:41:27.4725 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: D00aXIlSZ2iIlF+oziBIwyvmxGQX/GOPYzcDLBl4WT9mbCgS0Jv4NcYVGJg5i0nX4RopddjWek/D4Vy2VLn0aA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: Hx4P6SD/2g1O8fC25A3JOMoY9XY5lv2FOisOg9DZcnbRfRSkgindMg68nm4Ptc5bwyffbSCztcGy5flfQe0Bkw==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4851
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_054126_507932_8EB2F661 
-X-CRM114-Status: GOOD (  15.12  )
+X-CRM114-CacheID: sfid-20200204_054129_513966_015EB790 
+X-CRM114-Status: GOOD (  16.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -136,95 +136,213 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-pfdv2 is only used in i.MX7ULP. To get best pfd output, the i.MX7ULP
-Datasheet defines two best PLL rate and pfd frac.
+Add a clk api for i.MX7ULP ARM core clk usage.
+imx_hw_clk_cpu could not be reused, because i.MX7ULP ARM core
+clk has totally different design. To simplify ARM core clk
+change logic, add a new clk api.
 
-Per Datasheel
-All PLLs on i.MX 7ULP either have VCO base frequency of
-480 MHz or 528 MHz. So when determine best rate, we also
-determine best parent rate which could match the requirement.
+A draft picture to show the ARM core clock.
+                                                      |-sirc
+     |->   run(500MHz)    ->  div -> mux -------------|-firc
+  ARM|                                                |
+     |->   hsrun(720MHz)  ->  hs div -> hs mux -------|-spll pfd
+                                                      |-....
 
-For some reason the current parent might not be 480MHz or 528MHz,
-so we still take current parent rate as a choice.
+Need to configure PMC when ARM core runs in HSRUN or RUN mode.
 
-And we also enable flag CLK_SET_RATE_PARENT to let parent rate
-to be configured.
+RUN and HSRUN related registers are not same, but their
+mux has same clocks as input.
+
+The API takes arm core, div, hs div, mux, hs mux, mux parent, pfd, step
+as params for switch clk freq.
+
+When set rate, need to switch mux to take firc as input, then
+set spll pfd freq, then switch back mux to spll pfd as parent.
+
+Per i.MX7ULP requirement, when clk runs in HSRUN mode, it could
+only support arm core wfi idle, so add pm qos to support it.
 
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- drivers/clk/imx/clk-pfdv2.c | 50 ++++++++++++++++++++++++++++++---------------
- 1 file changed, 33 insertions(+), 17 deletions(-)
+ drivers/clk/imx/Makefile    |   1 +
+ drivers/clk/imx/clk-cpuv2.c | 137 ++++++++++++++++++++++++++++++++++++++++++++
+ drivers/clk/imx/clk.h       |   9 +++
+ 3 files changed, 147 insertions(+)
+ create mode 100644 drivers/clk/imx/clk-cpuv2.c
 
-diff --git a/drivers/clk/imx/clk-pfdv2.c b/drivers/clk/imx/clk-pfdv2.c
-index 28b5f208ced9..78e1f7641aaa 100644
---- a/drivers/clk/imx/clk-pfdv2.c
-+++ b/drivers/clk/imx/clk-pfdv2.c
-@@ -101,24 +101,40 @@ static unsigned long clk_pfdv2_recalc_rate(struct clk_hw *hw,
- static int clk_pfdv2_determine_rate(struct clk_hw *hw,
- 				    struct clk_rate_request *req)
- {
--	u64 tmp = req->best_parent_rate;
--	u64 rate = req->rate;
-+	unsigned long parent_rates[] = {
-+					480000000,
-+					528000000,
-+					req->best_parent_rate
-+				       };
-+	unsigned long best_rate = -1UL, rate = req->rate;
-+	unsigned long best_parent_rate = req->best_parent_rate;
-+	u64 tmp;
- 	u8 frac;
-+	int i;
+diff --git a/drivers/clk/imx/Makefile b/drivers/clk/imx/Makefile
+index 928f874c73d2..9707fef8da98 100644
+--- a/drivers/clk/imx/Makefile
++++ b/drivers/clk/imx/Makefile
+@@ -5,6 +5,7 @@ obj-$(CONFIG_MXC_CLK) += \
+ 	clk-busy.o \
+ 	clk-composite-8m.o \
+ 	clk-cpu.o \
++	clk-cpuv2.o \
+ 	clk-composite-7ulp.o \
+ 	clk-divider-gate.o \
+ 	clk-fixup-div.o \
+diff --git a/drivers/clk/imx/clk-cpuv2.c b/drivers/clk/imx/clk-cpuv2.c
+new file mode 100644
+index 000000000000..a73d97a782aa
+--- /dev/null
++++ b/drivers/clk/imx/clk-cpuv2.c
+@@ -0,0 +1,137 @@
++// SPDX-License-Identifier: GPL-2.0-only
++/*
++ * Copyright 2020 NXP
++ *
++ * Peng Fan <peng.fan@nxp.com>
++ */
 +
-+	for (i = 0; i < ARRAY_SIZE(parent_rates); i++) {
-+		tmp = parent_rates[i];
-+		tmp = tmp * 18 + rate / 2;
-+		do_div(tmp, rate);
-+		frac = tmp;
++#include <linux/clk.h>
++#include <linux/clk-provider.h>
++#include <linux/slab.h>
++#include <linux/pm_qos.h>
++#include "clk.h"
 +
-+		if (frac < 12)
-+			frac = 12;
-+		else if (frac > 35)
-+			frac = 35;
++static struct pm_qos_request pm_qos_hsrun;
 +
-+		tmp = parent_rates[i];
-+		tmp *= 18;
-+		do_div(tmp, frac);
++#define MAX_NORMAL_RUN_FREQ	528000000
 +
-+		if (abs(tmp - req->rate) < abs(best_rate - req->rate)) {
-+			best_rate = tmp;
-+			best_parent_rate = parent_rates[i];
-+		}
++struct clk_cpu {
++	struct clk_hw	hw;
++	struct clk_hw	*core;
++	struct clk_hw	*div_nor;
++	struct clk_hw	*div_hs;
++	struct clk_hw	*mux_nor;
++	struct clk_hw	*mux_hs;
++	struct clk_hw	*mux_parent;
++	struct clk_hw	*pfd;
++	struct clk_hw	*step;
++};
++
++static inline struct clk_cpu *to_clk_cpu(struct clk_hw *hw)
++{
++	return container_of(hw, struct clk_cpu, hw);
++}
++
++static unsigned long clk_cpu_recalc_rate(struct clk_hw *hw,
++					 unsigned long parent_rate)
++{
++	struct clk_cpu *cpu = to_clk_cpu(hw);
++
++	return clk_hw_get_rate(cpu->core);
++}
++
++static long clk_cpu_round_rate(struct clk_hw *hw, unsigned long rate,
++			       unsigned long *prate)
++{
++	return rate;
++}
++
++static int clk_cpu_set_rate(struct clk_hw *hw, unsigned long rate,
++			    unsigned long parent_rate)
++{
++	struct clk_cpu *cpu = to_clk_cpu(hw);
++	int ret;
++	struct clk_hw *div, *mux_now;
++	unsigned long old_rate = clk_hw_get_rate(cpu->core);
++
++	div = clk_hw_get_parent(cpu->core);
++
++	if (div == cpu->div_nor)
++		mux_now = cpu->mux_nor;
++	else
++		mux_now = cpu->mux_hs;
++
++	ret = clk_hw_set_parent(mux_now, cpu->step);
++	if (ret)
++		return ret;
++
++	ret = clk_set_rate(cpu->pfd->clk, rate);
++	if (ret) {
++		clk_hw_set_parent(mux_now, cpu->mux_parent);
++		return ret;
 +	}
- 
--	tmp = tmp * 18 + rate / 2;
--	do_div(tmp, rate);
--	frac = tmp;
--
--	if (frac < 12)
--		frac = 12;
--	else if (frac > 35)
--		frac = 35;
--
--	tmp = req->best_parent_rate;
--	tmp *= 18;
--	do_div(tmp, frac);
--
--	req->rate = tmp;
-+	req->best_parent_rate = best_parent_rate;
-+	req->rate = best_rate;
- 
- 	return 0;
- }
-@@ -198,7 +214,7 @@ struct clk_hw *imx_clk_hw_pfdv2(const char *name, const char *parent_name,
- 	init.ops = &clk_pfdv2_ops;
- 	init.parent_names = &parent_name;
- 	init.num_parents = 1;
--	init.flags = CLK_SET_RATE_GATE;
-+	init.flags = CLK_SET_RATE_GATE | CLK_SET_RATE_PARENT;
- 
- 	pfd->hw.init = &init;
- 
++
++	if (rate > MAX_NORMAL_RUN_FREQ) {
++		pm_qos_add_request(&pm_qos_hsrun, PM_QOS_CPU_DMA_LATENCY, 0);
++		clk_hw_set_parent(cpu->mux_hs, cpu->mux_parent);
++		clk_hw_set_parent(cpu->core, cpu->div_hs);
++	} else {
++		clk_hw_set_parent(cpu->mux_nor, cpu->mux_parent);
++		clk_hw_set_parent(cpu->core, cpu->div_nor);
++		if (old_rate > MAX_NORMAL_RUN_FREQ)
++			pm_qos_remove_request(&pm_qos_hsrun);
++	}
++
++	return 0;
++}
++
++static const struct clk_ops clk_cpu_ops = {
++	.recalc_rate	= clk_cpu_recalc_rate,
++	.round_rate	= clk_cpu_round_rate,
++	.set_rate	= clk_cpu_set_rate,
++};
++
++struct clk_hw *imx_clk_hw_cpuv2(const char *name, const char *parent_names,
++				struct clk_hw *core,
++				struct clk_hw *div_nor, struct clk_hw *div_hs,
++				struct clk_hw *mux_nor, struct clk_hw *mux_hs,
++				struct clk_hw *mux_parent,
++				struct clk_hw *pfd, struct clk_hw *step,
++				unsigned long flags,
++				unsigned long plat_flags)
++{
++	struct clk_cpu *cpu;
++	struct clk_hw *hw;
++	struct clk_init_data init;
++	int ret;
++
++	cpu = kzalloc(sizeof(*cpu), GFP_KERNEL);
++	if (!cpu)
++		return ERR_PTR(-ENOMEM);
++
++	cpu->core = core;
++	cpu->div_nor = div_nor;
++	cpu->div_hs = div_hs;
++	cpu->mux_nor = mux_nor;
++	cpu->mux_hs = mux_hs;
++	cpu->mux_parent = mux_parent;
++	cpu->pfd = pfd;
++	cpu->step = step;
++
++	init.name = name;
++	init.ops = &clk_cpu_ops;
++	init.flags = flags;
++	init.parent_names = &parent_names;
++	init.num_parents = 1;
++
++	cpu->hw.init = &init;
++	hw = &cpu->hw;
++
++	ret = clk_hw_register(NULL, hw);
++	if (ret) {
++		kfree(cpu);
++		return ERR_PTR(ret);
++	}
++
++	return hw;
++}
+diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
+index f074dd8ec42e..7deaba2e525c 100644
+--- a/drivers/clk/imx/clk.h
++++ b/drivers/clk/imx/clk.h
+@@ -521,4 +521,13 @@ struct clk_hw *imx_clk_hw_divider_gate(const char *name, const char *parent_name
+ 		unsigned long flags, void __iomem *reg, u8 shift, u8 width,
+ 		u8 clk_divider_flags, const struct clk_div_table *table,
+ 		spinlock_t *lock);
++
++struct clk_hw *imx_clk_hw_cpuv2(const char *name, const char *parent_names,
++				struct clk_hw *core,
++				struct clk_hw *div_nor, struct clk_hw *div_hs,
++				struct clk_hw *mux_nor, struct clk_hw *mux_hs,
++				struct clk_hw *mux_parent,
++				struct clk_hw *pfd, struct clk_hw *step,
++				unsigned long flags,
++				unsigned long plat_flags);
+ #endif
 -- 
 2.16.4
 
