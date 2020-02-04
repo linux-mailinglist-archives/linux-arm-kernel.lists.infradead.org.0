@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4654151B96
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:43:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 245D6151B98
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:43:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SWelJdfmJckLIjLUzr7l9MNIH2XTcxFpGJX9f+F8cBM=; b=gN/V7j9lc7cjuf
-	wMLSo/VCzEAN53qVX4gX1r4t1hQF/NSW5eOwVd+luChOKYL7H+ktziEhECTLM+pFt0/rYtNHrsWDN
-	7PLZhd+7njvmMBgXHN7DURi2wJeIrhsrwMUreHhYNG8kB/I7YC60iayYVA4Ovx6SICMG9CaeFIyXP
-	wDGAjhO0oEAx6W9CL0HpPlJyPOAullY8syVuFrzkQ6baM+TaGj0EHg1mlbtPvXqjlVgnaDGMoNcG+
-	z0XaziRiU9NJ9oOM5p2HinB9E65CFAHKtQcsr9CTYgHHLWm7zjjEi84A7mpgC+c+AdkWvy+h8Z7ow
-	A7SB41DeafFntbcjqw8w==;
+	List-Owner; bh=yeveuOTGlDw46aDI5QAVGStncdO7P5C7Kq8e+5yspng=; b=i5LUNWYyUxG07h
+	U3nLXRedoqoEdGxBJkMgmTYhylMK7KarfBBhISt6lGAfIjmOm8vSZEabQqlH5OmRcCb43kOwzn0cr
+	HeXNlztIwLX4INB2NVBlEBWfifSgBtR43oR+NoLZLc434WFUgqHU51Y/zoEkSd8BDRScKas6S2TD5
+	ut3Al5dhCF68jx4L/2DWhxCI9BkgebdydsDX81DBhf0ZDmwvi8R0s4mtx3F3RxEKTOZyU2rA2VSVO
+	Ys28CBbiFFjbOcxRO+i5Nv+zowrB+BqSVfBKqe8+MuifnTLMfyOH34Fee6K58+BP6PiLTVfSoPnvf
+	QfSSpcvSCWiWJnLyoSwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyyTv-0006xg-Je; Tue, 04 Feb 2020 13:43:11 +0000
-Received: from mail-db8eur05on2072.outbound.protection.outlook.com
- ([40.107.20.72] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1iyyUB-0007F9-0s; Tue, 04 Feb 2020 13:43:27 +0000
+Received: from mail-db8eur05on2057.outbound.protection.outlook.com
+ ([40.107.20.57] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyySR-0005ji-HC
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:41:41 +0000
+ id 1iyySW-0005nx-51
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:41:45 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=msGO8O7q7PA6KxcxMn6QnMpwVAtdxBJEmnbChaoN36F0xoINaH4A0LhNOQ5HI13iUmX4m+xZcTaxHf6aWbujqIFEM4ejlLO3+4VQSR6r9/kZ/ycF1PK69AHuHJjvGLjz14Tc+AvRNUnwfoW4pfCSPbCf+BdVF9AGqPAyuy+rw7U+RU5l8jdCh3OpOZHHdzM6Dep30yXuej5PVWheMqNljOvxnSYtK3xi/W9/HbRvKPSwENDV5JtsUPN1bpG06B8J7FtokSat66sivs9MFdUyGtsdTPJ/827k9z8KVWydm3L5/hNeSF83auHGls5DH4dVYAL6XLdZ2hkpfpuTlI/nMA==
+ b=lD1Hcq8XItEIfUat0huGq9C0JLHXIbgeGiTtjQMcrM0Ok61QQr/PA0JhEg/yF/7SFgA88fKBe3PB44tNHK849XxVdzgqg015TET3yqRxfpRb2hOvRBTcNszrph8DSNEk0qHg7fUYKQZvIvKAWIoyp2q2oXYLROTMCj/4koiP7d7aZcdvFw6DoyYf9apsDWrKFAuDTfHK+zqOhdcNLSyy1FVMh+XTVfa4c+vt+koNxuJcxs72ecvMs9NnFrX5cYi67WVAojdeP9h6KkyZFr7OmD+a/Sd3VyO4x0EoqF3VtknqYjGpmukniDxVtPyZtKbgP8BrZ+btY5zw/G611kSS6w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KjcVH/OE1OYbG2WI3e1JdUW90gQac/Y3FTEYb7pvf3M=;
- b=AD9jRoDTux6c5fnHzPLgdnyyK8cs8Jj4HD7bxLOZpstnO/MJ6/JWh9/8Mxse3IbPshqoln2e5G/A56Sd6J1/uMfyZa0byDO8EJgXjpsQFvhY+P32J6Md2EWI7DuAFArZQZe0NhlJt88hEQtMC67MQJuj82znbTwl+G0RkV+E89VWOw6dR3SPlxyzgPFSClWQ7zBEDAQLb2Cv9X+me4745AFW/2drFffCmvIN0NxM8V+b9sqesEBt3Nxwg7LKspTJno+uTpT5tlGfmpdv1khEz2bfqSvwzbDHwsPc1NylgcjQ4ZRrueybEVZpVQZvp71d9F1XZYV4BdkvqLox1jz89Q==
+ bh=NEvjWr/4AdbPMAtC1YFADze47JBcfN0qbQO1FdM2O68=;
+ b=SL22kKevIjInpACyB4NUXI8azzwUjgbjT2/p9C2YZJt0wBzIeNJ0KQbPCEh88uqzos9wiEPYWe/uM9UzVUclSqXPKmhdl+UBAv6+44Oz8qYugnn4FcutQeY4/wNev+7cnZFcJvnBdnSgBlEBv4oR4qn5TaD87kwq2L5ojN4qYkkGW2WDGF80/Q/kIZVXAeTRgquvM3VjPzjg914bHiOQMm0JuVLTd1nAR2s28PlD2bSVXUfeZEP/MhD/T6S9DPJcPC/J+sA4WGNQG2mfVueBaJVcEqjHHYvf27DG0329h41hv+/3gIbi0vc9C9iclSZz3LPbFpxfeGhPqX7n4y5oAw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KjcVH/OE1OYbG2WI3e1JdUW90gQac/Y3FTEYb7pvf3M=;
- b=cG0rWpGqSSI5Xe30xFONRtv5uEhvPcLA4LUZPyO4ulrsYYv3OS1qaNGJk5Siem+B8umEgSdGpWoGj8CVFbQj5XmvCJAZw2k7Qp7S4RX0ZE5fwPDPahvvubxkHfMWy0iAcjg9x1aeq1ipS4xgNdmHplpqp7vKHLM1OxnfkUD8Tqg=
+ bh=NEvjWr/4AdbPMAtC1YFADze47JBcfN0qbQO1FdM2O68=;
+ b=ZGrGqP42cLN9VPfkKfNCfpkR7BtHsNToGhk7VIRs7Pmx1B57dta9NeHJ4gCFQFGMIid+oBB7vRETKURErTGQbL/tYmcr/UYu64LwbnpHB2dUTUE4KSB0WyHwD6DxWIP/wbTxXt0H3ffxOUfvuCyVJ6Dz/XbEMgNUteAk7ianIH4=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB6932.eurprd04.prod.outlook.com (52.132.213.86) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2686.27; Tue, 4 Feb 2020 13:41:36 +0000
+ 15.20.2686.27; Tue, 4 Feb 2020 13:41:41 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2686.031; Tue, 4 Feb 2020
- 13:41:36 +0000
+ 13:41:41 +0000
 From: peng.fan@nxp.com
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, sboyd@kernel.org,
  abel.vesa@nxp.com, aisheng.dong@nxp.com, leonard.crestez@nxp.com
-Subject: [PATCH 6/7] ARM: imx: imx7ulp: support HSRUN mode
-Date: Tue,  4 Feb 2020 21:34:36 +0800
-Message-Id: <1580823277-13644-7-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH 7/7] ARM: imx: imx7ulp: create cpufreq device
+Date: Tue,  4 Feb 2020 21:34:37 +0800
+Message-Id: <1580823277-13644-8-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1580823277-13644-1-git-send-email-peng.fan@nxp.com>
 References: <1580823277-13644-1-git-send-email-peng.fan@nxp.com>
@@ -64,15 +64,15 @@ MIME-Version: 1.0
 Received: from localhost.localdomain (119.31.174.66) by
  HK0PR03CA0107.apcprd03.prod.outlook.com (2603:1096:203:b0::23) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2686.28 via Frontend Transport; Tue, 4 Feb 2020 13:41:32 +0000
+ 15.20.2686.28 via Frontend Transport; Tue, 4 Feb 2020 13:41:36 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 2407a0d4-64d7-43b6-fd7a-08d7a977f462
+X-MS-Office365-Filtering-Correlation-Id: 2ee1e305-793f-4cd0-36fa-08d7a977f725
 X-MS-TrafficTypeDiagnostic: AM0PR04MB6932:|AM0PR04MB6932:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB693225CE6CA4B1BAEC30CF1488030@AM0PR04MB6932.eurprd04.prod.outlook.com>
+X-Microsoft-Antispam-PRVS: <AM0PR04MB6932E326EB1DA519BBD960F688030@AM0PR04MB6932.eurprd04.prod.outlook.com>
 X-MS-Oob-TLC-OOBClassifiers: OLM:459;
 X-Forefront-PRVS: 03030B9493
 X-Forefront-Antispam-Report: SFV:NSPM;
@@ -84,28 +84,26 @@ Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: A88d7CU9T7ACFWmM2sKHbhSFcbGLfOXlyT+ah9Syzn01sqT2sq96yqPpdvAqmkR4OTQDvS4nnIzp1areINXQpdWU/U9jZRMr63mq2fOhVRxj+JjiAFdUCly0lfQY02eerryonj4XRPF14IzQmvR7NhiwK70p+ElSUoukBYwNw3m01sb0tEyMVvt3MWwwsehV74wQ/OKdXej5nUoS064xmfId/AIJ77JI2F/gi74PMzSNIHFWuXixa4uTqubeCJQ6lBrg7nGSrdIF6IsK3t0rxBu4mqeqv8UsxvBT1Y+aMfqM/1d4bw5uu5zUVPqV+wAYkurjdAF1aatnF7LwVsd8u8Ou7RIIMA5jMz13rU8Nohim9IdhrqWZUvhH1nyiHuIgl5ngz2hI+YQ1rh3mERHqYXk2SGHsAZRNI0jcI9f1I5fe1z0SnE3BwpMqz2u+8QhoQYEhw+z3U7WBEeD82BWOVx6funO3Fv700bD7btKHrkGXfcM5xTshW7AWpJU6O6jPLXMLPpuJw4uTBGfHIFVPIRw07UtjSuCEhqLKT63UK0w=
-X-MS-Exchange-AntiSpam-MessageData: /k9+Hfg7AfuMfIHy9uWeY5DaYldn2AnlZw7CJt2Ez3WIs9+KegCAhdkB18POu1ycstD5LOsTWpHAmT9381gjUL/x25PLAVjDwI6u2JhyqLCJNzOTmb32EmGOsCr/1jZTVXOWxAfTcz3k6DlRDpvLrg==
+X-Microsoft-Antispam-Message-Info: uRKqjbExcXdjnzh42MlKq/RN0e5hNSOIooptQxI8q/jSI0RlSp/s5ErUMCK7gLuHc4mfkceBP4oHO6+5P6RKNc1QVrteqexLRgrdpdCpMs36fG8wqgiVBFq6HmM0YEP9mc05OjqSJ0xLTdkQlFfmGJ5x7i6ir//ndLXNmej3mLFLuT6+DYrxDYjq2GiKYL+Fq17dZzwtGUDlZ4ar8PwoVp/TzR4tMA1/0oSTxuaM8qu3nu4ImyGN9zG/FtTwu2ExFLz5V3q/Ok/U616E7yxezo50FRw/WTCMvsGCN+bXiBPLn1iypEFS78h+zzSPgsaua5VBFZgCl5AVWaCxZK0HrUA7X9qWh8i0P6ISIylmo7COoUg/nBBKtYtARzQzmFPOnohzyIjMrUlFiPGVLU/wQwXjmWfiN6reyn5NItDSWNna4YbNXCaykwNxDYZ79uAUWNwtVQryo5hJALzXk/JPAFcnKBYfA9yLpECm3vMwP3wPbA2U01AWUrEC0XDSfgNpNqY6Kp0lTnUiwvOEuiL6cHKS15YwTIZN5QC80hfypDw=
+X-MS-Exchange-AntiSpam-MessageData: nFnRvmrc5t4r63UlwMxbjLlWz6Prm/xRqZEJjkrooVMixm7J59os+T/asyqgXdJP47ftZ8WtMCYtxKHZrD3H1fv9UZK66ffocKAlh4O/ZPQewttpr8aD+mIwqneUDwAmEMJT+JaBj6TPvcns1OZCiQ==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2407a0d4-64d7-43b6-fd7a-08d7a977f462
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Feb 2020 13:41:36.6042 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2ee1e305-793f-4cd0-36fa-08d7a977f725
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Feb 2020 13:41:41.2645 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: vhk80Wb0AS0XMMZRoUKcWThbAg4Wnfz3sWAWVXdRPHG1WssoogtqaJU13ebBqlIn1Oy5WPHMGl1oKuzBrSYH7A==
+X-MS-Exchange-CrossTenant-UserPrincipalName: bvei+I6lgn3QdydFwK3Bq1lz6cTIBb3bGA/q0k5M2SBppfVNlJo9d4C3OpxdnX2G+M2FnHK0tom9jbREcSbHmg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6932
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_054139_703451_5E0EAC2A 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20200204_054144_244756_A145A464 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.20.72 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.72 listed in wl.mailspike.net]
+ no trust [40.107.20.57 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -138,42 +136,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-Configure pmprot to let ARM core could run into HSRUN mode.
+Create cpufreq device to let cpufreq driver could probe
 
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- arch/arm/mach-imx/pm-imx7ulp.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm/mach-imx/mach-imx7ulp.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm/mach-imx/pm-imx7ulp.c b/arch/arm/mach-imx/pm-imx7ulp.c
-index 7b2f7387e662..dc2bc6f2cadd 100644
---- a/arch/arm/mach-imx/pm-imx7ulp.c
-+++ b/arch/arm/mach-imx/pm-imx7ulp.c
-@@ -11,6 +11,7 @@
+diff --git a/arch/arm/mach-imx/mach-imx7ulp.c b/arch/arm/mach-imx/mach-imx7ulp.c
+index 128cf4c92aab..fc44fb4ca48b 100644
+--- a/arch/arm/mach-imx/mach-imx7ulp.c
++++ b/arch/arm/mach-imx/mach-imx7ulp.c
+@@ -67,6 +67,8 @@ static const char *const imx7ulp_dt_compat[] __initconst = {
  
- #include "common.h"
- 
-+#define SMC_PMPROT		0x8
- #define SMC_PMCTRL		0x10
- #define BP_PMCTRL_PSTOPO        16
- #define PSTOPO_PSTOP3		0x3
-@@ -25,6 +26,8 @@
- #define BM_PMCTRL_RUNM		(3 << BP_PMCTRL_RUNM)
- #define BM_PMCTRL_STOPM		(7 << BP_PMCTRL_STOPM)
- 
-+#define BM_PMPROT_AHSRUN	BIT(7)
+ static void __init imx7ulp_init_late(void)
+ {
++	platform_device_register_simple("cpufreq-dt", -1, NULL, 0);
 +
- static void __iomem *smc1_base;
+ 	imx7ulp_cpuidle_init();
+ }
  
- int imx7ulp_set_lpm(enum ulp_cpu_pwr_mode mode)
-@@ -51,6 +54,7 @@ int imx7ulp_set_lpm(enum ulp_cpu_pwr_mode mode)
- 		return -EINVAL;
- 	}
- 
-+	writel_relaxed(BM_PMPROT_AHSRUN, smc1_base + SMC_PMPROT);
- 	writel_relaxed(val, smc1_base + SMC_PMCTRL);
- 
- 	return 0;
 -- 
 2.16.4
 
