@@ -2,84 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53209151FAF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 18:42:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70A8E151FBD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 18:43:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mMSIzFMj6HeSazZnKF/rSRl977lUqCOEnGKLrF6gvM4=; b=KPyu7J+Uk9lKWw9AlqE5ApnH7
-	TE+NpEYW9cP+GGeV7TPc0TcLaonZS05eNIAhlg1lenZnQaRxC5IuIN5DwuveG/hY5suRNL60fnmhI
-	hgKT79lMyYJUiZPfpi0O5+nXeEkJlHTbCEKGBZPdcGyGHaZBE5B87W6w4bR6+JwwMXpCOoZCvXjZA
-	VY0i0GbEp5/HB9EpJGISkMS8DpWC/+1rxuwrE/4tDocOhUdH1w5u+j5g2yu9zpNLu1IjSbQm7NUHZ
-	SKRWGcJ1wqg0qcD+yi2XWs5HC1uh7eboCoRu/D6BrReTQhzkLuEngJlZQ3uA3z6NUsQrqd0nj9Imh
-	yoByH1rwA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dpw0z/r3tFPVjJ8DOOrpCFH6OgPxGM/YOr9NtMnH7bg=; b=GnpLg1WKhFXLUT
+	DLAoRLdS5EO+rudgcTlbl8YCwYRV36C5Q6ATBQtOzaXhw/EElk8mgZdr8ffiFi8aHRIyMhkCq7dlY
+	4m+CZ/JIzJ5w97nBxFup2OMQ7TPUfZHPzTgTJ6fpHHq3U0us47o8FfnMprw6Sn6h06NGMQAUrAhRM
+	IZUjM9xferhswe8GLuSoFH56jBNnIvIa5hvGHYDNOllDYJA+PwXwSAlGxGQfFrlwrm+1KFM6xw4ua
+	83NMFsdBFunMAGBE9c4I77LTaseP/Z2dk5aMoprBfd1dJagnEqmq15Mc+FRxuAOyT8W6Y6glLYPck
+	hiOmWnCywd/nIflwje2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz2Dc-0001La-Ck; Tue, 04 Feb 2020 17:42:36 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1iz2Ed-0001ub-F7; Tue, 04 Feb 2020 17:43:39 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz2DS-0001Kf-M9
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 17:42:28 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1580838147; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=3GsEF9tQsQwX5+o3nKkgPwf7PL4h+Nm6qziK+o3nvkQ=;
- b=fFdrQCvIqQ2U4YiAeLO2RhtYO/+wEOBte0Rdu5ftZhWdd44hJQqeceK3SiWVvPkA1Fdi07FM
- GTgU0sVggG0jXpu8+XUvSWl/UAFy4SM1d8hWTTVQoJ0oWKPBtT8hBhdW3mG5PmbZZ1zBFi3U
- btI4t2WYUWFk3MZKq0pQdkEqwfM=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e39acfb.7effc1b3f0d8-smtp-out-n02;
- Tue, 04 Feb 2020 17:42:19 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 16D14C4479C; Tue,  4 Feb 2020 17:42:18 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 7B58DC433CB;
- Tue,  4 Feb 2020 17:42:17 +0000 (UTC)
+ id 1iz2EW-0001tw-Qr
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 17:43:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=YkN8EICzEFNet3xsTGFEzCoFMZb0DnoCsILuNX9tis8=; b=t2tBPBb+2JKDwwrM0AfTALYPGt
+ 3oEGx2P5EMacRxNuchFRj5zXvINXH73V5ZOHHacc/OUNKDErReuozxsGC6zauB4WsDrQT8Ad0Rquj
+ s1w3V02NrpptvykNnflDazp37e7pZBDbUk53WK5eXbKBSv2LPgcmaTFzCl+bDegKKKzs=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1iz2EI-0000gR-CJ; Tue, 04 Feb 2020 18:43:18 +0100
+Date: Tue, 4 Feb 2020 18:43:18 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [RFC net-next 6/8] net: phylink: Configure MAC/PCS when link is
+ up without PHY
+Message-ID: <20200204174318.GB1364@lunn.ch>
+References: <BN8PR12MB3266714AE9EC1A97218120B3D30B0@BN8PR12MB3266.namprd12.prod.outlook.com>
+ <20200127114600.GU25745@shell.armlinux.org.uk>
+ <20200127140038.GD13647@lunn.ch>
+ <20200127140834.GW25745@shell.armlinux.org.uk>
+ <20200127145107.GE13647@lunn.ch>
+ <20200127161132.GX25745@shell.armlinux.org.uk>
+ <20200127162206.GJ13647@lunn.ch>
+ <c3e863b8-2143-fee3-bb0b-65699661d7ab@gmail.com>
+ <BN8PR12MB3266B69DA09E1CC215843C3CD30A0@BN8PR12MB3266.namprd12.prod.outlook.com>
+ <20200204172603.GS25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-Date: Tue, 04 Feb 2020 23:12:17 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- Joerg Roedel <joro@8bytes.org>, Jordan Crouse <jcrouse@codeaurora.org>, Rob
- Clark <robdclark@gmail.com>
-Subject: Re: [PATCH 0/2] iommu/arm-smmu: Allow client devices to select direct
- mapping
-In-Reply-To: <cover.1579692800.git.saiprakash.ranjan@codeaurora.org>
-References: <cover.1579692800.git.saiprakash.ranjan@codeaurora.org>
-Message-ID: <7761534cdb4f1891d993e73931894a63@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+Content-Disposition: inline
+In-Reply-To: <20200204172603.GS25745@shell.armlinux.org.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_094227_566687_A1874585 
-X-CRM114-Status: GOOD (  12.38  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200204_094333_484271_E63022F4 
+X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [185.16.172.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [104.130.122.26 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,47 +85,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomasz Figa <tfiga@chromium.org>, Rajendra Nayak <rnayak@codeaurora.org>,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, iommu@lists.linux-foundation.org,
- Matthias Kaehlcke <mka@chromium.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "David S. Miller" <davem@davemloft.net>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, Jakub Kicinski <kuba@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Robin, Will
+> There, there is one MAC, but there are multiple different PCS - one
+> for SGMII and 1000base-X, another for 10G, another for 25G, etc.
+> These PCS are accessed via a MDIO adapter embedded in each of the
+> MAC hardware blocks.
 
-On 2020-01-22 17:18, Sai Prakash Ranjan wrote:
-> This series allows drm devices to set a default identity
-> mapping using iommu_request_dm_for_dev(). First patch is
-> a cleanup to support other SoCs to call into QCOM specific
-> implementation and preparation for second patch.
-> Second patch sets the default identity domain for drm devices.
-> 
-> Jordan Crouse (1):
->   iommu/arm-smmu: Allow client devices to select direct mapping
-> 
-> Sai Prakash Ranjan (1):
->   iommu: arm-smmu-impl: Convert to a generic reset implementation
-> 
->  drivers/iommu/arm-smmu-impl.c |  8 +++--
->  drivers/iommu/arm-smmu-qcom.c | 55 +++++++++++++++++++++++++++++++++--
->  drivers/iommu/arm-smmu.c      |  3 ++
->  drivers/iommu/arm-smmu.h      |  5 ++++
->  4 files changed, 65 insertions(+), 6 deletions(-)
+Hi Russell
 
-Any review comments?
+Marvell mv88e6390X switches are like this is a well. There is a PCS
+for SGMII and 1000Base-X, and a second one for 10G. And it dynamically
+swaps between them depending on the port mode, the so called cmode.
 
-Thanks,
-Sai
+So a generic solution is required, and please take your time to build
+one.
 
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+> It's not production-ready yet, but I will continue working on it
+> over the coming week.
+
+I'm happy to test when you are ready.
+
+Thanks for working on this,
+
+       Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
