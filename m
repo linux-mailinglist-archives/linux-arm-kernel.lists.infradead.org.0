@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 007D3151B39
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:26:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D986151B41
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:27:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=DqsQCyg7FBmoIFpwEcjRH2nFHLjYUgr70+ZR89/rca0=; b=GW0HHi4i7j60lK
-	vq12ywM4/K4Jqcf8/dComCLPucejJRWOD/jTDHG6vVoLNrrtiZsJ7SE9lC9lf8QY+YaCi13nKRrpN
-	IrlMgTH+FUAcZH8Ssexx7Qt6VMFuvvfOYGeM6RvJwjkdSOfLAwkXMpC5VeuiXM1WPbZpEO0ZAuAJR
-	kPKyHJn9BgS8DdntPa76WXvtqebRpFlshnMxGtb43fOyaTPY5jITj4Dzb1h9+Kh3k70/QWP+hmMv4
-	Y89nr2x7gSBPR+yY+XDTYlvJ+f1B1jiMuXsqK/pftO39tb1tsVMNy8e/5HQ+AoVjD2WQIMP/NayQt
-	K2tfVQF3LWulxA9N3GLQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5GVNLqEosvPth5z3XhsnN+7UV3KnLWhcovJvqTJ9lEs=; b=T0O9utqlSdHnxy
+	5UAatBsHi2/lXo0ztvHM3YtXWW2sgxCHS7tVMAVmx9OVDzt/0TJiFt85K6ShgQASN4tU8KTU/sC1v
+	tKFBeu4aCn8KFbZ8BulpnxT8R0B0JROvkOXqmStI+9YRXHf2WdTlLiKMc/o6JDY3Wytyc6UtsA96M
+	MroQBjeO8nk1k/6AXfMqrI4IZ9QkwkIrFIgZKcXKTv1PATkEbE6W9pAGoyBLbFK6xlRjj2cnuwXnS
+	sVfLLpG8TZGFZYNK+vlkk+W47pf1u23ATybtC2SpaSSB7qiML3ZhAQIas2Htneg69zbqSuwUQuG2d
+	qMYrX+zX83hoa5IuCjPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyyDp-0007Pl-Sy; Tue, 04 Feb 2020 13:26:33 +0000
+	id 1iyyEI-0007nt-CB; Tue, 04 Feb 2020 13:27:02 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyyDh-0007Nm-NJ
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:26:27 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ id 1iyyDi-0007Np-7k
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:26:28 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 014DNoVK030249; Tue, 4 Feb 2020 14:26:17 +0100
+ 014DN8pc018480; Tue, 4 Feb 2020 14:26:18 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=AplTNN5L+r2sBe+jH4b1Al4L+72dRx8nYadx/tYF8Ug=;
- b=ZQptpfXca1Q2Ug7CIhv4qXR30/e2gpoGXV3YL2Z0t0T2MGKKK6j5dXKjgJUQnDbREHsm
- FEysJBgBfVpQDR8mZnRG92U3HBeQXHpUDhKKdXAMkIcs9IyZtsv1rbVmyFwMNlEGVV2j
- x7ZIhpJim5exW954sZQ+vPSCWnvUSHDhsy7wuwu11nc+ieZGNLt/s59zvAMv9j4cJUAX
- eX7jYYNdXmUZZRecIbbBvVvtNV4YAQWTOgtanF04qHn+qhcm6WfOsccx1ZWXFiVuNdaV
- 2q7bZKb+DXRrie9IFAtHat4+z2rcugLY1ZQOsegz0Sz/kylIvf2LdD2uJHYZaXlJbYHF 1Q== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=P0O19dVNFkEtZ9n15KyWMo1KjYvKtsJrmOpSkOaeAtM=;
+ b=fYZdzA3e/39RPkICu4+JFfAkKwu9q/CnSeoF7oBE40U1c8tok4MzjYWBpsDTE7RtMQCU
+ 3fZvUmsrGQ1BnUp1dwVxaUkbnr+H0nyn3VkreT4RdUN+5ta44bILGYvNJiRh2ZjPwaKi
+ 5m/7RPMBhwQECf7cGcC0z6xCBKGf03OM1aCwgUeQ7sbue4mGgzN9JzlJGeN0LdOXkkT1
+ /uvYl4F7NXjwjFXW6pO2YWrssEmBHr2kRq8+VBmFGYa8ul3t9AseF9Wcotp6xAl4dl/3
+ YkWssuuRt0KaxTuEhDOL0zNwJfsFl04s5YyqVKWWy+i7yIVnpuGDkQda/NZfFlnk+vio XQ== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xw0019tb3-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xvyp61uyj-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 04 Feb 2020 14:26:17 +0100
+ Tue, 04 Feb 2020 14:26:18 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 042AB100034;
- Tue,  4 Feb 2020 14:26:12 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 98484100038;
+ Tue,  4 Feb 2020 14:26:13 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D5FEA2B188F;
- Tue,  4 Feb 2020 14:26:12 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 4 Feb 2020 14:26:12
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 892B42B188F;
+ Tue,  4 Feb 2020 14:26:13 +0100 (CET)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 4 Feb 2020 14:26:13
  +0100
 From: Amelie Delaunay <amelie.delaunay@st.com>
 To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
  <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
  <mark.rutland@arm.com>
-Subject: [PATCH 0/3] USB OTG Dual Role on STM32MP15
-Date: Tue, 4 Feb 2020 14:26:03 +0100
-Message-ID: <20200204132606.20222-1-amelie.delaunay@st.com>
+Subject: [PATCH 1/3] ARM: dts: stm32: add USB OTG full support on stm32mp151
+Date: Tue, 4 Feb 2020 14:26:04 +0100
+Message-ID: <20200204132606.20222-2-amelie.delaunay@st.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200204132606.20222-1-amelie.delaunay@st.com>
+References: <20200204132606.20222-1-amelie.delaunay@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG3NODE3.st.com (10.75.127.9) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-02-04_04:2020-02-04,
  2020-02-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_052626_214501_5E15C0A0 
-X-CRM114-Status: GOOD (  11.25  )
+X-CRM114-CacheID: sfid-20200204_052626_590427_F1880BA7 
+X-CRM114-Status: GOOD (  14.42  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -101,21 +104,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds support for USB OTG Dual Role on stm32mp15.
-USB OTG HS is configured in Dual Role mode on stm32mp157c-ev1, role detection
-uses ID pin.
+Using the st,stm32mp15-hsotg compatible allows to use USB OTG with Dual Role
+mode support.
 
-Amelie Delaunay (3):
-  ARM: dts: stm32: add USB OTG full support on stm32mp151
-  ARM: dts: stm32: add USB OTG pinctrl to stm32mp15
-  ARM: dts: stm32: enable USB OTG Dual Role on stm32mp157c-ev1
+Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
+---
+ arch/arm/boot/dts/stm32mp151.dtsi | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
- arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 13 +++++++++++++
- arch/arm/boot/dts/stm32mp151.dtsi        |  3 ++-
- arch/arm/boot/dts/stm32mp157c-ed1.dts    |  4 ++++
- arch/arm/boot/dts/stm32mp157c-ev1.dts    |  3 ++-
- 4 files changed, 21 insertions(+), 2 deletions(-)
-
+diff --git a/arch/arm/boot/dts/stm32mp151.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
+index fb41d0778b00..53fa6ed82b34 100644
+--- a/arch/arm/boot/dts/stm32mp151.dtsi
++++ b/arch/arm/boot/dts/stm32mp151.dtsi
+@@ -1044,7 +1044,7 @@
+ 		};
+ 
+ 		usbotg_hs: usb-otg@49000000 {
+-			compatible = "snps,dwc2";
++			compatible = "st,stm32mp15-hsotg", "snps,dwc2";
+ 			reg = <0x49000000 0x10000>;
+ 			clocks = <&rcc USBO_K>;
+ 			clock-names = "otg";
+@@ -1055,6 +1055,7 @@
+ 			g-np-tx-fifo-size = <32>;
+ 			g-tx-fifo-size = <128 128 64 64 64 64 32 32>;
+ 			dr_mode = "otg";
++			usb33d-supply = <&usb33>;
+ 			status = "disabled";
+ 		};
+ 
 -- 
 2.17.1
 
