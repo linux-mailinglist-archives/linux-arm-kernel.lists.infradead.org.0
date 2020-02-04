@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4E59151959
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 12:13:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57D92151969
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 12:13:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=46gDT6axQoX6qedmWeVQL+3gIJXykdX6/czG1dizSuU=; b=hpUPURtEHiatol
-	152+cUIHBH6QcavkmdGdBJ/duftJMPYvdgN65cKkXwcVF9YL1L7AW2SuTeNGrapgfKbTP4CWzCa/V
-	o2I0bGtO1TVjHKGvDw//Jm0pxjrkBcKyrOz4pLqKabkiAYwXfiMl9QT2+gG83D0Ybeuj9H7xxrnMF
-	XJJ64dukX+zIRmWp0OoXA6ZMph7vd+2j/Sk/Rb7oZV1JgdCoctH+/sjD5CPRMXkhf3QANqgoV/WM8
-	E8N3zncln/PYukr+vJH6pNevaJvXHsNfi/toWz3aPzhwKhoLm80MXI3EkYihVA3o67CZShaHj/YgJ
-	cbL1EdWdKHeW+ed+9+Mw==;
+	List-Owner; bh=QGC6yUq5+TEWJMI8Q0BWexP0fUa/POuBCD6fnfM1Lbc=; b=mv1nrvKt4qzcqn
+	OF+LOpLUmKcA0fEi7MD6DjqINtELYKqjagjfdW9YYP0zelrbXIVUTv1qaElWXjitwWeY1DjA6J0UZ
+	PZm0qJqrY1USi5WebSAkN5CeGP699kUUWTvvmcrKhG3ns9/TgnJKDg8G89CqY13UUMCufmrhzDs7K
+	69JNMS0p/7h2mSmqLXI7s6Ycv1By7GygiBcKSKn38sOpKgUSkz+ZSP8zb6s0kek5G4H+58HWBMr//
+	mu1r4/TJjPlRH5Kx9MoEYTQOQxc0OqkH5oEim+eu8plyZBEqnrdfcjwI36LBj1XLjk3obYcObBtOo
+	UpNXoB2ZumrgYn91ZZIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyw8y-0007q9-0W; Tue, 04 Feb 2020 11:13:24 +0000
+	id 1iyw9B-0008GN-HE; Tue, 04 Feb 2020 11:13:37 +0000
 Received: from mail-am6eur05hn2221.outbound.protection.outlook.com
  ([52.101.152.221] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyw7v-0006lr-48
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 11:12:20 +0000
+ id 1iyw7w-0006lr-S4
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 11:12:22 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JxZPAFA243hJ4M8u7eJdVPmQVA5u94MuhElIQn6OhThQ6aMouVm7gpHEAqOeI3zKzldvrVE0atIK6iBCKPwetZYixNqh/k3wqVBkb/CorDzsuTsUjthH6pjHo6fQ5qX/vKu/ETt30FnlTNZFrPKQt32CTpR3TQnaASGjmWz5g4GGdev3bjsJduIck7HQrKpOIvTjxtJeuLBWvyw3S9+7QcjTXgzgzSwP0ieLn/PWPDe6CiV4wESWmJbfGk5QviZT4L+9S8a/vY8vA4xEuKoX2Jwrnh+bGkxuzxxaARbNMrPjGZp/bi2g3f1KVSFZLGomPTQF+kCBQgbvSb1Fedca5g==
+ b=P/7cdgJLN3S7oFBgFkfY5WJn2qkHWzXm3YDfokBP1B66JHUEgGqE4qMH0oaWSf+kRPTbz94QZ0uB6VnZk8VYrS+Ro+yp1ARrGnuanM5G8QVZ4WuwgA8Jsnc1/FS+Jk16NL7YYpzIGbLNUHJYjSe/RsKzFI+OmJuwemeWsZN0JM541z0XqVB0hOV9VizGbI0cU/5hyre1G1HpIqVcEWtWpaJbM139p5rFq+uispwGkjY9uJwAb6rJDoqIXciS9EnBH/RINBtLY81QM5Y8ghqoB1Dg3dG/CrglnnDlHGgL7mooTXv7ZMbnt1Zo25tcoCY9oq6Y6uJuYJc1af4wfh8aSQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LJqzLF0LHNIHPzWqjjH4y4e7LesX12zHZKU8YrqxJwQ=;
- b=bJ5NplhSzAwUtjBx0gVjpNtyVYeA4gAYlpZLzsoxgEK6+6r5jh/DoQNwyuVtp57lY+QMiA2gJ9m9DCuHMn31GAS+s25WdmEM8tALg5SGyoJ9GJyQYfni5X3GivtjTeqQB+XsXwXFHr3IglI8h149KMZPTCepRdsZNFT+lYAxFv7HFk/NRKOfyOUpOaypw69Aikh+CXx+4tofFyFfruKcLoswvNDmpVC/as6KPYF/f230QAcOkPTJqHm9JFvtkj2MD0HzQUzMvq+KCyYQxYY4gzkjo6HafAS7ZVpXKHB+Uw2+S4PREYD2PgiTW+u5COKuXDGxmkjmT+8+WyUSweV8VQ==
+ bh=GZ2P9pMANJ7iMowc+ybhEOMYu9e3FNKQ4FlvGs3ONwY=;
+ b=BEv8nbX89emCGHIljzvp9CLIGEbI47+Y4X/s4XC465hrqOQtpO2e3Aq2AUHAcI5k7j/c/KFL/MPARiREvgCRVr9egfTuQOyJOpRabIuGmPCx/5W1VN7n6FCmxS8hXZCTHvKE+s64VDC0bsKkXC4BdgcDAq/K2IQuM/txp1NmjtAlnRnDBjqkBuyP1DGbzE47QAUVSxj0al66JSdOlpuOxOtpOCbWntvGo/BtAeLe+FAKfmF8v5YvmqL7h58DYteZkyYm7h12LbeST1XjfCy7tSeHOKz2ECQcPxqmRUKXC1qtEBjsP4G+1Wq6PA4CHY/VJ06Ud6K50Nx2llkzOOPS6g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
  dkim=pass header.d=toradex.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LJqzLF0LHNIHPzWqjjH4y4e7LesX12zHZKU8YrqxJwQ=;
- b=V6FC4DGvru7rsEpw9bVAXqtqaTFjTmg7LgIlgamkkb5Lf2S6A8BEgFpRNXxgsNVI48jfcCDE5OOayjjf+8URHCiwNH7Y8PZXXll56nZtsA3m1T/HWSwbzBUK4Or/07jcd0R3jQ3SUDIVvCehSBu6V0OdWxJcUBde0N3IxddjzHQ=
+ bh=GZ2P9pMANJ7iMowc+ybhEOMYu9e3FNKQ4FlvGs3ONwY=;
+ b=b8ExbrORMmYW66Tn0XMBKbDTORmx76/6A7jKY574yPlnu6lrQZ6xltmrJRW6nWTg7vhFvBSVkVww5duJnr9lHZ8PLqRTjDvK+ifEUD4Ra5RijONVY4lQMSgf6GwThOVEdmTRteO8q14p4cp0JQ5N8v9b6Yvctfj+ERkZUd8+tlU=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=oleksandr.suvorov@toradex.com; 
 Received: from VI1PR05MB3279.eurprd05.prod.outlook.com (10.170.238.24) by
  VI1PR05MB5632.eurprd05.prod.outlook.com (20.178.120.89) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2686.27; Tue, 4 Feb 2020 11:12:08 +0000
+ 15.20.2686.27; Tue, 4 Feb 2020 11:12:09 +0000
 Received: from VI1PR05MB3279.eurprd05.prod.outlook.com
  ([fe80::c14f:4592:515f:6e52]) by VI1PR05MB3279.eurprd05.prod.outlook.com
  ([fe80::c14f:4592:515f:6e52%7]) with mapi id 15.20.2686.031; Tue, 4 Feb 2020
- 11:12:08 +0000
+ 11:12:09 +0000
 From: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
 To: devicetree@vger.kernel.org
-Subject: [PATCH 5/6] ARM: imx_v6_v7_defconfig: Enable TOUCHSCREEN_AD7879
-Date: Tue,  4 Feb 2020 13:11:50 +0200
-Message-Id: <20200204111151.3426090-6-oleksandr.suvorov@toradex.com>
+Subject: [PATCH 6/6] ARM: dts: imx7-colibri: add support for Toradex Aster
+ carrier board
+Date: Tue,  4 Feb 2020 13:11:51 +0200
+Message-Id: <20200204111151.3426090-7-oleksandr.suvorov@toradex.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200204111151.3426090-1-oleksandr.suvorov@toradex.com>
 References: <20200204111151.3426090-1-oleksandr.suvorov@toradex.com>
-X-ClientProxiedBy: PR0P264CA0169.FRAP264.PROD.OUTLOOK.COM
- (2603:10a6:100:1c::13) To VI1PR05MB3279.eurprd05.prod.outlook.com
+X-ClientProxiedBy: PR2P264CA0005.FRAP264.PROD.OUTLOOK.COM (2603:10a6:101::17)
+ To VI1PR05MB3279.eurprd05.prod.outlook.com
  (2603:10a6:802:1c::24)
 MIME-Version: 1.0
 Received: from localhost (194.105.145.90) by
- PR0P264CA0169.FRAP264.PROD.OUTLOOK.COM (2603:10a6:100:1c::13) with Microsoft
+ PR2P264CA0005.FRAP264.PROD.OUTLOOK.COM (2603:10a6:101::17) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2686.30 via Frontend Transport; Tue, 4 Feb 2020 11:12:07 +0000
+ 15.20.2686.29 via Frontend Transport; Tue, 4 Feb 2020 11:12:09 +0000
 X-Mailer: git-send-email 2.24.1
 X-Originating-IP: [194.105.145.90]
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: feafd06d-0f98-49df-b49d-08d7a96312cf
+X-MS-Office365-Filtering-Correlation-Id: 8750c744-59dd-4286-c023-08d7a96313d8
 X-MS-TrafficTypeDiagnostic: VI1PR05MB5632:|VI1PR05MB5632:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VI1PR05MB56329D56948F5B71C58EF913F9030@VI1PR05MB5632.eurprd05.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:4125;
+X-Microsoft-Antispam-PRVS: <VI1PR05MB563251F4EAFEACE1477CD948F9030@VI1PR05MB5632.eurprd05.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:4502;
 X-Forefront-PRVS: 03030B9493
 X-Forefront-Antispam-Report: SFV:SPM;
- SFS:(10019020)(4636009)(39840400004)(366004)(136003)(396003)(376002)(346002)(189003)(199004)(1076003)(86362001)(4744005)(36756003)(5660300002)(4326008)(6666004)(44832011)(316002)(6486002)(52116002)(6496006)(54906003)(16526019)(186003)(26005)(956004)(2616005)(478600001)(66556008)(66476007)(6916009)(7416002)(66946007)(2906002)(8936002)(81156014)(8676002)(81166006)(23200700001);
+ SFS:(10019020)(4636009)(39840400004)(366004)(136003)(396003)(376002)(346002)(189003)(199004)(1076003)(86362001)(36756003)(5660300002)(4326008)(6666004)(44832011)(316002)(6486002)(52116002)(6496006)(54906003)(16526019)(186003)(26005)(956004)(2616005)(478600001)(66556008)(66476007)(6916009)(7416002)(66946007)(2906002)(8936002)(81156014)(8676002)(81166006)(23200700001);
  DIR:OUT; SFP:1501; SCL:5; SRVR:VI1PR05MB5632;
  H:VI1PR05MB3279.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; CAT:OSPM; 
@@ -83,20 +84,19 @@ Received-SPF: None (protection.outlook.com: toradex.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: AP2k5VWj9Jg1yoN9Yc/cagueqT9NTC2mXyynXkBN7xFIipViba1jmuKhhm5lx5zo1Z5j87Q1tmcosNihhI+yVmNVLnC71DTTjjCqbHzyH+FrEMul6H8xH71UkItbAA55oCBaK5iEWusdPlu/otcBucEk1ykFJq3FA8L4aUTcvi627rkIo34P4QGS4aozLUf34YWnC6n1Ld4MWadm7lMvPubWArKSsCiX4htw4g/dY1X1cudOujbxu8rGUsX/IaPan3YzoZhCAswIpfjGqzAYt3vvavt/MpB4RN3u5qbS+d4a4Wr2C51IU0vBBO9xe9CNTCzHREAdUU8FZR93J3ISqi9J1jw58BcSC8GXwRQXp6i0/V0XNZbJjmw47Wwi4t1xFoeHlfOkAwVbJTDQBYzWw/1fgHv7yJIehDe3AK5JR4u2mMJAsDXzSenGmrw5Rb1wMXju9Z9JmN4Rf6f03xMcLkKq0PfPyL9We2UnTWb58QMXaMAwwvttVkd/4yVK5nplQ/pFEaNYNcHp7Nog2iKNnydQLTDK10G6ti9DK+KsQUKcSQVcNkaLZ7Tv0e8EU/bHgVF1ks1s0/ah44rtkIWVFK7AELLQ5gNzfvh3lC/vvChWI9MyLjAz4PkAprSenBDrzjjW8uwfjWe0TGXXlx7NQZo7MmpKlkC0GgxxFxNkxfIHs+VUkCeXRbO1AlbL+i2iCvxx4KgjQKfQ8doEsVnxSbdbcfsOYxQZGOn/Td6VAbCUipXeO/Vw3GmzRf4LOoSgeLc5QPoP65hbmA8gQiSvoQ==
-X-MS-Exchange-AntiSpam-MessageData: +hVxH3qjGMk3c9eSCNYbgZsorPbrGrgT2lkOJIrA8xzVXJfH4cDc+ioZuBpqHS0cuhS+Nxie8teUoCI4ZGBfNTQ0C3Nkw52iPTT6ZYCKmPg2guxe7NSZDe+v+Z6yaOT/8DdwPoE/DB0dWBmaCus60A==
+X-Microsoft-Antispam-Message-Info: eM4ohELyUD4wut/2edV9Ra1n/emT3t8B7TfrOKyHbYju5fnys/YPjnwNNhxD8Ta2TIhBbZfKzfGuOCEKKxiTIA6sxp88P/lafRwfRrIzkr09APQ2TDjYpFs1XbtBnZDwloeAYGtEXdEQehwmi/MVAioBDOwH4JizHfIgZKXyQfGcbuBpiIfIVImz/wUxYtRlg7BH+g54OQcsc1p2WkInuo1RXmaf6aTOwNtl1l3EZwRDH78p/S60LM0Hl/gcnjLnqt7JzmTGsjSV0PH+b8uAXMjZY1sTfoG5OiIYCLC9gVSxBr6Goyrd2HF6gAGsTx25s81w0yodrxS1imoNol9f3/i3lVj/ZnbkV411MZeWWy+eVsk6JAFzrKnQCeaiRyh21TqKuRA9rpKI/q1rK9krSB1iapUIHvxGOB3lxCod4QvLZhZQM7SP9bdejMFxzmPuMaHKgac8bvi84lYMHSTTc98GlKomTYhRxzhjftcoBVemjgyE/hyXQ9NTx4u2K08rV0l52eYPHTux4AYEfNdt89dxmXpM7qrbQ4oFtcz6UkQFMWKXx0SQmp2CWN5agrUON+91LAhhp0GhLiyN9RAkwicN5Q+TZ4VfyRx3Ejlv5Ymo4NlClwt76+o2n2eUfGXe54iY+RPpmlCrFI0EsPwXo9E5OZg6To9qaCuBqtJFHdnG+E6W5rXKqC2YRF7NGoe9nnZzmD5nN/7tMhx/xju+gn68+I3MQ0PQz4lYlXGTnUUE2/G0lYnKRooylM2XfR2p/iNQUneF/3Wkq1CZJ0G9pA==
+X-MS-Exchange-AntiSpam-MessageData: IgEjFdLRseY0CQLcFrcL9Q0jA5TjI+wIhs5HU1xQAyqdNqvrkBvIY2M1dEPFt/DwHnWZAEPTegdDM385mc7lAPr++kIjiQvMLTH/Q01TFiWbRLkJENCpqj80APJgJUaJ4Px0tVySE0280i/9S/zTMA==
 X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: feafd06d-0f98-49df-b49d-08d7a96312cf
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Feb 2020 11:12:08.0132 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8750c744-59dd-4286-c023-08d7a96313d8
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Feb 2020 11:12:09.7542 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: d9995866-0d9b-4251-8315-093f062abab4
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: Oh8Y9KAdJZNQD+EObtifnAkDAbTOaPsXr86U8FWo99U22eU7xBPMwDsx+E3peUijOy05UDFcF0Aj0Ghb1o4j7QOxhR46cBZqRctN7AudyE0=
+X-MS-Exchange-CrossTenant-UserPrincipalName: JmLk+kRJfHU1IAvi4BTR4/BqgYKASNkirVFDMawuBG6uO6yjO2lEQTfUiaMXn6/hXBxKtVMYutauRL7CJWBDJyNYlGOpTJZ1Qn72UNjBAB4=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR05MB5632
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_031219_184176_BEF55451 
-X-CRM114-Status: UNSURE (   8.48  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200204_031220_924883_63F09FB6 
+X-CRM114-Status: GOOD (  16.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -125,49 +125,351 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Chen <peter.chen@nxp.com>, Igor Opaniuk <igor.opaniuk@toradex.com>,
- Anson Huang <Anson.Huang@nxp.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Igor Opaniuk <igor.opaniuk@toradex.com>,
  Marcel Ziswiler <marcel.ziswiler@toradex.com>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
  Oleksandr Suvorov <oleksandr.suvorov@toradex.com>,
  Philippe Schenker <philippe.schenker@toradex.com>,
- NXP Linux Team <linux-imx@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Computer on module Colibri iMX7S/iMX7D has
-an AD7879 touchscreen controller.
+Add support for the Toradex Aster carrier board.
 
-This patch enables the TOUCHSCREEN_AD7879 and TOUCHSCREEN_AD7879_I2C
-which support the mentioned controller in i2c mode.
+Follow the usual hierarchic include model, maintaining shared
+configuration imx7-colibri-aster.dtsi.
 
 Signed-off-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
 ---
 
- arch/arm/configs/imx_v6_v7_defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm/boot/dts/Makefile                    |   3 +
+ arch/arm/boot/dts/imx7-colibri-aster.dtsi     | 191 ++++++++++++++++++
+ arch/arm/boot/dts/imx7-colibri.dtsi           |   2 -
+ arch/arm/boot/dts/imx7d-colibri-aster.dts     |  20 ++
+ .../arm/boot/dts/imx7d-colibri-emmc-aster.dts |  20 ++
+ arch/arm/boot/dts/imx7s-colibri-aster.dts     |  15 ++
+ 6 files changed, 249 insertions(+), 2 deletions(-)
+ create mode 100644 arch/arm/boot/dts/imx7-colibri-aster.dtsi
+ create mode 100644 arch/arm/boot/dts/imx7d-colibri-aster.dts
+ create mode 100644 arch/arm/boot/dts/imx7d-colibri-emmc-aster.dts
+ create mode 100644 arch/arm/boot/dts/imx7s-colibri-aster.dts
 
-diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
-index 7cf452ddaa0a..5a20d12d62bd 100644
---- a/arch/arm/configs/imx_v6_v7_defconfig
-+++ b/arch/arm/configs/imx_v6_v7_defconfig
-@@ -179,6 +179,8 @@ CONFIG_MOUSE_PS2=m
- CONFIG_MOUSE_PS2_ELANTECH=y
- CONFIG_INPUT_TOUCHSCREEN=y
- CONFIG_TOUCHSCREEN_ADS7846=y
-+CONFIG_TOUCHSCREEN_AD7879=y
-+CONFIG_TOUCHSCREEN_AD7879_I2C=y
- CONFIG_TOUCHSCREEN_ATMEL_MXT=y
- CONFIG_TOUCHSCREEN_DA9052=y
- CONFIG_TOUCHSCREEN_EGALAX=y
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index e006fef77499..6165d5d3a008 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -610,6 +610,8 @@ dtb-$(CONFIG_SOC_IMX6UL) += \
+ 	imx6ulz-14x14-evk.dtb
+ dtb-$(CONFIG_SOC_IMX7D) += \
+ 	imx7d-cl-som-imx7.dtb \
++	imx7d-colibri-aster.dtb \
++	imx7d-colibri-emmc-aster.dtb \
+ 	imx7d-colibri-emmc-eval-v3.dtb \
+ 	imx7d-colibri-eval-v3.dtb \
+ 	imx7d-mba7.dtb \
+@@ -623,6 +625,7 @@ dtb-$(CONFIG_SOC_IMX7D) += \
+ 	imx7d-sdb-sht11.dtb \
+ 	imx7d-zii-rmu2.dtb \
+ 	imx7d-zii-rpu2.dtb \
++	imx7s-colibri-aster.dtb \
+ 	imx7s-colibri-eval-v3.dtb \
+ 	imx7s-mba7.dtb \
+ 	imx7s-warp.dtb
+diff --git a/arch/arm/boot/dts/imx7-colibri-aster.dtsi b/arch/arm/boot/dts/imx7-colibri-aster.dtsi
+new file mode 100644
+index 000000000000..776dacdbbe30
+--- /dev/null
++++ b/arch/arm/boot/dts/imx7-colibri-aster.dtsi
+@@ -0,0 +1,191 @@
++// SPDX-License-Identifier: (GPL-2.0 OR X11)
++/*
++ * Copyright 2017-2020 Toradex AG
++ *
++ */
++
++
++#include <dt-bindings/input/input.h>
++#include <dt-bindings/pwm/pwm.h>
++
++/ {
++	chosen {
++		stdout-path = "serial0:115200n8";
++	};
++
++	gpio-keys {
++		compatible = "gpio-keys";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_gpiokeys>;
++
++		power {
++			label = "Wake-Up";
++			gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
++			linux,code = <KEY_WAKEUP>;
++			debounce-interval = <10>;
++			wakeup-source;
++		};
++	};
++
++	panel: panel {
++		compatible = "edt,et057090dhu";
++		backlight = <&bl>;
++		power-supply = <&reg_3v3>;
++
++		port {
++			panel_in: endpoint {
++				remote-endpoint = <&lcdif_out>;
++			};
++		};
++	};
++
++	reg_3v3: regulator-3v3 {
++		compatible = "regulator-fixed";
++		regulator-name = "3.3V";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++	};
++
++	reg_5v0: regulator-5v0 {
++		compatible = "regulator-fixed";
++		regulator-name = "5V";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++	};
++
++	reg_usbh_vbus: regulator-usbh-vbus {
++		compatible = "regulator-fixed";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_usbh_reg>;
++		regulator-name = "VCC_USB[1-4]";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		gpio = <&gpio4 7 GPIO_ACTIVE_LOW>;
++		vin-supply = <&reg_5v0>;
++	};
++};
++
++&bl {
++	brightness-levels = <0 4 8 16 32 64 128 255>;
++	default-brightness-level = <6>;
++	power-supply = <&reg_3v3>;
++
++	status = "okay";
++};
++
++&adc1 {
++	status = "okay";
++};
++
++/*
++ * ADC2 is not available on the Aster board and
++ * conflicts with AD7879 resistive touchscreen.
++ */
++&adc2 {
++	status = "disabled";
++};
++
++&ecspi3 {
++	cs-gpios = <
++		&gpio4 11 GPIO_ACTIVE_HIGH
++		&gpio4 23 GPIO_ACTIVE_HIGH
++	>;
++	status = "okay";
++
++	spidev0: spidev@0 {
++		compatible = "toradex,evalspi";
++		reg = <0>;
++		spi-max-frequency = <23000000>;
++	};
++
++	spidev1: spidev@1 {
++		compatible = "toradex,evalspi";
++		reg = <1>;
++		spi-max-frequency = <23000000>;
++	};
++};
++
++&fec1 {
++	status = "okay";
++};
++
++&i2c4 {
++	status = "okay";
++
++	/* Microchip/Atmel maxtouch controller */
++	touchscreen@4a {
++		compatible = "atmel,maxtouch";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_gpiotouch>;
++		reg = <0x4a>;
++		interrupt-parent = <&gpio2>;
++		interrupts = <15 IRQ_TYPE_EDGE_FALLING>;	/* SODIMM 107 */
++		reset-gpios = <&gpio2 28 GPIO_ACTIVE_HIGH>;	/* SODIMM 106 */
++		status = "okay";
++	};
++
++	/* M41T0M6 real time clock on carrier board */
++	rtc: m41t0m6@68 {
++		compatible = "st,m41t0";
++		reg = <0x68>;
++	};
++};
++
++&lcdif {
++	status = "okay";
++
++	port {
++		lcdif_out: endpoint {
++			remote-endpoint = <&panel_in>;
++		};
++	};
++};
++
++&pwm1 {
++	status = "okay";
++};
++
++&pwm2 {
++	status = "okay";
++};
++
++&pwm3 {
++	status = "okay";
++};
++
++&pwm4 {
++	status = "okay";
++};
++
++&uart1 {
++	status = "okay";
++};
++
++&uart2 {
++	status = "okay";
++};
++
++&uart3 {
++	status = "okay";
++};
++
++&usbotg1 {
++	status = "okay";
++};
++
++&usdhc1 {
++	keep-power-in-suspend;
++	no-1-8-v;
++	wakeup-source;
++	vmmc-supply = <&reg_3v3>;
++	status = "okay";
++};
++
++&iomuxc {
++	pinctrl_gpiotouch: touchgpios {
++		fsl,pins = <
++			MX7D_PAD_EPDC_DATA15__GPIO2_IO15        0x74
++			MX7D_PAD_EPDC_BDR0__GPIO2_IO28          0x14
++		>;
++	};
++};
+diff --git a/arch/arm/boot/dts/imx7-colibri.dtsi b/arch/arm/boot/dts/imx7-colibri.dtsi
+index 7b4e81412381..fc075f2465eb 100644
+--- a/arch/arm/boot/dts/imx7-colibri.dtsi
++++ b/arch/arm/boot/dts/imx7-colibri.dtsi
+@@ -321,7 +321,6 @@ MX7D_PAD_LCD_RESET__GPIO3_IO4		0x14 /* SODIMM 93 */
+ 			MX7D_PAD_EPDC_DATA13__GPIO2_IO13	0x14 /* SODIMM 95 */
+ 			MX7D_PAD_ENET1_RGMII_TXC__GPIO7_IO11	0x14 /* SODIMM 99 */
+ 			MX7D_PAD_EPDC_DATA10__GPIO2_IO10	0x74 /* SODIMM 105 */
+-			MX7D_PAD_EPDC_DATA15__GPIO2_IO15	0x74 /* SODIMM 107 */
+ 			MX7D_PAD_EPDC_DATA00__GPIO2_IO0		0x14 /* SODIMM 111 */
+ 			MX7D_PAD_EPDC_DATA01__GPIO2_IO1		0x14 /* SODIMM 113 */
+ 			MX7D_PAD_EPDC_DATA02__GPIO2_IO2		0x14 /* SODIMM 115 */
+@@ -338,7 +337,6 @@ MX7D_PAD_SAI1_RX_BCLK__GPIO6_IO17	0x14 /* SODIMM 24 */
+ 			MX7D_PAD_SD2_DATA2__GPIO5_IO16		0x14 /* SODIMM 100 */
+ 			MX7D_PAD_SD2_DATA3__GPIO5_IO17		0x14 /* SODIMM 102 */
+ 			MX7D_PAD_EPDC_GDSP__GPIO2_IO27		0x14 /* SODIMM 104 */
+-			MX7D_PAD_EPDC_BDR0__GPIO2_IO28		0x74 /* SODIMM 106 */
+ 			MX7D_PAD_EPDC_BDR1__GPIO2_IO29		0x14 /* SODIMM 110 */
+ 			MX7D_PAD_EPDC_PWR_COM__GPIO2_IO30	0x14 /* SODIMM 112 */
+ 			MX7D_PAD_EPDC_SDCLK__GPIO2_IO16		0x14 /* SODIMM 114 */
+diff --git a/arch/arm/boot/dts/imx7d-colibri-aster.dts b/arch/arm/boot/dts/imx7d-colibri-aster.dts
+new file mode 100644
+index 000000000000..1e84e47a00fc
+--- /dev/null
++++ b/arch/arm/boot/dts/imx7d-colibri-aster.dts
+@@ -0,0 +1,20 @@
++// SPDX-License-Identifier: (GPL-2.0 OR X11)
++/*
++ * Copyright 2017-2020 Toradex AG
++ *
++ */
++
++/dts-v1/;
++#include "imx7d-colibri.dtsi"
++#include "imx7-colibri-aster.dtsi"
++
++/ {
++	model = "Toradex Colibri iMX7D on Colibri Aster Board";
++	compatible = "toradex,colibri-imx7d-aster", "toradex,colibri-imx7d",
++		     "fsl,imx7d";
++};
++
++&usbotg2 {
++	vbus-supply = <&reg_usbh_vbus>;
++	status = "okay";
++};
+diff --git a/arch/arm/boot/dts/imx7d-colibri-emmc-aster.dts b/arch/arm/boot/dts/imx7d-colibri-emmc-aster.dts
+new file mode 100644
+index 000000000000..9caaac6ecf5c
+--- /dev/null
++++ b/arch/arm/boot/dts/imx7d-colibri-emmc-aster.dts
+@@ -0,0 +1,20 @@
++// SPDX-License-Identifier: GPL-2.0 OR X11
++/*
++ * Copyright 2017-2020 Toradex AG
++ *
++ */
++
++/dts-v1/;
++#include "imx7d-colibri-emmc.dtsi"
++#include "imx7-colibri-aster.dtsi"
++
++/ {
++	model = "Toradex Colibri iMX7D 1GB (eMMC) on Colibri Aster Board";
++	compatible = "toradex,colibri-imx7d-emmc-aster",
++		     "toradex,colibri-imx7d-emmc", "fsl,imx7d";
++};
++
++&usbotg2 {
++	vbus-supply = <&reg_usbh_vbus>;
++	status = "okay";
++};
+diff --git a/arch/arm/boot/dts/imx7s-colibri-aster.dts b/arch/arm/boot/dts/imx7s-colibri-aster.dts
+new file mode 100644
+index 000000000000..6fb981f3f801
+--- /dev/null
++++ b/arch/arm/boot/dts/imx7s-colibri-aster.dts
+@@ -0,0 +1,15 @@
++// SPDX-License-Identifier: (GPL-2.0 OR X11)
++/*
++ * Copyright 2017-2020 Toradex AG
++ *
++ */
++
++/dts-v1/;
++#include "imx7s-colibri.dtsi"
++#include "imx7-colibri-aster.dtsi"
++
++/ {
++	model = "Toradex Colibri iMX7S on Colibri Aster Board";
++	compatible = "toradex,colibri-imx7s-aster", "toradex,colibri-imx7s",
++		     "fsl,imx7s";
++};
 -- 
 2.24.1
 
