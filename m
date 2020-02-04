@@ -2,92 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A39821517AE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 10:20:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 107AB1517B4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 10:20:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WLhlUkmGZwarwuw52H/QUUKJjXw+mA4ngBC6NKYt/8Q=; b=DRw/W3AjjCZRGsqml8dGwhU1F
-	c89+Gf4azIsBAqP/Uc2nCJH4NfJkp8rovGei8ItzTcfJKKV2KN7jLK9FNYpMmzOYl8CoVI3g571HG
-	btYLqoYMvpiwQS9ARUOplegpZaUAEoC0ndXU7qUjNSmXFUpn3OG77mgPSGLwbecaLkzH66Aqd2cKX
-	lkjC7mzHWp+s5jsWMRS4euS7cM1vlo4I7gKs9KybE5KEMWX/6kgpU07aDdUcbFeCZTuYgLEqQ0Gga
-	gV3xLGvqkZbyMCW0ATdhel9rj8Dmd+cTzAnf5L0F8fIUB4HeK57gmdgm/pKKoHDSKQXficLvu93e8
-	474wtjhIA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QbZndwtYPJxSe/qBZd4IqMiSHLkPf0j49UJ8RIwWaMQ=; b=iG3pVOF+j52/7A
+	X+BcpbXYJrd4bQnPZ4N1bKtmMiqvIrhGVUhN2SXS5eg/YVUnhVZGFAFqvQc/cLx+y7IcVWdVleHBJ
+	xE5Gj9oQfQ7IHsh+oc9AXLn6Fpz4LwJ0nHnlDCDJy8kEqCEL4qbRDp0mzae+1u/kVmM+2pLPbmd6U
+	XeAr4IObe2SwS3YjednD9kWox43zKh7JY80OA74YJVjTNz/KeVJDDHom8sWArpSDdStXnUBifwCOj
+	nqGPSscD/hqUmEZQevNSSd4hhX5EU6K7fqcvjy04o4I/ATmw4XIsu2C2rxd7W6g2C8hTp7VonMCPQ
+	lT7fLhSJUjtkAo/bdvAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyuNS-0007YG-Pg; Tue, 04 Feb 2020 09:20:14 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
+	id 1iyuNt-0007o8-Pz; Tue, 04 Feb 2020 09:20:41 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyuNK-0006GN-VW; Tue, 04 Feb 2020 09:20:08 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 59B186B76;
- Tue,  4 Feb 2020 04:19:58 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Tue, 04 Feb 2020 04:19:58 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=x4lyZnW5C94NfX9C1zEMyUaspjy
- lIhh7aPoztF74m5c=; b=muEMdnhDQ+bTk2YEyzZPghqhY3VJVq5qOVd8NnIvzo1
- 1v0IUNwdPCmJrVxK4WqQ5vtpIrt1E9kZsULc+Zr+bOGEqUFmyAdV1hYxSWJjPaE3
- w1XHJ6foSS5FEMzJmvjcA976KdZgtrojUYwEaQFrcQFIOC4dcW80Lu0WxVDIWaXa
- iyI2pcKSVAOLniHLLXWpGlW+dYPaNa5qDhA4eSdH7E7flgJGhwgBfYJSAugnDqbx
- vIb7z0TpyEZf0hZsxMWWi4y6fOUHjyu2l1DhIg6xx0hZs8WTVQ9M0U//hlKqSN6S
- 1TJqdYxlB4rm/UiOHJ/p4L2M9/peZfb2PNUhHNR/+Xg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=x4lyZn
- W5C94NfX9C1zEMyUaspjylIhh7aPoztF74m5c=; b=u5lJU7JhJcrZtKQRcmrAxA
- /UyFU3w5EzuqZMvB9hxipXPXzRfWzPS/r3Wi1tW1G5Z8YSZTw/KyLJYyf3ajPbN2
- EuR4QNVmD7/v2yMJQ3I6HjjmVCt1XC5kK/J648RTACqi+NJYa6AVPqJdwONP7QuK
- YPmnM0kfSO78B9wIXclXWCkFEfOBqGZufvg9tgpUyLQc/ozwUYAd1c/P7/d0Ayth
- LmUb4X3Bfqbv/TlNP+CH/89XT9goaFCXKWYPXUhS6jza57BwjoSc2lltzaeYzCDd
- ok3MQsvHEKLZsy5kyTh/8irPfU4HZXNTo8828fiz2YKcFp/pDXejgAWQdVZgykQQ
- ==
-X-ME-Sender: <xms:PDc5Xq02AxCfAFgRtkb6tRwZf7wGEE4687_w6Jd0HIGFjgJ9JPV1Rw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrgeelgddtfecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:PDc5XgBMh_8nOAw7B3cMzQtSqeGyhnSgBAW3H_IlmWPVBOOvNAto3w>
- <xmx:PDc5XnEn5YITSLPoIMnnYQCTJg4jAa9CnAqF8fGaU5I66PVuhevoIQ>
- <xmx:PDc5XpDU3Rb5S3xbjgDiZtaG4g53ogju3QEQ9-Ln-AjfyNTg-lR8sw>
- <xmx:Pjc5XiAaywj81i7AfV_Z1EYGEoOIiLSRyq4fC7xZQolWtPR-10Qsvw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 86DDC328005A;
- Tue,  4 Feb 2020 04:19:56 -0500 (EST)
-Date: Tue, 4 Feb 2020 10:19:54 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH 11/12] dt-bindings: arm: Document Broadcom SoCs
- 'secondary-boot-reg'
-Message-ID: <20200204091954.4zdxow4ijqnmvbdj@gilmour.lan>
-References: <20200202211827.27682-1-f.fainelli@gmail.com>
- <20200202211827.27682-12-f.fainelli@gmail.com>
- <20200203083403.6wmuduxqsv7quujp@gilmour.lan>
- <2744136e-a6e7-de19-4142-04f7edf0c6ea@gmail.com>
+ id 1iyuNh-0007m9-SO
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 09:20:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580808026;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+ bh=RHvzu8t7DSk7lF1XoO7vsW7bU11o/C+y6p3UFShrwgw=;
+ b=R3ioCFZiv+cR+EIi/g7WLC3Z5ezql5txIBZYtdOpDcayGSCQJ56m3yHSoqsG8QFa9VOfu4
+ QL//sMJml1d/RBcukqvqqBknRD0YDOUEm8WQkGo88/d1fxjohHdYiS3sRIwfyBnq3Y5rs1
+ 07QcQZdrRAF/GJEfSFcdyB/UVaEVDls=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-434-1mNuaWW5M6GcS8aYzpsskg-1; Tue, 04 Feb 2020 04:20:22 -0500
+X-MC-Unique: 1mNuaWW5M6GcS8aYzpsskg-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 12F3E8010F6;
+ Tue,  4 Feb 2020 09:20:20 +0000 (UTC)
+Received: from [10.36.117.121] (ovpn-117-121.ams2.redhat.com [10.36.117.121])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 4BF735C1B5;
+ Tue,  4 Feb 2020 09:20:17 +0000 (UTC)
+Subject: Re: [PATCH v6 08/10] mm/memory_hotplug: Don't check for "all holes"
+ in shrink_zone_span()
+To: Oscar Salvador <osalvador@suse.de>
+References: <20191006085646.5768-1-david@redhat.com>
+ <20191006085646.5768-9-david@redhat.com> <20200204091312.GC6494@linux>
+From: David Hildenbrand <david@redhat.com>
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: Red Hat GmbH
+Message-ID: <7d36f4cd-3f5b-8fec-2d8b-83e62a34ec89@redhat.com>
+Date: Tue, 4 Feb 2020 10:20:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
-In-Reply-To: <2744136e-a6e7-de19-4142-04f7edf0c6ea@gmail.com>
+In-Reply-To: <20200204091312.GC6494@linux>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_012007_164178_E869B852 
-X-CRM114-Status: GOOD (  20.65  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200204_012029_993858_36429B47 
+X-CRM114-Status: GOOD (  15.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.221 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.221 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -96,7 +124,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,158 +136,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Scott Branden <sbranden@broadcom.com>,
- Lubomir Rintel <lkundrak@v3.sk>, Sugaya Taichi <sugaya.taichi@socionext.com>,
- Ray Jui <rjui@broadcom.com>, open list <linux-kernel@vger.kernel.org>,
- Andrew Jeffery <andrew@aj.id.au>, Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM IPROC ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Olof Johansson <olof@lixom.net>, linux-arm-kernel@vger.kernel.org,
- "moderated list:BROADCOM IPROC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============6459149938198624400=="
+Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
+ linux-sh@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Wei Yang <richardw.yang@linux.intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 04.02.20 10:13, Oscar Salvador wrote:
+> On Sun, Oct 06, 2019 at 10:56:44AM +0200, David Hildenbrand wrote:
+>> If we have holes, the holes will automatically get detected and removed
+>> once we remove the next bigger/smaller section. The extra checks can
+>> go.
+>>
+>> Cc: Andrew Morton <akpm@linux-foundation.org>
+>> Cc: Oscar Salvador <osalvador@suse.de>
+>> Cc: Michal Hocko <mhocko@suse.com>
+>> Cc: David Hildenbrand <david@redhat.com>
+>> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
+>> Cc: Dan Williams <dan.j.williams@intel.com>
+>> Cc: Wei Yang <richardw.yang@linux.intel.com>
+>> Signed-off-by: David Hildenbrand <david@redhat.com>
+> 
+> Heh, I have been here before.
+> I have to confess that when I wrote my version of this I was not really 100%
+> about removing it, because hotplug was a sort of a "catchall" for all sort of weird
+> and corner-cases configurations, but thinking more about it, I cannot think of
+> any situation that would make this blow up.
+> 
+> Reviewed-by: Oscar Salvador <osalvador@suse.de>
 
---===============6459149938198624400==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="vg5cqlhr5mk6q6uh"
-Content-Disposition: inline
+Thanks for your review Oscar!
 
+-- 
+Thanks,
 
---vg5cqlhr5mk6q6uh
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+David / dhildenb
 
-On Mon, Feb 03, 2020 at 09:29:30PM -0800, Florian Fainelli wrote:
->
->
-> On 2/3/2020 12:34 AM, Maxime Ripard wrote:
-> > On Sun, Feb 02, 2020 at 01:18:26PM -0800, Florian Fainelli wrote:
-> >> diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
-> >> index c23c24ff7575..6f56a623c1cd 100644
-> >> --- a/Documentation/devicetree/bindings/arm/cpus.yaml
-> >> +++ b/Documentation/devicetree/bindings/arm/cpus.yaml
-> >> @@ -272,6 +272,22 @@ properties:
-> >>        While optional, it is the preferred way to get access to
-> >>        the cpu-core power-domains.
-> >>
-> >> +  secondary-boot-reg:
-> >> +    $ref: '/schemas/types.yaml#/definitions/uint32'
-> >> +    description: |
-> >> +      Required for systems that have an "enable-method" property value of
-> >> +      "brcm,bcm11351-cpu-method", "brcm,bcm23550" or "brcm,bcm-nsp-smp".
-> >> +
-> >> +      This includes the following SoCs: |
-> >> +      BCM11130, BCM11140, BCM11351, BCM28145, BCM28155, BCM21664, BCM23550
-> >> +      BCM58522, BCM58525, BCM58535, BCM58622, BCM58623, BCM58625, BCM88312
-> >> +
-> >> +      The secondary-boot-reg property is a u32 value that specifies the
-> >> +      physical address of the register used to request the ROM holding pen
-> >> +      code release a secondary CPU. The value written to the register is
-> >> +      formed by encoding the target CPU id into the low bits of the
-> >> +      physical start address it should jump to.
-> >> +
-> >
-> > You can make the requirement explicit (and enforced by the schemas) using:
-> >
-> > if:
-> >   properties:
-> >     enable-method:
-> >       contains:
-> >         enum:
-> > 	  - brcm,bcm11351-cpu-method
-> > 	  - brcm,bcm23550
-> > 	  - brcm,bcm-nsp-smp
-> >
-> > then:
-> >   required:
-> >     - secondary-boot-reg
->
-> Thanks! That was exactly what I was looking for, it seems to be matching
-> a bit too greedily though:
->
->   DTC     arch/arm/boot/dts/bcm2836-rpi-2-b.dt.yaml
->   CHECK   arch/arm/boot/dts/bcm2836-rpi-2-b.dt.yaml
-> /home/ff944844/dev/linux/arch/arm/boot/dts/bcm2836-rpi-2-b.dt.yaml:
-> cpu@0: 'secondary-boot-reg' is a required property
-> /home/ff944844/dev/linux/arch/arm/boot/dts/bcm2836-rpi-2-b.dt.yaml:
-> cpu@1: 'secondary-boot-reg' is a required property
-> /home/ff944844/dev/linux/arch/arm/boot/dts/bcm2836-rpi-2-b.dt.yaml:
-> cpu@2: 'secondary-boot-reg' is a required property
-> /home/ff944844/dev/linux/arch/arm/boot/dts/bcm2836-rpi-2-b.dt.yaml:
-> cpu@3: 'secondary-boot-reg' is a required property
->   DTC     arch/arm/boot/dts/bcm2837-rpi-3-a-plus.dt.yaml
->
-> not sure why though as your example appears correct.
-
-Yeah, sorry, that's on me :)
-
-The nodes that are generating this error are the cpu@[0-3] ones, and
-they don't have the enable-method property at all.
-
-This is because if needs a schema, and will only try to validate the
-schema under then if the one under if is valid.
-
-The one under if contains a list of values for enable-method, but in
-the case where enable-method is absent, the schema will be valid, and
-thus the schema under then will be applied.
-
-What we actually want to express is "if there's an enable-method
-property, and that property contains those three values, then you need
-to have a secondary-boot-reg property."
-
-So you need:
-
-if:
-  # If the enable-method property contains one of those values
-  properties:
-    enable-method:
-      contains:
-        enum:
-          - brcm,bcm11351-cpu-method
-          - brcm,bcm23550
-          - brcm,bcm-nsp-smp
-
-  # and if enable method is present
-  required:
-    - enable-method
-
-# Then we need secondary-boot-reg too
-then:
-  required:
-    - secondary-boot-reg
-
-Maxime
-
---vg5cqlhr5mk6q6uh
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXjk3NQAKCRDj7w1vZxhR
-xUJqAP9PY/enY2j1VQJ01XYs+KegUxo9BgTuq8dCybDPrips1QEArb4oFWY9TC8/
-z/m1a1AkxlYIO28zaAO8oofwiueDjAQ=
-=AiEU
------END PGP SIGNATURE-----
-
---vg5cqlhr5mk6q6uh--
-
-
---===============6459149938198624400==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6459149938198624400==--
-
