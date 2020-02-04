@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77DEC152398
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 00:52:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38BD9152399
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 00:52:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=q/Mxf+aZmVZ0VQF4pLZQYOvn/jrVprJWts6Hl9vUuuU=; b=UwyLYhEu5xTLHL5BbtV3IiXFYX
-	cnlD7lpOvdndZ/kEp2FAk55RGPIKEvy3VnW2Uttx9KgScyweIBAdfBRHGWdJzWFooeaYKbBuJF1r6
-	085V61JUymuUHDQ5K53mm6FYFcZIVb3K938ePtb75I/aYZNKsK+5wLCqhpEWsvzaW240GAeOSicug
-	P2dWuwr/Tp1fLzudyXEx0+h1UjxgRlnCy2Q2CmvZPrrPah65kmYGc7YouZb9oj3PTvmbiwkYFHpiA
-	Gv6mwbsNejI1VQAAj9ZwQuSDZCk34WpAaiTmW561YsD+rVYClIBzZ5xeQjjBCFNrYNI6UNqfnPNRX
-	ciFwHYHg==;
+	bh=TmDJwrHW+cFGXy0nYQfKOFgfHw6bAoleZQbOynDG7es=; b=pB3Gswy2mG9yqkeB1CSTGAEAnC
+	6MYFEdqSi5u8twztKxiNnSrS9aWwo5LkNrBFs+O81qOLKytmpUq0xMRm6HXF7UdKsgUtF1GOkS6G7
+	1uZqE5b8Aa/0rUmYJPHbp0jG6IdxA207dubgpKLpzrL4eO+3apOR4evP4ELt678g2GeHRSos7jnCV
+	/S1s+zJfS7MmFIjXvDd80rRlHpH4kWjAOi54Vfhl2InXJnsjiFnY3nJgWLTedTvep83ciZjrHiIPD
+	783oJIh08C+QYKS0ELx5PtY/9BTO/+SF9knrWcdA3YTflpGisBODL4U6iucfF2PPzbNZiVsYMpD0l
+	2aGp4jww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz7z3-0007op-W0; Tue, 04 Feb 2020 23:51:58 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1iz7zH-00082c-Q7; Tue, 04 Feb 2020 23:52:11 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz7x5-0004f3-6w
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 23:49:56 +0000
-Received: by mail-pf1-x442.google.com with SMTP id k29so155870pfp.13
+ id 1iz7x6-0004hs-Hi
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 23:49:58 +0000
+Received: by mail-pl1-x641.google.com with SMTP id t6so71012plj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 04 Feb 2020 15:49:55 -0800 (PST)
+ Tue, 04 Feb 2020 15:49:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=J4a12SBTuMD7atLLATUCugE0dEUcvKzeYrZ9OjbRkuY=;
- b=iLQH3OQ/O/+RY2/knhPODGNM2ct4fcN0lZHWtdgDvI2We0LfUzXOKX2vqsi1rMDnBB
- 0AGtySTTUvyreBqOa9GXwj6JmkE/8/4IpJ6keZb7o9GBZ6wTE5ycCUgUDkY8xwmsCVXk
- 6RDR6faOd47TPhAdkgtuqahcRO3Fpz60TZTshVxVocsPQLNnIpVKiVk6pfb4ZcS67lhl
- Ex/1P5MByc6QhtVDhEzobTJ02ls08pPmY+FbOZumQ2xki8iWuXe71Lwl7EA9MBtL+eQ8
- qkVviCdflEt6ISteRSFbSoYbMllJGASrJr6ZZrVN6Cjgiam9C+ueat/yYvuBHYzSkZRj
- t5Jg==
+ bh=rpOa6ZNketVlDD1fVg7Q22Hn4Eag+44bEMCsUONO9O8=;
+ b=UxqEcdYlJVeiHHA12YO9pv3ytQQjQmKhJKQwvY3u3wtdIi5J1xEzSIKs039PNCLNTs
+ HmI/0knX5WGDR8jOMi8vaWcH35JMcrHTvP0RoEzLBzXdsbyOySHAHDI0pQvGQrzH8Ajz
+ kOINuEu576sx5HHFZsg6lMNj9VGm6tERhutEFTc6tz/QbwSjrekWu9vcjurAnIyy8uk2
+ 2t3U3ltcTFpIrYb28vpiW31WuVPdzK9QJDFPnP3sRTt/WH26imKquOydcGYZKImSipCW
+ 4WmlrOPCtqC5OywrC8rKvDn566cWP7JEE18ZWeg4SvA81SmlsXyfs2Y++lElrnzK56Ty
+ OOaQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=J4a12SBTuMD7atLLATUCugE0dEUcvKzeYrZ9OjbRkuY=;
- b=e4HMJ7jUFxfZsuDXkIPbX6k1D9616SL517TuFFEv/pgNRDcCOW7Pu8lDdOqndMQ9iq
- sVuRP3/NjM9Y2m1rwX3klfhgbjZaVk5x08GdHwaRBJ+ZfOsDeTV6rcvsHf4bJXlFRFdY
- JI55e8wliVmnCPeFzrbYQxDNCFcFJal1hYDao/EeGNPeCNR07hEuSddeoutYAcu0+DKg
- TQFRMSiIFoyEt43lw9Kwz19wlkvUEnSLAKN7vyboe8qcdXpoLXelMfQ3/NSLhuOpi/l3
- nhkK3KJ56R4CySCUwIOftPIVbdCnbgQwGBJ1nqlOgZ2cWgj/OJu/iPAT7qT5mrf7om8t
- rfjA==
-X-Gm-Message-State: APjAAAUPv5VuLHOe+HdNFwVLb4ysxjfVBFW5x1gsaBR6TgzagZE3+sqE
- htenpZU43HdaMSuVSpLt1OA=
-X-Google-Smtp-Source: APXvYqzaJhAf6Pam+Cmnn2otTi81LaNdN5atab+90zvh137fxqERYqBVQ5oubpzGkJCsB0HBp4QJsw==
-X-Received: by 2002:aa7:96b6:: with SMTP id g22mr21060221pfk.206.1580860194433; 
- Tue, 04 Feb 2020 15:49:54 -0800 (PST)
+ bh=rpOa6ZNketVlDD1fVg7Q22Hn4Eag+44bEMCsUONO9O8=;
+ b=KEDGpr3gEtmsUv5W7DE2EdlBU3mwGJoU7JGf6H+Yh9GKXk9Fi0TRCW6Mzk0iVwzlrC
+ f1fLYwm7wRZKOsSnRDbKBF9icfHIMn4Vcv60EdGFisYwCdOcAFkm6wFgGfqTZhvhv8KI
+ HTtL8XmNA+x4hQ2RWdpMVUWSqtU1Z8AXGuJQMazX9mkxInWkUPrNrNYQg9qcmd7t3+3e
+ xt/X2s1PNEbIWQp/qMa6KnvbTfmaNr9cwzThH342joqP42G5X3olqYX4opPjw83uVBBc
+ YbjPBCo4S9iqNPgjx7lsU+7Cl9/QK1SeseJMHzSyxqex8rvx6Y2AJUK76kllYhNYYlM6
+ 8xCQ==
+X-Gm-Message-State: APjAAAWUjHN7DN+BsM7MC1BQpbfqJ9ZELsY1c2JtlYrbnjXHM/Idnqmv
+ WCkMDSHJ0mLp0Wk6MX1ZDw8=
+X-Google-Smtp-Source: APXvYqyKFPfgvCRH/r+BzE/EtyTVGNDz9ilLfiMxWPls1ZrZOCZfuEATKaYXPq63e90SYO8U2P+Ewg==
+X-Received: by 2002:a17:902:8a88:: with SMTP id
+ p8mr31573263plo.179.1580860195925; 
+ Tue, 04 Feb 2020 15:49:55 -0800 (PST)
 Received: from majic.sklembedded.com (c-73-202-231-77.hsd1.ca.comcast.net.
  [73.202.231.77])
- by smtp.googlemail.com with ESMTPSA id u2sm24607929pgj.7.2020.02.04.15.49.53
+ by smtp.googlemail.com with ESMTPSA id u2sm24607929pgj.7.2020.02.04.15.49.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 04 Feb 2020 15:49:54 -0800 (PST)
+ Tue, 04 Feb 2020 15:49:55 -0800 (PST)
 From: Steve Longerbeam <slongerbeam@gmail.com>
 To: linux-media@vger.kernel.org, Rui Miguel Silva <rmfrfs@gmail.com>,
  Philipp Zabel <p.zabel@pengutronix.de>
-Subject: [PATCH v3 13/17] media: imx: csi: Create media links in bound notifier
-Date: Tue,  4 Feb 2020 15:49:14 -0800
-Message-Id: <20200204234918.20425-14-slongerbeam@gmail.com>
+Subject: [PATCH v3 14/17] media: imx: csi: Lookup upstream endpoint with
+ imx_media_get_pad_fwnode
+Date: Tue,  4 Feb 2020 15:49:15 -0800
+Message-Id: <20200204234918.20425-15-slongerbeam@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200204234918.20425-1-slongerbeam@gmail.com>
 References: <20200204234918.20425-1-slongerbeam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_154955_269059_996849EF 
-X-CRM114-Status: GOOD (  12.06  )
+X-CRM114-CacheID: sfid-20200204_154956_767764_B76460C0 
+X-CRM114-Status: GOOD (  16.55  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -115,63 +117,168 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Implement a notifier bound op to register media links from the remote
-sub-device's source pad(s) to the CSI sink pad.
+Fix the 1:1 port-id:pad-index assumption for the upstream subdevice, by
+searching the upstream subdevice's endpoints for one that maps to the
+pad's index. This is carried out by a new reverse mapping function
+imx_media_get_pad_fwnode().
 
 Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
 ---
-Changes in v3:
-- call a local imx-media utility imx_media_create_fwnode_pad_link().
----
- drivers/staging/media/imx/imx-media-csi.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ drivers/staging/media/imx/imx-media-csi.c   | 22 ++++----------
+ drivers/staging/media/imx/imx-media-utils.c | 33 +++++++++++++++++++++
+ drivers/staging/media/imx/imx-media.h       |  1 +
+ drivers/staging/media/imx/imx7-media-csi.c  | 25 +++++-----------
+ 4 files changed, 47 insertions(+), 34 deletions(-)
 
 diff --git a/drivers/staging/media/imx/imx-media-csi.c b/drivers/staging/media/imx/imx-media-csi.c
-index bea6a70cc353..2a8f01375f78 100644
+index 2a8f01375f78..7d4c1c9640dd 100644
 --- a/drivers/staging/media/imx/imx-media-csi.c
 +++ b/drivers/staging/media/imx/imx-media-csi.c
-@@ -120,6 +120,11 @@ static inline struct csi_priv *sd_to_dev(struct v4l2_subdev *sdev)
- 	return container_of(sdev, struct csi_priv, sd);
- }
- 
-+static inline struct csi_priv *notifier_to_dev(struct v4l2_async_notifier *n)
-+{
-+	return container_of(n, struct csi_priv, notifier);
-+}
-+
- static inline bool is_parallel_bus(struct v4l2_fwnode_endpoint *ep)
+@@ -164,7 +164,7 @@ static inline bool requires_passthrough(struct v4l2_fwnode_endpoint *ep,
+ static int csi_get_upstream_endpoint(struct csi_priv *priv,
+ 				     struct v4l2_fwnode_endpoint *ep)
  {
- 	return ep->bus_type != V4L2_MBUS_CSI2_DPHY;
-@@ -1896,6 +1901,20 @@ static int imx_csi_parse_endpoint(struct device *dev,
- 	return fwnode_device_is_available(asd->match.fwnode) ? 0 : -ENOTCONN;
+-	struct device_node *endpoint, *port;
++	struct fwnode_handle *endpoint;
+ 	struct media_entity *src;
+ 	struct v4l2_subdev *sd;
+ 	struct media_pad *pad;
+@@ -203,23 +203,13 @@ static int csi_get_upstream_endpoint(struct csi_priv *priv,
+ 	if (!pad)
+ 		return -ENODEV;
+ 
+-	sd = media_entity_to_v4l2_subdev(pad->entity);
++	endpoint = imx_media_get_pad_fwnode(pad);
++	if (IS_ERR(endpoint))
++		return PTR_ERR(endpoint);
+ 
+-	/*
+-	 * NOTE: this assumes an OF-graph port id is the same as a
+-	 * media pad index.
+-	 */
+-	port = of_graph_get_port_by_id(sd->dev->of_node, pad->index);
+-	if (!port)
+-		return -ENODEV;
+-
+-	endpoint = of_get_next_child(port, NULL);
+-	of_node_put(port);
+-	if (!endpoint)
+-		return -ENODEV;
++	v4l2_fwnode_endpoint_parse(endpoint, ep);
+ 
+-	v4l2_fwnode_endpoint_parse(of_fwnode_handle(endpoint), ep);
+-	of_node_put(endpoint);
++	fwnode_handle_put(endpoint);
+ 
+ 	return 0;
  }
+diff --git a/drivers/staging/media/imx/imx-media-utils.c b/drivers/staging/media/imx/imx-media-utils.c
+index 87152bd9af22..61752c6b074d 100644
+--- a/drivers/staging/media/imx/imx-media-utils.c
++++ b/drivers/staging/media/imx/imx-media-utils.c
+@@ -1007,6 +1007,39 @@ imx_media_pipeline_video_device(struct media_entity *start_entity,
+ }
+ EXPORT_SYMBOL_GPL(imx_media_pipeline_video_device);
  
-+static int imx_csi_notify_bound(struct v4l2_async_notifier *notifier,
-+				struct v4l2_subdev *sd,
-+				struct v4l2_async_subdev *asd)
++/*
++ * Find a fwnode endpoint that maps to the given subdevice's pad.
++ * If there are multiple endpoints that map to the pad, only the
++ * first endpoint encountered is returned.
++ *
++ * On success the refcount of the returned fwnode endpoint is
++ * incremented.
++ */
++struct fwnode_handle *imx_media_get_pad_fwnode(struct media_pad *pad)
 +{
-+	struct csi_priv *priv = notifier_to_dev(notifier);
-+	struct media_pad *sink = &priv->sd.entity.pads[CSI_SINK_PAD];
++	struct fwnode_handle *endpoint;
++	struct v4l2_subdev *sd;
 +
-+	return imx_media_create_fwnode_pad_link(sd, sink);
++	if (!is_media_entity_v4l2_subdev(pad->entity))
++		return ERR_PTR(-ENODEV);
++
++	sd = media_entity_to_v4l2_subdev(pad->entity);
++
++	fwnode_graph_for_each_endpoint(dev_fwnode(sd->dev), endpoint) {
++		int pad_idx = media_entity_get_fwnode_pad(&sd->entity,
++							  endpoint,
++							  pad->flags);
++		if (pad_idx < 0)
++			continue;
++
++		if (pad_idx == pad->index)
++			return endpoint;
++	}
++
++	return ERR_PTR(-ENODEV);
 +}
++EXPORT_SYMBOL_GPL(imx_media_get_pad_fwnode);
 +
-+static const struct v4l2_async_notifier_operations csi_notify_ops = {
-+	.bound = imx_csi_notify_bound,
-+};
-+
- static int imx_csi_async_register(struct csi_priv *priv)
+ /*
+  * Turn current pipeline streaming on/off starting from entity.
+  */
+diff --git a/drivers/staging/media/imx/imx-media.h b/drivers/staging/media/imx/imx-media.h
+index f90a65ba4ced..5f23d852122f 100644
+--- a/drivers/staging/media/imx/imx-media.h
++++ b/drivers/staging/media/imx/imx-media.h
+@@ -205,6 +205,7 @@ imx_media_pipeline_subdev(struct media_entity *start_entity, u32 grp_id,
+ struct video_device *
+ imx_media_pipeline_video_device(struct media_entity *start_entity,
+ 				enum v4l2_buf_type buftype, bool upstream);
++struct fwnode_handle *imx_media_get_pad_fwnode(struct media_pad *pad);
+ 
+ struct imx_media_dma_buf {
+ 	void          *virt;
+diff --git a/drivers/staging/media/imx/imx7-media-csi.c b/drivers/staging/media/imx/imx7-media-csi.c
+index cf9f675c53a3..f2ed13aca2b0 100644
+--- a/drivers/staging/media/imx/imx7-media-csi.c
++++ b/drivers/staging/media/imx/imx7-media-csi.c
+@@ -439,9 +439,8 @@ static int imx7_csi_get_upstream_endpoint(struct imx7_csi *csi,
+ 					  struct v4l2_fwnode_endpoint *ep,
+ 					  bool skip_mux)
  {
- 	struct fwnode_handle *fwnode;
-@@ -1904,6 +1923,8 @@ static int imx_csi_async_register(struct csi_priv *priv)
+-	struct device_node *endpoint, *port;
++	struct fwnode_handle *endpoint;
+ 	struct media_entity *src;
+-	struct v4l2_subdev *sd;
+ 	struct media_pad *pad;
  
- 	v4l2_async_notifier_init(&priv->notifier);
+ 	if (!csi->src_sd)
+@@ -463,29 +462,19 @@ static int imx7_csi_get_upstream_endpoint(struct imx7_csi *csi,
+ 	if (!pad)
+ 		return -ENODEV;
  
-+	priv->notifier.ops = &csi_notify_ops;
-+
- 	fwnode = dev_fwnode(priv->dev);
+-	sd = media_entity_to_v4l2_subdev(pad->entity);
+-
+ 	/* To get bus type we may need to skip video mux */
+ 	if (skip_mux && src->function == MEDIA_ENT_F_VID_MUX) {
+-		src = &sd->entity;
++		src = pad->entity;
+ 		goto skip_video_mux;
+ 	}
  
- 	/* get this CSI's port id */
+-	/*
+-	 * NOTE: this assumes an OF-graph port id is the same as a
+-	 * media pad index.
+-	 */
+-	port = of_graph_get_port_by_id(sd->dev->of_node, pad->index);
+-	if (!port)
+-		return -ENODEV;
++	endpoint = imx_media_get_pad_fwnode(pad);
++	if (IS_ERR(endpoint))
++		return PTR_ERR(endpoint);
+ 
+-	endpoint = of_get_next_child(port, NULL);
+-	of_node_put(port);
+-	if (!endpoint)
+-		return -ENODEV;
++	v4l2_fwnode_endpoint_parse(endpoint, ep);
+ 
+-	v4l2_fwnode_endpoint_parse(of_fwnode_handle(endpoint), ep);
+-	of_node_put(endpoint);
++	fwnode_handle_put(endpoint);
+ 
+ 	return 0;
+ }
 -- 
 2.17.1
 
