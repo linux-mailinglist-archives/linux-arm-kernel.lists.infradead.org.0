@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 740CD1523E0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 01:10:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD5331523E1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 01:10:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ikNT/zcluEwxjgFeE5qoaneW4KnBhHy7To+0UOll2Lo=; b=n6MkHGl8Jo3bA5
-	wkT07DOmolF9Gd75CuTXpw/J3axG0dnMFMljQafqlGmLcO/mo8vI0JOu59PRkJEdVMmu7mP7SVLBM
-	/Vy0f9HwuHBJQ4LMHxo+0GqLyNE5ksg0x9MkTryefkVWjcxRbxoFrK+48Kp/WKvYaozcisNuXpdSs
-	dBbaleU6PnY0DnaVkytqDMn4Tkx602hwCEV5W4R2sz3gClMUzpXIysaIOTHzvnXNXj7mkOhOns7Vq
-	d4jBDmhgZYUy7aN2IsCVXGDhWzFTnUq+EBQd91wW5CZzLHA/43jDEnZxG7M1DgDScJSaSsRg70iTK
-	deE8gy6DQ8SMgyWOxhhA==;
+	List-Owner; bh=uISP2BrjOHTYu1fkXPZDD26JOlpm9r9fpnqSVtIMkfA=; b=h4XWQsydzVOsCD
+	ZrXZ0kMRcRYHpBHWfjCBg4Z0NKKWWpTKZ8El0Vsdfg6NH/EtiQKzqqkSzgXaQ9xYrmCUqGU4pR1L0
+	9jRXY9DIV+IzsTz82FdJVUUCbZA7jyjznFeQXT48hgvIiUqnROkO4SaSIzm+zLzieANr3oIxVqm+E
+	mcJiXv5PiLuIl9lBKwDhNVZhkI93ienOMEb1x7kRIF2NEPf3hR+idcii/sRzGj6fdY/eMGGOTh7/8
+	BZq3shjwfPTxwCT/ks5diuhKAj1ntJ9pvA8T2m+1ko3xMWWakHM7rf/nTIrBBqxor/2y1kh57xTdJ
+	rTURHfOl/GBZPcSNgjcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz8Gk-0007vM-Bk; Wed, 05 Feb 2020 00:10:14 +0000
-Received: from mail-pj1-x1030.google.com ([2607:f8b0:4864:20::1030])
+	id 1iz8Gv-0000vB-8T; Wed, 05 Feb 2020 00:10:25 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz8EJ-0005em-VL; Wed, 05 Feb 2020 00:07:45 +0000
-Received: by mail-pj1-x1030.google.com with SMTP id n96so149249pjc.3;
- Tue, 04 Feb 2020 16:07:43 -0800 (PST)
+ id 1iz8EL-0005g4-Fi; Wed, 05 Feb 2020 00:07:47 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id gv17so153926pjb.1;
+ Tue, 04 Feb 2020 16:07:45 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=sbQmNjEgDYzzs2rJFk7fxPgigyR9od2RmRBDQINeABE=;
- b=X/iG3RxSH/LRG86sXEZeH4oKj2y1veejQAmKs62/kIub6x8uPw8l+bDx5XPj0KDIy/
- KLeTSVucR2LAQ5juvnr+f0OY0Uhs6wmsFC0u6negwJgppNl7T0TngviVpMDb9uCiiL3v
- Hkss/rexr+vuxFxB3zqzrCpxBG2uk3RXpazO9O9G2HmsPac55PXQkAPt2GfEarEFqjN/
- f2YjcvaoqXPT+APpNK8KNszcd5OmgvVqMPF8mEGwNZ8jyWilj7oPd0ubq+xxFoUNXVfz
- XapwKBgLTRjBUhP7tWbIeiZaniH9c03Bujkgj5Z+AMl4p3pleE26UG08Y7Qz0cNxbPs1
- 7wJA==
+ bh=AmvTxWNYbbqRFY29acB0Jj37QMjm3ZpkquLyekHQJRI=;
+ b=DNoS8PP9tu+YUPFrfmW6JQUJYXKzBmqjG/9GECCG5e2iKZyK0jsegj9arM84i1hbKD
+ E7DT5iFMEXPHF37KztAssbdIJ9qPrYfr24t6iB2dR3fDvlhPLxMYux5kkNf3m5GBQ1Y9
+ q94CC2HUwlS1URG+7ogYn0B/MAMArA6/bm5KltugjqVAhS7Rm9Db4/1MItLxgFfIs5ng
+ EsDOzpCV83cfDyoAfQsI+fuw6UcVEhW/b6DZLGBoCTxXMMai7ilEAq0211YqT5apFkWl
+ OvaQzzCxoyvAxy3w2cUpiiixIL2GGboiuGbYjCfOHTwahWoSvSNbq4E7RjRCHvPvqbcw
+ 3MUw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=sbQmNjEgDYzzs2rJFk7fxPgigyR9od2RmRBDQINeABE=;
- b=GUpEt4G+GTGkD+A3vi8LE4bHZJXrHetGEdIpdSnKfcwQ4jtKsTfUjO+XXPF/oz7ORF
- +uhViTiw2z++HjARZ8W0S4nTfU7HXrY0dLlS8rArKJRziarxnUdqlwr98nx81AhfoPRD
- E4gfva2upw7RdaW6rcOUFQQdz0wnT5HNAp8+mzYEPG8jKi6xuhosgYc+jOdmMFMbvGi5
- 5RG5ty8/3+DkArgYC39Gqe2EP9Ba9hOQjm4F9h4M3xlqpkw5vFAzVVrG8z2rGx//JIeW
- hs+P5JrJTiG9pDjNAtYqGyS0drtNLKtHPQ3AgL0jfxjATBp1Dg6tBJh3JNMLVdeNx54S
- ewmw==
-X-Gm-Message-State: APjAAAX5lOaQ7UTK9ESsfQ93UGE7GlbRkxXeKfdJ0N53mSbjwJ7mudVj
- AaOuRONI5Kxnwdik5tUlCk2HEfW7
-X-Google-Smtp-Source: APXvYqwHUBZ6SUQPjfSqCn9aPbrL0AEWLGCduHWSGavhPaLzvwgmmufcEcD3bhZpquTizNdPtg32Nw==
-X-Received: by 2002:a17:90a:d141:: with SMTP id
- t1mr2175313pjw.38.1580861262343; 
- Tue, 04 Feb 2020 16:07:42 -0800 (PST)
+ bh=AmvTxWNYbbqRFY29acB0Jj37QMjm3ZpkquLyekHQJRI=;
+ b=NTYkJaEnpUTXBjkG/QVCytmsx8nYAFpWjhPwlh/+jaq8VWHrs2HTwYcNKiS6srVBOs
+ lWEkEMUvnzRPSYd3ly/3+Rb15VnD3CnIsPj5sYzK9H3xiCNocUus+ALogjTikQtVP5k6
+ nAAPQmDopIjXk/1vRk4ibeC4RTmxObFzV24P5b3JP2hZ4gYchZHNnWw05lfrAav5WuWL
+ Zl1tWcY/9IUiJ73zayhtX9+VBgT/eckxksBosCSFKW0uQqmQCTckwP5OqYifnJbqJhnI
+ yYufMM54LYBMDsHhOaHR9IkoY+1K5AgOTzSK+HecPDMQACbaPLQA9E+4LrlITDrqoIRk
+ pBmw==
+X-Gm-Message-State: APjAAAWrJeLY26ph2zklAiVWN3xkgWA1I/HpO6zs7qGTt/dehrHKHqL2
+ l9+kKsCsgpa1rkKUMiwnS2E9Os6V
+X-Google-Smtp-Source: APXvYqyECzfty9WFxy19O/11qgx+ClTmtK+jWrBXYMa0UuRFHceFgyp2EPfw/dGKOEBldi2u1pkVkg==
+X-Received: by 2002:a17:902:8b88:: with SMTP id
+ ay8mr31646320plb.202.1580861263934; 
+ Tue, 04 Feb 2020 16:07:43 -0800 (PST)
 Received: from localhost.localdomain (ip68-111-84-250.oc.oc.cox.net.
  [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id g2sm25575468pgn.59.2020.02.04.16.07.40
+ by smtp.gmail.com with ESMTPSA id g2sm25575468pgn.59.2020.02.04.16.07.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 04 Feb 2020 16:07:41 -0800 (PST)
+ Tue, 04 Feb 2020 16:07:43 -0800 (PST)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 10/12] dt-bindings: arm: bcm: Convert Vulcan to YAML
-Date: Tue,  4 Feb 2020 15:55:50 -0800
-Message-Id: <20200204235552.7466-11-f.fainelli@gmail.com>
+Subject: [PATCH v2 11/12] dt-bindings: arm: Document Broadcom SoCs
+ 'secondary-boot-reg'
+Date: Tue,  4 Feb 2020 15:55:51 -0800
+Message-Id: <20200204235552.7466-12-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20200204235552.7466-1-f.fainelli@gmail.com>
 References: <20200204235552.7466-1-f.fainelli@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_160744_092272_D9EFC879 
-X-CRM114-Status: GOOD (  13.79  )
+X-CRM114-CacheID: sfid-20200204_160745_615229_67E48717 
+X-CRM114-Status: GOOD (  15.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -114,61 +115,194 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update Vulcan SoC family binding document for boards/SoCs to use YAML.
-Verified with dt_binding_check and dtbs_check.
+Consolidate and move the 'secondary-boot-reg' property from the 3
+existing binding documents into the main cpus.yaml documentation, also
+make sure that the property is enforced when relevant.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../bindings/arm/bcm/brcm,vulcan-soc.txt      | 10 ---------
- .../bindings/arm/bcm/brcm,vulcan-soc.yaml     | 22 +++++++++++++++++++
- 2 files changed, 22 insertions(+), 10 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.txt
- create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.yaml
+ .../arm/bcm/brcm,bcm11351-cpu-method.txt      | 36 -----------------
+ .../arm/bcm/brcm,bcm23550-cpu-method.txt      | 36 -----------------
+ .../bindings/arm/bcm/brcm,nsp-cpu-method.txt  | 39 -------------------
+ .../devicetree/bindings/arm/cpus.yaml         | 33 ++++++++++++++++
+ 4 files changed, 33 insertions(+), 111 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351-cpu-method.txt
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550-cpu-method.txt
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,nsp-cpu-method.txt
 
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.txt
+diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351-cpu-method.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351-cpu-method.txt
 deleted file mode 100644
-index 223ed3471c08..000000000000
---- a/Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.txt
+index e3f996920403..000000000000
+--- a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351-cpu-method.txt
 +++ /dev/null
-@@ -1,10 +0,0 @@
--Broadcom Vulcan device tree bindings
--------------------------------------
+@@ -1,36 +0,0 @@
+-Broadcom Kona Family CPU Enable Method
+---------------------------------------
+-This binding defines the enable method used for starting secondary
+-CPUs in the following Broadcom SoCs:
+-  BCM11130, BCM11140, BCM11351, BCM28145, BCM28155, BCM21664
 -
--Boards with Broadcom Vulcan shall have the following root property:
+-The enable method is specified by defining the following required
+-properties in the "cpu" device tree node:
+-  - enable-method = "brcm,bcm11351-cpu-method";
+-  - secondary-boot-reg = <...>;
 -
--Broadcom Vulcan Evaluation Board:
--  compatible = "brcm,vulcan-eval", "brcm,vulcan-soc";
+-The secondary-boot-reg property is a u32 value that specifies the
+-physical address of the register used to request the ROM holding pen
+-code release a secondary CPU.  The value written to the register is
+-formed by encoding the target CPU id into the low bits of the
+-physical start address it should jump to.
 -
--Generic Vulcan board:
--  compatible = "brcm,vulcan-soc";
-diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.yaml b/Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.yaml
-new file mode 100644
-index 000000000000..c5b6f31c20b9
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.yaml
-@@ -0,0 +1,22 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/bcm/brcm,vulcan-soc.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+-Example:
+-	cpus {
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		cpu0: cpu@0 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			reg = <0>;
+-		};
+-
+-		cpu1: cpu@1 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			reg = <1>;
+-			enable-method = "brcm,bcm11351-cpu-method";
+-			secondary-boot-reg = <0x3500417c>;
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550-cpu-method.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550-cpu-method.txt
+deleted file mode 100644
+index a3af54c0e404..000000000000
+--- a/Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550-cpu-method.txt
++++ /dev/null
+@@ -1,36 +0,0 @@
+-Broadcom Kona Family CPU Enable Method
+---------------------------------------
+-This binding defines the enable method used for starting secondary
+-CPUs in the following Broadcom SoCs:
+-  BCM23550
+-
+-The enable method is specified by defining the following required
+-properties in the "cpu" device tree node:
+-  - enable-method = "brcm,bcm23550";
+-  - secondary-boot-reg = <...>;
+-
+-The secondary-boot-reg property is a u32 value that specifies the
+-physical address of the register used to request the ROM holding pen
+-code release a secondary CPU.  The value written to the register is
+-formed by encoding the target CPU id into the low bits of the
+-physical start address it should jump to.
+-
+-Example:
+-	cpus {
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		cpu0: cpu@0 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			reg = <0>;
+-		};
+-
+-		cpu1: cpu@1 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			reg = <1>;
+-			enable-method = "brcm,bcm23550";
+-			secondary-boot-reg = <0x3500417c>;
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/arm/bcm/brcm,nsp-cpu-method.txt b/Documentation/devicetree/bindings/arm/bcm/brcm,nsp-cpu-method.txt
+deleted file mode 100644
+index 677ef9d9f445..000000000000
+--- a/Documentation/devicetree/bindings/arm/bcm/brcm,nsp-cpu-method.txt
++++ /dev/null
+@@ -1,39 +0,0 @@
+-Broadcom Northstar Plus SoC CPU Enable Method
+----------------------------------------------
+-This binding defines the enable method used for starting secondary
+-CPU in the following Broadcom SoCs:
+-  BCM58522, BCM58525, BCM58535, BCM58622, BCM58623, BCM58625, BCM88312
+-
+-The enable method is specified by defining the following required
+-properties in the corresponding secondary "cpu" device tree node:
+-  - enable-method = "brcm,bcm-nsp-smp";
+-  - secondary-boot-reg = <...>;
+-
+-The secondary-boot-reg property is a u32 value that specifies the
+-physical address of the register which should hold the common
+-entry point for a secondary CPU. This entry is cpu node specific
+-and should be added per cpu. E.g., in case of NSP (BCM58625) which
+-is a dual core CPU SoC, this entry should be added to cpu1 node.
+-
+-
+-Example:
+-	cpus {
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-
+-		cpu0: cpu@0 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			next-level-cache = <&L2>;
+-			reg = <0>;
+-		};
+-
+-		cpu1: cpu@1 {
+-			device_type = "cpu";
+-			compatible = "arm,cortex-a9";
+-			next-level-cache = <&L2>;
+-			enable-method = "brcm,bcm-nsp-smp";
+-			secondary-boot-reg = <0xffff042c>;
+-			reg = <1>;
+-		};
+-	};
+diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
+index c23c24ff7575..d7b181a44789 100644
+--- a/Documentation/devicetree/bindings/arm/cpus.yaml
++++ b/Documentation/devicetree/bindings/arm/cpus.yaml
+@@ -272,6 +272,39 @@ properties:
+       While optional, it is the preferred way to get access to
+       the cpu-core power-domains.
+ 
++  secondary-boot-reg:
++    $ref: '/schemas/types.yaml#/definitions/uint32'
++    description: |
++      Required for systems that have an "enable-method" property value of
++      "brcm,bcm11351-cpu-method", "brcm,bcm23550" or "brcm,bcm-nsp-smp".
 +
-+title: Broadcom Vulcan device tree bindings
++      This includes the following SoCs: |
++      BCM11130, BCM11140, BCM11351, BCM28145, BCM28155, BCM21664, BCM23550
++      BCM58522, BCM58525, BCM58535, BCM58622, BCM58623, BCM58625, BCM88312
 +
-+maintainers:
-+  - Robert Richter <rrichter@marvell.com>
++      The secondary-boot-reg property is a u32 value that specifies the
++      physical address of the register used to request the ROM holding pen
++      code release a secondary CPU. The value written to the register is
++      formed by encoding the target CPU id into the low bits of the
++      physical start address it should jump to.
 +
-+properties:
-+  $nodename:
-+    const: '/'
-+  compatible:
-+    items:
-+      - enum:
-+        - brcm,vulcan-eval
-+        - cavium,thunderx2-cn9900
-+      - const: brcm,vulcan-soc
++if:
++  # If the enable-method property contains one of those values
++  properties:
++    enable-method:
++      contains:
++        enum:
++          - brcm,bcm11351-cpu-method
++          - brcm,bcm23550
++          - brcm,bcm-nsp-smp
++  # and if enable-method is present
++  required:
++    - enable-method
 +
-+...
++then:
++   required:
++     - secondary-boot-reg
++
+ required:
+   - device_type
+   - reg
 -- 
 2.19.1
 
