@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4B0B151B42
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:27:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B452151B40
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 14:26:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5RE9pmv7IsIia739glywPSv/NvS21MCfWZgJCzQKaWQ=; b=hP3oVoRbA28TN3
-	Bo6vEfEx3qjhBVC8PZbI9DtdCL2Ehar2aPFiz5UiUeW0yDvJ6uzakRnxwNA+pVI3btlzsqVQGJtyD
-	DMFz4vI3ltofFHIrKapLmeFUuKiPNenFumvahE2uOsVhXvmubGhMym9AXQ5vJz5Urb35Ej+w1AHKo
-	dnupFmeZnUNjQVSg4CCzj9/BCwGoc3eK7VO57Qa545QsXV/1qcdgcNDg10lFwTaG+e9nrFheNTwBL
-	CefpvBm2BdNnlUfHpy5vUTl0KpugQa0JUepy4WoDAfV6gEEu2gHWb0zfRMQes2Hmqgs51zFyrry9Z
-	5kgskH+i/oEZ56pdrdMg==;
+	List-Owner; bh=99pU7PcLgTwETldtgxyKtCHLqALsxc8jDdapqQ5gPVY=; b=erLcEgtlR4k3gi
+	/YOyZWJ3bdpzCanzprdAearRGf/m2JXOkOaMZJM6gLQJk0BQV+F15fLYJTlhBWJpvQuCf/Edp1dH6
+	i5PIMIEUtUEoIY84H0Xr+oFC/q5l4F6EiDwDrHy+Q6UEylaEkXSlii7ql3jpZST2VfgX5ZcZ3kn4W
+	v02+BYVMi46gOWy7Rs9BeBtVg6BJO8XoVmahxKI1jC8vumlNfx9+LqMReXAL5vJmocLwkQQq/4kRg
+	3qyktr0uA3ojZYxzHey0ulEGX6br3k4XgqesIuatrxJfci43ELLWLHslMke+uaVy45eePm8Cxihtq
+	2xj2pyaYJUmp7ShDc6fQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyyEW-00081g-SV; Tue, 04 Feb 2020 13:27:16 +0000
+	id 1iyyE6-0007WL-6A; Tue, 04 Feb 2020 13:26:50 +0000
 Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyyDj-0007O3-FC
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:26:29 +0000
+ id 1iyyDi-0007O8-1z
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 13:26:27 +0000
 Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 014DN70m018475; Tue, 4 Feb 2020 14:26:19 +0100
+ 014DN70n018475; Tue, 4 Feb 2020 14:26:21 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=svNIL8S5ikLq6fC5dYVL1FJyfGZacEgFr1/P7H/Zw64=;
- b=wESYPm8NZ7MqQhZxSsf1kewzyR9WtukfZ9+7H77bjnhQUGqHmBIW735MRm6eLYOvU9g2
- 1joyWI2Z0sxhLzw0ZsmG/jcw/tDRSW2Ca3xn20jVFLAmyOzsQcocIh7vvGwAb+8lAyF1
- GG5ygIRZoaWOvBG52snMnyzOYV6EIXgIRWPAjRnIP7E6+poWekKDMh/R3/8Ilj3ZwWPO
- 4XJkRh3Y/XJYHbHrHLe080cLWjvTImZhCw7FRoy4LSRbckMbvAXAtRLG8j700FJez2sR
- 7tmslg+wDuka/NI83N/OhvDYVbiGnuD8aSy/sNZXHNG+RolSIAxpNVWtA+zvAp2RpNE3 Hg== 
+ bh=DQPPnENN4OvejI/WvANWll8Ll71nJFT9PWSn4hA0scM=;
+ b=pgIu/M29OKqF+lFLKhE5yFuYlnstLG7kaviC8Ef8hu+rDOUlpCP9vGHYv0Fn1zZ6h/Nd
+ ZxPjy+FfpUfMFNAkLRj+PFC7gz/pjN8xI61G4T4eQvW/XKZJgCMnalNJntArxAVngITV
+ ffXTbtSbiCWHhV3KOxSdlaBovPYmM2/zT3yVkEbKaqy2ZNS9UllinQqzpp90zcZkJOxd
+ el4KDdnqmHBoBisYDVL2ZG0aMc0XINmtiqdRUtA/2cRGQqvfC2fSWUfBmD/gj41biYA4
+ CD6MnZyhCprJ0ZDmf7oZoiWiJmHYHwapUOzX7bQ7xPgL7k1Pw4B3e2n7nrHuWJdakdSh 1Q== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xvyp61uyt-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xvyp61uyx-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 04 Feb 2020 14:26:19 +0100
+ Tue, 04 Feb 2020 14:26:21 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D14F2100039;
- Tue,  4 Feb 2020 14:26:14 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 9B8A810003A;
+ Tue,  4 Feb 2020 14:26:15 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id C6A832BC7BA;
- Tue,  4 Feb 2020 14:26:14 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 4 Feb 2020 14:26:14
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8FF402BC7BA;
+ Tue,  4 Feb 2020 14:26:15 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 4 Feb 2020 14:26:15
  +0100
 From: Amelie Delaunay <amelie.delaunay@st.com>
 To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
  <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
  <mark.rutland@arm.com>
-Subject: [PATCH 2/3] ARM: dts: stm32: add USB OTG pinctrl to stm32mp15
-Date: Tue, 4 Feb 2020 14:26:05 +0100
-Message-ID: <20200204132606.20222-3-amelie.delaunay@st.com>
+Subject: [PATCH 3/3] ARM: dts: stm32: enable USB OTG Dual Role on
+ stm32mp157c-ev1
+Date: Tue, 4 Feb 2020 14:26:06 +0100
+Message-ID: <20200204132606.20222-4-amelie.delaunay@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200204132606.20222-1-amelie.delaunay@st.com>
 References: <20200204132606.20222-1-amelie.delaunay@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-02-04_04:2020-02-04,
  2020-02-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_052627_815354_E6A56F46 
-X-CRM114-Status: GOOD (  12.21  )
+X-CRM114-CacheID: sfid-20200204_052626_396332_3AD701E8 
+X-CRM114-Status: GOOD (  15.46  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -104,38 +105,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add pinctrl definition for USB High-Speed OTG ID pin and USB Full-Speed OTG
-DP and DM lines that can be used on stm32mp15.
+Now that st,stm32mp15-hsotg is used, dual role is supported. ID pin is
+managed to detect the current role.
+On stm32mp157c-ev1, Host mode requires a vbus-supply property. Charge pump
+for vbus is provided by PMIC VBUS_OTG.
 
 Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
 ---
- arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ arch/arm/boot/dts/stm32mp157c-ed1.dts | 4 ++++
+ arch/arm/boot/dts/stm32mp157c-ev1.dts | 3 ++-
+ 2 files changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-index 0237d4ddaa92..345dc18d2224 100644
---- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
-@@ -1040,6 +1040,19 @@
- 			bias-disable;
- 		};
- 	};
-+
-+	usbotg_hs_pins_a: usbotg-hs-0 {
-+		pins {
-+			pinmux = <STM32_PINMUX('A', 10, ANALOG)>; /* OTG_ID */
-+		};
-+	};
-+
-+	usbotg_fs_dp_dm_pins_a: usbotg-fs-dp-dm-0 {
-+		pins {
-+			pinmux = <STM32_PINMUX('A', 11, ANALOG)>, /* OTG_FS_DM */
-+				 <STM32_PINMUX('A', 12, ANALOG)>; /* OTG_FS_DP */
-+		};
-+	};
+diff --git a/arch/arm/boot/dts/stm32mp157c-ed1.dts b/arch/arm/boot/dts/stm32mp157c-ed1.dts
+index 1fc43251d697..c84f14b17371 100644
+--- a/arch/arm/boot/dts/stm32mp157c-ed1.dts
++++ b/arch/arm/boot/dts/stm32mp157c-ed1.dts
+@@ -355,6 +355,10 @@
+ 	status = "okay";
  };
  
- &pinctrl_z {
++&usbotg_hs {
++	vbus-supply = <&vbus_otg>;
++};
++
+ &usbphyc_port0 {
+ 	phy-supply = <&vdd_usb>;
+ 	vdda1v1-supply = <&reg11>;
+diff --git a/arch/arm/boot/dts/stm32mp157c-ev1.dts b/arch/arm/boot/dts/stm32mp157c-ev1.dts
+index 228e35e16884..8f1fe0781d9f 100644
+--- a/arch/arm/boot/dts/stm32mp157c-ev1.dts
++++ b/arch/arm/boot/dts/stm32mp157c-ev1.dts
+@@ -353,7 +353,8 @@
+ };
+ 
+ &usbotg_hs {
+-	dr_mode = "peripheral";
++	pinctrl-0 = <&usbotg_hs_pins_a>;
++	pinctrl-names = "default";
+ 	phys = <&usbphyc_port1 0>;
+ 	phy-names = "usb2-phy";
+ 	status = "okay";
 -- 
 2.17.1
 
