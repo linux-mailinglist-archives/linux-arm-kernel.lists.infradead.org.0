@@ -2,75 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77755151FD0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 18:45:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BB65152011
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 18:54:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Uejkq8f8r+qDV1m1PRjAeDQjyiH+rNksUkWmmVcUoEw=; b=ajH5IDv2nbY1chPJ0QWB4+lOuM
-	Tyzk0i7WrL7bQ3l/X3HkWuMXytuAcQJZInb8K70XYYccaZjDdmn0JilQqguGNg5Uon4361Amj8zvz
-	0VyxpcbgUr6+k6oOhB/459zmpmhsc25D9b8RLB+wqdn1CF14f4ebZKTB/X1V94mzo78xGU6yDZiNo
-	1KB5RePe2E6JfRcu80lph07+RfYZhqiLc5o3t2GPL8nynzNf0pKu9qYtpMU7qP57qeik0iOYj7nTr
-	mlLQ3IyIzIRv0Bf/H72zYZuMPfo5GNEMJVC3fHvHJFQ8l0rd4f85mr29g+DqmveJ3Jr0KHyqyk4x/
-	41bKGV7w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Beyj+bjMcP0eO4oJWM8Uqc+YM+goGWFA1SFzvAK0y0o=; b=He6mHdP38DTgtn
+	yneXKop+HvzdIPRRDY3WzruWWF8H191hA/3EefFe2su7EbrA9nX2F92SWmIVUjJHSiW+IHqy0Z2+P
+	8CdZq9xrbkvp+Z0BCZddKX5gzRtl7CYpIrLR2zwiimEfaZTl3Wbwzre6H9QwHErK3X0Vys44QTHVU
+	N5AqI64kkAO3pdyqRSyT0fnWShKLte78WifXAZdOHeI/TyvFgZomCJaRAp9/skydkd54jW1SDQ8rP
+	tkBozHmTJ0bGY3VxxVW4/0fYmPQXwJlbVUsDHHK5V2pxAVx0ykU8OIEcf2u0piYMwS3zTAfLfpFCD
+	5clJFcNEtmIfCa3iApeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz2Fw-0002Zu-Qc; Tue, 04 Feb 2020 17:45:00 +0000
-Received: from zimbra2.kalray.eu ([92.103.151.219])
+	id 1iz2PR-0005tF-C6; Tue, 04 Feb 2020 17:54:49 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz2FP-00029n-3X
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 17:44:29 +0000
-Received: from localhost (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id C903727E058F;
- Tue,  4 Feb 2020 18:44:25 +0100 (CET)
-Received: from zimbra2.kalray.eu ([127.0.0.1])
- by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id 4WGLBfY4YjDl; Tue,  4 Feb 2020 18:44:25 +0100 (CET)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra2.kalray.eu (Postfix) with ESMTP id E84D327E167F;
- Tue,  4 Feb 2020 18:44:24 +0100 (CET)
-DKIM-Filter: OpenDKIM Filter v2.10.3 zimbra2.kalray.eu E84D327E167F
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kalray.eu;
- s=32AE1B44-9502-11E5-BA35-3734643DEF29; t=1580838264;
- bh=8wiJQBti4vPAr2jhTr5E2seOWp5XeIkMbSxfFO5TqVI=;
- h=From:To:Date:Message-Id;
- b=P0YqHFmaJNA5Mma8FNfbnyy7NMhawB6Ddl71Y3sVRzw7AFeI5qLDyGyTEnXeffqpA
- aD/MNv2IuvLqzvlMUccBp7RwUdsCfHvfyX9/BP6IjSxzf6y9DgugTidFvgkwlZSD+M
- 3Kfn8W7nrXlDvOQ69Rbs+qIQo8OIME6dzWjTaaXM=
-X-Virus-Scanned: amavisd-new at zimbra2.kalray.eu
-Received: from zimbra2.kalray.eu ([127.0.0.1])
- by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id OMRxddzq87Ep; Tue,  4 Feb 2020 18:44:24 +0100 (CET)
-Received: from triton.lin.mbt.kalray.eu (unknown [192.168.37.25])
- by zimbra2.kalray.eu (Postfix) with ESMTPSA id C231127E1660;
- Tue,  4 Feb 2020 18:44:24 +0100 (CET)
-From: Clement Leger <cleger@kalray.eu>
-To: Ohad Ben-Cohen <ohad@wizery.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Jonathan Corbet <corbet@lwn.net>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-remoteproc@vger.kernel.org
-Subject: [PATCH v3 2/2] remoteproc: Add elf64 support in elf loader
-Date: Tue,  4 Feb 2020 18:44:12 +0100
-Message-Id: <20200204174412.16814-3-cleger@kalray.eu>
-X-Mailer: git-send-email 2.15.0.276.g89ea799
-In-Reply-To: <20200204174412.16814-1-cleger@kalray.eu>
-References: <20200129163013.GA16538@xps15>
- <20200204174412.16814-1-cleger@kalray.eu>
+ id 1iz2PI-0005sm-6p
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 17:54:41 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 014HrFVZ192141;
+ Tue, 4 Feb 2020 17:53:56 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=content-type :
+ mime-version : subject : from : in-reply-to : date : cc :
+ content-transfer-encoding : message-id : references : to;
+ s=corp-2019-08-05; bh=/K8bkH1tluP7AqL7A5f3qlqtdLKkacRQXpV1VnbEX58=;
+ b=CbAgUNM8xdGO+4tR+vkDHikxaGnulHiTHVcPlTr45h1WaN+kHVZ93QdL3KjgbaeUemjE
+ s5gJb/Ezs6mklvvIcvbbGHSRaAvtu5/pLiFFQxnal7DNdfdbRR/QR/MZ1O5t9MbwJ1Nz
+ yCpfLEezeXvFO+2x170eFuhc1995C39LSCnEfhe8eFLIAZHo5qf/S+1YuepRum6eE1ok
+ ifMak7JJHYO/JD13IxXFalU+ON4G7Gsuuzz+7coaqerRYOc/d4S9pzR+U9ybbkisN1B5
+ 7zJJkm3adUxRPfM6HLyYTa28L+zu3gYeShH1yn1i0JBWGPMFFBeGsS1hlcSK57gRcyTD 2w== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2130.oracle.com with ESMTP id 2xw0ru8ddp-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 04 Feb 2020 17:53:56 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 014HrloE163721;
+ Tue, 4 Feb 2020 17:53:56 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 2xxvusa5p5-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 04 Feb 2020 17:53:54 +0000
+Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 014HrngU027321;
+ Tue, 4 Feb 2020 17:53:49 GMT
+Received: from [10.11.111.157] (/10.11.111.157)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 04 Feb 2020 09:53:48 -0800
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
+Subject: Re: [PATCH v8 4/5] locking/qspinlock: Introduce starvation avoidance
+ into CNA
+From: Alex Kogan <alex.kogan@oracle.com>
+In-Reply-To: <e26b3afa-80d6-71bf-39c8-0fa4b875cbb2@redhat.com>
+Date: Tue, 4 Feb 2020 12:53:46 -0500
+Message-Id: <B98581F8-DE4B-4DF6-B435-112993605E8E@oracle.com>
+References: <8D3AFB47-B595-418C-9568-08780DDC58FF@oracle.com>
+ <714892cd-d96f-4d41-ae8b-d7b7642a6e3c@redhat.com>
+ <1669BFDE-A1A5-4ED8-B586-035460BBF68A@oracle.com>
+ <20200125111931.GW11457@worktop.programming.kicks-ass.net>
+ <F32558D8-4ACB-483A-AB4C-F565003A02E7@oracle.com>
+ <20200203134540.GA14879@hirez.programming.kicks-ass.net>
+ <6d11b22b-2fb5-7dea-f88b-b32f1576a5e0@redhat.com>
+ <20200203152807.GK14914@hirez.programming.kicks-ass.net>
+ <15fa978d-bd41-3ecb-83d5-896187e11244@redhat.com>
+ <83762715-F68C-42DF-9B41-C4C48DF6762F@oracle.com>
+ <20200204172758.GF14879@hirez.programming.kicks-ass.net>
+ <e26b3afa-80d6-71bf-39c8-0fa4b875cbb2@redhat.com>
+To: Waiman Long <longman@redhat.com>
+X-Mailer: Apple Mail (2.3445.104.11)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9521
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=857
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-2002040119
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9521
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=907 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-2002040119
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_094427_487035_6CA4F92D 
-X-CRM114-Status: GOOD (  22.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200204_095440_435726_F4FCD1DC 
+X-CRM114-Status: GOOD (  17.09  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [92.103.151.219 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -79,6 +108,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,460 +120,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Loic PALLARDY <loic.pallardy@st.com>, linux-doc@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- Patrice Chotard <patrice.chotard@st.com>, linux-kernel@vger.kernel.org,
- Clement Leger <cleger@kalray.eu>, Andy Gross <agross@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, s-anna <s-anna@ti.com>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arch@vger.kernel.org, Hanjun Guo <guohanjun@huawei.com>,
+ Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
+ dave.dice@oracle.com, Jan Glauber <jglauber@marvell.com>, x86@kernel.org,
+ Will Deacon <will.deacon@arm.com>, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, hpa@zytor.com,
+ Steven Sistare <steven.sistare@oracle.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Daniel Jordan <daniel.m.jordan@oracle.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-elf32 and elf64 mainly differ by their types. In order to avoid
-copy/pasting the whole loader code, generate static inline functions
-which will access values according to the elf class. It allows to keep a
-common loader basis.
-In order to accommodate both elf types sizes, the maximum size for a
-elf header member is chosen using the maximum value of both elf class.
-
-Signed-off-by: Clement Leger <cleger@kalray.eu>
-Tested-by: Arnaud POULIQUEN <arnaud.pouliquen@st.com>
----
- Documentation/remoteproc.txt               |   2 +-
- drivers/remoteproc/remoteproc_elf_loader.c | 147 ++++++++++++++++++-----------
- drivers/remoteproc/remoteproc_elf_loader.h |  69 ++++++++++++++
- drivers/remoteproc/remoteproc_internal.h   |   2 +-
- drivers/remoteproc/st_remoteproc.c         |   2 +-
- include/linux/remoteproc.h                 |   4 +-
- 6 files changed, 167 insertions(+), 59 deletions(-)
- create mode 100644 drivers/remoteproc/remoteproc_elf_loader.h
-
-diff --git a/Documentation/remoteproc.txt b/Documentation/remoteproc.txt
-index 03c3d2e568b0..2be1147256e0 100644
---- a/Documentation/remoteproc.txt
-+++ b/Documentation/remoteproc.txt
-@@ -230,7 +230,7 @@ in the used rings.
- Binary Firmware Structure
- =========================
- 
--At this point remoteproc only supports ELF32 firmware binaries. However,
-+At this point remoteproc supports ELF32 and ELF64 firmware binaries. However,
- it is quite expected that other platforms/devices which we'd want to
- support with this framework will be based on different binary formats.
- 
-diff --git a/drivers/remoteproc/remoteproc_elf_loader.c b/drivers/remoteproc/remoteproc_elf_loader.c
-index 606aae166eba..21fd2b2fe5ae 100644
---- a/drivers/remoteproc/remoteproc_elf_loader.c
-+++ b/drivers/remoteproc/remoteproc_elf_loader.c
-@@ -23,6 +23,7 @@
- #include <linux/elf.h>
- 
- #include "remoteproc_internal.h"
-+#include "remoteproc_elf_loader.h"
- 
- /**
-  * rproc_elf_sanity_check() - Sanity Check ELF firmware image
-@@ -35,8 +36,16 @@ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
- {
- 	const char *name = rproc->firmware;
- 	struct device *dev = &rproc->dev;
-+	/*
-+	 * Elf files are beginning with the same structure. Thus, to simplify
-+	 * header parsing, we can use the elf32_hdr one for both elf64 and
-+	 * elf32.
-+	 */
- 	struct elf32_hdr *ehdr;
-+	u32 elf_shdr_size;
-+	u64 phoff, shoff;
- 	char class;
-+	u16 phnum;
- 
- 	if (!fw) {
- 		dev_err(dev, "failed to load %s\n", name);
-@@ -50,13 +59,22 @@ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
- 
- 	ehdr = (struct elf32_hdr *)fw->data;
- 
--	/* We only support ELF32 at this point */
-+	if (memcmp(ehdr->e_ident, ELFMAG, SELFMAG)) {
-+		dev_err(dev, "Image is corrupted (bad magic)\n");
-+		return -EINVAL;
-+	}
-+
- 	class = ehdr->e_ident[EI_CLASS];
--	if (class != ELFCLASS32) {
-+	if (class != ELFCLASS32 && class != ELFCLASS64) {
- 		dev_err(dev, "Unsupported class: %d\n", class);
- 		return -EINVAL;
- 	}
- 
-+	if (class == ELFCLASS64 && fw->size < sizeof(struct elf64_hdr)) {
-+		dev_err(dev, "elf64 header is too small\n");
-+		return -EINVAL;
-+	}
-+
- 	/* We assume the firmware has the same endianness as the host */
- # ifdef __LITTLE_ENDIAN
- 	if (ehdr->e_ident[EI_DATA] != ELFDATA2LSB) {
-@@ -67,26 +85,29 @@ int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw)
- 		return -EINVAL;
- 	}
- 
--	if (fw->size < ehdr->e_shoff + sizeof(struct elf32_shdr)) {
--		dev_err(dev, "Image is too small\n");
--		return -EINVAL;
--	}
-+	phoff = elf_hdr_e_phoff(class, fw->data);
-+	shoff = elf_hdr_e_shoff(class, fw->data);
-+	phnum =  elf_hdr_e_phnum(class, fw->data);
-+	elf_shdr_size = elf_size_of_shdr(class);
- 
--	if (memcmp(ehdr->e_ident, ELFMAG, SELFMAG)) {
--		dev_err(dev, "Image is corrupted (bad magic)\n");
-+	if (fw->size < shoff + elf_shdr_size) {
-+		dev_err(dev, "Image is too small\n");
- 		return -EINVAL;
- 	}
- 
--	if (ehdr->e_phnum == 0) {
-+	if (phnum == 0) {
- 		dev_err(dev, "No loadable segments\n");
- 		return -EINVAL;
- 	}
- 
--	if (ehdr->e_phoff > fw->size) {
-+	if (phoff > fw->size) {
- 		dev_err(dev, "Firmware size is too small\n");
- 		return -EINVAL;
- 	}
- 
-+	dev_dbg(dev, "Firmware is an elf%d file\n",
-+		class == ELFCLASS32 ? 32 : 64);
-+
- 	return 0;
- }
- EXPORT_SYMBOL(rproc_elf_sanity_check);
-@@ -102,11 +123,9 @@ EXPORT_SYMBOL(rproc_elf_sanity_check);
-  * Note that the boot address is not a configurable property of all remote
-  * processors. Some will always boot at a specific hard-coded address.
-  */
--u32 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw)
-+u64 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw)
- {
--	struct elf32_hdr *ehdr  = (struct elf32_hdr *)fw->data;
--
--	return ehdr->e_entry;
-+	return elf_hdr_e_entry(fw_elf_get_class(fw), fw->data);
- }
- EXPORT_SYMBOL(rproc_elf_get_boot_addr);
- 
-@@ -137,37 +156,41 @@ EXPORT_SYMBOL(rproc_elf_get_boot_addr);
- int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw)
- {
- 	struct device *dev = &rproc->dev;
--	struct elf32_hdr *ehdr;
--	struct elf32_phdr *phdr;
-+	const void *ehdr, *phdr;
- 	int i, ret = 0;
-+	u16 phnum;
- 	const u8 *elf_data = fw->data;
-+	u8 class = fw_elf_get_class(fw);
-+	u32 elf_phdr_size = elf_size_of_phdr(class);
- 
--	ehdr = (struct elf32_hdr *)elf_data;
--	phdr = (struct elf32_phdr *)(elf_data + ehdr->e_phoff);
-+	ehdr = elf_data;
-+	phnum = elf_hdr_e_phnum(class, ehdr);
-+	phdr = elf_data + elf_hdr_e_phoff(class, ehdr);
- 
- 	/* go through the available ELF segments */
--	for (i = 0; i < ehdr->e_phnum; i++, phdr++) {
--		u32 da = phdr->p_paddr;
--		u32 memsz = phdr->p_memsz;
--		u32 filesz = phdr->p_filesz;
--		u32 offset = phdr->p_offset;
-+	for (i = 0; i < phnum; i++, phdr += elf_phdr_size) {
-+		u64 da = elf_phdr_p_paddr(class, phdr);
-+		u64 memsz = elf_phdr_p_memsz(class, phdr);
-+		u64 filesz = elf_phdr_p_filesz(class, phdr);
-+		u64 offset = elf_phdr_p_offset(class, phdr);
-+		u32 type = elf_phdr_p_type(class, phdr);
- 		void *ptr;
- 
--		if (phdr->p_type != PT_LOAD)
-+		if (type != PT_LOAD)
- 			continue;
- 
--		dev_dbg(dev, "phdr: type %d da 0x%x memsz 0x%x filesz 0x%x\n",
--			phdr->p_type, da, memsz, filesz);
-+		dev_dbg(dev, "phdr: type %d da 0x%llx memsz 0x%llx filesz 0x%llx\n",
-+			type, da, memsz, filesz);
- 
- 		if (filesz > memsz) {
--			dev_err(dev, "bad phdr filesz 0x%x memsz 0x%x\n",
-+			dev_err(dev, "bad phdr filesz 0x%llx memsz 0x%llx\n",
- 				filesz, memsz);
- 			ret = -EINVAL;
- 			break;
- 		}
- 
- 		if (offset + filesz > fw->size) {
--			dev_err(dev, "truncated fw: need 0x%x avail 0x%zx\n",
-+			dev_err(dev, "truncated fw: need 0x%llx avail 0x%zx\n",
- 				offset + filesz, fw->size);
- 			ret = -EINVAL;
- 			break;
-@@ -176,14 +199,15 @@ int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw)
- 		/* grab the kernel address for this device address */
- 		ptr = rproc_da_to_va(rproc, da, memsz);
- 		if (!ptr) {
--			dev_err(dev, "bad phdr da 0x%x mem 0x%x\n", da, memsz);
-+			dev_err(dev, "bad phdr da 0x%llx mem 0x%llx\n", da,
-+				memsz);
- 			ret = -EINVAL;
- 			break;
- 		}
- 
- 		/* put the segment where the remote processor expects it */
--		if (phdr->p_filesz)
--			memcpy(ptr, elf_data + phdr->p_offset, filesz);
-+		if (filesz)
-+			memcpy(ptr, elf_data + offset, filesz);
- 
- 		/*
- 		 * Zero out remaining memory for this segment.
-@@ -200,24 +224,35 @@ int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw)
- }
- EXPORT_SYMBOL(rproc_elf_load_segments);
- 
--static struct elf32_shdr *
--find_table(struct device *dev, struct elf32_hdr *ehdr, size_t fw_size)
-+static const void *
-+find_table(struct device *dev, const struct firmware *fw)
- {
--	struct elf32_shdr *shdr;
-+	const void *shdr, *name_table_shdr;
- 	int i;
- 	const char *name_table;
- 	struct resource_table *table = NULL;
--	const u8 *elf_data = (void *)ehdr;
-+	const u8 *elf_data = (void *)fw->data;
-+	u8 class = fw_elf_get_class(fw);
-+	size_t fw_size = fw->size;
-+	const void *ehdr = elf_data;
-+	u16 shnum = elf_hdr_e_shnum(class, ehdr);
-+	u32 elf_shdr_size = elf_size_of_shdr(class);
-+	u16 shstrndx = elf_hdr_e_shstrndx(class, ehdr);
- 
- 	/* look for the resource table and handle it */
--	shdr = (struct elf32_shdr *)(elf_data + ehdr->e_shoff);
--	name_table = elf_data + shdr[ehdr->e_shstrndx].sh_offset;
--
--	for (i = 0; i < ehdr->e_shnum; i++, shdr++) {
--		u32 size = shdr->sh_size;
--		u32 offset = shdr->sh_offset;
--
--		if (strcmp(name_table + shdr->sh_name, ".resource_table"))
-+	/* First, get the section header according to the elf class */
-+	shdr = elf_data + elf_hdr_e_shoff(class, ehdr);
-+	/* Compute name table section header entry in shdr array */
-+	name_table_shdr = shdr + (shstrndx * elf_shdr_size);
-+	/* Finally, compute the name table section address in elf */
-+	name_table = elf_data + elf_shdr_sh_offset(class, name_table_shdr);
-+
-+	for (i = 0; i < shnum; i++, shdr += elf_shdr_size) {
-+		u64 size = elf_shdr_sh_size(class, shdr);
-+		u64 offset = elf_shdr_sh_offset(class, shdr);
-+		u32 name = elf_shdr_sh_name(class, shdr);
-+
-+		if (strcmp(name_table + name, ".resource_table"))
- 			continue;
- 
- 		table = (struct resource_table *)(elf_data + offset);
-@@ -270,21 +305,21 @@ find_table(struct device *dev, struct elf32_hdr *ehdr, size_t fw_size)
-  */
- int rproc_elf_load_rsc_table(struct rproc *rproc, const struct firmware *fw)
- {
--	struct elf32_hdr *ehdr;
--	struct elf32_shdr *shdr;
-+	const void *shdr;
- 	struct device *dev = &rproc->dev;
- 	struct resource_table *table = NULL;
- 	const u8 *elf_data = fw->data;
- 	size_t tablesz;
-+	u8 class = fw_elf_get_class(fw);
-+	u64 sh_offset;
- 
--	ehdr = (struct elf32_hdr *)elf_data;
--
--	shdr = find_table(dev, ehdr, fw->size);
-+	shdr = find_table(dev, fw);
- 	if (!shdr)
- 		return -EINVAL;
- 
--	table = (struct resource_table *)(elf_data + shdr->sh_offset);
--	tablesz = shdr->sh_size;
-+	sh_offset = elf_shdr_sh_offset(class, shdr);
-+	table = (struct resource_table *)(elf_data + sh_offset);
-+	tablesz = elf_shdr_sh_size(class, shdr);
- 
- 	/*
- 	 * Create a copy of the resource table. When a virtio device starts
-@@ -317,13 +352,17 @@ EXPORT_SYMBOL(rproc_elf_load_rsc_table);
- struct resource_table *rproc_elf_find_loaded_rsc_table(struct rproc *rproc,
- 						       const struct firmware *fw)
- {
--	struct elf32_hdr *ehdr = (struct elf32_hdr *)fw->data;
--	struct elf32_shdr *shdr;
-+	const void *shdr;
-+	u64 sh_addr, sh_size;
-+	u8 class = fw_elf_get_class(fw);
- 
--	shdr = find_table(&rproc->dev, ehdr, fw->size);
-+	shdr = find_table(&rproc->dev, fw);
- 	if (!shdr)
- 		return NULL;
- 
--	return rproc_da_to_va(rproc, shdr->sh_addr, shdr->sh_size);
-+	sh_addr = elf_shdr_sh_addr(class, shdr);
-+	sh_size = elf_shdr_sh_size(class, shdr);
-+
-+	return rproc_da_to_va(rproc, sh_addr, sh_size);
- }
- EXPORT_SYMBOL(rproc_elf_find_loaded_rsc_table);
-diff --git a/drivers/remoteproc/remoteproc_elf_loader.h b/drivers/remoteproc/remoteproc_elf_loader.h
-new file mode 100644
-index 000000000000..fac3565734f9
---- /dev/null
-+++ b/drivers/remoteproc/remoteproc_elf_loader.h
-@@ -0,0 +1,69 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Remote processor elf loader defines
-+ *
-+ * Copyright (C) 2019 Kalray, Inc.
-+ */
-+
-+#ifndef REMOTEPROC_ELF_LOADER_H
-+#define REMOTEPROC_ELF_LOADER_H
-+
-+#include <linux/elf.h>
-+#include <linux/types.h>
-+
-+/**
-+ * fw_elf_get_class - Get elf class
-+ * @fw: the ELF firmware image
-+ *
-+ * Note that we use and elf32_hdr to access the class since the start of the
-+ * struct is the same for both elf class
-+ *
-+ * Return: elf class of the firmware
-+ */
-+static inline u8 fw_elf_get_class(const struct firmware *fw)
-+{
-+	struct elf32_hdr *ehdr = (struct elf32_hdr *)fw->data;
-+
-+	return ehdr->e_ident[EI_CLASS];
-+}
-+
-+#define ELF_GET_FIELD(__s, __field, __type) \
-+static inline __type elf_##__s##_##__field(u8 class, const void *arg) \
-+{ \
-+	if (class == ELFCLASS32) \
-+		return (__type) ((const struct elf32_##__s *) arg)->__field; \
-+	else \
-+		return (__type) ((const struct elf64_##__s *) arg)->__field; \
-+}
-+
-+ELF_GET_FIELD(hdr, e_entry, u64)
-+ELF_GET_FIELD(hdr, e_phnum, u16)
-+ELF_GET_FIELD(hdr, e_shnum, u16)
-+ELF_GET_FIELD(hdr, e_phoff, u64)
-+ELF_GET_FIELD(hdr, e_shoff, u64)
-+ELF_GET_FIELD(hdr, e_shstrndx, u16)
-+
-+ELF_GET_FIELD(phdr, p_paddr, u64)
-+ELF_GET_FIELD(phdr, p_filesz, u64)
-+ELF_GET_FIELD(phdr, p_memsz, u64)
-+ELF_GET_FIELD(phdr, p_type, u32)
-+ELF_GET_FIELD(phdr, p_offset, u64)
-+
-+ELF_GET_FIELD(shdr, sh_size, u64)
-+ELF_GET_FIELD(shdr, sh_offset, u64)
-+ELF_GET_FIELD(shdr, sh_name, u32)
-+ELF_GET_FIELD(shdr, sh_addr, u64)
-+
-+#define ELF_STRUCT_SIZE(__s) \
-+static inline unsigned long elf_size_of_##__s(u8 class) \
-+{ \
-+	if (class == ELFCLASS32)\
-+		return sizeof(struct elf32_##__s); \
-+	else \
-+		return sizeof(struct elf64_##__s); \
-+}
-+
-+ELF_STRUCT_SIZE(shdr)
-+ELF_STRUCT_SIZE(phdr)
-+
-+#endif /* REMOTEPROC_ELF_LOADER_H */
-diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
-index 004867061721..eeb26434220e 100644
---- a/drivers/remoteproc/remoteproc_internal.h
-+++ b/drivers/remoteproc/remoteproc_internal.h
-@@ -55,7 +55,7 @@ phys_addr_t rproc_va_to_pa(void *cpu_addr);
- int rproc_trigger_recovery(struct rproc *rproc);
- 
- int rproc_elf_sanity_check(struct rproc *rproc, const struct firmware *fw);
--u32 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw);
-+u64 rproc_elf_get_boot_addr(struct rproc *rproc, const struct firmware *fw);
- int rproc_elf_load_segments(struct rproc *rproc, const struct firmware *fw);
- int rproc_elf_load_rsc_table(struct rproc *rproc, const struct firmware *fw);
- struct resource_table *rproc_elf_find_loaded_rsc_table(struct rproc *rproc,
-diff --git a/drivers/remoteproc/st_remoteproc.c b/drivers/remoteproc/st_remoteproc.c
-index ee13d23b43a9..a3268d95a50e 100644
---- a/drivers/remoteproc/st_remoteproc.c
-+++ b/drivers/remoteproc/st_remoteproc.c
-@@ -190,7 +190,7 @@ static int st_rproc_start(struct rproc *rproc)
- 		}
- 	}
- 
--	dev_info(&rproc->dev, "Started from 0x%x\n", rproc->bootaddr);
-+	dev_info(&rproc->dev, "Started from 0x%llx\n", rproc->bootaddr);
- 
- 	return 0;
- 
-diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-index f84bd5fe0211..82cebca9344c 100644
---- a/include/linux/remoteproc.h
-+++ b/include/linux/remoteproc.h
-@@ -382,7 +382,7 @@ struct rproc_ops {
- 				struct rproc *rproc, const struct firmware *fw);
- 	int (*load)(struct rproc *rproc, const struct firmware *fw);
- 	int (*sanity_check)(struct rproc *rproc, const struct firmware *fw);
--	u32 (*get_boot_addr)(struct rproc *rproc, const struct firmware *fw);
-+	u64 (*get_boot_addr)(struct rproc *rproc, const struct firmware *fw);
- };
- 
- /**
-@@ -498,7 +498,7 @@ struct rproc {
- 	int num_traces;
- 	struct list_head carveouts;
- 	struct list_head mappings;
--	u32 bootaddr;
-+	u64 bootaddr;
- 	struct list_head rvdevs;
- 	struct list_head subdevs;
- 	struct idr notifyids;
--- 
-2.15.0.276.g89ea799
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cgo+IE9uIEZlYiA0LCAyMDIwLCBhdCAxMjozOSBQTSwgV2FpbWFuIExvbmcgPGxvbmdtYW5AcmVk
+aGF0LmNvbT4gd3JvdGU6Cj4gCj4gT24gMi80LzIwIDEyOjI3IFBNLCBQZXRlciBaaWpsc3RyYSB3
+cm90ZToKPj4gT24gVHVlLCBGZWIgMDQsIDIwMjAgYXQgMTE6NTQ6MDJBTSAtMDUwMCwgQWxleCBL
+b2dhbiB3cm90ZToKPj4+PiBPbiBGZWIgMywgMjAyMCwgYXQgMTA6NDcgQU0sIFdhaW1hbiBMb25n
+IDxsb25nbWFuQHJlZGhhdC5jb20+IHdyb3RlOgo+Pj4+IAo+Pj4+IE9uIDIvMy8yMCAxMDoyOCBB
+TSwgUGV0ZXIgWmlqbHN0cmEgd3JvdGU6Cj4+Pj4+IE9uIE1vbiwgRmViIDAzLCAyMDIwIGF0IDA5
+OjU5OjEyQU0gLTA1MDAsIFdhaW1hbiBMb25nIHdyb3RlOgo+Pj4+Pj4gT24gMi8zLzIwIDg6NDUg
+QU0sIFBldGVyIFppamxzdHJhIHdyb3RlOgo+Pj4+Pj4+IFByZXN1bWFibHkgeW91IGhhdmUgYSB3
+b3JrbG9hZCB3aGVyZSBDTkEgaXMgYWN0dWFsbHkgYSB3aW4/IFRoYXQgaXMsCj4+Pj4+Pj4gd2hh
+dCBpbnNwaXJlZCB5b3UgdG8gZ28gZG93biB0aGlzIHJvYWQ/IFdoaWNoIGFjdHVhbCBrZXJuZWwg
+bG9jayBpcyBzbwo+Pj4+Pj4+IGNvbnRlbmRlZCBvbiBOVU1BIG1hY2hpbmVzIHRoYXQgd2UgbmVl
+ZCB0byBkbyB0aGlzPwo+Pj4gVGhlcmUgYXJlIHF1aXRlIGEgZmV3IGFjdHVhbGx5LiBmaWxlc19z
+dHJ1Y3QuZmlsZV9sb2NrLCBmaWxlX2xvY2tfY29udGV4dC5mbGNfbG9jawo+Pj4gYW5kIGxvY2ty
+ZWYubG9jayBhcmUgc29tZSBjb25jcmV0ZSBleGFtcGxlcyB0aGF0IGdldCB2ZXJ5IGhvdCBpbiB3
+aWxsLWl0LXNjYWxlCj4+PiBiZW5jaG1hcmtzLiAKPj4gUmlnaHQsIHRoYXQncyBhbGwgYSB2YXJp
+YW50IG9mIGJhbmdpbmcgb24gdGhlIHNhbWUgcmVzb3VyY2VzIGFjcm9zcwo+PiBub2Rlcy4gSSdt
+IG5vdCBzdXJlIHRoZXJlJ3MgYW55dGhpbmcgZnVuZGFtZW50YWwgd2UgY2FuIGZpeCB0aGVyZS4K
+Tm90IG11Y2gsIGV4Y2VwdCBnYWluIHRoYXQgMnggZnJvbSBhIGJldHRlciBsb2NrLgoKPj4gCj4+
+PiBBbmQgdGhlbiB0aGVyZSBhcmUgc3BpbmxvY2tzIGluIF9fZnV0ZXhfZGF0YS5xdWV1ZXMsIAo+
+Pj4gd2hpY2ggZ2V0IGhvdCB3aGVuIGFwcGxpY2F0aW9ucyBoYXZlIGNvbnRlbmRlZCAocHRocmVh
+ZCkgbG9ja3Mg4oCUIAo+Pj4gTGV2ZWxEQiBpcyBhbiBleGFtcGxlLgo+PiBBIG51bWEgYXdhcmUg
+cmV3b3JrIG9mIGZ1dGV4ZXMgaGFzIGJlZW4gb24gdGhlIHRvZG8gbGlzdCBmb3IgeWVhcnMgOi8K
+PiBOb3csIHdlIGFyZSBnb2luZyB0byBnZXQgdGhhdCBmb3IgZnJlZSB3aXRoIHRoaXMgcGF0Y2hz
+ZXQ6LSkKRXhhY3RseSEhCgo+PiAKPj4+IE91ciBpbml0aWFsIG1vdGl2YXRpb24gd2FzIGJhc2Vk
+IG9uIGFuIG9ic2VydmF0aW9uIHRoYXQga2VybmVsIHFzcGlubG9jayBpcyBub3QgCj4+PiBOVU1B
+LWF3YXJlLiBTbyB3aGF0LCB5b3UgbWF5IGFzay4gTXVjaCBsaWtlIHBlb3BsZSByZWFsaXplZCBp
+biB0aGUgcGFzdCB0aGF0Cj4+PiBnbG9iYWwgc3Bpbm5pbmcgaXMgYmFkIGZvciBwZXJmb3JtYW5j
+ZSwgYW5kIHRoZXkgc3dpdGNoZWQgZnJvbSB0aWNrZXQgbG9jayB0bwo+Pj4gbG9ja3Mgd2l0aCBs
+b2NhbCBzcGlubmluZyAoZS5nLiwgTUNTKSwgSSB0aGluayBldmVyeW9uZSB3b3VsZCBhZ3JlZSB0
+aGVzZSBkYXlzIHRoYXQKPj4+IGJvdW5jaW5nIGEgbG9jayAoYW5kIGNhY2hlIGxpbmVzIGluIGdl
+bmVyYWwpIGFjcm9zcyBudW1hIG5vZGVzIGlzIHNpbWlsYXJseSBiYWQuCj4+PiBBbmQgYXMgQ05B
+IGRlbW9uc3RyYXRlcywgd2UgYXJlIGVhc2lseSBsZWF2aW5nIDItM3ggc3BlZWR1cHMgb24gdGhl
+IHRhYmxlIGJ5Cj4+PiBkb2luZyBqdXN0IHRoYXQgd2l0aCB0aGUgY3VycmVudCBxc3BpbmxvY2su
+Cj4+IEFjdHVhbCBiZW5jaG1hcmtzIHdpdGggcGVyZm9ybWFuY2UgbnVtYmVycyBhcmUgcmVxdWly
+ZWQuIEl0IGhlbHBzCj4+IG1vdGl2YXRlIHRoZSBwYXRjaGVzIGFzIHdlbGwgYXMgZ2l2ZXMgcmV2
+aWV3ZXJzIGNsdWVzIG9uIGhvdyB0bwo+PiByZXByb2R1Y2UgLyBpbnNwZWN0IHRoZSBjbGFpbXMg
+bWFkZS4KPj4gCj4gSSB0aGluayB0aGUgY292ZXItbGV0dGVyIGRvZXMgaGF2ZSBzb21lIGJlbmNo
+bWFyayByZXN1bHRzIGxpc3RlZC4KVG8gY2xhcmlmeSBvbiB0aGF0LCBJIF91c2VkIHRvIGluY2x1
+ZGUgYmVuY2htYXJrIHJlc3VsdHMgaW4gdGhlIGNvdmVyIGxldHRlciAKZm9yIHByZXZpb3VzIHJl
+dmlzaW9ucy4gSSBzdG9wcGVkIGRvaW5nIHRoYXQgYXMgdGhlIGNoYW5nZXMgYmV0d2VlbiByZXZp
+c2lvbnMKd2VyZSByYXRoZXIgbWlub3Ig4oCUIG1heWJlIHRoYXQgaXMgdGhlIG1pc3NpbmcgcGFy
+dD8gSWYgc28sIG15IGFwb2xvZ2llcywgSSBjYW4KY2VydGFpbmx5IHB1Ymxpc2ggdGhlbSBhZ2Fp
+bi4KClRoZSBwb2ludCBpcyB0aGF0IHdlIGhhdmUgbnVtYmVycyBmb3IgYWN0dWFsIGJlbmNobWFy
+a3MsIHBsdXMgdGhlIGtlcm5lbCBidWlsZApyb2JvdCBoYXMgc2VudCBxdWl0ZSBhIGZldyByZXBv
+cnRzIG9uIHBvc2l0aXZlIGltcHJvdmVtZW50cyBpbiB0aGUgcGVyZm9ybWFuY2UKb2YgQUlNNyBh
+bmQgb3RoZXIgYmVuY2htYXJrcyBkdWUgdG8gQ05BIChwbHVzIEFSTSBmb2xrcyBub3RpY2VkIGlt
+cHJvdmVtZW50CmluIHRoZWlyIGJlbmNobWFya3MsIGFsdGhvdWdoIEkgdGhpbmsgdGhvc2Ugd2Vy
+ZSBtb3N0bHkgbWljcm9iZW5jaG1hcmtzLiAKWWV0LCBpdCBpcyBldmlkZW50IHRoYXQgdGhlIGlt
+cHJvdmVtZW50cyBhcmUgY3Jvc3MtcGxhdGZvcm0uKQoKUmVnYXJkcywK4oCUIEFsZXgKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
+bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
