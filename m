@@ -2,72 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7352F151899
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 11:11:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3197B1518B6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 11:21:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qq7HKL9i3b1DzNvoS7BKzbOtiDZoA0XZqdOU0/5yZbo=; b=L3XD/1pDvb1X1b
-	3ABsjMJ7T1fleMDUUbwyaMkUoh5jlTN9+o9Gk4zhihpvNqDGRzbsfTl1xj5l5mc62GwNw6VNvi4J3
-	5KwR/+RsKXujnGk05rYiYj3IxhGPlmep928qQVkW0ye4mTRvakLcl5TShp6KOsU05OiAhOQH/W46E
-	gbHMePbrYp5USi143LzXdBXy7Y2wq5VY2J/rR5mtoitNeycPCWDLJ3lItsdIfU3jYpKnv27ePK9Bi
-	pvS7JVPdnWZEiLA44oewsvj1llUNyz29npKa2UTRUG17DJatDmmLGI27N9AJt/pjHJYgcQ2gy+tPg
-	y+mRqMkXrHMnSFAYFMWg==;
+	List-Owner; bh=K1lpo5aMrgcm0E3bgrIADTHGhzoI+1inOLoRnmScW+U=; b=Yumm6JA67itfAz
+	oUxTQeIgNwEQhxl56039mvBiQtiDqNw5JqdF4+FZ6giRkmyOfFwWcKV07GfMUc0M+aBvBOrUX9ed7
+	vOFKX9aITpy5bxbZsukzoPgxHJF0CT7iublYyQOC5ksVr58UXdehRtJFvB3yEkWrvQ9YgJPwL4Fob
+	xya0jqgqWekCyobifk05lYGFAXg7K95ncZE/B6zoGnhQkWk5J/nFKFKuPaD0/tSFmTmVZ/eq0rfdQ
+	P4SORu0r57l4q6sDzaKECRATRGpl0z3u904O8ydCj9ipHLsdBDyTlOLaatSBmyEYqTdGFO86lGLEe
+	CEORXdjhbmZmlI4re1TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyvBE-0001Gq-M9; Tue, 04 Feb 2020 10:11:40 +0000
+	id 1iyvKO-0004i1-29; Tue, 04 Feb 2020 10:21:08 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyvAM-0000RD-6h
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 10:10:49 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ id 1iyvKI-0004hS-0M
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 10:21:03 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 014A7pji011091; Tue, 4 Feb 2020 11:10:37 +0100
+ 014AHStW010010; Tue, 4 Feb 2020 11:20:56 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=bhdUjCl28U8mxH7dOdR1VAauDSxTC8bwI7sY3gTd9YU=;
- b=UNfs1fTp+4E4c4FmHuRM99P110CzEtE7UckSzL3ukGDivoVQ6GE1nL0nDRrcsQE0UYXZ
- 59RmKsj4LK18HMkZ5GoOHBip9A7TN4tvedcV1YgQyNkJF/Zqlkv0DOsTwv68It8yEjOC
- 9aAjl6vtWyJSWxxxc9KI+ZvPvexMr9tfpuMt9eLRUS+FfRvNFTaVQb1MfeCOxDhp8voI
- Ho+AA0SYipuLsTnvwgGsnQ2LesX0weR4qQ+DAdG1AuUFeGQF3YJxyzwSeJ8On5yCaJ7p
- llG0Y/+lZNSEOBXNEWtYRJVWHDgczg1o3VUcnRIGJuGLPe8bKkg4gjF1CNxoAjH2Iixc dw== 
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=ASDNEVwwDTvwYFZK6EDluzNZiX+m1GXIQNqyDbJAOR0=;
+ b=piIIQ3mnDc5dRQSmClGEoshBFHuDjKoxKrSr0VVGsJsl9HDrzNI3X/4m7jAQ7rcGWcwG
+ Gm/wZnvzYPli6HES5tcoDHK+MNYPuUSuY3qAvVX+u4CeWUJbhvTE85NbDGFznoDpN+uv
+ re/sqvB3AzSKfND33agqTU3mzr88KrEdYb2eOiYt8+tPh0TGTSAhxUGBlrPiaVhqaO0w
+ rOm31nAJtmU9SrEhL3xJLo6EFb7LIyMx6Ul5kyuD0i4GFZLGu6jMn8uPiyXk9KgwxeKv
+ hWxIIKbuXaRjyxPwQNqCC6Mp3NrJgHK++hVCjOk+8xAm1q4eTR182ImH5sGTxGf7PcMM BA== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xvybe0hhm-1
+ by mx07-00178001.pphosted.com with ESMTP id 2xw13nr95y-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 04 Feb 2020 11:10:37 +0100
+ Tue, 04 Feb 2020 11:20:56 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 5908310003B;
- Tue,  4 Feb 2020 11:10:33 +0100 (CET)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3A35F100038;
+ Tue,  4 Feb 2020 11:20:51 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 49AFC2AD9D9;
- Tue,  4 Feb 2020 11:10:33 +0100 (CET)
-Received: from localhost (10.75.127.46) by SFHDAG6NODE2.st.com (10.75.127.17)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Tue, 4 Feb 2020 11:10:32 +0100
-From: Olivier Moysan <olivier.moysan@st.com>
-To: <jic23@kernel.org>, <robh+dt@kernel.org>, <olivier.moysan@st.com>
-Subject: [PATCH 4/4] iio: adc: stm32-dfsdm: add scale and offset support
-Date: Tue, 4 Feb 2020 11:10:08 +0100
-Message-ID: <20200204101008.11411-5-olivier.moysan@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200204101008.11411-1-olivier.moysan@st.com>
-References: <20200204101008.11411-1-olivier.moysan@st.com>
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 258A12B0502;
+ Tue,  4 Feb 2020 11:20:51 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE2.st.com
+ (10.75.127.17) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 4 Feb
+ 2020 11:20:50 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Tue, 4 Feb 2020 11:20:50 +0100
+From: Patrice CHOTARD <patrice.chotard@st.com>
+To: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>, Olof Johansson
+ <olof@lixom.net>, Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: Re: [PATCH][resend] ARM: stihxxx-b2120.dtsi: fixup sound
+ frame-inversion
+Thread-Topic: [PATCH][resend] ARM: stihxxx-b2120.dtsi: fixup sound
+ frame-inversion
+Thread-Index: AQHVzA13QbnFzd5BbUe+uxppwLJ+rKgK4KoA
+Date: Tue, 4 Feb 2020 10:20:50 +0000
+Message-ID: <ddab976b-7f7a-f807-53f6-16e27851a37c@st.com>
+References: <87muao18sk.wl-kuninori.morimoto.gx@renesas.com>
+In-Reply-To: <87muao18sk.wl-kuninori.morimoto.gx@renesas.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.47]
+Content-ID: <C9F4B739D5E096449EE176D07A9155CD@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG3NODE3.st.com (10.75.127.9) To SFHDAG6NODE2.st.com
- (10.75.127.17)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-02-04_02:2020-02-04,
  2020-02-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_021046_533877_45432E1E 
-X-CRM114-Status: GOOD (  19.86  )
+X-CRM114-CacheID: sfid-20200204_022102_336163_FE8114AB 
+X-CRM114-Status: GOOD (  19.83  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -95,199 +109,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
- linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, pmeerw@pmeerw.net,
- knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add scale and offset attributes support to STM32 DFSDM.
+Hi Kuninori
 
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
----
- drivers/iio/adc/stm32-dfsdm-adc.c | 105 +++++++++++++++++++++++++++++-
- 1 file changed, 102 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
-index 07b9dfdf8e76..b85fd3e90496 100644
---- a/drivers/iio/adc/stm32-dfsdm-adc.c
-+++ b/drivers/iio/adc/stm32-dfsdm-adc.c
-@@ -10,6 +10,7 @@
- #include <linux/dma-mapping.h>
- #include <linux/iio/adc/stm32-dfsdm-adc.h>
- #include <linux/iio/buffer.h>
-+#include <linux/iio/consumer.h>
- #include <linux/iio/hw-consumer.h>
- #include <linux/iio/sysfs.h>
- #include <linux/iio/timer/stm32-lptim-trigger.h>
-@@ -67,6 +68,13 @@ struct stm32_dfsdm_dev_data {
- 	const struct regmap_config *regmap_cfg;
- };
- 
-+struct stm32_dfsdm_sd_chan_info {
-+	int scale_val;
-+	int scale_val2;
-+	int offset;
-+	unsigned int differential;
-+};
-+
- struct stm32_dfsdm_adc {
- 	struct stm32_dfsdm *dfsdm;
- 	const struct stm32_dfsdm_dev_data *dev_data;
-@@ -79,6 +87,7 @@ struct stm32_dfsdm_adc {
- 	struct iio_hw_consumer *hwc;
- 	struct completion completion;
- 	u32 *buffer;
-+	struct stm32_dfsdm_sd_chan_info *sd_chan;
- 
- 	/* Audio specific */
- 	unsigned int spi_freq;  /* SPI bus clock frequency */
-@@ -1271,7 +1280,10 @@ static int stm32_dfsdm_read_raw(struct iio_dev *indio_dev,
- 				int *val2, long mask)
- {
- 	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
--	int ret;
-+	struct stm32_dfsdm_filter *fl = &adc->dfsdm->fl_list[adc->fl_id];
-+	struct stm32_dfsdm_filter_osr *flo = &fl->flo[fl->fast];
-+	u32 max = flo->max << (flo->lshift - chan->scan_type.shift);
-+	int ret, idx = chan->scan_index;
- 
- 	switch (mask) {
- 	case IIO_CHAN_INFO_RAW:
-@@ -1307,6 +1319,41 @@ static int stm32_dfsdm_read_raw(struct iio_dev *indio_dev,
- 		*val = adc->sample_freq;
- 
- 		return IIO_VAL_INT;
-+
-+	case IIO_CHAN_INFO_SCALE:
-+		/*
-+		 * Scale is expressed in mV.
-+		 * When fast mode is disabled, actual resolution may be lower
-+		 * than 2^n, where n=realbits-1.
-+		 * This leads to underestimating input voltage. To
-+		 * compensate this deviation, the voltage reference can be
-+		 * corrected with a factor = realbits resolution / actual max
-+		 */
-+		*val = div_u64((u64)adc->sd_chan[idx].scale_val *
-+			       (u64)BIT(DFSDM_DATA_RES - 1), max);
-+		*val2 = chan->scan_type.realbits;
-+		if (adc->sd_chan[idx].differential)
-+			*val *= 2;
-+
-+		return IIO_VAL_FRACTIONAL_LOG2;
-+
-+	case IIO_CHAN_INFO_OFFSET:
-+		/*
-+		 * DFSDM output data are in the range [-2^n,2^n-1],
-+		 * with n=realbits-1.
-+		 * - Differential modulator:
-+		 * Offset correspond to SD modulator offset.
-+		 * - Single ended modulator:
-+		 * Input is in [0V,Vref] range, where 0V corresponds to -2^n.
-+		 * Add 2^n to offset. (i.e. middle of input range)
-+		 * offset = offset(sd) * vref / res(sd) * max / vref.
-+		 */
-+		*val = div_u64((u64)max * adc->sd_chan[idx].offset,
-+			       BIT(adc->sd_chan[idx].scale_val2 - 1));
-+		if (!adc->sd_chan[idx].differential)
-+			*val += max;
-+
-+		return IIO_VAL_INT;
- 	}
- 
- 	return -EINVAL;
-@@ -1430,7 +1477,9 @@ static int stm32_dfsdm_adc_chan_init_one(struct iio_dev *indio_dev,
- 	 * IIO_CHAN_INFO_RAW: used to compute regular conversion
- 	 * IIO_CHAN_INFO_OVERSAMPLING_RATIO: used to set oversampling
- 	 */
--	ch->info_mask_separate = BIT(IIO_CHAN_INFO_RAW);
-+	ch->info_mask_separate = BIT(IIO_CHAN_INFO_RAW) |
-+				 BIT(IIO_CHAN_INFO_SCALE) |
-+				 BIT(IIO_CHAN_INFO_OFFSET);
- 	ch->info_mask_shared_by_all = BIT(IIO_CHAN_INFO_OVERSAMPLING_RATIO) |
- 					BIT(IIO_CHAN_INFO_SAMP_FREQ);
- 
-@@ -1481,8 +1530,10 @@ static int stm32_dfsdm_adc_init(struct iio_dev *indio_dev)
- {
- 	struct iio_chan_spec *ch;
- 	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
-+	struct iio_channel *channels, *chan;
-+	struct stm32_dfsdm_sd_chan_info *sd_chan;
- 	int num_ch;
--	int ret, chan_idx;
-+	int ret, chan_idx, val2;
- 
- 	adc->oversamp = DFSDM_DEFAULT_OVERSAMPLING;
- 	ret = stm32_dfsdm_compute_all_osrs(indio_dev, adc->oversamp);
-@@ -1506,6 +1557,22 @@ static int stm32_dfsdm_adc_init(struct iio_dev *indio_dev)
- 	if (!ch)
- 		return -ENOMEM;
- 
-+	/* Get SD modulator channels */
-+	channels = iio_channel_get_all(&indio_dev->dev);
-+	if (IS_ERR(channels)) {
-+		dev_err(&indio_dev->dev, "Failed to get channel %ld\n",
-+			PTR_ERR(channels));
-+		return PTR_ERR(channels);
-+	}
-+	chan = &channels[0];
-+
-+	adc->sd_chan = devm_kzalloc(&indio_dev->dev,
-+				    sizeof(*adc->sd_chan) * num_ch, GFP_KERNEL);
-+	if (!adc->sd_chan)
-+		return -ENOMEM;
-+
-+	sd_chan = adc->sd_chan;
-+
- 	for (chan_idx = 0; chan_idx < num_ch; chan_idx++) {
- 		ch[chan_idx].scan_index = chan_idx;
- 		ret = stm32_dfsdm_adc_chan_init_one(indio_dev, &ch[chan_idx]);
-@@ -1513,6 +1580,38 @@ static int stm32_dfsdm_adc_init(struct iio_dev *indio_dev)
- 			dev_err(&indio_dev->dev, "Channels init failed\n");
- 			return ret;
- 		}
-+
-+		if (!chan->indio_dev)
-+			return -EINVAL;
-+
-+		ret = iio_read_channel_scale(chan, &sd_chan->scale_val,
-+					     &sd_chan->scale_val2);
-+		if (ret < 0) {
-+			dev_err(&indio_dev->dev,
-+				"Failed to get channel %d scale\n", chan_idx);
-+			return ret;
-+		}
-+
-+		if (iio_channel_has_info(chan->channel, IIO_CHAN_INFO_OFFSET)) {
-+			ret = iio_read_channel_offset(chan, &sd_chan->offset,
-+						      &val2);
-+			if (ret < 0) {
-+				dev_err(&indio_dev->dev,
-+					"Failed to get channel %d offset\n",
-+					chan_idx);
-+				return ret;
-+			}
-+		}
-+
-+		sd_chan->differential = chan->channel->differential;
-+
-+		dev_dbg(&indio_dev->dev, "Channel %d %s scale ref=%d offset=%d",
-+			chan_idx, chan->channel->differential ?
-+			"differential" : "single-ended",
-+			sd_chan->scale_val, sd_chan->offset);
-+
-+		chan++;
-+		sd_chan++;
- 	}
- 
- 	indio_dev->num_channels = num_ch;
--- 
-2.17.1
+On 1/16/20 2:36 AM, Kuninori Morimoto wrote:
+> From: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
+>
+> frame-inversion is flag not uint32.
+> This patch fixup it.
+>
+> Signed-off-by: Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>
+> Reviewed-by: Patrice Chotard <patrice.chotard@st.com>
+> ---
+> 1 month passed, but nothing happen...
+> I repost this patch, again
+>
+>  arch/arm/boot/dts/stihxxx-b2120.dtsi | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/arch/arm/boot/dts/stihxxx-b2120.dtsi b/arch/arm/boot/dts/stihxxx-b2120.dtsi
+> index 60e1104..d051f08 100644
+> --- a/arch/arm/boot/dts/stihxxx-b2120.dtsi
+> +++ b/arch/arm/boot/dts/stihxxx-b2120.dtsi
+> @@ -46,7 +46,7 @@
+>  			/* DAC */
+>  			format = "i2s";
+>  			mclk-fs = <256>;
+> -			frame-inversion = <1>;
+> +			frame-inversion;
+>  			cpu {
+>  				sound-dai = <&sti_uni_player2>;
+>  			};
 
 
+Applied on sti-dt-for-5.6-round1
+
+Thanks
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
