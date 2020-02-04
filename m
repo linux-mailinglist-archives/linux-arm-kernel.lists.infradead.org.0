@@ -2,115 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EA151520C8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 20:08:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E2301520DD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 20:13:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R9Ywd6viR/uoyy3OE22TLZqHomxP3cYNS3tGHGeZWPo=; b=bAR/J11PcNIvgW
-	DjYXOBIvsbCW1kzAQeo0fZEVneRqzg0xOkAzV6cRxvEK9dlM7TRZKVGs6ihPGM2YjqNMTHk0XEnqJ
-	78InPI/bC6KS4YQ2YEXBt4hlQenWqfelkT6xr6sasNqF4cLkSBcK6zizlFVc/+4V0Lc05edxMYwPv
-	hcdnBZyfyrwLI2qVzcFKXgKjsVKs7Z/iaifZ3tX/kSBXJVUYEIaGN39jf7NRzjA4pnVb4VfGqs56a
-	krvL46QUa+KzvDWIkV6M+KxToABbomSS1VSoTaef6NqRBpcBW8bYVutARkl548E7ND+iNcqyIoDAL
-	/CWXEPuJrIyfazTnGTqA==;
+	List-Owner; bh=w3QqLzook22br2sbWOdZpBQWjQ644AQ3p5QD9fCbFx4=; b=lNzzXfZZX+Y36T
+	vVDVW6AVOo7uA1/RmapyO0DZDT3mZ3wPsNoxb4Do2Y8ebk2cTzTdVv0585vf2HnDcMExoOj4Ihx6W
+	RIgaojyHYnoS9poIAa+oHR9bmwRYJqwhusypHQV89S+BcpPg6nCvNyLGpJBOk14jATizhnB/iAsOh
+	2oyNnYQq2ZVJTt/xiw5VkM9iSXcADSGZpHMTl2CTiJ9CLAW3xtX4g+qj70L6d/VjFkbAXr30fJcYO
+	kJzlpBvOUIpRtwgTmuR1tIId0SHCw8qvSZOwE2PNQe0KakwWPbfdYE8XYZgcoZAZqt+uqXMFrcCwH
+	bJycd1UqwhU4LALG5A5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz3Z2-0005Ol-UB; Tue, 04 Feb 2020 19:08:48 +0000
-Received: from mail-bn8nam12on2074.outbound.protection.outlook.com
- ([40.107.237.74] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
+	id 1iz3dl-0007AX-Ms; Tue, 04 Feb 2020 19:13:41 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz3Yv-0005N7-LC
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 19:08:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=hPkzUghNOWEg5VPXEwtNBi1CaBKVVSvP6XgR0WblZEe4/Yi9qohELrCsVbDmJWCamilzeBFERAyVMyQvkKTWl2ICXScjNyLsOr9usW5sqIjA607Y6tnl2rtHS1iNo0ZHGP+GOyl/OWm04thEPawJHLKapRPwA9oy9XbiCECtPa4RHJsogyfUuvt/KhAeASCP+LsJulbPnR7Fzq/U4MqN2azxKJ8YDzFJTVoC5Oe09WF6oP6dJ1wZhiewRpjha2bZgLHTWk1RR55CuoWcWELEm6llGAtNt7nr/ii9dzu99VafM9ekxSDilM3iQnrAcDo2YslqZfzoyJNadog9D92XNw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5Z2WeSN6w+/+6yi8SsUJmbXmRagu9aJzbUdGY+2+m3Q=;
- b=Be2qB7w1fx7g/IZAWyWVWs18B0DNmYCZFbhpO+tEeTbNAy57jQAonj/a1mPxZHHXDz7cK0KEBysG15zsGphq5X/7gbbU4Md2hnt/D4FvhkaaHaRqgUHHk+z086eTljDtPe6qwBobeK5iy7FKNqZZtgwpdmLSYu+XVFva/4xnlhdDrr+NSkB2UaciGak+wQiiBwM0PQBQ60wG+2Qvu3o8e8I0mVvh6nH9AOEagSp1F8ArOUlB7TBaAOWm6puziyhzs+0ybEQwZqqDLfek9SeLeeBHoTcNjtt41263FmUDA/O2XnhR3s035d2IgVUBsQi5/R0MGJcJZqKtkoaY9tNCjA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=5Z2WeSN6w+/+6yi8SsUJmbXmRagu9aJzbUdGY+2+m3Q=;
- b=kdS8Hdebzv2979Egke08o/VzVrwZv4pvkd5qviLwJulDnNqLrKYYBGbEXkhacyi8q4V7zKkXbfHTmNexpcUSTXfH5EGk4+hXV5doYXTZJDYsPTn7b0s/NOy6jK3QvEzaXUZc4FT/yc+UDRgeTx378XXfISM5QWAZ5Fn7/cVIuBs=
-Received: from MN2PR02MB5727.namprd02.prod.outlook.com (20.179.85.153) by
- MN2PR02MB6240.namprd02.prod.outlook.com (52.132.174.20) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2686.32; Tue, 4 Feb 2020 19:08:36 +0000
-Received: from MN2PR02MB5727.namprd02.prod.outlook.com
- ([fe80::e09d:a160:5349:8ed0]) by MN2PR02MB5727.namprd02.prod.outlook.com
- ([fe80::e09d:a160:5349:8ed0%6]) with mapi id 15.20.2686.031; Tue, 4 Feb 2020
- 19:08:36 +0000
-From: Mubin Usman Sayyed <MUBINUSM@xilinx.com>
-To: Michal Simek <michals@xilinx.com>, "tglx@linutronix.de"
- <tglx@linutronix.de>, "jason@lakedaemon.net" <jason@lakedaemon.net>,
- "maz@kernel.org" <maz@kernel.org>, Michal Simek <michals@xilinx.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH] irqchip: xilinx: Add support for multiple instances
-Thread-Topic: [PATCH] irqchip: xilinx: Add support for multiple instances
-Thread-Index: AQHV2EFy1wtnp2eJaEKfI1gB9M0udKgE1vsAgAaUMeA=
-Date: Tue, 4 Feb 2020 19:08:36 +0000
-Message-ID: <MN2PR02MB5727F3B9694669B10D25E841A1030@MN2PR02MB5727.namprd02.prod.outlook.com>
-References: <1580480338-3361-1-git-send-email-mubin.usman.sayyed@xilinx.com>
- <28c517f7-9cff-f897-c5a9-2216dd769c64@xilinx.com>
-In-Reply-To: <28c517f7-9cff-f897-c5a9-2216dd769c64@xilinx.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=MUBINUSM@xilinx.com; 
-x-originating-ip: [149.199.50.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: dcdf5ac3-818f-4f87-1d95-08d7a9a5a303
-x-ms-traffictypediagnostic: MN2PR02MB6240:|MN2PR02MB6240:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MN2PR02MB62403AEFF357BA78358997E7A1030@MN2PR02MB6240.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
-x-forefront-prvs: 03030B9493
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(39860400002)(346002)(396003)(136003)(376002)(199004)(189003)(81166006)(33656002)(8936002)(81156014)(8676002)(66476007)(66446008)(5660300002)(66556008)(66946007)(76116006)(7696005)(316002)(64756008)(110136005)(54906003)(478600001)(4326008)(6506007)(53546011)(86362001)(107886003)(55016002)(26005)(52536014)(2906002)(186003)(71200400001)(9686003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR02MB6240;
- H:MN2PR02MB5727.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: IFsBdaKuDeAXK+R4zowpCkLgXZ0YkLebeb+ixWMs9WU+k/6LwADmpc/UUe9sBPVtafkWCa+AmdXYnH1q1XBQEGvg16FYQAEOI11G/S/vgBGxas1kqU45HxSkEtxrfz82p0NEWHnMYoKPQdupSL6R1E4kOhfi/LoiZ9ZqrfOtYNWeoQf/afa0lbt+HdeKQuE9sncADrWnNgz44UjoqTQCMse+ywwTPnsENVkpYCXUJn65D4wL+FHAs8GW/KXwxWRpNB+C9Ov1mmcx4o17A/Ron6UDjhlH22EjIT8L2f1klrTSycMJLbBGgLXp9USiRGd9Fw2phCACqKoB83gyGNDgMkcr4jEY71tMAslzfQRfQPChlElYNHXYf7bP6Ex8o/nHn3woR4XL8IMS8Y6YrsnghuAk9DiG9XY+ctHMUxceRdDquVw/F/rUVOrzDGJ7yqw6
-x-ms-exchange-antispam-messagedata: s+C8IPZ8tWI52aNkFl6fRv8R4iD0WzMSdpVMLn0QY83SPjXgnAFKvwLR1fv8uB1Trcf7XYNjySktCjOc55gbWRxJI0r2SjUvxdPVLuFu7DaV6GWBB60dIPCjNwDeeSitvWr0KUyNIoQd8DCOiVd9Fw==
+ id 1iz3dc-00079c-A9
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 19:13:33 +0000
+Received: by mail-qk1-x743.google.com with SMTP id h4so8256505qkm.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 04 Feb 2020 11:13:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=bdX909F5cI382fCwL2BmbcR0X3LXro/I1upGDSYHuzo=;
+ b=af9b04eiFve+KyP+LhZf60HCVL8lPPYPwQ3FEmqeZfugnYDSuPcWsvjoIrXPo6YCva
+ Sc1FERU+4ZaaJsFfjiA+Ilwn0S5M+WFGlLJYvVeb3SEJ91x2vP63V+QrjbzKaZ7E0Lvs
+ QYcF+eLurguVf0WwaTyU99Y9wxY/l/BcQhknatNYVhyeIGROiRm+pSTnMqL7puw8leTx
+ YHFXfMcvNO7MNPf2hmS9+TQ1OLDH3/FYxrZWfKKNdej+Bjmyi3nYUvRsQrf5jf4/i9RI
+ oHbybLHDDO4NXvJzLAlQulpZD6bxgLg2iOA6Rg9/FtpCBh34ZJ4fUOiUP+PAf/YXIMmn
+ cVJw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=bdX909F5cI382fCwL2BmbcR0X3LXro/I1upGDSYHuzo=;
+ b=T30qNyFox8xfaf1mKi1k6+7ME9eCOG+hmUy5G/G+eX/Vt+TkXc98IbEFIaeAzRKQ5a
+ 0ms1S5FTTdF/AhYO+hrLk71AE3MyE+om5YvWwoYLe6mePmqvygxAAHJQWWg8sHla4Ldc
+ KGF/D71LZ/qfXtAuCtVkdpjg9b2cweTM4RW5iwrj2as9cfqnjvuM7oAl+Plh94raBrJ2
+ YzeYGxMbR7JWb1fEXq/h4ZCTqlWupYlM6klEOMjJ7L5Zk5UTB/1vYl1EUHVT0WZu3WQ1
+ Lq6dEEJpaza7XYLhnBEStVbHFK3AZsXRkS45ySwwl4hFnzT8qqSMweBvfPcA7tgC4jgu
+ dNXg==
+X-Gm-Message-State: APjAAAWITBAkCevEVoDY/nLjBG1+e0V1dygfni5NcdDSfaDatBSZlb7Y
+ A3cceloZKANQPvyTubhPDzOAqQSF1zmt9q1yGuc=
+X-Google-Smtp-Source: APXvYqzL2qBK84KG5kdgM/FLguBsVyHKuNA+SYxiM1gbwqv39K/jDfeV7q5nmkTTa6/okXiRZyHcbl5ya+Yw7DY8LmY=
+X-Received: by 2002:a37:63c7:: with SMTP id
+ x190mr30030638qkb.232.1580843609003; 
+ Tue, 04 Feb 2020 11:13:29 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dcdf5ac3-818f-4f87-1d95-08d7a9a5a303
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Feb 2020 19:08:36.4793 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: yJ43KNy15s56xFVC21Rn6CcBUbXcZBmIIgggW5WL9ViOWHPAQEtUVs7f4/qSo2jjDiCODo8kGlRfzT1GEigEUw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR02MB6240
+References: <20200128021145.36774-1-palmerdabbelt@google.com>
+ <20200128021145.36774-5-palmerdabbelt@google.com>
+In-Reply-To: <20200128021145.36774-5-palmerdabbelt@google.com>
+From: =?UTF-8?B?QmrDtnJuIFTDtnBlbA==?= <bjorn.topel@gmail.com>
+Date: Tue, 4 Feb 2020 20:13:17 +0100
+Message-ID: <CAJ+HfNjkacY-KStgGJMgvQh2=2OsMnH6Saij+nAPBqQrSJcNWw@mail.gmail.com>
+Subject: Re: [PATCH 4/4] arm64: bpf: Elide some moves to a0 after calls
+To: Palmer Dabbelt <palmerdabbelt@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_110841_723750_1BDB46E6 
-X-CRM114-Status: GOOD (  16.98  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200204_111332_353660_930EBE21 
+X-CRM114-Status: GOOD (  14.53  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.237.74 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [bjorn.topel[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,79 +95,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Anirudha Sarangi <anirudh@xilinx.com>,
- Siva Durga Prasad Paladugu <sivadur@xilinx.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Song Liu <songliubraving@fb.com>, Andrii Nakryiko <andriin@fb.com>,
+ Daniel Borkmann <daniel@iogearbox.net>, kernel-team@android.com,
+ zlim.lnx@gmail.com, Shuah Khan <shuah@kernel.org>,
+ Alexei Starovoitov <ast@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux@googlegroups.com, Netdev <netdev@vger.kernel.org>,
+ linux-kselftest@vger.kernel.org, catalin.marinas@arm.com,
+ Yonghong Song <yhs@fb.com>, bpf <bpf@vger.kernel.org>, will@kernel.org,
+ Martin KaFai Lau <kafai@fb.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michal,
-
-> -----Original Message-----
-> From: Michal Simek <michal.simek@xilinx.com>
-> Sent: Friday, January 31, 2020 8:06 PM
-> To: Mubin Usman Sayyed <MUBINUSM@xilinx.com>; tglx@linutronix.de;
-> jason@lakedaemon.net; maz@kernel.org; Michal Simek
-> <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org; Siva Durga Prasad Paladugu
-> <sivadur@xilinx.com>; Anirudha Sarangi <anirudh@xilinx.com>
-> Subject: Re: [PATCH] irqchip: xilinx: Add support for multiple instances
-> 
-> On 31. 01. 20 15:18, Mubin Usman Sayyed wrote:
-> > From: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
-> >
-> > This patch adds support for multiple instances of xilinx interrupt
-> > controller. Below configurations are supported by driver,
-> >
-> > - peripheral->xilinx-intc->xilinx-intc->gic
-> > - peripheral->xilinx-intc->xilinx-intc
-> >
-> > Signed-off-by: Anirudha Sarangi <anirudha.sarangi@xilinx.com>
-> > Signed-off-by: Mubin Sayyed <mubin.usman.sayyed@xilinx.com>
-> > ---
-> >  drivers/irqchip/irq-xilinx-intc.c | 143
-> > +++++++++++++++++++++++---------------
-> >  1 file changed, 87 insertions(+), 56 deletions(-)
-> >
-> > diff --git a/drivers/irqchip/irq-xilinx-intc.c
-> > b/drivers/irqchip/irq-xilinx-intc.c
-> > index e3043de..43d6e4e 100644
-> > --- a/drivers/irqchip/irq-xilinx-intc.c
-> > +++ b/drivers/irqchip/irq-xilinx-intc.c
-> > @@ -15,10 +15,11 @@
-> >  #include <linux/irqchip/chained_irq.h>  #include <linux/of_address.h>
-> > #include <linux/io.h> -#include <linux/jump_label.h>  #include
-> > <linux/bug.h>  #include <linux/of_irq.h>
-> >
-> > +static struct xintc_irq_chip *primary_intc;
-> 
-> nit: please place it below xintc_irq_chip.
-[Mubin]:  I will fix it in v2.
-> 
-> > +
-> >  /* No one else should require these constants, so define them locally
-> here. */
-> >  #define ISR 0x00			/* Interrupt Status Register */
-> >  #define IPR 0x04			/* Interrupt Pending Register */
-> > @@ -32,35 +33,40 @@
-> >  #define MER_ME (1<<0)
-> >  #define MER_HIE (1<<1)
-> >
-> > -static DEFINE_STATIC_KEY_FALSE(xintc_is_be);
-> 
-> I am playing with this driver a little bit now and I pretty much dislike remove
-> this. I haven't see any configuration which mixes little and big endian
-> together. That's why I prefer not to create read_fn/write_fn hooks.
-[Mubin]:  Agreed,  I will remove read_fn/write_fn and use xintc_is_be in v2.
-
-Thanks,
-Mubin
-> 
-> Thanks,
-> Michal
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCAyOCBKYW4gMjAyMCBhdCAwMzoxNSwgUGFsbWVyIERhYmJlbHQgPHBhbG1lcmRhYmJl
+bHRAZ29vZ2xlLmNvbT4gd3JvdGU6Cj4KPiBPbiBhcm02NCwgdGhlIEJQRiBmdW5jdGlvbiBBQkkg
+ZG9lc24ndCBtYXRjaCB0aGUgQyBmdW5jdGlvbiBBQkkuICBTcGVjaWZpY2FsbHksCj4gYXJtNjQg
+ZW5jb2RlcyBjYWxscyBhcyBgYTAgPSBmKGEwLCBhMSwgLi4uKWAgd2hpbGUgQlBGIGVuY29kZXMg
+Y2FsbHMgYXMKPiBgQlBGX1JFR18wID0gZihCUEZfUkVHXzEsIEJQRl9SRUdfMiwgLi4uKWAuICBU
+aGlzIGRpc2NyZXBhbmN5IHJlc3VsdHMgaW4KPiBmdW5jdGlvbiBjYWxscyBiZWluZyBlbmNvZGVk
+IGFzIGEgdHdvIG9wZXJhdGlvbnMgc2VxdWVuY2UgdGhhdCBmaXJzdCBkb2VzIGEgQwo+IEFCSSBj
+YWxscyBhbmQgdGhlbiBtb3ZlcyB0aGUgcmV0dXJuIHJlZ2lzdGVyIGludG8gdGhlIHJpZ2h0IHBs
+YWNlLiAgVGhpcwo+IHJlc3VsdHMgaW4gb25lIGV4dHJhIGluc3RydWN0aW9uIGZvciBldmVyeSBm
+dW5jdGlvbiBjYWxsLgo+CgpJdCdzIGEgbG90IG9mIGV4dHJhIHdvcmsgZm9yIG9uZSByZWctdG8t
+cmVnIG1vdmUsIGJ1dCBpdCBhbHdheXMKYW5ub3llZCBtZSBpbiB0aGUgUklTQy1WIEpJVC4gOi0p
+IFNvLCBpZiBpdCAqY2FuKiBiZSBhdm9pZGVkLCB3aHkgbm90LgoKWy4uLl0KPgo+ICtzdGF0aWMg
+aW50IGRlYWRfcmVnaXN0ZXIoY29uc3Qgc3RydWN0IGppdF9jdHggKmN0eCwgaW50IG9mZnNldCwg
+aW50IGJwZl9yZWcpCgpHaXZlbiB0aGF0IGEgbG90IG9mIGFyY2hzIChSSVNDLVYsIGFybT8sIE1J
+UFM/KSBtaWdodCBiZW5lZml0IGZyb20KdGhpcywgaXQgd291bGQgYmUgbmljZSBpZiBpdCBjb3Vs
+ZCBiZSBtYWRlIGdlbmVyaWMgKGl0IGFscmVhZHkgaXMKcHJldHR5IG11Y2gpLCBhbmQgbW92ZWQg
+dG8ga2VybmVsL2JwZi4KCj4gK3sKPiArICAgICAgIGNvbnN0IHN0cnVjdCBicGZfcHJvZyAqcHJv
+ZyA9IGN0eC0+cHJvZzsKPiArICAgICAgIGludCBpOwo+ICsKPiArICAgICAgIGZvciAoaSA9IG9m
+ZnNldDsgaSA8IHByb2ctPmxlbjsgKytpKSB7Cj4gKyAgICAgICAgICAgICAgIGNvbnN0IHN0cnVj
+dCBicGZfaW5zbiAqaW5zbiA9ICZwcm9nLT5pbnNuc2lbaV07Cj4gKyAgICAgICAgICAgICAgIGNv
+bnN0IHU4IGNvZGUgPSBpbnNuLT5jb2RlOwo+ICsgICAgICAgICAgICAgICBjb25zdCB1OCBicGZf
+ZHN0ID0gaW5zbi0+ZHN0X3JlZzsKPiArICAgICAgICAgICAgICAgY29uc3QgdTggYnBmX3NyYyA9
+IGluc24tPnNyY19yZWc7Cj4gKyAgICAgICAgICAgICAgIGNvbnN0IGludCB3cml0ZXNfZHN0ID0g
+ISgoY29kZSAmIEJQRl9TVCkgfHwgKGNvZGUgJiBCUEZfU1RYKQo+ICsgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgfHwgKGNvZGUgJiBCUEZfSk1QMzIpIHx8IChjb2RlICYg
+QlBGX0pNUCkpOwo+ICsgICAgICAgICAgICAgICBjb25zdCBpbnQgcmVhZHNfZHN0ICA9ICEoKGNv
+ZGUgJiBCUEZfTEQpKTsKPiArICAgICAgICAgICAgICAgY29uc3QgaW50IHJlYWRzX3NyYyAgPSB0
+cnVlOwo+ICsKPiArICAgICAgICAgICAgICAgLyogQ2FsbHMgYXJlIGEgYml0IHNwZWNpYWwgaW4g
+dGhhdCB0aGV5IGNsb2JiZXIgYSBidW5jaCBvZiByZWdpc2Vycy4gKi8KPiArICAgICAgICAgICAg
+ICAgaWYgKChjb2RlICYgKEJQRl9KTVAgfCBCUEZfQ0FMTCkpIHx8IChjb2RlICYgKEJQRl9KTVAg
+fCBCUEZfVEFJTF9DQUxMKSkpCj4gKyAgICAgICAgICAgICAgICAgICAgICAgaWYgKChicGZfcmVn
+ID49IEJQRl9SRUdfMCkgJiYgKGJwZl9yZWcgPD0gQlBGX1JFR181KSkKPiArICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgIHJldHVybiBmYWxzZTsKPiArCj4gKyAgICAgICAgICAgICAgIC8q
+IFJlZ2lzdGVycyB0aGF0IGFyZSByZWFkIGJlZm9yZSB0aGV5J3JlIHdyaXR0ZW4gYXJlIGFsaXZl
+Lgo+ICsgICAgICAgICAgICAgICAgKiBNb3N0IG9wY29kZXMgYXJlIG9mIHRoZSBmb3JtIERTVCA9
+IERFU1Qgb3AgU1JDLCBidXQgdGhlcmUKPiArICAgICAgICAgICAgICAgICogYXJlIHNvbWUgZXhj
+ZXB0aW9ucy4qLwo+ICsgICAgICAgICAgICAgICBpZiAoYnBmX3NyYyA9PSBicGZfcmVnICYmIHJl
+YWRzX3NyYykKPiArICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gZmFsc2U7Cj4gKwo+ICsg
+ICAgICAgICAgICAgICBpZiAoYnBmX2RzdCA9PSBicGZfcmVnICYmIHJlYWRzX2RzdCkKPiArICAg
+ICAgICAgICAgICAgICAgICAgICByZXR1cm4gZmFsc2U7Cj4gKwo+ICsgICAgICAgICAgICAgICBp
+ZiAoYnBmX2RzdCA9PSBicGZfcmVnICYmIHdyaXRlc19kc3QpCj4gKyAgICAgICAgICAgICAgICAg
+ICAgICAgcmV0dXJuIHRydWU7Cj4gKwo+ICsgICAgICAgICAgICAgICAvKiBNb3N0IEJQRiBpbnN0
+cnVjdGlvbnMgYXJlIDggYml0cyBsb25nLCBidXQgc29tZSBhciAxNiBiaXRzCj4gKyAgICAgICAg
+ICAgICAgICAqIGxvbmcuICovCgpBIGJ1bmNoIG9mIHNwZWxsaW5nIGVycm9ycyBhYm92ZS4KCgpD
+aGVlcnMsCkJqw7ZybgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
+cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
+Zm8vbGludXgtYXJtLWtlcm5lbAo=
