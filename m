@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 687F4151C26
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 15:25:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48220151C5A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  4 Feb 2020 15:36:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1QCT0a5bEqfzD/rK9IF1Ih+Kh2oL0ZbQ4hi6y+skoFw=; b=pNalNSOoGGH2/3
-	+SbRBFkxyxxabo4RaOVdJo4CP8kNFmOnIbqTF+EFWkxTrAM3FOijrYXAOS7tuJ6LWniGZnbZybFpn
-	/pvEwWJU0txTSjLgG+pT6P1sp6IZkR5on4ahPBw9WHs+wH/7pgbzBMJ7gGS94HsvCl8FQtIVXEVth
-	UqGAU++GzrIK1F/odzlf8ExysfGmXmdOTeRUwRU6E/44gLEm/RLZ/dL8P6CSRFU/mF7fqLbLWsFOS
-	ch1Zcxwlvkeb/dV2izYQiEQ3LRFh+AiKoTrNJC0tEBojZzs6SnEjg4vyO8bvSu+aVb97J22mPQaxQ
-	rZWEOhUvAByaL7VnH1qQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=3w0bdG1RjJ3LNtlbxVfqIhxoO8xJnPf/m1wX2t+IVWs=; b=gQfUeMlI3inam7utZ2tvUl14Is
+	fKVx5pZrUtvwUyPr/fqgfrTbr4PsuW2SAxOvwz03IQvU7DjdQGr1BK5kfJPgSl2qUPk2P1mhyeGF5
+	+0gNGkha0LlqVnhq3juk+p+KopG2XMRqz3HaIsT4Vsh7O8Jb6s1OAxgz1t+Aju9L1OXYHJh0rFG9s
+	d0u5LnwoGVxOvqp9sxPq4CLZhQ8n/KWQe1taTkoDxdIAcDmzC88z0NduuBqkq3l03Z//9AygK4dkN
+	llGbT5vM0Np0ic9c5BnpWORCSovFsMrQVznvg/vsrTbQcvxe9llU5vWSspBjuEzFiD7sxzSI3zAPo
+	OMxs2VCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iyz8y-0006NY-A9; Tue, 04 Feb 2020 14:25:36 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1iyzJE-0001R1-E9; Tue, 04 Feb 2020 14:36:12 +0000
+Received: from zimbra2.kalray.eu ([92.103.151.219])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iyz8s-0006Lm-0E
- for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 14:25:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580826327;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=ut05QA9J5WKSRE8iQ2AH3oPYzXnHzXfW9BoUs/aT13g=;
- b=c3z7W9flyFddKlyVmMluuCNT5S/u5TlsjcpbfE0Hbh81XBCFSZMKYUEKPVcBgJcAe9bVQe
- d493F0qrV53Irth3yNQLnmVr4ilxdthhK3ZnYk2eQpBya1QCevv75BkMlKpJztB8HmuSka
- M2xGt5DOXEBe3T9haPil6aNGmBiucF4=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-172-0pa_ZXTfPAGteHs5vWnWkg-1; Tue, 04 Feb 2020 09:25:25 -0500
-X-MC-Unique: 0pa_ZXTfPAGteHs5vWnWkg-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id F08C18010E6;
- Tue,  4 Feb 2020 14:25:22 +0000 (UTC)
-Received: from localhost (ovpn-13-129.pek2.redhat.com [10.72.13.129])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 0DC6085785;
- Tue,  4 Feb 2020 14:25:19 +0000 (UTC)
-Date: Tue, 4 Feb 2020 22:25:16 +0800
-From: Baoquan He <bhe@redhat.com>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v6 08/10] mm/memory_hotplug: Don't check for "all holes"
- in shrink_zone_span()
-Message-ID: <20200204142516.GD26758@MiWiFi-R3L-srv>
-References: <20191006085646.5768-1-david@redhat.com>
- <20191006085646.5768-9-david@redhat.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191006085646.5768-9-david@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+ id 1iyzJ7-0001Pv-Gj
+ for linux-arm-kernel@lists.infradead.org; Tue, 04 Feb 2020 14:36:07 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra2.kalray.eu (Postfix) with ESMTP id 3663327E09CB;
+ Tue,  4 Feb 2020 15:36:01 +0100 (CET)
+Received: from zimbra2.kalray.eu ([127.0.0.1])
+ by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id z3HlOqV6d2Gd; Tue,  4 Feb 2020 15:36:00 +0100 (CET)
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra2.kalray.eu (Postfix) with ESMTP id 8F0E227E1110;
+ Tue,  4 Feb 2020 15:36:00 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.10.3 zimbra2.kalray.eu 8F0E227E1110
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=kalray.eu;
+ s=32AE1B44-9502-11E5-BA35-3734643DEF29; t=1580826960;
+ bh=XzOlzmxcVW4eEwulOOoGTT5EcKYMyZPCoxdgnjnDPVw=;
+ h=From:To:Date:Message-Id;
+ b=T0F/xR0iEW7G/MNwhZc5rTtJs7Xo4GEZLo2qEjt1hdlmTDac9s33lf/+FkM0eMMr9
+ F9vkEdZQRjwf0u8ONoHeZUNNUSFCsx+GL53xmjYjpEZ2StOY+knz9f6b75YGLT6ozD
+ gkX2WXsqQtPp8vxJcSaGNOqOQeN4LlWEXxhcO3p0=
+X-Virus-Scanned: amavisd-new at zimbra2.kalray.eu
+Received: from zimbra2.kalray.eu ([127.0.0.1])
+ by localhost (zimbra2.kalray.eu [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id Q-nMiCGXDYFz; Tue,  4 Feb 2020 15:36:00 +0100 (CET)
+Received: from triton.lin.mbt.kalray.eu (unknown [192.168.37.25])
+ by zimbra2.kalray.eu (Postfix) with ESMTPSA id 6E1C527E10DF;
+ Tue,  4 Feb 2020 15:36:00 +0100 (CET)
+From: Clement Leger <cleger@kalray.eu>
+To: Ohad Ben-Cohen <ohad@wizery.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Jonathan Corbet <corbet@lwn.net>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-remoteproc@vger.kernel.org
+Subject: [PATCH v2 1/2] remoteproc: Use u64 len for da_to_va
+Date: Tue,  4 Feb 2020 15:33:42 +0100
+Message-Id: <20200204143343.7011-1-cleger@kalray.eu>
+X-Mailer: git-send-email 2.15.0.276.g89ea799
+In-Reply-To: <20200129163013.GA16538@xps15>
+References: <20200129163013.GA16538@xps15>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_062530_123401_FC6D96CD 
-X-CRM114-Status: GOOD (  20.68  )
+X-CRM114-CacheID: sfid-20200204_063605_924329_9C1A1139 
+X-CRM114-Status: GOOD (  11.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [92.103.151.219 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -78,7 +78,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,95 +89,213 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
- linux-sh@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Wei Yang <richardw.yang@linux.intel.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Loic PALLARDY <loic.pallardy@st.com>, linux-doc@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
+ Patrice Chotard <patrice.chotard@st.com>, linux-kernel@vger.kernel.org,
+ Clement Leger <cleger@kalray.eu>, Andy Gross <agross@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, s-anna <s-anna@ti.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/06/19 at 10:56am, David Hildenbrand wrote:
-> If we have holes, the holes will automatically get detected and removed
-> once we remove the next bigger/smaller section. The extra checks can
-> go.
-> 
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Oscar Salvador <osalvador@suse.de>
-> Cc: Michal Hocko <mhocko@suse.com>
-> Cc: David Hildenbrand <david@redhat.com>
-> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
-> Cc: Dan Williams <dan.j.williams@intel.com>
-> Cc: Wei Yang <richardw.yang@linux.intel.com>
-> Signed-off-by: David Hildenbrand <david@redhat.com>
-> ---
->  mm/memory_hotplug.c | 34 +++++++---------------------------
->  1 file changed, 7 insertions(+), 27 deletions(-)
-> 
-> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
-> index f294918f7211..8dafa1ba8d9f 100644
-> --- a/mm/memory_hotplug.c
-> +++ b/mm/memory_hotplug.c
-> @@ -393,6 +393,9 @@ static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
->  		if (pfn) {
->  			zone->zone_start_pfn = pfn;
->  			zone->spanned_pages = zone_end_pfn - pfn;
-> +		} else {
-> +			zone->zone_start_pfn = 0;
-> +			zone->spanned_pages = 0;
->  		}
->  	} else if (zone_end_pfn == end_pfn) {
->  		/*
-> @@ -405,34 +408,11 @@ static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
->  					       start_pfn);
->  		if (pfn)
->  			zone->spanned_pages = pfn - zone_start_pfn + 1;
-> +		else {
-> +			zone->zone_start_pfn = 0;
-> +			zone->spanned_pages = 0;
+With upcoming changes in elf loader for elf64 support, section size will
+be a u64. When used with da_to_va, this will potentially lead to
+overflow if using the current "int" type for len argument. Change
+da_to_va prototype to use a u64 for len and fix all users of this
+function.
 
-Thinking in which case (zone_start_pfn != start_pfn) and it comes here.
+Signed-off-by: Clement Leger <cleger@kalray.eu>
+---
+V2:
+ - Change len type from int to u64
 
-> +		}
->  	}
-> -
-> -	/*
-> -	 * The section is not biggest or smallest mem_section in the zone, it
-> -	 * only creates a hole in the zone. So in this case, we need not
-> -	 * change the zone. But perhaps, the zone has only hole data. Thus
-> -	 * it check the zone has only hole or not.
-> -	 */
-> -	pfn = zone_start_pfn;
-> -	for (; pfn < zone_end_pfn; pfn += PAGES_PER_SUBSECTION) {
-> -		if (unlikely(!pfn_to_online_page(pfn)))
-> -			continue;
-> -
-> -		if (page_zone(pfn_to_page(pfn)) != zone)
-> -			continue;
-> -
-> -		/* Skip range to be removed */
-> -		if (pfn >= start_pfn && pfn < end_pfn)
-> -			continue;
-> -
-> -		/* If we find valid section, we have nothing to do */
-> -		zone_span_writeunlock(zone);
-> -		return;
-> -	}
-> -
-> -	/* The zone has no valid section */
-> -	zone->zone_start_pfn = 0;
-> -	zone->spanned_pages = 0;
->  	zone_span_writeunlock(zone);
->  }
->  
-> -- 
-> 2.21.0
-> 
-> 
+ drivers/remoteproc/imx_rproc.c           | 5 +++--
+ drivers/remoteproc/keystone_remoteproc.c | 2 +-
+ drivers/remoteproc/qcom_q6v5_adsp.c      | 2 +-
+ drivers/remoteproc/qcom_q6v5_mss.c       | 2 +-
+ drivers/remoteproc/qcom_q6v5_pas.c       | 2 +-
+ drivers/remoteproc/qcom_q6v5_wcss.c      | 2 +-
+ drivers/remoteproc/qcom_wcnss.c          | 2 +-
+ drivers/remoteproc/remoteproc_core.c     | 2 +-
+ drivers/remoteproc/remoteproc_internal.h | 2 +-
+ drivers/remoteproc/st_slim_rproc.c       | 2 +-
+ drivers/remoteproc/wkup_m3_rproc.c       | 2 +-
+ include/linux/remoteproc.h               | 2 +-
+ 12 files changed, 14 insertions(+), 13 deletions(-)
+
+diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
+index 3e72b6f38d4b..7ec79be5eb5d 100644
+--- a/drivers/remoteproc/imx_rproc.c
++++ b/drivers/remoteproc/imx_rproc.c
+@@ -208,7 +208,7 @@ static int imx_rproc_da_to_sys(struct imx_rproc *priv, u64 da,
+ 	return -ENOENT;
+ }
+ 
+-static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
++static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct imx_rproc *priv = rproc->priv;
+ 	void *va = NULL;
+@@ -235,7 +235,8 @@ static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+ 		}
+ 	}
+ 
+-	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%x va = 0x%p\n", da, len, va);
++	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%llx va = 0x%p\n", da, len,
++		va);
+ 
+ 	return va;
+ }
+diff --git a/drivers/remoteproc/keystone_remoteproc.c b/drivers/remoteproc/keystone_remoteproc.c
+index 5c4658f00b3d..25c01df47eba 100644
+--- a/drivers/remoteproc/keystone_remoteproc.c
++++ b/drivers/remoteproc/keystone_remoteproc.c
+@@ -246,7 +246,7 @@ static void keystone_rproc_kick(struct rproc *rproc, int vqid)
+  * can be used either by the remoteproc core for loading (when using kernel
+  * remoteproc loader), or by any rpmsg bus drivers.
+  */
+-static void *keystone_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
++static void *keystone_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct keystone_rproc *ksproc = rproc->priv;
+ 	void __iomem *va = NULL;
+diff --git a/drivers/remoteproc/qcom_q6v5_adsp.c b/drivers/remoteproc/qcom_q6v5_adsp.c
+index e953886b2eb7..7518e67a49e5 100644
+--- a/drivers/remoteproc/qcom_q6v5_adsp.c
++++ b/drivers/remoteproc/qcom_q6v5_adsp.c
+@@ -270,7 +270,7 @@ static int adsp_stop(struct rproc *rproc)
+ 	return ret;
+ }
+ 
+-static void *adsp_da_to_va(struct rproc *rproc, u64 da, int len)
++static void *adsp_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct qcom_adsp *adsp = (struct qcom_adsp *)rproc->priv;
+ 	int offset;
+diff --git a/drivers/remoteproc/qcom_q6v5_mss.c b/drivers/remoteproc/qcom_q6v5_mss.c
+index 471128a2e723..248febde6fc1 100644
+--- a/drivers/remoteproc/qcom_q6v5_mss.c
++++ b/drivers/remoteproc/qcom_q6v5_mss.c
+@@ -1148,7 +1148,7 @@ static int q6v5_stop(struct rproc *rproc)
+ 	return 0;
+ }
+ 
+-static void *q6v5_da_to_va(struct rproc *rproc, u64 da, int len)
++static void *q6v5_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct q6v5 *qproc = rproc->priv;
+ 	int offset;
+diff --git a/drivers/remoteproc/qcom_q6v5_pas.c b/drivers/remoteproc/qcom_q6v5_pas.c
+index db4b3c4bacd7..cf2cd609c90d 100644
+--- a/drivers/remoteproc/qcom_q6v5_pas.c
++++ b/drivers/remoteproc/qcom_q6v5_pas.c
+@@ -159,7 +159,7 @@ static int adsp_stop(struct rproc *rproc)
+ 	return ret;
+ }
+ 
+-static void *adsp_da_to_va(struct rproc *rproc, u64 da, int len)
++static void *adsp_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct qcom_adsp *adsp = (struct qcom_adsp *)rproc->priv;
+ 	int offset;
+diff --git a/drivers/remoteproc/qcom_q6v5_wcss.c b/drivers/remoteproc/qcom_q6v5_wcss.c
+index f93e1e4a1cc0..3a6b82a16961 100644
+--- a/drivers/remoteproc/qcom_q6v5_wcss.c
++++ b/drivers/remoteproc/qcom_q6v5_wcss.c
+@@ -406,7 +406,7 @@ static int q6v5_wcss_stop(struct rproc *rproc)
+ 	return 0;
+ }
+ 
+-static void *q6v5_wcss_da_to_va(struct rproc *rproc, u64 da, int len)
++static void *q6v5_wcss_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct q6v5_wcss *wcss = rproc->priv;
+ 	int offset;
+diff --git a/drivers/remoteproc/qcom_wcnss.c b/drivers/remoteproc/qcom_wcnss.c
+index dc135754bb9c..f893219e45a8 100644
+--- a/drivers/remoteproc/qcom_wcnss.c
++++ b/drivers/remoteproc/qcom_wcnss.c
+@@ -287,7 +287,7 @@ static int wcnss_stop(struct rproc *rproc)
+ 	return ret;
+ }
+ 
+-static void *wcnss_da_to_va(struct rproc *rproc, u64 da, int len)
++static void *wcnss_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct qcom_wcnss *wcnss = (struct qcom_wcnss *)rproc->priv;
+ 	int offset;
+diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+index 307df98347ba..9e6d3c6a60ee 100644
+--- a/drivers/remoteproc/remoteproc_core.c
++++ b/drivers/remoteproc/remoteproc_core.c
+@@ -185,7 +185,7 @@ EXPORT_SYMBOL(rproc_va_to_pa);
+  * here the output of the DMA API for the carveouts, which should be more
+  * correct.
+  */
+-void *rproc_da_to_va(struct rproc *rproc, u64 da, int len)
++void *rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct rproc_mem_entry *carveout;
+ 	void *ptr = NULL;
+diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
+index 493ef9262411..004867061721 100644
+--- a/drivers/remoteproc/remoteproc_internal.h
++++ b/drivers/remoteproc/remoteproc_internal.h
+@@ -50,7 +50,7 @@ void rproc_exit_sysfs(void);
+ void rproc_free_vring(struct rproc_vring *rvring);
+ int rproc_alloc_vring(struct rproc_vdev *rvdev, int i);
+ 
+-void *rproc_da_to_va(struct rproc *rproc, u64 da, int len);
++void *rproc_da_to_va(struct rproc *rproc, u64 da, u64 len);
+ phys_addr_t rproc_va_to_pa(void *cpu_addr);
+ int rproc_trigger_recovery(struct rproc *rproc);
+ 
+diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
+index 04492fead3c8..2fd14afb3157 100644
+--- a/drivers/remoteproc/st_slim_rproc.c
++++ b/drivers/remoteproc/st_slim_rproc.c
+@@ -174,7 +174,7 @@ static int slim_rproc_stop(struct rproc *rproc)
+ 	return 0;
+ }
+ 
+-static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
++static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct st_slim_rproc *slim_rproc = rproc->priv;
+ 	void *va = NULL;
+diff --git a/drivers/remoteproc/wkup_m3_rproc.c b/drivers/remoteproc/wkup_m3_rproc.c
+index 3984e585c847..0e8082948489 100644
+--- a/drivers/remoteproc/wkup_m3_rproc.c
++++ b/drivers/remoteproc/wkup_m3_rproc.c
+@@ -80,7 +80,7 @@ static int wkup_m3_rproc_stop(struct rproc *rproc)
+ 	return 0;
+ }
+ 
+-static void *wkup_m3_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
++static void *wkup_m3_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+ {
+ 	struct wkup_m3_rproc *wkupm3 = rproc->priv;
+ 	void *va = NULL;
+diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+index 16ad66683ad0..f84bd5fe0211 100644
+--- a/include/linux/remoteproc.h
++++ b/include/linux/remoteproc.h
+@@ -374,7 +374,7 @@ struct rproc_ops {
+ 	int (*start)(struct rproc *rproc);
+ 	int (*stop)(struct rproc *rproc);
+ 	void (*kick)(struct rproc *rproc, int vqid);
+-	void * (*da_to_va)(struct rproc *rproc, u64 da, int len);
++	void * (*da_to_va)(struct rproc *rproc, u64 da, u64 len);
+ 	int (*parse_fw)(struct rproc *rproc, const struct firmware *fw);
+ 	int (*handle_rsc)(struct rproc *rproc, u32 rsc_type, void *rsc,
+ 			  int offset, int avail);
+-- 
+2.15.0.276.g89ea799
 
 
 _______________________________________________
