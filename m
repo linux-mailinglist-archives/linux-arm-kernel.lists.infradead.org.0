@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E1BC153313
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 15:33:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D907E153316
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 15:33:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=OJfpDQU61wIp2FE4qFi4J3PlRl8+eAxwuU2kxmvedMY=; b=Zn5DWm5ns3YpqTlDbMfv+9jtZD
-	pVGDRy6hN14IVxaOqk4jB3ARL4wJJA2UGH9pbnsTJid2jf0JlY0XHwR+Ezj0GzVfqxlqDoSv8eCp2
-	KnPh2XjOLvfhgzFjsxzLqtk/Zwy4D/SjVSVUAg89mKXkZLvXG4tkeM5wPcwXR9+xR/XziBziypui6
-	POetJNF3scyiGAmNMq1CLSV73NCf69FfLt6N8fXOIkTv1SnwBAed59zERyrYeEjVU3lUy1oiBdTQl
-	cwBHH4vzfoKSN2vsgsTPjkqEFsiXFmi8FdFRD7WjezndnqnivUDEqKEjnjLC5umgRgMNSWAKnUi7o
-	6TGKZ56w==;
+	bh=wlM/Kb+XBcaKZVAUFGKbu5cVaHZhe3F6m1koZQ1uDCY=; b=u4BmSAa/OWQfK+NKn8qqN95Zj6
+	9r9BnA/l0tyJ+EnvMJvLsCWk16/5LiF2qUmUNkGb6GchVNjJysQBZ3jBMjR2ks/cnthqyY+cVLxZw
+	rwKy2KP/zqiiFj/E1+4yAyIpueC9rhkP7ngCmY1JoDfxkDz1Ksu4zfRaOpnSn80iBlKRD63DMNJ1+
+	z2s/JJFM99rvVLt+syikVfry33jZvIRapwJ5ErXTyPAPx/whYM4P0ZjLiZ93jrD/I4csnZFXLmnfd
+	ocrdU5LArCX+lgu0gvj8wSUuqgIJY4uIi//wTnlYx27hsXHkxOiivf3srq2CMzpRbXFFgRitBRYUk
+	wLsqpQmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izLjh-0001J8-NK; Wed, 05 Feb 2020 14:33:01 +0000
+	id 1izLjy-0001V9-5F; Wed, 05 Feb 2020 14:33:18 +0000
 Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izLiJ-0008Qo-1d
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 14:31:36 +0000
+ id 1izLiK-0008TG-U7
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 14:31:38 +0000
 Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id 03435E04BF;
- Wed,  5 Feb 2020 06:31:04 -0800 (PST)
+ by comms.puri.sm (Postfix) with ESMTP id A11A5E0DC0;
+ Wed,  5 Feb 2020 06:31:06 -0800 (PST)
 Received: from comms.puri.sm ([127.0.0.1])
  by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 6ZV3hbfvxiC5; Wed,  5 Feb 2020 06:31:03 -0800 (PST)
+ with ESMTP id 4t57zCzWLaTJ; Wed,  5 Feb 2020 06:31:05 -0800 (PST)
 From: Martin Kepplinger <martin.kepplinger@puri.sm>
 To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com
-Subject: [PATCH v1 04/12] arm64: dts: librem5-devkit: enable sai2 audio
- interface
-Date: Wed,  5 Feb 2020 15:29:55 +0100
-Message-Id: <20200205143003.28408-5-martin.kepplinger@puri.sm>
+Subject: [PATCH v1 05/12] arm64: dts: librem5-devkit: add the sgtl5000 i2c
+ audio codec
+Date: Wed,  5 Feb 2020 15:29:56 +0100
+Message-Id: <20200205143003.28408-6-martin.kepplinger@puri.sm>
 In-Reply-To: <20200205143003.28408-1-martin.kepplinger@puri.sm>
 References: <20200205143003.28408-1-martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_063135_119690_F76A2061 
-X-CRM114-Status: UNSURE (   7.21  )
+X-CRM114-CacheID: sfid-20200205_063136_979035_D535D118 
+X-CRM114-Status: UNSURE (   6.33  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -74,33 +74,37 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 
-enable the imx8mq sai2 audio interface for the librem 5 devkit.
+Describe the sgtl5000 of the librem 5 devkit in devicetree.
 
 Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 ---
- arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ .../boot/dts/freescale/imx8mq-librem5-devkit.dts    | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-index ac6ba227e1da..e7e3766198c6 100644
+index e7e3766198c6..56b4ac286801 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-@@ -811,6 +811,15 @@
- 	status = "okay";
- };
+@@ -480,6 +480,19 @@
+ 		vddio-supply = <&reg_3v3_p>;
+ 	};
  
-+&sai2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_sai2>;
-+	assigned-clocks = <&clk IMX8MQ_CLK_SAI2>;
-+	assigned-clock-parents = <&clk IMX8MQ_AUDIO_PLL1_OUT>;
-+	assigned-clock-rates = <24576000>;
-+	status = "okay";
-+};
++	sgtl5000: sgtl5000@a {
++		compatible = "fsl,sgtl5000";
++		clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
++		assigned-clocks = <&clk IMX8MQ_CLK_SAI2>;
++		assigned-clock-parents = <&clk IMX8MQ_AUDIO_PLL1_OUT>;
++		assigned-clock-rates = <24576000>;
++		#sound-dai-cells = <0>;
++		reg = <0x0a>;
++		VDDD-supply = <&reg_1v8_p>;
++		VDDIO-supply = <&reg_3v3_p>;
++		VDDA-supply = <&reg_3v3_p>;
++	};
 +
- &sai6 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_sai6>;
+ 	touchscreen@5d {
+ 		compatible = "goodix,gt5688";
+ 		reg = <0x5d>;
 -- 
 2.20.1
 
