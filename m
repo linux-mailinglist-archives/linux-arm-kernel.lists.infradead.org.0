@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B59E153929
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 20:34:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9DAF1153937
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 20:40:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:In-Reply-To:MIME-Version:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WHPRFg3Z+NsnIHuKRtoyCuqX221w3G2WC6US6df/saA=; b=m42pFX5+S8zSrICXERr5M7VxNH
-	4Tud9oGnFm/hVt8w2/f3dcjUG28Fb8nJu8oG/W3Wd8goV8pRJN3Jgjuc9j3qOzOJszYbACbDRBCqj
-	wn3FEr1Af7huxmzYdnlK3VM8Tswh712QbP6fzXL9mHBPU7COtMN6miAyt2hYF//d/BSDBSZplDj7h
-	N6sD+9BsAaGqO1LXp0RDl4JpudFc3EB/DaAIDzj00ayVBoyxdv4fg8xMWX5bpQ+PnUuAwlrzokr51
-	Dwnb3DnHkBmMCxboZDTRGIX1HOHZiBEDO4GbeA/RjP6N4wvjR+upBvWglSFw/nB7ObGI8y3PNFdNf
-	MqHOYRVA==;
+	bh=HdFczLR4/84YqRASH7wUHqO9KCUfyST9t+m150jVPhk=; b=o9d0bOq7UFHJ5OIh3nDtJZ3i4b
+	S/+cUQT82fF33LevPC3pUeSCnNgA5xOctljpW/x0/xrxnTChuVUnZLxmZIUHdZCoigH9sMSoqeRsr
+	9TCWW4snPioOreRX9nRddAGELUYnolgPOoBBsY/M/hCjw8YrMTaVTdshjPoKy4NZ16m1FwgJRSVVL
+	Ly93t3xRgbOHrD7r8L1hLsXMIseIgtpTZUwNpAPJ6jQOijYRmrNcIvyE0vswlxnpyGhXQh4lIA3OV
+	ExaVzIEHE7jZqhRnM4Uq16YsntcAA9oyYX7OC9mVkfzEJBOdC7Z5XdPeZkw1wq9L/ojheSVFelDp4
+	IxdI1GeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izQR0-0002GI-Mh; Wed, 05 Feb 2020 19:34:02 +0000
+	id 1izQXG-0005gL-IC; Wed, 05 Feb 2020 19:40:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izQQt-0002FT-7J
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 19:33:56 +0000
+ id 1izQX9-0005fT-B4
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 19:40:24 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2BDCC20720;
- Wed,  5 Feb 2020 19:33:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C5E8C20730;
+ Wed,  5 Feb 2020 19:40:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580931233;
- bh=+nyLmX46s9G7X/53SRM/o2mo63iRBrtO5nxuwKZt+fs=;
+ s=default; t=1580931622;
+ bh=zl2SX9JfsFFdzL3bneKhbUUQTtvwFKOgYGRjoAZSOiI=;
  h=In-Reply-To:References:From:Subject:To:Date:From;
- b=kzNO9SWODHYyp8ttsM3EJyJsqbEW2BZ759IxFZNM9RPOF4RFdOgjYnGzLyet3qILQ
- NJMot8rfIn3SAU9tn3yEj1KcIrROCQjzIWA6hxPWJdAcrsLpALx9074WEHnjpWpG0z
- yzmFYmvSPxB2JcQr0SSS+kLRWPkAEzxBlbAnAqqs=
+ b=ZWfQjPxHdJNmOJnoCInZQCzgfU75XT7u8TgGiNZI7si5dphN64Zv6Lz5Kccr1uAm/
+ LhG1ld3db3jET6iHgBqms5oceR9/DOuiq0sukSSY+s6P+ezAgtVsEeLcmrpKOf3VHw
+ 4WlXOS55Rsxzb3f3EftJLOh1MDZnj7rV8SXtb9us=
 MIME-Version: 1.0
-In-Reply-To: <1579905147-12142-5-git-send-email-vnkgutta@codeaurora.org>
+In-Reply-To: <1579905147-12142-7-git-send-email-vnkgutta@codeaurora.org>
 References: <1579905147-12142-1-git-send-email-vnkgutta@codeaurora.org>
- <1579905147-12142-5-git-send-email-vnkgutta@codeaurora.org>
+ <1579905147-12142-7-git-send-email-vnkgutta@codeaurora.org>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v2 4/7] clk: qcom: clk-alpha-pll: Add support for
- controlling Lucid PLLs
+Subject: Re: [PATCH v2 6/7] clk: qcom: gcc: Add global clock controller driver
+ for SM8250
 To: agross@kernel.org, bjorn.andersson@linaro.org, devicetree@vger.kernel.org,
  jshriram@codeaurora.org, linux-arm-kernel@lists.infradead.org,
  linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
@@ -50,11 +50,11 @@ To: agross@kernel.org, bjorn.andersson@linaro.org, devicetree@vger.kernel.org,
  psodagud@codeaurora.org, robh+dt@kernel.org, tdas@codeaurora.org,
  tsoni@codeaurora.org, vinod.koul@linaro.org, vnkgutta@codeaurora.org
 User-Agent: alot/0.8.1
-Date: Wed, 05 Feb 2020 11:33:52 -0800
-Message-Id: <20200205193353.2BDCC20720@mail.kernel.org>
+Date: Wed, 05 Feb 2020 11:40:21 -0800
+Message-Id: <20200205194022.C5E8C20730@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_113355_302301_7FA5B920 
-X-CRM114-Status: GOOD (  16.12  )
+X-CRM114-CacheID: sfid-20200205_114023_429136_67BB6E0A 
+X-CRM114-Status: GOOD (  14.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,183 +88,165 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Venkata Narendra Kumar Gutta (2020-01-24 14:32:24)
-> diff --git a/drivers/clk/qcom/clk-alpha-pll.c b/drivers/clk/qcom/clk-alpha-pll.c
-> index 1b073b2..4258ab0 100644
-> --- a/drivers/clk/qcom/clk-alpha-pll.c
-> +++ b/drivers/clk/qcom/clk-alpha-pll.c
-> @@ -1367,3 +1388,172 @@ static int clk_alpha_pll_postdiv_fabia_set_rate(struct clk_hw *hw,
->         .set_rate = clk_alpha_pll_postdiv_fabia_set_rate,
->  };
->  EXPORT_SYMBOL_GPL(clk_alpha_pll_postdiv_fabia_ops);
+Quoting Venkata Narendra Kumar Gutta (2020-01-24 14:32:26)
+> diff --git a/drivers/clk/qcom/gcc-sm8250.c b/drivers/clk/qcom/gcc-sm8250.c
+> new file mode 100644
+> index 0000000..300187e
+> --- /dev/null
+> +++ b/drivers/clk/qcom/gcc-sm8250.c
+> @@ -0,0 +1,3720 @@
+[...]
 > +
-> +void clk_lucid_pll_configure(struct clk_alpha_pll *pll, struct regmap *regmap,
+> +static const struct parent_map gcc_parent_map_0[] = {
+> +       { P_BI_TCXO, 0 },
+> +       { P_GPLL0_OUT_MAIN, 1 },
+> +       { P_GPLL0_OUT_EVEN, 6 },
+> +       { P_CORE_BI_PLL_TEST_SE, 7 },
+> +};
+> +
+> +static const struct clk_parent_data gcc_parent_data_0[] = {
+> +       { .fw_name = "bi_tcxo" },
+> +       { .hw = &gpll0.clkr.hw },
+> +       { .hw = &gpll0_out_even.clkr.hw },
+> +       { .fw_name = "core_bi_pll_test_se", .name = "core_bi_pll_test_se" },
+> +};
+> +
+> +static const struct clk_parent_data gcc_parent_data_0_ao[] = {
+> +       { .fw_name = "bi_tcxo_ao" },
+> +       { .hw = &gpll0.clkr.hw },
+> +       { .hw = &gpll0_out_even.clkr.hw },
+> +       { .fw_name = "core_bi_pll_test_se", .name = "core_bi_pll_test_se" },
+> +};
+> +
+> +static const struct parent_map gcc_parent_map_1[] = {
+> +       { P_BI_TCXO, 0 },
+> +       { P_GPLL0_OUT_MAIN, 1 },
+> +       { P_SLEEP_CLK, 5 },
+> +       { P_GPLL0_OUT_EVEN, 6 },
+> +       { P_CORE_BI_PLL_TEST_SE, 7 },
+> +};
+> +
+> +static const struct clk_parent_data gcc_parent_data_1[] = {
+> +       { .fw_name = "bi_tcxo" },
+> +       { .hw = &gpll0.clkr.hw },
+> +       { .fw_name = "sleep_clk", .name = "sleep_clk" },
 
-Can we get some kernel documentation for this function?
+Please drop .name
 
-> +                            const struct alpha_pll_config *config)
+> +       { .hw = &gpll0_out_even.clkr.hw },
+> +       { .fw_name = "core_bi_pll_test_se", .name = "core_bi_pll_test_se" },
+> +};
+> +
+> +static const struct parent_map gcc_parent_map_2[] = {
+> +       { P_BI_TCXO, 0 },
+> +       { P_SLEEP_CLK, 5 },
+> +       { P_CORE_BI_PLL_TEST_SE, 7 },
+> +};
+> +
+> +static const struct clk_parent_data gcc_parent_data_2[] = {
+> +       { .fw_name = "bi_tcxo" },
+> +       { .fw_name = "sleep_clk", .name = "sleep_clk" },
+
+Please drop .name
+
+> +       { .fw_name = "core_bi_pll_test_se", .name = "core_bi_pll_test_se" },
+> +};
+> +
+[...]
+> +static const struct clk_parent_data gcc_parent_data_5[] = {
+> +       { .fw_name = "bi_tcxo" },
+> +       { .hw = &gpll0.clkr.hw },
+> +       { .fw_name = "aud_ref_clk", .name = "aud_ref_clk" },
+
+Why have .name? Pleas remove it.
+
+> +       { .hw = &gpll0_out_even.clkr.hw },
+> +       { .fw_name = "core_bi_pll_test_se", .name = "core_bi_pll_test_se" },
+
+Please drop these test inputs. I don't see any reason why they're listed.
+
+> +};
+> +
+> +static const struct freq_tbl ftbl_gcc_cpuss_ahb_clk_src[] = {
+> +       F(19200000, P_BI_TCXO, 1, 0, 0),
+> +       { }
+> +};
+> +
+> +static struct clk_branch gcc_sys_noc_cpuss_ahb_clk = {
+> +       .halt_reg = 0x48198,
+> +       .halt_check = BRANCH_HALT_VOTED,
+> +       .clkr = {
+> +               .enable_reg = 0x52000,
+> +               .enable_mask = BIT(0),
+> +               .hw.init = &(struct clk_init_data){
+> +                       .name = "gcc_sys_noc_cpuss_ahb_clk",
+> +                       .parent_data = &(const struct clk_parent_data){
+> +                               .hw = &gcc_cpuss_ahb_postdiv_clk_src.clkr.hw,
+> +                       },
+> +                       .num_parents = 1,
+> +                       .flags = CLK_IS_CRITICAL | CLK_SET_RATE_PARENT,
+> +                       .ops = &clk_branch2_ops,
+> +               },
+> +       },
+> +};
+
+Is there a need for this clk to be exposed? Why can't we just turn the
+bit on in probe and ignore it after that? I'd prefer to not have
+CLK_IS_CRITICAL in this driver unless necessary.
+
+> +
+> +static struct clk_branch gcc_tsif_ahb_clk = {
+> +       .halt_reg = 0x36004,
+> +       .halt_check = BRANCH_HALT_VOTED,
+> +       .clkr = {
+> +               .enable_reg = 0x36004,
+> +               .enable_mask = BIT(0),
+> +               .hw.init = &(struct clk_init_data){
+> +                       .name = "gcc_tsif_ahb_clk",
+> +                       .ops = &clk_branch2_ops,
+> +               },
+> +       },
+> +};
+> +
+[...]
+> +
+> +
+> +static int gcc_sm8250_probe(struct platform_device *pdev)
 > +{
-> +       if (config->l)
-> +               regmap_write(regmap, PLL_L_VAL(pll), config->l);
-> +
-> +       regmap_write(regmap, PLL_CAL_L_VAL(pll), LUCID_PLL_CAL_VAL);
-> +
-> +       if (config->alpha)
-> +               regmap_write(regmap, PLL_ALPHA_VAL(pll), config->alpha);
-> +
-> +       if (config->config_ctl_val)
-> +               regmap_write(regmap, PLL_CONFIG_CTL(pll),
-> +                            config->config_ctl_val);
-> +
-> +       if (config->config_ctl_hi_val)
-> +               regmap_write(regmap, PLL_CONFIG_CTL_U(pll),
-> +                            config->config_ctl_hi_val);
-> +
-> +       if (config->config_ctl_hi1_val)
-> +               regmap_write(regmap, PLL_CONFIG_CTL_U1(pll),
-> +                            config->config_ctl_hi1_val);
-> +
-> +       if (config->user_ctl_val)
-> +               regmap_write(regmap, PLL_USER_CTL(pll),
-> +                            config->user_ctl_val);
-> +
-> +       if (config->user_ctl_hi_val)
-> +               regmap_write(regmap, PLL_USER_CTL_U(pll),
-> +                            config->user_ctl_hi_val);
-> +
-> +       if (config->user_ctl_hi1_val)
-> +               regmap_write(regmap, PLL_USER_CTL_U1(pll),
-> +                            config->user_ctl_hi1_val);
-> +
-> +       if (config->test_ctl_val)
-> +               regmap_write(regmap, PLL_TEST_CTL(pll),
-> +                            config->test_ctl_val);
-> +
-> +       if (config->test_ctl_hi_val)
-> +               regmap_write(regmap, PLL_TEST_CTL_U(pll),
-> +                            config->test_ctl_hi_val);
-> +
-> +       if (config->test_ctl_hi1_val)
-> +               regmap_write(regmap, PLL_TEST_CTL_U1(pll),
-> +                            config->test_ctl_hi1_val);
-> +
-> +       regmap_update_bits(regmap, PLL_MODE(pll), PLL_UPDATE_BYPASS,
-> +                          PLL_UPDATE_BYPASS);
-> +
-> +       /* Disable PLL output */
-> +       regmap_update_bits(regmap, PLL_MODE(pll),  PLL_OUTCTRL, 0);
-> +
-> +       /* Set operation mode to OFF */
-> +       regmap_write(regmap, PLL_OPMODE(pll), PLL_STANDBY);
-> +
-> +       /* PLL should be in OFF mode before continuing */
-> +       wmb();
-
-How does the write above overtake the write below? This barrier looks
-wrong.
-
-> +
-> +       /* Place the PLL in STANDBY mode */
-> +       regmap_update_bits(regmap, PLL_MODE(pll), PLL_RESET_N, PLL_RESET_N);
-> +}
-> +EXPORT_SYMBOL_GPL(clk_lucid_pll_configure);
-> +
-> +/*
-> + * The Lucid PLL requires a power-on self-calibration which happens when the
-> + * PLL comes out of reset. Calibrate in case it is not completed.
-> + */
-> +static int alpha_pll_lucid_prepare(struct clk_hw *hw)
-> +{
-> +       struct clk_alpha_pll *pll = to_clk_alpha_pll(hw);
-> +       u32 regval;
+> +       struct regmap *regmap;
 > +       int ret;
 > +
-> +       /* Return early if calibration is not needed. */
-> +       regmap_read(pll->clkr.regmap, PLL_STATUS(pll), &regval);
-> +       if (regval & LUCID_PCAL_DONE)
-> +               return 0;
-> +
-> +       ret = clk_trion_pll_enable(hw);
-> +       if (ret)
-> +               return ret;
-> +
-> +       clk_trion_pll_disable(hw);
-> +
-> +       return 0;
-
-Can you write this like:
-
-	/* On/off to calibrate */
-	ret = clk_trion_pll_enable(hw);
-	if (!ret)
-		clk_trion_pll_disable(hw);
-
-	return ret;
-
-> +}
-> +
-> +static int alpha_pll_lucid_set_rate(struct clk_hw *hw, unsigned long rate,
-> +                                   unsigned long prate)
-> +{
-> +       struct clk_alpha_pll *pll = to_clk_alpha_pll(hw);
-> +       unsigned long rrate;
-> +       u32 regval, l, alpha_width = pll_alpha_width(pll);
-> +       u64 a;
-> +       int ret;
-> +
-> +       rrate = alpha_pll_round_rate(rate, prate, &l, &a, alpha_width);
+> +       regmap = qcom_cc_map(pdev, &gcc_sm8250_desc);
+> +       if (IS_ERR(regmap))
+> +               return PTR_ERR(regmap);
 > +
 > +       /*
-> +        * Due to a limited number of bits for fractional rate programming, the
-> +        * rounded up rate could be marginally higher than the requested rate.
+> +        * Disable the GPLL0 active input to NPU and GPU
+> +        * via MISC registers.
 > +        */
-> +       if (rrate > (rate + PLL_RATE_MARGIN) || rrate < rate) {
-
-Any chance this can be pushed into the alpha_pll_round_rate() API? It's
-duplicated in this driver.
-
-> +               pr_err("Call set rate on the PLL with rounded rates!\n");
-> +               return -EINVAL;
-> +       }
+> +       regmap_update_bits(regmap, 0x4d110, 0x3, 0x3);
+> +       regmap_update_bits(regmap, 0x71028, 0x3, 0x3);
 > +
-> +       regmap_write(pll->clkr.regmap, PLL_L_VAL(pll), l);
-> +       regmap_write(pll->clkr.regmap, PLL_ALPHA_VAL(pll), a);
+> +       /*
+> +        * Keep the clocks always-ON
+> +        * GCC_VIDEO_AHB_CLK, GCC_CAMERA_AHB_CLK, GCC_DISP_AHB_CLK,
+> +        * GCC_CPUSS_DVM_BUS_CLK, GCC_GPU_CFG_AHB_CLK
+> +        */
+> +       regmap_update_bits(regmap, 0x0b004, BIT(0), BIT(0));
+> +       regmap_update_bits(regmap, 0x0b008, BIT(0), BIT(0));
+> +       regmap_update_bits(regmap, 0x0b00c, BIT(0), BIT(0));
+> +       regmap_update_bits(regmap, 0x4818c, BIT(0), BIT(0));
+> +       regmap_update_bits(regmap, 0x71004, BIT(0), BIT(0));
+
+These look like the AHB clks above that we just enabled and then ignore.
+
 > +
-> +       /* Latch the PLL input */
-> +       ret = regmap_update_bits(pll->clkr.regmap, PLL_MODE(pll),
-> +                                PLL_UPDATE, PLL_UPDATE);
+> +       ret = qcom_cc_register_rcg_dfs(regmap, gcc_dfs_clocks,
+> +                                      ARRAY_SIZE(gcc_dfs_clocks));
 > +       if (ret)
 > +               return ret;
 > +
-> +       /* Wait for 2 reference cycles before checking the ACK bit. */
-
-Are reference cycles 2 * 1 / 19.2MHz?
-
-> +       udelay(1);
-> +       regmap_read(pll->clkr.regmap, PLL_MODE(pll), &regval);
-> +       if (!(regval & ALPHA_PLL_ACK_LATCH)) {
-> +               WARN(1, "PLL latch failed. Output may be unstable!\n");
-
-Do we need a big WARN stack for this? How about pr_warn() instead?
-
-> +               return -EINVAL;
-> +       }
-> +
-> +       /* Return the latch input to 0 */
-> +       ret = regmap_update_bits(pll->clkr.regmap, PLL_MODE(pll),
-> +                                PLL_UPDATE, 0);
-> +       if (ret)
-> +               return ret;
-> +
-> +       if (clk_hw_is_enabled(hw)) {
-> +               ret = wait_for_pll_enable_lock(pll);
-> +               if (ret)
-> +                       return ret;
-> +       }
-> +
-> +       /* Wait for PLL output to stabilize */
-> +       udelay(100);
-> +       return 0;
+> +       return qcom_cc_really_probe(pdev, &gcc_sm8250_desc, regmap);
 > +}
 
 _______________________________________________
