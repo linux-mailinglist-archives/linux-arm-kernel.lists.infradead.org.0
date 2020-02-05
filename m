@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AB241532FC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 15:32:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47DA615330A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 15:32:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Kikv/fIxaAPEMLktP2JhAFW6w824lbBMD0zSY1ruR1A=; b=We66tEAhAEwekCkP/YHLdEc5yV
-	ngI7VaJj6pvhmA5rt9zdYPTNHgWucx1wAchTVsrSv+X1i9jfxgY66PElkbE/s+BzkKi/THnDa/nEB
-	bL5uIZPzKiUfLAfheWCK22cifa5M4yZTXJUOpDT/mXINizS85pajHZIa+ihlmiABDGfrtFe6CfrKD
-	aFGPxt2hpuesNe4EjM5d+47+WUTy/zMrYz5x4jAWkUebe8UbnTG07LpKZTZs0izPvvsUWtYO2NdGF
-	Jn+KfdJE4nknklSfOAAJ1NzdxJjyjBAPWZ9rUlaP3i1OjfE8Kle59MhMrk89nvYJZ3naG0WAOl/Gr
-	jEaL/2vw==;
+	bh=hoEeFCSB+kNgNiM5UXFXqplnPTY8HNDuDn1ebfpxGo0=; b=eSEwPbXLcGMR4b7zVydJTGvdQh
+	10TiEVGPprNlK2DLAmKNsA7hXrheI+rzcfw42lahqRF12eVirbbd1ub+AKuqvR2dDToQ2SQryvlRv
+	oJ797cAX/uz29C63ZYOTkz1Mz1QnIj9J8QxttPvXI7AShk+gBr2mVAVyo+qqW5bPwVvKufQBnN+LJ
+	SlKq23HEOlfqr3IL9MvELjLi+/48Mhkw5XiJ1BSFWlf48aWGEWvYBNdwmyAas9F4LYYwyLy5vQxpJ
+	tWl6/Z8n6sbQDefSgCJHko7ysYwLQ/BxFFr3AhNKbLjnBsD77WB5QIbYjxU2xnMeQwHOpg/E1cLOm
+	TpknWmFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izLin-0000LZ-CQ; Wed, 05 Feb 2020 14:32:05 +0000
+	id 1izLj4-0000aZ-Nx; Wed, 05 Feb 2020 14:32:22 +0000
 Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izLi3-0008BO-Tt
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 14:31:23 +0000
+ id 1izLi6-0008E7-IG
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 14:31:24 +0000
 Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id B48E9E0F6F;
- Wed,  5 Feb 2020 06:31:18 -0800 (PST)
+ by comms.puri.sm (Postfix) with ESMTP id BAF15E0E8A;
+ Wed,  5 Feb 2020 06:31:21 -0800 (PST)
 Received: from comms.puri.sm ([127.0.0.1])
  by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id OYq-trJy04uK; Wed,  5 Feb 2020 06:31:17 -0800 (PST)
+ with ESMTP id T2ynE6JqBJDL; Wed,  5 Feb 2020 06:31:21 -0800 (PST)
 From: Martin Kepplinger <martin.kepplinger@puri.sm>
 To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com
-Subject: [PATCH v1 09/12] arm64: dts: librem5-devkit: allow the redpine card
- to be removed
-Date: Wed,  5 Feb 2020 15:30:00 +0100
-Message-Id: <20200205143003.28408-10-martin.kepplinger@puri.sm>
+Subject: [PATCH v1 10/12] arm64: dts: librem5-devkit: configure VSELECT
+Date: Wed,  5 Feb 2020 15:30:01 +0100
+Message-Id: <20200205143003.28408-11-martin.kepplinger@puri.sm>
 In-Reply-To: <20200205143003.28408-1-martin.kepplinger@puri.sm>
 References: <20200205143003.28408-1-martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_063120_102827_9B9B5701 
-X-CRM114-Status: UNSURE (   8.64  )
+X-CRM114-CacheID: sfid-20200205_063122_906984_E2D2697F 
+X-CRM114-Status: UNSURE (   6.11  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -74,27 +73,41 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 
-By adding broken-cd to the usdhc2 stanza the Redpine card can be
-detected when the HKS is turned off and on.
+use vselect to set the io voltage to 1.8V
 
 Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 ---
- arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 3 +++
+ 1 file changed, 3 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-index 4957acc512d5..fbc7062c4633 100644
+index fbc7062c4633..8f920c554ebd 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-@@ -959,7 +959,7 @@
- 	bus-width = <4>;
- 	vmmc-supply = <&reg_usdhc2_vmmc>;
- 	power-supply = <&wifi_pwr_en>;
--	non-removable;
-+	broken-cd;
- 	disable-wp;
- 	cap-sdio-irq;
- 	keep-power-in-suspend;
+@@ -789,6 +789,7 @@
+ 			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1	0xc3
+ 			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2	0xc3
+ 			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3	0xc3
++			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4	0xc1
+ 		>;
+ 	};
+ 
+@@ -800,6 +801,7 @@
+ 			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1	0xcd
+ 			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2	0xcd
+ 			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3	0xcd
++			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4	0xc1
+ 		>;
+ 	};
+ 
+@@ -811,6 +813,7 @@
+ 			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1	0xcf
+ 			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2	0xcf
+ 			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3	0xcf
++			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4	0xc1
+ 		>;
+ 	};
+ 
 -- 
 2.20.1
 
