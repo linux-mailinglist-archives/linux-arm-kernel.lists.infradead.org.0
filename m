@@ -2,89 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B0FA1530D0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 13:32:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 389891530F9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 13:43:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0X1xP4+ikCdExKzYnOOnyyytDn9XQ6czZwDUi482shA=; b=Mh1VEKQWn4gybhUwPLBKfdvbE
-	gW6WNmrCwdO2xjq4ZD5s9blWXzlVR0i97/yYIKRCVaNVwhKepBaxwI0vDEmdNmhX5kx7N0Ciz1gbf
-	Sp1Y2IreiRnTQzg25ZbBKIn2XBqpMGRLvoJMO8E+NEMn67FDxFQFEJpFMjzWiCkgycmBXPUIuCv/v
-	qOCuXdlZWKukZD6l5zWDnSQ8BghUmfKH1YRvnDYOdkY68uBBglGeEBVwhwuYtH/aTm0DjHhm3gU9E
-	NM9J4uoXjmUsF6FF4SYXEiQgnKS8upQIseXlrd8m7g5azn1W8KB8j8JTHQpd6FVrl6cqp0ZxJ10Xc
-	wq1vD4eLA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DClWYYG0sdsHPr3xY+ACGR/HkqyCEqSwOOX+MVMYIwk=; b=REdC/CutNGywW6
+	ubJknw7fsG60O6ZDQREORsdm0/dNNdekW8ucYKwpVyq4hZJhFndung7120yU3+479YMS7eiK9jlxc
+	AOUEaWUY7isrsrjYzbzLpQPFWcWxQCscwnUouqjUCg+h2pjGVW9XsSfa8VwO0ArNa/1luzrm4PGxS
+	4UFro3quuontQ7WZf57hBW3p5x9VScHuDg9dQbUzoR9sVn/q6nJvXjWvAEG0JlQQtpM5+xzEFHUdU
+	/P9sWi9POmyDN/EnWf1n3WauZ+YqF/27DYmh9qS8umTbsW/NfNxzP16I+CgpCol9bJO0AC6HYJugv
+	7kgUKD1ROOx79MAtZPPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izJqx-0004au-Eo; Wed, 05 Feb 2020 12:32:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1izK23-0008Ny-9m; Wed, 05 Feb 2020 12:43:51 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izJqr-0004aY-MD
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 12:32:19 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1izK1x-0008NJ-4n
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 12:43:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580906623;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=s7mEVqJKQjbMj0sSKh4xXiDWpaH1dr5EPgu2ctTv8CU=;
+ b=WIc0vkYloQVaE4yPIwInu5iK8slR5G0VhX7sP04FCkMYyP1Dw5DB9vmwMxnhV7DaKRNyzA
+ u513lrNZ0v1MzIlXsTn0hvLsLOrgBZ74ABSji8VvGpxnxPFPfcolpcgf6EiuAeQqrx0WBi
+ L03DA+w9C4e0zvG9BjCJd+MI7d60j3M=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-127-7rVIiLSTMrGSBsygAly1VQ-1; Wed, 05 Feb 2020 07:43:39 -0500
+X-MC-Unique: 7rVIiLSTMrGSBsygAly1VQ-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 41A3620674;
- Wed,  5 Feb 2020 12:32:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580905937;
- bh=60CTz9zWVgmCVk3vxEOslzeIwfMQe/loj4SWO5bqgXo=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=vrIFRbWvi9RqKvOphXz5IKzQ/NOpm+BB0+ge8tYw/GUMj1dwPwVPlyFMZ05fQ77t2
- Np2jZbY2cVhTZ0KocCUuQQA7/h9eCI3M5eIOP5xNrE1RQFkKVh94vizLwDX/urENom
- wlZQG0Vq7esRapEnDnn+FywVppFWpC26KNv8otug=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1izJqp-00380g-JN; Wed, 05 Feb 2020 12:32:15 +0000
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 22F4185EE6C;
+ Wed,  5 Feb 2020 12:43:36 +0000 (UTC)
+Received: from localhost (ovpn-12-97.pek2.redhat.com [10.72.12.97])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 1F1B681213;
+ Wed,  5 Feb 2020 12:43:32 +0000 (UTC)
+Date: Wed, 5 Feb 2020 20:43:29 +0800
+From: Baoquan He <bhe@redhat.com>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH v6 08/10] mm/memory_hotplug: Don't check for "all holes"
+ in shrink_zone_span()
+Message-ID: <20200205124329.GE26758@MiWiFi-R3L-srv>
+References: <20191006085646.5768-1-david@redhat.com>
+ <20191006085646.5768-9-david@redhat.com>
+ <20200204142516.GD26758@MiWiFi-R3L-srv>
+ <e0006cc4-d448-89c6-38c0-51da7fc08715@redhat.com>
 MIME-Version: 1.0
-Date: Wed, 05 Feb 2020 12:32:15 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Marek Vasut <marex@denx.de>
-Subject: Re: STM32MP1 level triggered interrupts
-In-Reply-To: <760b42cd-0fc4-5675-3f55-40edfe9440b2@denx.de>
-References: <20bb72d0-8258-abc0-e729-4d3d5a75c41c@denx.de>
- <d6e02817-2464-51b9-246a-7720b607b8d6@st.com>
- <65a1c5b2-c1b9-322f-338c-e6ff6379d8d1@denx.de>
- <129d04a0-c846-506d-5726-4a1024d977a6@st.com>
- <80db762c-3b3d-f007-2f9b-dadbffd95782@denx.de>
- <360b1adc-32f1-7993-c463-e52c7a5a8a67@st.com>
- <c4f08f59acd31951527ef1d6e9409e6f@kernel.org>
- <20200123101225.nscpc5t4nmlarbw2@pengutronix.de>
- <03fd1cb7b5985b3221f66c6b0058adc8@kernel.org>
- <20200123105214.ru4j76xbisjtbtgw@pengutronix.de>
- <cf98f4fd257ba4f34c75fe1656bd341b@kernel.org>
- <e1fffd57-4814-ec36-68b4-4207e3d4ae5d@denx.de>
- <f9d98afc-6cb8-ef7b-cff7-a04e14dba4c8@st.com>
- <7e0ce712f7e34b38c8f541644026c52e@kernel.org>
- <5e1c419c-b141-52f6-88f1-ee3ab8219a4e@denx.de>
- <dcbb8f0447f2aa75f0cec6f420310b21@kernel.org>
- <760b42cd-0fc4-5675-3f55-40edfe9440b2@denx.de>
-Message-ID: <73a78da99d5e386bf1d3cb6e263a18ba@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.8
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: marex@denx.de, alexandre.torgue@st.com,
- u.kleine-koenig@pengutronix.de, patrick.delaunay@st.com,
- mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <e0006cc4-d448-89c6-38c0-51da7fc08715@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_043217_768786_8F57AB8D 
-X-CRM114-Status: GOOD (  13.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200205_044345_264184_E35C90FC 
+X-CRM114-Status: GOOD (  17.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -106,90 +92,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Patrick Delaunay <patrick.delaunay@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- =?UTF-8?Q?Uwe_Kleine-K?= =?UTF-8?Q?=C3=B6nig?=
- <u.kleine-koenig@pengutronix.de>, linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
+ linux-sh@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Wei Yang <richardw.yang@linux.intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-05 11:53, Marek Vasut wrote:
-> On 2/5/20 12:42 PM, Marc Zyngier wrote:
->> On 2020-01-28 18:32, Marek Vasut wrote:
->>> On 1/24/20 10:24 AM, Marc Zyngier wrote:
->>>> On 2020-01-24 09:17, Alexandre Torgue wrote:
->>>>> On 1/23/20 11:21 PM, Marek Vasut wrote:
->>>> 
->>>> [...]
->>>> 
->>>>>> But I still wonder, what is the purpose of the EXTImux in that 
->>>>>> SoC?
->>>>>> Shouldn't that permit routing GPIOs directly into GIC SPIs, which
->>>>>> would
->>>>>> then permit detecting at least level-high interrupts ?
->>>>>> 
->>>>> 
->>>>> For this SoC, EXTI block detects external line edges and rises a 
->>>>> GIC
->>>>> SPI interrupt. This EXTi block is mainly used to handle HW events 
->>>>> like
->>>>> buttons, clocks ... So first issue seems more to be a design issue
->>>>> (your design doesn't fit with MP1 datasheet).
->>>>> 
->>>>> Now, let's find a solution. I'll have a look on your proposition:
->>>>> "check the line in EOI callback and retrig".
->>>>> 
->>>>> Marc, this kind a solution could be acceptable on your side ?
->>>> 
->>>> It will depend on the nature of the hack you will have to put in 
->>>> there.
->>>> If it is 100% reliable, why not? Anything short of that, probably 
->>>> not.
->>> 
->>> I had another look into this, and what we would end up is some sort 
->>> of
->>> phandle from exti to all the gpioX nodes in DT, would that be OK ?
->>> However, if we do that, then we will have the pinctrl controller 
->>> (which
->>> has the gpio banks as subnodes) require the exti through a phandle 
->>> and
->>> exti require the gpio banks through a phandle, so we end up with some
->>> sort of cyclic dependency there.
->>> 
->>> So we would need to somehow have exti lazily deal with it's gpioX
->>> controller phandles only when someone requests level interrupt ? That
->>> would probably do.
->> 
->> TBH, I don't have much of an opinion here. If you can deal with the
->> plumbing
->> that's required to make this thing work reliably, then why not?
->> 
->> What I insist on is that the sampling/retriggering is made 100% 
->> reliable.
->> I'd prefer we don't offer the functionality if it there is any doubt
->> about it.
+On 02/04/20 at 03:42pm, David Hildenbrand wrote:
+> On 04.02.20 15:25, Baoquan He wrote:
+> > On 10/06/19 at 10:56am, David Hildenbrand wrote:
+> >> If we have holes, the holes will automatically get detected and removed
+> >> once we remove the next bigger/smaller section. The extra checks can
+> >> go.
+> >>
+> >> Cc: Andrew Morton <akpm@linux-foundation.org>
+> >> Cc: Oscar Salvador <osalvador@suse.de>
+> >> Cc: Michal Hocko <mhocko@suse.com>
+> >> Cc: David Hildenbrand <david@redhat.com>
+> >> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
+> >> Cc: Dan Williams <dan.j.williams@intel.com>
+> >> Cc: Wei Yang <richardw.yang@linux.intel.com>
+> >> Signed-off-by: David Hildenbrand <david@redhat.com>
+> >> ---
+> >>  mm/memory_hotplug.c | 34 +++++++---------------------------
+> >>  1 file changed, 7 insertions(+), 27 deletions(-)
+> >>
+> >> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+> >> index f294918f7211..8dafa1ba8d9f 100644
+> >> --- a/mm/memory_hotplug.c
+> >> +++ b/mm/memory_hotplug.c
+> >> @@ -393,6 +393,9 @@ static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
+> >>  		if (pfn) {
+> >>  			zone->zone_start_pfn = pfn;
+> >>  			zone->spanned_pages = zone_end_pfn - pfn;
+> >> +		} else {
+> >> +			zone->zone_start_pfn = 0;
+> >> +			zone->spanned_pages = 0;
+> >>  		}
+> >>  	} else if (zone_end_pfn == end_pfn) {
+> >>  		/*
+> >> @@ -405,34 +408,11 @@ static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
+> >>  					       start_pfn);
+> >>  		if (pfn)
+> >>  			zone->spanned_pages = pfn - zone_start_pfn + 1;
+> >> +		else {
+> >> +			zone->zone_start_pfn = 0;
+> >> +			zone->spanned_pages = 0;
+> > 
+> > Thinking in which case (zone_start_pfn != start_pfn) and it comes here.
 > 
-> That question was more in the direction of ST, to see how it fits in
-> their design/plans. I would hate to work on something only to have it
-> rejected because ST developed something else in parallel.
+> Could only happen in case the zone_start_pfn would have been "out of the
+> zone already". If you ask me: unlikely :)
 
-I think this is more of a "whoever needs it writes it" case, and ST
-obviously didn't care much about supporting external level interrupts.
+Yeah, I also think it's unlikely to come here.
 
-So if you have the need *and* a clear idea on how to make it work, 
-please
-post patches. If ST wakes up and wants to chime in, LKML is the right
-forum for having the discussion.
+The 'if (zone_start_pfn == start_pfn)' checking also covers the case
+(zone_start_pfn == start_pfn && zone_end_pfn == end_pfn). So this
+zone_start_pfn/spanned_pages resetting can be removed to avoid
+confusion.
 
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
