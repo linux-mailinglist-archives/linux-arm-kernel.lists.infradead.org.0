@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 059C5153312
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 15:33:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E1BC153313
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 15:33:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=heYNaQipOar/kRtSXzEQ+36WTClTGaUnikggVRMJ6mo=; b=ukbdV6P9f9eys4rCkuecRe9UU9
-	8bC1XDoinrlLvP661HLB7/+TEdMp5V9R8bz7iP1PvwmhT6ER8yyjQvmvymPYUh0Bv+TNIdXtKRZAh
-	zjlV2BQgtSmiCnmOrvaDhvBVA4hTXhWfgGm7h7qoha8Wt21KRM9tpZMsy2F1yuZ/sr+rlM9Iw/oty
-	wZjczBSgiiwWAv1HVg8+56nQ8SkA/Qj6Vs8AVvs9eYBHpodZJXWXm88ml08l47VVG19V7m41Wck+E
-	iUQsQ1hYyh3QYx6WWs2cMJhq4v6QIxmJkHMfGmq3MRck4WdSdX7AOD7YBOxhKTx4pdo6p5YHrfA3i
-	je5VP+bg==;
+	bh=OJfpDQU61wIp2FE4qFi4J3PlRl8+eAxwuU2kxmvedMY=; b=Zn5DWm5ns3YpqTlDbMfv+9jtZD
+	pVGDRy6hN14IVxaOqk4jB3ARL4wJJA2UGH9pbnsTJid2jf0JlY0XHwR+Ezj0GzVfqxlqDoSv8eCp2
+	KnPh2XjOLvfhgzFjsxzLqtk/Zwy4D/SjVSVUAg89mKXkZLvXG4tkeM5wPcwXR9+xR/XziBziypui6
+	POetJNF3scyiGAmNMq1CLSV73NCf69FfLt6N8fXOIkTv1SnwBAed59zERyrYeEjVU3lUy1oiBdTQl
+	cwBHH4vzfoKSN2vsgsTPjkqEFsiXFmi8FdFRD7WjezndnqnivUDEqKEjnjLC5umgRgMNSWAKnUi7o
+	6TGKZ56w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izLjZ-00014N-IX; Wed, 05 Feb 2020 14:32:53 +0000
+	id 1izLjh-0001J8-NK; Wed, 05 Feb 2020 14:33:01 +0000
 Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izLiF-0008MN-0M
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 14:31:32 +0000
+ id 1izLiJ-0008Qo-1d
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 14:31:36 +0000
 Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id 999CBE049D;
- Wed,  5 Feb 2020 06:31:00 -0800 (PST)
+ by comms.puri.sm (Postfix) with ESMTP id 03435E04BF;
+ Wed,  5 Feb 2020 06:31:04 -0800 (PST)
 Received: from comms.puri.sm ([127.0.0.1])
  by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 8X0Ugy737Zw9; Wed,  5 Feb 2020 06:30:59 -0800 (PST)
+ with ESMTP id 6ZV3hbfvxiC5; Wed,  5 Feb 2020 06:31:03 -0800 (PST)
 From: Martin Kepplinger <martin.kepplinger@puri.sm>
 To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com
-Subject: [PATCH v1 03/12] arm64: dts: librem5-devkit: allow modem to wake the
- system from suspend
-Date: Wed,  5 Feb 2020 15:29:54 +0100
-Message-Id: <20200205143003.28408-4-martin.kepplinger@puri.sm>
+Subject: [PATCH v1 04/12] arm64: dts: librem5-devkit: enable sai2 audio
+ interface
+Date: Wed,  5 Feb 2020 15:29:55 +0100
+Message-Id: <20200205143003.28408-5-martin.kepplinger@puri.sm>
 In-Reply-To: <20200205143003.28408-1-martin.kepplinger@puri.sm>
 References: <20200205143003.28408-1-martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_063131_091674_86FB0F53 
-X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-CacheID: sfid-20200205_063135_119690_F76A2061 
+X-CRM114-Status: UNSURE (   7.21  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -74,66 +74,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 
-Connect the WoWWAN signal to a gpio key to wake up the system from suspend.
+enable the imx8mq sai2 audio interface for the librem 5 devkit.
 
 Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 ---
- .../dts/freescale/imx8mq-librem5-devkit.dts   | 27 +++++++++++++++----
- 1 file changed, 22 insertions(+), 5 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-index 8162576e8f3d..ac6ba227e1da 100644
+index ac6ba227e1da..e7e3766198c6 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-@@ -33,7 +33,7 @@
- 	gpio-keys {
- 		compatible = "gpio-keys";
- 		pinctrl-names = "default";
--		pinctrl-0 = <&pinctrl_gpio_keys>;
-+		pinctrl-0 = <&pinctrl_gpio_keys>, <&pinctrl_wwan_in>;
- 
- 		btn1 {
- 			label = "VOL_UP";
-@@ -55,6 +55,15 @@
- 			wakeup-source;
- 			linux,code = <KEY_HP>;
- 		};
-+
-+		wwan_wake {
-+			label = "WWAN_WAKE";
-+			gpios = <&gpio3 8 GPIO_ACTIVE_LOW>;
-+			interrupt-parent = <&gpio3>;
-+			interrupts = <8 GPIO_ACTIVE_LOW>;
-+			wakeup-source;
-+			linux,code = <KEY_PHONE>;
-+		};
- 	};
- 
- 	leds {
-@@ -767,11 +776,19 @@
- 		>;
- 	};
- 
--	pinctrl_wwan: wwangrp {
-+	pinctrl_wwan_in: wwaningrp {
-+		fsl,pins = <
-+		/* nWoWWAN */
-+		MX8MQ_IOMUXC_NAND_DATA02_GPIO3_IO8	0x80
-+		>;
-+	};
-+
-+	pinctrl_wwan_out: wwanoutgrp {
- 		fsl,pins = <
--			MX8MQ_IOMUXC_NAND_CE3_B_GPIO3_IO4	0x09 /* nWWAN_DISABLE */
--			MX8MQ_IOMUXC_NAND_DATA02_GPIO3_IO8	0x80 /* nWoWWAN */
--			MX8MQ_IOMUXC_NAND_DATA03_GPIO3_IO9	0x19 /* WWAN_RESET */
-+		/* nWWAN_DISABLE */
-+		MX8MQ_IOMUXC_NAND_CE3_B_GPIO3_IO4	0x09
-+		/* WWAN_RESET */
-+		MX8MQ_IOMUXC_NAND_DATA03_GPIO3_IO9	0x19
- 		>;
- 	};
+@@ -811,6 +811,15 @@
+ 	status = "okay";
  };
+ 
++&sai2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_sai2>;
++	assigned-clocks = <&clk IMX8MQ_CLK_SAI2>;
++	assigned-clock-parents = <&clk IMX8MQ_AUDIO_PLL1_OUT>;
++	assigned-clock-rates = <24576000>;
++	status = "okay";
++};
++
+ &sai6 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_sai6>;
 -- 
 2.20.1
 
