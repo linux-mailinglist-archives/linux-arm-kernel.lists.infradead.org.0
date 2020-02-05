@@ -2,84 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F1C41535EF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 18:08:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE881153600
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 18:12:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xBLHe9hOpi6Zxiz7SjjVXCZ3sPTnH2ARf0PiLU1Zm6k=; b=uVzOL20hlMimh2
-	qvK+FRgOPj2m7Zs+yXOzO7kIDuGgYeZDvvmogzPRVkWhkcw0E/ZVemtaCAtNMuUmyFQm7f1tAouvY
-	2E+DeKSb+TV31s3KV3TL3qPuHzeZ6okMNhpJT00qcXAnfFK5VrELPXcLiBhCIWVQWuDI1Ea+8m3U2
-	gfYmvGueFfdVH5ZuwYlXpPF6fXTivAR+3XdBdDE+X5Bo21qCMoXP0SELYpuxisRlxtWg76aZXHcoJ
-	/2nTUwEdTGEHGKHZu7b6nLYXXRFYXswkfTzRiVrLvqXWwEN5GC6Gs1XAlb/I9qAd8DrSR5Zew4JaB
-	6YhO0FVGG13tGvcXrbaA==;
+	List-Owner; bh=RqhBDal0nWcCVDhsTPZz4e1J8q86ROpaJQ8YbYzNCmg=; b=PYVKab/tdvUppu
+	fOXNBGUHnEaoypw6YlNAoqmfMVFNESJfEoCAr6qosCxUl3MoipsgNj7CUVA0DJGNyKokenAN1qeDH
+	QnfgwPeq5m+TaQjgPNp/WTQVgP75TGV9oXNc/wo07QavMdiZiX/JW4W2l7NIoxJhtK1urgSCBOWVs
+	Y+U9EPGWlq7Bf8zcNP5wyr74DagzcZOKcgTzWDdo5O/Flvj1u/roMPOi6wwU4oWgfLNwaX+dAN4l4
+	m7DLeAYxt43VcO0W/rFDeGXMDaxqubOmkASo6pyMrty1AH4GGVd6ZTNy93JpTRDzMzMihgKsyayUi
+	ga7fv6SfqkWo756GxExg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izOAM-0001Cy-RJ; Wed, 05 Feb 2020 17:08:42 +0000
-Received: from mail-wr1-f67.google.com ([209.85.221.67])
+	id 1izODh-00036i-G7; Wed, 05 Feb 2020 17:12:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izOAG-0001CR-58
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 17:08:37 +0000
-Received: by mail-wr1-f67.google.com with SMTP id u6so3703671wrt.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Feb 2020 09:08:35 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=wVyS98mSn4UeFr2rUO9PasOfBrlg4kFydqotmUAfD/w=;
- b=iPnYfLQuA6C7s7O5Dm/oGiv6JFK6gXTpIwnDjfmiDziCjlSQ3ld/iDCsw67w0m0i7H
- VJsSRkB3I6Ns71dFFHR4tFFnMn8Mgjx8DHuEQ5iRQO5yZ37aYz9/NPosRH+qGrlUQYYb
- 0FmO7NzkTyDm5jqjRSHCLgK2ebLA+iO5DVTvNvXVoS0x13KcxYO/3DAU4toNC3Lz6YZw
- lVPyKdgtitgx5ID3kqy6a7Fik2mYhw0O7+uJjmrJ/2DDfGXPCj2BFYrrF4A14ZgfhBDp
- t7wSsNiugkY5RWkZ+ku6Q/4P6LSs+FtDJ5wvF6SF4KOxgTclaggw3F0UwHokPZJLdF87
- ZsRQ==
-X-Gm-Message-State: APjAAAWl7ppLJmYI9lSyoSWsJ39Y/81pIeTj/A6lxzCc63BzC5bdk4v8
- YeRaVa6eF6rG0I+2qAN+FA==
-X-Google-Smtp-Source: APXvYqwaQiQMAa8h+Izmp9nvuziS6m0uiZRyCGM1+IZ+qyjy4io1DJ/1o+lCJNm/dF9gYXsu8JczlA==
-X-Received: by 2002:adf:ecd0:: with SMTP id s16mr28949693wro.325.1580922514565; 
- Wed, 05 Feb 2020 09:08:34 -0800 (PST)
-Received: from rob-hp-laptop ([212.187.182.166])
- by smtp.gmail.com with ESMTPSA id q1sm561081wrw.5.2020.02.05.09.08.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 05 Feb 2020 09:08:33 -0800 (PST)
-Received: (nullmailer pid 27473 invoked by uid 1000);
- Wed, 05 Feb 2020 17:08:32 -0000
-Date: Wed, 5 Feb 2020 17:08:32 +0000
-From: Rob Herring <robh@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Re: [PATCH] ASoC: dt-bindings: stm32: convert i2s to json-schema
-Message-ID: <20200205170832.GA19383@bogus>
-References: <20200127125420.29827-1-olivier.moysan@st.com>
+ id 1izODa-00036E-HM
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 17:12:04 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 674E021741;
+ Wed,  5 Feb 2020 17:12:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1580922721;
+ bh=JnzOaes9zZqzGhjdKZE07DCRk+Nps5EiNAVCzrzWhRo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ILyzoAgsZg6vIVR9oQf002k1T65thHsmz3mLiVceRpxWJeE6SRS9j/S2d0K6HNvCj
+ Oejdc0Of7onyOHGvmsYU6MesOGaI3HTnuO0dIzCX9ibTaAvFrBaeW/iLFOuYimbFkg
+ js3EVTkFWbn4Nlv2spK9txXnSCFYg8wV61E5eGrM=
+Date: Wed, 5 Feb 2020 17:11:57 +0000
+From: Will Deacon <will@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH kvmtool] Add emulation for CFI compatible flash memory
+Message-ID: <20200205171156.GA908@willie-the-truck>
+References: <20200108183212.252810-1-andre.przywara@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200127125420.29827-1-olivier.moysan@st.com>
+In-Reply-To: <20200108183212.252810-1-andre.przywara@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_090836_194933_F1941984 
-X-CRM114-Status: GOOD (  21.81  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200205_091202_622299_BD74DD7E 
+X-CRM114-Status: GOOD (  33.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.67 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,207 +76,422 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, tiwai@suse.com, lgirdwood@gmail.com,
- broonie@kernel.org, mcoquelin.stm32@gmail.com, perex@perex.cz,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, Raphael Gault <raphael.gault@arm.com>,
+ Sami Mujawar <sami.mujawar@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 27, 2020 at 01:54:20PM +0100, Olivier Moysan wrote:
-> Convert the STM32 I2S bindings to DT schema format using json-schema.
+On Wed, Jan 08, 2020 at 06:32:12PM +0000, Andre Przywara wrote:
+> From: Raphael Gault <raphael.gault@arm.com>
 > 
-> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-> ---
-> The items for dma-names and clock-names properties are all
-> mandatory, but may be provided in any order.
-> The syntax used for these properties allows to avoid order constraint.
-
-Other than having .dts files with differing order, I don't see any 
-reason we need to allow any order here. So decide which order is most 
-prevalent and use that, and then fix the other dts files.
-
-> ---
->  .../bindings/sound/st,stm32-i2s.txt           | 62 -------------
->  .../bindings/sound/st,stm32-i2s.yaml          | 91 +++++++++++++++++++
->  2 files changed, 91 insertions(+), 62 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/sound/st,stm32-i2s.txt
->  create mode 100644 Documentation/devicetree/bindings/sound/st,stm32-i2s.yaml
+> The EDK II UEFI firmware implementation requires some storage for the EFI
+> variables, which is typically some flash storage.
+> Since this is already supported on the EDK II side, we add a CFI flash
+> emulation to kvmtool.
+> This is backed by a file, specified via the --flash or -F command line
+> option. Any flash writes done by the guest will immediately be reflected
+> into this file (kvmtool mmap's the file).
 > 
-> diff --git a/Documentation/devicetree/bindings/sound/st,stm32-i2s.txt b/Documentation/devicetree/bindings/sound/st,stm32-i2s.txt
-> deleted file mode 100644
-> index cbf24bcd1b8d..000000000000
-> --- a/Documentation/devicetree/bindings/sound/st,stm32-i2s.txt
-> +++ /dev/null
-> @@ -1,62 +0,0 @@
-> -STMicroelectronics STM32 SPI/I2S Controller
-> -
-> -The SPI/I2S block supports I2S/PCM protocols when configured on I2S mode.
-> -Only some SPI instances support I2S.
-> -
-> -Required properties:
-> -  - compatible: Must be "st,stm32h7-i2s"
-> -  - reg: Offset and length of the device's register set.
-> -  - interrupts: Must contain the interrupt line id.
-> -  - clocks: Must contain phandle and clock specifier pairs for each entry
-> -	in clock-names.
-> -  - clock-names: Must contain "i2sclk", "pclk", "x8k" and "x11k".
-> -	"i2sclk": clock which feeds the internal clock generator
-> -	"pclk": clock which feeds the peripheral bus interface
-> -	"x8k": I2S parent clock for sampling rates multiple of 8kHz.
-> -	"x11k": I2S parent clock for sampling rates multiple of 11.025kHz.
-> -  - dmas: DMA specifiers for tx and rx dma.
-> -    See Documentation/devicetree/bindings/dma/stm32-dma.txt.
-> -  - dma-names: Identifier for each DMA request line. Must be "tx" and "rx".
-> -  - pinctrl-names: should contain only value "default"
-> -  - pinctrl-0: see Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
-> -
-> -Optional properties:
-> -  - resets: Reference to a reset controller asserting the reset controller
-> -
-> -The device node should contain one 'port' child node with one child 'endpoint'
-> -node, according to the bindings defined in Documentation/devicetree/bindings/
-> -graph.txt.
-> -
-> -Example:
-> -sound_card {
-> -	compatible = "audio-graph-card";
-> -	dais = <&i2s2_port>;
-> -};
-> -
-> -i2s2: audio-controller@40003800 {
-> -	compatible = "st,stm32h7-i2s";
-> -	reg = <0x40003800 0x400>;
-> -	interrupts = <36>;
-> -	clocks = <&rcc PCLK1>, <&rcc SPI2_CK>, <&rcc PLL1_Q>, <&rcc PLL2_P>;
-> -	clock-names = "pclk", "i2sclk",  "x8k", "x11k";
-> -	dmas = <&dmamux2 2 39 0x400 0x1>,
-> -           <&dmamux2 3 40 0x400 0x1>;
-> -	dma-names = "rx", "tx";
-> -	pinctrl-names = "default";
-> -	pinctrl-0 = <&pinctrl_i2s2>;
-> -
-> -	i2s2_port: port@0 {
-> -		cpu_endpoint: endpoint {
-> -			remote-endpoint = <&codec_endpoint>;
-> -			format = "i2s";
-> -		};
-> -	};
-> -};
-> -
-> -audio-codec {
-> -	codec_port: port@0 {
-> -		codec_endpoint: endpoint {
-> -			remote-endpoint = <&cpu_endpoint>;
-> -		};
-> -	};
-> -};
-> diff --git a/Documentation/devicetree/bindings/sound/st,stm32-i2s.yaml b/Documentation/devicetree/bindings/sound/st,stm32-i2s.yaml
+> This implements a CFI flash using the "Intel/Sharp extended command
+> set", as specified in:
+> - JEDEC JESD68.01
+> - JEDEC JEP137B
+> - Intel Application Note 646
+> Some gaps in those specs have been filled by looking at real devices and
+> other implementations (QEMU, Linux kernel driver).
+> 
+> At the moment this relies on DT to advertise the base address of the
+> flash memory (mapped into the MMIO address space) and is only enabled
+> for ARM/ARM64. The emulation itself is architecture agnostic, though.
+> 
+> This is one missing piece towards booting with UEFI inside ARM guests,
+> the other is to provide writable PCI BARs, which is also WIP.
+> 
+> Signed-off-by: Raphael Gault <raphael.gault@arm.com>
+> [Andre: rewriting and fixing]
+> Signed-off-by: Andre Przywra <andre.przywara@arm.com>
+> ---
+>  Makefile                          |   6 +
+>  arm/include/arm-common/kvm-arch.h |   3 +
+>  builtin-run.c                     |   2 +
+>  hw/cfi_flash.c                    | 547 ++++++++++++++++++++++++++++++
+>  include/kvm/kvm-config.h          |   1 +
+>  5 files changed, 559 insertions(+)
+>  create mode 100644 hw/cfi_flash.c
+> 
+> diff --git a/Makefile b/Makefile
+> index 3862112c..7ed6fb5e 100644
+> --- a/Makefile
+> +++ b/Makefile
+> @@ -170,6 +170,7 @@ ifeq ($(ARCH), arm)
+>  	CFLAGS		+= -march=armv7-a
+>  
+>  	ARCH_WANT_LIBFDT := y
+> +	ARCH_HAS_FLASH_MEM := y
+>  endif
+>  
+>  # ARM64
+> @@ -182,6 +183,7 @@ ifeq ($(ARCH), arm64)
+>  	ARCH_INCLUDE	+= -Iarm/aarch64/include
+>  
+>  	ARCH_WANT_LIBFDT := y
+> +	ARCH_HAS_FLASH_MEM := y
+>  endif
+>  
+>  ifeq ($(ARCH),mips)
+> @@ -261,6 +263,10 @@ ifeq (y,$(ARCH_HAS_FRAMEBUFFER))
+>  	endif
+>  endif
+>  
+> +ifeq (y,$(ARCH_HAS_FLASH_MEM))
+> +	OBJS	+= hw/cfi_flash.o
+> +endif
+> +
+>  ifeq ($(call try-build,$(SOURCE_ZLIB),$(CFLAGS),$(LDFLAGS) -lz),y)
+>  	CFLAGS_DYNOPT	+= -DCONFIG_HAS_ZLIB
+>  	LIBS_DYNOPT	+= -lz
+> diff --git a/arm/include/arm-common/kvm-arch.h b/arm/include/arm-common/kvm-arch.h
+> index b9d486d5..cbc9e7aa 100644
+> --- a/arm/include/arm-common/kvm-arch.h
+> +++ b/arm/include/arm-common/kvm-arch.h
+> @@ -21,6 +21,9 @@
+>  #define ARM_GIC_DIST_SIZE	0x10000
+>  #define ARM_GIC_CPUI_SIZE	0x20000
+>  
+> +#define ARM_FLASH_MMIO_BASE	(32ULL << 20)
+
+Can you just use the hex constant (0x2000000) here please?
+
+> +#define KVM_FLASH_MMIO_BASE	ARM_FLASH_MMIO_BASE
+> +
+>  #define ARM_IOPORT_SIZE		(ARM_MMIO_AREA - ARM_IOPORT_AREA)
+>  #define ARM_VIRTIO_MMIO_SIZE	(ARM_AXI_AREA - (ARM_MMIO_AREA + ARM_GIC_SIZE))
+>  #define ARM_PCI_CFG_SIZE	(1ULL << 24)
+> diff --git a/builtin-run.c b/builtin-run.c
+> index f8dc6c72..df8c6741 100644
+> --- a/builtin-run.c
+> +++ b/builtin-run.c
+> @@ -138,6 +138,8 @@ void kvm_run_set_wrapper_sandbox(void)
+>  			"Kernel command line arguments"),		\
+>  	OPT_STRING('f', "firmware", &(cfg)->firmware_filename, "firmware",\
+>  			"Firmware image to boot in virtual machine"),	\
+> +	OPT_STRING('F', "flash", &(cfg)->flash_filename, "flash",\
+> +			"Flash image to present to virtual machine"),	\
+>  									\
+>  	OPT_GROUP("Networking options:"),				\
+>  	OPT_CALLBACK_DEFAULT('n', "network", NULL, "network params",	\
+> diff --git a/hw/cfi_flash.c b/hw/cfi_flash.c
 > new file mode 100644
-> index 000000000000..cdfb375c7a14
+> index 00000000..33cfeefe
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/sound/st,stm32-i2s.yaml
-> @@ -0,0 +1,91 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/sound/st,stm32-i2s.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +++ b/hw/cfi_flash.c
+> @@ -0,0 +1,547 @@
+> +#include <stdbool.h>
+> +#include <stdlib.h>
+> +#include <string.h>
+> +#include <linux/bitops.h>
+> +#include <linux/err.h>
+> +#include <linux/sizes.h>
+> +#include <linux/types.h>
 > +
-> +title: STMicroelectronics STM32 SPI/I2S Controller
+> +#include "kvm/kvm.h"
+> +#include "kvm/kvm-arch.h"
+> +#include "kvm/devices.h"
+> +#include "kvm/fdt.h"
+> +#include "kvm/util.h"
 > +
-> +maintainers:
-> +  - Olivier Moysan <olivier.moysan@st.com>
-> +
-> +description:
-> +  The SPI/I2S block supports I2S/PCM protocols when configured on I2S mode.
-> +  Only some SPI instances support I2S.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - st,stm32h7-i2s
-> +
-> +  "#sound-dai-cells":
-> +    const: 0
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: clock feeding the peripheral bus interface.
-> +      - description: clock feeding the internal clock generator.
-> +      - description: I2S parent clock for sampling rates multiple of 8kHz.
-> +      - description: I2S parent clock for sampling rates multiple of 11.025kHz.
-> +
-> +  clock-names:
-> +    items:
-> +      - enum: [ pclk, i2sclk, x8k, x11k ]
-> +      - enum: [ pclk, i2sclk, x8k, x11k ]
-> +      - enum: [ pclk, i2sclk, x8k, x11k ]
-> +      - enum: [ pclk, i2sclk, x8k, x11k ]
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/string-array
+> +/* The EDK2 driver hardcodes two 16-bit chips on a 32-bit bus. */
+> +#define CFI_NR_FLASH_CHIPS			2
+> +//#define CFI_NR_FLASH_CHIPS			1
 
-*-names already has a type, so this is not needed.
+Delete this commented define?
 
+> +/* We always emulate a 32 bit bus width. */
+> +#define CFI_BUS_WIDTH				4
 > +
-> +  interrupts:
-> +    maxItems: 1
+> +/* The *effective* size of an erase block (over all chips) */
+> +#define FLASH_BLOCK_SIZE			SZ_64K
 > +
-> +  dmas:
-> +    items:
-> +      - description: audio capture DMA.
-> +      - description: audio playback DMA.
+> +#define PROGRAM_BUFF_SIZE_BITS			7
+> +#define PROGRAM_BUFF_SIZE			(1U << PROGRAM_BUFF_SIZE_BITS)
 > +
-> +  dma-names:
-> +    items:
-> +      - enum: [ rx, tx ]
-> +      - enum: [ rx, tx ]
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/string-array
+> +/* CFI commands */
+> +#define CFI_CMD_LOCK_BLOCK			0x01
+> +#define CFI_CMD_ALTERNATE_WORD_PROGRAM_SETUP	0x10
+> +#define CFI_CMD_BLOCK_ERASE_SETUP		0x20
+> +#define CFI_CMD_WORD_PROGRAM_SETUP		0x40
+> +#define CFI_CMD_CLEAR_STATUS_REGISTER		0x50
+> +#define CFI_CMD_LOCK_BLOCK_SETUP		0x60
+> +#define CFI_CMD_READ_STATUS_REGISTER		0x70
+> +#define CFI_CMD_READ_JEDEC			0x90
+> +#define CFI_CMD_READ_CFI_QUERY			0x98
+> +#define CFI_CMD_BUFFERED_PROGRAM_CONFIRM	0xd0
+> +#define CFI_CMD_BLOCK_ERASE_CONFIRM		0xd0
+> +#define CFI_CMD_UNLOCK_BLOCK			0xd0
+> +#define CFI_CMD_BUFFERED_PROGRAM_SETUP		0xe8
+> +#define CFI_CMD_READ_ARRAY			0xff
 > +
-> +  resets:
-> +    maxItems: 1
+> +/*
+> + * CFI query table contents, as far as it is constant.
+> + */
+> +#define CFI_GEOM_OFFSET				0x27
+> +static u8 cfi_query_table[] = {
+> +		/* offset 0x10: CFI query identification string */
+> +	'Q', 'R', 'Y',		/* ID string */
+> +	0x01, 0x00,		/* primary command set: Intel/Sharp extended */
+> +	0x31, 0x00,		/* address of primary extended query table */
+> +	0x00, 0x00,		/* alternative command set: unused */
+> +	0x00, 0x00,		/* address of alternative extended query table*/
+> +		/* offset 0x1b: system interface information */
+> +	0x45,			/* minimum Vcc voltage: 4.5V */
+> +	0x55,			/* maximum Vcc voltage: 5.5V */
+> +	0x00,			/* minimum Vpp voltage: 0.0V (unused) */
+> +	0x00,			/* maximum Vpp voltage: 0.0V *(unused) */
+> +	0x01,			/* timeout for single word program: 2 us */
+> +	0x01,			/* timeout for multi-byte program: 2 us */
+> +	0x01,			/* timeout for block erase: 2 ms */
+> +	0x00,			/* timeout for full chip erase: not supported */
+> +	0x00,			/* max timeout for single word program: 1x */
+> +	0x00,			/* max timeout for mulit-byte program: 1x */
+> +	0x00,			/* max timeout for block erase: 1x */
+> +	0x00,			/* max timeout for chip erase: not supported */
+> +		/* offset 0x27: flash geometry information */
+> +	0x00,			/* size in power-of-2 bytes, filled later */
+> +	0x06, 0x00,		/* interface description: 32 and 16 bits */
+> +	PROGRAM_BUFF_SIZE_BITS + 1 - CFI_NR_FLASH_CHIPS, 0x00,
+> +				/* number of multi-byte writes */
+> +	0x01,			/* one erase block region */
+> +	0x00, 0x00, 0x00, 0x00, /* number and size of erase blocks, filled */
+> +		/* offset 0x31: Intel primary algorithm extended query table */
+> +	'P', 'R', 'I',
+> +	'1', '0',		/* version 1.0 */
+> +	0xa0, 0x00, 0x00, 0x00, /* optional features: instant lock & pm-read */
+> +	0x00,			/* no functions after suspend */
+> +	0x01, 0x00,		/* only lock bit supported */
+> +	0x50,			/* best Vcc value: 5.0V */
+> +	0x00,			/* best Vpp value: 0.0V (unused) */
+> +	0x01,			/* number of protection register fields */
+> +	0x00, 0x00, 0x00, 0x00,	/* protection field 1 description */
+> +};
 > +
-> +required:
-> +  - compatible
-> +  - "#sound-dai-cells"
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - interrupts
-> +  - dmas
-> +  - dma-names
 > +
-> +additionalProperties: false
+> +/*
+> + * Those states represent a subset of the CFI flash state machine.
+> + */
+> +enum cfi_flash_state {
+> +	READY,
+> +	LOCK_SETUP,
+> +	WP_SETUP,
+> +	BP_SETUP,
+> +	BP_LOAD,
+> +	ERASE_SETUP,
+> +};
 > +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/stm32mp1-clks.h>
-> +    i2s2: audio-controller@4000b000 {
-> +        compatible = "st,stm32h7-i2s";
-> +        #sound-dai-cells = <0>;
-> +        reg = <0x4000b000 0x400>;
-> +        clocks = <&rcc SPI2>, <&rcc SPI2_K>, <&rcc PLL3_Q>, <&rcc PLL3_R>;
-> +        clock-names = "pclk", "i2sclk", "x8k", "x11k";
-> +        interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
-> +        dmas = <&dmamux1 39 0x400 0x01>,
-> +               <&dmamux1 40 0x400 0x01>;
-> +        dma-names = "rx", "tx";
-> +        pinctrl-names = "default";
-> +        pinctrl-0 = <&i2s2_pins_a>;
-> +    };
+> +/*
+> + * The device can be in several **Read** modes.
+> + * We don't implement the asynchronous burst mode.
+> + */
+> +enum cfi_read_mode {
+> +	READ_ARRAY,
+> +	READ_STATUS,
+> +	READ_DEVICE_ID,
+> +	READ_QUERY,
+> +};
 > +
-> +...
-> -- 
-> 2.17.1
-> 
+> +struct cfi_flash_device {
+> +	struct device_header	dev_hdr;
+> +	u64			base_addr;
+> +	u32			size;
+> +
+> +	void			*flash_memory;
+> +	u8			program_buffer[PROGRAM_BUFF_SIZE * 4];
+> +	unsigned long		*lock_bm;
+> +	u64			last_address;
+> +	unsigned int		buff_written;
+> +	unsigned int		program_length;
+> +
+> +	enum cfi_flash_state	state;
+> +	enum cfi_read_mode	read_mode;
+> +	u16			rcr;
+> +	u8			sr;
+> +};
+> +
+> +static int pow2_size(unsigned long x)
+> +{
+> +	return (sizeof(x) * 8) - __builtin_clzl(x - 1);
+> +}
+
+This isn't specific to CFI -- maybe stick it include/kvm/util.h ?
+
+> +static int nr_erase_blocks(struct cfi_flash_device *sfdev)
+> +{
+> +	return sfdev->size / FLASH_BLOCK_SIZE;
+> +}
+> +
+> +/*
+> + * CFI queries always deal with one byte of information, possibly mirrored
+> + * to other bytes on the bus. This is dealt with in the callers.
+> + * The address provided is the one for 8-bit addressing, and would need to
+> + * be adjusted for wider accesses.
+> + */
+> +static u8 read_cfi(struct cfi_flash_device *sfdev, u64 addr)
+> +{
+> +	if (addr < 0x10)		/* CFI information starts at 0x10 */
+> +		return 0;
+> +
+> +	if (addr - 0x10 > sizeof(cfi_query_table)) {
+> +		pr_debug("CFI query read access beyond the end of table");
+> +		return 0;
+> +	}
+> +
+> +	/* Fixup dynamic information in the geometry part of the table. */
+> +	switch (addr) {
+> +	case CFI_GEOM_OFFSET:		/* device size in bytes, power of two */
+> +		return pow2_size(sfdev->size / CFI_NR_FLASH_CHIPS);
+> +	case CFI_GEOM_OFFSET + 6:	/* number of erase blocks, minus one */
+> +		return (nr_erase_blocks(sfdev) - 1) & 0xff;
+> +	case CFI_GEOM_OFFSET + 7:
+> +		return (nr_erase_blocks(sfdev) - 1) >> 8;
+> +	case CFI_GEOM_OFFSET + 8:	/* erase block size, in units of 256 */
+> +		return ((FLASH_BLOCK_SIZE / 256 ) / CFI_NR_FLASH_CHIPS) & 0xff;
+> +	case CFI_GEOM_OFFSET + 9:
+> +		return ((FLASH_BLOCK_SIZE / 256 ) / CFI_NR_FLASH_CHIPS) >> 8;
+> +	}
+> +
+> +	return cfi_query_table[addr - 0x10];
+> +}
+> +
+> +/* We only support synchronous page mode read accesses. */
+> +static void read_flash(struct cfi_flash_device *sfdev,
+> +		       u64 addr, u8 *buffer, int len)
+> +{
+> +	memcpy(buffer, sfdev->flash_memory + addr, len);
+> +}
+
+Hmm, you open-code the memcpy when writing the flash so it's a bit weird
+to have the asymmetry with reads. I don't mind what you do, but it should
+probably be consistent.
+
+> +static bool block_is_locked(struct cfi_flash_device *sfdev, u64 addr)
+> +{
+> +	int block_nr = addr / FLASH_BLOCK_SIZE;
+> +
+> +	return test_bit(block_nr, sfdev->lock_bm);
+> +}
+> +
+> +#define DEV_ID_MASK 0x7ff
+> +static u16 read_dev_id(struct cfi_flash_device *sfdev, u64 addr)
+> +{
+> +	switch ((addr & DEV_ID_MASK) / CFI_BUS_WIDTH) {
+> +	case 0x0:				/* vendor ID */
+> +		return 0x0000;
+> +	case 0x1:				/* device ID */
+> +		return 0xffff;
+> +	case 0x2:
+> +		return block_is_locked(sfdev, addr & ~DEV_ID_MASK);
+> +	case 0x5:
+> +		return sfdev->rcr;
+> +	default:			/* Ignore the other entries. */
+> +		return 0;
+> +	}
+> +}
+> +
+> +static void lock_block(struct cfi_flash_device *sfdev, u64 addr, bool lock)
+> +{
+> +	int block_nr = addr / FLASH_BLOCK_SIZE;
+> +
+> +	if (lock)
+> +		set_bit(block_nr, sfdev->lock_bm);
+> +	else
+> +		clear_bit(block_nr, sfdev->lock_bm);
+> +}
+
+
+> +static void word_program(struct cfi_flash_device *sfdev,
+> +			 u64 addr, void *data, int len)
+> +{
+> +	if (block_is_locked(sfdev, addr)) {
+> +		sfdev->sr |= 0x12;
+> +		return;
+> +	}
+> +
+> +	memcpy(sfdev->flash_memory + addr, data, len);
+> +}
+> +
+> +/* Reset the program buffer state to prepare for follow-up writes. */
+> +static void buffer_setup(struct cfi_flash_device *sfdev)
+> +{
+> +	memset(sfdev->program_buffer, 0, sizeof(sfdev->program_buffer));
+> +	sfdev->last_address = ~0ULL;
+> +	sfdev->buff_written = 0;
+> +}
+> +
+> +static bool buffer_program(struct cfi_flash_device *sfdev,
+> +			   u64 addr, void *buffer, int len)
+> +{
+> +	unsigned int buf_addr;
+> +
+> +	if (sfdev->buff_written >= sfdev->program_length)
+> +		return false;
+> +
+> +	/*
+> +	 * The first word written into the buffer after the setup command
+> +	 * happens to be the base address for the buffer.
+> +	 * All subsequent writes need to be within this address and this
+> +	 * address plus the buffer size, so keep this value around.
+> +	 */
+> +	if (sfdev->last_address == ~0ULL)
+> +		sfdev->last_address = addr;
+> +
+> +	if (addr < sfdev->last_address)
+> +		return false;
+> +	buf_addr = addr - sfdev->last_address;
+> +	if (buf_addr >= PROGRAM_BUFF_SIZE)
+> +		return false;
+> +
+> +	memcpy(sfdev->program_buffer + buf_addr, buffer, len);
+> +	sfdev->buff_written++;
+> +
+> +	return true;
+> +}
+> +
+> +static void buffer_confirm(struct cfi_flash_device *sfdev)
+> +{
+> +	if (block_is_locked(sfdev, sfdev->last_address)) {
+> +		sfdev->sr |= 0x12;
+> +		return;
+> +	}
+> +	memcpy(sfdev->flash_memory + sfdev->last_address,
+> +	       sfdev->program_buffer,
+> +	       sfdev->buff_written * sizeof(u32));
+> +}
+> +
+> +static void block_erase_confirm(struct cfi_flash_device *sfdev, u64 addr)
+> +{
+> +	if (block_is_locked(sfdev, addr)) {
+> +		sfdev->sr |= 0x12;
+> +		return;
+> +	}
+> +
+> +	memset(sfdev->flash_memory + addr, 0xFF, FLASH_BLOCK_SIZE);
+> +}
+> +
+> +static void cfi_flash_mmio(struct kvm_cpu *vcpu,
+> +			   u64 addr, u8 *data, u32 len, u8 is_write,
+> +			   void *context)
+> +{
+> +	struct cfi_flash_device *sfdev = context;
+> +	u64 faddr = addr - sfdev->base_addr;
+> +	u32 value;
+
+How is this serialised? There is a distinct lack of locking, atomics and
+memory barriers in the implementation, so we really need to avoid this
+running concurrently with itself.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
