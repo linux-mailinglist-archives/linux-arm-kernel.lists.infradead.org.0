@@ -2,60 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CD681528D7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 11:07:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E4A9152900
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 11:19:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
-	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lTLGSqsTMHvt78aZ21Fek5F3yRtI78hFTQzRjXP+Z8o=; b=dkib14ACx4P6i4
-	bdvnhjhnB0Qfk+ofbqeyEPHq4WHjqFv/lXpRgnMcS61PQ7LNLXole8tMlHx/xhnrrqhgIKDFUmIke
-	d90wIFQqmHDNHiAqt62hY9/4s3fDprL58Q5Uv7XQvJA0ZDgq5pNzh5Ky3B/aEX2zfLbJ95AAIKKiv
-	d9AmoxJSnsEWhOSahSACkXv5jwUENJPsjeJsmaUBNPZiku08vOR3ywk/2UpgO3ySTnkB/45AxnU4t
-	weexQJamPsToe640hKJ+frZkdaGAjVnEcALS2VidTEyBCY3ywP+F8SRjCiqgOyxWvsoH1UQ1YESWW
-	wxV+48KGUjFm4y3Olf0g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kjMBjf+Hx1WKEYVQQzZ/L3W3c21etzc5nyM6FVXhGMQ=; b=jY/IFn4MUhUUoO
+	k6ZtOOTBzchfpt12Bds3vhO6tmFmR2Cp4ubvQm2a77X/IpnTSEY01xVHiP06KtBo2suP0nQq9Zlwo
+	YLburHyjP6Dgri3Elyt6ux6jxD8io3m07s4y0Wdefzt4gQCaeMh6uoIYuAxB3sjsF1OVp+TavvMtP
+	DaLPfDyUxa2RYYVojwt4ynq69yW6AYXXVI24YpNaI4Fpk1FQDwJyidRJadjAQVTdhi90VI2bPPgWP
+	WIe7w0dyL4fAxh1bBQ27VbzpADDTh+8DGJkdWAuXpxD2oWrKpCGkDZGfKnQ/hQtbDeYP/wxKL/F9s
+	ZC5Eg8KFhT8GzyDEbRCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izHab-0001Z0-J5; Wed, 05 Feb 2020 10:07:21 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1izHmQ-0006Fi-Od; Wed, 05 Feb 2020 10:19:34 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izHaR-0001YG-TS
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 10:07:13 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 05 Feb 2020 02:07:09 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,405,1574150400"; d="scan'208";a="279328278"
-Received: from richard.sh.intel.com (HELO localhost) ([10.239.159.54])
- by FMSMGA003.fm.intel.com with ESMTP; 05 Feb 2020 02:07:06 -0800
-Date: Wed, 5 Feb 2020 18:07:23 +0800
-From: Wei Yang <richardw.yang@linux.intel.com>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v6 09/10] mm/memory_hotplug: Drop local variables in
- shrink_zone_span()
-Message-ID: <20200205100723.GD24162@richard>
-References: <20191006085646.5768-1-david@redhat.com>
- <20191006085646.5768-10-david@redhat.com>
+ id 1izHmJ-0006EL-Sk
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 10:19:29 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 015AJAWT038813;
+ Wed, 5 Feb 2020 04:19:10 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1580897950;
+ bh=a4B3Bqd5Pf17C8VTQl7PRrNSGniXRgvhSLeM1x0d+hk=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=byogR5Y93N6sxhLZuK2obDyLC3hmzVNNSkPNhl2ry7ZEcrYkt8Hqq8IySduCmkPtB
+ ohzI1jKztmbskV4V7+4t9v6xsAEHReAeS1KcuOg+pfCOipcjcKomxqyKJ64H4kQq/o
+ E3K6QUFcAKw8gAI++17jnsbO91gCzSVdho02fGa4=
+Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 015AJA6F008867;
+ Wed, 5 Feb 2020 04:19:10 -0600
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE112.ent.ti.com
+ (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 5 Feb
+ 2020 04:19:09 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 5 Feb 2020 04:19:09 -0600
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 015AJ7R3091177;
+ Wed, 5 Feb 2020 04:19:07 -0600
+Subject: Re: [PoC] arm: dma-mapping: direct: Apply dma_pfn_offset only when it
+ is valid
+To: Christoph Hellwig <hch@lst.de>
+References: <8eb68140-97b2-62ce-3e06-3761984aa5b1@ti.com>
+ <20200114164332.3164-1-peter.ujfalusi@ti.com>
+ <f8121747-8840-e279-8c7c-75a9d4becce8@arm.com>
+ <28ee3395-baed-8d59-8546-ab7765829cc8@ti.com>
+ <4f0e307f-29a9-44cd-eeaa-3b999e03871c@arm.com>
+ <75843c71-1718-8d61-5e3d-edba6e1b10bd@ti.com> <20200130075332.GA30735@lst.de>
+ <b2b1cb21-3aae-2181-fd79-f63701f283c0@ti.com> <20200130164010.GA6472@lst.de>
+ <c37b12e4-0e0c-afa2-a8e4-782ccd57542d@ti.com> <20200203170809.GA19293@lst.de>
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+Message-ID: <af52fd8e-4991-cbf1-2b55-c2b4496f4703@ti.com>
+Date: Wed, 5 Feb 2020 12:19:06 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191006085646.5768-10-david@redhat.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200203170809.GA19293@lst.de>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_020711_997489_78F1E8DC 
-X-CRM114-Status: GOOD (  14.89  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200205_021928_068589_6363C70F 
+X-CRM114-Status: GOOD (  23.35  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,98 +98,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Wei Yang <richardw.yang@linux.intel.com>
-Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
- linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
- linux-sh@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Wei Yang <richardw.yang@linux.intel.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: robh@kernel.org, vigneshr@ti.com, konrad.wilk@oracle.com,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org, rogerq@ti.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Oct 06, 2019 at 10:56:45AM +0200, David Hildenbrand wrote:
->Get rid of the unnecessary local variables.
->
->Cc: Andrew Morton <akpm@linux-foundation.org>
->Cc: Oscar Salvador <osalvador@suse.de>
->Cc: David Hildenbrand <david@redhat.com>
->Cc: Michal Hocko <mhocko@suse.com>
->Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
->Cc: Dan Williams <dan.j.williams@intel.com>
->Cc: Wei Yang <richardw.yang@linux.intel.com>
->Signed-off-by: David Hildenbrand <david@redhat.com>
-
-Looks reasonable.
-
-Reviewed-by: Wei Yang <richardw.yang@linux.intel.com>
-
->---
-> mm/memory_hotplug.c | 15 ++++++---------
-> 1 file changed, 6 insertions(+), 9 deletions(-)
->
->diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
->index 8dafa1ba8d9f..843481bd507d 100644
->--- a/mm/memory_hotplug.c
->+++ b/mm/memory_hotplug.c
->@@ -374,14 +374,11 @@ static unsigned long find_biggest_section_pfn(int nid, struct zone *zone,
-> static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
-> 			     unsigned long end_pfn)
-> {
->-	unsigned long zone_start_pfn = zone->zone_start_pfn;
->-	unsigned long z = zone_end_pfn(zone); /* zone_end_pfn namespace clash */
->-	unsigned long zone_end_pfn = z;
-> 	unsigned long pfn;
-> 	int nid = zone_to_nid(zone);
-> 
-> 	zone_span_writelock(zone);
->-	if (zone_start_pfn == start_pfn) {
->+	if (zone->zone_start_pfn == start_pfn) {
-> 		/*
-> 		 * If the section is smallest section in the zone, it need
-> 		 * shrink zone->zone_start_pfn and zone->zone_spanned_pages.
->@@ -389,25 +386,25 @@ static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
-> 		 * for shrinking zone.
-> 		 */
-> 		pfn = find_smallest_section_pfn(nid, zone, end_pfn,
->-						zone_end_pfn);
->+						zone_end_pfn(zone));
-> 		if (pfn) {
->+			zone->spanned_pages = zone_end_pfn(zone) - pfn;
-> 			zone->zone_start_pfn = pfn;
->-			zone->spanned_pages = zone_end_pfn - pfn;
-> 		} else {
-> 			zone->zone_start_pfn = 0;
-> 			zone->spanned_pages = 0;
-> 		}
->-	} else if (zone_end_pfn == end_pfn) {
->+	} else if (zone_end_pfn(zone) == end_pfn) {
-> 		/*
-> 		 * If the section is biggest section in the zone, it need
-> 		 * shrink zone->spanned_pages.
-> 		 * In this case, we find second biggest valid mem_section for
-> 		 * shrinking zone.
-> 		 */
->-		pfn = find_biggest_section_pfn(nid, zone, zone_start_pfn,
->+		pfn = find_biggest_section_pfn(nid, zone, zone->zone_start_pfn,
-> 					       start_pfn);
-> 		if (pfn)
->-			zone->spanned_pages = pfn - zone_start_pfn + 1;
->+			zone->spanned_pages = pfn - zone->zone_start_pfn + 1;
-> 		else {
-> 			zone->zone_start_pfn = 0;
-> 			zone->spanned_pages = 0;
->-- 
->2.21.0
-
--- 
-Wei Yang
-Help you, Help me
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAwMy8wMi8yMDIwIDE5LjA4LCBDaHJpc3RvcGggSGVsbHdpZyB3cm90ZToKPiBPbiBGcmks
+IEphbiAzMSwgMjAyMCBhdCAwNDowMDoyMFBNICswMjAwLCBQZXRlciBVamZhbHVzaSB3cm90ZToK
+Pj4gSSBzZWUuIE15IFBvQyBwYXRjaCB3YXMgbm90IHRvbyBvZmYgdGhlbiA7KQo+PiBTbyB0aGUg
+cGxhbiBpcyB0byBoYXZlIGEgZ2VuZXJpYyBpbXBsZW1lbnRhdGlvbiBmb3IgYWxsIG9mIHRoZQo+
+PiBhcmNoaXRlY3R1cmUsIHJpZ2h0Pwo+IAo+INCGIGRvbid0IGtub3cgb2YgYSBjb25jcmV0ZSBw
+bGFuLCBidXQgdGhhdCdzIGRlZmludGl2ZWx5IHdoYXQgSSdkIGxpa2UKPiB0byBzZWUuCj4gCj4+
+Pj4gVGhlIGRtYV9wZm5fb2Zmc2V0IGlzIF9zdGlsbF8gYXBwbGllZCB0byB0aGUgbWFzayB3ZSBh
+cmUgdHJ5aW5nIHRvIHNldAo+Pj4+IChhbmQgdmFsaWRhdGUpIHZpYSBkbWEtZGlyZWN0Lgo+Pj4K
+Pj4+IEFuZCBmb3IgdGhlIGdlbmVyYWwgY2FzZSB0aGF0IGlzIGV4YWN0bHkgdGhlIHJpZ2h0IHRo
+aW5nIHRvIGRvLCB3ZQo+Pj4ganVzdCBuZWVkIHRvIGRlYWwgd2l0aCByZWFsbHkgb2RkIFpPTkVf
+RE1BIHBsYWNlbWVudHMgbGlrZSB5b3Vycy4KPj4KPj4gSSdtIHN0aWxsIG5vdCBjb252aW5jZWQs
+IHRoZSBwb2ludCBvZiB0aGUgRE1BIG1hc2ssIGF0IGxlYXN0IGhvdyBJIHNlZQo+PiBpdCwgdG8g
+Y2hlY2sgdGhhdCB0aGUgZG1hIGFkZHJlc3MgY2FuIGJlIGhhbmRsZWQgYnkgdGhlIGRldmljZSAo
+RE1BLAo+PiBwZXJpcGhlcmFsIHdpdGggYnVpbHQgaW4gRE1BLCBldGMpLCBpdCBpcyBub3QgYWdh
+aW5zdCBwaHlzaWNhbCBhZGRyZXNzLgo+PiBEb2luZyBwaHlzX3RvX2RtYSgpIG9uIHRoZSBtYXNr
+IGZyb20gdGhlIGRtYV9zZXRfbWFzaygpIGlzIGp1c3Qgd3JvbmcuCj4gCj4gV2UgaGF2ZSBhIHRy
+YW5zbGF0aW9uIGJldHdlZW4gdGhlIGFkZHJlc3NlcyB0aGF0IHRoZSBkZXZpY2Ugc2VlcywgYW5k
+Cj4gdGhvc2UgdGhhdCB0aGUgQ1BVIHNlZXMuICBUaGUgZGV2aWNlIGNhbiBhZGRyZXNzIE4gYml0
+cyBvZiBhZGRyZXNzIHNwYWNlCj4gYXMgc2VlbiBmcm9tIHRoZSBkZXZpY2UuICBUaGUgYWRkcmVz
+c2VzIGVuY29kZWQgaW4gbWF4X3BmbiwKPiB6b25lX2RtYV9iaXRzIG9yIHRoZSBoYXJjb2RlZCAz
+MiBpbiB0aGUgem9uZSBkbWEgMzIgY2FzZSBhcmUgQ1BVIGFkZHJlc3MuCj4gU28gbm8sIHdlIGNh
+bid0IGJsaW5kbHkgY29tcGFyZSB0aG9zZS4KClJpZ2h0LCB0aGFua3MgZm9yIHRoZSBleHBsYW5h
+dGlvbi4KCj4+PiBCdXQgdGhhdCB3aWxsIGNhdXNlIHlldCBhbm90aGVyIHJlZ3Jlc3Npb24gaW4g
+d2hhdCB3ZSBoYXZlIGp1c3QgZml4ZWQKPj4+IHdpdGggdXNpbmcgdGhlIGdlbmVyaWMgZGlyZWN0
+IG9wcywgYXQgd2hpY2ggcG9pbnRzIGl0IHR1cm5zIGludG8gd2hvCj4+PiBzY3JlYW1zIGxvdWRl
+ci4KPj4KPj4gSGVoZSwgSSBzZWUuCj4+IEkgZ2VudWluZWx5IGN1cmlvdXMgd2h5IGsyIHBsYXRm
+b3JtIHdvcmtlZCBqdXN0IGZpbmUgd2l0aCBMUEFFIChpdCBuZWVkcwo+PiBpdCksIGJ1dCBndXlz
+IGhhZCBpc3N1ZXMgd2l0aCBMUEFFIG9uIGRyYTcvYW01Lgo+PiBUaGUgZml4IGZvciBkcmE3L2Ft
+NSBicm9rZSBrMi4KPj4gQXMgZmFyIGFzIEkgY2FuIHNlZSB0aGUgbWFpbiAob25seSkgZGlmZmVy
+ZW5jZSBpcyB0aGF0IGsyIGhhdmUKPj4gZG1hX3Bmbl9vZmZzZXQgPSAweDc4MDAwMCwgd2hpbGUg
+ZHJhNy9hbTUgaGF2ZSBpdCAwIChyZWFsbHkgZGlyZWN0IG1hcHBpbmcpLgo+IAo+IEhvdyBtdWNo
+IG1lbW9yeSBkb2VzIHRoZSBwbGF0Zm9ybSBoYXZlPwoKVGhlIGJvYXJkcyB3aGljaCBpcyBib290
+YWJsZSBpbiBtYWlubGluZSBoYXZlIG1heGltdW0gb2YgMkcsIHRoZXJlIG1pZ2h0CmJlIGN1c3Rv
+bSBib2FyZHMgd2l0aCBtb3JlIFJBTSwgYnV0IEknbSBub3QgYXdhcmUgb2YgdGhlbS4KCj4gT25j
+ZSB5b3UgYXJlIGFib3ZlIDMyLWJpdHMgd29ydGgKPiBvZiBhZGRyZXNzIHNwYWNlIGRldmljZXMg
+d2l0aCBhIDMyLWJpdCBETUEgbWFzayBjYW4ndCBhZGRyZXNzIGFsbCB0aGUKPiBtZW1vcnkuICBO
+b3cgaWYgazIgZm9yIGV4YW1wbGUgb25seSBoYWQgbGVzcyB0aGFuIDRHIG9mIG1lbW9yeSwgYnV0
+IGF0Cj4gYWRkcmVzc2VzIG92ZXIgNEcsIGFuZCB0aGUgb2Zmc2V0IGNvbXBlbnNhdGVzIGZvciB0
+aGUgb2Zmc2V0IG9mIHRoZSBEUkFNCj4gaXQgd29ya3Mgd2l0aG91dCBib3VuY2UgYnVmZmVyaW5n
+IGFuZCB0aHVzIGRpZG4ndCBuZWVkIHN3aW90bGIuICBCdXQgYW55Cj4gcGxhdGZvcm0gdGhhdCBo
+YXMgRFJBTSB0aGF0IGlzIG5vdCBhZGRyZXNzYWJsZSB3aWxsIG5lZWQgc3dpb3RsYi4KCkkgc2Vl
+LCBzaW5jZSB3ZSBoYXZlIG1heGltdW0gb2YgMkcsIHdoaWNoIGlzIG1pcnJvcmVkIGF0IDB4ODAw
+MDAwMDAgZm9yCmRldmljZXMgd2UgbmV2ZXIgbmVlZGVkIHRoZSBhc3Npc3RhbmNlIGZyb20gc3dp
+b3RsYiBmb3IgYm91bmNlIGJ1ZmZlcmluZwphbmQgdGhhdCdzIHdoeSB0aGUgYXJtIG9wcyB3b3Jr
+ZWQgZmluZS4KCj4gCj4+PiAgCXU2NCBtaW5fbWFzazsKPj4+ICAKPj4+ICsJaWYgKG1hc2sgPj0g
+RE1BX0JJVF9NQVNLKDMyKSkKPj4+ICsJCXJldHVybiAxOwo+Pj4gKwo+Pgo+PiBSaWdodCwgc28g
+c2tpcHBpbmcgcGh5c190b19kbWEoKSBmb3IgdGhlIG1hc2sgYW5kIGJlbGlldmluZyB0aGF0IGl0
+IHdpbGwKPj4gd29yay4uCj4+Cj4+IEl0IGRvZXM6IGF1ZGlvIGFuZCBkbWF0ZXN0IG1lbWNweSB0
+ZXN0cyBhcmUganVzdCBmaW5lIHdpdGggdGhpcywgTU1DCj4+IGFsc28gcHJvYmVkIHdpdGggQURN
+QSBlbmFibGVkLgo+Pgo+PiBBcyBmYXIgYXMgSSBjYW4gdGVsbCBpdCB3b3JrcyBhcyB3ZWxsIGFz
+IGZhbGxpbmcgYmFjayB0byB0aGUgb2xkIGFybSBvcHMKPj4gaW4gY2FzZSBvZiBMUEFFICYmIGRt
+YV9wZm5fb2Zmc2V0ICE9IDAKPj4KPj4gRndpdzoKPj4gVGVzdGVkLWJ5OiBQZXRlciBVamZhbHVz
+aSA8cGV0ZXIudWpmYWx1c2lAdGkuY29tPgo+Pgo+PiBXb3VsZCB5b3UgYmUgY29tZm9ydGFibGUg
+dG8gc2VuZCB0aGlzIHBhdGNoIGZvciBtYWlubGluZSB3aXRoCj4+IEZpeGVzOiBhZDNjN2IxOGM1
+YjMgKCJhcm06IHVzZSBzd2lvdGxiIGZvciBib3VuY2UgYnVmZmVyaW5nIG9uIExQQUUKPj4gY29u
+ZmlncyIpCj4gCj4gVGhhdCBpcyB0aGUgYmlnIHF1ZXN0aW9uLiAgSSBkb24ndCBmZWVsIG92ZXJs
+eSBjb21mb3J0YWJsZSBhcyBJJ3ZlIGJlZW4KPiB0cnlpbmcgdG8gZ2V0IHRoaXMgcmlnaHQsIGJ1
+dCBzbyBmYXIgaXQgc2VlbXMgbGlrZSB0aGUgbGVhc3QgYmFkIG9wdGlvbi4KPiBJJ2xsIHNlbmQg
+b3V0IGEgcHJvcGVyIHBhdGNoIHdpdGggdXBkYXRlZCBjb21tZW50cyBhbmQgd2lsbCBzZWUgd2hh
+dAo+IHBlb3BsZSB0aGluay4KCkkgdW5kZXJzdGFuZCBhbmQgdGhhbmsgeW91IGZvciB0aGUgcGF0
+Y2gsIGl0IG1ha2VzIGsyIHBsYXRmb3JtIHdvcmtpbmcKYWdhaW4hCgotIFDDqXRlcgoKVGV4YXMg
+SW5zdHJ1bWVudHMgRmlubGFuZCBPeSwgUG9ya2thbGFua2F0dSAyMiwgMDAxODAgSGVsc2lua2ku
+ClktdHVubnVzL0J1c2luZXNzIElEOiAwNjE1NTIxLTQuIEtvdGlwYWlra2EvRG9taWNpbGU6IEhl
+bHNpbmtpCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
