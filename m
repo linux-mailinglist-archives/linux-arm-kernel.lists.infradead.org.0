@@ -2,87 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59340153081
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 13:23:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FEB2153090
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 13:26:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Dpp5V4xTZj+QwLE6yyYNfLG4oQq5Mu+NNkQ2TH2431s=; b=s6vxEXKjMi/qDqLUYXNCKxEDT
-	dQOLaXdMilr5vPK9PJ1skwfzxs+bO8LK7ONwIP/ocWem+7Y2n+RXrYvWcP503FkR6x+w1OCJkiyF/
-	L3ENS4Pqvx7tbYTmO4125BTTKlFZDiGGGPlSgXM3DiNcJiZ6mwRW3WUiH1wz6KCXYle4n2k1YiL6H
-	gY7jQ28NnfRgaYV7by22G9YpgZvfjWhPupIA38OkznTM81Jf2ny+p1UiIFM6Vwfr8ozZTs9U5LHQq
-	hUBdOfQvd6mSayOqLxzISrQ0uqLS/rk/H95nP2k1bqBMZe6AshV9fab450Y3lrJa7wTHOrM0m+Rcc
-	LVFMWLO9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=3zt5md8PYMQOhGltg/gtst9IO0FtW/sfYmQObsgXRvk=; b=XbH
+	u9+SyfXGPRH01ONlqOGZTTvrGGPxplSdn2q4jcDJzqkEJqwdxp/L6H7mKkhf+9yewzOoCSTj9h5Cs
+	N1IiuPIgFgZLu28H3UwOuXpKn1dVcHIftYx0+hery2bcpZOJx1MLDv+y71VPXofs+qWduCxlJGSRr
+	hwTmBSvX5S/tVxrrx1j5iTgBf2af5tkpdwUknGu/g6unYexLSMFBrXNiD0ttc1VZSK2nbLvCYVwI2
+	BwsQ7xSggyLS0LDnWM1sFM3GCMJiru8+gqSPD6jMtFixDZJ6DDVhm1Cayb01NdTr9BeIF+vknIqkf
+	P6NuDD0QSEh7rSP5zKb4SFZJKnXmneA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izJiD-0007Y4-FI; Wed, 05 Feb 2020 12:23:21 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1izJlW-0000nG-J4; Wed, 05 Feb 2020 12:26:46 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izJi6-0007VU-Mi
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 12:23:16 +0000
+ id 1izJlK-0000mH-Kg
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 12:26:38 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1580905394; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=uMCCQYZszq+bmmu00qnksmPsuxhQeLZVhG8wCPSsiv4=;
- b=ey95Mwz2dHsyNWshYDbfBLL8q1LepZAA76vK59GRYO6nHoYcKGtcH8c7MA+kzC+TrHRKkDLX
- Nt+3xsUuk+ymx9HmfVSYkKUqz/nIWeDuBoyagfd38YkPpSS6qgPk4nFImR9+Q+QRtMbhhhF2
- S4FUDb0hcFIIa/VgKtqsfIUxTRI=
-X-Mailgun-Sending-Ip: 104.130.122.25
+ s=smtp; t=1580905597; h=Message-Id: Date: Subject: Cc: To: From:
+ Sender; bh=VQYmbPaY8MPrUfg022IBP+geTXmFMxGGDigIsbDvgZE=;
+ b=pXDWXz0UZ7+Gvl0EsVQOvDvHGDkWHMbLZgRWhjhWtpTZAkVJvL9NN7PoiML+cECucK2Tk8c7
+ Ks+oWd58w7tJ8KCz8x9FDtEFMgg2aNVfT3UQM4o26U0qgn9Wngk9W2bxhejX3Z3AjMjBvEan
+ 6sR/dkJZPqdIbU0PxbyQD9fD8Do=
+X-Mailgun-Sending-Ip: 104.130.122.26
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e3ab3ad.7f81a1ef4d50-smtp-out-n02;
- Wed, 05 Feb 2020 12:23:09 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e3ab476.7ff4dabdb960-smtp-out-n01;
+ Wed, 05 Feb 2020 12:26:30 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 0B183C4479C; Wed,  5 Feb 2020 12:23:09 +0000 (UTC)
+ id 79DF2C447A2; Wed,  5 Feb 2020 12:26:29 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [10.206.13.37]
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mkshah-linux.qualcomm.com
  (blr-c-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.19.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: mkshah)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 3B304C433CB;
- Wed,  5 Feb 2020 12:23:02 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 3B304C433CB
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 52B7BC43383;
+ Wed,  5 Feb 2020 12:26:23 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 52B7BC43383
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  spf=none smtp.mailfrom=mkshah@codeaurora.org
-Subject: Re: [PATCH v3 5/7] drivers: firmware: psci: Add hierarchical domain
- idle states converter
-To: Sudeep Holla <sudeep.holla@arm.com>
-References: <1580736940-6985-1-git-send-email-mkshah@codeaurora.org>
- <1580736940-6985-6-git-send-email-mkshah@codeaurora.org>
- <20200203170832.GA38466@bogus>
- <0d7f7ade-3a1e-5428-d851-f1a886f58712@codeaurora.org>
- <20200204152132.GA44858@bogus>
 From: Maulik Shah <mkshah@codeaurora.org>
-Message-ID: <6ff7c82d-4204-a339-4070-0154ab4515f1@codeaurora.org>
-Date: Wed, 5 Feb 2020 17:53:00 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
-MIME-Version: 1.0
-In-Reply-To: <20200204152132.GA44858@bogus>
-Content-Language: en-GB
+To: swboyd@chromium.org, agross@kernel.org, david.brown@linaro.org,
+ sudeep.holla@arm.com, Lorenzo.Pieralisi@arm.com
+Subject: [PATCH v4 0/6] Add RSC power domain support
+Date: Wed,  5 Feb 2020 17:56:06 +0530
+Message-Id: <1580905572-22712-1-git-send-email-mkshah@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_042314_962747_D41C5D26 
-X-CRM114-Status: GOOD (  21.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200205_042637_432905_F1E9D9FF 
+X-CRM114-Status: GOOD (  12.35  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.26 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -97,116 +89,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dianders@chromium.org, lsrao@codeaurora.org, Lorenzo.Pieralisi@arm.com,
- rnayak@codeaurora.org, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, evgreen@chromium.org,
- swboyd@chromium.org, david.brown@linaro.org, agross@kernel.org,
- ilina@codeaurora.org, ulf.hansson@linaro.org, bjorn.andersson@linaro.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Maulik Shah <mkshah@codeaurora.org>, lsrao@codeaurora.org,
+ dianders@chromium.org, rnayak@codeaurora.org, linux-pm@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ evgreen@chromium.org, bjorn.andersson@linaro.org, ilina@codeaurora.org,
+ ulf.hansson@linaro.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Changes in v4:
+- Add change to allow hierarchical topology in PC mode
+- Drop hierarchical domain idle states converter from v3
+- Address Merge sc7180 dtsi change to add low power modes
 
-On 2/4/2020 8:51 PM, Sudeep Holla wrote:
-> On Tue, Feb 04, 2020 at 10:22:42AM +0530, Maulik Shah wrote:
->> On 2/3/2020 10:38 PM, Sudeep Holla wrote:
->>> On Mon, Feb 03, 2020 at 07:05:38PM +0530, Maulik Shah wrote:
->>>> From: Ulf Hansson <ulf.hansson@linaro.org>
->>>>
->>>> If the hierarchical CPU topology is used, but the OS initiated mode isn't
->>>> supported, we need to rely solely on the regular cpuidle framework to
->>>> manage the idle state selection, rather than using genpd and its
->>>> governor.
->>>>
->>>> For this reason, introduce a new PSCI DT helper function,
->>>> psci_dt_pm_domains_parse_states(), which parses and converts the
->>>> hierarchically described domain idle states from DT, into regular flattened
->>>> cpuidle states. The converted states are added to the existing cpuidle
->>>> driver's array of idle states, which make them available for cpuidle.
->>>>
->>> And what's the main motivation for this if OSI is not supported in the
->>> firmware ?
->> Hi Sudeep,
->>
->> Main motivation is to do last-man activities before the CPU cluster can
->> enter a deep idle state.
->>
-> Details on those last-man activities will help the discussion. Basically
-> I am wondering what they are and why they need to done in OSPM ?
+Changes in v3:
+- Address Rob's comment on dt property value
+- Address Stephen's comments on rpmh-rsc driver change
+- Include sc7180 cpuidle low power mode changes from [1]
+- Include hierarchical domain idle states converter change from [2]
 
-Hi Sudeep,
+Changes in v2:
+- Add Stephen's Reviewed-By to the first three patches
+- Addressed Stephen's comments on fourth patch
+- Include changes to connect rpmh domain to cpuidle and genpds
 
-there are cases like,
+Resource State Coordinator (RSC) is responsible for powering off/lowering
+the requirements from CPU subsystem for the associated hardware like buses,
+clocks, and regulators when all CPUs and cluster is powered down.
 
-Last cpu going to deepest idle mode need to lower various resoruce 
-requirements (for eg DDR freq).
+RSC power domain uses last-man activities provided by genpd framework based on
+Ulf Hansoon's patch series[3], when the cluster of CPUs enter deepest idle
+states. As a part of domain poweroff, RSC can lower resource state requirements
+by flushing the cached sleep and wake state votes for resources.
 
-This is done by calling rpmh_flush which send SLEEP values for various 
-shared resources.
+[1] https://patchwork.kernel.org/patch/11218965
+[2] https://patchwork.kernel.org/patch/10941671
+[3] https://patchwork.kernel.org/project/linux-arm-msm/list/?series=222355
 
->>>> Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
->>>> [applied to new path, resolved conflicts]
->>>> Signed-off-by: Maulik Shah <mkshah@codeaurora.org>
->>>> ---
->>>>    drivers/cpuidle/cpuidle-psci-domain.c | 137 +++++++++++++++++++++++++++++-----
->>>>    drivers/cpuidle/cpuidle-psci.c        |  41 +++++-----
->>>>    drivers/cpuidle/cpuidle-psci.h        |  11 +++
->>>>    3 files changed, 153 insertions(+), 36 deletions(-)
->>>>
->>>> diff --git a/drivers/cpuidle/cpuidle-psci-domain.c b/drivers/cpuidle/cpuidle-psci-domain.c
->>>> index 423f03b..3c417f7 100644
->>>> --- a/drivers/cpuidle/cpuidle-psci-domain.c
->>>> +++ b/drivers/cpuidle/cpuidle-psci-domain.c
->>>> @@ -26,13 +26,17 @@ struct psci_pd_provider {
->>>>    };
->>>>
->>>>    static LIST_HEAD(psci_pd_providers);
->>>> -static bool osi_mode_enabled __initdata;
->>>> +static bool osi_mode_enabled;
->>>>
->>>>    static int psci_pd_power_off(struct generic_pm_domain *pd)
->>>>    {
->>>>    	struct genpd_power_state *state = &pd->states[pd->state_idx];
->>>>    	u32 *pd_state;
->>>>
->>>> +	/* If we have failed to enable OSI mode, then abort power off. */
->>>> +	if ((psci_has_osi_support()) && !osi_mode_enabled)
->>>> +		return -EBUSY;
->>>> +
->>> Why is this needed ? IIUC we don't create genpd domains if OSI is not
->>> enabled.
->> we do create genpd domains, for cpu domains, we just abort power off here
->> since idle states are converted into regular flattened mode.
->>
-> OK, IIRC the OSI patches from Ulf didn't add the genpd or rather removed
-> them in case of any failure to enable OSI. Has that been changed ? If so,
-> why ?
->
->> however genpd poweroff will be used by parent domain (rsc in this case)
->> which is kept in hireachy in DTSI with cluster domain to do last man
->> activities.
->>
-> I am bit confused here. Either we do OSI or PC and what you are describing
-> sounds like a mix-n-match to me and I am totally against it.
+Maulik Shah (5):
+  drivers: qcom: rpmh: fix macro to accept NULL argument
+  drivers: qcom: rpmh: remove rpmh_flush export
+  dt-bindings: soc: qcom: Add RSC power domain specifier
+  drivers: qcom: rpmh-rsc: Add RSC power domain support
+  arm64: dts: qcom: sc7180: Add cpuidle low power states
 
-we still do PC based on sc7180. there is no OSI.
+Ulf Hansson (1):
+  drivers: firmware: psci: Allow hierarchical topology in PC mode
 
-can you please check v4 series, i have cleaned this change by remove 
-converter part.
-
-Thanks,
-
-Maulik
-
->
-> --
-> Regards,
-> Sudeep
+ .../devicetree/bindings/soc/qcom/rpmh-rsc.txt      |   9 ++
+ arch/arm64/boot/dts/qcom/sc7180.dtsi               | 135 +++++++++++++++++++++
+ drivers/cpuidle/cpuidle-psci-domain.c              |  32 +++--
+ drivers/cpuidle/cpuidle-psci.c                     |  34 +++---
+ drivers/soc/qcom/rpmh-internal.h                   |   3 +
+ drivers/soc/qcom/rpmh-rsc.c                        |  81 +++++++++++++
+ drivers/soc/qcom/rpmh.c                            |  22 ++--
+ include/soc/qcom/rpmh.h                            |   5 -
+ 8 files changed, 269 insertions(+), 52 deletions(-)
 
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum, hosted by The Linux Foundation
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
