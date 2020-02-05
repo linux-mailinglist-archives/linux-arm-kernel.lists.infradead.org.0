@@ -2,63 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E6DE1536D9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 18:39:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 696581536DA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 18:40:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iEc6ef1ulCzx197c252D7Jkgof6lxak7JQqKNV358tU=; b=cb6Qxu+J67rcBTZtBACeeGhdU
-	UICD8WemicwxIepYLG+E0R2Q7gb7b00OPBb5qOrSm1HONgFaZ5BTxVyyWumkyVFXRu584kbZks4BS
-	Tn6kcIsvRrzeDxM8GvyQwlcfFZEUxwlEc03LOyX78y8VUg36bhh+dga+NZ7XF0Wox2bjf3AY9IQVY
-	r4CDPzO97qopzIGVEeUhxO2+TeO5o8gvttXvh5AiSJR9cGFFHnGYnYqeoylgr6GTO6WcQoSIupG27
-	CjrNuFDH1aHZUIN0ySnBCeBz4BOF7/xLuj5mkUllggPHQ0Ak0tSaFu3TXUdK+2T5+ncNzi+KCFRNU
-	09RBEpw6Q==;
+	 bh=jgjXvcCDuDA0XXhNUBAjhFnxf0lZdNEJ3DPTsPpcyqo=; b=F011s8EIyz9885+phMExsG8fi
+	nI3j1MUpJg4hpLT6T3W0TRbjKsUh3EdGH12/J/Y6HLNk/a1k1uuZuxpUgjlcjtpKs+mZWM4aQzDRd
+	Iw3cOZRyG9nzHLyZ81pLCbrs+p1ArrQbN/bavyomwf0vkqRkfbaXlKOyQEv+Gwj6NOwJmn26U6rD0
+	Zfr/D64QgSc73AtV6dCS3VfN697YTBMCtQpf0rnAOBv4VQkpwE9sz9WrnR/78uL6zFC6quhxR7R0g
+	VdPPdc1dEZVLmDkd3Uhl0IYXeUK126kzB8sGeIls/cErrG5nMrDvL7j2dW5TisDLUYjng3RFwWp3z
+	FqyArVHHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izOeJ-0007DQ-56; Wed, 05 Feb 2020 17:39:39 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izOeB-0007Cr-Ag; Wed, 05 Feb 2020 17:39:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6A1741FB;
- Wed,  5 Feb 2020 09:39:27 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7B8603F52E;
- Wed,  5 Feb 2020 09:39:26 -0800 (PST)
-Subject: Re: [PATCH] arm64: dts: rockchip: Fix rk3328-roc-cc sdmmcio-regulator
-To: Adam Van Ymeren <adam@vany.ca>, Peter Geis <pgwipeout@gmail.com>
-References: <87imkryz5t.fsf@vany.ca>
- <7b9829b3-e2d2-95b1-03cb-1af7a3c6acad@arm.com>
- <4a6a9d81-c831-4167-7fbf-64805940fb6f@vany.ca>
- <d8a8b696-268b-1ea8-7b5e-406a651011ff@arm.com>
- <510d310b-30af-7b24-d472-907bc6b2ef46@vany.ca>
- <CAMdYzYo5V2rHE6Axx9p67n3FcCFpQ5TA+m7kqaE3Uqn6d0QUhw@mail.gmail.com>
- <7b36198e-25c0-4f3b-d871-6bd5aaf619d8@vany.ca>
- <CAMdYzYp_dVjn18-6gy5MVpuGcOpf26eaPitfNZhARCixfrtYCA@mail.gmail.com>
- <2f863743-f5fd-7702-ac22-762dbca834cb@vany.ca>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <aa1ecada-687b-dd86-508c-b57a6df6f406@arm.com>
-Date: Wed, 5 Feb 2020 17:39:25 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1izOeY-0007NN-63; Wed, 05 Feb 2020 17:39:54 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izOeF-0007EV-Er
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 17:39:37 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 185so1573052pfv.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Feb 2020 09:39:34 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=aO5p5IBLxlU8LmggP8EmaW7PqxkUQ4rk9prwoiPWExY=;
+ b=LFEU7F5uRUHvjlHxU71R+6/md8i08kseXhFg8q/mXFNEvx4HMeFGZljgfUttHo5+J6
+ kV7Np7W1PZZ38VSOWJtq3+lnECqnHmlydR90zYKVffplVYCGHkFqnG0mtYWUPxioAWZL
+ UMsKw4DME/VMUvTxq642siQQgTIfXUOghivlg=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=aO5p5IBLxlU8LmggP8EmaW7PqxkUQ4rk9prwoiPWExY=;
+ b=T6m/+7NhdUmbBjfW1U65fssI8zrF7YHz3c+euqtaiw8KGOqnfxPVmNBSGQZT4bTWPH
+ 2XB2XJDZ4kXQE7qdB29o7LyMhNAj2SWPkWbpl/BMR9svng6C80HOvnSpKxZ/bolXJFtz
+ H3FY1apgAfBRUelfJlBa15691ZryugHFkZupJ5e4O7+u4HtjuApkVXwKuwaOZsTuzGqR
+ XyCew0xzbOjczvO+ndhuwvUun1zpeOdi3Ga9dfg3pjX7G8Jayi1alzH/CiWmS5fX/cRa
+ V3r8oee/z/CODOMxmRM5SBAJuZb6mCm2XyKOnSWGrRVa+VJYKxPKdFNqluO1G8kF45iy
+ JN5Q==
+X-Gm-Message-State: APjAAAVCFvzDv90SUshjVkJRlSe2Sr7zNUlA1F714shIvz3tlHJh8y0n
+ QqB4dX7jbMbnHhaITyw5MBPGdA==
+X-Google-Smtp-Source: APXvYqx8kJG30FrBwFchNB07QuFE4dTA8rPgEi4RVVBWzFM230ur6MhRgba9ASq4e0C0OXPpkdRZuw==
+X-Received: by 2002:a63:4d4c:: with SMTP id n12mr38694833pgl.212.1580924373586; 
+ Wed, 05 Feb 2020 09:39:33 -0800 (PST)
+Received: from [10.136.13.65] ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id h3sm140257pfr.15.2020.02.05.09.39.31
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 05 Feb 2020 09:39:32 -0800 (PST)
+Subject: Re: [PATCH v2 00/12] dt-bindings: arm: bcm: Convert boards to YAML
+To: Florian Fainelli <f.fainelli@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200204235552.7466-1-f.fainelli@gmail.com>
+From: Scott Branden <scott.branden@broadcom.com>
+Message-ID: <2d263951-fbc5-ae5f-6643-b72debf5aa05@broadcom.com>
+Date: Wed, 5 Feb 2020 09:39:30 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <2f863743-f5fd-7702-ac22-762dbca834cb@vany.ca>
-Content-Language: en-GB
+In-Reply-To: <20200204235552.7466-1-f.fainelli@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_093931_412461_832DA478 
-X-CRM114-Status: GOOD (  19.14  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200205_093935_539825_87CBCB0C 
+X-CRM114-Status: GOOD (  16.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,47 +98,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Heiko Stuebner <heiko@sntech.de>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, "james.tai" <james.tai@realtek.com>,
+ Arnd Bergmann <arnd@arndb.de>, Scott Branden <sbranden@broadcom.com>,
+ Sugaya Taichi <sugaya.taichi@socionext.com>, Ray Jui <rjui@broadcom.com>,
+ open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Andrew Jeffery <andrew@aj.id.au>, Vinod Koul <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "maintainer:BROADCOM IPROC ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>, Joel Stanley <joel@jms.id.au>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/02/2020 4:14 pm, Adam Van Ymeren wrote:
-[...]
->>> Calling regmap_write seems wrong, as we end up setting all bits in the register, so this should probably be regmap_update_bits.  The top 16-bits are write-enable for the lower 16-bits, but I can't find documentation if it works to set both the write enable bit and the target bit at the same time.
->> data = (val ? BIT(bit) : 0) | BIT(bit + 16); handles setting both the
->> bit and the write bit.
-> Right I saw that, I was more wondering if it's legal to set both in the
-> same operation, or if the chip requires you to set the write bit, and
-> then the data bit in a subsequent write.
+Thanks Florian,
 
-The point of this particular hardware idiom is that the mask indicates 
-which data bits to update, and both mask and data are part of a single 
-write, thus there is no need for a non-atomic read-modify-write 
-sequence. For example:
+Patch series:
 
-- register value is 0x00000000
-- write 0xffffffff (mask all set, data all 1s)
-- register value is now 0x0000ffff
-- write 0x00090000 (mask bits 0 and 3 set, corresponding data bit values 0)
-- register value is now 0x0000fff6
+Acked-by: Scott Branden <scott.branden@broadcom.com>
 
+On 2020-02-04 3:55 p.m., Florian Fainelli wrote:
+> Hi Rob, Maxime,
+>
+> This patch series converts most files under D/dt-bindings/arm/bcm/ with
+> the exception of bcm63138 and brcmstb to the YAML format. Those two may
+> be split accordingly later on since document not just the root node.
+>
+> Changes in v2:
+>
+> - fixed typo in Vulcan binding
+> - simplified how SoC compatible strings are specified
+> - fixed filename in bcm2835 firmware binding
+> - added 'secondary-boot-reg' constraint
+>
+>
+> Florian Fainelli (12):
+>    dt-bindings: arm: bcm: Convert Cygnus to YAML
+>    dt-bindings: arm: bcm: Convert Hurricane 2 to YAML
+>    dt-bindings: arm: bcm: Convert Northstar Plus to YAML
+>    dt-bindings: arm: bcm: Convert Northstar 2 to YAML
+>    dt-bindings: arm: bcm: Convert Stingray to YAML
+>    dt-bindings: arm: bcm: Convert BCM21664 to YAML
+>    dt-bindings: arm: bcm: Convert BCM23550 to YAML
+>    dt-bindings: arm: bcm: Convert BCM4708 to YAML
+>    dt-bindings: arm: bcm: Convert BCM11351 to YAML
+>    dt-bindings: arm: bcm: Convert Vulcan to YAML
+>    dt-bindings: arm: Document Broadcom SoCs 'secondary-boot-reg'
+>    dt-bindings: arm: bcm: Convert BCM2835 firmware binding to YAML
+>
+>   .../arm/bcm/brcm,bcm11351-cpu-method.txt      | 36 --------
+>   .../bindings/arm/bcm/brcm,bcm11351.txt        | 10 ---
+>   .../bindings/arm/bcm/brcm,bcm11351.yaml       | 21 +++++
+>   .../bindings/arm/bcm/brcm,bcm21664.txt        | 15 ----
+>   .../bindings/arm/bcm/brcm,bcm21664.yaml       | 21 +++++
+>   .../arm/bcm/brcm,bcm23550-cpu-method.txt      | 36 --------
+>   .../bindings/arm/bcm/brcm,bcm23550.txt        | 15 ----
+>   .../bindings/arm/bcm/brcm,bcm23550.yaml       | 21 +++++
+>   .../bindings/arm/bcm/brcm,bcm4708.txt         | 15 ----
+>   .../bindings/arm/bcm/brcm,bcm4708.yaml        | 88 +++++++++++++++++++
+>   .../bindings/arm/bcm/brcm,cygnus.txt          | 31 -------
+>   .../bindings/arm/bcm/brcm,cygnus.yaml         | 29 ++++++
+>   .../devicetree/bindings/arm/bcm/brcm,hr2.txt  | 14 ---
+>   .../devicetree/bindings/arm/bcm/brcm,hr2.yaml | 28 ++++++
+>   .../devicetree/bindings/arm/bcm/brcm,ns2.txt  |  9 --
+>   .../devicetree/bindings/arm/bcm/brcm,ns2.yaml | 23 +++++
+>   .../bindings/arm/bcm/brcm,nsp-cpu-method.txt  | 39 --------
+>   .../devicetree/bindings/arm/bcm/brcm,nsp.txt  | 34 -------
+>   .../devicetree/bindings/arm/bcm/brcm,nsp.yaml | 36 ++++++++
+>   .../bindings/arm/bcm/brcm,stingray.txt        | 12 ---
+>   .../bindings/arm/bcm/brcm,stingray.yaml       | 24 +++++
+>   .../bindings/arm/bcm/brcm,vulcan-soc.txt      | 10 ---
+>   .../bindings/arm/bcm/brcm,vulcan-soc.yaml     | 22 +++++
+>   .../arm/bcm/raspberrypi,bcm2835-firmware.txt  | 14 ---
+>   .../arm/bcm/raspberrypi,bcm2835-firmware.yaml | 33 +++++++
+>   .../devicetree/bindings/arm/cpus.yaml         | 33 +++++++
+>   26 files changed, 379 insertions(+), 290 deletions(-)
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351-cpu-method.txt
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm11351.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm21664.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550-cpu-method.txt
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm23550.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,bcm4708.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,cygnus.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,hr2.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,hr2.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,ns2.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,ns2.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,nsp-cpu-method.txt
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,nsp.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,nsp.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,stingray.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,stingray.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/brcm,vulcan-soc.yaml
+>   delete mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
+>   create mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+>
 
-FWIW I've confirmed on my box that there doesn't seem to be any problem 
-with the grf-gpio driver itself - setting the value to 1 or 0 from 
-userspace shows up as the enable pin on the audio line driver (per the 
-RK3328 reference design) going high and low respectively.
-
-One thing I did notice, though, is that GPIO_MUTE seems to have some 
-inherent coupling to the analog codec, as the value automatically goes 
-high when starting to play audio, and low again when stopping (but can 
-still be manually toggled in between). Thus unless there's some secret 
-to disabling that behaviour then it might not be safe to enable analog 
-audio on these ROC-CC boards for fear of messing up peoples' SD cards.
-
-Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
