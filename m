@@ -2,57 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 581B6153B56
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 23:48:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E74A6153B40
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 23:45:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XT1SHd+I28nLmaplc7knJJZiqWnCRii2S9ehMYOIf6Y=; b=aOm0+CeVRlF11k
-	M6puo30fwmb/nDN+0L0PSNdwV7EFsCWbJUHJZvjP1YP3KJpm+ycbD2mO797cLnQ+moLs6nicJPhpb
-	6yb5VNO8Qk3zu9chena3ZSkVv5uP6+UWZp4JGl/ZAbVqoYW41cwawsZpv2Yy7sE55syjjEsbdNaSm
-	xI0gamwj1uHotmuOMZhiuD8SdJd454MkxVYgVka8SWMVOFSD76TNa0XleyeDnsRfEdFCy+2yi6L/+
-	GeOVJfn0RbVDV7ZurfvXX4OI1Z7LcUMhIh5hVzH8Wwn1pd2oF12+U4Suh128AYfn4IesY0wh3uqPG
-	uwCZbulkl0HyMwqTmgoA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CHqxanr4GKsm3iyYM0L2WdzDiuhAjoFns+47qs+WpMg=; b=PIhMUHL5icvZqJ
+	Z0GqDugoX6rEtS9N+IOmAOT6e8gbGlKXCD2q2KkOCfRQ28ljurTJWPKrsi1HcZO3zJ8NX4fjuX56b
+	SWx46Ocqnw1o99UJx0cU7M8kEIiZyzfesrjvPb0vXMD//RYN42hQ5FHk9r8ct1MbEnevOWc/FRPAO
+	Z92HcQIHGRiR8cKcvDeBaxfbyKk+8r5QPekiZ3z+RFuq+UVJIa1ra1nLn3vSEQF/7dkw+4xiqchnr
+	dYowc001ZifQs+jXSV5huw0EVTTMlEqf0hdXsPfhiRL2yEXZ3USJnIX73+gaDkU2GvmOwD3Q3ybLn
+	glNHLN8vT3bqaCsiQpPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izTTV-0004gQ-Gn; Wed, 05 Feb 2020 22:48:49 +0000
-Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
+	id 1izTQG-0003vC-Gj; Wed, 05 Feb 2020 22:45:28 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izTTO-0004fg-5A
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 22:48:43 +0000
-Received: from zyt.lan (unknown [IPv6:2a02:169:3df5::564])
- by mail.kmu-office.ch (Postfix) with ESMTPSA id E20FD5C406B;
- Wed,  5 Feb 2020 23:48:39 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
- t=1580942919;
+ id 1izTQ9-0003uV-QU
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 22:45:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580942719;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:
- content-transfer-encoding:content-transfer-encoding:in-reply-to:
- references; bh=tBtu8B42mNFXo0ApOnr9YHTy4lOe3v9EM8sVU3KDriA=;
- b=aClxP9hOfUae4u21PzuVsB8WUA5RhBSd/UM7Hdz/J/PN726NUE724SUfRo3AA5aAZwuBFB
- jOLf+ZLjSGCoSjOX9EpAxTp5ACzwciMrYTQRhJ7MexzyPhJ0LDB3R7FoNAYU3qh1X2ytKv
- lssJthU0irgBNngOpDmgM9c3KOxmClo=
-From: Stefan Agner <stefan@agner.ch>
-To: linux@armlinux.org.uk
-Subject: [PATCH] arm: make kexec depend on MMU
-Date: Wed,  5 Feb 2020 23:43:44 +0100
-Message-Id: <5b595d37283f043df78259221f2b7d18e0cb0ce5.1580942558.git.stefan@agner.ch>
-X-Mailer: git-send-email 2.25.0
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=dLW36RQDcQlBWq87U9OJm0bMCerLux+JLB20TQpqI/c=;
+ b=fynN7DoZQR2/2OgHT3zT99gexl2ZayKv8mm2HrBGXGumU5x8j6xYc+BcParpbbFa3q2rkT
+ d+ePtcPA/Ojctsi7MgjxH8hkIbG8IZttKL3K8YZz4Pf4jlryU2alZ6UKlEmnMzGY52vvqQ
+ uEcbBM3mkIkzOGaraBiHmDXtfABxv4E=
+Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com
+ [209.85.222.199]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-324-ycCvKcrhP_2hnijW-WGXQg-1; Wed, 05 Feb 2020 17:45:17 -0500
+Received: by mail-qk1-f199.google.com with SMTP id x127so2345178qkb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Feb 2020 14:45:17 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Qhu3K4UfMyr9rLuPVrEXyLiBiRw+0bLNH6EYh61xjr4=;
+ b=jLoYI4jPbZAsSSBZLXuDu6dvUi/qUNDJcqW0le8wlhcOo2SnvzyPG5h1twwvY+BB12
+ 9KTeoQnvulPYIjzv5fHCu4+qjq2433V+vqePf1lHpUVldCkh2KV48Xp+totvQiUhqdAe
+ FshiPwAC0asXGrMzJ74B+TqRfqyq6ZSbBfXjnK3FIEobsgKY7vh+E5pyU6AsESJQRiCx
+ rV3kZwmQMN1fuvcDbnWJBWOTBQ6hIbK92LG1ckbgYwhxSYcK/hKmxYeA3Az8TbL+lqbB
+ 5A6lD7mZtTnBrLbkOQ4yjs7uzbZWgGda9Z4g6EalQHPt69r4VfxvL1pqGgHlY7dzaaqU
+ pxKQ==
+X-Gm-Message-State: APjAAAWI9PMurMlLjImhjSX0vNrv6bULLZmN3Z2AOTg39lC8F8ZNH2d0
+ /6bu1ocmS4p+/L2nOsQAgLrfojS3orDp8zV9P2ai7e1NE+A43n0/P9iltcmteYAROnt/e/zczuB
+ /VRwOEOpEU999Rlk7fERKfiYxdpMwQOBAYpA=
+X-Received: by 2002:a05:620a:1654:: with SMTP id
+ c20mr61827qko.116.1580942717358; 
+ Wed, 05 Feb 2020 14:45:17 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyAvhOweFr4KXXnP5Mb9+7dhUBLh1Z13T+81iDjtWqZt6EK3UE5xX8DXWaSS5tvfd+S4d7C7g==
+X-Received: by 2002:a05:620a:1654:: with SMTP id
+ c20mr61812qko.116.1580942717130; 
+ Wed, 05 Feb 2020 14:45:17 -0800 (PST)
+Received: from xz-x1 ([2607:9880:19c8:32::2])
+ by smtp.gmail.com with ESMTPSA id x22sm615496qtq.30.2020.02.05.14.45.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 05 Feb 2020 14:45:16 -0800 (PST)
+Date: Wed, 5 Feb 2020 17:45:13 -0500
+From: Peter Xu <peterx@redhat.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>
+Subject: Re: [PATCH v5 06/19] KVM: Drop kvm_arch_create_memslot()
+Message-ID: <20200205224513.GH387680@xz-x1>
+References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
+ <20200121223157.15263-7-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
-X-Spam: Yes
+In-Reply-To: <20200121223157.15263-7-sean.j.christopherson@intel.com>
+X-MC-Unique: ycCvKcrhP_2hnijW-WGXQg-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_144842_345367_3EDACB06 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20200205_144521_936268_B33FD8E1 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -60,6 +98,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,55 +110,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Hocko <mhocko@suse.com>, arnd@arndb.de, linus.walleij@linaro.org,
- nsekhar@ti.com, linux-kernel@vger.kernel.org, Stefan Agner <stefan@agner.ch>,
- bgolaszewski@baylibre.com, benjamin.gaignard@linaro.org,
- mchehab+samsung@kernel.org, armlinux@m.disordat.com, akpm@linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
+ Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Philippe =?utf-8?Q?Mathieu-Daud=C3=A9?= <f4bug@amsat.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Michal Hocko <mhocko@suse.com>
+On Tue, Jan 21, 2020 at 02:31:44PM -0800, Sean Christopherson wrote:
+> Remove kvm_arch_create_memslot() now that all arch implementations are
+> effectively nops.  Removing kvm_arch_create_memslot() eliminates the
+> possibility for arch specific code to allocate memory prior to setting
+> a memslot, which sets the stage for simplifying kvm_free_memslot().
+> 
+> Cc: Janosch Frank <frankja@linux.ibm.com>
+> Acked-by: Christian Borntraeger <borntraeger@de.ibm.com>
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 
-arm nommu config with KEXEC enabled doesn't compile
-arch/arm/kernel/setup.c: In function 'reserve_crashkernel':
-arch/arm/kernel/setup.c:1005:25: error: 'SECTION_SIZE' undeclared (first
-use in this function)
-             crash_size, SECTION_SIZE);
+Reviewed-by: Peter Xu <peterx@redhat.com>
 
-since 61603016e212 ("ARM: kexec: fix crashkernel= handling") which is
-over one year without anybody noticing. I have only noticed beause of
-my testing nommu config which somehow gained CONFIG_KEXEC without
-an intention. This suggests that nobody is actually using KEXEC
-on nommu ARM configs. It is even a question whether kexec works with
-nommu.
-
-Make KEXEC depend on MMU to make this clear. If somebody wants to enable
-there will be probably more things to take care.
-
-Signed-off-by: Michal Hocko <mhocko@suse.com>
-Reviewed-by: Stefan Agner <stefan@agner.ch>
-Signed-off-by: Stefan Agner <stefan@agner.ch>
----
- arch/arm/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 96dab76da3b3..59ce8943151f 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -1906,6 +1906,7 @@ config KEXEC
- 	bool "Kexec system call (EXPERIMENTAL)"
- 	depends on (!SMP || PM_SLEEP_SMP)
- 	depends on !CPU_V7M
-+	depends on MMU
- 	select KEXEC_CORE
- 	help
- 	  kexec is a system call that implements the ability to shutdown your
 -- 
-2.25.0
+Peter Xu
 
 
 _______________________________________________
