@@ -2,84 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E2641523E2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 01:10:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 035261524B3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 03:11:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:From:Subject:To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p9hnbwO0t09KFQ+0KNcnATvI1LfyF/oJgdG2Jl2DGGM=; b=PtaczodcFxN2es
-	+qUj5veNjWtCtM+zNm02wiF6xoT1us0tJRoSQXxg/pE6eOau84X7CUSU4M34zR56RlPj8HhnP4rkC
-	88eluBDwDRefB+q2KkWqz2T9o/YvzbBbW9WDYCpeAIWtYXlD1F4idrOStzVyMjNwf935+RFu4JpVl
-	bIXBB94VbtW0ZcxNeIDabDCUtfYdgDE7HbH/rPXrjMU5quU+i5+Cd1xsi3eLB+d7TBgJRcUTNTuOA
-	mlf+DWNA5Wj6QbFqHpa8sij2DDhaS5+OahdPv1RGRMf/p0VsxtENHBI3hHIo6C7ZwLAVJKy9LeEiY
-	DPxWAlVorPOCpQ7j6wOg==;
+	List-Owner; bh=49IDgasqMxrp4kc5MRRTN1A9xRayyMA4C30eq5TkK20=; b=sex98w/r18pOIv
+	YjB+NRCfq6YyBjbHS2bQI7anT01Uck+3EvWNHQtX4OyUi+G+d9c3zS6Oc1BrJ++mgrl1HsPYZDmuH
+	BCpnDx+TNCRKf5CkYvH7j5d9SsUDNNIo1gi9r1vzJGN1cV2tuTTOCQvcc7WZ2pXoQCOIw/++4Cx0f
+	ch75L9xFkPMoERoCAaUoBjo6DfuGoU/+Jwk0rlHhT9i3YizDiQusGAlj74ClAXqJBLT2TrzA6jjdE
+	N0FLoiSXtQRC2CS4vcU+lbj/bAhhZ74lDQU8c2qhnGmGZK6cOboYgtqpqGtNCEOe80rqpDx0cqalx
+	YFQVOUXjBd1X4D5SByow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iz8HC-0001DC-K7; Wed, 05 Feb 2020 00:10:42 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1izA9b-0006Eu-Gj; Wed, 05 Feb 2020 02:10:59 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iz8EM-0005hc-Sz; Wed, 05 Feb 2020 00:07:48 +0000
-Received: by mail-pl1-x644.google.com with SMTP id t14so81164plr.8;
- Tue, 04 Feb 2020 16:07:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=rNgHMA6kv0sEkVkQCHv5m/SCpI5yps7HvaSz94olJGw=;
- b=FduV5e7HHuIFti5m8veUplRlVddJCO+yldY9RyI4aJLl69t7Q56G9YCzNz/5uK2rqh
- uKV8J0rtb6IsQZpQj95xIZ0wHnhuRqQVM4HjKZ2u/qr0vxDj+isgnnCifl7sg1xzlQWr
- PlJ3X/0IlWdSc99RZlKgYNXmhV2KLNP/JaR3Bs0IkRqbERYO4QdyrhsPfCf7dHO2eeQU
- uQJyJI6YD5YU7LqywP5PA4CYVKAhQpV+7t32Qo4gBLRt8sLQVF9IgkqYZqiwXoncausw
- 43fG6VTKvbGo8RYi8IciME75p7KCcnjY1FKx3T6GuRvhxlDM/Q1/f6M58xTQ/zYu+NmW
- cnpg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=rNgHMA6kv0sEkVkQCHv5m/SCpI5yps7HvaSz94olJGw=;
- b=ArzEGiBBcf6Io0FhV6UgblyU+JlhQb2aBlu/Gvzp5/jhsZnUWXc9kwLwEj305VWbJ4
- XbsM/qlHlppOIQQ+4AbChrEsizF0nGskZftTvc8SQQOxcCnpdpffYXFz3QZnrP5P99UY
- JZXB0p004jgdrAsoQRbgDggIGcuI+UXGqygNy8iOe/SmnOKNadqT3K11u9LbZKu4fKkl
- 7RRhwzGkNrtXrUiGc+yS4vhUdhJi4SxQzHnYiKdYR4KImIg33nH0yjn8AK3PDaIzDnuF
- EhyT4qwjmlD/y58C9vM4z+q/tLiRRW8UUjU9bHn7eBuAH2P9yLSoEbZXzM6h8W0Qh0V3
- DQdg==
-X-Gm-Message-State: APjAAAWkSJCuLpLcFth98yhe05i+4Mz2qNIUORSjLhfYdxL4Rul47qQZ
- ebGfqCjMy8+9jyaE4MlKDppuMNym
-X-Google-Smtp-Source: APXvYqzHjGGFyqHeoAwdAmsvIQYeZobj3KRq8ev1PClEsjo0BTz7/NwXacj13yx/it/VHATevfm1Lw==
-X-Received: by 2002:a17:902:9a42:: with SMTP id
- x2mr33932389plv.194.1580861265516; 
- Tue, 04 Feb 2020 16:07:45 -0800 (PST)
-Received: from localhost.localdomain (ip68-111-84-250.oc.oc.cox.net.
- [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id g2sm25575468pgn.59.2020.02.04.16.07.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 04 Feb 2020 16:07:45 -0800 (PST)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 12/12] dt-bindings: arm: bcm: Convert BCM2835 firmware
- binding to YAML
-Date: Tue,  4 Feb 2020 15:55:52 -0800
-Message-Id: <20200204235552.7466-13-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.19.1
-In-Reply-To: <20200204235552.7466-1-f.fainelli@gmail.com>
-References: <20200204235552.7466-1-f.fainelli@gmail.com>
+ id 1izA9U-0006E4-7t; Wed, 05 Feb 2020 02:10:53 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 015297hc172996;
+ Wed, 5 Feb 2020 02:10:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=to : cc : subject :
+ from : references : date : in-reply-to : message-id : mime-version :
+ content-type; s=corp-2019-08-05;
+ bh=WTxvDcELfnF6+kyZJkHVSDKOjDn1Mu05lE76QB+AYnA=;
+ b=khBX16i5gBh8xA8zLYM1AJW9TKme7kfJ+2pMQBFgVLj335if9R4Yq3e3SFb27hXdgLAs
+ 8Q4qUGOOpWSLLKM9KDzVd4XDS6msZaA+g/0v1gOgKcbogwq6V8Kj2fICQpYwNkarCEoz
+ L7IyEOlFqe1M9621Db1YCU3ZeHC5KRBiB5SMlrstlf3PUnOKZWl9SU+0OVewGwKnG+FI
+ hKQqqmET2qciTZLfM5inAtgwzxFxFMAiYhjNypONNvfayUGO74lZMorUpV501RaOtJP5
+ 2iC8RpAB0lTfMR3uZ0ecOc1oW8KgTNNVtis1iqWyvjPcSPz1Po8x3KebzE1j2yXHh8tN Sg== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2120.oracle.com with ESMTP id 2xykbp87uf-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 05 Feb 2020 02:10:39 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id 01529BlJ130653;
+ Wed, 5 Feb 2020 02:10:39 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3030.oracle.com with ESMTP id 2xykc04rj0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 05 Feb 2020 02:10:39 +0000
+Received: from abhmp0014.oracle.com (abhmp0014.oracle.com [141.146.116.20])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 0152AbU3030895;
+ Wed, 5 Feb 2020 02:10:37 GMT
+Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 04 Feb 2020 18:10:37 -0800
+To: Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH RESEND v3 0/4] MediaTek UFS vendor implemenation part III
+ and Auto-Hibern8 fix
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+Organization: Oracle Corporation
+References: <20200129105251.12466-1-stanley.chu@mediatek.com>
+Date: Tue, 04 Feb 2020 21:10:32 -0500
+In-Reply-To: <20200129105251.12466-1-stanley.chu@mediatek.com> (Stanley Chu's
+ message of "Wed, 29 Jan 2020 18:52:47 +0800")
+Message-ID: <yq1ftfp238n.fsf@oracle.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
 MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9521
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1911140001 definitions=main-2002050015
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9521
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1911140001
+ definitions=main-2002050015
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200204_160746_965282_6DD9946A 
-X-CRM114-Status: GOOD (  14.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200204_181052_367933_4524630D 
+X-CRM114-Status: GOOD (  11.91  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -88,6 +96,11 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,98 +112,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- "james.tai" <james.tai@realtek.com>, Arnd Bergmann <arnd@arndb.de>,
- Scott Branden <sbranden@broadcom.com>,
- Sugaya Taichi <sugaya.taichi@socionext.com>, Ray Jui <rjui@broadcom.com>,
- open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Andrew Jeffery <andrew@aj.id.au>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM IPROC ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>, Joel Stanley <joel@jms.id.au>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>
+Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
+ cang@codeaurora.org, linux-mediatek@lists.infradead.org,
+ peter.wang@mediatek.com, alim.akhtar@samsung.com, matthias.bgg@gmail.com,
+ asutoshd@codeaurora.org, bvanassche@acm.org,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the Raspberry Pi BCM2835 firmware binding document to YAML.
-Verified with dt_binding_check and dtbs_check.
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- .../arm/bcm/raspberrypi,bcm2835-firmware.txt  | 14 --------
- .../arm/bcm/raspberrypi,bcm2835-firmware.yaml | 33 +++++++++++++++++++
- 2 files changed, 33 insertions(+), 14 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
- create mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+Stanley,
 
-diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
-deleted file mode 100644
-index 6824b3180ffb..000000000000
---- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
-+++ /dev/null
-@@ -1,14 +0,0 @@
--Raspberry Pi VideoCore firmware driver
--
--Required properties:
--
--- compatible:		Should be "raspberrypi,bcm2835-firmware"
--- mboxes:		Phandle to the firmware device's Mailbox.
--			  (See: ../mailbox/mailbox.txt for more information)
--
--Example:
--
--firmware {
--	compatible = "raspberrypi,bcm2835-firmware";
--	mboxes = <&mailbox>;
--};
-diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-new file mode 100644
-index 000000000000..db355d970f2b
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-@@ -0,0 +1,33 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/bcm/raspberrypi,bcm2835-firmware.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Raspberry Pi VideoCore firmware driver
-+
-+maintainers:
-+  - Eric Anholt <eric@anholt.net>
-+  - Stefan Wahren <wahrenst@gmx.net>
-+
-+properties:
-+  compatible:
-+    const: raspberrypi,bcm2835-firmware simple-bus
-+
-+  mboxes:
-+    $ref: '/schemas/types.yaml#/definitions/phandle'
-+    description: |
-+      Phandle to the firmware device's Mailbox.
-+      (See: ../mailbox/mailbox.txt for more information)
-+
-+required:
-+  - compatible
-+  - mboxes
-+
-+examples:
-+  - |
-+    firmware {
-+        compatible = "raspberrypi,bcm2835-firmware";
-+        mboxes = <&mailbox>;
-+    };
-+...
+> v3 (Resend) - Fix "Fixes" tag in patch "scsi: ufs: fix Auto-Hibern8
+> error detection" (Greg KH)
+
+Next time, if you make changes, please bump the version number. Doesn't
+matter how small the change is.
+
+Applied to 5.7/scsi-queue. Thanks!
+
 -- 
-2.19.1
-
+Martin K. Petersen	Oracle Linux Engineering
 
 _______________________________________________
 linux-arm-kernel mailing list
