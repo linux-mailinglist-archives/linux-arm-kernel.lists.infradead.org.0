@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 246A41531A8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 14:21:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 688BA1531B3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 14:23:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dbvbK3lwLnwQ/dkA56ALHdvgx4+q9dxmg75BJg6h5ac=; b=K70PCrTGc4H/6s
-	WXICSzi1TCcfK/3Pd6Bdj5UJvLO1UJLrOcAEcNQiGIw2cESh7SrVaHG6Jx+2NSdW8YBipYpxkJ9qd
-	BAHBm+szIfUf1WAXHDaSwayu9Ueu4yvLi6uyENM5FcYneS8JpiyglE6um8mmkq3hpXHVfqv7Oenx6
-	U+K/rSgmFgqyiOdWjLxL8JajRTQ12RTj2OcTMzKkR/Uq6+0XYUUTCk5WbzwtFMbYhGS+qPsphBaJf
-	R9qNUNrY8W2EgkBhw4IUmIPT1sdJoe+XZuSzgr8T7rRVNoRd68LFp2G3z9pKqdLNaw8+/YgRlyBfJ
-	u6m1ruTJodrMMn3NnZAA==;
+	List-Owner; bh=6FAiqP5hcgK73dpKFERWEZpssI7iZb9rQumrZqjg+9A=; b=MT5mbKemlLloSB
+	yn+NVSQRqmUiJRxWOe+/AQYrp/3f8c46EiBTDzbv2UPLMTFk+0I4nPwyLcSef/lAbljH277Yrd0Rz
+	pEakvPlTjaHQ643brbD6Xh32v0jxcpU8XZPmjwGYXv6WkKeyK7ChfF/+5RXYhzndd5PwCQhfcDcAo
+	Tl6SuSX5Gdf3kMEJT4MURI18yqrqk7f9OCsUCzXiZ8lNfvf44xpt4BvJTGG+9dG+ZTcxYe+XUPeiP
+	Ap0e9oWlCL6M50s6mFAN/BJhJVsS/yQ4Xo7kJ20fBGpOnUOp/fZszTJkmWJM+NWKaL0MAspJRSWY5
+	+o4AZSV5igEpUFKgjrJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izKcA-0005yN-PY; Wed, 05 Feb 2020 13:21:10 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1izKeT-0006N9-TV; Wed, 05 Feb 2020 13:23:33 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izKc2-0005y1-72
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 13:21:03 +0000
+ id 1izKeK-0006Mi-V1
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 13:23:26 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1580908861;
+ s=mimecast20190719; t=1580909003;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
- bh=k30HWzyr2VHDAxbOSWiUW17hdh6rPreuhEPLrt3uSUA=;
- b=Q0kvsaxeEJRS/yQw36SJUQL1RNxcAzBKleehz+kECiFw5lZQDFkTumMSTFwY8rTboCm+On
- KGwcI/rVoADfSyr7YXQQaLljLENewjbG+BdtFn4SJiL2EhFB2s+hM3lKgEATVyr8pzIKy8
- Y+/V6uV0OVbsabP1LsoEwB0TqfwetHQ=
+ bh=xBiSdqEAqZIY07c3za8+PdD61PFRehSQQaEIkUBcRlQ=;
+ b=D3Qr/40Q+CW+5pSEUW3JMtSs94za0LjsAL3SdK7x45907uDEPRGGyLkx0Z1mlN3D/Oh0CN
+ 7OgFbjWEXqOjH/Un1zDhKFz0CN6F4UWLraNuLL+VMzMB69f5BaCaT63ZADLHpcV2ODQ4Yf
+ mrFmRUY1il3QLjJnsYM/HWn4FP5ACLQ=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-354-KTGJBMZwMwCDQ2xsLl-Lbg-1; Wed, 05 Feb 2020 08:20:58 -0500
-X-MC-Unique: KTGJBMZwMwCDQ2xsLl-Lbg-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
+ us-mta-416-464rQBRpOJ6t1YK_Jegulg-1; Wed, 05 Feb 2020 08:23:20 -0500
+X-MC-Unique: 464rQBRpOJ6t1YK_Jegulg-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 767B210054E3;
- Wed,  5 Feb 2020 13:20:56 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1074613FD;
+ Wed,  5 Feb 2020 13:23:18 +0000 (UTC)
 Received: from [10.36.116.217] (ovpn-116-217.ams2.redhat.com [10.36.116.217])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 8BA3910018FF;
- Wed,  5 Feb 2020 13:20:53 +0000 (UTC)
-Subject: Re: [PATCH v6 08/10] mm/memory_hotplug: Don't check for "all holes"
- in shrink_zone_span()
-To: Baoquan He <bhe@redhat.com>
-References: <20191006085646.5768-1-david@redhat.com>
- <20191006085646.5768-9-david@redhat.com>
- <20200204142516.GD26758@MiWiFi-R3L-srv>
- <e0006cc4-d448-89c6-38c0-51da7fc08715@redhat.com>
- <20200205124329.GE26758@MiWiFi-R3L-srv>
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 30F6A60BF7;
+ Wed,  5 Feb 2020 13:23:15 +0000 (UTC)
+Subject: Re: [PATCH v6 10/10] mm/memory_hotplug: Cleanup __remove_pages()
 From: David Hildenbrand <david@redhat.com>
+To: Segher Boessenkool <segher@kernel.crashing.org>
+References: <20191006085646.5768-1-david@redhat.com>
+ <20191006085646.5768-11-david@redhat.com> <20200204094652.GE6494@linux>
+ <5d698f94-af18-0714-bc97-14b6c520572c@redhat.com>
+ <20200204131353.GJ22482@gate.crashing.org>
+ <0e2f700c-b01b-8c16-99c2-2648967fc203@redhat.com>
+ <20200205125149.GS22482@gate.crashing.org>
+ <32e06c13-222c-4486-3914-df2807cf2a2b@redhat.com>
+ <8f4752f5-c676-f56e-8cd2-239898aba2fd@redhat.com>
 Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  mQINBFXLn5EBEAC+zYvAFJxCBY9Tr1xZgcESmxVNI/0ffzE/ZQOiHJl6mGkmA1R7/uUpiCjJ
  dBrn+lhhOYjjNefFQou6478faXE6o2AhmebqT4KiQoUQFV4R7y1KMEKoSyy8hQaK1umALTdL
@@ -100,24 +102,24 @@ Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
  njnuI31KBiLUks+paRkHQlFcgS2N3gkRBzH7xSZ+t7Re3jvXdXEzKBbQ+dC3lpJB0wPnyMcX
  FOTT3aZT7IgePkt5iC/BKBk3hqKteTnJFeVIT7EC+a6YUFg=
 Organization: Red Hat GmbH
-Message-ID: <cd353848-301a-025d-dd66-44d76e1bbc44@redhat.com>
-Date: Wed, 5 Feb 2020 14:20:52 +0100
+Message-ID: <9c6a3d3a-06de-2474-4147-82ab9ba446ed@redhat.com>
+Date: Wed, 5 Feb 2020 14:23:14 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.3.1
 MIME-Version: 1.0
-In-Reply-To: <20200205124329.GE26758@MiWiFi-R3L-srv>
+In-Reply-To: <8f4752f5-c676-f56e-8cd2-239898aba2fd@redhat.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_052102_335273_06F0A312 
-X-CRM114-Status: GOOD (  17.05  )
+X-CRM114-CacheID: sfid-20200205_052325_070280_D118BB27 
+X-CRM114-Status: GOOD (  10.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -151,66 +153,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05.02.20 13:43, Baoquan He wrote:
-> On 02/04/20 at 03:42pm, David Hildenbrand wrote:
->> On 04.02.20 15:25, Baoquan He wrote:
->>> On 10/06/19 at 10:56am, David Hildenbrand wrote:
->>>> If we have holes, the holes will automatically get detected and removed
->>>> once we remove the next bigger/smaller section. The extra checks can
->>>> go.
->>>>
->>>> Cc: Andrew Morton <akpm@linux-foundation.org>
->>>> Cc: Oscar Salvador <osalvador@suse.de>
->>>> Cc: Michal Hocko <mhocko@suse.com>
->>>> Cc: David Hildenbrand <david@redhat.com>
->>>> Cc: Pavel Tatashin <pasha.tatashin@soleen.com>
->>>> Cc: Dan Williams <dan.j.williams@intel.com>
->>>> Cc: Wei Yang <richardw.yang@linux.intel.com>
->>>> Signed-off-by: David Hildenbrand <david@redhat.com>
->>>> ---
->>>>  mm/memory_hotplug.c | 34 +++++++---------------------------
->>>>  1 file changed, 7 insertions(+), 27 deletions(-)
->>>>
->>>> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
->>>> index f294918f7211..8dafa1ba8d9f 100644
->>>> --- a/mm/memory_hotplug.c
->>>> +++ b/mm/memory_hotplug.c
->>>> @@ -393,6 +393,9 @@ static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
->>>>  		if (pfn) {
->>>>  			zone->zone_start_pfn = pfn;
->>>>  			zone->spanned_pages = zone_end_pfn - pfn;
->>>> +		} else {
->>>> +			zone->zone_start_pfn = 0;
->>>> +			zone->spanned_pages = 0;
->>>>  		}
->>>>  	} else if (zone_end_pfn == end_pfn) {
->>>>  		/*
->>>> @@ -405,34 +408,11 @@ static void shrink_zone_span(struct zone *zone, unsigned long start_pfn,
->>>>  					       start_pfn);
->>>>  		if (pfn)
->>>>  			zone->spanned_pages = pfn - zone_start_pfn + 1;
->>>> +		else {
->>>> +			zone->zone_start_pfn = 0;
->>>> +			zone->spanned_pages = 0;
->>>
->>> Thinking in which case (zone_start_pfn != start_pfn) and it comes here.
+On 05.02.20 14:18, David Hildenbrand wrote:
+>> I'm sorry to have to correct you again for some corner cases:
 >>
->> Could only happen in case the zone_start_pfn would have been "out of the
->> zone already". If you ask me: unlikely :)
+>> ALIGN_UP(1, 4096) - 4096 = 0
+>>
+>> Again, not as easy as it seems ...
+>>
 > 
-> Yeah, I also think it's unlikely to come here.
+> Eh, wait, I'm messing up things. Will double check :)
 > 
-> The 'if (zone_start_pfn == start_pfn)' checking also covers the case
-> (zone_start_pfn == start_pfn && zone_end_pfn == end_pfn). So this
-> zone_start_pfn/spanned_pages resetting can be removed to avoid
-> confusion.
 
-At least I would find it more confusing without it (or want a comment
-explaining why this does not have to be handled and why the !pfn case is
-not possible).
-
-Anyhow, that patch is already upstream and I don't consider this high
-priority. Thanks :)
+Yes, makes sense, will send a patch and cc you. Thanks!
 
 -- 
 Thanks,
