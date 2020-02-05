@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3EEA153B31
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 23:42:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 581B6153B56
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 23:48:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UDmrYLWE+GbNTrGHlSC6OCwXXRHsiN1yakOhk1/lhas=; b=eU/nyktcEkKsyd
-	P6xFBYjxXMYOgTLYiQBAranCN48mg0qXB9tyE1wsmh9SX0E9qb6jwCQavLXh+lEOQM++w2QynV5EI
-	BBLmoj67hudBweFH9omMwPNlMrB9gUzQMmjy+aJ31aXqkgefcOg9PsnKFF5WPe0mPEKHXiyo20Ln5
-	DB/1MTj6O1SGxeW+0l1BWo4rXOrdALC0Gv9WnH/U81EL4YDRpAxHMOrt3z/0embauQE0V5+QLgjRw
-	tES+CTMhTX3V+GE0eSTMJPSfrdBVe57Gw+daXbRlyLl9ENolsmdIh2trBg84hrW7IPI827nmZKL2Q
-	Ctk88Cpk6+E49ADNFC5g==;
+	List-Owner; bh=XT1SHd+I28nLmaplc7knJJZiqWnCRii2S9ehMYOIf6Y=; b=aOm0+CeVRlF11k
+	M6puo30fwmb/nDN+0L0PSNdwV7EFsCWbJUHJZvjP1YP3KJpm+ycbD2mO797cLnQ+moLs6nicJPhpb
+	6yb5VNO8Qk3zu9chena3ZSkVv5uP6+UWZp4JGl/ZAbVqoYW41cwawsZpv2Yy7sE55syjjEsbdNaSm
+	xI0gamwj1uHotmuOMZhiuD8SdJd454MkxVYgVka8SWMVOFSD76TNa0XleyeDnsRfEdFCy+2yi6L/+
+	GeOVJfn0RbVDV7ZurfvXX4OI1Z7LcUMhIh5hVzH8Wwn1pd2oF12+U4Suh128AYfn4IesY0wh3uqPG
+	uwCZbulkl0HyMwqTmgoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izTNR-0002NT-TU; Wed, 05 Feb 2020 22:42:33 +0000
+	id 1izTTV-0004gQ-Gn; Wed, 05 Feb 2020 22:48:49 +0000
 Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izTNJ-0002M0-7E
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 22:42:26 +0000
-Received: from trochilidae.toradex.int (unknown [IPv6:2a02:169:3df5::edf])
- by mail.kmu-office.ch (Postfix) with ESMTPSA id 44ED15C406B;
- Wed,  5 Feb 2020 23:42:18 +0100 (CET)
+ id 1izTTO-0004fg-5A
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 22:48:43 +0000
+Received: from zyt.lan (unknown [IPv6:2a02:169:3df5::564])
+ by mail.kmu-office.ch (Postfix) with ESMTPSA id E20FD5C406B;
+ Wed,  5 Feb 2020 23:48:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
- t=1580942538;
+ t=1580942919;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:
  content-transfer-encoding:content-transfer-encoding:in-reply-to:
- references; bh=IMLaqe+3/cNGrP9F0fpJ/nD3jwSko8goV2jkxITs1to=;
- b=H6Qv++Ghmk/dESi8x9UO2WFr4rza3Yso7vUCNFheHj5STpl/S0T2OYVoRfQZS+fc4fv98A
- 7aG59rxGn3PZflJrTH4raYUSMHTRsi51ozcDlnXqb5htaCD3NkJ2iGEGnVX8piA1+4N7qR
- xEOIrnn56ZR/z/NfC86Nsx83QnTdtjs=
+ references; bh=tBtu8B42mNFXo0ApOnr9YHTy4lOe3v9EM8sVU3KDriA=;
+ b=aClxP9hOfUae4u21PzuVsB8WUA5RhBSd/UM7Hdz/J/PN726NUE724SUfRo3AA5aAZwuBFB
+ jOLf+ZLjSGCoSjOX9EpAxTp5ACzwciMrYTQRhJ7MexzyPhJ0LDB3R7FoNAYU3qh1X2ytKv
+ lssJthU0irgBNngOpDmgM9c3KOxmClo=
 From: Stefan Agner <stefan@agner.ch>
-To: shawnguo@kernel.org,
-	s.hauer@pengutronix.de
-Subject: [PATCH v2] ARM: imx: limit errata selection to Cortex-A9 based designs
-Date: Wed,  5 Feb 2020 23:42:14 +0100
-Message-Id: <20200205224214.253098-1-stefan@agner.ch>
+To: linux@armlinux.org.uk
+Subject: [PATCH] arm: make kexec depend on MMU
+Date: Wed,  5 Feb 2020 23:43:44 +0100
+Message-Id: <5b595d37283f043df78259221f2b7d18e0cb0ce5.1580942558.git.stefan@agner.ch>
 X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
+X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_144225_403357_B9CC8526 
-X-CRM114-Status: GOOD (  10.43  )
+X-CRM114-CacheID: sfid-20200205_144842_345367_3EDACB06 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -71,79 +71,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anson.Huang@nxp.com, arnd@arndb.de, Stefan Agner <stefan.agner@toradex.com>,
- linux@armlinux.org.uk, stefan@agner.ch, linux-kernel@vger.kernel.org,
- Oleksandr Suvorov <oleksandr.suvorov@toradex.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, festevam@gmail.com,
+Cc: Michal Hocko <mhocko@suse.com>, arnd@arndb.de, linus.walleij@linaro.org,
+ nsekhar@ti.com, linux-kernel@vger.kernel.org, Stefan Agner <stefan@agner.ch>,
+ bgolaszewski@baylibre.com, benjamin.gaignard@linaro.org,
+ mchehab+samsung@kernel.org, armlinux@m.disordat.com, akpm@linux-foundation.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stefan Agner <stefan.agner@toradex.com>
+From: Michal Hocko <mhocko@suse.com>
 
-The two erratas 754322 and 775420 are Cortex-A9 specific. The i.MX 6UL
-SoCs include a Cortex-A7 CPU and hence do not need this erratas enabeld.
-This patch moves the errata selection from the family Kconfig symbol to
-the SoC specifc Kconfig symbols where a Cortex-A9 is used.
+arm nommu config with KEXEC enabled doesn't compile
+arch/arm/kernel/setup.c: In function 'reserve_crashkernel':
+arch/arm/kernel/setup.c:1005:25: error: 'SECTION_SIZE' undeclared (first
+use in this function)
+             crash_size, SECTION_SIZE);
 
+since 61603016e212 ("ARM: kexec: fix crashkernel= handling") which is
+over one year without anybody noticing. I have only noticed beause of
+my testing nommu config which somehow gained CONFIG_KEXEC without
+an intention. This suggests that nobody is actually using KEXEC
+on nommu ARM configs. It is even a question whether kexec works with
+nommu.
+
+Make KEXEC depend on MMU to make this clear. If somebody wants to enable
+there will be probably more things to take care.
+
+Signed-off-by: Michal Hocko <mhocko@suse.com>
+Reviewed-by: Stefan Agner <stefan@agner.ch>
 Signed-off-by: Stefan Agner <stefan@agner.ch>
-Reviewed-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
-Reviewed-by: Fabio Estevam <festevam@gmail.com>
 ---
- arch/arm/mach-imx/Kconfig | 10 ++++++++--
- 1 file changed, 8 insertions(+), 2 deletions(-)
+ arch/arm/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/mach-imx/Kconfig b/arch/arm/mach-imx/Kconfig
-index 95584ee02b55..e7d7b90e2cf8 100644
---- a/arch/arm/mach-imx/Kconfig
-+++ b/arch/arm/mach-imx/Kconfig
-@@ -471,8 +471,6 @@ config	SOC_IMX53
- config SOC_IMX6
- 	bool
- 	select ARM_CPU_SUSPEND if (PM || CPU_IDLE)
--	select ARM_ERRATA_754322
--	select ARM_ERRATA_775420
- 	select ARM_GIC
- 	select HAVE_IMX_ANATOP
- 	select HAVE_IMX_GPC
-@@ -484,6 +482,8 @@ config SOC_IMX6
- config SOC_IMX6Q
- 	bool "i.MX6 Quad/DualLite support"
- 	select ARM_ERRATA_764369 if SMP
-+	select ARM_ERRATA_754322
-+	select ARM_ERRATA_775420
- 	select HAVE_ARM_SCU if SMP
- 	select HAVE_ARM_TWD
- 	select PINCTRL_IMX6Q
-@@ -494,6 +494,8 @@ config SOC_IMX6Q
- 
- config SOC_IMX6SL
- 	bool "i.MX6 SoloLite support"
-+	select ARM_ERRATA_754322
-+	select ARM_ERRATA_775420
- 	select PINCTRL_IMX6SL
- 	select SOC_IMX6
- 
-@@ -502,6 +504,8 @@ config SOC_IMX6SL
- 
- config SOC_IMX6SLL
- 	bool "i.MX6 SoloLiteLite support"
-+	select ARM_ERRATA_754322
-+	select ARM_ERRATA_775420
- 	select PINCTRL_IMX6SLL
- 	select SOC_IMX6
- 
-@@ -510,6 +514,8 @@ config SOC_IMX6SLL
- 
- config SOC_IMX6SX
- 	bool "i.MX6 SoloX support"
-+	select ARM_ERRATA_754322
-+	select ARM_ERRATA_775420
- 	select PINCTRL_IMX6SX
- 	select SOC_IMX6
- 
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 96dab76da3b3..59ce8943151f 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -1906,6 +1906,7 @@ config KEXEC
+ 	bool "Kexec system call (EXPERIMENTAL)"
+ 	depends on (!SMP || PM_SLEEP_SMP)
+ 	depends on !CPU_V7M
++	depends on MMU
+ 	select KEXEC_CORE
+ 	help
+ 	  kexec is a system call that implements the ability to shutdown your
 -- 
 2.25.0
 
