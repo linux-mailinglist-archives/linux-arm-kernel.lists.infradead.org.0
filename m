@@ -2,84 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F63B152919
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 11:26:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98760152969
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 11:49:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mmuLQMSMK0hrlN67ABeImtJFpz6KiDSWvYj2PcpVmDs=; b=jfXsIG0vym4n9I
-	70Du4Nd0GgKQqpexF5+LDshhB3a60eQcNnFCEtdORETOhbb5cZrmLcu/9p264M13+l4/k+oHAZOuW
-	98h0w93k1llGwwTBzviKMiDBsUYBIivN/EZhehfkI4JMhM6Pf201sTyZ2+yVSkpmdngcwikW1AjRO
-	NeU2SR/bHDW2/5quBywbBljcKu5QKmNhJ9cI9BRkI9qh8/WToUydG6qiScItxUMDIQbXx7fjmX3p0
-	Agl/WjZkH4Pma502oIMa+QjhcYWQzxCAc4/RHRzCo4Y1RCTQ1Z3uGg4uZdzVKNbrJXkdcIYzYCobG
-	Zn+SylV9KAiMVjfXWKUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MljOPN7GGABdH1KLqzuSGlmyXWuKTyNY7nIATUw2IoY=; b=WaqibgVns9epTq
+	n5ja/xndE9gN/Mr4P+16KXRblOCdY3JTKDAHIphwUq1m/ygeSyDBPRbYaYSdUYGxhI5pdFij7y4/Y
+	T9ASge/ZsFnicic81UdrW9BxtU0tFuuoyapZpHGlllK5vjnIG2oY47ZNaiXeybr+YwgC0EMCHknRO
+	Jpew9JCCI/CEN3k5/9cTOtismkmvDXrul7BJsj7liRvan79b60rHgA7XDXyrVnMExk8qhAjP44vhE
+	tpT3pAJAW9dhdQ4NtgRbOkbXbfzNEr1964sPDSP4KXHZle11yZd33J8PNvhFSkK9hHBb4GrYn2Cnz
+	RGwkjFDsO0CtL0/IKYeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izHt4-0001FT-Uq; Wed, 05 Feb 2020 10:26:26 +0000
-Received: from mail-out.m-online.net ([212.18.0.9])
+	id 1izIF8-00081C-07; Wed, 05 Feb 2020 10:49:14 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izHsy-0001Ey-Qj
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 10:26:22 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 48CHlt3QmQz1qrVL;
- Wed,  5 Feb 2020 11:26:18 +0100 (CET)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 48CHlt2n3nz1qyWS;
- Wed,  5 Feb 2020 11:26:18 +0100 (CET)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id HBSXmNPXnEOo; Wed,  5 Feb 2020 11:26:16 +0100 (CET)
-X-Auth-Info: JHrzpRN5i1bGPK59dBRJARvxYY/TFotrUevgJDIvwyo=
-Received: from [127.0.0.1] (unknown [195.140.253.167])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Wed,  5 Feb 2020 11:26:16 +0100 (CET)
-Subject: Re: STM32MP1 level triggered interrupts
-From: Marek Vasut <marex@denx.de>
-To: Marc Zyngier <maz@kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>
-References: <20bb72d0-8258-abc0-e729-4d3d5a75c41c@denx.de>
- <d6e02817-2464-51b9-246a-7720b607b8d6@st.com>
- <65a1c5b2-c1b9-322f-338c-e6ff6379d8d1@denx.de>
- <129d04a0-c846-506d-5726-4a1024d977a6@st.com>
- <80db762c-3b3d-f007-2f9b-dadbffd95782@denx.de>
- <360b1adc-32f1-7993-c463-e52c7a5a8a67@st.com>
- <c4f08f59acd31951527ef1d6e9409e6f@kernel.org>
- <20200123101225.nscpc5t4nmlarbw2@pengutronix.de>
- <03fd1cb7b5985b3221f66c6b0058adc8@kernel.org>
- <20200123105214.ru4j76xbisjtbtgw@pengutronix.de>
- <cf98f4fd257ba4f34c75fe1656bd341b@kernel.org>
- <e1fffd57-4814-ec36-68b4-4207e3d4ae5d@denx.de>
- <f9d98afc-6cb8-ef7b-cff7-a04e14dba4c8@st.com>
- <7e0ce712f7e34b38c8f541644026c52e@kernel.org>
- <5e1c419c-b141-52f6-88f1-ee3ab8219a4e@denx.de>
-Message-ID: <2a86d71f-3e64-8f66-3e58-df540487dcb4@denx.de>
-Date: Wed, 5 Feb 2020 11:26:16 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ id 1izIF1-00080Y-Nu
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 10:49:09 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 015AhQR8020225; Wed, 5 Feb 2020 11:49:00 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=6nWcubbJcTb/v+QZhKnKIkzKmQoSurHo8oVRf6+XpXM=;
+ b=Qb8a2pvCcgCQuiIgxFMQg/GM0mYu42OhVkYpk+kJ9oAK375nqc9s/bEWmWWc1FjkFAya
+ 07HCqeHO1cy6Pc3xEpcA6AaAjSudozxw8SIy2bgOhDRE0cIQj9acVWNe308+8v8QFKqs
+ fhOgJspOss2TXypsftkrlEMThuIAnkVZZ+PjpEWLwVpQ9olqO+zHemwgg8lv094p4Eym
+ hwWQtQUthYd22CVkbl/3a6YE0Q3ZjY+2AupiCxF6J16arW2N2BtV6FVgyNTPJ0+aF4v6
+ dTqtNfjZWAlM8oujpXKuUzFDv20zio0jC8G0I5J95rlNzlMKr3Iqh4fFWkB9Dorf8tOU 1Q== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xyhkycp4e-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 05 Feb 2020 11:49:00 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 57DD310002A;
+ Wed,  5 Feb 2020 11:48:53 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4A8522AD9FA;
+ Wed,  5 Feb 2020 11:48:53 +0100 (CET)
+Received: from localhost (10.75.127.47) by SFHDAG5NODE3.st.com (10.75.127.15)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Wed, 5 Feb 2020 11:48:52 +0100
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <vilhelm.gray@gmail.com>, <jic23@kernel.org>
+Subject: [PATCH] counter: stm32-timer-cnt: add power management support
+Date: Wed, 5 Feb 2020 11:47:58 +0100
+Message-ID: <1580899678-26393-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-In-Reply-To: <5e1c419c-b141-52f6-88f1-ee3ab8219a4e@denx.de>
-Content-Language: en-US
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-05_03:2020-02-04,
+ 2020-02-05 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_022621_168821_56F91B79 
-X-CRM114-Status: GOOD (  14.53  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200205_024908_254868_43C3E831 
+X-CRM114-Status: GOOD (  13.19  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.9 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.9 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,53 +92,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Patrick Delaunay <patrick.delaunay@st.com>,
- =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>
+Cc: alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/28/20 7:32 PM, Marek Vasut wrote:
-> On 1/24/20 10:24 AM, Marc Zyngier wrote:
->> On 2020-01-24 09:17, Alexandre Torgue wrote:
->>> On 1/23/20 11:21 PM, Marek Vasut wrote:
->>
->> [...]
->>
->>>> But I still wonder, what is the purpose of the EXTImux in that SoC?
->>>> Shouldn't that permit routing GPIOs directly into GIC SPIs, which would
->>>> then permit detecting at least level-high interrupts ?
->>>>
->>>
->>> For this SoC, EXTI block detects external line edges and rises a GIC
->>> SPI interrupt. This EXTi block is mainly used to handle HW events like
->>> buttons, clocks ... So first issue seems more to be a design issue
->>> (your design doesn't fit with MP1 datasheet).
->>>
->>> Now, let's find a solution. I'll have a look on your proposition:
->>> "check the line in EOI callback and retrig".
->>>
->>> Marc, this kind a solution could be acceptable on your side ?
->>
->> It will depend on the nature of the hack you will have to put in there.
->> If it is 100% reliable, why not? Anything short of that, probably not.
-> 
-> I had another look into this, and what we would end up is some sort of
-> phandle from exti to all the gpioX nodes in DT, would that be OK ?
-> However, if we do that, then we will have the pinctrl controller (which
-> has the gpio banks as subnodes) require the exti through a phandle and
-> exti require the gpio banks through a phandle, so we end up with some
-> sort of cyclic dependency there.
-> 
-> So we would need to somehow have exti lazily deal with it's gpioX
-> controller phandles only when someone requests level interrupt ? That
-> would probably do.
+Add suspend/resume PM sleep ops. When going to low power, enforce the
+counter isn't active.
 
-Bump? Thoughts?
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ drivers/counter/stm32-timer-cnt.c | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/drivers/counter/stm32-timer-cnt.c b/drivers/counter/stm32-timer-cnt.c
+index 3eafcce..3b84503 100644
+--- a/drivers/counter/stm32-timer-cnt.c
++++ b/drivers/counter/stm32-timer-cnt.c
+@@ -12,6 +12,7 @@
+ #include <linux/iio/types.h>
+ #include <linux/mfd/stm32-timers.h>
+ #include <linux/module.h>
++#include <linux/pinctrl/consumer.h>
+ #include <linux/platform_device.h>
+ 
+ #define TIM_CCMR_CCXS	(BIT(8) | BIT(0))
+@@ -358,10 +359,33 @@ static int stm32_timer_cnt_probe(struct platform_device *pdev)
+ 	priv->counter.num_signals = ARRAY_SIZE(stm32_signals);
+ 	priv->counter.priv = priv;
+ 
++	platform_set_drvdata(pdev, priv);
++
+ 	/* Register Counter device */
+ 	return devm_counter_register(dev, &priv->counter);
+ }
+ 
++static int __maybe_unused stm32_timer_cnt_suspend(struct device *dev)
++{
++	struct stm32_timer_cnt *priv = dev_get_drvdata(dev);
++	u32 cr1;
++
++	/* Check for active counter */
++	regmap_read(priv->regmap, TIM_CR1, &cr1);
++	if (cr1 & TIM_CR1_CEN)
++		return -EBUSY;
++
++	return pinctrl_pm_select_sleep_state(dev);
++}
++
++static int __maybe_unused stm32_timer_cnt_resume(struct device *dev)
++{
++	return pinctrl_pm_select_default_state(dev);
++}
++
++static SIMPLE_DEV_PM_OPS(stm32_timer_cnt_pm_ops, stm32_timer_cnt_suspend,
++			 stm32_timer_cnt_resume);
++
+ static const struct of_device_id stm32_timer_cnt_of_match[] = {
+ 	{ .compatible = "st,stm32-timer-counter", },
+ 	{},
+@@ -373,6 +397,7 @@ static struct platform_driver stm32_timer_cnt_driver = {
+ 	.driver = {
+ 		.name = "stm32-timer-counter",
+ 		.of_match_table = stm32_timer_cnt_of_match,
++		.pm = &stm32_timer_cnt_pm_ops,
+ 	},
+ };
+ module_platform_driver(stm32_timer_cnt_driver);
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
