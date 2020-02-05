@@ -2,79 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C7FB153196
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 14:18:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF71C15319F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 14:19:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Kd/xnSDIHOeOX1wqiRzEHTXJE3wdlZFYlvM7RP7zlWY=; b=qPHA65+DlhLBNb
-	UAFGkc25cOxn+dDXnt/2pWnn1+lQ6cfjti9OnoE75vni/pcj2dfdO8oVeOQXBelvjxxu56o57PqcB
-	tvTqaO6WFbRztkNdGwRAc7K1zPb36PNPOM1zvUzTbakQs9sp14qMPYBJYDdemAWTjqU3jr0vDyTzi
-	vVyAeo1PUihJF6oCMpyAKnaq9wy3m/7NhLogTghdIT3oFwwuUXdRUS2RpPaDKOBXM2z3TpsXcgInf
-	T1Tldd5l3Sxza70W+d9xmWkq6UTtJtgpb5D0/ioBTBt6f1ZU2O+3Ezc3PAwEDu6O6t6mamOPnhvq/
-	UtcUyI1PYlgeUzPOZObQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6z7Y7ZNAYXwtPMcj2nCRAWUp3DPGrLLpfW5xIg9W8SE=; b=K1Omin21o3Xd0Z
+	g22D08rpSpM3B/mroP0m8MsqLUrukD5mt8zucyOx/PMPvItLysPK8gR8x89KsmE4/2aNY6vTKhOcT
+	kmzHiVP096EJVr7WGm/iqGMOAPJEzHKe59MOUD4H8llkBGB7ZYYPbMBX69Pq4C0ORHaQmgVqB2z7h
+	FNbBFKNtV+IJsYn77i6Lh0aIyQKJAUQ+uY8Wq+EZBgZ3/WWkR1X8VDGErmjrQjETtUPaqF4poy3Fn
+	zZ5oKYAXtDa4yhFA1Sqgdjl0Ak/lD74GryDavzM6W1R4kjS5Fg8125nGayZTJM7cz8ZtG36fox+D3
+	Z2XQwmDKgLXUrdp+ZJeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izKZa-0003yB-Qk; Wed, 05 Feb 2020 13:18:30 +0000
-Received: from mail-lf1-x12c.google.com ([2a00:1450:4864:20::12c])
+	id 1izKa8-0004Rw-Hk; Wed, 05 Feb 2020 13:19:04 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izKZO-0003vl-TO
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 13:18:20 +0000
-Received: by mail-lf1-x12c.google.com with SMTP id f24so1469769lfh.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Feb 2020 05:18:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=EIOMLYphMJpNA+7/cnaMKo4NunF1Filqifru8THYp3U=;
- b=sTE7J6DQIsGv0QoWvKETreLGv/z9NWRkt1ySeLStEXXNquRqTGI5xQkolWVEXK4XSN
- 2anrWWTg3/tF8e2gsqsz2I2lAHrkPDYr8dpECqPq+ZpDlZRVGeMJVX6+nLfTaA/RBvZc
- 2kWvSUP3ojXsh0P+Fo7p71Y3nu1cTQcQqys7obQzxOOweeJhPzzaJwpFgVovRiqzqDN+
- cDi9BcXQ8+zVYP0S95/zt/UyD1QRCkigSM+bg3vg001YMpTtGXERdnWI7grWJJfEM7Vj
- gyTRSjEIp1vyb6XGWiarxzW6/VNikU349eFyxeK40J236APIetGGBWtl5vncRIY6O+u0
- TLjA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=EIOMLYphMJpNA+7/cnaMKo4NunF1Filqifru8THYp3U=;
- b=dFPcuizM4zV4flQqmjprtL8ofQ/FAQV/IzsKBrHjbBuj9TB2mYj8WLynS/6mvjbMiy
- oXhVfVoQJs7+tFdQ8+SJDlcxdqgnl4So3Qgr0+DlfzaclBOl53N5STTMNMTJ8TOL6lkb
- K4hrQVrj7yStW6ZWhSb+oNNAfKX5dFwbG+kzRmTAX/jNS+Bd7m31YQAd6mpTffv/Zapj
- JpYMW83ccgkEwq0M4aUNONUgSPZa22tYf1rDPw2aIyhPRWcq7is9+6knRR9fiTzopTXl
- d67wjwCKgofL5K6uPpH8aXiP+VDETJLQd/Bwwhnt3UNC5GR4m1UnO2xjK9IJD1/pPl07
- ZiRg==
-X-Gm-Message-State: APjAAAU323/BxxO/2Nk/pwx9XHGn3HyU1N8t8/YxKX3qz99BSi2ist0T
- ImxrFOlQ+WkgGi39shD7NUQzxJEFdIyL+FWVIgs=
-X-Google-Smtp-Source: APXvYqz7hg238lNYDFj0O0BaiuXgC/SGZ9yyGOhY3T6SKPMpUxvxkI0EumUC/b9aAUMMrIH1Q4mOqdZDvkQKc2KYa6I=
-X-Received: by 2002:a19:3f51:: with SMTP id m78mr17503275lfa.70.1580908696708; 
- Wed, 05 Feb 2020 05:18:16 -0800 (PST)
+ id 1izKZz-0004Qz-Bf
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 13:18:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580908734;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+ bh=hNc1+9pos96pDdq8HqhnC04/g8UEcltPv/djMZaPm1I=;
+ b=GB6fL4VPyRVM3/Jodf2sAlSRI3nx42GQrSrsbN/qSdyzRA4Csf3TDLYg0+oNktf5C971Xm
+ sV4hbVtMpKScAl0hvYK0wQ/TVNr8Trwk75oO6tSNQfbFuYVzCVcWHI/di7xj0BEfzNL4jh
+ pTy0Mux6+W4FTYRLYKVHv1ORFec5SvU=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-142-ojmElPlVNB2zczex8wCAwA-1; Wed, 05 Feb 2020 08:18:49 -0500
+X-MC-Unique: ojmElPlVNB2zczex8wCAwA-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 8291B113784D;
+ Wed,  5 Feb 2020 13:18:47 +0000 (UTC)
+Received: from [10.36.116.217] (ovpn-116-217.ams2.redhat.com [10.36.116.217])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id A1A4019C7F;
+ Wed,  5 Feb 2020 13:18:44 +0000 (UTC)
+Subject: Re: [PATCH v6 10/10] mm/memory_hotplug: Cleanup __remove_pages()
+From: David Hildenbrand <david@redhat.com>
+To: Segher Boessenkool <segher@kernel.crashing.org>
+References: <20191006085646.5768-1-david@redhat.com>
+ <20191006085646.5768-11-david@redhat.com> <20200204094652.GE6494@linux>
+ <5d698f94-af18-0714-bc97-14b6c520572c@redhat.com>
+ <20200204131353.GJ22482@gate.crashing.org>
+ <0e2f700c-b01b-8c16-99c2-2648967fc203@redhat.com>
+ <20200205125149.GS22482@gate.crashing.org>
+ <32e06c13-222c-4486-3914-df2807cf2a2b@redhat.com>
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: Red Hat GmbH
+Message-ID: <8f4752f5-c676-f56e-8cd2-239898aba2fd@redhat.com>
+Date: Wed, 5 Feb 2020 14:18:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.1
 MIME-Version: 1.0
-References: <CAOMZO5DMMCZPfwNbTaG8_iQhWg2K1XeO719nSA0Gsf2ywHy4jQ@mail.gmail.com>
- <20200205092653.GB2737@bogon.m.sigxcpu.org>
-In-Reply-To: <20200205092653.GB2737@bogon.m.sigxcpu.org>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Wed, 5 Feb 2020 10:18:10 -0300
-Message-ID: <CAOMZO5AAzK0QprHpKHaFOANjspJKd_4YaoMqAoGYG4KftcyiYw@mail.gmail.com>
-Subject: Re: sdhci timeout on imx8mq
-To: =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>
+In-Reply-To: <32e06c13-222c-4486-3914-df2807cf2a2b@redhat.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_051818_968407_914880FF 
-X-CRM114-Status: UNSURE (   7.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200205_051855_480194_3F6336A7 
+X-CRM114-Status: GOOD (  10.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:12c listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [festevam[at]gmail.com]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,6 +128,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,23 +140,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>, NXP Linux Team <linux-imx@nxp.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-s390@vger.kernel.org, Michal Hocko <mhocko@suse.com>,
+ linux-ia64@vger.kernel.org, Pavel Tatashin <pasha.tatashin@soleen.com>,
+ linux-sh@vger.kernel.org, x86@kernel.org, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Wei Yang <richardw.yang@linux.intel.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgR3VpZG8sCgpPbiBXZWQsIEZlYiA1LCAyMDIwIGF0IDY6MjYgQU0gR3VpZG8gR8O8bnRoZXIg
-PGFneEBzaWd4Y3B1Lm9yZz4gd3JvdGU6Cgo+IEkndmUgc2VlbiB0aGUgc2FtZSBvY2Nhc2lvbmFs
-bHkgb24gdGhlIGxpYnJlbSA1IHdpdGggb2xkZXIgbGludXgtbmV4dCBhcwo+IHdlbGwuIERvIHlv
-dSBoYXZlIGEgZ29vZCByZXByb2R1Y2VyPwoKWWVzLCB3aXRoIGxpbnV4LW5leHQgSSBhbHdheXMg
-Z2V0IHRoaXMgdGltZW91dCBieSBqdXN0IGJvb3RpbmcgdGhlCmtlcm5lbCBhbmQgd2FpdGluZyAx
-IG9yIDIgbWludXRlcyB3aXRob3V0IGFueSBhY3Rpdml0eS4KClJlZ2FyZHMsCgpGYWJpbyBFc3Rl
-dmFtCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+> I'm sorry to have to correct you again for some corner cases:
+> 
+> ALIGN_UP(1, 4096) - 4096 = 0
+> 
+> Again, not as easy as it seems ...
+> 
+
+Eh, wait, I'm messing up things. Will double check :)
+
+-- 
+Thanks,
+
+David / dhildenb
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
