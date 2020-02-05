@@ -2,70 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9938C152885
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 10:38:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C33B8152886
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 10:38:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zJ6wAFGuKANdRV7dnvkMyGK5CMhczf0ZRVNtCc8MJxk=; b=XiI/VpLNw0GK0P
-	W6aeuJVVjCGQkBVxp1qxhNl5tORnvoDMJ5Jy/rp8oB/rhplQfOpUT3xZHkFNxFkws/oWUd2mXHlKN
-	UIhFeo9m+qwEdm7Cth6pjGJJRy+zNztxu02CezllckIstqa/f6PMlpDVcN0Xq0me707ZKkojmdNCr
-	S+7xwUdjwSP3zeOc8si20vNls1ADc6J/g8QoNRATDnY8RnZbgP3gtlkZx8uibLlt2QCyWEvdz0mBm
-	9BGLhhGg7jC96wUa8DLd0Kxxn5Dfr7L/I+5rwtbswx0W3kf1kT+Pk0XooEhHtNuZgLn6l0ujgscnM
-	PABwWTbiUOtF8eVvCtjw==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xMlqUGKjcLA/La1GMqszXluX7gErqKDv/KcgMOam6uo=; b=XLg+c32dMUcDjh
+	HPucRxFqJJp2dL7w/PbMIV8G0Ao+MXSKbyBeY3oqB76rYCA6Ck/YXx8b5CnqbvEg1jDiebV4qpjpT
+	eyH5cY8Iid0Hx7HeVK9xcUGBtfqb4c5g3501fh165NhaUhW+KHfKOEWYAmH3//HmHg98duhD++P92
+	sE1xcHium8TZnbFRVf2q6TojDtNVWIu1oHggde7E+h+IanBB7si8ip9S8wl4S/qEUHrzdLZHkHW54
+	RB1gSiK5dkM4gWRQGuabbgpIzvm6nbmFThYiG/3GJRKO/8DSz5dfJftcb+A51yhmqOPLARlXei3GZ
+	5ZTcxa2yyb+wYFiZkbOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izH8T-0005Bt-1Q; Wed, 05 Feb 2020 09:38:17 +0000
-Received: from mail-qv1-xf4a.google.com ([2607:f8b0:4864:20::f4a])
+	id 1izH8n-0005MU-2E; Wed, 05 Feb 2020 09:38:37 +0000
+Received: from mail-qt1-x84a.google.com ([2607:f8b0:4864:20::84a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izH8G-00059Q-Kg
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 09:38:06 +0000
-Received: by mail-qv1-xf4a.google.com with SMTP id j15so1092802qvp.21
+ id 1izH8J-0005AD-HC
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 09:38:08 +0000
+Received: by mail-qt1-x84a.google.com with SMTP id l25so965612qtu.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Feb 2020 01:38:01 -0800 (PST)
+ Wed, 05 Feb 2020 01:38:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=t+hNfXtjwFMsmQ+t75tk3QCZWXLmXlUbrDyATbIS/Bc=;
- b=MPdYJEe/X6+UOZ/iI1BO4xiJs31/Seqbo6Q05MkN0brP5sV4pUta35ASqc5ULG8ziQ
- MIUHRAe8OceKhjKHENrwwX88Qlu0xqxjT9OFOuFAAHORAv2N3GXNou/tSWw1lGrfXJoc
- 1O9xQ4fansGi92J16e/+mBRYDj8j0Pb55onstvRNM6TkiRBJJOdqXPfRsL4YUzImAPeD
- gVXNWPUqdg9Cw6znnQcyC87bJXikYGVVqErTVVC9yv9HOZvUaMY94ZIEwBU2Y2wQGjGV
- t3LQeT3oP6JZ1MG+jwnSUPEbUi1mKjw1OJDzO4MlWdnEkb+z4ifpd/IdsuYlVLNIaIdZ
- rWUg==
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=KEIH1qwXja/ZmU3/27elfahliyGtpPNLFM8jJAbIPe0=;
+ b=CoDv4bmuhxUgR9bmsyfNwNeOGpipEjZz8WHI+CF859hIUpkYWhXlhZwzAGsS+bPxJw
+ Ni25hCPqGGwCReROxGvBFe85BqQlIdFwrDE8Aowsf/8AHVm8sqc7vLbbhkP17oOX64eb
+ V9eMMRvIDW6H7Pz8nTq7LCrhZOZuL2C3HVODNKe2b6HpegWPXfbX1PzxIsimi9NcM4Xu
+ CGVHfTG2rPKgIC8f/fJqIRs0ZAsBZr18+eBxoedw8zjw9rdjBhGLKhyTIMnZ1jiCjUib
+ qHWvt/JaBhiM4wikSZFQXK0Qu3yEzmFTBljvuMJBn2OfWVYp40mGXjDSVIAJLqBKIP/K
+ Jezg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=t+hNfXtjwFMsmQ+t75tk3QCZWXLmXlUbrDyATbIS/Bc=;
- b=K8vyCT+Rjm/NY6zzwmUmLmtlngWM299LxFuAImN0Otoaf4ZzDwSoZX6j1jazxdZFaV
- U3sLGB0nO8CCnhxyZTVs4wkHrZLWkn0pnK943UnKx2YR6f2hqfhHuoCygYkSmvKtJo0G
- R4GINrg+qPzGoJD0IYQCMkBxastg1CTMBDhqiADO0/6aFqTUqgyFh/QJBprA5ACJJMLM
- q7VPjdntUuL03kyrLnSgMRYmtnDvnxWqEhf/LVxml8nul2LxUDwcOi8wLm6PiPa7zNNt
- 7t1peBfgjwbNIzZ+pthBe1Eq7/So5z4hkN1ZNwhU37C68CTaGRCoSTwEdY+xhP0IuVzr
- BOYg==
-X-Gm-Message-State: APjAAAVnOUp6LVcugvMnkLIXojBL4171GQo/7QJe8wy7oB83BwLOGYbs
- NBtcMqGjT4eWLI7tG+bEFAcsj2zhlplU
-X-Google-Smtp-Source: APXvYqxWq6o7mBKpCGRPGamchrFfwa2yARrxJ2bCNGi7q5SP7eZKkfVJhzmt1ZrNjdgv4w8hfmP3yhbrXV7A
-X-Received: by 2002:a37:de0b:: with SMTP id h11mr9177628qkj.274.1580895480903; 
- Wed, 05 Feb 2020 01:38:00 -0800 (PST)
-Date: Wed,  5 Feb 2020 17:37:42 +0800
-Message-Id: <20200205093745.79298-1-tzungbi@google.com>
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=KEIH1qwXja/ZmU3/27elfahliyGtpPNLFM8jJAbIPe0=;
+ b=d/2Vsn0VSw2j4RRsaMzRmCorxoxoC1BOOcDb0CwpGer8/b4kmQWPYA8UAXu7FMV3Pz
+ 4YccCmA+aUnz45jnO6JuC3Jaw1W0N9/oIKWremeoKXo84DyyrSHIqAACRHaLzAK75pmB
+ NQ+1GQfoWauyCrzXMS1JGat9FFhH4VJNVcLs5zFmDev3oASXLJVsunFKbdGmOTzMvuS4
+ JhPy4JHRKwFOcVHs37eW/G9J4W2KE+WUyKm4jSPSHkUaYuLB5y+ukTokIzzsPQe9D6+L
+ ERsAYYIRRDCqcKTWocnnBo6kpabA3zFMTQDTnJVo9Z68KJNhK1s1SkihezE66+ZjTv3P
+ 3nFQ==
+X-Gm-Message-State: APjAAAUiPyIvCeeLIStNCVlzkTbIBcIHX+xycplOd3sXhPJf3bvl3pwW
+ x9R0iFi/ZAjangK/yoBoDa9nQKl2ZZ0M
+X-Google-Smtp-Source: APXvYqxBmBAsv6b6o4/hWnX6IZaGVfp7aEruPTeKewWwwid+Xv/sFuCAvNLDBkRklTQQiyRmKKgqtlZR4Yp3
+X-Received: by 2002:ac8:769a:: with SMTP id g26mr32402406qtr.259.1580895486103; 
+ Wed, 05 Feb 2020 01:38:06 -0800 (PST)
+Date: Wed,  5 Feb 2020 17:37:43 +0800
+In-Reply-To: <20200205093745.79298-1-tzungbi@google.com>
+Message-Id: <20200205170416.1.Ieba8d422486264eb7aaa3aa257620a1b0c74c6db@changeid>
 Mime-Version: 1.0
+References: <20200205093745.79298-1-tzungbi@google.com>
 X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
-Subject: [PATCH 0/3] ASoC: mediatek: mt8173-rt5650: HDMI jack reporting
+Subject: [PATCH 1/3] drm/mediatek: exit earlier if failed to register audio
+ driver
 From: Tzung-Bi Shih <tzungbi@google.com>
 To: broonie@kernel.org, airlied@linux.ie, daniel@ffwll.ch
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_013804_672252_8468BE43 
-X-CRM114-Status: UNSURE (   6.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200205_013807_569752_CA989843 
+X-CRM114-Status: GOOD (  12.63  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:84a listed in]
+ [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -99,25 +105,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The series supports HDMI jack reporting to mt8173-rt5650.
+Exits earlier if register_audio_driver() returns errors.
 
-The 1st patch is less related.  It stops running in probe() if failed
-to register audio driver.
+Signed-off-by: Tzung-Bi Shih <tzungbi@google.com>
+---
+ drivers/gpu/drm/mediatek/mtk_hdmi.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
 
-The 2nd patch supports jack reporting in DRM driver.
-
-The 3rd patch supports jack reporting in mt8173-rt5650 ASoC machine
-driver.
-
-Tzung-Bi Shih (3):
-  drm/mediatek: exit earlier if failed to register audio driver
-  drm/mediatek: support HDMI jack status reporting
-  ASoC: mediatek: mt8173-rt5650: support HDMI jack reporting
-
- drivers/gpu/drm/mediatek/mtk_hdmi.c       | 52 ++++++++++++++++++++---
- sound/soc/mediatek/mt8173/mt8173-rt5650.c | 17 +++++++-
- 2 files changed, 63 insertions(+), 6 deletions(-)
-
+diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+index c79b1f855d89..23c2b0e8693d 100644
+--- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
++++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+@@ -1656,7 +1656,7 @@ static const struct hdmi_codec_ops mtk_hdmi_audio_codec_ops = {
+ 	.get_eld = mtk_hdmi_audio_get_eld,
+ };
+ 
+-static void mtk_hdmi_register_audio_driver(struct device *dev)
++static int mtk_hdmi_register_audio_driver(struct device *dev)
+ {
+ 	struct hdmi_codec_pdata codec_data = {
+ 		.ops = &mtk_hdmi_audio_codec_ops,
+@@ -1669,9 +1669,10 @@ static void mtk_hdmi_register_audio_driver(struct device *dev)
+ 					     PLATFORM_DEVID_AUTO, &codec_data,
+ 					     sizeof(codec_data));
+ 	if (IS_ERR(pdev))
+-		return;
++		return PTR_ERR(pdev);
+ 
+ 	DRM_INFO("%s driver bound to HDMI\n", HDMI_CODEC_DRV_NAME);
++	return 0;
+ }
+ 
+ static int mtk_drm_hdmi_probe(struct platform_device *pdev)
+@@ -1705,7 +1706,11 @@ static int mtk_drm_hdmi_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
+-	mtk_hdmi_register_audio_driver(dev);
++	ret = mtk_hdmi_register_audio_driver(dev);
++	if (ret) {
++		dev_err(dev, "Failed to register audio driver: %d\n", ret);
++		return ret;
++	}
+ 
+ 	hdmi->bridge.funcs = &mtk_hdmi_bridge_funcs;
+ 	hdmi->bridge.of_node = pdev->dev.of_node;
 -- 
 2.25.0.341.g760bfbb309-goog
 
