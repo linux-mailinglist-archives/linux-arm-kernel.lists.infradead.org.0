@@ -2,92 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E82F1539F2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 22:07:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CF33153A7C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 22:51:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5KnkIcMyjQV3tfiiRrP3W4LkbtuAw+y7zKp3JekHOPA=; b=B14gLULlBZ3LRL
-	qROqJmO8658rmcB53R6t6mT2ltNNOD6fS2GpvUSiwr5qXCO8zNTZUpdIGGo7bfYmc0EVKy1TTKOF6
-	MJ0qzceOYIg95xZXpP5KictUXsfSq1sFLGl42t45pC3fK3WF8ZeoWUnRTN2ruhEsIYK8Via4rYEpa
-	ubCxpYQAPWeYg0Vn+qd5oqZtfoIJN8NGye8vVEJ7to3770nXEuemePwyxpWBllh4M+WrY677oSECX
-	6DSsro28jZLcamlCm0eLwVg3u45PScQ9b1ze62zpLme8qe/8KrIfjqDGj72zxGymh+f30OvQU1Pk8
-	O+dLf7XJYtsFd07UMiBQ==;
+	List-Owner; bh=WyaTYrHSmHIFZq3wwMiZ21SF7sTCEb6xs3TdYIP9Dkc=; b=ekwkEPURRDuaAL
+	nYIhuzNJqZpN4Rt2OHojkXS2IMP2ZgW/nQ6D6xYdfbGDbiu3S3hVmMcigX8RTPJnFAt59+EEWpA8s
+	KXaskTloUfCyMHEFBWJ/yV/NBTb5v27jnEY/tAzrXt5y/ifUsbwt5IO66CqrjlNwjsOY2CPJhx5tJ
+	01z5GpymiPSiay4cktEp3yu0NGKbEEif5unipD+jbU4GTGII8eafuVgg7hAEtEKS5gvPrEbkZFJg+
+	CZBZQPvpYVzoLCuyLKM8+GHWR5uAEUky0eSzPwhW/wYEG50k9w1Z7OLluN77AjKjdIh24dXfjEvan
+	wWJgX+yYYnzHR8Vkw/Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izRt9-00073k-EE; Wed, 05 Feb 2020 21:07:11 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1izSZN-00037l-6P; Wed, 05 Feb 2020 21:50:49 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izRt0-00072s-QZ
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 21:07:04 +0000
-Received: by mail-pl1-x641.google.com with SMTP id e8so1374913plt.9
+ id 1izSZJ-00037V-E6
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 05 Feb 2020 21:50:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description;
+ bh=PHbfdi8ZRsyWVwogAfSeTTBoWRCjyatgWuvRLnXYIZA=; b=OtpuGGo0pVE6n2eSolam3CWbpk
+ N8qze195Brmjn7U4uWbmLVNxFF59rEd+QTevdhjhRcfHqoUpXuXXLUtuCi1qHQOLghyxNP5HScZcI
+ bSI7ONT//ef7XR1OxY+Xc+P9sxtg7hVkonPOxJTJpqI1C3f+u+S6Os3Ts3U3Dhs/UkjN/fu1md2Vb
+ WwYS9YwBDo04gkjcgUmW9cJJhzUoPFtRSu8Oe8nQPaMgCvP4L5+zhBS6sFCrKhPehUZryjYVbfenB
+ p/xO37VEvchqRtdHCkpNNG0l8P+Y2N6VLA0KDhx79RA3JzxumifrjL69dz3ShamTHT2Njoc/hKi7o
+ cKL2Bfsg==;
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izSZH-00044k-2O
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 21:50:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580939398;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=PHbfdi8ZRsyWVwogAfSeTTBoWRCjyatgWuvRLnXYIZA=;
+ b=KxL8RcztT+wYByd4N6OdExYZrfRGOjqDmp13/27r3kEuThDhqyGp/5fapaK6eFVLTpU1Pn
+ Fai4R/KHbhXhMBAIAKuxKIhdjzPsoV1PgJhmuR+zW6wo6eOFVjqeWNUE+BhmCyPg/8bz7g
+ +4UD1saMmC8ZWGPzAtIb9blZJ98PrLc=
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
+ [209.85.222.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-45-xl4vkb55M1iU7D-zz3ZM4w-1; Wed, 05 Feb 2020 16:49:56 -0500
+Received: by mail-qk1-f197.google.com with SMTP id a132so2254508qkg.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Feb 2020 13:06:59 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=51aeHheY/rt4DM+DW672ePDwXYA8QyYv8DwatD1TXuQ=;
- b=LYYUZew3BwAE1xoByIz6JPLp2v+5cIbt1vVEbEqSwZU+daxgKZMqXXZNwDO/EaTk89
- mefzudnZvyMQwVKqJBHBxwO1RvNhAupM3vfp2JZ3DQ9IdQeNS5iXI/3PVzYsCui3DGPj
- 7P3Q/vJL71vxTJcoskqAqh1emNeO13XS5W1DGsoywcadkfDagL33w7P5O8vZJh7wky6q
- WmtHRCfKjsTkS9Sykv4FGUNUyJGu8Z8qxovwgVpr21LdlZRplwPHK7f0FFKzx2hqDm+V
- tcRkyuNlVmcsvTiGRvHRtK34hPDDBz/R9Y+v2L0jqeFQky+scE8b0KIuMnI+V4AGNj/u
- ZS6Q==
+ Wed, 05 Feb 2020 13:49:56 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=51aeHheY/rt4DM+DW672ePDwXYA8QyYv8DwatD1TXuQ=;
- b=WNIkSBMRZHiNkLdHEbg4ZFuQuLCMDO6tQhCrIeEHLDqpL2Z3mfFzU3463HiUvrbnHd
- /UeiLZR0zBkuTHJFrj1a57XqltxWJzi9wccUXyaOcVlWG28ZWVE0v11BMQj/XyItQG83
- sKgiYYPFatRTzBKBVCoc9jIN+BJ2227TOaFdd8cNBl95ufbCn6rqj4cjg0zgcknBZA28
- eTVJgUVtiBx48iWpdhKLmwSz37sazoy12DxYr4OOtZLI5HOc4njtnzrcAh56sxNS/1Ub
- 3ssE3t3uufXbTD5xm/FPVgMs5Bu3TYQ157tnY0Uf7NyABXQ24551m/7CTplQOHEbssxS
- SeSQ==
-X-Gm-Message-State: APjAAAXA6m0BbfiGD9NXjoAYXR3pjwAGBbXNKzKB3Tz7pzFJtA4f+Bxr
- JGtdLgLw4lVpOsDTm6n3D51iug==
-X-Google-Smtp-Source: APXvYqz/259/Z0l+PdxYDVyZ4ffYq1mmxbp7AAs1jQ1DpAGMP1eIJKwJWmu0jT4pXZZ76v93octxJw==
-X-Received: by 2002:a17:90a:8685:: with SMTP id p5mr103015pjn.92.1580936819090; 
- Wed, 05 Feb 2020 13:06:59 -0800 (PST)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id 199sm420457pfv.81.2020.02.05.13.06.56
+ :mime-version:content-disposition:in-reply-to;
+ bh=hzR+kWwgje3yUYdtQN4kRBB1wzrOCH+ul+GIZRQLQpQ=;
+ b=DFrJn4qSYwhwyqEYc2NAxpGtWovvXjOCElahjjAky3cFEL9i8kcXocv/POUk8bpGTn
+ XopnKBwPFHIjBikDc9lGTSEVIsuvxAEX3BVTDHHFR8EnFW0mSm6qUuhnYIOJKBUmGLEG
+ 3O9kb9urCgX8A04rEiVv+Pc8EGUnBj4WKTs8Ol7Q0C/yuLB1x3cMD04nzqRQmGnTkVba
+ BTLwxm7/3H1m2+BYIwbJd1il0ByaYcjsT6GMGC4r4wfiSqbHgVgUVmoJoL2dadMQbqwZ
+ fDksmHBq4s4HMib0BkvN43lSsj55UI4zqRCmWT2w154Nq3XbigE+2GwLGN12WFml5eCc
+ PYmg==
+X-Gm-Message-State: APjAAAWzBaRexYN5alRdXCB328qZVr2JIc5zNxzi+yHjJwfHKMrPRNE0
+ ZIW5W6hWSgbZP0g3IjRNDzV/hKPF/+2PUVPTskCQTFAOPjNlkqqLntlytHWhrFdKi9xCd3PGfXD
+ 3rymjRVVYvmCDKi6NCPUGlc9HVxuKtTlsiFc=
+X-Received: by 2002:ac8:3886:: with SMTP id f6mr34654877qtc.160.1580939396232; 
+ Wed, 05 Feb 2020 13:49:56 -0800 (PST)
+X-Google-Smtp-Source: APXvYqy5rpTfXYiWMOZY+w99nw37RTfo9i89EWpQ1VoSvOcWQbgR5Y78NjhhnEKvcMCS6bstDLPhlA==
+X-Received: by 2002:ac8:3886:: with SMTP id f6mr34654854qtc.160.1580939395875; 
+ Wed, 05 Feb 2020 13:49:55 -0800 (PST)
+Received: from xz-x1 ([2607:9880:19c8:32::2])
+ by smtp.gmail.com with ESMTPSA id x11sm472147qkf.50.2020.02.05.13.49.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 05 Feb 2020 13:06:58 -0800 (PST)
-Date: Wed, 5 Feb 2020 14:06:55 -0700
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Clement Leger <cleger@kalray.eu>
-Subject: Re: [PATCH v3 1/2] remoteproc: Use u64 len for da_to_va
-Message-ID: <20200205210655.GA25901@xps15>
-References: <20200129163013.GA16538@xps15>
- <20200204174412.16814-1-cleger@kalray.eu>
- <20200204174412.16814-2-cleger@kalray.eu>
+ Wed, 05 Feb 2020 13:49:55 -0800 (PST)
+Date: Wed, 5 Feb 2020 16:49:52 -0500
+From: Peter Xu <peterx@redhat.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>
+Subject: Re: [PATCH v5 01/19] KVM: x86: Allocate new rmap and large page
+ tracking when moving memslot
+Message-ID: <20200205214952.GD387680@xz-x1>
+References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
+ <20200121223157.15263-2-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
+In-Reply-To: <20200121223157.15263-2-sean.j.christopherson@intel.com>
+X-MC-Unique: xl4vkb55M1iU7D-zz3ZM4w-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
-In-Reply-To: <20200204174412.16814-2-cleger@kalray.eu>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_130702_877458_9038BEC5 
-X-CRM114-Status: GOOD (  19.64  )
+X-Spam-Note: CRM114 invocation failed
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,250 +120,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, Loic PALLARDY <loic.pallardy@st.com>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>, Jonathan Corbet <corbet@lwn.net>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-doc@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- Patrice Chotard <patrice.chotard@st.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
- s-anna <s-anna@ti.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
+ Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Philippe =?utf-8?Q?Mathieu-Daud=C3=A9?= <f4bug@amsat.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Clement,
-
-On Tue, Feb 04, 2020 at 06:44:11PM +0100, Clement Leger wrote:
-> With upcoming changes in elf loader for elf64 support, section size will
-> be a u64. When used with da_to_va, this will potentially lead to
-> overflow if using the current "int" type for len argument. Change
-> da_to_va prototype to use a u64 for len and fix all users of this
-> function.
+On Tue, Jan 21, 2020 at 02:31:39PM -0800, Sean Christopherson wrote:
+> Reallocate a rmap array and recalcuate large page compatibility when
+> moving an existing memslot to correctly handle the alignment properties
+> of the new memslot.  The number of rmap entries required at each level
+> is dependent on the alignment of the memslot's base gfn with respect to
+> that level, e.g. moving a large-page aligned memslot so that it becomes
+> unaligned will increase the number of rmap entries needed at the now
+> unaligned level.
 > 
-> Signed-off-by: Clement Leger <cleger@kalray.eu>
+> Not updating the rmap array is the most obvious bug, as KVM accesses
+> garbage data beyond the end of the rmap.  KVM interprets the bad data as
+> pointers, leading to non-canonical #GPs, unexpected #PFs, etc...
+> 
+>   general protection fault: 0000 [#1] SMP
+>   CPU: 0 PID: 1909 Comm: move_memory_reg Not tainted 5.4.0-rc7+ #139
+>   Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 0.0.0 02/06/2015
+>   RIP: 0010:rmap_get_first+0x37/0x50 [kvm]
+>   Code: <48> 8b 3b 48 85 ff 74 ec e8 6c f4 ff ff 85 c0 74 e3 48 89 d8 5b c3
+>   RSP: 0018:ffffc9000021bbc8 EFLAGS: 00010246
+>   RAX: ffff00617461642e RBX: ffff00617461642e RCX: 0000000000000012
+>   RDX: ffff88827400f568 RSI: ffffc9000021bbe0 RDI: ffff88827400f570
+>   RBP: 0010000000000000 R08: ffffc9000021bd00 R09: ffffc9000021bda8
+>   R10: ffffc9000021bc48 R11: 0000000000000000 R12: 0030000000000000
+>   R13: 0000000000000000 R14: ffff88827427d700 R15: ffffc9000021bce8
+>   FS:  00007f7eda014700(0000) GS:ffff888277a00000(0000) knlGS:0000000000000000
+>   CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+>   CR2: 00007f7ed9216ff8 CR3: 0000000274391003 CR4: 0000000000162eb0
+>   Call Trace:
+>    kvm_mmu_slot_set_dirty+0xa1/0x150 [kvm]
+>    __kvm_set_memory_region.part.64+0x559/0x960 [kvm]
+>    kvm_set_memory_region+0x45/0x60 [kvm]
+>    kvm_vm_ioctl+0x30f/0x920 [kvm]
+>    do_vfs_ioctl+0xa1/0x620
+>    ksys_ioctl+0x66/0x70
+>    __x64_sys_ioctl+0x16/0x20
+>    do_syscall_64+0x4c/0x170
+>    entry_SYSCALL_64_after_hwframe+0x44/0xa9
+>   RIP: 0033:0x7f7ed9911f47
+>   Code: <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 21 6f 2c 00 f7 d8 64 89 01 48
+>   RSP: 002b:00007ffc00937498 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+>   RAX: ffffffffffffffda RBX: 0000000001ab0010 RCX: 00007f7ed9911f47
+>   RDX: 0000000001ab1350 RSI: 000000004020ae46 RDI: 0000000000000004
+>   RBP: 000000000000000a R08: 0000000000000000 R09: 00007f7ed9214700
+>   R10: 00007f7ed92149d0 R11: 0000000000000246 R12: 00000000bffff000
+>   R13: 0000000000000003 R14: 00007f7ed9215000 R15: 0000000000000000
+>   Modules linked in: kvm_intel kvm irqbypass
+>   ---[ end trace 0c5f570b3358ca89 ]---
+> 
+> The disallow_lpage tracking is more subtle.  Failure to update results
+> in KVM creating large pages when it shouldn't, either due to stale data
+> or again due to indexing beyond the end of the metadata arrays, which
+> can lead to memory corruption and/or leaking data to guest/userspace.
+> 
+> Note, the arrays for the old memslot are freed by the unconditional call
+> to kvm_free_memslot() in __kvm_set_memory_region().
+
+If __kvm_set_memory_region() failed, I think the old memslot will be
+kept and the new memslot will be freed instead?
+
+> 
+> Fixes: 05da45583de9b ("KVM: MMU: large page support")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 > ---
->  drivers/remoteproc/imx_rproc.c           | 9 +++++----
->  drivers/remoteproc/keystone_remoteproc.c | 2 +-
->  drivers/remoteproc/qcom_q6v5_adsp.c      | 2 +-
->  drivers/remoteproc/qcom_q6v5_mss.c       | 2 +-
->  drivers/remoteproc/qcom_q6v5_pas.c       | 2 +-
->  drivers/remoteproc/qcom_q6v5_wcss.c      | 2 +-
->  drivers/remoteproc/qcom_wcnss.c          | 2 +-
->  drivers/remoteproc/remoteproc_core.c     | 2 +-
->  drivers/remoteproc/remoteproc_internal.h | 2 +-
->  drivers/remoteproc/st_slim_rproc.c       | 4 ++--
->  drivers/remoteproc/wkup_m3_rproc.c       | 2 +-
->  include/linux/remoteproc.h               | 2 +-
->  12 files changed, 17 insertions(+), 16 deletions(-)
+>  arch/x86/kvm/x86.c | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
 > 
-> diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
-> index 3e72b6f38d4b..1e895d5cf918 100644
-> --- a/drivers/remoteproc/imx_rproc.c
-> +++ b/drivers/remoteproc/imx_rproc.c
-> @@ -186,7 +186,7 @@ static int imx_rproc_stop(struct rproc *rproc)
->  }
->  
->  static int imx_rproc_da_to_sys(struct imx_rproc *priv, u64 da,
-> -			       int len, u64 *sys)
-> +			       u64 len, u64 *sys)
+> diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
+> index 4c30ebe74e5d..1953c71c52f2 100644
+> --- a/arch/x86/kvm/x86.c
+> +++ b/arch/x86/kvm/x86.c
+> @@ -9793,6 +9793,13 @@ int kvm_arch_create_memslot(struct kvm *kvm, struct kvm_memory_slot *slot,
 >  {
->  	const struct imx_rproc_dcfg *dcfg = priv->dcfg;
 >  	int i;
-> @@ -203,12 +203,12 @@ static int imx_rproc_da_to_sys(struct imx_rproc *priv, u64 da,
->  		}
->  	}
 >  
-> -	dev_warn(priv->dev, "Translation failed: da = 0x%llx len = 0x%x\n",
-> +	dev_warn(priv->dev, "Translation failed: da = 0x%llx len = 0x%llx\n",
->  		 da, len);
->  	return -ENOENT;
->  }
->  
-> -static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+> +	/*
+> +	 * Clear out the previous array pointers for the KVM_MR_MOVE case.  The
+> +	 * old arrays will be freed by __kvm_set_memory_region() if installing
+> +	 * the new memslot is successful.
+> +	 */
+> +	memset(&slot->arch, 0, sizeof(slot->arch));
+
+I actually gave r-b on this patch but it was lost... And then when I
+read it again I start to confuse on why we need to set these to zeros.
+Even if they're not zeros, iiuc kvm_free_memslot() will compare each
+of the array pointer and it will only free the changed pointers, then
+it looks fine even without zeroing?
+
+> +
+>  	for (i = 0; i < KVM_NR_PAGE_SIZES; ++i) {
+>  		struct kvm_lpage_info *linfo;
+>  		unsigned long ugfn;
+> @@ -9867,6 +9874,10 @@ int kvm_arch_prepare_memory_region(struct kvm *kvm,
+>  				const struct kvm_userspace_memory_region *mem,
+>  				enum kvm_mr_change change)
 >  {
->  	struct imx_rproc *priv = rproc->priv;
->  	void *va = NULL;
+> +	if (change == KVM_MR_MOVE)
+> +		return kvm_arch_create_memslot(kvm, memslot,
+> +					       mem->memory_size >> PAGE_SHIFT);
+> +
 
-The condition "if (len <= 0)" at the beginning of the function needs to be
-fixed.  
+Instead of calling kvm_arch_create_memslot() explicitly again here,
+can it be replaced by below?
 
+diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
+index 72b45f491692..85a7b02fd752 100644
+--- a/virt/kvm/kvm_main.c
++++ b/virt/kvm/kvm_main.c
+@@ -1144,7 +1144,7 @@ int __kvm_set_memory_region(struct kvm *kvm,
+                new.dirty_bitmap = NULL;
+ 
+        r = -ENOMEM;
+-       if (change == KVM_MR_CREATE) {
++       if (change == KVM_MR_CREATE || change == KVM_MR_MOVE) {
+                new.userspace_addr = mem->userspace_addr;
+ 
+                if (kvm_arch_create_memslot(kvm, &new, npages))
 
-> @@ -235,7 +235,8 @@ static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
->  		}
->  	}
->  
-> -	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%x va = 0x%p\n", da, len, va);
-> +	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%llx va = 0x%p\n",
-> +		da, len, va);
->  
->  	return va;
->  }
-> diff --git a/drivers/remoteproc/keystone_remoteproc.c b/drivers/remoteproc/keystone_remoteproc.c
-> index 5c4658f00b3d..25c01df47eba 100644
-> --- a/drivers/remoteproc/keystone_remoteproc.c
-> +++ b/drivers/remoteproc/keystone_remoteproc.c
-> @@ -246,7 +246,7 @@ static void keystone_rproc_kick(struct rproc *rproc, int vqid)
->   * can be used either by the remoteproc core for loading (when using kernel
->   * remoteproc loader), or by any rpmsg bus drivers.
->   */
-> -static void *keystone_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *keystone_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
->  {
-
-Same comment as above.
-
->  	struct keystone_rproc *ksproc = rproc->priv;
->  	void __iomem *va = NULL;
-> diff --git a/drivers/remoteproc/qcom_q6v5_adsp.c b/drivers/remoteproc/qcom_q6v5_adsp.c
-> index e953886b2eb7..7518e67a49e5 100644
-> --- a/drivers/remoteproc/qcom_q6v5_adsp.c
-> +++ b/drivers/remoteproc/qcom_q6v5_adsp.c
-> @@ -270,7 +270,7 @@ static int adsp_stop(struct rproc *rproc)
->  	return ret;
->  }
->  
-> -static void *adsp_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *adsp_da_to_va(struct rproc *rproc, u64 da, u64 len)
->  {
->  	struct qcom_adsp *adsp = (struct qcom_adsp *)rproc->priv;
->  	int offset;
-> diff --git a/drivers/remoteproc/qcom_q6v5_mss.c b/drivers/remoteproc/qcom_q6v5_mss.c
-> index 471128a2e723..248febde6fc1 100644
-> --- a/drivers/remoteproc/qcom_q6v5_mss.c
-> +++ b/drivers/remoteproc/qcom_q6v5_mss.c
-> @@ -1148,7 +1148,7 @@ static int q6v5_stop(struct rproc *rproc)
 >  	return 0;
 >  }
 >  
-> -static void *q6v5_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *q6v5_da_to_va(struct rproc *rproc, u64 da, u64 len)
->  {
->  	struct q6v5 *qproc = rproc->priv;
->  	int offset;
-> diff --git a/drivers/remoteproc/qcom_q6v5_pas.c b/drivers/remoteproc/qcom_q6v5_pas.c
-> index db4b3c4bacd7..cf2cd609c90d 100644
-> --- a/drivers/remoteproc/qcom_q6v5_pas.c
-> +++ b/drivers/remoteproc/qcom_q6v5_pas.c
-> @@ -159,7 +159,7 @@ static int adsp_stop(struct rproc *rproc)
->  	return ret;
->  }
->  
-> -static void *adsp_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *adsp_da_to_va(struct rproc *rproc, u64 da, u64 len)
->  {
->  	struct qcom_adsp *adsp = (struct qcom_adsp *)rproc->priv;
->  	int offset;
-> diff --git a/drivers/remoteproc/qcom_q6v5_wcss.c b/drivers/remoteproc/qcom_q6v5_wcss.c
-> index f93e1e4a1cc0..3a6b82a16961 100644
-> --- a/drivers/remoteproc/qcom_q6v5_wcss.c
-> +++ b/drivers/remoteproc/qcom_q6v5_wcss.c
-> @@ -406,7 +406,7 @@ static int q6v5_wcss_stop(struct rproc *rproc)
->  	return 0;
->  }
->  
-> -static void *q6v5_wcss_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *q6v5_wcss_da_to_va(struct rproc *rproc, u64 da, u64 len)
->  {
->  	struct q6v5_wcss *wcss = rproc->priv;
->  	int offset;
-> diff --git a/drivers/remoteproc/qcom_wcnss.c b/drivers/remoteproc/qcom_wcnss.c
-> index dc135754bb9c..f893219e45a8 100644
-> --- a/drivers/remoteproc/qcom_wcnss.c
-> +++ b/drivers/remoteproc/qcom_wcnss.c
-> @@ -287,7 +287,7 @@ static int wcnss_stop(struct rproc *rproc)
->  	return ret;
->  }
->  
-> -static void *wcnss_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *wcnss_da_to_va(struct rproc *rproc, u64 da, u64 len)
->  {
->  	struct qcom_wcnss *wcnss = (struct qcom_wcnss *)rproc->priv;
->  	int offset;
-> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> index 307df98347ba..9e6d3c6a60ee 100644
-> --- a/drivers/remoteproc/remoteproc_core.c
-> +++ b/drivers/remoteproc/remoteproc_core.c
-> @@ -185,7 +185,7 @@ EXPORT_SYMBOL(rproc_va_to_pa);
->   * here the output of the DMA API for the carveouts, which should be more
->   * correct.
->   */
-> -void *rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +void *rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
->  {
->  	struct rproc_mem_entry *carveout;
->  	void *ptr = NULL;
-> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
-> index 493ef9262411..004867061721 100644
-> --- a/drivers/remoteproc/remoteproc_internal.h
-> +++ b/drivers/remoteproc/remoteproc_internal.h
-> @@ -50,7 +50,7 @@ void rproc_exit_sysfs(void);
->  void rproc_free_vring(struct rproc_vring *rvring);
->  int rproc_alloc_vring(struct rproc_vdev *rvdev, int i);
->  
-> -void *rproc_da_to_va(struct rproc *rproc, u64 da, int len);
-> +void *rproc_da_to_va(struct rproc *rproc, u64 da, u64 len);
->  phys_addr_t rproc_va_to_pa(void *cpu_addr);
->  int rproc_trigger_recovery(struct rproc *rproc);
->  
-> diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
-> index 04492fead3c8..fc01cd879b60 100644
-> --- a/drivers/remoteproc/st_slim_rproc.c
-> +++ b/drivers/remoteproc/st_slim_rproc.c
-> @@ -174,7 +174,7 @@ static int slim_rproc_stop(struct rproc *rproc)
->  	return 0;
->  }
->  
-> -static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
->  {
->  	struct st_slim_rproc *slim_rproc = rproc->priv;
->  	void *va = NULL;
-> @@ -191,7 +191,7 @@ static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
->  		}
->  	}
->  
-> -	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%x va = 0x%pK\n",
-> +	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%llx va = 0x%pK\n",
->  		da, len, va);
->  
->  	return va;
-> diff --git a/drivers/remoteproc/wkup_m3_rproc.c b/drivers/remoteproc/wkup_m3_rproc.c
-> index 3984e585c847..0e8082948489 100644
-> --- a/drivers/remoteproc/wkup_m3_rproc.c
-> +++ b/drivers/remoteproc/wkup_m3_rproc.c
-> @@ -80,7 +80,7 @@ static int wkup_m3_rproc_stop(struct rproc *rproc)
->  	return 0;
->  }
->  
-> -static void *wkup_m3_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
-> +static void *wkup_m3_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
->  {
-
-Same comment as above.
-
->  	struct wkup_m3_rproc *wkupm3 = rproc->priv;
->  	void *va = NULL;
-> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-> index 16ad66683ad0..f84bd5fe0211 100644
-> --- a/include/linux/remoteproc.h
-> +++ b/include/linux/remoteproc.h
-> @@ -374,7 +374,7 @@ struct rproc_ops {
->  	int (*start)(struct rproc *rproc);
->  	int (*stop)(struct rproc *rproc);
->  	void (*kick)(struct rproc *rproc, int vqid);
-> -	void * (*da_to_va)(struct rproc *rproc, u64 da, int len);
-> +	void * (*da_to_va)(struct rproc *rproc, u64 da, u64 len);
->  	int (*parse_fw)(struct rproc *rproc, const struct firmware *fw);
->  	int (*handle_rsc)(struct rproc *rproc, u32 rsc_type, void *rsc,
->  			  int offset, int avail);
 > -- 
-> 2.15.0.276.g89ea799
+> 2.24.1
 > 
+
+-- 
+Peter Xu
+
 
 _______________________________________________
 linux-arm-kernel mailing list
