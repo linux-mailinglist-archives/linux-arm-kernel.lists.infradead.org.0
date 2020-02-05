@@ -2,90 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D74EF153A8A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 22:55:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7830153AAF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 23:08:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HKnn0UAvgfVEjWxX6slQKqAIL7rwXBdR9CcxUx7Afns=; b=flK+3BocUqTB6L
-	SzXLeimxvJq9PlvJW8s8z4YdCFul4+vNTGaPx+fYKk8cKAFrveRFlOaRcEkiK140xAl21srArXiJp
-	SwRzqA9qlzZg1xfwOM4Z56x3/wp1b34nlHj3XdpAi97IZgZiLiLzkaVYtglD1MLpgE1Jp6gtthk4V
-	y07oaNqUDtYvSAPilgcbf1EDHXbL/IjkZK1i/KqyUkJItYGmk+zP1DkshV7b9XtV25fUdmgRZC+Sd
-	g1TDyS8JlXRGQ+1JYfqgSSZiB/c9bHBzqLNbLbgzXQztzFphSUJH7gAJH0KJfMYhtSc7nkGvJoy0S
-	AL6CD7RbPOFgPP5sYW0w==;
+	List-Owner; bh=CkfxwMdqy9X6JuGwPWQoD1V8u7QVQ93HwRM3zvOFgPE=; b=ntz4ufTLgdr6np
+	h9kuFQtjEtxutRPEXmo1vZpSCqkAZKXHfAxnUdOTF+25wUgAJGtIqGrhkJW2KDVg9z2dPr8eYrvKj
+	Kf1sy0jlIY9NSdDfh8M1y2zvsGnWMfcRf5E6PjTenrj48qOW7Jj6M99ToGut7kNAFGSrKrZcX8Fx+
+	HfxHLhycqRFSGvXSLIUr3431yQ3nYnjL+MNW23+bQEbwNzTepv3M1Kqg6l3+UwcE5la01LX3A9kBm
+	nuzYZAui4a+ZC60t6vnxsoi31gyPnxws8cHLu4XU7S0leng84Ede0IVD3DxTXKwBDmHXb+hSzSHFJ
+	QXqRAO2oAOmmDUdMKxzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izSeC-0004i8-Tk; Wed, 05 Feb 2020 21:55:48 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1izSqd-0008Ta-90; Wed, 05 Feb 2020 22:08:39 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izSe5-0004hq-Rt
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 21:55:43 +0000
-Received: by mail-oi1-x243.google.com with SMTP id a22so2380241oid.13
+ id 1izSqV-0008SL-OJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 22:08:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1580940509;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=qcqAII0Mla+8J9XCC2F7t68zZyPiZF4YHjS+Fi7LYLQ=;
+ b=QlaOB0m99x6nb569DwpCk45XjQzNRfENqyQG8AGqVU6vJvFJqKZraqdcwX0om/+yLKy0GA
+ 6hzJ+Loyc8kQES3tyZYoqcWGnAKKQLc8AK4qB1BTeIWfjaWklvxpTwGw0YDbyxZfa6NS4q
+ rLzMTNjRJEiJ5gh3s6+fEX6EsTJhRHc=
+Received: from mail-qv1-f69.google.com (mail-qv1-f69.google.com
+ [209.85.219.69]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-14-evxyBP1iNACS5RF3yzopMw-1; Wed, 05 Feb 2020 17:08:27 -0500
+Received: by mail-qv1-f69.google.com with SMTP id g6so2444827qvp.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Feb 2020 13:55:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=qndbgjnKGTRqil5Ffj6ZYDKeVw7HlXNwJpUlAgm+S6Y=;
- b=q34KOhpk47Q/2E2X+VFfQB25SvVHJuhCnCg72JdZCFnW+34+VG2/GkEDFmAASAupm4
- on29xmt526yzth1T5zm/ebJ1M1wvCuY4Yx6/901AobkiGPk8jC7h3RyrgcH5Vs4C8UF7
- KN/spHDzuJjORoS0IUzm0FRkq1V9B/lbDpLuH0gB4B5pLXTjNV0uKEZCndTP1J4oCf8/
- h/1WjYJS3OGsZsmR6BFQPvhvM6grondSLwj30uUnPicUHus/rgxmJdX6sdVQ4DIV/eiN
- xO+0hbO8PBLNoTOiNpeK721XNw3+z+C9X+yrn0GnSkd+efN1vixeURjr63JB7sXnCxsx
- 8Xlw==
+ Wed, 05 Feb 2020 14:08:27 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=qndbgjnKGTRqil5Ffj6ZYDKeVw7HlXNwJpUlAgm+S6Y=;
- b=sRPj+KxaVuJcvAZxUipg+kFYVJSHR520eRC3XpX1Yp7B6SxXs6Dd4uNNITjmhkPypq
- XB5pWguRrY4GcBjVvPobErwU3yKE+LWyXxCsoZWJ/DEW3QFqski1ctQIWV08+K+TXXyn
- D0jcZgQIHdwqig/zc13+8QiCa8H4FtFvjJUX7K2srDkaAo60Z8HIgJByDNDEolbAk2q0
- 8AOv7hF7C5UFcjh7FcmGS+YhXpHY7dminyl+95Qor/QEkK9d3D6+9DgFV2V7Zn6r7IZ3
- qzQbhuvDPzuaHp7/EhAW3DRJmZtaVifGz2B+iweK7KQgZ/ijZkydRh1Af/HUNsA/esYS
- ax+A==
-X-Gm-Message-State: APjAAAXGqNVTJ39rGsUNTowlKU+w9LAAU0nJ7E6s9iTCnd7Sege8VIDv
- Z8PzX7uGvtMQxHEc+D4ax5o=
-X-Google-Smtp-Source: APXvYqzIKlb6ICrQEIE/J8GnWSUbGPOQNuGxtAkBKjeoaS1kBpIQsikXhsSVFf7o1NUhEsOJfJTFIA==
-X-Received: by 2002:aca:fd16:: with SMTP id b22mr4657409oii.73.1580939740596; 
- Wed, 05 Feb 2020 13:55:40 -0800 (PST)
-Received: from Andrews-MBP-2.attlocal.com
- (45-18-127-186.lightspeed.austtx.sbcglobal.net. [45.18.127.186])
- by smtp.gmail.com with ESMTPSA id t23sm242396oic.28.2020.02.05.13.55.39
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 05 Feb 2020 13:55:40 -0800 (PST)
-From: Andrew Geissler <geissonator@gmail.com>
-To: openbmc@lists.ozlabs.org, joel@jms.id.au, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH linux dev-5.4 v2] ARM: dts: aspeed: witherspoon: Add gpio line
- names
-Date: Wed,  5 Feb 2020 15:55:11 -0600
-Message-Id: <20200205215511.80333-1-geissonator@gmail.com>
-X-Mailer: git-send-email 2.21.0 (Apple Git-122)
-In-Reply-To: <FMfcgxwGDDpcbrVbWGfkMRbZCLSZqpMM>
-References: <FMfcgxwGDDpcbrVbWGfkMRbZCLSZqpMM>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=6bIsTUAiuk9WkuPnamAI4/KWATTYkjxm0pqVjMTg08w=;
+ b=blnMkJJ3EiJfNofoXMy2wWrQtcXTEHbhDHeUlaR7HjATxHSRsIH7D/Zflh4AKXbSsa
+ ripZ2arbEmW2ZVBORvv0K7an0rVbSEZwNip37unK7aQqFhBi0VtR8WqBcya/7ZxHkGP8
+ Y0Xd+6zPVq8idhwU0HQFSXknCi4FidFha9JI6OV5sfDt8UK+U5Zz/FVBAxeagPgvMAn6
+ rMPnv2r4NBEfErzs/Yy2eAYyDz7EbadPtqZPbmgpyvwwDbo7sNe7pXTbFoJX/Z1KqmQ7
+ MO4NJtpgTDDavU2sMJbFAYhTdtPEzn84aRMKS4BYk1W+k3VPkiJ0+vJGLRN3fyKCF55w
+ HMvg==
+X-Gm-Message-State: APjAAAXzAaKe47+iH9BPvwbUIXOgSOl8saz44x3hpa6dbDQtjaG8O/RA
+ zen+is1uU/306RO09XpZoN+I6tPTXQ+lIZ6pAJ80DxCnsh6k7qfCVuK5ZCxNflBgk6e09Fq1+30
+ r54YHguCN2kyDtkFr5R1ZNOPGIhl1n9oNjLw=
+X-Received: by 2002:ac8:4e94:: with SMTP id 20mr35228162qtp.335.1580940506681; 
+ Wed, 05 Feb 2020 14:08:26 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxhvNH1iy5q/tis+s7hwuGT0ebc3dkr1uSM1KA4FQeWbspaaAJT384pUzbSiV9AUE83qayDAQ==
+X-Received: by 2002:ac8:4e94:: with SMTP id 20mr35228131qtp.335.1580940506464; 
+ Wed, 05 Feb 2020 14:08:26 -0800 (PST)
+Received: from xz-x1 ([2607:9880:19c8:32::2])
+ by smtp.gmail.com with ESMTPSA id t16sm458993qkg.96.2020.02.05.14.08.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 05 Feb 2020 14:08:25 -0800 (PST)
+Date: Wed, 5 Feb 2020 17:08:22 -0500
+From: Peter Xu <peterx@redhat.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>
+Subject: Re: [PATCH v5 02/19] KVM: Reinstall old memslots if arch preparation
+ fails
+Message-ID: <20200205220822.GE387680@xz-x1>
+References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
+ <20200121223157.15263-3-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
+In-Reply-To: <20200121223157.15263-3-sean.j.christopherson@intel.com>
+X-MC-Unique: evxyBP1iNACS5RF3yzopMw-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_135541_928072_878BE510 
-X-CRM114-Status: UNSURE (   9.37  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200205_140831_881090_2874D549 
+X-CRM114-Status: GOOD (  10.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geissonator[at]gmail.com]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 WEIRD_QUOTING          BODY: Weird repeated double-quotation marks
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,6 +96,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,76 +108,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, Andrew Geissler <geissonator@yahoo.com>
+Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
+ Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Philippe =?utf-8?Q?Mathieu-Daud=C3=A9?= <f4bug@amsat.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andrew Geissler <geissonator@yahoo.com>
+On Tue, Jan 21, 2020 at 02:31:40PM -0800, Sean Christopherson wrote:
+> Reinstall the old memslots if preparing the new memory region fails
+> after invalidating a to-be-{re}moved memslot.
+> 
+> Remove the superfluous 'old_memslots' variable so that it's somewhat
+> clear that the error handling path needs to free the unused memslots,
+> not simply the 'old' memslots.
+> 
+> Fixes: bc6678a33d9b9 ("KVM: introduce kvm->srcu and convert kvm_set_memory_region to SRCU update")
+> Reviewed-by: Christoffer Dall <christoffer.dall@arm.com>
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 
-Name the gpios so libgiod will work with them
+Reviewed-by: Peter Xu <peterx@redhat.com>
 
-Signed-off-by: Andrew Geissler <geissonator@yahoo.com>
----
-v2: added upstream to patch
-    prepended fsi- on fsi related gpios
-    prepended led- on led related gpios
-    prepended presence on presence related gpios
-    dropped pin_gpio_a1 definition
----
- .../boot/dts/aspeed-bmc-opp-witherspoon.dts   | 36 +++++++++++++++++++
- 1 file changed, 36 insertions(+)
-
-diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
-index 515f0f208ee6..2519722928a4 100644
---- a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
-@@ -193,6 +193,42 @@
- 
- };
- 
-+&gpio {
-+    status = "okay";
-+	gpio-line-names =
-+	/*A0-A7*/	"","cfam-reset","","","","","fsi-mux","",
-+	/*B0-B7*/	"","","","","","air-water","","",
-+	/*C0-C7*/	"","","","","","","","",
-+	/*D0-D7*/	"fsi-enable","","","","","","","",
-+	/*E0-E7*/	"fsi-data","","","","","","","",
-+	/*F0-F7*/	"","","","","","","","",
-+	/*G0-G7*/	"","","","","","","","",
-+	/*H0-H7*/	"","","","","","","","",
-+	/*I0-I7*/	"","","","","","","","",
-+	/*J0-J7*/	"","","checkstop","","","","","",
-+	/*K0-K7*/	"","","","","","","","",
-+	/*L0-L7*/	"","","","","","","","",
-+	/*M0-M7*/	"","","","","","","","",
-+	/*N0-N7*/	"presence-ps1","","led-rear-fault","led-rear-power",
-+		        "led-rear-id","","","",
-+	/*O0-O7*/	"","","","","","","","",
-+	/*P0-P7*/	"","","","","","","","presence-ps0",
-+	/*Q0-Q7*/	"","","","","","","","",
-+	/*R0-R7*/	"","","fsi-trans","","","power-button","","",
-+	/*S0-S7*/	"","","","","","","","",
-+	/*T0-T7*/	"","","","","","","","",
-+	/*U0-U7*/	"","","","","","","","",
-+	/*V0-V7*/	"","","","","","","","",
-+	/*W0-W7*/	"","","","","","","","",
-+	/*X0-X7*/	"","","","","","","","",
-+	/*Y0-Y7*/	"","","","","","","","",
-+	/*Z0-Z7*/	"","","","","","","","",
-+	/*AA0-AA7*/	"fsi-clock","","","","","","","",
-+	/*AB0-AB7*/	"","","","","","","","",
-+	/*AC0-AC7*/	"","","","","","","","";
-+
-+};
-+
- &fmc {
- 	status = "okay";
- 
 -- 
-2.21.0 (Apple Git-122)
+Peter Xu
 
 
 _______________________________________________
