@@ -2,75 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5978E1530AF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 13:28:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FB0D1530B4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 13:28:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=z4/cLcx16AR4xQicGEI3mStsV2UchpS+Md2PdRQWZHk=; b=cXhETSTtMkEgmhAsHg6JPg1V6
-	t/Wst/lndedOl+5brB/Fnj6wFy8DwjPSMdD7lhgkoCwN/027u1dR5GOE0XIpW37BBc64ikdZH3XHB
-	uD0x23Ks7+gu/bMzUP8skVaEVbrNx0SVpGLmfNrqOP17J69kfVUMXhrih09mzL9+W89yH84yWw3G8
-	nF368LvvUMUIPFWrtRywVKHlYG5O0MJfd/FH90l18F0WQaEPr0RxRXc5nTHscBurk45pXbkzwtKtt
-	67gTyxW0CCLzn7Y9QPD346dEp/p1k6Z2wd0YDC4OpO88/unjk6+/kKsT4rNwpod9nlOqKgXbNEkeg
-	fjvx42ZJw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6Glwi7kO0ivLNTgVnBAl6qobvUmWbJ72nAAJLPkxhuQ=; b=bnqDmXgNho/G3B
+	2/HTnKvRUFShRUfyiYbsJpHV6hKcKLYbEQcN00BGvtf6Se5mXLgnOzvUgqJQt2ijrt1jUbD3nRY6q
+	lkVit24RiNlwuphaqOScNJUPNByf5qWS2gXZyNWFzaP23pLi4fGajpFHi2FHHMilUx0lNa7yAGJb4
+	nf8WAsrlNkR9DnRsABmf8OftLw1zgZc/6LWSzeSsYDJNvyKjiwaxEwRIUgSzf/sl6FRiAoJIyfA19
+	cBakBRvc+QodYT306+m1RFQCPm3Qc7E/5a5mDtEyB+qLKI2DiF8eSZjQnQztX9g+y8tLaMTlYxJt+
+	LznHWY1AbP7rW5tTH4oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izJml-0002Bo-Hs; Wed, 05 Feb 2020 12:28:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1izJnF-0002cy-N8; Wed, 05 Feb 2020 12:28:33 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izJlr-0001J1-DQ
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 12:27:09 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DAE6622527;
- Wed,  5 Feb 2020 12:27:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580905627;
- bh=QKBpJPiVyTVeBC8mnt3utXps19G5xC9I5KMgOWdab1E=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=zSt+huBiTdTNPzwwBWTKDLJoxb/3PNigLzG2XOn1LgYahLEG7KCaHXdAwSKGd8f2r
- mR0TUHU+F4WwAJTnOrGaPFJ2Ma78/JMXt+Tmvyi98eJbPMnlpHbogwSvyd1FXvtNG4
- 4o8qrykZBMw71QyHSPAlxxJJ3ilOKqkLeIj7jlbg=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1izJlp-0037ry-8I; Wed, 05 Feb 2020 12:27:05 +0000
+ id 1izJml-0002Gj-Tg
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 12:28:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=BOW5KZykxI349ZwRVvxHRZ+Lw+4S+aeevegHK214C94=; b=q9KTEEJH599k/P0x11SS7ayg4
+ L0jenCNDR9Y+41TF9olCN0RGMhGGMfF1wNh1KyWIR/npJ7yX72i6h+c9Pf8RvVDbYd9CZLXFVglHC
+ eqjBzgFo/zhnRXaS6hrIfG3Wqjd3kXPn9gvb9gmzEEWrnue4KuyMiJtm/ZaSjJsd95YVX+mwb46De
+ 4RrfB6rGoFMsCL3ra5SVHz0bbJPEqhMPCOV9Z4qXOqdzlakTjGR+G73D+/Mn9lru7np6ATjEBQUwA
+ q0FlTWlTEgMy6RHdDVUdajcHzH+IZgMtRgAo+f8PBglLJZ9aBnvHnuMxhwYXlt2BSyT3/vqFtzXkU
+ VG+Jm69dQ==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:36278)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1izJmN-0000RR-6U; Wed, 05 Feb 2020 12:27:39 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1izJmH-0001t4-Sd; Wed, 05 Feb 2020 12:27:33 +0000
+Date: Wed, 5 Feb 2020 12:27:33 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [RFC net-next 6/8] net: phylink: Configure MAC/PCS when link is
+ up without PHY
+Message-ID: <20200205122733.GU25745@shell.armlinux.org.uk>
+References: <20200127140038.GD13647@lunn.ch>
+ <20200127140834.GW25745@shell.armlinux.org.uk>
+ <20200127145107.GE13647@lunn.ch>
+ <20200127161132.GX25745@shell.armlinux.org.uk>
+ <20200127162206.GJ13647@lunn.ch>
+ <c3e863b8-2143-fee3-bb0b-65699661d7ab@gmail.com>
+ <BN8PR12MB3266B69DA09E1CC215843C3CD30A0@BN8PR12MB3266.namprd12.prod.outlook.com>
+ <20200204172603.GS25745@shell.armlinux.org.uk>
+ <20200204174318.GB1364@lunn.ch>
+ <20200204193230.GT25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
-Date: Wed, 05 Feb 2020 12:27:05 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Zenghui Yu <yuzenghui@huawei.com>
-Subject: Re: [PATCH RFC 3/5] irqchip/gic-v4.1: Ensure L2 vPE table is
- allocated at RD level
-In-Reply-To: <20200204090940.1225-4-yuzenghui@huawei.com>
-References: <20200204090940.1225-1-yuzenghui@huawei.com>
- <20200204090940.1225-4-yuzenghui@huawei.com>
-Message-ID: <621f153637ccabb85ede10e2c495c38f@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.8
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- tglx@linutronix.de, jason@lakedaemon.net, wanghaibin.wang@huawei.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200204193230.GT25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_042707_519169_939D929D 
-X-CRM114-Status: GOOD (  21.69  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200205_042803_959699_09CAA00F 
+X-CRM114-Status: GOOD (  29.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -79,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,162 +96,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jason@lakedaemon.net, linux-kernel@vger.kernel.org,
- wanghaibin.wang@huawei.com, tglx@linutronix.de, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, Jakub Kicinski <kuba@kernel.org>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Zenghui,
-
-Thanks for this. A few comments below.
-
-On 2020-02-04 09:09, Zenghui Yu wrote:
-> In GICv4, we will ensure that level2 vPE table memory is allocated
-> for the specified vpe_id on all v4 ITS, in its_alloc_vpe_table().
-> This still works well for the typical GICv4.1 implementation, where
-> the new vPE table is shared between the ITSs and the RDs.
+On Tue, Feb 04, 2020 at 07:32:30PM +0000, Russell King - ARM Linux admin wrote:
+> On Tue, Feb 04, 2020 at 06:43:18PM +0100, Andrew Lunn wrote:
+> > > There, there is one MAC, but there are multiple different PCS - one
+> > > for SGMII and 1000base-X, another for 10G, another for 25G, etc.
+> > > These PCS are accessed via a MDIO adapter embedded in each of the
+> > > MAC hardware blocks.
+> > 
+> > Hi Russell
+> > 
+> > Marvell mv88e6390X switches are like this is a well. There is a PCS
+> > for SGMII and 1000Base-X, and a second one for 10G. And it dynamically
+> > swaps between them depending on the port mode, the so called cmode.
+> > 
+> > So a generic solution is required, and please take your time to build
+> > one.
 > 
-> To make things explicit, introduce allocate_vpe_l1_table_entry() to
-> make sure that the L2 tables are allocated on all v4.1 RDs. We're
-> likely not need to allocate memory in it because the vPE table is
-> shared and (L2 table is) already allocated at ITS level, except
-> for the case where the ITS doesn't share anything (say SVPET == 0,
-> practically unlikely but architecturally allowed).
-
-Huh... Interesting. I definitely don't anticipate the case to pop up,
-but you are right, this is architecturally allowed.
-
-> The implementation of allocate_vpe_l1_table_entry() is mostly
-> copied from its_alloc_table_entry().
+> Well, DSA is quite a mixed bag...
 > 
-> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
-> ---
->  drivers/irqchip/irq-gic-v3-its.c | 68 ++++++++++++++++++++++++++++++++
->  1 file changed, 68 insertions(+)
+> As far as I can work out, the situation with the CPU and DSA ports is
+> quite hopeless - you've claimed that a change in phylink has broken it,
+> I can't find what that may be.  The fact is, phylink has never had any
+> link information for DSA links when no fixed-link property has been
+> specified in DT.  As I've already said in a previous email about this,
+> I can't see *any* sane way to fix that - but there was no response.
 > 
-> diff --git a/drivers/irqchip/irq-gic-v3-its.c 
-> b/drivers/irqchip/irq-gic-v3-its.c
-> index 0f1fe56ce0af..c1d01454eec8 100644
-> --- a/drivers/irqchip/irq-gic-v3-its.c
-> +++ b/drivers/irqchip/irq-gic-v3-its.c
-> @@ -2443,6 +2443,64 @@ static u64 
-> inherit_vpe_l1_table_from_rd(cpumask_t **mask)
->  	return 0;
->  }
 > 
-> +static int allocate_vpe_l1_table_entry(int cpu, u32 id)
-
-Given that this actually allocates the L2 table, I'd rather have it 
-called
-something like allocate_vpe_l2_table() as the pendant of 
-allocate_vpe_l1_table().
-
-This should also properly return a bool rather then an int.
-
-> +{
-> +	void __iomem *base = gic_data_rdist_cpu(cpu)->rd_base;
-> +	u64 val, gpsz, npg;
-> +	unsigned int psz, esz, idx;
-> +	struct page *page;
-> +	__le64 *table;
-> +
-> +	if (!gic_rdists->has_rvpeid)
-> +		return true;
-> +
-> +	val  = gits_read_vpropbaser(base + SZ_128K + GICR_VPROPBASER);
-> +
-> +	esz  = FIELD_GET(GICR_VPROPBASER_4_1_ENTRY_SIZE, val) + 1;
-> +	gpsz = FIELD_GET(GICR_VPROPBASER_4_1_PAGE_SIZE, val);
-> +	npg  = FIELD_GET(GICR_VPROPBASER_4_1_SIZE, val) + 1;
-> +
-> +	switch (gpsz) {
-> +	default:
-> +		WARN_ON(1);
-> +		/* fall through */
-> +	case GIC_PAGE_SIZE_4K:
-> +		psz = SZ_4K;
-> +		break;
-> +	case GIC_PAGE_SIZE_16K:
-> +		psz = SZ_16K;
-> +		break;
-> +	case GIC_PAGE_SIZE_64K:
-> +		psz = SZ_64K;
-> +		break;
-> +	}
-> +
-> +	/* Don't allow vpe_id that exceeds single, flat table limit */
-> +	if (!(val & GICR_VPROPBASER_4_1_INDIRECT))
-> +		return (id < (npg * psz / (esz * SZ_8)));
-> +
-> +	/* Compute 1st level table index & check if that exceeds table limit 
-> */
-> +	idx = id >> ilog2(psz / (esz * SZ_8));
-> +	if (idx >= (npg * psz / GITS_LVL1_ENTRY_SIZE))
-> +		return false;
-> +
-> +	table = gic_data_rdist_cpu(cpu)->vpe_l1_base;
-> +
-> +	/* Allocate memory for 2nd level table */
-> +	if (!table[idx]) {
-> +		page = alloc_pages(GFP_KERNEL | __GFP_ZERO, get_order(psz));
-> +		if (!page)
-> +			return false;
-> +
-> +		table[idx] = cpu_to_le64(page_to_phys(page) | GITS_BASER_VALID);
-
-I think we may need a cache flushing here in some circumstances. We 
-certainly
-have it in its_alloc_table_entry.
-
-> +
-> +		/* Ensure updated table contents are visible to RD hardware */
-> +		dsb(sy);
-> +	}
-> +
-> +	return true;
-> +}
-> +
->  static int allocate_vpe_l1_table(void)
->  {
->  	void __iomem *vlpi_base = gic_data_rdist_vlpi_base();
-> @@ -2957,6 +3015,7 @@ static bool its_alloc_device_table(struct
-> its_node *its, u32 dev_id)
->  static bool its_alloc_vpe_table(u32 vpe_id)
->  {
->  	struct its_node *its;
-> +	int cpu;
+> On a more positive note...
 > 
->  	/*
->  	 * Make sure the L2 tables are allocated on *all* v4 ITSs. We
-> @@ -2979,6 +3038,15 @@ static bool its_alloc_vpe_table(u32 vpe_id)
->  			return false;
->  	}
+> The mac_link_up() changes that I've talked about should work for DSA,
+> if only there was a reasonable way to reconfigure the ports.  If you
+> look at the "phy" branch, you will notice that there's a patch there -
+> "net: mv88e6xxx: use resolved link config in mac_link_up()" which adds
+> the support to configure the MAC manually.  It's rather messy, and I
+> see no way to deal with the pause settings.  There is support in some
+> Marvell DSA switches to force flow control but that's not supported
+> through the current mid-layer at all (port_set_pause doesn't do it.)
+> I'm not sure whether the "mv88e6xxx_phy_is_internal()" check there is
+> the right test for every DSA switch correct either.
 > 
-> +	/*
-> +	 * Make sure the L2 tables are allocated for all copies of
-> +	 * the L1 table on *all* v4.1 RDs.
-> +	 */
-> +	for_each_possible_cpu(cpu) {
+> What is missing is reading the results from the PCS (aka serdes) and
+> forwarding them into phylink - I did have a quick look at how that might
+> be possible, but the DSA code structure (consisting of multiple
+> mid-layers) makes it hard without rewriting quite a lot of code.  That's
+> fine if you know all the DSA chips inside out, but I don't - and that's
+> where we need someone who has the knowledge of all DSA switches that we
+> support.  Or, we get rid of the multiple mid-layers and switch to a
+> library approach, so that we can modify support for one DSA switch
+> without affecting everything.  It may be a simple matter of dropping the
+> existing serdes workaround, but I'm not sure at the moment.
+> 
+> I've tried this code out on the ZII rev B, I haven't tried it on the rev
+> C which has the 6390 switches yet.
 
-not: You could predicate this on gic_rdists->has_rvpeid so that you 
-don't
-iterate pointlessly on non v4.1 HW.
+Well, it seems GPIO hogging with the sx1503q (for the 3310 PHY, which
+is a local change) has broken sometime between v4.20 and v5.5, which
+prevents the sx1503q driver probing:
 
-> +		if (!allocate_vpe_l1_table_entry(cpu, vpe_id))
-> +			return false;
-> +	}
-> +
->  	return true;
->  }
+[   23.378706] gpio gpiochip7: (sx1503q): setup of own GPIO 10g-rstn failed
+[   23.394858] requesting hog GPIO 10g-rstn (chip sx1503q, offset 9) failed, -517
+[   23.402512] gpiochip_add_data_with_key: GPIOs 480..495 (sx1503q) failed to register, -517
 
-Otherwise, looks good to me.
+Without the hog, the 3310 PHY doesn't come out of reset, so I lose
+port 9 on the first switch.
 
-         M.
+With that removed, I can boot, and if I bring up sff2, I see the port 9
+on the second switch status report 0xef4b and control 0x303f without
+fiber connected.  I'm out of time to do anything further on this today
+(not even decode those), because its taken all morning to get the board
+to this point, and I won't have any time tomorrow either.
+
 -- 
-Jazz is not dead. It just smells funny...
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
