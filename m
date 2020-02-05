@@ -2,86 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C93515370A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 18:49:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9277E153723
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 19:00:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p0WLIKf4iiNqVmrepbTp7i0X3ima11Oy01woh7tLIq8=; b=eEHxaYHiFvlr47
-	p4wAluKVcS3rv9IAT1TePQbKSX9SA9QVxhl2r5egNdKNf7J1U9EE48EdLea5I+1uVKcA4q02BGhVQ
-	DbeC8dl5hgGpeKAnK0GyZwklY18wqZqxukolInw8yEoBwmzf0tk6+rkM4v01/zXeqASwxx2gC106b
-	hSozGth9VAJM939A+LGnYgB4Kev9F4MrmLC4zj+uPSGznowlMWZViH4Av2ClK/I05tVxMOOnqQk+8
-	N6qVayqasWI1Lk/vO1wWTU1OSxLjxW42KCbRkUwnrjVSUWfKB7FzQzJ6wzbkyzawE7WUtBMBbk9ED
-	EWSPjWlDBjNoXHiT74Rw==;
+	List-Owner; bh=uR7g9O2QmrIJ+y9AUaVKoNQPokXFMKJzBK/h/ayzD0I=; b=rjZ6+gICsra4gM
+	yLu1NRAV+Pc1NGYbCTX0KJZE1jVLQAl6UDD7H80le8uYSg05gCivCD3zyeNfaqEusjJ6g49OLXBt0
+	J/1J9M1xppFiiulJr4nQ/i4o/ANkp73aMiM+iPY+blb0IPx9ABLLtS44wISTvC8TPIEsAWSqEfVVv
+	xg9RA/zTS5lVmfq9ZA1FwDLiGyemJheHeOeusvmW8voTtdaxdaAKedIDDfhhZouIrO4qccE50w6aq
+	19JczCqYXVPhqZvvJDIVKcbFwZNshQwSZJXY82MS2JNYUaLBN2iJIfDo7wbX+otUy1khAChEBoU+O
+	sz3M7e7UJWzTEgnCddow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izOo1-00038D-Pd; Wed, 05 Feb 2020 17:49:41 +0000
-Received: from mail-wr1-f68.google.com ([209.85.221.68])
+	id 1izOyD-0007Iq-Ua; Wed, 05 Feb 2020 18:00:13 +0000
+Received: from mail-yw1-xc42.google.com ([2607:f8b0:4864:20::c42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izOnv-00037H-53
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 17:49:36 +0000
-Received: by mail-wr1-f68.google.com with SMTP id m16so3798956wrx.11
+ id 1izOy2-0006qr-1V
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 18:00:03 +0000
+Received: by mail-yw1-xc42.google.com with SMTP id b81so3165325ywe.9
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 05 Feb 2020 09:49:34 -0800 (PST)
+ Wed, 05 Feb 2020 10:00:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=rRgXvPr3SwIij87seHPiKa5mQQ0rdFnyGB2bv1mFSf8=;
+ b=Bk0/Cw3/MqA+hum9NqHHMRRRYzF3xdfomLI5myEg+7tMx0ZRORwJbupYsD5Fcx6/WZ
+ +iTgQCiKWKSaAPUceVbmwxBP3dluyHQ+6itcBpIHPH0q6OoUk1GIhnSIFXyXx8F4s84y
+ 1QKv3u2CkJ4vqiaqrL+rDTyQ14PmxhCKsvjK/ky0/EuFW9l1Ze8Vnw29Zc/5/Pr4gVfw
+ +4aXPQpSJi3RqV+SAES3L5WtWJN9Lo1Kz9EuSdnxMjYaE5HgsLMCcoyeqKiMvDaPV+eg
+ t7eXrxmLxe12Pq8r+W4u487E9V0L5qQsikTa3ePAzgAfKaLzIBM8sWyHYe2UKPsCTdfA
+ nL9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Lsfbnz3H38vTOletZ4EmB6C9KpZCxglql+qL3XIYGjo=;
- b=Kvdxa7lvpI3Ye197Do/UzWH9Pmu6c3AkiY1faVJ6tkxJ1Jg2o5YecNjpN+tZFhZWa+
- M4RDx3Mdfq7mbhqEqZCXjnLr+ADVBFYc0ihC0wxx8f0wanCJgRZc6I/0kirmt9lR+2h2
- IbTa9107co/VCQnaIDoKht3svO13HyT/frrEYQTcHEOkLlGpEINQLojAAtG6i4i5jfrt
- RAwgDiPn8MneWtfsm6LT5F+TNe/mYG/gN56Gq6L7aV4kaRyL6Aq2mkg8nl1pcleLhxHr
- 04vEOci/EiN+uSi/s6DUZQucrXsEfAm4BTRbat9JhpKcWh9FCXkFqKG04XM7ab/+DDR6
- PT1A==
-X-Gm-Message-State: APjAAAWLaddVCPOlM8//4ZWBP9uSyhUTAPt7k6ZS+p8Ch/Jwk+tgVZqd
- wQMxBfkh32VmgdKYxJO2JQ==
-X-Google-Smtp-Source: APXvYqybHL6/b3Oz5I7G0CLuDoP0nfLxsBDQ3ivJbNaQ7/MXHy/EygjBmjdA1/E6DvSGs4NYiVTZrg==
-X-Received: by 2002:adf:ea8a:: with SMTP id s10mr28065695wrm.278.1580924973513; 
- Wed, 05 Feb 2020 09:49:33 -0800 (PST)
-Received: from rob-hp-laptop ([212.187.182.166])
- by smtp.gmail.com with ESMTPSA id t1sm335850wma.43.2020.02.05.09.49.32
+ :mime-version:content-disposition:in-reply-to;
+ bh=rRgXvPr3SwIij87seHPiKa5mQQ0rdFnyGB2bv1mFSf8=;
+ b=RE6TUYz6Cj5MlXyGUroq5HjXN0xk4m+Xfng72P5Bm9pwNerTiX02IqQpH9CG6STreJ
+ BYoCNMNSEfvdKcfs23VlELCD94ZnGFGstQqWgn5RiAsed7j8kVBVMP+VChMHrsFbLbtC
+ 22lgde80BzkdeZdzq8YFBEoTa9WCNsF19JkCNDIbX8H2OWz7fAVfcvSit6/zJDb+OPtB
+ VDEKOdXlzgzd5y1QXo6h1x8EWZa8LC3FcknrCWu8zivaKu1HSJmK6ijP5LWDadtYrD3l
+ jmsYBtwQOk1kdb28dnnw4BwLedoZzEjOPlovs3RWWejUkxIpRtXtL07oSlG5yw1BN28s
+ wHsw==
+X-Gm-Message-State: APjAAAUt1vtXa7qX5bWJpCvGYRydg7fg2K11HWd5yjfmYUD+ilsYh5Qv
+ O8hmpy4rTeclBPX4/ENS16A=
+X-Google-Smtp-Source: APXvYqxL/2f5r/cM0VlljtruqTfsVW5vkWvw0UbpVFlDnScpMN99cE8YToUz2/tGE3IbM8NbrZIfaw==
+X-Received: by 2002:a81:11d7:: with SMTP id 206mr11978061ywr.150.1580925600074; 
+ Wed, 05 Feb 2020 10:00:00 -0800 (PST)
+Received: from icarus (072-189-064-225.res.spectrum.com. [72.189.64.225])
+ by smtp.gmail.com with ESMTPSA id h203sm216399ywb.98.2020.02.05.09.59.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 05 Feb 2020 09:49:32 -0800 (PST)
-Received: (nullmailer pid 29957 invoked by uid 1000);
- Wed, 05 Feb 2020 17:49:31 -0000
-Date: Wed, 5 Feb 2020 17:49:31 +0000
-From: Rob Herring <robh@kernel.org>
-To: Ludovic Barre <ludovic.barre@st.com>
-Subject: Re: [PATCH V2 5/9] dt-bindings: mmc: mmci: add delay block base
- register for sdmmc
-Message-ID: <20200205174931.GA29922@bogus>
-References: <20200128090636.13689-1-ludovic.barre@st.com>
- <20200128090636.13689-6-ludovic.barre@st.com>
+ Wed, 05 Feb 2020 09:59:59 -0800 (PST)
+Date: Wed, 5 Feb 2020 12:59:45 -0500
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>, jic23@kernel.org
+Subject: Re: [PATCH] counter: stm32-timer-cnt: add power management support
+Message-ID: <20200205175945.GA57132@icarus>
+References: <1580899678-26393-1-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200128090636.13689-6-ludovic.barre@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1580899678-26393-1-git-send-email-fabrice.gasnier@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_094935_194007_E78ABDC1 
-X-CRM114-Status: GOOD (  11.41  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200205_100002_126617_46DBD48D 
+X-CRM114-Status: GOOD (  18.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.68 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2607:f8b0:4864:20:0:0:0:c42 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ provider [vilhelm.gray[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,32 +98,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, srinivas.kandagatla@linaro.org,
- Ludovic Barre <ludovic.barre@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 28 Jan 2020 10:06:32 +0100, Ludovic Barre wrote:
-> To support the sdr104 mode, the sdmmc variant has a
-> hardware delay block to manage the clock phase when sampling
-> data received by the card.
+On Wed, Feb 05, 2020 at 11:47:58AM +0100, Fabrice Gasnier wrote:
+> Add suspend/resume PM sleep ops. When going to low power, enforce the
+> counter isn't active.
 > 
-> This patch adds a second base register (optional) for
-> sdmmc delay block.
-> 
-> Signed-off-by: Ludovic Barre <ludovic.barre@st.com>
-> ---
->  Documentation/devicetree/bindings/mmc/mmci.txt | 2 ++
->  1 file changed, 2 insertions(+)
-> 
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
 
-Acked-by: Rob Herring <robh@kernel.org>
+These changes are purely for the PM ops and don't involve the Counter
+API, so I don't see any see any issues with this patch from my end.
+
+Acked-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+
+> ---
+>  drivers/counter/stm32-timer-cnt.c | 25 +++++++++++++++++++++++++
+>  1 file changed, 25 insertions(+)
+> 
+> diff --git a/drivers/counter/stm32-timer-cnt.c b/drivers/counter/stm32-timer-cnt.c
+> index 3eafcce..3b84503 100644
+> --- a/drivers/counter/stm32-timer-cnt.c
+> +++ b/drivers/counter/stm32-timer-cnt.c
+> @@ -12,6 +12,7 @@
+>  #include <linux/iio/types.h>
+>  #include <linux/mfd/stm32-timers.h>
+>  #include <linux/module.h>
+> +#include <linux/pinctrl/consumer.h>
+>  #include <linux/platform_device.h>
+>  
+>  #define TIM_CCMR_CCXS	(BIT(8) | BIT(0))
+> @@ -358,10 +359,33 @@ static int stm32_timer_cnt_probe(struct platform_device *pdev)
+>  	priv->counter.num_signals = ARRAY_SIZE(stm32_signals);
+>  	priv->counter.priv = priv;
+>  
+> +	platform_set_drvdata(pdev, priv);
+> +
+>  	/* Register Counter device */
+>  	return devm_counter_register(dev, &priv->counter);
+>  }
+>  
+> +static int __maybe_unused stm32_timer_cnt_suspend(struct device *dev)
+> +{
+> +	struct stm32_timer_cnt *priv = dev_get_drvdata(dev);
+> +	u32 cr1;
+> +
+> +	/* Check for active counter */
+> +	regmap_read(priv->regmap, TIM_CR1, &cr1);
+> +	if (cr1 & TIM_CR1_CEN)
+> +		return -EBUSY;
+> +
+> +	return pinctrl_pm_select_sleep_state(dev);
+> +}
+> +
+> +static int __maybe_unused stm32_timer_cnt_resume(struct device *dev)
+> +{
+> +	return pinctrl_pm_select_default_state(dev);
+> +}
+> +
+> +static SIMPLE_DEV_PM_OPS(stm32_timer_cnt_pm_ops, stm32_timer_cnt_suspend,
+> +			 stm32_timer_cnt_resume);
+> +
+>  static const struct of_device_id stm32_timer_cnt_of_match[] = {
+>  	{ .compatible = "st,stm32-timer-counter", },
+>  	{},
+> @@ -373,6 +397,7 @@ static struct platform_driver stm32_timer_cnt_driver = {
+>  	.driver = {
+>  		.name = "stm32-timer-counter",
+>  		.of_match_table = stm32_timer_cnt_of_match,
+> +		.pm = &stm32_timer_cnt_pm_ops,
+>  	},
+>  };
+>  module_platform_driver(stm32_timer_cnt_driver);
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
