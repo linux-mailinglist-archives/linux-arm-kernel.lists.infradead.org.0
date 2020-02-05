@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 562971527CD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 09:56:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BC081527CE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 09:56:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=sSy3rfOZPYw53CIEXcFfpvKz82/Kwv7Y7911xStPi9M=; b=YJTuQADHklu42qPUAdJdfbmQUi
-	9EQDKRqN9APi6DsuzGGLhBbLAW5PetV3IFcFz9kRgb+59bJNNgjJ1NZKx6EvKp1rC0YrCocQruETW
-	HNq3wqO37T1i8GD8AC907GvUacT2EndPYwC9jKFHP0u5/Y+P1Bk7Vi3IxOj9ccKV3+Zkv2wyPsoXY
-	fpP2+qf44gYOihXCuxqzlS+A3cRLG0qJwIbbTSRQxWsBOD77+HKjHrfwP5uWrkU3EUNj+v0ZGrfqF
-	ARDpHaTB3kD3JliZBRXvs0rMYK4EY1J2DyhG9Z6CAZodFkGmDewGu/1m/SS7Dnvx0UABJ2r8QlmbV
-	870LX0sw==;
+	bh=9zj8AX1ParWxOYLlJ8bTSwAu69I377kkhQnEFOcPY1o=; b=AfH52nJpG8xPFHMOXC2kBRKd6K
+	xqALAmV5hRrS1W/0IsB6yuw43xvpdigau5TisDlUDZGl4l82by37cMVUZ7a05b0HZTK6vaf4Bj8V/
+	QNGtBlPiupIlB9/vHKlkJwD1O7p6MrItU1bi5jeEKvVn23ZKBodN99Uf2AKYd4LnDXhVD3kzRmmoV
+	KXMI+IErdAmw+eOZ2RaB7S9NuG7R4kMKs8HjjvgONQ/H6DUBkDJDYrIvd8ln7rf9kKWvn85WUckQC
+	ebaBuUrz2FZRB6e+e6aFuvmMb32tM1v3ox8ECGRJXdaI4gWgczQZWq7lFnq1W0uI/1/Vwt0SS6jsW
+	RQzBOxYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izGTl-0005Cs-5w; Wed, 05 Feb 2020 08:56:13 +0000
+	id 1izGTw-0005Rz-Ab; Wed, 05 Feb 2020 08:56:24 +0000
 Received: from mga06.intel.com ([134.134.136.31])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izGTD-0004l2-KQ
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 08:55:41 +0000
+ id 1izGTG-0004l2-Oq
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 08:55:44 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from fmsmga002.fm.intel.com ([10.253.24.26])
  by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 05 Feb 2020 00:55:39 -0800
+ 05 Feb 2020 00:55:42 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,405,1574150400"; d="scan'208";a="264149185"
+X-IronPort-AV: E=Sophos;i="5.70,405,1574150400"; d="scan'208";a="264149194"
 Received: from unknown (HELO bong5-HP-Z440.png.intel.com) ([10.221.118.166])
- by fmsmga002.fm.intel.com with ESMTP; 05 Feb 2020 00:55:36 -0800
+ by fmsmga002.fm.intel.com with ESMTP; 05 Feb 2020 00:55:39 -0800
 From: Ong Boon Leong <boon.leong.ong@intel.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net v4 2/6] net: stmmac: fix incorrect GMAC_VLAN_TAG register
- writting in GMAC4+
-Date: Wed,  5 Feb 2020 16:55:06 +0800
-Message-Id: <20200205085510.32353-3-boon.leong.ong@intel.com>
+Subject: [PATCH net v4 3/6] net: stmmac: xgmac: fix incorrect XGMAC_VLAN_TAG
+ register writting
+Date: Wed,  5 Feb 2020 16:55:07 +0800
+Message-Id: <20200205085510.32353-4-boon.leong.ong@intel.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200205085510.32353-1-boon.leong.ong@intel.com>
 References: <20200205085510.32353-1-boon.leong.ong@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_005539_726394_2EAA95F9 
-X-CRM114-Status: GOOD (  10.97  )
+X-CRM114-CacheID: sfid-20200205_005542_879829_E4B335B5 
+X-CRM114-Status: GOOD (  10.77  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -80,47 +80,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "Tan, Tee Min" <tee.min.tan@intel.com>
-
-It should always do a read of current value of GMAC_VLAN_TAG instead of
+We should always do a read of current value of XGMAC_VLAN_TAG instead of
 directly overwriting the register value.
 
-Fixes: c1be0022df0d ("net: stmmac: Add VLAN HASH filtering support in GMAC4+")
-Signed-off-by: Tan, Tee Min <tee.min.tan@intel.com>
+Fixes: 3cd1cfcba26e2 ("net: stmmac: Implement VLAN Hash Filtering in XGMAC")
 Signed-off-by: Ong Boon Leong <boon.leong.ong@intel.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index f0c0ea616032..4d8eef9ff137 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -736,11 +736,14 @@ static void dwmac4_update_vlan_hash(struct mac_device_info *hw, u32 hash,
- 				    __le16 perfect_match, bool is_double)
- {
- 	void __iomem *ioaddr = hw->pcsr;
-+	u32 value;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+index 2af3ac5409b7..a0e67d178280 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+@@ -569,7 +569,9 @@ static void dwxgmac2_update_vlan_hash(struct mac_device_info *hw, u32 hash,
  
- 	writel(hash, ioaddr + GMAC_VLAN_HASH_TABLE);
+ 		writel(value, ioaddr + XGMAC_PACKET_FILTER);
  
-+	value = readl(ioaddr + GMAC_VLAN_TAG);
+-		value = XGMAC_VLAN_VTHM | XGMAC_VLAN_ETV;
++		value = readl(ioaddr + XGMAC_VLAN_TAG);
 +
- 	if (hash) {
--		u32 value = GMAC_VLAN_VTHM | GMAC_VLAN_ETV;
-+		value |= GMAC_VLAN_VTHM | GMAC_VLAN_ETV;
++		value |= XGMAC_VLAN_VTHM | XGMAC_VLAN_ETV;
  		if (is_double) {
- 			value |= GMAC_VLAN_EDVLP;
- 			value |= GMAC_VLAN_ESVL;
-@@ -759,8 +762,6 @@ static void dwmac4_update_vlan_hash(struct mac_device_info *hw, u32 hash,
+ 			value |= XGMAC_VLAN_EDVLP;
+ 			value |= XGMAC_VLAN_ESVL;
+@@ -584,7 +586,9 @@ static void dwxgmac2_update_vlan_hash(struct mac_device_info *hw, u32 hash,
  
- 		writel(value | perfect_match, ioaddr + GMAC_VLAN_TAG);
- 	} else {
--		u32 value = readl(ioaddr + GMAC_VLAN_TAG);
--
- 		value &= ~(GMAC_VLAN_VTHM | GMAC_VLAN_ETV);
- 		value &= ~(GMAC_VLAN_EDVLP | GMAC_VLAN_ESVL);
- 		value &= ~GMAC_VLAN_DOVLTC;
+ 		writel(value, ioaddr + XGMAC_PACKET_FILTER);
+ 
+-		value = XGMAC_VLAN_ETV;
++		value = readl(ioaddr + XGMAC_VLAN_TAG);
++
++		value |= XGMAC_VLAN_ETV;
+ 		if (is_double) {
+ 			value |= XGMAC_VLAN_EDVLP;
+ 			value |= XGMAC_VLAN_ESVL;
 -- 
 2.17.1
 
