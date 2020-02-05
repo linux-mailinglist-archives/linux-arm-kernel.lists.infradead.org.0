@@ -2,89 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CC75153410
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 16:40:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07D8115344A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 16:42:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BEq54P+rtjcraR4th6MC8ai08DecIeZeLqb+uo4A4PU=; b=E6x88q7cvKD1hU
-	u/9+XiIWsuN+2JJsD6bkdfmZFcA2wzGz8cJh5Iw0SO0fkXvc0gRErKQTvufApnYvXFeWtEeo/3lVr
-	dLGTjD1WT1kaHBfKKCcaU8wDgXKIgXTW705iYXHEZQu919oMyGtkoUvEk2KYIVIqWNMyUYiv4jjjd
-	x6ejQg92jxvSlnzSIDaGPg8i1XQZwFZCKFPkw7xRCAWRDpwjWaS34AJJgxC1lygc9yVgBt76wwWoG
-	mnnFH9sNaHg6M9n7ir9joojyDuS2HEvG7te2N8W1cYF9rzzQL84xFfa/eBjBq8FWvbpsOMkE1VAmi
-	3MGSdipK6zVwXcCMOhGQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n8mz4pn1cXkyXwW+TUVw/G0HyjaEidctRyQIVTgjf0A=; b=F/WU1r0PSkyeh4
+	glZAI9S/wCIOjCEyaVzCGaMRjWNfUZKQSiUTmjMlgmd9gZVjSoIwlhdMa7J/FXRIJp0hfOWdaP/C5
+	E1kc/yakR/9nLEuDOY+95GuzAgVb8Gk4qL91u84sBfyozY+6Gj72pRcwnff7/1/dm2C/V87Kxgr3B
+	I0C23A0dAfOpCA4dC7RRCZ7s5z44BPK5mp949xS4JWbFGbX+mPEhMhEt99cGkasEMCv5bnuteGxZU
+	VRofVmNkrl/vElzGgR9rVHZ3Y9cYkgLCcidAUt1XtpZZCrAUmz58m3BTmcJNEw5z/xONhsS+fQ1+Q
+	QNY4Vu1lIz7PmOFHDjlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izMmp-00021y-9i; Wed, 05 Feb 2020 15:40:19 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1izMoP-0002K7-JZ; Wed, 05 Feb 2020 15:41:57 +0000
+Received: from skedge03.snt-world.com ([91.208.41.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izMmh-0001gG-Rm
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 15:40:13 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 015FWwvf008590; Wed, 5 Feb 2020 16:40:05 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=WdNadQvxNBXO+0tm2iC0eiSJG8J7/mehWsNGj64gZlw=;
- b=STDP4ci2p3F4IwppsnFjj8Y6G5zVYxUOAGHB5d/lgrSWq0HWHgEeacREUenF0JBZBxH/
- dXysb9Oi0dLO87O832Vw5/0A7cGf7adsyWixRC5BkCI3b1sQQj0erUs36Gx3K78ln5y0
- xEoxuG+zqnHcvcFS583IweXAsgv3G6524QnFJoPJ0UOaPFN3QDxHWGPX55q/OCmK1oRW
- 0yX0d4X1UDo60DwNrzzCHPHXftvDX5mFSxTHj/J/euC8n+v+JJOLp+bv+0VuBM7UJwsl
- QuJERc6xmLC4TTCqEx2CFOwcwdl/26WgrAmGwh424pmVf8vZFlXao4vwoKIVTMVqTRBT xw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xyhktqwj6-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 05 Feb 2020 16:40:05 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 30698100038;
- Wed,  5 Feb 2020 16:40:01 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1B8462C38AF;
- Wed,  5 Feb 2020 16:40:01 +0100 (CET)
-Received: from [10.48.1.171] (10.75.127.44) by SFHDAG5NODE2.st.com
- (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 5 Feb
- 2020 16:40:00 +0100
-Subject: Re: [PATCHv2] i2c: i2c-stm32f7: allow controller to be wakeup-source
-To: Alain Volmat <alain.volmat@st.com>, <wsa@the-dreams.de>
-References: <1580752328-26009-1-git-send-email-alain.volmat@st.com>
-From: Pierre Yves MORDRET <pierre-yves.mordret@st.com>
-Message-ID: <883584b6-ceab-b199-3118-e801e5109e10@st.com>
-Date: Wed, 5 Feb 2020 16:40:00 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <1580752328-26009-1-git-send-email-alain.volmat@st.com>
+ id 1izMoG-0002Iy-2y
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 15:41:50 +0000
+Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge03.snt-world.com (Postfix) with ESMTPS id DCD5467A6FE;
+ Wed,  5 Feb 2020 16:41:41 +0100 (CET)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
+ (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Wed, 5 Feb 2020
+ 16:41:41 +0100
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1913.005; Wed, 5 Feb 2020 16:41:41 +0100
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Adam Ford <aford173@gmail.com>, Jacky Bai <ping.bai@nxp.com>, "NXP Linux
+ Team" <linux-imx@nxp.com>, Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH 5/7] arm64: dts: imx8mm: add GPC power domains
+Thread-Topic: [PATCH 5/7] arm64: dts: imx8mm: add GPC power domains
+Thread-Index: AQHVqxK76SDACaL8QUasrdsECo8DbaeqwvaAgAAKqICAYkD9AA==
+Date: Wed, 5 Feb 2020 15:41:41 +0000
+Message-ID: <db801b5e-0482-0379-c19e-5c293532c493@kontron.de>
+References: <20191205021924.25188-1-aford173@gmail.com>
+ <20191205021924.25188-6-aford173@gmail.com>
+ <DB7PR04MB517877B39D4659568F69B813875C0@DB7PR04MB5178.eurprd04.prod.outlook.com>
+ <CAHCN7xLwJvqb=Pc8oOxdRLOExjw-cDKaEmm4-bR3Yt=t+OwY6Q@mail.gmail.com>
+In-Reply-To: <CAHCN7xLwJvqb=Pc8oOxdRLOExjw-cDKaEmm4-bR3Yt=t+OwY6Q@mail.gmail.com>
+Accept-Language: de-DE, en-US
 Content-Language: en-US
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG5NODE2.st.com
- (10.75.127.14)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-05_04:2020-02-04,
- 2020-02-05 signatures=0
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <32680A5ECEBE5747A3268A81C8330511@snt-world.com>
+MIME-Version: 1.0
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: DCD5467A6FE.A43F0
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: aford173@gmail.com, devicetree@vger.kernel.org,
+ festevam@gmail.com, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ linux-kernel@vger.kernel.org, mark.rutland@arm.com, peng.fan@nxp.com,
+ ping.bai@nxp.com, robh+dt@kernel.org, s.hauer@pengutronix.de,
+ shawnguo@kernel.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_074012_201047_F5279328 
-X-CRM114-Status: GOOD (  27.29  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200205_074148_457745_1483D85D 
+X-CRM114-Status: GOOD (  21.44  )
+X-Spam-Score: 1.8 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 2.5 URIBL_DBL_ABUSE_MALW   Contains an abused malware URL listed in
+ the Spamhaus DBL blocklist [URIs: infradead.org]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ low trust [91.208.41.68 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,279 +94,202 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
- linux-i2c@vger.kernel.org, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all
+Hi,
 
-Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+On 05.12.19 04:15, Adam Ford wrote:
+> On Wed, Dec 4, 2019 at 8:37 PM Jacky Bai <ping.bai@nxp.com> wrote:
+>>
+>>> -----Original Message-----
+>>> From: Adam Ford <aford173@gmail.com>
+>>> Sent: Thursday, December 5, 2019 10:19 AM
+>>> To: linux-arm-kernel@lists.infradead.org
+>>> Cc: Adam Ford <aford173@gmail.com>; Rob Herring <robh+dt@kernel.org>;
+>>> Mark Rutland <mark.rutland@arm.com>; Shawn Guo
+>>> <shawnguo@kernel.org>; Sascha Hauer <s.hauer@pengutronix.de>;
+>>> Pengutronix Kernel Team <kernel@pengutronix.de>; Fabio Estevam
+>>> <festevam@gmail.com>; dl-linux-imx <linux-imx@nxp.com>;
+>>> devicetree@vger.kernel.org; linux-kernel@vger.kernel.org
+>>> Subject: [PATCH 5/7] arm64: dts: imx8mm: add GPC power domains
+>>>
+>>> There is a power domain controller on the i.XM8M Mini used for handling
+>>> interrupts and controlling certain peripherals like USB OTG and PCIe, which
+>>> are currently unavailable.
+>>>
+>>> This patch enables support the controller itself to the help facilitate enabling
+>>> additional peripherals.
+>>>
+>>> Signed-off-by: Adam Ford <aford173@gmail.com>
+>>> ---
+>>>   arch/arm64/boot/dts/freescale/imx8mm.dtsi | 82
+>>> ++++++++++++++++++++++-
+>>>   1 file changed, 81 insertions(+), 1 deletion(-)
+>>>
+>>> diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+>>> b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+>>> index 23c8fad7932b..d05c5b617a4d 100644
+>>> --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+>>> +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+>>> @@ -4,6 +4,7 @@
+>>>    */
+>>>
+>>>   #include <dt-bindings/clock/imx8mm-clock.h>
+>>> +#include <dt-bindings/power/imx8m-power.h>
+>>>   #include <dt-bindings/gpio/gpio.h>
+>>>   #include <dt-bindings/input/input.h>
+>>>   #include <dt-bindings/interrupt-controller/arm-gic.h>
+>>> @@ -13,7 +14,7 @@
+>>>
+>>>   / {
+>>>        compatible = "fsl,imx8mm";
+>>> -     interrupt-parent = <&gic>;
+>>> +     interrupt-parent = <&gpc>;
+>>
+>> NACK, for imx8mm, imx8mn & future i.MX8M SOC, we don't treat GPC as interrupt controller in linux anymore.
+>> Above change will break the low power mode support(suspend/resume)
+> 
+> What makes it different than the i.MX8MQ?  The I basically copied this
+> from the i.MX8MQ and updated the bit locations and tried to leave
+> everything else the same.
+> 
+> I'm OK with removing the interrupt controller stuff, but if that's
+> required, I'd like to understand why it's still in the i.MX8Q.
 
-Thanks
+I would also like to know how NXP plans to implement things like GPC in 
+mainline. I currently use a tree [1] that doesn't use any power domain 
+driver but USB, LCDIF and MIPI-DSI are working fine.
+For this I ported some patches from the imx_5.4.0_8dxlphantom_er tree in 
+the NXP repository [2] and added a few small hacks to enable missing 
+clocks, etc.
 
-On 2/3/20 6:52 PM, Alain Volmat wrote:
-> Allow the i2c-stm32f7 controller to become a wakeup-source
-> of the system. In such case, when a slave is registered to the
-> I2C controller, receiving a I2C message targeting that registered
-> slave address wakes up the suspended system.
-> 
-> In order to be able to wake-up, the I2C controller DT node
-> must have the property wakeup-source defined and a slave
-> must be registered.
-> 
-> Signed-off-by: Alain Volmat <alain.volmat@st.com>
-> ---
->  v2: - enclose _suspend and _resume functions (and related) with
->        #ifdef CONFIG_PM_SLEEP
->      - remove the __maybe_unused for functions enclosed with CONFIG_PM_SLEEP
->      - move stm32f7_i2c_enable_wakeup function upper in the file to avoid
->        having a prototype.
->  
->  drivers/i2c/busses/i2c-stm32f7.c | 107 +++++++++++++++++++++++++------
->  1 file changed, 86 insertions(+), 21 deletions(-)
-> 
-> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
-> index 5c3e8ac6ad92..378956ac6d1d 100644
-> --- a/drivers/i2c/busses/i2c-stm32f7.c
-> +++ b/drivers/i2c/busses/i2c-stm32f7.c
-> @@ -29,6 +29,7 @@
->  #include <linux/platform_device.h>
->  #include <linux/pinctrl/consumer.h>
->  #include <linux/pm_runtime.h>
-> +#include <linux/pm_wakeirq.h>
->  #include <linux/regmap.h>
->  #include <linux/reset.h>
->  #include <linux/slab.h>
-> @@ -49,6 +50,7 @@
->  
->  /* STM32F7 I2C control 1 */
->  #define STM32F7_I2C_CR1_PECEN			BIT(23)
-> +#define STM32F7_I2C_CR1_WUPEN			BIT(18)
->  #define STM32F7_I2C_CR1_SBC			BIT(16)
->  #define STM32F7_I2C_CR1_RXDMAEN			BIT(15)
->  #define STM32F7_I2C_CR1_TXDMAEN			BIT(14)
-> @@ -301,6 +303,7 @@ struct stm32f7_i2c_msg {
->   * @dma: dma data
->   * @use_dma: boolean to know if dma is used in the current transfer
->   * @regmap: holds SYSCFG phandle for Fast Mode Plus bits
-> + * @wakeup_src: boolean to know if the device is a wakeup source
->   */
->  struct stm32f7_i2c_dev {
->  	struct i2c_adapter adap;
-> @@ -323,6 +326,7 @@ struct stm32f7_i2c_dev {
->  	struct stm32_i2c_dma *dma;
->  	bool use_dma;
->  	struct regmap *regmap;
-> +	bool wakeup_src;
->  };
->  
->  /*
-> @@ -1691,6 +1695,24 @@ static int stm32f7_i2c_smbus_xfer(struct i2c_adapter *adapter, u16 addr,
->  	return ret;
->  }
->  
-> +static void stm32f7_i2c_enable_wakeup(struct stm32f7_i2c_dev *i2c_dev,
-> +				      bool enable)
-> +{
-> +	void __iomem *base = i2c_dev->base;
-> +	u32 mask = STM32F7_I2C_CR1_WUPEN;
-> +
-> +	if (!i2c_dev->wakeup_src)
-> +		return;
-> +
-> +	if (enable) {
-> +		device_set_wakeup_enable(i2c_dev->dev, true);
-> +		stm32f7_i2c_set_bits(base + STM32F7_I2C_CR1, mask);
-> +	} else {
-> +		device_set_wakeup_enable(i2c_dev->dev, false);
-> +		stm32f7_i2c_clr_bits(base + STM32F7_I2C_CR1, mask);
-> +	}
-> +}
-> +
->  static int stm32f7_i2c_reg_slave(struct i2c_client *slave)
->  {
->  	struct stm32f7_i2c_dev *i2c_dev = i2c_get_adapdata(slave->adapter);
-> @@ -1717,6 +1739,9 @@ static int stm32f7_i2c_reg_slave(struct i2c_client *slave)
->  	if (ret < 0)
->  		return ret;
->  
-> +	if (!stm32f7_i2c_is_slave_registered(i2c_dev))
-> +		stm32f7_i2c_enable_wakeup(i2c_dev, true);
-> +
->  	if (id == 0) {
->  		/* Configure Own Address 1 */
->  		oar1 = readl_relaxed(i2c_dev->base + STM32F7_I2C_OAR1);
-> @@ -1758,6 +1783,9 @@ static int stm32f7_i2c_reg_slave(struct i2c_client *slave)
->  
->  	ret = 0;
->  pm_free:
-> +	if (!stm32f7_i2c_is_slave_registered(i2c_dev))
-> +		stm32f7_i2c_enable_wakeup(i2c_dev, false);
-> +
->  	pm_runtime_mark_last_busy(dev);
->  	pm_runtime_put_autosuspend(dev);
->  
-> @@ -1791,8 +1819,10 @@ static int stm32f7_i2c_unreg_slave(struct i2c_client *slave)
->  
->  	i2c_dev->slave[id] = NULL;
->  
-> -	if (!(stm32f7_i2c_is_slave_registered(i2c_dev)))
-> +	if (!stm32f7_i2c_is_slave_registered(i2c_dev)) {
->  		stm32f7_i2c_disable_irq(i2c_dev, STM32F7_I2C_ALL_IRQ_MASK);
-> +		stm32f7_i2c_enable_wakeup(i2c_dev, false);
-> +	}
->  
->  	pm_runtime_mark_last_busy(i2c_dev->dev);
->  	pm_runtime_put_autosuspend(i2c_dev->dev);
-> @@ -1879,6 +1909,9 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
->  		return irq_error ? : -ENOENT;
->  	}
->  
-> +	i2c_dev->wakeup_src = of_property_read_bool(pdev->dev.of_node,
-> +						    "wakeup-source");
-> +
->  	i2c_dev->clk = devm_clk_get(&pdev->dev, NULL);
->  	if (IS_ERR(i2c_dev->clk)) {
->  		dev_err(&pdev->dev, "Error: Missing controller clock\n");
-> @@ -1985,6 +2018,16 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
->  		goto clk_free;
->  	}
->  
-> +	if (i2c_dev->wakeup_src) {
-> +		device_set_wakeup_capable(i2c_dev->dev, true);
-> +
-> +		ret = dev_pm_set_wake_irq(i2c_dev->dev, irq_event);
-> +		if (ret) {
-> +			dev_err(i2c_dev->dev, "Failed to set wake up irq\n");
-> +			goto clr_wakeup_capable;
-> +		}
-> +	}
-> +
->  	platform_set_drvdata(pdev, i2c_dev);
->  
->  	pm_runtime_set_autosuspend_delay(i2c_dev->dev,
-> @@ -2014,6 +2057,13 @@ static int stm32f7_i2c_probe(struct platform_device *pdev)
->  	pm_runtime_set_suspended(i2c_dev->dev);
->  	pm_runtime_dont_use_autosuspend(i2c_dev->dev);
->  
-> +	if (i2c_dev->wakeup_src)
-> +		dev_pm_clear_wake_irq(i2c_dev->dev);
-> +
-> +clr_wakeup_capable:
-> +	if (i2c_dev->wakeup_src)
-> +		device_set_wakeup_capable(i2c_dev->dev, false);
-> +
->  	if (i2c_dev->dma) {
->  		stm32_i2c_dma_free(i2c_dev->dma);
->  		i2c_dev->dma = NULL;
-> @@ -2032,6 +2082,15 @@ static int stm32f7_i2c_remove(struct platform_device *pdev)
->  	i2c_del_adapter(&i2c_dev->adap);
->  	pm_runtime_get_sync(i2c_dev->dev);
->  
-> +	if (i2c_dev->wakeup_src) {
-> +		dev_pm_clear_wake_irq(i2c_dev->dev);
-> +		/*
-> +		 * enforce that wakeup is disabled and that the device
-> +		 * is marked as non wakeup capable
-> +		 */
-> +		device_init_wakeup(i2c_dev->dev, false);
-> +	}
-> +
->  	pm_runtime_put_noidle(i2c_dev->dev);
->  	pm_runtime_disable(i2c_dev->dev);
->  	pm_runtime_set_suspended(i2c_dev->dev);
-> @@ -2073,8 +2132,8 @@ static int __maybe_unused stm32f7_i2c_runtime_resume(struct device *dev)
->  	return 0;
->  }
->  
-> -static int __maybe_unused
-> -stm32f7_i2c_regs_backup(struct stm32f7_i2c_dev *i2c_dev)
-> +#ifdef CONFIG_PM_SLEEP
-> +static int stm32f7_i2c_regs_backup(struct stm32f7_i2c_dev *i2c_dev)
->  {
->  	int ret;
->  	struct stm32f7_i2c_regs *backup_regs = &i2c_dev->backup_regs;
-> @@ -2095,8 +2154,7 @@ stm32f7_i2c_regs_backup(struct stm32f7_i2c_dev *i2c_dev)
->  	return ret;
->  }
->  
-> -static int __maybe_unused
-> -stm32f7_i2c_regs_restore(struct stm32f7_i2c_dev *i2c_dev)
-> +static int stm32f7_i2c_regs_restore(struct stm32f7_i2c_dev *i2c_dev)
->  {
->  	u32 cr1;
->  	int ret;
-> @@ -2127,41 +2185,48 @@ stm32f7_i2c_regs_restore(struct stm32f7_i2c_dev *i2c_dev)
->  	return ret;
->  }
->  
-> -static int __maybe_unused stm32f7_i2c_suspend(struct device *dev)
-> +static int stm32f7_i2c_suspend(struct device *dev)
->  {
->  	struct stm32f7_i2c_dev *i2c_dev = dev_get_drvdata(dev);
->  	int ret;
->  
->  	i2c_mark_adapter_suspended(&i2c_dev->adap);
-> -	ret = stm32f7_i2c_regs_backup(i2c_dev);
-> -	if (ret < 0) {
-> -		i2c_mark_adapter_resumed(&i2c_dev->adap);
-> -		return ret;
-> -	}
->  
-> -	pinctrl_pm_select_sleep_state(dev);
-> -	pm_runtime_force_suspend(dev);
-> +	if (!device_may_wakeup(dev) && !dev->power.wakeup_path) {
-> +		ret = stm32f7_i2c_regs_backup(i2c_dev);
-> +		if (ret < 0) {
-> +			i2c_mark_adapter_resumed(&i2c_dev->adap);
-> +			return ret;
-> +		}
-> +
-> +		pinctrl_pm_select_sleep_state(dev);
-> +		pm_runtime_force_suspend(dev);
-> +	}
->  
->  	return 0;
->  }
->  
-> -static int __maybe_unused stm32f7_i2c_resume(struct device *dev)
-> +static int stm32f7_i2c_resume(struct device *dev)
->  {
->  	struct stm32f7_i2c_dev *i2c_dev = dev_get_drvdata(dev);
->  	int ret;
->  
-> -	ret = pm_runtime_force_resume(dev);
-> -	if (ret < 0)
-> -		return ret;
-> -	pinctrl_pm_select_default_state(dev);
-> +	if (!device_may_wakeup(dev) && !dev->power.wakeup_path) {
-> +		ret = pm_runtime_force_resume(dev);
-> +		if (ret < 0)
-> +			return ret;
-> +		pinctrl_pm_select_default_state(dev);
-> +
-> +		ret = stm32f7_i2c_regs_restore(i2c_dev);
-> +		if (ret < 0)
-> +			return ret;
-> +	}
->  
-> -	ret = stm32f7_i2c_regs_restore(i2c_dev);
-> -	if (ret < 0)
-> -		return ret;
->  	i2c_mark_adapter_resumed(&i2c_dev->adap);
->  
->  	return 0;
->  }
-> +#endif
->  
->  static const struct dev_pm_ops stm32f7_i2c_pm_ops = {
->  	SET_RUNTIME_PM_OPS(stm32f7_i2c_runtime_suspend,
-> 
+Is there some roadmap for the upstream support of the different drivers 
+and features of the i.MX8MM?
 
+Thanks,
+Frieder
+
+[1] https://git.kontron-electronics.de/linux/linux/commits/v5.4-ktn
+[2] 
+https://source.codeaurora.org/external/imx/linux-imx/log/?h=imx_5.4.0_8dxlphantom_er
+
+> 
+> adam
+>>
+>> BR
+>> Jacky Bai
+>>
+>>>        #address-cells = <2>;
+>>>        #size-cells = <2>;
+>>>
+>>> @@ -495,6 +496,85 @@
+>>>                                interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
+>>>                                #reset-cells = <1>;
+>>>                        };
+>>> +
+>>> +                     gpc: gpc@303a0000 {
+>>> +                             compatible = "fsl,imx8mm-gpc";
+>>> +                             reg = <0x303a0000 0x10000>;
+>>> +                             interrupt-parent = <&gic>;
+>>> +                             interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>;
+>>> +                             interrupt-controller;
+>>> +                             #interrupt-cells = <3>;
+>>> +
+>>> +                             pgc {
+>>> +                                     #address-cells = <1>;
+>>> +                                     #size-cells = <0>;
+>>> +
+>>> +                                     pgc_mipi: power-domain@0 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_DOMAIN_MIPI>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_pcie: power-domain@1 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_DOMAIN_PCIE>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_otg1: power-domain@2 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg =
+>>> <IMX8MM_POWER_DOMAIN_USB_OTG1>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_otg2: power-domain@3 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg =
+>>> <IMX8MM_POWER_DOMAIN_USB_OTG2>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_ddr1: power-domain@4 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_DOMAIN_DDR1>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_gpu2d: power-domain@5 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_DOMAIN_GPU2D>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_gpu: power-domain@6 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_DOMAIN_GPU>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_vpu: power-domain@7 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_DOMAIN_VPU>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_gpu3d: power-domain@8 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_DOMAIN_GPU3D>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_disp: power-domain@9 {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_DOMAIN_DISP>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_vpu_g1: power-domain@a {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_VPU_G1>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_vpu_g2: power-domain@b {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_VPU_G2>;
+>>> +                                     };
+>>> +
+>>> +                                     pgc_vpu_h1: power-domain@c {
+>>> +                                             #power-domain-cells = <0>;
+>>> +                                             reg = <IMX8MM_POWER_VPU_H1>;
+>>> +                                     };
+>>> +                             };
+>>> +                     };
+>>>                };
+>>>
+>>>                aips2: bus@30400000 {
+>>> --
+>>> 2.20.1
+>>
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
