@@ -2,58 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 136C6152845
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 10:27:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9938C152885
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 10:38:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+AErtg8iPBmb3nn/LZZGDTzb57QfJgvCi68YWK1ZE8Q=; b=g+qikRd0A3bxhA
-	rkhMxtBe//0Z/jWcFmL+z0xhUE8tLMc/PV/D7eF49I0PoBBl6oVpoofRQcRXr6GgaoL1OiS2MekSN
-	Dust39/8b+atlcQ7ytNfRCuyyDNWLx758gXLcUiUIumjA8ufb81j32QjbElNo6A9FXNlBB+MZsCZf
-	t2Ikj9CnZBtk+yjsj0tlnt09KGFR7D0RSyfFj/wSV369twa7RZmLPnrn3xwtVqX8EvQBv1zPZPXMQ
-	jjF/ls54prmc81nFZuQ0OHobj1jbry0pEKTLTfZmUCYdo+BKo4rDiYQ0Ka+Uht4X5qW3Ak3ZnMEw2
-	+LDHY1RKxv41uojc8eKA==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zJ6wAFGuKANdRV7dnvkMyGK5CMhczf0ZRVNtCc8MJxk=; b=XiI/VpLNw0GK0P
+	W6aeuJVVjCGQkBVxp1qxhNl5tORnvoDMJ5Jy/rp8oB/rhplQfOpUT3xZHkFNxFkws/oWUd2mXHlKN
+	UIhFeo9m+qwEdm7Cth6pjGJJRy+zNztxu02CezllckIstqa/f6PMlpDVcN0Xq0me707ZKkojmdNCr
+	S+7xwUdjwSP3zeOc8si20vNls1ADc6J/g8QoNRATDnY8RnZbgP3gtlkZx8uibLlt2QCyWEvdz0mBm
+	9BGLhhGg7jC96wUa8DLd0Kxxn5Dfr7L/I+5rwtbswx0W3kf1kT+Pk0XooEhHtNuZgLn6l0ujgscnM
+	PABwWTbiUOtF8eVvCtjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izGxi-0001E5-HY; Wed, 05 Feb 2020 09:27:10 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1izH8T-0005Bt-1Q; Wed, 05 Feb 2020 09:38:17 +0000
+Received: from mail-qv1-xf4a.google.com ([2607:f8b0:4864:20::f4a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izGxZ-0001D3-Gz
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 09:27:03 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id F0459FB03;
- Wed,  5 Feb 2020 10:26:55 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id Db75lo8tmrVk; Wed,  5 Feb 2020 10:26:54 +0100 (CET)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id C1A17400E6; Wed,  5 Feb 2020 10:26:53 +0100 (CET)
-Date: Wed, 5 Feb 2020 10:26:53 +0100
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: sdhci timeout on imx8mq
-Message-ID: <20200205092653.GB2737@bogon.m.sigxcpu.org>
-References: <CAOMZO5DMMCZPfwNbTaG8_iQhWg2K1XeO719nSA0Gsf2ywHy4jQ@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOMZO5DMMCZPfwNbTaG8_iQhWg2K1XeO719nSA0Gsf2ywHy4jQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1izH8G-00059Q-Kg
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 09:38:06 +0000
+Received: by mail-qv1-xf4a.google.com with SMTP id j15so1092802qvp.21
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Feb 2020 01:38:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:message-id:mime-version:subject:from:to:cc;
+ bh=t+hNfXtjwFMsmQ+t75tk3QCZWXLmXlUbrDyATbIS/Bc=;
+ b=MPdYJEe/X6+UOZ/iI1BO4xiJs31/Seqbo6Q05MkN0brP5sV4pUta35ASqc5ULG8ziQ
+ MIUHRAe8OceKhjKHENrwwX88Qlu0xqxjT9OFOuFAAHORAv2N3GXNou/tSWw1lGrfXJoc
+ 1O9xQ4fansGi92J16e/+mBRYDj8j0Pb55onstvRNM6TkiRBJJOdqXPfRsL4YUzImAPeD
+ gVXNWPUqdg9Cw6znnQcyC87bJXikYGVVqErTVVC9yv9HOZvUaMY94ZIEwBU2Y2wQGjGV
+ t3LQeT3oP6JZ1MG+jwnSUPEbUi1mKjw1OJDzO4MlWdnEkb+z4ifpd/IdsuYlVLNIaIdZ
+ rWUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
+ bh=t+hNfXtjwFMsmQ+t75tk3QCZWXLmXlUbrDyATbIS/Bc=;
+ b=K8vyCT+Rjm/NY6zzwmUmLmtlngWM299LxFuAImN0Otoaf4ZzDwSoZX6j1jazxdZFaV
+ U3sLGB0nO8CCnhxyZTVs4wkHrZLWkn0pnK943UnKx2YR6f2hqfhHuoCygYkSmvKtJo0G
+ R4GINrg+qPzGoJD0IYQCMkBxastg1CTMBDhqiADO0/6aFqTUqgyFh/QJBprA5ACJJMLM
+ q7VPjdntUuL03kyrLnSgMRYmtnDvnxWqEhf/LVxml8nul2LxUDwcOi8wLm6PiPa7zNNt
+ 7t1peBfgjwbNIzZ+pthBe1Eq7/So5z4hkN1ZNwhU37C68CTaGRCoSTwEdY+xhP0IuVzr
+ BOYg==
+X-Gm-Message-State: APjAAAVnOUp6LVcugvMnkLIXojBL4171GQo/7QJe8wy7oB83BwLOGYbs
+ NBtcMqGjT4eWLI7tG+bEFAcsj2zhlplU
+X-Google-Smtp-Source: APXvYqxWq6o7mBKpCGRPGamchrFfwa2yARrxJ2bCNGi7q5SP7eZKkfVJhzmt1ZrNjdgv4w8hfmP3yhbrXV7A
+X-Received: by 2002:a37:de0b:: with SMTP id h11mr9177628qkj.274.1580895480903; 
+ Wed, 05 Feb 2020 01:38:00 -0800 (PST)
+Date: Wed,  5 Feb 2020 17:37:42 +0800
+Message-Id: <20200205093745.79298-1-tzungbi@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
+Subject: [PATCH 0/3] ASoC: mediatek: mt8173-rt5650: HDMI jack reporting
+From: Tzung-Bi Shih <tzungbi@google.com>
+To: broonie@kernel.org, airlied@linux.ie, daniel@ffwll.ch
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_012701_728917_40D5D63E 
-X-CRM114-Status: GOOD (  10.23  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200205_013804_672252_8468BE43 
+X-CRM114-Status: UNSURE (   6.43  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,60 +89,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>, NXP Linux Team <linux-imx@nxp.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: alsa-devel@alsa-project.org, cychiang@google.com, tzungbi@google.com,
+ dri-devel@lists.freedesktop.org, ck.hu@mediatek.com,
+ linux-mediatek@lists.infradead.org, p.zabel@pengutronix.de,
+ matthias.bgg@gmail.com, dgreid@google.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Fabio,
-On Mon, Feb 03, 2020 at 04:19:50PM -0300, Fabio Estevam wrote:
-> Hi,
-> 
-> I observe the following timeout on a imx8mq-evk running linux-next 20200203:
-> 
-> # [   11.747858] mmc0: Timeout waiting for hardware interrupt.
-> [   11.753264] mmc0: sdhci: ============ SDHCI REGISTER DUMP ===========
-> [   11.759705] mmc0: sdhci: Sys addr:  0x00000800 | Version:  0x00000002
-> [   11.766145] mmc0: sdhci: Blk size:  0x00000200 | Blk cnt:  0x00000001
-> [   11.772584] mmc0: sdhci: Argument:  0x00000000 | Trn mode: 0x00000013
-> [   11.779024] mmc0: sdhci: Present:   0x01f88a0a | Host ctl: 0x00000011
-> [   11.785463] mmc0: sdhci: Power:     0x00000002 | Blk gap:  0x00000080
-> [   11.791902] mmc0: sdhci: Wake-up:   0x00000008 | Clock:    0x000020ff
-> [   11.798342] mmc0: sdhci: Timeout:   0x0000008f | Int stat: 0x00000000
-> [   11.804781] mmc0: sdhci: Int enab:  0x117f100b | Sig enab: 0x117f100b
-> [   11.811220] mmc0: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00008402
-> [   11.817660] mmc0: sdhci: Caps:      0x07eb0000 | Caps_1:   0x8000b407
-> [   11.824100] mmc0: sdhci: Cmd:       0x0000083a | Max curr: 0x00ffffff
-> [   11.830539] mmc0: sdhci: Resp[0]:   0x00000900 | Resp[1]:  0xffffffff
-> [   11.836978] mmc0: sdhci: Resp[2]:   0x320f5913 | Resp[3]:  0x00d04f01
-> [   11.843416] mmc0: sdhci: Host ctl2: 0x00000008
-> [   11.847860] mmc0: sdhci: ADMA Err:  0x00000001 | ADMA Ptr: 0xf97d2200
-> [   11.854297] mmc0: sdhci: ============================================
-> [   11.860908] mmc0: error -110 whilst initialising MMC card
-> [   12.027806] mmc0: new HS400 MMC card at address 0001
-> [   12.033283] mmcblk0: mmc0:0001 R1J56L 13.8 GiB
-> [   12.038007] mmcblk0boot0: mmc0:0001 R1J56L partition 1 4.00 MiB
-> [   12.044112] mmcblk0boot1: mmc0:0001 R1J56L partition 2 4.00 MiB
-> [   12.050172] mmcblk0rpmb: mmc0:0001 R1J56L partition 3 128 KiB,
-> chardev (235:0)
-> [   12.058210]  mmcblk0: p1 p2
-> 
-> Haven't had a chance to debug this yet, but just reporting in case
-> anyone has any ideas.
+The series supports HDMI jack reporting to mt8173-rt5650.
 
-I've seen the same occasionally on the librem 5 with older linux-next as
-well. Do you have a good reproducer?
-Cheers,
- -- Guido
+The 1st patch is less related.  It stops running in probe() if failed
+to register audio driver.
 
-> 
-> Thanks
-> 
+The 2nd patch supports jack reporting in DRM driver.
+
+The 3rd patch supports jack reporting in mt8173-rt5650 ASoC machine
+driver.
+
+Tzung-Bi Shih (3):
+  drm/mediatek: exit earlier if failed to register audio driver
+  drm/mediatek: support HDMI jack status reporting
+  ASoC: mediatek: mt8173-rt5650: support HDMI jack reporting
+
+ drivers/gpu/drm/mediatek/mtk_hdmi.c       | 52 ++++++++++++++++++++---
+ sound/soc/mediatek/mt8173/mt8173-rt5650.c | 17 +++++++-
+ 2 files changed, 63 insertions(+), 6 deletions(-)
+
+-- 
+2.25.0.341.g760bfbb309-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
