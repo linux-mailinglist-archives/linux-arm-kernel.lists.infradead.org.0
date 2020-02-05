@@ -2,65 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 197A615394A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 20:48:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E82F1539F2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  5 Feb 2020 22:07:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:To:Subject:From:
-	References:In-Reply-To:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=dA33HxozTDlGE791AQ9puYHmFLYvS4Jz3Ac4J+ruBUU=; b=pKlMuvdZLlgiFaV/aHeCW+Xhu7
-	2t6R+5OgK0TqqaErYpur6fPUKGC93lzsTLSSWBGjVF+l4dTe3Qzq8EfN1ANpB2iE+a1LHEams2jPA
-	y+NCnudthhDG1Oi2a2fK6TcQ/dvSDzzBO8ixpkV3xT2is8UX+ZOwS9ax1Yq1lbrqAa27CechxmkVb
-	CxCxKdC6o4wQ70n645dIgJtK+ZyLgaIaekJn4PHFFKHgYhZ57wA0EESNw7h6nu8jvebm3scAJs8Qo
-	FJcmobKycAxIFIEPN8NLSRDyGgrTRHgttl2mFa5J6crL+nqNrXLF8F5WMOdPS/JskpCFeTpj4GN6d
-	T3AdmBwA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5KnkIcMyjQV3tfiiRrP3W4LkbtuAw+y7zKp3JekHOPA=; b=B14gLULlBZ3LRL
+	qROqJmO8658rmcB53R6t6mT2ltNNOD6fS2GpvUSiwr5qXCO8zNTZUpdIGGo7bfYmc0EVKy1TTKOF6
+	MJ0qzceOYIg95xZXpP5KictUXsfSq1sFLGl42t45pC3fK3WF8ZeoWUnRTN2ruhEsIYK8Via4rYEpa
+	ubCxpYQAPWeYg0Vn+qd5oqZtfoIJN8NGye8vVEJ7to3770nXEuemePwyxpWBllh4M+WrY677oSECX
+	6DSsro28jZLcamlCm0eLwVg3u45PScQ9b1ze62zpLme8qe/8KrIfjqDGj72zxGymh+f30OvQU1Pk8
+	O+dLf7XJYtsFd07UMiBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izQeW-0007g7-6i; Wed, 05 Feb 2020 19:48:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1izRt9-00073k-EE; Wed, 05 Feb 2020 21:07:11 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izQeM-0007fN-PN
- for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 19:47:52 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 464C020730;
- Wed,  5 Feb 2020 19:47:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580932070;
- bh=erZuHPE5oBTfwxLwohCXCrhyZgZqkGPnYYKFrljQVlM=;
- h=In-Reply-To:References:From:Subject:To:Date:From;
- b=SR5ts6RDCOu7tBX8GQ0h6AY3HwfEN8QaCVus+ggaeyQV6x0OjodIQ0rMXKJ9Sspw5
- NaAFiYPxBekuxHlpzQqDUzzXgyGLZSvREpKWqmdfmSFXOxyoAzleFpKxQ6WS7ppHco
- 6rPIbIPGVQK+u43v9kfDE2iJJE91tr6qTrP7+HB0=
+ id 1izRt0-00072s-QZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 05 Feb 2020 21:07:04 +0000
+Received: by mail-pl1-x641.google.com with SMTP id e8so1374913plt.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Feb 2020 13:06:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=51aeHheY/rt4DM+DW672ePDwXYA8QyYv8DwatD1TXuQ=;
+ b=LYYUZew3BwAE1xoByIz6JPLp2v+5cIbt1vVEbEqSwZU+daxgKZMqXXZNwDO/EaTk89
+ mefzudnZvyMQwVKqJBHBxwO1RvNhAupM3vfp2JZ3DQ9IdQeNS5iXI/3PVzYsCui3DGPj
+ 7P3Q/vJL71vxTJcoskqAqh1emNeO13XS5W1DGsoywcadkfDagL33w7P5O8vZJh7wky6q
+ WmtHRCfKjsTkS9Sykv4FGUNUyJGu8Z8qxovwgVpr21LdlZRplwPHK7f0FFKzx2hqDm+V
+ tcRkyuNlVmcsvTiGRvHRtK34hPDDBz/R9Y+v2L0jqeFQky+scE8b0KIuMnI+V4AGNj/u
+ ZS6Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=51aeHheY/rt4DM+DW672ePDwXYA8QyYv8DwatD1TXuQ=;
+ b=WNIkSBMRZHiNkLdHEbg4ZFuQuLCMDO6tQhCrIeEHLDqpL2Z3mfFzU3463HiUvrbnHd
+ /UeiLZR0zBkuTHJFrj1a57XqltxWJzi9wccUXyaOcVlWG28ZWVE0v11BMQj/XyItQG83
+ sKgiYYPFatRTzBKBVCoc9jIN+BJ2227TOaFdd8cNBl95ufbCn6rqj4cjg0zgcknBZA28
+ eTVJgUVtiBx48iWpdhKLmwSz37sazoy12DxYr4OOtZLI5HOc4njtnzrcAh56sxNS/1Ub
+ 3ssE3t3uufXbTD5xm/FPVgMs5Bu3TYQ157tnY0Uf7NyABXQ24551m/7CTplQOHEbssxS
+ SeSQ==
+X-Gm-Message-State: APjAAAXA6m0BbfiGD9NXjoAYXR3pjwAGBbXNKzKB3Tz7pzFJtA4f+Bxr
+ JGtdLgLw4lVpOsDTm6n3D51iug==
+X-Google-Smtp-Source: APXvYqz/259/Z0l+PdxYDVyZ4ffYq1mmxbp7AAs1jQ1DpAGMP1eIJKwJWmu0jT4pXZZ76v93octxJw==
+X-Received: by 2002:a17:90a:8685:: with SMTP id p5mr103015pjn.92.1580936819090; 
+ Wed, 05 Feb 2020 13:06:59 -0800 (PST)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id 199sm420457pfv.81.2020.02.05.13.06.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 05 Feb 2020 13:06:58 -0800 (PST)
+Date: Wed, 5 Feb 2020 14:06:55 -0700
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Clement Leger <cleger@kalray.eu>
+Subject: Re: [PATCH v3 1/2] remoteproc: Use u64 len for da_to_va
+Message-ID: <20200205210655.GA25901@xps15>
+References: <20200129163013.GA16538@xps15>
+ <20200204174412.16814-1-cleger@kalray.eu>
+ <20200204174412.16814-2-cleger@kalray.eu>
 MIME-Version: 1.0
-In-Reply-To: <1579905147-12142-8-git-send-email-vnkgutta@codeaurora.org>
-References: <1579905147-12142-1-git-send-email-vnkgutta@codeaurora.org>
- <1579905147-12142-8-git-send-email-vnkgutta@codeaurora.org>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v2 7/7] arm64: dts: qcom: sm8250: Add sm8250 dts file
-To: agross@kernel.org, bjorn.andersson@linaro.org, devicetree@vger.kernel.org,
- jshriram@codeaurora.org, linux-arm-kernel@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, mark.rutland@arm.com, mturquette@baylibre.com,
- psodagud@codeaurora.org, robh+dt@kernel.org, tdas@codeaurora.org,
- tsoni@codeaurora.org, vinod.koul@linaro.org, vnkgutta@codeaurora.org
-User-Agent: alot/0.8.1
-Date: Wed, 05 Feb 2020 11:47:49 -0800
-Message-Id: <20200205194750.464C020730@mail.kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20200204174412.16814-2-cleger@kalray.eu>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_114750_871852_547DC975 
-X-CRM114-Status: GOOD (  12.61  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200205_130702_877458_9038BEC5 
+X-CRM114-Status: GOOD (  19.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -70,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,496 +99,250 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Loic PALLARDY <loic.pallardy@st.com>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>, Jonathan Corbet <corbet@lwn.net>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-doc@vger.kernel.org, linux-remoteproc@vger.kernel.org,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Andy Gross <agross@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+ s-anna <s-anna@ti.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Venkata Narendra Kumar Gutta (2020-01-24 14:32:27)
-> diff --git a/arch/arm64/boot/dts/qcom/sm8250.dtsi b/arch/arm64/boot/dts/qcom/sm8250.dtsi
-> new file mode 100644
-> index 0000000..f63df12
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/qcom/sm8250.dtsi
-> @@ -0,0 +1,450 @@
-> +// SPDX-License-Identifier: BSD-3-Clause
-> +/*
-> + * Copyright (c) 2020, The Linux Foundation. All rights reserved.
-> + */
-> +
-> +#include <dt-bindings/interrupt-controller/arm-gic.h>
-> +#include <dt-bindings/clock/qcom,rpmh.h>
-> +#include <dt-bindings/soc/qcom,rpmh-rsc.h>
-> +
-> +/ {
-> +       interrupt-parent = <&intc>;
-> +
-> +       #address-cells = <2>;
-> +       #size-cells = <2>;
-> +
-> +       chosen { };
-> +
-> +       clocks {
-> +               xo_board: xo-board {
-> +                       compatible = "fixed-clock";
-> +                       #clock-cells = <0>;
-> +                       clock-frequency = <38400000>;
-> +                       clock-output-names = "xo_board";
-> +               };
-> +
-> +               sleep_clk: sleep-clk {
-> +                       compatible = "fixed-clock";
-> +                       #clock-cells = <0>;
-> +                       clock-frequency = <32000>;
-> +               };
-> +       };
-> +
-> +       cpus {
-> +               #address-cells = <2>;
-> +               #size-cells = <0>;
-> +
-> +               CPU0: cpu@0 {
-> +                       device_type = "cpu";
-> +                       compatible = "qcom,kryo485";
-> +                       reg = <0x0 0x0>;
-> +                       enable-method = "psci";
-> +                       next-level-cache = <&L2_0>;
-> +                       L2_0: l2-cache {
-> +                             compatible = "cache";
-> +                             next-level-cache = <&L3_0>;
-> +                               L3_0: l3-cache {
-> +                                     compatible = "cache";
-> +                               };
-> +                       };
-> +               };
-> +
-> +               CPU1: cpu@100 {
-> +                       device_type = "cpu";
-> +                       compatible = "qcom,kryo485";
-> +                       reg = <0x0 0x100>;
-> +                       enable-method = "psci";
-> +                       next-level-cache = <&L2_100>;
-> +                       L2_100: l2-cache {
-> +                             compatible = "cache";
-> +                             next-level-cache = <&L3_0>;
-> +                       };
-> +               };
-> +
-> +               CPU2: cpu@200 {
-> +                       device_type = "cpu";
-> +                       compatible = "qcom,kryo485";
-> +                       reg = <0x0 0x200>;
-> +                       enable-method = "psci";
-> +                       next-level-cache = <&L2_200>;
-> +                       L2_200: l2-cache {
-> +                             compatible = "cache";
-> +                             next-level-cache = <&L3_0>;
-> +                       };
-> +               };
-> +
-> +               CPU3: cpu@300 {
-> +                       device_type = "cpu";
-> +                       compatible = "qcom,kryo485";
-> +                       reg = <0x0 0x300>;
-> +                       enable-method = "psci";
-> +                       next-level-cache = <&L2_300>;
-> +                       L2_300: l2-cache {
-> +                             compatible = "cache";
-> +                             next-level-cache = <&L3_0>;
-> +                       };
-> +               };
-> +
-> +               CPU4: cpu@400 {
-> +                       device_type = "cpu";
-> +                       compatible = "qcom,kryo485";
-> +                       reg = <0x0 0x400>;
-> +                       enable-method = "psci";
-> +                       next-level-cache = <&L2_400>;
-> +                       L2_400: l2-cache {
-> +                             compatible = "cache";
-> +                             next-level-cache = <&L3_0>;
-> +                       };
-> +               };
-> +
-> +               CPU5: cpu@500 {
-> +                       device_type = "cpu";
-> +                       compatible = "qcom,kryo485";
-> +                       reg = <0x0 0x500>;
-> +                       enable-method = "psci";
-> +                       next-level-cache = <&L2_500>;
-> +                       L2_500: l2-cache {
-> +                             compatible = "cache";
-> +                             next-level-cache = <&L3_0>;
-> +                       };
-> +
-> +               };
-> +
-> +               CPU6: cpu@600 {
-> +                       device_type = "cpu";
-> +                       compatible = "qcom,kryo485";
-> +                       reg = <0x0 0x600>;
-> +                       enable-method = "psci";
-> +                       next-level-cache = <&L2_600>;
-> +                       L2_600: l2-cache {
-> +                             compatible = "cache";
-> +                             next-level-cache = <&L3_0>;
-> +                       };
-> +               };
-> +
-> +               CPU7: cpu@700 {
-> +                       device_type = "cpu";
-> +                       compatible = "qcom,kryo485";
-> +                       reg = <0x0 0x700>;
-> +                       enable-method = "psci";
-> +                       next-level-cache = <&L2_700>;
-> +                       L2_700: l2-cache {
-> +                             compatible = "cache";
-> +                             next-level-cache = <&L3_0>;
-> +                       };
-> +               };
-> +       };
-> +
-> +       firmware: firmware {
+Hi Clement,
 
-Does this need a label?
+On Tue, Feb 04, 2020 at 06:44:11PM +0100, Clement Leger wrote:
+> With upcoming changes in elf loader for elf64 support, section size will
+> be a u64. When used with da_to_va, this will potentially lead to
+> overflow if using the current "int" type for len argument. Change
+> da_to_va prototype to use a u64 for len and fix all users of this
+> function.
+> 
+> Signed-off-by: Clement Leger <cleger@kalray.eu>
+> ---
+>  drivers/remoteproc/imx_rproc.c           | 9 +++++----
+>  drivers/remoteproc/keystone_remoteproc.c | 2 +-
+>  drivers/remoteproc/qcom_q6v5_adsp.c      | 2 +-
+>  drivers/remoteproc/qcom_q6v5_mss.c       | 2 +-
+>  drivers/remoteproc/qcom_q6v5_pas.c       | 2 +-
+>  drivers/remoteproc/qcom_q6v5_wcss.c      | 2 +-
+>  drivers/remoteproc/qcom_wcnss.c          | 2 +-
+>  drivers/remoteproc/remoteproc_core.c     | 2 +-
+>  drivers/remoteproc/remoteproc_internal.h | 2 +-
+>  drivers/remoteproc/st_slim_rproc.c       | 4 ++--
+>  drivers/remoteproc/wkup_m3_rproc.c       | 2 +-
+>  include/linux/remoteproc.h               | 2 +-
+>  12 files changed, 17 insertions(+), 16 deletions(-)
+> 
+> diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
+> index 3e72b6f38d4b..1e895d5cf918 100644
+> --- a/drivers/remoteproc/imx_rproc.c
+> +++ b/drivers/remoteproc/imx_rproc.c
+> @@ -186,7 +186,7 @@ static int imx_rproc_stop(struct rproc *rproc)
+>  }
+>  
+>  static int imx_rproc_da_to_sys(struct imx_rproc *priv, u64 da,
+> -			       int len, u64 *sys)
+> +			       u64 len, u64 *sys)
+>  {
+>  	const struct imx_rproc_dcfg *dcfg = priv->dcfg;
+>  	int i;
+> @@ -203,12 +203,12 @@ static int imx_rproc_da_to_sys(struct imx_rproc *priv, u64 da,
+>  		}
+>  	}
+>  
+> -	dev_warn(priv->dev, "Translation failed: da = 0x%llx len = 0x%x\n",
+> +	dev_warn(priv->dev, "Translation failed: da = 0x%llx len = 0x%llx\n",
+>  		 da, len);
+>  	return -ENOENT;
+>  }
+>  
+> -static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
+>  	struct imx_rproc *priv = rproc->priv;
+>  	void *va = NULL;
 
-> +               scm: scm {
-> +                       compatible = "qcom,scm";
-> +                       #reset-cells = <1>;
-> +               };
-> +       };
-> +
-> +       tcsr_mutex: hwlock {
-> +               compatible = "qcom,tcsr-mutex";
-> +               syscon = <&tcsr_mutex_regs 0 0x1000>;
-> +               #hwlock-cells = <1>;
-> +       };
-> +
-> +       memory@80000000 {
-> +               device_type = "memory";
-> +               /* We expect the bootloader to fill in the size */
-> +               reg = <0x0 0x80000000 0x0 0x0>;
-> +       };
-> +
-> +       pmu {
-> +               compatible = "arm,armv8-pmuv3";
-> +               interrupts = <GIC_PPI 7 IRQ_TYPE_LEVEL_HIGH>;
-> +       };
-> +
-> +       psci {
-> +               compatible = "arm,psci-1.0";
-> +               method = "smc";
-> +       };
-> +
-> +       reserved_memory: reserved-memory {
-> +               #address-cells = <2>;
-> +               #size-cells = <2>;
-> +               ranges;
-> +
-> +               hyp_mem: memory@80000000 {
-> +                       reg = <0x0 0x80000000 0x0 0x600000>;
-> +                       no-map;
-> +               };
-> +
-> +               xbl_aop_mem: memory@80700000 {
-> +                       reg = <0x0 0x80700000 0x0 0x160000>;
-> +                       no-map;
-> +               };
-> +
-> +               cmd_db: memory@80860000 {
-> +                       compatible = "qcom,cmd-db";
-> +                       reg = <0x0 0x80860000 0x0 0x20000>;
-> +                       no-map;
-> +               };
-> +
-> +               smem_mem: memory@80900000 {
-> +                       reg = <0x0 0x80900000 0x0 0x200000>;
-> +                       no-map;
-> +               };
-> +
-> +               removed_mem: memory@80b00000 {
-> +                       reg = <0x0 0x80b00000 0x0 0x5300000>;
-> +                       no-map;
-> +               };
-> +
-> +               camera_mem: memory@86200000 {
-> +                       reg = <0x0 0x86200000 0x0 0x500000>;
-> +                       no-map;
-> +               };
-> +
-> +               wlan_mem: memory@86700000 {
-> +                       reg = <0x0 0x86700000 0x0 0x100000>;
-> +                       no-map;
-> +               };
-> +
-> +               ipa_fw_mem: memory@86800000 {
-> +                       reg = <0x0 0x86800000 0x0 0x10000>;
-> +                       no-map;
-> +               };
-> +
-> +               ipa_gsi_mem: memory@86810000 {
-> +                       reg = <0x0 0x86810000 0x0 0xa000>;
-> +                       no-map;
-> +               };
-> +
-> +               gpu_mem: memory@8681a000 {
-> +                       reg = <0x0 0x8681a000 0x0 0x2000>;
-> +                       no-map;
-> +               };
-> +
-> +               npu_mem: memory@86900000 {
-> +                       reg = <0x0 0x86900000 0x0 0x500000>;
-> +                       no-map;
-> +               };
-> +
-> +               video_mem: memory@86e00000 {
-> +                       reg = <0x0 0x86e00000 0x0 0x500000>;
-> +                       no-map;
-> +               };
-> +
-> +               cvp_mem: memory@87300000 {
-> +                       reg = <0x0 0x87300000 0x0 0x500000>;
-> +                       no-map;
-> +               };
-> +
-> +               cdsp_mem: memory@87800000 {
-> +                       reg = <0x0 0x87800000 0x0 0x1400000>;
-> +                       no-map;
-> +               };
-> +
-> +               slpi_mem: memory@88c00000 {
-> +                       reg = <0x0 0x88c00000 0x0 0x1500000>;
-> +                       no-map;
-> +               };
-> +
-> +               adsp_mem: memory@8a100000 {
-> +                       reg = <0x0 0x8a100000 0x0 0x1d00000>;
-> +                       no-map;
-> +               };
-> +
-> +               spss_mem: memory@8be00000 {
-> +                       reg = <0x0 0x8be00000 0x0 0x100000>;
-> +                       no-map;
-> +               };
-> +
-> +               cdsp_secure_heap: memory@8bf00000 {
-> +                       reg = <0x0 0x8bf00000 0x0 0x4600000>;
-> +                       no-map;
-> +               };
-> +       };
-> +
-> +       smem {
-> +               compatible = "qcom,smem";
-> +               memory-region = <&smem_mem>;
-> +               hwlocks = <&tcsr_mutex 3>;
-> +       };
-> +
-> +       soc: soc@0 {
-> +               #address-cells = <2>;
-> +               #size-cells = <2>;
-> +               ranges = <0 0 0 0 0x10 0>;
-> +               dma-ranges = <0 0 0 0 0x10 0>;
-> +               compatible = "simple-bus";
-> +
-> +               gcc: clock-controller@100000 {
-> +                       compatible = "qcom,gcc-sm8250";
-> +                       reg = <0x0 0x00100000 0x0 0x1f0000>;
-> +                       #clock-cells = <1>;
-> +                       #reset-cells = <1>;
-> +                       #power-domain-cells = <1>;
-> +                       clock-names = "bi_tcxo",
-> +                                       "sleep_clk";
+The condition "if (len <= 0)" at the beginning of the function needs to be
+fixed.  
 
-Weird tabbign here.
 
-> +                       clocks = <&rpmhcc RPMH_CXO_CLK>,
-> +                               <&sleep_clk>;
+> @@ -235,7 +235,8 @@ static void *imx_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+>  		}
+>  	}
+>  
+> -	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%x va = 0x%p\n", da, len, va);
+> +	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%llx va = 0x%p\n",
+> +		da, len, va);
+>  
+>  	return va;
+>  }
+> diff --git a/drivers/remoteproc/keystone_remoteproc.c b/drivers/remoteproc/keystone_remoteproc.c
+> index 5c4658f00b3d..25c01df47eba 100644
+> --- a/drivers/remoteproc/keystone_remoteproc.c
+> +++ b/drivers/remoteproc/keystone_remoteproc.c
+> @@ -246,7 +246,7 @@ static void keystone_rproc_kick(struct rproc *rproc, int vqid)
+>   * can be used either by the remoteproc core for loading (when using kernel
+>   * remoteproc loader), or by any rpmsg bus drivers.
+>   */
+> -static void *keystone_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *keystone_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
 
-And here.
+Same comment as above.
 
-> +               };
-> +
-> +               qupv3_id_1: geniqup@ac0000 {
-> +                       compatible = "qcom,geni-se-qup";
-> +                       reg = <0x0 0x00ac0000 0x0 0x6000>;
-> +                       clock-names = "m-ahb", "s-ahb";
-> +                       clocks = <&gcc 133>,
-> +                               <&gcc 134>;
+>  	struct keystone_rproc *ksproc = rproc->priv;
+>  	void __iomem *va = NULL;
+> diff --git a/drivers/remoteproc/qcom_q6v5_adsp.c b/drivers/remoteproc/qcom_q6v5_adsp.c
+> index e953886b2eb7..7518e67a49e5 100644
+> --- a/drivers/remoteproc/qcom_q6v5_adsp.c
+> +++ b/drivers/remoteproc/qcom_q6v5_adsp.c
+> @@ -270,7 +270,7 @@ static int adsp_stop(struct rproc *rproc)
+>  	return ret;
+>  }
+>  
+> -static void *adsp_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *adsp_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
+>  	struct qcom_adsp *adsp = (struct qcom_adsp *)rproc->priv;
+>  	int offset;
+> diff --git a/drivers/remoteproc/qcom_q6v5_mss.c b/drivers/remoteproc/qcom_q6v5_mss.c
+> index 471128a2e723..248febde6fc1 100644
+> --- a/drivers/remoteproc/qcom_q6v5_mss.c
+> +++ b/drivers/remoteproc/qcom_q6v5_mss.c
+> @@ -1148,7 +1148,7 @@ static int q6v5_stop(struct rproc *rproc)
+>  	return 0;
+>  }
+>  
+> -static void *q6v5_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *q6v5_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
+>  	struct q6v5 *qproc = rproc->priv;
+>  	int offset;
+> diff --git a/drivers/remoteproc/qcom_q6v5_pas.c b/drivers/remoteproc/qcom_q6v5_pas.c
+> index db4b3c4bacd7..cf2cd609c90d 100644
+> --- a/drivers/remoteproc/qcom_q6v5_pas.c
+> +++ b/drivers/remoteproc/qcom_q6v5_pas.c
+> @@ -159,7 +159,7 @@ static int adsp_stop(struct rproc *rproc)
+>  	return ret;
+>  }
+>  
+> -static void *adsp_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *adsp_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
+>  	struct qcom_adsp *adsp = (struct qcom_adsp *)rproc->priv;
+>  	int offset;
+> diff --git a/drivers/remoteproc/qcom_q6v5_wcss.c b/drivers/remoteproc/qcom_q6v5_wcss.c
+> index f93e1e4a1cc0..3a6b82a16961 100644
+> --- a/drivers/remoteproc/qcom_q6v5_wcss.c
+> +++ b/drivers/remoteproc/qcom_q6v5_wcss.c
+> @@ -406,7 +406,7 @@ static int q6v5_wcss_stop(struct rproc *rproc)
+>  	return 0;
+>  }
+>  
+> -static void *q6v5_wcss_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *q6v5_wcss_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
+>  	struct q6v5_wcss *wcss = rproc->priv;
+>  	int offset;
+> diff --git a/drivers/remoteproc/qcom_wcnss.c b/drivers/remoteproc/qcom_wcnss.c
+> index dc135754bb9c..f893219e45a8 100644
+> --- a/drivers/remoteproc/qcom_wcnss.c
+> +++ b/drivers/remoteproc/qcom_wcnss.c
+> @@ -287,7 +287,7 @@ static int wcnss_stop(struct rproc *rproc)
+>  	return ret;
+>  }
+>  
+> -static void *wcnss_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *wcnss_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
+>  	struct qcom_wcnss *wcnss = (struct qcom_wcnss *)rproc->priv;
+>  	int offset;
+> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
+> index 307df98347ba..9e6d3c6a60ee 100644
+> --- a/drivers/remoteproc/remoteproc_core.c
+> +++ b/drivers/remoteproc/remoteproc_core.c
+> @@ -185,7 +185,7 @@ EXPORT_SYMBOL(rproc_va_to_pa);
+>   * here the output of the DMA API for the carveouts, which should be more
+>   * correct.
+>   */
+> -void *rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+> +void *rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
+>  	struct rproc_mem_entry *carveout;
+>  	void *ptr = NULL;
+> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
+> index 493ef9262411..004867061721 100644
+> --- a/drivers/remoteproc/remoteproc_internal.h
+> +++ b/drivers/remoteproc/remoteproc_internal.h
+> @@ -50,7 +50,7 @@ void rproc_exit_sysfs(void);
+>  void rproc_free_vring(struct rproc_vring *rvring);
+>  int rproc_alloc_vring(struct rproc_vdev *rvdev, int i);
+>  
+> -void *rproc_da_to_va(struct rproc *rproc, u64 da, int len);
+> +void *rproc_da_to_va(struct rproc *rproc, u64 da, u64 len);
+>  phys_addr_t rproc_va_to_pa(void *cpu_addr);
+>  int rproc_trigger_recovery(struct rproc *rproc);
+>  
+> diff --git a/drivers/remoteproc/st_slim_rproc.c b/drivers/remoteproc/st_slim_rproc.c
+> index 04492fead3c8..fc01cd879b60 100644
+> --- a/drivers/remoteproc/st_slim_rproc.c
+> +++ b/drivers/remoteproc/st_slim_rproc.c
+> @@ -174,7 +174,7 @@ static int slim_rproc_stop(struct rproc *rproc)
+>  	return 0;
+>  }
+>  
+> -static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
+>  	struct st_slim_rproc *slim_rproc = rproc->priv;
+>  	void *va = NULL;
+> @@ -191,7 +191,7 @@ static void *slim_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+>  		}
+>  	}
+>  
+> -	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%x va = 0x%pK\n",
+> +	dev_dbg(&rproc->dev, "da = 0x%llx len = 0x%llx va = 0x%pK\n",
+>  		da, len, va);
+>  
+>  	return va;
+> diff --git a/drivers/remoteproc/wkup_m3_rproc.c b/drivers/remoteproc/wkup_m3_rproc.c
+> index 3984e585c847..0e8082948489 100644
+> --- a/drivers/remoteproc/wkup_m3_rproc.c
+> +++ b/drivers/remoteproc/wkup_m3_rproc.c
+> @@ -80,7 +80,7 @@ static int wkup_m3_rproc_stop(struct rproc *rproc)
+>  	return 0;
+>  }
+>  
+> -static void *wkup_m3_rproc_da_to_va(struct rproc *rproc, u64 da, int len)
+> +static void *wkup_m3_rproc_da_to_va(struct rproc *rproc, u64 da, u64 len)
+>  {
 
-Make it one line instead of two?
+Same comment as above.
 
-> +                       #address-cells = <2>;
-> +                       #size-cells = <2>;
-> +                       ranges;
-> +                       status = "disabled";
-> +
-> +                       uart2: serial@a90000 {
-> +                               compatible = "qcom,geni-debug-uart";
-> +                               reg = <0x0 0x00a90000 0x0 0x4000>;
-> +                               clock-names = "se";
-> +                               clocks = <&gcc 113>;
-> +                               interrupts = <GIC_SPI 357 IRQ_TYPE_LEVEL_HIGH>;
-> +                               status = "disabled";
-> +                       };
-> +               };
-> +
-> +               intc: interrupt-controller@17a00000 {
-> +                       compatible = "arm,gic-v3";
-> +                       #interrupt-cells = <3>;
-> +                       interrupt-controller;
-> +                       reg = <0x0 0x17a00000 0x0 0x10000>,     /* GICD */
-> +                             <0x0 0x17a60000 0x0 0x100000>;    /* GICR * 8 */
-> +                       interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
-
-Is there an ITS node? I think so. Please add it and mark it disabled.
-
-> +               };
-> +
-> +               pdc: interrupt-controller@b220000 {
-> +                       compatible = "qcom,sm8250-pdc";
-> +                       reg = <0x0b220000 0x30000>, <0x17c000f0 0x60>;
-> +                       qcom,pdc-ranges = <0 480 94>, <94 609 31>,
-> +                                       <125 63 1>, <126 716 12>;
-
-Weird tabbing here.
-
-> +                       #interrupt-cells = <2>;
-> +                       interrupt-parent = <&intc>;
-> +                       interrupt-controller;
-> +               };
-> +
-> +               spmi_bus: qcom,spmi@c440000 {
-
-Node name should be 'spmi'.
-
-> +                       compatible = "qcom,spmi-pmic-arb";
-> +                       reg = <0x0 0x0c440000 0x0 0x0001100>,
-> +                             <0x0 0x0c600000 0x0 0x2000000>,
-> +                             <0x0 0x0e600000 0x0 0x0100000>,
-> +                             <0x0 0x0e700000 0x0 0x00a0000>,
-> +                             <0x0 0x0c40a000 0x0 0x0026000>;
-> +                       reg-names = "core", "chnls", "obsrvr", "intr", "cnfg";
-> +                       interrupt-names = "periph_irq";
-> +                       interrupts-extended = <&pdc 1 IRQ_TYPE_LEVEL_HIGH>;
-
-Nice!
-
-> +                       qcom,ee = <0>;
-> +                       qcom,channel = <0>;
-> +                       #address-cells = <2>;
-> +                       #size-cells = <0>;
-> +                       interrupt-controller;
-> +                       #interrupt-cells = <4>;
-> +                       cell-index = <0>;
-
-What is this property for?
-
-> +               };
-> +
-> +               apps_rsc: rsc@18200000 {
-> +                       label = "apps_rsc";
-> +                       compatible = "qcom,rpmh-rsc";
-> +                       reg = <0x0 0x18200000 0x0 0x10000>,
-> +                               <0x0 0x18210000 0x0 0x10000>,
-> +                               <0x0 0x18220000 0x0 0x10000>;
-
-More weird tabbing.
-
-> +                       reg-names = "drv-0", "drv-1", "drv-2";
-> +                       interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>,
-> +                                       <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
-> +                       qcom,tcs-offset = <0xd00>;
-> +                       qcom,drv-id = <2>;
-> +                       qcom,tcs-config = <ACTIVE_TCS  2>,
-> +                                               <SLEEP_TCS   3>,
-> +                                               <WAKE_TCS    3>,
-> +                                               <CONTROL_TCS 1>;
-
-More weird tabbing.
-
-> +
-> +                       rpmhcc: clock-controller {
-> +                               compatible = "qcom,sm8250-rpmh-clk";
-> +                               #clock-cells = <1>;
-> +                               clock-names = "xo";
-> +                               clocks = <&xo_board>;
-> +                       };
-> +               };
-> +
-> +               tcsr_mutex_regs: syscon@1f40000 {
-> +                       compatible = "syscon";
-> +                       reg = <0x0 0x01f40000 0x0 0x40000>;
-> +               };
-> +
-> +               timer@17c20000 {
-
-Doug fixed these in another thread to use offset. Run dt_bindings_check
-and see how it fails.
-
-> +                       #address-cells = <2>;
-> +                       #size-cells = <2>;
-> +                       ranges;
-> +                       compatible = "arm,armv7-timer-mem";
-> +                       reg = <0x0 0x17c20000 0x0 0x1000>;
-> +                       clock-frequency = <19200000>;
-
-Remove this. Firmware should set it up properly.
-
-> +
-> +                       frame@17c21000 {
-> +                               frame-number = <0>;
-> +                               interrupts = <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>,
-> +                                            <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
-> +                               reg = <0x0 0x17c21000 0x0 0x1000>,
-> +                                     <0x0 0x17c22000 0x0 0x1000>;
-> +                       };
-> +
-> +                       frame@17c23000 {
-> +                               frame-number = <1>;
-> +                               interrupts = <GIC_SPI 9 IRQ_TYPE_LEVEL_HIGH>;
-> +                               reg = <0x0 0x17c23000 0x0 0x1000>;
-> +                               status = "disabled";
-> +                       };
-> +
-> +                       frame@17c25000 {
-> +                               frame-number = <2>;
-> +                               interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
-> +                               reg = <0x0 0x17c25000 0x0 0x1000>;
-> +                               status = "disabled";
-> +                       };
-> +
-> +                       frame@17c27000 {
-> +                               frame-number = <3>;
-> +                               interrupts = <GIC_SPI 11 IRQ_TYPE_LEVEL_HIGH>;
-> +                               reg = <0x0 0x17c27000 0x0 0x1000>;
-> +                               status = "disabled";
-> +                       };
-> +
-> +                       frame@17c29000 {
-> +                               frame-number = <4>;
-> +                               interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
-> +                               reg = <0x0 0x17c29000 0x0 0x1000>;
-> +                               status = "disabled";
-> +                       };
-> +
-> +                       frame@17c2b000 {
-> +                               frame-number = <5>;
-> +                               interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
-> +                               reg = <0x0 0x17c2b000 0x0 0x1000>;
-> +                               status = "disabled";
-> +                       };
-> +
-> +                       frame@17c2d000 {
-> +                               frame-number = <6>;
-> +                               interrupts = <GIC_SPI 14 IRQ_TYPE_LEVEL_HIGH>;
-> +                               reg = <0x0 0x17c2d000 0x0 0x1000>;
-> +                               status = "disabled";
-> +                       };
-> +               };
-> +
-> +       };
-> +
+>  	struct wkup_m3_rproc *wkupm3 = rproc->priv;
+>  	void *va = NULL;
+> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
+> index 16ad66683ad0..f84bd5fe0211 100644
+> --- a/include/linux/remoteproc.h
+> +++ b/include/linux/remoteproc.h
+> @@ -374,7 +374,7 @@ struct rproc_ops {
+>  	int (*start)(struct rproc *rproc);
+>  	int (*stop)(struct rproc *rproc);
+>  	void (*kick)(struct rproc *rproc, int vqid);
+> -	void * (*da_to_va)(struct rproc *rproc, u64 da, int len);
+> +	void * (*da_to_va)(struct rproc *rproc, u64 da, u64 len);
+>  	int (*parse_fw)(struct rproc *rproc, const struct firmware *fw);
+>  	int (*handle_rsc)(struct rproc *rproc, u32 rsc_type, void *rsc,
+>  			  int offset, int avail);
+> -- 
+> 2.15.0.276.g89ea799
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
