@@ -2,62 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 049401545E7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 15:16:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D7261545F0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 15:18:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iD3LqCXNht3agCDQcyfEP0MKTLLR1LtCCJ+7FkHKW8c=; b=n6QGlzYXrbL/EvUBoPwNHS5aA
-	hJ41Aj/WhuMi9Qd5LuGZukxh4iw/s1FaLzP4x1dl2xrK6D2R6e2OkFUax6cCNZuQuRVr45ZO6o3Je
-	+ZQw7SY/c+ftVOd+5aMrKJxriOa0N6+/iUK7JoIumu7PcOxjskQgMmpdW+7zZqrmmopASkT4TBY6C
-	TEsb788Bu5six4SE7eL/Dj2+T9Hh4eVM1tn86LEdlLJZxOo2KdWLn39ZVgunjxEtLQ6vI3L6w3daZ
-	MOecX7VSKkFtZ1V3dIHyle6xq2S1XMg776X3alrbdqVvU0bT7a/g+R8PZ+AZktQymcmAYMUcaNS4N
-	XTlkKrh4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=2lHaGvBBRenDLHf+xl2vM/qAgocwuet6Kzb49UxYtr0=; b=R9BJ5Ll3hwpRdq
+	WY0OLPqggTTX/+gd7R6ns1YY6lm+bWH3X/SePLollsvQSxbfIUuwU4dY4C/1JLcN83oQ70e/dvfII
+	yuYdW5/fMFu74O0X8kLTcFOQ9y6WteLtX7/KsVht4dGUV5x9yTX1/M3HisFfNoOMrhAfXMPBQuvjy
+	bQys7xETLnp7CtyYfey7KVd5e4NbpIq8w8Zn3z1buZBLUBKkZ9Kq3dM4QENWNFUjtNv2g9/if0J9L
+	6d8PSVZNwrgKwZjE7VbvEUrMOSBxUPL8Y52KeeXVn80qGgQ64gc1P2HV+XoVkCiKF8h8sESBpkIHi
+	dmxuEJgrpxTCdObD0B1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izhwh-0000sz-Th; Thu, 06 Feb 2020 14:15:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izhwb-0000sC-Du
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 14:15:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CA60E30E;
- Thu,  6 Feb 2020 06:15:47 -0800 (PST)
-Received: from [10.37.12.48] (unknown [10.37.12.48])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9B1CF3F52E;
- Thu,  6 Feb 2020 06:15:44 -0800 (PST)
-Subject: Re: [PATCH 3/3] ARM: exynos_defconfig: Enable Energy Model framework
-To: Krzysztof Kozlowski <krzk@kernel.org>
-References: <20200127215453.15144-1-lukasz.luba@arm.com>
- <20200127215453.15144-4-lukasz.luba@arm.com>
- <CAJKOXPeA=_3zPx6Aq3CAUi7JsXr9AigWGWCTNWo_jkm=oVWe_g@mail.gmail.com>
- <db3f2554-288d-81ab-2373-1447367ba673@arm.com>
- <20200131204118.GA27284@kozik-lap>
- <c54e252d-dc55-5fa3-f97f-643d7efbfdc1@arm.com>
- <CAJKOXPfTjdtNMx=+dPVcQ53RiXx0y-r=KXBRhzA4jS77SHxciQ@mail.gmail.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <f304f978-be07-7944-e47e-e5eaac9cb907@arm.com>
-Date: Thu, 6 Feb 2020 14:15:42 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1izhz9-0001DG-Tx; Thu, 06 Feb 2020 14:18:27 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izhz2-0001Cm-Aa
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 14:18:21 +0000
+Received: by mail-pf1-x441.google.com with SMTP id n7so3213455pfn.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 06 Feb 2020 06:18:20 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=tlgS5FHChO1CGBWXTjxXUP4mkvuvW/nEiNannwwjUKs=;
+ b=C5fKtB+HfWa9s3R1yA90NR/reVyYx5PpUorZVhZhyxP8LEYRU34BddbXV657OB3yVg
+ aUlRzqD2KzLwXLEVCEV2isyrS6k/qilnKMlKF28I33QP/ZjF0OEvvCk6DNqGepF+tWEC
+ fAVLPs8p1E4iOwgJD29JREWzS7yUUWMev+5XSy3cKElgs81rAePv5maOhZqzv8J+yem8
+ 6Cr5+xsL9gaZyla9r3zRhJ3V4E3ZvQ8Jq9BBWf6hZUFj6OOPyqcQv8v2ejVF22yVJ5xj
+ 2qBYjtCInRJIomYHfGtwJKsXnoe/h40K9OfLC7SYR4/SjgjzEjPIMrwVK7cDLZPU/ymu
+ oZbQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=tlgS5FHChO1CGBWXTjxXUP4mkvuvW/nEiNannwwjUKs=;
+ b=CvUy1qGeljx354IpggHyKZCs7/SDMdmBbU3boMgAEP6xQXvjX9KusBOkDA5OhS82O4
+ EtBz12i5w3brDH2EVaQaedbOcVX6UC5XlIu7egDqaKa9BwoFxDoTjwj54WRs0U0de/Qx
+ Li1Y4rIYE5RDP6q73DJ7wMnLXTlj+oy75gdbqB0OvN8hbZ50+7kzL25iwtgwt+Mio1Qs
+ H8UpSONTwnzoxIglTi6d31Xbb2/JGnZ45ZIV7akK5pkVQzH2h9yG7ugEwBMl+Nd/eVBs
+ 1aUOBUkQ6bnJ96L+Q8bU5LRbjlsCGs85bWQFCvKlgj0k0vCxtY0jJ2xzBXWUfT3tnw2j
+ s2fQ==
+X-Gm-Message-State: APjAAAWTn/yxNLKLF7cEhRwKxhaUcn1mK41VNqkVywBSb4tZ/kVt9ztV
+ BSitrVomhnGXBCrCyB5fk2k=
+X-Google-Smtp-Source: APXvYqx6YAdoUhb5FnTWPi7Ak9w5qYjmWF1npBNQTFTivhTR5tidkJgtIV0fl6Haso1hJLuMCgwXOA==
+X-Received: by 2002:a63:e007:: with SMTP id e7mr3793478pgh.414.1580998699750; 
+ Thu, 06 Feb 2020 06:18:19 -0800 (PST)
+Received: from localhost (104.128.80.227.16clouds.com. [104.128.80.227])
+ by smtp.gmail.com with ESMTPSA id i9sm3656678pfk.24.2020.02.06.06.18.18
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 06 Feb 2020 06:18:19 -0800 (PST)
+From: Dejin Zheng <zhengdejin5@gmail.com>
+To: vkoul@kernel.org, peppe.cavallaro@st.com, joabreu@synopsys.com,
+ davem@davemloft.net, mcoquelin.stm32@gmail.com, niklas.cassel@linaro.org,
+ netdev@vger.kernel.org
+Subject: [PATCH v2] net: stmmac: fix a possible endless loop
+Date: Thu,  6 Feb 2020 22:18:11 +0800
+Message-Id: <20200206141811.24862-1-zhengdejin5@gmail.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-In-Reply-To: <CAJKOXPfTjdtNMx=+dPVcQ53RiXx0y-r=KXBRhzA4jS77SHxciQ@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_061549_508692_52C2114C 
-X-CRM114-Status: GOOD (  14.01  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200206_061820_368010_21D12E1C 
+X-CRM114-Status: GOOD (  10.48  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [zhengdejin5[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [zhengdejin5[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,59 +100,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- linux-pm@vger.kernel.org,
- =?UTF-8?Q?Bart=c5=82omiej_=c5=bbo=c5=82nierkiewicz?=
- <b.zolnierkie@samsung.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- robh+dt@kernel.org, Chanwoo Choi <cw00.choi@samsung.com>,
- kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
- dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Dejin Zheng <zhengdejin5@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+It forgot to reduce the value of the variable retry in a while loop
+in the ethqos_configure() function. It may cause an endless loop and
+without timeout.
 
+Fixes: a7c30e62d4b8 ("net: stmmac: Add driver for Qualcomm ethqos")
 
-On 2/6/20 12:59 PM, Krzysztof Kozlowski wrote:
-> On Wed, 5 Feb 2020 at 13:49, Lukasz Luba <lukasz.luba@arm.com> wrote:
->>>> As mentioned in response to patch 1/3. The fist patch would create MC
->>>> domain, something different than Energy Model or EAS. The decisions in
->>>> the scheduler would be different.
->>>>
->>>> I can merge 1/3 and 3/3 if you like, though.
->>>
->>> I understand now that their independent. Still, they are part of one
->>> goal to tune the scheduler for Exynos platform. Splitting these looks
->>> too much, like enabling multiple drivers one after another.
->>>
->>> However if you provide numbers for each of cases (before patches, multi
->>> core scheduler, energy model with DTS), then I see benefit of splitting
->>> it.  Each commit would have its own rationale.  I am not sure if it is
->>> worth such investigation - that's just defconfig... distros might ignore
->>> it anyway.
->>
->> Good point, and I agree that it would require more investigation, for
->> which unfortunately I don't have currently spare cycles.
->>
->> Should I merge patch 1/3 and 3/3 and send the v2 with a cover letter
->> which would have the test results?
-> 
-> Yes, let's do this way.
+Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
+Acked-by: Vinod Koul <vkoul@kernel.org>
+---
 
-Thank you, I will send the v2 then.
+Vinod Koul and David Miller, Thanks for your comments!
 
-Regards,
-Lukasz
+V2:
+add an appropriate Fixes tag.
 
-> 
-> Thanks for working on this!
-> 
-> Best regards,
-> Krzysztof
-> 
+ drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
+index 7ec895407d23..e0a5fe83d8e0 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
+@@ -413,6 +413,7 @@ static int ethqos_configure(struct qcom_ethqos *ethqos)
+ 			dll_lock = rgmii_readl(ethqos, SDC4_STATUS);
+ 			if (dll_lock & SDC4_STATUS_DLL_LOCK)
+ 				break;
++			retry--;
+ 		} while (retry > 0);
+ 		if (!retry)
+ 			dev_err(&ethqos->pdev->dev,
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
