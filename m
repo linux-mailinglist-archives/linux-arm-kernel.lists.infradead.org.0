@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35978153F01
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 07:58:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94907153F06
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 08:00:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=hH9lyAsXMPDHO3yn0L1ngKRYcPC2QoYCMPf/EObx2pw=; b=mqkWsfYd74XR+8L29B9X0Ng/zz
-	dL3baIO3wXnfOj5ianoxcPWW8wsIMaounok3PM6kDe4zM8Iod9oSH8nFkU6FZNgfwBw52b98/lsHl
-	OoU1l6Gp8VIZanoHN1vsQ+fqP+UPHQkDp97sMDRr4rR8ZhhmRJnsG/FAkQz9LMk+zGysti4eXpaZh
-	XysC8vxOY3V+ndkNRbOArWETRygNLXTsMDtU4Tket+PLY+kugoSUECBzyTsZbFL2wB+SAePxie0KH
-	uTiuhaRMXHMda0d1uOsrKru2a9YgtQNZIHPsjzZQ7jDbZgDVVAnQ+THzn72RjgLvV8AeW5j2bCEF8
-	810a23xw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=r2l3nLogEoDYyqyp3HsiiAUdyVg4pO+kwhPgCU2bY6Q=; b=eaMtnB08p8Y3CT
+	81M+SlyQ5HwiVSoJBoOokD69A/I82rrhBoBlROIr0Ut3cKxLbXNwH31U4XadhhB1GuKZ8fb22MIGa
+	DQU7gwAddl35bAOsIZAptR5S9AOEXNcpEOQPnOFFAnlLrmpOwBAv6CZ/9aY8cDkwvXdv4zTHE+Wgg
+	OAn2PUmX8t3L0sd0yPBcXOh3F8dHOiXaDuruBzcYFXNjwhHnTr3e7CCNP5wO7Y/ZJ4kCtj8fiTlk/
+	XKYJ2bgpjvU80QP4g3jZMqtkLsP5az8yZo211FL+pAd6zno+VXQ4YjOKt45RiVyl24kgGKup8W7Gt
+	AZh4FAMDWWNYDnrcEYTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izb70-0003EY-N6; Thu, 06 Feb 2020 06:58:06 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1izb95-0004Rd-IE; Thu, 06 Feb 2020 07:00:15 +0000
+Received: from mail-yb1-xb49.google.com ([2607:f8b0:4864:20::b49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izb6K-0002g1-UP
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 06:57:27 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1580972245; h=References: In-Reply-To: Message-Id: Date:
- Subject: Cc: To: From: Sender;
- bh=Acsfsqg2b6NUDHJeY/gDJ1vlOSDS93J/sV1EZBqKdko=;
- b=psDeRzB0azNRfa01ZT6sQsE/TmVxWY7PujqTvyDARC/3IiVv8pldDc6tOZ41b2+AR0qQk3/t
- /Ao1XUyj/ml+w98RlCfFCjq+UBhWEkA1xWhc4qzfzo+JYPGUaunQSmfSvWJTU5+XIzUcDmu/
- lFXLsnavTpeV19vNbAiAlklvpCI=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e3bb8cf.7fcc8b230e68-smtp-out-n03;
- Thu, 06 Feb 2020 06:57:19 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 9E7DEC4479C; Thu,  6 Feb 2020 06:57:18 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from pacamara-linux.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 475A5C433CB;
- Thu,  6 Feb 2020 06:57:17 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 475A5C433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=cang@codeaurora.org
-From: Can Guo <cang@codeaurora.org>
-To: asutoshd@codeaurora.org, nguyenb@codeaurora.org, hongwus@codeaurora.org,
- rnayak@codeaurora.org, linux-scsi@vger.kernel.org, kernel-team@android.com,
- saravanak@google.com, salyzyn@google.com, cang@codeaurora.org
-Subject: [PATCH 5/8] scsi: ufs: Fix ufshcd_hold() caused scheduling while
- atomic
-Date: Wed,  5 Feb 2020 22:56:48 -0800
-Message-Id: <1580972212-29881-6-git-send-email-cang@codeaurora.org>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1580972212-29881-1-git-send-email-cang@codeaurora.org>
-References: <1580972212-29881-1-git-send-email-cang@codeaurora.org>
+ id 1izb8s-0003rG-93
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 07:00:04 +0000
+Received: by mail-yb1-xb49.google.com with SMTP id j3so742330ybo.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Feb 2020 23:00:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=ohRhPi8BaP2Hr5/3y3n5V3DWtzBXMkpjbXzBGyXAhaU=;
+ b=T8vIBTEH7afCvW+9MUnm3Xu5qubD8B7doR+wav2Hn7tW5+4oB/z325sG00l+sCcS+X
+ yL6qM0XJQbM91UAUaKh1UheNVC8HLx/dl79+LO9U7yIErEcjvLu5EjRn84kGCr3AcAQL
+ 9sYCBAMrrlpOsjfKC7ib6Eko0iteLNSqhotbMmvj8R/cCJdvDyIOjyzo2dHXAYj7338j
+ l8208YxZh63z2FS2sF9g5y8f0OBuYXwxklcKHfpTn0ec2hmeN0fuUKTIWl6jq/FyZBdj
+ ZLbZr9A/ZEwHZpfIT/46CypnfZMUGIo8/q68daXNfYfnF2GLHuSfILI5S5sfbym00jb0
+ 7Rew==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=ohRhPi8BaP2Hr5/3y3n5V3DWtzBXMkpjbXzBGyXAhaU=;
+ b=WoohTL7EV0Gd4yeNfGD/kIRltvS40RObSGCXsRHqN1EPjK7AE+ise1b2dyElWrmuVi
+ CeBLTHfhUW9TfkOPNtA5wlb733iciJE+o1H4+4bTucZQkQVGksk2CJavrMK+L4v1QJ6Z
+ ujw65vetJwBjvbWsZ3Yp8c3UWq94q2AknObu1bV3j8r/uWjHhDkTrCy7WZoIj5HzEtkh
+ y/ktAbGII8ebJt411Cb1OqnQ7bYmioDuGAqC40mAXv9M82F/UA7NsahNOXZl53CpF+i8
+ kXsQaSAp4vfdLjePno9YnTVCwFcziMToQvH/kTSxpvzblJOZPKMm3ZRO+WPDB4lgiIRT
+ ybLA==
+X-Gm-Message-State: APjAAAU7aFu2zqgK5iMYwfmI/oFJVTJxReRgXLmrwEDti8V05HK85ofc
+ CqChg3bFlTPBIqnpDta0LYajcd8K3Xwtpg==
+X-Google-Smtp-Source: APXvYqy/T41MypaRkzpvorQCzz5aeOT5d2jGXM9FxIb64m0CZleygIGtHIdFFMdtLCPoL8RkWNY4GAeVDW7YJQ==
+X-Received: by 2002:a81:2608:: with SMTP id m8mr1874539ywm.259.1580972400426; 
+ Wed, 05 Feb 2020 23:00:00 -0800 (PST)
+Date: Thu,  6 Feb 2020 17:59:51 +1100
+In-Reply-To: <1580441226.9516.1.camel@mtksdaap41>
+Message-Id: <20200206065951.213862-1-evanbenn@google.com>
+Mime-Version: 1.0
+References: <1580441226.9516.1.camel@mtksdaap41>
+X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
+Subject: [PATCH] drm/mediatek: Ensure the cursor plane is on top of other
+ overlays
+From: evanbenn@google.com
+To: ck.hu@mediatek.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_225725_994339_8593E610 
-X-CRM114-Status: GOOD (  11.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200205_230002_408033_40FA3F09 
+X-CRM114-Status: GOOD (  13.44  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:b49 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,55 +95,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bart Van Assche <bvanassche@acm.org>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
- Venkat Gopalakrishnan <venkatg@codeaurora.org>,
- "James E.J. Bottomley" <jejb@linux.ibm.com>,
- open list <linux-kernel@vger.kernel.org>, Avri Altman <avri.altman@wdc.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alim Akhtar <alim.akhtar@samsung.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Tomas Winkler <tomas.winkler@intel.com>,
- Stanley Chu <stanley.chu@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>, Bean Huo <beanhuo@micron.com>
-MIME-Version: 1.0
+Cc: dcastagna@chromium.org, evanbenn@gmail.com, evanbenn@google.com,
+ evanbenn@chromium.org, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, p.zabel@pengutronix.de,
+ matthias.bgg@gmail.com, seanpaul@chromium.org, sean@poorly.run,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The async version of ufshcd_hold(async == true), which is only called
-in queuecommand path as for now, is expected to work in atomic context,
-thus it should not sleep or schedule out. When it runs into the condition
-that clocks are ON but link is still in hibern8 state, it should bail out
-without flushing the clock ungate work.
+From: Sean Paul <seanpaul@chromium.org>
 
-Signed-off-by: Can Guo <cang@codeaurora.org>
-Reviewed-by: Hongwu Su <hongwus@codeaurora.org>
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-Reviewed-by: Bean Huo <beanhuo@micron.com>
-Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
+Currently the cursor is placed on the first overlay plane, which means
+it will be at the bottom of the stack when the hw does the compositing
+with anything other than primary plane. Since mtk doesn't support plane
+zpos, change the cursor location to the top-most plane.
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index bbc2607..e8f7f9d 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -1518,6 +1518,11 @@ int ufshcd_hold(struct ufs_hba *hba, bool async)
- 		 */
- 		if (ufshcd_can_hibern8_during_gating(hba) &&
- 		    ufshcd_is_link_hibern8(hba)) {
-+			if (async) {
-+				rc = -EAGAIN;
-+				hba->clk_gating.active_reqs--;
-+				break;
-+			}
- 			spin_unlock_irqrestore(hba->host->host_lock, flags);
- 			flush_work(&hba->clk_gating.ungate_work);
- 			spin_lock_irqsave(hba->host->host_lock, flags);
+Signed-off-by: Evan Benn <evanbenn@chromium.org>
+Signed-off-by: Sean Paul <seanpaul@chromium.org>
+---
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 29 +++++++++++++++++--------
+ 1 file changed, 20 insertions(+), 9 deletions(-)
+
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 7b392d6c71cc..d4078c2089e0 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -658,10 +658,21 @@ static const struct drm_crtc_helper_funcs mtk_crtc_helper_funcs = {
+ 
+ static int mtk_drm_crtc_init(struct drm_device *drm,
+ 			     struct mtk_drm_crtc *mtk_crtc,
+-			     struct drm_plane *primary,
+-			     struct drm_plane *cursor, unsigned int pipe)
++			     unsigned int pipe)
+ {
+-	int ret;
++	int i, ret;
++
++	struct drm_plane *primary = NULL;
++	struct drm_plane *cursor = NULL;
++
++	for (i = 0; i < mtk_crtc->layer_nr; ++i) {
++		if (!primary && mtk_crtc->planes[i].type ==
++				DRM_PLANE_TYPE_PRIMARY)
++			primary = &mtk_crtc->planes[i];
++		if (!cursor && mtk_crtc->planes[i].type ==
++				DRM_PLANE_TYPE_CURSOR)
++			cursor = &mtk_crtc->planes[i];
++	}
+ 
+ 	ret = drm_crtc_init_with_planes(drm, &mtk_crtc->base, primary, cursor,
+ 					&mtk_crtc_funcs, NULL);
+@@ -711,11 +722,12 @@ static int mtk_drm_crtc_num_comp_planes(struct mtk_drm_crtc *mtk_crtc,
+ }
+ 
+ static inline
+-enum drm_plane_type mtk_drm_crtc_plane_type(unsigned int plane_idx)
++enum drm_plane_type mtk_drm_crtc_plane_type(unsigned int plane_idx,
++					    unsigned int num_planes)
+ {
+ 	if (plane_idx == 0)
+ 		return DRM_PLANE_TYPE_PRIMARY;
+-	else if (plane_idx == 1)
++	else if (plane_idx == (num_planes - 1))
+ 		return DRM_PLANE_TYPE_CURSOR;
+ 	else
+ 		return DRM_PLANE_TYPE_OVERLAY;
+@@ -734,7 +746,8 @@ static int mtk_drm_crtc_init_comp_planes(struct drm_device *drm_dev,
+ 		ret = mtk_plane_init(drm_dev,
+ 				&mtk_crtc->planes[mtk_crtc->layer_nr],
+ 				BIT(pipe),
+-				mtk_drm_crtc_plane_type(mtk_crtc->layer_nr),
++				mtk_drm_crtc_plane_type(mtk_crtc->layer_nr,
++							num_planes),
+ 				mtk_ddp_comp_supported_rotations(comp));
+ 		if (ret)
+ 			return ret;
+@@ -830,9 +843,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 			return ret;
+ 	}
+ 
+-	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, &mtk_crtc->planes[0],
+-				mtk_crtc->layer_nr > 1 ? &mtk_crtc->planes[1] :
+-				NULL, pipe);
++	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, pipe);
+ 	if (ret < 0)
+ 		return ret;
+ 
 -- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-a Linux Foundation Collaborative Project
+2.25.0.341.g760bfbb309-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
