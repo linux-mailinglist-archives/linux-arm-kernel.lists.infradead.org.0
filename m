@@ -2,83 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EE4C154371
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 12:48:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C109154375
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 12:49:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nqGkuUbLzhaAbUU5wHWZXJokoSIc3Ay/xTynC22gYgM=; b=TcLTuogmHqE800
-	ikmYYBgNvAd1OUIHWtOLO8rkNu+51UeUt19p1A6W1ANK8NnakdAsytK37XbpT3I2kf1Nf1KUR6gzZ
-	/qq06I+XVJvec0kRuvghMd3sMewrIPPm4YIzw/2Z7lb9BK/81Lm80Qrral8fgkpVsyG4ozgR4XcCw
-	/CDAEjhefyQTpebAM/HhO8e69chva0HL8M+louP/7UAWkBp2RdF3Gtghw/XL9icbRVyEHKxuIEjV8
-	5FqWeEAD7KFjr/7DiY/vVo5idkPeoRL4FQkmBO572G3u0QxeCQBPuaTc8MqKfAXtovJoz5HXEk20r
-	ZmWfb09Lf4OVV54sw9ZQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Nb+jpj2ooVNxCjIAX3joU5BSZsk34zWYKLlxUOI55Ek=; b=SVN7tzbIbHotHk+szPGa6nVcD
+	BMyx/vXbQYd7TWQj6jH0iqZvCnm5W7NMxyk6p5uE/boR8Q7lCN/9p8CyiL2Kga/btQtRg5wzYDB1Z
+	louJQ1mpjVnC2cc0nFAjZqenIyYGHxZn5KstAT372nhjMueGV3VMjq7dZ2XqlNJ0GQvx+hOHhPptl
+	bM3H3i1hgTAl8FjpqawlK84L6th5By0uPMQbre1jxkOfz1rJgO4VSrvlfKIcMykIVVRQ3Ss28dv8x
+	eLzWU3gwUCQ4ubfDztj4kxf8MOVY1OkA7AlpMd1hBq86djkG+eDc98uy/tAKjVZiC5WPOeCBE4BN6
+	5gqFCQh2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izfeM-0007Bw-Vk; Thu, 06 Feb 2020 11:48:50 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1izff9-0007SB-5G; Thu, 06 Feb 2020 11:49:39 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izfeE-0007BV-FK
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 11:48:43 +0000
-Received: by mail-qt1-x841.google.com with SMTP id d18so4201675qtj.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 03:48:42 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=P/pZBjGmRibeFQhst686LZsoek0A7Z7BXLX2DlQFGnY=;
- b=pARo2ubH+1/kHlo6wDUOs+dWvF3SV/Sn0LeNm6q2WWGaQRNSnKT3r4DHohTP2F+qnM
- VV9DsD5ppuSlZ2jwtS+I50q2cV7ik8qxtvr2DWtssf0B5zY3fwPmnbrnq8j69a8q9dwz
- opg+F0aKppVQLYRmVWYWoATvW40iqRJ6BNHlK/lhJG+VpQ9SY2ODxsCiNFFnxhpJNusG
- W6wdOhjf6Nwxx0tlDLYyL2Swx6WCTZP4+WX+XQZWitFUqCB88eSv7OA8zQLIIQngJiHj
- K+rukKxxc2+HwluS4dlHnIptG2xL3jkvXMdQBq4g94lipAtZ5cVMCYhf+ugo77PQVlxa
- rYPg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=P/pZBjGmRibeFQhst686LZsoek0A7Z7BXLX2DlQFGnY=;
- b=qHqGTr7RLAmYGVlwXwqFKSBGr9BmvSoR4Zr4k0RlWvoIzS2+YiegNulK0oL4SOz1PT
- BLBaUqqzEHcL0fDYWQmuyDe2An+jMfc1/pqEijMy5fdogHdOjw/FxFVq0spC9msNLdIb
- A6swBem48TQQg9dzjM65jzdE5lm1OgxdO4fbkbzkL0CSVt3hNnj8HgbD6oXsf2ES4tor
- UkLAw0EMYYse/WOfg32HqWNBUCHSClWqejhKsSKJ8nXisffoLRf3kvXqsKDCoUj6sg9V
- npqZ8BcVw306dsxhLgzaPT1p6ZTbibkV8HLd40cTHNMKIrD/bVSMAjFE1SPjs+9gJpUv
- /nGw==
-X-Gm-Message-State: APjAAAVVnrLPLmV00+lVnQgc4zB78v5mhrsK+1hbq2Gt+twmPJRY9ut+
- WsLtCsu6oKjuZ1TTLgDF9QfNt4NbTdFFulduBzzSXw==
-X-Google-Smtp-Source: APXvYqzmObYg6m7Lmmdk/gnLgw7URb2vfFfW4dAtBEFqDOxjQOcsIEO/5UpbicQ3YsSQ5XCqf/xKHcw5RcRj/0AkJFw=
-X-Received: by 2002:ac8:7b9b:: with SMTP id p27mr2275741qtu.2.1580989721322;
- Thu, 06 Feb 2020 03:48:41 -0800 (PST)
+ id 1izff2-0007RI-70; Thu, 06 Feb 2020 11:49:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=aeh2bnGaIQasagmj+LRJPLVBSVmtzVWOfHGUZwOPl9k=; b=uzMAt5emOT/DsoAgMGDNx0ij9
+ tuZOOxrxBl7YfrZ7Noe82a9tTttXG8/pzRK1mI8sousbwvv2GX0Bmkb2gfV7Ua9/Zljmiej4jNAIX
+ DeFeYfFPWNLFNZuMalqtWdpZ0c+4KKrajxqsP+hHOyg0uMxoOe8gQS3kp4sjLgGUCTxcE=;
+Received: from fw-tnat-cam3.arm.com ([217.140.106.51]
+ helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1izfey-0001aU-5A; Thu, 06 Feb 2020 11:49:28 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id D10C3D01D7F; Thu,  6 Feb 2020 11:49:27 +0000 (GMT)
+Date: Thu, 6 Feb 2020 11:49:27 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Wen Su <Wen.Su@mediatek.com>
+Subject: Re: [PATCH v2 1/4] dt-bindings: regulator: Add document for MT6359
+ regulator
+Message-ID: <20200206114927.GN3897@sirena.org.uk>
+References: <1580958411-2478-1-git-send-email-Wen.Su@mediatek.com>
+ <1580958411-2478-2-git-send-email-Wen.Su@mediatek.com>
 MIME-Version: 1.0
-References: <20200203015203.27882-1-leo.yan@linaro.org>
- <20200203015203.27882-6-leo.yan@linaro.org>
-In-Reply-To: <20200203015203.27882-6-leo.yan@linaro.org>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Thu, 6 Feb 2020 11:48:29 +0000
-Message-ID: <CAJ9a7VjnOw_XgFXmOgE7ufB98_VNEZH7vX=8yO5qrogoBqJQXw@mail.gmail.com>
-Subject: Re: [PATCH v3 5/5] perf cs-etm: Fix unsigned variable comparison to
- zero
-To: Leo Yan <leo.yan@linaro.org>
+In-Reply-To: <1580958411-2478-2-git-send-email-Wen.Su@mediatek.com>
+X-Cookie: Programming is an unnatural act.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_034842_576756_6DD44C49 
-X-CRM114-Status: GOOD (  14.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200206_034932_254047_2A41BAFC 
+X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
- [list.dnswl.org]
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,58 +81,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5805448847908455339=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Reviewed by: Mike Leach <mike.leach@linaro.org>
 
-On Mon, 3 Feb 2020 at 01:53, Leo Yan <leo.yan@linaro.org> wrote:
->
-> The variable 'offset' in function cs_etm__sample() is u64 type, it's not
-> appropriate to check it with 'while (offset > 0)'; this patch changes to
-> 'while (offset)'.
->
-> Signed-off-by: Leo Yan <leo.yan@linaro.org>
-> ---
->  tools/perf/util/cs-etm.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->
-> diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> index dbddf1eec2be..720108bd8dba 100644
-> --- a/tools/perf/util/cs-etm.c
-> +++ b/tools/perf/util/cs-etm.c
-> @@ -945,7 +945,7 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
->         if (packet->isa == CS_ETM_ISA_T32) {
->                 u64 addr = packet->start_addr;
->
-> -               while (offset > 0) {
-> +               while (offset) {
->                         addr += cs_etm__t32_instr_size(etmq,
->                                                        trace_chan_id, addr);
->                         offset--;
-> --
-> 2.17.1
->
+--===============5805448847908455339==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="WW66Wv25qHMoYYLs"
+Content-Disposition: inline
 
 
--- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
+--WW66Wv25qHMoYYLs
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, Feb 06, 2020 at 11:06:48AM +0800, Wen Su wrote:
+
+> +Required properties:
+> +- compatible: "mediatek,mt6359-regulator"
+
+Why does this need a compatible string - it looks like it's just
+encoding the way Linux splits devices up into the DT, not
+providing some reusable IP block.
+
+--WW66Wv25qHMoYYLs
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl47/UcACgkQJNaLcl1U
+h9AGqAf/ei5s8WFL5nFhQ5WtOwQKyMl6BzjPHZGCXguSsSzU+Bs45Cq1viLBg3ww
+H/gXJ2VJxUuY4EU3kr3iP6Haxhe/h9TGEobGG917mADI9ZBScIkY6l7AGQPe44mQ
+oCiBKl73LxwZtRu8DNFg7k1W13eAOKi0TLwQ0KaC4GalJ1loAnttpbgxUvBLVR02
+BxiROqhvkQsNI1q+oh1Dnyvd0rFFT12QXDIgw0sbR6DEVkEvHFnvB9C720P5L9ld
+4iFDo6hOqqSwZIecmI3G36JIpFEY3vE+f2plbZCRaf01Fd91TZPZX0YQlBSr4Qbk
+uJ85eR2wboqLgi77IS+mzYNgxwg5vw==
+=vTbL
+-----END PGP SIGNATURE-----
+
+--WW66Wv25qHMoYYLs--
+
+
+--===============5805448847908455339==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5805448847908455339==--
+
