@@ -2,60 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D571154E12
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 22:38:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EDDD154E34
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 22:41:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3jk6W5p/vR94uLkw/5hLdkvoA6+QGEqm+pBQZHY0u6c=; b=DgR6D+wWWx93kP
-	YQf1iaaqYh2P3iSaTt1enIzsdaNeUPJrE+pS+DkkNHcdbrEaR1PVezpKGIrtrybIv+p0aFKdD0Sbq
-	3kDx9D16qjXPFnQFvn2z2AADptBq3p7cCr3o1/KuXvwLWUOsp7jwEcZHaT0D9x8zHSup17EFk3/bG
-	f8pCu7D4K8a+o3Ez3mgM+MHqO1kgSC44FeZyLeeEn1x9q2B2w29U6eBnlbxb+m84mV3kbBQyAvI00
-	gI3sLvVG009s91Jghw+5MPWVx6vgHjidQLF0BtS6XBk/O2Xl1Oi2S9I/yEIfyqxMaB95QvQ93wt3G
-	uXEtqu8a0Csl4vOkFfcg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=L0WWRGKrlkjG7nUTL3WhxdYDDytrLeX2MKT0vP3H72s=; b=OQL0D7CNOXNlJR
+	8oVKkiNSi1kW43IFY6X6IsFJQ/kZNr42Gd3iaxBWBePLX8MEnLHUAhlA5ifR8P22O+6GUHvTYaSrr
+	zLp/MBdCAOpJU8RW/XB8XdpgsB8WVhbSZb4dcLVflmNo9sMPsA3mcjAKsLfrZ/nOPKiqwZxaU+sWK
+	P4ZuOxYKO1q3wdlzbNqdTNGY3cGvCbywhR7ml99zCBKcETGn5Dc6PdP0k1ca99dD/nMdV7ugQ3Nco
+	O6LifzNKq0qXPvDA3BGe3dSA67xb4bxuprpB+34qLDBdZZELEBY+fRf86FoIWjcroXwm2ov0HqjPm
+	RM1U58cvErO0EweXlAGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izor2-0000xT-Lw; Thu, 06 Feb 2020 21:38:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izoqv-0000wz-3S; Thu, 06 Feb 2020 21:38:26 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5932F30E;
- Thu,  6 Feb 2020 13:38:20 -0800 (PST)
-Received: from [192.168.1.123] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 03C7C3F52E;
- Thu,  6 Feb 2020 13:38:18 -0800 (PST)
-From: Robin Murphy <robin.murphy@arm.com>
-Subject: [PATCH v2 2/3] ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit
-To: Peter Geis <pgwipeout@gmail.com>, Mark Brown <broonie@kernel.org>
-References: <cover.1580950046.git.robin.murphy@arm.com>
- <29a846da33c02df64eca62b5fa0f3884652f788f.1580950046.git.robin.murphy@arm.com>
- <20200206114606.GM3897@sirena.org.uk>
- <ad2c941a-9724-510e-959f-3cca3cab1dc2@arm.com>
- <20200206135718.GQ3897@sirena.org.uk>
- <CAMdYzYqTEnG_Q-8SvO2R6PeaPXQ3VBKu6iVYhYvb=wK7tT7c3A@mail.gmail.com>
-Message-ID: <bca13994-a8b1-fa21-fdf0-9f362d693f39@arm.com>
-Date: Thu, 6 Feb 2020 21:38:11 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+	id 1izotl-0002Xs-LS; Thu, 06 Feb 2020 21:41:21 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izotf-0002XW-44
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 21:41:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581025273;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=miTk2jHvXEeon48FMT6UBcqphMo6SpNxcWIB57XG7sg=;
+ b=hZmi66chcRcV5qKh3TXBL2+JYRCnW/7L2EiPAm0DIoDmQ1pqrEDf0u0Msd3+2s9w/4YebZ
+ 0749Zpje0U8TQWxfldwAJZ59tDU8hT/W5FdF1llDsJo3OmHIPGIa7vB9MyilHEkxXPDegs
+ d9jQ7ThRroxdvuTwbIG8B10o3DXqYKo=
+Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com
+ [209.85.222.199]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-407-MG8x2cemPEiwpzfxDbtDwQ-1; Thu, 06 Feb 2020 16:41:12 -0500
+Received: by mail-qk1-f199.google.com with SMTP id z21so4540130qki.18
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 06 Feb 2020 13:41:12 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=fv7hocxnCQMQx/Ef0JfmL5g1BsW3yRUgDUYfbGA1aT0=;
+ b=TrF2LbK13H6/yJhK8zH7xNt6k48xxgFzndQbE3uCbi6JQ9AA/bC7dgv8QOUvvp7bl8
+ XAkYw6xf6geOLuFVsji1fgheyDn/2EpcXc1I8YdIMaWQsFAHK7Pd2qwtQA6Vhzjbg1XP
+ jsomd1v3bWcnbCHscFssitOwczfE7qe0z/XEDbu3TirAgYG3Vq1xMeNA7Wfe6Ie3AKY6
+ X1RynK5MRMmsaByxsnRlfcA1+tcMJn2gQ4istip7bvK1Cm7uKNFXQaKdlzV9OStMKB8d
+ xhEuwRuwUIliaD2wmC7NFJFQ/X2IqN3jnn6UTbPm3eOdbWtT7I/ygGGjXxuChUfkxkZH
+ hgbg==
+X-Gm-Message-State: APjAAAXzGVegKHPnc4M3lJZpBU3Y3qfuJcjhWPTLI3FhpAHRpV/n1e3i
+ Y28mL0KwVK/LWIlCaKmQmwoNaSDQgMezNWui51vzraqUMh+ZVTdwNFufcQ42xlrue2zdH3MRgh+
+ fXndqs2cnMq7A8HNNeiyylvFQDKh6ne0oX3Y=
+X-Received: by 2002:a05:620a:7f2:: with SMTP id
+ k18mr4541152qkk.207.1581025271641; 
+ Thu, 06 Feb 2020 13:41:11 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxJgBpP+Sn/XW78feM1lgNrPZNv0ribzryOvpKTws4jf2FMfbWVePD88+Gb3lvt+IGO4p+aFA==
+X-Received: by 2002:a05:620a:7f2:: with SMTP id
+ k18mr4541080qkk.207.1581025270452; 
+ Thu, 06 Feb 2020 13:41:10 -0800 (PST)
+Received: from xz-x1 ([2607:9880:19c8:32::2])
+ by smtp.gmail.com with ESMTPSA id w9sm304509qka.71.2020.02.06.13.41.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 06 Feb 2020 13:41:09 -0800 (PST)
+Date: Thu, 6 Feb 2020 16:41:06 -0500
+From: Peter Xu <peterx@redhat.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>
+Subject: Re: [PATCH v5 15/19] KVM: Provide common implementation for generic
+ dirty log functions
+Message-ID: <20200206214106.GG700495@xz-x1>
+References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
+ <20200121223157.15263-16-sean.j.christopherson@intel.com>
+ <20200206200200.GC700495@xz-x1>
+ <20200206212120.GF13067@linux.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <CAMdYzYqTEnG_Q-8SvO2R6PeaPXQ3VBKu6iVYhYvb=wK7tT7c3A@mail.gmail.com>
-Content-Language: en-GB
+In-Reply-To: <20200206212120.GF13067@linux.intel.com>
+X-MC-Unique: MG8x2cemPEiwpzfxDbtDwQ-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_133825_234636_184CAF9F 
-X-CRM114-Status: GOOD (  22.89  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200206_134115_240795_CF7D3776 
+X-CRM114-Status: GOOD (  21.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,151 +112,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- Heiko Stuebner <heiko@sntech.de>, lgirdwood@gmail.com,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
+ Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Philippe =?utf-8?Q?Mathieu-Daud=C3=A9?= <f4bug@amsat.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-06 6:05 pm, Peter Geis wrote:
-> On Thu, Feb 6, 2020 at 8:57 AM Mark Brown <broonie@kernel.org> wrote:
->>
->> On Thu, Feb 06, 2020 at 12:36:04PM +0000, Robin Murphy wrote:
->>> On 2020-02-06 11:46 am, Mark Brown wrote:
->>
->>>> This makes sense but it is an ABI break so is going to need
->>>> quirking for existing boards that unfortunately rely on the
->>>> existing behaviour.
->>
->>> I guess the existing (mis)behaviour could be predicated on an
->>> of_machine_is_compatible() check for Rock64 boards - it's ugly, but should
->>> do the job if you feel it's more important to be 100% strict about not
->>> regressing supported systems for any possible kernel/DTB combination.
->>
->> Yes, that's what I'm suggesting - we don't need to be exhaustive
->> but having an obvious place for people to put the quirk in if
->> they are affected is much better practice than just silently
->> letting things break.
+On Thu, Feb 06, 2020 at 01:21:20PM -0800, Sean Christopherson wrote:
+> On Thu, Feb 06, 2020 at 03:02:00PM -0500, Peter Xu wrote:
+> > On Tue, Jan 21, 2020 at 02:31:53PM -0800, Sean Christopherson wrote:
+> > 
+> > [...]
+> > 
+> > > -int kvm_vm_ioctl_clear_dirty_log(struct kvm *kvm, struct kvm_clear_dirty_log *log)
+> > > +void kvm_arch_dirty_log_tlb_flush(struct kvm *kvm,
+> > > +				  struct kvm_memory_slot *memslot)
+> > 
+> > If it's to flush TLB for a memslot, shall we remove the "dirty_log" in
+> > the name of the function, because it has nothing to do with dirty
+> > logging any more?  And...
 > 
-> Might want to put a warning in there too, so that if someone is paying
-> attention they will see that they are using an out of date device
-> tree.
+> I kept the "dirty_log" to allow arch code to implement logic specific to a
+> TLB flush during dirty logging, e.g. x86's lockdep assert on slots_lock.
+> And similar to the issue with MIPS below, to deter usage of the hook for
+> anything else, i.e. to nudge people to using kvm_flush_remote_tlbs()
+> directly.
 
-Of course, that much is a given :)
+The x86's lockdep assert is not that important afaict, since the two
+callers of the new tlb_flush() hook will be with slots_lock for sure.
 
-Having thought it over some more, I reckon there's a reasonable
-compromise that isn't too hideous, preserves the logical cleanup but
-at least prevents audio going silent with old DTBs (plus handling GPIO
-probe deferral properly which I forgot about first time around). How
-does this look?
+> 
+> > >  {
+> > > -	struct kvm_memslots *slots;
+> > > -	struct kvm_memory_slot *memslot;
+> > > -	bool flush = false;
+> > > -	int r;
+> > > -
+> > > -	mutex_lock(&kvm->slots_lock);
+> > > -
+> > > -	r = kvm_clear_dirty_log_protect(kvm, log, &flush);
+> > > -
+> > > -	if (flush) {
+> > > -		slots = kvm_memslots(kvm);
+> > > -		memslot = id_to_memslot(slots, log->slot);
+> > > -
+> > > -		/* Let implementation handle TLB/GVA invalidation */
+> > > -		kvm_mips_callbacks->flush_shadow_memslot(kvm, memslot);
+> > > -	}
+> > > -
+> > > -	mutex_unlock(&kvm->slots_lock);
+> > > -	return r;
+> > > +	/* Let implementation handle TLB/GVA invalidation */
+> > > +	kvm_mips_callbacks->flush_shadow_memslot(kvm, memslot);
+> > 
+> > ... This may not directly related to the current patch, but I'm
+> > confused on why MIPS cannot use kvm_flush_remote_tlbs() to flush TLBs.
+> > I know nothing about MIPS code, but IIUC here flush_shadow_memslot()
+> > is a heavier operation that will also invalidate the shadow pages.
+> > Seems to be an overkill here when we only changed write permission of
+> > the PTEs?  I tried to check the first occurance (2a31b9db15353) but I
+> > didn't find out any clue of it so far.
+> > 
+> > But that matters to this patch because if MIPS can use
+> > kvm_flush_remote_tlbs(), then we probably don't need this
+> > arch-specific hook any more and we can directly call
+> > kvm_flush_remote_tlbs() after sync dirty log when flush==true.
+> 
+> Ya, the asid_flush_mask in kvm_vz_flush_shadow_all() is the only thing
+> that prevents calling kvm_flush_remote_tlbs() directly, but I have no
+> clue as to the important of that code.
 
-Robin.
+As said above I think the x86 lockdep is really not necessary, then
+considering MIPS could be the only one that will use the new hook
+introduced in this patch...  Shall we figure that out first?
 
------>8-----
+Thanks,
 
-The RK3328 reference design uses an external line driver IC as a buffer
-on the analog codec output, enabled by the GPIO_MUTE pin, and such a
-configuration is currently assumed in the codec driver's direct poking
-of GRF_SOC_CON10 to control the GPIO_MUTE output value. However, some
-boards wire up analog audio yet use that pin for some other purpose, so
-that assumption doesn't always hold. Update this functionality to rely
-on an explicit GPIO descriptor, such that it can be managed at the
-board level.
-
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
----
- sound/soc/codecs/rk3328_codec.c | 31 ++++++++++++++++---------------
- 1 file changed, 16 insertions(+), 15 deletions(-)
-
-diff --git a/sound/soc/codecs/rk3328_codec.c b/sound/soc/codecs/rk3328_codec.c
-index 287c962ba00d..115706a55577 100644
---- a/sound/soc/codecs/rk3328_codec.c
-+++ b/sound/soc/codecs/rk3328_codec.c
-@@ -7,6 +7,7 @@
- #include <linux/clk.h>
- #include <linux/delay.h>
- #include <linux/device.h>
-+#include <linux/gpio/consumer.h>
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/platform_device.h>
-@@ -31,7 +32,7 @@
-
- struct rk3328_codec_priv {
- 	struct regmap *regmap;
--	struct regmap *grf;
-+	struct gpio_desc *mute;
- 	struct clk *mclk;
- 	struct clk *pclk;
- 	unsigned int sclk;
-@@ -106,16 +107,6 @@ static int rk3328_set_dai_fmt(struct snd_soc_dai *dai, unsigned int fmt)
- 	return 0;
- }
-
--static void rk3328_analog_output(struct rk3328_codec_priv *rk3328, int mute)
--{
--	unsigned int val = BIT(17);
--
--	if (mute)
--		val |= BIT(1);
--
--	regmap_write(rk3328->grf, RK3328_GRF_SOC_CON10, val);
--}
--
- static int rk3328_digital_mute(struct snd_soc_dai *dai, int mute)
- {
- 	struct rk3328_codec_priv *rk3328 =
-@@ -205,7 +196,7 @@ static int rk3328_codec_open_playback(struct rk3328_codec_priv *rk3328)
- 	}
-
- 	msleep(rk3328->spk_depop_time);
--	rk3328_analog_output(rk3328, 1);
-+	gpiod_set_value(rk3328->mute, 0);
-
- 	regmap_update_bits(rk3328->regmap, HPOUTL_GAIN_CTRL,
- 			   HPOUTL_GAIN_MASK, OUT_VOLUME);
-@@ -246,7 +237,7 @@ static int rk3328_codec_close_playback(struct rk3328_codec_priv *rk3328)
- {
- 	size_t i;
-
--	rk3328_analog_output(rk3328, 0);
-+	gpiod_set_value(rk3328->mute, 1);
-
- 	regmap_update_bits(rk3328->regmap, HPOUTL_GAIN_CTRL,
- 			   HPOUTL_GAIN_MASK, 0);
-@@ -446,7 +437,6 @@ static int rk3328_platform_probe(struct platform_device *pdev)
- 		dev_err(&pdev->dev, "missing 'rockchip,grf'\n");
- 		return PTR_ERR(grf);
- 	}
--	rk3328->grf = grf;
- 	/* enable i2s_acodec_en */
- 	regmap_write(grf, RK3328_GRF_SOC_CON2,
- 		     (BIT(14) << 16 | BIT(14)));
-@@ -458,7 +448,18 @@ static int rk3328_platform_probe(struct platform_device *pdev)
- 		rk3328->spk_depop_time = 200;
- 	}
-
--	rk3328_analog_output(rk3328, 0);
-+	rk3328->mute = gpiod_get_optional(&pdev->dev, "mute", GPIOD_OUT_HIGH);
-+	if (IS_ERR(rk3328->mute))
-+		return PTR_ERR(rk3328->mute);
-+	/*
-+	 * Rock64 is the only supported platform to have widely relied on
-+	 * this; if we do happen to come across an old DTB, just leave the
-+	 * external mute forced off.
-+	 */
-+	if (!rk3328->mute && of_machine_is_compatible("pine64,rock64")) {
-+		dev_warn(&pdev->dev, "assuming implicit control of GPIO_MUTE; update devicetree if possible\n");
-+		regmap_write(grf, RK3328_GRF_SOC_CON10, BIT(17) | BIT(1));
-+	}
-
- 	rk3328->mclk = devm_clk_get(&pdev->dev, "mclk");
- 	if (IS_ERR(rk3328->mclk))
 -- 
-2.17.1
+Peter Xu
+
 
 _______________________________________________
 linux-arm-kernel mailing list
