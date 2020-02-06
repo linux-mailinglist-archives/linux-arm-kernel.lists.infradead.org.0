@@ -2,58 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4662C154558
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 14:48:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D024B154591
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 14:57:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=B3Jb530c4DxutaERefroRqsN6OsOEbypal7k/PygA1A=; b=WbH/jKBdpp5bdH9+BaON5dZj2p
-	XWunYVJCcrIQ9b9JBNXg+VHnrC1WHpyOkqF92ZHa89NNV/ZJF/8E/2HA5lB9GVJcCs3hhu51QwdDY
-	ZAuGHUQ3QCDtI+YHy902/JJLYM/XI5kJqMQYK2CKcbzDkn2eVTzxoskt0VJI/PsXXED8rAA4Ejqli
-	s2CVgF9dIqdIVL10GCI5cP771wZwkPX+PU1gMMWxbAUJJ1TErM6sq0s9h0XQ3ehTVsOoI+Z1U9Ppl
-	h7Hl2QGA5KYHeKUU3C0R3PfuV1KvG8cehHRU4Ivy/nFB1LhqamSNclDLKMWCcBnuqyYquiSDEMSUb
-	g0eg6T7w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aS0TkQtwp1pweP419PunMecUI2Y8JdoJfcYkHZzmlNw=; b=q8D9N8n397otI1HvpRDBTQ2aX
+	/a6zH9Nh4xajYMPYGPnoGH2fIk5YyC0D8znmQe8MZ6ZQDgYyxuphJK/utl64dKvYIf8AyOqx2TImd
+	egO5qcgJjN9Wtn12ibSIemPeSv2JmtycibzUh29hWhfUiN2b3s5sW0Rc5QcmegIb2sz26jmtOu9jl
+	DAGEtfNxCtkJx4+T2EyM/i86zSGaXab9xm/5N3yrLwEpQkrb5VAPRzRuWa4sYb8xtvAdMlWLXJf1q
+	3tt/PUAnEULM/EgBaoEY04kK22ABoDLhC9CbnFz+L25S/Iy+Vg2vOOxBgfxQMAze1BjnkkzdxXDvN
+	8KbSctYxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izhWP-0004b2-8A; Thu, 06 Feb 2020 13:48:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izhVe-000465-OB; Thu, 06 Feb 2020 13:48:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A200730E;
- Thu,  6 Feb 2020 05:47:57 -0800 (PST)
-Received: from e123648.arm.com (unknown [10.37.12.48])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 489483F52E;
- Thu,  6 Feb 2020 05:47:44 -0800 (PST)
-From: lukasz.luba@arm.com
-To: linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
- linux-omap@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-arm-msm@vger.kernel.org, linux-imx@nxp.com
-Subject: [PATCH v2 4/4] drm/panfrost: Register to the Energy Model with
- devfreq device
-Date: Thu,  6 Feb 2020 13:46:40 +0000
-Message-Id: <20200206134640.11367-5-lukasz.luba@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200206134640.11367-1-lukasz.luba@arm.com>
-References: <20200206134640.11367-1-lukasz.luba@arm.com>
+	id 1izher-0000Vl-4M; Thu, 06 Feb 2020 13:57:29 +0000
+Received: from heliosphere.sirena.org.uk ([172.104.155.198])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izhek-0000Um-I7; Thu, 06 Feb 2020 13:57:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=BY3bAmfDGpjwi1ZC/nQxJs5fLqd4G6irce8OC6djfEA=; b=h1BSwCcLlgimk6Oh3na09vu/N
+ AbeV6VNbvypZMJ77dtITNE6feYpGs3nzvQ6YOFFredtdIeVKhbrW6GAZkBdPIHoxS2SbWCUBfUzSG
+ SiiXB0bFFLqXUm+Sl79j8fgCaHIktc6HeQdPXZAt8eHrQpqugIU9jadLOG+04x/pKALtU=;
+Received: from fw-tnat-cam2.arm.com ([217.140.106.50]
+ helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1izheg-0002Jg-TW; Thu, 06 Feb 2020 13:57:18 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id 8977ED01D7F; Thu,  6 Feb 2020 13:57:18 +0000 (GMT)
+Date: Thu, 6 Feb 2020 13:57:18 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 2/3] ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit
+Message-ID: <20200206135718.GQ3897@sirena.org.uk>
+References: <cover.1580950046.git.robin.murphy@arm.com>
+ <29a846da33c02df64eca62b5fa0f3884652f788f.1580950046.git.robin.murphy@arm.com>
+ <20200206114606.GM3897@sirena.org.uk>
+ <ad2c941a-9724-510e-959f-3cca3cab1dc2@arm.com>
+MIME-Version: 1.0
+In-Reply-To: <ad2c941a-9724-510e-959f-3cca3cab1dc2@arm.com>
+X-Cookie: Programming is an unnatural act.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_054758_850606_207C37E6 
-X-CRM114-Status: UNSURE (   7.78  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200206_055722_601683_70E77EA8 
+X-CRM114-Status: GOOD (  11.83  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [172.104.155.198 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,64 +81,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
- viresh.kumar@linaro.org, liviu.dudau@arm.com, bjorn.andersson@linaro.org,
- bsegall@google.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
- robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
- khilman@kernel.org, daniel.lezcano@linaro.org, steven.price@arm.com,
- cw00.choi@samsung.com, mingo@redhat.com, mgorman@suse.de, rui.zhang@intel.com,
- alyssa.rosenzweig@collabora.com, daniel@ffwll.ch, b.zolnierkie@samsung.com,
- s.hauer@pengutronix.de, rostedt@goodmis.org, matthias.bgg@gmail.com,
- Chris.Redpath@arm.com, Dietmar.Eggemann@arm.com, airlied@linux.ie,
- javi.merino@arm.com, tomeu.vizoso@collabora.com, qperret@google.com,
- sboyd@kernel.org, shawnguo@kernel.org, rjw@rjwysocki.net, agross@kernel.org,
- kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
- ionela.voinescu@arm.com, lukasz.luba@arm.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
+ lgirdwood@gmail.com, linux-rockchip@lists.infradead.org, pgwipeout@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2439015417750292788=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lukasz Luba <lukasz.luba@arm.com>
 
-Add device to the Energy Model framework. It will create a dedicated
-and unified data structures used i.e. in the thermal framework.
-The power model used in dev_pm_opp subsystem is simplified and created
-based on DT 'dynamic-power-coefficient', volatage and frequency. It is
-similar to the CPU model used in Energy Aware Scheduler.
+--===============2439015417750292788==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="k1RcuuA4CmYq3pph"
+Content-Disposition: inline
 
-Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
----
- drivers/gpu/drm/panfrost/panfrost_devfreq.c | 3 +++
- 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/gpu/drm/panfrost/panfrost_devfreq.c b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
-index 413987038fbf..d527a5113950 100644
---- a/drivers/gpu/drm/panfrost/panfrost_devfreq.c
-+++ b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
-@@ -105,6 +105,8 @@ int panfrost_devfreq_init(struct panfrost_device *pfdev)
- 	}
- 	pfdev->devfreq.devfreq = devfreq;
- 
-+	dev_pm_opp_of_register_em(dev, NULL);
-+
- 	cooling = of_devfreq_cooling_register(dev->of_node, devfreq);
- 	if (IS_ERR(cooling))
- 		DRM_DEV_INFO(dev, "Failed to register cooling device\n");
-@@ -118,6 +120,7 @@ void panfrost_devfreq_fini(struct panfrost_device *pfdev)
- {
- 	if (pfdev->devfreq.cooling)
- 		devfreq_cooling_unregister(pfdev->devfreq.cooling);
-+	dev_pm_opp_of_unregister_em(&pfdev->pdev->dev);
- 	dev_pm_opp_of_remove_table(&pfdev->pdev->dev);
- }
- 
--- 
-2.17.1
+--k1RcuuA4CmYq3pph
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
+On Thu, Feb 06, 2020 at 12:36:04PM +0000, Robin Murphy wrote:
+> On 2020-02-06 11:46 am, Mark Brown wrote:
+
+> > This makes sense but it is an ABI break so is going to need
+> > quirking for existing boards that unfortunately rely on the
+> > existing behaviour.
+
+> I guess the existing (mis)behaviour could be predicated on an
+> of_machine_is_compatible() check for Rock64 boards - it's ugly, but should
+> do the job if you feel it's more important to be 100% strict about not
+> regressing supported systems for any possible kernel/DTB combination.
+
+Yes, that's what I'm suggesting - we don't need to be exhaustive
+but having an obvious place for people to put the quirk in if
+they are affected is much better practice than just silently
+letting things break.
+
+--k1RcuuA4CmYq3pph
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl48Gz0ACgkQJNaLcl1U
+h9Dqlwf/e9pbZnoHIpXKjbaTLD0JTMQR2bflNKfkFgJa4HN0EBmRU/2zzjhQsMBj
+FwXbRw0mbFlfh8DvJcHwjp9Nt+DzRk084QZm1xjXyIdok04lxQCq0/XwBENKJGUp
+icw2FFpQGCVQJRixdXMaY0M0woDlf8GF/gk+KkNrJWvtD3JYD3pbaNqDO3Sfg4C/
+ECfMVskfkS0XSKhcMWqbmFBf8ImMABUOu8qV6oWbEmxRlmjMxv28pNjXi+L96X83
+qZ9St2FvccCApJ7twkomusHVtpw62Cpwy0OOwxOFIjEWTHXzhyAH/vFtPmMJwZJJ
+vHRSZAgaioZ451LfVRCV/L6YnOeigg==
+=S0B3
+-----END PGP SIGNATURE-----
+
+--k1RcuuA4CmYq3pph--
+
+
+--===============2439015417750292788==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2439015417750292788==--
+
