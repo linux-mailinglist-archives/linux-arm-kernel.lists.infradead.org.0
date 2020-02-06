@@ -2,68 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D657215442B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 13:41:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92756154468
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 13:59:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cdVe+cFjeh9On3dtAajT3Gx5pRTVhbm+54CoFCmdTLo=; b=rIOeAtS1JLwxUNxjPh9v4x88L
-	WhjPfJRhTodM3FYwWA6SVHZxqBm/SK6Y95nsSuLCPORf+6ugwuERieqDM40rOEPudIPA8sAmOxpd9
-	p2EJ0H2idOPtOLvYXBxKMLF5Rzlc3SEZmOYfkXVHB9/wNNAabDUggTJ3cRdE9CV0zeq1AJFkR5ZFm
-	BxV+taZORnWBPkM+gwn90TaKGYujxlIkqMZ7D/oUGJGswKizS3Idu3Mbj/UyCdZjwB/c9uuehsRtz
-	Xu6Ch6BY5b1vrdhTNoMFEoUqE04eeeGUYQ0Q4819jFOVdUe8qlFhv5Pxi9pQPLUnMwP9EI2hBlNVX
-	dnuWj68Tg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yLCvY/9TFUdhAqUPwllqbCrvmii+rVWfR3m+93UztA8=; b=U5/j6aAYZjiJae
+	yFFiTAaRWSwzFbpPiNfjO5a3pypD4gm2gN6VVP32PWZUGTELGRbK0vhPkC1Mg1+vo9N3S9UgtyIKD
+	FKW8pPMTteuFCOyYcxPLVKXaYqpQbh+nYYtdJBYBjFEhdxP44P3WNychf0+y+R/6IS7//sjBubl3y
+	4wuQQVIGSNdAKMUzz39a1a+yx4hAs/VKeYJwk4ebzoQM0ARmJjHxdXMkIl8lPoy4xg/LSZ1BFqBoe
+	wHZvdQ3qTmwvmZ1in7FJs/yvwUO7dZfTUwzy7Tisld3elMXSZv1VktH+KI99MufPQ2OKhthdxoX+5
+	ooZNTazxoVOtn2cO97Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izgTS-0002U6-Cs; Thu, 06 Feb 2020 12:41:38 +0000
+	id 1izgko-0008V3-4Q; Thu, 06 Feb 2020 12:59:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izgTJ-0002TG-BF
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 12:41:30 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1izgkh-0008Ug-LT
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 12:59:28 +0000
+Received: from mail-lf1-f45.google.com (mail-lf1-f45.google.com
+ [209.85.167.45])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A8B6820661;
- Thu,  6 Feb 2020 12:41:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7F0BF21D7D
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  6 Feb 2020 12:59:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1580992888;
- bh=QRviXGPtTLyzMnnQbv0vI0Mfd+YpBIYml21mlWgU0JY=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=dukTsp+cqOwyyk5+xn4FHVscByigbDNphLKi9gSUlLV0yVtNZKWg5f9dhq/yp5MLC
- sk7G/RWALNj0XyAJh+A1tcBawP19Ru3dlxpk+vq2mv1M7Y4lhTlbqs0We6AEje+Z+S
- e/ti5dLOVFHQVlvOJFToxne/19O8clq8AcbKPhC4=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1izgTG-003JYg-W4; Thu, 06 Feb 2020 12:41:27 +0000
+ s=default; t=1580993966;
+ bh=6OY7DPI2yOZ1X/1zJRZnKqanPxQshh7/EXoL02sHfpY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=QEFZkBJhSZNCXOTa8av2d4HzjHuE/BqXM9vnRkZ1T0w7nQ/lzWrl9bxK23i0c49nO
+ L+OTfzCqYtSpvJhn8YUlKgo0JM4vJn4NpJCTpRbPqZXHOPrwQRmVlrlhyJwowP0yxM
+ P7GM0LepDBfNTFrz//gR7J0dhEslbO/HNJT8ZGYE=
+Received: by mail-lf1-f45.google.com with SMTP id m30so4024921lfp.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 06 Feb 2020 04:59:26 -0800 (PST)
+X-Gm-Message-State: APjAAAVJ7KFt+VujL6sE0xWxhsHsqS3NSNzbrJ2D3B2SwIYeQy83agWm
+ lr43t3VLhAfPGdmYULS/ne2qNw7kbi3Be+Kzll0=
+X-Google-Smtp-Source: APXvYqxXmYq0CkBT0Cjv9peoxswFZXHCgyB59GVNonQ53ahGHtf1ogSPH5YE7w3/aQn7BCzLj014+bBH5621DMrKfcY=
+X-Received: by 2002:ac2:485c:: with SMTP id 28mr1744468lfy.118.1580993964531; 
+ Thu, 06 Feb 2020 04:59:24 -0800 (PST)
 MIME-Version: 1.0
-Date: Thu, 06 Feb 2020 12:41:26 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: ssbs: Fix context-switch when SSBS instructions
- are present
-In-Reply-To: <20200206122047.GA18762@willie-the-truck>
-References: <20200206113410.18301-1-will@kernel.org>
- <10b7b4b0bcc443db7028efbdee789549@kernel.org>
- <20200206122047.GA18762@willie-the-truck>
-Message-ID: <b96ac2ae6b444a53be72a8656592ab01@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.8
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: will@kernel.org, linux-arm-kernel@lists.infradead.org,
- mark.rutland@arm.com, kernel-team@android.com, stable@vger.kernel.org,
- catalin.marinas@arm.com, sramana@codeaurora.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+References: <20200127215453.15144-1-lukasz.luba@arm.com>
+ <20200127215453.15144-4-lukasz.luba@arm.com>
+ <CAJKOXPeA=_3zPx6Aq3CAUi7JsXr9AigWGWCTNWo_jkm=oVWe_g@mail.gmail.com>
+ <db3f2554-288d-81ab-2373-1447367ba673@arm.com>
+ <20200131204118.GA27284@kozik-lap>
+ <c54e252d-dc55-5fa3-f97f-643d7efbfdc1@arm.com>
+In-Reply-To: <c54e252d-dc55-5fa3-f97f-643d7efbfdc1@arm.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Thu, 6 Feb 2020 13:59:13 +0100
+X-Gmail-Original-Message-ID: <CAJKOXPfTjdtNMx=+dPVcQ53RiXx0y-r=KXBRhzA4jS77SHxciQ@mail.gmail.com>
+Message-ID: <CAJKOXPfTjdtNMx=+dPVcQ53RiXx0y-r=KXBRhzA4jS77SHxciQ@mail.gmail.com>
+Subject: Re: [PATCH 3/3] ARM: exynos_defconfig: Enable Energy Model framework
+To: Lukasz Luba <lukasz.luba@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_044129_429715_9F8AE360 
-X-CRM114-Status: GOOD (  20.94  )
+X-CRM114-CacheID: sfid-20200206_045927_725199_12FC83C0 
+X-CRM114-Status: GOOD (  16.57  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,86 +90,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Srinivas Ramana <sramana@codeaurora.org>,
- Catalin Marinas <catalin.marinas@arm.com>, stable@vger.kernel.org,
- kernel-team@android.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-pm@vger.kernel.org,
+ =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
+ <b.zolnierkie@samsung.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ robh+dt@kernel.org, Chanwoo Choi <cw00.choi@samsung.com>,
+ kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ dietmar.eggemann@arm.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-06 12:20, Will Deacon wrote:
-> On Thu, Feb 06, 2020 at 11:49:31AM +0000, Marc Zyngier wrote:
->> On 2020-02-06 11:34, Will Deacon wrote:
->> > When all CPUs in the system implement the SSBS instructions, we
->> > advertise this via an HWCAP and allow EL0 to toggle the SSBS field
->> > in PSTATE directly. Consequently, the state of the mitigation is not
->> > accurately tracked by the TIF_SSBD thread flag and the PSTATE value
->> > is authoritative.
->> >
->> > Avoid forcing the SSBS field in context-switch on such a system, and
->> > simply rely on the PSTATE register instead.
->> >
->> > Cc: <stable@vger.kernel.org>
->> > Cc: Marc Zyngier <maz@kernel.org>
->> > Cc: Catalin Marinas <catalin.marinas@arm.com>
->> > Cc: Srinivas Ramana <sramana@codeaurora.org>
->> > Fixes: cbdf8a189a66 ("arm64: Force SSBS on context switch")
->> > Signed-off-by: Will Deacon <will@kernel.org>
->> > ---
->> >  arch/arm64/kernel/process.c | 7 +++++++
->> >  1 file changed, 7 insertions(+)
->> >
->> > diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
->> > index d54586d5b031..45e867f40a7a 100644
->> > --- a/arch/arm64/kernel/process.c
->> > +++ b/arch/arm64/kernel/process.c
->> > @@ -466,6 +466,13 @@ static void ssbs_thread_switch(struct task_struct
->> > *next)
->> >  	if (unlikely(next->flags & PF_KTHREAD))
->> >  		return;
->> >
->> > +	/*
->> > +	 * If all CPUs implement the SSBS instructions, then we just
->> > +	 * need to context-switch the PSTATE field.
->> > +	 */
->> > +	if (cpu_have_feature(cpu_feature(SSBS)))
->> > +		return;
->> > +
->> >  	/* If the mitigation is enabled, then we leave SSBS clear. */
->> >  	if ((arm64_get_ssbd_state() == ARM64_SSBD_FORCE_ENABLE) ||
->> >  	    test_tsk_thread_flag(next, TIF_SSBD))
->> 
->> Looks goot to me.
-> 
-> Ja!
+On Wed, 5 Feb 2020 at 13:49, Lukasz Luba <lukasz.luba@arm.com> wrote:
+> >> As mentioned in response to patch 1/3. The fist patch would create MC
+> >> domain, something different than Energy Model or EAS. The decisions in
+> >> the scheduler would be different.
+> >>
+> >> I can merge 1/3 and 3/3 if you like, though.
+> >
+> > I understand now that their independent. Still, they are part of one
+> > goal to tune the scheduler for Exynos platform. Splitting these looks
+> > too much, like enabling multiple drivers one after another.
+> >
+> > However if you provide numbers for each of cases (before patches, multi
+> > core scheduler, energy model with DTS), then I see benefit of splitting
+> > it.  Each commit would have its own rationale.  I am not sure if it is
+> > worth such investigation - that's just defconfig... distros might ignore
+> > it anyway.
+>
+> Good point, and I agree that it would require more investigation, for
+> which unfortunately I don't have currently spare cycles.
+>
+> Should I merge patch 1/3 and 3/3 and send the v2 with a cover letter
+> which would have the test results?
 
-Ach...
+Yes, let's do this way.
 
-> 
->> Reviewed-by: Marc Zyngier <maz@kernel.org>
-> 
-> Cheers. It occurs to me that, although the patch is correct, the 
-> comment and
-> the commit message need tweaking because we're actually predicating 
-> this on
-> the presence of SSBS in any form, so the instructions may not be
-> implemented. That's fine because the prctl() updates pstate, so it 
-> remains
-> authoritative and can't be lost by one of the CPUs treating it as 
-> RAZ/WI.
+Thanks for working on this!
 
-True. It is the PSTATE bit that actually matters, not the presence of 
-the control
-instruction.
-
-> I'll spin a v2 later on.
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
