@@ -2,66 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C84D7154F42
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 00:11:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E25E154F74
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 00:44:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vmHtTUqY0UhrzpANFEuLHqG20S/7CLYcmG5kUjIzMaE=; b=WgPrxFad0K3FEb
-	1Jvg8OouY01Jigq4wm0xxRoO9pHu+HGoZF50xOgC5RqwtfNiygb8vYBnHvGV1Lery7rieok+hn02/
-	RhROd2vlh84YNWIetML0/rLIwZQfVLOmBVua9Yysxutaa8sMNO7be4MH21fe08sDm6j5p14w8gRnv
-	9ogTtH327fQZtxiy/51KiKZgyWmQ5AYvsDN8sAQo084Pi597DfNn30SVKQ0t4WKLTTTAxQ6TnC34C
-	FfTUPsOi3hguHXkqm5RCcAqWKz+qsP+aX9iP4EUnGSpn2jKoeTQXyRQn85xkdAec+y06IRFefMTOf
-	oin06Yurdyv4BWJ/xulg==;
+	List-Owner; bh=pVyXqkcL/iJAhCda7q3V8ZWjDSG00jMxmvRxDgaYJHU=; b=tz9tU27DNOWKxF
+	CsWXeH+mqCTKinmOMsE62FBwh4MHL3GAQZtxIvIeV/a1WzRSSYthKhwafFj+HYtecAdseON6HFEBg
+	h3I/U1yIzlku66SYv4ahjRfhRwFluoDmcyn3QzmDLOLkeUw82f0tQbrGd7wx0B/sLXcwfXsiNCSVl
+	manjYeMtRoNNloRTepKwWHtWDiGRTKbRVE1ASB492WwLbznZQxoNds0hX4CxNspC9W+rZ96sFChcJ
+	GqO0g8Ej2RXKWxmA9PMHUFAo/71722Z0ElGSpQ9gFzmy7BkR3RW5pm3bsAxq4JzurxlT4OeAmbVyO
+	MA1v3krvVd3dh1TYr3Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izqJ9-0006f0-Bh; Thu, 06 Feb 2020 23:11:39 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1izqor-0007W3-KM; Thu, 06 Feb 2020 23:44:25 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izqJ2-0006eA-8H
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 23:11:33 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 Feb 2020 15:11:28 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,411,1574150400"; d="scan'208";a="264787622"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by fmsmga002.fm.intel.com with ESMTP; 06 Feb 2020 15:11:27 -0800
-Date: Thu, 6 Feb 2020 15:11:27 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Peter Xu <peterx@redhat.com>
-Subject: Re: [PATCH v5 19/19] KVM: selftests: Add test for
- KVM_SET_USER_MEMORY_REGION
-Message-ID: <20200206231127.GB24556@linux.intel.com>
-References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
- <20200121223157.15263-20-sean.j.christopherson@intel.com>
- <20200206223001.GJ700495@xz-x1>
+ id 1izqoj-0007VV-KA
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 23:44:19 +0000
+Received: by mail-wr1-x441.google.com with SMTP id w12so538492wrt.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 06 Feb 2020 15:44:17 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=d02kj/Sz33fa+befgXZVyFREBr0vJnFUZeMKa31YhvU=;
+ b=m0BHB8BWirguKwZ62oJ9sCeWiNk4ZMjTSxggAILO04O6yhuLcNQpLniOi4JGJ4UJYv
+ XAGdqJxP3BJbWUPQmnoBeHwmH/sbn/bXHj+8NFbDkzfZRgt30L3uLME77sKc3GjEa+kv
+ PBU6gqQXEc+1vBY3kv10MJlk1JrcWKE4Q/VsPMzLoBWjE4ozmf8jcNsqn/wVC9PNFn38
+ qpvoKl653a+mB4e1T32mXBtUCX+LtENNUatP9IEME69ISo/LqbTSq2ESV2x7/GhXZQhv
+ HmI3jO7GhCTaR9DNfUNSQt/0WU4tPpx3NasR1R4x1vdLbIeQO3gFDKnu3jAUyy1uB87E
+ HwQQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=d02kj/Sz33fa+befgXZVyFREBr0vJnFUZeMKa31YhvU=;
+ b=JlMNmPVF4xqMV0+Opz4oWCDxJVuhmi5/IRM/uKeBIgwZ29+ZWJPiScM8aH3ctGtZoP
+ 9fcAqeNYnQxtrWycmcn7U5IB2St0+eLE6SGbmDPskh9nGoJquUJdOoXn1JuzhIN1TrPO
+ AyovVjfv3uTOFFANa4FartIXa8j8t5si2HZUpRc+vz6ZM1Qg4UHuMF3/8bmijOejFDS/
+ oD3vdpQ6gz9zFVqC7R2QH0oThSDEeF0hBkC2u/YgOa9110zoc2tylMwVEV5YhZTB8fUh
+ 1GGXW8Y7U5FAe6A9paSxTB249h/x/w29U0Y/ho+2Y26iaJRv+28Ku7GLrK5rCmJIDC5P
+ gPyA==
+X-Gm-Message-State: APjAAAW7A/o85E78MRbR+Od9Qs1D3Ja8pyWzXsJI7gqtK3z1k+gwDWiY
+ dENNEVsG0o9PhifemcmyOppyWcOLP60Zy6kFY394lg==
+X-Google-Smtp-Source: APXvYqxpArkCAj89URKq3zHxyBge3u7GNKCttPWI1urPSnesFArTXUqzR/IIYDcODxWqpNQ9cYV4fjYwH+o67pLFahQ=
+X-Received: by 2002:adf:8564:: with SMTP id 91mr518010wrh.252.1581032655972;
+ Thu, 06 Feb 2020 15:44:15 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200206223001.GJ700495@xz-x1>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+References: <20200206140352.6300-1-ardb@kernel.org>
+ <20200206140352.6300-3-ardb@kernel.org>
+ <ea0b44d5-c9e4-943a-da81-8b4c8f1a371d@gmx.de>
+In-Reply-To: <ea0b44d5-c9e4-943a-da81-8b4c8f1a371d@gmx.de>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Thu, 6 Feb 2020 23:44:04 +0000
+Message-ID: <CAKv+Gu8nfoz+5jXn_8Pdwp9Hs=jxvanwMmSYbu3otq=EPL41qw@mail.gmail.com>
+Subject: Re: [PATCH 2/2] efi/libstub: take noinitrd cmdline argument into
+ account for devpath initrd
+To: Heinrich Schuchardt <xypron.glpk@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_151132_345296_0BD5C1D9 
-X-CRM114-Status: GOOD (  13.00  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200206_154417_727273_3C851447 
+X-CRM114-Status: GOOD (  12.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,44 +93,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
- Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>
+Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
+ Daniel Kiper <daniel.kiper@oracle.com>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
+ Leif Lindholm <leif@nuviainc.com>, Laszlo Ersek <lersek@redhat.com>,
+ Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 06, 2020 at 05:30:01PM -0500, Peter Xu wrote:
-> On Tue, Jan 21, 2020 at 02:31:57PM -0800, Sean Christopherson wrote:
-> > Add a KVM selftest to test moving the base gfn of a userspace memory
-> > region.  Although the basic concept of moving memory regions is not x86
-> > specific, the assumptions regarding large pages and MMIO shenanigans
-> > used to verify the correctness make this x86_64 only for the time being.
-> > 
-> > Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-> 
-> (I'm a bit curious why write 2 first before 1...)
+On Thu, 6 Feb 2020 at 18:33, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>
+> On 2/6/20 3:03 PM, Ard Biesheuvel wrote:
+> > One of the advantages of using what basically amounts to a callback
+> > interface into the bootloader for loading the initrd is that it provides
+> > a natural place for the bootloader or firmware to measure the initrd
+> > contents while they are being passed to the kernel.
+> >
+> > Unfortunately, this is not a guarantee that the initrd will in fact be
+> > loaded and its /init invoked by the kernel, since the command line may
+> > contain the 'noinitrd' option, in which case the initrd is ignored, but
+> > this will not be reflected in the PCR that covers the initrd measurement.
+>
+> Does PCR here refer to the TPM Platform Configuration Register?
+>
 
-To verify KVM actually relocated the memslot and didn't leave anything in
-the TLB.  If "2" isn't written, KVM could completely botch the MOVE but the
-guest_code() would still signal pass because it would eventually see the
-0-> transitions.
-
-> Reviewed-by: Peter Xu <peterx@redhat.com>
-> 
-> -- 
-> Peter Xu
-> 
+Yes.
 
 _______________________________________________
 linux-arm-kernel mailing list
