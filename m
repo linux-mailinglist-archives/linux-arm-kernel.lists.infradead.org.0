@@ -2,91 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 935DD154628
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 15:29:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6171B154660
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 15:42:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1OJ3Yjo1UocEgSqk19ScmdjeFOPTzSW3i7TEHKfdcic=; b=ITCW23oZ2uzLM/
-	Y/ECnoJncq1HlsaFucMIptgH+wQwImIaLa9d/grzRpRoyR85XAm0ADdSYun5Xih/9MHMxzjTHlJgQ
-	KjioKGPULrR0hp04FdLlyniBMtubpsHgetu99UbH48ZwtqiO0Bc/5eFfLKnB+YfwApdni2KrzUr6p
-	WYQzNJe0g0XzAmTju+j+Fjgy8aBE4Fij49/PlPSp2CFgvIinXRd/Mv/NyRTSwc8GZOQiSMcAN7unq
-	cZwI+IHg/GNcAhGc3LgIeJtWSc6A3CtmLhdhw0DuWKa4pU03DK6R/LzxWF/zK9oPIxk/wIYUzuTtM
-	+aN2UNonj6vzUbCXgb/g==;
+	List-Owner; bh=ne+EupSiggY/PZ/lIYavaKxhiqu/rSbQMoeowult5AQ=; b=N11fbeNg1GncUd
+	M/6k2HAtSNU3p6Pntp4xSDqo8hwV94rYdAC2d/Ef3zChJ9NFTcOENg6+VUQMex8g3UriUknmZ+i+S
+	dmjzLD9M8Nwn6S3a+zE62R2QVWLq6UYQpO8R0kW3Kl/iklbJyv22id2QLxoL8BziYWqYllTKIiEU7
+	f77M1WineVLkq1AoHYNK+E2fsW/plIEJfa13Hvi2uDgcmm3w5dRQgemdACl61DOY9L/lqT8vOyQWC
+	pq3UlsgnC5mAYefmXig9OxoT6L6NA/7dB4v1UILuKWrwU1Iih1BvIqoLESwnmPkUmrUvma4nJdB5F
+	ctzthOnBzuMlobA4HS6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izi9x-0005DO-UJ; Thu, 06 Feb 2020 14:29:37 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izi9p-0005C9-GC
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 14:29:31 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z3so7478902wru.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 06:29:25 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=thegoodpenguin-co-uk.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=sHzvz8ECz4i4fq/RjQVDBciamQYKgTQqlpJVkiTjp7U=;
- b=SF5U6rMk15CC4rXONdlX+n8CkxqZP1CdYBrm12BWjRl2O7QAibUV3p84xtyG99PSgN
- hkVbWfTEx1EfhbE+/1hBprLNtx5ryQOSzqzGxOmW0ON0wrWEE1NJwwqWZdAUZ4nv5elX
- byRdMzi/rTQjarhxnnC/29fc5TNelvfj9IbeMzrz5V5K88t/5rSxbE5e5cDQ497c/Heu
- iSZN7lFhCELAEp9BnBEk8zzCC1Ag8yunraQMkmohHF1IbT9dz+PK/OrpoEur6/ErG6Oh
- jmsvXIn9TSMP/FABOz0dzXa9duoL2jLKqM/Se5MsQzZ2RUwvBmoLEommvleZM1GShuDn
- ftzQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=sHzvz8ECz4i4fq/RjQVDBciamQYKgTQqlpJVkiTjp7U=;
- b=GcZbICoYByQvO8rWgu0NhM+Z+3Q6XW5gFRUai7apino1orR1dvPt8iWBp5RVEkUbZH
- JLK4MRZMv1EMwX0C38or/DU3p8FmTyBbM1OO4C4qNX74xfw66zR1CsPx7IyofA2GphZP
- GmZoA6df6I8Ldbof0dEV3lmtTnhp0IwhQxUI13u1XfyCS0MjBIQT38bJ1pmnnjMNNigZ
- IqsS5WOOnCbVbXetBFBZjUWZntC4HaYGhRUpffBkGMZwU/B6YRiKMK2AlrDl7GrB7PrE
- PKbcmBn6RwOoQI6DyMjK5ExzPIosoix3ujZCa0v8GwGcmlfGSGZ9tzYdihdrINgTwSDW
- 3bUw==
-X-Gm-Message-State: APjAAAX9s7EI8lQ+8ho0ReNEWS80BPJoN3oI8NHZ0iEnvAsbBmKIq/iJ
- WNECOmNht3Kq4Vh0pboN9PxcUg==
-X-Google-Smtp-Source: APXvYqxSqwe+38JNQ83XhQONAtuFv3VJgbE/d+JBNtrWFz8CAT2pR3tuat6z8LdpQj+0cwuegzXEpQ==
-X-Received: by 2002:adf:e543:: with SMTP id z3mr3949759wrm.369.1580999364405; 
- Thu, 06 Feb 2020 06:29:24 -0800 (PST)
-Received: from big-machine ([2a00:23c5:dd80:8400:94e8:de94:574e:efb1])
- by smtp.gmail.com with ESMTPSA id e16sm4317772wrs.73.2020.02.06.06.29.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 06 Feb 2020 06:29:23 -0800 (PST)
-Date: Thu, 6 Feb 2020 14:29:21 +0000
-From: Andrew Murray <amurray@thegoodpenguin.co.uk>
-To: "Z.q. Hou" <zhiqiang.hou@nxp.com>
-Subject: Re: [PATCHv9 10/12] PCI: mobiveil: Add PCIe Gen4 RC driver for NXP
- Layerscape SoCs
-Message-ID: <20200206142921.GB19388@big-machine>
-References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
- <20191120034451.30102-11-Zhiqiang.Hou@nxp.com>
- <20200113120249.GO42593@e119886-lin.cambridge.arm.com>
- <DB8PR04MB6747A139456AE03F92B72294841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
+	id 1iziMM-0001PG-5W; Thu, 06 Feb 2020 14:42:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1iziMD-0001Ow-Pv
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 14:42:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 582C530E;
+ Thu,  6 Feb 2020 06:42:15 -0800 (PST)
+Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 723783F52E;
+ Thu,  6 Feb 2020 06:42:14 -0800 (PST)
+Date: Thu, 6 Feb 2020 14:42:11 +0000
+From: Andre Przywara <andre.przywara@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH kvmtool] Add emulation for CFI compatible flash memory
+Message-ID: <20200206144211.34a27285@donnerap.cambridge.arm.com>
+In-Reply-To: <20200205171156.GA908@willie-the-truck>
+References: <20200108183212.252810-1-andre.przywara@arm.com>
+ <20200205171156.GA908@willie-the-truck>
+Organization: ARM
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <DB8PR04MB6747A139456AE03F92B72294841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_062929_731075_BAC719AF 
-X-CRM114-Status: GOOD (  35.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200206_064217_926754_36E53E7A 
+X-CRM114-Status: GOOD (  37.16  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,295 +64,444 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-kernel@lists.infradead.org, Raphael Gault <raphael.gault@arm.com>,
+ Sami Mujawar <sami.mujawar@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBGZWIgMDYsIDIwMjAgYXQgMDE6NDU6NTdQTSArMDAwMCwgWi5xLiBIb3Ugd3JvdGU6
-Cj4gSGkgQW5kcmV3LAo+IAo+IFRoYW5rcyBhIGxvdCBmb3IgeW91ciBjb21tZW50cyEKPiAKPiA+
-IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4gPiBGcm9tOiBBbmRyZXcgTXVycmF5IDxhbmRy
-ZXcubXVycmF5QGFybS5jb20+Cj4gPiBTZW50OiAyMDIw5bm0MeaciDEz5pelIDIwOjAzCj4gPiBU
-bzogWi5xLiBIb3UgPHpoaXFpYW5nLmhvdUBueHAuY29tPgo+ID4gQ2M6IGxpbnV4LXBjaUB2Z2Vy
-Lmtlcm5lbC5vcmc7IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsKPiA+IGRl
-dmljZXRyZWVAdmdlci5rZXJuZWwub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnOwo+
-ID4gYmhlbGdhYXNAZ29vZ2xlLmNvbTsgcm9iaCtkdEBrZXJuZWwub3JnOyBhcm5kQGFybmRiLmRl
-Owo+ID4gbWFyay5ydXRsYW5kQGFybS5jb207IGwuc3VicmFobWFueWFAbW9iaXZlaWwuY28uaW47
-Cj4gPiBzaGF3bmd1b0BrZXJuZWwub3JnOyBtLmthcnRoaWtleWFuQG1vYml2ZWlsLmNvLmluOyBM
-ZW8gTGkKPiA+IDxsZW95YW5nLmxpQG54cC5jb20+OyBsb3JlbnpvLnBpZXJhbGlzaUBhcm0uY29t
-Owo+ID4gY2F0YWxpbi5tYXJpbmFzQGFybS5jb207IHdpbGwuZGVhY29uQGFybS5jb207IE1pbmdr
-YWkgSHUKPiA+IDxtaW5na2FpLmh1QG54cC5jb20+OyBNLmguIExpYW4gPG1pbmdodWFuLmxpYW5A
-bnhwLmNvbT47IFhpYW93ZWkgQmFvCj4gPiA8eGlhb3dlaS5iYW9AbnhwLmNvbT4KPiA+IFN1Ympl
-Y3Q6IFJlOiBbUEFUQ0h2OSAxMC8xMl0gUENJOiBtb2JpdmVpbDogQWRkIFBDSWUgR2VuNCBSQyBk
-cml2ZXIgZm9yIE5YUAo+ID4gTGF5ZXJzY2FwZSBTb0NzCj4gPiAKPiA+IE9uIFdlZCwgTm92IDIw
-LCAyMDE5IGF0IDAzOjQ2OjIzQU0gKzAwMDAsIFoucS4gSG91IHdyb3RlOgo+ID4gPiBGcm9tOiBI
-b3UgWmhpcWlhbmcgPFpoaXFpYW5nLkhvdUBueHAuY29tPgo+ID4gPgo+ID4gPiBUaGlzIFBDSWUg
-Y29udHJvbGxlciBpcyBiYXNlZCBvbiB0aGUgTW9iaXZlaWwgR1BFWCBJUCwgd2hpY2ggaXMKPiA+
-ID4gY29tcGF0aWJsZSB3aXRoIHRoZSBQQ0kgRXhwcmVzc+KEoiBCYXNlIFNwZWNpZmljYXRpb24s
-IFJldmlzaW9uIDQuMC4KPiA+ID4KPiA+ID4gU2lnbmVkLW9mZi1ieTogSG91IFpoaXFpYW5nIDxa
-aGlxaWFuZy5Ib3VAbnhwLmNvbT4KPiA+ID4gUmV2aWV3ZWQtYnk6IE1pbmdodWFuIExpYW4gPE1p
-bmdodWFuLkxpYW5AbnhwLmNvbT4KPiA+ID4gLS0tCj4gPiA+ICBkcml2ZXJzL3BjaS9jb250cm9s
-bGVyL21vYml2ZWlsL0tjb25maWcgICAgICAgfCAgMTAgKwo+ID4gPiAgZHJpdmVycy9wY2kvY29u
-dHJvbGxlci9tb2JpdmVpbC9NYWtlZmlsZSAgICAgIHwgICAxICsKPiA+ID4gIC4uLi9tb2JpdmVp
-bC9wY2llLWxheWVyc2NhcGUtZ2VuNC5jICAgICAgICAgICB8IDI3NAo+ID4gKysrKysrKysrKysr
-KysrKysrCj4gPiA+ICAuLi4vcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvcGNpZS1tb2JpdmVpbC5o
-ICAgfCAgMTYgKy0KPiA+ID4gIDQgZmlsZXMgY2hhbmdlZCwgMjk5IGluc2VydGlvbnMoKyksIDIg
-ZGVsZXRpb25zKC0pICBjcmVhdGUgbW9kZQo+ID4gPiAxMDA2NDQgZHJpdmVycy9wY2kvY29udHJv
-bGxlci9tb2JpdmVpbC9wY2llLWxheWVyc2NhcGUtZ2VuNC5jCj4gPiA+Cj4gPiA+IGRpZmYgLS1n
-aXQgYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL21vYml2ZWlsL0tjb25maWcKPiA+ID4gYi9kcml2
-ZXJzL3BjaS9jb250cm9sbGVyL21vYml2ZWlsL0tjb25maWcKPiA+ID4gaW5kZXggNjQzNDNjMDdi
-ZmVkLi5jODIzYmU4ZGFiMWMgMTAwNjQ0Cj4gPiA+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xs
-ZXIvbW9iaXZlaWwvS2NvbmZpZwo+ID4gPiArKysgYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL21v
-Yml2ZWlsL0tjb25maWcKPiA+ID4gQEAgLTIxLDQgKzIxLDE0IEBAIGNvbmZpZyBQQ0lFX01PQklW
-RUlMX1BMQVQKPiA+ID4gIAkgIFNvZnQgSVAuIEl0IGhhcyB1cCB0byA4IG91dGJvdW5kIGFuZCBp
-bmJvdW5kIHdpbmRvd3MKPiA+ID4gIAkgIGZvciBhZGRyZXNzIHRyYW5zbGF0aW9uIGFuZCBpdCBp
-cyBhIFBDSWUgR2VuNCBJUC4KPiA+ID4KPiA+ID4gK2NvbmZpZyBQQ0lFX0xBWUVSU0NBUEVfR0VO
-NAo+ID4gPiArCWJvb2wgIkZyZWVzY2FsZSBMYXllcnNjYXBlIFBDSWUgR2VuNCBjb250cm9sbGVy
-Igo+ID4gPiArCWRlcGVuZHMgb24gUENJCj4gPiA+ICsJZGVwZW5kcyBvbiBPRiAmJiAoQVJNNjQg
-fHwgQVJDSF9MQVlFUlNDQVBFKQo+ID4gPiArCWRlcGVuZHMgb24gUENJX01TSV9JUlFfRE9NQUlO
-Cj4gPiA+ICsJc2VsZWN0IFBDSUVfTU9CSVZFSUxfSE9TVAo+ID4gPiArCWhlbHAKPiA+ID4gKwkg
-IFNheSBZIGhlcmUgaWYgeW91IHdhbnQgUENJZSBHZW40IGNvbnRyb2xsZXIgc3VwcG9ydCBvbgo+
-ID4gPiArCSAgTGF5ZXJzY2FwZSBTb0NzLiBUaGUgUENJZSBjb250cm9sbGVyIGNhbiB3b3JrIGlu
-IFJDIG9yCj4gPiA+ICsJICBFUCBtb2RlIGFjY29yZGluZyB0byBSQ1dbSE9TVF9BR1RfUEVYXSBz
-ZXR0aW5nLgo+ID4gCj4gPiBJIHRoaW5rIHlvdSBjYW4gcmVtb3ZlIHRoZSBsYXN0IHNlbnRlbmNl
-IC0gaXQgZG9lc24ndCBnaXZlIGFueSB2YWx1ZSB0byB1c2VycyBvZgo+ID4gS0NvbmZpZy4KPiAK
-PiBPSywgd2lsbCByZW1vdmUgaXQgaW4gdjEwLgo+IAo+ID4gCj4gPiAKPiA+ID4gIGVuZG1lbnUK
-PiA+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvTWFrZWZp
-bGUKPiA+ID4gYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL21vYml2ZWlsL01ha2VmaWxlCj4gPiA+
-IGluZGV4IDlmYjZkMWM2NTA0ZC4uOTlkODc5ZGUzMmQ2IDEwMDY0NAo+ID4gPiAtLS0gYS9kcml2
-ZXJzL3BjaS9jb250cm9sbGVyL21vYml2ZWlsL01ha2VmaWxlCj4gPiA+ICsrKyBiL2RyaXZlcnMv
-cGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvTWFrZWZpbGUKPiA+ID4gQEAgLTIsMyArMiw0IEBACj4g
-PiA+ICBvYmotJChDT05GSUdfUENJRV9NT0JJVkVJTCkgKz0gcGNpZS1tb2JpdmVpbC5vCj4gPiA+
-ICBvYmotJChDT05GSUdfUENJRV9NT0JJVkVJTF9IT1NUKSArPSBwY2llLW1vYml2ZWlsLWhvc3Qu
-bwo+ID4gPiAgb2JqLSQoQ09ORklHX1BDSUVfTU9CSVZFSUxfUExBVCkgKz0gcGNpZS1tb2JpdmVp
-bC1wbGF0Lm8KPiA+ID4gK29iai0kKENPTkZJR19QQ0lFX0xBWUVSU0NBUEVfR0VONCkgKz0gcGNp
-ZS1sYXllcnNjYXBlLWdlbjQubwo+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9wY2kvY29udHJv
-bGxlci9tb2JpdmVpbC9wY2llLWxheWVyc2NhcGUtZ2VuNC5jCj4gPiA+IGIvZHJpdmVycy9wY2kv
-Y29udHJvbGxlci9tb2JpdmVpbC9wY2llLWxheWVyc2NhcGUtZ2VuNC5jCj4gPiA+IG5ldyBmaWxl
-IG1vZGUgMTAwNjQ0Cj4gPiA+IGluZGV4IDAwMDAwMDAwMDAwMC4uNmMwZDNlMjUzMmRiCj4gPiA+
-IC0tLSAvZGV2L251bGwKPiA+ID4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9tb2JpdmVp
-bC9wY2llLWxheWVyc2NhcGUtZ2VuNC5jCj4gPiA+IEBAIC0wLDAgKzEsMjc0IEBACj4gPiA+ICsv
-LyBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMAo+ID4gPiArLyoKPiA+ID4gKyAqIFBD
-SWUgR2VuNCBob3N0IGNvbnRyb2xsZXIgZHJpdmVyIGZvciBOWFAgTGF5ZXJzY2FwZSBTb0NzCj4g
-PiA+ICsgKgo+ID4gPiArICogQ29weXJpZ2h0IDIwMTkgTlhQCj4gPiA+ICsgKgo+ID4gPiArICog
-QXV0aG9yOiBaaGlxaWFuZyBIb3UgPFpoaXFpYW5nLkhvdUBueHAuY29tPiAgKi8KPiA+ID4gKwo+
-ID4gPiArI2luY2x1ZGUgPGxpbnV4L2tlcm5lbC5oPgo+ID4gPiArI2luY2x1ZGUgPGxpbnV4L2lu
-dGVycnVwdC5oPgo+ID4gPiArI2luY2x1ZGUgPGxpbnV4L2luaXQuaD4KPiA+ID4gKyNpbmNsdWRl
-IDxsaW51eC9vZl9wY2kuaD4KPiA+ID4gKyNpbmNsdWRlIDxsaW51eC9vZl9wbGF0Zm9ybS5oPgo+
-ID4gPiArI2luY2x1ZGUgPGxpbnV4L29mX2lycS5oPgo+ID4gPiArI2luY2x1ZGUgPGxpbnV4L29m
-X2FkZHJlc3MuaD4KPiA+ID4gKyNpbmNsdWRlIDxsaW51eC9wY2kuaD4KPiA+ID4gKyNpbmNsdWRl
-IDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiA+ID4gKyNpbmNsdWRlIDxsaW51eC9yZXNvdXJj
-ZS5oPgo+ID4gPiArI2luY2x1ZGUgPGxpbnV4L21mZC9zeXNjb24uaD4KPiA+ID4gKyNpbmNsdWRl
-IDxsaW51eC9yZWdtYXAuaD4KPiA+ID4gKwo+ID4gPiArI2luY2x1ZGUgInBjaWUtbW9iaXZlaWwu
-aCIKPiA+ID4gKwo+ID4gPiArLyogTFVUIGFuZCBQRiBjb250cm9sIHJlZ2lzdGVycyAqLwo+ID4g
-PiArI2RlZmluZSBQQ0lFX0xVVF9PRkYJCQkweDgwMDAwCj4gPiA+ICsjZGVmaW5lIFBDSUVfUEZf
-T0ZGCQkJMHhjMDAwMAo+ID4gPiArI2RlZmluZSBQQ0lFX1BGX0lOVF9TVEFUCQkweDE4Cj4gPiA+
-ICsjZGVmaW5lIFBGX0lOVF9TVEFUX1BBQlJTVAkJQklUKDMxKQo+ID4gPiArCj4gPiA+ICsjZGVm
-aW5lIFBDSUVfUEZfREJHCQkJMHg3ZmMKPiA+ID4gKyNkZWZpbmUgUEZfREJHX0xUU1NNX01BU0sJ
-CTB4M2YKPiA+ID4gKyNkZWZpbmUgUEZfREJHX0xUU1NNX0wwCQkJMHgyZCAvKiBMMCBzdGF0ZSAq
-Lwo+ID4gPiArI2RlZmluZSBQRl9EQkdfV0UJCQlCSVQoMzEpCj4gPiA+ICsjZGVmaW5lIFBGX0RC
-R19QQUJSCQkJQklUKDI3KQo+ID4gPiArCj4gPiA+ICsjZGVmaW5lIHRvX2xzX3BjaWVfZzQoeCkJ
-CXBsYXRmb3JtX2dldF9kcnZkYXRhKCh4KS0+cGRldikKPiA+ID4gKwo+ID4gPiArc3RydWN0IGxz
-X3BjaWVfZzQgewo+ID4gPiArCXN0cnVjdCBtb2JpdmVpbF9wY2llIHBjaTsKPiA+ID4gKwlzdHJ1
-Y3QgZGVsYXllZF93b3JrIGR3b3JrOwo+ID4gPiArCWludCBpcnE7Cj4gPiA+ICt9Owo+ID4gPiAr
-Cj4gPiA+ICtzdGF0aWMgaW5saW5lIHUzMiBsc19wY2llX2c0X2x1dF9yZWFkbChzdHJ1Y3QgbHNf
-cGNpZV9nNCAqcGNpZSwgdTMyCj4gPiA+ICtvZmYpIHsKPiA+ID4gKwlyZXR1cm4gaW9yZWFkMzIo
-cGNpZS0+cGNpLmNzcl9heGlfc2xhdmVfYmFzZSArIFBDSUVfTFVUX09GRiArIG9mZik7Cj4gPiA+
-ICt9Cj4gPiA+ICsKPiA+ID4gK3N0YXRpYyBpbmxpbmUgdm9pZCBsc19wY2llX2c0X2x1dF93cml0
-ZWwoc3RydWN0IGxzX3BjaWVfZzQgKnBjaWUsCj4gPiA+ICsJCQkJCSB1MzIgb2ZmLCB1MzIgdmFs
-KQo+ID4gPiArewo+ID4gPiArCWlvd3JpdGUzMih2YWwsIHBjaWUtPnBjaS5jc3JfYXhpX3NsYXZl
-X2Jhc2UgKyBQQ0lFX0xVVF9PRkYgKyBvZmYpOyB9Cj4gPiA+ICsKPiA+ID4gK3N0YXRpYyBpbmxp
-bmUgdTMyIGxzX3BjaWVfZzRfcGZfcmVhZGwoc3RydWN0IGxzX3BjaWVfZzQgKnBjaWUsIHUzMgo+
-ID4gPiArb2ZmKSB7Cj4gPiA+ICsJcmV0dXJuIGlvcmVhZDMyKHBjaWUtPnBjaS5jc3JfYXhpX3Ns
-YXZlX2Jhc2UgKyBQQ0lFX1BGX09GRiArIG9mZik7IH0KPiA+ID4gKwo+ID4gPiArc3RhdGljIGlu
-bGluZSB2b2lkIGxzX3BjaWVfZzRfcGZfd3JpdGVsKHN0cnVjdCBsc19wY2llX2c0ICpwY2llLAo+
-ID4gPiArCQkJCQl1MzIgb2ZmLCB1MzIgdmFsKQo+ID4gPiArewo+ID4gPiArCWlvd3JpdGUzMih2
-YWwsIHBjaWUtPnBjaS5jc3JfYXhpX3NsYXZlX2Jhc2UgKyBQQ0lFX1BGX09GRiArIG9mZik7IH0K
-PiA+ID4gKwo+ID4gPiArc3RhdGljIGJvb2wgbHNfcGNpZV9nNF9pc19icmlkZ2Uoc3RydWN0IGxz
-X3BjaWVfZzQgKnBjaWUpIHsKPiA+ID4gKwlzdHJ1Y3QgbW9iaXZlaWxfcGNpZSAqbXZfcGNpID0g
-JnBjaWUtPnBjaTsKPiA+ID4gKwl1MzIgaGVhZGVyX3R5cGU7Cj4gPiA+ICsKPiA+ID4gKwloZWFk
-ZXJfdHlwZSA9IG1vYml2ZWlsX2Nzcl9yZWFkYihtdl9wY2ksIFBDSV9IRUFERVJfVFlQRSk7Cj4g
-PiA+ICsJaGVhZGVyX3R5cGUgJj0gMHg3ZjsKPiA+ID4gKwo+ID4gPiArCXJldHVybiBoZWFkZXJf
-dHlwZSA9PSBQQ0lfSEVBREVSX1RZUEVfQlJJREdFOyB9Cj4gPiA+ICsKPiA+ID4gK3N0YXRpYyBp
-bnQgbHNfcGNpZV9nNF9saW5rX3VwKHN0cnVjdCBtb2JpdmVpbF9wY2llICpwY2kpIHsKPiA+ID4g
-KwlzdHJ1Y3QgbHNfcGNpZV9nNCAqcGNpZSA9IHRvX2xzX3BjaWVfZzQocGNpKTsKPiA+ID4gKwl1
-MzIgc3RhdGU7Cj4gPiA+ICsKPiA+ID4gKwlzdGF0ZSA9IGxzX3BjaWVfZzRfcGZfcmVhZGwocGNp
-ZSwgUENJRV9QRl9EQkcpOwo+ID4gPiArCXN0YXRlID0Jc3RhdGUgJiBQRl9EQkdfTFRTU01fTUFT
-SzsKPiA+ID4gKwo+ID4gPiArCWlmIChzdGF0ZSA9PSBQRl9EQkdfTFRTU01fTDApCj4gPiA+ICsJ
-CXJldHVybiAxOwo+ID4gPiArCj4gPiA+ICsJcmV0dXJuIDA7Cj4gPiA+ICt9Cj4gPiA+ICsKPiA+
-ID4gK3N0YXRpYyB2b2lkIGxzX3BjaWVfZzRfZGlzYWJsZV9pbnRlcnJ1cHQoc3RydWN0IGxzX3Bj
-aWVfZzQgKnBjaWUpIHsKPiA+ID4gKwlzdHJ1Y3QgbW9iaXZlaWxfcGNpZSAqbXZfcGNpID0gJnBj
-aWUtPnBjaTsKPiA+ID4gKwo+ID4gPiArCW1vYml2ZWlsX2Nzcl93cml0ZWwobXZfcGNpLCAwLCBQ
-QUJfSU5UUF9BTUJBX01JU0NfRU5CKTsgfQo+ID4gPiArCj4gPiA+ICtzdGF0aWMgdm9pZCBsc19w
-Y2llX2c0X2VuYWJsZV9pbnRlcnJ1cHQoc3RydWN0IGxzX3BjaWVfZzQgKnBjaWUpIHsKPiA+ID4g
-KwlzdHJ1Y3QgbW9iaXZlaWxfcGNpZSAqbXZfcGNpID0gJnBjaWUtPnBjaTsKPiA+ID4gKwl1MzIg
-dmFsOwo+ID4gPiArCj4gPiA+ICsJLyogQ2xlYXIgdGhlIGludGVycnVwdCBzdGF0dXMgKi8KPiA+
-ID4gKwltb2JpdmVpbF9jc3Jfd3JpdGVsKG12X3BjaSwgMHhmZmZmZmZmZiwgUEFCX0lOVFBfQU1C
-QV9NSVNDX1NUQVQpOwo+ID4gPiArCj4gPiA+ICsJdmFsID0gUEFCX0lOVFBfSU5UWF9NQVNLIHwg
-UEFCX0lOVFBfTVNJIHwgUEFCX0lOVFBfUkVTRVQgfAo+ID4gPiArCSAgICAgIFBBQl9JTlRQX1BD
-SUVfVUUgfCBQQUJfSU5UUF9JRV9QTVJFREkgfCBQQUJfSU5UUF9JRV9FQzsKPiA+ID4gKwltb2Jp
-dmVpbF9jc3Jfd3JpdGVsKG12X3BjaSwgdmFsLCBQQUJfSU5UUF9BTUJBX01JU0NfRU5CKTsgfQo+
-ID4gPiArCj4gPiA+ICtzdGF0aWMgdm9pZCBsc19wY2llX2c0X3JlaW5pdF9odyhzdHJ1Y3QgbHNf
-cGNpZV9nNCAqcGNpZSkgewo+ID4gPiArCXN0cnVjdCBtb2JpdmVpbF9wY2llICptdl9wY2kgPSAm
-cGNpZS0+cGNpOwo+ID4gPiArCXN0cnVjdCBkZXZpY2UgKmRldiA9ICZtdl9wY2ktPnBkZXYtPmRl
-djsKPiA+ID4gKwl1MzIgdmFsLCBhY3Rfc3RhdDsKPiA+ID4gKwlpbnQgdG8gPSAxMDA7Cj4gPiA+
-ICsKPiA+ID4gKwkvKiBQb2xsIGZvciBwYWJfY3NiX3Jlc2V0IHRvIHNldCBhbmQgUEFCIGFjdGl2
-aXR5IHRvIGNsZWFyICovCj4gPiA+ICsJZG8gewo+ID4gPiArCQl1c2xlZXBfcmFuZ2UoMTAsIDE1
-KTsKPiA+ID4gKwkJdmFsID0gbHNfcGNpZV9nNF9wZl9yZWFkbChwY2llLCBQQ0lFX1BGX0lOVF9T
-VEFUKTsKPiA+ID4gKwkJYWN0X3N0YXQgPSBtb2JpdmVpbF9jc3JfcmVhZGwobXZfcGNpLCBQQUJf
-QUNUSVZJVFlfU1RBVCk7Cj4gPiA+ICsJfSB3aGlsZSAoKCh2YWwgJiBQRl9JTlRfU1RBVF9QQUJS
-U1QpID09IDAgfHwgYWN0X3N0YXQpICYmIHRvLS0pOwo+ID4gPiArCWlmICh0byA8IDApIHsKPiA+
-ID4gKwkJZGV2X2VycihkZXYsICJQb2xsIFBBQlJTVCZQQUJBQ1QgdGltZW91dFxuIik7Cj4gPiA+
-ICsJCXJldHVybjsKPiA+IAo+ID4gSWYgYSB0aW1lb3V0IGhhcHBlbnMgaGVyZSAtIHRoZSBjYWxs
-ZXIgaGFzIG5vIGlkZWEgdGhpcyBoYXMgaGFwcGVuZWQgYW5kIHlldAo+ID4gdGhlIGZvbGxvd2lu
-ZyB3b3JrIGRvZXNuJ3QgZ2V0IGRvbmUuIElzbid0IHRoaXMgYSBwcm9ibGVtPwo+IAo+IFdpbGwg
-Y2hhbmdlIHRoZSByZXR1cm4gdmFsdWUgdHlwZSB0byAnaW50JyBpbiB2MTAsIHNvIHRoYXQgdGhl
-IGNhbGxlciBjYW4ga25vdyB0aGUgZmFpbC4KPiAKPiA+IAo+ID4gPiArCX0KPiA+ID4gKwo+ID4g
-PiArCS8qIGNsZWFyIFBFWF9SRVNFVCBiaXQgaW4gUEVYX1BGMF9EQkcgcmVnaXN0ZXIgKi8KPiA+
-ID4gKwl2YWwgPSBsc19wY2llX2c0X3BmX3JlYWRsKHBjaWUsIFBDSUVfUEZfREJHKTsKPiA+ID4g
-Kwl2YWwgfD0gUEZfREJHX1dFOwo+ID4gPiArCWxzX3BjaWVfZzRfcGZfd3JpdGVsKHBjaWUsIFBD
-SUVfUEZfREJHLCB2YWwpOwo+ID4gPiArCj4gPiA+ICsJdmFsID0gbHNfcGNpZV9nNF9wZl9yZWFk
-bChwY2llLCBQQ0lFX1BGX0RCRyk7Cj4gPiA+ICsJdmFsIHw9IFBGX0RCR19QQUJSOwo+ID4gPiAr
-CWxzX3BjaWVfZzRfcGZfd3JpdGVsKHBjaWUsIFBDSUVfUEZfREJHLCB2YWwpOwo+ID4gPiArCj4g
-PiA+ICsJdmFsID0gbHNfcGNpZV9nNF9wZl9yZWFkbChwY2llLCBQQ0lFX1BGX0RCRyk7Cj4gPiA+
-ICsJdmFsICY9IH5QRl9EQkdfV0U7Cj4gPiA+ICsJbHNfcGNpZV9nNF9wZl93cml0ZWwocGNpZSwg
-UENJRV9QRl9EQkcsIHZhbCk7Cj4gPiA+ICsKPiA+ID4gKwltb2JpdmVpbF9ob3N0X2luaXQobXZf
-cGNpLCB0cnVlKTsKPiA+IAo+ID4gQ2FuIG1vYml2ZWlsX2hvc3RfaW5pdCBmYWlsPwo+IAo+IEl0
-IHNob3VsZCBub3QgZmFpbCwgb25seSByZWdpc3RlciBwcm9ncmFtbWluZyBvcGVyYXRpb25zIHdl
-cmUgbGVmdCBpbiB0aGlzIGZ1bmN0aW9uLgo+IAo+ID4gCj4gPiA+ICsKPiA+ID4gKwl0byA9IDEw
-MDsKPiA+ID4gKwl3aGlsZSAoIWxzX3BjaWVfZzRfbGlua191cChtdl9wY2kpICYmIHRvLS0pCj4g
-PiA+ICsJCXVzbGVlcF9yYW5nZSgyMDAsIDI1MCk7Cj4gPiA+ICsJaWYgKHRvIDwgMCkKPiA+ID4g
-KwkJZGV2X2VycihkZXYsICJQQ0llIGxpbmsgdHJhaW5pbmcgdGltZW91dFxuIik7IH0KPiA+ID4g
-Kwo+ID4gPiArc3RhdGljIGlycXJldHVybl90IGxzX3BjaWVfZzRfaXNyKGludCBpcnEsIHZvaWQg
-KmRldl9pZCkgewo+ID4gPiArCXN0cnVjdCBsc19wY2llX2c0ICpwY2llID0gKHN0cnVjdCBsc19w
-Y2llX2c0ICopZGV2X2lkOwo+ID4gPiArCXN0cnVjdCBtb2JpdmVpbF9wY2llICptdl9wY2kgPSAm
-cGNpZS0+cGNpOwo+ID4gPiArCXUzMiB2YWw7Cj4gPiA+ICsKPiA+ID4gKwl2YWwgPSBtb2JpdmVp
-bF9jc3JfcmVhZGwobXZfcGNpLCBQQUJfSU5UUF9BTUJBX01JU0NfU1RBVCk7Cj4gPiA+ICsJaWYg
-KCF2YWwpCj4gPiA+ICsJCXJldHVybiBJUlFfTk9ORTsKPiA+ID4gKwo+ID4gPiArCWlmICh2YWwg
-JiBQQUJfSU5UUF9SRVNFVCkgewo+ID4gCj4gPiBDYW4geW91IGV4cGxhaW4gd2h5IHRoaXMgaXMg
-bmVlZGVkIChwZXJoYXBzIGFsc28gaW4gdGhlIGNvdmVyIGxldHRlcik/Cj4gCj4gVGhlIGhvdCBy
-ZXNldCB3aWxsIHJlc3VsdCBpbiB0aGUgUkMgY3Jhc2gsIHNvIG5lZWQgdGhlIElTUiB0byByZXNl
-dCB0aGUgUkMuCj4gCj4gPiAKPiA+ID4gKwkJbHNfcGNpZV9nNF9kaXNhYmxlX2ludGVycnVwdChw
-Y2llKTsKPiA+ID4gKwkJc2NoZWR1bGVfZGVsYXllZF93b3JrKCZwY2llLT5kd29yaywgbXNlY3Nf
-dG9famlmZmllcygxKSk7Cj4gPiA+ICsJfQo+ID4gPiArCj4gPiA+ICsJbW9iaXZlaWxfY3NyX3dy
-aXRlbChtdl9wY2ksIHZhbCwgUEFCX0lOVFBfQU1CQV9NSVNDX1NUQVQpOwo+ID4gPiArCj4gPiA+
-ICsJcmV0dXJuIElSUV9IQU5ETEVEOwo+ID4gPiArfQo+ID4gPiArCj4gPiA+ICtzdGF0aWMgaW50
-IGxzX3BjaWVfZzRfaW50ZXJydXB0X2luaXQoc3RydWN0IG1vYml2ZWlsX3BjaWUgKm12X3BjaSkg
-ewo+ID4gPiArCXN0cnVjdCBsc19wY2llX2c0ICpwY2llID0gdG9fbHNfcGNpZV9nNChtdl9wY2kp
-Owo+ID4gPiArCXN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYgPSBtdl9wY2ktPnBkZXY7Cj4g
-PiA+ICsJc3RydWN0IGRldmljZSAqZGV2ID0gJnBkZXYtPmRldjsKPiA+ID4gKwlpbnQgcmV0Owo+
-ID4gPiArCj4gPiA+ICsJcGNpZS0+aXJxID0gcGxhdGZvcm1fZ2V0X2lycV9ieW5hbWUocGRldiwg
-ImludHIiKTsKPiA+ID4gKwlpZiAocGNpZS0+aXJxIDwgMCkgewo+ID4gPiArCQlkZXZfZXJyKGRl
-diwgIkNhbid0IGdldCAnaW50cicgSVJRLCBlcnJubyA9ICVkXG4iLCBwY2llLT5pcnEpOwo+ID4g
-PiArCQlyZXR1cm4gcGNpZS0+aXJxOwo+ID4gPiArCX0KPiA+ID4gKwlyZXQgPSBkZXZtX3JlcXVl
-c3RfaXJxKGRldiwgcGNpZS0+aXJxLCBsc19wY2llX2c0X2lzciwKPiA+ID4gKwkJCSAgICAgICBJ
-UlFGX1NIQVJFRCwgcGRldi0+bmFtZSwgcGNpZSk7Cj4gPiA+ICsJaWYgKHJldCkgewo+ID4gPiAr
-CQlkZXZfZXJyKGRldiwgIkNhbid0IHJlZ2lzdGVyIFBDSWUgSVJRLCBlcnJubyA9ICVkXG4iLCBy
-ZXQpOwo+ID4gPiArCQlyZXR1cm4gIHJldDsKPiA+ID4gKwl9Cj4gPiA+ICsKPiA+ID4gKwlyZXR1
-cm4gMDsKPiA+ID4gK30KPiA+ID4gKwo+ID4gPiArc3RhdGljIHZvaWQgbHNfcGNpZV9nNF9yZXNl
-dChzdHJ1Y3Qgd29ya19zdHJ1Y3QgKndvcmspIHsKPiA+ID4gKwlzdHJ1Y3QgZGVsYXllZF93b3Jr
-ICpkd29yayA9IGNvbnRhaW5lcl9vZih3b3JrLCBzdHJ1Y3QgZGVsYXllZF93b3JrLAo+ID4gPiAr
-CQkJCQkJICB3b3JrKTsKPiA+ID4gKwlzdHJ1Y3QgbHNfcGNpZV9nNCAqcGNpZSA9IGNvbnRhaW5l
-cl9vZihkd29yaywgc3RydWN0IGxzX3BjaWVfZzQsIGR3b3JrKTsKPiA+ID4gKwlzdHJ1Y3QgbW9i
-aXZlaWxfcGNpZSAqbXZfcGNpID0gJnBjaWUtPnBjaTsKPiA+ID4gKwl1MTYgY3RybDsKPiA+ID4g
-Kwo+ID4gPiArCWN0cmwgPSBtb2JpdmVpbF9jc3JfcmVhZHcobXZfcGNpLCBQQ0lfQlJJREdFX0NP
-TlRST0wpOwo+ID4gPiArCWN0cmwgJj0gflBDSV9CUklER0VfQ1RMX0JVU19SRVNFVDsKPiA+ID4g
-Kwltb2JpdmVpbF9jc3Jfd3JpdGV3KG12X3BjaSwgY3RybCwgUENJX0JSSURHRV9DT05UUk9MKTsK
-PiA+ID4gKwlsc19wY2llX2c0X3JlaW5pdF9odyhwY2llKTsKPiA+ID4gKwlsc19wY2llX2c0X2Vu
-YWJsZV9pbnRlcnJ1cHQocGNpZSk7Cj4gPiA+ICt9Cj4gPiA+ICsKPiA+ID4gK3N0YXRpYyBzdHJ1
-Y3QgbW9iaXZlaWxfcnBfb3BzIGxzX3BjaWVfZzRfcnBfb3BzID0gewo+ID4gPiArCS5pbnRlcnJ1
-cHRfaW5pdCA9IGxzX3BjaWVfZzRfaW50ZXJydXB0X2luaXQsIH07Cj4gPiA+ICsKPiA+ID4gK3N0
-YXRpYyBjb25zdCBzdHJ1Y3QgbW9iaXZlaWxfcGFiX29wcyBsc19wY2llX2c0X3BhYl9vcHMgPSB7
-Cj4gPiA+ICsJLmxpbmtfdXAgPSBsc19wY2llX2c0X2xpbmtfdXAsCj4gPiA+ICt9Owo+ID4gPiAr
-Cj4gPiA+ICtzdGF0aWMgaW50IF9faW5pdCBsc19wY2llX2c0X3Byb2JlKHN0cnVjdCBwbGF0Zm9y
-bV9kZXZpY2UgKnBkZXYpIHsKPiA+ID4gKwlzdHJ1Y3QgZGV2aWNlICpkZXYgPSAmcGRldi0+ZGV2
-Owo+ID4gPiArCXN0cnVjdCBwY2lfaG9zdF9icmlkZ2UgKmJyaWRnZTsKPiA+ID4gKwlzdHJ1Y3Qg
-bW9iaXZlaWxfcGNpZSAqbXZfcGNpOwo+ID4gPiArCXN0cnVjdCBsc19wY2llX2c0ICpwY2llOwo+
-ID4gPiArCXN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAgPSBkZXYtPm9mX25vZGU7Cj4gPiA+ICsJaW50
-IHJldDsKPiA+ID4gKwo+ID4gPiArCWlmICghb2ZfcGFyc2VfcGhhbmRsZShucCwgIm1zaS1wYXJl
-bnQiLCAwKSkgewo+ID4gPiArCQlkZXZfZXJyKGRldiwgIkZhaWxlZCB0byBmaW5kIG1zaS1wYXJl
-bnRcbiIpOwo+ID4gPiArCQlyZXR1cm4gLUVJTlZBTDsKPiA+ID4gKwl9Cj4gPiA+ICsKPiA+ID4g
-KwlicmlkZ2UgPSBkZXZtX3BjaV9hbGxvY19ob3N0X2JyaWRnZShkZXYsIHNpemVvZigqcGNpZSkp
-Owo+ID4gPiArCWlmICghYnJpZGdlKQo+ID4gPiArCQlyZXR1cm4gLUVOT01FTTsKPiA+ID4gKwo+
-ID4gPiArCXBjaWUgPSBwY2lfaG9zdF9icmlkZ2VfcHJpdihicmlkZ2UpOwo+ID4gPiArCW12X3Bj
-aSA9ICZwY2llLT5wY2k7Cj4gPiA+ICsKPiA+ID4gKwltdl9wY2ktPnBkZXYgPSBwZGV2Owo+ID4g
-PiArCW12X3BjaS0+b3BzID0gJmxzX3BjaWVfZzRfcGFiX29wczsKPiA+ID4gKwltdl9wY2ktPnJw
-Lm9wcyA9ICZsc19wY2llX2c0X3JwX29wczsKPiA+ID4gKwltdl9wY2ktPnJwLmJyaWRnZSA9IGJy
-aWRnZTsKPiA+ID4gKwo+ID4gPiArCXBsYXRmb3JtX3NldF9kcnZkYXRhKHBkZXYsIHBjaWUpOwo+
-ID4gPiArCj4gPiA+ICsJSU5JVF9ERUxBWUVEX1dPUksoJnBjaWUtPmR3b3JrLCBsc19wY2llX2c0
-X3Jlc2V0KTsKPiA+ID4gKwo+ID4gPiArCXJldCA9IG1vYml2ZWlsX3BjaWVfaG9zdF9wcm9iZSht
-dl9wY2kpOwo+ID4gPiArCWlmIChyZXQpIHsKPiA+ID4gKwkJZGV2X2VycihkZXYsICJGYWlsIHRv
-IHByb2JlXG4iKTsKPiA+ID4gKwkJcmV0dXJuICByZXQ7Cj4gPiA+ICsJfQo+ID4gPiArCj4gPiA+
-ICsJaWYgKCFsc19wY2llX2c0X2lzX2JyaWRnZShwY2llKSkKPiA+IAo+ID4gSXMgdGhpcyBhIGNo
-ZWNrIHRoYXQgY291bGQgYXBwbHkgdG8gYWxsIGhvc3QgYnJpZGdlIGRyaXZlcnMgYW5kIHRodXMg
-bGl2ZSBpbgo+ID4gbW9iaXZlaWxfcGNpZV9ob3N0X3Byb2JlPwo+IAo+IFllcywgd2lsbCBkbyBp
-biB2MTAuCj4gCj4gPiAKPiA+ID4gKwkJcmV0dXJuIC1FTk9ERVY7Cj4gPiA+ICsKPiA+ID4gKwls
-c19wY2llX2c0X2VuYWJsZV9pbnRlcnJ1cHQocGNpZSk7Cj4gPiAKPiA+IElzIHRoZXJlIGFuIGlz
-c3VlIGhlcmUgaW4gdGhhdCB3ZSBlbmFibGUgaW50ZXJydXB0cyAqYWZ0ZXIqIHRlbGxpbmcgdGhl
-IGtlcm5lbAo+ID4gYWJvdXQgb3VyIGNvbnRyb2xsZXI/IChTYW1lIGFwcGxpZXMgZm9yIGJhaWxp
-bmcgaWYgdGhlIElQIGlzbid0IGEgYnJpZGdlKS4KPiAKPiBBbmRyZXcsIEkgZG9uJ3QgdW5kZXJz
-dGFuZCB0aGUgaXNzdWUsIGNhbiB5b3UgaGVscCB0byBleHBsYWluPwoKSWYgSSByZWNhbGwgY29y
-cmVjdGx5IG1vYml2ZWlsX3BjaWVfaG9zdF9wcm9iZSB0ZWxscyB0aGUga2VybmVsIHRoZXJlIGlz
-IGEgUENJIGhvc3QKYnJpZGdlIGFuZCBhbGxvd3MgaXQgdG8gc3RhcnQgZW51bWVyYXRpbmcgdGhl
-IHRyZWUgLSBhdCB0aGlzIHBvaW50IHN1cmVseSBpbnRlcnJ1cHRzCm1heSBiZSBleHBlY3RlZCAt
-IGhvd2V2ZXIgd2UgZG9uJ3QgZW5hYmxlIHRoZW0gdW50aWwgYWZ0ZXIgdGhpcyBwb2ludC4gSSdk
-IGFzc3VtZQp3ZSdkIG5lZWQgdG8gZ2V0IHRoZSBoYXJkd2FyZSBpbnRvIGEgc3RhdGUgd2hlcmUg
-aXQgY2FuIGhhbmRsZSBpbnRlcnJ1cHRzIGJlZm9yZQp0ZWxsaW5nIHRoZSBrZXJuZWwgaXQgY2Fu
-IHVzZSB0aGlzIGhvc3QgYnJpZGdlLgoKTGlrZXdpc2UgaXMgbHNfcGNpZV9nNF9pc19icmlkZ2Ug
-cmV0dXJucyBmYWxzZSB3ZSBmYWlsIHRoZSBwcm9iZSB5ZXQgdGhlIGtlcm5lbCBtYXkKYWxyZWFk
-eSBiZSBlbnVtZXJhdGluZyB0aGUgYnVzLgoKVGhhbmtzLAoKQW5kcmV3IE11cnJheQoKPiAKPiBU
-aGFua3MsCj4gWmhpcWlhbmcKPiAKPiA+IAo+ID4gVGhhbmtzLAo+ID4gCj4gPiBBbmRyZXcgTXVy
-cmF5Cj4gPiAKPiA+ID4gKwo+ID4gPiArCXJldHVybiAwOwo+ID4gPiArfQo+ID4gPiArCj4gPiA+
-ICtzdGF0aWMgY29uc3Qgc3RydWN0IG9mX2RldmljZV9pZCBsc19wY2llX2c0X29mX21hdGNoW10g
-PSB7Cj4gPiA+ICsJeyAuY29tcGF0aWJsZSA9ICJmc2wsbHgyMTYwYS1wY2llIiwgfSwKPiA+ID4g
-Kwl7IH0sCj4gPiA+ICt9Owo+ID4gPiArCj4gPiA+ICtzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2Ry
-aXZlciBsc19wY2llX2c0X2RyaXZlciA9IHsKPiA+ID4gKwkuZHJpdmVyID0gewo+ID4gPiArCQku
-bmFtZSA9ICJsYXllcnNjYXBlLXBjaWUtZ2VuNCIsCj4gPiA+ICsJCS5vZl9tYXRjaF90YWJsZSA9
-IGxzX3BjaWVfZzRfb2ZfbWF0Y2gsCj4gPiA+ICsJCS5zdXBwcmVzc19iaW5kX2F0dHJzID0gdHJ1
-ZSwKPiA+ID4gKwl9LAo+ID4gPiArfTsKPiA+ID4gKwo+ID4gPiArYnVpbHRpbl9wbGF0Zm9ybV9k
-cml2ZXJfcHJvYmUobHNfcGNpZV9nNF9kcml2ZXIsIGxzX3BjaWVfZzRfcHJvYmUpOwo+ID4gPiBk
-aWZmIC0tZ2l0IGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9tb2JpdmVpbC9wY2llLW1vYml2ZWls
-LmgKPiA+ID4gYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL21vYml2ZWlsL3BjaWUtbW9iaXZlaWwu
-aAo+ID4gPiBpbmRleCA3NTBhN2ZkOTViYzEuLmM1N2E2OGQyYmFjNCAxMDA2NDQKPiA+ID4gLS0t
-IGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9tb2JpdmVpbC9wY2llLW1vYml2ZWlsLmgKPiA+ID4g
-KysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9tb2JpdmVpbC9wY2llLW1vYml2ZWlsLmgKPiA+
-ID4gQEAgLTQzLDYgKzQzLDggQEAKPiA+ID4gICNkZWZpbmUgIFBBR0VfTE9fTUFTSwkJCTB4M2Zm
-Cj4gPiA+ICAjZGVmaW5lICBQQUdFX1NFTF9PRkZTRVRfU0hJRlQJCTEwCj4gPiA+Cj4gPiA+ICsj
-ZGVmaW5lIFBBQl9BQ1RJVklUWV9TVEFUCQkweDgxYwo+ID4gPiArCj4gPiA+ICAjZGVmaW5lIFBB
-Ql9BWElfUElPX0NUUkwJCTB4MDg0MAo+ID4gPiAgI2RlZmluZSAgQVBJT19FTl9NQVNLCQkJMHhm
-Cj4gPiA+Cj4gPiA+IEBAIC01MSw4ICs1MywxOCBAQAo+ID4gPgo+ID4gPiAgI2RlZmluZSBQQUJf
-SU5UUF9BTUJBX01JU0NfRU5CCQkweDBiMGMKPiA+ID4gICNkZWZpbmUgUEFCX0lOVFBfQU1CQV9N
-SVNDX1NUQVQJCTB4MGIxYwo+ID4gPiAtI2RlZmluZSAgUEFCX0lOVFBfSU5UWF9NQVNLCQkweDAx
-ZTAKPiA+ID4gLSNkZWZpbmUgIFBBQl9JTlRQX01TSV9NQVNLCQkweDgKPiA+ID4gKyNkZWZpbmUg
-IFBBQl9JTlRQX1JFU0VUCQkJQklUKDEpCj4gPiA+ICsjZGVmaW5lICBQQUJfSU5UUF9NU0kJCQlC
-SVQoMykKPiA+ID4gKyNkZWZpbmUgIFBBQl9JTlRQX0lOVEEJCQlCSVQoNSkKPiA+ID4gKyNkZWZp
-bmUgIFBBQl9JTlRQX0lOVEIJCQlCSVQoNikKPiA+ID4gKyNkZWZpbmUgIFBBQl9JTlRQX0lOVEMJ
-CQlCSVQoNykKPiA+ID4gKyNkZWZpbmUgIFBBQl9JTlRQX0lOVEQJCQlCSVQoOCkKPiA+ID4gKyNk
-ZWZpbmUgIFBBQl9JTlRQX1BDSUVfVUUJCUJJVCg5KQo+ID4gPiArI2RlZmluZSAgUEFCX0lOVFBf
-SUVfUE1SRURJCQlCSVQoMjkpCj4gPiA+ICsjZGVmaW5lICBQQUJfSU5UUF9JRV9FQwkJCUJJVCgz
-MCkKPiA+ID4gKyNkZWZpbmUgIFBBQl9JTlRQX01TSV9NQVNLCQlQQUJfSU5UUF9NU0kKPiA+ID4g
-KyNkZWZpbmUgIFBBQl9JTlRQX0lOVFhfTUFTSwkJKFBBQl9JTlRQX0lOVEEgfAo+ID4gUEFCX0lO
-VFBfSU5UQiB8XAo+ID4gPiArCQkJCQlQQUJfSU5UUF9JTlRDIHwgUEFCX0lOVFBfSU5URCkKPiA+
-ID4KPiA+ID4gICNkZWZpbmUgUEFCX0FYSV9BTUFQX0NUUkwod2luKQkJUEFCX1JFR19BRERSKDB4
-MGJhMCwKPiA+IHdpbikKPiA+ID4gICNkZWZpbmUgIFdJTl9FTkFCTEVfU0hJRlQJCTAKPiA+ID4g
-LS0KPiA+ID4gMi4xNy4xCj4gPiA+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, 5 Feb 2020 17:11:57 +0000
+Will Deacon <will@kernel.org> wrote:
+
+Hi Will,
+
+many thanks for having a look!
+
+> On Wed, Jan 08, 2020 at 06:32:12PM +0000, Andre Przywara wrote:
+> > From: Raphael Gault <raphael.gault@arm.com>
+> > 
+> > The EDK II UEFI firmware implementation requires some storage for the EFI
+> > variables, which is typically some flash storage.
+> > Since this is already supported on the EDK II side, we add a CFI flash
+> > emulation to kvmtool.
+> > This is backed by a file, specified via the --flash or -F command line
+> > option. Any flash writes done by the guest will immediately be reflected
+> > into this file (kvmtool mmap's the file).
+> > 
+> > This implements a CFI flash using the "Intel/Sharp extended command
+> > set", as specified in:
+> > - JEDEC JESD68.01
+> > - JEDEC JEP137B
+> > - Intel Application Note 646
+> > Some gaps in those specs have been filled by looking at real devices and
+> > other implementations (QEMU, Linux kernel driver).
+> > 
+> > At the moment this relies on DT to advertise the base address of the
+> > flash memory (mapped into the MMIO address space) and is only enabled
+> > for ARM/ARM64. The emulation itself is architecture agnostic, though.
+> > 
+> > This is one missing piece towards booting with UEFI inside ARM guests,
+> > the other is to provide writable PCI BARs, which is also WIP.
+> > 
+> > Signed-off-by: Raphael Gault <raphael.gault@arm.com>
+> > [Andre: rewriting and fixing]
+> > Signed-off-by: Andre Przywra <andre.przywara@arm.com>
+> > ---
+> >  Makefile                          |   6 +
+> >  arm/include/arm-common/kvm-arch.h |   3 +
+> >  builtin-run.c                     |   2 +
+> >  hw/cfi_flash.c                    | 547 ++++++++++++++++++++++++++++++
+> >  include/kvm/kvm-config.h          |   1 +
+> >  5 files changed, 559 insertions(+)
+> >  create mode 100644 hw/cfi_flash.c
+> > 
+> > diff --git a/Makefile b/Makefile
+> > index 3862112c..7ed6fb5e 100644
+> > --- a/Makefile
+> > +++ b/Makefile
+> > @@ -170,6 +170,7 @@ ifeq ($(ARCH), arm)
+> >  	CFLAGS		+= -march=armv7-a
+> >  
+> >  	ARCH_WANT_LIBFDT := y
+> > +	ARCH_HAS_FLASH_MEM := y
+> >  endif
+> >  
+> >  # ARM64
+> > @@ -182,6 +183,7 @@ ifeq ($(ARCH), arm64)
+> >  	ARCH_INCLUDE	+= -Iarm/aarch64/include
+> >  
+> >  	ARCH_WANT_LIBFDT := y
+> > +	ARCH_HAS_FLASH_MEM := y
+> >  endif
+> >  
+> >  ifeq ($(ARCH),mips)
+> > @@ -261,6 +263,10 @@ ifeq (y,$(ARCH_HAS_FRAMEBUFFER))
+> >  	endif
+> >  endif
+> >  
+> > +ifeq (y,$(ARCH_HAS_FLASH_MEM))
+> > +	OBJS	+= hw/cfi_flash.o
+> > +endif
+> > +
+> >  ifeq ($(call try-build,$(SOURCE_ZLIB),$(CFLAGS),$(LDFLAGS) -lz),y)
+> >  	CFLAGS_DYNOPT	+= -DCONFIG_HAS_ZLIB
+> >  	LIBS_DYNOPT	+= -lz
+> > diff --git a/arm/include/arm-common/kvm-arch.h b/arm/include/arm-common/kvm-arch.h
+> > index b9d486d5..cbc9e7aa 100644
+> > --- a/arm/include/arm-common/kvm-arch.h
+> > +++ b/arm/include/arm-common/kvm-arch.h
+> > @@ -21,6 +21,9 @@
+> >  #define ARM_GIC_DIST_SIZE	0x10000
+> >  #define ARM_GIC_CPUI_SIZE	0x20000
+> >  
+> > +#define ARM_FLASH_MMIO_BASE	(32ULL << 20)  
+> 
+> Can you just use the hex constant (0x2000000) here please?
+> 
+> > +#define KVM_FLASH_MMIO_BASE	ARM_FLASH_MMIO_BASE
+> > +
+> >  #define ARM_IOPORT_SIZE		(ARM_MMIO_AREA - ARM_IOPORT_AREA)
+> >  #define ARM_VIRTIO_MMIO_SIZE	(ARM_AXI_AREA - (ARM_MMIO_AREA + ARM_GIC_SIZE))
+> >  #define ARM_PCI_CFG_SIZE	(1ULL << 24)
+> > diff --git a/builtin-run.c b/builtin-run.c
+> > index f8dc6c72..df8c6741 100644
+> > --- a/builtin-run.c
+> > +++ b/builtin-run.c
+> > @@ -138,6 +138,8 @@ void kvm_run_set_wrapper_sandbox(void)
+> >  			"Kernel command line arguments"),		\
+> >  	OPT_STRING('f', "firmware", &(cfg)->firmware_filename, "firmware",\
+> >  			"Firmware image to boot in virtual machine"),	\
+> > +	OPT_STRING('F', "flash", &(cfg)->flash_filename, "flash",\
+> > +			"Flash image to present to virtual machine"),	\
+> >  									\
+> >  	OPT_GROUP("Networking options:"),				\
+> >  	OPT_CALLBACK_DEFAULT('n', "network", NULL, "network params",	\
+> > diff --git a/hw/cfi_flash.c b/hw/cfi_flash.c
+> > new file mode 100644
+> > index 00000000..33cfeefe
+> > --- /dev/null
+> > +++ b/hw/cfi_flash.c
+> > @@ -0,0 +1,547 @@
+> > +#include <stdbool.h>
+> > +#include <stdlib.h>
+> > +#include <string.h>
+> > +#include <linux/bitops.h>
+> > +#include <linux/err.h>
+> > +#include <linux/sizes.h>
+> > +#include <linux/types.h>
+> > +
+> > +#include "kvm/kvm.h"
+> > +#include "kvm/kvm-arch.h"
+> > +#include "kvm/devices.h"
+> > +#include "kvm/fdt.h"
+> > +#include "kvm/util.h"
+> > +
+> > +/* The EDK2 driver hardcodes two 16-bit chips on a 32-bit bus. */
+> > +#define CFI_NR_FLASH_CHIPS			2
+> > +//#define CFI_NR_FLASH_CHIPS			1  
+> 
+> Delete this commented define?
+> 
+> > +/* We always emulate a 32 bit bus width. */
+> > +#define CFI_BUS_WIDTH				4
+> > +
+> > +/* The *effective* size of an erase block (over all chips) */
+> > +#define FLASH_BLOCK_SIZE			SZ_64K
+> > +
+> > +#define PROGRAM_BUFF_SIZE_BITS			7
+> > +#define PROGRAM_BUFF_SIZE			(1U << PROGRAM_BUFF_SIZE_BITS)
+> > +
+> > +/* CFI commands */
+> > +#define CFI_CMD_LOCK_BLOCK			0x01
+> > +#define CFI_CMD_ALTERNATE_WORD_PROGRAM_SETUP	0x10
+> > +#define CFI_CMD_BLOCK_ERASE_SETUP		0x20
+> > +#define CFI_CMD_WORD_PROGRAM_SETUP		0x40
+> > +#define CFI_CMD_CLEAR_STATUS_REGISTER		0x50
+> > +#define CFI_CMD_LOCK_BLOCK_SETUP		0x60
+> > +#define CFI_CMD_READ_STATUS_REGISTER		0x70
+> > +#define CFI_CMD_READ_JEDEC			0x90
+> > +#define CFI_CMD_READ_CFI_QUERY			0x98
+> > +#define CFI_CMD_BUFFERED_PROGRAM_CONFIRM	0xd0
+> > +#define CFI_CMD_BLOCK_ERASE_CONFIRM		0xd0
+> > +#define CFI_CMD_UNLOCK_BLOCK			0xd0
+> > +#define CFI_CMD_BUFFERED_PROGRAM_SETUP		0xe8
+> > +#define CFI_CMD_READ_ARRAY			0xff
+> > +
+> > +/*
+> > + * CFI query table contents, as far as it is constant.
+> > + */
+> > +#define CFI_GEOM_OFFSET				0x27
+> > +static u8 cfi_query_table[] = {
+> > +		/* offset 0x10: CFI query identification string */
+> > +	'Q', 'R', 'Y',		/* ID string */
+> > +	0x01, 0x00,		/* primary command set: Intel/Sharp extended */
+> > +	0x31, 0x00,		/* address of primary extended query table */
+> > +	0x00, 0x00,		/* alternative command set: unused */
+> > +	0x00, 0x00,		/* address of alternative extended query table*/
+> > +		/* offset 0x1b: system interface information */
+> > +	0x45,			/* minimum Vcc voltage: 4.5V */
+> > +	0x55,			/* maximum Vcc voltage: 5.5V */
+> > +	0x00,			/* minimum Vpp voltage: 0.0V (unused) */
+> > +	0x00,			/* maximum Vpp voltage: 0.0V *(unused) */
+> > +	0x01,			/* timeout for single word program: 2 us */
+> > +	0x01,			/* timeout for multi-byte program: 2 us */
+> > +	0x01,			/* timeout for block erase: 2 ms */
+> > +	0x00,			/* timeout for full chip erase: not supported */
+> > +	0x00,			/* max timeout for single word program: 1x */
+> > +	0x00,			/* max timeout for mulit-byte program: 1x */
+> > +	0x00,			/* max timeout for block erase: 1x */
+> > +	0x00,			/* max timeout for chip erase: not supported */
+> > +		/* offset 0x27: flash geometry information */
+> > +	0x00,			/* size in power-of-2 bytes, filled later */
+> > +	0x06, 0x00,		/* interface description: 32 and 16 bits */
+> > +	PROGRAM_BUFF_SIZE_BITS + 1 - CFI_NR_FLASH_CHIPS, 0x00,
+> > +				/* number of multi-byte writes */
+> > +	0x01,			/* one erase block region */
+> > +	0x00, 0x00, 0x00, 0x00, /* number and size of erase blocks, filled */
+> > +		/* offset 0x31: Intel primary algorithm extended query table */
+> > +	'P', 'R', 'I',
+> > +	'1', '0',		/* version 1.0 */
+> > +	0xa0, 0x00, 0x00, 0x00, /* optional features: instant lock & pm-read */
+> > +	0x00,			/* no functions after suspend */
+> > +	0x01, 0x00,		/* only lock bit supported */
+> > +	0x50,			/* best Vcc value: 5.0V */
+> > +	0x00,			/* best Vpp value: 0.0V (unused) */
+> > +	0x01,			/* number of protection register fields */
+> > +	0x00, 0x00, 0x00, 0x00,	/* protection field 1 description */
+> > +};
+> > +
+> > +
+> > +/*
+> > + * Those states represent a subset of the CFI flash state machine.
+> > + */
+> > +enum cfi_flash_state {
+> > +	READY,
+> > +	LOCK_SETUP,
+> > +	WP_SETUP,
+> > +	BP_SETUP,
+> > +	BP_LOAD,
+> > +	ERASE_SETUP,
+> > +};
+> > +
+> > +/*
+> > + * The device can be in several **Read** modes.
+> > + * We don't implement the asynchronous burst mode.
+> > + */
+> > +enum cfi_read_mode {
+> > +	READ_ARRAY,
+> > +	READ_STATUS,
+> > +	READ_DEVICE_ID,
+> > +	READ_QUERY,
+> > +};
+> > +
+> > +struct cfi_flash_device {
+> > +	struct device_header	dev_hdr;
+> > +	u64			base_addr;
+> > +	u32			size;
+> > +
+> > +	void			*flash_memory;
+> > +	u8			program_buffer[PROGRAM_BUFF_SIZE * 4];
+> > +	unsigned long		*lock_bm;
+> > +	u64			last_address;
+> > +	unsigned int		buff_written;
+> > +	unsigned int		program_length;
+> > +
+> > +	enum cfi_flash_state	state;
+> > +	enum cfi_read_mode	read_mode;
+> > +	u16			rcr;
+> > +	u8			sr;
+> > +};
+> > +
+> > +static int pow2_size(unsigned long x)
+> > +{
+> > +	return (sizeof(x) * 8) - __builtin_clzl(x - 1);
+> > +}  
+> 
+> This isn't specific to CFI -- maybe stick it include/kvm/util.h ?
+> 
+> > +static int nr_erase_blocks(struct cfi_flash_device *sfdev)
+> > +{
+> > +	return sfdev->size / FLASH_BLOCK_SIZE;
+> > +}
+> > +
+> > +/*
+> > + * CFI queries always deal with one byte of information, possibly mirrored
+> > + * to other bytes on the bus. This is dealt with in the callers.
+> > + * The address provided is the one for 8-bit addressing, and would need to
+> > + * be adjusted for wider accesses.
+> > + */
+> > +static u8 read_cfi(struct cfi_flash_device *sfdev, u64 addr)
+> > +{
+> > +	if (addr < 0x10)		/* CFI information starts at 0x10 */
+> > +		return 0;
+> > +
+> > +	if (addr - 0x10 > sizeof(cfi_query_table)) {
+> > +		pr_debug("CFI query read access beyond the end of table");
+> > +		return 0;
+> > +	}
+> > +
+> > +	/* Fixup dynamic information in the geometry part of the table. */
+> > +	switch (addr) {
+> > +	case CFI_GEOM_OFFSET:		/* device size in bytes, power of two */
+> > +		return pow2_size(sfdev->size / CFI_NR_FLASH_CHIPS);
+> > +	case CFI_GEOM_OFFSET + 6:	/* number of erase blocks, minus one */
+> > +		return (nr_erase_blocks(sfdev) - 1) & 0xff;
+> > +	case CFI_GEOM_OFFSET + 7:
+> > +		return (nr_erase_blocks(sfdev) - 1) >> 8;
+> > +	case CFI_GEOM_OFFSET + 8:	/* erase block size, in units of 256 */
+> > +		return ((FLASH_BLOCK_SIZE / 256 ) / CFI_NR_FLASH_CHIPS) & 0xff;
+> > +	case CFI_GEOM_OFFSET + 9:
+> > +		return ((FLASH_BLOCK_SIZE / 256 ) / CFI_NR_FLASH_CHIPS) >> 8;
+> > +	}
+> > +
+> > +	return cfi_query_table[addr - 0x10];
+> > +}
+> > +
+> > +/* We only support synchronous page mode read accesses. */
+> > +static void read_flash(struct cfi_flash_device *sfdev,
+> > +		       u64 addr, u8 *buffer, int len)
+> > +{
+> > +	memcpy(buffer, sfdev->flash_memory + addr, len);
+> > +}  
+> 
+> Hmm, you open-code the memcpy when writing the flash so it's a bit weird
+
+Not sure what you refer to exactly?
+The only open-code access I see is in the MMIO handler when doing the CFI QRY *read*, which is a very special MMIO style read access. Every other write access (word_program(), buffer_confirm()) is already using memcpy.
+What am I missing here?
+
+> to have the asymmetry with reads. I don't mind what you do, but it should
+> probably be consistent.
+> 
+> > +static bool block_is_locked(struct cfi_flash_device *sfdev, u64 addr)
+> > +{
+> > +	int block_nr = addr / FLASH_BLOCK_SIZE;
+> > +
+> > +	return test_bit(block_nr, sfdev->lock_bm);
+> > +}
+> > +
+> > +#define DEV_ID_MASK 0x7ff
+> > +static u16 read_dev_id(struct cfi_flash_device *sfdev, u64 addr)
+> > +{
+> > +	switch ((addr & DEV_ID_MASK) / CFI_BUS_WIDTH) {
+> > +	case 0x0:				/* vendor ID */
+> > +		return 0x0000;
+> > +	case 0x1:				/* device ID */
+> > +		return 0xffff;
+> > +	case 0x2:
+> > +		return block_is_locked(sfdev, addr & ~DEV_ID_MASK);
+> > +	case 0x5:
+> > +		return sfdev->rcr;
+> > +	default:			/* Ignore the other entries. */
+> > +		return 0;
+> > +	}
+> > +}
+> > +
+> > +static void lock_block(struct cfi_flash_device *sfdev, u64 addr, bool lock)
+> > +{
+> > +	int block_nr = addr / FLASH_BLOCK_SIZE;
+> > +
+> > +	if (lock)
+> > +		set_bit(block_nr, sfdev->lock_bm);
+> > +	else
+> > +		clear_bit(block_nr, sfdev->lock_bm);
+> > +}  
+> 
+> 
+> > +static void word_program(struct cfi_flash_device *sfdev,
+> > +			 u64 addr, void *data, int len)
+> > +{
+> > +	if (block_is_locked(sfdev, addr)) {
+> > +		sfdev->sr |= 0x12;
+> > +		return;
+> > +	}
+> > +
+> > +	memcpy(sfdev->flash_memory + addr, data, len);
+> > +}
+> > +
+> > +/* Reset the program buffer state to prepare for follow-up writes. */
+> > +static void buffer_setup(struct cfi_flash_device *sfdev)
+> > +{
+> > +	memset(sfdev->program_buffer, 0, sizeof(sfdev->program_buffer));
+> > +	sfdev->last_address = ~0ULL;
+> > +	sfdev->buff_written = 0;
+> > +}
+> > +
+> > +static bool buffer_program(struct cfi_flash_device *sfdev,
+> > +			   u64 addr, void *buffer, int len)
+> > +{
+> > +	unsigned int buf_addr;
+> > +
+> > +	if (sfdev->buff_written >= sfdev->program_length)
+> > +		return false;
+> > +
+> > +	/*
+> > +	 * The first word written into the buffer after the setup command
+> > +	 * happens to be the base address for the buffer.
+> > +	 * All subsequent writes need to be within this address and this
+> > +	 * address plus the buffer size, so keep this value around.
+> > +	 */
+> > +	if (sfdev->last_address == ~0ULL)
+> > +		sfdev->last_address = addr;
+> > +
+> > +	if (addr < sfdev->last_address)
+> > +		return false;
+> > +	buf_addr = addr - sfdev->last_address;
+> > +	if (buf_addr >= PROGRAM_BUFF_SIZE)
+> > +		return false;
+> > +
+> > +	memcpy(sfdev->program_buffer + buf_addr, buffer, len);
+> > +	sfdev->buff_written++;
+> > +
+> > +	return true;
+> > +}
+> > +
+> > +static void buffer_confirm(struct cfi_flash_device *sfdev)
+> > +{
+> > +	if (block_is_locked(sfdev, sfdev->last_address)) {
+> > +		sfdev->sr |= 0x12;
+> > +		return;
+> > +	}
+> > +	memcpy(sfdev->flash_memory + sfdev->last_address,
+> > +	       sfdev->program_buffer,
+> > +	       sfdev->buff_written * sizeof(u32));
+> > +}
+> > +
+> > +static void block_erase_confirm(struct cfi_flash_device *sfdev, u64 addr)
+> > +{
+> > +	if (block_is_locked(sfdev, addr)) {
+> > +		sfdev->sr |= 0x12;
+> > +		return;
+> > +	}
+> > +
+> > +	memset(sfdev->flash_memory + addr, 0xFF, FLASH_BLOCK_SIZE);
+> > +}
+> > +
+> > +static void cfi_flash_mmio(struct kvm_cpu *vcpu,
+> > +			   u64 addr, u8 *data, u32 len, u8 is_write,
+> > +			   void *context)
+> > +{
+> > +	struct cfi_flash_device *sfdev = context;
+> > +	u64 faddr = addr - sfdev->base_addr;
+> > +	u32 value;  
+> 
+> How is this serialised? There is a distinct lack of locking, atomics and
+> memory barriers in the implementation, so we really need to avoid this
+> running concurrently with itself.
+
+Ouch, thanks for pointing this out!
+I was so obsessed with EDK-2 as the primary user being single threaded that I totally missed that. Sorry for that!
+
+Given that background and to keep it simple, I now just grab a mutex when entering the MMIO handler and drop it before leaving. There is surely room for optimisation, but given the cheap nature of the handlers (changing state or accessing small memory areas) I don't think it's worth it.
+
+"Yes, sure" to all your other comments. Will send a v2 once I understood your open-code comment above.
+
+Cheers,
+Andre.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
