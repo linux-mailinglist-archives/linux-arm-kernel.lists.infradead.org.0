@@ -2,94 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 310E815481A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 16:30:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04BEC15489E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 16:55:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OCyaOi44lNl+EQu2j5xl7Ej/fGoZ/nucK3NvxX0oo1Y=; b=o5g8o5pEvlpaAv
-	x4TzgLx+DuKcA309hNA+DRxy49EAB6C127xQtIeL1ja+vwZm0mb0+DlHyiJT1TIhzim1Zr+iYVHGM
-	zR6i6WFGg+VnOUpF7IU+t9kjrddRpGkeXD6X2oa92Qg5K1a7m9ROnd5Hsdv/7IR3OE7irtmeYWh2i
-	H2PX0oOTTkFXNbZd90D47lMp42rV7tpzpwyQH3Hwy8+rlikCxWKKWEcaLNLfqo+TMVWF/4SuXNVqu
-	4qz4ApIIb/NhbJ/rvuqXmDwJI5sF6QUZicvDpZvCBq1lIIFb2/fiIbhc8ZZ4agU+vOVDLemN+Aj0q
-	M+PImfO5/tMLw07nB6kw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+/Tj/LGCvoh17N5s03WltLPgRYcjfTJ4dNcsO8UCi3c=; b=BLm8sDRBTvy96k
+	Oe7IhQtyL7g/l/xl+ddtFc3/VLDp/gRPOITbsk/agMP7p6bLWlhEC1Jg9ZCGcaymZNblGN9tB23rv
+	hc+aLPi/jb/2Gt+dClc/63XxT1iw+IBiDNJWWqXidvUQSs7zmm0PHeRguKIDYr2uuOISF+aI2IpKx
+	1bGKVpDLp2TeVRf56OXypENT2YlyjdKB8t+q0/WUa5Qj4AWEkXYfjEmbwW6HVO4ofmEtaHCH9Rf4Q
+	A6mczr4PqNR+qdbchbsuPrI2U6zI4kN4pce4fHsV856zpSznz9zq5EVDx9JePPBhrCBW4L+XY+Oxm
+	Ld5fGLj6ApgM/pNRjNxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izj6n-0002L8-CV; Thu, 06 Feb 2020 15:30:25 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izj6a-0002AS-H9
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 15:30:13 +0000
-Received: by mail-pl1-x641.google.com with SMTP id y1so2477226plp.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 07:30:11 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=yvImeWdanhuXuKTpYgc+fUvWT1XXGf47f3QA3cS1IIo=;
- b=rFy8JI1vDm33O8mChanZAaw9Ljfkv2cbVdDfPeB6ygWnADagveeIi5z8zmtsfjhtXk
- tX/Hcd+yx6frFoD5raNVuvjk/3vnNIdFDP7R8yiJy2CxUbmqvk6e7GJoqIFIg2Byj4EA
- XMSjcshvC9HFUwkmuc2dZP0x5lfcWssoZVFuunuHnSZEuTX5HfAQzUJjQIz+PQPbmwz8
- GKRiviOt/4ZkcDTyuXqcrq3xuyinxw/KC2HxZAzjL+V+pTp1uHOJC7Tv01vRNfCYGtkK
- 4ATt7SzL7W7MvrYlowHvzlAmdqN+Y6UxmRwxpRZcHWZMlv4o6zEfEhISBxlAbX5xTxcC
- dOAA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=yvImeWdanhuXuKTpYgc+fUvWT1XXGf47f3QA3cS1IIo=;
- b=eGxF/R4dicH4LvDPVmJWB9BK06QEuUukxuqA8+/Y0EnpTNiU6+8pYapTbUeUJqynDi
- u/iYIcc9ZeAXA3ogMR28ZPMMUVhAWiZ5THJSGoVbgGbyVXihqujVPk0kyw8qicsGQeRB
- fzniCZfokNpMqbksAvog3CB7qKNzOFsR9ELZDFN2V8wsM50WSAcYr25UOk3PtbmrZk7y
- ow0csX1yaUCNE/tch1wHD2ShU5y3tZI1Y6vBOjzxFu5hG8bS30/YB1Sh6+vNd/Qnfn/I
- hx5lmpXjYf4kjAU9ebWwI5sB2jtvYoliy6w/vsH3obiL601UjxqztEXJVgjrTHysWn1V
- 9Kmw==
-X-Gm-Message-State: APjAAAXujlog0Zz2PuhWyxxQDgLP2pMFPsndWRxrFYI0VQmxttsX8NfG
- Pdfl+VrgY7pZKBqgvdBC5SA2CEkf
-X-Google-Smtp-Source: APXvYqzpVmwc8UDf4PLytIuzNQu7ecLLGVgM3QijN3zs88b3yKr+R6UlvDt1Mn1NA3D4q/iXZ4uqmA==
-X-Received: by 2002:a17:90a:2ec5:: with SMTP id
- h5mr5063197pjs.79.1581003011165; 
- Thu, 06 Feb 2020 07:30:11 -0800 (PST)
-Received: from localhost (104.128.80.227.16clouds.com. [104.128.80.227])
- by smtp.gmail.com with ESMTPSA id f43sm3879247pje.23.2020.02.06.07.30.08
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 06 Feb 2020 07:30:10 -0800 (PST)
-From: Dejin Zheng <zhengdejin5@gmail.com>
-To: vkoul@kernel.org, peppe.cavallaro@st.com, alexandre.torgue@st.com,
- joabreu@synopsys.com, davem@davemloft.net, mcoquelin.stm32@gmail.com,
- niklas.cassel@linaro.org, netdev@vger.kernel.org
-Subject: [PATCH v3] net: stmmac: fix a possible endless loop
-Date: Thu,  6 Feb 2020 23:29:17 +0800
-Message-Id: <20200206152917.25564-1-zhengdejin5@gmail.com>
-X-Mailer: git-send-email 2.25.0
+	id 1izjV2-0003J9-N7; Thu, 06 Feb 2020 15:55:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1izjUv-0003I8-Sy
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 15:55:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 10D961FB;
+ Thu,  6 Feb 2020 07:55:19 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A2533F68E;
+ Thu,  6 Feb 2020 07:55:17 -0800 (PST)
+Date: Thu, 6 Feb 2020 15:55:12 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: peng.fan@nxp.com
+Subject: Re: [PATCH 1/2] firmware: arm_scmi: mailbox: share shmem for protocols
+Message-ID: <20200206155512.GA55006@bogus>
+References: <1580993966-17757-1-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1580993966-17757-1-git-send-email-peng.fan@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_073012_575521_925B4DE4 
-X-CRM114-Status: GOOD (  10.93  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200206_075521_979581_6883D205 
+X-CRM114-Status: UNSURE (   7.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [zhengdejin5[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [zhengdejin5[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,49 +63,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dejin Zheng <zhengdejin5@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: f.fainelli@gmail.com, viresh.kumar@linaro.org, linux-kernel@vger.kernel.org,
+ linux-imx@nxp.com, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It forgot to reduce the value of the variable retry in a while loop
-in the ethqos_configure() function. It may cause an endless loop and
-without timeout.
+On Thu, Feb 06, 2020 at 08:59:25PM +0800, peng.fan@nxp.com wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> When shmem property of protocol is not specificed, let it use
+> its parent's shmem property.
 
-Fixes: a7c30e62d4b8 ("net: stmmac: Add driver for Qualcomm ethqos")
-Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
-Acked-by: Vinod Koul <vkoul@kernel.org>
----
+I had replied already to the thread without ALKML you had sent earlier,
+please refer them.
 
-Hi David, I'm so sorry for that.
-
-v3:
-remove an empty line between Fixes and other tags.
-
-v2:
-add an appropriate Fixes tag.
-
- drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-index 7ec895407d23..e0a5fe83d8e0 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-@@ -413,6 +413,7 @@ static int ethqos_configure(struct qcom_ethqos *ethqos)
- 			dll_lock = rgmii_readl(ethqos, SDC4_STATUS);
- 			if (dll_lock & SDC4_STATUS_DLL_LOCK)
- 				break;
-+			retry--;
- 		} while (retry > 0);
- 		if (!retry)
- 			dev_err(&ethqos->pdev->dev,
 -- 
-2.25.0
-
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
