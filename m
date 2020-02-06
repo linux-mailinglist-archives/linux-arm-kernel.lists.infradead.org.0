@@ -2,160 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01368154B26
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 19:30:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E4E8154B38
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 19:33:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=lvVWcY3+pWb7tEdIv90iwr8L27BNsfBmlISQl5/2xJo=; b=ZywW9/WMaPWlu9otdKE/Hu5HH
-	RIN1QH1G42/y4+piPigUwB5scqc0JpmZi80jFglKGkSO8d9r3cMOXevFNK88tZzNqhyUSB/Ioa3xH
-	uew3SzoM8eHF+AUlzJE5wQERvYk9N+zgCiGWXMraS/tg7Q6AFcV7V88ZT9D/zX4AaZUGWnxkxJ3Bd
-	0/e4cWNXnsdz01cOnUMT3JKMBZ4BVuIrDzQca3kaBQti5AE26sKl0tvXE/hSCQpzoa81TCA+D4zhY
-	bhhG4niJW2JN4f4p6UEnSkaZjoVHWnczco2ESocKsiahVRzJX/8St6F8l/pcJqIbMxd025IrPb0jn
-	TqSo6Qxuw==;
+	 bh=dBUK68o1OM3RU8utbHCGDFu9xKc3EsoJf6q3gZAu+tI=; b=FXWGWJfmHqURGK9P2fEcBL8+u
+	YFMewyvCLnmRGnqk9rIhCw3ohVPpNxoQ++d+0sxcxHaiB6s9/JRkrKCHJwqoXsNcYoWiQmBb85cJO
+	k/jcsRXpQo0aO6XXV7tOOY8fYFvD9lvpPASGlk/YcF5Ie47VEB9gqZfphYhPlGdEcVxvDfO/dxsoc
+	A/p5XfURJa6HkX0jeVz0G8pwIbmn5rPfSth1/IuVhf19gtW5ZxwawQqQ3hSgFCzLuEhX43VG1KP4T
+	5ZqW5XJsBPyPD7QiNJfsW8EM6/eJC27acSbolSy1hG3a4B+4e4ahbCxdjOKWlUmVVIQAP6HtdVkij
+	YrrhQf4HA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izlux-0000jY-Cb; Thu, 06 Feb 2020 18:30:23 +0000
-Received: from updc19pa22.eemsg.mail.mil ([214.24.27.197])
+	id 1izly2-0001KN-Ne; Thu, 06 Feb 2020 18:33:34 +0000
+Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izlul-0008Vp-V5
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 18:30:16 +0000
-X-EEMSG-check-017: 55662519|UPDC19PA22_ESA_OUT04.csd.disa.mil
-X-IronPort-AV: E=Sophos;i="5.70,410,1574121600"; d="scan'208";a="55662519"
-Received: from emsm-gh1-uea11.ncsc.mil ([214.29.60.3])
- by UPDC19PA22.eemsg.mail.mil with ESMTP/TLS/DHE-RSA-AES256-SHA256;
- 06 Feb 2020 18:30:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=tycho.nsa.gov; i=@tycho.nsa.gov; q=dns/txt;
- s=tycho.nsa.gov; t=1581013805; x=1612549805;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=GIuxHJNaxkFgGYFU+0k1ATkzz7KYxG6sstbiSLNyjtA=;
- b=czxS3H7tDzxz3LzjylHylJdD0dL3P1TQ5ebuOvGfMW/bfHLLhkZ0DXxj
- 8uV0r2xkzgsLY7bWnX5hkDTmh6VEb2fX/TBbNO6Lp4YLU7k5XRj3fa2uQ
- uyVKGSxvE+YCKgcnUXNzILN/bHXuS29MAI3oe8cKLAXD53FYY2a/ZwWOu
- rvH+1tLdSomHeEK9UFi0zccW8n9qgGIKwCjdoXwRJasYeRH23V+YqEkWZ
- K+8DRXLdx5W4Z1M600G++rupuQ3o7i93PJeQuGEBj7PARjyTjwAhlYjDY
- uoHGhaVisZVSzeDaiJx0ediZFC2y7835yPeJbRq2tRXKA0wf+paJSGT9t Q==;
-X-IronPort-AV: E=Sophos;i="5.70,410,1574121600"; d="scan'208";a="38773436"
-IronPort-PHdr: =?us-ascii?q?9a23=3ArKBTTR+HdHScVP9uRHKM819IXTAuvvDOBiVQ1K?=
- =?us-ascii?q?B91OkfIJqq85mqBkHD//Il1AaPAdyHra8fwLOP6+igATVGvc/a9ihaMdRlbF?=
- =?us-ascii?q?wssY0uhQsuAcqIWwXQDcXBSGgEJvlET0Jv5HqhMEJYS47UblzWpWCuv3ZJQk?=
- =?us-ascii?q?2sfQV6Kf7oFYHMks+5y/69+4HJYwVPmTGxfa5+IA+5oAnMucQam4tvJ6g+xh?=
- =?us-ascii?q?fUv3dEZ/ldyWd0KV6OhRrx6dq88ZB5/yhMp/4t8tNLXLnncag/UbFWFiktPX?=
- =?us-ascii?q?ov5M3suxnDTA+P6WUZX24LjBdGABXL4Q/jUJvpvST0quRy2C+BPc3rVr80Qi?=
- =?us-ascii?q?it771qSBDzligKMSMy/XzNhcxxiKJbpw+hpwB6zoXJboyZKOZyc6XAdt4BW2?=
- =?us-ascii?q?FPQtheWDBAAoOkbosAEewBPfpDr4Lgo1cCtAayCRWwCO/qzDJHiGX23akn2O?=
- =?us-ascii?q?o/Fw/I0hErE9YXvHjKqNj5MaEfWv23wqbV1zXOd+5Y1ynz6IbIcR4vr/+DUr?=
- =?us-ascii?q?1yfsXNxkciDB/Fg1eKpID5Iz+Y2OYAvm6G5ORgT+KvjGsnphlsrDiz2Mgsko?=
- =?us-ascii?q?nJiZwTylvZ6Ct5xZw6Jdm8SEFlYd+vDZxdtzqHOIttWc4iX2Fptzo6yr0Bo5?=
- =?us-ascii?q?K7ejMKx449yx7QbPyHbZGF7xT+X+ifJjd4gWhqeLO5hxuq8kiv1Pf8Vs+q31?=
- =?us-ascii?q?ZOtCZFlcPMtn8V2xzc68iHVvt9/lq61jqVyw/T7eRELVgxlaXBLZ4swKQ8lp?=
- =?us-ascii?q?0JsUTMGCL9hUb4jLeOe0k59eWl5P7rb7X7qpOGKYN5hR/yPr4zlsG5HO82KB?=
- =?us-ascii?q?IBX3KB9uS5zLDj+Er5T6hUgfAuianZtYzaJdwcpq6kHw9ZyoYj5Ai7DzehyN?=
- =?us-ascii?q?kYgWMILEhEeBKalIjlIVDOIPb2Dfe4mFSjjitky+raPrzhHprNLn/DnK3nfb?=
- =?us-ascii?q?lh8E5T1BA/zdVe55JQEr0BIfTzVVHttNHAExM0PAO5z/znBdlgzI8SR22CDr?=
- =?us-ascii?q?GDPK/PqVOI4/ggI+iIZI8bojb9LP0l6ub1jXAkgl8QZrWp3JsLZ3C4GfRqOU?=
- =?us-ascii?q?OZYWH2jdsbHmcKuRQ+QPTwiFKeST5Te2qyX6Uk6z4hDIKpE4jCSZ6tgbCbxy?=
- =?us-ascii?q?i7A4BZaXpAClCPFnfoaZ6JW/MNaCKUP89gnSYIVbmnS489yx6usBX2xKZgLu?=
- =?us-ascii?q?rR4icYr47s1MBp5+3PkhE/7T50D8Ga02GXVWF0n3gISiQw3K9lpExy1FaD3b?=
- =?us-ascii?q?J/g/xCGtxZ/+lJXRsiNZ7A0+x6DMj/WhnfcdeTR1apXM6rATErQdI1x98PY0?=
- =?us-ascii?q?B9F8++gRDE2iqgG6UVmKCTBJwo7qLc2GD8J95jxHbayqYhlVgnT9BONW2giK?=
- =?us-ascii?q?5/7RLcCJPXnEqDiqmmb6Mc3DTC9G2b12qBoFlYUBJsUaXCRX0QfFfZrdHn6U?=
- =?us-ascii?q?7ZTL+hF64nMg1fxs6GMKdKbcfpjVpeTvf5JNvee36xm3u3BRuQw7OMbYzqe2?=
- =?us-ascii?q?oa3CjGEkgLjR0c/XacOggiHCuuv2XeDDl2H1L1f0zs6fV+qG+8TkIszQGKaE?=
- =?us-ascii?q?ph17yv9R4On/CcT+kc3rIYuCcgrTV7AlC90snSC9qBoQphYapdbck84FdByW?=
- =?us-ascii?q?LWqQh9Moa8IKBlg14Uax53sF/21xVrFoVAltAno2kxzApuMq+Y001Odyme3Z?=
- =?us-ascii?q?/uPr3bMG7y/Aqga6TOwFHRzM6W+rsT6PQ/s1jisgCpFk4m83h80NlazWGc5p?=
- =?us-ascii?q?PUAwoWS57xVVw39xdirbHAfiY9/5/U1WFrMaSsqj/Nwc8pBO84yha7ZNpfK7?=
- =?us-ascii?q?mLFArpHMIAHcSuL/Yqm1exZBIeIO9S7LI0P9+hd/ae3a6rJPhvkSm4gmRD5I?=
- =?us-ascii?q?ByzFiM9y9mRe7OxZoFwuyX0hGdWDfhlF2hqNz4mZhYZTEOGWqy0TLrBI1Ka6?=
- =?us-ascii?q?12fIYLD3quIsKtytV/gZ7tR2BX9Fq5C1wa38+pfAKYb0bh0g1IyUQXvXunlD?=
- =?us-ascii?q?Okzzx7lzEoobGS3CjPw+TkaRoHJnRLRG5kjVftLom4lc0VU1awZQgziBSl/V?=
- =?us-ascii?q?r6x7RcpKlnMWbTW11Hfy73L254VKu9rbWCY8lI6JMntSVYTv6wbkydSr74ux?=
- =?us-ascii?q?EayT/sH3NCxDAncDGnopT5nxhniG2GNnlzt3rZdt9ryBjF59zTX/tR0SAHRC?=
- =?us-ascii?q?VilTbXAV28NcGz/dqIj5fDrvy+V2W5W51RdinryZiAuzGg6G1wHxKwgvCzlc?=
- =?us-ascii?q?f7EQQgzSD70NxqXz3SrBngeonry7i6MeV/c0lsBV/87dd6G45nnoszmp4Qw3?=
- =?us-ascii?q?4aiYuR/Xccj2fzPstU2bjkYHoOWzEL2djV7xbh2EF5KXKJ3Y35XG2HwsR9f9?=
- =?us-ascii?q?m6fn8W2iUl4sBLDqeU8KJLnS9srlq3owLQbuNwnjMcyfs19H4amPsFuAQ3zi?=
- =?us-ascii?q?qDHL8dAFdXPTfvlxSU6NC+tL9bZGG1cbi/zEB+h8yuDKmeogFAX3b0YpMiHS?=
- =?us-ascii?q?527sViP1PAyWbz5Z/4d9nNd9ITtwGUkhfZg+hQL5I+i+cKhS55Nm/mo30lxP?=
- =?us-ascii?q?A0jQZ00ZG5ooeHMWNt87y9AhJCMT31fcwT8Cn3jalChsaWw5yvHpJ5FzUQQp?=
- =?us-ascii?q?ToSfOoEDQPtfXoLAuODjI8pWmBGbbFHg+Q9l1mr3TRHJCvLX2XI2MZzdp6Th?=
- =?us-ascii?q?mHOENfmBwUXCk9npMhEgCqxcrhcFp25zwI/FH4sB5MxvtrNxbhSGffohmnaj?=
- =?us-ascii?q?MvRZibLRpW9R1C51zPPcyf6OJzETtY8Ye8owOTMGOUeh5EDWYTWkyLH1rjJK?=
- =?us-ascii?q?Wh5cHc8+iEAeqzN//OYbSIqexDWPaI3Yqv3Zd/8zmRKMqPIGJvD/k62kpYQX?=
- =?us-ascii?q?B5AN7VmzIOSiwTjS3CdNWbqA27+i1tocC16O7rVx735YuTF7tSNs1i+xS3ga?=
- =?us-ascii?q?eFKu6Riz91KS5C2ZMWxH/I06QQ0UUMiyFhaTatC64MtS3TQ6LKnK9YERobZz?=
- =?us-ascii?q?l0NMtS4KI2xhNNNtLDitPpyr54ieY4C1BdVVz7ncGpa80KI2WjO1/eAEaLNa?=
- =?us-ascii?q?+GJSHQzsHzYKO8UqFQjP5Oux2rtzaXCUnjMSqfl2qhaxf6GOVBnCyKdDZDtI?=
- =?us-ascii?q?i7cRFzQTzqSN/2Zwz9OsJ7hDs1xqMcgnLMKH5aMD5gfkcLpbqVu2cQoPx6Fn?=
- =?us-ascii?q?cJy31/N+if03Kb6u7CMJcNmf1iByl10eVA7yJ+g4BY9i5JDNx8nC/DqJY6uF?=
- =?us-ascii?q?y8neSnyjNjVAtI7D1MgdTP9X1vJajDvqtBW3Lf4AgEpTGIBggHvclNC9vhoa?=
- =?us-ascii?q?lcx9HD0qXpJ2EGu/vO+8IYC8+cA8udLnMlMR2hFDOcKQYBSnb/PGraimRene?=
- =?us-ascii?q?uU+3nTqYI1/NykuZwBTfd+U1gzH+lSXkFkGtMFCI16UjMtjfiQi8teoTL0rh?=
- =?us-ascii?q?7WQsxB+JTOVu6TB/jpADKYi6RUIRoO3b78a48UM8ezj05lbV9zh8LOEkrMXN?=
- =?us-ascii?q?ZApAVlbwkpsANM9mRzSis43EezLkuE5HIDGP/8pQI/kAxgZuUx8ymkt14sOn?=
- =?us-ascii?q?LJqTE2nU13ns/q13TZTz/1KO+cUIhdDCy841cwNpfTQAtvawC220t+O2GAD4?=
- =?us-ascii?q?pYkr8oUGlgiwLGo5JUUapERLBAfQQ43viSbfxu1k5T/GHv4E5M5eLIDdNPkA?=
- =?us-ascii?q?8na5ulqToU3hpuRNMxIaHKIaNPiFlcwKuT6HyGzOc0lTQCKl4N/WXaQysBvE?=
- =?us-ascii?q?gFJ/FyPCaz1vB94gyF3T1YcS4DUOR88aEizV80J+nVl3Go6LVEME3kcrXFfq?=
- =?us-ascii?q?4=3D?=
-X-IPAS-Result: =?us-ascii?q?A2DvAgACWjxe/wHyM5BmHAEBAQEBBwEBEQEEBAEBgXuBf?=
- =?us-ascii?q?YEYVSASKoQViQOGYQEBAQEBAQaBN4lwkUsJAQEBAQEBAQEBLQoBAYFMgi9FA?=
- =?us-ascii?q?oJhOBMCEAEBAQQBAQEBAQUDAQFshTcMgjspAYMCAQUjFS0UEAsYAgImAgJXB?=
- =?us-ascii?q?gEMBgIBAYJjPwGCViUPrSiBMoRJQUCDVYE+gQ4qiVqCY3mBB4E4D4JdPoJkA?=
- =?us-ascii?q?QEBAQKEcYJeBJAchyJGl2eCRIJOhHyOdgYbgkh4l0stjjWBS4chlEgigVgrC?=
- =?us-ascii?q?AIYCCEPgycJFjEYDY5VgzuFFIUIAVQjAzACBQaOPQEB?=
-Received: from tarius.tycho.ncsc.mil (HELO tarius.infosec.tycho.ncsc.mil)
- ([144.51.242.1])
- by emsm-gh1-uea11.NCSC.MIL with ESMTP; 06 Feb 2020 18:30:02 +0000
-Received: from moss-pluto.infosec.tycho.ncsc.mil (moss-pluto [192.168.25.131])
- by tarius.infosec.tycho.ncsc.mil (8.14.7/8.14.4) with ESMTP id
- 016IT9Ng204923; Thu, 6 Feb 2020 13:29:09 -0500
-Subject: Re: [PATCH v6 01/10] capabilities: introduce CAP_PERFMON to kernel
- and user space
-To: Alexey Budankov <alexey.budankov@linux.intel.com>,
- James Morris <jmorris@namei.org>, Serge Hallyn <serge@hallyn.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Alexei Starovoitov <ast@kernel.org>, Will Deacon <will@kernel.org>,
- Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>
-References: <576a6141-36d4-14c0-b395-8d195892b916@linux.intel.com>
- <a4c5da70-b6d1-b133-9b64-34e164834b03@linux.intel.com>
- <5be0f67c-17e2-7861-37f3-a0f8a82be8f0@tycho.nsa.gov>
- <1bcb4cb1-98c4-cc1a-b8e3-fd8a0e1e606f@linux.intel.com>
-From: Stephen Smalley <sds@tycho.nsa.gov>
-Message-ID: <06cdca0e-65f2-b58d-a84e-5a1907aa9eb5@tycho.nsa.gov>
-Date: Thu, 6 Feb 2020 13:30:56 -0500
+ id 1izlxu-0001Jg-SW
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 18:33:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1581013989;
+ bh=mTyLtAMJSdfsGHe9154LBFskCXqNQtaB2udlCTF5iL8=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=k3feDoPt2kw6IE8H5QptrgJ7RHXa2zCSGrD165Kh8tHd0baINKmleas15HP7fxtjP
+ WBVmGmF5gRFiNGgmf0OP6svHZEvWHnQVEDTPpW3rFilEfiHUNnQNYdsSPthd78x2kn
+ 25WFeCNaHL3KZ1Hh6dyQu2/jGI716jJTcW+BLWyU=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.123.51] ([84.119.33.160]) by mail.gmx.com (mrgmx104
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1MMobU-1jGCsj0ntk-00Imym; Thu, 06
+ Feb 2020 19:33:09 +0100
+Subject: Re: [PATCH 2/2] efi/libstub: take noinitrd cmdline argument into
+ account for devpath initrd
+To: Ard Biesheuvel <ardb@kernel.org>, linux-efi@vger.kernel.org
+References: <20200206140352.6300-1-ardb@kernel.org>
+ <20200206140352.6300-3-ardb@kernel.org>
+From: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Message-ID: <ea0b44d5-c9e4-943a-da81-8b4c8f1a371d@gmx.de>
+Date: Thu, 6 Feb 2020 19:33:08 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-In-Reply-To: <1bcb4cb1-98c4-cc1a-b8e3-fd8a0e1e606f@linux.intel.com>
+In-Reply-To: <20200206140352.6300-3-ardb@kernel.org>
 Content-Language: en-US
+X-Provags-ID: V03:K1:VVyY4ovAWJdUOHYcEXyairg3Nui/XUbHkNgTN7QT8CnPdzagY1/
+ Ht55/pBrtBZl+1rf/+htzOgrgtMPWHRPS4MfiKsDIFuC5QUMcL0SyaNQrylC+9iNZ94Rqrt
+ upIEmUKd4fPfU9Z28vjQkax7LOccwIiSwqt3XJ3U0/UJYrBYH8SyPex/fRCuOmNqBDUVb1s
+ AKr2S9GTug9a9hUBnzOsQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:D+UenvpC+fQ=:iIYrV3MM/3LOkKngjGyxUJ
+ 07+tMHo9T4AXjenGu+CDMWmzSMz0N2g7OgK+QPWxFQJfFe2KpebWFWKb6Dh0/FTOR2cwdppAW
+ upexP6nQG//o1qksaaE0yQQYgXK4CoJWmWfZimnbv65GTXfP8CuLz53NOrwPETEGCXJ+jpttq
+ PTPDAI2oO87FMLSYy8NhsLUbBPL7U33idjXefwr11f0DUc2KbRkT/5RZTIHRUsyOjzmfgN1xD
+ RyIZKl1GsrAaHUjAIZBOgaagT6inxXMP/kFda2pufOJX2imxBewLvXaNJh9RpQHp3oEUvIO4M
+ pPlDQbJWXd3mN4T+UviBk9YFGu2YMCcya08XeUUkIZVLnSMp35ElcQkVqfXMyJWcZ5McDVxSE
+ /GTXQlg1mTQxMBw/RRmRJL6TWBlPQqC7I0czZovwgQl7Rt+TpcEs/wCmnaK7Q2I+W4K10Eqt2
+ uojf9Bn1qIY0KiJZTH/qjMklXV0vZTh6w3XU3ETzdh1N/nVlQmgzZQENoc9kFI3Mtj3SxLMJM
+ Him56kcPhh2VyiZ2DRuLkORhCbnZvlFZgIWyXe6umC3QzXaMax7M0L0JF30Lo+aw/gZTKgzL6
+ M1MqzxugdwGoICY41hTlgATJ81giDLwMy1FZqM58TgSzN+tjlUpIA0FDZEcOlhIRY4r9r7fQE
+ 9ntGe4aEaYhMYJMQ4jpnDvj9lN+HtD5ut+KeGDe/rvsCE23ghJzSvRrMsOs0hB/QyiAsmLfuQ
+ 3LfppakVe21hVOnboKHyAZMKB/gC74I4RKEiphlhXbuDH+VmzARo/ehrG/duJltpwwtU8/lNq
+ byD0LcEG9qZ3G+rLAaTWnRKwI+/lQgyPWx0acnqtP52DOXLZOhJlO+e6Sl2VGgAkJ+VbYxvpo
+ p9R2UWdiFZk6SIjlP0RqbWZJJc0kmpx9cjIHKMHaj2W/HnBXA1Gdvo5tYa8BzMS8cqgzUcq4b
+ rVglP4uoneU/LZeOL+SmbCA6+UEKKqKd06B3Qa6XSU8JUU0t3a7jrupcx6CcIIv+Jh2p4+KOC
+ ulfMyi+g5LClFnIak1QdHz/WHkNBDcCcjy6ZfhTRCHO3SEIsX1G07HTLH7M/ObMwygILhaBsp
+ 8wqND8Pmm4Ugp/ahSsxoaQQsX28bSIfWYXki5ILCY1jOvg+p7bRbjSgCGfILkvpJmeggG2YoK
+ lQ39YzRA+9kjqH/olhgjavDAhz1GVYTYIqqYz/YhaQcd+FTJF0nkP+yPgP8oPpAd4dzT4Te1Y
+ I6UL/AJRkHnOyp0kt
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_103013_111742_587C4CEA 
-X-CRM114-Status: GOOD (  13.00  )
-X-Spam-Score: -2.4 (--)
+X-CRM114-CacheID: sfid-20200206_103327_214643_8C0F7241 
+X-CRM114-Status: GOOD (  29.48  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.4 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [214.24.27.197 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.22 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [xypron.glpk[at]gmx.de]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 FROM_GOV_DKIM_AU       From Government address and DKIM signed
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -167,84 +99,193 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andi Kleen <ak@linux.intel.com>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- Igor Lubashev <ilubashe@akamai.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Stephane Eranian <eranian@google.com>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>, oprofile-list@lists.sf.net,
- Thomas Gleixner <tglx@linutronix.de>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: agraf@csgraf.de, daniel.kiper@oracle.com, ilias.apalodimas@linaro.org,
+ mjg59@google.com, pjones@redhat.com, leif@nuviainc.com, lersek@redhat.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/6/20 1:26 PM, Alexey Budankov wrote:
-> 
-> On 06.02.2020 21:23, Stephen Smalley wrote:
->> On 2/5/20 12:30 PM, Alexey Budankov wrote:
->>>
->>> Introduce CAP_PERFMON capability designed to secure system performance
->>> monitoring and observability operations so that CAP_PERFMON would assist
->>> CAP_SYS_ADMIN capability in its governing role for performance monitoring
->>> and observability subsystems.
->>>
->>> CAP_PERFMON hardens system security and integrity during performance
->>> monitoring and observability operations by decreasing attack surface that
->>> is available to a CAP_SYS_ADMIN privileged process [2]. Providing the access
->>> to system performance monitoring and observability operations under CAP_PERFMON
->>> capability singly, without the rest of CAP_SYS_ADMIN credentials, excludes
->>> chances to misuse the credentials and makes the operation more secure.
->>> Thus, CAP_PERFMON implements the principal of least privilege for performance
->>> monitoring and observability operations (POSIX IEEE 1003.1e: 2.2.2.39 principle
->>> of least privilege: A security design principle that states that a process
->>> or program be granted only those privileges (e.g., capabilities) necessary
->>> to accomplish its legitimate function, and only for the time that such
->>> privileges are actually required)
->>>
->>> CAP_PERFMON meets the demand to secure system performance monitoring and
->>> observability operations for adoption in security sensitive, restricted,
->>> multiuser production environments (e.g. HPC clusters, cloud and virtual compute
->>> environments), where root or CAP_SYS_ADMIN credentials are not available to
->>> mass users of a system, and securely unblocks accessibility of system performance monitoring and observability operations beyond root and CAP_SYS_ADMIN use cases.
->>>
->>> CAP_PERFMON takes over CAP_SYS_ADMIN credentials related to system performance
->>> monitoring and observability operations and balances amount of CAP_SYS_ADMIN
->>> credentials following the recommendations in the capabilities man page [1]
->>> for CAP_SYS_ADMIN: "Note: this capability is overloaded; see Notes to kernel
->>> developers, below." For backward compatibility reasons access to system
->>> performance monitoring and observability subsystems of the kernel remains
->>> open for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN capability
->>> usage for secure system performance monitoring and observability operations
->>> is discouraged with respect to the designed CAP_PERFMON capability.
->>>
->>> Although the software running under CAP_PERFMON can not ensure avoidance
->>> of related hardware issues, the software can still mitigate these issues
->>> following the official hardware issues mitigation procedure [2]. The bugs
->>> in the software itself can be fixed following the standard kernel development
->>> process [3] to maintain and harden security of system performance monitoring
->>> and observability operations.
->>>
->>> [1] http://man7.org/linux/man-pages/man7/capabilities.7.html
->>> [2] https://www.kernel.org/doc/html/latest/process/embargoed-hardware-issues.html
->>> [3] https://www.kernel.org/doc/html/latest/admin-guide/security-bugs.html
->>>
->>> Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
->>
->> This will require a small update to the selinux-testsuite to correctly reflect the new capability requirements, but that's easy enough.
-> 
-> Is the suite a part of the kernel sources or something else?
+On 2/6/20 3:03 PM, Ard Biesheuvel wrote:
+> One of the advantages of using what basically amounts to a callback
+> interface into the bootloader for loading the initrd is that it provides
+> a natural place for the bootloader or firmware to measure the initrd
+> contents while they are being passed to the kernel.
+>
+> Unfortunately, this is not a guarantee that the initrd will in fact be
+> loaded and its /init invoked by the kernel, since the command line may
+> contain the 'noinitrd' option, in which case the initrd is ignored, but
+> this will not be reflected in the PCR that covers the initrd measurement.
 
-It is external,
-https://github.com/SELinuxProject/selinux-testsuite
+Does PCR here refer to the TPM Platform Configuration Register?
 
-I wasn't suggesting that your patch be blocked on updating the 
-testsuite, just noting that it will need to be done.
+>
+> This could be addressed by measuring the command line as well, and
+> including that PCR in the attestation policy, but this locks down the
+> command line completely, which may be too restrictive.
+>
+> So let's take the noinitrd argument into account in the stub, too. This
+> forces the PCR that covers the initrd to assume a different value when
+> noinitrd is passed, allowing an attestation policy to disregard the
+> command line if there is no need to take its measurement into account
+> for other reasons.
+>
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> ---
+>   drivers/firmware/efi/libstub/arm-stub.c        | 23 +++++-----
+>   drivers/firmware/efi/libstub/efi-stub-helper.c |  9 ++++
+>   drivers/firmware/efi/libstub/efistub.h         |  1 +
+>   drivers/firmware/efi/libstub/x86-stub.c        | 45 +++++++++++---------
+>   4 files changed, 47 insertions(+), 31 deletions(-)
+>
+> diff --git a/drivers/firmware/efi/libstub/arm-stub.c b/drivers/firmware/efi/libstub/arm-stub.c
+> index 1db943c1ba2b..5e8f16cf016e 100644
+> --- a/drivers/firmware/efi/libstub/arm-stub.c
+> +++ b/drivers/firmware/efi/libstub/arm-stub.c
+> @@ -256,18 +256,21 @@ unsigned long efi_entry(void *handle, efi_system_table_t *sys_table_arg,
+>   	if (!fdt_addr)
+>   		pr_efi("Generating empty DTB\n");
+>
+> -	max_addr = efi_get_max_initrd_addr(dram_base, *image_addr);
+> -	status = efi_load_initrd_devpath(&initrd_addr, &initrd_size, max_addr);
+> -	if (status == EFI_SUCCESS)
+> -		pr_efi("Loaded initrd from LINUX_EFI_INITRD_MEDIA_GUID device path\n");
+> -	else if (status == EFI_NOT_FOUND) {
+> -		status = efi_load_initrd(image, ULONG_MAX, max_addr,
+> -					 &initrd_addr, &initrd_size);
+> +	if (!noinitrd()) {
+> +		max_addr = efi_get_max_initrd_addr(dram_base, *image_addr);
+> +		status = efi_load_initrd_devpath(&initrd_addr, &initrd_size,
+> +						 max_addr);
+>   		if (status == EFI_SUCCESS)
+> -			pr_efi("Loaded initrd from command line option\n");
+> +			pr_efi("Loaded initrd from LINUX_EFI_INITRD_MEDIA_GUID device path\n");
+> +		else if (status == EFI_NOT_FOUND) {
+> +			status = efi_load_initrd(image, ULONG_MAX, max_addr,
+> +						 &initrd_addr, &initrd_size);
+> +			if (status == EFI_SUCCESS)
+> +				pr_efi("Loaded initrd from command line option\n");
+> +		}
+> +		if (status != EFI_SUCCESS)
+> +			pr_efi_err("Failed to load initrd!\n");
+>   	}
+> -	if (status != EFI_SUCCESS)
+> -		pr_efi_err("Failed to load initrd!\n");
+>
+>   	efi_random_get_seed();
+>
+> diff --git a/drivers/firmware/efi/libstub/efi-stub-helper.c b/drivers/firmware/efi/libstub/efi-stub-helper.c
+> index eaf45ea749b3..367575fb8424 100644
+> --- a/drivers/firmware/efi/libstub/efi-stub-helper.c
+> +++ b/drivers/firmware/efi/libstub/efi-stub-helper.c
+> @@ -11,6 +11,7 @@
+>
+>   static bool __efistub_global efi_nochunk;
+>   static bool __efistub_global efi_nokaslr;
+> +static bool __efistub_global efi_noinitrd;
+>   static bool __efistub_global efi_quiet;
+>   static bool __efistub_global efi_novamap;
+>   static bool __efistub_global efi_nosoftreserve;
+> @@ -25,6 +26,10 @@ bool __pure nokaslr(void)
+>   {
+>   	return efi_nokaslr;
+>   }
+> +bool __pure noinitrd(void)
+> +{
+> +	return efi_noinitrd;
+> +}
+>   bool __pure is_quiet(void)
+>   {
+>   	return efi_quiet;
+> @@ -71,6 +76,10 @@ efi_status_t efi_parse_options(char const *cmdline)
+>   	if (str == cmdline || (str && str > cmdline && *(str - 1) == ' '))
+>   		efi_nokaslr = true;
+>
+> +	str = strstr(cmdline, "noinitrd");
+> +	if (str == cmdline || (str && str > cmdline && *(str - 1) == ' '))
+> +		efi_noinitrd = true;
+> +
+>   	str = strstr(cmdline, "quiet");
+>   	if (str == cmdline || (str && str > cmdline && *(str - 1) == ' '))
+>   		efi_quiet = true;
+> diff --git a/drivers/firmware/efi/libstub/efistub.h b/drivers/firmware/efi/libstub/efistub.h
+> index fbf9f9442eed..29a5d0e9554a 100644
+> --- a/drivers/firmware/efi/libstub/efistub.h
+> +++ b/drivers/firmware/efi/libstub/efistub.h
+> @@ -44,6 +44,7 @@
+>
+>   extern bool __pure nochunk(void);
+>   extern bool __pure nokaslr(void);
+> +extern bool __pure noinitrd(void);
+>   extern bool __pure is_quiet(void);
+>   extern bool __pure novamap(void);
+>
+> diff --git a/drivers/firmware/efi/libstub/x86-stub.c b/drivers/firmware/efi/libstub/x86-stub.c
+> index 7f38f95676dd..9d86c0949b3c 100644
+> --- a/drivers/firmware/efi/libstub/x86-stub.c
+> +++ b/drivers/firmware/efi/libstub/x86-stub.c
+> @@ -419,26 +419,28 @@ efi_status_t __efiapi efi_pe_entry(efi_handle_t handle,
+>   	if (status != EFI_SUCCESS)
+>   		goto fail2;
+>
+> -	/*
+> -	 * The initrd loaded from the Linux initrd vendor device
+> -	 * path should take precedence, as we don't want the
+> -	 * [unverified] command line to override the initrd
+> -	 * supplied by the [potentially verified] firmware.
+> -	 */
+> -	status = efi_load_initrd_devpath(&ramdisk_addr, &ramdisk_size,
+> -					 above4g ? ULONG_MAX
+> -						 : hdr->initrd_addr_max);
+> -	if (status == EFI_NOT_FOUND)
+> -		status = efi_load_initrd(image, hdr->initrd_addr_max,
+> -					 above4g ? ULONG_MAX
+> -						 : hdr->initrd_addr_max,
+> -					 &ramdisk_addr, &ramdisk_size);
+> -	if (status != EFI_SUCCESS)
+> -		goto fail2;
+> -	hdr->ramdisk_image = ramdisk_addr & 0xffffffff;
+> -	hdr->ramdisk_size  = ramdisk_size & 0xffffffff;
+> -	boot_params->ext_ramdisk_image = (u64)ramdisk_addr >> 32;
+> -	boot_params->ext_ramdisk_size  = (u64)ramdisk_size >> 32;
+> +	if (!noinitrd()) {
+> +		/*
+> +		 * The initrd loaded from the Linux initrd vendor device
+> +		 * path should take precedence, as we don't want the
+> +		 * [unverified] command line to override the initrd
+> +		 * supplied by the [potentially verified] firmware.
+> +		 */
+> +		status = efi_load_initrd_devpath(&ramdisk_addr, &ramdisk_size,
+> +						 above4g ? ULONG_MAX
+> +							 : hdr->initrd_addr_max);
+> +		if (status == EFI_NOT_FOUND)
+> +			status = efi_load_initrd(image, hdr->initrd_addr_max,
+> +						 above4g ? ULONG_MAX
+> +							 : hdr->initrd_addr_max,
+> +						 &ramdisk_addr, &ramdisk_size);
+> +		if (status != EFI_SUCCESS)
+> +			goto fail2;
+> +		hdr->ramdisk_image = ramdisk_addr & 0xffffffff;
+> +		hdr->ramdisk_size  = ramdisk_size & 0xffffffff;
+> +		boot_params->ext_ramdisk_image = (u64)ramdisk_addr >> 32;
+> +		boot_params->ext_ramdisk_size  = (u64)ramdisk_size >> 32;
+> +	}
+>
+>   	efi_stub_entry(handle, sys_table, boot_params);
+>   	/* not reached */
+> @@ -743,7 +745,8 @@ struct boot_params *efi_main(efi_handle_t handle,
+>   			 ((u64)boot_params->ext_cmd_line_ptr << 32));
+>   	efi_parse_options((char *)cmdline_paddr);
+>
+> -	if (!hdr->ramdisk_size && !boot_params->ext_ramdisk_size) {
+> +	if (!hdr->ramdisk_size && !boot_params->ext_ramdisk_size &&
+> +	    !noinitrd()) {
+>   		unsigned long max = hdr->initrd_addr_max;
+>   		unsigned long addr, size;
+>
+>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
