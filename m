@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3359154802
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 16:25:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9675154803
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 16:25:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VtN0Ue3GtIGTdJxwBuxuFKv92x4JFbC3L5q0LAqAoSk=; b=Z0O1OwNTrMprzo
-	kTyPk0mZQbV2nmdx0OPkQxhrRX/JQhUXEDv++E2ZjScHQmFaqlsz54nHhVXprUpOKY36xjY0rqRD9
-	92mrAmm2cVBfH+jHfHFiPo44NeJxwgNa6fKBUOj1zhHJhEb0RLxMX1jekggO7Gr7y9t0c+8abNTiI
-	+svlvD+Het3+mQoJ/sNjI6YSfnnKj84PkHJ9yNbnH0j94LCwyZdkdPeLC2RgnkZ73SvqNPEXGbWUY
-	iCC7Mc7TcaH3yxk2hKUPy8KA2FR1ciZVhQlOBAz4yVuofPvgFAT/QpExn+qg8ycM0ROzGiMTv2Myz
-	aovzM7eIR4LBhMQ2kyrw==;
+	List-Owner; bh=8svje/tIvKejXNTgm7EXgpE+4lqiG3XX64+UdEeWE8o=; b=amze1oiVBjnhE5
+	O7UDRta+z2IIiZHwHhjLNR7GcgdthKElgiHXDgnP63GV7Ig9ATNNljA52jtFNW0ox+DLmalNkFYjI
+	tHD/MTGb0sPIUZ3pMCrUg8Viu6XIDtj/IhuZLmCp02mzVoQJQb+jswpoBIXpxjZ8FhsCE79dBtNLB
+	aeyJw6G/jDRAZeA395lo/49tUHziQ3NoBv1CgHVTOMnesX4CxT5PfIZLNd6MBqYBdp9bLp9zNzULJ
+	l2tQEOGtCvGktwDz4ox2RKXbWAvmEwqppCeuiw+3VbsX+g8ZWYYOr4GkAKSFa28B8ymx7XqGE+yco
+	IcuevmL+t+BBC5MGGbEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izj1o-00089f-SK; Thu, 06 Feb 2020 15:25:16 +0000
+	id 1izj1y-0001D8-Kz; Thu, 06 Feb 2020 15:25:26 +0000
 Received: from mail-eopbgr80087.outbound.protection.outlook.com ([40.107.8.87]
  helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izj0q-0007Ta-R5
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 15:24:18 +0000
+ id 1izj0s-0007Ta-NE
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 15:24:20 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=f5li6/WwksEhWpqWuRoavSTtFhiK8LR1iGLCfbcE7WlMaTwvIC9O52UOqBfsiGXm7abtfTZld7UmqeHmkuK/I57UmL21Mie2s7iQZk+QZlmvdBndbxGaR5ZLrlNf7MPcAF9aOLE+izOR7KRX/TIN4Jp1Zvj50t9SE6gOQW22P7+b0MCAmWSUDGjVLAZDZEEr6Qrh8gKZYSP/L2XGAiMbCPdDd7vKjYhzzA3lvdk43/tuR2jro9DA+4F3WdYLlpZU73a+yx81O9HkyHkHE9eWUS1H1/XiN6pTKKeZ4TT0ZlINDyDhOMv7Pu7CKFlnIYM3bZqD37kNSvrnklGQDxiDWQ==
+ b=N62Z4B/X04Kne4ksxkeY0ib6j6gEQFrqQgGUJ0kOD3Gz7cjOu4gW7teka6hf3q6yqbtag7c0mlg5rD5DmwTTLhA5b5ejGDbxezOZUwSIWoiK/5NbH44HbVlTpAo7Ms/xMH/ijG1IqXkO7R+M9LYbd+w7WQcCfjE3OI/SZJoq55inHFbr93gwM1Fa7fC6b5CYzi+6B6MvwSN/+QfQViltXEg9iJ1zXqlOgePuy+XHZalNySjmAmrJda9bWj9ZBiHEFgC6+T6Dm7LP4jWx5Y5ALJLgFgvg3ZGN++T6Zb+W7mYHhIzM22Kb/PTEsz7KNSjKeWR39+qi7/Z3+v5HLT1+wQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=toZDouw/ofV3eZGQ1rB/FHy1riorfgb0UqXJmUf6LhA=;
- b=TJ1NjjaR2odUb8bPSxf6dyvIpBTKpCVmxJtJWNuZ9JGbrcUFbJbNiHtx/7FyAxrw0OJqKFzF2Nxo4VTDzfmk514cZgtiovivj7I9mLixKHiVSjcjNOKDUcHjZJ+Hm2iEnypLze3sR7ibc9iCxLBOz6gjPpnQiME+gUvGYrW6QugQmcPSkplHzuCJSIYB8Uu0e5vrYvejtKPBSrYoAcvG0kHccwvck9FvqEWN87Ih/pyrvfKDq2Z2cvmHNznFl4M2zH+We5NF8rUr6jfRoIU49x6osC5jmHfH3XkBxg1OCia/AZk9RKBUsLKYcMPuLUIQZt8GIDXwRx5a3FyAlBp/+A==
+ bh=1CfIDiG3f2lVvkBVgFK8fZrQMXDhES4e9XzYn8SJWfE=;
+ b=chzj/eTH0qwH7l/m0OUD+LQiFeuPxzZw0bH5V0ZBHUaCxceKxd+llsYtPqMG91kpoKjwGCLZ/zJCItBNCBTOcaf+wmKi518WhkReBj7aSv7Tt40SY77U6rgSTvu48c7WiaznwpNq15DCC838FJywLvlbCBDY5PueTMdsPbUS24kGmRx9CW/Eur5SVT+G3AkFeTFrCUAGgCXa7oNkqTUEgXLSYWH+pdVSdx1MIGCOjbOVSLESswlHJSWTjXlLZuXkk2LeCyjlVSKyKhgmBf3G88608ef3O+5c4ptu3IKc+J2UltFVaEWpWXkZBtZmUklRadchfh432tyz+EIl0+E/9w==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=kococonnector.com; dmarc=pass action=none
  header.from=kococonnector.com; dkim=pass header.d=kococonnector.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=KoCoConnector.onmicrosoft.com; s=selector2-KoCoConnector-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=toZDouw/ofV3eZGQ1rB/FHy1riorfgb0UqXJmUf6LhA=;
- b=kwHFPJh9cpcXN/tj6GqkA4fYohrFt0c70y5mzkmilVxHk296YQqbGiEhqq2BJJrYmpJP21peF53cxvwE8ZSebzoORtDNNdIOP6ZBCzCaQcEIfPb2WaIrRqhYKJqas01k6Em8+jGuGipJvw/lK5LERJr3ypm69JrO6EQHdpbH8QM=
+ bh=1CfIDiG3f2lVvkBVgFK8fZrQMXDhES4e9XzYn8SJWfE=;
+ b=KFowUmOP2UILuTiCA/ZzeQ4rGo16+P6J8vFzrpRuWSu3kr0qvp0tu6yo7CCIT1VRi2uW1uO4xnop7Yk4RGGlZ+7ri6E7pBsiJ5k2RY/aWN099+GhvlJTA0fq6BISf8s04F+5YJbcfJrU1rXPRv27ay2YEaWdRmRs/CHdIiiY4zY=
 Received: from DB6PR0902MB2072.eurprd09.prod.outlook.com (10.170.212.23) by
  DB6PR0902MB1847.eurprd09.prod.outlook.com (10.171.76.139) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.23; Thu, 6 Feb 2020 15:24:09 +0000
+ 15.20.2707.23; Thu, 6 Feb 2020 15:24:11 +0000
 Received: from DB6PR0902MB2072.eurprd09.prod.outlook.com
  ([fe80::406b:dddb:f0d2:7ea7]) by DB6PR0902MB2072.eurprd09.prod.outlook.com
  ([fe80::406b:dddb:f0d2:7ea7%7]) with mapi id 15.20.2686.035; Thu, 6 Feb 2020
- 15:24:09 +0000
+ 15:24:11 +0000
 Received: from localhost (193.47.161.132) by
- GV0P278CA0034.CHEP278.PROD.OUTLOOK.COM (2603:10a6:710:28::21) with Microsoft
+ GV0P278CA0033.CHEP278.PROD.OUTLOOK.COM (2603:10a6:710:28::20) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.21 via Frontend Transport; Thu, 6 Feb 2020 15:24:09 +0000
+ 15.20.2707.21 via Frontend Transport; Thu, 6 Feb 2020 15:24:10 +0000
 From: Oliver Graute <oliver.graute@kococonnector.com>
 To: "aisheng.dong@nxp.com" <aisheng.dong@nxp.com>
-Subject: [PATCH 3/5] arm64: dts: imx8qm: added sata node
-Thread-Topic: [PATCH 3/5] arm64: dts: imx8qm: added sata node
-Thread-Index: AQHV3QF6DWUgMDjwi0S3VULcsUehEQ==
-Date: Thu, 6 Feb 2020 15:24:09 +0000
-Message-ID: <20200206152222.31095-4-oliver.graute@kococonnector.com>
+Subject: [PATCH 4/5] arm64: dts: imx8qm: added pinctrl for pciea
+Thread-Topic: [PATCH 4/5] arm64: dts: imx8qm: added pinctrl for pciea
+Thread-Index: AQHV3QF7o6P+rjW/+0adfVkW6hcFWw==
+Date: Thu, 6 Feb 2020 15:24:11 +0000
+Message-ID: <20200206152222.31095-5-oliver.graute@kococonnector.com>
 References: <20200206152222.31095-1-oliver.graute@kococonnector.com>
 In-Reply-To: <20200206152222.31095-1-oliver.graute@kococonnector.com>
 Accept-Language: de-DE, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: GV0P278CA0034.CHEP278.PROD.OUTLOOK.COM
- (2603:10a6:710:28::21) To DB6PR0902MB2072.eurprd09.prod.outlook.com
+x-clientproxiedby: GV0P278CA0033.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:710:28::20) To DB6PR0902MB2072.eurprd09.prod.outlook.com
  (2603:10a6:6:8::23)
 authentication-results: spf=none (sender IP is )
  smtp.mailfrom=oliver.graute@kococonnector.com; 
@@ -73,14 +73,14 @@ x-ms-exchange-messagesentrepresentingtype: 1
 x-mailer: git-send-email 2.17.1
 x-originating-ip: [193.47.161.132]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e77b47a4-5b1e-4cdf-2d42-08d7ab189cc7
+x-ms-office365-filtering-correlation-id: 6769e0c8-fff8-4aac-1416-08d7ab189dac
 x-ms-traffictypediagnostic: DB6PR0902MB1847:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB6PR0902MB1847D31AAC7E1977ABE743F1EB1D0@DB6PR0902MB1847.eurprd09.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:296;
+x-microsoft-antispam-prvs: <DB6PR0902MB1847D678C139893EE5DE86F9EB1D0@DB6PR0902MB1847.eurprd09.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1051;
 x-forefront-prvs: 0305463112
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(396003)(39830400003)(346002)(376002)(136003)(366004)(199004)(189003)(508600001)(4326008)(64756008)(186003)(5660300002)(2906002)(6486002)(66446008)(6916009)(81166006)(81156014)(44832011)(16526019)(956004)(2616005)(26005)(66556008)(66946007)(66476007)(54906003)(7416002)(6496006)(8676002)(52116002)(86362001)(36756003)(8936002)(71200400001)(1076003)(316002)(32563001);
+ SFS:(10009020)(396003)(39830400003)(346002)(376002)(136003)(366004)(199004)(189003)(508600001)(4326008)(64756008)(186003)(5660300002)(2906002)(6486002)(66446008)(6916009)(81166006)(81156014)(44832011)(16526019)(956004)(2616005)(26005)(66556008)(4744005)(66946007)(66476007)(54906003)(7416002)(6496006)(8676002)(52116002)(86362001)(36756003)(8936002)(71200400001)(1076003)(316002)(32563001);
  DIR:OUT; SFP:1101; SCL:1; SRVR:DB6PR0902MB1847;
  H:DB6PR0902MB2072.eurprd09.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
@@ -88,20 +88,20 @@ received-spf: None (protection.outlook.com: kococonnector.com does not
  designate permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: Np/PsX60n0JhU895OcLcw52xUUYSVtZ17/NUTyRM5MQuxJ2gKgRVZP43fbMNxIJJ/3kSmMpHzm0qPkrqEQ1D81LkTiB6PCbvyJ3HcF+1DSiDuNo7SbBrrYHlajdoNu8gKoKNlqCNr5Mfk/jXNpMyT9JGzKJ7kGQKvUX0qiIYVGL+rn7o0mr5Hg0bai8IRiDAR3ryslDVFK4Prk2JXPqI2TfWb1O2XvlKLmIq/pahTfODluo4W/CehYjsMCSyptH4oCKsD/1LiyCNIcR7NFeGuLt9ZR8MA4QCdV5GWX+zt71UPykiHgS9/xaW5Aiy0yEfxrU8g8hDjz36NYXWEVFGlCoQRTMTSfztWUlT2sUvc+PKoNkMHT8Kg6YL7ZeEx+teuSqx7URF9j217VoPIsE2HfwRD4Yp8wzF2XtPP0IetaFV63wBd7MbYnQqCcJ+2m8X5lB8FOD1HNl4dIyUrsZZyZVrlh/s8PEuO0PXvc+LEB8=
-x-ms-exchange-antispam-messagedata: 7eq2JA12m677xrIHsdXpytwSZtDeUIvgtIeA7FKlVxd6JG14RE82WZdIzQ2IcDLWYDmRkJgnUiHQon93d8tOacxie8E3CtPy79uiNz0/aa7EDX2N329QMqTWmy4h6EnE8TUKVsZuGzzzBxyM2aJhuA==
+x-microsoft-antispam-message-info: keXvlmhOvPYxwID81i8++8LcJkTtb2c+TFv/PJ23meg4lBPrKsFdcw5LPr42nEB+4tVTA/2I6b44L5uFStQB+Oq1xnk7eZEP34b1ebiDhIF/wWLsJ4mmV+qfmxFAQN6+JKSE2Vh1jGdJ4jsborwE9FlHHH/Qq+ZtK4niVPNiw8I54kAm+xLnKtW+HDLNl2vyJjOLdzdMdx/1M9Bs5PZ5yE+AShnim7aneWcdFj3SOJ6lyykkX71jYfxIc6wznPoEDEeP9Y+BDkFDGHhd7nMyyf2MDGSCIvgiq2aEF2ArHVlg4JKgtuPgYTBDe2TFq+dojBK0WYyNMvozA/1zwDKFeeYOvZQX/5k5CnWV+t/oJgp00lSr8s0grWq0XjyQ7yJMPL2mRkbrxD5jxJgFlHyTnAOx/qVeMeVn9zu1VQjqImPcdB5RSPRdlerCg/PzA9i9w95Og7/VjkfrZi6pjtCztTtGyHx9exQCrGogQJcl5KsX5WnCzxkCN2k55ErPDPlf
+x-ms-exchange-antispam-messagedata: F+9qr+rhNflahVW4scQVkIlauYIx9b4VRlaDjgiH0M6Yw46LdHTahQunTR8E5YiIBe1JE07nyoVFG1t+tNFDD1D3lfKlDVRoqpbn2o+1vHpz5sEmG5X0IJ+WA7DPjruLbspaFcxf5EuerYc77YBuEg==
 MIME-Version: 1.0
 X-OriginatorOrg: kococonnector.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e77b47a4-5b1e-4cdf-2d42-08d7ab189cc7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Feb 2020 15:24:09.5207 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6769e0c8-fff8-4aac-1416-08d7ab189dac
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Feb 2020 15:24:11.0428 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 59845429-0644-4099-bd7e-17fba65a2f2b
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: r2od5b4DMLr0ssHOK2tqNSQOH7bA/bNTEvE3YH0YSPsX06Qs/e6wqOXIqvssDzzeRoqcC7jnN3bqVj4jlCNMaS7xStcIbpWS7iypN595iLg=
+X-MS-Exchange-CrossTenant-userprincipalname: mb2m5L85cQRWxwsPpk0ESqmClHFs6PHSEMLNRQeEY/3Ubg+0voHk4noZju5HKCfm9OtuQs/4E8m+iihULHa3jF49j9vTKZgRACDbZsVhQ70=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0902MB1847
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_072416_900806_9AFC2907 
-X-CRM114-Status: UNSURE (   8.28  )
+X-CRM114-CacheID: sfid-20200206_072418_774043_DD05BE17 
+X-CRM114-Status: UNSURE (   7.94  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -144,45 +144,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Oliver Graute <oliver.graute@kococonnector.com>
----
- arch/arm64/boot/dts/freescale/imx8qm.dtsi | 23 +++++++++++++++++++++++
- 1 file changed, 23 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/freescale/imx8qm.dtsi b/arch/arm64/boot/dts/freescale/imx8qm.dtsi
-index fa827ed04e09..5d96be5fec1b 100644
---- a/arch/arm64/boot/dts/freescale/imx8qm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8qm.dtsi
-@@ -140,6 +140,29 @@
- 		method = "smc";
+diff --git a/arch/arm64/boot/dts/freescale/imx8qm-rom7720-a1.dts b/arch/arm64/boot/dts/freescale/imx8qm-rom7720-a1.dts
+index 331eec2dff01..466f8c5c3705 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qm-rom7720-a1.dts
++++ b/arch/arm64/boot/dts/freescale/imx8qm-rom7720-a1.dts
+@@ -174,6 +174,14 @@
+ 		>;
  	};
  
-+	sata: sata@5f020000 {
-+		compatible = "fsl,imx8qm-ahci";
-+		reg = <0x0 0x5f020000 0x0 0x10000>, /* Controller reg */
-+			<0x0 0x5f1a0000 0x0 0x10000>; /* PHY reg */
-+		reg-names = "ctl", "phy";
-+		interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>;
-+/*
-+		clocks = <&clk IMX8QM_HSIO_SATA_CLK>,
-+			 <&clk IMX8QM_HSIO_PHY_X1_PCLK>,
-+			 <&clk IMX8QM_HSIO_SATA_EPCS_TX_CLK>,
-+			 <&clk IMX8QM_HSIO_SATA_EPCS_RX_CLK>,
-+			 <&clk IMX8QM_HSIO_PHY_X2_PCLK_0>,
-+			 <&clk IMX8QM_HSIO_PHY_X2_PCLK_1>,
-+			 <&clk IMX8QM_HSIO_PHY_X1_APB_CLK>;
-+		clock-names = "sata", "sata_ref", "epcs_tx", "epcs_rx",
-+				"phy_pclk0", "phy_pclk1", "phy_apbclk";
-+*/
-+		hsio = <&hsio>;
-+		//power-domains = <&pd_sata0>;
-+		iommus = <&smmu 0x13 0x7f80>;
-+		status = "disabled";
++	pinctrl_pciea: pcieagrp{
++		fsl,pins = <
++			IMX8QM_PCIE_CTRL0_CLKREQ_B_LSIO_GPIO4_IO27	0x06000021
++			IMX8QM_PCIE_CTRL0_WAKE_B_LSIO_GPIO4_IO28	0x04000021
++			IMX8QM_PCIE_CTRL0_PERST_B_LSIO_GPIO4_IO29	0x06000021
++		>;
 +	};
 +
- 	smmu: iommu@51400000 {
- 		compatible = "arm,mmu-500";
- 		interrupt-parent = <&gic>;
+ 	pinctrl_rtc_epson_rx8900: rtc_epson_rx8900_grp {
+ 		fsl,pins = <
+ 			IMX8QM_SIM0_POWER_EN_DMA_I2C3_SDA	0xc600004c
 -- 
 2.17.1
 
