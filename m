@@ -2,120 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C01E1544DC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 14:27:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2920F1544ED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 14:33:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WWs1H28iNAijPoTF3UjXSlVkNGHsLuckl5pWu3s6h9o=; b=p7DgJZDEeQsGxk
-	LYvTcI89SpoQSpgbSqJg3Ci0X3nJCITEVNUIgocNZQjUYQQ0WbiPSP0TYDyygM24VBqpqMhcBRS3u
-	rlludFtiuipnBf4Deoq9LR3O4WDkrZyD/rjdpmzLX9irb7VpUWf2qw+17sJM0uIiyIQ5QGefDpg4N
-	YRPxwmC4SlH30/+gaC9YLSNwfl8FX1vH09EalLXIpWUwgZjFgDZ2mMhnY9xV5P47zZp1ltshvXUsl
-	842J4lXCEGB+qIn4slj/aiRgOcakoYimlSHFobieWXbBmQLwiztFaHc9ZYdCRhGJOHcVGAf3aHLp/
-	+86eo8bjZXeWcdbE0y/Q==;
+	List-Owner; bh=Pmt54+s1EwpUCcbDkFp5lAuFchE1/uJGBUAoCTcHwdc=; b=h+ANqPiS06pHk/
+	eKVZPNigiQoEJchn7q/zbRPb1QzqpRea2CU10xFrf++SjcnGa0mcucLu+UCyVcNUcyOXM4c/a8hkm
+	uIn9vZv7SAJTCKebAPbbk0gOOGHMga4TnBR564BRh+wdtld7+5qojxhlv36VKgQH625jlLFcZiPKn
+	we+3K6UFIZhnzFNH4Rp/58KE8lYuljrPRBkD4HxvKdqVZaz48ogmFmwE4TWAlQsSehPqO1MH3c2ss
+	KRiXVxn07FNHtVByuQMDcjakM8o+owuk+YWL4XMsrAp6biz7A6IZ1d95iL4JZ24oLG4y1wlILdoFg
+	Nw7xT0pWDQtB2cIgShdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izhC8-0003vd-2X; Thu, 06 Feb 2020 13:27:48 +0000
-Received: from mail-db3eur04on060b.outbound.protection.outlook.com
- ([2a01:111:f400:fe0c::60b]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1izhHH-0005gQ-L4; Thu, 06 Feb 2020 13:33:07 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izhC1-0003v6-4y
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 13:27:42 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ifzecEYQn+8J3YGv8Jy5F+B7/4V43ww0HU1fnn5+mlAHVsxQ45bQ7sBV8WBvaZ2/EnV79zHC2UiWIP9tnSVMyR7MNht5swZwf3vTRh7IaXQjKCV/HmtOA6WHEdw4VwDp85knfGXyf5VVuILUWkpJq7O1AGsrtI+sgfwOZSZC3snbj36R9By0hDMQt2MUCbRr6boTIYp2XnLWtF1AEL7BM/TnG5aWJmYsht3BRDU2nWvTabMYAJd5uJCMRIUSAaX1uSQhuim+2KynHEdxzpCcg5CLuDrjdJe/wd96+meHSRDi4gme2BTMIdi8DCx9o2o1Wte4vWnnrPbBb2xTY/84NA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JdUVzgacKsKE++hXfr1TEhut7HVEjJRQ6E91xo0qgOQ=;
- b=MS79au2ZHqrlzVqSADwDPVtzLqvzIYPQd0EExkOqNh0vpZWjmWsWLZSuHUDMlhCM2rRJr47vT/VD52XNb9Gc5f0ZTkJJTD21VMnRpj2E8LkktqrviaFyMB5HKm5AaJqoPqAYr6ac6n00BZRNJO+jzb6MQk0kDQRVxTQ9wRD6xJZhlRUWepRDYVDQmUqiGP3Da25p7pb2WSkyVendL07hdjWDV3iNTjcIbVPE+xYbdRpOq5fNyX8Bq1lxE8IO7HGD6vL/bWAMc69DkaqsQEXDmGYhqw4ZpnljFsqPkzsE3Wd8GWyXVFMkljwJsmpxdHsvdwoEDax5+/MTpJCvn1MrdA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JdUVzgacKsKE++hXfr1TEhut7HVEjJRQ6E91xo0qgOQ=;
- b=bMljqCE0aP9DV7m0JsYfjQwRlPrtfiLMC6qeO7i9gdXjsyo6y08A0AuPoi6GmS4H2+uhfDoFO9tmVU6NWJBzTJLuRSuzhv3hmdRw24d9h4axYQkLc+GHQ/Q479/xbN6w46w1QojIsQ0pk+9BjAQNYf61a5xv4vmIUtzX+h56uIg=
-Received: from DB8PR04MB6747.eurprd04.prod.outlook.com (20.179.250.159) by
- DB8PR04MB7132.eurprd04.prod.outlook.com (52.135.63.80) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.23; Thu, 6 Feb 2020 13:27:35 +0000
-Received: from DB8PR04MB6747.eurprd04.prod.outlook.com
- ([fe80::104b:e88b:b0d3:cdaa]) by DB8PR04MB6747.eurprd04.prod.outlook.com
- ([fe80::104b:e88b:b0d3:cdaa%4]) with mapi id 15.20.2686.035; Thu, 6 Feb 2020
- 13:27:35 +0000
-From: "Z.q. Hou" <zhiqiang.hou@nxp.com>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: RE: [PATCHv9 07/12] PCI: mobiveil: Make mobiveil_host_init() can be
- used to re-init host
-Thread-Topic: [PATCHv9 07/12] PCI: mobiveil: Make mobiveil_host_init() can be
- used to re-init host
-Thread-Index: AQHVn1UI5X66mCiBEUKLNXyo0B8tkKfoyhCAgCRXidA=
-Date: Thu, 6 Feb 2020 13:27:35 +0000
-Message-ID: <DB8PR04MB67474190FF9D4CA48AE5704D841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
-References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
- <20191120034451.30102-8-Zhiqiang.Hou@nxp.com>
- <20200113112655.GM42593@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20200113112655.GM42593@e119886-lin.cambridge.arm.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=zhiqiang.hou@nxp.com; 
-x-originating-ip: [92.121.68.129]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 92ea9e8d-6f67-4a6b-cb24-08d7ab08544b
-x-ms-traffictypediagnostic: DB8PR04MB7132:|DB8PR04MB7132:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB8PR04MB7132E8D1D542555622A14E19841D0@DB8PR04MB7132.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5516;
-x-forefront-prvs: 0305463112
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(346002)(366004)(136003)(39840400004)(189003)(199004)(54906003)(71200400001)(316002)(7696005)(52536014)(76116006)(66946007)(64756008)(66446008)(66476007)(66556008)(7416002)(26005)(186003)(5660300002)(86362001)(55016002)(4326008)(9686003)(33656002)(478600001)(2906002)(8676002)(53546011)(6506007)(8936002)(81156014)(81166006)(6916009);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB8PR04MB7132;
- H:DB8PR04MB6747.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: kb7Jgd5g1ZgKZ6n2gcnnQBLemFsvvceDWIm7XxMfKxrRWvNdpUA0uTEGLw/IVJ6pS+WmALL8j4jPb2z5kSLhS7G21BRyFdzk05aRvMnNuOItl1OzMtZk1YTirnYPACuvPAxbS6qmEtqBaC74TAZfvz0gqgLqVcNHtyyxhxoBt3MqQFrbgEvsMfD2GOPS01/dJWI17nyxTd/VbWIY4uB74iBXUBs3O98r+2+cQovblqUPHZ6ur7pI2lUSUVydxUebe16ZPDwObrAyK1qNs8mYjH39JvK7RbaQh6xRit4J9hbxrnBXHmEik90I+im+Hn2XLWi6kdnkB/x1Pw1M2cuQVZb3QmHo1KXHXxpX2lFm9oa5OiT6x8mhJOi8NDU6x60Jv5OIkuaXWzb5jHrwlV0fdBu+U0BvZ5EoHgfJQ+9OioZPCykBA6LrUeb7k25Vjui8
-x-ms-exchange-antispam-messagedata: BHQ5nyBqUqSzzLB5dkmYEBLK2R2AkCxqASEw32WfNgV2ZPj+gdCCTE0c5K55NdDIsIQnpR7VFmc8TVkKH+91YVqk+hW1/6oMqYePEtGsDLramDnUIJbYz8A/N0kwGhiw3M3tv0/gJhsOma3qVykOaA==
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 92ea9e8d-6f67-4a6b-cb24-08d7ab08544b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Feb 2020 13:27:35.6906 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 8w2uVYHw7N5VA8w2X0EWDAtgMXMOg+8Yw/oQYaM0EiuoFen7wQvA4/35pMJf9jQniXvFZKRL4LrfvWDj7QT8aQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB7132
+ id 1izhHB-0005fa-Cp
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 13:33:02 +0000
+Received: from localhost (unknown [IPv6:2001:982:756:1:57a7:3bfd:5e85:defb])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id A9E3E14CCC9A7;
+ Thu,  6 Feb 2020 05:32:55 -0800 (PST)
+Date: Thu, 06 Feb 2020 14:32:54 +0100 (CET)
+Message-Id: <20200206.143254.1285608674662555598.davem@davemloft.net>
+To: zhengdejin5@gmail.com
+Subject: Re: [PATCH] net: stmmac: fix a possible endless loop
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20200206132147.22874-1-zhengdejin5@gmail.com>
+References: <20200206132147.22874-1-zhengdejin5@gmail.com>
+X-Mailer: Mew version 6.8 on Emacs 26.3
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Thu, 06 Feb 2020 05:32:57 -0800 (PST)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_052741_295740_873EAD22 
-X-CRM114-Status: GOOD (  21.89  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200206_053301_437267_0CF386FB 
+X-CRM114-Status: UNSURE (   7.09  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0c:0:0:0:60b listed in]
- [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 1.0 FORGED_SPF_HELO        No description available.
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,104 +63,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "lorenzo.pieralisi@arm.com" <lorenzo.pieralisi@arm.com>,
- "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org, joabreu@synopsys.com,
+ mcoquelin.stm32@gmail.com, peppe.cavallaro@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQW5kcmV3LA0KDQpUaGFua3MgYSBsb3QgZm9yIHlvdXIgY29tbWVudHMhDQoNCj4gLS0tLS1P
-cmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogQW5kcmV3IE11cnJheSA8YW5kcmV3Lm11cnJh
-eUBhcm0uY29tPg0KPiBTZW50OiAyMDIwxOox1MIxM8jVIDE5OjI3DQo+IFRvOiBaLnEuIEhvdSA8
-emhpcWlhbmcuaG91QG54cC5jb20+DQo+IENjOiBsaW51eC1wY2lAdmdlci5rZXJuZWwub3JnOyBs
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmc7DQo+IGRldmljZXRyZWVAdmdlci5r
-ZXJuZWwub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnOw0KPiBiaGVsZ2Fhc0Bnb29n
-bGUuY29tOyByb2JoK2R0QGtlcm5lbC5vcmc7IGFybmRAYXJuZGIuZGU7DQo+IG1hcmsucnV0bGFu
-ZEBhcm0uY29tOyBsLnN1YnJhaG1hbnlhQG1vYml2ZWlsLmNvLmluOw0KPiBzaGF3bmd1b0BrZXJu
-ZWwub3JnOyBtLmthcnRoaWtleWFuQG1vYml2ZWlsLmNvLmluOyBMZW8gTGkNCj4gPGxlb3lhbmcu
-bGlAbnhwLmNvbT47IGxvcmVuem8ucGllcmFsaXNpQGFybS5jb207DQo+IGNhdGFsaW4ubWFyaW5h
-c0Bhcm0uY29tOyB3aWxsLmRlYWNvbkBhcm0uY29tOyBNaW5na2FpIEh1DQo+IDxtaW5na2FpLmh1
-QG54cC5jb20+OyBNLmguIExpYW4gPG1pbmdodWFuLmxpYW5AbnhwLmNvbT47IFhpYW93ZWkgQmFv
-DQo+IDx4aWFvd2VpLmJhb0BueHAuY29tPg0KPiBTdWJqZWN0OiBSZTogW1BBVENIdjkgMDcvMTJd
-IFBDSTogbW9iaXZlaWw6IE1ha2UgbW9iaXZlaWxfaG9zdF9pbml0KCkgY2FuIGJlDQo+IHVzZWQg
-dG8gcmUtaW5pdCBob3N0DQo+IA0KPiBPbiBXZWQsIE5vdiAyMCwgMjAxOSBhdCAwMzo0NjowM0FN
-ICswMDAwLCBaLnEuIEhvdSB3cm90ZToNCj4gPiBGcm9tOiBIb3UgWmhpcWlhbmcgPFpoaXFpYW5n
-LkhvdUBueHAuY29tPg0KPiA+DQo+ID4gTWFrZSB0aGUgbW9iaXZlaWxfaG9zdF9pbml0KCkgZnVu
-Y3Rpb24gY2FuIGJlIHVzZWQgdG8gcmUtaW5pdA0KPiANCj4gUGVyaGFwcyByZXdvcmQgdG8gIkFs
-bG93IHRoZSBtb2JpdmVpbF9ob3N0X2luaXQoKSBmdW5jdGlvbiB0byBiZSB1c2VkIHRvIC4uLg0K
-PiANCg0KVGhhbmtzIGEgbG90IGZvciB5b3VyIHN1Z2dlc3Rpb24sIHdpbGwgY2hhbmdlIGluIHYx
-MC4NCg0KVGhhbmtzLA0KWmhpcWlhbmcNCg0KPiA+IGhvc3QgY29udHJvbGxlcidzIFBBQiBhbmQg
-R1BFWCBDU1IgcmVnaXN0ZXIgYmxvY2ssIGFzIE5YUCBpbnRlZ3JhdGVkDQo+ID4gTW9iaXZlaWwg
-SVAgaGFzIHRvIHJlc2V0IGFuZCB0aGVuIHJlLWluaXQgdGhlIFBBQiBhbmQgR1BFWCBDU1INCj4g
-PiByZWdpc3RlcnMgdXBvbiBob3QtcmVzZXQuDQo+ID4NCj4gPiBTaWduZWQtb2ZmLWJ5OiBIb3Ug
-WmhpcWlhbmcgPFpoaXFpYW5nLkhvdUBueHAuY29tPg0KPiA+IFJldmlld2VkLWJ5OiBTdWJyYWht
-YW55YSBMaW5nYXBwYSA8bC5zdWJyYWhtYW55YUBtb2JpdmVpbC5jby5pbj4NCj4gPiAtLS0NCj4g
-PiBWOToNCj4gPiAgLSBObyBjaGFuZ2UNCj4gPg0KPiA+ICAuLi4vY29udHJvbGxlci9tb2JpdmVp
-bC9wY2llLW1vYml2ZWlsLWhvc3QuYyAgfCAxOSArKysrKysrKysrKystLS0tLS0tDQo+ID4gIC4u
-Li9wY2kvY29udHJvbGxlci9tb2JpdmVpbC9wY2llLW1vYml2ZWlsLmggICB8ICAxICsNCj4gPiAg
-MiBmaWxlcyBjaGFuZ2VkLCAxMyBpbnNlcnRpb25zKCspLCA3IGRlbGV0aW9ucygtKQ0KPiA+DQo+
-ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvcGNpZS1tb2Jp
-dmVpbC1ob3N0LmMNCj4gPiBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvcGNpZS1t
-b2JpdmVpbC1ob3N0LmMNCj4gPiBpbmRleCAzY2Q5M2RmNmZlNmUuLjliYzNkYTAzNjcyMCAxMDA2
-NDQNCj4gPiAtLS0gYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL21vYml2ZWlsL3BjaWUtbW9iaXZl
-aWwtaG9zdC5jDQo+ID4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9tb2JpdmVpbC9wY2ll
-LW1vYml2ZWlsLWhvc3QuYw0KPiA+IEBAIC0yMjEsMTggKzIyMSwyMyBAQCBzdGF0aWMgdm9pZCBt
-b2JpdmVpbF9wY2llX2VuYWJsZV9tc2koc3RydWN0DQo+IG1vYml2ZWlsX3BjaWUgKnBjaWUpDQo+
-ID4gIAl3cml0ZWxfcmVsYXhlZCgxLCBwY2llLT5hcGJfY3NyX2Jhc2UgKyBNU0lfRU5BQkxFX09G
-RlNFVCk7ICB9DQo+ID4NCj4gPiAtc3RhdGljIGludCBtb2JpdmVpbF9ob3N0X2luaXQoc3RydWN0
-IG1vYml2ZWlsX3BjaWUgKnBjaWUpDQo+ID4gK2ludCBtb2JpdmVpbF9ob3N0X2luaXQoc3RydWN0
-IG1vYml2ZWlsX3BjaWUgKnBjaWUsIGJvb2wgcmVpbml0KQ0KPiA+ICB7DQo+ID4gIAlzdHJ1Y3Qg
-cm9vdF9wb3J0ICpycCA9ICZwY2llLT5ycDsNCj4gPiAgCXN0cnVjdCBwY2lfaG9zdF9icmlkZ2Ug
-KmJyaWRnZSA9IHJwLT5icmlkZ2U7DQo+ID4gIAl1MzIgdmFsdWUsIHBhYl9jdHJsLCB0eXBlOw0K
-PiA+ICAJc3RydWN0IHJlc291cmNlX2VudHJ5ICp3aW47DQo+ID4NCj4gPiAtCS8qIHNldHVwIGJ1
-cyBudW1iZXJzICovDQo+ID4gLQl2YWx1ZSA9IG1vYml2ZWlsX2Nzcl9yZWFkbChwY2llLCBQQ0lf
-UFJJTUFSWV9CVVMpOw0KPiA+IC0JdmFsdWUgJj0gMHhmZjAwMDAwMDsNCj4gPiAtCXZhbHVlIHw9
-IDB4MDBmZjAxMDA7DQo+ID4gLQltb2JpdmVpbF9jc3Jfd3JpdGVsKHBjaWUsIHZhbHVlLCBQQ0lf
-UFJJTUFSWV9CVVMpOw0KPiA+ICsJcGNpZS0+aWJfd2luc19jb25maWd1cmVkID0gMDsNCj4gPiAr
-CXBjaWUtPm9iX3dpbnNfY29uZmlndXJlZCA9IDA7DQo+IA0KPiBUaGlzIHdvcmtzIHNvIGxvbmcg
-YXMgdGhlIG51bWJlciBvZiBicmlkZ2UtPndpbmRvd3MgbmV2ZXIgcmVkdWNlcy4gSSB0aGluaw0K
-PiB0aGlzIGFzc3VtcHRpb24gaG9sZHMgdHJ1ZS4NCj4gDQo+IFRoYW5rcywNCj4gDQo+IEFuZHJl
-dyBNdXJyYXkNCj4gDQo+ID4gKw0KPiA+ICsJaWYgKCFyZWluaXQpIHsNCj4gPiArCQkvKiBzZXR1
-cCBidXMgbnVtYmVycyAqLw0KPiA+ICsJCXZhbHVlID0gbW9iaXZlaWxfY3NyX3JlYWRsKHBjaWUs
-IFBDSV9QUklNQVJZX0JVUyk7DQo+ID4gKwkJdmFsdWUgJj0gMHhmZjAwMDAwMDsNCj4gPiArCQl2
-YWx1ZSB8PSAweDAwZmYwMTAwOw0KPiA+ICsJCW1vYml2ZWlsX2Nzcl93cml0ZWwocGNpZSwgdmFs
-dWUsIFBDSV9QUklNQVJZX0JVUyk7DQo+ID4gKwl9DQo+ID4NCj4gPiAgCS8qDQo+ID4gIAkgKiBw
-cm9ncmFtIEJ1cyBNYXN0ZXIgRW5hYmxlIEJpdCBpbiBDb21tYW5kIFJlZ2lzdGVyIGluIFBBQiBD
-b25maWcNCj4gPiBAQCAtNTY5LDcgKzU3NCw3IEBAIGludCBtb2JpdmVpbF9wY2llX2hvc3RfcHJv
-YmUoc3RydWN0IG1vYml2ZWlsX3BjaWUNCj4gKnBjaWUpDQo+ID4gIAkgKiBjb25maWd1cmUgYWxs
-IGluYm91bmQgYW5kIG91dGJvdW5kIHdpbmRvd3MgYW5kIHByZXBhcmUgdGhlIFJDIGZvcg0KPiA+
-ICAJICogY29uZmlnIGFjY2Vzcw0KPiA+ICAJICovDQo+ID4gLQlyZXQgPSBtb2JpdmVpbF9ob3N0
-X2luaXQocGNpZSk7DQo+ID4gKwlyZXQgPSBtb2JpdmVpbF9ob3N0X2luaXQocGNpZSwgZmFsc2Up
-Ow0KPiA+ICAJaWYgKHJldCkgew0KPiA+ICAJCWRldl9lcnIoZGV2LCAiRmFpbGVkIHRvIGluaXRp
-YWxpemUgaG9zdFxuIik7DQo+ID4gIAkJcmV0dXJuIHJldDsNCj4gPiBkaWZmIC0tZ2l0IGEvZHJp
-dmVycy9wY2kvY29udHJvbGxlci9tb2JpdmVpbC9wY2llLW1vYml2ZWlsLmgNCj4gPiBiL2RyaXZl
-cnMvcGNpL2NvbnRyb2xsZXIvbW9iaXZlaWwvcGNpZS1tb2JpdmVpbC5oDQo+ID4gaW5kZXggOTVk
-MmU3YzgwOWI4Li4zNzExNmMyYTE5ZmUgMTAwNjQ0DQo+ID4gLS0tIGEvZHJpdmVycy9wY2kvY29u
-dHJvbGxlci9tb2JpdmVpbC9wY2llLW1vYml2ZWlsLmgNCj4gPiArKysgYi9kcml2ZXJzL3BjaS9j
-b250cm9sbGVyL21vYml2ZWlsL3BjaWUtbW9iaXZlaWwuaA0KPiA+IEBAIC0xNjYsNiArMTY2LDcg
-QEAgc3RydWN0IG1vYml2ZWlsX3BjaWUgeyAgfTsNCj4gPg0KPiA+ICBpbnQgbW9iaXZlaWxfcGNp
-ZV9ob3N0X3Byb2JlKHN0cnVjdCBtb2JpdmVpbF9wY2llICpwY2llKTsNCj4gPiAraW50IG1vYml2
-ZWlsX2hvc3RfaW5pdChzdHJ1Y3QgbW9iaXZlaWxfcGNpZSAqcGNpZSwgYm9vbCByZWluaXQpOw0K
-PiA+ICBib29sIG1vYml2ZWlsX3BjaWVfbGlua191cChzdHJ1Y3QgbW9iaXZlaWxfcGNpZSAqcGNp
-ZSk7ICBpbnQNCj4gPiBtb2JpdmVpbF9icmluZ3VwX2xpbmsoc3RydWN0IG1vYml2ZWlsX3BjaWUg
-KnBjaWUpOyAgdm9pZA0KPiA+IHByb2dyYW1fb2Jfd2luZG93cyhzdHJ1Y3QgbW9iaXZlaWxfcGNp
-ZSAqcGNpZSwgaW50IHdpbl9udW0sIHU2NA0KPiA+IGNwdV9hZGRyLA0KPiA+IC0tDQo+ID4gMi4x
-Ny4xDQo+ID4NCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+From: Dejin Zheng <zhengdejin5@gmail.com>
+Date: Thu,  6 Feb 2020 21:21:47 +0800
+
+> It forgot to reduce the value of the variable retry in a while loop
+> in the ethqos_configure() function. It may cause an endless loop and
+> without timeout.
+> 
+> Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
+
+Please resubmit this with an appropriate Fixes: tag.
+
+Thank you.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
