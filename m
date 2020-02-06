@@ -2,141 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E249A1541DC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 11:28:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C796C1541F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 11:34:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q/HWKuDXCWfh1ind2hdYYKTpV7enEUcqbkO6vMqEL9E=; b=rEcB9VZSSmX7F/
-	tGwgvwQTFgRTRfvDGNaGfSWbTH+QtDH/v+0B9yW/gBSIUXDNbyB4/IiJRmPrARnGvmprY1mupHmku
-	qWbUGQ5n6dylvKEA78SYsR8a+IhwOra2kQpYO/yiTN4GYeiMQDgv+B39xMPiD1lZizdj6+mD6bHL1
-	hss4kJ4rC3RaD/L9pLf41eRWEY/CDjwFJLPDxQJNIedjesBGLxmBkUNUPG5Q/bQx55KoLSjq1NXJ8
-	M2aPiya/CQ6xN+wftb6BzjIhUFfcNt2O2erQocESJs2NDhXRvfBaWZ+XMHCvk77uJbrqvDI/S5PJ3
-	Fszg6EcUtgT/aI7Wv+lA==;
+	List-Owner; bh=egaMhlFrsyjJ7ilb5O9cPDywVm+V/6ETzoKaprp7xJk=; b=n0Qo0JuZ3698sa
+	vdzY8bAyakS6ef+TW0uRV/OmrQOUGQj3nTyFmgPzjtWzl7OvJ27mMbJrilLlzuEeENwJW/MIHp/5k
+	NrpxiBjTqHGgJEhvNt4EXpK2jnDjmKIDA/Hn83T6QWq5irhPWlrR0scxYC9vLtUQg3oYk8KSONqZA
+	wZus1rt3MWZxkWvGYkwJHQriM+jFxyT4gzr+s3AnWisgqYC4GnZmfE0PkECuRfzVfSeoiA5Nbti+V
+	dc426X68WvtPPEzpr39RWiEqPCEDnWKuHtFjr0EAvvfFnHb/nQ0l2+rWfT2VRCljDU3IZIhZK8xrA
+	LBNdtBjC+p+acxsMRhtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izeOg-0003Yv-5S; Thu, 06 Feb 2020 10:28:34 +0000
-Received: from esa6.hgst.iphmx.com ([216.71.154.45])
+	id 1izeUb-0005RU-Uq; Thu, 06 Feb 2020 10:34:42 +0000
+Received: from skedge04.snt-world.com ([91.208.41.69])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izeOY-0003Y5-RO; Thu, 06 Feb 2020 10:28:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1580984907; x=1612520907;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=LdIuBX3bmzBk9/z8s0qeMzcqULk+dvpbU83IlnfaRDU=;
- b=nVHz4k0dnsnG47Ecy5ZeuPxC7ChMc1eWY4dX26bU/Gjy1C6lLsrAYM3e
- lFBfrBx/3BF1pU3UnXZF8ERZtkEoGZYaEFsWR0OUXvdP40rphGO43ZmiE
- 8uWikBPFY1Ye+D/WkqWrYSckGb03lNwLZgmx8+ZSfnuG5Gp2+P7VSdJ8K
- YS23ssXZIOBdWWrSCGolL120v/QJVC9WjrOp/D/t02IKrcr+SSDzM69+5
- lae7TpLleA+Fatc1OuNkkEsijwW1a+xAxC8/H3sKKhEnIBWVWSglxQeHk
- bO1XueRwPmK4OLgrYpwMNFIg8sPVX2mdTTaC6j7g5973+B/g3BbMGuI5O Q==;
-IronPort-SDR: 1jQsCQ7TK29pfkz+IiaN+dQoS7phshHxiIFr2xGzcBibu/bJjBDTBhtfZKXik9rdzlexmYpUe6
- XBAgo4eqywVfHu68yas8dIt7K3/jUGvvYvWiRTl8sIeNDybEfMI3UdWRPIpEIrd9KC2ud/b5PR
- uTpqqPjG/6gUbtvoaVzVpcs1NrwwJHMuw3VUvpXdzHz5PgCq82cZOEAmPMj+MP0Kij5IKY9tRI
- xeuoee1+PQd5hrDHhyC3JBgfmf+o2i9ncEDmHiReWcOmL83CPqidAqLt+9NOPk4GYEiptXkolz
- AHc=
-X-IronPort-AV: E=Sophos;i="5.70,409,1574092800"; d="scan'208";a="130698644"
-Received: from mail-co1nam11lp2172.outbound.protection.outlook.com (HELO
- NAM11-CO1-obe.outbound.protection.outlook.com) ([104.47.56.172])
- by ob1.hgst.iphmx.com with ESMTP; 06 Feb 2020 18:28:18 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=K/eXQgE5y6VE/2euBN6kdU2NR6lHJYWdVGIXT9JmTITl2nJI+ZvFA/C23TCH+WWifc7TczR/KpY1q7JI6YK8bkXliyFoGPOAvPswpD3C8FsxEbBP/mgRedY12PXxa4U+1N0MtOv9dowkTi84tNuIOo87eg5946crTuhlfD5E8W+papkh63dsna+69WssmeJl/QQVvHsMZ3rBO2jgy9Fcuwu/1Eo244hpmURVqQzD4KChBvtMInBcdIbdB8spQ38U5X3SA1ZRxjxQ1wQWIAyzr96LZFVAdP/gbBexWSmF6vwWxBxVTo2oL4UdvPcHWdg+jxjHlrsI06iSHCui6yjfaA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HKzvHv811XCtxlWXoPud/utuXzyrON4LErgIUU2/2O8=;
- b=aDaeLi0arV6cTYA+ZOSNX0SFQQIIvOR44nkf8aJWnXT9YOnbp6sFq/cjBHmHJtCgidI4xoTPlDEyAcR/Bd00/mb4h9Nxul67gSBBvvev/9z6efy5gObZiKdrgyzPFIHWLNKT79hSAqtblc40zvtWmXLY4gPu27Y5cuuDpE1B92pr9dqs4CywOPToxiPuX6EZ3eo+WIYP/OLXRy/NjKKkUm4PIWM2ZehjN9bltIlkgGfCC9x5G/lZ7C4+vQj+0TsB5ei2ZOB9pWYBrfrPeBKpyVmDAksmJTCQ7EacpArHcb+3e9g93ScE53Bkf+LUk1P8hxi2bilVfgUe2Bz5KqzXGg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HKzvHv811XCtxlWXoPud/utuXzyrON4LErgIUU2/2O8=;
- b=SVX6gkDDPuTMo4BV5v3qJRGen64nG7FiTRtpeDrcLjb0QGvvF/yIl7SQukJaVMQTBKgYft4f/qe+FNZLjRb7pb3j5ZQvTPB8aU4lBuwJWwOhuwq4L+cCho9zkaAjpnRwBAVtxLsSX2R0ktNBibAZM/uAejheLwZKYDvYDL5/7TQ=
-Received: from MN2PR04MB6991.namprd04.prod.outlook.com (10.186.144.209) by
- MN2PR04MB6254.namprd04.prod.outlook.com (20.178.246.159) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.23; Thu, 6 Feb 2020 10:28:16 +0000
-Received: from MN2PR04MB6991.namprd04.prod.outlook.com
- ([fe80::3885:5fac:44af:5de7]) by MN2PR04MB6991.namprd04.prod.outlook.com
- ([fe80::3885:5fac:44af:5de7%7]) with mapi id 15.20.2707.020; Thu, 6 Feb 2020
- 10:28:16 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Can Guo <cang@codeaurora.org>, "asutoshd@codeaurora.org"
- <asutoshd@codeaurora.org>, "nguyenb@codeaurora.org" <nguyenb@codeaurora.org>, 
- "hongwus@codeaurora.org" <hongwus@codeaurora.org>, "rnayak@codeaurora.org"
- <rnayak@codeaurora.org>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "kernel-team@android.com"
- <kernel-team@android.com>, "saravanak@google.com" <saravanak@google.com>,
- "salyzyn@google.com" <salyzyn@google.com>
-Subject: RE: [PATCH v7 5/8] scsi: ufs: Fix ufshcd_hold() caused scheduling
- while atomic
-Thread-Topic: [PATCH v7 5/8] scsi: ufs: Fix ufshcd_hold() caused scheduling
- while atomic
-Thread-Index: AQHV3Mg4iYpOiwL+2EGQ9TyFrLdqL6gN6BAQ
-Date: Thu, 6 Feb 2020 10:28:16 +0000
-Message-ID: <MN2PR04MB6991346267CD619E823501F0FC1D0@MN2PR04MB6991.namprd04.prod.outlook.com>
-References: <1580978008-9327-1-git-send-email-cang@codeaurora.org>
- <1580978008-9327-6-git-send-email-cang@codeaurora.org>
-In-Reply-To: <1580978008-9327-6-git-send-email-cang@codeaurora.org>
-Accept-Language: en-US
+ id 1izeUS-0005R1-Fl
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 10:34:34 +0000
+Received: from sntmail10s.snt-is.com (unknown [10.203.32.183])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge04.snt-world.com (Postfix) with ESMTPS id 4283967A7D8;
+ Thu,  6 Feb 2020 11:34:24 +0100 (CET)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail10s.snt-is.com
+ (10.203.32.183) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Thu, 6 Feb 2020
+ 11:34:23 +0100
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1913.005; Thu, 6 Feb 2020 11:34:23 +0100
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Abel Vesa <abel.vesa@nxp.com>, Mike Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>, "Sascha
+ Hauer" <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>, "Anson
+ Huang" <anson.huang@nxp.com>, Jacky Bai <ping.bai@nxp.com>
+Subject: Re: [PATCH v2] clk: imx8mm: Switch to platform driver
+Thread-Topic: [PATCH v2] clk: imx8mm: Switch to platform driver
+Thread-Index: AQHV3Nj/eAC8KOmHpke/9mSCMhEqHQ==
+Date: Thu, 6 Feb 2020 10:34:23 +0000
+Message-ID: <2df024c3-ab46-4e33-f961-5ef994aea145@kontron.de>
+References: <1562682003-20951-1-git-send-email-abel.vesa@nxp.com>
+In-Reply-To: <1562682003-20951-1-git-send-email-abel.vesa@nxp.com>
+Accept-Language: de-DE, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Avri.Altman@wdc.com; 
-x-originating-ip: [212.25.79.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 05ffbbcd-162f-447a-9b48-08d7aaef4755
-x-ms-traffictypediagnostic: MN2PR04MB6254:
-x-microsoft-antispam-prvs: <MN2PR04MB6254576AFD5B21D7D59937C3FC1D0@MN2PR04MB6254.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0305463112
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(366004)(376002)(346002)(39860400002)(396003)(136003)(189003)(199004)(8676002)(9686003)(86362001)(7696005)(6506007)(54906003)(110136005)(7416002)(316002)(33656002)(71200400001)(8936002)(81166006)(81156014)(4326008)(52536014)(66446008)(186003)(5660300002)(64756008)(55016002)(2906002)(26005)(76116006)(66556008)(66476007)(66946007)(478600001);
- DIR:OUT; SFP:1102; SCL:1; SRVR:MN2PR04MB6254;
- H:MN2PR04MB6991.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: HQL+DtLawSWU+Ji9b+Huwf9q2PxFN1YSC15Lir0JRQd+orxTw5jgiEBnIPc6GRjkxHnhKt6DKHyrb1cy2IDTqygASiZ/lD2k0v/6Ob7yfESBNb1DVW9sdgGP5mYYuRduUQTXNEsq2syADNuyLMRa5dUz+dmxb4fKmTOFhZp6JeounEuF7ndKfno8IV/Hk2m1v4vbIr0Qe5KSRhkgjCISVkWi1mqDWTHH6ESbQy/w3A1GFJZgDdBxnSFY4zlFvAW2dv0UTRkBG0ZTxP3vJGSyJ8lZrdpCi7CXaPbDKbHjzrxqD4CowD7f3aPJH1UkGmb7+nh4ZVt5myoOjY8OsRV5CNru6AwbyoEqGhhXyU3SUMO90Sh3Nj0n9ObGyoVesQkuzvCIlQBY0mN7fuZcvYR6iAK3rPTCSl7HuZ1O0rrY+xe9grurnf0AWnEA3H1kWek2
-x-ms-exchange-antispam-messagedata: pRsWDFCheIllfx10czG0RazCBMIUaHJBXwlwSUyp+49wkKIm8pbqQDb2MSiw7mjLXx1341RT3Wkf84fLKXsjWkkWzSPDQB7l51W+OA46deFA/kjuQZBuASkCEmTu097nVwJf3zaD2PQZFV0y5ZllSQ==
-x-ms-exchange-transport-forked: True
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <76976B4AC74DF04DBC03208EA1B541AE@snt-world.com>
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 05ffbbcd-162f-447a-9b48-08d7aaef4755
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Feb 2020 10:28:16.5389 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Hj6DNQf7K2tErGHDyMV+esWRg3zBxw17QJlpbJ1UGJkubYkJbsAm0n1d7zlNRG7y+ar3SfYuhjXW8Y9ZWcKVhg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR04MB6254
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: 4283967A7D8.A1437
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: abel.vesa@nxp.com, anson.huang@nxp.com,
+ fabio.estevam@nxp.com, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-imx@nxp.com, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, mturquette@baylibre.com, peng.fan@nxp.com,
+ ping.bai@nxp.com, sboyd@kernel.org, shawnguo@kernel.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_022826_933956_EDE20D20 
-X-CRM114-Status: GOOD (  19.62  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200206_023432_845092_F328F61A 
+X-CRM114-Status: GOOD (  22.62  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.45 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.208.41.69 listed in list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -148,18 +91,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bart Van Assche <bvanassche@acm.org>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
- Venkat Gopalakrishnan <venkatg@codeaurora.org>,
- "James E.J. Bottomley" <jejb@linux.ibm.com>,
- open list <linux-kernel@vger.kernel.org>, "moderated list:ARM/Mediatek SoC
- support" <linux-mediatek@lists.infradead.org>,
- Alim Akhtar <alim.akhtar@samsung.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Tomas Winkler <tomas.winkler@intel.com>,
- Stanley Chu <stanley.chu@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>, Bean Huo <beanhuo@micron.com>
+Cc: Peng Fan <peng.fan@nxp.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -167,52 +104,183 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi,
 
+On 09.07.19 16:20, Abel Vesa wrote:
+> There is no strong reason for this to use CLK_OF_DECLARE instead
+> of being a platform driver. Plus, this will now be aligned with the
+> other i.MX8M clock drivers which are platform drivers.
 > 
-> The async version of ufshcd_hold(async == true), which is only called
-> in queuecommand path as for now, is expected to work in atomic context,
-> thus it should not sleep or schedule out. When it runs into the condition
-> that clocks are ON but link is still in hibern8 state, it should bail out
-> without flushing the clock ungate work.
+> In order to make the clock provider a platform driver
+> all the data and code needs to be outside of .init section.
+> 
+> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+> Acked-by: Stephen Boyd <sboyd@kernel.org>
 
-Fixes: f2a785ac2312 (scsi: ufshcd: Fix race between clk scaling and ungate work)
-> 
-> Signed-off-by: Can Guo <cang@codeaurora.org>
-> Reviewed-by: Hongwu Su <hongwus@codeaurora.org>
-> Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-> Reviewed-by: Bean Huo <beanhuo@micron.com>
-> Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
->  drivers/scsi/ufs/ufshcd.c | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> index bbc2607..e8f7f9d 100644
-> --- a/drivers/scsi/ufs/ufshcd.c
-> +++ b/drivers/scsi/ufs/ufshcd.c
-> @@ -1518,6 +1518,11 @@ int ufshcd_hold(struct ufs_hba *hba, bool async)
->                  */
->                 if (ufshcd_can_hibern8_during_gating(hba) &&
->                     ufshcd_is_link_hibern8(hba)) {
-> +                       if (async) {
-> +                               rc = -EAGAIN;
-> +                               hba->clk_gating.active_reqs--;
-> +                               break;
-> +                       }
->                         spin_unlock_irqrestore(hba->host->host_lock, flags);
->                         flush_work(&hba->clk_gating.ungate_work);
->                         spin_lock_irqsave(hba->host->host_lock, flags);
-Since now the above code is shared in all cases,
-Maybe find a more economical way to pack it?
+This has been upstream for quite some time now, but somehow I have an 
+issue with SPI on the i.MX8MM that gets resolved when I revert this patch.
+
+When I try to probe an SPI NOR flash with latest 5.4 or even 5.5:
+
+	spi_imx 30820000.spi: dma setup error -19, use pio
+	spi-nor spi0.0: unrecognized JEDEC id bytes: 00 00 00 00 00 00
+	spi_imx 30820000.spi: probed
+
+When I revert this patch:
+
+	spi_imx 30820000.spi: dma setup error -19, use pio
+	spi-nor spi0.0: mx25r1635f (2048 Kbytes)
+	spi_imx 30820000.spi: probed
+
+Please note, that in both cases I have disabled DMA, as this causes even 
+more trouble (see [1]). But even with DMA enabled and ignoring the DMA 
+errors, the issue described above occurs.
+
+Does someone have an idea what's wrong?
+Am I the only user of SPI on i.MX8MM as this issue seems to exist 
+upstream since v5.4-rc1?
 
 Thanks,
-Avri
+Frieder
 
-
-> --
-> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora
-> Forum,
-> a Linux Foundation Collaborative Project
-
+> ---
+> 
+> Changes since v1:
+>   * Switched to platform driver memory mapping API
+>   * Removed extra newline
+>   * Added an explanation of why this change is done
+>     in the commit message
+> 
+>   drivers/clk/imx/clk-imx8mm.c | 57 ++++++++++++++++++++++++++++----------------
+>   1 file changed, 36 insertions(+), 21 deletions(-)
+> 
+> diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+> index 6b8e75d..7a8e713 100644
+> --- a/drivers/clk/imx/clk-imx8mm.c
+> +++ b/drivers/clk/imx/clk-imx8mm.c
+> @@ -68,43 +68,43 @@ static const struct imx_pll14xx_rate_table imx8mm_drampll_tbl[] = {
+>   	PLL_1443X_RATE(650000000U, 325, 3, 2, 0),
+>   };
+>   
+> -static struct imx_pll14xx_clk imx8mm_audio_pll __initdata = {
+> +static struct imx_pll14xx_clk imx8mm_audio_pll = {
+>   		.type = PLL_1443X,
+>   		.rate_table = imx8mm_audiopll_tbl,
+>   		.rate_count = ARRAY_SIZE(imx8mm_audiopll_tbl),
+>   };
+>   
+> -static struct imx_pll14xx_clk imx8mm_video_pll __initdata = {
+> +static struct imx_pll14xx_clk imx8mm_video_pll = {
+>   		.type = PLL_1443X,
+>   		.rate_table = imx8mm_videopll_tbl,
+>   		.rate_count = ARRAY_SIZE(imx8mm_videopll_tbl),
+>   };
+>   
+> -static struct imx_pll14xx_clk imx8mm_dram_pll __initdata = {
+> +static struct imx_pll14xx_clk imx8mm_dram_pll = {
+>   		.type = PLL_1443X,
+>   		.rate_table = imx8mm_drampll_tbl,
+>   		.rate_count = ARRAY_SIZE(imx8mm_drampll_tbl),
+>   };
+>   
+> -static struct imx_pll14xx_clk imx8mm_arm_pll __initdata = {
+> +static struct imx_pll14xx_clk imx8mm_arm_pll = {
+>   		.type = PLL_1416X,
+>   		.rate_table = imx8mm_pll1416x_tbl,
+>   		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
+>   };
+>   
+> -static struct imx_pll14xx_clk imx8mm_gpu_pll __initdata = {
+> +static struct imx_pll14xx_clk imx8mm_gpu_pll = {
+>   		.type = PLL_1416X,
+>   		.rate_table = imx8mm_pll1416x_tbl,
+>   		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
+>   };
+>   
+> -static struct imx_pll14xx_clk imx8mm_vpu_pll __initdata = {
+> +static struct imx_pll14xx_clk imx8mm_vpu_pll = {
+>   		.type = PLL_1416X,
+>   		.rate_table = imx8mm_pll1416x_tbl,
+>   		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
+>   };
+>   
+> -static struct imx_pll14xx_clk imx8mm_sys_pll __initdata = {
+> +static struct imx_pll14xx_clk imx8mm_sys_pll = {
+>   		.type = PLL_1416X,
+>   		.rate_table = imx8mm_pll1416x_tbl,
+>   		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
+> @@ -374,7 +374,7 @@ static const char *imx8mm_clko1_sels[] = {"osc_24m", "sys_pll1_800m", "osc_27m",
+>   static struct clk *clks[IMX8MM_CLK_END];
+>   static struct clk_onecell_data clk_data;
+>   
+> -static struct clk ** const uart_clks[] __initconst = {
+> +static struct clk ** const uart_clks[] = {
+>   	&clks[IMX8MM_CLK_UART1_ROOT],
+>   	&clks[IMX8MM_CLK_UART2_ROOT],
+>   	&clks[IMX8MM_CLK_UART3_ROOT],
+> @@ -382,19 +382,20 @@ static struct clk ** const uart_clks[] __initconst = {
+>   	NULL
+>   };
+>   
+> -static int __init imx8mm_clocks_init(struct device_node *ccm_node)
+> +static int imx8mm_clocks_probe(struct platform_device *pdev)
+>   {
+> -	struct device_node *np;
+> +	struct device *dev = &pdev->dev;
+> +	struct device_node *np = dev->of_node;
+>   	void __iomem *base;
+>   	int ret;
+>   
+>   	clks[IMX8MM_CLK_DUMMY] = imx_clk_fixed("dummy", 0);
+> -	clks[IMX8MM_CLK_24M] = of_clk_get_by_name(ccm_node, "osc_24m");
+> -	clks[IMX8MM_CLK_32K] = of_clk_get_by_name(ccm_node, "osc_32k");
+> -	clks[IMX8MM_CLK_EXT1] = of_clk_get_by_name(ccm_node, "clk_ext1");
+> -	clks[IMX8MM_CLK_EXT2] = of_clk_get_by_name(ccm_node, "clk_ext2");
+> -	clks[IMX8MM_CLK_EXT3] = of_clk_get_by_name(ccm_node, "clk_ext3");
+> -	clks[IMX8MM_CLK_EXT4] = of_clk_get_by_name(ccm_node, "clk_ext4");
+> +	clks[IMX8MM_CLK_24M] = of_clk_get_by_name(np, "osc_24m");
+> +	clks[IMX8MM_CLK_32K] = of_clk_get_by_name(np, "osc_32k");
+> +	clks[IMX8MM_CLK_EXT1] = of_clk_get_by_name(np, "clk_ext1");
+> +	clks[IMX8MM_CLK_EXT2] = of_clk_get_by_name(np, "clk_ext2");
+> +	clks[IMX8MM_CLK_EXT3] = of_clk_get_by_name(np, "clk_ext3");
+> +	clks[IMX8MM_CLK_EXT4] = of_clk_get_by_name(np, "clk_ext4");
+>   
+>   	np = of_find_compatible_node(NULL, NULL, "fsl,imx8mm-anatop");
+>   	base = of_iomap(np, 0);
+> @@ -480,10 +481,10 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
+>   	clks[IMX8MM_SYS_PLL2_500M] = imx_clk_fixed_factor("sys_pll2_500m", "sys_pll2_out", 1, 2);
+>   	clks[IMX8MM_SYS_PLL2_1000M] = imx_clk_fixed_factor("sys_pll2_1000m", "sys_pll2_out", 1, 1);
+>   
+> -	np = ccm_node;
+> -	base = of_iomap(np, 0);
+> -	if (WARN_ON(!base))
+> -		return -ENOMEM;
+> +	np = dev->of_node;
+> +	base = devm_platform_ioremap_resource(pdev, 0);
+> +	if (WARN_ON(IS_ERR(base)))
+> +		return PTR_ERR(base);
+>   
+>   	/* Core Slice */
+>   	clks[IMX8MM_CLK_A53_SRC] = imx_clk_mux2("arm_a53_src", base + 0x8000, 24, 3, imx8mm_a53_sels, ARRAY_SIZE(imx8mm_a53_sels));
+> @@ -682,4 +683,18 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
+>   
+>   	return 0;
+>   }
+> -CLK_OF_DECLARE_DRIVER(imx8mm, "fsl,imx8mm-ccm", imx8mm_clocks_init);
+> +
+> +static const struct of_device_id imx8mm_clk_of_match[] = {
+> +	{ .compatible = "fsl,imx8mm-ccm" },
+> +	{ /* Sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, imx8mm_clk_of_match);
+> +
+> +static struct platform_driver imx8mm_clk_driver = {
+> +	.probe = imx8mm_clocks_probe,
+> +	.driver = {
+> +		.name = "imx8mm-ccm",
+> +		.of_match_table = of_match_ptr(imx8mm_clk_of_match),
+> +	},
+> +};
+> +module_platform_driver(imx8mm_clk_driver);
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
