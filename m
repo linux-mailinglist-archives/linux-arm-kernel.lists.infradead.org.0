@@ -2,87 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 243E31541F9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 11:38:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1544154201
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 11:39:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GvxdXOYr0X7kEVjjDz7LXrGjfC+QPCCp2lOtCLBzacc=; b=QYRxI7nR6iDTfL
-	jcXSpleh8T8dTawhj8yItl/iAEpZXsDxuRcd0CU8bvuCts+dvtK5OU8NREbNYlehIEeh2P+s8nJyF
-	HB77ok7MrmxLuL19Phzk9sXjEL3EQas6WHRzdYvRzoLvJyx8Ch/0PX0VB75pBx4Ky1uC3TTksesRm
-	6cQEHL8ViDE2b0edFEXNfoRB7eM/DfXSG6xrxv+dRdiz21c2DFnMqDSrYdK6OEF3UXPrq+kvRj5Od
-	mOH71AKrdiA6IeYNKfegkXR2TLm+6MuRhEMkewpUJqc2YZRCKDS8MmZRRH8MsZ9SaRPXMzg0RO0XU
-	78SLqnRtK583YUNN71fw==;
+	List-Owner; bh=WCs3ea4psnU6S0LvY/HsmHdHyQfSun8I3jEUnxtJ464=; b=cw6pJCu7SMH1TE
+	nfSav5mmSqUQXVEDv6e/NsZshvRnvVS8ADuRYJ7fSV2eP0myPnnmARgTIoLLPPUg8V7NTaOuYR3fS
+	4Zuin8ymM91kM33U/1a9lut92XIz6kasuTPWwxQMSxzRwhciq1JXZ6dt3iyCMn1f3K3hbEG6Db7ip
+	FgOwYI6Ycej5l1IGFTc+N23KZtGcp7JEnhITDxnoZgDlHoZGrupLqc49m12ni7Ycvegs16OOLbd5d
+	LOGLNxA4an62/90QuXo2IdbbsIaMYPJ6T06aN7ac8Fvn34OTeOnefohx/mfNNKDIx4IySjr7X+Ah5
+	v5g5zc6ioM3dTq9/UuNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izeXl-00074u-7n; Thu, 06 Feb 2020 10:37:57 +0000
-Received: from skedge03.snt-world.com ([91.208.41.68])
+	id 1izeYz-0007M1-85; Thu, 06 Feb 2020 10:39:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izeXb-00074R-Vq
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 10:37:50 +0000
-Received: from sntmail12r.snt-is.com (unknown [10.203.32.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge03.snt-world.com (Postfix) with ESMTPS id 9E20267A900;
- Thu,  6 Feb 2020 11:37:45 +0100 (CET)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail12r.snt-is.com
- (10.203.32.182) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Thu, 6 Feb 2020
- 11:37:45 +0100
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1913.005; Thu, 6 Feb 2020 11:37:45 +0100
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Abel Vesa <abel.vesa@nxp.com>, Mike Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>, "Sascha
- Hauer" <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>, "Anson
- Huang" <anson.huang@nxp.com>, Jacky Bai <ping.bai@nxp.com>
-Subject: Re: [PATCH v2] clk: imx8mm: Switch to platform driver
-Thread-Topic: [PATCH v2] clk: imx8mm: Switch to platform driver
-Thread-Index: AQHV3Nj/eAC8KOmHpke/9mSCMhEqHagN6HgA
-Date: Thu, 6 Feb 2020 10:37:44 +0000
-Message-ID: <c2a9d048-6a33-f357-ac88-4eb81002fe93@kontron.de>
-References: <1562682003-20951-1-git-send-email-abel.vesa@nxp.com>
- <2df024c3-ab46-4e33-f961-5ef994aea145@kontron.de>
-In-Reply-To: <2df024c3-ab46-4e33-f961-5ef994aea145@kontron.de>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
-Content-ID: <1B288547C4D22B45890B1242951194EE@snt-world.com>
+ id 1izeYq-0007Le-BR
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 10:39:05 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B697D20730;
+ Thu,  6 Feb 2020 10:39:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1580985544;
+ bh=gtIwWtw5fbPPavML5kQUyoCRGV2WDAlOHO8LMQiUGG0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=EJF3o1zTd/N4TtE8/XCkOytSP31/QOn96mQWqN1WNfwe0csOLIhqBtuHWzXs3gubA
+ tiTMnmqwF9IGwzVNao1obmoHdhpoq86vlHgfv88G1kExMw68NW3PCJjwIauMr/X08D
+ xxc8XMjoncKl1o+K47yseG5Qp2Mwf9iF3BAJU/C0=
+Date: Thu, 6 Feb 2020 10:38:59 +0000
+From: Will Deacon <will@kernel.org>
+To: Bhupesh Sharma <bhsharma@redhat.com>
+Subject: Re: [PATCH 2/2] perf/arm64: Allow per-task kernel breakpoints
+Message-ID: <20200206103858.GB17074@willie-the-truck>
+References: <1580768784-25868-1-git-send-email-bhsharma@redhat.com>
+ <1580768784-25868-3-git-send-email-bhsharma@redhat.com>
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: 9E20267A900.A127B
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: abel.vesa@nxp.com, anson.huang@nxp.com,
- fabio.estevam@nxp.com, kernel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-imx@nxp.com, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, mturquette@baylibre.com, peng.fan@nxp.com,
- ping.bai@nxp.com, sboyd@kernel.org, shawnguo@kernel.org
-X-Spam-Status: No
+Content-Disposition: inline
+In-Reply-To: <1580768784-25868-3-git-send-email-bhsharma@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_023748_342036_555332CD 
-X-CRM114-Status: GOOD (  22.77  )
-X-Spam-Score: 1.8 (+)
+X-CRM114-CacheID: sfid-20200206_023904_416156_9A5723AB 
+X-CRM114-Status: GOOD (  16.76  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (1.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 2.5 URIBL_DBL_ABUSE_MALW   Contains an abused malware URL listed in
- the Spamhaus DBL blocklist [URIs: infradead.org]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.208.41.68 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,207 +77,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ bhupesh.linux@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06.02.20 11:34, Schrempf Frieder wrote:
-> Hi,
+On Tue, Feb 04, 2020 at 03:56:24AM +0530, Bhupesh Sharma wrote:
+> commit 478fcb2cdb23 ("arm64: Debugging support") disallowed per-task
+> kernel breakpoints on arm64 since these would have potentially
+> complicated the stepping code.
 > 
-> On 09.07.19 16:20, Abel Vesa wrote:
->> There is no strong reason for this to use CLK_OF_DECLARE instead
->> of being a platform driver. Plus, this will now be aligned with the
->> other i.MX8M clock drivers which are platform drivers.
->>
->> In order to make the clock provider a platform driver
->> all the data and code needs to be outside of .init section.
->>
->> Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
->> Acked-by: Stephen Boyd <sboyd@kernel.org>
-> 
-> This has been upstream for quite some time now, but somehow I have an
-> issue with SPI on the i.MX8MM that gets resolved when I revert this patch.
-> 
-> When I try to probe an SPI NOR flash with latest 5.4 or even 5.5:
-> 
-> 	spi_imx 30820000.spi: dma setup error -19, use pio
-> 	spi-nor spi0.0: unrecognized JEDEC id bytes: 00 00 00 00 00 00
-> 	spi_imx 30820000.spi: probed
-> 
-> When I revert this patch:
-> 
-> 	spi_imx 30820000.spi: dma setup error -19, use pio
-> 	spi-nor spi0.0: mx25r1635f (2048 Kbytes)
-> 	spi_imx 30820000.spi: probed
-> 
-> Please note, that in both cases I have disabled DMA, as this causes even
-> more trouble (see [1]). But even with DMA enabled and ignoring the DMA
-> errors, the issue described above occurs.
-> 
-> Does someone have an idea what's wrong?
-> Am I the only user of SPI on i.MX8MM as this issue seems to exist
-> upstream since v5.4-rc1?
-> 
-> Thanks,
-> Frieder
+> However, we now have several use-cases (for e.g. perf) which require
+> per-task address execution h/w breakpoint to be exercised/set on arm64:
 
-Sorry forgot the link:
+To be honest, the perf interface to hw_breakpoint is an abomination and
+I think we should remove it entirely for arm64. It's flakey, complicated,
+adds code to context-switch and reduces the capabilities available to
+ptrace.
 
-[1]: https://lore.kernel.org/patchwork/patch/1086459/
+> For e.g. we can set address execution h/w breakpoints, using the
+> format prescribed by 'perf-list' command:
+> mem:<addr>[/len][:access]                          [Hardware breakpoint]
+> 
+> Without this patch, currently 'perf stat -e' reports that per-task
+> address execution h/w breakpoints are 'not supported' on arm64. See
+> below:
+> 
+> $ TEST_FUNC="vfs_read"
+> $ ADDR=0x`cat /proc/kallsyms | grep -P "\\s$TEST_FUNC\$" | cut -f1 -d' '`
+> $ perf stat -e mem:$ADDR:x -x';' -- cat /proc/cpuinfo > /dev/null
+> 
+> <not supported>;;mem:0xffff00001031dd68:x;0;100.00;;
+> 
+> After this patch, this use-case can be supported:
+> 
+> $ TEST_FUNC="vfs_read"
+> $ ADDR=0x`cat /proc/kallsyms | grep -P "\\s$TEST_FUNC\$" | cut -f1 -d' '`
+> $ perf stat -e mem:$ADDR:x -x';' -- cat /proc/cpuinfo > /dev/null
+> 
+> 5;;mem:0xfffffe0010361d20:x;912200;100.00;;
+> 
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+> ---
+>  arch/arm64/kernel/hw_breakpoint.c | 7 -------
+>  1 file changed, 7 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/hw_breakpoint.c b/arch/arm64/kernel/hw_breakpoint.c
+> index 0b727edf4104..c28f04e02845 100644
+> --- a/arch/arm64/kernel/hw_breakpoint.c
+> +++ b/arch/arm64/kernel/hw_breakpoint.c
+> @@ -562,13 +562,6 @@ int hw_breakpoint_arch_parse(struct perf_event *bp,
+>  	hw->address &= ~alignment_mask;
+>  	hw->ctrl.len <<= offset;
+>  
+> -	/*
+> -	 * Disallow per-task kernel breakpoints since these would
+> -	 * complicate the stepping code.
+> -	 */
+> -	if (hw->ctrl.privilege == AARCH64_BREAKPOINT_EL1 && bp->hw.target)
+> -		return -EINVAL;
+> -
 
-> 
->> ---
->>
->> Changes since v1:
->>    * Switched to platform driver memory mapping API
->>    * Removed extra newline
->>    * Added an explanation of why this change is done
->>      in the commit message
->>
->>    drivers/clk/imx/clk-imx8mm.c | 57 ++++++++++++++++++++++++++++----------------
->>    1 file changed, 36 insertions(+), 21 deletions(-)
->>
->> diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
->> index 6b8e75d..7a8e713 100644
->> --- a/drivers/clk/imx/clk-imx8mm.c
->> +++ b/drivers/clk/imx/clk-imx8mm.c
->> @@ -68,43 +68,43 @@ static const struct imx_pll14xx_rate_table imx8mm_drampll_tbl[] = {
->>    	PLL_1443X_RATE(650000000U, 325, 3, 2, 0),
->>    };
->>    
->> -static struct imx_pll14xx_clk imx8mm_audio_pll __initdata = {
->> +static struct imx_pll14xx_clk imx8mm_audio_pll = {
->>    		.type = PLL_1443X,
->>    		.rate_table = imx8mm_audiopll_tbl,
->>    		.rate_count = ARRAY_SIZE(imx8mm_audiopll_tbl),
->>    };
->>    
->> -static struct imx_pll14xx_clk imx8mm_video_pll __initdata = {
->> +static struct imx_pll14xx_clk imx8mm_video_pll = {
->>    		.type = PLL_1443X,
->>    		.rate_table = imx8mm_videopll_tbl,
->>    		.rate_count = ARRAY_SIZE(imx8mm_videopll_tbl),
->>    };
->>    
->> -static struct imx_pll14xx_clk imx8mm_dram_pll __initdata = {
->> +static struct imx_pll14xx_clk imx8mm_dram_pll = {
->>    		.type = PLL_1443X,
->>    		.rate_table = imx8mm_drampll_tbl,
->>    		.rate_count = ARRAY_SIZE(imx8mm_drampll_tbl),
->>    };
->>    
->> -static struct imx_pll14xx_clk imx8mm_arm_pll __initdata = {
->> +static struct imx_pll14xx_clk imx8mm_arm_pll = {
->>    		.type = PLL_1416X,
->>    		.rate_table = imx8mm_pll1416x_tbl,
->>    		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
->>    };
->>    
->> -static struct imx_pll14xx_clk imx8mm_gpu_pll __initdata = {
->> +static struct imx_pll14xx_clk imx8mm_gpu_pll = {
->>    		.type = PLL_1416X,
->>    		.rate_table = imx8mm_pll1416x_tbl,
->>    		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
->>    };
->>    
->> -static struct imx_pll14xx_clk imx8mm_vpu_pll __initdata = {
->> +static struct imx_pll14xx_clk imx8mm_vpu_pll = {
->>    		.type = PLL_1416X,
->>    		.rate_table = imx8mm_pll1416x_tbl,
->>    		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
->>    };
->>    
->> -static struct imx_pll14xx_clk imx8mm_sys_pll __initdata = {
->> +static struct imx_pll14xx_clk imx8mm_sys_pll = {
->>    		.type = PLL_1416X,
->>    		.rate_table = imx8mm_pll1416x_tbl,
->>    		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
->> @@ -374,7 +374,7 @@ static const char *imx8mm_clko1_sels[] = {"osc_24m", "sys_pll1_800m", "osc_27m",
->>    static struct clk *clks[IMX8MM_CLK_END];
->>    static struct clk_onecell_data clk_data;
->>    
->> -static struct clk ** const uart_clks[] __initconst = {
->> +static struct clk ** const uart_clks[] = {
->>    	&clks[IMX8MM_CLK_UART1_ROOT],
->>    	&clks[IMX8MM_CLK_UART2_ROOT],
->>    	&clks[IMX8MM_CLK_UART3_ROOT],
->> @@ -382,19 +382,20 @@ static struct clk ** const uart_clks[] __initconst = {
->>    	NULL
->>    };
->>    
->> -static int __init imx8mm_clocks_init(struct device_node *ccm_node)
->> +static int imx8mm_clocks_probe(struct platform_device *pdev)
->>    {
->> -	struct device_node *np;
->> +	struct device *dev = &pdev->dev;
->> +	struct device_node *np = dev->of_node;
->>    	void __iomem *base;
->>    	int ret;
->>    
->>    	clks[IMX8MM_CLK_DUMMY] = imx_clk_fixed("dummy", 0);
->> -	clks[IMX8MM_CLK_24M] = of_clk_get_by_name(ccm_node, "osc_24m");
->> -	clks[IMX8MM_CLK_32K] = of_clk_get_by_name(ccm_node, "osc_32k");
->> -	clks[IMX8MM_CLK_EXT1] = of_clk_get_by_name(ccm_node, "clk_ext1");
->> -	clks[IMX8MM_CLK_EXT2] = of_clk_get_by_name(ccm_node, "clk_ext2");
->> -	clks[IMX8MM_CLK_EXT3] = of_clk_get_by_name(ccm_node, "clk_ext3");
->> -	clks[IMX8MM_CLK_EXT4] = of_clk_get_by_name(ccm_node, "clk_ext4");
->> +	clks[IMX8MM_CLK_24M] = of_clk_get_by_name(np, "osc_24m");
->> +	clks[IMX8MM_CLK_32K] = of_clk_get_by_name(np, "osc_32k");
->> +	clks[IMX8MM_CLK_EXT1] = of_clk_get_by_name(np, "clk_ext1");
->> +	clks[IMX8MM_CLK_EXT2] = of_clk_get_by_name(np, "clk_ext2");
->> +	clks[IMX8MM_CLK_EXT3] = of_clk_get_by_name(np, "clk_ext3");
->> +	clks[IMX8MM_CLK_EXT4] = of_clk_get_by_name(np, "clk_ext4");
->>    
->>    	np = of_find_compatible_node(NULL, NULL, "fsl,imx8mm-anatop");
->>    	base = of_iomap(np, 0);
->> @@ -480,10 +481,10 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
->>    	clks[IMX8MM_SYS_PLL2_500M] = imx_clk_fixed_factor("sys_pll2_500m", "sys_pll2_out", 1, 2);
->>    	clks[IMX8MM_SYS_PLL2_1000M] = imx_clk_fixed_factor("sys_pll2_1000m", "sys_pll2_out", 1, 1);
->>    
->> -	np = ccm_node;
->> -	base = of_iomap(np, 0);
->> -	if (WARN_ON(!base))
->> -		return -ENOMEM;
->> +	np = dev->of_node;
->> +	base = devm_platform_ioremap_resource(pdev, 0);
->> +	if (WARN_ON(IS_ERR(base)))
->> +		return PTR_ERR(base);
->>    
->>    	/* Core Slice */
->>    	clks[IMX8MM_CLK_A53_SRC] = imx_clk_mux2("arm_a53_src", base + 0x8000, 24, 3, imx8mm_a53_sels, ARRAY_SIZE(imx8mm_a53_sels));
->> @@ -682,4 +683,18 @@ static int __init imx8mm_clocks_init(struct device_node *ccm_node)
->>    
->>    	return 0;
->>    }
->> -CLK_OF_DECLARE_DRIVER(imx8mm, "fsl,imx8mm-ccm", imx8mm_clocks_init);
->> +
->> +static const struct of_device_id imx8mm_clk_of_match[] = {
->> +	{ .compatible = "fsl,imx8mm-ccm" },
->> +	{ /* Sentinel */ },
->> +};
->> +MODULE_DEVICE_TABLE(of, imx8mm_clk_of_match);
->> +
->> +static struct platform_driver imx8mm_clk_driver = {
->> +	.probe = imx8mm_clocks_probe,
->> +	.driver = {
->> +		.name = "imx8mm-ccm",
->> +		.of_match_table = of_match_ptr(imx8mm_clk_of_match),
->> +	},
->> +};
->> +module_platform_driver(imx8mm_clk_driver);
->>
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+Sorry, but this is broken; the check is there for a reason, not just for
+fun!
+
+Look at how the step handler toggles the bp registers.
+
+Will
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
