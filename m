@@ -2,66 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03980153F32
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 08:17:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 881C3153F56
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 08:44:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q8Qiaj1EfSwlBsnNmGkaHyalFKp2FxD9AUtjOqRJiFw=; b=n7BHMxJS2BaTqK
-	Ky3QwaOyaq8oL4oeii/j101zpJLzDUR7UXDx3Bwqb5zcI1TgUBh5rViFwvJhhg/EroMRYsy0ZSZsu
-	fgeEdmKb0NdfVdQsM1UQcmPN4aHlfvbDkKFDbxDzuvETGJZW1Xuc+xQVB6/BApal5Qr+r4vtYMKH1
-	EoKGN/ZO/eVrxngMrw++XB6TvpF2ie/LpfCO/RB03i2hQyWNzcwtq9PZWgA6/MmQYogtB70l9Hp3M
-	KU3ANQdSZEmgjQihHD2Z0QUbl0m5N6+nYLr/GXgkwFIHi4JATegru10ibSj6Yk22kMjwrXKTOd/tZ
-	AqPDCbir7lW2+ONlaSzg==;
+	List-Owner; bh=5kugZo58WUjAutmN6IZ9HXqGCvGckK27tEpYZxTKeYw=; b=B6rObSE0xeZ+rH
+	X4k+Y1Q6iF+Qq6qwdIm9YB24JHoxim2UY6ChYJRAtc3E9l8KBCdZomYcbxk4DaWWYqgHnx8J6z18f
+	/zBXfXsGNswUwAKlZYfsqsmK+oPvksA7tV+lVoQqQZbEnl2LAEL7+JWR39b84WjHYJpU1rq0Dw5QI
+	JXGKeZl1WqaPg1pGawagzn4b7T1WISXD7Wu+3hiAk/UXoB0ASMewE3bjdjtA9OYmhrmWZFzeBP6/8
+	0GNU9+EpjYq83pY9dOWx4PgCq3ylvSB93bZQIf4MTIx+ICUUBS4P3vm8HBYYQ2zWXMqiCbF8xT3JI
+	4uR9vaJN2seQSgpbixew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izbPC-0002Mn-An; Thu, 06 Feb 2020 07:16:54 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1izbpF-0001w9-T3; Thu, 06 Feb 2020 07:43:49 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izbP5-0002LT-D8; Thu, 06 Feb 2020 07:16:48 +0000
-X-UUID: 4c4e45ac16dc41fb8bd8670c6e0161f7-20200205
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=ktGy1KVI8G5+j74zp5yOrZGQQDrH3YB+IG9YCfScyrM=; 
- b=CcBcsgOMDEKwFrcjRVy3OpHvt6OrORflDGVBCwBsr07pA3JVUjfRXlmqSblQjpWDbGD9j/IGUSIT8/Sw+xzjeO7Om5fqIBxWGqbskWet0+ur25hMUjOUCfP0lRo7m+MAXGZQx7cXBisatSL1KRU9tvvt8D9xDw/BB32VQh62Yw4=;
-X-UUID: 4c4e45ac16dc41fb8bd8670c6e0161f7-20200205
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 982122704; Wed, 05 Feb 2020 23:16:35 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 5 Feb 2020 23:17:13 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by mtkcas08.mediatek.inc
- (172.21.101.126) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 6 Feb 2020 15:16:05 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 6 Feb 2020 15:16:50 +0800
-Message-ID: <1580973392.21471.2.camel@mtksdaap41>
-Subject: Re: [PATCH] drm/mediatek: Ensure the cursor plane is on top of
- other overlays
-From: CK Hu <ck.hu@mediatek.com>
-To: <evanbenn@google.com>
-Date: Thu, 6 Feb 2020 15:16:32 +0800
-In-Reply-To: <20200206065951.213862-1-evanbenn@google.com>
-References: <1580441226.9516.1.camel@mtksdaap41>
- <20200206065951.213862-1-evanbenn@google.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1izbp9-0001vJ-Jd
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 07:43:45 +0000
+Received: by mail-pf1-x444.google.com with SMTP id n7so2656893pfn.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Feb 2020 23:43:43 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=IU1zrteb9q+Qt87k2K0GIgQjA5wXyPQA9EPoT65IZsE=;
+ b=F7+oO+0rmHQnZXx5qo4M6gUPD90ZCwVtW6dOyJM5XSuOIog9Bu3zsjHkBe0w6DXcCO
+ 82uqeIqlTLCbllWjGTACIBCr/U9DFnUng1yRc4i+lSB2FRn6uO+ewSeVDETOlwqVif4Z
+ 2nX8DlroOtLjXfrASsa51BBcKatHOiKx1HOxYECYm24QNGxx/5cm6cP+ntnxiu3klTqR
+ U3uzVuBOqHl5b3SJpDzibDEhoURymeOgJ/SDb3taVMEY1Iq1oNMBGFvpeJYgxZK03v/P
+ XuDVcA0kx4dxSGqrkIYVG56Tqk6GLSXVP2+Wt98SMKFSkzvhboxolaISLYLH5SjTbext
+ WG6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=IU1zrteb9q+Qt87k2K0GIgQjA5wXyPQA9EPoT65IZsE=;
+ b=O0ZTfRTybe9H/cmDNS/95NZOXkT6zPBMBbNzx9RjmhYoTxpyt+CYRf+PQHW5O+VmiW
+ 64ePcvPwc+ZSvpKhO+U4KXV3cISibNOVV+segTVmMpM+3JoJCRYTU0b5g4YuL+ggvGvN
+ UnR6SI59jt7qpzlh69VAkloQ3sP5bOKlr7N966BC+q/TnyywkgAK76+yZI/w4cgL1YQW
+ gH/bjG0BFztH8nyNm9ScssERyHLG93Yt0+PKKzTN+/VcNkYldNWiylUePbz/KPkEySPx
+ Kq5UHvIzYpFbmzqb5C1iSEziRqslUgKdCSdvpmAzRL0I9/lSZVa+sNJ11kDrELz3ML76
+ bjyA==
+X-Gm-Message-State: APjAAAVYSx4pbTlTKoqm566KIN4nNRr/kxPs6wnb8+EEfSaELE2UYANJ
+ WIyBHl0snEHfoVs0BxPJlmNpvg==
+X-Google-Smtp-Source: APXvYqyggvyitnBhwNK0z3DaPYbBaIbTbJQVIpI0bKqkZe37c5XbYnm7i2P+U4r0TGh5mc/iAuXcYQ==
+X-Received: by 2002:a63:d0c:: with SMTP id c12mr2222616pgl.173.1580975022391; 
+ Wed, 05 Feb 2020 23:43:42 -0800 (PST)
+Received: from leoy-ThinkPad-X240s ([2400:8902::f03c:91ff:fe3f:32da])
+ by smtp.gmail.com with ESMTPSA id z64sm2090028pfz.23.2020.02.05.23.43.33
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 05 Feb 2020 23:43:41 -0800 (PST)
+Date: Thu, 6 Feb 2020 15:43:28 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH v3 1/5] perf cs-etm: Swap packets for instruction samples
+Message-ID: <20200206074328.GA3807@leoy-ThinkPad-X240s>
+References: <20200203015203.27882-1-leo.yan@linaro.org>
+ <20200203015203.27882-2-leo.yan@linaro.org>
+ <CAJ9a7VgFL24gWGGJ-Wn2YycsW1DzKgu29_HaHtE=OJ0Fz3oNcA@mail.gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <CAJ9a7VgFL24gWGGJ-Wn2YycsW1DzKgu29_HaHtE=OJ0Fz3oNcA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_231647_456848_F3663C11 
-X-CRM114-Status: GOOD (  16.63  )
+X-CRM114-CacheID: sfid-20200205_234343_658528_A8676F6F 
+X-CRM114-Status: GOOD (  20.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -71,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,101 +99,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dcastagna@chromium.org, evanbenn@gmail.com, evanbenn@chromium.org,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- p.zabel@pengutronix.de, matthias.bgg@gmail.com, seanpaul@chromium.org,
- sean@poorly.run, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Evan:
+Hi Mike,
 
-It looks like Sean's version has some problem. So this version is
-
-Reviewed-by: CK Hu <ck.hu@mediatek.com>
-
-
-On Thu, 2020-02-06 at 17:59 +1100, evanbenn@google.com wrote:
-> From: Sean Paul <seanpaul@chromium.org>
+On Wed, Feb 05, 2020 at 03:59:40PM +0000, Mike Leach wrote:
+> Hi Leo
 > 
-> Currently the cursor is placed on the first overlay plane, which means
-> it will be at the bottom of the stack when the hw does the compositing
-> with anything other than primary plane. Since mtk doesn't support plane
-> zpos, change the cursor location to the top-most plane.
+> On Mon, 3 Feb 2020 at 01:52, Leo Yan <leo.yan@linaro.org> wrote:
+> >
+> > If use option '--itrace=iNNN' with Arm CoreSight trace data, perf tool
+> > fails inject instruction samples; the root cause is the packets are
+> > only switched for branch samples and last branches but not for
+> > instruction samples, so the new coming packets cannot be properly
+> > handled for only synthesizing instruction samples.
+> >
+> > To fix this issue, this patch switches packets for instruction samples.
+> >
+> > Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> > ---
+> >  tools/perf/util/cs-etm.c | 6 ++++--
+> >  1 file changed, 4 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+> > index 5471045ebf5c..3dd5ba34a2c2 100644
+> > --- a/tools/perf/util/cs-etm.c
+> > +++ b/tools/perf/util/cs-etm.c
+> > @@ -1404,7 +1404,8 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+> >                 }
+> >         }
+> >
+> > -       if (etm->sample_branches || etm->synth_opts.last_branch) {
+> > +       if (etm->sample_branches || etm->synth_opts.last_branch ||
+> > +           etm->sample_instructions) {
+> >                 /*
+> >                  * Swap PACKET with PREV_PACKET: PACKET becomes PREV_PACKET for
+> >                  * the next incoming packet.
+> > @@ -1476,7 +1477,8 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
+> >         }
+> >
+> >  swap_packet:
+> > -       if (etm->sample_branches || etm->synth_opts.last_branch) {
+> > +       if (etm->sample_branches || etm->synth_opts.last_branch ||
+> > +           etm->sample_instructions) {
+> >                 /*
+> >                  * Swap PACKET with PREV_PACKET: PACKET becomes PREV_PACKET for
+> >                  * the next incoming packet.
+> > --
+> > 2.17.1
+> >
+> if is worth putting the 'if <options> { swap packet }' into a separate
+> function as it appears twice in identical form? Might help if more
+> options for swap packet are needed later.
+
+Makes sense.  Will factor out a new function for this.
+
+Thanks for reviewing!
+Leo
+
+> Either way
 > 
-> Signed-off-by: Evan Benn <evanbenn@chromium.org>
-> Signed-off-by: Sean Paul <seanpaul@chromium.org>
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 29 +++++++++++++++++--------
->  1 file changed, 20 insertions(+), 9 deletions(-)
+> Reviewed by: Mike Leach <mike.leach@linaro.org>
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index 7b392d6c71cc..d4078c2089e0 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -658,10 +658,21 @@ static const struct drm_crtc_helper_funcs mtk_crtc_helper_funcs = {
->  
->  static int mtk_drm_crtc_init(struct drm_device *drm,
->  			     struct mtk_drm_crtc *mtk_crtc,
-> -			     struct drm_plane *primary,
-> -			     struct drm_plane *cursor, unsigned int pipe)
-> +			     unsigned int pipe)
->  {
-> -	int ret;
-> +	int i, ret;
-> +
-> +	struct drm_plane *primary = NULL;
-> +	struct drm_plane *cursor = NULL;
-> +
-> +	for (i = 0; i < mtk_crtc->layer_nr; ++i) {
-> +		if (!primary && mtk_crtc->planes[i].type ==
-> +				DRM_PLANE_TYPE_PRIMARY)
-> +			primary = &mtk_crtc->planes[i];
-> +		if (!cursor && mtk_crtc->planes[i].type ==
-> +				DRM_PLANE_TYPE_CURSOR)
-> +			cursor = &mtk_crtc->planes[i];
-> +	}
->  
->  	ret = drm_crtc_init_with_planes(drm, &mtk_crtc->base, primary, cursor,
->  					&mtk_crtc_funcs, NULL);
-> @@ -711,11 +722,12 @@ static int mtk_drm_crtc_num_comp_planes(struct mtk_drm_crtc *mtk_crtc,
->  }
->  
->  static inline
-> -enum drm_plane_type mtk_drm_crtc_plane_type(unsigned int plane_idx)
-> +enum drm_plane_type mtk_drm_crtc_plane_type(unsigned int plane_idx,
-> +					    unsigned int num_planes)
->  {
->  	if (plane_idx == 0)
->  		return DRM_PLANE_TYPE_PRIMARY;
-> -	else if (plane_idx == 1)
-> +	else if (plane_idx == (num_planes - 1))
->  		return DRM_PLANE_TYPE_CURSOR;
->  	else
->  		return DRM_PLANE_TYPE_OVERLAY;
-> @@ -734,7 +746,8 @@ static int mtk_drm_crtc_init_comp_planes(struct drm_device *drm_dev,
->  		ret = mtk_plane_init(drm_dev,
->  				&mtk_crtc->planes[mtk_crtc->layer_nr],
->  				BIT(pipe),
-> -				mtk_drm_crtc_plane_type(mtk_crtc->layer_nr),
-> +				mtk_drm_crtc_plane_type(mtk_crtc->layer_nr,
-> +							num_planes),
->  				mtk_ddp_comp_supported_rotations(comp));
->  		if (ret)
->  			return ret;
-> @@ -830,9 +843,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
->  			return ret;
->  	}
->  
-> -	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, &mtk_crtc->planes[0],
-> -				mtk_crtc->layer_nr > 1 ? &mtk_crtc->planes[1] :
-> -				NULL, pipe);
-> +	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, pipe);
->  	if (ret < 0)
->  		return ret;
->  
+> 
+> -- 
+> Mike Leach
+> Principal Engineer, ARM Ltd.
+> Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
