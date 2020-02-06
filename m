@@ -2,105 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EDDD154E34
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 22:41:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36824154E3E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 22:44:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L0WWRGKrlkjG7nUTL3WhxdYDDytrLeX2MKT0vP3H72s=; b=OQL0D7CNOXNlJR
-	8oVKkiNSi1kW43IFY6X6IsFJQ/kZNr42Gd3iaxBWBePLX8MEnLHUAhlA5ifR8P22O+6GUHvTYaSrr
-	zLp/MBdCAOpJU8RW/XB8XdpgsB8WVhbSZb4dcLVflmNo9sMPsA3mcjAKsLfrZ/nOPKiqwZxaU+sWK
-	P4ZuOxYKO1q3wdlzbNqdTNGY3cGvCbywhR7ml99zCBKcETGn5Dc6PdP0k1ca99dD/nMdV7ugQ3Nco
-	O6LifzNKq0qXPvDA3BGe3dSA67xb4bxuprpB+34qLDBdZZELEBY+fRf86FoIWjcroXwm2ov0HqjPm
-	RM1U58cvErO0EweXlAGQ==;
+	List-Owner; bh=6koLapfPcYP3CnAV53uaxJ5exYZ19VDg+bjyFFvh3Es=; b=oPgm8vURI0NLZ8
+	2NV1yTU+zB1IhUlD6Dk4+LFe81xYF6eToeEQJGnugDVitk3NL79+ZdLYoWKAp4mrjA+5RapIjyeJu
+	kH/tTfpLdiIcqIyF1iuSWdlvti+9B80HH36PwUBIsZB6wN+0aTAUdjiGD85tD8a6nHW8fg7AwtL+D
+	hT7P6+1cphbL8gXodN+mb/82XgP/mMdHulKVo2bu8+L4Z5H4mnrH4B/mn8ScC5vWNfVQ98Y835nQw
+	weCGhLc67sP1G4JUxDiTZNs7WmFbPKGLlZQoOP7PYG0pQjROWhiSlbZBcC/eKV0QAdSw2qT1E7b1d
+	RHQmhIWV50hzxwH4a1Bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izotl-0002Xs-LS; Thu, 06 Feb 2020 21:41:21 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1izowb-0002xV-Tl; Thu, 06 Feb 2020 21:44:17 +0000
+Received: from mail-pj1-f67.google.com ([209.85.216.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izotf-0002XW-44
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 21:41:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581025273;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=miTk2jHvXEeon48FMT6UBcqphMo6SpNxcWIB57XG7sg=;
- b=hZmi66chcRcV5qKh3TXBL2+JYRCnW/7L2EiPAm0DIoDmQ1pqrEDf0u0Msd3+2s9w/4YebZ
- 0749Zpje0U8TQWxfldwAJZ59tDU8hT/W5FdF1llDsJo3OmHIPGIa7vB9MyilHEkxXPDegs
- d9jQ7ThRroxdvuTwbIG8B10o3DXqYKo=
-Received: from mail-qk1-f199.google.com (mail-qk1-f199.google.com
- [209.85.222.199]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-407-MG8x2cemPEiwpzfxDbtDwQ-1; Thu, 06 Feb 2020 16:41:12 -0500
-Received: by mail-qk1-f199.google.com with SMTP id z21so4540130qki.18
+ id 1izowV-0002x8-U3
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 21:44:13 +0000
+Received: by mail-pj1-f67.google.com with SMTP id r67so9033pjb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 13:41:12 -0800 (PST)
+ Thu, 06 Feb 2020 13:44:11 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=fv7hocxnCQMQx/Ef0JfmL5g1BsW3yRUgDUYfbGA1aT0=;
- b=TrF2LbK13H6/yJhK8zH7xNt6k48xxgFzndQbE3uCbi6JQ9AA/bC7dgv8QOUvvp7bl8
- XAkYw6xf6geOLuFVsji1fgheyDn/2EpcXc1I8YdIMaWQsFAHK7Pd2qwtQA6Vhzjbg1XP
- jsomd1v3bWcnbCHscFssitOwczfE7qe0z/XEDbu3TirAgYG3Vq1xMeNA7Wfe6Ie3AKY6
- X1RynK5MRMmsaByxsnRlfcA1+tcMJn2gQ4istip7bvK1Cm7uKNFXQaKdlzV9OStMKB8d
- xhEuwRuwUIliaD2wmC7NFJFQ/X2IqN3jnn6UTbPm3eOdbWtT7I/ygGGjXxuChUfkxkZH
- hgbg==
-X-Gm-Message-State: APjAAAXzGVegKHPnc4M3lJZpBU3Y3qfuJcjhWPTLI3FhpAHRpV/n1e3i
- Y28mL0KwVK/LWIlCaKmQmwoNaSDQgMezNWui51vzraqUMh+ZVTdwNFufcQ42xlrue2zdH3MRgh+
- fXndqs2cnMq7A8HNNeiyylvFQDKh6ne0oX3Y=
-X-Received: by 2002:a05:620a:7f2:: with SMTP id
- k18mr4541152qkk.207.1581025271641; 
- Thu, 06 Feb 2020 13:41:11 -0800 (PST)
-X-Google-Smtp-Source: APXvYqxJgBpP+Sn/XW78feM1lgNrPZNv0ribzryOvpKTws4jf2FMfbWVePD88+Gb3lvt+IGO4p+aFA==
-X-Received: by 2002:a05:620a:7f2:: with SMTP id
- k18mr4541080qkk.207.1581025270452; 
- Thu, 06 Feb 2020 13:41:10 -0800 (PST)
-Received: from xz-x1 ([2607:9880:19c8:32::2])
- by smtp.gmail.com with ESMTPSA id w9sm304509qka.71.2020.02.06.13.41.07
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=nCZ9ayqGFGGOYCf7mf3ecb4tbvZDda1tYkdu0cB2PR4=;
+ b=C3oZRpdnPx/wxLjwvk8mkrqOSuTNiRadVKMSwCEzUlnBxhVp3zf0Yx07QCNssuB61V
+ iarB7fQlW+/QoUej4aWVaiQb23DBSWmxGDqRmEZuSM6yHozsxtbV0riigmOrJV3G8hDr
+ eIkWeKjMo3uq6ivaWSJIDqVCpCCSk5+SNpzX5aC0/xQX3BDOov3bEyZuNHkrk4XZ9uF5
+ OROb+2/9cGC3nwdpb6ZQ3wliP0PMt2lAtpGnhWRCSCSwSfufxTSXj7AT8NGpPWENJmWs
+ OFGsqRUsFVinQObk99j4VV09lcVWrkMvEZeHx+UbUzpiRUNSbhekLUtqM0C3nBSkDzSW
+ yg0A==
+X-Gm-Message-State: APjAAAWPiO+9mJFL0TDofTv5s8aKVFzWHsXCNrRHP0demi5TYg7EF1dD
+ aChdbEUYLkGjyIG98c0u2w==
+X-Google-Smtp-Source: APXvYqzPnEQi9AlKJV7dkCP3bX1PSsZSNp5hyLTeKDDKyOAazqddsO1VbrfRdnm25lzXK+TMcPs0QQ==
+X-Received: by 2002:a17:902:8d83:: with SMTP id
+ v3mr6259832plo.282.1581025451046; 
+ Thu, 06 Feb 2020 13:44:11 -0800 (PST)
+Received: from rob-hp-laptop (63-158-47-182.dia.static.qwest.net.
+ [63.158.47.182])
+ by smtp.gmail.com with ESMTPSA id a18sm340710pfl.138.2020.02.06.13.44.09
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 06 Feb 2020 13:41:09 -0800 (PST)
-Date: Thu, 6 Feb 2020 16:41:06 -0500
-From: Peter Xu <peterx@redhat.com>
-To: Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: [PATCH v5 15/19] KVM: Provide common implementation for generic
- dirty log functions
-Message-ID: <20200206214106.GG700495@xz-x1>
-References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
- <20200121223157.15263-16-sean.j.christopherson@intel.com>
- <20200206200200.GC700495@xz-x1>
- <20200206212120.GF13067@linux.intel.com>
+ Thu, 06 Feb 2020 13:44:10 -0800 (PST)
+Received: (nullmailer pid 30200 invoked by uid 1000);
+ Thu, 06 Feb 2020 21:44:08 -0000
+Date: Thu, 6 Feb 2020 14:44:08 -0700
+From: Rob Herring <robh@kernel.org>
+To: Maulik Shah <mkshah@codeaurora.org>
+Subject: Re: [PATCH v4 3/6] dt-bindings: soc: qcom: Add RSC power domain
+ specifier
+Message-ID: <20200206214408.GA30136@bogus>
+References: <1580905572-22712-1-git-send-email-mkshah@codeaurora.org>
+ <1580905572-22712-4-git-send-email-mkshah@codeaurora.org>
 MIME-Version: 1.0
-In-Reply-To: <20200206212120.GF13067@linux.intel.com>
-X-MC-Unique: MG8x2cemPEiwpzfxDbtDwQ-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
+In-Reply-To: <1580905572-22712-4-git-send-email-mkshah@codeaurora.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_134115_240795_CF7D3776 
-X-CRM114-Status: GOOD (  21.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200206_134411_972466_74EAE45C 
+X-CRM114-Status: GOOD (  10.89  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [209.85.216.67 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.216.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,96 +96,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
- Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- Philippe =?utf-8?Q?Mathieu-Daud=C3=A9?= <f4bug@amsat.org>
+Cc: dianders@chromium.org, Maulik Shah <mkshah@codeaurora.org>,
+ lsrao@codeaurora.org, Lorenzo.Pieralisi@arm.com, rnayak@codeaurora.org,
+ linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, evgreen@chromium.org, swboyd@chromium.org,
+ david.brown@linaro.org, devicetree@vger.kernel.org, agross@kernel.org,
+ ilina@codeaurora.org, sudeep.holla@arm.com, ulf.hansson@linaro.org,
+ bjorn.andersson@linaro.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 06, 2020 at 01:21:20PM -0800, Sean Christopherson wrote:
-> On Thu, Feb 06, 2020 at 03:02:00PM -0500, Peter Xu wrote:
-> > On Tue, Jan 21, 2020 at 02:31:53PM -0800, Sean Christopherson wrote:
-> > 
-> > [...]
-> > 
-> > > -int kvm_vm_ioctl_clear_dirty_log(struct kvm *kvm, struct kvm_clear_dirty_log *log)
-> > > +void kvm_arch_dirty_log_tlb_flush(struct kvm *kvm,
-> > > +				  struct kvm_memory_slot *memslot)
-> > 
-> > If it's to flush TLB for a memslot, shall we remove the "dirty_log" in
-> > the name of the function, because it has nothing to do with dirty
-> > logging any more?  And...
+On Wed,  5 Feb 2020 17:56:09 +0530, Maulik Shah wrote:
+> In addition to transmitting resource state requests to the remote
+> processor, the RSC is responsible for powering off/lowering the
+> requirements from CPUs subsystem for the associated hardware like
+> buses, clocks, and regulators when all CPUs and cluster is powered down.
 > 
-> I kept the "dirty_log" to allow arch code to implement logic specific to a
-> TLB flush during dirty logging, e.g. x86's lockdep assert on slots_lock.
-> And similar to the issue with MIPS below, to deter usage of the hook for
-> anything else, i.e. to nudge people to using kvm_flush_remote_tlbs()
-> directly.
-
-The x86's lockdep assert is not that important afaict, since the two
-callers of the new tlb_flush() hook will be with slots_lock for sure.
-
+> The power domain is configured to a low power state and when all the
+> CPUs are powered down, the RSC can lower resource state requirements
+> and power down the rails that power the CPUs.
 > 
-> > >  {
-> > > -	struct kvm_memslots *slots;
-> > > -	struct kvm_memory_slot *memslot;
-> > > -	bool flush = false;
-> > > -	int r;
-> > > -
-> > > -	mutex_lock(&kvm->slots_lock);
-> > > -
-> > > -	r = kvm_clear_dirty_log_protect(kvm, log, &flush);
-> > > -
-> > > -	if (flush) {
-> > > -		slots = kvm_memslots(kvm);
-> > > -		memslot = id_to_memslot(slots, log->slot);
-> > > -
-> > > -		/* Let implementation handle TLB/GVA invalidation */
-> > > -		kvm_mips_callbacks->flush_shadow_memslot(kvm, memslot);
-> > > -	}
-> > > -
-> > > -	mutex_unlock(&kvm->slots_lock);
-> > > -	return r;
-> > > +	/* Let implementation handle TLB/GVA invalidation */
-> > > +	kvm_mips_callbacks->flush_shadow_memslot(kvm, memslot);
-> > 
-> > ... This may not directly related to the current patch, but I'm
-> > confused on why MIPS cannot use kvm_flush_remote_tlbs() to flush TLBs.
-> > I know nothing about MIPS code, but IIUC here flush_shadow_memslot()
-> > is a heavier operation that will also invalidate the shadow pages.
-> > Seems to be an overkill here when we only changed write permission of
-> > the PTEs?  I tried to check the first occurance (2a31b9db15353) but I
-> > didn't find out any clue of it so far.
-> > 
-> > But that matters to this patch because if MIPS can use
-> > kvm_flush_remote_tlbs(), then we probably don't need this
-> > arch-specific hook any more and we can directly call
-> > kvm_flush_remote_tlbs() after sync dirty log when flush==true.
+> Add PM domain specifier property for RSC controller.
 > 
-> Ya, the asid_flush_mask in kvm_vz_flush_shadow_all() is the only thing
-> that prevents calling kvm_flush_remote_tlbs() directly, but I have no
-> clue as to the important of that code.
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Maulik Shah <mkshah@codeaurora.org>
+> Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+> ---
+>  Documentation/devicetree/bindings/soc/qcom/rpmh-rsc.txt | 9 +++++++++
+>  1 file changed, 9 insertions(+)
+> 
 
-As said above I think the x86 lockdep is really not necessary, then
-considering MIPS could be the only one that will use the new hook
-introduced in this patch...  Shall we figure that out first?
-
-Thanks,
-
--- 
-Peter Xu
-
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
