@@ -2,80 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D7261545F0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 15:18:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF333154604
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 15:24:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2lHaGvBBRenDLHf+xl2vM/qAgocwuet6Kzb49UxYtr0=; b=R9BJ5Ll3hwpRdq
-	WY0OLPqggTTX/+gd7R6ns1YY6lm+bWH3X/SePLollsvQSxbfIUuwU4dY4C/1JLcN83oQ70e/dvfII
-	yuYdW5/fMFu74O0X8kLTcFOQ9y6WteLtX7/KsVht4dGUV5x9yTX1/M3HisFfNoOMrhAfXMPBQuvjy
-	bQys7xETLnp7CtyYfey7KVd5e4NbpIq8w8Zn3z1buZBLUBKkZ9Kq3dM4QENWNFUjtNv2g9/if0J9L
-	6d8PSVZNwrgKwZjE7VbvEUrMOSBxUPL8Y52KeeXVn80qGgQ64gc1P2HV+XoVkCiKF8h8sESBpkIHi
-	dmxuEJgrpxTCdObD0B1A==;
+	List-Owner; bh=NdH5AqJIuuq0kyzldCGar83u+AoK2AC8sXfsopaaB7U=; b=IGQ0U8jmy1Dn6M
+	ddgTbiU+oSynu3hxl7CFNKDsAbYB9k+PG88WizbIiRoc3LHIkz+t94rhiHrD5rgcPPtScP6dXDdud
+	99rLvRk7Zw1RzF1UvRY9ZTsO/GSpNWMQ+8FGJQnLgQRQ/V3+9m7nFcXQeicjgCTc/rv3HzNdg0rej
+	bcGaSx1bLPym6yQvWy6ijFEsKv6KpZ+tzKhum/xInKmicF+DPYiU2w8ZQQH2/cJrnrPZKnylKpfF7
+	c2n5XUCv0o7nl2xMZU3Z+NzXcqZy62BqEPR0LnjgW3kQZaCKHmb4qCaxSCIi+rxqRwbh4gL799s5O
+	NaVZlWJ3auLrrJIp8K+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izhz9-0001DG-Tx; Thu, 06 Feb 2020 14:18:27 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1izi4w-000313-7O; Thu, 06 Feb 2020 14:24:26 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izhz2-0001Cm-Aa
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 14:18:21 +0000
-Received: by mail-pf1-x441.google.com with SMTP id n7so3213455pfn.0
+ id 1izi4q-00030h-3Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 14:24:21 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id gv17so50585pjb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 06:18:20 -0800 (PST)
+ Thu, 06 Feb 2020 06:24:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=tlgS5FHChO1CGBWXTjxXUP4mkvuvW/nEiNannwwjUKs=;
- b=C5fKtB+HfWa9s3R1yA90NR/reVyYx5PpUorZVhZhyxP8LEYRU34BddbXV657OB3yVg
- aUlRzqD2KzLwXLEVCEV2isyrS6k/qilnKMlKF28I33QP/ZjF0OEvvCk6DNqGepF+tWEC
- fAVLPs8p1E4iOwgJD29JREWzS7yUUWMev+5XSy3cKElgs81rAePv5maOhZqzv8J+yem8
- 6Cr5+xsL9gaZyla9r3zRhJ3V4E3ZvQ8Jq9BBWf6hZUFj6OOPyqcQv8v2ejVF22yVJ5xj
- 2qBYjtCInRJIomYHfGtwJKsXnoe/h40K9OfLC7SYR4/SjgjzEjPIMrwVK7cDLZPU/ymu
- oZbQ==
+ bh=ujphz3B+s46aEe7JvGGM1Ne2ZXEsoldLhyDrK7xK9Ko=;
+ b=r2fc3qi/9oNBxawfqNV0KXua36nCnXKLMdct8mDNook6eYV55lHztSV5xJ90MWYldf
+ GQDjpa2pqjDN/R6JQwv933Zfvw/ePlhJandlvdwup1MujP/V4rd0jVWQErbPOdC/xghr
+ IXDkRz0Qfw2uuZO9HEyg5aOlSMidW2brqKSnkLkFZIeh6dIzQCNCB8ZbPqVqA0s1DS6m
+ yKcqYX3Qvo6bdZZmQtrz/tLC/u1qH5MPBtlXeWqx/zXLlLNyZ4zaxTtbPCmqTZMacg1Y
+ yMiZypbiuqU+5hShOi+yn7yKlw/zZ3beb2KBtcTgZieAKFb+tvG7XgWGtbvmXtrjgoFD
+ vKOA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=tlgS5FHChO1CGBWXTjxXUP4mkvuvW/nEiNannwwjUKs=;
- b=CvUy1qGeljx354IpggHyKZCs7/SDMdmBbU3boMgAEP6xQXvjX9KusBOkDA5OhS82O4
- EtBz12i5w3brDH2EVaQaedbOcVX6UC5XlIu7egDqaKa9BwoFxDoTjwj54WRs0U0de/Qx
- Li1Y4rIYE5RDP6q73DJ7wMnLXTlj+oy75gdbqB0OvN8hbZ50+7kzL25iwtgwt+Mio1Qs
- H8UpSONTwnzoxIglTi6d31Xbb2/JGnZ45ZIV7akK5pkVQzH2h9yG7ugEwBMl+Nd/eVBs
- 1aUOBUkQ6bnJ96L+Q8bU5LRbjlsCGs85bWQFCvKlgj0k0vCxtY0jJ2xzBXWUfT3tnw2j
- s2fQ==
-X-Gm-Message-State: APjAAAWTn/yxNLKLF7cEhRwKxhaUcn1mK41VNqkVywBSb4tZ/kVt9ztV
- BSitrVomhnGXBCrCyB5fk2k=
-X-Google-Smtp-Source: APXvYqx6YAdoUhb5FnTWPi7Ak9w5qYjmWF1npBNQTFTivhTR5tidkJgtIV0fl6Haso1hJLuMCgwXOA==
-X-Received: by 2002:a63:e007:: with SMTP id e7mr3793478pgh.414.1580998699750; 
- Thu, 06 Feb 2020 06:18:19 -0800 (PST)
+ bh=ujphz3B+s46aEe7JvGGM1Ne2ZXEsoldLhyDrK7xK9Ko=;
+ b=iojHy6VafcM6LYbBse6LAvvLdI/CgGnVpPOC03dno4H6AlUuAbZNVpa5GohMSxsHuw
+ hi6I9kAv12mc2FGOz1JT/XPqErqdvA50Pl6Ez6oKyY74KZ4fTqVeu0/Xby+DFu/sfPuu
+ mAxVU1vJrIlVnQnTXxddNOvA4CWL953FjQSmgV6M9b10KeHcy1VnoSY8i6DLQIc1OJkA
+ L9G6LDcvGlRqUafV0kZT7lzTnHM6IjMq3QRuAl4kHrbNmWMFv/Hq4vQ7gk/h2GO9I6jN
+ 4PdSuTv2ZvhFzbraoZhwwDnXhgLUMxutmSDkFUaEMZ4xt0sKnM9kWnJNK51X0ZfxvJp9
+ ZUcQ==
+X-Gm-Message-State: APjAAAUM3NCBrl0luvxDVklJhlzQg3J4FdmgTEUBBrzjau1cf5Dh7zLA
+ gCgRKfMUMRyExnM98ajHnvQ=
+X-Google-Smtp-Source: APXvYqy8U1nUa1UlxJnp4Ytp6VfhI1JzoIDrTHA7gjaGrxTdicYH6ucP96q5P+GGXmwsw8HEJLwNKA==
+X-Received: by 2002:a17:90a:7784:: with SMTP id
+ v4mr4688042pjk.134.1580999059559; 
+ Thu, 06 Feb 2020 06:24:19 -0800 (PST)
 Received: from localhost (104.128.80.227.16clouds.com. [104.128.80.227])
- by smtp.gmail.com with ESMTPSA id i9sm3656678pfk.24.2020.02.06.06.18.18
+ by smtp.gmail.com with ESMTPSA id q66sm3942259pfq.27.2020.02.06.06.24.17
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 06 Feb 2020 06:18:19 -0800 (PST)
+ Thu, 06 Feb 2020 06:24:19 -0800 (PST)
 From: Dejin Zheng <zhengdejin5@gmail.com>
-To: vkoul@kernel.org, peppe.cavallaro@st.com, joabreu@synopsys.com,
- davem@davemloft.net, mcoquelin.stm32@gmail.com, niklas.cassel@linaro.org,
- netdev@vger.kernel.org
-Subject: [PATCH v2] net: stmmac: fix a possible endless loop
-Date: Thu,  6 Feb 2020 22:18:11 +0800
-Message-Id: <20200206141811.24862-1-zhengdejin5@gmail.com>
+To: peppe.cavallaro@st.com, alexandre.torgue@st.com, joabreu@synopsys.com,
+ davem@davemloft.net, mcoquelin.stm32@gmail.com, netdev@vger.kernel.org
+Subject: [PATCH 0/2]  use readl_poll_timeout() function
+Date: Thu,  6 Feb 2020 22:24:02 +0800
+Message-Id: <20200206142404.24980-1-zhengdejin5@gmail.com>
 X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_061820_368010_21D12E1C 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20200206_062420_167123_50C0FA17 
+X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [zhengdejin5[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,36 +106,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It forgot to reduce the value of the variable retry in a while loop
-in the ethqos_configure() function. It may cause an endless loop and
-without timeout.
+This patch series just for use readl_poll_timeout() function
+to replace the open coded handling of use readl_poll_timeout()
+in the stmmac driver. There are two modification positions,
+the one in the init_systime() function and the other in the
+dwmac4_dma_reset() function.
 
-Fixes: a7c30e62d4b8 ("net: stmmac: Add driver for Qualcomm ethqos")
+Dejin Zheng (2):
+  net: stmmac: use readl_poll_timeout() function in init_systime()
+  net: stmmac: use readl_poll_timeout() function in dwmac4_dma_reset()
 
-Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
-Acked-by: Vinod Koul <vkoul@kernel.org>
----
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_lib.c   | 14 ++++++--------
+ .../net/ethernet/stmicro/stmmac/stmmac_hwtstamp.c  | 14 ++++++--------
+ 2 files changed, 12 insertions(+), 16 deletions(-)
 
-Vinod Koul and David Miller, Thanks for your comments!
-
-V2:
-add an appropriate Fixes tag.
-
- drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-index 7ec895407d23..e0a5fe83d8e0 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-@@ -413,6 +413,7 @@ static int ethqos_configure(struct qcom_ethqos *ethqos)
- 			dll_lock = rgmii_readl(ethqos, SDC4_STATUS);
- 			if (dll_lock & SDC4_STATUS_DLL_LOCK)
- 				break;
-+			retry--;
- 		} while (retry > 0);
- 		if (!retry)
- 			dev_err(&ethqos->pdev->dev,
 -- 
 2.25.0
 
