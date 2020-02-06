@@ -2,83 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 483091545AA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 15:02:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 898D51545B8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 15:05:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NsLa2+/oNXybm/WZuHfW7ZgC6YBnIqGNTPwJ3uruyT4=; b=FElrOSd3ywXDuQ
-	VA/kh5PFFQtH7Nc47XyWH6jaB579f6JsRygj7LnZL+2ioteTAHHLjixQkjOYvcu28YNArZNRdd81b
-	6aMHodJ3ph4Xfy+5Lmt+SxzEkYC+36cEt641AX6i/Z8hPX0I8HLbMjWBn6ogQkpJ1fWoUYqekDhcg
-	cYzyLOVXx9uB7qVReHPBj4TO6vYpkNVhmNEfYzp8aEwRV275E+F9a0mZODB5D+EAEl2MPD4nELi3F
-	FpnEtCX0+lwa2bxb06EtygBrjMJL3mP4CyZ2QH14W+pJUwXiNyIYKXOTQTS42caKQrK3drpmz06Bc
-	fQrz48nEKd8O2rqAAbqw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=3qP21g6brqhHvUdnqlhba74nB3h9OlBJdfy4KcrAWek=; b=sk7
+	Ma1omWLEqdp6YAHXiNKwLInwvaNiZKMjhEFASNCXhUt38Pkm6ulf5+YwpHF5U+kC+F+pQZ+xaI6Bd
+	pYxRvsXAqzo5qwdU004oZNcbUnX09qQEyniN9CFmwhTWrshjDSApkRsDVTxUYPf++WtLFL21mqwMi
+	r+bhknC5VMgoYldYe0APh+ZbIZ3mjTHZ1xKQdMmNWx9nOYAyircbwwds6TBFJRyGR0N8wEIeZYXGr
+	FojT/VvDdGxZ+oq07y1A/sFPuONYBpikZwRO7d4mgArjCxbOFLRHPAhoghhuFTCIqdnFXqrEO7Jk6
+	u6f8J9x35yCcrDiqWYClYUgr65rkjoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izhj8-0002v2-IQ; Thu, 06 Feb 2020 14:01:54 +0000
-Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
+	id 1izhmK-0003UI-0j; Thu, 06 Feb 2020 14:05:12 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izhiy-0002sm-P9
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 14:01:48 +0000
-Received: by mail-yw1-xc41.google.com with SMTP id i190so5106343ywc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 06:01:44 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poorly.run; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=DRB074YSrrw/Ajxbs86TrGm+cCr0lMPv565TdcUESKg=;
- b=SNO7Opxbqqr4USlH83nYZoF8Y/k3VNM1/AJNyi744lvue8HQAM51fJoc9sEosvRjFg
- +c0VwftSCxrSYWER5VkCTAr0Cp7KG6d7nYGuIIxKGAqI6ZGBKo7ozDQJtTYjTi+DGKlm
- 0rBl1XN6C7x96HGnj20QkKLpYjFIpo4atXb42xL1763ihEgyuOKUrjWnpyX3U8OUzNqU
- XGs69QadXJG9DpydCEOZVMCXzdJxlo5m6s4QNFnxlfglpt+ktXv5yjdu60b/9FUaW6gF
- sg6Sik5l1eiN65KhjjBywlodgftu087eQ1BUGc+m6Z4vpsdUGq7x2/FE6s7ulU5gqIij
- 1YpA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=DRB074YSrrw/Ajxbs86TrGm+cCr0lMPv565TdcUESKg=;
- b=XJBCWt5loVvac8EFtGmzYIzIJUst1AMHkIZwiHonQJQ1bl3Z3h2U1SY1Vv2XoesxTP
- fs+2sQNGWLV3yHCNYvNuUXHEuLV9/HNG9Ll1nYpYMUWDXckaP/7VuE3siWOxAIjv/8GB
- AGAyvkZfoz83BXpQlAsJzOG2o3NDqWwzkaeSyYjijQddO+EOhiezMX5LEDBSDjHcoi3/
- dgQL6RaoyNFnwXMfLOu+ru+Il8XUZCaoLVoFRqgvSgMcyyvXjgqioLGqyEAGJSDst5WN
- 5tUStUL4BjxP1rZVKlmwQP7S8f7DBBQSqpt68a/Lr+kBN9pm+rjt3FpaISVDICIMW2Ho
- FrDw==
-X-Gm-Message-State: APjAAAW7FKVykdS08z5O81zA8Kz6SJcfWt/uABCdmp+Ps3c/LphHKLyA
- fDqeHn5K77KcCKnVuW1BDwfWZw==
-X-Google-Smtp-Source: APXvYqxJ+qRIn5vw9ovBPy9eJ6PeFCEu6ye2FTwRuxN+5nN5TWx37YeBqVpz08U44oMti/32NqN4jw==
-X-Received: by 2002:a81:37d3:: with SMTP id e202mr3220444ywa.292.1580997703374; 
- Thu, 06 Feb 2020 06:01:43 -0800 (PST)
-Received: from localhost ([2620:0:1013:11:1e1:4760:6ce4:fc64])
- by smtp.gmail.com with ESMTPSA id m137sm1471226ywd.108.2020.02.06.06.01.42
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 06 Feb 2020 06:01:42 -0800 (PST)
-Date: Thu, 6 Feb 2020 09:01:40 -0500
-From: Sean Paul <sean@poorly.run>
-To: evanbenn@google.com
-Subject: Re: [PATCH] drm/mediatek: Ensure the cursor plane is on top of other
- overlays
-Message-ID: <20200206140140.GA18465@art_vandelay>
-References: <1580441226.9516.1.camel@mtksdaap41>
- <20200206065951.213862-1-evanbenn@google.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200206065951.213862-1-evanbenn@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1izhm4-0003TT-Ey
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 14:04:58 +0000
+Received: from e123331-lin.cambridge.arm.com (fw-tnat-cam2.arm.com
+ [217.140.106.50])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F124621775;
+ Thu,  6 Feb 2020 14:04:53 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1580997895;
+ bh=1k9zgUyZTU16+bXR7Utty5v5GrnUMG0hLZQ+X8uSY8Y=;
+ h=From:To:Cc:Subject:Date:From;
+ b=pbb1jolDpUgcKiuohwjrcr6bfOirRy3U7Y7AzZ6aCdIJiT1GjWUM23U9/cv7JW+9G
+ 4DsC9LYFOlBktgCYUcC28rgFYIeCnjM+JZWEiXH/a8wT0ru+TPHeE715LkQ8ZOqt3x
+ teYp+ATKE8cwsO6H+UWr0lWK9YSj6AQv5lIH62Q0=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-efi@vger.kernel.org
+Subject: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
+Date: Thu,  6 Feb 2020 14:03:50 +0000
+Message-Id: <20200206140352.6300-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_060145_379140_1D4CC28F 
-X-CRM114-Status: GOOD (  22.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200206_060456_540515_63449408 
+X-CRM114-Status: GOOD (  18.36  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,133 +73,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dcastagna@chromium.org, evanbenn@gmail.com, evanbenn@chromium.org,
- dri-devel@lists.freedesktop.org, matthias.bgg@gmail.com,
- linux-mediatek@lists.infradead.org, p.zabel@pengutronix.de, ck.hu@mediatek.com,
- seanpaul@chromium.org, sean@poorly.run, linux-arm-kernel@lists.infradead.org
+Cc: agraf@csgraf.de, xypron.glpk@gmx.de, daniel.kiper@oracle.com,
+ ilias.apalodimas@linaro.org, mjg59@google.com, pjones@redhat.com,
+ leif@nuviainc.com, lersek@redhat.com, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 06, 2020 at 05:59:51PM +1100, evanbenn@google.com wrote:
-> From: Sean Paul <seanpaul@chromium.org>
-> 
-> Currently the cursor is placed on the first overlay plane, which means
-> it will be at the bottom of the stack when the hw does the compositing
-> with anything other than primary plane. Since mtk doesn't support plane
-> zpos, change the cursor location to the top-most plane.
-> 
-> Signed-off-by: Evan Benn <evanbenn@chromium.org>
+This series introduces an arch agnostic way of loading the initrd into
+memory from the EFI stub. This addresses a number of shortcomings that
+affect the current implementations that exist across architectures:
 
-Hi Evan,
-Thanks for spotting the issue! I think this should probably be 2 patches, one to
-fix crtc init and then the cursor patch on top of that. We generally try to only
-do one thing per patch.
+- The initrd=<file> command line option can only load files that reside
+  on the same file system that the kernel itself was loaded from, which
+  requires the bootloader or firmware to expose that file system via the
+  appropriate EFI protocol, which is not always feasible. From the kernel
+  side, this protocol is problematic since it is incompatible with mixed
+  mode on x86 (this is due to the fact that some of its methods have
+  prototypes that are difficult to marshall)
 
-A few other nits below..
+- The approach that is ordinarily taken by GRUB is to load the initrd into
+  memory, and pass it to the kernel proper via the bootparams structure or
+  via the device tree. This requires the boot loader to have an understanding
+  of those structures, which are not always set in stone, and of the policies
+  around where the initrd may be loaded into memory. In the ARM case, it
+  requires GRUB to modify the hardware description provided by the firmware,
+  given that the initrd base and offset in memory are passed via the same
+  data structure. It also creates a time window where the initrd data sits
+  in memory, and can potentially be corrupted before the kernel is booted.
 
-> Signed-off-by: Sean Paul <seanpaul@chromium.org>
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 29 +++++++++++++++++--------
->  1 file changed, 20 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index 7b392d6c71cc..d4078c2089e0 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -658,10 +658,21 @@ static const struct drm_crtc_helper_funcs mtk_crtc_helper_funcs = {
->  
->  static int mtk_drm_crtc_init(struct drm_device *drm,
->  			     struct mtk_drm_crtc *mtk_crtc,
-> -			     struct drm_plane *primary,
-> -			     struct drm_plane *cursor, unsigned int pipe)
-> +			     unsigned int pipe)
->  {
-> -	int ret;
-> +	int i, ret;
-> +
+Considering that we will soon have new users of these interfaces (EFI for
+kvmtool on ARM, RISC-V in u-boot, etc), it makes sense to add a generic
+interface now, before having another wave of bespoke arch specific code
+coming in.
 
-extra line
+Another aspect to take into account is that support for UEFI secure boot
+and measured boot is being taken into the upstream, and being able to
+rely on the PE entry point for booting any architecture makes the GRUB
+vs shim story much cleaner, as we should be able to rely on LoadImage
+and StartImage on all architectures, while retaining the ability to
+load initrds from anywhere.
 
-> +	struct drm_plane *primary = NULL;
-> +	struct drm_plane *cursor = NULL;
+Note that these patches depend on a fair amount of cleanup work that I
+am targetting for v5.7. Branch can be found at:
+https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=efistub-unification2
 
-These should be on top of the int declaration
+An implementation for ArmVirtQemu (OVMF for ARM aka AAVMF) can be found
+at https://github.com/ardbiesheuvel/edk2/commits/linux-efi-generic.
+The change is for ARM only, but the exact same code could be used on x86.
 
-> +
-> +	for (i = 0; i < mtk_crtc->layer_nr; ++i) {
+Cc: lersek@redhat.com
+Cc: leif@nuviainc.com
+Cc: pjones@redhat.com
+Cc: mjg59@google.com
+Cc: agraf@csgraf.de
+Cc: ilias.apalodimas@linaro.org
+Cc: xypron.glpk@gmx.de 
+Cc: daniel.kiper@oracle.com
 
-We don't really do pre-increment in kernel for loops
+Ard Biesheuvel (2):
+  efi/libstub: add support for loading the initrd from a device path
+  efi/libstub: take noinitrd cmdline argument into account for devpath
+    initrd
 
-> +		if (!primary && mtk_crtc->planes[i].type ==
-> +				DRM_PLANE_TYPE_PRIMARY)
-
-Line breaks should be around '&&':
-
-                if (!primary &&
-                    mtk_crtc->planes[i].type == DRM_PLANE_TYPE_PRIMARY)
-
-> +			primary = &mtk_crtc->planes[i];
-> +		if (!cursor && mtk_crtc->planes[i].type ==
-
-else if?
-
-> +				DRM_PLANE_TYPE_CURSOR)
-> +			cursor = &mtk_crtc->planes[i];
-
-
-Since we can only have one primary and one cursor, the NULL checks on primary
-and cursor are unnecessary, you can just blindly assign them when you hit a
-plane of the right type. If the driver creates multiples the behavior is
-undefined anyways.
-
-> +	}
->  
->  	ret = drm_crtc_init_with_planes(drm, &mtk_crtc->base, primary, cursor,
->  					&mtk_crtc_funcs, NULL);
-> @@ -711,11 +722,12 @@ static int mtk_drm_crtc_num_comp_planes(struct mtk_drm_crtc *mtk_crtc,
->  }
->  
->  static inline
-> -enum drm_plane_type mtk_drm_crtc_plane_type(unsigned int plane_idx)
-> +enum drm_plane_type mtk_drm_crtc_plane_type(unsigned int plane_idx,
-> +					    unsigned int num_planes)
->  {
->  	if (plane_idx == 0)
->  		return DRM_PLANE_TYPE_PRIMARY;
-> -	else if (plane_idx == 1)
-> +	else if (plane_idx == (num_planes - 1))
->  		return DRM_PLANE_TYPE_CURSOR;
->  	else
->  		return DRM_PLANE_TYPE_OVERLAY;
-> @@ -734,7 +746,8 @@ static int mtk_drm_crtc_init_comp_planes(struct drm_device *drm_dev,
->  		ret = mtk_plane_init(drm_dev,
->  				&mtk_crtc->planes[mtk_crtc->layer_nr],
->  				BIT(pipe),
-> -				mtk_drm_crtc_plane_type(mtk_crtc->layer_nr),
-> +				mtk_drm_crtc_plane_type(mtk_crtc->layer_nr,
-> +							num_planes),
->  				mtk_ddp_comp_supported_rotations(comp));
->  		if (ret)
->  			return ret;
-> @@ -830,9 +843,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
->  			return ret;
->  	}
->  
-> -	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, &mtk_crtc->planes[0],
-> -				mtk_crtc->layer_nr > 1 ? &mtk_crtc->planes[1] :
-> -				NULL, pipe);
-> +	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, pipe);
->  	if (ret < 0)
->  		return ret;
->  
-> -- 
-> 2.25.0.341.g760bfbb309-goog
-> 
+ drivers/firmware/efi/libstub/arm-stub.c       | 21 ++++--
+ .../firmware/efi/libstub/efi-stub-helper.c    | 74 +++++++++++++++++++
+ drivers/firmware/efi/libstub/efistub.h        | 13 ++++
+ drivers/firmware/efi/libstub/x86-stub.c       | 51 ++++++++++---
+ include/linux/efi.h                           |  1 +
+ 5 files changed, 146 insertions(+), 14 deletions(-)
 
 -- 
-Sean Paul, Software Engineer, Google / Chromium OS
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
