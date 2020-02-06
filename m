@@ -2,93 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 073BD154013
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 09:25:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1A1D15401D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 09:27:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vyF9RHhnXMR+rZNQ9FtWEOobCjUDLoEygKHDwqNb7HQ=; b=bSYDG2pMTAIUSc
-	DGhSmIGwwzpRtMqdllGENx0ZrD9+R+vokFYvoFSFwVMVPgrGmvytlFl1gre241GrguPqeo4M7lm/1
-	FGjTC6ICsJgaqDex9mVRh33PrG3remBdItfm17VC/bHvXcLcOzzJdnxptJSqDO0g3/l7s8nHYWyyQ
-	AHoIhhVOBzATJWr1vdBHbPwOw94sgECkvob6ZK3FaWjD2rDuub8pYUnLGVKBPvCvhUXMnE82ULV1l
-	WWc0ALTF2ENj/KA+CP8Uj2Mtv02tgV75nginMiGeX9Dg03wR0BV49rbYPh/r9yw36XGEJT3o1aerX
-	r0VqZih2OEEU5fT2opSA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=DTKzSVTrQ8TIk5l12C6s3mVHsAGqwxFCTqEjjeDR1Hs=; b=heVDRuVC0ELbj8
+	oy82KBMxPFdl1HoSH1wJaUolCO+M3OCABrG0rqqrGD/6I9obb+ltJemitPWqAkX3AeNes/29AvlTg
+	1DtxXmpQOVI25Jvf/oTFlHO1hg9R4mPTS7xZp27sjotU8TDHGGS4/KaAx7gebx5RrctT9relfjGDS
+	/fEmHO5GhmEa+VCBQRB7lN20fgtRIeMfDPoivbJiZnfR+s+Nfl+a4KhSX8gr6O7CGA6zuBFebYDN5
+	t2icQtsI+FSxBba143YiFdI2G06kE84rZZCEnNBwk1G2ndK04fCV9q8M/ihB223HS+zBDAa5aQGqk
+	Gu8ts6V1T0y3CpsvmcSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izcSv-00019L-Hx; Thu, 06 Feb 2020 08:24:49 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1izcVB-0002kl-Jk; Thu, 06 Feb 2020 08:27:09 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izcSo-000190-1S
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 08:24:43 +0000
-Received: by mail-pf1-x443.google.com with SMTP id y73so2713814pfg.2
+ id 1izcUv-0002i7-C6
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 08:26:55 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g1so5235600wmh.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 00:24:41 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Gcu/MBD5y+k9GL2qLXcd5S94TlBigL82zSNhw+41Llk=;
- b=VN66oejD5fgAZQzVbEXrqzaYUucPCYjlpvNELrtDM/KSzAGiRv/AwJhpwjCB06E3kD
- oLSt/lp4LB762EDY6O8xFhzIEFr7cK6f1tos4uV11kzQUSgrBVbB5ONOD47g4P53LfUd
- 8YCYY/iCtHSG7ZkIbSm3Pp8jmilgGg2LhBVqOl899vhhIbMdSSiM0fwL4ebnl9Wi9Mwp
- NLlByLuqaTEMEvDYbSxox4BhXjz7j8F5e30gE+1M/2OKySpgssHh+Aiai3VthGnDCxCE
- i5+1yj2Z0x7pKD/GnkUeknYJ8AuJHEQZnyKo0W98nMIvuhlHxUzgXS/rwbN9tPmnpolv
- wJxg==
+ Thu, 06 Feb 2020 00:26:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=uElpQqjJlORb1Z1H6UeJgJtYJWxJRwfTKDbebqv3j90=;
+ b=YOEluXsMfq0MXDNHQZxAYXHC8O7RDoCD7+tp5PBvlfyRKiVXksf40fdW7xxEDU7wNY
+ 3fEI5I5w/MoqTR5h1YjqXhXLtlCNb3Ju9HLKGu+v6IyWXGusBAEEj9cMY+7RyXZuGYC3
+ +dH4RYwq1wd4lf6Pku0TBWuUrNrQQZ5tsZPcJlvO+OyKLfaVZpEItA/UjOYRpuffSzfO
+ Un0iC+cV7J9YlSa4zaaDjdXW4o+AbqqOu4U5JJBCDJa2twGuMbaD5VXvlnKN+iTrCEym
+ Lqa/B2XMwQDbb7/8KIpfDyNDYtMUhA2MrepaZ55z41XfEmDss3/E3w0Q0Ngmd5tMjPyf
+ 5/lA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Gcu/MBD5y+k9GL2qLXcd5S94TlBigL82zSNhw+41Llk=;
- b=HJ5XL3WD7UPvqqVSz1Kh6QpPGG/FbhLcJhQljdB6Zswcai7eTFkbrpa7uP+wZjlqEL
- o6pZDjDXkHENipcslEcvrqmH/3jgGtvKvKhHbxGvpTrw75XbTxHF3m0LMGsvKRVUzty+
- CKHi4xGuanWK1SWu0yPT8M7OP1EjLHMB2lWZFo7/o6TZboNycx33xmsk0MWbWoj4hU0z
- oSFiybxe89wEoMP/JrqnuzRVE8jvT8GrvhJN3wasd2SG4jn72+Ko35gXqfagZRvsTDtD
- gzJ9vpEG8c2iJTCZOCT305jyjvv/DLt9mJJOEsUr5hPh8XLAADqnndm5xg4cwYt32EUf
- 6/Kg==
-X-Gm-Message-State: APjAAAUuLNxJ3bDV3pyRaVP1YVmC2FT3jusbjIsvAGKV2PEkmP8dRP97
- 3vhDAgDsn5UPeNYkp4gVSkB5lA==
-X-Google-Smtp-Source: APXvYqw6w48vSVE7b0D1eb4Hp2oAIKvE7+Ltn2LDvENbjt++jAfqC0toL081vOsJteIwmkD0kJJuqg==
-X-Received: by 2002:a62:78c1:: with SMTP id t184mr2478380pfc.222.1580977481254; 
- Thu, 06 Feb 2020 00:24:41 -0800 (PST)
-Received: from leoy-ThinkPad-X240s ([2400:8902::f03c:91ff:fe3f:32da])
- by smtp.gmail.com with ESMTPSA id n2sm2294912pfq.50.2020.02.06.00.24.29
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 06 Feb 2020 00:24:40 -0800 (PST)
-Date: Thu, 6 Feb 2020 16:24:23 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH v3 3/5] perf cs-etm: Correct synthesizing instruction
- samples
-Message-ID: <20200206081834.GB3807@leoy-ThinkPad-X240s>
-References: <20200203015203.27882-1-leo.yan@linaro.org>
- <20200203015203.27882-4-leo.yan@linaro.org>
- <CAJ9a7Vgx+-8Etcak=NDJ1p1yQeexyqRDFFWPW=bW5ZHNLyeP6A@mail.gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=uElpQqjJlORb1Z1H6UeJgJtYJWxJRwfTKDbebqv3j90=;
+ b=NA//0TKcMLubygWaQcld6eLieviu7V0gcgWqvLqNS/x+lpqN9H3iyBlU9LK97j6MB2
+ Xnv0Ktns6XfCKTCGIzdZWXForjV9neFdcoi5/XuSOV7sKxPcW53u+xA8+W+gcpmhITxR
+ maCoUZYs2a4t/8P9pXSWHkO5nFZ0AAAY2L40J0uFb5FQept9uYX3xp4MyXp0tweowxCI
+ J8gJQXkdcOZZH3yO8xiorIlGmjhoymHNSskm8qCvz4C1JGfNMLMmOvH/AgVB0O4tmorC
+ mjcbmWjm0E16IXx/pZZ+LhSC92lXh4AVPxOozY3WOmJCrRcUx/MzuUVt+dh3dmMIbWMg
+ ENtg==
+X-Gm-Message-State: APjAAAVYGwY8IaQLhxuX5L0aasTAfaNW0R0Q4Ck2QL/9urTnojlKCaxH
+ fhvTDM+pkq0PJ1B13SpWXy/UVQ==
+X-Google-Smtp-Source: APXvYqxOjcJXIDMW/a4TvPU28SV7UoBNLOuXI8XKG+/DpYQAAKyqUoXZb4vZeIp+w+lguLqEPhXIbQ==
+X-Received: by 2002:a1c:4d18:: with SMTP id o24mr3017002wmh.35.1580977611576; 
+ Thu, 06 Feb 2020 00:26:51 -0800 (PST)
+Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:7d33:17f7:8097:ecc7])
+ by smtp.gmail.com with ESMTPSA id e16sm3148027wrs.73.2020.02.06.00.26.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 06 Feb 2020 00:26:51 -0800 (PST)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: mchehab@kernel.org,
+	hans.verkuil@cisco.com
+Subject: [PATCH v5 0/4] media: meson: vdec: Add compliant H264 support
+Date: Thu,  6 Feb 2020 09:26:44 +0100
+Message-Id: <20200206082648.25184-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJ9a7Vgx+-8Etcak=NDJ1p1yQeexyqRDFFWPW=bW5ZHNLyeP6A@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_002442_123027_D9EB4728 
-X-CRM114-Status: GOOD (  40.74  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200206_002653_409829_DD8568B9 
+X-CRM114-Status: GOOD (  10.03  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,324 +92,202 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
- Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-amlogic@lists.infradead.org, linux-media@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 05, 2020 at 04:09:01PM +0000, Mike Leach wrote:
-> Hi Leo,
-> 
-> There are a couple of typos in the comments below, but I also believe
-> that the sample loop could be considerably simplified
-> 
-> On Mon, 3 Feb 2020 at 01:52, Leo Yan <leo.yan@linaro.org> wrote:
-> >
-> > When 'etm->instructions_sample_period' is less than
-> > 'tidq->period_instructions', the function cs_etm__sample() cannot handle
-> > this case properly with its logic.
-> >
-> > Let's see below flow as an example:
-> >
-> > - If we set itrace option '--itrace=i4', then function cs_etm__sample()
-> >   has variables with initialized values:
-> >
-> >   tidq->period_instructions = 0
-> >   etm->instructions_sample_period = 4
-> >
-> > - When the first packet is coming:
-> >
-> >   packet->instr_count = 10; the number of instructions executed in this
-> >   packet is 10, thus update period_instructions as below:
-> >
-> >   tidq->period_instructions = 0 + 10 = 10
-> >   instrs_over = 10 - 4 = 6
-> >   offset = 10 - 6 - 1 = 3
-> >   tidq->period_instructions = instrs_over = 6
-> >
-> > - When the second packet is coming:
-> >
-> >   packet->instr_count = 10; in the second pass, assume 10 instructions
-> >   in the trace sample again:
-> >
-> >   tidq->period_instructions = 6 + 10 = 16
-> >   instrs_over = 16 - 4 = 12
-> >   offset = 10 - 12 - 1 = -3  -> the negative value
-> >   tidq->period_instructions = instrs_over = 12
-> >
-> > So after handle these two packets, there have below issues:
-> >
-> > The first issue is that cs_etm__instr_addr() returns the address within
-> > the current trace sample of the instruction related to offset, so the
-> > offset is supposed to be always unsigned value.  But in fact, function
-> > cs_etm__sample() might calculate a negative offset value (in handling
-> > the second packet, the offset is -3) and pass to cs_etm__instr_addr()
-> > with u64 type with a big positive integer.
-> >
-> > The second issue is it only synthesizes 2 samples for sample period = 4.
-> > In theory, every packet has 10 instructions so the two packets have
-> > total 20 instructions, 20 instructions should generate 5 samples
-> > (4 x 5 = 20).  This is because cs_etm__sample() only calls once
-> > cs_etm__synth_instruction_sample() to generate instruction sample per
-> > range packet.
-> >
-> > This patch fixes the logic in function cs_etm__sample(); the basic
-> > idea is to divide into three parts for handling coming packet:
-> >
-> > - The first part is for synthesizing the first instruction sample, it
-> >   combines the instructions from the tail of previous packet and the
-> >   instructions from the head of the new packet;
-> > - The second part is to simply generate samples with sample period
-> >   aligned;
-> > - The third part is the tail of new packet, the rest instructions will
-> >   be left for the sequential sample handling.
-> >
-> > Suggested-by: Mike Leach <mike.leach@linaro.org>
-> > Signed-off-by: Leo Yan <leo.yan@linaro.org>
-> > ---
-> >  tools/perf/util/cs-etm.c | 105 ++++++++++++++++++++++++++++++++++-----
-> >  1 file changed, 92 insertions(+), 13 deletions(-)
-> >
-> > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-> > index 3e28462609e7..c5a05f728eac 100644
-> > --- a/tools/perf/util/cs-etm.c
-> > +++ b/tools/perf/util/cs-etm.c
-> > @@ -1360,23 +1360,102 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
-> >                  * TODO: allow period to be defined in cycles and clock time
-> >                  */
-> >
-> > -               /* Get number of instructions executed after the sample point */
-> > -               u64 instrs_over = tidq->period_instructions -
-> > -                       etm->instructions_sample_period;
-> > +               /*
-> > +                * Below diagram demonstrates the instruction samples
-> > +                * generation flows:
-> > +                *
-> > +                *    Instrs     Instrs       Instrs       Instrs
-> > +                *   Sample(n)  Sample(n+1)  Sample(n+2)  Sample(n+3)
-> > +                *    |            |            |            |
-> > +                *    V            V            V            V
-> > +                *   --------------------------------------------------
-> > +                *            ^                                  ^
-> > +                *            |                                  |
-> > +                *         Period                             Period
-> > +                *    instructions(Pi)                   instructions(Pi')
-> > +                *
-> > +                *            |                                  |
-> > +                *            \---------------- -----------------/
-> > +                *                             V
-> > +                *                      instrs_executed
-> > +                *
-> > +                * Period instructions (Pi) contains the the number of
-> > +                * instructions executed after the sample point(n).  When a new
-> > +                * instruction packet is coming and generate for the next sample
-> > +                * (n+1), it combines with two parts instructions, one is the
-> > +                * tail of the old packet and another is the head of the new
-> > +                * coming packet.  So 'head' variable is used to cauclate the
-> typo : s/cauclate/calculate
+Hello,
 
-Used checkpatch.pl but didn't see any complaints for this.
+This patch series aims to bring H.264 support as well as compliance update
+to the amlogic stateful video decoder driver.
 
-Thanks for pointing out and will fix it.
+The issue in the V1 patchset at [1] is solved by patch #1 following comments
+and requirements from hans. It moves the full draining & stopped state tracking
+and handling from vicodec to core v4l2-mem2mem.
 
-> > +                * instruction numbers in the new packet for sample(n+1).
-> > +                *
-> > +                * Sample(n+2) and sample(n+3) consume the instructions with
-> > +                * sample period, so directly generate samples based on the
-> > +                * sampe period.
-> > +                *
-> typo: s/sampe/sample
+The vicodec changes still passes the v4l2-utils "media-test" tests, log at [5]:
+[...]
+vicodec media controller compliance tests
 
-Will fix.
+Thu Jan 16 13:00:56 UTC 2020
+v4l2-compliance SHA: 7ead0e1856b89f2e19369af452bb03fd0cd16793, 64 bits
+[...]
+Summary:
 
-> > +                * After sample(n+3), the rest instructions will be used by
-> > +                * later packet; so use 'instrs_over' to track the rest
-> > +                * instruction number and it is assigned to
-> > +                * 'tidq->period_instructions' for next round calculation.
-> > +                */
-> > +               u64 head, offset = 0;
-> > +               u64 addr;
-> >
-> >                 /*
-> > -                * Calculate the address of the sampled instruction (-1 as
-> > -                * sample is reported as though instruction has just been
-> > -                * executed, but PC has not advanced to next instruction)
-> > +                * 'instrs_over' is the number of instructions executed after
-> > +                * sample points, initialise it to 'instrs_executed' and will
-> > +                * decrease it for consumed instructions in every synthesized
-> > +                * instruction sample.
-> >                  */
-> > -               u64 offset = (instrs_executed - instrs_over - 1);
-> > -               u64 addr = cs_etm__instr_addr(etmq, trace_chan_id,
-> > -                                             tidq->packet, offset);
-> > +               u64 instrs_over = instrs_executed;
-> >
-> > -               ret = cs_etm__synth_instruction_sample(
-> > -                       etmq, tidq, addr, etm->instructions_sample_period);
-> > -               if (ret)
-> > -                       return ret;
-> > +               /*
-> > +                * 'head' is the instructions number of the head in the new
-> > +                * packet, it combines with the tail of previous packet to
-> > +                * generate a sample.  So 'head' uses the sample period to
-> > +                * decrease the instruction number introduced by the previous
-> > +                * packet.
-> > +                */
-> > +               head = etm->instructions_sample_period -
-> > +                                 (tidq->period_instructions - instrs_executed);
-> > +
-> > +               if (head) {
-> > +                       offset = head;
-> > +
-> > +                       /*
-> > +                        * Calculate the address of the sampled instruction (-1
-> > +                        * as sample is reported as though instruction has just
-> > +                        * been executed, but PC has not advanced to next
-> > +                        * instruction)
-> > +                        */
-> > +                       addr = cs_etm__instr_addr(etmq, trace_chan_id,
-> > +                                                 tidq->packet, offset - 1);
-> > +                       ret = cs_etm__synth_instruction_sample(
-> > +                               etmq, tidq, addr,
-> > +                               etm->instructions_sample_period);
-> > +                       if (ret)
-> > +                               return ret;
-> > +
-> > +                       instrs_over -= head;
-> > +               }
-> > +
-> > +               while (instrs_over >= etm->instructions_sample_period) {
-> > +                       offset += etm->instructions_sample_period;
-> > +
-> > +                       /*
-> > +                        * Calculate the address of the sampled instruction (-1
-> > +                        * as sample is reported as though instruction has just
-> > +                        * been executed, but PC has not advanced to next
-> > +                        * instruction)
-> > +                        */
-> > +                       addr = cs_etm__instr_addr(etmq, trace_chan_id,
-> > +                                                 tidq->packet, offset - 1);
-> > +                       ret = cs_etm__synth_instruction_sample(
-> > +                               etmq, tidq, addr,
-> > +                               etm->instructions_sample_period);
-> > +                       if (ret)
-> > +                               return ret;
-> > +
-> > +                       instrs_over -= etm->instructions_sample_period;
-> > +               }
-> >
-> >                 /* Carry remaining instructions into next sample period */
-> >                 tidq->period_instructions = instrs_over;
-> > --
-> > 2.17.1
-> >
-> 
-> I believe the following change would work and make for easier reading...
-> 
-> .... at the start of the function remove instrs_executed and replace ....
-> /* get instructions remainder from previous packet */
-> u64 instrs_prev = tidq->period_instructions;
-> 
-> /* set available instructions to previous packet remainder + the
-> current packet count  */
-> tidq->period_instructions += tidq->packet->instr_count;
-> 
-> 
-> .... within the if(etm->sample_instructions && ...) statement I would
-> be more explicit what the elements of the diagram are ....
-> 
-> /*
->  * Below diagram demonstrates the instruction samples
->  * generation flows:
->  *
->  *    Instrs     Instrs       Instrs       Instrs
->  *   Sample(n)  Sample(n+1)  Sample(n+2)  Sample(n+3)
->  *    |            |            |            |
->  *    V            V            V            V
->  *   --------------------------------------------------
->  *            ^                                  ^
->  *            |                                  |
->  *         Period                             Period
->  *    instructions(Pi)                   instructions(Pi')
->  *
->  *            |                                  |
->  *            \---------------- -----------------/
->  *                             V
->  *                      tidq->packet->instr_count;
->  *
->  * Instrs Sample(n...) are the synthesised samples occuring every
-> etm->instructions_sample_period
->  * instructions - as defined on the perf command line. Sample(n) being
-> the last sample before the
->  * current etm packet, n+1 to n+3 samples generated from the current etm packet.
->  *
->  * tidq->packet->instr_count represents the number of instructions in
-> the current etm packet.
->  *
->  * Period instructions (Pi) contains the the number of instructions
-> executed after the sample point(n)
->  * from the previous etm packet. This will always be less than
-> etm->instructions_sample_period.
->  *
-> 
-> .... continue with explanation here ....
-> 
-> 
-> .... then we can simplify the loop code removing some of the temporary
-> variables ....
-> 
-> /* get the initial offset into the current packet instructions
->    (entry conditions ensure that instrs_prev < etm->instructions_sample_period)
->  */
-> u64 offset = etm->instructions_sample_period - instrs_prev;
-> u64 addr;
-> 
-> /* Prepare last branches for instruction sample */
-> if (etm->synth_opts.last_branch)
->     cs_etm__copy_last_branch_rb(etmq, tidq);
-> 
-> while (tidq->period_instructions >= etm->instructions_sample_period) {
-> 
->       /*
->        * Calculate the address of the sampled instruction (-1
->        * as sample is reported as though instruction has just
->        * been executed, but PC has not advanced to next
->        * instruction)
->        */
->     addr = cs_etm__instr_addr(etmq, trace_chan_id, tidq->packet, offset - 1);
->     ret = cs_etm__synth_instruction_sample( etmq, tidq, addr,
->                 etm->instructions_sample_period);
->     if (ret)
->         return ret;
-> 
->     offset += etm->instructions_sample_period;
->     tidq->period_instructions -= etm->instructions_sample_period;
-> }
-> 
-> .....
-> I believe the above should work, but cannot claim to have tried it
-> out. What do you think?
+Total for vicodec device /dev/media3: 7, Succeeded: 7, Failed: 0, Warnings: 0
+Total for vicodec device /dev/video13: 51, Succeeded: 51, Failed: 0, Warnings: 0
+Total for vicodec device /dev/video14: 51, Succeeded: 51, Failed: 0, Warnings: 0
+Total for vicodec device /dev/video14: 51, Succeeded: 51, Failed: 0, Warnings: 0
+Total for vicodec device /dev/video14: 51, Succeeded: 51, Failed: 0, Warnings: 0
+Total for vicodec device /dev/video14: 51, Succeeded: 51, Failed: 0, Warnings: 0
+Total for vicodec device /dev/video14: 51, Succeeded: 51, Failed: 0, Warnings: 0
+Total for vicodec device /dev/video14: 51, Succeeded: 51, Failed: 0, Warnings: 0
 
-Agree.  To be honest, I considered to use your suggested way, but I
-worried about the boundary conditions for 'offset', so went back to
-use explict method with two code segments (head and sequential samples).
+Final Summary: 364, Succeeded: 364, Failed: 0, Warnings: 0
+Thu Jan 16 13:02:59 UTC 2020
 
-After review the suggested code, I don't find any issue.  Will refine
-code as this way and give testing for it.
+With this, it also passes vdec v4l2-compliance with H264 streaming on Amlogic G12A
+and Amlogic SM1 SoCs successfully.
 
-Very appreciate the suggestions :)
+The compliance log is:
+# v4l2-compliance --stream-from-hdr test-25fps.h264.hdr -s
+v4l2-compliance SHA: 7ead0e1856b89f2e19369af452bb03fd0cd16793, 64 bits
 
-Leo
+Compliance test for meson-vdec device /dev/video0:
+
+Driver Info:
+	Driver name      : meson-vdec
+	Card type        : Amlogic Video Decoder
+	Bus info         : platform:meson-vdec
+	Driver version   : 5.5.0
+	Capabilities     : 0x84204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+		Device Capabilities
+	Device Caps      : 0x04204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+	Detected Stateful Decoder
+
+Required ioctls:
+	test VIDIOC_QUERYCAP: OK
+
+Allow for multiple opens:
+	test second /dev/video19 open: OK
+	test VIDIOC_QUERYCAP: OK
+	test VIDIOC_G/S_PRIORITY: OK
+	test for unlimited opens: OK
+
+Debug ioctls:
+	test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
+	test VIDIOC_LOG_STATUS: OK (Not Supported)
+
+Input ioctls:
+	test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
+	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+	test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
+	test VIDIOC_ENUMAUDIO: OK (Not Supported)
+	test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)
+	test VIDIOC_G/S_AUDIO: OK (Not Supported)
+	Inputs: 0 Audio Inputs: 0 Tuners: 0
+
+Output ioctls:
+	test VIDIOC_G/S_MODULATOR: OK (Not Supported)
+	test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+	test VIDIOC_ENUMAUDOUT: OK (Not Supported)
+	test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
+	test VIDIOC_G/S_AUDOUT: OK (Not Supported)
+	Outputs: 0 Audio Outputs: 0 Modulators: 0
+
+Input/Output configuration ioctls:
+	test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
+	test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
+	test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
+	test VIDIOC_G/S_EDID: OK (Not Supported)
+
+Control ioctls:
+	test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
+	test VIDIOC_QUERYCTRL: OK
+	test VIDIOC_G/S_CTRL: OK
+	test VIDIOC_G/S/TRY_EXT_CTRLS: OK
+	test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
+	test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
+	Standard Controls: 2 Private Controls: 0
+
+Format ioctls:
+	test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
+	test VIDIOC_G/S_PARM: OK (Not Supported)
+	test VIDIOC_G_FBUF: OK (Not Supported)
+	test VIDIOC_G_FMT: OK
+	test VIDIOC_TRY_FMT: OK
+	test VIDIOC_S_FMT: OK
+	test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
+	test Cropping: OK (Not Supported)
+	test Composing: OK (Not Supported)
+	test Scaling: OK (Not Supported)
+
+Codec ioctls:
+	test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
+	test VIDIOC_G_ENC_INDEX: OK (Not Supported)
+	test VIDIOC_(TRY_)DECODER_CMD: OK
+
+Buffer ioctls:
+	test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
+	test VIDIOC_EXPBUF: OK
+	test Requests: OK (Not Supported)
+
+Test input 0:
+
+Streaming ioctls:
+	test read/write: OK (Not Supported)
+	test blocking wait: OK
+	Video Capture Multiplanar: Captured 60 buffers    
+	test MMAP (select): OK
+	Video Capture Multiplanar: Captured 60 buffers    
+	test MMAP (epoll): OK
+	test USERPTR (select): OK (Not Supported)
+	test DMABUF: Cannot test, specify --expbuf-device
+
+Total for meson-vdec device /dev/video0: 49, Succeeded: 49, Failed: 0, Warnings: 0
+
+Changes since v4 at [5]:
+- Squashed "don't resume instantly if not streaming capture" and "fix OUTPUT buffer size configuration" fixes from maxime
+
+Changes since v3 at [3]:
+- Fixed vicodec compliance
+- Fixed vdec compliance with v4l2 state management
+- fixed doc errors for v4l2-mem2mem.h
+
+Changes since v2 at [2]:
+- Move full draining & stopped state tracking into core v4l2-mem2mem
+- Adapt vicodec to use the core v4l2-mem2mem draining & stopped state tracking
+
+Changes since v1 at [1]:
+- fixed output_size is never used reported by hans
+- rebased on G12A and SM1 patches
+- added handling of qbuf after STREAMON and STOP before enought buffer queued
+
+[1] https://lore.kernel.org/linux-media/20191007145909.29979-1-mjourdan@baylibre.com
+[2] https://lore.kernel.org/linux-media/20191126093733.32404-1-narmstrong@baylibre.com
+[3] https://lore.kernel.org/linux-media/20191209122028.13714-1-narmstrong@baylibre.com
+[4] https://people.freedesktop.org/~narmstrong/vicodec-compliance-7ead0e1856b89f2e19369af452bb03fd0cd16793-20200116.log
+[5] https://lore.kernel.org/linux-media/20200116133025.1903-1-narmstrong@baylibre.com
+
+Maxime Jourdan (2):
+  media: meson: vdec: bring up to compliance
+  media: meson: vdec: add H.264 decoding support
+
+Neil Armstrong (2):
+  media: v4l2-mem2mem: handle draining, stopped and next-buf-is-last
+    states
+  media: vicodec: use v4l2-mem2mem draining, stopped and
+    next-buf-is-last states handling
+
+ drivers/media/platform/vicodec/vicodec-core.c | 162 ++----
+ drivers/media/v4l2-core/v4l2-mem2mem.c        | 172 ++++++-
+ drivers/staging/media/meson/vdec/Makefile     |   2 +-
+ drivers/staging/media/meson/vdec/codec_h264.c | 482 ++++++++++++++++++
+ drivers/staging/media/meson/vdec/codec_h264.h |  14 +
+ drivers/staging/media/meson/vdec/esparser.c   |  58 +--
+ drivers/staging/media/meson/vdec/vdec.c       |  90 ++--
+ drivers/staging/media/meson/vdec/vdec.h       |  14 +-
+ .../staging/media/meson/vdec/vdec_helpers.c   |  88 ++--
+ .../staging/media/meson/vdec/vdec_helpers.h   |   6 +-
+ .../staging/media/meson/vdec/vdec_platform.c  |  71 +++
+ include/media/v4l2-mem2mem.h                  |  95 ++++
+ 12 files changed, 1024 insertions(+), 230 deletions(-)
+ create mode 100644 drivers/staging/media/meson/vdec/codec_h264.c
+ create mode 100644 drivers/staging/media/meson/vdec/codec_h264.h
+
+-- 
+2.22.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
