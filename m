@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8BC7153C6C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 02:07:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BF83153C72
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 02:08:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=fviubd1KKmoInqKtmKUxbw8iznBvhzhL/nE0RYYnBhM=; b=L4YKYmZm0WCZnfLpBozKqX8PbM
-	r9yV/MdPS8c7AXq30djA8/+kjO8ls4FDjtgZ9zfwlQfr+Ie2oHln28RYGm7xdxMe8JZkINQ+czcsB
-	6lPY3a2bzv0+YYWX95g9O2UhIclKm8FA0Enw4zNlKoPLFfmXPHP2v5cwe300rivdlHvif4dXly/8c
-	yz1vA5xK4DMGIOQ0N4T+gr9Lz6oAoXBFF05cNF0DPEBu+fy1v3qZg9hzEGnJZlwQmQHx6Vivm4+1q
-	LILjsv22/BMRyg+Vj+ookE0U+F1QWCRnNkITsXk6QD82CBpleW8hBIOKmDunOd9p31HTaTd5CPIjl
-	4IoZHXjQ==;
+	bh=B48p+3mSQkV7nvdD0oaLUhmOGgZaqUONAa21sg7GedM=; b=mXNnwIxZTN1p/B4J48Qd8uMgUg
+	DMsUQucyV+Yj4OWOCpqFa+Hs7rK1R5cuNq/E8eGdDW5IrfIdU0FGE0DDgOH5cC/cXP1CQHfcrbh4q
+	KDtrZAOJ3vgfE8WEqxvoL9Q8rMxS31nW1c3bByF8KX5aecoFJraW9a+WtvqSYCO3+Ul2SStAOOq7c
+	T9w5rqlwUOlaca60Wom3W9l7QRaSfXyWsAJA5/UsV8xLf604kIoitqRedHGU74bLCOKeBf8P721zo
+	KQTrKYsaBPK4ZXYj1oa9c5PlH4wz3V/1mFjyRinFHmXvG3xgO6ZS1YOkerHC3nw7Qwc0XX+4d9Q8j
+	bEA0R9sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izVdr-0001gd-JK; Thu, 06 Feb 2020 01:07:39 +0000
+	id 1izVeU-0002LJ-DH; Thu, 06 Feb 2020 01:08:18 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izVdU-0001ZH-JN; Thu, 06 Feb 2020 01:07:18 +0000
+ id 1izVdZ-0001bB-6q; Thu, 06 Feb 2020 01:07:22 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D5A1A101E;
- Wed,  5 Feb 2020 17:07:13 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 667571045;
+ Wed,  5 Feb 2020 17:07:15 -0800 (PST)
 Received: from DESKTOP-VLO843J.lan (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9BFFA3F68E;
- Wed,  5 Feb 2020 17:07:12 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2DC283F68E;
+ Wed,  5 Feb 2020 17:07:14 -0800 (PST)
 From: Robin Murphy <robin.murphy@arm.com>
 To: lgirdwood@gmail.com,
 	broonie@kernel.org,
 	heiko@sntech.de
-Subject: [PATCH 1/3] ASoC: dt-bindings: Make RK3328 codec GPIO explicit
-Date: Thu,  6 Feb 2020 01:07:11 +0000
-Message-Id: <c84fd0521ce7f307d1921010498738722623e7ef.1580950046.git.robin.murphy@arm.com>
+Subject: [PATCH 2/3] ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit
+Date: Thu,  6 Feb 2020 01:07:12 +0000
+Message-Id: <29a846da33c02df64eca62b5fa0f3884652f788f.1580950046.git.robin.murphy@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1580950046.git.robin.murphy@arm.com>
 References: <cover.1580950046.git.robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_170716_683887_3A3D1C49 
-X-CRM114-Status: GOOD (  12.29  )
+X-CRM114-CacheID: sfid-20200205_170721_306323_C15F3B08 
+X-CRM114-Status: GOOD (  14.98  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -71,44 +71,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Existing RK3328 codec drivers have overloaded the GRF phandle to assume
-implicit control of the limited-function GPIO_MUTE pin, which is usually
-used to enable an external audio line driver IC. Since this pin has a
-proper binding of its own (see gpio/rockchip,rk3328-grf-gpio.txt), make
-a GPIO explicit in the codec binding too. This will help avoid ambiguity
-on boards that use that pin for some other purpose.
-
-(and while touching the example, enforce the "don't include status" rule)
+The RK3328 reference design uses an external line driver IC as a buffer
+on the analog codec output, enabled by the GPIO_MUTE pin, and such a
+configuration is currently assumed in the codec driver's direct poking
+of GRF_SOC_CON10 to control the GPIO_MUTE output value. However, some
+boards wire up analog audio yet use that pin for some other purpose, so
+that assumption doesn't always hold. Update this functionality to rely
+on an explicit GPIO descriptor, such that it can be managed at the
+board level.
 
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 ---
- .../devicetree/bindings/sound/rockchip,rk3328-codec.txt    | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+ sound/soc/codecs/rk3328_codec.c | 20 +++++---------------
+ 1 file changed, 5 insertions(+), 15 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip,rk3328-codec.txt b/Documentation/devicetree/bindings/sound/rockchip,rk3328-codec.txt
-index 2469588c7ccb..1ecd75d2032a 100644
---- a/Documentation/devicetree/bindings/sound/rockchip,rk3328-codec.txt
-+++ b/Documentation/devicetree/bindings/sound/rockchip,rk3328-codec.txt
-@@ -10,6 +10,11 @@ Required properties:
- - clock-names: should be "pclk".
- - spk-depop-time-ms: speak depop time msec.
+diff --git a/sound/soc/codecs/rk3328_codec.c b/sound/soc/codecs/rk3328_codec.c
+index 287c962ba00d..f0e9ef21c5f8 100644
+--- a/sound/soc/codecs/rk3328_codec.c
++++ b/sound/soc/codecs/rk3328_codec.c
+@@ -7,6 +7,7 @@
+ #include <linux/clk.h>
+ #include <linux/delay.h>
+ #include <linux/device.h>
++#include <linux/gpio/consumer.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/platform_device.h>
+@@ -31,7 +32,7 @@
  
-+Optional properties:
-+
-+- mute-gpios: GPIO specifier for external line driver control (typically the
-+              dedicated GPIO_MUTE pin)
-+
- Example for rk3328 internal codec:
+ struct rk3328_codec_priv {
+ 	struct regmap *regmap;
+-	struct regmap *grf;
++	struct gpio_desc *mute;
+ 	struct clk *mclk;
+ 	struct clk *pclk;
+ 	unsigned int sclk;
+@@ -106,16 +107,6 @@ static int rk3328_set_dai_fmt(struct snd_soc_dai *dai, unsigned int fmt)
+ 	return 0;
+ }
  
- codec: codec@ff410000 {
-@@ -18,6 +23,6 @@ codec: codec@ff410000 {
- 	rockchip,grf = <&grf>;
- 	clocks = <&cru PCLK_ACODEC>;
- 	clock-names = "pclk";
-+	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
- 	spk-depop-time-ms = 100;
--	status = "disabled";
- };
+-static void rk3328_analog_output(struct rk3328_codec_priv *rk3328, int mute)
+-{
+-	unsigned int val = BIT(17);
+-
+-	if (mute)
+-		val |= BIT(1);
+-
+-	regmap_write(rk3328->grf, RK3328_GRF_SOC_CON10, val);
+-}
+-
+ static int rk3328_digital_mute(struct snd_soc_dai *dai, int mute)
+ {
+ 	struct rk3328_codec_priv *rk3328 =
+@@ -205,7 +196,7 @@ static int rk3328_codec_open_playback(struct rk3328_codec_priv *rk3328)
+ 	}
+ 
+ 	msleep(rk3328->spk_depop_time);
+-	rk3328_analog_output(rk3328, 1);
++	gpiod_set_value(rk3328->mute, 0);
+ 
+ 	regmap_update_bits(rk3328->regmap, HPOUTL_GAIN_CTRL,
+ 			   HPOUTL_GAIN_MASK, OUT_VOLUME);
+@@ -246,7 +237,7 @@ static int rk3328_codec_close_playback(struct rk3328_codec_priv *rk3328)
+ {
+ 	size_t i;
+ 
+-	rk3328_analog_output(rk3328, 0);
++	gpiod_set_value(rk3328->mute, 1);
+ 
+ 	regmap_update_bits(rk3328->regmap, HPOUTL_GAIN_CTRL,
+ 			   HPOUTL_GAIN_MASK, 0);
+@@ -446,7 +437,6 @@ static int rk3328_platform_probe(struct platform_device *pdev)
+ 		dev_err(&pdev->dev, "missing 'rockchip,grf'\n");
+ 		return PTR_ERR(grf);
+ 	}
+-	rk3328->grf = grf;
+ 	/* enable i2s_acodec_en */
+ 	regmap_write(grf, RK3328_GRF_SOC_CON2,
+ 		     (BIT(14) << 16 | BIT(14)));
+@@ -458,7 +448,7 @@ static int rk3328_platform_probe(struct platform_device *pdev)
+ 		rk3328->spk_depop_time = 200;
+ 	}
+ 
+-	rk3328_analog_output(rk3328, 0);
++	rk3328->mute = gpiod_get_optional(&pdev->dev, "mute", GPIOD_OUT_HIGH);
+ 
+ 	rk3328->mclk = devm_clk_get(&pdev->dev, "mclk");
+ 	if (IS_ERR(rk3328->mclk))
 -- 
 2.17.1
 
