@@ -2,59 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 730D0153EA6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 07:23:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C5E2153EDA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  6 Feb 2020 07:46:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UnvNVZufwxF2VSr0vNzJYSG+Xi+0/VjE8Lx27fI5E7A=; b=csDWMfm/RY3CVLY+CE13JVpLD
-	gDT7QCrFo9KYDjYgD82bsfOET00NJ+LXGvTuTaiiwpc3Hz40vzS7NcQkSr4wAaJImYx3imn1ScdvA
-	N/4RifP03lrTKTr3/bifqfINvTHUwiWMuHlYtDRU5nnb3f1jafC4v0LdjRZ+QROe3OTuyzIuc7QXE
-	tGty3m4skGeWi2IR7yji1JFUP1ywe4lIAzM1O2v08vdGa6qg2ilnmQSBvK0IRbG0ugkKg+eIveQN2
-	ecccs4X6xDR0wiQVB3fDK8F/IQBz8sMR5AeFp82bqz3V4dgmMb/pSNeBZW0dHhxNM1aY/MdHqgVKZ
-	UZRLpt0nA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FDM//7GZks+r5uFYjz/bajucVGMmaw62ckZwzUfRLp8=; b=at17IDl1sN0QFa
+	K9TpP8Ha4Ds0hX/vFjIeDoYugqtoaOghwjrVFJ/qKBtMQamXas2Sla6LOO/25mcKfSxvE16nvx1cx
+	LKVBs7mtdoyrD23YfZD7/cgPANnY1+oCm0wk58VNZUVyAIlVgfMCmGCpN/n1yOGY3KsMt8szP0BBU
+	SNDQGab1ew3ZRbS376vW7zI8GnDbbD79sUStXgy4CGiYmCMif7m8sSsIadZm6KNcSq4/QyYKEngyj
+	ctxULWirX3e2CIPoYzukxLpEFc0I4mWwEdN+y6HOSwA8KIxoLw5O9OvqGlGTsFRfIDLFyVLiuYa0L
+	E+GASvVRVM0CB4V8+xUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izaYy-000091-F9; Thu, 06 Feb 2020 06:22:56 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1izavG-00082i-Tw; Thu, 06 Feb 2020 06:45:58 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izaYs-00007b-Ox
- for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 06:22:52 +0000
-Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 40B44A058A6BDADCB195;
- Thu,  6 Feb 2020 14:22:30 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS406-HUB.china.huawei.com
- (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Thu, 6 Feb 2020
- 14:22:24 +0800
-Subject: Re: [PATCH 0/5] irqchip/gic-v4.1: Cleanup and fixes for GICv4.1
-To: Marc Zyngier <maz@kernel.org>
-References: <20200204090940.1225-1-yuzenghui@huawei.com>
- <004ca9ea2d525d5b1bcf1d78f10c61ba@kernel.org>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <df640d5a-e7ba-b1c8-51f9-89b843ad6adb@huawei.com>
-Date: Thu, 6 Feb 2020 14:22:23 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1izav8-00081V-01
+ for linux-arm-kernel@lists.infradead.org; Thu, 06 Feb 2020 06:45:52 +0000
+Received: by mail-qt1-x842.google.com with SMTP id l19so3688632qtq.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 05 Feb 2020 22:45:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=3EVIjHgWrOpnpthbeHK3KwPNytdJutxDfwFaEAYC1gU=;
+ b=kPxNNb1gcQ6fkdKVzTu5wRf8dMBIvy78gz+ZmakHsUODJyPFAI9Cxs9Aerh6dtn8ue
+ 9S3HPYp07C/wCW8bZC0OA1mtnLl8+OkfKuxFq+k5IDzYmqxDYBc+ieFAoNEiOnWFfUZ8
+ mFtR5H8qOqrJxBmw1ANT4V4HWd69qwfomQRWY=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=3EVIjHgWrOpnpthbeHK3KwPNytdJutxDfwFaEAYC1gU=;
+ b=s/NiNO27iT+YpFJ/xrwkZucCFINSNIGKMvrl+tDZ2kVU8Is1ToVkQz9GwvecZ4Ej55
+ 1pKSpQR/BO+ggmsoxZ3rRb91ySo5jhpK5/e0sb5up9YwwAUUg0h6SOwCSTPsOi2/xgis
+ DPepMDQqQR/dkKpajYeqgvbG9+1RQfAvgJUT68s4IVQ66xbZLLYfjCLUSQzsw2r5ZLCJ
+ 3iL0/3pn+zyvhXUIgT3VHZRU7WX+A08oyu+Kr4CxK1M6Jwae8El8An7L7LjnUvmLDMg8
+ mstiAxBiuAO7FFq4AA8TNvnI6hc4u7jfNkKLxPjb0zZJ4vXtcSRVPZ4t526UL0ZZmFpL
+ uOOg==
+X-Gm-Message-State: APjAAAU/l8/qBzPO6l68MFbzncDx3Hu8L7sC7QNOKkvpJQGGW99+aga9
+ tZEHCsvu2snMAbs6GIqubNyPfCvmHRCtR/RWfGI=
+X-Google-Smtp-Source: APXvYqyGXHiEc83j2FSMVVBuD58V9HxdxZyJTom9oCVKE6Ua2SjX6fetXzWVhlF65eXiKXP/Ck/X9d5riSepkdRtgIg=
+X-Received: by 2002:ac8:7396:: with SMTP id t22mr1332817qtp.269.1580971547324; 
+ Wed, 05 Feb 2020 22:45:47 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <004ca9ea2d525d5b1bcf1d78f10c61ba@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
+References: <20200205215511.80333-1-geissonator@gmail.com>
+In-Reply-To: <20200205215511.80333-1-geissonator@gmail.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Thu, 6 Feb 2020 06:45:33 +0000
+Message-ID: <CACPK8XcGJ61mgCL+vZQEzTmcwu+jZ0hpKrnOz7B7K14y79cvFQ@mail.gmail.com>
+Subject: Re: [PATCH linux dev-5.4 v2] ARM: dts: aspeed: witherspoon: Add gpio
+ line names
+To: Andrew Geissler <geissonator@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200205_222250_981830_8B9C0F87 
-X-CRM114-Status: GOOD (  12.91  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200205_224550_939846_BFFB93EE 
+X-CRM114-Status: GOOD (  16.14  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [joel.stan[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 WEIRD_QUOTING          BODY: Weird repeated double-quotation marks
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,36 +93,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jason@lakedaemon.net, linux-kernel@vger.kernel.org,
- wanghaibin.wang@huawei.com, tglx@linutronix.de, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree <devicetree@vger.kernel.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Andrew Geissler <geissonator@yahoo.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFyYywKCk9uIDIwMjAvMi81IDIwOjQ2LCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4gSGkgWmVu
-Z2h1aSwKPiAKPiBPbiAyMDIwLTAyLTA0IDA5OjA5LCBaZW5naHVpIFl1IHdyb3RlOgo+PiBIaSwK
-Pj4KPj4gVGhpcyBzZXJpZXMgY29udGFpbnMgc29tZSBjbGVhbnVwcywgVlBST1BCQVNFUiBmaWVs
-ZCBwcm9ncmFtbWluZyBmaXgKPj4gYW5kIGxldmVsMiB2UEUgdGFibGUgYWxsb2NhdGlvbiBlbmhh
-bmNlbWVudCwgY29sbGVjdGVkIHdoaWxlIGxvb2tpbmcKPj4gdGhyb3VnaCB0aGUgR0lDdjQuMSBk
-cml2ZXIgb25lIG1vcmUgdGltZS4KPj4KPj4gSG9wZSB0aGV5IHdpbGwgaGVscCwgdGhhbmtzIQo+
-Pgo+PiBaZW5naHVpIFl1ICg1KToKPj4gwqAgaXJxY2hpcC9naWMtdjQuMTogRml4IHByb2dyYW1t
-aW5nIG9mIEdJQ1JfVlBST1BCQVNFUl80XzFfU0laRQo+PiDCoCBpcnFjaGlwL2dpYy12NC4xOiBT
-ZXQgdnBlX2wxX2Jhc2UgZm9yIGFsbCByZWRpc3RyaWJ1dG9ycwo+PiDCoCBpcnFjaGlwL2dpYy12
-NC4xOiBFbnN1cmUgTDIgdlBFIHRhYmxlIGlzIGFsbG9jYXRlZCBhdCBSRCBsZXZlbAo+PiDCoCBp
-cnFjaGlwL2dpYy12NC4xOiBEcm9wICd0bXAnIGluIGluaGVyaXRfdnBlX2wxX3RhYmxlX2Zyb21f
-cmQoKQo+PiDCoCBpcnFjaGlwL2dpYy12My1pdHM6IFJlbW92ZSBzdXBlcmZsdW91cyBXQVJOX09O
-Cj4+Cj4+IMKgZHJpdmVycy9pcnFjaGlwL2lycS1naWMtdjMtaXRzLmPCoMKgIHwgODAgKysrKysr
-KysrKysrKysrKysrKysrKysrKysrLS0tCj4+IMKgaW5jbHVkZS9saW51eC9pcnFjaGlwL2FybS1n
-aWMtdjMuaCB8wqAgMiArLQo+PiDCoDIgZmlsZXMgY2hhbmdlZCwgNzUgaW5zZXJ0aW9ucygrKSwg
-NyBkZWxldGlvbnMoLSkKPiAKPiBUaGFua3MgYSBsb3QgZm9yIHRoaXMsIG11Y2ggYXBwcmVjaWF0
-ZWQsIEknbSBxdWl0ZSBoYXBweSB3aXRoIHRoZSBvdmVyYWxsCj4gc3RhdGUgb2YgdGhlIHNlcmll
-cy4gSWYgeW91IGNhbiBqdXN0IGFkZHJlc3MgdGhlIGNvdXBsZSBvZiBuaXRzIEkgaGF2ZSBvbgo+
-IHBhdGNoICMzLCBJJ2xsIHRoZW4gcXVldWUgdGhlIHNlcmllcyBhbmQgc2VuZCBvZmYgdG8gVGhv
-bWFzIHRvZ2V0aGVyIHdpdGgKPiB0aGUgcmVzdCBvZiB0aGUgcXVldWVkIGZpeGVzLgoKSSB3aWxs
-IHJlc3BpbiBwYXRjaCMzIHdpdGggeW91ciBzdWdnZXN0aW9uIGFuZCBzZW5kIHYyIHRvZGF5LgpU
-aGFua3MgZm9yIHlvdXIgcmV2aWV3IQoKClplbmdodWkKCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, 5 Feb 2020 at 21:55, Andrew Geissler <geissonator@gmail.com> wrote:
+>
+> From: Andrew Geissler <geissonator@yahoo.com>
+>
+> Name the gpios so libgiod will work with them
+
+Perhaps: "Name the GPIOs to help userspace work with them."
+
+You could also mention that the names are describe the functionality
+that the lines provide, and not a net or ball name.
+
+A heads up: when you send patches upstream to the kernel mailing list,
+we don't include the "linux dev-X.y" stuff in the subject.
+
+> Signed-off-by: Andrew Geissler <geissonator@yahoo.com>
+> ---
+> v2: added upstream to patch
+>     prepended fsi- on fsi related gpios
+>     prepended led- on led related gpios
+>     prepended presence on presence related gpios
+>     dropped pin_gpio_a1 definition
+> ---
+>  .../boot/dts/aspeed-bmc-opp-witherspoon.dts   | 36 +++++++++++++++++++
+>  1 file changed, 36 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+> index 515f0f208ee6..2519722928a4 100644
+> --- a/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+> +++ b/arch/arm/boot/dts/aspeed-bmc-opp-witherspoon.dts
+> @@ -193,6 +193,42 @@
+>
+>  };
+>
+> +&gpio {
+> +    status = "okay";
+
+The status=okay is harmless but redundant, as this node is already enabled.
+
+> +       gpio-line-names =
+> +       /*A0-A7*/       "","cfam-reset","","","","","fsi-mux","",
+> +       /*B0-B7*/       "","","","","","air-water","","",
+> +       /*C0-C7*/       "","","","","","","","",
+> +       /*D0-D7*/       "fsi-enable","","","","","","","",
+> +       /*E0-E7*/       "fsi-data","","","","","","","",
+> +       /*F0-F7*/       "","","","","","","","",
+> +       /*G0-G7*/       "","","","","","","","",
+> +       /*H0-H7*/       "","","","","","","","",
+> +       /*I0-I7*/       "","","","","","","","",
+> +       /*J0-J7*/       "","","checkstop","","","","","",
+> +       /*K0-K7*/       "","","","","","","","",
+> +       /*L0-L7*/       "","","","","","","","",
+> +       /*M0-M7*/       "","","","","","","","",
+> +       /*N0-N7*/       "presence-ps1","","led-rear-fault","led-rear-power",
+> +                       "led-rear-id","","","",
+> +       /*O0-O7*/       "","","","","","","","",
+> +       /*P0-P7*/       "","","","","","","","presence-ps0",
+> +       /*Q0-Q7*/       "","","","","","","","",
+> +       /*R0-R7*/       "","","fsi-trans","","","power-button","","",
+> +       /*S0-S7*/       "","","","","","","","",
+> +       /*T0-T7*/       "","","","","","","","",
+> +       /*U0-U7*/       "","","","","","","","",
+> +       /*V0-V7*/       "","","","","","","","",
+> +       /*W0-W7*/       "","","","","","","","",
+> +       /*X0-X7*/       "","","","","","","","",
+> +       /*Y0-Y7*/       "","","","","","","","",
+> +       /*Z0-Z7*/       "","","","","","","","",
+> +       /*AA0-AA7*/     "fsi-clock","","","","","","","",
+> +       /*AB0-AB7*/     "","","","","","","","",
+> +       /*AC0-AC7*/     "","","","","","","","";
+> +
+
+Cean up the line of whitespace here.
+
+> +};
+> +
+>  &fmc {
+>         status = "okay";
+>
+> --
+> 2.21.0 (Apple Git-122)
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
