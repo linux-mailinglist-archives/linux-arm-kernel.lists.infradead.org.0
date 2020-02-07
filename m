@@ -2,95 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB9FB155F78
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 21:20:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FA90155F85
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 21:27:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:Message-ID:From:MIME-Version:Date:
-	References:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2tcaClPpL4Ogt8J6huLZKHBh+uIOFYQsYrUJ46ewp8E=; b=tIuAYDyWD2UpCc8o57mybOiwX
-	EpwhKpLhlJuGfi66Ppa9oqjbU+GSjdTBiS7Fvh1C2W+qAHMPynE4T0ANxjuTmEf7mthiZzn5GE3ut
-	q+XIo0vu0oSXJsKjybFeFWC7n/Rl4u6+C+nX1RVXiiH6gMKzMeSFuXvZihcncfdVmjBtC6ThhBa2X
-	kgpsAk/lClCiz3Dcaq+GWA7K6STYKVPUUYnTnd//0PiG3Cjkg3A6dMipfAnc3PolxOW81+Ch02FTr
-	7Diz4JqLz98mbn7U3LSKWbYdd5PDrQJvx4OzVoIoRdDxMJF8GEPDDgdbxMSK064BWorAHpLffCmFq
-	PpSHU2Bwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0FnerRFyF7Dv+8Saa2v46xl4VNFtlSwokapb/KbkZ2o=; b=bJFakWjNTb8A+c
+	j5oyxA1adb0F53CwrnPjo6iDdyLCVvJ/dTNP5FP2JuFk3+VVRSbHIKLnVeGlm2zVsGvrTr8d0dPA2
+	ZA67AiPHNpv8COdCTB7iyMZnnU+rv8hVRUBk+ITP/j9tOtGWR20qfW8JZsCrVYyggtA1coygSXDSU
+	JqkYxHKGZvl+s1Z6dxxxgt6X1L5tQYthZxxUc+Z/5g2ZyZDcHfNJyMWEr7SbKwCfX1zQdFPR1kdfO
+	xzVzEMCTyVCn9u9m52JZFJWCqW2NZIWFMyYW2DPWhKTldPIgZj00vHkIdI9XfPhwIW1rdm44sVtpH
+	IhZ+HVRY2rJYEYy7YUvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0A7I-000351-DV; Fri, 07 Feb 2020 20:20:44 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j0ADB-0004fj-Ay; Fri, 07 Feb 2020 20:26:49 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0A7B-00034Y-NJ
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 20:20:39 +0000
-Received: by mail-wr1-x443.google.com with SMTP id w15so409732wru.4
+ id 1j0AD3-0004f3-MK
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 20:26:43 +0000
+Received: by mail-qk1-x743.google.com with SMTP id w15so387340qkf.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Feb 2020 12:20:36 -0800 (PST)
+ Fri, 07 Feb 2020 12:26:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:subject:references:date:mime-version
- :content-transfer-encoding:from:message-id:in-reply-to:user-agent;
- bh=wOintdNO5qmOQ/OOnHt/kUReZvUtbEkfFW92H/d8TMo=;
- b=ObDpC7Ogck2QbVYZ7PNQnaoBTb4cpsU4RQTQ4MzfV3USG+n8srm53o8QoE/Sq/vyGq
- P6iRSEjEenKBcSxMwAYMEpcbR9JZCXToogVFpdkAwRy2+U9xRp6Grpqxg914YkNJIAsc
- XMdo0IlhHcMbuoeOp5GblyB0s+nDTkCEi5wi/0RQ4Bx0J1xxSS5EGfbh1xI/Qcoe1Sms
- XjbJCvyXlf4fVnvbpk8pKcc+VQb697p4X9u2blYP3Kp8jN+gOhnjpx01ELYva+IuhRLI
- UygL5YqyB5ILWOFwZaXNbY8eX8P8innyAXyUoU9Lbt7P7dZb9Qi4b+jfBH/qDr66AVrh
- CLvw==
+ h=sender:from:date:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=8B5XdD4gQOA8Ju/7w3y+6mJSGkGb+YcdBnNJRrP84fs=;
+ b=MA4LyJvQ7qGX6s/9lTbI/MD/oJ/4otXAKurDYMOOzYQuOSG3esv6PrDb8GiEhi5O63
+ XFUHbdf+DYtFs755c4zat11V3gPTzSgfwBiL23rP1qzK//35gkOL9GrQHF8APc06d2BW
+ iCzngI6w/H2S7/SxR3RYcsvhWx7iFaCFecT8Jsf1laNSRVEG1C04dS3swohG8N5B5f5R
+ EaRDdWgbP4rxzlCj4epFIQdB/mXpAMgU9Zm6nUzBYw0tW3d8KLxVbKJwceAxgs1B2Tpp
+ ASfmtXYzraZ0YUbt0zyyqLIHXSMAdV2gRd6aLFBap3PNZwxKY4NZ5snmqFf1gaVbeS9e
+ mnRQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:subject:references:date:mime-version
- :content-transfer-encoding:from:message-id:in-reply-to:user-agent;
- bh=wOintdNO5qmOQ/OOnHt/kUReZvUtbEkfFW92H/d8TMo=;
- b=CzeUCWR7MFi+tBJaOfuy9zQG5Vx2q/44l9iB9msZj4E1NGzYjOFnOxKPM9Dz3cXJuU
- y+iAsCmIbHH9SuUE4JDYPimmxPpXS+14JNn+45/4nwTqqGUESY8N33L9k0lq2W6bQevG
- C5ovPWbXnsE06qoTgVohIoeDN26T57nI3s2dMmMoV30BkGYugxuehVmxwuO+GZt7D8u8
- 28KE1TFXYhNJu6LmxA8xLH8fJD4C9HJY058HZI+LgCPcmnZfxvkh/MGFESohWdNM/rek
- MaFfPpsf4KPwOgM0AIaOVAj3jFD+CZGZwjGIpQ9Lw5G7PTRmHPl/rQ5seVF1xYOws7P+
- ++fA==
-X-Gm-Message-State: APjAAAVgoe0OPYRvO7gwK8pUK+w87Cgco79xoFUgNeTIx508QPwf50XQ
- E/OAPqpZpbhtSl0myaaM+57bB//KF9U=
-X-Google-Smtp-Source: APXvYqyPa8jUTVKZIjoy2uatt/mdJ6UFxZPgw1fK+xL52XaA3AtSDz1XeDU21jzpebkL/WCI6NgBIw==
-X-Received: by 2002:a5d:4b88:: with SMTP id b8mr712899wrt.343.1581106835759;
- Fri, 07 Feb 2020 12:20:35 -0800 (PST)
-Received: from supervisor.net28 ([46.53.250.234])
- by smtp.gmail.com with ESMTPSA id r6sm4843020wrq.92.2020.02.07.12.20.34
- (version=TLS1 cipher=AES128-SHA bits=128/128);
- Fri, 07 Feb 2020 12:20:34 -0800 (PST)
-To: "Merlijn Wajer" <merlijn@wizzup.org>, "Tony Lindgren" <tony@atomide.com>
-Subject: Re: Nokia N900 on 5.4 and 5.5
-References: <79b91017-b52a-8aff-4b9c-913ae655f7bf@wizzup.org>
- <185CD173-C13C-4D56-B3DE-9A8D7784963C@goldelico.com>
- <20200207163623.GA64767@atomide.com>
- <da14d6bb-f241-2dd4-8e94-886217a40ed7@wizzup.org>
- <20200207165344.GB64767@atomide.com> <20200207170149.GC64767@atomide.com>
-Date: Fri, 07 Feb 2020 23:20:33 +0300
+ h=x-gm-message-state:sender:from:date:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=8B5XdD4gQOA8Ju/7w3y+6mJSGkGb+YcdBnNJRrP84fs=;
+ b=sIGnxqZVjY+wPzosAPifnSI5ytflRRG+QiyVWBlA+fdHVb42n3e6jqCgO597lBSgZD
+ tW6ilQX6gYTZVFv4fGuSV+YsU5qNSTmOnSQfQEHWYW5HLAWaoDMcre/jNVbACfci5VC2
+ aLQbTEn0Cx10wgfFbCvWbKWCFkR2hMMGY2UlE9RX6sJu1QghmMIecuNZ3nAIXe+n/06r
+ T+tk8JIIsVVDO3m60rG/2l7iokJlciV3pIgUhjtKFZp/zzh2WargNXtVkrEN3nEwk9gL
+ 3T63EwaUrZcyQCNDb8HqfEJFU4XF89jDT7HSUlgikJbp8zrQnrh+BOp9yNIP/CKEZvWn
+ 2v+Q==
+X-Gm-Message-State: APjAAAV/qkjFLaG++IofIhsY0sgfyPkEbsrrKYRHC3d5+1H2LKfbHz0M
+ W4HfyjKwa3fjw6ZPRwCZEfU=
+X-Google-Smtp-Source: APXvYqyJz1rMrV/EpC7xpknAAVWZfHwpV7tdIU7Ry76j8YGzrd/L20oMozoJ8L58djBxMoVOPNDbLA==
+X-Received: by 2002:a05:620a:52b:: with SMTP id
+ h11mr722547qkh.88.1581107200068; 
+ Fri, 07 Feb 2020 12:26:40 -0800 (PST)
+Received: from rani.riverdale.lan ([2001:470:1f07:5f3::b55f])
+ by smtp.gmail.com with ESMTPSA id t15sm1743626qkg.49.2020.02.07.12.26.39
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 07 Feb 2020 12:26:39 -0800 (PST)
+From: Arvind Sankar <nivedita@alum.mit.edu>
+X-Google-Original-From: Arvind Sankar <arvind@rani.riverdale.lan>
+Date: Fri, 7 Feb 2020 15:26:37 -0500
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
+Message-ID: <20200207202637.GA3464906@rani.riverdale.lan>
+References: <20200206140352.6300-1-ardb@kernel.org>
+ <20200207184532.GA3276112@rani.riverdale.lan>
+ <CAKv+Gu8Z3=cqbNxspLXAgM_8wEm+to2TWRjpaaC231MbwL2Ycw@mail.gmail.com>
 MIME-Version: 1.0
-From: "Arthur D." <spinal.by@gmail.com>
-Message-ID: <op.0fmv4jevhxa7s4@supervisor.net28>
-In-Reply-To: <20200207170149.GC64767@atomide.com>
-User-Agent: Opera Mail/12.16 (Linux)
+Content-Disposition: inline
+In-Reply-To: <CAKv+Gu8Z3=cqbNxspLXAgM_8wEm+to2TWRjpaaC231MbwL2Ycw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_122037_761007_EFD8C043 
-X-CRM114-Status: GOOD (  12.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200207_122641_754472_A13F821D 
+X-CRM114-Status: GOOD (  16.26  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [spinal.by[at]gmail.com]
+ provider [niveditas98[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [niveditas98[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,60 +107,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>,
- Kees Cook <keescook@chromium.org>, Nicolas Pitre <nico@fluxnic.net>,
- "H. Nikolaus Schaller" <hns@goldelico.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- linux-omap <linux-omap@vger.kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
+ Heinrich Schuchardt <xypron.glpk@gmx.de>,
+ Daniel Kiper <daniel.kiper@oracle.com>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Matthew Garrett <mjg59@google.com>, Arvind Sankar <nivedita@alum.mit.edu>,
+ Peter Jones <pjones@redhat.com>, Leif Lindholm <leif@nuviainc.com>,
+ Laszlo Ersek <lersek@redhat.com>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"; DelSp="yes"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi.
+On Fri, Feb 07, 2020 at 07:47:46PM +0000, Ard Biesheuvel wrote:
+> On Fri, 7 Feb 2020 at 18:45, Arvind Sankar <nivedita@alum.mit.edu> wrote:
+> >
+> > On Thu, Feb 06, 2020 at 02:03:50PM +0000, Ard Biesheuvel wrote:
+> > >   data structure. It also creates a time window where the initrd data sits
+> > >   in memory, and can potentially be corrupted before the kernel is booted.
+> > >
+> >
+> > I don't quite understand the time window aspect -- can you expand on
+> > that? It seems like the same time window exists between when the kernel
+> > is loaded and when it actually runs, no? Why is this more important for
+> > initrd?
+> 
+> When using loadimage+startimage, the authentication and measurement of
+> the kernel image occur during the call to loadimage(), even if the
+> source of the load is memory itself, and startimage() is typically
+> called right after.
+> 
+> The assumption is that it may help to make this time as short as
+> possible for the initrd as well.
 
-I was able to build linux-5.5 and run it on N900 with no problems.
-Even WiFi works, mmc0 is in place too. It seems you're doing something
-wrong.
-
-Were you able to build linux-5.1 with your scripts and run it on the
-phone? I mean the pure linux-5.1 without configs and changes done
-in https://github.com/maemo-leste/n9xx-linux.
-
-BTW, I didn't find STACKPROTECTOR_PER_TASK option to be enabled in
-omap2plus_defconfig.
-
---
-Best regards, Spinal
-
-> * Tony Lindgren <tony@atomide.com> [200207 16:54]:
->> * Merlijn Wajer <merlijn@wizzup.org> [200207 16:47]:
->> > On 07/02/2020 17:36, Tony Lindgren wrote:
->> > >
->> > > Looks like there's a regression in general for appended dtb booting  
->> that
->> > > was caused by commit 9f671e58159a ("security: Create "kernel  
->> hardening"
->> > > config area"). With that change we now get STACKPROTECTOR_PER_TASK
->> > > selected by default with Kconfig.
->> > >
->> > > Merlijn, care to try to disable STACKPROTECTOR_PER_TASK in your
->> > > .config to see if that helps?
->> >
->> > Yes, this makes the kernel boot.
->>
->> OK good to hear. My guess is that having STACKPROTECTOR_PER_TASK
->> selected causes changes to include/generated/asm-offsets.h that
->> appended dtb booting does not like. But let's see what others
->> think.
->
-> I don't think this is an issue of CONFIG_STACKPROTECTOR + CONFIG_SMP
-> booted on UP machine as it only happens with appended dtb it seems.
->
-> Regards,
->
-> Tony
+Ok, this is for when we can use LoadImage, that makes sense.
 
 _______________________________________________
 linux-arm-kernel mailing list
