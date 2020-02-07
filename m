@@ -2,87 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4211B155E1C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 19:32:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 039C2155E20
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 19:33:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nX2BWwHRLk1QsgomS49S7l/ego/xk9AvPU4pzV3eHz8=; b=NGYwNCfobMQsJY
-	u8UelAypxymrgidsjEALzp37iHxWRId6x4/hIIfi2au7q+ThwP8QqoaeQGBEz2UBUwlgzfGMgIRVw
-	Pm7MSsmvzI28pQi+SqdMCv+LMti0+PQVry0N1qBJz9i47kpj3GYkaGB/o/hDf2wPXIYdSCXaYVi+b
-	D54DV5aeMuwHZdWyvF/mztu0Vj/gpW613JkgEC3e7yWo24YU45zWjL07MIgmlVJe6yw1evvWhwKxW
-	vSQSACYYiiC4jacFgPZq1kDMqdWDi72ddGy4QAulokAgnnh35vVGMCsOzCl3WRAgTslPE9fqyYth0
-	RRwFRCGCoBdYXVRfs6LQ==;
+	List-Owner; bh=vA39i/vfukQ3vXpv26eMwy2RC9KiIsoUPUXo3zST960=; b=IYPEe5CMl4ad+Z
+	yACIqYtywCp653Pz4L/3i4C+Q5GKwWWRn5BJsVlZVTW/Fa9BbldUGE1AXwDMCCAfOeheocM0U0RzS
+	mTwvvTZ/FWNdqKqg1WfmPaqOyMZkG3A6wXFu4MAQCkC1Th3w5dw8HUKJ7tPsQKTNNBTzlg0bK6eEm
+	8mgZeFxNDHWgVisJqVYQ2DyOx0nWCYDTR0iNfxXWQ4EqUznK33QHbasmxHM6isddzyN/b+MrHRmUp
+	S3QZEiAmaqMioGbEF7Une0MeXVQ+1LhXR2GVV1o/k7+ioAmzgdUucyaGyhmAAz1aAnfCXrvsoOg43
+	+J1LLzFTANI5p68s0z0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j08Q3-00079h-La; Fri, 07 Feb 2020 18:31:59 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j08Ra-0007X4-N0; Fri, 07 Feb 2020 18:33:34 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j08Pt-00078a-TR
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 18:31:51 +0000
-Received: by mail-wr1-x444.google.com with SMTP id t3so20153wru.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Feb 2020 10:31:45 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0v34gJothHO3j4Q4wlZmrNzO+MkkL5KtAqTgVsXD5t8=;
- b=c/KE7MDXnr27AuNVH5pVqkgRp1vvz6CmI/2tggk/F4MilQvTzr1FU0WH0WOpDRhYD5
- bU7VomlGH5L02fGbPt1PdZygYZWscxoxuOw+yx19ezD5waJBtQs+FIhHVCln4RKo6n48
- S0Yc9Vo9/SYWnrlXCxq4ViVRY1xk+5cbc6MaAJTWdQoROaCIUwvasoS5H2MqJ/rLl1J5
- 5PqiGErFUbIMhdQzKGhkQZyfxn0lHQhyTtNsxRSLLW30pAtk7GKoeMwXg2+y1zH3qXpH
- kr4esO0v+kS58mRzC28aAmPGjfR9IUIyrWrvibSwlQjw8ElhZkRWu1qQNWT1OedDkMI8
- qm5Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=0v34gJothHO3j4Q4wlZmrNzO+MkkL5KtAqTgVsXD5t8=;
- b=ktGTbM3scGg6vipNUohrL4I2QQVUu+GUKNQUQEFl66EGunWb7JAt1dyPTnS6VoZSO2
- TCl5mHvKnU7B75CIEvBaTm2DVHY+gAP1Bv8Vpsi5zEVjpyQxu5fE5BPEXviPmAvSC4ad
- hSVtuJVdYzthABJ8h8BVVsoxFVVEU0eKp1Ntx1n7m3dTJTie4qHKOcH7lbMELd6Y+aYY
- SUO8SFuvsSqQYOBc04cFfMVTK45CzMTOswd2ghf/5VO8VrjOoYgeIBKMOm+5U9sQHBXq
- u3XBhOheWb9gWYRTYtJK7rr/6Z+lRUE4SjsqUHtqmSxqFjgsKBcDxivOWqC97y6ho7EN
- Y2sg==
-X-Gm-Message-State: APjAAAX43SZWy78vFVZ93u+qcfqQflbDxCJ0B1QgtiohPniMNKUMfbAm
- ric6282cGrazvEcWz59ZZl2pBNjsmGBWeDXUCSEeRA==
-X-Google-Smtp-Source: APXvYqyVbP4+gSnuDzbO/iK3mOF8OGLPaTetRFZdihOAga1O45m+Zg2UTz4gB3UaPq/25V9fIH2KaNb4aSIPlkv/3Xs=
-X-Received: by 2002:a5d:42c6:: with SMTP id t6mr313068wrr.151.1581100304442;
- Fri, 07 Feb 2020 10:31:44 -0800 (PST)
+ id 1j08RU-0007WX-8D
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 18:33:29 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Feb 2020 10:33:26 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,414,1574150400"; d="scan'208";a="430918451"
+Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
+ ([10.54.74.202])
+ by fmsmga005.fm.intel.com with ESMTP; 07 Feb 2020 10:33:25 -0800
+Date: Fri, 7 Feb 2020 10:33:25 -0800
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: Peter Xu <peterx@redhat.com>
+Subject: Re: [PATCH v5 17/19] KVM: Terminate memslot walks via used_slots
+Message-ID: <20200207183325.GI2401@linux.intel.com>
+References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
+ <20200121223157.15263-18-sean.j.christopherson@intel.com>
+ <20200206210944.GD700495@xz-x1>
 MIME-Version: 1.0
-References: <20200206140352.6300-1-ardb@kernel.org>
- <fa3b3103-e77d-571d-71a4-604fa48368e6@redhat.com>
- <cfb38b38-14f2-c61a-60a0-dfe14667b49c@redhat.com>
- <CAKv+Gu__fUGyv4eu5oKcsVZYSbKRfYYd_VS8CGEV4jC+GuvqJA@mail.gmail.com>
- <1581092420.7608.15.camel@HansenPartnership.com>
-In-Reply-To: <1581092420.7608.15.camel@HansenPartnership.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Fri, 7 Feb 2020 18:31:33 +0000
-Message-ID: <CAKv+Gu99wxr+OHwqPRjfF136VB3AwPbXXg1tx1=34jF2DU6Z6g@mail.gmail.com>
-Subject: Re: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
-To: James Bottomley <James.Bottomley@hansenpartnership.com>
+Content-Disposition: inline
+In-Reply-To: <20200206210944.GD700495@xz-x1>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_103149_983235_81D472D0 
-X-CRM114-Status: GOOD (  26.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200207_103328_346369_69133460 
+X-CRM114-Status: GOOD (  27.83  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.24 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,103 +72,241 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>,
- Daniel Kiper <daniel.kiper@oracle.com>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
- Leif Lindholm <leif@nuviainc.com>, Laszlo Ersek <lersek@redhat.com>,
- Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
+ Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 7 Feb 2020 at 16:20, James Bottomley
-<James.Bottomley@hansenpartnership.com> wrote:
->
-> On Fri, 2020-02-07 at 12:23 +0000, Ard Biesheuvel wrote:
-> > On Fri, 7 Feb 2020 at 09:22, Laszlo Ersek <lersek@redhat.com> wrote:
-> > >
-> > > On 02/07/20 10:09, Laszlo Ersek wrote:
-> [...]
-> > > > For example, virt-install's "--location" option "can recognize
-> > > > certain distribution trees and fetches a bootable kernel/initrd
-> > > > pair to launch the install". It would be nice to keep that
-> > > > working for older distros.
-> > > >
-> > > > I think LoadFile[2] can co-exist with SimpleFs.
-> > > >
-> > > > I also think that the "try SimpleFs first, fall back to
-> > > > LoadFile[2] second" requirement applies only to the UEFI boot
-> > > > manager, and not to the kernel's EFI stub. IOW in the new
-> > > > approach the kernel is free to ignore (abandon) the old approach
-> > > > for good.
-> > >
-> > > ... But that might not be good for compatibility with grub and/or
-> > > the platform firmware, from the kernel's own perspective,
-> > > perhaps?...
-> > >
-> > > Who is supposed to produce LoadFile2 with the new VenMedia devpath?
-> > >
-> >
-> > What I am ultimately after is a generic GRUB that uses
-> > LoadImage+Startimage for starting the kernel on all architectures,
->
-> For most boots, we need to pivot to the MoK.  A long time ago, I
-> proposed updating the platform security policy to do an override to
-> allow MoK to become the security verifier (actually principally so I
-> could get the gummiboot bootloader to work with the MoK method):
->
-> https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/tree/lib/security_policy.c
->
-> And I believe all the pivot bootloaders now do this, but the fear was
-> always this looks a bit like hackery that might not work in some UEFI
-> implementations.  Since we don't really rely on it (shim link loads
-> after signature verification) we don't know whether the assumption does
-> break or not.  We'll need to get much more comfortable with the
-> security override before we can let grub do a simple load+start.
->
+On Thu, Feb 06, 2020 at 04:09:44PM -0500, Peter Xu wrote:
+> On Tue, Jan 21, 2020 at 02:31:55PM -0800, Sean Christopherson wrote:
+> > @@ -9652,13 +9652,13 @@ int __x86_set_memory_region(struct kvm *kvm, int id, gpa_t gpa, u32 size)
+> >  		if (IS_ERR((void *)hva))
+> >  			return PTR_ERR((void *)hva);
+> >  	} else {
+> > -		if (!slot->npages)
+> > +		if (!slot || !slot->npages)
+> >  			return 0;
+> >  
+> > -		hva = 0;
+> > +		hva = slot->userspace_addr;
+> 
+> Is this intended?
 
-I'd like to do something much simpler: let shim override LoadImage and
-StartImage, and in their implementations, fall back to the firmware
-ones if necessary.
+Yes.  It's possible to allow VA=0 for userspace mappings.  It's extremely
+uncommon, but possible.  Therefore "hva == 0" shouldn't be used to
+indicate an invalid slot.
 
-> > and is able to load the initrd from anywhere in an arch agnostic
-> > manner.
->
-> I think the use case might not really be grub, it's gummiboot, or
-> systemd-boot as its now called:
->
+> > +		old_npages = slot->npages;
+> >  	}
+> >  
+> > -	old = *slot;
+> >  	for (i = 0; i < KVM_ADDRESS_SPACE_NUM; i++) {
+> >  		struct kvm_userspace_memory_region m;
+> >  
 
-No it is definitely GRUB. GRUB today needs to attach to the shim
-protocol, perform the authentication, measure the payload etc etc,
-which means it knows far too much about the internals of shim or the
-fact that it even exists.
+...
 
-My ideal bootflow would be where the OS installer looks at the
-firmware's db/dbx, doesn't bother to install shim if the OS vendor's
-cert is there, and uses the exact same GRUB regardless of whether shim
-is part of the bootflow or not.
+> > @@ -869,63 +869,162 @@ static int kvm_create_dirty_bitmap(struct kvm_memory_slot *memslot)
+> >  }
+> >  
+> >  /*
+> > - * Insert memslot and re-sort memslots based on their GFN,
+> > - * so binary search could be used to lookup GFN.
+> > - * Sorting algorithm takes advantage of having initially
+> > - * sorted array and known changed memslot position.
+> > + * Delete a memslot by decrementing the number of used slots and shifting all
+> > + * other entries in the array forward one spot.
+> > + */
+> > +static inline void kvm_memslot_delete(struct kvm_memslots *slots,
+> > +				      struct kvm_memory_slot *memslot)
+> > +{
+> > +	struct kvm_memory_slot *mslots = slots->memslots;
+> > +	int i;
+> > +
+> > +	if (WARN_ON(slots->id_to_index[memslot->id] == -1))
+> > +		return;
+> > +
+> > +	slots->used_slots--;
+> > +
+> > +	for (i = slots->id_to_index[memslot->id]; i < slots->used_slots; i++) {
+> > +		mslots[i] = mslots[i + 1];
+> > +		slots->id_to_index[mslots[i].id] = i;
+> > +	}
+> > +	mslots[i] = *memslot;
+> > +	slots->id_to_index[memslot->id] = -1;
+> > +}
+> > +
+> > +/*
+> > + * "Insert" a new memslot by incrementing the number of used slots.  Returns
+> > + * the new slot's initial index into the memslots array.
+> > + */
+> > +static inline int kvm_memslot_insert_back(struct kvm_memslots *slots)
+> 
+> The naming here didn't help me to understand but a bit more
+> confused...
+> 
+> How about "kvm_memslot_insert_end"?  Or even unwrap it.
 
-One of the things impeding this is the fact that we cannot load the
-initrd from anywhere when using loadimage+startimage.
+It's not guaranteed to be the end, as there could be multiple unused
+entries at the back of the array.  I agree the naming isn't perfect, but
+IMO it's the least crappy option and will be familiar to anyone with C++
+STL (and other languages?) experience.  Arguably it would be better to
+follow kernel naming for lists, e.g. head/tail, but there are no
+convenient adverbs for the move helpers, e.g. kvm_memslot_move_backward()
+would be kvm_memslot_move_towards_tail().
 
-> https://wiki.archlinux.org/index.php/systemd-boot
->
-> The standard way of using grub and EFI is to put grub on the EFI
-> parition but have the kernel and the initrd on the root parition (which
-> won't be EFI readable).  This means we can keep the EFI partition small
-> and only needing modification when grub is updated, meaning it doesn't
-> even need mounting at all usually.
->
-> Don't get me wrong, I like the gummiboot way of doing the
-> LoadImage+StartImage: it's small and clean and doesn't need the shim
-> protocol, but people like the sophistication grub provides including
-> its ability to read kernel filesystems, so they're unlikely to change
-> that.
->
+I'm very strongly opposed to unwrapping it.
+
+The code would look like this.  Without a beefy comment, the high level
+semantics of the KVM_MR_CREATE case are not at all clear.  Adding a
+comment gets messy because putting it above the entire if-else makes it
+difficult to understand that its *only* for the CREATE case, and I hate
+having multi-line comments in if-else statements without brackets.
+
+                if (change == KVM_MR_CREATE)
+                        i = slots->used_slots++
+                else
+                        i = kvm_memslot_move_backward(slots, memslot);
+
+> > +{
+> > +	return slots->used_slots++;
+> > +}
+> > +
+> > +/*
+> > + * Move a changed memslot backwards in the array by shifting existing slots
+> > + * with a higher GFN toward the front of the array.  Note, the changed memslot
+> > + * itself is not preserved in the array, i.e. not swapped at this time, only
+> > + * its new index into the array is tracked.  Returns the changed memslot's
+> > + * current index into the memslots array.
+> > + */
+> > +static inline int kvm_memslot_move_backward(struct kvm_memslots *slots,
+> > +					    struct kvm_memory_slot *memslot)
+> 
+> "backward" makes me feel like it's moving towards smaller index,
+> instead it's moving to bigger index.  Same applies to "forward" below.
+> I'm not sure whether I'm the only one, though...
+
+Move forward towards the front, and backward towards the back.  In the
+languages I am familiar with, e.g. C++ STL, JavaScript, Python, and Golang,
+front==container[0] and back==container[len() - 1].
+
+> > +{
+> > +	struct kvm_memory_slot *mslots = slots->memslots;
+> > +	int i;
+> > +
+> > +	if (WARN_ON_ONCE(slots->id_to_index[memslot->id] == -1) ||
+> > +	    WARN_ON_ONCE(!slots->used_slots))
+> > +		return -1;
+> > +
+> > +	/*
+> > +	 * Move the target memslot backward in the array by shifting existing
+> > +	 * memslots with a higher GFN (than the target memslot) towards the
+> > +	 * front of the array.
+> > +	 */
+> > +	for (i = slots->id_to_index[memslot->id]; i < slots->used_slots - 1; i++) {
+> > +		if (memslot->base_gfn > mslots[i + 1].base_gfn)
+> > +			break;
+> > +
+> > +		WARN_ON_ONCE(memslot->base_gfn == mslots[i + 1].base_gfn);
+> 
+> Will this trigger?  Note that in __kvm_set_memory_region() we have
+> already checked overlap of memslots.
+
+If you screw up the code it will :-)  In a perfect world, no WARN() will
+*ever* trigger.  All of the added WARN_ON_ONCE() are to help the next poor
+soul that wants to modify this code.
+ 
+> > +
+> > +		/* Shift the next memslot forward one and update its index. */
+> > +		mslots[i] = mslots[i + 1];
+> > +		slots->id_to_index[mslots[i].id] = i;
+> > +	}
+> > +	return i;
+> > +}
+> > @@ -1104,8 +1203,13 @@ int __kvm_set_memory_region(struct kvm *kvm,
+
+...
+
+> >  	 * when the memslots are re-sorted by update_memslots().
+> >  	 */
+> >  	tmp = id_to_memslot(__kvm_memslots(kvm, as_id), id);
+> > -	old = *tmp;
+> > -	tmp = NULL;
+> 
+> I was confused in that patch, then...
+> 
+> > +	if (tmp) {
+> > +		old = *tmp;
+> > +		tmp = NULL;
+> 
+> ... now I still don't know why it needs to set to NULL?
+
+To make it abundantly clear that though shall not use @tmp, i.e. to force
+using the copy and not the pointer.  Note, @tmp is also reused as an
+iterator below.
+
+> 
+> > +	} else {
+> > +		memset(&old, 0, sizeof(old));
+> > +		old.id = id;
+> > +	}
+> >  
+> >  	if (!mem->memory_size)
+> >  		return kvm_delete_memslot(kvm, mem, &old, as_id);
+> > @@ -1223,7 +1327,7 @@ int kvm_get_dirty_log(struct kvm *kvm, struct kvm_dirty_log *log,
+> >  
+> >  	slots = __kvm_memslots(kvm, as_id);
+> >  	*memslot = id_to_memslot(slots, id);
+> > -	if (!(*memslot)->dirty_bitmap)
+> > +	if (!(*memslot) || !(*memslot)->dirty_bitmap)
+> >  		return -ENOENT;
+> >  
+> >  	kvm_arch_sync_dirty_log(kvm, *memslot);
+> > @@ -1281,10 +1385,10 @@ static int kvm_get_dirty_log_protect(struct kvm *kvm, struct kvm_dirty_log *log)
+> >  
+> >  	slots = __kvm_memslots(kvm, as_id);
+> >  	memslot = id_to_memslot(slots, id);
+> > +	if (!memslot || !memslot->dirty_bitmap)
+> > +		return -ENOENT;
+> >  
+> >  	dirty_bitmap = memslot->dirty_bitmap;
+> > -	if (!dirty_bitmap)
+> > -		return -ENOENT;
+> >  
+> >  	kvm_arch_sync_dirty_log(kvm, memslot);
+> >  
+> > @@ -1392,10 +1496,10 @@ static int kvm_clear_dirty_log_protect(struct kvm *kvm,
+> >  
+> >  	slots = __kvm_memslots(kvm, as_id);
+> >  	memslot = id_to_memslot(slots, id);
+> > +	if (!memslot || !memslot->dirty_bitmap)
+> > +		return -ENOENT;
+> >  
+> >  	dirty_bitmap = memslot->dirty_bitmap;
+> > -	if (!dirty_bitmap)
+> > -		return -ENOENT;
+> >  
+> >  	n = ALIGN(log->num_pages, BITS_PER_LONG) / 8;
+> >  
+> > -- 
+> > 2.24.1
+> > 
+> 
+> -- 
+> Peter Xu
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
