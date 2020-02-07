@@ -2,107 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BA9F155098
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 03:12:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C5921550A2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 03:16:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P4gwqMonfH5ho5KfUlmVB0JmImbWcokClZEhAmtIeXM=; b=aBH/f1VRDg3CeW
-	0DO4YHey2XNfrNQjcJBRV2YkRA0+jjXjVPqsECfRNme6HSg39jxnDg4iqFmKFzaA3OeNUqK28qXhs
-	rTViA49q8BgeXEeSLsh4bwYg+pBCPf0h7RgAMQeH2lC80L+YcpgJhQ44HuNjFpJtS8+GpxhAORA0t
-	uQY8R2tWX2/7gWzf5YcV2S69MmRD7FORuLJAUEFpe+C5fg7qRasKaP4lnRR6cXzpNXKIw1HIxxPUA
-	pKVOR09NkDcc3aKBHjECfSAUeCSaQ0L2biqOPvNnEKxV9g/k5YwnhwQGTn3QuRYBi2c6kjdBTgRW2
-	hg6B9wQNN4YoELM/tEGw==;
+	List-Owner; bh=Iu9aPz5ThKJJmPcvQK33ZxoD8tzeoZ0ofSM1CjHjhRM=; b=GzIIzSuWndU2vl
+	JT+nhonrlniVXo6htQX4qjrn/7z/azE500v/4e72bZCXcmrPzfTsiWpDOC7DH84tKRAvvkuXkNwWW
+	uTw3O4OQNuIZ5pBvtj8hNsyp0Uf/B7zK1FyW3s8PUznfu27x+nPwwbzkKpP5k57GczTy/UkmiASQ5
+	iMRuzkykJreBmK0eh5L53/S58mezHKQ5Iv2TAbFhdNA/w7eHJ9LqywD8wVLVCGj4EQYNK+1tUqxf+
+	re2ugzncUW4u8Q1zNhDzpb57ZNpH+ZC+8tGXV4p7xOXgBtu372hILJ5+pQFlTYXVuWXF3hXZmGeOU
+	VwQyicG72SpoMxbK9Dkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izt7j-0003NC-UH; Fri, 07 Feb 2020 02:12:03 +0000
-Received: from mail-vi1eur05on2046.outbound.protection.outlook.com
- ([40.107.21.46] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1iztBt-00051M-Ow; Fri, 07 Feb 2020 02:16:21 +0000
+Received: from mail-eopbgr70070.outbound.protection.outlook.com ([40.107.7.70]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izt7d-0003MX-G3
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 02:11:58 +0000
+ id 1iztBm-000504-4R
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 02:16:16 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LJnLJjqKzqQ8EuYFK5W31CqJ/7MFiqRTP/GsIAhrHxvVBJreDT8wX4GxfUH3pIZExz8Lww9rPFRY8Hjh1yaExg3nEDrwgqQ8RM7PGmQjtkbevoBSpuwltEBDnpc/pbwW2/6Dfx07n9vKMOgY6tyYXclFEYQCYbodPiuEbUjaS2BqMcrE8Sz5SSSFT1LDkWT+YyJBXlwXTGrdqBRi0CggDV57a5qZAIGDIppqPpgdrLnCJ92OvZFzu0gVsWbxAJClN/CJKbCejov479oXz4bMrRKppgNSMWK2ygoXgkP+Q5mBtNv3+ttZ+lY3XAnxYOM3K4kC7cN21j+gl5K3r+s7pA==
+ b=FTZtI7ZmZv9K3HbRw/KwasNDKcToG/ufKeCJfDs2XKh830IaXTVfMlOkbrWlnDxYfuUbxOivdoCloPyGqRswaf5ko4X3expkwyLKHpeTyY67/hUK12tw6hm9n9NDh+DPh6FISlFfX1f6PJgPHvANc+4D9DmgH8fkw/OhJUdBEjxtJ0Ft1RPMEGI1x9eiDYv2aDzZi+OnFfsYYKCFGLwPxmheR5QU+XCnvEcHedp/8yMLtBHzThqWdRG/f9T68dd7ocZm5W1JOSLdgs/iEUhYVoBHLupkTlGHNAzQj2xhau46ptn87+qpObyadF7A3wZoVhOy8XVfiIqwu25yVR7Qyw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jRoQKM+zQwx2T1DZ4pK/ep9GQ8HoWsrvb/VqDL8g3z0=;
- b=G8PTpaXmW9yM6o5cgNPEus5pVxmQvydUr/PQd9Q2oSTSiiRvJB+T6cnuCxBDT7yVvBE2YbNzHR67cBpQq5QB1zN46uvpEfwAsr19uZfAcynllXBAiLTvFx/MqZ1PK0qru8XnaJKafpspQHWTHi0wsPDtjbsLHThLsjKKpYkPgZA4/k6JTpDa7JOou3d3s0PvKQ+yKGc9wKVIog4mnzuIXOlBgKG+pNgGG5vCwopRPAOLXw7Yk8IsQwd6HAACLAOhN+6mFCDlhG7eBK85cgm6aHsczsOFIOWDW13NtXiq1L183muzQnWq1jJwuHy89mW2UgiFVzFZx6j/9cx68ApJog==
+ bh=dLPdVFnrQtiq9mtFw++tvHD9dlYAIDzdaZU8wgIBhYc=;
+ b=ZxxsTlu07K/T4XZvYjXNR1JgQ3mvnRZvg803OdqyXs4+vQkoldO4UYZL6fa4QQ00fUza2UmAX5jRRVO2kotMF8fpluc5cdDBOW6E/3EO99U0tb1PC15QUJhnjqTDLEbkiA8WZrlO/jBtYUh2UFzAbmgAEuWxo1bkMYVEkMiBKRvRJaOMoIJrqOr/AYiZAY6bhfoOEXwDENpF/+I+oSZvAwJrRKI26Tfn5Gw8z2KFX7yjy/YREXa3lpIKc/FqB3K/DBCKun2BU6P/tdbGEaYZVbSd0ahif9lrleuj13mA+HuVLB1IIpjRubFD4+pGCtbzgfop7ZG6SVJP9SXVwpLzXw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jRoQKM+zQwx2T1DZ4pK/ep9GQ8HoWsrvb/VqDL8g3z0=;
- b=erVY62rRESvDzHPjCEOzpMoyLiLPP547D5eiY6ohCABuumvlT1X32uvv+Z050u07h8jWMnwrZ8IX+dyaBBQLjrFjOYKkLqiJBYi73rDPMVwCCamU1QLWY1Vnnc1eYj8/ZtMgAfCp9X3cyhrziiHzzN8h2aflfj7MwEEmHAw+Klo=
-Received: from VI1PR04MB5040.eurprd04.prod.outlook.com (20.177.52.24) by
- VI1PR04MB6256.eurprd04.prod.outlook.com (20.179.25.85) with Microsoft SMTP
+ bh=dLPdVFnrQtiq9mtFw++tvHD9dlYAIDzdaZU8wgIBhYc=;
+ b=aCOz3wD19/M9qV2/12PIj/jpa2ETDw0oKuY1f/bMfSVxPh/ILQUIzXeDWMXLoRUGb/cSRgHDJTOTW0eCUB82IvYvsyFZtwzPXqx6nmGUIi9sPgsHk6UEx/6yQ/d1lmbNy2BQ1qcC6OCH2LMoSelAZsQXzlYaPAbciHVtd1oFNIA=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB6962.eurprd04.prod.outlook.com (52.132.214.214) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.21; Fri, 7 Feb 2020 02:11:51 +0000
-Received: from VI1PR04MB5040.eurprd04.prod.outlook.com
- ([fe80::d0c7:37d1:d835:a682]) by VI1PR04MB5040.eurprd04.prod.outlook.com
- ([fe80::d0c7:37d1:d835:a682%7]) with mapi id 15.20.2707.020; Fri, 7 Feb 2020
- 02:11:51 +0000
-From: BOUGH CHEN <haibo.chen@nxp.com>
-To: Fabio Estevam <festevam@gmail.com>, =?utf-8?B?R3VpZG8gR8O8bnRoZXI=?=
- <agx@sigxcpu.org>
-Subject: RE: sdhci timeout on imx8mq
-Thread-Topic: sdhci timeout on imx8mq
-Thread-Index: AQHV2sbvCEHvj/D/X0ygL9UYOXYdc6gMVz+AgABAnwCAAmog4A==
-Date: Fri, 7 Feb 2020 02:11:51 +0000
-Message-ID: <VI1PR04MB5040A046E5D93265AE636B29901C0@VI1PR04MB5040.eurprd04.prod.outlook.com>
-References: <CAOMZO5DMMCZPfwNbTaG8_iQhWg2K1XeO719nSA0Gsf2ywHy4jQ@mail.gmail.com>
- <20200205092653.GB2737@bogon.m.sigxcpu.org>
- <CAOMZO5AAzK0QprHpKHaFOANjspJKd_4YaoMqAoGYG4KftcyiYw@mail.gmail.com>
-In-Reply-To: <CAOMZO5AAzK0QprHpKHaFOANjspJKd_4YaoMqAoGYG4KftcyiYw@mail.gmail.com>
-Accept-Language: zh-CN, en-US
+ 15.20.2707.24; Fri, 7 Feb 2020 02:16:04 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2707.020; Fri, 7 Feb 2020
+ 02:16:04 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: RE: [PATCH 2/2] firmware: arm_scmi: mark channel free when init
+Thread-Topic: [PATCH 2/2] firmware: arm_scmi: mark channel free when init
+Thread-Index: AQHV3O25X/FFlEFpBUK1Q7PthmZs26gOOvqAgADCJ6A=
+Date: Fri, 7 Feb 2020 02:16:04 +0000
+Message-ID: <AM0PR04MB44817B64CB35B2B2FB50D8F7881C0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1580993846-17712-1-git-send-email-peng.fan@nxp.com>
+ <1580993846-17712-2-git-send-email-peng.fan@nxp.com>
+ <20200206143337.GC3383@bogus>
+In-Reply-To: <20200206143337.GC3383@bogus>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=haibo.chen@nxp.com; 
-x-originating-ip: [223.106.9.49]
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.68]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 1a6564e8-1533-4941-289d-08d7ab731896
-x-ms-traffictypediagnostic: VI1PR04MB6256:|VI1PR04MB6256:
+x-ms-office365-filtering-correlation-id: 126afa4f-9721-4db3-bbdb-08d7ab73af6d
+x-ms-traffictypediagnostic: AM0PR04MB6962:|AM0PR04MB6962:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB6256B601B307F708A825C29A901C0@VI1PR04MB6256.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3276;
+x-microsoft-antispam-prvs: <AM0PR04MB6962E50A9D1A286E172A0490881C0@AM0PR04MB6962.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0306EE2ED4
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(366004)(136003)(346002)(39860400002)(396003)(199004)(189003)(52536014)(9686003)(55016002)(33656002)(7696005)(5660300002)(53546011)(4744005)(66574012)(6506007)(478600001)(66556008)(86362001)(76116006)(66446008)(66946007)(64756008)(66476007)(316002)(54906003)(110136005)(81156014)(8676002)(26005)(81166006)(186003)(71200400001)(4326008)(2906002)(8936002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6256;
- H:VI1PR04MB5040.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(4636009)(136003)(396003)(39860400002)(366004)(346002)(376002)(199004)(189003)(6506007)(81166006)(81156014)(8676002)(44832011)(54906003)(316002)(66476007)(64756008)(66556008)(52536014)(5660300002)(71200400001)(66446008)(8936002)(66946007)(76116006)(6916009)(55016002)(4326008)(7696005)(9686003)(33656002)(2906002)(86362001)(26005)(186003)(478600001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6962;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: kEuNNA0QqiQuOT18bwF9baKgDf1Vxp236AtP7kx41qgx3ZjbqIb9Xors6TMnQU83OodIOXyVqcAu3RbP3GHHzpzEdaSixOk639Zet8OW0EHnxQbfAi9KjKZVT35LJ+9FQA1oHqcQ4fMu5xxUDWhbfPB16f5f4A0I7DpaGLNCJ7UofBzoCyVSeNK9neZczoRecN6dD7s5k7t94/NDVKSxcdwHG4RUR9VAnqjCbyToo3lpqNdBv/eeqpdNM/j0gFWFyWsCbLGaMmKeMNbEAcDklbPJCT0qYs5rOQt7wX5SMCmksG6z1QMTR1Vlr42Y7Y6uOpk40M8Z1dgMfWc3ogCddHQgdgbKJKgxm8w+uqNM/SHL2fmZ+knTBFM2nd2Y1VTajhF8mfbCbyZ8erF38aLjiPYh8IzCXCrQgL10bZKzeTOq6eU1vP8+t8XoN2WpStkSf7at9OL0c+zx/2xGjXcCulRn/lLZTKSei/+QcpeTDY0WmLLIvltjf40rIMG1TMvw
-x-ms-exchange-antispam-messagedata: pv1hOqXAW3xy3WQMy14UUvok9sYwhrTmqvv8p23fZXL9QasfXkjdOTFk+rUsjTVYPO5d1gUm4J/GfpKCmxNEA/Tm7ulwo4oKGUcwGHUKSej/3IUpf0xTMAbqgGighI49K3BiyUmFJ3sRorrJqGNtww==
+x-microsoft-antispam-message-info: /PowTgFWjOzezxxbJEwV+xIvXP1U0TwrHiqvLNW2PqExNYXuAZxm9JAmBmyFY8WFjHPiN6of13ztZba7DdlxaaUfHnrvR7zp2Q7c8CcEZTCC7yzAYdql6P7lZc9LkSUmYCM5LUhHNuFAdp5LjD/B820oLzvPqx2Hxivgz+WMVjXT3lD0wUZ3JZhyuMFGeuS5qMKOFYtgNDWR/7FDSwIzLYSnw/LK2PAWQ5WOobN9FHRExo4JcxHre53SbtDrS6Kkr0XjJvfh7mGcJ8PQTRgZKJgh4B88W7rQ8TvbLa9pSbDxskWOeyFFdBdMfDV/fKxEgABc6nmmxtjMjYhMAP36IVg/nMiE47lXUFHHKipqp0rfkT2fEV6gRsvsuOX9Zq8WpRFiFwTpL2LimuXcn44aEA1hA7AWK+DnF+sqRoUB1XHSvlxbXGB3LPgty3S/onv7
+x-ms-exchange-antispam-messagedata: MGmcEwtdUGzQABjUgiyoeWO+k0Hdsqz9kxa1Dq1Mo/YmxIbg98kzHfoB6Ip3V2pclratrosHmW2Hxsjhl4qfOQVzamHo1yUAn2qPPXcAvgc0w7ybt6lMW7yj6DxTtCN6ihP8ecNo1r4NIqbJAfIxXg==
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1a6564e8-1533-4941-289d-08d7ab731896
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Feb 2020 02:11:51.6748 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 126afa4f-9721-4db3-bbdb-08d7ab73af6d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Feb 2020 02:16:04.7678 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 379HVqkz8Mr0mKaU06x8CR/MwVCQ1dka79IrWn+7e/cfrl9RACYlhitlX3W2ONrCfCMsKhuAM1nJ7+1nK7ANHA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6256
+X-MS-Exchange-CrossTenant-userprincipalname: ZtH6F7wPBTpWIlELwzlkNzmeVhN3nCh1KqePFtQMbIwqrx6OsB6ovzQrg10BHJYwRqgHmv1cjPyGu8LuinGRtg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6962
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_181157_536669_B8ADC8E2 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20200206_181615_270978_649CE424 
+X-CRM114-Status: GOOD (  19.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.46 listed in list.dnswl.org]
+ no trust [40.107.7.70 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -123,33 +122,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>, dl-linux-imx <linux-imx@nxp.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ dl-linux-imx <linux-imx@nxp.com>, "moderated list:ARM/FREESCALE IMX / MXC ARM
+ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IEZhYmlvIEVzdGV2YW0gPGZl
-c3RldmFtQGdtYWlsLmNvbT4NCj4gU2VudDogMjAyMOW5tDLmnIg15pelIDIxOjE4DQo+IFRvOiBH
-dWlkbyBHw7xudGhlciA8YWd4QHNpZ3hjcHUub3JnPg0KPiBDYzogVWxmIEhhbnNzb24gPHVsZi5o
-YW5zc29uQGxpbmFyby5vcmc+OyBBZHJpYW4gSHVudGVyDQo+IDxhZHJpYW4uaHVudGVyQGludGVs
-LmNvbT47IGxpbnV4LW1tYyA8bGludXgtbW1jQHZnZXIua2VybmVsLm9yZz47DQo+IGRsLWxpbnV4
-LWlteCA8bGludXgtaW14QG54cC5jb20+OyBTYXNjaGEgSGF1ZXIgPGtlcm5lbEBwZW5ndXRyb25p
-eC5kZT47DQo+IG1vZGVyYXRlZCBsaXN0OkFSTS9GUkVFU0NBTEUgSU1YIC8gTVhDIEFSTSBBUkNI
-SVRFQ1RVUkUNCj4gPGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZz4NCj4gU3Vi
-amVjdDogUmU6IHNkaGNpIHRpbWVvdXQgb24gaW14OG1xDQo+IA0KPiBIaSBHdWlkbywNCj4gDQo+
-IE9uIFdlZCwgRmViIDUsIDIwMjAgYXQgNjoyNiBBTSBHdWlkbyBHw7xudGhlciA8YWd4QHNpZ3hj
-cHUub3JnPiB3cm90ZToNCj4gDQo+ID4gSSd2ZSBzZWVuIHRoZSBzYW1lIG9jY2FzaW9uYWxseSBv
-biB0aGUgbGlicmVtIDUgd2l0aCBvbGRlciBsaW51eC1uZXh0DQo+ID4gYXMgd2VsbC4gRG8geW91
-IGhhdmUgYSBnb29kIHJlcHJvZHVjZXI/DQo+IA0KPiBZZXMsIHdpdGggbGludXgtbmV4dCBJIGFs
-d2F5cyBnZXQgdGhpcyB0aW1lb3V0IGJ5IGp1c3QgYm9vdGluZyB0aGUga2VybmVsIGFuZA0KPiB3
-YWl0aW5nIDEgb3IgMiBtaW51dGVzIHdpdGhvdXQgYW55IGFjdGl2aXR5Lg0KDQpJIHdpbGwgcmVz
-ZXJ2ZSBzb21lIHRpbWUgbmV4dCB3ZWVrIHRvIGNoZWNrIHRoaXMgaXNzdWUuDQoNCkJvdWdoIENo
-ZW4NCj4gDQo+IFJlZ2FyZHMsDQo+IA0KPiBGYWJpbyBFc3RldmFtDQpfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
-bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+> Subject: Re: [PATCH 2/2] firmware: arm_scmi: mark channel free when init
+> 
+> On Thu, Feb 06, 2020 at 08:57:26PM +0800, peng.fan@nxp.com wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > The firmware itself might not mark channel free, so let's explicitly
+> > mark it free when do initialization.
+> >
+> > Also move struct scmi_shared_mem to common.h
+> >
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >  drivers/firmware/arm_scmi/common.h  | 19 +++++++++++++++++--
+> > drivers/firmware/arm_scmi/mailbox.c |  2 ++
+> >  drivers/firmware/arm_scmi/shmem.c   | 18 ------------------
+> >  3 files changed, 19 insertions(+), 20 deletions(-)
+> >
+> > diff --git a/drivers/firmware/arm_scmi/common.h
+> > b/drivers/firmware/arm_scmi/common.h
+> > index fd091a4ccbff..5df262a564a4 100644
+> > --- a/drivers/firmware/arm_scmi/common.h
+> > +++ b/drivers/firmware/arm_scmi/common.h
+> > @@ -211,8 +211,23 @@ extern const struct scmi_desc scmi_mailbox_desc;
+> > void scmi_rx_callback(struct scmi_chan_info *cinfo, u32 msg_hdr);
+> > void scmi_free_channel(struct scmi_chan_info *cinfo, struct idr *idr,
+> > int id);
+> >
+> > -/* shmem related declarations */
+> > -struct scmi_shared_mem;
+> > +/*
+> > + * SCMI specification requires all parameters, message headers,
+> > +return
+> > + * arguments or any protocol data to be expressed in little endian
+> > + * format only.
+> > + */
+> > +struct scmi_shared_mem {
+> > +	__le32 reserved;
+> > +	__le32 channel_status;
+> > +#define SCMI_SHMEM_CHAN_STAT_CHANNEL_ERROR	BIT(1)
+> > +#define SCMI_SHMEM_CHAN_STAT_CHANNEL_FREE	BIT(0)
+> > +	__le32 reserved1[2];
+> > +	__le32 flags;
+> > +#define SCMI_SHMEM_FLAG_INTR_ENABLED	BIT(0)
+> > +	__le32 length;
+> > +	__le32 msg_header;
+> > +	u8 msg_payload[0];
+> > +};
+> >
+> >  void shmem_tx_prepare(struct scmi_shared_mem __iomem *shmem,
+> >  		      struct scmi_xfer *xfer);
+> > diff --git a/drivers/firmware/arm_scmi/mailbox.c
+> > b/drivers/firmware/arm_scmi/mailbox.c
+> > index 68ed58e2a47a..2d34bf6e94e2 100644
+> > --- a/drivers/firmware/arm_scmi/mailbox.c
+> > +++ b/drivers/firmware/arm_scmi/mailbox.c
+> > @@ -104,6 +104,8 @@ static int mailbox_chan_setup(struct
+> scmi_chan_info *cinfo, struct device *dev,
+> >  	cinfo->transport_info = smbox;
+> >  	smbox->cinfo = cinfo;
+> >
+> > +	iowrite32(BIT(0), &smbox->shmem->channel_status);
+> > +
+> 
+
++arm list
+
+> If we need this then we may need to put this as a function in shmem.c I am
+> still not convinced if we can do this unconditionally, i.e. will that affect Rx
+> channel if there's notification pending before we initialise. But we can deal
+> with that later.
+
+Per understanding, channel is specific to an agent, it could not be shared.
+So the shmem binded to the channel will not be used by others.
+
+Since this is the initialization process, the firmware might not init the shmem.
+
+The shmem.c shmem_tx_prepare will spin until channel free, so I did the patch.
+Otherwise it might spin forever.
+
+I'll add a check as following
+if (tx)
+ iowrite32(BIT(0), &smbox->shmem->channel_status);
+
+I not find a good place to put this in shmem.c (:
+
+> 
+> Also what about error fields ? I would rather clear it to 0, not just BIT(0)
+
+Tx channel error should also be cleared, fix in v2.
+
+Thanks,
+Peng
+
+> 
+> --
+> Regards,
+> Sudeep
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
