@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 453B41550D5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 04:07:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 579B4155183
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 05:24:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ad8idd57KZA968T1WqAUfxMPbelHS6Mupj8Wm6fC77E=; b=avlFmuOUKrarTa
-	YVJ5qK4RJrKVw7eUMcBzSxER70aSzUXc4rShktNDuCDMY7G0FREv/q6TCu14HLsfBT7akP3MwOiqk
-	TPll81cUgF0GiUYAgJpeJe/AJhkDxstg1kFqPz26u72RsZZfBf/Txb9kWAQIw4P7KFTUdsFyo2TIb
-	40fo49Hc38Qwn+sBaaN0li4jy6KQygBZV14+IH/MBbGxtkNGD027tMLgF/ZKLJ65SlSKHsr/mz20D
-	EuuzOTs6jee+vSbsSV2nZvcplUP/tZ7w2YzTO1QQcexjdxJXQSDAR3mjrCai6Jdqe5WeUY+rBIzYm
-	OmVXvE6U8+iie7X2lR0w==;
+	List-Owner; bh=ZPSuWuQwldE7wkdN2DhEje+sMuoHionrNX5jtVPO/G4=; b=XVJOJTTZXDam6Q
+	c4V+WbVa8OkUbO+OXM9cCmdgwBuMo87DR7fU/oIlBWRwy+EeXoGWGnz5zYehVpFTGSKNkf0Yd/G3C
+	5g3EFZlZIKu0nWiAJxB0dQQ67xWMx7vyYxVzUKxlwIoUmUNyoEPY7CYZMGWbGAXD+iWh0v66m/LEy
+	9+ZYWZa4QMubBDWSQ1ZzdzDFgiyNDMoThEZsKSIqkrctqC/bfdomDGi9hzThVijg311zRXNEdJ+fN
+	ldii3TPMxVpkO3gpDvB76veKNUPAOYYtQUswRTTxY0o6MZ/UxaYCJSO6YvNLIC+kDsVOsJncTYZF1
+	iWje+dKHcHumqHbnnDhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iztyn-0004Sw-MH; Fri, 07 Feb 2020 03:06:53 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1izvBX-0003jI-Gm; Fri, 07 Feb 2020 04:24:07 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iztyT-0004Gf-F7
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 03:06:34 +0000
-Received: by mail-qk1-x744.google.com with SMTP id x1so829431qkl.12
+ id 1izvBP-0003hy-Cc
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 04:24:00 +0000
+Received: by mail-pl1-x642.google.com with SMTP id e8so458943plt.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 19:06:32 -0800 (PST)
+ Thu, 06 Feb 2020 20:23:58 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=s3TxFkwUBzoZxEqhHCb5Dpa2HZc5hJhUkqC/KNrkDQc=;
- b=oPPLUfN/w8TsNQT5FmZWFRbcL2X+OQPCnFdi3CoAh86Vc1akO5DDdEuhA4jXAT8Tgy
- +D48c/EPGWfn/tkt+76tePp/JgvcAiokBGkYgxFjqw/N5OST8Z+xEkNgfLWT5N+Mpp7E
- 8jzLtZ/IP75iaFWsIKlT18p0KVqhZqOaK+zxc=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=t4CLMTIbjn78HyIw3MbTj9fsK/Q9HVmk1YRH08HvFW4=;
+ b=eiiOqXCQpKTTs3qcK0ClTRSeD0ED+jYP1J9vmKsXeIxVqH7nb3dGN8TXf1xmZgDlwZ
+ y2cRaE8wwKl+xqQwb9n1WEutzhlXPKh+ksiz8uU4xYzGVv9hHFpOq1Zh4lOqB+UysOVM
+ nlPGDQkicWj7hfppZ1DzZB4KXiZedkDnLILEc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=s3TxFkwUBzoZxEqhHCb5Dpa2HZc5hJhUkqC/KNrkDQc=;
- b=mil7jwnHL9iiCsrmgBFXwWT6apDHrCPv9Mo7+rjTPT1W/nKDoOtjzbDo62PkWwK6r0
- QcYTEBPaKa2M91FbUvIHAr8y8RhDAPoFUPbWJsQXyipWB5Qd7xcDgzF3Id4wXK447CrK
- HWSoG2YSnG5EZYj5SsEIFBIKY4VYn7ZvuKt04YcAM8VgTT6arOuT2/d/jGpYqyrkSJBK
- 3yMT98OlenNr57dCUycoyinkO4ggjabvpg7MG4RmtS2o4qMyCzi/hseX254fm86HZg46
- fXgS3CVxrfQaCKWbyJ6ppgNjuZ66YXkREALN3dc/H2PVRbSAIJuP3d4l+h/+bKaYEO6D
- P3sQ==
-X-Gm-Message-State: APjAAAUN1V0zcon+Cj/X/mXRi5Q/31/aPbMuUEjPa0fqiPwGz1mBtYlO
- /tBOzF6oLsQQPmO0PpYxGo0FBVyg8UN8NfcrePciHA==
-X-Google-Smtp-Source: APXvYqyylJuMDkKA7gnAsAhliXtut7vEzHdVLf8fTNkkiclmjbUpYD2oxeEcbD7bCMDcK99RCxtzazSCPbnSooRDfo8=
-X-Received: by 2002:ae9:f003:: with SMTP id l3mr5455012qkg.457.1581044792080; 
- Thu, 06 Feb 2020 19:06:32 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=t4CLMTIbjn78HyIw3MbTj9fsK/Q9HVmk1YRH08HvFW4=;
+ b=E7OEpHdUc0PLyqIE/1zYjKrJaX/I3Ts+bOWG+IrmwqUXUHZnfQ5+hL11dWgRiWp9il
+ hFUAssX58nFRlOvWmzYc7wOiSoM1mbYWYO/gPv16IQll6FrrlrrzVr16VVvyuwq6nZxo
+ uW5yTO+no7Z+CmHNLuqicQL5kUziE60Qqeo8sPrtgft83bYNgHKzpPhICLU6bWEFedJM
+ Uw/cw2Z1/a2/mLolLiVgRtI7FUSdxDGmpHPc0On7ahjJioHW4aKYjW/qWUWCnxUqKXm0
+ 9om4Eg/O5ZdY3kAV4BiqcyOrW4gdWbm8jzsnPs7vag83fvY43zWl8EcQfCFW5xCEFjzb
+ /BQA==
+X-Gm-Message-State: APjAAAUqSxND2L2rmKWr9zpDl/KPupUP4XzRgomZ1uqdbzuw6CtK/UUE
+ f6mn+/A5q8MgVpGjqT5dpTZjcA==
+X-Google-Smtp-Source: APXvYqxiM3mqXCuN//rbnMylmv3QEfgT2tAo0lrKJQKSE7Su2Tg5GR9a9AXOc66j0jtTmDYhbnQnRw==
+X-Received: by 2002:a17:90a:3ae5:: with SMTP id
+ b92mr1540962pjc.26.1581049438091; 
+ Thu, 06 Feb 2020 20:23:58 -0800 (PST)
+Received: from localhost ([2401:fa00:9:14:1105:3e8a:838d:e326])
+ by smtp.gmail.com with ESMTPSA id v7sm950245pfn.61.2020.02.06.20.23.54
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 06 Feb 2020 20:23:57 -0800 (PST)
+From: Evan Benn <evanbenn@chromium.org>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH] drm/mediatek: Find the cursor plane instead of hard coding it
+Date: Fri,  7 Feb 2020 15:23:51 +1100
+Message-Id: <20200207152348.1.Ie0633018fc787dda6e869cae23df76ae30f2a686@changeid>
+X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
+In-Reply-To: <20200206140140.GA18465@art_vandelay>
+References: <20200206140140.GA18465@art_vandelay>
 MIME-Version: 1.0
-References: <20200114071602.47627-1-drinkcat@chromium.org>
- <20200114071602.47627-6-drinkcat@chromium.org>
- <8b300f30-aa6d-89ee-77e3-271e3fa013f8@arm.com>
-In-Reply-To: <8b300f30-aa6d-89ee-77e3-271e3fa013f8@arm.com>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Fri, 7 Feb 2020 11:06:21 +0800
-Message-ID: <CANMq1KDEdbiHWzfZhvfpKG4cNOnp_x3bMO5rOaCuLzNJ5W4zEA@mail.gmail.com>
-Subject: Re: [PATCH v3 5/7] drm/panfrost: Add support for multiple power
- domains
-To: Steven Price <steven.price@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_190633_526816_B095ADE7 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20200206_202359_421957_7A141C42 
+X-CRM114-Status: GOOD (  12.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,53 +95,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- Mark Brown <broonie@kernel.org>, lkml <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Hsin-Yi Wang <hsinyi@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, CK Hu <ck.hu@mediatek.com>,
+ Evan Benn <evanbenn@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 20, 2020 at 10:53 PM Steven Price <steven.price@arm.com> wrote:
->
-> On 14/01/2020 07:16, Nicolas Boichat wrote:
-> [snip]
-> >
-> > +     err = panfrost_pm_domain_init(pfdev);
-> > +     if (err) {
-> > +             dev_err(pfdev->dev, "pm_domain init failed %d\n", err);
->
-> No need for this print - panfrost_pm_domain_init() will output a (more
-> appropriate) error message on failure.
+The cursor and primary planes were hard coded.
+Now search for them for passing to drm_crtc_init_with_planes
 
-Dropped.
+Signed-off-by: Evan Benn <evanbenn@chromium.org>
+---
 
-> > +             goto err_out2;
-> > +     }
-> > +
-> [snip]
-> > @@ -196,6 +274,7 @@ void panfrost_device_fini(struct panfrost_device *pfdev)
-> >       panfrost_mmu_fini(pfdev);
-> >       panfrost_gpu_fini(pfdev);
-> >       panfrost_reset_fini(pfdev);
-> > +     panfrost_pm_domain_fini(pfdev);
->
-> NIT: The reverse of the construction order would be to do this before
-> panfrost_reset_fini().
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
 
-Oh right, fixed.
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 7b392d6c71cc..935652990afa 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -658,10 +658,18 @@ static const struct drm_crtc_helper_funcs mtk_crtc_helper_funcs = {
+ 
+ static int mtk_drm_crtc_init(struct drm_device *drm,
+ 			     struct mtk_drm_crtc *mtk_crtc,
+-			     struct drm_plane *primary,
+-			     struct drm_plane *cursor, unsigned int pipe)
++			     unsigned int pipe)
+ {
+-	int ret;
++	struct drm_plane *primary = NULL;
++	struct drm_plane *cursor = NULL;
++	int i, ret;
++
++	for (i = 0; i < mtk_crtc->layer_nr; i++) {
++		if (mtk_crtc->planes[i].type == DRM_PLANE_TYPE_PRIMARY)
++			primary = &mtk_crtc->planes[i];
++		else if (mtk_crtc->planes[i].type == DRM_PLANE_TYPE_CURSOR)
++			cursor = &mtk_crtc->planes[i];
++	}
+ 
+ 	ret = drm_crtc_init_with_planes(drm, &mtk_crtc->base, primary, cursor,
+ 					&mtk_crtc_funcs, NULL);
+@@ -830,9 +838,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 			return ret;
+ 	}
+ 
+-	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, &mtk_crtc->planes[0],
+-				mtk_crtc->layer_nr > 1 ? &mtk_crtc->planes[1] :
+-				NULL, pipe);
++	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, pipe);
+ 	if (ret < 0)
+ 		return ret;
+ 
+-- 
+2.25.0.341.g760bfbb309-goog
 
-Thanks.
-
-> [snip]
 
 _______________________________________________
 linux-arm-kernel mailing list
