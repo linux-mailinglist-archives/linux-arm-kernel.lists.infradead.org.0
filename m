@@ -2,85 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81C2A1554A5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 10:29:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 827DF155476
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 10:23:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iGLvDghYM2o7LHjS9Qgx4alOudbfUmgKXMUVAUX9reA=; b=sOhlZYbeHU99kS
-	T+9Gcnlq+u5DmoJ75eALD4nPMT7xeVFKA0xLQ2ZOqfUJdWzrl1e+ADGkt+RxEGb0JfN0pyjjlYofE
-	4s11RYl4JIeaSkebVE14eoUFsSoJoOoqVXlK33X4yz88eJBckBnCsBQTSO5CdPDv4t3KHsEju/gFP
-	SGKQ8HBVqjhwTARZt6QMj3JAEleak+EsUmptMQLqDs5WA1kaQlZYDEAIR/Elp+CXOeIcVFSym0zMO
-	ZyOg2JpKBvtTVTUlqEPL+QpZqpPzcTDE2cNq80AMZH7tn1ErxmBEM7856CS9UGboG14QeJ4x8db9A
-	iEWUaBL0kbgtVdzcfS+A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vL1RvsUVSV1qEgDV54tmG2a4MzozBbfKVdPykqXPLTs=; b=YslXo+W3uGtRM4
+	4yoRIJrOQaTQqgKHjRRyQ5SZM8IA9xLvkPA4vqAHG3fZstvUcGOO4uLlVBiQNrf7ebrK+arW+7DVp
+	wR3/s4CK/KB2p78Fn8NocSm/QXnkBqHOEBxFT1uNSRdwaL5lFJZA/AW2rbA9BRGlXh8BbxOzwhBVJ
+	CPHZBIy1qJscDwC/lmuGVWUZaZf5YsHKRRuOEKgHEI5lmrCqeRdKCGrNyf4CioJYW9nFM/30rxIYW
+	gTG5c4Wl5Oydj9hbpKVi95fNbp61sxfuoG/WHZaUDJd6WZ8LIkIHMIouJQbKvEJXXa7Ss2OJY7Je+
+	Oy9KJWUguxIJgoWHdFhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izzwc-0000xw-0I; Fri, 07 Feb 2020 09:29:02 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1izzqu-0007Gs-Sd; Fri, 07 Feb 2020 09:23:08 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izzwP-0000vX-HQ; Fri, 07 Feb 2020 09:28:51 +0000
-X-UUID: f19cbf8bc7d34bf1848d1ec4fc0f95d6-20200207
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=UbnXG7anPzekXSKoVAsd9UcuJJBevQ2oSv9/xVk+BPE=; 
- b=c4QBDkIH0ZuQLX8jMdhLi0TLlpQaTvsOo1I+qYvyvVGxbulbcMjPFDr+BXfCdKLn4HDUCWl8XVFgpgyCydTTksdKSi3zch51GZ2Ypy3PfPkc3F3jLttcmtY0fmU+PXQmBmqrs36p/F6tfR0sB7uMk3QSm8cRMnz5F13VIO7w9Ok=;
-X-UUID: f19cbf8bc7d34bf1848d1ec4fc0f95d6-20200207
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1768485092; Fri, 07 Feb 2020 01:28:44 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 7 Feb 2020 01:23:36 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 7 Feb 2020 17:24:28 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 7 Feb 2020 17:22:59 +0800
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Catalin Marinas
- <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, Michael Turquette
- <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, mtk01761
- <wendell.lin@mediatek.com>, Fabien Parent <fparent@baylibre.com>, Weiyi Lu
- <weiyi.lu@mediatek.com>, Mars Cheng <mars.cheng@mediatek.com>, Sean Wang
- <Sean.Wang@mediatek.com>, Macpaul Lin <macpaul.lin@mediatek.com>, Owen Chen
- <owen.chen@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, "Evan
- Green" <evgreen@chromium.org>, Yong Wu <yong.wu@mediatek.com>, Joerg Roedel
- <jroedel@suse.de>, Shawn Guo <shawnguo@kernel.org>, Marc Zyngier
- <marc.zyngier@arm.com>, Ryder Lee <Ryder.Lee@mediatek.com>,
- <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
- <linux-clk@vger.kernel.org>
-Subject: [PATCH v7 7/7] arm64: defconfig: add CONFIG_COMMON_CLK_MT6765_XXX
- clocks
-Date: Fri, 7 Feb 2020 17:20:50 +0800
-Message-ID: <1581067250-12744-8-git-send-email-macpaul.lin@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1581067250-12744-1-git-send-email-macpaul.lin@mediatek.com>
-References: <1581067250-12744-1-git-send-email-macpaul.lin@mediatek.com>
+ id 1izzqm-0007Fy-O5
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 09:23:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581067373;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=9G854gH0yt32vL5cWXqi6Q0NJ8XwpZFZsqnHu0e32+o=;
+ b=LAvoV/W+PqIumCVV5O8dgeLFs3dVENEc3Kbq13MnTvHNoEAIW93KHmH6iINrqbcd1OwKPe
+ IxgwmPvTrH0NuJirKH/EBM0y+K4cAoUhFnSVdG8IezgZ9+feghtp8/zDiAOoX3brYJi6Yk
+ OPZffNx2zSzTsvQIhVnTD6qs6GTbAc8=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-146-1bZ4vXbeOeOcU3F6bYifiw-1; Fri, 07 Feb 2020 04:22:49 -0500
+X-MC-Unique: 1bZ4vXbeOeOcU3F6bYifiw-1
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 0C36A1088382;
+ Fri,  7 Feb 2020 09:22:48 +0000 (UTC)
+Received: from lacos-laptop-7.usersys.redhat.com (ovpn-117-138.ams2.redhat.com
+ [10.36.117.138])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 9E9DD1001B05;
+ Fri,  7 Feb 2020 09:22:45 +0000 (UTC)
+Subject: Re: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
+From: Laszlo Ersek <lersek@redhat.com>
+To: Ard Biesheuvel <ardb@kernel.org>, linux-efi@vger.kernel.org
+References: <20200206140352.6300-1-ardb@kernel.org>
+ <fa3b3103-e77d-571d-71a4-604fa48368e6@redhat.com>
+Message-ID: <cfb38b38-14f2-c61a-60a0-dfe14667b49c@redhat.com>
+Date: Fri, 7 Feb 2020 10:22:44 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <fa3b3103-e77d-571d-71a4-604fa48368e6@redhat.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_012849_584242_2EF7F3E5 
-X-CRM114-Status: UNSURE (   7.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200207_012300_865376_BE584CAD 
+X-CRM114-Status: GOOD (  30.03  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,8 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,43 +92,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: CC Hwang <cc.hwang@mediatek.com>, Loda Chou <loda.chou@mediatek.com>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>
+Cc: agraf@csgraf.de, xypron.glpk@gmx.de, daniel.kiper@oracle.com,
+ ilias.apalodimas@linaro.org, mjg59@google.com, pjones@redhat.com,
+ leif@nuviainc.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Owen Chen <owen.chen@mediatek.com>
+On 02/07/20 10:09, Laszlo Ersek wrote:
+> On 02/06/20 15:03, Ard Biesheuvel wrote:
+>> This series introduces an arch agnostic way of loading the initrd into
+>> memory from the EFI stub. This addresses a number of shortcomings that
+>> affect the current implementations that exist across architectures:
+>>
+>> - The initrd=<file> command line option can only load files that reside
+>>   on the same file system that the kernel itself was loaded from, which
+>>   requires the bootloader or firmware to expose that file system via the
+>>   appropriate EFI protocol, which is not always feasible. From the kernel
+>>   side, this protocol is problematic since it is incompatible with mixed
+>>   mode on x86 (this is due to the fact that some of its methods have
+>>   prototypes that are difficult to marshall)
+>>
+>> - The approach that is ordinarily taken by GRUB is to load the initrd into
+>>   memory, and pass it to the kernel proper via the bootparams structure or
+>>   via the device tree. This requires the boot loader to have an understanding
+>>   of those structures, which are not always set in stone, and of the policies
+>>   around where the initrd may be loaded into memory. In the ARM case, it
+>>   requires GRUB to modify the hardware description provided by the firmware,
+>>   given that the initrd base and offset in memory are passed via the same
+>>   data structure. It also creates a time window where the initrd data sits
+>>   in memory, and can potentially be corrupted before the kernel is booted.
+>>
+>> Considering that we will soon have new users of these interfaces (EFI for
+>> kvmtool on ARM, RISC-V in u-boot, etc), it makes sense to add a generic
+>> interface now, before having another wave of bespoke arch specific code
+>> coming in.
+>>
+>> Another aspect to take into account is that support for UEFI secure boot
+>> and measured boot is being taken into the upstream, and being able to
+>> rely on the PE entry point for booting any architecture makes the GRUB
+>> vs shim story much cleaner, as we should be able to rely on LoadImage
+>> and StartImage on all architectures, while retaining the ability to
+>> load initrds from anywhere.
+>>
+>> Note that these patches depend on a fair amount of cleanup work that I
+>> am targetting for v5.7. Branch can be found at:
+>> https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=efistub-unification2
+>>
+>> An implementation for ArmVirtQemu (OVMF for ARM aka AAVMF) can be found
+>> at https://github.com/ardbiesheuvel/edk2/commits/linux-efi-generic.
+>> The change is for ARM only, but the exact same code could be used on x86.
+> 
+> I like this ArmVirtQemu feature, but I think it should be implemented as
+> an addition, rather than a replacement. Older kernels (older EFI stubs)
+> will try to fetch the initrd from the same fs where grub loaded the
+> kernel from (exactly as you describe in the blurb).
+> 
+> For example, virt-install's "--location" option "can recognize certain
+> distribution trees and fetches a bootable kernel/initrd pair to launch
+> the install". It would be nice to keep that working for older distros.
+> 
+> I think LoadFile[2] can co-exist with SimpleFs.
+> 
+> I also think that the "try SimpleFs first, fall back to LoadFile[2]
+> second" requirement applies only to the UEFI boot manager, and not to
+> the kernel's EFI stub. IOW in the new approach the kernel is free to
+> ignore (abandon) the old approach for good.
 
-Enable MT6765 clock configs, include topckgen, apmixedsys,
-infracfg, and subsystem clocks.
+... But that might not be good for compatibility with grub and/or the
+platform firmware, from the kernel's own perspective, perhaps?...
 
-Signed-off-by: Owen Chen <owen.chen@mediatek.com>
-Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
----
- arch/arm64/configs/defconfig | 6 ++++++
- 1 file changed, 6 insertions(+)
+Who is supposed to produce LoadFile2 with the new VenMedia devpath?
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 6a83ba2aea3e..9d3da81d0d08 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -489,6 +489,12 @@ CONFIG_REGULATOR_QCOM_SMD_RPM=y
- CONFIG_REGULATOR_QCOM_SPMI=y
- CONFIG_REGULATOR_RK808=y
- CONFIG_REGULATOR_S2MPS11=y
-+CONFIG_COMMON_CLK_MT6765_AUDIOSYS=y
-+CONFIG_COMMON_CLK_MT6765_CAMSYS=y
-+CONFIG_COMMON_CLK_MT6765_MMSYS=y
-+CONFIG_COMMON_CLK_MT6765_IMGSYS=y
-+CONFIG_COMMON_CLK_MT6765_VCODECSYS=y
-+CONFIG_COMMON_CLK_MT6765_MIPI0ASYS=y
- CONFIG_REGULATOR_VCTRL=m
- CONFIG_RC_CORE=m
- CONFIG_RC_DECODERS=y
--- 
-2.18.0
+Thanks
+Laszlo
+
+>>
+>> Cc: lersek@redhat.com
+>> Cc: leif@nuviainc.com
+>> Cc: pjones@redhat.com
+>> Cc: mjg59@google.com
+>> Cc: agraf@csgraf.de
+>> Cc: ilias.apalodimas@linaro.org
+>> Cc: xypron.glpk@gmx.de 
+>> Cc: daniel.kiper@oracle.com
+>>
+>> Ard Biesheuvel (2):
+>>   efi/libstub: add support for loading the initrd from a device path
+>>   efi/libstub: take noinitrd cmdline argument into account for devpath
+>>     initrd
+>>
+>>  drivers/firmware/efi/libstub/arm-stub.c       | 21 ++++--
+>>  .../firmware/efi/libstub/efi-stub-helper.c    | 74 +++++++++++++++++++
+>>  drivers/firmware/efi/libstub/efistub.h        | 13 ++++
+>>  drivers/firmware/efi/libstub/x86-stub.c       | 51 ++++++++++---
+>>  include/linux/efi.h                           |  1 +
+>>  5 files changed, 146 insertions(+), 14 deletions(-)
+>>
+> 
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
