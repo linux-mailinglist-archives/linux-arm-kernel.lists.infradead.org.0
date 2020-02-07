@@ -2,96 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8524B155DB3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 19:18:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4211B155E1C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 19:32:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1q325ExfPT4NKA/88E9chTN73k36gPpmRmSQNjkza0M=; b=ckRVSGwmNYXJRE
-	WeeQektPIaZON5Kj1p2EbbXE55/Un2wiWJgx1GnfepmVK4/jVmcHwgcxQVTf4Imi+krtpL3c5aS5Y
-	5uX9o2O3Gsk0NvYSB+/9rrPWV2JnF52APsT0kH9lHqAl2dfRbufzjUeQY8egb5xkNMV8l6J7yDc73
-	FTi3C2YilaLb87B4kY7LqVQuKjxL/7Lb0EdyiT/9pVjSUt00IaDZ2AagMMeaMB50hFtw/Ew6Hbw1L
-	U3dAWs7xo6hYR+hqiB56zDJbMO2WNDWGJiUgJHG/pj2cTEg9LX8Shq7GQCPXAbtJs2IfmMAHnLr1n
-	AanslaAowii5Is73IN8Q==;
+	List-Owner; bh=nX2BWwHRLk1QsgomS49S7l/ego/xk9AvPU4pzV3eHz8=; b=NGYwNCfobMQsJY
+	u8UelAypxymrgidsjEALzp37iHxWRId6x4/hIIfi2au7q+ThwP8QqoaeQGBEz2UBUwlgzfGMgIRVw
+	Pm7MSsmvzI28pQi+SqdMCv+LMti0+PQVry0N1qBJz9i47kpj3GYkaGB/o/hDf2wPXIYdSCXaYVi+b
+	D54DV5aeMuwHZdWyvF/mztu0Vj/gpW613JkgEC3e7yWo24YU45zWjL07MIgmlVJe6yw1evvWhwKxW
+	vSQSACYYiiC4jacFgPZq1kDMqdWDi72ddGy4QAulokAgnnh35vVGMCsOzCl3WRAgTslPE9fqyYth0
+	RRwFRCGCoBdYXVRfs6LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j08Ca-0002Hq-Ro; Fri, 07 Feb 2020 18:18:04 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j08Q3-00079h-La; Fri, 07 Feb 2020 18:31:59 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j08CS-0002GX-K9
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 18:17:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581099475;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=zZJ4qP8Dp5obTldW76MuAHNAAKAcx/3dX73hUB9dtQo=;
- b=XwS795EJykRQWe4WcY7gj7ELnDIg5f79u2HjeSQellpencprlJkCU0sLp/a3tiaZQqjpb1
- TNJX1VrrMFiq1T5E/eez0fJt0tR0FYzXgF3OcKr5MGg9ExIUc9sIN7HAAK4orwRdKcdFS9
- SNjljzPS7HjG51+C3NRGV8/E1q6Lf/8=
-Received: from mail-qv1-f70.google.com (mail-qv1-f70.google.com
- [209.85.219.70]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-228-b3gXl4w2P6yE44wHINc9gw-1; Fri, 07 Feb 2020 13:17:52 -0500
-Received: by mail-qv1-f70.google.com with SMTP id dc2so75207qvb.7
+ id 1j08Pt-00078a-TR
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 18:31:51 +0000
+Received: by mail-wr1-x444.google.com with SMTP id t3so20153wru.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Feb 2020 10:17:52 -0800 (PST)
+ Fri, 07 Feb 2020 10:31:45 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0v34gJothHO3j4Q4wlZmrNzO+MkkL5KtAqTgVsXD5t8=;
+ b=c/KE7MDXnr27AuNVH5pVqkgRp1vvz6CmI/2tggk/F4MilQvTzr1FU0WH0WOpDRhYD5
+ bU7VomlGH5L02fGbPt1PdZygYZWscxoxuOw+yx19ezD5waJBtQs+FIhHVCln4RKo6n48
+ S0Yc9Vo9/SYWnrlXCxq4ViVRY1xk+5cbc6MaAJTWdQoROaCIUwvasoS5H2MqJ/rLl1J5
+ 5PqiGErFUbIMhdQzKGhkQZyfxn0lHQhyTtNsxRSLLW30pAtk7GKoeMwXg2+y1zH3qXpH
+ kr4esO0v+kS58mRzC28aAmPGjfR9IUIyrWrvibSwlQjw8ElhZkRWu1qQNWT1OedDkMI8
+ qm5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=cPT63VS6JkFJRjpL5MMsWxNfN8Beu47vJy8tbC2r7XM=;
- b=aovv6h9IDPR+ToEdIv75bYN4dNchplLKoL9f6rFFvbQRVjdy+kiLFtH6uXI4v+Bnyj
- /OpK+bTzeVy2G7Xw9jXg/RujmTfHltHqbqhj3pLqZHZcylu11hKyHgB0ONnFNBOpIeQq
- s8PgQuDpaaNUpnGJRBiy3lkXYtAnUc/m/b6kGi0P3PkpDKog1SXeIXqQd7srnecCXHUR
- n/lT6UAjJya94/6fl4/xVNatUOgqE8GErq4JcsC0ZtapNWBh6flTiiHOfnTFZgYlnJ9s
- DHeEkd20FajkJgpbUv4qaIno3EIN4gfdE8w9nOetx8sZhl1synWfnGbUKji35j0sh9FZ
- FYpA==
-X-Gm-Message-State: APjAAAXlprkuHR6bkHe7yDEYFqcvE2FLYcvLDuV3xQ0muRtvHX3M1kri
- W5mtc1zy3Ye/E8HETXLA8jP4EMfu6h1yBp6XbDl2GLul+EV1QHoKfHct/2uVkbFmcQrU7DN52Vc
- E0+/5BvkWYnNJrpMdOWGgOEsSBmJ0fG8VACk=
-X-Received: by 2002:a05:6214:1253:: with SMTP id
- q19mr106747qvv.75.1581099472159; 
- Fri, 07 Feb 2020 10:17:52 -0800 (PST)
-X-Google-Smtp-Source: APXvYqzRox8Bo7fyFYmNOjYNh/V3B0M3O5rtHPF6if8Y080MuT3a3U4ayt/3NWDSUCkErG4IzY/vdw==
-X-Received: by 2002:a05:6214:1253:: with SMTP id
- q19mr106704qvv.75.1581099471868; 
- Fri, 07 Feb 2020 10:17:51 -0800 (PST)
-Received: from xz-x1 ([2607:9880:19c8:32::2])
- by smtp.gmail.com with ESMTPSA id b24sm1725899qto.71.2020.02.07.10.17.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 07 Feb 2020 10:17:51 -0800 (PST)
-Date: Fri, 7 Feb 2020 13:17:48 -0500
-From: Peter Xu <peterx@redhat.com>
-To: Sean Christopherson <sean.j.christopherson@intel.com>
-Subject: Re: [PATCH v5 12/19] KVM: Move memslot deletion to helper function
-Message-ID: <20200207181748.GC720553@xz-x1>
-References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
- <20200121223157.15263-13-sean.j.christopherson@intel.com>
- <20200206161415.GA695333@xz-x1>
- <20200206162818.GD13067@linux.intel.com>
- <20200206165116.GE695333@xz-x1>
- <20200207175912.GG2401@linux.intel.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0v34gJothHO3j4Q4wlZmrNzO+MkkL5KtAqTgVsXD5t8=;
+ b=ktGTbM3scGg6vipNUohrL4I2QQVUu+GUKNQUQEFl66EGunWb7JAt1dyPTnS6VoZSO2
+ TCl5mHvKnU7B75CIEvBaTm2DVHY+gAP1Bv8Vpsi5zEVjpyQxu5fE5BPEXviPmAvSC4ad
+ hSVtuJVdYzthABJ8h8BVVsoxFVVEU0eKp1Ntx1n7m3dTJTie4qHKOcH7lbMELd6Y+aYY
+ SUO8SFuvsSqQYOBc04cFfMVTK45CzMTOswd2ghf/5VO8VrjOoYgeIBKMOm+5U9sQHBXq
+ u3XBhOheWb9gWYRTYtJK7rr/6Z+lRUE4SjsqUHtqmSxqFjgsKBcDxivOWqC97y6ho7EN
+ Y2sg==
+X-Gm-Message-State: APjAAAX43SZWy78vFVZ93u+qcfqQflbDxCJ0B1QgtiohPniMNKUMfbAm
+ ric6282cGrazvEcWz59ZZl2pBNjsmGBWeDXUCSEeRA==
+X-Google-Smtp-Source: APXvYqyVbP4+gSnuDzbO/iK3mOF8OGLPaTetRFZdihOAga1O45m+Zg2UTz4gB3UaPq/25V9fIH2KaNb4aSIPlkv/3Xs=
+X-Received: by 2002:a5d:42c6:: with SMTP id t6mr313068wrr.151.1581100304442;
+ Fri, 07 Feb 2020 10:31:44 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200207175912.GG2401@linux.intel.com>
-X-MC-Unique: b3gXl4w2P6yE44wHINc9gw-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+References: <20200206140352.6300-1-ardb@kernel.org>
+ <fa3b3103-e77d-571d-71a4-604fa48368e6@redhat.com>
+ <cfb38b38-14f2-c61a-60a0-dfe14667b49c@redhat.com>
+ <CAKv+Gu__fUGyv4eu5oKcsVZYSbKRfYYd_VS8CGEV4jC+GuvqJA@mail.gmail.com>
+ <1581092420.7608.15.camel@HansenPartnership.com>
+In-Reply-To: <1581092420.7608.15.camel@HansenPartnership.com>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 7 Feb 2020 18:31:33 +0000
+Message-ID: <CAKv+Gu99wxr+OHwqPRjfF136VB3AwPbXXg1tx1=34jF2DU6Z6g@mail.gmail.com>
+Subject: Re: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
+To: James Bottomley <James.Bottomley@hansenpartnership.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_101756_807093_F0E4C186 
-X-CRM114-Status: GOOD (  26.89  )
+X-CRM114-CacheID: sfid-20200207_103149_983235_81D472D0 
+X-CRM114-Status: GOOD (  26.11  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -101,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,101 +94,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
- Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- Philippe =?utf-8?Q?Mathieu-Daud=C3=A9?= <f4bug@amsat.org>
+Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
+ Heinrich Schuchardt <xypron.glpk@gmx.de>,
+ Daniel Kiper <daniel.kiper@oracle.com>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
+ Leif Lindholm <leif@nuviainc.com>, Laszlo Ersek <lersek@redhat.com>,
+ Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 07, 2020 at 09:59:12AM -0800, Sean Christopherson wrote:
-> On Thu, Feb 06, 2020 at 11:51:16AM -0500, Peter Xu wrote:
-> > On Thu, Feb 06, 2020 at 08:28:18AM -0800, Sean Christopherson wrote:
-> > > On Thu, Feb 06, 2020 at 11:14:15AM -0500, Peter Xu wrote:
-> > > > On Tue, Jan 21, 2020 at 02:31:50PM -0800, Sean Christopherson wrote:
-> > > > > Move memslot deletion into its own routine so that the success path for
-> > > > > other memslot updates does not need to use kvm_free_memslot(), i.e. can
-> > > > > explicitly destroy the dirty bitmap when necessary.  This paves the way
-> > > > > for dropping @dont from kvm_free_memslot(), i.e. all callers now pass
-> > > > > NULL for @dont.
-> > > > > 
-> > > > > Add a comment above the code to make a copy of the existing memslot
-> > > > > prior to deletion, it is not at all obvious that the pointer will become
-> > > > > stale during sorting and/or installation of new memslots.
-> > > > 
-> > > > Could you help explain a bit on this explicit comment?  I can follow
-> > > > up with the patch itself which looks all correct to me, but I failed
-> > > > to catch what this extra comment wants to emphasize...
-> > > 
-> > > It's tempting to write the code like this (I know, because I did it):
-> > > 
-> > > 	if (!mem->memory_size)
-> > > 		return kvm_delete_memslot(kvm, mem, slot, as_id);
-> > > 
-> > > 	new = *slot;
-> > > 
-> > > Where @slot is a pointer to the memslot to be deleted.  At first, second,
-> > > and third glances, this seems perfectly sane.
-> > > 
-> > > The issue is that slot was pulled from struct kvm_memslots.memslots, e.g.
-> > > 
-> > > 	slot = &slots->memslots[index];
-> > > 
-> > > Note that slots->memslots holds actual "struct kvm_memory_slot" objects,
-> > > not pointers to slots.  When update_memslots() sorts the slots, it swaps
-> > > the actual slot objects, not pointers.  I.e. after update_memslots(), even
-> > > though @slot points at the same address, it's could be pointing at a
-> > > different slot.  As a result kvm_free_memslot() in kvm_delete_memslot()
-> > > will free the dirty page info and arch-specific points for some random
-> > > slot, not the intended slot, and will set npages=0 for that random slot.
-> > 
-> > Ah I see, thanks.  Another alternative is we move the "old = *slot"
-> > copy into kvm_delete_memslot(), which could be even clearer imo.
-> 
-> The copy is also needed in __kvm_set_memory_region() for the MOVE case.
+On Fri, 7 Feb 2020 at 16:20, James Bottomley
+<James.Bottomley@hansenpartnership.com> wrote:
+>
+> On Fri, 2020-02-07 at 12:23 +0000, Ard Biesheuvel wrote:
+> > On Fri, 7 Feb 2020 at 09:22, Laszlo Ersek <lersek@redhat.com> wrote:
+> > >
+> > > On 02/07/20 10:09, Laszlo Ersek wrote:
+> [...]
+> > > > For example, virt-install's "--location" option "can recognize
+> > > > certain distribution trees and fetches a bootable kernel/initrd
+> > > > pair to launch the install". It would be nice to keep that
+> > > > working for older distros.
+> > > >
+> > > > I think LoadFile[2] can co-exist with SimpleFs.
+> > > >
+> > > > I also think that the "try SimpleFs first, fall back to
+> > > > LoadFile[2] second" requirement applies only to the UEFI boot
+> > > > manager, and not to the kernel's EFI stub. IOW in the new
+> > > > approach the kernel is free to ignore (abandon) the old approach
+> > > > for good.
+> > >
+> > > ... But that might not be good for compatibility with grub and/or
+> > > the platform firmware, from the kernel's own perspective,
+> > > perhaps?...
+> > >
+> > > Who is supposed to produce LoadFile2 with the new VenMedia devpath?
+> > >
+> >
+> > What I am ultimately after is a generic GRUB that uses
+> > LoadImage+Startimage for starting the kernel on all architectures,
+>
+> For most boots, we need to pivot to the MoK.  A long time ago, I
+> proposed updating the platform security policy to do an override to
+> allow MoK to become the security verifier (actually principally so I
+> could get the gummiboot bootloader to work with the MoK method):
+>
+> https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/tree/lib/security_policy.c
+>
+> And I believe all the pivot bootloaders now do this, but the fear was
+> always this looks a bit like hackery that might not work in some UEFI
+> implementations.  Since we don't really rely on it (shim link loads
+> after signature verification) we don't know whether the assumption does
+> break or not.  We'll need to get much more comfortable with the
+> security override before we can let grub do a simple load+start.
+>
 
-Right.  I actually meant to do all "old = *slot" in any function we
-need to cache the data explicitly, with that we also need another one
-after calling kvm_delete_memslot() for move.  But with the comment as
-you suggested below it looks good to me too.
+I'd like to do something much simpler: let shim override LoadImage and
+StartImage, and in their implementations, fall back to the firmware
+ones if necessary.
 
-Thanks,
+> > and is able to load the initrd from anywhere in an arch agnostic
+> > manner.
+>
+> I think the use case might not really be grub, it's gummiboot, or
+> systemd-boot as its now called:
+>
 
-> 
-> > However I'm not sure whether it's a good idea to drop the test-by for
-> > this.  Considering that comment change should not affect it, would you
-> > mind enrich the comment into something like this (or anything better)?
-> > 
-> > /*
-> >  * Make a full copy of the old memslot, the pointer will become stale
-> >  * when the memslots are re-sorted by update_memslots() in
-> >  * kvm_delete_memslot(), while to make the kvm_free_memslot() work as
-> >  * expected later on, we still need the cached memory slot.
-> >  */
-> 
-> As above, it's more subtle than just the kvm_delete_memslot() case.
-> 
-> 	/*
-> 	 * Make a full copy of the old memslot, the pointer will become stale
-> 	 * when the memslots are re-sorted by update_memslots() when deleting
-> 	 * or moving a memslot, and additional modifications to the old memslot
-> 	 * need to be made after calling update_memslots().
-> 	 */
-> 
+No it is definitely GRUB. GRUB today needs to attach to the shim
+protocol, perform the authentication, measure the payload etc etc,
+which means it knows far too much about the internals of shim or the
+fact that it even exists.
 
--- 
-Peter Xu
+My ideal bootflow would be where the OS installer looks at the
+firmware's db/dbx, doesn't bother to install shim if the OS vendor's
+cert is there, and uses the exact same GRUB regardless of whether shim
+is part of the bootflow or not.
 
+One of the things impeding this is the fact that we cannot load the
+initrd from anywhere when using loadimage+startimage.
+
+> https://wiki.archlinux.org/index.php/systemd-boot
+>
+> The standard way of using grub and EFI is to put grub on the EFI
+> parition but have the kernel and the initrd on the root parition (which
+> won't be EFI readable).  This means we can keep the EFI partition small
+> and only needing modification when grub is updated, meaning it doesn't
+> even need mounting at all usually.
+>
+> Don't get me wrong, I like the gummiboot way of doing the
+> LoadImage+StartImage: it's small and clean and doesn't need the shim
+> protocol, but people like the sophistication grub provides including
+> its ability to read kernel filesystems, so they're unlikely to change
+> that.
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
