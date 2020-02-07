@@ -2,82 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D69DF1552B0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 08:04:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CD291552D8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 08:21:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kgNSCwbFVFw7qQV01wN5Qkm8unAiEySwA62gWb5iFj0=; b=KipSfEZ7tFn5y8
-	LjKoOqt8SgtSCTtlRCVHPiSuROkDbEj0tQtG+B7hfO36n2S+Hl6U2ihlBB/JGbISxAUp9D8r8m7yh
-	dxZXj13wtFV/46w8PhwN0NOVGF7ypWWVgfSOLM0/MJYSotjlvv4lGLVhmRvyyeD17Cf3oKoBNZjLt
-	zZT2LCft+qYStWqbajNRc3a/DVcHeOytW5DusYY/P9W1rS0mtJl205YjSdBSdR4VGvNUtui8dpiwm
-	ueSwqrb4I6C0m9cdp8Y7wJcW19QeAzHj/IhzBawLZBdWbR5oSIvgoQmBSCGs9FKTADE/a1jJDInjJ
-	8SReJ1CefFSExXa07JPg==;
+	List-Owner; bh=GC6x+Ctq9y7XFtiWkje0hd58hRJcy0LOyOz6oaMEXvc=; b=AcQWkvFFthEIC7
+	fzl5ewTeAW6bEXw6WhvQ3TUE/bt3Qv+kS6h8AzlfUevktZQE+F+6V1ZoA/VFc924ssDc29En7UYf3
+	bzj0ZZWSR2PmcwpVnNf5iZfcpoV4BWv+o3l6S/XWdvzh3r20ae17/i2hcMOv5EBAFvFEp4lRJqTNZ
+	H3T3OYHQV73PtGCfvOmFz+dmr9xpBmVlhMwLFgxJNqWoe3h007D6QC9pVpJLOBwfa9UboAqGHnodi
+	R+FtVV7CTmgl6yPd4dTW3ijyaOxevEBghz9ndAhxhMT5MQrjlyk1RvId3D9EEM3ZB1CeRyYAXG1Cz
+	CMfblK5xMUUqY+M3j6+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izxgj-0005Q9-HY; Fri, 07 Feb 2020 07:04:29 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1izxxY-0003hd-9V; Fri, 07 Feb 2020 07:21:52 +0000
+Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izxgL-0005I7-WE; Fri, 07 Feb 2020 07:04:07 +0000
-X-UUID: 45292e0e3fe94d3d99ea0416fd57c0cd-20200206
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=6jM/oR06razYnFBu9+gewGY3eZHYhaG1HA0jqsKM5V0=; 
- b=IDDf/v7qRZ49wRCyJyBLD3I7xIp+7uXiIecE3zVt8vnkCZwYZILvjE8S/1gqiUr1V3kKHCpfNTDY4+wbwY2PvtiCEi5xcs0uENPZRlOm6rl2PVW3IL5aYR8Wn4FLNjr7aOy0hIeCE4tDrzMMHu97XEU9uJrZ36aUBRZqmv1HNfc=;
-X-UUID: 45292e0e3fe94d3d99ea0416fd57c0cd-20200206
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 132922902; Thu, 06 Feb 2020 23:04:01 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 6 Feb 2020 23:04:42 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 7 Feb 2020 15:02:27 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 7 Feb 2020 15:04:28 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
- <beanhuo@micron.com>
-Subject: [PATCH v1 2/2] scsi: ufs: introduce common function to disable host
- TX LCC
-Date: Fri, 7 Feb 2020 15:03:57 +0800
-Message-ID: <20200207070357.17169-3-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200207070357.17169-1-stanley.chu@mediatek.com>
-References: <20200207070357.17169-1-stanley.chu@mediatek.com>
+ id 1izxxR-0003gu-Ep
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 07:21:46 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 06 Feb 2020 23:21:42 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,412,1574150400"; d="scan'208";a="250325781"
+Received: from pgsmsx104.gar.corp.intel.com ([10.221.44.91])
+ by orsmga002.jf.intel.com with ESMTP; 06 Feb 2020 23:21:39 -0800
+Received: from pgsmsx114.gar.corp.intel.com ([169.254.4.192]) by
+ PGSMSX104.gar.corp.intel.com ([169.254.3.14]) with mapi id 14.03.0439.000;
+ Fri, 7 Feb 2020 15:21:38 +0800
+From: "Ong, Boon Leong" <boon.leong.ong@intel.com>
+To: David Miller <davem@davemloft.net>
+Subject: RE: [PATCH net v4 1/6] net: stmmac: Fix incorrect location to set
+ real_num_rx|tx_queues
+Thread-Topic: [PATCH net v4 1/6] net: stmmac: Fix incorrect location to set
+ real_num_rx|tx_queues
+Thread-Index: AQHV3AI9OlvIBg8tJE+vuiHHv7FbVKgMFToAgAM6L7A=
+Date: Fri, 7 Feb 2020 07:21:38 +0000
+Message-ID: <AF233D1473C1364ABD51D28909A1B1B75C4A8F7E@pgsmsx114.gar.corp.intel.com>
+References: <20200205085510.32353-1-boon.leong.ong@intel.com>
+ <20200205085510.32353-2-boon.leong.ong@intel.com>
+ <20200205.143924.1875004608052019375.davem@davemloft.net>
+In-Reply-To: <20200205.143924.1875004608052019375.davem@davemloft.net>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+dlp-product: dlpe-windows
+dlp-version: 11.2.0.6
+dlp-reaction: no-action
+x-originating-ip: [172.30.20.206]
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_230406_036390_9088D049 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200206_232145_549798_4E48DE59 
+X-CRM114-Status: GOOD (  15.08  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,115 +80,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
+Cc: "Jose.Abreu@synopsys.com" <Jose.Abreu@synopsys.com>,
+ "Joao.Pinto@synopsys.com" <Joao.Pinto@synopsys.com>,
+ "alexandre.torgue@st.com" <alexandre.torgue@st.com>, "Voon,
+ Weifeng" <weifeng.voon@intel.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "arnd@arndb.de" <arnd@arndb.de>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>, "Tan,
+ Tee Min" <tee.min.tan@intel.com>,
+ "peppe.cavallaro@st.com" <peppe.cavallaro@st.com>,
+ "alexandru.ardelean@analog.com" <alexandru.ardelean@analog.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Many vendors would like to disable host TX LCC during initialization
-flow. Introduce a common function for all users to make drivers easier to
-read and maintained. This patch does not change any functionality.
+From: David Miller <davem@davemloft.net>
+Date: Wednesday, February 5, 2020 9:39 PM
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/cdns-pltfrm.c  | 2 +-
- drivers/scsi/ufs/ufs-hisi.c     | 2 +-
- drivers/scsi/ufs/ufs-mediatek.c | 2 +-
- drivers/scsi/ufs/ufs-qcom.c     | 4 +---
- drivers/scsi/ufs/ufshcd-pci.c   | 2 +-
- drivers/scsi/ufs/ufshcd.h       | 5 +++++
- 6 files changed, 10 insertions(+), 7 deletions(-)
+>From: Ong Boon Leong <boon.leong.ong@intel.com>
+>Date: Wed,  5 Feb 2020 16:55:05 +0800
+>
+>> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+>b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+>> index 5836b21edd7e..4d9afa13eeb9 100644
+>> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+>> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
+>> @@ -2657,6 +2657,10 @@ static int stmmac_hw_setup(struct net_device
+>*dev, bool init_ptp)
+>>  >--->-------stmmac_enable_tbs(priv, priv->ioaddr, enable, chan);
+>>  >---}
+>>
+>> +>---/* Configure real RX and TX queues */
+>> +>---netif_set_real_num_rx_queues(dev, priv->plat->rx_queues_to_use);
+>> +>---netif_set_real_num_tx_queues(dev, priv->plat->tx_queues_to_use);
+>> +
+>>  >---/* Start the ball rolling... */
+>>  >---stmmac_start_all_dma(priv);
+>>
+>
+>It is only safe to ignore the return values from
+>netif_set_real_num_{rx,tx}_queues() if you call them before the
+>network device is registered.  Because only in that case are these
+>functions guaranteed to succeed.
+>
+>But now that you have moved these calls here, they can fail.
+>
+>Therefore you must check the return value and unwind the state
+>completely upon failures.
+>
+>Honestly, I think this change will have several undesirable side effects:
+>
+>1) Lots of added new code complexity
+>
+>2) A new failure mode when resuming the device, users will find this
+>   very hard to diagnose and recover from
+>
+>What real value do you get from doing these calls after probe?
+>
+>If you can't come up with a suitable answer to that question, you
+>should reconsider this change.
+>
+>Thanks.
 
-diff --git a/drivers/scsi/ufs/cdns-pltfrm.c b/drivers/scsi/ufs/cdns-pltfrm.c
-index 56a6a1ed5ec2..da065a259f6e 100644
---- a/drivers/scsi/ufs/cdns-pltfrm.c
-+++ b/drivers/scsi/ufs/cdns-pltfrm.c
-@@ -192,7 +192,7 @@ static int cdns_ufs_link_startup_notify(struct ufs_hba *hba,
- 	 * and device TX LCC are disabled once link startup is
- 	 * completed.
- 	 */
--	ufshcd_dme_set(hba, UIC_ARG_MIB(PA_LOCAL_TX_LCC_ENABLE), 0);
-+	ufshcd_disable_host_tx_lcc(hba);
- 
- 	/*
- 	 * Disabling Autohibern8 feature in cadence UFS
-diff --git a/drivers/scsi/ufs/ufs-hisi.c b/drivers/scsi/ufs/ufs-hisi.c
-index 5d6487350a6c..074a6a055a4c 100644
---- a/drivers/scsi/ufs/ufs-hisi.c
-+++ b/drivers/scsi/ufs/ufs-hisi.c
-@@ -235,7 +235,7 @@ static int ufs_hisi_link_startup_pre_change(struct ufs_hba *hba)
- 	ufshcd_writel(hba, reg, REG_AUTO_HIBERNATE_IDLE_TIMER);
- 
- 	/* Unipro PA_Local_TX_LCC_Enable */
--	ufshcd_dme_set(hba, UIC_ARG_MIB_SEL(0x155E, 0x0), 0x0);
-+	ufshcd_disable_host_tx_lcc(hba);
- 	/* close Unipro VS_Mk2ExtnSupport */
- 	ufshcd_dme_set(hba, UIC_ARG_MIB_SEL(0xD0AB, 0x0), 0x0);
- 	ufshcd_dme_get(hba, UIC_ARG_MIB_SEL(0xD0AB, 0x0), &value);
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 8f73c860f423..9d05962feb15 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -318,7 +318,7 @@ static int ufs_mtk_pre_link(struct ufs_hba *hba)
- 	 * to make sure that both host and device TX LCC are disabled
- 	 * once link startup is completed.
- 	 */
--	ret = ufshcd_dme_set(hba, UIC_ARG_MIB(PA_LOCAL_TX_LCC_ENABLE), 0);
-+	ret = ufshcd_disable_host_tx_lcc(hba);
- 	if (ret)
- 		return ret;
- 
-diff --git a/drivers/scsi/ufs/ufs-qcom.c b/drivers/scsi/ufs/ufs-qcom.c
-index c69c29a1ceb9..c2e703d58f63 100644
---- a/drivers/scsi/ufs/ufs-qcom.c
-+++ b/drivers/scsi/ufs/ufs-qcom.c
-@@ -554,9 +554,7 @@ static int ufs_qcom_link_startup_notify(struct ufs_hba *hba,
- 		 * completed.
- 		 */
- 		if (ufshcd_get_local_unipro_ver(hba) != UFS_UNIPRO_VER_1_41)
--			err = ufshcd_dme_set(hba,
--					UIC_ARG_MIB(PA_LOCAL_TX_LCC_ENABLE),
--					0);
-+			err = ufshcd_disable_host_tx_lcc(hba);
- 
- 		break;
- 	case POST_CHANGE:
-diff --git a/drivers/scsi/ufs/ufshcd-pci.c b/drivers/scsi/ufs/ufshcd-pci.c
-index 3b19de3ae9a3..8f78a8151499 100644
---- a/drivers/scsi/ufs/ufshcd-pci.c
-+++ b/drivers/scsi/ufs/ufshcd-pci.c
-@@ -44,7 +44,7 @@ static int ufs_intel_disable_lcc(struct ufs_hba *hba)
- 
- 	ufshcd_dme_get(hba, attr, &lcc_enable);
- 	if (lcc_enable)
--		ufshcd_dme_set(hba, attr, 0);
-+		ufshcd_disable_host_tx_lcc(hba);
- 
- 	return 0;
- }
-diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index 81c71a3e3474..8f516b205c32 100644
---- a/drivers/scsi/ufs/ufshcd.h
-+++ b/drivers/scsi/ufs/ufshcd.h
-@@ -914,6 +914,11 @@ static inline bool ufshcd_is_hs_mode(struct ufs_pa_layer_attr *pwr_info)
- 		pwr_info->pwr_tx == FASTAUTO_MODE);
- }
- 
-+static inline int ufshcd_disable_host_tx_lcc(struct ufs_hba *hba)
-+{
-+	return ufshcd_dme_set(hba, UIC_ARG_MIB(PA_LOCAL_TX_LCC_ENABLE), 0);
-+}
-+
- /* Expose Query-Request API */
- int ufshcd_query_descriptor_retry(struct ufs_hba *hba,
- 				  enum query_opcode opcode,
--- 
-2.18.0
+We have patch that implements get|set_channels() that depends on this fix.
+Anyway, we understand your insight and perspective now. So, we will drop
+this patch in v5 series.
+
+Thanks
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
