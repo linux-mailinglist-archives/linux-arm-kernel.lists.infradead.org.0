@@ -2,109 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4611815535F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 08:58:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C34615537E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 09:10:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MjIovXbq/a2bH4E9G5exfOSQB/T6Ucpkfnc0uzwPBuQ=; b=WLxkNOlHLQr3X5
-	QZRUJLrgELxQcnYz/6781YtokvHnquSNMwrKE9Thhua3KaE+EtCU0V28neh046b0RvdDW/WQYmqN9
-	RniWhiWhuiErQgFRX/LiMmGZjkjk92KhYUzourK73Dj5TgBY7+O+Ltpq+fIuCEtDEJL53y2Q9a2pj
-	4LvGFC2uxxJCLxnkWohQS8wUeKm3ARVaWpAwTdrx9PoDYh+6voDFrj+C5jDEZctD6IcFo9jT/fln7
-	5Jf1o0ISJwmfM8l5xyK5pY2GxssMY4VYy+TvpbglxHgfyGwY/VODKBt3/XUGHVZH3U8e0Q8UoyY3m
-	xwKdMJPugd1LCdLj6+3w==;
+	List-Owner; bh=2rYUdnYu5ZT+YQitGLtcRTAJgFbDOuGzJsii/gRRk+0=; b=kWxAwPAClwVRtB
+	lyv8+ocDuVGfcORGb+qknWXCxbzrJ4EkpIkfS9LlYZrMdGLga9EFUbw2W4zXX07P9wg+wvLqjtEMO
+	JuGpt/wi0wXZwtF/bZhj4dcpxq4jHwFge2tFcZ8+c9fcNdabnOsV1H+riE7CNEshJgG/AUaXznKe9
+	6YTmfgDLNUAlTsm8Tn5+nHKpXJXI14AvW7Rx7uKPqqLjESH57/fh3oZPj+SaLI5gMWGh31OY/Croh
+	XDD7tCJ9BYss35qKPqn21N/d95EOm3h10JSbITL8HH0EnLNOmgA2A7O0oyuEXYRKAnhSnQHOWdr2U
+	Fe2e9gEL/pIcnJSndEkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izyXG-0000Mb-4V; Fri, 07 Feb 2020 07:58:46 +0000
-Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
+	id 1izyiL-0004hd-Ed; Fri, 07 Feb 2020 08:10:13 +0000
+Received: from mail-db5eur03on0613.outbound.protection.outlook.com
+ ([2a01:111:f400:fe0a::613]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izyX9-0000MH-6O
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 07:58:40 +0000
-Received: by mail-qv1-xf42.google.com with SMTP id y8so535073qvk.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 23:58:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=+8c5JlWjjqu/EOlhqk0EX1eBg+PJtRvkzYvzmRZHcMI=;
- b=qiKu014Sm8xKPMGVSlXuquzuUREIFaY73Cyv3jv2Amdb2OXXwA5EjdZXc5a6EygFht
- +p9qKxwg3+t7wGAUv+zaO35AhSMiTKqtqAJdiNqtn98YQlQ+2EGxF5WTJGAeJwgYUsCE
- zC7gnWWd2noEGaw71PQ7fJJjpAfQFe+FiHrTJ8GFPIiZOQRv6YAJWMwxCLkvky4ntbx2
- fUNGNp/1ZN2CfsHTp50gdZ7Rz7HNS3WPBorilcY3G36p5YWxIaPeKk8zUd5r6PGLEgLr
- 50yg2KyhpMW2JRIAU7FpDJB0DbaKQ0s7oSH2bcjDfoYTidgwsCf3m/4DTqxdtfr79f+R
- DZoA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=+8c5JlWjjqu/EOlhqk0EX1eBg+PJtRvkzYvzmRZHcMI=;
- b=L66g5viUedmbTsbMQhlgh2a3qvGY2Oavco6dDz+e6cINWCLapoBZpMhfBcUSgXERhl
- xLdIDDnZBzXsC17EojHdZkueMIy8ebes1+PHnfZUwhWohZOjWy/7pBmij/OzdokKoNCn
- Fmr6TMvuOxnwRAbY/mPlgxkTye5R5YpuxOcrI7J0RIcHlys52Eav2BzYGiGYxTdMQEqC
- O4lJDe4YWJELu38SIaBXvBMeEKL7Uxqdu5QzUFDJzn2FwHIhBJg89uCyFYUSZ3tfu73g
- zal6UMQOY6GLcOyLCuyRMOtyPr5/uRGbdjKK0XL/usmKc3Miaw7FiaoCR0ExvfCuDBDL
- cJLA==
-X-Gm-Message-State: APjAAAWLrOQNCw8VF2ddmYXg3Pn9O6FAal+JouGr2uVTBWH5h3LUhV2e
- YSSVHZPnYVbpSWKW2OOaXNM=
-X-Google-Smtp-Source: APXvYqyifZVH92EM74YFa00SfHJpC3ZjhwzPl3XmYDjwFO5nTJ3u+tQMe5PmEMMxRgDwBFdXU9Sn1Q==
-X-Received: by 2002:a0c:ef0f:: with SMTP id t15mr5831089qvr.123.1581062317814; 
- Thu, 06 Feb 2020 23:58:37 -0800 (PST)
-Received: from auth1-smtp.messagingengine.com (auth1-smtp.messagingengine.com.
- [66.111.4.227])
- by smtp.gmail.com with ESMTPSA id h34sm1034523qtc.62.2020.02.06.23.58.36
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 06 Feb 2020 23:58:37 -0800 (PST)
-Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailauth.nyi.internal (Postfix) with ESMTP id 7291322036;
- Fri,  7 Feb 2020 02:58:34 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute6.internal (MEProxy); Fri, 07 Feb 2020 02:58:34 -0500
-X-ME-Sender: <xms:qBg9XhX9Y2iOTWxtghZ3ut0uPHKGNMqr6BfhP89W6XwaoGdiQX-fzg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrheeggdduudegucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehttdertddttddvnecuhfhrohhmpeeuohhquhhn
- ucfhvghnghcuoegsohhquhhnrdhfvghnghesghhmrghilhdrtghomheqnecuffhomhgrih
- hnpehmihgtrhhoshhofhhtrdgtohhmpdhkvghrnhgvlhdrohhrghenucfkphephedvrddu
- heehrdduuddurdejudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrih
- hlfhhrohhmpegsohhquhhnodhmvghsmhhtphgruhhthhhpvghrshhonhgrlhhithihqdei
- ledvgeehtdeigedqudejjeekheehhedvqdgsohhquhhnrdhfvghngheppehgmhgrihhlrd
- gtohhmsehfihigmhgvrdhnrghmvg
-X-ME-Proxy: <xmx:qBg9XiA27hLZAMgsakD-uluxltqhG7ipDNUyMG_S3vqsbTAjtWA8Tw>
- <xmx:qBg9XkQOYJSNbyCL00KjscPH25xlFbQVpBdrHIElKzRQxTzJqJ988A>
- <xmx:qBg9Xqmaeu9Ywar_0cw-qxhMYHkwTc08SdbMT2CNuiTRORDETofTfA>
- <xmx:qhg9XsFne-gX1foW3TSEGcDHf41aaz8evIwSFmiJP70AshzgOzs8DdAwnzc>
-Received: from localhost (unknown [52.155.111.71])
- by mail.messagingengine.com (Postfix) with ESMTPA id 4467A3280060;
- Fri,  7 Feb 2020 02:58:32 -0500 (EST)
-Date: Fri, 7 Feb 2020 15:58:30 +0800
-From: Boqun Feng <boqun.feng@gmail.com>
-To: Andrew Murray <amurray@thegoodpenguin.co.uk>
-Subject: Re: [PATCH v2 2/3] PCI: hv: Move retarget related structures into
- tlfs header
-Message-ID: <20200207075830.GB69108@debian-boqun.qqnc3lrjykvubdpftowmye0fmh.lx.internal.cloudapp.net>
-References: <20200203050313.69247-1-boqun.feng@gmail.com>
- <20200203050313.69247-3-boqun.feng@gmail.com>
- <20200203094118.GD20189@big-machine>
- <20200203140902.GF83200@debian-boqun.qqnc3lrjykvubdpftowmye0fmh.lx.internal.cloudapp.net>
+ id 1izyiE-0003n2-CC
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 08:10:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=oY+B483WdC342YJYtOe3VRA1mJkm5lyNXLoalUWAn4iLrxr1FYXUgnKoC3cIR3ICNxuflWz3S4fpEfvyLSgFrYv3+YUkQXh6ICEOvhd7BC/JHtV2nvnAF0Gpbtr7Ar6qC2xnXnHbURrGgQXo88AR/RrVTvzRkXMmPHgEcw2Hdo7StK3yWHHaNotDzQADljvB24VGx4XSDAZs6/CsN7V1RRiCJTU7KEy0Jl7Ox166/7raqQghQg4KLYlZUaCq8gyU9k+h3ZLhJhenbbWdHnjLZ2M6EJwRd5BCuZELEtB5d5TvxDtVtpcDZ+vMXCfLiIs5JlzkiN9jAtmYrn06ERDsZQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Vm2qQDRi4CdJZgeXjh8rOQogakt8ZwShO1TlNwOvZgo=;
+ b=Ii4nr+Lya2hVfddLbZBmydVJ3Q/YfxuNtRpVRyzjubMP1ioUgJPsulHZPcp0Z2UVx0zB7BgxjFhwZvIZTDktbwckFTYhK/AlXxDDFtM2V0uhh+395KspgM0qEyQQcX8hicPvaN9/H6OffI72WIwhcmM2IoqGTpkMFetsmN+TDCDm6Cz6EFG4JUrXwh7ubQxxk14Ar2y6I0MyAWRHPmUA2q+kaJ9JlTBTcgBuu0Z/oKj0f8ZOcDmV+hKiXMDzZJvoLzp5fkDJFvxaG4lYfFFaO+SKkohuKOtWZs8D69KpX5q3CNiNiIUIPe1GQQh5D7k7SY54+2jNeeuqVDcsUDYcsA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Vm2qQDRi4CdJZgeXjh8rOQogakt8ZwShO1TlNwOvZgo=;
+ b=Do9F9n5klovC/a9I2ocxXbrGeBL3zF+I0H+zLt8FyHslZxXif4Dm85Oj9vWysANKdCdiGlQZXErVMIEp4mP6q2a4OtAvAvAeoB2bMHRCD9fUr+xQLDUkZ3bLtahwaD7b0xXtwtpLpl5FN59wIkO3V1Cm8Eroy9k201yiHctsub8=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB6722.eurprd04.prod.outlook.com (20.179.252.21) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2707.24; Fri, 7 Feb 2020 08:10:01 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2707.024; Fri, 7 Feb 2020
+ 08:10:01 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Rob Herring <robh@kernel.org>
+Subject: RE: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
+Thread-Topic: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
+Thread-Index: AQHV3O5LIqtUB1cLq0qKBDDFKN5B7qgOt6GAgACqKrA=
+Date: Fri, 7 Feb 2020 08:10:01 +0000
+Message-ID: <AM0PR04MB4481D3F304E1F17FAFE8D592881C0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1580994086-17850-1-git-send-email-peng.fan@nxp.com>
+ <1580994086-17850-2-git-send-email-peng.fan@nxp.com>
+ <20200206215947.GA21514@bogus>
+In-Reply-To: <20200206215947.GA21514@bogus>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.68]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 508996e6-52c8-406c-9c41-08d7aba5213c
+x-ms-traffictypediagnostic: AM0PR04MB6722:|AM0PR04MB6722:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB6722EF62B57859E58BF16F3E881C0@AM0PR04MB6722.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 0306EE2ED4
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(39860400002)(366004)(396003)(136003)(376002)(189003)(199004)(6916009)(316002)(81156014)(8676002)(2906002)(44832011)(81166006)(4326008)(6506007)(55016002)(66946007)(66476007)(52536014)(186003)(66446008)(7696005)(86362001)(66556008)(71200400001)(9686003)(26005)(64756008)(54906003)(76116006)(478600001)(8936002)(33656002)(5660300002)(142933001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6722;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: OXCXRN0DhVVcTvkYLONrBUIxaVH9t8T6D716QTCdNKn/dYSbKkIe3BUjSpQr5TNyzgWK4T9m4inXbYvn/t0uJf1y73QCEReJ8lkhZfSCY4GsBw+M/8vr9qfvPJhQBTaxxwRlJA7CGNRGYD6TxlG6a2eQWdYiCJVYWHmWzZmiWdgLHCS87r35k21athVb2ypkPpHGonOh6K1A71P9kSWrpawKzTLAN6NbrjwywHQID+OAMxJ4bZeWC/MHrF0qKpOiksKivZw5DbsuYSS9E7hBeLC83iXt7cVZkZESO8HlmZV6I6ukwtnV+rdSgWZO732jl0PrngvU3xurItjdxKSKQIf52pZcrTxHOdd7otC4jt9DtK9UhggjaYiN6tvS3PwTHD6lyomDN1lf5JSZx7WtJcR9buoaAxx2aSL+t3nf0cWEaQe26ahcS/mXgwqjRWJ1UW7uksTrtaoaFarFWPvhUerSXJuT51q+UkP2RoBnnQD154PUu2yGb3KYgyI8T/Rq
+x-ms-exchange-antispam-messagedata: hAM3WQc3kfPx0oAx6MIt3AgiaxV4n8T+qvcBj/rHVhoCkETELH/QaqTSkOu8aWRNVhM0RLKcZm01BMMMY6O5H1Q1r1daxjpoeXD7KSGomee+CEPnEsShSO0G8v0ztemlGVAtcm9usoQsY2C3GL0jRw==
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200203140902.GF83200@debian-boqun.qqnc3lrjykvubdpftowmye0fmh.lx.internal.cloudapp.net>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 508996e6-52c8-406c-9c41-08d7aba5213c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Feb 2020 08:10:01.1008 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: OMBeasp8AeF9QuOplVNSaR7rUwczzfKpvXXSPN/lWp/HcdKH3snj0Zq9V4R+m621vWXkRt9D1mVtRqztiLSGRg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6722
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_235839_264057_EF3F2597 
-X-CRM114-Status: GOOD (  28.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200207_001006_444374_5C4CCD23 
+X-CRM114-Status: GOOD (  18.55  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [boqun.feng[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:111:f400:fe0a:0:0:0:613 listed in]
+ [list.dnswl.org]
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -112,6 +113,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,201 +125,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-hyperv@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Stephen Hemminger <sthemmin@microsoft.com>, linux-pci@vger.kernel.org,
- Haiyang Zhang <haiyangz@microsoft.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, Michael Kelley <mikelley@microsoft.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- "H. Peter Anvin" <hpa@zytor.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Andrew Murray <andrew.murray@arm.com>, Thomas Gleixner <tglx@linutronix.de>,
- "K. Y. Srinivasan" <kys@microsoft.com>, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 03, 2020 at 10:09:02PM +0800, Boqun Feng wrote:
-[...]
-> > > mirroring the name in TLFS.
-> > > 
-> > > [1]: https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/tlfs
-> > > 
-> > > Signed-off-by: Boqun Feng (Microsoft) <boqun.feng@gmail.com>
-> > > ---
-> > >  arch/x86/include/asm/hyperv-tlfs.h  | 31 ++++++++++++++++++++++++++
-> > >  drivers/pci/controller/pci-hyperv.c | 34 ++---------------------------
-> > >  2 files changed, 33 insertions(+), 32 deletions(-)
-> > > 
-> > > diff --git a/arch/x86/include/asm/hyperv-tlfs.h b/arch/x86/include/asm/hyperv-tlfs.h
-> > > index 739bd89226a5..4a76e442481a 100644
-> > > --- a/arch/x86/include/asm/hyperv-tlfs.h
-> > > +++ b/arch/x86/include/asm/hyperv-tlfs.h
-> > > @@ -911,4 +911,35 @@ struct hv_tlb_flush_ex {
-> > >  struct hv_partition_assist_pg {
-> > >  	u32 tlb_lock_count;
-> > >  };
-> > > +
-> > > +struct hv_interrupt_entry {
-> > > +	u32 source;			/* 1 for MSI(-X) */
-> > > +	u32 reserved1;
-> > > +	u32 address;
-> > > +	u32 data;
-> > > +} __packed;
-> > 
-> > Why have you added __packed here? There is no mention of this change in the
-> > commit log? Is it needed?
-> > 
+> Subject: Re: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
 > 
-> I'm simply following the convention of hyperv-tlfs.h: most of the
-> structures have this "__packed" attribute. I personally don't think this
-> attribute is necessary, but I was afraid that I was missing something
-> subtle. So a question for folks working on Hyper-V: why we need this
-> attribute on TLFS-defined structures? Most of those will have no
-> difference with or without this attribute, IIUC.
+> On Thu, Feb 06, 2020 at 09:01:25PM +0800, peng.fan@nxp.com wrote:
+> > From: Peng Fan <peng.fan@nxp.com>
+> >
+> > SCMI could use SMC/HVC as tranports, so add into devicetree binding
+> > doc.
+> >
+> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > ---
+> >  Documentation/devicetree/bindings/arm/arm,scmi.txt | 4 +++-
+> >  1 file changed, 3 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/Documentation/devicetree/bindings/arm/arm,scmi.txt
+> > b/Documentation/devicetree/bindings/arm/arm,scmi.txt
+> > index f493d69e6194..03cff8b55a93 100644
+> > --- a/Documentation/devicetree/bindings/arm/arm,scmi.txt
+> > +++ b/Documentation/devicetree/bindings/arm/arm,scmi.txt
+> > @@ -14,7 +14,7 @@ Required properties:
+> >
+> >  The scmi node with the following properties shall be under the /firmware/
+> node.
+> >
+> > -- compatible : shall be "arm,scmi"
+> > +- compatible : shall be "arm,scmi" or "arm,scmi-smc"
+> >  - mboxes: List of phandle and mailbox channel specifiers. It should contain
+> >  	  exactly one or two mailboxes, one for transmitting messages("tx")
+> >  	  and another optional for receiving the notifications("rx") if @@
+> > -25,6 +25,8 @@ The scmi node with the following properties shall be under
+> the /firmware/ node.
+> >  	  protocol identifier for a given sub-node.
+> >  - #size-cells : should be '0' as 'reg' property doesn't have any size
+> >  	  associated with it.
+> > +- arm,smc-id : SMC id required when using smc transports
+> > +- arm,hvc-id : HVC id required when using hvc transports
 > 
+> Don't the SMC ids get standardized?
 
-I find this patch:
+For now, there is no standard SCMI SMC/HVC ID.
 
-	https://lore.kernel.org/lkml/20181212175701.18754-1-vkuznets@redhat.com/
+Sudeep, Is there any plan from ARM? Or how you think about this patch?
 
-The reason why the "__packed" attribute is needed is to protect the
-hypervisor-guet communication structures from unexpected behaviors of
-compilers.
+Thanks,
+Peng.
 
-I will keep the code as it is and add some words in the commit log.
-
-Regards,
-Boqun
-
-> > > +
-> > > +/*
-> > > + * flags for hv_device_interrupt_target.flags
-> > > + */
-> > > +#define HV_DEVICE_INTERRUPT_TARGET_MULTICAST		1
-> > > +#define HV_DEVICE_INTERRUPT_TARGET_PROCESSOR_SET	2
-> > > +
-> > > +struct hv_device_interrupt_target {
-> > > +	u32 vector;
-> > > +	u32 flags;
-> > > +	union {
-> > > +		u64 vp_mask;
-> > > +		struct hv_vpset vp_set;
-> > > +	};
-> > > +} __packed;
-> > 
-> > Same here.
-> > 
-> > > +
-> > > +/* HvRetargetDeviceInterrupt hypercall */
-> > > +struct hv_retarget_device_interrupt {
-> > > +	u64 partition_id;
-> > 
-> > Why drop the 'self' comment?
-> > 
 > 
-> Good catch, TLFS does say this field must be 'self'. I will add it in
-> next version.
-> 
-> > > +	u64 device_id;
-> > > +	struct hv_interrupt_entry int_entry;
-> > > +	u64 reserved2;
-> > > +	struct hv_device_interrupt_target int_target;
-> > > +} __packed __aligned(8);
-> > >  #endif
-> > > diff --git a/drivers/pci/controller/pci-hyperv.c b/drivers/pci/controller/pci-hyperv.c
-> > > index aacfcc90d929..0d9b74503577 100644
-> > > --- a/drivers/pci/controller/pci-hyperv.c
-> > > +++ b/drivers/pci/controller/pci-hyperv.c
-> > > @@ -406,36 +406,6 @@ struct pci_eject_response {
-> > >  
-> > >  static int pci_ring_size = (4 * PAGE_SIZE);
-> > >  
-> > > -struct hv_interrupt_entry {
-> > > -	u32	source;			/* 1 for MSI(-X) */
-> > > -	u32	reserved1;
-> > > -	u32	address;
-> > > -	u32	data;
-> > > -};
-> > > -
-> > > -/*
-> > > - * flags for hv_device_interrupt_target.flags
-> > > - */
-> > > -#define HV_DEVICE_INTERRUPT_TARGET_MULTICAST		1
-> > > -#define HV_DEVICE_INTERRUPT_TARGET_PROCESSOR_SET	2
-> > > -
-> > > -struct hv_device_interrupt_target {
-> > > -	u32	vector;
-> > > -	u32	flags;
-> > > -	union {
-> > > -		u64		 vp_mask;
-> > > -		struct hv_vpset vp_set;
-> > > -	};
-> > > -};
-> > > -
-> > > -struct retarget_msi_interrupt {
-> > > -	u64	partition_id;		/* use "self" */
-> > > -	u64	device_id;
-> > > -	struct hv_interrupt_entry int_entry;
-> > > -	u64	reserved2;
-> > > -	struct hv_device_interrupt_target int_target;
-> > > -} __packed __aligned(8);
-> > > -
-> > >  /*
-> > >   * Driver specific state.
-> > >   */
-> > > @@ -482,7 +452,7 @@ struct hv_pcibus_device {
-> > >  	struct workqueue_struct *wq;
-> > >  
-> > >  	/* hypercall arg, must not cross page boundary */
-> > > -	struct retarget_msi_interrupt retarget_msi_interrupt_params;
-> > > +	struct hv_retarget_device_interrupt retarget_msi_interrupt_params;
-> > >  
-> > >  	/*
-> > >  	 * Don't put anything here: retarget_msi_interrupt_params must be last
-> > > @@ -1178,7 +1148,7 @@ static void hv_irq_unmask(struct irq_data *data)
-> > >  {
-> > >  	struct msi_desc *msi_desc = irq_data_get_msi_desc(data);
-> > >  	struct irq_cfg *cfg = irqd_cfg(data);
-> > > -	struct retarget_msi_interrupt *params;
-> > > +	struct hv_retarget_device_interrupt *params;
-> > 
-> > pci-hyperv.c also makes use of retarget_msi_interrupt_lock - it's really clear
-> > from this name what it protects, however your rename now makes this more
-> > confusing.
-> > 
-> > Likewise there is a comment in hv_pci_probe that refers to
-> > retarget_msi_interrupt_params which is now stale.
-> > 
-> 
-> But 'retarget_msi_interrupt_params' is the name of field in
-> hv_pcibus_device, so is 'retarget_msi_interrupt_lock'. And what I change
-> is the name of type. I believe people can tell the relationship from
-> the name of the fields, and the comment of hv_pci_probe actually refers
-> to the field rather than the type.
-> 
-> > It may be helpful to rename hv_retarget_device_interrupt for consistency with
-> > the docs - however please make sure you catch all the references - I'd suggest
-> > that the move and the rename are in different patches.
-> > 
-> 
-> If the renaming requires a lot of work (e.g. need to change multiple
-> references), I will follow your suggestion. But seems it's not the case
-> for this renaming.
-> 
-> Regards,
-> Boqun
-> 
-> > Thanks,
-> > 
-> > Andrew Murray
-> > 
-> > >  	struct hv_pcibus_device *hbus;
-> > >  	struct cpumask *dest;
-> > >  	cpumask_var_t tmp;
-> > > -- 
-> > > 2.24.1
-> > > 
+> >
+> >  Optional properties:
+> >
+> > --
+> > 2.16.4
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
