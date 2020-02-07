@@ -2,82 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39DD5156026
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 21:49:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D042D156069
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 22:02:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OkNeMdaLKb4kFmB3gq/xB/x0Q35+QIDLCaAJ7ze70Oo=; b=bD6O+LGzI9GtfO
-	bSifJDN82f8Dxcu0RZ6O8/QFgPMN5P/KXwzqV7XpAwHgd/1wvOi0fMYrhlq1VEhjjnLBQWOA2nnUH
-	pJhfnvJGd34DmCeRNLVxj3wI7PmDQranGihOyRRW0WOheNSTaN0B+i3oaYGlOO2DK4tM2weg/LpU9
-	Jm8/XslE4Ea4gfLBRbyAeWG+oC9yo3Z0VbRq6Z4PnQW61W2rd4MBlvcrymGTOXy+CdqmZdunXFjBG
-	xrhT7LEzTHAzT9Z8W+1Y9jvfBonI0sdTKtOY/vfc4TCYSmKzQ0PXPk+UsvWXv+exskLKDykJRdgC5
-	8QRJdV4evj5S3K+9z67g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Q9jxbc61FxrAu6NuHuh4biK4UhVeO72QPuyTcYhiQIo=; b=V652Visb233Zbu
+	qkNneQ3bBZH9eYWmvHxoB/ZGl2p7RpilAL+r7vN4V9smQXv7lBIoH9WJD+C0uHfobVM25uBY4WfWd
+	agyy16rTVujqTwygxYkiSubs8wmO0ZGV/LzDkV3vXHWnFBmAHzP4U2neXVRehLch7Y41pNmfh2jTc
+	kIGlTjEfVsFiE7CRZNWQwutxLlC52TF1AUiyEZgpxgXDXKnQcoqXycNrwG/0cRaFmWaACCf3ZdX7/
+	mBozSYVbT+Enn9uJr+yV22kvP9aNeoqgKmmgZbkIj02lIS0Dw1vfXBO6wWcgpYNgbdFHxwyayHWEi
+	/ecjhTOtj7Ia4SumktLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0AYc-0003Xw-1l; Fri, 07 Feb 2020 20:48:58 +0000
-Received: from mail-wm1-x330.google.com ([2a00:1450:4864:20::330])
+	id 1j0Alc-0008KH-Tq; Fri, 07 Feb 2020 21:02:24 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0AYT-0003Wu-UX; Fri, 07 Feb 2020 20:48:51 +0000
-Received: by mail-wm1-x330.google.com with SMTP id f129so4236928wmf.2;
- Fri, 07 Feb 2020 12:48:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=Vo3y/3LI/9xS6ovXLyiIY19qZ4rNDgl5cjTrH5DGm4I=;
- b=HIcSkZzdBvgR0WPcV6MG53XbfktoeIflCnUKVByWe0jBVHEfCzzei6rSL0pCM7RKDY
- wOvMog9dnWZEgWH2WvNPvv9oxFMCMI2ePH54mtU+k/JkksURgPOxbzsjjvLKSiQMLu3u
- Coi36nEJkRtD5bOrgG7lxQKGTGbp1O4j9GjUUn4D8JZW8fujXkvnsykngs5jlBCpQhsf
- WK87zaQPNiICgy5PpkE2HvhNwcZKHZmd0BtOJFD61Om+Nq7nihY5yrvaUJ3r1wFYvS3F
- W36Qkw7vvt6+d+Vqz1rPdcd2MpVRA1dVA2bnCfzw1TsAoogFmSk2vLlP9K4/9XGaJRQY
- swUA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=Vo3y/3LI/9xS6ovXLyiIY19qZ4rNDgl5cjTrH5DGm4I=;
- b=J0OzNkqBCeGVnJaFhzxAVxXeIN1xb7n4zaQEEx9gO8N/Ait/IZUx+xtoxn7UXSXjJ3
- rT+zr8J6Wd+LHfiF5rqqjvDpewmV9CCUEWSPukUWphMb0qxvIpW3fjJNo3AqdyKat9RB
- tzUlsezVfiwWrHTh8YtdrlLRkTYcOxVaBF/clPMU5/uYsApMpu13t1bk93jaVwtNBGoq
- uiIngvqtWQllLM0X6jywJ+2uI/EBYNjDNBYlayvse7I80QyqjLTwv0RL9+xpsXp9/anB
- wsLGCd5KP+ZN+FtVvJPhO8z9JbSFKpyauU6zz7YYmAGOEJ3QLiAAvv13sK2JGUmmPJe+
- AIeg==
-X-Gm-Message-State: APjAAAUDWp2CkB4OhGCCLcLTsIClqAjw7K4lJV9DLkqLM+JLQMmyo1tn
- iQWVqHMdIOHyIH+jEmRgivE=
-X-Google-Smtp-Source: APXvYqww2HjjQMNwdkQTkIkLEammO08yj4O42JmLPef87CvM4J1Vq8Ec3LZwBSGk+vtbq6vnsV4cfA==
-X-Received: by 2002:a1c:4b0f:: with SMTP id y15mr116024wma.87.1581108528197;
- Fri, 07 Feb 2020 12:48:48 -0800 (PST)
-Received: from Red ([2a01:cb1d:3d5:a100:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id g128sm4518742wme.47.2020.02.07.12.48.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 07 Feb 2020 12:48:47 -0800 (PST)
-Date: Fri, 7 Feb 2020 21:48:45 +0100
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: herbert@gondor.apana.org.au, davem@davemloft.net, heiko@sntech.de,
- linux-rockchip@lists.infradead.org
-Subject: [BUG] crypto: rk3288: ecb-aes-rk encryption failed
-Message-ID: <20200207204845.GA15221@Red>
+ id 1j0AlY-0008JY-8H
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 21:02:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=kCPIBb7PRdtHNTGbHTeczBnKti7EH8CesgLtB7yonEM=; b=SPcJOp49GCMyk+QIC1kQEa9LB2
+ xKp2Vy3Dayy9aWD9J01ng8CWjZ+jobdf6MqFo+/t1qNzS+ARIssCAsKhiUPC23Pf6M33EB55wbPax
+ gZ5WeXHNXrwCZMXAtI05S1Vmbn7cY63rB0F7GaPASn4naCFieLmE9jl4y/Ur0iXBj7Fo=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1j0AlN-0005Q5-M8; Fri, 07 Feb 2020 22:02:09 +0100
+Date: Fri, 7 Feb 2020 22:02:09 +0100
+From: Andrew Lunn <andrew@lunn.ch>
+To: Tim Harvey <tharvey@gateworks.com>
+Subject: Re: [PATCH] net: thunderx: use proper interface type for RGMII
+Message-ID: <20200207210209.GD19213@lunn.ch>
+References: <1581108026-28170-1-git-send-email-tharvey@gateworks.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1581108026-28170-1-git-send-email-tharvey@gateworks.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_124849_988082_B6D10584 
-X-CRM114-Status: UNSURE (   5.09  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200207_130220_292498_6D446C94 
+X-CRM114-Status: GOOD (  11.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:330 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [clabbe.montjoie[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [185.16.172.187 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,23 +74,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org, rrichter@marvell.com,
+ linux-arm-kernel@lists.infradead.org, davem@davemloft.net,
+ sgoutham@marvell.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello
+On Fri, Feb 07, 2020 at 12:40:26PM -0800, Tim Harvey wrote:
+> The configuration of the OCTEONTX XCV_DLL_CTL register via
+> xcv_init_hw() is such that the RGMII RX delay is bypassed
+> leaving the RGMII TX delay enabled in the MAC:
+> 
+> 	/* Configure DLL - enable or bypass
+> 	 * TX no bypass, RX bypass
+> 	 */
+> 	cfg = readq_relaxed(xcv->reg_base + XCV_DLL_CTL);
+> 	cfg &= ~0xFF03;
+> 	cfg |= CLKRX_BYP;
+> 	writeq_relaxed(cfg, xcv->reg_base + XCV_DLL_CTL);
+> 
+> This would coorespond to a interface type of PHY_INTERFACE_MODE_RGMII_RXID
+> and not PHY_INTERFACE_MODE_RGMII.
+> 
+> Fixing this allows RGMII PHY drivers to do the right thing (enable
+> RX delay in the PHY) instead of erroneously enabling both delays in the
+> PHY.
 
-When running next-20200207 on a rk3288-miqi, I get
-alg: skcipher: ecb-aes-rk encryption failed on test vector \"random: len=0 klen=32\"; expected_error=0, actual_error=-22, cfg=\"random: use_final nosimd src_divs=[<flush>54.11%@+27, 29.21%@+0, <flush>0.9%@+3586, 16.59%@+3971] dst_divs=[100.0%@+20] key_offset=63\"
+Hi Tim
 
-Loading tcrypt later give me:
-udevd[117]: worker [125] /devices/platform/ff8a0000.cypto-controller is taking a long time
-udevd[117]: worker [125] /devices/platform/ff8a0000.cypto-controller timeout; kill it
+This seems correct. But how has it worked in the past? Does this
+suggest there is PHY driver out there which is doing the wrong thing
+when passed PHY_INTERFACE_MODE_RGMII?
 
-Regards
+Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+
+    Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
