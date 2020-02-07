@@ -2,51 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8280E155393
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 09:14:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D85AA1553C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 09:35:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Sr5zob1+JMvOkrB5LHlKwJFuOdp3Cjp737RMeqC6auo=; b=uTUevOG3F3N3Yymm1C3qaOoDw
-	6R5I5d+AwkSSI2bzWsN1vEvNmpSC0JKYRulCWD/FyLTEwWj+yCjMVCQa7lGHd7KEMUheJZO6tf29K
-	nU9XVwCom7DIUl/f8UBY1d1+Vv0BCGT1CzKUMjDCsiKNLZwHVX5FAJfbvJZx+3RzvqPBY8s8pbhEk
-	1WQ7Q0xHuxtHhzfx21OXdhqFxHo67zn4r6d0m5cG4rUnKl3tarV0eX5YqU3Sbx+v5V9aHK3M6X+8R
-	bgPb5SiMrOBRhRw5JKUI76p0qP6+HtRfA8IAIy9TNfCzDBSmxxEQO5C0K3YKk1HnG7O9xDteNdjmP
-	Uqw7ksD7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G/mF+/N2gPmZL3HyYnLSJLH93uAHnF+7VPgSfKyVdxU=; b=U6QF5Je9vkFdN7
+	FwpG6ZrxJ6VGpoehm2t9aq92Z5cJmXH98P7ShoNbbJFs4kKipPRUVSZ5aMj9LSD57twfENCWGvynM
+	feHGfGpC3kV6TbUg2NM78ak5rvsvwBjbn+gbTZCCfov+bYNsoK0EeT4nq5G+K7lObDmeFXkPJl/M7
+	pjXOoCsNbF2L3RipghrHFY+FGfs//gnCz+Xtf+5wrTdBpQRMmR46b7rrcNdlWb65I3wqSwGf/DwBJ
+	XO6nhTuQlijSkgJp4VtA8ZpXsjUpFVqdE18qs227Y05KERp4oLKzGlMANTEIbj3qG8laJV2Z4CCSH
+	n3NfQBta5bn6RCkSA+Rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izyls-0005UV-GU; Fri, 07 Feb 2020 08:13:52 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1izz6j-0004pN-U6; Fri, 07 Feb 2020 08:35:25 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izylk-0005TZ-Mm; Fri, 07 Feb 2020 08:13:46 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: tomeu) with ESMTPSA id 736D92959E5
-Subject: Re: [PATCH v4 0/7] Add dts for mt8183 GPU (and misc panfrost patches)
-To: Nicolas Boichat <drinkcat@chromium.org>
-References: <20200207052627.130118-1-drinkcat@chromium.org>
- <5237381b-c232-7087-a3d6-78d6358d80bf@collabora.com>
- <CANMq1KCD1U7iym_fFWAd-Xa6ipxHmF_FAYxDL5WqGzDnA0KKLw@mail.gmail.com>
-From: Tomeu Vizoso <tomeu.vizoso@collabora.com>
-Message-ID: <93aec9ae-00fc-bf55-1d6c-9bd715b78344@collabora.com>
-Date: Fri, 7 Feb 2020 09:13:37 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1izz6U-00040P-Ud; Fri, 07 Feb 2020 08:35:12 +0000
+X-UUID: 6b447a0611e3417bb4baeaa46fc103f3-20200207
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=hXWVZ6oSwC7pNQrHxmaSfz6HN+UgtHEL8vkKF8UU45A=; 
+ b=i85HRCamkErv65eH5EQ5F4f1Uyu2I6hSbtMVf1IKSu6XRS4JO8CFSpiWBCpjm38ZVuFL54Kde34iD7s3cj6qzxmqwA3i4CVcGqwzMg+6BXlW+FBT8Z5xZygfBb9KjSJJ/74B2zVpNAx5s6efEp8nlntQPFoFjvVOWUxZzLqDDUU=;
+X-UUID: 6b447a0611e3417bb4baeaa46fc103f3-20200207
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 238207271; Fri, 07 Feb 2020 00:35:02 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 7 Feb 2020 00:35:00 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by mtkcas08.mediatek.inc
+ (172.21.101.126) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 7 Feb 2020 16:35:28 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 7 Feb 2020 16:35:28 +0800
+Message-ID: <1581064499.590.0.camel@mtksdaap41>
+Subject: Re: [PATCH] drm/mediatek: Find the cursor plane instead of hard
+ coding it
+From: CK Hu <ck.hu@mediatek.com>
+To: Evan Benn <evanbenn@chromium.org>
+Date: Fri, 7 Feb 2020 16:34:59 +0800
+In-Reply-To: <20200207152348.1.Ie0633018fc787dda6e869cae23df76ae30f2a686@changeid>
+References: <20200206140140.GA18465@art_vandelay>
+ <20200207152348.1.Ie0633018fc787dda6e869cae23df76ae30f2a686@changeid>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <CANMq1KCD1U7iym_fFWAd-Xa6ipxHmF_FAYxDL5WqGzDnA0KKLw@mail.gmail.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_001345_000379_6D2CB903 
-X-CRM114-Status: GOOD (  19.09  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200207_003511_069902_F1DE2945 
+X-CRM114-Status: GOOD (  12.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,113 +86,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, David Airlie <airlied@linux.ie>,
- lkml <linux-kernel@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Steven Price <steven.price@arm.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
+Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ Philipp Zabel <p.zabel@pengutronix.de>,
  Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/7/20 8:42 AM, Nicolas Boichat wrote:
-> On Fri, Feb 7, 2020 at 2:18 PM Tomeu Vizoso <tomeu.vizoso@collabora.com> wrote:
->>
->> On 2/7/20 6:26 AM, Nicolas Boichat wrote:
->>> Hi!
->>>
->>> Follow-up on the v3: https://patchwork.kernel.org/cover/11331343/.
->>>
->>> The main purpose of this series is to upstream the dts change and the
->>> binding document, but I wanted to see how far I could probe the GPU, to
->>> check that the binding is indeed correct. The rest of the patches are
->>> RFC/work-in-progress, but I think some of them could already be picked up.
->>>
->>> So this is tested on MT8183 with a chromeos-4.19 kernel, and a ton of
->>> backports to get the latest panfrost driver (I should probably try on
->>> linux-next at some point but this was the path of least resistance).
->>>
->>> I tested it as a module as it's more challenging (originally probing would
->>> work built-in, on boot, but not as a module, as I didn't have the power
->>> domain changes, and all power domains are on by default during boot).
->>>
->>> Probing logs looks like this, currently. They look sane.
->>> [  501.319728] panfrost 13040000.gpu: clock rate = 511999970
->>> [  501.320041] panfrost 13040000.gpu: Linked as a consumer to regulator.14
->>> [  501.320102] panfrost 13040000.gpu: Linked as a consumer to regulator.31
->>> [  501.320651] panfrost 13040000.gpu: Linked as a consumer to genpd:0:13040000.gpu
->>> [  501.320954] panfrost 13040000.gpu: Linked as a consumer to genpd:1:13040000.gpu
->>> [  501.321062] panfrost 13040000.gpu: Linked as a consumer to genpd:2:13040000.gpu
->>> [  501.321734] panfrost 13040000.gpu: mali-g72 id 0x6221 major 0x0 minor 0x3 status 0x0
->>> [  501.321741] panfrost 13040000.gpu: features: 00000000,13de77ff, issues: 00000000,00000400
->>> [  501.321747] panfrost 13040000.gpu: Features: L2:0x07120206 Shader:0x00000000 Tiler:0x00000809 Mem:0x1 MMU:0x00002830 AS:0xff JS:0x7
->>> [  501.321752] panfrost 13040000.gpu: shader_present=0x7 l2_present=0x1
->>> [  501.324951] [drm] Initialized panfrost 1.1.0 20180908 for 13040000.gpu on minor 2
->>>
->>> Some more changes are still required to get devfreq working, and of course
->>> I do not have a userspace driver to test this with.
->>
->> Have you tried the Panfrost tests in IGT? They are atm quite basic, but
->> could be interesting to check that the different HW units are correctly
->> powered on.
+Hi, Evan:
+
+On Fri, 2020-02-07 at 15:23 +1100, Evan Benn wrote:
+> The cursor and primary planes were hard coded.
+> Now search for them for passing to drm_crtc_init_with_planes
 > 
-> I haven't, you mean this right?
-> https://gitlab.freedesktop.org/tomeu/igt-gpu-tools/tree/panfrost
 
-Yes, though may be better to use the upstream repo:
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
-https://gitlab.freedesktop.org/drm/igt-gpu-tools
-
-> Any specific test you have in mind?
-
-All the panfrost ones, but looks like panfrost_prime:gem-prime-import is 
-failing atm:
-
-https://lava.collabora.co.uk/scheduler/job/2214987
-
-Cheers,
-
-Tomeu
-
-> Thanks,
+> Signed-off-by: Evan Benn <evanbenn@chromium.org>
+> ---
 > 
->> Regards,
->>
->> Tomeu
->>
->>> I believe at least patches 1, 2, and 3 can be merged. 4 and 5 are mostly
->>> useful in conjunction with 6 and 7 (which are not ready yet), so I'll let
->>> maintainers decide.
->>>
->>> Thanks!
->>>
->>> Nicolas Boichat (7):
->>>     dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
->>>     arm64: dts: mt8183: Add node for the Mali GPU
->>>     drm/panfrost: Improve error reporting in panfrost_gpu_power_on
->>>     drm/panfrost: Add support for multiple regulators
->>>     drm/panfrost: Add support for multiple power domains
->>>     RFC: drm/panfrost: Add mt8183-mali compatible string
->>>     RFC: drm/panfrost: devfreq: Add support for 2 regulators
->>>
->>>    .../bindings/gpu/arm,mali-bifrost.yaml        |  25 ++++
->>>    arch/arm64/boot/dts/mediatek/mt8183-evb.dts   |   7 +
->>>    arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 105 +++++++++++++++
->>>    drivers/gpu/drm/panfrost/panfrost_devfreq.c   |  17 +++
->>>    drivers/gpu/drm/panfrost/panfrost_device.c    | 123 +++++++++++++++---
->>>    drivers/gpu/drm/panfrost/panfrost_device.h    |  27 +++-
->>>    drivers/gpu/drm/panfrost/panfrost_drv.c       |  41 ++++--
->>>    drivers/gpu/drm/panfrost/panfrost_gpu.c       |  11 +-
->>>    8 files changed, 326 insertions(+), 30 deletions(-)
->>>
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 18 ++++++++++++------
+>  1 file changed, 12 insertions(+), 6 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index 7b392d6c71cc..935652990afa 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -658,10 +658,18 @@ static const struct drm_crtc_helper_funcs mtk_crtc_helper_funcs = {
+>  
+>  static int mtk_drm_crtc_init(struct drm_device *drm,
+>  			     struct mtk_drm_crtc *mtk_crtc,
+> -			     struct drm_plane *primary,
+> -			     struct drm_plane *cursor, unsigned int pipe)
+> +			     unsigned int pipe)
+>  {
+> -	int ret;
+> +	struct drm_plane *primary = NULL;
+> +	struct drm_plane *cursor = NULL;
+> +	int i, ret;
+> +
+> +	for (i = 0; i < mtk_crtc->layer_nr; i++) {
+> +		if (mtk_crtc->planes[i].type == DRM_PLANE_TYPE_PRIMARY)
+> +			primary = &mtk_crtc->planes[i];
+> +		else if (mtk_crtc->planes[i].type == DRM_PLANE_TYPE_CURSOR)
+> +			cursor = &mtk_crtc->planes[i];
+> +	}
+>  
+>  	ret = drm_crtc_init_with_planes(drm, &mtk_crtc->base, primary, cursor,
+>  					&mtk_crtc_funcs, NULL);
+> @@ -830,9 +838,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+>  			return ret;
+>  	}
+>  
+> -	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, &mtk_crtc->planes[0],
+> -				mtk_crtc->layer_nr > 1 ? &mtk_crtc->planes[1] :
+> -				NULL, pipe);
+> +	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, pipe);
+>  	if (ret < 0)
+>  		return ret;
+>  
 
 _______________________________________________
 linux-arm-kernel mailing list
