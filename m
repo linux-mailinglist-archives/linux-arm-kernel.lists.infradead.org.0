@@ -2,85 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33B88155792
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 13:24:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 251301557C3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 13:30:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1e1HXqpQsBFaF7lmnkSwcQRsCL+YoIW/zxCYxNTXNXU=; b=I1Rr9SVGLivxod
-	X68+StJYtygXVNEy2I+DMIucoogOND3Mf9nm8fKHsGcS08lWW3uAMOso6vAJSOeucJTButOxv6cET
-	qBcCYtNqvBRSV/BaKIULiNb7I9V9KFZuwzo+Eql6xr8c7XuTq/k2QBGxUJqzcKv3ZxOU31AISiHfn
-	syfQfrd0DFKrerFItQOIGD+JhUXw5WjjdwtawWg8t/0EfeEr3e8o4UuOFEd6Avhn/QRYMrGpEMD+W
-	j9fN15wQgfTaiArdpwj3y4u8PP6Je42Oeg3QWrUzQ6jTm5zOsWze1U5GTzMkMEsUcH/WOClLerQbv
-	x/8K5CaAFKMw4B00YoYg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QLmdWx79VV1u8prOtfbvLg8BH94/+BQ+8CTYuP54Enw=; b=cNRAUjpnGUkA2I
+	3qla3Si1dsuuwbVd2pSaqNNlHpFYUAlF/c00rnskX/o3MyNnCrEJ5WaYBVtk/oENbWluSqhuSz3ag
+	zs8mxUxMmQBi+LEmsD1Z7SBdyQ6gkyON2DFAkVYDL/ymGQ2b+GngYZE753UIMRVfdru0Ss328efmE
+	egpUsz0HTb872hlAlj6EZlyc+B//8rSut9uxsdlnhgAVMz8n8TtTtPdvCg2XYYntwdVyQL9BEsGra
+	hFeJ+50q3zfZutyZnvE0yCVjSf4pEEb/2+fb15XHO0k51VNa81E4OP4v+hRZUrHL1wWj1+BUWuWJ8
+	8b98hXFI9QNZSYA/bNyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j02fv-0000jK-7l; Fri, 07 Feb 2020 12:23:59 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j02lc-0005yV-6h; Fri, 07 Feb 2020 12:29:52 +0000
+Received: from smtpout.aon.at ([195.3.96.112])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j02fo-0000it-El
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 12:23:54 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y11so2454465wrt.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Feb 2020 04:23:51 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=s9mNwVu6UPwo3klOK1lw0yhyo/vVobSRmEvvb899H58=;
- b=L1cK9vbufGotk/HgkzB7S2+EQkpwMxchGem3wDs/FKK4BBbGBH0AvDxSHPDeb69cz8
- 2GikMX23rqtud4Xk91boYi8tYBciFM4FcHNnksPW4Rin9u6yPGQc1353hawQ9a2YeWY3
- 88g4eFBZXJyla2nJONjucsXysrqb4X9wyUEMSA1t8x+6eoH0dVgovf/qJlAvelp+s4Pm
- v8rPq4YXkfm4IMQ8sikhCgKXac27Yhs9SFftBC7qI95/aFAj+dL4Zrv8N05ZuuJFavxv
- 8rZ59NWvA02nIS3iavAp8m5n7Bk1qfjp3v/5SsQDpDxq2pfmc95L3eahNK2XvV/qec2q
- Jpgw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=s9mNwVu6UPwo3klOK1lw0yhyo/vVobSRmEvvb899H58=;
- b=bYx2NNPKm2nu6VCteShmVXpUnqRYI+er6sgGitydHiGYmIQhXI2chDxtOPCOi/P63M
- va0wMXJhwE3gjdn+CPc+pDu/+9/5wyV6dewLuN2CrzAqSIyJtejfLSHr4yRgI3ErYUmV
- vCTiVKB51g6W455MpmH6hnXAWzbt+5EY9NvhRczs1MUir4ylf69xOXMle+8ziNBHIZw6
- fVm25ehEE+yUX9WzuPwW0zXaPUuOr8ClFjGmUoz+9bxELGoc03oqrH/wqmNgx60k0Yeq
- Aii6h3lfunuDrjOxtJ3yd+Tgqdym9xTVK/Zgs5q4LfZYR5Ta4WzogftOYeilXJ+SSl7F
- Pv/Q==
-X-Gm-Message-State: APjAAAX8fPeD2F6EmisryrPGQo8oFtcg9qbwNWx4ZvofoWI5D9YH5GPL
- qN4qfk6jMfMmm0zgaXUjMJQxFyEZ2Ac1WY05zLdAwg==
-X-Google-Smtp-Source: APXvYqy1aja7klc/f3krQcz8ds8Vg7AEMMftrJr2tmzUb7q+R0CRNxzD+d0Cx8d5MnI4Eker20sH0AJ0tE/1+0PUoJY=
-X-Received: by 2002:adf:8564:: with SMTP id 91mr4649217wrh.252.1581078230421; 
- Fri, 07 Feb 2020 04:23:50 -0800 (PST)
+ id 1j02jN-00040t-4i
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 12:27:36 +0000
+Received: (qmail 17647 invoked from network); 7 Feb 2020 12:27:30 -0000
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ WARSBL604.highway.telekom.at
+X-Spam-Level: 
+Received: from 91-114-188-72.adsl.highway.telekom.at (HELO DESKTOP26LQET5)
+ ([91.114.188.72]) (envelope-sender <stefan-lehner@aon.at>)
+ by smarthub77.res.a1.net (qmail-ldap-1.03) with DHE-RSA-AES256-GCM-SHA384
+ encrypted SMTP
+ for <linux-arm-kernel@lists.infradead.org>; 7 Feb 2020 12:27:29 -0000
+X-A1Mail-Track-Id: 1581078449:17630:smarthub77:91.114.188.72:1
+From: "Stefan Lehner" <stefan-lehner@aon.at>
+To: <linux-arm-kernel@lists.infradead.org>
+Subject: SA-1111 USB OHCI driver (Jornada 720) - overcurrent condition
+Date: Fri, 7 Feb 2020 13:27:27 +0100
+Message-ID: <002e01d5ddb1$f5c95520$e15bff60$@at>
 MIME-Version: 1.0
-References: <20200206140352.6300-1-ardb@kernel.org>
- <fa3b3103-e77d-571d-71a4-604fa48368e6@redhat.com>
- <cfb38b38-14f2-c61a-60a0-dfe14667b49c@redhat.com>
-In-Reply-To: <cfb38b38-14f2-c61a-60a0-dfe14667b49c@redhat.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Fri, 7 Feb 2020 12:23:39 +0000
-Message-ID: <CAKv+Gu__fUGyv4eu5oKcsVZYSbKRfYYd_VS8CGEV4jC+GuvqJA@mail.gmail.com>
-Subject: Re: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
-To: Laszlo Ersek <lersek@redhat.com>
+X-Mailer: Microsoft Office Outlook 12.0
+Content-Language: de-at
+Thread-Index: AdXdsfVk0PhJiLTwSauWoKAr//HDdw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_042352_527591_D3246CE5 
-X-CRM114-Status: GOOD (  31.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200207_042733_663592_256D494D 
+X-CRM114-Status: GOOD (  10.01  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [195.3.96.112 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [stefan-lehner[at]aon.at]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.3.96.112 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,102 +70,175 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>,
- Daniel Kiper <daniel.kiper@oracle.com>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
- Leif Lindholm <leif@nuviainc.com>, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 7 Feb 2020 at 09:22, Laszlo Ersek <lersek@redhat.com> wrote:
->
-> On 02/07/20 10:09, Laszlo Ersek wrote:
-> > On 02/06/20 15:03, Ard Biesheuvel wrote:
-> >> This series introduces an arch agnostic way of loading the initrd into
-> >> memory from the EFI stub. This addresses a number of shortcomings that
-> >> affect the current implementations that exist across architectures:
-> >>
-> >> - The initrd=<file> command line option can only load files that reside
-> >>   on the same file system that the kernel itself was loaded from, which
-> >>   requires the bootloader or firmware to expose that file system via the
-> >>   appropriate EFI protocol, which is not always feasible. From the kernel
-> >>   side, this protocol is problematic since it is incompatible with mixed
-> >>   mode on x86 (this is due to the fact that some of its methods have
-> >>   prototypes that are difficult to marshall)
-> >>
-> >> - The approach that is ordinarily taken by GRUB is to load the initrd into
-> >>   memory, and pass it to the kernel proper via the bootparams structure or
-> >>   via the device tree. This requires the boot loader to have an understanding
-> >>   of those structures, which are not always set in stone, and of the policies
-> >>   around where the initrd may be loaded into memory. In the ARM case, it
-> >>   requires GRUB to modify the hardware description provided by the firmware,
-> >>   given that the initrd base and offset in memory are passed via the same
-> >>   data structure. It also creates a time window where the initrd data sits
-> >>   in memory, and can potentially be corrupted before the kernel is booted.
-> >>
-> >> Considering that we will soon have new users of these interfaces (EFI for
-> >> kvmtool on ARM, RISC-V in u-boot, etc), it makes sense to add a generic
-> >> interface now, before having another wave of bespoke arch specific code
-> >> coming in.
-> >>
-> >> Another aspect to take into account is that support for UEFI secure boot
-> >> and measured boot is being taken into the upstream, and being able to
-> >> rely on the PE entry point for booting any architecture makes the GRUB
-> >> vs shim story much cleaner, as we should be able to rely on LoadImage
-> >> and StartImage on all architectures, while retaining the ability to
-> >> load initrds from anywhere.
-> >>
-> >> Note that these patches depend on a fair amount of cleanup work that I
-> >> am targetting for v5.7. Branch can be found at:
-> >> https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=efistub-unification2
-> >>
-> >> An implementation for ArmVirtQemu (OVMF for ARM aka AAVMF) can be found
-> >> at https://github.com/ardbiesheuvel/edk2/commits/linux-efi-generic.
-> >> The change is for ARM only, but the exact same code could be used on x86.
-> >
-> > I like this ArmVirtQemu feature, but I think it should be implemented as
-> > an addition, rather than a replacement. Older kernels (older EFI stubs)
-> > will try to fetch the initrd from the same fs where grub loaded the
-> > kernel from (exactly as you describe in the blurb).
-> >
+Hello!
+I am trying to get USB Host working on my HP Jornada 720. I did some
+hardware modifications to access the USB lines on the SA-1111. The hardware
+part should be ok, wiring is done as described in the SA-1111 development
+module schematics. 
+Tested on Kernel 3.16.81 (Debian 5) and Kernel 4.8.7 with BX emulation
+(Debian 9).
+The driver loads fine and turns on the USB port a short time during boot.
+But after that i always get  "hub 1-0:1.0: over-current condition" in dmesg.
+And it turns USB_PWRCNTL high. So the USB power gets cut off.
+I tested it on my modified mainboard and on two unmodified boards which have
+per default USB_PWR_SENSE tied to 3,3V high. So from hardware side there is
+no current drawn and no overcurrent signal sent to the SA-1111 .
 
-Agreed. The ArmVirtQemu change is not intended for merging, but
-primarily as a test rig for the kernel changes.
+Anyone has a glue whats wrong here?
 
-> > For example, virt-install's "--location" option "can recognize certain
-> > distribution trees and fetches a bootable kernel/initrd pair to launch
-> > the install". It would be nice to keep that working for older distros.
-> >
-> > I think LoadFile[2] can co-exist with SimpleFs.
-> >
-> > I also think that the "try SimpleFs first, fall back to LoadFile[2]
-> > second" requirement applies only to the UEFI boot manager, and not to
-> > the kernel's EFI stub. IOW in the new approach the kernel is free to
-> > ignore (abandon) the old approach for good.
->
-> ... But that might not be good for compatibility with grub and/or the
-> platform firmware, from the kernel's own perspective, perhaps?...
->
-> Who is supposed to produce LoadFile2 with the new VenMedia devpath?
->
 
-What I am ultimately after is a generic GRUB that uses
-LoadImage+Startimage for starting the kernel on all architectures, and
-is able to load the initrd from anywhere in an arch agnostic manner.
 
-Additionally, we might have
-- an implementation for OVMF/AAVMF,
-- a EDK2 UEFI Shell command that takes a shell file path to provide
-the Linux initrd
-- a uboot implementation that passes the initrd this way.
+dmesg output from a unmodified unit (Kernel 3.16.81):
 
-This series is the first step, to align between all the stakeholders
-on the approach for this aspect, before taking it any further.
+--------linexec--------
+LinExec: UART Initialized.
+LinExec: UART Initialized.
+LinExec: UART Initialized.
+LinExec: Beginning boot_linux.
+LinExec: Passing the point of no return.. Now.
+LinExec: Entering DRAMloader...
+Booting Linux on physical CPU 0x0
+Linux version 3.16.81 (stefan@spnub1804work) (gcc version 7.4.0
+(Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1) ) #3 Fri Feb 7 11:15:16 UTC 2020
+CPU: StrongARM-1110 [6901b118] revision 8 (ARMv4), cr=c020717f
+CPU: VIVT data cache, VIVT instruction cache
+Machine: HP Jornada 720
+Memory policy: Data cache writeback
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 8128
+Kernel command line: root=/dev/hda2 mem=32m rootdelay=2
+console=ttySA0,115200n8
+PID hash table entries: 128 (order: -3, 512 bytes)
+Dentry cache hash table entries: 4096 (order: 2, 16384 bytes)
+Inode-cache hash table entries: 2048 (order: 1, 8192 bytes)
+Memory: 28640K/32768K available (2735K kernel code, 121K rwdata, 736K
+rodata, 93K init, 77K bss, 4128K reserved)
+Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xffc00000 - 0xffe00000   (2048 kB)
+    vmalloc : 0xc2800000 - 0xff000000   ( 968 MB)
+    lowmem  : 0xc0000000 - 0xc2000000   (  32 MB)
+    modules : 0xbf000000 - 0xc0000000   (  16 MB)
+      .text : 0xc0208000 - 0xc056be64   (3472 kB)
+      .init : 0xc056c000 - 0xc0583484   (  94 kB)
+      .data : 0xc0584000 - 0xc05a2520   ( 122 kB)
+       .bss : 0xc05a2520 - 0xc05b5cd4   (  78 kB)
+SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+NR_IRQS:16 nr_irqs:49 49
+sched_clock: 32 bits at 3686kHz, resolution 271ns, wraps every
+1165084444400ns
+Console: colour dummy device 30x40
+console [ttySA0] enabled
+Calibrating delay loop... 136.60 BogoMIPS (lpj=683008)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+CPU: Testing write buffer coherency: ok
+Setting up static identity map for 0xc04b1db8 - 0xc04b1e10
+futex hash table entries: 256 (order: -1, 3072 bytes)
+NET: Registered protocol family 16
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+SA1111 Microprocessor Companion Chip: silicon revision 1, metal revision 1
+sa1111 sa1111.0: Providing IRQ49-103
+sa1111-rab 0400: dmabounce: registered device
+sa1111-rab 0600: dmabounce: registered device
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+Switched to clocksource oscr
+genirq: Setting trigger mode 3 for irq 100 failed
+(sa1111_type_highirq+0x0/0x80)
+genirq: Setting trigger mode 3 for irq 102 failed
+(sa1111_type_highirq+0x0/0x80)
+jornada720_pcmcia_configure_socket(): config socket 0 vcc 0 vpp 0
+genirq: Setting trigger mode 3 for irq 101 failed
+(sa1111_type_highirq+0x0/0x80)
+genirq: Setting trigger mode 3 for irq 103 failed
+(sa1111_type_highirq+0x0/0x80)
+jornada720_pcmcia_configure_socket(): config socket 1 vcc 0 vpp 0
+NET: Registered protocol family 2
+TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+TCP bind hash table entries: 1024 (order: 0, 4096 bytes)
+TCP: Hash tables configured (established 1024 bind 1024)
+TCP: reno registered
+UDP hash table entries: 256 (order: 0, 4096 bytes)
+UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+NET: Registered protocol family 1
+NetWinder Floating Point Emulator V0.97 (double precision)
+SSP: device initialized with irq
+msgmni has been set to 55
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+Epson S1D13XXX FB Driver
+s1d13xxxfb: chip production id 4 = S1D13506
+s1d13xxxfb: chip revision 1
+s1d13xxxfb: regs mapped at 0xf0000000, fb 512 KiB mapped at 0xf1000000
+Console: switching to colour frame buffer device 80x30
+fb0: S1D13xxx frame buffer device
+Serial: SA11x0 driver
+sa11x0-uart.1: ttySA1 at MMIO 0x80010000 (irq = 15, base_baud = 230400) is a
+SA1100
+sa11x0-uart.3: ttySA0 at MMIO 0x80050000 (irq = 17, base_baud = 230400) is a
+SA1100
+loop: module loaded
+nbd: registered device at major 43
+Uniform Multi-Platform E-IDE driver
+ide-gd driver 1.18
+ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+sa1111-ohci 0400: SA-1111 OHCI
+sa1111-ohci 0400: new USB bus registered, assigned bus number 1
+sa1111-ohci 0400: irq 93, io mem 0x40000400
+jornada720_pcmcia_configure_socket(): config socket 1 vcc 33 vpp 33
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+mousedev: PS/2 mouse device common for all mice
+input: HP Jornada 720 keyboard as
+/devices/platform/jornada720_kbd/input/input0
+input: HP Jornada 7xx Touchscreen as
+/devices/platform/jornada_ts/input/input1
+rtc (null): invalid alarm value: 1900-1-1 0:0:0
+sa1100-rtc sa1100-rtc: rtc core: registered sa1100-rtc as rtc0
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+TCP: cubic registered
+NET: Registered protocol family 17
+lib80211: common routines for IEEE802.11 drivers
+sa1100-rtc sa1100-rtc: setting system clock to 1970-01-01 00:01:33 UTC (93)
+Waiting 2 sec before mounting root device...
+jornada720_pcmcia_configure_socket(): config socket 1 vcc 33 vpp 33
+jornada720_pcmcia_configure_socket(): config socket 1 vcc 33 vpp 33
+pcmcia_socket pcmcia_socket1: pccard: PCMCIA card inserted into slot 1
+pcmcia 1.0: pcmcia: registering new device pcmcia1.0 (IRQ: 99)
+jornada720_pcmcia_configure_socket(): config socket 1 vcc 33 vpp 0
+jornada720_pcmcia_configure_socket(): config socket 1 vcc 33 vpp 0
+hub 1-0:1.0: over-current condition
+hda: TS8GCF133, CFA DISK drive
+hdb: probing with STATUS(0x00) instead of ALTSTATUS(0x50)
+hdb: probing with STATUS(0x00) instead of ALTSTATUS(0x50)
+ide0 at 0xc2880000-0xc2880007,0xc288000e on irq 99
+bounce: isa pool size: 16 pages
+hda: max request size: 512KiB
+hda: 15662304 sectors (8019 MB) w/1KiB Cache, CHS=15538/255/63
+ hda: hda1 hda2 hda3
+ide-cs 1.0: ide-cs: hda: Vpp = 0.0
+VFS: Mounted root (ext2 filesystem) on device 3:2.
+Freeing unused kernel memory: 92K (c056c000 - c0583000)
+modprobe: FATAL: Could not load /lib/modules/3.16.81/modules.dep: No such
+file or directory
+
+INIT: version 2.86 booting...
+...
+
+
+
+Regards and Thanks
+Stefan Lehner
+
 
 _______________________________________________
 linux-arm-kernel mailing list
