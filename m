@@ -2,66 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08A6C155ADB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 16:38:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A1B0155B3C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 16:56:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+RjBb/Sw4eNDRuymQ/YjGx7R5X9dn0fAfncu8VsOU+U=; b=OikRTQ7EC2rRKJ
-	wIKQLLq/cZ/EezPRfbYAG5pRku0HfgsVuh10+l9IFZL1a+HG1ZuyUyzZjx8grgvguCw+k/JdfhLXx
-	Xa9DF2GtNW2+NxvInT5v3D6FhzIAc9VMOp7kyA99GpUmjbkEbenh3kZo7m8p8LDyCWTNHgONvcDWx
-	N/zO5y+YPT65WKWNxLXreGusTjhMQIOk9bFj+bMWDTAGhdDPXM5IEpD8w1VMdVwxiUTCBTm1K3mNp
-	GOhGF9Q45jjrbhek4Cn83wY5Yjnit6fjAKuuDGpHP5CrEKlTxJORRRG8+3Fl+aYwOw/d/4dNDs4V5
-	WMH8sYm7/KXG/1ymV+LA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Date:
+	From:Message-Id:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=PoTBVmmly7qS1O/fhxrGZWlxbs246B+1dCkAPcF58Ko=; b=JUk
+	PvvP5RKnnQUXWRy8rmriDb0eCNp1zMkxIxX5WoLRI6qC5Vq2O3csIXKkF5ESWRnLWemFsuTAT9gmZ
+	9YFM9ybuyagSV70w8BHVJyOljKV42ix+TcwZD4NjtzgP0G8yyoSzbQkzm4E4t8TNeh23pzsHblqQx
+	WgKB7OV3ttumMPSguwtqlv4dzHtMmYzcRIN0raXDUu7inawXzH2i9tqpDvYBEmMrj0jksQokqM3EE
+	auzsTybqFctRbLyLts5CV38Cbw5JizAN1by27Yqavs7SKhz59zMO+VfHbyyt2LQMZ3nBT4aWoey1O
+	Tavm4njEEs1v0hWN9lMjQzn1k8sTuEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j05iJ-0004vE-Sc; Fri, 07 Feb 2020 15:38:39 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1j05zi-0003sm-Qx; Fri, 07 Feb 2020 15:56:38 +0000
+Received: from mailout3.hostsharing.net ([2a01:4f8:150:2161:1:b009:f236:0])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j05iB-0004uL-F4
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 15:38:33 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 07 Feb 2020 07:38:30 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,413,1574150400"; d="scan'208";a="255445625"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by fmsmga004.fm.intel.com with ESMTP; 07 Feb 2020 07:38:29 -0800
-Date: Fri, 7 Feb 2020 07:38:29 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Peter Xu <peterx@redhat.com>
-Subject: Re: [PATCH v5 18/19] KVM: Dynamically size memslot array based on
- number of used slots
-Message-ID: <20200207153829.GA2401@linux.intel.com>
-References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
- <20200121223157.15263-19-sean.j.christopherson@intel.com>
- <20200206221208.GI700495@xz-x1>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200206221208.GI700495@xz-x1>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+ id 1j05za-0003rV-65; Fri, 07 Feb 2020 15:56:32 +0000
+Received: from h08.hostsharing.net (h08.hostsharing.net [83.223.95.28])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client CN "*.hostsharing.net",
+ Issuer "COMODO RSA Domain Validation Secure Server CA" (not verified))
+ by mailout3.hostsharing.net (Postfix) with ESMTPS id 6682E100B01B2;
+ Fri,  7 Feb 2020 16:47:17 +0100 (CET)
+Received: from localhost (unknown [87.130.102.138])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by h08.hostsharing.net (Postfix) with ESMTPSA id 097A8615E104;
+ Fri,  7 Feb 2020 16:47:17 +0100 (CET)
+X-Mailbox-Line: From 988737dbbc4e499c2faaaa4e567ba3ed8deb9a89 Mon Sep 17
+ 00:00:00 2001
+Message-Id: <988737dbbc4e499c2faaaa4e567ba3ed8deb9a89.1581089797.git.lukas@wunner.de>
+From: Lukas Wunner <lukas@wunner.de>
+Date: Fri, 7 Feb 2020 16:46:41 +0100
+Subject: [PATCH] irqchip/bcm2835: Quiesce IRQs left enabled by bootloader
+To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <maz@kernel.org>,
+ "Nicolas Saenz Julienne" <nsaenzjulienne@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_073831_521176_C52B403C 
-X-CRM114-Status: GOOD (  25.79  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200207_075630_540717_E625BDB7 
+X-CRM114-Status: GOOD (  17.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,164 +63,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
- Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Kristina Brooks <notstina@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, Serge Schneider <serge@raspberrypi.org>,
+ linux-kernel@vger.kernel.org, Phil Elwell <phil@raspberrypi.org>,
+ Matthias Brugger <mbrugger@suse.com>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Martin Sperl <kernel@martin.sperl.org>,
+ linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 06, 2020 at 05:12:08PM -0500, Peter Xu wrote:
-> On Tue, Jan 21, 2020 at 02:31:56PM -0800, Sean Christopherson wrote:
-> > Now that the memslot logic doesn't assume memslots are always non-NULL,
-> > dynamically size the array of memslots instead of unconditionally
-> > allocating memory for the maximum number of memslots.
-> > 
-> > Note, because a to-be-deleted memslot must first be invalidated, the
-> > array size cannot be immediately reduced when deleting a memslot.
-> > However, consecutive deletions will realize the memory savings, i.e.
-> > a second deletion will trim the entry.
-> > 
-> > Tested-by: Christoffer Dall <christoffer.dall@arm.com>
-> > Tested-by: Marc Zyngier <maz@kernel.org>
-> > Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
-> > ---
-> >  include/linux/kvm_host.h |  2 +-
-> >  virt/kvm/kvm_main.c      | 31 ++++++++++++++++++++++++++++---
-> >  2 files changed, 29 insertions(+), 4 deletions(-)
-> > 
-> > diff --git a/include/linux/kvm_host.h b/include/linux/kvm_host.h
-> > index 60ddfdb69378..8bb6fb127387 100644
-> > --- a/include/linux/kvm_host.h
-> > +++ b/include/linux/kvm_host.h
-> > @@ -431,11 +431,11 @@ static inline int kvm_arch_vcpu_memslots_id(struct kvm_vcpu *vcpu)
-> >   */
-> >  struct kvm_memslots {
-> >  	u64 generation;
-> > -	struct kvm_memory_slot memslots[KVM_MEM_SLOTS_NUM];
-> >  	/* The mapping table from slot id to the index in memslots[]. */
-> >  	short id_to_index[KVM_MEM_SLOTS_NUM];
-> >  	atomic_t lru_slot;
-> >  	int used_slots;
-> > +	struct kvm_memory_slot memslots[];
-> 
-> This patch is tested so I believe this works, however normally I need
-> to do similar thing with [0] otherwise gcc might complaint.  Is there
-> any trick behind to make this work?  Or is that because of different
-> gcc versions?
+Customers of our "Revolution Pi" open source PLCs (which are based on
+the Raspberry Pi) have reported random lockups as well as jittery eMMC,
+UART and SPI latency.  We were able to reproduce the lockups in our lab
+and hooked up a JTAG debugger:
 
-array[] and array[0] have the same net affect, but array[] is given special
-treatment by gcc to provide extra sanity checks, e.g. requires the field to
-be the end of the struct.  Last I checked, gcc also doesn't allow array[]
-in unions.  There are probably other restrictions.
+It turns out that the USB controller's interrupt is already enabled when
+the kernel boots.  All interrupts are disabled when the chip comes out
+of power-on reset, according to the spec.  So apparently the bootloader
+enables the interrupt but neglects to disable it before handing over
+control to the kernel.
 
-But, it's precisely because of those restrictions that using array[] is
-preferred, as it provides extra protections, e.g. if someone moved memslots
-to the top of the struct it would fail to compile.
+The bootloader is a closed source blob provided by the Raspberry Pi
+Foundation.  Development of an alternative open source bootloader was
+begun by Kristina Brooks but it's not fully functional yet.  Usage of
+the blob is thus without alternative for the time being.
+
+The Raspberry Pi Foundation's downstream kernel has a performance-
+optimized USB driver (which we use on our Revolution Pi products).
+The driver takes advantage of the FIQ fast interrupt.  Because the
+regular USB interrupt was left enabled by the bootloader, both the
+FIQ and the normal interrupt is enabled once the USB driver probes.
+
+The spec has the following to say on simultaneously enabling the FIQ
+and the normal interrupt of a peripheral:
+
+"One interrupt source can be selected to be connected to the ARM FIQ
+ input.  An interrupt which is selected as FIQ should have its normal
+ interrupt enable bit cleared.  Otherwise a normal and an FIQ interrupt
+ will be fired at the same time.  Not a good idea!"
+                                  ^^^^^^^^^^^^^^^
+https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf
+page 110
+
+On a multicore Raspberry Pi, the Foundation's kernel routes all normal
+interrupts to CPU 0 and the FIQ to CPU 1.  Because both the FIQ and the
+normal interrupt is enabled, a USB interrupt causes CPU 0 to spin in
+bcm2836_chained_handle_irq() until the FIQ on CPU 1 has cleared it.
+Interrupts with a lower priority than USB are starved as long.
+
+That explains the jittery eMMC, UART and SPI latency:  On one occasion
+I've seen CPU 0 blocked for no less than 2.9 msec.  Basically,
+everything not USB takes a performance hit:  Whereas eMMC throughput
+on a Compute Module 3 remains relatively constant at 23.5 MB/s with
+this commit, it irregularly dips to 23.0 MB/s without this commit.
+
+The lockups occur when CPU 0 receives a USB interrupt while holding a
+lock which CPU 1 is trying to acquire while the FIQ is temporarily
+disabled on CPU 1.
+
+I've tested old releases of the Foundation's bootloader as far back as
+1.20160202-1 and they all leave the USB interrupt enabled.  Still older
+releases fail to boot a contemporary kernel on a Compute Module 1 or 3,
+which are the only Raspberry Pi variants I have at my disposal for
+testing.
+
+Fix by disabling IRQs left enabled by the bootloader.  Although the
+impact is most pronounced on the Foundation's downstream kernel,
+it seems prudent to apply the fix to the upstream kernel to guard
+against such mistakes in any present and future bootloader.
+
+An alternative, though more convoluted approach would be to clear the
+IRQD_IRQ_MASKED flag on all interrupts left enabled on boot.  Then the
+first invocation of handle_level_irq() would mask and thereby quiesce
+those interrupts.
+
+Signed-off-by: Lukas Wunner <lukas@wunner.de>
+Cc: Serge Schneider <serge@raspberrypi.org>
+Cc: Kristina Brooks <notstina@gmail.com>
+Cc: stable@vger.kernel.org
+---
+ drivers/irqchip/irq-bcm2835.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/drivers/irqchip/irq-bcm2835.c b/drivers/irqchip/irq-bcm2835.c
+index 418245d31921..0d9a5a7ebe2c 100644
+--- a/drivers/irqchip/irq-bcm2835.c
++++ b/drivers/irqchip/irq-bcm2835.c
+@@ -150,6 +150,13 @@ static int __init armctrl_of_init(struct device_node *node,
+ 		intc.enable[b] = base + reg_enable[b];
+ 		intc.disable[b] = base + reg_disable[b];
  
-> >  };
-> >  
-> >  struct kvm {
-> > diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-> > index 9b614cf2ca20..ed392ce64e59 100644
-> > --- a/virt/kvm/kvm_main.c
-> > +++ b/virt/kvm/kvm_main.c
-> > @@ -565,7 +565,7 @@ static struct kvm_memslots *kvm_alloc_memslots(void)
-> >  		return NULL;
-> >  
-> >  	for (i = 0; i < KVM_MEM_SLOTS_NUM; i++)
-> > -		slots->id_to_index[i] = slots->memslots[i].id = -1;
-> > +		slots->id_to_index[i] = -1;
-> >  
-> >  	return slots;
-> >  }
-> > @@ -1077,6 +1077,32 @@ static struct kvm_memslots *install_new_memslots(struct kvm *kvm,
-> >  	return old_memslots;
-> >  }
-> >  
-> > +/*
-> > + * Note, at a minimum, the current number of used slots must be allocated, even
-> > + * when deleting a memslot, as we need a complete duplicate of the memslots for
-> > + * use when invalidating a memslot prior to deleting/moving the memslot.
-> > + */
-> > +static struct kvm_memslots *kvm_dup_memslots(struct kvm_memslots *old,
-> > +					     enum kvm_mr_change change)
-> > +{
-> > +	struct kvm_memslots *slots;
-> > +	size_t old_size, new_size;
-> > +
-> > +	old_size = sizeof(struct kvm_memslots) +
-> > +		   (sizeof(struct kvm_memory_slot) * old->used_slots);
-> > +
-> > +	if (change == KVM_MR_CREATE)
-> > +		new_size = old_size + sizeof(struct kvm_memory_slot);
-> > +	else
-> > +		new_size = old_size;
-> > +
-> > +	slots = kvzalloc(new_size, GFP_KERNEL_ACCOUNT);
-> > +	if (likely(slots))
-> > +		memcpy(slots, old, old_size);
-> 
-> (Maybe directly copy into it?)
++		irq = readl(intc.enable[b]);
++		if (irq) {
++			writel(irq, intc.disable[b]);
++			pr_err(FW_BUG "Bootloader left irq enabled: "
++			       "bank %d irq %*pbl\n", b, IRQS_PER_BANK, &irq);
++		}
++
+ 		for (i = 0; i < bank_irqs[b]; i++) {
+ 			irq = irq_create_mapping(intc.domain, MAKE_HWIRQ(b, i));
+ 			BUG_ON(irq <= 0);
+-- 
+2.24.0
 
-I don't follow, are you saying do "*slots = *old"?
-
-@new_size and @old_size are not guaranteed to be the same.  More
-specifically, slots->memslots and old->slots are now flexible arrays with
-potentially different sizes.  Doing "*slots = *old" would only copy the
-standard members, a memcpy() would still be needed for @memlots.
-
-A more effecient implementation would be:
-
-	slots = kvalloc(new_size, GFP_KERNEL_ACCOUNT);
-	if (likely(slots)) {
-		memcpy(slots, old, old_size);
-		if (change == KVM_MR_CREATE)
-			memset((void *)slots + old_size, 0, new_size - old_size);
-	}
-
-to avoid unnecessarily zeroing out the entire thing.  I opted for the
-simpler implementation as this is not performance critical code, for most
-cases @slots won't be all that large, and I wanted to be absolutely sure
-any mixup would hit zeroed memory and not uninitialized memory.
-
-> 
-> > +
-> > +	return slots;
-> > +}
-> > +
-> >  static int kvm_set_memslot(struct kvm *kvm,
-> >  			   const struct kvm_userspace_memory_region *mem,
-> >  			   struct kvm_memory_slot *old,
-> > @@ -1087,10 +1113,9 @@ static int kvm_set_memslot(struct kvm *kvm,
-> >  	struct kvm_memslots *slots;
-> >  	int r;
-> >  
-> > -	slots = kvzalloc(sizeof(struct kvm_memslots), GFP_KERNEL_ACCOUNT);
-> > +	slots = kvm_dup_memslots(__kvm_memslots(kvm, as_id), change);
-> >  	if (!slots)
-> >  		return -ENOMEM;
-> > -	memcpy(slots, __kvm_memslots(kvm, as_id), sizeof(struct kvm_memslots));
-> >  
-> >  	if (change == KVM_MR_DELETE || change == KVM_MR_MOVE) {
-> >  		/*
-> > -- 
-> > 2.24.1
-> > 
-> 
-> -- 
-> Peter Xu
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
