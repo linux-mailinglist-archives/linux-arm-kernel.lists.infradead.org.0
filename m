@@ -2,79 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C81B15520E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 06:27:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CADA15520F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 06:27:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=agboXeGdbCtT/s7rX6Nu6lmFWfBUQ1KkNvzhDekrFdw=; b=ADvesl+gpgiaAk
-	jGNrRFfnoUXV3M3kek8LBTLR6iWiCgef9v7Vak0TB2vgADueZxOy4+q1FLBraLfGHl5WnGCP1Gee5
-	E+HpgI9XhCQZVJl7dZhYdCBJ4AFYQTv0P7MFI0NtIRi6DuO0TwXbBra6SVHuJ/vn9fZKDwQLT8ilg
-	pBSqvwrL0+Wd4Sc+ixfNg2XF/i7dpZKtapI81iQ5eVVppd2pHDgOXo9TJ6bLfPn1zM5EQMwE1bdx6
-	rPTi9bQcD9VMyWQKwxia7s+dQLp2hGgPmgY/yyrBJhWFPyat/VYwde+Bzk7Bsg3xgyfmz5E4F2w9v
-	P/LoxmYabYGelNwvC5gQ==;
+	List-Owner; bh=60bQkLCurfuhon7BtM5BsnTT5v44u7NrN7mBsSV32jY=; b=BH6064tsYcfK+h
+	Lhe3aXxj7XzW/i5gvG61PS0g4HwwJ5gF2REvTj1k8aheo6Yd68Po4KIDcAhTpJAe9T3HJ4bQmDkWU
+	P5Iz3UE7/D1VKtDkCTDcnUkmc1ewXQuOLSyH+q6OT9PeKxvMch7M+782gleeG1GG9aRpg0RPznWDh
+	HFMK1PNcTlReLSTeveYbW5iYjt0yAmD5DYocAnQYF68Utp0ppKkxaZ0GJMO/hO1NJPtlT+RZTBjUn
+	6LUhUOQMEGm3ieMxFTDOijXC/9iN/Km7/1VQTpjHusZ9xTTS0+lB5gUv7dzPUSrHm2w+wZQq1Tkd2
+	hUyCCsi5OF6+K+Gfcpgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izwAz-0007bE-57; Fri, 07 Feb 2020 05:27:37 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1izwBD-0007nO-DR; Fri, 07 Feb 2020 05:27:51 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izwAL-00072q-5W
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 05:26:59 +0000
-Received: by mail-pl1-x641.google.com with SMTP id g6so522332plp.6
+ id 1izwAO-00076t-RT
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 05:27:02 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id j17so431038pjz.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 21:26:57 -0800 (PST)
+ Thu, 06 Feb 2020 21:27:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=dR3Ttt0IPPNsYPOgpJlj5mjk/b6EviTLXN5Iagqf+aA=;
- b=RLkkxmCTi5OetjhaqHgRffF2gosGp/sYK10SOPzydjFeAkE0GrMCag7mSVS71o83N1
- it6WCmDjCGGGogavPlAB6vB4pDeRxFHVR+VxqsxSGE0wSnlJBb6Sa+WYfT9+EIU/fGgY
- GBvz5FLem4teG4x6oeDFHYnrgoqWrfT6ZWXyM=
+ bh=6xpmN6rVRpQ9+/BKl26/gWkRoJrUlmctwTSJRjJCc9M=;
+ b=EfIrgn8KJTdEPRV6t2D01u2C1tbZ2N5L+zz7+zq66y1iSVivuP8DBp9QrRPb2KxMeQ
+ /ektvloYsjEAqIXPfLcxnAAUqVeqhAJibeu5lQbfMyCx5VI1xcyHGPq//k6mqcmQ0gfS
+ CPinmVfCOSlqIHxC/KFn8Uqs9YBoRyqsFwy9g=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=dR3Ttt0IPPNsYPOgpJlj5mjk/b6EviTLXN5Iagqf+aA=;
- b=iSuuvUyvjCyu06kY43EgIklaa6KUL1bKPowKLO+YIwuvJ0thsc/pE9HJq0odKlQhBl
- 1XBkpOZMrOpa1yP/UOgmOsU7toWIR00Q7Hck29NMkaL6v9ggokG+m5A8vBvT2KdOhgXt
- bWmY5vU6FI1HhbZpHWXkcoQFXOSw0McqCxLAfTGqGRSzAz1zoZobmGEqQnnVxDGMsyf4
- 0fM1VfqyUTJhTzGMNX8XjDX1GqX1ulfT5cVdPkuhDNfezVd0CMScukXcWEeItuQRlVfI
- 3f7YzHj8d5O5auhK+B2UZ9iYrhUhMr9rAL+x4A1C3Jwm2bVyucZekmYSwLItF4kr16g1
- lhkg==
-X-Gm-Message-State: APjAAAXe0boJ5byTtGXDc5VAuEyuKXm6QjptL1wyWQwti5VFDFRKfYX/
- wCs3WSUpBdsHA2MUdrsa9J12Gg==
-X-Google-Smtp-Source: APXvYqxVFz2MgUiuN/4vB0I/vSf3EtSzfgT7IVwTv+xdG0X57ZfBT4B+ulFdiUZWCiND96tY/kzH6A==
-X-Received: by 2002:a17:902:59cd:: with SMTP id
- d13mr8099719plj.146.1581053216500; 
- Thu, 06 Feb 2020 21:26:56 -0800 (PST)
+ bh=6xpmN6rVRpQ9+/BKl26/gWkRoJrUlmctwTSJRjJCc9M=;
+ b=I6oiEfjL1nZl0JMTlUpnAtz4Vj9UeKp42/yiSpmHBxWLFTuzioX7Jd4qaAioY/HNU7
+ gdsCqu82xdjA8/8XtyJZQrwBYwiaG2rwVUeK5FNyM05fzg3AsMLBqd06KqBL8imci0dd
+ kiqD/CCwPC93dd+bkGBSMmo7cX2kZS0hjuvRivL4pZ5w9DysoLorUCub39o0/pEOEVmc
+ cjKc1BOgRROhopWT8xGntsvuDp8jDOlfVh2NrLehETG7ovYsZm/qzeRO7bc4swhjfOHL
+ SGR0zTAgN/RT+mMTR+VcY9umm2fPkxdBibvrbQ/XUfIfKhB0KCDUco01NAds3MvauBuK
+ LdJQ==
+X-Gm-Message-State: APjAAAVPK8yYlcCCFdC2weJmNWfkl9usCTDrOJLf52N+cT8rIUImwa4b
+ rwaYoVsJs2UKIOPMS0IsXPx8QA==
+X-Google-Smtp-Source: APXvYqzX299A08Kcu0qlzSD8JRvc5zkotFDW+fzSDBqKgJ0Ds/rXQnBQim49TnwlSOj3Rct3QjyFZg==
+X-Received: by 2002:a17:902:b682:: with SMTP id
+ c2mr8017343pls.127.1581053219763; 
+ Thu, 06 Feb 2020 21:26:59 -0800 (PST)
 Received: from drinkcat2.tpe.corp.google.com
  ([2401:fa00:1:b:d8b7:33af:adcb:b648])
- by smtp.gmail.com with ESMTPSA id i66sm1174485pfg.85.2020.02.06.21.26.53
+ by smtp.gmail.com with ESMTPSA id i66sm1174485pfg.85.2020.02.06.21.26.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 06 Feb 2020 21:26:56 -0800 (PST)
+ Thu, 06 Feb 2020 21:26:59 -0800 (PST)
 From: Nicolas Boichat <drinkcat@chromium.org>
 To: Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4 2/7] arm64: dts: mt8183: Add node for the Mali GPU
-Date: Fri,  7 Feb 2020 13:26:22 +0800
-Message-Id: <20200207052627.130118-3-drinkcat@chromium.org>
+Subject: [PATCH v4 3/7] drm/panfrost: Improve error reporting in
+ panfrost_gpu_power_on
+Date: Fri,  7 Feb 2020 13:26:23 +0800
+Message-Id: <20200207052627.130118-4-drinkcat@chromium.org>
 X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
 In-Reply-To: <20200207052627.130118-1-drinkcat@chromium.org>
 References: <20200207052627.130118-1-drinkcat@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_212657_250305_2E1EB4B5 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20200206_212701_061401_8076AD2A 
+X-CRM114-Status: GOOD (  10.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -111,189 +109,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a basic GPU node for mt8183.
+It is useful to know which component cannot be powered on.
 
 Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
+Reviewed-by: Steven Price <steven.price@arm.com>
 Reviewed-by: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
 ---
-Upstreaming what matches existing bindings from our Chromium OS tree:
-https://chromium.googlesource.com/chromiumos/third_party/kernel/+/chromeos-4.19/arch/arm64/boot/dts/mediatek/mt8183.dtsi#1348
 
-The evb part of this change depends on this patch to add PMIC dtsi:
-https://patchwork.kernel.org/patch/10928161/
-
-The binding we use with out-of-tree Mali drivers includes more
-clocks, this is used for devfreq: the out-of-tree driver switches
-clk_mux to clk_sub_parent (26Mhz), adjusts clk_main_parent, then
-switches clk_mux back to clk_main_parent:
-(see https://chromium.googlesource.com/chromiumos/third_party/kernel/+/chromeos-4.19/drivers/gpu/arm/midgard/platform/mediatek/mali_kbase_runtime_pm.c#423)
-clocks =
-        <&topckgen CLK_TOP_MFGPLL_CK>,
-        <&topckgen CLK_TOP_MUX_MFG>,
-        <&clk26m>,
-        <&mfgcfg CLK_MFG_BG3D>;
-clock-names =
-        "clk_main_parent",
-        "clk_mux",
-        "clk_sub_parent",
-        "subsys_mfg_cg";
+Was useful when trying to probe Bifrost GPU, to understand what
+issue we are facing.
 
 v4:
- - Add power-domain-names to describe the 3 domains.
-   (kept Alyssa's reviewed-by as the change is minor)
-
+ - No change
 v3:
- - No changes
+ - Rebased on https://patchwork.kernel.org/patch/11325689/
 
-v2:
- - Use sram instead of mali_sram as SRAM supply name.
- - Rename mali@ to gpu@.
+ drivers/gpu/drm/panfrost/panfrost_gpu.c | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
 
- arch/arm64/boot/dts/mediatek/mt8183-evb.dts |   7 ++
- arch/arm64/boot/dts/mediatek/mt8183.dtsi    | 105 ++++++++++++++++++++
- 2 files changed, 112 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-index 1fb195c683c3d01..7d609e0cd9b4975 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-@@ -7,6 +7,7 @@
+diff --git a/drivers/gpu/drm/panfrost/panfrost_gpu.c b/drivers/gpu/drm/panfrost/panfrost_gpu.c
+index 460fc190de6e815..856f2fd1fa8ed27 100644
+--- a/drivers/gpu/drm/panfrost/panfrost_gpu.c
++++ b/drivers/gpu/drm/panfrost/panfrost_gpu.c
+@@ -308,17 +308,20 @@ void panfrost_gpu_power_on(struct panfrost_device *pfdev)
+ 	gpu_write(pfdev, L2_PWRON_LO, pfdev->features.l2_present);
+ 	ret = readl_relaxed_poll_timeout(pfdev->iomem + L2_READY_LO,
+ 		val, val == pfdev->features.l2_present, 100, 1000);
++	if (ret)
++		dev_err(pfdev->dev, "error powering up gpu L2");
  
- /dts-v1/;
- #include "mt8183.dtsi"
-+#include "mt6358.dtsi"
+ 	gpu_write(pfdev, SHADER_PWRON_LO, pfdev->features.shader_present);
+-	ret |= readl_relaxed_poll_timeout(pfdev->iomem + SHADER_READY_LO,
++	ret = readl_relaxed_poll_timeout(pfdev->iomem + SHADER_READY_LO,
+ 		val, val == pfdev->features.shader_present, 100, 1000);
++	if (ret)
++		dev_err(pfdev->dev, "error powering up gpu shader");
  
- / {
- 	model = "MediaTek MT8183 evaluation board";
-@@ -30,6 +31,12 @@ &auxadc {
- 	status = "okay";
- };
+ 	gpu_write(pfdev, TILER_PWRON_LO, pfdev->features.tiler_present);
+-	ret |= readl_relaxed_poll_timeout(pfdev->iomem + TILER_READY_LO,
++	ret = readl_relaxed_poll_timeout(pfdev->iomem + TILER_READY_LO,
+ 		val, val == pfdev->features.tiler_present, 100, 1000);
+-
+ 	if (ret)
+-		dev_err(pfdev->dev, "error powering up gpu");
++		dev_err(pfdev->dev, "error powering up gpu tiler");
+ }
  
-+&gpu {
-+	supply-names = "mali", "sram";
-+	mali-supply = <&mt6358_vgpu_reg>;
-+	sram-supply = <&mt6358_vsram_gpu_reg>;
-+};
-+
- &i2c0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&i2c_pins_0>;
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 124f9d3e09f532c..74b5305f663f740 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -599,6 +599,111 @@ mfgcfg: syscon@13000000 {
- 			#clock-cells = <1>;
- 		};
- 
-+		gpu: gpu@13040000 {
-+			compatible = "mediatek,mt8183-mali", "arm,mali-bifrost";
-+			reg = <0 0x13040000 0 0x4000>;
-+			interrupts =
-+				<GIC_SPI 280 IRQ_TYPE_LEVEL_LOW>,
-+				<GIC_SPI 279 IRQ_TYPE_LEVEL_LOW>,
-+				<GIC_SPI 278 IRQ_TYPE_LEVEL_LOW>;
-+			interrupt-names = "job", "mmu", "gpu";
-+
-+			clocks = <&topckgen CLK_TOP_MFGPLL_CK>;
-+
-+			power-domains =
-+				<&scpsys MT8183_POWER_DOMAIN_MFG_CORE0>,
-+				<&scpsys MT8183_POWER_DOMAIN_MFG_CORE1>,
-+				<&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
-+			power-domain-names = "core0", "core1", "2d";
-+
-+			operating-points-v2 = <&gpu_opp_table>;
-+		};
-+
-+		gpu_opp_table: opp_table0 {
-+			compatible = "operating-points-v2";
-+			opp-shared;
-+
-+			opp-300000000 {
-+				opp-hz = /bits/ 64 <300000000>;
-+				opp-microvolt = <625000>, <850000>;
-+			};
-+
-+			opp-320000000 {
-+				opp-hz = /bits/ 64 <320000000>;
-+				opp-microvolt = <631250>, <850000>;
-+			};
-+
-+			opp-340000000 {
-+				opp-hz = /bits/ 64 <340000000>;
-+				opp-microvolt = <637500>, <850000>;
-+			};
-+
-+			opp-360000000 {
-+				opp-hz = /bits/ 64 <360000000>;
-+				opp-microvolt = <643750>, <850000>;
-+			};
-+
-+			opp-380000000 {
-+				opp-hz = /bits/ 64 <380000000>;
-+				opp-microvolt = <650000>, <850000>;
-+			};
-+
-+			opp-400000000 {
-+				opp-hz = /bits/ 64 <400000000>;
-+				opp-microvolt = <656250>, <850000>;
-+			};
-+
-+			opp-420000000 {
-+				opp-hz = /bits/ 64 <420000000>;
-+				opp-microvolt = <662500>, <850000>;
-+			};
-+
-+			opp-460000000 {
-+				opp-hz = /bits/ 64 <460000000>;
-+				opp-microvolt = <675000>, <850000>;
-+			};
-+
-+			opp-500000000 {
-+				opp-hz = /bits/ 64 <500000000>;
-+				opp-microvolt = <687500>, <850000>;
-+			};
-+
-+			opp-540000000 {
-+				opp-hz = /bits/ 64 <540000000>;
-+				opp-microvolt = <700000>, <850000>;
-+			};
-+
-+			opp-580000000 {
-+				opp-hz = /bits/ 64 <580000000>;
-+				opp-microvolt = <712500>, <850000>;
-+			};
-+
-+			opp-620000000 {
-+				opp-hz = /bits/ 64 <620000000>;
-+				opp-microvolt = <725000>, <850000>;
-+			};
-+
-+			opp-653000000 {
-+				opp-hz = /bits/ 64 <653000000>;
-+				opp-microvolt = <743750>, <850000>;
-+			};
-+
-+			opp-698000000 {
-+				opp-hz = /bits/ 64 <698000000>;
-+				opp-microvolt = <768750>, <868750>;
-+			};
-+
-+			opp-743000000 {
-+				opp-hz = /bits/ 64 <743000000>;
-+				opp-microvolt = <793750>, <893750>;
-+			};
-+
-+			opp-800000000 {
-+				opp-hz = /bits/ 64 <800000000>;
-+				opp-microvolt = <825000>, <925000>;
-+			};
-+		};
-+
- 		mmsys: syscon@14000000 {
- 			compatible = "mediatek,mt8183-mmsys", "syscon";
- 			reg = <0 0x14000000 0 0x1000>;
+ void panfrost_gpu_power_off(struct panfrost_device *pfdev)
 -- 
 2.25.0.341.g760bfbb309-goog
 
