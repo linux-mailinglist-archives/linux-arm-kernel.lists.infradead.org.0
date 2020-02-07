@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A1B0155B3C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 16:56:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C141155AFE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 16:49:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Date:
-	From:Message-Id:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PoTBVmmly7qS1O/fhxrGZWlxbs246B+1dCkAPcF58Ko=; b=JUk
-	PvvP5RKnnQUXWRy8rmriDb0eCNp1zMkxIxX5WoLRI6qC5Vq2O3csIXKkF5ESWRnLWemFsuTAT9gmZ
-	9YFM9ybuyagSV70w8BHVJyOljKV42ix+TcwZD4NjtzgP0G8yyoSzbQkzm4E4t8TNeh23pzsHblqQx
-	WgKB7OV3ttumMPSguwtqlv4dzHtMmYzcRIN0raXDUu7inawXzH2i9tqpDvYBEmMrj0jksQokqM3EE
-	auzsTybqFctRbLyLts5CV38Cbw5JizAN1by27Yqavs7SKhz59zMO+VfHbyyt2LQMZ3nBT4aWoey1O
-	Tavm4njEEs1v0hWN9lMjQzn1k8sTuEg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vGCxAlttRlG4XryaQtP4yrchwaAvbk2LRMJXXL1CiYw=; b=fsBQv3LKfeBpek
+	GKUe16WPmqcUZ28e2X0fKhf7Tti1va2kdPACAFoCk3N1BlyxXCH8L9Wqsazpf4vqzxkY2tIRwlFrF
+	ra21a0HQGevCHCrUQ1qppviu/P7Fe6DuanwG+pwDm+2c2uFAO4x6OQONVFgwpXmWSOdI5adN+3/+A
+	bxSHXAergA48kl2xVSQvZpN821iinWhMNDy5yyF3UiBD7F+vx7uue6eKbJkIZwU7M42oiqhoJB4DE
+	4zGTP4ECwV5ACFp542qPqWuCRxGM7ebPdHFxYqLpD0WaRsa3KOzgqLhio5MR6VJqW8J2Q5rNWa0ac
+	TZ9vqfJikhdn8ZmAI7Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j05zi-0003sm-Qx; Fri, 07 Feb 2020 15:56:38 +0000
-Received: from mailout3.hostsharing.net ([2a01:4f8:150:2161:1:b009:f236:0])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j05za-0003rV-65; Fri, 07 Feb 2020 15:56:32 +0000
-Received: from h08.hostsharing.net (h08.hostsharing.net [83.223.95.28])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client CN "*.hostsharing.net",
- Issuer "COMODO RSA Domain Validation Secure Server CA" (not verified))
- by mailout3.hostsharing.net (Postfix) with ESMTPS id 6682E100B01B2;
- Fri,  7 Feb 2020 16:47:17 +0100 (CET)
-Received: from localhost (unknown [87.130.102.138])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by h08.hostsharing.net (Postfix) with ESMTPSA id 097A8615E104;
- Fri,  7 Feb 2020 16:47:17 +0100 (CET)
-X-Mailbox-Line: From 988737dbbc4e499c2faaaa4e567ba3ed8deb9a89 Mon Sep 17
- 00:00:00 2001
-Message-Id: <988737dbbc4e499c2faaaa4e567ba3ed8deb9a89.1581089797.git.lukas@wunner.de>
-From: Lukas Wunner <lukas@wunner.de>
-Date: Fri, 7 Feb 2020 16:46:41 +0100
-Subject: [PATCH] irqchip/bcm2835: Quiesce IRQs left enabled by bootloader
-To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
- Marc Zyngier <maz@kernel.org>,
- "Nicolas Saenz Julienne" <nsaenzjulienne@suse.de>
+	id 1j05sW-0008Kw-Ut; Fri, 07 Feb 2020 15:49:12 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j05sO-0008KD-7K
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 15:49:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1967F1FB;
+ Fri,  7 Feb 2020 07:49:03 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 337343F68E;
+ Fri,  7 Feb 2020 07:49:02 -0800 (PST)
+Date: Fri, 7 Feb 2020 15:48:55 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Dietmar Eggemann <dietmar.eggemann@arm.com>
+Subject: Re: [PATCH] drivers base/arch_topology: Remove 'struct sched_domain'
+ forward declaration
+Message-ID: <20200207154855.GA5529@bogus>
+References: <20200207114913.3052-1-dietmar.eggemann@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200207114913.3052-1-dietmar.eggemann@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_075630_540717_E625BDB7 
-X-CRM114-Status: GOOD (  17.38  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200207_074904_615543_F4324274 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,113 +64,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Kristina Brooks <notstina@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Ray Jui <rjui@broadcom.com>, Serge Schneider <serge@raspberrypi.org>,
- linux-kernel@vger.kernel.org, Phil Elwell <phil@raspberrypi.org>,
- Matthias Brugger <mbrugger@suse.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Martin Sperl <kernel@martin.sperl.org>,
- linux-arm-kernel@lists.infradead.org, Stefan Wahren <wahrenst@gmx.net>
-MIME-Version: 1.0
+Cc: Juri Lelli <juri.lelli@redhat.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Customers of our "Revolution Pi" open source PLCs (which are based on
-the Raspberry Pi) have reported random lockups as well as jittery eMMC,
-UART and SPI latency.  We were able to reproduce the lockups in our lab
-and hooked up a JTAG debugger:
+On Fri, Feb 07, 2020 at 12:49:13PM +0100, Dietmar Eggemann wrote:
+> The sched domain pointer argument from topology_get_freq_scale() and
+> topology_get_cpu_scale() got removed by commit 7673c8a4c75d
+> ("sched/cpufreq: Remove arch_scale_freq_capacity()'s 'sd' parameter")
+> and commit 8ec59c0f5f49 ("sched/topology: Remove unused 'sd' parameter
+> from arch_scale_cpu_capacity()").
+>
+> So the 'struct sched_domain' forward declaration is no longer needed.
+> Remove it.
+>
+> W/o the sched domain pointer argument the storage class and inline
+> definition as well as the return type, function name and parameter list
+> fit all into one line.
 
-It turns out that the USB controller's interrupt is already enabled when
-the kernel boots.  All interrupts are disabled when the chip comes out
-of power-on reset, according to the spec.  So apparently the bootloader
-enables the interrupt but neglects to disable it before handing over
-control to the kernel.
+Looks simple and good to me. I don't want to ask you split the patch as
+$subject indicates only one of the 2 changes in the patch. I am fine with
+it as it but if anyone else shout for that, go for the split.
 
-The bootloader is a closed source blob provided by the Raspberry Pi
-Foundation.  Development of an alternative open source bootloader was
-begun by Kristina Brooks but it's not fully functional yet.  Usage of
-the blob is thus without alternative for the time being.
+Either way,
 
-The Raspberry Pi Foundation's downstream kernel has a performance-
-optimized USB driver (which we use on our Revolution Pi products).
-The driver takes advantage of the FIQ fast interrupt.  Because the
-regular USB interrupt was left enabled by the bootloader, both the
-FIQ and the normal interrupt is enabled once the USB driver probes.
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 
-The spec has the following to say on simultaneously enabling the FIQ
-and the normal interrupt of a peripheral:
+You have not added Greg who generally picks up the patch. Can you repost
+with him in cc and my reviewed-by so that he can pick it up.
 
-"One interrupt source can be selected to be connected to the ARM FIQ
- input.  An interrupt which is selected as FIQ should have its normal
- interrupt enable bit cleared.  Otherwise a normal and an FIQ interrupt
- will be fired at the same time.  Not a good idea!"
-                                  ^^^^^^^^^^^^^^^
-https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf
-page 110
-
-On a multicore Raspberry Pi, the Foundation's kernel routes all normal
-interrupts to CPU 0 and the FIQ to CPU 1.  Because both the FIQ and the
-normal interrupt is enabled, a USB interrupt causes CPU 0 to spin in
-bcm2836_chained_handle_irq() until the FIQ on CPU 1 has cleared it.
-Interrupts with a lower priority than USB are starved as long.
-
-That explains the jittery eMMC, UART and SPI latency:  On one occasion
-I've seen CPU 0 blocked for no less than 2.9 msec.  Basically,
-everything not USB takes a performance hit:  Whereas eMMC throughput
-on a Compute Module 3 remains relatively constant at 23.5 MB/s with
-this commit, it irregularly dips to 23.0 MB/s without this commit.
-
-The lockups occur when CPU 0 receives a USB interrupt while holding a
-lock which CPU 1 is trying to acquire while the FIQ is temporarily
-disabled on CPU 1.
-
-I've tested old releases of the Foundation's bootloader as far back as
-1.20160202-1 and they all leave the USB interrupt enabled.  Still older
-releases fail to boot a contemporary kernel on a Compute Module 1 or 3,
-which are the only Raspberry Pi variants I have at my disposal for
-testing.
-
-Fix by disabling IRQs left enabled by the bootloader.  Although the
-impact is most pronounced on the Foundation's downstream kernel,
-it seems prudent to apply the fix to the upstream kernel to guard
-against such mistakes in any present and future bootloader.
-
-An alternative, though more convoluted approach would be to clear the
-IRQD_IRQ_MASKED flag on all interrupts left enabled on boot.  Then the
-first invocation of handle_level_irq() would mask and thereby quiesce
-those interrupts.
-
-Signed-off-by: Lukas Wunner <lukas@wunner.de>
-Cc: Serge Schneider <serge@raspberrypi.org>
-Cc: Kristina Brooks <notstina@gmail.com>
-Cc: stable@vger.kernel.org
----
- drivers/irqchip/irq-bcm2835.c | 7 +++++++
- 1 file changed, 7 insertions(+)
-
-diff --git a/drivers/irqchip/irq-bcm2835.c b/drivers/irqchip/irq-bcm2835.c
-index 418245d31921..0d9a5a7ebe2c 100644
---- a/drivers/irqchip/irq-bcm2835.c
-+++ b/drivers/irqchip/irq-bcm2835.c
-@@ -150,6 +150,13 @@ static int __init armctrl_of_init(struct device_node *node,
- 		intc.enable[b] = base + reg_enable[b];
- 		intc.disable[b] = base + reg_disable[b];
- 
-+		irq = readl(intc.enable[b]);
-+		if (irq) {
-+			writel(irq, intc.disable[b]);
-+			pr_err(FW_BUG "Bootloader left irq enabled: "
-+			       "bank %d irq %*pbl\n", b, IRQS_PER_BANK, &irq);
-+		}
-+
- 		for (i = 0; i < bank_irqs[b]; i++) {
- 			irq = irq_create_mapping(intc.domain, MAKE_HWIRQ(b, i));
- 			BUG_ON(irq <= 0);
--- 
-2.24.0
-
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
