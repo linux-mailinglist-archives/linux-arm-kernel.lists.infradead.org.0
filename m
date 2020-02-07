@@ -2,79 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E17C1155668
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 12:10:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81353155667
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 12:10:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wsKCg9BmLCBbJnKFzGCDRhjR726RjV/3bgjvclPj84Y=; b=H89Flyp9GfJO8e
-	MuzpVYJU/cfEgXvelW1HUvZDsIsunHSocbDfrvj55HBjqq/tQ6P2cykSvjq1Zmu+z/qYdRfKVfINS
-	tNzLfw4MhLeV4lICeHvxMCucJGr8RKpQGk1iMCffawZIVPUX4nZHcU1EOfsNqK2Zbd6DUIk8XrSJI
-	B3/FtTORd3m9bt3H9uS9ERy++/O3JpmvPDbIWx6Qp3baD6/SiTozEyCsMqfgsC5Vmzq3ahT4OIGFP
-	b4RUYxidEku56yA1dAqebG7GO5dJ7Nalg8dJ/A5TjEaHombQzId1Z8PDSxFmmyDA7kJcWewDnGggz
-	ONc/x27L3xASz1ci2ksw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=o/Wpla56CXc+BPunrgZHJLRLZ2WoZNAVL2vKWYFmv1s=; b=tIhGGYOFjLwuIa+Y2G9pIoX1a
+	aEN4NASvfHY5DHhZOAtd5IHio2Lo/TN8fW+TDeQp98l2SspA0FqzcGXQMHkO9xs25iVx295685Z7u
+	Zzp5TjkkLe8GIarY3/2PgtLQfu/bB2OStrr+JbpI5p0s7stdQ0NhHuFvU65wZ/ajfGnplgovpf9NI
+	enkcLYz5nJvefvZzJ1r9TByn/3H2EvnGnZb4xnGC7ktZPUaFQyi0kNLd2LrZcpgzwishWJa3pMine
+	Wu6Siow8kIpKPePT5Su0SU2LhsmlEdXcqVwXdeaoVRenAOwDA3biJF4Dtj/rXnJTQZVfr2O2beWXp
+	EDnbVBTCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j01Wk-000873-AO; Fri, 07 Feb 2020 11:10:26 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j01WP-0006aO-Mo; Fri, 07 Feb 2020 11:10:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j01WF-0006Zu-DE
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 11:09:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581073794;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=SCntgRDrXOkiD6uxO1AkQeRXwRIwbg4qjS/12HTChTM=;
- b=bBYKRJEQc7qRMeFHuO1GouMOJPyjwEA/aZZxEimOjP1cBf4nPxbRqWg1VPe3n31JrrQUpF
- Yom6SVANzY0YKTX1BPEg0bL1NaEeOtcKcN39AecXll1w6sW0CitzYx9S/2R14mEE1WfVXh
- gJTzMO5KTSbvsJalR20rOGRg6U6I8HU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-256-Z5R0xcXuMqK-E4vfKKJ61A-1; Fri, 07 Feb 2020 06:09:50 -0500
-X-MC-Unique: Z5R0xcXuMqK-E4vfKKJ61A-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1j01WD-0006ZO-FN
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 11:09:54 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1C5631005513;
- Fri,  7 Feb 2020 11:09:49 +0000 (UTC)
-Received: from lacos-laptop-7.usersys.redhat.com (ovpn-117-138.ams2.redhat.com
- [10.36.117.138])
- by smtp.corp.redhat.com (Postfix) with ESMTP id BBF4A60BF7;
- Fri,  7 Feb 2020 11:09:46 +0000 (UTC)
-Subject: Re: [PATCH 1/2] efi/libstub: add support for loading the initrd from
- a device path
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>
-References: <20200206140352.6300-1-ardb@kernel.org>
- <20200206140352.6300-2-ardb@kernel.org>
- <a6d7fefb-2f02-86a3-66aa-c3c129a91fb1@gmx.de>
- <CAKv+Gu9Z24GeqrqKhPJN+aAu8crSKvT0ZBeFL=0ik=z2Sd1FmQ@mail.gmail.com>
-From: Laszlo Ersek <lersek@redhat.com>
-Message-ID: <ecc0febc-b964-5754-580f-7514427a068d@redhat.com>
-Date: Fri, 7 Feb 2020 12:09:45 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ by mail.kernel.org (Postfix) with ESMTPSA id 9D25320720;
+ Fri,  7 Feb 2020 11:09:50 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581073790;
+ bh=YtjeGCn68V/W0a9LzM3q6bLhd/qtIlFq6rULUBv7KcU=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Tk5hFyqLF7Lwyb8GIAxvdOqUCLSt9+nWA/f58u7fk6oB0Uk5vh/77OrtCccUaSKJi
+ tUUERm4UmMVStUrK6mUeUxXImz5fIPdgFMw3WG8YgZmKrBb0JRakYr/lkrAbm2k2VY
+ 8XbjT4SCQekNlRz0tiV3Hq13GBeY2hpo0nVJDqTU=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j01W8-003W5T-RP; Fri, 07 Feb 2020 11:09:48 +0000
 MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu9Z24GeqrqKhPJN+aAu8crSKvT0ZBeFL=0ik=z2Sd1FmQ@mail.gmail.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+Date: Fri, 07 Feb 2020 11:09:48 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
+In-Reply-To: <AM0PR04MB44815F11C94E5F35AE7B0B21881C0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1580994086-17850-1-git-send-email-peng.fan@nxp.com>
+ <1580994086-17850-2-git-send-email-peng.fan@nxp.com>
+ <7875e2533c4ba23b8ca0a2a296699497@kernel.org> <20200207104736.GB36345@bogus>
+ <5a073c37e877d23977e440de52dba6e0@kernel.org>
+ <AM0PR04MB44815F11C94E5F35AE7B0B21881C0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+Message-ID: <ce775af0803d174fa2ad5dfc797592d9@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.8
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: peng.fan@nxp.com, sudeep.holla@arm.com, robh+dt@kernel.org,
+ mark.rutland@arm.com, devicetree@vger.kernel.org, f.fainelli@gmail.com,
+ viresh.kumar@linaro.org, linux-kernel@vger.kernel.org, linux-imx@nxp.com,
+ andre.przywara@arm.com, linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_030955_525542_12362526 
-X-CRM114-Status: GOOD (  15.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200207_030953_560960_D24AEF76 
+X-CRM114-Status: GOOD (  20.35  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,41 +94,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
- Daniel Kiper <daniel.kiper@oracle.com>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
- Leif Lindholm <leif@nuviainc.com>, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, f.fainelli@gmail.com,
+ viresh.kumar@linaro.org, linux-kernel@vger.kernel.org, andre.przywara@arm.com,
+ robh+dt@kernel.org, dl-linux-imx <linux-imx@nxp.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/06/20 23:35, Ard Biesheuvel wrote:
-> On Thu, 6 Feb 2020 at 18:26, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
-
->> When booting via GRUB it will be GRUB knowing which initrd to load.
->>
+On 2020-02-07 11:00, Peng Fan wrote:
+>> Subject: Re: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc 
+>> transports
+>> 
+>> On 2020-02-07 10:47, Sudeep Holla wrote:
+>> > On Fri, Feb 07, 2020 at 10:08:36AM +0000, Marc Zyngier wrote:
+>> >> On 2020-02-06 13:01, peng.fan@nxp.com wrote:
+>> >> > From: Peng Fan <peng.fan@nxp.com>
+>> >> >
+>> >> > SCMI could use SMC/HVC as tranports, so add into devicetree binding
+>> >> > doc.
+>> >> >
+>> >> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+>> >> > ---
+>> >> >  Documentation/devicetree/bindings/arm/arm,scmi.txt | 4 +++-
+>> >> >  1 file changed, 3 insertions(+), 1 deletion(-)
+>> >> >
+>> >> > diff --git a/Documentation/devicetree/bindings/arm/arm,scmi.txt
+>> >> > b/Documentation/devicetree/bindings/arm/arm,scmi.txt
+>> >> > index f493d69e6194..03cff8b55a93 100644
+>> >> > --- a/Documentation/devicetree/bindings/arm/arm,scmi.txt
+>> >> > +++ b/Documentation/devicetree/bindings/arm/arm,scmi.txt
+>> >> > @@ -14,7 +14,7 @@ Required properties:
+>> >> >
+>> >> >  The scmi node with the following properties shall be under the
+>> >> > /firmware/ node.
+>> >> >
+>> >> > -- compatible : shall be "arm,scmi"
+>> >> > +- compatible : shall be "arm,scmi" or "arm,scmi-smc"
+>> >> >  - mboxes: List of phandle and mailbox channel specifiers. It
+>> >> > should contain
+>> >> >  	  exactly one or two mailboxes, one for transmitting messages("tx")
+>> >> >  	  and another optional for receiving the notifications("rx") if
+>> >> > @@ -25,6 +25,8 @@ The scmi node with the following properties shall
+>> >> > be under the /firmware/ node.
+>> >> >  	  protocol identifier for a given sub-node.
+>> >> >  - #size-cells : should be '0' as 'reg' property doesn't have any size
+>> >> >  	  associated with it.
+>> >> > +- arm,smc-id : SMC id required when using smc transports
+>> >> > +- arm,hvc-id : HVC id required when using hvc transports
+>> >> >
+>> >> >  Optional properties:
+>> >>
+>> >> Not directly related to DT: Why do we need to distinguish between SMC
+>> >> and HVC?
+>> >
+>> > IIUC you want just one property to get the function ID ? Does that
+>> > align with what you are saying ? I wanted to ask the same question and
+>> > I see no need for 2 different properties.
+>> 
+>> Exactly. Using SMC or HVC should come from the context, and there is 
+>> zero
+>> value in having different different IDs, depending on the conduit.
+>> 
+>> We *really* want SMC and HVC to behave the same way. Any attempt to
+>> make them different should just be NAKed.
 > 
-> Exactly, which is why GRUB will implement this protocol. That way, it
-> does not have to touch the DT at all, or create a bootparams struct
-> from setup data and inspect the various flags about placement,
-> alignment, preferred addresses, etc.
+> ok. Then just like psci node,
+> Add a "method" property for each protocol, and add "arm,func-id" to
+> indicate the ID.
 > 
->> Please, indicate which software you expect to expose the initrd related
->> EFI_LOAD_FILE2_PROTOCOL.
->>
-> 
-> The primary use case is GRUB and other intermediate loaders, since it
-> would remove any need for these components to know any such details.
-> My aim is to make the next architecture that gets added to GRUB for
-> EFI boot 100% generic.
+> How about this?
 
-Understood, thanks. It sounds plausible to me.
+Or rather just a function ID, full stop. the conduit *MUST* be inherited
+from the PSCI context.
 
-Laszlo
-
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
