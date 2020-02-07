@@ -2,56 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADF9B155592
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 11:24:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EBC915559E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 11:27:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G7+Ikdo9HNAutYcccy2xplw6zvd6ruF9TmcczFFbIio=; b=m87W6aLnamNMql
-	fcP4fq4Lf2os7RiEMrywwQduI53Bvb40YlI0lkyZxh5S6atFTcIoorezduPYmOfQyso2+0Fl3oErf
-	6O1iicXJdYvpGkBB0ZLM5jRcldPV90UrQUh0EgRGP8/EUYydw5U/qRxZllFyLe1V0adVTrhKzo3Nw
-	czEHJE/yRUFC56bQuHiThp8ZeYN/m6hdrjG37F3P1QI1FD27iaqccLBuYVHmdcbVQgvTRQpzsxIbk
-	qRnMcTDL8m+o5Hez2ZOSmyHOGB1w0na5QdtrY0bgxjVQGR0EGizIoCLdXFqExVwcg/9NGL+sAOTKI
-	klCcNfBL25rgw/oWYBsA==;
+	List-Owner; bh=kgUwFxIz4P8rpjSpfEP5LO8qK2rFIu2Yisi9Z0r2Y6s=; b=ZGQBoyRstlu0XO
+	tnfsnWVeYOmJfW2cV6HdbcNk7ChBOeLJh5/QZgjfPV3en8D6I5onxPicik7Ph8oEwAErRpnbsZAvF
+	PI4Hn8Yu7Y9s0h1eu3UzX4clhwzvNblipZdtPacKfpQyLwxLdTZzpnjg9P6Lf/BEIQ7Q+8AaD5uZ+
+	mDv92vGTzenMeIM6tdhq7vJcsCBixFH0A328k9IfReGcmMxqugVSfgJyOgePqs3FMZN3kju16cKH2
+	qijb3GFpIf8p/2HXmOwd+qPqVxnqTBCTVB8ykGIGlDHnQyN5UTBH1IzxxfzoiPkPRcY45LMIY8Z8x
+	iHFwgj22z3foKt5Z+mUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j00oT-0005DN-O8; Fri, 07 Feb 2020 10:24:41 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1j00qn-0006iw-DT; Fri, 07 Feb 2020 10:27:05 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j00oN-0005D3-Un
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 10:24:37 +0000
-Received: from localhost (unknown [IPv6:2001:982:756:1:57a7:3bfd:5e85:defb])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ id 1j00qi-0006im-Sm
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 07 Feb 2020 10:27:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=L3BlihRpV2iRLC6YY8WIGJCu0AhpCAbYwMvQBNO6mS0=; b=TexuxSH9agtY/5ee2O4MoaKYeN
+ 583CwsTzpUTyGYS1puz5eeDqsjFT4EoBEFIL9ehVekKcUX/dRvL4hmZY9nB07VxbBPSxaqKePvDqF
+ w2YEQJIRq4rfn594HQdCGkZY7IPGTHO/0SsYNLLvzhl+AfOXlCAACcbGt7KN4h4NA8nrqdPnV0afw
+ Qv2zUyrcSFfk2UmHFrg5l3caflmW20yszfEWQXGBvDBCcTR9E7sy+uJtXypPQ1SfnrJMPhsWV2dTo
+ 16Lu4zh9GfhutLTVO7G1ZWw4agBQiV4LMR0wkE76vJSmEbkboXl5S9MEmGPJLhbjQ+BJ+RsxLQ6ti
+ 2LHaM6Ag==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j00qf-0005BO-Ny; Fri, 07 Feb 2020 10:26:57 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id C454715A3284C;
- Fri,  7 Feb 2020 02:24:33 -0800 (PST)
-Date: Fri, 07 Feb 2020 11:24:32 +0100 (CET)
-Message-Id: <20200207.112432.420753747470150864.davem@davemloft.net>
-To: zhengdejin5@gmail.com
-Subject: Re: [PATCH v3] net: stmmac: fix a possible endless loop
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200206152917.25564-1-zhengdejin5@gmail.com>
-References: <20200206152917.25564-1-zhengdejin5@gmail.com>
-X-Mailer: Mew version 6.8 on Emacs 26.3
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Fri, 07 Feb 2020 02:24:35 -0800 (PST)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_022435_994315_E62F6A3B 
-X-CRM114-Status: UNSURE (   8.04  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 694D430258F;
+ Fri,  7 Feb 2020 11:25:09 +0100 (CET)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id 3DC162B834C29; Fri,  7 Feb 2020 11:26:56 +0100 (CET)
+Date: Fri, 7 Feb 2020 11:26:56 +0100
+From: Peter Zijlstra <peterz@infradead.org>
+To: Dmitry Osipenko <digetx@gmail.com>
+Subject: Re: [tip: core/kprobes] arm/ftrace: Use __patch_text()
+Message-ID: <20200207102656.GS14946@hirez.programming.kicks-ass.net>
+References: <20191113092636.GG4131@hirez.programming.kicks-ass.net>
+ <157544841563.21853.2859696202562513480.tip-bot2@tip-bot2>
+ <10cbfd9e-2f1f-0a0c-0160-afe6c2ccbebd@gmail.com>
+ <20200207101747.GE14914@hirez.programming.kicks-ass.net>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200207101747.GE14914@hirez.programming.kicks-ass.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,27 +69,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, vkoul@kernel.org, joabreu@synopsys.com,
- mcoquelin.stm32@gmail.com, niklas.cassel@linaro.org, peppe.cavallaro@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, x86 <x86@kernel.org>,
+ Denys Vlasenko <dvlasenk@redhat.com>, linux-tip-commits@vger.kernel.org,
+ Brian Gerst <brgerst@gmail.com>, ard.biesheuvel@linaro.org,
+ linux-kernel@vger.kernel.org,
+ tip-bot2 for Peter Zijlstra <tip-bot2@linutronix.de>,
+ Jon Hunter <jonathanh@nvidia.com>, rabin@rab.in,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
+ james.morse@arm.com, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dejin Zheng <zhengdejin5@gmail.com>
-Date: Thu,  6 Feb 2020 23:29:17 +0800
-
-> It forgot to reduce the value of the variable retry in a while loop
-> in the ethqos_configure() function. It may cause an endless loop and
-> without timeout.
+On Fri, Feb 07, 2020 at 11:17:47AM +0100, Peter Zijlstra wrote:
+> Is that crash with FTRACE=y or =n ?
 > 
-> Fixes: a7c30e62d4b8 ("net: stmmac: Add driver for Qualcomm ethqos")
-> Signed-off-by: Dejin Zheng <zhengdejin5@gmail.com>
-> Acked-by: Vinod Koul <vkoul@kernel.org>
+> This really isn't making much sense to me, Will, Mark, any clues?
 
-Applied and queued up for -stable, thank you.
+Does the initial patch:
+
+  https://lkml.kernel.org/r/20191111132458.220458362@infradead.org
+
+work, or does it crash the exact same?
 
 _______________________________________________
 linux-arm-kernel mailing list
