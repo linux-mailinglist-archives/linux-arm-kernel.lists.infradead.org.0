@@ -2,96 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 999C8155E60
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 19:45:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A78A1155E73
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 19:53:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7KGF0Up98hCOMDXDPl2Xm6nDHm45T+EeZ6sgKqe92w8=; b=cKoX/Af0UWK15w
-	FYdQN7EpbQV8oADvBN/lRacoyCURRPM/MLHfmymHTpcQ95gn2AuL3/UqDBBH8UnDP1gJs6q7LLWqN
-	fSs1EBfIrmkiFSrSDtIWHjYD7NL81cEpeT4CjKIte/2fFLRntHh4poDRAbQ5vHfUkDy2/LWzItfI6
-	VwdWqtBN5yzGGbXd/zFRr+q0GAuYVvNhFZbgrr+qabvaSKJGMAQyP0wXSneEBJIzJANfBieAjfOO5
-	ZdGryl8ES9sF0ncvPbXEI7NP9rPbjnHntW1MGELxtixFXICui4CyNlHepmJaZGjBLlH+olavZ/Y+V
-	liRsCi2vy2UtLDF0ta9A==;
+	List-Owner; bh=pCwawpHY5075FgKEKdL+JoPWduuZnViAt/UjpfduhzU=; b=En5sPYtdi5H0q2
+	dyadv6BpSfGn54eazv5duMrxBkFaCxhd/+NpvMoVXLMwp0o3CGforz/pL+grvZv6B8rq+Mgyuc22f
+	3FUQ0fZskCj/bKnd3ImJ+QPuGtFoGHr5GZZ6ZzcPX9EPejuySep9lHDwMpkCbZbb2unxCqHw/coTU
+	XZW0xLmda+qQHjm0F5PgCDZtoGX1avdr3bFPI4+bPYaFLcX4szRzKNqb10M6/UxV16zTegfBwD9fG
+	zsS0c3LWnVojSC8ArerC/zsKvtHd0/hwpia0WLATrxOdIWmq1bbZ6Vrwtd2V5ViBEfqvzD2LWslmO
+	cBlg5zz2MRyaBbL9j78g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j08dM-0003tm-8z; Fri, 07 Feb 2020 18:45:44 +0000
-Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
+	id 1j08kO-0005cV-Tu; Fri, 07 Feb 2020 18:53:01 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j08dF-0003n9-Vk
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 18:45:39 +0000
-Received: by mail-qv1-xf43.google.com with SMTP id p2so75696qvo.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Feb 2020 10:45:37 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:date:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=4WoqZWhlFigowj5nWAxAoZuoh6Wc+IYKOBSeIA3KMeY=;
- b=XM2lXlMP2sn+m1mIjaaP947U0iR9QtZ82UpnD9WqCfJgDquwi86QWmxWgg+jyPWB3c
- l0S9UFQTr4e6lnpjcMEJHyRamSVdMUM06phOyWpJpB6V3XMR1v+ypWQKwrF0m7eUvqMZ
- Vm3YlfwGch2ZfKdys6dvcNqNDsJgLkbpqbCNFEWPJGKxSDnsi00XIIAVWvJ/i38gcQAO
- HkRm19Y83pz16SAin7Xib0X/38x9C86HNVr0ilp0p8bYQFnHTyofKTMJpj8IRLufE2uC
- g3/JzUOWUZOwiKApW/qZytVwaIphsiSviWTeb8uUV/VrJMwygmihjx14jYNEc3Px7Nbm
- i2MQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:date:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=4WoqZWhlFigowj5nWAxAoZuoh6Wc+IYKOBSeIA3KMeY=;
- b=I8Pvwe6L5n56iPsH1F6F7wsCVTs6kNO+C00VO3k9Uhz2LobWVu61Xy9dcfZBuwpWeK
- 4cLJ5I62WJYsT8qCGUrolHli+x0XF0bm4hpun4TJwp/mno+3+FiOnZlLrq0a3VC8W8Y4
- f4Bha9OBNqRkOpkz93NCLARQiqXIUp7Jx2NHx1/Uvg5L5Dc7LCR/5XtZ4j7E8jM1qncU
- oC552Tru9TlKsZOu24mte9Zaw5MmGskRSBMRB/XI6m04VDrbNrRDizQ7EfI8QieKnNzX
- H/n2BWTn4CW2pv7J3Ch9Ek7VAUFe3hT1HcDx3ZPCHl1eqWNLLAwCYCi5q/OI2E62COG9
- VUQA==
-X-Gm-Message-State: APjAAAUHFm7ijT3dFkAzcnujhq4oHVgOUm3vlc0wY3sqo2WP/ZONnHA2
- OGj+m0eoFHEn5+32TfAHBVc=
-X-Google-Smtp-Source: APXvYqxhjNUXNB9tXrt+KrnUN2gKsbN6PjyaSzDloBuQ41XSA3y05a5xQPsnanLI4Iv7WvdMG73t3Q==
-X-Received: by 2002:a05:6214:b23:: with SMTP id
- w3mr208717qvj.181.1581101136603; 
- Fri, 07 Feb 2020 10:45:36 -0800 (PST)
-Received: from rani.riverdale.lan ([2001:470:1f07:5f3::b55f])
- by smtp.gmail.com with ESMTPSA id o7sm1722563qkd.119.2020.02.07.10.45.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 07 Feb 2020 10:45:36 -0800 (PST)
-From: Arvind Sankar <nivedita@alum.mit.edu>
-X-Google-Original-From: Arvind Sankar <arvind@rani.riverdale.lan>
-Date: Fri, 7 Feb 2020 13:45:34 -0500
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
-Message-ID: <20200207184532.GA3276112@rani.riverdale.lan>
-References: <20200206140352.6300-1-ardb@kernel.org>
+ id 1j08kG-0005bb-4W
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 18:52:53 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 07 Feb 2020 10:52:48 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,414,1574150400"; d="scan'208";a="265095893"
+Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
+ ([10.54.74.202])
+ by fmsmga002.fm.intel.com with ESMTP; 07 Feb 2020 10:52:47 -0800
+Date: Fri, 7 Feb 2020 10:52:47 -0800
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: Peter Xu <peterx@redhat.com>
+Subject: Re: [PATCH v4 16/19] KVM: Ensure validity of memslot with respect to
+ kvm_get_dirty_log()
+Message-ID: <20200207185247.GJ2401@linux.intel.com>
+References: <20191217204041.10815-1-sean.j.christopherson@intel.com>
+ <20191217204041.10815-17-sean.j.christopherson@intel.com>
+ <20191224181930.GC17176@xz-x1>
+ <20200114182506.GF16784@linux.intel.com>
+ <20200206220355.GH700495@xz-x1>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200206140352.6300-1-ardb@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200206220355.GH700495@xz-x1>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_104538_049889_9D68980B 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200207_105252_209406_4E8AF7AA 
+X-CRM114-Status: GOOD (  24.46  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [niveditas98[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [niveditas98[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,24 +72,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi@vger.kernel.org, agraf@csgraf.de, xypron.glpk@gmx.de,
- daniel.kiper@oracle.com, ilias.apalodimas@linaro.org, mjg59@google.com,
- pjones@redhat.com, leif@nuviainc.com, lersek@redhat.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Wanpeng Li <wanpengli@tencent.com>, Janosch Frank <frankja@linux.ibm.com>,
+ kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ James Hogan <jhogan@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Cornelia Huck <cohuck@redhat.com>, linux-kernel@vger.kernel.org,
+ Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>,
+ kvm-ppc@vger.kernel.org, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Marc Zyngier <maz@kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 06, 2020 at 02:03:50PM +0000, Ard Biesheuvel wrote:
->   data structure. It also creates a time window where the initrd data sits
->   in memory, and can potentially be corrupted before the kernel is booted.
+On Thu, Feb 06, 2020 at 05:03:55PM -0500, Peter Xu wrote:
+> On Tue, Jan 14, 2020 at 10:25:07AM -0800, Sean Christopherson wrote:
+> > On Tue, Dec 24, 2019 at 01:19:30PM -0500, Peter Xu wrote:
+> > > On Tue, Dec 17, 2019 at 12:40:38PM -0800, Sean Christopherson wrote:
+> > > > +int kvm_get_dirty_log(struct kvm *kvm, struct kvm_dirty_log *log,
+> > > > +		      int *is_dirty, struct kvm_memory_slot **memslot)
+> > > >  {
+> > > >  	struct kvm_memslots *slots;
+> > > > -	struct kvm_memory_slot *memslot;
+> > > >  	int i, as_id, id;
+> > > >  	unsigned long n;
+> > > >  	unsigned long any = 0;
+> > > >  
+> > > > +	*memslot = NULL;
+> > > > +	*is_dirty = 0;
+> > > > +
+> > > >  	as_id = log->slot >> 16;
+> > > >  	id = (u16)log->slot;
+> > > >  	if (as_id >= KVM_ADDRESS_SPACE_NUM || id >= KVM_USER_MEM_SLOTS)
+> > > >  		return -EINVAL;
+> > > >  
+> > > >  	slots = __kvm_memslots(kvm, as_id);
+> > > > -	memslot = id_to_memslot(slots, id);
+> > > > -	if (!memslot->dirty_bitmap)
+> > > > +	*memslot = id_to_memslot(slots, id);
+> > > > +	if (!(*memslot)->dirty_bitmap)
+> > > >  		return -ENOENT;
+> > > >  
+> > > > -	n = kvm_dirty_bitmap_bytes(memslot);
+> > > > +	kvm_arch_sync_dirty_log(kvm, *memslot);
+> > > 
+> > > Should this line belong to previous patch?
+> > 
+> > No.
+> > 
+> > The previous patch, "KVM: Provide common implementation for generic dirty
+> > log functions", is consolidating the implementation of dirty log functions
+> > for architectures with CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT=y.
+> > 
+> > This code is being moved from s390's kvm_vm_ioctl_get_dirty_log(), as s390
+> > doesn't select KVM_GENERIC_DIRTYLOG_READ_PROTECT.  It's functionally a nop
+> > as kvm_arch_sync_dirty_log() is empty for PowerPC, the only other arch that
+> > doesn't select KVM_GENERIC_DIRTYLOG_READ_PROTECT.
+> > 
+> > Arguably, the call to kvm_arch_sync_dirty_log() should be moved in a
+> > separate prep patch.  It can't be a follow-on patch as that would swap the
+> > ordering of kvm_arch_sync_dirty_log() and kvm_dirty_bitmap_bytes(), etc...
+> > 
+> > My reasoning for not splitting it to a separate patch is that prior to this
+> > patch, the common code and arch specific code are doing separate memslot
+> > lookups via id_to_memslot(), i.e. moving the kvm_arch_sync_dirty_log() call
+> > would operate on a "different" memslot.   It can't actually be a different
+> > memslot because slots_lock is held, it just felt weird.
+> > 
+> > All that being said, I don't have a strong opinion on moving the call to
+> > kvm_arch_sync_dirty_log() in a separate patch; IIRC, I vascillated between
+> > the two options when writing the code.  If anyone wants it to be a separate
+> > patch I'll happily split it out.
 > 
+> (Sorry to respond so late)
+> 
+> I think the confusing part is the subject, where you only mentioned
+> the memslot change.  IMHO you can split the change to make it clearer,
+> or at least would you mind mention that kvm_arch_sync_dirty_log() move
+> in the commit message?  Thanks,
 
-I don't quite understand the time window aspect -- can you expand on
-that? It seems like the same time window exists between when the kernel
-is loaded and when it actually runs, no? Why is this more important for
-initrd?
+I'll add a few paragraphs to the changelog.  Splitting it out still feels
+weird.
 
 _______________________________________________
 linux-arm-kernel mailing list
