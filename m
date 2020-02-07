@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9174C155A9E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 16:23:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18812155AA1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 16:23:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Kf++ZmHbG3L4Muu3cwIu8J3iKQBJBPaCIn96cKqOk8w=; b=Mw6dfmjk7VgsKG2LB02qBopPvu
-	AQdQot7B/OQ/ykJPOkax+pP2RIXJZQE5mU+/qGDj00y95Mn8fEBlDNOh3nSq9B9jGdzlF02qbNo6U
-	JpBKM1N9hlv37EyBeZkOCgYXMvsRZDdZMiuI8Nri47FbLWUuQVxIenrQ5C1gvhB1YBDqHRhSVGmlM
-	7gnY/n7MyuTspXrGhwTgIE5kiqW/3dYkGVW92B0XrB/nw9Gmk+0MOX6HcyIZv/kLK+PENAQCWMf0u
-	IK55BdkyprWkFMXAuiN3mNcukErFHhfhBhcpoGmLhzuEs2ChCK5R7ANfR6DuXiPqi5+UByZRWTCh3
-	MUZE42Fw==;
+	bh=7AzMCT0BNLc/3mB9tEXQiIbMBvOEHojV09PM9e6rN40=; b=TQonjV/ZM9N0nqcBFeAOp5nES2
+	TqpLNcZYICM2uOt7cHbWcWKxbE1fMwmzMar8ZM+j+bzAJs38aj9A4DoPuYp/oQv1ifp84x2ASKL/F
+	SmR2nMrqQUjBKwxZKdKGjiTOSC3GDIpvbCGhEUa3obD/28CjqbSdKPhPrUMRpyzHhaW8CYz6zZVzG
+	KdQEMElO6tmAM0o97Z9gzV1yRFGkQJ5VH8KyCgGkoNIsF+nFZu+1JNceomZSo2T2bqW2XufTQn9+9
+	vXwupqM2venXkTOycENHnrxlt8r3FfCO/tHTEFOX/NX7y/bZYId98pyswhsvpEvcJc0byEMksxfw9
+	9fypsYTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j05T6-0006xj-SJ; Fri, 07 Feb 2020 15:22:56 +0000
+	id 1j05TI-000745-8T; Fri, 07 Feb 2020 15:23:08 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j05Sz-0006wa-E5
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 15:22:51 +0000
+ id 1j05T1-0006xJ-Dy
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 15:22:53 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 466C21FB;
- Fri,  7 Feb 2020 07:22:42 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2FFC91045;
+ Fri,  7 Feb 2020 07:22:50 -0800 (PST)
 Received: from e121896.default (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D51F73F6CF;
- Fri,  7 Feb 2020 07:22:38 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4204C3F6CF;
+ Fri,  7 Feb 2020 07:22:47 -0800 (PST)
 From: James Clark <james.clark@arm.com>
 To: jolsa@redhat.com, liwei391@huawei.com,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v3 0/4] perf tools: Add support for some spe events and
- precise ip
-Date: Fri,  7 Feb 2020 15:21:38 +0000
-Message-Id: <20200207152142.28662-1-james.clark@arm.com>
+Subject: [PATCH v3 1/4] perf tools: Move arm-spe-pkt-decoder.h/c to the new dir
+Date: Fri,  7 Feb 2020 15:21:39 +0000
+Message-Id: <20200207152142.28662-2-james.clark@arm.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200127123108.GC1114818@krava>
+In-Reply-To: <20200207152142.28662-1-james.clark@arm.com>
 References: <20200127123108.GC1114818@krava>
+ <20200207152142.28662-1-james.clark@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_072249_516974_4C6133BE 
-X-CRM114-Status: GOOD (  14.24  )
+X-CRM114-CacheID: sfid-20200207_072251_552643_D052C951 
+X-CRM114-Status: GOOD (  12.28  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -76,25 +76,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jirka,
+From: Tan Xiaojun <tanxiaojun@huawei.com>
 
-Thanks for the feedback. I've made the following changes:
+Create a new arm-spe-decoder directory for subsequent extensions and
+move arm-spe-pkt-decoder.h/c to this directory. No code changes.
 
-Removed the arm_spe_synth_opts struct and added the new types into
-itrace_synth_opts. I could re-use branch but the other ones are new.
-And the --trace argument documentation has been updated accordingly.
-
-I've removed the processing of the evlist from perf_evlist__splice_list_tail
-and put it in a weak function "auxtrace__preprocess_evlist" that is
-only built on Arm.
-
-For the 2 patches about the hang on termination, I have removed them
-because I haven't been able to reproduce it and everything is working
-ok for me. @Wei Li, are you able to post steps required to reproduce?
-
-Thanks
-James
-
+Signed-off-by: Tan Xiaojun <tanxiaojun@huawei.com>
+Tested-by: Qi Liu <liuqi115@hisilicon.com>
+Signed-off-by: James Clark <james.clark@arm.com>
 Cc: Will Deacon <will@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Cc: Peter Zijlstra <peterz@infradead.org>
@@ -105,35 +94,58 @@ Cc: Jiri Olsa <jolsa@redhat.com>
 Cc: Tan Xiaojun <tanxiaojun@huawei.com>
 Cc: Al Grant <al.grant@arm.com>
 Cc: Namhyung Kim <namhyung@kernel.org>
-
-Tan Xiaojun (4):
-  perf tools: Move arm-spe-pkt-decoder.h/c to the new dir
-  perf tools: Add support for "report" for some spe events
-  perf report: Add SPE options to --itrace argument
-  perf tools: Support "branch-misses:pp" on arm64
-
- tools/perf/Documentation/itrace.txt           |   5 +-
- tools/perf/arch/arm/util/auxtrace.c           |  38 +
- tools/perf/builtin-record.c                   |   5 +
- tools/perf/util/Build                         |   2 +-
- tools/perf/util/arm-spe-decoder/Build         |   1 +
- .../util/arm-spe-decoder/arm-spe-decoder.c    | 225 ++++++
- .../util/arm-spe-decoder/arm-spe-decoder.h    |  66 ++
- .../arm-spe-pkt-decoder.c                     |   0
- .../arm-spe-pkt-decoder.h                     |   2 +
- tools/perf/util/arm-spe.c                     | 756 +++++++++++++++++-
- tools/perf/util/arm-spe.h                     |   3 +
- tools/perf/util/auxtrace.c                    |  13 +
- tools/perf/util/auxtrace.h                    |  14 +-
- tools/perf/util/evlist.c                      |   1 +
- tools/perf/util/evsel.h                       |   1 -
- 15 files changed, 1090 insertions(+), 42 deletions(-)
+---
+ tools/perf/util/Build                                       | 2 +-
+ tools/perf/util/arm-spe-decoder/Build                       | 1 +
+ tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.c | 0
+ tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.h | 0
+ tools/perf/util/arm-spe.c                                   | 2 +-
+ 5 files changed, 3 insertions(+), 2 deletions(-)
  create mode 100644 tools/perf/util/arm-spe-decoder/Build
- create mode 100644 tools/perf/util/arm-spe-decoder/arm-spe-decoder.c
- create mode 100644 tools/perf/util/arm-spe-decoder/arm-spe-decoder.h
  rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.c (100%)
- rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.h (96%)
+ rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.h (100%)
 
+diff --git a/tools/perf/util/Build b/tools/perf/util/Build
+index 07da6c790b63..0184510083c2 100644
+--- a/tools/perf/util/Build
++++ b/tools/perf/util/Build
+@@ -104,7 +104,7 @@ perf-$(CONFIG_AUXTRACE) += intel-pt-decoder/
+ perf-$(CONFIG_AUXTRACE) += intel-pt.o
+ perf-$(CONFIG_AUXTRACE) += intel-bts.o
+ perf-$(CONFIG_AUXTRACE) += arm-spe.o
+-perf-$(CONFIG_AUXTRACE) += arm-spe-pkt-decoder.o
++perf-$(CONFIG_AUXTRACE) += arm-spe-decoder/
+ perf-$(CONFIG_AUXTRACE) += s390-cpumsf.o
+ 
+ ifdef CONFIG_LIBOPENCSD
+diff --git a/tools/perf/util/arm-spe-decoder/Build b/tools/perf/util/arm-spe-decoder/Build
+new file mode 100644
+index 000000000000..16efbc245028
+--- /dev/null
++++ b/tools/perf/util/arm-spe-decoder/Build
+@@ -0,0 +1 @@
++perf-$(CONFIG_AUXTRACE) += arm-spe-pkt-decoder.o
+diff --git a/tools/perf/util/arm-spe-pkt-decoder.c b/tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.c
+similarity index 100%
+rename from tools/perf/util/arm-spe-pkt-decoder.c
+rename to tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.c
+diff --git a/tools/perf/util/arm-spe-pkt-decoder.h b/tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.h
+similarity index 100%
+rename from tools/perf/util/arm-spe-pkt-decoder.h
+rename to tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.h
+diff --git a/tools/perf/util/arm-spe.c b/tools/perf/util/arm-spe.c
+index 53be12b23ff4..f3382a38d48e 100644
+--- a/tools/perf/util/arm-spe.c
++++ b/tools/perf/util/arm-spe.c
+@@ -23,7 +23,7 @@
+ #include "debug.h"
+ #include "auxtrace.h"
+ #include "arm-spe.h"
+-#include "arm-spe-pkt-decoder.h"
++#include "arm-spe-decoder/arm-spe-pkt-decoder.h"
+ 
+ struct arm_spe {
+ 	struct auxtrace			auxtrace;
 -- 
 2.17.1
 
