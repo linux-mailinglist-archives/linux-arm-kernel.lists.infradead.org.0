@@ -2,66 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BEF4155A02
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 15:49:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07B11155A30
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 15:57:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZfBhjqLPURHRjRZ05CmkiTfmMFkCR8nMLaThHR6gLQg=; b=DOxX+ihdSi6Fcu
-	+y9tAFEek1PBsT1D5HededjY7u8+IQKAdzAkCs0oW8t4uESHG7dIg4FAxL/zfSdIAopdBWBk9vNFV
-	wG88Gm9RQBGjMYf7p1TMj5Zdy44Frpo+yu2tOEzqaxoXqYe66SN/l2F8d/2Q9FDEwEinEM6F4cJBY
-	mLsvPNy7ax0itlqYDzUp1R+5vK7pvZdaFJX23vu1xUVI+trsm8wd2sOn+OkSo0yc7KJ93L8pkGoHe
-	RIs39ZdgdRQBQExX8HTgmB+28VMKsnWf+07AQtKyRHQH06Xqo+2WVBERH/VZnD3YyhexOUPA1Gyq9
-	AskumjUzHkKI9SIcWSUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ANbpsNpFB0KD5iLPp0Vv/rT0VSwLiDPlDEEjvcE6Gmk=; b=bo7OoRuRf9UKWC
+	Mrao/OWCPlXCL3TaRCnVPf4+iiEHvPCACOKnTbb5iCpVAI7c8jkMI4HKFBwginDTfyoIVcjVfGO1m
+	/hEUkVP5w4UIr89W/x+y3Pa63mY43EExaoflBIW0f0ZOw4aixqNaDw9oI2EhwULV3m7ZkPCXLRqQv
+	mYikVK32bhafMfKE5yicxyJ1Lj37ximi+bK+XW/F4Bo2v3yM+wn13mvcYJetEGYOsI7UmkFQ28Cvd
+	U2CTa5C4X9/wVgfQ6tgrIfYM5nPbtuUazUIXRhHv7wH7COEJX+O8sTG6pk0ifI5uPiVBD4bya92AJ
+	LAIGPN8csNeFN6eg69IQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j04wP-0003s3-P2; Fri, 07 Feb 2020 14:49:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j04wI-0003rI-Pg
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 14:49:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 637CA328;
- Fri,  7 Feb 2020 06:48:58 -0800 (PST)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 330BD3F6CF;
- Fri,  7 Feb 2020 06:48:56 -0800 (PST)
-Date: Fri, 7 Feb 2020 14:48:50 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: [PATCH v3 5/7] drivers: firmware: psci: Add hierarchical domain
- idle states converter
-Message-ID: <20200207144850.GA18655@e121166-lin.cambridge.arm.com>
-References: <0d7f7ade-3a1e-5428-d851-f1a886f58712@codeaurora.org>
- <20200204152132.GA44858@bogus>
- <6ff7c82d-4204-a339-4070-0154ab4515f1@codeaurora.org>
- <20200205140603.GB38466@bogus>
- <CAPDyKFoyepN2VX4COMomp1e9dXPozzrgCdcy0paee2jp8Wm3YA@mail.gmail.com>
- <20200205161816.GD38466@bogus>
- <CAPDyKFqaA7oN2+oLS=Puw+jQXke_ErGQAWYuTuU-6PS7mo5YbQ@mail.gmail.com>
- <20200206204514.GB8107@codeaurora.org>
- <20200207111955.GA40103@bogus>
- <CAPDyKFp-zvD1iFcpRaTFiuazxYmLEx0Czf3=TZJxjSCDmmPsvA@mail.gmail.com>
+	id 1j054b-0007Kq-TP; Fri, 07 Feb 2020 14:57:37 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j054U-0007KD-Cn
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 14:57:32 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 017ErJsp027791; Fri, 7 Feb 2020 15:57:18 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=tQyKm+p4y5ZUxU3qaGDIleA3Xn4xfR3vAme4eLHvqwY=;
+ b=dH25dPALZjJ0yQn74K+prbL7FnovfFMbeL9cgacR/+Car7usaBG6d/7NnlBmPAz6fCjr
+ rEnkkzdGPX6AcH4mJe08jzSS8h7ALgCrdi3ImlsDRlQ2EUgSadQ+35birWjXYBGUjfsG
+ PPT2pO+aeXIjQKY/Oi4aomkUB+sXUf3MnNmhHbp3fuIPKT5yGLzBhRibhmJuiiyeSWHH
+ NwgyFvzyUFQsWZ4xh0HKrUgPfT2+NICyd307Ohi1iIgN24g6FKi/7vZivo9F/ERKFq8B
+ /8WIEthvUH0AlA6q8Zs4wQJF9sj2OQJwL6FeQ40dPAJvQLeeT7PIzoJTNsRuj85MVO3X QQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xyhkuc12p-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 07 Feb 2020 15:57:18 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 44A09100034;
+ Fri,  7 Feb 2020 15:57:16 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1987F2C7E2F;
+ Fri,  7 Feb 2020 15:57:16 +0100 (CET)
+Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 7 Feb 2020 15:57:15
+ +0100
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <lee.jones@linaro.org>, <robh+dt@kernel.org>, <mark.rutland@arm.co>,
+ <alexandre.torgue@st.com>, <linus.walleij@linaro.org>,
+ <amelie.delaunay@st.com>
+Subject: [PATCH v2] dt-bindings: mfd: Convert stmfx bindings to json-schema
+Date: Fri, 7 Feb 2020 15:57:12 +0100
+Message-ID: <20200207145712.24898-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPDyKFp-zvD1iFcpRaTFiuazxYmLEx0Czf3=TZJxjSCDmmPsvA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-07_01:2020-02-07,
+ 2020-02-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_064902_921153_090A41A4 
-X-CRM114-Status: GOOD (  20.96  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200207_065730_801796_2EF21AF6 
+X-CRM114-Status: GOOD (  19.69  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.140.110.172 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,69 +93,317 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maulik Shah <mkshah@codeaurora.org>, lsrao@codeaurora.org,
- Doug Anderson <dianders@chromium.org>, Rajendra Nayak <rnayak@codeaurora.org>,
- Linux PM <linux-pm@vger.kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Lina Iyer <ilina@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>,
- David Brown <david.brown@linaro.org>, Andy Gross <agross@kernel.org>,
- Evan Green <evgreen@chromium.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Benjamin Gaignard <benjamin.gaignard@st.com>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 07, 2020 at 01:32:28PM +0100, Ulf Hansson wrote:
-> [...]
-> 
-> > > I understand the arguments for using PC vs OSI and agree with it. But
-> > > what in PSCI is against Linux knowing when the last core is powering
-> > > down when the PSCI is configured to do only Platform Cordinated.
-> >
-> > Nothing :D. But knowing the evolution and reasons for adding OSI in the
-> > PSCI specification and having argued about benefits of OSI over PC for
-> > years and finally when we have it in mainline, this argument of using
-> > PC for exact reasons why OSI evolved is something I can't understand
-> > and I am confused.
-> >
-> > > There should not be any objection to drivers knowing when all the cores
-> > > are powered down, be it reference counting CPU PM notifications or using
-> > > a cleaner approach like this where GendPD framwork does everything
-> > > cleanly and gives a nice callback. ARM architecture allows for different
-> > > aspects of CPU access be handled at different levels. I see this as an
-> > > extension of that approach.
-> > >
-> >
-> > One thing that was repeatedly pointed out during OSI patch review was no
-> > extra overhead for PC mode where firmware can make decisions. So, just
-> > use OSI now and let us be done with this discussion of OSI vs PC. If PC
-> > is what you think you need for future, we can revert all OSI changes and
-> > start discussing again :-)
-> 
-> Just to make it clear, I fully agree with you in regards to overhead
-> for PC-mode. This is especially critical for ARM SoCs with lots of
-> cores, I assume.
-> 
-> However, the overhead you refer to, is *only* going to be present in
-> case when the DTS has the hierarchical CPU topology description with
-> "power-domains". Because, that is *optional* to use, I am expecting
-> only those SoC/platforms that needs to manage last-man activities to
-> use this layout, the others will remain unaffected.
+Convert stmfx bindings to json-schema
 
-In PC mode not only there is no need but it is wrong to manage
-any last-man activity in the kernel. I wonder why we are still
-talking about this to be honest.
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+---
+version 2:
+- fix description indentation
+- change pin controller node name to pinctrl
+- document pinctrl subnode properties
+- add pinctrl subnode example
 
-Code to handle PSCI platform coordinated mode has been/is in
-the kernel today and that's all is needed according to the PSCI
-specifications.
+ Documentation/devicetree/bindings/mfd/stmfx.txt    |  28 -----
+ Documentation/devicetree/bindings/mfd/stmfx.yaml   | 120 +++++++++++++++++++++
+ .../devicetree/bindings/pinctrl/pinctrl-stmfx.txt  | 116 --------------------
+ 3 files changed, 120 insertions(+), 144 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/mfd/stmfx.txt
+ create mode 100644 Documentation/devicetree/bindings/mfd/stmfx.yaml
+ delete mode 100644 Documentation/devicetree/bindings/pinctrl/pinctrl-stmfx.txt
 
-Thanks,
-Lorenzo
+diff --git a/Documentation/devicetree/bindings/mfd/stmfx.txt b/Documentation/devicetree/bindings/mfd/stmfx.txt
+deleted file mode 100644
+index f0c2f7fcf5c7..000000000000
+--- a/Documentation/devicetree/bindings/mfd/stmfx.txt
++++ /dev/null
+@@ -1,28 +0,0 @@
+-STMicroelectonics Multi-Function eXpander (STMFX) Core bindings
+-
+-ST Multi-Function eXpander (STMFX) is a slave controller using I2C for
+-communication with the main MCU. Its main features are GPIO expansion, main
+-MCU IDD measurement (IDD is the amount of current that flows through VDD) and
+-resistive touchscreen controller.
+-
+-Required properties:
+-- compatible: should be "st,stmfx-0300".
+-- reg: I2C slave address of the device.
+-- interrupts: interrupt specifier triggered by MFX_IRQ_OUT signal.
+-  Please refer to ../interrupt-controller/interrupt.txt
+-
+-Optional properties:
+-- drive-open-drain: configure MFX_IRQ_OUT as open drain.
+-- vdd-supply: phandle of the regulator supplying STMFX.
+-
+-Example:
+-
+-	stmfx: stmfx@42 {
+-		compatible = "st,stmfx-0300";
+-		reg = <0x42>;
+-		interrupts = <8 IRQ_TYPE_EDGE_RISING>;
+-		interrupt-parent = <&gpioi>;
+-		vdd-supply = <&v3v3>;
+-	};
+-
+-Please refer to ../pinctrl/pinctrl-stmfx.txt for STMFX GPIO expander function bindings.
+diff --git a/Documentation/devicetree/bindings/mfd/stmfx.yaml b/Documentation/devicetree/bindings/mfd/stmfx.yaml
+new file mode 100644
+index 000000000000..1af906fb876f
+--- /dev/null
++++ b/Documentation/devicetree/bindings/mfd/stmfx.yaml
+@@ -0,0 +1,120 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/mfd/stmfx.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: STMicroelectonics Multi-Function eXpander (STMFX) bindings
++
++description: ST Multi-Function eXpander (STMFX) is a slave controller using I2C for
++               communication with the main MCU. Its main features are GPIO expansion,
++               main MCU IDD measurement (IDD is the amount of current that flows
++               through VDD) and resistive touchscreen controller.
++
++maintainers:
++  - Amelie Delaunay <amelie.delaunay@st.com>
++
++properties:
++  compatible:
++    const: st,stmfx-0300
++
++  reg:
++    enum: [ 0x42, 0x43 ]
++
++  interrupts:
++    maxItems: 1
++
++  drive-open-drain: true
++
++  vdd-supply:
++    maxItems: 1
++
++  pinctrl:
++    type: object
++
++    $ref: ../pinctrl/pincfg-node.yaml
++
++    properties:
++      compatible:
++        const: st,stmfx-0300-pinctrl
++
++      "#gpio-cells":
++        const: 2
++
++      "#interrupt-cells":
++        const: 2
++
++      gpio-controller: true
++
++      interrupt-controller: true
++
++      gpio-ranges:
++        description: if all STMFX pins[24:0] are available (no other STMFX function in use),
++                     you should use gpio-ranges = <&stmfx_pinctrl 0 0 24>;
++                     if agpio[3:0] are not available (STMFX Touchscreen function in use),
++                     you should use gpio-ranges = <&stmfx_pinctrl 0 0 16>, <&stmfx_pinctrl 20 20 4>;
++                     if agpio[7:4] are not available (STMFX IDD function in use),
++                     you should use gpio-ranges = <&stmfx_pinctrl 0 0 20>;
++        maxItems: 1
++
++    patternProperties:
++      "^[a-zA-Z][a-zA-Z0-9_]+$":
++        type: object
++        $ref: ../pinctrl/pinmux-node.yaml
++
++        properties:
++          pins: true
++          bias-disable: true
++          bias-pull-up: true
++          bias-pull-pin-default: true
++          bias-pull-down: true
++          drive-open-drain: true
++          drive-push-pull: true
++          output-high: true
++          output-low: true
++
++    required:
++      - compatible
++      - "#gpio-cells"
++      - "#interrupt-cells"
++      - gpio-controller
++      - interrupt-controller
++      - gpio-ranges
++
++additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - interrupts
++
++examples:
++  - |
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    i2c@0 {
++      #address-cells = <1>;
++      #size-cells = <0>;
++      stmfx@42 {
++        compatible = "st,stmfx-0300";
++        reg = <0x42>;
++        interrupts = <8 IRQ_TYPE_EDGE_RISING>;
++        interrupt-parent = <&gpioi>;
++        vdd-supply = <&v3v3>;
++
++        stmfx_pinctrl: pinctrl {
++          compatible = "st,stmfx-0300-pinctrl";
++          #gpio-cells = <2>;
++          #interrupt-cells = <2>;
++          gpio-controller;
++          interrupt-controller;
++          gpio-ranges = <&stmfx_pinctrl 0 0 24>;
++
++          joystick_pins: joystick {
++            pins = "gpio0", "gpio1", "gpio2", "gpio3", "gpio4";
++            drive-push-pull;
++            bias-pull-up;
++          };
++        };
++      };
++    };
++...
+diff --git a/Documentation/devicetree/bindings/pinctrl/pinctrl-stmfx.txt b/Documentation/devicetree/bindings/pinctrl/pinctrl-stmfx.txt
+deleted file mode 100644
+index c1b4c1819b84..000000000000
+--- a/Documentation/devicetree/bindings/pinctrl/pinctrl-stmfx.txt
++++ /dev/null
+@@ -1,116 +0,0 @@
+-STMicroelectronics Multi-Function eXpander (STMFX) GPIO expander bindings
+-
+-ST Multi-Function eXpander (STMFX) offers up to 24 GPIOs expansion.
+-Please refer to ../mfd/stmfx.txt for STMFX Core bindings.
+-
+-Required properties:
+-- compatible: should be "st,stmfx-0300-pinctrl".
+-- #gpio-cells: should be <2>, the first cell is the GPIO number and the second
+-  cell is the gpio flags in accordance with <dt-bindings/gpio/gpio.h>.
+-- gpio-controller: marks the device as a GPIO controller.
+-- #interrupt-cells: should be <2>, the first cell is the GPIO number and the
+-  second cell is the interrupt flags in accordance with
+-  <dt-bindings/interrupt-controller/irq.h>.
+-- interrupt-controller: marks the device as an interrupt controller.
+-- gpio-ranges: specifies the mapping between gpio controller and pin
+-  controller pins. Check "Concerning gpio-ranges property" below.
+-Please refer to ../gpio/gpio.txt.
+-
+-Please refer to pinctrl-bindings.txt for pin configuration.
+-
+-Required properties for pin configuration sub-nodes:
+-- pins: list of pins to which the configuration applies.
+-
+-Optional properties for pin configuration sub-nodes (pinconf-generic ones):
+-- bias-disable: disable any bias on the pin.
+-- bias-pull-up: the pin will be pulled up.
+-- bias-pull-pin-default: use the pin-default pull state.
+-- bias-pull-down: the pin will be pulled down.
+-- drive-open-drain: the pin will be driven with open drain.
+-- drive-push-pull: the pin will be driven actively high and low.
+-- output-high: the pin will be configured as an output driving high level.
+-- output-low: the pin will be configured as an output driving low level.
+-
+-Note that STMFX pins[15:0] are called "gpio[15:0]", and STMFX pins[23:16] are
+-called "agpio[7:0]". Example, to refer to pin 18 of STMFX, use "agpio2".
+-
+-Concerning gpio-ranges property:
+-- if all STMFX pins[24:0] are available (no other STMFX function in use), you
+-  should use gpio-ranges = <&stmfx_pinctrl 0 0 24>;
+-- if agpio[3:0] are not available (STMFX Touchscreen function in use), you
+-  should use gpio-ranges = <&stmfx_pinctrl 0 0 16>, <&stmfx_pinctrl 20 20 4>;
+-- if agpio[7:4] are not available (STMFX IDD function in use), you
+-  should use gpio-ranges = <&stmfx_pinctrl 0 0 20>;
+-
+-
+-Example:
+-
+-	stmfx: stmfx@42 {
+-		...
+-
+-		stmfx_pinctrl: stmfx-pin-controller {
+-			compatible = "st,stmfx-0300-pinctrl";
+-			#gpio-cells = <2>;
+-			#interrupt-cells = <2>;
+-			gpio-controller;
+-			interrupt-controller;
+-			gpio-ranges = <&stmfx_pinctrl 0 0 24>;
+-
+-			joystick_pins: joystick {
+-				pins = "gpio0", "gpio1", "gpio2", "gpio3", "gpio4";
+-				drive-push-pull;
+-				bias-pull-up;
+-			};
+-		};
+-	};
+-
+-Example of STMFX GPIO consumers:
+-
+-	joystick {
+-		compatible = "gpio-keys";
+-		#address-cells = <1>;
+-		#size-cells = <0>;
+-		pinctrl-0 = <&joystick_pins>;
+-		pinctrl-names = "default";
+-		button-0 {
+-			label = "JoySel";
+-			linux,code = <KEY_ENTER>;
+-			interrupt-parent = <&stmfx_pinctrl>;
+-			interrupts = <0 IRQ_TYPE_EDGE_RISING>;
+-		};
+-		button-1 {
+-			label = "JoyDown";
+-			linux,code = <KEY_DOWN>;
+-			interrupt-parent = <&stmfx_pinctrl>;
+-			interrupts = <1 IRQ_TYPE_EDGE_RISING>;
+-		};
+-		button-2 {
+-			label = "JoyLeft";
+-			linux,code = <KEY_LEFT>;
+-			interrupt-parent = <&stmfx_pinctrl>;
+-			interrupts = <2 IRQ_TYPE_EDGE_RISING>;
+-		};
+-		button-3 {
+-			label = "JoyRight";
+-			linux,code = <KEY_RIGHT>;
+-			interrupt-parent = <&stmfx_pinctrl>;
+-			interrupts = <3 IRQ_TYPE_EDGE_RISING>;
+-		};
+-		button-4 {
+-			label = "JoyUp";
+-			linux,code = <KEY_UP>;
+-			interrupt-parent = <&stmfx_pinctrl>;
+-			interrupts = <4 IRQ_TYPE_EDGE_RISING>;
+-		};
+-	};
+-
+-	leds {
+-		compatible = "gpio-leds";
+-		orange {
+-			gpios = <&stmfx_pinctrl 17 1>;
+-		};
+-
+-		blue {
+-			gpios = <&stmfx_pinctrl 19 1>;
+-		};
+-	}
+-- 
+2.15.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
