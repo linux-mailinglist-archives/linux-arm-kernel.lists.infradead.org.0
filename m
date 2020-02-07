@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFF7A1554AC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 10:29:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81C2A1554A5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 10:29:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VTAkyvSlnmqOwsa4fgAApVmAZYNuVGtTCocUqy3WFNA=; b=YDMlY9mixwcVks
-	rfFPX27Ji9T1337Ggrg1gIYtqF0aM+7kgDRziQfUpZniWMvtEY3uf6PGdWYO74IGj0QUBebsiVHjp
-	31Hv8zyzVQd88vWGO5BFNEM302s4NB6HKdQFnItqU9mPFCncHoNXTwt3LzCV4hvwpmBhd+zS49qfo
-	JwUwG+mbNpL6sfH6VpUeGTTKsIfS9oEFzmkGPIQt1RJsPey5G6cofAd7hWfFBvDlPEi/bTXX9piZF
-	FB2aj0czINchj1BuO0ffzaQ3Kt5GKw1rO8YJ0M4x64qWv11kDJ53WHMkhDc1FRYczTMYCDRS+xEFm
-	xmAUm/O58UJtqcBwrFbg==;
+	List-Owner; bh=iGLvDghYM2o7LHjS9Qgx4alOudbfUmgKXMUVAUX9reA=; b=sOhlZYbeHU99kS
+	T+9Gcnlq+u5DmoJ75eALD4nPMT7xeVFKA0xLQ2ZOqfUJdWzrl1e+ADGkt+RxEGb0JfN0pyjjlYofE
+	4s11RYl4JIeaSkebVE14eoUFsSoJoOoqVXlK33X4yz88eJBckBnCsBQTSO5CdPDv4t3KHsEju/gFP
+	SGKQ8HBVqjhwTARZt6QMj3JAEleak+EsUmptMQLqDs5WA1kaQlZYDEAIR/Elp+CXOeIcVFSym0zMO
+	ZyOg2JpKBvtTVTUlqEPL+QpZqpPzcTDE2cNq80AMZH7tn1ErxmBEM7856CS9UGboG14QeJ4x8db9A
+	iEWUaBL0kbgtVdzcfS+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izzx6-0001U2-Up; Fri, 07 Feb 2020 09:29:33 +0000
+	id 1izzwc-0000xw-0I; Fri, 07 Feb 2020 09:29:02 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izzwR-0000vX-6t; Fri, 07 Feb 2020 09:28:52 +0000
-X-UUID: 60d86003a4634a8c8430dc21c38f94be-20200207
+ id 1izzwP-0000vX-HQ; Fri, 07 Feb 2020 09:28:51 +0000
+X-UUID: f19cbf8bc7d34bf1848d1ec4fc0f95d6-20200207
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=nGfCbwmT4B7YtyC0+NLBjKn0mbyYaY+nHC4J7QBCj9E=; 
- b=EUqjoBVP4ERd1Cl753ccujEtuMA3vGhBYaD9WZw3tq3U4TypvQftI3j2PjoduZaXm/0E7pgbpl/61X0SRVhHmqeuCEy/DCFyUGauawvcssZc3ViQnqvkrHUTkM/2yYtKiZkAUa9sClAGhs9O3fyzga61eT2i7ok+UT6kpCeUSqI=;
-X-UUID: 60d86003a4634a8c8430dc21c38f94be-20200207
+ bh=UbnXG7anPzekXSKoVAsd9UcuJJBevQ2oSv9/xVk+BPE=; 
+ b=c4QBDkIH0ZuQLX8jMdhLi0TLlpQaTvsOo1I+qYvyvVGxbulbcMjPFDr+BXfCdKLn4HDUCWl8XVFgpgyCydTTksdKSi3zch51GZ2Ypy3PfPkc3F3jLttcmtY0fmU+PXQmBmqrs36p/F6tfR0sB7uMk3QSm8cRMnz5F13VIO7w9Ok=;
+X-UUID: f19cbf8bc7d34bf1848d1ec4fc0f95d6-20200207
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <macpaul.lin@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1473918258; Fri, 07 Feb 2020 01:28:44 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ with ESMTP id 1768485092; Fri, 07 Feb 2020 01:28:44 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 7 Feb 2020 01:23:42 -0800
+ 15.0.1395.4; Fri, 7 Feb 2020 01:23:36 -0800
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 7 Feb 2020 17:22:24 +0800
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 7 Feb 2020 17:24:28 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Fri, 7 Feb 2020 17:22:59 +0800
@@ -57,18 +57,19 @@ To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
  <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
  <linux-clk@vger.kernel.org>
-Subject: [PATCH v7 5/7] soc: mediatek: add MT6765 scpsys and subdomain support
-Date: Fri, 7 Feb 2020 17:20:48 +0800
-Message-ID: <1581067250-12744-6-git-send-email-macpaul.lin@mediatek.com>
+Subject: [PATCH v7 7/7] arm64: defconfig: add CONFIG_COMMON_CLK_MT6765_XXX
+ clocks
+Date: Fri, 7 Feb 2020 17:20:50 +0800
+Message-ID: <1581067250-12744-8-git-send-email-macpaul.lin@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1581067250-12744-1-git-send-email-macpaul.lin@mediatek.com>
 References: <1581067250-12744-1-git-send-email-macpaul.lin@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 704236201E07D564FD5639EC3C61A552717B0D928FCE30795F0C1BE9CE7BFCB42000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_012851_259679_30A3D4F7 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20200207_012849_584242_2EF7F3E5 
+X-CRM114-Status: UNSURE (   7.67  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -107,181 +108,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mars Cheng <mars.cheng@mediatek.com>
+From: Owen Chen <owen.chen@mediatek.com>
 
-This adds scpsys support for MT6765
-Add subdomain support for MT6765:
-isp, mm, connsys, mfg, and cam.
+Enable MT6765 clock configs, include topckgen, apmixedsys,
+infracfg, and subsystem clocks.
 
-Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
 Signed-off-by: Owen Chen <owen.chen@mediatek.com>
 Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
 ---
- drivers/soc/mediatek/mtk-scpsys.c | 130 ++++++++++++++++++++++++++++++
- 1 file changed, 130 insertions(+)
+ arch/arm64/configs/defconfig | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
-index f669d3754627..9940c6d13222 100644
---- a/drivers/soc/mediatek/mtk-scpsys.c
-+++ b/drivers/soc/mediatek/mtk-scpsys.c
-@@ -15,6 +15,7 @@
- 
- #include <dt-bindings/power/mt2701-power.h>
- #include <dt-bindings/power/mt2712-power.h>
-+#include <dt-bindings/power/mt6765-power.h>
- #include <dt-bindings/power/mt6797-power.h>
- #include <dt-bindings/power/mt7622-power.h>
- #include <dt-bindings/power/mt7623a-power.h>
-@@ -749,6 +750,120 @@ static const struct scp_subdomain scp_subdomain_mt2712[] = {
- 	{MT2712_POWER_DOMAIN_MFG_SC2, MT2712_POWER_DOMAIN_MFG_SC3},
- };
- 
-+/*
-+ * MT6765 power domain support
-+ */
-+#define SPM_PWR_STATUS_MT6765			0x0180
-+#define SPM_PWR_STATUS_2ND_MT6765		0x0184
-+
-+static const struct scp_domain_data scp_domain_data_mt6765[] = {
-+	[MT6765_POWER_DOMAIN_VCODEC] = {
-+		.name = "vcodec",
-+		.sta_mask = BIT(26),
-+		.ctl_offs = 0x300,
-+		.sram_pdn_bits = GENMASK(8, 8),
-+		.sram_pdn_ack_bits = GENMASK(12, 12),
-+	},
-+	[MT6765_POWER_DOMAIN_ISP] = {
-+		.name = "isp",
-+		.sta_mask = BIT(5),
-+		.ctl_offs = 0x308,
-+		.sram_pdn_bits = GENMASK(8, 8),
-+		.sram_pdn_ack_bits = GENMASK(12, 12),
-+		.subsys_clk_prefix = "isp",
-+		.bp_table = {
-+			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
-+				BIT(20), BIT(20)),
-+			BUS_PROT(SMI_TYPE, 0x3C4, 0x3C8, 0, 0x3C0,
-+				BIT(2), BIT(2)),
-+		},
-+	},
-+	[MT6765_POWER_DOMAIN_MM] = {
-+		.name = "mm",
-+		.sta_mask = BIT(3),
-+		.ctl_offs = 0x30C,
-+		.sram_pdn_bits = GENMASK(8, 8),
-+		.sram_pdn_ack_bits = GENMASK(12, 12),
-+		.basic_clk_id = {"mm"},
-+		.subsys_clk_prefix = "mm",
-+		.bp_table = {
-+			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
-+				BIT(16) | BIT(17), BIT(16) | BIT(17)),
-+			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
-+				BIT(10) | BIT(11), BIT(10) | BIT(11)),
-+			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
-+				BIT(1) | BIT(2), BIT(1) | BIT(2)),
-+		},
-+	},
-+	[MT6765_POWER_DOMAIN_CONN] = {
-+		.name = "conn",
-+		.sta_mask = BIT(1),
-+		.ctl_offs = 0x32C,
-+		.sram_pdn_bits = 0,
-+		.sram_pdn_ack_bits = 0,
-+		.bp_table = {
-+			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
-+				BIT(13), BIT(13)),
-+			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
-+				BIT(18), BIT(18)),
-+			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
-+				BIT(14) | BIT(16), BIT(14) | BIT(16)),
-+		},
-+	},
-+	[MT6765_POWER_DOMAIN_MFG_ASYNC] = {
-+		.name = "mfg_async",
-+		.sta_mask = BIT(23),
-+		.ctl_offs = 0x334,
-+		.sram_pdn_bits = 0,
-+		.sram_pdn_ack_bits = 0,
-+		.basic_clk_id = {"mfg"},
-+	},
-+	[MT6765_POWER_DOMAIN_MFG] = {
-+		.name = "mfg",
-+		.sta_mask = BIT(4),
-+		.ctl_offs = 0x338,
-+		.sram_pdn_bits = GENMASK(8, 8),
-+		.sram_pdn_ack_bits = GENMASK(12, 12),
-+		.bp_table = {
-+			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
-+				BIT(25), BIT(25)),
-+			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
-+				BIT(21) | BIT(22), BIT(21) | BIT(22)),
-+		}
-+	},
-+	[MT6765_POWER_DOMAIN_CAM] = {
-+		.name = "cam",
-+		.sta_mask = BIT(25),
-+		.ctl_offs = 0x344,
-+		.sram_pdn_bits = GENMASK(8, 9),
-+		.sram_pdn_ack_bits = GENMASK(12, 13),
-+		.subsys_clk_prefix = "cam",
-+		.bp_table = {
-+			BUS_PROT(IFR_TYPE, 0x2A8, 0x2AC, 0, 0x258,
-+				BIT(19) | BIT(21), BIT(19) | BIT(21)),
-+			BUS_PROT(IFR_TYPE, 0x2A0, 0x2A4, 0, 0x228,
-+				BIT(20), BIT(20)),
-+			BUS_PROT(SMI_TYPE, 0x3C4, 0x3C8, 0, 0x3C0,
-+				BIT(3), BIT(3)),
-+		}
-+	},
-+	[MT6765_POWER_DOMAIN_MFG_CORE0] = {
-+		.name = "mfg_core0",
-+		.sta_mask = BIT(7),
-+		.ctl_offs = 0x34C,
-+		.sram_pdn_bits = GENMASK(8, 8),
-+		.sram_pdn_ack_bits = GENMASK(12, 12),
-+	},
-+};
-+
-+static const struct scp_subdomain scp_subdomain_mt6765[] = {
-+	{MT6765_POWER_DOMAIN_MM, MT6765_POWER_DOMAIN_CAM},
-+	{MT6765_POWER_DOMAIN_MM, MT6765_POWER_DOMAIN_ISP},
-+	{MT6765_POWER_DOMAIN_MM, MT6765_POWER_DOMAIN_VCODEC},
-+	{MT6765_POWER_DOMAIN_MFG_ASYNC, MT6765_POWER_DOMAIN_MFG},
-+	{MT6765_POWER_DOMAIN_MFG, MT6765_POWER_DOMAIN_MFG_CORE0},
-+};
-+
- /*
-  * MT6797 power domain support
-  */
-@@ -1032,6 +1147,18 @@ static const struct scp_soc_data mt2712_data = {
- 	.bus_prot_reg_update = false,
- };
- 
-+static const struct scp_soc_data mt6765_data = {
-+	.domains = scp_domain_data_mt6765,
-+	.num_domains = ARRAY_SIZE(scp_domain_data_mt6765),
-+	.subdomains = scp_subdomain_mt6765,
-+	.num_subdomains = ARRAY_SIZE(scp_subdomain_mt6765),
-+	.regs = {
-+		.pwr_sta_offs = SPM_PWR_STATUS_MT6765,
-+		.pwr_sta2nd_offs = SPM_PWR_STATUS_2ND_MT6765,
-+	},
-+	.bus_prot_reg_update = true,
-+};
-+
- static const struct scp_soc_data mt6797_data = {
- 	.domains = scp_domain_data_mt6797,
- 	.num_domains = ARRAY_SIZE(scp_domain_data_mt6797),
-@@ -1087,6 +1214,9 @@ static const struct of_device_id of_scpsys_match_tbl[] = {
- 	}, {
- 		.compatible = "mediatek,mt2712-scpsys",
- 		.data = &mt2712_data,
-+	}, {
-+		.compatible = "mediatek,mt6765-scpsys",
-+		.data = &mt6765_data,
- 	}, {
- 		.compatible = "mediatek,mt6797-scpsys",
- 		.data = &mt6797_data,
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 6a83ba2aea3e..9d3da81d0d08 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -489,6 +489,12 @@ CONFIG_REGULATOR_QCOM_SMD_RPM=y
+ CONFIG_REGULATOR_QCOM_SPMI=y
+ CONFIG_REGULATOR_RK808=y
+ CONFIG_REGULATOR_S2MPS11=y
++CONFIG_COMMON_CLK_MT6765_AUDIOSYS=y
++CONFIG_COMMON_CLK_MT6765_CAMSYS=y
++CONFIG_COMMON_CLK_MT6765_MMSYS=y
++CONFIG_COMMON_CLK_MT6765_IMGSYS=y
++CONFIG_COMMON_CLK_MT6765_VCODECSYS=y
++CONFIG_COMMON_CLK_MT6765_MIPI0ASYS=y
+ CONFIG_REGULATOR_VCTRL=m
+ CONFIG_RC_CORE=m
+ CONFIG_RC_DECODERS=y
 -- 
 2.18.0
 _______________________________________________
