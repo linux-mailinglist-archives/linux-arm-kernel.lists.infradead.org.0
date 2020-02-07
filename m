@@ -2,90 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1AB6155388
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 09:12:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8280E155393
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 09:14:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m5IMmV9Dvqld5FzaWSX6AmuC6Ag9q0dOK3D3Q9CFVbc=; b=XPxrmq6yzUNfC3
-	2sRVPzf8QGhkGwEV4g84DOLY3zw2SD+1npn8eTgJbklYCE3SGDVnggIvwdXA3J62K2u3PuVXKEKZv
-	mxfzY7miM4G/OUGIWh70eILmOdfuoTkMi4Yg/iLsNuxx5r/9joMw7SLdy5QZxvINqddAUCU0mLkBV
-	UceRp7CiqHJYPcnpJZlF0RU21QG4k1/jx5EX0Dz7nc+vQfPdS5iYOZjfF6Oki3fBF1ZhrNEKv94jO
-	GKnhZ+NdM9w7UZwG6WuVWnCsi/vxMcpkJTReV0/Fp0Isy2GXMtwPIy6/E0Q6xkfT2JQb4PeEvLwVS
-	f6G23FLrZ7dASbm66FPg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Sr5zob1+JMvOkrB5LHlKwJFuOdp3Cjp737RMeqC6auo=; b=uTUevOG3F3N3Yymm1C3qaOoDw
+	6R5I5d+AwkSSI2bzWsN1vEvNmpSC0JKYRulCWD/FyLTEwWj+yCjMVCQa7lGHd7KEMUheJZO6tf29K
+	nU9XVwCom7DIUl/f8UBY1d1+Vv0BCGT1CzKUMjDCsiKNLZwHVX5FAJfbvJZx+3RzvqPBY8s8pbhEk
+	1WQ7Q0xHuxtHhzfx21OXdhqFxHo67zn4r6d0m5cG4rUnKl3tarV0eX5YqU3Sbx+v5V9aHK3M6X+8R
+	bgPb5SiMrOBRhRw5JKUI76p0qP6+HtRfA8IAIy9TNfCzDBSmxxEQO5C0K3YKk1HnG7O9xDteNdjmP
+	Uqw7ksD7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izykQ-00056X-V0; Fri, 07 Feb 2020 08:12:22 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1izyls-0005UV-GU; Fri, 07 Feb 2020 08:13:52 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izykJ-000563-HN
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 08:12:17 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z9so1505389wrs.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Feb 2020 00:12:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RhtSsZPQxEIGMtQmL13uTWrwtYaQcv2uAFFx/BqaRZE=;
- b=Iq1EpKAgpS6y9E0ptLbYm/g5LXKJJISmjKNvhmES0wbDbMH5zLVr9Wh4x5FWJE09JF
- eMVL2Ze42BWMbOXgOt0vYKBaI1CAKfOHstfXcofCYFdSKDM+Huu7ep2N9gssiznpmfqz
- 86eXvCseSzg0VlVqtZL3ykwKnorvqhP38dksJgiGzDT33yuTzp3uXDBOiIScsII4PZIK
- fqK9KbvZGIe+FAliWZvoS8gCZ+TvQYTVXy5IHjVF2DiOBONhOc6ySsry9Mcvxy2AI5+6
- iV11xdMEgismz1DBYnns5kWyMjbgo8QQ8buKT7+4zSKiQa7cB9iyPRV2mgi5GQPm2z3Q
- +Q3Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RhtSsZPQxEIGMtQmL13uTWrwtYaQcv2uAFFx/BqaRZE=;
- b=q9RJWTYK4EZPfTKRD6cLPzILg7Qb62xcm9m15FeYYdE73JyYDe4K73VxDzLLxQeFJ0
- SUWwqIROrtKJDUevyN2k7pAU2b5mEJ6vUzfaJRNVYpfajekKoUay6G59WGedvq/hC/Rr
- Tepz+8NFY2MG5/DOsTIrw+dHswbtsYL731YbSEGEHKqSYm3sfTOhZi2m1pZxC4Z1fE/R
- PAvQQkii/SNS7V0ONUd2sOdZ5fYdtvSAe5dBUIHXBEGWrINpTjGziqW3kUMOV9U8WtoP
- 9WHPyH+3iKsOSXbJsuaBVarxyj4vZ9L6hHv0lulvdTVwWc7NG9eoIbzkkeZlKfkRaEJq
- f3YQ==
-X-Gm-Message-State: APjAAAWdmE4wRdQSTgMpFyoyJ9Ns6zNKiXK27AO/XuLJf2Uyb3jnR0UJ
- nAAEaYuw5Q5zSO8NVyksOLSq1GHgI8Ofhnhipe5Xxg==
-X-Google-Smtp-Source: APXvYqx8cIS8WVQ0f++9dJ/4i6q+U/hhZOXte0NdMOcfogNNO4rkYb8C/RivDqFlgOSQadNtNBqpZbm4PlM3AFyJW1I=
-X-Received: by 2002:adf:8564:: with SMTP id 91mr3350267wrh.252.1581063133977; 
- Fri, 07 Feb 2020 00:12:13 -0800 (PST)
+ id 1izylk-0005TZ-Mm; Fri, 07 Feb 2020 08:13:46 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: tomeu) with ESMTPSA id 736D92959E5
+Subject: Re: [PATCH v4 0/7] Add dts for mt8183 GPU (and misc panfrost patches)
+To: Nicolas Boichat <drinkcat@chromium.org>
+References: <20200207052627.130118-1-drinkcat@chromium.org>
+ <5237381b-c232-7087-a3d6-78d6358d80bf@collabora.com>
+ <CANMq1KCD1U7iym_fFWAd-Xa6ipxHmF_FAYxDL5WqGzDnA0KKLw@mail.gmail.com>
+From: Tomeu Vizoso <tomeu.vizoso@collabora.com>
+Message-ID: <93aec9ae-00fc-bf55-1d6c-9bd715b78344@collabora.com>
+Date: Fri, 7 Feb 2020 09:13:37 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-References: <20200206140352.6300-1-ardb@kernel.org>
- <20200206140352.6300-2-ardb@kernel.org>
- <a6d7fefb-2f02-86a3-66aa-c3c129a91fb1@gmx.de>
- <CAKv+Gu9Z24GeqrqKhPJN+aAu8crSKvT0ZBeFL=0ik=z2Sd1FmQ@mail.gmail.com>
- <b2535bc9-f9be-e250-4da1-bce0b67abb6f@gmx.de>
- <CAKv+Gu-X6DKhtbfVgRLPomkkKJ7=4vRs-crLL0p7E7043J4H0g@mail.gmail.com>
- <081d152a-fa9b-886a-565d-b244dea08cd5@gmx.de>
-In-Reply-To: <081d152a-fa9b-886a-565d-b244dea08cd5@gmx.de>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Fri, 7 Feb 2020 08:12:02 +0000
-Message-ID: <CAKv+Gu-f9O4eon_E7=OUu_tNwybi7u6bF2zMowPHbA-MhiTjNg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] efi/libstub: add support for loading the initrd from
- a device path
-To: Heinrich Schuchardt <xypron.glpk@gmx.de>
+In-Reply-To: <CANMq1KCD1U7iym_fFWAd-Xa6ipxHmF_FAYxDL5WqGzDnA0KKLw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_001215_638220_30781B54 
-X-CRM114-Status: GOOD (  41.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200207_001345_000379_6D2CB903 
+X-CRM114-Status: GOOD (  19.09  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,173 +60,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
- Daniel Kiper <daniel.kiper@oracle.com>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
- Leif Lindholm <leif@nuviainc.com>, Laszlo Ersek <lersek@redhat.com>,
- Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, David Airlie <airlied@linux.ie>,
+ lkml <linux-kernel@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Steven Price <steven.price@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 7 Feb 2020 at 00:58, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
->
-> On 2/7/20 1:21 AM, Ard Biesheuvel wrote:
-> > On Fri, 7 Feb 2020 at 00:01, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
-> >>
-> >> On 2/6/20 11:35 PM, Ard Biesheuvel wrote:
-> >>> On Thu, 6 Feb 2020 at 18:26, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
-...
-> >>>> Please, indicate which software you expect to expose the initrd related
-> >>>> EFI_LOAD_FILE2_PROTOCOL.
-> >>>>
-> >>>
-> >>> The primary use case is GRUB and other intermediate loaders, since it
-> >>> would remove any need for these components to know any such details.
-> >>> My aim is to make the next architecture that gets added to GRUB for
-> >>> EFI boot 100% generic.
-> >>>
-> >>>> Using an UEFI variable for passing the initrd device path would be a
-> >>>> leaner solution on the bootloader side than requiring an extra
-> >>>> EFI_LOAD_FILE2_PROTOCOL implementation.
-> >>>>
-> >>>
-> >>> This would also require kernel changes, since we don't currently load
-> >>> initrds from arbitrary device paths. The EFI_FILE_PROTOCOL is much
-> >>> more complicated than needed, and it doesn't work well with mixed
-> >>> mode. It also requires GRUB to expose the filesystem it loads the
-> >>> initrd from via EFI protocols, which is currently unnecessary and
-> >>> therefore not implemented.
-> >>
-> >> This means you move the complexity of EFI_FILE_PROTOCOL from Linux to GRUB.
-> >>
-> >
-> > No. I am not interested in EFI_FILE_PROTOCOL, only in LoadFile2, which
-> > is a single method that needs to be implemented.
->
-> I said you move complexity because GRUB will need to use the
-> EFI_FILE_PROTOCOL to do the job that you do not want to do in Linux.
->
-> >
-> >> I would not have a problem if this would only touch GRUB. But if listen
-> >> to Ilias we are replacing one implementation in Linux by one in GRUB and
-> >> one in U-Boot and one in EDK2 and one in any other firmware.
-> >>
-> >
-> > If u-boot will be used to boot RISC-V in EFI mode without GRUB, then I
-> > expect that we will need an implementation of this in u-boot.
->
-> What sets RISC-V apart? GRUB for RISC-V is available.
->
+On 2/7/20 8:42 AM, Nicolas Boichat wrote:
+> On Fri, Feb 7, 2020 at 2:18 PM Tomeu Vizoso <tomeu.vizoso@collabora.com> wrote:
+>>
+>> On 2/7/20 6:26 AM, Nicolas Boichat wrote:
+>>> Hi!
+>>>
+>>> Follow-up on the v3: https://patchwork.kernel.org/cover/11331343/.
+>>>
+>>> The main purpose of this series is to upstream the dts change and the
+>>> binding document, but I wanted to see how far I could probe the GPU, to
+>>> check that the binding is indeed correct. The rest of the patches are
+>>> RFC/work-in-progress, but I think some of them could already be picked up.
+>>>
+>>> So this is tested on MT8183 with a chromeos-4.19 kernel, and a ton of
+>>> backports to get the latest panfrost driver (I should probably try on
+>>> linux-next at some point but this was the path of least resistance).
+>>>
+>>> I tested it as a module as it's more challenging (originally probing would
+>>> work built-in, on boot, but not as a module, as I didn't have the power
+>>> domain changes, and all power domains are on by default during boot).
+>>>
+>>> Probing logs looks like this, currently. They look sane.
+>>> [  501.319728] panfrost 13040000.gpu: clock rate = 511999970
+>>> [  501.320041] panfrost 13040000.gpu: Linked as a consumer to regulator.14
+>>> [  501.320102] panfrost 13040000.gpu: Linked as a consumer to regulator.31
+>>> [  501.320651] panfrost 13040000.gpu: Linked as a consumer to genpd:0:13040000.gpu
+>>> [  501.320954] panfrost 13040000.gpu: Linked as a consumer to genpd:1:13040000.gpu
+>>> [  501.321062] panfrost 13040000.gpu: Linked as a consumer to genpd:2:13040000.gpu
+>>> [  501.321734] panfrost 13040000.gpu: mali-g72 id 0x6221 major 0x0 minor 0x3 status 0x0
+>>> [  501.321741] panfrost 13040000.gpu: features: 00000000,13de77ff, issues: 00000000,00000400
+>>> [  501.321747] panfrost 13040000.gpu: Features: L2:0x07120206 Shader:0x00000000 Tiler:0x00000809 Mem:0x1 MMU:0x00002830 AS:0xff JS:0x7
+>>> [  501.321752] panfrost 13040000.gpu: shader_present=0x7 l2_present=0x1
+>>> [  501.324951] [drm] Initialized panfrost 1.1.0 20180908 for 13040000.gpu on minor 2
+>>>
+>>> Some more changes are still required to get devfreq working, and of course
+>>> I do not have a userspace driver to test this with.
+>>
+>> Have you tried the Panfrost tests in IGT? They are atm quite basic, but
+>> could be interesting to check that the different HW units are correctly
+>> powered on.
+> 
+> I haven't, you mean this right?
+> https://gitlab.freedesktop.org/tomeu/igt-gpu-tools/tree/panfrost
 
-RISC-V EFI boot is not supported yet in upstream Linux.
+Yes, though may be better to use the upstream repo:
 
-> >
-> >>>
-> >>> Also, using an EFI variable defeats the purpose. The whole point of
-> >>> this is making it more likely that the kernel loaded the initrd that
-> >>> the bootloader or firmware intended it to load, and having a piece of
-> >>> simple [signed] code that implements this is the easiest way to
-> >>> achieve that.
-> >>
-> >> At least on my Debian system it is the operating system creating initrd
-> >> and defining which initrd matches which kernel. GRUB simply assumes that
-> >> files ending on the same version number match. Therefore I would say
-> >> Linux hopes that GRUB loads what Linux intended.
-> >>
-> >> The chain of trust would not be broken if the kernel were responsible
-> >> for loading the initrd and for checking if it matches the kernel. Linux
-> >> already does this for the kernel modules in initrd.
-> >>
-> >
-> > We can still sign the initrd and Linux can verify the signature. What
-> > I am after is an interface that does not require the initrd to
-> > originate from a EFI file system protocol, and which doesn't require
-> > the loaded initrd to sit in memory for an unspecified amount of time
-> > and its information passed via DT properties or bootparams structs.
-> >
-> > So invoking EFI_FILE_PROTOCOL directly is not going to work,
-> > regardless of whether we get the devicepath from the command line or
-> > from a EFI variable.
->
-> What do you mean by "is not going to work"?
->
-> With the device path you can find the handle implementing the
-> EFI_SIMPLE_FIL_SYSTEM_PROTOCOL.
->
-> >
-> >>>
-> >>> For u-boot, it should be trivial to implement a simple LoadFile2
-> >>> protocol wrapper around EFI_FILE_PROTOCOL that can be installed on a
-> >>> handle that also carries EFI_FILE_PROTOCOL.
-> >>>
-> >>
-> >> A U-Boot implementation of the EFI_LOAD_FILE2_PROTOCOL would need a
-> >> device path variable to find the block device and to open the
-> >> EFI_SIMPLE_FILE_SYSTEM_PROTOCOL before accessing the file.
-> >>
-> >> Linux would not be needing more lines and we would not repeat the same
-> >> code in GRUB, U-Boot, EDK2, etc.
-> >>
-> >> As said Linux updates the initrd often. If that file is not signed by
-> >> Linux in a well defined way, do not expect any security at all.
-> >>
-> >
-> > It is not only about security. The primary goal is to remove the need
-> > for arch specific knowledge in the firmware about DT, bootparams and
-> > initrd allocation policies without being forced to load the initrd
-> > from a filesystem that is exposed via a EFI protocol.
->
-> Where are device-trees touched by this patch?
->
-> When booting via UEFI there is no need for knowledge of initrd
-> allocation policies in U-Boot because up to now Linux or GRUB or iPXE
-> load initrd.
->
-> Furthermore I need no knowledge of bootparams in U-Boot once we properly
-> we support UEFI variables at runtime because grub-update will pass the
-> command line in one of the Bootxxxx UEFI variables.
->
-> But most importantly I do not have to implement anything Linux specific
-> in U-Boot for booting via UEFI up to now.
->
+https://gitlab.freedesktop.org/drm/igt-gpu-tools
 
-Adding Linux specific stuff to u-boot is arguably more appropriate
-than adding architecture specific stuff to EFI loaders that could
-otherwise be entirely generic.
+> Any specific test you have in mind?
 
-...
->
-> Your patch claims to fend off a specific threat scenario: A user puts an
-> untrusted initrd on the disk and references it in the Linux command line.
->
-> If he is able to do so with your current bootloader (signed or not
-> signed), he most probably will also be able to delete a good initrd from
-> the filesystem and thus force your code into the unsafe path.
->
-> That is why I say that with the current fallback logic this patch
-> achieves no increase in security. Of cause you could remove the fallback
-> logic. But in this case your Linux will not boot with any legacy
-> bootloader or firmware.
->
+All the panfrost ones, but looks like panfrost_prime:gem-prime-import is 
+failing atm:
 
-If there is a better way to expose the initrd that
-a) does not require the initrd to reside on a file system that is
-accessible via EFI protocols, and
-b) does not require the loader to know about arch specific policies
-regarding the placement of the initrd in memory, and
-c) does not leave a time window between the time that the initrd is
-loaded/verified/measured by the firmware and the time that the kernel
-gets handed the buffer
+https://lava.collabora.co.uk/scheduler/job/2214987
 
-then I am happy to discuss it. This proposal is the best I could come
-up with to achieve the above.
+Cheers,
 
--- 
-Ard.
+Tomeu
+
+> Thanks,
+> 
+>> Regards,
+>>
+>> Tomeu
+>>
+>>> I believe at least patches 1, 2, and 3 can be merged. 4 and 5 are mostly
+>>> useful in conjunction with 6 and 7 (which are not ready yet), so I'll let
+>>> maintainers decide.
+>>>
+>>> Thanks!
+>>>
+>>> Nicolas Boichat (7):
+>>>     dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
+>>>     arm64: dts: mt8183: Add node for the Mali GPU
+>>>     drm/panfrost: Improve error reporting in panfrost_gpu_power_on
+>>>     drm/panfrost: Add support for multiple regulators
+>>>     drm/panfrost: Add support for multiple power domains
+>>>     RFC: drm/panfrost: Add mt8183-mali compatible string
+>>>     RFC: drm/panfrost: devfreq: Add support for 2 regulators
+>>>
+>>>    .../bindings/gpu/arm,mali-bifrost.yaml        |  25 ++++
+>>>    arch/arm64/boot/dts/mediatek/mt8183-evb.dts   |   7 +
+>>>    arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 105 +++++++++++++++
+>>>    drivers/gpu/drm/panfrost/panfrost_devfreq.c   |  17 +++
+>>>    drivers/gpu/drm/panfrost/panfrost_device.c    | 123 +++++++++++++++---
+>>>    drivers/gpu/drm/panfrost/panfrost_device.h    |  27 +++-
+>>>    drivers/gpu/drm/panfrost/panfrost_drv.c       |  41 ++++--
+>>>    drivers/gpu/drm/panfrost/panfrost_gpu.c       |  11 +-
+>>>    8 files changed, 326 insertions(+), 30 deletions(-)
+>>>
 
 _______________________________________________
 linux-arm-kernel mailing list
