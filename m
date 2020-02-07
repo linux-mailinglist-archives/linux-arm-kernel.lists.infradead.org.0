@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55CB6155EC1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 20:48:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 834AB155EF5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 20:54:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0gQuEofZtB3dquSMiNeesE296XVvUgU+cpW6BasYJUE=; b=iOSqTPwsh7G3DT
-	37sTUWdAg5EitJGSsMYiiS9vvPeY4ujHul9cTv9x7iaAovQEiFJuxcIaseCOiU75DwhYgJUBmDivp
-	xjdYBBHy9gxwx5nlhTfcYvpMNlLje28W3zvQN4CZa+3o4KYQ/jVRZxNa4HJkDz8nPYmH7hOrvczdT
-	UBRkjqqQMwq2+ds1DGjQjV0hq5/G5JKFo218BrhN/rMjTFKGnAh18rnR7uBEMM/YVuhWPNFFiOTV/
-	0FCsfYTZ0JNhbUGgrLk+OyWrGRSdXy1DQIkx0O8SQVXYkuKSos8v79TgEjNu7KNE5pF8HsL9cqKYE
-	U6OWNokChVbfEbSVOCAg==;
+	List-Owner; bh=Myq5tGZOsLzAYL98qZuc/NCqmdZxx1dA7Md8QhxiMmk=; b=uBGIM2QqTKrhvE
+	Un/vw10C67mkozsWjxY4MpJ+UQHiWWe+YnnfFEcrjrKf+0QaDDgCabE+Jq0yjfmuNlCSF4UvtS5Mk
+	FyRvWMVcBowe3p8G9qOsDR05b/3mpB8+JmCK4ms+K5bEMcuI4r0i/QMooNDaZPcvfYCiaEXfMHGvq
+	YieRDqEPg0zjyJsvKAcCeB20IKIyQG3bWmJI/zoOaGbXCJDk5UfkTDEgmVdEcDOa2SV9KJFlw67Xu
+	YYI3wv6ys1eenIfEPhr0LSm0jfIA5F1K3pWQWx1N5G80rxfgIS5gQ+HreEw5lR+DhlNI5Hu++qAE5
+	CduMtnrgpP3ru6tpLsHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j09bh-0006k2-0L; Fri, 07 Feb 2020 19:48:05 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j09hz-0000Ir-6w; Fri, 07 Feb 2020 19:54:35 +0000
+Received: from bedivere.hansenpartnership.com ([66.63.167.143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j09ba-0006jc-H1
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 19:47:59 +0000
-Received: by mail-wr1-x444.google.com with SMTP id a6so255079wrx.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Feb 2020 11:47:58 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ADmEob5aCHIMZYdk17bc2JtUL+648UgN60jHGzFUmnQ=;
- b=ZtenNvpggSNUBFW84py2rlNqNs1p27CT9g4Y0dQKsE0VKS/mqmxCYdKR44F4KrFJmH
- ccgRRcEazb4hunqtwY7yIYDj1VI46LGOzVIA1W3gOalQEHUL4XoeKvTAwL4LuWC7wEfW
- ku9j4hCIBFMt2Y6ZbkfWtXyv887LDZ2Ka8QncGwcHx4pHRG7UqtVJrnYarZuytQouWff
- 1IqZL2Qa70K/tU+n6B2Df3bQS2a2DKxwqYeKbg3UmzWAjmj1ybwWKOvJzy1IArws51Q6
- VR7tmPpl6QbokDZMdKvp8ApdMtLCzEn/oW7hOcCEXhWH1uHKy5lV+e4K7EWISk+C3Igu
- axRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ADmEob5aCHIMZYdk17bc2JtUL+648UgN60jHGzFUmnQ=;
- b=WD1resnUTkAIJWslpCoysSHNqfTHiIpRRS1p6YvbFjGJ6ek6bxFsnZ3isatpxepM/n
- SqUirOaNnicgvFvuBCbVLyX56ZRjFCmYfIJbOY4tISIQ1ymf76LXSe12KRbpZ/r1HqIw
- CipVdZLiKLeAMOVBTa7qhBWw2LebQ3tqfSPSOzaezaa9vaI+Q+sRIfKqCdjr1nVK+iTH
- NE0X6Nv9poOawqSfv6xv3npBw4EF7NC16zgffqABNZICPAsUd7f/L1O/ZEjOzKRmaCy9
- 6kk4XjphGNBemjYDmRF9mRbrckTgsJlFQ385OyXgXsxKpVKfV3Bpr22BeTD8q37PQ2bl
- xkUQ==
-X-Gm-Message-State: APjAAAUffhxcU1/T76GseJMX8UpKMzAy/CUFibk1E13v/r9EiooxB0w+
- zZMb2F1Xv8myR13sIv56B/iqqgJD/4P2etCmbMARiw==
-X-Google-Smtp-Source: APXvYqy8ulALAFMRrpiERJSH7DxxaKYXZW/FVT6fUplf6OymnaPN0l0tMb7TfG90cZJkFEOJdBoIgpGS95aYvd5xNtc=
-X-Received: by 2002:adf:fd8d:: with SMTP id d13mr643736wrr.208.1581104877140; 
- Fri, 07 Feb 2020 11:47:57 -0800 (PST)
-MIME-Version: 1.0
-References: <20200206140352.6300-1-ardb@kernel.org>
- <20200207184532.GA3276112@rani.riverdale.lan>
-In-Reply-To: <20200207184532.GA3276112@rani.riverdale.lan>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Fri, 7 Feb 2020 19:47:46 +0000
-Message-ID: <CAKv+Gu8Z3=cqbNxspLXAgM_8wEm+to2TWRjpaaC231MbwL2Ycw@mail.gmail.com>
+ id 1j09ht-0000IY-Br
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 19:54:31 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by bedivere.hansenpartnership.com (Postfix) with ESMTP id 856738EE165;
+ Fri,  7 Feb 2020 11:54:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=hansenpartnership.com;
+ s=20151216; t=1581105267;
+ bh=nwwCfdr9IRdM4o2QVGdnaVzNrm7zJ8bHxvLC3vENBCA=;
+ h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
+ b=ZCha+UDNdlHqqjuX7yqUY8oQkgSWcsp/V8dkFEWRYTgx/rWaKUv86mGqydF72KWMs
+ bnpgDQ0yQHecKGRVLmuNhw+4+BjtJkvo//KyCqq6rf2AZWySCofB9I7Rvqv81tkyXM
+ yh3GFEtJkVFlupbgaaP59shqcw5xLwlqhJ1lU4QE=
+Received: from bedivere.hansenpartnership.com ([127.0.0.1])
+ by localhost (bedivere.hansenpartnership.com [127.0.0.1]) (amavisd-new,
+ port 10024)
+ with ESMTP id n-qUKKLwmuaF; Fri,  7 Feb 2020 11:54:27 -0800 (PST)
+Received: from [153.66.254.194] (unknown [50.35.76.230])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by bedivere.hansenpartnership.com (Postfix) with ESMTPSA id B52018EE0E2;
+ Fri,  7 Feb 2020 11:54:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=hansenpartnership.com;
+ s=20151216; t=1581105267;
+ bh=nwwCfdr9IRdM4o2QVGdnaVzNrm7zJ8bHxvLC3vENBCA=;
+ h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
+ b=ZCha+UDNdlHqqjuX7yqUY8oQkgSWcsp/V8dkFEWRYTgx/rWaKUv86mGqydF72KWMs
+ bnpgDQ0yQHecKGRVLmuNhw+4+BjtJkvo//KyCqq6rf2AZWySCofB9I7Rvqv81tkyXM
+ yh3GFEtJkVFlupbgaaP59shqcw5xLwlqhJ1lU4QE=
+Message-ID: <1581105265.4545.17.camel@HansenPartnership.com>
 Subject: Re: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
-To: Arvind Sankar <nivedita@alum.mit.edu>
+From: James Bottomley <James.Bottomley@HansenPartnership.com>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 07 Feb 2020 11:54:25 -0800
+In-Reply-To: <CAKv+Gu99wxr+OHwqPRjfF136VB3AwPbXXg1tx1=34jF2DU6Z6g@mail.gmail.com>
+References: <20200206140352.6300-1-ardb@kernel.org>
+ <fa3b3103-e77d-571d-71a4-604fa48368e6@redhat.com>
+ <cfb38b38-14f2-c61a-60a0-dfe14667b49c@redhat.com>
+ <CAKv+Gu__fUGyv4eu5oKcsVZYSbKRfYYd_VS8CGEV4jC+GuvqJA@mail.gmail.com>
+ <1581092420.7608.15.camel@HansenPartnership.com>
+ <CAKv+Gu99wxr+OHwqPRjfF136VB3AwPbXXg1tx1=34jF2DU6Z6g@mail.gmail.com>
+X-Mailer: Evolution 3.26.6 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_114758_595749_979880BC 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20200207_115429_412021_A9AA648D 
+X-CRM114-Status: GOOD (  33.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [66.63.167.143 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -104,25 +106,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 7 Feb 2020 at 18:45, Arvind Sankar <nivedita@alum.mit.edu> wrote:
->
-> On Thu, Feb 06, 2020 at 02:03:50PM +0000, Ard Biesheuvel wrote:
-> >   data structure. It also creates a time window where the initrd data sits
-> >   in memory, and can potentially be corrupted before the kernel is booted.
-> >
->
-> I don't quite understand the time window aspect -- can you expand on
-> that? It seems like the same time window exists between when the kernel
-> is loaded and when it actually runs, no? Why is this more important for
-> initrd?
+On Fri, 2020-02-07 at 18:31 +0000, Ard Biesheuvel wrote:
+> On Fri, 7 Feb 2020 at 16:20, James Bottomley
+> <James.Bottomley@hansenpartnership.com> wrote:
+> > 
+> > On Fri, 2020-02-07 at 12:23 +0000, Ard Biesheuvel wrote:
+> > > On Fri, 7 Feb 2020 at 09:22, Laszlo Ersek <lersek@redhat.com>
+> > > wrote:
+> > > > 
+> > > > On 02/07/20 10:09, Laszlo Ersek wrote:
+> > 
+> > [...]
+> > > > > For example, virt-install's "--location" option "can
+> > > > > recognize certain distribution trees and fetches a bootable
+> > > > > kernel/initrd pair to launch the install". It would be nice
+> > > > > to keep that working for older distros.
+> > > > > 
+> > > > > I think LoadFile[2] can co-exist with SimpleFs.
+> > > > > 
+> > > > > I also think that the "try SimpleFs first, fall back to
+> > > > > LoadFile[2] second" requirement applies only to the UEFI boot
+> > > > > manager, and not to the kernel's EFI stub. IOW in the new
+> > > > > approach the kernel is free to ignore (abandon) the old
+> > > > > approach for good.
+> > > > 
+> > > > ... But that might not be good for compatibility with grub
+> > > > and/or the platform firmware, from the kernel's own
+> > > > perspective, perhaps?...
+> > > > 
+> > > > Who is supposed to produce LoadFile2 with the new VenMedia
+> > > > devpath?
+> > > > 
+> > > 
+> > > What I am ultimately after is a generic GRUB that uses
+> > > LoadImage+Startimage for starting the kernel on all
+> > > architectures,
+> > 
+> > For most boots, we need to pivot to the MoK.  A long time ago, I
+> > proposed updating the platform security policy to do an override to
+> > allow MoK to become the security verifier (actually principally so
+> > I could get the gummiboot bootloader to work with the MoK method):
+> > 
+> > https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/t
+> > ree/lib/security_policy.c
+> > 
+> > And I believe all the pivot bootloaders now do this, but the fear
+> > was always this looks a bit like hackery that might not work in
+> > some UEFI implementations.  Since we don't really rely on it (shim
+> > link loads after signature verification) we don't know whether the
+> > assumption does break or not.  We'll need to get much more
+> > comfortable with the security override before we can let grub do a
+> > simple load+start.
+> > 
+> 
+> I'd like to do something much simpler: let shim override LoadImage
+> and StartImage,
 
-When using loadimage+startimage, the authentication and measurement of
-the kernel image occur during the call to loadimage(), even if the
-source of the load is memory itself, and startimage() is typically
-called right after.
+Actually, the non-shim bootloaders really don't want to do that: the
+whole point of being able to use LoadImage is that you don't need to
+know how to load a PECOFF binary or check its signature.  Overriding
+the security protocol allows updating the signature check, but if you
+look at the current efitools implementation it uses the pkcs7 protocol
+to avoid having to include crypto code.
 
-The assumption is that it may help to make this time as short as
-possible for the initrd as well.
+I've got the pecoff code they'd need in my uefi library:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/tree/lib/pecoff.c
+
+But it's a lot of code for things that pride themselves on being tiny.
+
+>  and in their implementations, fall back to the firmware
+> ones if necessary.
+> 
+> > > and is able to load the initrd from anywhere in an arch agnostic
+> > > manner.
+> > 
+> > I think the use case might not really be grub, it's gummiboot, or
+> > systemd-boot as its now called:
+> > 
+> 
+> No it is definitely GRUB. GRUB today needs to attach to the shim
+> protocol, perform the authentication, measure the payload etc etc,
+> which means it knows far too much about the internals of shim or the
+> fact that it even exists.
+
+The shim protocol and shim are fairly separate.  I agree it means grub
+has to load and know the two entry points for context and verify but
+they're very far removed for the inner workings of shim.  Obviously, my
+non-shim loader has to supply them for grub, so this is the
+implementation:
+
+https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/tree/lib/shim_protocol.c
+
+It's only 50 lines.
+
+The other thing to consider is that crypto code is huge.  Shim
+currently includes it (although it could avoid this by using the pkcs7
+verifier protocol trick I use ... I should push that harder) and it
+adds about 1M of static code.  Grub does not have this code, so either
+grub uses shim and its code to do the signature verification or grub
+will have to include the additional 1M as well ... I think using shim
+via the protocol is preferable.
+
+> My ideal bootflow would be where the OS installer looks at the
+> firmware's db/dbx, doesn't bother to install shim if the OS vendor's
+> cert is there, and uses the exact same GRUB regardless of whether
+> shim is part of the bootflow or not.
+
+That's not enough.  The whole point of MoK is that the user may have
+done their own key addition, so you could be in the situation where the
+vendor cert is present in db but the user has a MoK override for boot
+and if you assume presence of the vendor cert means you can use
+loadimage, this will fail because the MoK cert isn't in db ... unless
+you've added the MoK key via the security protocol override.
+
+> One of the things impeding this is the fact that we cannot load the
+> initrd from anywhere when using loadimage+startimage.
+
+unless initrd becomes a PECOFF binary, it can never be loaded by
+loadimage ... I thought you were still letting the kernel load it via
+LoadFile2?  (assuming you are and that the above is just a typo).
+
+James
+
 
 _______________________________________________
 linux-arm-kernel mailing list
