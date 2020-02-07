@@ -2,78 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B601A155BA4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 17:20:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61958155BC7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 17:31:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WJN3Iy/rjJnuun3zJXuejX2ChdHeQGpPocwVIF2PUHQ=; b=KqWyPwQLVx6ZTP
-	YrhRzgw4LIdPAeOUGL8IvrfTyBA514T9NgqXEzaGYpjQZ3cIblBS0a7wGkzHK7Ri558PVHK3lMbK6
-	3vt71kAxChN71sxbD7E77jMeOLDYqZNPP2FLErhG0YGqWMoKvfJiEJ2IO2+DhH4kDHZdRyVw9gXq+
-	w8mPIZeQCBaBYFF8sYhdp8QbLp7LlMni0yhDKPJrJcBWp63QBv7lNrMxu2LqLIhyQvORtpLOxV9we
-	sD5wFzV0X05PkYZPevguZg7FvIz5bhQ8DVdWy+d/fq+SqPRoZkSMLhafzAmXZospFrhZvqJz1gSXM
-	Mj65KK9xzP0ubA2b6J9A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+vJfIoanz62jcID9lWRiG7Q0EXIb9FQX9OZJzg2WjOk=; b=hzXDwxKGQPYgat
+	VsTeStBV581EhwcMy0IIiD3q0AXmQPmdiTqJcbIz6QSGeud5OJl0LjWsI912QBzSkizajAE3/hOdM
+	sfFGjpeWbrpWlXraBkzpFw9qHV6CSVSPGr9ND6PZh2Bm1Gtjca32+jiFlz2FxpNjpWKk5Wkn7nCiK
+	HUNF7/Cm4NfUAqkzK+3WYHhMIl/iP0RcWSKO3pTSfbp65IkYRZlpoPMSY9ZBZbrJ158gpXnwZ5Z7+
+	asggEEV0e9mqB8JDgf2O9nWIYjiUZ6hc15BjMbs5WPDj5arkpKYKlARjd2hxQBxrHmDU1/+3T5ygN
+	A6rakVKLVfpux9NM5VGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j06Mo-0005CR-QV; Fri, 07 Feb 2020 16:20:30 +0000
-Received: from bedivere.hansenpartnership.com ([66.63.167.143])
+	id 1j06X5-0008On-WC; Fri, 07 Feb 2020 16:31:08 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j06Mi-0005C6-CV
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 16:20:25 +0000
-Received: from localhost (localhost [127.0.0.1])
- by bedivere.hansenpartnership.com (Postfix) with ESMTP id 804A18EE165;
- Fri,  7 Feb 2020 08:20:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=hansenpartnership.com;
- s=20151216; t=1581092422;
- bh=uvd4rwLEaY2+E2FC+J/+GniOjYoGdBNbZoO4ku6gsSE=;
- h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=xexRZIhrm9xHJGV2dhfty1luTqCxUvHKzrbknQNwWlcd7xwv0ozKBYwSeIcTb+T7t
- IW12BhgAjugv7gru51mdm4mH/xh6RWRWESsVBOhlqsSkikxkkmXzyFP+Ur0VIINWHe
- 8V4yqglOLiSIRibaNCh63o56brr+5K6i3fKwEFbc=
-Received: from bedivere.hansenpartnership.com ([127.0.0.1])
- by localhost (bedivere.hansenpartnership.com [127.0.0.1]) (amavisd-new,
- port 10024)
- with ESMTP id CWzZ8kdisAgm; Fri,  7 Feb 2020 08:20:22 -0800 (PST)
-Received: from [153.66.254.194] (unknown [50.35.76.230])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by bedivere.hansenpartnership.com (Postfix) with ESMTPSA id AAA758EE0E2;
- Fri,  7 Feb 2020 08:20:21 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=hansenpartnership.com;
- s=20151216; t=1581092422;
- bh=uvd4rwLEaY2+E2FC+J/+GniOjYoGdBNbZoO4ku6gsSE=;
- h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=xexRZIhrm9xHJGV2dhfty1luTqCxUvHKzrbknQNwWlcd7xwv0ozKBYwSeIcTb+T7t
- IW12BhgAjugv7gru51mdm4mH/xh6RWRWESsVBOhlqsSkikxkkmXzyFP+Ur0VIINWHe
- 8V4yqglOLiSIRibaNCh63o56brr+5K6i3fKwEFbc=
-Message-ID: <1581092420.7608.15.camel@HansenPartnership.com>
-Subject: Re: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
-From: James Bottomley <James.Bottomley@HansenPartnership.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>, Laszlo Ersek
- <lersek@redhat.com>
-Date: Fri, 07 Feb 2020 08:20:20 -0800
-In-Reply-To: <CAKv+Gu__fUGyv4eu5oKcsVZYSbKRfYYd_VS8CGEV4jC+GuvqJA@mail.gmail.com>
-References: <20200206140352.6300-1-ardb@kernel.org>
- <fa3b3103-e77d-571d-71a4-604fa48368e6@redhat.com>
- <cfb38b38-14f2-c61a-60a0-dfe14667b49c@redhat.com>
- <CAKv+Gu__fUGyv4eu5oKcsVZYSbKRfYYd_VS8CGEV4jC+GuvqJA@mail.gmail.com>
-X-Mailer: Evolution 3.26.6 
-Mime-Version: 1.0
+ id 1j06Wz-0008O5-AA
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 16:31:04 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 017GRDex029779; Fri, 7 Feb 2020 17:30:52 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=eynS2NWJgzJPsFwfn39rO+Ib4H8Lzadaw2c3N+8nz14=;
+ b=la2ykJAW/nMDix22ZSfhtrmn8NCghZzei0MsqCmvjZk8n7hUbPFIK5e/sjk3aYOXissE
+ uv+fcatEt/ED7/5W8+4Posfkub6EWrkf6A1FbSzx0r3U40XT66cqVfSrwR1ov2dqxM0s
+ O2PVzVW0LDMQTacEqtxOwwiisoWoDQ58Y6Zc2BFlLW7Lw8LXEVmsWnkaiQfsJR39JNtc
+ mwvZIuKuvu7iqx/pEs/BvXXOyNN+g7jj8S74rXXp4uiIApwt7M0YghcevP0KyM7z9JUi
+ V4qXRQB1lEv98FxcjT4oGBsf51OMEGnqA5dNpifDweSSYXO1wwWpbVYJaMRXC8SvWmlZ ZQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2xyhkucn68-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 07 Feb 2020 17:30:52 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 332BB10002A;
+ Fri,  7 Feb 2020 17:30:48 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1D3C42B0C8F;
+ Fri,  7 Feb 2020 17:30:48 +0100 (CET)
+Received: from localhost (10.75.127.47) by SFHDAG5NODE3.st.com (10.75.127.15)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Fri, 7 Feb 2020 17:30:47 +0100
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <jic23@kernel.org>
+Subject: [PATCH v2] iio: trigger: stm32-timer: enable clock when in master mode
+Date: Fri, 7 Feb 2020 17:30:31 +0100
+Message-ID: <1581093031-9871-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
+MIME-Version: 1.0
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-07_02:2020-02-07,
+ 2020-02-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_082024_439205_7A6C48A6 
-X-CRM114-Status: GOOD (  21.60  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200207_083101_814153_8D6AA12A 
+X-CRM114-Status: GOOD (  21.72  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [66.63.167.143 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -92,81 +91,284 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>,
- Daniel Kiper <daniel.kiper@oracle.com>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
- Leif Lindholm <leif@nuviainc.com>, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: lars@metafoo.de, olivier.moysan@st.com, alexandre.torgue@st.com,
+ linux-iio@vger.kernel.org, pmeerw@pmeerw.net, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, knaack.h@gmx.de, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2020-02-07 at 12:23 +0000, Ard Biesheuvel wrote:
-> On Fri, 7 Feb 2020 at 09:22, Laszlo Ersek <lersek@redhat.com> wrote:
-> > 
-> > On 02/07/20 10:09, Laszlo Ersek wrote:
-[...]
-> > > For example, virt-install's "--location" option "can recognize
-> > > certain distribution trees and fetches a bootable kernel/initrd
-> > > pair to launch the install". It would be nice to keep that
-> > > working for older distros.
-> > > 
-> > > I think LoadFile[2] can co-exist with SimpleFs.
-> > > 
-> > > I also think that the "try SimpleFs first, fall back to
-> > > LoadFile[2] second" requirement applies only to the UEFI boot
-> > > manager, and not to the kernel's EFI stub. IOW in the new
-> > > approach the kernel is free to ignore (abandon) the old approach
-> > > for good.
-> > 
-> > ... But that might not be good for compatibility with grub and/or
-> > the platform firmware, from the kernel's own perspective,
-> > perhaps?...
-> > 
-> > Who is supposed to produce LoadFile2 with the new VenMedia devpath?
-> > 
-> 
-> What I am ultimately after is a generic GRUB that uses
-> LoadImage+Startimage for starting the kernel on all architectures, 
+Clock should be enabled as soon as using master modes, even before
+enabling timer. Or, this may provoke bad behavior on the other end
+(slave timer). Then, introduce 'clk_enabled' flag, instead of relying
+on CR1 EN bit, to keep track of clock being enabled (balanced refcount).
+Propagate this anywhere else in the driver.
 
-For most boots, we need to pivot to the MoK.  A long time ago, I
-proposed updating the platform security policy to do an override to
-allow MoK to become the security verifier (actually principally so I
-could get the gummiboot bootloader to work with the MoK method):
+Also add 'remove' routine to stop timer and disable clock in case it
+has been left enabled. Enforce the user interface has been unregistered
+in the remove routine, before disabling the hardware to avoid possible
+race. So, remove use of devm_ variant to register triggers and unregister
+them before the hardware gets disabled [1].
+[1] https://patchwork.kernel.org/patch/9956247/
 
-https://git.kernel.org/pub/scm/linux/kernel/git/jejb/efitools.git/tree/lib/security_policy.c
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+Changes in v2:
+- enforce the user interface has been unregistered in the remove routine,
+  before disabling the hardware to avoid possible race.
+---
+ drivers/iio/trigger/stm32-timer-trigger.c | 98 ++++++++++++++++++++++++-------
+ 1 file changed, 76 insertions(+), 22 deletions(-)
 
-And I believe all the pivot bootloaders now do this, but the fear was
-always this looks a bit like hackery that might not work in some UEFI
-implementations.  Since we don't really rely on it (shim link loads
-after signature verification) we don't know whether the assumption does
-break or not.  We'll need to get much more comfortable with the
-security override before we can let grub do a simple load+start.
-
-> and is able to load the initrd from anywhere in an arch agnostic
-> manner.
-
-I think the use case might not really be grub, it's gummiboot, or
-systemd-boot as its now called:
-
-https://wiki.archlinux.org/index.php/systemd-boot
-
-The standard way of using grub and EFI is to put grub on the EFI
-parition but have the kernel and the initrd on the root parition (which
-won't be EFI readable).  This means we can keep the EFI partition small
-and only needing modification when grub is updated, meaning it doesn't
-even need mounting at all usually.
-
-Don't get me wrong, I like the gummiboot way of doing the
-LoadImage+StartImage: it's small and clean and doesn't need the shim
-protocol, but people like the sophistication grub provides including
-its ability to read kernel filesystems, so they're unlikely to change
-that.
-
-James
+diff --git a/drivers/iio/trigger/stm32-timer-trigger.c b/drivers/iio/trigger/stm32-timer-trigger.c
+index a5dfe65..473853e 100644
+--- a/drivers/iio/trigger/stm32-timer-trigger.c
++++ b/drivers/iio/trigger/stm32-timer-trigger.c
+@@ -79,10 +79,13 @@ struct stm32_timer_trigger {
+ 	struct device *dev;
+ 	struct regmap *regmap;
+ 	struct clk *clk;
++	bool clk_enabled;
+ 	u32 max_arr;
+ 	const void *triggers;
+ 	const void *valids;
+ 	bool has_trgo2;
++	struct mutex lock; /* concurrent sysfs configuration */
++	struct list_head tr_list;
+ };
+ 
+ struct stm32_timer_trigger_cfg {
+@@ -106,7 +109,7 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+ {
+ 	unsigned long long prd, div;
+ 	int prescaler = 0;
+-	u32 ccer, cr1;
++	u32 ccer;
+ 
+ 	/* Period and prescaler values depends of clock rate */
+ 	div = (unsigned long long)clk_get_rate(priv->clk);
+@@ -136,9 +139,11 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+ 	if (ccer & TIM_CCER_CCXE)
+ 		return -EBUSY;
+ 
+-	regmap_read(priv->regmap, TIM_CR1, &cr1);
+-	if (!(cr1 & TIM_CR1_CEN))
++	mutex_lock(&priv->lock);
++	if (!priv->clk_enabled) {
++		priv->clk_enabled = true;
+ 		clk_enable(priv->clk);
++	}
+ 
+ 	regmap_write(priv->regmap, TIM_PSC, prescaler);
+ 	regmap_write(priv->regmap, TIM_ARR, prd - 1);
+@@ -157,22 +162,20 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
+ 
+ 	/* Enable controller */
+ 	regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN, TIM_CR1_CEN);
++	mutex_unlock(&priv->lock);
+ 
+ 	return 0;
+ }
+ 
+ static void stm32_timer_stop(struct stm32_timer_trigger *priv)
+ {
+-	u32 ccer, cr1;
++	u32 ccer;
+ 
+ 	regmap_read(priv->regmap, TIM_CCER, &ccer);
+ 	if (ccer & TIM_CCER_CCXE)
+ 		return;
+ 
+-	regmap_read(priv->regmap, TIM_CR1, &cr1);
+-	if (cr1 & TIM_CR1_CEN)
+-		clk_disable(priv->clk);
+-
++	mutex_lock(&priv->lock);
+ 	/* Stop timer */
+ 	regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_ARPE, 0);
+ 	regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN, 0);
+@@ -181,6 +184,12 @@ static void stm32_timer_stop(struct stm32_timer_trigger *priv)
+ 
+ 	/* Make sure that registers are updated */
+ 	regmap_update_bits(priv->regmap, TIM_EGR, TIM_EGR_UG, TIM_EGR_UG);
++
++	if (priv->clk_enabled) {
++		priv->clk_enabled = false;
++		clk_disable(priv->clk);
++	}
++	mutex_unlock(&priv->lock);
+ }
+ 
+ static ssize_t stm32_tt_store_frequency(struct device *dev,
+@@ -295,11 +304,18 @@ static ssize_t stm32_tt_store_master_mode(struct device *dev,
+ 	for (i = 0; i <= master_mode_max; i++) {
+ 		if (!strncmp(master_mode_table[i], buf,
+ 			     strlen(master_mode_table[i]))) {
++			mutex_lock(&priv->lock);
++			if (!priv->clk_enabled) {
++				/* Clock should be enabled first */
++				priv->clk_enabled = true;
++				clk_enable(priv->clk);
++			}
+ 			regmap_update_bits(priv->regmap, TIM_CR2, mask,
+ 					   i << shift);
+ 			/* Make sure that registers are updated */
+ 			regmap_update_bits(priv->regmap, TIM_EGR,
+ 					   TIM_EGR_UG, TIM_EGR_UG);
++			mutex_unlock(&priv->lock);
+ 			return len;
+ 		}
+ 	}
+@@ -357,11 +373,21 @@ static const struct attribute_group *stm32_trigger_attr_groups[] = {
+ static const struct iio_trigger_ops timer_trigger_ops = {
+ };
+ 
+-static int stm32_setup_iio_triggers(struct stm32_timer_trigger *priv)
++static void stm32_unregister_iio_triggers(struct stm32_timer_trigger *priv)
++{
++	struct iio_trigger *tr;
++
++	list_for_each_entry(tr, &priv->tr_list, alloc_list)
++		iio_trigger_unregister(tr);
++}
++
++static int stm32_register_iio_triggers(struct stm32_timer_trigger *priv)
+ {
+ 	int ret;
+ 	const char * const *cur = priv->triggers;
+ 
++	INIT_LIST_HEAD(&priv->tr_list);
++
+ 	while (cur && *cur) {
+ 		struct iio_trigger *trig;
+ 		bool cur_is_trgo = stm32_timer_is_trgo_name(*cur);
+@@ -388,9 +414,13 @@ static int stm32_setup_iio_triggers(struct stm32_timer_trigger *priv)
+ 
+ 		iio_trigger_set_drvdata(trig, priv);
+ 
+-		ret = devm_iio_trigger_register(priv->dev, trig);
+-		if (ret)
++		ret = iio_trigger_register(trig);
++		if (ret) {
++			stm32_unregister_iio_triggers(priv);
+ 			return ret;
++		}
++
++		list_add_tail(&trig->alloc_list, &priv->tr_list);
+ 		cur++;
+ 	}
+ 
+@@ -437,7 +467,6 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
+ 				   int val, int val2, long mask)
+ {
+ 	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+-	u32 dat;
+ 
+ 	switch (mask) {
+ 	case IIO_CHAN_INFO_RAW:
+@@ -448,19 +477,23 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
+ 		return -EINVAL;
+ 
+ 	case IIO_CHAN_INFO_ENABLE:
++		mutex_lock(&priv->lock);
+ 		if (val) {
+-			regmap_read(priv->regmap, TIM_CR1, &dat);
+-			if (!(dat & TIM_CR1_CEN))
++			if (!priv->clk_enabled) {
++				priv->clk_enabled = true;
+ 				clk_enable(priv->clk);
++			}
+ 			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
+ 					   TIM_CR1_CEN);
+ 		} else {
+-			regmap_read(priv->regmap, TIM_CR1, &dat);
+ 			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
+ 					   0);
+-			if (dat & TIM_CR1_CEN)
++			if (priv->clk_enabled) {
++				priv->clk_enabled = false;
+ 				clk_disable(priv->clk);
++			}
+ 		}
++		mutex_unlock(&priv->lock);
+ 		return 0;
+ 	}
+ 
+@@ -556,7 +589,6 @@ static int stm32_set_enable_mode(struct iio_dev *indio_dev,
+ {
+ 	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
+ 	int sms = stm32_enable_mode2sms(mode);
+-	u32 val;
+ 
+ 	if (sms < 0)
+ 		return sms;
+@@ -564,11 +596,12 @@ static int stm32_set_enable_mode(struct iio_dev *indio_dev,
+ 	 * Triggered mode sets CEN bit automatically by hardware. So, first
+ 	 * enable counter clock, so it can use it. Keeps it in sync with CEN.
+ 	 */
+-	if (sms == 6) {
+-		regmap_read(priv->regmap, TIM_CR1, &val);
+-		if (!(val & TIM_CR1_CEN))
+-			clk_enable(priv->clk);
++	mutex_lock(&priv->lock);
++	if (sms == 6 && !priv->clk_enabled) {
++		clk_enable(priv->clk);
++		priv->clk_enabled = true;
+ 	}
++	mutex_unlock(&priv->lock);
+ 
+ 	regmap_update_bits(priv->regmap, TIM_SMCR, TIM_SMCR_SMS, sms);
+ 
+@@ -752,8 +785,9 @@ static int stm32_timer_trigger_probe(struct platform_device *pdev)
+ 	priv->triggers = triggers_table[index];
+ 	priv->valids = cfg->valids_table[index];
+ 	stm32_timer_detect_trgo2(priv);
++	mutex_init(&priv->lock);
+ 
+-	ret = stm32_setup_iio_triggers(priv);
++	ret = stm32_register_iio_triggers(priv);
+ 	if (ret)
+ 		return ret;
+ 
+@@ -762,6 +796,25 @@ static int stm32_timer_trigger_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static int stm32_timer_trigger_remove(struct platform_device *pdev)
++{
++	struct stm32_timer_trigger *priv = platform_get_drvdata(pdev);
++	u32 val;
++
++	/* Unregister triggers before everything can be safely turned off */
++	stm32_unregister_iio_triggers(priv);
++
++	/* Check if nobody else use the timer, then disable it */
++	regmap_read(priv->regmap, TIM_CCER, &val);
++	if (!(val & TIM_CCER_CCXE))
++		regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN, 0);
++
++	if (priv->clk_enabled)
++		clk_disable(priv->clk);
++
++	return 0;
++}
++
+ static const struct stm32_timer_trigger_cfg stm32_timer_trg_cfg = {
+ 	.valids_table = valids_table,
+ 	.num_valids_table = ARRAY_SIZE(valids_table),
+@@ -786,6 +839,7 @@ MODULE_DEVICE_TABLE(of, stm32_trig_of_match);
+ 
+ static struct platform_driver stm32_timer_trigger_driver = {
+ 	.probe = stm32_timer_trigger_probe,
++	.remove = stm32_timer_trigger_remove,
+ 	.driver = {
+ 		.name = "stm32-timer-trigger",
+ 		.of_match_table = stm32_trig_of_match,
+-- 
+2.7.4
 
 
 _______________________________________________
