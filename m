@@ -2,76 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DDA27155450
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 10:12:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94F71155492
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 10:25:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yvTzlL7UyVzBMsAoQhow+m9P2tt4btdxNllMhFlN+Og=; b=aGmw2RTjPf2lDh
-	HE3m/f3Dgc8hLwztBeH5Y+qBl1px0YKwRM/P8YshfRJESC3vdQ91hKeZ9rQYZmjNZOwuVEfJ0+PUW
-	oeqEpWCEODmt7xy+bUiaMZQQhgc/FzddxK/FsWWegsn+Ctaq8/DJtiQbDQMSRavJ+pfgQzv0ihASI
-	tGIA+vbtPP5rPMZTktEGZlfAsTQle5+1YHdFDB2eTrRwMcW4qivSdRX+YUCsrD0X2YHV3TVjBWnLQ
-	8lhi6q1Euz6vHpqqfL8KRvCHyqRC4IMJX1tXRfWaqhn5reJ3+DpBa41VQLnTQUeGk7YdXab0Txj+8
-	4slM9O7M/d9/9UZ/0Diw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZRweRdhp5u5FZotnAfWohqsOu1rmsVDg1iXOOxySANg=; b=K69fnJDRVtstYS
+	Ef7PNCM6zjL1MctP8oszyVQCXCmPmulOBqpNYSvESUQGIcHeWWJOXCDE3SQJ8ai2SRWYqAuk5D989
+	Y9jM+m9WWKgT0GReU3003Gjd2Ub1Ker4uHItZo1UsoJGBA3YHV1eQ/Km0rjP58YGmGmNovFOQbNwm
+	jGeIBhuDPaiD8DZrh4LRaKVuRt/eYSi4QeJiFMLaYOnxFJsm10qYXcQx90kyj573sWS3RcEGqqISN
+	dhxsE0JRrLhCsMxvOpz4EUyQdh6i1WQndOKgkBtJN6Jmt+RYlmlJ6dIL+L/fo84roNNZbT5mInV17
+	fH9r+EQG0RiDcpZm2G9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izzgU-0003c0-NR; Fri, 07 Feb 2020 09:12:22 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1izzsx-0007md-47; Fri, 07 Feb 2020 09:25:15 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izzft-0003Bd-Ia
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 09:11:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581066703;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=QuLB0y7RG5We5q4Lc/bQBCJROUHui365GYirfx1BIiQ=;
- b=IzPomrViHEF4/vR9B6sHraz6qfXWAUog7/7OvUfvwbRU6XLBIG/TI71cJklbYlUItsBdGi
- 7sx2FlZacryLjNi6F8yptVyAvpE1n16E+zLV4gX+/EFXhv07zySzM1rt3j7EYLM0jZgMkr
- J7uqRjjkTZ5RCHQ8Rmdm7u7K7bq9bh4=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-16-Z5g9jiFKM9Wm4XOVaSUTtQ-1; Fri, 07 Feb 2020 04:09:44 -0500
-X-MC-Unique: Z5g9jiFKM9Wm4XOVaSUTtQ-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3A1BD8010F6;
- Fri,  7 Feb 2020 09:09:43 +0000 (UTC)
-Received: from lacos-laptop-7.usersys.redhat.com (ovpn-117-138.ams2.redhat.com
- [10.36.117.138])
- by smtp.corp.redhat.com (Postfix) with ESMTP id E24BF60BEC;
- Fri,  7 Feb 2020 09:09:40 +0000 (UTC)
-Subject: Re: [PATCH 0/2] arch-agnostic initrd loading method for EFI systems
-To: Ard Biesheuvel <ardb@kernel.org>, linux-efi@vger.kernel.org
-References: <20200206140352.6300-1-ardb@kernel.org>
-From: Laszlo Ersek <lersek@redhat.com>
-Message-ID: <fa3b3103-e77d-571d-71a4-604fa48368e6@redhat.com>
-Date: Fri, 7 Feb 2020 10:09:39 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+ id 1izzsf-0007dz-Pe; Fri, 07 Feb 2020 09:24:59 +0000
+X-UUID: 2721003ee6dc4db6b2a968b46961b4f8-20200207
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=cyJ1TARndvDFv4ZQVV/s5FnYVApReyINhKmHrdH8RJM=; 
+ b=CbsY9buj0WfZ9W+AX/b1ha6pRLScg4wZUofxeiUL127eSaSsbz7KxaJOKjDWvuyoWA6ruS+LsncC3jLzS6Fze5WIsbE2nApwn9wkE+zlEO7F/LvsfwQXCXkpt70Kq/+T9KZPVnbJyo4fr/tpq6mpJvHzBkEYELNu+7hlyfU0brw=;
+X-UUID: 2721003ee6dc4db6b2a968b46961b4f8-20200207
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <macpaul.lin@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1731719118; Fri, 07 Feb 2020 01:24:54 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 7 Feb 2020 01:24:05 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 7 Feb 2020 17:22:47 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Fri, 7 Feb 2020 17:22:58 +0800
+From: Macpaul Lin <macpaul.lin@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Catalin Marinas
+ <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>, Michael Turquette
+ <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>, mtk01761
+ <wendell.lin@mediatek.com>, Fabien Parent <fparent@baylibre.com>, Weiyi Lu
+ <weiyi.lu@mediatek.com>, Mars Cheng <mars.cheng@mediatek.com>, Sean Wang
+ <Sean.Wang@mediatek.com>, Macpaul Lin <macpaul.lin@mediatek.com>, Owen Chen
+ <owen.chen@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, "Evan
+ Green" <evgreen@chromium.org>, Yong Wu <yong.wu@mediatek.com>, Joerg Roedel
+ <jroedel@suse.de>, Shawn Guo <shawnguo@kernel.org>, Marc Zyngier
+ <marc.zyngier@arm.com>, Ryder Lee <Ryder.Lee@mediatek.com>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-mediatek@lists.infradead.org>, 
+ <linux-clk@vger.kernel.org>
+Subject: [PATCH v7 1/7] dt-bindings: clock: mediatek: document clk bindings
+ for Mediatek MT6765 SoC
+Date: Fri, 7 Feb 2020 17:20:44 +0800
+Message-ID: <1581067250-12744-2-git-send-email-macpaul.lin@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1581067250-12744-1-git-send-email-macpaul.lin@mediatek.com>
+References: <1581067250-12744-1-git-send-email-macpaul.lin@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <20200206140352.6300-1-ardb@kernel.org>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_011145_864526_68103C99 
-X-CRM114-Status: GOOD (  32.05  )
+X-CRM114-CacheID: sfid-20200207_012457_841996_64756FF5 
+X-CRM114-Status: GOOD (  12.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -79,7 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,100 +98,201 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: agraf@csgraf.de, xypron.glpk@gmx.de, daniel.kiper@oracle.com,
- ilias.apalodimas@linaro.org, mjg59@google.com, pjones@redhat.com,
- leif@nuviainc.com, linux-arm-kernel@lists.infradead.org
+Cc: CC Hwang <cc.hwang@mediatek.com>, Loda Chou <loda.chou@mediatek.com>,
+ Mediatek WSD Upstream <wsd_upstream@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/06/20 15:03, Ard Biesheuvel wrote:
-> This series introduces an arch agnostic way of loading the initrd into
-> memory from the EFI stub. This addresses a number of shortcomings that
-> affect the current implementations that exist across architectures:
-> 
-> - The initrd=<file> command line option can only load files that reside
->   on the same file system that the kernel itself was loaded from, which
->   requires the bootloader or firmware to expose that file system via the
->   appropriate EFI protocol, which is not always feasible. From the kernel
->   side, this protocol is problematic since it is incompatible with mixed
->   mode on x86 (this is due to the fact that some of its methods have
->   prototypes that are difficult to marshall)
-> 
-> - The approach that is ordinarily taken by GRUB is to load the initrd into
->   memory, and pass it to the kernel proper via the bootparams structure or
->   via the device tree. This requires the boot loader to have an understanding
->   of those structures, which are not always set in stone, and of the policies
->   around where the initrd may be loaded into memory. In the ARM case, it
->   requires GRUB to modify the hardware description provided by the firmware,
->   given that the initrd base and offset in memory are passed via the same
->   data structure. It also creates a time window where the initrd data sits
->   in memory, and can potentially be corrupted before the kernel is booted.
-> 
-> Considering that we will soon have new users of these interfaces (EFI for
-> kvmtool on ARM, RISC-V in u-boot, etc), it makes sense to add a generic
-> interface now, before having another wave of bespoke arch specific code
-> coming in.
-> 
-> Another aspect to take into account is that support for UEFI secure boot
-> and measured boot is being taken into the upstream, and being able to
-> rely on the PE entry point for booting any architecture makes the GRUB
-> vs shim story much cleaner, as we should be able to rely on LoadImage
-> and StartImage on all architectures, while retaining the ability to
-> load initrds from anywhere.
-> 
-> Note that these patches depend on a fair amount of cleanup work that I
-> am targetting for v5.7. Branch can be found at:
-> https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=efistub-unification2
-> 
-> An implementation for ArmVirtQemu (OVMF for ARM aka AAVMF) can be found
-> at https://github.com/ardbiesheuvel/edk2/commits/linux-efi-generic.
-> The change is for ARM only, but the exact same code could be used on x86.
+From: Mars Cheng <mars.cheng@mediatek.com>
 
-I like this ArmVirtQemu feature, but I think it should be implemented as
-an addition, rather than a replacement. Older kernels (older EFI stubs)
-will try to fetch the initrd from the same fs where grub loaded the
-kernel from (exactly as you describe in the blurb).
+This patch adds the binding documentation for apmixedsys, audsys, camsys,
+imgsys, infracfg, mipi0a, topckgen, vcodecsys
 
-For example, virt-install's "--location" option "can recognize certain
-distribution trees and fetches a bootable kernel/initrd pair to launch
-the install". It would be nice to keep that working for older distros.
+Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
+Signed-off-by: Owen Chen <owen.chen@mediatek.com>
+Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+---
+ .../arm/mediatek/mediatek,apmixedsys.txt      |  1 +
+ .../bindings/arm/mediatek/mediatek,audsys.txt |  1 +
+ .../bindings/arm/mediatek/mediatek,camsys.txt |  1 +
+ .../bindings/arm/mediatek/mediatek,imgsys.txt |  1 +
+ .../arm/mediatek/mediatek,infracfg.txt        |  1 +
+ .../bindings/arm/mediatek/mediatek,mipi0a.txt | 28 +++++++++++++++++++
+ .../bindings/arm/mediatek/mediatek,mmsys.txt  |  1 +
+ .../arm/mediatek/mediatek,pericfg.txt         |  1 +
+ .../arm/mediatek/mediatek,topckgen.txt        |  1 +
+ .../arm/mediatek/mediatek,vcodecsys.txt       | 27 ++++++++++++++++++
+ 10 files changed, 63 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/arm/mediatek/mediatek,mipi0a.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/mediatek/mediatek,vcodecsys.txt
 
-I think LoadFile[2] can co-exist with SimpleFs.
-
-I also think that the "try SimpleFs first, fall back to LoadFile[2]
-second" requirement applies only to the UEFI boot manager, and not to
-the kernel's EFI stub. IOW in the new approach the kernel is free to
-ignore (abandon) the old approach for good.
-
-Thanks
-Laszlo
-
-> 
-> Cc: lersek@redhat.com
-> Cc: leif@nuviainc.com
-> Cc: pjones@redhat.com
-> Cc: mjg59@google.com
-> Cc: agraf@csgraf.de
-> Cc: ilias.apalodimas@linaro.org
-> Cc: xypron.glpk@gmx.de 
-> Cc: daniel.kiper@oracle.com
-> 
-> Ard Biesheuvel (2):
->   efi/libstub: add support for loading the initrd from a device path
->   efi/libstub: take noinitrd cmdline argument into account for devpath
->     initrd
-> 
->  drivers/firmware/efi/libstub/arm-stub.c       | 21 ++++--
->  .../firmware/efi/libstub/efi-stub-helper.c    | 74 +++++++++++++++++++
->  drivers/firmware/efi/libstub/efistub.h        | 13 ++++
->  drivers/firmware/efi/libstub/x86-stub.c       | 51 ++++++++++---
->  include/linux/efi.h                           |  1 +
->  5 files changed, 146 insertions(+), 14 deletions(-)
-> 
-
-
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,apmixedsys.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,apmixedsys.txt
+index ff000ccade78..bd7a0fa5801b 100644
+--- a/Documentation/devicetree/bindings/arm/mediatek/mediatek,apmixedsys.txt
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,apmixedsys.txt
+@@ -8,6 +8,7 @@ Required Properties:
+ - compatible: Should be one of:
+ 	- "mediatek,mt2701-apmixedsys"
+ 	- "mediatek,mt2712-apmixedsys", "syscon"
++	- "mediatek,mt6765-apmixedsys", "syscon"
+ 	- "mediatek,mt6779-apmixedsys", "syscon"
+ 	- "mediatek,mt6797-apmixedsys"
+ 	- "mediatek,mt7622-apmixedsys"
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,audsys.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,audsys.txt
+index e4ca7b703123..38309db115f5 100644
+--- a/Documentation/devicetree/bindings/arm/mediatek/mediatek,audsys.txt
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,audsys.txt
+@@ -7,6 +7,7 @@ Required Properties:
+ 
+ - compatible: Should be one of:
+ 	- "mediatek,mt2701-audsys", "syscon"
++	- "mediatek,mt6765-audsys", "syscon"
+ 	- "mediatek,mt6779-audio", "syscon"
+ 	- "mediatek,mt7622-audsys", "syscon"
+ 	- "mediatek,mt7623-audsys", "mediatek,mt2701-audsys", "syscon"
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,camsys.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,camsys.txt
+index 1f4aaa15a37e..a0ce82085ad0 100644
+--- a/Documentation/devicetree/bindings/arm/mediatek/mediatek,camsys.txt
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,camsys.txt
+@@ -6,6 +6,7 @@ The MediaTek camsys controller provides various clocks to the system.
+ Required Properties:
+ 
+ - compatible: Should be one of:
++	- "mediatek,mt6765-camsys", "syscon"
+ 	- "mediatek,mt6779-camsys", "syscon"
+ 	- "mediatek,mt8183-camsys", "syscon"
+ - #clock-cells: Must be 1
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,imgsys.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,imgsys.txt
+index 2b693e343c56..1e1f00718a7d 100644
+--- a/Documentation/devicetree/bindings/arm/mediatek/mediatek,imgsys.txt
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,imgsys.txt
+@@ -8,6 +8,7 @@ Required Properties:
+ - compatible: Should be one of:
+ 	- "mediatek,mt2701-imgsys", "syscon"
+ 	- "mediatek,mt2712-imgsys", "syscon"
++	- "mediatek,mt6765-imgsys", "syscon"
+ 	- "mediatek,mt6779-imgsys", "syscon"
+ 	- "mediatek,mt6797-imgsys", "syscon"
+ 	- "mediatek,mt7623-imgsys", "mediatek,mt2701-imgsys", "syscon"
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,infracfg.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,infracfg.txt
+index db2f4fd754e7..49a968be1a80 100644
+--- a/Documentation/devicetree/bindings/arm/mediatek/mediatek,infracfg.txt
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,infracfg.txt
+@@ -9,6 +9,7 @@ Required Properties:
+ - compatible: Should be one of:
+ 	- "mediatek,mt2701-infracfg", "syscon"
+ 	- "mediatek,mt2712-infracfg", "syscon"
++	- "mediatek,mt6765-infracfg", "syscon"
+ 	- "mediatek,mt6779-infracfg_ao", "syscon"
+ 	- "mediatek,mt6797-infracfg", "syscon"
+ 	- "mediatek,mt7622-infracfg", "syscon"
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,mipi0a.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,mipi0a.txt
+new file mode 100644
+index 000000000000..8be5978f388d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,mipi0a.txt
+@@ -0,0 +1,28 @@
++Mediatek mipi0a (mipi_rx_ana_csi0a) controller
++============================
++
++The Mediatek mipi0a controller provides various clocks
++to the system.
++
++Required Properties:
++
++- compatible: Should be one of:
++	- "mediatek,mt6765-mipi0a", "syscon"
++- #clock-cells: Must be 1
++
++The mipi0a controller uses the common clk binding from
++Documentation/devicetree/bindings/clock/clock-bindings.txt
++The available clocks are defined in dt-bindings/clock/mt*-clk.h.
++
++The mipi0a controller also uses the common power domain from
++Documentation/devicetree/bindings/soc/mediatek/scpsys.txt
++The available power doamins are defined in dt-bindings/power/mt*-power.h.
++
++Example:
++
++mipi0a: clock-controller@11c10000 {
++	compatible = "mediatek,mt6765-mipi0a", "syscon";
++	reg = <0 0x11c10000 0 0x1000>;
++	power-domains = <&scpsys MT6765_POWER_DOMAIN_CAM>;
++	#clock-cells = <1>;
++};
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,mmsys.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,mmsys.txt
+index 301eefbe1618..4a712509bec2 100644
+--- a/Documentation/devicetree/bindings/arm/mediatek/mediatek,mmsys.txt
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,mmsys.txt
+@@ -8,6 +8,7 @@ Required Properties:
+ - compatible: Should be one of:
+ 	- "mediatek,mt2701-mmsys", "syscon"
+ 	- "mediatek,mt2712-mmsys", "syscon"
++	- "mediatek,mt6765-mmsys", "syscon"
+ 	- "mediatek,mt6779-mmsys", "syscon"
+ 	- "mediatek,mt6797-mmsys", "syscon"
+ 	- "mediatek,mt7623-mmsys", "mediatek,mt2701-mmsys", "syscon"
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.txt
+index ecf027a9003a..dcbd414c7fd7 100644
+--- a/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.txt
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.txt
+@@ -9,6 +9,7 @@ Required Properties:
+ - compatible: Should be one of:
+ 	- "mediatek,mt2701-pericfg", "syscon"
+ 	- "mediatek,mt2712-pericfg", "syscon"
++	- "mediatek,mt6765-pericfg", "syscon"
+ 	- "mediatek,mt7622-pericfg", "syscon"
+ 	- "mediatek,mt7623-pericfg", "mediatek,mt2701-pericfg", "syscon"
+ 	- "mediatek,mt7629-pericfg", "syscon"
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,topckgen.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,topckgen.txt
+index 0293d693ce0c..9b0394cbbdc9 100644
+--- a/Documentation/devicetree/bindings/arm/mediatek/mediatek,topckgen.txt
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,topckgen.txt
+@@ -8,6 +8,7 @@ Required Properties:
+ - compatible: Should be one of:
+ 	- "mediatek,mt2701-topckgen"
+ 	- "mediatek,mt2712-topckgen", "syscon"
++	- "mediatek,mt6765-topckgen", "syscon"
+ 	- "mediatek,mt6779-topckgen", "syscon"
+ 	- "mediatek,mt6797-topckgen"
+ 	- "mediatek,mt7622-topckgen"
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,vcodecsys.txt b/Documentation/devicetree/bindings/arm/mediatek/mediatek,vcodecsys.txt
+new file mode 100644
+index 000000000000..c877bcc1a5c5
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,vcodecsys.txt
+@@ -0,0 +1,27 @@
++Mediatek vcodecsys controller
++============================
++
++The Mediatek vcodecsys controller provides various clocks to the system.
++
++Required Properties:
++
++- compatible: Should be one of:
++	- "mediatek,mt6765-vcodecsys", "syscon"
++- #clock-cells: Must be 1
++
++The vcodecsys controller uses the common clk binding from
++Documentation/devicetree/bindings/clock/clock-bindings.txt
++The available clocks are defined in dt-bindings/clock/mt*-clk.h.
++
++The vcodecsys controller also uses the common power domain from
++Documentation/devicetree/bindings/soc/mediatek/scpsys.txt
++The available power doamins are defined in dt-bindings/power/mt*-power.h.
++
++Example:
++
++venc_gcon: clock-controller@17000000 {
++	compatible = "mediatek,mt6765-vcodecsys", "syscon";
++	reg = <0 0x17000000 0 0x10000>;
++	power-domains = <&scpsys MT6765_POWER_DOMAIN_VCODEC>;
++	#clock-cells = <1>;
++};
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
