@@ -2,110 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C34615537E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 09:10:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1AB6155388
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 09:12:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2rYUdnYu5ZT+YQitGLtcRTAJgFbDOuGzJsii/gRRk+0=; b=kWxAwPAClwVRtB
-	lyv8+ocDuVGfcORGb+qknWXCxbzrJ4EkpIkfS9LlYZrMdGLga9EFUbw2W4zXX07P9wg+wvLqjtEMO
-	JuGpt/wi0wXZwtF/bZhj4dcpxq4jHwFge2tFcZ8+c9fcNdabnOsV1H+riE7CNEshJgG/AUaXznKe9
-	6YTmfgDLNUAlTsm8Tn5+nHKpXJXI14AvW7Rx7uKPqqLjESH57/fh3oZPj+SaLI5gMWGh31OY/Croh
-	XDD7tCJ9BYss35qKPqn21N/d95EOm3h10JSbITL8HH0EnLNOmgA2A7O0oyuEXYRKAnhSnQHOWdr2U
-	Fe2e9gEL/pIcnJSndEkQ==;
+	List-Owner; bh=m5IMmV9Dvqld5FzaWSX6AmuC6Ag9q0dOK3D3Q9CFVbc=; b=XPxrmq6yzUNfC3
+	2sRVPzf8QGhkGwEV4g84DOLY3zw2SD+1npn8eTgJbklYCE3SGDVnggIvwdXA3J62K2u3PuVXKEKZv
+	mxfzY7miM4G/OUGIWh70eILmOdfuoTkMi4Yg/iLsNuxx5r/9joMw7SLdy5QZxvINqddAUCU0mLkBV
+	UceRp7CiqHJYPcnpJZlF0RU21QG4k1/jx5EX0Dz7nc+vQfPdS5iYOZjfF6Oki3fBF1ZhrNEKv94jO
+	GKnhZ+NdM9w7UZwG6WuVWnCsi/vxMcpkJTReV0/Fp0Isy2GXMtwPIy6/E0Q6xkfT2JQb4PeEvLwVS
+	f6G23FLrZ7dASbm66FPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izyiL-0004hd-Ed; Fri, 07 Feb 2020 08:10:13 +0000
-Received: from mail-db5eur03on0613.outbound.protection.outlook.com
- ([2a01:111:f400:fe0a::613]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1izykQ-00056X-V0; Fri, 07 Feb 2020 08:12:22 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izyiE-0003n2-CC
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 08:10:08 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=oY+B483WdC342YJYtOe3VRA1mJkm5lyNXLoalUWAn4iLrxr1FYXUgnKoC3cIR3ICNxuflWz3S4fpEfvyLSgFrYv3+YUkQXh6ICEOvhd7BC/JHtV2nvnAF0Gpbtr7Ar6qC2xnXnHbURrGgQXo88AR/RrVTvzRkXMmPHgEcw2Hdo7StK3yWHHaNotDzQADljvB24VGx4XSDAZs6/CsN7V1RRiCJTU7KEy0Jl7Ox166/7raqQghQg4KLYlZUaCq8gyU9k+h3ZLhJhenbbWdHnjLZ2M6EJwRd5BCuZELEtB5d5TvxDtVtpcDZ+vMXCfLiIs5JlzkiN9jAtmYrn06ERDsZQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Vm2qQDRi4CdJZgeXjh8rOQogakt8ZwShO1TlNwOvZgo=;
- b=Ii4nr+Lya2hVfddLbZBmydVJ3Q/YfxuNtRpVRyzjubMP1ioUgJPsulHZPcp0Z2UVx0zB7BgxjFhwZvIZTDktbwckFTYhK/AlXxDDFtM2V0uhh+395KspgM0qEyQQcX8hicPvaN9/H6OffI72WIwhcmM2IoqGTpkMFetsmN+TDCDm6Cz6EFG4JUrXwh7ubQxxk14Ar2y6I0MyAWRHPmUA2q+kaJ9JlTBTcgBuu0Z/oKj0f8ZOcDmV+hKiXMDzZJvoLzp5fkDJFvxaG4lYfFFaO+SKkohuKOtWZs8D69KpX5q3CNiNiIUIPe1GQQh5D7k7SY54+2jNeeuqVDcsUDYcsA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Vm2qQDRi4CdJZgeXjh8rOQogakt8ZwShO1TlNwOvZgo=;
- b=Do9F9n5klovC/a9I2ocxXbrGeBL3zF+I0H+zLt8FyHslZxXif4Dm85Oj9vWysANKdCdiGlQZXErVMIEp4mP6q2a4OtAvAvAeoB2bMHRCD9fUr+xQLDUkZ3bLtahwaD7b0xXtwtpLpl5FN59wIkO3V1Cm8Eroy9k201yiHctsub8=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6722.eurprd04.prod.outlook.com (20.179.252.21) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.24; Fri, 7 Feb 2020 08:10:01 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2707.024; Fri, 7 Feb 2020
- 08:10:01 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: Rob Herring <robh@kernel.org>
-Subject: RE: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
-Thread-Topic: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
-Thread-Index: AQHV3O5LIqtUB1cLq0qKBDDFKN5B7qgOt6GAgACqKrA=
-Date: Fri, 7 Feb 2020 08:10:01 +0000
-Message-ID: <AM0PR04MB4481D3F304E1F17FAFE8D592881C0@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1580994086-17850-1-git-send-email-peng.fan@nxp.com>
- <1580994086-17850-2-git-send-email-peng.fan@nxp.com>
- <20200206215947.GA21514@bogus>
-In-Reply-To: <20200206215947.GA21514@bogus>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 508996e6-52c8-406c-9c41-08d7aba5213c
-x-ms-traffictypediagnostic: AM0PR04MB6722:|AM0PR04MB6722:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB6722EF62B57859E58BF16F3E881C0@AM0PR04MB6722.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 0306EE2ED4
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(39860400002)(366004)(396003)(136003)(376002)(189003)(199004)(6916009)(316002)(81156014)(8676002)(2906002)(44832011)(81166006)(4326008)(6506007)(55016002)(66946007)(66476007)(52536014)(186003)(66446008)(7696005)(86362001)(66556008)(71200400001)(9686003)(26005)(64756008)(54906003)(76116006)(478600001)(8936002)(33656002)(5660300002)(142933001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6722;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: OXCXRN0DhVVcTvkYLONrBUIxaVH9t8T6D716QTCdNKn/dYSbKkIe3BUjSpQr5TNyzgWK4T9m4inXbYvn/t0uJf1y73QCEReJ8lkhZfSCY4GsBw+M/8vr9qfvPJhQBTaxxwRlJA7CGNRGYD6TxlG6a2eQWdYiCJVYWHmWzZmiWdgLHCS87r35k21athVb2ypkPpHGonOh6K1A71P9kSWrpawKzTLAN6NbrjwywHQID+OAMxJ4bZeWC/MHrF0qKpOiksKivZw5DbsuYSS9E7hBeLC83iXt7cVZkZESO8HlmZV6I6ukwtnV+rdSgWZO732jl0PrngvU3xurItjdxKSKQIf52pZcrTxHOdd7otC4jt9DtK9UhggjaYiN6tvS3PwTHD6lyomDN1lf5JSZx7WtJcR9buoaAxx2aSL+t3nf0cWEaQe26ahcS/mXgwqjRWJ1UW7uksTrtaoaFarFWPvhUerSXJuT51q+UkP2RoBnnQD154PUu2yGb3KYgyI8T/Rq
-x-ms-exchange-antispam-messagedata: hAM3WQc3kfPx0oAx6MIt3AgiaxV4n8T+qvcBj/rHVhoCkETELH/QaqTSkOu8aWRNVhM0RLKcZm01BMMMY6O5H1Q1r1daxjpoeXD7KSGomee+CEPnEsShSO0G8v0ztemlGVAtcm9usoQsY2C3GL0jRw==
+ id 1izykJ-000563-HN
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 08:12:17 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z9so1505389wrs.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 07 Feb 2020 00:12:15 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=RhtSsZPQxEIGMtQmL13uTWrwtYaQcv2uAFFx/BqaRZE=;
+ b=Iq1EpKAgpS6y9E0ptLbYm/g5LXKJJISmjKNvhmES0wbDbMH5zLVr9Wh4x5FWJE09JF
+ eMVL2Ze42BWMbOXgOt0vYKBaI1CAKfOHstfXcofCYFdSKDM+Huu7ep2N9gssiznpmfqz
+ 86eXvCseSzg0VlVqtZL3ykwKnorvqhP38dksJgiGzDT33yuTzp3uXDBOiIScsII4PZIK
+ fqK9KbvZGIe+FAliWZvoS8gCZ+TvQYTVXy5IHjVF2DiOBONhOc6ySsry9Mcvxy2AI5+6
+ iV11xdMEgismz1DBYnns5kWyMjbgo8QQ8buKT7+4zSKiQa7cB9iyPRV2mgi5GQPm2z3Q
+ +Q3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=RhtSsZPQxEIGMtQmL13uTWrwtYaQcv2uAFFx/BqaRZE=;
+ b=q9RJWTYK4EZPfTKRD6cLPzILg7Qb62xcm9m15FeYYdE73JyYDe4K73VxDzLLxQeFJ0
+ SUWwqIROrtKJDUevyN2k7pAU2b5mEJ6vUzfaJRNVYpfajekKoUay6G59WGedvq/hC/Rr
+ Tepz+8NFY2MG5/DOsTIrw+dHswbtsYL731YbSEGEHKqSYm3sfTOhZi2m1pZxC4Z1fE/R
+ PAvQQkii/SNS7V0ONUd2sOdZ5fYdtvSAe5dBUIHXBEGWrINpTjGziqW3kUMOV9U8WtoP
+ 9WHPyH+3iKsOSXbJsuaBVarxyj4vZ9L6hHv0lulvdTVwWc7NG9eoIbzkkeZlKfkRaEJq
+ f3YQ==
+X-Gm-Message-State: APjAAAWdmE4wRdQSTgMpFyoyJ9Ns6zNKiXK27AO/XuLJf2Uyb3jnR0UJ
+ nAAEaYuw5Q5zSO8NVyksOLSq1GHgI8Ofhnhipe5Xxg==
+X-Google-Smtp-Source: APXvYqx8cIS8WVQ0f++9dJ/4i6q+U/hhZOXte0NdMOcfogNNO4rkYb8C/RivDqFlgOSQadNtNBqpZbm4PlM3AFyJW1I=
+X-Received: by 2002:adf:8564:: with SMTP id 91mr3350267wrh.252.1581063133977; 
+ Fri, 07 Feb 2020 00:12:13 -0800 (PST)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 508996e6-52c8-406c-9c41-08d7aba5213c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Feb 2020 08:10:01.1008 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: OMBeasp8AeF9QuOplVNSaR7rUwczzfKpvXXSPN/lWp/HcdKH3snj0Zq9V4R+m621vWXkRt9D1mVtRqztiLSGRg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6722
+References: <20200206140352.6300-1-ardb@kernel.org>
+ <20200206140352.6300-2-ardb@kernel.org>
+ <a6d7fefb-2f02-86a3-66aa-c3c129a91fb1@gmx.de>
+ <CAKv+Gu9Z24GeqrqKhPJN+aAu8crSKvT0ZBeFL=0ik=z2Sd1FmQ@mail.gmail.com>
+ <b2535bc9-f9be-e250-4da1-bce0b67abb6f@gmx.de>
+ <CAKv+Gu-X6DKhtbfVgRLPomkkKJ7=4vRs-crLL0p7E7043J4H0g@mail.gmail.com>
+ <081d152a-fa9b-886a-565d-b244dea08cd5@gmx.de>
+In-Reply-To: <081d152a-fa9b-886a-565d-b244dea08cd5@gmx.de>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Fri, 7 Feb 2020 08:12:02 +0000
+Message-ID: <CAKv+Gu-f9O4eon_E7=OUu_tNwybi7u6bF2zMowPHbA-MhiTjNg@mail.gmail.com>
+Subject: Re: [PATCH 1/2] efi/libstub: add support for loading the initrd from
+ a device path
+To: Heinrich Schuchardt <xypron.glpk@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_001006_444374_5C4CCD23 
-X-CRM114-Status: GOOD (  18.55  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200207_001215_638220_30781B54 
+X-CRM114-Status: GOOD (  41.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0a:0:0:0:613 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -113,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,72 +97,173 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
+ Daniel Kiper <daniel.kiper@oracle.com>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
+ Leif Lindholm <leif@nuviainc.com>, Laszlo Ersek <lersek@redhat.com>,
+ Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: Re: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
-> 
-> On Thu, Feb 06, 2020 at 09:01:25PM +0800, peng.fan@nxp.com wrote:
-> > From: Peng Fan <peng.fan@nxp.com>
+On Fri, 7 Feb 2020 at 00:58, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>
+> On 2/7/20 1:21 AM, Ard Biesheuvel wrote:
+> > On Fri, 7 Feb 2020 at 00:01, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+> >>
+> >> On 2/6/20 11:35 PM, Ard Biesheuvel wrote:
+> >>> On Thu, 6 Feb 2020 at 18:26, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+...
+> >>>> Please, indicate which software you expect to expose the initrd related
+> >>>> EFI_LOAD_FILE2_PROTOCOL.
+> >>>>
+> >>>
+> >>> The primary use case is GRUB and other intermediate loaders, since it
+> >>> would remove any need for these components to know any such details.
+> >>> My aim is to make the next architecture that gets added to GRUB for
+> >>> EFI boot 100% generic.
+> >>>
+> >>>> Using an UEFI variable for passing the initrd device path would be a
+> >>>> leaner solution on the bootloader side than requiring an extra
+> >>>> EFI_LOAD_FILE2_PROTOCOL implementation.
+> >>>>
+> >>>
+> >>> This would also require kernel changes, since we don't currently load
+> >>> initrds from arbitrary device paths. The EFI_FILE_PROTOCOL is much
+> >>> more complicated than needed, and it doesn't work well with mixed
+> >>> mode. It also requires GRUB to expose the filesystem it loads the
+> >>> initrd from via EFI protocols, which is currently unnecessary and
+> >>> therefore not implemented.
+> >>
+> >> This means you move the complexity of EFI_FILE_PROTOCOL from Linux to GRUB.
+> >>
 > >
-> > SCMI could use SMC/HVC as tranports, so add into devicetree binding
-> > doc.
+> > No. I am not interested in EFI_FILE_PROTOCOL, only in LoadFile2, which
+> > is a single method that needs to be implemented.
+>
+> I said you move complexity because GRUB will need to use the
+> EFI_FILE_PROTOCOL to do the job that you do not want to do in Linux.
+>
 > >
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >  Documentation/devicetree/bindings/arm/arm,scmi.txt | 4 +++-
-> >  1 file changed, 3 insertions(+), 1 deletion(-)
+> >> I would not have a problem if this would only touch GRUB. But if listen
+> >> to Ilias we are replacing one implementation in Linux by one in GRUB and
+> >> one in U-Boot and one in EDK2 and one in any other firmware.
+> >>
 > >
-> > diff --git a/Documentation/devicetree/bindings/arm/arm,scmi.txt
-> > b/Documentation/devicetree/bindings/arm/arm,scmi.txt
-> > index f493d69e6194..03cff8b55a93 100644
-> > --- a/Documentation/devicetree/bindings/arm/arm,scmi.txt
-> > +++ b/Documentation/devicetree/bindings/arm/arm,scmi.txt
-> > @@ -14,7 +14,7 @@ Required properties:
-> >
-> >  The scmi node with the following properties shall be under the /firmware/
-> node.
-> >
-> > -- compatible : shall be "arm,scmi"
-> > +- compatible : shall be "arm,scmi" or "arm,scmi-smc"
-> >  - mboxes: List of phandle and mailbox channel specifiers. It should contain
-> >  	  exactly one or two mailboxes, one for transmitting messages("tx")
-> >  	  and another optional for receiving the notifications("rx") if @@
-> > -25,6 +25,8 @@ The scmi node with the following properties shall be under
-> the /firmware/ node.
-> >  	  protocol identifier for a given sub-node.
-> >  - #size-cells : should be '0' as 'reg' property doesn't have any size
-> >  	  associated with it.
-> > +- arm,smc-id : SMC id required when using smc transports
-> > +- arm,hvc-id : HVC id required when using hvc transports
-> 
-> Don't the SMC ids get standardized?
+> > If u-boot will be used to boot RISC-V in EFI mode without GRUB, then I
+> > expect that we will need an implementation of this in u-boot.
+>
+> What sets RISC-V apart? GRUB for RISC-V is available.
+>
 
-For now, there is no standard SCMI SMC/HVC ID.
+RISC-V EFI boot is not supported yet in upstream Linux.
 
-Sudeep, Is there any plan from ARM? Or how you think about this patch?
+> >
+> >>>
+> >>> Also, using an EFI variable defeats the purpose. The whole point of
+> >>> this is making it more likely that the kernel loaded the initrd that
+> >>> the bootloader or firmware intended it to load, and having a piece of
+> >>> simple [signed] code that implements this is the easiest way to
+> >>> achieve that.
+> >>
+> >> At least on my Debian system it is the operating system creating initrd
+> >> and defining which initrd matches which kernel. GRUB simply assumes that
+> >> files ending on the same version number match. Therefore I would say
+> >> Linux hopes that GRUB loads what Linux intended.
+> >>
+> >> The chain of trust would not be broken if the kernel were responsible
+> >> for loading the initrd and for checking if it matches the kernel. Linux
+> >> already does this for the kernel modules in initrd.
+> >>
+> >
+> > We can still sign the initrd and Linux can verify the signature. What
+> > I am after is an interface that does not require the initrd to
+> > originate from a EFI file system protocol, and which doesn't require
+> > the loaded initrd to sit in memory for an unspecified amount of time
+> > and its information passed via DT properties or bootparams structs.
+> >
+> > So invoking EFI_FILE_PROTOCOL directly is not going to work,
+> > regardless of whether we get the devicepath from the command line or
+> > from a EFI variable.
+>
+> What do you mean by "is not going to work"?
+>
+> With the device path you can find the handle implementing the
+> EFI_SIMPLE_FIL_SYSTEM_PROTOCOL.
+>
+> >
+> >>>
+> >>> For u-boot, it should be trivial to implement a simple LoadFile2
+> >>> protocol wrapper around EFI_FILE_PROTOCOL that can be installed on a
+> >>> handle that also carries EFI_FILE_PROTOCOL.
+> >>>
+> >>
+> >> A U-Boot implementation of the EFI_LOAD_FILE2_PROTOCOL would need a
+> >> device path variable to find the block device and to open the
+> >> EFI_SIMPLE_FILE_SYSTEM_PROTOCOL before accessing the file.
+> >>
+> >> Linux would not be needing more lines and we would not repeat the same
+> >> code in GRUB, U-Boot, EDK2, etc.
+> >>
+> >> As said Linux updates the initrd often. If that file is not signed by
+> >> Linux in a well defined way, do not expect any security at all.
+> >>
+> >
+> > It is not only about security. The primary goal is to remove the need
+> > for arch specific knowledge in the firmware about DT, bootparams and
+> > initrd allocation policies without being forced to load the initrd
+> > from a filesystem that is exposed via a EFI protocol.
+>
+> Where are device-trees touched by this patch?
+>
+> When booting via UEFI there is no need for knowledge of initrd
+> allocation policies in U-Boot because up to now Linux or GRUB or iPXE
+> load initrd.
+>
+> Furthermore I need no knowledge of bootparams in U-Boot once we properly
+> we support UEFI variables at runtime because grub-update will pass the
+> command line in one of the Bootxxxx UEFI variables.
+>
+> But most importantly I do not have to implement anything Linux specific
+> in U-Boot for booting via UEFI up to now.
+>
 
-Thanks,
-Peng.
+Adding Linux specific stuff to u-boot is arguably more appropriate
+than adding architecture specific stuff to EFI loaders that could
+otherwise be entirely generic.
 
-> 
-> >
-> >  Optional properties:
-> >
-> > --
-> > 2.16.4
-> >
+...
+>
+> Your patch claims to fend off a specific threat scenario: A user puts an
+> untrusted initrd on the disk and references it in the Linux command line.
+>
+> If he is able to do so with your current bootloader (signed or not
+> signed), he most probably will also be able to delete a good initrd from
+> the filesystem and thus force your code into the unsafe path.
+>
+> That is why I say that with the current fallback logic this patch
+> achieves no increase in security. Of cause you could remove the fallback
+> logic. But in this case your Linux will not boot with any legacy
+> bootloader or firmware.
+>
+
+If there is a better way to expose the initrd that
+a) does not require the initrd to reside on a file system that is
+accessible via EFI protocols, and
+b) does not require the loader to know about arch specific policies
+regarding the placement of the initrd in memory, and
+c) does not leave a time window between the time that the initrd is
+loaded/verified/measured by the firmware and the time that the kernel
+gets handed the buffer
+
+then I am happy to discuss it. This proposal is the best I could come
+up with to achieve the above.
+
+-- 
+Ard.
 
 _______________________________________________
 linux-arm-kernel mailing list
