@@ -2,84 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61958155BC7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 17:31:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0D0E4155BEA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 17:36:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+vJfIoanz62jcID9lWRiG7Q0EXIb9FQX9OZJzg2WjOk=; b=hzXDwxKGQPYgat
-	VsTeStBV581EhwcMy0IIiD3q0AXmQPmdiTqJcbIz6QSGeud5OJl0LjWsI912QBzSkizajAE3/hOdM
-	sfFGjpeWbrpWlXraBkzpFw9qHV6CSVSPGr9ND6PZh2Bm1Gtjca32+jiFlz2FxpNjpWKk5Wkn7nCiK
-	HUNF7/Cm4NfUAqkzK+3WYHhMIl/iP0RcWSKO3pTSfbp65IkYRZlpoPMSY9ZBZbrJ158gpXnwZ5Z7+
-	asggEEV0e9mqB8JDgf2O9nWIYjiUZ6hc15BjMbs5WPDj5arkpKYKlARjd2hxQBxrHmDU1/+3T5ygN
-	A6rakVKLVfpux9NM5VGw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aUH1d56TBrQLvLR+yx9ISv8wmdLywsk8GkgJEj4WDF8=; b=hqt11WzrzUona7
+	vU6yH1dSJ8BSyJJ2NQ9Tp5yOzm3W1+4CW1prZNHOWULbzqs3wcvdHCPj7Xzu/QCF+/j9J/SP/hnu2
+	KqLVWLFTXwJbYC6ee/xXuEANQP8+Wsr8CdajU2PZpdDYtGthqVP8160fJFcM6GoY75bYmfW9SwCaa
+	asu4u0PXHMRVjPVedP0HnFHbz1I4mYo2MZKI6iXJrVtLLznfgVrBYdCztKLBSK1ugF7Q9FMplPg9i
+	w4iFGnooh4PZ94gsIVY+EWzwqI2Xp18X1Y+MrZi6OPVjq10LHmJ10exdAXE9lhXx5T/ZRIrlF144b
+	jbyU3A9t1vVcfI5j5FdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j06X5-0008On-WC; Fri, 07 Feb 2020 16:31:08 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j06Wz-0008O5-AA
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 16:31:04 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 017GRDex029779; Fri, 7 Feb 2020 17:30:52 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=eynS2NWJgzJPsFwfn39rO+Ib4H8Lzadaw2c3N+8nz14=;
- b=la2ykJAW/nMDix22ZSfhtrmn8NCghZzei0MsqCmvjZk8n7hUbPFIK5e/sjk3aYOXissE
- uv+fcatEt/ED7/5W8+4Posfkub6EWrkf6A1FbSzx0r3U40XT66cqVfSrwR1ov2dqxM0s
- O2PVzVW0LDMQTacEqtxOwwiisoWoDQ58Y6Zc2BFlLW7Lw8LXEVmsWnkaiQfsJR39JNtc
- mwvZIuKuvu7iqx/pEs/BvXXOyNN+g7jj8S74rXXp4uiIApwt7M0YghcevP0KyM7z9JUi
- V4qXRQB1lEv98FxcjT4oGBsf51OMEGnqA5dNpifDweSSYXO1wwWpbVYJaMRXC8SvWmlZ ZQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2xyhkucn68-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 07 Feb 2020 17:30:52 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 332BB10002A;
- Fri,  7 Feb 2020 17:30:48 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1D3C42B0C8F;
- Fri,  7 Feb 2020 17:30:48 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Fri, 7 Feb 2020 17:30:47 +0100
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <jic23@kernel.org>
-Subject: [PATCH v2] iio: trigger: stm32-timer: enable clock when in master mode
-Date: Fri, 7 Feb 2020 17:30:31 +0100
-Message-ID: <1581093031-9871-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
+	id 1j06cU-0001sL-1k; Fri, 07 Feb 2020 16:36:42 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j06cN-0001rR-8Z
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 16:36:36 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 349C98047;
+ Fri,  7 Feb 2020 16:37:14 +0000 (UTC)
+Date: Fri, 7 Feb 2020 08:36:23 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: Kees Cook <keescook@chromium.org>, Nicolas Pitre <nico@fluxnic.net>,
+ Russell King <rmk+kernel@armlinux.org.uk>
+Subject: Re: Nokia N900 on 5.4 and 5.5
+Message-ID: <20200207163623.GA64767@atomide.com>
+References: <79b91017-b52a-8aff-4b9c-913ae655f7bf@wizzup.org>
+ <185CD173-C13C-4D56-B3DE-9A8D7784963C@goldelico.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-07_02:2020-02-07,
- 2020-02-07 signatures=0
+Content-Disposition: inline
+In-Reply-To: <185CD173-C13C-4D56-B3DE-9A8D7784963C@goldelico.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_083101_814153_8D6AA12A 
-X-CRM114-Status: GOOD (  21.72  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200207_083635_349568_CC38C4D9 
+X-CRM114-Status: GOOD (  12.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,285 +60,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lars@metafoo.de, olivier.moysan@st.com, alexandre.torgue@st.com,
- linux-iio@vger.kernel.org, pmeerw@pmeerw.net, linux-kernel@vger.kernel.org,
- mcoquelin.stm32@gmail.com, knaack.h@gmx.de, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- benjamin.gaignard@st.com
+Cc: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>, Merlijn Wajer <merlijn@wizzup.org>,
+ linux-omap <linux-omap@vger.kernel.org>, "Arthur D." <spinal.by@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Clock should be enabled as soon as using master modes, even before
-enabling timer. Or, this may provoke bad behavior on the other end
-(slave timer). Then, introduce 'clk_enabled' flag, instead of relying
-on CR1 EN bit, to keep track of clock being enabled (balanced refcount).
-Propagate this anywhere else in the driver.
+Hi,
 
-Also add 'remove' routine to stop timer and disable clock in case it
-has been left enabled. Enforce the user interface has been unregistered
-in the remove routine, before disabling the hardware to avoid possible
-race. So, remove use of devm_ variant to register triggers and unregister
-them before the hardware gets disabled [1].
-[1] https://patchwork.kernel.org/patch/9956247/
+* H. Nikolaus Schaller <hns@goldelico.com> [200207 15:52]:
+> 
+> > Am 07.02.2020 um 15:54 schrieb Merlijn Wajer <merlijn@wizzup.org>:
+> > 
+> > Hi,
+> > 
+> > I've tried to build 5.4.18 and 5.5.2 for the Nokia N900, using
+> > omap2plus_defconfig. Using appended DTB, like so:
+> > 
+> > $ cat arch/arm/boot/zImage arch/arm/boot/dts/omap3-n900.dtb > zImage.dtb
+> > $ mkimage -A arm -O linux -T kernel -C none -a 80008000 -e 80008000 -n
+> > zImage -d zImage.dtb uImage
+> > 
+> > But they both fail to boot for me - the device resets almost instantly:
+> > 
+> >> data abort
+> >> 
+> >>    MAYBE you should read doc/README.arm-unaligned-accesses
+> >> 
+> >> pc : [<8000c878>]          lr : [<80008160>]
+> >> sp : 803c46c8  ip : 003a1870     fp : 003a1848
+> >> r10: 803ba890  r9 : 00caa42c     r8 : 80000100
+> >> r7 : 000007a3  r6 : 803a9878     r5 : 80000100  r4 : 80008000
+> >> r3 : 00004e6c  r2 : 00019fa8     r1 : 803a9878  r0 : 00000000
+> >> Flags: nZcv  IRQs off  FIQs on  Mode SVC_32
+> >> Resetting CPU ...
+> >> 
+> >> resetting ...
+> > 
+> > Full log below. I tried the same with "-Os" instead of "-O2" ; to no avail.
+> > 
+> > Any clue what could be up?
+> 
+> I can only tell that I have successfully running 5.5.2 on GTA04A5 (dm3730
+> but with our own defconfig). This may reduce the number of problem areas
+> a little.
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
-Changes in v2:
-- enforce the user interface has been unregistered in the remove routine,
-  before disabling the hardware to avoid possible race.
----
- drivers/iio/trigger/stm32-timer-trigger.c | 98 ++++++++++++++++++++++++-------
- 1 file changed, 76 insertions(+), 22 deletions(-)
+Looks like there's a regression in general for appended dtb booting that
+was caused by commit 9f671e58159a ("security: Create "kernel hardening"
+config area"). With that change we now get STACKPROTECTOR_PER_TASK
+selected by default with Kconfig.
 
-diff --git a/drivers/iio/trigger/stm32-timer-trigger.c b/drivers/iio/trigger/stm32-timer-trigger.c
-index a5dfe65..473853e 100644
---- a/drivers/iio/trigger/stm32-timer-trigger.c
-+++ b/drivers/iio/trigger/stm32-timer-trigger.c
-@@ -79,10 +79,13 @@ struct stm32_timer_trigger {
- 	struct device *dev;
- 	struct regmap *regmap;
- 	struct clk *clk;
-+	bool clk_enabled;
- 	u32 max_arr;
- 	const void *triggers;
- 	const void *valids;
- 	bool has_trgo2;
-+	struct mutex lock; /* concurrent sysfs configuration */
-+	struct list_head tr_list;
- };
- 
- struct stm32_timer_trigger_cfg {
-@@ -106,7 +109,7 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
- {
- 	unsigned long long prd, div;
- 	int prescaler = 0;
--	u32 ccer, cr1;
-+	u32 ccer;
- 
- 	/* Period and prescaler values depends of clock rate */
- 	div = (unsigned long long)clk_get_rate(priv->clk);
-@@ -136,9 +139,11 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
- 	if (ccer & TIM_CCER_CCXE)
- 		return -EBUSY;
- 
--	regmap_read(priv->regmap, TIM_CR1, &cr1);
--	if (!(cr1 & TIM_CR1_CEN))
-+	mutex_lock(&priv->lock);
-+	if (!priv->clk_enabled) {
-+		priv->clk_enabled = true;
- 		clk_enable(priv->clk);
-+	}
- 
- 	regmap_write(priv->regmap, TIM_PSC, prescaler);
- 	regmap_write(priv->regmap, TIM_ARR, prd - 1);
-@@ -157,22 +162,20 @@ static int stm32_timer_start(struct stm32_timer_trigger *priv,
- 
- 	/* Enable controller */
- 	regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN, TIM_CR1_CEN);
-+	mutex_unlock(&priv->lock);
- 
- 	return 0;
- }
- 
- static void stm32_timer_stop(struct stm32_timer_trigger *priv)
- {
--	u32 ccer, cr1;
-+	u32 ccer;
- 
- 	regmap_read(priv->regmap, TIM_CCER, &ccer);
- 	if (ccer & TIM_CCER_CCXE)
- 		return;
- 
--	regmap_read(priv->regmap, TIM_CR1, &cr1);
--	if (cr1 & TIM_CR1_CEN)
--		clk_disable(priv->clk);
--
-+	mutex_lock(&priv->lock);
- 	/* Stop timer */
- 	regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_ARPE, 0);
- 	regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN, 0);
-@@ -181,6 +184,12 @@ static void stm32_timer_stop(struct stm32_timer_trigger *priv)
- 
- 	/* Make sure that registers are updated */
- 	regmap_update_bits(priv->regmap, TIM_EGR, TIM_EGR_UG, TIM_EGR_UG);
-+
-+	if (priv->clk_enabled) {
-+		priv->clk_enabled = false;
-+		clk_disable(priv->clk);
-+	}
-+	mutex_unlock(&priv->lock);
- }
- 
- static ssize_t stm32_tt_store_frequency(struct device *dev,
-@@ -295,11 +304,18 @@ static ssize_t stm32_tt_store_master_mode(struct device *dev,
- 	for (i = 0; i <= master_mode_max; i++) {
- 		if (!strncmp(master_mode_table[i], buf,
- 			     strlen(master_mode_table[i]))) {
-+			mutex_lock(&priv->lock);
-+			if (!priv->clk_enabled) {
-+				/* Clock should be enabled first */
-+				priv->clk_enabled = true;
-+				clk_enable(priv->clk);
-+			}
- 			regmap_update_bits(priv->regmap, TIM_CR2, mask,
- 					   i << shift);
- 			/* Make sure that registers are updated */
- 			regmap_update_bits(priv->regmap, TIM_EGR,
- 					   TIM_EGR_UG, TIM_EGR_UG);
-+			mutex_unlock(&priv->lock);
- 			return len;
- 		}
- 	}
-@@ -357,11 +373,21 @@ static const struct attribute_group *stm32_trigger_attr_groups[] = {
- static const struct iio_trigger_ops timer_trigger_ops = {
- };
- 
--static int stm32_setup_iio_triggers(struct stm32_timer_trigger *priv)
-+static void stm32_unregister_iio_triggers(struct stm32_timer_trigger *priv)
-+{
-+	struct iio_trigger *tr;
-+
-+	list_for_each_entry(tr, &priv->tr_list, alloc_list)
-+		iio_trigger_unregister(tr);
-+}
-+
-+static int stm32_register_iio_triggers(struct stm32_timer_trigger *priv)
- {
- 	int ret;
- 	const char * const *cur = priv->triggers;
- 
-+	INIT_LIST_HEAD(&priv->tr_list);
-+
- 	while (cur && *cur) {
- 		struct iio_trigger *trig;
- 		bool cur_is_trgo = stm32_timer_is_trgo_name(*cur);
-@@ -388,9 +414,13 @@ static int stm32_setup_iio_triggers(struct stm32_timer_trigger *priv)
- 
- 		iio_trigger_set_drvdata(trig, priv);
- 
--		ret = devm_iio_trigger_register(priv->dev, trig);
--		if (ret)
-+		ret = iio_trigger_register(trig);
-+		if (ret) {
-+			stm32_unregister_iio_triggers(priv);
- 			return ret;
-+		}
-+
-+		list_add_tail(&trig->alloc_list, &priv->tr_list);
- 		cur++;
- 	}
- 
-@@ -437,7 +467,6 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
- 				   int val, int val2, long mask)
- {
- 	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
--	u32 dat;
- 
- 	switch (mask) {
- 	case IIO_CHAN_INFO_RAW:
-@@ -448,19 +477,23 @@ static int stm32_counter_write_raw(struct iio_dev *indio_dev,
- 		return -EINVAL;
- 
- 	case IIO_CHAN_INFO_ENABLE:
-+		mutex_lock(&priv->lock);
- 		if (val) {
--			regmap_read(priv->regmap, TIM_CR1, &dat);
--			if (!(dat & TIM_CR1_CEN))
-+			if (!priv->clk_enabled) {
-+				priv->clk_enabled = true;
- 				clk_enable(priv->clk);
-+			}
- 			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
- 					   TIM_CR1_CEN);
- 		} else {
--			regmap_read(priv->regmap, TIM_CR1, &dat);
- 			regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN,
- 					   0);
--			if (dat & TIM_CR1_CEN)
-+			if (priv->clk_enabled) {
-+				priv->clk_enabled = false;
- 				clk_disable(priv->clk);
-+			}
- 		}
-+		mutex_unlock(&priv->lock);
- 		return 0;
- 	}
- 
-@@ -556,7 +589,6 @@ static int stm32_set_enable_mode(struct iio_dev *indio_dev,
- {
- 	struct stm32_timer_trigger *priv = iio_priv(indio_dev);
- 	int sms = stm32_enable_mode2sms(mode);
--	u32 val;
- 
- 	if (sms < 0)
- 		return sms;
-@@ -564,11 +596,12 @@ static int stm32_set_enable_mode(struct iio_dev *indio_dev,
- 	 * Triggered mode sets CEN bit automatically by hardware. So, first
- 	 * enable counter clock, so it can use it. Keeps it in sync with CEN.
- 	 */
--	if (sms == 6) {
--		regmap_read(priv->regmap, TIM_CR1, &val);
--		if (!(val & TIM_CR1_CEN))
--			clk_enable(priv->clk);
-+	mutex_lock(&priv->lock);
-+	if (sms == 6 && !priv->clk_enabled) {
-+		clk_enable(priv->clk);
-+		priv->clk_enabled = true;
- 	}
-+	mutex_unlock(&priv->lock);
- 
- 	regmap_update_bits(priv->regmap, TIM_SMCR, TIM_SMCR_SMS, sms);
- 
-@@ -752,8 +785,9 @@ static int stm32_timer_trigger_probe(struct platform_device *pdev)
- 	priv->triggers = triggers_table[index];
- 	priv->valids = cfg->valids_table[index];
- 	stm32_timer_detect_trgo2(priv);
-+	mutex_init(&priv->lock);
- 
--	ret = stm32_setup_iio_triggers(priv);
-+	ret = stm32_register_iio_triggers(priv);
- 	if (ret)
- 		return ret;
- 
-@@ -762,6 +796,25 @@ static int stm32_timer_trigger_probe(struct platform_device *pdev)
- 	return 0;
- }
- 
-+static int stm32_timer_trigger_remove(struct platform_device *pdev)
-+{
-+	struct stm32_timer_trigger *priv = platform_get_drvdata(pdev);
-+	u32 val;
-+
-+	/* Unregister triggers before everything can be safely turned off */
-+	stm32_unregister_iio_triggers(priv);
-+
-+	/* Check if nobody else use the timer, then disable it */
-+	regmap_read(priv->regmap, TIM_CCER, &val);
-+	if (!(val & TIM_CCER_CCXE))
-+		regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN, 0);
-+
-+	if (priv->clk_enabled)
-+		clk_disable(priv->clk);
-+
-+	return 0;
-+}
-+
- static const struct stm32_timer_trigger_cfg stm32_timer_trg_cfg = {
- 	.valids_table = valids_table,
- 	.num_valids_table = ARRAY_SIZE(valids_table),
-@@ -786,6 +839,7 @@ MODULE_DEVICE_TABLE(of, stm32_trig_of_match);
- 
- static struct platform_driver stm32_timer_trigger_driver = {
- 	.probe = stm32_timer_trigger_probe,
-+	.remove = stm32_timer_trigger_remove,
- 	.driver = {
- 		.name = "stm32-timer-trigger",
- 		.of_match_table = stm32_trig_of_match,
--- 
-2.7.4
+Merlijn, care to try to disable STACKPROTECTOR_PER_TASK in your
+.config to see if that helps?
 
+Not sure why appended dtb boot now breaks though.. Could be just the
+zImage uncompressing over dtb again? Any ideas?
+
+Regards,
+
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
