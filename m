@@ -2,56 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6908B155ABD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 16:31:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AF6A155ACB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 16:36:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3NnCP98IqNqPtLBna5mJDGTTYqBLC4M7ekkDAo4Orzk=; b=KDWwoxjRRzE0Rg
-	a2sEDQ6uI6q6dmX7K5sJYMvzCdAC/4Navq+05LKWnDmw9hC1RkmwKgbrDEKnqaPMyTp3CJYHLcbGD
-	yeLPKhmM3QbS2Xe+jzaoqw6Hk/PfOzmXh9HXhyucbkFKSH5BlnCjVArRuYZgizm2utBVIKf/YyGG5
-	ksVQyT8jdNhFz4RVp/v3u113lvOq9K5tKKyT5SUh0gKOzI5CBXBUAtlUPwQboNalbaGlFlLAuIVEa
-	EIzcWbJYA/0PCyet8Ap5GhVquacSia+MWa9nIQ+c4Z6Z7EvN6uvR3326hLu627/IZ12EYpwWVyueK
-	3NurqPzpGWPCy1eA+TLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=WKzuQFQZ90wUOzx03v5q2WjsuruP5lwZ3L/B82nyyWg=; b=D/2SAc3aZQLzBlal7OgetNkoe
+	sTN5FmWGh5jABA4AunJ0BbMSENBnD6W4gbeqKYjUL43mz7mQwOKV8jOss6UKMflHL0DLBY+07y0CX
+	E/utXuECFr2xNzvyz3iMbDdriGQC/+cqJcprGqzUSqdu+y0QA6ZoXs0j8ZrqGHE6WDnKGRSOgzKHT
+	s34LfZ+NHMYz8sofXlW+LTprFyf/8XxpaElVPhnNn/SIEP58DtNfmLWXxVCDwVvxl1ZksRvf5+vBs
+	40X9S99vfIc1tB+Ztmjep5fGXJvjuOxKDb6l2hDl1dvBKv+ZV1fv5bTxVOGB54IGz+7MA8akr10Qp
+	j+3+mRDdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j05b5-0002sL-Ak; Fri, 07 Feb 2020 15:31:11 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j05fh-0004Y9-Mn; Fri, 07 Feb 2020 15:35:57 +0000
+Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j05ay-0002rm-2v
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 15:31:06 +0000
-Received: by mail-wr1-x442.google.com with SMTP id u6so3214648wrt.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 07 Feb 2020 07:31:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=TC+VMUCo88KEW4kESs34vu0qfl39+6/hso0IL8x9w98=;
- b=VZnjA+TumuB9BSvFyh4hS2+e+maLKjIHYfP10KANlMbMBt7jAxedYJHqK8VqbofkHG
- tdKoWr94JpI0nCdRJKO3wGDdUGKx7E3mPKJt7fnYINvSAOKEeqZTRfvXGPofwC4dizcW
- w2Nu8xbFDoSXbGtB9qfhIZCTPGWgSG791sLycUy0QA1BWgjjPS/4ncLlLYKzbuaRMjEN
- MJ2mDCiCd5STRtrTQ+G8NH9QkIznkUedeqsQQu58tNFtk4VKjF9k1JYLMKfAgbIJ6lJq
- eR8Zsp6DsHNWYhk1/npzTjHFgT29W4cXuR72nydik6c1qc9Hh79pOMDOH0QNWeagaOpt
- ZIaw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=TC+VMUCo88KEW4kESs34vu0qfl39+6/hso0IL8x9w98=;
- b=Hqy2shbmdwPGZpX/Bp5WP9rkRe10JB2ETxjxwA2jFD3/HtKJ9/t8mZWyukkVqDvsT5
- fMBWbEvrX4rUEGrntS4dff3YRQt3vmm2F1TZHElfOZKhhNmtV45KEd7JqxaX8J93O2N1
- YIUrMr8cWJ5fx8H2f4KValb47wCQ4wXS4mhHfCWIP8rIb0BjkiDkkfNRWJ60o7DOqF1I
- eewa7xjV5baTs6C0gZBV9WGooQhfrljc63R+bL+uy2y82JI58dWMVtKT0I6lysq99AKc
- rgY/KzoTmedxP0F1sIx/wUiEpy4V7Qmorewsd9KLD/SR3SBeIhcsOqaJSuonhRiOlqch
- gxSQ==
-X-Gm-Message-State: APjAAAVJ6pycxyDiwEWDlQuX1G1uVuBruLtZWEnGH1zCABH6Cqc2jC2i
- 50FrgH1IR2W1L2xjPu8F3BiVwVkyY2xJ97pie8rDpA==
-X-Google-Smtp-Source: APXvYqy4fZAGpGMxjx1ZG/U+BDZQ0Rgl0AFW8U/lBlW24hdddXAoh12Ug1AveGr2mgYltI/rv00o1Rwt4FDUo9UOsKA=
-X-Received: by 2002:adf:fd8d:: with SMTP id d13mr5344851wrr.208.1581089461726; 
- Fri, 07 Feb 2020 07:31:01 -0800 (PST)
-MIME-Version: 1.0
+ id 1j05fX-0004XX-Je
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 15:35:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1581089730;
+ bh=CoBbD9KyBYJzwv3wh8U8rtrOPvKDG7e7lFT0VZ5bObc=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=KnVVNbhU/+0ILaV2hvOqdHONCU78CVZ+g0qQpT8lN1O0S6MH8sa1/3x5d4k2syu0d
+ niFxcKDCCPxq/6bGkm/4E4o/isGYuun92P42r9xzb8Zc4F36jjtJD8GTa8hkHV7vvA
+ YMoRQWpgzIGt2euYADLX6LYe3NwDtCetE6X6qMB4=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.123.51] ([84.119.33.160]) by mail.gmx.com (mrgmx105
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1M4b1y-1izXhU1IW6-001f3T; Fri, 07
+ Feb 2020 16:35:30 +0100
+Subject: Re: [PATCH 1/2] efi/libstub: add support for loading the initrd from
+ a device path
+To: Alexander Graf <agraf@csgraf.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>
 References: <20200206140352.6300-1-ardb@kernel.org>
  <20200206140352.6300-2-ardb@kernel.org>
  <a6d7fefb-2f02-86a3-66aa-c3c129a91fb1@gmx.de>
@@ -63,33 +49,55 @@ References: <20200206140352.6300-1-ardb@kernel.org>
  <9e7c378a-782f-f56e-2ce3-0af6386b0bff@gmx.de>
  <CAKv+Gu_++Uwky51i2rpNmXWVhvneDxANsaJU=BKw+6NWzTxXCw@mail.gmail.com>
  <ba00f9d2-c159-912b-35b4-30895186fe74@csgraf.de>
+From: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Message-ID: <dd20c95b-3787-6226-3890-6a2aad49e7ce@gmx.de>
+Date: Fri, 7 Feb 2020 16:35:22 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
+MIME-Version: 1.0
 In-Reply-To: <ba00f9d2-c159-912b-35b4-30895186fe74@csgraf.de>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Fri, 7 Feb 2020 15:30:50 +0000
-Message-ID: <CAKv+Gu8x5_=b=DdwXOogO0=saoDESo5RR19EhyruddJs0_yGQQ@mail.gmail.com>
-Subject: Re: [PATCH 1/2] efi/libstub: add support for loading the initrd from
- a device path
-To: Alexander Graf <agraf@csgraf.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:bttY1/dKz1E390dUoLTf9GnleV4J1cY8f7np8c/kVyDyPSUrZ3Q
+ EvBMqBDzutqT++F/TlxF/2hEtQOv9XP6YXOq01rUXVXCP6IA2eiZie92xaQlxHxfqJz2w6a
+ lzSX6NLthHJ669MoHni/Q/Tpn7Au5/FLWN9o83cV7o9Ue43/yAbNjYh8u9A2Mcdh4CCA6LX
+ 3Mh6GZEMEqndtfkwdMY4Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:cmRPo+3V0Tk=:X0VITs9lZ3wC4WmhMTcGJ/
+ NvfKDteVYjj3NrKTKXaIT+OzM2meYrCt5OziobPFXKKq98QZGQe8y00odaIkCoGLzFS1FTK7t
+ MpQX11IAM+iTpnlREvktdWDLFTb8LVbpXHKvj77ouLf30IkJmPXdGe/Xe95ZNt4fJef1xygBM
+ sHWZFozaKaFdlgk3orGCAp4CN/NiiCvFkSZSCjGtwaDwMMxrLsSb+MY0XYzRlEDZJecDZrjcb
+ f/KsXnMTVh4btmdGio/FfazFCRFdjofGw/2kG239WHErbHvNY9u3LEljbt/XciXC2FLOsipSs
+ mFzLdn7AocoUvlGZ1ImLuy6GF97YvxW/+BcmtwQsIaRwju84dCr0e63H8D0Kc1qFoNY5Lh5cl
+ Cv4AQMIfTvdg3gfyfnyAlwQUkJirtIOrVKWvCazq2KFSATh1cMma0gCNTXnmSe0xeSVuZH9V0
+ HPOodaqvVB3fTi+x5YoNS4kgtmSqY+TB4nqpyjkKXJq8X4dWVxr3ZlxyMNqXZNPpp06LRewNB
+ 9tQ/ps7SLSmZ7ZkoTFaIHYqTQrrEH8t6b15yZywEViS+0lSIs9uMuwMV2ljHuZum+WoMliJqB
+ FTnQfhMy1qzgYNTLyp68qyPk4xgJ6q2MxyoB4s+1Qrv1yutVGB7MNcjGtl0S0UMoqcj9AoyqD
+ whtRZNlMK+z3EMQ0670tYKX0NB23yGIOCr/16q1qZEeedLkQDv4oNeV6mxjJlRWv3VkLECkPD
+ 621CNIQm5J1tUpAHlgASf3IDFQcvD7ktA9rH9/iEAIzob0yN+CbEd2JWrDUHXxBAFErpKBFwK
+ sv3MfMedccOwgud6FTckbbO/QggXzhJcb7eAt9zipBNvHOez63T8pxoqVZzdYULW5aiqfsfes
+ drs4kbLyhzd1wKa45iAailNuHdStobfP+EuPh/wx45gJXh8HARrhmVrCiCgHyvD3S2rLCF5xS
+ NhpVIJ3LWaqsrlMxhkXJ4UFNMmgUjfLa8l1DLl2owv5Ufh9cUvwk6DRmJIWbbXw260Ui5cRrq
+ l9sfkagawuxBdsBupVucv9PO7RLI5tHTYEBWsrR8qTM9WyBDOExjOBH+tgO3zCtcUwRTb70OS
+ J5jjwQTT3px+XxLWrn1YVzIVtEhdhFBtiFb+S3IMIDYMChgTRuSnFDcOSl+TM0G/AZBWW0m7N
+ yr3AXoAlryxnYMlCBq7nZyjfHh5cshsVJJH4k/ejAHznerc40jqjbdsUVrNzHo0B2X+e7+hrU
+ I1riaSwZW8pjxwJ8S
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_073104_137698_13AF50E5 
-X-CRM114-Status: GOOD (  48.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200207_073547_982369_0C3F3EFA 
+X-CRM114-Status: GOOD (  41.57  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.22 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [xypron.glpk[at]gmx.de]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,370 +110,231 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-efi <linux-efi@vger.kernel.org>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>,
  Daniel Kiper <daniel.kiper@oracle.com>,
  Ilias Apalodimas <ilias.apalodimas@linaro.org>,
  Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
  Leif Lindholm <leif@nuviainc.com>, Laszlo Ersek <lersek@redhat.com>,
  Ard Biesheuvel <ardb@kernel.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 7 Feb 2020 at 14:18, Alexander Graf <agraf@csgraf.de> wrote:
->
->
-> On 07.02.20 13:58, Ard Biesheuvel wrote:
-> > On Fri, 7 Feb 2020 at 13:30, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
-> >>
-> >>
-> >> On 2/7/20 9:12 AM, Ard Biesheuvel wrote:
-> >>> On Fri, 7 Feb 2020 at 00:58, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
-> >>>> On 2/7/20 1:21 AM, Ard Biesheuvel wrote:
-> >>>>> On Fri, 7 Feb 2020 at 00:01, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
-> >>>>>> On 2/6/20 11:35 PM, Ard Biesheuvel wrote:
-> >>>>>>> On Thu, 6 Feb 2020 at 18:26, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
-> >>> ...
-> >>>>>>>> Please, indicate which software you expect to expose the initrd related
-> >>>>>>>> EFI_LOAD_FILE2_PROTOCOL.
-> >>>>>>>>
-> >>>>>>> The primary use case is GRUB and other intermediate loaders, since it
-> >>>>>>> would remove any need for these components to know any such details.
-> >>>>>>> My aim is to make the next architecture that gets added to GRUB for
-> >>>>>>> EFI boot 100% generic.
-> >>>>>>>
-> >>>>>>>> Using an UEFI variable for passing the initrd device path would be a
-> >>>>>>>> leaner solution on the bootloader side than requiring an extra
-> >>>>>>>> EFI_LOAD_FILE2_PROTOCOL implementation.
-> >>>>>>>>
-> >>>>>>> This would also require kernel changes, since we don't currently load
-> >>>>>>> initrds from arbitrary device paths. The EFI_FILE_PROTOCOL is much
-> >>>>>>> more complicated than needed, and it doesn't work well with mixed
-> >>>>>>> mode. It also requires GRUB to expose the filesystem it loads the
-> >>>>>>> initrd from via EFI protocols, which is currently unnecessary and
-> >>>>>>> therefore not implemented.
-> >>>>>> This means you move the complexity of EFI_FILE_PROTOCOL from Linux to GRUB.
-> >>>>>>
-> >>>>> No. I am not interested in EFI_FILE_PROTOCOL, only in LoadFile2, which
-> >>>>> is a single method that needs to be implemented.
-> >>>> I said you move complexity because GRUB will need to use the
-> >>>> EFI_FILE_PROTOCOL to do the job that you do not want to do in Linux.
-> >>>>
-> >>>>>> I would not have a problem if this would only touch GRUB. But if listen
-> >>>>>> to Ilias we are replacing one implementation in Linux by one in GRUB and
-> >>>>>> one in U-Boot and one in EDK2 and one in any other firmware.
-> >>>>>>
-> >>>>> If u-boot will be used to boot RISC-V in EFI mode without GRUB, then I
-> >>>>> expect that we will need an implementation of this in u-boot.
-> >>>> What sets RISC-V apart? GRUB for RISC-V is available.
-> >>    >>
-> >>> RISC-V EFI boot is not supported yet in upstream Linux.
-> >> It is currently prepared Atish Patra of WDC.
-> >>
-> > Exactly. So it is not in the upstream yet, and I want to converge on a
-> > sane generic interface before it gets merged.
-> >
-> >>>>>>> Also, using an EFI variable defeats the purpose. The whole point of
-> >>>>>>> this is making it more likely that the kernel loaded the initrd that
-> >>>>>>> the bootloader or firmware intended it to load, and having a piece of
-> >>>>>>> simple [signed] code that implements this is the easiest way to
-> >>>>>>> achieve that.
-> >>>>>> At least on my Debian system it is the operating system creating initrd
-> >>>>>> and defining which initrd matches which kernel. GRUB simply assumes that
-> >>>>>> files ending on the same version number match. Therefore I would say
-> >>>>>> Linux hopes that GRUB loads what Linux intended.
-> >>>>>>
-> >>>>>> The chain of trust would not be broken if the kernel were responsible
-> >>>>>> for loading the initrd and for checking if it matches the kernel. Linux
-> >>>>>> already does this for the kernel modules in initrd.
-> >>>>>>
-> >>>>> We can still sign the initrd and Linux can verify the signature. What
-> >>>>> I am after is an interface that does not require the initrd to
-> >>>>> originate from a EFI file system protocol, and which doesn't require
-> >>>>> the loaded initrd to sit in memory for an unspecified amount of time
-> >>>>> and its information passed via DT properties or bootparams structs.
-> >>>>>
-> >>>>> So invoking EFI_FILE_PROTOCOL directly is not going to work,
-> >>>>> regardless of whether we get the devicepath from the command line or
-> >>>>> from a EFI variable.
-> >>>> What do you mean by "is not going to work"?
-> >>>>
-> >>>> With the device path you can find the handle implementing the
-> >>>> EFI_SIMPLE_FIL_SYSTEM_PROTOCOL.
-> >>>>
-> >>>>>>> For u-boot, it should be trivial to implement a simple LoadFile2
-> >>>>>>> protocol wrapper around EFI_FILE_PROTOCOL that can be installed on a
-> >>>>>>> handle that also carries EFI_FILE_PROTOCOL.
-> >>>>>>>
-> >>>>>> A U-Boot implementation of the EFI_LOAD_FILE2_PROTOCOL would need a
-> >>>>>> device path variable to find the block device and to open the
-> >>>>>> EFI_SIMPLE_FILE_SYSTEM_PROTOCOL before accessing the file.
-> >>>>>>
-> >>>>>> Linux would not be needing more lines and we would not repeat the same
-> >>>>>> code in GRUB, U-Boot, EDK2, etc.
-> >>>>>>
-> >>>>>> As said Linux updates the initrd often. If that file is not signed by
-> >>>>>> Linux in a well defined way, do not expect any security at all.
-> >>>>>>
-> >>>>> It is not only about security. The primary goal is to remove the need
-> >>>>> for arch specific knowledge in the firmware about DT, bootparams and
-> >>>>> initrd allocation policies without being forced to load the initrd
-> >>>>> from a filesystem that is exposed via a EFI protocol.
-> >>>> Where are device-trees touched by this patch?
-> >>>>
-> >>>> When booting via UEFI there is no need for knowledge of initrd
-> >>>> allocation policies in U-Boot because up to now Linux or GRUB or iPXE
-> >>>> load initrd.
-> >>>>
-> >>>> Furthermore I need no knowledge of bootparams in U-Boot once we properly
-> >>>> we support UEFI variables at runtime because grub-update will pass the
-> >>>> command line in one of the Bootxxxx UEFI variables.
-> >>>>
-> >>>> But most importantly I do not have to implement anything Linux specific
-> >>>> in U-Boot for booting via UEFI up to now.
-> >>>>
-> >>> Adding Linux specific stuff to u-boot is arguably more appropriate
-> >>> than adding architecture specific stuff to EFI loaders that could
-> >>> otherwise be entirely generic.
-> >>>
-> >>> ...
-> >>>> Your patch claims to fend off a specific threat scenario: A user puts an
-> >>>> untrusted initrd on the disk and references it in the Linux command line.
-> >>>>
-> >>>> If he is able to do so with your current bootloader (signed or not
-> >>>> signed), he most probably will also be able to delete a good initrd from
-> >>>> the filesystem and thus force your code into the unsafe path.
-> >>>>
-> >>>> That is why I say that with the current fallback logic this patch
-> >>>> achieves no increase in security. Of cause you could remove the fallback
-> >>>> logic. But in this case your Linux will not boot with any legacy
-> >>>> bootloader or firmware.
-> >>>>
-> >>> If there is a better way to expose the initrd that
-> >>> a) does not require the initrd to reside on a file system that is
-> >>> accessible via EFI protocols, and
-> >>> b) does not require the loader to know about arch specific policies
-> >>> regarding the placement of the initrd in memory, and
-> >>> c) does not leave a time window between the time that the initrd is
-> >>> loaded/verified/measured by the firmware and the time that the kernel
-> >>> gets handed the buffer
-> >>>
-> >>> then I am happy to discuss it. This proposal is the best I could come
-> >>> up with to achieve the above.
-> >>>
-> >> Hello Ard,
-> >>
-> >> I think part of our different views is that we are thinking about two
-> >> different use cases which both have their relevance:
-> >>
-> >> If I understand you correctly, you are thinking about an embedded device
-> >> where the kernel and the initrd is essentially part of the firmware
-> >> provided by the device.
-> >>
-> >> I am thinking of a system running a standard Linux distribution like
-> >> Debian where the initrd is generated by the operating system
-> >>
-> >> In both use cases verifying the initrd is of importance.
-> >>
-> >> Now concerning the requirements:
-> >>
-> >> a) In U-Boot all file systems on block devices can be made accessible
-> >> via EFI protocols. Are you thinking about initrds that are not in a file
-> >> system?
-> >>
-> > The typical GRUB deployment keeps the core GRUB itself (or the entire
-> > thing if it is built as standalone) in the ESP, and the GRUB modules,
-> > kernel images and initrds are in /boot, which is typically not a file
-> > system that EFI understands. So in that case, initrd= does not work,
-> > which is why GRUB loads the initrd into memory directly and passes the
-> > base address and size via DT or bootparams structure.
-> >
-> >> b) My suggestion to use a UEFI variable for communicating the device
-> >> path would not require any arch specific policies either.
-> >>
-> > Passing the EFI device path is not going to help us since the initrd
-> > may not be representable as a device path. That is the whole point,
-> > actually - this series makes the initrd representable as a device
-> > path, but in a simple way that doesn't rely on EFI_FILE_PROTOCOL but
-> > only on EFI_LOAD_FILE2_PROTOCOL, which is *much* simpler.
->
->
-> So if we had support in grub to just export its own file systems as UEFI
-> protocols, that problem would disappear, right? What other reasons are
-> left to not just use normal file load operations from the Linux EFI stub?
->
-
-1) complexity
-
-"""
-typedef struct {
-  u64     size;
-  u64     file_size;
-  u64     phys_size;
-  efi_time_t    create_time;
-  efi_time_t    last_access_time;
-  efi_time_t    modification_time;
-  __aligned_u64   attribute;
-  efi_char16_t    filename[];
-} efi_file_info_t;
-
-typedef struct efi_file_protocol efi_file_protocol_t;
-
-struct efi_file_protocol {
-  u64   revision;
-  efi_status_t  (__efiapi *open)  (efi_file_protocol_t *,
-             efi_file_protocol_t **,
-             efi_char16_t *, u64, u64);
-  efi_status_t  (__efiapi *close) (efi_file_protocol_t *);
-  efi_status_t  (__efiapi *delete)  (efi_file_protocol_t *);
-  efi_status_t  (__efiapi *read)  (efi_file_protocol_t *,
-             unsigned long *, void *);
-  efi_status_t  (__efiapi *write) (efi_file_protocol_t *,
-             unsigned long, void *);
-  efi_status_t  (__efiapi *get_position)(efi_file_protocol_t *, u64 *);
-  efi_status_t  (__efiapi *set_position)(efi_file_protocol_t *, u64);
-  efi_status_t  (__efiapi *get_info)  (efi_file_protocol_t *,
-             efi_guid_t *, unsigned long *,
-             void *);
-  efi_status_t  (__efiapi *set_info)  (efi_file_protocol_t *,
-             efi_guid_t *, unsigned long,
-             void *);
-  efi_status_t  (__efiapi *flush) (efi_file_protocol_t *);
-};
-
-typedef struct efi_simple_file_system_protocol
-efi_simple_file_system_protocol_t;
-
-struct efi_simple_file_system_protocol {
-  u64 revision;
-  int (__efiapi *open_volume)(efi_simple_file_system_protocol_t *,
-          efi_file_protocol_t **);
-};
-
-#define EFI_FILE_MODE_READ  0x0000000000000001
-#define EFI_FILE_MODE_WRITE 0x0000000000000002
-#define EFI_FILE_MODE_CREATE  0x8000000000000000
-"""
-
-versus
-
-"""
-union efi_load_file_protocol {
-struct {
-  efi_status_t (__efiapi *load_file)(efi_load_file_protocol_t *,
-       efi_device_path_protocol_t *,
-       bool, unsigned long *, void *);
-  };
-};
-"""
-
-2) mixed mode is problematic due to the use of u64 arguments in the prototypes
-3) you have to trust that the device path that was specified was
-intended to be loaded as an initrd
-4) if you want to authenticate or measure the initrd from the firmware
-as it is read, you have to disambiguate EFI_FILE_PROTOCOL calls
-involving the initrd from arbitrary other calls.
-
-
-> IIRC you mentioned that the fwcfg -kernel and -initrd parameters are
-> already exposed as pseudo filesystem inside AAVMF, so that one is solved.
->
-
-Yes, but this only works if you use the PE entry point, which rules
-out mixed mode.
-
-> I think that only leaves the UEFI shell case? But if you have a UEFI
-> shell, then you can only load from an existing file system as well, no?
->
-
-Yes.
-
-> What I can't quite grasp yet is how you would handle multiple initrds
-> with a single device path. How would that work?
->
-
-The core kernel does not care about multiple initrds, they have to be
-concatenated and passed as one anyway. In this case, that means the
-implementation of LoadFile2 is in charge of this.
-
->
-> >
-> >> c) I proposed that the kernel does the verification. So there would be
-> >> equally nothing in between loading the file and its verification. Yet
-> >> responsibilities would be changed.
-> >>
-> >> But possibly I missed some requirements you have in mind that I should
-> >> consider.
-> >>
-> > 1) The assumption that the initrd can always be loaded from a EFI
-> > device path directly does not hold.
->
->
-> Can you think of good reasons why this is true? I understand the grub
-> one, but that's solvable. What other cases are there?
->
-
-Thin EFI implementations in enclaves, LinuxBoot on arm64, ...
-
->
-> > 2) Loading the initrd into memory and passing the address and size is
-> > not acceptable.
->
->
-> This would basically be the option to pass the initrd as configuration
-> table, right? The only reason that definitely goes against that one that
-> I can think of right now is to avoid double copying?
->
-
-That basically forces the stub to reallocate it, unless we put the
-[arch specific] allocation policy in the loader. initrds can be large,
-and so having to copy them can be a problem.
-
->
-> > 3) Having a special device path that designates the initrd
-> > specifically (which will be treated in a special way by the kernel)
-> > makes it very easy for the boot firmware to attach policy to the
-> > loading of the initrd that can be enforced right when the file is
-> > being passed into the kernel.
->
->
-> I don't fully understand this one. Can you give examples for such
-> policies? :)
->
-
-If you want to measure the initrd into PCR x, it gives you a natural
-place to do it, since the data is measured right at the point where
-the stub consumes it, and the protocol will never be invoked if the
-initrd is not requested (e.g., if the boot environment exposes a
-initrd but 'noinitrd' is passed on the command line, in which case we
-would prefer not to measure the initrd at all)
-
->
-> > Putting an arbitrary device path in a EFI variable doesn't address 1),
-> > and it complicates 3), since you cannot easily distinguish whether the
-> > file load that is occurring is the EFI stub loading the initrd at
-> > boot.
->
->
-> Why do we need to distinguish? I'm missing creativity for the use case
-> right now. For 1), we just need to make sure that boot loaders that
-> implement their own file systems also expose those file systems as UEFI
-> protocols, right?
->
-
-Because an arbitrary file read call cannot be identified as being the
-one issued by the stub to load and invoke the initrd.
-
->
-> That said, I don't think the proposed approach of using
-> EFI_LOAD_FILE2_PROTOCOL is bad. Whatever we do, we always will need to
-> treat initrds special in one way or another; at least by exposing a
-> command to specify which one(s) you want to load.
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMi83LzIwIDM6MTggUE0sIEFsZXhhbmRlciBHcmFmIHdyb3RlOgo+Cj4gT24gMDcuMDIuMjAg
+MTM6NTgsIEFyZCBCaWVzaGV1dmVsIHdyb3RlOgo+PiBPbiBGcmksIDcgRmViIDIwMjAgYXQgMTM6
+MzAsIEhlaW5yaWNoIFNjaHVjaGFyZHQgPHh5cHJvbi5nbHBrQGdteC5kZT4KPj4gd3JvdGU6Cj4+
+Pgo+Pj4KPj4+IE9uIDIvNy8yMCA5OjEyIEFNLCBBcmQgQmllc2hldXZlbCB3cm90ZToKPj4+PiBP
+biBGcmksIDcgRmViIDIwMjAgYXQgMDA6NTgsIEhlaW5yaWNoIFNjaHVjaGFyZHQKPj4+PiA8eHlw
+cm9uLmdscGtAZ214LmRlPiB3cm90ZToKPj4+Pj4gT24gMi83LzIwIDE6MjEgQU0sIEFyZCBCaWVz
+aGV1dmVsIHdyb3RlOgo+Pj4+Pj4gT24gRnJpLCA3IEZlYiAyMDIwIGF0IDAwOjAxLCBIZWlucmlj
+aCBTY2h1Y2hhcmR0Cj4+Pj4+PiA8eHlwcm9uLmdscGtAZ214LmRlPiB3cm90ZToKPj4+Pj4+PiBP
+biAyLzYvMjAgMTE6MzUgUE0sIEFyZCBCaWVzaGV1dmVsIHdyb3RlOgo+Pj4+Pj4+PiBPbiBUaHUs
+IDYgRmViIDIwMjAgYXQgMTg6MjYsIEhlaW5yaWNoIFNjaHVjaGFyZHQKPj4+Pj4+Pj4gPHh5cHJv
+bi5nbHBrQGdteC5kZT4gd3JvdGU6Cj4+Pj4gLi4uCj4+Pj4+Pj4+PiBQbGVhc2UsIGluZGljYXRl
+IHdoaWNoIHNvZnR3YXJlIHlvdSBleHBlY3QgdG8gZXhwb3NlIHRoZSBpbml0cmQKPj4+Pj4+Pj4+
+IHJlbGF0ZWQKPj4+Pj4+Pj4+IEVGSV9MT0FEX0ZJTEUyX1BST1RPQ09MLgo+Pj4+Pj4+Pj4KPj4+
+Pj4+Pj4gVGhlIHByaW1hcnkgdXNlIGNhc2UgaXMgR1JVQiBhbmQgb3RoZXIgaW50ZXJtZWRpYXRl
+IGxvYWRlcnMsCj4+Pj4+Pj4+IHNpbmNlIGl0Cj4+Pj4+Pj4+IHdvdWxkIHJlbW92ZSBhbnkgbmVl
+ZCBmb3IgdGhlc2UgY29tcG9uZW50cyB0byBrbm93IGFueSBzdWNoCj4+Pj4+Pj4+IGRldGFpbHMu
+Cj4+Pj4+Pj4+IE15IGFpbSBpcyB0byBtYWtlIHRoZSBuZXh0IGFyY2hpdGVjdHVyZSB0aGF0IGdl
+dHMgYWRkZWQgdG8gR1JVQiBmb3IKPj4+Pj4+Pj4gRUZJIGJvb3QgMTAwJSBnZW5lcmljLgo+Pj4+
+Pj4+Pgo+Pj4+Pj4+Pj4gVXNpbmcgYW4gVUVGSSB2YXJpYWJsZSBmb3IgcGFzc2luZyB0aGUgaW5p
+dHJkIGRldmljZSBwYXRoIHdvdWxkCj4+Pj4+Pj4+PiBiZSBhCj4+Pj4+Pj4+PiBsZWFuZXIgc29s
+dXRpb24gb24gdGhlIGJvb3Rsb2FkZXIgc2lkZSB0aGFuIHJlcXVpcmluZyBhbiBleHRyYQo+Pj4+
+Pj4+Pj4gRUZJX0xPQURfRklMRTJfUFJPVE9DT0wgaW1wbGVtZW50YXRpb24uCj4+Pj4+Pj4+Pgo+
+Pj4+Pj4+PiBUaGlzIHdvdWxkIGFsc28gcmVxdWlyZSBrZXJuZWwgY2hhbmdlcywgc2luY2Ugd2Ug
+ZG9uJ3QgY3VycmVudGx5Cj4+Pj4+Pj4+IGxvYWQKPj4+Pj4+Pj4gaW5pdHJkcyBmcm9tIGFyYml0
+cmFyeSBkZXZpY2UgcGF0aHMuIFRoZSBFRklfRklMRV9QUk9UT0NPTCBpcyBtdWNoCj4+Pj4+Pj4+
+IG1vcmUgY29tcGxpY2F0ZWQgdGhhbiBuZWVkZWQsIGFuZCBpdCBkb2Vzbid0IHdvcmsgd2VsbCB3
+aXRoIG1peGVkCj4+Pj4+Pj4+IG1vZGUuIEl0IGFsc28gcmVxdWlyZXMgR1JVQiB0byBleHBvc2Ug
+dGhlIGZpbGVzeXN0ZW0gaXQgbG9hZHMgdGhlCj4+Pj4+Pj4+IGluaXRyZCBmcm9tIHZpYSBFRkkg
+cHJvdG9jb2xzLCB3aGljaCBpcyBjdXJyZW50bHkgdW5uZWNlc3NhcnkgYW5kCj4+Pj4+Pj4+IHRo
+ZXJlZm9yZSBub3QgaW1wbGVtZW50ZWQuCj4+Pj4+Pj4gVGhpcyBtZWFucyB5b3UgbW92ZSB0aGUg
+Y29tcGxleGl0eSBvZiBFRklfRklMRV9QUk9UT0NPTCBmcm9tCj4+Pj4+Pj4gTGludXggdG8gR1JV
+Qi4KPj4+Pj4+Pgo+Pj4+Pj4gTm8uIEkgYW0gbm90IGludGVyZXN0ZWQgaW4gRUZJX0ZJTEVfUFJP
+VE9DT0wsIG9ubHkgaW4gTG9hZEZpbGUyLAo+Pj4+Pj4gd2hpY2gKPj4+Pj4+IGlzIGEgc2luZ2xl
+IG1ldGhvZCB0aGF0IG5lZWRzIHRvIGJlIGltcGxlbWVudGVkLgo+Pj4+PiBJIHNhaWQgeW91IG1v
+dmUgY29tcGxleGl0eSBiZWNhdXNlIEdSVUIgd2lsbCBuZWVkIHRvIHVzZSB0aGUKPj4+Pj4gRUZJ
+X0ZJTEVfUFJPVE9DT0wgdG8gZG8gdGhlIGpvYiB0aGF0IHlvdSBkbyBub3Qgd2FudCB0byBkbyBp
+biBMaW51eC4KPj4+Pj4KPj4+Pj4+PiBJIHdvdWxkIG5vdCBoYXZlIGEgcHJvYmxlbSBpZiB0aGlz
+IHdvdWxkIG9ubHkgdG91Y2ggR1JVQi4gQnV0IGlmCj4+Pj4+Pj4gbGlzdGVuCj4+Pj4+Pj4gdG8g
+SWxpYXMgd2UgYXJlIHJlcGxhY2luZyBvbmUgaW1wbGVtZW50YXRpb24gaW4gTGludXggYnkgb25l
+IGluCj4+Pj4+Pj4gR1JVQiBhbmQKPj4+Pj4+PiBvbmUgaW4gVS1Cb290IGFuZCBvbmUgaW4gRURL
+MiBhbmQgb25lIGluIGFueSBvdGhlciBmaXJtd2FyZS4KPj4+Pj4+Pgo+Pj4+Pj4gSWYgdS1ib290
+IHdpbGwgYmUgdXNlZCB0byBib290IFJJU0MtViBpbiBFRkkgbW9kZSB3aXRob3V0IEdSVUIsCj4+
+Pj4+PiB0aGVuIEkKPj4+Pj4+IGV4cGVjdCB0aGF0IHdlIHdpbGwgbmVlZCBhbiBpbXBsZW1lbnRh
+dGlvbiBvZiB0aGlzIGluIHUtYm9vdC4KPj4+Pj4gV2hhdCBzZXRzIFJJU0MtViBhcGFydD8gR1JV
+QiBmb3IgUklTQy1WIGlzIGF2YWlsYWJsZS4KPj4+IMKgwqAgPj4KPj4+PiBSSVNDLVYgRUZJIGJv
+b3QgaXMgbm90IHN1cHBvcnRlZCB5ZXQgaW4gdXBzdHJlYW0gTGludXguCj4+PiBJdCBpcyBjdXJy
+ZW50bHkgcHJlcGFyZWQgQXRpc2ggUGF0cmEgb2YgV0RDLgo+Pj4KPj4gRXhhY3RseS4gU28gaXQg
+aXMgbm90IGluIHRoZSB1cHN0cmVhbSB5ZXQsIGFuZCBJIHdhbnQgdG8gY29udmVyZ2Ugb24gYQo+
+PiBzYW5lIGdlbmVyaWMgaW50ZXJmYWNlIGJlZm9yZSBpdCBnZXRzIG1lcmdlZC4KPj4KPj4+Pj4+
+Pj4gQWxzbywgdXNpbmcgYW4gRUZJIHZhcmlhYmxlIGRlZmVhdHMgdGhlIHB1cnBvc2UuIFRoZSB3
+aG9sZSBwb2ludCBvZgo+Pj4+Pj4+PiB0aGlzIGlzIG1ha2luZyBpdCBtb3JlIGxpa2VseSB0aGF0
+IHRoZSBrZXJuZWwgbG9hZGVkIHRoZSBpbml0cmQKPj4+Pj4+Pj4gdGhhdAo+Pj4+Pj4+PiB0aGUg
+Ym9vdGxvYWRlciBvciBmaXJtd2FyZSBpbnRlbmRlZCBpdCB0byBsb2FkLCBhbmQgaGF2aW5nIGEK
+Pj4+Pj4+Pj4gcGllY2Ugb2YKPj4+Pj4+Pj4gc2ltcGxlIFtzaWduZWRdIGNvZGUgdGhhdCBpbXBs
+ZW1lbnRzIHRoaXMgaXMgdGhlIGVhc2llc3Qgd2F5IHRvCj4+Pj4+Pj4+IGFjaGlldmUgdGhhdC4K
+Pj4+Pj4+PiBBdCBsZWFzdCBvbiBteSBEZWJpYW4gc3lzdGVtIGl0IGlzIHRoZSBvcGVyYXRpbmcg
+c3lzdGVtIGNyZWF0aW5nCj4+Pj4+Pj4gaW5pdHJkCj4+Pj4+Pj4gYW5kIGRlZmluaW5nIHdoaWNo
+IGluaXRyZCBtYXRjaGVzIHdoaWNoIGtlcm5lbC4gR1JVQiBzaW1wbHkKPj4+Pj4+PiBhc3N1bWVz
+IHRoYXQKPj4+Pj4+PiBmaWxlcyBlbmRpbmcgb24gdGhlIHNhbWUgdmVyc2lvbiBudW1iZXIgbWF0
+Y2guIFRoZXJlZm9yZSBJIHdvdWxkIHNheQo+Pj4+Pj4+IExpbnV4IGhvcGVzIHRoYXQgR1JVQiBs
+b2FkcyB3aGF0IExpbnV4IGludGVuZGVkLgo+Pj4+Pj4+Cj4+Pj4+Pj4gVGhlIGNoYWluIG9mIHRy
+dXN0IHdvdWxkIG5vdCBiZSBicm9rZW4gaWYgdGhlIGtlcm5lbCB3ZXJlCj4+Pj4+Pj4gcmVzcG9u
+c2libGUKPj4+Pj4+PiBmb3IgbG9hZGluZyB0aGUgaW5pdHJkIGFuZCBmb3IgY2hlY2tpbmcgaWYg
+aXQgbWF0Y2hlcyB0aGUga2VybmVsLgo+Pj4+Pj4+IExpbnV4Cj4+Pj4+Pj4gYWxyZWFkeSBkb2Vz
+IHRoaXMgZm9yIHRoZSBrZXJuZWwgbW9kdWxlcyBpbiBpbml0cmQuCj4+Pj4+Pj4KPj4+Pj4+IFdl
+IGNhbiBzdGlsbCBzaWduIHRoZSBpbml0cmQgYW5kIExpbnV4IGNhbiB2ZXJpZnkgdGhlIHNpZ25h
+dHVyZS4gV2hhdAo+Pj4+Pj4gSSBhbSBhZnRlciBpcyBhbiBpbnRlcmZhY2UgdGhhdCBkb2VzIG5v
+dCByZXF1aXJlIHRoZSBpbml0cmQgdG8KPj4+Pj4+IG9yaWdpbmF0ZSBmcm9tIGEgRUZJIGZpbGUg
+c3lzdGVtIHByb3RvY29sLCBhbmQgd2hpY2ggZG9lc24ndCByZXF1aXJlCj4+Pj4+PiB0aGUgbG9h
+ZGVkIGluaXRyZCB0byBzaXQgaW4gbWVtb3J5IGZvciBhbiB1bnNwZWNpZmllZCBhbW91bnQgb2Yg
+dGltZQo+Pj4+Pj4gYW5kIGl0cyBpbmZvcm1hdGlvbiBwYXNzZWQgdmlhIERUIHByb3BlcnRpZXMg
+b3IgYm9vdHBhcmFtcyBzdHJ1Y3RzLgo+Pj4+Pj4KPj4+Pj4+IFNvIGludm9raW5nIEVGSV9GSUxF
+X1BST1RPQ09MIGRpcmVjdGx5IGlzIG5vdCBnb2luZyB0byB3b3JrLAo+Pj4+Pj4gcmVnYXJkbGVz
+cyBvZiB3aGV0aGVyIHdlIGdldCB0aGUgZGV2aWNlcGF0aCBmcm9tIHRoZSBjb21tYW5kIGxpbmUg
+b3IKPj4+Pj4+IGZyb20gYSBFRkkgdmFyaWFibGUuCj4+Pj4+IFdoYXQgZG8geW91IG1lYW4gYnkg
+ImlzIG5vdCBnb2luZyB0byB3b3JrIj8KPj4+Pj4KPj4+Pj4gV2l0aCB0aGUgZGV2aWNlIHBhdGgg
+eW91IGNhbiBmaW5kIHRoZSBoYW5kbGUgaW1wbGVtZW50aW5nIHRoZQo+Pj4+PiBFRklfU0lNUExF
+X0ZJTF9TWVNURU1fUFJPVE9DT0wuCj4+Pj4+Cj4+Pj4+Pj4+IEZvciB1LWJvb3QsIGl0IHNob3Vs
+ZCBiZSB0cml2aWFsIHRvIGltcGxlbWVudCBhIHNpbXBsZSBMb2FkRmlsZTIKPj4+Pj4+Pj4gcHJv
+dG9jb2wgd3JhcHBlciBhcm91bmQgRUZJX0ZJTEVfUFJPVE9DT0wgdGhhdCBjYW4gYmUgaW5zdGFs
+bGVkCj4+Pj4+Pj4+IG9uIGEKPj4+Pj4+Pj4gaGFuZGxlIHRoYXQgYWxzbyBjYXJyaWVzIEVGSV9G
+SUxFX1BST1RPQ09MLgo+Pj4+Pj4+Pgo+Pj4+Pj4+IEEgVS1Cb290IGltcGxlbWVudGF0aW9uIG9m
+IHRoZSBFRklfTE9BRF9GSUxFMl9QUk9UT0NPTCB3b3VsZCBuZWVkIGEKPj4+Pj4+PiBkZXZpY2Ug
+cGF0aCB2YXJpYWJsZSB0byBmaW5kIHRoZSBibG9jayBkZXZpY2UgYW5kIHRvIG9wZW4gdGhlCj4+
+Pj4+Pj4gRUZJX1NJTVBMRV9GSUxFX1NZU1RFTV9QUk9UT0NPTCBiZWZvcmUgYWNjZXNzaW5nIHRo
+ZSBmaWxlLgo+Pj4+Pj4+Cj4+Pj4+Pj4gTGludXggd291bGQgbm90IGJlIG5lZWRpbmcgbW9yZSBs
+aW5lcyBhbmQgd2Ugd291bGQgbm90IHJlcGVhdCB0aGUKPj4+Pj4+PiBzYW1lCj4+Pj4+Pj4gY29k
+ZSBpbiBHUlVCLCBVLUJvb3QsIEVESzIsIGV0Yy4KPj4+Pj4+Pgo+Pj4+Pj4+IEFzIHNhaWQgTGlu
+dXggdXBkYXRlcyB0aGUgaW5pdHJkIG9mdGVuLiBJZiB0aGF0IGZpbGUgaXMgbm90Cj4+Pj4+Pj4g
+c2lnbmVkIGJ5Cj4+Pj4+Pj4gTGludXggaW4gYSB3ZWxsIGRlZmluZWQgd2F5LCBkbyBub3QgZXhw
+ZWN0IGFueSBzZWN1cml0eSBhdCBhbGwuCj4+Pj4+Pj4KPj4+Pj4+IEl0IGlzIG5vdCBvbmx5IGFi
+b3V0IHNlY3VyaXR5LiBUaGUgcHJpbWFyeSBnb2FsIGlzIHRvIHJlbW92ZSB0aGUgbmVlZAo+Pj4+
+Pj4gZm9yIGFyY2ggc3BlY2lmaWMga25vd2xlZGdlIGluIHRoZSBmaXJtd2FyZSBhYm91dCBEVCwg
+Ym9vdHBhcmFtcyBhbmQKPj4+Pj4+IGluaXRyZCBhbGxvY2F0aW9uIHBvbGljaWVzIHdpdGhvdXQg
+YmVpbmcgZm9yY2VkIHRvIGxvYWQgdGhlIGluaXRyZAo+Pj4+Pj4gZnJvbSBhIGZpbGVzeXN0ZW0g
+dGhhdCBpcyBleHBvc2VkIHZpYSBhIEVGSSBwcm90b2NvbC4KPj4+Pj4gV2hlcmUgYXJlIGRldmlj
+ZS10cmVlcyB0b3VjaGVkIGJ5IHRoaXMgcGF0Y2g/Cj4+Pj4+Cj4+Pj4+IFdoZW4gYm9vdGluZyB2
+aWEgVUVGSSB0aGVyZSBpcyBubyBuZWVkIGZvciBrbm93bGVkZ2Ugb2YgaW5pdHJkCj4+Pj4+IGFs
+bG9jYXRpb24gcG9saWNpZXMgaW4gVS1Cb290IGJlY2F1c2UgdXAgdG8gbm93IExpbnV4IG9yIEdS
+VUIgb3IgaVBYRQo+Pj4+PiBsb2FkIGluaXRyZC4KPj4+Pj4KPj4+Pj4gRnVydGhlcm1vcmUgSSBu
+ZWVkIG5vIGtub3dsZWRnZSBvZiBib290cGFyYW1zIGluIFUtQm9vdCBvbmNlIHdlCj4+Pj4+IHBy
+b3Blcmx5Cj4+Pj4+IHdlIHN1cHBvcnQgVUVGSSB2YXJpYWJsZXMgYXQgcnVudGltZSBiZWNhdXNl
+IGdydWItdXBkYXRlIHdpbGwgcGFzcyB0aGUKPj4+Pj4gY29tbWFuZCBsaW5lIGluIG9uZSBvZiB0
+aGUgQm9vdHh4eHggVUVGSSB2YXJpYWJsZXMuCj4+Pj4+Cj4+Pj4+IEJ1dCBtb3N0IGltcG9ydGFu
+dGx5IEkgZG8gbm90IGhhdmUgdG8gaW1wbGVtZW50IGFueXRoaW5nIExpbnV4Cj4+Pj4+IHNwZWNp
+ZmljCj4+Pj4+IGluIFUtQm9vdCBmb3IgYm9vdGluZyB2aWEgVUVGSSB1cCB0byBub3cuCj4+Pj4+
+Cj4+Pj4gQWRkaW5nIExpbnV4IHNwZWNpZmljIHN0dWZmIHRvIHUtYm9vdCBpcyBhcmd1YWJseSBt
+b3JlIGFwcHJvcHJpYXRlCj4+Pj4gdGhhbiBhZGRpbmcgYXJjaGl0ZWN0dXJlIHNwZWNpZmljIHN0
+dWZmIHRvIEVGSSBsb2FkZXJzIHRoYXQgY291bGQKPj4+PiBvdGhlcndpc2UgYmUgZW50aXJlbHkg
+Z2VuZXJpYy4KPj4+Pgo+Pj4+IC4uLgo+Pj4+PiBZb3VyIHBhdGNoIGNsYWltcyB0byBmZW5kIG9m
+ZiBhIHNwZWNpZmljIHRocmVhdCBzY2VuYXJpbzogQSB1c2VyCj4+Pj4+IHB1dHMgYW4KPj4+Pj4g
+dW50cnVzdGVkIGluaXRyZCBvbiB0aGUgZGlzayBhbmQgcmVmZXJlbmNlcyBpdCBpbiB0aGUgTGlu
+dXggY29tbWFuZAo+Pj4+PiBsaW5lLgo+Pj4+Pgo+Pj4+PiBJZiBoZSBpcyBhYmxlIHRvIGRvIHNv
+IHdpdGggeW91ciBjdXJyZW50IGJvb3Rsb2FkZXIgKHNpZ25lZCBvciBub3QKPj4+Pj4gc2lnbmVk
+KSwgaGUgbW9zdCBwcm9iYWJseSB3aWxsIGFsc28gYmUgYWJsZSB0byBkZWxldGUgYSBnb29kIGlu
+aXRyZAo+Pj4+PiBmcm9tCj4+Pj4+IHRoZSBmaWxlc3lzdGVtIGFuZCB0aHVzIGZvcmNlIHlvdXIg
+Y29kZSBpbnRvIHRoZSB1bnNhZmUgcGF0aC4KPj4+Pj4KPj4+Pj4gVGhhdCBpcyB3aHkgSSBzYXkg
+dGhhdCB3aXRoIHRoZSBjdXJyZW50IGZhbGxiYWNrIGxvZ2ljIHRoaXMgcGF0Y2gKPj4+Pj4gYWNo
+aWV2ZXMgbm8gaW5jcmVhc2UgaW4gc2VjdXJpdHkuIE9mIGNhdXNlIHlvdSBjb3VsZCByZW1vdmUg
+dGhlCj4+Pj4+IGZhbGxiYWNrCj4+Pj4+IGxvZ2ljLiBCdXQgaW4gdGhpcyBjYXNlIHlvdXIgTGlu
+dXggd2lsbCBub3QgYm9vdCB3aXRoIGFueSBsZWdhY3kKPj4+Pj4gYm9vdGxvYWRlciBvciBmaXJt
+d2FyZS4KPj4+Pj4KPj4+PiBJZiB0aGVyZSBpcyBhIGJldHRlciB3YXkgdG8gZXhwb3NlIHRoZSBp
+bml0cmQgdGhhdAo+Pj4+IGEpIGRvZXMgbm90IHJlcXVpcmUgdGhlIGluaXRyZCB0byByZXNpZGUg
+b24gYSBmaWxlIHN5c3RlbSB0aGF0IGlzCj4+Pj4gYWNjZXNzaWJsZSB2aWEgRUZJIHByb3RvY29s
+cywgYW5kCj4+Pj4gYikgZG9lcyBub3QgcmVxdWlyZSB0aGUgbG9hZGVyIHRvIGtub3cgYWJvdXQg
+YXJjaCBzcGVjaWZpYyBwb2xpY2llcwo+Pj4+IHJlZ2FyZGluZyB0aGUgcGxhY2VtZW50IG9mIHRo
+ZSBpbml0cmQgaW4gbWVtb3J5LCBhbmQKPj4+PiBjKSBkb2VzIG5vdCBsZWF2ZSBhIHRpbWUgd2lu
+ZG93IGJldHdlZW4gdGhlIHRpbWUgdGhhdCB0aGUgaW5pdHJkIGlzCj4+Pj4gbG9hZGVkL3Zlcmlm
+aWVkL21lYXN1cmVkIGJ5IHRoZSBmaXJtd2FyZSBhbmQgdGhlIHRpbWUgdGhhdCB0aGUga2VybmVs
+Cj4+Pj4gZ2V0cyBoYW5kZWQgdGhlIGJ1ZmZlcgo+Pj4+Cj4+Pj4gdGhlbiBJIGFtIGhhcHB5IHRv
+IGRpc2N1c3MgaXQuIFRoaXMgcHJvcG9zYWwgaXMgdGhlIGJlc3QgSSBjb3VsZCBjb21lCj4+Pj4g
+dXAgd2l0aCB0byBhY2hpZXZlIHRoZSBhYm92ZS4KPj4+Pgo+Pj4gSGVsbG8gQXJkLAo+Pj4KPj4+
+IEkgdGhpbmsgcGFydCBvZiBvdXIgZGlmZmVyZW50IHZpZXdzIGlzIHRoYXQgd2UgYXJlIHRoaW5r
+aW5nIGFib3V0IHR3bwo+Pj4gZGlmZmVyZW50IHVzZSBjYXNlcyB3aGljaCBib3RoIGhhdmUgdGhl
+aXIgcmVsZXZhbmNlOgo+Pj4KPj4+IElmIEkgdW5kZXJzdGFuZCB5b3UgY29ycmVjdGx5LCB5b3Ug
+YXJlIHRoaW5raW5nIGFib3V0IGFuIGVtYmVkZGVkIGRldmljZQo+Pj4gd2hlcmUgdGhlIGtlcm5l
+bCBhbmQgdGhlIGluaXRyZCBpcyBlc3NlbnRpYWxseSBwYXJ0IG9mIHRoZSBmaXJtd2FyZQo+Pj4g
+cHJvdmlkZWQgYnkgdGhlIGRldmljZS4KPj4+Cj4+PiBJIGFtIHRoaW5raW5nIG9mIGEgc3lzdGVt
+IHJ1bm5pbmcgYSBzdGFuZGFyZCBMaW51eCBkaXN0cmlidXRpb24gbGlrZQo+Pj4gRGViaWFuIHdo
+ZXJlIHRoZSBpbml0cmQgaXMgZ2VuZXJhdGVkIGJ5IHRoZSBvcGVyYXRpbmcgc3lzdGVtCj4+Pgo+
+Pj4gSW4gYm90aCB1c2UgY2FzZXMgdmVyaWZ5aW5nIHRoZSBpbml0cmQgaXMgb2YgaW1wb3J0YW5j
+ZS4KPj4+Cj4+PiBOb3cgY29uY2VybmluZyB0aGUgcmVxdWlyZW1lbnRzOgo+Pj4KPj4+IGEpIElu
+IFUtQm9vdCBhbGwgZmlsZSBzeXN0ZW1zIG9uIGJsb2NrIGRldmljZXMgY2FuIGJlIG1hZGUgYWNj
+ZXNzaWJsZQo+Pj4gdmlhIEVGSSBwcm90b2NvbHMuIEFyZSB5b3UgdGhpbmtpbmcgYWJvdXQgaW5p
+dHJkcyB0aGF0IGFyZSBub3QgaW4gYSBmaWxlCj4+PiBzeXN0ZW0/Cj4+Pgo+PiBUaGUgdHlwaWNh
+bCBHUlVCIGRlcGxveW1lbnQga2VlcHMgdGhlIGNvcmUgR1JVQiBpdHNlbGYgKG9yIHRoZSBlbnRp
+cmUKPj4gdGhpbmcgaWYgaXQgaXMgYnVpbHQgYXMgc3RhbmRhbG9uZSkgaW4gdGhlIEVTUCwgYW5k
+IHRoZSBHUlVCIG1vZHVsZXMsCj4+IGtlcm5lbCBpbWFnZXMgYW5kIGluaXRyZHMgYXJlIGluIC9i
+b290LCB3aGljaCBpcyB0eXBpY2FsbHkgbm90IGEgZmlsZQo+PiBzeXN0ZW0gdGhhdCBFRkkgdW5k
+ZXJzdGFuZHMuIFNvIGluIHRoYXQgY2FzZSwgaW5pdHJkPSBkb2VzIG5vdCB3b3JrLAo+PiB3aGlj
+aCBpcyB3aHkgR1JVQiBsb2FkcyB0aGUgaW5pdHJkIGludG8gbWVtb3J5IGRpcmVjdGx5IGFuZCBw
+YXNzZXMgdGhlCj4+IGJhc2UgYWRkcmVzcyBhbmQgc2l6ZSB2aWEgRFQgb3IgYm9vdHBhcmFtcyBz
+dHJ1Y3R1cmUuCj4+Cj4+PiBiKSBNeSBzdWdnZXN0aW9uIHRvIHVzZSBhIFVFRkkgdmFyaWFibGUg
+Zm9yIGNvbW11bmljYXRpbmcgdGhlIGRldmljZQo+Pj4gcGF0aCB3b3VsZCBub3QgcmVxdWlyZSBh
+bnkgYXJjaCBzcGVjaWZpYyBwb2xpY2llcyBlaXRoZXIuCj4+Pgo+PiBQYXNzaW5nIHRoZSBFRkkg
+ZGV2aWNlIHBhdGggaXMgbm90IGdvaW5nIHRvIGhlbHAgdXMgc2luY2UgdGhlIGluaXRyZAo+PiBt
+YXkgbm90IGJlIHJlcHJlc2VudGFibGUgYXMgYSBkZXZpY2UgcGF0aC4gVGhhdCBpcyB0aGUgd2hv
+bGUgcG9pbnQsCj4+IGFjdHVhbGx5IC0gdGhpcyBzZXJpZXMgbWFrZXMgdGhlIGluaXRyZCByZXBy
+ZXNlbnRhYmxlIGFzIGEgZGV2aWNlCj4+IHBhdGgsIGJ1dCBpbiBhIHNpbXBsZSB3YXkgdGhhdCBk
+b2Vzbid0IHJlbHkgb24gRUZJX0ZJTEVfUFJPVE9DT0wgYnV0Cj4+IG9ubHkgb24gRUZJX0xPQURf
+RklMRTJfUFJPVE9DT0wsIHdoaWNoIGlzICptdWNoKiBzaW1wbGVyLgo+Cj4KPiBTbyBpZiB3ZSBo
+YWQgc3VwcG9ydCBpbiBncnViIHRvIGp1c3QgZXhwb3J0IGl0cyBvd24gZmlsZSBzeXN0ZW1zIGFz
+IFVFRkkKPiBwcm90b2NvbHMsIHRoYXQgcHJvYmxlbSB3b3VsZCBkaXNhcHBlYXIsIHJpZ2h0PyBX
+aGF0IG90aGVyIHJlYXNvbnMgYXJlCj4gbGVmdCB0byBub3QganVzdCB1c2Ugbm9ybWFsIGZpbGUg
+bG9hZCBvcGVyYXRpb25zIGZyb20gdGhlIExpbnV4IEVGSSBzdHViPwo+Cj4gSUlSQyB5b3UgbWVu
+dGlvbmVkIHRoYXQgdGhlIGZ3Y2ZnIC1rZXJuZWwgYW5kIC1pbml0cmQgcGFyYW1ldGVycyBhcmUK
+PiBhbHJlYWR5IGV4cG9zZWQgYXMgcHNldWRvIGZpbGVzeXN0ZW0gaW5zaWRlIEFBVk1GLCBzbyB0
+aGF0IG9uZSBpcyBzb2x2ZWQuCj4KPiBJIHRoaW5rIHRoYXQgb25seSBsZWF2ZXMgdGhlIFVFRkkg
+c2hlbGwgY2FzZT8gQnV0IGlmIHlvdSBoYXZlIGEgVUVGSQo+IHNoZWxsLCB0aGVuIHlvdSBjYW4g
+b25seSBsb2FkIGZyb20gYW4gZXhpc3RpbmcgZmlsZSBzeXN0ZW0gYXMgd2VsbCwgbm8/Cj4KPiBX
+aGF0IEkgY2FuJ3QgcXVpdGUgZ3Jhc3AgeWV0IGlzIGhvdyB5b3Ugd291bGQgaGFuZGxlIG11bHRp
+cGxlIGluaXRyZHMKPiB3aXRoIGEgc2luZ2xlIGRldmljZSBwYXRoLiBIb3cgd291bGQgdGhhdCB3
+b3JrPwoKSSBndWVzcyB5b3UgcmVmZXIgdG8gdGhlIGZlYXR1cmUgZGVzY3JpYmVkIGluCmh0dHBz
+Oi8vd3d3LnBob3Jvbml4LmNvbS9zY2FuLnBocD9wYWdlPW5ld3NfaXRlbSZweD1HUlVCLU11bHRp
+cGxlLUVhcmx5LUluaXRyZAoKSW4gdGhlIGJpbmFyeSBmb3JtIG9mIGFuIEVGSV9ERVZJQ0VfUEFU
+SF9QUk9UT0NPTCBtdWx0aXBsZSBkZXZpY2UgcGF0aHMKY2FuIGJlIGNvbmNhdGVuYXRlZCB1c2lu
+ZyBhIHNlcGFyYXRvciBub2RlIG9mIHR5cGUgIkVuZCBvZiBIYXJkd2FyZQpEZXZpY2UgUGF0aCBu
+b2RlIiAoMHg3Zikgd2l0aCBzdWItdHlwZSAiRW5kIFRoaXMgSW5zdGFuY2Ugb2YgYSBEZXZpY2UK
+UGF0aCIgKDB4MDEpLgoKUmVnYXJkcwoKSGVpbnJpY2gKCj4KPgo+Pgo+Pj4gYykgSSBwcm9wb3Nl
+ZCB0aGF0IHRoZSBrZXJuZWwgZG9lcyB0aGUgdmVyaWZpY2F0aW9uLiBTbyB0aGVyZSB3b3VsZCBi
+ZQo+Pj4gZXF1YWxseSBub3RoaW5nIGluIGJldHdlZW4gbG9hZGluZyB0aGUgZmlsZSBhbmQgaXRz
+IHZlcmlmaWNhdGlvbi4gWWV0Cj4+PiByZXNwb25zaWJpbGl0aWVzIHdvdWxkIGJlIGNoYW5nZWQu
+Cj4+Pgo+Pj4gQnV0IHBvc3NpYmx5IEkgbWlzc2VkIHNvbWUgcmVxdWlyZW1lbnRzIHlvdSBoYXZl
+IGluIG1pbmQgdGhhdCBJIHNob3VsZAo+Pj4gY29uc2lkZXIuCj4+Pgo+PiAxKSBUaGUgYXNzdW1w
+dGlvbiB0aGF0IHRoZSBpbml0cmQgY2FuIGFsd2F5cyBiZSBsb2FkZWQgZnJvbSBhIEVGSQo+PiBk
+ZXZpY2UgcGF0aCBkaXJlY3RseSBkb2VzIG5vdCBob2xkLgo+Cj4KPiBDYW4geW91IHRoaW5rIG9m
+IGdvb2QgcmVhc29ucyB3aHkgdGhpcyBpcyB0cnVlPyBJIHVuZGVyc3RhbmQgdGhlIGdydWIKPiBv
+bmUsIGJ1dCB0aGF0J3Mgc29sdmFibGUuIFdoYXQgb3RoZXIgY2FzZXMgYXJlIHRoZXJlPwo+Cj4K
+Pj4gMikgTG9hZGluZyB0aGUgaW5pdHJkIGludG8gbWVtb3J5IGFuZCBwYXNzaW5nIHRoZSBhZGRy
+ZXNzIGFuZCBzaXplIGlzCj4+IG5vdCBhY2NlcHRhYmxlLgo+Cj4KPiBUaGlzIHdvdWxkIGJhc2lj
+YWxseSBiZSB0aGUgb3B0aW9uIHRvIHBhc3MgdGhlIGluaXRyZCBhcyBjb25maWd1cmF0aW9uCj4g
+dGFibGUsIHJpZ2h0PyBUaGUgb25seSByZWFzb24gdGhhdCBkZWZpbml0ZWx5IGdvZXMgYWdhaW5z
+dCB0aGF0IG9uZSB0aGF0Cj4gSSBjYW4gdGhpbmsgb2YgcmlnaHQgbm93IGlzIHRvIGF2b2lkIGRv
+dWJsZSBjb3B5aW5nPwo+Cj4KPj4gMykgSGF2aW5nIGEgc3BlY2lhbCBkZXZpY2UgcGF0aCB0aGF0
+IGRlc2lnbmF0ZXMgdGhlIGluaXRyZAo+PiBzcGVjaWZpY2FsbHkgKHdoaWNoIHdpbGwgYmUgdHJl
+YXRlZCBpbiBhIHNwZWNpYWwgd2F5IGJ5IHRoZSBrZXJuZWwpCj4+IG1ha2VzIGl0IHZlcnkgZWFz
+eSBmb3IgdGhlIGJvb3QgZmlybXdhcmUgdG8gYXR0YWNoIHBvbGljeSB0byB0aGUKPj4gbG9hZGlu
+ZyBvZiB0aGUgaW5pdHJkIHRoYXQgY2FuIGJlIGVuZm9yY2VkIHJpZ2h0IHdoZW4gdGhlIGZpbGUg
+aXMKPj4gYmVpbmcgcGFzc2VkIGludG8gdGhlIGtlcm5lbC4KPgo+Cj4gSSBkb24ndCBmdWxseSB1
+bmRlcnN0YW5kIHRoaXMgb25lLiBDYW4geW91IGdpdmUgZXhhbXBsZXMgZm9yIHN1Y2gKPiBwb2xp
+Y2llcz8gOikKPgo+Cj4+IFB1dHRpbmcgYW4gYXJiaXRyYXJ5IGRldmljZSBwYXRoIGluIGEgRUZJ
+IHZhcmlhYmxlIGRvZXNuJ3QgYWRkcmVzcyAxKSwKPj4gYW5kIGl0IGNvbXBsaWNhdGVzIDMpLCBz
+aW5jZSB5b3UgY2Fubm90IGVhc2lseSBkaXN0aW5ndWlzaCB3aGV0aGVyIHRoZQo+PiBmaWxlIGxv
+YWQgdGhhdCBpcyBvY2N1cnJpbmcgaXMgdGhlIEVGSSBzdHViIGxvYWRpbmcgdGhlIGluaXRyZCBh
+dAo+PiBib290Lgo+Cj4KPiBXaHkgZG8gd2UgbmVlZCB0byBkaXN0aW5ndWlzaD8gSSdtIG1pc3Np
+bmcgY3JlYXRpdml0eSBmb3IgdGhlIHVzZSBjYXNlCj4gcmlnaHQgbm93LiBGb3IgMSksIHdlIGp1
+c3QgbmVlZCB0byBtYWtlIHN1cmUgdGhhdCBib290IGxvYWRlcnMgdGhhdAo+IGltcGxlbWVudCB0
+aGVpciBvd24gZmlsZSBzeXN0ZW1zIGFsc28gZXhwb3NlIHRob3NlIGZpbGUgc3lzdGVtcyBhcyBV
+RUZJCj4gcHJvdG9jb2xzLCByaWdodD8KPgo+Cj4gVGhhdCBzYWlkLCBJIGRvbid0IHRoaW5rIHRo
+ZSBwcm9wb3NlZCBhcHByb2FjaCBvZiB1c2luZwo+IEVGSV9MT0FEX0ZJTEUyX1BST1RPQ09MIGlz
+IGJhZC4gV2hhdGV2ZXIgd2UgZG8sIHdlIGFsd2F5cyB3aWxsIG5lZWQgdG8KPiB0cmVhdCBpbml0
+cmRzIHNwZWNpYWwgaW4gb25lIHdheSBvciBhbm90aGVyOyBhdCBsZWFzdCBieSBleHBvc2luZyBh
+Cj4gY29tbWFuZCB0byBzcGVjaWZ5IHdoaWNoIG9uZShzKSB5b3Ugd2FudCB0byBsb2FkLgo+Cj4K
+PiBBbGV4Cj4KPgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
