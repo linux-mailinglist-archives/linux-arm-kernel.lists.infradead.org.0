@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D026D15520D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 06:27:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C81B15520E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 06:27:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hNvQp7YzFmpdCr98y8DVuWwTJDpw1aVmGk8RuuiySII=; b=TXPKhG8RiDK5wS
-	0kyc2SKDdRjqV9z9caEvt7cEjD30oQ+NHysW4nDalhbDUHp6Owc+nCG/BkdDlQTJaqtz6DMLEJBKy
-	lW0q5AFljb9dd/ZnclVq6UmBBVMiYMxayubay1Z7C7KZ+ou/A8seot1OByPuOGzfaFOAn05Ek5hSW
-	GVgzsjxiofLqC07jCr9Taca0aaHdesqKywYowOHjV8ZhddeDxxpqjy2s/RRiM9iQMLA2WWjYWKqqT
-	KM7lQmfdUNXzzE4lqjbF5mx+0TnGL8t4/j8u6lYz6HIwkH7hWeVgR5i+h6JJxtFJCss1XLHhJJijr
-	ItSJbN8BOa8u1BcTjzTg==;
+	List-Owner; bh=agboXeGdbCtT/s7rX6Nu6lmFWfBUQ1KkNvzhDekrFdw=; b=ADvesl+gpgiaAk
+	jGNrRFfnoUXV3M3kek8LBTLR6iWiCgef9v7Vak0TB2vgADueZxOy4+q1FLBraLfGHl5WnGCP1Gee5
+	E+HpgI9XhCQZVJl7dZhYdCBJ4AFYQTv0P7MFI0NtIRi6DuO0TwXbBra6SVHuJ/vn9fZKDwQLT8ilg
+	pBSqvwrL0+Wd4Sc+ixfNg2XF/i7dpZKtapI81iQ5eVVppd2pHDgOXo9TJ6bLfPn1zM5EQMwE1bdx6
+	rPTi9bQcD9VMyWQKwxia7s+dQLp2hGgPmgY/yyrBJhWFPyat/VYwde+Bzk7Bsg3xgyfmz5E4F2w9v
+	P/LoxmYabYGelNwvC5gQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izwAo-0007Ky-S8; Fri, 07 Feb 2020 05:27:26 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1izwAz-0007bE-57; Fri, 07 Feb 2020 05:27:37 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izwAJ-0006y9-Af
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 05:26:56 +0000
-Received: by mail-pf1-x442.google.com with SMTP id y73so683313pfg.2
+ id 1izwAL-00072q-5W
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 05:26:59 +0000
+Received: by mail-pl1-x641.google.com with SMTP id g6so522332plp.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 06 Feb 2020 21:26:53 -0800 (PST)
+ Thu, 06 Feb 2020 21:26:57 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=CIn5sKN4KiBio0RDhfFCPXTE80uz5ajGK0muKh5dKSI=;
- b=jehEAPOlDHxOIf658U57Pz+Lxc9WjB5npjsc5eIfdKKIgLI6wIasqGvVPkiVpdJQ0G
- Hzpf9s+Mrm6ErGv53ZanL5Ar8j551dwPz09ideYJ5ExThnUtNvN841ZIU2L4qTBXCsLw
- CUJvrrL1JkluseTv3rUysxVHovsnV10a4Qg0g=
+ bh=dR3Ttt0IPPNsYPOgpJlj5mjk/b6EviTLXN5Iagqf+aA=;
+ b=RLkkxmCTi5OetjhaqHgRffF2gosGp/sYK10SOPzydjFeAkE0GrMCag7mSVS71o83N1
+ it6WCmDjCGGGogavPlAB6vB4pDeRxFHVR+VxqsxSGE0wSnlJBb6Sa+WYfT9+EIU/fGgY
+ GBvz5FLem4teG4x6oeDFHYnrgoqWrfT6ZWXyM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=CIn5sKN4KiBio0RDhfFCPXTE80uz5ajGK0muKh5dKSI=;
- b=ihd7mswyIBD1IcWNWaku8xqyokjs623TCipM9bsyiqabC0rOVSIrEHDVqrbU3GiI9t
- hPhk1VDEul40BtebSNKiKDmFqpoONYXGIA2+eLiEwvMjeVpYd15QN0uP5YR7Btur09Jd
- ly2ELoMySx407IwVmN6xDW+WvFjOg5kSgrQyEKxR+m7uuVIlFBygt9SX7aj5enzD/FoY
- YEjp5KqOtcrDRlEEnBNFoC9q8zF3EJd9GqQ3Dj9WXS/zNTBYVhoAsonQ/1mDS8mCMqxK
- /fYvKraIEhhLiuhWtT3gYffFjDBbpcLJhDSEiZX1SE/0SoW9ozQepqlcqQJoc/8hHPTb
- MMDA==
-X-Gm-Message-State: APjAAAWaihPpOVudS59yfmZkGjoMbX0uEldzViKt1HQ75CZsDi34PAs3
- 7N+bTMTJWXRlpXLW+Pi+F5Gm8g==
-X-Google-Smtp-Source: APXvYqx5i7f7z7/eMVnpdL5X2gaY4KuXn3Lv/gF5m1NmEIhVV0KooOh59/YHin0f3dnQN5ufHFD66g==
-X-Received: by 2002:a63:5558:: with SMTP id f24mr7314186pgm.92.1581053213363; 
- Thu, 06 Feb 2020 21:26:53 -0800 (PST)
+ bh=dR3Ttt0IPPNsYPOgpJlj5mjk/b6EviTLXN5Iagqf+aA=;
+ b=iSuuvUyvjCyu06kY43EgIklaa6KUL1bKPowKLO+YIwuvJ0thsc/pE9HJq0odKlQhBl
+ 1XBkpOZMrOpa1yP/UOgmOsU7toWIR00Q7Hck29NMkaL6v9ggokG+m5A8vBvT2KdOhgXt
+ bWmY5vU6FI1HhbZpHWXkcoQFXOSw0McqCxLAfTGqGRSzAz1zoZobmGEqQnnVxDGMsyf4
+ 0fM1VfqyUTJhTzGMNX8XjDX1GqX1ulfT5cVdPkuhDNfezVd0CMScukXcWEeItuQRlVfI
+ 3f7YzHj8d5O5auhK+B2UZ9iYrhUhMr9rAL+x4A1C3Jwm2bVyucZekmYSwLItF4kr16g1
+ lhkg==
+X-Gm-Message-State: APjAAAXe0boJ5byTtGXDc5VAuEyuKXm6QjptL1wyWQwti5VFDFRKfYX/
+ wCs3WSUpBdsHA2MUdrsa9J12Gg==
+X-Google-Smtp-Source: APXvYqxVFz2MgUiuN/4vB0I/vSf3EtSzfgT7IVwTv+xdG0X57ZfBT4B+ulFdiUZWCiND96tY/kzH6A==
+X-Received: by 2002:a17:902:59cd:: with SMTP id
+ d13mr8099719plj.146.1581053216500; 
+ Thu, 06 Feb 2020 21:26:56 -0800 (PST)
 Received: from drinkcat2.tpe.corp.google.com
  ([2401:fa00:1:b:d8b7:33af:adcb:b648])
- by smtp.gmail.com with ESMTPSA id i66sm1174485pfg.85.2020.02.06.21.26.50
+ by smtp.gmail.com with ESMTPSA id i66sm1174485pfg.85.2020.02.06.21.26.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 06 Feb 2020 21:26:52 -0800 (PST)
+ Thu, 06 Feb 2020 21:26:56 -0800 (PST)
 From: Nicolas Boichat <drinkcat@chromium.org>
 To: Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4 1/7] dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
-Date: Fri,  7 Feb 2020 13:26:21 +0800
-Message-Id: <20200207052627.130118-2-drinkcat@chromium.org>
+Subject: [PATCH v4 2/7] arm64: dts: mt8183: Add node for the Mali GPU
+Date: Fri,  7 Feb 2020 13:26:22 +0800
+Message-Id: <20200207052627.130118-3-drinkcat@chromium.org>
 X-Mailer: git-send-email 2.25.0.341.g760bfbb309-goog
 In-Reply-To: <20200207052627.130118-1-drinkcat@chromium.org>
 References: <20200207052627.130118-1-drinkcat@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_212655_403720_B460E2C6 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200206_212657_250305_2E1EB4B5 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,65 +111,189 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Define a compatible string for the Mali Bifrost GPU found in
-Mediatek's MT8183 SoCs.
+Add a basic GPU node for mt8183.
 
 Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
 Reviewed-by: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
 ---
+Upstreaming what matches existing bindings from our Chromium OS tree:
+https://chromium.googlesource.com/chromiumos/third_party/kernel/+/chromeos-4.19/arch/arm64/boot/dts/mediatek/mt8183.dtsi#1348
+
+The evb part of this change depends on this patch to add PMIC dtsi:
+https://patchwork.kernel.org/patch/10928161/
+
+The binding we use with out-of-tree Mali drivers includes more
+clocks, this is used for devfreq: the out-of-tree driver switches
+clk_mux to clk_sub_parent (26Mhz), adjusts clk_main_parent, then
+switches clk_mux back to clk_main_parent:
+(see https://chromium.googlesource.com/chromiumos/third_party/kernel/+/chromeos-4.19/drivers/gpu/arm/midgard/platform/mediatek/mali_kbase_runtime_pm.c#423)
+clocks =
+        <&topckgen CLK_TOP_MFGPLL_CK>,
+        <&topckgen CLK_TOP_MUX_MFG>,
+        <&clk26m>,
+        <&mfgcfg CLK_MFG_BG3D>;
+clock-names =
+        "clk_main_parent",
+        "clk_mux",
+        "clk_sub_parent",
+        "subsys_mfg_cg";
 
 v4:
- - Add power-domain-names description
+ - Add power-domain-names to describe the 3 domains.
    (kept Alyssa's reviewed-by as the change is minor)
+
 v3:
- - No change
+ - No changes
 
- .../bindings/gpu/arm,mali-bifrost.yaml        | 25 +++++++++++++++++++
- 1 file changed, 25 insertions(+)
+v2:
+ - Use sram instead of mali_sram as SRAM supply name.
+ - Rename mali@ to gpu@.
 
-diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
-index 4ea6a8789699709..0d93b3981445977 100644
---- a/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
-+++ b/Documentation/devicetree/bindings/gpu/arm,mali-bifrost.yaml
-@@ -17,6 +17,7 @@ properties:
-     items:
-       - enum:
-           - amlogic,meson-g12a-mali
-+          - mediatek,mt8183-mali
-           - realtek,rtd1619-mali
-           - rockchip,px30-mali
-       - const: arm,mali-bifrost # Mali Bifrost GPU model/revision is fully discoverable
-@@ -62,6 +63,30 @@ allOf:
-           minItems: 2
-       required:
-         - resets
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: mediatek,mt8183-mali
-+    then:
-+      properties:
-+        sram-supply: true
-+        power-domains:
-+          description:
-+            List of phandle and PM domain specifier as documented in
-+            Documentation/devicetree/bindings/power/power_domain.txt
-+          minItems: 3
-+          maxItems: 3
-+        power-domain-names:
-+          items:
-+            - const: core0
-+            - const: core1
-+            - const: 2d
-+
-+      required:
-+        - sram-supply
-+        - power-domains
-+        - power-domains-names
+ arch/arm64/boot/dts/mediatek/mt8183-evb.dts |   7 ++
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi    | 105 ++++++++++++++++++++
+ 2 files changed, 112 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
+index 1fb195c683c3d01..7d609e0cd9b4975 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
+@@ -7,6 +7,7 @@
  
- examples:
-   - |
+ /dts-v1/;
+ #include "mt8183.dtsi"
++#include "mt6358.dtsi"
+ 
+ / {
+ 	model = "MediaTek MT8183 evaluation board";
+@@ -30,6 +31,12 @@ &auxadc {
+ 	status = "okay";
+ };
+ 
++&gpu {
++	supply-names = "mali", "sram";
++	mali-supply = <&mt6358_vgpu_reg>;
++	sram-supply = <&mt6358_vsram_gpu_reg>;
++};
++
+ &i2c0 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&i2c_pins_0>;
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index 124f9d3e09f532c..74b5305f663f740 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -599,6 +599,111 @@ mfgcfg: syscon@13000000 {
+ 			#clock-cells = <1>;
+ 		};
+ 
++		gpu: gpu@13040000 {
++			compatible = "mediatek,mt8183-mali", "arm,mali-bifrost";
++			reg = <0 0x13040000 0 0x4000>;
++			interrupts =
++				<GIC_SPI 280 IRQ_TYPE_LEVEL_LOW>,
++				<GIC_SPI 279 IRQ_TYPE_LEVEL_LOW>,
++				<GIC_SPI 278 IRQ_TYPE_LEVEL_LOW>;
++			interrupt-names = "job", "mmu", "gpu";
++
++			clocks = <&topckgen CLK_TOP_MFGPLL_CK>;
++
++			power-domains =
++				<&scpsys MT8183_POWER_DOMAIN_MFG_CORE0>,
++				<&scpsys MT8183_POWER_DOMAIN_MFG_CORE1>,
++				<&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
++			power-domain-names = "core0", "core1", "2d";
++
++			operating-points-v2 = <&gpu_opp_table>;
++		};
++
++		gpu_opp_table: opp_table0 {
++			compatible = "operating-points-v2";
++			opp-shared;
++
++			opp-300000000 {
++				opp-hz = /bits/ 64 <300000000>;
++				opp-microvolt = <625000>, <850000>;
++			};
++
++			opp-320000000 {
++				opp-hz = /bits/ 64 <320000000>;
++				opp-microvolt = <631250>, <850000>;
++			};
++
++			opp-340000000 {
++				opp-hz = /bits/ 64 <340000000>;
++				opp-microvolt = <637500>, <850000>;
++			};
++
++			opp-360000000 {
++				opp-hz = /bits/ 64 <360000000>;
++				opp-microvolt = <643750>, <850000>;
++			};
++
++			opp-380000000 {
++				opp-hz = /bits/ 64 <380000000>;
++				opp-microvolt = <650000>, <850000>;
++			};
++
++			opp-400000000 {
++				opp-hz = /bits/ 64 <400000000>;
++				opp-microvolt = <656250>, <850000>;
++			};
++
++			opp-420000000 {
++				opp-hz = /bits/ 64 <420000000>;
++				opp-microvolt = <662500>, <850000>;
++			};
++
++			opp-460000000 {
++				opp-hz = /bits/ 64 <460000000>;
++				opp-microvolt = <675000>, <850000>;
++			};
++
++			opp-500000000 {
++				opp-hz = /bits/ 64 <500000000>;
++				opp-microvolt = <687500>, <850000>;
++			};
++
++			opp-540000000 {
++				opp-hz = /bits/ 64 <540000000>;
++				opp-microvolt = <700000>, <850000>;
++			};
++
++			opp-580000000 {
++				opp-hz = /bits/ 64 <580000000>;
++				opp-microvolt = <712500>, <850000>;
++			};
++
++			opp-620000000 {
++				opp-hz = /bits/ 64 <620000000>;
++				opp-microvolt = <725000>, <850000>;
++			};
++
++			opp-653000000 {
++				opp-hz = /bits/ 64 <653000000>;
++				opp-microvolt = <743750>, <850000>;
++			};
++
++			opp-698000000 {
++				opp-hz = /bits/ 64 <698000000>;
++				opp-microvolt = <768750>, <868750>;
++			};
++
++			opp-743000000 {
++				opp-hz = /bits/ 64 <743000000>;
++				opp-microvolt = <793750>, <893750>;
++			};
++
++			opp-800000000 {
++				opp-hz = /bits/ 64 <800000000>;
++				opp-microvolt = <825000>, <925000>;
++			};
++		};
++
+ 		mmsys: syscon@14000000 {
+ 			compatible = "mediatek,mt8183-mmsys", "syscon";
+ 			reg = <0 0x14000000 0 0x1000>;
 -- 
 2.25.0.341.g760bfbb309-goog
 
