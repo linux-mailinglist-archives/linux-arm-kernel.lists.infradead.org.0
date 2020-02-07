@@ -2,73 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CD291552D8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 08:21:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F218E1552E0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  7 Feb 2020 08:23:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GC6x+Ctq9y7XFtiWkje0hd58hRJcy0LOyOz6oaMEXvc=; b=AcQWkvFFthEIC7
-	fzl5ewTeAW6bEXw6WhvQ3TUE/bt3Qv+kS6h8AzlfUevktZQE+F+6V1ZoA/VFc924ssDc29En7UYf3
-	bzj0ZZWSR2PmcwpVnNf5iZfcpoV4BWv+o3l6S/XWdvzh3r20ae17/i2hcMOv5EBAFvFEp4lRJqTNZ
-	H3T3OYHQV73PtGCfvOmFz+dmr9xpBmVlhMwLFgxJNqWoe3h007D6QC9pVpJLOBwfa9UboAqGHnodi
-	R+FtVV7CTmgl6yPd4dTW3ijyaOxevEBghz9ndAhxhMT5MQrjlyk1RvId3D9EEM3ZB1CeRyYAXG1Cz
-	CMfblK5xMUUqY+M3j6+w==;
+	List-Owner; bh=mpTGkvMtpEeWqB19MaPwMOtaAy7gF2bunuoSfRfHuUw=; b=hq+BoymKGFf+mn
+	AJSW0jKCsXuXhtomCrbvRvQR9bQLkzvhWvbvlPEQBxzU72hkEnkFQAws08jLrLf6Gzxg6q58JCa3T
+	yS6zHzqAj3J7Ddatj1q0ha+CqKoymHWQeKHhweLeBBj2pg0Qsatm1NBTC3+RkyaV8w6euPOc7/tNA
+	3MqqDTxJarQGqmowUuYfOR2cT/Va14JGzgIc6dEpPyixYmRa4nz/27avpSUH2W9R4OMiiZFXR3ozd
+	/ChNMcE7atJS01B6EaRIuh+XVi1WTgdXMBzd0e5XgH5ALwGTfh49dQRxFEGDxnxoWnjIgZiA2pYlo
+	N7HUpTkCj1Jze1NOCPrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1izxxY-0003hd-9V; Fri, 07 Feb 2020 07:21:52 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1izxyn-00040T-3I; Fri, 07 Feb 2020 07:23:09 +0000
+Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1izxxR-0003gu-Ep
- for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 07:21:46 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 06 Feb 2020 23:21:42 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,412,1574150400"; d="scan'208";a="250325781"
-Received: from pgsmsx104.gar.corp.intel.com ([10.221.44.91])
- by orsmga002.jf.intel.com with ESMTP; 06 Feb 2020 23:21:39 -0800
-Received: from pgsmsx114.gar.corp.intel.com ([169.254.4.192]) by
- PGSMSX104.gar.corp.intel.com ([169.254.3.14]) with mapi id 14.03.0439.000;
- Fri, 7 Feb 2020 15:21:38 +0800
-From: "Ong, Boon Leong" <boon.leong.ong@intel.com>
-To: David Miller <davem@davemloft.net>
-Subject: RE: [PATCH net v4 1/6] net: stmmac: Fix incorrect location to set
- real_num_rx|tx_queues
-Thread-Topic: [PATCH net v4 1/6] net: stmmac: Fix incorrect location to set
- real_num_rx|tx_queues
-Thread-Index: AQHV3AI9OlvIBg8tJE+vuiHHv7FbVKgMFToAgAM6L7A=
-Date: Fri, 7 Feb 2020 07:21:38 +0000
-Message-ID: <AF233D1473C1364ABD51D28909A1B1B75C4A8F7E@pgsmsx114.gar.corp.intel.com>
-References: <20200205085510.32353-1-boon.leong.ong@intel.com>
- <20200205085510.32353-2-boon.leong.ong@intel.com>
- <20200205.143924.1875004608052019375.davem@davemloft.net>
-In-Reply-To: <20200205.143924.1875004608052019375.davem@davemloft.net>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-dlp-product: dlpe-windows
-dlp-version: 11.2.0.6
-dlp-reaction: no-action
-x-originating-ip: [172.30.20.206]
+ id 1izxyd-0003zf-4c
+ for linux-arm-kernel@lists.infradead.org; Fri, 07 Feb 2020 07:23:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581060176;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=J2tWq+g+e1P5IbDXbfqwkjDEr/xwTdY7B0dGPBlAbYk=;
+ b=QiHMOzANvYzY96psWKkzV/sleZO+pg1rSH923l9LtUkbCQivW0acx9F0Ue9S7LgtR5wcrQ
+ tDIuCri6ot36poammQ/oRgVj0EBFrWWTD513JxcPbLDzQOib5w5qSrkvV1V6AGe+pwMX0V
+ bshkw5+iwXIQtH6Fbn1Rm7znCL0i+JA=
+Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com
+ [209.85.160.200]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-157-NGDCftD_OneTMHUyNzWffQ-1; Fri, 07 Feb 2020 02:22:49 -0500
+Received: by mail-qt1-f200.google.com with SMTP id l1so1066305qtp.21
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 06 Feb 2020 23:22:49 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lgVyzV98WCkCA7JLqOF1Cqp3XlDwsyJOWyuCfKoS/hQ=;
+ b=NjARs0USq/d5BkXs4PTNRhYLTQ+xzGMinL81y580q6lgCrJDheyoI88oje1PmESfIa
+ oRdztSH3ZwyOfNSsqBSgcUMf+ybpsQELdyBWPEXs1zvJV9/yJrSOhwLMcrmC7gse1kWK
+ 3reGTcs83TbjNtmMtW1XYPnJ+IRs31ZZBO4MSIPyh8+La1rbudj1UZ4OR1YJktJ9jj42
+ 58t4e1pqeOLTUp/lc+IA751TYe8L5+Bo/TDYTwh4Tpba3tdR1ybDgNm+dJwhZMLZRDYt
+ s/F5ZLlIYPbO+6eGSQGBTO3L9WFTr/hFNrfUscukAB1c/kkAZGWo79IvJ9lHzYKKzleT
+ Qeuw==
+X-Gm-Message-State: APjAAAUmmUEIZOG8OdmI+Wn+Z+za4Yj23L/+uEyZMFjX+j1Ju8Okh10Z
+ RKMt4Ka5buqamVw2q5SX0uKRRq10ouQPOgNjcIn8U9HltbOwaIJjHP7AMN9MYali2ymA3FD/kTs
+ ih2+IR0z+4XCnTGDC2rf540l9DerjF0BU3JsyxLPrRmIQj2E5pco=
+X-Received: by 2002:a37:8cc:: with SMTP id 195mr6075722qki.456.1581060169017; 
+ Thu, 06 Feb 2020 23:22:49 -0800 (PST)
+X-Google-Smtp-Source: APXvYqydmVvTffqnOIk3fXrn9Ur3ZslgLahtGidDn7lhiibNQVBA9X4nupwC/DYYmAcfTwowjXQ8U5lbiUjFW6nQ7Ac=
+X-Received: by 2002:a37:8cc:: with SMTP id 195mr6075715qki.456.1581060168719; 
+ Thu, 06 Feb 2020 23:22:48 -0800 (PST)
 MIME-Version: 1.0
+References: <1580768784-25868-1-git-send-email-bhsharma@redhat.com>
+ <1580768784-25868-3-git-send-email-bhsharma@redhat.com>
+ <20200206103858.GB17074@willie-the-truck>
+In-Reply-To: <20200206103858.GB17074@willie-the-truck>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Fri, 7 Feb 2020 12:52:36 +0530
+Message-ID: <CACi5LpPTQ6f5tHEXFsFFhPQ2phLefZY8L3rZ-9xLGyTJ7_SdCQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] perf/arm64: Allow per-task kernel breakpoints
+To: Will Deacon <will@kernel.org>
+X-MC-Unique: NGDCftD_OneTMHUyNzWffQ-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200206_232145_549798_4E48DE59 
-X-CRM114-Status: GOOD (  15.08  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200206_232259_260374_92276D55 
+X-CRM114-Status: GOOD (  22.30  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,78 +103,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Jose.Abreu@synopsys.com" <Jose.Abreu@synopsys.com>,
- "Joao.Pinto@synopsys.com" <Joao.Pinto@synopsys.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>, "Voon,
- Weifeng" <weifeng.voon@intel.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>, "Tan,
- Tee Min" <tee.min.tan@intel.com>,
- "peppe.cavallaro@st.com" <peppe.cavallaro@st.com>,
- "alexandru.ardelean@analog.com" <alexandru.ardelean@analog.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bhupesh SHARMA <bhupesh.linux@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: David Miller <davem@davemloft.net>
-Date: Wednesday, February 5, 2020 9:39 PM
+Hi Will,
 
->From: Ong Boon Leong <boon.leong.ong@intel.com>
->Date: Wed,  5 Feb 2020 16:55:05 +0800
->
->> diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
->b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
->> index 5836b21edd7e..4d9afa13eeb9 100644
->> --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
->> +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
->> @@ -2657,6 +2657,10 @@ static int stmmac_hw_setup(struct net_device
->*dev, bool init_ptp)
->>  >--->-------stmmac_enable_tbs(priv, priv->ioaddr, enable, chan);
->>  >---}
->>
->> +>---/* Configure real RX and TX queues */
->> +>---netif_set_real_num_rx_queues(dev, priv->plat->rx_queues_to_use);
->> +>---netif_set_real_num_tx_queues(dev, priv->plat->tx_queues_to_use);
->> +
->>  >---/* Start the ball rolling... */
->>  >---stmmac_start_all_dma(priv);
->>
->
->It is only safe to ignore the return values from
->netif_set_real_num_{rx,tx}_queues() if you call them before the
->network device is registered.  Because only in that case are these
->functions guaranteed to succeed.
->
->But now that you have moved these calls here, they can fail.
->
->Therefore you must check the return value and unwind the state
->completely upon failures.
->
->Honestly, I think this change will have several undesirable side effects:
->
->1) Lots of added new code complexity
->
->2) A new failure mode when resuming the device, users will find this
->   very hard to diagnose and recover from
->
->What real value do you get from doing these calls after probe?
->
->If you can't come up with a suitable answer to that question, you
->should reconsider this change.
->
->Thanks.
+Thanks for your inputs.
 
-We have patch that implements get|set_channels() that depends on this fix.
-Anyway, we understand your insight and perspective now. So, we will drop
-this patch in v5 series.
+On Thu, Feb 6, 2020 at 4:09 PM Will Deacon <will@kernel.org> wrote:
+>
+> On Tue, Feb 04, 2020 at 03:56:24AM +0530, Bhupesh Sharma wrote:
+> > commit 478fcb2cdb23 ("arm64: Debugging support") disallowed per-task
+> > kernel breakpoints on arm64 since these would have potentially
+> > complicated the stepping code.
+> >
+> > However, we now have several use-cases (for e.g. perf) which require
+> > per-task address execution h/w breakpoint to be exercised/set on arm64:
+>
+> To be honest, the perf interface to hw_breakpoint is an abomination and
+> I think we should remove it entirely for arm64. It's flakey, complicated,
+> adds code to context-switch and reduces the capabilities available to
+> ptrace.
 
-Thanks
+Sure, I agree.
+
+> > For e.g. we can set address execution h/w breakpoints, using the
+> > format prescribed by 'perf-list' command:
+> > mem:<addr>[/len][:access]                          [Hardware breakpoint]
+> >
+> > Without this patch, currently 'perf stat -e' reports that per-task
+> > address execution h/w breakpoints are 'not supported' on arm64. See
+> > below:
+> >
+> > $ TEST_FUNC="vfs_read"
+> > $ ADDR=0x`cat /proc/kallsyms | grep -P "\\s$TEST_FUNC\$" | cut -f1 -d' '`
+> > $ perf stat -e mem:$ADDR:x -x';' -- cat /proc/cpuinfo > /dev/null
+> >
+> > <not supported>;;mem:0xffff00001031dd68:x;0;100.00;;
+> >
+> > After this patch, this use-case can be supported:
+> >
+> > $ TEST_FUNC="vfs_read"
+> > $ ADDR=0x`cat /proc/kallsyms | grep -P "\\s$TEST_FUNC\$" | cut -f1 -d' '`
+> > $ perf stat -e mem:$ADDR:x -x';' -- cat /proc/cpuinfo > /dev/null
+> >
+> > 5;;mem:0xfffffe0010361d20:x;912200;100.00;;
+> >
+> > Cc: Mark Rutland <mark.rutland@arm.com>
+> > Cc: Will Deacon <will@kernel.org>
+> > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> > Signed-off-by: Bhupesh Sharma <bhsharma@redhat.com>
+> > ---
+> >  arch/arm64/kernel/hw_breakpoint.c | 7 -------
+> >  1 file changed, 7 deletions(-)
+> >
+> > diff --git a/arch/arm64/kernel/hw_breakpoint.c b/arch/arm64/kernel/hw_breakpoint.c
+> > index 0b727edf4104..c28f04e02845 100644
+> > --- a/arch/arm64/kernel/hw_breakpoint.c
+> > +++ b/arch/arm64/kernel/hw_breakpoint.c
+> > @@ -562,13 +562,6 @@ int hw_breakpoint_arch_parse(struct perf_event *bp,
+> >       hw->address &= ~alignment_mask;
+> >       hw->ctrl.len <<= offset;
+> >
+> > -     /*
+> > -      * Disallow per-task kernel breakpoints since these would
+> > -      * complicate the stepping code.
+> > -      */
+> > -     if (hw->ctrl.privilege == AARCH64_BREAKPOINT_EL1 && bp->hw.target)
+> > -             return -EINVAL;
+> > -
+>
+> Sorry, but this is broken; the check is there for a reason, not just for
+> fun!
+>
+> Look at how the step handler toggles the bp registers.
+
+Not sure I follow. Can you please give me some pointers. All the perf
+tests I have from test-suite run fine with this chunk removed.
+
+Thanks for your help.
+Regards,
+Bhupesh
+
 
 _______________________________________________
 linux-arm-kernel mailing list
