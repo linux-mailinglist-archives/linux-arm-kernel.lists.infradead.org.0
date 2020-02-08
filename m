@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 654A1156516
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 16:36:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3AAEA156550
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 17:03:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wLRy0ZElz4hHiZcygnfunGTnRGTJB12lqPoDqHA1nvM=; b=H8exb/CbTtsVw7
-	UEFK/GK7FzWZqeBohdhMh9O/LsfqgFVXNgOjAmn22mDAyD4njJNadNADVb4HOtSE2bWN6qz9u4UfF
-	pIVGztnoFAfl0DkBRdM6oAPp+9AW9quwMSYArciehyLilSez13w2EwpbwwykbhqVaej0nahtrSW3s
-	mDdoCvkagCc2L80N9hBZ4LEvFv86czXNE71jluno0rhECCfq7rjypKDvBr/b7qlYXhPWxytS0jTvz
-	vP1itNGHdm4xp2yJnJa2KKN7aLvhh4yEMewHC7B3aCwMryc6rFal3shNsCgn5sXWhuvolyXACcId0
-	LbIpsOkd3Cu53oTAvZTA==;
+	List-Owner; bh=dIrLo/hHInJYcSWteSX9RNDwS3iH720bO8/5BLMO46I=; b=VbhlVX1yQv1END
+	6/65kuye0XUPSL149EwT+2pN7BblRyyk/SeU5SiFP4I+L6bMTyKYve/cn63goYQpMRgqWH+Xd02sG
+	PFYVFTEyFG5sFmTVVE9YQIhLEzExIcFwyl78ffVV9CUBu9KlIuy/vySTenrWzxWa3lUWHnOShfOy6
+	OZK0pWUtEVRpEOd3p3p3mMoh2MWeyBgrsyryeA3Nu6kZ0T/DsPIvkln+or0laTXE1uzo3Yu8gWNft
+	ySBPMX3ahmyb5f+k2x5LlSzzpeVpfYeEjS0zOhpxrO36d7Oc2+cPujObKj/Omi1Gb3m00qJil/17t
+	MTJ/vAn1Y57MbbWpi0VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0S9D-0002hm-J4; Sat, 08 Feb 2020 15:35:55 +0000
+	id 1j0Sa4-0002sM-LR; Sat, 08 Feb 2020 16:03:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0S97-0002hM-AS
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 15:35:50 +0000
+ id 1j0SZx-0002s1-2j
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 16:03:34 +0000
 Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
  [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5257E21741;
- Sat,  8 Feb 2020 15:35:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1465121775;
+ Sat,  8 Feb 2020 16:03:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581176145;
- bh=qC4ltT8jNAGr/7Ix9q3BWAQAqxE+4oG2Cf9FzB/RJgk=;
+ s=default; t=1581177811;
+ bh=a0WCdMsCR3bSWd7XKoKfwiTcys3eZZHiMv/g/dq7LVU=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=DD8iRaVlpBlQTfZEGEH+GWuR9Xg1vWL2vsI2WQekrUAx2RhQ2oDB+EMUknDLIRo8N
- vPeH8J6dpHX3eOZTzpmUre1dyt6U3+ZqEGex+SKwHIdFHV3g2g9BiWW0x9KdIqYkiL
- yJqrgffQjmExWokIwNfk68BWvBWdKg6QdsH2IL7A=
-Date: Sat, 8 Feb 2020 15:35:41 +0000
+ b=JR8ObQuSzw7x/YcUwXpMfqcH540Ca/D347mJN1OafEsiJiKVvQ/qo7j8vTXutyZvh
+ lqNJNmboQmHcPmApGG21qo+lLVFxgkCHnN7l5m1LsFJLV9ojBC2Rl9xxj1KMQ6RhHm
+ rNOqvMnowZXQWGAsk+IpePuAlyrtjmG9/SJW9vKw=
+Date: Sat, 8 Feb 2020 16:03:27 +0000
 From: Jonathan Cameron <jic23@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH] counter: stm32-timer-cnt: add power management support
-Message-ID: <20200208153541.448a0df3@archlinux>
-In-Reply-To: <1580899678-26393-1-git-send-email-fabrice.gasnier@st.com>
-References: <1580899678-26393-1-git-send-email-fabrice.gasnier@st.com>
+To: Olivier Moysan <olivier.moysan@st.com>
+Subject: Re: [PATCH 2/4] iio: adc: sd modulator: add scale support
+Message-ID: <20200208160327.334da020@archlinux>
+In-Reply-To: <20200204101008.11411-3-olivier.moysan@st.com>
+References: <20200204101008.11411-1-olivier.moysan@st.com>
+ <20200204101008.11411-3-olivier.moysan@st.com>
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200208_073549_397993_194D0227 
-X-CRM114-Status: GOOD (  16.58  )
+X-CRM114-CacheID: sfid-20200208_080333_155385_7845770F 
+X-CRM114-Status: GOOD (  19.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,92 +77,211 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: benjamin.gaignard@st.com, linux-iio@vger.kernel.org, vilhelm.gray@gmail.com,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- alexandre.torgue@st.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lars@metafoo.de,
+ linux-iio@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ pmeerw@pmeerw.net, knaack.h@gmx.de, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 5 Feb 2020 11:47:58 +0100
-Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
+On Tue, 4 Feb 2020 11:10:06 +0100
+Olivier Moysan <olivier.moysan@st.com> wrote:
 
-> Add suspend/resume PM sleep ops. When going to low power, enforce the
-> counter isn't active.
+> Add scale support to sigma delta modulator.
 > 
-> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+
+I note below that there are probably some complexities around
+whether vref is used as you have it here or not.
+
+A few other bits inline around a race condition introduced in probe / remove.
+
+Thanks,
+
+Jonathan
+
 > ---
->  drivers/counter/stm32-timer-cnt.c | 25 +++++++++++++++++++++++++
->  1 file changed, 25 insertions(+)
+>  drivers/iio/adc/sd_adc_modulator.c | 108 ++++++++++++++++++++++++++---
+>  1 file changed, 100 insertions(+), 8 deletions(-)
 > 
-> diff --git a/drivers/counter/stm32-timer-cnt.c b/drivers/counter/stm32-timer-cnt.c
-> index 3eafcce..3b84503 100644
-> --- a/drivers/counter/stm32-timer-cnt.c
-> +++ b/drivers/counter/stm32-timer-cnt.c
-> @@ -12,6 +12,7 @@
->  #include <linux/iio/types.h>
->  #include <linux/mfd/stm32-timers.h>
+> diff --git a/drivers/iio/adc/sd_adc_modulator.c b/drivers/iio/adc/sd_adc_modulator.c
+> index 560d8c7d9d86..a83f35832050 100644
+> --- a/drivers/iio/adc/sd_adc_modulator.c
+> +++ b/drivers/iio/adc/sd_adc_modulator.c
+> @@ -10,8 +10,7 @@
+>  #include <linux/iio/triggered_buffer.h>
 >  #include <linux/module.h>
-> +#include <linux/pinctrl/consumer.h>
->  #include <linux/platform_device.h>
+>  #include <linux/of_device.h>
+> -
+> -static const struct iio_info iio_sd_mod_iio_info;
+> +#include <linux/regulator/consumer.h>
 >  
->  #define TIM_CCMR_CCXS	(BIT(8) | BIT(0))
-> @@ -358,10 +359,33 @@ static int stm32_timer_cnt_probe(struct platform_device *pdev)
->  	priv->counter.num_signals = ARRAY_SIZE(stm32_signals);
->  	priv->counter.priv = priv;
->  
-> +	platform_set_drvdata(pdev, priv);
+>  static const struct iio_chan_spec iio_sd_mod_ch = {
+>  	.type = IIO_VOLTAGE,
+> @@ -21,34 +20,126 @@ static const struct iio_chan_spec iio_sd_mod_ch = {
+>  		.realbits = 1,
+>  		.shift = 0,
+>  	},
+> +	.info_mask_shared_by_type = BIT(IIO_CHAN_INFO_SCALE),
+
+This relies on generic sigma delta modulators using an external vref.
+They might have an internal always on regulator...
+I would suggest we only support scale for devices with explicitly
+defined compatibles where we can know what regulators are used etc.
+
+For many devices, there will be a single powersupply called vdd-supply
+or similar in DT.  It may also provide a reference voltage.
+
+> +};
 > +
->  	/* Register Counter device */
->  	return devm_counter_register(dev, &priv->counter);
+> +static const struct iio_chan_spec iio_sd_mod_ch_ads = {
+> +	.type = IIO_VOLTAGE,
+> +	.indexed = 1,
+> +	.scan_type = {
+> +		.sign = 'u',
+> +		.realbits = 1,
+> +		.shift = 0,
+> +	},
+> +	.info_mask_shared_by_type = BIT(IIO_CHAN_INFO_SCALE),
+> +	.differential = 1,
+> +};
+> +
+> +struct iio_sd_mod_priv {
+> +	struct regulator *vref;
+> +	int vref_mv;
+> +};
+> +
+> +static int iio_sd_mod_read_raw(struct iio_dev *indio_dev,
+> +			       struct iio_chan_spec const *chan, int *val,
+> +			       int *val2, long mask)
+> +{
+> +	struct iio_sd_mod_priv *priv = iio_priv(indio_dev);
+> +
+> +	switch (mask) {
+> +	case IIO_CHAN_INFO_SCALE:
+> +		*val = priv->vref_mv;
+> +		*val2 = chan->scan_type.realbits;
+> +		return IIO_VAL_INT;
+> +	}
+> +
+> +	return -EINVAL;
+> +}
+> +
+> +static const struct iio_info iio_sd_mod_iio_info = {
+> +	.read_raw = iio_sd_mod_read_raw,
+>  };
+>  
+>  static int iio_sd_mod_probe(struct platform_device *pdev)
+>  {
+>  	struct device *dev = &pdev->dev;
+> +	struct iio_sd_mod_priv *priv;
+>  	struct iio_dev *iio;
+> +	int ret;
+>  
+> -	iio = devm_iio_device_alloc(dev, 0);
+> +	iio = devm_iio_device_alloc(dev, sizeof(*priv));
+>  	if (!iio)
+>  		return -ENOMEM;
+>  
+> +	iio->channels = (const struct iio_chan_spec *)
+> +					of_device_get_match_data(&pdev->dev);
+> +
+> +	priv = iio_priv(iio);
+> +
+>  	iio->dev.parent = dev;
+>  	iio->dev.of_node = dev->of_node;
+>  	iio->name = dev_name(dev);
+>  	iio->info = &iio_sd_mod_iio_info;
+>  	iio->modes = INDIO_BUFFER_HARDWARE;
+> -
+>  	iio->num_channels = 1;
+> -	iio->channels = &iio_sd_mod_ch;
+>  
+>  	platform_set_drvdata(pdev, iio);
+>  
+> -	return devm_iio_device_register(&pdev->dev, iio);
+> +	priv->vref = devm_regulator_get_optional(dev, "vref");
+> +	if (IS_ERR(priv->vref)) {
+> +		ret = PTR_ERR(priv->vref);
+> +		if (ret != -ENODEV) {
+> +			if (ret != -EPROBE_DEFER)
+> +				dev_err(dev, "vref get failed, %d\n", ret);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	if (!IS_ERR(priv->vref)) {
+> +		ret = regulator_enable(priv->vref);
+> +		if (ret < 0) {
+> +			dev_err(dev, "vref enable failed %d\n", ret);
+> +			return ret;
+> +		}
+> +
+> +		ret = regulator_get_voltage(priv->vref);
+> +		if (ret < 0) {
+> +			dev_err(dev, "vref get failed, %d\n", ret);
+> +			goto err_regulator_disable;
+> +		}
+> +
+> +		priv->vref_mv = ret / 1000;
+> +		dev_dbg(dev, "vref+=%dmV\n", priv->vref_mv);
+> +	}
+> +
+> +	ret = devm_iio_device_register(&pdev->dev, iio);
+This exposes the userspace and in kernel interfaces.  Those
+are partly dependent on the regulator enable you have above.
+
+Using devm_ version fo this interface leaves you with a race in remove.
+The regulator is disabled before you have remove the interfaces that
+will only work if we assume it is still on.
+
+Hence, you should either use devm_add_action_or_reset magic
+to ensure we still do everything in the right order, or do it
+manually by using iio_device_register and iio_device_unregister.
+
+
+> +	if (ret < 0) {
+> +		dev_err(dev, "Failed to register sd-modulator, %d\n", ret);
+> +		goto err_regulator_disable;
+> +	}
+> +
+> +	return 0;
+> +
+> +err_regulator_disable:
+> +	regulator_disable(priv->vref);
+> +
+> +	return ret;
+> +}
+> +
+> +static int iio_sd_mod_remove(struct platform_device *pdev)
+> +{
+> +	struct iio_dev *indio_dev = platform_get_drvdata(pdev);
+> +	struct iio_sd_mod_priv *priv = iio_priv(indio_dev);
+> +
+> +	if (priv->vref)
+> +		return regulator_disable(priv->vref);
+> +
+> +	return 0;
 >  }
 >  
-> +static int __maybe_unused stm32_timer_cnt_suspend(struct device *dev)
-> +{
-> +	struct stm32_timer_cnt *priv = dev_get_drvdata(dev);
-> +	u32 cr1;
-> +
-> +	/* Check for active counter */
-> +	regmap_read(priv->regmap, TIM_CR1, &cr1);
-> +	if (cr1 & TIM_CR1_CEN)
-> +		return -EBUSY;
-
-Runtime suspend is allowed to refuse to happen (and that is
-explicitly documented)
-Is that allowed for normal suspend?  I didn't think it was.
-This will stop a suspend, but it's doing it by signalling a failure.
-I'm not sure for example that the system will resume everything that
-was suspended before this call.
-
-Normally you are in the tough luck category if a system decides
-to suspend underneath you.   There are ways to prevent it
-from userspace (wakelocks etc).
-
-> +
-> +	return pinctrl_pm_select_sleep_state(dev);
-> +}
-> +
-> +static int __maybe_unused stm32_timer_cnt_resume(struct device *dev)
-> +{
-> +	return pinctrl_pm_select_default_state(dev);
-> +}
-> +
-> +static SIMPLE_DEV_PM_OPS(stm32_timer_cnt_pm_ops, stm32_timer_cnt_suspend,
-> +			 stm32_timer_cnt_resume);
-> +
->  static const struct of_device_id stm32_timer_cnt_of_match[] = {
->  	{ .compatible = "st,stm32-timer-counter", },
->  	{},
-> @@ -373,6 +397,7 @@ static struct platform_driver stm32_timer_cnt_driver = {
->  	.driver = {
->  		.name = "stm32-timer-counter",
->  		.of_match_table = stm32_timer_cnt_of_match,
-> +		.pm = &stm32_timer_cnt_pm_ops,
->  	},
+>  static const struct of_device_id sd_adc_of_match[] = {
+> -	{ .compatible = "sd-modulator" },
+> -	{ .compatible = "ads1201" },
+> +	{ .compatible = "sd-modulator", .data = &iio_sd_mod_ch },
+> +	{ .compatible = "ads1201", .data = &iio_sd_mod_ch_ads },
+>  	{ }
 >  };
->  module_platform_driver(stm32_timer_cnt_driver);
+>  MODULE_DEVICE_TABLE(of, sd_adc_of_match);
+> @@ -59,6 +150,7 @@ static struct platform_driver iio_sd_mod_adc = {
+>  		.of_match_table = of_match_ptr(sd_adc_of_match),
+>  	},
+>  	.probe = iio_sd_mod_probe,
+> +	.remove = iio_sd_mod_remove,
+>  };
+>  
+>  module_platform_driver(iio_sd_mod_adc);
 
 
 _______________________________________________
