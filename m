@@ -2,69 +2,156 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59E69156245
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 02:29:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B2DE156294
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 02:48:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=el/Jrj2mAd0oeXVyWFADFaauSGI3FxYlrJouFUrAcsg=; b=dwcxrGpI68uvao
-	QKmn0pzCR8vuS7MAYu9VIA3USd8wh6sUT8bZf11Rk7BpMah6zziM8SYjU55jUoayYOstWRsmwvQvq
-	6WUZDwqVooHMw0ztrVQhvYXrMqUc4V1hVpGpH991U9OJhjRlFIco2JGKQUz1HZUkqTMziv5lpICA+
-	YizfrF6f+o80nWsGDs/e6oxkWFFRq4DQRM/+3r1gDXufxuw+NxVmqjv+wQKiIKRqKb7wPEIFFnDvF
-	xue6HpBVsRS3STjucKQP2VVHarSZq3UiK0FGJ7pEGtuJvFS+ya/7a84aCC29PmYX5qvWWO6JQAGvq
-	U4HiW4ZPYO4BNaHlAGCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=G3CH1+Ce4jk+r15LFOOyVN6btZgJsReMHE4kB583tQk=; b=gnkioAwbWABZH1m5lwZszxS/b
+	oLj3LqjnLQd6R64ZLb6mZuQcps+x3hYySZhZPrb1nMNXYWMF63n851kAFMD7YZjRSuOYXouPK8Vq5
+	uY+JBpufwf32mKM9pxAZO/0uB49cm6ebIr3wjvtAw7k8tKAvLZlAp4Z8E6WTvmPlFZhcE3ezgB12t
+	VnVi50qxgteCidXJDFQodaZTo80tlE1VEHur/paYddywZQYUKfjalt1hZGjBsErzaYwoF3qR46ZeX
+	bVkcg/GjdghBA3ZUP+VOlXoK3MWsuAQ1jOslvSQKpEddX4pd9+hq4ZMW4/aoNkKH2kLHPiFBoZEjv
+	NU2Kfjw7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0EwP-0002Cq-Kw; Sat, 08 Feb 2020 01:29:49 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1j0FEj-000547-Pw; Sat, 08 Feb 2020 01:48:45 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0EwH-0002As-CL
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 01:29:43 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 07 Feb 2020 17:29:39 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,415,1574150400"; d="scan'208";a="280139370"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by FMSMGA003.fm.intel.com with ESMTP; 07 Feb 2020 17:29:38 -0800
-Date: Fri, 7 Feb 2020 17:29:38 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Peter Xu <peterx@redhat.com>
-Subject: Re: [PATCH v5 15/19] KVM: Provide common implementation for generic
- dirty log functions
-Message-ID: <20200208012938.GC15581@linux.intel.com>
-References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
- <20200121223157.15263-16-sean.j.christopherson@intel.com>
- <20200206200200.GC700495@xz-x1>
- <20200206212120.GF13067@linux.intel.com>
- <20200206214106.GG700495@xz-x1>
- <20200207194532.GK2401@linux.intel.com>
- <20200208001832.GA823968@xz-x1>
- <20200208004233.GA15581@linux.intel.com>
- <20200208005334.GB823968@xz-x1>
+ id 1j0FEd-00053k-Qs
+ for linux-arm-kernel@bombadil.infradead.org; Sat, 08 Feb 2020 01:48:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Type:In-Reply-To:MIME-Version:
+ Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description;
+ bh=BcVJVOf6TF/u7o0p8P13rggYNCSdarPNwyv+27X4l+g=; b=R7rpPQUx5sKzv0HcUMkhA5voHu
+ P7Gu0aRxY/BvS8k0jN8YU+GWDi7U69bmlXp4i1JY1rbNh64ZyuEXaL2Yy7YEi3AEpnY/PQCrdsY8/
+ YxX9gYAOfZhlqHvr3k6v1WYFg52+jpia42NGrjQ96cEG51GLtxZHyMrHr3D9uThfUIt3zGU5Z92CT
+ pZnu2Ptm68SRJzDe2hwhNsnmkRVc4m7IavEF4bJz7hRwv6GIp7u+ZDFDfXgL5gvXBeTHmTitzNuGj
+ AbiGdFb7trMC4xVpAcbqpd0n7Qan4xu+nojM+ZHNxRB2MvHD7dXz2chdArV1xWSDKA2KnqABkMdZY
+ IZIE2HDA==;
+Received: from a80-127-99-228.adsl.xs4all.nl ([80.127.99.228]
+ helo=hetgrotebos.org)
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j0Ewv-00031D-0s
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 01:30:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=wizzup.org; 
+ s=mail;
+ h=Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:
+ References:Cc:To:Subject:Sender:Reply-To:Content-Transfer-Encoding:Content-ID
+ :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
+ Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe
+ :List-Post:List-Owner:List-Archive;
+ bh=BcVJVOf6TF/u7o0p8P13rggYNCSdarPNwyv+27X4l+g=; b=eWAEY0T9Qgr4M3qpVQxnE64tSt
+ mP80CWK+A2A/z8CcFpAokBMmn5i8Vyk1oZgUPcIsTp24kP5OFl8+X7Fx9zEwIZMQC2F3BJdJPzZev
+ /hPKA4sdo5/WEK433Avli6uPxguxVSD2pjGJS75szLrErwoBBMDP+8iAjrzpwS198tMMTfddCpDYx
+ fPDQTdMZAUR5LOrSTaJrzj3FgBvV0AQKVC6S66zssaYdtHfhl1tZvCDbKm5C7c1uP5xACbBVuxubN
+ uw3DID+hE4j/ImP8qFPbLDB+P5cpQrJeX9R/YqzALvzicPTg227TtseMhWWUL1BF7TtlZ9y5vFJf+
+ OnzXkFYA==;
+Received: from deepwater.fritz.box ([192.168.178.25] helo=[0.0.0.0])
+ by hetgrotebos.org with esmtpsa  (TLS1.3) tls TLS_AES_128_GCM_SHA256
+ (Exim 4.93) (envelope-from <merlijn@wizzup.org>)
+ id 1j0FEM-0007nB-JN; Sat, 08 Feb 2020 01:48:22 +0000
+Subject: Re: Nokia N900 on 5.4 and 5.5
+To: "Arthur D." <spinal.by@gmail.com>, Tony Lindgren <tony@atomide.com>
+References: <79b91017-b52a-8aff-4b9c-913ae655f7bf@wizzup.org>
+ <185CD173-C13C-4D56-B3DE-9A8D7784963C@goldelico.com>
+ <20200207163623.GA64767@atomide.com>
+ <da14d6bb-f241-2dd4-8e94-886217a40ed7@wizzup.org>
+ <20200207165344.GB64767@atomide.com> <20200207170149.GC64767@atomide.com>
+ <op.0fmv4jevhxa7s4@supervisor.net28>
+From: Merlijn Wajer <merlijn@wizzup.org>
+Autocrypt: addr=merlijn@wizzup.org; prefer-encrypt=mutual; keydata=
+ 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
+ /XslHw==
+Message-ID: <8a19bde5-f49f-ad58-3b3b-6df8a764f1f2@wizzup.org>
+Date: Sat, 8 Feb 2020 02:49:28 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200208005334.GB823968@xz-x1>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <op.0fmv4jevhxa7s4@supervisor.net28>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_172941_438231_6EEB0ACE 
-X-CRM114-Status: GOOD (  31.41  )
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+X-CRM114-CacheID: sfid-20200208_013021_218546_6A222E2F 
+X-CRM114-Status: GOOD (  17.08  )
+X-Spam-Score: -1.1 (-)
+X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
+ Content analysis details:   (-1.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 RDNS_DYNAMIC           Delivered to internal network by host with
+ dynamic-looking rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,142 +163,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
- Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>,
+ Kees Cook <keescook@chromium.org>, Nicolas Pitre <nico@fluxnic.net>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ linux-omap <linux-omap@vger.kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0506095020727929222=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 07, 2020 at 07:53:34PM -0500, Peter Xu wrote:
-> On Fri, Feb 07, 2020 at 04:42:33PM -0800, Sean Christopherson wrote:
-> > On Fri, Feb 07, 2020 at 07:18:32PM -0500, Peter Xu wrote:
-> > > On Fri, Feb 07, 2020 at 11:45:32AM -0800, Sean Christopherson wrote:
-> > > > +Vitaly for HyperV
-> > > > 
-> > > > On Thu, Feb 06, 2020 at 04:41:06PM -0500, Peter Xu wrote:
-> > > > > On Thu, Feb 06, 2020 at 01:21:20PM -0800, Sean Christopherson wrote:
-> > > > > > On Thu, Feb 06, 2020 at 03:02:00PM -0500, Peter Xu wrote:
-> > > > > > > But that matters to this patch because if MIPS can use
-> > > > > > > kvm_flush_remote_tlbs(), then we probably don't need this
-> > > > > > > arch-specific hook any more and we can directly call
-> > > > > > > kvm_flush_remote_tlbs() after sync dirty log when flush==true.
-> > > > > > 
-> > > > > > Ya, the asid_flush_mask in kvm_vz_flush_shadow_all() is the only thing
-> > > > > > that prevents calling kvm_flush_remote_tlbs() directly, but I have no
-> > > > > > clue as to the important of that code.
-> > > > > 
-> > > > > As said above I think the x86 lockdep is really not necessary, then
-> > > > > considering MIPS could be the only one that will use the new hook
-> > > > > introduced in this patch...  Shall we figure that out first?
-> > > > 
-> > > > So I prepped a follow-up patch to make kvm_arch_dirty_log_tlb_flush() a
-> > > > MIPS-only hook and use kvm_flush_remote_tlbs() directly for arm and x86,
-> > > > but then I realized x86 *has* a hook to do a precise remote TLB flush.
-> > > > There's even an existing kvm_flush_remote_tlbs_with_address() call on a
-> > > > memslot, i.e. this exact scenario.  So arguably, x86 should be using the
-> > > > more precise flush and should keep kvm_arch_dirty_log_tlb_flush().
-> > > > 
-> > > > But, the hook is only used when KVM is running as an L1 on top of HyperV,
-> > > > and I assume dirty logging isn't used much, if at all, for L1 KVM on
-> > > > HyperV?
-> > > > 
-> > > > I see three options:
-> > > > 
-> > > >   1. Make kvm_arch_dirty_log_tlb_flush() MIPS-only and call
-> > > >      kvm_flush_remote_tlbs() directly for arm and x86.  Add comments to
-> > > >      explain when an arch should implement kvm_arch_dirty_log_tlb_flush().
-> > > > 
-> > > >   2. Change x86 to use kvm_flush_remote_tlbs_with_address() when flushing
-> > > >      a memslot after the dirty log is grabbed by userspace.
-> > > > 
-> > > >   3. Keep the resulting code as is, but add a comment in x86's
-> > > >      kvm_arch_dirty_log_tlb_flush() to explain why it uses
-> > > >      kvm_flush_remote_tlbs() instead of the with_address() variant.
-> > > > 
-> > > > I strongly prefer to (2) or (3), but I'll defer to Vitaly as to which of
-> > > > those is preferable.
-> > > > 
-> > > > I don't like (1) because (a) it requires more lines code (well comments),
-> > > > to explain why kvm_flush_remote_tlbs() is the default, and (b) it would
-> > > > require even more comments, which would be x86-specific in generic KVM,
-> > > > to explain why x86 doesn't use its with_address() flush, or we'd lost that
-> > > > info altogether.
-> > > > 
-> > > 
-> > > I proposed the 4th solution here:
-> > > 
-> > > https://lore.kernel.org/kvm/20200207223520.735523-1-peterx@redhat.com/
-> > > 
-> > > I'm not sure whether that's acceptable, but if it can, then we can
-> > > drop the kvm_arch_dirty_log_tlb_flush() hook, or even move on to
-> > > per-slot tlb flushing.
-> > 
-> > This effectively is per-slot TLB flushing, it just has a different name.
-> > I.e. s/kvm_arch_dirty_log_tlb_flush/kvm_arch_flush_remote_tlbs_memslot.
-> > I'm not opposed to that name change.  And on second and third glance, I
-> > probably prefer it.  That would more or less follow the naming of
-> > kvm_arch_flush_shadow_all() and kvm_arch_flush_shadow_memslot().
-> 
-> Note that the major point of the above patchset is not about doing tlb
-> flush per-memslot or globally.  It's more about whether we can provide
-> a common entrance for TLB flushing.  Say, after that series, we should
-> be able to flush TLB on all archs (majorly, including MIPS) as:
-> 
->   kvm_flush_remote_tlbs(kvm);
-> 
-> And with the same idea we can also introduce the ranged version.
-> 
-> > 
-> > I don't want to go straight to kvm_arch_flush_remote_tlb_with_address()
-> > because that loses the important distinction (on x86) that slots_lock is
-> > expected to be held.
-> 
-> Sorry I'm still puzzled on why that lockdep is so important and
-> special for x86...  For example, what if we move that lockdep to the
-> callers of the kvm_arch_dirty_log_tlb_flush() calls so it protects
-> even more arch (where we do get/clear dirty log)?  IMHO the callers
-> must be with the slots_lock held anyways no matter for x86 or not.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============0506095020727929222==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="5KSJZaIBkOOJfqshMBG8d4nx3nRtEXKOo"
+
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--5KSJZaIBkOOJfqshMBG8d4nx3nRtEXKOo
+Content-Type: multipart/mixed; boundary="Y8Inm6glfJjerqXvHHeMGlZuzZVj1AimU"
+
+--Y8Inm6glfJjerqXvHHeMGlZuzZVj1AimU
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-GB
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+On 07/02/2020 21:20, Arthur D. wrote:
+> Hi.
+>=20
+> I was able to build linux-5.5 and run it on N900 with no problems.
+> Even WiFi works, mmc0 is in place too. It seems you're doing something
+> wrong.
+
+Well, I didn't try mmc0 on 5.5 (since it was also non-booting due to
+issue below), so I will have to try that this weekend. The steps I
+applied to build either kernels (5.1 with our patches, 5.4.18 and 5.5.2
+are identical, except for the defconfig for our 5.1 branch)
+
+> Were you able to build linux-5.1 with your scripts and run it on the
+> phone? I mean the pure linux-5.1 without configs and changes done
+> in https://github.com/maemo-leste/n9xx-linux.
+>=20
+> BTW, I didn't find STACKPROTECTOR_PER_TASK option to be enabled in
+> omap2plus_defconfig.
+
+Well, I can assure you it was turned on on my system after a
+omap2plus_defconfig. I do run Gentoo Hardened on my daily systems, so
+perhaps that somehow makes a difference in what defconfig is picked.
+
+Either way - the option is turned on by default after I make
+omap2plus_defconfig, and it breaks appended DTB loading, so I hope we
+can look at fixing that.
+
+Cheers,
+Merlijn
 
 
-Following the breadcrumbs leads to the comment in
-kvm_mmu_slot_remove_write_access(), which says:
+--Y8Inm6glfJjerqXvHHeMGlZuzZVj1AimU--
 
-        /*
-         * kvm_mmu_slot_remove_write_access() and kvm_vm_ioctl_get_dirty_log()
-         * which do tlb flush out of mmu-lock should be serialized by
-         * kvm->slots_lock otherwise tlb flush would be missed.
-         */
+--5KSJZaIBkOOJfqshMBG8d4nx3nRtEXKOo
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
 
-I.e. write-protecting a memslot and grabbing the dirty log for the memslot
-need to be serialized.  It's quite obvious *now* that get_dirty_log() holds
-slots_lock, but the purpose of lockdep assertions isn't just to verify the
-current functionality, it's to help ensure the correctness for future code
-and to document assumptions in the code.
+-----BEGIN PGP SIGNATURE-----
 
-Digging deeper, there are four functions, all related to dirty logging, in
-the x86 mmu that basically open code what x86's
-kvm_arch_flush_remote_tlbs_memslot() would look like if it uses the range
-based flushing.
+iHUEARYIAB0WIQRM5LT7NbLF9yb6a/UGN09rynK8WgUCXj4TqAAKCRAGN09rynK8
+WqJbAP9xXnsepI8fIIHOFJ28JUbALVlp70tSLPwvYKNcqQvqiwEA/8g8gsgAWAnc
+yHLtGXH+DJcdxNlB3n0nHz6Tj56fQQU=
+=11R3
+-----END PGP SIGNATURE-----
 
-Unless it's functionally incorrect (Vitaly?), going with option (2) and
-naming the hook kvm_arch_flush_remote_tlbs_memslot() seems like the obvious
-choice, e.g. the final cleanup gives this diff stat:
+--5KSJZaIBkOOJfqshMBG8d4nx3nRtEXKOo--
 
- arch/x86/kvm/mmu/mmu.c | 34 +++++++++-------------------------
- 1 file changed, 9 insertions(+), 25 deletions(-)
+
+--===============0506095020727929222==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0506095020727929222==--
+
