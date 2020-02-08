@@ -2,77 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A87A15637E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 09:55:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD9BC156384
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 10:04:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BspV1e+8MM30GzkG/xXmvF1/++Nja8dUKWA2+QEwusE=; b=YC3MWyl3Ur4PrH
-	+C8FfNTwegKMOhXjl0G7b9vYx2EexQiQ1drb/ay2OVwuyzyhVB+wGPPK27VgjMUjzjcEqiT2fGnJe
-	Q03JAMxtpxXbCjYNRTpHltDwtiNlfixe6666kmAEHk+NB32sd2gegoshPgpAI/VJBs71JkbuRP6hN
-	A8jx+kCuvwqmKtMdkofTP82HOGy4VjpSERmAdowU4eAZRLtuVH0o3CTBvCQIZmgX9JZ1QMyIsvh/b
-	vJjEk4lCCUM+TZGp+zPynSGSFUoXOAj2v71dzJGm8ykpdi/UqgxOLOuE3HiLFXxSWlDng4ID1nmyc
-	jOTJfOuJqTxZ5DggmEkQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NlVblGMHmSofn84Guy9JNufV36q8ZxL0tMCpt/IpRgw=; b=JlOtMiyjsK3hBK
+	JVr8ngMLCELOu6dXwnblUolU/i5ncsBnuPijbuXK2wRZg0zuMcix2FIjDTfijMu7wFpnjsWMvd9PV
+	Jjls9Y7XT1d6oJJhKzUwDVyDb1xzruPOKbmoqlipvwaJfNbCVgwNQ0lIVBZiSdopC0YmDtY7ILVo5
+	QmqB+wthH4kzW35bCXZfzLznz6snrM4vPqbWdOerCcwTvAkV0IYC7wsEQGHJqk1M2SUKVMOiMm4cA
+	IVjcfLIfnOtd4wZzMCR3/T7ifattIlbXyPuRKUJc0Td85NZCfNdR7A67LC6DFdPQ1rs6fVPaiEl73
+	frulwOwG13kvabfmpdiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0Lta-0006r9-SA; Sat, 08 Feb 2020 08:55:22 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1j0M2P-0000QR-O4; Sat, 08 Feb 2020 09:04:29 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0LtU-0006qj-2Z
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 08:55:17 +0000
-Received: by mail-oi1-x242.google.com with SMTP id c16so4529474oic.3
+ id 1j0M2H-0000Q0-VM
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 09:04:23 +0000
+Received: by mail-ot1-x342.google.com with SMTP id i6so1665347otr.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 08 Feb 2020 00:55:15 -0800 (PST)
+ Sat, 08 Feb 2020 01:04:21 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=mYQGK6YXfcZc98jtf4E/uGifjg8qJuSxlB3RUf5LzII=;
- b=SO93iRw417Yoski/EyoEHUBuzH4+hduutcUTwTVnt6bZfgQ2f0QSp/1fS+w7xvyL7a
- H6ANRscSn1szpp3VfSBq3vWHi+IrHLGmTTqqUz7YHd+1h8wMNpEGbz7eUN6u61Jk69+3
- hy69FvKnhSqSWLxHtnaPjX9Wo20zQ/exzSfCE=
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
+ bh=KuIxnvjt6h0/H52RMaBXWo+aQbQdJji5KOSpX8NKI8A=;
+ b=IJpJ5/bs4Rt3W7H4kqEUY/PUKkd1zUaZ//UF0L74xfFF+6fnVpx/pzld0njI9CDTOU
+ OXexv9wL6SKoLBjJBIe46l9zrM6VuVLgo+fHCBjCEzZZh6M2uX6yWUfmbIOMxCrthQFh
+ nsTUw0ooF8TXkEpKg1Joj8kRUOJyZ+LmZ5SJE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=mYQGK6YXfcZc98jtf4E/uGifjg8qJuSxlB3RUf5LzII=;
- b=FtdcDbKCLOV9ZQAz49Za3Nd0ArI5AWQVngXAYa0Ek3jk0jas7gPb20bTTij+UK9Bnk
- EaY4G4ooJ7OQZk0LdfsWv2E6TCIgQz53xbtDW0BxTLQCHeYRmeQantUbI9OlLjjC4xla
- YLA++GWx5a8OUYU4YLcjjs0aoGlQ0071duyc09LpOBZ4oaOx8cDErU5nR8DjxTxfN1EB
- YKQA3MC8fvhysdYxuTGvDLfSv3U83XFukOEG5qphM467eHuhVkT+EDtm9T7JmL45MI3I
- ggFdwUNh77MXoMFJHww262CYSv6BFHNb8X+SP2R+osD+XBVxcrOTdq3XkmpNBJhWuniZ
- saig==
-X-Gm-Message-State: APjAAAVAJm3HaVjq7dU1Jinmlq7q8ywt8X0AZrc6N8fUvDdcZkcciEY8
- YFVlnHocJDlXng8wqCz8IMfx+Q==
-X-Google-Smtp-Source: APXvYqzR893+XUAT+CRl88sAB98jXGqIGMtzSW1DZHEa2pjtSW1v5WRpxBzEmQHXJ8CYw5h1l5C2Rg==
-X-Received: by 2002:aca:c70b:: with SMTP id x11mr4907987oif.29.1581152114456; 
- Sat, 08 Feb 2020 00:55:14 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition;
+ bh=KuIxnvjt6h0/H52RMaBXWo+aQbQdJji5KOSpX8NKI8A=;
+ b=mzFxUjsGx8ucJhPHBp6bKb4ZqYiaHK7fuUCYx52pr5Cc7eYgNYH8kz2Vz5nMdZ8Z1u
+ l+GkCo/XLOKQEI643T2dge9qfb6nwyELci89km0D38qOBPFhffgN4F6SrCvq+y7JH4uE
+ zfwX/NhVZsELYUFIC0rA/LJLDqoMonMX+LPAd1lx92h5Cn5pwkFP8Lna53W6uioZcE15
+ Y9UYaFSUUM0Y0QiJ4F26uzgWxEwPQgnf53kRx3s50QANKvO2NL5dmr9gWx2InAW0JEj0
+ 6G9j6Dm8sLqfMErvMVAAP+1rEwr4SfiY+WbpJ/rg7MFwvGirTW8iqZO6OOmvuwUlpLqS
+ 7TzQ==
+X-Gm-Message-State: APjAAAVywXadd/slwmgwJ/nyZpIbrGveTWR1q8TnIzoyjBups0GI3e6h
+ fDqmd8Su3E8LVwTnn9aD+WbFsw==
+X-Google-Smtp-Source: APXvYqxRR97Ajif5f660+DpaiHeBGdc2vP78nseFCsG8QHbGHFtYcvZLw67BGJrVLuScBxugs3/LWg==
+X-Received: by 2002:a9d:12a8:: with SMTP id g37mr2785428otg.261.1581152660852; 
+ Sat, 08 Feb 2020 01:04:20 -0800 (PST)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id n17sm2063897otq.46.2020.02.08.00.55.13
+ by smtp.gmail.com with ESMTPSA id a1sm2094085oti.2.2020.02.08.01.04.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 08 Feb 2020 00:55:13 -0800 (PST)
-Date: Sat, 8 Feb 2020 00:55:10 -0800
+ Sat, 08 Feb 2020 01:04:20 -0800 (PST)
+Date: Sat, 8 Feb 2020 01:04:18 -0800
 From: Kees Cook <keescook@chromium.org>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Subject: Re: [PATCH] ARM: rename missed uaccess .fixup section
-Message-ID: <202002080054.CBBE423@keescook>
-References: <202002071754.F5F073F1D@keescook>
- <CAKv+Gu8Wt-QX1+9E+QCk30CAttkXP2P5ZKQACqeMDFGeQ9FCKA@mail.gmail.com>
+To: Nicolas Pitre <nico@fluxnic.net>
+Subject: [PATCH] ARM: Remove unused .fixup section in boot stub
+Message-ID: <202002080058.FD1DDB1@keescook>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAKv+Gu8Wt-QX1+9E+QCk30CAttkXP2P5ZKQACqeMDFGeQ9FCKA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200208_005516_142559_DDE54540 
-X-CRM114-Status: GOOD (  21.15  )
+X-CRM114-CacheID: sfid-20200208_010422_034206_16DB7D1D 
+X-CRM114-Status: GOOD (  10.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,10 +91,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Pitre <nico@fluxnic.net>,
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
  Nick Desaulniers <ndesaulniers@google.com>,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Russell King - ARM Linux <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
  clang-built-linux <clang-built-linux@googlegroups.com>,
  Manoj Gupta <manojgupta@google.com>,
  Nathan Chancellor <natechancellor@gmail.com>,
@@ -108,67 +103,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Feb 08, 2020 at 07:54:39AM +0000, Ard Biesheuvel wrote:
-> On Sat, 8 Feb 2020 at 02:02, Kees Cook <keescook@chromium.org> wrote:
-> >
-> > When the uaccess .fixup section was renamed to .text.fixup, one case was
-> > missed. Under ld.bfd, the orphaned section was moved close to .text
-> > (since they share the "ax" bits), so things would work normally on
-> > uaccess faults. Under ld.lld, the orphaned section was placed outside
-> > the .text section, making it unreachable. Rename the missed section.
-> >
-> > Link: https://github.com/ClangBuiltLinux/linux/issues/282
-> > Link: https://bugs.chromium.org/p/chromium/issues/detail?id=1020633#c44
-> > Link: https://lore.kernel.org/r/nycvar.YSQ.7.76.1912032147340.17114@knanqh.ubzr
-> > Fixes: c4a84ae39b4a5 ("ARM: 8322/1: keep .text and .fixup regions closer together")
-> > Cc: stable@vger.kernel.org
-> > Reported-by: Nathan Chancellor <natechancellor@gmail.com>
-> > Reported-by: Manoj Gupta <manojgupta@google.com>
-> > Debugged-by: Nick Desaulniers <ndesaulniers@google.com>
-> > Signed-off-by: Kees Cook <keescook@chromium.org>
-> 
-> Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+The boot stub does not emit a .fixup section at all anymore, so remove
+it.
 
-Thanks!
+Suggested-by: Nick Desaulniers <ndesaulniers@google.com>
+Link: https://lore.kernel.org/lkml/CAKwvOdnRhx=SgtcUCyX2ZOGATM8OzG6hSOY9wGQZcwtp+P5WBQ@mail.gmail.com
+Signed-off-by: Kees Cook <keescook@chromium.org>
+---
+ arch/arm/boot/compressed/vmlinux.lds.S | 1 -
+ 1 file changed, 1 deletion(-)
 
-> As Nick points out, the *(.fixup) line still appears in the
-> decompressor's linker script, but this is harmless, given that we
-> don't ever emit anything into that section. But while we're at it, we
-> might just remove it as well.
+diff --git a/arch/arm/boot/compressed/vmlinux.lds.S b/arch/arm/boot/compressed/vmlinux.lds.S
+index fc7ed03d8b93..b247f399de71 100644
+--- a/arch/arm/boot/compressed/vmlinux.lds.S
++++ b/arch/arm/boot/compressed/vmlinux.lds.S
+@@ -36,7 +36,6 @@ SECTIONS
+     *(.start)
+     *(.text)
+     *(.text.*)
+-    *(.fixup)
+     *(.gnu.warning)
+     *(.glue_7t)
+     *(.glue_7)
+-- 
+2.20.1
 
-Agreed. I'll send a separate patch for that.
-
--Kees
-
-> 
-> 
-> > ---
-> > I completely missed this the first several times I looked at this
-> > problem. Thank you Nicolas for pushing back on the earlier patch!
-> > Manoj or Nathan, can you test this?
-> > ---
-> >  arch/arm/lib/copy_from_user.S | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> >
-> > diff --git a/arch/arm/lib/copy_from_user.S b/arch/arm/lib/copy_from_user.S
-> > index 95b2e1ce559c..f8016e3db65d 100644
-> > --- a/arch/arm/lib/copy_from_user.S
-> > +++ b/arch/arm/lib/copy_from_user.S
-> > @@ -118,7 +118,7 @@ ENTRY(arm_copy_from_user)
-> >
-> >  ENDPROC(arm_copy_from_user)
-> >
-> > -       .pushsection .fixup,"ax"
-> > +       .pushsection .text.fixup,"ax"
-> >         .align 0
-> >         copy_abort_preamble
-> >         ldmfd   sp!, {r1, r2, r3}
-> > --
-> > 2.20.1
-> >
-> >
-> > --
-> > Kees Cook
 
 -- 
 Kees Cook
