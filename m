@@ -2,156 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B2DE156294
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 02:48:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99C0A15629D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 03:03:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=G3CH1+Ce4jk+r15LFOOyVN6btZgJsReMHE4kB583tQk=; b=gnkioAwbWABZH1m5lwZszxS/b
-	oLj3LqjnLQd6R64ZLb6mZuQcps+x3hYySZhZPrb1nMNXYWMF63n851kAFMD7YZjRSuOYXouPK8Vq5
-	uY+JBpufwf32mKM9pxAZO/0uB49cm6ebIr3wjvtAw7k8tKAvLZlAp4Z8E6WTvmPlFZhcE3ezgB12t
-	VnVi50qxgteCidXJDFQodaZTo80tlE1VEHur/paYddywZQYUKfjalt1hZGjBsErzaYwoF3qR46ZeX
-	bVkcg/GjdghBA3ZUP+VOlXoK3MWsuAQ1jOslvSQKpEddX4pd9+hq4ZMW4/aoNkKH2kLHPiFBoZEjv
-	NU2Kfjw7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iYylqHCvzy1FGHg/pEyNFijv2e+jQZxh47N5VYJ6kSY=; b=bKX5lIYZfjq4Zi
+	N83KxjfE8Es245t8+RdBhEv9EXy/rUlc8L8eBskf0UR7YYE5utlQXer3+e7CiPWg8rb6D82ddEL7E
+	bhM0f0Kf0AfftO62nOP/cfAyB+agW+JtR5RhGOGiEyYEDEpy3S62tv+T457jq1iVj15gqEhJwwVBk
+	Z7Y/L7DlATYiO6VZesWW3OGl7W2foHMOGWLdhici8cnrg+pD7zZX3jt9ZZ7JLZMlnON6gEQifa0VX
+	QYWYps1Xa57S4joDpipSwJJ6H/99KSqYR+HSE6HjmwNzY3q1UYD+Yaoh6S+ThvXIttbWLQFcNyTk3
+	kbgH37JjaytZoT4lfSsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0FEj-000547-Pw; Sat, 08 Feb 2020 01:48:45 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1j0FSY-00026K-18; Sat, 08 Feb 2020 02:03:02 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0FEd-00053k-Qs
- for linux-arm-kernel@bombadil.infradead.org; Sat, 08 Feb 2020 01:48:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Type:In-Reply-To:MIME-Version:
- Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=BcVJVOf6TF/u7o0p8P13rggYNCSdarPNwyv+27X4l+g=; b=R7rpPQUx5sKzv0HcUMkhA5voHu
- P7Gu0aRxY/BvS8k0jN8YU+GWDi7U69bmlXp4i1JY1rbNh64ZyuEXaL2Yy7YEi3AEpnY/PQCrdsY8/
- YxX9gYAOfZhlqHvr3k6v1WYFg52+jpia42NGrjQ96cEG51GLtxZHyMrHr3D9uThfUIt3zGU5Z92CT
- pZnu2Ptm68SRJzDe2hwhNsnmkRVc4m7IavEF4bJz7hRwv6GIp7u+ZDFDfXgL5gvXBeTHmTitzNuGj
- AbiGdFb7trMC4xVpAcbqpd0n7Qan4xu+nojM+ZHNxRB2MvHD7dXz2chdArV1xWSDKA2KnqABkMdZY
- IZIE2HDA==;
-Received: from a80-127-99-228.adsl.xs4all.nl ([80.127.99.228]
- helo=hetgrotebos.org)
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0Ewv-00031D-0s
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 01:30:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=wizzup.org; 
- s=mail;
- h=Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:
- References:Cc:To:Subject:Sender:Reply-To:Content-Transfer-Encoding:Content-ID
- :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
- Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe
- :List-Post:List-Owner:List-Archive;
- bh=BcVJVOf6TF/u7o0p8P13rggYNCSdarPNwyv+27X4l+g=; b=eWAEY0T9Qgr4M3qpVQxnE64tSt
- mP80CWK+A2A/z8CcFpAokBMmn5i8Vyk1oZgUPcIsTp24kP5OFl8+X7Fx9zEwIZMQC2F3BJdJPzZev
- /hPKA4sdo5/WEK433Avli6uPxguxVSD2pjGJS75szLrErwoBBMDP+8iAjrzpwS198tMMTfddCpDYx
- fPDQTdMZAUR5LOrSTaJrzj3FgBvV0AQKVC6S66zssaYdtHfhl1tZvCDbKm5C7c1uP5xACbBVuxubN
- uw3DID+hE4j/ImP8qFPbLDB+P5cpQrJeX9R/YqzALvzicPTg227TtseMhWWUL1BF7TtlZ9y5vFJf+
- OnzXkFYA==;
-Received: from deepwater.fritz.box ([192.168.178.25] helo=[0.0.0.0])
- by hetgrotebos.org with esmtpsa  (TLS1.3) tls TLS_AES_128_GCM_SHA256
- (Exim 4.93) (envelope-from <merlijn@wizzup.org>)
- id 1j0FEM-0007nB-JN; Sat, 08 Feb 2020 01:48:22 +0000
-Subject: Re: Nokia N900 on 5.4 and 5.5
-To: "Arthur D." <spinal.by@gmail.com>, Tony Lindgren <tony@atomide.com>
-References: <79b91017-b52a-8aff-4b9c-913ae655f7bf@wizzup.org>
- <185CD173-C13C-4D56-B3DE-9A8D7784963C@goldelico.com>
- <20200207163623.GA64767@atomide.com>
- <da14d6bb-f241-2dd4-8e94-886217a40ed7@wizzup.org>
- <20200207165344.GB64767@atomide.com> <20200207170149.GC64767@atomide.com>
- <op.0fmv4jevhxa7s4@supervisor.net28>
-From: Merlijn Wajer <merlijn@wizzup.org>
-Autocrypt: addr=merlijn@wizzup.org; prefer-encrypt=mutual; keydata=
- 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
- /XslHw==
-Message-ID: <8a19bde5-f49f-ad58-3b3b-6df8a764f1f2@wizzup.org>
-Date: Sat, 8 Feb 2020 02:49:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1j0FSR-00025F-GP
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 02:02:56 +0000
+Received: by mail-ot1-x341.google.com with SMTP id 66so1174007otd.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 07 Feb 2020 18:02:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
+ bh=ZL1vw2AXxwnJQ2itrk5zfzZQ8p6ax5CM4oF2dWGGnQc=;
+ b=mSKNR7w2E2yDs943NNg37EL3/vyyqIeWtfn+pvbMxm6Ppu9/jMXRV5puYVNqkZWAbJ
+ IA++lHgYp8J4Ttq/NxqrwtOg4pJ+0VoUwyelqs6zdwL/XbMeKk2J/+JQwpve+qA+2B6l
+ c6hvByKoNep9vf8QExch1b2nYfgHciDzQmhRo=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition;
+ bh=ZL1vw2AXxwnJQ2itrk5zfzZQ8p6ax5CM4oF2dWGGnQc=;
+ b=MSI32VXF/kQargO88WHBfZDffqtArPjM7w7ALD9sECqfd8lS9bObUqD/1lNRdMvq4c
+ johRWQGSv/QKkqZyYwVMn6wUFsZdB3wdC8FnMhfxVSFzX8OHahFff7koKWFIqYFqs/ep
+ wuSC60lJsPafsvySWjeswu0euyaoWc9Eq6nJKlOd2WJerNcf3XRy3KSvgZzg1tn7DJLf
+ WKDixhUhqMEppd48kAeip7QsuxNwQ6w+Zxlap+xoKoi8nrNTuE1sonBU/lcRry4gMjUQ
+ H+ZA5t9yY0rnSPQ+Y9jstmMEgOwsbSlO5rLym1mUDFaepnQ4d/7Uh+TU1hCSdNmzpsls
+ R+fQ==
+X-Gm-Message-State: APjAAAVZ7ZEsHWgdWO2ODd/R9IM3mB1tenXsH/btx6HgMFYRj0VVhPNd
+ LTViuLD5QcH4/681h8p1rV8dE29T/Z33ZA==
+X-Google-Smtp-Source: APXvYqy16hNfOnp4HG5nW1dbIIaqb7qga2IbA8K9tC05B9Y8mof43qotvfzTXHFB7Pos82dfVCYL1w==
+X-Received: by 2002:a9d:5e9:: with SMTP id 96mr1788864otd.307.1581127373870;
+ Fri, 07 Feb 2020 18:02:53 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id i12sm1803428otk.11.2020.02.07.18.02.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 07 Feb 2020 18:02:53 -0800 (PST)
+Date: Fri, 7 Feb 2020 18:02:51 -0800
+From: Kees Cook <keescook@chromium.org>
+To: Nicolas Pitre <nico@fluxnic.net>
+Subject: [PATCH] ARM: rename missed uaccess .fixup section
+Message-ID: <202002071754.F5F073F1D@keescook>
 MIME-Version: 1.0
-In-Reply-To: <op.0fmv4jevhxa7s4@supervisor.net28>
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200208_013021_218546_6A222E2F 
-X-CRM114-Status: GOOD (  17.08  )
-X-Spam-Score: -1.1 (-)
-X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
- Content analysis details:   (-1.1 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200207_180255_574538_FF225D97 
+X-CRM114-Status: GOOD (  12.39  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 1.0 RDNS_DYNAMIC           Delivered to internal network by host with
- dynamic-looking rDNS
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -163,92 +91,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>,
- Kees Cook <keescook@chromium.org>, Nicolas Pitre <nico@fluxnic.net>,
- "H. Nikolaus Schaller" <hns@goldelico.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- linux-omap <linux-omap@vger.kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0506095020727929222=="
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Russell King - ARM Linux <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Manoj Gupta <manojgupta@google.com>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============0506095020727929222==
-Content-Type: multipart/signed; micalg=pgp-sha256;
- protocol="application/pgp-signature";
- boundary="5KSJZaIBkOOJfqshMBG8d4nx3nRtEXKOo"
+When the uaccess .fixup section was renamed to .text.fixup, one case was
+missed. Under ld.bfd, the orphaned section was moved close to .text
+(since they share the "ax" bits), so things would work normally on
+uaccess faults. Under ld.lld, the orphaned section was placed outside
+the .text section, making it unreachable. Rename the missed section.
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---5KSJZaIBkOOJfqshMBG8d4nx3nRtEXKOo
-Content-Type: multipart/mixed; boundary="Y8Inm6glfJjerqXvHHeMGlZuzZVj1AimU"
+Link: https://github.com/ClangBuiltLinux/linux/issues/282
+Link: https://bugs.chromium.org/p/chromium/issues/detail?id=1020633#c44
+Link: https://lore.kernel.org/r/nycvar.YSQ.7.76.1912032147340.17114@knanqh.ubzr
+Fixes: c4a84ae39b4a5 ("ARM: 8322/1: keep .text and .fixup regions closer together")
+Cc: stable@vger.kernel.org
+Reported-by: Nathan Chancellor <natechancellor@gmail.com>
+Reported-by: Manoj Gupta <manojgupta@google.com>
+Debugged-by: Nick Desaulniers <ndesaulniers@google.com>
+Signed-off-by: Kees Cook <keescook@chromium.org>
+---
+I completely missed this the first several times I looked at this
+problem. Thank you Nicolas for pushing back on the earlier patch!
+Manoj or Nathan, can you test this?
+---
+ arch/arm/lib/copy_from_user.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
---Y8Inm6glfJjerqXvHHeMGlZuzZVj1AimU
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-GB
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On 07/02/2020 21:20, Arthur D. wrote:
-> Hi.
->=20
-> I was able to build linux-5.5 and run it on N900 with no problems.
-> Even WiFi works, mmc0 is in place too. It seems you're doing something
-> wrong.
-
-Well, I didn't try mmc0 on 5.5 (since it was also non-booting due to
-issue below), so I will have to try that this weekend. The steps I
-applied to build either kernels (5.1 with our patches, 5.4.18 and 5.5.2
-are identical, except for the defconfig for our 5.1 branch)
-
-> Were you able to build linux-5.1 with your scripts and run it on the
-> phone? I mean the pure linux-5.1 without configs and changes done
-> in https://github.com/maemo-leste/n9xx-linux.
->=20
-> BTW, I didn't find STACKPROTECTOR_PER_TASK option to be enabled in
-> omap2plus_defconfig.
-
-Well, I can assure you it was turned on on my system after a
-omap2plus_defconfig. I do run Gentoo Hardened on my daily systems, so
-perhaps that somehow makes a difference in what defconfig is picked.
-
-Either way - the option is turned on by default after I make
-omap2plus_defconfig, and it breaks appended DTB loading, so I hope we
-can look at fixing that.
-
-Cheers,
-Merlijn
+diff --git a/arch/arm/lib/copy_from_user.S b/arch/arm/lib/copy_from_user.S
+index 95b2e1ce559c..f8016e3db65d 100644
+--- a/arch/arm/lib/copy_from_user.S
++++ b/arch/arm/lib/copy_from_user.S
+@@ -118,7 +118,7 @@ ENTRY(arm_copy_from_user)
+ 
+ ENDPROC(arm_copy_from_user)
+ 
+-	.pushsection .fixup,"ax"
++	.pushsection .text.fixup,"ax"
+ 	.align 0
+ 	copy_abort_preamble
+ 	ldmfd	sp!, {r1, r2, r3}
+-- 
+2.20.1
 
 
---Y8Inm6glfJjerqXvHHeMGlZuzZVj1AimU--
-
---5KSJZaIBkOOJfqshMBG8d4nx3nRtEXKOo
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEARYIAB0WIQRM5LT7NbLF9yb6a/UGN09rynK8WgUCXj4TqAAKCRAGN09rynK8
-WqJbAP9xXnsepI8fIIHOFJ28JUbALVlp70tSLPwvYKNcqQvqiwEA/8g8gsgAWAnc
-yHLtGXH+DJcdxNlB3n0nHz6Tj56fQQU=
-=11R3
------END PGP SIGNATURE-----
-
---5KSJZaIBkOOJfqshMBG8d4nx3nRtEXKOo--
-
-
---===============0506095020727929222==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0506095020727929222==--
-
