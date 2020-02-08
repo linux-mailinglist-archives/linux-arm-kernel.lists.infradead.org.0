@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D032F15621D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 01:51:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18BDD15621E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 01:51:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=KT1Ys9mSmnfVSci/zdFUhDqs9jirq3m/OTvs559+gjo=; b=aa+5hpa8aroDSeEebW/+osLCa2
-	tPXepuQG8/sJgDGFNVNOgqTBNw+zWr2FTHSahUvX94fno5tnhFU0NaW/wUIbzD60M7MB0E4dWzZY8
-	ofEFzuvhqBqu5LcdUsNFbQabhAapNajabdK4d/8TsTxCDWzB3/5wHJl24TYQklYWHY/RcWpoHxDPJ
-	hIln3qAaqCsuioBdPWL9gjXedNlJ5ifC2mg0PkBUhAKAXnhfB1N9Pr9JawhEZQhmOnFTVETE53PEa
-	jX5z/MYj6bNLR2/gXP02SBjtLJCb7aCO/6/gJhJet8CRoiBEMqypfE2D04eNBU5jYpjxuvnlnnksE
-	8ar4IP9w==;
+	bh=hH9lyAsXMPDHO3yn0L1ngKRYcPC2QoYCMPf/EObx2pw=; b=FEhJ87nyD8tbvZb1/Q5CrhbjqQ
+	vNU2FpI9mPU5D/rExcaYpTqw0NLd+j8htBFzEbwQnq54Idv4eG9Uc6yjn9yva16eO6Cjy2nI8+Ow3
+	a1Ajs1C/FG3bfXUiebp/cb77a2YNxVfna2gybDgpVgrrJvw4gkUR2F9FMBxsP6zQt/3srNTo//efC
+	LtZI9WbH2mJCGJ4hKPv1zHFc4Xp79M238ViKnoyk0Dp38/ztf3RH2dojeqrCwYf9WJKFYWGfgSLCN
+	aFH/8RP8hBvQa/Ur9fcJFhqESqmAwCHSN+EpQBN4amzwyj0jn+gYV2n2pPFrwAqhyS0iF6m/Rxylj
+	EJe+SUeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0ELA-0004mf-Hs; Sat, 08 Feb 2020 00:51:20 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1j0ELK-00050d-Cs; Sat, 08 Feb 2020 00:51:30 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0EKs-0004ci-9W
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 00:51:06 +0000
+ id 1j0EKv-0004Tn-1T
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 00:51:07 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1581123064; h=References: In-Reply-To: Message-Id: Date:
+ s=smtp; t=1581123066; h=References: In-Reply-To: Message-Id: Date:
  Subject: Cc: To: From: Sender;
- bh=z63XLiUfSg/rY+QkoqBT8YXmQRcZrkXaBkpAmhgjVyY=;
- b=JJnOZDhi5pOIM8wJOai5tkPhCY29djN3e0NNQwqqiFG+XIYcgrQq4LFBAt4BM41aGp/5vrnq
- Nl6t3v77IUtTZ/EY3I0qg/kdurFN2HJIZFIYBi7gZ3V7Fer8pbCcHn8MMyjn3NSxuRaQk3nI
- 8HUaOVYnWeRmATtBD76iMKnaSIM=
-X-Mailgun-Sending-Ip: 104.130.122.25
+ bh=Acsfsqg2b6NUDHJeY/gDJ1vlOSDS93J/sV1EZBqKdko=;
+ b=FSgCeZluqsfw85dJK+Vh87Ux7HuUr3WpIcPr63UUIq103MEStIylLYPQhGdnl3/hDdZYXRK/
+ p84ynHBfi2qObo7Llzf1nZjM6fd5LhnSjG913Og3E9w+0NzL5fmTs1YEjnZuKp2QjPJ6hcvQ
+ lhYaYizk3xf2VEFcykQU4evUAAM=
+X-Mailgun-Sending-Ip: 104.130.122.26
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e3e05f0.7f3ca2267768-smtp-out-n01;
- Sat, 08 Feb 2020 00:50:56 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e3e05f6.7fa494275880-smtp-out-n03;
+ Sat, 08 Feb 2020 00:51:02 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 6552CC447A4; Sat,  8 Feb 2020 00:50:54 +0000 (UTC)
+ id 78D32C447A1; Sat,  8 Feb 2020 00:51:01 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
@@ -49,9 +49,9 @@ Received: from pacamara-linux.qualcomm.com (i-global254.qualcomm.com
  [199.106.103.254])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 9C26AC433CB;
- Sat,  8 Feb 2020 00:50:52 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 9C26AC433CB
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id C548FC447A5;
+ Sat,  8 Feb 2020 00:50:58 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org C548FC447A5
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
@@ -60,23 +60,25 @@ From: Can Guo <cang@codeaurora.org>
 To: asutoshd@codeaurora.org, nguyenb@codeaurora.org, hongwus@codeaurora.org,
  rnayak@codeaurora.org, linux-scsi@vger.kernel.org, kernel-team@android.com,
  saravanak@google.com, salyzyn@google.com, cang@codeaurora.org
-Subject: [PATCH 3/7] scsi: ufs: Remove the check before call setup clock
- notify vops
-Date: Fri,  7 Feb 2020 16:50:25 -0800
-Message-Id: <1581123030-12023-4-git-send-email-cang@codeaurora.org>
+Subject: [PATCH 5/7] scsi: ufs: Fix ufshcd_hold() caused scheduling while
+ atomic
+Date: Fri,  7 Feb 2020 16:50:27 -0800
+Message-Id: <1581123030-12023-6-git-send-email-cang@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1581123030-12023-1-git-send-email-cang@codeaurora.org>
 References: <1581123030-12023-1-git-send-email-cang@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_165104_697893_3286A1FA 
-X-CRM114-Status: GOOD (  12.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200207_165106_263990_A93089EF 
+X-CRM114-Status: GOOD (  10.76  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.26 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -111,57 +113,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The functionality of vendor specific ops should be handled properly in
-platform specific driver, but should not count on the UFS driver.
+The async version of ufshcd_hold(async == true), which is only called
+in queuecommand path as for now, is expected to work in atomic context,
+thus it should not sleep or schedule out. When it runs into the condition
+that clocks are ON but link is still in hibern8 state, it should bail out
+without flushing the clock ungate work.
 
 Signed-off-by: Can Guo <cang@codeaurora.org>
+Reviewed-by: Hongwu Su <hongwus@codeaurora.org>
+Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
 Reviewed-by: Bean Huo <beanhuo@micron.com>
 Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
 
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 83ae093..bbc2607 100644
+index bbc2607..e8f7f9d 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -7402,16 +7402,9 @@ static int __ufshcd_setup_clocks(struct ufs_hba *hba, bool on,
- 	if (list_empty(head))
- 		goto out;
- 
--	/*
--	 * vendor specific setup_clocks ops may depend on clocks managed by
--	 * this standard driver hence call the vendor specific setup_clocks
--	 * before disabling the clocks managed here.
--	 */
--	if (!on) {
--		ret = ufshcd_vops_setup_clocks(hba, on, PRE_CHANGE);
--		if (ret)
--			return ret;
--	}
-+	ret = ufshcd_vops_setup_clocks(hba, on, PRE_CHANGE);
-+	if (ret)
-+		return ret;
- 
- 	list_for_each_entry(clki, head, list) {
- 		if (!IS_ERR_OR_NULL(clki->clk)) {
-@@ -7435,16 +7428,9 @@ static int __ufshcd_setup_clocks(struct ufs_hba *hba, bool on,
- 		}
- 	}
- 
--	/*
--	 * vendor specific setup_clocks ops may depend on clocks managed by
--	 * this standard driver hence call the vendor specific setup_clocks
--	 * after enabling the clocks managed here.
--	 */
--	if (on) {
--		ret = ufshcd_vops_setup_clocks(hba, on, POST_CHANGE);
--		if (ret)
--			return ret;
--	}
-+	ret = ufshcd_vops_setup_clocks(hba, on, POST_CHANGE);
-+	if (ret)
-+		return ret;
- 
- out:
- 	if (ret) {
+@@ -1518,6 +1518,11 @@ int ufshcd_hold(struct ufs_hba *hba, bool async)
+ 		 */
+ 		if (ufshcd_can_hibern8_during_gating(hba) &&
+ 		    ufshcd_is_link_hibern8(hba)) {
++			if (async) {
++				rc = -EAGAIN;
++				hba->clk_gating.active_reqs--;
++				break;
++			}
+ 			spin_unlock_irqrestore(hba->host->host_lock, flags);
+ 			flush_work(&hba->clk_gating.ungate_work);
+ 			spin_lock_irqsave(hba->host->host_lock, flags);
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
