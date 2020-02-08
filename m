@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B064156475
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 14:08:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD635156468
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 14:04:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=vI+2qhhQ/ad2gqCbe5hUTYTYVj8IfAamleiL75V5TSM=; b=Mkmcs25XPU2/g+MYM2+Z5LGdJe
-	sPHgcJ9XempqMN6GWa3THRmKDaNxrRnI4ivvtJU7gqw9vUYMHzLb/vRBxUmHkmHiK1WGcHqmhwvu2
-	a/6KNcqivMgF1ImX2GXOf8HWR3vTJYVIJAIKQ975GJpgPge6Z4mecOOKLbP7x2eI/RJg2ttVIed65
-	wzrzM2N/lxfLwYJ2KspETjSCXkm1A+Rp6IQhaBlYKSWStC6Cbv7AfVkcEN83Oaf7kXP79I4aFHg+h
-	voggVdS1vznUaWQ76qIluVYRJZuVG5s6GY/yQCoUL55gP4K7aDgzH1ATkjqWW0nKVlFxdjFzAjzoH
-	PUm6ciNw==;
+	bh=QGVLrClstS03czkSS4OEbJFADlzavJN5vVc0CB1UQ/s=; b=ieHnvPzBDAuOMB9ssBIwoVJhL0
+	4s0KCF2gSn/pn3dl0TlSTvDXD8j8jGuv8Sk+k0zmBWQ/h27wZsPkgXisxll4VfAy79wZEy+IZVTpo
+	LHteoZQwV1/geYsJaFNdo9dJIj8RZBK4kvOYEgyjP7xbIvn8vMVX9+Es/bzBuOHmgoIa1hCHPgwt8
+	Nqw3BJpXeIQh5rMbbjv4EkZnVtzbp9QXiu1FsQRqs8f6zhkQzovQ6c7JUV6C2UlOVXRjshkqjX6a3
+	QfPwqf/ErngwvnqnLq6k1Pq65oOspGsE+dpwu75O3n/RJ1YmtyhHccdaWZodcfpc6K9rXc/pQaFEL
+	+NwabNIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0Pqk-0008OS-FR; Sat, 08 Feb 2020 13:08:42 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	id 1j0Pm7-0005uz-76; Sat, 08 Feb 2020 13:03:55 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0Pqb-0008NV-0d
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 13:08:34 +0000
+ id 1j0Pli-0005ol-Sd
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 13:03:32 +0000
 Received: from localhost.localdomain ([37.4.249.150]) by
  mrelayeu.kundenserver.de (mreue107 [212.227.15.183]) with ESMTPSA (Nemesis)
- id 1M58SY-1izJpq1Aiy-0017de; Sat, 08 Feb 2020 14:03:18 +0100
+ id 1N4yNG-1jhDG63lHY-010xUE; Sat, 08 Feb 2020 14:03:19 +0100
 From: Stefan Wahren <stefan.wahren@i2se.com>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Florian Fainelli <f.fainelli@gmail.com>,
  Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
  Scott Branden <sbranden@broadcom.com>
-Subject: [PATCH 1/4] pinctrl: bcm2835: Drop unused define
-Date: Sat,  8 Feb 2020 14:02:52 +0100
-Message-Id: <1581166975-22949-2-git-send-email-stefan.wahren@i2se.com>
+Subject: [PATCH 2/4] pinctrl: bcm2835: Refactor platform data
+Date: Sat,  8 Feb 2020 14:02:53 +0100
+Message-Id: <1581166975-22949-3-git-send-email-stefan.wahren@i2se.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1581166975-22949-1-git-send-email-stefan.wahren@i2se.com>
 References: <1581166975-22949-1-git-send-email-stefan.wahren@i2se.com>
-X-Provags-ID: V03:K1:7poxDZDsc+nCytjwN8LtSgR7ED0PiXCKK7Lt2YkCm/iND1UtSOp
- QV2LAcQ3kUyNZYVk5rrzHMFzzeUo7t4Q5zJgdk5e7uYCjm90vDnbMBs2nj8cd83exIgCWfe
- WFLAPllWyFaqlnv7HJzM/XPiJHMqUwBZobMlekxNQzV+XhN4B2+/HC01ZXqV+dGxPilb0A8
- Lp4Woi1OYSDZ0tCH4gz9g==
+X-Provags-ID: V03:K1:uGjHYXYsoUjn7jcdElSEse07P4rKkudkAWc75trRLVK7NNyLgPs
+ T+EAYDcjQyv2ng5IJ6G1ooPLNRU+i+UqfAgOlvRghOYExKScy9bWF5hEZx4myvVDgukqtgH
+ G7JJylsxITYmpHfq4pTH1rsrKJG9AOS45G2eaDoGkjJetfFKCb5ZweFPWLLrTfm3falruzr
+ UloZe3+Dimm54S23tCszw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:M+C0GAn3G8Y=:YfDIZj14EoC4g6x02lZT4h
- nqLo7jh41D+mIurwAKwwtBNHF9va2fL8O2F8izXbpBwYlFGpBjeoBN4fqo4sOkQsCfGnnVTtr
- yuCTsQ1t4+7/OOb95gEPuxLILyXk30JgTg38vbr48UTtZebXURzaK+NK9iwSSdB2lHUaV0N3Z
- 8UCcFZUmAKEd6L0LM5hwi4W1PF03AIfE2mBeTlBOyMhV8LSfUfOIQr1IGwCx3sRbSsgHUOpje
- bSl8ZV2YTrO8qYg4M2PeSs3ytZ0Shq5fP1UvQa3pKJT0uSvG11ClDhj/RIeYMHgUcLBBbA49g
- sTN8ifKY70JUmxyE5qr7A9O3+BAQuG6eRrKM5PFrz0TBicrcY1mrqvTQ1HQuiIIpfuhDL4tHt
- GOatHkAfxcB6/dcHL6GcDmtuqqO3vdBB5OSh2tdytRxQRAIYuXFTIyKjMRWrRLm/qPskLCacv
- ZfcqecXbCJiwJVYnYPBiIW9sZf1a2CARk2updCotRrz+nE0MOVRnjzDiQegEpYwEipCyQ0qNa
- ED0RXVvR51T6OwnMR5Lkug42rnxOZ9kdRfAba6XqrSda8oKNv3hCRtp1NQfrK09k+5ryOapkI
- m3w1qu9lP0h7K+kRnXcroXT6OGbqIp8pwCAeoObyhKFJanqUYoBkmoL+JlazzkEz1TWt7YJmd
- nUokrpExypwqWbkmV7U8U3DoouSBNmIttJzfoIT0p3IqjtEp0CAMyuCpLerZNVGl3Xvk7rz5f
- 5Vmpf4+buD/jd0Ysd/1D5wN5Qt51ZcvFmMrI2HAUw26X6QLjyDGLTz8aPqNK+pcTWDO9d8Ayv
- I7x+VUO+giK5zNNz1Rc/k2V8v/I6PEnczqILfIqm49/eK7vqWW0CS16TdXZsg7rgp9eLeZs
+X-UI-Out-Filterresults: notjunk:1;V03:K0:14f1Up/WEKY=:PT3+SP10fiNt/Lqu2fyEMJ
+ pUI3is9ANn/SR8uU9YwW0DTC5Tz4GiNiiizxtMKocQzqCq+rSZfb9wAze4enakuH/s3/7dZiE
+ JVT3ZMvX/ZtOA8AXx7fN8ckc7QCk1u7LOtZbocCbDEP9HdI6W4SE7LFChl7Ocmu6dMc5SbDHf
+ XSgW/LNEWe2aOuauhIkAlIwnDYA1eDNzdI7q14jezejK4o9Ahj361VDA9STpKg8oVnacQ+uF6
+ TDWhyTGm/Bam+gMnMnUF1BI3b2bK5MgR6FFTnLxlLa/Q/tDjsIv7DF8iQXqpQ/cYhqU+cbp6y
+ lmYX5KKIue48BSLRtGYB0J8rKs1l75C6IKjhlYNE1C5jE7k2p+9sGiShUA+/N0rTfxIQEC8Js
+ w9sTe7U/eGiBaO+wOxZjg0DJm4IqjelNb/40KO8W+AL7ND0AUpT7BYPH87357k9fmyJ4S+HR5
+ hkRze67/3Av+R71/m0wzcVA0tJMcrRMh7rO/q8SIVQkhsrWCIuO4xPepVaLCiQgf98dTOchgq
+ 4v97hwAFDFmedW44cqjn0bYhyZcuU4EaS3qQl3jbJW/cxuH9Ypld+S/uePKIIhnVkB4fZqdId
+ hR798M+/mnIbsEBUTj61+Df8CAr2uub2bL/300cmWu35XM9NWY+I6uNSesCNdS/Dy216JR+l2
+ CyOVQhdQjDSCRGnT7jqFra9F1xl518QQarYCu7LSD/KF3necKcYPz5aUVsSmWtnpawb6e8AVF
+ wTdZQrGwrDoXkVDAyMLtaozQnBPMsuI4XqkcNZoFBXvhjutRJhAX1Z0JA7J5sonetk736e4Zy
+ TrtV7sooEN4qnynOEDi5VHDNQnJyttgqlDl4HzEP0dlaQPeXL2ZM28gkiUiKd7MMii3iiPl
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200208_050833_353063_76BCB20E 
-X-CRM114-Status: GOOD (  11.43  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200208_050331_212091_873A374E 
+X-CRM114-Status: GOOD (  15.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.72.192.74 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.73 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,27 +88,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no usage for this define, so drop it.
+This prepares the platform data to be easier to extend for more GPIOs.
+Except of this there is no functional change.
 
 Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
 ---
- drivers/pinctrl/bcm/pinctrl-bcm2835.c | 3 ---
- 1 file changed, 3 deletions(-)
+ drivers/pinctrl/bcm/pinctrl-bcm2835.c | 57 +++++++++++++++++++++++++++--------
+ 1 file changed, 44 insertions(+), 13 deletions(-)
 
 diff --git a/drivers/pinctrl/bcm/pinctrl-bcm2835.c b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-index 0de1a3a..3fc2638 100644
+index 3fc2638..7f0a9c6 100644
 --- a/drivers/pinctrl/bcm/pinctrl-bcm2835.c
 +++ b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-@@ -40,9 +40,6 @@
- #define BCM2835_NUM_BANKS 2
- #define BCM2835_NUM_IRQS  3
+@@ -82,6 +82,7 @@ struct bcm2835_pinctrl {
  
--#define BCM2835_PIN_BITMAP_SZ \
--	DIV_ROUND_UP(BCM2835_NUM_GPIOS, sizeof(unsigned long) * 8)
+ 	struct pinctrl_dev *pctl_dev;
+ 	struct gpio_chip gpio_chip;
++	struct pinctrl_desc pctl_desc;
+ 	struct pinctrl_gpio_range gpio_range;
+ 
+ 	raw_spinlock_t irq_lock[BCM2835_NUM_BANKS];
+@@ -1051,7 +1052,7 @@ static const struct pinconf_ops bcm2711_pinconf_ops = {
+ 	.pin_config_set = bcm2711_pinconf_set,
+ };
+ 
+-static struct pinctrl_desc bcm2835_pinctrl_desc = {
++static const struct pinctrl_desc bcm2835_pinctrl_desc = {
+ 	.name = MODULE_NAME,
+ 	.pins = bcm2835_gpio_pins,
+ 	.npins = ARRAY_SIZE(bcm2835_gpio_pins),
+@@ -1061,19 +1062,47 @@ static struct pinctrl_desc bcm2835_pinctrl_desc = {
+ 	.owner = THIS_MODULE,
+ };
+ 
+-static struct pinctrl_gpio_range bcm2835_pinctrl_gpio_range = {
++static const struct pinctrl_desc bcm2711_pinctrl_desc = {
++	.name = MODULE_NAME,
++	.pins = bcm2835_gpio_pins,
++	.npins = ARRAY_SIZE(bcm2835_gpio_pins),
++	.pctlops = &bcm2835_pctl_ops,
++	.pmxops = &bcm2835_pmx_ops,
++	.confops = &bcm2711_pinconf_ops,
++	.owner = THIS_MODULE,
++};
++
++static const struct pinctrl_gpio_range bcm2835_pinctrl_gpio_range = {
+ 	.name = MODULE_NAME,
+ 	.npins = BCM2835_NUM_GPIOS,
+ };
+ 
++struct bcm_plat_data {
++	const struct gpio_chip *gpio_chip;
++	const struct pinctrl_desc *pctl_desc;
++	const struct pinctrl_gpio_range *gpio_range;
++};
++
++static const struct bcm_plat_data bcm2835_plat_data = {
++	.gpio_chip = &bcm2835_gpio_chip,
++	.pctl_desc = &bcm2835_pinctrl_desc,
++	.gpio_range = &bcm2835_pinctrl_gpio_range,
++};
++
++static const struct bcm_plat_data bcm2711_plat_data = {
++	.gpio_chip = &bcm2835_gpio_chip,
++	.pctl_desc = &bcm2711_pinctrl_desc,
++	.gpio_range = &bcm2835_pinctrl_gpio_range,
++};
++
+ static const struct of_device_id bcm2835_pinctrl_match[] = {
+ 	{
+ 		.compatible = "brcm,bcm2835-gpio",
+-		.data = &bcm2835_pinconf_ops,
++		.data = &bcm2835_plat_data,
+ 	},
+ 	{
+ 		.compatible = "brcm,bcm2711-gpio",
+-		.data = &bcm2711_pinconf_ops,
++		.data = &bcm2711_plat_data,
+ 	},
+ 	{}
+ };
+@@ -1082,6 +1111,7 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct device_node *np = dev->of_node;
++	const struct bcm_plat_data *pdata;
+ 	struct bcm2835_pinctrl *pc;
+ 	struct gpio_irq_chip *girq;
+ 	struct resource iomem;
+@@ -1108,7 +1138,13 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
+ 	if (IS_ERR(pc->base))
+ 		return PTR_ERR(pc->base);
+ 
+-	pc->gpio_chip = bcm2835_gpio_chip;
++	match = of_match_node(bcm2835_pinctrl_match, pdev->dev.of_node);
++	if (!match)
++		return -EINVAL;
++
++	pdata = match->data;
++
++	pc->gpio_chip = *pdata->gpio_chip;
+ 	pc->gpio_chip.parent = dev;
+ 	pc->gpio_chip.of_node = np;
+ 
+@@ -1159,19 +1195,14 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
+ 		return err;
+ 	}
+ 
+-	match = of_match_node(bcm2835_pinctrl_match, pdev->dev.of_node);
+-	if (match) {
+-		bcm2835_pinctrl_desc.confops =
+-			(const struct pinconf_ops *)match->data;
+-	}
 -
- /* GPIO register offsets */
- #define GPFSEL0		0x0	/* Function Select */
- #define GPSET0		0x1c	/* Pin Output Set */
+-	pc->pctl_dev = devm_pinctrl_register(dev, &bcm2835_pinctrl_desc, pc);
++	pc->pctl_desc = *pdata->pctl_desc;
++	pc->pctl_dev = devm_pinctrl_register(dev, &pc->pctl_desc, pc);
+ 	if (IS_ERR(pc->pctl_dev)) {
+ 		gpiochip_remove(&pc->gpio_chip);
+ 		return PTR_ERR(pc->pctl_dev);
+ 	}
+ 
+-	pc->gpio_range = bcm2835_pinctrl_gpio_range;
++	pc->gpio_range = *pdata->gpio_range;
+ 	pc->gpio_range.base = pc->gpio_chip.base;
+ 	pc->gpio_range.gc = &pc->gpio_chip;
+ 	pinctrl_add_gpio_range(pc->pctl_dev, &pc->gpio_range);
 -- 
 2.7.4
 
