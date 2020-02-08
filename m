@@ -2,70 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 220A41561FC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 01:42:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BB0015620F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 01:51:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/iNtW5C2vg8mJiGWAeZiiV7qBRBTqvA0H0SAsAQxDeE=; b=qae+bDvvDvt/mb
-	v7/DJny9RJuXHNQZa4HYPRAvavQ9uVdGM9jNw4FxWUEFP8mn/an0vtpojghM85kWTGXyUGeM+/ZiW
-	BCVwY2EV/0wwLXLNyo5O4zK3bZzLjUyHMmKgLzJDttHGUsTfRR6kIMKeaMJZ45DiRgRG4IhZgneHA
-	Op4/hRkC+d/ZRy4QfQeFb+AcNoT8E5H/s9q30eIPdAyNVB9Mo1zeZ4Djox1K6vUwUqV39lWk/6LMt
-	ZX4dfBSodDrD3SffomuWo8HmUyYNv0z9NYvD8cHfGIjv9PkA1wBRzPAfDp5G1FtvUfSUT/0Wa8mCt
-	mx/Jyv7fIztEAdJHSayw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=KgB72SuRF7FKjCzLzfn6CSWFV6jVT1X/VBwOyBH584M=; b=HRv2lqZXr3MRSjbSIjFt3tUZ0B
+	WyfyZPbWi1bAsgrUUUGN+6n47us1ZJUaPVoufW93A0lOyS9VwIwSgPaM/6seiWzVSwvq/QSD8GW9I
+	E8u1lF+80EHNSZD9V/UU8+A1JyTYX3FHH88xcOhXf44xL4TLYKS3i1TilsLuCZwQgjyOKP/K2k5/B
+	maPvXzIvYTercivtoiaRrYiUMC8jG732Fbv/CfN24SA0pMVLLiTBHk5lCkh6DxntfEqBKDoVRGOcC
+	rK0163RZaXoXKCUUFHHmYJdnhc/iPvejJb/hpQogm9mo9cOrKwu22ppJSKCbTB7aTACsiOxfaPgww
+	PooXrSnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0ECr-0000sp-Et; Sat, 08 Feb 2020 00:42:45 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1j0EKp-0004Uu-Ue; Sat, 08 Feb 2020 00:50:59 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0ECi-0000rx-JZ
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 00:42:38 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 07 Feb 2020 16:42:35 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,415,1574150400"; d="scan'208";a="346332007"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.202])
- by fmsmga001.fm.intel.com with ESMTP; 07 Feb 2020 16:42:34 -0800
-Date: Fri, 7 Feb 2020 16:42:33 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Peter Xu <peterx@redhat.com>
-Subject: Re: [PATCH v5 15/19] KVM: Provide common implementation for generic
- dirty log functions
-Message-ID: <20200208004233.GA15581@linux.intel.com>
-References: <20200121223157.15263-1-sean.j.christopherson@intel.com>
- <20200121223157.15263-16-sean.j.christopherson@intel.com>
- <20200206200200.GC700495@xz-x1>
- <20200206212120.GF13067@linux.intel.com>
- <20200206214106.GG700495@xz-x1>
- <20200207194532.GK2401@linux.intel.com>
- <20200208001832.GA823968@xz-x1>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200208001832.GA823968@xz-x1>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+ id 1j0EKj-0004Tn-DK
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 00:50:54 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1581123053; h=References: In-Reply-To: Message-Id: Date:
+ Subject: Cc: To: From: Sender;
+ bh=POhOlLHyX9kprQvl56dSDYTYibjR55MFDfQ2JGrYKXA=;
+ b=ZRML3xDOpbUD87nUQcGz58FVWyNRQobW8G4yxqeai45xBmTBl/56OmseeHyiIYfWvA6omCl9
+ 9SJdD9/edIIK5IFXK6JiTjHhlM6czmf/b0azx66wKsXOoZ63JWwFdGDzuLpa7eonyzWXBJwN
+ hnDsxdm1hsZXkyRVjlKzVBOZoAs=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e3e05eb.7fd8416ccab0-smtp-out-n03;
+ Sat, 08 Feb 2020 00:50:51 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 4228BC447A2; Sat,  8 Feb 2020 00:50:50 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from pacamara-linux.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: cang)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 1F63FC433CB;
+ Sat,  8 Feb 2020 00:50:48 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 1F63FC433CB
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=cang@codeaurora.org
+From: Can Guo <cang@codeaurora.org>
+To: asutoshd@codeaurora.org, nguyenb@codeaurora.org, hongwus@codeaurora.org,
+ rnayak@codeaurora.org, linux-scsi@vger.kernel.org, kernel-team@android.com,
+ saravanak@google.com, salyzyn@google.com, cang@codeaurora.org
+Subject: [PATCH 2/7] scsi: ufs: set load before setting voltage in regulators
+Date: Fri,  7 Feb 2020 16:50:24 -0800
+Message-Id: <1581123030-12023-3-git-send-email-cang@codeaurora.org>
+X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1581123030-12023-1-git-send-email-cang@codeaurora.org>
+References: <1581123030-12023-1-git-send-email-cang@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200207_164236_696418_C939E114 
-X-CRM114-Status: GOOD (  26.34  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200207_165053_681914_D46EED67 
+X-CRM114-Status: GOOD (  12.76  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.26 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,94 +94,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
- Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
- Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
- Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
- Philippe =?iso-8859-1?Q?Mathieu-Daud=E9?= <f4bug@amsat.org>
+Cc: Bart Van Assche <bvanassche@acm.org>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Venkat Gopalakrishnan <venkatg@codeaurora.org>,
+ "James E.J. Bottomley" <jejb@linux.ibm.com>,
+ open list <linux-kernel@vger.kernel.org>, Avri Altman <avri.altman@wdc.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alim Akhtar <alim.akhtar@samsung.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Tomas Winkler <tomas.winkler@intel.com>,
+ Stanley Chu <stanley.chu@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>, Bean Huo <beanhuo@micron.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 07, 2020 at 07:18:32PM -0500, Peter Xu wrote:
-> On Fri, Feb 07, 2020 at 11:45:32AM -0800, Sean Christopherson wrote:
-> > +Vitaly for HyperV
-> > 
-> > On Thu, Feb 06, 2020 at 04:41:06PM -0500, Peter Xu wrote:
-> > > On Thu, Feb 06, 2020 at 01:21:20PM -0800, Sean Christopherson wrote:
-> > > > On Thu, Feb 06, 2020 at 03:02:00PM -0500, Peter Xu wrote:
-> > > > > But that matters to this patch because if MIPS can use
-> > > > > kvm_flush_remote_tlbs(), then we probably don't need this
-> > > > > arch-specific hook any more and we can directly call
-> > > > > kvm_flush_remote_tlbs() after sync dirty log when flush==true.
-> > > > 
-> > > > Ya, the asid_flush_mask in kvm_vz_flush_shadow_all() is the only thing
-> > > > that prevents calling kvm_flush_remote_tlbs() directly, but I have no
-> > > > clue as to the important of that code.
-> > > 
-> > > As said above I think the x86 lockdep is really not necessary, then
-> > > considering MIPS could be the only one that will use the new hook
-> > > introduced in this patch...  Shall we figure that out first?
-> > 
-> > So I prepped a follow-up patch to make kvm_arch_dirty_log_tlb_flush() a
-> > MIPS-only hook and use kvm_flush_remote_tlbs() directly for arm and x86,
-> > but then I realized x86 *has* a hook to do a precise remote TLB flush.
-> > There's even an existing kvm_flush_remote_tlbs_with_address() call on a
-> > memslot, i.e. this exact scenario.  So arguably, x86 should be using the
-> > more precise flush and should keep kvm_arch_dirty_log_tlb_flush().
-> > 
-> > But, the hook is only used when KVM is running as an L1 on top of HyperV,
-> > and I assume dirty logging isn't used much, if at all, for L1 KVM on
-> > HyperV?
-> > 
-> > I see three options:
-> > 
-> >   1. Make kvm_arch_dirty_log_tlb_flush() MIPS-only and call
-> >      kvm_flush_remote_tlbs() directly for arm and x86.  Add comments to
-> >      explain when an arch should implement kvm_arch_dirty_log_tlb_flush().
-> > 
-> >   2. Change x86 to use kvm_flush_remote_tlbs_with_address() when flushing
-> >      a memslot after the dirty log is grabbed by userspace.
-> > 
-> >   3. Keep the resulting code as is, but add a comment in x86's
-> >      kvm_arch_dirty_log_tlb_flush() to explain why it uses
-> >      kvm_flush_remote_tlbs() instead of the with_address() variant.
-> > 
-> > I strongly prefer to (2) or (3), but I'll defer to Vitaly as to which of
-> > those is preferable.
-> > 
-> > I don't like (1) because (a) it requires more lines code (well comments),
-> > to explain why kvm_flush_remote_tlbs() is the default, and (b) it would
-> > require even more comments, which would be x86-specific in generic KVM,
-> > to explain why x86 doesn't use its with_address() flush, or we'd lost that
-> > info altogether.
-> > 
-> 
-> I proposed the 4th solution here:
-> 
-> https://lore.kernel.org/kvm/20200207223520.735523-1-peterx@redhat.com/
-> 
-> I'm not sure whether that's acceptable, but if it can, then we can
-> drop the kvm_arch_dirty_log_tlb_flush() hook, or even move on to
-> per-slot tlb flushing.
+From: Asutosh Das <asutoshd@codeaurora.org>
 
-This effectively is per-slot TLB flushing, it just has a different name.
-I.e. s/kvm_arch_dirty_log_tlb_flush/kvm_arch_flush_remote_tlbs_memslot.
-I'm not opposed to that name change.  And on second and third glance, I
-probably prefer it.  That would more or less follow the naming of
-kvm_arch_flush_shadow_all() and kvm_arch_flush_shadow_memslot().
+This sequence change is required to avoid dips in voltage
+during boot-up.
 
-I don't want to go straight to kvm_arch_flush_remote_tlb_with_address()
-because that loses the important distinction (on x86) that slots_lock is
-expected to be held.
+Apparently, this dip is caused because in the original
+sequence, the regulators are initialized in lpm mode.
+And then when the load is set to high, and more current
+is drawn, than is allowed in lpm, the dip is seen.
+
+Signed-off-by: Asutosh Das <asutoshd@codeaurora.org>
+Signed-off-by: Can Guo <cang@codeaurora.org>
+Reviewed-by: Hongwu Su <hongwus@codeaurora.org>
+Reviewed-by: Bean Huo <beanhuo@micron.com>
+Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
+
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index 10dbc0c..83ae093 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -7248,6 +7248,11 @@ static int ufshcd_config_vreg(struct device *dev,
+ 	name = vreg->name;
+ 
+ 	if (regulator_count_voltages(reg) > 0) {
++		uA_load = on ? vreg->max_uA : 0;
++		ret = ufshcd_config_vreg_load(dev, vreg, uA_load);
++		if (ret)
++			goto out;
++
+ 		if (vreg->min_uV && vreg->max_uV) {
+ 			min_uV = on ? vreg->min_uV : 0;
+ 			ret = regulator_set_voltage(reg, min_uV, vreg->max_uV);
+@@ -7258,11 +7263,6 @@ static int ufshcd_config_vreg(struct device *dev,
+ 				goto out;
+ 			}
+ 		}
+-
+-		uA_load = on ? vreg->max_uA : 0;
+-		ret = ufshcd_config_vreg_load(dev, vreg, uA_load);
+-		if (ret)
+-			goto out;
+ 	}
+ out:
+ 	return ret;
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
