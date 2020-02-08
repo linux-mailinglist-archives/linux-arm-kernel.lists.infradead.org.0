@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF75E1563F8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 12:21:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8584C1563FA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 12:21:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C2Ft/QYqnxK1946NOjZu5kGIl1z46wO7cJlpFBSdKjY=; b=lDEu1xAKe+Mxt3
-	Rxroi05va2uuno+VbjagEv3fUITx4cBgUAgGMpR69X4KmONq2J2E3+KOgp4Hq0rSIFm9lr4dwDCzq
-	9aNTVV1kt4rdF5quoQeIWw3Yhvu5LLGdnEKtBMZrnEAzUisasnVaN15NSYiuYiBiQNWPCN2TnhqFp
-	f0bKOOwRFIQXw1yZ47DVa7Ok/5whnusmUft5WmwElaNv18HmppcxorSt+pvYeATh9TBAo5MuAluE/
-	LCJNhvRvOeHWMCruKShtSswCXZgvq1YeTTosGVUkkEBuAMhwz4UhgXeOkH5dd9wnFcF1o/XD4RjhG
-	e+2dQIqNCzryJryANaEg==;
+	List-Owner; bh=CXWyNr+xfJwtXPER2uqKfUx/oPmjrmYjjLlCzLbaaXk=; b=fwvqDXV2HQFDP0
+	NDUAI1xKMKdRaoyFXSG2+KlhdXZt7baLiUd6F6JL464ffaK7g7fj+chp8Q7oDa+JcpiIh+cMjMiV+
+	uS4H//sGW4HrF34MVTXfDYv/3jlNt/H6FWKozO/DHublUEBi4cqJj3mIxFBDgnCYflIeOxXE3lCZG
+	4hoLM2caRhzp3N9OSdpJNu0rmEivZaTQSp1zPXgq6TG/pfetuiVNXkjlLW9lZc998Ey9DsYfN83Bh
+	OXA/pWI4oTGgRYySbvyIbcmkzEzGEOwspQlfSdhRHNp+ncrBp0r3E2COoZorjUhxnyzPiIuyEJLPW
+	E+tTnJsi6zdFWOcH9y2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0OAR-0001Q4-KO; Sat, 08 Feb 2020 11:20:55 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1j0OAl-0001uD-4M; Sat, 08 Feb 2020 11:21:15 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0OA6-0001HY-Ns
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 11:20:35 +0000
-Received: by mail-pl1-x644.google.com with SMTP id c23so846985plz.4
+ id 1j0OAA-0001IP-9m
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 11:20:40 +0000
+Received: by mail-pg1-x543.google.com with SMTP id b9so1189482pgk.12
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 08 Feb 2020 03:20:34 -0800 (PST)
+ Sat, 08 Feb 2020 03:20:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=rE+Lqr7BWztveqyxVXRSXM9/n2K29sIPVQRdU+Uw//I=;
- b=gwxfcX4bJmgje1uEWsgv/EduoPEhphtn2sGzVjXJlrjuHam9hILECZ4Z0gK+xhvHVx
- Sr9l9r/OFrPgQdA9PSSV3cvI0681UR3i55agmmkV/6LKsIcDSBPDnRXe1Wwd4hac8CkF
- 6XF01dXtAnWo/gMQWJK96QwbJ0iIUoVCjL7GamiOaABIzt+QWyX3DUVh0NaWBsbk10bB
- tTt0eozkFC+9cyNjzSlwpgjU35TTDctT8dWtAvM+JX5fw6qycZG/GTcBnOzHnoiKr7YG
- 3hFbqnekyP0ccTg4YVdAS3d1/Sze4z4rCzsvrTTQ1bDoRBjCy5uxh8KTWL+DQ95SOCYw
- LOCQ==
+ bh=cMFbgcmbUqdQyIw1ejvMCost8AXkmggO/zCBoWfvSxE=;
+ b=i3hd97LXx24Px0ZGFjjU7uJ73FH7e9RW3FRGWXIv+XGckgRMO0ijMvltyNq55Rm9AH
+ n8PTDvC13k/+nAEbd+fWKk+hX4kmZn5+uvdrqsHxHFmaWxKD6WHsLMQp71SriTytULOU
+ jG9Pqi7zz/b5bpLqRnZvJQNbGUvzJvQHoBfkd2Ti/E1ERYiC8cWvPpO+julcy6qLxDb5
+ 2zj621274YmNDrsaCY56F1lvVP8wKrVArOBv/gVjq+s2liwghEde0xlLZoxVtP3ENNp4
+ v6uQIRFbP/Ouzdg/B9u4/OrVrbnN7Pf1ivzYUu67wQIDtDKDRxjwfUj9f0JXiar7jA8E
+ ea7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=rE+Lqr7BWztveqyxVXRSXM9/n2K29sIPVQRdU+Uw//I=;
- b=ZHYZHzhJOegdF3Gjx8EVQ/w4Ydz38nFsEQ7i4psaKBYEaHXs5PdKQ6he6V30JVPouZ
- oJLn+Zhqcf91Sli6+/YgmSR56cSl1+6X0KXLG1JT73q9XhVPC6r9X9jZLhh5CN8VHsLX
- p0P7TD6IRVg+0Fz9WAx0Gtp9nuE+qsYW9sHNlNteTg+NBGgM/BNpuR4W72v23D8uy/dn
- 4Xyf2hC8hGZ7ZjYUNc2PXznIo86YyPFuHRAL864rjBFuA4xu1AM6E81mm1rELnqMcu0I
- cqXaB192oXegPxKvswfKcuP3Q4lQqqF5+bUNAk1H0/K8m2MGzQ5E/SC6mhjEAwIRPzaJ
- Q2nA==
-X-Gm-Message-State: APjAAAWw1Uxf2gzyHQcnsTkqP1e6DIpgQ+mUWX7/rGgRQSSy0FSz2Msf
- nFes9wGLZD+etFBMstizJFluXQ==
-X-Google-Smtp-Source: APXvYqy2KvMQ3IcJoBowIYLSZxDRzT9b3NXXZcJoClRM9zbNhDkvEyZlJl8BQnuSNdgC+4bAOXuh9Q==
-X-Received: by 2002:a17:902:9342:: with SMTP id
- g2mr3327247plp.339.1581160833789; 
- Sat, 08 Feb 2020 03:20:33 -0800 (PST)
+ bh=cMFbgcmbUqdQyIw1ejvMCost8AXkmggO/zCBoWfvSxE=;
+ b=HADnPUB4TllUQDLVNBL/T7kGFi8B8mUktye7lzH8mVMv/1KsxqEKkeZwT178las8lg
+ lyh2aaWpbvwM1vUq46ZtLOguhfQxNjcQW1tdDOOY0xhm73YDekYkkDyyzeOKcu9hXKki
+ E3zuFsz8I6taxhz/mgHSum7s/yh2f3EXWSr4eg8mGawFluiehfBvmI8tpM6/CS8NF95W
+ vk8uVWH8RVxibbjemZ6hEEW4hXP/NsiD+o3mcHEj9ky1C2GByXEF4afeSa03LQm7BieA
+ t4t3HEuT7tn7ddCzBThFnlMPHj1bmq837t0C8Bq5dT/GFoRXRm8xiAPtF/OKfN2Cw8uZ
+ 6B7Q==
+X-Gm-Message-State: APjAAAVZkEtbRISNVYmpIuVxKaNebyrfazxtfQpjdQ60HlD4ZOUaLwd0
+ oIn0tZccP03ncw9shf9Et0bMJg==
+X-Google-Smtp-Source: APXvYqwoaKHrcHXpwupKOYooh26scasFONqNkZ3DX99n3tUo/uMW5sozppYK49KlIvzdqiJ5/Nw/yg==
+X-Received: by 2002:aa7:9829:: with SMTP id q9mr3892562pfl.31.1581160835640;
+ Sat, 08 Feb 2020 03:20:35 -0800 (PST)
 Received: from localhost.localdomain
  (99-152-116-91.lightspeed.sntcca.sbcglobal.net. [99.152.116.91])
- by smtp.gmail.com with ESMTPSA id a19sm5707281pju.11.2020.02.08.03.20.32
+ by smtp.gmail.com with ESMTPSA id a19sm5707281pju.11.2020.02.08.03.20.33
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 08 Feb 2020 03:20:32 -0800 (PST)
+ Sat, 08 Feb 2020 03:20:34 -0800 (PST)
 From: Olof Johansson <olof@lixom.net>
 To: torvalds@linux-foundation.org
-Subject: [GIT PULL 1/5] ARM: SoC platform updates
-Date: Sat,  8 Feb 2020 03:20:14 -0800
-Message-Id: <20200208112018.29819-2-olof@lixom.net>
+Subject: [GIT PULL 2/5] ARM: Device-tree updates
+Date: Sat,  8 Feb 2020 03:20:15 -0800
+Message-Id: <20200208112018.29819-3-olof@lixom.net>
 X-Mailer: git-send-email 2.22.GIT
 In-Reply-To: <20200208112018.29819-1-olof@lixom.net>
 References: <20200208112018.29819-1-olof@lixom.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200208_032034_774864_936F4457 
-X-CRM114-Status: GOOD (  13.87  )
+X-CRM114-CacheID: sfid-20200208_032038_349148_86EF7CE4 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -102,10 +101,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Most of these are smaller fixes that have accrued, and some continued
-cleanup of OMAP platforms towards shared frameworks.
+New SoCs:
 
-One new SoC from Atmel/Microchip: sam9x60.
+- Atmel/Microchip SAM9X60 (ARM926 SoC)
+
+- OMAP 37xx gets split into AM3703/AM3715/DM3725, who are all variants
+of it with different GPU/media IP configurations.
+
+- ST stm32mp15 SoCs (1-2 Cortex-A7, CAN, GPU depending on SKU)
+
+- ST Ericsson ab8505 (variant of ab8500) and db8520 (variant of db8500)
+
+- Unisoc SC9863A SoC (8x Cortex-A55 mobile chipset w/ GPU, modem)
+
+- Qualcomm SC7180 (8-core 64bit SoC, unnamed CPU class)
+
+New boards:
+
+- Allwinner
++ Emlid Neutis SoM (H3 variant)
++ Libre Computer ALL-H3-IT
++ PineH64 Model B
+
+- Amlogic
++ Libretech Amlogic GX PC (s905d and s912-based variants)
+
+- Atmel/Microchip:
++ Kizboxmini, sam9x60 EK, sama5d27 Wireless SOM (wlsom1)
+
+- Marvell:
++ Armada 385-based SolidRun Clearfog GTR
+
+- NXP:
++ Gateworks GW59xx boards based on i.MX6/6Q/6QDL
++ Tolino Shine 3 eBook reader (i.MX6sl)
++ Embedded Artists COM (i.MX7ULP)
++ SolidRun CLearfog CX/ITX and HoneyComb (LX2160A-based systems)
++ Google Coral Edge TPU (i.MX8MQ)
+
+- Rockchip
++ Radxa Dalang Carrier (supports rk3288 and rk3399 SOMs)
++ Radxa Rock Pi N10 (RK3399Pro-based)
++ VMARC RK3399Pro SOM
+
+- ST
++ Reference boards for stm32mp15
+
+- ST Ericsson
++ Samsung Galaxy S III mini (GT-I8190)
++ HREF520 reference board for DB8520
+
+- TI OMAP
++ Gen1 Amazon Echo (OMAP3630-based)
+
+- Qualcomm
++ Inforce 6640 Single Board Computer (msm8996-based)
++ SC7180 IDP (SC7180-based)
 
 ----------------------------------------------------------------
 
@@ -115,11 +166,11 @@ The following changes since commit a1a0cfaf7fb7c1a90201e6b0937f742c8c212d8e:
 
 are available in the git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-soc
+  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-dt
 
-for you to fetch changes up to d8430df172118336d050aa61999fb82e55102641:
+for you to fetch changes up to d030a0dd01306d45569c6a4449dee603f994744a:
 
-  Merge tag 'omap-for-v5.6/soc-build-fix-signed' of git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap into arm/soc
+  Merge tag 'ti-k3-soc-for-v5.6-part2' of git://git.kernel.org/pub/scm/linux/kernel/git/kristo/linux into arm/dt
 
 ----------------------------------------------------------------
 
