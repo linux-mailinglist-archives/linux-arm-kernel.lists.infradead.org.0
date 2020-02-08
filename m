@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C1971563F9
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 12:21:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94D451563FB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  8 Feb 2020 12:21:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fjC2BkqJAgJhQ2cbSVJDCJ61hGrGAbYPtqC+8R8kG74=; b=aTKJRRvXALCGz/
-	3ldHn+4BmCaPNCu5z2iqnCDYTL9kvbduBh1gKDngr62royJbG9c3tcuLMWUL7ltWVh2CoPWlH+RqG
-	nDfG3flSE0rHzk2sHlqAql1L3l1kvrMI0Fv6Ca0L0KqxFzCelyQR5NdRwNzWv0i8uv8zF+h0XcBKu
-	tPLwn4TFMRqHfCo0JnGpxiFjyKuZcILTV1ABUQnNJMDF9oNv2+D3EYU4juu9aFzfdfi6lpZWj7eCJ
-	jwf84NLobHn2TD/Y5bVV8bPrGB3DUDmD+zQH1T5JFAbarEV6gSLcjq27jSiB553JJzTd3E3bntd9C
-	KRuQ7PfRwv+ZMmR1oXlw==;
+	List-Owner; bh=FHO0+QAHfNXHazyiGNReieepbZ8li9+gm/agdbDTq94=; b=GEeAfG6Rio0mXT
+	dbRSNboDTwhXoIBKLcd05H+u5amKCCY6JJX0rlLWDI9EZ3t+yBkzNVW0rS8utFAaXKuNx5/qQ6xxi
+	3dE9i6VbLUqRtjCdksBzkLznNmigRkLU+lwnbV1CleAPh1LC8KTjs60IMDExXb1GB5VAtgPkrVr5V
+	35LEzyQVMUnn/T0pinmAdt4MdYOwsnv8c/BPgxjQl9/DCCE1WHo7KxBAEiWLPNzXrv5oB8wMrANtn
+	W3+gU4eEsAl55qqkAw+sQ3b9mYkC/xtfHOkSR4w4Eh2sHXt2N7TKesS2QY2rX8ckZ1ihB1ZyVg1Q3
+	hs/FARdE3/d60dWmjg/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0OAb-0001hR-Ux; Sat, 08 Feb 2020 11:21:05 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1j0OAw-00027G-8g; Sat, 08 Feb 2020 11:21:26 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0OA9-0001Ik-VY
- for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 11:20:39 +0000
-Received: by mail-pl1-x644.google.com with SMTP id j7so854395plt.1
+ id 1j0OAC-0001Kf-5y
+ for linux-arm-kernel@lists.infradead.org; Sat, 08 Feb 2020 11:20:41 +0000
+Received: by mail-pg1-x541.google.com with SMTP id l3so1201625pgi.8
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 08 Feb 2020 03:20:37 -0800 (PST)
+ Sat, 08 Feb 2020 03:20:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=tqOCfGmc24SMcvo9QfZYNC/dA0GyzzcRlwuea8hRFMw=;
- b=OqaDX8gDNZL7bzywbFeSnDV+PtO4S7hYYKnuWVX/uraVfLte8jworWXCZhFgRjQZnS
- f3wzGbRcbYAI4v8++onBGyVQkPK5u0xyaNeomOSQj7NOgK+1XldDxEfmuuKb75CrmuSc
- XOxN5VP7uUAiHc3CnXwdO7nNesP6JAOe+pV0k1F7KMXlrv00z/0FULCKj4JVkRmfvF3a
- tMrnnIxermPR29FRF1skIUgjkIyI4v2MnnMnHfnQAUT+XHhZ7JXw7B+x3lrWexVq1XTT
- myGJz2SItmq9CSLKPsaydYQ89j+LJQVzRipoTybRJ7tvlkNk9v9A2aPnOrwZzvIKEbOJ
- tuNA==
+ bh=/TuNGFz1JcD7T6IDfh5rq70OidRyfNk4PEH1acEnm1Y=;
+ b=XL+flBOTIWxg+yjbLL5ipgbB4fCNCmx0tdgckQrzylmHqrakQWwG3Tzo00aHR5IbBZ
+ qCgEpK8hLISiwRNIMPD7vlYtJl6kwJjWoRfT3WHTRcQeWqPuoYGJynm74cp8C10a7UHV
+ uA6+PS2g7C3llNBpmXKOA0yd/ARLVfHn+XWm5GYhaZaucXCrgbKcb1iXL0aOQiqGHKRT
+ HCfEODsBoPgy8EDG7gZ6vFYrgq8brXMXOJZcIi0zLzrVodDDQgxagaybxmE5J1DccX91
+ xu+sWn3PftBlZ1Rxt7zZD9XpWnRxnyABQ0svMzGAXwD5NfLMHR6R9RZlqnPdlsy+srnw
+ NNTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=tqOCfGmc24SMcvo9QfZYNC/dA0GyzzcRlwuea8hRFMw=;
- b=TNfN7yNKBwGOFkXxET9e9HwfPXiFoNOOk7Gu9FrI7RNFHHSyiZanOsxLqc10Hbtukz
- qLDR4TjMMdSPKLuUw5sTSVTgdCumijFLG5NVlw8D71dnrAJOocYlPdVOA1CEJ2TGobah
- LQUOaZ7mAZgU/Mj3m4hhrqXd/PLZKVh+53CSkV7+zeERFJlpNK++m1EEDH78p3I6evnG
- PM27gGfZovmlVeQpPCAqy1OzCC2zUm+GChpRU2FTED8XLsATIEGhodSI4oLm0f7ZNdpZ
- MszX5tPjB0jve/FESVBv0wZOWFhPTFqKonXwMU47KqhU7GrLhTiReNHHTOcERV2FpKBY
- ELAA==
-X-Gm-Message-State: APjAAAX/B8K+IkMYDi85Qnn1kCtl5v5LNFYl6Lqklm9IKw2QcxSe/vvE
- ToI996uADdHt8X8Ggi4faxib7Q==
-X-Google-Smtp-Source: APXvYqxe8hGUD4x10nmC2TNmnq+AB1g80fNxoA/xjcTn+r5/Z1yD2tbxM/klYVLPrsGHEtyLqNm3Ww==
-X-Received: by 2002:a17:90a:7342:: with SMTP id
- j2mr9363054pjs.92.1581160837356; 
- Sat, 08 Feb 2020 03:20:37 -0800 (PST)
+ bh=/TuNGFz1JcD7T6IDfh5rq70OidRyfNk4PEH1acEnm1Y=;
+ b=NpLu9zzdRGkn1n2oNenqxwrIoIGDvA4l0aNO0jQL9yueqGsL35LiE2fXwbOpKnqNeu
+ fYQG5u9fXKg7OrUf8TkPk9EcT48wHbD7BhqTPkjqwQUhMr12tKOlKgFvmNkscjWJx8cZ
+ +ysrRNosL/unLVK1ZrveaBEpERMkcIUzAT+OGGDBlELXFB7pjF7yHyYleioaj0IyPV6h
+ ox2UOQYqAChnOijqUAAnjQrdeGCRjpwgPmS5ajXVxFau1GoQTO683nPO/GXWENK07yZz
+ STr0EXuWQk7fQzrToHw2Ff1nfSRgBfupdwOq7lQAkZZyWPLY2mTp2jU/+ZZgVRG0LIWd
+ RZJA==
+X-Gm-Message-State: APjAAAX4d7pTRGc30BYWzOa44RGylSstXikySnziWLsWQg35028Gq+K0
+ 8KtfWHlqztN6jYWEmWronQPM/w==
+X-Google-Smtp-Source: APXvYqzqcF7UHN6MhOG6LzgFQ1WYsym1a8kd+pbhCUGC6kcjiHgSR3d5X61zzw1f7lOjMzuhgJ4I8Q==
+X-Received: by 2002:aa7:86c3:: with SMTP id h3mr3589889pfo.243.1581160839243; 
+ Sat, 08 Feb 2020 03:20:39 -0800 (PST)
 Received: from localhost.localdomain
  (99-152-116-91.lightspeed.sntcca.sbcglobal.net. [99.152.116.91])
- by smtp.gmail.com with ESMTPSA id a19sm5707281pju.11.2020.02.08.03.20.35
+ by smtp.gmail.com with ESMTPSA id a19sm5707281pju.11.2020.02.08.03.20.37
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 08 Feb 2020 03:20:36 -0800 (PST)
+ Sat, 08 Feb 2020 03:20:38 -0800 (PST)
 From: Olof Johansson <olof@lixom.net>
 To: torvalds@linux-foundation.org
-Subject: [GIT PULL 3/5] ARM: SoC-related driver updates
-Date: Sat,  8 Feb 2020 03:20:16 -0800
-Message-Id: <20200208112018.29819-4-olof@lixom.net>
+Subject: [GIT PULL 4/5] ARM: SoC defconfig updates
+Date: Sat,  8 Feb 2020 03:20:17 -0800
+Message-Id: <20200208112018.29819-5-olof@lixom.net>
 X-Mailer: git-send-email 2.22.GIT
 In-Reply-To: <20200208112018.29819-1-olof@lixom.net>
 References: <20200208112018.29819-1-olof@lixom.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200208_032038_023445_42174A29 
-X-CRM114-Status: GOOD (  16.34  )
+X-CRM114-CacheID: sfid-20200208_032040_230464_8C192124 
+X-CRM114-Status: GOOD (  14.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -102,36 +101,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Various driver updates for platforms:
-
-- Nvidia: Fuse support for Tegra194, continued memory controller pieces
-for Tegra30
-
-- NXP/FSL: Refactorings of QuickEngine drivers to support ARM/ARM64/PPC
-
-- NXP/FSL: i.MX8MP SoC driver pieces
-
-- TI Keystone: ring accelerator driver
-
-- Qualcomm: SCM driver cleanup/refactoring + support for new SoCs.
-
-- Xilinx ZynqMP: feature checking interface for firmware. Mailbox
-communication for power management
-
-- Overall support patch set for cpuidle on more complex hierarchies
-(PSCI-based)
-
-+ Misc cleanups, refactorings of Marvell, TI, other platforms.
-
-
-
-Conflicts:
-
-drivers/soc/tegra/fuse/tegra-apbmisc.c:
-
-This branch has one conflict due to ioremap_nocache() removal touching
-same lines as some error path fixes for tegra.  Keep the ioremap()
-version of the call, but the rest from this side.
+We keep this in a separate branch to avoid cross-branch conflicts, but
+most of the material here is fairly boring -- some new drivers turned on
+for hardware since they were merged, and some refreshed files due to
+time having moved a lot of entries around.
 
 ----------------------------------------------------------------
 
@@ -141,11 +114,11 @@ The following changes since commit a1a0cfaf7fb7c1a90201e6b0937f742c8c212d8e:
 
 are available in the git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-drivers
+  git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-defconfig
 
-for you to fetch changes up to 88b4750151a2739761bb1af7fedeae1ff5d9aed9:
+for you to fetch changes up to 1342a6aa4abf6a56e83ce24ce5e84243c365ab4d:
 
-  Merge tag 'zynqmp-soc-for-v5.6' of https://github.com/Xilinx/linux-xlnx into arm/drivers
+  Merge tag 'samsung-defconfig-5.6' of https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux into arm/defconfig
 
 ----------------------------------------------------------------
 
