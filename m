@@ -2,84 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9599156A03
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Feb 2020 12:52:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE01B1569FF
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Feb 2020 12:51:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w/TqxccMfUevSXPlS4U9mDY+67VN8RAtTrc4zL8VW8s=; b=MGZUtpXi/zQpon
-	6kR1KlszC3ac+2zqtVdNZtFmGV3yqs97lDQNvTtc2YIOmu2KYUdUV+ZnaUMMAGuNM32N/xFTwLxa8
-	W520HhQ787PabKJTdn58TK4cI6rUW6puscZqRljNheIkHkzXeiVHn0X7KMyHPi1BO6s10/pygjpjR
-	V1FTxqDYi53AyhHoMFjod08AfY/Z7Gs5yg/XR912wMvTxcjr2PXLA6RJl+2Y6hS10HhtSQMZsxIMK
-	Sxphyu77cxBX6v/aM0IMDVP/jthsLrhgn4asnRNADnow6P6jSctyvQcH1lncbWzfbQA07QMPGNSg6
-	jVskYjcYV9P9KvhC1OwQ==;
+	List-Owner; bh=3cQ2AMxkeJ34pE6jMRpVmoEpofWEPwKEe+lWHgPJzGk=; b=JxFUjBPFgRTsFr
+	qNCpMoaUSwYVs4eNMcU/n14lPnb5GC6lLrwM2DuPDMSuOCqUeFQMlQXLPP3VKSd08gcmYmLzddUij
+	Pkh/iSRuZdDdlits0Io5qbjtLzB5f6Vpki3vV5KVWY59kmu3y/q9dhEv47XT9OOLLvF47GLDU3B2u
+	U3jiD3OBWxQoq88du4HhmEHVXcYsy0eFcwLo/wT7Al0uMRlAIelad7mEuNR1byG371ssdKNAYfjY5
+	smzjaQy4idghjmmsDnoCvJb4ZEavQYiYsDWGnlL8jS3DrFpuPAq1qaM1InrPt/IQN1cx62Kbt+1tF
+	gVmZtALvDzSPZJ/cN9AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0l8C-0003LM-Ac; Sun, 09 Feb 2020 11:52:08 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1j0l7j-000348-4A; Sun, 09 Feb 2020 11:51:39 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0l82-0003Kf-G4
- for linux-arm-kernel@lists.infradead.org; Sun, 09 Feb 2020 11:51:59 +0000
-Received: by mail-lj1-x243.google.com with SMTP id q8so3926652ljj.11
+ id 1j0l7b-00033f-L9
+ for linux-arm-kernel@lists.infradead.org; Sun, 09 Feb 2020 11:51:33 +0000
+Received: by mail-io1-xd43.google.com with SMTP id z16so4442973iod.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 09 Feb 2020 03:51:57 -0800 (PST)
+ Sun, 09 Feb 2020 03:51:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=cYfE72YZyxByl4dR2QWGKhFqP7/CoINOriIGeXLOawg=;
- b=NptrmHtYTiL5YgJrYH1ti+K078fPaTfnbfGukV1wYirmvtVfyLHmk1Y4G+sPJKzhtO
- VgRFHCDnWWN+XuVsDUc/DNV0NsDAuA2QOU06s5e1+fW6D8mS1IQM1mZXo/5tOruAXnEz
- 4MjqiZlt4kB0G3I7w9ipN+dGcniokuXyuNBVVhpbVKp4hPGH1jz37zk8Iba/rzzbc43S
- IUejSY2mrWWstTFatbHDPiv2stxA0cAwteuFIXbqAZFLIlyD+iRgkFrkzU9rs6XzYD42
- 8VCyfkaKdOZCtqpix7QOOcXbC0dgvoPIxPEVz8rICA+iBFfrWxPSl/cJVJaN4lxXkrIm
- sAfQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Sq5R9ahAL9Mr9V6FJNbQb8e+IZHCcD5EZ44nzkpqzUA=;
+ b=rBmlLjSw4cvzylmGQGaWwEK/M4bf4HUZwDR+vV13sy12Hys6anu+hkbf665TNop6k3
+ 4gtgDSnKuZ4q4IauPnGHzDtp4ciXm7AQz/jexGEeuHX/8aKtrKCh9lN9PtzM3x0OUjUc
+ GX9DC6VSBkKb2OUjyUgY8Gd9EWiVYqtj1Yox9YywAFnRIBUhIwLzZxz2EXPwaDB8281v
+ YZtVQBu2VtIbOlXJJ3aQfFEbohYVEnlwzifOhebGdMF1iXwOFC5TYUhFa7Z8pOHHnSlu
+ gUA7r3cuz6objWzk6dWGt8K6TZWlb7hcRNFVcZF0kDnT3nOJSDdt56152SGbxZ7OQc49
+ 7rLA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=cYfE72YZyxByl4dR2QWGKhFqP7/CoINOriIGeXLOawg=;
- b=d8Vnndcd1U0vvFsqO05TeUtdI6X0hg+tk7rkT9jP4GOo4nto5Vva1Q1OEIbZtekvxx
- 7SpxfJdieDkPhVhsPRQ4H6MglRL19xlx5S97si4UwJYJ5Zfvo+kTa+1cIFznCOGb4gjQ
- As1iMPCcuUXp5Q009U5w5qt5twJfXi7sNQgJx/rpPZy6yLJXRwwfmRVVao9/F+v61Q3o
- 0BDCLDCgKDOfnwo+P2JVjV56tA/vMQt/YvcNn0wdG/3OitN3iA4MUHLZLW58b57F9OCn
- sGK6kNCpKJqHnGJuBR2FAp9UJ2y5i+ln0OA5YkDlAS8y6qiQSPy8lmfpcArBbF6K0CK9
- dtEw==
-X-Gm-Message-State: APjAAAXke2aAld+dtgU0PlRKAuJDD15YSljCiOVJRYbrZqwgQ0dqjqt6
- X2/Z5kVH4yuXqblVX9quHTC4dg==
-X-Google-Smtp-Source: APXvYqyBJcdgJJntrsixcqZPfIHwYwrfiSxVX8Hkh88iVLuNcb42dKupf9X+gL/jDnv0ncXLtXIzSg==
-X-Received: by 2002:a2e:7e11:: with SMTP id z17mr4960192ljc.279.1581249116367; 
- Sun, 09 Feb 2020 03:51:56 -0800 (PST)
-Received: from localhost (h85-30-9-151.cust.a3fiber.se. [85.30.9.151])
- by smtp.gmail.com with ESMTPSA id 14sm3752313lfz.47.2020.02.09.03.51.54
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 09 Feb 2020 03:51:55 -0800 (PST)
-Date: Sun, 9 Feb 2020 03:44:22 -0800
-From: Olof Johansson <olof@lixom.net>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH 2/2] ARM: configs: Cleanup old Kconfig options
-Message-ID: <20200209114422.as5xpytakhaa3vur@localhost>
-References: <20200130195525.4525-1-krzk@kernel.org>
- <20200130195525.4525-2-krzk@kernel.org>
- <9f8a0a8e09893e7087d2212fb0eeb94a908b7be1.camel@perches.com>
- <CAJKOXPf5Mf4FCmtME5yJsBZeP8BkYJgcxkKzS2hd-gp-mq3nag@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Sq5R9ahAL9Mr9V6FJNbQb8e+IZHCcD5EZ44nzkpqzUA=;
+ b=YIynCH7+W1IvvGyy3705B17LEjSNqMzTNTyKt9pUC7o43Gelf2QwhXwayP2DvZhgcH
+ m9FCrYQB+PYN+vjUKhNF7J5ck69+figAhLf2hyFnq4KjSn5UdOLWgoMENQNpN7emnJDh
+ yUojl6/lq+lC9NMKJnnL96cw2+ivzfNV7U/DUxLB78Kdqsuvr8I5Q0lvQXRRKH7ZxD2M
+ pJOmSWGot3RGHHteJqJvSWcthEScCl73tXWTCg7xnqrK6hbFFcXz7qOEAhiBpsqcFVWC
+ p2WHVUUklfiriJkkB4kDjW6BN5zSR/LqT5yQAx6OIXLuSIdakfOlWhmXUKD85xYE3/s9
+ vkMA==
+X-Gm-Message-State: APjAAAXUEgK3J3Xa5WQTE4snVr7qtojV/nQye8h4YT7Rj/NId/I4JITZ
+ /l5xBLSgRtR92SqzAedtTeIGzwPfub8+ZQAfeO7dtA==
+X-Google-Smtp-Source: APXvYqyP38/P/44KzhWmMAfgVYgenviQtbgEKHBvrLKpW/Fper4GxgsFbB9OaHlLMZH9rSCS1/149yVurtFzf86rrTo=
+X-Received: by 2002:a6b:b24c:: with SMTP id b73mr5153842iof.277.1581249088923; 
+ Sun, 09 Feb 2020 03:51:28 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJKOXPf5Mf4FCmtME5yJsBZeP8BkYJgcxkKzS2hd-gp-mq3nag@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <c6f76adc-b32f-a64f-c7b1-417a26de1667@st.com>
+In-Reply-To: <c6f76adc-b32f-a64f-c7b1-417a26de1667@st.com>
+From: Olof Johansson <olof@lixom.net>
+Date: Sun, 9 Feb 2020 12:51:17 +0100
+Message-ID: <CAOesGMhxN3MW69EcJ_DigrvfruHzACNP8J-JOR9GmCnk4Tjodw@mail.gmail.com>
+Subject: Re: [GIT PULL] STi DT update for v5.6 round 1
+To: Patrice CHOTARD <patrice.chotard@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_035158_539021_7C74FECD 
-X-CRM114-Status: GOOD (  21.65  )
+X-CRM114-CacheID: sfid-20200209_035131_716891_4C0D6FD6 
+X-CRM114-Status: GOOD (  14.54  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,81 +87,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tomer Maimon <tmaimon77@gmail.com>, Tony Lindgren <tony@atomide.com>,
- Liviu Dudau <liviu.dudau@arm.com>, Tali Perry <tali.perry1@gmail.com>,
- Fabio Estevam <festevam@gmail.com>, linux-stm32@st-md-mailman.stormreply.com,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Benjamin Fair <benjaminfair@google.com>, Alexander Shiyan <shc_work@mail.ru>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, openbmc@lists.ozlabs.org,
- Russell King <linux@armlinux.org.uk>, Nancy Yuen <yuenn@google.com>,
- arm@kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Uwe Kleine-K??nig <u.kleine-koenig@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Arnd Bergmann <arnd@arndb.de>,
- Sascha Hauer <s.hauer@pengutronix.de>, Vladimir Zapolskiy <vz@mleia.com>,
- soc@kernel.org, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Avi Fishman <avifishman70@gmail.com>,
- Patrick Venture <venture@google.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Sudeep Holla <sudeep.holla@arm.com>, Joe Perches <joe@perches.com>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: "khilman@baylibre.com" <khilman@baylibre.com>,
+ "arm@kernel.org" <arm@kernel.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 03, 2020 at 12:52:45PM +0100, Krzysztof Kozlowski wrote:
-> On Thu, 30 Jan 2020 at 23:06, Joe Perches <joe@perches.com> wrote:
-> >
-> > On Thu, 2020-01-30 at 20:55 +0100, Krzysztof Kozlowski wrote:
-> > > CONFIG_MMC_BLOCK_BOUNCE is gone since commit c3dccb74be28 ("mmc: core:
-> > > Delete bounce buffer Kconfig option").
-> > >
-> > > CONFIG_LBDAF is gone since commit 72deb455b5ec ("block: remove
-> > > CONFIG_LBDAF").
-> > >
-> > > CONFIG_IOSCHED_DEADLINE and CONFIG_IOSCHED_CFQ are gone since
-> > > commit f382fb0bcef4 ("block: remove legacy IO schedulers").
-> > >
-> > > The IOSCHED_DEADLINE was replaced by MQ_IOSCHED_DEADLINE and it will be
-> > > now enabled by default (along with MQ_IOSCHED_KYBER).
-> > >
-> > > The IOSCHED_BFQ seems to replace IOSCHED_CFQ so select it in configs
-> > > previously choosing the latter.
-> > >
-> > > CONFIG_CROSS_COMPILE is gone since commit f1089c92da79 ("kbuild: remove
-> > > CONFIG_CROSS_COMPILE support").
-> >
-> > Hi Krzysztof.
-> >
-> > There seems there are a lot more of these unused CONFIG_<foo>
-> > symbols in various defconfigs. (just for arm and treewide below)
-> >
-> > ARM defconfigs:
-> 
-> Hi Joe,
-> 
-> Nice finding! The trickier point is to nicely remove them because:
-> 1. The easiest is 'savedefconfig' but then some valuable options might
-> disappear (like recently happened with DEBUG_FS),
+Hi Patrice,
 
-Note that while they disappear from the defconfig, they were already not part
-of the build. So kernels have been built without them for a while. It's a good
-way to surface the problem, but it's pretty clear that trees fall in the forest
-here all the time and nobody is noticing.
+[Please also cc soc@kernel.org on pull requests, since they then end
+up in our patchwork and we're less likely to miss them]
 
-> 2. They could be removed in automated way with a script. However in
-> such case what about replacements? If some symbol was replaced with
-> other (or just renamed), maybe we should enable the other one to
-> restore the desired functionality?
-> 3. Or maybe let's don't care about keeping defconfigs stable and just
-> clean them up automatically.
+On Tue, Feb 4, 2020 at 1:37 PM Patrice CHOTARD <patrice.chotard@st.com> wrote:
+>
+> Hi Arnd, Olof, Kevin
+>
+> Please find STi dt update for v5.6 round 1:
 
-Churning defconfigs is just noise, and a source of annoying needless
-conflicts when people do it at the same time. If an option is no longer
-in-tree, it doesn't do any harm. But it makes sense to clean up every
-now and then like the original patch here.
+The timing for this is bad. Material should arrive to our tree around
+-rc6 timeframe for the previous release, for us to have time to merge
+it and expose it in linux-next for a while before the merge window
+opens.
+
+>
+> The following changes since commit d5226fa6dbae0569ee43ecfc08bdcd6770fc4755:
+>
+>
+>   Linux 5.5 (2020-01-26 16:23:03 -0800)
+
+... we also ask that the incoming branches are based on rc1 or rc2 of
+the previous release, not the latest possible release (unless there's
+a good reason for it).
+
+>
+> are available in the Git repository at:
+>
+>   git@gitolite.kernel.org:pub/scm/linux/kernel/git/pchotard/sti.git tags/sti-dt-for-5.6-round1
+
+Please use the public git:// or https:// versions in pull requests.
+
+> for you to fetch changes up to 21eebae9a11ff18fe6d6b43adccadd533abdf0d6:
+>
+>   ARM: stihxxx-b2120.dtsi: fixup sound frame-inversion (2020-02-04 11:21:37 +0100)
+>
+> ----------------------------------------------------------------
+> STi dt fixes:
+> -------------
+>   - remove deprecated Synopsys PHY dt properties
+>   - fix sound frame-inversion property
+>
+> ----------------------------------------------------------------
+> Kuninori Morimoto (1):
+>       ARM: stihxxx-b2120.dtsi: fixup sound frame-inversion
+>
+> Patrice Chotard (1):
+>       ARM: dts: stih410-b2260: Remove deprecated snps PHY properties
+
+It's a good idea to keep a reasonably consistent prefix usage. "ARM:
+dts: <platform>:" is what we prefer, so feel free to touch that up for
+patches that you apply.
 
 
 -Olof
