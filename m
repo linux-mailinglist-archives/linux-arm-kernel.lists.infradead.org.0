@@ -2,92 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2C45156836
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Feb 2020 01:01:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F29B156845
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  9 Feb 2020 02:08:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u/pjuuVay/tyF5otFgJtWAXYwiMPTeeFfOF2KvaMD84=; b=EqhMM3w7+BKEQq
-	YQrITq6Y/tGhee4/GVgeP+EswEV/uZjfEb2mKGWWUgdzq+BUnsS7rOJ0hlF/o45CJWjvIVCib1Tdr
-	PqEVEM1+ldY0PkNqPydqg0ou1dO2TIFjO99idzSFCjl29SqtHj+FHOjzqorIHafvqIhL6LiiSxXWV
-	grqB1BEqcocDc11/nbZ4P0VCGPh6CmzB2PPxoTi4OmYfErWmpLol/YYPVe4lnovjI9OqeEe3yUvd1
-	D5UzinbmbLBKxyhhxJvAtD0mocvSe2FuW49ksVoNMgnZzeBYjpIJzJYR5hjyo/8GKP4FAHnUA0vZz
-	DCeNtatg03T+jZrmPB/Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PbsbLEKYjH8QV71BO9eWTfaxYA1KCzSwGYiksjTeprs=; b=sOblBLYHMRExlb
+	e3oKQrx/D1+ZDaSeBZk7/v49zIqzatX5EfCqJhoprsV2vdIUaAMQnlHpyeLjQilcJmD13TRHIe6FD
+	1yFmX2NLut3thBIlBJJ58YcgCpeG1mSHyv2Cel+nQi3ETd5In7M2XE+LD76wXyc22jLWb3ciWpjZY
+	PBEE75V+vDZhEygE1uyW9N2Ou1oPC3OjOxljIOEQi0NaiBcsdjYQcUol9as/FgvkuCmi7k39kyyis
+	55ydytZPPsL14GtlCJyAh5H1BsJoeBXWhae8h+1Cqc4w2G/s8AMDi2LD24nNpDs85PsKmlPYof10T
+	GRVOAueMuSc8uMVgcl3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0a2D-0003gx-Gv; Sun, 09 Feb 2020 00:01:13 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1j0b54-0000Gh-6c; Sun, 09 Feb 2020 01:08:14 +0000
+Received: from mail2.vany.ca ([142.54.190.254])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0a27-0003gA-Kk
- for linux-arm-kernel@lists.infradead.org; Sun, 09 Feb 2020 00:01:09 +0000
-Received: by mail-pg1-x543.google.com with SMTP id u131so1809409pgc.10
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 08 Feb 2020 16:01:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=KWYuYSQscJFjEOwJSH3DjqreOwAqOvNwuPxdqRtzkyQ=;
- b=tsY6c8Zp34BFWVlO3JnG99l/nv2GxJEIYPNYCJeVPEdmpzAgBvVD/d98DcL2DPJ1E8
- 1owKgkk198flFbdTlEDw2yUcI6MWJKIq8ydFRJW6fBp00zwBIDtE7Pzw6nyR+Qck10VO
- lQzO5qBNnOdKWn3Y61SCHqAxkkZf1EkvLrQDHlavWfQiNi0lUjQMNpYDM7fF8Rzw+zqQ
- amqTFnRjGKcGRGHW1yi+eUbOHM3t8cu3/rcI71EwTlH05H+F2b5IYN6Lu4de+Og3NCk6
- H5J7+cEkkvyIP1pTvE+fTQTR3TsXvDNOvX61hK8eIBoSe6fLYYveggHJocO2G4bDWWZe
- y2+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=KWYuYSQscJFjEOwJSH3DjqreOwAqOvNwuPxdqRtzkyQ=;
- b=iTKaFx5Ibh921uEmOvmCYIFEEnImcXe9y0c7troMdxoDnJ+F9jcLg7iQ4cxP9ceW0p
- hh/rQTfqQJ6YypAiweh4i56DwF2ceVwEzWFxPzuwswsXv10nnAi9aRDiomlU6kpjUUzv
- +FoRJQsjSLGskspvBnelXJwIVdtu335VeLN+nuVmg5RM89Fnegb5LtwhOesf+FMHe/XN
- U0jWjNUumGXbjN9yMMTElACnT4ff9AV64O6w/XQawU6waUizXuofgaTQtfmEwM0CvfAk
- PXDgWqYI+HusJPxSMsS92VXGj/Bueg0Eob5PgYdD0iWZs6l/jszL7GNCbgnnZmT8RXob
- NxvQ==
-X-Gm-Message-State: APjAAAV5aTAEhJ0EHW2BktkqOcH/rjd+z5dZmz3T7hpaFNCPavOSElbv
- nsiOyyJZPZexIb6w973TC0pY3Q==
-X-Google-Smtp-Source: APXvYqzR0flCofwFqUkheDzbGPVFJIBJyNBgBn7Z4+U50I3hGaNFRhfapXdIj2fQ490UigbTwQpbDg==
-X-Received: by 2002:a63:d207:: with SMTP id a7mr6908057pgg.225.1581206464258; 
- Sat, 08 Feb 2020 16:01:04 -0800 (PST)
-Received: from ripper (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id l15sm5955972pgi.31.2020.02.08.16.01.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 08 Feb 2020 16:01:03 -0800 (PST)
-Date: Sat, 8 Feb 2020 16:00:17 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Subject: Re: [PATCH 1/2] iommu: arm-smmu-impl: Convert to a generic reset
- implementation
-Message-ID: <20200209000017.GD955802@ripper>
-References: <cover.1579692800.git.saiprakash.ranjan@codeaurora.org>
- <e7ba4dbd8e9c8aedd6f5db1b3453d9782b7943cd.1579692800.git.saiprakash.ranjan@codeaurora.org>
+ id 1j0b4x-0000Fp-GG; Sun, 09 Feb 2020 01:08:09 +0000
+Received: from [172.16.0.39] (unknown [71.224.210.99])
+ by mail2.vany.ca (Postfix) with ESMTPSA id 62253AC0100;
+ Sat,  8 Feb 2020 19:07:52 -0600 (CST)
+Subject: Re: [PATCH] arm64: dts: rockchip: Fix rk3328-roc-cc sdmmcio-regulator
+To: Peter Geis <pgwipeout@gmail.com>
+References: <87imkryz5t.fsf@vany.ca>
+ <7b9829b3-e2d2-95b1-03cb-1af7a3c6acad@arm.com>
+ <4a6a9d81-c831-4167-7fbf-64805940fb6f@vany.ca>
+ <d8a8b696-268b-1ea8-7b5e-406a651011ff@arm.com>
+ <510d310b-30af-7b24-d472-907bc6b2ef46@vany.ca>
+ <CAMdYzYo5V2rHE6Axx9p67n3FcCFpQ5TA+m7kqaE3Uqn6d0QUhw@mail.gmail.com>
+ <7b36198e-25c0-4f3b-d871-6bd5aaf619d8@vany.ca>
+ <CAMdYzYp_dVjn18-6gy5MVpuGcOpf26eaPitfNZhARCixfrtYCA@mail.gmail.com>
+ <2f863743-f5fd-7702-ac22-762dbca834cb@vany.ca>
+ <CAMdYzYopKjRpVnyq2k84XZK0kmR_ZBH8KNjVyPz3upQjx0rLJQ@mail.gmail.com>
+From: Adam Van Ymeren <adam@vany.ca>
+Message-ID: <88ee95cc-4160-a1b2-ae38-6a1146cc2dde@vany.ca>
+Date: Sat, 8 Feb 2020 20:07:50 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Icedove/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e7ba4dbd8e9c8aedd6f5db1b3453d9782b7943cd.1579692800.git.saiprakash.ranjan@codeaurora.org>
+In-Reply-To: <CAMdYzYopKjRpVnyq2k84XZK0kmR_ZBH8KNjVyPz3upQjx0rLJQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200208_160107_743555_7C86F590 
-X-CRM114-Status: GOOD (  19.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200208_170807_614781_7240493D 
+X-CRM114-Status: GOOD (  18.79  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,106 +66,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Clark <robdclark@gmail.com>, Tomasz Figa <tfiga@chromium.org>,
- Rajendra Nayak <rnayak@codeaurora.org>, Will Deacon <will@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
- linux-kernel@vger.kernel.org, Jordan Crouse <jcrouse@codeaurora.org>,
- Matthias Kaehlcke <mka@chromium.org>, linux-arm-msm@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Robin Murphy <robin.murphy@arm.com>,
+Cc: "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>, Heiko Stuebner <heiko@sntech.de>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 22 Jan 03:48 PST 2020, Sai Prakash Ranjan wrote:
-
-> Currently the QCOM specific smmu reset implementation is very
-> specific to SDM845 SoC and has a wait-for-safe logic which
-> may not be required for other SoCs. So move the SDM845 specific
-> logic to its specific reset function. Also add SC7180 SMMU
-> compatible for calling into QCOM specific implementation.
-> 
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-
-Regards,
-Bjorn
-
-> ---
->  drivers/iommu/arm-smmu-impl.c |  8 +++++---
->  drivers/iommu/arm-smmu-qcom.c | 16 +++++++++++++---
->  2 files changed, 18 insertions(+), 6 deletions(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu-impl.c b/drivers/iommu/arm-smmu-impl.c
-> index 74d97a886e93..c75b9d957b70 100644
-> --- a/drivers/iommu/arm-smmu-impl.c
-> +++ b/drivers/iommu/arm-smmu-impl.c
-> @@ -150,6 +150,8 @@ static const struct arm_smmu_impl arm_mmu500_impl = {
->  
->  struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
->  {
-> +	const struct device_node *np = smmu->dev->of_node;
-> +
->  	/*
->  	 * We will inevitably have to combine model-specific implementation
->  	 * quirks with platform-specific integration quirks, but everything
-> @@ -166,11 +168,11 @@ struct arm_smmu_device *arm_smmu_impl_init(struct arm_smmu_device *smmu)
->  		break;
->  	}
->  
-> -	if (of_property_read_bool(smmu->dev->of_node,
-> -				  "calxeda,smmu-secure-config-access"))
-> +	if (of_property_read_bool(np, "calxeda,smmu-secure-config-access"))
->  		smmu->impl = &calxeda_impl;
->  
-> -	if (of_device_is_compatible(smmu->dev->of_node, "qcom,sdm845-smmu-500"))
-> +	if (of_device_is_compatible(np, "qcom,sdm845-smmu-500") ||
-> +	    of_device_is_compatible(np, "qcom,sc7180-smmu-500"))
->  		return qcom_smmu_impl_init(smmu);
->  
->  	return smmu;
-> diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
-> index 24c071c1d8b0..64a4ab270ab7 100644
-> --- a/drivers/iommu/arm-smmu-qcom.c
-> +++ b/drivers/iommu/arm-smmu-qcom.c
-> @@ -15,8 +15,6 @@ static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
->  {
->  	int ret;
->  
-> -	arm_mmu500_reset(smmu);
-> -
->  	/*
->  	 * To address performance degradation in non-real time clients,
->  	 * such as USB and UFS, turn off wait-for-safe on sdm845 based boards,
-> @@ -30,8 +28,20 @@ static int qcom_sdm845_smmu500_reset(struct arm_smmu_device *smmu)
->  	return ret;
->  }
->  
-> +static int qcom_smmu500_reset(struct arm_smmu_device *smmu)
-> +{
-> +	const struct device_node *np = smmu->dev->of_node;
-> +
-> +	arm_mmu500_reset(smmu);
-> +
-> +	if (of_device_is_compatible(np, "qcom,sdm845-smmu-500"))
-> +		return qcom_sdm845_smmu500_reset(smmu);
-> +
-> +	return 0;
-> +}
-> +
->  static const struct arm_smmu_impl qcom_smmu_impl = {
-> -	.reset = qcom_sdm845_smmu500_reset,
-> +	.reset = qcom_smmu500_reset,
->  };
->  
->  struct arm_smmu_device *qcom_smmu_impl_init(struct arm_smmu_device *smmu)
-> -- 
-> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-> of Code Aurora Forum, hosted by The Linux Foundation
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+R290IGl0IHdvcmtpbmcuIFJvYmluIHlvdSB3ZXJlIHJpZ2h0LCBpdCBqdXN0IG5lZWRlZCBlbmFi
+bGUtYWN0aXZlLWhpZ2g7CmFkZGVkIHRvIHRoZSByZWd1bGF0b3IsIHVwZGF0ZWQgcGF0Y2ggYXQg
+dGhlIGVuZCBvZiB0aGlzIG1lc3NhZ2UuCgpJIHdlbnQgYmFjayBvdmVyIG15IGNvbmZpZyB3aXRo
+IGEgZmluZSB0b290aCBjb21iIGFuZCBmb3VuZCBhIGZldwpyb2NrY2hpcCBkcml2ZXJzIEkgd2Fz
+IG1pc3NpbmcgaW5jbHVkaW5nIFBJTkNUUkxfUks4MDUgd2hpY2ggc2VlbXMKcmVsYXRlZCBidXQg
+SSBob25lc3RseSBjYW4ndCBmaWd1cmUgb3V0IGhvdy7CoCBJIHdpbGwgdHJ5IHRvIG5hcnJvdyBk
+b3duCndoaWNoIHNwZWNpZmljIGRyaXZlciB3YXMgbWlzc2luZy7CoCBJdCB3YXMgb2RkIGJlY2F1
+c2UgaXQgd291bGQgZmluZCB0aGUKbW1jIGhvc3QgYnV0IGp1c3QgZmFpbCBub3RpY2UgdGhhdCBh
+IGNhcmQgd2FzIHByZXNlbnQuwqAgSXQgc2VlbWVkIHRvIHNldAp0aGUgcmVnaXN0ZXIgY29ycmVj
+dGx5IGFuZCBpZGVudGlmeSB0aGUgbW1jIGhvc3QsIGJ1dCBmYWlsZWQgdG8gbm90aWNlCmFueSBj
+YXJkIHByZXNlbnQuCgpJIGhhdmVuJ3QgeWV0IHRlc3RlZCB0aGlzIHdpdGggYSBoaWdoIHNwZWVk
+IGNhcmQgeWV0IHRvIHZlcmlmeSAxLjh2CnNpZ25hbGluZyB3b3JrcyBidXQgSSdsbCBmaW5kIG9u
+ZSBhbmQgZ2l2ZSBpdCBhIHNob3QuCgpUaGFua3MgYSB0b24gdG8gYm90aCBvZiB5b3VyIGZvciB0
+aGUgaGVscAoKCk9uIDIwMjAtMDItMDUgMTo0MyBwLm0uLCBQZXRlciBHZWlzIHdyb3RlOgo+Pj4g
+Rmlyc3QgcXVlc3Rpb24sIHdoaWNoIGtlcm5lbCBhcmUgeW91IHJ1bm5pbmc/Cj4+PiBDdXJyZW50
+IG1haW5saW5lICg1LjQuMTcpIHdvcmtzIG91dCBvZiB0aGUgYm94IGZvciB0aGUgcmszMzI4LXJv
+Yy1jYy4KPj4gTm90IGZyb20gbXkgZXhwZXJpZW5jZS4gIEknbSB0cnlpbmcgNS41LCBidXQgSSBh
+bHNvIHRyaWVkIGEgZnJlc2ggYnVpbGQKPj4gb3QgNS40LjE3IGFuZCBuZWl0aGVyIHdpbGwgbG9h
+ZCBmcm9tIHRoZSBzZGNhcmQgaW4gdGhlaXIgZGVmYXVsdAo+PiBjb25maWd1cmF0aW9uLiAgSWYg
+eW91IGhhdmUgdGhpcyB3b3JraW5nIGNhbiB5b3Ugc2hhcmUgeW91ciBrZXJuZWwgY29uZmlnPwo+
+IENvbnNpZGVyaW5nIGFsbCBvZiB0aGUgY29tcG9uZW50cyB0byBib290IG9mZiBlbW1jICh3aGlj
+aCB5b3UgYXJlCj4gY2xlYXJseSBkb2luZyBzaW5jZSB5b3UgYm9vdCBhdCBhbGwpIGFyZSB0aGUg
+c2FtZSBhcyB0aGUgb25lcyByZXF1aXJlZAo+IGZvciBzZG1tYyBJIGRvdWJ0IGl0J3MgYSBjb25m
+aWd1cmF0aW9uIGlzc3VlLgo+IEJ1dCB0byBhbnN3ZXIgeW91ciBxdWVzdGlvbiwgSSB1c2VkIHRo
+ZSBkZWZjb25maWcsIHN0cmlwcGVkIGFsbCBvZiB0aGUKPiBub24gcm9ja2NoaXAgY29tcG9uZW50
+cyBvdXQsIGFuZCBtYWRlIHRoZSBiYXNlIGRyaXZlcnMgYnVpbHRpbi4KClNvIEkgd2Fzbid0IGJv
+b3Rpbmcgb2ZmIG9mIGVtbWMuwqAgSSB3YXMgYm9vdGluZyBmcm9tIHRoZSBzZGNhcmQsIGl0Cndv
+dWxkIHdvcmsgc28gbG9uZyBhcyBJIHByZXZlbnRlZCB0aGUga2VybmVsIGZyb20gdHJ5aW5nIHRv
+IGluaXRpYWxpemUKdGhlIHZjY19zZGlvIHJlZ3VsYXRvciAoYnkgcmVtb3ZpbmcgaXQgb3IgY2hh
+bmdpbmcgdGhlIGdwaW8gcGluKSwKcHJlc3VtYWJseSBhcyB1LWJvb3QgbGVmdCBpdCBpbiBhIHJl
+YXNvbmFibGUgc3RhdGUuCgo+IE1ha2VzIHNlbnNlLiBJZiBJIHJlbW92ZSB2Y2Nfc2RpbyBmcm9t
+IHRoZSBkZXZpY2UgdHJlZSwgYW5kIHJlbW92ZSB0aGUKPj4gdnFtbWMgZW50cnkgZnJvbSB0aGUg
+c2RtbWMgbm9kZSwgdGhlbiB0aGUga2VybmVsIGNvbnRpbnVlcyB0byBib290LiAgSW4KPj4gdGhh
+dCBjYXNlIEkgaGF2ZQo+Pgo+PiAjIGNhdCAvc3lzL2tlcm5lbC9kZWJ1Zy9yZWdtYXAvZHVtbXkt
+c3lzY29uXEBmZjEwMDAwMC9yZWdpc3RlcnMgfCBncmVwIDQyOAo+Pgo+PiA0Mjg6IDAwMDBmODAw
+Cj4gQXMgaXQgc2hvdWxkIGJlLCB0aGlzIHNob3VsZCBtZWFuIHlvdXIgbXV0ZSBwaW4gaXMgb2Zm
+IChkZWZhdWx0IHN0YXRlKQo+IGFuZCB0aGUgdnFtbWMgdm9sdGFnZSBzaG91bGQgYmUgMy4zdi4K
+CkdvdGNoYS7CoCBJIGFsc28gbWFuYWdlZCB0byB2ZXJpZnkgdGhpcyB3b3JrcyBhcyBleHBlY3Rl
+ZCBvbiBteSBib2FyZAp3aXRoIGEgbXVsdGltZXRlciBhbmQgdG9nZ2xpbmcgdGhlIHJlZ2lzdGVy
+IGZyb20gdGhlIHUtYm9vdCBzaGVsbC4KCj4KPj4gIyBjYXQgL3N5cy9rZXJuZWwvZGVidWcvbW1j
+MS9pb3MKPj4gY2xvY2s6ICAgICAgICAwIEh6Cj4+IHZkZDogICAgICAgIDAgKGludmFsaWQpCj4+
+IGJ1cyBtb2RlOiAgICAyIChwdXNoLXB1bGwpCj4+IGNoaXAgc2VsZWN0OiAgICAwIChkb24ndCBj
+YXJlKQo+PiBwb3dlciBtb2RlOiAgICAwIChvZmYpCj4+IGJ1cyB3aWR0aDogICAgMCAoMSBiaXRz
+KQo+PiB0aW1pbmcgc3BlYzogICAgMCAobGVnYWN5KQo+PiBzaWduYWwgdm9sdGFnZTogICAgMCAo
+My4zMCBWKQo+PiBkcml2ZXIgdHlwZTogICAgMCAoZHJpdmVyIHR5cGUgQikKPiBJdCdzIG5vdCBk
+ZXRlY3RpbmcgYW55dGhpbmcgYXQgYWxsLgo+IFlvdSBzYXkgeW91IGJvb3RlZCBvZmYgdGhpcyBj
+YXJkPwpTbyB0aGlzIGlzIGJvb3Rpbmcgd2hlbiBJIGRpc2FibGVkIHZjY19zZGlvIGFuZCBqdXN0
+IGxlZnQgaXQgaW4gdGhlCnN0YXRlIHRoYXQgdS1ib290IGxlZnQgaXQgaW4sIHdoaWNoIGlzIHBy
+b2JhYmx5IHdoZXJlIHRoZSBub25zZW5zaWNhbApvdXRwdXQgY29tZXMgZnJvbS4KPgo+IENvdWxk
+IHlvdSBydW4gYSBgZG1lc2cgfCBncmVwIG1tY2AgYW5kIHNlbmQgYWxsIHRoZSByZXN1bHRzPwoK
+SGVyZSdzIGEgc2xpZ2h0bHkgc2NydWJiZWQgbG9nIG9mIG9uZSBvZiBteSBmYWlsZWQgYm9vdHMu
+wqAgSSBsZWZ0IGluIG15CnRyYWNlcyBvZiByZWdpc3RlciB3cml0ZXMgdG8gNDI4IGFuZCBncGlv
+LXJlZ3VsYXRvciBzdGF0ZSBjaGFuZ2VzLgoKW8KgwqDCoCAwLjAwMDAwMF0gS2VybmVsIGNvbW1h
+bmQgbGluZTogZWFybHljb249dWFydDgyNTAsbW1pbzMyLDB4ZmYxMzAwMDAKY29uc29sZT10dHlT
+MiwxNTAwMDAwIHJ3IHJvb3Q9L2Rldi9tbWNibGswcDUgaW5pdD0vc2Jpbi9pbml0CmtnZGJvYz10
+dHlTMiwxNTAwMDAwIGR5bmFtaWNfZGVidWcudmVyYm9zZT0xIGxvZ2xldmVsPTcgZHluZGJnPSJt
+b2R1bGUKZHdfbW1jICtwIDsgbW9kdWxlIGR3X21tY19yb2NrY2hpcCArcCA7IG1vZHVsZSBtbWNf
+Y29yZSArcCIKPHNuaXA+ClvCoMKgwqAgMC43OTM3NTBdIGR3bW1jX3JvY2tjaGlwIGZmNTAwMDAw
+LmR3bW1jOiBJRE1BQyBzdXBwb3J0cyAzMi1iaXQKYWRkcmVzcyBtb2RlLgpbwqDCoMKgIDAuNzk0
+NDAyXSBkd21tY19yb2NrY2hpcCBmZjUwMDAwMC5kd21tYzogVXNpbmcgaW50ZXJuYWwgRE1BIGNv
+bnRyb2xsZXIuClvCoMKgwqAgMC43OTg1ODJdIGR3bW1jX3JvY2tjaGlwIGZmNTAwMDAwLmR3bW1j
+OiBWZXJzaW9uIElEIGlzIDI3MGEKW8KgwqDCoCAwLjgwMTE5NF0gZHdtbWNfcm9ja2NoaXAgZmY1
+MDAwMDAuZHdtbWM6IERXIE1NQyBjb250cm9sbGVyIGF0IGlycQoyOSwzMiBiaXQgaG9zdCBkYXRh
+IHdpZHRoLDI1NiBkZWVwIGZpZm8KW8KgwqDCoCAwLjgxNTQzN10gZHdtbWNfcm9ja2NoaXAgZmY1
+MjAwMDAuZHdtbWM6IElETUFDIHN1cHBvcnRzIDMyLWJpdAphZGRyZXNzIG1vZGUuClvCoMKgwqAg
+MC44MjAyNzNdIGR3bW1jX3JvY2tjaGlwIGZmNTIwMDAwLmR3bW1jOiBWZXJzaW9uIElEIGlzIDI3
+MGEKW8KgwqDCoCAwLjgyMjkwNF0gZHdtbWNfcm9ja2NoaXAgZmY1MjAwMDAuZHdtbWM6IERXIE1N
+QyBjb250cm9sbGVyIGF0IGlycQozMCwzMiBiaXQgaG9zdCBkYXRhIHdpZHRoLDI1NiBkZWVwIGZp
+Zm8KW8KgwqDCoCAwLjgyNTUyN10gbW1jX2hvc3QgbW1jMDogY2FyZCBpcyBub24tcmVtb3ZhYmxl
+LgpbwqDCoMKgIDAuODM4NzcwXSBtbWNfaG9zdCBtbWMwOiBCdXMgc3BlZWQgKHNsb3QgMCkgPSA0
+MDAwMDBIeiAoc2xvdCByZXEKNDAwMDAwSHosIGFjdHVhbCA0MDAwMDBIWiBkaXYgPSAwKQpbwqDC
+oMKgIDAuODg4ODg2XSBBREFNVlkgUmVnbWFwIHdyaXRlIDQyOCA8PSAyZjgwMgpbwqDCoMKgIDAu
+OTA0MjE4XSBkd21tY19yb2NrY2hpcCBmZjUwMDAwMC5kd21tYzogSURNQUMgc3VwcG9ydHMgMzIt
+Yml0CmFkZHJlc3MgbW9kZS4KW8KgwqDCoCAwLjkwNDg3MF0gZHdtbWNfcm9ja2NoaXAgZmY1MDAw
+MDAuZHdtbWM6IFVzaW5nIGludGVybmFsIERNQSBjb250cm9sbGVyLgpbwqDCoMKgIDAuOTA5MDU1
+XSBkd21tY19yb2NrY2hpcCBmZjUwMDAwMC5kd21tYzogVmVyc2lvbiBJRCBpcyAyNzBhClvCoMKg
+wqAgMC45MTE2MzddIGR3bW1jX3JvY2tjaGlwIGZmNTAwMDAwLmR3bW1jOiBEVyBNTUMgY29udHJv
+bGxlciBhdCBpcnEKMjksMzIgYml0IGhvc3QgZGF0YSB3aWR0aCwyNTYgZGVlcCBmaWZvClvCoMKg
+wqAgMC45MTM5NTRdIEFEQU1WWSBTZXR0aW5nIGdwaW8gcmVndWxhdG9yIHRvIHZhbHVlIDMzMDAw
+MDAgc3RhdGUgMApbwqDCoMKgIDAuOTE0NTAzXSBBREFNVlkgUmVnbWFwIHdyaXRlIDQyOCA8PSAy
+ZjgwMApbwqDCoMKgIDAuOTI3NjEyXSBtbWNfaG9zdCBtbWMxOiBCdXMgc3BlZWQgKHNsb3QgMCkg
+PSA0MDAwMDBIeiAoc2xvdCByZXEKNDAwMDAwSHosIGFjdHVhbCA0MDAwMDBIWiBkaXYgPSAwKQpb
+wqDCoMKgIDAuOTUwMTYwXSBWRlM6IENhbm5vdCBvcGVuIHJvb3QgZGV2aWNlICJtbWNibGswcDUi
+IG9yCnVua25vd24tYmxvY2soMCwwKTogZXJyb3IgLTYKCgoKRmluYWxseSBoZXJlJ3MgYW4gdXBk
+YXRlZCBwYXRjaCBmb3IgdGhlIGRldmljZSB0cmVlIHdpdGggUm9iaW4ncwpvcmlnaW5hbCBzdWdn
+ZXN0aW9uLgoKCkluZGV4OiBsaW51eC01LjUvYXJjaC9hcm02NC9ib290L2R0cy9yb2NrY2hpcC9y
+azMzMjgtcm9jLWNjLmR0cwo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
+PT09PT09PT09PT09PT09PT09PT09PT09PT09Ci0tLSBsaW51eC01LjUub3JpZy9hcmNoL2FybTY0
+L2Jvb3QvZHRzL3JvY2tjaGlwL3JrMzMyOC1yb2MtY2MuZHRzCisrKyBsaW51eC01LjUvYXJjaC9h
+cm02NC9ib290L2R0cy9yb2NrY2hpcC9yazMzMjgtcm9jLWNjLmR0cwpAQCAtNDUsNiArNDUsNyBA
+QAogCXZjY19zZGlvOiBzZG1tY2lvLXJlZ3VsYXRvciB7CiAJCWNvbXBhdGlibGUgPSAicmVndWxh
+dG9yLWdwaW8iOwogCQlncGlvcyA9IDwmZ3JmX2dwaW8gMCBHUElPX0FDVElWRV9ISUdIPjsKKyAg
+ICAgICAgICAgICAgICBlbmFibGUtYWN0aXZlLWhpZ2g7CiAJCXN0YXRlcyA9IDwxODAwMDAwIDB4
+MQogCQkJICAzMzAwMDAwIDB4MD47CiAJCXJlZ3VsYXRvci1uYW1lID0gInZjY19zZGlvIjsKCgoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
+LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
+cm5lbAo=
