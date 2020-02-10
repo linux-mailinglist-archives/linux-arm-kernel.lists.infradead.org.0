@@ -2,83 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7129A15840F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 21:06:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4888715842D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 21:14:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K2C4cldyrhQC2b8TdjdRNH+e0iqwX32A40ioKGGxsnE=; b=dkTVkbBBlq7qQG
-	f3Qu6Bj+qXa5kZ/shyRkY5RajF6+tiee7tLkK/+EYJDB3e6x/QLTUaQXCV8hKSYaOlX1brJ52/TVN
-	hRdYvrhIaNYogmpusBmGmr97q4PjMo4sKQLWBnc9oeFXuSo/YjbOeGhroN6vCb2tVnvsKihiFE74e
-	arLiUR5pFwFr/giDo3WacPT0tFf+EZyoTtDrLzrS6h/6mwznhS7eFvHwemPo7fe9VUUVYHas16VmO
-	d1cnhcGlPdNeURle6XcnNYU4VplwIwJeiq4Zyp6vZaPuLITH8ptrXfx2g7tS91N4pIhtcsifTy1eh
-	Cvmb5bL9q/mFXEoUfjAQ==;
+	List-Owner; bh=5Xyc7OoSvFqJS+aEo2Mi0saHQMiBnByzG/KdeFihnWI=; b=ZIXoE53fJFK0xM
+	nDq0wgRI/NjdJktLsJtyu5rGejghFh2hcKrQigt/xPUDR+SVlarpckUBnDJR9IrbZTyAPBJdjNmqS
+	yiVNS6qAWUmVYFfzT01uo2Hv7/5yUPHXaHAx7J0jTb+561S0dkKfi2bx+tbY9jnIQZv3tnzwAuit+
+	IMd5tEs8S1valmssuJbs8qjxqhosOwQY64OVxLyFQbuKHdKh06+SMXkeUaaTe8IzCQWjbJ2R7J80G
+	tOnqf3rsnokyAyZ70N2cW0qDWTLMpFV3hH/et3LFHkJ4gWjpAjxqyBvSRUwQH0oH1EfCyBKjRrVtg
+	PMWV04/gS7KZImFdzWSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1FJd-00041i-3u; Mon, 10 Feb 2020 20:05:57 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1j1FSK-0006Ln-CP; Mon, 10 Feb 2020 20:14:56 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1FJV-00041F-Kv
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 20:05:51 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id f2so195735pjq.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 12:05:48 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=bfUX47JqfKDzRaHz60zuMCcgcknOETz9lwwAuHSKO/w=;
- b=to49f+OtThvnorGPpC/Cl2wQsWgbIJq9eO7AUaULn/tn/txSiicNTKtdXpe4j//606
- dgp6hPM9UpWt61NYMa16dbPqOQk0ipyH6ETPTPrW/IYch9/raqAdGLaXhvketHe7h4DC
- CIKLEG2CXnR7tc+PGpR0WeERbJ0NUXwz8yKGn4SRbsFrH6zQFQV/Z6rIKms1NjPHepsR
- PYVykHlT5fndel2wmzhYAdU/14YhmhV+abUyaiXC4bJHAR+RZkA8/YwWgKugyQfgIe9l
- kReAATRh369hzdk9aEtOgF26YpPQQ21d4KGEeewmcN3XHq9FHOBD+gQAY5PD3HFTVU/x
- SMLQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=bfUX47JqfKDzRaHz60zuMCcgcknOETz9lwwAuHSKO/w=;
- b=bdlyBKSKUjHl0tFHx3xM4D0XDLQokHC6mRfWu0O017GKlruycR+cm1usuSJLRjzhn6
- vDvnLOI5Ug9Xf7ls+TyDd4Cjq3Un4Wf6tQWpY0G9vANvObuDrLLdg5c8X0oB/IOmMkLG
- ++XOLr0Ns48pTguuSlo6ZNpF4mAumyRVtCO2d20/bveSXSxdp5c7rK2eUUUI4yoNEpf5
- 1+ON+GKLyIsSF+05Xf3k/LpNPl9dAx7aKYpalSHhqGXLfJamM+HKYZjLRGNxckjTy9K2
- /bWJS6HUzevWbpfYy8sAM0KK6qsGmuRGZAsiQpZuP+J5hKfczLqUh53RE9+CmNH5hjzd
- eaaQ==
-X-Gm-Message-State: APjAAAU3GG21qnXsAr9NZ4a3GGyET2CMYWcAN8LNtiy9Wu8V1gAVMeKB
- sKUP1QomsCk6UMSF3uvkVc8k2A==
-X-Google-Smtp-Source: APXvYqxnYbJ7OinJSm4bTbVSSk5UE3G8smKj9Tcak5BKxA+izoC8f5KdQ+iylHlvQpkIdSqCWXv5gA==
-X-Received: by 2002:a17:902:59cd:: with SMTP id
- d13mr14645978plj.146.1581365147786; 
- Mon, 10 Feb 2020 12:05:47 -0800 (PST)
-Received: from yoga (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id n2sm1301901pfq.50.2020.02.10.12.05.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 10 Feb 2020 12:05:47 -0800 (PST)
-Date: Mon, 10 Feb 2020 12:05:44 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Nikolay Borisov <nborisov@suse.com>
-Subject: Re: [PATCH 1/3] hwspinlock: sunxi: Implement support for Allwinner's
- A64 SoC
-Message-ID: <20200210200544.GA1443@yoga>
-References: <20200210170143.20007-1-nborisov@suse.com>
- <20200210170143.20007-2-nborisov@suse.com>
- <20200210185730.GL955802@ripper>
- <45d491fa-716a-eb6a-f1a3-621363675a17@suse.com>
+ id 1j1FSB-0006KW-IF
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 20:14:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581365682;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=aru7SYuZXhhhxDg5jfxc1VIsQsLEX+56nBygo91zRPY=;
+ b=LC7Z5v+T17jDhEwHe5nX0F4M1QrSCcQRYhVgZSoOUKfwqmpLfQ9lQO56+UizD3k+AMxKZA
+ VQxdmOkbtu+eHI7XgDQWyQR0UbzVmUkJI7xgDvBzDSWL3HBavgMl86KUTd4zPQSOUeFCNx
+ pzPCWCVKoHTIwvaLbHv4WE+Yy6HsJh0=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-407-9VHrNn0mNp24TCJ6OQIh7g-1; Mon, 10 Feb 2020 15:14:38 -0500
+X-MC-Unique: 9VHrNn0mNp24TCJ6OQIh7g-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3E652800D41;
+ Mon, 10 Feb 2020 20:14:37 +0000 (UTC)
+Received: from mail (ovpn-125-144.rdu2.redhat.com [10.10.125.144])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id C38E719C70;
+ Mon, 10 Feb 2020 20:14:22 +0000 (UTC)
+Date: Mon, 10 Feb 2020 15:14:11 -0500
+From: Andrea Arcangeli <aarcange@redhat.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH 2/2] arm64: tlb: skip tlbi broadcast for single threaded
+ TLB flushes
+Message-ID: <20200210201411.GC3699@redhat.com>
+References: <20200203201745.29986-1-aarcange@redhat.com>
+ <20200203201745.29986-3-aarcange@redhat.com>
+ <20200210175106.GA27215@arrakis.emea.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <45d491fa-716a-eb6a-f1a3-621363675a17@suse.com>
+In-Reply-To: <20200210175106.GA27215@arrakis.emea.arm.com>
+User-Agent: Mutt/1.13.1 (2019-12-14)
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_120549_693533_6E667374 
-X-CRM114-Status: GOOD (  19.52  )
+X-CRM114-CacheID: sfid-20200210_121447_682290_3F648321 
+X-CRM114-Status: GOOD (  28.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,112 +91,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, mripard@kernel.org
+Cc: Rafael Aquini <aquini@redhat.com>, Jon Masters <jcm@jonmasters.org>,
+ linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ Mark Salter <msalter@redhat.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 10 Feb 11:06 PST 2020, Nikolay Borisov wrote:
+Hello Catalin,
 
+On Mon, Feb 10, 2020 at 05:51:06PM +0000, Catalin Marinas wrote:
+> Relying om mm_users is not sufficient AFAICT. Let's say on CPU0 you have
+> a kernel thread running with the previous user pgd and ASID set in
+> ttbr0_el1. The mm_users would still be 1 since only mm_count is
+> incremented in context_switch(). If the user thread now runs on CPU1, a
+> local tlbi would only invalidate the TLBs on CPU1. However, CPU0 may
+> still walk (speculatively) the user page tables.
 > 
+> An example where this matters is a group of small pages converted to a
+> huge page. If CPU0 already has some TLB entries for small pages in the
+> group but, not being aware of a TLBI for the ptes in the range, may read
+> a block pmd entry (huge page) and we end up with a TLB conflict on CPU0
+> (CPU1 is fine since you do the local tlbi).
 > 
-> On 10.02.20 ??. 20:57 ??., Bjorn Andersson wrote:
-> > On Mon 10 Feb 09:01 PST 2020, Nikolay Borisov wrote:
-> > [..]
-> >> diff --git a/drivers/hwspinlock/sunxi_hwspinlock.c b/drivers/hwspinlock/sunxi_hwspinlock.c
-> >> new file mode 100644
-> >> index 000000000000..8e5685357fbf
-> >> --- /dev/null
-> >> +++ b/drivers/hwspinlock/sunxi_hwspinlock.c
-> >> @@ -0,0 +1,181 @@
-> >> +// SPDX-License-Identifier: GPL-2.0
-> >> +/* Author: Nikolay Borisov <nborisov@suse.com> */
-> >> +
-> >> +#include <linux/clk.h>
-> >> +#include <linux/reset.h>
-> >> +#include <linux/hwspinlock.h>
-> >> +#include <linux/io.h>
-> >> +#include <linux/kernel.h>
-> >> +#include <linux/module.h>
-> >> +#include <linux/of.h>
-> >> +#include <linux/platform_device.h>
-> > 
-> > Please sort these.
+> There are other examples where this could go wrong as the hardware may
+> keep intermediate pgtable entries in a walk cache. In the arm64 kernel
+> we rely on something the architecture calls break-before-make for any
+> page table updates and these need to be broadcast to other CPUs that may
+> potentially have an entry in their TLB.
 > 
-> alphabetically or reverse christmas tree?
-> 
+> It may be better if you used mm_cpumask to mark wherever an mm ever ran
+> than relying on mm_users.
 
-Alphabetically please.
+Agreed.
 
-> > 
-> >> +
-> 
-> <snip>
-> >> +	hw->clk = clk;
-> >> +	hw->reset = reset;
-> >> +
-> >> +	io_base += LOCK_BASE_OFFSET;
-> >> +	for (i = 0; i < num_locks; i++)
-> >> +		hw->bank.lock[i].priv = io_base + i * sizeof(u32);
-> >> +
-> >> +	platform_set_drvdata(pdev, hw);
-> >> +
-> >> +	ret = hwspin_lock_register(&hw->bank, &pdev->dev, &sunxi_hwspinlock_ops,
-> >> +				   0, num_locks);
-> > 
-> > People will likely send patches to replace this with
-> > devm_hwspin_lock_register(), but that will create an invalid ordering
-> > between the clock disable, reset assert and the hwspinlock
-> > unregistration.
-> > 
-> > You could deal with this using devm_add_action() and
-> > devm_add_action_or_reset() for the clock and reset above. That will save
-> > us future churn, would clean up your error handling and you could drop
-> > the remove function completely.
-> 
-> This is my first rodeo in device driver land so I'm learning. It looks
-> like what you want here is similar to what there is in
-> sprd_hwspinlock.c. Will rework it.
-> 
+If we can use mm_cpumask to track where the mm ever run, then if I'm
+not mistaken we could optimize also multithreaded processes in the
+same way: if only one thread is running frequently and the others are
+frequently sleeping, we could issue a single tlbi broadcast (modulo
+invalidates of small virtual ranges).
 
-Exactly like that, forgot that we had an example of this in the sprd
-driver. That will ensure that we rely solely on devres to unroll the
-resources in a suitable order.
+In the meantime the below should be enough to address the concern you
+raised of the proof of concept RFC patch.
 
-Regards,
-Bjorn
+I already experimented with mm_users == 1 earlier and it doesn't
+change the benchmark results for the "best case" below.
 
-> > 
-> >> +
-> >> +	if (!ret)
-> >> +		return ret;
-> >> +out_reset:
-> >> +	reset_control_assert(reset);
-> >> +out_declock:
-> >> +	clk_disable_unprepare(clk);
-> >> +	return ret;
-> >> +}
-> >> +
-> >> +static int sunxi_hwspinlock_remove(struct platform_device *pdev)
-> >> +{
-> >> +	struct sunxi_hwspinlock *hw = platform_get_drvdata(pdev);
-> >> +	int ret;
-> >> +
-> >> +	ret = hwspin_lock_unregister(&hw->bank);
-> >> +	if (ret)
-> >> +		dev_err(&pdev->dev, "%s failed: %d\n", __func__, ret);
-> >> +
-> >> +	reset_control_assert(hw->reset);
-> >> +	clk_disable_unprepare(hw->clk);
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> > 
-> > Regards,
-> > Bjorn
-> > 
+(untested)
+
+diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
+index 772bbc45b867..a2d53b301f22 100644
+--- a/arch/arm64/include/asm/tlbflush.h
++++ b/arch/arm64/include/asm/tlbflush.h
+@@ -169,7 +169,8 @@ static inline void flush_tlb_mm(struct mm_struct *mm)
+ 	unsigned long asid = __TLBI_VADDR(0, ASID(mm));
+ 
+ 	/* avoid TLB-i broadcast to remote NUMA nodes if it's a local flush */
+-	if (current->mm == mm && atomic_read(&mm->mm_users) <= 1) {
++	if (current->mm == mm && atomic_read(&mm->mm_users) <= 1 &&
++	    (system_uses_ttbr0_pan() || atomic_read(&mm->mm_count) == 1)) {
+ 		int cpu = get_cpu();
+ 
+ 		cpumask_setall(mm_cpumask(mm));
+@@ -177,7 +178,9 @@ static inline void flush_tlb_mm(struct mm_struct *mm)
+ 
+ 		smp_mb();
+ 
+-		if (atomic_read(&mm->mm_users) <= 1) {
++		if (atomic_read(&mm->mm_users) <= 1 &&
++		    (system_uses_ttbr0_pan() ||
++		     atomic_read(&mm->mm_count) == 1)) {
+ 			dsb(nshst);
+ 			__tlbi(aside1, asid);
+ 			__tlbi_user(aside1, asid);
+@@ -212,7 +215,8 @@ static inline void flush_tlb_page(struct vm_area_struct *vma,
+ 	unsigned long addr = __TLBI_VADDR(uaddr, ASID(mm));
+ 
+ 	/* avoid TLB-i broadcast to remote NUMA nodes if it's a local flush */
+-	if (current->mm == mm && atomic_read(&mm->mm_users) <= 1) {
++	if (current->mm == mm && atomic_read(&mm->mm_users) <= 1 &&
++	    (system_uses_ttbr0_pan() || atomic_read(&mm->mm_count) == 1)) {
+ 		int cpu = get_cpu();
+ 
+ 		cpumask_setall(mm_cpumask(mm));
+@@ -220,7 +224,9 @@ static inline void flush_tlb_page(struct vm_area_struct *vma,
+ 
+ 		smp_mb();
+ 
+-		if (atomic_read(&mm->mm_users) <= 1) {
++		if (atomic_read(&mm->mm_users) <= 1 &&
++		    (system_uses_ttbr0_pan() ||
++		     atomic_read(&mm->mm_count) == 1)) {
+ 			dsb(nshst);
+ 			__tlbi(vale1, addr);
+ 			__tlbi_user(vale1, addr);
+@@ -264,7 +270,8 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
+ 	end = __TLBI_VADDR(end, asid);
+ 
+ 	/* avoid TLB-i broadcast to remote NUMA nodes if it's a local flush */
+-	if (current->mm == mm && atomic_read(&mm->mm_users) <= 1) {
++	if (current->mm == mm && atomic_read(&mm->mm_users) <= 1  &&
++	    (system_uses_ttbr0_pan() || atomic_read(&mm->mm_count) == 1)) {
+ 		int cpu = get_cpu();
+ 
+ 		cpumask_setall(mm_cpumask(mm));
+@@ -272,7 +279,9 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
+ 
+ 		smp_mb();
+ 
+-		if (atomic_read(&mm->mm_users) <= 1) {
++		if (atomic_read(&mm->mm_users) <= 1 &&
++		    (system_uses_ttbr0_pan() ||
++		     atomic_read(&mm->mm_count) == 1)) {
+ 			dsb(nshst);
+ 			for (addr = start; addr < end; addr += stride) {
+ 				if (last_level) {
+
+
+> That's a pretty artificial test and it is indeed improved by this patch.
+> However, it would be nice to have some real-world scenarios where this
+> matters.
+
+I don't know exactly how much we should rely on the hardware to snoop
+the asid on NUMA. The hardware to fully optimize would need to
+implement a replicated mm_cpumask bitflag for each asid and every CPU
+would need to tell every other CPU which asid it is loading every time
+it is loading it. Exactly what x86 does with mm_cpumask in software.
+
+That is ideal, but is it an arch requirement to add the above in all
+implementations?
+
+The case I measured has a single socket so it's even simpler because
+it could be optimized all in-core. Even with a single socket I'm not
+sure what's going wrong in the chip: it felt like it's the engine that
+does the broadcast that runs serially system wide and then all CPUs
+have to wait on it.
+
+Still your question if it'll make a difference in practice is a good
+one and I don't have a sure answer yet. I suppose before doing more
+benchmarking it's better to make a new version of this that uses
+mm_cpumask to track where the asid was ever loaded as you suggested,
+so that it will also optimize away tlbi broadcaasts from multithreaded
+processes where only one thread is running frequently?
+
+Thanks!
+Andrea
+
 
 _______________________________________________
 linux-arm-kernel mailing list
