@@ -2,54 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28757156F6B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 07:15:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62A79156F73
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 07:22:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8zChvWvSUeRf8WAkDgj/QUe/Tu0feVyFDwODsAj5QSU=; b=UvBPjTo3HalIHPJoLKOnboEnE
-	xtUs3m+v4fGRE2kIS3ukNhp2xGnPANufiPMW8EaHjv4DhjQmiYPMn4V+u+7FG7zwPftLUKaCFWTWG
-	dDhDLR/zXR0b0wrHqFk2tImvvFWW2JwK9VKGzL8U1jUjTNuQl0OLDpOYTUttyCDRx0ucQcQi7suuy
-	nWI/N7tUwvt4Mat3/BkLsXLBJUs60Dz+IqKDhrQbkc9ThBadwpRvlIbj9WmzIZstuOCVypbgjN5Zq
-	kLMJ7jzZIbe6YdtOd4fhYIKGeJNkh/YUIryhjiYtTbcMfEe40ff1L8/BhGa2L0yRG5ib8A0LwdPwC
-	DgzSisE8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uZRDU6qQg9qTuCdoxWjTjsNkAGGI32YXE9weAPPsWn4=; b=WPUut/Fbq8R1HP
+	mMmjH3QkYC89OSyB8MeYfnHZPe81M5BzzBG0UsZ1WCnekzRx2PNmdpTp154OYjcheEKpekpcOdbzw
+	XHGiU2/xar5MfQ7f8ByeUrihIC88Ii9PriBRdWxDIyvWUONGYamzFj5JtmsKrS/vgTtRbKf7GUiMh
+	kKgEvBh5FZx699sGO5jbqGWdmnijJDmu0F/uOojRdX7Cj6lNk174sgSCUM+02bgGfa/HoJGfwl7Gu
+	4TH0l5zNJ3UyVDmvJfIK2U/jvA2Pa0vF3In/lboXsIlTiZck/tohyTCNuEaY8YYywxH+Uk2WZerOM
+	jFwpVFRjwxvRGD71A3bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j12MG-0002sg-Mm; Mon, 10 Feb 2020 06:15:48 +0000
-Received: from mail-sz.amlogic.com ([211.162.65.117])
+	id 1j12T4-0004oq-V9; Mon, 10 Feb 2020 06:22:50 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j12M7-0002s3-TF; Mon, 10 Feb 2020 06:15:42 +0000
-Received: from [10.7.0.4] (10.28.11.250) by mail-sz.amlogic.com (10.28.11.5)
- with Microsoft SMTP Server id 15.1.1591.10; Mon, 10 Feb 2020 14:16:18 +0800
-Subject: Re: [PATCH v7 3/5] clk: meson: a1: add support for Amlogic A1 PLL
- clock driver
-To: Jerome Brunet <jbrunet@baylibre.com>, Neil Armstrong
- <narmstrong@baylibre.com>
-References: <20200120034937.128600-1-jian.hu@amlogic.com>
- <20200120034937.128600-4-jian.hu@amlogic.com>
- <1jeeva7awl.fsf@starbuckisacylon.baylibre.com>
-From: Jian Hu <jian.hu@amlogic.com>
-Message-ID: <61ec9870-e6ac-5a92-aaf8-881d19948d96@amlogic.com>
-Date: Mon, 10 Feb 2020 14:16:14 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ id 1j12Sx-0004oR-EA
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 06:22:44 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 09 Feb 2020 22:22:36 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,424,1574150400"; d="scan'208";a="431506133"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga005.fm.intel.com with ESMTP; 09 Feb 2020 22:22:35 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1j12So-000EHv-Pj; Mon, 10 Feb 2020 14:22:34 +0800
+Date: Mon, 10 Feb 2020 14:22:16 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: [arm-soc:arm/fixes] BUILD SUCCESS
+ 3508aae9b5618aca727f07c183e25d09033a5b66
+Message-ID: <5e40f698.2RYfun8deL5FDpg1%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-In-Reply-To: <1jeeva7awl.fsf@starbuckisacylon.baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.28.11.250]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_221540_209647_7D350069 
-X-CRM114-Status: GOOD (  21.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200209_222243_491139_904A3C7B 
+X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.136 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,511 +67,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Victor Wan <victor.wan@amlogic.com>,
- Jianxin Pan <jianxin.pan@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Chandle Zou <chandle.zou@amlogic.com>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  arm/fixes
+branch HEAD: 3508aae9b5618aca727f07c183e25d09033a5b66  ARM: configs: Cleanup old Kconfig options
 
+elapsed time: 917m
 
-On 2020/2/4 21:13, Jerome Brunet wrote:
-> 
-> On Mon 20 Jan 2020 at 04:49, Jian Hu <jian.hu@amlogic.com> wrote:
-> 
->> The Amlogic A1 clock includes three drivers:
->> pll clocks, peripheral clocks, CPU clocks.
->> sys pll and CPU clocks will be sent in next patch.
->>
->> Unlike the previous series, there is no EE/AO domain
->> in A1 CLK controllers.
->>
->> Signed-off-by: Jian Hu <jian.hu@amlogic.com>
->> ---
->>   drivers/clk/meson/Kconfig  |   9 +
->>   drivers/clk/meson/Makefile |   1 +
->>   drivers/clk/meson/a1-pll.c | 360 +++++++++++++++++++++++++++++++++++++
->>   drivers/clk/meson/a1-pll.h |  56 ++++++
->>   4 files changed, 426 insertions(+)
->>   create mode 100644 drivers/clk/meson/a1-pll.c
->>   create mode 100644 drivers/clk/meson/a1-pll.h
->>
->> diff --git a/drivers/clk/meson/Kconfig b/drivers/clk/meson/Kconfig
->> index dabeb435d067..31613c3bbbc7 100644
->> --- a/drivers/clk/meson/Kconfig
->> +++ b/drivers/clk/meson/Kconfig
->> @@ -93,6 +93,15 @@ config COMMON_CLK_AXG_AUDIO
->>   	  Support for the audio clock controller on AmLogic A113D devices,
->>   	  aka axg, Say Y if you want audio subsystem to work.
->>   
->> +config COMMON_CLK_A1_PLL
->> +	bool
->> +	depends on ARCH_MESON
->> +	select COMMON_CLK_MESON_REGMAP
->> +	select COMMON_CLK_MESON_PLL
->> +	help
->> +	  Support for the PLL clock controller on Amlogic A113L device,
->> +	  aka a1. Say Y if you want PLL to work.
->> +
->>   config COMMON_CLK_G12A
->>   	bool
->>   	depends on ARCH_MESON
->> diff --git a/drivers/clk/meson/Makefile b/drivers/clk/meson/Makefile
->> index 3939f218587a..71d3b8e6fb8a 100644
->> --- a/drivers/clk/meson/Makefile
->> +++ b/drivers/clk/meson/Makefile
->> @@ -16,6 +16,7 @@ obj-$(CONFIG_COMMON_CLK_MESON_VID_PLL_DIV) += vid-pll-div.o
->>   
->>   obj-$(CONFIG_COMMON_CLK_AXG) += axg.o axg-aoclk.o
->>   obj-$(CONFIG_COMMON_CLK_AXG_AUDIO) += axg-audio.o
->> +obj-$(CONFIG_COMMON_CLK_A1_PLL) += a1-pll.o
->>   obj-$(CONFIG_COMMON_CLK_GXBB) += gxbb.o gxbb-aoclk.o
->>   obj-$(CONFIG_COMMON_CLK_G12A) += g12a.o g12a-aoclk.o
->>   obj-$(CONFIG_COMMON_CLK_MESON8B) += meson8b.o
->> diff --git a/drivers/clk/meson/a1-pll.c b/drivers/clk/meson/a1-pll.c
->> new file mode 100644
->> index 000000000000..69c1ca07d041
->> --- /dev/null
->> +++ b/drivers/clk/meson/a1-pll.c
->> @@ -0,0 +1,360 @@
->> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
->> +/*
->> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
->> + * Author: Jian Hu <jian.hu@amlogic.com>
->> + */
->> +
->> +#include <linux/clk-provider.h>
->> +#include <linux/of_device.h>
->> +#include <linux/platform_device.h>
->> +#include "a1-pll.h"
->> +#include "clk-pll.h"
->> +#include "clk-regmap.h"
->> +
->> +static struct clk_regmap a1_fixed_pll_dco = {
->> +	.data = &(struct meson_clk_pll_data){
->> +		.en = {
->> +			.reg_off = ANACTRL_FIXPLL_CTRL0,
->> +			.shift   = 28,
->> +			.width   = 1,
->> +		},
->> +		.m = {
->> +			.reg_off = ANACTRL_FIXPLL_CTRL0,
->> +			.shift   = 0,
->> +			.width   = 8,
->> +		},
->> +		.n = {
->> +			.reg_off = ANACTRL_FIXPLL_CTRL0,
->> +			.shift   = 10,
->> +			.width   = 5,
->> +		},
->> +		.frac = {
->> +			.reg_off = ANACTRL_FIXPLL_CTRL1,
->> +			.shift   = 0,
->> +			.width   = 19,
->> +		},
->> +		.l = {
->> +			.reg_off = ANACTRL_FIXPLL_STS,
->> +			.shift   = 31,
->> +			.width   = 1,
->> +		},
->> +		.rst = {
->> +			.reg_off = ANACTRL_FIXPLL_CTRL0,
->> +			.shift   = 29,
->> +			.width   = 1,
->> +		},
->> +	},
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "fixed_pll_dco",
->> +		.ops = &meson_clk_pll_ro_ops,
->> +		.parent_data = &(const struct clk_parent_data) {
->> +			.fw_name = "xtal_fixpll",
->> +		},
->> +		.num_parents = 1,
->> +	},
->> +};
->> +
->> +static struct clk_regmap a1_fixed_pll = {
->> +	.data = &(struct clk_regmap_gate_data){
->> +		.offset = ANACTRL_FIXPLL_CTRL0,
->> +		.bit_idx = 20,
->> +	},
->> +	.hw.init = &(struct clk_init_data) {
->> +		.name = "fixed_pll",
->> +		.ops = &clk_regmap_gate_ops,
->> +		.parent_hws = (const struct clk_hw *[]) {
->> +			&a1_fixed_pll_dco.hw
->> +		},
->> +		.num_parents = 1,
->> +		/*
->> +		 * It is enough that the fdiv leaf has critical flag,
->> +		 * No critical or unused flag here.
->> +		 */
->> +	},
->> +};
->> +
->> +static const struct pll_mult_range a1_hifi_pll_mult_range = {
->> +	.min = 32,
->> +	.max = 64,
->> +};
->> +
->> +static const struct reg_sequence a1_hifi_init_regs[] = {
->> +	{ .reg = ANACTRL_HIFIPLL_CTRL1, .def = 0x01800000 },
->> +	{ .reg = ANACTRL_HIFIPLL_CTRL2, .def = 0x00001100 },
->> +	{ .reg = ANACTRL_HIFIPLL_CTRL3, .def = 0x100a1100 },
->> +	{ .reg = ANACTRL_HIFIPLL_CTRL4, .def = 0x00302000 },
->> +	{ .reg = ANACTRL_HIFIPLL_CTRL0, .def = 0x01f18440 },
->> +};
->> +
->> +static struct clk_regmap a1_hifi_pll = {
->> +	.data = &(struct meson_clk_pll_data){
->> +		.en = {
->> +			.reg_off = ANACTRL_HIFIPLL_CTRL0,
->> +			.shift   = 28,
->> +			.width   = 1,
->> +		},
->> +		.m = {
->> +			.reg_off = ANACTRL_HIFIPLL_CTRL0,
->> +			.shift   = 0,
->> +			.width   = 8,
->> +		},
->> +		.n = {
->> +			.reg_off = ANACTRL_HIFIPLL_CTRL0,
->> +			.shift   = 10,
->> +			.width   = 5,
->> +		},
->> +		.frac = {
->> +			.reg_off = ANACTRL_HIFIPLL_CTRL1,
->> +			.shift   = 0,
->> +			.width   = 19,
->> +		},
->> +		.l = {
->> +			.reg_off = ANACTRL_HIFIPLL_STS,
->> +			.shift   = 31,
->> +			.width   = 1,
->> +		},
->> +		.current_en = {
->> +			.reg_off = ANACTRL_HIFIPLL_CTRL0,
->> +			.shift   = 26,
->> +			.width   = 1,
->> +		},
->> +		.l_detect = {
->> +			.reg_off = ANACTRL_HIFIPLL_CTRL2,
->> +			.shift   = 6,
->> +			.width   = 1,
->> +		},
->> +		.range = &a1_hifi_pll_mult_range,
->> +		.init_regs = a1_hifi_init_regs,
->> +		.init_count = ARRAY_SIZE(a1_hifi_init_regs),
->> +	},
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "hifi_pll",
->> +		.ops = &meson_clk_pll_ops,
->> +		.parent_data = &(const struct clk_parent_data) {
->> +			.fw_name = "xtal_hifipll",
->> +		},
->> +		.num_parents = 1,
->> +	},
->> +};
->> +
->> +static struct clk_fixed_factor a1_fclk_div2_div = {
->> +	.mult = 1,
->> +	.div = 2,
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "fclk_div2_div",
->> +		.ops = &clk_fixed_factor_ops,
->> +		.parent_hws = (const struct clk_hw *[]) {
->> +			&a1_fixed_pll.hw
->> +		},
->> +		.num_parents = 1,
->> +	},
->> +};
->> +
->> +static struct clk_regmap a1_fclk_div2 = {
->> +	.data = &(struct clk_regmap_gate_data){
->> +		.offset = ANACTRL_FIXPLL_CTRL0,
->> +		.bit_idx = 21,
->> +	},
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "fclk_div2",
->> +		.ops = &clk_regmap_gate_ops,
->> +		.parent_hws = (const struct clk_hw *[]) {
->> +			&a1_fclk_div2_div.hw
->> +		},
->> +		.num_parents = 1,
->> +		/*
->> +		 * This clock is used by DDR clock in BL2 firmware
->> +		 * and is required by the platform to operate correctly.
->> +		 * Until the following condition are met, we need this clock to
->> +		 * be marked as critical:
->> +		 * a) Mark the clock used by a firmware resource, if possible
->> +		 * b) CCF has a clock hand-off mechanism to make the sure the
->> +		 *    clock stays on until the proper driver comes along
->> +		 */
->> +		.flags = CLK_IS_CRITICAL,
->> +	},
->> +};
->> +
->> +static struct clk_fixed_factor a1_fclk_div3_div = {
->> +	.mult = 1,
->> +	.div = 3,
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "fclk_div3_div",
->> +		.ops = &clk_fixed_factor_ops,
->> +		.parent_hws = (const struct clk_hw *[]) {
->> +			&a1_fixed_pll.hw
->> +		},
->> +		.num_parents = 1,
->> +	},
->> +};
->> +
->> +static struct clk_regmap a1_fclk_div3 = {
->> +	.data = &(struct clk_regmap_gate_data){
->> +		.offset = ANACTRL_FIXPLL_CTRL0,
->> +		.bit_idx = 22,
->> +	},
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "fclk_div3",
->> +		.ops = &clk_regmap_gate_ops,
->> +		.parent_hws = (const struct clk_hw *[]) {
->> +			&a1_fclk_div3_div.hw
->> +		},
->> +		.num_parents = 1,
->> +		/*
->> +		 * This clock is used by APB bus which is set in boot ROM code
->> +		 * and is required by the platform to operate correctly.
->> +		 * About critical, refer to a1_fclk_div2.
->> +		 */
->> +		.flags = CLK_IS_CRITICAL,
->> +	},
->> +};
->> +
->> +static struct clk_fixed_factor a1_fclk_div5_div = {
->> +	.mult = 1,
->> +	.div = 5,
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "fclk_div5_div",
->> +		.ops = &clk_fixed_factor_ops,
->> +		.parent_hws = (const struct clk_hw *[]) {
->> +			&a1_fixed_pll.hw
->> +		},
->> +		.num_parents = 1,
->> +	},
->> +};
->> +
->> +static struct clk_regmap a1_fclk_div5 = {
->> +	.data = &(struct clk_regmap_gate_data){
->> +		.offset = ANACTRL_FIXPLL_CTRL0,
->> +		.bit_idx = 23,
->> +	},
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "fclk_div5",
->> +		.ops = &clk_regmap_gate_ops,
->> +		.parent_hws = (const struct clk_hw *[]) {
->> +			&a1_fclk_div5_div.hw
->> +		},
->> +		.num_parents = 1,
->> +		/*
->> +		 * This clock is used by AXI bus which setted in Romcode
->> +		 * and is required by the platform to operate correctly.
->> +		 * About critical, refer to a1_fclk_div2.
->> +		 */
->> +		.flags = CLK_IS_CRITICAL,
->> +	},
->> +};
->> +
->> +static struct clk_fixed_factor a1_fclk_div7_div = {
->> +	.mult = 1,
->> +	.div = 7,
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "fclk_div7_div",
->> +		.ops = &clk_fixed_factor_ops,
->> +		.parent_hws = (const struct clk_hw *[]) {
->> +			&a1_fixed_pll.hw
->> +		},
->> +		.num_parents = 1,
->> +	},
->> +};
->> +
->> +static struct clk_regmap a1_fclk_div7 = {
->> +	.data = &(struct clk_regmap_gate_data){
->> +		.offset = ANACTRL_FIXPLL_CTRL0,
->> +		.bit_idx = 24,
->> +	},
->> +	.hw.init = &(struct clk_init_data){
->> +		.name = "fclk_div7",
->> +		.ops = &clk_regmap_gate_ops,
->> +		.parent_hws = (const struct clk_hw *[]) {
->> +			&a1_fclk_div7_div.hw
->> +		},
->> +		.num_parents = 1,
->> +	},
->> +};
->> +
->> +/* Array of all clocks provided by this provider */
->> +static struct clk_hw_onecell_data a1_pll_hw_onecell_data = {
->> +	.hws = {
->> +		[CLKID_FIXED_PLL_DCO]		= &a1_fixed_pll_dco.hw,
->> +		[CLKID_FIXED_PLL]		= &a1_fixed_pll.hw,
->> +		[CLKID_HIFI_PLL]		= &a1_hifi_pll.hw,
->> +		[CLKID_FCLK_DIV2]		= &a1_fclk_div2.hw,
->> +		[CLKID_FCLK_DIV3]		= &a1_fclk_div3.hw,
->> +		[CLKID_FCLK_DIV5]		= &a1_fclk_div5.hw,
->> +		[CLKID_FCLK_DIV7]		= &a1_fclk_div7.hw,
->> +		[CLKID_FCLK_DIV2_DIV]		= &a1_fclk_div2_div.hw,
->> +		[CLKID_FCLK_DIV3_DIV]		= &a1_fclk_div3_div.hw,
->> +		[CLKID_FCLK_DIV5_DIV]		= &a1_fclk_div5_div.hw,
->> +		[CLKID_FCLK_DIV7_DIV]		= &a1_fclk_div7_div.hw,
->> +		[NR_PLL_CLKS]			= NULL,
->> +	},
->> +	.num = NR_PLL_CLKS,
->> +};
->> +
->> +static struct clk_regmap *const a1_pll_regmaps[] = {
->> +	&a1_fixed_pll_dco,
->> +	&a1_fixed_pll,
->> +	&a1_hifi_pll,
->> +	&a1_fclk_div2,
->> +	&a1_fclk_div3,
->> +	&a1_fclk_div5,
->> +	&a1_fclk_div7,
->> +};
->> +
->> +static struct regmap_config clkc_regmap_config = {
->> +	.reg_bits       = 32,
->> +	.val_bits       = 32,
->> +	.reg_stride     = 4,
->> +};
->> +
->> +static int meson_a1_pll_probe(struct platform_device *pdev)
->> +{
->> +	struct device *dev = &pdev->dev;
->> +	struct resource *res;
->> +	void __iomem *base;
->> +	struct regmap *map;
->> +	int ret, i;
->> +
->> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->> +
->> +	base = devm_ioremap_resource(dev, res);
->> +	if (IS_ERR(base))
->> +		return PTR_ERR(base);
->> +
->> +	map = devm_regmap_init_mmio(dev, base, &clkc_regmap_config);
->> +	if (IS_ERR(map))
->> +		return PTR_ERR(map);
->> +
->> +	/* Populate regmap for the regmap backed clocks */
->> +	for (i = 0; i < ARRAY_SIZE(a1_pll_regmaps); i++)
->> +		a1_pll_regmaps[i]->map = map;
->> +
->> +	for (i = 0; i < a1_pll_hw_onecell_data.num; i++) {
->> +		/* array might be sparse */
->> +		if (!a1_pll_hw_onecell_data.hws[i])
->> +			continue;
->> +
->> +		ret = devm_clk_hw_register(dev, a1_pll_hw_onecell_data.hws[i]);
->> +		if (ret) {
->> +			dev_err(dev, "Clock registration failed\n");
->> +			return ret;
->> +		}
->> +	}
->> +
->> +	return devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get,
->> +					   &a1_pll_hw_onecell_data);
->> +}
->> +
->> +static const struct of_device_id clkc_match_table[] = {
->> +	{ .compatible = "amlogic,a1-pll-clkc", },
->> +	{}
->> +};
->> +
->> +static struct platform_driver a1_pll_driver = {
->> +	.probe		= meson_a1_pll_probe,
->> +	.driver		= {
->> +		.name	= "a1-pll-clkc",
->> +		.of_match_table = clkc_match_table,
->> +	},
->> +};
->> +
->> +builtin_platform_driver(a1_pll_driver);
->> diff --git a/drivers/clk/meson/a1-pll.h b/drivers/clk/meson/a1-pll.h
->> new file mode 100644
->> index 000000000000..8ded267061ad
->> --- /dev/null
->> +++ b/drivers/clk/meson/a1-pll.h
->> @@ -0,0 +1,56 @@
->> +/* SPDX-License-Identifier: (GPL-2.0+ OR MIT) */
->> +/*
->> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
->> + */
->> +
->> +#ifndef __A1_PLL_H
->> +#define __A1_PLL_H
->> +
->> +/* PLL register offset */
->> +#define ANACTRL_FIXPLL_CTRL0		0x0
->> +#define ANACTRL_FIXPLL_CTRL1		0x4
->> +#define ANACTRL_FIXPLL_CTRL2		0x8
->> +#define ANACTRL_FIXPLL_CTRL3		0xc
->> +#define ANACTRL_FIXPLL_CTRL4		0x10
->> +#define ANACTRL_FIXPLL_STS		0x14
->> +#define ANACTRL_SYSPLL_CTRL0		0x80
->> +#define ANACTRL_SYSPLL_CTRL1		0x84
->> +#define ANACTRL_SYSPLL_CTRL2		0x88
->> +#define ANACTRL_SYSPLL_CTRL3		0x8c
->> +#define ANACTRL_SYSPLL_CTRL4		0x90
->> +#define ANACTRL_SYSPLL_STS		0x94
->> +#define ANACTRL_HIFIPLL_CTRL0		0xc0
->> +#define ANACTRL_HIFIPLL_CTRL1		0xc4
->> +#define ANACTRL_HIFIPLL_CTRL2		0xc8
->> +#define ANACTRL_HIFIPLL_CTRL3		0xcc
->> +#define ANACTRL_HIFIPLL_CTRL4		0xd0
->> +#define ANACTRL_HIFIPLL_STS		0xd4
-> 
-> Non of the definition below are used.
-> What are they ? Do you need them ?
-> 
-They have not been used, It is a PLL used by audio.
-I will remove them.
->> +#define ANACTRL_AUDDDS_CTRL0		0x100
->> +#define ANACTRL_AUDDDS_CTRL1		0x104
->> +#define ANACTRL_AUDDDS_CTRL2		0x108
->> +#define ANACTRL_AUDDDS_CTRL3		0x10c
->> +#define ANACTRL_AUDDDS_CTRL4		0x110
->> +#define ANACTRL_AUDDDS_STS		0x114
->> +#define ANACTRL_MISCTOP_CTRL0		0x140
->> +#define ANACTRL_POR_CNTL		0x188
->> +
->> +/*
->> + * CLKID index values
->> + *
->> + * These indices are entirely contrived and do not map onto the hardware.
->> + * It has now been decided to expose everything by default in the DT header:
->> + * include/dt-bindings/clock/a1-pll-clkc.h. Only the clocks ids we don't want
->> + * to expose, such as the internal muxes and dividers of composite clocks,
->> + * will remain defined here.
->> + */
->> +#define CLKID_FIXED_PLL_DCO		0
->> +#define CLKID_FCLK_DIV2_DIV		2
->> +#define CLKID_FCLK_DIV3_DIV		3
->> +#define CLKID_FCLK_DIV5_DIV		4
->> +#define CLKID_FCLK_DIV7_DIV		5
->> +#define NR_PLL_CLKS			11
->> +
->> +/* include the CLKIDs that have been made part of the DT binding */
->> +#include <dt-bindings/clock/a1-pll-clkc.h>
->> +
->> +#endif /* __A1_PLL_H */
-> 
-> .
-> 
+configs tested: 112
+configs skipped: 145
+
+The following configs have been built successfully.
+More configs may be tested in the coming days.
+
+arm                              allmodconfig
+arm                               allnoconfig
+arm                              allyesconfig
+arm                         at91_dt_defconfig
+arm                           efm32_defconfig
+arm                          exynos_defconfig
+arm                        multi_v5_defconfig
+arm                        multi_v7_defconfig
+arm                        shmobile_defconfig
+arm                           sunxi_defconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+arm64                            allyesconfig
+arm64                               defconfig
+sparc                            allyesconfig
+m68k                             allmodconfig
+alpha                               defconfig
+sparc64                           allnoconfig
+s390                          debug_defconfig
+um                           x86_64_defconfig
+sh                               allmodconfig
+um                                  defconfig
+h8300                     edosk2674_defconfig
+riscv                    nommu_virt_defconfig
+h8300                       h8s-sim_defconfig
+xtensa                       common_defconfig
+sh                          rsk7269_defconfig
+m68k                          multi_defconfig
+parisc                            allnoconfig
+c6x                              allyesconfig
+c6x                        evmc6678_defconfig
+nios2                         10m50_defconfig
+nios2                         3c120_defconfig
+openrisc                    or1ksim_defconfig
+openrisc                 simple_smp_defconfig
+xtensa                          iss_defconfig
+arc                              allyesconfig
+arc                                 defconfig
+microblaze                      mmu_defconfig
+microblaze                    nommu_defconfig
+powerpc                           allnoconfig
+powerpc                             defconfig
+powerpc                       ppc64_defconfig
+powerpc                          rhel-kconfig
+mips                           32r2_defconfig
+mips                         64r6el_defconfig
+mips                             allmodconfig
+mips                              allnoconfig
+mips                             allyesconfig
+mips                      fuloong2e_defconfig
+mips                      malta_kvm_defconfig
+parisc                           allyesconfig
+parisc                         b180_defconfig
+parisc                        c3000_defconfig
+parisc                              defconfig
+c6x                  randconfig-a001-20200210
+h8300                randconfig-a001-20200210
+microblaze           randconfig-a001-20200210
+nios2                randconfig-a001-20200210
+sparc64              randconfig-a001-20200210
+x86_64               randconfig-b001-20200210
+x86_64               randconfig-b002-20200210
+x86_64               randconfig-b003-20200210
+i386                 randconfig-b001-20200210
+i386                 randconfig-b002-20200210
+i386                 randconfig-b003-20200210
+x86_64               randconfig-c001-20200210
+x86_64               randconfig-c002-20200210
+x86_64               randconfig-c003-20200210
+i386                 randconfig-c001-20200210
+i386                 randconfig-c002-20200210
+i386                 randconfig-c003-20200210
+x86_64               randconfig-d001-20200210
+x86_64               randconfig-d002-20200210
+x86_64               randconfig-d003-20200210
+i386                 randconfig-d001-20200210
+i386                 randconfig-d002-20200210
+i386                 randconfig-d003-20200210
+x86_64               randconfig-e001-20200210
+x86_64               randconfig-e002-20200210
+x86_64               randconfig-e003-20200210
+i386                 randconfig-e001-20200210
+i386                 randconfig-e002-20200210
+i386                 randconfig-e003-20200210
+arm                  randconfig-a001-20200209
+riscv                            allmodconfig
+riscv                             allnoconfig
+riscv                            allyesconfig
+riscv                               defconfig
+riscv                          rv32_defconfig
+s390                             alldefconfig
+s390                             allmodconfig
+s390                              allnoconfig
+s390                             allyesconfig
+s390                                defconfig
+s390                       zfcpdump_defconfig
+sh                                allnoconfig
+sh                  sh7785lcr_32bit_defconfig
+sh                            titan_defconfig
+i386                             allyesconfig
+sparc                               defconfig
+sparc64                          allmodconfig
+sparc64                          allyesconfig
+sparc64                             defconfig
+i386                             alldefconfig
+um                             i386_defconfig
+x86_64                              fedora-25
+x86_64                                  kexec
+x86_64                                    lkp
+x86_64                                   rhel
+x86_64                         rhel-7.2-clear
+x86_64                               rhel-7.6
+
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
