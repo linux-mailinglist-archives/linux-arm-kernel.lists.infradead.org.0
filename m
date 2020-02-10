@@ -2,70 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E004156DAF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 03:48:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B64A7156DB5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 03:48:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OeE+XepMe6GqJf4iiEn1mIOk8HSD7Z6BkB+5X3rJjnk=; b=A/vEh0LmbXyyqE
-	MDl6Xhc2oygaq1Qz8Qu/rqLgRR1u9f696AlxZjRxBK7M61P0W7MwhH+XlUrD3SNioeCsk6qjA+QgG
-	X3bv41XP1KzwiJBh2/FybmcbsPQ9zzBBKMN6xKGXg5NqfrRrO1RX7Pooz/DOkVLRXDHbKFV0cKFNJ
-	Clc9rKmcw1fIT5HCw6TpSfWNqGzBWtbgFJNvGfRZzxwIfl9hXdDJisBwSpju9xM3Oho2BxJ2NqEaq
-	a/nyO9O7q2wq5SSWh61I9kra7yeqOzWMxjxFnSbJ7zE+F5WfdU6X6D5yhVZQ3sBZddtidwUFpBZ2I
-	I1h8xWQ50fxslUYO5o+w==;
+	List-Owner; bh=KcsWV+0v6kf6BL94bOFTnEjRHB3Yjm5CD/ptYa4BqII=; b=KiML82sGxmG5td
+	h8+0lSaHajDvVa/7PXNFif1oMdPRLjTwDb9Eu/RHZgdpg7ZwIlAN58FlMIPNCVZf9qB/PBxAZy60j
+	eHmCnImzJyqwD8HQy6D+sQURC5SrnLZWkONZBLZM70b1aJ291zWng2dFGEByQWgk/hDjvTYiDzzin
+	vGm7siLnrP/hlJDUw+hFOm5WsWLS/U6o7+DlRxmsXPD7XnNyM0lVhEhSwYJMR/xK33HwHV4xeCufx
+	v7GeBt9d/M0D3VZKY7rKwTkW/AY9XOWkecF3ON1vIT8Cek4C5j71Tp5IMFCNIygDCW7oDjjmtbHIP
+	LqttapcrZvwN8FODboDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0z7D-0004fV-9X; Mon, 10 Feb 2020 02:48:03 +0000
-Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
+	id 1j0z7n-0004vr-1C; Mon, 10 Feb 2020 02:48:39 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0z76-0004ey-M9
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 02:47:57 +0000
-Received: by mail-qv1-xf44.google.com with SMTP id m5so2531153qvv.4
+ id 1j0z7d-0004um-Qr
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 02:48:31 +0000
+Received: by mail-qk1-x741.google.com with SMTP id a23so5180310qka.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 09 Feb 2020 18:47:56 -0800 (PST)
+ Sun, 09 Feb 2020 18:48:29 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=IDCSxWhDLuTd8LJ5aB5xbWhS/YdWKP+avSFo/NepTNM=;
- b=jsIVEzjDdAnlls3W4DAXr0MB0WaQ+CAtxK394yiKvBLynQtiF4FPxwfE0fjOCufrzh
- /iuq2MoMKcrvuSqKRDRRpUU8o1TdlTl0/niKb8x65PC4QaRJTJDffH39jgiNXZaaE5nh
- pyIztvtIvTxamrLvVqxCw518aIwrgHzeVAgVU=
+ :cc; bh=KhNOBWw692sW7TLm9JHYqZ1FYMPS0CnqLtLM69UIajg=;
+ b=WOEeBQJ0t4o7kDPXaLRu2aiMGXa9fWpVN/m5JJSOjmwXl7Q2FdrY09xHs+kchDgXNs
+ CkiFINK0K96swqWpkyUXYEeNGIfRuDlGs9agaZPvrJrN/8ArqvluPjUd5mGk8PP/BZde
+ hmwlVX4z4biZzsRlWmJEelEq+bmi9W6kRHULM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=IDCSxWhDLuTd8LJ5aB5xbWhS/YdWKP+avSFo/NepTNM=;
- b=RfEvyZ63SzobYflpHVMhp25GJ3t8Aque2EWDUSZzlMLuAWT/u42S/B5ePBQ260EMNB
- oGinpPPyQaDfGSspN8JcnbzERYqO7W9vNGNyDYQ1V/0cc7QbtjthYvRHaRE0smAhxl1v
- Oq4EIZepizm4QWaRRHXvYzuVeLUulshuR56/govsLh6T/t4UGoqY3CJLoqNsi/49OM7B
- pdQIYDZ9YCHQ9wczeL2VPT0UgXdc8NzTYmA6WeQBy2KJ4tEN8i9OORMGPdCgpUEZ2dB1
- pyDfalOhVeQsrQva5o1j7XwIT6JOfPPH0B8JwDXGJjfIE7t/PwMKv+U64kacjhTAVAM0
- MkGQ==
-X-Gm-Message-State: APjAAAUpkEqrxzm7dKYPQtOu+tAqgGXS2/rQZ7/fRGglXRyVG+U3F9fD
- N7+lueNL8rbVqrzVqtwhstiDz7ltPHO6MULWiJ0=
-X-Google-Smtp-Source: APXvYqwuGj9cqaQI7ihHFaiQ5EXNe1MT7fdGI525zSMynjA/wwaIBfxWOGb0gwg6UBAtGbBtysYAvGRljf8gLEaT+Wc=
-X-Received: by 2002:a0c:f6cd:: with SMTP id d13mr8172390qvo.20.1581302875467; 
- Sun, 09 Feb 2020 18:47:55 -0800 (PST)
+ bh=KhNOBWw692sW7TLm9JHYqZ1FYMPS0CnqLtLM69UIajg=;
+ b=U3SgYeSIVlxT4KQJ7OMIc8xm0XiQLYPV6m843yOJ7xOxkhlbJFIHXvLTuglyzR4wFG
+ n8+1vkpSBo++keaM88ZMEuUZlrQOAHYd/Lve+z11ZZva9dpRWi8gLV6mxxUiQjf8iDwh
+ zx0oMUgod0bpXoEgSTcuWuZbrdQ5YIMA5xgleKzPOAg4Nn3sgMdpj7GyVEqi0TU7MH64
+ ir7JBUoIzWht50aIz3W21LLPvFQeNfUnVZR+cdg4cAa+OflA8yiNpwf/039dTlQYB0CD
+ Y1NjDeSsPMKXzHNQO+mB2FPGHv08Du4O3VyQu8jc0QQtaO24QSVIcUakA38+pCyb6XQg
+ m+Xg==
+X-Gm-Message-State: APjAAAVJhUMmsl5FmcK+RT+j6W4/8vtDJSTIjPHP7eUiwfihUYOQXofH
+ p/O9RDYfEOFdT/8T2vjWXT0lrTq7oupeHdH0WFw=
+X-Google-Smtp-Source: APXvYqwi4wpb+TDqKMc2Iotgad5SAilC7344vZRaKVrhKX1IL3F/3MiUz7/wpQomKlkUZEydEsGijhtRhBVNloF/UGs=
+X-Received: by 2002:a37:9dc8:: with SMTP id g191mr8766106qke.171.1581302908581; 
+ Sun, 09 Feb 2020 18:48:28 -0800 (PST)
 MIME-Version: 1.0
 References: <20200131222157.20849-1-rentao.bupt@gmail.com>
- <20200131222157.20849-4-rentao.bupt@gmail.com>
-In-Reply-To: <20200131222157.20849-4-rentao.bupt@gmail.com>
+ <20200131222157.20849-3-rentao.bupt@gmail.com>
+In-Reply-To: <20200131222157.20849-3-rentao.bupt@gmail.com>
 From: Joel Stanley <joel@jms.id.au>
-Date: Mon, 10 Feb 2020 02:47:44 +0000
-Message-ID: <CACPK8Xe=szrpcY_3Gk5g6KqZ3UFBE03wH5MPx-BFOjKN39-EZQ@mail.gmail.com>
-Subject: Re: [PATCH 3/3] ARM: dts: aspeed-g6: add usb functions
+Date: Mon, 10 Feb 2020 02:48:17 +0000
+Message-ID: <CACPK8XcmUYhnePr1AG2M9P-oGvOM=zCM+r44jWUzPYGxUEGOGw@mail.gmail.com>
+Subject: Re: [PATCH 2/3] usb: gadget: aspeed: add ast2600 vhub support
 To: Tao Ren <rentao.bupt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_184756_721545_9C9FA2FF 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200209_184829_869019_B14C139D 
+X-CRM114-Status: GOOD (  16.58  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -110,16 +112,65 @@ On Fri, 31 Jan 2020 at 22:22, <rentao.bupt@gmail.com> wrote:
 >
 > From: Tao Ren <rentao.bupt@gmail.com>
 >
-> Add USB components and according pin groups in aspeed-g6 dtsi.
+> Add AST2600 support in aspeed-vhub driver. There are 3 major differences
+> between AST2500 and AST2600 vhub:
+>   - AST2600 supports 7 downstream ports while AST2500 supports 5.
+>   - AST2600 supports 21 generic endpoints while AST2500 supports 15.
+>   - EP0 data buffer's 8-byte DMA alignment restriction is removed from
+>     AST2600.
 >
 > Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
 > Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
 
-I've applied this to the aspeed tree for 5.7.
+Reviewed-by: Joel Stanley <joel@jms.id.au>
 
-Cheers,
-
-Joel
+> ---
+>  drivers/usb/gadget/udc/aspeed-vhub/Kconfig | 4 ++--
+>  drivers/usb/gadget/udc/aspeed-vhub/core.c  | 9 +++++++++
+>  2 files changed, 11 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/Kconfig b/drivers/usb/gadget/udc/aspeed-vhub/Kconfig
+> index 83ba8a2eb6af..605500b19cf3 100644
+> --- a/drivers/usb/gadget/udc/aspeed-vhub/Kconfig
+> +++ b/drivers/usb/gadget/udc/aspeed-vhub/Kconfig
+> @@ -4,5 +4,5 @@ config USB_ASPEED_VHUB
+>         depends on ARCH_ASPEED || COMPILE_TEST
+>         depends on USB_LIBCOMPOSITE
+>         help
+> -         USB peripheral controller for the Aspeed AST2500 family
+> -         SoCs supporting the "vHub" functionality and USB2.0
+> +         USB peripheral controller for the Aspeed AST2400, AST2500 and
+> +         AST2600 family SoCs supporting the "vHub" functionality and USB2.0
+> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/core.c b/drivers/usb/gadget/udc/aspeed-vhub/core.c
+> index 94081cc04113..c827bf420278 100644
+> --- a/drivers/usb/gadget/udc/aspeed-vhub/core.c
+> +++ b/drivers/usb/gadget/udc/aspeed-vhub/core.c
+> @@ -42,6 +42,11 @@ static const struct ast_vhub_config ast2400_config = {
+>         .max_epns = 15,
+>  };
+>
+> +static const struct ast_vhub_config ast2600_config = {
+> +       .max_ports = 7,
+> +       .max_epns = 21,
+> +};
+> +
+>  static const struct of_device_id ast_vhub_dt_ids[] = {
+>         {
+>                 .compatible = "aspeed,ast2400-usb-vhub",
+> @@ -51,6 +56,10 @@ static const struct of_device_id ast_vhub_dt_ids[] = {
+>                 .compatible = "aspeed,ast2500-usb-vhub",
+>                 .data = &ast2400_config,
+>         },
+> +       {
+> +               .compatible = "aspeed,ast2600-usb-vhub",
+> +               .data = &ast2600_config,
+> +       },
+>         { }
+>  };
+>  MODULE_DEVICE_TABLE(of, ast_vhub_dt_ids);
+> --
+> 2.17.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
