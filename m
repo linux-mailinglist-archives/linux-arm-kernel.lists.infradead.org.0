@@ -2,58 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFA9115837C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 20:23:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D59F1583A1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 20:31:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kb9vN4Y+aWMt285ZwLXkZfOcEs4E3M/yE9DpFrjaUGI=; b=EzzWZEyUWS0r6WrMeiLXlA5un
-	QlXdLtH+aaei50QDKzwKMdDIbjkMrKGrj/T8/zVbmEF0ou9T42QGrEdWCzPq22bp9MEn/2zOobKuz
-	I2xCkm+JkU1rrBz66is0dNwv04Kz4P5GXrCNFCKrrtyQJbbmTMlCFkLHQjqKpZ3ClYhgMK4Qv/Qkt
-	6LGt+Gp3aZo5uCXHJT8hqYXe23ZHntAHRTKQdolgHYNQckIeWSR5RTXKAkoBhYvrea/RS8f1j/S3O
-	tvdvxAgc1a2MtQIcCfogl491rBCRrYQouJ3zMsVnFA5/QbiJUNfaWdcU/PKMYkJSFGvM2Q7u3QWZR
-	s2x4cGITw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=q0kokkKSG3UTSguSPAtd1/fjCMIyPr7Tdn+1ysa0Fhc=; b=PO6Pa/KuTaVSCs
+	mSWgM0jBQaHyIm40IFAFuzanNuA6BHAXNypOgnXuC3KFXRM0gulpOWESyqRa7zSmRgus+hVVRQJ7i
+	wBF0FA6IYSmXbwzszG/+13+4lHSsM4T27QQ0FlRfXrE88df9ZEvv5Chx7LE7DSaPYWvlx/nrP9uAi
+	W2hyqKXBfxH1YQitj3qiGaCfs6denx+7LVMcwAWlydTtEntexNoIg2m7gP69liRwv0ayggQfdmZHi
+	ck7r2JSYh7PE/MNRi9HEk8S6DLoPl2pr2D/tPjt60bOwNLoTwiKxGRkkyP9LchHBG5Dax64q2/zSm
+	GBYPNYIS7Dy39eQXuv+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1EeM-00025k-B3; Mon, 10 Feb 2020 19:23:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1EeE-00025R-HG
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 19:23:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C67731FB;
- Mon, 10 Feb 2020 11:23:09 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4BB233F68F;
- Mon, 10 Feb 2020 11:23:09 -0800 (PST)
-Date: Mon, 10 Feb 2020 19:23:07 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] arm64: Fix CONFIG_ARCH_RANDOM=n build
-Message-ID: <20200210192307.GF14166@sirena.org.uk>
-References: <245aede65d9834101efc9e470f50633b7052e1a8.1581362270.git.robin.murphy@arm.com>
+	id 1j1EmB-0005eK-QD; Mon, 10 Feb 2020 19:31:23 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1Elo-0005S8-Vv
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 19:31:02 +0000
+Received: by mail-oi1-x241.google.com with SMTP id a142so10342254oii.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Feb 2020 11:30:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=7BxkgltGo3ZM9ZY7Grbu2bcNcn+pz+GDYrC11ZXD2ME=;
+ b=BH7Ud+6oFq+7OoIlLBbbMvTBHC4x6G8tRrT4wZScXP2/0BYU5O8AgFFlezKTTpQYMV
+ fmiGPa9peDfUrdZdj+9xqS9t7Ua491OZzp4RIZLg3Giw7fhPm1FvIbwzaS9NqQojoCMv
+ 95B0WHndyisDS9V4XA1xkVEyzq6091EvwvmT4=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=7BxkgltGo3ZM9ZY7Grbu2bcNcn+pz+GDYrC11ZXD2ME=;
+ b=gi0fg3WxUpn5aab2H2+Mlo1NZJPmQNWehm7Tv0FR6M8xvi3dprqyymBGHEBypTTkfm
+ 2I8FeilVKAvhi8SzhnTf7vf0+ZTwtX/DpIzFnEqAWD7E1AGnc6K/CBpuLai2XU0Rvx76
+ o4D4qBwWPGjgbwXtXDrtE50sWJrJoXJQh0vnKlUzaaTduSuAwaSjASkkY78mDSDNQtjM
+ oQp9PgPMNmu+pfxZaDQuZ1ZdihUSuOuVEPpnC+Jwj84ELbx8/MTUMARJV4A05XDxaXG9
+ ycFYgYVm/2HzJE17aVPMYAekEine8zwwXx6jnefn91lxnsgRXjpjm2w+iIwK7ZTgHHEV
+ h1yw==
+X-Gm-Message-State: APjAAAVWJ1OM/tMFPa+hhRrHXMpSgavVvy3o0WleJm8qvSulT36hPSjv
+ FRhkcd7yWVkt6+bYWddG/Qd59g==
+X-Google-Smtp-Source: APXvYqzUOzBqZYnuPC5ne0YCYJNkucq+pHiY9zdgP+OtGzcaHv4jX1sC238odS+TkQrM/uoVlWRNEA==
+X-Received: by 2002:aca:5a04:: with SMTP id o4mr405786oib.71.1581363059273;
+ Mon, 10 Feb 2020 11:30:59 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id 67sm354602oid.30.2020.02.10.11.30.58
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 10 Feb 2020 11:30:58 -0800 (PST)
+From: Kees Cook <keescook@chromium.org>
+To: Ingo Molnar <mingo@kernel.org>
+Subject: [PATCH v3 0/7] binfmt_elf: Update READ_IMPLIES_EXEC logic for modern
+ CPUs
+Date: Mon, 10 Feb 2020 11:30:42 -0800
+Message-Id: <20200210193049.64362-1-keescook@chromium.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <245aede65d9834101efc9e470f50633b7052e1a8.1581362270.git.robin.murphy@arm.com>
-X-Cookie: No lifeguard on duty.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_112310_616262_AC64434A 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200210_113101_025977_05B0C079 
+X-CRM114-Status: GOOD (  15.68  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,59 +93,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2136650915617192596=="
+Cc: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
+ Hector Marco-Gisbert <hecmargi@upv.es>, Russell King <linux@armlinux.org.uk>,
+ Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
+ Jason Gunthorpe <jgg@mellanox.com>, linux-kselftest@vger.kernel.org,
+ kernel-hardening@lists.openwall.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============2136650915617192596==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="udcq9yAoWb9A4FsZ"
-Content-Disposition: inline
+This is a refresh of my earlier attempt to fix READ_IMPLIES_EXEC. I think
+it incorporates the feedback from v2, and I've now added a selftest. This
+series is for x86, arm, and arm64; I'd like it to go via -tip, though,
+just to keep this change together with the selftest. To that end, I'd like
+to collect Acks from the respective architecture maintainers. (Note that
+most other architectures don't suffer from this problem. e.g. powerpc's
+behavior appears to already be correct. MIPS may need adjusting but the
+history of CPU features and toolchain behavior is very unclear to me.)
 
-
---udcq9yAoWb9A4FsZ
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Feb 10, 2020 at 07:21:01PM +0000, Robin Murphy wrote:
-> The entire asm/archrandom.h header is generically included via
-> linux/archrandom.h only when CONFIG_ARCH_RANDOM is already set, so the
-> stub definitions of __arm64_rndr() and __early_cpu_has_rndr() are only
-> visible to KASLR if it explicitly includes the arch-internal header.
-
-Acked-by: Mark Brown <broonie@kernel.org>
-
---udcq9yAoWb9A4FsZ
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5BrZsACgkQJNaLcl1U
-h9Dkbwf+LdUH7bDz1wHrb8AzijXG9dlvLDtLR0fRGCny46ktng73Y9tExZ8l5XG4
-cVXNMIBRBAbRL2SLYKBOVciZ7X83SN/Nk2dUNetz0USpDKpTtpjBE3Xn7Nt9Rj0s
-4CSy7jG8cwXZjUMyiPr/dXtmeFOZEeEi2AuQl3z+ePQBGUFxWosYDSbCrAESEB+j
-3dBcrgtNT4uZr6+MwWm01vFi6IirLVFDBeIPu6W6VUSzmE6ukw30H7ZfooLLqSYg
-w+iIXB3xv9KBnukDr40aSSpSqzaNBZ8nhklbeVcIw6Tza/lW/oP0vbTmehD+veiW
-9Fg/EuDS/amG2sRpVOkN1jj/mcHBYw==
-=8VXL
------END PGP SIGNATURE-----
-
---udcq9yAoWb9A4FsZ--
+Repeating the commit log from later in the series:
 
 
---===============2136650915617192596==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+The READ_IMPLIES_EXEC work-around was designed for old toolchains that
+lacked the ELF PT_GNU_STACK marking under the assumption that toolchains
+that couldn't specify executable permission flags for the stack may not
+know how to do it correctly for any memory region.
+
+This logic is sensible for having ancient binaries coexist in a system
+with possibly NX memory, but was implemented in a way that equated having
+a PT_GNU_STACK marked executable as being as "broken" as lacking the
+PT_GNU_STACK marking entirely. Things like unmarked assembly and stack
+trampolines may cause PT_GNU_STACK to need an executable bit, but they
+do not imply all mappings must be executable.
+
+This confusion has led to situations where modern programs with explicitly
+marked executable stack are forced into the READ_IMPLIES_EXEC state when
+no such thing is needed. (And leads to unexpected failures when mmap()ing
+regions of device driver memory that wish to disallow VM_EXEC[1].)
+
+In looking for other reasons for the READ_IMPLIES_EXEC behavior, Jann
+Horn noted that glibc thread stacks have always been marked RWX (until
+2003 when they started tracking the PT_GNU_STACK flag instead[2]). And
+musl doesn't support executable stacks at all[3]. As such, no breakage
+for multithreaded applications is expected from this change.
+
+[1] https://lkml.kernel.org/r/20190418055759.GA3155@mellanox.com
+[2] https://sourceware.org/git/?p=glibc.git;a=commitdiff;h=54ee14b3882
+[3] https://lkml.kernel.org/r/20190423192534.GN23599@brightrain.aerifal.cx
+
+
+-Kees
+
+
+v3:
+ - split steps in to distinct patches
+ - include arm32 and arm64/compat
+ - add selftests to validate behavior
+v2: https://lore.kernel.org/lkml/20190424203408.GA11386@beast/
+v1: https://lore.kernel.org/lkml/20190423181210.GA2443@beast/
+
+Kees Cook (7):
+  x86/elf: Add table to document READ_IMPLIES_EXEC
+  x86/elf: Split READ_IMPLIES_EXEC from executable GNU_STACK
+  x86/elf: Disable automatic READ_IMPLIES_EXEC for 64-bit address spaces
+  arm32/64, elf: Add tables to document READ_IMPLIES_EXEC
+  arm32/64, elf: Split READ_IMPLIES_EXEC from executable GNU_STACK
+  arm64, elf: Disable automatic READ_IMPLIES_EXEC for 64-bit address
+    spaces
+  selftests/exec: Add READ_IMPLIES_EXEC tests
+
+ arch/arm/kernel/elf.c                         |  27 +++-
+ arch/arm64/include/asm/elf.h                  |  23 +++-
+ arch/x86/include/asm/elf.h                    |  22 +++-
+ fs/compat_binfmt_elf.c                        |   5 +
+ tools/testing/selftests/exec/Makefile         |  42 +++++-
+ .../selftests/exec/read_implies_exec.c        | 121 ++++++++++++++++++
+ .../selftests/exec/strip-gnu-stack-bits.c     |  34 +++++
+ .../testing/selftests/exec/strip-gnu-stack.c  |  69 ++++++++++
+ 8 files changed, 336 insertions(+), 7 deletions(-)
+ create mode 100644 tools/testing/selftests/exec/read_implies_exec.c
+ create mode 100644 tools/testing/selftests/exec/strip-gnu-stack-bits.c
+ create mode 100644 tools/testing/selftests/exec/strip-gnu-stack.c
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2136650915617192596==--
-
