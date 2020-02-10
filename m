@@ -2,85 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEC6B158129
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:18:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AB71158133
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:19:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=aWOEHTUpRChrpanfDvW9GfTNB7tzZ7DOp+r53VvMmpM=; b=X8urS95Y7MFIMo
-	tyDD015tZojipy2/nsnzmREfoxjU3gkyoXplZoYkFjtp9fmnFEE4R8PM+ORTEXmX8nb5IVfqNz0G/
-	DglhpRdjImbq6IefS+BFqH2i/Vvy2VLxX2JH6tTHpVNfm7OINU4bs9YPm9+ZsVYrjkWstFUDFjgIu
-	VrO4EaGksPdTxSkVV2fzRRTEsfRDJnk8SwA9TSBNB0mw5PJFRy+GPYlW7S/n+vwo8unxLrax+sfOA
-	/NUM45OrFDplTI5vnA7KP6T4plyms1F3NwRBLPqJsxKys/o8jswB2gWtLAigyyUbBvXqdCTK4wTeP
-	Nr62PNXuQheJSozVysKQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rJ5bQylVkebuc+PMWrBpzmbv85J/s8nj+u3EQlnwQKI=; b=Tla/D+5IoyGQxp
+	eUbjAOHPGnV4jQT1Jf6oh1X9ff7FmJYBXrBkbZGHyROLbkqCGnAJANCAy1dFCUAsewTCc0jf20uDp
+	TPiSeI07vTmo9PqQNVj1q8WSl4y7Bi+ViR3NfaKT0ESznwIEVxrX9tUHs1pz5NSvNFQtWYnMf2ZCx
+	VpwG8gLcyZGxVZrQ16EKs/YwKxQPB/nGp3ox9VYVcDIAbap1vZ+pjM41GYbsAqbJ0XoVVSaOolSUA
+	djk1nxJQ/qBwCMSw1po445UOaCr5vKsPKFF4asKYrjAFRY4ln4NqJ8lgYQCCIV74MpfdAqjOLC+Rt
+	uET4P4E0lhXhWKfcNMrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Ch9-0007EU-BK; Mon, 10 Feb 2020 17:18:03 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Cgt-00076N-Ib
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:17:49 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01AHCacB020390; Mon, 10 Feb 2020 18:17:41 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=Gq7vJ2L+cJyVm4rmoT7oKXQ1Aw3N9qOaHWBxs8THbRs=;
- b=btT6vR23wvTlVbWtdcOSCzHrAjP54x13DJkDPyQxkctmWOgapPdWwvf/qrAf5N4w2ky7
- 3kNGw9AEwNLePY21c0dhegafyhaLu3jUKaK6mu8Wr7MQcVoASGick/FFM++IA4K7yNwG
- dNMny5m8mlhk4NCaGmKuHdsTea1Ij7rzwx+JCIVu3fdeDDJdQ8XPjuyGMdDt7cn8lTXh
- vD/bvE8pDU8kkovgtK0yUjoNBUzSMPqZvfIApjjb5K4VTW1H/CnfDBn5zjR8fkhW9Zpu
- GnjMIvJ9xfGUZj9en2anUbbpwSs7i0ISNrXK3PDnoGxE+gjTysr/92fR0EgWdAoI0UVO uA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2y1urgv0a9-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 10 Feb 2020 18:17:41 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DEB1B10002A;
- Mon, 10 Feb 2020 18:17:36 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CE4A32C60B3;
- Mon, 10 Feb 2020 18:17:36 +0100 (CET)
-Received: from localhost (10.75.127.44) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 10 Feb 2020 18:17:36
- +0100
-From: Alain Volmat <alain.volmat@st.com>
-To: <wsa@the-dreams.de>, <robh+dt@kernel.org>
-Subject: [PATCH] ARM: dts: stm32: set i2c4 bus freq to 400KHz on stm32mp15 DK
- boards
-Date: Mon, 10 Feb 2020 18:17:36 +0100
-Message-ID: <1581355056-13884-1-git-send-email-alain.volmat@st.com>
-X-Mailer: git-send-email 2.7.4
+	id 1j1CiE-0007fU-WC; Mon, 10 Feb 2020 17:19:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1Ci8-0007ey-CW
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:19:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 95E281FB;
+ Mon, 10 Feb 2020 09:19:03 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 58DEF3F68F;
+ Mon, 10 Feb 2020 09:19:00 -0800 (PST)
+From: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH v7 09/11] arm64: disable SCS for hypervisor code
+To: Sami Tolvanen <samitolvanen@google.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200128184934.77625-1-samitolvanen@google.com>
+ <20200128184934.77625-10-samitolvanen@google.com>
+Message-ID: <6f62b3c0-e796-e91c-f53b-23bd80fcb065@arm.com>
+Date: Mon, 10 Feb 2020 17:18:58 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-10_06:2020-02-10,
- 2020-02-10 signatures=0
+In-Reply-To: <20200128184934.77625-10-samitolvanen@google.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_091747_927259_32CCCBBD 
-X-CRM114-Status: GOOD (  12.35  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200210_091904_468175_2B2A33A9 
+X-CRM114-Status: GOOD (  14.47  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,38 +65,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com, alain.volmat@st.com,
- linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, kernel-hardening@lists.openwall.com,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On DK boards, all I2C4 bus slaves supports I2C Fast Mode hence setting
-the bus frequency to 400 KHz.
+Hi Sami,
 
-Signed-off-by: Alain Volmat <alain.volmat@st.com>
----
- arch/arm/boot/dts/stm32mp15xx-dkx.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+On 28/01/2020 18:49, Sami Tolvanen wrote:
+> Filter out CC_FLAGS_SCS and -ffixed-x18 for code that runs at a
+> different exception level.
 
-diff --git a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
-index 7f5fcb2c5b03..2521f428ae67 100644
---- a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
-+++ b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
-@@ -221,6 +221,7 @@
- 	pinctrl-1 = <&i2c4_pins_sleep_a>;
- 	i2c-scl-rising-time-ns = <185>;
- 	i2c-scl-falling-time-ns = <20>;
-+	clock-frequency = <400000>;
- 	status = "okay";
- 	/* spare dmas for other usage */
- 	/delete-property/dmas;
--- 
-2.7.4
+Hmmm, there are two things being disabled here.
 
+Stashing the lr in memory pointed to by VA won't work transparently at EL2 ... but
+shouldn't KVM's C code still treat x18 as a fixed register?
+
+
+As you have an __attribute__((no_sanitize("shadow-call-stack"))), could we add that to
+__hyp_text instead? (its a smaller hammer!) All of KVM's EL2 code is marked __hyp_text,
+but that isn't everything in these files. Doing it like this would leave KVM's VHE-only
+paths covered.
+
+As an example, with VHE the kernel and KVM both run at EL2, and KVM behaves differently:
+kvm_vcpu_put_sysregs() in kvm/hyp/sysreg-sr.c is called from a preempt notifier as
+the EL2 registers are always accessible.
+
+
+Thanks,
+
+James
+
+> diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+> index ea710f674cb6..5843adef9ef6 100644
+> --- a/arch/arm64/kvm/hyp/Makefile
+> +++ b/arch/arm64/kvm/hyp/Makefile
+> @@ -28,3 +28,6 @@ GCOV_PROFILE	:= n
+>  KASAN_SANITIZE	:= n
+>  UBSAN_SANITIZE	:= n
+>  KCOV_INSTRUMENT	:= n
+> +
+> +# remove the SCS flags from all objects in this directory
+> +KBUILD_CFLAGS := $(filter-out -ffixed-x18 $(CC_FLAGS_SCS), $(KBUILD_CFLAGS))
 
 _______________________________________________
 linux-arm-kernel mailing list
