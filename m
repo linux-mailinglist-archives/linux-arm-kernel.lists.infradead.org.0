@@ -2,89 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DFF415832B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 20:00:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20069158339
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 20:02:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DHcvHlnjtozXNE1kspJzI4z8wtsxpjM+3R+JJxlhfQo=; b=n9zu9Kb9Cb0/AJ
-	LUnG1NE7Fybh9wsniXKjQrs/U/G5b7uSFGZ7wGk1HwbU0vipfVXyoacrCbFImwDlmLsGtd9NyZtZa
-	oDGdeNMg98Z4PiwaZGx9dInCfd4OdHsVbbF6BO9rv+Kbx2d0Q97cDMwYB21QF27RM7W3aXj3sIKn8
-	dG0lz3zg12mfQRR18yV8Mi8HGd4WqW6EUqhB0Q/J6DLue/SZnn510tBI6WaQ3SfDg9ldK/hCn3h+i
-	VtMydm4byoeIIGi2Q9fCTqLQxBPAZysSdFAhxj0p0HKMRCr9wwnOX2KxuIgtuC4qMKNjWtv6r2mkG
-	beocnZt37W4NqJpNlW5Q==;
+	List-Owner; bh=mnQmNmuLwJG5oFK9hffxSv8I+lB3wQInXsp95oxshhU=; b=Rv/LdkEC4dxxql
+	+gs+0RlizDlnqX5k9HU7qZGR8t63vIJFrSApMMf2Vzmv3Broj9qiXkOyj2Kqk4g8jNgJFOW3f5E7a
+	wfGvNjeeP6kMwBFe5W83lGDE90HSlzssqwcIEYlRp13Dy9SEyEd2GzIUjpPBcqXP8LNhIz1Qjj50g
+	ht1x/r1mGQOkJ2VUbpDmwt1MUTdhnm+4Mt8exPpvUrP9ciSgJ/qvvZbSfUkJYvTr73BEU4sI9OVm6
+	MjDX0CyQGldZRCrtLsmd2EjwJdzgFWyVWY3RGJ/9Ow9+adPeT5JCjZs/Afkl8v9qjQ/zhuNRwPb3R
+	Eto/8YfKSE5QhzhCsDxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1EIL-0001Jp-9B; Mon, 10 Feb 2020 19:00:33 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1j1EK2-00020b-QU; Mon, 10 Feb 2020 19:02:18 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1EIC-0001JO-JG
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 19:00:25 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id m13so146212pjb.2
+ id 1j1EJu-0001zG-AY
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 19:02:11 +0000
+Received: by mail-ed1-f66.google.com with SMTP id e10so1593204edv.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 11:00:24 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=IP2SLBX7s7oABfDZ2PXfVL2aB19T/X0Xcl9B0P8WT/Q=;
- b=F1E7OG0+N4r9lV4soTCK3KCNKIRp+9TJO/MEoZpO8ct1N+fq6IVDt5ExeOm/qLsNLm
- bn3wWAX45eZopYAbVyJZ9hg+YpNQx4pDWwtLmFkI8Qj+Ijh6BEXiu467s+t+VSdY+EdT
- BhTMRTyB9h3Bat5sqftflJkXjNTjnXBx3rXcu4rlsWAgbAkTaCNTzhsxQsgJHq/IMW+7
- pkqDRdjSqt9DH7xX4T4crvTb3DsQUxT95v6Cqv2ToQL+ve3LIHyIe5s9QCCyum9eZSOG
- AsgT3+GxZQbQlCX24lKOesnLKCcBFepSb+gd3fdtkGblyojJee3nv/oRXvyL7USDWFS4
- hPeA==
+ Mon, 10 Feb 2020 11:02:09 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=IP2SLBX7s7oABfDZ2PXfVL2aB19T/X0Xcl9B0P8WT/Q=;
- b=lcAFNpYCHcPfOgNgc8D3uOnkAFjyf3YFFHnnVTTFnSBr64zh6MR1eytvPUFqrgvL7s
- kWLt+oLQTz3s+R87GDWi03oLkezd4aFmp8fo5cLbh3FmUxYG7bBraznShb38rUrLqFmR
- r6pBw0+c4TnKZ3KA/C8J2qG6z/fsvnUJsNS4kVCpQYlrwlwh97aaR9+50474dciLIWrg
- 84xpU8tBrIRrq2FVCrWeNIiboOVzNI44UsnED035Zrgywq90xBlFbUnPsxAZEFc/2cnf
- tDhXjVrX53Cvxdwxcj5aZsZkXrhUZ3P3V2UM8gSV4aliZShcAbQpUIIvSTMl15dwcOp5
- U5hQ==
-X-Gm-Message-State: APjAAAVrEFNxXYUGZfd/fngVmx6/xJPZ7KcVGjy4WWO3iu5Br9OakYIs
- x/u2z1iw6kgfA2e+8hU+NOn05XCVtPk=
-X-Google-Smtp-Source: APXvYqxNY3QEOF0KJ5KimOYFaujRMyvRqJdxrh7IcsIQ2G7TQVmjP7rxLxwX2xkjWKQBZWbYMN5eDQ==
-X-Received: by 2002:a17:90a:3745:: with SMTP id
- u63mr497634pjb.123.1581361223658; 
- Mon, 10 Feb 2020 11:00:23 -0800 (PST)
-Received: from ripper (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id p21sm1114597pfn.103.2020.02.10.11.00.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 10 Feb 2020 11:00:22 -0800 (PST)
-Date: Mon, 10 Feb 2020 10:59:35 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Nikolay Borisov <nborisov@suse.com>
-Subject: Re: [PATCH 3/3] dt-bindings: hwlock: Document A64 hwspinlock bindings
-Message-ID: <20200210185935.GM955802@ripper>
-References: <20200210170143.20007-1-nborisov@suse.com>
- <20200210170143.20007-4-nborisov@suse.com>
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=9cf+4qQjBnlkEW/EJTW7h2vLgsgp1JMVDelx9bM1U3Q=;
+ b=M+AIlIEnBnY7z/iQPyjfkfPv+TwaI1Kks/cGl4ILu1o5jWPubGZWk0Wgc8OvduRg99
+ MXjBCZ4ICCbUKFSldq0eES79w5hi/q8kk2GMqljuyOsjxqeraqw9dLnZXH2SxCma4TSZ
+ lf2n/5g60udvomfHGbNgRbaMzw2QQRMyj1yqyNhvtfHj6Q558rAE7wd1l28ENIu3NU7Y
+ z0iZawyuMzL6kt578zxWpJB4GfKHt1HcFsu7TteV1l/IfvORk3nAWiOVJDcrVuS0PsWB
+ mQLPpr4EvieiLSjkZf3LIA+eRyL/64hZkahI8Hh8pJpEIyNKv31U48zPPEjl5mF7kvua
+ jEqQ==
+X-Gm-Message-State: APjAAAVstEmTYvYNweAP3/zaOIEyIMtpLQzhcDkf0IGKXKVXIOnJELSc
+ OavFhGcUGgM8tXIQ2m5F8nQ=
+X-Google-Smtp-Source: APXvYqwg0KeN1+Nwj6pBAd2zwMoQwpurX7DGIJkYt84IeruJJh8EyS0rccVKqJspTu7bUwyIu3L+rg==
+X-Received: by 2002:aa7:df04:: with SMTP id c4mr2519354edy.385.1581361328652; 
+ Mon, 10 Feb 2020 11:02:08 -0800 (PST)
+Received: from kozik-lap ([194.230.155.125])
+ by smtp.googlemail.com with ESMTPSA id r23sm74834edp.15.2020.02.10.11.02.06
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 10 Feb 2020 11:02:07 -0800 (PST)
+Date: Mon, 10 Feb 2020 20:02:05 +0100
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Anand Moon <linux.amoon@gmail.com>
+Subject: Re: [PATCHv3 0/3] Add support for suspend clk for Exynos5422 SoC
+Message-ID: <20200210190205.GB16433@kozik-lap>
+References: <20200210105108.1128-1-linux.amoon@gmail.com>
+ <20200210135612.GB2163@pi3>
+ <CANAwSgT9aq123H-pO2u6iN2E8towsWUFcWDsA9TbVqP30j=10w@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200210170143.20007-4-nborisov@suse.com>
+In-Reply-To: <CANAwSgT9aq123H-pO2u6iN2E8towsWUFcWDsA9TbVqP30j=10w@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_110024_633603_730B7B5E 
-X-CRM114-Status: GOOD (  17.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200210_110210_365613_628B5BDD 
+X-CRM114-Status: GOOD (  21.67  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,67 +89,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, mripard@kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Felipe Balbi <balbi@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux USB Mailing List <linux-usb@vger.kernel.org>,
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 10 Feb 09:01 PST 2020, Nikolay Borisov wrote:
-
-> Add binding for the hwspinlock found on Allwinner A64 SoC.
+On Mon, Feb 10, 2020 at 10:38:52PM +0530, Anand Moon wrote:
+> Hi Krzysztof,
 > 
-> Signed-off-by: Nikolay Borisov <nborisov@suse.com>
-
-This does look good, but could you please rewrite this in YAML instead?
-
-We will need review feedback from the devicetree guys, so please include
-Rob and devicetree@ on your next post (i.e. run get_maintainers.pl).
-
-Regards,
-jorn
-
-> ---
->  .../bindings/hwlock/sunxi-hwspinlock.txt      | 27 +++++++++++++++++++
->  1 file changed, 27 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/hwlock/sunxi-hwspinlock.txt
+> On Mon, 10 Feb 2020 at 19:26, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> >
+> > On Mon, Feb 10, 2020 at 10:51:05AM +0000, Anand Moon wrote:
+> > > Long time ago I tried to add suspend clk for dwc3 phy
+> > > which was wrong appoch, see below.
+> > >
+> > > [0] https://lore.kernel.org/patchwork/patch/837635/
+> > > [1] https://lore.kernel.org/patchwork/patch/837636/
+> > >
+> >
 > 
-> diff --git a/Documentation/devicetree/bindings/hwlock/sunxi-hwspinlock.txt b/Documentation/devicetree/bindings/hwlock/sunxi-hwspinlock.txt
-> new file mode 100644
-> index 000000000000..af1fbf8fc9f0
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/hwlock/sunxi-hwspinlock.txt
-> @@ -0,0 +1,27 @@
-> +Allwinner HwSpinlock for A64 SoC
-> +=========================================
-> +
-> +Required properties:
-> +- compatible:		Should be "allwinner,sun50i-a64-hwspinlock"
-> +- reg:			Contains the hwspinlock module register address space
-> +			(base address and length)
-> +- resets:  phandle to the reset control for the hwspinlock
-> +- clocks:  phandle to the clock feeding the hwspinlock
-> +- #hwlock-cells:	Should be 1. The A64 hwspinlock users will use a
-> +			0-indexed relative hwlock number as the argument
-> +			specifier value for requesting a specific hwspinlock
-> +			within a hwspinlock bank.
-> +
-> +Please look at the generic hwlock binding for usage information for consumers,
-> +"Documentation/devicetree/bindings/hwlock/hwlock.txt"
-> +
-> +Example:
-> +
-> +1. Allwinner A64
-> +hwspinlock: spinlock@1c18000 {
-> +	compatible = "allwinner,sun50i-a64-hwspinlock";
-> +	reg = <0x01c18000 0x1000>;
-> +	clocks = <&ccu CLK_BUS_SPINLOCK>;
-> +	resets = <&ccu RST_BUS_SPINLOCK>;
-> +	#hwlock-cells = <1>;
-> +};
-> -- 
-> 2.17.1
+> Thanks for your review comments.
 > 
+> > You ignored parts of my review from these previous patches. I asked for
+> > describing WHY are you doing this and WHAT problem are you trying to
+> > solve. I asked for this multiple times. Unfortunately I cannot find the
+> > answers to my questions in this patchset...
+> >
+> > Best regards,
+> > Krzysztof
+> 
+> I dont know how to resolve this issue, but I want to re-post
+> some of my changes back for review. let me try again.
+> 
+> My future goal is to add #power-domain for FSYS and FSYS2
+> which I am trying to resolve some issue.
+> Also add run-time power management for USB3 drivers.
+
+You can start by describing why FSYS and FSYS2 power domains cannot be
+added right now. Maybe this patchset allows this later?
+
+> 
+> Here is the clk diagram for FSYS clk as per Exynos5422 user manual.
+> [0] https://imgur.com/gallery/zAiBoyh
+> 
+> As per the USB 3.0 Architecture T I.
+> 
+> 2.13.1 PHY Power Management
+> The SS PHY has power states P0, P1, P2, and P3, corresponding to the
+> SS LPM states of U0, U1, U2,and U3. In the P3 state,SS PHY does not drive
+> the default functional clock,instead, the *susp_clk* is used in its place.
+> 
+> So enable the suspend clk help control the power management
+> states for the DWC3 controller.
+
+That's too vague because clock usually cannot "help"... The wording is
+wrong and the actual problem is not described.
+
+I could guess from your description and driver behavior that SCLK has to
+be on during USB DRD suspend.
+
+Best regards,
+Krzysztof
+
 
 _______________________________________________
 linux-arm-kernel mailing list
