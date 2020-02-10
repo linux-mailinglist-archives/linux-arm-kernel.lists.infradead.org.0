@@ -2,95 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1249F157165
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 10:03:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7911E1571AB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 10:27:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dJ41so3rg39DgbD7ls+gVocwrVCrF8k6tWH0xaZZM7w=; b=U/GgpYy0bKGnf2
-	cJEJZJFWszyJ9U8GfAjWpsfzYohWCCuO795mmrbyT66EZeR9b/5dpiGzj56yYX3ALRxBypaE+Biwb
-	70z9z0P5g6r8E6wBhHK/48/5w+n597oitIxW7s+Xy3K2J5d3sSVWT2lKwT3wGgxtXP8BWQOPWHcdi
-	JBIG+sdyzMXpiV77Bdm6BcDsE7gMazH8h+YsgrVHD7xRKshh7A/ivZNu6zgVvGZjRwBE4stWssZSj
-	kfxTfSu0h5XnVNJZV65Nt7BCjHyOy8F7YnV0Adb0eSjG5QtONhG+Fjq/XF7c3/xCDlkzP3XKNj9tE
-	TtTkOGR8LcMJZeR0UqCg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xJikbw+qcQzlqInJaE41eW4DFv47cL9I/5yslZLuBGI=; b=Cc9G9OJVlSxwBE
+	E7jOLX3yeuB3vOoeja615ToKtCi//GNgov+gcAeNL/XnCa5XL/IvtTsS/t8KWwS9Fn67cFSgJflIb
+	+qfu7QLMmkdTdnaDgvDD4HZ8xuJAmBgSsvSTQR29MwJMuHuBQsHvxWXFyoQBIoSKIcTVcYgEsb1bI
+	Q9opzdC2twmvg7h2AOUGwoMEn78y8QoTZob/DpG/Kdr/9nBsid+yy4GKzM1L4Afy22Oa7EF1BDLQd
+	hj7GkppTKH/oszHy8PJGKcza4R+bi3Orz/0Hp41mihp2DWZNJcVcLnPrD92Tclkk9rC2MRBh1GpRT
+	gc1qF7p9ppUOWqKI/GGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j14yE-0005cM-KO; Mon, 10 Feb 2020 09:03:10 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1j15Ln-0006MT-Sj; Mon, 10 Feb 2020 09:27:31 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j14y6-0005bs-2e
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 09:03:03 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01A8mLPn001938; Mon, 10 Feb 2020 10:02:41 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=H3rjV2A7fROz9cnfk/NtpzzXf8VAhOt6rYAt5Ftt45U=;
- b=D5V7BBkvCc0kUybXL+upTzZgl75lCiYEW+mg1iyuSGZCPHhDqvHoOLqEIwWAHpsvx3JT
- lvYZvivPSRavo5I9BBLtWVpiBqbpSFtNLa5TUve6Sr8ggCN5Hcu6D7PowvHqmhZ9lZ9G
- vDepXpzaLOSvrHOH/kYlLUCn8WG1xVCKPykOH0L3Ry0LCAQuGllUluzwr9X0RWoA44rs
- aEhtdrV6O2OgcpZ2A3Sa0gKshHV458DIZuhKJqmGcCM1HKSo7z9m8vsTEc8PoCjFFGst
- Cyb1vC6w20bsewVzwgofcOqKYauilVE+Ms51/8SvoIYyPnd6sbaOSkqgAreHz5+QKCaa kg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2y1urgr6gv-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 10 Feb 2020 10:02:41 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EAD0010002A;
- Mon, 10 Feb 2020 10:02:36 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D059F2B793A;
- Mon, 10 Feb 2020 10:02:36 +0100 (CET)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG5NODE2.st.com
- (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 10 Feb
- 2020 10:02:36 +0100
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Mon, 10 Feb 2020 10:02:36 +0100
-From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-To: "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>, Alexandre TORGUE
- <alexandre.torgue@st.com>, "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- Pascal PAILLET-LME <p.paillet@st.com>, "linus.walleij@linaro.org"
- <linus.walleij@linaro.org>
-Subject: Re: [PATCH v3 0/2] clockevent: add low power STM32 timer
-Thread-Topic: [PATCH v3 0/2] clockevent: add low power STM32 timer
-Thread-Index: AQHV1dN0ASRe/0fvOUqwQX9rlF1+nagUJUGA
-Date: Mon, 10 Feb 2020 09:02:36 +0000
-Message-ID: <7d062f5b-9272-c7db-7a9e-b908870dd8b4@st.com>
-References: <20200128120702.26166-1-benjamin.gaignard@st.com>
-In-Reply-To: <20200128120702.26166-1-benjamin.gaignard@st.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.50]
-Content-ID: <5AF5E50E0266274A90729B9F125EDBE9@st.com>
+ id 1j15Lf-0006Ll-Ss
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 09:27:25 +0000
+Received: by mail-lj1-x243.google.com with SMTP id x14so6246087ljd.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Feb 2020 01:27:23 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JIg5+OltZz+qNz0RRuDFM1jB49i8ZdwPwOhAKksmf8Y=;
+ b=KYrIt4bM5BqpJ4+bdw8Ouh+iYEIZvhloTC4PoEaeWXraXTicwzhSJjVriL2dK0QHpc
+ MzWKC4cXOMEo7BpxcXlvm1+NLMbo688OL+7QAOtUw06/+tbPj1xtiStQ+GIdM6O2ufNH
+ wv+46GX/V1tkQdRzBdEpeKmtkI5OYd1kF6SKqn7YSmbOpJsMxOM/59zJYoicCcvzhbZf
+ ewqkYL3GblFJew+0V7a7KBWQsvI1IWqIZXOOoA4zCssdGuD0AcKfZjAqRuHtCfukNQwR
+ fUsMYJIUH5PvwdQNgsBvMm0knq9gsh0Z+z33TcfZ5WRKgjD7B9SqFUxeYBc+nHrxiQFi
+ Twiw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=JIg5+OltZz+qNz0RRuDFM1jB49i8ZdwPwOhAKksmf8Y=;
+ b=P76wmlKr2rImTcvzKB3HbpYYl9Z4jC8y3a3B9AMpNHYm7LhfRYzmcHGrvVq8QZYxhB
+ 3OCrRuQv/Vf1pybIzsxrqix3cbNS/ts6x3AJtUkCKBO0em811ZviI0gvpe7C3SYmhx/T
+ ++XZFM7GloyGXy4HgsYsDsADOqgergrDYAYOsKfxLdmzaeyCRNdZvqWBJYN3GS9yzUP2
+ rf1ahakvsJ1XKr4md9NCF5vGsN4U58Xzq2jCXFiAuoNr13Nb0MbdlPLRbqYLg8MDBA/+
+ wqYJLX+Dj22dP+zWTOHFVeQeH9XuB8wX1Ev9Pa+UpoOougx+SrCELOqA1DzJUvKsqsW2
+ lO4w==
+X-Gm-Message-State: APjAAAVG0X41dg2YLs0OhSURLfjgCNkb2g+G8tMWDNXYPwSkKeGDMgDi
+ Hl7JE1+Cx/K4BXvJTl8j2ERxOw==
+X-Google-Smtp-Source: APXvYqwDUwBuUFIFKY/t/OmKsowDf9RX0RJ5xHbraCkJAtapJJCM9EAJ02li8HubtWZBMbPRHfo4fQ==
+X-Received: by 2002:a2e:8119:: with SMTP id d25mr336354ljg.76.1581326841707;
+ Mon, 10 Feb 2020 01:27:21 -0800 (PST)
+Received: from genomnajs.ideon.se ([85.235.10.227])
+ by smtp.gmail.com with ESMTPSA id d9sm5989882lja.73.2020.02.10.01.27.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 10 Feb 2020 01:27:21 -0800 (PST)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Mark Rutland <mark.rutland@arm.com>
+Subject: [PATCH 0/7] dt-bindings: Convert the ARM Boards to YAML
+Date: Mon, 10 Feb 2020 10:27:06 +0100
+Message-Id: <20200210092713.279105-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-10_02:2020-02-07,
- 2020-02-10 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_010302_491832_CDB5F321 
-X-CRM114-Status: GOOD (  17.42  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200210_012723_939392_EE8276E9 
+X-CRM114-Status: GOOD (  10.87  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -111,52 +95,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Fabrice GASNIER <fabrice.gasnier@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This converts the ARM reference designs to use YAML schema
+to verify the top-level and in some cases some basic nodes
+in the device tree as well.
 
-On 1/28/20 1:07 PM, Benjamin Gaignard wrote:
-> This series add low power timer as boadcast clockevent device.
-> Low power timer could runs even when CPUs are in idle mode and
-> could wakeup them.
+Rob requested me to get this done: let's get it done.
 
-Gentle ping to reviewers.
+Rob: when you're happy I can merge this through ARM SoC so the
+minor cleanups go in first, unless you prefer another
+merge path.
 
-Thanks,
+Linus Walleij (7):
+  ARM: dts: Versatile: Use syscon as node name for IB2
+  ARM: dts: RealView: Fix the name of the SoC node
+  dt-bindings: arm: Add Integrator YAML schema
+  dt-bindings: arm: Add Versatile YAML schema
+  dt-bindings: arm: Add RealView YAML schema
+  dt-bindings: arm: Add Versatile Express and Juno YAML schema
+  dt-bindings: arm: Drop the non-YAML bindings
 
-Benjamin
+ .../bindings/arm/arm,integrator.yaml          |  85 +++++++
+ .../devicetree/bindings/arm/arm,realview.yaml | 123 +++++++++
+ .../bindings/arm/arm,versatile.yaml           |  69 +++++
+ .../bindings/arm/arm,vexpress-juno.yaml       | 118 +++++++++
+ .../devicetree/bindings/arm/arm-boards        | 237 ------------------
+ .../devicetree/bindings/arm/vexpress.txt      | 229 -----------------
+ arch/arm/boot/dts/arm-realview-pbx.dtsi       |   2 +-
+ arch/arm/boot/dts/versatile-ab-ib2.dts        |   2 +-
+ 8 files changed, 397 insertions(+), 468 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/arm,integrator.yaml
+ create mode 100644 Documentation/devicetree/bindings/arm/arm,realview.yaml
+ create mode 100644 Documentation/devicetree/bindings/arm/arm,versatile.yaml
+ create mode 100644 Documentation/devicetree/bindings/arm/arm,vexpress-juno.yaml
+ delete mode 100644 Documentation/devicetree/bindings/arm/arm-boards
+ delete mode 100644 Documentation/devicetree/bindings/arm/vexpress.txt
 
->
-> version 3:
-> - fix timer set sequence
-> - don't forget to free irq on remove function
-> - use devm_kzalloc to simplify errors handling in probe function
->
-> version 2:
-> - stm32 clkevent driver is now a child of the stm32 lp timer node
-> - add a probe function and adpat the driver to use regmap provide
->    by it parent
-> - stop using timer_of helpers
-> - document the bindings inside stm32 lptimer yaml
->
-> Benjamin Gaignard (2):
->    dt-bindings: mfd: Document STM32 low power clkevent bindings
->    clocksource: Add Low Power STM32 timers driver
->
->   .../devicetree/bindings/mfd/st,stm32-lptimer.yaml  |  14 ++
->   drivers/clocksource/Kconfig                        |   4 +
->   drivers/clocksource/Makefile                       |   1 +
->   drivers/clocksource/timer-stm32-lp.c               | 248 +++++++++++++++++++++
->   4 files changed, 267 insertions(+)
->   create mode 100644 drivers/clocksource/timer-stm32-lp.c
->
+-- 
+2.23.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
