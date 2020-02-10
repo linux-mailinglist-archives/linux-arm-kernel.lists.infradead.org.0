@@ -2,98 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E79721583EA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 20:48:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9BD891583F3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 20:57:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gvsz0JkXV8qiFU/fGdOJmp8a1OBBQFwI0lIEsiZ7W5Y=; b=CnT+OnflcUy9l/
-	tsa8khY7u/MGcjKzgYthV+oLNtGto/ryuQdmwTrzx/upM9GZjT0pG73RtibZtTaTdv65wjyJNB5+Z
-	M4B3ZuFutP2I/AoVnN6y7NRlaTtioorlNnSDsfO9JtgG35X3meF/XSGLI8VwOojp6+KNUeMOV4fSD
-	lQv/Bc5b4UY556ddWKUVQgJuPh7Pwzd7APnkuP1aBAD3y59iWz9kW7XpBhH0tgmHDgVIvIJYMuler
-	Hb73sAR1jkpArvWscrvLEN314nZFeTnJT7TXkRFvJrT4bRJuCknXHud+zG/mOPbpwfoeb8ib6+d2v
-	wSbSu/72Xx0rc5m35rCg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=R0QPFig7F3GrLf9oDBbmttbss047NEtisrE+5Rybw3k=; b=BLkCLzWhZD0/Nf
+	3bgRj5WMEh0sPJnpmd3MPoz/nAO1H4p4bXOYz/9lQqVWYwz+fxRDrxily6yNcLuKaUJ3YiHlb3fue
+	I+MB0s+o0vfALYqymEloBQdsp2VKYCJ1C60kvnK2+lPsnGpk+GgidKe/RHWPNWXFZmfAhfSLQ325C
+	StZqcr603cutfPWf/Q/d7qISX0qef4KXe/EKQ1QuyAUSNwlpbCj0UAQS3T3c0aXCuulnRGQIVCxlO
+	yO1cth/wqQFHDxlJcWPubtcyKW9rZAn+aZto066GXz7YvJg4lVt5e8ueTwv+SLw6VAPGnEJNq6j4t
+	t+d/VK/LK/PemPm4C84g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1F2v-0004vH-Kq; Mon, 10 Feb 2020 19:48:41 +0000
-Received: from mail-ot1-f42.google.com ([209.85.210.42])
+	id 1j1FAn-0000EX-3B; Mon, 10 Feb 2020 19:56:49 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1F2j-0004u1-Ng
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 19:48:31 +0000
-Received: by mail-ot1-f42.google.com with SMTP id h9so7596100otj.11
+ id 1j1FAf-0000DH-C7
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 19:56:42 +0000
+Received: by mail-lf1-x141.google.com with SMTP id b15so5178098lfc.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 11:48:27 -0800 (PST)
+ Mon, 10 Feb 2020 11:56:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=+Vp99gmXOmzAr4kwih73mUZpLLZhJP36bCWbtwEkM2M=;
+ b=IVE1m+boYfFsAkei5sitHTt42rYyvgx7AefTzenzYhhSMxqkFdxhNXKdDGoBR8jpDo
+ zf/f0G138XO4TRcSsRaftBds6Ljoo0hBOg4jocFiWM5eMnLBAtrXK6+BHhIvf52pUH7a
+ LusYw26sxV/OXGgW1u8DukjIxkFo2wlFtM4+mFliGQ/gn11Og5NXYMaXrc9eEg81nBeL
+ 467mcbrM6z18MRAhdsIeicEQ024azdFbedeDewbjmbnTcJoAHnFrB8PgnuoREyTpDhv0
+ O1yGInNXxsOiqZLwe+bdQLmD73gzSXQepWD/h80wltyf6ZJayT66Eys+mxNf5DwBpb0+
+ oVtQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cRFAgHTjcpru4Yh3cmh88ozwK6oz4DRfN4/AXw7tuCc=;
- b=dUvt3MK16lWGRuTMDOa0p180la4T4p/4Q2l+FJs3zWOb0rHe3OkSWyDD9TiJahfqOV
- C0WsWKcjbAfSD3G4+6jaqXIVLjChcBP48UXsQw3HKDotKZO93cmucLR1xEKUXsyddZ/2
- CK9TAgTK317sSHE6zCNfQ+ZM6OrBHvuasPIbombV7WFhldaQMs6t8E+AXgb80CxqvMrW
- HUC3Wcf5+bnDNLNGVUJjLhryFKniHPjWScvLdR4yOX0D7yQO1RHV+KPhbzZ/bDeT2jQZ
- yDk6EyPcoTozNC2YEpBgyVVOpH8KgBljbMJzLEISXgfTtMqBR22elHhIyIKu/D0CZVPa
- MV7Q==
-X-Gm-Message-State: APjAAAXa7bX2o1qwpZ3fHSmkXBkGhTV3W8TzdwrarZaxntXcPeBW8Ild
- zVc80GR6VGNdcYHJBn96tpTKfUBspA8=
-X-Google-Smtp-Source: APXvYqywmifBQxsvve7ns76PJksj2zClGIa8U7VWX7DA7WmNIVglSf8m3NtvceTRtd4j3KvKNNCIXA==
-X-Received: by 2002:a9d:7386:: with SMTP id j6mr2257148otk.336.1581364106683; 
- Mon, 10 Feb 2020 11:48:26 -0800 (PST)
-Received: from mail-ot1-f45.google.com (mail-ot1-f45.google.com.
- [209.85.210.45])
- by smtp.gmail.com with ESMTPSA id c12sm404535oic.27.2020.02.10.11.48.25
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 10 Feb 2020 11:48:26 -0800 (PST)
-Received: by mail-ot1-f45.google.com with SMTP id r16so7661703otd.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 11:48:25 -0800 (PST)
-X-Received: by 2002:a05:6830:1184:: with SMTP id
- u4mr2168328otq.221.1581364105459; 
- Mon, 10 Feb 2020 11:48:25 -0800 (PST)
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=+Vp99gmXOmzAr4kwih73mUZpLLZhJP36bCWbtwEkM2M=;
+ b=htAS5ai9sSJ2FfsVzNkaz0Awmk4khZEteDJ++IPoKmhNNS0RK8fJQA2ZteiSQ0Bkgg
+ H5DYUOC9psrF5C2ZzsrXE5+9eBp5PHwB1sAqaMhT2b3oRfzNWgZHkV/du8fk1TzYTx3E
+ 32/s8NTIILgJYVze4+iuvKt1wNzJ8ziFzNb3UNwgRahvEkWLeqyH1bMn1Iay4nDZP+lk
+ oKeVDaIbXJyKqP3PgDAfLDhV7IY3jMnXNA50eWOlQR0DGrjv3Q3PXDBH+cfznZm7NTO1
+ asE76F/UXIYbZ9yhWcmqVeSB0wn130pIjN57egyBAsoL19Ja8r2FNT2DPYNA3hrJlZrP
+ 1iXA==
+X-Gm-Message-State: APjAAAXhrK8wMbeQNtrwLwTO8IxvItJ4Lj4D647GQeRMYuhcvIy2+F9J
+ IVaiIEpGl+GE4Hwr0mnCXqk=
+X-Google-Smtp-Source: APXvYqzA17Cje2rmusmUFfK7j4fQQTvl9LMCQYu9vbuB0SOT5FOPce6rXHFVzj7jm75uI+0iw/xhUQ==
+X-Received: by 2002:a19:4cc6:: with SMTP id z189mr1492261lfa.171.1581364596307; 
+ Mon, 10 Feb 2020 11:56:36 -0800 (PST)
+Received: from kedthinkpad ([5.20.204.163])
+ by smtp.gmail.com with ESMTPSA id h10sm848723ljc.39.2020.02.10.11.56.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 10 Feb 2020 11:56:35 -0800 (PST)
+Date: Mon, 10 Feb 2020 21:56:33 +0200
+From: Andrey Lebedev <andrey.lebedev@gmail.com>
+To: mripard@kernel.org, wens@csie.org, airlied@linux.ie, daniel@ffwll.ch,
+ dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/1] Support LVDS output on Allwinner A20
+Message-ID: <20200210195633.GA21832@kedthinkpad>
 MIME-Version: 1.0
-References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
- <CAOesGMjAQSfx1WZr6b1kNX=Exipj_f4X_f39Db7AxXr4xG4Tkg@mail.gmail.com>
- <DB8PR04MB6747DA8E1480DCF3EFF67C9284500@DB8PR04MB6747.eurprd04.prod.outlook.com>
- <20200110153347.GA29372@e121166-lin.cambridge.arm.com>
- <CAOesGMj9X1c7eJ4gX2QWXSNszPkRn68E4pkrSCxKMYJG7JHwsg@mail.gmail.com>
- <DB8PR04MB67473114B315FBCC97D0C6F9841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
- <CAOesGMieMXHWBO_p9YJXWWneC47g+TGDt9SVfvnp5tShj5gbPw@mail.gmail.com>
- <20200210152257.GD25745@shell.armlinux.org.uk>
- <CAOesGMj6B-X1s8-mYqS0N6GJXdKka1MxaNV=33D1H++h7bmXrA@mail.gmail.com>
- <CADRPPNSXPCVQEWXfYOpmGBCXMg2MvSPqDEMeeH_8VhkPHDuR5w@mail.gmail.com>
-In-Reply-To: <CADRPPNSXPCVQEWXfYOpmGBCXMg2MvSPqDEMeeH_8VhkPHDuR5w@mail.gmail.com>
-From: Li Yang <leoyang.li@nxp.com>
-Date: Mon, 10 Feb 2020 13:48:14 -0600
-X-Gmail-Original-Message-ID: <CADRPPNQ6wYOXzH_Hh9x4YDN_Mg1iaiYqMM8p_m9zJXfr_TQayw@mail.gmail.com>
-Message-ID: <CADRPPNQ6wYOXzH_Hh9x4YDN_Mg1iaiYqMM8p_m9zJXfr_TQayw@mail.gmail.com>
-Subject: Re: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
- driver for NXP Layerscape SoCs
-To: Olof Johansson <olof@lixom.net>, Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_114829_772002_3F0E949D 
-X-CRM114-Status: GOOD (  26.89  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200210_115641_440856_4EB723E5 
+X-CRM114-Status: GOOD (  16.87  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.42 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.42 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [pku.leo[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ provider [andrey.lebedev[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,89 +98,195 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "arnd@arndb.de" <arnd@arndb.de>,
- "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "Z.q. Hou" <zhiqiang.hou@nxp.com>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "M.h. Lian" <minghuan.lian@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "andrew.murray@arm.com" <andrew.murray@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 10, 2020 at 12:41 PM Li Yang <leoyang.li@nxp.com> wrote:
->
-> On Mon, Feb 10, 2020 at 9:32 AM Olof Johansson <olof@lixom.net> wrote:
-> >
-> > On Mon, Feb 10, 2020 at 4:23 PM Russell King - ARM Linux admin
-> > <linux@armlinux.org.uk> wrote:
-> > >
-> > > On Mon, Feb 10, 2020 at 04:12:30PM +0100, Olof Johansson wrote:
-> > > > On Thu, Feb 6, 2020 at 11:57 AM Z.q. Hou <zhiqiang.hou@nxp.com> wrote:
-> > > > >
-> > > > > Hi Olof,
-> > > > >
-> > > > > Thanks a lot for your comments!
-> > > > > And sorry for my delay respond!
-> > > >
-> > > > Actually, they apply with only minor conflicts on top of current -next.
-> > > >
-> > > > Bjorn, any chance we can get you to pick these up pretty soon? They
-> > > > enable full use of a promising ARM developer system, the SolidRun
-> > > > HoneyComb, and would be quite valuable for me and others to be able to
-> > > > use with mainline or -next without any additional patches applied --
-> > > > which this patchset achieves.
-> > > >
-> > > > I know there are pending revisions based on feedback. I'll leave it up
-> > > > to you and others to determine if that can be done with incremental
-> > > > patches on top, or if it should be fixed before the initial patchset
-> > > > is applied. But all in all, it's holding up adaption by me and surely
-> > > > others of a very interesting platform -- I'm looking to replace my
-> > > > aging MacchiatoBin with one of these and would need PCIe/NVMe to work
-> > > > before I do.
-> > >
-> > > If you're going to be using NVMe, make sure you use a power-fail safe
-> > > version; I've already had one instance where ext4 failed to mount
-> > > because of a corrupted journal using an XPG SX8200 after the Honeycomb
-> > > Serror'd, and then I powered it down after a few hours before later
-> > > booting it back up.
-> > >
-> > > EXT4-fs (nvme0n1p2): INFO: recovery required on readonly filesystem
-> > > EXT4-fs (nvme0n1p2): write access will be enabled during recovery
-> > > JBD2: journal transaction 80849 on nvme0n1p2-8 is corrupt.
-> > > EXT4-fs (nvme0n1p2): error loading journal
-> >
-> > Hmm, using btrfs on mine, not sure if the exposure is similar or not.
-> >
-> > Do you know if the SErr was due to a known issue and/or if it's
-> > something that's fixed in production silicon?
-> >
-> > (I still can't enable SMMU since across a warm reboot it fails
-> > *completely*, with nothing coming up and working. NXP folks, you
-> > listening? :)
->
-> This is a known issue about DPAA2 MC bus not working well with SMMU
-> based IO mapping.  Adding Laurentiu to the chain who has been looking
-> into this issue.
+A20 SoC (found in Cubieboard 2 among others) requires different LVDS set
+up procedure than A33. Timing controller (tcon) driver only implements
+sun6i-style procedure, that doesn't work on A20 (sun7i).
 
-Forgot to mention that you can workaround the issue by setting
-CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT=n or adding
-"arm-smmu.disable_bypass=0" to boot parameters.
+The support for such procedure is ported from u-boot and follows u-boot
+naming convention: SUN6I* for sun6i-style procedure, and SUN4I for other
+(which happens to be compatible with A20).
+---
+ drivers/gpu/drm/sun4i/sun4i_tcon.c | 91 ++++++++++++++++++++----------
+ drivers/gpu/drm/sun4i/sun4i_tcon.h | 12 ++++
+ 2 files changed, 73 insertions(+), 30 deletions(-)
 
-Regards,
-Leo
+diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+index c81cdce6ed55..78896e907ca9 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
++++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+@@ -114,46 +114,74 @@ static void sun4i_tcon_channel_set_status(struct sun4i_tcon *tcon, int channel,
+ 	}
+ }
+ 
++static void sun4i_tcon_lvds_sun6i_enable(struct sun4i_tcon *tcon,
++					 const struct drm_encoder *encoder) {
++	u8 val;
++	regmap_write(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
++		     SUN6I_TCON0_LVDS_ANA0_C(2) |
++		     SUN6I_TCON0_LVDS_ANA0_V(3) |
++		     SUN6I_TCON0_LVDS_ANA0_PD(2) |
++		     SUN6I_TCON0_LVDS_ANA0_EN_LDO);
++	udelay(2);
++
++	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
++			   SUN6I_TCON0_LVDS_ANA0_EN_MB,
++			   SUN6I_TCON0_LVDS_ANA0_EN_MB);
++	udelay(2);
++
++	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
++			   SUN6I_TCON0_LVDS_ANA0_EN_DRVC,
++			   SUN6I_TCON0_LVDS_ANA0_EN_DRVC);
++
++	if (sun4i_tcon_get_pixel_depth(encoder) == 18)
++		val = 7;
++	else
++		val = 0xf;
++
++	regmap_write_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
++			  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(0xf),
++			  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(val));
++
++}
++
++static void sun4i_tcon_lvds_sun4i_enable(struct sun4i_tcon *tcon) {
++	regmap_write(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
++		     SUN4I_TCON0_LVDS_ANA0_CK_EN |
++		     SUN4I_TCON0_LVDS_ANA0_REG_V |
++		     SUN4I_TCON0_LVDS_ANA0_REG_C |
++		     SUN4I_TCON0_LVDS_ANA0_EN_MB |
++		     SUN4I_TCON0_LVDS_ANA0_PD |
++		     SUN4I_TCON0_LVDS_ANA0_DCHS);
++
++	udelay(2); /* delay at least 1200 ns */
++	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA1_REG,
++			   SUN4I_TCON0_LVDS_ANA1_INIT,
++			   SUN4I_TCON0_LVDS_ANA1_INIT);
++	udelay(1); /* delay at least 1200 ns */
++	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA1_REG,
++			   SUN4I_TCON0_LVDS_ANA1_UPDATE,
++			   SUN4I_TCON0_LVDS_ANA1_UPDATE);
++}
++
++
+ static void sun4i_tcon_lvds_set_status(struct sun4i_tcon *tcon,
+ 				       const struct drm_encoder *encoder,
+ 				       bool enabled)
+ {
+ 	if (enabled) {
+-		u8 val;
+-
++		// Enable LVDS interface
+ 		regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_IF_REG,
+ 				   SUN4I_TCON0_LVDS_IF_EN,
+ 				   SUN4I_TCON0_LVDS_IF_EN);
+ 
+-		/*
+-		 * As their name suggest, these values only apply to the A31
+-		 * and later SoCs. We'll have to rework this when merging
+-		 * support for the older SoCs.
+-		 */
+-		regmap_write(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
+-			     SUN6I_TCON0_LVDS_ANA0_C(2) |
+-			     SUN6I_TCON0_LVDS_ANA0_V(3) |
+-			     SUN6I_TCON0_LVDS_ANA0_PD(2) |
+-			     SUN6I_TCON0_LVDS_ANA0_EN_LDO);
+-		udelay(2);
+-
+-		regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
+-				   SUN6I_TCON0_LVDS_ANA0_EN_MB,
+-				   SUN6I_TCON0_LVDS_ANA0_EN_MB);
+-		udelay(2);
+-
+-		regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
+-				   SUN6I_TCON0_LVDS_ANA0_EN_DRVC,
+-				   SUN6I_TCON0_LVDS_ANA0_EN_DRVC);
+-
+-		if (sun4i_tcon_get_pixel_depth(encoder) == 18)
+-			val = 7;
+-		else
+-			val = 0xf;
++		// Perform SoC-specific setup procedure
++		if (tcon->quirks->sun6i_lvds_init) {
++			sun4i_tcon_lvds_sun6i_enable(tcon, encoder);
++		}
++		else {
++			sun4i_tcon_lvds_sun4i_enable(tcon);
++		}
+ 
+-		regmap_write_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
+-				  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(0xf),
+-				  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(val));
+ 	} else {
+ 		regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_IF_REG,
+ 				   SUN4I_TCON0_LVDS_IF_EN, 0);
+@@ -1454,6 +1482,7 @@ static const struct sun4i_tcon_quirks sun6i_a31s_quirks = {
+ };
+ 
+ static const struct sun4i_tcon_quirks sun7i_a20_quirks = {
++	.supports_lvds		= true,
+ 	.has_channel_0		= true,
+ 	.has_channel_1		= true,
+ 	.dclk_min_div		= 4,
+@@ -1464,11 +1493,13 @@ static const struct sun4i_tcon_quirks sun7i_a20_quirks = {
+ static const struct sun4i_tcon_quirks sun8i_a33_quirks = {
+ 	.has_channel_0		= true,
+ 	.has_lvds_alt		= true,
++	.sun6i_lvds_init	= true,
+ 	.dclk_min_div		= 1,
+ };
+ 
+ static const struct sun4i_tcon_quirks sun8i_a83t_lcd_quirks = {
+ 	.supports_lvds		= true,
++	.sun6i_lvds_init	= true,
+ 	.has_channel_0		= true,
+ 	.dclk_min_div		= 1,
+ };
+diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.h b/drivers/gpu/drm/sun4i/sun4i_tcon.h
+index a62ec826ae71..973901c1bee5 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_tcon.h
++++ b/drivers/gpu/drm/sun4i/sun4i_tcon.h
+@@ -193,6 +193,13 @@
+ #define SUN4I_TCON_MUX_CTRL_REG			0x200
+ 
+ #define SUN4I_TCON0_LVDS_ANA0_REG		0x220
++#define SUN4I_TCON0_LVDS_ANA0_DCHS			BIT(16)
++#define SUN4I_TCON0_LVDS_ANA0_PD			BIT(20) | BIT(21)
++#define SUN4I_TCON0_LVDS_ANA0_EN_MB			BIT(22)
++#define SUN4I_TCON0_LVDS_ANA0_REG_C			BIT(24) | BIT(25)
++#define SUN4I_TCON0_LVDS_ANA0_REG_V			BIT(26) | BIT(27)
++#define SUN4I_TCON0_LVDS_ANA0_CK_EN			BIT(29) | BIT(28)
++
+ #define SUN6I_TCON0_LVDS_ANA0_EN_MB			BIT(31)
+ #define SUN6I_TCON0_LVDS_ANA0_EN_LDO			BIT(30)
+ #define SUN6I_TCON0_LVDS_ANA0_EN_DRVC			BIT(24)
+@@ -201,6 +208,10 @@
+ #define SUN6I_TCON0_LVDS_ANA0_V(x)			(((x) & 3) << 8)
+ #define SUN6I_TCON0_LVDS_ANA0_PD(x)			(((x) & 3) << 4)
+ 
++#define SUN4I_TCON0_LVDS_ANA1_REG		0x224
++#define SUN4I_TCON0_LVDS_ANA1_INIT			(0x1f << 26 | 0x1f << 10)
++#define SUN4I_TCON0_LVDS_ANA1_UPDATE			(0x1f << 16 | 0x1f << 00)
++
+ #define SUN4I_TCON1_FILL_CTL_REG		0x300
+ #define SUN4I_TCON1_FILL_BEG0_REG		0x304
+ #define SUN4I_TCON1_FILL_END0_REG		0x308
+@@ -224,6 +235,7 @@ struct sun4i_tcon_quirks {
+ 	bool	needs_de_be_mux; /* sun6i needs mux to select backend */
+ 	bool    needs_edp_reset; /* a80 edp reset needed for tcon0 access */
+ 	bool	supports_lvds;   /* Does the TCON support an LVDS output? */
++	bool	sun6i_lvds_init; /* Requires sun6i lvds initialization? */
+ 	u8	dclk_min_div;	/* minimum divider for TCON0 DCLK */
+ 
+ 	/* callback to handle tcon muxing options */
+-- 
+2.20.1
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
