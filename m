@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28A01157782
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 14:01:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E901157784
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 14:01:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Kp8IRPC3gWVKGlaF77YTEk65xESb0YLkZoJoQU5ga2g=; b=m1MJ2e1zJlXGM0xU4S8gXV+Gg1
-	CFlGu+K1C+Ydf9uykIGZrwEJU6wVbtLd94wkexm2jpGAc6SjcPgVusTjljyUBIma2wMV1LX3VwFXi
-	EwFWSdSDDrdIl/rIiZIRpjcSWMZvsUJp6BXnencwFCzLlCOl27rfntYGcvcQISr4oVW6qK2OGGa4b
-	vwwWwn9175guOSm9zh3WEnYW0pQ4TTpxLumGoLvEiNl2XuqtigBiJ3T0MB+9GAef6n6a4YEF03yj9
-	borMpRa69XcQshZAYe0+PbXRuSKeU7ga2x5EL58I1dZhFk83hC7z/BHoGcUri65qEqORuXWAYaI6A
-	etyf7Vww==;
+	bh=G0MXD7KAlz9suxokxrmLeVEYXq90k93PZNXsKx+f4SY=; b=aR8gvLASosZLld3PPYf3GlI/0U
+	sszDGHXgz5Qawbpp2cgNqrl74FDqVCKJTLWDS97Tz1U5/eEwmXnPp1a5+5+ShSu/ltlyMAKUj8arg
+	tCNxeUAGEjjkDtlL9bkAkeWhVx3snTyab64qz0iF5w2NAXeKWNtG0CDka4up+PUNK9JyQBjQ9CK9f
+	iioOTbOpMiEEJiE53QmDx2yXyYPXYcgNDEKiNA7CLCTI5Bz4qL3V9IwaYXXFwHOrBaipkmkgtqGI4
+	4lQLsBagcl7tpq3YHmS8+aguvzyXXy8dOcm8l42AOZRVJtko4cFZT/xthtVWUesma+WlEJ9GLvqgE
+	w8wSAA6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j18gM-0003AR-7a; Mon, 10 Feb 2020 13:00:58 +0000
+	id 1j18gi-0003gA-Th; Mon, 10 Feb 2020 13:01:20 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j18fo-0002hX-Rb
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 13:00:26 +0000
+ id 1j18fr-0002hX-T6
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 13:00:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 769061FB;
- Mon, 10 Feb 2020 05:00:24 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 34AC831B;
+ Mon, 10 Feb 2020 05:00:26 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1AD2F3F68E;
- Mon, 10 Feb 2020 05:00:22 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1B1063F68E;
+ Mon, 10 Feb 2020 05:00:25 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 2/4] random: add arch_get_random_*long_early()
-Date: Mon, 10 Feb 2020 13:00:13 +0000
-Message-Id: <20200210130015.17664-3-mark.rutland@arm.com>
+Subject: [PATCH 3/4] arm64: add credited/trusted RNG support
+Date: Mon, 10 Feb 2020 13:00:14 +0000
+Message-Id: <20200210130015.17664-4-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20200210130015.17664-1-mark.rutland@arm.com>
 References: <20200210130015.17664-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_050024_975766_40479BEA 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20200210_050027_989697_37AC42C4 
+X-CRM114-Status: GOOD (  10.69  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,110 +71,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some architectures (e.g. arm64) can have heterogeneous CPUs, and the
-boot CPU may be able to provide entropy while secondary CPUs cannot. On
-such systems, arch_get_random_long() and arch_get_random_seed_long()
-will fail unless support for RNG instructions has been detected on all
-CPUs. This prevents the boot CPU from being able to provide
-(potentially) trusted entropy when seeding the primary CRNG.
+Currently arm64 doesn't initialize the primary CRNG in a (potentially)
+trusted manner as we only detect the presence of the RNG once secondary
+CPUs are up.
 
-To make it possible to seed the primary CRNG from the boot CPU without
-adversely affecting the runtime versions of arch_get_random_long() and
-arch_get_random_seed_long(), this patch adds new early versions of the
-functions used when initializing the primary CRNG.
+Now that the core RNG code distinguishes the early initialization of the
+primary CRNG, we can implement arch_get_random_seed_long_early() to
+support this.
 
-Default implementations are provided atop of the existing
-arch_get_random_long() and arch_get_random_seed_long() so that only
-architectures with such constraints need to provide the new helpers.
-
-There should be no functional change as a result of this patch.
+This patch does so.
 
 Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Mark Brown <broonie@kernel.org>
 Cc: Theodore Ts'o <tytso@mit.edu>
+Cc: Will Deacon <will@kernel.org>
 ---
- drivers/char/random.c  | 20 +++++++++++++++++++-
- include/linux/random.h | 22 ++++++++++++++++++++++
- 2 files changed, 41 insertions(+), 1 deletion(-)
+ arch/arm64/include/asm/archrandom.h | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/drivers/char/random.c b/drivers/char/random.c
-index 62d32e62f2da..02a85b87b993 100644
---- a/drivers/char/random.c
-+++ b/drivers/char/random.c
-@@ -799,6 +799,24 @@ static bool crng_init_try_arch(struct crng_state *crng)
- 	return arch_init;
- }
+diff --git a/arch/arm64/include/asm/archrandom.h b/arch/arm64/include/asm/archrandom.h
+index 3fe02da70004..fc1594a0710e 100644
+--- a/arch/arm64/include/asm/archrandom.h
++++ b/arch/arm64/include/asm/archrandom.h
+@@ -4,6 +4,8 @@
  
-+static bool __init crng_init_try_arch_early(struct crng_state *crng)
-+{
-+	int		i;
-+	bool		arch_init = true;
-+	unsigned long	rv;
-+
-+	for (i = 4; i < 16; i++) {
-+		if (!arch_get_random_seed_long_early(&rv) &&
-+		    !arch_get_random_long_early(&rv)) {
-+			rv = random_get_entropy();
-+			arch_init = false;
-+		}
-+		crng->state[i] ^= rv;
-+	}
-+
-+	return arch_init;
-+}
-+
- static void crng_initialize_secondary(struct crng_state *crng)
- {
- 	memcpy(&crng->state[0], "expand 32-byte k", 16);
-@@ -811,7 +829,7 @@ static void __init crng_initialize_primary(struct crng_state *crng)
- {
- 	memcpy(&crng->state[0], "expand 32-byte k", 16);
- 	_extract_entropy(&input_pool, &crng->state[4], sizeof(__u32) * 12, 0);
--	if (crng_init_try_arch(crng) && trust_cpu) {
-+	if (crng_init_try_arch_early(crng) && trust_cpu) {
- 		invalidate_batched_entropy();
- 		numa_crng_init();
- 		crng_init = 2;
-diff --git a/include/linux/random.h b/include/linux/random.h
-index d319f9a1e429..45e1f8fa742b 100644
---- a/include/linux/random.h
-+++ b/include/linux/random.h
-@@ -7,6 +7,8 @@
- #ifndef _LINUX_RANDOM_H
- #define _LINUX_RANDOM_H
+ #ifdef CONFIG_ARCH_RANDOM
  
 +#include <linux/bug.h>
 +#include <linux/kernel.h>
- #include <linux/list.h>
- #include <linux/once.h>
+ #include <linux/random.h>
+ #include <asm/cpufeature.h>
  
-@@ -185,6 +187,26 @@ static inline bool __must_check arch_get_random_seed_int(unsigned int *v)
+@@ -66,6 +68,18 @@ static inline bool __init __early_cpu_has_rndr(void)
+ 	return (ftr >> ID_AA64ISAR0_RNDR_SHIFT) & 0xf;
  }
- #endif
  
-+/*
-+ * Called from the boot CPU during startup; not valid to call once
-+ * secondary CPUs are up and preemption is possible.
-+ */
-+#ifndef arch_get_random_seed_long_early
-+static inline bool __init arch_get_random_seed_long_early(unsigned long *v)
++static inline bool __init __must_check
++arch_get_random_seed_long_early(unsigned long *v)
 +{
 +	WARN_ON(system_state != SYSTEM_BOOTING);
-+	return arch_get_random_seed_long(v);
-+}
-+#endif
 +
-+#ifndef arch_get_random_long_early
-+static inline bool __init arch_get_random_long_early(unsigned long *v)
-+{
-+	WARN_ON(system_state != SYSTEM_BOOTING);
-+	return arch_get_random_long(v);
-+}
-+#endif
++	if (!__early_cpu_has_rndr())
++		return false;
 +
- /* Pseudo random number generator from numerical recipes. */
- static inline u32 next_pseudo_random32(u32 seed)
- {
++	return __arm64_rndr(v);
++}
++#define arch_get_random_seed_long_early arch_get_random_seed_long_early
++
+ #else
+ 
+ static inline bool __arm64_rndr(unsigned long *v) { return false; }
 -- 
 2.11.0
 
