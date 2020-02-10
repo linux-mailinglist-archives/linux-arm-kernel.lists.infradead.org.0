@@ -2,56 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0D65158185
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:38:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC1D715818D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:40:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RPbb+I4dzcOPdWNiX7bFM2RkZTaq06oAd2zmSZl1VfA=; b=JSwGmGIlbOl10i
-	wdWgHcqb4I6ItnwlkEH6cAIL7tG/ODMJNus77Bjcbmeu/9bcANWiatrDncCuMTJr0ORVmz0GXi+id
-	WnuHnzZzCQStR0WkqYf6eWeuaX3grTF169nLTvClc0sQlny2MK3orqgX8UJJ8deJdtO434VtyhBGb
-	fRWxvH/O6OIxaDNK5n9kbjZta/i8rBY/SPSEnpFu6cn1keklDUYMJhFz3n81Y3R6UhuOWG4dWMG6H
-	HtoMKRRxa/uytDa5GtkVwL+2WSxrIB3MpoCwX3gXGj1Iga+sJgf/c3g1Iaz0NJyv7l9exC12AeUVq
-	i+HTlPSC2kKamVyD5SlQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TSkNtJtjIoSr/62c5DOyDZtDgiJ0dcALujbHRgNsYKI=; b=GNucPP0nvcGQuC
+	yUnsWRIku4J5fbmJ8AdFasVFdBuY//97qU3U+YKOnwTXpSXp2/1oahQBTZT7oiAQ4yN/7XuYJYtQ0
+	8E90UjcZXwwA5bLGjsxtjnAqffN6TJ43IvW/tVFinGV7fvw/lRf3rF1BwqosPDFFDrqzpevGnmAq5
+	2fHWesWgb1M3ZmqU84WbbOzd01/YntWd/zQYuFnSpiLr/r79y/D378y5ltPfthvG5hAjB5pc6GcXe
+	wQanWJ5X1K5YDrJ7jShFG/UmLfe4d++t6uJmY2DHt82vG5kESVVNq4pIZIrxsbzwSCehWoeDSMTSp
+	EOZDKVdr+EL+hw7sil1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1D0R-0006uW-OY; Mon, 10 Feb 2020 17:37:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1D0L-0006tr-EP
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:37:55 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8EF8B1FB;
- Mon, 10 Feb 2020 09:37:52 -0800 (PST)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 741C93F68F;
- Mon, 10 Feb 2020 09:37:51 -0800 (PST)
-Date: Mon, 10 Feb 2020 17:37:44 +0000
-From: Mark Rutland <mark.rutland@arm.com>
-To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH 1/2] arm64: cpufeature: add cpus_have_final_cap()
-Message-ID: <20200210173744.GA20840@lakrids.cambridge.arm.com>
-References: <20200210122708.38826-1-mark.rutland@arm.com>
- <20200210122708.38826-2-mark.rutland@arm.com>
- <047f1cd2-3537-6671-233c-69f1758684bf@arm.com>
+	id 1j1D2n-0000I2-CF; Mon, 10 Feb 2020 17:40:25 +0000
+Received: from mailoutvs14.siol.net ([185.57.226.205] helo=mail.siol.net)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1D2f-0000HR-E4
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:40:19 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 82FA6521C36;
+ Mon, 10 Feb 2020 18:40:14 +0100 (CET)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id Y_pJR8agbzzQ; Mon, 10 Feb 2020 18:40:14 +0100 (CET)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id 34FE5521C76;
+ Mon, 10 Feb 2020 18:40:14 +0100 (CET)
+Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
+ [194.152.20.232]) (Authenticated sender: 031275009)
+ by mail.siol.net (Postfix) with ESMTPSA id 9E060521C36;
+ Mon, 10 Feb 2020 18:40:13 +0100 (CET)
+From: Jernej Skrabec <jernej.skrabec@siol.net>
+To: mripard@kernel.org,
+	wens@csie.org
+Subject: [PATCH v2] arm64: dts: allwinner: h6: orangepi-3: Add eMMC node
+Date: Mon, 10 Feb 2020 18:40:07 +0100
+Message-Id: <20200210174007.118575-1-jernej.skrabec@siol.net>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <047f1cd2-3537-6671-233c-69f1758684bf@arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_093753_572124_32B1985D 
-X-CRM114-Status: GOOD (  23.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200210_094017_630330_0A62EE25 
+X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.205 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -65,87 +70,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, james.morse@arm.com,
- linux-arm-kernel@lists.infradead.org, maz@kernel.org, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 10, 2020 at 04:37:53PM +0000, Suzuki Kuruppassery Poulose wrote:
-> On 10/02/2020 12:27, Mark Rutland wrote:
-> > When cpus_have_const_cap() was originally introduced it was intended to
-> > be safe in hyp context, where it is not safe to access the cpu_hwcaps
-> > array as cpus_have_cap() did. For more details see commit:
-> > 
-> >    a4023f682739439b ("arm64: Add hypervisor safe helper for checking constant capabilities")
-> > 
-> > We then made use of cpus_have_const_cap() throughout the kernel.
-> > 
-> > Subsequently, we had to defer updating the static_key associated with
-> > each capability in order to avoid lockdep complaints. To avoid breaking
-> > kernel-wide usage of cpus_have_const_cap(), this was updated to fall
-> > back to the cpu_hwcaps array if called before the static_keys were
-> > updated. As the kvm hyp code was only called later than this, the
-> > fallback is redundant but not functionally harmful. For more details,
-> > see commit:
-> > 
-> >    63a1e1c95e60e798 ("arm64/cpufeature: don't use mutex in bringup path")
-> > 
-> > Today we have more users of cpus_have_const_cap() which are only called
-> > once the relevant static keys are initialized, and it would be
-> > beneficial to avoid the redundant code.
-> > 
-> > To that end, this patch adds a new cpus_have_final_cap(), helper which
-> > is intend to be used in code which is only run once capabilities have
-> > been finalized, and will never check the cpus_hwcap array. This helps
-> > the compiler to generate better code as it no longer needs to generate
-> > code to address and test the cpus_hwcap array. To help catch misuse,
-> > cpus_have_final_cap() will BUG() if called before capabilities are
-> > finalized.
-> > 
-> > In hyp context, BUG() will result in a hyp panic, but the specific BUG()
-> > instance will not be identified in the usual way.
-> > 
-> > Comments are added to the various cpus_have_*_cap() helpers to describe
-> > the constraints on when they can be used. For clarity cpus_have_cap() is
-> > moved above the other helpers.
-> > 
-> > Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Marc Zyngier <maz@kernel.org>
-> > Cc: Suzuki Poulose <suzuki.poulose@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > ---
-> 
-> ...
-> 
-> > +/*
-> > + * Test for a capability without a runtime check.
-> > + *
-> > + * Before capabilities are finalized, this will BUG().
-> > + * After capabilities are finalized, this is patched to avoid a runtime check.
-> > + *
-> > + * @num must be a compile-time constant.
-> > + */
-> > +static __always_inline bool cpus_have_final_cap(int num)
-> > +{
-> > +	if (static_branch_likely(&arm64_const_caps_ready))
-> 
-> We have introduced system_capabilities_finalized() helper and may be
-> it is a good idea to use it here, to make it more clear.
+OrangePi 3 can optionally have 8 GiB eMMC (soldered on board). Because
+those pins are dedicated to eMMC exclusively, node can be added for both
+variants (with and without eMMC). Kernel will then scan bus for presence
+of eMMC and act accordingly.
 
-Sure thing. There are a few existing uses that could be moved over, so I
-can move that up for v2.
+Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+---
+Changes since v1:
+- don't make separate DT just for -emmc variant - add node to existing
+  orangepi 3 DT
 
-> Either ways :
-> 
-> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+ arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-Thanks!
+diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+index c311eee52a35..1e0abd9d047f 100644
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
+@@ -144,6 +144,15 @@ brcm: sdio-wifi@1 {
+ 	};
+ };
+ 
++&mmc2 {
++	vmmc-supply = <&reg_cldo1>;
++	vqmmc-supply = <&reg_bldo2>;
++	cap-mmc-hw-reset;
++	non-removable;
++	bus-width = <8>;
++	status = "okay";
++};
++
+ &ohci0 {
+ 	status = "okay";
+ };
+-- 
+2.25.0
 
-Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
