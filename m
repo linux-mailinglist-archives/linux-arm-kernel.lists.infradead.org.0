@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58684157484
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 13:27:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA20C157486
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 13:27:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=wjWclXAqJUp14bJu+vdqwBlmX+07i7DFyBmF+XDOIkY=; b=Gzh
-	vz9RudwUoW28yQeVQUX+kSLujpT7+MZEIgrOUS01lqtusefZ8lNtw5+YEDDOV1fxmtRtqytQGCSrE
-	/SVveao2V+nV0UvFhDeM4da6ERSPUjEszC8OaoObNIdBhnfTPjzzTBxADp41g/814uX1XJ9CmZsbI
-	10BduBb1VNyOEPo7B9i7Q84gM5B82o50bsb3cld/xcUK7b7rCY7ywKR4rzbe62RsPuP2cr0PzRHom
-	VoTrUVJaUJjWt/zUW0FkZNaLV0FhzKSOElVdCwR0VIUMn8+2Aw8Qtx+Um0Ti4Iq/jhW70QJNFkYgW
-	l1gS00MzerEsCZg54UvefzKbASHbfSg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=zbsUpf4rwIJYD3TBEavFk+Io1nuL1rzpmZhpyKNla9M=; b=EEyW1jfMcE6blGCcXyFiJ/tlbD
+	oAE/tlCpEJc5bRZHBn7n5JxKFfd16RaGhESBWwB3YDVcVz4ezcNzlNKeC4Pzy4KO3WakL0EWGwtaa
+	YOHmWanZ24F3UcgX9ZtHLMviVe/DKMHTICFMuKNDbAPo5GW4Y8YDwR/Bqs35KnlSIu2aPthgTUutP
+	y10jvQFIKI5meikVGCLVgImnVDU5HUNtM1U/1BxCsOuCBkcj8/5xCN/KFLtyuKBmWviEceQwMn9rv
+	BF1dpVoDVMFFswoPphcZ/LIepOhh3lM0GixLnQlci7fr7iOUVqZ1Z6tCG3SjTAnCLSitcgYT6sRH8
+	JtJkNOvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j189x-0007ri-Ln; Mon, 10 Feb 2020 12:27:29 +0000
+	id 1j18AB-00083g-7n; Mon, 10 Feb 2020 12:27:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j189q-0007rR-NR
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 12:27:24 +0000
+ id 1j189s-0007s0-Vg
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 12:27:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E5FD51FB;
- Mon, 10 Feb 2020 04:27:21 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CCC34328;
+ Mon, 10 Feb 2020 04:27:23 -0800 (PST)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A71573F6CF;
- Mon, 10 Feb 2020 04:27:20 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 98FBF3F6CF;
+ Mon, 10 Feb 2020 04:27:22 -0800 (PST)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/2] arm64: add finalized cap helper
-Date: Mon, 10 Feb 2020 12:27:06 +0000
-Message-Id: <20200210122708.38826-1-mark.rutland@arm.com>
+Subject: [PATCH 1/2] arm64: cpufeature: add cpus_have_final_cap()
+Date: Mon, 10 Feb 2020 12:27:07 +0000
+Message-Id: <20200210122708.38826-2-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200210122708.38826-1-mark.rutland@arm.com>
+References: <20200210122708.38826-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_042722_806261_004D48C8 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200210_042725_117088_A028335B 
+X-CRM114-Status: GOOD (  16.39  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,34 +71,127 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Across arm64 we use cpus_have_const_cap() to check for a capability
-without a runtime check. Prior to capabilities being finalized
-cpus_have_const_cap() falls back to a runtime check of the cpu_hwcaps
-array. In some cases we know that code is never invoked prior to the
-capabilities being finalized, and the fallback code is redundant (and
-unsound if ever executed in hyp context).
+When cpus_have_const_cap() was originally introduced it was intended to
+be safe in hyp context, where it is not safe to access the cpu_hwcaps
+array as cpus_have_cap() did. For more details see commit:
 
-So that we can avoid the redundant code and detect when the caps are
-unexpectedly checked too early, this series adds a new
-cpus_have_final_cap() helper, and migrates the KVM hyp code over to it.
+  a4023f682739439b ("arm64: Add hypervisor safe helper for checking constant capabilities")
 
-I'm hoping to use this as part of the entry.S -> entry-common.c
-conversion, and there are other places in arm64 that could potentially
-use this today.
+We then made use of cpus_have_const_cap() throughout the kernel.
 
-Thanks,
-Mark.
+Subsequently, we had to defer updating the static_key associated with
+each capability in order to avoid lockdep complaints. To avoid breaking
+kernel-wide usage of cpus_have_const_cap(), this was updated to fall
+back to the cpu_hwcaps array if called before the static_keys were
+updated. As the kvm hyp code was only called later than this, the
+fallback is redundant but not functionally harmful. For more details,
+see commit:
 
-Mark Rutland (2):
-  arm64: cpufeature: add cpus_have_final_cap()
-  arm64: kvm: hyp: use cpus_have_final_cap()
+  63a1e1c95e60e798 ("arm64/cpufeature: don't use mutex in bringup path")
 
+Today we have more users of cpus_have_const_cap() which are only called
+once the relevant static keys are initialized, and it would be
+beneficial to avoid the redundant code.
+
+To that end, this patch adds a new cpus_have_final_cap(), helper which
+is intend to be used in code which is only run once capabilities have
+been finalized, and will never check the cpus_hwcap array. This helps
+the compiler to generate better code as it no longer needs to generate
+code to address and test the cpus_hwcap array. To help catch misuse,
+cpus_have_final_cap() will BUG() if called before capabilities are
+finalized.
+
+In hyp context, BUG() will result in a hyp panic, but the specific BUG()
+instance will not be identified in the usual way.
+
+Comments are added to the various cpus_have_*_cap() helpers to describe
+the constraints on when they can be used. For clarity cpus_have_cap() is
+moved above the other helpers.
+
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: Suzuki Poulose <suzuki.poulose@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
  arch/arm64/include/asm/cpufeature.h | 47 +++++++++++++++++++++++++++++++++----
- arch/arm64/kvm/hyp/switch.c         | 14 +++++------
- arch/arm64/kvm/hyp/sysreg-sr.c      |  8 +++----
- arch/arm64/kvm/hyp/tlb.c            |  8 +++----
- 4 files changed, 57 insertions(+), 20 deletions(-)
+ 1 file changed, 42 insertions(+), 5 deletions(-)
 
+diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
+index 92ef9539874a..bf752282bfc0 100644
+--- a/arch/arm64/include/asm/cpufeature.h
++++ b/arch/arm64/include/asm/cpufeature.h
+@@ -390,21 +390,42 @@ unsigned long cpu_get_elf_hwcap2(void);
+ #define cpu_set_named_feature(name) cpu_set_feature(cpu_feature(name))
+ #define cpu_have_named_feature(name) cpu_have_feature(cpu_feature(name))
+ 
+-/* System capability check for constant caps */
+-static __always_inline bool __cpus_have_const_cap(int num)
++/*
++ * Test for a capability with a runtime check.
++ *
++ * Before the capability is detected, this returns false.
++ */
++static inline bool cpus_have_cap(unsigned int num)
+ {
+ 	if (num >= ARM64_NCAPS)
+ 		return false;
+-	return static_branch_unlikely(&cpu_hwcap_keys[num]);
++	return test_bit(num, cpu_hwcaps);
+ }
+ 
+-static inline bool cpus_have_cap(unsigned int num)
++/*
++ * Test for a capability without a runtime check.
++ *
++ * Before capabilities are finalized, this returns false.
++ * After capabilities are finalized, this is patched to avoid a runtime check.
++ *
++ * @num must be a compile-time constant.
++ */
++static __always_inline bool __cpus_have_const_cap(int num)
+ {
+ 	if (num >= ARM64_NCAPS)
+ 		return false;
+-	return test_bit(num, cpu_hwcaps);
++	return static_branch_unlikely(&cpu_hwcap_keys[num]);
+ }
+ 
++
++/*
++ * Test for a capability, possibly with a runtime check.
++ *
++ * Before capabilities are finalized, this behaves as cpus_have_cap().
++ * After capabilities are finalized, this is patched to avoid a runtime check.
++ *
++ * @num must be a compile-time constant.
++ */
+ static __always_inline bool cpus_have_const_cap(int num)
+ {
+ 	if (static_branch_likely(&arm64_const_caps_ready))
+@@ -413,6 +434,22 @@ static __always_inline bool cpus_have_const_cap(int num)
+ 		return cpus_have_cap(num);
+ }
+ 
++/*
++ * Test for a capability without a runtime check.
++ *
++ * Before capabilities are finalized, this will BUG().
++ * After capabilities are finalized, this is patched to avoid a runtime check.
++ *
++ * @num must be a compile-time constant.
++ */
++static __always_inline bool cpus_have_final_cap(int num)
++{
++	if (static_branch_likely(&arm64_const_caps_ready))
++		return __cpus_have_const_cap(num);
++	else
++		BUG();
++}
++
+ static inline void cpus_set_cap(unsigned int num)
+ {
+ 	if (num >= ARM64_NCAPS) {
 -- 
 2.11.0
 
