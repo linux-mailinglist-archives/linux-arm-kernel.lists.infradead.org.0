@@ -2,87 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 280EE157D58
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 15:26:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 107C5157D5E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 15:27:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oREePFaJbkbNT5+YHMMoFGTbrx1oZhiWErLblGuqnDM=; b=WcM6Na9XrslidE
-	mxIzzGtodk0zR7wkwpyKQ/BNkJUJE3gSDTmmG3rLZW6WbeYnwNgH3XwVOySxIUCDgJiEdwHWXAX8/
-	5JQSORglUSqmCImGn13v5X7TjGr7UsZ1PSYoUCi+mhj4nSuJO71c/mSik7n90i/ZShTshGunFobof
-	iDVzdMOAnxd9umd3uTnQQz5G7VSD/3C2hfANF0DVI+Fq/as5mmsEcCtkRxyhuVnG1AWqmaKgcruQr
-	uJIJ3NkMkp0i3IuGFAF1BZtg6RWcObIwGc/y56mhziKLzxhmBQ9B67dHNf0+58QfbQaBPyHh54Qd6
-	wAYYZgmUOk1vtHMgaaQg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CGrYNKDdSTvo7pTht2DNXaBevGWpifTzkXIcIe7Wqjk=; b=QjNuP8ybFegLqr
+	PN50ODIu8L4A7k6VTuSTGrUgYs8x5PbsQsk1hcvkUw6Z+bH5befnWR6HrcEt6FiTMurkoVOem1hmj
+	G5OqTzLc+somU307cLTbHFMhhbY3tAIBHS0o4fOgzeWnfVd4wzX85TGSsA57noi1AuMBJfQNM+o+D
+	t760rP854FB+s1txDcqsg9Nrmx+PCLKnoZ2JRRX0g2DtNbgzU+/RN8hRBHE8tMZU8bxnCI1Yl6nUH
+	NBNnIb+pXG8JX2rtqx3cHKPTl3OMkmdapetElnTgNkxK98vnb9YLFmnnvP2WxhejW6RsHuvkG1JVN
+	DQJIhCSaACBuoEacRllg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1A0z-0000tR-8T; Mon, 10 Feb 2020 14:26:21 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j1A1m-0001DR-SE; Mon, 10 Feb 2020 14:27:10 +0000
+Received: from mail-bn8nam11on2079.outbound.protection.outlook.com
+ ([40.107.236.79] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1A0r-0000t4-Vw
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 14:26:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581344770;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=/PJa8ZTV8s4bvQ8gnVuKZHg2Z4/GRqTI9Yenrr72BM0=;
- b=SvS7DlrdpbruMVPMXYSVINrXyjbXSZgLrmcFiIwyUax4jAfeaIzd+9plG89U9JpFndT2OQ
- yhRjqKc27BHo1eVjdyYN4KnmfwBAiiknH0QkQCo7jcYlXHAt4BO5HZn3AbwwPMpvlKZ0Hq
- /VFdcovW6qU9x1p7mZ13u4C8CKTMuDc=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-274-BaAQooWwM82-Cyxf1tWiGQ-1; Mon, 10 Feb 2020 09:26:08 -0500
-X-MC-Unique: BaAQooWwM82-Cyxf1tWiGQ-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1857E1005502;
- Mon, 10 Feb 2020 14:26:06 +0000 (UTC)
-Received: from lacos-laptop-7.usersys.redhat.com (unknown [10.36.118.180])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 4C4EF1001281;
- Mon, 10 Feb 2020 14:26:03 +0000 (UTC)
-Subject: Re: [PATCH 1/2] efi/libstub: add support for loading the initrd from
- a device path
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-References: <20200206140352.6300-1-ardb@kernel.org>
- <20200206140352.6300-2-ardb@kernel.org>
- <43362e18-eddc-9903-0e63-9d3eebe70313@redhat.com>
- <CAKv+Gu89o4oJEJvJMuE68HM5NDgokQ0W-D7YQB6xOX2EbhYYBw@mail.gmail.com>
-From: Laszlo Ersek <lersek@redhat.com>
-Message-ID: <edddcef9-6ed6-9b16-cce1-8e1c08b781a1@redhat.com>
-Date: Mon, 10 Feb 2020 15:26:02 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <CAKv+Gu89o4oJEJvJMuE68HM5NDgokQ0W-D7YQB6xOX2EbhYYBw@mail.gmail.com>
+ id 1j1A1e-0001D3-Co
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 14:27:03 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AsUy3IQaOEwfwDHCxkPvHB1swFIbYNMmdq1fj5DrU805hqXexwWyXnBueQ6TJhlLigZ0GPzNQfWK3w1c3SLhUy9u2mZ6IPzSTAPLwfG+/lsIK1j612m9bAeQj+1hHWo4nVVDcn46CKMxbFkVi5Eg8j/BWnD80ypEw28T4XpC6B7syrpwzPI8pQtlnNu7QqdOaAr83VRFTOWeeQHgu4CETlhWYZ+NJL7noyUUK0F9Qh7gGRULF/QeDQwkzBrVIO5MXfCeV5EbvciJn9m0lyeaL7uJnoTWp7XUy5QbSiFbH/PYTik2Tf09kwvQ4nXcxq0UhMNq6hgu2o0SLciU8axHow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=B2jghlmnoNzrIgJWVj8VB0g1zUmeOH1JbRpIjKkvJy8=;
+ b=dIkSDDuGmjlU4U322VdzEcFpaBxBum64AUfFcy8wSMKDpRBoKqyusUR9nADtIHpbXndLKcANF632v1C98qv6n0ZbRgUtBS0ObHTmObgtDKFZES2AAWnSWYTdAws7/im53egMOC9+9UbDH7hBBEYtGw2kW0tmWZHt/SwQp8JCATrbvVr1HsmCIUuN42A5m/JzZtAm2e4QeVPMnewXZIq6ncmdeNslDebpZ9DrxRVlfCPjsTt/MCoskukZbrKG+SrY+XwKhwBmQhuiQ3Ay98okYce4zrqIoSxFZNzAFOTIQfYdvdOVay7wCLfCHmAIm6+/eGrc2aTtp54m9jm7HPlP+A==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=B2jghlmnoNzrIgJWVj8VB0g1zUmeOH1JbRpIjKkvJy8=;
+ b=jxWK6JMZnsjj5lROJkFC5y7qLvP+A5kHRzdxhkX038+RuTNrM9xtFSCf7/bOz2u0bU7z5aat0n/cOyMxp6+7ngwV+h2IkHJ7KT2GjdM9QDQtHaRq3qnbaLa5asv9wxG5v1zwPKHZy9nzKZq0YOAFr3OrTealbj6Enp06dcCTNI0=
+Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
+ CH2PR02MB6037.namprd02.prod.outlook.com (52.132.229.18) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2707.21; Mon, 10 Feb 2020 14:26:59 +0000
+Received: from CH2PR02MB7000.namprd02.prod.outlook.com
+ ([fe80::969:436f:b4b8:4899]) by CH2PR02MB7000.namprd02.prod.outlook.com
+ ([fe80::969:436f:b4b8:4899%7]) with mapi id 15.20.2707.030; Mon, 10 Feb 2020
+ 14:26:58 +0000
+From: Radhey Shyam Pandey <radheys@xilinx.com>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: RE: [PATCH v3 -next 3/4] net: emaclite: Fix arm64 compilation warnings
+Thread-Topic: [PATCH v3 -next 3/4] net: emaclite: Fix arm64 compilation
+ warnings
+Thread-Index: AQHV2CxSaDCeJb8y0kOpuFNYK2kDbKgExuAAgA/AohA=
+Date: Mon, 10 Feb 2020 14:26:58 +0000
+Message-ID: <CH2PR02MB7000E00674D836639F371E35C7190@CH2PR02MB7000.namprd02.prod.outlook.com>
+References: <1580471270-16262-1-git-send-email-radhey.shyam.pandey@xilinx.com>
+ <1580471270-16262-4-git-send-email-radhey.shyam.pandey@xilinx.com>
+ <20200131133742.GD9639@lunn.ch>
+In-Reply-To: <20200131133742.GD9639@lunn.ch>
+Accept-Language: en-US
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=radheys@xilinx.com; 
+x-originating-ip: [149.199.50.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 5c9f6bf1-630b-4aae-df56-08d7ae35496c
+x-ms-traffictypediagnostic: CH2PR02MB6037:|CH2PR02MB6037:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <CH2PR02MB60374800D590E1B0D155A289C7190@CH2PR02MB6037.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 03094A4065
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(136003)(366004)(346002)(39860400002)(376002)(199004)(189003)(76116006)(66446008)(33656002)(64756008)(2906002)(52536014)(55016002)(66556008)(9686003)(66476007)(66946007)(6916009)(5660300002)(478600001)(7696005)(81156014)(54906003)(186003)(71200400001)(81166006)(8936002)(8676002)(316002)(26005)(53546011)(6506007)(86362001)(4326008);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6037;
+ H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: xilinx.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: sL1z/s1BqQfbl2YR+xlApDs5BGr+/sOQRmb+8F5fjCfnYMdfg0DGPfpcMU824RssTbFcf2Wl+dwiWK4cMPHEEpAjX6qsz391OubkkIz7WKxrERHnJ2WShhwjZ/3SFls3B1lw3iI5mN7ecGnefniP1Kz71y5EniJAqP1Ylc3VheDfLY0n571G5BvzcGPPESV5UO1kxW9HGgnyHo7wc+xAUQuj2AO+1aacpDr2FOJK4ZR8PFYtYB3twPF4u8XhBEn+w14Cq6eV5egtjZ4XNoLgQMaxprHbJQLrgu/QJO+AgniWhXhiyJj/+jiIN2WBHFsvlNFYqOc6Om6HmXpLpn5UMgHGE3rA+ZGs9hG/Kkxcc0K8ydtV663ETm+3woy6oAPMEm8OJxq3ESvLNMroti7YIZrGxVNLXVOb+X5EDIDVMeotczauy7BnELbf6EQp/Kc+
+x-ms-exchange-antispam-messagedata: HG0pT4yE+O3yw7ArxvNiLFGJlzR1T3UOySS/Q2Ewj4KY6i36+/PqGsdrq/Q1W38P4B4kQOzx5r1CqEFTSo7sDDzcKcbhn94jkKXRjUjjpOWlWiuDLVMqsviboIIaJqM7WWlnk1pklJu3V/eCQtmLqg==
+MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5c9f6bf1-630b-4aae-df56-08d7ae35496c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Feb 2020 14:26:58.3341 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: AAYmJptx/L6rrAFX8PIdPgcCcO0zj5Wr+CKQawSaame7W9oIM3jltlTCD/PL4lH6vL7fxYLx+48VuvsywsolFQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_062614_105848_79EE42E7 
-X-CRM114-Status: GOOD (  25.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200210_062702_438183_035635EC 
+X-CRM114-Status: GOOD (  10.61  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.236.79 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,122 +121,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>,
- Daniel Kiper <daniel.kiper@oracle.com>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>,
- Matthew Garrett <mjg59@google.com>, Peter Jones <pjones@redhat.com>,
- Leif Lindholm <leif@nuviainc.com>, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ John Linn <linnj@xilinx.com>, Michal Simek <michals@xilinx.com>,
+ Anirudha Sarangi <anirudh@xilinx.com>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "mchehab+samsung@kernel.org" <mchehab+samsung@kernel.org>,
+ "davem@davemloft.net" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/07/20 13:36, Ard Biesheuvel wrote:
-> On Fri, 7 Feb 2020 at 09:48, Laszlo Ersek <lersek@redhat.com> wrote:
->> On 02/06/20 15:03, Ard Biesheuvel wrote:
-
->>> +efi_status_t efi_load_initrd_devpath(unsigned long *load_addr,
->>> +                                  unsigned long *load_size,
->>> +                                  unsigned long max)
->>> +{
->>> +     efi_guid_t lf2_proto_guid = EFI_LOAD_FILE2_PROTOCOL_GUID;
->>> +     efi_device_path_protocol_t *dp;
->>> +     efi_load_file2_protocol_t *lf2;
->>> +     unsigned long initrd_addr;
->>> +     unsigned long initrd_size;
->>> +     efi_handle_t handle;
->>> +     efi_status_t status;
->>> +
->>> +     if (!load_addr || !load_size)
->>> +             return EFI_INVALID_PARAMETER;
->>> +
->>> +     dp = (efi_device_path_protocol_t *)&initrd_devpath;
->>> +     status = efi_bs_call(locate_device_path, &lf2_proto_guid, &dp, &handle);
->>> +     if (status != EFI_SUCCESS)
->>> +             return status;
->>> +
->>> +     status = efi_bs_call(handle_protocol, handle, &lf2_proto_guid,
->>> +                          (void **)&lf2);
->>> +     if (status != EFI_SUCCESS)
->>> +             return status;
->>> +
->>> +     initrd_size = 0;
->>> +     status = efi_call_proto(lf2, load_file,
->>> +                             (efi_device_path_protocol_t *)&initrd_devpath,
->>> +                             false, &initrd_size, NULL);
->>
->> The second argument to EFI_LOAD_FILE2_PROTOCOL.LoadFile() is "FilePath",
->> specified as "The device specific path of the file to load". This means
->> it is supposed to be a (possibly empty) sequence of FILEPATH_DEVICE_PATH
->> nodes, terminated by and "End Entire Device Path" node. See
->>
->> - 10.3.1 Generic Device Path Structures
->> - 10.3.5.4 File Path Media Device Path
->>
->> in UEFI-2.8.
->>
->> And "initrd_devpath" is not a device path like that; instead it's the
->> VenMedia device path that's installed on the handle that also carries
->> our LoadFile2 instance.
->>
+> -----Original Message-----
+> From: Andrew Lunn <andrew@lunn.ch>
+> Sent: Friday, January 31, 2020 7:08 PM
+> To: Radhey Shyam Pandey <radheys@xilinx.com>
+> Cc: davem@davemloft.net; netdev@vger.kernel.org; linux-
+> kernel@vger.kernel.org; Anirudha Sarangi <anirudh@xilinx.com>; Michal Simek
+> <michals@xilinx.com>; gregkh@linuxfoundation.org;
+> mchehab+samsung@kernel.org; John Linn <linnj@xilinx.com>; linux-arm-
+> kernel@lists.infradead.org
+> Subject: Re: [PATCH v3 -next 3/4] net: emaclite: Fix arm64 compilation warnings
 > 
-> OK, so you are saying this could be used to disambiguate which of
-> several files you may want to load from the initrd GUIDed device path?
-
-Yes, exactly.
-
->> Now, I do see that this all theoretical here, as we don't expect the
->> LoadFile2 instance that we've found via our special
->> LINUX_EFI_INITRD_MEDIA_GUID VenMedia devpath to do *any* device-specific
->> filename / pathname parsing.
->>
->> But in that case (i.e., given that the FilePath argument is totally
->> irrelevant), I think it's much clearer if we simply pass an empty device
->> path -- one that consists of a single "End Entire Device Path" node.
->>
->> I've checked, and your ArmVirtQemu patch ignores the FilePath argument
->> too -- justifiedly so. I just think it's better to pass in a well-formed
->> device path, rather than NULL. Because, the FilePath parameter is not
->> marked OPTIONAL in the spec.
->>
+> On Fri, Jan 31, 2020 at 05:17:49PM +0530, Radhey Shyam Pandey wrote:
+> >
+> >  /* BUFFER_ALIGN(adr) calculates the number of bytes to the next alignment.
+> */
+> > -#define BUFFER_ALIGN(adr) ((ALIGNMENT - ((u32)adr)) % ALIGNMENT)
+> > +#define BUFFER_ALIGN(adr) ((ALIGNMENT - ((ulong)adr)) % ALIGNMENT)
 > 
-> One thing that occurred to me is that we have to decide whether we
-> want to support the '10.3.5.8 Relative Offset Range' device path node
-> for this file, so that you could potentially load subranges of the
-> file. I don't see a use case for it right now, though.
+> Hi Radhey
+> 
+> linux/kernel.h has a few interesting macros, like
+> 
+> #define ALIGN(x, a)             __ALIGN_KERNEL((x), (a))
+> 
+> These are more likely to be correct across all architectures than
+> anything you role yourself.
+> 
+Thanks for the review. I agree using a kernel macro is preferred. However,
+as a second thought it seems we can get rid of this custom BUFFER_ALIGN
+macro and simply calling skb_reserve(skb, NET_IP_ALIGN) will make the
+protocol header to be aligned on at least a 4-byte boundary.
 
-Agreed, it doesn't seem necessary / justified.
-
-> But for my understanding, would the FilePath passed to LoadFile2 be
-> 'Offset(...)+EndEntire' in that case? Or should it include the GUID
-> device path node as well?
-
-I see the only specified, concrete use case for the Offset() devpath
-node in "14.4.2.1 PCI Bus Driver Responsibilities". I think it doesn't
-apply at all to our use case.
-
-Also, according to "10.3.5.8 Relative Offset Range",
-
-    This device path node specifies a range of offsets relative to the
-    first byte available on the device.
-
-In that sense, it seems like a (mutually exclusive) alternative to
-FilePath. Given a device, one would specify *either* an offset range
-(which is relative to the start of the device, when the device is viewed
-as a range of bytes), *or* a FilePath (which is "relative" to the device
-when viewed as a store of named files, but still not as a full-blown
-random-access filesystem).
-
-In brief, Offset() doesn't seem to apply in connection with LoadFile2,
-at all. Certainly not in our particular use case, I'd suggest.
-
-[...]
-
-Thanks!
-Laszlo
-
+> 	 Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
