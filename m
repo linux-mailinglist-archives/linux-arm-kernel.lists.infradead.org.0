@@ -2,57 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88094157FEA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 17:38:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51591157FFB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 17:41:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VT/K4zYNrEjgGctG3sTUdGEuyP39Kt9kn97BBFpALWc=; b=TM4zHEvVdSLZ+z/h2ZtB8VdTi
-	/zesi5AfXpEdxgjDAacXO+hrfCEpO9NFGQhkDdotRKwdjEOwj1vtsRj2kmEzVui6iFq9QwmjvziPd
-	jF91a4sOjsAL6ohJ11Umr3P91TbIV0ReWRh1jJO1Oa68avBrCbA+gf0vZz8YO71ZxuavXNx8XzUHa
-	HKa7EDcx5Nr+1VnyCg6ldysBowxpihkp3066AKivVPaIndo6Vx1LSTSF1pzTvI+W0azvzP6RkwPKq
-	/ymxg6HRGN7xM6yG93RS/0odePGiFztK/smPrpr0ZAiIPVBcPT3Hcb+hBwiBN0uE8BZbJrn/SAAFD
-	zPir5r4DA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UBUPsISjmWy8hae/Lgafg6ou9zXIDTCq7CDKlVp7LXI=; b=JdbRPmn//qhyIz
+	y2rIvfUm0WFmExxKRdQeF91yKygoDVGvo7YmQaViraShOrb45aI8nCFpR+/fU+K9LHUglUmWHIMzi
+	ctPh5yBl+NdM4ZrjxrY/QyVqghIuXvDQzNnnxIcjs6UqDRVIVzGHaC3jUmhHPDZab59G4iFnOm7wP
+	VAhgy+eurMPfRPBze8BRpuX4fKm3PNWAqtmUpvBa1pDbw1CF6UwimVXUZOi3A1mp+3toi63L1IYBW
+	tEsxCA4TXhuPpZBnffGJEDLFvA3EqdzxNcpVPgzS4uGPtVi03oFipLhYJkJo+Otz6ix+6YclNjrUk
+	yKZ59XpojdEdXUiAAeLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1C4U-0003zW-UT; Mon, 10 Feb 2020 16:38:06 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1C4O-0003z8-Ao
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 16:38:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CD3F81FB;
- Mon, 10 Feb 2020 08:37:55 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BCBAE3F68F;
- Mon, 10 Feb 2020 08:37:54 -0800 (PST)
-Subject: Re: [PATCH 1/2] arm64: cpufeature: add cpus_have_final_cap()
-To: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
-References: <20200210122708.38826-1-mark.rutland@arm.com>
- <20200210122708.38826-2-mark.rutland@arm.com>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <047f1cd2-3537-6671-233c-69f1758684bf@arm.com>
-Date: Mon, 10 Feb 2020 16:37:53 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+	id 1j1C80-0005no-NF; Mon, 10 Feb 2020 16:41:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1C7u-0005nV-KZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 16:41:39 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3926920733;
+ Mon, 10 Feb 2020 16:41:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581352898;
+ bh=swgRA1rNS8tBiz0g1uvNqRf9FaXIwO8m18YRqWdGIWU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=xZ9yor3PmK0g2VGI7TH5dURt6qVd/7JoQzVJWSGzhMpbis9o4lzC+9ygWQ0663Ml8
+ mNsCjyu4UABSsLLe5Ja4m3XnHu6ZdABdFV/OZcz8udClXlNzbDXjPXG7WWBZAvWWNt
+ S1LX2V8l6/MoP4lkNDVfdgj8iQdTmKUYem8h+bsE=
+Date: Mon, 10 Feb 2020 16:41:32 +0000
+From: Will Deacon <will@kernel.org>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH v7 07/11] arm64: efi: restore x18 if it was corrupted
+Message-ID: <20200210164131.GB21900@willie-the-truck>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200128184934.77625-1-samitolvanen@google.com>
+ <20200128184934.77625-8-samitolvanen@google.com>
 MIME-Version: 1.0
-In-Reply-To: <20200210122708.38826-2-mark.rutland@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200128184934.77625-8-samitolvanen@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_083800_417125_095C4FB8 
-X-CRM114-Status: GOOD (  22.43  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200210_084138_695443_1A2099F1 
+X-CRM114-Status: GOOD (  16.95  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,78 +78,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, james.morse@arm.com, maz@kernel.org,
- will@kernel.org, kvmarm@lists.cs.columbia.edu, julien.thierry.kdev@gmail.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux@googlegroups.com, james.morse@arm.com,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ kernel-hardening@lists.openwall.com, Laura Abbott <labbott@redhat.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/02/2020 12:27, Mark Rutland wrote:
-> When cpus_have_const_cap() was originally introduced it was intended to
-> be safe in hyp context, where it is not safe to access the cpu_hwcaps
-> array as cpus_have_cap() did. For more details see commit:
+On Tue, Jan 28, 2020 at 10:49:30AM -0800, Sami Tolvanen wrote:
+> If we detect a corrupted x18, restore the register before jumping back
+> to potentially SCS instrumented code. This is safe, because the wrapper
+> is called with preemption disabled and a separate shadow stack is used
+> for interrupt handling.
 > 
->    a4023f682739439b ("arm64: Add hypervisor safe helper for checking constant capabilities")
-> 
-> We then made use of cpus_have_const_cap() throughout the kernel.
-> 
-> Subsequently, we had to defer updating the static_key associated with
-> each capability in order to avoid lockdep complaints. To avoid breaking
-> kernel-wide usage of cpus_have_const_cap(), this was updated to fall
-> back to the cpu_hwcaps array if called before the static_keys were
-> updated. As the kvm hyp code was only called later than this, the
-> fallback is redundant but not functionally harmful. For more details,
-> see commit:
-> 
->    63a1e1c95e60e798 ("arm64/cpufeature: don't use mutex in bringup path")
-> 
-> Today we have more users of cpus_have_const_cap() which are only called
-> once the relevant static keys are initialized, and it would be
-> beneficial to avoid the redundant code.
-> 
-> To that end, this patch adds a new cpus_have_final_cap(), helper which
-> is intend to be used in code which is only run once capabilities have
-> been finalized, and will never check the cpus_hwcap array. This helps
-> the compiler to generate better code as it no longer needs to generate
-> code to address and test the cpus_hwcap array. To help catch misuse,
-> cpus_have_final_cap() will BUG() if called before capabilities are
-> finalized.
-> 
-> In hyp context, BUG() will result in a hyp panic, but the specific BUG()
-> instance will not be identified in the usual way.
-> 
-> Comments are added to the various cpus_have_*_cap() helpers to describe
-> the constraints on when they can be used. For clarity cpus_have_cap() is
-> moved above the other helpers.
-> 
-> Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Marc Zyngier <maz@kernel.org>
-> Cc: Suzuki Poulose <suzuki.poulose@arm.com>
-> Cc: Will Deacon <will@kernel.org>
+> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+> Reviewed-by: Kees Cook <keescook@chromium.org>
 > ---
+>  arch/arm64/kernel/efi-rt-wrapper.S | 11 ++++++++++-
+>  1 file changed, 10 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/kernel/efi-rt-wrapper.S b/arch/arm64/kernel/efi-rt-wrapper.S
+> index 3fc71106cb2b..6ca6c0dc11a1 100644
+> --- a/arch/arm64/kernel/efi-rt-wrapper.S
+> +++ b/arch/arm64/kernel/efi-rt-wrapper.S
+> @@ -34,5 +34,14 @@ ENTRY(__efi_rt_asm_wrapper)
+>  	ldp	x29, x30, [sp], #32
+>  	b.ne	0f
+>  	ret
+> -0:	b	efi_handle_corrupted_x18	// tail call
+> +0:
+> +	/*
+> +	 * With CONFIG_SHADOW_CALL_STACK, the kernel uses x18 to store a
+> +	 * shadow stack pointer, which we need to restore before returning to
+> +	 * potentially instrumented code. This is safe because the wrapper is
+> +	 * called with preemption disabled and a separate shadow stack is used
+> +	 * for interrupts.
+> +	 */
+> +	mov	x18, x2
+> +	b	efi_handle_corrupted_x18	// tail call
+>  ENDPROC(__efi_rt_asm_wrapper)
 
-...
+Acked-by: Will Deacon <will@kernel.org>
 
-> +/*
-> + * Test for a capability without a runtime check.
-> + *
-> + * Before capabilities are finalized, this will BUG().
-> + * After capabilities are finalized, this is patched to avoid a runtime check.
-> + *
-> + * @num must be a compile-time constant.
-> + */
-> +static __always_inline bool cpus_have_final_cap(int num)
-> +{
-> +	if (static_branch_likely(&arm64_const_caps_ready))
-
-We have introduced system_capabilities_finalized() helper and may be
-it is a good idea to use it here, to make it more clear.
-
-Either ways :
-
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
