@@ -2,72 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07BE01581C6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:52:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEFF41581CF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:55:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s8ttoE0hbc2L5NP4Zc9TFsVVBQDv6Jau27Vf+8Ln3Ng=; b=PACS18ZxpjroYZ
-	GlOQ1MmqN5vjtuTTqoJcZsxDrMo7JjriLyMedrWYXEs4io+mWKYTolgv1JPSXRJROUaHg0VhuBrTG
-	yG9Z3ay1Rp5eJXyMjPnh/vVmP7Dk2E+gzLZiKmLYCk2HnTwuD0QnYDfPx20SQhHqyxbIyj9Eha9+2
-	AQi/r7Cgfl/wb+yenzigbPBWTbuIH0nY2lz0RynIu+74jwWD/DwPIDPM7bQWL/Ign8aDvkDe5BJjT
-	4/trPR1xgTahorFBB4m+B8hp/Kaai/poXvEVRDnRb+lOK565IS1v8a/ssMEQa1Yi4lkOKErehyBQW
-	naJLhLtm9btGiz64L/EA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=aJDzEVrcAhF3y4gN5zv8JzUJo4O5UthKOD2jJp7Uj5A=; b=JSu
+	mZweL3UoLYdmICkdzwTCS02P8gw477PbYxuMDWQLLG19ngySBMCzWd3UVQlyaHlMqUCluIM/MYNN4
+	DR/y/eyacF+/V5JH9UNHQ8wGt9zGMWyDHV+C3p0cWV+Yo5Bd7Hehhs1BxHro+gzKPuaYnOKc9pPUJ
+	j6zDgoI9KtG5krz0OCDZ0Af0xwmnm0T13CMOPt3p5OlWQ/cJ+Hsas3H+MbGoPhyqQk3zwsOmsStmP
+	YGY1r2pEQPv0f3k0HVv4KpP571WkZjScYiGtjyd8g3s2yD5SruvS1YnCeUWnR96fX8u4IikqHy7q1
+	gSawoTcv3dY6jISKw14+ZK6LWNX2RWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1DEY-0006Et-9N; Mon, 10 Feb 2020 17:52:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j1DHV-0000DG-P6; Mon, 10 Feb 2020 17:55:37 +0000
+Received: from conuserg-09.nifty.com ([210.131.2.76])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1DEN-0006D4-GX
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:52:24 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1B5BB20715;
- Mon, 10 Feb 2020 17:52:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581357142;
- bh=w4QaI4rwl8xDK0pPvWLaHd5U0Rdh0Tn4UR8oOFoh5Pg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SwvUPgIlRB37NIGfkknNFZdWlQ7zdhhxoI9oOpxIjAVtbw5kEW46Z3Xua3ED9FVVz
- Qe5ek2fpczwxrW3E2Q2bxRjmv2GVXM5HzJ/+ZCQ75nikohMXSsDTxFneXJ9W328+oF
- NUm3yhGlentzJM3zl1Cd+UZ7gCE75VqB9vrOyToY=
-Date: Mon, 10 Feb 2020 17:52:15 +0000
-From: Will Deacon <will@kernel.org>
-To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH v7 09/11] arm64: disable SCS for hypervisor code
-Message-ID: <20200210175214.GA23318@willie-the-truck>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200128184934.77625-1-samitolvanen@google.com>
- <20200128184934.77625-10-samitolvanen@google.com>
- <6f62b3c0-e796-e91c-f53b-23bd80fcb065@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6f62b3c0-e796-e91c-f53b-23bd80fcb065@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1j1DHK-0000Ag-8q
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:55:29 +0000
+Received: from grover.flets-west.jp (softbank126093102113.bbtec.net
+ [126.93.102.113]) (authenticated)
+ by conuserg-09.nifty.com with ESMTP id 01AHsssJ022740;
+ Tue, 11 Feb 2020 02:54:54 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-09.nifty.com 01AHsssJ022740
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1581357295;
+ bh=xjPR5Fb3zXZIyJpB95Nu3/wXv0c6Fc5wLklLyh08oMQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=uTCBuO0FyHuJvJa8nYh+Vk/PKd7iKeialTMDwEMnnFHu2ip86d5gt4aAa9cWgGiXN
+ amcK8jDgEpIC9gyUw9foWsvsMd5P2jq1mkCCCUaF4GqyxeQmZ07Mab9VeuaTVlqKl+
+ /e/CBycHZcyxiiBgrDHr9CkHbYkwBYNnJemTGcrxqo8pP1+fubNnuoNy2KSUdDhWm8
+ 1mCVmXY5jdwS+UNDYwvL334C+awwG9XSytppXW+QfwNApZNOVik0YInpB/Mqchyf07
+ upSMqbseNOUM7NnLMCOr62YVVn8+AW/tZ9wIBE9HR/ADPErtTTMUCZnPaFZWydP3ck
+ yKkQMtHooGqXA==
+X-Nifty-SrcIP: [126.93.102.113]
+From: Masahiro Yamada <masahiroy@kernel.org>
+To: Andrew Morton <akpm@linux-foundation.org>, linux-arch@vger.kernel.org
+Subject: [PATCH] asm-generic: make more kernel-space headers mandatory
+Date: Tue, 11 Feb 2020 02:54:52 +0900
+Message-Id: <20200210175452.5030-1-masahiroy@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_095223_573272_53C643DD 
-X-CRM114-Status: GOOD (  15.25  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200210_095526_559280_D655B14D 
+X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.76 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,52 +72,1016 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux@googlegroups.com, Masami Hiramatsu <mhiramat@kernel.org>,
- Sami Tolvanen <samitolvanen@google.com>, Marc Zyngier <maz@kernel.org>,
- kernel-hardening@lists.openwall.com, Laura Abbott <labbott@redhat.com>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-kbuild@vger.kernel.org,
+ Masahiro Yamada <masahiroy@kernel.org>, x86@kernel.org,
+ Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 10, 2020 at 05:18:58PM +0000, James Morse wrote:
-> On 28/01/2020 18:49, Sami Tolvanen wrote:
-> > Filter out CC_FLAGS_SCS and -ffixed-x18 for code that runs at a
-> > different exception level.
-> 
-> Hmmm, there are two things being disabled here.
-> 
-> Stashing the lr in memory pointed to by VA won't work transparently at EL2 ... but
-> shouldn't KVM's C code still treat x18 as a fixed register?
+Change a header to mandatory-y if both of the following are met:
 
-My review of v6 suggested dropping the -ffixed-x18 as well, since it's only
-introduced by SCS (in patch 5) and so isn't required by anything else. Why
-do you think it's needed?
+[1] At least one architecture (except um) specifies it as generic-y in
+    arch/*/include/asm/Kbuild
 
-> As you have an __attribute__((no_sanitize("shadow-call-stack"))), could we add that to
-> __hyp_text instead? (its a smaller hammer!) All of KVM's EL2 code is marked __hyp_text,
-> but that isn't everything in these files. Doing it like this would leave KVM's VHE-only
-> paths covered.
-> 
-> As an example, with VHE the kernel and KVM both run at EL2, and KVM behaves differently:
-> kvm_vcpu_put_sysregs() in kvm/hyp/sysreg-sr.c is called from a preempt notifier as
-> the EL2 registers are always accessible.
+[2] Every architecture (except um) either has its own implementation
+    (arch/*/include/asm/*.h) or specifies it as generic-y in
+    arch/*/include/asm/Kbuild
 
-That's a good point, and I agree that it would be nice to have SCS covering
-the VHE paths. If you do that as a function attribute (which feels pretty
-fragile to me), then I guess we'll have to keep the -ffixed-x18 for the
-non-VHE code after all because GCC at least doesn't like having the register
-saving ABI specified on a per-function basis.
+This commit was generated by the following shell script.
 
-Will
+----------------------------------->8-----------------------------------
+
+arches=$(cd arch; ls -1 | sed -e '/Kconfig/d' -e '/um/d')
+
+tmpfile=$(mktemp)
+
+grep "^mandatory-y +=" include/asm-generic/Kbuild > $tmpfile
+
+find arch -path 'arch/*/include/asm/Kbuild' |
+	xargs sed -n 's/^generic-y += \(.*\)/\1/p' | sort -u |
+while read header
+do
+	mandatory=yes
+
+	for arch in $arches
+	do
+		if ! grep -q "generic-y += $header" arch/$arch/include/asm/Kbuild &&
+			! [ -f arch/$arch/include/asm/$header ]; then
+			mandatory=no
+			break
+		fi
+	done
+
+	if [ "$mandatory" = yes ]; then
+		echo "mandatory-y += $header" >> $tmpfile
+
+		for arch in $arches
+		do
+			sed -i "/generic-y += $header/d" arch/$arch/include/asm/Kbuild
+		done
+	fi
+
+done
+
+sed -i '/^mandatory-y +=/d' include/asm-generic/Kbuild
+
+LANG=C sort $tmpfile >> include/asm-generic/Kbuild
+
+----------------------------------->8-----------------------------------
+
+Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+
+---
+
+ arch/alpha/include/asm/Kbuild      | 11 -------
+ arch/arc/include/asm/Kbuild        | 21 ------------
+ arch/arm/include/asm/Kbuild        | 12 -------
+ arch/arm64/include/asm/Kbuild      | 18 -----------
+ arch/c6x/include/asm/Kbuild        | 37 ---------------------
+ arch/csky/include/asm/Kbuild       | 37 ---------------------
+ arch/h8300/include/asm/Kbuild      | 46 --------------------------
+ arch/hexagon/include/asm/Kbuild    | 33 -------------------
+ arch/ia64/include/asm/Kbuild       |  7 ----
+ arch/m68k/include/asm/Kbuild       | 24 --------------
+ arch/microblaze/include/asm/Kbuild | 30 -----------------
+ arch/mips/include/asm/Kbuild       | 13 --------
+ arch/nds32/include/asm/Kbuild      | 37 ---------------------
+ arch/nios2/include/asm/Kbuild      | 38 ----------------------
+ arch/openrisc/include/asm/Kbuild   | 36 ---------------------
+ arch/parisc/include/asm/Kbuild     | 18 -----------
+ arch/powerpc/include/asm/Kbuild    |  4 ---
+ arch/riscv/include/asm/Kbuild      | 28 ----------------
+ arch/s390/include/asm/Kbuild       | 15 ---------
+ arch/sh/include/asm/Kbuild         | 16 ---------
+ arch/sparc/include/asm/Kbuild      | 14 --------
+ arch/unicore32/include/asm/Kbuild  | 34 -------------------
+ arch/x86/include/asm/Kbuild        |  2 --
+ arch/xtensa/include/asm/Kbuild     | 26 ---------------
+ include/asm-generic/Kbuild         | 52 ++++++++++++++++++++++++++++++
+ 25 files changed, 52 insertions(+), 557 deletions(-)
+
+diff --git a/arch/alpha/include/asm/Kbuild b/arch/alpha/include/asm/Kbuild
+index 89e87bbc987f..42911c8340c7 100644
+--- a/arch/alpha/include/asm/Kbuild
++++ b/arch/alpha/include/asm/Kbuild
+@@ -1,17 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0
+ 
+ generated-y += syscall_table.h
+-generic-y += compat.h
+-generic-y += exec.h
+ generic-y += export.h
+-generic-y += fb.h
+-generic-y += irq_work.h
+ generic-y += kvm_para.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += preempt.h
+-generic-y += sections.h
+-generic-y += trace_clock.h
+-generic-y += current.h
+-generic-y += kprobes.h
+diff --git a/arch/arc/include/asm/Kbuild b/arch/arc/include/asm/Kbuild
+index 1b505694691e..81f4edec0c2a 100644
+--- a/arch/arc/include/asm/Kbuild
++++ b/arch/arc/include/asm/Kbuild
+@@ -1,28 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0
+-generic-y += bugs.h
+-generic-y += compat.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+ generic-y += extable.h
+-generic-y += ftrace.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+ generic-y += parport.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+ generic-y += user.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/arm/include/asm/Kbuild b/arch/arm/include/asm/Kbuild
+index fa579b23b4df..383635b68763 100644
+--- a/arch/arm/include/asm/Kbuild
++++ b/arch/arm/include/asm/Kbuild
+@@ -1,22 +1,10 @@
+ # SPDX-License-Identifier: GPL-2.0
+-generic-y += compat.h
+-generic-y += current.h
+ generic-y += early_ioremap.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += extable.h
+ generic-y += flat.h
+-generic-y += irq_regs.h
+-generic-y += kdebug.h
+-generic-y += local.h
+ generic-y += local64.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+ generic-y += parport.h
+-generic-y += preempt.h
+ generic-y += seccomp.h
+-generic-y += serial.h
+-generic-y += trace_clock.h
+ 
+ generated-y += mach-types.h
+ generated-y += unistd-nr.h
+diff --git a/arch/arm64/include/asm/Kbuild b/arch/arm64/include/asm/Kbuild
+index d3077c991962..ff9cbb631212 100644
+--- a/arch/arm64/include/asm/Kbuild
++++ b/arch/arm64/include/asm/Kbuild
+@@ -1,26 +1,8 @@
+ # SPDX-License-Identifier: GPL-2.0
+-generic-y += bugs.h
+-generic-y += delay.h
+-generic-y += div64.h
+-generic-y += dma.h
+-generic-y += dma-mapping.h
+ generic-y += early_ioremap.h
+-generic-y += emergency-restart.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+ generic-y += qrwlock.h
+ generic-y += qspinlock.h
+-generic-y += serial.h
+ generic-y += set_memory.h
+-generic-y += switch_to.h
+-generic-y += trace_clock.h
+-generic-y += unaligned.h
+ generic-y += user.h
+-generic-y += vga.h
+diff --git a/arch/c6x/include/asm/Kbuild b/arch/c6x/include/asm/Kbuild
+index a036e05fc3c6..a4ef93a1f7ae 100644
+--- a/arch/c6x/include/asm/Kbuild
++++ b/arch/c6x/include/asm/Kbuild
+@@ -1,42 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0
+-generic-y += atomic.h
+-generic-y += barrier.h
+-generic-y += bugs.h
+-generic-y += compat.h
+-generic-y += current.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += extable.h
+-generic-y += fb.h
+-generic-y += futex.h
+-generic-y += hw_irq.h
+-generic-y += io.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += mmu.h
+-generic-y += mmu_context.h
+-generic-y += pci.h
+-generic-y += percpu.h
+-generic-y += pgalloc.h
+-generic-y += preempt.h
+-generic-y += serial.h
+-generic-y += shmparam.h
+-generic-y += tlbflush.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+ generic-y += user.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/csky/include/asm/Kbuild b/arch/csky/include/asm/Kbuild
+index bc15a26c782f..93372255984d 100644
+--- a/arch/csky/include/asm/Kbuild
++++ b/arch/csky/include/asm/Kbuild
+@@ -1,45 +1,8 @@
+ # SPDX-License-Identifier: GPL-2.0
+ generic-y += asm-offsets.h
+-generic-y += bugs.h
+-generic-y += compat.h
+-generic-y += current.h
+-generic-y += delay.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+-generic-y += fb.h
+-generic-y += futex.h
+ generic-y += gpio.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+-generic-y += irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += linkage.h
+-generic-y += local.h
+ generic-y += local64.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += module.h
+-generic-y += pci.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+ generic-y += qrwlock.h
+-generic-y += sections.h
+-generic-y += serial.h
+-generic-y += timex.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+-generic-y += unaligned.h
+ generic-y += user.h
+-generic-y += vga.h
+ generic-y += vmlinux.lds.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/h8300/include/asm/Kbuild b/arch/h8300/include/asm/Kbuild
+index 7f618190e1a9..ddf04f32b546 100644
+--- a/arch/h8300/include/asm/Kbuild
++++ b/arch/h8300/include/asm/Kbuild
+@@ -1,54 +1,8 @@
+ # SPDX-License-Identifier: GPL-2.0
+ generic-y += asm-offsets.h
+-generic-y += barrier.h
+-generic-y += bugs.h
+-generic-y += cacheflush.h
+-generic-y += checksum.h
+-generic-y += compat.h
+-generic-y += current.h
+-generic-y += delay.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += extable.h
+-generic-y += fb.h
+-generic-y += ftrace.h
+-generic-y += futex.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += linkage.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += mmu.h
+-generic-y += mmu_context.h
+-generic-y += module.h
+ generic-y += parport.h
+-generic-y += pci.h
+-generic-y += percpu.h
+-generic-y += pgalloc.h
+-generic-y += preempt.h
+-generic-y += sections.h
+-generic-y += serial.h
+-generic-y += shmparam.h
+ generic-y += spinlock.h
+-generic-y += timex.h
+-generic-y += tlbflush.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+-generic-y += uaccess.h
+-generic-y += unaligned.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/hexagon/include/asm/Kbuild b/arch/hexagon/include/asm/Kbuild
+index 84bb1ed1b931..373964bb177e 100644
+--- a/arch/hexagon/include/asm/Kbuild
++++ b/arch/hexagon/include/asm/Kbuild
+@@ -1,39 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0
+-generic-y += barrier.h
+-generic-y += bug.h
+-generic-y += bugs.h
+-generic-y += compat.h
+-generic-y += current.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+ generic-y += extable.h
+-generic-y += fb.h
+-generic-y += ftrace.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+ generic-y += iomap.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += pci.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+-generic-y += sections.h
+-generic-y += serial.h
+-generic-y += shmparam.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+-generic-y += unaligned.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/ia64/include/asm/Kbuild b/arch/ia64/include/asm/Kbuild
+index 390393667d3b..f994c1daf9d4 100644
+--- a/arch/ia64/include/asm/Kbuild
++++ b/arch/ia64/include/asm/Kbuild
+@@ -1,12 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0
+ generated-y += syscall_table.h
+-generic-y += compat.h
+-generic-y += exec.h
+-generic-y += irq_work.h
+ generic-y += kvm_para.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += preempt.h
+-generic-y += trace_clock.h
+ generic-y += vtime.h
+-generic-y += word-at-a-time.h
+diff --git a/arch/m68k/include/asm/Kbuild b/arch/m68k/include/asm/Kbuild
+index 591d53b763b7..1bff55aa2d54 100644
+--- a/arch/m68k/include/asm/Kbuild
++++ b/arch/m68k/include/asm/Kbuild
+@@ -1,31 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0
+ generated-y += syscall_table.h
+-generic-y += barrier.h
+-generic-y += compat.h
+-generic-y += device.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += extable.h
+-generic-y += futex.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+-generic-y += sections.h
+-generic-y += shmparam.h
+ generic-y += spinlock.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/microblaze/include/asm/Kbuild b/arch/microblaze/include/asm/Kbuild
+index e5c9170a07fc..f38696d2b462 100644
+--- a/arch/microblaze/include/asm/Kbuild
++++ b/arch/microblaze/include/asm/Kbuild
+@@ -1,38 +1,8 @@
+ # SPDX-License-Identifier: GPL-2.0
+ generated-y += syscall_table.h
+-generic-y += barrier.h
+-generic-y += bitops.h
+-generic-y += bug.h
+-generic-y += bugs.h
+-generic-y += compat.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += extable.h
+-generic-y += fb.h
+-generic-y += hardirq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += linkage.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+ generic-y += parport.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+-generic-y += serial.h
+-generic-y += shmparam.h
+ generic-y += syscalls.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/mips/include/asm/Kbuild b/arch/mips/include/asm/Kbuild
+index 4ebd8ce254ce..8643d313890e 100644
+--- a/arch/mips/include/asm/Kbuild
++++ b/arch/mips/include/asm/Kbuild
+@@ -4,23 +4,10 @@ generated-y += syscall_table_32_o32.h
+ generated-y += syscall_table_64_n32.h
+ generated-y += syscall_table_64_n64.h
+ generated-y += syscall_table_64_o32.h
+-generic-y += current.h
+-generic-y += device.h
+-generic-y += emergency-restart.h
+ generic-y += export.h
+-generic-y += irq_work.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+ generic-y += parport.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+ generic-y += qrwlock.h
+ generic-y += qspinlock.h
+-generic-y += sections.h
+-generic-y += serial.h
+-generic-y += trace_clock.h
+-generic-y += unaligned.h
+ generic-y += user.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/nds32/include/asm/Kbuild b/arch/nds32/include/asm/Kbuild
+index 77eae62036b5..ff1e94299317 100644
+--- a/arch/nds32/include/asm/Kbuild
++++ b/arch/nds32/include/asm/Kbuild
+@@ -1,46 +1,9 @@
+ # SPDX-License-Identifier: GPL-2.0
+ generic-y += asm-offsets.h
+-generic-y += atomic.h
+-generic-y += bitops.h
+-generic-y += bug.h
+-generic-y += bugs.h
+-generic-y += checksum.h
+ generic-y += cmpxchg.h
+-generic-y += compat.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += export.h
+-generic-y += fb.h
+ generic-y += gpio.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+-generic-y += irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += local64.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+ generic-y += parport.h
+-generic-y += pci.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+-generic-y += sections.h
+-generic-y += serial.h
+-generic-y += switch_to.h
+-generic-y += timex.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+-generic-y += xor.h
+-generic-y += unaligned.h
+ generic-y += user.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+diff --git a/arch/nios2/include/asm/Kbuild b/arch/nios2/include/asm/Kbuild
+index 68093999bd26..7fe7437555fb 100644
+--- a/arch/nios2/include/asm/Kbuild
++++ b/arch/nios2/include/asm/Kbuild
+@@ -1,45 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0
+-generic-y += atomic.h
+-generic-y += barrier.h
+-generic-y += bitops.h
+-generic-y += bug.h
+-generic-y += bugs.h
+ generic-y += cmpxchg.h
+-generic-y += compat.h
+-generic-y += current.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += extable.h
+-generic-y += fb.h
+-generic-y += ftrace.h
+-generic-y += futex.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += module.h
+-generic-y += pci.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+-generic-y += sections.h
+-generic-y += serial.h
+ generic-y += spinlock.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+-generic-y += unaligned.h
+ generic-y += user.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/openrisc/include/asm/Kbuild b/arch/openrisc/include/asm/Kbuild
+index e12d6c1735a0..ca5987e11053 100644
+--- a/arch/openrisc/include/asm/Kbuild
++++ b/arch/openrisc/include/asm/Kbuild
+@@ -1,45 +1,9 @@
+ # SPDX-License-Identifier: GPL-2.0
+-generic-y += barrier.h
+-generic-y += bug.h
+-generic-y += bugs.h
+-generic-y += checksum.h
+-generic-y += compat.h
+-generic-y += current.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += extable.h
+-generic-y += fb.h
+-generic-y += ftrace.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += module.h
+-generic-y += pci.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+ generic-y += qspinlock_types.h
+ generic-y += qspinlock.h
+ generic-y += qrwlock_types.h
+ generic-y += qrwlock.h
+-generic-y += sections.h
+-generic-y += shmparam.h
+-generic-y += switch_to.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+ generic-y += user.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/parisc/include/asm/Kbuild b/arch/parisc/include/asm/Kbuild
+index 9ceedf6393c4..e3ee5c0bfe80 100644
+--- a/arch/parisc/include/asm/Kbuild
++++ b/arch/parisc/include/asm/Kbuild
+@@ -2,26 +2,8 @@
+ generated-y += syscall_table_32.h
+ generated-y += syscall_table_64.h
+ generated-y += syscall_table_c32.h
+-generic-y += current.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+ generic-y += seccomp.h
+-generic-y += trace_clock.h
+ generic-y += user.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/powerpc/include/asm/Kbuild b/arch/powerpc/include/asm/Kbuild
+index d0a23d0db863..dadbcf3a0b1e 100644
+--- a/arch/powerpc/include/asm/Kbuild
++++ b/arch/powerpc/include/asm/Kbuild
+@@ -3,12 +3,8 @@ generated-y += syscall_table_32.h
+ generated-y += syscall_table_64.h
+ generated-y += syscall_table_c32.h
+ generated-y += syscall_table_spu.h
+-generic-y += div64.h
+-generic-y += dma-mapping.h
+ generic-y += export.h
+-generic-y += irq_regs.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += preempt.h
+ generic-y += vtime.h
+ generic-y += early_ioremap.h
+diff --git a/arch/riscv/include/asm/Kbuild b/arch/riscv/include/asm/Kbuild
+index ec0ca8c6ab64..3d9410bb4de0 100644
+--- a/arch/riscv/include/asm/Kbuild
++++ b/arch/riscv/include/asm/Kbuild
+@@ -1,35 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0
+-generic-y += bugs.h
+-generic-y += checksum.h
+-generic-y += compat.h
+-generic-y += device.h
+-generic-y += div64.h
+ generic-y += extable.h
+ generic-y += flat.h
+-generic-y += dma.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+-generic-y += fb.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += local64.h
+-generic-y += mm-arch-hooks.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+-generic-y += sections.h
+-generic-y += serial.h
+-generic-y += shmparam.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+-generic-y += unaligned.h
+ generic-y += user.h
+-generic-y += vga.h
+ generic-y += vmlinux.lds.h
+-generic-y += xor.h
+diff --git a/arch/s390/include/asm/Kbuild b/arch/s390/include/asm/Kbuild
+index 1832ae6442ef..83f6e85de7bc 100644
+--- a/arch/s390/include/asm/Kbuild
++++ b/arch/s390/include/asm/Kbuild
+@@ -5,21 +5,6 @@ generated-y += syscall_table.h
+ generated-y += unistd_nr.h
+ 
+ generic-y += asm-offsets.h
+-generic-y += cacheflush.h
+-generic-y += device.h
+-generic-y += dma-mapping.h
+-generic-y += div64.h
+-generic-y += emergency-restart.h
+ generic-y += export.h
+-generic-y += fb.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kmap_types.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += trace_clock.h
+-generic-y += unaligned.h
+-generic-y += word-at-a-time.h
+diff --git a/arch/sh/include/asm/Kbuild b/arch/sh/include/asm/Kbuild
+index 51a54df22c11..7435182ef846 100644
+--- a/arch/sh/include/asm/Kbuild
++++ b/arch/sh/include/asm/Kbuild
+@@ -1,22 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0
+ generated-y += syscall_table.h
+-generic-y += compat.h
+-generic-y += current.h
+-generic-y += delay.h
+-generic-y += div64.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+ generic-y += parport.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+-generic-y += serial.h
+-generic-y += trace_clock.h
+-generic-y += xor.h
+diff --git a/arch/sparc/include/asm/Kbuild b/arch/sparc/include/asm/Kbuild
+index 62de2eb2773d..5269a704801f 100644
+--- a/arch/sparc/include/asm/Kbuild
++++ b/arch/sparc/include/asm/Kbuild
+@@ -4,21 +4,7 @@
+ generated-y += syscall_table_32.h
+ generated-y += syscall_table_64.h
+ generated-y += syscall_table_c32.h
+-generic-y += div64.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += export.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+ generic-y += kvm_para.h
+-generic-y += linkage.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += module.h
+-generic-y += preempt.h
+-generic-y += serial.h
+-generic-y += trace_clock.h
+-generic-y += word-at-a-time.h
+diff --git a/arch/unicore32/include/asm/Kbuild b/arch/unicore32/include/asm/Kbuild
+index 98aa125a8f06..55026e8240d8 100644
+--- a/arch/unicore32/include/asm/Kbuild
++++ b/arch/unicore32/include/asm/Kbuild
+@@ -1,41 +1,7 @@
+ # SPDX-License-Identifier: GPL-2.0
+-generic-y += atomic.h
+-generic-y += bugs.h
+-generic-y += compat.h
+-generic-y += current.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += extable.h
+-generic-y += fb.h
+-generic-y += ftrace.h
+-generic-y += futex.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+-generic-y += module.h
+ generic-y += parport.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+-generic-y += sections.h
+-generic-y += serial.h
+-generic-y += shmparam.h
+ generic-y += syscalls.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+-generic-y += unaligned.h
+ generic-y += user.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/arch/x86/include/asm/Kbuild b/arch/x86/include/asm/Kbuild
+index ea34464d6221..b19ec8282d50 100644
+--- a/arch/x86/include/asm/Kbuild
++++ b/arch/x86/include/asm/Kbuild
+@@ -10,5 +10,3 @@ generated-y += xen-hypercalls.h
+ generic-y += early_ioremap.h
+ generic-y += export.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+diff --git a/arch/xtensa/include/asm/Kbuild b/arch/xtensa/include/asm/Kbuild
+index 271917c24b7f..9718e9593564 100644
+--- a/arch/xtensa/include/asm/Kbuild
++++ b/arch/xtensa/include/asm/Kbuild
+@@ -1,36 +1,10 @@
+ # SPDX-License-Identifier: GPL-2.0
+ generated-y += syscall_table.h
+-generic-y += bug.h
+-generic-y += compat.h
+-generic-y += device.h
+-generic-y += div64.h
+-generic-y += dma-mapping.h
+-generic-y += emergency-restart.h
+-generic-y += exec.h
+ generic-y += extable.h
+-generic-y += fb.h
+-generic-y += hardirq.h
+-generic-y += hw_irq.h
+-generic-y += irq_regs.h
+-generic-y += irq_work.h
+-generic-y += kdebug.h
+-generic-y += kmap_types.h
+-generic-y += kprobes.h
+ generic-y += kvm_para.h
+-generic-y += local.h
+ generic-y += local64.h
+ generic-y += mcs_spinlock.h
+-generic-y += mm-arch-hooks.h
+-generic-y += mmiowb.h
+ generic-y += param.h
+-generic-y += percpu.h
+-generic-y += preempt.h
+ generic-y += qrwlock.h
+ generic-y += qspinlock.h
+-generic-y += sections.h
+-generic-y += topology.h
+-generic-y += trace_clock.h
+ generic-y += user.h
+-generic-y += vga.h
+-generic-y += word-at-a-time.h
+-generic-y += xor.h
+diff --git a/include/asm-generic/Kbuild b/include/asm-generic/Kbuild
+index cd17d50697cc..36341dfded70 100644
+--- a/include/asm-generic/Kbuild
++++ b/include/asm-generic/Kbuild
+@@ -4,6 +4,58 @@
+ # (This file is not included when SRCARCH=um since UML borrows several
+ # asm headers from the host architecutre.)
+ 
++mandatory-y += atomic.h
++mandatory-y += barrier.h
++mandatory-y += bitops.h
++mandatory-y += bug.h
++mandatory-y += bugs.h
++mandatory-y += cacheflush.h
++mandatory-y += checksum.h
++mandatory-y += compat.h
++mandatory-y += current.h
++mandatory-y += delay.h
++mandatory-y += device.h
++mandatory-y += div64.h
+ mandatory-y += dma-contiguous.h
++mandatory-y += dma-mapping.h
++mandatory-y += dma.h
++mandatory-y += emergency-restart.h
++mandatory-y += exec.h
++mandatory-y += fb.h
++mandatory-y += ftrace.h
++mandatory-y += futex.h
++mandatory-y += hardirq.h
++mandatory-y += hw_irq.h
++mandatory-y += io.h
++mandatory-y += irq.h
++mandatory-y += irq_regs.h
++mandatory-y += irq_work.h
++mandatory-y += kdebug.h
++mandatory-y += kmap_types.h
++mandatory-y += kprobes.h
++mandatory-y += linkage.h
++mandatory-y += local.h
++mandatory-y += mm-arch-hooks.h
++mandatory-y += mmiowb.h
++mandatory-y += mmu.h
++mandatory-y += mmu_context.h
++mandatory-y += module.h
+ mandatory-y += msi.h
++mandatory-y += pci.h
++mandatory-y += percpu.h
++mandatory-y += pgalloc.h
++mandatory-y += preempt.h
++mandatory-y += sections.h
++mandatory-y += serial.h
++mandatory-y += shmparam.h
+ mandatory-y += simd.h
++mandatory-y += switch_to.h
++mandatory-y += timex.h
++mandatory-y += tlbflush.h
++mandatory-y += topology.h
++mandatory-y += trace_clock.h
++mandatory-y += uaccess.h
++mandatory-y += unaligned.h
++mandatory-y += vga.h
++mandatory-y += word-at-a-time.h
++mandatory-y += xor.h
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
