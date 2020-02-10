@@ -2,61 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51591157FFB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 17:41:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DAA39158001
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 17:44:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UBUPsISjmWy8hae/Lgafg6ou9zXIDTCq7CDKlVp7LXI=; b=JdbRPmn//qhyIz
-	y2rIvfUm0WFmExxKRdQeF91yKygoDVGvo7YmQaViraShOrb45aI8nCFpR+/fU+K9LHUglUmWHIMzi
-	ctPh5yBl+NdM4ZrjxrY/QyVqghIuXvDQzNnnxIcjs6UqDRVIVzGHaC3jUmhHPDZab59G4iFnOm7wP
-	VAhgy+eurMPfRPBze8BRpuX4fKm3PNWAqtmUpvBa1pDbw1CF6UwimVXUZOi3A1mp+3toi63L1IYBW
-	tEsxCA4TXhuPpZBnffGJEDLFvA3EqdzxNcpVPgzS4uGPtVi03oFipLhYJkJo+Otz6ix+6YclNjrUk
-	yKZ59XpojdEdXUiAAeLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ctg0lNh3ibSlG1U/wY4Z6gUxGVVCn3TKtjsZEXIzcu4=; b=gvdWaPuz8U2LsXls8MnJUWafS
+	ici0igmyJ/uiTIrDxd5ocSdmYlukxUb4uWkMSvK1FQofqNYsOR5CBp74seKyqGo3o3mh7tIogt14s
+	T88catbclB0/JfL8yUYfY32zlreD1XKlqIY6KhMXuorcR45bnxvEdhPgEJr10iVGejwRaxYWd0sMc
+	HzvDLZ9J8EJqkhWEHN4G5XoBrN1xHmvdJCrwiLsoDp3xbMbc0FzujXin7wunaGTV2CSlIipgFAK2c
+	dE2gqfDNQdc0HrCvA0rN/URJllRmDLbCTt1bToPbgd73K+C0rgTVmjrinRWUj+70RihK4XE/7+BNP
+	shNzWFdtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1C80-0005no-NF; Mon, 10 Feb 2020 16:41:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j1CAc-00068w-59; Mon, 10 Feb 2020 16:44:26 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1C7u-0005nV-KZ
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 16:41:39 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3926920733;
- Mon, 10 Feb 2020 16:41:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581352898;
- bh=swgRA1rNS8tBiz0g1uvNqRf9FaXIwO8m18YRqWdGIWU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=xZ9yor3PmK0g2VGI7TH5dURt6qVd/7JoQzVJWSGzhMpbis9o4lzC+9ygWQ0663Ml8
- mNsCjyu4UABSsLLe5Ja4m3XnHu6ZdABdFV/OZcz8udClXlNzbDXjPXG7WWBZAvWWNt
- S1LX2V8l6/MoP4lkNDVfdgj8iQdTmKUYem8h+bsE=
-Date: Mon, 10 Feb 2020 16:41:32 +0000
-From: Will Deacon <will@kernel.org>
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH v7 07/11] arm64: efi: restore x18 if it was corrupted
-Message-ID: <20200210164131.GB21900@willie-the-truck>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200128184934.77625-1-samitolvanen@google.com>
- <20200128184934.77625-8-samitolvanen@google.com>
+ id 1j1CAU-00068Y-96
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 16:44:19 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01AGiBFt014873; Mon, 10 Feb 2020 17:44:13 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=zcYt6Y+x2k8OY2/GRYD67Vq+aFgoKerUJwHCwYSMUxY=;
+ b=MRuo5P1sITtDXkr8HnjEZLFOT8qP9EWImTXRa2Rb/xZDP5na0Ig416XQ5Jef0YDDvoL4
+ 6bs9jsgbbftU03E2AIMOTwcCgmiq5OyYDBWvTiquc2nqWrtnBo1btOap97eyRqDsQwvA
+ E1ZyWHaXlQ0J8Xj9RKGelnylVBl32hol4GlFutYfPHS5f54BZ0HRtmG7cFB2HrB2H6V+
+ eJk9TAOxAsKffQnrC/dg4RCETgtUVSH1j5dmvFEhSVVUwUAPUlTbhsnVfjZH7IwXOUGB
+ QRWJSUy2QUwYN5F+VxO/E38cVejgx+XbIgpuGjYRRquFAnfcH/E0Z7FjlN4sZ1j+JgMo +w== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2y1ud9c61f-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 10 Feb 2020 17:44:13 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AA47310002A;
+ Mon, 10 Feb 2020 17:44:12 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 973A12AE223;
+ Mon, 10 Feb 2020 17:44:12 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.44) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 10 Feb
+ 2020 17:44:11 +0100
+Subject: Re: [PATCH 0/3] USB OTG Dual Role on STM32MP15
+To: Amelie Delaunay <amelie.delaunay@st.com>, Maxime Coquelin
+ <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>
+References: <20200204132606.20222-1-amelie.delaunay@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <3211481b-896f-1b25-b275-f2670fae7234@st.com>
+Date: Mon, 10 Feb 2020 17:44:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200128184934.77625-8-samitolvanen@google.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200204132606.20222-1-amelie.delaunay@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-10_06:2020-02-10,
+ 2020-02-10 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_084138_695443_1A2099F1 
-X-CRM114-Status: GOOD (  16.95  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200210_084418_609246_B656769B 
+X-CRM114-Status: GOOD (  14.35  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -66,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,60 +99,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux@googlegroups.com, james.morse@arm.com,
- Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
- kernel-hardening@lists.openwall.com, Laura Abbott <labbott@redhat.com>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jan 28, 2020 at 10:49:30AM -0800, Sami Tolvanen wrote:
-> If we detect a corrupted x18, restore the register before jumping back
-> to potentially SCS instrumented code. This is safe, because the wrapper
-> is called with preemption disabled and a separate shadow stack is used
-> for interrupt handling.
-> 
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> Reviewed-by: Kees Cook <keescook@chromium.org>
-> ---
->  arch/arm64/kernel/efi-rt-wrapper.S | 11 ++++++++++-
->  1 file changed, 10 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/kernel/efi-rt-wrapper.S b/arch/arm64/kernel/efi-rt-wrapper.S
-> index 3fc71106cb2b..6ca6c0dc11a1 100644
-> --- a/arch/arm64/kernel/efi-rt-wrapper.S
-> +++ b/arch/arm64/kernel/efi-rt-wrapper.S
-> @@ -34,5 +34,14 @@ ENTRY(__efi_rt_asm_wrapper)
->  	ldp	x29, x30, [sp], #32
->  	b.ne	0f
->  	ret
-> -0:	b	efi_handle_corrupted_x18	// tail call
-> +0:
-> +	/*
-> +	 * With CONFIG_SHADOW_CALL_STACK, the kernel uses x18 to store a
-> +	 * shadow stack pointer, which we need to restore before returning to
-> +	 * potentially instrumented code. This is safe because the wrapper is
-> +	 * called with preemption disabled and a separate shadow stack is used
-> +	 * for interrupts.
-> +	 */
-> +	mov	x18, x2
-> +	b	efi_handle_corrupted_x18	// tail call
->  ENDPROC(__efi_rt_asm_wrapper)
-
-Acked-by: Will Deacon <will@kernel.org>
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQW3DqWxpZQoKT24gMi80LzIwIDI6MjYgUE0sIEFtZWxpZSBEZWxhdW5heSB3cm90ZToKPiBU
+aGlzIHBhdGNoc2V0IGFkZHMgc3VwcG9ydCBmb3IgVVNCIE9URyBEdWFsIFJvbGUgb24gc3RtMzJt
+cDE1Lgo+IFVTQiBPVEcgSFMgaXMgY29uZmlndXJlZCBpbiBEdWFsIFJvbGUgbW9kZSBvbiBzdG0z
+Mm1wMTU3Yy1ldjEsIHJvbGUgZGV0ZWN0aW9uCj4gdXNlcyBJRCBwaW4uCj4gCj4gQW1lbGllIERl
+bGF1bmF5ICgzKToKPiAgICBBUk06IGR0czogc3RtMzI6IGFkZCBVU0IgT1RHIGZ1bGwgc3VwcG9y
+dCBvbiBzdG0zMm1wMTUxCj4gICAgQVJNOiBkdHM6IHN0bTMyOiBhZGQgVVNCIE9URyBwaW5jdHJs
+IHRvIHN0bTMybXAxNQo+ICAgIEFSTTogZHRzOiBzdG0zMjogZW5hYmxlIFVTQiBPVEcgRHVhbCBS
+b2xlIG9uIHN0bTMybXAxNTdjLWV2MQo+IAo+ICAgYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1
+LXBpbmN0cmwuZHRzaSB8IDEzICsrKysrKysrKysrKysKPiAgIGFyY2gvYXJtL2Jvb3QvZHRzL3N0
+bTMybXAxNTEuZHRzaSAgICAgICAgfCAgMyArKy0KPiAgIGFyY2gvYXJtL2Jvb3QvZHRzL3N0bTMy
+bXAxNTdjLWVkMS5kdHMgICAgfCAgNCArKysrCj4gICBhcmNoL2FybS9ib290L2R0cy9zdG0zMm1w
+MTU3Yy1ldjEuZHRzICAgIHwgIDMgKystCj4gICA0IGZpbGVzIGNoYW5nZWQsIDIxIGluc2VydGlv
+bnMoKyksIDIgZGVsZXRpb25zKC0pCj4gCgpTZXJpZXMgYXBwbGllZCBvbiBzdG0zMi1uZXh0LgoK
+VGhhbmtzCkFsZXgKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
