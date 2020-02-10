@@ -2,87 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33FA0157E88
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 16:13:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 739F9157EA2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 16:21:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3UhhswxjGrmzL3fPGeB+EDkcaJXrh5nmbXxO1pq/ASg=; b=QzaZogjePXEdB6
-	NoP1v2V71ilyhKOVelONPk/R5JlZ+Lji+ip/zj6PtJcEyzV0Oh98+hqZgrtjs/W+SXhrZaJlCJode
-	qIvo6sYNwaxVRSx93g5mbupTBsraOtpL4Y5lggqj65VpFEPS3RSnxCOlZtbU5x+hvBWMMkmQ8Xcyc
-	7oitIYUFhe5pjCq1OvEwjK/3QVYCSaZbF6dy+DXX0i4xKMq93MY7yGEz0NP0yZbaZVBl696RM97ut
-	lGYbATqV2/ztQytTFU+a77NiGLdYmYOC+4xkrRppvPlHDZd2ZEDrSsgdtgNkzUX4l491UMUFFptIo
-	ouQrwkcrUxhVKI0/VRoA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dEZlD2R+z8C1lAhHYjV70GNECtndIDhL8jlACqgGY6g=; b=Cpt/0+XFXaQZUM
+	+0nhfNb1GqqRON1h5pj8SM4JHXJD2DtGV+FElC5OHtE0HLfnQJ5mDCBGa6ENsngDFB/4UwmfzO1iq
+	R4CotUQ1LeIauN5wkvJp4we8ZTavKUAM+we3/VaGJbhG7d9cs5JTxAZP4qhi0erDl3gMF5/mWC1+g
+	kE3yyv9wfy7p60n1JCr5Wznb6gmm1F9FBOFslMn/3iu8o+Yj8YV028D8Ux/BrgyLR5x/fusB68Gdc
+	1zpv8A2/6yAuLzrP/aBVG1y7dpF7DxoAibmqxVuPiEkAvBl6sGr5Mhw/Xo0n4BuKgyX9Ab8qwUsY5
+	CGD7gyGJHUvHzbPVQXQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1AkW-0001Dj-3o; Mon, 10 Feb 2020 15:13:24 +0000
-Received: from mail-il1-x12e.google.com ([2607:f8b0:4864:20::12e])
+	id 1j1As6-0004h9-3Y; Mon, 10 Feb 2020 15:21:14 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1AkP-0001DM-OW
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 15:13:19 +0000
-Received: by mail-il1-x12e.google.com with SMTP id i7so488011ilr.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 07:13:15 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=lixom-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=FhN4XtFCJkoq1uQy3zAa0gdyCp3Sl71uMPy2Eyj8+bE=;
- b=I/xFN0o6OHNqlV1vOX3xfGZ8d/9J7hUwnWgRkbtmq5yervupWrbgBcGxfGD0b8sYLC
- uwcGuejk6bD/ZVkpBth8Jjaa713iNs++YsuJPMlSmtwGys5Gej+Xh2SSNPtHIoOeigwl
- V98nNsFb2EBay4fOu+ill9j4oWB/gkUdI0yu51YKQnRETpoRkcL5c00+Gq/LH+LCLxlH
- laj+IEGsZEzC7ASAVdAWUuf/cVDMbEiNHcd2qjXFZ2RG1UO3Q6bgSxySNgoDxU5Sc2K5
- iyTcCsUu5ozZRmiqGYQtnaI/XkwlXp7xqsE/jANCwbVG2Kvz90jDI8wrUC7x+dciP+Rx
- JiOg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=FhN4XtFCJkoq1uQy3zAa0gdyCp3Sl71uMPy2Eyj8+bE=;
- b=tRvRDiZlLb4EI9tQnvpa9t7qUwFpv/JIOAptadBhvbkXCoOUuoqWyX1RMcowJ5Y1LO
- Vka6N0G0DAHPGKDii6MbMmMu2wBzzXtWPMT0iuE+wPSSFQl6ZsSYIPNcosznfB+ErIbr
- IXAwVbWBXQugWTXhs2de5USA8aZZiiMbDekBfu5SjSslf2Ug/QEGM6fC8DPDcDcWu5Gv
- 79ICwrY+gnLjfQEaAN0x0RKI3LYsdmKiNXAYTLPMS7OxnzfbgXUz0xvg5wd3AyZvqdDq
- FPk4p+3HiCyrIBtWqk9kD6RjgBAbd/U+3+TKHPWpMD4KKJNvixCWIIqX7ZFhCDwHEvzr
- TGCg==
-X-Gm-Message-State: APjAAAW5reN1laT+NiWU40C6iC339QMbvN9nsUQ+ASUA7O7h/aOo+oNi
- qaCfO+d+uilDESVuaaYTKy6IR+XNKiLJV2D4ORwsXg==
-X-Google-Smtp-Source: APXvYqz8NJ/XJCZgc65CapYNrLpMIOjiJgGhRG/vY2GtMRsBh+nwgtkTAaBtEJw8o0Ee3qShBauPgKT/rw5SSdeonlg=
-X-Received: by 2002:a92:ba8d:: with SMTP id t13mr1821680ill.207.1581347594542; 
- Mon, 10 Feb 2020 07:13:14 -0800 (PST)
+ id 1j1Art-0004fz-EK
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 15:21:05 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Nicolas.Ferre@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="Nicolas.Ferre@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
+ include:servers.mcsv.net include:mktomail.com
+ include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: L7BX/6oEt6gKL1m2Oy6RMwXq4ngWrcO4DRk/+LGzLoQu5R0PM66CboAOgPYrdaKgquHdoHCwRc
+ oqawS8diV6MJjhb5j3a+jAHmzNinCtT2vC7FgYLgzsEpUvtmC26KjKOlHMWOKkt0R9mIQMq0dO
+ SICv9OCg24cpxElgs6eMRL3DdB48Dqwrfccuc5FPYOTQ4Y0VrLPFN57bsa3sIUgUdYYjz3yXDz
+ SS2tVNf31A6vGKgyhYA3tZBofrfEBFJv4sXZ9b+WnFqmltALmgBuN6cJADM0iZilOI+NUykkr3
+ 9dI=
+X-IronPort-AV: E=Sophos;i="5.70,425,1574146800"; d="scan'208";a="65398876"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 10 Feb 2020 08:20:58 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 10 Feb 2020 08:20:56 -0700
+Received: from tenerife.corp.atmel.com (10.10.85.251) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Mon, 10 Feb 2020 08:20:54 -0700
+From: Nicolas Ferre <nicolas.ferre@microchip.com>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Richard Genoud
+ <richard.genoud@gmail.com>, <linux-serial@vger.kernel.org>
+Subject: [PATCH] tty/serial: atmel: manage shutdown in case of RS485 or
+ ISO7816 mode
+Date: Mon, 10 Feb 2020 16:20:53 +0100
+Message-ID: <20200210152053.8289-1-nicolas.ferre@microchip.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
- <CAOesGMjAQSfx1WZr6b1kNX=Exipj_f4X_f39Db7AxXr4xG4Tkg@mail.gmail.com>
- <DB8PR04MB6747DA8E1480DCF3EFF67C9284500@DB8PR04MB6747.eurprd04.prod.outlook.com>
- <20200110153347.GA29372@e121166-lin.cambridge.arm.com>
- <CAOesGMj9X1c7eJ4gX2QWXSNszPkRn68E4pkrSCxKMYJG7JHwsg@mail.gmail.com>
- <DB8PR04MB67473114B315FBCC97D0C6F9841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
-In-Reply-To: <DB8PR04MB67473114B315FBCC97D0C6F9841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
-From: Olof Johansson <olof@lixom.net>
-Date: Mon, 10 Feb 2020 16:12:30 +0100
-Message-ID: <CAOesGMieMXHWBO_p9YJXWWneC47g+TGDt9SVfvnp5tShj5gbPw@mail.gmail.com>
-Subject: Re: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
- driver for NXP Layerscape SoCs
-To: "Z.q. Hou" <zhiqiang.hou@nxp.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_071317_823182_C1A0DF47 
-X-CRM114-Status: GOOD (  10.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200210_072101_518925_56F9D134 
+X-CRM114-Status: UNSURE (   8.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:12e listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,55 +94,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- Xiaowei Bao <xiaowei.bao@nxp.com>,
- "andrew.murray@arm.com" <andrew.murray@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 6, 2020 at 11:57 AM Z.q. Hou <zhiqiang.hou@nxp.com> wrote:
->
-> Hi Olof,
->
-> Thanks a lot for your comments!
-> And sorry for my delay respond!
+In atmel_shutdown() we call atmel_stop_rx() and atmel_stop_tx() functions.
+Prevent the rx restart that is implemented in RS485 or ISO7816 modes when
+calling atmel_stop_tx() by using the atomic information tasklet_shutdown
+that is already in place for this purpose.
 
-Actually, they apply with only minor conflicts on top of current -next.
+Fixes: 98f2082c3ac4 ("tty/serial: atmel: enforce tasklet init and termination sequences")
+Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+---
+ drivers/tty/serial/atmel_serial.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-Bjorn, any chance we can get you to pick these up pretty soon? They
-enable full use of a promising ARM developer system, the SolidRun
-HoneyComb, and would be quite valuable for me and others to be able to
-use with mainline or -next without any additional patches applied --
-which this patchset achieves.
+diff --git a/drivers/tty/serial/atmel_serial.c b/drivers/tty/serial/atmel_serial.c
+index c15c398c88a9..a39c87a7c2e1 100644
+--- a/drivers/tty/serial/atmel_serial.c
++++ b/drivers/tty/serial/atmel_serial.c
+@@ -570,7 +570,8 @@ static void atmel_stop_tx(struct uart_port *port)
+ 	atmel_uart_writel(port, ATMEL_US_IDR, atmel_port->tx_done_mask);
+ 
+ 	if (atmel_uart_is_half_duplex(port))
+-		atmel_start_rx(port);
++		if (!atomic_read(&atmel_port->tasklet_shutdown))
++			atmel_start_rx(port);
+ 
+ }
+ 
+-- 
+2.17.1
 
-I know there are pending revisions based on feedback. I'll leave it up
-to you and others to determine if that can be done with incremental
-patches on top, or if it should be fixed before the initial patchset
-is applied. But all in all, it's holding up adaption by me and surely
-others of a very interesting platform -- I'm looking to replace my
-aging MacchiatoBin with one of these and would need PCIe/NVMe to work
-before I do.
-
-
-Thanks!
-
-
--Olof
 
 _______________________________________________
 linux-arm-kernel mailing list
