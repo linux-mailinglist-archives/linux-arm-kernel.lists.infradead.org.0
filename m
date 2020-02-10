@@ -2,81 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6AD7157418
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 13:08:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B63E9157431
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 13:10:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jTNgO7Pf1GN+Z0bsV8PPU1Wj142KHZ+2NcPnv9J3YIs=; b=BJyH7vSY9b6YjH
-	Q+SamZTSBpAqcoUpRz9stMsw6PFoGwajmqWGd2fKCYgPzHhHds3amYPeiuZH26PT+gh2XNDNg/KEh
-	wA/a/63hK/a/MzfXOq1axlk0YnBmDw5ZUtUNVez01OBWNw+xzJqr6j4VDad5gbWfLavVw2DQhwdBU
-	ir5ivfPN3LnNazWMtjSVzq7wCmBj8Jz1lB+Knmb6y2UpQ4+1f+1sonIA4fm7YZwJIKqKaB7rOXleb
-	XLtWcQiataEwrAdREY0vX+SLCK4DIp4wIQ6gaG93EAkAHHhWfnfkZvq1PemkafP3Etiyl0fvpXEZ1
-	h7ZL7mT8RUQKvDW2D+EA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4ntvwBiX66kX9kfCbtrS/X2BlHNCoYZNRCUz066Cau4=; b=obcqRmYOv0FF6wQgKrcWtOMS4
+	p89fupjaMMgIZsZis2+IKYtIZ5xSgBmgHSklAw0cZnfHzKK7bOCZCXKA04pHpJ5GBkgF93IrRatRN
+	tJAaivFbg6ct3qqX7lZe/33gPTm21WfjBaSXNhk2tDEs3xAvpSZL7ehc2G7h/iO/W+SOL/r8udeZf
+	jCcqLBd2mmp6RnVFB3YOjwk8C3SkOBXqDtIuDvY6TDvCqx1cLsSisWRhYcF5I0vFaX0gAdMaAopEp
+	Z3KIGxfMnaETAvtqV+b2uhotyUYsJ8Uvnz335yPQZ3ir+TiQpUc0eqcdJ6onC0qAKU1tBNhX4MOgg
+	CsbuSvGnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j17rj-0000B2-S0; Mon, 10 Feb 2020 12:08:39 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1j17tL-0001se-22; Mon, 10 Feb 2020 12:10:19 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j17rI-0008M5-65
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 12:08:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581336490;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=eSK8ISZif/OQRXa4102Rfe/YBGClc/e/gjEdCPPB1jI=;
- b=BZFwQaJ30FICU3dZ6GpLDjoGay8jThDoGiMG/mXhaX5R30pbz4eVEDohBo4FoptY6OH5/w
- REQGT0WE4TqnnvBRgZXAUiwuewnUhY+yWU3X8Y7gTO2Q47b/g+VMewFBfzEsTmjcQmsMy8
- nJjWVpoEudcQ6Umk0g1dVkEGcfud9x8=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-236-VV3IeyKkOKWqK7d0Wa9iyA-1; Mon, 10 Feb 2020 07:08:06 -0500
-X-MC-Unique: VV3IeyKkOKWqK7d0Wa9iyA-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 9DAC01084424;
- Mon, 10 Feb 2020 12:08:04 +0000 (UTC)
-Received: from krava (unknown [10.43.17.9])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id B1EE319C70;
- Mon, 10 Feb 2020 12:08:01 +0000 (UTC)
-Date: Mon, 10 Feb 2020 13:07:59 +0100
-From: Jiri Olsa <jolsa@redhat.com>
-To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH RFC 5/7] perf pmu: Support matching by sysid
-Message-ID: <20200210120759.GG1907700@krava>
-References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <1579876505-113251-6-git-send-email-john.garry@huawei.com>
+ id 1j17t8-0000aC-Vd; Mon, 10 Feb 2020 12:10:09 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 04D39AB87;
+ Mon, 10 Feb 2020 12:09:56 +0000 (UTC)
+Message-ID: <2bd9936d106948210b7a34c8060600572318600c.camel@suse.de>
+Subject: Re: [PATCH] dt-bindings: rng: Convert BCM2835 to DT schema
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: =?ISO-8859-1?Q?N=EDcolas?= "F. R. A. Prado" <nfraprado@protonmail.com>, 
+ devicetree@vger.kernel.org
+Date: Mon, 10 Feb 2020 13:09:54 +0100
+In-Reply-To: <20200207231347.2908737-1-nfraprado@protonmail.com>
+References: <20200207231347.2908737-1-nfraprado@protonmail.com>
+User-Agent: Evolution 3.34.3 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1579876505-113251-6-git-send-email-john.garry@huawei.com>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_040812_321202_277F1DDA 
-X-CRM114-Status: GOOD (  12.62  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200210_041007_337543_1D15853A 
+X-CRM114-Status: GOOD (  20.22  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,72 +62,218 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ak@linux.intel.com, suzuki.poulose@arm.com,
- peterz@infradead.org, robin.murphy@arm.com, linuxarm@huawei.com,
- acme@kernel.org, linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, james.clark@arm.com,
- namhyung@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-crypto@vger.kernel.org,
+ Matt Mackall <mpm@selenic.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2358498498726487309=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 24, 2020 at 10:35:03PM +0800, John Garry wrote:
 
-SNIP
+--===============2358498498726487309==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-zCBFPwRk+DMEN1eeas6c"
 
-> +		fclose(file);
-> +		pr_debug("gets failed for file %s\n", path);
-> +		free(buf);
-> +		return NULL;
-> +	}
-> +	fclose(file);
-> +
-> +	/* Remove any whitespace, this could be from ACPI HID */
-> +	s = strlen(buf);
-> +	for (i = 0; i < s; i++) {
-> +		if (buf[i] == ' ') {
-> +			buf[i] = 0;
-> +			break;
-> +		};
-> +	}
-> +
-> +	return buf;
-> +}
-> +
-> +static char *perf_pmu__getsysid(void)
-> +{
-> +	char *sysid;
-> +	static bool printed;
-> +
-> +	sysid = getenv("PERF_SYSID");
-> +	if (sysid)
-> +		sysid = strdup(sysid);
-> +
-> +	if (!sysid)
-> +		sysid = get_sysid_str();
-> +	if (!sysid)
-> +		return NULL;
-> +
-> +	if (!printed) {
-> +		pr_debug("Using SYSID %s\n", sysid);
-> +		printed = true;
-> +	}
-> +	return sysid;
-> +}
 
-this part is getting complicated and AFAIK we have no tests for it
+--=-zCBFPwRk+DMEN1eeas6c
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
-if you could think of any tests that'd be great.. perhaps we could
-load 'our' json test files and check appropriate events/aliasses
-via in pmu object.. or via parse_events interface.. those test aliases
-would have to be part of perf, but we have tests compiled in anyway
+On Fri, 2020-02-07 at 23:14 +0000, N=C3=ADcolas F. R. A. Prado wrote:
+> Convert BCM2835/6368 Random number generator bindings to DT schema.
+>=20
+> Signed-off-by: N=C3=ADcolas F. R. A. Prado <nfraprado@protonmail.com>
+> ---
 
-thanks,
-jirka
+Reviewed-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
+Thanks!
+
+> Hi,
+> wasn't really clear to me who to add as maintainer for this dt-binding.
+> The three names added here as maintainers were based on the get_maintaine=
+r
+> script and on previous commits on this file.
+> Please tell me whether these are the right maintainers for this file or n=
+ot.
+
+Looks OK to me. When in doubt I just trust get_maintainer, never failed me =
+so
+far.
+
+> This patch was tested with:
+> make ARCH=3Darm
+> DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/rng/brcm,bcm2835.yaml
+> dt_binding_check
+> make ARCH=3Darm
+> DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/rng/brcm,bcm2835.yaml
+> dtbs_check
+>=20
+> Thanks,
+> N=C3=ADcolas
+>=20
+>  .../devicetree/bindings/rng/brcm,bcm2835.txt  | 40 ------------
+>  .../devicetree/bindings/rng/brcm,bcm2835.yaml | 61 +++++++++++++++++++
+>  2 files changed, 61 insertions(+), 40 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/rng/brcm,bcm2835.tx=
+t
+>  create mode 100644 Documentation/devicetree/bindings/rng/brcm,bcm2835.ya=
+ml
+>=20
+> diff --git a/Documentation/devicetree/bindings/rng/brcm,bcm2835.txt
+> b/Documentation/devicetree/bindings/rng/brcm,bcm2835.txt
+> deleted file mode 100644
+> index aaac7975f61c..000000000000
+> --- a/Documentation/devicetree/bindings/rng/brcm,bcm2835.txt
+> +++ /dev/null
+> @@ -1,40 +0,0 @@
+> -BCM2835/6368 Random number generator
+> -
+> -Required properties:
+> -
+> -- compatible : should be one of
+> -	"brcm,bcm2835-rng"
+> -	"brcm,bcm-nsp-rng"
+> -	"brcm,bcm5301x-rng" or
+> -	"brcm,bcm6368-rng"
+> -- reg : Specifies base physical address and size of the registers.
+> -
+> -Optional properties:
+> -
+> -- clocks : phandle to clock-controller plus clock-specifier pair
+> -- clock-names : "ipsec" as a clock name
+> -
+> -Optional properties:
+> -
+> -- interrupts: specify the interrupt for the RNG block
+> -
+> -Example:
+> -
+> -rng {
+> -	compatible =3D "brcm,bcm2835-rng";
+> -	reg =3D <0x7e104000 0x10>;
+> -	interrupts =3D <2 29>;
+> -};
+> -
+> -rng@18033000 {
+> -	compatible =3D "brcm,bcm-nsp-rng";
+> -	reg =3D <0x18033000 0x14>;
+> -};
+> -
+> -random: rng@10004180 {
+> -	compatible =3D "brcm,bcm6368-rng";
+> -	reg =3D <0x10004180 0x14>;
+> -
+> -	clocks =3D <&periph_clk 18>;
+> -	clock-names =3D "ipsec";
+> -};
+> diff --git a/Documentation/devicetree/bindings/rng/brcm,bcm2835.yaml
+> b/Documentation/devicetree/bindings/rng/brcm,bcm2835.yaml
+> new file mode 100644
+> index 000000000000..b1621031721e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/rng/brcm,bcm2835.yaml
+> @@ -0,0 +1,61 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/rng/brcm,bcm2835.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: BCM2835/6368 Random number generator
+> +
+> +maintainers:
+> +  - Stefan Wahren <stefan.wahren@i2se.com>
+> +  - Florian Fainelli <f.fainelli@gmail.com>
+> +  - Herbert Xu <herbert@gondor.apana.org.au>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - brcm,bcm2835-rng
+> +      - brcm,bcm-nsp-rng
+> +      - brcm,bcm5301x-rng
+> +      - brcm,bcm6368-rng
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    description: phandle to clock-controller plus clock-specifier pair
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    const: ipsec
+> +
+> +  interrupts:
+> +    description: specify the interrupt for the RNG block
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +
+> +examples:
+> +  - |
+> +    rng {
+> +        compatible =3D "brcm,bcm2835-rng";
+> +        reg =3D <0x7e104000 0x10>;
+> +        interrupts =3D <2 29>;
+> +    };
+> +
+> +  - |
+> +    rng@18033000 {
+> +        compatible =3D "brcm,bcm-nsp-rng";
+> +        reg =3D <0x18033000 0x14>;
+> +    };
+> +
+> +  - |
+> +    random: rng@10004180 {
+> +        compatible =3D "brcm,bcm6368-rng";
+> +        reg =3D <0x10004180 0x14>;
+> +
+> +        clocks =3D <&periph_clk 18>;
+> +        clock-names =3D "ipsec";
+> +    };
+
+
+--=-zCBFPwRk+DMEN1eeas6c
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5BSBIACgkQlfZmHno8
+x/538Af9E4Fj5GNcVUndgLxJI32oW02ih5MIyieex2uP1j3je0U/0mUmRyfYHTzE
+VoXDjFd07nq4I+qcNBMCCm/EoZVmhTcYzOwgwkYGpnffvb1y+2xNx0FN0yYJFMAF
+aZKfwp/s5DFeNxJyowh/ejeHQyRZh5lbUrlg4Dhu5f2wJ9pnUzbkQn4qMGmJ5tcJ
+l+HYDtp5LRNdLwgjaI8kPeTHU403RO20ASLGW8XBL12/Rc2MvOj18OcURS+SlB0J
+/eyvAoeVkeB9RBAzpg0LpsC8kF506li/telVa1zKbyFKycY0JoQZP0VvfNUVSjVX
+0bfhLaOaOSn8PWfr8Jwfkko+ZmhI4Q==
+=+aAd
+-----END PGP SIGNATURE-----
+
+--=-zCBFPwRk+DMEN1eeas6c--
+
+
+
+--===============2358498498726487309==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2358498498726487309==--
+
+
