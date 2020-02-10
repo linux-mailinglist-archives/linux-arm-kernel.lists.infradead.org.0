@@ -2,92 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0166C15722B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 10:56:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13AF2157270
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 11:04:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IkQDadxP/wjvn/ofgyuxvCNhbrQf6B9j5szF27K5Q84=; b=RQIuY3Lz940DeD
-	byphyNCMgrjyScZBDvUoX1Est/WXuKMhwbMaIdh9vE/0C1aBL7ZPTH1p7PJB1O/KVBHH067bui3hJ
-	A1lIpG0Lu2zGzaxOzUd+RmaQc2/f6ID2OPw3WIOrQgj+412j+IWCAoeDeHEwsolgiCxBUDyc9lPbQ
-	jLyhYlofX61YEtteJAnjEySwNuYaXj/GW3B2hy1LZwA7yG/W9dWt0WX6audOA9LygoZo+ycux/0w2
-	fIA7t2fOoQTAd6WEMUv71A4IcAm4PaRfSyoVE2Pnk/Fwv9nOyYs38QDoT77IuFoqgipQiVRqyrBSl
-	Z/JX55pOYB3jM2or2TVw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RVPvlt2gEVzMh34rRccYpyYTSBGbMSG9jToJkwbjbqY=; b=UqRZOn/ThohvS9
+	76rafhFC4ZqD5PIkTLGjvzTfzw6NfS7f7hBNT83vw/ym5LtNsWUfbrFtsuSWE4QJ6YEic6POQftxr
+	6FBvMKZbfISxbWfjma6JnhzLdLJS5HA88ZxMkY5kXeGM65dAU/OsrrdLeo0thZqzS4XMjsdNfNzHR
+	x4o5rbOZD+OLpNxovrHdOEE6I1E4ziUffTchJNqScBJwkHuu8oadg6iIAx89Y/EQEK3eZ6jJB/yY3
+	BT9jkPKC7Aaa4OJaYmcG6iGYzFmKTbboQUmjCpe4cKvo8CnuVVew6rNPXv2idS1D2JVXLjHqQiZiB
+	71NDqRnPeF+2Crtcv9Dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j15nu-0001cw-GG; Mon, 10 Feb 2020 09:56:34 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1j15ve-0005EK-3V; Mon, 10 Feb 2020 10:04:34 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j15nW-0001UY-TG
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 09:56:12 +0000
+ id 1j15vT-0005DZ-4R
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 10:04:24 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 66FB721FC5;
- Mon, 10 Feb 2020 04:56:05 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Mon, 10 Feb 2020 04:56:05 -0500
+ by mailnew.nyi.internal (Postfix) with ESMTP id BFA4D1C28;
+ Mon, 10 Feb 2020 05:04:20 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Mon, 10 Feb 2020 05:04:20 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=jCYXCDWVFHW0U
- Ti32Vy2Di/WyH15E8j8UXxA0HYRVOo=; b=vKvg7ED9VbvgY23TrfhckRCg5UARP
- YdWpyHel/CD+79nRDnPQGzmLgGD9qePlB4jvOmBPRh4SSIU2LSTSKy9cJE6IDMsh
- UDhEs6Qw8ZnGE7EohfclTjvp8qkIlYpPrL7SA0UJ46Vo0P8KPF92xPUWIluPAlR/
- u8DbMoMDSka3llFMeRnWodZi6epPHbPx6hFaFWTRML8WdA0UznZ/w6+nYJkncQyw
- 7wK9XmA04dk6JV1JGRKhNtRaY8ciHVbV0+K0ha6Swvz6CajbsVsC88Ny7sDccFOq
- Fa6QdN9R0mVsRvepDvMsZ1bbXOqyhy0BCbeTnkLBMSCGWlx3x046CiQUw==
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm2; bh=aFqJHi2DxkxEhthklRhVe9pAV9
+ MnZcHeB0F11l4pfqQ=; b=AUDYwrrMA0q0yfov4T3x/hofaL6gtCUu1viGTdTT9N
+ vpzVTMt7J7ro6OchNXo69nKoTOMP+k3mS4nQzX0pX30yoFFV4n/Yr33hRU1wrNVu
+ 53AiSIPEdOvofULxLieFkDGrJVZPsmKYlm0OtxNy2jQAwJqbn9p5Uuk6bSd4JbGY
+ 4QNXNwghPJz0cZoMeC+rSxFVEw4Tsf1ydNdYNTro3I7nV4+Ok/vvctmNOE08eRdP
+ a7RyO2tUS6LVgOYtNwBX4isEHWTOelMNXewg77Cgy4sXPS9OaLXjvJVaOJ3Fn/u/
+ /qH+w6eTwlb6p7Noq6NcuAOw2Q+86th1n+nEFm/7e9nQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=jCYXCDWVFHW0UTi32Vy2Di/WyH15E8j8UXxA0HYRVOo=; b=ayDckl+C
- 5E5t5geNFE7W5P0WPyPi3H8+2HbR3oSyQcvjWlbSkCpcYjIDNjDJokABpQbIILQi
- B6aegMhwClV86oy/GniwnSVl0/qckX0fPdGsBCZ6N+DbCwTf/Ak1IQo4nOV9QCia
- i7mcQsWCiEMzj014kuuwW/4PI22yE7loPWG30dAmYNjSJF9XOkdySkEURb9XFQhR
- nFxObrN9KLyNHQlpQDTLLsu6XVkuHnruK2GlQJXI7LkS/qcKbj4B4K7F3VGas9zp
- qJ5FX4e06dIyYdoFdkp1ZtfgLXcUqOqnQug5C0d3cp/jJsFKLcWjm6sKR1STW24J
- GbMJktSg/94e1w==
-X-ME-Sender: <xms:tShBXhz5CLA9u1V2WLyobMjiG6dMxtcIQnxjNDvk6-kkn1PSPzskwg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedugddtlecutefuodetggdotefrodftvf
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=aFqJHi2DxkxEhthkl
+ RhVe9pAV9MnZcHeB0F11l4pfqQ=; b=rx9mXnhFWcLsQilC1Xm0TIfT8AVKlEOB0
+ 6LOmDZOtPhiqaDXT6Nx0Or2HblJGEzfwnoOGhJMkZXGvhJGw5NCDmlK7GfsoWu71
+ mp90kJR+sQHvZIofrEBFrIloHuWOOumCkPcpKTdqgfl0Pqgei2YYTcbanf12N/8g
+ BUPJuviPHfu/y7gV4Ssd4isOfzGpkVbIDd/RZtMjffMA6vs6helP/KBipWkgA8zJ
+ NCF2CmaOzNb0AU7x3wRClMKrJ+RnE1YycFLp3xKFBkx3v1dcaBVWXu/baHO8nxtD
+ YYF30YyCBhCzAamqdLw9j6MB2YxfvrOoIoNbE+eSn8cMJ8nEnoogA==
+X-ME-Sender: <xms:oypBXt18sxPnzpQkl9kpJnyAEReV6_plzQW6E-kH7aDdexM9FlG7Rw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedugddutdcutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
- ertddtnecuhfhrohhmpeforgigihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghr
- nhhordhtvggthheqnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuih
- iivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordht
- vggthh
-X-ME-Proxy: <xmx:tShBXgU02n_Um5XBgfRsCCgiJzaFrV22zwBdi4ZD1cIT_CTpZXvtEw>
- <xmx:tShBXhhizVgZ6AMyMSXy-jOB1MhDoZat0Jh3Sg7DBCrvxtSxVrWWLw>
- <xmx:tShBXgBynQhFSTv5oY1Kv4w-W1tCzJ108ckrj05lwoGHpuvNAE5-4w>
- <xmx:tShBXgoGyoZvGKOf7tXuinoP6h9FgQPoiR26Ec3WeUvOlqpGja-Yqw>
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomhepofgrgihimhgvucft
+ ihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrdekle
+ drieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhr
+ ohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:oypBXvHIMtmjPaNZ9JWzqB6AvIQK-kEBbdZW1ROsi42GiUU1q3h1Xw>
+ <xmx:oypBXkhnHCbTtnqt463RC0mpP0nIpNiWlmqkK2jrBz8HXL8EEy0ECQ>
+ <xmx:oypBXoe7i2TJ6IsAkKYYHzlSdpDROxyoD45_jjUo_saMMRBCcnRIhQ>
+ <xmx:pCpBXjA30VkQgO6b-Gi9-xH2rNizDoeKWTcySJL7fmzsoHMLhcnAhw>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 1D8333060701;
- Mon, 10 Feb 2020 04:56:05 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 9596C3280066;
+ Mon, 10 Feb 2020 05:04:19 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
-To: Chen-Yu Tsai <wens@csie.org>,
-	Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH 2/2] arm64: dts: allwinner: h6: Fix PMU compatible
-Date: Mon, 10 Feb 2020 10:56:00 +0100
-Message-Id: <20200210095600.77894-2-maxime@cerno.tech>
+To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, sakari.ailus@linux.intel.com
+Subject: [PATCH 1/2] dt-bindings: media: csi: Add interconnects properties
+Date: Mon, 10 Feb 2020 11:04:16 +0100
+Message-Id: <20200210100417.78583-1-maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200210095600.77894-1-maxime@cerno.tech>
-References: <20200210095600.77894-1-maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_015611_081858_6F833D10 
-X-CRM114-Status: GOOD (  11.51  )
+X-CRM114-CacheID: sfid-20200210_020423_322172_1122CBC5 
+X-CRM114-Status: UNSURE (   9.72  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.28 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.28 listed in list.dnswl.org]
+ low trust [66.111.4.221 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -106,40 +105,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andre.przywara@arm.com, Maxime Ripard <maxime@cerno.tech>,
- linux-arm-kernel@lists.infradead.org
+Cc: mchehab+huawei@kernel.org, devicetree@vger.kernel.org,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The commit 7aa9b9eb7d6a ("arm64: dts: allwinner: H6: Add PMU mode")
-introduced support for the PMU found on the Allwinner H6. However, the
-binding only allows for a single compatible, while the patch was adding
-two.
+The Allwinner CSI controller is sitting beside the MBUS that is represented
+as an interconnect.
 
-Make sure we follow the binding.
+Make sure that the interconnect properties are valid in the binding.
 
-Fixes: 7aa9b9eb7d6a ("arm64: dts: allwinner: H6: Add PMU mode")
+Fixes: 7866d6903ce8 ("media: dt-bindings: media: sun4i-csi: Add compatible for CSI0 on R40")
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ .../bindings/media/allwinner,sun4i-a10-csi.yaml        | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-index 3329283e38ab..06363c1bea3f 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-@@ -70,8 +70,7 @@ ext_osc32k: ext_osc32k_clk {
- 	};
+diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
+index 9af873b43acd..afde17d9dab1 100644
+--- a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
++++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
+@@ -51,6 +51,16 @@ properties:
+   resets:
+     maxItems: 1
  
- 	pmu {
--		compatible = "arm,cortex-a53-pmu",
--			     "arm,armv8-pmuv3";
-+		compatible = "arm,cortex-a53-pmu";
- 		interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
- 			     <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>,
- 			     <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
++  # FIXME: This should be made required eventually once every SoC will
++  # have the MBUS declared.
++  interconnects:
++    maxItems: 1
++
++  # FIXME: This should be made required eventually once every SoC will
++  # have the MBUS declared.
++  interconnect-names:
++    const: dma-mem
++
+   # See ./video-interfaces.txt for details
+   port:
+     type: object
 -- 
 2.24.1
 
