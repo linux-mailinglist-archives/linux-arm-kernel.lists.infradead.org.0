@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13AF2157270
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 11:04:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B271A157274
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 11:04:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RVPvlt2gEVzMh34rRccYpyYTSBGbMSG9jToJkwbjbqY=; b=UqRZOn/ThohvS9
-	76rafhFC4ZqD5PIkTLGjvzTfzw6NfS7f7hBNT83vw/ym5LtNsWUfbrFtsuSWE4QJ6YEic6POQftxr
-	6FBvMKZbfISxbWfjma6JnhzLdLJS5HA88ZxMkY5kXeGM65dAU/OsrrdLeo0thZqzS4XMjsdNfNzHR
-	x4o5rbOZD+OLpNxovrHdOEE6I1E4ziUffTchJNqScBJwkHuu8oadg6iIAx89Y/EQEK3eZ6jJB/yY3
-	BT9jkPKC7Aaa4OJaYmcG6iGYzFmKTbboQUmjCpe4cKvo8CnuVVew6rNPXv2idS1D2JVXLjHqQiZiB
-	71NDqRnPeF+2Crtcv9Dw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=meMNnp/lyy8wbSCuELQozhJ6D4xTnCPJe/4evYQngyo=; b=DdJg5D2XH+0uE5
+	bBijdD+3sveodXb6r4sg9+k3+CPselWaynxcEKE/mfaZuf2vuzR5qLb3rhFrh+PSeRxjoJj4CpV9S
+	z/xLyHiX+w6p0lhHimoRmHIhz+E0xiXFk6m+LQXlS4o59Nygw0zPIyFClwyqVPg4ItsTizhnRL+n2
+	04RjdTp7c5q/MSHbm6xqZKnkaMJKWBa2gpvK60ztO5nNlQt/mxPBf3RxB5/agl8fbi9GjzY3GuFir
+	0BRJI0t79sDIdwKOsyNLyFGT4DXArYAIK8uIEDVB8mDGjpQfFYG0nZ4TcpsfLgSJgJ2QYUWxwz1DJ
+	/nZuRvYXkPuGguarPhog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j15ve-0005EK-3V; Mon, 10 Feb 2020 10:04:34 +0000
+	id 1j15vy-0005MA-15; Mon, 10 Feb 2020 10:04:54 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j15vT-0005DZ-4R
+ id 1j15vT-0005DY-4O
  for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 10:04:24 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id BFA4D1C28;
- Mon, 10 Feb 2020 05:04:20 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Mon, 10 Feb 2020 05:04:20 -0500
+ by mailnew.nyi.internal (Postfix) with ESMTP id A96051E20;
+ Mon, 10 Feb 2020 05:04:21 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Mon, 10 Feb 2020 05:04:21 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm2; bh=aFqJHi2DxkxEhthklRhVe9pAV9
- MnZcHeB0F11l4pfqQ=; b=AUDYwrrMA0q0yfov4T3x/hofaL6gtCUu1viGTdTT9N
- vpzVTMt7J7ro6OchNXo69nKoTOMP+k3mS4nQzX0pX30yoFFV4n/Yr33hRU1wrNVu
- 53AiSIPEdOvofULxLieFkDGrJVZPsmKYlm0OtxNy2jQAwJqbn9p5Uuk6bSd4JbGY
- 4QNXNwghPJz0cZoMeC+rSxFVEw4Tsf1ydNdYNTro3I7nV4+Ok/vvctmNOE08eRdP
- a7RyO2tUS6LVgOYtNwBX4isEHWTOelMNXewg77Cgy4sXPS9OaLXjvJVaOJ3Fn/u/
- /qH+w6eTwlb6p7Noq6NcuAOw2Q+86th1n+nEFm/7e9nQ==
+ from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm2; bh=lLlJQuK4aZhWh
+ uAwBdMqfq93dW9cBbZAvLLBJQZvB1Q=; b=H3wPUD4lcCIEgRq/x9z1tD/7O+wqB
+ YgC6hXGVib7O3pbNxyzqB40AzMRig2lZGfPdR/9KcXAP0Q8t6J7U24TRQlXMo1Gr
+ asA3mG1WuJlPSTQvyTt4BkS5N899mX+MDCDndIcxVcDKkiwjqouzPeL10OJRPXbA
+ K2CFolNQP2jup+Ysi0R7DW+h7AgY2MH2sDvBdIQ/QvNxe61RjsEgPS0rvzevyhyR
+ scqJmYpUAVmFvIjyDub1y6Yr+9i/5J/CjdsZUzhdIzjejY1dco/h2wzKNwnvaP6n
+ burRCMNGiaaAE5y+0UiaoRTBQMHSLAexdXB2aCXe8SmgOCQejHdH75h+Q==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=aFqJHi2DxkxEhthkl
- RhVe9pAV9MnZcHeB0F11l4pfqQ=; b=rx9mXnhFWcLsQilC1Xm0TIfT8AVKlEOB0
- 6LOmDZOtPhiqaDXT6Nx0Or2HblJGEzfwnoOGhJMkZXGvhJGw5NCDmlK7GfsoWu71
- mp90kJR+sQHvZIofrEBFrIloHuWOOumCkPcpKTdqgfl0Pqgei2YYTcbanf12N/8g
- BUPJuviPHfu/y7gV4Ssd4isOfzGpkVbIDd/RZtMjffMA6vs6helP/KBipWkgA8zJ
- NCF2CmaOzNb0AU7x3wRClMKrJ+RnE1YycFLp3xKFBkx3v1dcaBVWXu/baHO8nxtD
- YYF30YyCBhCzAamqdLw9j6MB2YxfvrOoIoNbE+eSn8cMJ8nEnoogA==
-X-ME-Sender: <xms:oypBXt18sxPnzpQkl9kpJnyAEReV6_plzQW6E-kH7aDdexM9FlG7Rw>
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm2; bh=lLlJQuK4aZhWhuAwBdMqfq93dW9cBbZAvLLBJQZvB1Q=; b=UtfR4gIr
+ tYEsT05bW7y0vVsFyCbGTLX6K8dtm14FkztpT0wQrb5NLMWRVbZ0vTe29TRsE9by
+ 1FHFZqOeuRjFCD8iNjWbtDfdSoU4/Ww2ES5ZG59ja/F3TSKvS2L2lQuuV+CXNbzU
+ hF3eYZVwCcN6rv/Kaj4OwpaY+YbS2OWlgXuAxcZFizcNyre0Yov4z968iYPXIfFq
+ RxKVdndDB5pz7b5Ac8p65hNqDshx7XYNFtaCZW41HI+rs/VmCl/c+v+/1YCqCerq
+ hHa0y3A8J/0b0bi0/5ffbP4K/ca6BckItvWnr794vkEBAFunlpXjYFQIqkBo1SNj
+ Es8kf+y9A5/Zfw==
+X-ME-Sender: <xms:pSpBXvZLLeU-Jznqb9k4AL4-EGeBTCYarn5pMGXyRH3LX9LNF6H7Jw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedugddutdcutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomhepofgrgihimhgvucft
- ihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrdekle
- drieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhr
- ohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:oypBXvHIMtmjPaNZ9JWzqB6AvIQK-kEBbdZW1ROsi42GiUU1q3h1Xw>
- <xmx:oypBXkhnHCbTtnqt463RC0mpP0nIpNiWlmqkK2jrBz8HXL8EEy0ECQ>
- <xmx:oypBXoe7i2TJ6IsAkKYYHzlSdpDROxyoD45_jjUo_saMMRBCcnRIhQ>
- <xmx:pCpBXjA30VkQgO6b-Gi9-xH2rNizDoeKWTcySJL7fmzsoHMLhcnAhw>
+ fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:pSpBXiMwBekUsw6WKqYCLdCfm-0RoC7azGlPASFzW0GS9Uu4ZT2xUQ>
+ <xmx:pSpBXrBQBu0kxhNfUI09yUqtbY6goKLD_pJvvH18pjWQIf0Ay4VRtg>
+ <xmx:pSpBXpLWSA5mTu4ZUDgRKKPBMrycC_lKs0mWWBHyLfwdA9PjhmUPfg>
+ <xmx:pSpBXsGVMmO8yX0Ib1egwjY8vJGRxrK8gJrxgoJCR3zYaVat0DNchg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 9596C3280066;
- Mon, 10 Feb 2020 05:04:19 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 49DC13060701;
+ Mon, 10 Feb 2020 05:04:21 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>, sakari.ailus@linux.intel.com
-Subject: [PATCH 1/2] dt-bindings: media: csi: Add interconnects properties
-Date: Mon, 10 Feb 2020 11:04:16 +0100
-Message-Id: <20200210100417.78583-1-maxime@cerno.tech>
+Subject: [PATCH 2/2] dt-bindings: media: csi: Fix clocks description
+Date: Mon, 10 Feb 2020 11:04:17 +0100
+Message-Id: <20200210100417.78583-2-maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200210100417.78583-1-maxime@cerno.tech>
+References: <20200210100417.78583-1-maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_020423_322172_1122CBC5 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200210_020423_324863_6F444A9E 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -83,10 +85,10 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [66.111.4.221 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
  [66.111.4.221 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -113,38 +115,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Allwinner CSI controller is sitting beside the MBUS that is represented
-as an interconnect.
+Commit 1de243b07666 ("media: dt-bindings: media: sun4i-csi: Add compatible
+for CSI1 on A10/A20") introduced support for the CSI1 controller on A10 and
+A20 that unlike CSI0 doesn't have an ISP and therefore only have two
+clocks, the bus and module clocks.
 
-Make sure that the interconnect properties are valid in the binding.
+The clocks and clock-names properties have thus been modified to allow
+either two or tree clocks. However, the current list has the ISP clock at
+the second position, which means the bindings expects a list of either
+bus and isp, or bus, isp and mod. The initial intent of the patch was
+obviously to have bus and mod in the former case.
 
-Fixes: 7866d6903ce8 ("media: dt-bindings: media: sun4i-csi: Add compatible for CSI0 on R40")
+Let's fix the binding so that it validates properly.
+
+Fixes: 1de243b07666 ("media: dt-bindings: media: sun4i-csi: Add compatible for CSI1 on A10/A20")
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- .../bindings/media/allwinner,sun4i-a10-csi.yaml        | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ .../media/allwinner,sun4i-a10-csi.yaml        | 30 +++++++++++--------
+ 1 file changed, 18 insertions(+), 12 deletions(-)
 
 diff --git a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-index 9af873b43acd..afde17d9dab1 100644
+index afde17d9dab1..8453ee340b9f 100644
 --- a/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
 +++ b/Documentation/devicetree/bindings/media/allwinner,sun4i-a10-csi.yaml
-@@ -51,6 +51,16 @@ properties:
-   resets:
+@@ -33,20 +33,26 @@ properties:
      maxItems: 1
  
-+  # FIXME: This should be made required eventually once every SoC will
-+  # have the MBUS declared.
-+  interconnects:
-+    maxItems: 1
+   clocks:
+-    minItems: 2
+-    maxItems: 3
+-    items:
+-      - description: The CSI interface clock
+-      - description: The CSI ISP clock
+-      - description: The CSI DRAM clock
++    oneOf:
++      - items:
++        - description: The CSI interface clock
++        - description: The CSI DRAM clock
 +
-+  # FIXME: This should be made required eventually once every SoC will
-+  # have the MBUS declared.
-+  interconnect-names:
-+    const: dma-mem
++      - items:
++        - description: The CSI interface clock
++        - description: The CSI ISP clock
++        - description: The CSI DRAM clock
+ 
+   clock-names:
+-    minItems: 2
+-    maxItems: 3
+-    items:
+-      - const: bus
+-      - const: isp
+-      - const: ram
++    oneOf:
++      - items:
++        - const: bus
++        - const: ram
 +
-   # See ./video-interfaces.txt for details
-   port:
-     type: object
++      - items:
++        - const: bus
++        - const: isp
++        - const: ram
+ 
+   resets:
+     maxItems: 1
 -- 
 2.24.1
 
