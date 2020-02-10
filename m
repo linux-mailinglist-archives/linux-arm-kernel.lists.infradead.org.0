@@ -2,55 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5368158064
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:02:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5CD9158092
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:08:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZixptUwunWyP062APfUEHsdu0NFJxD242KxflWOwqBk=; b=FLi3XRVYKZ3dVbIArts5HwX6oZ
-	oojYfOHxInQ3R9OApP4CQoJ2TiHBPPI9yTYq2kTUckT+YC0pE4V/TywaOuOOL3XsvcGE2L7Q8j/K/
-	8FGKogJh8PMD7fxy3oyf22d4dC0Ytu7ny8I+vzlSE9na5+iR9c4uxGDUkbMz0dq7WRFJ6pL6Qc1pf
-	5JeDCHmUnedq0ii8O7v2RFMkKEWdWPdelRKmSkKQtKlT9CTWjEE224y3Ewmwdjc/FceaGFc0BxPrU
-	2TiRcwEQUuI396+ijN96Ne7rLkFxpmTc2Hu8OVI8xp9qWpB/Q/SdgpCVYQxYKzehQOGJpgt6NNLjJ
-	O6u6yvUA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T6bugG8TzIE674xNBkimSKsog42rQ6MgzjkGASfdasA=; b=mOf9D5JzI2VwL5
+	sN0xV8PvfE2ighBf1UZwUnCyro1i3fP8w2MMck3AVN7uRY/+/fD4nW8bV+kif9iC2BiQGu1vkl2gP
+	YeqNqtoyFX5FaLEVl6WR6OBMAmAD1Fb7GrVI1V6PzLkGfSfICkfDkN/lubHJy+agSeN9bMyQ4lqQ4
+	/JB9oIgDjQ+XUt0u5gp8KQUDq5Ip5A48HXoU/IvK2Qlc9jNA0K40gncvhT0+FqJhwVO3Lds/Oefci
+	Qk2EG3Sh7UMP2xFB1ADmR78SnVdmN+d70vfXhMa4UhL622blvG20V9Hvu/YHkJOBdD9vpjGC/GahA
+	hPmWHgWJMjZYGCGC6KXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1CRq-0006gn-Lf; Mon, 10 Feb 2020 17:02:14 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1j1CXU-0001mX-SL; Mon, 10 Feb 2020 17:08:04 +0000
+Received: from mailoutvs30.siol.net ([185.57.226.221] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1CRW-0006XW-IQ
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:01:56 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id E5191AE5C;
- Mon, 10 Feb 2020 17:01:46 +0000 (UTC)
-From: Nikolay Borisov <nborisov@suse.com>
-To: bjorn.andersson@linaro.org
-Subject: [PATCH 3/3] dt-bindings: hwlock: Document A64 hwspinlock bindings
-Date: Mon, 10 Feb 2020 19:01:43 +0200
-Message-Id: <20200210170143.20007-4-nborisov@suse.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200210170143.20007-1-nborisov@suse.com>
-References: <20200210170143.20007-1-nborisov@suse.com>
+ id 1j1CWm-00013z-KM
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:07:27 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 12934521B5F;
+ Mon, 10 Feb 2020 18:07:10 +0100 (CET)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id xnyPHZsLLLki; Mon, 10 Feb 2020 18:07:09 +0100 (CET)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id B727E521AFF;
+ Mon, 10 Feb 2020 18:07:09 +0100 (CET)
+Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
+ [194.152.20.232]) (Authenticated sender: 031275009)
+ by mail.siol.net (Postfix) with ESMTPSA id 03CA2521467;
+ Mon, 10 Feb 2020 18:07:04 +0100 (CET)
+From: Jernej Skrabec <jernej.skrabec@siol.net>
+To: mripard@kernel.org,
+	wens@csie.org
+Subject: [PATCH v2 0/5] arm64: dts: allwinner: a64: Enable deinterlace core
+Date: Mon, 10 Feb 2020 18:06:51 +0100
+Message-Id: <20200210170656.82265-1-jernej.skrabec@siol.net>
+X-Mailer: git-send-email 2.25.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_090154_960589_AF211B7C 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200210_090720_872774_729CA599 
+X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.221 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,57 +70,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nikolay Borisov <nborisov@suse.com>, linux-arm-kernel@lists.infradead.org,
- mripard@kernel.org
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com, robh+dt@kernel.org,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add binding for the hwspinlock found on Allwinner A64 SoC.
+Allwinner A64 contains deinterlace core, compatible to the one found in
+H3. It can be used in combination with VPU to playback interlaced videos.
 
-Signed-off-by: Nikolay Borisov <nborisov@suse.com>
----
- .../bindings/hwlock/sunxi-hwspinlock.txt      | 27 +++++++++++++++++++
- 1 file changed, 27 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/hwlock/sunxi-hwspinlock.txt
+Please take a look.
 
-diff --git a/Documentation/devicetree/bindings/hwlock/sunxi-hwspinlock.txt b/Documentation/devicetree/bindings/hwlock/sunxi-hwspinlock.txt
-new file mode 100644
-index 000000000000..af1fbf8fc9f0
---- /dev/null
-+++ b/Documentation/devicetree/bindings/hwlock/sunxi-hwspinlock.txt
-@@ -0,0 +1,27 @@
-+Allwinner HwSpinlock for A64 SoC
-+=========================================
-+
-+Required properties:
-+- compatible:		Should be "allwinner,sun50i-a64-hwspinlock"
-+- reg:			Contains the hwspinlock module register address space
-+			(base address and length)
-+- resets:  phandle to the reset control for the hwspinlock
-+- clocks:  phandle to the clock feeding the hwspinlock
-+- #hwlock-cells:	Should be 1. The A64 hwspinlock users will use a
-+			0-indexed relative hwlock number as the argument
-+			specifier value for requesting a specific hwspinlock
-+			within a hwspinlock bank.
-+
-+Please look at the generic hwlock binding for usage information for consumers,
-+"Documentation/devicetree/bindings/hwlock/hwlock.txt"
-+
-+Example:
-+
-+1. Allwinner A64
-+hwspinlock: spinlock@1c18000 {
-+	compatible = "allwinner,sun50i-a64-hwspinlock";
-+	reg = <0x01c18000 0x1000>;
-+	clocks = <&ccu CLK_BUS_SPINLOCK>;
-+	resets = <&ccu RST_BUS_SPINLOCK>;
-+	#hwlock-cells = <1>;
-+};
+Best regards,
+Jernej
+
+Changes from v1:
+- use number instead of macro in patch 3
+
+Jernej Skrabec (5):
+  dt-bindings: interconnect: sunxi: Add A64 MBUS compatible
+  clk: sunxi-ng: a64: Export MBUS clock
+  arm64: dts: allwinner: a64: Add MBUS controller node
+  media: dt-bindings: media: Add Allwinner A64 deinterlace compatible
+  arm64: dts: allwinner: a64: Add deinterlace core node
+
+ .../arm/sunxi/allwinner,sun4i-a10-mbus.yaml   |  1 +
+ .../media/allwinner,sun8i-h3-deinterlace.yaml |  6 ++++-
+ arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 22 +++++++++++++++++++
+ drivers/clk/sunxi-ng/ccu-sun50i-a64.h         |  4 ----
+ include/dt-bindings/clock/sun50i-a64-ccu.h    |  2 +-
+ 5 files changed, 29 insertions(+), 6 deletions(-)
+
 -- 
-2.17.1
+2.25.0
 
 
 _______________________________________________
