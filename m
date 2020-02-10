@@ -2,71 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F1DB15740E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 13:08:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6AD7157418
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 13:08:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J7npMHqdSxk2hW8BDHLpUueLGQJdR+rI2iOVNiLZkPk=; b=qehsJ4+k5P2IT8
-	wVv6p2YhvnrC8IL7MEkBKjzdHSLyhuZS4qdYLQu6JrCeKHYRKOkQiWQ71sC6lhb9KQQJa9pWQo7iW
-	Z4kW07qgFyX/6GWrNbl70MG2i0J2LvbO8QAKGm+Uxe2K8+lkVDsKbTARNt+DSNhfEFF/FXNh5G70T
-	NTy5PPqDkE0bA30+gnluCt3Tn7diyKdDrwEM0z2iGWjlLzjDg38TB3PQixTkFmmIYaUuDF3ixhTiT
-	cn4VUAd1iMtmSUFTiEF+FNkdaYKahSIvlnSyAIW+7CcUNDEm9Kqy0qxZno5hlYW101xDF21409Ki9
-	vYPAcbbYJ0GhdQ8eBwvw==;
+	List-Owner; bh=jTNgO7Pf1GN+Z0bsV8PPU1Wj142KHZ+2NcPnv9J3YIs=; b=BJyH7vSY9b6YjH
+	Q+SamZTSBpAqcoUpRz9stMsw6PFoGwajmqWGd2fKCYgPzHhHds3amYPeiuZH26PT+gh2XNDNg/KEh
+	wA/a/63hK/a/MzfXOq1axlk0YnBmDw5ZUtUNVez01OBWNw+xzJqr6j4VDad5gbWfLavVw2DQhwdBU
+	ir5ivfPN3LnNazWMtjSVzq7wCmBj8Jz1lB+Knmb6y2UpQ4+1f+1sonIA4fm7YZwJIKqKaB7rOXleb
+	XLtWcQiataEwrAdREY0vX+SLCK4DIp4wIQ6gaG93EAkAHHhWfnfkZvq1PemkafP3Etiyl0fvpXEZ1
+	h7ZL7mT8RUQKvDW2D+EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j17rV-0008P2-CD; Mon, 10 Feb 2020 12:08:25 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+	id 1j17rj-0000B2-S0; Mon, 10 Feb 2020 12:08:39 +0000
+Received: from us-smtp-1.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j17r8-0008CY-5g
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 12:08:03 +0000
+ id 1j17rI-0008M5-65
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 12:08:13 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581336480;
+ s=mimecast20190719; t=1581336490;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=K5X/P5cTna//QaVwWn9YAqQiAEG6LJsWV3uuBWQnAic=;
- b=LeYPzKdCSpxzAqy7bIlQDKJ0855+GhPn+n25y7URypwp5zPwmLQiTX6wJfar4udtVpX37i
- tZmoHfsJMy7yK2jrP8sk6MX6f8ZpSyIoVvvXnwhFZIg2nXjluwcn0rGxHWdOiiXDM+T7hp
- SfB6jgcLRp7GZGWjU/RUXHzYu56pgE0=
+ bh=eSK8ISZif/OQRXa4102Rfe/YBGClc/e/gjEdCPPB1jI=;
+ b=BZFwQaJ30FICU3dZ6GpLDjoGay8jThDoGiMG/mXhaX5R30pbz4eVEDohBo4FoptY6OH5/w
+ REQGT0WE4TqnnvBRgZXAUiwuewnUhY+yWU3X8Y7gTO2Q47b/g+VMewFBfzEsTmjcQmsMy8
+ nJjWVpoEudcQ6Umk0g1dVkEGcfud9x8=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-181-kNyM94vDMtW_ufBV_bQLrQ-1; Mon, 10 Feb 2020 07:07:57 -0500
-X-MC-Unique: kNyM94vDMtW_ufBV_bQLrQ-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-236-VV3IeyKkOKWqK7d0Wa9iyA-1; Mon, 10 Feb 2020 07:08:06 -0500
+X-MC-Unique: VV3IeyKkOKWqK7d0Wa9iyA-1
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id D6E55107ACCC;
- Mon, 10 Feb 2020 12:07:54 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 9DAC01084424;
+ Mon, 10 Feb 2020 12:08:04 +0000 (UTC)
 Received: from krava (unknown [10.43.17.9])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id EFFA95C1D4;
- Mon, 10 Feb 2020 12:07:51 +0000 (UTC)
-Date: Mon, 10 Feb 2020 13:07:49 +0100
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id B1EE319C70;
+ Mon, 10 Feb 2020 12:08:01 +0000 (UTC)
+Date: Mon, 10 Feb 2020 13:07:59 +0100
 From: Jiri Olsa <jolsa@redhat.com>
 To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH RFC 3/7] perf jevents: Add support for a system events PMU
-Message-ID: <20200210120749.GF1907700@krava>
+Subject: Re: [PATCH RFC 5/7] perf pmu: Support matching by sysid
+Message-ID: <20200210120759.GG1907700@krava>
 References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <1579876505-113251-4-git-send-email-john.garry@huawei.com>
+ <1579876505-113251-6-git-send-email-john.garry@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1579876505-113251-4-git-send-email-john.garry@huawei.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+In-Reply-To: <1579876505-113251-6-git-send-email-john.garry@huawei.com>
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_040802_309367_81C1581E 
-X-CRM114-Status: GOOD (  15.27  )
+X-CRM114-CacheID: sfid-20200210_040812_321202_277F1DDA 
+X-CRM114-Status: GOOD (  12.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,48 +98,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 24, 2020 at 10:35:01PM +0800, John Garry wrote:
+On Fri, Jan 24, 2020 at 10:35:03PM +0800, John Garry wrote:
 
 SNIP
 
->  	- Set of 'PMU events tables' for all known CPUs in the architecture,
-> @@ -83,11 +93,11 @@ NOTES:
->  	2. The 'pmu-events.h' has an extern declaration for the mapping table
->  	   and the generated 'pmu-events.c' defines this table.
->  
-> -	3. _All_ known CPU tables for architecture are included in the perf
-> -	   binary.
-> +	3. _All_ known CPU and system tables for architecture are included in
-> +	   the perf binary.
->  
-> -At run time, perf determines the actual CPU it is running on, finds the
-> -matching events table and builds aliases for those events. This allows
-> +At run time, perf determines the actual CPU or system it is running on, finds
-> +the matching events table and builds aliases for those events. This allows
->  users to specify events by their name:
->  
->  	$ perf stat -e pm_1plus_ppc_cmpl sleep 1
-> @@ -150,3 +160,18 @@ where:
->  
->  	i.e the three CPU models use the JSON files (i.e PMU events) listed
->  	in the directory 'tools/perf/pmu-events/arch/x86/silvermont'.
+> +		fclose(file);
+> +		pr_debug("gets failed for file %s\n", path);
+> +		free(buf);
+> +		return NULL;
+> +	}
+> +	fclose(file);
 > +
-> +The mapfile_sys.csv format is slightly different, in that it contains a SYSID
-> +instead of the CPUID:
+> +	/* Remove any whitespace, this could be from ACPI HID */
+> +	s = strlen(buf);
+> +	for (i = 0; i < s; i++) {
+> +		if (buf[i] == ' ') {
+> +			buf[i] = 0;
+> +			break;
+> +		};
+> +	}
 > +
-> +	Header line
-> +	SYSID,Version,Dir/path/name,Type
+> +	return buf;
+> +}
+> +
+> +static char *perf_pmu__getsysid(void)
+> +{
+> +	char *sysid;
+> +	static bool printed;
+> +
+> +	sysid = getenv("PERF_SYSID");
+> +	if (sysid)
+> +		sysid = strdup(sysid);
+> +
+> +	if (!sysid)
+> +		sysid = get_sysid_str();
+> +	if (!sysid)
+> +		return NULL;
+> +
+> +	if (!printed) {
+> +		pr_debug("Using SYSID %s\n", sysid);
+> +		printed = true;
+> +	}
+> +	return sysid;
+> +}
 
-can't we just add prefix to SYSID types? like:
+this part is getting complicated and AFAIK we have no tests for it
 
-	SYSID-HIP08,v1,hisilicon/hip08/sys,sys
-	0x00000000480fd010,v1,hisilicon/hip08/cpu,core
-	0x00000000500f0000,v1,ampere/emag,core
+if you could think of any tests that'd be great.. perhaps we could
+load 'our' json test files and check appropriate events/aliasses
+via in pmu object.. or via parse_events interface.. those test aliases
+would have to be part of perf, but we have tests compiled in anyway
 
-because the rest of the line is the same, right?
-
-seems to me that having one mapfile type would be less confusing
-
+thanks,
 jirka
 
 
