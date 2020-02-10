@@ -2,53 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4533F156FD8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 08:30:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE195157016
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 08:51:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=se1POzZfjOZreadtxKcmzXHIT9iGr5VmxIyiCwfilhw=; b=O4uYd+ZuFclaw6
-	JUBOoiLsGg1dDvLAFqTBXnhiXBGkKUgVHJvLhAPcl0Wn6kBMZy4phCkkbnUhnwBC8Ny65+Z3raf13
-	yUmgHV+LlFw5rcnHQHrUhyYdxjzuLKKOTBY2pdj5gstkMruSFf5o/ncC+4CTxcPWvcV8rSIFm/l19
-	5w50NLsmWcK9j7ViaDyhNQGRxCvxyUl+CQ0VntmUhUSmz/kZGl3d2INF5ZzpXZaVdPe0px7+93ew7
-	UzkxPxmTOPieWy3Hmop0GJTyTkKnAdHGd/LmOdh2tYTMF8cJbpQMoYkJ5Tf0M2vEWAH/lIt88ifCD
-	/gIs6RcVSTndrnik6sEw==;
+	List-Owner; bh=su8KI/vEY5KTe/K/dxURo21SapC9PXIvxUfNZL4JtuA=; b=EbP5LQBSrPdEk1
+	K6hsRM5doFFvTKC3AGTz7ARW7EPX4kPS/p/U5Anw57SGeae5uuXJbHQ9MbJzZvLpvtG7+p7rgY/Mv
+	K9hXOnY2/gM/frDpC32vTIB35nlXHOqTxLPkpizHOxGlNvXaXbu4raSKW0UQg9khr/C0BvdxaNxUA
+	EP+4y5QJqsuXcQe0Vq5MfMumZtVaHLnW2GGk4nw80nNHCCP0/5aGMgE3Cs04HGZKffKNH/rhPUj8/
+	ekrwQMocI0MCLardR7LFgUu4ofb/YFv2jgnFiabm6nn6euZ0r5wuFE9RzTy1uzFd385CKfD0ySw04
+	laE1GIqJertbSik3fG9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j13W8-0002F1-R2; Mon, 10 Feb 2020 07:30:04 +0000
-Received: from kernel.crashing.org ([76.164.61.194])
+	id 1j13qd-0001ii-Ty; Mon, 10 Feb 2020 07:51:15 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j13Vx-0002CI-PL
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 07:29:55 +0000
-Received: from localhost (gate.crashing.org [63.228.1.57])
- (authenticated bits=0)
- by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 01A7TN4p010982
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Mon, 10 Feb 2020 01:29:29 -0600
-Message-ID: <b7bf421b5fad397a7ef430af6c0c09602dd66c2a.camel@kernel.crashing.org>
-Subject: Re: [PATCH 2/3] usb: gadget: aspeed: add ast2600 vhub support
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: Joel Stanley <joel@jms.id.au>, Tao Ren <rentao.bupt@gmail.com>
-Date: Mon, 10 Feb 2020 08:29:22 +0100
-In-Reply-To: <CACPK8XcmUYhnePr1AG2M9P-oGvOM=zCM+r44jWUzPYGxUEGOGw@mail.gmail.com>
-References: <20200131222157.20849-1-rentao.bupt@gmail.com>
- <20200131222157.20849-3-rentao.bupt@gmail.com>
- <CACPK8XcmUYhnePr1AG2M9P-oGvOM=zCM+r44jWUzPYGxUEGOGw@mail.gmail.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1j13qW-0001i3-MM
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 07:51:10 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id a2so3508351vso.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 09 Feb 2020 23:51:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=u3O+szgfwEJKuo4yzEkWiTVNHGumVBlqNQZE9NfjV7I=;
+ b=QsC4PDi5ZlYbAjfw6pBUa0KPphhE/VVoGj6kVK1MAL7QZqo9wjmEBLb9Ikbb7Fp770
+ o5u/R5ApawhiT5Waee9rnPrac69HShLMufZLupjUjI/CMI3snfnPnH5LdDWGPL7q39dr
+ Evp1CxZoX8gCVNOonqGfUiXeiuwNtbZ+WegCEVukUffQd+2gilW7icSVWUk6sIYv749b
+ slMXTUuMoGaFUwlQwE/ldzraKsne3DiELel3X/Jp70Dz80496OwgjZdM776TADILQLuO
+ yAjl54QHAMbG0F+Y6cIXjrS11+kCEVl5NN47dW7kpuL4QC9qVts5HHxcSN5tLZgx3jY5
+ Purg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=u3O+szgfwEJKuo4yzEkWiTVNHGumVBlqNQZE9NfjV7I=;
+ b=Jk7FSrtMITSx9+btKd7KxCh0XqKVvzMmg84nRupCbuwekX4opdkMKxTvHLFjem+awh
+ dIxn5kdc85MIpllYiDh25n9rx0lhH/8+l/uRIRuQd05rd+Cw3Yp1peqqB4g2HKMzRXIl
+ PHJKeMBYqUSp64OH3k4SisHQ+Mfk29nMmeo9VR+T7xT7gndzIIXKpUhHzatGDcVs0P/8
+ XnYovrGLVr1TFUpqgIIK8mcyVTWgBjy/otYIpLv5unMmz6vkUnahD5//yL6SoW/u/0pB
+ BRS+abGhFjHkFvn64U4Ewr7rl8zI0P1mr/44FUVwLENnYYzGDkdoRX2z+w1fmPIG75k5
+ xjjA==
+X-Gm-Message-State: APjAAAUmLZnydSTeR4WO/B7ETwTuSOwjYARjTdj09Zoc9y1UyBo0UJkU
+ fXi1N+nilWm6MADmjKWAR4U768hRBNUyOcJ29dqxOA==
+X-Google-Smtp-Source: APXvYqypbI21Yfdn+EA6ub6ed50JBoiEO60Ni/AfECIKY1ZvJ0o8EXmbyp6DUzxmNBzjRT7iyDPYhJySfgC8H0ANL9s=
+X-Received: by 2002:a67:ee02:: with SMTP id f2mr5601456vsp.165.1581321061313; 
+ Sun, 09 Feb 2020 23:51:01 -0800 (PST)
+MIME-Version: 1.0
+References: <20200207052627.130118-1-drinkcat@chromium.org>
+ <20200207052627.130118-6-drinkcat@chromium.org>
+ <CAPDyKFoz0gUkoofWkd6dFuOkRWqeeCDrv84UHyYYowAAgTiitw@mail.gmail.com>
+ <CANMq1KA+3O+G+_r=xY98eK-in5i3HWg+4B4-ONk-6qWS3a9=0g@mail.gmail.com>
+In-Reply-To: <CANMq1KA+3O+G+_r=xY98eK-in5i3HWg+4B4-ONk-6qWS3a9=0g@mail.gmail.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Mon, 10 Feb 2020 08:50:25 +0100
+Message-ID: <CAPDyKFrq5KQ7CHnMSCv7GqzpQyVfDQgLYjUVzeweTwKR3AmM4g@mail.gmail.com>
+Subject: Re: [PATCH v4 5/7] drm/panfrost: Add support for multiple power
+ domains
+To: Nicolas Boichat <drinkcat@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_232954_025765_5A10A579 
-X-CRM114-Status: GOOD (  19.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200209_235108_763953_0295F9FE 
+X-CRM114-Status: GOOD (  20.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,100 +94,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- devicetree <devicetree@vger.kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>, linux-usb@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Colin Ian King <colin.king@canonical.com>,
+ Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Steven Price <steven.price@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2020-02-10 at 02:48 +0000, Joel Stanley wrote:
-> On Fri, 31 Jan 2020 at 22:22, <rentao.bupt@gmail.com> wrote:
-> > 
-> > From: Tao Ren <rentao.bupt@gmail.com>
-> > 
-> > Add AST2600 support in aspeed-vhub driver. There are 3 major differences
-> > between AST2500 and AST2600 vhub:
-> >   - AST2600 supports 7 downstream ports while AST2500 supports 5.
-> >   - AST2600 supports 21 generic endpoints while AST2500 supports 15.
-> >   - EP0 data buffer's 8-byte DMA alignment restriction is removed from
-> >     AST2600.
-> > 
-> > Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
-> > Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+On Sun, 9 Feb 2020 at 13:50, Nicolas Boichat <drinkcat@chromium.org> wrote:
+>
+> On Fri, Feb 7, 2020 at 10:26 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+> >
+> > On Fri, 7 Feb 2020 at 06:27, Nicolas Boichat <drinkcat@chromium.org> wrote:
+> > >
+> > > When there is a single power domain per device, the core will
+> > > ensure the power domain is switched on (so it is technically
+> > > equivalent to having not power domain specified at all).
+> > >
+> > > However, when there are multiple domains, as in MT8183 Bifrost
+> > > GPU, we need to handle them in driver code.
+> > >
+> > > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
+> >
+> > Besides a minor nitpick, feel free to add:
+> >
+> > Reviewed-by: Ulf Hansson <ulf.hansson@linaro.org>
+> >
+> > Kind regards
+> > Uffe
+> >
+> > [snip]
+> > > +static int panfrost_pm_domain_init(struct panfrost_device *pfdev)
+> > > +{
+> > > +       int err;
+> > > +       int i, num_domains;
+> > > +
+> > > +       num_domains = of_count_phandle_with_args(pfdev->dev->of_node,
+> > > +                                                "power-domains",
+> > > +                                                "#power-domain-cells");
+> > > +
+> > > +       /*
+> > > +        * Single domain is handled by the core, and, if only a single power
+> > > +        * the power domain is requested, the property is optional.
+> > > +        */
+> > > +       if (num_domains < 2 && pfdev->comp->num_pm_domains < 2)
+> > > +               return 0;
+> > > +
+> > > +       if (num_domains != pfdev->comp->num_pm_domains) {
+> > > +               dev_err(pfdev->dev,
+> > > +                       "Incorrect number of power domains: %d provided, %d needed\n",
+> > > +                       num_domains, pfdev->comp->num_pm_domains);
+> > > +               return -EINVAL;
+> > > +       }
+> > > +
+> > > +       if (WARN(num_domains > ARRAY_SIZE(pfdev->pm_domain_devs),
+> > > +                       "Too many supplies in compatible structure.\n"))
+> >
+> > Nitpick:
+> > Not sure this deserves a WARN. Perhaps a regular dev_err() is sufficient.
+>
+> Ah well I had a BUG_ON before so presumably this is already a little better ,-)
+>
+> You can only reach there if you set pfdev->comp->num_pm_domains >
+> MAX_PM_DOMAINS in the currently matched struct panfrost_compatible
+> (pfdev->comp->num_pm_domains == num_domains, and see below too), so
+> the kernel code would actually be actually broken (not the device
+> tree, nor anything that could be probed). So I'm wondering if the
+> loudness of a WARN is better in this case? Arguable ,-)
 
-Travelling at the moment so my review might be a bit delayed. Also for
-some reason I missed your original submission, sorry about that, please
-poke me next time if I don't reply within a couple of days !
+I see. It's not a big a deal, so feel free to keep as is.
 
-One thing to look into as well is the 2600 has revived the "device
-controller" which looks like a cut down version of a vhub device, so we
-should break a bit more the linkage between vhub and the underlying
-devices so the latter can be instanciated standalone...
+[...]
 
-(Foor for thought, I'm not asking you to do that right now)
-
-Cheers,
-Ben.
-
-> Reviewed-by: Joel Stanley <joel@jms.id.au>
-> 
-> > ---
-> >  drivers/usb/gadget/udc/aspeed-vhub/Kconfig | 4 ++--
-> >  drivers/usb/gadget/udc/aspeed-vhub/core.c  | 9 +++++++++
-> >  2 files changed, 11 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/usb/gadget/udc/aspeed-vhub/Kconfig b/drivers/usb/gadget/udc/aspeed-vhub/Kconfig
-> > index 83ba8a2eb6af..605500b19cf3 100644
-> > --- a/drivers/usb/gadget/udc/aspeed-vhub/Kconfig
-> > +++ b/drivers/usb/gadget/udc/aspeed-vhub/Kconfig
-> > @@ -4,5 +4,5 @@ config USB_ASPEED_VHUB
-> >         depends on ARCH_ASPEED || COMPILE_TEST
-> >         depends on USB_LIBCOMPOSITE
-> >         help
-> > -         USB peripheral controller for the Aspeed AST2500 family
-> > -         SoCs supporting the "vHub" functionality and USB2.0
-> > +         USB peripheral controller for the Aspeed AST2400, AST2500 and
-> > +         AST2600 family SoCs supporting the "vHub" functionality and USB2.0
-> > diff --git a/drivers/usb/gadget/udc/aspeed-vhub/core.c b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> > index 94081cc04113..c827bf420278 100644
-> > --- a/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> > +++ b/drivers/usb/gadget/udc/aspeed-vhub/core.c
-> > @@ -42,6 +42,11 @@ static const struct ast_vhub_config ast2400_config = {
-> >         .max_epns = 15,
-> >  };
-> > 
-> > +static const struct ast_vhub_config ast2600_config = {
-> > +       .max_ports = 7,
-> > +       .max_epns = 21,
-> > +};
-> > +
-> >  static const struct of_device_id ast_vhub_dt_ids[] = {
-> >         {
-> >                 .compatible = "aspeed,ast2400-usb-vhub",
-> > @@ -51,6 +56,10 @@ static const struct of_device_id ast_vhub_dt_ids[] = {
-> >                 .compatible = "aspeed,ast2500-usb-vhub",
-> >                 .data = &ast2400_config,
-> >         },
-> > +       {
-> > +               .compatible = "aspeed,ast2600-usb-vhub",
-> > +               .data = &ast2600_config,
-> > +       },
-> >         { }
-> >  };
-> >  MODULE_DEVICE_TABLE(of, ast_vhub_dt_ids);
-> > --
-> > 2.17.1
-> > 
-
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
