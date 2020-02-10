@@ -2,79 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79E5B15810C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:14:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBF5E15810D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:14:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JZqSH2DGz0/4UEMGY9JKD+EI5Q3/f8AAlDb45dbb4NE=; b=qXItEBVfHvvz1P
-	7BjM88BFNkN7iSFL9qNluaFLEz3ROHEqTBKK5iBpVOQdTiFjREUBc5HEltqlyDyfVvBPFOF/DLLN/
-	gZEz7sAmWQ6JCcutsfq+B5XscYtZmxdulquPRwsaQS4dWhEMLWpTt6TNr1IuE2nOzu6iSWOnfG80i
-	hV3WmjyTmZgLHnfT+PszKSwK9p+pw36UVZ5RMECQ8EWYYK8Ewm48ujpp5T+gOLf7LmZIS8l9ZBRvU
-	c7m2MxhOL4ppI5XEY+2SlkLxkpBC1pPDRtbmhuLXqKT4ZVnojuxXa01Ez02cwcvH5pIofyG1hTu0I
-	mseH1T8c8DoXB1GHaC9Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IA0dnToH2/lppMOIId/AA6PZK6eCFyP+Y7u0zfuhXFc=; b=LfEisE/E6apQhw
+	GM/Ez+ip0iBZjJRSAZnbsFYCMyU5drgpUBy98ig+3lmcaQW5WFrovCzobsLzN8U3VHgofJbSHaylX
+	Vm4SMuh46y7yumE/Kz+awsXfJNDYSgkXSIrf3GA9+U/nlEnXSeCcTaUazPvzvbrnc9QI5zqWSKc1e
+	a/XAYV3FVuzNi49xF3xO1Dp9P0cBOQrrkevbOKCqwMVskP3Ovv7qoxtkFj7wUG2kugqh4Lv/Rpcz0
+	2CkSoNwOaJc51GAcGE4SqspqS9NzFUsBSJF/QEsDHvdyI+wNU1c4pZyx58vFmSpvk2uk7AnogoRXD
+	Mf1SbsyXVLWsNYeyv+SA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1CdI-0004nQ-7m; Mon, 10 Feb 2020 17:14:04 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1j1CdT-0004v5-Pm; Mon, 10 Feb 2020 17:14:15 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1CdB-0004n4-0Y
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:13:58 +0000
-Received: by mail-il1-x143.google.com with SMTP id b15so880447iln.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 09:13:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2OMBPex9jA3tUl+7G1mNGvd+gODbNk9naFIiYtHyZvE=;
- b=K3+u35TRE63GpeI94Hcn56aHL8TkE541qoXK4T7pzDuUVHd/PJJs0tLOqs6FC8yY5o
- 726WSroyELFlw1KtSEUQLBCA0g1r7uzJt/iSTVqQUSUw/Jg7nrgOrsdPhmF2s95Cbs9F
- WlN10IwmMwrfqN+rIKiJSzFhVo4BY3/ZvpEvNt97HH68wf5XE4Ky0RsiiGauGEWUNuOd
- 3l4uNYCbPjjBzRJYg7thZs6TGobcYZhGNhVymUQvPaUR6ttu0q6Fof7fg9Pgt32Xr72p
- 9xf9tMegJuvTL1Jm7qdxggl5uKd7lHKwSzXxA7eJ/FEViiylzLaBH9tnDPFwGuvKz7bA
- zrOQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2OMBPex9jA3tUl+7G1mNGvd+gODbNk9naFIiYtHyZvE=;
- b=r8dh8xREkAhARhSA1PAkXV2IOyLGXKjZGw6CcoiKCoG8QSSmeI65NchULFnOyq96Hu
- /VKKlosqiQAgLiwIAApEv7Fs4BLkBDwbpw27incioAcLj2v1JMlgt+iDqJi6CzKeTi92
- SrJ2GELMrh1eGzFGc4sKxrWhWh5xl8ghA9h99rE/C5ux13PSBwrsYvHurfAnaOqaxGZu
- kt8F6pz4IhYN7mxvk7101wCpciDL/OE5mIyJRXphsqWZbtcYvNNZIGdETWe9ALRlQqER
- WBZhzqEY/WUWEQl1zPzJYPjpLSmR/mpyFDCk5VhhC9AtR0Xd+SyhcMIIdMTsSUGGRuNq
- BZPw==
-X-Gm-Message-State: APjAAAVch02/pfpMUhlST11wFVVrtx2D6ZOdinyl4a1tAkFuoq6R5Ajd
- sjmqwzIh7iOku41mfvBFVHGw1521iNLekRkHnmw=
-X-Google-Smtp-Source: APXvYqxOleLjjkfnqGbk8s3yYuPx72eh3yoUqE6ukevQxdLc3Qx2eaHu6jnI3/Zfma3Bg3N/Oppma3JGFLT047sLatM=
-X-Received: by 2002:a92:9507:: with SMTP id y7mr2270185ilh.243.1581354835793; 
- Mon, 10 Feb 2020 09:13:55 -0800 (PST)
+ id 1j1CdC-0004mw-Nw
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:14:00 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01AHCL24032561; Mon, 10 Feb 2020 18:13:51 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=feuW2yPS5ei8I742RMv4MDftOjP43l3feZEKO8JKWpw=;
+ b=AvIh0EOE3aDFxOUiQ/ry4/xC4AH9ji+wZcsfwGPa7zbcfu/jiAJyHJJ5xRh4zQzCnoby
+ CEL20YRclt0dYBHjtI53yigBJJR1ho0DhNQ6mvHrZIgJjzaCSzAs9MdhmkdHFVJOyRxL
+ xsFcIBA9KAXgOLsnUPTfejo48YYU9x2TiIOcPEA9zbYRuhotj4Lzpz2hvuuu9xlgfKO9
+ s1e92oTKCU13F4MZZI+UCS3QfAH8kjYeaxoXs6Dj1V+hDH3w6Yjzx+zrZNMrVHc7osY7
+ v7bq2hzs6lf3vzo19iK06Qsj9ykMTEZtIndWi+gYvvgMYZOkD3x1Nb6NbJiUpDEtUSwi vA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2y1ud9cc5c-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 10 Feb 2020 18:13:51 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6E52210002A;
+ Mon, 10 Feb 2020 18:13:51 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5C2E12BA258;
+ Mon, 10 Feb 2020 18:13:51 +0100 (CET)
+Received: from [10.48.0.71] (10.75.127.45) by SFHDAG5NODE3.st.com
+ (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 10 Feb
+ 2020 18:13:50 +0100
+Subject: Re: [PATCH] counter: stm32-timer-cnt: add power management support
+To: Jonathan Cameron <jic23@kernel.org>
+References: <1580899678-26393-1-git-send-email-fabrice.gasnier@st.com>
+ <20200208153541.448a0df3@archlinux>
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+Message-ID: <dac6eb51-f13c-5369-d43e-77f21ed81172@st.com>
+Date: Mon, 10 Feb 2020 18:13:50 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20200210105108.1128-1-linux.amoon@gmail.com>
- <20200210105108.1128-3-linux.amoon@gmail.com>
- <20200210135008.GA2163@pi3>
-In-Reply-To: <20200210135008.GA2163@pi3>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 10 Feb 2020 22:43:45 +0530
-Message-ID: <CANAwSgT9_8JhjyN9yfZ6=AUE7kVhrrTwdK1KFQLwxuNSYyBKKA@mail.gmail.com>
-Subject: Re: [PATCHv3 2/3] ARM: dts: exynos: Add missing usbdrd3 suspend clk
-To: Krzysztof Kozlowski <krzk@kernel.org>
+In-Reply-To: <20200208153541.448a0df3@archlinux>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-10_06:2020-02-10,
+ 2020-02-10 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_091357_051676_DF5650DB 
-X-CRM114-Status: GOOD (  17.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200210_091359_282881_44B77A84 
+X-CRM114-Status: GOOD (  20.69  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [linux.amoon[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,97 +98,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, linux-samsung-soc@vger.kernel.org,
- Felipe Balbi <balbi@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux USB Mailing List <linux-usb@vger.kernel.org>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: benjamin.gaignard@st.com, linux-iio@vger.kernel.org, vilhelm.gray@gmail.com,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ alexandre.torgue@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Krzysztof,
+On 2/8/20 4:35 PM, Jonathan Cameron wrote:
+> On Wed, 5 Feb 2020 11:47:58 +0100
+> Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
+> 
+>> Add suspend/resume PM sleep ops. When going to low power, enforce the
+>> counter isn't active.
+>>
+>> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+>> ---
+>>  drivers/counter/stm32-timer-cnt.c | 25 +++++++++++++++++++++++++
+>>  1 file changed, 25 insertions(+)
+>>
+>> diff --git a/drivers/counter/stm32-timer-cnt.c b/drivers/counter/stm32-timer-cnt.c
+>> index 3eafcce..3b84503 100644
+>> --- a/drivers/counter/stm32-timer-cnt.c
+>> +++ b/drivers/counter/stm32-timer-cnt.c
+>> @@ -12,6 +12,7 @@
+>>  #include <linux/iio/types.h>
+>>  #include <linux/mfd/stm32-timers.h>
+>>  #include <linux/module.h>
+>> +#include <linux/pinctrl/consumer.h>
+>>  #include <linux/platform_device.h>
+>>  
+>>  #define TIM_CCMR_CCXS	(BIT(8) | BIT(0))
+>> @@ -358,10 +359,33 @@ static int stm32_timer_cnt_probe(struct platform_device *pdev)
+>>  	priv->counter.num_signals = ARRAY_SIZE(stm32_signals);
+>>  	priv->counter.priv = priv;
+>>  
+>> +	platform_set_drvdata(pdev, priv);
+>> +
+>>  	/* Register Counter device */
+>>  	return devm_counter_register(dev, &priv->counter);
+>>  }
+>>  
+>> +static int __maybe_unused stm32_timer_cnt_suspend(struct device *dev)
+>> +{
+>> +	struct stm32_timer_cnt *priv = dev_get_drvdata(dev);
+>> +	u32 cr1;
+>> +
+>> +	/* Check for active counter */
+>> +	regmap_read(priv->regmap, TIM_CR1, &cr1);
+>> +	if (cr1 & TIM_CR1_CEN)
+>> +		return -EBUSY;
+> 
+> Runtime suspend is allowed to refuse to happen (and that is
+> explicitly documented)
+> Is that allowed for normal suspend?  I didn't think it was.
+> This will stop a suspend, but it's doing it by signalling a failure.
 
-Thanks for your review comments.
+Hi Jonathan,
 
-On Mon, 10 Feb 2020 at 19:20, Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> On Mon, Feb 10, 2020 at 10:51:07AM +0000, Anand Moon wrote:
-> > This patch adds new combatible strings for USBDRD3
-> > for adding missing suspend clk, exynos5422 usbdrd3
-> > support two clk USBD300 and SCLK_USBD300, so add missing
-> > suspemd_clk for Exynos542x DWC3 nodes.
-> >
-> > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
-> > ---
-> >  arch/arm/boot/dts/exynos5420.dtsi | 8 ++++----
-> >  arch/arm/boot/dts/exynos54xx.dtsi | 4 ++--
-> >  2 files changed, 6 insertions(+), 6 deletions(-)
-> >
-> > diff --git a/arch/arm/boot/dts/exynos5420.dtsi b/arch/arm/boot/dts/exynos5420.dtsi
-> > index b672080e7469..bd505256a223 100644
-> > --- a/arch/arm/boot/dts/exynos5420.dtsi
-> > +++ b/arch/arm/boot/dts/exynos5420.dtsi
-> > @@ -1372,8 +1372,8 @@ &trng {
-> >  };
-> >
-> >  &usbdrd3_0 {
-> > -     clocks = <&clock CLK_USBD300>;
-> > -     clock-names = "usbdrd30";
-> > +     clocks = <&clock CLK_USBD300>, <&clock CLK_SCLK_USBD300>;
-> > +     clock-names = "usbdrd30", "usbdrd30_susp_clk";
-> >  };
-> >
-> >  &usbdrd_phy0 {
-> > @@ -1383,8 +1383,8 @@ &usbdrd_phy0 {
-> >  };
-> >
-> >  &usbdrd3_1 {
-> > -     clocks = <&clock CLK_USBD301>;
-> > -     clock-names = "usbdrd30";
-> > +     clocks = <&clock CLK_USBD301>, <&clock CLK_SCLK_USBD301>;
-> > +     clock-names = "usbdrd30", "usbdrd30_susp_clk";
-> >  };
-> >
-> >  &usbdrd_dwc3_1 {
-> > diff --git a/arch/arm/boot/dts/exynos54xx.dtsi b/arch/arm/boot/dts/exynos54xx.dtsi
-> > index 8aa5117e58ce..0aac6255de5d 100644
-> > --- a/arch/arm/boot/dts/exynos54xx.dtsi
-> > +++ b/arch/arm/boot/dts/exynos54xx.dtsi
-> > @@ -143,7 +143,7 @@ hsi2c_7: i2c@12cd0000 {
-> >               };
-> >
-> >               usbdrd3_0: usb3-0 {
-> > -                     compatible = "samsung,exynos5250-dwusb3";
-> > +                     compatible = "samsung,exynos5420-dwusb3";
-> >                       #address-cells = <1>;
-> >                       #size-cells = <1>;
-> >                       ranges;
-> > @@ -165,7 +165,7 @@ usbdrd_phy0: phy@12100000 {
-> >               };
-> >
-> >               usbdrd3_1: usb3-1 {
-> > -                     compatible = "samsung,exynos5250-dwusb3";
-> > +                     compatible = "samsung,exynos5420-dwusb3";
->
-> This affects also Exynos5410 but you do not add new clock there.
->
-> Best regards,
-> Krzysztof
->
+I'll rework this patch, to avoid stopping the suspend. Another approach
+is to properly save/backup the registers here, and to disable the
+counter in low power mode.
+I'll update this in V2.
 
-Ok I will update this Exynos5410 dts.
+Thanks for reviewing,
+Fabrice
 
-Is samsung,exynos54xx-dwusb3 is valid compatible string
-for both the SoC.
-
--Anand
+> I'm not sure for example that the system will resume everything that
+> was suspended before this call.
+> 
+> Normally you are in the tough luck category if a system decides
+> to suspend underneath you.   There are ways to prevent it
+> from userspace (wakelocks etc).
+> 
+>> +
+>> +	return pinctrl_pm_select_sleep_state(dev);
+>> +}
+>> +
+>> +static int __maybe_unused stm32_timer_cnt_resume(struct device *dev)
+>> +{
+>> +	return pinctrl_pm_select_default_state(dev);
+>> +}
+>> +
+>> +static SIMPLE_DEV_PM_OPS(stm32_timer_cnt_pm_ops, stm32_timer_cnt_suspend,
+>> +			 stm32_timer_cnt_resume);
+>> +
+>>  static const struct of_device_id stm32_timer_cnt_of_match[] = {
+>>  	{ .compatible = "st,stm32-timer-counter", },
+>>  	{},
+>> @@ -373,6 +397,7 @@ static struct platform_driver stm32_timer_cnt_driver = {
+>>  	.driver = {
+>>  		.name = "stm32-timer-counter",
+>>  		.of_match_table = stm32_timer_cnt_of_match,
+>> +		.pm = &stm32_timer_cnt_pm_ops,
+>>  	},
+>>  };
+>>  module_platform_driver(stm32_timer_cnt_driver);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
