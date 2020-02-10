@@ -2,66 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 503DD158486
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 22:01:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCBE61584AC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 22:23:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UtLNFYRajkbVjF398DvlWLEaypeXzexZ7+Tn4epOFCA=; b=Guh/ZAidxi3gY+3go+0RvXfGJ
-	F8wwPOru9+hRRSr90JJJdU3p8wHM/yZbEXQRvNpqIEszl1aLerTP/fOwDSCjNEmGtHZeNNgmKyfjs
-	Rfgdls11T3l1k/sLGgenFYfwyf1YGBl3oG/7tSCkWgD9dCHtdMkrfYoklcTVulALAzf52IQM16cfk
-	4h2cocFWTXULnKsLctUeObXXcz86vSfeilHn1SC6b+xYsah+l9B3zSEJT6t3Ih37mwKbsIkwagtv8
-	48CoexX+YFDuuCQwgNnrzHTVGFZvElQBgvqGf0HiKXiw/VraNxMsurRloc+8OlC9RUGBwCOeUUWNL
-	S/XAwcXxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cToIIDyPSUWqDuSFly+cIGAptm/B1PgPbvxZqc0Du8I=; b=uI53IwP5J1oL0p
+	WTyt4nMsQPaZFv+mJdiTcfnCiF48F5O9gAvHeQuxtx9qHWL2Cvld6TzaQ5HVnd/GDT6vPKpIGoGE2
+	Kb7i5/eOw77u6JnwMPdKamLHpebYm5ICLfKUM5Cnt8VOLU4hNd9gIPYcbZtXlVLg4P8di/paGXtob
+	A3C8+dsx7xq6VTXsUnaa4q+OJlJDXFearFTSRAjf7kh30HbIRJPvH3GaBstp+1/Qp98t3eYNox3B8
+	JC99Y15m3TcWdd4/Iu4SZ+NgMaCZFDgD/LYRXZkzg1cmNavcLty5JBBqX+jOsqvucbQq9VqbOkW+/
+	5P/i5zAwWyMAerlRj9lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1GB4-0004Gw-E4; Mon, 10 Feb 2020 21:01:10 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1j1GWS-0003d2-Gz; Mon, 10 Feb 2020 21:23:16 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1GAy-0004GT-6b
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 21:01:05 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 10 Feb 2020 13:01:01 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,426,1574150400"; d="scan'208";a="265998822"
-Received: from pdmullen-mobl.amr.corp.intel.com (HELO [10.251.9.121])
- ([10.251.9.121])
- by fmsmga002.fm.intel.com with ESMTP; 10 Feb 2020 13:00:59 -0800
-Subject: Re: [alsa-devel] [PATCH -next] ASoC: SOF: imx8: Fix randbuild error
-To: YueHaibing <yuehaibing@huawei.com>, lgirdwood@gmail.com,
- broonie@kernel.org, perex@perex.cz, tiwai@suse.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-imx@nxp.com, daniel.baluta@nxp.com, krzk@kernel.org
-References: <20200210061544.7600-1-yuehaibing@huawei.com>
-From: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
-Message-ID: <9351a746-8823-ee26-70da-fd3127a02c91@linux.intel.com>
-Date: Mon, 10 Feb 2020 15:00:59 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j1GWI-0003bd-9c
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 21:23:07 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j1GWC-0000yJ-HW; Mon, 10 Feb 2020 22:23:00 +0100
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j1GWA-00042p-PF; Mon, 10 Feb 2020 22:22:58 +0100
+From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: [PATCH 0/3] pwm: imx27: fix clk handling
+Date: Mon, 10 Feb 2020 22:22:37 +0100
+Message-Id: <20200210212240.25513-1-u.kleine-koenig@pengutronix.de>
+X-Mailer: git-send-email 2.24.0
+In-Reply-To: <20200209213106.5067-1-u.kleine-koenig@pengutronix.de>
+References: <20200209213106.5067-1-u.kleine-koenig@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <20200210061544.7600-1-yuehaibing@huawei.com>
-Content-Language: en-US
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_130104_290333_5680A1E1 
-X-CRM114-Status: GOOD (  22.15  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200210_132306_342691_B5E95A47 
+X-CRM114-Status: UNSURE (   9.20  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,65 +67,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-pwm@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 2/10/20 12:15 AM, YueHaibing wrote:
-> when do randconfig like this:
-> CONFIG_SND_SOC_SOF_IMX8_SUPPORT=y
-> CONFIG_SND_SOC_SOF_IMX8=y
-> CONFIG_SND_SOC_SOF_OF=y
-> CONFIG_IMX_DSP=m
-> CONFIG_IMX_SCU=y
-> 
-> there is a link error:
-> 
-> sound/soc/sof/imx/imx8.o: In function 'imx8_send_msg':
-> imx8.c:(.text+0x380): undefined reference to 'imx_dsp_ring_doorbell'
-> 
-> Select IMX_DSP in SND_SOC_SOF_IMX8_SUPPORT to fix this
-> 
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Fixes: f9ad75468453 ("ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF dependency")
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-
-Thanks for the report.
-
-Would you mind sharing the .config and instructions to reproduce this 
-case? we have an unrelated issue with allyesconfig that was reviewed here:
-
-https://github.com/thesofproject/linux/pull/1778
-
-and I'd probably a good thing to fix everything in one shot.
-
-Thanks!
-
-> ---
->   sound/soc/sof/imx/Kconfig | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/sound/soc/sof/imx/Kconfig b/sound/soc/sof/imx/Kconfig
-> index bae4f7b..81274906 100644
-> --- a/sound/soc/sof/imx/Kconfig
-> +++ b/sound/soc/sof/imx/Kconfig
-> @@ -14,7 +14,7 @@ if SND_SOC_SOF_IMX_TOPLEVEL
->   config SND_SOC_SOF_IMX8_SUPPORT
->   	bool "SOF support for i.MX8"
->   	depends on IMX_SCU
-> -	depends on IMX_DSP
-> +	select IMX_DSP
->   	help
->   	  This adds support for Sound Open Firmware for NXP i.MX8 platforms
->   	  Say Y if you have such a device.
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGVsbG8sCgp3aGlsZSBsb29raW5nIHRocm91Z2ggdGhlIHB3bS1pbXgyNyBkcml2ZXIgSSBmb3Vu
+ZCBzb21lIG1vcmUgYnJva2VuCmNsb2NrIGhhbmRsaW5nIGFkZGl0aW9uYWwgdG8geWVzdGVyZGF5
+J3MgcGF0Y2ggKHB3bTogaW14Mjc6IGZpeCBjbGsKaGFuZGxpbmcgaW4gcHdtX2lteDI3X2FwcGx5
+KCkpLiBUaGlzIHNlcmllcyBpcyB0byBiZSBhcHBsaWVkIG9uIHRvcCBvZgp0aGlzIHBhdGNoLgoK
+VXdlIEtsZWluZS1Lw7ZuaWcgKDMpOgogIHB3bTogaW14Mjc6IFNpbXBsaWZ5IGhlbHBlciBmdW5j
+dGlvbiB0byBlbmFibGUgYW5kIGRpc2FibGUgY2xvY2tzCiAgcHdtOiBpbXgyNzogRG9uJ3QgZGlz
+YWJsZSBjbGtzIGF0IGRldmljZSByZW1vdmUgdGltZQogIHB3bTogaW14Mjc6IEVuc3VyZSBjbG9j
+a3MgYmVpbmcgb24gaWZmIHRoZSBQV00gaXMgb24KCiBkcml2ZXJzL3B3bS9wd20taW14MjcuYyB8
+IDI5ICsrKysrKysrKysrKysrKysrLS0tLS0tLS0tLS0tCiAxIGZpbGUgY2hhbmdlZCwgMTcgaW5z
+ZXJ0aW9ucygrKSwgMTIgZGVsZXRpb25zKC0pCgotLSAKMi4yNC4wCgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
