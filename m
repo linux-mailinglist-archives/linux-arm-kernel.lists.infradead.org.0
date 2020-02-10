@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19E3F15731F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 11:54:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 47E92157325
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 11:56:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i4zOUEqY71cQ8sQNB2i7QexkSjpfi6LqJfyYLrmtpBU=; b=P8WMRr35I48941
-	7WVt7rEUzakm5UCbaGlKoILVtrcqbXJGSiUCExCOQVSwJ9HOrxpQ+UI3VrJ4jkOpnsNkabWUJTTgs
-	rETg7kpnWUrNJwRqc++Y9n8PQ43BHd6sHHZ7M1hcJfIGrlLzIFjd2gvrUKo5VJNioJJJaIKTbKA5s
-	UyXoEx6ow0+j6Y+o9l23obY9ma9P8vsDmpiR/uz4oDZPXURThZ1mil1m92yabyngro24+WyTKHhoB
-	Qf10BMQm2cos7HR0+TJdmOLqTc416Dsl0ApVCLdy9d5m4QrdJkoQtjztwO1pqeK58OBJeB19loJxg
-	m9TQ81/B96xwDaFsV3Wg==;
+	List-Owner; bh=MZ390342xtS5cEnYKSnEFG54Siiqv7m6FjCAYY7Z/yg=; b=c/eXOqndf1OBoE
+	GDQfWok3p3zWx8rKUAOoZ0GtmjBP7OPFsy2+3boGfv5gorpRp02gN5Bd+uRdAjeIyUuoWYqmMoPRs
+	uIT/YV1yF6NhGt9yqBoCCqBHNhknRgBHB9hyrMi4rUCw45JCqfzaGo1lnDlOCHYCPi9Khjd3/A3Ee
+	sYbC692XwD4yIZE/XIpWlTG270nq+V7SGlsCDDuBNxOffyYxjKYdl6yauPBovW5JurWx6GkB5mTDl
+	gn2EPWeGpbLsF1UxFj6W+OvubyfXcoSfoI5lYr9ONw2HyRG5RuEsYL2tmSre2IZLUDu1Jnq5GO/21
+	DGi3pK4wH7Z70uH4T+ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j16iC-0002kV-Mp; Mon, 10 Feb 2020 10:54:44 +0000
-Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
+	id 1j16jh-0004FK-1f; Mon, 10 Feb 2020 10:56:17 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j16i6-0002k3-9g
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 10:54:39 +0000
-Received: by mail-ua1-x942.google.com with SMTP id p2so745798uao.9
+ id 1j16ja-0004Es-Aw
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 10:56:11 +0000
+Received: by mail-il1-x141.google.com with SMTP id v13so5376405iln.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 02:54:36 -0800 (PST)
+ Mon, 10 Feb 2020 02:56:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OK+fNFVryzyVYrXPzyQztWsAjpXsP146XLj7YZxSTx4=;
- b=QSGI0U8vFm796piSvUhpAe6ARu7rVLdm9/fiJdocrploEvRsgJAUBxeAqMscpgLCKD
- Whf2qYJ34q9iWIwU4HbPmxaxbg7ZF5CBvA5syh7jkyl10en6EngKCrQHSD7XXU0wLFQE
- GSB2m+eREav6OFakiUAg35kk9bUaUyFmxH1ltE9MqK8Hq9U2cqs1gmeSAv/oBdLiS4H5
- OchwiFINF8FkU3+JQWPLNa+5JXqD//FiAgiUCXGfVIpfIZQEdQvl/aC3OV2thO90bAuW
- sDHJx/pHpAefGPcZo+EKLyAkdeu9VUbKcFMYD/Tk7V4yh1LA9Eel7S3V3U5AzoXPXwxS
- g8/w==
+ :cc; bh=d2IBt4/L/Nkmzl5hW1D/wjWzKHtqUWjVQiav92+TxjY=;
+ b=MxzfVtZRAKUIarDmqF9d8MtEWcqpjh3ZP6t4+CyS8iwJfg0VnRBEN5ecfTDSB/ifw5
+ Oe347EZ7IjQ/Ttkp4C8larMqFO3D5OVo62hVxbh4VB3YtEOic4v59wV2OxqSTcuqaAVZ
+ LSOuY+hEW35bByT0bXCtc6yvB+n7dHLJUDyaSyLv0aadoQKM8mWVpWgp+Cwa53vCsTUw
+ XZrC/jqYPGVltNO292Ad157gdmd/UuL51Qh1NxLP0atu/cJMiPWTUjy57gsZ2DfsD10S
+ NW92pC8NuZwhD0VTS3sLgeUes7Ghgp4jE+43B+Zy+lkj+fhmiFl44cZVQm9/58ycOa2K
+ mYbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=OK+fNFVryzyVYrXPzyQztWsAjpXsP146XLj7YZxSTx4=;
- b=VKDzSCdfRGwTyZs0z5cyna8Q36NPANAbde2pMfinGiidrFRrkNu8v6V2z7+Jt4W0H1
- EyvquI2DQVbApTnTSeIKbU+6GRbRpaWbuMdIAixvlJTx93yC1gwTn3MGr4R7S7I7We0R
- 2SoFikbV2P7zhBQ1sdMXWEjJGNDTxKkkFupI+NllEUXdoXVkpCCePIhyphGAX4nBKGxr
- PWFD09yGaEo7IGHhFxJLds+Ti69VEU4kcdumysdTNCJDL1vTv35ymlIyjuTOxXur708E
- YXxIne+kFH13oNOPX61ewflGykr9X9loxNG294Q0wOEb+BlS/Se7o1Op9+1jYdbGFSLZ
- +i7g==
-X-Gm-Message-State: APjAAAWtnsbh7ypzhFRr3oXbV8YS6ByCb+KiQPeVHbGdyvO9aPkb2oaM
- Qc3MWPb9+vNFklU4M+KxoT3invbh1AAvbFEM8KtgAw==
-X-Google-Smtp-Source: APXvYqzRgzlxK2LxMt8GQqJ2lf4BDGBrcMUbWX1z7cPtuSuLR4JkFhJD/I054BzWJsQWRCbs+hE910M9cCBZfSnKYxs=
-X-Received: by 2002:ab0:14ea:: with SMTP id f39mr336598uae.40.1581332075883;
- Mon, 10 Feb 2020 02:54:35 -0800 (PST)
+ bh=d2IBt4/L/Nkmzl5hW1D/wjWzKHtqUWjVQiav92+TxjY=;
+ b=BLlOwBHRV+5SZ1EnEHzuVo7ARkEQrXXPqAeiUOtZ4a0MEQjau7QVeNQ8YtyM+kpD5b
+ 7WS9kp7npQlyyOLfdJRkkR44MgsSNpXBW6mWYFMiuhvA0VDuxa1u2+egossA+KMMxOxM
+ d8AtM2j+az3FbM8Dl+aFDXc8ws4kTsHaXa7Rwq2mClHkH4jjhX8C6XwXF/OxoQ3R/iXs
+ YmLP+ZQJZZ/pb+Ci92+2mlqjYCEeBR6hCgyoDtaKubcAF8rCzhHCXNLv0JdB6WXw2siF
+ pWtfRWfUKmH9olbrbiyYKhFCyNnvyak2U4U3vuHFpY8CH3MBAUiKX5D4LgDC24Qo9XLC
+ ZNcg==
+X-Gm-Message-State: APjAAAVnYPvxz6sF6IApG3IdlXp7lacgoRrMrfEwa5N75nizDP4vCl0K
+ kZGC4qxkiQTNXG/YQt15ZEp6hV402Kwr5lNo/a4=
+X-Google-Smtp-Source: APXvYqzSD3AIuSazFlh5pPF5er+MSkw4OA9zMqA91tlC+bDSAj88WNPxzkmfnD9iDxhN7ozPY0QwiaRGDUDo1oQbwSw=
+X-Received: by 2002:a92:5d92:: with SMTP id e18mr761070ilg.75.1581332169369;
+ Mon, 10 Feb 2020 02:56:09 -0800 (PST)
 MIME-Version: 1.0
-References: <20200124084359.16817-1-christian.gmeiner@gmail.com>
-In-Reply-To: <20200124084359.16817-1-christian.gmeiner@gmail.com>
-From: Christian Gmeiner <christian.gmeiner@gmail.com>
-Date: Mon, 10 Feb 2020 11:54:24 +0100
-Message-ID: <CAH9NwWfMwN9cRgMHPF5zPCmdmnrfX7E6cAYW8yfUGTf+t3=HzA@mail.gmail.com>
-Subject: Re: [PATCH] ARM: multi_v7_defconfig: enable drm imx support
-To: LKML <linux-kernel@vger.kernel.org>
+References: <20200210105108.1128-1-linux.amoon@gmail.com>
+In-Reply-To: <20200210105108.1128-1-linux.amoon@gmail.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Mon, 10 Feb 2020 16:26:01 +0530
+Message-ID: <CANAwSgQzwRJE9mK+RwuCjsMaBMmD1f3fx+g-23B5Opo19kywUw@mail.gmail.com>
+Subject: Re: [PATCHv3 0/3] Add support for suspend clk for Exynos5422 SoC
+To: Linux USB Mailing List <linux-usb@vger.kernel.org>,
+ devicetree <devicetree@vger.kernel.org>, 
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_025438_338571_DD9B1618 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20200210_025610_380241_51B26308 
+X-CRM114-Status: GOOD (  15.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [christian.gmeiner[at]gmail.com]
+ provider [linux.amoon[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,67 +94,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Arnd Bergmann <arnd@arndb.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Tony Lindgren <tony@atomide.com>, Russell King <linux@armlinux.org.uk>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- Patrice Chotard <patrice.chotard@st.com>, Lubomir Rintel <lkundrak@v3.sk>,
- Joel Stanley <joel@jms.id.au>, Olof Johansson <olof@lixom.net>,
- linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
+ linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel <linux-kernel@vger.kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Fr., 24. Jan. 2020 um 09:44 Uhr schrieb Christian Gmeiner
-<christian.gmeiner@gmail.com>:
+Hi All,
+
+Sorry typo this patch series should be PATCHv1 and not PATCHv3
+
+-Anand
+
+On Mon, 10 Feb 2020 at 16:21, Anand Moon <linux.amoon@gmail.com> wrote:
 >
-> Makes it possible to multi v7 defconfig for stm32 and imx based devices with
-> full drm support.
+> Long time ago I tried to add suspend clk for dwc3 phy
+> which was wrong appoch, see below.
 >
-> Signed-off-by: Christian Gmeiner <christian.gmeiner@gmail.com>
-> ---
->  arch/arm/configs/multi_v7_defconfig | 6 ++++++
->  1 file changed, 6 insertions(+)
+> [0] https://lore.kernel.org/patchwork/patch/837635/
+> [1] https://lore.kernel.org/patchwork/patch/837636/
 >
-> diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-> index 3f1b96dc7faa..d213a35557ed 100644
-> --- a/arch/arm/configs/multi_v7_defconfig
-> +++ b/arch/arm/configs/multi_v7_defconfig
-> @@ -637,6 +637,7 @@ CONFIG_CEC_PLATFORM_DRIVERS=y
->  CONFIG_VIDEO_SAMSUNG_S5P_CEC=m
->  CONFIG_VIDEO_ADV7180=m
->  CONFIG_VIDEO_ML86V7667=m
-> +CONFIG_IMX_IPUV3_CORE=m
->  CONFIG_DRM=y
->  # CONFIG_DRM_I2C_CH7006 is not set
->  # CONFIG_DRM_I2C_SIL164 is not set
-> @@ -652,6 +653,11 @@ CONFIG_ROCKCHIP_ANALOGIX_DP=y
->  CONFIG_ROCKCHIP_DW_HDMI=y
->  CONFIG_ROCKCHIP_DW_MIPI_DSI=y
->  CONFIG_ROCKCHIP_INNO_HDMI=y
-> +CONFIG_DRM_IMX=m
-> +CONFIG_DRM_IMX_PARALLEL_DISPLAY=m
-> +CONFIG_DRM_IMX_TVE=m
-> +CONFIG_DRM_IMX_LDB=m
-> +CONFIG_DRM_IMX_HDMI=m
->  CONFIG_DRM_ATMEL_HLCDC=m
->  CONFIG_DRM_RCAR_DU=m
->  CONFIG_DRM_RCAR_LVDS=y
+> This patch series tries to enable suspend clk using
+> exynos dwc3 driver, for this I have added new
+> compatible string "samsung,exynos5420-dwusb3"
+> so that we could add new suspend clk in addition
+> to the core clk. exynos dwc3 driver will help
+> enable/disable these clk.
+>
+> -Anand
+>
+> Anand Moon (3):
+>   devicetree: bindings: exynos: Add new compatible for Exynos5420 dwc3
+>     clocks support
+>   ARM: dts: exynos: Add missing usbdrd3 suspend clk
+>   usb: dwc3: exynos: Add support for Exynos5422 suspend clk
+>
+>  Documentation/devicetree/bindings/usb/exynos-usb.txt | 4 +++-
+>  arch/arm/boot/dts/exynos5420.dtsi                    | 8 ++++----
+>  arch/arm/boot/dts/exynos54xx.dtsi                    | 4 ++--
+>  drivers/usb/dwc3/dwc3-exynos.c                       | 9 +++++++++
+>  4 files changed, 18 insertions(+), 7 deletions(-)
+>
 > --
-> 2.24.1
+> 2.25.0
 >
-
-
-ping
-
--- 
-greets
---
-Christian Gmeiner, MSc
-
-https://christian-gmeiner.info/privacypolicy
 
 _______________________________________________
 linux-arm-kernel mailing list
