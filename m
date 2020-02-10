@@ -2,81 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62696156D82
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 03:01:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21AC8156D98
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 03:28:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=i0RxMHJHARYLreSRf81RizpUBVj9QtWaa5sOpiP9XXE=; b=GZwA/KwcZP2T/Qhl8fhbSRK8d
-	eB0dDOV1VSWKz/EwgUXh+VKH8HkglP7nI8X9yF66BORGlb9Hn7+3p8v4gHPGLbUA6qIAt4C0hU/IU
-	G/iHXpgyL5WDIH91KZlARZUB+TQb4M3i165L5fvSQ5TR1XpAalXEhzOxRixwcFfHu/LOPmCaEzeWH
-	rTWbzodfdIgW2yUvQo87ywjyGF1vM0mh6nqrCnDDRtWGtiLLywpaGNT+OjY4Cgz3whIhe2i6JHVwM
-	UypAIiHZJ+e+TTrBieNfG1r2yLFVNSg4CY/ZMRFb3J9BszT9errwSfJHCNNKCeXw7Rpam+xY1Fx1y
-	X/GmrvCvA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I50vbrphYSdz4GK/KcaJnj1wp8xRQWP0ePySLxLb63Q=; b=JDpNaRTCrKjQ4u
+	7NqQRlNnHhlvcMg2cmtwO7agyC1RmvvYl3cta7OizQnAskZMHbQYHm2wcEEiyzcBDFhxhmzZBLFBR
+	aVWQYlQY0l/c58L/3P0IDmiM176yExvkvAvAPvZQhpGFyBfu3yo8++3LPDvHhVE/ols1bFVlNtZ/B
+	hTB8wtSbG0S5AlNilq94qWSLbXxOTt2z0g3rYENf46qPXvjvilELdaj2SDeBRh+qTOX256JW2FwNu
+	zOpvcaRDUiQKiIrMTLd3WnU/1PNhYiWx7/xEr36EMeJ0RUd2T9JwYpeXHa/28yC9fhU4VeIJLP+tK
+	UYJX2kIbdJXXIwLHdeCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0yNY-0007D4-Lx; Mon, 10 Feb 2020 02:00:52 +0000
-Received: from mail25.static.mailgun.info ([104.130.122.25])
+	id 1j0yoN-0006tK-01; Mon, 10 Feb 2020 02:28:35 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0yNR-0005di-Q6
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 02:00:47 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1581300046; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=kn1eCoX1vGFsUPSDIWx1LkICtUFdlC5DFGOw/o4zcls=;
- b=qXpPbmf/ROfS9ztv9xfqoNjt2pme1kd/fc0RtbaJWAxJkBkecFm+S+/gXj+UzR7APmkj1oTx
- RHJ5QSxi45iz4isV6VMD7+cvaHF2e/jkC7bJ/BY+dEcAPwcQaaRnLOoIyLTmfliUVHoeqvkC
- 4MYMx0DmSUObmFxQx7sGyPwfvYk=
-X-Mailgun-Sending-Ip: 104.130.122.25
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e40b949.7f39204587d8-smtp-out-n02;
- Mon, 10 Feb 2020 02:00:41 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id BC86AC4479C; Mon, 10 Feb 2020 02:00:41 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id BDCF7C43383;
- Mon, 10 Feb 2020 02:00:40 +0000 (UTC)
+ id 1j0yoF-0006sx-9R
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 02:28:28 +0000
+Received: by mail-qk1-x743.google.com with SMTP id a23so5150520qka.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 09 Feb 2020 18:28:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=A2hVfVVesl1I7h398CNSJxTmpIb+Kk1JFe2I8ygn1Xg=;
+ b=KOjhJo+j/14twubHUiQecoKuUMzxJsS2AExv5XM8clrpBmyY1O0IiCtrsp+JtqycO8
+ treo2jRBtklijyTDszDf6YngLha8w3jbTOIK9ckqgEXwW5yw1NMSbWVrf8SBN/ukoOm5
+ 0ayg/fAfeQ0vlXenhKzDCe6Djb2kFPnnKivJ4=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=A2hVfVVesl1I7h398CNSJxTmpIb+Kk1JFe2I8ygn1Xg=;
+ b=Buf3jBNRnQBgGoFB0m/8rOXj71uVyoZ894gt8kisfmyPP/iJ9gFFPnSQzXZL+3YpRM
+ NyVloHaJqHF1XommgmeeI0fP0qBxhM95hro+2z1DGF/W0oFPf67UgOQHYMusCBiR4Jh5
+ FyRcMPIvMeFET1Pmo8SNZDsdGkbZvZxuG9MnPDbI7QT4mxnOJTG4nFW4l3naT8zWjgoU
+ 7vMamtNXRjUKY8w6elmRalAkO5c5rvK6cmZkOvm4/k6JDqWPmGjLmzfXrCghv/ult/2A
+ 0eFx5gYnfEisUmnX4p6IPW9MF3KR2hNbuo3ci0Ee/lTEUzQ6gbxEOGPewowlutHN9YTv
+ t/oQ==
+X-Gm-Message-State: APjAAAX30lVvBAAHS44VHRXIf6deN2r9drJJ/3JMbmkDF4VlGhLLk6qL
+ ICBhcn2Bj208IhAtGnhwVCRCykDxv5OIRCgflMRh/g==
+X-Google-Smtp-Source: APXvYqzUlkkO8FdUe/RhG1U+nakzNskPxmR8Aa8M/wDnOL2BqgGPWFC9+/BP9Ggn8sDUkznCBnfkkds1gvWmNMOmwHY=
+X-Received: by 2002:a05:620a:c96:: with SMTP id
+ q22mr8923890qki.330.1581301704884; 
+ Sun, 09 Feb 2020 18:28:24 -0800 (PST)
 MIME-Version: 1.0
-Date: Mon, 10 Feb 2020 10:00:40 +0800
-From: Can Guo <cang@codeaurora.org>
-To: Avri Altman <Avri.Altman@wdc.com>
-Subject: Re: [PATCH 5/7] scsi: ufs: Fix ufshcd_hold() caused scheduling while
- atomic
-In-Reply-To: <MN2PR04MB69919F988AA4F1B7BD36408BFC1E0@MN2PR04MB6991.namprd04.prod.outlook.com>
-References: <1581123030-12023-1-git-send-email-cang@codeaurora.org>
- <1581123030-12023-6-git-send-email-cang@codeaurora.org>
- <MN2PR04MB69919F988AA4F1B7BD36408BFC1E0@MN2PR04MB6991.namprd04.prod.outlook.com>
-Message-ID: <c89901f4e7f2c7200d1aefe55e3c9fb4@codeaurora.org>
-X-Sender: cang@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+References: <20200204224908.19967-1-eajames@linux.ibm.com>
+ <20200204224908.19967-2-eajames@linux.ibm.com>
+In-Reply-To: <20200204224908.19967-2-eajames@linux.ibm.com>
+From: Joel Stanley <joel@jms.id.au>
+Date: Mon, 10 Feb 2020 02:28:13 +0000
+Message-ID: <CACPK8XcYSoAM0VZFZSnVTRXHsEcib+-s8e3p7HD67VV35hEA=Q@mail.gmail.com>
+Subject: Re: [PATCH 1/2] ARM: dts: aspeed: ast2500: Fix SCU IRQ controller
+ node address
+To: Eddie James <eajames@linux.ibm.com>, Andrew Jeffery <andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_180046_706687_AC21F15E 
-X-CRM114-Status: GOOD (  13.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200209_182827_373069_D06A7ED6 
+X-CRM114-Status: GOOD (  14.08  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.25 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [joel.stan[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,74 +94,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:ARM/Mediatek SoC support"
- <linux-arm-kernel@lists.infradead.org>, Stanley Chu <stanley.chu@mediatek.com>,
- rnayak@codeaurora.org, saravanak@google.com, linux-scsi@vger.kernel.org,
- Venkat Gopalakrishnan <venkatg@codeaurora.org>,
- "James E.J. Bottomley" <jejb@linux.ibm.com>, nguyenb@codeaurora.org,
- open list <linux-kernel@vger.kernel.org>, "moderated list:ARM/Mediatek SoC
- support" <linux-mediatek@lists.infradead.org>, salyzyn@google.com,
- Alim Akhtar <alim.akhtar@samsung.com>,
- "Martin K. Petersen" <martin.petersen@oracle.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Tomas Winkler <tomas.winkler@intel.com>, Bean Huo <beanhuo@micron.com>,
- kernel-team@android.com, Bart Van Assche <bvanassche@acm.org>,
- hongwus@codeaurora.org, asutoshd@codeaurora.org
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-09 15:48, Avri Altman wrote:
-> You didn't address any of my comments to this patch.
-> 
-> Thanks,
-> Avri
+On Tue, 4 Feb 2020 at 22:49, Eddie James <eajames@linux.ibm.com> wrote:
+>
+> The node was defined with a unit address but had no reg property,
+> resulting in a warning. The address is unecessary, so drop it.
 
-Replied in that thread.
+Please add a reg property instead of removing the unit address.
 
-Thanks,
-Can Guo.
+The hardware still lives at that address, even if your driver doesn't
+currently use that information.
 
->> 
->> The async version of ufshcd_hold(async == true), which is only called
->> in queuecommand path as for now, is expected to work in atomic 
->> context,
->> thus it should not sleep or schedule out. When it runs into the 
->> condition
->> that clocks are ON but link is still in hibern8 state, it should bail 
->> out
->> without flushing the clock ungate work.
->> 
->> Signed-off-by: Can Guo <cang@codeaurora.org>
->> Reviewed-by: Hongwu Su <hongwus@codeaurora.org>
->> Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
->> Reviewed-by: Bean Huo <beanhuo@micron.com>
->> Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
->> 
->> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
->> index bbc2607..e8f7f9d 100644
->> --- a/drivers/scsi/ufs/ufshcd.c
->> +++ b/drivers/scsi/ufs/ufshcd.c
->> @@ -1518,6 +1518,11 @@ int ufshcd_hold(struct ufs_hba *hba, bool 
->> async)
->>                  */
->>                 if (ufshcd_can_hibern8_during_gating(hba) &&
->>                     ufshcd_is_link_hibern8(hba)) {
->> +                       if (async) {
->> +                               rc = -EAGAIN;
->> +                               hba->clk_gating.active_reqs--;
->> +                               break;
->> +                       }
->>                         spin_unlock_irqrestore(hba->host->host_lock, 
->> flags);
->>                         flush_work(&hba->clk_gating.ungate_work);
->>                         spin_lock_irqsave(hba->host->host_lock, 
->> flags);
->> --
->> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora
->> Forum,
->> a Linux Foundation Collaborative Project
+Cheers,
+
+Joel
+
+>
+> Signed-off-by: Eddie James <eajames@linux.ibm.com>
+> ---
+>  arch/arm/boot/dts/aspeed-g5.dtsi | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/arch/arm/boot/dts/aspeed-g5.dtsi b/arch/arm/boot/dts/aspeed-g5.dtsi
+> index 569f9d74c696..aeee18fc1e7e 100644
+> --- a/arch/arm/boot/dts/aspeed-g5.dtsi
+> +++ b/arch/arm/boot/dts/aspeed-g5.dtsi
+> @@ -222,7 +222,7 @@ syscon: syscon@1e6e2000 {
+>                                 #clock-cells = <1>;
+>                                 #reset-cells = <1>;
+>
+> -                               scu_ic: interrupt-controller@18 {
+> +                               scu_ic: interrupt-controller {
+>                                         #interrupt-cells = <1>;
+>                                         compatible = "aspeed,ast2500-scu-ic";
+>                                         interrupts = <21>;
+> --
+> 2.24.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
