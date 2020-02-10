@@ -2,63 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC1D715818D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:40:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DD981581A0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 18:46:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TSkNtJtjIoSr/62c5DOyDZtDgiJ0dcALujbHRgNsYKI=; b=GNucPP0nvcGQuC
-	yUnsWRIku4J5fbmJ8AdFasVFdBuY//97qU3U+YKOnwTXpSXp2/1oahQBTZT7oiAQ4yN/7XuYJYtQ0
-	8E90UjcZXwwA5bLGjsxtjnAqffN6TJ43IvW/tVFinGV7fvw/lRf3rF1BwqosPDFFDrqzpevGnmAq5
-	2fHWesWgb1M3ZmqU84WbbOzd01/YntWd/zQYuFnSpiLr/r79y/D378y5ltPfthvG5hAjB5pc6GcXe
-	wQanWJ5X1K5YDrJ7jShFG/UmLfe4d++t6uJmY2DHt82vG5kESVVNq4pIZIrxsbzwSCehWoeDSMTSp
-	EOZDKVdr+EL+hw7sil1Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pZNocAqpBM8j6v+uq2lTMEdczSIRLH2Ln+qR1ejvgV4=; b=YdzjBNeJVQlm4E
+	bMF1xH/7LmzqEdqJFp82RQSfP/3ustsWxtWuaFQPk04fi8ArN302pq9pKuxnlwjTQ8HwPrXqQjTDI
+	Fy0SJFay5iRXFbdQyS32vnb9ZaNj0GHEKnt1L3RpfcFFAVSdNzQWflDRvUds0hOGhNQiII+ZKtHL2
+	EzK4KNTf+/GKcm5R98xVSyELy86BK/jFqLQKCCESMvUpaPytd9PLbj20aklLaFXnzFf7ZWQBAgEi+
+	O8f0oi9oCx7aaR+DL+ftyTGMPzMm8edVsKu8jzC54dR6Arycuz32d1L1v3EfQ3hZsMLD1JgTXj3H0
+	1oTttvG9SvMN9iwupJWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1D2n-0000I2-CF; Mon, 10 Feb 2020 17:40:25 +0000
-Received: from mailoutvs14.siol.net ([185.57.226.205] helo=mail.siol.net)
+	id 1j1D8T-0002gT-Oy; Mon, 10 Feb 2020 17:46:17 +0000
+Received: from mail-yw1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1D2f-0000HR-E4
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:40:19 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 82FA6521C36;
- Mon, 10 Feb 2020 18:40:14 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id Y_pJR8agbzzQ; Mon, 10 Feb 2020 18:40:14 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 34FE5521C76;
- Mon, 10 Feb 2020 18:40:14 +0100 (CET)
-Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
- [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 9E060521C36;
- Mon, 10 Feb 2020 18:40:13 +0100 (CET)
-From: Jernej Skrabec <jernej.skrabec@siol.net>
-To: mripard@kernel.org,
-	wens@csie.org
-Subject: [PATCH v2] arm64: dts: allwinner: h6: orangepi-3: Add eMMC node
-Date: Mon, 10 Feb 2020 18:40:07 +0100
-Message-Id: <20200210174007.118575-1-jernej.skrabec@siol.net>
-X-Mailer: git-send-email 2.25.0
+ id 1j1D8J-0002ez-VJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 17:46:09 +0000
+Received: by mail-yw1-xc41.google.com with SMTP id 10so3806683ywv.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Feb 2020 09:46:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=c1zhLfQHfrUfvkp0MTuGkuwB8y82vgQU4IfRGdXFd5k=;
+ b=bVqj8QgM5OlikSgs9Kf4RXNCDtoJmQ8E9efAXgds9jlaEE8+UbeRTMgRb5fstC1Mhx
+ k/uub/bsuUK6xPR8j7coolX+ew3ilVxeZCq31NwF6TXcA2Hb+LoyfERWncfohs0bkU8V
+ WzGgCq76QV9mI4MUzvzifjm9XDvYFWfdfASEavK/AQmrfXaLldxGckLWZfEVqzJb11wM
+ ujgBmMnXoXLnfrsQx+fmI9MSue6BDkhA7xo4fdq/IwQomihaNVIb7irhAhenqAd3NMz3
+ SW28jXWBvrBDX+ft5xVZrOB4r+LSEAuyLMsSsdwdOaWorFAzJR9abp4BwrzfMFfhAWt6
+ u5cw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=c1zhLfQHfrUfvkp0MTuGkuwB8y82vgQU4IfRGdXFd5k=;
+ b=Gr/60zlYt06+yhfh/I1mgO0QRAt0P81gl4hMAzlhrcRRyWnaTCxoRa/L2wqeYGedFK
+ wmSCbkixO7IB0UUz4Ql39zSvbna/c/WCjCUwa5yn3bQ3OHMoW9uq3hbs1D0K/4uLQ4Tn
+ 4CXqjfAHNAzE0Zc5hx7ac/J2w0haoZgdAiJ2pY7+EZKusdhxpzL74Nh8CcKMgoftaMVE
+ 4lLQn79/J82gwZaMZW5FBL7vO2VoO0MQw3Q6S+ggvfJxHwhxNDcP5RZ8OwWOkIbI9iVh
+ wJQdOTETr5iZqrJFQVx/bFoEY1O1GsAPc48mIuvWGDar3TbdwroYZA5zSKussd3PR0Ls
+ sndA==
+X-Gm-Message-State: APjAAAXm4PXhZIh97KU33vFUlohMB4JOUYiRm4CFt1ymjIM5Sou4yyrS
+ 05ZtweRUD6YK49c24Sjee20=
+X-Google-Smtp-Source: APXvYqylUh8O1JaCDocqRa9z5ZfVTr6cLqiL1RjJNIIGfFN2TwYqpRxHFKwWH3DBkxpkZ9FGw44sOg==
+X-Received: by 2002:a0d:cb54:: with SMTP id n81mr1817971ywd.375.1581356766107; 
+ Mon, 10 Feb 2020 09:46:06 -0800 (PST)
+Received: from icarus (072-189-064-225.res.spectrum.com. [72.189.64.225])
+ by smtp.gmail.com with ESMTPSA id m62sm530815ywb.107.2020.02.10.09.46.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 10 Feb 2020 09:46:05 -0800 (PST)
+Date: Mon, 10 Feb 2020 12:45:50 -0500
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH v2] counter: stm32-timer-cnt: add power management support
+Message-ID: <20200210174550.GA4626@icarus>
+References: <1581355198-30428-1-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1581355198-30428-1-git-send-email-fabrice.gasnier@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_094017_630330_0A62EE25 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200210_094608_010442_2296AE30 
+X-CRM114-Status: GOOD (  19.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.205 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [vilhelm.gray[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,51 +98,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
+ jic23@kernel.org, benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-OrangePi 3 can optionally have 8 GiB eMMC (soldered on board). Because
-those pins are dedicated to eMMC exclusively, node can be added for both
-variants (with and without eMMC). Kernel will then scan bus for presence
-of eMMC and act accordingly.
+On Mon, Feb 10, 2020 at 06:19:58PM +0100, Fabrice Gasnier wrote:
+> Add suspend/resume PM sleep ops. When going to low power, enforce the
+> counter isn't active. Gracefully restore its state upon resume in case
+> it's been left enabled prior to suspend.
+> 
+> Acked-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> ---
+> Changes in v2:
+> - Don't refuse to suspend in case the counter has been left enabled.
+>   Gracefully disable it and restore its state upon resume.
+> ---
+>  drivers/counter/stm32-timer-cnt.c | 63 +++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 63 insertions(+)
+> 
+> diff --git a/drivers/counter/stm32-timer-cnt.c b/drivers/counter/stm32-timer-cnt.c
+> index 3eafcce..50496f4 100644
+> --- a/drivers/counter/stm32-timer-cnt.c
+> +++ b/drivers/counter/stm32-timer-cnt.c
+> @@ -12,6 +12,7 @@
+>  #include <linux/iio/types.h>
 
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
----
-Changes since v1:
-- don't make separate DT just for -emmc variant - add node to existing
-  orangepi 3 DT
+Unrelated to your patch but it caught my eye: are iio headers necessary
+for this file? I suspect they are not needed since this driver does not
+make use of the IIO interface.
 
- arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts | 9 +++++++++
- 1 file changed, 9 insertions(+)
+William Breathitt Gray
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-index c311eee52a35..1e0abd9d047f 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-@@ -144,6 +144,15 @@ brcm: sdio-wifi@1 {
- 	};
- };
- 
-+&mmc2 {
-+	vmmc-supply = <&reg_cldo1>;
-+	vqmmc-supply = <&reg_bldo2>;
-+	cap-mmc-hw-reset;
-+	non-removable;
-+	bus-width = <8>;
-+	status = "okay";
-+};
-+
- &ohci0 {
- 	status = "okay";
- };
--- 
-2.25.0
-
+>  #include <linux/mfd/stm32-timers.h>
+>  #include <linux/module.h>
+> +#include <linux/pinctrl/consumer.h>
+>  #include <linux/platform_device.h>
+>  
+>  #define TIM_CCMR_CCXS	(BIT(8) | BIT(0))
+> @@ -20,11 +21,20 @@
+>  #define TIM_CCER_MASK	(TIM_CCER_CC1P | TIM_CCER_CC1NP | \
+>  			 TIM_CCER_CC2P | TIM_CCER_CC2NP)
+>  
+> +struct stm32_timer_regs {
+> +	u32 cr1;
+> +	u32 cnt;
+> +	u32 smcr;
+> +	u32 arr;
+> +};
+> +
+>  struct stm32_timer_cnt {
+>  	struct counter_device counter;
+>  	struct regmap *regmap;
+>  	struct clk *clk;
+>  	u32 ceiling;
+> +	bool enabled;
+> +	struct stm32_timer_regs bak;
+>  };
+>  
+>  /**
+> @@ -224,6 +234,9 @@ static ssize_t stm32_count_enable_write(struct counter_device *counter,
+>  			clk_disable(priv->clk);
+>  	}
+>  
+> +	/* Keep enabled state to properly handle low power states */
+> +	priv->enabled = enable;
+> +
+>  	return len;
+>  }
+>  
+> @@ -358,10 +371,59 @@ static int stm32_timer_cnt_probe(struct platform_device *pdev)
+>  	priv->counter.num_signals = ARRAY_SIZE(stm32_signals);
+>  	priv->counter.priv = priv;
+>  
+> +	platform_set_drvdata(pdev, priv);
+> +
+>  	/* Register Counter device */
+>  	return devm_counter_register(dev, &priv->counter);
+>  }
+>  
+> +static int __maybe_unused stm32_timer_cnt_suspend(struct device *dev)
+> +{
+> +	struct stm32_timer_cnt *priv = dev_get_drvdata(dev);
+> +
+> +	/* Only take care of enabled counter: don't disturb other MFD child */
+> +	if (priv->enabled) {
+> +		/* Backup registers that may get lost in low power mode */
+> +		regmap_read(priv->regmap, TIM_SMCR, &priv->bak.smcr);
+> +		regmap_read(priv->regmap, TIM_ARR, &priv->bak.arr);
+> +		regmap_read(priv->regmap, TIM_CNT, &priv->bak.cnt);
+> +		regmap_read(priv->regmap, TIM_CR1, &priv->bak.cr1);
+> +
+> +		/* Disable the counter */
+> +		regmap_update_bits(priv->regmap, TIM_CR1, TIM_CR1_CEN, 0);
+> +		clk_disable(priv->clk);
+> +	}
+> +
+> +	return pinctrl_pm_select_sleep_state(dev);
+> +}
+> +
+> +static int __maybe_unused stm32_timer_cnt_resume(struct device *dev)
+> +{
+> +	struct stm32_timer_cnt *priv = dev_get_drvdata(dev);
+> +	int ret;
+> +
+> +	ret = pinctrl_pm_select_default_state(dev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (priv->enabled) {
+> +		clk_enable(priv->clk);
+> +
+> +		/* Restore registers that may have been lost */
+> +		regmap_write(priv->regmap, TIM_SMCR, priv->bak.smcr);
+> +		regmap_write(priv->regmap, TIM_ARR, priv->bak.arr);
+> +		regmap_write(priv->regmap, TIM_CNT, priv->bak.cnt);
+> +
+> +		/* Also re-enables the counter */
+> +		regmap_write(priv->regmap, TIM_CR1, priv->bak.cr1);
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static SIMPLE_DEV_PM_OPS(stm32_timer_cnt_pm_ops, stm32_timer_cnt_suspend,
+> +			 stm32_timer_cnt_resume);
+> +
+>  static const struct of_device_id stm32_timer_cnt_of_match[] = {
+>  	{ .compatible = "st,stm32-timer-counter", },
+>  	{},
+> @@ -373,6 +435,7 @@ static struct platform_driver stm32_timer_cnt_driver = {
+>  	.driver = {
+>  		.name = "stm32-timer-counter",
+>  		.of_match_table = stm32_timer_cnt_of_match,
+> +		.pm = &stm32_timer_cnt_pm_ops,
+>  	},
+>  };
+>  module_platform_driver(stm32_timer_cnt_driver);
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
