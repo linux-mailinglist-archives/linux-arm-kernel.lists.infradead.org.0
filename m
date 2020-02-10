@@ -2,100 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D52C7157287
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 11:07:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C1FE1572BE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 11:17:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8TX4AHzBK2kj37cpH96Br8yHhBEHB7BIdoUJseb+tUw=; b=H18aARrm2vaDFs
-	M4N1VvyCDBWtKo19ecKjBv+QmYzCXoqV1d7QppO4QXQvgmu71vN+Wx55EdDI/OJl1MwB/zzCZH/+q
-	jAEHJ2vQeHh0abxD4WujWqsIHA7RZO3dAjAUqUdZOOARwRngWLAOpBsUJ+P2xGUqoQVcfOb5xADIM
-	LCEPSysWDdWlb+PLsXk4Sg1eAbkZDmoQXsy9rOD1tX0+itzyatQdrRwF0KHoDtM7raNRMESy1S98v
-	pPRpHcTwY0/wl6C+vSjVfFugby7rDNnGN6ELwgOjPaB0f4NyjduyA3V32a3kVQb3bgpd1o/QnWd8Q
-	gGznf17ruZGFouvHc3Cg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=pL8i/3dLyL9XIDlUA6TeCRejVL1+SmnEAh8yOsgS7KM=; b=cA/GarH8RRrlKv
+	FbrnJlVVOrcFwVeXoEHyzdxC24gJLPXsbjs6hXoWIgFWq11HodCS/Acf/w9FgsHOHJZWkALuZsVBe
+	NN6ZLFIgxh7+hPqLSlMbGH5Mj0yNH+rHamN7qZfmarLzXr/TyGnJgHfzTJgHbox/2iNARWx8eyfa2
+	29+aJGrFWBZRMhJj/3bt783sED22Q/K7/uCmAp5OhJtVvvxt5SfLQBYOIkgB7TwmF9YmrMY7lrNPs
+	Lx1bYo1Dwrz/JYN5WRO43s9/AQD5IBlnk61VH1IL7DcpGuHQvTNDoq8p/O1U7tpE3yS7J2CQZadst
+	rmw6DJ7swaYhYNOpJNBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j15ym-0007i7-0c; Mon, 10 Feb 2020 10:07:48 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1j168O-0003Sf-KV; Mon, 10 Feb 2020 10:17:44 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j15yQ-0007WD-N4
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 10:07:28 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 2092721F18;
- Mon, 10 Feb 2020 05:07:26 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Mon, 10 Feb 2020 05:07:26 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=2JmA5h++vuWm1
- H1qeV91zQriXeCwg4vJQ5x7RcqWqoo=; b=capTjsEKo9yve17a9POeeXTBQ0Kjr
- bmscqHfOpotz5z6g7jAxDU87nkesdYuVLEbD0854u+hSpBe/wOJXyVIVaJUCrzqD
- hrxczGcJZ+wrcipM8xNe4Xc+mDjq1Z0vr7W9v78Fz11XP5xbaCwW8O19EYosluv9
- nkYahjEVHM33FyjFj6D/sU87hxOpGxN3nLlXkXugOsbCU/saOg2efRJuKrIIC69X
- NPGkMNdTRd3cj/kqQhFLoLraWO2vZKnqsU7iOJhEfizjkkjeSkVBgQd9uwERF/25
- 4DIR4b8ZMzZL/upu0X8PcfHR3ibAVkCzdn2l6+hADaEdLlwgkE4JkqcyA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=2JmA5h++vuWm1H1qeV91zQriXeCwg4vJQ5x7RcqWqoo=; b=3L+OLvHw
- Cjbu+1S6Xs79+/1/Xz2Sz4p+CKGdN3xaBfKbAG1ni2CP4fJI9Xc2gr6kFiNiIPst
- 9IX00VLDXA0GIJ9ttvpmkqhXzs3a+3wbUTzn7tMlUKoyVM0AcE3xlkEI5cfs/5UC
- sdt7pdfer+rqcl1t52Ura9j4AMqfDvzOfCRdlbu7IMVrO+NarU5XgaHhMp0mMrEh
- DbQtUYdB9ZRt0Ob8gZKkj2gwYe1UGCjLh43qwD3E+fkcKaMkjFLASliFihHp7+h8
- fG0re/aS8IWjYnNQOD3sLmuzqZhucUg/MhqzByyFe8DhWpauy985UhkQBf/G7iNV
- 7+DYgR1gI1CCvQ==
-X-ME-Sender: <xms:XitBXk9rsDYnO9uZ_bP3eeYzFuF_-eIyDG3_ziqNiJBl1W9oIaiPfg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedugdduudcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtkeertd
- ertddtnecuhfhrohhmpeforgigihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghr
- nhhordhtvggthheqnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuih
- iivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordht
- vggthh
-X-ME-Proxy: <xmx:XitBXisiXRELrMc6d0XxW7SWR8oierDkVCL1sj8O1xPmVM7FMddzRw>
- <xmx:XitBXk2Xvm5Vb1vWm9IEWXgaSG4PL1e5xY-zCRufz1nVb-eERxYM1A>
- <xmx:XitBXnSqg2b76vQfpJjGjhd372FBHuZn-QPbxOa4jRO5lpxhQPI_dw>
- <xmx:XitBXp0SHNBLzgBXnB_-at9mJVY7h-UehFy8fWg0ujncKhbxLidIzQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id B92F1328005E;
- Mon, 10 Feb 2020 05:07:25 -0500 (EST)
-From: Maxime Ripard <maxime@cerno.tech>
-To: Chen-Yu Tsai <wens@csie.org>,
-	Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH 2/2] ARM: dts: sunxi: Remove redundant assigned-clocks
-Date: Mon, 10 Feb 2020 11:07:18 +0100
-Message-Id: <20200210100718.78951-2-maxime@cerno.tech>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200210100718.78951-1-maxime@cerno.tech>
-References: <20200210100718.78951-1-maxime@cerno.tech>
+ id 1j168I-0002rR-87
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 10:17:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
+ Content-Transfer-Encoding:MIME-Version:Subject:To:From:Reply-To:Cc:Content-ID
+ :Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:
+ Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=eMz09a6YKzgI2+eat6dObdocEEZZF71ptqYTvO8FOgQ=; b=aOU4AV6Dk07jZkMEasYC0SHXlm
+ JSquBGoft3FHlXtFUUOsOjY+o7TX7zvS3KDhS+558mHCbUsaNYHLrq6LvE75qMUDVW1bOjPnaqyT5
+ y/i4ofUZdN1SAtPhZwc/I39QWxGTv4OCXKp72LrCrCAw7TCdiPDpPYh+EiQUCBFfWkxX4E2LWeuXG
+ 5QiwsX11f0lZfbPweyNOg5vLsTKh9WUaNffsdxK7shvsEh8PdplChtC0vz8EIIFUoEzzG7Kxe1OOp
+ mj3z3VKS3ID60kXGq5rz+RBDLDCVayDz4z1Og7Fv3J86DmZb5e7lCwnqGDkpOwv6qYy1pRLkMzxik
+ aqSo1W4Q==;
+Received: from e0022681537dd.dyn.armlinux.org.uk
+ ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:43382 helo=rmk-PC.armlinux.org.uk)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1j166E-00064d-IJ; Mon, 10 Feb 2020 10:15:30 +0000
+Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <rmk@armlinux.org.uk>)
+ id 1j166D-0005ct-VG; Mon, 10 Feb 2020 10:15:30 +0000
+From: Russell King <rmk+kernel@armlinux.org.uk>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: allow unwinder to unwind recursive functions
 MIME-Version: 1.0
+Content-Disposition: inline
+Message-Id: <E1j166D-0005ct-VG@rmk-PC.armlinux.org.uk>
+Date: Mon, 10 Feb 2020 10:15:29 +0000
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_020726_894452_15264B4B 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200210_021738_290526_B7AA8BE1 
+X-CRM114-Status: GOOD (  10.41  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.28 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,63 +83,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The display DRC nodes have an assigned clocks property, while the driver
-also enforces it.
+Allow the unwinder to unwind recursive functions if the stack makes
+progress, even if the PC is the same. This allows tracing through
+recursive __switchdev_handle_port_attr_set() and similar.
 
-Since assigned-clocks is pretty fragile anyway, let's just remove it.
-
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 ---
- arch/arm/boot/dts/sun6i-a31.dtsi     | 6 ------
- arch/arm/boot/dts/sun8i-a23-a33.dtsi | 3 ---
- 2 files changed, 9 deletions(-)
+ arch/arm/kernel/unwind.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/sun6i-a31.dtsi b/arch/arm/boot/dts/sun6i-a31.dtsi
-index f41440ecbdad..f3425a66fc0a 100644
---- a/arch/arm/boot/dts/sun6i-a31.dtsi
-+++ b/arch/arm/boot/dts/sun6i-a31.dtsi
-@@ -1182,9 +1182,6 @@ drc1: drc@1e50000 {
- 				      "ram";
- 			resets = <&ccu RST_AHB1_DRC1>;
+diff --git a/arch/arm/kernel/unwind.c b/arch/arm/kernel/unwind.c
+index 4574e6aea0a5..11a964fd66f4 100644
+--- a/arch/arm/kernel/unwind.c
++++ b/arch/arm/kernel/unwind.c
+@@ -444,7 +444,7 @@ int unwind_frame(struct stackframe *frame)
+ 		ctrl.vrs[PC] = ctrl.vrs[LR];
  
--			assigned-clocks = <&ccu CLK_IEP_DRC1>;
--			assigned-clock-rates = <300000000>;
--
- 			ports {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
-@@ -1268,9 +1265,6 @@ drc0: drc@1e70000 {
- 				      "ram";
- 			resets = <&ccu RST_AHB1_DRC0>;
+ 	/* check for infinite loop */
+-	if (frame->pc == ctrl.vrs[PC])
++	if (frame->pc == ctrl.vrs[PC] && frame->sp == ctrl.vrs[SP])
+ 		return -URC_FAILURE;
  
--			assigned-clocks = <&ccu CLK_IEP_DRC0>;
--			assigned-clock-rates = <300000000>;
--
- 			ports {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
-diff --git a/arch/arm/boot/dts/sun8i-a23-a33.dtsi b/arch/arm/boot/dts/sun8i-a23-a33.dtsi
-index 48487f6d4ab9..c1362d0f0ff8 100644
---- a/arch/arm/boot/dts/sun8i-a23-a33.dtsi
-+++ b/arch/arm/boot/dts/sun8i-a23-a33.dtsi
-@@ -684,9 +684,6 @@ drc0: drc@1e70000 {
- 			clock-names = "ahb", "mod", "ram";
- 			resets = <&ccu RST_BUS_DRC>;
- 
--			assigned-clocks = <&ccu CLK_DRC>;
--			assigned-clock-rates = <300000000>;
--
- 			ports {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
+ 	frame->fp = ctrl.vrs[FP];
 -- 
-2.24.1
+2.20.1
 
 
 _______________________________________________
