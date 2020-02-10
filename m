@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 482EF157F46
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 16:55:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19D08157F61
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 17:03:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1zzaAw437w2HDwr1Ky5kz6AOd0cE3oQrDchwV9SR5OA=; b=j1mumPZIdulY+P/6hM0zHHT4L
-	tlYknuHxX+ZdYDzaq9oIQY395HIM2DAMERXDAb/ut57gbohhjDFats4PkTlLpFtaUPyGn09xJqxPH
-	IKPR5li+7iBFA/1/amUIRlsw4gEW8Eo/Z+9KshvvorAoMRhUNctVY568wFFypZtRanrQST/LCkEW4
-	3De2jBD76hOMA7AjswtLdBIjtJb7sVrbB+cDJjkN847eZTS406aVnxWJ/iNAsqoTROAY/a6rBbkHz
-	OUY3vD/L7kD5G6bgegopTcZnDXyTHQqaysVI8WL3bZlqqRYhChJ8GGOsqSj0BbYztsP1lLK1XNoRy
-	lywwRBQ9Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8u8Xal06baFtaZZH+30Coy9igIs+kqpt6hjrgxeGPhc=; b=YKhy2XTNlOW7ey
+	L6L03goPgvVfpD7LU4jLjDKmhaL6XFBlhedCWshy4m56yeztQLrKQtUsOGy4v8hE/tccfWVfBvii/
+	LrJso9lIJJTGT+i+Jpyz3e0pZ4yOKJMyLqkuK3bMznBLQTokgSJCS6SqfhMZbQEayx/z2LdaPitnM
+	VNy8T4JA56NEYogHVsUhlsYz2xNNz9SXJor8m95tmrc2r2KBuW2c1ljIxbX9qBI76skLCSGr73rTZ
+	3bFHXdcVjcrflYd440cRU8/z6VJ0jlY1xHDCRfQ7+a5tF/k8MdBsDcXP00xxLgSGyVkHARFG1uSYO
+	6xP6+mrqyKaTT9CjpvIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1BOy-0003ZP-Lx; Mon, 10 Feb 2020 15:55:12 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1j1BWb-0006Vg-Ts; Mon, 10 Feb 2020 16:03:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1BOq-0002f6-Fc
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 15:55:06 +0000
-Received: from lhreml709-cah.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id 06EF21ADA86E6B7EE9B3;
- Mon, 10 Feb 2020 15:55:02 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml709-cah.china.huawei.com (10.201.108.32) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Mon, 10 Feb 2020 15:55:01 +0000
-Received: from [127.0.0.1] (10.202.226.45) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Mon, 10 Feb
- 2020 15:55:01 +0000
-Subject: Re: [PATCH RFC 3/7] perf jevents: Add support for a system events PMU
-To: Jiri Olsa <jolsa@redhat.com>
-References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <1579876505-113251-4-git-send-email-john.garry@huawei.com>
- <20200210120749.GF1907700@krava>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <b148f0b6-d2ae-6520-8da1-7aed2c9e1d6b@huawei.com>
-Date: Mon, 10 Feb 2020 15:55:00 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1j1BWR-0006VN-Oe
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 16:02:57 +0000
+Received: from localhost (unknown [104.132.1.111])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D901F20714;
+ Mon, 10 Feb 2020 16:02:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581350574;
+ bh=Q1XxZ284hQvopL8PCMcaI9qTASKF2EAuLbBnEBfyQnM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=KH79nf1ri/XHVY4R08gLMdl57id1OmMitFv2f+ol0fy7pY7cWZ3eP/UroEDbgXJKC
+ skHb6ZOkWkdrSCibg/ncszrU/hE5GupyfQkgS7OsiL/+ezry2keuJql93DC2kWK1BG
+ DM7mu/rpb+He9yFdZBNE3M7KXS9hCm7Hndj7d1Io=
+Date: Mon, 10 Feb 2020 08:02:52 -0800
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Dietmar Eggemann <dietmar.eggemann@arm.com>
+Subject: Re: [PATCH] drivers base/arch_topology: Remove 'struct sched_domain'
+ forward declaration
+Message-ID: <20200210160252.GA702121@kroah.com>
+References: <20200210152420.10608-1-dietmar.eggemann@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200210120749.GF1907700@krava>
-Content-Language: en-US
-X-Originating-IP: [10.202.226.45]
-X-ClientProxiedBy: lhreml720-chm.china.huawei.com (10.201.108.71) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200210152420.10608-1-dietmar.eggemann@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_075504_688437_D2EC7086 
-X-CRM114-Status: GOOD (  18.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200210_080255_828575_AA80B998 
+X-CRM114-Status: GOOD (  13.92  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,89 +72,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ak@linux.intel.com, suzuki.poulose@arm.com,
- peterz@infradead.org, robin.murphy@arm.com, linuxarm@huawei.com,
- acme@kernel.org, linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, james.clark@arm.com,
- namhyung@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Juri Lelli <juri.lelli@redhat.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 10/02/2020 12:07, Jiri Olsa wrote:
-> On Fri, Jan 24, 2020 at 10:35:01PM +0800, John Garry wrote:
+On Mon, Feb 10, 2020 at 04:24:20PM +0100, Dietmar Eggemann wrote:
+> The sched domain pointer argument from topology_get_freq_scale() and
+> topology_get_cpu_scale() got removed by commit 7673c8a4c75d
+> ("sched/cpufreq: Remove arch_scale_freq_capacity()'s 'sd' parameter")
+> and commit 8ec59c0f5f49 ("sched/topology: Remove unused 'sd' parameter
+> from arch_scale_cpu_capacity()").
 > 
-> SNIP
+> So the 'struct sched_domain' forward declaration is no longer needed.
+> Remove it.
 > 
->>   	- Set of 'PMU events tables' for all known CPUs in the architecture,
->> @@ -83,11 +93,11 @@ NOTES:
->>   	2. The 'pmu-events.h' has an extern declaration for the mapping table
->>   	   and the generated 'pmu-events.c' defines this table.
->>   
->> -	3. _All_ known CPU tables for architecture are included in the perf
->> -	   binary.
->> +	3. _All_ known CPU and system tables for architecture are included in
->> +	   the perf binary.
->>   
->> -At run time, perf determines the actual CPU it is running on, finds the
->> -matching events table and builds aliases for those events. This allows
->> +At run time, perf determines the actual CPU or system it is running on, finds
->> +the matching events table and builds aliases for those events. This allows
->>   users to specify events by their name:
->>   
->>   	$ perf stat -e pm_1plus_ppc_cmpl sleep 1
->> @@ -150,3 +160,18 @@ where:
->>   
->>   	i.e the three CPU models use the JSON files (i.e PMU events) listed
->>   	in the directory 'tools/perf/pmu-events/arch/x86/silvermont'.
->> +
->> +The mapfile_sys.csv format is slightly different, in that it contains a SYSID
->> +instead of the CPUID:
->> +
->> +	Header line
->> +	SYSID,Version,Dir/path/name,Type
+> W/o the sched domain pointer argument the storage class and inline
+> definition as well as the return type, function name and parameter list
+> fit all into one line.
 > 
-
-Hi jirka,
-
-> can't we just add prefix to SYSID types? like:
+> Signed-off-by: Dietmar Eggemann <dietmar.eggemann@arm.com>
+> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+> ---
+>  include/linux/arch_topology.h | 7 ++-----
+>  1 file changed, 2 insertions(+), 5 deletions(-)
 > 
-> 	SYSID-HIP08,v1,hisilicon/hip08/sys,sys
-> 	0x00000000480fd010,v1,hisilicon/hip08/cpu,core
-> 	0x00000000500f0000,v1,ampere/emag,core
-> 
-> because the rest of the line is the same, right?
+> diff --git a/include/linux/arch_topology.h b/include/linux/arch_topology.h
+> index 3015ecbb90b1..c507e9ddd909 100644
+> --- a/include/linux/arch_topology.h
+> +++ b/include/linux/arch_topology.h
+> @@ -16,9 +16,7 @@ bool topology_parse_cpu_capacity(struct device_node *cpu_node, int cpu);
+>  
+>  DECLARE_PER_CPU(unsigned long, cpu_scale);
+>  
+> -struct sched_domain;
+> -static inline
+> -unsigned long topology_get_cpu_scale(int cpu)
+> +static inline unsigned long topology_get_cpu_scale(int cpu)
+>  {
+>  	return per_cpu(cpu_scale, cpu);
+>  }
+> @@ -27,8 +25,7 @@ void topology_set_cpu_scale(unsigned int cpu, unsigned long capacity);
+>  
+>  DECLARE_PER_CPU(unsigned long, freq_scale);
+>  
+> -static inline
+> -unsigned long topology_get_freq_scale(int cpu)
+> +static inline unsigned long topology_get_freq_scale(int cpu)
 
-I did consider that already. It should be workable.
+You are doing two different things in this patch :(
 
-> 
-> seems to me that having one mapfile type would be less confusing
+Reformatting the function names are fine, but that has nothing to do
+with dropping the "struct sched_domain;" line.  Please split into 2
+different patches.
 
-I thought that having it all in a single file would be more confusing :)
+thanks,
 
-> 
-As for this separate comment:
-
- >> +		if (!strcmp(bname, "mapfile_sys.csv")) {
- >> +			mapfile_sys = strdup(fpath);
- >
- >
- > we could release that in the cleanup code at the end of main
- > together with 'mapfile',
-
-That should now go away.
-
- >  which is also missing
-
-Right, I'll look to fix that.
-
-Thanks,
-John
-
-> .
-> 
-
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
