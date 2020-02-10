@@ -2,85 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 739F9157EA2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 16:21:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B28C157EA4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 16:21:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dEZlD2R+z8C1lAhHYjV70GNECtndIDhL8jlACqgGY6g=; b=Cpt/0+XFXaQZUM
-	+0nhfNb1GqqRON1h5pj8SM4JHXJD2DtGV+FElC5OHtE0HLfnQJ5mDCBGa6ENsngDFB/4UwmfzO1iq
-	R4CotUQ1LeIauN5wkvJp4we8ZTavKUAM+we3/VaGJbhG7d9cs5JTxAZP4qhi0erDl3gMF5/mWC1+g
-	kE3yyv9wfy7p60n1JCr5Wznb6gmm1F9FBOFslMn/3iu8o+Yj8YV028D8Ux/BrgyLR5x/fusB68Gdc
-	1zpv8A2/6yAuLzrP/aBVG1y7dpF7DxoAibmqxVuPiEkAvBl6sGr5Mhw/Xo0n4BuKgyX9Ab8qwUsY5
-	CGD7gyGJHUvHzbPVQXQg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eeu/JVB/Xd3BnL82k+5EuMjuGlsamAAA/+nyJ1yEe1c=; b=FgK+10nkT+Kkt7
+	fLcjhNXWFjV0+47aTg4QvRHNgMag+pHu5trRil8KM9UG+8qdEC1GAX9dGtFHw+CWpuqO+oLdNch9G
+	2TVw+1LHPdk7uPhskaRjgyfkywk5HIbkgGHyB7Xm7tRc9005lTs3CcgRxduWRRBDKvyLP2TL5vX7T
+	aWaVW9gkoI7VkYbBFAZVZNiWJ6HM1F2IL9EHMR8yVrNd1Ma2IKuGanAGd+9NrCfG3ciXerbTolJ5S
+	wsjT7JtSZqwWmcTkXiq0fhvM+zQujwfZfDLG96132/UFipnlRtPDWgk+Lj5DB2gIjMzKsra5mRj7m
+	kumgmk8HqyCj96Rmfkpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1As6-0004h9-3Y; Mon, 10 Feb 2020 15:21:14 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Art-0004fz-EK
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 15:21:05 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
- Nicolas.Ferre@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Nicolas.Ferre@microchip.com";
- x-sender="Nicolas.Ferre@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com -exists:%{i}.spf.microchip.iphmx.com
- include:servers.mcsv.net include:mktomail.com
- include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Nicolas.Ferre@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: L7BX/6oEt6gKL1m2Oy6RMwXq4ngWrcO4DRk/+LGzLoQu5R0PM66CboAOgPYrdaKgquHdoHCwRc
- oqawS8diV6MJjhb5j3a+jAHmzNinCtT2vC7FgYLgzsEpUvtmC26KjKOlHMWOKkt0R9mIQMq0dO
- SICv9OCg24cpxElgs6eMRL3DdB48Dqwrfccuc5FPYOTQ4Y0VrLPFN57bsa3sIUgUdYYjz3yXDz
- SS2tVNf31A6vGKgyhYA3tZBofrfEBFJv4sXZ9b+WnFqmltALmgBuN6cJADM0iZilOI+NUykkr3
- 9dI=
-X-IronPort-AV: E=Sophos;i="5.70,425,1574146800"; d="scan'208";a="65398876"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 10 Feb 2020 08:20:58 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 10 Feb 2020 08:20:56 -0700
-Received: from tenerife.corp.atmel.com (10.10.85.251) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Mon, 10 Feb 2020 08:20:54 -0700
-From: Nicolas Ferre <nicolas.ferre@microchip.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Richard Genoud
- <richard.genoud@gmail.com>, <linux-serial@vger.kernel.org>
-Subject: [PATCH] tty/serial: atmel: manage shutdown in case of RS485 or
- ISO7816 mode
-Date: Mon, 10 Feb 2020 16:20:53 +0100
-Message-ID: <20200210152053.8289-1-nicolas.ferre@microchip.com>
-X-Mailer: git-send-email 2.17.1
+	id 1j1AsN-0004sP-4c; Mon, 10 Feb 2020 15:21:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1Arw-0004gd-Tz
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 15:21:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 821611FB;
+ Mon, 10 Feb 2020 07:21:01 -0800 (PST)
+Received: from [192.168.0.7] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AB2533F68E;
+ Mon, 10 Feb 2020 07:21:00 -0800 (PST)
+Subject: Re: [PATCH] drivers base/arch_topology: Remove 'struct sched_domain'
+ forward declaration
+To: Sudeep Holla <sudeep.holla@arm.com>
+References: <20200207114913.3052-1-dietmar.eggemann@arm.com>
+ <20200207154855.GA5529@bogus>
+From: Dietmar Eggemann <dietmar.eggemann@arm.com>
+Message-ID: <e52903f6-4515-011e-b095-b30f347e3124@arm.com>
+Date: Mon, 10 Feb 2020 16:20:59 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200207154855.GA5529@bogus>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_072101_518925_56F9D134 
-X-CRM114-Status: UNSURE (   8.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200210_072105_010269_44721EF4 
+X-CRM114-Status: GOOD (  11.98  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,44 +65,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
+Cc: Juri Lelli <juri.lelli@redhat.com>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In atmel_shutdown() we call atmel_stop_rx() and atmel_stop_tx() functions.
-Prevent the rx restart that is implemented in RS485 or ISO7816 modes when
-calling atmel_stop_tx() by using the atomic information tasklet_shutdown
-that is already in place for this purpose.
+On 07/02/2020 16:48, Sudeep Holla wrote:
+> On Fri, Feb 07, 2020 at 12:49:13PM +0100, Dietmar Eggemann wrote:
+>> The sched domain pointer argument from topology_get_freq_scale() and
+>> topology_get_cpu_scale() got removed by commit 7673c8a4c75d
+>> ("sched/cpufreq: Remove arch_scale_freq_capacity()'s 'sd' parameter")
+>> and commit 8ec59c0f5f49 ("sched/topology: Remove unused 'sd' parameter
+>> from arch_scale_cpu_capacity()").
+>>
+>> So the 'struct sched_domain' forward declaration is no longer needed.
+>> Remove it.
+>>
+>> W/o the sched domain pointer argument the storage class and inline
+>> definition as well as the return type, function name and parameter list
+>> fit all into one line.
+> 
+> Looks simple and good to me. I don't want to ask you split the patch as
+> $subject indicates only one of the 2 changes in the patch. I am fine with
+> it as it but if anyone else shout for that, go for the split.
+> 
+> Either way,
+> 
+> Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+> 
+> You have not added Greg who generally picks up the patch. Can you repost
+> with him in cc and my reviewed-by so that he can pick it up.
 
-Fixes: 98f2082c3ac4 ("tty/serial: atmel: enforce tasklet init and termination sequences")
-Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
----
- drivers/tty/serial/atmel_serial.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/tty/serial/atmel_serial.c b/drivers/tty/serial/atmel_serial.c
-index c15c398c88a9..a39c87a7c2e1 100644
---- a/drivers/tty/serial/atmel_serial.c
-+++ b/drivers/tty/serial/atmel_serial.c
-@@ -570,7 +570,8 @@ static void atmel_stop_tx(struct uart_port *port)
- 	atmel_uart_writel(port, ATMEL_US_IDR, atmel_port->tx_done_mask);
- 
- 	if (atmel_uart_is_half_duplex(port))
--		atmel_start_rx(port);
-+		if (!atomic_read(&atmel_port->tasklet_shutdown))
-+			atmel_start_rx(port);
- 
- }
- 
--- 
-2.17.1
-
+Will do. I'll keep the patch like it is. Thanks for the review!
 
 _______________________________________________
 linux-arm-kernel mailing list
