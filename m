@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40A7F157381
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 12:31:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 686A9157397
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 12:39:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yEW55xVRsiVQggABhIQyzBx1TjVVySDh9fTbK2Z9K6U=; b=a4wOBqjk2y0dKs
-	64IjWNtSTT2RrZCdRvpPZ4pRxYT1C8k1jXQhtnPSRcKHw12WlKXWQvL7nH0KUCxODjrueLUPkI21S
-	XLBFttNGf1TTMwGk4GfSPdYAM4YyCA5ziJs2R3eGDUYomF88HmwGNN5WE4nVQjfNe2PSnW/7NaiJR
-	yamCxEpbNFeGWtMDcjOBjKDlV4CFlFKM3FCZky5hIaqZvHnyHNcfy9co+yzn4s6InO8LSznWBUgxe
-	LF/mUTsRVXu5u2jyp2yrK+h19SQG5wfLU1kZynHi55NI5qimEzOFYN4V8mjv/Lo/GPakKG35toPAr
-	tJ3cFhVkxOUmR+op+pkQ==;
+	List-Owner; bh=rTHEUhCY7tj3aCC3033MlqzgXINoBsjHntWtSMMJDz0=; b=Y0d3YyLVrd5JaM
+	/oypmmwGmk8OCh1CnuyL3Xhid7IdJneHnm+SKvtLFqcwIK6tVS2uRn4s4T3HFvdwDepONu3ALcyZo
+	npDvAZw+EkxhXqNrSOGZLRbEUY/3rW6oQM0KH2cJhjmxyRznK8dvD+6PLmImGkMctnoC7SHAk4p34
+	jzlvX7PRrdFxxyr0Z7oFQI113PsJ58dHSlVXyIk3AyuNM8Uc5uvJXBPqUc6wgzmTA2nX08ZCGCSqx
+	d6dnw8Ae0xmEz7yHS73OA+2a88CE44bQZUKqeON+453KubRodbUSF46T3tn5Pi0T5HdBHPllQF1uT
+	5U673bbjNe/GTXA8OWGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j17I0-0001fP-JU; Mon, 10 Feb 2020 11:31:44 +0000
+	id 1j17PE-0004AT-O1; Mon, 10 Feb 2020 11:39:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j17Ht-0001eY-3z; Mon, 10 Feb 2020 11:31:39 +0000
+ id 1j17P7-0004A7-T9; Mon, 10 Feb 2020 11:39:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E3AB1FB;
- Mon, 10 Feb 2020 03:31:33 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F24D71FB;
+ Mon, 10 Feb 2020 03:39:04 -0800 (PST)
 Received: from [10.1.195.32] (e112269-lin.cambridge.arm.com [10.1.195.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3A7BA3F6CF;
- Mon, 10 Feb 2020 03:31:31 -0800 (PST)
-Subject: Re: [PATCH v4 4/7] drm/panfrost: Add support for multiple regulators
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3EA253F6CF;
+ Mon, 10 Feb 2020 03:39:02 -0800 (PST)
+Subject: Re: [PATCH v4 5/7] drm/panfrost: Add support for multiple power
+ domains
 To: Nicolas Boichat <drinkcat@chromium.org>, Rob Herring <robh+dt@kernel.org>
 References: <20200207052627.130118-1-drinkcat@chromium.org>
- <20200207052627.130118-5-drinkcat@chromium.org>
+ <20200207052627.130118-6-drinkcat@chromium.org>
 From: Steven Price <steven.price@arm.com>
-Message-ID: <df99cedb-4c2c-b8b8-14e6-d7b8d8fe351a@arm.com>
-Date: Mon, 10 Feb 2020 11:31:29 +0000
+Message-ID: <aa88b20d-009d-135f-629a-d656b6a60baa@arm.com>
+Date: Mon, 10 Feb 2020 11:39:01 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200207052627.130118-5-drinkcat@chromium.org>
+In-Reply-To: <20200207052627.130118-6-drinkcat@chromium.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_033137_251325_FDDCAB4C 
-X-CRM114-Status: GOOD (  30.65  )
+X-CRM114-CacheID: sfid-20200210_033906_030656_4B523BD0 
+X-CRM114-Status: GOOD (  30.62  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -82,13 +83,16 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 07/02/2020 05:26, Nicolas Boichat wrote:
-> Some GPUs, namely, the bifrost/g72 part on MT8183, have a second
-> regulator for their SRAM, let's add support for that.
+> When there is a single power domain per device, the core will
+> ensure the power domain is switched on (so it is technically
+> equivalent to having not power domain specified at all).
 > 
-> We extend the framework in a generic manner so that we could
-> support more than 2 regulators, if required.
+> However, when there are multiple domains, as in MT8183 Bifrost
+> GPU, we need to handle them in driver code.
 > 
 > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
+
+LGTM!
 
 Reviewed-by: Steven Price <steven.price@arm.com>
 
@@ -99,183 +103,234 @@ Steve
 > 
 > ---
 > 
+> The downstream driver we use on chromeos-4.19 currently uses 2
+> additional devices in device tree to accomodate for this [1], but
+> I believe this solution is cleaner.
+> 
+> [1] https://chromium.googlesource.com/chromiumos/third_party/kernel/+/refs/heads/chromeos-4.19/drivers/gpu/arm/midgard/platform/mediatek/mali_kbase_runtime_pm.c#31
+> 
 > v4:
+>  - Match the exact power domain names as specified in the compatible
+>    struct, instead of just matching the number of power domains.
+>    [Review: Ulf Hansson]
+>  - Dropped print and reordered function [Review: Steven Price]
 >  - nits: Run through latest version of checkpatch:
 >    - Use WARN instead of BUG_ON.
->    - Drop braces in single expression for loop.
->    - *comp not * comp
+>    - Drop braces for single expression if block.
 > v3:
->  - Make this more generic, by allowing any number of regulators
->    (in practice we fix the maximum number of regulators to 2, but
->    this could be increased easily).
->  - We only probe the second regulator if the device tree matching
->    data asks for it.
->  - I couldn't find a way to detect the number of regulators in the
->    device tree, if we wanted to refuse to probe the device if there
->    are too many regulators, which might be required for safety, see
->    the thread on v2 [1].
->  - The discussion also included the idea of a separate device tree
->    entry for a "soft PDC", or at least a separate driver. I'm not
->    sure to understand the full picture, and how different vendors
->    implement this, so I'm still integrating everything in the main
->    driver. I'd be happy to try to make mt8183 fit into such a
->    framework after it's created, but I don't think I'm best placed
->    to implement (and again, the main purpose of this was to test
->    if the binding is correct).
+>  - Use the compatible matching data to specify the number of power
+>    domains. Note that setting 0 or 1 in num_pm_domains is equivalent
+>    as the core will handle these 2 cases in the exact same way
+>    (automatically, without driver intervention), and there should
+>    be no adverse consequence in this case (the concern is about
+>    switching on only some power domains and not others).
 > 
-> [1] https://patchwork.kernel.org/patch/11322839/
-> 
->  drivers/gpu/drm/panfrost/panfrost_device.c | 26 +++++++++++++-------
->  drivers/gpu/drm/panfrost/panfrost_device.h | 15 +++++++++++-
->  drivers/gpu/drm/panfrost/panfrost_drv.c    | 28 +++++++++++++++-------
->  3 files changed, 51 insertions(+), 18 deletions(-)
+>  drivers/gpu/drm/panfrost/panfrost_device.c | 97 ++++++++++++++++++++--
+>  drivers/gpu/drm/panfrost/panfrost_device.h | 11 +++
+>  drivers/gpu/drm/panfrost/panfrost_drv.c    |  2 +
+>  3 files changed, 102 insertions(+), 8 deletions(-)
 > 
 > diff --git a/drivers/gpu/drm/panfrost/panfrost_device.c b/drivers/gpu/drm/panfrost/panfrost_device.c
-> index 238fb6d54df4732..3720d50f6d9f965 100644
+> index 3720d50f6d9f965..8136babd3ba9935 100644
 > --- a/drivers/gpu/drm/panfrost/panfrost_device.c
 > +++ b/drivers/gpu/drm/panfrost/panfrost_device.c
-> @@ -87,18 +87,27 @@ static void panfrost_clk_fini(struct panfrost_device *pfdev)
+> @@ -5,6 +5,7 @@
+>  #include <linux/clk.h>
+>  #include <linux/reset.h>
+>  #include <linux/platform_device.h>
+> +#include <linux/pm_domain.h>
+>  #include <linux/regulator/consumer.h>
 >  
->  static int panfrost_regulator_init(struct panfrost_device *pfdev)
->  {
-> -	int ret;
-> +	int ret, i;
+>  #include "panfrost_device.h"
+> @@ -120,6 +121,79 @@ static void panfrost_regulator_fini(struct panfrost_device *pfdev)
+>  			pfdev->regulators);
+>  }
 >  
-> -	pfdev->regulator = devm_regulator_get(pfdev->dev, "mali");
-> -	if (IS_ERR(pfdev->regulator)) {
-> -		ret = PTR_ERR(pfdev->regulator);
-> -		dev_err(pfdev->dev, "failed to get regulator: %d\n", ret);
-> +	if (WARN(pfdev->comp->num_supplies > ARRAY_SIZE(pfdev->regulators),
+> +static void panfrost_pm_domain_fini(struct panfrost_device *pfdev)
+> +{
+> +	int i;
+> +
+> +	for (i = 0; i < ARRAY_SIZE(pfdev->pm_domain_devs); i++) {
+> +		if (!pfdev->pm_domain_devs[i])
+> +			break;
+> +
+> +		if (pfdev->pm_domain_links[i])
+> +			device_link_del(pfdev->pm_domain_links[i]);
+> +
+> +		dev_pm_domain_detach(pfdev->pm_domain_devs[i], true);
+> +	}
+> +}
+> +
+> +static int panfrost_pm_domain_init(struct panfrost_device *pfdev)
+> +{
+> +	int err;
+> +	int i, num_domains;
+> +
+> +	num_domains = of_count_phandle_with_args(pfdev->dev->of_node,
+> +						 "power-domains",
+> +						 "#power-domain-cells");
+> +
+> +	/*
+> +	 * Single domain is handled by the core, and, if only a single power
+> +	 * the power domain is requested, the property is optional.
+> +	 */
+> +	if (num_domains < 2 && pfdev->comp->num_pm_domains < 2)
+> +		return 0;
+> +
+> +	if (num_domains != pfdev->comp->num_pm_domains) {
+> +		dev_err(pfdev->dev,
+> +			"Incorrect number of power domains: %d provided, %d needed\n",
+> +			num_domains, pfdev->comp->num_pm_domains);
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (WARN(num_domains > ARRAY_SIZE(pfdev->pm_domain_devs),
 > +			"Too many supplies in compatible structure.\n"))
 > +		return -EINVAL;
 > +
-> +	for (i = 0; i < pfdev->comp->num_supplies; i++)
-> +		pfdev->regulators[i].supply = pfdev->comp->supply_names[i];
+> +	for (i = 0; i < num_domains; i++) {
+> +		pfdev->pm_domain_devs[i] =
+> +			dev_pm_domain_attach_by_name(pfdev->dev,
+> +					pfdev->comp->pm_domain_names[i]);
+> +		if (IS_ERR_OR_NULL(pfdev->pm_domain_devs[i])) {
+> +			err = PTR_ERR(pfdev->pm_domain_devs[i]) ? : -ENODATA;
+> +			pfdev->pm_domain_devs[i] = NULL;
+> +			dev_err(pfdev->dev,
+> +				"failed to get pm-domain %s(%d): %d\n",
+> +				pfdev->comp->pm_domain_names[i], i, err);
+> +			goto err;
+> +		}
 > +
-> +	ret = devm_regulator_bulk_get(pfdev->dev,
-> +				      pfdev->comp->num_supplies,
-> +				      pfdev->regulators);
-> +	if (ret < 0) {
-> +		dev_err(pfdev->dev, "failed to get regulators: %d\n", ret);
->  		return ret;
->  	}
->  
-> -	ret = regulator_enable(pfdev->regulator);
-> +	ret = regulator_bulk_enable(pfdev->comp->num_supplies,
-> +				    pfdev->regulators);
->  	if (ret < 0) {
-> -		dev_err(pfdev->dev, "failed to enable regulator: %d\n", ret);
-> +		dev_err(pfdev->dev, "failed to enable regulators: %d\n", ret);
->  		return ret;
->  	}
->  
-> @@ -107,7 +116,8 @@ static int panfrost_regulator_init(struct panfrost_device *pfdev)
->  
->  static void panfrost_regulator_fini(struct panfrost_device *pfdev)
->  {
-> -	regulator_disable(pfdev->regulator);
-> +	regulator_bulk_disable(pfdev->comp->num_supplies,
-> +			pfdev->regulators);
->  }
->  
+> +		pfdev->pm_domain_links[i] = device_link_add(pfdev->dev,
+> +				pfdev->pm_domain_devs[i], DL_FLAG_PM_RUNTIME |
+> +				DL_FLAG_STATELESS | DL_FLAG_RPM_ACTIVE);
+> +		if (!pfdev->pm_domain_links[i]) {
+> +			dev_err(pfdev->pm_domain_devs[i],
+> +				"adding device link failed!\n");
+> +			err = -ENODEV;
+> +			goto err;
+> +		}
+> +	}
+> +
+> +	return 0;
+> +
+> +err:
+> +	panfrost_pm_domain_fini(pfdev);
+> +	return err;
+> +}
+> +
 >  int panfrost_device_init(struct panfrost_device *pfdev)
+>  {
+>  	int err;
+> @@ -150,37 +224,43 @@ int panfrost_device_init(struct panfrost_device *pfdev)
+>  		goto err_out1;
+>  	}
+>  
+> +	err = panfrost_pm_domain_init(pfdev);
+> +	if (err)
+> +		goto err_out2;
+> +
+>  	res = platform_get_resource(pfdev->pdev, IORESOURCE_MEM, 0);
+>  	pfdev->iomem = devm_ioremap_resource(pfdev->dev, res);
+>  	if (IS_ERR(pfdev->iomem)) {
+>  		dev_err(pfdev->dev, "failed to ioremap iomem\n");
+>  		err = PTR_ERR(pfdev->iomem);
+> -		goto err_out2;
+> +		goto err_out3;
+>  	}
+>  
+>  	err = panfrost_gpu_init(pfdev);
+>  	if (err)
+> -		goto err_out2;
+> +		goto err_out3;
+>  
+>  	err = panfrost_mmu_init(pfdev);
+>  	if (err)
+> -		goto err_out3;
+> +		goto err_out4;
+>  
+>  	err = panfrost_job_init(pfdev);
+>  	if (err)
+> -		goto err_out4;
+> +		goto err_out5;
+>  
+>  	err = panfrost_perfcnt_init(pfdev);
+>  	if (err)
+> -		goto err_out5;
+> +		goto err_out6;
+>  
+>  	return 0;
+> -err_out5:
+> +err_out6:
+>  	panfrost_job_fini(pfdev);
+> -err_out4:
+> +err_out5:
+>  	panfrost_mmu_fini(pfdev);
+> -err_out3:
+> +err_out4:
+>  	panfrost_gpu_fini(pfdev);
+> +err_out3:
+> +	panfrost_pm_domain_fini(pfdev);
+>  err_out2:
+>  	panfrost_reset_fini(pfdev);
+>  err_out1:
+> @@ -196,6 +276,7 @@ void panfrost_device_fini(struct panfrost_device *pfdev)
+>  	panfrost_job_fini(pfdev);
+>  	panfrost_mmu_fini(pfdev);
+>  	panfrost_gpu_fini(pfdev);
+> +	panfrost_pm_domain_fini(pfdev);
+>  	panfrost_reset_fini(pfdev);
+>  	panfrost_regulator_fini(pfdev);
+>  	panfrost_clk_fini(pfdev);
 > diff --git a/drivers/gpu/drm/panfrost/panfrost_device.h b/drivers/gpu/drm/panfrost/panfrost_device.h
-> index 06713811b92cdf7..c9468bc5573ac9d 100644
+> index c9468bc5573ac9d..c30c719a805940a 100644
 > --- a/drivers/gpu/drm/panfrost/panfrost_device.h
 > +++ b/drivers/gpu/drm/panfrost/panfrost_device.h
-> @@ -7,6 +7,7 @@
->  
->  #include <linux/atomic.h>
->  #include <linux/io-pgtable.h>
-> +#include <linux/regulator/consumer.h>
->  #include <linux/spinlock.h>
->  #include <drm/drm_device.h>
->  #include <drm/drm_mm.h>
-> @@ -19,6 +20,7 @@ struct panfrost_job;
->  struct panfrost_perfcnt;
+> @@ -21,6 +21,7 @@ struct panfrost_perfcnt;
 >  
 >  #define NUM_JOB_SLOTS 3
-> +#define MAX_REGULATORS 2
+>  #define MAX_REGULATORS 2
+> +#define MAX_PM_DOMAINS 3
 >  
 >  struct panfrost_features {
 >  	u16 id;
-> @@ -51,6 +53,16 @@ struct panfrost_features {
->  	unsigned long hw_issues[64 / BITS_PER_LONG];
+> @@ -61,6 +62,13 @@ struct panfrost_compatible {
+>  	/* Supplies count and names. */
+>  	int num_supplies;
+>  	const char * const *supply_names;
+> +	/*
+> +	 * Number of power domains required, note that values 0 and 1 are
+> +	 * handled identically, as only values > 1 need special handling.
+> +	 */
+> +	int num_pm_domains;
+> +	/* Only required if num_pm_domains > 1. */
+> +	const char * const *pm_domain_names;
 >  };
 >  
-> +/*
-> + * Features that cannot be automatically detected and need matching using the
-> + * compatible string, typically SoC-specific.
-> + */
-> +struct panfrost_compatible {
-> +	/* Supplies count and names. */
-> +	int num_supplies;
-> +	const char * const *supply_names;
-> +};
-> +
 >  struct panfrost_device {
->  	struct device *dev;
->  	struct drm_device *ddev;
-> @@ -59,10 +71,11 @@ struct panfrost_device {
->  	void __iomem *iomem;
->  	struct clk *clock;
+> @@ -73,6 +81,9 @@ struct panfrost_device {
 >  	struct clk *bus_clock;
-> -	struct regulator *regulator;
-> +	struct regulator_bulk_data regulators[MAX_REGULATORS];
+>  	struct regulator_bulk_data regulators[MAX_REGULATORS];
 >  	struct reset_control *rstc;
+> +	/* pm_domains for devices with more than one. */
+> +	struct device *pm_domain_devs[MAX_PM_DOMAINS];
+> +	struct device_link *pm_domain_links[MAX_PM_DOMAINS];
 >  
 >  	struct panfrost_features features;
-> +	const struct panfrost_compatible *comp;
->  
->  	spinlock_t as_lock;
->  	unsigned long as_in_use_mask;
+>  	const struct panfrost_compatible *comp;
 > diff --git a/drivers/gpu/drm/panfrost/panfrost_drv.c b/drivers/gpu/drm/panfrost/panfrost_drv.c
-> index b7a618db3ee223e..4d08507526239f2 100644
+> index 4d08507526239f2..a6e162236d67fdf 100644
 > --- a/drivers/gpu/drm/panfrost/panfrost_drv.c
 > +++ b/drivers/gpu/drm/panfrost/panfrost_drv.c
-> @@ -584,6 +584,10 @@ static int panfrost_probe(struct platform_device *pdev)
->  
->  	platform_set_drvdata(pdev, pfdev);
->  
-> +	pfdev->comp = of_device_get_match_data(&pdev->dev);
-> +	if (!pfdev->comp)
-> +		return -ENODEV;
-> +
->  	/* Allocate and initialze the DRM device. */
->  	ddev = drm_dev_alloc(&panfrost_drm_driver, &pdev->dev);
->  	if (IS_ERR(ddev))
-> @@ -655,16 +659,22 @@ static int panfrost_remove(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> +const char * const default_supplies[] = { "mali" };
-> +static const struct panfrost_compatible default_data = {
-> +	.num_supplies = ARRAY_SIZE(default_supplies),
-> +	.supply_names = default_supplies,
-> +};
-> +
->  static const struct of_device_id dt_match[] = {
-> -	{ .compatible = "arm,mali-t604" },
-> -	{ .compatible = "arm,mali-t624" },
-> -	{ .compatible = "arm,mali-t628" },
-> -	{ .compatible = "arm,mali-t720" },
-> -	{ .compatible = "arm,mali-t760" },
-> -	{ .compatible = "arm,mali-t820" },
-> -	{ .compatible = "arm,mali-t830" },
-> -	{ .compatible = "arm,mali-t860" },
-> -	{ .compatible = "arm,mali-t880" },
-> +	{ .compatible = "arm,mali-t604", .data = &default_data, },
-> +	{ .compatible = "arm,mali-t624", .data = &default_data, },
-> +	{ .compatible = "arm,mali-t628", .data = &default_data, },
-> +	{ .compatible = "arm,mali-t720", .data = &default_data, },
-> +	{ .compatible = "arm,mali-t760", .data = &default_data, },
-> +	{ .compatible = "arm,mali-t820", .data = &default_data, },
-> +	{ .compatible = "arm,mali-t830", .data = &default_data, },
-> +	{ .compatible = "arm,mali-t860", .data = &default_data, },
-> +	{ .compatible = "arm,mali-t880", .data = &default_data, },
->  	{}
+> @@ -663,6 +663,8 @@ const char * const default_supplies[] = { "mali" };
+>  static const struct panfrost_compatible default_data = {
+>  	.num_supplies = ARRAY_SIZE(default_supplies),
+>  	.supply_names = default_supplies,
+> +	.num_pm_domains = 1, /* optional */
+> +	.pm_domain_names = NULL,
 >  };
->  MODULE_DEVICE_TABLE(of, dt_match);
+>  
+>  static const struct of_device_id dt_match[] = {
 > 
 
 
