@@ -2,61 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E6BE1585A7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 23:38:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E7171585DA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 00:00:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pEFekL/00BITo4ospRpp9R2l4DhO8xXW2KPILnOnxZU=; b=I3zU2QF5IdID0O
-	DIwm5g49yldnTrDE11QjGO13XVzBloH6pGDByiLcdjE31RzGKdpPU6Wpb4LfKUgBOTXqVHV6r2IY6
-	VuOPVqKe1aJIYIaNdtlURRYWUu0s4mSVXWKD8tlDAfK0RrULZ8EaObKl0dfB5bwoh+6DudHMp1Hcc
-	6tlU2zz8qlYYaQss1RwlJprjO70+eaAsceMyUZx4T3xpIEcDIeVy+jwLzKVGSTt6Xfi/Vg/DvMTCj
-	XDscD83AXiqvV88OiAtE/ezcjaYkePBd3moCgRNO4tLSmRxkyyRVjJg2TguaKOsY8ymDzMD8J2Qoc
-	1A4hbKbWfUbYmZ8Lt/yg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=i0+meHz6N0NtKd4OYtGJRKqrPqAX+CkEqzE3gcbO0Xo=; b=mUNI2/tDMqWUK/
+	sm+K+6TOyJ0/NMHleGj/aLfJjtQausEBTBQBWhloh68ukPZ6P4R9vx6+AdZRLwfnZM8OGDBuU3NUp
+	5HF+u9x6zmx8EMHpVhWVzQD1PjnAeBVLj1/mM4Vmm5AQPw9Pu7xRF5/InxUf9jFgMWVsMRc8qy12v
+	WXTjSqb2KjTqY9WSVbeLUhaO0TLyHX6YDVQjmx/JqBJB5lIPUwXsQ3fWGmSUr8B0jqeOek+rytsYA
+	PmWhxTZRYeHKujiTVWN86+R65st7Ti/lVdIUgrsJfGvaw3o/YTJWQPZnl0lWvLQZgR9rm0b4Zxb03
+	+uc8vZssKaSCVDhue2+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1HhV-0002UW-TJ; Mon, 10 Feb 2020 22:38:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j1I2I-0000ef-9l; Mon, 10 Feb 2020 23:00:14 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1HhO-0002UB-QI
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 22:38:40 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 23C822072C;
- Mon, 10 Feb 2020 22:38:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581374318;
- bh=t32JE0QwQ5xFG7CfQw/0jqZEZpeufpgLfqsDlYUyH7g=;
- h=In-Reply-To:References:Subject:From:To:Cc:Date:From;
- b=mkGl0Y/H7+dXMRabvHhLPPjq+rZueI2K+k1Gmd3pBO3oriGnP4aH9T0Psx+0tcfEw
- YN62mNRsHAKsQ+qEm6lh6lzFHOUNvwjWmEmm+OR/64tQkfDE3Jm3NxYTyuXLJchlsf
- 5kae0OQVPN5owza0USiyqPP9EjWgqROHucpsvtec=
+ id 1j1I26-0000D0-0B; Mon, 10 Feb 2020 23:00:03 +0000
+Received: by mail-oi1-x242.google.com with SMTP id a142so10942826oii.7;
+ Mon, 10 Feb 2020 14:59:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=h2g0oTCV98K2k6Xzoh29zE55ImVHkBdtE4+mSxUulQQ=;
+ b=P0yWasi5AD3Wkz/vo7yXo6yPuziD6iH6KVE8Q4bimB6WtQzDEGVCzAezGZWb5k1W/w
+ Z3VnF48KO1MFvUq/PYlKG96U0XCWBkZi4BEoZOfhJRetQloceUj4EboyQMfGIfdiWwMQ
+ 5frXSdglP2M9xnE8DbEyl5GOqlKRymcz8n0OOw5y/drqhSgXwypJcoE7C6KVLYBhhUma
+ YhK//vHGZi4wWwJJO5iplJ8thpu4ffDHGFEt4IaJY+HDlOiSMPxLpW1vGmhH/t5mGWmP
+ 7Z9PGLdLzUOHoG+WVQ6mZVShDxTkw+cAbUsA7kYE2YV/Yni7Hfb3flIETXftd93ndXRq
+ JGsA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=h2g0oTCV98K2k6Xzoh29zE55ImVHkBdtE4+mSxUulQQ=;
+ b=eMSQEBy3BnDNJxSNwUOe/4EDtx68cySkShYtiIHT1NNQS9JxSsXQe7lC8bW/rBFDsC
+ XwauvEf6txdZjMWsHx5X5eiEjlhotlVpDPVOc4iclaZSshfv2wOmR5ROB1pLLGajEL8q
+ sraoped7HRgC1GTQv+LE167FfCtoFd/F/XKU7+1sA+OclsDZan5jw7OCHqZ1vcBNQh5k
+ VoK9oFkgnwxWO1uKPBNWJyJQjOsn6oiaf/aaUDJrqHEt5m7Epnuorj2RKQ/mkJPPG1Ra
+ yJ+FMqfCMSMSHx680EUQa0c+1ZEaqE3eZsL5xZbdbyMbcxwo+uNbodfHENIS2hXKzS4y
+ 1sNA==
+X-Gm-Message-State: APjAAAV8adSJ7U98Y22ZtSneBnGUbq6CGWq2eFESOe1h+lExZeXamBSX
+ ihs2TkuncSKn2ES2Hp7RF8s=
+X-Google-Smtp-Source: APXvYqwDbrcIeb7Xbibh7qCosUJ25r6zAICrriHVO5CceM7+UyW/5dwZqBATLkJk71AmXk2eQKqTWQ==
+X-Received: by 2002:aca:458:: with SMTP id 85mr1030996oie.56.1581375598184;
+ Mon, 10 Feb 2020 14:59:58 -0800 (PST)
+Received: from localhost.localdomain ([2604:1380:4111:8b00::1])
+ by smtp.gmail.com with ESMTPSA id r17sm546985otq.70.2020.02.10.14.59.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 10 Feb 2020 14:59:57 -0800 (PST)
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Felipe Balbi <balbi@kernel.org>
+Subject: [PATCH] usb: dwc3: meson-g12a: Don't use ret uninitialized in
+ dwc3_meson_g12a_otg_init
+Date: Mon, 10 Feb 2020 15:58:17 -0700
+Message-Id: <20200210225816.36598-1-natechancellor@gmail.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-In-Reply-To: <1580823277-13644-5-git-send-email-peng.fan@nxp.com>
-References: <1580823277-13644-1-git-send-email-peng.fan@nxp.com>
- <1580823277-13644-5-git-send-email-peng.fan@nxp.com>
-Subject: Re: [PATCH 4/7] clk: imx: add imx_hw_clk_cpuv2 for i.MX7ULP
-From: Stephen Boyd <sboyd@kernel.org>
-To: abel.vesa@nxp.com, aisheng.dong@nxp.com, leonard.crestez@nxp.com,
- peng.fan@nxp.com, s.hauer@pengutronix.de, shawnguo@kernel.org
-Date: Mon, 10 Feb 2020 14:38:37 -0800
-Message-ID: <158137431730.121156.17920534869042984062@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+X-Patchwork-Bot: notify
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_143838_893455_84B31AB4 
-X-CRM114-Status: GOOD (  22.10  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200210_150002_052241_05AA5F53 
+X-CRM114-Status: GOOD (  11.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [natechancellor[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -65,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,179 +96,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, ping.bai@nxp.com, Anson.Huang@nxp.com,
- linux-kernel@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, linux-clk@vger.kernel.org,
+Cc: Hanjie Lin <hanjie.lin@amlogic.com>, kbuild test robot <lkp@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Yue Wang <yue.wang@amlogic.com>,
+ clang-built-linux@googlegroups.com, Kevin Hilman <khilman@baylibre.com>,
+ linux-amlogic@lists.infradead.org,
+ Nathan Chancellor <natechancellor@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting peng.fan@nxp.com (2020-02-04 05:34:34)
-> From: Peng Fan <peng.fan@nxp.com>
-> 
-> Add a clk api for i.MX7ULP ARM core clk usage.
-> imx_hw_clk_cpu could not be reused, because i.MX7ULP ARM core
-> clk has totally different design. To simplify ARM core clk
-> change logic, add a new clk api.
-> 
-> A draft picture to show the ARM core clock.
->                                                       |-sirc
->      |->   run(500MHz)    ->  div -> mux -------------|-firc
->   ARM|                                                |
->      |->   hsrun(720MHz)  ->  hs div -> hs mux -------|-spll pfd
->                                                       |-....
-> 
-> Need to configure PMC when ARM core runs in HSRUN or RUN mode.
-> 
-> RUN and HSRUN related registers are not same, but their
-> mux has same clocks as input.
-> 
-> The API takes arm core, div, hs div, mux, hs mux, mux parent, pfd, step
-> as params for switch clk freq.
-> 
-> When set rate, need to switch mux to take firc as input, then
-> set spll pfd freq, then switch back mux to spll pfd as parent.
-> 
-> Per i.MX7ULP requirement, when clk runs in HSRUN mode, it could
-> only support arm core wfi idle, so add pm qos to support it.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
->  drivers/clk/imx/Makefile    |   1 +
->  drivers/clk/imx/clk-cpuv2.c | 137 ++++++++++++++++++++++++++++++++++++++++++++
->  drivers/clk/imx/clk.h       |   9 +++
->  3 files changed, 147 insertions(+)
->  create mode 100644 drivers/clk/imx/clk-cpuv2.c
-> 
-> diff --git a/drivers/clk/imx/Makefile b/drivers/clk/imx/Makefile
-> index 928f874c73d2..9707fef8da98 100644
-> --- a/drivers/clk/imx/Makefile
-> +++ b/drivers/clk/imx/Makefile
-> @@ -5,6 +5,7 @@ obj-$(CONFIG_MXC_CLK) += \
->         clk-busy.o \
->         clk-composite-8m.o \
->         clk-cpu.o \
-> +       clk-cpuv2.o \
->         clk-composite-7ulp.o \
->         clk-divider-gate.o \
->         clk-fixup-div.o \
-> diff --git a/drivers/clk/imx/clk-cpuv2.c b/drivers/clk/imx/clk-cpuv2.c
-> new file mode 100644
-> index 000000000000..a73d97a782aa
-> --- /dev/null
-> +++ b/drivers/clk/imx/clk-cpuv2.c
-> @@ -0,0 +1,137 @@
-> +// SPDX-License-Identifier: GPL-2.0-only
-> +/*
-> + * Copyright 2020 NXP
-> + *
-> + * Peng Fan <peng.fan@nxp.com>
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/clk-provider.h>
-> +#include <linux/slab.h>
-> +#include <linux/pm_qos.h>
-> +#include "clk.h"
-> +
-> +static struct pm_qos_request pm_qos_hsrun;
-> +
-> +#define MAX_NORMAL_RUN_FREQ    528000000
-> +
-> +struct clk_cpu {
-> +       struct clk_hw   hw;
-> +       struct clk_hw   *core;
-> +       struct clk_hw   *div_nor;
-> +       struct clk_hw   *div_hs;
-> +       struct clk_hw   *mux_nor;
-> +       struct clk_hw   *mux_hs;
-> +       struct clk_hw   *mux_parent;
-> +       struct clk_hw   *pfd;
-> +       struct clk_hw   *step;
-> +};
-> +
-> +static inline struct clk_cpu *to_clk_cpu(struct clk_hw *hw)
-> +{
-> +       return container_of(hw, struct clk_cpu, hw);
-> +}
-> +
-> +static unsigned long clk_cpu_recalc_rate(struct clk_hw *hw,
-> +                                        unsigned long parent_rate)
-> +{
-> +       struct clk_cpu *cpu = to_clk_cpu(hw);
-> +
-> +       return clk_hw_get_rate(cpu->core);
-> +}
-> +
-> +static long clk_cpu_round_rate(struct clk_hw *hw, unsigned long rate,
-> +                              unsigned long *prate)
-> +{
-> +       return rate;
-> +}
-> +
-> +static int clk_cpu_set_rate(struct clk_hw *hw, unsigned long rate,
-> +                           unsigned long parent_rate)
-> +{
-> +       struct clk_cpu *cpu = to_clk_cpu(hw);
-> +       int ret;
-> +       struct clk_hw *div, *mux_now;
-> +       unsigned long old_rate = clk_hw_get_rate(cpu->core);
-> +
-> +       div = clk_hw_get_parent(cpu->core);
-> +
-> +       if (div == cpu->div_nor)
-> +               mux_now = cpu->mux_nor;
-> +       else
-> +               mux_now = cpu->mux_hs;
-> +
-> +       ret = clk_hw_set_parent(mux_now, cpu->step);
-> +       if (ret)
-> +               return ret;
-> +
-> +       ret = clk_set_rate(cpu->pfd->clk, rate);
-> +       if (ret) {
-> +               clk_hw_set_parent(mux_now, cpu->mux_parent);
-> +               return ret;
-> +       }
-> +
-> +       if (rate > MAX_NORMAL_RUN_FREQ) {
-> +               pm_qos_add_request(&pm_qos_hsrun, PM_QOS_CPU_DMA_LATENCY, 0);
-> +               clk_hw_set_parent(cpu->mux_hs, cpu->mux_parent);
-> +               clk_hw_set_parent(cpu->core, cpu->div_hs);
-> +       } else {
-> +               clk_hw_set_parent(cpu->mux_nor, cpu->mux_parent);
-> +               clk_hw_set_parent(cpu->core, cpu->div_nor);
-> +               if (old_rate > MAX_NORMAL_RUN_FREQ)
-> +                       pm_qos_remove_request(&pm_qos_hsrun);
-> +       }
-> +
+Clang warns:
 
-This is a cpufreq driver. Please write a cpufreq driver instead of
-trying to make "clk_set_rate()" conform to the requirements that
-cpufreq-dt mandates, which is that one clk exists and that clk rate
-change changes the frequency of the CPU.
+../drivers/usb/dwc3/dwc3-meson-g12a.c:421:6: warning: variable 'ret' is
+used uninitialized whenever 'if' condition is false
+[-Wsometimes-uninitialized]
+        if (priv->otg_mode == USB_DR_MODE_OTG) {
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/usb/dwc3/dwc3-meson-g12a.c:455:9: note: uninitialized use
+occurs here
+        return ret;
+               ^~~
+../drivers/usb/dwc3/dwc3-meson-g12a.c:421:2: note: remove the 'if' if
+its condition is always true
+        if (priv->otg_mode == USB_DR_MODE_OTG) {
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../drivers/usb/dwc3/dwc3-meson-g12a.c:415:9: note: initialize the
+variable 'ret' to silence this warning
+        int ret, irq;
+               ^
+                = 0
+1 warning generated.
 
-If cpufreq-dt can work with the clk framework is up to the
-implementation of the hardware and the software. From what I see here,
-the clk framework is being subverted through the use of
-clk_hw_set_parent() and clk_set_rate() calls from within the framework
-to make the cpufreq-dt driver happy. Don't do that. Either write a
-proper clk driver for the clks that are there and have that manage the
-clk tree when clk_set_rate() is called, or write a cpufreq driver that
-controls various clks and adjusts their frequencies.
+It is not wrong, ret is only used when that if statement is true. Just
+directly return 0 at the end to avoid this.
 
-I assume there is a mux or something that eventually clks the CPU, so
-that can certainly be modeled as a clk with the parents set some way.
-That will make clk_set_rate() mostly work as long as you can hardcode a
-min/max value to change the parents, etc. Should work!
+Fixes: 729149c53f04 ("usb: dwc3: Add Amlogic A1 DWC3 glue")
+Reported-by: kbuild test robot <lkp@intel.com>
+Link: https://groups.google.com/d/msg/clang-built-linux/w5iBENco_m4/PPuXreAxBQAJ
+Link: https://github.com/ClangBuiltLinux/linux/issues/869
+Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+---
 
-The use of pm_qos_add_request() is also pretty horrifying. We're deep in
-the clk framework implementation here and we're calling out to pm_qos.
-That shouldn't need to happen. If anything, we should do that from the
-core framework, but I don't know why we would. It's probably some sort
-of cpufreq thing.
+Note: This patch is against Felipe's testing/next branch.
+
+ drivers/usb/dwc3/dwc3-meson-g12a.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
+index 70d24b98fcad..902553f39889 100644
+--- a/drivers/usb/dwc3/dwc3-meson-g12a.c
++++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
+@@ -452,7 +452,7 @@ static int dwc3_meson_g12a_otg_init(struct platform_device *pdev,
+ 	if (IS_ERR(priv->role_switch))
+ 		dev_warn(dev, "Unable to register Role Switch\n");
+ 
+-	return ret;
++	return 0;
+ }
+ 
+ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
