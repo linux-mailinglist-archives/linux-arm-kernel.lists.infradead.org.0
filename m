@@ -2,115 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 075DB156D4D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 02:00:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50877156D67
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 02:29:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VTf7byRYBw3KyopdApHDSK1jLd+GXeBfR3ViUeuLcIE=; b=RVRuESxU17iKK7
-	cwBdXm87q//yWQ43YEu8QooM2rk99Vc2L+C9V4Jn7srdzl1jz34MGHV1Ig2VMuK1p69+hDjtGqToR
-	ogCJsXxjxUh+PVGg8zcjsnnMAFW0Z5TWBYj6JdJSpWysoK9+6vGSmnumhJyQV2NdY08uL2BF+tUe7
-	aQ81R/C946MaCNeopZPF8x8WIqT+d8EQxpbn48485YFCQHjkB+g1Ibv7biTd/SKX+goKCszFvE39f
-	Zbskw0UkWUM+xFKyLdK+b9P0exAtHpvcU6o+1NJTvN4E0W2Sopi+y8jPY9C/ETeVuNtmaSwfsiUw5
-	SpEKq5c0rPhBAeGj1ElQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GLtjoEe0JToBeh1C2jFunoGrEr/Jfxh0i+p2YgKIMyU=; b=efQOBfoimMwSY9YqUisjt0XKK
+	Qg8F2Cl1qwJCPfoKAEA7Exza7fVdea00/8dttL+TTofM3fy/p8rgdsHG6F86siSD84cFTh2GbkzxL
+	Fs1p7yMX8OuAG+Aunw3WlxMW1TOUtU4SwYHQ+wUQzvFIAT2bkt0dWl6G/y4dEy11qt7XDvAnaCYbP
+	BgHWfmuEiyx4TF34K1YflewPuC65fdICtCIESUlbub6ilLvsBOmr0vyoG49ON305m+4ek772y31kP
+	+A1xmDRMJo3+46f0zQP6RPXeEKaD/VnTQO9VDfhJb4plZMfjNyOinEmdXC6uNUTpWCYQYvXDLwKDa
+	cWwbhlP5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0xQb-0005IN-Di; Mon, 10 Feb 2020 00:59:57 +0000
-Received: from mail-eopbgr20041.outbound.protection.outlook.com ([40.107.2.41]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1j0xsg-00058h-8q; Mon, 10 Feb 2020 01:28:58 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0xQV-0005He-3B
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 00:59:52 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NT8D2eigUSODVRZ2RL5ZrwlrByu6rs40xWV22sWP27q2g+KqIKX8Is1SClmf5/vUL/zeb0RWGwTJlTvuwmEt7meCaXT3A2RQu8ke1WEhczsg39lO0Zl6NVE/h1zz42zv4AqcFp6P39fsAmPtQzqVulrM5o2OC23XRzduf5VjJLc8vBcR2zr/Aj3bDD7UJL4pcnbDtdnBFaUxqGIVbUQ1dIsmo+h6OEPdwNjpN2xdU2GhD2xvH6vmctFP3QnFiZYzGbxGp6DS6jNLGKrNeGv+UUNtykrHkD37eBsLmw0z1hv0UCkReOujnwh+GoBBSu8OPrF05XLq8j1rUniSigqTIQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DRmyteQmAo/r+5utOp/nLMxVwGKexBa71lik+JXbLq8=;
- b=A2cpget5uLrEDngKqLphjksh/pY8v1fkQ4L4ktG78DNo3QiesaF6bD/JtGHOp6LyhpyZ0rpIcTZu9F7s4Ux4R+W9DswnCnvS6FFJh320vegTSrjKhACc+TRWFdvSyG8yklArfrBeY59+lbeMAAjFMQ4lfhRawA3EWXaIKYguH5fITsibJFneZ/aPDAt7nN4M03q0JBhhOeOSiPbKZWk9ErOWOG62mOjpO9BF9fFhu9oUmHLVkQy4fjmmy2djOPTPXHzlE85+FCQE/Iu1AJWHS/yegz9KnIuvP7KRLVeRnP1udBpN0Sb3RygxOM4Fc/2EzSodADYA9eZTIYsUOiMtkQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DRmyteQmAo/r+5utOp/nLMxVwGKexBa71lik+JXbLq8=;
- b=famSs19CQ5oF0TDX4UZzaDGWdGcMQQ8TKiWrsvBfn5w2PCZIoYmu4GW7s+VUSTIZQhBGOZle39Glike9aFEek8Fv/hkb6WsddIBXYsHCUOdfk+gJnp522ZMkyxMXY1bGRUG9WinyZK4npjJg3ABur1JFAYYCbUKd0AYyVq0aCGA=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6756.eurprd04.prod.outlook.com (10.255.182.16) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.25; Mon, 10 Feb 2020 00:59:44 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2707.028; Mon, 10 Feb 2020
- 00:59:44 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "sudeep.holla@arm.com" <sudeep.holla@arm.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>, Marc
- Zyngier <maz@kernel.org>
-Subject: RE: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
-Thread-Topic: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
-Thread-Index: AQHV3O5LIqtUB1cLq0qKBDDFKN5B7qgToH9A
-Date: Mon, 10 Feb 2020 00:59:43 +0000
-Message-ID: <AM0PR04MB44814779B2307B20598E598288190@AM0PR04MB4481.eurprd04.prod.outlook.com>
-References: <1580994086-17850-1-git-send-email-peng.fan@nxp.com>
- <1580994086-17850-2-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1580994086-17850-2-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 21e36775-66e0-4352-7762-08d7adc4849d
-x-ms-traffictypediagnostic: AM0PR04MB6756:|AM0PR04MB6756:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB6756424D93BE5D107CEDDFB788190@AM0PR04MB6756.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 03094A4065
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(136003)(346002)(396003)(366004)(376002)(189003)(199004)(478600001)(316002)(55016002)(9686003)(4326008)(110136005)(54906003)(7696005)(7416002)(81156014)(8676002)(81166006)(8936002)(33656002)(26005)(5660300002)(66446008)(66556008)(52536014)(76116006)(2906002)(64756008)(66946007)(66476007)(86362001)(6506007)(71200400001)(44832011)(186003)(142933001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6756;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: IiZKtTiEJHMvsKj5TCm/LVXk2LzSrp9pDebX1muIuUMRyf4GAdEi17W5Xj69JvgwXiEDBlrKDgf3RjWGAAvW6TbIUEFTbfW6nbzfdJaWW2fdt1TCwxDB4tm5vbQTPT/wD5set5RPB1FXxYe5LvrQqVDxb2J8dLx8q/2cc/uf3ST4LbbHIe+wEQSkv5oznIdEZw7Gos/mOTHMo7xdXSis9bx+qX30OU9kRt9z07LUmdpwYxHjznDZS2Eav3qmnJUmPbu8zhEsQAf0NLq//l2eqMFrXmyp3+7Jts6P+DspLmowGSSWlC2SoxiqzBSqBnbF0t5YowZ6r55T7lfPxY5/YgntateDQX+KUmj8dOKjUX6Z7vwjZWGdP7FymWESCQvfsgZv3/wi0MPYjOGDfwFFJnx7cMAtHBg9sttY5ptJWX7zp/LBsQioas07CHpvHkTsPJj+bUugxtENSYlWMyj9qYA8N8P8Rta3LPxb4qz9etiGxJilLMtlOHMuSNScMOVv
-x-ms-exchange-antispam-messagedata: 1hhYFU2Wdm+ubncC/XDScS/PtiGZ7jNSxgZCOZCmQePOjcdaVWVVRYFZGk0JgKY0u1kxwuDMMofWBlDYLppGXyhtAUEDyDqHpFDVHzCXaNTVbrJT+kLH5i452dmnKvadZueaStHC3IrmHFJomqSF8w==
+ id 1j0xsW-00057G-6F
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 01:28:49 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1581298122; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=6vYe1GUkbL8Po1/pcPili8cJnCI9H8iOTlQ55WPbG+g=;
+ b=EiE7s8ORFs0nqqWv2kzhzzHte7j5e5+9WLhsLHkGQHN7WyXhsBFqXVQ7dTbjuBEt8Fyz/UAN
+ B/jX5clw3a24ZtVO1zLekHoDHgblNZOJjaht5dyE4Hst0gIMJI8cIfTQb155rNi+8q0D8fcN
+ dyMG4YNN+LAwC3X69ngTfNe7bOU=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e40b1c9.7f8d7295d848-smtp-out-n01;
+ Mon, 10 Feb 2020 01:28:41 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 95E42C447A3; Mon, 10 Feb 2020 01:28:39 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested) (Authenticated sender: cang)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 16FE7C433A2;
+ Mon, 10 Feb 2020 01:28:38 +0000 (UTC)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 21e36775-66e0-4352-7762-08d7adc4849d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Feb 2020 00:59:44.3723 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jHFbGkQE08IbXKdDReNkHx3rSFYZsvbNo849PRQJ25EfqjoNzjpGvHgbAjLAzoyVks6LWuFm+QzvbaBkovzltQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6756
+Date: Mon, 10 Feb 2020 09:28:38 +0800
+From: Can Guo <cang@codeaurora.org>
+To: Avri Altman <Avri.Altman@wdc.com>
+Subject: Re: [PATCH v7 5/8] scsi: ufs: Fix ufshcd_hold() caused scheduling
+ while atomic
+In-Reply-To: <MN2PR04MB6991346267CD619E823501F0FC1D0@MN2PR04MB6991.namprd04.prod.outlook.com>
+References: <1580978008-9327-1-git-send-email-cang@codeaurora.org>
+ <1580978008-9327-6-git-send-email-cang@codeaurora.org>
+ <MN2PR04MB6991346267CD619E823501F0FC1D0@MN2PR04MB6991.namprd04.prod.outlook.com>
+Message-ID: <2c485ce3fac4d92ab3776daecc1af493@codeaurora.org>
+X-Sender: cang@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_165951_245918_4D2E0226 
-X-CRM114-Status: GOOD (  15.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200209_172848_286976_98FEDAB0 
+X-CRM114-Status: GOOD (  18.40  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.41 listed in list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [104.130.122.26 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -123,66 +90,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "moderated list:ARM/Mediatek SoC support"
+ <linux-arm-kernel@lists.infradead.org>, Stanley Chu <stanley.chu@mediatek.com>,
+ rnayak@codeaurora.org, saravanak@google.com, linux-scsi@vger.kernel.org,
+ Venkat Gopalakrishnan <venkatg@codeaurora.org>,
+ "James E.J. Bottomley" <jejb@linux.ibm.com>, nguyenb@codeaurora.org,
+ open list <linux-kernel@vger.kernel.org>, "moderated list:ARM/Mediatek SoC
+ support" <linux-mediatek@lists.infradead.org>, salyzyn@google.com,
+ Alim Akhtar <alim.akhtar@samsung.com>,
+ "Martin K. Petersen" <martin.petersen@oracle.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Tomas Winkler <tomas.winkler@intel.com>, Bean Huo <beanhuo@micron.com>,
+ kernel-team@android.com, Bart Van Assche <bvanassche@acm.org>,
+ hongwus@codeaurora.org, asutoshd@codeaurora.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: [PATCH 1/2] dt-bindings: arm: arm,scmi: add smc/hvc transports
+On 2020-02-06 18:28, Avri Altman wrote:
+> Hi,
 > 
-> From: Peng Fan <peng.fan@nxp.com>
+>> 
+>> The async version of ufshcd_hold(async == true), which is only called
+>> in queuecommand path as for now, is expected to work in atomic 
+>> context,
+>> thus it should not sleep or schedule out. When it runs into the 
+>> condition
+>> that clocks are ON but link is still in hibern8 state, it should bail 
+>> out
+>> without flushing the clock ungate work.
 > 
-> SCMI could use SMC/HVC as tranports, so add into devicetree binding doc.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
->  Documentation/devicetree/bindings/arm/arm,scmi.txt | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/arm,scmi.txt
-> b/Documentation/devicetree/bindings/arm/arm,scmi.txt
-> index f493d69e6194..03cff8b55a93 100644
-> --- a/Documentation/devicetree/bindings/arm/arm,scmi.txt
-> +++ b/Documentation/devicetree/bindings/arm/arm,scmi.txt
-> @@ -14,7 +14,7 @@ Required properties:
-> 
->  The scmi node with the following properties shall be under the /firmware/
-> node.
-> 
-> -- compatible : shall be "arm,scmi"
-> +- compatible : shall be "arm,scmi" or "arm,scmi-smc"
+> Fixes: f2a785ac2312 (scsi: ufshcd: Fix race between clk scaling and 
+> ungate work)
 
-One question here, are you fine with compatible "arm,scmi-smc" or
-add a new property 'transport' such as:
-transport = "mailbox"; for mailbox
-transport = "smc"; for smc and hvc.
+Sorry, missed this one, if another version is needed, I will add this 
+line.
 
-Thanks,
-Peng.
-
->  - mboxes: List of phandle and mailbox channel specifiers. It should contain
->  	  exactly one or two mailboxes, one for transmitting messages("tx")
->  	  and another optional for receiving the notifications("rx") if @@ -25,6
-> +25,8 @@ The scmi node with the following properties shall be under the
-> /firmware/ node.
->  	  protocol identifier for a given sub-node.
->  - #size-cells : should be '0' as 'reg' property doesn't have any size
->  	  associated with it.
-> +- arm,smc-id : SMC id required when using smc transports
-> +- arm,hvc-id : HVC id required when using hvc transports
+>> 
+>> Signed-off-by: Can Guo <cang@codeaurora.org>
+>> Reviewed-by: Hongwu Su <hongwus@codeaurora.org>
+>> Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
+>> Reviewed-by: Bean Huo <beanhuo@micron.com>
+>> Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
+>> ---
+>>  drivers/scsi/ufs/ufshcd.c | 5 +++++
+>>  1 file changed, 5 insertions(+)
+>> 
+>> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+>> index bbc2607..e8f7f9d 100644
+>> --- a/drivers/scsi/ufs/ufshcd.c
+>> +++ b/drivers/scsi/ufs/ufshcd.c
+>> @@ -1518,6 +1518,11 @@ int ufshcd_hold(struct ufs_hba *hba, bool 
+>> async)
+>>                  */
+>>                 if (ufshcd_can_hibern8_during_gating(hba) &&
+>>                     ufshcd_is_link_hibern8(hba)) {
+>> +                       if (async) {
+>> +                               rc = -EAGAIN;
+>> +                               hba->clk_gating.active_reqs--;
+>> +                               break;
+>> +                       }
+>>                         spin_unlock_irqrestore(hba->host->host_lock, 
+>> flags);
+>>                         flush_work(&hba->clk_gating.ungate_work);
+>>                         spin_lock_irqsave(hba->host->host_lock, 
+>> flags);
+> Since now the above code is shared in all cases,
+> Maybe find a more economical way to pack it?
 > 
->  Optional properties:
+> Thanks,
+> Avri
 > 
-> --
-> 2.16.4
+> 
 
+There are only 2 of this same code pieces in ufshcd_hold() and located
+in different cases, meanwhile there can be fall through, I don't see
+a good way to pack it, can you suggest if you have any ideas?
+
+Regards,
+Can Guo.
+
+>> --
+>> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora
+>> Forum,
+>> a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
