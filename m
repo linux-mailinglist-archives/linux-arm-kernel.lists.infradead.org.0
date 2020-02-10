@@ -2,80 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD775157CDE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 14:56:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25379157CE4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 14:57:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1+AJds9ug3S30C6Sv+JfdwmwO33WU7u6CG26U9Bqib0=; b=iUlORFkNcZOQf1
-	YlxN6+fdT3F4GESTpVGNV06vCc98u6SlkLN/XxBPExUmJq5zXRtbwDz4uAFEoWhLKt8uzH9+ZfN3l
-	yEA/v9EUNSx525c05KyVukmlLoJOKLm6+/ps9dlNYYZC1glTqJOIyyedD/pV4bMYvcSM0QZwLpwPX
-	S1P0F2VX8pdx/jVHe54dfTeNo+PZhx/s+F4qAERvml01hr+vuSiZG/bp83MrknBjlcT8Jf4ZusYDw
-	EwHNbK0KPPgzOgW1YajLSIxLWsCHZiZJ5w1K8OYmEB5KT414OO/+WVaSIX8KkHwAkj5UjoxBWjoUo
-	qjtjBTsaMeAP637w0Lhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1I3KglkO27worOew2To164Jo4JUTcPK3WTyBlFYedzA=; b=Yfbwyuk/wUGVcsUyOVaAk0j5Q
+	NJHT8Ibaxwtz2FCb1b+Je1Fh12NBcOZOyuFcFvMzwPcrwEWxjrqs3mwlMA4zMqj2S6o+CE0xk0mr0
+	oGLQE8Swf06fDZ4ERQRgLvn8RQTF1l75zS8wukHtMG0XnQC5l9HX1awNCSudihWIw2PCXpKOsX7RF
+	pv/7EACgseLpeW1ICotMejbSg7z+j5Gyp8MW62oGRoBiAa+syDDmvuWPu2miZGVyhuEL89CVsXK42
+	rVq/4FngMlypEhyTct01olBPKgQE68wa2sYh6faASCtS3WUrsnwrhiIaljuOvG/KVT1FfeUBKLlH9
+	zp6zc5WtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j19Xz-0005BT-Ks; Mon, 10 Feb 2020 13:56:23 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j19Xt-0005B0-E5
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 13:56:18 +0000
-Received: by mail-ed1-f65.google.com with SMTP id j17so372210edp.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 05:56:16 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=Ah2IHfUBmafMw70N3+IktB33GuN7dPw7FzMzjp9sBCQ=;
- b=QTWarFZPEK8+oF1f0nYjIgjIlPrVGKfan6poONTQE9xfH10SSzxI63qQFkEDqmO0iM
- SqSVEY2CrifOb2HuPEOCDnw5v4ZVnLiZhbLJo1vvcEIbShMC0S49kk+gO4gZ/hyN0V5F
- 4w0cdQZ1TA4wJcBrJurIoRVYi5RQbNOY6dzQ/2eZX4sO8aVnA38s3rWTKWQ+20f/xzo6
- aPiLJ/wnbp3mIDK0cPao+mLjmdaoXxTZ/jx7KGIdKdAS6u8eDzPd7SWbzZLbNvf8XslR
- iljUnmmXId16C75kQb1qt7LZncLPrPUpKlc1E0N1mTJ8Af5OacjgRRZ9DiCwhxruDtOz
- xSAw==
-X-Gm-Message-State: APjAAAXXcQq8cJnDdRr/ujNsQzP6TLqWKY9eK/tU6RbXzhInPQA7SFyR
- z2Ikcg+BvW29uwyJc1q7Qjs=
-X-Google-Smtp-Source: APXvYqzd+w8QkYqy6i06rRdpA9+1r7X8JZKvCvW+NyGbGNcASqySdPBvud3O+GXM8YuMo4yZDIE1og==
-X-Received: by 2002:a05:6402:1659:: with SMTP id
- s25mr1254917edx.219.1581342975193; 
- Mon, 10 Feb 2020 05:56:15 -0800 (PST)
-Received: from pi3 ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id f25sm45102ejx.33.2020.02.10.05.56.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 10 Feb 2020 05:56:14 -0800 (PST)
-Date: Mon, 10 Feb 2020 14:56:12 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Anand Moon <linux.amoon@gmail.com>
-Subject: Re: [PATCHv3 0/3] Add support for suspend clk for Exynos5422 SoC
-Message-ID: <20200210135612.GB2163@pi3>
-References: <20200210105108.1128-1-linux.amoon@gmail.com>
+	id 1j19YV-0005Qi-2T; Mon, 10 Feb 2020 13:56:55 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j19YN-0005QA-4t; Mon, 10 Feb 2020 13:56:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 863881FB;
+ Mon, 10 Feb 2020 05:56:46 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A80B3F68E;
+ Mon, 10 Feb 2020 05:56:45 -0800 (PST)
+Date: Mon, 10 Feb 2020 13:56:44 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH v2 2/3] ASoC: rockchip: Make RK3328 GPIO_MUTE control
+ explicit
+Message-ID: <20200210135644.GL7685@sirena.org.uk>
+References: <cover.1580950046.git.robin.murphy@arm.com>
+ <29a846da33c02df64eca62b5fa0f3884652f788f.1580950046.git.robin.murphy@arm.com>
+ <20200206114606.GM3897@sirena.org.uk>
+ <ad2c941a-9724-510e-959f-3cca3cab1dc2@arm.com>
+ <20200206135718.GQ3897@sirena.org.uk>
+ <CAMdYzYqTEnG_Q-8SvO2R6PeaPXQ3VBKu6iVYhYvb=wK7tT7c3A@mail.gmail.com>
+ <bca13994-a8b1-fa21-fdf0-9f362d693f39@arm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200210105108.1128-1-linux.amoon@gmail.com>
+In-Reply-To: <bca13994-a8b1-fa21-fdf0-9f362d693f39@arm.com>
+X-Cookie: Avoid gunfire in the bathroom tonight.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_055617_475826_C05AAC79 
-X-CRM114-Status: GOOD (  15.48  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200210_055647_229158_BE749657 
+X-CRM114-Status: GOOD (  11.00  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,61 +70,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, Felipe Balbi <balbi@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ Heiko Stuebner <heiko@sntech.de>, lgirdwood@gmail.com,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Peter Geis <pgwipeout@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1068973068238764114=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 10, 2020 at 10:51:05AM +0000, Anand Moon wrote:
-> Long time ago I tried to add suspend clk for dwc3 phy
-> which was wrong appoch, see below.
-> 
-> [0] https://lore.kernel.org/patchwork/patch/837635/
-> [1] https://lore.kernel.org/patchwork/patch/837636/
-> 
 
-You ignored parts of my review from these previous patches. I asked for
-describing WHY are you doing this and WHAT problem are you trying to
-solve. I asked for this multiple times. Unfortunately I cannot find the
-answers to my questions in this patchset...
-
-Best regards,
-Krzysztof
+--===============1068973068238764114==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="sMZCuqyhuhd4ycTi"
+Content-Disposition: inline
 
 
-> This patch series tries to enable suspend clk using 
-> exynos dwc3 driver, for this I have added new 
-> compatible string "samsung,exynos5420-dwusb3"
-> so that we could add new suspend clk in addition
-> to the core clk. exynos dwc3 driver will help
-> enable/disable these clk.
-> 
-> -Anand
-> 
-> Anand Moon (3):
->   devicetree: bindings: exynos: Add new compatible for Exynos5420 dwc3
->     clocks support
->   ARM: dts: exynos: Add missing usbdrd3 suspend clk
->   usb: dwc3: exynos: Add support for Exynos5422 suspend clk
-> 
->  Documentation/devicetree/bindings/usb/exynos-usb.txt | 4 +++-
->  arch/arm/boot/dts/exynos5420.dtsi                    | 8 ++++----
->  arch/arm/boot/dts/exynos54xx.dtsi                    | 4 ++--
->  drivers/usb/dwc3/dwc3-exynos.c                       | 9 +++++++++
->  4 files changed, 18 insertions(+), 7 deletions(-)
-> 
-> -- 
-> 2.25.0
-> 
+--sMZCuqyhuhd4ycTi
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Feb 06, 2020 at 09:38:11PM +0000, Robin Murphy wrote:
+> On 2020-02-06 6:05 pm, Peter Geis wrote:
+> > On Thu, Feb 6, 2020 at 8:57 AM Mark Brown <broonie@kernel.org> wrote:
+> >>
+
+
+> compromise that isn't too hideous, preserves the logical cleanup but
+> at least prevents audio going silent with old DTBs (plus handling GPIO
+> probe deferral properly which I forgot about first time around). How
+> does this look?
+>=20
+> Robin.
+>=20
+> ----->8-----
+
+Please don't send revisions of individual patches in reply to discussion
+of a series, it makes it really hard to follow what's going on with the
+series.  Please just send patches normally.
+
+--sMZCuqyhuhd4ycTi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5BYRsACgkQJNaLcl1U
+h9Du0wf9HO3Q6AaZJ1I4tRS3loJ/OXK/v8QMTdDtKmw/Ek+JwYeQh3npOWMQBItK
+6pwxmpW5l4Cej0jPXpea00qCFYlQEadT1topkaNHLoNic2dlkVSv2seRbm3R6dwP
+ghjNr4Mwv3vycd1P46hmJZsB+eDH4HmZnQGKSFkdz4i1j6MOLfwWxdnJLWpOP740
+dwaB4VXKiS3EKCw5A3Q07jMCTuNyeXumjmq79/4POKCmN7FcE5Gr64c747stLQ+g
+cDRDRKWiVhLuAFTDTnHf4ry9bTlGulap1bs2xN2qlmbxIKMT5ZV/UGQDhqrDQ6MV
+/A1zX6aZmKOe6X82hUl4CSeTgIR6HQ==
+=TcrG
+-----END PGP SIGNATURE-----
+
+--sMZCuqyhuhd4ycTi--
+
+
+--===============1068973068238764114==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1068973068238764114==--
+
