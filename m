@@ -2,107 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E974156DFF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 04:41:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C64F156DF9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 04:40:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LIpkerDMZlK/NESQQd9/nqrKVAOXxQriDnKLvOcCZEQ=; b=oC3FMyjjMPxkxJ
-	F9Pfbr68lIYfs1+IIdrxkTSEsuN5gNT2QJpCY85GBDvb7XoxFhpQeb5O10F+d6+R44CWbXbtcpZrp
-	7k4ub9mwYFZVvQUhc9+QrmJU2JuF75APz8rclaudzuHOooiJKJhiFZJfQlDLky0Ic524mU50hARk8
-	S/Z8jV4LJWZUkh1pNN5eXwn+QS8YX7X6RmYlyxNZJ4XJuyh7UJmKlCdfjzAXOWixSR3qJk3ZYD4l3
-	5ycH+5uK6ceEwx9rUCog2IsyofaCYzgwfyxEjcyc6LppRhktJ3uqAAFloAmN/AckNnWKD5HYWxBAw
-	B2IRxwyr0qShFF0UtBsQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U47xWEnYc9nxHEpbk+Vv4EDellUvCE+gDE/H9b302xY=; b=sPHdRyF/mitLB3
+	S0Ur8Db9W62Go4Js9b9K4nsMvC3H14Z9ZhK2LvjYvRoi8P0MN+0tlXBMUfKl6HkhPckfSEkxNey+2
+	SqE4d9ygjT4qb25f+iY/FENNglpQksCDa5PX9K8suvkAWfgXeFu1Vbip0r5o/th+GMS+4s+BR56Ku
+	ACNwHeaVPyx0qJ+J/iqBTWxKK0SEtAaQAMGdZ0sKjxoXbe/J+Vkhtzq7NdVm0u5D5ylvi9N6LwjQ4
+	2+MNstk9NionI8YO65ZKuVUGkiqMA+E9G984zPDJiRjaL/w+CNPkfQIy2zHH/CvHNU6k43pn/xzbR
+	zzEGe/m/AbZy0k2QX1zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0zwS-0004rD-2p; Mon, 10 Feb 2020 03:41:00 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1j0zvm-0004My-3t; Mon, 10 Feb 2020 03:40:18 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0zvc-000466-Rs
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 03:40:11 +0000
-Received: by mail-qk1-x741.google.com with SMTP id v2so298737qkj.2
+ id 1j0zva-0003BN-U3
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 03:40:09 +0000
+Received: by mail-qt1-x843.google.com with SMTP id w47so4160896qtk.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 09 Feb 2020 19:40:08 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=frfitOFXox86XEifRvZU8CHfdOpsMURa7f2gjVq2U28=;
- b=iWycGiy96SWpQJ31sL6iYLl3KcJ0dFgExK3vPC1U1Fedgb3NlUkSaKIEFQfH9YvVLC
- ln8/R5P8WT6z9PWn02Fop2/cllNGbdbj5ep2xctdG6NThRWxxA9MKl4zIQ5A7cxfBSKr
- CCGoA4yLGYtDsSGQZUMOXsfilqpP/GG9O2C5Z40P9Dc3OobsNaimCzo7VuWd47HqG7lQ
- pl3eYuC/F6aMi1cFdKIlJYCMwzr3c6sjkMPPUbqYCBFpIG82lK8+KjCt4HBtfdfwMRny
- GNU28UQd/oxAZ7VdbmFrwXBFxuwmvMld0M22OC9av7R6TS5MqW2yh0iHDSr5UrL7M+jw
- /ylw==
+ Sun, 09 Feb 2020 19:40:02 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XboG0iK7GqoQRLczFWQdphkEeLioL/kipjtAa1M1LsY=;
+ b=S9eLP5gdMgbocUEmd0v0eluLux599RiHqlUQcnPcwg1s2dnQO9l3gpaEh4BGZeyV+z
+ aqL0BOAIJKRMWqW2x4j0jIrP5nmkKgsLxBVMVEI7rpxTyplkU9L/5xFYJ08uOX+ySMYn
+ wxPdSIfqvzNvMmhJnx/14ZbDVlXmOqsrx3X40=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=frfitOFXox86XEifRvZU8CHfdOpsMURa7f2gjVq2U28=;
- b=Jy/M3jm0BiscUeET+yH8JJL5apfAjVKJPbWbc7JxjrvB+cpnBjDeTBCYa4puJk3QZK
- lYfJ99Fn8VkwZoHphxbX5dxVKCgjn8uMId4mdPNmf149LhInZvANn/GkQiaVyOiMgE23
- UMlzy5WOc0u6ozuhE/FDjqsIpehGpaP3H/7y0xZxKjss+fJdFOoHlhmIqd5o/ir1bhZN
- nLZVXpzWRU570937hzs53ySEF562ufIUtkitlwVBvd3t4/QPRtbc2oeHub+6crWllBOW
- Z8d2SFbIoDBi61PkD/1m484yY1YSvu4aBJuB/y6NcuVZUTzw2gGlI++X66Xg+OLKADBr
- fe5A==
-X-Gm-Message-State: APjAAAU2u4nEI6wKlO/tVbAhPz37LX/0Bv4ZRwrgP+UFQ64rMBfWwozM
- aObEiumbcSxitsf3uqE2rf3ZAHo+
-X-Google-Smtp-Source: APXvYqy5b4i4DNfRHydf+m6nmbdF5HggBHGwaG5kMgg6NU4ZOf720NShyORmng4qsE7dxslJkWlUdQ==
-X-Received: by 2002:a37:e10f:: with SMTP id c15mr8958157qkm.331.1581306007417; 
- Sun, 09 Feb 2020 19:40:07 -0800 (PST)
-Received: from auth1-smtp.messagingengine.com (auth1-smtp.messagingengine.com.
- [66.111.4.227])
- by smtp.gmail.com with ESMTPSA id h4sm5471601qtp.24.2020.02.09.19.40.06
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 09 Feb 2020 19:40:06 -0800 (PST)
-Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailauth.nyi.internal (Postfix) with ESMTP id 5C3B921F34;
- Sun,  9 Feb 2020 22:40:05 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute6.internal (MEProxy); Sun, 09 Feb 2020 22:40:05 -0500
-X-ME-Sender: <xms:kNBAXhWsLdcLV5cUxDW5opGAKDs4sQWXvOnfHGzIRHTVpVekWHC-Mw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedtgddvkecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenog
- fuohhrthgvugftvggtihhpvdculdegtddmnecujfgurhephffvufffkffoggfgsedtkeer
- tdertddtnecuhfhrohhmpeeuohhquhhnucfhvghnghcuoegsohhquhhnrdhfvghnghesgh
- hmrghilhdrtghomheqnecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucfkphephedv
- rdduheehrdduuddurdejudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmh
- grihhlfhhrohhmpegsohhquhhnodhmvghsmhhtphgruhhthhhpvghrshhonhgrlhhithih
- qdeiledvgeehtdeigedqudejjeekheehhedvqdgsohhquhhnrdhfvghngheppehgmhgrih
- hlrdgtohhmsehfihigmhgvrdhnrghmvg
-X-ME-Proxy: <xmx:kNBAXuCj-GPfaTSVhcn-B_H330oKSgKg0IrD60tUjHS2ufrJ1Z-Z6w>
- <xmx:kNBAXkpRd1EKS-4cdLOqnj_ek9htrQ-5dxXYJnao9cLe2w0nHJTGDQ>
- <xmx:kNBAXq00Y7ybEDx318PH8LWF-N9dEWx-qj7i8iGU4pqSp90_wXT9Bg>
- <xmx:ldBAXtdqqKvhaiNWE0B3vSM1N5p0ryPyzeJ3sxIRtCk4o3Zk4K5SHCwsHr8>
-Received: from localhost (unknown [52.155.111.71])
- by mail.messagingengine.com (Postfix) with ESMTPA id A8C6730606FB;
- Sun,  9 Feb 2020 22:39:59 -0500 (EST)
-From: Boqun Feng <boqun.feng@gmail.com>
-To: linux-pci@vger.kernel.org, linux-hyperv@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 0/3] PCI: hv: Generify pci-hyperv.c
-Date: Mon, 10 Feb 2020 11:39:50 +0800
-Message-Id: <20200210033953.99692-1-boqun.feng@gmail.com>
-X-Mailer: git-send-email 2.24.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XboG0iK7GqoQRLczFWQdphkEeLioL/kipjtAa1M1LsY=;
+ b=rKuTa6u1c9LJp2EoFUXup6GszrDPchZxlIspohKeMyXQeqnYiJRWK5Owdc3gNJbrbx
+ DEeEhhZsDxrB338H6ZvBzGQfP1oMGE5t0ZBhmRjAGCoQOFvlpAy/cq7zn60bWVQCXVrS
+ l1BF5gyCNRO0EX8PGXmZhwuUhnNnKXzPvRz4/8PSPstP7oXBb4ph9WHTemyuJDJh+8Mo
+ AByV81lB2Hm2Hk6c+SU8XpjS+yyn+IyCW+OmaJCFMjbLK61R2zmanT3Bfu71EYor9vQu
+ eRyO7qYg9X2wkBdicczaFqZ0UXVdG9fzr+dazlswHsdwkwbQGNADZXpXHdBd9PFIs0g9
+ ZmoA==
+X-Gm-Message-State: APjAAAVzeuYUH6nxBtJ7Bqv3eHpf3Tl8n77nyHwjrnOMluQUdZwy2KIA
+ xSM1xZEqrpw/sFNvRZHuiUaN4zCalfzPp2MsUcM6rQ==
+X-Google-Smtp-Source: APXvYqyXZPq2eK4gfSW4qCTcA8tVKmaBqHZuSe1kg54WZjcEK6H7JEWtY6WZl9WubSwHbINPKhKpAC3WUgPM1fC6YRE=
+X-Received: by 2002:ac8:3946:: with SMTP id t6mr8396284qtb.278.1581306001942; 
+ Sun, 09 Feb 2020 19:40:01 -0800 (PST)
 MIME-Version: 1.0
+References: <20200207052627.130118-1-drinkcat@chromium.org>
+ <5237381b-c232-7087-a3d6-78d6358d80bf@collabora.com>
+ <CANMq1KCD1U7iym_fFWAd-Xa6ipxHmF_FAYxDL5WqGzDnA0KKLw@mail.gmail.com>
+ <93aec9ae-00fc-bf55-1d6c-9bd715b78344@collabora.com>
+In-Reply-To: <93aec9ae-00fc-bf55-1d6c-9bd715b78344@collabora.com>
+From: Nicolas Boichat <drinkcat@chromium.org>
+Date: Mon, 10 Feb 2020 11:39:50 +0800
+Message-ID: <CANMq1KC_nN4MQ8LKPCCNGPPeHRP18n3USXg6DRPousivn_J3aw@mail.gmail.com>
+Subject: Re: [PATCH v4 0/7] Add dts for mt8183 GPU (and misc panfrost patches)
+To: Tomeu Vizoso <tomeu.vizoso@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_194008_942976_06ABFB4F 
-X-CRM114-Status: UNSURE (   9.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200209_194007_006358_F12F0DD7 
+X-CRM114-Status: GOOD (  18.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [boqun.feng[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -111,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,69 +91,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Stephen Hemminger <sthemmin@microsoft.com>,
- Haiyang Zhang <haiyangz@microsoft.com>, x86@kernel.org,
- Michael Kelley <mikelley@microsoft.com>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, "H. Peter Anvin" <hpa@zytor.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, "K. Y. Srinivasan" <kys@microsoft.com>,
- Boqun Feng <boqun.feng@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, David Airlie <airlied@linux.ie>,
+ lkml <linux-kernel@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Steven Price <steven.price@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Fri, Feb 7, 2020 at 4:13 PM Tomeu Vizoso <tomeu.vizoso@collabora.com> wrote:
+>
+> On 2/7/20 8:42 AM, Nicolas Boichat wrote:
+> > On Fri, Feb 7, 2020 at 2:18 PM Tomeu Vizoso <tomeu.vizoso@collabora.com> wrote:
+> >>
+> >>> Some more changes are still required to get devfreq working, and of course
+> >>> I do not have a userspace driver to test this with.
+> >>
+> >> Have you tried the Panfrost tests in IGT? They are atm quite basic, but
+> >> could be interesting to check that the different HW units are correctly
+> >> powered on.
+> >
+> > I haven't, you mean this right?
+> > https://gitlab.freedesktop.org/tomeu/igt-gpu-tools/tree/panfrost
+>
+> Yes, though may be better to use the upstream repo:
+>
+> https://gitlab.freedesktop.org/drm/igt-gpu-tools
+>
+> > Any specific test you have in mind?
+>
+> All the panfrost ones, but looks like panfrost_prime:gem-prime-import is
+> failing atm:
+>
+> https://lava.collabora.co.uk/scheduler/job/2214987
 
-This is the first part for virtual PCI support of Hyper-V guest on
-ARM64. The whole patchset doesn't have any functional change, but only
-refactors the pci-hyperv.c code to make it more arch-independent.
+(I first removed opp table from device tree to avoid constant spew
+about devfreq not supporting 2 regulators, I should get around to fix
+that...)
 
-Previous version:
-v1: https://lore.kernel.org/lkml/20200121015713.69691-1-boqun.feng@gmail.com/
-v2: https://lore.kernel.org/linux-arm-kernel/20200203050313.69247-1-boqun.feng@gmail.com/
+# /usr/libexec/igt-gpu-tools/panfrost_gem_new
+IGT-Version: 1.24-gd4d574a4 (arm) (Linux: 4.19.99 aarch64)
+Starting subtest: gem-new-4096
+Subtest gem-new-4096: SUCCESS (0.000s)
+Starting subtest: gem-new-0
+Subtest gem-new-0: SUCCESS (0.000s)
+Starting subtest: gem-new-zeroed
+Subtest gem-new-zeroed: SUCCESS (0.001s)
+# /usr/libexec/igt-gpu-tools/panfrost_get_param
+IGT-Version: 1.24-gd4d574a4 (arm) (Linux: 4.19.99 aarch64)
+Starting subtest: base-params
+Subtest base-params: SUCCESS (0.000s)
+Starting subtest: get-bad-param
+Subtest get-bad-param: SUCCESS (0.000s)
+Starting subtest: get-bad-padding
+Subtest get-bad-padding: SUCCESS (0.000s)
+# /usr/libexec/igt-gpu-tools/panfrost_prime
+IGT-Version: 1.24-gd4d574a4 (arm) (Linux: 4.19.99 aarch64)
+Starting subtest: gem-prime-import
+(panfrost_prime:1527) ioctl_wrappers-CRITICAL: Test assertion failure
+function prime_fd_to_handle, file
+../igt-gpu-tools-9999/lib/ioctl_wrappers.c:1336:
+(panfrost_prime:1527) ioctl_wrappers-CRITICAL: Failed assertion:
+igt_ioctl((fd), ((((2U|1U) << (((0+8)+8)+14)) | ((('d')) << (0+8)) |
+(((0x2e)) << 0) | ((((sizeof(struct drm_prime_handle)))) <<
+((0+8)+8)))), (&args)) == 0
+(panfrost_prime:1527) ioctl_wrappers-CRITICAL: Last errno: 95,
+Operation not supported
+(panfrost_prime:1527) ioctl_wrappers-CRITICAL: error: -1 != 0
+Stack trace:
+Subtest gem-prime-import failed.
+Subtest gem-prime-import: FAIL (0.004s)
+(but that looks expected?)
 
-Changes since v2:
+Now the trickier ones, I guess we're either missing something, or my
+dirty 4.19 backport is very broken:
+# /usr/libexec/igt-gpu-tools/panfrost_submit
+IGT-Version: 1.24-gd4d574a4 (arm) (Linux: 4.19.99 aarch64)
+Starting subtest: pan-submit
+(panfrost_submit:1643) CRITICAL: Test assertion failure function
+__real_main86, file ../igt-gpu-tools-9999/tests/panfrost_submit.c:103:
+(panfrost_submit:1643) CRITICAL: Failed assertion: syncobj_wait(fd,
+&submit->args->out_sync, 1, abs_timeout(SHORT_TIME_NSEC), 0, NULL)
+Stack trace:
+Subtest pan-submit failed.
+**** DEBUG ****
+(panfrost_submit:1643) CRITICAL: Test assertion failure function
+__real_main86, file ../igt-gpu-tools-9999/tests/panfrost_submit.c:103:
+(panfrost_submit:1643) CRITICAL: Failed assertion: syncobj_wait(fd,
+&submit->args->out_sync, 1, abs_timeout(SHORT_TIME_NSEC), 0, NULL)
+(panfrost_submit:1643) igt_core-INFO: Stack trace:
+****  END  ****
+Subtest pan-submit: FAIL (0.119s)
+Starting subtest: pan-submit-error-no-jc
+Subtest pan-submit-error-no-jc: SUCCESS (0.000s)
+Starting subtest: pan-submit-error-bad-in-syncs
+Subtest pan-submit-error-bad-in-syncs: SUCCESS (0.012s)
+Starting subtest: pan-submit-error-bad-bo-handles
+Subtest pan-submit-error-bad-bo-handles: SUCCESS (0.012s)
+Starting subtest: pan-submit-error-bad-requirements
+Subtest pan-submit-error-bad-requirements: SUCCESS (0.012s)
+Starting subtest: pan-submit-error-bad-out-sync
+Subtest pan-submit-error-bad-out-sync: SUCCESS (0.012s)
+Starting subtest: pan-reset
+(panfrost_submit:1643) CRITICAL: Test assertion failure function
+__real_main86, file ../igt-gpu-tools-9999/tests/panfrost_submit.c:173:
+(panfrost_submit:1643) CRITICAL: Failed assertion: syncobj_wait(fd,
+&submit->args->out_sync, 1, abs_timeout(BAD_JOB_TIME_NSEC), 0, NULL)
+Stack trace:
+Subtest pan-reset failed.
+**** DEBUG ****
+(panfrost_submit:1643) CRITICAL: Test assertion failure function
+__real_main86, file ../igt-gpu-tools-9999/tests/panfrost_submit.c:173:
+(panfrost_submit:1643) CRITICAL: Failed assertion: syncobj_wait(fd,
+&submit->args->out_sync, 1, abs_timeout(BAD_JOB_TIME_NSEC), 0, NULL)
+(panfrost_submit:1643) igt_core-INFO: Stack trace:
+****  END  ****
+Subtest pan-reset: FAIL (0.840s)
 
-*	Rebased on 5.6-rc1
+The pan-submit case causes an MMU fault:
+(full log: https://gist.github.com/drinkcat/1ae36cb1b1b71f30cc4fc29759612d76)
 
-*	Reword commit logs as per Andrew's suggestion.
+[ 1215.234937] [IGT] panfrost_submit: executing
+[ 1215.318446] [IGT] panfrost_submit: starting subtest pan-submit
+...
+[ 1215.338644] panfrost 13040000.gpu: Unhandled Page fault in AS0 at
+VA 0x000000FF00000000
+               Reason: TODO
+               raw fault status: 0xA002C0
+               decoded fault status: SLAVE FAULT
+               exception type 0xC0: UNKNOWN
+               access type 0x2: READ
+               source id 0xA0
+[ 1215.444504] [IGT] panfrost_submit: exiting, ret=98
+...
+[ 1215.446902] panfrost 13040000.gpu: js fault, js=0,
+status=JOB_BUS_FAULT, head=0x300b000, tail=0x300b000
+[ 1215.446935] panfrost 13040000.gpu: Unhandled Page fault in AS0 at
+VA 0x000000FF00000000
+Reason: TODO
+raw fault status: 0xA002C0
+decoded fault status: SLAVE FAULT
+exception type 0xC0: UNKNOWN
+access type 0x2: READ
+source id 0xA0
 
-*	It makes more sense to have a generic interface to set the whole
-	msi_entry rather than only the "address" field. So change
-	hv_set_msi_address_from_desc() to hv_set_msi_entry_from_desc().
-	Additionally, make it an inline function as per the suggestion
-	of Andrew and Thomas.
+pan-reset failure looks similar:
+https://gist.github.com/drinkcat/2d336d57e6b95262d83e7a28a409bc5b
 
-*	Add the missing comment saying the partition_id of
-	hv_retarget_device_interrupt must be self.
+Thanks,
 
-*	Add the explanation for why "__packed" is needed for TLFS
-	structures.
-
-I've done compile and boot test of this patchset, also done some tests
-with a pass-through NVMe device.
-
-Suggestions and comments are welcome!
-
-Regards,
-Boqun
-
-Boqun Feng (3):
-  PCI: hv: Move hypercall related definitions into tlfs header
-  PCI: hv: Move retarget related structures into tlfs header
-  PCI: hv: Introduce hv_msi_entry
-
- arch/x86/include/asm/hyperv-tlfs.h  | 41 +++++++++++++++++++++++++++
- arch/x86/include/asm/mshyperv.h     |  8 ++++++
- drivers/pci/controller/pci-hyperv.c | 43 ++---------------------------
- 3 files changed, 52 insertions(+), 40 deletions(-)
-
--- 
-2.24.1
-
+> Cheers,
+>
+> Tomeu
+>
+> > Thanks,
+> >
+> >> Regards,
+> >>
+> >> Tomeu
+> >>
+> >>> I believe at least patches 1, 2, and 3 can be merged. 4 and 5 are mostly
+> >>> useful in conjunction with 6 and 7 (which are not ready yet), so I'll let
+> >>> maintainers decide.
+> >>>
+> >>> Thanks!
+> >>>
+> >>> Nicolas Boichat (7):
+> >>>     dt-bindings: gpu: mali-bifrost: Add Mediatek MT8183
+> >>>     arm64: dts: mt8183: Add node for the Mali GPU
+> >>>     drm/panfrost: Improve error reporting in panfrost_gpu_power_on
+> >>>     drm/panfrost: Add support for multiple regulators
+> >>>     drm/panfrost: Add support for multiple power domains
+> >>>     RFC: drm/panfrost: Add mt8183-mali compatible string
+> >>>     RFC: drm/panfrost: devfreq: Add support for 2 regulators
+> >>>
+> >>>    .../bindings/gpu/arm,mali-bifrost.yaml        |  25 ++++
+> >>>    arch/arm64/boot/dts/mediatek/mt8183-evb.dts   |   7 +
+> >>>    arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 105 +++++++++++++++
+> >>>    drivers/gpu/drm/panfrost/panfrost_devfreq.c   |  17 +++
+> >>>    drivers/gpu/drm/panfrost/panfrost_device.c    | 123 +++++++++++++++---
+> >>>    drivers/gpu/drm/panfrost/panfrost_device.h    |  27 +++-
+> >>>    drivers/gpu/drm/panfrost/panfrost_drv.c       |  41 ++++--
+> >>>    drivers/gpu/drm/panfrost/panfrost_gpu.c       |  11 +-
+> >>>    8 files changed, 326 insertions(+), 30 deletions(-)
+> >>>
 
 _______________________________________________
 linux-arm-kernel mailing list
