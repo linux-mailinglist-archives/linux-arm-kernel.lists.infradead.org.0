@@ -2,52 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25379157CE4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 14:57:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B01B157CF4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 15:00:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1I3KglkO27worOew2To164Jo4JUTcPK3WTyBlFYedzA=; b=Yfbwyuk/wUGVcsUyOVaAk0j5Q
-	NJHT8Ibaxwtz2FCb1b+Je1Fh12NBcOZOyuFcFvMzwPcrwEWxjrqs3mwlMA4zMqj2S6o+CE0xk0mr0
-	oGLQE8Swf06fDZ4ERQRgLvn8RQTF1l75zS8wukHtMG0XnQC5l9HX1awNCSudihWIw2PCXpKOsX7RF
-	pv/7EACgseLpeW1ICotMejbSg7z+j5Gyp8MW62oGRoBiAa+syDDmvuWPu2miZGVyhuEL89CVsXK42
-	rVq/4FngMlypEhyTct01olBPKgQE68wa2sYh6faASCtS3WUrsnwrhiIaljuOvG/KVT1FfeUBKLlH9
-	zp6zc5WtA==;
+	 bh=qPZ4yrg7hOrePAoxIIDU5soFdM/xjwChtjOP/bhyF5U=; b=dCkXPvU4/ghLbAKGOU/RU9MZq
+	nhpWfBX/+4t6AdYPZWgf38N3mJ2k4SxMmq8ff09MLMXpVDDuFqZt+Qku+NiHKR5iglIRLeGbQYtqF
+	yLneS3UissDCwwco6mF0P9dPVQXcl+ALCXMV1QjKzLGw/sfSfHKkZVLWoPna3V+2YKpWyHxjmt2d5
+	7TcviFpgtEPuHJEhvn9mcDZluySljbS0fRO6sUoRmPWG88g7Ah2PmRovgpcCfCF5armWn+L4iA6jk
+	9GuRjPq8Spjd6MgpAXDcW1h1Xfri28V119/bc1ykElzPjs3ePMK035XBLqxEdzhsvI7flELSapwE8
+	kGZST0MSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j19YV-0005Qi-2T; Mon, 10 Feb 2020 13:56:55 +0000
+	id 1j19bs-00073C-H7; Mon, 10 Feb 2020 14:00:24 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j19YN-0005QA-4t; Mon, 10 Feb 2020 13:56:48 +0000
+ id 1j19bl-00072k-Kh; Mon, 10 Feb 2020 14:00:18 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 863881FB;
- Mon, 10 Feb 2020 05:56:46 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DAD291FB;
+ Mon, 10 Feb 2020 06:00:16 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0A80B3F68E;
- Mon, 10 Feb 2020 05:56:45 -0800 (PST)
-Date: Mon, 10 Feb 2020 13:56:44 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5EC1E3F68E;
+ Mon, 10 Feb 2020 06:00:16 -0800 (PST)
+Date: Mon, 10 Feb 2020 14:00:15 +0000
 From: Mark Brown <broonie@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2 2/3] ASoC: rockchip: Make RK3328 GPIO_MUTE control
- explicit
-Message-ID: <20200210135644.GL7685@sirena.org.uk>
-References: <cover.1580950046.git.robin.murphy@arm.com>
- <29a846da33c02df64eca62b5fa0f3884652f788f.1580950046.git.robin.murphy@arm.com>
- <20200206114606.GM3897@sirena.org.uk>
- <ad2c941a-9724-510e-959f-3cca3cab1dc2@arm.com>
- <20200206135718.GQ3897@sirena.org.uk>
- <CAMdYzYqTEnG_Q-8SvO2R6PeaPXQ3VBKu6iVYhYvb=wK7tT7c3A@mail.gmail.com>
- <bca13994-a8b1-fa21-fdf0-9f362d693f39@arm.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Subject: Re: [PATCH v4 4/7] drm/panfrost: Add support for multiple regulators
+Message-ID: <20200210140015.GM7685@sirena.org.uk>
+References: <20200207052627.130118-1-drinkcat@chromium.org>
+ <20200207052627.130118-5-drinkcat@chromium.org>
 MIME-Version: 1.0
-In-Reply-To: <bca13994-a8b1-fa21-fdf0-9f362d693f39@arm.com>
+In-Reply-To: <20200207052627.130118-5-drinkcat@chromium.org>
 X-Cookie: Avoid gunfire in the bathroom tonight.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_055647_229158_BE749657 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20200210_060017_726452_FD13CB67 
+X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -70,64 +65,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- Heiko Stuebner <heiko@sntech.de>, lgirdwood@gmail.com,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Peter Geis <pgwipeout@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1068973068238764114=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ ulf.hansson@linaro.org, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
+ Liam Girdwood <lgirdwood@gmail.com>, dri-devel@lists.freedesktop.org,
+ Steven Price <steven.price@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org,
+ Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
+ Daniel Vetter <daniel@ffwll.ch>, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7027611260110807427=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============1068973068238764114==
+--===============7027611260110807427==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="sMZCuqyhuhd4ycTi"
+	protocol="application/pgp-signature"; boundary="bZ2MuwyI/0uB8yuJ"
 Content-Disposition: inline
 
 
---sMZCuqyhuhd4ycTi
+--bZ2MuwyI/0uB8yuJ
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-On Thu, Feb 06, 2020 at 09:38:11PM +0000, Robin Murphy wrote:
-> On 2020-02-06 6:05 pm, Peter Geis wrote:
-> > On Thu, Feb 6, 2020 at 8:57 AM Mark Brown <broonie@kernel.org> wrote:
-> >>
+On Fri, Feb 07, 2020 at 01:26:24PM +0800, Nicolas Boichat wrote:
+> Some GPUs, namely, the bifrost/g72 part on MT8183, have a second
+> regulator for their SRAM, let's add support for that.
+
+Reviwed-by: Mark Brown <broonie@kernel.org>
 
 
-> compromise that isn't too hideous, preserves the logical cleanup but
-> at least prevents audio going silent with old DTBs (plus handling GPIO
-> probe deferral properly which I forgot about first time around). How
-> does this look?
->=20
-> Robin.
->=20
-> ----->8-----
-
-Please don't send revisions of individual patches in reply to discussion
-of a series, it makes it really hard to follow what's going on with the
-series.  Please just send patches normally.
-
---sMZCuqyhuhd4ycTi
+--bZ2MuwyI/0uB8yuJ
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5BYRsACgkQJNaLcl1U
-h9Du0wf9HO3Q6AaZJ1I4tRS3loJ/OXK/v8QMTdDtKmw/Ek+JwYeQh3npOWMQBItK
-6pwxmpW5l4Cej0jPXpea00qCFYlQEadT1topkaNHLoNic2dlkVSv2seRbm3R6dwP
-ghjNr4Mwv3vycd1P46hmJZsB+eDH4HmZnQGKSFkdz4i1j6MOLfwWxdnJLWpOP740
-dwaB4VXKiS3EKCw5A3Q07jMCTuNyeXumjmq79/4POKCmN7FcE5Gr64c747stLQ+g
-cDRDRKWiVhLuAFTDTnHf4ry9bTlGulap1bs2xN2qlmbxIKMT5ZV/UGQDhqrDQ6MV
-/A1zX6aZmKOe6X82hUl4CSeTgIR6HQ==
-=TcrG
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5BYe4ACgkQJNaLcl1U
+h9CfMQf/QzQ87xi7iHEnbkDh0DvfRVBElMOh5yZEs/7vrCKXq48DQSPhy5qTSNe0
+ELgi8tL9ZNzBSrkpyMdv8p/CS1J0sFo84mWLhKCukEMsBUzk5xzH0Bl8IaIq12ia
+zV3bz3qMfraesjQ4Epu79BurC/81bsk+7Yr51OIajamncY7iePAnJOUdA3KsCNVa
+89Klh4Je02sA9pUAg88IEA72n+YJ1Cm7S7xtA5FbJJf0EzNyD9WKY6tF3lF9bqts
+5w7iGUDPe102X5urJGl38NliUpk8nkjFvREH4kDcOoyo07yZv14YGpiiqCcC3KD2
+4NbAUoMEmAh9tXfdABSgDX/n414tSw==
+=gI44
 -----END PGP SIGNATURE-----
 
---sMZCuqyhuhd4ycTi--
+--bZ2MuwyI/0uB8yuJ--
 
 
---===============1068973068238764114==
+--===============7027611260110807427==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -138,5 +126,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============1068973068238764114==--
+--===============7027611260110807427==--
 
