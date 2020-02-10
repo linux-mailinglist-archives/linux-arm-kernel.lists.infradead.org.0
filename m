@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7D871571AF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 10:28:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2202E1571B0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 10:28:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XItgk9pyoQeG7xwMp9lWP9/7sFg/ttrmWji/E9K99ZY=; b=a8iS6V3uXcpbX0
-	Yvbljjn8DqecwWe14y/K5VRZye0Y9VF5xRQgIp0V5eCmw/yQ5qAGuKDYjqMRgTvRTsLv9usI5PsWT
-	2Niv5vutPzoGOq2esYLnnrIgDr8ADYUTr925s77IJvCDL1YbinPF96GCU6Qglm4drqS0sKNaUYEB0
-	0q2Z0Y1p1pPXuggj3hvIET5DlRrATFKzLBsXsc5Gfz2D11RWWkEUWT/7UdwT1b2i4QrhWkJthGWLP
-	NAz3p7p3ri2tkb57UMzCbK1+LES338dbqjHn2WHg16PKExLlmDqjR0ZGCfW96bAE2MfIBJtFHQAtF
-	FuqYCML23nFGzdjYpAfQ==;
+	List-Owner; bh=uNWygilyqr7MHTpGSbkx3PSre5MCNUV1klQZNzT3S2c=; b=TvzNPNJDUf390M
+	D4q5ioExVpcDWG1LMyigrtG47vHaRShQTyhe5YZ1imbUHAAgZzVrrKD8Qtjy3BAyjbbOIAk10lrwR
+	JM5wXPJYYOaJcBza3hqNM6CflpPGJGDPbZmIPLbnzkTN0Yc45WOyW2Ip4AIUPeGbhtpnj5pEvafj5
+	iCuTKubiqd4WuFyToPgecPXbjy9M718UB30gBh4+e4vGKAC6KlBA20qgg3nR1C6rwmMwV6wjo1UJV
+	5jXJtt7KlcHkZpUwQ2bOYqbHKvRzLEkM+Ac4JblUwsQWIJy5zDaWPrJlIP4N4X4Ua+AsLqh4q7eaw
+	gQljEHXrW55unLNgG55A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j15Mn-0007GN-HM; Mon, 10 Feb 2020 09:28:33 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1j15N5-0007VQ-Ny; Mon, 10 Feb 2020 09:28:51 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j15Lp-0006TM-GP
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 09:27:35 +0000
-Received: by mail-lf1-x144.google.com with SMTP id v201so3632818lfa.11
+ id 1j15Lr-0006VJ-Ui
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 09:27:37 +0000
+Received: by mail-lf1-x143.google.com with SMTP id b15so3667819lfc.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 01:27:33 -0800 (PST)
+ Mon, 10 Feb 2020 01:27:35 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Ypf2PVbAsW0uSJC/xuhYlQ/Mtj2shleLiZbK07EUwj0=;
- b=x0f3kBJfs1TQT26gIKmjgGSOqimBHYznHSoW11k0cYIjSbxkGJgkfStOtuYUhXTg/M
- Vz6iUQqe1sAUqwVk7R56B7wtEzBVNkrSJEPOWolB9SM3Lq57DGNbSXTLCVbPIbzrqoj9
- X1sVx7xCn7pKir1HJ9QZkjt6KaZpdiqOMDESW8l5L72W+iE1xot/1uigxxWqI3fjETfz
- Tk/7Qpw27/LMc/AwCAShiDCQW92vfPnAcKhGYEnTJc0EItMdBjO2OEGYr/CKcHOWul4G
- 5R0p00zxAmWrl7iXvx2bUqqPnadg5Wt6uDiyh7/QF3LtqHXkaAKAyHfgHxNDQNc1kecG
- nKiA==
+ bh=BjsYE7IwesPMmpyoWDFFmaPCx/RAfe1hi/tzhTSvSdg=;
+ b=l7uQesG6M28SqAQiPO0DR6OQH5YRu7JpfAa5/C+Bk02mHPFeXFB/4gQTiDc7CRf/JV
+ Co6nbjws7QBm14CGymRUqxWdw3lFnD4GnIy0rupegH1pA9zo3ozlcc6oSlwom2RfeSXs
+ PDbFDZLY2BQZsvo3+CgcCsUNd84ZLKER1LT6p23rK5XFr9xea/dkN/pa42w3dnOqD//Z
+ QBBvlMkh2pl8te1B3vaW39HaeLxo2XaU+Uz92E/su7EoD9iPrWpSanYtAWVo5C5r1Q/f
+ BCl9QezSH6nMBCoQKIt5mSQzG996FDRJY6ew2/88xak5v9jzgT/cDdsT/nRmfR4rupBz
+ faTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Ypf2PVbAsW0uSJC/xuhYlQ/Mtj2shleLiZbK07EUwj0=;
- b=XZIDN4p+7NNLD4jQDttRQgHG4QXa6XibGqxe4es0uncqgD86iN8TDOICBzM/1BNHZi
- R70Xc0P+AhIoCdrgQHTx53IO8WYOr847u79hDcsY3REqH8tHQmTeXXo8PedemXADOJDE
- xMC+bpAlUC1E+PBRG+Zhq2dpMcBUR7Art6//WKaqZ+XNN2ObHO6NNge9TWPLOLDmbiUo
- qQI9elyqCAQYqkWQyN33C2Ug5r8OcAx74V85WtRDJBT4Dd2laURUP5oJsslR5esoXnNx
- CJ9lJ0gnyGEdyw0AdGEEeZfWOowENez8H8dksdM18/aq1VK5x+855mFO5l1wdUPcjDcH
- Mcgg==
-X-Gm-Message-State: APjAAAWWoXmWkmtE/nElx+Crw65c9E6+N8atyYdDbPHZ/0cpgaNfad0R
- pjBQjJ3zpOtIP6eeBKIzO088nIe/eGY=
-X-Google-Smtp-Source: APXvYqwQHaVhyh725IyFzPTM076vs4JVrzJ8l8B9fKRDiQUGK9CnZtXYrLQX4bxiC1FhaO5rQ2++UA==
-X-Received: by 2002:a19:7015:: with SMTP id h21mr297087lfc.68.1581326851914;
- Mon, 10 Feb 2020 01:27:31 -0800 (PST)
+ bh=BjsYE7IwesPMmpyoWDFFmaPCx/RAfe1hi/tzhTSvSdg=;
+ b=LmsXnAjtVasjvCDRgpGfcVZj0OxX7nr6qNQbwZrVKn2VCgFcT+d7fnp08PVgYibTby
+ rMsprdNTXjO9sgfrDr0NvO3whWxm2SecyTuKcRATnhLsPE+lFht2l3C35uwdil+1UTwx
+ 4NmCD6pEaiQVthQ3C2DfzCjes3PALM0tccYTy9HCq+O2I8T+dBpC6BOY3YPqr00+ct8s
+ xuSZx9Fqex83ulFwdoIs8zDwQqFjIG6nf/DprIfW16GDsdhNAIVWEgikCFKCucwm5NLq
+ b5TZFeRd/h850kaMkmLlO1vHcbngpvUy8DO90acBVKvNmdDw0bUQjIlM5MvAOQZlkQre
+ FiMQ==
+X-Gm-Message-State: APjAAAX7HsTk19ez0BQ8KPoYPi8j507mmxEaIGC6jYBlEkxh+9uCdkLr
+ D3KYuQva2u54NLFxOh/+wAEdOA==
+X-Google-Smtp-Source: APXvYqxZpnyyWZKheyuaFsm0KonLKcLW4pxi4HBtcPnzMpiGrdOf5lVgPrYFRID8AvhcdlKw6rauYw==
+X-Received: by 2002:a19:c3ce:: with SMTP id t197mr286769lff.174.1581326853563; 
+ Mon, 10 Feb 2020 01:27:33 -0800 (PST)
 Received: from genomnajs.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id d9sm5989882lja.73.2020.02.10.01.27.30
+ by smtp.gmail.com with ESMTPSA id d9sm5989882lja.73.2020.02.10.01.27.32
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 10 Feb 2020 01:27:31 -0800 (PST)
+ Mon, 10 Feb 2020 01:27:33 -0800 (PST)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
  Sudeep Holla <sudeep.holla@arm.com>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH 4/7] dt-bindings: arm: Add Versatile YAML schema
-Date: Mon, 10 Feb 2020 10:27:10 +0100
-Message-Id: <20200210092713.279105-5-linus.walleij@linaro.org>
+Subject: [PATCH 5/7] dt-bindings: arm: Add RealView YAML schema
+Date: Mon, 10 Feb 2020 10:27:11 +0100
+Message-Id: <20200210092713.279105-6-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20200210092713.279105-1-linus.walleij@linaro.org>
 References: <20200210092713.279105-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_012733_567516_823183ED 
-X-CRM114-Status: GOOD (  13.49  )
+X-CRM114-CacheID: sfid-20200210_012736_056866_BE1EDAF7 
+X-CRM114-Status: GOOD (  12.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,89 +104,143 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This implements the top-level schema for the ARM Versatile
+This implements the top-level schema for the ARM RealView
 platforms.
 
 Cc: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- .../bindings/arm/arm,versatile.yaml           | 69 +++++++++++++++++++
- 1 file changed, 69 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/arm/arm,versatile.yaml
+ .../devicetree/bindings/arm/arm,realview.yaml | 123 ++++++++++++++++++
+ 1 file changed, 123 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/arm/arm,realview.yaml
 
-diff --git a/Documentation/devicetree/bindings/arm/arm,versatile.yaml b/Documentation/devicetree/bindings/arm/arm,versatile.yaml
+diff --git a/Documentation/devicetree/bindings/arm/arm,realview.yaml b/Documentation/devicetree/bindings/arm/arm,realview.yaml
 new file mode 100644
-index 000000000000..81fd010643f4
+index 000000000000..d6e85d198afe
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/arm,versatile.yaml
-@@ -0,0 +1,69 @@
++++ b/Documentation/devicetree/bindings/arm/arm,realview.yaml
+@@ -0,0 +1,123 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/arm/arm,versatile.yaml#
++$id: http://devicetree.org/schemas/arm/arm,realview.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: ARM Versatile Boards Device Tree Bindings
++title: ARM RealView Boards Device Tree Bindings
 +
 +maintainers:
 +  - Linus Walleij <linus.walleij@linaro.org>
 +
 +description: |+
-+  The ARM Versatile boards are two variants of ARM926EJ-S evaluation boards
-+  with various pluggable interface boards, in essence the Versatile PB version
-+  is a superset of the Versatile AB version.
++  The ARM RealView series of reference designs were built to explore the ARM
++  11, Cortex A-8 and Cortex A-9 CPUs. This included new features compared to
++  the earlier CPUs such as TrustZone and multicore (MPCore).
 +
 +properties:
 +  $nodename:
 +    const: '/'
 +  compatible:
 +    oneOf:
-+      - description: The ARM Versatile Application Baseboard (HBI-0118) is an
-+          evaluation board specifically for the ARM926EJ-S. It can be connected
-+          to an IB1 interface board for a touchscreen-type use case or an IB2
-+          for a candybar phone-type use case. See ARM DUI 0225D.
++      - description: ARM RealView Emulation Baseboard (HBI-0140) was created
++          as a generic platform to test different FPGA designs, and has
++          pluggable CPU modules, see ARM DUI 0303E.
 +        items:
-+          - const: arm,versatile-ab
-+      - description: The ARM Versatile Platform Baseboard (HBI-0117) is an
-+          extension of the Versatile Application Baseboard that includes a
-+          PCI host controller. Like the sibling board, it is done specifically
-+          for ARM926EJ-S. See ARM DUI 0224B.
++          - const: arm,realview-eb
++      - description: ARM RealView Platform Baseboard for ARM1176JZF-S
++          (HBI-0147) was created as a development board to test ARM TrustZone,
++          CoreSight and Intelligent Energy Management (IEM) see ARM DUI 0425F.
 +        items:
-+          - const: arm,versatile-pb
++          - const: arm,realview-pb1176
++      - description: ARM RealView Platform Baseboard for ARM 11 MPCore
++          (HBI-0159, HBI-0175 and HBI-0176) was created to showcase
++          multiprocessing with ARM11 using MPCore using symmetric
++          multiprocessing (SMP). See ARM DUI 0351E.
++        items:
++          - const: arm,realview-pb11mp
++      - description: ARM RealView Platform Baseboard for Cortex-A8 (HBI-0178,
++          HBI-0176 and HBI-0175) was the first reference platform for the
++          Cortex CPU family, including a Cortex-A8 test chip.
++        items:
++          - const: arm,realview-pba8
++      - description: ARM RealView Platform Baseboard Explore for Cortex-A9
++          (HBI-0182 and HBI-0183) was the reference platform for the Cortex-A9
++          CPU.
++        items:
++          - const: arm,realview-pbx
 +
-+patternProperties:
-+  "^core-module@[0-9a-f]+$":
++  soc:
++    description: All RealView boards must provide a soc node in the root of the
++      device tree, representing the System-on-Chip since these test chips are
++      rather complex.
 +    type: object
-+    description: the root node in the Versatile platforms must contain
-+      a core module child node. They are always at physical address
-+      0x10000000 in all the Versatile variants.
 +    properties:
 +      compatible:
-+        contains:
-+          const: arm,core-module-versatile
-+        description: this node is the core module node, it can be compatible
-+          with syscon and simple-bus as well
++        oneOf:
++          - items:
++            - const: arm,realview-eb-soc
++            - const: simple-bus
++          - items:
++            - const: arm,realview-pb1176-soc
++            - const: simple-bus
++          - items:
++            - const: arm,realview-pb11mp-soc
++            - const: simple-bus
++          - items:
++            - const: arm,realview-pba8-soc
++            - const: simple-bus
++          - items:
++            - const: arm,realview-pbx-soc
++            - const: simple-bus
++
++    patternProperties:
++      "^.*syscon@[0-9a-f]+$":
++        type: object
++        description: All RealView boards must provide a syscon system controller
++          node inside the soc node.
++        properties:
++          compatible:
++            oneOf:
++              - items:
++                - const: arm,realview-eb11mp-revb-syscon
++                - const: arm,realview-eb-syscon
++                - const: syscon
++                - const: simple-mfd
++              - items:
++                - const: arm,realview-eb11mp-revc-syscon
++                - const: arm,realview-eb-syscon
++                - const: syscon
++                - const: simple-mfd
++              - items:
++                - const: arm,realview-eb-syscon
++                - const: syscon
++                - const: simple-mfd
++              - items:
++                - const: arm,realview-pb1176-syscon
++                - const: syscon
++                - const: simple-mfd
++              - items:
++                - const: arm,realview-pb11mp-syscon
++                - const: syscon
++                - const: simple-mfd
++              - items:
++                - const: arm,realview-pba8-syscon
++                - const: syscon
++                - const: simple-mfd
++              - items:
++                - const: arm,realview-pbx-syscon
++                - const: syscon
++                - const: simple-mfd
++
++        required:
++          - compatible
++          - reg
 +
 +    required:
 +      - compatible
-+      - reg
-+
-+  "^syscon@[0-9a-f]+$":
-+    type: object
-+    description: When fitted with the IB2 Interface Board, the Versatile
-+      AB will present an optional system controller node which controls the
-+      extra peripherals on the interface board.
-+    properties:
-+      compatible:
-+        contains:
-+          const: arm,versatile-ib2-syscon
-+    required:
-+      - compatible
-+      - reg
 +
 +required:
 +  - compatible
-+  - core-module@10000000
++  - soc
 +
 +...
 -- 
