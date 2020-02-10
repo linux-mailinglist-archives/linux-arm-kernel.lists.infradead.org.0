@@ -2,78 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE195157016
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 08:51:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2E591570AB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 09:15:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=su8KI/vEY5KTe/K/dxURo21SapC9PXIvxUfNZL4JtuA=; b=EbP5LQBSrPdEk1
-	K6hsRM5doFFvTKC3AGTz7ARW7EPX4kPS/p/U5Anw57SGeae5uuXJbHQ9MbJzZvLpvtG7+p7rgY/Mv
-	K9hXOnY2/gM/frDpC32vTIB35nlXHOqTxLPkpizHOxGlNvXaXbu4raSKW0UQg9khr/C0BvdxaNxUA
-	EP+4y5QJqsuXcQe0Vq5MfMumZtVaHLnW2GGk4nw80nNHCCP0/5aGMgE3Cs04HGZKffKNH/rhPUj8/
-	ekrwQMocI0MCLardR7LFgUu4ofb/YFv2jgnFiabm6nn6euZ0r5wuFE9RzTy1uzFd385CKfD0ySw04
-	laE1GIqJertbSik3fG9w==;
+	List-Owner; bh=uWNYDziDun4e6WpvxqZWZDS823pY/bz9NdgKtvQmFgo=; b=Ychr8XVLFBkE+2
+	cnWB+rjuZRBSdYXj0F0Xh5eDdsgU7nbpVykUQaoNuxeK98VfB6SFo+1ekQPc2XMcbDKqaSGhZDp46
+	G42LjTPOOfZLLVB9dblc18rBW5yAYPF4sz2rBYp/cfbinHSPuV5EGphNKMdiQbY+fsCA4uFj1vEnb
+	mZ6NJbpgdKwIOs6AzQZYvIpdpWpZ0O4Z/sjhmbD3otM6wdcqpk7WLhZPkI02ipmRin8dNIJjxde+y
+	tXr9/6coHa1aFJqwiu2j/TRq3W9R9fuwwtsRlSJattcSiJvEBKdabdPc5KCsoxmQX468uh11CtLxz
+	QlkCUEmGWgjpJyEMqYDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j13qd-0001ii-Ty; Mon, 10 Feb 2020 07:51:15 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1j14ED-0001qN-Vd; Mon, 10 Feb 2020 08:15:38 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j13qW-0001i3-MM
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 07:51:10 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id a2so3508351vso.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 09 Feb 2020 23:51:07 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=u3O+szgfwEJKuo4yzEkWiTVNHGumVBlqNQZE9NfjV7I=;
- b=QsC4PDi5ZlYbAjfw6pBUa0KPphhE/VVoGj6kVK1MAL7QZqo9wjmEBLb9Ikbb7Fp770
- o5u/R5ApawhiT5Waee9rnPrac69HShLMufZLupjUjI/CMI3snfnPnH5LdDWGPL7q39dr
- Evp1CxZoX8gCVNOonqGfUiXeiuwNtbZ+WegCEVukUffQd+2gilW7icSVWUk6sIYv749b
- slMXTUuMoGaFUwlQwE/ldzraKsne3DiELel3X/Jp70Dz80496OwgjZdM776TADILQLuO
- yAjl54QHAMbG0F+Y6cIXjrS11+kCEVl5NN47dW7kpuL4QC9qVts5HHxcSN5tLZgx3jY5
- Purg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=u3O+szgfwEJKuo4yzEkWiTVNHGumVBlqNQZE9NfjV7I=;
- b=Jk7FSrtMITSx9+btKd7KxCh0XqKVvzMmg84nRupCbuwekX4opdkMKxTvHLFjem+awh
- dIxn5kdc85MIpllYiDh25n9rx0lhH/8+l/uRIRuQd05rd+Cw3Yp1peqqB4g2HKMzRXIl
- PHJKeMBYqUSp64OH3k4SisHQ+Mfk29nMmeo9VR+T7xT7gndzIIXKpUhHzatGDcVs0P/8
- XnYovrGLVr1TFUpqgIIK8mcyVTWgBjy/otYIpLv5unMmz6vkUnahD5//yL6SoW/u/0pB
- BRS+abGhFjHkFvn64U4Ewr7rl8zI0P1mr/44FUVwLENnYYzGDkdoRX2z+w1fmPIG75k5
- xjjA==
-X-Gm-Message-State: APjAAAUmLZnydSTeR4WO/B7ETwTuSOwjYARjTdj09Zoc9y1UyBo0UJkU
- fXi1N+nilWm6MADmjKWAR4U768hRBNUyOcJ29dqxOA==
-X-Google-Smtp-Source: APXvYqypbI21Yfdn+EA6ub6ed50JBoiEO60Ni/AfECIKY1ZvJ0o8EXmbyp6DUzxmNBzjRT7iyDPYhJySfgC8H0ANL9s=
-X-Received: by 2002:a67:ee02:: with SMTP id f2mr5601456vsp.165.1581321061313; 
- Sun, 09 Feb 2020 23:51:01 -0800 (PST)
+ id 1j14E5-0001oc-RX
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 08:15:32 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01A8DgMV025251; Mon, 10 Feb 2020 09:15:19 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=csTbRj70vU7WI1+2GoXNCPXKkNYa2CfNAeRYI6le68Q=;
+ b=nRu7l5/r2Xip6i6hUmzISgCodZG16ZDos3vxZm/MuS1ldJA1um9RYLaiwvJ9QXfZS1nY
+ xb+0ON1PKOU7XsINAr/n/6Yo2QFUP1VDso8jN+CYngLUxSxM2hxouo8roYlybB1uHyC9
+ ObFInUEHviY0ocTIArGCppG8XBVqfsoNvfySXoZHtM3GyC8/LxZsP1+S5yjJ0X1BEsmb
+ KtvcK7O9kXSn20Z6pnnRr5jY1NPyLOH3aJCyRgAKVX5XNp1tlLlqdcbIn2ZxdM6+GWiW
+ GbAOJGgOErLNS0h6L7pOaHIO7m7kshaASxqgpXIujMExq9vaPuE808wL/ZQtJcmvGNsQ 9A== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2y1ufgr0b6-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 10 Feb 2020 09:15:19 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AAA13100038;
+ Mon, 10 Feb 2020 09:15:17 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 624C92B1863;
+ Mon, 10 Feb 2020 09:15:17 +0100 (CET)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG6NODE3.st.com
+ (10.75.127.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 10 Feb
+ 2020 09:15:16 +0100
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Mon, 10 Feb 2020 09:15:16 +0100
+From: Patrice CHOTARD <patrice.chotard@st.com>
+To: Olof Johansson <olof@lixom.net>
+Subject: Re: [GIT PULL] STi DT update for v5.6 round 1
+Thread-Topic: [GIT PULL] STi DT update for v5.6 round 1
+Thread-Index: AQHV21fUlvmf1pIO+EOSI+9it4GhsqgStwaAgAFV+gA=
+Date: Mon, 10 Feb 2020 08:15:16 +0000
+Message-ID: <8a845623-0f30-b1b2-1a8a-8dfbcb67ddf4@st.com>
+References: <c6f76adc-b32f-a64f-c7b1-417a26de1667@st.com>
+ <CAOesGMhxN3MW69EcJ_DigrvfruHzACNP8J-JOR9GmCnk4Tjodw@mail.gmail.com>
+In-Reply-To: <CAOesGMhxN3MW69EcJ_DigrvfruHzACNP8J-JOR9GmCnk4Tjodw@mail.gmail.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.47]
+Content-ID: <B894766D3142BD41868C6E39FFE5CB85@st.com>
 MIME-Version: 1.0
-References: <20200207052627.130118-1-drinkcat@chromium.org>
- <20200207052627.130118-6-drinkcat@chromium.org>
- <CAPDyKFoz0gUkoofWkd6dFuOkRWqeeCDrv84UHyYYowAAgTiitw@mail.gmail.com>
- <CANMq1KA+3O+G+_r=xY98eK-in5i3HWg+4B4-ONk-6qWS3a9=0g@mail.gmail.com>
-In-Reply-To: <CANMq1KA+3O+G+_r=xY98eK-in5i3HWg+4B4-ONk-6qWS3a9=0g@mail.gmail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Mon, 10 Feb 2020 08:50:25 +0100
-Message-ID: <CAPDyKFrq5KQ7CHnMSCv7GqzpQyVfDQgLYjUVzeweTwKR3AmM4g@mail.gmail.com>
-Subject: Re: [PATCH v4 5/7] drm/panfrost: Add support for multiple power
- domains
-To: Nicolas Boichat <drinkcat@chromium.org>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-10_02:2020-02-07,
+ 2020-02-10 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_235108_763953_0295F9FE 
-X-CRM114-Status: GOOD (  20.76  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200210_001530_511618_CC579888 
+X-CRM114-Status: GOOD (  23.00  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,90 +106,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Steven Price <steven.price@arm.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "khilman@baylibre.com" <khilman@baylibre.com>,
+ "arm@kernel.org" <arm@kernel.org>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Arnd Bergmann <arnd@arndb.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 9 Feb 2020 at 13:50, Nicolas Boichat <drinkcat@chromium.org> wrote:
+Hi Olof
+
+On 2/9/20 12:51 PM, Olof Johansson wrote:
+
+> Hi Patrice,
 >
-> On Fri, Feb 7, 2020 at 10:26 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> >
-> > On Fri, 7 Feb 2020 at 06:27, Nicolas Boichat <drinkcat@chromium.org> wrote:
-> > >
-> > > When there is a single power domain per device, the core will
-> > > ensure the power domain is switched on (so it is technically
-> > > equivalent to having not power domain specified at all).
-> > >
-> > > However, when there are multiple domains, as in MT8183 Bifrost
-> > > GPU, we need to handle them in driver code.
-> > >
-> > > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
-> >
-> > Besides a minor nitpick, feel free to add:
-> >
-> > Reviewed-by: Ulf Hansson <ulf.hansson@linaro.org>
-> >
-> > Kind regards
-> > Uffe
-> >
-> > [snip]
-> > > +static int panfrost_pm_domain_init(struct panfrost_device *pfdev)
-> > > +{
-> > > +       int err;
-> > > +       int i, num_domains;
-> > > +
-> > > +       num_domains = of_count_phandle_with_args(pfdev->dev->of_node,
-> > > +                                                "power-domains",
-> > > +                                                "#power-domain-cells");
-> > > +
-> > > +       /*
-> > > +        * Single domain is handled by the core, and, if only a single power
-> > > +        * the power domain is requested, the property is optional.
-> > > +        */
-> > > +       if (num_domains < 2 && pfdev->comp->num_pm_domains < 2)
-> > > +               return 0;
-> > > +
-> > > +       if (num_domains != pfdev->comp->num_pm_domains) {
-> > > +               dev_err(pfdev->dev,
-> > > +                       "Incorrect number of power domains: %d provided, %d needed\n",
-> > > +                       num_domains, pfdev->comp->num_pm_domains);
-> > > +               return -EINVAL;
-> > > +       }
-> > > +
-> > > +       if (WARN(num_domains > ARRAY_SIZE(pfdev->pm_domain_devs),
-> > > +                       "Too many supplies in compatible structure.\n"))
-> >
-> > Nitpick:
-> > Not sure this deserves a WARN. Perhaps a regular dev_err() is sufficient.
+> [Please also cc soc@kernel.org on pull requests, since they then end
+> up in our patchwork and we're less likely to miss them]
+
+Ok
+
+
 >
-> Ah well I had a BUG_ON before so presumably this is already a little better ,-)
+> On Tue, Feb 4, 2020 at 1:37 PM Patrice CHOTARD <patrice.chotard@st.com> wrote:
+>> Hi Arnd, Olof, Kevin
+>>
+>> Please find STi dt update for v5.6 round 1:
+> The timing for this is bad. Material should arrive to our tree around
+> -rc6 timeframe for the previous release, for us to have time to merge
+> it and expose it in linux-next for a while before the merge window
+> opens.
+
+Ok understand, this pull request is not urgent at all, i will resubmit it later ;-)
+
 >
-> You can only reach there if you set pfdev->comp->num_pm_domains >
-> MAX_PM_DOMAINS in the currently matched struct panfrost_compatible
-> (pfdev->comp->num_pm_domains == num_domains, and see below too), so
-> the kernel code would actually be actually broken (not the device
-> tree, nor anything that could be probed). So I'm wondering if the
-> loudness of a WARN is better in this case? Arguable ,-)
+>> The following changes since commit d5226fa6dbae0569ee43ecfc08bdcd6770fc4755:
+>>
+>>
+>>   Linux 5.5 (2020-01-26 16:23:03 -0800)
+> ... we also ask that the incoming branches are based on rc1 or rc2 of
+> the previous release, not the latest possible release (unless there's
+> a good reason for it).
+>
+>> are available in the Git repository at:
+>>
+>>   git@gitolite.kernel.org:pub/scm/linux/kernel/git/pchotard/sti.git tags/sti-dt-for-5.6-round1
+> Please use the public git:// or https:// versions in pull requests.
+Ok
+>
+>> for you to fetch changes up to 21eebae9a11ff18fe6d6b43adccadd533abdf0d6:
+>>
+>>   ARM: stihxxx-b2120.dtsi: fixup sound frame-inversion (2020-02-04 11:21:37 +0100)
+>>
+>> ----------------------------------------------------------------
+>> STi dt fixes:
+>> -------------
+>>   - remove deprecated Synopsys PHY dt properties
+>>   - fix sound frame-inversion property
+>>
+>> ----------------------------------------------------------------
+>> Kuninori Morimoto (1):
+>>       ARM: stihxxx-b2120.dtsi: fixup sound frame-inversion
+>>
+>> Patrice Chotard (1):
+>>       ARM: dts: stih410-b2260: Remove deprecated snps PHY properties
+> It's a good idea to keep a reasonably consistent prefix usage. "ARM:
+> dts: <platform>:" is what we prefer, so feel free to touch that up for
+> patches that you apply.
 
-I see. It's not a big a deal, so feel free to keep as is.
+ok noted
 
-[...]
+Thanks
 
-Kind regards
-Uffe
+Patrice
 
+>
+>
+> -Olof
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
