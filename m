@@ -2,114 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 107C5157D5E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 15:27:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62FAF157D9B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 15:42:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CGrYNKDdSTvo7pTht2DNXaBevGWpifTzkXIcIe7Wqjk=; b=QjNuP8ybFegLqr
-	PN50ODIu8L4A7k6VTuSTGrUgYs8x5PbsQsk1hcvkUw6Z+bH5befnWR6HrcEt6FiTMurkoVOem1hmj
-	G5OqTzLc+somU307cLTbHFMhhbY3tAIBHS0o4fOgzeWnfVd4wzX85TGSsA57noi1AuMBJfQNM+o+D
-	t760rP854FB+s1txDcqsg9Nrmx+PCLKnoZ2JRRX0g2DtNbgzU+/RN8hRBHE8tMZU8bxnCI1Yl6nUH
-	NBNnIb+pXG8JX2rtqx3cHKPTl3OMkmdapetElnTgNkxK98vnb9YLFmnnvP2WxhejW6RsHuvkG1JVN
-	DQJIhCSaACBuoEacRllg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LE97M5sQacwkFX29ixP3FJwlKaQwtgBp468n6LPpf+8=; b=cRYyH2W6SB7KzL
+	66fbdmfa/fewUMYl9DlY6hhhnzOJEzXZpOnW5nSCysjFIlSC+x7LiaFXPOQ+ZI0lF+U9TMi09fmOi
+	0cqvWThyOf+P/ZHjNT0Nzv2oFJjszurBLiRHCNFA/1LUPdxJXj7KgHJCuzm/6TJ8smkvYpe03wwu5
+	0H6XeNlJcqF9GKpPjX3niJlPL8/SmvV71guw0Y+EvOQllRJRZ3nRrWoTnfQYG4jU2rMLZrLkM45yO
+	7twpwkCp/5HXUWcTbGLlqjuFm2t2ChYpkN8yvjExY092sQHk7xSFX8s16QlDGybwlnxFkiuy5rdnB
+	awvYJ8Yf9Gz5TpUtuCWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1A1m-0001DR-SE; Mon, 10 Feb 2020 14:27:10 +0000
-Received: from mail-bn8nam11on2079.outbound.protection.outlook.com
- ([40.107.236.79] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1A1e-0001D3-Co
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 14:27:03 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=AsUy3IQaOEwfwDHCxkPvHB1swFIbYNMmdq1fj5DrU805hqXexwWyXnBueQ6TJhlLigZ0GPzNQfWK3w1c3SLhUy9u2mZ6IPzSTAPLwfG+/lsIK1j612m9bAeQj+1hHWo4nVVDcn46CKMxbFkVi5Eg8j/BWnD80ypEw28T4XpC6B7syrpwzPI8pQtlnNu7QqdOaAr83VRFTOWeeQHgu4CETlhWYZ+NJL7noyUUK0F9Qh7gGRULF/QeDQwkzBrVIO5MXfCeV5EbvciJn9m0lyeaL7uJnoTWp7XUy5QbSiFbH/PYTik2Tf09kwvQ4nXcxq0UhMNq6hgu2o0SLciU8axHow==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=B2jghlmnoNzrIgJWVj8VB0g1zUmeOH1JbRpIjKkvJy8=;
- b=dIkSDDuGmjlU4U322VdzEcFpaBxBum64AUfFcy8wSMKDpRBoKqyusUR9nADtIHpbXndLKcANF632v1C98qv6n0ZbRgUtBS0ObHTmObgtDKFZES2AAWnSWYTdAws7/im53egMOC9+9UbDH7hBBEYtGw2kW0tmWZHt/SwQp8JCATrbvVr1HsmCIUuN42A5m/JzZtAm2e4QeVPMnewXZIq6ncmdeNslDebpZ9DrxRVlfCPjsTt/MCoskukZbrKG+SrY+XwKhwBmQhuiQ3Ay98okYce4zrqIoSxFZNzAFOTIQfYdvdOVay7wCLfCHmAIm6+/eGrc2aTtp54m9jm7HPlP+A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=B2jghlmnoNzrIgJWVj8VB0g1zUmeOH1JbRpIjKkvJy8=;
- b=jxWK6JMZnsjj5lROJkFC5y7qLvP+A5kHRzdxhkX038+RuTNrM9xtFSCf7/bOz2u0bU7z5aat0n/cOyMxp6+7ngwV+h2IkHJ7KT2GjdM9QDQtHaRq3qnbaLa5asv9wxG5v1zwPKHZy9nzKZq0YOAFr3OrTealbj6Enp06dcCTNI0=
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com (20.180.9.216) by
- CH2PR02MB6037.namprd02.prod.outlook.com (52.132.229.18) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.21; Mon, 10 Feb 2020 14:26:59 +0000
-Received: from CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899]) by CH2PR02MB7000.namprd02.prod.outlook.com
- ([fe80::969:436f:b4b8:4899%7]) with mapi id 15.20.2707.030; Mon, 10 Feb 2020
- 14:26:58 +0000
-From: Radhey Shyam Pandey <radheys@xilinx.com>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: RE: [PATCH v3 -next 3/4] net: emaclite: Fix arm64 compilation warnings
-Thread-Topic: [PATCH v3 -next 3/4] net: emaclite: Fix arm64 compilation
- warnings
-Thread-Index: AQHV2CxSaDCeJb8y0kOpuFNYK2kDbKgExuAAgA/AohA=
-Date: Mon, 10 Feb 2020 14:26:58 +0000
-Message-ID: <CH2PR02MB7000E00674D836639F371E35C7190@CH2PR02MB7000.namprd02.prod.outlook.com>
-References: <1580471270-16262-1-git-send-email-radhey.shyam.pandey@xilinx.com>
- <1580471270-16262-4-git-send-email-radhey.shyam.pandey@xilinx.com>
- <20200131133742.GD9639@lunn.ch>
-In-Reply-To: <20200131133742.GD9639@lunn.ch>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=radheys@xilinx.com; 
-x-originating-ip: [149.199.50.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 5c9f6bf1-630b-4aae-df56-08d7ae35496c
-x-ms-traffictypediagnostic: CH2PR02MB6037:|CH2PR02MB6037:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR02MB60374800D590E1B0D155A289C7190@CH2PR02MB6037.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 03094A4065
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(136003)(366004)(346002)(39860400002)(376002)(199004)(189003)(76116006)(66446008)(33656002)(64756008)(2906002)(52536014)(55016002)(66556008)(9686003)(66476007)(66946007)(6916009)(5660300002)(478600001)(7696005)(81156014)(54906003)(186003)(71200400001)(81166006)(8936002)(8676002)(316002)(26005)(53546011)(6506007)(86362001)(4326008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6037;
- H:CH2PR02MB7000.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: sL1z/s1BqQfbl2YR+xlApDs5BGr+/sOQRmb+8F5fjCfnYMdfg0DGPfpcMU824RssTbFcf2Wl+dwiWK4cMPHEEpAjX6qsz391OubkkIz7WKxrERHnJ2WShhwjZ/3SFls3B1lw3iI5mN7ecGnefniP1Kz71y5EniJAqP1Ylc3VheDfLY0n571G5BvzcGPPESV5UO1kxW9HGgnyHo7wc+xAUQuj2AO+1aacpDr2FOJK4ZR8PFYtYB3twPF4u8XhBEn+w14Cq6eV5egtjZ4XNoLgQMaxprHbJQLrgu/QJO+AgniWhXhiyJj/+jiIN2WBHFsvlNFYqOc6Om6HmXpLpn5UMgHGE3rA+ZGs9hG/Kkxcc0K8ydtV663ETm+3woy6oAPMEm8OJxq3ESvLNMroti7YIZrGxVNLXVOb+X5EDIDVMeotczauy7BnELbf6EQp/Kc+
-x-ms-exchange-antispam-messagedata: HG0pT4yE+O3yw7ArxvNiLFGJlzR1T3UOySS/Q2Ewj4KY6i36+/PqGsdrq/Q1W38P4B4kQOzx5r1CqEFTSo7sDDzcKcbhn94jkKXRjUjjpOWlWiuDLVMqsviboIIaJqM7WWlnk1pklJu3V/eCQtmLqg==
+	id 1j1AGe-00061L-0Y; Mon, 10 Feb 2020 14:42:32 +0000
+Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1j1AGY-00060E-8v
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 14:42:28 +0000
+Authenticated-By: 
+X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID 01AEfxVY025063,
+ This message is accepted by code: ctloc85258
+Received: from mail.realtek.com (RTEXMB06.realtek.com.tw[172.21.6.99])
+ by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id 01AEfxVY025063
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 10 Feb 2020 22:41:59 +0800
+Received: from RTEXMB05.realtek.com.tw (172.21.6.98) by
+ RTEXMB06.realtek.com.tw (172.21.6.99) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Mon, 10 Feb 2020 22:41:58 +0800
+Received: from RTEXMB05.realtek.com.tw (172.21.6.98) by
+ RTEXMB05.realtek.com.tw (172.21.6.98) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Mon, 10 Feb 2020 22:41:58 +0800
+Received: from james-BS01.localdomain (172.21.190.33) by
+ RTEXMB01.realtek.com.tw (172.21.6.98) with Microsoft SMTP Server id
+ 15.1.1779.2 via Frontend Transport; Mon, 10 Feb 2020 22:41:58 +0800
+From: James Tai <james.tai@realtek.com>
+To: <james.ttl7447@gmail.com>
+Subject: [PATCH] [DEV_FIX][THOR][B00] Support multiple IR key [REVIEWER] Simon
+Date: Mon, 10 Feb 2020 22:41:53 +0800
+Message-ID: <20200210144153.27184-1-james.tai@realtek.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5c9f6bf1-630b-4aae-df56-08d7ae35496c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Feb 2020 14:26:58.3341 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: AAYmJptx/L6rrAFX8PIdPgcCcO0zj5Wr+CKQawSaame7W9oIM3jltlTCD/PL4lH6vL7fxYLx+48VuvsywsolFQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6037
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_062702_438183_035635EC 
-X-CRM114-Status: GOOD (  10.61  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200210_064226_456564_2D06A5C0 
+X-CRM114-Status: GOOD (  10.20  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.236.79 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [211.75.126.72 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,52 +71,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- John Linn <linnj@xilinx.com>, Michal Simek <michals@xilinx.com>,
- Anirudha Sarangi <anirudh@xilinx.com>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "mchehab+samsung@kernel.org" <mchehab+samsung@kernel.org>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: Andrew Lunn <andrew@lunn.ch>
-> Sent: Friday, January 31, 2020 7:08 PM
-> To: Radhey Shyam Pandey <radheys@xilinx.com>
-> Cc: davem@davemloft.net; netdev@vger.kernel.org; linux-
-> kernel@vger.kernel.org; Anirudha Sarangi <anirudh@xilinx.com>; Michal Simek
-> <michals@xilinx.com>; gregkh@linuxfoundation.org;
-> mchehab+samsung@kernel.org; John Linn <linnj@xilinx.com>; linux-arm-
-> kernel@lists.infradead.org
-> Subject: Re: [PATCH v3 -next 3/4] net: emaclite: Fix arm64 compilation warnings
-> 
-> On Fri, Jan 31, 2020 at 05:17:49PM +0530, Radhey Shyam Pandey wrote:
-> >
-> >  /* BUFFER_ALIGN(adr) calculates the number of bytes to the next alignment.
-> */
-> > -#define BUFFER_ALIGN(adr) ((ALIGNMENT - ((u32)adr)) % ALIGNMENT)
-> > +#define BUFFER_ALIGN(adr) ((ALIGNMENT - ((ulong)adr)) % ALIGNMENT)
-> 
-> Hi Radhey
-> 
-> linux/kernel.h has a few interesting macros, like
-> 
-> #define ALIGN(x, a)             __ALIGN_KERNEL((x), (a))
-> 
-> These are more likely to be correct across all architectures than
-> anything you role yourself.
-> 
-Thanks for the review. I agree using a kernel macro is preferred. However,
-as a second thought it seems we can get rid of this custom BUFFER_ALIGN
-macro and simply calling skb_reserve(skb, NET_IP_ALIGN) will make the
-protocol header to be aligned on at least a 4-byte boundary.
+Signed-off-by: James Tai <james.tai@realtek.com>
+---
+ rtd16xx_pm.c | 27 ++++++++++++++++-----------
+ rtd16xx_pm.h | 12 ++++++++----
+ 2 files changed, 24 insertions(+), 15 deletions(-)
 
-> 	 Andrew
+diff --git a/rtd16xx_pm.c b/rtd16xx_pm.c
+index b34ce94..1779670 100644
+--- a/rtd16xx_pm.c
++++ b/rtd16xx_pm.c
+@@ -44,7 +44,7 @@ unsigned int IsSuspendToWFI;
+ unsigned int suspend_ChipVer;
+ 
+ rtk_pm_event_func_t wakeup_events[RTK_PM_MAX_EVENTS];
+-param_pwm_irda_key_t param_wakeup_ir_key[RTK_PM_MAX_IR_KEY];
++param_pwm_irda_key_t param_wakeup_ir_key[MAX_KEY_TBL];
+ param_pwm_gpio_key_t Param_PWM_GPIO_Key;
+ 
+ unsigned int bt_wakeup_flag;
+@@ -119,7 +119,8 @@ int ir_power_on_check(void)
+ 	unsigned int key_mask = 0;
+ 	unsigned int power_key = 0;
+ 	unsigned int custom_key = 0;
+-	int i = 0;
++	unsigned int power_keynum = 0;
++	int i = 0, j = 0;
+ 
+ 	sr_value = ACCESS(ISO_IR_SR_reg);
+ 	if(sr_value & 0x1) {
+@@ -131,22 +132,24 @@ int ir_power_on_check(void)
+ 		if (sr_value & 0x2)
+ 			return 0;
+ 
+-		for (i = 0 ; i < RTK_PM_MAX_IR_KEY ; i++) {
++		for (i = 0 ; i < MAX_KEY_TBL ; i++) {
+ 			key_shift = param_wakeup_ir_key[i].key_shift;
+ 			key_mask = param_wakeup_ir_key[i].key_mask;
+ 			custom_shift = param_wakeup_ir_key[i].custom_shift;
+ 			custom_mask = param_wakeup_ir_key[i].custom_mask;
+-			power_key = param_wakeup_ir_key[i].power_key;
++			power_keynum = param_wakeup_ir_key[i].power_keynum;
+ 			custom_key = param_wakeup_ir_key[i].custom_key;
+ 			tmp1 = ((reg_value & key_mask) >> key_shift);
+ 			tmp2 = ((reg_value & custom_mask) >> custom_shift);
+ 
+ 			if (key_mask == 0 && custom_mask == 0) 
+ 				return 0;
+-
+-			if (power_key == tmp1 &&  custom_key == tmp2) {
+-				ACCESS(0xD8007640) = 0xea000000 | (RESUME_IR << 16);
+-				return 1;
++			for (j = 0; j < power_keynum; j++) {
++				power_key = param_wakeup_ir_key[i].power_key[j];
++				if (power_key == tmp1 &&  custom_key == tmp2) {
++					ACCESS(0xD8007640) = 0xea000000 | (RESUME_IR << 16);
++					return 1;
++				}
+ 			}
+ 		}
+ 	}
+@@ -409,7 +412,7 @@ int rtk_power_on_event(void)
+ 
+ void rtk_power_on_event_init(struct suspend_param *scpu_param)
+ {
+-	int i = 0;
++	int i = 0, j = 0;
+ 	wakeup_event_int_mask = 0;
+ 
+ 	if (7093279 != trace_power)
+@@ -422,10 +425,12 @@ void rtk_power_on_event_init(struct suspend_param *scpu_param)
+ 
+ 	/* Enable IR Interrupt */
+ 	if (suspend_wakeup_flag & fWAKEUP_ON_IR) {
+-		for (i = 0 ; i< 2; i++) {
++		for (i = 0 ; i < MAX_KEY_TBL ; i++) {
+ 			param_wakeup_ir_key[i].protocol = scpu_param->irda_info.key_tbl[i].protocol;
+ 			param_wakeup_ir_key[i].key_mask = scpu_param->irda_info.key_tbl[i].scancode_mask;
+-			param_wakeup_ir_key[i].power_key = scpu_param->irda_info.key_tbl[i].wakeup_scancode;
++			param_wakeup_ir_key[i].power_keynum = scpu_param->irda_info.key_tbl[i].wakeup_keynum;
++			for (j = 0; j < param_wakeup_ir_key[i].power_keynum; j++)
++				param_wakeup_ir_key[i].power_key[j] = scpu_param->irda_info.key_tbl[i].wakeup_scancode[j];
+ 
+ 			for (param_wakeup_ir_key[i].key_shift = 0; param_wakeup_ir_key[i].key_shift < 32; param_wakeup_ir_key[i].key_shift++) {
+ 				if ((param_wakeup_ir_key[i].key_mask & (1 << param_wakeup_ir_key[i].key_shift))) {
+diff --git a/rtd16xx_pm.h b/rtd16xx_pm.h
+index ebebc79..10c1eab 100644
+--- a/rtd16xx_pm.h
++++ b/rtd16xx_pm.h
+@@ -14,7 +14,6 @@
+ #define SUSPEND_ISO_GPIO_BASE 0
+ #define SUSPEND_ISO_GPIO_SIZE 86
+ 
+-#define RTK_PM_MAX_IR_KEY 2
+ #define RTK_PM_MAX_EVENTS 8
+ 
+ #define RESUME_STATE_ADDR (boot_offset_base+0x118)
+@@ -33,10 +32,14 @@
+ #define BT_WAKEUP_ACTIVE_HIGH (0x1 << 23)
+ #define BT_WAKEUP_MASK 0x00EFFFFF
+ 
++#define MAX_WAKEUP_CODE 16
++#define MAX_KEY_TBL 2
++
+ struct irda_wake_up_key {
+ 	unsigned int protocol;
+ 	unsigned int scancode_mask;
+-	unsigned int wakeup_scancode;
++	unsigned int wakeup_keynum;
++	unsigned int wakeup_scancode[MAX_WAKEUP_CODE];
+ 	unsigned int cus_mask;
+ 	unsigned int cus_code;
+ };
+@@ -44,7 +47,7 @@ struct irda_wake_up_key {
+ struct ipc_shm_irda {
+ 	unsigned int ipc_shm_ir_magic;
+ 	unsigned int dev_count;
+-	struct irda_wake_up_key key_tbl[2];
++	struct irda_wake_up_key key_tbl[MAX_KEY_TBL];
+ };
+ 
+ struct ipc_shm_cec {
+@@ -93,7 +96,8 @@ typedef struct param_pwm_irda_key
+ {
+ 	unsigned int is_valid;
+ 	unsigned int protocol;
+-	unsigned int power_key;
++	unsigned int power_keynum;
++	unsigned int power_key[MAX_WAKEUP_CODE];
+ 	unsigned int key_mask;
+ 	unsigned int key_shift;
+ 	unsigned int custom_key;
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
