@@ -2,54 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62FAF157D9B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 15:42:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F52F157DA0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 15:43:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LE97M5sQacwkFX29ixP3FJwlKaQwtgBp468n6LPpf+8=; b=cRYyH2W6SB7KzL
-	66fbdmfa/fewUMYl9DlY6hhhnzOJEzXZpOnW5nSCysjFIlSC+x7LiaFXPOQ+ZI0lF+U9TMi09fmOi
-	0cqvWThyOf+P/ZHjNT0Nzv2oFJjszurBLiRHCNFA/1LUPdxJXj7KgHJCuzm/6TJ8smkvYpe03wwu5
-	0H6XeNlJcqF9GKpPjX3niJlPL8/SmvV71guw0Y+EvOQllRJRZ3nRrWoTnfQYG4jU2rMLZrLkM45yO
-	7twpwkCp/5HXUWcTbGLlqjuFm2t2ChYpkN8yvjExY092sQHk7xSFX8s16QlDGybwlnxFkiuy5rdnB
-	awvYJ8Yf9Gz5TpUtuCWw==;
+	List-Owner; bh=LE97M5sQacwkFX29ixP3FJwlKaQwtgBp468n6LPpf+8=; b=Av5g1G5k7H8M3Y
+	r6HlNvH+9tlquzjwxR+qbtqYsAbTnVJK3b/rhv/AFYmWEJioUz4c1/voxUgs9PaoVJWaHF1TLh4jH
+	uGZ4aspdKU/N79doMU6Fyl/dgRRS75CTxN7psKrCpbSmhrhsNo1fDbLxHt1W0cfnQ4TBf1rF1WBB9
+	kBBPWkFIrYh3Ti/fsEnHI6/470BrOoPMegMPM8uBzW1PyDJN4LEtq5oqbYofSzOkL1llzlZa0CAD3
+	hVfuMHrBLA/FiCtF/7+hrxvljueUdDgjN5qIy4lbSok/MotT//NBFMv6OeLic0SJfst/YcceTOpvd
+	PZXpqMfBdUIAXLCDznOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1AGe-00061L-0Y; Mon, 10 Feb 2020 14:42:32 +0000
+	id 1j1AH3-0006J3-E1; Mon, 10 Feb 2020 14:42:57 +0000
 Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1j1AGY-00060E-8v
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 14:42:28 +0000
+ Linux)) id 1j1AGs-0006H5-8u
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 14:42:48 +0000
 Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID 01AEfxVY025063,
+X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID 01AEgaBj025081,
  This message is accepted by code: ctloc85258
 Received: from mail.realtek.com (RTEXMB06.realtek.com.tw[172.21.6.99])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id 01AEfxVY025063
+ by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id 01AEgaBj025081
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 10 Feb 2020 22:41:59 +0800
+ Mon, 10 Feb 2020 22:42:36 +0800
 Received: from RTEXMB05.realtek.com.tw (172.21.6.98) by
  RTEXMB06.realtek.com.tw (172.21.6.99) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Mon, 10 Feb 2020 22:41:58 +0800
-Received: from RTEXMB05.realtek.com.tw (172.21.6.98) by
- RTEXMB05.realtek.com.tw (172.21.6.98) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Mon, 10 Feb 2020 22:41:58 +0800
+ 15.1.1779.2; Mon, 10 Feb 2020 22:42:36 +0800
 Received: from james-BS01.localdomain (172.21.190.33) by
  RTEXMB01.realtek.com.tw (172.21.6.98) with Microsoft SMTP Server id
- 15.1.1779.2 via Frontend Transport; Mon, 10 Feb 2020 22:41:58 +0800
+ 15.1.1779.2 via Frontend Transport; Mon, 10 Feb 2020 22:42:36 +0800
 From: James Tai <james.tai@realtek.com>
 To: <james.ttl7447@gmail.com>
 Subject: [PATCH] [DEV_FIX][THOR][B00] Support multiple IR key [REVIEWER] Simon
-Date: Mon, 10 Feb 2020 22:41:53 +0800
-Message-ID: <20200210144153.27184-1-james.tai@realtek.com>
+Date: Mon, 10 Feb 2020 22:42:31 +0800
+Message-ID: <20200210144231.27237-1-james.tai@realtek.com>
 X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_064226_456564_2D06A5C0 
+X-CRM114-CacheID: sfid-20200210_064246_458428_AE24B257 
 X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
