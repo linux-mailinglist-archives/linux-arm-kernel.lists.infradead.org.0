@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63029158591
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 23:30:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B6EC158596
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 23:31:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EJLeKorpXr4f0zvVpHSqHFuzf5dUid547OY809RYLX8=; b=k3Uq+jA0tQfJKn
-	P1YOrZOmNYSCT2uHPcvsfUsxkmlzdXVf/c7YqbZU4fpKCgkaLe8d/KCoveaudGty5B1b2pNMnUjNT
-	Cu8otDTKId3aehyWnRr8HBC2lSKQBEUUc/i3F+1imiFo+TN3kCLsMQ+147aWLerw80hbpVkXwpZBB
-	AVsh0YCYcOseBSK5ZI5D6dRglPSSPu+NXIr6Ie29hUV5GUG5bMEzCcUcYAzCUuktmZK87A4ydFmU+
-	4OBk34WdcI1heTPFc57uO/JM6QjLMykAA/Ex8Xese7EBPKE7CHGYjSD/Ou+jQucxMk+MU5DeVQSld
-	fFqouqQasxgwTcdVimuQ==;
+	List-Owner; bh=b64bPGl2bdlu3M2tf+0nBtqjD18Sf/dB7pqAdJSuDno=; b=MsGrt4cbS/a+Qs
+	TKzIbUr+LxggwbLQDWZN/TGq/MwKBPsbxpfIzsEFVPFqjxakaLBMIjBL4S9wQJk1jKzyR8L6JtZMX
+	uI0XKa5YKT8RW8lJMj6/8Ykx4w6NbT2qSJ5hhxbmFyD8TQ6+ZGXhUHIWvItftK4DduMKXprQgF1Qi
+	6Tn6fE5aOhMYcLDS4Ea/5BXMRyKakg0+0EKP6JW4WupQo6+pqkrZGOr+ZFunxdJ/AeYADWn8AlZU9
+	9Fd7NZ8ANp49salJOm4zzT8sVBBmvJKf/S7C0ZLWgVz88DcK8VlYxwz/1CIXlsBrjzwFC35MEozw2
+	t+g91kRULS408A5/RNmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1HZK-0007EV-GA; Mon, 10 Feb 2020 22:30:18 +0000
-Received: from mailoutvs44.siol.net ([185.57.226.235] helo=mail.siol.net)
+	id 1j1Ha2-0000Qf-0m; Mon, 10 Feb 2020 22:31:02 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1HXh-0005jy-7G
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 22:28:38 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id D5F3A522286;
- Mon, 10 Feb 2020 23:28:34 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id 7MmyhTadRlWt; Mon, 10 Feb 2020 23:28:34 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 8CEC9521B7E;
- Mon, 10 Feb 2020 23:28:34 +0100 (CET)
-Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
- [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 3CF70522286;
- Mon, 10 Feb 2020 23:28:32 +0100 (CET)
-From: Jernej Skrabec <jernej.skrabec@siol.net>
-To: mripard@kernel.org,
-	wens@csie.org
-Subject: [PATCH 7/7] clk: sunxi-ng: sun8i-de2: Add R40 specific quirks
-Date: Mon, 10 Feb 2020 23:28:07 +0100
-Message-Id: <20200210222807.206426-8-jernej.skrabec@siol.net>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200210222807.206426-1-jernej.skrabec@siol.net>
-References: <20200210222807.206426-1-jernej.skrabec@siol.net>
-MIME-Version: 1.0
+ id 1j1HZt-0000Pj-Fj
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 22:30:54 +0000
+Received: from akpm3.svl.corp.google.com (unknown [104.133.8.65])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7F01F20733;
+ Mon, 10 Feb 2020 22:30:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581373852;
+ bh=54nkkLQpkIxaBNzxm98DpOSXoNRzc6TpxqRSEf7qsvw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=yE9Hpuo7Y6xYunvkNsz5dQ+EYq88XNQbx27h4AiW1m0qX+2w7LbvaVX3rRyRX8DPz
+ huaTwMLmkRUH7T0j7B6bCEsYnzEnSAlU18DlgjTZW+OxjGw3wsZcF3awO5rV2MMhz6
+ MzVw96chGFwyZ1YY3N9vhQxwWD7wTdBt0j4OmQ1s=
+Date: Mon, 10 Feb 2020 14:30:52 -0800
+From: Andrew Morton <akpm@linux-foundation.org>
+To: Masahiro Yamada <masahiroy@kernel.org>
+Subject: Re: [PATCH] asm-generic: make more kernel-space headers mandatory
+Message-Id: <20200210143052.1d89f7e26c9bd115d617cc92@linux-foundation.org>
+In-Reply-To: <20200210175452.5030-1-masahiroy@kernel.org>
+References: <20200210175452.5030-1-masahiroy@kernel.org>
+X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_142837_424955_8BA404FF 
-X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-CacheID: sfid-20200210_143053_545780_0CA478C4 
+X-CRM114-Status: UNSURE (   9.63  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.235 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,57 +72,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jernej.skrabec@siol.net, sboyd@kernel.org, mturquette@baylibre.com,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, icenowy@aosc.io
+Cc: linux-arch@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-kbuild@vger.kernel.org, x86@kernel.org,
+ Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-R40 is actually very similar to A64, but it doesn't have mixer1 reset.
-This means it's clocks and resets combination is unique and R40 specific
-quirks are needed.
+On Tue, 11 Feb 2020 02:54:52 +0900 Masahiro Yamada <masahiroy@kernel.org> wrote:
 
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
----
- drivers/clk/sunxi-ng/ccu-sun8i-de2.c | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+> Change a header to mandatory-y if both of the following are met:
+> 
+> [1] At least one architecture (except um) specifies it as generic-y in
+>     arch/*/include/asm/Kbuild
+> 
+> [2] Every architecture (except um) either has its own implementation
+>     (arch/*/include/asm/*.h) or specifies it as generic-y in
+>     arch/*/include/asm/Kbuild
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-index f44246ad560a..d2142ab9207f 100644
---- a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-@@ -238,6 +238,16 @@ static const struct sunxi_ccu_desc sun8i_h3_de2_clk_desc = {
- 	.num_resets	= ARRAY_SIZE(sun8i_h3_de2_resets),
- };
- 
-+static const struct sunxi_ccu_desc sun8i_r40_de2_clk_desc = {
-+	.ccu_clks	= sun50i_a64_de2_clks,
-+	.num_ccu_clks	= ARRAY_SIZE(sun50i_a64_de2_clks),
-+
-+	.hw_clks	= &sun50i_a64_de2_hw_clks,
-+
-+	.resets		= sun8i_a83t_de2_resets,
-+	.num_resets	= ARRAY_SIZE(sun8i_a83t_de2_resets),
-+};
-+
- static const struct sunxi_ccu_desc sun8i_v3s_de2_clk_desc = {
- 	.ccu_clks	= sun8i_v3s_de2_clks,
- 	.num_ccu_clks	= ARRAY_SIZE(sun8i_v3s_de2_clks),
-@@ -356,6 +366,10 @@ static const struct of_device_id sunxi_de2_clk_ids[] = {
- 		.compatible = "allwinner,sun8i-h3-de2-clk",
- 		.data = &sun8i_h3_de2_clk_desc,
- 	},
-+	{
-+		.compatible = "allwinner,sun8i-r40-de2-clk",
-+		.data = &sun8i_r40_de2_clk_desc,
-+	},
- 	{
- 		.compatible = "allwinner,sun8i-v3s-de2-clk",
- 		.data = &sun8i_v3s_de2_clk_desc,
--- 
-2.25.0
+(reads Documentation/kbuild/makefiles.rst to remember what these things
+do).
+
+Why are we making this change?  What's the benefit?
+
 
 
 _______________________________________________
