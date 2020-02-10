@@ -2,70 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4449D156DC1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 03:53:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E974156DFF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 04:41:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gTzO3+Kh1a4yF0xW8Kj7f7mNQHMGWg6C1MtJhHd3Ljk=; b=Bs8IUgHfHEEvvv
-	xb9hqe4jK6++ExVjRmsP6wELlmS+p/k6x8eC7XVdyKAnCNZ9rY2/2aGET+3y0ULe71k5olJ7DBVNa
-	ITm1CfR02GlXtyKHI1sGflvMgzRUd62KVYseKhYQOxikKIMDs8wh6MM88gOl1WC31yHDeOQ20iIgY
-	wBreeDrI4WzgrOQgaMvSyAJzZDQffP12D91DAAPwHgymEJUzXaRv/fIIx5LC82OJx/XTK0UGorlXh
-	j3EgIh/+gez6oUGS/sOdqJoFLupJzhm/SNoLGDyVszVha/kfZ18a1BcnCS3Ekmsewvp75c2j/KJz4
-	Rk9FknrnV3FfIv/3SyBA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LIpkerDMZlK/NESQQd9/nqrKVAOXxQriDnKLvOcCZEQ=; b=oC3FMyjjMPxkxJ
+	F9Pfbr68lIYfs1+IIdrxkTSEsuN5gNT2QJpCY85GBDvb7XoxFhpQeb5O10F+d6+R44CWbXbtcpZrp
+	7k4ub9mwYFZVvQUhc9+QrmJU2JuF75APz8rclaudzuHOooiJKJhiFZJfQlDLky0Ic524mU50hARk8
+	S/Z8jV4LJWZUkh1pNN5eXwn+QS8YX7X6RmYlyxNZJ4XJuyh7UJmKlCdfjzAXOWixSR3qJk3ZYD4l3
+	5ycH+5uK6ceEwx9rUCog2IsyofaCYzgwfyxEjcyc6LppRhktJ3uqAAFloAmN/AckNnWKD5HYWxBAw
+	B2IRxwyr0qShFF0UtBsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j0zCM-0006lH-O2; Mon, 10 Feb 2020 02:53:22 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j0zwS-0004rD-2p; Mon, 10 Feb 2020 03:41:00 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j0zCD-0006k5-5a; Mon, 10 Feb 2020 02:53:14 +0000
-X-UUID: cd411884028c4fb082d5d1214dda46e7-20200209
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=W9H3gUT21gGxakLPlN7C+OdzFLN/Tl44T7eG40NyIp0=; 
- b=Lae74vM2lIGTQnPzJo/fh/ko34RNSZ4n9XoVN6pkcEpVpsT8Ii2WMVvVkuXVdCpP9TvwJ+CWzxE2MbQJML09lHlOdQvbVglMlbQAJ7F4sD/CvODLq3Rk+MxiTpMuIMSb5vg2EWrkxHetweCevm8ifcFM4eJoclnBBGmRgkvvK8E=;
-X-UUID: cd411884028c4fb082d5d1214dda46e7-20200209
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1799714164; Sun, 09 Feb 2020 18:53:10 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 9 Feb 2020 18:53:13 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by mtkcas07.mediatek.inc
- (172.21.101.84) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Mon, 10 Feb 2020 10:52:18 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 10 Feb 2020 10:53:24 +0800
-Message-ID: <1581303187.951.2.camel@mtksdaap41>
-Subject: Re: [PATCH] drm/mediatek: Find the cursor plane instead of hard
- coding it
-From: CK Hu <ck.hu@mediatek.com>
-To: Evan Benn <evanbenn@chromium.org>
-Date: Mon, 10 Feb 2020 10:53:07 +0800
-In-Reply-To: <1581064499.590.0.camel@mtksdaap41>
-References: <20200206140140.GA18465@art_vandelay>
- <20200207152348.1.Ie0633018fc787dda6e869cae23df76ae30f2a686@changeid>
- <1581064499.590.0.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1j0zvc-000466-Rs
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 03:40:11 +0000
+Received: by mail-qk1-x741.google.com with SMTP id v2so298737qkj.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 09 Feb 2020 19:40:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=frfitOFXox86XEifRvZU8CHfdOpsMURa7f2gjVq2U28=;
+ b=iWycGiy96SWpQJ31sL6iYLl3KcJ0dFgExK3vPC1U1Fedgb3NlUkSaKIEFQfH9YvVLC
+ ln8/R5P8WT6z9PWn02Fop2/cllNGbdbj5ep2xctdG6NThRWxxA9MKl4zIQ5A7cxfBSKr
+ CCGoA4yLGYtDsSGQZUMOXsfilqpP/GG9O2C5Z40P9Dc3OobsNaimCzo7VuWd47HqG7lQ
+ pl3eYuC/F6aMi1cFdKIlJYCMwzr3c6sjkMPPUbqYCBFpIG82lK8+KjCt4HBtfdfwMRny
+ GNU28UQd/oxAZ7VdbmFrwXBFxuwmvMld0M22OC9av7R6TS5MqW2yh0iHDSr5UrL7M+jw
+ /ylw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=frfitOFXox86XEifRvZU8CHfdOpsMURa7f2gjVq2U28=;
+ b=Jy/M3jm0BiscUeET+yH8JJL5apfAjVKJPbWbc7JxjrvB+cpnBjDeTBCYa4puJk3QZK
+ lYfJ99Fn8VkwZoHphxbX5dxVKCgjn8uMId4mdPNmf149LhInZvANn/GkQiaVyOiMgE23
+ UMlzy5WOc0u6ozuhE/FDjqsIpehGpaP3H/7y0xZxKjss+fJdFOoHlhmIqd5o/ir1bhZN
+ nLZVXpzWRU570937hzs53ySEF562ufIUtkitlwVBvd3t4/QPRtbc2oeHub+6crWllBOW
+ Z8d2SFbIoDBi61PkD/1m484yY1YSvu4aBJuB/y6NcuVZUTzw2gGlI++X66Xg+OLKADBr
+ fe5A==
+X-Gm-Message-State: APjAAAU2u4nEI6wKlO/tVbAhPz37LX/0Bv4ZRwrgP+UFQ64rMBfWwozM
+ aObEiumbcSxitsf3uqE2rf3ZAHo+
+X-Google-Smtp-Source: APXvYqy5b4i4DNfRHydf+m6nmbdF5HggBHGwaG5kMgg6NU4ZOf720NShyORmng4qsE7dxslJkWlUdQ==
+X-Received: by 2002:a37:e10f:: with SMTP id c15mr8958157qkm.331.1581306007417; 
+ Sun, 09 Feb 2020 19:40:07 -0800 (PST)
+Received: from auth1-smtp.messagingengine.com (auth1-smtp.messagingengine.com.
+ [66.111.4.227])
+ by smtp.gmail.com with ESMTPSA id h4sm5471601qtp.24.2020.02.09.19.40.06
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sun, 09 Feb 2020 19:40:06 -0800 (PST)
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
+ by mailauth.nyi.internal (Postfix) with ESMTP id 5C3B921F34;
+ Sun,  9 Feb 2020 22:40:05 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute6.internal (MEProxy); Sun, 09 Feb 2020 22:40:05 -0500
+X-ME-Sender: <xms:kNBAXhWsLdcLV5cUxDW5opGAKDs4sQWXvOnfHGzIRHTVpVekWHC-Mw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedtgddvkecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenog
+ fuohhrthgvugftvggtihhpvdculdegtddmnecujfgurhephffvufffkffoggfgsedtkeer
+ tdertddtnecuhfhrohhmpeeuohhquhhnucfhvghnghcuoegsohhquhhnrdhfvghnghesgh
+ hmrghilhdrtghomheqnecuffhomhgrihhnpehkvghrnhgvlhdrohhrghenucfkphephedv
+ rdduheehrdduuddurdejudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmh
+ grihhlfhhrohhmpegsohhquhhnodhmvghsmhhtphgruhhthhhpvghrshhonhgrlhhithih
+ qdeiledvgeehtdeigedqudejjeekheehhedvqdgsohhquhhnrdhfvghngheppehgmhgrih
+ hlrdgtohhmsehfihigmhgvrdhnrghmvg
+X-ME-Proxy: <xmx:kNBAXuCj-GPfaTSVhcn-B_H330oKSgKg0IrD60tUjHS2ufrJ1Z-Z6w>
+ <xmx:kNBAXkpRd1EKS-4cdLOqnj_ek9htrQ-5dxXYJnao9cLe2w0nHJTGDQ>
+ <xmx:kNBAXq00Y7ybEDx318PH8LWF-N9dEWx-qj7i8iGU4pqSp90_wXT9Bg>
+ <xmx:ldBAXtdqqKvhaiNWE0B3vSM1N5p0ryPyzeJ3sxIRtCk4o3Zk4K5SHCwsHr8>
+Received: from localhost (unknown [52.155.111.71])
+ by mail.messagingengine.com (Postfix) with ESMTPA id A8C6730606FB;
+ Sun,  9 Feb 2020 22:39:59 -0500 (EST)
+From: Boqun Feng <boqun.feng@gmail.com>
+To: linux-pci@vger.kernel.org, linux-hyperv@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v3 0/3] PCI: hv: Generify pci-hyperv.c
+Date: Mon, 10 Feb 2020 11:39:50 +0800
+Message-Id: <20200210033953.99692-1-boqun.feng@gmail.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200209_185313_212631_F840428E 
-X-CRM114-Status: GOOD (  13.88  )
+X-CRM114-CacheID: sfid-20200209_194008_942976_06ABFB4F 
+X-CRM114-Status: UNSURE (   9.43  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [boqun.feng[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -74,8 +111,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,81 +122,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Stephen Hemminger <sthemmin@microsoft.com>,
+ Haiyang Zhang <haiyangz@microsoft.com>, x86@kernel.org,
+ Michael Kelley <mikelley@microsoft.com>, Ingo Molnar <mingo@redhat.com>,
+ Borislav Petkov <bp@alien8.de>, "H. Peter Anvin" <hpa@zytor.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, "K. Y. Srinivasan" <kys@microsoft.com>,
+ Boqun Feng <boqun.feng@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Evan:
+Hi,
 
-On Fri, 2020-02-07 at 16:34 +0800, CK Hu wrote:
-> Hi, Evan:
-> 
-> On Fri, 2020-02-07 at 15:23 +1100, Evan Benn wrote:
-> > The cursor and primary planes were hard coded.
-> > Now search for them for passing to drm_crtc_init_with_planes
-> > 
-> 
-> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+This is the first part for virtual PCI support of Hyper-V guest on
+ARM64. The whole patchset doesn't have any functional change, but only
+refactors the pci-hyperv.c code to make it more arch-independent.
 
-Applied to mediatek-drm-fixes-5.6 [1], thanks.
+Previous version:
+v1: https://lore.kernel.org/lkml/20200121015713.69691-1-boqun.feng@gmail.com/
+v2: https://lore.kernel.org/linux-arm-kernel/20200203050313.69247-1-boqun.feng@gmail.com/
 
-[1]
-https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-fixes-5.6
+Changes since v2:
+
+*	Rebased on 5.6-rc1
+
+*	Reword commit logs as per Andrew's suggestion.
+
+*	It makes more sense to have a generic interface to set the whole
+	msi_entry rather than only the "address" field. So change
+	hv_set_msi_address_from_desc() to hv_set_msi_entry_from_desc().
+	Additionally, make it an inline function as per the suggestion
+	of Andrew and Thomas.
+
+*	Add the missing comment saying the partition_id of
+	hv_retarget_device_interrupt must be self.
+
+*	Add the explanation for why "__packed" is needed for TLFS
+	structures.
+
+I've done compile and boot test of this patchset, also done some tests
+with a pass-through NVMe device.
+
+Suggestions and comments are welcome!
 
 Regards,
-CK
+Boqun
 
-> 
-> > Signed-off-by: Evan Benn <evanbenn@chromium.org>
-> > ---
-> > 
-> >  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 18 ++++++++++++------
-> >  1 file changed, 12 insertions(+), 6 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > index 7b392d6c71cc..935652990afa 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > @@ -658,10 +658,18 @@ static const struct drm_crtc_helper_funcs mtk_crtc_helper_funcs = {
-> >  
-> >  static int mtk_drm_crtc_init(struct drm_device *drm,
-> >  			     struct mtk_drm_crtc *mtk_crtc,
-> > -			     struct drm_plane *primary,
-> > -			     struct drm_plane *cursor, unsigned int pipe)
-> > +			     unsigned int pipe)
-> >  {
-> > -	int ret;
-> > +	struct drm_plane *primary = NULL;
-> > +	struct drm_plane *cursor = NULL;
-> > +	int i, ret;
-> > +
-> > +	for (i = 0; i < mtk_crtc->layer_nr; i++) {
-> > +		if (mtk_crtc->planes[i].type == DRM_PLANE_TYPE_PRIMARY)
-> > +			primary = &mtk_crtc->planes[i];
-> > +		else if (mtk_crtc->planes[i].type == DRM_PLANE_TYPE_CURSOR)
-> > +			cursor = &mtk_crtc->planes[i];
-> > +	}
-> >  
-> >  	ret = drm_crtc_init_with_planes(drm, &mtk_crtc->base, primary, cursor,
-> >  					&mtk_crtc_funcs, NULL);
-> > @@ -830,9 +838,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
-> >  			return ret;
-> >  	}
-> >  
-> > -	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, &mtk_crtc->planes[0],
-> > -				mtk_crtc->layer_nr > 1 ? &mtk_crtc->planes[1] :
-> > -				NULL, pipe);
-> > +	ret = mtk_drm_crtc_init(drm_dev, mtk_crtc, pipe);
-> >  	if (ret < 0)
-> >  		return ret;
-> >  
-> 
+Boqun Feng (3):
+  PCI: hv: Move hypercall related definitions into tlfs header
+  PCI: hv: Move retarget related structures into tlfs header
+  PCI: hv: Introduce hv_msi_entry
+
+ arch/x86/include/asm/hyperv-tlfs.h  | 41 +++++++++++++++++++++++++++
+ arch/x86/include/asm/mshyperv.h     |  8 ++++++
+ drivers/pci/controller/pci-hyperv.c | 43 ++---------------------------
+ 3 files changed, 52 insertions(+), 40 deletions(-)
+
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
