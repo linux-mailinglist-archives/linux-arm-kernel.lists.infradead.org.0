@@ -2,65 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C189E1573EF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 13:07:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0318E1573FB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 13:08:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KF6vHKjbBiFUDFliezOX8LNE4Njnmim0ViqGSBEqzGQ=; b=fFZMuQ1SwlWYG4
-	RJO7+Y7daj9qsngYiwp15gGMqS2ho1J/c7xvn39q6ynLGoqI/4YINSTEUlTOr013RbkOpd6QqL1rE
-	XlRjeium0LOllMxBf2kmYAf50bU6MjqQPZ2pOZ/3WobjcfJ0Aqxj7fjaNNqcTULr/HIVWedHEMdl9
-	lTsVSNr6bEpTvhvJHBdizC62bWYDG3/xNsoER9vyZ255Y9tUpQFnhscknoL3eWnHGvjnaYkViUJ6E
-	Hbcs7KQhAh9pxx0yq5/NHTFWIPxmNMvcXB580cp8PNcHkjP/I+qi4eJ7OeJiCrbd49YhmbDyP9YJJ
-	8q81EXD8oeALLZVDETAg==;
+	List-Owner; bh=NgZltenMhKysLHLDD3TgzZ5hrNc2CbQ0LTvkXfR2pCs=; b=DOAa1Kq7vsN1Jp
+	bIitBrbG4BZfd14d6sC/jXcHTKTBfVar6whqQHApM6auETNfu6PxvD3EYTMtt54HxS3gRS/+M+A3j
+	4zXc18AIQoVMsyxcd690PvGYqA0j/6vRMyelcRna0gB00q/rR59BjyNMI3t4BeEWJ/psvsvMJ5U1J
+	dO3ZDa7EWhQeZWa2fgSZ5CmfSIK6yEl8drxhp9OQPap/o7NCi1j5/5v2cz9Dt7GUptcyGxgHWwVRx
+	Qs9XcUVmjfoQ1gHVVuGpN2k5pdCfom872anuqFARegJBOyelpSqHmh1GsgD4vg7DSPZkNGtGFMuv7
+	keg3FwkzCxJHEKwb9/Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j17qn-0007iw-60; Mon, 10 Feb 2020 12:07:41 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
+	id 1j17qz-0007rN-Vh; Mon, 10 Feb 2020 12:07:53 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j17qe-0007hN-R9
- for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 12:07:34 +0000
+ id 1j17qk-0007kk-KC
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 12:07:40 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581336450;
+ s=mimecast20190719; t=1581336457;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=4M76XTB9sAOomIvEeEdwDoPllW+ZIvVf68kWvwXXC6A=;
- b=V3x3tAoU1zZI6Y+McQcyRPEdPcY19iP5GbqZMryRStoErSBnhhHxNtX7SZqpZMgInIBqiR
- Xgp+pmkCARSPUcnvIyB5tdH64fitF+lNRYrDuIPAiVasqo0ZwwZC+jaCs/32+73LWIyA80
- 0T7vZf656JP3fXc+vO6Ga+PSKIIyJH0=
+ bh=e2eRuZqsSaScZZo8kRHflKS/ooXKuAQ41Yq4aCVvwEU=;
+ b=YCtVmYmsNVvoz0nKlyBMSP+HRd5lfrkLGg0qwiiN6PreWnwjEQKvIyh1tW0tdltzLS+OnO
+ MQApcnnTx0G2aEpuYkv+oWtKe/3lxdQcdmCMxEL5nntkAmBevZwnbyLM2NbT9gvjwP7qE0
+ oa0TxN1buLuVML16VlrRrQ/1qfXRRtk=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-188-YSv7_ONjOOiohpLZfF_7Qg-1; Mon, 10 Feb 2020 07:07:25 -0500
-X-MC-Unique: YSv7_ONjOOiohpLZfF_7Qg-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
+ us-mta-430-rRbuwR1zN2iFw2chVyWWEw-1; Mon, 10 Feb 2020 07:07:35 -0500
+X-MC-Unique: rRbuwR1zN2iFw2chVyWWEw-1
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 20659477;
- Mon, 10 Feb 2020 12:07:23 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 2E9AC13E6;
+ Mon, 10 Feb 2020 12:07:33 +0000 (UTC)
 Received: from krava (unknown [10.43.17.9])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 521CD5C1D4;
- Mon, 10 Feb 2020 12:07:17 +0000 (UTC)
-Date: Mon, 10 Feb 2020 13:07:15 +0100
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 43FCD60BF1;
+ Mon, 10 Feb 2020 12:07:30 +0000 (UTC)
+Date: Mon, 10 Feb 2020 13:07:27 +0100
 From: Jiri Olsa <jolsa@redhat.com>
 To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH RFC 4/7] perf pmu: Rename uncore symbols to include
- system PMUs
-Message-ID: <20200210120715.GC1907700@krava>
+Subject: Re: [PATCH RFC 1/7] perf jevents: Add support for an extra directory
+ level
+Message-ID: <20200210120727.GD1907700@krava>
 References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <1579876505-113251-5-git-send-email-john.garry@huawei.com>
+ <1579876505-113251-2-git-send-email-john.garry@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1579876505-113251-5-git-send-email-john.garry@huawei.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+In-Reply-To: <1579876505-113251-2-git-send-email-john.garry@huawei.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_040733_004492_C9DAE4BE 
-X-CRM114-Status: GOOD (  13.25  )
+X-CRM114-CacheID: sfid-20200210_040738_752302_92EF67EC 
+X-CRM114-Status: GOOD (  20.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,34 +99,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 24, 2020 at 10:35:02PM +0800, John Garry wrote:
-
-SNIP
-
->  		/* Only split the uncore group which members use alias */
-> -		if (!evsel->use_uncore_alias)
-> +		if (!evsel->use_uncore_or_system_alias)
->  			goto out;
+On Fri, Jan 24, 2020 at 10:34:59PM +0800, John Garry wrote:
+> Currently we support upto a level 2 directory, and level 2 would be in the
+> form vendor/platform.
+> 
+> Add support for a further level, to hold specific categories of events for
+> when we want to segregate them for matching purposes.
+> 
+> Signed-off-by: John Garry <john.garry@huawei.com>
+> ---
+>  tools/perf/pmu-events/jevents.c | 11 ++++++++---
+>  1 file changed, 8 insertions(+), 3 deletions(-)
+> 
+> diff --git a/tools/perf/pmu-events/jevents.c b/tools/perf/pmu-events/jevents.c
+> index 079c77b6a2fd..8af05b94a37d 100644
+> --- a/tools/perf/pmu-events/jevents.c
+> +++ b/tools/perf/pmu-events/jevents.c
+> @@ -960,15 +960,20 @@ static int process_one_file(const char *fpath, const struct stat *sb,
+>  	int level   = ftwbuf->level;
+>  	int err = 0;
 >  
->  		/* The events must be from the same uncore block */
-> diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
-> index 8b99fd312aae..569aba4cec89 100644
-> --- a/tools/perf/util/pmu.c
-> +++ b/tools/perf/util/pmu.c
-> @@ -623,7 +623,7 @@ static struct perf_cpu_map *pmu_cpumask(const char *name)
->  	return NULL;
->  }
->  
-> -static bool pmu_is_uncore(const char *name)
-> +static bool pmu_is_uncore_or_sys(const char *name)
+> -	if (level == 2 && is_dir) {
+> +	if (level >= 2 && is_dir) {
+> +		int count = 0;
+>  		/*
+>  		 * For level 2 directory, bname will include parent name,
+>  		 * like vendor/platform. So search back from platform dir
+>  		 * to find this.
+> +		 * Something similar for level 3 directory, but we're a PMU
+> +		 * category folder, like vendor/platform/cpu.
+>  		 */
+>  		bname = (char *) fpath + ftwbuf->base - 2;
+>  		for (;;) {
+>  			if (*bname == '/')
+> +				count++;
+> +			if (count == level - 1)
+>  				break;
+>  			bname--;
 
-so we detect uncore PMU by checking for cpumask file
-
-I don't see the connection here with the sysid or '_sys' checking,
-that's just telling which ID to use when looking for an alias, no?
-shouldn't that be separated?
+I was wondering why we just don't use different filename for that,
+but it's true that the code transforms directory chain to the table
+name.. so I guess another directory level is justified ;-)
 
 jirka
+
+
+>  		}
+> @@ -981,13 +986,13 @@ static int process_one_file(const char *fpath, const struct stat *sb,
+>  		 level, sb->st_size, bname, fpath);
+>  
+>  	/* base dir or too deep */
+> -	if (level == 0 || level > 3)
+> +	if (level == 0 || level > 4)
+>  		return 0;
+>  
+>  
+>  	/* model directory, reset topic */
+>  	if ((level == 1 && is_dir && is_leaf_dir(fpath)) ||
+> -	    (level == 2 && is_dir)) {
+> +	    (level >= 2 && is_dir && is_leaf_dir(fpath))) {
+>  		if (close_table)
+>  			print_events_table_suffix(eventsfp);
+>  
+> -- 
+> 2.17.1
+> 
 
 
 _______________________________________________
