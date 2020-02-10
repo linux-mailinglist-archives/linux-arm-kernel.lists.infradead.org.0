@@ -2,93 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27DBA1572AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 11:16:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 754221572E0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 10 Feb 2020 11:31:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hUt5S9J3SnkvFh7Gd1AkcMmO1EvdUJMKAajnHOAcCNw=; b=rXRovzeglPvuY8
-	IO5jugJzTeg2LLVaYDZSvlgtSbPF7TDSKAWJW8NIpL/Ff0dLaZiKg5s4zK5p/UovwObUEbLDWBeYK
-	JO3r6hwfA5pJcZ9icyt4StEqIq0T7Cptu5uF7mQ2dpfA1+iaUDjAdsRvMF0ZoOw3BpkK27zY2VPxC
-	KXWwa5GhmkrnuLuBX5zrAmezcSOgDdITGnhO2EU9RFy6yIyc+2j3A03rK9OdMn4V4FlMtASxbHfkJ
-	B7BrUSPwdoLqBFgq800Fd5TJqGQhZqV10bkqpTGYLWDHqtO4MEvhRYTgSF8t4UpAmsFO4JoiqFToB
-	Hs951YVCYWMcyDwKmccw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=koYAW7diOu1j9bsOxGg+d3xSLywO0xFUHhVEZS5sOaM=; b=Ritv+ScgyKijI7
+	nlWfYrNlzR+vW776j66/cGIrGqR1sqVkQLrrhZbszLrUuzRV9y3zYYhuzSM3FG8JhN431Ov+vuqft
+	XX/NNkUAhc7yVaZxMT86FyI9pM7v89m7JQ7Y8+9Xj9nyXvcQnA+jnRSn5BuTUU9ZUkoJOUS4bOHP3
+	EZ1rOp6Djo71sgJ3QuyHvRbYXMCLW6viT7t3YB3Yc5xQmniCT57jao+IzizBg0ejQRm34wBYVjij8
+	xBrAhyugOPw3yq1NLCcNzVoix9G2YR63Bu/bUDU3ftQPB2rtLxl6AFw9F++jmpplGHBAkVems760d
+	hb9xqRCplLKdK0sUU9bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j167C-00037Z-Po; Mon, 10 Feb 2020 10:16:30 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1673-00035j-T1; Mon, 10 Feb 2020 10:16:23 +0000
-Received: by mail-lj1-x244.google.com with SMTP id o15so6454148ljg.6;
- Mon, 10 Feb 2020 02:16:20 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=lpoquTHHmtHSGcwS1XpaRBb7o3Yp7v/ANk3Nz1XtzWU=;
- b=uSmCZRmxFB0OUKvRi4fURYrJuafIVFAwEcpke4E2T4MoPc78+le8tVZ2My1Ru2f/wz
- 99oO9LGpFPI+KPpO1vg9TDfXqW5iH4wT+IyN1in3ETBX+/uoTES/i8fFam38J6PVs+mx
- wCuxXZUjDp8hRiVV8plt5q1u8BhK1SSqtWZF3xP6w6VzO0cDqDJh6ak+iA+rBxHF/lgM
- gaLLugeJr06xbt7GiDCZIIM97Habs+NUkZd4Lg/d2v9JdVE3alZAEZ60fggp61kXlr+b
- ZQojbmRtdqLGJ27Z2enCmU2aW2BLbov5e/uerR+OT4aCLc6vtSOeD8Y63XqZ5DCHLT0L
- zLKw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:subject:from:in-reply-to:date:cc
- :content-transfer-encoding:message-id:references:to;
- bh=lpoquTHHmtHSGcwS1XpaRBb7o3Yp7v/ANk3Nz1XtzWU=;
- b=sy6UMTlMapf/EDTVY6Qxymt2UD4EL1BSeqeDuLmmsZqnAK1ANS2v4NYyLtFVucGpAs
- 0HgEgI9q8XeP/QnkvIjLbGq7/CmuWLvqZzVsAHRJYXHySwh7aeZ7YHKTFi7ky9re5nks
- sSM/ggyn7AidINNRkDoRW1zS43W7vVtR6GzoKuIJW2c8uA6bXQc71h6Mc+hVt38XOOfz
- feNk0+uL2x1L4JnT1mE1F8LMaS0fk+6V8gmfQjQKChAbn4MixKhOkl/5VhrHAqUx35bm
- IsRSugwcy8V6csWnF/AyuK4V94utHBtrJM0gcfTZCLPRTa57Igk5P9uW7Dh3NVqBpseT
- Z9mA==
-X-Gm-Message-State: APjAAAUEcScm+CVD9L2uzzOoDsGk950FRL9JBGvDbEQxzGRVfuxTG+jp
- dkU27VLTLdLTaDdOLVlfXdVKSM2F
-X-Google-Smtp-Source: APXvYqymMWYVuwGul+z7dz2+xQgtFCIGwgXxAoBye6KIElypYeMRrGEjwzF8zbwM/JwMqpVbTcoutw==
-X-Received: by 2002:a2e:86c4:: with SMTP id n4mr434588ljj.97.1581329778685;
- Mon, 10 Feb 2020 02:16:18 -0800 (PST)
-Received: from [127.0.0.1] (84-10-202-70.dynamic.chello.pl. [84.10.202.70])
- by smtp.gmail.com with ESMTPSA id y14sm6135601ljk.46.2020.02.10.02.16.16
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 10 Feb 2020 02:16:17 -0800 (PST)
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Subject: Re: [PATCH v4 0/4] media: meson: vdec: Add compliant H264 support
-From: Piotr Oniszczuk <piotr.oniszczuk@gmail.com>
-In-Reply-To: <cc8defafcf4849f48786c41d94c4e44414903fac.camel@ndufresne.ca>
-Date: Mon, 10 Feb 2020 11:16:16 +0100
-Message-Id: <8BAAA12D-B4D6-4F42-B763-B634C47539FD@gmail.com>
-References: <20200116133025.1903-1-narmstrong@baylibre.com>
- <371bccfa68c4a9924137f087ef45c732e64bf808.camel@ndufresne.ca>
- <970b4e5b89db7f055217676a07281e37f6dcd35a.camel@ndufresne.ca>
- <f3d8eac3-73cb-75ad-3412-212b229f1654@baylibre.com>
- <cc8defafcf4849f48786c41d94c4e44414903fac.camel@ndufresne.ca>
-To: Nicolas Dufresne <nicolas@ndufresne.ca>
-X-Mailer: Apple Mail (2.3445.104.11)
+	id 1j16Lj-0001AO-Jp; Mon, 10 Feb 2020 10:31:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j16Lc-00019L-6S
+ for linux-arm-kernel@lists.infradead.org; Mon, 10 Feb 2020 10:31:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A2B61FB;
+ Mon, 10 Feb 2020 02:31:14 -0800 (PST)
+Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7566A3F68F;
+ Mon, 10 Feb 2020 02:31:12 -0800 (PST)
+Date: Mon, 10 Feb 2020 10:31:10 +0000
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: [PATCH v3 5/7] drivers: firmware: psci: Add hierarchical domain
+ idle states converter
+Message-ID: <20200210103110.GB19089@bogus>
+References: <CAPDyKFoyepN2VX4COMomp1e9dXPozzrgCdcy0paee2jp8Wm3YA@mail.gmail.com>
+ <20200205161816.GD38466@bogus>
+ <CAPDyKFqaA7oN2+oLS=Puw+jQXke_ErGQAWYuTuU-6PS7mo5YbQ@mail.gmail.com>
+ <20200206204514.GB8107@codeaurora.org>
+ <20200207111955.GA40103@bogus>
+ <CAPDyKFp-zvD1iFcpRaTFiuazxYmLEx0Czf3=TZJxjSCDmmPsvA@mail.gmail.com>
+ <20200207144850.GA18655@e121166-lin.cambridge.arm.com>
+ <CAPDyKFoZ+QQFdG3yQ5wGpg2Z5c9WksUhresGz02o3HVrGt1UhQ@mail.gmail.com>
+ <20200207161547.GB8342@bogus>
+ <CAPDyKFpzr4MA4XuNqCX1jwAzZataVwbVKvADiy39hq=UgDB4tg@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAPDyKFpzr4MA4XuNqCX1jwAzZataVwbVKvADiy39hq=UgDB4tg@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_021621_939501_4B395C96 
-X-CRM114-Status: GOOD (  10.55  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200210_023124_324495_96462025 
+X-CRM114-Status: GOOD (  35.35  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [piotr.oniszczuk[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,50 +72,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "linux-amlogic@lists.infradead.org" <linux-amlogic@lists.infradead.org>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Maulik Shah <mkshah@codeaurora.org>, lsrao@codeaurora.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Rajendra Nayak <rnayak@codeaurora.org>, Linux PM <linux-pm@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Lina Iyer <ilina@codeaurora.org>, Stephen Boyd <swboyd@chromium.org>,
+ David Brown <david.brown@linaro.org>, Andy Gross <agross@kernel.org>,
+ Evan Green <evgreen@chromium.org>, Doug Anderson <dianders@chromium.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgo+IFdpYWRvbW/Fm8SHIG5hcGlzYW5hIHByemV6IE5pY29sYXMgRHVmcmVzbmUgPG5pY29sYXNA
-bmR1ZnJlc25lLmNhPiB3IGRuaXUgMDguMDIuMjAyMCwgbyBnb2R6LiAyMjowODoKPiAKPiBJJ20g
-Y3VycmVudGx5IHJ1bm5pbmcgRmVkb3JhIDMxIChEZWJpYW4gdW5zdGFibGUgc2hvdWxkIHByb3Zp
-ZGUgdGhlCj4gc2FtZSksIHdpdGggdGhlIHN0b2NrIEdTdHJlYW1lciAxLjE2LjEuIEFuZCBkb2lu
-ZyBwbGF5YmFjayB3aXRoOgo+IAo+IGdzdC1wbGF5LTEuMCBWaWRlb3MvYmJiX3N1bmZsb3dlcl8x
-MDgwcF8zMGZwc19ub3JtYWwubXA0IC0tdmlkZW9zaW5rPSJrbXNzaW5rIiAtLWZsYWdzPXZpZGVv
-Cj4gCj4gV2l0aCB0aGlzIHBsYXllciwgeW91IGNhbiBzZWVrIHdpdGggdGhlIGFycm93cyAobGVm
-dC9yaWdodCksIG9yIGdvIGJhY2sKPiB0byB0aGUgc3RhcnQgdXNpbmcgMCBrZXkuIFdoZW4geW91
-IHNlZWssIHRoZSBzdHJlYW1pbmcgc3RhbGxzLiBJZiB5b3UKPiBzd2l0Y2ggdGhlIC0tdmlkZW9z
-aW5rIHRvIGZha2V2aWRlb3NpbmsgYXMgYW4gZXhhbXBsZSwgc2Vla2luZyB3b3Jrcwo+IHBlcmZl
-Y3RseSwgYW5kIGtlcm5lbCBkb2VzIG5vdCBjb21wbGFpbiBhbnltb3JlLiBTYW1lIGlmIHlvdSBk
-b24ndCB1c2UKPiBhIHplcm8tY29weSBwYXRoLCBsaWtlIGZiZGV2c2luay4KPiAKCk5pY29sYXMs
-CgpBcmUgWW91IHVzaW5nIHN0cmVhbWVyIGNvbXBpbGVkIHdpdGggaW50ZXJuYWwgZ3N0IEZGbXBl
-Zz8KSWYgc28gLSB0aGVuIElJUkMgMS4xNiBnc3QgYnVpbGQtaW4gZmZtcGVnIGlzIGF0IDQuMi4x
-IGxldmVsIGFuZCBpdCBoYXMgbWlzc2luZyBzb21lIGZmbXBlZyBtYXN0ZXIgdjRsMiBjb21taXRz
-IHdoaWNoIGFyZSBpbXByb3ZpbmcgYW1sb2dpYyB2ZGVjPC0+ZmZtcGVnIGNvb3BlcmF0aW9uLgoK
-QWxzbyBJIHBlcnNvbmFsbHkgZm91bmQgYWRkaW5nIGh0dHBzOi8vZ2l0aHViLmNvbS90bW0xL0ZG
-bXBlZy9jb21taXQvMTk2YmFiOTBhMjkzMjM3MjIwNTAxMTFlOTM2NTMyYWM5YWM5YmZkYSBtYWtl
-cyBteXRodHYgb24gczkxMi9wYW5mcm9zdCB3aXRoIERSTV9QUklNRSBFR0xfTElOVVhfRE1BX0JV
-Rl9FWFBPUlQgd29ya2luZyB3ZWxsIC0gYXQgbGVhc3Qgd2l0aCBIMjY0IGJsdXJheSBjb250ZW50
-IChwcm9ncmVzc2l2ZTsgcHJvYmFiaWxpdHkgb2Ygc3RyZWFtIGVycm9ycz1sb3cpLgogClBsYXli
-YWNrIG9mIFRWIGludGVybGFjZWQgY29udGVudCBob3dldmVyIHN0aWxsIGhhcyBpc3N1ZXMgb24g
-Y3VycmVudCB2ZGVjICg1LjUuMitOZWlsJ3MgdjUgTUwgcGF0Y2ggc2VyaWVzKTogdmlkZW8gcGxh
-eWJhY2sgc29tZXRpbWVzIGJlY29tZXMganVtcHkuIApBdCB0aGlzIG1vbWVudCBJIHN1c3BlY3Qg
-aXQgaXMgYmVjYXVzZSBiaXRzdHJlYW0gZXJyb3JzIChUViByZWNvcmRpbmdzIHJlY29yZGVkIGZy
-b20gU0FUIHNvIHN0cmVhbSBlcnJvcnMgYXJlIGhpZ2hseSBwcm9iYWJsZSkgYXJlIGNvbmZ1c2lu
-ZyB2ZGVjIGFuZCB2ZGVjIGh3ICsgZmZtcGVnIHY0bDIgYXJlIG5vdCBhYmxlIHRvIGRlYWwvcmVj
-b3ZlciB3aXRoIHRoaXPigKYuCih0aGlzIG1vcmUgZGVtYW5kaW5nIGVycm9yIGhhbmRsaW5nIGlz
-IElNSE8gZ2VuZXJhbCBhdHRyaWJ1dGUgb2Ygc3RhdGVmdWwgZGVjb2RlcnMgd2hlbiBjb21wYXJl
-ZCB0byBzdGF0ZS1sZXNzKQoKR2VuZXJhbGx5IEkgdGhpbmsgdmRlYyBlcnJvciByZWNvdmVyeSBp
-biB2ZGVjPC0+ZmZtcGVnIG5lZWRzIGJlIGluc3BlY3RlZCBhbmQgbWF5YmUgdGhlcmUgaXMgcGxh
-Y2UgdG8gaW1wcm92ZW1lbnTigKYuLgogICAgCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Sat, Feb 08, 2020 at 11:25:18AM +0100, Ulf Hansson wrote:
+> On Fri, 7 Feb 2020 at 17:15, Sudeep Holla <sudeep.holla@arm.com> wrote:
+> >
+> > On Fri, Feb 07, 2020 at 04:52:52PM +0100, Ulf Hansson wrote:
+> > > On Fri, 7 Feb 2020 at 15:48, Lorenzo Pieralisi
+> > > <lorenzo.pieralisi@arm.com> wrote:
+> > > >
+> > > > On Fri, Feb 07, 2020 at 01:32:28PM +0100, Ulf Hansson wrote:
+> > > > > [...]
+> > > > >
+> > > > > > > I understand the arguments for using PC vs OSI and agree with it. But
+> > > > > > > what in PSCI is against Linux knowing when the last core is powering
+> > > > > > > down when the PSCI is configured to do only Platform Cordinated.
+> > > > > >
+> > > > > > Nothing :D. But knowing the evolution and reasons for adding OSI in the
+> > > > > > PSCI specification and having argued about benefits of OSI over PC for
+> > > > > > years and finally when we have it in mainline, this argument of using
+> > > > > > PC for exact reasons why OSI evolved is something I can't understand
+> > > > > > and I am confused.
+> > > > > >
+> > > > > > > There should not be any objection to drivers knowing when all the cores
+> > > > > > > are powered down, be it reference counting CPU PM notifications or using
+> > > > > > > a cleaner approach like this where GendPD framwork does everything
+> > > > > > > cleanly and gives a nice callback. ARM architecture allows for different
+> > > > > > > aspects of CPU access be handled at different levels. I see this as an
+> > > > > > > extension of that approach.
+> > > > > > >
+> > > > > >
+> > > > > > One thing that was repeatedly pointed out during OSI patch review was no
+> > > > > > extra overhead for PC mode where firmware can make decisions. So, just
+> > > > > > use OSI now and let us be done with this discussion of OSI vs PC. If PC
+> > > > > > is what you think you need for future, we can revert all OSI changes and
+> > > > > > start discussing again :-)
+> > > > >
+> > > > > Just to make it clear, I fully agree with you in regards to overhead
+> > > > > for PC-mode. This is especially critical for ARM SoCs with lots of
+> > > > > cores, I assume.
+> > > > >
+> > > > > However, the overhead you refer to, is *only* going to be present in
+> > > > > case when the DTS has the hierarchical CPU topology description with
+> > > > > "power-domains". Because, that is *optional* to use, I am expecting
+> > > > > only those SoC/platforms that needs to manage last-man activities to
+> > > > > use this layout, the others will remain unaffected.
+> > > >
+> > > > In PC mode not only there is no need but it is wrong to manage
+> > > > any last-man activity in the kernel. I wonder why we are still
+> > > > talking about this to be honest.
+> > >
+> > > I guess the discussion is here because there is a use case to consider now.
+> > >
+> >
+> > If this is what Bjorn presented in his email, I have responded to that.
+> > If it's any different, please let us know the complete details.
+> >
+> > > For sure, we agree on what is the best solution. But this is rather
+> > > about what can we do to improve the current situation, if we should do
+> > > anything.
+> > >
+> >
+> > Sure, and I haven't found a reason to do that in OSPM yet(as part of the
+> > discussion in this thread)
+> >
+> > > >
+> > > > Code to handle PSCI platform coordinated mode has been/is in
+> > > > the kernel today and that's all is needed according to the PSCI
+> > > > specifications.
+> > >
+> > > PSCI specifies CPU power management, not SoC power management. If
+> > > these things were completely decoupled, I would agree with you, but
+> > > that's not the case. Maybe SCMI, etc, helps with this in future.
+> > >
+> >
+> > Why does that not work even if they are not decoupled. The IO/device
+> > that share with CPU votes from OSPM and the CPU/Cluster from PSCI in
+> > PC mode. There is no argument there, but why it needs to be done in OSPM
+> > is the objection here.
+>
+> That implies the votes from I/O devices needs to reach the FW
+> immediately when the vote is done. No caching or other optimizations
+> can be done at OSPM.
+>
+> In principle, the FW needs to have an always up to date view of the
+> votes, etc. That sounds highly inefficient, both from energy and
+> latency point of view, at least in my opinion.
+>
+
+Sorry but I need to re-iterate, use OSI if you need all those fancy
+caching and other optimizations.
+
+> >
+> > > Anyway, my fear is that not many ARM vendors implements OSI support,
+> > > but still they have "last-man-activities" to deal with. This is not
+> > > only QCOM.
+> > >
+> >
+> > I am interested to hear from them. And the same question to same too as
+> > above.
+>
+> I have been talking to some of them. But, yes, we need to hear more from them.
+>
+> >
+> > > I guess an option would be to add OSI support to the public ARM
+> > > Trusted Firmware, then we could more easily point to that - rather
+> > > than trying to mitigate the problem on the kernel side.
+> > >
+> >
+> > I would say go for it. But don't mix responsibility of OSPM in PC vs OSI.
+> > We have discussed this for years and I hope this discussion ends ASAP.
+> > I don't see any point in dragging this any further.
+>
+> Okay.
+>
+
+I keep saying that but still responding to the discussions. I must stop ;-)
+
+--
+Regards,
+Sudeep
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
