@@ -2,68 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53A23158F4B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 13:54:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A492C158F70
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 14:04:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=WyTTxqhdjjQ1L4MlbT9ezWhJsjHbOEBrwSFnqoQghtU=; b=o+P4Bb1EfZkm7VSDsSzg76Ig2T
-	XmNJYfNl3xNTqZaIu6toHinaCylV0MmFUMEaPa0z10jl6NCHoIsHDtBuAQl9CmdeGeqCunRFTrIYA
-	jedNJ6jNwybssYRPEBaUHa5rnGLqqvDcnO0c+3pK3bQLRL1QPr5tmtcKze7S5TrjYE+D5Ok+H6Uki
-	3Ovx6yN/m8mUh8mwH5trGTF5YWXXJ5tUpVxa0SxUOLsRiUuCJa+v9wZ4ASnZ8uzOGrWCPtSbmmKtF
-	K2J11KjVaYr9DnRHTGeUwznSmXj/qOgJtXSDw+X31Nks4AHhjWmKmvWQNn2LB8/RGx+hKeuEhjOWI
-	UwUE3PFg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=QV/1Hsv5xmJ99s4RoFo0v/asNxO99PSLCe6+hogqKKc=; b=KsBsOIGFuGQuQ6TrCvL/o50Ur
+	MNPmq4Szt7XTdFOciY5xxTDDz4Cu4zTKlk0dqQYZq0loBQMGZHCNOoY+sYfNar1jV8o5ZG6LcuFrn
+	q1JwmL/AjfVWn8rlTwwLbQEVyn9IIBAN9dflcsLtxRLt+vXz4pJprHqOxxVF8JQ0xqo7c7mTLdZWL
+	J74kEl7rtn1IiZOxz0aFTacnVJu5oCiUgOkOvPgNhTmFTsH+eQdQ/TDg8WSkgSZDKidL67bM1WDfx
+	pilmH7G7BcD5Iz7r4JzNYyf3GKPptYXazs0nbCjsYFushWxAcsp71y6gvONGIKkfZ0SckZXMqB3Jt
+	Csof57N7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1V43-0006vh-V2; Tue, 11 Feb 2020 12:54:56 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1V3V-0006VF-VJ
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 12:54:24 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B62711A3557;
- Tue, 11 Feb 2020 13:54:20 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 344C91A1CD7;
- Tue, 11 Feb 2020 13:54:05 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 12F8B402E0;
- Tue, 11 Feb 2020 20:53:52 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, broonie@kernel.org,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, andrew.smirnov@gmail.com,
- manivannan.sadhasivam@linaro.org, marcel.ziswiler@toradex.com,
- rjones@gateworks.com, sebastien.szymanski@armadeus.com,
- aisheng.dong@nxp.com, gary.bisson@boundarydevices.com, angus@akkea.ca,
- pramod.kumar_1@nxp.com, rabeeh@solid-run.com, cosmin.stoica@nxp.com,
- l.stach@pengutronix.de, leonard.crestez@nxp.com, daniel.baluta@nxp.com,
- jun.li@nxp.com, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V3 4/4] dt-bindings: arm: imx: Add the i.MX8MP EVK board
-Date: Tue, 11 Feb 2020 20:48:27 +0800
-Message-Id: <1581425307-18567-4-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1581425307-18567-1-git-send-email-Anson.Huang@nxp.com>
-References: <1581425307-18567-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+	id 1j1VDK-0001sP-DC; Tue, 11 Feb 2020 13:04:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1VDB-0001rh-M9
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 13:04:23 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D941130E;
+ Tue, 11 Feb 2020 05:04:18 -0800 (PST)
+Received: from [192.168.1.123] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 583D83F6CF;
+ Tue, 11 Feb 2020 05:04:13 -0800 (PST)
+Subject: Re: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
+ driver for NXP Layerscape SoCs
+To: Laurentiu Tudor <laurentiu.tudor@nxp.com>, Li Yang <leoyang.li@nxp.com>,
+ Olof Johansson <olof@lixom.net>
+References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
+ <CAOesGMjAQSfx1WZr6b1kNX=Exipj_f4X_f39Db7AxXr4xG4Tkg@mail.gmail.com>
+ <DB8PR04MB6747DA8E1480DCF3EFF67C9284500@DB8PR04MB6747.eurprd04.prod.outlook.com>
+ <20200110153347.GA29372@e121166-lin.cambridge.arm.com>
+ <CAOesGMj9X1c7eJ4gX2QWXSNszPkRn68E4pkrSCxKMYJG7JHwsg@mail.gmail.com>
+ <DB8PR04MB67473114B315FBCC97D0C6F9841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
+ <CAOesGMieMXHWBO_p9YJXWWneC47g+TGDt9SVfvnp5tShj5gbPw@mail.gmail.com>
+ <20200210152257.GD25745@shell.armlinux.org.uk>
+ <CAOesGMj6B-X1s8-mYqS0N6GJXdKka1MxaNV=33D1H++h7bmXrA@mail.gmail.com>
+ <CADRPPNSXPCVQEWXfYOpmGBCXMg2MvSPqDEMeeH_8VhkPHDuR5w@mail.gmail.com>
+ <da4dcdc7-c022-db67-cda2-f90f086b729e@nxp.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <aec47903-50e4-c61b-6aec-63e3e9bc9332@arm.com>
+Date: Tue, 11 Feb 2020 13:04:14 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
+MIME-Version: 1.0
+In-Reply-To: <da4dcdc7-c022-db67-cda2-f90f086b729e@nxp.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_045422_169050_5890AEB8 
-X-CRM114-Status: UNSURE (   6.62  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200211_050421_813803_5F3084A1 
+X-CRM114-Status: GOOD (  17.37  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,45 +75,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "arnd@arndb.de" <arnd@arndb.de>,
+ "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "Z.q. Hou" <zhiqiang.hou@nxp.com>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "M.h. Lian" <minghuan.lian@nxp.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "andrew.murray@arm.com" <andrew.murray@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add board binding for i.MX8MP EVK board.
-
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
----
-No change.
----
- Documentation/devicetree/bindings/arm/fsl.yaml | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/Documentation/devicetree/bindings/arm/fsl.yaml b/Documentation/devicetree/bindings/arm/fsl.yaml
-index c5b0270..b8c8c72b 100644
---- a/Documentation/devicetree/bindings/arm/fsl.yaml
-+++ b/Documentation/devicetree/bindings/arm/fsl.yaml
-@@ -324,6 +324,12 @@ properties:
-               - fsl,imx8mn-evk            # i.MX8MN LPDDR4 EVK Board
-           - const: fsl,imx8mn
- 
-+      - description: i.MX8MP based Boards
-+        items:
-+          - enum:
-+              - fsl,imx8mp-evk            # i.MX8MP EVK Board
-+          - const: fsl,imx8mp
-+
-       - description: i.MX8MQ based Boards
-         items:
-           - enum:
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAyMC0wMi0xMSAxMjoxMyBwbSwgTGF1cmVudGl1IFR1ZG9yIHdyb3RlOgpbLi4uXQo+PiBU
+aGlzIGlzIGEga25vd24gaXNzdWUgYWJvdXQgRFBBQTIgTUMgYnVzIG5vdCB3b3JraW5nIHdlbGwg
+d2l0aCBTTU1VCj4+IGJhc2VkIElPIG1hcHBpbmcuwqAgQWRkaW5nIExhdXJlbnRpdSB0byB0aGUg
+Y2hhaW4gd2hvIGhhcyBiZWVuIGxvb2tpbmcKPj4gaW50byB0aGlzIGlzc3VlLgo+IAo+IFllcywg
+SSdtIGNsb3NlbHkgZm9sbG93aW5nIHRoZSBpc3N1ZS4gSSBhY3R1YWxseSBoYXZlIGEgd29ya2Fy
+b3VuZCAKPiAoYXR0YWNoZWQpIGJ1dCBoYXZlbid0IHN1Ym1pdHRlZCBhcyBpdCB3aWxsIHByb2Jh
+Ymx5IHJhaXNlIGEgbG90IG9mIAo+IGV5ZWJyb3dzLiBJbiB0aGUgbWVhbiB0aW1lIEknbSBmb2xs
+b3dpbmcgc29tZSBkaXNjdXNzaW9ucyBbMV1bMl1bM10gb24gCj4gdGhlIGlvbW11IGxpc3Qgd2hp
+Y2ggc2VlbSB0byB0cnkgdG8gdGFja2xlIHdoYXQgYXBwZWFycyB0byBiZSBhIHNpbWlsYXIgCj4g
+aXNzdWUgYnV0IHdpdGggZnJhbWVidWZmZXJzLiBNeSBob3BlIGlzIHRoYXQgd2Ugd2lsbCBiZSBh
+YmxlIHRvIGxldmVyYWdlIAo+IHdoYXRldmVyIHR1cm5zIG91dC4KCkluZGVlZCBpdCdzIG1vcmUg
+Z2VuZXJhbCB0aGFuIGZyYW1lYnVmZmVycyAtIGluIGZhY3QgdGhlcmUgd2FzIGEgCnNwZWNpZmlj
+IHJlcXVpcmVtZW50IGZyb20gdGhlIElPUlQgc2lkZSB0byBhY2NvbW1vZGF0ZSBuZXR3b3JrL3N0
+b3JhZ2UgCmNvbnRyb2xsZXJzIHdpdGggaW4tbWVtb3J5IGZpcm13YXJlL2NvbmZpZ3VyYXRpb24g
+ZGF0YS93aGF0ZXZlciBzZXQgdXAgCmJ5IHRoZSBib290bG9hZGVyIHRoYXQgd2FudCB0byBiZSBo
+YW5kZWQgb2ZmICdsaXZlJyB0byBMaW51eCBiZWNhdXNlIHRoZSAKb3ZlcmhlYWQgb2Ygc3RvcHBp
+bmcgYW5kIHJlc3RhcnRpbmcgdGhlbSBpcyBpbXByYWN0aWNhbC4gVGh1cyB0aGlzIERQQUEyIApz
+ZXR1cCBpcyB2ZXJ5IG11Y2ggd2l0aGluIHNjb3BlIG9mIHRoZSBkZXNpcmVkIHNvbHV0aW9uLCBz
+byBwbGVhc2UgZmVlbCAKZnJlZSB0byBqb2luIGluIChwYXJ0aWN1bGFybHkgb24gdGhlIERUIHBh
+cnRzKSA6KQoKQXMgZm9yIHJpZ2h0IG5vdywgbm90ZSB0aGF0IHlvdXIgcGF0Y2ggd291bGQgb25s
+eSBiZSBhIHBhcnRpYWwgCm1pdGlnYXRpb24gdG8gc2xpZ2h0bHkgcmVkdWNlIHRoZSBmYXVsdCB3
+aW5kb3cgYnV0IG5vdCByZW1vdmUgaXQgCmVudGlyZWx5LiBUbyBiZSByb2J1c3QgdGhlIFNNTVUg
+ZHJpdmVyICpoYXMqIHRvIGtub3cgYWJvdXQgbGl2ZSBzdHJlYW1zIApiZWZvcmUgdGhlIGZpcnN0
+IGFybV9zbW11X3Jlc2V0KCkgLSBoZW5jZSB0aGUgbmVlZCBmb3IgZ2VuZXJpYyBmaXJtd2FyZSAK
+YmluZGluZ3MgLSBzbyBkb2luZyBhbnl0aGluZyBmcm9tIHRoZSBNQyBkcml2ZXIgaXMgYWxyZWFk
+eSB0b28gbGF0ZSAoYW5kIAppbmRlZWQgdGhlIGN1cnJlbnQgaW9tbXVfcmVxdWVzdF9kbV9mb3Jf
+ZGV2KCkgbWVjaGFuaXNtIGlzIGl0c2VsZiBhIAptaWNyb2Nvc20gb2YgdGhlIHNhbWUgcHJvYmxl
+bSkuCgo+IEluIHRoZSBtZWFuIHRpbWUsIGNhbiB5b3UgdHJ5IHRoZSB3b3JrYXJvdW5kIExlbyBz
+dWdnZXN0ZWQ/CgpBZ3JlZWQsIEknZCBpbWFnaW5lIHRoZSBjb21tYW5kLWxpbmUgb3B0aW9uIGlz
+IHByb2JhYmx5IHRoZSBiZXN0IGNob2ljZSAKZm9yIHRoZXNlIHBsYXRmb3Jtcywgc2luY2UgaXQn
+cyBsaWtlbHkgdG8gYmUgZWFzaWVyIHRvIHNldCB0aGF0IGJ5IApkZWZhdWx0IGluIHRoZSBib290
+bG9hZGVyIHRoYW4gZmFmZiB3aXRoIHJlYnVpbGRpbmcgZ2VuZXJpYyBrZXJuZWwgY29uZmlncy4K
+ClJvYmluLgoKPiBbMV0gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9wYXRjaC8xMTMyNzY2
+Ny8KPiBbMl0gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9wYXRjaC8xMDk2NzcyOS8KPiBb
+M10gaHR0cHM6Ly9wYXRjaHdvcmsua2VybmVsLm9yZy9jb3Zlci8xMTI3OTU3Ny8KPiAKPiAtLS0K
+PiBCZXN0IFJlZ2FyZHMsIExhdXJlbnRpdQo+IAo+IF9fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fCj4gbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKPiBs
+aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKPiBodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwKPiAKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
