@@ -2,73 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A92015922A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 15:47:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80042159231
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 15:47:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XJ8b/dOKAUOujjOnX/RjCGc2dZHfgdcG6CS9oynO1CI=; b=Sl1KQLbe2DJmFH
-	bibWwoRjxlS7Ov9SPLL/690h0jrZa/I6lCxIF6mZsxrsVSHiyZ2mv2PaVorg0RqKqcVPO3Upv727l
-	eY1SY+WFN13SLaNw44ZGMBttS9bxz/8+F/5KmlAQ3iGWs/sS9gUHY1nh0Il9ebHB+xEOrlOD8XcwN
-	Z/yZFAQRsSC6XjAH8jqTon+4+cfNKS+dijR4+XeBRPZk2ZW7D9s5V93cbIfaeCXxguzT2mu+slx8V
-	xlm6emfa+3pXfwxhum5mK9qU5weyDUjXBXgHHblUOt+m7tMkU4yOoz0QbiBiPtMcdexIVhpTuER5W
-	6cz/Z7L98Srn36wxlqBQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9DU8oSgNSv/6qR41F8aKRai+IWs3mgfRNv0AQLkk3MI=; b=PW4N8mWHFNUa2XxQmL5b2/5wf
+	KL9iSjpzGJf89jJRDnnpS03TYHrR760MttoEH26GOzaQ3IAko3o09hqJJWtNMw/MXLcAU/axRmlaL
+	5gpf6FfX2LEpZpfHpR2X3hcNcTcTiscg+Qc6P/BijLhM8NtRUE9vEpqV3MORRSmYdu86C1DHnXMHC
+	GyxL+SgPU4b98P7lGYGOh/TbMI9Lh8H0RTAGVZR3BS/34eMMqJfkG/33GApPlt0pQ+qdijizRCfwR
+	ezByFRagWgCLuWPYvvdU9h7p9qi5R8hXOMChMYEqBrqGA9O3WuXM7nqJpi7JBDUZj4MBDHt/X7QJL
+	6pmwbm0Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Wok-0003En-4c; Tue, 11 Feb 2020 14:47:14 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j1WpC-0003T1-3x; Tue, 11 Feb 2020 14:47:42 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Woc-0003E5-Om
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 14:47:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581432425;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=AREW9gFLm5gusZ2z//TUVRAYCVObZ/wwLl56roh1D+s=;
- b=PVTfC144B4GMKc+1mqqmEnQrIIZS2ktOCjYLqCTi4QS401ZAoJ4JhfGZ5VNriXIBSMoQbO
- lMuo8lXstqeVATX6zHOfu/bydLrCqjmtHtoQQDsRQI4aHVSLFIwDbmGF3OHjH213pWNNO3
- 1LuiAdYsZlSLqg0trNIcA95baHlR+R0=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-241-JvW_ZqV2OTyZrIbkaNku0g-1; Tue, 11 Feb 2020 09:47:01 -0500
-X-MC-Unique: JvW_ZqV2OTyZrIbkaNku0g-1
-Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
- [10.5.11.16])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5C5EB10054E3;
- Tue, 11 Feb 2020 14:46:58 +0000 (UTC)
-Received: from krava (ovpn-206-93.brq.redhat.com [10.40.206.93])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 47FE55C240;
- Tue, 11 Feb 2020 14:46:54 +0000 (UTC)
-Date: Tue, 11 Feb 2020 15:46:51 +0100
-From: Jiri Olsa <jolsa@redhat.com>
-To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH RFC 3/7] perf jevents: Add support for a system events PMU
-Message-ID: <20200211144651.GD93194@krava>
-References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <1579876505-113251-4-git-send-email-john.garry@huawei.com>
- <20200210120749.GF1907700@krava>
- <b148f0b6-d2ae-6520-8da1-7aed2c9e1d6b@huawei.com>
+ id 1j1Wp2-0003SN-6a
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 14:47:33 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01BEhxtu031462; Tue, 11 Feb 2020 15:47:27 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=4odbdGyV5/+IAGjp9TQdg9pxlhPR5wtUbp4gIY0SBm8=;
+ b=1MOS4e4ncw/kDNfQr8/cX7QpgjwFPMEHqD2n3akoDcWaw3SXXs3MZlNcqXzns/nILAQ0
+ AYy55VbzeWSDdblBzLcEYdCK4g+MV2mz9OkgqpDZvNMBjsKn+My9En+6sPGXgWrHu2HX
+ ksFM9bc3uNFzNl1b5zGh3gk3h4HtRsaI3tcmBuzZjC2uDwMFnVt85Fx4Tmd2/nxTT2gA
+ 6MnF8IUPsr2umgdYLnc0uzdxu2rwNR3LY/Jyc/uVsz3NXbl4hD1ji9uThAIF45emp3Le
+ YiK1M1ljfRs+ohhH4uYRuu/UT0XVfA2pknjw0LAAbPdIaKbjX9TDtqVd/B/f4MQqcKbB IA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2y1uvddt9x-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 11 Feb 2020 15:47:27 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2BDBC10002A;
+ Tue, 11 Feb 2020 15:47:27 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1AC802BD409;
+ Tue, 11 Feb 2020 15:47:27 +0100 (CET)
+Received: from lmecxl0923.lme.st.com (10.75.127.48) by SFHDAG6NODE1.st.com
+ (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 11 Feb
+ 2020 15:47:26 +0100
+Subject: Re: [PATCH V2 0/9] mmc: mmci: sdmmc: add sdr104 support
+To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
+References: <20200128090636.13689-1-ludovic.barre@st.com>
+From: Ludovic BARRE <ludovic.barre@st.com>
+Message-ID: <0d4a3df8-fd1a-4839-116c-149f9e478f42@st.com>
+Date: Tue, 11 Feb 2020 15:47:25 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b148f0b6-d2ae-6520-8da1-7aed2c9e1d6b@huawei.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+In-Reply-To: <20200128090636.13689-1-ludovic.barre@st.com>
+Content-Language: fr
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG4NODE3.st.com (10.75.127.12) To SFHDAG6NODE1.st.com
+ (10.75.127.16)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-11_04:2020-02-10,
+ 2020-02-11 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_064706_881541_BF6B0134 
-X-CRM114-Status: GOOD (  21.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200211_064732_527255_2D65FBE4 
+X-CRM114-Status: GOOD (  14.14  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,77 +97,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ak@linux.intel.com, suzuki.poulose@arm.com,
- peterz@infradead.org, robin.murphy@arm.com, linuxarm@huawei.com,
- acme@kernel.org, linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, james.clark@arm.com,
- namhyung@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ srinivas.kandagatla@linaro.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 10, 2020 at 03:55:00PM +0000, John Garry wrote:
-> On 10/02/2020 12:07, Jiri Olsa wrote:
-> > On Fri, Jan 24, 2020 at 10:35:01PM +0800, John Garry wrote:
-> > 
-> > SNIP
-> > 
-> > >   	- Set of 'PMU events tables' for all known CPUs in the architecture,
-> > > @@ -83,11 +93,11 @@ NOTES:
-> > >   	2. The 'pmu-events.h' has an extern declaration for the mapping table
-> > >   	   and the generated 'pmu-events.c' defines this table.
-> > > -	3. _All_ known CPU tables for architecture are included in the perf
-> > > -	   binary.
-> > > +	3. _All_ known CPU and system tables for architecture are included in
-> > > +	   the perf binary.
-> > > -At run time, perf determines the actual CPU it is running on, finds the
-> > > -matching events table and builds aliases for those events. This allows
-> > > +At run time, perf determines the actual CPU or system it is running on, finds
-> > > +the matching events table and builds aliases for those events. This allows
-> > >   users to specify events by their name:
-> > >   	$ perf stat -e pm_1plus_ppc_cmpl sleep 1
-> > > @@ -150,3 +160,18 @@ where:
-> > >   	i.e the three CPU models use the JSON files (i.e PMU events) listed
-> > >   	in the directory 'tools/perf/pmu-events/arch/x86/silvermont'.
-> > > +
-> > > +The mapfile_sys.csv format is slightly different, in that it contains a SYSID
-> > > +instead of the CPUID:
-> > > +
-> > > +	Header line
-> > > +	SYSID,Version,Dir/path/name,Type
-> > 
-> 
-> Hi jirka,
-> 
-> > can't we just add prefix to SYSID types? like:
-> > 
-> > 	SYSID-HIP08,v1,hisilicon/hip08/sys,sys
-> > 	0x00000000480fd010,v1,hisilicon/hip08/cpu,core
-> > 	0x00000000500f0000,v1,ampere/emag,core
-> > 
-> > because the rest of the line is the same, right?
-> 
-> I did consider that already. It should be workable.
-> 
-> > 
-> > seems to me that having one mapfile type would be less confusing
-> 
-> I thought that having it all in a single file would be more confusing :)
-
-hum, I think that if we keep it separated like:
-
-	SYSID-HIP08,v1,hisilicon/hip08/sys,sys
-	SYSID-krava,v1,hisilicon/krava/sys,sys
-	0x00000000480fd010,v1,hisilicon/hip08/cpu,core
-	0x00000000500f0000,v1,ampere/emag,core
-
-then we should be fine.. not too many humans read that file anyway ;-)
-
-jirka
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+aGkgVWxmCgpKdXN0IGEgImdlbnRsZW1hbiBwaW5nIiBvbiB0aGlzIHNlcmllcwpodHRwczovL3Bh
+dGNod29yay5rZXJuZWwub3JnL3Byb2plY3QvbGludXgtbW1jL2xpc3QvP3Nlcmllcz0yMzQwMTEK
+ClJlZ2FyZHMKTHVkbwoKTGUgMS8yOC8yMCDDoCAxMDowNiBBTSwgTHVkb3ZpYyBCYXJyZSBhIMOp
+Y3JpdMKgOgo+IFRvIHN1cHBvcnQgdGhlIHNkcjEwNCBtb2RlLCBzZG1tYyB2YXJpYW50IG5lZWRz
+Ogo+IC1IYXJkd2FyZSBkZWxheSBibG9jayBzdXBwb3J0IGZvciBzZG1tYyB2YXJpYW50Cj4gICB3
+aXRoIHR1bmluZyBwcm9jZWR1cmUKPiAtVm9sdGFnZSBzd2l0Y2ggY2FsbGJhY2tzCj4gLXNkbW1j
+IHJldmlzaW9uIDIuMAo+IAo+IFYyOgo+IC1yZWdyb3VwIGhvc3QtPm1tY19vcHMgJiBtbWMtPm9w
+cyBhc3NpZ25tZW50Cj4gLWFkZCB0aW1lb3V0IGRlZmluZQo+IC1yZW5hbWUgcHJlcF92b2x0X3N3
+aXRjaCB0byBwcmVfc2lnX3ZvbHRfc3dpdGNoCj4gLXJlbmFtZSB2b2x0X3N3aXRjaCB0byBwb3N0
+X3NpZ192b2x0X3N3aXRjaAo+IC1hZGQgJ3doeScgY29tbWVudCBmb3IgIm1tYzogbW1jaTogYWRk
+IHZvbHRfc3dpdGNoIGNhbGxiYWNrcyIKPiAKPiBMdWRvdmljIEJhcnJlICg5KToKPiAgICBtbWM6
+IG1tY2k6IHNkbW1jOiByZXBsYWNlIHNnX2RtYV94eHggbWFjcm9zCj4gICAgbW1jOiBtbWNpOiBz
+ZG1tYzogcmVuYW1lIHNkbW1jX3ByaXYgc3RydWN0IHRvIHNkbW1jX2lkbWEKPiAgICBtbWM6IG1t
+Y2k6IGFkZCBhIHJlZmVyZW5jZSBhdCBtbWNfaG9zdF9vcHMgaW4gbW1jaSBzdHJ1Y3QKPiAgICBt
+bWM6IG1tY2k6IGFkZCBwcml2YXRlIHBvaW50ZXIgZm9yIHZhcmlhbnQKPiAgICBkdC1iaW5kaW5n
+czogbW1jOiBtbWNpOiBhZGQgZGVsYXkgYmxvY2sgYmFzZSByZWdpc3RlciBmb3Igc2RtbWMKPiAg
+ICBtbWM6IG1tY2k6IHNkbW1jOiBhZGQgZXhlY3V0ZSB0dW5pbmcgd2l0aCBkZWxheSBibG9jawo+
+ICAgIG1tYzogbW1jaTogYWRkIHZvbHRfc3dpdGNoIGNhbGxiYWNrcwo+ICAgIG1tYzogbW1jaTog
+c2RtbWM6IGFkZCB2b2x0YWdlIHN3aXRjaCBmdW5jdGlvbnMKPiAgICBtbWM6IG1tY2k6IGFkZCBz
+ZG1tYyB2YXJpYW50IHJldmlzaW9uIDIuMAo+IAo+ICAgLi4uL2RldmljZXRyZWUvYmluZGluZ3Mv
+bW1jL21tY2kudHh0ICAgICAgICAgIHwgICAyICsKPiAgIGRyaXZlcnMvbW1jL2hvc3QvbW1jaS5j
+ICAgICAgICAgICAgICAgICAgICAgICB8ICA0MiArKystCj4gICBkcml2ZXJzL21tYy9ob3N0L21t
+Y2kuaCAgICAgICAgICAgICAgICAgICAgICAgfCAgIDggKwo+ICAgZHJpdmVycy9tbWMvaG9zdC9t
+bWNpX3N0bTMyX3NkbW1jLmMgICAgICAgICAgIHwgMjA0ICsrKysrKysrKysrKysrKysrLQo+ICAg
+NCBmaWxlcyBjaGFuZ2VkLCAyNDggaW5zZXJ0aW9ucygrKSwgOCBkZWxldGlvbnMoLSkKPiAKCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
+ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
+ZWwK
