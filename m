@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 138231593BF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:50:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DDED1593BE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:50:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=DMtdtQwkcMwbmmdgxxC5ziW9o0+vEpET06zOjfhdT5E=; b=RQn
-	kjFeUDXDuDMyzSbCigB3GMPEtMkgnGb9kUnjWn0U7NtRRCaWYJlhFaeIXvJZbBge3WfEiwYBl+x6u
-	iOI3Y4MZLcu/XV+1S+VWTAjOzBL+U8Z5bdegRy5gsvKAf501zA9vRMChus4jRIOIPgscyZhU5t1+I
-	Yg/wTGLHh9J0/Icdd7lNXaljBEnMvn0WTrgK12QhvNIEF6tMokw/7H09s6MVw0PN4LdD1mEUCocfJ
-	mmw+o+uubAtGGnD76AO11f/57ntGvUhp6bmE6mRCxvxpNSChaMHi7l6i1KljMLBGiccvW76Ez2HRF
-	gmF5RGNLj7nF3UJbXDdKmLg2Dqh7noQ==;
+	References:List-Owner; bh=n1hHWRdzi0Z7ayhAHT+UwShmBXGM+ugQaituh49UF5Q=; b=VuB
+	4KnGCVlkUY400b9ymfpqHevWMzn4iv/CBkKbHItTbF7oi8iTnERbTgI3Yv5EfmF/YsxCrQ82dwzya
+	cy/s/18tRStuE1mq2Mxzkm/+v3WehYSVe+8lH4jpyRzlpeI87uPwaRHB1A77SB6gs1z2pkk55vrXx
+	lCJlPsj7CBB2fUgji5RGNG1b75tz9XmqF83ik8V9qz5ytWAII2ZdnIbwBd6C1EEjnxrKB2iemXQ3Q
+	nvN0yCHX2DBMI9NWadyZMRwPHS6QX3ALH00LUfADXeBursTOzsP0i+ufkiFq1fWB0ozN/t1LWEepO
+	3SmH60caydfHlbhMiSar8qOmB4SVj5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1XoD-0005Qf-3l; Tue, 11 Feb 2020 15:50:45 +0000
+	id 1j1Xnz-0005D2-8n; Tue, 11 Feb 2020 15:50:31 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Xn7-0003TF-3G
+ id 1j1Xn7-0003T6-5f
  for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 15:49:40 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 14B86139F;
- Tue, 11 Feb 2020 07:49:34 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 695FB1396;
+ Tue, 11 Feb 2020 07:49:36 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8F4663F68E;
- Tue, 11 Feb 2020 07:49:33 -0800 (PST)
-Date: Tue, 11 Feb 2020 15:49:32 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E23393F68E;
+ Tue, 11 Feb 2020 07:49:35 -0800 (PST)
+Date: Tue, 11 Feb 2020 15:49:34 +0000
 From: Mark Brown <broonie@kernel.org>
 To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: spdifrx: improve error management on probe
+Subject: Applied "ASoC: stm32: sai: improve error management on probe
  deferral" to the asoc tree
-In-Reply-To: <20200203100814.22944-6-olivier.moysan@st.com>
-Message-Id: <applied-20200203100814.22944-6-olivier.moysan@st.com>
+In-Reply-To: <20200203100814.22944-5-olivier.moysan@st.com>
+Message-Id: <applied-20200203100814.22944-5-olivier.moysan@st.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_074937_512153_7C52E85D 
-X-CRM114-Status: GOOD (  14.68  )
+X-CRM114-CacheID: sfid-20200211_074937_524010_9A30EA06 
+X-CRM114-Status: GOOD (  14.58  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -76,7 +76,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: stm32: spdifrx: improve error management on probe deferral
+   ASoC: stm32: sai: improve error management on probe deferral
 
 has been applied to the asoc tree at
 
@@ -101,67 +101,90 @@ to this mail.
 Thanks,
 Mark
 
-From d49bd5ed24163a1a1c81d40e84295731ddd17b1c Mon Sep 17 00:00:00 2001
+From 5183e85423070d088aaf1ed07ab260e03d5a4e20 Mon Sep 17 00:00:00 2001
 From: Olivier Moysan <olivier.moysan@st.com>
-Date: Mon, 3 Feb 2020 11:08:13 +0100
-Subject: [PATCH] ASoC: stm32: spdifrx: improve error management on probe
- deferral
+Date: Mon, 3 Feb 2020 11:08:12 +0100
+Subject: [PATCH] ASoC: stm32: sai: improve error management on probe deferral
 
-Do not print an error trace when deferring probe for SPDIFRX driver.
+Do not print an error trace when deferring probe for SAI driver.
 
 Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
 Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Link: https://lore.kernel.org/r/20200203100814.22944-6-olivier.moysan@st.com
+Link: https://lore.kernel.org/r/20200203100814.22944-5-olivier.moysan@st.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/stm/stm32_spdifrx.c | 15 +++++++++++----
- 1 file changed, 11 insertions(+), 4 deletions(-)
+ sound/soc/stm/stm32_sai.c     | 12 +++++++++---
+ sound/soc/stm/stm32_sai_sub.c | 11 ++++++++---
+ 2 files changed, 17 insertions(+), 6 deletions(-)
 
-diff --git a/sound/soc/stm/stm32_spdifrx.c b/sound/soc/stm/stm32_spdifrx.c
-index 9f80ddf34443..49766afdae61 100644
---- a/sound/soc/stm/stm32_spdifrx.c
-+++ b/sound/soc/stm/stm32_spdifrx.c
-@@ -406,7 +406,9 @@ static int stm32_spdifrx_dma_ctrl_register(struct device *dev,
- 
- 	spdifrx->ctrl_chan = dma_request_chan(dev, "rx-ctrl");
- 	if (IS_ERR(spdifrx->ctrl_chan)) {
--		dev_err(dev, "dma_request_slave_channel failed\n");
-+		if (PTR_ERR(spdifrx->ctrl_chan) != -EPROBE_DEFER)
-+			dev_err(dev, "dma_request_slave_channel error %ld\n",
-+				PTR_ERR(spdifrx->ctrl_chan));
- 		return PTR_ERR(spdifrx->ctrl_chan);
+diff --git a/sound/soc/stm/stm32_sai.c b/sound/soc/stm/stm32_sai.c
+index b824ba6cb028..058757c721f0 100644
+--- a/sound/soc/stm/stm32_sai.c
++++ b/sound/soc/stm/stm32_sai.c
+@@ -174,20 +174,26 @@ static int stm32_sai_probe(struct platform_device *pdev)
+ 	if (!STM_SAI_IS_F4(sai)) {
+ 		sai->pclk = devm_clk_get(&pdev->dev, "pclk");
+ 		if (IS_ERR(sai->pclk)) {
+-			dev_err(&pdev->dev, "missing bus clock pclk\n");
++			if (PTR_ERR(sai->pclk) != -EPROBE_DEFER)
++				dev_err(&pdev->dev, "missing bus clock pclk: %ld\n",
++					PTR_ERR(sai->pclk));
+ 			return PTR_ERR(sai->pclk);
+ 		}
  	}
  
-@@ -929,7 +931,9 @@ static int stm32_spdifrx_parse_of(struct platform_device *pdev,
- 
- 	spdifrx->kclk = devm_clk_get(&pdev->dev, "kclk");
- 	if (IS_ERR(spdifrx->kclk)) {
--		dev_err(&pdev->dev, "Could not get kclk\n");
-+		if (PTR_ERR(spdifrx->kclk) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Could not get kclk: %ld\n",
-+				PTR_ERR(spdifrx->kclk));
- 		return PTR_ERR(spdifrx->kclk);
+ 	sai->clk_x8k = devm_clk_get(&pdev->dev, "x8k");
+ 	if (IS_ERR(sai->clk_x8k)) {
+-		dev_err(&pdev->dev, "missing x8k parent clock\n");
++		if (PTR_ERR(sai->clk_x8k) != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "missing x8k parent clock: %ld\n",
++				PTR_ERR(sai->clk_x8k));
+ 		return PTR_ERR(sai->clk_x8k);
  	}
  
-@@ -967,7 +971,9 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
- 						    spdifrx->base,
- 						    spdifrx->regmap_conf);
- 	if (IS_ERR(spdifrx->regmap)) {
--		dev_err(&pdev->dev, "Regmap init failed\n");
-+		if (PTR_ERR(spdifrx->regmap) != -EPROBE_DEFER)
+ 	sai->clk_x11k = devm_clk_get(&pdev->dev, "x11k");
+ 	if (IS_ERR(sai->clk_x11k)) {
+-		dev_err(&pdev->dev, "missing x11k parent clock\n");
++		if (PTR_ERR(sai->clk_x11k) != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "missing x11k parent clock: %ld\n",
++				PTR_ERR(sai->clk_x11k));
+ 		return PTR_ERR(sai->clk_x11k);
+ 	}
+ 
+diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
+index 30bcd5d3a32a..0bbf9ed5e48b 100644
+--- a/sound/soc/stm/stm32_sai_sub.c
++++ b/sound/soc/stm/stm32_sai_sub.c
+@@ -1380,7 +1380,9 @@ static int stm32_sai_sub_parse_of(struct platform_device *pdev,
+ 	sai->regmap = devm_regmap_init_mmio(&pdev->dev, base,
+ 					    sai->regmap_config);
+ 	if (IS_ERR(sai->regmap)) {
+-		dev_err(&pdev->dev, "Failed to initialize MMIO\n");
++		if (PTR_ERR(sai->regmap) != -EPROBE_DEFER)
 +			dev_err(&pdev->dev, "Regmap init error %ld\n",
-+				PTR_ERR(spdifrx->regmap));
- 		return PTR_ERR(spdifrx->regmap);
++				PTR_ERR(sai->regmap));
+ 		return PTR_ERR(sai->regmap);
  	}
  
-@@ -1003,7 +1009,8 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
- 	pcm_config = &stm32_spdifrx_pcm_config;
- 	ret = devm_snd_dmaengine_pcm_register(&pdev->dev, pcm_config, 0);
+@@ -1471,7 +1473,9 @@ static int stm32_sai_sub_parse_of(struct platform_device *pdev,
+ 	of_node_put(args.np);
+ 	sai->sai_ck = devm_clk_get(&pdev->dev, "sai_ck");
+ 	if (IS_ERR(sai->sai_ck)) {
+-		dev_err(&pdev->dev, "Missing kernel clock sai_ck\n");
++		if (PTR_ERR(sai->sai_ck) != -EPROBE_DEFER)
++			dev_err(&pdev->dev, "Missing kernel clock sai_ck: %ld\n",
++				PTR_ERR(sai->sai_ck));
+ 		return PTR_ERR(sai->sai_ck);
+ 	}
+ 
+@@ -1553,7 +1557,8 @@ static int stm32_sai_sub_probe(struct platform_device *pdev)
+ 
+ 	ret = devm_snd_dmaengine_pcm_register(&pdev->dev, conf, 0);
  	if (ret) {
--		dev_err(&pdev->dev, "PCM DMA register returned %d\n", ret);
+-		dev_err(&pdev->dev, "Could not register pcm dma\n");
 +		if (ret != -EPROBE_DEFER)
 +			dev_err(&pdev->dev, "PCM DMA register error %d\n", ret);
- 		goto error;
+ 		return ret;
  	}
  
 -- 
