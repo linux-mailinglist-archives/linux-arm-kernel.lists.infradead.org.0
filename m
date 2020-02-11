@@ -2,87 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CEAE158A19
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 07:52:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A12C6158A21
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 07:55:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+DzK0hvWqJsHuDgzeIVc6v13K716mt0YyuZeERuvOOk=; b=u8RlrCcGwKbKhpVFI6Rnv03jx
-	6xP8j3SFM87PlW2LP/+8YzhVnsMLn2kzl+1ZgDOGk2O3YRD8F8CygpW9C9JlRQDqAMqldg4YkPYsl
-	4tpO+wCKXxiSuV45hWXQC8geHMiUtV9lzQ/qAx7dK40RoWz3+u367uhmZtToCS4GJ8FdPzCEavKk1
-	nt/zrHgVE9VvH4yG3WZ6/iUtzDaxRF0AnvbdK5niYIZzBjP/aiL/tuCF5R3ymNa8eIFdB1NnzhgkY
-	3LktdWfoHYH3JhuoPsLG5jwgiAiGhCr1b4yWncDsZadSeojvN2iU6EvNBp1GdvzDBIECaqI/eo3N+
-	LGNC9ikPA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NSSKdNKAjX2h8wtfG8YIULs0k3SXm+RRMLk8+WXYCd4=; b=JK2dbj30vjMXLJ
+	vy7eHy+9E0uIb/GXbl59kQML3/R5Gwj0JXIUgl5KwTtNGIRnnJTpPr1HxYq3GrkZBAu4ocPGuj8Gb
+	NWhBJGfaAOQNtC9PzrzHEVt2FFoys4uI4/45jm34Hz7Wf0Nne1TJVAfHDQ7VvF3YMLYKUfzYVFJno
+	VUoBx1NBfu8hLGE5Ztz+hs4YYlZDl55gJczDQga+42crXwCaUZfEVbSBje2NGePAsd3IPZotV+7kI
+	hvRb+J7hVMHlz+qi+IzQgxGLclcV6CARsZlVNQViUNyM0Cx736fPJQhiLJ6PBrDyO/Sv1Q3EYShZW
+	RNVOo8dsic/i2tFfMEvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1POi-0005Iw-Dj; Tue, 11 Feb 2020 06:51:52 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
+	id 1j1PSX-00076E-4R; Tue, 11 Feb 2020 06:55:49 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1POb-0005IE-6H
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 06:51:46 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 40BA1210F2;
- Tue, 11 Feb 2020 01:51:44 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Tue, 11 Feb 2020 01:51:44 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=5mDUEWpE27ncbun9QxnoOkNQ68K
- ltXN7NhZqgt6xf/0=; b=i9Of1F543FGmbjSaxpADoL/tvuOCEilkgZFWr32r404
- 2N+l8izu/XeI5g+3aZ/p/I71RmooyGBikOeB6FJONOMKYXtPuIRwhAAPSK99GDb0
- 5LQfYGvAwdYY7ZQH4/FnlSbnMzYg1C6HFOH9l9yvep8Y1FZ9nSbIuMY5/QRanIw9
- nVcMwzqGs0MgqwP/gg+DLC7HfLD0LbSCSkEQb+DjqK8M6THHVFeXuV7WD5hNiFjJ
- XdtlapWxtOoL5rCFKihONBPtcOiA+mKs/OraRkAVp8InDEVG140Plh112mnc9+q7
- v6tRtzTQw+OLb4Apif31HO8rAjwZNIyQ869pPmdPIwA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=5mDUEW
- pE27ncbun9QxnoOkNQ68KltXN7NhZqgt6xf/0=; b=YupaDDKQH8KkWvnj2NMsIN
- msFS1kTRSKEbfKZS10UPmHHwVCfjrpUOezeaGNk/jpbGSzBLxvInhDwlPZFWGq/a
- RQNh3HEImSUcJnff1rA2rVEGqTAOAFx4Lg/l4NMJPoBvAaCzVNAwWb0R5N3KDw5a
- dE0gNPlrXjJuS4X3wljMN2soBxNgjjadGVuM/fCoT4k8PvAbFDqTde2vNpt2bYaA
- eVsvKWJsWfnWF5L1a5fsT5KL884rYRiY+IiMq69mHLmDDYb+N16rg0I7ymNnCrAv
- EeRA+uXGgqRaRNk6cM9P9dKx5lrjCH7nwnbl1WF9jG4v/okO3webGxMINu4QDf4Q
- ==
-X-ME-Sender: <xms:_05CXq0CtvoQXJAcPrhrQMOIT1ST4XuqlYRm0tpBZDMidPaCvxz4ZA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedvgddutddtucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:_05CXriOJZeHzY9O8vaqAZvXD-JoCRwm6Qcf6sUurLr_TUEMAx1QNg>
- <xmx:_05CXlqfjFeJENiJBc08Z3wzVMYqyq2OXWQN4srPF0JRVGOq4G5DwQ>
- <xmx:_05CXgp7eeiyHw7V9ufN1NbIxMP2Xu5q79kS7LUN2MVvQpF0UJ7OpA>
- <xmx:AE9CXkfzX29Ll92AO5dJHI3FkAIDopGKpsDxe4ohKkrmMgLiIG47xw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 5427230600DC;
- Tue, 11 Feb 2020 01:51:43 -0500 (EST)
-Date: Tue, 11 Feb 2020 07:51:41 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH v2] arm64: dts: allwinner: h6: orangepi-3: Add eMMC node
-Message-ID: <20200211065141.2kn2gsg5kvzu7kl6@gilmour.lan>
-References: <20200210174007.118575-1-jernej.skrabec@siol.net>
+ id 1j1PSD-0006vM-OS; Tue, 11 Feb 2020 06:55:31 +0000
+Received: by mail-ot1-x341.google.com with SMTP id i6so9046730otr.7;
+ Mon, 10 Feb 2020 22:55:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0qsBaYW+8tB375NH6OQOHYpSP00PTX/24760IzgBPWM=;
+ b=g0PIYJaWAWx7ZYpbMTj/h5I8yC9Of7h+6G71MOTcoKwG1sXqIRCtHnj2A1Bog8F0D6
+ gRegnL9DOFPHP3NfmRiQphE7IsOBTlUM31AvacH3fpoDnqGnK2q8LqWAH2RR0/Q/7WzI
+ duP1KOPfAuTlULiUAgHq6CLpSbUiTV1SO95ePO4rsRoWpQ0JplY3NS7yClKK7Cu6bwl8
+ pVzpg5r5EZTiEqSZ4ZQxHUcDTdJ4FA67PpBHgKvI1GDq69mKuFWRGxvx3K0fTf7J98+/
+ IQsiov/bIeai8YzlLGeROG8O9fZ7Fq2Ld7LVDxIjP47KB+IR1/ZBFkCo7JBoQGKe+ew2
+ yJEg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0qsBaYW+8tB375NH6OQOHYpSP00PTX/24760IzgBPWM=;
+ b=ozuFOpcQxxdygaA26FlxINeXH9z+4YmWPcpz2eAwAC8pt6R9NlMgjEJHrEaNDaJK2p
+ mWsPSOxrxl8qDpaRYndk7MkAScfsn8eSwnE5tQ06GD0qewqMxMacccJ9tGaWzwGXK6hX
+ xseVIL15wQlHJjoyHzjX4AUs6spbSJYqtNp7aagwHCAjjwZZxTPlzYW1AfgJCT7RaPa2
+ 8hRHj7SkqPianDGidcyGOl5CI9LzgP0pWBvQ1mSsZ0h01a3iYRxZsPZX6KtWuJaaJsyJ
+ FwyZVK/UefomgzEZtYbzw24MFE+UHJ/f8BJB3ADl0glJkUGdjclrEL6o4VZMbX0gKsjj
+ lBPA==
+X-Gm-Message-State: APjAAAXLeP8RuBcrkXLUqxZ+qEHPFT9/cH5gjpWYOZwZ490Y03yTmBXG
+ WPBComKekDmASg1B2V6xbF6eJxgncHHfdeYPe3A=
+X-Google-Smtp-Source: APXvYqxfpeNlSBi1DWWxelEmsr9hbXLc0MmgqyHPY0wwLkSBHpl+jlRuYrJEeQNRvkKIlN3ori5EnDnw9W4L7XWKMI0=
+X-Received: by 2002:a9d:3e43:: with SMTP id h3mr3925618otg.84.1581404128257;
+ Mon, 10 Feb 2020 22:55:28 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200210174007.118575-1-jernej.skrabec@siol.net>
+References: <20200208084022.193231-1-gch981213@gmail.com>
+ <1581323455.2213.6.camel@mtksdaap41>
+In-Reply-To: <1581323455.2213.6.camel@mtksdaap41>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Tue, 11 Feb 2020 14:55:17 +0800
+Message-ID: <CAJsYDVLzwWfT24NGDJMJShwoG0Qrq06mLqamHbH0xedmMLdrAQ@mail.gmail.com>
+Subject: Re: [PATCH v2] mtd: mtk-quadspi: add support for DMA reading
+To: Yingjoe Chen <yingjoe.chen@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_225145_374655_D26FB4DA 
-X-CRM114-Status: GOOD (  14.41  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200210_225529_823151_9A9FFD2F 
+X-CRM114-Status: GOOD (  13.79  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.29 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [gch981213[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [gch981213[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,6 +79,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,83 +93,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, wens@csie.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1734621782256007479=="
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
+ linux-mediatek@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mtd@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi!
 
---===============1734621782256007479==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ip7qoenpyd2aql5h"
-Content-Disposition: inline
-
-
---ip7qoenpyd2aql5h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Feb 10, 2020 at 06:40:07PM +0100, Jernej Skrabec wrote:
-> OrangePi 3 can optionally have 8 GiB eMMC (soldered on board). Because
-> those pins are dedicated to eMMC exclusively, node can be added for both
-> variants (with and without eMMC). Kernel will then scan bus for presence
-> of eMMC and act accordingly.
+On Mon, Feb 10, 2020 at 4:31 PM Yingjoe Chen <yingjoe.chen@mediatek.com> wrote:
+> > DMA busy checking is implemented with readl_poll_timeout because
+> > I don't have access to IRQ-related docs. The speed increment comes
+> > from those saved cmd+addr+dummy clocks.
 >
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> ---
-> Changes since v1:
-> - don't make separate DT just for -emmc variant - add node to existing
->   orangepi 3 DT
+> Hi Chuanhong,
 >
->  arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts | 9 +++++++++
->  1 file changed, 9 insertions(+)
+> Thanks for your patch, I'm checking with Guochun to see if we could
+> release IRQ related information to you.
+
+Thanks for the info.
+I'd like to keep using polling mode in this patch for easier reviewing.
+It's already a pretty lengthy patch now. I may implement IRQ support
+in future patches.
+
 >
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-> index c311eee52a35..1e0abd9d047f 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-> @@ -144,6 +144,15 @@ brcm: sdio-wifi@1 {
->  	};
->  };
+> > This controller requires that DMA source/destination address and
+> > reading length should be 16-byte aligned. We use a bounce buffer if
+> > one of them is not aligned, read more than what we need, and copy
+> > data from corresponding buffer offset.
 >
-> +&mmc2 {
-> +	vmmc-supply = <&reg_cldo1>;
-> +	vqmmc-supply = <&reg_bldo2>;
-> +	cap-mmc-hw-reset;
-> +	non-removable;
+> I've checked with our HW guys. The limitation is on DRAM only.
+> So for read we should check buffer and length to make sure it is
+> aligned, but don't need to check from.
 
-Given that non-removable is documented as "Non-removable slot (like
-eMMC); assume always present.", we should probably get rid of that
-property?
+My previous test on mt7629 shows that from address also needs to
+be aligned. e.g. If I perform a DMA read from 0x2 I actually got data
+starting from 0x0 instead.
 
-Maxime
-
---ip7qoenpyd2aql5h
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkJO/QAKCRDj7w1vZxhR
-xfyQAQDzdcTDZGRSxQJIm3oA/QlF8QG2IrKgtCKGemsMjPqABQD+NO1FjcZSa0TE
-tMAAZO2Qmyl/RlZtTR+iTc7WYemlvgw=
-=ZKuN
------END PGP SIGNATURE-----
-
---ip7qoenpyd2aql5h--
-
-
---===============1734621782256007479==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Regards,
+Chuanhong Guo
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1734621782256007479==--
-
