@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7659C15979D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:03:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 525BF1597CD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:11:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qn68yiqCZxkE5TP8msM5kNcRNVRxB4OMF3q7SC3+w4E=; b=eb82COX/woLRIr
-	scQF/FdKyPsKDME4N6Zn1UUJ6O/jjqvZKvqcoHAq0gsoq2IuLlU3Z3ftZ1AjAZ1+DEJl2W9OBT5Nr
-	GqeJzTPcpZZ2yHdoBcfS4wyXmzxILhgdIDLz5gdGFDrvD5IE6bzAReONClGl9u9MkMNdzBcPyC4FG
-	N/Uj08cajvQa2a1tIK5trrkpOT9MuRSw0fyjfmrxCLm6yVkVJ8tXXEW1amR1VxfwgQ6dMZIe3SmlW
-	wv9xfNOhThrZNk2BDBr7ULB7d9G6lmxEmFmGM4sygPsrkrROLMfRPNuGJubcA+EoCZO0/V4m1Zfi/
-	5zwUOaHwXVoQkuVJprCg==;
+	List-Owner; bh=heJWjZ6Ecnsm+thG8n81Ayv2FciLQ3Jn+TDv+eNx2z4=; b=H0U6amxEqtMp2D
+	JDLf9rXlOGvFHkF/Ejymg5S1rJi8WxCkBqRz3LZhAw4LntZLefK9DkN3yDD+45BRq4i84l53JMTn2
+	lDW4hDm5/31ila9KpDThVXzaWbSmMzRE2fpgcqff4B2wmS9QbwZRwYBq1ZCiS6r54/btV1bXAfVHW
+	O4vULgGwmb0FwXCo6+8Opz+isfgwFBeAlMFYp5stpR/JHpatKdbZvZgqOQQCdrmrs8oAz2f3XFVNz
+	ZRyeWyOjKoLqUwom7WWviDQzciVf37y9DfqbQeG2LwWDt9owuljn6M9ubiL9/qqMSssJfUSkw4umQ
+	GrPv5mCKmDGaMXqRI9gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1ZsQ-0005pU-8a; Tue, 11 Feb 2020 18:03:14 +0000
+	id 1j1a0A-0006OG-78; Tue, 11 Feb 2020 18:11:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Zha-00027t-SU
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:52:09 +0000
+ id 1j1ZiM-0002md-0H
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:52:51 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 47FE620578;
- Tue, 11 Feb 2020 17:52:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5A4C4206D7;
+ Tue, 11 Feb 2020 17:52:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581443522;
- bh=2/8o/Nb0OGN1zviltRK0lrSBMaj2rdiiHzQj0Qa5JmY=;
+ s=default; t=1581443569;
+ bh=uVpX/vFvfITJoEOTo3o/dRYhdnpA6CypgkaOmt8XOro=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ad7ffBhwOzpckykfwEZcMTrlzlSu3M9TA6rhnyMXtDVdVyIydHlrQNOtCDbuxuXgx
- 6UDQzRjBs/LKN0sTdO1pbvi/nTZ+xsrsYz6jLciXoYH9lDBNd002KmL68h0OuSpBbY
- gUcylj6AREcOzJ+DvAt+cflCPFLW8UzZCx5o2iWQ=
+ b=Sr7BShg8r0uT6nqgL7R6MI/R+V05NAMbQFvBjYID+AFPqKlXBQPjnTHemmmMw3zqD
+ efeSjMw8JR8+6GeQYAOOMoZBqmAyHgfz+YmlFVozZbAaF2mfUA3mrQaJ40xaFF2+UJ
+ NT5R67NtSCEQzm7GfKkZIpR7MuAqURivYJAr8Ric=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j1Zff-004O7k-W8; Tue, 11 Feb 2020 17:50:04 +0000
+ id 1j1Zfg-004O7k-IA; Tue, 11 Feb 2020 17:50:04 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 18/94] KVM: arm64: nv: Emulate PSTATE.M for a guest
- hypervisor
-Date: Tue, 11 Feb 2020 17:48:22 +0000
-Message-Id: <20200211174938.27809-19-maz@kernel.org>
+Subject: [PATCH v2 19/94] KVM: arm64: nv: Trap EL1 VM register accesses in
+ virtual EL2
+Date: Tue, 11 Feb 2020 17:48:23 +0000
+Message-Id: <20200211174938.27809-20-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200211174938.27809-1-maz@kernel.org>
 References: <20200211174938.27809-1-maz@kernel.org>
@@ -62,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_095203_063415_89518170 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20200211_095250_152846_9685C293 
+X-CRM114-Status: GOOD (  14.73  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,86 +103,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Christoffer Dall <christoffer.dall@arm.com>
+From: Christoffer Dall <christoffer.dall@linaro.org>
 
-We can no longer blindly copy the VCPU's PSTATE into SPSR_EL2 and return
-to the guest and vice versa when taking an exception to the hypervisor,
-because we emulate virtual EL2 in EL1 and therefore have to translate
-the mode field from EL2 to EL1 and vice versa.
+When running in virtual EL2 mode, we actually run the hardware in EL1
+and therefore have to use the EL1 registers to ensure correct operation.
 
-Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+By setting the HCR.TVM and HCR.TVRM we ensure that the virtual EL2 mode
+doesn't shoot itself in the foot when setting up what it believes to be
+a different mode's system register state (for example when preparing to
+switch to a VM).
+
+We can leverage the existing sysregs infrastructure to support trapped
+accesses to these registers.
+
+Signed-off-by: Christoffer Dall <christoffer.dall@linaro.org>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/hyp/sysreg-sr.c | 43 ++++++++++++++++++++++++++++++++--
- 1 file changed, 41 insertions(+), 2 deletions(-)
+ arch/arm64/kvm/hyp/switch.c |  4 ++++
+ arch/arm64/kvm/sys_regs.c   | 18 +++++++++++++++---
+ 2 files changed, 19 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
-index ed22301fd2e3..384f0da6b4f3 100644
---- a/arch/arm64/kvm/hyp/sysreg-sr.c
-+++ b/arch/arm64/kvm/hyp/sysreg-sr.c
-@@ -109,10 +109,32 @@ static void __hyp_text __sysreg_save_el1_state(struct kvm_cpu_context *ctxt)
- 		__sysreg_save_vel1_state(ctxt);
- }
+diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+index dfe8dd172512..48e738e90966 100644
+--- a/arch/arm64/kvm/hyp/switch.c
++++ b/arch/arm64/kvm/hyp/switch.c
+@@ -149,6 +149,10 @@ static void __hyp_text __activate_traps(struct kvm_vcpu *vcpu)
+ 	if (cpus_have_const_cap(ARM64_WORKAROUND_CAVIUM_TX2_219_TVM))
+ 		hcr |= HCR_TVM;
  
-+static u64 __hyp_text from_hw_pstate(const struct kvm_cpu_context *ctxt)
-+{
-+	u64 reg = read_sysreg_el2(SYS_SPSR);
++	/* Trap VM sysreg accesses if an EL2 guest is not using VHE. */
++	if (vcpu_mode_el2(vcpu) && !vcpu_el2_e2h_is_set(vcpu))
++		hcr |= HCR_TVM | HCR_TRVM;
 +
-+	if (__is_hyp_ctxt(ctxt)) {
-+		u64 mode = reg & (PSR_MODE_MASK | PSR_MODE32_BIT);
+ 	write_sysreg(hcr, hcr_el2);
+ 
+ 	if (cpus_have_const_cap(ARM64_HAS_RAS_EXTN) && (hcr & HCR_VSE))
+diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+index 9b29ac37829b..702692f064f4 100644
+--- a/arch/arm64/kvm/sys_regs.c
++++ b/arch/arm64/kvm/sys_regs.c
+@@ -440,8 +440,15 @@ static bool access_dcsw(struct kvm_vcpu *vcpu,
+ 
+ /*
+  * Generic accessor for VM registers. Only called as long as HCR_TVM
+- * is set. If the guest enables the MMU, we stop trapping the VM
+- * sys_regs and leave it in complete control of the caches.
++ * is set.
++ *
++ * This is set in two cases: either (1) we're running at vEL2, or (2)
++ * we're running at EL1 and the guest has its MMU off.
++ *
++ * (1) TVM is always set, as we need to virtualise some of the VM
++ * registers for the guest hypervisor
++ * (2) Oncethe guest enables the MMU, we stop trapping the VM sys_regs
++ * and leave it in complete control of the caches.
+  */
+ static bool access_vm_reg(struct kvm_vcpu *vcpu,
+ 			  struct sys_reg_params *p,
+@@ -451,7 +458,12 @@ static bool access_vm_reg(struct kvm_vcpu *vcpu,
+ 	u64 val;
+ 	int reg = r->reg;
+ 
+-	BUG_ON(!p->is_write);
++	BUG_ON(!vcpu_mode_el2(vcpu) && !p->is_write);
 +
-+		switch (mode) {
-+		case PSR_MODE_EL1t:
-+			mode = PSR_MODE_EL2t;
-+			break;
-+		case PSR_MODE_EL1h:
-+			mode = PSR_MODE_EL2h;
-+			break;
-+		}
-+
-+		return (reg & ~(PSR_MODE_MASK | PSR_MODE32_BIT)) | mode;
++	if (!p->is_write) {
++		p->regval = vcpu_read_sys_reg(vcpu, reg);
++		return true;
 +	}
-+
-+	return reg;
-+}
-+
- static void __hyp_text __sysreg_save_el2_return_state(struct kvm_cpu_context *ctxt)
- {
- 	ctxt->gp_regs.regs.pc		= read_sysreg_el2(SYS_ELR);
--	ctxt->gp_regs.regs.pstate	= read_sysreg_el2(SYS_SPSR);
-+	ctxt->gp_regs.regs.pstate	= from_hw_pstate(ctxt);
  
- 	if (cpus_have_const_cap(ARM64_HAS_RAS_EXTN))
- 		ctxt->sys_regs[DISR_EL1] = read_sysreg_s(SYS_VDISR_EL2);
-@@ -319,10 +341,27 @@ static void __hyp_text __sysreg_restore_el1_state(struct kvm_cpu_context *ctxt)
- 		__sysreg_restore_vel1_state(ctxt);
- }
- 
-+/* Read the VCPU state's PSTATE, but translate (v)EL2 to EL1. */
-+static u64 __hyp_text to_hw_pstate(const struct kvm_cpu_context *ctxt)
-+{
-+	u64 mode = ctxt->gp_regs.regs.pstate & (PSR_MODE_MASK | PSR_MODE32_BIT);
-+
-+	switch (mode) {
-+	case PSR_MODE_EL2t:
-+		mode = PSR_MODE_EL1t;
-+		break;
-+	case PSR_MODE_EL2h:
-+		mode = PSR_MODE_EL1h;
-+		break;
-+	}
-+
-+	return (ctxt->gp_regs.regs.pstate & ~(PSR_MODE_MASK | PSR_MODE32_BIT)) | mode;
-+}
-+
- static void __hyp_text
- __sysreg_restore_el2_return_state(struct kvm_cpu_context *ctxt)
- {
--	u64 pstate = ctxt->gp_regs.regs.pstate;
-+	u64 pstate = to_hw_pstate(ctxt);
- 	u64 mode = pstate & PSR_AA32_MODE_MASK;
- 
- 	/*
+ 	/* See the 32bit mapping in kvm_host.h */
+ 	if (p->is_aarch32)
 -- 
 2.20.1
 
