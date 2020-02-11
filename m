@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6431015975A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:55:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E09D215977A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:59:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1lbsHHYMeOAae42WOh2+aoST57LliWTpiuQNeci7LPg=; b=exUee5VEFq1MnB
-	Ax1yIeBbN3NcFCtucs+PIHjz7PBBoM3WBxdzcBelcHdBXRykPsNgNBAEcy5bGPppbHaWDTLByqdBE
-	Mk2WzToltJY6CQKdMr/b38cm+hmBZyIB9QODOTtnmp5HIpLuz6UfnQCcFQP+WAnKa5QZdNUi+vUpH
-	VIUXArJml3EvSbTDGBa8Qt2h718CFIYshctAs4LkwE7Qc2cwJiPtrx4G7+1Zx1mwc46BRGIYtDp8T
-	g1qthgliW3HY0Ce1gsm4Lly82H4Szh9HriPINt3bvt7yPzxV3P2jKFMdsIEN4KTzMiHf+9H071mnu
-	xcYXGFePjtXMYYePEzYg==;
+	List-Owner; bh=+l2vAKUc4ZiUWro7WD1asr6UeZTx9QKGxxv1zG/lKKw=; b=RtVS5pFm2z4tXD
+	33ifHFVMKN2PcihzxJuYKnRPtTTX9D836SwvKgql/81d+U6TZkt+ObeZvpetv59sj/p84bxgjT9pT
+	kW7R/UbHsby889pZAKMgza2LCnP4XLxO6Vja0/twqSBQ5CR8qJIIyZTnjby09qMNyAw2HR1zoVdbm
+	5Htuthlp6s4QOkDBCUR34IPNavR24O67rHDM5uo7/ECxVPifZs8+7HWGx/sJlrneWCYEGNlacpUiW
+	xuQRkL2wyKYbmzNq6gAUh3iCxyJg7mAXQYFyZcb2MAMyvaE+uFv9pDfcBVXxd4xQltsMHxGnGI34e
+	XeCsytZ7mJj9TLynKcgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Zkz-0005rN-Ux; Tue, 11 Feb 2020 17:55:33 +0000
+	id 1j1ZpD-0001Sc-SC; Tue, 11 Feb 2020 17:59:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Zgh-0001JA-S7
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:51:09 +0000
+ id 1j1ZhA-0001nN-VN
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:51:40 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BC52F20870;
- Tue, 11 Feb 2020 17:51:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B11DD20578;
+ Tue, 11 Feb 2020 17:51:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581443466;
- bh=vAs368NRaKbhbckeko/jjWU/YpL6QHPO+CUHr/uUINw=;
+ s=default; t=1581443495;
+ bh=vJgCeyNhc/zjTIzrf5MG6+BOepmc9H4if6t7gh/kTSw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=k3x+n34IPHf14JmYAIcLCQUXF5ebOdDALWzW+InXPWDQf/0TVYO9BtPUwiEsonFeX
- jQ58xgaOkfeL/EemZipxT0Xf4JzZB+xsac9u6Yz30v06m/c7Rk6m/W0qY5d8Myd0D9
- ew/gLe5J3PGuxLiztF5481M8tqMGNtWBjqnowB/M=
+ b=ge+7LsrMQjgNYp3YORkBfaJvbrDPYo1v/5naMcnSuHcXLhaRrtON8wAkI3dHwSLkX
+ 81ziN2BC0cmYcNCwOpLvcxQuA1z9tF948+ntPi8gRPCGV6VAQmWmr8JotPIGO7tyGD
+ J7gUxDJX7x4va5Hm7y7Tf+CdhP24aakywn+rO2pI=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j1ZgH-004O7k-Bb; Tue, 11 Feb 2020 17:50:41 +0000
+ id 1j1ZgJ-004O7k-4I; Tue, 11 Feb 2020 17:50:43 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 81/94] KVM: arm64: Add VNCR-capable timer accessors for
- arm64
-Date: Tue, 11 Feb 2020 17:49:25 +0000
-Message-Id: <20200211174938.27809-82-maz@kernel.org>
+Subject: [PATCH v2 84/94] KVM: arm64: VNCR-ize SP_EL1
+Date: Tue, 11 Feb 2020 17:49:28 +0000
+Message-Id: <20200211174938.27809-85-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200211174938.27809-1-maz@kernel.org>
 References: <20200211174938.27809-1-maz@kernel.org>
@@ -62,8 +61,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_095108_003646_FDA091C5 
-X-CRM114-Status: GOOD (  15.64  )
+X-CRM114-CacheID: sfid-20200211_095138_421026_360B8333 
+X-CRM114-Status: GOOD (  13.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,178 +102,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As promissed, we now add an arm64-specific set of timer accessors, which
-in some cases access the VNCR page instead of the struct timer fields.
-
-This requires moving the initialisation of the timer struct so that some
-of the helpers (such as arch_timer_ctx_index) can work correctly at an
-early stage.
+SP_EL1 being a VNCR-capable register, let's flag it as such, and
+repaint all the accesses
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/include/asm/kvm_host.h |  6 ++
- arch/arm64/kvm/Makefile           |  1 +
- virt/kvm/arm/arch_timer.c         | 10 ++--
- virt/kvm/arm/arch_timer_nested.c  | 95 +++++++++++++++++++++++++++++++
- 4 files changed, 107 insertions(+), 5 deletions(-)
- create mode 100644 virt/kvm/arm/arch_timer_nested.c
+ arch/arm64/include/asm/kvm_host.h | 3 +--
+ arch/arm64/kvm/guest.c            | 2 +-
+ arch/arm64/kvm/hyp/sysreg-sr.c    | 4 ++--
+ arch/arm64/kvm/sys_regs.c         | 5 ++---
+ 4 files changed, 6 insertions(+), 8 deletions(-)
 
 diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index 7a66abd3df7e..9e48ec1ba057 100644
+index a497e7970418..fe6d5a3bc338 100644
 --- a/arch/arm64/include/asm/kvm_host.h
 +++ b/arch/arm64/include/asm/kvm_host.h
-@@ -281,6 +281,12 @@ enum vcpu_sysreg {
- 	VNCR(ICH_HCR_EL2),
- 	VNCR(ICH_VMCR_EL2),
+@@ -265,6 +265,7 @@ enum vcpu_sysreg {
+ 	VNCR(AMAIR_EL1),/* Aux Memory Attribute Indirection Register */
+ 	VNCR(MDSCR_EL1),/* Monitor Debug System Control Register */
+ 	VNCR(ELR_EL1),
++	VNCR(SP_EL1),
+ 	VNCR(VPIDR_EL2),/* Virtualization Processor ID Register */
+ 	VNCR(VMPIDR_EL2),/* Virtualization Multiprocessor ID Register */
+ 	VNCR(HCR_EL2),	/* Hypervisor Configuration Register */
+@@ -335,8 +336,6 @@ enum vcpu_sysreg {
+ struct kvm_cpu_context {
+ 	struct user_pt_regs regs;	/* sp = sp_el0 */
  
-+	VNCR(CNTVOFF_EL2),
-+	VNCR(CNTV_CVAL_EL0),
-+	VNCR(CNTV_CTL_EL0),
-+	VNCR(CNTP_CVAL_EL0),
-+	VNCR(CNTP_CTL_EL0),
-+
- 	NR_SYS_REGS	/* Nothing after this line! */
- };
- 
-diff --git a/arch/arm64/kvm/Makefile b/arch/arm64/kvm/Makefile
-index 4521fdfacef0..c4c3eda0496e 100644
---- a/arch/arm64/kvm/Makefile
-+++ b/arch/arm64/kvm/Makefile
-@@ -40,4 +40,5 @@ kvm-$(CONFIG_KVM_ARM_PMU) += $(KVM)/arm/pmu.o
- 
- kvm-$(CONFIG_KVM_ARM_HOST) += nested.o
- kvm-$(CONFIG_KVM_ARM_HOST) += emulate-nested.o
-+kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/arch_timer_nested.o
- kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/vgic/vgic-v3-nested.o
-diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
-index d87e52f7e962..f9ef86752630 100644
---- a/virt/kvm/arm/arch_timer.c
-+++ b/virt/kvm/arm/arch_timer.c
-@@ -805,6 +805,11 @@ void kvm_timer_vcpu_init(struct kvm_vcpu *vcpu)
- 	struct arch_timer_context *hvtimer = vcpu_hvtimer(vcpu);
- 	struct arch_timer_context *hptimer = vcpu_hptimer(vcpu);
- 
-+	vtimer->vcpu = vcpu;
-+	ptimer->vcpu = vcpu;
-+	hvtimer->vcpu = vcpu;
-+	hptimer->vcpu = vcpu;
-+
- 	/* Synchronize cntvoff across all vtimers of a VM. */
- 	update_vtimer_cntvoff(vcpu, kvm_phys_timer_read());
- 	timer_set_offset(ptimer, 0);
-@@ -838,11 +843,6 @@ void kvm_timer_vcpu_init(struct kvm_vcpu *vcpu)
- 	ptimer->host_timer_irq_flags = host_ptimer_irq_flags;
- 	hvtimer->host_timer_irq_flags = host_vtimer_irq_flags;
- 	hptimer->host_timer_irq_flags = host_ptimer_irq_flags;
+-	u64	sp_el1;
 -
--	vtimer->vcpu = vcpu;
--	ptimer->vcpu = vcpu;
--	hvtimer->vcpu = vcpu;
--	hptimer->vcpu = vcpu;
- }
+ 	u64	spsr[KVM_NR_SPSR];
  
- static void kvm_timer_init_interrupt(void *info)
-diff --git a/virt/kvm/arm/arch_timer_nested.c b/virt/kvm/arm/arch_timer_nested.c
-new file mode 100644
-index 000000000000..f081e13e47ad
---- /dev/null
-+++ b/virt/kvm/arm/arch_timer_nested.c
-@@ -0,0 +1,95 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Copyright (C) 2019 ARM Ltd.
-+ * Author: Marc Zyngier <maz@kernel.org>
-+ *
-+ * Override timer accessors to be nested-capable on ARMv8.4.
-+ */
-+
-+#include <linux/kernel.h>
-+#include <linux/kvm_host.h>
-+
-+u32 timer_get_ctl(struct arch_timer_context *ctxt)
-+{
-+	struct kvm_vcpu *vcpu = ctxt->vcpu;
-+
-+	switch(arch_timer_ctx_index(ctxt)) {
-+	case TIMER_VTIMER:
-+		return __vcpu_sys_reg(vcpu, CNTV_CTL_EL0);
-+	case TIMER_PTIMER:
-+		return __vcpu_sys_reg(vcpu, CNTP_CTL_EL0);
-+	default:
-+		return ctxt->cnt_ctl;
-+	}
-+}
-+
-+u64 timer_get_cval(struct arch_timer_context *ctxt)
-+{
-+	struct kvm_vcpu *vcpu = ctxt->vcpu;
-+
-+	switch(arch_timer_ctx_index(ctxt)) {
-+	case TIMER_VTIMER:
-+		return __vcpu_sys_reg(vcpu, CNTV_CVAL_EL0);
-+	case TIMER_PTIMER:
-+		return __vcpu_sys_reg(vcpu, CNTP_CVAL_EL0);
-+	default:
-+		return ctxt->cnt_cval;
-+	}
-+}
-+
-+u64 timer_get_offset(struct arch_timer_context *ctxt)
-+{
-+	struct kvm_vcpu *vcpu = ctxt->vcpu;
-+
-+	switch(arch_timer_ctx_index(ctxt)) {
-+	case TIMER_VTIMER:
-+		return __vcpu_sys_reg(vcpu, CNTVOFF_EL2);
-+	default:
-+		return 0;
-+	}
-+}
-+
-+void timer_set_ctl(struct arch_timer_context *ctxt, u32 ctl)
-+{
-+	struct kvm_vcpu *vcpu = ctxt->vcpu;
-+
-+	switch(arch_timer_ctx_index(ctxt)) {
-+	case TIMER_VTIMER:
-+		__vcpu_sys_reg(vcpu, CNTV_CTL_EL0) = ctl;
-+		break;
-+	case TIMER_PTIMER:
-+		__vcpu_sys_reg(vcpu, CNTP_CTL_EL0) = ctl;
-+		break;
-+	default:
-+		ctxt->cnt_ctl = ctl;
-+	}
-+}
-+
-+void timer_set_cval(struct arch_timer_context *ctxt, u64 cval)
-+{
-+	struct kvm_vcpu *vcpu = ctxt->vcpu;
-+
-+	switch(arch_timer_ctx_index(ctxt)) {
-+	case TIMER_VTIMER:
-+		__vcpu_sys_reg(vcpu, CNTV_CVAL_EL0) = cval;
-+		break;
-+	case TIMER_PTIMER:
-+		__vcpu_sys_reg(vcpu, CNTP_CVAL_EL0) = cval;
-+		break;
-+	default:
-+		ctxt->cnt_cval = cval;
-+	}
-+}
-+
-+void timer_set_offset(struct arch_timer_context *ctxt, u64 offset)
-+{
-+	struct kvm_vcpu *vcpu = ctxt->vcpu;
-+
-+	switch(arch_timer_ctx_index(ctxt)) {
-+	case TIMER_VTIMER:
-+		__vcpu_sys_reg(vcpu, CNTVOFF_EL2) = offset;
-+		break;
-+	default:
-+		WARN(offset, "timer %ld\n", arch_timer_ctx_index(ctxt));
-+	}
-+}
+ 	struct user_fpsimd_state fp_regs;
+diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+index 40ef6758266d..869017e50464 100644
+--- a/arch/arm64/kvm/guest.c
++++ b/arch/arm64/kvm/guest.c
+@@ -125,7 +125,7 @@ static void *core_reg_addr(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+ 		return &vcpu->arch.ctxt.regs.pstate;
+ 
+ 	case KVM_REG_ARM_CORE_REG(sp_el1):
+-		return &vcpu->arch.ctxt.sp_el1;
++		return __ctxt_sys_reg(&vcpu->arch.ctxt, SP_EL1);
+ 
+ 	case KVM_REG_ARM_CORE_REG(elr_el1):
+ 		return __vcpu_elr_el1(vcpu);
+diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
+index 10ce7a6a0c6c..e5359cd39b32 100644
+--- a/arch/arm64/kvm/hyp/sysreg-sr.c
++++ b/arch/arm64/kvm/hyp/sysreg-sr.c
+@@ -58,7 +58,7 @@ static void __hyp_text __sysreg_save_vel1_state(struct kvm_cpu_context *ctxt)
+ 	ctxt_sys_reg(ctxt, AMAIR_EL1)	= read_sysreg_el1(SYS_AMAIR);
+ 	ctxt_sys_reg(ctxt, CNTKCTL_EL1)	= read_sysreg_el1(SYS_CNTKCTL);
+ 
+-	ctxt->sp_el1			= read_sysreg(sp_el1);
++	ctxt_sys_reg(ctxt, SP_EL1)	= read_sysreg(sp_el1);
+ 	ctxt_sys_reg(ctxt, ELR_EL1)	= read_sysreg_el1(SYS_ELR);
+ 	ctxt->spsr[KVM_SPSR_EL1]	= read_sysreg_el1(SYS_SPSR);
+ }
+@@ -323,7 +323,7 @@ static void __hyp_text __sysreg_restore_vel1_state(struct kvm_cpu_context *ctxt)
+ 		write_sysreg_el1(ctxt_sys_reg(ctxt, TCR_EL1),	SYS_TCR);
+ 	}
+ 
+-	write_sysreg(ctxt->sp_el1,			sp_el1);
++	write_sysreg(ctxt_sys_reg(ctxt, SP_EL1),	sp_el1);
+ 	write_sysreg_el1(ctxt_sys_reg(ctxt, ELR_EL1),	SYS_ELR);
+ 	write_sysreg_el1(ctxt->spsr[KVM_SPSR_EL1],	SYS_SPSR);
+ }
+diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+index dc1b75a37f00..2c3e90e192b4 100644
+--- a/arch/arm64/kvm/sys_regs.c
++++ b/arch/arm64/kvm/sys_regs.c
+@@ -1803,11 +1803,10 @@ static bool access_sp_el1(struct kvm_vcpu *vcpu,
+ 			  struct sys_reg_params *p,
+ 			  const struct sys_reg_desc *r)
+ {
+-	/* SP_EL1 is NOT maintained in sys_regs array */
+ 	if (p->is_write)
+-		vcpu->arch.ctxt.sp_el1 = p->regval;
++		__vcpu_sys_reg(vcpu, SP_EL1) = p->regval;
+ 	else
+-		p->regval = vcpu->arch.ctxt.sp_el1;
++		p->regval = __vcpu_sys_reg(vcpu, SP_EL1);
+ 
+ 	return true;
+ }
 -- 
 2.20.1
 
