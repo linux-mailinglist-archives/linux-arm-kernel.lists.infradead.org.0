@@ -2,101 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30E6015935A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:40:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4513C159361
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:41:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/HeM7Atr/1MF1Lr9Qtw41STzL3uL2QyGu0XI6rPyZbU=; b=apKI01hzMSXtMM
-	/hnKBWg6wEr3j9/iDj8LV8JqeIg2cA7lZ8ozb8CD00HUgs8agF+CbwgiGh0jTxppLsQAMSCzYtbQD
-	qRe1ZMeWNnDZBUwTcYuL4EaJQYghKtkOGW0teV9wRupxiZ++w1KP96qzfS62PgNbz61dCrHSt06w6
-	BGz8bLO2GwsJrG2eesq8kUd4xioPEvY+FkyfBnbnZMr4VXL6z6yHsSw6yceMp3lMUX5eigVzywWNh
-	tO9JjKpBU6bTH798chQofdaoTDPoIlDLGY0U12sYVVJjwRFB7EdBCmI8OD4FjcoQ4H6txdAESL2ix
-	ivVO6NZ5L9FOzjptV1WQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aPsgvqPP78/7gsz0GMv1Q3NW/+afoSfuPp+RF4fSw4g=; b=AEeGUzos2ubY2Jw5NEHBwKumB
+	QVBX4xeMyf6Lma0e8fPr+09eSow3EUbEXor8S0U0iFbbTsrAoLKbfTGAisOBRcdPGc5nA9/zAgHNV
+	jiEe/StTOBmeWyAMjpUZOtwOORWA9OOnMv62qehX1iXtUxZiQmyYgBiVny8O+wHFROeTuBBvpF0uM
+	5oKJTsEB+f65UmzEKPLjWicRi1xzWxlobeHKd7adqUQvybgec5dXOnriVbPHIok+Ogg5E0ycHNj32
+	F5R5Da81ekSBenXF3Rj9uQilDlmwyhoPWKbx7CbIGSHCWq0MKd+lx+1IzCYvoFYbZiE8Ll00ayW1E
+	RvsZHqRLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Xe2-00073g-J3; Tue, 11 Feb 2020 15:40:14 +0000
-Received: from wout3-smtp.messagingengine.com ([64.147.123.19])
+	id 1j1Xf8-00007j-U3; Tue, 11 Feb 2020 15:41:22 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Xdm-00072l-Io
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 15:40:00 +0000
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailout.west.internal (Postfix) with ESMTP id 13D336CB;
- Tue, 11 Feb 2020 10:39:55 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute5.internal (MEProxy); Tue, 11 Feb 2020 10:39:55 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
- subject:to:cc:references:from:message-id:date:mime-version
- :in-reply-to:content-type:content-transfer-encoding; s=fm1; bh=g
- eOJVgUznMXc04Wg5cWpEzjCkLi35gMNLg6tLpVl2JQ=; b=dtD67+0w7k2n6Ifut
- fTEwMUcRfu2ruL/W8mqk50jMfzG76FOePwgLsjcRUEMAOFIgFZnz9GOZAvr0rqpl
- cVZLWYqEgILBU4dN6A3cn4gkhpb6gnk9n/wMpGbUTem/Hmh3Zmt9obngPdT2iWiD
- ueSSVFbhPbZ/5Zcapo2Fl1d+LV6KtI2KA7Oukvo5wnH/7Ea0YHJRoIav1yzutZE5
- eLH0bhERLu3QqhB5TkrZU9uwS6Wnw4JoTAC/sHlY8pF24hD37ND2OyOj0umnNmiv
- lpORI6xsHTxX0cNJqvG+OVnF0RjKfOaxLBPlX6uADnDB1bup3PnAGyS7xW2yAeSM
- LpGMg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:content-type
- :date:from:in-reply-to:message-id:mime-version:references
- :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm2; bh=geOJVgUznMXc04Wg5cWpEzjCkLi35gMNLg6tLpVl2
- JQ=; b=bfklLuCuPajZRlDO2jvNxRuM0XFstbC6QBUGi1yNQ/1nnjZ7T/+Cosuq9
- +/922FLVgTbSO7P3xjzBLukL+k2yZGl8LI4WBGWdldn1PGux6IkHAL3zrXcKMsfR
- g+t1+PkhrVB2+G6BJ9NxnRYc906GvPQFPo4zGsPilL5Q94/72zYzjfjVZ+3cpav5
- kNJExTW5MPSUKosoVzhD1IUV1omjTmLC86C7UlLZtFsTYWnsxQsd12iK2dR1ZGaT
- OVDQ2BUaUnK6XX9zofA5jVa4r8gCh15piMrMe0UntpIBos5Dw4J38K1n+kiDpZv/
- VJJS8/V6C4cBlBVo3FYC67T1MKvpw==
-X-ME-Sender: <xms:ycpCXnn_miu7inm3Z75aEdLFmAnJ2EF4yQF1rszpL3UnwAbrWWpOnw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrieefgdejiecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
- lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
- epjedtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghr
- rghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
-X-ME-Proxy: <xmx:ycpCXrByWnj5nQzYhoEHSryBys9wmCYqvpmT4xiL3ShXrlFaKWpzYw>
- <xmx:ycpCXvc9pwO6rOiUbJgFBH3ppZvSg4j7iLF3vdU1ddgiZIoH53e72A>
- <xmx:ycpCXuLJWwt-2kgJmTCGZVDv0_Q5xAySJ9k7O-rXhd5PlE1eBNr51g>
- <xmx:yspCXjgH-UyExNVLm87VXJMVzk453H17EjGMAC8TtMjPQ4xjv5NkZQ>
-Received: from [192.168.50.169]
- (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 4FF5E3060840;
- Tue, 11 Feb 2020 10:39:53 -0500 (EST)
-Subject: Re: [PATCH 4/4] drm/sun4i: dsi: Remove incorrect use of runtime PM
-To: Maxime Ripard <maxime@cerno.tech>
-References: <20200211072858.30784-1-samuel@sholland.org>
- <20200211072858.30784-4-samuel@sholland.org>
- <20200211082627.nolf6npspw2a2rxs@gilmour.lan>
-From: Samuel Holland <samuel@sholland.org>
-Message-ID: <dd5869d5-abbc-32e5-4f5c-cfad1fa35e0d@sholland.org>
-Date: Tue, 11 Feb 2020 09:39:52 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.2
+ id 1j1Xev-00006m-AE
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 15:41:16 +0000
+Received: from LHREML713-CAH.china.huawei.com (unknown [172.18.7.108])
+ by Forcepoint Email with ESMTP id 1D215EEB05FA2CFF9063;
+ Tue, 11 Feb 2020 15:41:08 +0000 (GMT)
+Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
+ LHREML713-CAH.china.huawei.com (10.201.108.36) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Tue, 11 Feb 2020 15:41:07 +0000
+Received: from [127.0.0.1] (10.202.226.45) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 11 Feb
+ 2020 15:41:07 +0000
+Subject: Re: [PATCH RFC 0/7] perf pmu-events: Support event aliasing for
+ system PMUs
+To: James Clark <james.clark@arm.com>, "peterz@infradead.org"
+ <peterz@infradead.org>, "mingo@redhat.com" <mingo@redhat.com>,
+ "acme@kernel.org" <acme@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "alexander.shishkin@linux.intel.com"
+ <alexander.shishkin@linux.intel.com>, "jolsa@redhat.com" <jolsa@redhat.com>,
+ "namhyung@kernel.org" <namhyung@kernel.org>, "will@kernel.org"
+ <will@kernel.org>, "ak@linux.intel.com" <ak@linux.intel.com>
+References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
+ <91a62136-219a-766a-12e4-be2b2cc8ae54@arm.com>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <9275c0a1-3257-494b-f777-8d0f85da5726@huawei.com>
+Date: Tue, 11 Feb 2020 15:41:06 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
-In-Reply-To: <20200211082627.nolf6npspw2a2rxs@gilmour.lan>
+In-Reply-To: <91a62136-219a-766a-12e4-be2b2cc8ae54@arm.com>
 Content-Language: en-US
+X-Originating-IP: [10.202.226.45]
+X-ClientProxiedBy: lhreml720-chm.china.huawei.com (10.201.108.71) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_073958_730927_B91F9AB6 
-X-CRM114-Status: GOOD (  30.53  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200211_074110_865300_0D313BA5 
+X-CRM114-Status: GOOD (  29.15  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.19 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,195 +79,173 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
- stable@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linuxarm <linuxarm@huawei.com>, Zhangshaokun <zhangshaokun@hisilicon.com>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
+On 11/02/2020 15:24, James Clark wrote:
+> Hi John,
 
-On 2/11/20 2:26 AM, Maxime Ripard wrote:
-> On Tue, Feb 11, 2020 at 01:28:58AM -0600, Samuel Holland wrote:
->> The driver currently uses runtime PM to perform some of the module
->> initialization and cleanup. This has three problems:
->>
->> 1) There is no Kconfig dependency on CONFIG_PM, so if runtime PM is
->>    disabled, the driver will not work at all, since the module will
->>    never be initialized.
+Hi James,
+
 > 
-> That's fairly easy to fix.
+> I tested this on an Arm N1 board and see the same list of CPU events from the JSONs
+> picked up so it looks ok from that point of view.
+
+ok, good.
+
+So does this platform have other PMUs (with a kernel driver) which we 
+may want to add aliases for, like uncore PMUs, SMMUv3 PMCG, etc?
+
+Thanks,
+John
+
 > 
->> 2) The driver does not ensure that the device is suspended when
->>    sun6i_dsi_probe() fails or when sun6i_dsi_remove() is called. It
->>    simply disables runtime PM. From the docs of pm_runtime_disable():
->>
->>       The device can be either active or suspended after its runtime PM
->>       has been disabled.
->>
->>    And indeed, the device will likely still be active if sun6i_dsi_probe
->>    fails. For example, if the panel driver is not yet loaded, we have
->>    the following sequence:
->>
->>    sun6i_dsi_probe()
->>       pm_runtime_enable()
->>       mipi_dsi_host_register()
->>          of_mipi_dsi_device_add(child)
->>             ...device_add()...
->>                __device_attach()
->>                  pm_runtime_get_sync(dev->parent) -> Causes resume
->>                  bus_for_each_drv()
->>                     __device_attach_driver() -> No match for panel
->>                  pm_runtime_put(dev->parent) -> Async idle request
->>       component_add()
->>          __component_add()
->>             try_to_bring_up_masters()
->>                try_to_bring_up_master()
->>                   sun4i_drv_bind()
->>                      component_bind_all()
->>                         component_bind()
->>                            sun6i_dsi_bind() -> Fails with -EPROBE_DEFER
->>       mipi_dsi_host_unregister()
->>       pm_runtime_disable()
->>          __pm_runtime_disable()
->>             __pm_runtime_barrier() -> Idle request is still pending
->>                cancel_work_sync()  -> DSI host is *not* suspended!
->>
->>    Since the device is not suspended, the clock and regulator are never
->>    disabled. The imbalance causes a WARN at devres free time.
+> James
 > 
-> That's interesting. I guess this is shown when you have the panel as a
-> module?
-
-That's the easiest way to get sun6i_dsi_probe() to fail, yes. Even if the panel
-was built-in `modprobe sun6i_dsi; rmmod sun6i_dsi` would likely trigger the
-issue, since sun6i_dsi_remove() has the same problem.
-
-> There's something pretty weird though. The comment in
-> __pm_runtime_disable states that it will "wait for all operations in
-> progress to complete" so at the end of __pm_runtime_disable call, the
-> DSI host will be suspended and we shouldn't have a WARN at all.
-
-No, that's not what "operations in progress" means. That only waits for a
-callback that is *already running* on another CPU to complete, in other words
-`dev->power.runtime_status == RPM_SUSPENDING`.
-
-Here the callback does not get run at all. At the time __pm_runtime_disable() is
-called:
-
-dev->power.runtime_status == RPM_ACTIVE
-dev->power.request == RPM_REQ_IDLE
-dev->power.request_pending == true
-
-because pm_runtime_put() calls rpm_idle() with the RPM_ASYNC flag.
-
-And as I mentioned, that request is thrown away by __pm_runtime_barrier(). So
-the device PM core is working as documented.
-
->> 3) The driver relies on being suspended when sun6i_dsi_encoder_enable()
->>    is called. The resume callback has a comment that says:
+> On 1/24/20 2:34 PM, John Garry wrote:
+>> Currently event aliasing for only CPU and uncore PMUs is supported. In
+>> fact, only uncore PMUs aliasing for when the uncore PMUs are fixed for a
+>> CPU is supported, which may not always be the case for certain
+>> architectures.
 >>
->>       Some part of it can only be done once we get a number of
->>       lanes, see sun6i_dsi_inst_init
+>> This series adds support for PMU event aliasing for system and other
+>> uncore PMUs which are not fixed to a specific CPU.
 >>
->>    And then part of the resume callback only runs if dsi->device is not
->>    NULL (that is, if sun6i_dsi_attach() has been called). However, as
->>    the above call graph shows, the resume callback is guaranteed to be
->>    called before sun6i_dsi_attach(); it is called before child devices
->>    get their drivers attached.
-> 
-> Isn't it something that has been changed by your previous patch though?
-
-No. Before the previous patch, sun6i_dsi_bind() requires sun6i_dsi_attach() to
-have been called first. So either the panel driver is not loaded, and issue #2
-happens, or the panel driver is loaded, and you get the following modification
-to the above call graph:
-
-   mipi_dsi_host_register()
-      ...
-         __device_attach()
-            pm_runtime_get_sync(dev->parent) -> Causes resume
-            bus_for_each_drv()
-               __device_attach_driver()
-                  [panel probe function]
-                     mipi_dsi_attach()
-                        sun6i_dsi_attach()
-            pm_runtime_put(dev->parent) -> Async idle request
-   component_add()
-      ...
-         sun6i_dsi_bind()
-      ...
-         sun6i_dsi_encoder_enable()
-            pm_runtime_get_sync() -> Cancels idle request
-
-And because `dev->power.runtime_status == RPM_ACTIVE` still, the callback is
-*not* run. Either way you have the same problem.
-
->>    Therefore, part of the controller initialization will only run if the
->>    device is suspended between the calls to mipi_dsi_host_register() and
->>    component_add() (which ends up calling sun6i_dsi_encoder_enable()).
->>    Again, as shown by the above call graph, this is not the case. It
->>    appears that the controller happens to work because it is still
->>    initialized by the bootloader.
-> 
-> We don't have any bootloader support for MIPI-DSI, so no, that's not it.
-> 
->>    Because the connector is hardcoded to always be connected, the
->>    device's runtime PM reference is not dropped until system suspend,
->>    when sun4i_drv_drm_sys_suspend() ends up calling
->>    sun6i_dsi_encoder_disable(). However, that is done as a system sleep
->>    PM hook, and at that point the system PM core has already taken
->>    another runtime PM reference, so sun6i_dsi_runtime_suspend() is
->>    not called. Likewise, by the time the PM core releases its reference,
->>    sun4i_drv_drm_sys_resume() has already re-enabled the encoder.
+>> For this, we introduce support for another per-arch mapfile, which maps a
+>> particular system identifier to a set of system PMU events for that
+>> system. This is much the same as what we do for CPU event aliasing.
 >>
->>    So after system suspend and resume, we have *still never called*
->>    sun6i_dsi_inst_init(), and now that the rest of the display pipeline
->>    has been reset, the DSI host is unable to communicate with the panel,
->>    causing VBLANK timeouts.
+>> To support this, we need to change how we match a PMU to a mapfile,
+>> whether it should use a CPU or system mapfile. For this we do the
+>> following:
+>>
+>> - For CPU PMU, we always match for the event mapfile based on the CPUID.
+>>    This has not changed.
+>>
+>> - For an uncore or system PMU, we match first based on the SYSID (if set).
+>>    If this fails, then we match on the CPUID.
+>>
+>>    This works for x86, as x86 would not have any system mapfiles for uncore
+>>    PMUs (and match on the CPUID).
+>>
+>> Initial reference support is also added for ARM SMMUv3 PMCG (Performance
+>> Monitor Event Group) PMU for HiSilicon hip08 platform with only a single
+>> event so far - see driver in drivers/perf/arm_smmuv3_pmu.c for that driver.
+>>
+>> Here is a sample output with this series:
+>>
+>> root@ubuntu:/# ./perf list
+>>    [...]
+>>
+>>    smmuv3_pmcg_100020/config_cache_miss/              [Kernel PMU event]
+>>    smmuv3_pmcg_100020/config_struct_access/           [Kernel PMU event]
+>>    smmuv3_pmcg_100020/cycles/                         [Kernel PMU event]
+>>    smmuv3_pmcg_100020/pcie_ats_trans_passed/          [Kernel PMU event]
+>>    smmuv3_pmcg_100020/pcie_ats_trans_rq/              [Kernel PMU event]
+>>    smmuv3_pmcg_100020/tlb_miss/                       [Kernel PMU event]
+>>    smmuv3_pmcg_100020/trans_table_walk_access/        [Kernel PMU event]
+>>    smmuv3_pmcg_100020/transaction/                    [Kernel PMU event]
+>>
+>>    [...]
+>>
+>> smmu v3 pmcg:
+>>    smmuv3_pmcg.l1_tlb
+>>         [SMMUv3 PMCG l1_tlb. Unit: smmuv3_pmcg]
+>>
+>>    [...]
+>>
+>> root@ubuntu:/# ./perf stat -v -e smmuv3_pmcg.l1_tlb sleep 1
+>> Using CPUID 0x00000000480fd010
+>> Using SYSID HIP08
+>>   -> smmuv3_pmcg_200100020/event=0x8a/
+>>   -> smmuv3_pmcg_200140020/event=0x8a/
+>>   -> smmuv3_pmcg_100020/event=0x8a/
+>>   -> smmuv3_pmcg_140020/event=0x8a/
+>>   -> smmuv3_pmcg_200148020/event=0x8a/
+>>   -> smmuv3_pmcg_148020/event=0x8a/
+>> smmuv3_pmcg.l1_tlb: 0 1001221690 1001221690
+>> smmuv3_pmcg.l1_tlb: 0 1001220090 1001220090
+>> smmuv3_pmcg.l1_tlb: 101 1001219660 1001219660
+>> smmuv3_pmcg.l1_tlb: 0 1001219010 1001219010
+>> smmuv3_pmcg.l1_tlb: 0 1001218360 1001218360
+>> smmuv3_pmcg.l1_tlb: 134 1001217850 1001217850
+>>
+>>   Performance counter stats for 'system wide':
+>>
+>>                 235      smmuv3_pmcg.l1_tlb
+>>
+>>         1.001263128 seconds time elapsed
+>>
+>> root@ubuntu:/#
+>>
+>> Issues with this series which need to be addressed (aware to me):
+>>
+>> - It would be good to have a universal method to identify the system from
+>>    sysfs. Nothing exists which I know about. There is DMI, but this is not
+>>    always available (or has correct info). Maybe systems which want to
+>>    support this feature will need a "soc" driver, and a
+>>    /sys/devices/socX/machine file (which I used for testing this series -
+>>    this driver is out of tree currently).
+>>
+>> - Maybe it is ok, but for systems which match on the system identifier,
+>>    uncore PMUs should be in the system mapfile, and, as such, match on the
+>>    system identifier and not CPU identifier.
+>>
+>> - We need a better way in jevents.c to give a direct mapping of PMU name
+>>    aliases, i.e. for any PMU name not prefixed with "uncore_", we need to
+>>    add this to table unit_to_pmu[]. Not scalable.
+>>
+>>    Having said that, maybe the kernel can introduce some future PMU naming
+>>    convention in future.
+>>
+>> John Garry (7):
+>>    perf jevents: Add support for an extra directory level
+>>    perf vendor events arm64: Relocate hip08 core events
+>>    perf jevents: Add support for a system events PMU
+>>    perf pmu: Rename uncore symbols to include system pmus
+>>    perf pmu: Support matching by sysid
+>>    perf vendor events arm64: Relocate uncore events for hip08
+>>    perf vendor events arm64: Add hip08 SMMUv3 PMCG IMP DEF events
+>>
+>>   tools/perf/arch/arm64/util/arm-spe.c          |   2 +-
+>>   tools/perf/pmu-events/README                  |  47 ++++++--
+>>   .../hip08/{ => cpu}/core-imp-def.json         |   0
+>>   .../hisilicon/hip08/sys/smmu-v3-pmcg.json     |   9 ++
+>>   .../hip08/{ => sys}/uncore-ddrc.json          |   0
+>>   .../hisilicon/hip08/{ => sys}/uncore-hha.json |   0
+>>   .../hisilicon/hip08/{ => sys}/uncore-l3c.json |   0
+>>   tools/perf/pmu-events/arch/arm64/mapfile.csv  |   2 +-
+>>   .../pmu-events/arch/arm64/mapfile_sys.csv     |  14 +++
+>>   tools/perf/pmu-events/jevents.c               |  65 ++++++++--
+>>   tools/perf/pmu-events/pmu-events.h            |   1 +
+>>   tools/perf/util/evsel.h                       |   2 +-
+>>   tools/perf/util/parse-events.c                |  12 +-
+>>   tools/perf/util/pmu.c                         | 111 +++++++++++++++---
+>>   tools/perf/util/pmu.h                         |   2 +-
+>>   15 files changed, 221 insertions(+), 46 deletions(-)
+>>   rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => cpu}/core-imp-def.json (100%)
+>>   create mode 100644 tools/perf/pmu-events/arch/arm64/hisilicon/hip08/sys/smmu-v3-pmcg.json
+>>   rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => sys}/uncore-ddrc.json (100%)
+>>   rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => sys}/uncore-hha.json (100%)
+>>   rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => sys}/uncore-l3c.json (100%)
+>>   create mode 100644 tools/perf/pmu-events/arch/arm64/mapfile_sys.csv
+>>
+> IMPORTANT NOTICE: The contents of this email and any attachments are confidential and may also be privileged. If you are not the intended recipient, please notify the sender immediately and do not disclose the contents to any other person, use it for any purpose, or store or copy the information in any medium. Thank you.
 > 
-> Either way, I guess just moving the pm_runtime_enable call to
-> sun6i_dsi_attach will fix this, right? We don't really need to have
-> the DSI controller powered up before that time anyway.
-
-Sorry, but no again. It would solve issue #2 (only if the previous patch is
-applied), but not issue #3.
-
-Regardless of when runtime PM is enabled, sun6i_dsi_runtime_suspend() will not
-be called until the device's usage count drops to 0. And as long as a panel is
-bound, the controller's usage count will be >0, *even during system suspend*
-while the encoder is turned off.
-
-Before the previous patch, the usage count would never drop to 0 under *any*
-circumstance.
-
->> Fix all of these issues by inlining the runtime PM hooks into the
->> encoder enable/disable functions, which are guaranteed to run after a
->> panel is attached. This allows sun6i_dsi_inst_init() to be called
->> unconditionally. Furthermore, this causes the hardware to be turned off
->> during system suspend and reinitialized on resume, which was not
->> happening before.
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> .
 > 
-> That's not something we should do really. We're really lacking any
-> power management, so we should be having more of runtime_pm, not less.
 
-This *is* adding more power management! The current runtime_pm hooks never
-actually suspend the device, as described above. And even if they did work, this
-would not extend the lifetime during which the device is active! I'm calling the
-power-up/power-down routines at exactly the same point they were previously
-getting called, except for two changes:
-
-1) The device does not get powered up during mipi_dsi_host_register(), which you
-just said was unnecessary.
-
-2) The code in the PM hooks actually gets run when it was intended to be run.
-
-> Maxime
-
-Samuel
 
 _______________________________________________
 linux-arm-kernel mailing list
