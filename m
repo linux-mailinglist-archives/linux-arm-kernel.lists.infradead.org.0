@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBF49159699
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:50:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B41521596A7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:51:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+W6TqfrH3/ozI/+uXdnVTXOu33+KipWsEz6RSeUIYqw=; b=ltpVuS+5IOB9BD
-	pBI/WYoKa0O5ib92A7ERpZQsfYQB977Q9ZNBl+/94eLZ4fcvaCMVca/B5iGkSl76R2UeWogMpzMBW
-	yGERmkilj80/uR6Vpuh/8jlt85QloyrXzJg96oJXyGUCKVoKD2nZvcyCDrb1Z7Mryuma4jKeS/KDe
-	HrWx9WZCbPMyXnVtuxtP6/W9Mzo7wq013dA2YmagkhPqwAuTFx8Sg9QLiN9gCyfB9Lpr9BAKMM9vK
-	oA2FNQVSi1Hwl1C7E0f5sL4YcVWJ7XTPQgI5LDRVmYH7IcJrjhJcplsEIaW3jcE3tf+csGn4vCj5f
-	iC+rYnEgc+Z20pNvp0UA==;
+	List-Owner; bh=jFmiHbAtUGvkMtXemfi0+Hv/nWlTRd8z7mWxZET/LKQ=; b=fY/j/7Le8f6Wix
+	s34mxW/S8fiwP6xJuEDOuM++6UuGV4jFCx64maQfQuVChZtzxIAG1ooclwbjkeudxeIZNrZSNA+w2
+	brxSNR2zvUjo1nSw8fEP47flUI3pTCR+gcGFRbdQv1lXgR/l8ptL0lyvRylcQthEsEO1zMS4M6AdK
+	TwVUVOJ8/EIyCQv4ysAMDPRN0Y1a8yeej+vsJlS/91j3GSxvgBaeswWnQjInnUCVsl/pzmIlzCALb
+	KZqdYg8X344tE+YA+lgA3gVk7v8oTbxiFba8emDbRGse9qhgipCvSTLTMT9+FCo5VedLi7QqpIpcZ
+	eUFrnvttMCGjXpVWpM2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1ZgI-0000ZH-AV; Tue, 11 Feb 2020 17:50:42 +0000
+	id 1j1Zgl-00017T-Ai; Tue, 11 Feb 2020 17:51:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ZfZ-0007M7-Nu
+ id 1j1Zfa-0007MS-Aj
  for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:49:59 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4EA22206D7;
+ by mail.kernel.org (Postfix) with ESMTPSA id E08DE2086A;
  Tue, 11 Feb 2020 17:49:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581443397;
- bh=Q45nUi+j7GZ+5bZdrZa7v6bmgIUXdcImPx3jSm4b5vM=;
+ s=default; t=1581443398;
+ bh=vZYuRZEYB65TB5BcmIONClbvBia5wiG+UbdUv2W2Gl0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=lfg5GWl4io9VLVhsodj2YrfEPfxCT8wxzicuO2HOuuR2HtyajJsr6Uy+4JQbEh9m4
- eXKqTRDVxGF2V58s9HzxO+UwIlOSGkcj3cG1E9n7v8Px9aHC6xhGLy+4E0Rb9+Jjcw
- k3HvM6YOQWR84p+7vpV9Z0cxWcCqmzGOCL5N6z+s=
+ b=bidf3TOnosFS8mKox3Y7XNJQiv3wt2HAC43WhRps4CyrGo0e0auz4bpkSPeolSFfV
+ rU60Gda2lcRS4mEdynFEKhC8vzdj4S87iE6LeWp3dReN/Z5s+mKxf1nrxXscQ+cJ4t
+ CM8G0+YrndZeKSP1bIiQT+7F8nuvdXYV+DAoFEK8=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j1ZfX-004O7k-Ip; Tue, 11 Feb 2020 17:49:55 +0000
+ id 1j1ZfY-004O7k-5R; Tue, 11 Feb 2020 17:49:56 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 03/94] KVM: arm64: nv: Introduce nested virtualization VCPU
- feature
-Date: Tue, 11 Feb 2020 17:48:07 +0000
-Message-Id: <20200211174938.27809-4-maz@kernel.org>
+Subject: [PATCH v2 04/94] KVM: arm64: nv: Reset VCPU to EL2 registers if VCPU
+ nested virt is set
+Date: Tue, 11 Feb 2020 17:48:08 +0000
+Message-Id: <20200211174938.27809-5-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200211174938.27809-1-maz@kernel.org>
 References: <20200211174938.27809-1-maz@kernel.org>
@@ -62,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_094957_811364_4AD50FDD 
-X-CRM114-Status: GOOD (  14.14  )
+X-CRM114-CacheID: sfid-20200211_094958_404456_2DEE56E3 
+X-CRM114-Status: GOOD (  15.45  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -105,70 +105,89 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Christoffer Dall <christoffer.dall@arm.com>
 
-Introduce the feature bit and a primitive that checks if the feature is
-set behind a static key check based on the cpus_have_const_cap check.
-
-Checking nested_virt_in_use() on systems without nested virt enabled
-should have neglgible overhead.
-
-We don't yet allow userspace to actually set this feature.
+Reset the VCPU with PSTATE.M = EL2h when the nested virtualization
+feature is enabled on the VCPU.
 
 Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+[maz: rework register reset not to use empty data structures]
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm/include/asm/kvm_nested.h   |  9 +++++++++
- arch/arm64/include/asm/kvm_nested.h | 13 +++++++++++++
- arch/arm64/include/uapi/asm/kvm.h   |  1 +
- 3 files changed, 23 insertions(+)
- create mode 100644 arch/arm/include/asm/kvm_nested.h
- create mode 100644 arch/arm64/include/asm/kvm_nested.h
+ arch/arm64/kvm/reset.c | 32 ++++++++++++++++++++------------
+ 1 file changed, 20 insertions(+), 12 deletions(-)
 
-diff --git a/arch/arm/include/asm/kvm_nested.h b/arch/arm/include/asm/kvm_nested.h
-new file mode 100644
-index 000000000000..124ff6445f8f
---- /dev/null
-+++ b/arch/arm/include/asm/kvm_nested.h
-@@ -0,0 +1,9 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __ARM_KVM_NESTED_H
-+#define __ARM_KVM_NESTED_H
-+
-+#include <linux/kvm_host.h>
-+
-+static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu) { return false; }
-+
-+#endif /* __ARM_KVM_NESTED_H */
-diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
-new file mode 100644
-index 000000000000..f243a8acb9fc
---- /dev/null
-+++ b/arch/arm64/include/asm/kvm_nested.h
-@@ -0,0 +1,13 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __ARM64_KVM_NESTED_H
-+#define __ARM64_KVM_NESTED_H
-+
-+#include <linux/kvm_host.h>
-+
-+static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
-+{
-+	return cpus_have_const_cap(ARM64_HAS_NESTED_VIRT) &&
-+		test_bit(KVM_ARM_VCPU_HAS_EL2, vcpu->arch.features);
-+}
-+
-+#endif /* __ARM64_KVM_NESTED_H */
-diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
-index ba85bb23f060..5b9c58a55537 100644
---- a/arch/arm64/include/uapi/asm/kvm.h
-+++ b/arch/arm64/include/uapi/asm/kvm.h
-@@ -106,6 +106,7 @@ struct kvm_regs {
- #define KVM_ARM_VCPU_SVE		4 /* enable SVE for this CPU */
- #define KVM_ARM_VCPU_PTRAUTH_ADDRESS	5 /* VCPU uses address authentication */
- #define KVM_ARM_VCPU_PTRAUTH_GENERIC	6 /* VCPU uses generic authentication */
-+#define KVM_ARM_VCPU_HAS_EL2		7 /* Support nested virtualization */
+diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
+index 30b7ea680f66..5c50df274239 100644
+--- a/arch/arm64/kvm/reset.c
++++ b/arch/arm64/kvm/reset.c
+@@ -28,6 +28,7 @@
+ #include <asm/kvm_coproc.h>
+ #include <asm/kvm_emulate.h>
+ #include <asm/kvm_mmu.h>
++#include <asm/kvm_nested.h>
+ #include <asm/virt.h>
  
- struct kvm_vcpu_init {
- 	__u32 target;
+ /* Maximum phys_shift supported for any VM on this host */
+@@ -36,15 +37,14 @@ static u32 kvm_ipa_limit;
+ /*
+  * ARMv8 Reset Values
+  */
+-static const struct kvm_regs default_regs_reset = {
+-	.regs.pstate = (PSR_MODE_EL1h | PSR_A_BIT | PSR_I_BIT |
+-			PSR_F_BIT | PSR_D_BIT),
+-};
++#define VCPU_RESET_PSTATE_EL1	(PSR_MODE_EL1h | PSR_A_BIT | PSR_I_BIT | \
++				 PSR_F_BIT | PSR_D_BIT)
+ 
+-static const struct kvm_regs default_regs_reset32 = {
+-	.regs.pstate = (PSR_AA32_MODE_SVC | PSR_AA32_A_BIT |
+-			PSR_AA32_I_BIT | PSR_AA32_F_BIT),
+-};
++#define VCPU_RESET_PSTATE_EL2	(PSR_MODE_EL2h | PSR_A_BIT | PSR_I_BIT | \
++				 PSR_F_BIT | PSR_D_BIT)
++
++#define VCPU_RESET_PSTATE_SVC	(PSR_AA32_MODE_SVC | PSR_AA32_A_BIT | \
++				 PSR_AA32_I_BIT | PSR_AA32_F_BIT)
+ 
+ static bool cpu_has_32bit_el1(void)
+ {
+@@ -260,6 +260,7 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
+ 	const struct kvm_regs *cpu_reset;
+ 	int ret = -EINVAL;
+ 	bool loaded;
++	u32 pstate;
+ 
+ 	/* Reset PMU outside of the non-preemptible section */
+ 	kvm_pmu_vcpu_reset(vcpu);
+@@ -288,18 +289,25 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
+ 	switch (vcpu->arch.target) {
+ 	default:
+ 		if (test_bit(KVM_ARM_VCPU_EL1_32BIT, vcpu->arch.features)) {
+-			if (!cpu_has_32bit_el1())
++			/*
++			 * The CPU must support 32bit EL1, and 32bit
++			 * NV is just not a thing...
++			 */
++			if (!cpu_has_32bit_el1() || nested_virt_in_use(vcpu))
+ 				goto out;
+-			cpu_reset = &default_regs_reset32;
++			pstate = VCPU_RESET_PSTATE_SVC;
++		} else if (nested_virt_in_use(vcpu)) {
++			pstate = VCPU_RESET_PSTATE_EL2;
+ 		} else {
+-			cpu_reset = &default_regs_reset;
++			pstate = VCPU_RESET_PSTATE_EL1;
+ 		}
+ 
+ 		break;
+ 	}
+ 
+ 	/* Reset core registers */
+-	memcpy(vcpu_gp_regs(vcpu), cpu_reset, sizeof(*cpu_reset));
++	memset(vcpu_gp_regs(vcpu), 0, sizeof(*cpu_reset));
++	vcpu_gp_regs(vcpu)->regs.pstate = pstate;
+ 
+ 	/* Reset system registers */
+ 	kvm_reset_sys_regs(vcpu);
 -- 
 2.20.1
 
