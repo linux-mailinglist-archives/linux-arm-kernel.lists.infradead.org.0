@@ -2,81 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAD60159227
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 15:44:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A92015922A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 15:47:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=y4C7baBFamihxIfMvzZ2Nntq3OBggePLJkRP3z0sqNk=; b=ClnuteS09jyUPyVKZ08VwxkEK
-	YySxtcKSlcXEKfrZLrnpPWBKgbBzglQ2Ngdyfa5GjQRvUmLbocYO3SELd4MeeuFvU6PLy3MMXvzJN
-	1A4cfCYo81h/dj3v6Gn6Z1m7dFT6SPnRgbmmv1DdMu7hVqoiUmFlrtnO+bHFwjO2JIFZ6eyMByQ79
-	PseM2hYVIg+1h1AR2RebMXshbNB5XAX7nbrINWs3UeyEzDKuTTDhg/30KOL2X61fAh4gl0Dl5vNrv
-	6bL1B8tSqvXU/xT8U4jVxN+zH+FNPWu75LwK2K4oRr9YpnCSfWqo4+JJuvacTqkgiDvJKXLXAkEfM
-	q1tDZF4Dg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XJ8b/dOKAUOujjOnX/RjCGc2dZHfgdcG6CS9oynO1CI=; b=Sl1KQLbe2DJmFH
+	bibWwoRjxlS7Ov9SPLL/690h0jrZa/I6lCxIF6mZsxrsVSHiyZ2mv2PaVorg0RqKqcVPO3Upv727l
+	eY1SY+WFN13SLaNw44ZGMBttS9bxz/8+F/5KmlAQ3iGWs/sS9gUHY1nh0Il9ebHB+xEOrlOD8XcwN
+	Z/yZFAQRsSC6XjAH8jqTon+4+cfNKS+dijR4+XeBRPZk2ZW7D9s5V93cbIfaeCXxguzT2mu+slx8V
+	xlm6emfa+3pXfwxhum5mK9qU5weyDUjXBXgHHblUOt+m7tMkU4yOoz0QbiBiPtMcdexIVhpTuER5W
+	6cz/Z7L98Srn36wxlqBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1WmL-0001hk-Ur; Tue, 11 Feb 2020 14:44:45 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1j1Wok-0003En-4c; Tue, 11 Feb 2020 14:47:14 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1WmB-0001hI-Vy
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 14:44:37 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01BEiRXu032757; Tue, 11 Feb 2020 15:44:28 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=zMrqEZqOCVnlA3/9d0Rc7Rgo4RLOby/Y5h96V1K6k5k=;
- b=GtWzjgWpZQmghAi169LU0uuY4j7UF/y4Gxjub5zSHljucQ9SciIS1fLFx8NgjERgpEqd
- wD2ePTUv/IS4QpFL9ashW1yofY0nK/2ZRkTrwnh5vpa39jIgJSyf0bP0MsxLWB3JnPwC
- c1nSsQxR/ELJ1NNAZiSh6qB5VMdSGOdzJw/piJ0VJCKihyErlkdRkV9gaiGiZggHXRb3
- JKG1oAfc3Pk3dP48IbxrRU1u7fZArbuL1j1hAOco7JtMhjlz4ZZv7pVn4VOAXp9fdizr
- uotji9CPN2DDHDLLtx4hKF92yFf7FnBzwHslCu1jX0mj3fq8XgNV6R/j+ka/1TtPFeHt PA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2y1ufh5xf0-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 11 Feb 2020 15:44:28 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6748F100046;
- Tue, 11 Feb 2020 15:44:18 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 535752BD3FC;
- Tue, 11 Feb 2020 15:44:18 +0100 (CET)
-Received: from lmecxl0923.lme.st.com (10.75.127.48) by SFHDAG6NODE1.st.com
- (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 11 Feb
- 2020 15:44:17 +0100
-Subject: Re: [PATCH V2 9/9] mmc: mmci: add sdmmc variant revision 2.0
-To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
-References: <20200128090636.13689-1-ludovic.barre@st.com>
- <20200128090636.13689-10-ludovic.barre@st.com>
-From: Ludovic BARRE <ludovic.barre@st.com>
-Message-ID: <853f4b14-a188-f329-34e5-8e88fcafa775@st.com>
-Date: Tue, 11 Feb 2020 15:44:17 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+ id 1j1Woc-0003E5-Om
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 14:47:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581432425;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=AREW9gFLm5gusZ2z//TUVRAYCVObZ/wwLl56roh1D+s=;
+ b=PVTfC144B4GMKc+1mqqmEnQrIIZS2ktOCjYLqCTi4QS401ZAoJ4JhfGZ5VNriXIBSMoQbO
+ lMuo8lXstqeVATX6zHOfu/bydLrCqjmtHtoQQDsRQI4aHVSLFIwDbmGF3OHjH213pWNNO3
+ 1LuiAdYsZlSLqg0trNIcA95baHlR+R0=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-241-JvW_ZqV2OTyZrIbkaNku0g-1; Tue, 11 Feb 2020 09:47:01 -0500
+X-MC-Unique: JvW_ZqV2OTyZrIbkaNku0g-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5C5EB10054E3;
+ Tue, 11 Feb 2020 14:46:58 +0000 (UTC)
+Received: from krava (ovpn-206-93.brq.redhat.com [10.40.206.93])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 47FE55C240;
+ Tue, 11 Feb 2020 14:46:54 +0000 (UTC)
+Date: Tue, 11 Feb 2020 15:46:51 +0100
+From: Jiri Olsa <jolsa@redhat.com>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: [PATCH RFC 3/7] perf jevents: Add support for a system events PMU
+Message-ID: <20200211144651.GD93194@krava>
+References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
+ <1579876505-113251-4-git-send-email-john.garry@huawei.com>
+ <20200210120749.GF1907700@krava>
+ <b148f0b6-d2ae-6520-8da1-7aed2c9e1d6b@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <20200128090636.13689-10-ludovic.barre@st.com>
-Content-Language: fr
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG7NODE2.st.com (10.75.127.20) To SFHDAG6NODE1.st.com
- (10.75.127.16)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-11_04:2020-02-10,
- 2020-02-11 signatures=0
+Content-Disposition: inline
+In-Reply-To: <b148f0b6-d2ae-6520-8da1-7aed2c9e1d6b@huawei.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_064436_513893_D04D904D 
-X-CRM114-Status: GOOD (  17.78  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200211_064706_881541_BF6B0134 
+X-CRM114-Status: GOOD (  21.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,51 +90,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- srinivas.kandagatla@linaro.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, ak@linux.intel.com, suzuki.poulose@arm.com,
+ peterz@infradead.org, robin.murphy@arm.com, linuxarm@huawei.com,
+ acme@kernel.org, linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, james.clark@arm.com,
+ namhyung@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-aGkgVWxmCgpMZSAxLzI4LzIwIMOgIDEwOjA2IEFNLCBMdWRvdmljIEJhcnJlIGEgw6ljcml0wqA6
-Cj4gVGhpcyBwYXRjaCBhZGRzIGEgc2RtbWMgdmFyaWFudCByZXZpc2lvbiAyLjAuCj4gVGhpcyBy
-ZXZpc2lvbiBpcyBiYWNrd2FyZCBjb21wYXRpYmxlIHdpdGggMS4xLCBhbmQgYWRkcyBkbWEKPiBs
-aW5rIGxpc3Qgc3VwcG9ydC4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBMdWRvdmljIEJhcnJlIDxsdWRv
-dmljLmJhcnJlQHN0LmNvbT4KPiAtLS0KPiAgIGRyaXZlcnMvbW1jL2hvc3QvbW1jaS5jIHwgMzAg
-KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gICAxIGZpbGUgY2hhbmdlZCwgMzAgaW5z
-ZXJ0aW9ucygrKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21tYy9ob3N0L21tY2kuYyBiL2Ry
-aXZlcnMvbW1jL2hvc3QvbW1jaS5jCj4gaW5kZXggMjRlNjMwMTgzZWQ0Li5hNzc0YzMyOWMyMTIg
-MTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9tbWMvaG9zdC9tbWNpLmMKPiArKysgYi9kcml2ZXJzL21t
-Yy9ob3N0L21tY2kuYwo+IEBAIC0yNzUsNiArMjc1LDMxIEBAIHN0YXRpYyBzdHJ1Y3QgdmFyaWFu
-dF9kYXRhIHZhcmlhbnRfc3RtMzJfc2RtbWMgPSB7Cj4gICAJLmluaXQJCQk9IHNkbW1jX3Zhcmlh
-bnRfaW5pdCwKPiAgIH07Cj4gICAKPiArc3RhdGljIHN0cnVjdCB2YXJpYW50X2RhdGEgdmFyaWFu
-dF9zdG0zMl9zZG1tY3YyID0gewo+ICsJLmZpZm9zaXplCQk9IDE2ICogNCwKPiArCS5maWZvaGFs
-ZnNpemUJCT0gOCAqIDQsCj4gKwkuZl9tYXgJCQk9IDIwODAwMDAwMCwKPiArCS5zdG0zMl9jbGtk
-aXYJCT0gdHJ1ZSwKPiArCS5jbWRyZWdfY3BzbV9lbmFibGUJPSBNQ0lfQ1BTTV9TVE0zMl9FTkFC
-TEUsCj4gKwkuY21kcmVnX2xyc3BfY3JjCT0gTUNJX0NQU01fU1RNMzJfTFJTUF9DUkMsCj4gKwku
-Y21kcmVnX3Nyc3BfY3JjCT0gTUNJX0NQU01fU1RNMzJfU1JTUF9DUkMsCj4gKwkuY21kcmVnX3Ny
-c3AJCT0gTUNJX0NQU01fU1RNMzJfU1JTUCwKPiArCS5jbWRyZWdfc3RvcAkJPSBNQ0lfQ1BTTV9T
-VE0zMl9DTURTVE9QLAo+ICsJLmRhdGFfY21kX2VuYWJsZQk9IE1DSV9DUFNNX1NUTTMyX0NNRFRS
-QU5TLAo+ICsJLmlycV9waW9fbWFzawkJPSBNQ0lfSVJRX1BJT19TVE0zMl9NQVNLLAo+ICsJLmRh
-dGFjdHJsX2ZpcnN0CQk9IHRydWUsCj4gKwkuZGF0YWNudF91c2VsZXNzCT0gdHJ1ZSwKPiArCS5k
-YXRhbGVuZ3RoX2JpdHMJPSAyNSwKPiArCS5kYXRhY3RybF9ibG9ja3N6CT0gMTQsCj4gKwkuZGF0
-YWN0cmxfYW55X2Jsb2Nrc3oJPSB0cnVlLAo+ICsJLnN0bTMyX2lkbWFic2l6ZV9tYXNrCT0gR0VO
-TUFTSygxNiwgNSksCj4gKwkuZG1hX2xsaQkJPSB0cnVlLAo+ICsJLmJ1c3lfdGltZW91dAkJPSB0
-cnVlLAoKSSBmb3JnZXQgImJ1c3lfZGV0ZWN0CQk9IHRydWUsIiBwcm9wZXJ0eQpJIGFkZCB0aGlz
-IGluIG5leHQgcGF0Y2ggc2V0Cgo+ICsJLmJ1c3lfZGV0ZWN0X2ZsYWcJPSBNQ0lfU1RNMzJfQlVT
-WUQwLAo+ICsJLmJ1c3lfZGV0ZWN0X21hc2sJPSBNQ0lfU1RNMzJfQlVTWUQwRU5ETUFTSywKPiAr
-CS5pbml0CQkJPSBzZG1tY192YXJpYW50X2luaXQsCj4gK307Cj4gKwo+ICAgc3RhdGljIHN0cnVj
-dCB2YXJpYW50X2RhdGEgdmFyaWFudF9xY29tID0gewo+ICAgCS5maWZvc2l6ZQkJPSAxNiAqIDQs
-Cj4gICAJLmZpZm9oYWxmc2l6ZQkJPSA4ICogNCwKPiBAQCAtMjM0Myw2ICsyMzY4LDExIEBAIHN0
-YXRpYyBjb25zdCBzdHJ1Y3QgYW1iYV9pZCBtbWNpX2lkc1tdID0gewo+ICAgCQkubWFzawk9IDB4
-ZjBmZmZmZmYsCj4gICAJCS5kYXRhCT0gJnZhcmlhbnRfc3RtMzJfc2RtbWMsCj4gICAJfSwKPiAr
-CXsKPiArCQkuaWQgICAgID0gMHgwMDI1MzE4MCwKPiArCQkubWFzawk9IDB4ZjBmZmZmZmYsCj4g
-KwkJLmRhdGEJPSAmdmFyaWFudF9zdG0zMl9zZG1tY3YyLAo+ICsJfSwKPiAgIAkvKiBRdWFsY29t
-bSB2YXJpYW50cyAqLwo+ICAgCXsKPiAgIAkJLmlkICAgICA9IDB4MDAwNTExODAsCj4gCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+On Mon, Feb 10, 2020 at 03:55:00PM +0000, John Garry wrote:
+> On 10/02/2020 12:07, Jiri Olsa wrote:
+> > On Fri, Jan 24, 2020 at 10:35:01PM +0800, John Garry wrote:
+> > 
+> > SNIP
+> > 
+> > >   	- Set of 'PMU events tables' for all known CPUs in the architecture,
+> > > @@ -83,11 +93,11 @@ NOTES:
+> > >   	2. The 'pmu-events.h' has an extern declaration for the mapping table
+> > >   	   and the generated 'pmu-events.c' defines this table.
+> > > -	3. _All_ known CPU tables for architecture are included in the perf
+> > > -	   binary.
+> > > +	3. _All_ known CPU and system tables for architecture are included in
+> > > +	   the perf binary.
+> > > -At run time, perf determines the actual CPU it is running on, finds the
+> > > -matching events table and builds aliases for those events. This allows
+> > > +At run time, perf determines the actual CPU or system it is running on, finds
+> > > +the matching events table and builds aliases for those events. This allows
+> > >   users to specify events by their name:
+> > >   	$ perf stat -e pm_1plus_ppc_cmpl sleep 1
+> > > @@ -150,3 +160,18 @@ where:
+> > >   	i.e the three CPU models use the JSON files (i.e PMU events) listed
+> > >   	in the directory 'tools/perf/pmu-events/arch/x86/silvermont'.
+> > > +
+> > > +The mapfile_sys.csv format is slightly different, in that it contains a SYSID
+> > > +instead of the CPUID:
+> > > +
+> > > +	Header line
+> > > +	SYSID,Version,Dir/path/name,Type
+> > 
+> 
+> Hi jirka,
+> 
+> > can't we just add prefix to SYSID types? like:
+> > 
+> > 	SYSID-HIP08,v1,hisilicon/hip08/sys,sys
+> > 	0x00000000480fd010,v1,hisilicon/hip08/cpu,core
+> > 	0x00000000500f0000,v1,ampere/emag,core
+> > 
+> > because the rest of the line is the same, right?
+> 
+> I did consider that already. It should be workable.
+> 
+> > 
+> > seems to me that having one mapfile type would be less confusing
+> 
+> I thought that having it all in a single file would be more confusing :)
+
+hum, I think that if we keep it separated like:
+
+	SYSID-HIP08,v1,hisilicon/hip08/sys,sys
+	SYSID-krava,v1,hisilicon/krava/sys,sys
+	0x00000000480fd010,v1,hisilicon/hip08/cpu,core
+	0x00000000500f0000,v1,ampere/emag,core
+
+then we should be fine.. not too many humans read that file anyway ;-)
+
+jirka
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
