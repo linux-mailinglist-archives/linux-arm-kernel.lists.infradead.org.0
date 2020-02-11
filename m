@@ -2,57 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D06A5159034
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 14:45:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EB2215903C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 14:47:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WP9sPKJPX5XHPQKMih5Ok0wcAaZBKp+YlPT9FvQ9Ysw=; b=mEGcRgs2nHakHB
-	cBHJC7CtOc4H5d44EVsnSthzM/3QFzzUXnRZ/WEL3BVIJfdsZ6wj8aQu1AnCbGBqhjmssTk1eNCFT
-	AK3mz2H+OZIonWEncbVj7iFRSF+QCGyyg66KIzSb6E3YCmaWpNQ/snvr0DLc83WcOqJNGlCHuyk4T
-	sLNtMfvRCPos8wnBww5iqyeR1cYtaGZshNMlYZ8CMlTsclsd9UQnJ7f+zGEC2SpCz9gcU6TQlxojc
-	TPMlFUD1ZOyDPnL21xzAC7kIbAWKLtMcIsRBRYYu3x/ztNCOYkSXEluZlz+V26cEdUuk6az8YihKr
-	DvQzZ2HPbEelZRPUoL9w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v/4wtlNjG65Nv0BsD4o4RpuM7311SeueP531QqnjGZw=; b=P4ldyMauTWAUi3
+	9EgIB1xBAKydBdCCq/HDfyFv9GYpbG48sdV32+Lq4CXA+rp5PEad5KqIzqY0ktYud9duvXqYj4Omf
+	8UnaIFTKaF7J2HtdDX31sSCC/95ac2/f19YU+CY2GQXQqgQy0vQYsmY2eQ/EYl0dLzDPPnlvt/eO6
+	Y3+20sgVB1th1jCh++DiAMSjIGaGh/RkfutKFt5oYdlWvpE4TrxqwQ6a5a30RmYYcy56kgitbpUDA
+	9bzQVnOmY+NFfWcHMpup2E71MNd1pRnmjhTNeZZgIh0UHIEZwxY3vRNpaiixg0QTw6De6bUPte2XM
+	Equ20k/JOiry1IfofKHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Vqq-0002wh-Qn; Tue, 11 Feb 2020 13:45:20 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1j1Vt0-0003Uc-Be; Tue, 11 Feb 2020 13:47:34 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Vqe-0001bI-BK; Tue, 11 Feb 2020 13:45:10 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id D7D69541237DF4184B69;
- Tue, 11 Feb 2020 21:44:46 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS407-HUB.china.huawei.com
- (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Tue, 11 Feb 2020
- 21:44:36 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <nsaenzjulienne@suse.de>, <gregkh@linuxfoundation.org>,
- <wahrenst@gmx.net>, <jamal.k.shareef@gmail.com>, <marcgonzalez@google.com>,
- <nishkadg.linux@gmail.com>, <nachukannan@gmail.com>
-Subject: [PATCH -next] staging: vc04_services: remove set but unused variable
- 'local_entity_uc'
-Date: Tue, 11 Feb 2020 21:43:56 +0800
-Message-ID: <20200211134356.59904-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
+ id 1j1Vsr-0003UE-Bz
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 13:47:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581428842;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=vZZXarGtig3tAtPPECD18uPxu8CsjJJba6XrWOt6Ku8=;
+ b=UNN0BdqrnMFtMjDNwLD/WnNFhtrj7uxrUFV0mCj0tv3ELFa3acz9/HwrihOpJNeQ8n7zdv
+ kdVsOQMnapI5h/bfgvW9yuUtPKNJLPET5wT7Wlqpffqis50FMLlp7VunFh6W+Wa1VvBbTN
+ Bdm4SC+628BTkUbwlJsjGBeI2zvF+U4=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-41-mOtB-_kLPb29C5VUCfBX7w-1; Tue, 11 Feb 2020 08:47:13 -0500
+X-MC-Unique: mOtB-_kLPb29C5VUCfBX7w-1
+Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
+ [10.5.11.14])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1C6231800D42;
+ Tue, 11 Feb 2020 13:47:11 +0000 (UTC)
+Received: from krava (ovpn-204-250.brq.redhat.com [10.40.204.250])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 2D54F5DA7B;
+ Tue, 11 Feb 2020 13:47:06 +0000 (UTC)
+Date: Tue, 11 Feb 2020 14:47:04 +0100
+From: Jiri Olsa <jolsa@redhat.com>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: [PATCH RFC 5/7] perf pmu: Support matching by sysid
+Message-ID: <20200211134704.GB93194@krava>
+References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
+ <1579876505-113251-6-git-send-email-john.garry@huawei.com>
+ <20200210120759.GG1907700@krava>
+ <63799909-067b-e5f4-dcf1-9ba1ec145348@huawei.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <63799909-067b-e5f4-dcf1-9ba1ec145348@huawei.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_054508_653825_7E53ACBF 
-X-CRM114-Status: UNSURE (   8.42  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200211_054725_485412_60BC87F8 
+X-CRM114-Status: GOOD (  21.99  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,51 +90,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, YueHaibing <yuehaibing@huawei.com>,
- linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, ak@linux.intel.com, suzuki.poulose@arm.com,
+ peterz@infradead.org, robin.murphy@arm.com, linuxarm@huawei.com,
+ acme@kernel.org, linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, james.clark@arm.com,
+ namhyung@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c: In function vchiq_use_internal:
-drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c:2346:16:
- warning: variable local_entity_uc set but not used [-Wunused-but-set-variable]
+On Mon, Feb 10, 2020 at 04:22:56PM +0000, John Garry wrote:
+> Hi jirka,
+> 
+> > 
+> > > +		fclose(file);
+> > > +		pr_debug("gets failed for file %s\n", path);
+> > > +		free(buf);
+> > > +		return NULL;
+> > > +	}
+> > > +	fclose(file);
+> > > +
+> > > +	/* Remove any whitespace, this could be from ACPI HID */
+> > > +	s = strlen(buf);
+> > > +	for (i = 0; i < s; i++) {
+> > > +		if (buf[i] == ' ') {
+> > > +			buf[i] = 0;
+> > > +			break;
+> > > +		};
+> > > +	}
+> > > +
+> > > +	return buf;
+> > > +}
+> > > +
+> 
+> I have another series to add kernel support for a system identifier sysfs
+> entry, which I sent after this series:
+> 
+> https://lore.kernel.org/linux-acpi/1580210059-199540-1-git-send-email-john.garry@huawei.com/
+> 
+> It is different to what I am relying on here - it uses a kernel soc driver
+> for firmware ACPI PPTT identifier. Progress is somewhat blocked at the
+> moment however and I may have to use a different method:
+> 
+> https://lore.kernel.org/linux-acpi/20200128123415.GB36168@bogus/
 
-commit bd8aa2850f00 ("staging: vc04_services: Get of even more suspend/resume states")
-left behind this unused variable.
+I'll try to check ;-)
 
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
----
- drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+> 
+> > > +static char *perf_pmu__getsysid(void)
+> > > +{
+> > > +	char *sysid;
+> > > +	static bool printed;
+> > > +
+> > > +	sysid = getenv("PERF_SYSID");
+> > > +	if (sysid)
+> > > +		sysid = strdup(sysid);
+> > > +
+> > > +	if (!sysid)
+> > > +		sysid = get_sysid_str();
+> > > +	if (!sysid)
+> > > +		return NULL;
+> > > +
+> > > +	if (!printed) {
+> > > +		pr_debug("Using SYSID %s\n", sysid);
+> > > +		printed = true;
+> > > +	}
+> > > +	return sysid;
+> > > +}
+> > 
+> > this part is getting complicated and AFAIK we have no tests for it
+> > 
+> > if you could think of any tests that'd be great.. Perhaps we could
+> > load 'our' json test files and check appropriate events/aliasses
+> > via in pmu object.. or via parse_events interface.. those test aliases
+> > would have to be part of perf, but we have tests compiled in anyway
+> 
+> Sorry, I don't fully follow.
+> 
+> Are you suggesting that we could load the specific JSONs tables for a system
+> from the host filesystem?
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-index c456ced..d30d24d 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-@@ -2343,7 +2343,7 @@ vchiq_use_internal(struct vchiq_state *state, struct vchiq_service *service,
- 	enum vchiq_status ret = VCHIQ_SUCCESS;
- 	char entity[16];
- 	int *entity_uc;
--	int local_uc, local_entity_uc;
-+	int local_uc;
- 
- 	if (!arm_state)
- 		goto out;
-@@ -2367,7 +2367,6 @@ vchiq_use_internal(struct vchiq_state *state, struct vchiq_service *service,
- 
- 	write_lock_bh(&arm_state->susp_res_lock);
- 	local_uc = ++arm_state->videocore_use_count;
--	local_entity_uc = ++(*entity_uc);
- 
- 	vchiq_log_trace(vchiq_susp_log_level,
- 		"%s %s count %d, state count %d",
--- 
-2.7.4
+I wish to see some test for all this.. I can only think about having
+'test' json files compiled with perf and 'perf test' that looks them
+up and checks that all is in the proper place
 
+jirka
 
 
 _______________________________________________
