@@ -2,89 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00BEF158E9A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 13:36:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3194158E9F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 13:39:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SUC7JCrDZzRIkjBW6b2KJYqh1y2zqD30VjlQNA0LK20=; b=gZSvuC3O0iypVg+Cb0bix7xJ5
-	G7H+fuRemP7ZzuImsHKxdn0APcl6sblb4mGsHmsrRHXVBoNh4yyNuLsHowJZpQzYNV+ShTArHLJ0h
-	mLIA50wwmj/cTB1DGANKmtFU2cx9jOh6HO7M+DnDDqCMXgAVpJ/hNcOzGGQM2MJKtlnCVp1XwHBk8
-	S3Blrtipb8NLLe6vcaS/4ee0Q5OABLdxbGeA/x6svdd0xdDJ/ebEAFCNS4v6pUhpsbvWzS80C/277
-	nv3G2HFZVq8kc615KUtO7/BqjyftiwgAOn+Fe97PX3w19cVcNYzPi8vSAXOTYxB1UI1vc3nWaXe/q
-	v1DS5fjQA==;
+	 bh=ja1gzrexv7OIHkVvRL7Rs+xToBP8LcNT3R0PYOOc0Eg=; b=c5ydjTkkGoiGuheSTiKtPIbcK
+	DfPuLJMcIQ5gmtAAmSs4HnbD5O+sAKO7nurwsC+ZTgJ37YwxyvGLNUIzp78Z/VRCF4D1EUHKcWINE
+	2lZRpV0zdvk83YAk8c4BqmDOM9IKOPZgRVCK7q7nyhS9NWfZWIpJIYgkdKBAUobKsau+Q9ReQJnTy
+	2x4GF3ptq4npqHWM+0Q6vewBY3/bC2qWfCHX68z5JND2lwhMO4NRglDRcWAvc+8DIchgE3cA/LcDN
+	NDDK81I+yD6jCZ7FJvVQhmTIgL2Mr9P3SkObUxIUWGHMWqudlVoNmYo8+x17nPpkVkt4btT89K4yu
+	WYytZdrBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1UmP-0008HG-G7; Tue, 11 Feb 2020 12:36:41 +0000
-Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
+	id 1j1Uos-00008e-Ng; Tue, 11 Feb 2020 12:39:14 +0000
+Received: from out4-smtp.messagingengine.com ([66.111.4.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1UmI-0008Gx-Ku
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 12:36:35 +0000
+ id 1j1Uoj-00008C-Hm
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 12:39:07 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.west.internal (Postfix) with ESMTP id EFD4A4B4;
- Tue, 11 Feb 2020 07:36:32 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Tue, 11 Feb 2020 07:36:33 -0500
+ by mailout.nyi.internal (Postfix) with ESMTP id E5D8D21C1B;
+ Tue, 11 Feb 2020 07:39:03 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Tue, 11 Feb 2020 07:39:03 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=I7R5t+oJ11Qar6Bmz2S2ooG/64p
- DbUaa5UgCCCyeYYI=; b=VENTfhDyNU/nohwR7QcAST69TqWSr2d/wNH8QI4jCOV
- ZXKmZISEUb1NIy0cYPA7o5viL1X2PUV8dJgQopnVbwobn55YC4itmjDotKUBgdLH
- Qkstu91VinoJbTDqHVjrm53PMMoZuBbBfX9Y/6J3JlqswtKyYY3cCVYJXyFF4v+C
- RmaPhGOtIU+EpOW7ubhCQFzenRC5prH/mNlLIRefhmYaXjMhgxg35IMUq8GOtBOs
- /QAdbY1LxBWZuKcB6jdHfmeKyjLgYQol2eBg3WdwN3bVo42xl1ipIdnkYmwBd3ZX
- DZzjRodSff6HojEljjyfODfRP6F5SLfOKBvw9hGhDvw==
+ :content-type:in-reply-to; s=fm2; bh=RC7CgfumKJMevq6aQ4QTK7DfJ2T
+ lGNm2F1ftNSwmRp0=; b=LpMBIVGbxGnLlp5k949vbdd8LYYfqjEGtpq6f4e9Kjy
+ K7sujZR0mofaNogXe0tNChjqqp0f49vR0hUBEScKWezfFJx2G34PVYseatKZNJdE
+ UzAyEvFSWPC3PZTtItU+JAtrsun0vK1+FOhmU4hATTVvE2aG3w+zvBispPKRMG+f
+ jZobJ9tTytWFgWq0GTImYfEBr8LQI1qbcaYI+kXL5MGKI9awcZ68Qh+OsBUG1TjT
+ BQsrkFnoJxIP6BfJ2Ldmd1UeFkdR63kwx32HwunVVgXh0pDZE7R1uOzQ1Im+5qcj
+ JHDx3m33+YylvFQ/Od7i05DILRkUI8FUpORktD8IJJg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=I7R5t+
- oJ11Qar6Bmz2S2ooG/64pDbUaa5UgCCCyeYYI=; b=PSSRAx3Sr76flVFaPwYeju
- U01EmzvXXbSc9lwAeE3eqb3m48/ue8uGxvq2btaHjA4qZGa1XNwp59IKQJUJL81+
- PgCckv834RPuE8gzWR3IFwUjC3gH7tX1tOB2REpyjDTBMf2yQeN+nDn6eeeOSeBV
- SMEeYPYZkQcSFG2Hnt4o39q1wmSgPtkuQtTmE2kn6gLdb3cO7L40b8/n0ffoJvan
- BFc9L7M/ZekXh6jveyeVfcxfI7aK0WJlxiEgCpeP5Gqmbb5Hod7+1UyJ72h40QaX
- QEmJ/Nlx2hjAHFBRoWb1XSbHIKciIYVdugl6t1HeFSkitvzKX0zccMhUOJXoGpBw
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=RC7Cgf
+ umKJMevq6aQ4QTK7DfJ2TlGNm2F1ftNSwmRp0=; b=YuewJ8ab4Vm4u+DI9eSsAr
+ GjpWumZZ3kVwX5wHUGIhGACGWivbDthTZ3PaLkbYg1o9Y2LSYQC6lZ8lrfBhd2WE
+ l0jUS5qmnYLiuGu92UUqUkl7VAh/GF+CFfjMC0tjdPHy9ifLBbqB3ZWs4PMnt86U
+ UfdL1fK2g0hpdS1Ju9GY8JUGn5vlCXa+QOFm3lXicVffYbBh0n+YVcqwG21p9Bkz
+ M3W3JD10h7nmEYG8c8WlLjY3orLoeU6rC+P24ew3nZ3tQMj4+6etACnEBRlxQcuC
+ 2WygKSsO3ngT5U6QYjjx540BnuOLevyQf6xjv4QaoYiKjN3b0P2zZN1xUGRmyrrA
  ==
-X-ME-Sender: <xms:0J9CXvnRjjoNZlhk1JZ1Dco2SSJjbr8w35Z4nORAVhopqX3KgSSb5g>
+X-ME-Sender: <xms:Z6BCXpcDrmPQFAbW-JWfBdaRmEGHDrMsjEzPLmoOsBOMOPxMxeRjMQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrieefgdegfecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtjeenucfhrhhomhepofgrgihimhgv
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
  ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
  fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:0J9CXgBwcrsu_M7ezj5uYaWvkPnLli_V2kn17-FTQOTVm2rmTu7dRg>
- <xmx:0J9CXto-5348sBthfsb1cIJQ1A4KDoCAuqKChW1QZBQDTjRSRz9Deg>
- <xmx:0J9CXoTFVjs5tBSmbU1F9CSGOxQbWhViRBjW34hQdCbfKpvFOmisAg>
- <xmx:0J9CXjhO54mLNf8FhFgmXyoHM95jMbwxzCVMT7NmjXqbUssrAdn1Ug>
+X-ME-Proxy: <xmx:Z6BCXiWa-E39X1cFemkiey1IT8cV2_m55GLx_Kz67f79iIWYI3fYDA>
+ <xmx:Z6BCXo6GIFBas5LEM8FjOb7_zxOb5x9c99x_ZZVXgynfn6HZvrcqXQ>
+ <xmx:Z6BCXt7ON8hx05vTHjIHUL8fvISO9qq4K3tPEVq_3Sry9tMWV3kndw>
+ <xmx:Z6BCXtO1V4NsOgzjY-WMJ4cYfwHovKV7EXewCsvPzCZKACvLgzioUA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 0952B30606E9;
- Tue, 11 Feb 2020 07:36:31 -0500 (EST)
-Date: Tue, 11 Feb 2020 13:36:30 +0100
+ by mail.messagingengine.com (Postfix) with ESMTPA id F04D63280064;
+ Tue, 11 Feb 2020 07:39:02 -0500 (EST)
+Date: Tue, 11 Feb 2020 13:39:01 +0100
 From: Maxime Ripard <maxime@cerno.tech>
-To: Nikolay Borisov <nborisov@suse.com>
-Subject: Re: [PATCH 2/3] arm64: dts: allwinner: a64: Add hwspinlock node
-Message-ID: <20200211123630.2l7liw73yaspy4eb@gilmour.lan>
-References: <20200210170143.20007-1-nborisov@suse.com>
- <20200210170143.20007-3-nborisov@suse.com>
- <20200211075543.ytsxizbysdosnx4p@gilmour.lan>
- <01e31d57-48ef-fd39-7c16-45401c70bb63@suse.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 2/3] iommu: Add Allwinner H6 IOMMU driver
+Message-ID: <20200211123901.nm6ajh5sxqurim6w@gilmour.lan>
+References: <cover.b2a9e1507135d81e726fcbb65137665a7f0ab74f.1579696927.git-series.maxime@cerno.tech>
+ <fe383c3f6fa0db772c87d9d9080add97efe9ba1a.1579696927.git-series.maxime@cerno.tech>
+ <a0bec2de-e87a-ddac-450e-b0f467158796@arm.com>
+ <20200127142256.us5zpcft5obd7zu6@gilmour.lan>
+ <99e9cb73-761f-3b30-bd73-c50aa7c21692@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <01e31d57-48ef-fd39-7c16-45401c70bb63@suse.com>
+In-Reply-To: <99e9cb73-761f-3b30-bd73-c50aa7c21692@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_043634_722170_9A81E570 
-X-CRM114-Status: GOOD (  19.37  )
+X-CRM114-CacheID: sfid-20200211_043905_732599_6A61C277 
+X-CRM114-Status: GOOD (  43.51  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.25 listed in list.dnswl.org]
+ low trust [66.111.4.28 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.28 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,6 +97,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,92 +109,227 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, bjorn.andersson@linaro.org
-Content-Type: multipart/mixed; boundary="===============2475330698104922522=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4881280182209409390=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2475330698104922522==
+--===============4881280182209409390==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="6l2jorwdcvauxt2v"
+	protocol="application/pgp-signature"; boundary="k7emksq7utbrovec"
 Content-Disposition: inline
 
 
---6l2jorwdcvauxt2v
-Content-Type: text/plain; charset=utf-8
+--k7emksq7utbrovec
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-On Tue, Feb 11, 2020 at 10:09:48AM +0200, Nikolay Borisov wrote:
->
->
-> On 11.02.20 =D0=B3. 9:55 =D1=87., Maxime Ripard wrote:
-> > Hi,
+Hi Robin,
+
+On Mon, Jan 27, 2020 at 07:01:02PM +0000, Robin Murphy wrote:
+> > > > +static void sun50i_iommu_domain_free(struct iommu_domain *domain)
+> > > > +{
+> > > > +	struct sun50i_iommu_domain *sun50i_domain = to_sun50i_domain(domain);
+> > > > +	struct sun50i_iommu *iommu = sun50i_domain->iommu;
+> > > > +	unsigned long flags;
+> > > > +	int i;
+> > > > +
+> > > > +	spin_lock_irqsave(&sun50i_domain->dt_lock, flags);
+> > > > +
+> > > > +	for (i = 0; i < NUM_DT_ENTRIES; i++) {
+> > > > +		phys_addr_t pt_phys;
+> > > > +		u32 *page_table;
+> > > > +		u32 *dte_addr;
+> > > > +		u32 dte;
+> > > > +
+> > > > +		dte_addr = &sun50i_domain->dt[i];
+> > > > +		dte = *dte_addr;
+> > > > +		if (!sun50i_dte_is_pt_valid(dte))
+> > > > +			continue;
+> > > > +
+> > > > +		memset(dte_addr, 0, sizeof(*dte_addr));
+> > > > +		sun50i_table_flush(sun50i_domain, virt_to_phys(dte_addr), 1);
+> > >
+> > > This shouldn't be necessary - freeing a domain while it's still live is an
+> > > incredibly very wrong thing to do, so the hardware should have already been
+> > > programmed to no longer walk this table by this point.
 > >
-> > On Mon, Feb 10, 2020 at 07:01:42PM +0200, Nikolay Borisov wrote:
-> >> Add a node describing the hwspinlock on A64.
-> >>
-> >> Signed-off-by: Nikolay Borisov <nborisov@suse.com>
-> >> ---
-> >>  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 9 +++++++++
-> >>  1 file changed, 9 insertions(+)
-> >>
-> >> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi b/arch/arm6=
-4/boot/dts/allwinner/sun50i-a64.dtsi
-> >> index 27e48234f1c2..01de89fc09cc 100644
-> >> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> >> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> >> @@ -1182,5 +1182,14 @@
-> >>  			interrupts =3D <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-> >>  			clocks =3D <&osc24M>;
-> >>  		};
-> >> +
-> >> +		hwspinlock: spinlock@1c18000 {
-> >
-> > Nodes are supposed to be ordered by ascending physical address
-> >
-> >> +			compatible =3D "allwinner,sun50i-a64-hwspinlock";
-> >> +			reg =3D <0x01c18000 0x1000>;
-> >> +			clocks =3D <&ccu CLK_BUS_SPINLOCK>;
-> >> +			resets =3D <&ccu RST_BUS_SPINLOCK>;
-> >> +			#hwlock-cells =3D <1>;
-> >> +			status =3D "disabled";
-> >
-> > Is there a reason to disable it?
+> > We never "garbage collect" and remove the dte for the page table we
+> > don't use anymore elsewhere though, so couldn't we end up in a
+> > situation where we don't have a page table (because it has been freed)
+> > at the other end of our dte, but the IOMMU doesn't know about it since
+> > we never flushed?
 >
-> I wondered about that - on the one hand we can safely leave it always
-> enabled, on the other hand all devices are are disabled in the dtsi.
-
-Not all of them, only the one that are connected to external pins. The
-PMU or GPU aren't for example.
-
-> > Also, my understanding was that hwspinlocks were meant to be used by
-> > client drivers, so surely we must tie them to other device nodes too,
-> > right?
+> Let me reiterate: at the point of freeing, the assumption is that this
+> domain should be long dissociated from the hardware. Any actual invalidation
+> should have already happened at the point the TTB was disabled or pointed to
+> some other domain, therefore fiddling with pagetable pages just before you
+> free them back to the kernel is just pointless busywork.
 >
-> Perhaps but at this point I'm not sure to which device specifically.
+> If the TTB *was* still live here, then as soon as you call free_pages()
+> below the DT memory could get reallocated by someone else and filled with
+> data that happens to look like valid pagetables, so even if you invalidate
+> the TLBs the hardware could just immediately go walk that data and refill
+> them with nonsense, thus any pretence at invalidation is in vain anyway.
 
-All the one that are shared with the ARISC core and needs some
-synchronisation with the firmware running there.
+Thanks, that makes a lot of sense.
 
+> The fly in the soup, however, is that default domains appear to be lacking
+> proper detach notifications (I hadn't consciously noticed that before), so
+> if you've been looking at the iommu_group_release() path it might have given
+> the wrong impression. So what might be justifiable here is to check if the
+> domain being freed is the one currently active in hardware, and if so
+> perform a detach (i.e. disable the TTB and invalidate everything) first,
+> then free everything as normal. Or just handwave that we essentially never
+> free a default domain anyway so it's OK to just assume that we're not
+> freeing anything live.
+
+I'm still a bit unsure as of what to do exactly here. I haven't found
+a hook that would be called when a given domain doesn't have any
+devices attached to it. Or did you mean that I should just create a
+separate function, not part of the IOMMU ops?
+
+> > > > +
+> > > > +	if (iommu->domain == domain)
+> > > > +		return 0;
+> > > > +
+> > > > +	if (iommu->domain)
+> > > > +		sun50i_iommu_detach_device(iommu->domain, dev);
+> > > > +
+> > > > +	iommu->domain = domain;
+> > > > +	sun50i_domain->iommu = iommu;
+> > > > +
+> > > > +	return pm_runtime_get_sync(iommu->dev);
+> > >
+> > > Deferring all the actual hardware pogramming to the suspend/resume hooks is
+> > > a fiendishly clever idea that took me more than a moment to make sense of,
+> > > but how well does it work when RPM is compiled out or runtime-inhibited?
+> >
+> > We have a bunch of other controllers that require runtime_pm already,
+> > so it's going to be enabled. But that should be expressed in Kconfig.
+>
+> But it can still be inhibited from sysfs, right? We don't want driver
+> behaviour to be *unnecessarily* fragile to user actions, however silly they
+> may be.
+
+That's a good point :)
+
+> > > Furthermore, basing RPM on having a domain attached means that
+> > > you'll effectively never turn the IOMMU off, even when all the
+> > > clients are idle. It would make more sene to use device links like
+> > > most other drivers do to properly model the producer/consumer
+> > > relationship.
+> >
+> > I'm not familiar with device links for runtime_pm, I thought this was
+> > only useful for system-wide resume and suspend?
+>
+> See DL_FLAG_PM_RUNTIME - we already have several IOMMU drivers taking full
+> advantage of this.
+
+I'll look into it, thanks!
+
+> > > > +static int __maybe_unused sun50i_iommu_resume(struct device *dev)
+> > > > +{
+> > > > +	struct sun50i_iommu_domain *sun50i_domain;
+> > > > +	struct sun50i_iommu *iommu;
+> > > > +	unsigned long flags;
+> > > > +	dma_addr_t dt_dma;
+> > > > +	int ret;
+> > > > +
+> > > > +	iommu = dev_get_drvdata(dev);
+> > > > +	if (!iommu->domain)
+> > > > +		return 0;
+> > > > +
+> > > > +	sun50i_domain = to_sun50i_domain(iommu->domain);
+> > > > +	dt_dma = dma_map_single(dev, sun50i_domain->dt, DT_SIZE, DMA_TO_DEVICE);
+> > >
+> > > As above. The power state of the IOMMU should be enitrely irrelevant to the
+> > > contents of RAM.
+> >
+> > Sorry, I should have put a comment here.
+> >
+> > I'm not quite sure what the difference between a group and domain in
+> > the IOMMU framework is, but since this IOMMU can only deal with a
+> > single address space, my understanding was that we'd need to allocate
+> > a single domain and group, and that the domain was the abstraction
+> > tied to an address space (since it's what is passed as an argument to
+> > map).
+>
+> That's correct, a domain is effectvely an address space, while groups
+> represents sets of devices that the IOMMU can isolate from each other.
+> IOMMUs like this one (and the MediaTek M4U in mtk_iommu.c) are a little
+> hard-done-by in that they do actually have some finer-grained isolation on a
+> basic allow/deny level, but the API really assumes that isolation happens at
+> the address space level, so it's easier to ignore it and just use the
+> single-group model anyway.
+>
+> The really neat advantage of having a guaranteed single group, though, is
+> that you then no longer need to care about address spaces: since the group
+> can only ever be attached to one domain at a time, you can have as many
+> domains as you like, and handle it by having the first attach_dev call on a
+> given domain context-switch that pagetable into the hardware. That's more or
+> less what you've done already, which is good, it would just benefit from
+> that context-switching being done in a more robust and obvious manner :)
+
+Got it, thanks :)
+
+> > So, given this, what made since was to allocate the directory table
+> > buffer at domain_alloc time and map it. But then, domain_alloc seems
+> > to not have any pointer back to the iommu we registered for some
+> > reason (I guess that a domain could be shared across multiple
+> > IOMMUs?), and so we don't have access to our IOMMU's struct device.
+>
+> I'll spare you the unrpoductive "Robin complains bitterly about the
+> iommu_domain_alloc() interface being terrible, episode #27"...
+>
+> You'll see two main ways that existing drivers work around that - if you're
+> happy to assume that you'll only ever have one IOMMU instance, or that all
+> instances will always be functionally equal, then you can simply keep track
+> of any old IOMMU device handle for DMA purposes (e.g. exynos_iommu);
+> otherwise if you might need to cope with multiple IOMMU instances having
+> different DMA capabilities then deferring instance-specific setup to the
+> first device attach is the de-facto standard (e.g. arm-smmu).
+
+I don't have any idea on how it's going to evolve, and the latter
+seems cleaner, I'll work on that.
+
+> > Also, a more general question. One of the cleanups I wanted to do was
+> > to remove the kmem_cache in favour of a dma_pool, which triggered that
+> > test. It looks like with a dma_pool, the physical address and dma
+> > address are not the same, even though the IOMMU is directly connected
+> > to the RAM so there should be no intermediate mapping. Do you know
+> > why?
+>
+> DMA pools are backed by dma_alloc_coherent, so (at least on arm64) the
+> virtual address you get will be a non-cacheable remap (assuming a
+> non-coherent device), and thus calling virt_to_phys() on it is bogus and
+> will give you nonsense.
+
+Going further off-topic, why do we need a remap instead of a regular
+physical address?
+
+Thanks!
 Maxime
 
---6l2jorwdcvauxt2v
+--k7emksq7utbrovec
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkKfzgAKCRDj7w1vZxhR
-xeTbAP9ftO6Qdrp1SHs/rMSLCzDfR38ctGu3b+Dgqy3GCQDt9AD/X2yDK6DG9QO1
-2PKRmcV4IvFjRLKrenplMZC5kw9WngM=
-=DzOJ
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkKgZQAKCRDj7w1vZxhR
+xW5kAP9+HpYTW0hNs5Io4MhBpg2UaLLrAj9DZNnZ7TQ/pLVtDQEA4d94SrILvtxn
+zhXcYGvkc/AnGeqyyJ3y43DBxoIrvAo=
+=gP1F
 -----END PGP SIGNATURE-----
 
---6l2jorwdcvauxt2v--
+--k7emksq7utbrovec--
 
 
---===============2475330698104922522==
+--===============4881280182209409390==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -201,5 +340,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2475330698104922522==--
+--===============4881280182209409390==--
 
