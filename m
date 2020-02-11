@@ -2,83 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBBD6159877
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:24:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B6C4159901
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:46:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pSQeamvwNAepNfxFzMRTtehnNcJhCzo1Utf4Sj3fzL8=; b=CE6bzsTTKM8LVt
-	mwnGxIRHKBBgcT94puZUP6t37P9xeuRcqyU+rPv+JH3GxI1NFOMxbRC3MgVJOxAkn7lmqxAOL2XYX
-	PovxyqPbhIg46rPAvDFxrZynlJ+RPGILR2We/Vzcfm/gr/Ri/xk1GMzfTT2V4YPIG7Bu+hNwHDf3u
-	sGFOjKgIpCZW4qEJqVe9e+01kVpar2xGMa9vyKel+El13Yj6YDn3htl+DmGbSQ8vK3flGNHuOfdkv
-	3RxLYKR+6+q1W0rVcqu65cAgHOiWooCHgtS1042srmPqZeaf0An7mKrCipZYiNQR2UR01eZa76gNI
-	cMkBn4yqM+DkxpvyfPJw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=zktt8TIDj3krk+RQ/gGGnRkcNVQN+G9rzX9cELWTVks=; b=ARf
+	1WHuB+NqGqeSvR5gUplVVqGz2+GcyabMq9Em2EDVwo1WycySMJL/3AGvJnKzrFf8+igod8spI1nL7
+	+waUl9FWz1DqhzxHv2yPb9ZUFGzJaE46h0gM3rDOiPo672xudVFE39mt31mGXngOiqT5gGqGrfWn2
+	dIantgG4+HUh0TXDUJQt4mwLNxSDayWZZvv/4gGOWS7Sj4x7Ww4GZvgJeIXzxfDJrVJucBaU/Pv6m
+	CM1oSjslFRA5cFJ3s2jvvEi47fP6QoecBb4Ax6zmlRbMg0PrK+HBN0N74SuN7ElznvNAnM8sMqWNH
+	nc22ezAcN726MBR6QIyNPeL1CFrGY6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1aDO-0002dN-7y; Tue, 11 Feb 2020 18:24:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1aDH-0002cw-13
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 18:24:48 +0000
-Received: from mail-qv1-f44.google.com (mail-qv1-f44.google.com
- [209.85.219.44])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 820D5206D6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 18:24:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581445486;
- bh=15RkB8/lsxkdGVyrfUT3PmibNwKSs3pakIPq9O2QKGA=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=A8Zqm6fJP2FLzduLIBDokEhN/2d/UrH1tTPxjD5ihd4BFsmr4U+TmlhZKIyLl5OeE
- y8tyZK1Z+LwxdaT3JO7a63fwdEV45iurNjgynCzt3Az2dG8qrc/SS5bt9W9L6m3vm8
- E4RlmQ+12GEi7n7znDshSniOcw1AMCbrmborQU5w=
-Received: by mail-qv1-f44.google.com with SMTP id db9so5456272qvb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 10:24:46 -0800 (PST)
-X-Gm-Message-State: APjAAAU3KyloD0gcH/00nkJ5nLDpVB3uazuxXaRhRtf184Aw05UPlfNg
- fuRXoCqN/RWofw8/Vo2zk6jdeojEjFgnUrSp+w==
-X-Google-Smtp-Source: APXvYqxfEK6hEL7IX2KvoJP4sjzXqu7vc6OB5e1z94Q1gXnPXU2WIumcI1fS/UN5s1vfda4olh8aSlNY95DTbeSQkqo=
-X-Received: by 2002:a05:6214:11ac:: with SMTP id
- u12mr4114530qvv.85.1581445485691; 
- Tue, 11 Feb 2020 10:24:45 -0800 (PST)
-MIME-Version: 1.0
-References: <cover.1580570160.git.saiprakash.ranjan@codeaurora.org>
- <ff71077aa09c489b2b072c6f5605dccb96f60051.1580570160.git.saiprakash.ranjan@codeaurora.org>
- <20200206183808.GA5019@bogus>
- <f26464226f74dffe2db0583b9482a489@codeaurora.org>
-In-Reply-To: <f26464226f74dffe2db0583b9482a489@codeaurora.org>
-From: Rob Herring <robh@kernel.org>
-Date: Tue, 11 Feb 2020 12:24:34 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqKeytW=k5efjcfcuK6vbGggdO9nVdwq7YGNtMpzPQHWMg@mail.gmail.com>
-Message-ID: <CAL_JsqKeytW=k5efjcfcuK6vbGggdO9nVdwq7YGNtMpzPQHWMg@mail.gmail.com>
-Subject: Re: [PATCHv2 2/2] dt-bindings: watchdog: Add compatible for QCS404,
- SC7180, SDM845, SM8150
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+	id 1j1aY6-0004cG-Kr; Tue, 11 Feb 2020 18:46:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1aXy-0004bK-Su
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 18:46:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 939771FB;
+ Tue, 11 Feb 2020 10:46:04 -0800 (PST)
+Received: from e108754-lin.cambridge.arm.com (e108754-lin.cambridge.arm.com
+ [10.1.198.52])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 620113F68F;
+ Tue, 11 Feb 2020 10:46:02 -0800 (PST)
+From: Ionela Voinescu <ionela.voinescu@arm.com>
+To: catalin.marinas@arm.com, will@kernel.org, mark.rutland@arm.com,
+ maz@kernel.org, suzuki.poulose@arm.com, sudeep.holla@arm.com,
+ lukasz.luba@arm.com, valentin.schneider@arm.com, rjw@rjwysocki.net,
+ ionela.voinescu@arm.com
+Subject: [PATCH v3 0/7] arm64: ARMv8.4 Activity Monitors support
+Date: Tue, 11 Feb 2020 18:45:35 +0000
+Message-Id: <20200211184542.29585-1-ionela.voinescu@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_102447_113420_42E8C731 
-X-CRM114-Status: GOOD (  16.90  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200211_104611_022681_D2C36CC7 
+X-CRM114-Status: GOOD (  17.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,84 +62,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, devicetree-owner@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Douglas Anderson <dianders@chromium.org>, Stephen Boyd <swboyd@chromium.org>,
- Andy Gross <agross@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Matthias Kaehlcke <mka@chromium.org>, Guenter Roeck <linux@roeck-us.net>
+Cc: linux-doc@vger.kernel.org, peterz@infradead.org, viresh.kumar@linaro.org,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, mingo@redhat.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 7, 2020 at 12:10 AM Sai Prakash Ranjan
-<saiprakash.ranjan@codeaurora.org> wrote:
->
-> Hi Rob,
->
-> On 2020-02-07 00:08, Rob Herring wrote:
-> > On Sat, Feb 01, 2020 at 08:59:49PM +0530, Sai Prakash Ranjan wrote:
-> >> Add missing compatible for watchdog timer on QCS404,
-> >> SC7180, SDM845 and SM8150 SoCs.
-> >
-> > That's not what the commit does. You are changing what's valid.
-> >
-> > One string was valid, now 2 are required.
-> >
->
-> Does this look good?
+These patches introduce support for the Activity Monitors Unit (AMU)
+CPU extension, an optional extension in ARMv8.4 CPUs. This provides
+performance counters intended for system management use. Two of these
+counters are then used to compute the frequency scale correction
+factor needed to achieve frequency invariance.
 
-No. First of all, what's the base for the diff? It's not what you
-originally had nor incremental on top of this patch.
+With the CONFIG_ARM64_AMU_EXTN enabled and lacking the disable_amu
+kernel parameter, the kernel is able to safely run a mix of CPUs with
+and without support for the AMU extension. The AMU capability is
+unconditionally enabled in the kernel as to allow any late CPU to use
+the feature: the cpu_enable function will be called for all CPUs that
+match the criteria, including secondary and hotplugged CPUs, marking
+this feature as present on that respective CPU.
 
-Second, a value of 'qcom,kpss-timer' or 'qcom,kpss-wdt' or
-'qcom,scss-timer' will fail validation because 2 clauses of 'oneOf'
-will be true.
+To be noted that firmware must implement AMU support when running on
+CPUs that present the activity monitors extension: allow access to
+the registers from lower exception levels, enable the counters,
+implement save and restore functionality. More details can be found
+in the documentation.
 
->
-> diff --git a/Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml
-> b/Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml
-> index 46d6aad5786a..3378244b67cd 100644
-> --- a/Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml
-> +++ b/Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml
-> @@ -14,19 +14,22 @@ allOf:
->
->   properties:
->     compatible:
-> -    items:
-> +    oneOf:
->         - enum:
->             - qcom,apss-wdt-qcs404
->             - qcom,apss-wdt-sc7180
->             - qcom,apss-wdt-sdm845
->             - qcom,apss-wdt-sm8150
-> -          - qcom,kpss-timer
-> -          - qcom,kpss-wdt
->             - qcom,kpss-wdt-apq8064
->             - qcom,kpss-wdt-ipq4019
->             - qcom,kpss-wdt-ipq8064
->             - qcom,kpss-wdt-msm8960
-> +          - qcom,kpss-timer
-> +          - qcom,kpss-wdt
->             - qcom,scss-timer
-> +      - const: qcom,kpss-timer
-> +      - const: qcom,kpss-wdt
-> +      - const: qcom,scss-timer
->
->     reg:
->       maxItems: 1
->
-> Thanks,
-> Sai
->
-> --
-> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a
-> member
-> of Code Aurora Forum, hosted by The Linux Foundation
+Given that the activity counters inform on activity on the CPUs, and 
+that not all CPUs might implement the extension, for functional and 
+security reasons, it's best to disable access to the AMU registers
+from userspace (EL0) and KVM guests.
+
+In the last patch of the series, two of the AMU counters are used to
+compute the frequency scale factor needed to achieve frequency
+invariance of signals in the scheduler, based on an interface added
+to support counter-based frequency invariance - arch_scale_freq_tick.
+The interface and update point for the counter-based frequency scale
+factor is based on the similar approach in the patch that introduces
+frequency invariance for x86 [1]. 
+
+The current series is based on tip/sched/core.
+
+Testing:
+ - Build tested for multiple architectures and defconfigs.
+ - AMU feature detection, EL0 and KVM guest access to AMU registers,
+   feature support in firmware (version 1.5 and later of the ARM 
+   Trusted Firmware) was tested on an Armv8-A Base Platform FVP:
+   Architecture Envelope Model [2] (supports version 8.0 to 8.5),
+   with the following configurations:
+
+   cluster0.has_arm_v8-4=1
+   cluster1.has_arm_v8-4=1
+   cluster0.has_amu=1
+   cluster1.has_amu=1
+
+v2 -> v3:
+ - v2 can be found at [4]
+ - [1/7] used cpumask instead of per-cpu variable to flag AMU presence
+   as; introduced disable_amu kernel parameter; removed ftr_id_pfr0 AMU
+   bits - recommended by Suzuki.
+ - [2/7] replaced obscure label as recommended by Valentin.
+ - [3/7] clarified activate_traps_vhe comment
+ - [4/7] dropped changes in arm64/cpu-feature-registers.txt; removed
+   use of variable names - recommended by Suzuki
+ - previous [5/6] - dropped as [1] as added to tip/sched/core
+ - [5/7] new patch introduced to cleanly obtain maximum hardware
+   frequency from cpufreq
+ - [6/7] (previously [6/6]):
+   - Removed use of workqueues by limiting the validation work done on
+     each cpu to the setting of the reference per-cpu counter variables.
+     This is now called directly from cpu_enable (cpufeature.c). Also,
+     further CPU, policy and system validation is done in a
+     late_initcall_sync function - waits for deferred probe work to
+     finish as well to ensure the maximum frequency is set by either
+     cpufreq drivers or platform drivers - recommended by Lukasz.
+   - Improved AMU use detection for CPUs in arch_set_freq_scale -
+     recommended by Lukasz.
+   - Properly validated arch_max_freq_scale and added detailed
+     documentation for how arch_max_freq_scale and freq_scale are
+     obtained based on counters - recommended by Valentin.
+   - Overall - limited tight coupling between AMU use and cpufreq
+     (use of maximum frequency information and policy validation).
+ - [7/7] introduced patch to warn if arch_timer_rate is too low
+   - functionality provided by Valentin.
+   
+
+v1 -> v2:
+ - v1 can be found at [3]
+ - Added patches that use the counters for the scheduler's frequency
+   invariance engine
+ - In patch arm64: add support for the AMU extension v1 - 
+    - Defined an accessor function cpu_has_amu_feat to allow a read
+      of amu_feat only from the current CPU, to ensure the safe use
+      of the per-cpu variable for the current user (arm64 topology
+      driver) and future users.
+    - Modified type of amu_feat from bool to u8 to satisfy sparse
+      checker's warning 'expression using sizeof _Bool [sparse]',
+      as the size of bool is compiler dependent.
+
+[1] https://lore.kernel.org/lkml/20200122151617.531-1-ggherdovich@suse.cz/
+[2] https://developer.arm.com/tools-and-software/simulation-models/fixed-virtual-platforms
+[3] https://lore.kernel.org/lkml/20190917134228.5369-1-ionela.voinescu@arm.com/
+[4] https://lore.kernel.org/lkml/20191218182607.21607-1-ionela.voinescu@arm.com/
+
+Ionela Voinescu (6):
+  arm64: add support for the AMU extension v1
+  arm64: trap to EL1 accesses to AMU counters from EL0
+  arm64/kvm: disable access to AMU registers from kvm guests
+  Documentation: arm64: document support for the AMU extension
+  cpufreq: add function to get the hardware max frequency
+  arm64: use activity monitors for frequency invariance
+
+Valentin Schneider (1):
+  clocksource/drivers/arm_arch_timer: validate arch_timer_rate
+
+ .../admin-guide/kernel-parameters.txt         |  10 +
+ Documentation/arm64/amu.rst                   | 114 +++++++++++
+ Documentation/arm64/booting.rst               |  14 ++
+ Documentation/arm64/index.rst                 |   1 +
+ arch/arm64/Kconfig                            |  31 +++
+ arch/arm64/include/asm/assembler.h            |  10 +
+ arch/arm64/include/asm/cpucaps.h              |   3 +-
+ arch/arm64/include/asm/cpufeature.h           |   5 +
+ arch/arm64/include/asm/kvm_arm.h              |   1 +
+ arch/arm64/include/asm/sysreg.h               |  38 ++++
+ arch/arm64/include/asm/topology.h             |  16 ++
+ arch/arm64/kernel/cpufeature.c                | 101 ++++++++++
+ arch/arm64/kernel/topology.c                  | 185 ++++++++++++++++++
+ arch/arm64/kvm/hyp/switch.c                   |  14 +-
+ arch/arm64/kvm/sys_regs.c                     |  93 ++++++++-
+ arch/arm64/mm/proc.S                          |   3 +
+ drivers/base/arch_topology.c                  |   8 +
+ drivers/clocksource/arm_arch_timer.c          |  18 +-
+ drivers/cpufreq/cpufreq.c                     |  20 ++
+ include/linux/cpufreq.h                       |   5 +
+ include/linux/topology.h                      |   7 +
+ 21 files changed, 690 insertions(+), 7 deletions(-)
+ create mode 100644 Documentation/arm64/amu.rst
+
+
+base-commit: 25ac227a25ac946e0356772012398cd1710a8bab
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
