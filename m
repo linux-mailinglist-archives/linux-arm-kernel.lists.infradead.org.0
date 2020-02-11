@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E09D215977A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:59:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F76D159779
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:59:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+l2vAKUc4ZiUWro7WD1asr6UeZTx9QKGxxv1zG/lKKw=; b=RtVS5pFm2z4tXD
-	33ifHFVMKN2PcihzxJuYKnRPtTTX9D836SwvKgql/81d+U6TZkt+ObeZvpetv59sj/p84bxgjT9pT
-	kW7R/UbHsby889pZAKMgza2LCnP4XLxO6Vja0/twqSBQ5CR8qJIIyZTnjby09qMNyAw2HR1zoVdbm
-	5Htuthlp6s4QOkDBCUR34IPNavR24O67rHDM5uo7/ECxVPifZs8+7HWGx/sJlrneWCYEGNlacpUiW
-	xuQRkL2wyKYbmzNq6gAUh3iCxyJg7mAXQYFyZcb2MAMyvaE+uFv9pDfcBVXxd4xQltsMHxGnGI34e
-	XeCsytZ7mJj9TLynKcgA==;
+	List-Owner; bh=5bLR4S2Jgtqqr+lti5fcc8Y0B1lbNKJmMO6kidbNCp0=; b=I+7QjmUpsmpD/S
+	G9ZjCN4ZNILXHkX4gK2w/KU6Xia8vipjtkFbdrUHksbdp7EFNZFpo5Gzgf2SDXjskx/Ax41RtPrdL
+	+JXbx9kug7MVFtgEE76avo+XR+KBhcIONEGPu5rdjd8in96MlYiCQCzrDTsLxg2wAKdB296Ns5tyC
+	oHW8dps4QWDeRHr3b2VAp3W1UEFSiaFmsCrWRYRxRJm4H/bYiNR1qjGKfgYRls0XhO2ttk3+DAWLA
+	82MR63Moo5onhvsgTU+J+ZqPHzs5zyej95KhqG5GpITZ9I5Rf/qKILxoYz91+GhG7GVed6B+9SReq
+	4b9R3WLOtbSa4Fakhn8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1ZpD-0001Sc-SC; Tue, 11 Feb 2020 17:59:55 +0000
+	id 1j1Zp0-0001CN-Ry; Tue, 11 Feb 2020 17:59:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ZhA-0001nN-VN
+ id 1j1ZhB-0001oS-UN
  for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:51:40 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B11DD20578;
- Tue, 11 Feb 2020 17:51:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 84ACA20661;
+ Tue, 11 Feb 2020 17:51:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581443495;
- bh=vJgCeyNhc/zjTIzrf5MG6+BOepmc9H4if6t7gh/kTSw=;
+ s=default; t=1581443497;
+ bh=c5I/DnWBHK7CF1Hug7c8EUPZyhvhzoIsYWcfsfMzPEo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ge+7LsrMQjgNYp3YORkBfaJvbrDPYo1v/5naMcnSuHcXLhaRrtON8wAkI3dHwSLkX
- 81ziN2BC0cmYcNCwOpLvcxQuA1z9tF948+ntPi8gRPCGV6VAQmWmr8JotPIGO7tyGD
- J7gUxDJX7x4va5Hm7y7Tf+CdhP24aakywn+rO2pI=
+ b=1NNVhjng+8MtN6zoASSmNHt5TCZkZPglFujZ+pmQ1HsXWEDqvuxwzYXoM7NRAuYd+
+ PdGvtwsFIRccT+3waMwUvPNFQbebRWD12fTMZjWfiatJ7WseUp48snhPHHiXjreg1z
+ 54JTpTcmoQK7v2Uvo+PqTYX+//AHEHzlP59VlY1g=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j1ZgJ-004O7k-4I; Tue, 11 Feb 2020 17:50:43 +0000
+ id 1j1ZgL-004O7k-ET; Tue, 11 Feb 2020 17:50:45 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 84/94] KVM: arm64: VNCR-ize SP_EL1
-Date: Tue, 11 Feb 2020 17:49:28 +0000
-Message-Id: <20200211174938.27809-85-maz@kernel.org>
+Subject: [PATCH v2 88/94] KVM: arm64: Add ARMv8.4 Enhanced Nested Virt
+ cpufeature
+Date: Tue, 11 Feb 2020 17:49:32 +0000
+Message-Id: <20200211174938.27809-89-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200211174938.27809-1-maz@kernel.org>
 References: <20200211174938.27809-1-maz@kernel.org>
@@ -61,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_095138_421026_360B8333 
-X-CRM114-Status: GOOD (  13.24  )
+X-CRM114-CacheID: sfid-20200211_095138_729288_23F2BAE0 
+X-CRM114-Status: GOOD (  13.41  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,91 +103,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SP_EL1 being a VNCR-capable register, let's flag it as such, and
-repaint all the accesses
+Add the detection code for the ARMv8.4-NV feature.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/include/asm/kvm_host.h | 3 +--
- arch/arm64/kvm/guest.c            | 2 +-
- arch/arm64/kvm/hyp/sysreg-sr.c    | 4 ++--
- arch/arm64/kvm/sys_regs.c         | 5 ++---
- 4 files changed, 6 insertions(+), 8 deletions(-)
+ arch/arm/include/asm/kvm_nested.h   |  1 +
+ arch/arm64/include/asm/cpucaps.h    |  3 ++-
+ arch/arm64/include/asm/kvm_nested.h |  6 ++++++
+ arch/arm64/kernel/cpufeature.c      | 10 ++++++++++
+ 4 files changed, 19 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index a497e7970418..fe6d5a3bc338 100644
---- a/arch/arm64/include/asm/kvm_host.h
-+++ b/arch/arm64/include/asm/kvm_host.h
-@@ -265,6 +265,7 @@ enum vcpu_sysreg {
- 	VNCR(AMAIR_EL1),/* Aux Memory Attribute Indirection Register */
- 	VNCR(MDSCR_EL1),/* Monitor Debug System Control Register */
- 	VNCR(ELR_EL1),
-+	VNCR(SP_EL1),
- 	VNCR(VPIDR_EL2),/* Virtualization Processor ID Register */
- 	VNCR(VMPIDR_EL2),/* Virtualization Multiprocessor ID Register */
- 	VNCR(HCR_EL2),	/* Hypervisor Configuration Register */
-@@ -335,8 +336,6 @@ enum vcpu_sysreg {
- struct kvm_cpu_context {
- 	struct user_pt_regs regs;	/* sp = sp_el0 */
+diff --git a/arch/arm/include/asm/kvm_nested.h b/arch/arm/include/asm/kvm_nested.h
+index 2b89e6fa7323..1b97863ae811 100644
+--- a/arch/arm/include/asm/kvm_nested.h
++++ b/arch/arm/include/asm/kvm_nested.h
+@@ -5,6 +5,7 @@
+ #include <linux/kvm_host.h>
  
--	u64	sp_el1;
--
- 	u64	spsr[KVM_NR_SPSR];
+ static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu) { return false; }
++static inline bool enhanced_nested_virt_in_use(const struct kvm_vcpu *vcpu) { return false; }
+ static inline void check_nested_vcpu_requests(struct kvm_vcpu *vcpu) {}
  
- 	struct user_fpsimd_state fp_regs;
-diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
-index 40ef6758266d..869017e50464 100644
---- a/arch/arm64/kvm/guest.c
-+++ b/arch/arm64/kvm/guest.c
-@@ -125,7 +125,7 @@ static void *core_reg_addr(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
- 		return &vcpu->arch.ctxt.regs.pstate;
+ #endif /* __ARM_KVM_NESTED_H */
+diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
+index 5736650cd0fb..565e4878e301 100644
+--- a/arch/arm64/include/asm/cpucaps.h
++++ b/arch/arm64/include/asm/cpucaps.h
+@@ -60,7 +60,8 @@
+ #define ARM64_HAS_RNG				50
+ #define ARM64_HAS_NESTED_VIRT			51
+ #define ARM64_HAS_ARMv8_4_TTL			52
++#define ARM64_HAS_ENHANCED_NESTED_VIRT		53
  
- 	case KVM_REG_ARM_CORE_REG(sp_el1):
--		return &vcpu->arch.ctxt.sp_el1;
-+		return __ctxt_sys_reg(&vcpu->arch.ctxt, SP_EL1);
+-#define ARM64_NCAPS				53
++#define ARM64_NCAPS				54
  
- 	case KVM_REG_ARM_CORE_REG(elr_el1):
- 		return __vcpu_elr_el1(vcpu);
-diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
-index 10ce7a6a0c6c..e5359cd39b32 100644
---- a/arch/arm64/kvm/hyp/sysreg-sr.c
-+++ b/arch/arm64/kvm/hyp/sysreg-sr.c
-@@ -58,7 +58,7 @@ static void __hyp_text __sysreg_save_vel1_state(struct kvm_cpu_context *ctxt)
- 	ctxt_sys_reg(ctxt, AMAIR_EL1)	= read_sysreg_el1(SYS_AMAIR);
- 	ctxt_sys_reg(ctxt, CNTKCTL_EL1)	= read_sysreg_el1(SYS_CNTKCTL);
- 
--	ctxt->sp_el1			= read_sysreg(sp_el1);
-+	ctxt_sys_reg(ctxt, SP_EL1)	= read_sysreg(sp_el1);
- 	ctxt_sys_reg(ctxt, ELR_EL1)	= read_sysreg_el1(SYS_ELR);
- 	ctxt->spsr[KVM_SPSR_EL1]	= read_sysreg_el1(SYS_SPSR);
+ #endif /* __ASM_CPUCAPS_H */
+diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
+index 3e3778d3cec6..284c794a10ac 100644
+--- a/arch/arm64/include/asm/kvm_nested.h
++++ b/arch/arm64/include/asm/kvm_nested.h
+@@ -11,6 +11,12 @@ static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
+ 		test_bit(KVM_ARM_VCPU_HAS_EL2, vcpu->arch.features);
  }
-@@ -323,7 +323,7 @@ static void __hyp_text __sysreg_restore_vel1_state(struct kvm_cpu_context *ctxt)
- 		write_sysreg_el1(ctxt_sys_reg(ctxt, TCR_EL1),	SYS_TCR);
- 	}
  
--	write_sysreg(ctxt->sp_el1,			sp_el1);
-+	write_sysreg(ctxt_sys_reg(ctxt, SP_EL1),	sp_el1);
- 	write_sysreg_el1(ctxt_sys_reg(ctxt, ELR_EL1),	SYS_ELR);
- 	write_sysreg_el1(ctxt->spsr[KVM_SPSR_EL1],	SYS_SPSR);
- }
-diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index dc1b75a37f00..2c3e90e192b4 100644
---- a/arch/arm64/kvm/sys_regs.c
-+++ b/arch/arm64/kvm/sys_regs.c
-@@ -1803,11 +1803,10 @@ static bool access_sp_el1(struct kvm_vcpu *vcpu,
- 			  struct sys_reg_params *p,
- 			  const struct sys_reg_desc *r)
- {
--	/* SP_EL1 is NOT maintained in sys_regs array */
- 	if (p->is_write)
--		vcpu->arch.ctxt.sp_el1 = p->regval;
-+		__vcpu_sys_reg(vcpu, SP_EL1) = p->regval;
- 	else
--		p->regval = vcpu->arch.ctxt.sp_el1;
-+		p->regval = __vcpu_sys_reg(vcpu, SP_EL1);
- 
- 	return true;
- }
++static inline bool enhanced_nested_virt_in_use(const struct kvm_vcpu *vcpu)
++{
++	return cpus_have_const_cap(ARM64_HAS_ENHANCED_NESTED_VIRT) &&
++		nested_virt_in_use(vcpu);
++}
++
+ extern void kvm_init_nested(struct kvm *kvm);
+ extern int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu);
+ extern void kvm_init_nested_s2_mmu(struct kvm_s2_mmu *mmu);
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index aada8c3eff1e..546aceb70c3f 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1454,6 +1454,16 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 		.field_pos = ID_AA64MMFR2_NV_SHIFT,
+ 		.min_field_value = 1,
+ 	},
++	{
++		.desc = "Enhanced Nested Virtualization Support",
++		.capability = ARM64_HAS_ENHANCED_NESTED_VIRT,
++		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
++		.matches = has_nested_virt_support,
++		.sys_reg = SYS_ID_AA64MMFR2_EL1,
++		.sign = FTR_UNSIGNED,
++		.field_pos = ID_AA64MMFR2_NV_SHIFT,
++		.min_field_value = 2,
++	},
+ #endif	/* CONFIG_ARM64_VHE */
+ 	{
+ 		.desc = "32-bit EL0 Support",
 -- 
 2.20.1
 
