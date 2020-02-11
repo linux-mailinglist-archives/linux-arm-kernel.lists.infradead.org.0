@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5719B159776
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:59:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C3EB15975B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:56:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WHwUB5tZaGImxqipZnAVAbYx7QDPuim0C/3QwwT/kN4=; b=sErn0khl7cEYQK
-	vLYMABbd6kDWaOFFujtTEuIth4YQYxUQXHj8oW4191/JKp0MIxZxG2AfL6MM7Xj+i6nQGEY0AE829
-	d2y8o0/ZFM4/0eNUgvyD00ak5tQVZbVp4cDoVK7OFUcSwB+7YTlEk0rYkiEDoVg/YZvDKT/pWCnQB
-	BQLYphUqehEjGGoNKlo4s+NTfwewUtz9RM09W/CdO/xK+pI/50Wswl+IWcDmyRrDLNKQpX2dt+sQC
-	US5wDHQ2+tTLXQdUnG/bgXPotIm6OLX9lwPJM1KvAg76TupXu5sRVCsjAJIhOAd6yeFQFI4oDgcEg
-	HMFY7LW68N/3LjUdc9tg==;
+	List-Owner; bh=YDcKQQCDY993+P+g1nZhxRmifW4p5E17VHm7rLF1nXM=; b=loBk1QS07xBGza
+	A0TGLdQ5tchJpqPd/p8Oq7A0mFsVEcL2cvDH7wVy8y2XhIWmNlX+e8Q2/1nlzKWvF+DhCmnuDYMJv
+	3MEWP65VwvOurd2SuayEgGLBejW4JCehuJO7Gv5THxtjH4LMtAQOH4XvyAKJUdxz/mnaLw5cTS6v6
+	rAWR1+Pt9V1tdLXAmVQjENB47JUvknNuRPDi5e1rHKGfv9AG39+Am1RuFgzCJvLVkGSaM1zv4BV7m
+	71awDGFJDGchFrKtqaoXmcAhU+JDqAdSBtreQFc4p7iWZ9vaoE7aXYFkz9QoAwIFeMnPwIpRj/WXm
+	F9/oA1b6t/Y/OJ54WJhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1ZoT-0000em-Jr; Tue, 11 Feb 2020 17:59:09 +0000
+	id 1j1ZlG-00062i-UM; Tue, 11 Feb 2020 17:55:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Zh9-0001mE-71
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:51:38 +0000
+ id 1j1Zgj-0001LH-9S
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:51:11 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D14EA20870;
- Tue, 11 Feb 2020 17:51:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A132F20661;
+ Tue, 11 Feb 2020 17:51:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581443494;
- bh=nuQ0MN9/FGm7i28EpIRwCZK8BlzSNLL3qWI84G027to=;
+ s=default; t=1581443468;
+ bh=Z3onEQv/IXIZ013PZdwmQdOHfXMbJRbewu8CHqkz7os=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rolyyoPuIhxBuyT6P+LDNWJEt7S0gbHBnRuxoO3pDpiT1W3uvPTj54mfLnzGvNJn+
- KGORkhoUe9fKJI85d88XUE62BTUZwT1FxXGoyWmWoujF8nsrfh+zkCLbhaVjmtYsnp
- xDROX7tA1ILiT/6yP4V63hBMwenL6EBKRL7IXBU0=
+ b=GpBHejrSDUjNoXNcLBM8yMYdUM3B3eFduNz/xHkzG3De0iQxbdcDGA7R8R9GUr0mJ
+ AOwZeHnpohFEN3Vc/aBrdQITAtjS9R2LC/TV1Pd6zGjT5D9E3JvII63Om0/Xxbt7LB
+ IEHgEH6Uc0oHXjoBri7KqEPZ9y3hPZIaJm1ou5pU=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j1Zfp-004O7k-5C; Tue, 11 Feb 2020 17:50:13 +0000
+ id 1j1Zfr-004O7k-1O; Tue, 11 Feb 2020 17:50:15 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 34/94] KVM: arm64: nv: Use ARMv8.5-GTG to advertise
- supported Stage-2 page sizes
-Date: Tue, 11 Feb 2020 17:48:38 +0000
-Message-Id: <20200211174938.27809-35-maz@kernel.org>
+Subject: [PATCH v2 37/94] KVM: arm64: nv: Support multiple nested Stage-2 mmu
+ structures
+Date: Tue, 11 Feb 2020 17:48:41 +0000
+Message-Id: <20200211174938.27809-38-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200211174938.27809-1-maz@kernel.org>
 References: <20200211174938.27809-1-maz@kernel.org>
@@ -62,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_095135_420352_EC5D4E7C 
-X-CRM114-Status: GOOD (  12.68  )
+X-CRM114-CacheID: sfid-20200211_095109_453496_C177D4A2 
+X-CRM114-Status: GOOD (  28.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,75 +103,523 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ARMv8.5-GTG gives the opportunity to advertize the supported Stage-2
-page sizes to hypervisors, and allow them to differ from the page sizes
-supported at Stage-1.
+Add Stage-2 mmu data structures for virtual EL2 and for nested guests.
+We don't yet populate shadow Stage-2 page tables, but we now have a
+framework for getting to a shadow Stage-2 pgd.
 
-As KVM cannot support guest Stage-2 page sizes that are smaller than
-PAGE_SIZE (it would break the guest's isolation guarantees), let's use
-this feature to let the guest know (assuming it has been told about
-ARMv8.5-GTG).
+We allocate twice the number of vcpus as Stage-2 mmu structures because
+that's sufficient for each vcpu running two translation regimes without
+having to flush the Stage-2 page tables.
 
+Co-developed-by: Christoffer Dall <christoffer.dall@arm.com>
+Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/include/asm/sysreg.h |  3 +++
- arch/arm64/kvm/nested.c         | 29 +++++++++++++++++++++++++++++
- 2 files changed, 32 insertions(+)
+ arch/arm/include/asm/kvm_host.h     |   4 +
+ arch/arm/include/asm/kvm_mmu.h      |   3 +
+ arch/arm64/include/asm/kvm_host.h   |  29 +++++
+ arch/arm64/include/asm/kvm_mmu.h    |   8 ++
+ arch/arm64/include/asm/kvm_nested.h |   7 ++
+ arch/arm64/kvm/nested.c             | 188 ++++++++++++++++++++++++++++
+ virt/kvm/arm/arm.c                  |  16 ++-
+ virt/kvm/arm/mmu.c                  |  24 ++--
+ 8 files changed, 268 insertions(+), 11 deletions(-)
 
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 360ef9e8dfe4..a167219e42f4 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -701,6 +701,9 @@
- #define ID_AA64ZFR0_SVEVER_SVE2		0x1
+diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
+index f43a68d8ea50..0a81c454a540 100644
+--- a/arch/arm/include/asm/kvm_host.h
++++ b/arch/arm/include/asm/kvm_host.h
+@@ -463,4 +463,8 @@ static inline bool kvm_arm_vcpu_is_finalized(struct kvm_vcpu *vcpu)
+ 	return true;
+ }
  
- /* id_aa64mmfr0 */
-+#define ID_AA64MMFR0_TGRAN4_2_SHIFT	40
-+#define ID_AA64MMFR0_TGRAN64_2_SHIFT	36
-+#define ID_AA64MMFR0_TGRAN16_2_SHIFT	32
- #define ID_AA64MMFR0_TGRAN4_SHIFT	28
- #define ID_AA64MMFR0_TGRAN64_SHIFT	24
- #define ID_AA64MMFR0_TGRAN16_SHIFT	20
++static inline void kvm_vcpu_load_hw_mmu(struct kvm_vcpu *vcpu) {}
++static inline void kvm_vcpu_put_hw_mmu(struct kvm_vcpu *vcpu) {}
++static inline int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu) { return 0; }
++
+ #endif /* __ARM_KVM_HOST_H__ */
+diff --git a/arch/arm/include/asm/kvm_mmu.h b/arch/arm/include/asm/kvm_mmu.h
+index 2d49950f8634..8727fde21b8f 100644
+--- a/arch/arm/include/asm/kvm_mmu.h
++++ b/arch/arm/include/asm/kvm_mmu.h
+@@ -420,6 +420,9 @@ static inline int hyp_map_aux_data(void)
+ 
+ static inline int kvm_set_ipa_limit(void) { return 0; }
+ 
++static inline void kvm_init_s2_mmu(struct kvm_s2_mmu *mmu) {}
++static inline void kvm_init_nested(struct kvm *kvm) {}
++
+ static __always_inline u64 kvm_get_vttbr(struct kvm_s2_mmu *mmu)
+ {
+ 	struct kvm_vmid *vmid = &mmu->vmid;
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index 42ca60c8b4c8..18e12d00c16d 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -77,11 +77,40 @@ struct kvm_s2_mmu {
+ 	phys_addr_t	pgd_phys;
+ 
+ 	struct kvm *kvm;
++
++	/*
++	 * For a shadow stage-2 MMU, the virtual vttbr programmed by the guest
++	 * hypervisor.  Unused for kvm_arch->mmu. Set to 1 when the structure
++	 * contains no valid information.
++	 */
++	u64	vttbr;
++
++	/* true when this represents a nested context where virtual HCR_EL2.VM == 1 */
++	bool	nested_stage2_enabled;
++
++	/*
++	 *  0: Nobody is currently using this, check vttbr for validity
++	 * >0: Somebody is actively using this.
++	 */
++	atomic_t refcnt;
+ };
+ 
++static inline bool kvm_s2_mmu_valid(struct kvm_s2_mmu *mmu)
++{
++	return !(mmu->vttbr & 1);
++}
++
+ struct kvm_arch {
+ 	struct kvm_s2_mmu mmu;
+ 
++	/*
++	 * Stage 2 paging stage for VMs with nested virtual using a virtual
++	 * VMID.
++	 */
++	struct kvm_s2_mmu *nested_mmus;
++	size_t nested_mmus_size;
++	int nested_mmus_next;
++
+ 	/* VTCR_EL2 value for this VM */
+ 	u64    vtcr;
+ 
+diff --git a/arch/arm64/include/asm/kvm_mmu.h b/arch/arm64/include/asm/kvm_mmu.h
+index ea1a597650f6..868e3386452f 100644
+--- a/arch/arm64/include/asm/kvm_mmu.h
++++ b/arch/arm64/include/asm/kvm_mmu.h
+@@ -89,6 +89,7 @@ alternative_cb_end
+ #include <asm/mmu_context.h>
+ #include <asm/pgtable.h>
+ #include <asm/kvm_emulate.h>
++#include <asm/kvm_nested.h>
+ 
+ void kvm_update_va_mask(struct alt_instr *alt,
+ 			__le32 *origptr, __le32 *updptr, int nr_inst);
+@@ -154,6 +155,7 @@ int create_hyp_exec_mappings(phys_addr_t phys_addr, size_t size,
+ 			     void **haddr);
+ void free_hyp_pgds(void);
+ 
++void kvm_unmap_stage2_range(struct kvm_s2_mmu *mmu, phys_addr_t start, u64 size);
+ void stage2_unmap_vm(struct kvm *kvm);
+ int kvm_alloc_stage2_pgd(struct kvm_s2_mmu *mmu);
+ void kvm_free_stage2_pgd(struct kvm_s2_mmu *mmu);
+@@ -625,5 +627,11 @@ static __always_inline void __load_guest_stage2(struct kvm_s2_mmu *mmu)
+ 	asm(ALTERNATIVE("nop", "isb", ARM64_WORKAROUND_SPECULATIVE_AT_VHE));
+ }
+ 
++static inline u64 get_vmid(u64 vttbr)
++{
++	return (vttbr & VTTBR_VMID_MASK(kvm_get_vmid_bits())) >>
++		VTTBR_VMID_SHIFT;
++}
++
+ #endif /* __ASSEMBLY__ */
+ #endif /* __ARM64_KVM_MMU_H__ */
+diff --git a/arch/arm64/include/asm/kvm_nested.h b/arch/arm64/include/asm/kvm_nested.h
+index c258572b5ed4..88595447b598 100644
+--- a/arch/arm64/include/asm/kvm_nested.h
++++ b/arch/arm64/include/asm/kvm_nested.h
+@@ -10,6 +10,13 @@ static inline bool nested_virt_in_use(const struct kvm_vcpu *vcpu)
+ 		test_bit(KVM_ARM_VCPU_HAS_EL2, vcpu->arch.features);
+ }
+ 
++extern void kvm_init_nested(struct kvm *kvm);
++extern int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu);
++extern void kvm_init_s2_mmu(struct kvm_s2_mmu *mmu);
++extern struct kvm_s2_mmu *lookup_s2_mmu(struct kvm *kvm, u64 vttbr, u64 hcr);
++extern void kvm_vcpu_load_hw_mmu(struct kvm_vcpu *vcpu);
++extern void kvm_vcpu_put_hw_mmu(struct kvm_vcpu *vcpu);
++
+ int handle_wfx_nested(struct kvm_vcpu *vcpu, bool is_wfe);
+ extern bool __forward_traps(struct kvm_vcpu *vcpu, unsigned int reg,
+ 			    u64 control_bit);
 diff --git a/arch/arm64/kvm/nested.c b/arch/arm64/kvm/nested.c
-index cecea8d91196..c40bf753ead9 100644
+index c40bf753ead9..65dbc1a796a1 100644
 --- a/arch/arm64/kvm/nested.c
 +++ b/arch/arm64/kvm/nested.c
-@@ -95,6 +95,35 @@ void access_nested_id_reg(struct kvm_vcpu *v, struct sys_reg_params *p,
- 		break;
+@@ -19,12 +19,182 @@
+ #include <linux/kvm.h>
+ #include <linux/kvm_host.h>
  
- 	case SYS_ID_AA64MMFR0_EL1:
-+		/* Hide unsupported S2 page sizes */
-+		switch (PAGE_SIZE) {
-+		case SZ_64K:
-+			val &= ~FEATURE(ID_AA64MMFR0_TGRAN16_2);
-+			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN16_2), 0b0001);
-+			/* Fall through */
-+		case SZ_16K:
-+			val &= ~FEATURE(ID_AA64MMFR0_TGRAN4_2);
-+			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN4_2), 0b0001);
-+			/* Fall through */
-+		case SZ_4K:
-+			/* Support everything */
-+			break;
++#include <asm/kvm_arm.h>
+ #include <asm/kvm_emulate.h>
++#include <asm/kvm_mmu.h>
+ #include <asm/kvm_nested.h>
+ #include <asm/sysreg.h>
+ 
+ #include "sys_regs.h"
+ 
++void kvm_init_nested(struct kvm *kvm)
++{
++	kvm->arch.nested_mmus = NULL;
++	kvm->arch.nested_mmus_size = 0;
++}
++
++int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu)
++{
++	struct kvm *kvm = vcpu->kvm;
++	struct kvm_s2_mmu *tmp;
++	int num_mmus;
++	int ret = -ENOMEM;
++
++	if (!test_bit(KVM_ARM_VCPU_HAS_EL2, vcpu->arch.features))
++		return 0;
++
++	if (!cpus_have_const_cap(ARM64_HAS_NESTED_VIRT))
++		return -EINVAL;
++
++	mutex_lock(&kvm->lock);
++
++	/*
++	 * Let's treat memory allocation failures as benign: If we fail to
++	 * allocate anything, return an error and keep the allocated array
++	 * alive. Userspace may try to recover by intializing the vcpu
++	 * again, and there is no reason to affect the whole VM for this.
++	 */
++	num_mmus = atomic_read(&kvm->online_vcpus) * 2;
++	tmp = krealloc(kvm->arch.nested_mmus,
++		       num_mmus * sizeof(*kvm->arch.nested_mmus),
++		       GFP_KERNEL | __GFP_ZERO);
++	if (tmp) {
++		tmp[num_mmus - 1].kvm = kvm;
++		atomic_set(&tmp[num_mmus - 1].refcnt, 0);
++		tmp[num_mmus - 2].kvm = kvm;
++		atomic_set(&tmp[num_mmus - 2].refcnt, 0);
++
++		if (kvm_alloc_stage2_pgd(&tmp[num_mmus - 1]) ||
++		    kvm_alloc_stage2_pgd(&tmp[num_mmus - 2])) {
++			kvm_free_stage2_pgd(&tmp[num_mmus - 1]);
++			kvm_free_stage2_pgd(&tmp[num_mmus - 2]);
++		} else {
++			kvm->arch.nested_mmus_size = num_mmus;
++			ret = 0;
 +		}
-+		/* Advertize supported S2 page sizes */
-+		switch (PAGE_SIZE) {
-+		case SZ_4K:
-+			val &= ~FEATURE(ID_AA64MMFR0_TGRAN4_2);
-+			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN4_2), 0b0010);
-+			/* Fall through */
-+		case SZ_16K:
-+			val &= ~FEATURE(ID_AA64MMFR0_TGRAN16_2);
-+			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN16_2), 0b0010);
-+			/* Fall through */
-+		case SZ_64K:
-+			val &= ~FEATURE(ID_AA64MMFR0_TGRAN64_2);
-+			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN64_2), 0b0010);
++
++		kvm->arch.nested_mmus = tmp;
++	}
++
++	mutex_unlock(&kvm->lock);
++	return ret;
++}
++
++/* Must be called with kvm->lock held */
++struct kvm_s2_mmu *lookup_s2_mmu(struct kvm *kvm, u64 vttbr, u64 hcr)
++{
++	bool nested_stage2_enabled = hcr & HCR_VM;
++	int i;
++
++	/* Don't consider the CnP bit for the vttbr match */
++	vttbr = vttbr & ~VTTBR_CNP_BIT;
++
++	/*
++	 * Two possibilities when looking up a S2 MMU context:
++	 *
++	 * - either S2 is enabled in the guest, and we need a context that
++         *   is S2-enabled and matches the full VTTBR (VMID+BADDR), which
++         *   makes it safe from a TLB conflict perspective (a broken guest
++         *   won't be able to generate them),
++	 *
++	 * - or S2 is disabled, and we need a context that is S2-disabled
++         *   and matches the VMID only, as all TLBs are tagged by VMID even
++         *   if S2 translation is enabled.
++	 */
++	for (i = 0; i < kvm->arch.nested_mmus_size; i++) {
++		struct kvm_s2_mmu *mmu = &kvm->arch.nested_mmus[i];
++
++		if (!kvm_s2_mmu_valid(mmu))
++			continue;
++
++		if (nested_stage2_enabled &&
++		    mmu->nested_stage2_enabled &&
++		    vttbr == mmu->vttbr)
++			return mmu;
++
++		if (!nested_stage2_enabled &&
++		    !mmu->nested_stage2_enabled &&
++		    get_vmid(vttbr) == get_vmid(mmu->vttbr))
++			return mmu;
++	}
++	return NULL;
++}
++
++static struct kvm_s2_mmu *get_s2_mmu_nested(struct kvm_vcpu *vcpu)
++{
++	struct kvm *kvm = vcpu->kvm;
++	u64 vttbr = vcpu_read_sys_reg(vcpu, VTTBR_EL2);
++	u64 hcr= vcpu_read_sys_reg(vcpu, HCR_EL2);
++	struct kvm_s2_mmu *s2_mmu;
++	int i;
++
++	s2_mmu = lookup_s2_mmu(kvm, vttbr, hcr);
++	if (s2_mmu)
++		goto out;
++
++	/*
++	 * Make sure we don't always search from the same point, or we
++	 * will always reuse a potentially active context, leaving
++	 * free contexts unused.
++	 */
++	for (i = kvm->arch.nested_mmus_next;
++	     i < (kvm->arch.nested_mmus_size + kvm->arch.nested_mmus_next);
++	     i++) {
++		s2_mmu = &kvm->arch.nested_mmus[i % kvm->arch.nested_mmus_size];
++
++		if (atomic_read(&s2_mmu->refcnt) == 0)
 +			break;
-+		}
- 		/* Cap PARange to 40bits */
- 		tmp = FIELD_GET(FEATURE(ID_AA64MMFR0_PARANGE), val);
- 		if (tmp > 0b0010) {
++	}
++	BUG_ON(atomic_read(&s2_mmu->refcnt)); /* We have struct MMUs to spare */
++
++	/* Set the scene for the next search */
++	kvm->arch.nested_mmus_next = (i + 1) % kvm->arch.nested_mmus_size;
++
++	if (kvm_s2_mmu_valid(s2_mmu)) {
++		/* Clear the old state */
++		kvm_unmap_stage2_range(s2_mmu, 0, kvm_phys_size(kvm));
++		if (s2_mmu->vmid.vmid_gen)
++			kvm_call_hyp(__kvm_tlb_flush_vmid, s2_mmu);
++	}
++
++	/*
++	 * The virtual VMID (modulo CnP) will be used as a key when matching
++	 * an existing kvm_s2_mmu.
++	 */
++	s2_mmu->vttbr = vttbr & ~VTTBR_CNP_BIT;
++	s2_mmu->nested_stage2_enabled = hcr & HCR_VM;
++
++out:
++	atomic_inc(&s2_mmu->refcnt);
++	return s2_mmu;
++}
++
++void kvm_init_s2_mmu(struct kvm_s2_mmu *mmu)
++{
++	mmu->vttbr = 1;
++	mmu->nested_stage2_enabled = false;
++	atomic_set(&mmu->refcnt, 0);
++}
++
++void kvm_vcpu_load_hw_mmu(struct kvm_vcpu *vcpu)
++{
++	if (is_hyp_ctxt(vcpu)) {
++		vcpu->arch.hw_mmu = &vcpu->kvm->arch.mmu;
++	} else {
++		spin_lock(&vcpu->kvm->mmu_lock);
++		vcpu->arch.hw_mmu = get_s2_mmu_nested(vcpu);
++		spin_unlock(&vcpu->kvm->mmu_lock);
++	}
++}
++
++void kvm_vcpu_put_hw_mmu(struct kvm_vcpu *vcpu)
++{
++	if (vcpu->arch.hw_mmu != &vcpu->kvm->arch.mmu) {
++		atomic_dec(&vcpu->arch.hw_mmu->refcnt);
++		vcpu->arch.hw_mmu = NULL;
++	}
++}
++
+ /*
+  * Inject wfx to the virtual EL2 if this is not from the virtual EL2 and
+  * the virtual HCR_EL2.TWX is set. Otherwise, let the host hypervisor
+@@ -43,6 +213,24 @@ int handle_wfx_nested(struct kvm_vcpu *vcpu, bool is_wfe)
+ 	return -EINVAL;
+ }
+ 
++void kvm_arch_flush_shadow_all(struct kvm *kvm)
++{
++	int i;
++
++	for (i = 0; i < kvm->arch.nested_mmus_size; i++) {
++		struct kvm_s2_mmu *mmu = &kvm->arch.nested_mmus[i];
++
++		WARN_ON(atomic_read(&mmu->refcnt));
++
++		if (!atomic_read(&mmu->refcnt))
++			kvm_free_stage2_pgd(mmu);
++	}
++	kfree(kvm->arch.nested_mmus);
++	kvm->arch.nested_mmus = NULL;
++	kvm->arch.nested_mmus_size = 0;
++	kvm_free_stage2_pgd(&kvm->arch.mmu);
++}
++
+ #define FEATURE(x)	(GENMASK_ULL(x##_SHIFT + 3, x##_SHIFT))
+ 
+ /*
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index 0df8d281a7c6..dcd8d54d38ce 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -34,6 +34,7 @@
+ #include <asm/kvm_arm.h>
+ #include <asm/kvm_asm.h>
+ #include <asm/kvm_mmu.h>
++#include <asm/kvm_nested.h>
+ #include <asm/kvm_emulate.h>
+ #include <asm/kvm_coproc.h>
+ #include <asm/sections.h>
+@@ -122,6 +123,8 @@ int kvm_arch_init_vm(struct kvm *kvm, unsigned long type)
+ 	if (ret)
+ 		goto out_fail_alloc;
+ 
++	kvm_init_nested(kvm);
++
+ 	ret = create_hyp_mappings(kvm, kvm + 1, PAGE_HYP);
+ 	if (ret)
+ 		goto out_free_stage2_pgd;
+@@ -340,6 +343,9 @@ void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
+ 	int *last_ran;
+ 	kvm_host_data_t *cpu_data;
+ 
++	if (nested_virt_in_use(vcpu))
++		kvm_vcpu_load_hw_mmu(vcpu);
++
+ 	last_ran = this_cpu_ptr(vcpu->kvm->arch.last_vcpu_ran);
+ 	cpu_data = this_cpu_ptr(&kvm_host_data);
+ 
+@@ -379,6 +385,9 @@ void kvm_arch_vcpu_put(struct kvm_vcpu *vcpu)
+ 	kvm_vgic_put(vcpu);
+ 	kvm_vcpu_pmu_restore_host(vcpu);
+ 
++	if (nested_virt_in_use(vcpu))
++		kvm_vcpu_put_hw_mmu(vcpu);
++
+ 	vcpu->cpu = -1;
+ }
+ 
+@@ -958,8 +967,13 @@ static int kvm_vcpu_set_target(struct kvm_vcpu *vcpu,
+ 
+ 	vcpu->arch.target = phys_target;
+ 
++	/* Prepare for nested if required */
++	ret = kvm_vcpu_init_nested(vcpu);
++
+ 	/* Now we know what it is, we can reset it. */
+-	ret = kvm_reset_vcpu(vcpu);
++	if (!ret)
++		ret = kvm_reset_vcpu(vcpu);
++
+ 	if (ret) {
+ 		vcpu->arch.target = -1;
+ 		bitmap_zero(vcpu->arch.features, KVM_VCPU_MAX_FEATURES);
+diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+index ef46686da335..bead2ad59f7d 100644
+--- a/virt/kvm/arm/mmu.c
++++ b/virt/kvm/arm/mmu.c
+@@ -329,7 +329,7 @@ static void unmap_stage2_puds(struct kvm_s2_mmu *mmu, pgd_t *pgd,
+ }
+ 
+ /**
+- * unmap_stage2_range -- Clear stage2 page table entries to unmap a range
++ * kvm_unmap_stage2_range -- Clear stage2 page table entries to unmap a range
+  * @kvm:   The VM pointer
+  * @start: The intermediate physical base address of the range to unmap
+  * @size:  The size of the area to unmap
+@@ -339,7 +339,7 @@ static void unmap_stage2_puds(struct kvm_s2_mmu *mmu, pgd_t *pgd,
+  * destroying the VM), otherwise another faulting VCPU may come in and mess
+  * with things behind our backs.
+  */
+-static void unmap_stage2_range(struct kvm_s2_mmu *mmu, phys_addr_t start, u64 size)
++void kvm_unmap_stage2_range(struct kvm_s2_mmu *mmu, phys_addr_t start, u64 size)
+ {
+ 	struct kvm *kvm = mmu->kvm;
+ 	pgd_t *pgd;
+@@ -928,6 +928,10 @@ int kvm_alloc_stage2_pgd(struct kvm_s2_mmu *mmu)
+ 
+ 	mmu->pgd = pgd;
+ 	mmu->pgd_phys = pgd_phys;
++	mmu->vmid.vmid_gen = 0;
++
++	kvm_init_s2_mmu(mmu);
++
+ 	return 0;
+ }
+ 
+@@ -966,7 +970,7 @@ static void stage2_unmap_memslot(struct kvm *kvm,
+ 
+ 		if (!(vma->vm_flags & VM_PFNMAP)) {
+ 			gpa_t gpa = addr + (vm_start - memslot->userspace_addr);
+-			unmap_stage2_range(&kvm->arch.mmu, gpa, vm_end - vm_start);
++			kvm_unmap_stage2_range(&kvm->arch.mmu, gpa, vm_end - vm_start);
+ 		}
+ 		hva = vm_end;
+ 	} while (hva < reg_end);
+@@ -1005,7 +1009,7 @@ void kvm_free_stage2_pgd(struct kvm_s2_mmu *mmu)
+ 
+ 	spin_lock(&kvm->mmu_lock);
+ 	if (mmu->pgd) {
+-		unmap_stage2_range(mmu, 0, kvm_phys_size(kvm));
++		kvm_unmap_stage2_range(mmu, 0, kvm_phys_size(kvm));
+ 		pgd = READ_ONCE(mmu->pgd);
+ 		mmu->pgd = NULL;
+ 	}
+@@ -1097,7 +1101,7 @@ static int stage2_set_pmd_huge(struct kvm_s2_mmu *mmu,
+ 		 * get handled accordingly.
+ 		 */
+ 		if (!pmd_thp_or_huge(old_pmd)) {
+-			unmap_stage2_range(mmu, addr & S2_PMD_MASK, S2_PMD_SIZE);
++			kvm_unmap_stage2_range(mmu, addr & S2_PMD_MASK, S2_PMD_SIZE);
+ 			goto retry;
+ 		}
+ 		/*
+@@ -1149,7 +1153,7 @@ static int stage2_set_pud_huge(struct kvm_s2_mmu *mmu,
+ 		 * the range for this block and retry.
+ 		 */
+ 		if (!stage2_pud_huge(kvm, old_pud)) {
+-			unmap_stage2_range(mmu, addr & S2_PUD_MASK, S2_PUD_SIZE);
++			kvm_unmap_stage2_range(mmu, addr & S2_PUD_MASK, S2_PUD_SIZE);
+ 			goto retry;
+ 		}
+ 
+@@ -2051,7 +2055,7 @@ static int handle_hva_to_gpa(struct kvm *kvm,
+ 
+ static int kvm_unmap_hva_handler(struct kvm *kvm, gpa_t gpa, u64 size, void *data)
+ {
+-	unmap_stage2_range(&kvm->arch.mmu, gpa, size);
++	kvm_unmap_stage2_range(&kvm->arch.mmu, gpa, size);
+ 	return 0;
+ }
+ 
+@@ -2356,7 +2360,7 @@ int kvm_arch_prepare_memory_region(struct kvm *kvm,
+ 
+ 	spin_lock(&kvm->mmu_lock);
+ 	if (ret)
+-		unmap_stage2_range(&kvm->arch.mmu, mem->guest_phys_addr, mem->memory_size);
++		kvm_unmap_stage2_range(&kvm->arch.mmu, mem->guest_phys_addr, mem->memory_size);
+ 	else
+ 		stage2_flush_memslot(&kvm->arch.mmu, memslot);
+ 	spin_unlock(&kvm->mmu_lock);
+@@ -2380,7 +2384,7 @@ void kvm_arch_memslots_updated(struct kvm *kvm, u64 gen)
+ {
+ }
+ 
+-void kvm_arch_flush_shadow_all(struct kvm *kvm)
++__weak void kvm_arch_flush_shadow_all(struct kvm *kvm)
+ {
+ 	kvm_free_stage2_pgd(&kvm->arch.mmu);
+ }
+@@ -2392,7 +2396,7 @@ void kvm_arch_flush_shadow_memslot(struct kvm *kvm,
+ 	phys_addr_t size = slot->npages << PAGE_SHIFT;
+ 
+ 	spin_lock(&kvm->mmu_lock);
+-	unmap_stage2_range(&kvm->arch.mmu, gpa, size);
++	kvm_unmap_stage2_range(&kvm->arch.mmu, gpa, size);
+ 	spin_unlock(&kvm->mmu_lock);
+ }
+ 
 -- 
 2.20.1
 
