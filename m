@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22CD9159794
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:02:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07DC41597C4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:09:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9gB0qqEmT8yKt9F2MGuXGgVLxrAoPKa2sPARfdFQ5sY=; b=kq+Dhf1OrBQ0s4
-	My54kq8CbSwakrH1sxmyk5NHivF2akNH/KjgLmqokek79akw3+GvxHpT3Kdz42thpQbZHFg12j4h9
-	uylVQQrYX00OWE47KQ8QeeJdYzP/fZXy+473yVElfaL4cr8iWHmRGFKQKf1bR8rQLOcdct3Rrhw/j
-	RKH9zy1lvABfi3TYnzprIyqvzu/Q/XGK81Y5U7Sz1rztNEx5VulV209K/qaO89m8kErFgFYRWjBzr
-	/B3PhCHjCAYbqmf6D+Uq0ltio1X0TGCbt2z20qpCoSVfRErvOZ5IsRDDgFJv+bzbheShKFqcjhtsv
-	OwbAQLgrhW+9EpWXAifw==;
+	List-Owner; bh=1wQjuv6z7ZdCGbClZY93O+bOTVEH5vCoVOIEsNCKdUc=; b=qvqMUZTXeQVIfD
+	AnTuDKJtHD8ABUrBF1pK7dz7wJxOh/54FlV7tNgtmJYcalXA6MSic+cvNFzNDVyJPHZxCe/0t+4At
+	AEgUO7qcdyl506YEjhSgpm6b76DTeJ/6T34sIXQxnxNB1/V82D6X2h5umKEIS7PDEoOea2fC8AgzZ
+	rviJYs/TKpNhcAzRKWunP5el16Z0MK67UhPN5E44XmhVP/pv6zE19JQe+VWAJErHDVtz7cCZAJMel
+	P1YFVqoupE8EHB1soBGXRQf6zGUFhkO/8HMdy0iwZvedlybk6L35RyheAGIAvDWWxwbfE4JYsc9nx
+	6ujt+njRuEJtUgteHaIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1ZrK-0004cu-CA; Tue, 11 Feb 2020 18:02:06 +0000
+	id 1j1Zyg-0004FF-FC; Tue, 11 Feb 2020 18:09:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ZhR-00020D-Lj
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:51:58 +0000
+ id 1j1ZiE-0002gV-8Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:52:45 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A48C6208C3;
- Tue, 11 Feb 2020 17:51:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D8B7420578;
+ Tue, 11 Feb 2020 17:52:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581443512;
- bh=f33AsioL7+uzWUtpnmAwqyECVEr0La+k9kBb0QdEzio=;
+ s=default; t=1581443562;
+ bh=jf1mgKr2G0XkF+KTZXgNSKPUDy7zcmwp7k/gfZ+D5NQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=RssqqczRl8ErSQxoAf+QfaTBvF8UEXGhf1QiEHJo1Mxn2tMIewbNiFBpab2Tdv2Wf
- A0z4fMM9tkq2sMYLf4hjTddHs4uj4oJmXqMnzkA+j9l2b7zDJNL49ENIvxjrsGoSnY
- Fc53rAzdceNzGakmzSASPPX+2d2VqWHUjZYdajHU=
+ b=p2iVJhngVaayQs+ogEg5UMk2fmKw+R2vLFGwPyllyZtwBwqx9GboWD7L9ZB9ohGgG
+ Ti5ou0XY5O0TcDpzHNO9uG0CannBOmmR8QQuJputpDkU5C65lYbCIwP203zNQh72SB
+ cb9LNFkv2QuYbG5/sWp10V00wNUUn6yPMAlj0TiQ=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j1ZgM-004O7k-0f; Tue, 11 Feb 2020 17:50:46 +0000
+ id 1j1ZgN-004O7k-68; Tue, 11 Feb 2020 17:50:47 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 89/94] KVM: arm64: nv: Synchronize PSTATE early on exit
-Date: Tue, 11 Feb 2020 17:49:33 +0000
-Message-Id: <20200211174938.27809-90-maz@kernel.org>
+Subject: [PATCH v2 91/94] KVM: arm64: nv: Allocate VNCR page when required
+Date: Tue, 11 Feb 2020 17:49:35 +0000
+Message-Id: <20200211174938.27809-92-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200211174938.27809-1-maz@kernel.org>
 References: <20200211174938.27809-1-maz@kernel.org>
@@ -61,8 +61,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_095153_870919_061F0E51 
-X-CRM114-Status: GOOD (  17.53  )
+X-CRM114-CacheID: sfid-20200211_095242_904433_E87A74FE 
+X-CRM114-Status: GOOD (  14.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,171 +102,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The NV code relies on predicates such as is_hyp_ctxt() being
-reliable. In turn, is_hyp_ctxt() relies on things like PSTATE
-and the virtual HCR_EL2 being accurate.
-
-But with ARMv8.4-NV removing trapping for a large part of the
-EL2 system registers (among which HCR_EL2), we can't use such
-trapping to synchronize the rest of the state.
-
-Let's look at the following sequence for a VHE guest:
-
- (1) enter guest in host EL0
- (2) guest traps to guest vEL2 (no hypervisor intervention)
- (3) guest clears virtual HCR_EL2.TGE (no trap either)
- (4) host interrupt fires, exit
- (5) is_hyp_ctxt() now says "guest" (PSTATE.M==EL1 and TGE==0)
-
-It is obvious that such behaviour would be rather unfortunate,
-and lead to interesting, difficult to catch bugs specially if
-preemption kicks in (yes, I wasted a whole week chasing this one).
-
-In order to preserve the invariant that a guest entered in host
-context must exit in the same context, we must make sure that
-is_hyp_ctxt() works correctly. Since we can always observe the
-guest value of HCR_EL2.{E2H,TGE} in the VNCR_EL2 page, we solely
-need to synchronize PSTATE as early as possible.
-
-This basically amounts to moving from_hw_pstate() as close
-as possible to the guest exit point, and fixup_guest_exit()
-seems as good a place as any.
+If running a NV guest on an ARMv8.4-NV capable system, let's
+allocate an additional page that will be used by the hypervisor
+to fulfill system register accesses.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/hyp/switch.c    | 51 ++++++++++++++++++++++++++++++++--
- arch/arm64/kvm/hyp/sysreg-sr.c | 26 ++---------------
- 2 files changed, 51 insertions(+), 26 deletions(-)
+ arch/arm64/include/asm/kvm_host.h | 3 ++-
+ arch/arm64/kvm/nested.c           | 8 ++++++++
+ arch/arm64/kvm/reset.c            | 1 +
+ 3 files changed, 11 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-index 3deea28794e1..c35e67241d8e 100644
---- a/arch/arm64/kvm/hyp/switch.c
-+++ b/arch/arm64/kvm/hyp/switch.c
-@@ -537,8 +537,45 @@ static bool __hyp_text handle_tx2_tvm(struct kvm_vcpu *vcpu)
-  * the guest, false when we should restore the host state and return to the
-  * main run loop.
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index 657c2c5d1a39..a26ab0fda1a7 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -526,7 +526,8 @@ struct kvm_vcpu_arch {
   */
--static bool __hyp_text fixup_guest_exit(struct kvm_vcpu *vcpu, u64 *exit_code)
-+static bool __hyp_text fixup_guest_exit(struct kvm_vcpu *vcpu, u64 *exit_code,
-+					bool hyp_ctxt)
+ static inline u64 *__ctxt_sys_reg(const struct kvm_cpu_context *ctxt, int r)
  {
-+	/*
-+	 * Sync pstate back as early as possible, so that is_hyp_ctxt()
-+	 * reflects the exact context. It is otherwise possible to get
-+	 * confused with a VHE guest and ARMv8.4-NV, such as:
-+	 *
-+	 * (1) enter guest in host EL0
-+	 * (2) guest traps to guest vEL2 (no hypervisor intervention)
-+	 * (3) guest clears virtual HCR_EL2.TGE (no trap either)
-+	 * (4) host interrupt fires, exit
-+	 * (5) is_hyp_ctxt() now says "guest" (pstate.M==EL1 and TGE==0)
-+	 *
-+	 * If host preemption occurs, vcpu_load/put() will be very confused.
-+	 * This of course only matters to VHE.
-+	 */
-+
-+	if (has_vhe()) {
-+		u64 pstate = read_sysreg_el2(SYS_SPSR);
-+
-+		if (unlikely(hyp_ctxt)) {
-+			u64 mode = pstate & PSR_MODE_MASK;
-+
-+			switch (mode) {
-+			case PSR_MODE_EL1t:
-+				mode = PSR_MODE_EL2t;
-+				break;
-+			case PSR_MODE_EL1h:
-+				mode = PSR_MODE_EL2h;
-+				break;
-+			}
-+
-+			pstate = (pstate & ~PSR_MODE_MASK) | mode;
-+		}
-+
-+		*vcpu_cpsr(vcpu) = pstate;
+-	if (unlikely(r >= __VNCR_START__ && ctxt->vncr_array))
++	if (unlikely(cpus_have_const_cap(ARM64_HAS_ENHANCED_NESTED_VIRT) &&
++		     r >= __VNCR_START__ && ctxt->vncr_array))
+ 		return &ctxt->vncr_array[r - __VNCR_START__];
+ 
+ 	return (u64 *)&ctxt->sys_regs[r];
+diff --git a/arch/arm64/kvm/nested.c b/arch/arm64/kvm/nested.c
+index 6adff9b433e0..58873e4c85cb 100644
+--- a/arch/arm64/kvm/nested.c
++++ b/arch/arm64/kvm/nested.c
+@@ -47,6 +47,12 @@ int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu)
+ 	if (!cpus_have_const_cap(ARM64_HAS_NESTED_VIRT))
+ 		return -EINVAL;
+ 
++	if (cpus_have_const_cap(ARM64_HAS_ENHANCED_NESTED_VIRT)) {
++		vcpu->arch.ctxt.vncr_array = (u64 *)__get_free_page(GFP_KERNEL | __GFP_ZERO);
++		if (!vcpu->arch.ctxt.vncr_array)
++			return -ENOMEM;
 +	}
 +
- 	if (ARM_EXCEPTION_CODE(*exit_code) != ARM_EXCEPTION_IRQ)
- 		vcpu->arch.fault.esr_el2 = read_sysreg_el2(SYS_ESR);
+ 	mutex_lock(&kvm->lock);
  
-@@ -683,6 +720,7 @@ int kvm_vcpu_run_vhe(struct kvm_vcpu *vcpu)
- 	struct kvm_cpu_context *host_ctxt;
- 	struct kvm_cpu_context *guest_ctxt;
- 	u64 exit_code;
-+	bool hyp_ctxt;
- 
- 	host_ctxt = vcpu->arch.host_cpu_context;
- 	host_ctxt->__hyp_running_vcpu = vcpu;
-@@ -709,12 +747,19 @@ int kvm_vcpu_run_vhe(struct kvm_vcpu *vcpu)
- 
- 	__set_guest_arch_workaround_state(vcpu);
- 
-+	/*
-+	 * Being in HYP context or not is an invariant here. If we enter in
-+	 * a given context, we exit in the same context. We can thus only
-+	 * sample the context once.
-+	 */
-+	hyp_ctxt = is_hyp_ctxt(vcpu);
-+
- 	do {
- 		/* Jump in the fire! */
- 		exit_code = __guest_enter(vcpu, host_ctxt);
- 
- 		/* And we're baaack! */
--	} while (fixup_guest_exit(vcpu, &exit_code));
-+	} while (fixup_guest_exit(vcpu, &exit_code, hyp_ctxt));
- 
- 	__set_host_arch_workaround_state(vcpu);
- 
-@@ -788,7 +833,7 @@ int __hyp_text __kvm_vcpu_run_nvhe(struct kvm_vcpu *vcpu)
- 		exit_code = __guest_enter(vcpu, host_ctxt);
- 
- 		/* And we're baaack! */
--	} while (fixup_guest_exit(vcpu, &exit_code));
-+	} while (fixup_guest_exit(vcpu, &exit_code, false));
- 
- 	__set_host_arch_workaround_state(vcpu);
- 
-diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
-index eaf78e9b3238..53ece83bf062 100644
---- a/arch/arm64/kvm/hyp/sysreg-sr.c
-+++ b/arch/arm64/kvm/hyp/sysreg-sr.c
-@@ -109,32 +109,12 @@ static void __hyp_text __sysreg_save_el1_state(struct kvm_cpu_context *ctxt)
- 		__sysreg_save_vel1_state(ctxt);
+ 	/*
+@@ -64,6 +70,8 @@ int kvm_vcpu_init_nested(struct kvm_vcpu *vcpu)
+ 		    kvm_init_stage2_mmu(kvm, &tmp[num_mmus - 2])) {
+ 			kvm_free_stage2_pgd(&tmp[num_mmus - 1]);
+ 			kvm_free_stage2_pgd(&tmp[num_mmus - 2]);
++			free_page((unsigned long)vcpu->arch.ctxt.vncr_array);
++			vcpu->arch.ctxt.vncr_array = NULL;
+ 		} else {
+ 			kvm->arch.nested_mmus_size = num_mmus;
+ 			ret = 0;
+diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
+index 07462af1b69d..ce8d8f53fcd0 100644
+--- a/arch/arm64/kvm/reset.c
++++ b/arch/arm64/kvm/reset.c
+@@ -207,6 +207,7 @@ bool kvm_arm_vcpu_is_finalized(struct kvm_vcpu *vcpu)
+ void kvm_arm_vcpu_destroy(struct kvm_vcpu *vcpu)
+ {
+ 	kfree(vcpu->arch.sve_state);
++	free_page((unsigned long)vcpu->arch.ctxt.vncr_array);
  }
  
--static u64 __hyp_text from_hw_pstate(const struct kvm_cpu_context *ctxt)
--{
--	u64 reg = read_sysreg_el2(SYS_SPSR);
--
--	if (__is_hyp_ctxt(ctxt)) {
--		u64 mode = reg & (PSR_MODE_MASK | PSR_MODE32_BIT);
--
--		switch (mode) {
--		case PSR_MODE_EL1t:
--			mode = PSR_MODE_EL2t;
--			break;
--		case PSR_MODE_EL1h:
--			mode = PSR_MODE_EL2h;
--			break;
--		}
--
--		return (reg & ~(PSR_MODE_MASK | PSR_MODE32_BIT)) | mode;
--	}
--
--	return reg;
--}
--
- static void __hyp_text __sysreg_save_el2_return_state(struct kvm_cpu_context *ctxt)
- {
-+	/* On VHE, PSTATE is saved in fixup_guest_exit() */
-+	if (!has_vhe())
-+		ctxt->regs.pstate 	= read_sysreg_el2(SYS_SPSR);
- 	ctxt->regs.pc			= read_sysreg_el2(SYS_ELR);
--	ctxt->regs.pstate		= from_hw_pstate(ctxt);
- 
- 	if (cpus_have_const_cap(ARM64_HAS_RAS_EXTN))
- 		ctxt_sys_reg(ctxt, DISR_EL1) = read_sysreg_s(SYS_VDISR_EL2);
+ static void kvm_vcpu_reset_sve(struct kvm_vcpu *vcpu)
 -- 
 2.20.1
 
