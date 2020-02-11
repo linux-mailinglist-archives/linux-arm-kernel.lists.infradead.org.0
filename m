@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 083DF1593CE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:51:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93EA91593D3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:52:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=Ue/EmIwMw07QYDAlsStNpM2E4s25IrfiENnuKcqi9uM=; b=kUb
-	jg4EWTarbP52fInt8Ot+COnuSWowFDJMVA036m+W+gIEbQ7EKCMMBnzoZv7gSqq0qSiFK6lvdIVJW
-	UDc4XA2hctcUllZpF0urDmllbAUhrr25dNzn2NQlb9nRouyweAXqFj+UAWJ4Pp3sE1aSDu3mxFMdl
-	tYfllOK5lG6pG0gNp9sOFM1MzvwWAwjLjdBrV8l5l9JRAAc/bURw4j5/gwWoJdsILJMCBvH75/OZ6
-	4bDBHl2qDZUtX5a3SNpU4UEcbERqdg1eukDwvSviRTo5kTrHc+ffz9uh6V2RO3HH90ejvOjBHDYuv
-	1OYhbztBRtLx/u56JeBLeMF20At1lyg==;
+	References:List-Owner; bh=VUGHIqIOrvUw4WjsoIBWH+oxx7WnGfa7w5wMZHfEN2E=; b=QVg
+	Z4HEJhmtuVRwO3bD7nuh3AxrDABetDFy4xJZGkBxg9lQbGPM5BFY9od1neICbKvCkWeBouDVW6DwD
+	o+RPIjAGMqHfLlFptTH04TdSZOP1GtSmXpiYkI8e2i2GZud1zkDlLCagp8A7tyiVO2PGNlyuAXml+
+	QklFfPV16SqesePA/w/zZ27vKDrMBoRQsf2gTBBKzYhZgLtBHvoTfc7uVJCAhKJrGSdziC7KFi+vp
+	SIveZayXmOR/qZ8BeuQbX1xs2x4IAI5iTvjirefaA7aAN9+KGSHsVGUt3IHyAOwDwbMJ8QBLnzgYU
+	vjpOJh4KuTxlCpGqqBeta3hts/OcUKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Xox-0006AK-7P; Tue, 11 Feb 2020 15:51:31 +0000
+	id 1j1XpN-0006YI-MM; Tue, 11 Feb 2020 15:51:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1XnE-0003Xc-6Y
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 15:49:45 +0000
+ id 1j1Xp8-0006Ww-3K
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 15:51:44 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7843713A1;
- Tue, 11 Feb 2020 07:49:43 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8139430E;
+ Tue, 11 Feb 2020 07:51:41 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F2AF73F68E;
- Tue, 11 Feb 2020 07:49:42 -0800 (PST)
-Date: Tue, 11 Feb 2020 15:49:41 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D52893F68E;
+ Tue, 11 Feb 2020 07:51:40 -0800 (PST)
+Date: Tue, 11 Feb 2020 15:51:39 +0000
 From: Mark Brown <broonie@kernel.org>
-To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: sai: manage error when getting reset
- controller" to the asoc tree
-In-Reply-To: <20200203100814.22944-2-olivier.moysan@st.com>
-Message-Id: <applied-20200203100814.22944-2-olivier.moysan@st.com>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Applied "dt-bindings: spi: imx: Add i.MX8MM/i.MX8MN/i.MX8MP
+ compatible" to the spi tree
+In-Reply-To: <1581425307-18567-1-git-send-email-Anson.Huang@nxp.com>
+Message-Id: <applied-1581425307-18567-1-git-send-email-Anson.Huang@nxp.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_074944_301918_00DFF0E8 
-X-CRM114-Status: GOOD (  16.37  )
+X-CRM114-CacheID: sfid-20200211_075142_229028_514E1A6B 
+X-CRM114-Status: GOOD (  13.86  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -63,11 +63,16 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Etienne Carriere <etienne.carriere@st.com>, alsa-devel@alsa-project.org,
- olivier.moysan@st.com, alexandre.torgue@st.com, tiwai@suse.com,
- lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, mcoquelin.stm32@gmail.com, perex@perex.cz,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, marcel.ziswiler@toradex.com, angus@akkea.ca,
+ gary.bisson@boundarydevices.com, manivannan.sadhasivam@linaro.org,
+ leonard.crestez@nxp.com, festevam@gmail.com, Rob Herring <robh@kernel.org>,
+ andrew.smirnov@gmail.com, rabeeh@solid-run.com, Linux-imx@nxp.com,
+ devicetree@vger.kernel.org, pramod.kumar_1@nxp.com, s.hauer@pengutronix.de,
+ Mark Brown <broonie@kernel.org>, daniel.baluta@nxp.com,
+ linux-arm-kernel@lists.infradead.org, aisheng.dong@nxp.com,
+ rjones@gateworks.com, shawnguo@kernel.org, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, robh+dt@kernel.org, kernel@pengutronix.de,
+ jun.li@nxp.com, cosmin.stoica@nxp.com, l.stach@pengutronix.de
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -76,11 +81,11 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: stm32: sai: manage error when getting reset controller
+   dt-bindings: spi: imx: Add i.MX8MM/i.MX8MN/i.MX8MP compatible
 
-has been applied to the asoc tree at
+has been applied to the spi tree at
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.7
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.7
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
@@ -101,48 +106,37 @@ to this mail.
 Thanks,
 Mark
 
-From 028476c861e3eb660d8d104ef39fccb34c04a0d5 Mon Sep 17 00:00:00 2001
-From: Olivier Moysan <olivier.moysan@st.com>
-Date: Mon, 3 Feb 2020 11:08:09 +0100
-Subject: [PATCH] ASoC: stm32: sai: manage error when getting reset controller
+From 1565e8e8ef0bbccabf62152b93c6505b8041b1e5 Mon Sep 17 00:00:00 2001
+From: Anson Huang <Anson.Huang@nxp.com>
+Date: Tue, 11 Feb 2020 20:48:24 +0800
+Subject: [PATCH] dt-bindings: spi: imx: Add i.MX8MM/i.MX8MN/i.MX8MP compatible
 
-Return an error when the SAI driver fails to get a reset controller.
-Also add an error trace, except on probe defer status.
+Add compatible for imx8mm/imx8mn/imx8mp.
 
-Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Link: https://lore.kernel.org/r/20200203100814.22944-2-olivier.moysan@st.com
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Acked-by: Rob Herring <robh@kernel.org>
+Link: https://lore.kernel.org/r/1581425307-18567-1-git-send-email-Anson.Huang@nxp.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/stm/stm32_sai.c | 14 +++++++++-----
- 1 file changed, 9 insertions(+), 5 deletions(-)
+ Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/sound/soc/stm/stm32_sai.c b/sound/soc/stm/stm32_sai.c
-index e20267504b16..b824ba6cb028 100644
---- a/sound/soc/stm/stm32_sai.c
-+++ b/sound/soc/stm/stm32_sai.c
-@@ -197,12 +197,16 @@ static int stm32_sai_probe(struct platform_device *pdev)
- 		return sai->irq;
- 
- 	/* reset */
--	rst = devm_reset_control_get_exclusive(&pdev->dev, NULL);
--	if (!IS_ERR(rst)) {
--		reset_control_assert(rst);
--		udelay(2);
--		reset_control_deassert(rst);
-+	rst = devm_reset_control_get_optional_exclusive(&pdev->dev, NULL);
-+	if (IS_ERR(rst)) {
-+		if (PTR_ERR(rst) != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "Reset controller error %ld\n",
-+				PTR_ERR(rst));
-+		return PTR_ERR(rst);
- 	}
-+	reset_control_assert(rst);
-+	udelay(2);
-+	reset_control_deassert(rst);
- 
- 	/* Enable peripheral clock to allow register access */
- 	ret = clk_prepare_enable(sai->pclk);
+diff --git a/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt b/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
+index 2d3264140cc5..33bc58f4cf4b 100644
+--- a/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
++++ b/Documentation/devicetree/bindings/spi/fsl-imx-cspi.txt
+@@ -10,7 +10,10 @@ Required properties:
+   - "fsl,imx35-cspi" for SPI compatible with the one integrated on i.MX35
+   - "fsl,imx51-ecspi" for SPI compatible with the one integrated on i.MX51
+   - "fsl,imx53-ecspi" for SPI compatible with the one integrated on i.MX53 and later Soc
+-  - "fsl,imx8mq-ecspi" for SPI compatible with the one integrated on i.MX8M
++  - "fsl,imx8mq-ecspi" for SPI compatible with the one integrated on i.MX8MQ
++  - "fsl,imx8mm-ecspi" for SPI compatible with the one integrated on i.MX8MM
++  - "fsl,imx8mn-ecspi" for SPI compatible with the one integrated on i.MX8MN
++  - "fsl,imx8mp-ecspi" for SPI compatible with the one integrated on i.MX8MP
+ - reg : Offset and length of the register set for the device
+ - interrupts : Should contain CSPI/eCSPI interrupt
+ - clocks : Clock specifiers for both ipg and per clocks.
 -- 
 2.20.1
 
