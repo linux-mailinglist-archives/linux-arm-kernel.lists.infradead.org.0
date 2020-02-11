@@ -2,72 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4513C159361
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:41:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86478159397
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:49:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aPsgvqPP78/7gsz0GMv1Q3NW/+afoSfuPp+RF4fSw4g=; b=AEeGUzos2ubY2Jw5NEHBwKumB
-	QVBX4xeMyf6Lma0e8fPr+09eSow3EUbEXor8S0U0iFbbTsrAoLKbfTGAisOBRcdPGc5nA9/zAgHNV
-	jiEe/StTOBmeWyAMjpUZOtwOORWA9OOnMv62qehX1iXtUxZiQmyYgBiVny8O+wHFROeTuBBvpF0uM
-	5oKJTsEB+f65UmzEKPLjWicRi1xzWxlobeHKd7adqUQvybgec5dXOnriVbPHIok+Ogg5E0ycHNj32
-	F5R5Da81ekSBenXF3Rj9uQilDlmwyhoPWKbx7CbIGSHCWq0MKd+lx+1IzCYvoFYbZiE8Ll00ayW1E
-	RvsZHqRLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=7EGiTH1Ijco7OET0H3n7a46+TiPiaNzsvNIpfPUHmlY=; b=NZ1
+	7Ut0Qi6yRdnmNHAyyx5PLzMzgcZxm4zsdMs+LXEesPijJoxZ/fxGBIOwgGoNBD1tmOX7bxNBiEKlG
+	hkhQicsLk4VAvgtpx+5c3pOesRT/LhixJvkrru9XPQQ7OYa91q2TDkjYpJjyzGPOnEz02Fd/YQZdt
+	Q91IvkxynEHQEpIUeV7tVT2Go8NZEgUNNdZ3BrcxUuPmHildv8A3DcGASIyO0ClNrDlTiTnd17zze
+	S+In3l907UtvCiaNPbA07Kye8Cta+K9EUZ0cvh9Kc2Wk39s5Pv6UEmzQUZicJl6o6sifCqiOzyBJ+
+	kIOwzMhLWs5PgGVlZfm4rUy2MiuEXxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Xf8-00007j-U3; Tue, 11 Feb 2020 15:41:22 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Xev-00006m-AE
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 15:41:16 +0000
-Received: from LHREML713-CAH.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id 1D215EEB05FA2CFF9063;
- Tue, 11 Feb 2020 15:41:08 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- LHREML713-CAH.china.huawei.com (10.201.108.36) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 11 Feb 2020 15:41:07 +0000
-Received: from [127.0.0.1] (10.202.226.45) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Tue, 11 Feb
- 2020 15:41:07 +0000
-Subject: Re: [PATCH RFC 0/7] perf pmu-events: Support event aliasing for
- system PMUs
-To: James Clark <james.clark@arm.com>, "peterz@infradead.org"
- <peterz@infradead.org>, "mingo@redhat.com" <mingo@redhat.com>,
- "acme@kernel.org" <acme@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "alexander.shishkin@linux.intel.com"
- <alexander.shishkin@linux.intel.com>, "jolsa@redhat.com" <jolsa@redhat.com>,
- "namhyung@kernel.org" <namhyung@kernel.org>, "will@kernel.org"
- <will@kernel.org>, "ak@linux.intel.com" <ak@linux.intel.com>
-References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <91a62136-219a-766a-12e4-be2b2cc8ae54@arm.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <9275c0a1-3257-494b-f777-8d0f85da5726@huawei.com>
-Date: Tue, 11 Feb 2020 15:41:06 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
-MIME-Version: 1.0
-In-Reply-To: <91a62136-219a-766a-12e4-be2b2cc8ae54@arm.com>
-Content-Language: en-US
-X-Originating-IP: [10.202.226.45]
-X-ClientProxiedBy: lhreml720-chm.china.huawei.com (10.201.108.71) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+	id 1j1Xmj-0002vi-5L; Tue, 11 Feb 2020 15:49:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1XmV-0002v3-Ss; Tue, 11 Feb 2020 15:49:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CBCA130E;
+ Tue, 11 Feb 2020 07:48:58 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 50D623F68E;
+ Tue, 11 Feb 2020 07:48:58 -0800 (PST)
+Date: Tue, 11 Feb 2020 15:48:56 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Tzung-Bi Shih <tzungbi@google.com>
+Subject: Applied "drm/mediatek: support HDMI jack status reporting" to the
+ asoc tree
+In-Reply-To: <20200206102509.2.I230fd59de28e73934a91cb01424e25b9e84727f4@changeid>
+Message-Id: <applied-20200206102509.2.I230fd59de28e73934a91cb01424e25b9e84727f4@changeid>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_074110_865300_0D313BA5 
-X-CRM114-Status: GOOD (  29.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200211_074900_025615_1A8DEEF2 
+X-CRM114-Status: GOOD (  16.00  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,172 +62,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linuxarm <linuxarm@huawei.com>, Zhangshaokun <zhangshaokun@hisilicon.com>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: alsa-devel@alsa-project.org, cychiang@google.com, tzungbi@google.com,
+ airlied@linux.ie, dri-devel@lists.freedesktop.org, matthias.bgg@gmail.com,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ daniel@ffwll.ch, ck.hu@mediatek.com, p.zabel@pengutronix.de, dgreid@google.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/02/2020 15:24, James Clark wrote:
-> Hi John,
+The patch
 
-Hi James,
+   drm/mediatek: support HDMI jack status reporting
 
-> 
-> I tested this on an Arm N1 board and see the same list of CPU events from the JSONs
-> picked up so it looks ok from that point of view.
+has been applied to the asoc tree at
 
-ok, good.
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.7
 
-So does this platform have other PMUs (with a kernel driver) which we 
-may want to add aliases for, like uncore PMUs, SMMUv3 PMCG, etc?
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
 Thanks,
-John
+Mark
 
-> 
-> James
-> 
-> On 1/24/20 2:34 PM, John Garry wrote:
->> Currently event aliasing for only CPU and uncore PMUs is supported. In
->> fact, only uncore PMUs aliasing for when the uncore PMUs are fixed for a
->> CPU is supported, which may not always be the case for certain
->> architectures.
->>
->> This series adds support for PMU event aliasing for system and other
->> uncore PMUs which are not fixed to a specific CPU.
->>
->> For this, we introduce support for another per-arch mapfile, which maps a
->> particular system identifier to a set of system PMU events for that
->> system. This is much the same as what we do for CPU event aliasing.
->>
->> To support this, we need to change how we match a PMU to a mapfile,
->> whether it should use a CPU or system mapfile. For this we do the
->> following:
->>
->> - For CPU PMU, we always match for the event mapfile based on the CPUID.
->>    This has not changed.
->>
->> - For an uncore or system PMU, we match first based on the SYSID (if set).
->>    If this fails, then we match on the CPUID.
->>
->>    This works for x86, as x86 would not have any system mapfiles for uncore
->>    PMUs (and match on the CPUID).
->>
->> Initial reference support is also added for ARM SMMUv3 PMCG (Performance
->> Monitor Event Group) PMU for HiSilicon hip08 platform with only a single
->> event so far - see driver in drivers/perf/arm_smmuv3_pmu.c for that driver.
->>
->> Here is a sample output with this series:
->>
->> root@ubuntu:/# ./perf list
->>    [...]
->>
->>    smmuv3_pmcg_100020/config_cache_miss/              [Kernel PMU event]
->>    smmuv3_pmcg_100020/config_struct_access/           [Kernel PMU event]
->>    smmuv3_pmcg_100020/cycles/                         [Kernel PMU event]
->>    smmuv3_pmcg_100020/pcie_ats_trans_passed/          [Kernel PMU event]
->>    smmuv3_pmcg_100020/pcie_ats_trans_rq/              [Kernel PMU event]
->>    smmuv3_pmcg_100020/tlb_miss/                       [Kernel PMU event]
->>    smmuv3_pmcg_100020/trans_table_walk_access/        [Kernel PMU event]
->>    smmuv3_pmcg_100020/transaction/                    [Kernel PMU event]
->>
->>    [...]
->>
->> smmu v3 pmcg:
->>    smmuv3_pmcg.l1_tlb
->>         [SMMUv3 PMCG l1_tlb. Unit: smmuv3_pmcg]
->>
->>    [...]
->>
->> root@ubuntu:/# ./perf stat -v -e smmuv3_pmcg.l1_tlb sleep 1
->> Using CPUID 0x00000000480fd010
->> Using SYSID HIP08
->>   -> smmuv3_pmcg_200100020/event=0x8a/
->>   -> smmuv3_pmcg_200140020/event=0x8a/
->>   -> smmuv3_pmcg_100020/event=0x8a/
->>   -> smmuv3_pmcg_140020/event=0x8a/
->>   -> smmuv3_pmcg_200148020/event=0x8a/
->>   -> smmuv3_pmcg_148020/event=0x8a/
->> smmuv3_pmcg.l1_tlb: 0 1001221690 1001221690
->> smmuv3_pmcg.l1_tlb: 0 1001220090 1001220090
->> smmuv3_pmcg.l1_tlb: 101 1001219660 1001219660
->> smmuv3_pmcg.l1_tlb: 0 1001219010 1001219010
->> smmuv3_pmcg.l1_tlb: 0 1001218360 1001218360
->> smmuv3_pmcg.l1_tlb: 134 1001217850 1001217850
->>
->>   Performance counter stats for 'system wide':
->>
->>                 235      smmuv3_pmcg.l1_tlb
->>
->>         1.001263128 seconds time elapsed
->>
->> root@ubuntu:/#
->>
->> Issues with this series which need to be addressed (aware to me):
->>
->> - It would be good to have a universal method to identify the system from
->>    sysfs. Nothing exists which I know about. There is DMI, but this is not
->>    always available (or has correct info). Maybe systems which want to
->>    support this feature will need a "soc" driver, and a
->>    /sys/devices/socX/machine file (which I used for testing this series -
->>    this driver is out of tree currently).
->>
->> - Maybe it is ok, but for systems which match on the system identifier,
->>    uncore PMUs should be in the system mapfile, and, as such, match on the
->>    system identifier and not CPU identifier.
->>
->> - We need a better way in jevents.c to give a direct mapping of PMU name
->>    aliases, i.e. for any PMU name not prefixed with "uncore_", we need to
->>    add this to table unit_to_pmu[]. Not scalable.
->>
->>    Having said that, maybe the kernel can introduce some future PMU naming
->>    convention in future.
->>
->> John Garry (7):
->>    perf jevents: Add support for an extra directory level
->>    perf vendor events arm64: Relocate hip08 core events
->>    perf jevents: Add support for a system events PMU
->>    perf pmu: Rename uncore symbols to include system pmus
->>    perf pmu: Support matching by sysid
->>    perf vendor events arm64: Relocate uncore events for hip08
->>    perf vendor events arm64: Add hip08 SMMUv3 PMCG IMP DEF events
->>
->>   tools/perf/arch/arm64/util/arm-spe.c          |   2 +-
->>   tools/perf/pmu-events/README                  |  47 ++++++--
->>   .../hip08/{ => cpu}/core-imp-def.json         |   0
->>   .../hisilicon/hip08/sys/smmu-v3-pmcg.json     |   9 ++
->>   .../hip08/{ => sys}/uncore-ddrc.json          |   0
->>   .../hisilicon/hip08/{ => sys}/uncore-hha.json |   0
->>   .../hisilicon/hip08/{ => sys}/uncore-l3c.json |   0
->>   tools/perf/pmu-events/arch/arm64/mapfile.csv  |   2 +-
->>   .../pmu-events/arch/arm64/mapfile_sys.csv     |  14 +++
->>   tools/perf/pmu-events/jevents.c               |  65 ++++++++--
->>   tools/perf/pmu-events/pmu-events.h            |   1 +
->>   tools/perf/util/evsel.h                       |   2 +-
->>   tools/perf/util/parse-events.c                |  12 +-
->>   tools/perf/util/pmu.c                         | 111 +++++++++++++++---
->>   tools/perf/util/pmu.h                         |   2 +-
->>   15 files changed, 221 insertions(+), 46 deletions(-)
->>   rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => cpu}/core-imp-def.json (100%)
->>   create mode 100644 tools/perf/pmu-events/arch/arm64/hisilicon/hip08/sys/smmu-v3-pmcg.json
->>   rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => sys}/uncore-ddrc.json (100%)
->>   rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => sys}/uncore-hha.json (100%)
->>   rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => sys}/uncore-l3c.json (100%)
->>   create mode 100644 tools/perf/pmu-events/arch/arm64/mapfile_sys.csv
->>
-> IMPORTANT NOTICE: The contents of this email and any attachments are confidential and may also be privileged. If you are not the intended recipient, please notify the sender immediately and do not disclose the contents to any other person, use it for any purpose, or store or copy the information in any medium. Thank you.
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> .
-> 
+From 5d3c644773925c3568617435e42a9404a114c428 Mon Sep 17 00:00:00 2001
+From: Tzung-Bi Shih <tzungbi@google.com>
+Date: Thu, 6 Feb 2020 11:17:51 +0800
+Subject: [PATCH] drm/mediatek: support HDMI jack status reporting
+
+1.
+Provides a callback (i.e. mtk_hdmi_audio_hook_plugged_cb) to hdmi-codec.
+When ASoC machine driver calls hdmi_codec_set_jack_detect(), the
+callback will be invoked to save plugged_cb and codec_dev parameters.
+
++---------+  set_jack_  +------------+ plugged_cb  +----------+
+| machine | ----------> | hdmi-codec | ----------> | mtk-hdmi |
++---------+  detect()   +------------+ codec_dev   +----------+
+
+2.
+When there is any jack status changes, mtk-hdmi will call the
+plugged_cb() to notify hdmi-codec.  And then hdmi-codec will call
+snd_soc_jack_report().
+
++----------+ plugged_cb  +------------+
+| mtk-hdmi | ----------> | hdmi-codec | -> snd_soc_jack_report()
++----------+ codec_dev   +------------+
+             connector_status
+
+Signed-off-by: Tzung-Bi Shih <tzungbi@google.com>
+Link: https://lore.kernel.org/r/20200206102509.2.I230fd59de28e73934a91cb01424e25b9e84727f4@changeid
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/gpu/drm/mediatek/mtk_hdmi.c | 34 ++++++++++++++++++++++++++---
+ 1 file changed, 31 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+index fcec06e63e0c..03aeb73005ef 100644
+--- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
++++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+@@ -169,6 +169,8 @@ struct mtk_hdmi {
+ 	bool audio_enable;
+ 	bool powered;
+ 	bool enabled;
++	hdmi_codec_plugged_cb plugged_cb;
++	struct device *codec_dev;
+ };
+ 
+ static inline struct mtk_hdmi *hdmi_ctx_from_bridge(struct drm_bridge *b)
+@@ -1194,13 +1196,23 @@ static void mtk_hdmi_clk_disable_audio(struct mtk_hdmi *hdmi)
+ 	clk_disable_unprepare(hdmi->clk[MTK_HDMI_CLK_AUD_SPDIF]);
+ }
+ 
++static enum drm_connector_status
++mtk_hdmi_update_plugged_status(struct mtk_hdmi *hdmi)
++{
++	bool connected = mtk_cec_hpd_high(hdmi->cec_dev);
++
++	if (hdmi->plugged_cb && hdmi->codec_dev)
++		hdmi->plugged_cb(hdmi->codec_dev, connected);
++
++	return connected ?
++	       connector_status_connected : connector_status_disconnected;
++}
++
+ static enum drm_connector_status hdmi_conn_detect(struct drm_connector *conn,
+ 						  bool force)
+ {
+ 	struct mtk_hdmi *hdmi = hdmi_ctx_from_conn(conn);
+-
+-	return mtk_cec_hpd_high(hdmi->cec_dev) ?
+-	       connector_status_connected : connector_status_disconnected;
++	return mtk_hdmi_update_plugged_status(hdmi);
+ }
+ 
+ static void hdmi_conn_destroy(struct drm_connector *conn)
+@@ -1651,20 +1663,36 @@ static int mtk_hdmi_audio_get_eld(struct device *dev, void *data, uint8_t *buf,
+ 	return 0;
+ }
+ 
++static int mtk_hdmi_audio_hook_plugged_cb(struct device *dev, void *data,
++					  hdmi_codec_plugged_cb fn,
++					  struct device *codec_dev)
++{
++	struct mtk_hdmi *hdmi = data;
++
++	hdmi->plugged_cb = fn;
++	hdmi->codec_dev = codec_dev;
++	mtk_hdmi_update_plugged_status(hdmi);
++
++	return 0;
++}
++
+ static const struct hdmi_codec_ops mtk_hdmi_audio_codec_ops = {
+ 	.hw_params = mtk_hdmi_audio_hw_params,
+ 	.audio_startup = mtk_hdmi_audio_startup,
+ 	.audio_shutdown = mtk_hdmi_audio_shutdown,
+ 	.digital_mute = mtk_hdmi_audio_digital_mute,
+ 	.get_eld = mtk_hdmi_audio_get_eld,
++	.hook_plugged_cb = mtk_hdmi_audio_hook_plugged_cb,
+ };
+ 
+ static int mtk_hdmi_register_audio_driver(struct device *dev)
+ {
++	struct mtk_hdmi *hdmi = dev_get_drvdata(dev);
+ 	struct hdmi_codec_pdata codec_data = {
+ 		.ops = &mtk_hdmi_audio_codec_ops,
+ 		.max_i2s_channels = 2,
+ 		.i2s = 1,
++		.data = hdmi,
+ 	};
+ 	struct platform_device *pdev;
+ 
+-- 
+2.20.1
 
 
 _______________________________________________
