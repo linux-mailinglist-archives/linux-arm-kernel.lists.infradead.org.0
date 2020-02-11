@@ -2,73 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EB2215903C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 14:47:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A4CD15904A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 14:49:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v/4wtlNjG65Nv0BsD4o4RpuM7311SeueP531QqnjGZw=; b=P4ldyMauTWAUi3
-	9EgIB1xBAKydBdCCq/HDfyFv9GYpbG48sdV32+Lq4CXA+rp5PEad5KqIzqY0ktYud9duvXqYj4Omf
-	8UnaIFTKaF7J2HtdDX31sSCC/95ac2/f19YU+CY2GQXQqgQy0vQYsmY2eQ/EYl0dLzDPPnlvt/eO6
-	Y3+20sgVB1th1jCh++DiAMSjIGaGh/RkfutKFt5oYdlWvpE4TrxqwQ6a5a30RmYYcy56kgitbpUDA
-	9bzQVnOmY+NFfWcHMpup2E71MNd1pRnmjhTNeZZgIh0UHIEZwxY3vRNpaiixg0QTw6De6bUPte2XM
-	Equ20k/JOiry1IfofKHw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Q9Eedrpm+ZQezEHXcjojgCHrYwg1NSmbBzGRJC6OAEs=; b=bal
+	GUEE3cweBEy/Vkjzf2O1dBoqXUeIQqctHowPUTw4Z2UghEKFuNfNsw8XoV+k/9uxO4M/XaDCgWyyp
+	qf26Y3SZo9+k2pqbjJt+qdqndF06tTHiH7QPQGbaWEBxURzOD+G1VW8Iyjvfi0f9vrXbv8d9b9+DI
+	LPpFdD/7IwXQZEYsPmaSEitj7mQXBlWZnRZrvrQfYtxXb3yABUQIUrBtZSoARs4A+Txn4vOFlT6B4
+	HOAidlwfT8hESddkvjjmeCAuPLXUyIBvDoSaYgAumOSh1xoUZsswM2ALud+R1XKVlGlAd1BE6uHt2
+	bWDUHrcXdge45JTn/egO1ibajqTlB/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Vt0-0003Uc-Be; Tue, 11 Feb 2020 13:47:34 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j1Vud-0004DJ-G1; Tue, 11 Feb 2020 13:49:15 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Vsr-0003UE-Bz
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 13:47:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581428842;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=vZZXarGtig3tAtPPECD18uPxu8CsjJJba6XrWOt6Ku8=;
- b=UNN0BdqrnMFtMjDNwLD/WnNFhtrj7uxrUFV0mCj0tv3ELFa3acz9/HwrihOpJNeQ8n7zdv
- kdVsOQMnapI5h/bfgvW9yuUtPKNJLPET5wT7Wlqpffqis50FMLlp7VunFh6W+Wa1VvBbTN
- Bdm4SC+628BTkUbwlJsjGBeI2zvF+U4=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-41-mOtB-_kLPb29C5VUCfBX7w-1; Tue, 11 Feb 2020 08:47:13 -0500
-X-MC-Unique: mOtB-_kLPb29C5VUCfBX7w-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 1C6231800D42;
- Tue, 11 Feb 2020 13:47:11 +0000 (UTC)
-Received: from krava (ovpn-204-250.brq.redhat.com [10.40.204.250])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 2D54F5DA7B;
- Tue, 11 Feb 2020 13:47:06 +0000 (UTC)
-Date: Tue, 11 Feb 2020 14:47:04 +0100
-From: Jiri Olsa <jolsa@redhat.com>
-To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH RFC 5/7] perf pmu: Support matching by sysid
-Message-ID: <20200211134704.GB93194@krava>
-References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <1579876505-113251-6-git-send-email-john.garry@huawei.com>
- <20200210120759.GG1907700@krava>
- <63799909-067b-e5f4-dcf1-9ba1ec145348@huawei.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <63799909-067b-e5f4-dcf1-9ba1ec145348@huawei.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+ id 1j1VuM-0003zu-98
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 13:48:59 +0000
+Received: by mail-qt1-x841.google.com with SMTP id t13so7964724qto.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Feb 2020 05:48:53 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=JIZHRdZLqtLorXZfrYCSPItmC1Dc+HGHwOIzP/XDImY=;
+ b=d3FXu4DcpsHeeo7NBsq1Ec3f7OKhc4SsvQnIJenSnOtjREel9IF+kdR8ma1SWkO5OR
+ Ou4s2dnBv7WOxC4OPWNV6d8KIVpBRVtM/ukAKzN6d3zx7MvBtQz1N27NoDx/a7ujHsmS
+ jvZYtEEc8DToM7semtrIS3CUfnR8Jxni2Z/6WUP8wvMdDT8C1m2PB78zzz+BFas4vec2
+ VRg0vXB9eGeEdlGGMFCs2IJ9nbGhw7o3VA3WFY8plHWMmjNInC6fLgpMiA40FBmv4BzV
+ G9slDIDonCBacDdi6tPT8KEVnytqC8eiltqCoEj+hq8mYECNDQpWUjWhJQ4KRRh1aoXi
+ oAuA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=JIZHRdZLqtLorXZfrYCSPItmC1Dc+HGHwOIzP/XDImY=;
+ b=VDw2Y7qVf/KFTneIHUcwsg23yYrIU2SHbDXAyjC6m5rgjl9cM292uJO9J1u+Op1Cu/
+ dOhT15wf440CJpqMBTLTJJSuUVpomGxEXFT4qDa6Q84BqkWbFYl/d9HRJkcM1376rLVZ
+ 7nbzvWqSlLIu3wFgOabFryD13Mw65RJpKUn2vW0b7kInWJ/phJhDJ5+FwjVWJTXEIlsT
+ LFN5gpS5hajAUubLcUmK8avcuJGka+vT8NkK608MO8NndwUp56g4BRs7Pk4S6wvttmy3
+ F8ouwAvWF2idbxWjx9MGcaM/PVLhQpDmcif8AjlEhGnbBza4u5356N4S+SKZSkd43Grw
+ 8ZWA==
+X-Gm-Message-State: APjAAAUJWGlEecdg9M/V5ba1zVNwrP9LNv4AsXidTI7JEnOQd/PE0sMm
+ I4AUmnPqcCuUaNiG7XoZiUw=
+X-Google-Smtp-Source: APXvYqybhzOEAAvHZbhKNes/s71zGxqa2omF1pXH9nVpHWlE7KVvcXMkRtBbOlD4T9UG/KxmmcCT+w==
+X-Received: by 2002:ac8:7caf:: with SMTP id z15mr14892626qtv.68.1581428933199; 
+ Tue, 11 Feb 2020 05:48:53 -0800 (PST)
+Received: from NXL86673.nxp.com ([177.221.114.206])
+ by smtp.googlemail.com with ESMTPSA id h6sm2158936qtr.33.2020.02.11.05.48.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 11 Feb 2020 05:48:52 -0800 (PST)
+From: Alifer Moraes <alifer.wsdm@gmail.com>
+To: robh+dt@kernel.org
+Subject: [PATCH] arm64: dts: imx8mq-phanbell: Add support for ethernet
+Date: Tue, 11 Feb 2020 10:48:28 -0300
+Message-Id: <20200211134828.138-1-alifer.wsdm@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_054725_485412_60BC87F8 
-X-CRM114-Status: GOOD (  21.99  )
+X-CRM114-CacheID: sfid-20200211_054858_316312_8FE28FDF 
+X-CRM114-Status: GOOD (  10.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [alifer.wsdm[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,92 +93,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ak@linux.intel.com, suzuki.poulose@arm.com,
- peterz@infradead.org, robin.murphy@arm.com, linuxarm@huawei.com,
- acme@kernel.org, linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, james.clark@arm.com,
- namhyung@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, festevam@gmail.com,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ Alifer Moraes <alifer.wsdm@gmail.com>, marco.franchi@nxp.com,
+ shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 10, 2020 at 04:22:56PM +0000, John Garry wrote:
-> Hi jirka,
-> 
-> > 
-> > > +		fclose(file);
-> > > +		pr_debug("gets failed for file %s\n", path);
-> > > +		free(buf);
-> > > +		return NULL;
-> > > +	}
-> > > +	fclose(file);
-> > > +
-> > > +	/* Remove any whitespace, this could be from ACPI HID */
-> > > +	s = strlen(buf);
-> > > +	for (i = 0; i < s; i++) {
-> > > +		if (buf[i] == ' ') {
-> > > +			buf[i] = 0;
-> > > +			break;
-> > > +		};
-> > > +	}
-> > > +
-> > > +	return buf;
-> > > +}
-> > > +
-> 
-> I have another series to add kernel support for a system identifier sysfs
-> entry, which I sent after this series:
-> 
-> https://lore.kernel.org/linux-acpi/1580210059-199540-1-git-send-email-john.garry@huawei.com/
-> 
-> It is different to what I am relying on here - it uses a kernel soc driver
-> for firmware ACPI PPTT identifier. Progress is somewhat blocked at the
-> moment however and I may have to use a different method:
-> 
-> https://lore.kernel.org/linux-acpi/20200128123415.GB36168@bogus/
+Add support for ethernet on Google's i.MX 8MQ Phanbell
 
-I'll try to check ;-)
+Signed-off-by: Alifer Moraes <alifer.wsdm@gmail.com>
+---
+ .../boot/dts/freescale/imx8mq-phanbell.dts    | 41 +++++++++++++++++++
+ 1 file changed, 41 insertions(+)
 
-> 
-> > > +static char *perf_pmu__getsysid(void)
-> > > +{
-> > > +	char *sysid;
-> > > +	static bool printed;
-> > > +
-> > > +	sysid = getenv("PERF_SYSID");
-> > > +	if (sysid)
-> > > +		sysid = strdup(sysid);
-> > > +
-> > > +	if (!sysid)
-> > > +		sysid = get_sysid_str();
-> > > +	if (!sysid)
-> > > +		return NULL;
-> > > +
-> > > +	if (!printed) {
-> > > +		pr_debug("Using SYSID %s\n", sysid);
-> > > +		printed = true;
-> > > +	}
-> > > +	return sysid;
-> > > +}
-> > 
-> > this part is getting complicated and AFAIK we have no tests for it
-> > 
-> > if you could think of any tests that'd be great.. Perhaps we could
-> > load 'our' json test files and check appropriate events/aliasses
-> > via in pmu object.. or via parse_events interface.. those test aliases
-> > would have to be part of perf, but we have tests compiled in anyway
-> 
-> Sorry, I don't fully follow.
-> 
-> Are you suggesting that we could load the specific JSONs tables for a system
-> from the host filesystem?
-
-I wish to see some test for all this.. I can only think about having
-'test' json files compiled with perf and 'perf test' that looks them
-up and checks that all is in the proper place
-
-jirka
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-phanbell.dts b/arch/arm64/boot/dts/freescale/imx8mq-phanbell.dts
+index 3f2a489a4ad8..16ed13c44a47 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-phanbell.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mq-phanbell.dts
+@@ -201,6 +201,27 @@
+ 	};
+ };
+ 
++&fec1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_fec1>;
++	phy-mode = "rgmii-id";
++	phy-reset-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
++	phy-reset-duration = <10>;
++	phy-reset-post-delay = <30>;
++	phy-handle = <&ethphy0>;
++	fsl,magic-packet;
++	status = "okay";
++
++	mdio {
++		#address-cells = <1>;
++		#size-cells = <0>;
++		ethphy0: ethernet-phy@0 {
++			compatible = "ethernet-phy-ieee802.3-c22";
++			reg = <0>;
++		};
++	};
++};
++
+ &uart1 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_uart1>;
+@@ -254,6 +275,26 @@
+ };
+ 
+ &iomuxc {
++	pinctrl_fec1: fec1grp {
++		fsl,pins = <
++			MX8MQ_IOMUXC_ENET_MDC_ENET1_MDC			0x3
++			MX8MQ_IOMUXC_ENET_MDIO_ENET1_MDIO		0x23
++			MX8MQ_IOMUXC_ENET_TD3_ENET1_RGMII_TD3		0x1f
++			MX8MQ_IOMUXC_ENET_TD2_ENET1_RGMII_TD2		0x1f
++			MX8MQ_IOMUXC_ENET_TD1_ENET1_RGMII_TD1		0x1f
++			MX8MQ_IOMUXC_ENET_TD0_ENET1_RGMII_TD0		0x1f
++			MX8MQ_IOMUXC_ENET_RD3_ENET1_RGMII_RD3		0x91
++			MX8MQ_IOMUXC_ENET_RD2_ENET1_RGMII_RD2		0x91
++			MX8MQ_IOMUXC_ENET_RD1_ENET1_RGMII_RD1		0x91
++			MX8MQ_IOMUXC_ENET_RD0_ENET1_RGMII_RD0		0x91
++			MX8MQ_IOMUXC_ENET_TXC_ENET1_RGMII_TXC		0x1f
++			MX8MQ_IOMUXC_ENET_RXC_ENET1_RGMII_RXC		0x91
++			MX8MQ_IOMUXC_ENET_RX_CTL_ENET1_RGMII_RX_CTL	0x91
++			MX8MQ_IOMUXC_ENET_TX_CTL_ENET1_RGMII_TX_CTL	0x1f
++			MX8MQ_IOMUXC_GPIO1_IO09_GPIO1_IO9		0x19
++		>;
++	};
++
+ 	pinctrl_i2c1: i2c1grp {
+ 		fsl,pins = <
+ 			MX8MQ_IOMUXC_I2C1_SCL_I2C1_SCL			0x4000007f
+-- 
+2.17.1
 
 
 _______________________________________________
