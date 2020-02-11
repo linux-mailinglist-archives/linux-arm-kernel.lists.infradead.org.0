@@ -2,66 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C0B8159AED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 22:07:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 012C0159AF2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 22:07:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6DC8qRQSoaTxAbnV7mgW3OplUyfUh9xrUBq9GIE+MOM=; b=Sy9iic//MwADpLVzMfZS+xa8o
-	8SqJLt2SHLP56YDkfyosvn4ubnK1NHw544jh7WJDx99MdEPTJhOZiylhdFM0+9JzAue9AgEqwgYie
-	OQ1MzBN8WO1jGiE4MgrF+A4UclFNkV6RCwvgPplLt3RPp1y8V4VMRNwOtv1VTOmT1zhx81ZObTzUk
-	lHmfk3wM/juF+AzPD4v+ybuIl3L3S4YcZ2UQUHKtSuoUa0bt9P3ZLQE/gzDHfFabKukqaBGKrgIdI
-	qjpk3+CA+5jbQvYGQCcw9S9sg1pZ8LaAI3j9FdXiHL1a74oYRqXZxJ6lTbn8YiOAvN3VS9AuIFkwM
-	rC+311C4A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YmiujGVzLvQOzfDka3zOFCvsDin89i163bM8IaXDQBo=; b=ZI7djp5RXU5AjQ
+	oRcN5tmGWtlIhWhokR63FpbCiLYAyGCFNuL1tWF6J5zQv7Vdg/M2O1ay0qutNU7FKeeUyP24aK1p2
+	rKpsqd7z2TSzlTHO/ChmiI0CSIktwyrKjCmyCaS/kQPKgXMD47MkhLEy9BNr4xKpkk+V4+I4lDFl8
+	pd1aF3gGZj7Hbwt8JjTJiLr4eTBB3U7qe2Mx51QvqU5JtiNEfOCqg8ZtfVGyXSBHWXKq2q074hNji
+	b0N0g8k+KzbxEcIESiHLrxRoJToY1QCeLe5lwv7mcFFnFQi7iukiJ0HJ4ECsczB6A4ex2U2vbmYw7
+	I9aP8fGD/JAQfHR8xQLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1ckJ-0003NH-9e; Tue, 11 Feb 2020 21:07:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j1ckz-0003dV-LK; Tue, 11 Feb 2020 21:07:45 +0000
+Received: from gateway36.websitewelcome.com ([192.185.188.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ckC-0003MY-3g
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 21:06:57 +0000
-Received: from [192.168.1.112] (c-24-9-64-241.hsd1.co.comcast.net
- [24.9.64.241])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8DC6820708;
- Tue, 11 Feb 2020 21:06:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581455215;
- bh=ial5lfm1joGz3c4sbCOYuWw3kSyd3YsJFbgXFfG8r/g=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=msfipC7T9DKYbMKWk/VLVW4IMh7VnAItA5wtAxaobNWwXfYmHZ/X/Ymmq8lsnLEGN
- Wu+pQMJuctk58waK3nUpMbXZ4UDxTjq9yOcqf5kjKIuTY+pyZfL45ptaFYdIywNhS+
- cyd182nfjlqDLv5IJ8aOb17XICywoddq/X6ljmcc=
-Subject: Re: [PATCH v3 7/7] selftests/exec: Add READ_IMPLIES_EXEC tests
-To: Kees Cook <keescook@chromium.org>
-References: <20200210193049.64362-1-keescook@chromium.org>
- <20200210193049.64362-8-keescook@chromium.org>
- <4f8a5036-dc2a-90ad-5fc8-69560a5dd78e@kernel.org>
- <202002111124.0A334167@keescook>
-From: shuah <shuah@kernel.org>
-Message-ID: <c09c345a-786f-25d2-1ee5-65f9cb23db6d@kernel.org>
-Date: Tue, 11 Feb 2020 14:06:53 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j1cks-0003d5-1O
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 21:07:39 +0000
+Received: from cm17.websitewelcome.com (cm17.websitewelcome.com [100.42.49.20])
+ by gateway36.websitewelcome.com (Postfix) with ESMTP id C9A6441A6B7A9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Feb 2020 14:21:36 -0600 (CST)
+Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
+ id 1ckqjhlkyAGTX1ckqjuA4y; Tue, 11 Feb 2020 15:07:36 -0600
+X-Authority-Reason: nr=8
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=embeddedor.com; s=default; h=Content-Type:MIME-Version:Message-ID:Subject:
+ Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=uQ6KP5z8InjWIXpG49YAqXGZxEhBltFyFNyMqd8msSs=; b=hUpZtp/YmtarBOW5bzCKOqqOzR
+ rkT9/BoT24adZzpp6Zzy9DO3Q99yWgahD5WPoq8+tLpkKL+zIwJArzXaUO2/ok3xFWxeC80HBZ/hP
+ 33pWIcuE0SiR+Y3p9hLtWKDRRfGyy8sfEK204ogotK9OumSTtG2Lhbk37uH1SjUUZxhyf4SDUOjFk
+ IoVzLb4hZEG9T6uHKr/yz9aKGHLuh8vU7yr6dXr3L/92OKoNG3bS+Qb9RZ884XjqvJvZgTH2BB37b
+ QMPjik7Z1twj9H1WvIe/oAmza3g1RdVM7WHij00ZvXGff7swCvP4ERH+tviJfQdCpKA3NclCPgjDe
+ tq0UyxbQ==;
+Received: from [200.68.140.36] (port=31539 helo=embeddedor)
+ by gator4166.hostgator.com with esmtpa (Exim 4.92)
+ (envelope-from <gustavo@embeddedor.com>)
+ id 1j1ckp-0029VO-8X; Tue, 11 Feb 2020 15:07:35 -0600
+Date: Tue, 11 Feb 2020 15:10:10 -0600
+From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+To: Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: [PATCH] misc: vexpress: Replace zero-length array with
+ flexible-array member
+Message-ID: <20200211211010.GA32239@embeddedor>
 MIME-Version: 1.0
-In-Reply-To: <202002111124.0A334167@keescook>
-Content-Language: en-US
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - embeddedor.com
+X-BWhitelist: no
+X-Source-IP: 200.68.140.36
+X-Source-L: No
+X-Exim-ID: 1j1ckp-0029VO-8X
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: (embeddedor) [200.68.140.36]:31539
+X-Source-Auth: gustavo@embeddedor.com
+X-Email-Count: 21
+X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
+X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_130656_171101_85049EA8 
-X-CRM114-Status: GOOD (  16.24  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200211_130738_173416_6EC31242 
+X-CRM114-Status: UNSURE (   8.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [192.185.188.18 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -69,7 +96,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,56 +107,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jann Horn <jannh@google.com>, Catalin Marinas <catalin.marinas@arm.com>,
- x86@kernel.org, Hector Marco-Gisbert <hecmargi@upv.es>,
- Russell King <linux@armlinux.org.uk>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Jason Gunthorpe <jgg@mellanox.com>,
- linux-kselftest@vger.kernel.org, kernel-hardening@lists.openwall.com,
- shuah <shuah@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/11/20 12:25 PM, Kees Cook wrote:
-> On Tue, Feb 11, 2020 at 11:11:21AM -0700, shuah wrote:
->> On 2/10/20 12:30 PM, Kees Cook wrote:
->>> In order to check the matrix of possible states for handling
->>> READ_IMPLIES_EXEC across native, compat, and the state of PT_GNU_STACK,
->>> add tests for these execution conditions.
->>>
->>> Signed-off-by: Kees Cook <keescook@chromium.org>
->>
->> No issues for this to go through tip.
->>
->> A few problems to fix first. This fails to compile when 32-bit libraries
->> aren't installed. It should fail the 32-bit part and run other checks.
-> 
-> Do you mean the Makefile should detect the missing compat build deps and
-> avoid building them? Testing compat is pretty important to this test, so
-> it seems like missing the build deps causing the build to fail is the
-> correct action here. This is likely true for the x86/ selftests too.
-> 
-> What would you like this to do?
-> 
+The current codebase makes use of the zero-length array language
+extension to the C90 standard, but the preferred mechanism to declare
+variable-length types such as these ones is a flexible array member[1][2],
+introduced in C99:
 
-selftests/x86 does this already and runs the dependency check in 
-x86/Makefile.
+struct foo {
+        int stuff;
+        struct boo array[];
+};
 
+By making use of the mechanism above, we will get a compiler warning
+in case the flexible array does not occur last in the structure, which
+will help us prevent some kind of undefined behavior bugs from being
+inadvertenly introduced[3] to the codebase from now on.
 
-check_cc.sh:# check_cc.sh - Helper to test userspace compilation support
-Makefile:CAN_BUILD_I386 := $(shell ./check_cc.sh $(CC) 
-trivial_32bit_program.c -m32)
-Makefile:CAN_BUILD_X86_64 := $(shell ./check_cc.sh $(CC) 
-trivial_64bit_program.c)
-Makefile:CAN_BUILD_WITH_NOPIE := $(shell ./check_cc.sh $(CC) 
-trivial_program.c -no-pie)
+This issue was found with the help of Coccinelle.
 
-Take a look and see if you can leverage this.
+[1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
+[2] https://github.com/KSPP/linux/issues/21
+[3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
 
-thanks,
--- Shuah
+Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+---
+ drivers/misc/vexpress-syscfg.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/misc/vexpress-syscfg.c b/drivers/misc/vexpress-syscfg.c
+index a3c6c773d9dc..5eb51f2be8f0 100644
+--- a/drivers/misc/vexpress-syscfg.c
++++ b/drivers/misc/vexpress-syscfg.c
+@@ -49,7 +49,7 @@ struct vexpress_syscfg_func {
+ 	struct vexpress_syscfg *syscfg;
+ 	struct regmap *regmap;
+ 	int num_templates;
+-	u32 template[0]; /* Keep it last! */
++	u32 template[]; /* Keep it last! */
+ };
+ 
+ 
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
