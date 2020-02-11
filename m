@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1210A158856
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 03:39:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55CAD158858
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 03:39:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,35 +11,35 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=AmCMdBaof+92xUUI2DRjxhMp2eFa/rlSlPdYi7OJyaU=; b=GVd2vH3huqOgCXn052YhO+Snek
-	4+t5dY/TYBPh4lTsTqkzGGzNGvlLuw6v/Gw5nn1oQNYAmoA8kM+6BPT/TaxMNbZDkbSl/KZnfmaGI
-	OoXQQl3CpcJ5wSGClakUWmh0q+BFcbYVEvdxR1IOrMZDSWp8r8rfiYpT/iLWukgNn+W1Q0N0mZu4z
-	zIodbd44tq4weWwtYlHC0yRHMYu8BeNOJzSiS1w3R/oMBLn0x3NuxBFxp8LvJVA6cegYu9rl/35qz
-	qzgLFOePec9DpNtGMs5aNL7TikF0W7LTJpiH4vw57OwcvaUsex1aSYfbYleuQxQyjxwfsMCwdtwpZ
-	/zno41uQ==;
+	bh=/xnwSFMEZ+g+JB0QDqCatVDJef+OwhlSJQKAsIG5Cb0=; b=s2JChsiXnn3vPEpSgd3M+tpaTl
+	nvbP45L1gNLdzJB0F/xeZKyIDbZTxbJOt0xEoUkN+5OLnVaK0g6OUR8173nMYTK71Sjgt1p8n+oiy
+	bq6JvqaVUxJBehjcih6d+LJUXQHmLGx0HJhGYXTEvrYCg0gOSKMpDXA/KTmeqTy0qdTFKY9tkWavV
+	G/9etPhsYOAcV1hn7MVwlatOB6XlcUDo7MTyQpk8Rb+yIJDPuGvlu2ElUAqtBDShm1RH/xsmyxdzX
+	Hh7B9OTXHuK25IvxxjW3FpqJZ+HkXZMuBFOLgfAPJbLFO2aPl5mF219asTy8mttwA4cAMAguzlnEI
+	0We5LQ8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1LS4-0001fm-BK; Tue, 11 Feb 2020 02:39:04 +0000
+	id 1j1LSK-0001x2-2b; Tue, 11 Feb 2020 02:39:20 +0000
 Received: from mail25.static.mailgun.info ([104.130.122.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1LRS-00018J-00
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 02:38:27 +0000
+ id 1j1LRX-00018J-VU
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 02:38:33 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1581388706; h=References: In-Reply-To: Message-Id: Date:
+ s=smtp; t=1581388711; h=References: In-Reply-To: Message-Id: Date:
  Subject: Cc: To: From: Sender;
- bh=mOGsKpB2Al28vMrBa0jcYjVjoj+5dd6cChtWkiROc10=;
- b=Nbd8rJ5dPAuZFhEQ0389EQZMAkSTH1Bofb60ySkX/sQeK8gKRHiFrXLrHuh+V+LWtMWBYunJ
- aL19/OtW3dPczYCSUIimpn7gytcaVrNM5wD6SkKyBJAgsua9wY4slRA8WodDMeVrEc28vMb/
- JKOEfXmGnFqz2pLzXyFKWgQHVFo=
+ bh=tbDNMomGjJ7cvmYyF8PQisUL3aRlv7HcybX79OJNwX8=;
+ b=vDL94eJjETEkRB7uniWSU3U3JDtZoz7UsQZUU2sYp8gFcTJbcj3zj8yDkWA0y52OdNIXz6xs
+ 8CI1LzinY0xS26MDaBN5cLFLnQmMElfsCL9XMGJ0rxLPJFexeh4Kv9ATXXKKOL93wyObzOrR
+ 3Lyz1MBGdXnf7DISRpx+79wvfG4=
 X-Mailgun-Sending-Ip: 104.130.122.25
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e42139f.7f2912cac928-smtp-out-n03;
- Tue, 11 Feb 2020 02:38:23 -0000 (UTC)
+ by mxa.mailgun.org with ESMTP id 5e4213a6.7f4e4c4cf9d0-smtp-out-n02;
+ Tue, 11 Feb 2020 02:38:30 -0000 (UTC)
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 6941DC447AA; Tue, 11 Feb 2020 02:38:21 +0000 (UTC)
+ id B4042C447AE; Tue, 11 Feb 2020 02:38:29 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
@@ -49,9 +49,9 @@ Received: from pacamara-linux.qualcomm.com (i-global254.qualcomm.com
  [199.106.103.254])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 60794C43383;
- Tue, 11 Feb 2020 02:38:19 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 60794C43383
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 4533DC447A3;
+ Tue, 11 Feb 2020 02:38:26 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 4533DC447A3
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
@@ -60,16 +60,15 @@ From: Can Guo <cang@codeaurora.org>
 To: asutoshd@codeaurora.org, nguyenb@codeaurora.org, hongwus@codeaurora.org,
  rnayak@codeaurora.org, linux-scsi@vger.kernel.org, kernel-team@android.com,
  saravanak@google.com, salyzyn@google.com, cang@codeaurora.org
-Subject: [PATCH v9 5/7] scsi: ufs: Fix ufshcd_hold() caused scheduling while
- atomic
-Date: Mon, 10 Feb 2020 18:37:47 -0800
-Message-Id: <1581388671-18078-6-git-send-email-cang@codeaurora.org>
+Subject: [PATCH v9 6/7] scsi: ufs: Add dev ref clock gating wait time support
+Date: Mon, 10 Feb 2020 18:37:48 -0800
+Message-Id: <1581388671-18078-7-git-send-email-cang@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1581388671-18078-1-git-send-email-cang@codeaurora.org>
 References: <1581388671-18078-1-git-send-email-cang@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_183826_365682_9EEC2DFE 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20200210_183832_101999_4BB94D57 
+X-CRM114-Status: GOOD (  17.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -97,11 +96,11 @@ Cc: Bart Van Assche <bvanassche@acm.org>,
  "Martin K. Petersen" <martin.petersen@oracle.com>,
  Venkat Gopalakrishnan <venkatg@codeaurora.org>,
  "James E.J. Bottomley" <jejb@linux.ibm.com>,
- Subhash Jadavani <subhashj@codeaurora.org>,
  open list <linux-kernel@vger.kernel.org>, Avri Altman <avri.altman@wdc.com>,
  "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
  Alim Akhtar <alim.akhtar@samsung.com>,
  Matthias Brugger <matthias.bgg@gmail.com>,
+ Colin Ian King <colin.king@canonical.com>,
  Tomas Winkler <tomas.winkler@intel.com>,
  Stanley Chu <stanley.chu@mediatek.com>,
  "moderated list:ARM/Mediatek SoC support"
@@ -112,38 +111,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The async version of ufshcd_hold(async == true), which is only called
-in queuecommand path as for now, is expected to work in atomic context,
-thus it should not sleep or schedule out. When it runs into the condition
-that clocks are ON but link is still in hibern8 state, it should bail out
-without flushing the clock ungate work.
+In UFS version 3.0, a newly added attribute bRefClkGatingWaitTime defines
+the minimum time for which the reference clock is required by device during
+transition to LS-MODE or HIBERN8 state. Make this change to reflect the new
+requirement by adding delays before turning off the clock.
 
-Fixes: f2a785ac2312 ("scsi: ufshcd: Fix race between clk scaling and ungate work")
 Signed-off-by: Can Guo <cang@codeaurora.org>
-Reviewed-by: Hongwu Su <hongwus@codeaurora.org>
 Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
 Reviewed-by: Bean Huo <beanhuo@micron.com>
 Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
 ---
- drivers/scsi/ufs/ufshcd.c | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/scsi/ufs/ufs.h    |  3 +++
+ drivers/scsi/ufs/ufshcd.c | 34 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 37 insertions(+)
 
+diff --git a/drivers/scsi/ufs/ufs.h b/drivers/scsi/ufs/ufs.h
+index cfe3803..990cb48 100644
+--- a/drivers/scsi/ufs/ufs.h
++++ b/drivers/scsi/ufs/ufs.h
+@@ -167,6 +167,7 @@ enum attr_idn {
+ 	QUERY_ATTR_IDN_FFU_STATUS		= 0x14,
+ 	QUERY_ATTR_IDN_PSA_STATE		= 0x15,
+ 	QUERY_ATTR_IDN_PSA_DATA_SIZE		= 0x16,
++	QUERY_ATTR_IDN_REF_CLK_GATING_WAIT_TIME	= 0x17,
+ };
+ 
+ /* Descriptor idn for Query requests */
+@@ -534,6 +535,8 @@ struct ufs_dev_info {
+ 	u16 wmanufacturerid;
+ 	/*UFS device Product Name */
+ 	u8 *model;
++	u16 wspecversion;
++	u32 clk_gating_wait_us;
+ };
+ 
+ /**
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index bbc2607..e8f7f9d 100644
+index e8f7f9d..adcce41 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -1518,6 +1518,11 @@ int ufshcd_hold(struct ufs_hba *hba, bool async)
- 		 */
- 		if (ufshcd_can_hibern8_during_gating(hba) &&
- 		    ufshcd_is_link_hibern8(hba)) {
-+			if (async) {
-+				rc = -EAGAIN;
-+				hba->clk_gating.active_reqs--;
-+				break;
-+			}
- 			spin_unlock_irqrestore(hba->host->host_lock, flags);
- 			flush_work(&hba->clk_gating.ungate_work);
- 			spin_lock_irqsave(hba->host->host_lock, flags);
+@@ -91,6 +91,9 @@
+ /* default delay of autosuspend: 2000 ms */
+ #define RPM_AUTOSUSPEND_DELAY_MS 2000
+ 
++/* Default value of wait time before gating device ref clock */
++#define UFSHCD_REF_CLK_GATING_WAIT_US 0xFF /* microsecs */
++
+ #define ufshcd_toggle_vreg(_dev, _vreg, _on)				\
+ 	({                                                              \
+ 		int _ret;                                               \
+@@ -3281,6 +3284,31 @@ static inline int ufshcd_read_unit_desc_param(struct ufs_hba *hba,
+ 				      param_offset, param_read_buf, param_size);
+ }
+ 
++static int ufshcd_get_ref_clk_gating_wait(struct ufs_hba *hba)
++{
++	int err = 0;
++	u32 gating_wait = UFSHCD_REF_CLK_GATING_WAIT_US;
++
++	if (hba->dev_info.wspecversion >= 0x300) {
++		err = ufshcd_query_attr_retry(hba, UPIU_QUERY_OPCODE_READ_ATTR,
++				QUERY_ATTR_IDN_REF_CLK_GATING_WAIT_TIME, 0, 0,
++				&gating_wait);
++		if (err)
++			dev_err(hba->dev, "Failed reading bRefClkGatingWait. err = %d, use default %uus\n",
++					 err, gating_wait);
++
++		if (gating_wait == 0) {
++			gating_wait = UFSHCD_REF_CLK_GATING_WAIT_US;
++			dev_err(hba->dev, "Undefined ref clk gating wait time, use default %uus\n",
++					 gating_wait);
++		}
++
++		hba->dev_info.clk_gating_wait_us = gating_wait;
++	}
++
++	return err;
++}
++
+ /**
+  * ufshcd_memory_alloc - allocate memory for host memory space data structures
+  * @hba: per adapter instance
+@@ -6626,6 +6654,10 @@ static int ufs_get_device_desc(struct ufs_hba *hba)
+ 	dev_info->wmanufacturerid = desc_buf[DEVICE_DESC_PARAM_MANF_ID] << 8 |
+ 				     desc_buf[DEVICE_DESC_PARAM_MANF_ID + 1];
+ 
++	/* getting Specification Version in big endian format */
++	dev_info->wspecversion = desc_buf[DEVICE_DESC_PARAM_SPEC_VER] << 8 |
++				      desc_buf[DEVICE_DESC_PARAM_SPEC_VER + 1];
++
+ 	model_index = desc_buf[DEVICE_DESC_PARAM_PRDCT_NAME];
+ 	err = ufshcd_read_string_desc(hba, model_index,
+ 				      &dev_info->model, SD_ASCII_STD);
+@@ -7003,6 +7035,8 @@ static int ufshcd_device_params_init(struct ufs_hba *hba)
+ 		goto out;
+ 	}
+ 
++	ufshcd_get_ref_clk_gating_wait(hba);
++
+ 	ufs_fixup_device_setup(hba);
+ 
+ 	if (!ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_READ_FLAG,
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
