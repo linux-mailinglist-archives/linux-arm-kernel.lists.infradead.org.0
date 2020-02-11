@@ -2,83 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7972F159981
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 20:13:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6970F1599B4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 20:26:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wSchv2lAxGoEcIc7BS9Bzj+JR4NgNLBoVZfLPETDoDY=; b=JbikwWBxYkbjGF
-	YWlGaKYmhGFBnfcWtI+GbXb+tjeiZL6NS55FYuveKBuMz2Opx3YioD+JO30LGg/N/jWc95SW/r7+k
-	yy/M+tB2TVOYggwZrnanR6IxEC/L0hErjF2t4Msi0Tb6zWpCNo4y9QxILpPrIHdhx7R91jvkaDaua
-	JYYHo3jljZ8Pg+4HUBbhH+BQkx+IblERIgXvgVgogEHDNAkqQnBfyr7RPWYV8oPVuxTOF8UqN01ew
-	6p4mV3oChncdPzace9eo8JA5xg9bet+VR9m7/BU8NqLQaGC1jsxAFEPAFI5EsptGaTqH84xoSlcJr
-	f+6U8gFjwiPIAx10xgyA==;
+	List-Owner; bh=o0Kt6J8PdbdrWdhaMUajJawWMFdjktfRJbkFUVU++tA=; b=kZesoX4GW5hwZP
+	N4B+x3PFihnn23/DKqpIUVHiNyDni9e8hhRMIbyNISNwTFgUFGlxaJmWrjGRfBaqLXytUk9xSGT7v
+	kZFuA4xRrZo9o4Y0NCbuq/CCVbZ/OPxvthNTrkJZ3ot8N7kOelQYxhrWKfAO92FNHhvQ2Crfx5gQC
+	7ighKSnvRxVXT8LmUStQDTRBZMdnXNLZLtlGp6PmmtxX6ZH6MfLoK/llwZRu3aME8tFgnIMqFj/8M
+	MTI2s3wqVNwyl87vdvRw1GlFXSeUI/ThK90CeKiRS7F+zQzQFUQw6BSQI6DUqEnE3GWH6/fYo1yu7
+	dIE6bBMYlz1iVwY4bmTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1ay6-0001O0-B4; Tue, 11 Feb 2020 19:13:10 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1j1bAT-0006Ob-Lq; Tue, 11 Feb 2020 19:25:57 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1axx-0001NJ-Dw
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 19:13:03 +0000
-Received: by mail-wm1-x344.google.com with SMTP id q9so5066484wmj.5
+ id 1j1bAM-0006Nm-EN
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 19:25:51 +0000
+Received: by mail-pl1-x642.google.com with SMTP id e8so4654177plt.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 11:13:00 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=yV/W7OjVzhnhoaIiEdL5uYFmycb/yF6SI7jbHOa+uWc=;
- b=XxVpd6ihEfbwxBp+qxEzeKf0oZ/85cRaNzdsbUqXfckCxjQG62IQBhPcPdizMenASB
- qsuC9ar8wQz/krCqUR0J+X58c079DdyqoqkUuL/Y/VdBAXETCYrbBPUbswx17VOAjVfG
- cFgYivKeJbcgOkoZFYKb7MxLWd6Pt6dlVRH+T/OXC/7DPNYK998M0fKHB7FFc2X3huGy
- EnYAuKPEFUH4HrXnbjyn8m1qB6f/zkGU9/NpXx1Bz17ehNaKkn5ruhbg1oSVA9GVKLHA
- fv83L/+adklWgobU+QCC91VEQ7A8wq8kjD+ikwZsAUzydC0CaB+NB6umg/94+bCcMQtp
- CwDQ==
+ Tue, 11 Feb 2020 11:25:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=Fduhzb+WwBefc5G2IiZw7jkFkPhFvQRZKGxZZqFDo/E=;
+ b=aBFZgI1bEVFMDfd8bvtXh9AZ1Mze2/1St6L/4BVij/mXj+0ZVWJe/BBz62kvdV/PUy
+ KBlDmWnFixMHuEJ2x57jhZe2RZwo4KxOOAhGPDQppATODztQCUF1bGUHqwB2F+7dyFEs
+ eKbWf5MArG16cSHqLbOgFxRg8G+4rPIDu1A8c=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=yV/W7OjVzhnhoaIiEdL5uYFmycb/yF6SI7jbHOa+uWc=;
- b=a6o6zSoTZ7mSkS3LMwgIoBOeqRGiM5hWiM6gEVe5vXHj/oGPb4HeR+iul8Z+udu1s8
- f5g1a/Is7N8/72MBjf7ZVOQUKnzpGLfn3cYg5jI6AnJm2DVmkf+e1oTgX3MGdKgfCh3W
- EKpsFp7qfbSz5+vYOkXRDwW7R4gFxb26ybdHTOqDVfD9+XBHHrA/8M6Y7UZQ9+k3aVtg
- L6TLquNK0qxf5PcVB+EVEM5eCYpWMfJ97NpSEskKfTk8L8I98/v1hZsqzfzR+06SptqH
- GKc+kGSLbuhjZosFCEq2JSmH8v/6a7SkvhqPY1m7CkPGLiuHjJ0UEKjM37vAk/HB3ub2
- 5biA==
-X-Gm-Message-State: APjAAAVVRTlZ4TxqLcGQ3zA0CpSzhpsAaZRkhR8pWNHMu2yIkp/2umjI
- FKJhI2vE+TqThWkn8JiHksOHWyc7hMr1Dw==
-X-Google-Smtp-Source: APXvYqzHGEsEDjUipivXQXZOOpPKSbnu17FHNNxOAmtRHg7brAQ9dvSPOc6wceHdQw0a9+uOrmOSRw==
-X-Received: by 2002:a05:600c:2c06:: with SMTP id
- q6mr7570602wmg.154.1581448379274; 
- Tue, 11 Feb 2020 11:12:59 -0800 (PST)
-Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net.
- [194.152.20.232])
- by smtp.gmail.com with ESMTPSA id w1sm7076839wro.72.2020.02.11.11.12.57
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Fduhzb+WwBefc5G2IiZw7jkFkPhFvQRZKGxZZqFDo/E=;
+ b=QGzH7PUCu4dWwFhZZYNElH5OlqZ4VS43m7qnkieZXdGkcWLjfoE2C6UifhkcFK1AdY
+ KSt6bFHUfsIdoX5JGg0kFtGbtt696CRgl2MK8778MZle3Jvzl9P+YVKMEOrUqvRJPp4r
+ HVQstQYqXadfhA5O1iSC9GYTYvZZOz+HA709M2K/3gPAj9geAVf7vWhJVS+Xr99UsQU1
+ p4C8Hr7tZGkgC/+ieZSEflDjjtSfb4uofL2dgfv8hfNWdlbdApfSRPaLt1RDMxYMpJtE
+ 73ogzL2RXnv4nOKNxyK6F7vGNCyIvEbcKeWhFHxXMSekFkA2bg9vSOjlnLEvUSkZBfoD
+ AXUQ==
+X-Gm-Message-State: APjAAAUQ6sPv7r6h3PZS/BjiDFgICJTjLf16FhA5xAj0L/fHnR2rowpS
+ lRUkq6yyDORhrr5hNLT6PkIh2g==
+X-Google-Smtp-Source: APXvYqzYyVOg7uqgSBmTXebLQ5IGOoof6bohkjL6i/HNSEw99SG6fXpTLlzi3kbK2a4VrLpxXNd1Pg==
+X-Received: by 2002:a17:90a:b30b:: with SMTP id
+ d11mr6814381pjr.22.1581449148710; 
+ Tue, 11 Feb 2020 11:25:48 -0800 (PST)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id 3sm4285511pjg.27.2020.02.11.11.25.47
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 11 Feb 2020 11:12:57 -0800 (PST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@gmail.com>
-To: mripard@kernel.org, wens@csie.org, linux-sunxi@googlegroups.com
-Subject: Re: [linux-sunxi] [PATCH 0/8] media: sunxi: Add DE2 rotate driver
-Date: Tue, 11 Feb 2020 20:12:56 +0100
-Message-ID: <4206703.LvFx2qVVIh@jernej-laptop>
-In-Reply-To: <20200124232014.574989-1-jernej.skrabec@siol.net>
-References: <20200124232014.574989-1-jernej.skrabec@siol.net>
+ Tue, 11 Feb 2020 11:25:47 -0800 (PST)
+Date: Tue, 11 Feb 2020 11:25:46 -0800
+From: Kees Cook <keescook@chromium.org>
+To: shuah <shuah@kernel.org>
+Subject: Re: [PATCH v3 7/7] selftests/exec: Add READ_IMPLIES_EXEC tests
+Message-ID: <202002111124.0A334167@keescook>
+References: <20200210193049.64362-1-keescook@chromium.org>
+ <20200210193049.64362-8-keescook@chromium.org>
+ <4f8a5036-dc2a-90ad-5fc8-69560a5dd78e@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <4f8a5036-dc2a-90ad-5fc8-69560a5dd78e@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_111301_473319_AC65BEBB 
-X-CRM114-Status: GOOD (  14.69  )
+X-CRM114-CacheID: sfid-20200211_112550_483895_3DAA9535 
+X-CRM114-Status: GOOD (  15.06  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jernej.skrabec[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,173 +97,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jernej.skrabec@siol.net,
- sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- linux-sunxi@googlegroups.com, robh+dt@kernel.org, hverkuil-cisco@xs4all.nl,
- mchehab@kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Jann Horn <jannh@google.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ x86@kernel.org, Hector Marco-Gisbert <hecmargi@upv.es>,
+ Russell King <linux@armlinux.org.uk>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Jason Gunthorpe <jgg@mellanox.com>,
+ linux-kselftest@vger.kernel.org, kernel-hardening@lists.openwall.com,
+ Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dne sobota, 25. januar 2020 ob 00:20:06 CET je Jernej Skrabec napisal(a):
-> Some of Allwinner SoCs like A83T and A64 SoCs contain DE2 rotate core
-> which can flip image horizontal and vertical and rotate it in 90 deg.
-> steps. It support a lot of output formats, but a bit less capture
-> formats. All YUV input formats get converted to yuv420p, while RGB
-> formats are preserved.
+On Tue, Feb 11, 2020 at 11:11:21AM -0700, shuah wrote:
+> On 2/10/20 12:30 PM, Kees Cook wrote:
+> > In order to check the matrix of possible states for handling
+> > READ_IMPLIES_EXEC across native, compat, and the state of PT_GNU_STACK,
+> > add tests for these execution conditions.
+> > 
+> > Signed-off-by: Kees Cook <keescook@chromium.org>
 > 
-> Patches 1-2 fix few issues with DE2 clocks.
+> No issues for this to go through tip.
 > 
-> Patches 3-4 fix register range of DE2 clocks (it would overlap with
-> rotate driver)
-> 
-> Patches 5-8 provide binding, implement driver and add nodes.
-> 
-> v4l2-compliance SHA: ec55a961487b449bedbe07650674b4965814cf07, 32 bits,
-> 32-bit time_t
-> 
-> Compliance test for sun8i-rotate device /dev/video0:
-> 
-> Driver Info:
->         Driver name      : sun8i-rotate
->         Card type        : sun8i-rotate
->         Bus info         : platform:sun8i-rotate
->         Driver version   : 5.5.0
->         Capabilities     : 0x84208000
->                 Video Memory-to-Memory
->                 Streaming
->                 Extended Pix Format
->                 Device Capabilities
->         Device Caps      : 0x04208000
->                 Video Memory-to-Memory
->                 Streaming
->                 Extended Pix Format
-> 
-> Required ioctls:
->         test VIDIOC_QUERYCAP: OK
-> 
-> Allow for multiple opens:
->         test second /dev/video0 open: OK
->         test VIDIOC_QUERYCAP: OK
->         test VIDIOC_G/S_PRIORITY: OK
->         test for unlimited opens: OK
-> 
->         test invalid ioctls: OK
-> Debug ioctls:
->         test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
->         test VIDIOC_LOG_STATUS: OK
-> 
-> Input ioctls:
->         test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
->         test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
->         test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
->         test VIDIOC_ENUMAUDIO: OK (Not Supported)
->         test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)
->         test VIDIOC_G/S_AUDIO: OK (Not Supported)
->         Inputs: 0 Audio Inputs: 0 Tuners: 0
-> 
-> Output ioctls:
->         test VIDIOC_G/S_MODULATOR: OK (Not Supported)
->         test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
->         test VIDIOC_ENUMAUDOUT: OK (Not Supported)
->         test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
->         test VIDIOC_G/S_AUDOUT: OK (Not Supported)
->         Outputs: 0 Audio Outputs: 0 Modulators: 0
-> 
-> Input/Output configuration ioctls:
->         test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
->         test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
->         test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
->         test VIDIOC_G/S_EDID: OK (Not Supported)
-> 
-> Control ioctls:
->         test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK
->         test VIDIOC_QUERYCTRL: OK
->         test VIDIOC_G/S_CTRL: OK
->         test VIDIOC_G/S/TRY_EXT_CTRLS: OK
->         test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
->         test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
->         Standard Controls: 4 Private Controls: 0
-> 
-> Format ioctls:
->         test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
->         test VIDIOC_G/S_PARM: OK (Not Supported)
->         test VIDIOC_G_FBUF: OK (Not Supported)
->         test VIDIOC_G_FMT: OK
->         test VIDIOC_TRY_FMT: OK
->         test VIDIOC_S_FMT: OK
->         test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
->         test Cropping: OK (Not Supported)
->         test Composing: OK (Not Supported)
->         test Scaling: OK (Not Supported)
-> 
-> Codec ioctls:
->         test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
->         test VIDIOC_G_ENC_INDEX: OK (Not Supported)
->         test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)
-> 
-> Buffer ioctls:
->         test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
->         test VIDIOC_EXPBUF: OK
->         test Requests: OK (Not Supported)
-> 
-> Total for sun8i-rotate device /dev/video0: 45, Succeeded: 45, Failed: 0,
-> Warnings: 0
-> 
-> Best regards,
-> Jernej
-> 
-> Jernej Skrabec (8):
->   clk: sunxi-ng: sun8i-de2: Swap A64 and H6 definitions
->   clk: sunxi-ng: sun8i-de2: Fix A83T clocks and reset
+> A few problems to fix first. This fails to compile when 32-bit libraries
+> aren't installed. It should fail the 32-bit part and run other checks.
 
-Please disregard above two patches. It turns out that many more changes are 
-required to fix mess with rotation clocks and reset. I sent separate patch 
-series: http://lists.infradead.org/pipermail/linux-arm-kernel/2020-February/
-710242.html
+Do you mean the Makefile should detect the missing compat build deps and
+avoid building them? Testing compat is pretty important to this test, so
+it seems like missing the build deps causing the build to fail is the
+correct action here. This is likely true for the x86/ selftests too.
 
-Comments on the rest of the series are welcome, though.
+What would you like this to do?
 
-Best regards,
-Jernej
-
->   ARM: dts: sunxi: Fix DE2 clocks register range
->   arm64: dts: allwinner: a64: Fix display clock register range
->   media: dt-bindings: media: Add Allwinner A83T Rotate driver
->   media: sun8i: Add Allwinner A83T Rotate driver
->   ARM: dts: sun8i: a83t: Add device node for rotation core
->   arm64: dts: allwinner: a64: add node for rotation core
-> 
->  .../allwinner,sun8i-a83t-de2-rotate.yaml      |  70 ++
->  MAINTAINERS                                   |   8 +
->  arch/arm/boot/dts/sun8i-a83t.dtsi             |  13 +-
->  arch/arm/boot/dts/sun8i-r40.dtsi              |   2 +-
->  arch/arm/boot/dts/sun8i-v3s.dtsi              |   2 +-
->  arch/arm/boot/dts/sunxi-h3-h5.dtsi            |   2 +-
->  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |  14 +-
->  drivers/clk/sunxi-ng/ccu-sun8i-de2.c          |  49 +-
->  drivers/media/platform/Kconfig                |  12 +
->  drivers/media/platform/sunxi/Makefile         |   1 +
->  .../platform/sunxi/sun8i-rotate/Makefile      |   2 +
->  .../sunxi/sun8i-rotate/sun8i-formats.c        | 273 ++++++
->  .../sunxi/sun8i-rotate/sun8i-formats.h        |  25 +
->  .../sunxi/sun8i-rotate/sun8i-rotate.c         | 924 ++++++++++++++++++
->  .../sunxi/sun8i-rotate/sun8i-rotate.h         | 135 +++
->  15 files changed, 1512 insertions(+), 20 deletions(-)
->  create mode 100644
-> Documentation/devicetree/bindings/media/allwinner,sun8i-a83t-de2-rotate.yam
-> l create mode 100644 drivers/media/platform/sunxi/sun8i-rotate/Makefile
-> create mode 100644
-> drivers/media/platform/sunxi/sun8i-rotate/sun8i-formats.c create mode
-> 100644 drivers/media/platform/sunxi/sun8i-rotate/sun8i-formats.h create
-> mode 100644 drivers/media/platform/sunxi/sun8i-rotate/sun8i-rotate.c create
-> mode 100644 drivers/media/platform/sunxi/sun8i-rotate/sun8i-rotate.h
-
-
-
-
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
