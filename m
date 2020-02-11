@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D6EE159793
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:02:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEB1B1597BD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:08:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2BNj/+QRREOCA9hlyAZfxwWclVY0sBryZqeIIwuSOMM=; b=tThRFyhKsAZpyF
-	brw6Xw4YVeS6lAveKTJOwPC5mpdkoJNu0igna7SaoxV6pu7YJzjst7Achh8GdxP4Y+SRbI8OA5F5G
-	RGINlf2QwX5FD6mjjXCXrw05tVpFlSzBDIhlV1VAgq3UTnA7chyMJf0RTOUwdCGbnSthvsWDVcQfy
-	aarIchgdi5/4r5WVKICgU666U1+abN+Y/zQ30Ys8gUnN+thk2HNdD0jm7Nm1uw7C/dbcSBxg5k5ta
-	JLkkx3AtojV1y/IIwIAZQiAcA03nY+LRX4I67QXSN7ufTuL+VI8aHMo3J8M7AFbUlF7Btmzune7iM
-	q7HvCeS3oc+y+ZdCGsGQ==;
+	List-Owner; bh=RwujAedMgSc/HnKNTszbQRa6pfA5Mfeg/yzC3uTGiVI=; b=P+M6z6RE6cY8SM
+	04gV/u2PHHGAaehXozg0kKkfjjrWEstjShZGuhHVlQkgxKAy+yP1vCWlBgjt8bTVNv4Bcz/2NNjiI
+	z7Kxc8puMZTA/Sh9Trx2y70vv3Lv51uyhWIeW0A4FJk1Gnh2rgkoVUKHgpxIr0HeRpkYztVGBdU15
+	dbgGN4EhU8++mkDUO2PGc05jdlfNrdOuDNvlmVsidV2EoWHT5ctbLXXfMUllqQ+HSqUocSi4Mfqgk
+	r5dG2Oi8UhaRgw3Xh03poU4j2y/f75XJF+ZyrYKRPFtSmaKfgyNnWY9wfzQqOPc7eQ3GH/SEJPAs/
+	2Oiv84lsBlHP2kdjKgRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Zr6-0004Q1-RZ; Tue, 11 Feb 2020 18:01:52 +0000
+	id 1j1Zxg-0003TP-4M; Tue, 11 Feb 2020 18:08:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ZhQ-0001z9-5l
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:51:56 +0000
+ id 1j1ZiA-0002cO-O6
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:52:41 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C3D7A21569;
- Tue, 11 Feb 2020 17:51:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 533C420661;
+ Tue, 11 Feb 2020 17:52:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581443510;
- bh=utysODfDdOQMjnkhgSF20q8EYOV4H4+ozLatVEY6evg=;
+ s=default; t=1581443556;
+ bh=BuazaigYiOjbw5OaE0ORfLHMkxH+BvQZJ5Hej8ql+c8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Q4BPrb9DQf743LGVa0RrNVeNRbm/KI2Xj+cdbrga1cJO515K7BYldWjvaRxyysRF3
- 1A/z8nMWlSyotGIjjIq0zxRkQ3UYOa9+nDMPf+GMUL2GhbHBseWQqgHe5seOd6WLAh
- nTJkRWNc0h5GTI787tmi1QZqTk6lppddQXYYZCMM=
+ b=rqo6v8mWLi2mt25ST/XQVirargdmB+2vIAEAWzqahpkBU7fm62xg5sdMjZEshKMFd
+ bRuR2+k6ll7CzKzFCndRg9N3HtclCooo0U7QN8wCmhh1G5Ga7mUOdU7JHqMqhR6uXz
+ FesE2+uURoDm2sNXe3rHhVEs/FDilbt4aSHjyLYA=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j1Zfk-004O7k-KL; Tue, 11 Feb 2020 17:50:08 +0000
+ id 1j1Zfl-004O7k-NB; Tue, 11 Feb 2020 17:50:09 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 26/94] KVM: arm64: nv: Respect virtual HCR_EL2.TVM and TRVM
- settings
-Date: Tue, 11 Feb 2020 17:48:30 +0000
-Message-Id: <20200211174938.27809-27-maz@kernel.org>
+Subject: [PATCH v2 28/94] KVM: arm64: nv: Emulate EL12 register accesses from
+ the virtual EL2
+Date: Tue, 11 Feb 2020 17:48:32 +0000
+Message-Id: <20200211174938.27809-29-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200211174938.27809-1-maz@kernel.org>
 References: <20200211174938.27809-1-maz@kernel.org>
@@ -62,8 +62,9 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_095152_498591_DCF2543B 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20200211_095239_176858_30449EAF 
+X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -105,36 +106,49 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jintack Lim <jintack.lim@linaro.org>
 
-Forward the EL1 virtual memory register traps to the virtual EL2 if they
-are not coming from the virtual EL2 and the virtual HCR_EL2.TVM or TRVM
-bit is set.
+With HCR_EL2.NV bit set, accesses to EL12 registers in the virtual EL2
+trap to EL2. Handle those traps just like we do for EL1 registers.
 
-This is for recursive nested virtualization.
+One exception is CNTKCTL_EL12. We don't trap on CNTKCTL_EL1 for non-VHE
+virtual EL2 because we don't have to. However, accessing CNTKCTL_EL12
+will trap since it's one of the EL12 registers controlled by HCR_EL2.NV
+bit.  Therefore, add a handler for it and don't treat it as a
+non-trap-registers when preparing a shadow context.
 
 Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/sys_regs.c | 7 +++++++
- 1 file changed, 7 insertions(+)
+ arch/arm64/kvm/sys_regs.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
 
 diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index b948afd20e97..7cf5096bc11a 100644
+index 2ce85d5e7111..dd4f8fe143ba 100644
 --- a/arch/arm64/kvm/sys_regs.c
 +++ b/arch/arm64/kvm/sys_regs.c
-@@ -470,6 +470,13 @@ static bool access_vm_reg(struct kvm_vcpu *vcpu,
- 	if (el12_reg(p) && forward_nv_traps(vcpu))
- 		return false;
+@@ -2057,6 +2057,23 @@ static const struct sys_reg_desc sys_reg_descs[] = {
+ 	{ SYS_DESC(SYS_CNTVOFF_EL2), access_rw, reset_val, CNTVOFF_EL2, 0 },
+ 	{ SYS_DESC(SYS_CNTHCTL_EL2), access_rw, reset_val, CNTHCTL_EL2, 0 },
  
-+	if (!el12_reg(p)) {
-+		u64 bit = p->is_write ? HCR_TVM : HCR_TRVM;
++	{ SYS_DESC(SYS_SCTLR_EL12), access_vm_reg, reset_val, SCTLR_EL1, 0x00C50078 },
++	{ SYS_DESC(SYS_CPACR_EL12), access_rw, reset_val, CPACR_EL1, 0 },
++	{ SYS_DESC(SYS_TTBR0_EL12), access_vm_reg, reset_unknown, TTBR0_EL1 },
++	{ SYS_DESC(SYS_TTBR1_EL12), access_vm_reg, reset_unknown, TTBR1_EL1 },
++	{ SYS_DESC(SYS_TCR_EL12), access_vm_reg, reset_val, TCR_EL1, 0 },
++	{ SYS_DESC(SYS_SPSR_EL12), access_spsr},
++	{ SYS_DESC(SYS_ELR_EL12), access_elr},
++	{ SYS_DESC(SYS_AFSR0_EL12), access_vm_reg, reset_unknown, AFSR0_EL1 },
++	{ SYS_DESC(SYS_AFSR1_EL12), access_vm_reg, reset_unknown, AFSR1_EL1 },
++	{ SYS_DESC(SYS_ESR_EL12), access_vm_reg, reset_unknown, ESR_EL1 },
++	{ SYS_DESC(SYS_FAR_EL12), access_vm_reg, reset_unknown, FAR_EL1 },
++	{ SYS_DESC(SYS_MAIR_EL12), access_vm_reg, reset_unknown, MAIR_EL1 },
++	{ SYS_DESC(SYS_AMAIR_EL12), access_vm_reg, reset_amair_el1, AMAIR_EL1 },
++	{ SYS_DESC(SYS_VBAR_EL12), access_rw, reset_val, VBAR_EL1, 0 },
++	{ SYS_DESC(SYS_CONTEXTIDR_EL12), access_vm_reg, reset_val, CONTEXTIDR_EL1, 0 },
++	{ SYS_DESC(SYS_CNTKCTL_EL12), access_rw, reset_val, CNTKCTL_EL1, 0 },
 +
-+		if (forward_traps(vcpu, bit))
-+			return false;
-+	}
-+
- 	BUG_ON(!vcpu_mode_el2(vcpu) && !p->is_write);
+ 	{ SYS_DESC(SYS_SP_EL2), NULL, reset_unknown, SP_EL2 },
+ };
  
- 	if (!p->is_write) {
 -- 
 2.20.1
 
