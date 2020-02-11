@@ -2,65 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C09D015984C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:21:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 015F715985D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 19:21:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h8l6u4f0gvZGQWeQkt8Y6yta14EBPNlIT67g6GwANoE=; b=h/DFM7E70FMgGE
-	b9BZkCyMpDKmMnBjSVc7AQm0P5SPS3Jc5Q33VaIXOik/jg4qa6Aj9uaukXp5farLavJNfsLNKipqz
-	ERC18pSO5hm6HURQaoSbZDQP1L5L8MKLF7K+fT3H2li65lkmeln9/PkraUcAaLsIC4CG6omAXV5bS
-	S7WJKuMR0l9roOt/sPaoQh6uYInFiWUOQUqHmxf2OWKu+3UwRdxcNsbJ7Or0pePGY1KiIup4GqqB6
-	D+soL5C8g5ZQdgIti92OSwnPC+3pxCPUf8hxRFQpokk+IRnG8DhU1ETj/k5eMIuBsRYq1LRzIgjkt
-	2oKQJmXeT7vZnsHQBi5A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EJoO/bLM2GN+oEyEaE7Zqqh/rV3mMH6XPWO1cf269eg=; b=Yppv+MpcEQ4SjjM5TUIyO7ZJQ
+	i+6UBo2D9o9P+iCNpQ4g26fqtg67EWKh0f7kwOm82UrZhCzMTPM8Z248cMclPF87VnR1oW+9kLlbr
+	fji0JnjjI09I9x3aeECPN9uPG+WFsOB43PqH4KhhbQ8cpg6bvcIo4TWSVx5XAAkeQoud9Q7MqdSH0
+	Cww8PUrCjyKJdFh8BsMNsAokxSI//BX/IYptAcvsiyBOWftv/Lh5GL5VVebpiuufXMTfdL84j1phb
+	ErOipCRaq2rFWYu9LUJmd2PUA5Q8NhrsX7zzM3Gma3LfR8492NXD5sE8J+VuqgKy7qk+fav6Gk3lj
+	22vLogkoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1a9f-0007W4-P1; Tue, 11 Feb 2020 18:21:03 +0000
+	id 1j1a9t-0007wY-9U; Tue, 11 Feb 2020 18:21:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ZuN-0000VD-73
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 18:05:17 +0000
-Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com
- [209.85.222.181])
+ id 1j1a0L-0006gU-9V
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 18:11:27 +0000
+Received: from [192.168.1.112] (c-24-9-64-241.hsd1.co.comcast.net
+ [24.9.64.241])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8A82E20714
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 18:05:13 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 19D48206DB;
+ Tue, 11 Feb 2020 18:11:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581444313;
- bh=6PE1cQDVRluOgEBrX4BbGhN0yYnAPz0zqhe0TovaI5o=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=l1Sa6LV29Nk2K2rAs5pOGEdWBrK7blZ394zkXkcKtGeTSea4pto6xOb1UC68LvoCb
- rQcQkopTRHIkdvHboYFj7gcwFDBRV0Ay8v9AXIo6AahAcEAMIjHAGoo+hvdXaboJ8K
- /FUJ5aUHuqo8wnpZQT4pyg7N6GzSzhJ0h0lMCm4M=
-Received: by mail-qk1-f181.google.com with SMTP id q15so10967741qke.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 10:05:13 -0800 (PST)
-X-Gm-Message-State: APjAAAXr26qB0jWHL82rxYkKkLAaDPhQUriCpe/05Ic4fUBvrLFGjGMy
- 7SixXU8vWiZEScnroDIAkWdKJ49Vp0Gx/BH7YQ==
-X-Google-Smtp-Source: APXvYqzAAdsaAknJAJ5NQJ1yPYP+6XiEu2QBieclv1o0pXq2SzMkQhREIj0fKiHyiUC2B4XLKseSBuDPfByqgqJIuII=
-X-Received: by 2002:a37:85c4:: with SMTP id h187mr7476483qkd.223.1581444312635; 
- Tue, 11 Feb 2020 10:05:12 -0800 (PST)
+ s=default; t=1581444682;
+ bh=fCi7iGEzUFz55yqEcvf2QdYxh8pGHQFjh2eIogW1O7U=;
+ h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
+ b=sqJ97A8QIcyNMreWkO51N9AJETetiBfBcRXN9gx5CKrvprmwfwo8YMHxgwMDzkQDM
+ zdgThFTGIS6YitPfMwAGXptjc1IhDOR0zQwqp6O1ewNLHX6botCS733PBTZfglTpTN
+ E5LnjKkXHdOxsui31xVKNIPr9HhvWhP8PkYuuT0U=
+Subject: Re: [PATCH v3 7/7] selftests/exec: Add READ_IMPLIES_EXEC tests
+To: Kees Cook <keescook@chromium.org>, Ingo Molnar <mingo@kernel.org>
+References: <20200210193049.64362-1-keescook@chromium.org>
+ <20200210193049.64362-8-keescook@chromium.org>
+From: shuah <shuah@kernel.org>
+Message-ID: <4f8a5036-dc2a-90ad-5fc8-69560a5dd78e@kernel.org>
+Date: Tue, 11 Feb 2020 11:11:21 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <20200202125950.1825013-1-aford173@gmail.com>
- <20200202125950.1825013-4-aford173@gmail.com>
- <20200206184030.GA11381@bogus>
- <CAHCN7x+uCwyJ60ZG_0m5SgNmqUAyEwxqXVTL7nQzJLXxXrh+Tw@mail.gmail.com>
-In-Reply-To: <CAHCN7x+uCwyJ60ZG_0m5SgNmqUAyEwxqXVTL7nQzJLXxXrh+Tw@mail.gmail.com>
-From: Rob Herring <robh@kernel.org>
-Date: Tue, 11 Feb 2020 12:05:01 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLJweVLgYhoU-3cmg1aFwRNtAehx2-Euy-cwUsRy2jsgw@mail.gmail.com>
-Message-ID: <CAL_JsqLJweVLgYhoU-3cmg1aFwRNtAehx2-Euy-cwUsRy2jsgw@mail.gmail.com>
-Subject: Re: [PATCH V2 4/5] dt-bindings: spi: spi-nxp-fspi: Add support for
- imx8mm, imx8qxp
-To: Adam Ford <aford173@gmail.com>
+In-Reply-To: <20200210193049.64362-8-keescook@chromium.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_100515_307569_869E1D6F 
-X-CRM114-Status: GOOD (  23.85  )
+X-CRM114-CacheID: sfid-20200211_101125_412509_B97BFA73 
+X-CRM114-Status: GOOD (  13.61  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,81 +79,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, Ashish Kumar <ashish.kumar@nxp.com>,
- linux-spi <linux-spi@vger.kernel.org>, Yogesh Gaur <yogeshgaur.83@gmail.com>,
- Mark Brown <broonie@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Jann Horn <jannh@google.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ x86@kernel.org, Hector Marco-Gisbert <hecmargi@upv.es>,
+ Russell King <linux@armlinux.org.uk>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel@vger.kernel.org, Jason Gunthorpe <jgg@mellanox.com>,
+ linux-kselftest@vger.kernel.org, kernel-hardening@lists.openwall.com,
+ shuah <shuah@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 11, 2020 at 4:49 AM Adam Ford <aford173@gmail.com> wrote:
->
-> On Thu, Feb 6, 2020 at 2:46 PM Rob Herring <robh@kernel.org> wrote:
-> >
-> > On Sun, Feb 02, 2020 at 06:59:49AM -0600, Adam Ford wrote:
-> > > Add support for nxp,imx8qxp-fspi and nxp,imx8mm-fspi do the bindings
-> >
-> > s/do/to/
->
-> Oops.  Thanks for catching that.
->
-> >
-> > > document.
-> > >
-> > > Signed-off-by: Adam Ford <aford173@gmail.com>
-> > > ---
-> > > V2: No change
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/spi/spi-nxp-fspi.txt b/Documentation/devicetree/bindings/spi/spi-nxp-fspi.txt
-> > > index 2cd67eb727d4..7ac60d9fe357 100644
-> > > --- a/Documentation/devicetree/bindings/spi/spi-nxp-fspi.txt
-> > > +++ b/Documentation/devicetree/bindings/spi/spi-nxp-fspi.txt
-> > > @@ -2,6 +2,9 @@
-> > >
-> > >  Required properties:
-> > >    - compatible : Should be "nxp,lx2160a-fspi"
-> > > +                         "nxp,imx8qxp-fspi"
-> > > +                         "nxp,imx8mm-fspi"
-> >
-> > All 3 are different and no compatibility?
->
-> This was all based on a series from NXP's repo where they have some
-> data tables all associated to the various compatible entries, and they
-> created a place holder for quirks.  Based on an older NXP repo, it
-> seems like there might be some quirks associated to the different
-> families, but the newer repo where I got this patch series didn't
-> implement them, however, it's possible the quirks may enhance
-> functionality later. If that's true, I think this is the best solution
-> for future enhancements without having to change the compatibility
-> names down the road.  Maybe someone from NXP can comment?  I am just
-> trying to help push things upstream so we can support QSPI flash.  I
-> would prefer to keep them separate for now, because we might have
-> these improvements later. However, I'll do what you request.  Do you
-> want me to drop the additional compatible flags and just use the
-> original, or create a new one that's a bit more generic?
+On 2/10/20 12:30 PM, Kees Cook wrote:
+> In order to check the matrix of possible states for handling
+> READ_IMPLIES_EXEC across native, compat, and the state of PT_GNU_STACK,
+> add tests for these execution conditions.
+> 
+> Signed-off-by: Kees Cook <keescook@chromium.org>
 
-Neither.
+No issues for this to go through tip.
 
-If you already know that they have differences, then as-is is fine.
+A few problems to fix first. This fails to compile when 32-bit libraries
+aren't installed. It should fail the 32-bit part and run other checks.
 
-If they are believed to be 'the same', then you do:
+make kselftest TARGETS=exec
+make --no-builtin-rules ARCH=x86 -C ../../.. headers_install
+make[2]: Entering directory '/lkml/linux_5.6'
+   INSTALL ./usr/include
+make[2]: Leaving directory '/lkml/linux_5.6'
+make[2]: Entering directory '/lkml/linux_5.6/tools/testing/selftests/exec'
+gcc -m32 -Wall -Wno-nonnull -D_GNU_SOURCE -Wl,-z,noexecstack -o 
+/lkml/linux_5.6/tools/testing/selftests/exec/rie-compat-nx-gnu-stack.new 
+read_implies_exec.c
+readelf -Wl 
+/lkml/linux_5.6/tools/testing/selftests/exec/rie-compat-nx-gnu-stack.new 
+| grep GNU_STACK | grep -q 'RW ' && \
+mv 
+/lkml/linux_5.6/tools/testing/selftests/exec/rie-compat-nx-gnu-stack.new 
+/lkml/linux_5.6/tools/testing/selftests/exec/rie-compat-nx-gnu-stack
+In file included from /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:9,
+                  from read_implies_exec.c:6:
+/usr/include/stdint.h:26:10: fatal error: bits/libc-header-start.h: No 
+such file or directory
+    26 | #include <bits/libc-header-start.h>
+       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+readelf: Error: 
+'/lkml/linux_5.6/tools/testing/selftests/exec/rie-compat-nx-gnu-stack.new': 
+No such file
+make[2]: *** [Makefile:58: 
+/lkml/linux_5.6/tools/testing/selftests/exec/rie-compat-nx-gnu-stack] 
+Error 1
+make[2]: Leaving directory '/lkml/linux_5.6/tools/testing/selftests/exec'
+make[1]: *** [Makefile:150: all] Error 2
+make: *** [Makefile:1217: kselftest] Error 2
 
-compatible = "nxp,imx8qxp-fspi", "nxp,imx8mm-fspi";
-
-assuming i.MX8MM was the first version.
-
-This allows a MX8QXP to work without OS changes if the driver already
-supports the previous chip. And if any quirks are found, then the OS
-can handle them without a DT change.
-
-Rob
+thanks,
+-- Shuah
 
 _______________________________________________
 linux-arm-kernel mailing list
