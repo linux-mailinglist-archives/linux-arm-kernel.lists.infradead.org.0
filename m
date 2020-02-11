@@ -2,78 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1208A1589DF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 07:00:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C136D158A09
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 07:40:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=xb/CbHsZPz2FBQRjhO1/EqJgYCn9SOwrPVTkZJJ4avI=; b=BihhFsxdaaFm8m
-	obYDfeqjKACWJ+YxeBq2tVI+LJI6bH1uzAZTAk0uTYkbOWZaudSjO2hcMECd3dxacbt3+h5Hsr8pZ
-	bvezm0n24zadEuggxGrorGyvkCbIasLZNfR9nH9NIBeVf24ndKhTKmk7J3NxA6UqDGYWjqoiNrrOF
-	XdqCWbiMNOPY4YRjOLwQVtjlwQ3eySYOl8lp/qg31pbo0sAy83IuqAuGxckYu/wG8zHSx+6WuR0xd
-	1LFrufAxWMC6afCSgIvYtxp8yal1GIRbY9ftP6hdhjfAaWWY/0bvjMSpntj2ST6BgakVtZymkdSMP
-	y9ZqUfZjX3rntjeVAaAA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rfHPnqrQxUODCGsHhPV9zjbjlQnwiSOuD2si2xKVCbk=; b=ljdBRuKMl7+Uh6
+	HSs9QnRMLE2VpQGZpoc1oBq9wzFoBWBDlAeBc9c9HAaFDRb6QpY4+JdmFjcIaU4+SOdogsDuuPFJU
+	iY+HClcbTVlxx5tpXxt4Y4mioIcnCSv1Z64AQhLS9TUA+cYkTjanaC6dhQUELFBE9ScYaLb2NRa4y
+	OqTOj9xNRmDEFQY15fddEUA0K8YlVBO31l2U5URZ9z9z3B850Xx0Uopnk3mlT6OnA9QjX5UNIJTgL
+	FyzaieWqea593wxFVWCvxfC7Le8IoiEwobuVcdDZY4EJmZGdvY6X101Yha/oRCR5agEjIcxm2a7G3
+	6ufu7vZfrlxXWZ4ly1Mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1OaP-0004Bs-EF; Tue, 11 Feb 2020 05:59:53 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j1PDx-0001Vx-Ii; Tue, 11 Feb 2020 06:40:45 +0000
+Received: from mail-ed1-f67.google.com ([209.85.208.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1OaG-00049r-HG; Tue, 11 Feb 2020 05:59:46 +0000
-X-UUID: 2ee3d1b4808743a1a4150ae0d9aa5ee4-20200210
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=UZncKfN5pbA6KAUGfVcuH3KW3o6KJUR94XVtsqFT8Ho=; 
- b=UOh+A/U7C3Nx8AE2R07MSx5HCVb8BRCr80kO+iorXDyKIlAzt8Ru9JshrverC9u0Xpk9OwGV3graYlDqt/hsj3QjmZnHZyn/TZmGabL72q7c932dnDmDvqqr4x03MwxMaG5nufzUw5hfdpR8SLXeSozFPV95zMrNomF+TF+xtNk=;
-X-UUID: 2ee3d1b4808743a1a4150ae0d9aa5ee4-20200210
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <gtk_ruiwang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1378789355; Mon, 10 Feb 2020 21:59:35 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 10 Feb 2020 21:56:01 -0800
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 11 Feb 2020 13:55:10 +0800
-Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 11 Feb 2020 13:54:07 +0800
-From: <gtk_ruiwang@mediatek.com>
-To: Hans Verkuil <hverkuil@xs4all.nl>, Alexandre Courbot
- <acourbot@chromium.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- "Matthias Brugger" <matthias.bgg@gmail.com>, Thomas Gleixner
- <tglx@linutronix.de>, Tomasz Figa <tfiga@chromium.org>
-Subject: [PATCH][v3] media: mtk-vcodec: reset segment data then trig decoder
-Date: Tue, 11 Feb 2020 13:55:32 +0800
-Message-ID: <20200211055532.4563-1-gtk_ruiwang@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1j1PDp-0001Uu-5M
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 06:40:39 +0000
+Received: by mail-ed1-f67.google.com with SMTP id v28so3349746edw.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Feb 2020 22:40:35 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fv/t2lPvzd/c6evGoFWSGvw45Jr9b11uQzUTPkD838A=;
+ b=hy+uwQ15u/zBao6nQ2cSTGHjRT9Sahh3X3URtxKcugRqYTkx1X9jcC02F3TXvWFG0u
+ qzCFr6h/FIPVZnTC1u8wW0b2pFazndMQd0WoQvGB4ujXQz/poP3dS8SsLNJ4zlpZYj9D
+ 8l9D8NReiPSkyTNCFzEeT8MDMDVtRbMoH8V+9qkBDKhkQ0PHPLPErNakTqxSPWeGDI2Z
+ oYZ+vKpKKEkadptg9yanLTnzyH10PtC/69x64k7ddZt2vlAEbujofrjSn+Ff1Ei2DGJ1
+ Eet3wm8sqYeo+JV67VqLUOeyth0eSb9PBPwB9dHl3cAW7p4BGK1IGxt6Ezu4+yRqUIRE
+ 6ttw==
+X-Gm-Message-State: APjAAAUL/uosv2PBkj+fIcqatt0xJDB1RiLPMCeG2Wd6aKQkHQHtL+lO
+ cE8fdt4H0yVYE8EA+hLd1DOkC6LE7J8=
+X-Google-Smtp-Source: APXvYqxicTo7caxyLrrL0SKD/3Z3s6bnJRy6aZ7xXNgi6qyt4dxX9//VWo9qD/7ZNRNNCnvMG6FRWg==
+X-Received: by 2002:a17:906:e083:: with SMTP id
+ gh3mr4463612ejb.231.1581403233772; 
+ Mon, 10 Feb 2020 22:40:33 -0800 (PST)
+Received: from mail-wr1-f51.google.com (mail-wr1-f51.google.com.
+ [209.85.221.51])
+ by smtp.gmail.com with ESMTPSA id w12sm165685edq.94.2020.02.10.22.40.33
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 10 Feb 2020 22:40:33 -0800 (PST)
+Received: by mail-wr1-f51.google.com with SMTP id m16so10720847wrx.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 10 Feb 2020 22:40:33 -0800 (PST)
+X-Received: by 2002:a5d:6805:: with SMTP id w5mr6896277wru.64.1581403233013;
+ Mon, 10 Feb 2020 22:40:33 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <20200210222807.206426-1-jernej.skrabec@siol.net>
+ <20200210222807.206426-2-jernej.skrabec@siol.net>
+In-Reply-To: <20200210222807.206426-2-jernej.skrabec@siol.net>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Tue, 11 Feb 2020 14:40:22 +0800
+X-Gmail-Original-Message-ID: <CAGb2v659Znu1E74Ph8w4Un_cC8qovWmmLfOEDW0ax4jrLVs7GQ@mail.gmail.com>
+Message-ID: <CAGb2v659Znu1E74Ph8w4Un_cC8qovWmmLfOEDW0ax4jrLVs7GQ@mail.gmail.com>
+Subject: Re: [PATCH 1/7] clk: sunxi-ng: sun8i-de2: Sort structures
+To: Jernej Skrabec <jernej.skrabec@siol.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_215944_573629_1CB53D44 
-X-CRM114-Status: GOOD (  12.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200210_224037_206225_261AF096 
+X-CRM114-Status: GOOD (  19.29  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.67 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [wens213[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [wens213[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,106 +97,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gtk_ruiwang@mediatek.com, Maoguang Meng <maoguang.meng@mediatek.com>,
- srv_heupstream@mediatek.com, Yunfei Dong <yunfei.dong@mediatek.com>,
- Longfei Wang <longfei.wang@mediatek.com>, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Tiffany Lin <tiffany.lin@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: gtk_ruiwang <gtk_ruiwang@mediatek.com>
+On Tue, Feb 11, 2020 at 6:28 AM Jernej Skrabec <jernej.skrabec@siol.net> wrote:
+>
+> Current structures are not sorted by family first and then
+> alphabetically. Let's do that now.
+>
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 
-VP9 bitstream specification indicate segment data should reset to
-default when meet key frames, intra only frames or enable error
-resilience mode. So memset segmentation map buffer before every
-decode process is not appropriate.
+I would do this at the end of the patch series for a couple of reasons.
+First of all, moving code around before the fixes make the fixes less
+likely to directly apply to stable kernels, and second, the H6 clks
+and resets lists disappear after all the changes.
 
-Reset segment data only when needed, then start decoder hardware
+ChenYu
 
-Signed-off-by: Rui Wang <gtk_ruiwang@mediatek.com>
----
-Changed in v3:
-- modify bit3 usage description
----
- .../platform/mtk-vcodec/vdec/vdec_vp9_if.c    | 29 ++++++++++++++++---
- 1 file changed, 25 insertions(+), 4 deletions(-)
+> ---
+>  drivers/clk/sunxi-ng/ccu-sun8i-de2.c | 56 ++++++++++++++--------------
+>  1 file changed, 28 insertions(+), 28 deletions(-)
+>
+> diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
+> index d9668493c3f9..a928e0c32222 100644
+> --- a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
+> +++ b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
+> @@ -51,24 +51,6 @@ static SUNXI_CCU_M(mixer1_div_a83_clk, "mixer1-div", "pll-de", 0x0c, 4, 4,
+>  static SUNXI_CCU_M(wb_div_a83_clk, "wb-div", "pll-de", 0x0c, 8, 4,
+>                    CLK_SET_RATE_PARENT);
+>
+> -static struct ccu_common *sun50i_h6_de3_clks[] = {
+> -       &mixer0_clk.common,
+> -       &mixer1_clk.common,
+> -       &wb_clk.common,
+> -
+> -       &bus_mixer0_clk.common,
+> -       &bus_mixer1_clk.common,
+> -       &bus_wb_clk.common,
+> -
+> -       &mixer0_div_clk.common,
+> -       &mixer1_div_clk.common,
+> -       &wb_div_clk.common,
+> -
+> -       &bus_rot_clk.common,
+> -       &rot_clk.common,
+> -       &rot_div_clk.common,
+> -};
+> -
+>  static struct ccu_common *sun8i_a83t_de2_clks[] = {
+>         &mixer0_clk.common,
+>         &mixer1_clk.common,
+> @@ -108,6 +90,24 @@ static struct ccu_common *sun8i_v3s_de2_clks[] = {
+>         &wb_div_clk.common,
+>  };
+>
+> +static struct ccu_common *sun50i_h6_de3_clks[] = {
+> +       &mixer0_clk.common,
+> +       &mixer1_clk.common,
+> +       &wb_clk.common,
+> +
+> +       &bus_mixer0_clk.common,
+> +       &bus_mixer1_clk.common,
+> +       &bus_wb_clk.common,
+> +
+> +       &mixer0_div_clk.common,
+> +       &mixer1_div_clk.common,
+> +       &wb_div_clk.common,
+> +
+> +       &bus_rot_clk.common,
+> +       &rot_clk.common,
+> +       &rot_div_clk.common,
+> +};
+> +
+>  static struct clk_hw_onecell_data sun8i_a83t_de2_hw_clks = {
+>         .hws    = {
+>                 [CLK_MIXER0]            = &mixer0_clk.common.hw,
+> @@ -219,6 +219,16 @@ static const struct sunxi_ccu_desc sun8i_h3_de2_clk_desc = {
+>         .num_resets     = ARRAY_SIZE(sun8i_a83t_de2_resets),
+>  };
+>
+> +static const struct sunxi_ccu_desc sun8i_v3s_de2_clk_desc = {
+> +       .ccu_clks       = sun8i_v3s_de2_clks,
+> +       .num_ccu_clks   = ARRAY_SIZE(sun8i_v3s_de2_clks),
+> +
+> +       .hw_clks        = &sun8i_v3s_de2_hw_clks,
+> +
+> +       .resets         = sun8i_a83t_de2_resets,
+> +       .num_resets     = ARRAY_SIZE(sun8i_a83t_de2_resets),
+> +};
+> +
+>  static const struct sunxi_ccu_desc sun50i_a64_de2_clk_desc = {
+>         .ccu_clks       = sun8i_h3_de2_clks,
+>         .num_ccu_clks   = ARRAY_SIZE(sun8i_h3_de2_clks),
+> @@ -239,16 +249,6 @@ static const struct sunxi_ccu_desc sun50i_h6_de3_clk_desc = {
+>         .num_resets     = ARRAY_SIZE(sun50i_h6_de3_resets),
+>  };
+>
+> -static const struct sunxi_ccu_desc sun8i_v3s_de2_clk_desc = {
+> -       .ccu_clks       = sun8i_v3s_de2_clks,
+> -       .num_ccu_clks   = ARRAY_SIZE(sun8i_v3s_de2_clks),
+> -
+> -       .hw_clks        = &sun8i_v3s_de2_hw_clks,
+> -
+> -       .resets         = sun8i_a83t_de2_resets,
+> -       .num_resets     = ARRAY_SIZE(sun8i_a83t_de2_resets),
+> -};
+> -
+>  static int sunxi_de2_clk_probe(struct platform_device *pdev)
+>  {
+>         struct resource *res;
+> --
+> 2.25.0
+>
 
-diff --git a/drivers/media/platform/mtk-vcodec/vdec/vdec_vp9_if.c b/drivers/media/platform/mtk-vcodec/vdec/vdec_vp9_if.c
-index 24c1f0bf2147..257a5b5ad212 100644
---- a/drivers/media/platform/mtk-vcodec/vdec/vdec_vp9_if.c
-+++ b/drivers/media/platform/mtk-vcodec/vdec/vdec_vp9_if.c
-@@ -110,7 +110,11 @@ struct vp9_sf_ref_fb {
-  * @buf_len_sz_c : size used to store cbcr plane ufo info (AP-R, VPU-W)
- 
-  * @profile : profile sparsed from vpu (AP-R, VPU-W)
-- * @show_frame : display this frame or not (AP-R, VPU-W)
-+ * @show_frame : [BIT(0)] display this frame or not (AP-R, VPU-W)
-+ *	[BIT(1)] reset segment data or not (AP-R, VPU-W)
-+ *	[BIT(2)] trig decoder hardware or not (AP-R, VPU-W)
-+ *	[BIT(3)] ask VPU to set bits(0~4) accordingly (AP-W, VPU-R)
-+ *	[BIT(4)] do not reset segment data before every frame (AP-R, VPU-W)
-  * @show_existing_frame : inform this frame is show existing frame
-  *	(AP-R, VPU-W)
-  * @frm_to_show_idx : index to show frame (AP-R, VPU-W)
-@@ -494,12 +498,12 @@ static void vp9_swap_frm_bufs(struct vdec_vp9_inst *inst)
- 					frm_to_show->fb->base_y.size);
- 		}
- 		if (!vp9_is_sf_ref_fb(inst, inst->cur_fb)) {
--			if (vsi->show_frame)
-+			if (vsi->show_frame & BIT(0))
- 				vp9_add_to_fb_disp_list(inst, inst->cur_fb);
- 		}
- 	} else {
- 		if (!vp9_is_sf_ref_fb(inst, inst->cur_fb)) {
--			if (vsi->show_frame)
-+			if (vsi->show_frame & BIT(0))
- 				vp9_add_to_fb_disp_list(inst, frm_to_show->fb);
- 		}
- 	}
-@@ -800,6 +804,9 @@ static int vdec_vp9_init(struct mtk_vcodec_ctx *ctx)
- 	}
- 
- 	inst->vsi = (struct vdec_vp9_vsi *)inst->vpu.vsi;
-+
-+	inst->vsi->show_frame |= BIT(3);
-+
- 	init_all_fb_lists(inst);
- 
- 	ctx->drv_handle = inst;
-@@ -870,13 +877,27 @@ static int vdec_vp9_decode(void *h_vdec, struct mtk_vcodec_mem *bs,
- 					vsi->sf_frm_sz[idx]);
- 			}
- 		}
--		memset(inst->seg_id_buf.va, 0, inst->seg_id_buf.size);
-+
-+		if (!(vsi->show_frame & BIT(4)))
-+			memset(inst->seg_id_buf.va, 0, inst->seg_id_buf.size);
-+
- 		ret = vpu_dec_start(&inst->vpu, data, 3);
- 		if (ret) {
- 			mtk_vcodec_err(inst, "vpu_dec_start failed");
- 			goto DECODE_ERROR;
- 		}
- 
-+		if (vsi->show_frame & BIT(1)) {
-+			memset(inst->seg_id_buf.va, 0, inst->seg_id_buf.size);
-+
-+			if (vsi->show_frame & BIT(2)) {
-+				if (vpu_dec_start(&inst->vpu, NULL, 0)) {
-+					mtk_vcodec_err(inst, "vpu trig decoder failed");
-+					goto DECODE_ERROR;
-+				}
-+			}
-+		}
-+
- 		ret = validate_vsi_array_indexes(inst, vsi);
- 		if (ret) {
- 			mtk_vcodec_err(inst, "Invalid values from VPU.");
--- 
-2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
