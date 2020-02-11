@@ -2,96 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78F32158B39
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 09:26:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02FD2158B4F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 09:35:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xWjFwzrOQzYOuwVMEeiVIKbb4/WgeSlBDvf0s057rKc=; b=P3QO83xl+SpmLQ81JP/Ru6Ck3
-	Cc7Zuh1G2QHTOHx7GS/XGwCXZozW5jjpUlrjNdhzFAzzRp1R4ATTr/pPvTsUqHn3lp1r5bVLa6aNq
-	MS9ILBNqAUYUwmOejccjxo75gO3Kyw68Jg9U/yjq/+MCDAS4GSCw2VUIpv/XaJ8L9NWxKYLUjRig4
-	2CB4MmPqQ1ZK0TuOVCSsLmlZDWuW5srRj6Af0pXdDTEbx5htk+033ZY4sAU89AbVyh4ZVT+qyvHYw
-	1W5oMhNdIKwOycG5xRB7h296d0MUc3entCqPEyBXb3519mZieoxyYt0Hn8xHhInf5AnjyjFtrNr3l
-	7zjen/UYA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T+a3P4ojVA13aNxclA22CbYgg4B89/06MGkReR8xePk=; b=Vdwjr7eb5pAEei
+	d1sg4qw5trjl116nGxy7wCtqDM1h3Xpq39MTZxn7AeB0jTXQfEcECePrhUOlUp6uLVb6bPKqDiUTH
+	vf6zjWWdyiBA27r1yZODdKJgXP5NQIgF6DfPhkCZNKani1T7d+ajI3een3NS1jx/BX/1MguEOnt7v
+	SFhdTIQPAVwE3Ib1xMsPRtOO+yIDdWLo8Nc++GityhJUt/p25J6mQqifeKJHjDA9G6v5YLUbF369m
+	I4OwLyZq53FTglJO3i7DPQlP0Rh2B7CBZLluAAzslyxaF84bI1ilrZvTvpzYG2gdOeKO/6U8MTECM
+	ZAlfQ7S4npXwIApmLv8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1QsT-0000CG-I8; Tue, 11 Feb 2020 08:26:41 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
+	id 1j1R14-0003JX-7H; Tue, 11 Feb 2020 08:35:34 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1QsM-0000Bq-Fd
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 08:26:36 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 8EE26217FC;
- Tue, 11 Feb 2020 03:26:33 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Tue, 11 Feb 2020 03:26:33 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=aJFuuqSI2HhjxwelhEtc0Ez5YPf
- 0KrosR/wT6D9AufM=; b=SNpkHcj8DpzU9/RJO4Dx7NW+qlKd91YZZI1QJXfYz/r
- mjM6R+IwGn5lZEYn3UCPb5Qju528nBi/21tUOY/rEuvzmK8wnSnACdnG29mYio4t
- udEXGLB+eBK6xQn7/HDoPcBvcmfsKnO2ckqZcjmiDLx+m296E1rOHeap+Vi/Ry3n
- NhW4axLlOqzvys1Ul7u7Jq9MYLR2rlc1WTcwDpPJdOIGZzKzhhd1QXn3/0H8p365
- 8FvXCm0Wd28Tn3ycvgY9T/vMjdZOhf0yXRjjwi5IUT3Me4n23mMvT+qO3qoIizFL
- LSBnlo+dwPvRen5j179JPXmPAhSs41TvHkXt38svVPQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=aJFuuq
- SI2HhjxwelhEtc0Ez5YPf0KrosR/wT6D9AufM=; b=Wml2BvHI6FDEY4f5OH7zsZ
- nYzr6x37E8Ztk9Hqxr4Yn2iacvL+KNSKkgrbzvsQkulIZUumb2iL2yLppIwQ2p6b
- bHs4jnVn2qMCF0CY/JyebH2oWKn1w1HyewQ8WGkPtZ28yZxOWw0J3uOOCdBunMhc
- xZwSIvsphbzbGHF048UA1zyi6cbAlmVJ3DHMdFGqGaRPfQue2Nyn8eckBihTpYqp
- eGiAsh+h6QgACz9ELwizRbuEBla1yg4CU6RnmiBcN4xBtfGd1eXfV/Ax5opKnJCJ
- 02DchwvpAAWoO+fXDSxIn53Vw/9zCmAcqtZad5bgNPKbmtP0u15jmhsjOnYVxkLA
- ==
-X-ME-Sender: <xms:NWVCXtyBNsa7zJ6-4S4NZ5g5IwIr29AdqnvZnAFWIbQ9O_ggJAybag>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedvgdduudelucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:NWVCXmso8okp7MHQWlJU0Ryben_orT0c0mClRSczluznL_7UQdqHiA>
- <xmx:NWVCXm6lpacM8pWcwl2hSenwQtEBBBTKC0dmupVJxxF7gpgUahwV-A>
- <xmx:NWVCXlRXe6Fq4qqTmT5AcSBgjyOwfoTKYrkdR7Xv-7GWfr_AK_ZmIA>
- <xmx:OWVCXiQq_WypclKpll63jsqtz_c_x-n2-UynCFHnSLxcIZQ766gZyQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id C7872328005A;
- Tue, 11 Feb 2020 03:26:28 -0500 (EST)
-Date: Tue, 11 Feb 2020 09:26:27 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH 4/4] drm/sun4i: dsi: Remove incorrect use of runtime PM
-Message-ID: <20200211082627.nolf6npspw2a2rxs@gilmour.lan>
-References: <20200211072858.30784-1-samuel@sholland.org>
- <20200211072858.30784-4-samuel@sholland.org>
+ id 1j1R0w-0003It-Ol
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 08:35:28 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 07D6CA2B1162CF7E61FF;
+ Tue, 11 Feb 2020 16:35:15 +0800 (CST)
+Received: from [127.0.0.1] (10.177.131.64) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Tue, 11 Feb 2020
+ 16:35:08 +0800
+Subject: Re: [PATCH] arm64: csum: Optimise IPv6 header checksum
+To: Shaokun Zhang <zhangshaokun@hisilicon.com>, Will Deacon <will@kernel.org>, 
+ Robin Murphy <robin.murphy@arm.com>
+References: <3a723a4b08938154c37febe2504f029c4480e53c.1579546194.git.robin.murphy@arm.com>
+ <20200121103421.GA11819@willie-the-truck>
+ <f55691eb-2ff4-39af-290a-176365009f30@hisilicon.com>
+From: Chen Zhou <chenzhou10@huawei.com>
+Message-ID: <0ea2156e-43e9-a4d3-e527-c61d1825bd4d@huawei.com>
+Date: Tue, 11 Feb 2020 16:35:06 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-In-Reply-To: <20200211072858.30784-4-samuel@sholland.org>
+In-Reply-To: <f55691eb-2ff4-39af-290a-176365009f30@hisilicon.com>
+X-Originating-IP: [10.177.131.64]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_002634_667317_FF6078B4 
-X-CRM114-Status: GOOD (  26.33  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200211_003526_976337_C7CBF22B 
+X-CRM114-Status: GOOD (  13.37  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.29 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,160 +67,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
- stable@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2424062203231990863=="
+Cc: wxf.wang@hisilicon.com, catalin.marinas@arm.com,
+ Hanjun Guo <guohanjun@huawei.com>, linux-arm-kernel@lists.infradead.org,
+ huanglingyan2@huawei.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Will/Robin/Shaokun,
 
---===============2424062203231990863==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="kwpruo3coc5fkck7"
-Content-Disposition: inline
+Shaokun's machine broken down, so i tested it.
 
+On KunPeng920 board, the optimised ipv6 header checksum can get
+about 1.2 times performance gain and my gcc version is 7.3.0.
 
---kwpruo3coc5fkck7
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Thanks,
+Chen Zhou
 
-Hi,
+On 2020/2/3 17:29, Shaokun Zhang wrote:
+> Hi Will/Robin,
+> 
+> My apologies for the slow reply because of the Spring Festival in China. 
+> 
+> Robin's idea sounds nice, We will test it later because our machine
+> broke down.
+> 
+> Thanks,
+> Shaokun
+> 
+> On 2020/1/21 18:34, Will Deacon wrote:
+>> [+ Shaokun and Lingyan for review and testing feedback]
+>>
+>> On Mon, Jan 20, 2020 at 06:52:29PM +0000, Robin Murphy wrote:
+>>> Throwing our __uint128_t idioms at csum_ipv6_magic() makes it
+>>> about 1.3x-2x faster across a range of microarchitecture/compiler
+>>> combinations. Not much in absolute terms, but every little helps.
+>>>
+>>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>>> ---
+>>>
+>>> Before I move on, this seemed like it might be worth touching as well,
+>>> comparing what other architectures do.
+>>>
+>>>  arch/arm64/include/asm/checksum.h |  7 ++++++-
+>>>  arch/arm64/lib/csum.c             | 27 +++++++++++++++++++++++++++
+>>>  2 files changed, 33 insertions(+), 1 deletion(-)
+>>>
+>>> diff --git a/arch/arm64/include/asm/checksum.h b/arch/arm64/include/asm/checksum.h
+>>> index 8d2a7de39744..b6f7bc6da5fb 100644
+>>> --- a/arch/arm64/include/asm/checksum.h
+>>> +++ b/arch/arm64/include/asm/checksum.h
+>>> @@ -5,7 +5,12 @@
+>>>  #ifndef __ASM_CHECKSUM_H
+>>>  #define __ASM_CHECKSUM_H
+>>>  
+>>> -#include <linux/types.h>
+>>> +#include <linux/in6.h>
+>>> +
+>>> +#define _HAVE_ARCH_IPV6_CSUM
+>>> +__sum16 csum_ipv6_magic(const struct in6_addr *saddr,
+>>> +			const struct in6_addr *daddr,
+>>> +			__u32 len, __u8 proto, __wsum sum);
+>>>  
+>>>  static inline __sum16 csum_fold(__wsum csum)
+>>>  {
+>>> diff --git a/arch/arm64/lib/csum.c b/arch/arm64/lib/csum.c
+>>> index 847eb725ce09..4a522e45f23b 100644
+>>> --- a/arch/arm64/lib/csum.c
+>>> +++ b/arch/arm64/lib/csum.c
+>>> @@ -121,3 +121,30 @@ unsigned int do_csum(const unsigned char *buff, int len)
+>>>  
+>>>  	return sum >> 16;
+>>>  }
+>>> +
+>>> +__sum16 csum_ipv6_magic(const struct in6_addr *saddr,
+>>> +			const struct in6_addr *daddr,
+>>> +			__u32 len, __u8 proto, __wsum csum)
+>>> +{
+>>> +	__uint128_t src, dst;
+>>> +	u64 sum = (__force u64)csum;
+>>> +
+>>> +	src = *(const __uint128_t *)saddr->s6_addr;
+>>> +	dst = *(const __uint128_t *)daddr->s6_addr;
+>>> +
+>>> +	sum += (__force u32)htonl(len);
+>>> +#ifdef __LITTLE_ENDIAN
+>>> +	sum += (u32)proto << 24;
+>>> +#else
+>>> +	sum += proto;
+>>> +#endif
+>>> +	src += (src >> 64) | (src << 64);
+>>> +	dst += (dst >> 64) | (dst << 64);
+>>> +
+>>> +	sum = accumulate(sum, src >> 64);
+>>> +	sum = accumulate(sum, dst >> 64);
+>>> +
+>>> +	sum += ((sum >> 32) | (sum << 32));
+>>> +	return csum_fold((__force __wsum)(sum >> 32));
+>>> +}
+>>> +EXPORT_SYMBOL(csum_ipv6_magic);
+>>> -- 
+>>> 2.23.0.dirty
+>>>
+>>
+>> .
+>>
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+> .
+> 
 
-On Tue, Feb 11, 2020 at 01:28:58AM -0600, Samuel Holland wrote:
-> The driver currently uses runtime PM to perform some of the module
-> initialization and cleanup. This has three problems:
->
-> 1) There is no Kconfig dependency on CONFIG_PM, so if runtime PM is
->    disabled, the driver will not work at all, since the module will
->    never be initialized.
-
-That's fairly easy to fix.
-
-> 2) The driver does not ensure that the device is suspended when
->    sun6i_dsi_probe() fails or when sun6i_dsi_remove() is called. It
->    simply disables runtime PM. From the docs of pm_runtime_disable():
->
->       The device can be either active or suspended after its runtime PM
->       has been disabled.
->
->    And indeed, the device will likely still be active if sun6i_dsi_probe
->    fails. For example, if the panel driver is not yet loaded, we have
->    the following sequence:
->
->    sun6i_dsi_probe()
->       pm_runtime_enable()
->       mipi_dsi_host_register()
->          of_mipi_dsi_device_add(child)
->             ...device_add()...
->                __device_attach()
->                  pm_runtime_get_sync(dev->parent) -> Causes resume
->                  bus_for_each_drv()
->                     __device_attach_driver() -> No match for panel
->                  pm_runtime_put(dev->parent) -> Async idle request
->       component_add()
->          __component_add()
->             try_to_bring_up_masters()
->                try_to_bring_up_master()
->                   sun4i_drv_bind()
->                      component_bind_all()
->                         component_bind()
->                            sun6i_dsi_bind() -> Fails with -EPROBE_DEFER
->       mipi_dsi_host_unregister()
->       pm_runtime_disable()
->          __pm_runtime_disable()
->             __pm_runtime_barrier() -> Idle request is still pending
->                cancel_work_sync()  -> DSI host is *not* suspended!
->
->    Since the device is not suspended, the clock and regulator are never
->    disabled. The imbalance causes a WARN at devres free time.
-
-That's interesting. I guess this is shown when you have the panel as a
-module?
-
-There's something pretty weird though. The comment in
-__pm_runtime_disable states that it will "wait for all operations in
-progress to complete" so at the end of __pm_runtime_disable call, the
-DSI host will be suspended and we shouldn't have a WARN at all.
-
-> 3) The driver relies on being suspended when sun6i_dsi_encoder_enable()
->    is called. The resume callback has a comment that says:
->
->       Some part of it can only be done once we get a number of
->       lanes, see sun6i_dsi_inst_init
->
->    And then part of the resume callback only runs if dsi->device is not
->    NULL (that is, if sun6i_dsi_attach() has been called). However, as
->    the above call graph shows, the resume callback is guaranteed to be
->    called before sun6i_dsi_attach(); it is called before child devices
->    get their drivers attached.
-
-Isn't it something that has been changed by your previous patch though?
-
->    Therefore, part of the controller initialization will only run if the
->    device is suspended between the calls to mipi_dsi_host_register() and
->    component_add() (which ends up calling sun6i_dsi_encoder_enable()).
->    Again, as shown by the above call graph, this is not the case. It
->    appears that the controller happens to work because it is still
->    initialized by the bootloader.
-
-We don't have any bootloader support for MIPI-DSI, so no, that's not it.
-
->    Because the connector is hardcoded to always be connected, the
->    device's runtime PM reference is not dropped until system suspend,
->    when sun4i_drv_drm_sys_suspend() ends up calling
->    sun6i_dsi_encoder_disable(). However, that is done as a system sleep
->    PM hook, and at that point the system PM core has already taken
->    another runtime PM reference, so sun6i_dsi_runtime_suspend() is
->    not called. Likewise, by the time the PM core releases its reference,
->    sun4i_drv_drm_sys_resume() has already re-enabled the encoder.
->
->    So after system suspend and resume, we have *still never called*
->    sun6i_dsi_inst_init(), and now that the rest of the display pipeline
->    has been reset, the DSI host is unable to communicate with the panel,
->    causing VBLANK timeouts.
-
-Either way, I guess just moving the pm_runtime_enable call to
-sun6i_dsi_attach will fix this, right? We don't really need to have
-the DSI controller powered up before that time anyway.
-
-> Fix all of these issues by inlining the runtime PM hooks into the
-> encoder enable/disable functions, which are guaranteed to run after a
-> panel is attached. This allows sun6i_dsi_inst_init() to be called
-> unconditionally. Furthermore, this causes the hardware to be turned off
-> during system suspend and reinitialized on resume, which was not
-> happening before.
-
-That's not something we should do really. We're really lacking any
-power management, so we should be having more of runtime_pm, not less.
-
-Maxime
-
---kwpruo3coc5fkck7
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkJlMwAKCRDj7w1vZxhR
-xYOyAP4i7bV29YYxSgA7p6SjdiD9FeE7lQtf60arSA++ez4MuQD/bU6dsgSPYiwK
-hMZXytraIuKsW3QZc8GHvc91c2y+dAQ=
-=fkj2
------END PGP SIGNATURE-----
-
---kwpruo3coc5fkck7--
-
-
---===============2424062203231990863==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2424062203231990863==--
-
