@@ -2,87 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39BF5159C21
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 23:25:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9CAB159C3C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 23:31:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JVzWSyEIkIHdv6BZkPMG5rS1CWeLXBjbRoLJRGrS3x4=; b=teM4UAx66ci9U9
-	ZU5OxA+Xz10S9D5DtY4J3SkzsWGPxG12Y9NKEhvGxh6Sn2cvXg+HLcJqGzGZhfaziPMEn54YC2ZqR
-	tt6/+eEDDKhwYsdgumyG/ni+8p98UwlRcm1GnzaaVb3EBMe5ChCx+i+r9G0Lpkgb7hwawR2p0aJLG
-	JOXrWdXwVENqN0AqdoYEwy6d/fuBZn2I/9BmwjKgEH5D7OxqiDO8Kx6YG76FHyC7w84d7oP85vl9f
-	avWrXMtVo9XLTRftRPu82MToRtw16qS3LJefUn7Z/iNLSyRHZR4KdrOHSg8lx6tdzGM4DQ8EmPOSy
-	d23a0IWBX0OCpOcLfxBw==;
+	List-Owner; bh=dtmJHnCIIH6etXWw54PpgH7j41Db2ftaN/jiSnnM0UE=; b=GMtpnDkT0bFLPd
+	L6keF/cL43mlVYrdJOw8NYtdpQY4hz2Awc22kFCFyxXe72KtIQRksogVOfhl4S9EYLp2Jk3BeusfC
+	nFo/Kon46kkBL5UI8MpP9d11MmUkkqGLlezSwAfmg8Ua4V5oD+yPKHzsMMmBjsE0htXLWP6g3nKiB
+	AjTqclWghDLQUtC6vNPglNPVu2oIXccMhbJ9sqOgFTHoux1tLZ1Tjx+wDdPlzXSnJFeTPvG69N0Oy
+	uzhqbVrPUuQd7hIYHLokWVUWgPg7XnvsQBSWhhehSoPdKNdLaA66ML756QX3A265NlOVjEAf39Klk
+	nWyvxSjBPf6fnR5muYMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1dyP-0001N2-FJ; Tue, 11 Feb 2020 22:25:41 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1j1e3V-0003F4-5d; Tue, 11 Feb 2020 22:30:57 +0000
+Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1dxl-00088b-52
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 22:25:03 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1581459901; h=Content-Transfer-Encoding: MIME-Version:
- References: In-Reply-To: Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=MmaRUC9JI9mDX2NiICGsGt9NUzdKQErcKa2NI9gq4Bg=;
- b=k6uUZaLjLSCGc1eIDW2mFUw8WtryudeOwZyijtxLSxJv6ad/PeEbUebpSWnfWatUOqaiGbNh
- tV6Q4eUNni2i3oSp4C/U0QmMwKSs7RBMiOYXFmiUvtK1Hy2Q0bT4OKxnSv8bzUTCbAKxxy6W
- PCNXQPDjCiQTAmdjUmcpihOWZMU=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e4329ba.7f3dbf5d70a0-smtp-out-n01;
- Tue, 11 Feb 2020 22:24:58 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id EBF54C447A4; Tue, 11 Feb 2020 22:24:57 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from blr-ubuntu-253.qualcomm.com
- (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id B172FC433A2;
- Tue, 11 Feb 2020 22:24:53 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org B172FC433A2
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
- smtp.mailfrom=saiprakash.ranjan@codeaurora.org
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Andy Gross <agross@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, devicetree@vger.kernel.org
-Subject: [PATCHv3 2/2] dt-bindings: watchdog: Add compatible for QCS404, SC7180,
- SDM845, SM8150
-Date: Wed, 12 Feb 2020 03:54:30 +0530
-Message-Id: <a8bd3f4062fd7bb45aeab5aa55f6f31c14c69a96.1581459151.git.saiprakash.ranjan@codeaurora.org>
-X-Mailer: git-send-email 2.24.0
-In-Reply-To: <cover.1581459151.git.saiprakash.ranjan@codeaurora.org>
-References: <cover.1581459151.git.saiprakash.ranjan@codeaurora.org>
+ id 1j1e3N-0003DU-FW
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 22:30:51 +0000
+Received: by mail-yb1-xb43.google.com with SMTP id p129so6205631ybc.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Feb 2020 14:30:46 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=CHoiFuVyPb6jGydbvdkP7hbmi4a+GAh7Qj76wkBaMrw=;
+ b=KqXh8ljWsaeJuL5FZXSBYEMOEtwIDGtNhPOg0K+XUvNK9WNzlf102sQ8jl82PFo8XF
+ s+Ljzb/2DZuO0hfDjig0E+42lrnPZv/TPE7RJ8Aqcx5xI9V7autaDv1tzexHXbY8iQty
+ emEUEpwNSlANK1zORXQhRhy5tNQf2Ob0zLmcHG55uqs/alcX9ODLzR5BetAN9ZF5rmQ2
+ L25xAQtPyXz4zTfuqZZ/CpTP5vh7LsBhN8NpOxxgp0t58Zctl7vxGJbVRa2ovEgfn55s
+ i7Ls6CX0QpJTP0yd4t9igAHATrBZ+sxcHJfF2O09c0ls0c51XDilEOQdV2YfxfRxZoPj
+ KfZQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=CHoiFuVyPb6jGydbvdkP7hbmi4a+GAh7Qj76wkBaMrw=;
+ b=LSm8/HSmvYM/sCJVeO69wQ6K0YDg79V9qf75HEtDXVIyQMFzEzZc9DfxU95vqNt1BD
+ eMrOSlIfsoz0VucweaBILt8ndLFYMFs133T10mgxZKUvneSIvBTbowR0Em5aCUd9EI3S
+ jGt/sHjA2OlP/B19Ezwwsry18+yOpgF5+pKoGOzTSteRDsOeKCwyrk5vVNdYrfp4Olj0
+ o8+JMkQ2eWAZZozMKr5ca28kR7oS6LuyFm7DRpl6r94ylmKolzmK5tmqQV+cjAacxZiU
+ U3AAUC6zmuBjKsGqoH4MRYe2hsLqVnPNwYaV1MRtK3Y3B00qTuA21yNNVCQdlqwSddgS
+ h7fA==
+X-Gm-Message-State: APjAAAWI0tRTR3y5FvzLbday/rSj9Z4xS9owvxVGprmA69vcJ4NE2jet
+ qGH6bsRG2NxinmqPKWF6Q8A=
+X-Google-Smtp-Source: APXvYqyilsRsa87oczzBpnbDDzSd9mSalUhB8qVYON+pfbtfykYkhrGIfyKeqrrb88A0edcvtP8mkQ==
+X-Received: by 2002:a25:8290:: with SMTP id r16mr7654104ybk.4.1581460245400;
+ Tue, 11 Feb 2020 14:30:45 -0800 (PST)
+Received: from icarus (072-189-064-225.res.spectrum.com. [72.189.64.225])
+ by smtp.gmail.com with ESMTPSA id q130sm2560552ywg.52.2020.02.11.14.30.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 11 Feb 2020 14:30:44 -0800 (PST)
+Date: Tue, 11 Feb 2020 17:30:28 -0500
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: Fabrice Gasnier <fabrice.gasnier@st.com>
+Subject: Re: [PATCH v2] counter: stm32-timer-cnt: add power management support
+Message-ID: <20200211223028.GA7369@icarus>
+References: <1581355198-30428-1-git-send-email-fabrice.gasnier@st.com>
+ <20200210174550.GA4626@icarus>
+ <b1e2930a-eeaf-dcfe-3e2c-b666908262bf@st.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <b1e2930a-eeaf-dcfe-3e2c-b666908262bf@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_142501_887140_9853E0F6 
-X-CRM114-Status: GOOD (  10.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200211_143049_520409_1C2ECE95 
+X-CRM114-Status: GOOD (  19.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [vilhelm.gray[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
+ [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,43 +100,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Douglas Anderson <dianders@chromium.org>, Matthias Kaehlcke <mka@chromium.org>,
- Guenter Roeck <linux@roeck-us.net>, Stephen Boyd <swboyd@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ mcoquelin.stm32@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
+ jic23@kernel.org, benjamin.gaignard@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add missing compatible for watchdog timer on QCS404,
-SC7180, SDM845 and SM8150 SoCs.
+On Tue, Feb 11, 2020 at 11:54:17AM +0100, Fabrice Gasnier wrote:
+> On 2/10/20 6:45 PM, William Breathitt Gray wrote:
+> > On Mon, Feb 10, 2020 at 06:19:58PM +0100, Fabrice Gasnier wrote:
+> >> Add suspend/resume PM sleep ops. When going to low power, enforce the
+> >> counter isn't active. Gracefully restore its state upon resume in case
+> >> it's been left enabled prior to suspend.
+> >>
+> >> Acked-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+> >> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> >> ---
+> >> Changes in v2:
+> >> - Don't refuse to suspend in case the counter has been left enabled.
+> >>   Gracefully disable it and restore its state upon resume.
+> >> ---
+> >>  drivers/counter/stm32-timer-cnt.c | 63 +++++++++++++++++++++++++++++++++++++++
+> >>  1 file changed, 63 insertions(+)
+> >>
+> >> diff --git a/drivers/counter/stm32-timer-cnt.c b/drivers/counter/stm32-timer-cnt.c
+> >> index 3eafcce..50496f4 100644
+> >> --- a/drivers/counter/stm32-timer-cnt.c
+> >> +++ b/drivers/counter/stm32-timer-cnt.c
+> >> @@ -12,6 +12,7 @@
+> >>  #include <linux/iio/types.h>
+> > 
+> > Unrelated to your patch but it caught my eye: are iio headers necessary
+> > for this file? I suspect they are not needed since this driver does not
+> > make use of the IIO interface.
+> 
+> Hi William,
+> 
+> Yes, you're right. Thanks for pointing this!
+> I'll push a patch on top of this one to fix it. BTW, I'm not sure if
+> this needs to be a marked as a fix, as this seems a quite minor issue?
+> 
+> Best Regards,
+> Fabrice
 
-Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Reviewed-by: Stephen Boyd <swboyd@chromium.org>
----
- Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml | 4 ++++
- 1 file changed, 4 insertions(+)
+No need for a Fixes tag in this case since this is not a bug fix, but
+rather just a minor clean up of the included headers.
 
-diff --git a/Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml b/Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml
-index 5448cc537a03..0709ddf0b6a5 100644
---- a/Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml
-+++ b/Documentation/devicetree/bindings/watchdog/qcom-wdt.yaml
-@@ -15,6 +15,10 @@ allOf:
- properties:
-   compatible:
-     enum:
-+      - qcom,apss-wdt-qcs404
-+      - qcom,apss-wdt-sc7180
-+      - qcom,apss-wdt-sdm845
-+      - qcom,apss-wdt-sm8150
-       - qcom,kpss-timer
-       - qcom,kpss-wdt
-       - qcom,kpss-wdt-apq8064
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-of Code Aurora Forum, hosted by The Linux Foundation
+Thanks,
+
+William Breathitt Gray
 
 _______________________________________________
 linux-arm-kernel mailing list
