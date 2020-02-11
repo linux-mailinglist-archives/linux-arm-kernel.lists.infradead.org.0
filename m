@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF97A15910A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 14:57:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89FD615910D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 14:57:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9wUa8nu56ai3QD34P7Z805hmURbIraKheOPbJoxFTjI=; b=IIyQGEcPjWu0TV
-	fPdNBH8s8vpc71B5ZCxvmjL3UZU1nWN1P16dd9DOxvyK7+bxP2aTUPnztI0QPy0xojVt61FgsI07e
-	SNqHkaK9MK42nujfjOTF5jAkfufIO4QQvA4tYhhzi6JHpKPKLsH33R04f2JiKTFvvKajXNvDbnm8T
-	N5EvBY6LjbNMOSHqecJVLAOckBH4NOqNhIRFrEFFDLETt0kpCBNl9EQLT+AOh26YZLCooW/+hmEZ7
-	pEtXC2PNQQ5j67gvp3njc78S/8kbnAsza+Rbr13ZqrKnQSxbuegkhRejkDjyzBosygZ8qV+qhOYKN
-	Anddir8IbfpKKotM09TQ==;
+	List-Owner; bh=cMgmnudvNZ+24/9yWMwLT3Ppk4xkqZrmGi0y9mngQHs=; b=IiWhONdViDbrfz
+	zwHmkFLUfzfwSxICMCwOGD1ZKPkhWnXlRx0/hJ+k89qt6U6qi8TbVa5rFWxR6JBZ+VDgprkczCP9A
+	U01EqSAhtlWpEZ4DN5Yc70suQtsH+xoJ3MUyhaUfK2oqCkHvAIMuZ9YENDZWleXt9DpKwWAwQ4thA
+	nN6EIoRDRDTATJ9C9AzIJ/HDot682e0y39Pcf4LXQH0zJXvqsbiHe4xdCxtUS/HDfQ/1YpCppdVZw
+	nDVxVM7I1ViN+wveTZ3lxKhy1WnltfK1IBYwo7BUAQtHXvIvkUj6LIXL4udVENxvFIGvXb021eTBV
+	iRyhwxYeFdgaCfJPFXyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1W2l-0008DA-Rs; Tue, 11 Feb 2020 13:57:39 +0000
+	id 1j1W2u-0008M4-TK; Tue, 11 Feb 2020 13:57:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1W2b-0008C3-1u
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 13:57:30 +0000
+ id 1j1W2f-0008ET-Jb
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 13:57:35 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C768030E;
- Tue, 11 Feb 2020 05:57:27 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8CB6431B;
+ Tue, 11 Feb 2020 05:57:32 -0800 (PST)
 Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 909D33F68F;
- Tue, 11 Feb 2020 05:57:25 -0800 (PST)
-Subject: Re: [PATCH v7 00/11] add support for Clang's Shadow Call Stack
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 541BF3F68F;
+ Tue, 11 Feb 2020 05:57:30 -0800 (PST)
+Subject: Re: [PATCH v7 11/11] arm64: scs: add shadow stacks for SDEI
 To: Sami Tolvanen <samitolvanen@google.com>
 References: <20191018161033.261971-1-samitolvanen@google.com>
  <20200128184934.77625-1-samitolvanen@google.com>
+ <20200128184934.77625-12-samitolvanen@google.com>
 From: James Morse <james.morse@arm.com>
-Message-ID: <63517cff-4bd6-bb6c-9a54-23de4f5fbb4a@arm.com>
-Date: Tue, 11 Feb 2020 13:57:24 +0000
+Message-ID: <dbb090ae-d1ec-cb1a-0710-e1d3cfe762b9@arm.com>
+Date: Tue, 11 Feb 2020 13:57:29 +0000
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200128184934.77625-1-samitolvanen@google.com>
+In-Reply-To: <20200128184934.77625-12-samitolvanen@google.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_055729_140353_17FBA6E1 
-X-CRM114-Status: GOOD (  16.87  )
+X-CRM114-CacheID: sfid-20200211_055733_722575_4F12B906 
+X-CRM114-Status: GOOD (  12.95  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,35 +84,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Sami,
 
 On 28/01/2020 18:49, Sami Tolvanen wrote:
-> This patch series adds support for Clang's Shadow Call Stack
-> (SCS) mitigation, which uses a separately allocated shadow stack
-> to protect against return address overwrites. More information
-> can be found here:
-> 
->   https://clang.llvm.org/docs/ShadowCallStack.html
-> 
-> SCS provides better protection against traditional buffer
-> overflows than CONFIG_STACKPROTECTOR_*, but it should be noted
-> that SCS security guarantees in the kernel differ from the ones
-> documented for user space. The kernel must store addresses of
-> shadow stacks used by inactive tasks and interrupt handlers in
-> memory, which means an attacker capable reading and writing
-> arbitrary memory may be able to locate them and hijack control
-> flow by modifying shadow stacks that are not currently in use.
-> 
-> SCS is currently supported only on arm64, where the compiler
-> requires the x18 register to be reserved for holding the current
-> task's shadow stack pointer.
+> This change adds per-CPU shadow call stacks for the SDEI handler.
+> Similarly to how the kernel stacks are handled, we add separate shadow
+> stacks for normal and critical events.
 
-I found I had to add:
-| KBUILD_CFLAGS := $(filter-out -ffixed-x18 $(CC_FLAGS_SCS), $(KBUILD_CFLAGS))
+Reviewed-by: James Morse <james.morse@arm.com>
+Tested-by: James Morse <james.morse@arm.com>
 
-to drivers/firmware/efi/libstub/Makefile, to get this going.
-I don't think there is much point supporting SCS for the EFIstub, its already isolated
-from the rest of the kernel's C code by the __efistub symbol prefix machinery, and trying
-to use it would expose us to buggy firmware at a point we can't handle it!
 
-I can send a patch if its easier for you,
+> diff --git a/arch/arm64/kernel/scs.c b/arch/arm64/kernel/scs.c
+> index eaadf5430baa..dddb7c56518b 100644
+> --- a/arch/arm64/kernel/scs.c
+> +++ b/arch/arm64/kernel/scs.c
+
+> +static int scs_alloc_percpu(unsigned long * __percpu *ptr, int cpu)
+> +{
+> +	unsigned long *p;
+> +
+> +	p = __vmalloc_node_range(PAGE_SIZE, SCS_SIZE,
+> +				 VMALLOC_START, VMALLOC_END,
+> +				 GFP_SCS, PAGE_KERNEL,
+> +				 0, cpu_to_node(cpu),
+> +				 __builtin_return_address(0));
+
+(What makes this arch specific? arm64 has its own calls like this for the regular vmap
+stacks because it plays tricks with the alignment. Here the alignment requirement comes
+from the core SCS code... Would another architecture implement these
+scs_alloc_percpu()/scs_free_percpu() differently?)
 
 
 Thanks,
