@@ -2,83 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 516BB158BA9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 10:15:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5600B158C0D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 10:47:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Do2Po820ynhh9q/2cIbT8Kx2GDcl+lsDt/UwZrrm3NI=; b=nLfcHOdqlFQgXDZ1yG5Yv8+wK
-	4Oe7PbnjO1nR/6XVrEe0/RVwDlOX6PlbWlmlvo+vYvyW6UcFeMIGpgZbSQjJovOzf3qHQtMreMZ/j
-	84GO+ISpBq1sRYZ4r5zN5Rup4G8yQ1G/MyhOK2rekmd6GWSvY/hcISBf6m0tNx9qfDRR474WH8Ezg
-	4bVTEvJnbWD+uMR2xL24fuvTVlFVVZRKPp8fAPAQG8rhYjpIzdUGSWM83RsPkCma6mNyPm8/qQTwM
-	JclILLiPfo6qu00mFSIsaRl+3+ITCCZba3iOSkRXk3VTgPoWAH09WLgFsEbZkdKPGIlYoqCdH1o0j
-	bzGhC6wDg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HWK4wy9xRr5GU76AuHzuA+8eV/HdKUfHFyznVm9uctY=; b=Avx0l2ib/Yq8xe
+	RR9ojeLdvaxC8iqPTrBGKHs9SQ8qagVa4/oC0C98x8uakRcRw5t8HdHDsk6dn/Hf+NYQU99Mz7CAo
+	fDmY2uPlX6+2vMY13IFMUYAykC9r/qLoxFbtar7XvrhsOW0S97AAZKXVwtiVyTX/6EKkVheoYoiGg
+	gaFNMJOdrTsT4rFu+5UPVP7befyFEvZwtZTgsO4KWUk0XPe4UkPCK60YTbBxARmQWjheamWfp6Xpg
+	M21qi+42HcgMunqit690bSp4iAaZWJXF5MTOb412EyvKKPsEfLCivXwuCX/sPyvRb1XAsMINk/bV8
+	aQzbmhGVgvPnPJbUxk9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1RdN-0006Xr-VB; Tue, 11 Feb 2020 09:15:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j1S8B-0008SY-5w; Tue, 11 Feb 2020 09:46:59 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1RdA-0006X5-9Q
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 09:14:57 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1CED82086A;
- Tue, 11 Feb 2020 09:14:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581412494;
- bh=tb46MiN81vH1/UcBBXyXQyevhAUAyIvqCLgT+INhd9c=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=z7P4LQAqyhoXtX/Vhz5CyJEfpz7BSlCpxQC/59C45/1y3W4didWfyBso2fKDFJfs4
- rODuahjFDB1bS/GiXTX+EM0mIhpSdN7Nq+VOxOAYS240eeBnChNGR8X9ofBepUraOd
- 6DmvKlGOaxyK74q62QInJYLX72dwVHAnMQpHk9Jc=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j1Rd6-004HfL-6C; Tue, 11 Feb 2020 09:14:52 +0000
+ id 1j1S83-0008Rq-S5
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 09:46:53 +0000
+Received: by mail-wr1-x443.google.com with SMTP id z7so11355766wrl.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 11 Feb 2020 01:46:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=w1TSPc+JlTHAhFmRkBjf4YDoyFF0cD7ftWasXNuoumE=;
+ b=FjsA5BIkZ+hT2wm9mmhX5eKcsNzWDFh8FGGRHbRT6gQ9+e4gbSCL8XUhCvFdE9YSxm
+ +O2IY3hVHB+BNd+87rqADV+sqQ5SGlwrKmZupaGnHcEPtO7b06ZqZ+mOUwqwfaJoIEHH
+ yX/nBYG2N75UIkPiSwTr9GasTdh4gW36/zcwWqSmkwvgIrkm+mg5TmeGUN7D7oaEpvNg
+ BhkvZ0GtgFAEkgw0vrXnFnAQyfvz8D1GkCYuCXzPWpTTSiVl4Qs4MOfXJJ4H2wPk1hvR
+ utZEamgdQNk0xMtA+Pxk/ranvt1ndcWGzL4Ph95+IcIyFFSYHKpysmncNo5yrWfTF7X9
+ jn/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=w1TSPc+JlTHAhFmRkBjf4YDoyFF0cD7ftWasXNuoumE=;
+ b=NC+H491t61rcRU+zj8ibQvfCRzZ5Zyo7FhXAaBtnYHbulu/skVB1vnNodIY0Cwz65t
+ RzoOSxGpxT+6lNKpAMzW8MSKhJhe2dbfn39GWM1TaQadNH1aZQw+lDgOv65L2dfIdrYe
+ xRY9IHNGUbkXs2XNiKbZ8Opu77rgZdHQlC/sbo8Im8Z9J2SY0yiwKHtdhmWTfOfRZnpX
+ d3JAUGnzoUHgSQINZixs2cChBbOLA9DLsxE/gZdKjBkpp60GNh8g38bNLn+an7K8u+s4
+ B4xh/s6kTRFBV/I7GYzFr/3PutMDyAsBaPzZfn3dTT0hB9yLL8cSwW9xkfKI0wmBQVGH
+ mESQ==
+X-Gm-Message-State: APjAAAX69KdCw4YMJDN8mtHOjSGPyZPkD9fwYTvzoQtbcVMv8aDrhDio
+ eGi8/qoTbfbZRzpaU79A4xrQ0jh4GQ0K3L/mkUrlgFB9dAY=
+X-Google-Smtp-Source: APXvYqwhSf8JavKelhdt3J0bOLew5DzoXQ+67dDmYAeO5cfMhbaTYXoo2bO/py7GSWzLHg3jBl4sXXUIKRdKaJbTXNo=
+X-Received: by 2002:adf:ed09:: with SMTP id a9mr7806457wro.350.1581414409744; 
+ Tue, 11 Feb 2020 01:46:49 -0800 (PST)
 MIME-Version: 1.0
-Date: Tue, 11 Feb 2020 09:14:52 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v7 09/11] arm64: disable SCS for hypervisor code
-In-Reply-To: <20200210180740.GA24354@willie-the-truck>
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200128184934.77625-1-samitolvanen@google.com>
- <20200128184934.77625-10-samitolvanen@google.com>
- <6f62b3c0-e796-e91c-f53b-23bd80fcb065@arm.com>
- <20200210175214.GA23318@willie-the-truck>
- <20200210180327.GB20840@lakrids.cambridge.arm.com>
- <20200210180740.GA24354@willie-the-truck>
-Message-ID: <43839239237869598b79cab90e100127@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: will@kernel.org, mark.rutland@arm.com, james.morse@arm.com,
- samitolvanen@google.com, catalin.marinas@arm.com, rostedt@goodmis.org,
- mhiramat@kernel.org, ard.biesheuvel@linaro.org, Dave.Martin@arm.com,
- keescook@chromium.org, labbott@redhat.com, ndesaulniers@google.com,
- jannh@google.com, miguel.ojeda.sandonis@gmail.com,
- yamada.masahiro@socionext.com, clang-built-linux@googlegroups.com,
- kernel-hardening@lists.openwall.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+References: <20200210061544.7600-1-yuehaibing@huawei.com>
+ <9351a746-8823-ee26-70da-fd3127a02c91@linux.intel.com>
+ <be093793-3514-840a-ff2f-4dc21d8ee7f1@huawei.com>
+In-Reply-To: <be093793-3514-840a-ff2f-4dc21d8ee7f1@huawei.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Tue, 11 Feb 2020 11:46:38 +0200
+Message-ID: <CAEnQRZDWFgXocRJxtc2e7McRCAtod6-GwPJaVMdb4ymBZgSD1w@mail.gmail.com>
+Subject: Re: [alsa-devel] [PATCH -next] ASoC: SOF: imx8: Fix randbuild error
+To: Yuehaibing <yuehaibing@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_011456_375007_D36E52B2 
-X-CRM114-Status: GOOD (  14.88  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200211_014651_926768_6C960CDA 
+X-CRM114-Status: GOOD (  23.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [daniel.baluta[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,74 +94,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
- Sami Tolvanen <samitolvanen@google.com>, clang-built-linux@googlegroups.com,
- kernel-hardening@lists.openwall.com, Laura Abbott <labbott@redhat.com>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Daniel Baluta <daniel.baluta@nxp.com>,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Takashi Iwai <tiwai@suse.com>, krzk@kernel.org,
+ Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-10 18:07, Will Deacon wrote:
-> On Mon, Feb 10, 2020 at 06:03:28PM +0000, Mark Rutland wrote:
->> On Mon, Feb 10, 2020 at 05:52:15PM +0000, Will Deacon wrote:
->> > On Mon, Feb 10, 2020 at 05:18:58PM +0000, James Morse wrote:
->> > > On 28/01/2020 18:49, Sami Tolvanen wrote:
->> > > > Filter out CC_FLAGS_SCS and -ffixed-x18 for code that runs at a
->> > > > different exception level.
->> > >
->> > > Hmmm, there are two things being disabled here.
->> > >
->> > > Stashing the lr in memory pointed to by VA won't work transparently at EL2 ... but
->> > > shouldn't KVM's C code still treat x18 as a fixed register?
->> >
->> > My review of v6 suggested dropping the -ffixed-x18 as well, since it's only
->> > introduced by SCS (in patch 5) and so isn't required by anything else. Why
->> > do you think it's needed?
->> 
->> When EL1 code calls up to hyp, it expects x18 to be preserved across 
->> the
->> call, so hyp needs to either preserve it explicitly across a 
->> transitions
->> from/to EL1 or always preserve it.
-> 
-> I thought we explicitly saved/restored it across the call after
-> af12376814a5 ("arm64: kvm: stop treating register x18 as caller save"). 
-> Is
-> that not sufficient?
-> 
->> The latter is easiest since any code used by VHE hyp code will need 
->> x18
->> saved anyway (ans so any common hyp code needs to).
-> 
-> I would personally prefer to split the VHE and non-VHE code so they can 
-> be
-> compiled with separate options.
+On Tue, Feb 11, 2020 at 3:59 AM Yuehaibing <yuehaibing@huawei.com> wrote:
+>
+> On 2020/2/11 5:00, Pierre-Louis Bossart wrote:
+> >
+> >
+> > On 2/10/20 12:15 AM, YueHaibing wrote:
+> >> when do randconfig like this:
+> >> CONFIG_SND_SOC_SOF_IMX8_SUPPORT=y
+> >> CONFIG_SND_SOC_SOF_IMX8=y
+> >> CONFIG_SND_SOC_SOF_OF=y
+> >> CONFIG_IMX_DSP=m
+> >> CONFIG_IMX_SCU=y
+> >>
+> >> there is a link error:
+> >>
+> >> sound/soc/sof/imx/imx8.o: In function 'imx8_send_msg':
+> >> imx8.c:(.text+0x380): undefined reference to 'imx_dsp_ring_doorbell'
+> >>
+> >> Select IMX_DSP in SND_SOC_SOF_IMX8_SUPPORT to fix this
+> >>
+> >> Reported-by: Hulk Robot <hulkci@huawei.com>
+> >> Fixes: f9ad75468453 ("ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF dependency")
+> >> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+> >
+> > Thanks for the report.
+> >
+> > Would you mind sharing the .config and instructions to reproduce this case? we have an unrelated issue with allyesconfig that was reviewed here:
+> >
+> > https://github.com/thesofproject/linux/pull/1778
+> >
+> > and I'd probably a good thing to fix everything in one shot.
+>
+> config is attached, which is on x86_64
 
-This is going to generate a lot of code duplication (or at least object 
-duplication),
-as the two code paths are intricately linked and splitting them to 
-support different
-compilation options and/or calling conventions.
+Thanks, I think this is legit. It was introduced with:
 
-I'm not fundamentally opposed to that, but it should come with ways to 
-still
-manage it as a unified code base as much as possible, as ways to discard 
-the
-unused part at runtime (which should become easy to do once we have two
-distinct sets of objects).
+commit f52cdcce9197fef9d4a68792dd3b840ad2b77117
+Author: Daniel Baluta <daniel.baluta@nxp.com>
+Date:   Sat Jan 4 15:39:53 2020 +0000
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+    firmware: imx: Allow IMX DSP to be selected as module
+
+    IMX DSP is only needed by SOF or any other module that
+    wants to communicate with the DSP. When SOF is build
+    as a module IMX DSP is forced to be built inside the
+    kernel image. This is not optimal, so allow IMX DSP
+    to be built as a module.
+
+    Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+    Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+
+So, I think we should change the Fixes tag. Are there
+any clear rules on when to use select vs depends?
+
+On my side, I know what both are doing but it is not clear
+when to use them.
+
+> >
+> > Thanks!
+> >
+> >> ---
+> >>   sound/soc/sof/imx/Kconfig | 2 +-
+> >>   1 file changed, 1 insertion(+), 1 deletion(-)
+> >>
+> >> diff --git a/sound/soc/sof/imx/Kconfig b/sound/soc/sof/imx/Kconfig
+> >> index bae4f7b..81274906 100644
+> >> --- a/sound/soc/sof/imx/Kconfig
+> >> +++ b/sound/soc/sof/imx/Kconfig
+> >> @@ -14,7 +14,7 @@ if SND_SOC_SOF_IMX_TOPLEVEL
+> >>   config SND_SOC_SOF_IMX8_SUPPORT
+> >>       bool "SOF support for i.MX8"
+> >>       depends on IMX_SCU
+> >> -    depends on IMX_DSP
+> >> +    select IMX_DSP
+> >>       help
+> >>         This adds support for Sound Open Firmware for NXP i.MX8 platforms
+> >>         Say Y if you have such a device.
+> >>
+> >
+> > .
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
