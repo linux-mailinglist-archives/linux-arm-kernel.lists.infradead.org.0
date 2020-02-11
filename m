@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9103D159C40
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 23:34:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D5B3159C58
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 23:37:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LtIjwTEUvY4m7L9xyEJL7C4I4CAJGG6LlizNuGLCJ4U=; b=TyYf00GtQDUEjR
-	nT4BMiHiUwq36hY02s3ymcdOW7gh8cwlFpT8ZwogTxA2L6bTQBYo8vABkNUSw3TGHtIzGKW0J36rP
-	KhqMHvbMFgbpn9q7Af6PDh7HUDUk3ciR2fjcyNkDQu82VOsKH6V/4Lt5Zjm1Na6G2rfF1FdXkjEGM
-	D2+buLMEiqVth8GK49CyVl59p/QF5cqepxcyx+oqQmJfbG6FfIPBvdCOFeLunD3Ex1l57qW2XOyfa
-	5RUhz47LCmx+QwfuQXQUfwild9LsruCV5te5EM2pBbBOeXhcbnqTb2sqRIQwY/YlbWeQpW59aToGL
-	0IgFjx74FmIr2YORk1pw==;
+	List-Owner; bh=m3Gx+JcCopZCKX1RAumqoC6Hqj2MQNh+UfuuxWdm7mg=; b=GTgzCOk3El1r9l
+	kgS15JfsNgosLzg4oORqB115+LTsjZc5RRzgPBpEKJJ++tmB12XG8/R8Aen0t9d1/JmowNM1aSCOB
+	poUa7GAS6NBZmIy4kEE5jTy0KiwnDOhwdSxlz2npi9snns+I91zdGB/Q+ObxLj1+7kMKCwsHWQ5jy
+	d2roBGVpkA+dGFUMQvHw9ZxcQvwhgJMi1Ug12p5dZR0wgUXmZbaOLeHeL1VrRvb0qYmQN8c0kN99z
+	XPAYHwB9BTbx38NjAguXA5EgQDsnDK5oYqVn9pzXVy7gAFdkMZCVJZ4Yc6WNubxdp2w6Q6RN+qQiP
+	CCxBdsG0PGW3LEkp7qTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1e70-0003xj-DR; Tue, 11 Feb 2020 22:34:34 +0000
-Received: from mail-pg1-x54a.google.com ([2607:f8b0:4864:20::54a])
+	id 1j1e9Z-0005f2-9J; Tue, 11 Feb 2020 22:37:13 +0000
+Received: from mail-vs1-xe49.google.com ([2607:f8b0:4864:20::e49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1e6t-0003wv-5B
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 22:34:28 +0000
-Received: by mail-pg1-x54a.google.com with SMTP id r192so98197pgr.6
+ id 1j1e9S-0005eb-3C
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 22:37:07 +0000
+Received: by mail-vs1-xe49.google.com with SMTP id f9so11600vsh.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 14:34:26 -0800 (PST)
+ Tue, 11 Feb 2020 14:37:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:message-id:mime-version:subject:from:to:cc;
- bh=tCp39nGmh6jfHffZt6h0GnEI2p4k3vAcc1eu6SXs2AA=;
- b=EZ9WVyoWLXE02i7Y/3ZJ4Tadn7u6Jh16ATWGwkj4iIcfHwD6Q5PrJgiyF1fLolo1kf
- G8+VB/3TXt0o6s5jORy1pmkNdIgEo2rudsmW28fXSpBvk2bDJXn5wor3+PopK+lhGOpT
- fGINzh3d/4wTeGBHoleb+loZ5Zvh1hNd5icRXHQJAlq3JL2gqYaiiK1gHegOUUBdr2H4
- /M7q3pkkn3WrdTSSc51R32H1A0VnyC+yTWtXSOyHl3gB3BmUwN7q5a0Ta4lLoEMHgYDT
- ODjfkXMYEV9NwI0CJ/++R2ZzKrhzUtAMmPyX62TafJ0zLyLAjT5y37KT6uzcF1zN8T6+
- EHKA==
+ bh=tn5KLhV2UflAg8SWktUj0z7+eGphwmGyKjf8wzfFF6c=;
+ b=urSRtZifT/QzvZKFDFC7/ZnQJbkvRzX80g/fbmNyhIMIZj/8ubezc0r7GhuCo3gyv2
+ 5ww+otf5kKowLgPCCt/07eDrHteSifb/OmAcx9VEH+SCpMf4mazjoPz8mIyQDDp9xC2W
+ OmllTh9rDMxYl40+vl9RFvRlxrztbrK27yD4zEun0wkFGcnBmxp34adEaVDFaA0SvSTD
+ rPgT9lIp3j/H/DOH9dz+6/gxhd0q2AaqM5u3r1s1UOK3E9YzIz3y+p+At9GTNI+X7PUl
+ DJSJfY+VIAAsd6sDTaA3U2UpygMsRQuGNH81kkq4Lkp/Eu+SK+PtWsex4eRPzgJztDyp
+ PxxA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=tCp39nGmh6jfHffZt6h0GnEI2p4k3vAcc1eu6SXs2AA=;
- b=YI0qEQsTVMUzHWBnlq1NUooMa9aZNIcIQPltW5jB52fmkQ9NKJNZ5a6hqKnU5sZYhT
- mO3YKTmIxga146/lZHzWZx//p1IZ4/r9O8k3I7Vasj4xWi+HjnSoTuvrQX8n2cQm4czB
- 5CIT93yU8yo7GBK5WHU/6WI/9v6X9scjVer7TcYEYcZQteVjKPDdXI3YINzsvezTIkuD
- NUsKBZ/F6YuogtDlr041hXe8B/ummpRDqcSbF8Y1upHamP2x3r7n2jATXq8bI12TgHGB
- nrAA7Zpt+89FcAyI2Qn30fUYT1seF/tNGMA8Bv4I0XwSjVTfk/ChF5Xa9CyrQqgJYcwY
- +L/g==
-X-Gm-Message-State: APjAAAXz9Gwkt5jGEfMP5HakEsXksRjEbprc77m4/43+TRKWwGxFp7TK
- 5p7ThCk4qdj8v5Oj9pJWlCUaX4QaxmGF
-X-Google-Smtp-Source: APXvYqzL+9Pb948p0Oh4VuEriyt9PtxXSCFN9TUUDh3yeG1rALRrce/dUGXJG8xbwe+qbGzOAhmWir/vouDB
-X-Received: by 2002:a63:2266:: with SMTP id t38mr9426357pgm.145.1581460465371; 
- Tue, 11 Feb 2020 14:34:25 -0800 (PST)
-Date: Tue, 11 Feb 2020 14:34:00 -0800
-Message-Id: <20200211223400.107604-1-rajatja@google.com>
+ bh=tn5KLhV2UflAg8SWktUj0z7+eGphwmGyKjf8wzfFF6c=;
+ b=AkTRTK1DQt0s6zOmyRsv3rTIbx7rzPJNniLNqEzY1ZxZg9HF58ITszgSi/uVjE0Vku
+ BEurs37ZpklnLFyKpp0flDAcgF2p2OkV8g+FKgKJpHNxMsD6aiEpADFBPtMHuEux12nc
+ 6DOsYjAFikOGvqySoSEDwfNrbmqxE6XXkb6bnQ7ImaNSDXCBJOR4XG9bieA/EG2Sfx7A
+ +0U9wMUVyqBl6uk8NBaOBleCD7AK4mQvgXTJKNM/4SR22rMFiKOG4VpTmtCt17RaQdv9
+ LDPLNG2iq7054fJAz9NUern93VdFoPNOHrjuTkicFrvfmP8W01X6/yDY7rCgr5eJ1bmK
+ ALAg==
+X-Gm-Message-State: APjAAAWDsr/ya8kAvGj2msY4sWy4gxXqWdtPLXuRF8Z26LYgKaCkE2r2
+ iHTcATAR9wgQzgkUsCN81J0rvsqO9ZLo
+X-Google-Smtp-Source: APXvYqyijGY6ooh56SzAuJ6qMrGW2ziMqaiWvXL+KvmMIdnSvi6OHZKuQczrNVVXElDF4HtcbvOaNYXHgan8
+X-Received: by 2002:ab0:6902:: with SMTP id b2mr5251519uas.32.1581460624477;
+ Tue, 11 Feb 2020 14:37:04 -0800 (PST)
+Date: Tue, 11 Feb 2020 14:37:00 -0800
+Message-Id: <20200211223700.110252-1-rajatja@google.com>
 Mime-Version: 1.0
 X-Mailer: git-send-email 2.25.0.225.g125e21ebc7-goog
-Subject: 
+Subject: [PATCH] spi: pxa2xx: Add CS control clock quirk
 From: Rajat Jain <rajatja@google.com>
 To: Daniel Mack <daniel@zonque.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
  Robert Jarzmik <robert.jarzmik@free.fr>, Mark Brown <broonie@kernel.org>, 
  linux-arm-kernel@lists.infradead.org, linux-spi@vger.kernel.org, 
  linux-kernel@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_143427_225440_0631742F 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20200211_143706_160750_18703DB6 
+X-CRM114-Status: GOOD (  13.52  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:54a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e49 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,9 +103,6 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 From: Evan Green <evgreen@chromium.org>
-
-Date: Wed, 29 Jan 2020 13:54:16 -0800
-Subject: [PATCH] spi: pxa2xx: Add CS control clock quirk
 
 In some circumstances on Intel LPSS controllers, toggling the LPSS
 CS control register doesn't actually cause the CS line to toggle.
