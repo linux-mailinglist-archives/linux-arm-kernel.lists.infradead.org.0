@@ -2,83 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7F67159A45
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 21:09:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D030F159AB9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 21:48:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YYybTp9aaBr/98nRrBjIbw2gediReGPIbOJqVmfY2Kw=; b=E3zvlZkyCJ9Lbg
-	L//aEvUEWe36Zknh0jNjJutbfGC6Gxx/dzo6+cEOJ56uL5ZLhW3EBKVyyEezpNhVygwKB0AkFjTnN
-	AbDiJMipfClObr24HjnlCjBV22NKsqlAWwiHOKz8I49YdNOrM/LQvhEMAiauCc+EZPIt5tMDIWc/K
-	c7bhusk11Sj9Mp3x54vZHh8j3uGHKMvXpgNIg/RH3Q2d7RU+b0xrwgd9Ppt9/6nper7IHy0Weeznf
-	vRXiGEqw1F57zwL8cCxztVboqwL3DFsQo++9MWt+y+VrTrHEzIxX2OD0T9fBzYci69sIWjGC3m5nY
-	mr4sEyTlh6tYF7oT1Oqw==;
+	List-Owner; bh=sASCBZKMbZWxeUbqKxOxbW5WOUmP5Pq1RIpFKJDLqA8=; b=N8Jm0svxEkf12i
+	ogBeJ5X3gDhGj/WWFgUmSyqTgnJxTVh1KKxPrPkEBLbAzndb1xAV14YoYfo7KCriY8bzITD1z9R4+
+	h1w+QIwZZaOudGIzBuqk6TIYVcDK/vazhURDVPYQoeiS1AWE2vbSbv3Fp86vtO+uU3BzFABmez1nl
+	4vWNELF3E8ZmAB9BrnPaRtnetPfVaWRBVKhYnvawJpyan3w6A0m/1RzkoD32ODKXpXZPlAthXdlXq
+	dTHWIuE1VHKbv5dAEY6soeWgdCh8fTdjV4pfQjRi/9Jf9X9Igh6Vb5PY0Z2srJROue8gOxZhoAhA9
+	KLsThYzuMmTxUv1EilEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1bqj-0006Hx-Sb; Tue, 11 Feb 2020 20:09:37 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1j1cSZ-0004a7-QW; Tue, 11 Feb 2020 20:48:43 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1bqa-0006Fw-Ro
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 20:09:30 +0000
-Received: by mail-oi1-x244.google.com with SMTP id a142so14058427oii.7
+ id 1j1cSQ-0004ZT-1R
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 20:48:36 +0000
+Received: by mail-lj1-x241.google.com with SMTP id v17so13192864ljg.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 12:09:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=d79/juOKGQ3xhEKgN8cqkrkeeX6KR3FsfafPiPWnTjk=;
- b=iKL3T3KT/E0Iwsb3fnUfmhLupejJLrt0Xw5IOfw8B/SqKyHuAmgD6b5kRaiIeb6uQi
- 4hqOAy9ePuT7GdoTUwr87pkUzlBm0LRqEEFiWmTJS7vLwJwDvOy2UWIrGEpnJS5HNg6L
- UJ3OcYCcXDup4hmac0c8ZAtTXuIBB4C4CC3djbwDvtd6WU9keMA7joMyqQ4WttYi8EBN
- vrOINTqg3CqyMUDW8SXtRJMA5A2vJY60W9spolclj6hO3pOdiey4rg0CUIfOnXDULfGo
- s6RA3SPhR9ow2ObUxJ9XLAnHJ3VD73fdhMjBf6otQbBS3osn2sT48zUHMkQ908wokOCL
- r57w==
+ Tue, 11 Feb 2020 12:48:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=LqjAANVr3QUa9/jn5BxY1hlvgQhyJJrq1+NtVKHCduM=;
+ b=nZzuIR3P/P33cQ7XHVWp+ufjdXODTG3MtJzSO+ScRXg4S39DMRBCQDNsXJYQElGdzm
+ ouIpbn8tkV777xxbILSIJIZF6oKC3I2Si6MwizHxW4aWRfElhhY9X7dWXFdiV30DPesA
+ 1GNKe0dc6C9lmgr0F7fobbFzgGGVfLGxHD641Oigb/F9laDgG+vmMzcduEN8wahKLTnH
+ 5bPGYUt8+lVfdT1xzNP1Jau4odY8wAsRLFHNiBtyuidHzkqwt2zwqnqsPtfysLzpNrTN
+ lR1TR3goVHtpssWR2h78bQFyQerGdERIYnoz0ngcnt2Z6dcZrYi5nNurGeF7SXk0pAuJ
+ n4hg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=d79/juOKGQ3xhEKgN8cqkrkeeX6KR3FsfafPiPWnTjk=;
- b=a9vS3em7ITLf+J/z2kUUXueaiivNiBp0BmPvcHPl0t3kjWjXNdb0r5l4xszdHyNROk
- lMgriI6PNVxtvMNnLJu6oX/bMKXtrWDE3ittN8Ad6LmsIsLv0boLiJPX7cA8SDzu9ry1
- Qi4LpOaVaH5+v8a/be1l3w0Ga9kPAd3hTrgyu/QiocyxA3iYDTAnVJ+hgc3bzuBIav9f
- j7+Zzbhmo/eLLZoQgjXcjE7COzzdr9iTXaeolYZpkrtFz2KNcJ6BNbDm1t2W5bHaSqk+
- VR3Kq++7xjJAW1hZF4wCbFCDskGMTFJHMu3RGfhgkG+/yW6JXXTo/HazNI5hZXNkFrg0
- PrzA==
-X-Gm-Message-State: APjAAAV4NnIWiS+aP1BY1Hi6sp/u4cPx0rYN0XfZxVLNUu1HKo8FQ5Uf
- HqHam4LqiVp/nJr4WB2uy2GJvXx9R2wyaos62XmdBQ==
-X-Google-Smtp-Source: APXvYqzxjGO2mFbbESSI+X8wqwDLJmq3XqFdPvI31wvyICH6y7/2J3dCeN49E5XfR2n7WblRYhIvydxmmpi6MKoWH0c=
-X-Received: by 2002:aca:ea43:: with SMTP id i64mr4107524oih.30.1581451761048; 
- Tue, 11 Feb 2020 12:09:21 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=LqjAANVr3QUa9/jn5BxY1hlvgQhyJJrq1+NtVKHCduM=;
+ b=QbPBb/VNiLeziics/izX3jtWeQ4ik+q7NjqvVGPiIgcj6u4lM6OeaFl12v3G+XQolq
+ PtcYQ2LbJEa3Iy3LhNnI4hlgA4rdC7tJZHzgTtK8UnlBroyCpx7i88jK5ca5XPV8Wo9n
+ dVEWEQ4mhzxXVK7QJTkaz4189rVYgD5L7HWpd9JHMlyNaRYZpALCE87MhTEszn3H31E1
+ anZCMx4JmQnICwJPFOlo0h6xdlIcpXLE+F/gwZxALtXbzZa4Ph38Cjlt6uJyaAlhhul9
+ 0D6sanFNs0nABLL+QLlng9un+tpYtZXlYHUOQGFEho0JKcGhncb6Hi1kXeBCvEKpMlhR
+ 46FA==
+X-Gm-Message-State: APjAAAW04Pcqkh5uLmp4lzmMf1vCw+RVxNzVqkpOg3mgFYtNHAB4SkJ7
+ ra4u1b05D0YqHp3lxBQ+MFg=
+X-Google-Smtp-Source: APXvYqxQouPBSnzMQ60Fpg/1V/YGZaJ3zNNtUQbG94tj5k7NHsupGdwEO3PyBcAojadIFe8aR4KdbQ==
+X-Received: by 2002:a2e:85ce:: with SMTP id h14mr5365962ljj.41.1581454111246; 
+ Tue, 11 Feb 2020 12:48:31 -0800 (PST)
+Received: from kedthinkpad ([5.20.204.163])
+ by smtp.gmail.com with ESMTPSA id r20sm2354515lfi.91.2020.02.11.12.48.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 11 Feb 2020 12:48:30 -0800 (PST)
+Date: Tue, 11 Feb 2020 22:48:28 +0200
+From: Andrey Lebedev <andrey.lebedev@gmail.com>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH 1/1] Support LVDS output on Allwinner A20
+Message-ID: <20200211204828.GA4361@kedthinkpad>
+References: <20200210195633.GA21832@kedthinkpad>
+ <20200211072004.46tbqixn5ftilxae@gilmour.lan>
 MIME-Version: 1.0
-References: <20200207052627.130118-1-drinkcat@chromium.org>
- <20200207052627.130118-6-drinkcat@chromium.org>
- <CAL_JsqLshgzmhGGa+XibosSgk6R_9DQkDf12s793UZcvbQbxKw@mail.gmail.com>
-In-Reply-To: <CAL_JsqLshgzmhGGa+XibosSgk6R_9DQkDf12s793UZcvbQbxKw@mail.gmail.com>
-From: Saravana Kannan <saravanak@google.com>
-Date: Tue, 11 Feb 2020 12:08:44 -0800
-Message-ID: <CAGETcx_3-ZoVAf+Uf0Yo86pUU1nL4S4-jrS0eZi50yvhCO985g@mail.gmail.com>
-Subject: Re: [PATCH v4 5/7] drm/panfrost: Add support for multiple power
- domains
-To: Rob Herring <robh+dt@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20200211072004.46tbqixn5ftilxae@gilmour.lan>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_120928_909380_5D8B31E0 
-X-CRM114-Status: GOOD (  30.87  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200211_124834_109686_DBB7A616 
+X-CRM114-Status: GOOD (  19.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andrey.lebedev[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,8 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,168 +100,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Nicolas Boichat <drinkcat@chromium.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- David Airlie <airlied@linux.ie>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Steven Price <steven.price@arm.com>, Mark Brown <broonie@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, wens@csie.org, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 11, 2020 at 11:44 AM Rob Herring <robh+dt@kernel.org> wrote:
->
-> +Saravana
->
-> On Thu, Feb 6, 2020 at 11:27 PM Nicolas Boichat <drinkcat@chromium.org> wrote:
-> >
-> > When there is a single power domain per device, the core will
-> > ensure the power domain is switched on (so it is technically
-> > equivalent to having not power domain specified at all).
-> >
-> > However, when there are multiple domains, as in MT8183 Bifrost
-> > GPU, we need to handle them in driver code.
-> >
-> > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
-> >
-> > ---
-> >
-> > The downstream driver we use on chromeos-4.19 currently uses 2
-> > additional devices in device tree to accomodate for this [1], but
-> > I believe this solution is cleaner.
-> >
-> > [1] https://chromium.googlesource.com/chromiumos/third_party/kernel/+/refs/heads/chromeos-4.19/drivers/gpu/arm/midgard/platform/mediatek/mali_kbase_runtime_pm.c#31
-> >
-> > v4:
-> >  - Match the exact power domain names as specified in the compatible
-> >    struct, instead of just matching the number of power domains.
-> >    [Review: Ulf Hansson]
-> >  - Dropped print and reordered function [Review: Steven Price]
-> >  - nits: Run through latest version of checkpatch:
-> >    - Use WARN instead of BUG_ON.
-> >    - Drop braces for single expression if block.
-> > v3:
-> >  - Use the compatible matching data to specify the number of power
-> >    domains. Note that setting 0 or 1 in num_pm_domains is equivalent
-> >    as the core will handle these 2 cases in the exact same way
-> >    (automatically, without driver intervention), and there should
-> >    be no adverse consequence in this case (the concern is about
-> >    switching on only some power domains and not others).
-> >
-> >  drivers/gpu/drm/panfrost/panfrost_device.c | 97 ++++++++++++++++++++--
-> >  drivers/gpu/drm/panfrost/panfrost_device.h | 11 +++
-> >  drivers/gpu/drm/panfrost/panfrost_drv.c    |  2 +
-> >  3 files changed, 102 insertions(+), 8 deletions(-)
-> >
-> > diff --git a/drivers/gpu/drm/panfrost/panfrost_device.c b/drivers/gpu/drm/panfrost/panfrost_device.c
-> > index 3720d50f6d9f965..8136babd3ba9935 100644
-> > --- a/drivers/gpu/drm/panfrost/panfrost_device.c
-> > +++ b/drivers/gpu/drm/panfrost/panfrost_device.c
-> > @@ -5,6 +5,7 @@
-> >  #include <linux/clk.h>
-> >  #include <linux/reset.h>
-> >  #include <linux/platform_device.h>
-> > +#include <linux/pm_domain.h>
-> >  #include <linux/regulator/consumer.h>
-> >
-> >  #include "panfrost_device.h"
-> > @@ -120,6 +121,79 @@ static void panfrost_regulator_fini(struct panfrost_device *pfdev)
-> >                         pfdev->regulators);
-> >  }
-> >
-> > +static void panfrost_pm_domain_fini(struct panfrost_device *pfdev)
-> > +{
-> > +       int i;
-> > +
-> > +       for (i = 0; i < ARRAY_SIZE(pfdev->pm_domain_devs); i++) {
-> > +               if (!pfdev->pm_domain_devs[i])
-> > +                       break;
-> > +
-> > +               if (pfdev->pm_domain_links[i])
-> > +                       device_link_del(pfdev->pm_domain_links[i]);
-> > +
-> > +               dev_pm_domain_detach(pfdev->pm_domain_devs[i], true);
-> > +       }
-> > +}
-> > +
-> > +static int panfrost_pm_domain_init(struct panfrost_device *pfdev)
-> > +{
-> > +       int err;
-> > +       int i, num_domains;
-> > +
-> > +       num_domains = of_count_phandle_with_args(pfdev->dev->of_node,
-> > +                                                "power-domains",
-> > +                                                "#power-domain-cells");
-> > +
-> > +       /*
-> > +        * Single domain is handled by the core, and, if only a single power
-> > +        * the power domain is requested, the property is optional.
-> > +        */
-> > +       if (num_domains < 2 && pfdev->comp->num_pm_domains < 2)
-> > +               return 0;
-> > +
-> > +       if (num_domains != pfdev->comp->num_pm_domains) {
-> > +               dev_err(pfdev->dev,
-> > +                       "Incorrect number of power domains: %d provided, %d needed\n",
-> > +                       num_domains, pfdev->comp->num_pm_domains);
-> > +               return -EINVAL;
-> > +       }
-> > +
-> > +       if (WARN(num_domains > ARRAY_SIZE(pfdev->pm_domain_devs),
-> > +                       "Too many supplies in compatible structure.\n"))
-> > +               return -EINVAL;
-> > +
-> > +       for (i = 0; i < num_domains; i++) {
-> > +               pfdev->pm_domain_devs[i] =
-> > +                       dev_pm_domain_attach_by_name(pfdev->dev,
-> > +                                       pfdev->comp->pm_domain_names[i]);
-> > +               if (IS_ERR_OR_NULL(pfdev->pm_domain_devs[i])) {
-> > +                       err = PTR_ERR(pfdev->pm_domain_devs[i]) ? : -ENODATA;
-> > +                       pfdev->pm_domain_devs[i] = NULL;
-> > +                       dev_err(pfdev->dev,
-> > +                               "failed to get pm-domain %s(%d): %d\n",
-> > +                               pfdev->comp->pm_domain_names[i], i, err);
-> > +                       goto err;
-> > +               }
-> > +
-> > +               pfdev->pm_domain_links[i] = device_link_add(pfdev->dev,
-> > +                               pfdev->pm_domain_devs[i], DL_FLAG_PM_RUNTIME |
-> > +                               DL_FLAG_STATELESS | DL_FLAG_RPM_ACTIVE);
->
-> We're in the process of adding device links based on DT properties.
-> Shouldn't we add power domains to that? See drivers/of/property.c for
-> what's handled.
+Maxime, thanks for your comments. I'll update the patch, but meanwhile,
+I have some remarks/questions, see below.
 
-Rob,
+On Tue, Feb 11, 2020 at 08:20:04AM +0100, Maxime Ripard wrote:
+> > +	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA1_REG,
+> > +			   SUN4I_TCON0_LVDS_ANA1_UPDATE,
+> > +			   SUN4I_TCON0_LVDS_ANA1_UPDATE);
+> 
+> You refer to U-Boot in your commit log, but the sequence is not quite
+> the same, why did you change it?
 
-drivers/of/property.c doesn't enable the RPM_ACTIVE AND PM_RUNTIME
-flags. Wanted to start off conservative. But adding command line ops
-to change the default flags shouldn't be difficult. But before I do
-that, I want to change of_devlink to
-fw_devlink=<disabled|permissive|enabled>. May be I can extend that to
-"disabled, permissive, suspend, runtime".
+I actually had two reference implementations at my hand. One was u-boot
+and another - an old (abandoned) branch of Priit Laes [1] (I took the
+split-up of u-boot SUNXI_LCDC_LVDS_ANA0 constant from there).
 
-Nicholas,
+This is an attempt to simplify the sequence, since I noticed that the
+same bit was being set to the same register twice [2] and removing that
+duplication didn't produce any observable regression. Priit
+implementation didn't have that bit set in the end of the sequence
+either, so I omitted it. That said, I agree that it could've been a bit
+naive on my side, and I can get it back to match u-boot version, if you
+feel that might be important.
 
-And the adding and removing of device links for power domains will be
-a 2 line change. I've been meaning to add a few more bindings like
-hwspinlocks and pinctrl. I can roll power domains support into that if
-you want.
+For the reference the U-Boot code is here: [3]
 
--Saravana
+[1] https://github.com/plaes/linux/commit/cc8c8bab2f2f2752ba6b11632dcd0f41bac249bc#diff-014a76a5007005a7a240825a972b8c7fR127
+[2] setbits_le32(&lcdc->lvds_ana0, SUNXI_LCDC_LVDS_ANA0_UPDATE);
+[3] https://github.com/ARM-software/u-boot/blob/master/drivers/video/sunxi/lcdc.c#L60
+
+> > +#define SUN4I_TCON0_LVDS_ANA1_REG		0x224
+> > +#define SUN4I_TCON0_LVDS_ANA1_INIT			(0x1f << 26 | 0x1f << 10)
+> > +#define SUN4I_TCON0_LVDS_ANA1_UPDATE			(0x1f << 16 | 0x1f << 00)
+> 
+> Having proper defines for those fields would be great too.
+
+If by "proper" you mean "split them up to individual bits", I would
+agree, but I can't find any actual hardware reference documentation that
+would mention the meaning of these registers.
+
+In both places (u-boot and Priit) these constants are defined the same way. 
+
+I took the liberty to rename ANA1_INIT1 to ANA1_INIT and ANA1_INIT2 to
+ANA1_UPDATE to match Priit naming rather than u-boot, as I felt it was
+more descriptive. I have no strong opinion here though. 
+
+> Side question, this will need some DT changes too, right?
+
+Hm, I agree. I think it would be reasonable to include LVDS0/1 pins and
+sample (but disabled) lvds panel, connected to tcon to
+arch/arm/boot/dts/sun7i-a20.dtsi. Does that make sense to you? Would you
+expect dts changes in the same patch or separate?
+
+P.S. This is my first patch to the linux kernel, please forgive me my
+inexperience.
+
+-- 
+Andrey Lebedev aka -.- . -.. -.. . .-.
+Software engineer
+Homepage: http://lebedev.lt/
 
 _______________________________________________
 linux-arm-kernel mailing list
