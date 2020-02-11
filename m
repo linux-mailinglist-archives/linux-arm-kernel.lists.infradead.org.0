@@ -2,101 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 015E3158B12
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 09:10:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78F32158B39
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 09:26:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xlsnLUU5g9eKsyjmaWzNOCE7wehrE8R9bT1/gwFYwtg=; b=GX0AAF4MzBJIBQ
-	wubeNQ3+6RpqKoCXhkhbkP5pLnRHZGVnr2FvyqxxmAOBiPpqoFfFXWoy7MJeTYRxn/llTLpvgv+Ip
-	0sWZS6rVgOco2yl4j2aoY9oxD44FVdJhI8g88hjJKnHXst12cGKX4O+YTTKbYPk58AI0roHOOGeFp
-	fWu4SftvCPq/4PC6QProzVBZAuvZJjynVZra7pE+Fiks7JPnLy24EkB9WZoKVRjMOGcSThlww5KgW
-	kBswFkzWxBRjJG4z/FdNARkch7h30pBBXHZUtNtjLIQ0raKjcl66Qn5Yfgb7bGsGZNz0v2ejIeIa/
-	KqM2PhxKGSsRiFqe85uQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xWjFwzrOQzYOuwVMEeiVIKbb4/WgeSlBDvf0s057rKc=; b=P3QO83xl+SpmLQ81JP/Ru6Ck3
+	Cc7Zuh1G2QHTOHx7GS/XGwCXZozW5jjpUlrjNdhzFAzzRp1R4ATTr/pPvTsUqHn3lp1r5bVLa6aNq
+	MS9ILBNqAUYUwmOejccjxo75gO3Kyw68Jg9U/yjq/+MCDAS4GSCw2VUIpv/XaJ8L9NWxKYLUjRig4
+	2CB4MmPqQ1ZK0TuOVCSsLmlZDWuW5srRj6Af0pXdDTEbx5htk+033ZY4sAU89AbVyh4ZVT+qyvHYw
+	1W5oMhNdIKwOycG5xRB7h296d0MUc3entCqPEyBXb3519mZieoxyYt0Hn8xHhInf5AnjyjFtrNr3l
+	7zjen/UYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1QcL-0001WT-28; Tue, 11 Feb 2020 08:10:01 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1j1QsT-0000CG-I8; Tue, 11 Feb 2020 08:26:41 +0000
+Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1QcB-0001W3-FQ
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 08:09:53 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id C5F44ACB1;
- Tue, 11 Feb 2020 08:09:49 +0000 (UTC)
-Subject: Re: [PATCH 2/3] arm64: dts: allwinner: a64: Add hwspinlock node
-To: Maxime Ripard <maxime@cerno.tech>
-References: <20200210170143.20007-1-nborisov@suse.com>
- <20200210170143.20007-3-nborisov@suse.com>
- <20200211075543.ytsxizbysdosnx4p@gilmour.lan>
-From: Nikolay Borisov <nborisov@suse.com>
-Autocrypt: addr=nborisov@suse.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <01e31d57-48ef-fd39-7c16-45401c70bb63@suse.com>
-Date: Tue, 11 Feb 2020 10:09:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j1QsM-0000Bq-Fd
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 08:26:36 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 8EE26217FC;
+ Tue, 11 Feb 2020 03:26:33 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Tue, 11 Feb 2020 03:26:33 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=aJFuuqSI2HhjxwelhEtc0Ez5YPf
+ 0KrosR/wT6D9AufM=; b=SNpkHcj8DpzU9/RJO4Dx7NW+qlKd91YZZI1QJXfYz/r
+ mjM6R+IwGn5lZEYn3UCPb5Qju528nBi/21tUOY/rEuvzmK8wnSnACdnG29mYio4t
+ udEXGLB+eBK6xQn7/HDoPcBvcmfsKnO2ckqZcjmiDLx+m296E1rOHeap+Vi/Ry3n
+ NhW4axLlOqzvys1Ul7u7Jq9MYLR2rlc1WTcwDpPJdOIGZzKzhhd1QXn3/0H8p365
+ 8FvXCm0Wd28Tn3ycvgY9T/vMjdZOhf0yXRjjwi5IUT3Me4n23mMvT+qO3qoIizFL
+ LSBnlo+dwPvRen5j179JPXmPAhSs41TvHkXt38svVPQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=aJFuuq
+ SI2HhjxwelhEtc0Ez5YPf0KrosR/wT6D9AufM=; b=Wml2BvHI6FDEY4f5OH7zsZ
+ nYzr6x37E8Ztk9Hqxr4Yn2iacvL+KNSKkgrbzvsQkulIZUumb2iL2yLppIwQ2p6b
+ bHs4jnVn2qMCF0CY/JyebH2oWKn1w1HyewQ8WGkPtZ28yZxOWw0J3uOOCdBunMhc
+ xZwSIvsphbzbGHF048UA1zyi6cbAlmVJ3DHMdFGqGaRPfQue2Nyn8eckBihTpYqp
+ eGiAsh+h6QgACz9ELwizRbuEBla1yg4CU6RnmiBcN4xBtfGd1eXfV/Ax5opKnJCJ
+ 02DchwvpAAWoO+fXDSxIn53Vw/9zCmAcqtZad5bgNPKbmtP0u15jmhsjOnYVxkLA
+ ==
+X-ME-Sender: <xms:NWVCXtyBNsa7zJ6-4S4NZ5g5IwIr29AdqnvZnAFWIbQ9O_ggJAybag>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedvgdduudelucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:NWVCXmso8okp7MHQWlJU0Ryben_orT0c0mClRSczluznL_7UQdqHiA>
+ <xmx:NWVCXm6lpacM8pWcwl2hSenwQtEBBBTKC0dmupVJxxF7gpgUahwV-A>
+ <xmx:NWVCXlRXe6Fq4qqTmT5AcSBgjyOwfoTKYrkdR7Xv-7GWfr_AK_ZmIA>
+ <xmx:OWVCXiQq_WypclKpll63jsqtz_c_x-n2-UynCFHnSLxcIZQ766gZyQ>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id C7872328005A;
+ Tue, 11 Feb 2020 03:26:28 -0500 (EST)
+Date: Tue, 11 Feb 2020 09:26:27 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Samuel Holland <samuel@sholland.org>
+Subject: Re: [PATCH 4/4] drm/sun4i: dsi: Remove incorrect use of runtime PM
+Message-ID: <20200211082627.nolf6npspw2a2rxs@gilmour.lan>
+References: <20200211072858.30784-1-samuel@sholland.org>
+ <20200211072858.30784-4-samuel@sholland.org>
 MIME-Version: 1.0
-In-Reply-To: <20200211075543.ytsxizbysdosnx4p@gilmour.lan>
-Content-Language: en-US
+In-Reply-To: <20200211072858.30784-4-samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_000951_808690_36C67123 
-X-CRM114-Status: GOOD (  20.11  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200211_002634_667317_FF6078B4 
+X-CRM114-Status: GOOD (  26.33  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.29 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,39 +103,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, bjorn.andersson@linaro.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
+ stable@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2424062203231990863=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAxMS4wMi4yMCDQsy4gOTo1NSDRhy4sIE1heGltZSBSaXBhcmQgd3JvdGU6Cj4gSGksCj4g
-Cj4gT24gTW9uLCBGZWIgMTAsIDIwMjAgYXQgMDc6MDE6NDJQTSArMDIwMCwgTmlrb2xheSBCb3Jp
-c292IHdyb3RlOgo+PiBBZGQgYSBub2RlIGRlc2NyaWJpbmcgdGhlIGh3c3BpbmxvY2sgb24gQTY0
-Lgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBOaWtvbGF5IEJvcmlzb3YgPG5ib3Jpc292QHN1c2UuY29t
-Pgo+PiAtLS0KPj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1hNjQuZHRz
-aSB8IDkgKysrKysrKysrCj4+ICAxIGZpbGUgY2hhbmdlZCwgOSBpbnNlcnRpb25zKCspCj4+Cj4+
-IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LmR0
-c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LmR0c2kKPj4gaW5k
-ZXggMjdlNDgyMzRmMWMyLi4wMWRlODlmYzA5Y2MgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvYWxsd2lubmVyL3N1bjUwaS1hNjQuZHRzaQo+PiArKysgYi9hcmNoL2FybTY0L2Jv
-b3QvZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LmR0c2kKPj4gQEAgLTExODIsNSArMTE4MiwxNCBA
-QAo+PiAgCQkJaW50ZXJydXB0cyA9IDxHSUNfU1BJIDI1IElSUV9UWVBFX0xFVkVMX0hJR0g+Owo+
-PiAgCQkJY2xvY2tzID0gPCZvc2MyNE0+Owo+PiAgCQl9Owo+PiArCj4+ICsJCWh3c3BpbmxvY2s6
-IHNwaW5sb2NrQDFjMTgwMDAgewo+IAo+IE5vZGVzIGFyZSBzdXBwb3NlZCB0byBiZSBvcmRlcmVk
-IGJ5IGFzY2VuZGluZyBwaHlzaWNhbCBhZGRyZXNzCj4gCj4+ICsJCQljb21wYXRpYmxlID0gImFs
-bHdpbm5lcixzdW41MGktYTY0LWh3c3BpbmxvY2siOwo+PiArCQkJcmVnID0gPDB4MDFjMTgwMDAg
-MHgxMDAwPjsKPj4gKwkJCWNsb2NrcyA9IDwmY2N1IENMS19CVVNfU1BJTkxPQ0s+Owo+PiArCQkJ
-cmVzZXRzID0gPCZjY3UgUlNUX0JVU19TUElOTE9DSz47Cj4+ICsJCQkjaHdsb2NrLWNlbGxzID0g
-PDE+Owo+PiArCQkJc3RhdHVzID0gImRpc2FibGVkIjsKPiAKPiBJcyB0aGVyZSBhIHJlYXNvbiB0
-byBkaXNhYmxlIGl0PwoKSSB3b25kZXJlZCBhYm91dCB0aGF0IC0gb24gdGhlIG9uZSBoYW5kIHdl
-IGNhbiBzYWZlbHkgbGVhdmUgaXQgYWx3YXlzCmVuYWJsZWQsIG9uIHRoZSBvdGhlciBoYW5kIGFs
-bCBkZXZpY2VzIGFyZSBhcmUgZGlzYWJsZWQgaW4gdGhlIGR0c2kuCgo+IAo+IEFsc28sIG15IHVu
-ZGVyc3RhbmRpbmcgd2FzIHRoYXQgaHdzcGlubG9ja3Mgd2VyZSBtZWFudCB0byBiZSB1c2VkIGJ5
-Cj4gY2xpZW50IGRyaXZlcnMsIHNvIHN1cmVseSB3ZSBtdXN0IHRpZSB0aGVtIHRvIG90aGVyIGRl
-dmljZSBub2RlcyB0b28sCj4gcmlnaHQ/CgpQZXJoYXBzIGJ1dCBhdCB0aGlzIHBvaW50IEknbSBu
-b3Qgc3VyZSB0byB3aGljaCBkZXZpY2Ugc3BlY2lmaWNhbGx5LgoKPiAKPiBNYXhpbWUKPiAKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+
+--===============2424062203231990863==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="kwpruo3coc5fkck7"
+Content-Disposition: inline
+
+
+--kwpruo3coc5fkck7
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+Hi,
+
+On Tue, Feb 11, 2020 at 01:28:58AM -0600, Samuel Holland wrote:
+> The driver currently uses runtime PM to perform some of the module
+> initialization and cleanup. This has three problems:
+>
+> 1) There is no Kconfig dependency on CONFIG_PM, so if runtime PM is
+>    disabled, the driver will not work at all, since the module will
+>    never be initialized.
+
+That's fairly easy to fix.
+
+> 2) The driver does not ensure that the device is suspended when
+>    sun6i_dsi_probe() fails or when sun6i_dsi_remove() is called. It
+>    simply disables runtime PM. From the docs of pm_runtime_disable():
+>
+>       The device can be either active or suspended after its runtime PM
+>       has been disabled.
+>
+>    And indeed, the device will likely still be active if sun6i_dsi_probe
+>    fails. For example, if the panel driver is not yet loaded, we have
+>    the following sequence:
+>
+>    sun6i_dsi_probe()
+>       pm_runtime_enable()
+>       mipi_dsi_host_register()
+>          of_mipi_dsi_device_add(child)
+>             ...device_add()...
+>                __device_attach()
+>                  pm_runtime_get_sync(dev->parent) -> Causes resume
+>                  bus_for_each_drv()
+>                     __device_attach_driver() -> No match for panel
+>                  pm_runtime_put(dev->parent) -> Async idle request
+>       component_add()
+>          __component_add()
+>             try_to_bring_up_masters()
+>                try_to_bring_up_master()
+>                   sun4i_drv_bind()
+>                      component_bind_all()
+>                         component_bind()
+>                            sun6i_dsi_bind() -> Fails with -EPROBE_DEFER
+>       mipi_dsi_host_unregister()
+>       pm_runtime_disable()
+>          __pm_runtime_disable()
+>             __pm_runtime_barrier() -> Idle request is still pending
+>                cancel_work_sync()  -> DSI host is *not* suspended!
+>
+>    Since the device is not suspended, the clock and regulator are never
+>    disabled. The imbalance causes a WARN at devres free time.
+
+That's interesting. I guess this is shown when you have the panel as a
+module?
+
+There's something pretty weird though. The comment in
+__pm_runtime_disable states that it will "wait for all operations in
+progress to complete" so at the end of __pm_runtime_disable call, the
+DSI host will be suspended and we shouldn't have a WARN at all.
+
+> 3) The driver relies on being suspended when sun6i_dsi_encoder_enable()
+>    is called. The resume callback has a comment that says:
+>
+>       Some part of it can only be done once we get a number of
+>       lanes, see sun6i_dsi_inst_init
+>
+>    And then part of the resume callback only runs if dsi->device is not
+>    NULL (that is, if sun6i_dsi_attach() has been called). However, as
+>    the above call graph shows, the resume callback is guaranteed to be
+>    called before sun6i_dsi_attach(); it is called before child devices
+>    get their drivers attached.
+
+Isn't it something that has been changed by your previous patch though?
+
+>    Therefore, part of the controller initialization will only run if the
+>    device is suspended between the calls to mipi_dsi_host_register() and
+>    component_add() (which ends up calling sun6i_dsi_encoder_enable()).
+>    Again, as shown by the above call graph, this is not the case. It
+>    appears that the controller happens to work because it is still
+>    initialized by the bootloader.
+
+We don't have any bootloader support for MIPI-DSI, so no, that's not it.
+
+>    Because the connector is hardcoded to always be connected, the
+>    device's runtime PM reference is not dropped until system suspend,
+>    when sun4i_drv_drm_sys_suspend() ends up calling
+>    sun6i_dsi_encoder_disable(). However, that is done as a system sleep
+>    PM hook, and at that point the system PM core has already taken
+>    another runtime PM reference, so sun6i_dsi_runtime_suspend() is
+>    not called. Likewise, by the time the PM core releases its reference,
+>    sun4i_drv_drm_sys_resume() has already re-enabled the encoder.
+>
+>    So after system suspend and resume, we have *still never called*
+>    sun6i_dsi_inst_init(), and now that the rest of the display pipeline
+>    has been reset, the DSI host is unable to communicate with the panel,
+>    causing VBLANK timeouts.
+
+Either way, I guess just moving the pm_runtime_enable call to
+sun6i_dsi_attach will fix this, right? We don't really need to have
+the DSI controller powered up before that time anyway.
+
+> Fix all of these issues by inlining the runtime PM hooks into the
+> encoder enable/disable functions, which are guaranteed to run after a
+> panel is attached. This allows sun6i_dsi_inst_init() to be called
+> unconditionally. Furthermore, this causes the hardware to be turned off
+> during system suspend and reinitialized on resume, which was not
+> happening before.
+
+That's not something we should do really. We're really lacking any
+power management, so we should be having more of runtime_pm, not less.
+
+Maxime
+
+--kwpruo3coc5fkck7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkJlMwAKCRDj7w1vZxhR
+xYOyAP4i7bV29YYxSgA7p6SjdiD9FeE7lQtf60arSA++ez4MuQD/bU6dsgSPYiwK
+hMZXytraIuKsW3QZc8GHvc91c2y+dAQ=
+=fkj2
+-----END PGP SIGNATURE-----
+
+--kwpruo3coc5fkck7--
+
+
+--===============2424062203231990863==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2424062203231990863==--
+
