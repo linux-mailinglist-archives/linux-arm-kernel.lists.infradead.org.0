@@ -2,27 +2,27 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19AED158B0B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 09:07:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2E50158B0D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 09:08:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5y/NYDypYsnxZtqt6CZLhZYUWl971Y48fLns2QtxBS4=; b=G2MZ32aIchMzur
-	d+LRpNbr4WvhOhNrKnRodNlhFEWyjKlnRWSlXVec+jKLVDJkjH8/N//gYo/3ZHxz02YpklZjR9wcK
-	g7QhHWCb4rSgoxBBBr8N0bVEnwkcJpcxXspFQkgIXcmn13j1ef6KFdFL6A+lFw0WCiTLztL5xl7q1
-	T2aglQblpIjdd8qloExDh5or7YYD4cV4vDMJEIUUkqqdBxnrJqaKhxR5Tc10K1UP9zGGNcvT9C6y3
-	KbiqzeNh71n5rWXePmPINxTxgggzuyuNfRq7CD6LRbeMTfPic1z/HO9C2bbA3xrb+7KC8gyBmI7l5
-	w30InJok541suotvke2A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dfp9nNQ7bBT6UCH+8EiImaxsXRMtEf77vSXdB1pjGOI=; b=iESTdTaHGBXO84
+	hoYrNINlHjbJhclDUrfpSB6NmxRhu0KkxRwxVIzc1wVuNDbkw+60IfSr3TlRzc7Ha5YtFzemHh+DP
+	UX97XwjY7TX17B/P+Y2emz3wgu4G8Ps09XrmkeiiKzeizWY5cYxLJQ0ygEjGxoDjjHe2YElGuCjRL
+	qfRW9oSIZHAawZFuQnMCVzR7qnejpAhNgIgu8HF+gkIuP0f0naj2b8iMv2Q3Ly+TfDYyVJRsFC7GY
+	z+zCHSHRkzPyLD3F5eazA3N26a5CF0hcM8lwpw3pVKAdrvflEQsl/391NOj2HrAlxOLqJBK4uCoos
+	Q0Xe/agojj4AJSsQh1kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1QZz-0000OY-Cs; Tue, 11 Feb 2020 08:07:35 +0000
+	id 1j1QaN-0000lo-Cs; Tue, 11 Feb 2020 08:07:59 +0000
 Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1QZq-0000N4-ER
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 08:07:28 +0000
+ id 1j1QZs-0000Nm-GS
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 08:07:29 +0000
 Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
  Eugen.Hristev@microchip.com designates 198.175.253.82 as
  permitted sender) identity=mailfrom;
@@ -44,16 +44,16 @@ Authentication-Results: esa1.microchip.iphmx.com;
  spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
  spf=None smtp.helo=postmaster@email.microchip.com;
  dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: pnpa/BOHNK+TDH0Po7WUXBrUmOpi/2Ih1FyufWv/DHfVjQEzBDSVer1/WvALjgL+KnWCyuV98s
- brHzpFkLNBjiLFSWYPV5sjLBHCnXznyWpw9Q3Em5p/VVPUjL0fqjXXLyt24zR7yCQ+Wg3tzic/
- UDl681hytWsD3WFiUUCUy9ay+QwmhGB+4xGUqJoiUYZ5jLA8Gx7z8VWqlNCEBnAy2ILWrf2mIu
- 3Dt8nt9oWLJFdyGJ7hiwIVFr0Jh1gKh3VTnMmyabeodlweNG5QZdg4Mg2Za7loMyXU+PO6XQM9
- RHc=
-X-IronPort-AV: E=Sophos;i="5.70,428,1574146800"; d="scan'208";a="68013459"
+IronPort-SDR: xo7oi8CpGu8AV8FCIcFcLMOZjhD0V0gjo5eeAKpMmaZkLxOfdL7yFt821jXWbOecJFaIFF+BY7
+ JFZztmGfNqwRCYcbY6Xz6ZQa+DiX36II7sbNlodPgY2/K7wYnoQxBm9aijxnGe66LiDvYx69eK
+ DMdwMAPSiGUND9pL4EI+Ny1/joNOj7m1jJ18/9cyAcrjHyO0jQ8BW26noh53fJB18WF+1cXZ4r
+ xgqlGFr6q1i3D1S3qOg2ybclX6SH6dRbeFt3pzjz3QNgjdR93QrhA5WW/QZ3Pwj6cklqOxZPLz
+ aIw=
+X-IronPort-AV: E=Sophos;i="5.70,428,1574146800"; d="scan'208";a="68013464"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 11 Feb 2020 01:07:16 -0700
+ 11 Feb 2020 01:07:17 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
@@ -63,12 +63,12 @@ Received: from NAM12-MW2-obe.outbound.protection.outlook.com (10.10.215.89) by
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
  via Frontend Transport; Tue, 11 Feb 2020 01:07:16 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=f8dwE8kyWI2EYrJw8kR4V+cl8njOQ4VnqX+1fVJXOU+FsY2g9e3zMXuUIDiGbwtuLxD0Kj2lY5Wn3OL9eOnmlRsSSiu5qt5bFmsbiBL/3ieXjU+ehma8e0KMaSSCSVK2tUnQai20JK/vFuvdmAm2m4gXe3xCZViWxHTBVSG5GQWcLnq92u2wB1Y8NrYS5G+T7DSKxUck9AVrZARIPeIk8SP4G5ZwnJ9yZQGSWxwHdecZFVeKrcry3lFfm94SK2ykg/Ji0IFi92tuJFtwXcqmUyNb30zateNVhc2paVuRHh2wJ/vr8xZO5y8v9n/LBXX025K6ZQez+k7hpFJ4k8GRKQ==
+ b=LIp6WFhQkdULodYrIjbqgRpEznd2ijwkUBn6ngIiy6IIgqePRvTTPExL/vqP5tlt//VhlIM7NkxwzPm7fdShXL7v/ZLTQibjiOZfmDPfcFwflwFTMCFDO8g+GfMgXNIyFEeIVW3MXTaij57zFcexCdk9WIws1FFuRu3UoAZx8WvSAeqOKHBygbKoH7hWaIp0irnVa6UOSEpJepGVEM5fAU0MG4Ht70E2/GnuD9Lzy/v2omYAHO/x0yoOYenu8Frw5JjOxAFKZerEWr6edcvC0S334+SFUqTVim/CXnUvn1lXBfR4CHXvgQ30sceYo74VdymrivO9+p570GWzDLUgKw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OfTMyvPu0e7bAjyqYch9fILTQ3iK5gkGr4BtrbteLwk=;
- b=JGxON+65EbrLbxcxYY5fvXk9sY7nQM1oBrxbTK7/rdbglhOayA1QG+1mKCzBZFIl0LXLY2VM1180wZwq5g3zJThgVPygJODLDTF2bk7illeYxo8LBbtKgsPTgcx2QWP7FPtoq88qAmz02jkamYTuA+H53HXbcbhb5WPs17XIMhR9gXD6lZePemhITK2uFgDSqdkkbWTrL4GSKj6FI5KBcgFIQ/f9JTKHrrRoqoM3JoibTIEddpz+Erfv0+OynOwd5hGqVBbgFdLUGtcmQoHcx8rpYok93BK4Dq53Uyz1kVZiTalB60/5xV8r7Ehmt3rcvP0cNqLpDGO+jk45I33lPA==
+ bh=ZMg1z7j/gBQsHjeJVZBW6Nj2qcWmFAX5Fe/vhxY6WnY=;
+ b=ajrdExMTpf5s5VsWKp9GmfPno9PITmW29fXNm8bQtZYogKt+Xx+RJECR/nP5TTBRyTqpLxRFQOY+LhW5ODIBteKpIrLXI/yi990AU9VA360IGRwjWEBtSP+1QZ89LxnBS7X8sB8pf5AnhIITEpmgsnrePMxbB26zORVDRXQIOXTZqyAcLRLwD0rjXQT1w2a8T0reU4TUYf810Sa3UfwHqxKiFhRIyosgHtPm6LP5RUKzKcjvT+FaYKNc/E3rkAv+3nG8ddjjapaDPyktZ8JbFhfTdHqkrPPGc9jKXDMMkDCNjTD6p9W+MCAbpml2jkMHqxpUhCofssRrVOYfZzY7GQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -76,23 +76,26 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OfTMyvPu0e7bAjyqYch9fILTQ3iK5gkGr4BtrbteLwk=;
- b=k/ztwU0YgskozAd5h8b1XKEB0l9e5AY4eeKiEeNzr2hYnzaQVc0kW8JjQp8CG4dEEQOwduIkvMVQ+g0ZqoyE0fJ1E2KpBUT4MZwGo7iv7Ioq5icGY4A0HxJ1bEjkPL1f9mpAK8Np4luGfcO8U39y9joLT+58I1Gmu0NHzxyqDyU=
+ bh=ZMg1z7j/gBQsHjeJVZBW6Nj2qcWmFAX5Fe/vhxY6WnY=;
+ b=p2Bj3or5sjxJFlTqkkBAMt0U+5VObtA83ZXjVd/dYT8oy5uzoXcxIwVW35qLrUMFyxMZMVLklzhEw+8R7mWurEm2V+FS9bXwfuobIG0i3gJiBcz12MBEyQ6KSLii1b5sm+Bz/o2oo7A8NrOHyfsMZ9MU5FuI3arr4Vq/mUzrbVE=
 Received: from DM6PR11MB4123.namprd11.prod.outlook.com (20.176.125.204) by
  DM6PR11MB4011.namprd11.prod.outlook.com (20.176.127.138) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.23; Tue, 11 Feb 2020 08:07:14 +0000
+ 15.20.2707.23; Tue, 11 Feb 2020 08:07:15 +0000
 Received: from DM6PR11MB4123.namprd11.prod.outlook.com
  ([fe80::85db:d80e:e645:ac17]) by DM6PR11MB4123.namprd11.prod.outlook.com
  ([fe80::85db:d80e:e645:ac17%2]) with mapi id 15.20.2707.030; Tue, 11 Feb 2020
- 08:07:14 +0000
+ 08:07:15 +0000
 From: <Eugen.Hristev@microchip.com>
 To: <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>
-Subject: [PATCH 1/3] ARM: dts: at91: sam9x60: add watchdog node
-Thread-Topic: [PATCH 1/3] ARM: dts: at91: sam9x60: add watchdog node
-Thread-Index: AQHV4LJEiJwS9sDv30Gv1Q4x2b4QpQ==
-Date: Tue, 11 Feb 2020 08:07:14 +0000
-Message-ID: <1581408369-14469-1-git-send-email-eugen.hristev@microchip.com>
+Subject: [PATCH 3/3] ARM: configs: at91: enable sama5d4 compatible watchdog
+Thread-Topic: [PATCH 3/3] ARM: configs: at91: enable sama5d4 compatible
+ watchdog
+Thread-Index: AQHV4LJFeseR12rGk0yZaOTkf/LqOA==
+Date: Tue, 11 Feb 2020 08:07:15 +0000
+Message-ID: <1581408369-14469-3-git-send-email-eugen.hristev@microchip.com>
+References: <1581408369-14469-1-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <1581408369-14469-1-git-send-email-eugen.hristev@microchip.com>
 Accept-Language: en-US, ro-RO
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -100,11 +103,11 @@ X-MS-TNEF-Correlator:
 x-mailer: git-send-email 2.7.4
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e6bb7e39-36fd-46d4-5b3f-08d7aec96774
+x-ms-office365-filtering-correlation-id: 58387fe1-fdc2-428a-19f1-08d7aec9682e
 x-ms-traffictypediagnostic: DM6PR11MB4011:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR11MB4011800488F06950EB01906EE8180@DM6PR11MB4011.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1079;
+x-microsoft-antispam-prvs: <DM6PR11MB4011A104B562AEFEAB800080E8180@DM6PR11MB4011.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:576;
 x-forefront-prvs: 0310C78181
 x-forefront-antispam-report: SFV:NSPM;
  SFS:(10009020)(396003)(366004)(136003)(346002)(376002)(39860400002)(189003)(199004)(107886003)(5660300002)(6506007)(6636002)(86362001)(26005)(110136005)(54906003)(71200400001)(478600001)(6512007)(186003)(316002)(36756003)(8676002)(4326008)(8936002)(66476007)(66946007)(81156014)(64756008)(66446008)(66556008)(2906002)(2616005)(6486002)(81166006)(76116006)(4744005)(91956017);
@@ -115,19 +118,19 @@ received-spf: None (protection.outlook.com: microchip.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: cXiPxqUsdgB9wuBFbu9AoQvHdCgyJq5tMK5lCUL2TPAA6YlvmW+wflELCVm6yC7reVa7s6crSiGCzVul6aN9rJt7b6RWp9JgWL9yI0XQPa38lJnN0yEkpLbKc75dHKlgEXVSghfreiv+HdEOgOzrSJLFFOe3GZBGD/ZJHAL6eyEn9lMkK6GOmay5cpdt8/2qpdr2XJsZ/mZQlLdfy5mIPkmUPT+VuFDPllfeB2Ry26Pe154jAPfWhv1lIy006wY1WtBEQYvd+uYQzm/u+r/Lw2HMZABv3UePxA7GJWhQqTKIv2vkawqrHcgJ8NZwfsHDGk6Dm6EU4vfFJSDo2IxXZ+Z7yWUsPKMs4pkoYr7UkG+lr4apHjjLlGvEghjSRvvPRSJunlILR5uG0CnpAz4KY2i/lshiDdfUlfLLgpgmSPADY4nF5Y30oZupdixRo+c2
-x-ms-exchange-antispam-messagedata: 9adwQAoKUMdyFWT1paBObAb07/iwWk7tjMTZsoiKxw+zzhfJZr5rKlIA4ndOcPBUsKy8IkQ2hKtU2zKG7abOUcVzakr+TvcOSvuiBxC1VWrp9yDrL8gkFZzMPhVw5CUM0RD0L5jKt7jzbL9gWbiauQ==
+x-microsoft-antispam-message-info: jGs2edRMKiGrHUDSnBQpwT/ekRHaG01tkrU+J6zeg2fLggo9OOwGah+Vznm30lFMsH8+obSW9Q+wmVqMdNpGhCLgK29NwUsMqh/4DA+yjYm99fk+oqkbqBvDYZkBh8qpyvf3ByGGJ9J8+fuDg3h9r5wR6iSRAbn5y2NeSB52mQExPfwYKAJmtqcnKP/9X0U+rTzUjxD/te5Tp+rFJhubbopftQkXzfHDOGcYCVCkKDXDmurOcd9pmfMOCObYT2DtsrPCDqb2AN9m5S3WgV9OQS6ZN8fxahojlq8tVsiyGtmJI2ozwVTpYlxQQjD0favy+uFPYgTyHPC7uvCJAK7TvxYpY81Yew57ptHlqHfKZ8M+rOXHTkCWIz26tj8qd6AgRensc0xrV8zrtQ8TAa9dA0Q7fZR8UAqQPsRB9wwrHmdDCN9IH/w/K8+zcf4UxaEg
+x-ms-exchange-antispam-messagedata: +mA4hYUYSEYcPpT/8fX4LaGyvFUJh6Wjg7VRXtlfoRh+KwDnSDBTed0Wc93VuPjDKYdfeMk3v/yAauWU8GZGJhth6n7onKEJqG7ebrgF+rtVDTyUPXCX5waipz84JSFnXajK3+nPWWlsV9uyUxncbA==
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: e6bb7e39-36fd-46d4-5b3f-08d7aec96774
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Feb 2020 08:07:14.2843 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 58387fe1-fdc2-428a-19f1-08d7aec9682e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Feb 2020 08:07:15.4026 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: IxJx1XjjpgMoiQm24T5GL2ksxea055GlXq2j0YAZm0oatSM5DMTEaoS0hYyUzNwynBevgdQ+g8xX6tFOEHkvQOeFiywluI7PpPfHJibhacs=
+X-MS-Exchange-CrossTenant-userprincipalname: aZqV47e6agAx0+/UH14w5+Qt84G8/aNnGa0yO8QDjpMv545f/RvfmDikdHSkInn82EU7K+ULu+q+DIh7Ya9BS68lUVfUXxE9nZihDS5l0qw=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR11MB4011
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_000726_925898_10F1ED37 
-X-CRM114-Status: UNSURE (   7.52  )
+X-CRM114-CacheID: sfid-20200211_000728_604839_733F1AF0 
+X-CRM114-Status: UNSURE (   8.79  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -162,32 +165,26 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Eugen Hristev <eugen.hristev@microchip.com>
 
-Add node for watchdog timer.
+Enable CONFIG_SAMA5D4_WATCHDOG. This driver is compatible with sam9x60
+watchdog timer block.
 
 Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
 ---
- arch/arm/boot/dts/sam9x60.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm/configs/at91_dt_defconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/sam9x60.dtsi b/arch/arm/boot/dts/sam9x60.dtsi
-index 326b393..6763423 100644
---- a/arch/arm/boot/dts/sam9x60.dtsi
-+++ b/arch/arm/boot/dts/sam9x60.dtsi
-@@ -686,6 +686,14 @@
- 				interrupts = <1 IRQ_TYPE_LEVEL_HIGH 7>;
- 				clocks = <&clk32k 0>;
- 			};
-+
-+			watchdog: watchdog@ffffff80 {
-+				compatible = "microchip,sam9x60-wdt";
-+				reg = <0xffffff80 0x24>;
-+				interrupts = <1 IRQ_TYPE_LEVEL_HIGH 7>;
-+				clocks = <&clk32k 0>;
-+				status = "disabled";
-+			};
- 		};
- 	};
- };
+diff --git a/arch/arm/configs/at91_dt_defconfig b/arch/arm/configs/at91_dt_defconfig
+index f66bb98..4a0ba2a 100644
+--- a/arch/arm/configs/at91_dt_defconfig
++++ b/arch/arm/configs/at91_dt_defconfig
+@@ -118,6 +118,7 @@ CONFIG_POWER_SUPPLY=y
+ # CONFIG_HWMON is not set
+ CONFIG_WATCHDOG=y
+ CONFIG_AT91SAM9X_WATCHDOG=y
++CONFIG_SAMA5D4_WATCHDOG=y
+ CONFIG_MFD_ATMEL_FLEXCOM=y
+ CONFIG_MFD_ATMEL_HLCDC=y
+ CONFIG_REGULATOR=y
 -- 
 2.7.4
 
