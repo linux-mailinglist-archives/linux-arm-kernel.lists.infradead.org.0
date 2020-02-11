@@ -2,97 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5A66158B55
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 09:36:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CCB31158B7A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 09:51:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yrlO7QLIicY2C3w86APa1qvjkCYc6qlM1yu+4d/y8wo=; b=iW4Qfn0iNuSFpnwv2yrpaaNWe
-	fgcNfsgKOfLo9HEVMK5bscaBufV/dO8Jx6hoeP5px8z5iZ7EVZNlPHFMJ09fZjIHp/N6ehRd+Kv0C
-	GU3qtRXWkaQ+/qVe7tBtuRyyCzzoKutrF0cSQ8m1sZrp1n/NiA4OKsWJ4K3KEA3Z5hMlY7TJ3t4PU
-	+gSvEhXaMoyhUCHGJSW0T3p1SkM3OML/2eJskvs/p4Uk3W2nmN7Yz6JcFEUxc1nt8Xbh2tln9xE5v
-	IWNnWFoDMkAsJLYvTcE6DVQizZbDGpFCehrwpzhsENDbsux4F2hNfCcIugkeV3G1PQOqgQaVPAg28
-	EchQdv03Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+VfaJ8W83FI/EJnE8aI2z3YD+1NrhMEkEFaJApbInzc=; b=RkiJe64naKfllR
+	Bu+sCtJIa5gpe+XaHfJ8LXGlD2UVMXWUpIWHZOHRJ3y5NuP0F7cRe8T12V4UjAz8tUl0IMhQCypEE
+	W3DMWs4maxGlbiE9hCXZuJPyZ0cgRbBVeUXhiKrgytwqWq8miTqmM/Zh3kl8BvFM/V20NEnEtBlAy
+	PYxlNgEDPQiJXPIIg+/8jtU1S3jmA/2fpeW7zHYmF5BWRstTN4tDDI+N29CgmapWKSTREL9L69qnB
+	KHfBQSOg7MnSjywJS0ZmT2YmMKN6HX0MiPzsaZdalhXdx0CG8z8YWMeR1wm2cqEWphN0aCuzcs8Ta
+	CmLPLBrq+m8AkVZccEtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1R1N-0003Wi-Gy; Tue, 11 Feb 2020 08:35:53 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
+	id 1j1RGP-00086L-S9; Tue, 11 Feb 2020 08:51:25 +0000
+Received: from kernel.crashing.org ([76.164.61.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1R1C-0003Uw-Mv
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 08:35:44 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id EC04C21FBC;
- Tue, 11 Feb 2020 03:35:41 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Tue, 11 Feb 2020 03:35:41 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=hFJPLcnX8s+3qIibRSJBHtz36o0
- Xcn/sOE9MnHdM2nc=; b=mOhmXSeHq26+QkB6NNaPcF7iJe+NUrPjcs9h1UM6HxE
- 1v4f1t/E8wrLAIyGQ6+4xpAw6/ClNPhfwZ8JJtz8eZEZ56cv2hrEoen6A/KU2P+6
- 9cZyEMTTkNacGdzqHakFT2uVb67N7EQIAX5dcagKxOab2+MPjcAhFKvxtzOUyCCr
- DrnNckO8RO9Y47OamqAz2Dcf2U83fLVYffzN8DVFZXdz+6Vp4cpQQfGetn36bj/m
- 4r30osjF+/3S6HVkgJasOOhRRE38JOv6+P7eN8ZmQH003lRpUJ2k8q3wiUiNU5N8
- Rnd/BJmZamIC4Eg+gGpq2EoEmynSbgHmL3mIIEn2HDQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=hFJPLc
- nX8s+3qIibRSJBHtz36o0Xcn/sOE9MnHdM2nc=; b=FTWAl0a3DGQCpyOaobOCBY
- ldmAheX1HeEtYFHQtS5RklwF6RtaAcle/jG/0TqpmSAhZwzbPKl/g+fL6OMJFbpx
- PQ3DqTA992mPk93syf2j2zKRRM1yh/oBMvALa56U9kC4ayH3YZTKlwrnkLsbOL4P
- c0oDJ/MJza5snqrRyAvi/Jp+wL7v46KpmF5ixZNdv5OJAFpAEE/7ZGsAtHlPYzmo
- hsJ/Bx3Rzbglb4iKGpzefXu0eC/kjQMvKIvAqOcip3eV/G8tk9xO2rwbawn2H6Oq
- YiXQkqv4awjVLAOQK3ADsV6P7gWj23H+vv0BKVyxlxEuTF2obzBoy2ukqlVxTYeg
- ==
-X-ME-Sender: <xms:XWdCXpZogL5KTOSweHyx6aZx_aDEzRF__be1i8TpE611rjsVJu-3xg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedvgdduvdduucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttdejnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:XWdCXty0q4wMncxGba1tOZQp_hv4opMhLG0T0vqlX4drutiF74HOUA>
- <xmx:XWdCXle6226wyAmAowvxW7zI-oYNboOYdO1mjvowJ0VcUBJx-FrDZg>
- <xmx:XWdCXi5Dp2A7YN6SFIRW_xiXIwj2MeLfFa0bpj3tPZnKK5kwXRbBqw>
- <xmx:XWdCXhg_vFke7fRwPoFxzH-xhpZpfMTdNuxnI1RwFZtBzRP7JOfdtA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 1EDF3328005A;
- Tue, 11 Feb 2020 03:35:41 -0500 (EST)
-Date: Tue, 11 Feb 2020 09:35:39 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
-Subject: Re: [PATCH v2] arm64: dts: allwinner: h6: orangepi-3: Add eMMC node
-Message-ID: <20200211083539.wciujb6zgjxnwkio@gilmour.lan>
-References: <20200210174007.118575-1-jernej.skrabec@siol.net>
- <20200211065141.2kn2gsg5kvzu7kl6@gilmour.lan>
- <5325319.DvuYhMxLoT@jernej-laptop>
-MIME-Version: 1.0
-In-Reply-To: <5325319.DvuYhMxLoT@jernej-laptop>
+ id 1j1RGI-00085s-En
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 08:51:19 +0000
+Received: from localhost (gate.crashing.org [63.228.1.57])
+ (authenticated bits=0)
+ by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 01B8oi95016379
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Tue, 11 Feb 2020 02:50:46 -0600
+Message-ID: <746b08aabf7ea976a382ad2ca30fa10a095e7ed8.camel@kernel.crashing.org>
+Subject: Re: [PATCH 1/3] usb: gadget: aspeed: read vhub config from
+ of_device_id
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: Tao Ren <rentao.bupt@gmail.com>
+Date: Tue, 11 Feb 2020 09:50:42 +0100
+In-Reply-To: <20200210190744.GA5346@taoren-ubuntu-R90MNF91>
+References: <20200131222157.20849-1-rentao.bupt@gmail.com>
+ <20200131222157.20849-2-rentao.bupt@gmail.com>
+ <CACPK8Xe0b+zVNqf8v5YXOLkzqDeb4JHqec-bqFpaVFGTwHThhA@mail.gmail.com>
+ <386e905fb705266efcac0c1b3a10053889c7fead.camel@kernel.crashing.org>
+ <20200210190744.GA5346@taoren-ubuntu-R90MNF91>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_003542_891678_82840D55 
-X-CRM114-Status: GOOD (  20.42  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200211_005118_684587_43E45051 
+X-CRM114-Status: GOOD (  12.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.29 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,106 +63,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, wens@csie.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1051663086465455278=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ devicetree <devicetree@vger.kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>, linux-usb@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ Joel Stanley <joel@jms.id.au>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, 2020-02-10 at 11:07 -0800, Tao Ren wrote:
+> > > This looks generally okay. We should wait for Ben's ack before
+> > > applying.
+> > 
+> > Shouldn't we instead have DT fields indicating those values ?
+> 
+> May I ask why we prefer adding dt fields (such as "aspeed,vhub-max-ports"
+> and "aspeed,vhub-max-endpoints") instead of assigning these values based
+> on aspeed family? For example, is it to allow users to set a smaller
+> number of ports/endpoints?
 
---===============1051663086465455278==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="gz5taobraj7y6ke5"
-Content-Disposition: inline
+It's not a strong drive but it makes it more convenient to add support
+to newer revisions if the only differences are those numbers.
+> 
+> > Also we should add a DT representation for the various ID/strings of
+> > the hub itself so manufacturers can customize them.
+> 
+> Sure. I will add DT nodes for vendor/product/device IDs/strings. As it's
+> not directly related to ast2600-support, shall I handle it in a separate
+> patch? Or I can include the patch in this patch series?
 
+Separate. Thanks !
 
---gz5taobraj7y6ke5
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Feb 11, 2020 at 08:09:57AM +0100, Jernej =C5=A0krabec wrote:
-> Hi!
->
-> Dne torek, 11. februar 2020 ob 07:51:41 CET je Maxime Ripard napisal(a):
-> > On Mon, Feb 10, 2020 at 06:40:07PM +0100, Jernej Skrabec wrote:
-> > > OrangePi 3 can optionally have 8 GiB eMMC (soldered on board). Because
-> > > those pins are dedicated to eMMC exclusively, node can be added for b=
-oth
-> > > variants (with and without eMMC). Kernel will then scan bus for prese=
-nce
-> > > of eMMC and act accordingly.
-> > >
-> > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > > ---
-> > > Changes since v1:
-> > > - don't make separate DT just for -emmc variant - add node to existing
-> > >
-> > >   orangepi 3 DT
-> > >
-> > >  arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts | 9 +++++++++
-> > >  1 file changed, 9 insertions(+)
-> > >
-> > > diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-> > > b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts index
-> > > c311eee52a35..1e0abd9d047f 100644
-> > > --- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-> > > +++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-> > > @@ -144,6 +144,15 @@ brcm: sdio-wifi@1 {
-> > >
-> > >  	};
-> > >
-> > >  };
-> > >
-> > > +&mmc2 {
-> > > +	vmmc-supply =3D <&reg_cldo1>;
-> > > +	vqmmc-supply =3D <&reg_bldo2>;
-> > > +	cap-mmc-hw-reset;
-> > > +	non-removable;
-> >
-> > Given that non-removable is documented as "Non-removable slot (like
-> > eMMC); assume always present.", we should probably get rid of that
-> > property?
->
-> I checked mmc core code and this property means that bus will be scanned =
-only
-> once. In this form, node doesn't tell what kind of device is connected, so
-> core has to scan it no matter if "non-removable" property is present or n=
-ot. I
-> maybe missed something though, so it would be great if someone can check =
-it
-> again.
-
-It looks like it does indeed :)
-
-I've applied that patch, thanks!
-Maxime
-
---gz5taobraj7y6ke5
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkJnWwAKCRDj7w1vZxhR
-xQ9DAPwKsJ5NfkwTvuzamY+OX8zTm78ylv/XrhL2Zjagyt1lSAEAiV+LhGVcTzyw
-qAB87cY7DepYjwV8j3ucYDyOZ57UYgM=
-=UejU
------END PGP SIGNATURE-----
-
---gz5taobraj7y6ke5--
+Cheers,
+Ben.
 
 
---===============1051663086465455278==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1051663086465455278==--
-
