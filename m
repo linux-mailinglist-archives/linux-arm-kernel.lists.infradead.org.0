@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0079E1588DA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 04:33:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA9011588DC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 04:33:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3RN2nAh7sHc5v8lf4BenlJmQMhxUZyD7BXltNITJ2Lo=; b=oxw6nFa79AOo0T
-	oj0Km8uOIO7fPxedrn9t4p+wi2ToQoSLvulTHqFsRqEFRlfTec7uQSQOuIjEvntTvyzRkUwqaiUoH
-	FwEv7QOvpu8P4G4X4tsg7nCejAhoUsgaGJttaJa6CCf4ooD4XDsTViW/3I6yDazgTfqE3RzHo0a9Y
-	3HL0Xbnly+YFXFYewt3WSkE2nrf7CBmHj0dnbtx0A1Qgm3ecN6ZZPRvMHZFKybQfdQW+HHbK9ZOHz
-	Vq7f3RyvVOxKdjpd7iRLOJ6ktST9f4DXjP9x749sENu0t9j/D3zYV1T0JEmj+bfZgyol+HkseTlZC
-	YLAdWzYfgg5DR1L4hrBQ==;
+	List-Owner; bh=KamAEXHMsREoKSkVRWeN1nvz45oZrnxrubjiSpzwOvg=; b=dvCMJp+GBwUZ0q
+	W3cVs6w2sGGLGv0C+b0/imLZEk1FoFnZwGrA0JSYlRGFv/Au/T9gqgcAlpB1BUxKudrRAwenTvKuC
+	ynUPpI69fje6MD7GH9y2JHSFkVP4+QjugSGoEAyPWpiR/a3LTLMdTkAmWd0Z9QJLqwd0mQJ/Z25ME
+	zvoiSEh7vc9zeXKTmQHFKEjy+Q4TFGN7WId4TRfQ7nHNuANUbWs8GjSANK8TXTDJFhHU9uLZDh3Dr
+	sRLGBamRWaAvUSnE70pN/no63A7400sRPb6GcqDWJV9JVTUmj02FYKtWssEc7hvztSj7VILRQFsgE
+	1vcz4vygpFw1E3eIgyjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1MIP-0006Wd-K6; Tue, 11 Feb 2020 03:33:09 +0000
+	id 1j1MIf-0006np-U8; Tue, 11 Feb 2020 03:33:25 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1MHQ-0005fh-0M; Tue, 11 Feb 2020 03:32:09 +0000
-X-UUID: 095c582d2ab548a5ae345801b903bb95-20200210
+ id 1j1MHR-0005fj-Fm; Tue, 11 Feb 2020 03:32:10 +0000
+X-UUID: 27fa23454fda42e3b3cbdc616fa0793c-20200210
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=A6qxK858W87X2ZTHmHr6KHIdkb1675UGNWHnxzj5b+0=; 
- b=AYoIZvkjFQzg7Y4GtTqYIDqtgi1Mjon5tV2cObvK2ZOU94JSmFAapE7aWb+N6R04lQuFVEuLIDdl9fXMWoKBx8v8SWAdxgO4VoNPZ3XJE2LUvgfML7oo+ZVVodMfedIaUtk0K6LCZAdeYM7+A+wj2jHhyjQ4GTR+vTX4L8VUpUo=;
-X-UUID: 095c582d2ab548a5ae345801b903bb95-20200210
+ bh=RhXrJayFRO/aOxYxJTCRZyKMbMYeY7nZ96eKmpMPmeU=; 
+ b=Scr8om8NNdAQ0hqyu/8VvHqNpq5SyXfo/wQrUniXw58CB7cHy+aAkzhev5esFq0tOamxQTVm3qX86IPhondB/coVmba4auiubAyj9wXTHNngZ5/orAzwYDkeHKXY7Jny0eDTXeW9hi34SVZroVqE71q4G23AxbvXWMqNrDEt7s0=;
+X-UUID: 27fa23454fda42e3b3cbdc616fa0793c-20200210
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 521949387; Mon, 10 Feb 2020 19:32:01 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 10 Feb 2020 19:22:00 -0800
+ with ESMTP id 349985256; Mon, 10 Feb 2020 19:32:04 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 10 Feb 2020 19:22:39 -0800
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 11 Feb 2020 11:20:31 +0800
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Feb 2020 11:20:56 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 11 Feb 2020 11:21:03 +0800
+ Transport; Tue, 11 Feb 2020 11:21:05 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>
-Subject: [RESEND PATCH v5 10/11] phy: phy-mtk-tphy: add a new reference clock
-Date: Tue, 11 Feb 2020 11:21:15 +0800
-Message-ID: <351551520d485cc312f18468c50bd8045febf4a2.1581389234.git.chunfeng.yun@mediatek.com>
+Subject: [RESEND PATCH v5 11/11] arm64: dts: mt2712: use non-empty ranges for
+ usb-phy
+Date: Tue, 11 Feb 2020 11:21:16 +0800
+Message-ID: <0b039294697126edb25a699b8c25b7fcc84eed36.1581389234.git.chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <bfcf6a4dd6829dfa1bd0119b34043db7364dfd8e.1581389234.git.chunfeng.yun@mediatek.com>
 References: <bfcf6a4dd6829dfa1bd0119b34043db7364dfd8e.1581389234.git.chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 721C335FC361EA2317E27FEFAF26EC8404961C0ADB8AB87EA6DF7862BA28B5D82000:8
+X-TM-SNTS-SMTP: D50F8D5745E0C1A05FC84C09B931A226DBED1496C8AEA844893F48B35F0372072000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_193208_076560_7E91273E 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20200210_193209_542524_D0A281C9 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,72 +99,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Usually the digital and analog phys use the same reference clock,
-but some platforms have two separate reference clocks for each of
-them, so add another optional clock to support them.
-In order to keep the clock names consistent with PHY IP's, change
-the da_ref for analog phy and ref clock for digital phy.
+Use non-empty ranges for usb-phy to make the layout of
+its registers clearer;
+Replace deprecated compatible by generic
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
 v3~v5: no changes
 
-v2: fix typo of analog
+v2: use generic compatible
 ---
- drivers/phy/mediatek/phy-mtk-tphy.c | 19 ++++++++++++++++++-
- 1 file changed, 18 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/mediatek/mt2712e.dtsi | 42 ++++++++++++-----------
+ 1 file changed, 22 insertions(+), 20 deletions(-)
 
-diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index c6424fd2a06d..cdbcc49f7115 100644
---- a/drivers/phy/mediatek/phy-mtk-tphy.c
-+++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -298,7 +298,8 @@ struct mtk_phy_instance {
- 		struct u2phy_banks u2_banks;
- 		struct u3phy_banks u3_banks;
+diff --git a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
+index 43307bad3f0d..e24f2f2f6004 100644
+--- a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
+@@ -697,30 +697,31 @@ usb_host0: xhci@11270000 {
  	};
--	struct clk *ref_clk;	/* reference clock of anolog phy */
-+	struct clk *ref_clk;	/* reference clock of (digital) phy */
-+	struct clk *da_ref_clk;	/* reference clock of analog phy */
- 	u32 index;
- 	u8 type;
- 	int eye_src;
-@@ -925,6 +926,13 @@ static int mtk_phy_init(struct phy *phy)
- 		return ret;
- 	}
  
-+	ret = clk_prepare_enable(instance->da_ref_clk);
-+	if (ret) {
-+		dev_err(tphy->dev, "failed to enable da_ref\n");
-+		clk_disable_unprepare(instance->ref_clk);
-+		return ret;
-+	}
-+
- 	switch (instance->type) {
- 	case PHY_TYPE_USB2:
- 		u2_phy_instance_init(tphy, instance);
-@@ -984,6 +992,7 @@ static int mtk_phy_exit(struct phy *phy)
- 		u2_phy_instance_exit(tphy, instance);
+ 	u3phy0: usb-phy@11290000 {
+-		compatible = "mediatek,mt2712-u3phy";
+-		#address-cells = <2>;
+-		#size-cells = <2>;
+-		ranges;
++		compatible = "mediatek,mt2712-tphy",
++			     "mediatek,generic-tphy-v2";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges = <0 0 0x11290000 0x9000>;
+ 		status = "okay";
  
- 	clk_disable_unprepare(instance->ref_clk);
-+	clk_disable_unprepare(instance->da_ref_clk);
- 	return 0;
- }
+-		u2port0: usb-phy@11290000 {
+-			reg = <0 0x11290000 0 0x700>;
++		u2port0: usb-phy@0 {
++			reg = <0x0 0x700>;
+ 			clocks = <&clk26m>;
+ 			clock-names = "ref";
+ 			#phy-cells = <1>;
+ 			status = "okay";
+ 		};
  
-@@ -1170,6 +1179,14 @@ static int mtk_tphy_probe(struct platform_device *pdev)
- 			retval = PTR_ERR(instance->ref_clk);
- 			goto put_child;
- 		}
-+
-+		instance->da_ref_clk =
-+			devm_clk_get_optional(&phy->dev, "da_ref");
-+		if (IS_ERR(instance->da_ref_clk)) {
-+			dev_err(dev, "failed to get da_ref_clk(id-%d)\n", port);
-+			retval = PTR_ERR(instance->da_ref_clk);
-+			goto put_child;
-+		}
- 	}
+-		u2port1: usb-phy@11298000 {
+-			reg = <0 0x11298000 0 0x700>;
++		u2port1: usb-phy@8000 {
++			reg = <0x8000 0x700>;
+ 			clocks = <&clk26m>;
+ 			clock-names = "ref";
+ 			#phy-cells = <1>;
+ 			status = "okay";
+ 		};
  
- 	provider = devm_of_phy_provider_register(dev, mtk_phy_xlate);
+-		u3port0: usb-phy@11298700 {
+-			reg = <0 0x11298700 0 0x900>;
++		u3port0: usb-phy@8700 {
++			reg = <0x8700 0x900>;
+ 			clocks = <&clk26m>;
+ 			clock-names = "ref";
+ 			#phy-cells = <1>;
+@@ -760,30 +761,31 @@ usb_host1: xhci@112c0000 {
+ 	};
+ 
+ 	u3phy1: usb-phy@112e0000 {
+-		compatible = "mediatek,mt2712-u3phy";
+-		#address-cells = <2>;
+-		#size-cells = <2>;
+-		ranges;
++		compatible = "mediatek,mt2712-tphy",
++			     "mediatek,generic-tphy-v2";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges = <0 0 0x112e0000 0x9000>;
+ 		status = "okay";
+ 
+-		u2port2: usb-phy@112e0000 {
+-			reg = <0 0x112e0000 0 0x700>;
++		u2port2: usb-phy@0 {
++			reg = <0x0 0x700>;
+ 			clocks = <&clk26m>;
+ 			clock-names = "ref";
+ 			#phy-cells = <1>;
+ 			status = "okay";
+ 		};
+ 
+-		u2port3: usb-phy@112e8000 {
+-			reg = <0 0x112e8000 0 0x700>;
++		u2port3: usb-phy@8000 {
++			reg = <0x8000 0x700>;
+ 			clocks = <&clk26m>;
+ 			clock-names = "ref";
+ 			#phy-cells = <1>;
+ 			status = "okay";
+ 		};
+ 
+-		u3port1: usb-phy@112e8700 {
+-			reg = <0 0x112e8700 0 0x900>;
++		u3port1: usb-phy@8700 {
++			reg = <0x8700 0x900>;
+ 			clocks = <&clk26m>;
+ 			clock-names = "ref";
+ 			#phy-cells = <1>;
 -- 
 2.25.0
 _______________________________________________
