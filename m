@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A0CF159772
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:58:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5719B159776
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:59:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=57b7ZQKC7+Vsp9Ph8TG7XJwsq05qWMXcTkbQ4/ZuDEk=; b=VpeuA/i/AeCc89
-	BlW2f8bhjzSqr81k1Pv1MN2DPE1QMtRoFzCByuLsW3c3Sd21YlQnm+hNy6Iyz1TGjMk2G61N+CmQ0
-	RnhH+BRWNtLV4+Yj3OjEb2W8utXqlH2K5wf3KpqfuBXO31MFiWpJTrga52mlzreYqv23FT50PNd41
-	UDnAhN/3NwjqWlsFRQOt/gxOH2W8n5IqGm+lExLd+igbCJhwuFsSwe67gPlcZes1i0O88iu2Nx2yv
-	vgn7G7p55ZURyWcipSOnM/l3HO3vi/s5QBAq6CV6Q6kpeYSAdPizR1B16RmbrEYVqJu6E1Ig5ntg/
-	vAiYI4cmcZPmNHk2AZdA==;
+	List-Owner; bh=WHwUB5tZaGImxqipZnAVAbYx7QDPuim0C/3QwwT/kN4=; b=sErn0khl7cEYQK
+	vLYMABbd6kDWaOFFujtTEuIth4YQYxUQXHj8oW4191/JKp0MIxZxG2AfL6MM7Xj+i6nQGEY0AE829
+	d2y8o0/ZFM4/0eNUgvyD00ak5tQVZbVp4cDoVK7OFUcSwB+7YTlEk0rYkiEDoVg/YZvDKT/pWCnQB
+	BQLYphUqehEjGGoNKlo4s+NTfwewUtz9RM09W/CdO/xK+pI/50Wswl+IWcDmyRrDLNKQpX2dt+sQC
+	US5wDHQ2+tTLXQdUnG/bgXPotIm6OLX9lwPJM1KvAg76TupXu5sRVCsjAJIhOAd6yeFQFI4oDgcEg
+	HMFY7LW68N/3LjUdc9tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Znz-0000DQ-04; Tue, 11 Feb 2020 17:58:39 +0000
+	id 1j1ZoT-0000em-Jr; Tue, 11 Feb 2020 17:59:09 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Zh2-0001ft-I1
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:51:30 +0000
+ id 1j1Zh9-0001mE-71
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:51:38 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 15C8D206D7;
- Tue, 11 Feb 2020 17:51:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D14EA20870;
+ Tue, 11 Feb 2020 17:51:33 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581443488;
- bh=niDNmWeRe+kA6MDesjc0xqObQ1M36vCURCX+5FfzILg=;
+ s=default; t=1581443494;
+ bh=nuQ0MN9/FGm7i28EpIRwCZK8BlzSNLL3qWI84G027to=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WfCD42GcorDFMuHpwBD0bY4Q7czs2MNbZDigczpPoecXuxoYUPcMYxrXw/TJB1/lo
- bgEFH+rS6Z1oIiTzp0l7Kz2wKfxEJ3PMcHMPAsdSRVAs7PxKMfTKuxhpLcN8hiNp7/
- 8JeamcPh2ZnreKzmvqJlJyl844Qrxrob7c+IL/X8=
+ b=rolyyoPuIhxBuyT6P+LDNWJEt7S0gbHBnRuxoO3pDpiT1W3uvPTj54mfLnzGvNJn+
+ KGORkhoUe9fKJI85d88XUE62BTUZwT1FxXGoyWmWoujF8nsrfh+zkCLbhaVjmtYsnp
+ xDROX7tA1ILiT/6yP4V63hBMwenL6EBKRL7IXBU0=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j1Zfl-004O7k-6S; Tue, 11 Feb 2020 17:50:09 +0000
+ id 1j1Zfp-004O7k-5C; Tue, 11 Feb 2020 17:50:13 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 27/94] KVM: arm64: nv: Respect the virtual HCR_EL2.NV1 bit
- setting
-Date: Tue, 11 Feb 2020 17:48:31 +0000
-Message-Id: <20200211174938.27809-28-maz@kernel.org>
+Subject: [PATCH v2 34/94] KVM: arm64: nv: Use ARMv8.5-GTG to advertise
+ supported Stage-2 page sizes
+Date: Tue, 11 Feb 2020 17:48:38 +0000
+Message-Id: <20200211174938.27809-35-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200211174938.27809-1-maz@kernel.org>
 References: <20200211174938.27809-1-maz@kernel.org>
@@ -62,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_095128_649801_E9C9AEDE 
-X-CRM114-Status: GOOD (  12.96  )
+X-CRM114-CacheID: sfid-20200211_095135_420352_EC5D4E7C 
+X-CRM114-Status: GOOD (  12.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,106 +103,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jintack Lim <jintack@cs.columbia.edu>
+ARMv8.5-GTG gives the opportunity to advertize the supported Stage-2
+page sizes to hypervisors, and allow them to differ from the page sizes
+supported at Stage-1.
 
-Forward ELR_EL1, SPSR_EL1 and VBAR_EL1 traps to the virtual EL2 if the
-virtual HCR_EL2.NV bit is set.
+As KVM cannot support guest Stage-2 page sizes that are smaller than
+PAGE_SIZE (it would break the guest's isolation guarantees), let's use
+this feature to let the guest know (assuming it has been told about
+ARMv8.5-GTG).
 
-This is for recursive nested virtualization.
-
-Signed-off-by: Jintack Lim <jintack@cs.columbia.edu>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/include/asm/kvm_arm.h |  1 +
- arch/arm64/kvm/sys_regs.c        | 28 +++++++++++++++++++++++++++-
- 2 files changed, 28 insertions(+), 1 deletion(-)
+ arch/arm64/include/asm/sysreg.h |  3 +++
+ arch/arm64/kvm/nested.c         | 29 +++++++++++++++++++++++++++++
+ 2 files changed, 32 insertions(+)
 
-diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
-index 1be4667d5e3d..cdee623ce92f 100644
---- a/arch/arm64/include/asm/kvm_arm.h
-+++ b/arch/arm64/include/asm/kvm_arm.h
-@@ -13,6 +13,7 @@
+diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+index 360ef9e8dfe4..a167219e42f4 100644
+--- a/arch/arm64/include/asm/sysreg.h
++++ b/arch/arm64/include/asm/sysreg.h
+@@ -701,6 +701,9 @@
+ #define ID_AA64ZFR0_SVEVER_SVE2		0x1
  
- /* Hyp Configuration Register (HCR) bits */
- #define HCR_FWB		(UL(1) << 46)
-+#define HCR_NV1		(UL(1) << 43)
- #define HCR_NV		(UL(1) << 42)
- #define HCR_API		(UL(1) << 41)
- #define HCR_APK		(UL(1) << 40)
-diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index 7cf5096bc11a..2ce85d5e7111 100644
---- a/arch/arm64/kvm/sys_regs.c
-+++ b/arch/arm64/kvm/sys_regs.c
-@@ -424,6 +424,22 @@ static bool access_wi(struct kvm_vcpu *vcpu,
- 	return true;
- }
+ /* id_aa64mmfr0 */
++#define ID_AA64MMFR0_TGRAN4_2_SHIFT	40
++#define ID_AA64MMFR0_TGRAN64_2_SHIFT	36
++#define ID_AA64MMFR0_TGRAN16_2_SHIFT	32
+ #define ID_AA64MMFR0_TGRAN4_SHIFT	28
+ #define ID_AA64MMFR0_TGRAN64_SHIFT	24
+ #define ID_AA64MMFR0_TGRAN16_SHIFT	20
+diff --git a/arch/arm64/kvm/nested.c b/arch/arm64/kvm/nested.c
+index cecea8d91196..c40bf753ead9 100644
+--- a/arch/arm64/kvm/nested.c
++++ b/arch/arm64/kvm/nested.c
+@@ -95,6 +95,35 @@ void access_nested_id_reg(struct kvm_vcpu *v, struct sys_reg_params *p,
+ 		break;
  
-+/* This function is to support the recursive nested virtualization */
-+static bool forward_nv1_traps(struct kvm_vcpu *vcpu, struct sys_reg_params *p)
-+{
-+	return forward_traps(vcpu, HCR_NV1);
-+}
-+
-+static bool access_vbar_el1(struct kvm_vcpu *vcpu,
-+			    struct sys_reg_params *p,
-+			    const struct sys_reg_desc *r)
-+{
-+	if (forward_nv1_traps(vcpu, p))
-+		return false;
-+
-+	return access_rw(vcpu, p, r);
-+}
-+
- /*
-  * See note at ARMv7 ARM B1.14.4 (TL;DR: S/W ops are not easily virtualized).
-  */
-@@ -1647,6 +1663,7 @@ static bool access_sp_el1(struct kvm_vcpu *vcpu,
- 	return true;
- }
- 
-+
- static bool access_elr(struct kvm_vcpu *vcpu,
- 		       struct sys_reg_params *p,
- 		       const struct sys_reg_desc *r)
-@@ -1654,6 +1671,9 @@ static bool access_elr(struct kvm_vcpu *vcpu,
- 	if (el12_reg(p) && forward_nv_traps(vcpu))
- 		return false;
- 
-+	if (!el12_reg(p) && forward_nv1_traps(vcpu, p))
-+		return false;
-+
- 	if (p->is_write)
- 		vcpu->arch.ctxt.gp_regs.elr_el1 = p->regval;
- 	else
-@@ -1669,6 +1689,9 @@ static bool access_spsr(struct kvm_vcpu *vcpu,
- 	if (el12_reg(p) && forward_nv_traps(vcpu))
- 		return false;
- 
-+	if (!el12_reg(p) && forward_nv1_traps(vcpu, p))
-+		return false;
-+
- 	if (p->is_write)
- 		vcpu->arch.ctxt.gp_regs.spsr[KVM_SPSR_EL1] = p->regval;
- 	else
-@@ -1684,6 +1707,9 @@ static bool access_spsr_el2(struct kvm_vcpu *vcpu,
- 	if (el12_reg(p) && forward_nv_traps(vcpu))
- 		return false;
- 
-+	if (!el12_reg(p) && forward_nv1_traps(vcpu, p))
-+		return false;
-+
- 	if (p->is_write)
- 		vcpu_write_sys_reg(vcpu, p->regval, SPSR_EL2);
- 	else
-@@ -1866,7 +1892,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
- 	{ SYS_DESC(SYS_LORC_EL1), trap_loregion },
- 	{ SYS_DESC(SYS_LORID_EL1), trap_loregion },
- 
--	{ SYS_DESC(SYS_VBAR_EL1), access_rw, reset_val, VBAR_EL1, 0 },
-+	{ SYS_DESC(SYS_VBAR_EL1), access_vbar_el1, reset_val, VBAR_EL1, 0 },
- 	{ SYS_DESC(SYS_DISR_EL1), NULL, reset_val, DISR_EL1, 0 },
- 
- 	{ SYS_DESC(SYS_ICC_IAR0_EL1), write_to_read_only },
+ 	case SYS_ID_AA64MMFR0_EL1:
++		/* Hide unsupported S2 page sizes */
++		switch (PAGE_SIZE) {
++		case SZ_64K:
++			val &= ~FEATURE(ID_AA64MMFR0_TGRAN16_2);
++			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN16_2), 0b0001);
++			/* Fall through */
++		case SZ_16K:
++			val &= ~FEATURE(ID_AA64MMFR0_TGRAN4_2);
++			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN4_2), 0b0001);
++			/* Fall through */
++		case SZ_4K:
++			/* Support everything */
++			break;
++		}
++		/* Advertize supported S2 page sizes */
++		switch (PAGE_SIZE) {
++		case SZ_4K:
++			val &= ~FEATURE(ID_AA64MMFR0_TGRAN4_2);
++			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN4_2), 0b0010);
++			/* Fall through */
++		case SZ_16K:
++			val &= ~FEATURE(ID_AA64MMFR0_TGRAN16_2);
++			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN16_2), 0b0010);
++			/* Fall through */
++		case SZ_64K:
++			val &= ~FEATURE(ID_AA64MMFR0_TGRAN64_2);
++			val |= FIELD_PREP(FEATURE(ID_AA64MMFR0_TGRAN64_2), 0b0010);
++			break;
++		}
+ 		/* Cap PARange to 40bits */
+ 		tmp = FIELD_GET(FEATURE(ID_AA64MMFR0_PARANGE), val);
+ 		if (tmp > 0b0010) {
 -- 
 2.20.1
 
