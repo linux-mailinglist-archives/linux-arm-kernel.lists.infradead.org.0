@@ -2,86 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D030F159AB9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 21:48:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7205159AE5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 22:04:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sASCBZKMbZWxeUbqKxOxbW5WOUmP5Pq1RIpFKJDLqA8=; b=N8Jm0svxEkf12i
-	ogBeJ5X3gDhGj/WWFgUmSyqTgnJxTVh1KKxPrPkEBLbAzndb1xAV14YoYfo7KCriY8bzITD1z9R4+
-	h1w+QIwZZaOudGIzBuqk6TIYVcDK/vazhURDVPYQoeiS1AWE2vbSbv3Fp86vtO+uU3BzFABmez1nl
-	4vWNELF3E8ZmAB9BrnPaRtnetPfVaWRBVKhYnvawJpyan3w6A0m/1RzkoD32ODKXpXZPlAthXdlXq
-	dTHWIuE1VHKbv5dAEY6soeWgdCh8fTdjV4pfQjRi/9Jf9X9Igh6Vb5PY0Z2srJROue8gOxZhoAhA9
-	KLsThYzuMmTxUv1EilEQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bfq0LO3el6fGRiuuEfo4/Lt4Tgb/k7wfJ02Dnh5RbvU=; b=qisH5FfTGxASYp
+	nm7f1wdAc6qWfXUfCKcCnHFavK2OdwdBihXsdpMAMqo8HVEYzJ5nO/5Vg1IS9dNcpKCmFTv5M/Vac
+	ujFOT+I1z04o7DSHDMaq5fhChK+fRfYWSoOrRLm6RszJa/5uiW1AM0vKAH0IhDMPGep9WkBdvETxk
+	siW2BFgvxPwSwPQTyIjI6dlFxwI7l+hu+SnDuf6w/0hBY62tx/v6etQJjiGLxDOnmE1zsl0gMDOqu
+	EmheEZtHnKIb8uGgK5Op+mo3+lhGJx3WGpjIOiHAam56y70uN0P45OFINMgKeA8SRKC1VEZUsJZty
+	zR3m2UVrVgkYJzb1ClLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1cSZ-0004a7-QW; Tue, 11 Feb 2020 20:48:43 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1j1chR-0001jd-Nr; Tue, 11 Feb 2020 21:04:05 +0000
+Received: from gateway21.websitewelcome.com ([192.185.45.155])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1cSQ-0004ZT-1R
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 20:48:36 +0000
-Received: by mail-lj1-x241.google.com with SMTP id v17so13192864ljg.4
+ id 1j1chK-0001i8-Hd
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 21:04:00 +0000
+Received: from cm16.websitewelcome.com (cm16.websitewelcome.com [100.42.49.19])
+ by gateway21.websitewelcome.com (Postfix) with ESMTP id C2DC8400D8531
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 12:48:32 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=LqjAANVr3QUa9/jn5BxY1hlvgQhyJJrq1+NtVKHCduM=;
- b=nZzuIR3P/P33cQ7XHVWp+ufjdXODTG3MtJzSO+ScRXg4S39DMRBCQDNsXJYQElGdzm
- ouIpbn8tkV777xxbILSIJIZF6oKC3I2Si6MwizHxW4aWRfElhhY9X7dWXFdiV30DPesA
- 1GNKe0dc6C9lmgr0F7fobbFzgGGVfLGxHD641Oigb/F9laDgG+vmMzcduEN8wahKLTnH
- 5bPGYUt8+lVfdT1xzNP1Jau4odY8wAsRLFHNiBtyuidHzkqwt2zwqnqsPtfysLzpNrTN
- lR1TR3goVHtpssWR2h78bQFyQerGdERIYnoz0ngcnt2Z6dcZrYi5nNurGeF7SXk0pAuJ
- n4hg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=LqjAANVr3QUa9/jn5BxY1hlvgQhyJJrq1+NtVKHCduM=;
- b=QbPBb/VNiLeziics/izX3jtWeQ4ik+q7NjqvVGPiIgcj6u4lM6OeaFl12v3G+XQolq
- PtcYQ2LbJEa3Iy3LhNnI4hlgA4rdC7tJZHzgTtK8UnlBroyCpx7i88jK5ca5XPV8Wo9n
- dVEWEQ4mhzxXVK7QJTkaz4189rVYgD5L7HWpd9JHMlyNaRYZpALCE87MhTEszn3H31E1
- anZCMx4JmQnICwJPFOlo0h6xdlIcpXLE+F/gwZxALtXbzZa4Ph38Cjlt6uJyaAlhhul9
- 0D6sanFNs0nABLL+QLlng9un+tpYtZXlYHUOQGFEho0JKcGhncb6Hi1kXeBCvEKpMlhR
- 46FA==
-X-Gm-Message-State: APjAAAW04Pcqkh5uLmp4lzmMf1vCw+RVxNzVqkpOg3mgFYtNHAB4SkJ7
- ra4u1b05D0YqHp3lxBQ+MFg=
-X-Google-Smtp-Source: APXvYqxQouPBSnzMQ60Fpg/1V/YGZaJ3zNNtUQbG94tj5k7NHsupGdwEO3PyBcAojadIFe8aR4KdbQ==
-X-Received: by 2002:a2e:85ce:: with SMTP id h14mr5365962ljj.41.1581454111246; 
- Tue, 11 Feb 2020 12:48:31 -0800 (PST)
-Received: from kedthinkpad ([5.20.204.163])
- by smtp.gmail.com with ESMTPSA id r20sm2354515lfi.91.2020.02.11.12.48.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 11 Feb 2020 12:48:30 -0800 (PST)
-Date: Tue, 11 Feb 2020 22:48:28 +0200
-From: Andrey Lebedev <andrey.lebedev@gmail.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH 1/1] Support LVDS output on Allwinner A20
-Message-ID: <20200211204828.GA4361@kedthinkpad>
-References: <20200210195633.GA21832@kedthinkpad>
- <20200211072004.46tbqixn5ftilxae@gilmour.lan>
+ Tue, 11 Feb 2020 15:03:45 -0600 (CST)
+Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
+ id 1ch7jW6xu8vkB1ch7jUHRs; Tue, 11 Feb 2020 15:03:45 -0600
+X-Authority-Reason: nr=8
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=embeddedor.com; s=default; h=Content-Type:MIME-Version:Message-ID:Subject:
+ Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Y7FMQ3aFcSbTB8cXSN/10Y25Q6I9Sqxro0ixjLvyexk=; b=NVUjzx89ff02Y0550Cc9HR4fAV
+ y8xgLLMBqHAJcRuoYH/4vdjQlwmneVydHsfxguYwcJemWBAIPTaH5ACThZNw/j9YPPszQTd3icsx7
+ U+v8QkoMqssJf+0DLG7bz90E+KHjnEEjbCAcF7/fMJV0CS+I9YjRTsjTeSau8ZIvWL0QO5RZmkBH5
+ Mo9HA971WK+zi4licGrT47AWMX8GavgfO5a7EaL3XONr0IgFVBS2Fx+Bnk5oVh9pOOh52jbY5YMpW
+ bY4JaEdAmrd6n3YBDyb0tJMBYkMJS4rHr6EFQLvL5BVmnVdN9WDD5iCxqHzkn+aXLokWXCTaEqr5U
+ VKHDlH5A==;
+Received: from [200.68.140.36] (port=15247 helo=embeddedor)
+ by gator4166.hostgator.com with esmtpa (Exim 4.92)
+ (envelope-from <gustavo@embeddedor.com>)
+ id 1j1ch5-0026gU-VR; Tue, 11 Feb 2020 15:03:44 -0600
+Date: Tue, 11 Feb 2020 15:06:18 -0600
+From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: [PATCH] gpio: uniphier: Replace zero-length array with
+ flexible-array member
+Message-ID: <20200211210618.GA29823@embeddedor>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200211072004.46tbqixn5ftilxae@gilmour.lan>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - embeddedor.com
+X-BWhitelist: no
+X-Source-IP: 200.68.140.36
+X-Source-L: No
+X-Exim-ID: 1j1ch5-0026gU-VR
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+X-Source-Sender: (embeddedor) [200.68.140.36]:15247
+X-Source-Auth: gustavo@embeddedor.com
+X-Email-Count: 10
+X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
+X-Local-Domain: yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_124834_109686_DBB7A616 
-X-CRM114-Status: GOOD (  19.39  )
+X-CRM114-CacheID: sfid-20200211_130358_676823_773F0B0E 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andrey.lebedev[at]gmail.com]
+ no trust [192.185.45.155 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,73 +106,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, wens@csie.org, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ "Gustavo A. R. Silva" <gustavo@embeddedor.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Maxime, thanks for your comments. I'll update the patch, but meanwhile,
-I have some remarks/questions, see below.
+The current codebase makes use of the zero-length array language
+extension to the C90 standard, but the preferred mechanism to declare
+variable-length types such as these ones is a flexible array member[1][2],
+introduced in C99:
 
-On Tue, Feb 11, 2020 at 08:20:04AM +0100, Maxime Ripard wrote:
-> > +	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA1_REG,
-> > +			   SUN4I_TCON0_LVDS_ANA1_UPDATE,
-> > +			   SUN4I_TCON0_LVDS_ANA1_UPDATE);
-> 
-> You refer to U-Boot in your commit log, but the sequence is not quite
-> the same, why did you change it?
+struct foo {
+        int stuff;
+        struct boo array[];
+};
 
-I actually had two reference implementations at my hand. One was u-boot
-and another - an old (abandoned) branch of Priit Laes [1] (I took the
-split-up of u-boot SUNXI_LCDC_LVDS_ANA0 constant from there).
+By making use of the mechanism above, we will get a compiler warning
+in case the flexible array does not occur last in the structure, which
+will help us prevent some kind of undefined behavior bugs from being
+inadvertenly introduced[3] to the codebase from now on.
 
-This is an attempt to simplify the sequence, since I noticed that the
-same bit was being set to the same register twice [2] and removing that
-duplication didn't produce any observable regression. Priit
-implementation didn't have that bit set in the end of the sequence
-either, so I omitted it. That said, I agree that it could've been a bit
-naive on my side, and I can get it back to match u-boot version, if you
-feel that might be important.
+This issue was found with the help of Coccinelle.
 
-For the reference the U-Boot code is here: [3]
+[1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
+[2] https://github.com/KSPP/linux/issues/21
+[3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
 
-[1] https://github.com/plaes/linux/commit/cc8c8bab2f2f2752ba6b11632dcd0f41bac249bc#diff-014a76a5007005a7a240825a972b8c7fR127
-[2] setbits_le32(&lcdc->lvds_ana0, SUNXI_LCDC_LVDS_ANA0_UPDATE);
-[3] https://github.com/ARM-software/u-boot/blob/master/drivers/video/sunxi/lcdc.c#L60
+Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
+---
+ drivers/gpio/gpio-uniphier.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> > +#define SUN4I_TCON0_LVDS_ANA1_REG		0x224
-> > +#define SUN4I_TCON0_LVDS_ANA1_INIT			(0x1f << 26 | 0x1f << 10)
-> > +#define SUN4I_TCON0_LVDS_ANA1_UPDATE			(0x1f << 16 | 0x1f << 00)
-> 
-> Having proper defines for those fields would be great too.
-
-If by "proper" you mean "split them up to individual bits", I would
-agree, but I can't find any actual hardware reference documentation that
-would mention the meaning of these registers.
-
-In both places (u-boot and Priit) these constants are defined the same way. 
-
-I took the liberty to rename ANA1_INIT1 to ANA1_INIT and ANA1_INIT2 to
-ANA1_UPDATE to match Priit naming rather than u-boot, as I felt it was
-more descriptive. I have no strong opinion here though. 
-
-> Side question, this will need some DT changes too, right?
-
-Hm, I agree. I think it would be reasonable to include LVDS0/1 pins and
-sample (but disabled) lvds panel, connected to tcon to
-arch/arm/boot/dts/sun7i-a20.dtsi. Does that make sense to you? Would you
-expect dts changes in the same patch or separate?
-
-P.S. This is my first patch to the linux kernel, please forgive me my
-inexperience.
-
+diff --git a/drivers/gpio/gpio-uniphier.c b/drivers/gpio/gpio-uniphier.c
+index 0f662b297a95..9843638d99d0 100644
+--- a/drivers/gpio/gpio-uniphier.c
++++ b/drivers/gpio/gpio-uniphier.c
+@@ -33,7 +33,7 @@ struct uniphier_gpio_priv {
+ 	struct irq_domain *domain;
+ 	void __iomem *regs;
+ 	spinlock_t lock;
+-	u32 saved_vals[0];
++	u32 saved_vals[];
+ };
+ 
+ static unsigned int uniphier_gpio_bank_to_reg(unsigned int bank)
 -- 
-Andrey Lebedev aka -.- . -.. -.. . .-.
-Software engineer
-Homepage: http://lebedev.lt/
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
