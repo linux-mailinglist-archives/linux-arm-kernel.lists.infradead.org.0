@@ -2,74 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A95C15921C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 15:43:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAD60159227
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 15:44:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iew3PYkfI05p174PQ+EPZ482X+a+f/XVASAUCRXiY2U=; b=Be+mJ325kQBSri
-	phO0aeTen5vlvvbtYjbQIjK1sdDUv4IXft2aRUInbIL33KaqsxQn9ogqmbHJHeBYiCjCBv/Xgoig4
-	GwczJL/k6J/UjMvZ39Vc72bJGIDAb2JeGB1gIz+aDVMuxkI4mqEAYMVdlQf5Orx5vB8O37gW/zM/s
-	0TWvZR2nxP6vYmO1eaWFi4x9LglZQH2KvLIlDTJn8QbkXLqqhPp/tcWNGgpcKtzvSamU4q2IGIs5m
-	DTVTqPqE0a6AANg3Lrl8X59PVbuy9/UdAE2SlLmM1P03uwua1F+Tlny+bk4rbgN8aDOoymqeIvE4+
-	orzeinQWe7zHI9rylcCA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=y4C7baBFamihxIfMvzZ2Nntq3OBggePLJkRP3z0sqNk=; b=ClnuteS09jyUPyVKZ08VwxkEK
+	YySxtcKSlcXEKfrZLrnpPWBKgbBzglQ2Ngdyfa5GjQRvUmLbocYO3SELd4MeeuFvU6PLy3MMXvzJN
+	1A4cfCYo81h/dj3v6Gn6Z1m7dFT6SPnRgbmmv1DdMu7hVqoiUmFlrtnO+bHFwjO2JIFZ6eyMByQ79
+	PseM2hYVIg+1h1AR2RebMXshbNB5XAX7nbrINWs3UeyEzDKuTTDhg/30KOL2X61fAh4gl0Dl5vNrv
+	6bL1B8tSqvXU/xT8U4jVxN+zH+FNPWu75LwK2K4oRr9YpnCSfWqo4+JJuvacTqkgiDvJKXLXAkEfM
+	q1tDZF4Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Wl9-0001Pz-6b; Tue, 11 Feb 2020 14:43:31 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1j1WmL-0001hk-Ur; Tue, 11 Feb 2020 14:44:45 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Wl2-0001PK-Ct
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 14:43:25 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581432202;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=4Uo6Yj+q6VJYat5WHAhzWGNRtS9DME8uSiVN5weyl/Y=;
- b=IggwhQyD8pr8kx4c86lwdrvL7BKCenqmULEr8Ew3zHN9eVflyAuUeCpPL+1EQuuDb60+aj
- 2Vxgn2KW4sxim7CIC89f/UxHhIQ7hKODMsJ+D/lZzzdpq889O5TFzm1puoQksK/KZBUUhn
- X9YNMk99K/vxNkh+NKxNdefsNWYJb3k=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-397-A1EvZX6yOLSeHIdoYDVguw-1; Tue, 11 Feb 2020 09:43:18 -0500
-X-MC-Unique: A1EvZX6yOLSeHIdoYDVguw-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CA579800EB2;
- Tue, 11 Feb 2020 14:43:15 +0000 (UTC)
-Received: from krava (ovpn-206-93.brq.redhat.com [10.40.206.93])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 345426055B;
- Tue, 11 Feb 2020 14:43:11 +0000 (UTC)
-Date: Tue, 11 Feb 2020 15:43:08 +0100
-From: Jiri Olsa <jolsa@redhat.com>
-To: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH RFC 4/7] perf pmu: Rename uncore symbols to include
- system PMUs
-Message-ID: <20200211144308.GC93194@krava>
-References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <1579876505-113251-5-git-send-email-john.garry@huawei.com>
- <20200210120715.GC1907700@krava>
- <fac99c40-dace-3e2e-c8f4-b2afed8b7c61@huawei.com>
+ id 1j1WmB-0001hI-Vy
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 14:44:37 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01BEiRXu032757; Tue, 11 Feb 2020 15:44:28 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=zMrqEZqOCVnlA3/9d0Rc7Rgo4RLOby/Y5h96V1K6k5k=;
+ b=GtWzjgWpZQmghAi169LU0uuY4j7UF/y4Gxjub5zSHljucQ9SciIS1fLFx8NgjERgpEqd
+ wD2ePTUv/IS4QpFL9ashW1yofY0nK/2ZRkTrwnh5vpa39jIgJSyf0bP0MsxLWB3JnPwC
+ c1nSsQxR/ELJ1NNAZiSh6qB5VMdSGOdzJw/piJ0VJCKihyErlkdRkV9gaiGiZggHXRb3
+ JKG1oAfc3Pk3dP48IbxrRU1u7fZArbuL1j1hAOco7JtMhjlz4ZZv7pVn4VOAXp9fdizr
+ uotji9CPN2DDHDLLtx4hKF92yFf7FnBzwHslCu1jX0mj3fq8XgNV6R/j+ka/1TtPFeHt PA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2y1ufh5xf0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 11 Feb 2020 15:44:28 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6748F100046;
+ Tue, 11 Feb 2020 15:44:18 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag6node1.st.com [10.75.127.16])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 535752BD3FC;
+ Tue, 11 Feb 2020 15:44:18 +0100 (CET)
+Received: from lmecxl0923.lme.st.com (10.75.127.48) by SFHDAG6NODE1.st.com
+ (10.75.127.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 11 Feb
+ 2020 15:44:17 +0100
+Subject: Re: [PATCH V2 9/9] mmc: mmci: add sdmmc variant revision 2.0
+To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
+References: <20200128090636.13689-1-ludovic.barre@st.com>
+ <20200128090636.13689-10-ludovic.barre@st.com>
+From: Ludovic BARRE <ludovic.barre@st.com>
+Message-ID: <853f4b14-a188-f329-34e5-8e88fcafa775@st.com>
+Date: Tue, 11 Feb 2020 15:44:17 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <fac99c40-dace-3e2e-c8f4-b2afed8b7c61@huawei.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+In-Reply-To: <20200128090636.13689-10-ludovic.barre@st.com>
+Content-Language: fr
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG7NODE2.st.com (10.75.127.20) To SFHDAG6NODE1.st.com
+ (10.75.127.16)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-11_04:2020-02-10,
+ 2020-02-11 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_064324_516055_790D6499 
-X-CRM114-Status: GOOD (  20.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200211_064436_513893_D04D904D 
+X-CRM114-Status: GOOD (  17.78  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,84 +97,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ak@linux.intel.com, suzuki.poulose@arm.com,
- peterz@infradead.org, robin.murphy@arm.com, linuxarm@huawei.com,
- acme@kernel.org, linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, james.clark@arm.com,
- namhyung@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ srinivas.kandagatla@linaro.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 10, 2020 at 03:44:48PM +0000, John Garry wrote:
-> On 10/02/2020 12:07, Jiri Olsa wrote:
-> > On Fri, Jan 24, 2020 at 10:35:02PM +0800, John Garry wrote:
-> > 
-> > SNIP
-> > 
-> > >   		/* Only split the uncore group which members use alias */
-> > > -		if (!evsel->use_uncore_alias)
-> > > +		if (!evsel->use_uncore_or_system_alias)
-> > >   			goto out;
-> > >   		/* The events must be from the same uncore block */
-> > > diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
-> > > index 8b99fd312aae..569aba4cec89 100644
-> > > --- a/tools/perf/util/pmu.c
-> > > +++ b/tools/perf/util/pmu.c
-> > > @@ -623,7 +623,7 @@ static struct perf_cpu_map *pmu_cpumask(const char *name)
-> > >   	return NULL;
-> > >   }
-> > > -static bool pmu_is_uncore(const char *name)
-> > > +static bool pmu_is_uncore_or_sys(const char *name)
-> > 
-> 
-> Hi jirka,
-> 
-> > so we detect uncore PMU by checking for cpumask file
-> > 
-> 
-> For PMUs which could be considered "system" PMUs, they also have a cpumask,
-> like the PMU I use as motivation for this series:
-> 
-> root@(none)$ pwd
-> /sys/bus/event_source/devices/smmuv3_pmcg_100020
-> root@(none)$ ls -l
-> total 0
-> -r--r--r--    1 root     root          4096 Feb 10 14:50 cpumask
-> drwxr-xr-x    2 root     root             0 Feb 10 14:50 events
-> drwxr-xr-x    2 root     root             0 Feb 10 14:50 format
-> -rw-r--r--    1 root     root          4096 Feb 10 14:50
-> perf_event_mux_interval_ms
-> drwxr-xr-x    2 root     root             0 Feb 10 14:50 power
-> lrwxrwxrwx    1 root     root             0 Feb 10 14:50 subsystem ->
-> ../../bus/event_source
-> -r--r--r--    1 root     root          4096 Feb 10 14:50 type
-> -rw-r--r--    1 root     root          4096 Feb 10 14:50 uevent
-> 
-> 
-> Other PMU drivers which I have checked in drivers/perf also have the same.
-> 
-> Indeed I see no way to differentiate whether a PMU is an uncore or system.
-> So that is why I change the name to cover both. Maybe there is a better name
-> than the verbose pmu_is_uncore_or_sys().
-> 
-> > I don't see the connection here with the sysid or '_sys' checking,
-> > that's just telling which ID to use when looking for an alias, no?
-> 
-> So the connection is that in perf_pmu__find_map(), for a given PMU, the
-> matching is now extended from only core or uncore PMUs to also these system
-> PMUs. And I use the sysid to find an aliasing table for any system PMUs
-> present.
-
-I see.. can't we just check sysid for uncore PMUs? because
-that's what the code is doing, right? having pmu_is_uncore_or_sys
-makes me think there's some sysid-type PMU
-
-jirka
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+aGkgVWxmCgpMZSAxLzI4LzIwIMOgIDEwOjA2IEFNLCBMdWRvdmljIEJhcnJlIGEgw6ljcml0wqA6
+Cj4gVGhpcyBwYXRjaCBhZGRzIGEgc2RtbWMgdmFyaWFudCByZXZpc2lvbiAyLjAuCj4gVGhpcyBy
+ZXZpc2lvbiBpcyBiYWNrd2FyZCBjb21wYXRpYmxlIHdpdGggMS4xLCBhbmQgYWRkcyBkbWEKPiBs
+aW5rIGxpc3Qgc3VwcG9ydC4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBMdWRvdmljIEJhcnJlIDxsdWRv
+dmljLmJhcnJlQHN0LmNvbT4KPiAtLS0KPiAgIGRyaXZlcnMvbW1jL2hvc3QvbW1jaS5jIHwgMzAg
+KysrKysrKysrKysrKysrKysrKysrKysrKysrKysrCj4gICAxIGZpbGUgY2hhbmdlZCwgMzAgaW5z
+ZXJ0aW9ucygrKQo+IAo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL21tYy9ob3N0L21tY2kuYyBiL2Ry
+aXZlcnMvbW1jL2hvc3QvbW1jaS5jCj4gaW5kZXggMjRlNjMwMTgzZWQ0Li5hNzc0YzMyOWMyMTIg
+MTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy9tbWMvaG9zdC9tbWNpLmMKPiArKysgYi9kcml2ZXJzL21t
+Yy9ob3N0L21tY2kuYwo+IEBAIC0yNzUsNiArMjc1LDMxIEBAIHN0YXRpYyBzdHJ1Y3QgdmFyaWFu
+dF9kYXRhIHZhcmlhbnRfc3RtMzJfc2RtbWMgPSB7Cj4gICAJLmluaXQJCQk9IHNkbW1jX3Zhcmlh
+bnRfaW5pdCwKPiAgIH07Cj4gICAKPiArc3RhdGljIHN0cnVjdCB2YXJpYW50X2RhdGEgdmFyaWFu
+dF9zdG0zMl9zZG1tY3YyID0gewo+ICsJLmZpZm9zaXplCQk9IDE2ICogNCwKPiArCS5maWZvaGFs
+ZnNpemUJCT0gOCAqIDQsCj4gKwkuZl9tYXgJCQk9IDIwODAwMDAwMCwKPiArCS5zdG0zMl9jbGtk
+aXYJCT0gdHJ1ZSwKPiArCS5jbWRyZWdfY3BzbV9lbmFibGUJPSBNQ0lfQ1BTTV9TVE0zMl9FTkFC
+TEUsCj4gKwkuY21kcmVnX2xyc3BfY3JjCT0gTUNJX0NQU01fU1RNMzJfTFJTUF9DUkMsCj4gKwku
+Y21kcmVnX3Nyc3BfY3JjCT0gTUNJX0NQU01fU1RNMzJfU1JTUF9DUkMsCj4gKwkuY21kcmVnX3Ny
+c3AJCT0gTUNJX0NQU01fU1RNMzJfU1JTUCwKPiArCS5jbWRyZWdfc3RvcAkJPSBNQ0lfQ1BTTV9T
+VE0zMl9DTURTVE9QLAo+ICsJLmRhdGFfY21kX2VuYWJsZQk9IE1DSV9DUFNNX1NUTTMyX0NNRFRS
+QU5TLAo+ICsJLmlycV9waW9fbWFzawkJPSBNQ0lfSVJRX1BJT19TVE0zMl9NQVNLLAo+ICsJLmRh
+dGFjdHJsX2ZpcnN0CQk9IHRydWUsCj4gKwkuZGF0YWNudF91c2VsZXNzCT0gdHJ1ZSwKPiArCS5k
+YXRhbGVuZ3RoX2JpdHMJPSAyNSwKPiArCS5kYXRhY3RybF9ibG9ja3N6CT0gMTQsCj4gKwkuZGF0
+YWN0cmxfYW55X2Jsb2Nrc3oJPSB0cnVlLAo+ICsJLnN0bTMyX2lkbWFic2l6ZV9tYXNrCT0gR0VO
+TUFTSygxNiwgNSksCj4gKwkuZG1hX2xsaQkJPSB0cnVlLAo+ICsJLmJ1c3lfdGltZW91dAkJPSB0
+cnVlLAoKSSBmb3JnZXQgImJ1c3lfZGV0ZWN0CQk9IHRydWUsIiBwcm9wZXJ0eQpJIGFkZCB0aGlz
+IGluIG5leHQgcGF0Y2ggc2V0Cgo+ICsJLmJ1c3lfZGV0ZWN0X2ZsYWcJPSBNQ0lfU1RNMzJfQlVT
+WUQwLAo+ICsJLmJ1c3lfZGV0ZWN0X21hc2sJPSBNQ0lfU1RNMzJfQlVTWUQwRU5ETUFTSywKPiAr
+CS5pbml0CQkJPSBzZG1tY192YXJpYW50X2luaXQsCj4gK307Cj4gKwo+ICAgc3RhdGljIHN0cnVj
+dCB2YXJpYW50X2RhdGEgdmFyaWFudF9xY29tID0gewo+ICAgCS5maWZvc2l6ZQkJPSAxNiAqIDQs
+Cj4gICAJLmZpZm9oYWxmc2l6ZQkJPSA4ICogNCwKPiBAQCAtMjM0Myw2ICsyMzY4LDExIEBAIHN0
+YXRpYyBjb25zdCBzdHJ1Y3QgYW1iYV9pZCBtbWNpX2lkc1tdID0gewo+ICAgCQkubWFzawk9IDB4
+ZjBmZmZmZmYsCj4gICAJCS5kYXRhCT0gJnZhcmlhbnRfc3RtMzJfc2RtbWMsCj4gICAJfSwKPiAr
+CXsKPiArCQkuaWQgICAgID0gMHgwMDI1MzE4MCwKPiArCQkubWFzawk9IDB4ZjBmZmZmZmYsCj4g
+KwkJLmRhdGEJPSAmdmFyaWFudF9zdG0zMl9zZG1tY3YyLAo+ICsJfSwKPiAgIAkvKiBRdWFsY29t
+bSB2YXJpYW50cyAqLwo+ICAgCXsKPiAgIAkJLmlkICAgICA9IDB4MDAwNTExODAsCj4gCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
