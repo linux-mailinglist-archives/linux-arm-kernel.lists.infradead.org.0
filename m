@@ -2,90 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6970F1599B4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 20:26:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B162D1599B9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 20:26:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o0Kt6J8PdbdrWdhaMUajJawWMFdjktfRJbkFUVU++tA=; b=kZesoX4GW5hwZP
-	N4B+x3PFihnn23/DKqpIUVHiNyDni9e8hhRMIbyNISNwTFgUFGlxaJmWrjGRfBaqLXytUk9xSGT7v
-	kZFuA4xRrZo9o4Y0NCbuq/CCVbZ/OPxvthNTrkJZ3ot8N7kOelQYxhrWKfAO92FNHhvQ2Crfx5gQC
-	7ighKSnvRxVXT8LmUStQDTRBZMdnXNLZLtlGp6PmmtxX6ZH6MfLoK/llwZRu3aME8tFgnIMqFj/8M
-	MTI2s3wqVNwyl87vdvRw1GlFXSeUI/ThK90CeKiRS7F+zQzQFUQw6BSQI6DUqEnE3GWH6/fYo1yu7
-	dIE6bBMYlz1iVwY4bmTA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=55b639mWBT12yq68+6LiKC4skvqsOnX8VKcHlzt4um0=; b=L0cOTXm/2U/iJv
+	IzieBOeSEv4nTaAXHCpAS/up11Lly25P5nN+kK5BgtYQ0a894K++8ED1fcDyiCKttLACZO1xJeTQU
+	IMuCi/vS1oVYbhacMyxEo6FSUznqC6fJThoW5NvpwImt/04kTyVk3jl2eHkNmaqWYgNozRpuXiKBR
+	z3mF2hxiSoVsgs9S/lCKoeFcWWJxTjFbCW+bbYPrzITT+Okm8yohE+hePTLeL9Z/CeI3xvTPoOK/4
+	xZXvh3Dtz5GXeTkQ3plpT513tizp1lFA93GPTM35jC2yXNTuBAPx5NBH3tQTrHExYfgykDMd5LiFt
+	iQ+c7G/MsqFQW7ono6sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1bAT-0006Ob-Lq; Tue, 11 Feb 2020 19:25:57 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1bAM-0006Nm-EN
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 19:25:51 +0000
-Received: by mail-pl1-x642.google.com with SMTP id e8so4654177plt.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 11:25:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=Fduhzb+WwBefc5G2IiZw7jkFkPhFvQRZKGxZZqFDo/E=;
- b=aBFZgI1bEVFMDfd8bvtXh9AZ1Mze2/1St6L/4BVij/mXj+0ZVWJe/BBz62kvdV/PUy
- KBlDmWnFixMHuEJ2x57jhZe2RZwo4KxOOAhGPDQppATODztQCUF1bGUHqwB2F+7dyFEs
- eKbWf5MArG16cSHqLbOgFxRg8G+4rPIDu1A8c=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=Fduhzb+WwBefc5G2IiZw7jkFkPhFvQRZKGxZZqFDo/E=;
- b=QGzH7PUCu4dWwFhZZYNElH5OlqZ4VS43m7qnkieZXdGkcWLjfoE2C6UifhkcFK1AdY
- KSt6bFHUfsIdoX5JGg0kFtGbtt696CRgl2MK8778MZle3Jvzl9P+YVKMEOrUqvRJPp4r
- HVQstQYqXadfhA5O1iSC9GYTYvZZOz+HA709M2K/3gPAj9geAVf7vWhJVS+Xr99UsQU1
- p4C8Hr7tZGkgC/+ieZSEflDjjtSfb4uofL2dgfv8hfNWdlbdApfSRPaLt1RDMxYMpJtE
- 73ogzL2RXnv4nOKNxyK6F7vGNCyIvEbcKeWhFHxXMSekFkA2bg9vSOjlnLEvUSkZBfoD
- AXUQ==
-X-Gm-Message-State: APjAAAUQ6sPv7r6h3PZS/BjiDFgICJTjLf16FhA5xAj0L/fHnR2rowpS
- lRUkq6yyDORhrr5hNLT6PkIh2g==
-X-Google-Smtp-Source: APXvYqzYyVOg7uqgSBmTXebLQ5IGOoof6bohkjL6i/HNSEw99SG6fXpTLlzi3kbK2a4VrLpxXNd1Pg==
-X-Received: by 2002:a17:90a:b30b:: with SMTP id
- d11mr6814381pjr.22.1581449148710; 
- Tue, 11 Feb 2020 11:25:48 -0800 (PST)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id 3sm4285511pjg.27.2020.02.11.11.25.47
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 11 Feb 2020 11:25:47 -0800 (PST)
-Date: Tue, 11 Feb 2020 11:25:46 -0800
-From: Kees Cook <keescook@chromium.org>
-To: shuah <shuah@kernel.org>
-Subject: Re: [PATCH v3 7/7] selftests/exec: Add READ_IMPLIES_EXEC tests
-Message-ID: <202002111124.0A334167@keescook>
-References: <20200210193049.64362-1-keescook@chromium.org>
- <20200210193049.64362-8-keescook@chromium.org>
- <4f8a5036-dc2a-90ad-5fc8-69560a5dd78e@kernel.org>
+	id 1j1bB7-0006vs-3T; Tue, 11 Feb 2020 19:26:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1bAx-0006v2-NG
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 19:26:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C397B1FB;
+ Tue, 11 Feb 2020 11:26:25 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4778B3F68F;
+ Tue, 11 Feb 2020 11:26:25 -0800 (PST)
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>
+Subject: [PATCH] arm64: entry: Annotate vector table and handlers as code
+Date: Tue, 11 Feb 2020 19:26:21 +0000
+Message-Id: <20200211192621.7705-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4f8a5036-dc2a-90ad-5fc8-69560a5dd78e@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_112550_483895_3DAA9535 
-X-CRM114-Status: GOOD (  15.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200211_112627_848262_87C1B43C 
+X-CRM114-Status: UNSURE (   8.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,39 +63,213 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jann Horn <jannh@google.com>, Catalin Marinas <catalin.marinas@arm.com>,
- x86@kernel.org, Hector Marco-Gisbert <hecmargi@upv.es>,
- Russell King <linux@armlinux.org.uk>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Jason Gunthorpe <jgg@mellanox.com>,
- linux-kselftest@vger.kernel.org, kernel-hardening@lists.openwall.com,
- Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 11, 2020 at 11:11:21AM -0700, shuah wrote:
-> On 2/10/20 12:30 PM, Kees Cook wrote:
-> > In order to check the matrix of possible states for handling
-> > READ_IMPLIES_EXEC across native, compat, and the state of PT_GNU_STACK,
-> > add tests for these execution conditions.
-> > 
-> > Signed-off-by: Kees Cook <keescook@chromium.org>
-> 
-> No issues for this to go through tip.
-> 
-> A few problems to fix first. This fails to compile when 32-bit libraries
-> aren't installed. It should fail the 32-bit part and run other checks.
+In an effort to clarify and simplify the annotation of assembly
+functions new macros have been introduced. These replace ENTRY and
+ENDPROC with two different annotations for normal functions and those
+with unusual calling conventions. The vector table and handlers aren't
+normal C style code so should be annotated as CODE.
 
-Do you mean the Makefile should detect the missing compat build deps and
-avoid building them? Testing compat is pretty important to this test, so
-it seems like missing the build deps causing the build to fail is the
-correct action here. This is likely true for the x86/ selftests too.
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ arch/arm64/kernel/entry.S | 76 +++++++++++++++++++--------------------
+ 1 file changed, 38 insertions(+), 38 deletions(-)
 
-What would you like this to do?
-
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 9461d812ae27..1454f3ea2e2e 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -465,7 +465,7 @@ alternative_endif
+ 	.pushsection ".entry.text", "ax"
+ 
+ 	.align	11
+-ENTRY(vectors)
++SYM_CODE_START(vectors)
+ 	kernel_ventry	1, sync_invalid			// Synchronous EL1t
+ 	kernel_ventry	1, irq_invalid			// IRQ EL1t
+ 	kernel_ventry	1, fiq_invalid			// FIQ EL1t
+@@ -492,7 +492,7 @@ ENTRY(vectors)
+ 	kernel_ventry	0, fiq_invalid, 32		// FIQ 32-bit EL0
+ 	kernel_ventry	0, error_invalid, 32		// Error 32-bit EL0
+ #endif
+-END(vectors)
++SYM_CODE_END(vectors)
+ 
+ #ifdef CONFIG_VMAP_STACK
+ 	/*
+@@ -534,57 +534,57 @@ __bad_stack:
+ 	ASM_BUG()
+ 	.endm
+ 
+-el0_sync_invalid:
++SYM_CODE_START_LOCAL(el0_sync_invalid)
+ 	inv_entry 0, BAD_SYNC
+-ENDPROC(el0_sync_invalid)
++SYM_CODE_END(el0_sync_invalid)
+ 
+-el0_irq_invalid:
++SYM_CODE_START_LOCAL(el0_irq_invalid)
+ 	inv_entry 0, BAD_IRQ
+-ENDPROC(el0_irq_invalid)
++SYM_CODE_END(el0_irq_invalid)
+ 
+-el0_fiq_invalid:
++SYM_CODE_START_LOCAL(el0_fiq_invalid)
+ 	inv_entry 0, BAD_FIQ
+-ENDPROC(el0_fiq_invalid)
++SYM_CODE_END(el0_fiq_invalid)
+ 
+-el0_error_invalid:
++SYM_CODE_START_LOCAL(el0_error_invalid)
+ 	inv_entry 0, BAD_ERROR
+-ENDPROC(el0_error_invalid)
++SYM_CODE_END(el0_error_invalid)
+ 
+ #ifdef CONFIG_COMPAT
+-el0_fiq_invalid_compat:
++SYM_CODE_START_LOCAL(el0_fiq_invalid_compat)
+ 	inv_entry 0, BAD_FIQ, 32
+-ENDPROC(el0_fiq_invalid_compat)
++SYM_CODE_END(el0_fiq_invalid_compat)
+ #endif
+ 
+-el1_sync_invalid:
++SYM_CODE_START_LOCAL(el1_sync_invalid)
+ 	inv_entry 1, BAD_SYNC
+-ENDPROC(el1_sync_invalid)
++SYM_CODE_END(el1_sync_invalid)
+ 
+-el1_irq_invalid:
++SYM_CODE_START_LOCAL(el1_irq_invalid)
+ 	inv_entry 1, BAD_IRQ
+-ENDPROC(el1_irq_invalid)
++SYM_CODE_END(el1_irq_invalid)
+ 
+-el1_fiq_invalid:
++SYM_CODE_START_LOCAL(el1_fiq_invalid)
+ 	inv_entry 1, BAD_FIQ
+-ENDPROC(el1_fiq_invalid)
++SYM_CODE_END(el1_fiq_invalid)
+ 
+-el1_error_invalid:
++SYM_CODE_START_LOCAL(el1_error_invalid)
+ 	inv_entry 1, BAD_ERROR
+-ENDPROC(el1_error_invalid)
++SYM_CODE_END(el1_error_invalid)
+ 
+ /*
+  * EL1 mode handlers.
+  */
+ 	.align	6
+-el1_sync:
++SYM_CODE_START_LOCAL_NOALIGN(el1_sync)
+ 	kernel_entry 1
+ 	mov	x0, sp
+ 	bl	el1_sync_handler
+ 	kernel_exit 1
+-ENDPROC(el1_sync)
++SYM_CODE_END(el1_sync)
+ 
+ 	.align	6
+-el1_irq:
++SYM_CODE_START_LOCAL_NOALIGN(el1_irq)
+ 	kernel_entry 1
+ 	gic_prio_irq_setup pmr=x20, tmp=x1
+ 	enable_da_f
+@@ -639,42 +639,42 @@ alternative_else_nop_endif
+ #endif
+ 
+ 	kernel_exit 1
+-ENDPROC(el1_irq)
++SYM_CODE_END(el1_irq)
+ 
+ /*
+  * EL0 mode handlers.
+  */
+ 	.align	6
+-el0_sync:
++SYM_CODE_START_LOCAL_NOALIGN(el0_sync)
+ 	kernel_entry 0
+ 	mov	x0, sp
+ 	bl	el0_sync_handler
+ 	b	ret_to_user
+-ENDPROC(el0_sync)
++SYM_CODE_END(el0_sync)
+ 
+ #ifdef CONFIG_COMPAT
+ 	.align	6
+-el0_sync_compat:
++SYM_CODE_START_LOCAL_NOALIGN(el0_sync_compat)
+ 	kernel_entry 0, 32
+ 	mov	x0, sp
+ 	bl	el0_sync_compat_handler
+ 	b	ret_to_user
+-ENDPROC(el0_sync_compat)
++SYM_CODE_END(el0_sync_compat)
+ 
+ 	.align	6
+-el0_irq_compat:
++SYM_CODE_START_LOCAL_NOALIGN(el0_irq_compat)
+ 	kernel_entry 0, 32
+ 	b	el0_irq_naked
+-ENDPROC(el0_irq_compat)
++SYM_CODE_END(el0_irq_compat)
+ 
+-el0_error_compat:
++SYM_CODE_START_LOCAL_NOALIGN(el0_error_compat)
+ 	kernel_entry 0, 32
+ 	b	el0_error_naked
+-ENDPROC(el0_error_compat)
++SYM_CODE_END(el0_error_compat)
+ #endif
+ 
+ 	.align	6
+-el0_irq:
++SYM_CODE_START_LOCAL_NOALIGN(el0_irq)
+ 	kernel_entry 0
+ el0_irq_naked:
+ 	gic_prio_irq_setup pmr=x20, tmp=x0
+@@ -696,9 +696,9 @@ el0_irq_naked:
+ 	bl	trace_hardirqs_on
+ #endif
+ 	b	ret_to_user
+-ENDPROC(el0_irq)
++SYM_CODE_END(el0_irq)
+ 
+-el1_error:
++SYM_CODE_START_LOCAL(el1_error)
+ 	kernel_entry 1
+ 	mrs	x1, esr_el1
+ 	gic_prio_kentry_setup tmp=x2
+@@ -706,9 +706,9 @@ el1_error:
+ 	mov	x0, sp
+ 	bl	do_serror
+ 	kernel_exit 1
+-ENDPROC(el1_error)
++SYM_CODE_END(el1_error)
+ 
+-el0_error:
++SYM_CODE_START_LOCAL(el0_error)
+ 	kernel_entry 0
+ el0_error_naked:
+ 	mrs	x25, esr_el1
+@@ -720,7 +720,7 @@ el0_error_naked:
+ 	bl	do_serror
+ 	enable_da_f
+ 	b	ret_to_user
+-ENDPROC(el0_error)
++SYM_CODE_END(el0_error)
+ 
+ /*
+  * Ok, we need to do extra processing, enter the slow path.
 -- 
-Kees Cook
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
