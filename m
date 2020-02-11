@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0750C1593C5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:51:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 083DF1593CE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 16:51:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=+jG9qdhUjNPXz6bvGL9J+JJbg7K1M5PvU4Iw67JQ5FU=; b=Dyw
-	5veBh2Kqx/4FVnOa+PVVmpKm/lwptELcb6OD2TNN1VHhjAVFB7ZU1DoEiqsNPrJykBF0Zh1UMDuKU
-	kl/GUZeZKZHzGvB3IdoYoiRHPIvotJqcTo23Ff1e1T1hmB2ZB9q29sGLBkDb9ABkjIK/z9i6IZfGn
-	Uh48k/qCnBy4S/d2m+ippYL6KcGerFlRqq4uZRksoUlpFx91Iuyx65tACnGPS10mckm3qisfQpbgN
-	LNhLGzyBEwbW6PXPHV4FpyBdZ+GbgezEaw3k6lg6/ZBbxMpX+7sF3DVMw6rG/zmR2i8yHroG+AymS
-	P0oKQB+lkUZTiET2e4Pe15TlG7Th1VA==;
+	References:List-Owner; bh=Ue/EmIwMw07QYDAlsStNpM2E4s25IrfiENnuKcqi9uM=; b=kUb
+	jg4EWTarbP52fInt8Ot+COnuSWowFDJMVA036m+W+gIEbQ7EKCMMBnzoZv7gSqq0qSiFK6lvdIVJW
+	UDc4XA2hctcUllZpF0urDmllbAUhrr25dNzn2NQlb9nRouyweAXqFj+UAWJ4Pp3sE1aSDu3mxFMdl
+	tYfllOK5lG6pG0gNp9sOFM1MzvwWAwjLjdBrV8l5l9JRAAc/bURw4j5/gwWoJdsILJMCBvH75/OZ6
+	4bDBHl2qDZUtX5a3SNpU4UEcbERqdg1eukDwvSviRTo5kTrHc+ffz9uh6V2RO3HH90ejvOjBHDYuv
+	1OYhbztBRtLx/u56JeBLeMF20At1lyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Xoh-0005rr-HT; Tue, 11 Feb 2020 15:51:15 +0000
+	id 1j1Xox-0006AK-7P; Tue, 11 Feb 2020 15:51:31 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1XnB-0003Xc-To
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 15:49:43 +0000
+ id 1j1XnE-0003Xc-6Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 15:49:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 236ED113E;
- Tue, 11 Feb 2020 07:49:41 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7843713A1;
+ Tue, 11 Feb 2020 07:49:43 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9BFE13F68E;
- Tue, 11 Feb 2020 07:49:40 -0800 (PST)
-Date: Tue, 11 Feb 2020 15:49:39 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F2AF73F68E;
+ Tue, 11 Feb 2020 07:49:42 -0800 (PST)
+Date: Tue, 11 Feb 2020 15:49:41 +0000
 From: Mark Brown <broonie@kernel.org>
 To: Olivier Moysan <olivier.moysan@st.com>
-Subject: Applied "ASoC: stm32: spdifrx: manage error when getting reset
+Subject: Applied "ASoC: stm32: sai: manage error when getting reset
  controller" to the asoc tree
-In-Reply-To: <20200203100814.22944-3-olivier.moysan@st.com>
-Message-Id: <applied-20200203100814.22944-3-olivier.moysan@st.com>
+In-Reply-To: <20200203100814.22944-2-olivier.moysan@st.com>
+Message-Id: <applied-20200203100814.22944-2-olivier.moysan@st.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_074942_033398_0AD33C38 
-X-CRM114-Status: GOOD (  15.78  )
+X-CRM114-CacheID: sfid-20200211_074944_301918_00DFF0E8 
+X-CRM114-Status: GOOD (  16.37  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -76,7 +76,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: stm32: spdifrx: manage error when getting reset controller
+   ASoC: stm32: sai: manage error when getting reset controller
 
 has been applied to the asoc tree at
 
@@ -101,31 +101,30 @@ to this mail.
 Thanks,
 Mark
 
-From 7889c0082e6400ae5d07345e5573548d0999b840 Mon Sep 17 00:00:00 2001
+From 028476c861e3eb660d8d104ef39fccb34c04a0d5 Mon Sep 17 00:00:00 2001
 From: Olivier Moysan <olivier.moysan@st.com>
-Date: Mon, 3 Feb 2020 11:08:10 +0100
-Subject: [PATCH] ASoC: stm32: spdifrx: manage error when getting reset
- controller
+Date: Mon, 3 Feb 2020 11:08:09 +0100
+Subject: [PATCH] ASoC: stm32: sai: manage error when getting reset controller
 
-Return an error when the SPDIFRX driver fails to get a reset controller.
+Return an error when the SAI driver fails to get a reset controller.
 Also add an error trace, except on probe defer status.
 
 Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
 Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
-Link: https://lore.kernel.org/r/20200203100814.22944-3-olivier.moysan@st.com
+Link: https://lore.kernel.org/r/20200203100814.22944-2-olivier.moysan@st.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/stm/stm32_spdifrx.c | 14 +++++++++-----
+ sound/soc/stm/stm32_sai.c | 14 +++++++++-----
  1 file changed, 9 insertions(+), 5 deletions(-)
 
-diff --git a/sound/soc/stm/stm32_spdifrx.c b/sound/soc/stm/stm32_spdifrx.c
-index 3769d9ce5dbe..9f80ddf34443 100644
---- a/sound/soc/stm/stm32_spdifrx.c
-+++ b/sound/soc/stm/stm32_spdifrx.c
-@@ -978,12 +978,16 @@ static int stm32_spdifrx_probe(struct platform_device *pdev)
- 		return ret;
- 	}
+diff --git a/sound/soc/stm/stm32_sai.c b/sound/soc/stm/stm32_sai.c
+index e20267504b16..b824ba6cb028 100644
+--- a/sound/soc/stm/stm32_sai.c
++++ b/sound/soc/stm/stm32_sai.c
+@@ -197,12 +197,16 @@ static int stm32_sai_probe(struct platform_device *pdev)
+ 		return sai->irq;
  
+ 	/* reset */
 -	rst = devm_reset_control_get_exclusive(&pdev->dev, NULL);
 -	if (!IS_ERR(rst)) {
 -		reset_control_assert(rst);
@@ -142,8 +141,8 @@ index 3769d9ce5dbe..9f80ddf34443 100644
 +	udelay(2);
 +	reset_control_deassert(rst);
  
- 	ret = devm_snd_soc_register_component(&pdev->dev,
- 					      &stm32_spdifrx_component,
+ 	/* Enable peripheral clock to allow register access */
+ 	ret = clk_prepare_enable(sai->pclk);
 -- 
 2.20.1
 
