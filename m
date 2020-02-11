@@ -2,109 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF11C158A71
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 08:32:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50D76158A94
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 08:44:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LcfEJxCWcRt6kaZBUUTtk2trWV/DoMncm26saXJy2YA=; b=T5B4yLq+EhnkBp
-	+XAdYP7e/CLneb2USFPDOmorAlIwNLDg0FStJIhz+dzJuFHkbodCI4q8jyjHkJhIZFnRsIRzsur4u
-	ISH2qNHPey9vqurHVIs6r1pWeqGhJIf/98Ns8bU6zmSiDh8Rxu9D+lv2anrPNuTW/1ot2+qlGHeUz
-	U6SDDVj7PQu9d8o8nQi6/ni52MqodNsg2B0oEDMYZwxqbeu+bnX92WCNQ2W+Soiajf4iih/mk6C2z
-	1TlPx1OmNxRNr8XvhwaYJm/zUF0/avwGF+nm3lzgCaFLyR+pZKGfZ7wjv48vzRL1Mx5rStWVzLvWp
-	PFi95bi4vDh2tGBcjcGw==;
+	List-Owner; bh=3c/0hfgA9wiyaC6L463KTmDKQOjD936sp1CL48wbuIA=; b=uply0uShynQMUe
+	f5TqTMlz5rEkk3f+dGFvk0w+0A4QUtyts59SrdMf6pm6ckW1QUIvJyVEq7F47vetLjsLsYGvRtVeZ
+	chBg4X8mG3906+p5nBN6Vcy+LZfHZ01PxoFXVXQPsWnoDb+cHW88QwxX2VO3ZXIrHS/dIiVPMQORk
+	+/OiYBV++DWczhmz7qt+o5zzgH5X3JBh3fXfbQy5cQMXm48FyVwFvkEgfPI4mbJ+43F0prx8XXVRe
+	9iqEAWHHI5pYRXgBaliPeWq6Z4UIucKSV3jRkgE6n1kI14YjTyBiqiPgJSNx9oIk489cB0j7uUHW+
+	3ubxJCtEpnTlbQTZfaYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Q2I-00048n-PP; Tue, 11 Feb 2020 07:32:46 +0000
-Received: from mail-db8eur05on2050.outbound.protection.outlook.com
- ([40.107.20.50] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1j1QDS-0007mt-EG; Tue, 11 Feb 2020 07:44:18 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Q2B-00048B-G6
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 07:32:41 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=N0FWlYkNBZPT6X0zQkSGF8tiaojr2nyoChqMJA2P9gK+anHYxnlpbr+aAO2NtDOpdqyvYweGoeiiGjJILLqP/3hKCBxJe7xT8P67mcTT4jEm9VhaJsiDNVdCSAE8ZVEIf1aR48weLysJHL4Wfoy5YON7LacvnSF2nBrVquh9Ulyv0DXKLDWtu5SE7MYRrYCJx4tXcRnXWqi+KAjcq0+zsNHH0ScJ3mg05Pl7CVlhUHYwq7A0+5QGilxYAn4YQaYDq2LChueyuIPE9HHn3N+Exiq/lGJXAL+4hvbkbhmAJEIDkkjyJCXBbnEiFB6OXa0Cvl9mfh5wytaTRTnZrHHD2Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2EeDTQ6aeQpcHFHBjnweAvI4HrbzhWPqXBZwRMNSMG4=;
- b=S230Ri6IZEc0Y5n48Pv+qMHjWc5CSdoQAGMsLKluAZT+NQDO9/C5INIxY0yIRhRRAstsVHKzhdKBgr7ftQ9pLbSCUdSaF6A2kdAaYp3qN2s48tPC6pASskOH7AhMF7PjoizpyuWz2T7lLGoY3u3PwcAHIXhzojj87VNlgAQ2WO1ESU0j8juoWzK4OYYgna2sQhTGR2AzVDxj7sNOoIxk/KlnpJW2YVASAVCw19EzyxJ6wlNw+bNNT3KwyWR7YVZm9B7Zp4mgWL5pp2/G4d6q9G/kr9N7ugFiNGec1uX1ozoHH7WRQ5c5dSe8mRJ+2m+4DBJa4lFtBuMVFWOzaztxkA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=2EeDTQ6aeQpcHFHBjnweAvI4HrbzhWPqXBZwRMNSMG4=;
- b=YKnxBZtEwuAaSGMcrkrcxv3DiwfWodradLzaMGoOYfPB0MjOPh2KFlC/2fOyeUGG8X+EpBBODuRoTwrtPZVnArRqPx7z2jClrSeGcnGvEr/n0zL8cUEyyeF5GQiOtU5MlXke9JepbTDAvc5NO6yyOzKC49xISqIfR9qe+jk44DI=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=abel.vesa@nxp.com; 
-Received: from AM6PR04MB4599.eurprd04.prod.outlook.com (20.177.37.82) by
- AM6PR04MB6712.eurprd04.prod.outlook.com (10.255.168.24) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.23; Tue, 11 Feb 2020 07:18:23 +0000
-Received: from AM6PR04MB4599.eurprd04.prod.outlook.com
- ([fe80::8c62:b251:ffe3:af8c]) by AM6PR04MB4599.eurprd04.prod.outlook.com
- ([fe80::8c62:b251:ffe3:af8c%5]) with mapi id 15.20.2707.030; Tue, 11 Feb 2020
- 07:18:23 +0000
-Date: Tue, 11 Feb 2020 09:18:22 +0200
-From: Abel Vesa <abel.vesa@nxp.com>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH 1/2] clk: imx8mm: Fix the CLKO1 source select list
-Message-ID: <20200211071822.z62jkodywyohi5c6@fsr-ub1664-175>
-References: <20200211030813.13992-1-festevam@gmail.com>
-Content-Disposition: inline
-In-Reply-To: <20200211030813.13992-1-festevam@gmail.com>
-User-Agent: NeoMutt/20180622
-X-ClientProxiedBy: AM5PR0701CA0067.eurprd07.prod.outlook.com
- (2603:10a6:203:2::29) To AM6PR04MB4599.eurprd04.prod.outlook.com
- (2603:10a6:20b:15::18)
+ id 1j1QDK-0007lT-Kh; Tue, 11 Feb 2020 07:44:12 +0000
+X-UUID: 9cb0417af0364f938a6ae87a9aab0423-20200210
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=WF9g4PEqWlupM4phER8lYwnueeO3pdMwX2AAwBSYAFg=; 
+ b=FTelS1W2ak4xC5AmE2V0wcsa9Rda4LaM3ywcKXJdrshuDKsgoWpUffDK8ongubWop0DZZD89r41mPLBabbicUdGz1XTyBesSGr6AGVuvLGJDQFCuq/5Hr0x6pi+xAtPDBPARppiz6WNEQmlpjI2n/Fc7u+HsodFyZXy+e03yK3o=;
+X-UUID: 9cb0417af0364f938a6ae87a9aab0423-20200210
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <roger.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 730199669; Mon, 10 Feb 2020 23:44:02 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 10 Feb 2020 23:36:15 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Feb 2020 15:35:03 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 11 Feb 2020 15:36:19 +0800
+Message-ID: <1581406566.14120.46.camel@mtksdaap41>
+Subject: Re: [PATCH v6 1/3] dt-bindings: soc: add mtk svs dt-bindings
+From: Roger Lu <roger.lu@mediatek.com>
+To: Rob Herring <robh@kernel.org>, Nicolas Boichat <drinkcat@chromium.org>
+Date: Tue, 11 Feb 2020 15:36:06 +0800
+In-Reply-To: <CAL_JsqLnVEhvAh_8DfGWRZa+MdPRpXc9sWEQ6-3HQAeUfvkOSg@mail.gmail.com>
+References: <20200107070154.1574-1-roger.lu@mediatek.com>
+ <20200107070154.1574-2-roger.lu@mediatek.com>
+ <20200108203829.GA18987@bogus>
+ <CANMq1KBu-gFy701BgFcjEwyhV9GgCCU2mkT9c8LviOJKBF30UA@mail.gmail.com>
+ <CAL_JsqLnVEhvAh_8DfGWRZa+MdPRpXc9sWEQ6-3HQAeUfvkOSg@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Received: from localhost (89.37.124.34) by
- AM5PR0701CA0067.eurprd07.prod.outlook.com (2603:10a6:203:2::29) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2729.9 via Frontend
- Transport; Tue, 11 Feb 2020 07:18:23 +0000
-X-Originating-IP: [89.37.124.34]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: ed9024f0-3fca-4b58-52e4-08d7aec2946a
-X-MS-TrafficTypeDiagnostic: AM6PR04MB6712:|AM6PR04MB6712:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM6PR04MB6712A50A5D773730ECAE8945F6180@AM6PR04MB6712.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:3631;
-X-Forefront-PRVS: 0310C78181
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(7916004)(4636009)(346002)(376002)(366004)(396003)(39860400002)(136003)(189003)(199004)(53546011)(6496006)(26005)(4326008)(186003)(16526019)(44832011)(81156014)(81166006)(6486002)(6916009)(316002)(8936002)(86362001)(956004)(5660300002)(8676002)(2906002)(478600001)(9686003)(52116002)(66556008)(66946007)(66476007)(1076003)(33716001)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB6712;
- H:AM6PR04MB4599.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: OUMyNeCDT39ikt/eCvGxj32Jj7F3wC9QieqnNHWwUv4FHFK8MILz5R0nkwKbpLyxf5n5Alf5ZUrDSMaPVpS6RLBx05L/U6/pJBPtAiWhJiLtafMcMqVqXNE1JhMw4Ry1HOz0n3cZKMpgxs41PRJmbLL6Bp3bESsJv50t/q5SuPH2dnD+GJT+GegAG/HzfbKxn8M/0tuUdMNM1K6AFPFdxfNVLZF4/oe27aeClkZxU+zoqXJwIV6p16Rh3WYrwBwzoB2B4Di2N5w9ezuMDNRq5/zinpfsh34G36u80bEfO0fdRpOcvFrNngsLZODhw9KASOLxDxFXuDsMSRuR4tNYFEzfqu+nb34c6BvePygDOVhH2WPPsU5fJS2E3nEctFEDkanfpiwCGIehZe+6OcgCQsxahOn0dz6Lb7X4qEGd6IzV1k5xxxWC2PuEZPT+tUKkKhbd0z/tYcPu3Qef1Nu9BorlmEjCnZHR0rYyZ7mH+SX4vLo1NkaCl5AWUHC/g15a
-X-MS-Exchange-AntiSpam-MessageData: bVnDY++Qr1BugR5w0vQ/UcgHkh3qCPOinlNDIkMi6O0EslAQxCkfWq5H/f2J5o7KYckDzKCh6NYT94MLr6gNURjNgzMw1/I4tRCd1L5VrXp1NCiUi2/ZnIfEfYmUNAxegZPYvVrTl5lJHlWqjzzLNA==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ed9024f0-3fca-4b58-52e4-08d7aec2946a
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Feb 2020 07:18:23.5157 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: hSLJ9VjjFOfrYaXU+kvNn0DYPUDTTv/YIrJyDGWQtIi41FYEqImeWYTPyNh64SMCwofvU+3yfQJCDcNdeIcD8w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6712
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_233239_659703_C0ED7CCA 
-X-CRM114-Status: GOOD (  15.04  )
+X-CRM114-CacheID: sfid-20200210_234410_691340_30C59F27 
+X-CRM114-Status: GOOD (  31.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.20.50 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -112,7 +72,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,58 +86,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- shawnguo@kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
+ Angus Lin =?UTF-8?Q?=28=E6=9E=97=E7=91=9B=E8=B1=AA=29?=
+ <Angus.Lin@mediatek.com>, Kevin Hilman <khilman@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, jamesjj.liao@mediatek.com,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ lkml <linux-kernel@vger.kernel.org>,
+ HenryC Chen =?UTF-8?Q?=28=E9=99=B3=E5=BB=BA=E8=B1=AA=29?=
+ <HenryC.Chen@mediatek.com>, YT
+ Lee =?UTF-8?Q?=28=E6=9D=8E=E4=BB=B0=E5=93=B2=29?= <yt.lee@mediatek.com>,
+ Fan Chen =?UTF-8?Q?=28=E9=99=B3=E5=87=A1=29?= <fan.chen@mediatek.com>,
+ Devicetree
+ List <devicetree@vger.kernel.org>, "moderated list:ARM/Mediatek SoC
+ support" <linux-mediatek@lists.infradead.org>,
+ Xiaoqing Liu =?UTF-8?Q?=28=E5=88=98=E6=99=93=E5=BA=86=29?=
+ <Xiaoqing.Liu@mediatek.com>,
+ Charles Yang =?UTF-8?Q?=28=E6=A5=8A=E4=BA=8E=E9=80=B2=29?=
+ <Charles.Yang@mediatek.com>, Matthias
+ Brugger <matthias.bgg@gmail.com>, Nishanth Menon <nm@ti.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20-02-11 00:08:12, Fabio Estevam wrote:
-> The CLKO1 clock source select list is the following as per the i.MX8MM
-> Reference Manual (put in increasing order):
-> 
-> 000 - 24M_REF_CLK
-> 001 - SYSTEM_PLL1_CLK
-> 010 - None
-> 011 - SYSTEM_PLL1_DIV4
-> 100 - AUDIO_PLL2_CLK
-> 101 - SYSTEM_PLL2_DIV2
-> 110 - VPU_PLL_CLK
-> 111 - SYSTEM_PLL1_DIV10
-> 
-> Fix it accordingly.
-> 
-> Fixes: ba5625c3e272 ("clk: imx: Add clock driver support for imx8mm")
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+Hi Rob & Nicolas,
 
-For both patches:
+Sorry for the late reply.
 
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+On Mon, 2020-01-13 at 23:50 +0800, Rob Herring wrote:
+> On Mon, Jan 13, 2020 at 12:44 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
+> >
+> > On Thu, Jan 9, 2020 at 4:38 AM Rob Herring <robh@kernel.org> wrote:
+> > >
+> > > On Tue, Jan 07, 2020 at 03:01:52PM +0800, Roger Lu wrote:
+> > > > Document the binding for enabling mtk svs on MediaTek SoC.
+> > > >
+> > > > Signed-off-by: Roger Lu <roger.lu@mediatek.com>
+> > > > ---
+> > > >  .../devicetree/bindings/power/mtk-svs.txt     | 76 +++++++++++++++++++
+> > > >  1 file changed, 76 insertions(+)
+> > > >  create mode 100644 Documentation/devicetree/bindings/power/mtk-svs.txt
+> > > >
+> > > > diff --git a/Documentation/devicetree/bindings/power/mtk-svs.txt b/Documentation/devicetree/bindings/power/mtk-svs.txt
+> > > > new file mode 100644
+> > > > index 000000000000..9a3e81b9e1d2
+> > > > --- /dev/null
+> > > > +++ b/Documentation/devicetree/bindings/power/mtk-svs.txt
+> > > > @@ -0,0 +1,76 @@
+> > > > +* Mediatek Smart Voltage Scaling (MTK SVS)
+> > > > +
+> > > > +This describes the device tree binding for the MTK SVS controller (bank)
+> > > > +which helps provide the optimized CPU/GPU/CCI voltages. This device also
+> > > > +needs thermal data to calculate thermal slope for accurately compensate
+> > > > +the voltages when temperature change.
+> > > > +
+> > > > +Required properties:
+> > > > +- compatible:
+> > > > +  - "mediatek,mt8183-svs" : For MT8183 family of SoCs
+> > > > +- reg: Address range of the MTK SVS controller.
+> > > > +- interrupts: IRQ for the MTK SVS controller.
+> > > > +- clocks, clock-names: Clocks needed for the svs hardware. required
+> > > > +                       clocks are:
+> > > > +                    "main": Main clock for svs controller to work.
+> > > > +- nvmem-cells: Phandle to the calibration data provided by a nvmem device.
+> > > > +- nvmem-cell-names: Should be "svs-calibration-data" and "calibration-data"
+> > > > +
+> > > > +Subnodes:
+> > > > +- svs-cpu-little: SVS bank device node of little CPU
+> > > > +  compatible: "mediatek,mt8183-svs-cpu-little"
+> > > > +  operating-points-v2: OPP table hooked by SVS little CPU bank.
+> > > > +                    SVS will optimze this OPP table voltage part.
+> > > > +  vcpu-little-supply: PMIC buck of little CPU
+> > > > +- svs-cpu-big: SVS bank device node of big CPU
+> > > > +  compatible: "mediatek,mt8183-svs-cpu-big"
+> > > > +  operating-points-v2: OPP table hooked by SVS big CPU bank.
+> > > > +                    SVS will optimze this OPP table voltage part.
+> > > > +  vcpu-big-supply: PMIC buck of big CPU
+> > > > +- svs-cci: SVS bank device node of CCI
+> > > > +  compatible: "mediatek,mt8183-svs-cci"
+> > > > +  operating-points-v2: OPP table hooked by SVS CCI bank.
+> > > > +                    SVS will optimze this OPP table voltage part.
+> > > > +  vcci-supply: PMIC buck of CCI
+> > > > +- svs-gpu: SVS bank device node of GPU
+> > > > +  compatible: "mediatek,mt8183-svs-gpu"
+> > > > +  operating-points-v2: OPP table hooked by SVS GPU bank.
+> > > > +                    SVS will optimze this OPP table voltage part.
+> > > > +  vgpu-supply: PMIC buck of GPU
+> > > > +
+> > > > +Example:
+> > > > +
+> > > > +     svs: svs@1100b000 {
+> > > > +             compatible = "mediatek,mt8183-svs";
+> > > > +             reg = <0 0x1100b000 0 0x1000>;
+> > > > +             interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW>;
+> > > > +             clocks = <&infracfg CLK_INFRA_THERM>;
+> > > > +             clock-names = "main_clk";
+> > > > +             nvmem-cells = <&svs_calibration>, <&thermal_calibration>;
+> > > > +             nvmem-cell-names = "svs-calibration-data", "calibration-data";
+> > > > +
+> > > > +             svs_cpu_little: svs-cpu-little {
+> > > > +                     compatible = "mediatek,mt8183-svs-cpu-little";
+> > > > +                     operating-points-v2 = <&cluster0_opp>;
+> > > > +                     vcpu-little-supply = <&mt6358_vproc12_reg>;
+> > > > +             };
+> > >
+> > > I don't think this is a good binding. This information already exists
+> > > elsewhere in the DT, so your driver should just look in those nodes.
+> > > For example the regulator can be in the cpu nodes or the OPP table
+> > > itself.
+> >
+> > Roger, if that helps, without changing any other binding, on 8183,
+> > basically you could have:
+> >  - svs-cpu-little: Add a handle to &cpu0 and get the regulator/opp
+> > table from it.
+> >  - svs-cpu-big: Handle to &cpu4
+> 
+> Why do you need those? Use the compatible of the cpus to determine big
+> and little cores. Or there's the cpu capacity property that could be
+> used instead.
+> 
+> >  - svs-cci: Handle to &cci
+> 
+> Is there more than 1 CCI? Just retrieve the node by the compatible.
+> There's no need to have nodes that simply serve as a collection of
+> data for some driver.
+> 
+> >  - svs-gpu: Handle to &gpu (BTW, it is expected that SVS would only
+> > apply to vgpu/mali regulator, and not vsram regulator?)
 
-> ---
->  drivers/clk/imx/clk-imx8mm.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+svs-gpu depends on vgpu power on for init (don't care vgpu_sram). After
+svs-gpu init is done, it doesn't need vgpu power on anymore. (vgpu can
+be turned off)
+
+Please allows me to introduce more about what svs-gpu device needs.
+1. It needs gpu opp table from "gpu node" and gpu_core2 power-domains
+from "gpu_core2 node". When svs-gpu has those resources, it turns on
+gpu_core2 power-domain for svs-gpu-hw to have power (for calculating)
+and svs-gpu-sw will update gpu opp table voltages' part.
+2. Therefore, if I retrieve gpu-related node from phandle or compatible,
+it means svs-gpu device in driver needs to attach two different gpu
+nodes for attaining gpu opp table and gpu_core2 power-domains. I think
+this architecture of svs-gpu confuses maintainer why it attaches two
+different nodes instead of having a device to describe what it needs.
+3. Is it acceptable to have a Linux device attaching two different
+nodes? If yes, could you guide us some APIs for one device to attach two
+nodes? I don't know how to implement it. Thanks.
+
+> >
+> > I'm not too sure how we'd fetch the right regulator name, however (for
+> > the first 3 the name is "proc", for the last one it's "mali"), maybe
+> > add a regulator-name list in the DT?
 > 
-> diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
-> index 2ed93fc25087..770cf2ae58aa 100644
-> --- a/drivers/clk/imx/clk-imx8mm.c
-> +++ b/drivers/clk/imx/clk-imx8mm.c
-> @@ -283,8 +283,8 @@ static const char *imx8mm_vpu_h1_sels[] = {"osc_24m", "vpu_pll_out", "sys_pll1_8
->  
->  static const char *imx8mm_dram_core_sels[] = {"dram_pll_out", "dram_alt_root", };
->  
-> -static const char *imx8mm_clko1_sels[] = {"osc_24m", "sys_pll1_800m", "osc_27m", "sys_pll1_200m", "audio_pll2_out",
-> -					 "vpu_pll", "sys_pll1_80m", };
-> +static const char *imx8mm_clko1_sels[] = {"osc_24m", "sys_pll1_800m", "dummy", "sys_pll1_200m",
-> +					  "audio_pll2_out", "sys_pll2_500m", "vpu_pll", "sys_pll1_80m", };
->  
->  static struct clk_hw_onecell_data *clk_hw_data;
->  static struct clk_hw **hws;
-> -- 
-> 2.17.1
+> To put this another way, write an SoC specific driver that understands
+> to some extent what exists in the SoC (and DT). I doubt something like
+> this is going to be generic across more than a few SoCs at most.
+
 > 
+> Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
