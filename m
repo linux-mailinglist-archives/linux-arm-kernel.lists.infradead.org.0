@@ -2,85 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 996B6158816
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 03:03:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 508A9158818
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 03:05:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=i6yIJrumqvpyByHUyGmpEHjP7BpB79qVA/TlBTKtYk0=; b=Jj7e5eVhmGJXUREsL5PbpEZQI
-	KLR4KtDANV29arRmaySEImjWGNdvuHLGy5vkd7E51RO8rcp8PtwoouWUcV14EGAH2xH1oRgmDiY4X
-	HZmcFJVJN2O3gQv4u66BiH+Cm9aIfDJHcsxbeb5llDoN+Sq1CjUihznx8vaKBsk6U4TNZ9iTiV0+e
-	FTTmTW1wPdXmuzZvvhh9JdtolzG9SUgq0w62GF2+QhEDS0NHJVAMke4331pfcnEpwQuZ2ciFJs2ZY
-	m8YvW3I9Sneuu3wH+RPvtJlkUQNPVkCkDnRsiFrt80nC0XqK9m314g36cGBF/2A9Z5eARhKVwYPdr
-	onQ2WNsvQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Cns4Yh2wWeEh9HghxUIpyN81WuEps0cMwl0T1UM51pM=; b=HrwKmJ3Unihlcr
+	qeRVXIKbMcHiYoHd0DGdWNGy9lUoDhvvIu+DmpL4Tr+pe/06r9DONLQ6xsYhsxGNIZ7Nofc4s4rTF
+	1qex52rpUbMo1MqToFtfftpar2JUDpy2SiFs92zYWsdBn6cTAyxt3MbRST4iys9WYq678THu5CS5H
+	2QTqqDDfdsDhDBv7LBQLxQBtBaziBpVrxstyoaqovT/w8WWmj/V9tvUSJQb7jp2vvAc8c8XZxIHGu
+	kt+vuYUQiw1RqKOErMqPcshtLcik6H5N6GX65/f8ZuodJpszyBpMyuxSmp9UQmWlwhjcWQnVaTLTU
+	n9tG1J6STAdoe0tTgEjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1KtF-0005uG-Qu; Tue, 11 Feb 2020 02:03:05 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1Kt7-0005tc-Nt
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 02:02:59 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581386573;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=VEtwvK69JMblOvObhHhhWP+N0CAD/J0ArqUV73a9llY=;
- b=KT1p/l9qiNlvj6ZhWag1VNCQENvoDFxawvOIH8E0uD6NWTipI0fVsfTSxUyI01qirqaI8V
- vPGz4v3WQf/Q3xqaYfR/KTJDziiCxjgjh5qoKwk+ynE6HwRfL1RvHtW5LVnPLjJNnLUIaC
- Sx/PhQd8qhMZAar7Kwazbti+YUHhmhg=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-16-kBFys6tZP4Kea8PPbEU8uA-1; Mon, 10 Feb 2020 21:02:50 -0500
-Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
- [10.5.11.13])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C693A477;
- Tue, 11 Feb 2020 02:02:48 +0000 (UTC)
-Received: from localhost.localdomain (vpn2-54-51.bne.redhat.com [10.64.54.51])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 2E88D87B2F;
- Tue, 11 Feb 2020 02:02:46 +0000 (UTC)
-Subject: Re: [PATCH] drivers/firmware/psci: Hide ACPI state during
- initialization
-From: Gavin Shan <gshan@redhat.com>
-To: linux-arm-kernel@lists.infradead.org
-References: <20200202230626.6598-1-gshan@redhat.com>
-Message-ID: <15169cd9-a22f-9ab2-b7e4-d050aee334cd@redhat.com>
-Date: Tue, 11 Feb 2020 13:02:44 +1100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+	id 1j1KvW-0007Vp-LF; Tue, 11 Feb 2020 02:05:26 +0000
+Received: from mg.richtek.com ([220.130.44.152])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1KvM-0007V8-1E
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 02:05:18 +0000
+X-MailGates: (flag:4,DYNAMIC,BADHELO,RELAY,NOHOST:PASS)(compute_score:DE
+ LIVER,40,3)
+Received: from 192.168.8.45
+ by mg.richtek.com with MailGates ESMTP Server V5.0(29549:0:AUTH_RELAY)
+ (envelope-from <jeff_chang@richtek.com>); Tue, 11 Feb 2020 10:04:43 +0800 (CST)
+Received: from ex1.rt.l (192.168.8.44) by ex2.rt.l (192.168.8.45) with
+ Microsoft SMTP Server (TLS) id 15.0.1497.2; Tue, 11 Feb 2020 10:04:42 +0800
+Received: from ex1.rt.l ([fe80::557d:30f0:a3f8:3efc]) by ex1.rt.l
+ ([fe80::557d:30f0:a3f8:3efc%15]) with mapi id 15.00.1497.000; Tue, 11 Feb
+ 2020 10:04:42 +0800
+From: =?iso-2022-jp?B?amVmZl9jaGFuZygbJEJEJUAkMkIbKEIp?=
+ <jeff_chang@richtek.com>
+To: Mark Brown <broonie@kernel.org>, Jeff Chang <richtek.jeff.chang@gmail.com>
+Subject: RE: [PATCH] ASoC: MT6660 update to 1.0.8_G
+Thread-Topic: [PATCH] ASoC: MT6660 update to 1.0.8_G
+Thread-Index: AQHV2w0GcMtTuyakxUCJKOCjmW3FI6gUSfWAgAD90+A=
+Date: Tue, 11 Feb 2020 02:04:42 +0000
+Message-ID: <a9895e583c9b47608aeb3e29d7852f47@ex1.rt.l>
+References: <1580787697-3041-1-git-send-email-richtek.jeff.chang@gmail.com>
+ <20200210185121.GC14166@sirena.org.uk>
+In-Reply-To: <20200210185121.GC14166@sirena.org.uk>
+Accept-Language: zh-TW, en-US
+Content-Language: zh-TW
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [192.168.94.128]
 MIME-Version: 1.0
-In-Reply-To: <20200202230626.6598-1-gshan@redhat.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-MC-Unique: kBFys6tZP4Kea8PPbEU8uA-1
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_180257_855074_B3EE6487 
-X-CRM114-Status: GOOD (  12.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200210_180516_336826_4855ACF4 
+X-CRM114-Status: GOOD (  10.87  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [220.130.44.152 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,48 +74,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, sudeep.holla@arm.com
+Cc: "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "tiwai@suse.com" <tiwai@suse.com>, "lgirdwood@gmail.com" <lgirdwood@gmail.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "perex@perex.cz" <perex@perex.cz>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-2022-jp"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Dear Mark:
 
-Hi Sudeep,
+Thanks for your replying.
 
-On Mon, Feb. 3, 2020, 11:45 a.m. UTC, Sudeep Holla wrote:
-> On Mon, Feb 03, 2020 at 10:06:26AM +1100, Gavin Shan wrote:
->> Either psci_dt_init() or psci_acpi_init() s called depends on ACPI
->> enablement state, which isn't so nice. In this case, two functions
->> have to be exported from PSCI module.
->>
+This INIT SETTING is always be set, and we don't want anyone to modify it.
 
-I missed your reply and sorry for late catchup.
+What should I do is just apply them to be hard code into the driver? I cannot use event a table to descript it like below?
 
-> I am confused, we don't export any functions as you mention and both
-> are __init functions which can't be exported.
+static const struct codec_reg_val e4_reg_inits[] = {
+        { MT6660_REG_WDT_CTRL, 0x80, 0x00 },
+        { MT6660_REG_SPS_CTRL, 0x01, 0x00 },
+        { MT6660_REG_AUDIO_IN2_SEL, 0x1c, 0x04 },
+        { MT6660_REG_RESV11, 0x0c, 0x00 },
+        { MT6660_REG_RESV31, 0x03, 0x03 },
+        { MT6660_REG_RESV40, 0x01, 0x00 },
+        { MT6660_REG_RESV0, 0x44, 0x04 },
+        { MT6660_REG_RESV19, 0xff, 0x82 },
+        { MT6660_REG_RESV17, 0x7777, 0x7273 },
+        { MT6660_REG_RESV16, 0x07, 0x03 },
+        { MT6660_REG_DRE_CORASE, 0xe0, 0x20 },
+        { MT6660_REG_ADDA_CLOCK, 0xff, 0x70 },
+        { MT6660_REG_RESV21, 0xff, 0x20 },
+        { MT6660_REG_DRE_THDMODE, 0xff, 0x40 },
+        { MT6660_REG_RESV23, 0xffff, 0x17f8 },
+        { MT6660_REG_PWM_CTRL, 0xff, 0x15 },
+        { MT6660_REG_ADC_USB_MODE, 0xff, 0x00 },
+        { MT6660_REG_PROTECTION_CFG, 0xff, 0x1d },
+        { MT6660_REG_HPF1_COEF, 0xffffffff, 0x7fdb7ffe },
+        { MT6660_REG_HPF2_COEF, 0xffffffff, 0x7fdb7ffe },
+        { MT6660_REG_SIG_GAIN, 0xff, 0x58 },
+        { MT6660_REG_RESV6, 0xff, 0xce },
+        { MT6660_REG_SIGMAX, 0xffff, 0x7fff },
+        { MT6660_REG_DA_GAIN, 0xffff, 0x0116 },
+        { MT6660_REG_TDM_CFG3, 0x1800, 0x0800 },
+        { MT6660_REG_DRE_CTRL, 0x1f, 0x07 },
+};
+
+Just hard coded??
+
+
+Thanks & BRs
+Jeff Chang
+Tel 886-3-5526789 Ext 2357
+14F, No. 8, Taiyuen 1st st., Zhubei City,
+Hsinchu County, Taiwan 30288
+
+
+
+-----Original Message-----
+From: Mark Brown [mailto:broonie@kernel.org]
+Sent: Tuesday, February 11, 2020 2:51 AM
+To: Jeff Chang <richtek.jeff.chang@gmail.com>
+Cc: lgirdwood@gmail.com; perex@perex.cz; tiwai@suse.com; matthias.bgg@gmail.com; alsa-devel@alsa-project.org; linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; jeff_chang(張世佳) <jeff_chang@richtek.com>
+Subject: Re: [PATCH] ASoC: MT6660 update to 1.0.8_G
+
+On Tue, Feb 04, 2020 at 11:41:37AM +0800, Jeff Chang wrote:
+> From: Jeff Chang <jeff_chang@richtek.com>
 >
+> 1. add parsing register initial table via device tree.
+> 2. add applying initial register value function at component driver.
 
-The words "export" here means "declared". Two functons (psci_{dt,acpi}_init())
-are declared and one of them is called depending on ACPI is enabled or not. If
-we hide the ACPI enablement state inside the driver/module, we just need to
-declare one function (psci_init()), to make the code a bit cleaner.
+OK, so there's still a problem with the whole concept of putting "initial register settings" in the device tree - this is clearly not idiomatic for an ASoC driver.  If there are machine specific settings that need to be done unconditionally (eg, values controlled by external passive components) there should be specific properties for them.  If there are runtime options these should be normal ALSA controls with the default values being whatever the hardware defaults are.  If there are things that should just always be set no matter what then they should just be hard coded into the driver.
+************* Email Confidentiality Notice ********************
 
->> This hides the ACPI enablement state insides PSCI module so that we
->> only need to export a function, to make the code a bit simplified.
->>
-
-> For me it's just the preference. I will leave it to maintainers' taste.
->
-
-Sure, lets see what comments Mark will have then. It's not bad to make
-the code cleaner, even just a bit :)
-
-Thank you for your time on this.
-
-Thanks,
-Gavin
-
+The information contained in this e-mail message (including any attachments) may be confidential, proprietary, privileged, or otherwise exempt from disclosure under applicable laws. It is intended to be conveyed only to the designated recipient(s). Any use, dissemination, distribution, printing, retaining or copying of this e-mail (including its attachments) by unintended recipient(s) is strictly prohibited and may be unlawful. If you are not an intended recipient of this e-mail, or believe that you have received this e-mail in error, please notify the sender immediately (by replying to this e-mail), delete any and all copies of this e-mail (including any attachments) from your system, and do not disclose the content of this e-mail to any other person. Thank you!
 
 _______________________________________________
 linux-arm-kernel mailing list
