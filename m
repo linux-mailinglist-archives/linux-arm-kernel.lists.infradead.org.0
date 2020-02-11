@@ -2,45 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 427A1158EA3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 13:40:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3C41158EA8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 13:40:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fGwBq0C7eYDzT2sRiaMp66xeiymOyhTrTawNhZ7DOXY=; b=rttY4cA/P2hEnK
-	NHScBCp16OONn0KvkTcPmgbtZq574IuIsoTjd0a6nfPOTzCJbhxxruja1b/mkJH6loPMjGCePwAk6
-	Az0cpxDIPoVQ0VZ90WQu71MC4hRZThtRLlli/h7Fqkg8PLxgiD2v/v8sU0PmKtJIUXqHB1Edx4WGt
-	zXmzHUxylRsIsMZ2Mxx1TYgxxkWYmoMSRumeOcM092NboCoD29Wx9uDkuXfrunAcMaporeutl9Epn
-	s6EfIOF+QwHCExg4Gwk0mROunuEvo4E06oEGWmnfZ71p+Ep8DvLP06nv+PNDMyomSkI2mk9rRlWn/
-	UOhlEmZPT1026+yuhKeg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0jidyv0lHQTZfiysCh1qiJCQlPBEvcvNptFIfmhCdws=; b=R0CWxzYB1fHStL
+	01u+wyeZenHRNeuYdCNm4ZGmfIfn2JNw0tznet9YZ95Ov9eSbztrAVqjEuwbpjnfKg3kb9IHtUCjP
+	7HGozwteCzsos1T0HHorDYh3yKT1Zx1W6AQkdF/R8fF4u9VMkYgugFrCsnZ0IBqttInVqj8/j81Tb
+	9RThIJYdeiVwj953TmTV0qYX+RfeaUzVRbXSoeT7/69M/HBAeuJIQup+G6rKLKclPYotbEZThj3Eu
+	Q6EHe2CnAGVTHR35kZ4iMpcRhwkxzC5ZQ7yqkW3TBMZvK1gKlclnxa7Nkv6zEg/2z3O/qvqr8dlJM
+	CulC9qR24Gd1qKFW2l/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Ups-0000OZ-46; Tue, 11 Feb 2020 12:40:16 +0000
+	id 1j1Uq2-0001qr-LO; Tue, 11 Feb 2020 12:40:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1UpX-0000Nr-LW
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 12:39:57 +0000
+ id 1j1UpZ-0000O6-ER
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 12:39:58 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DDF691FB;
- Tue, 11 Feb 2020 04:39:54 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1596E31B;
+ Tue, 11 Feb 2020 04:39:57 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 615843F6CF;
- Tue, 11 Feb 2020 04:39:54 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8F2693F6CF;
+ Tue, 11 Feb 2020 04:39:56 -0800 (PST)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH 1/3] arm64: entry-ftrace.S: Convert to modern annotations for
- assembly functions
-Date: Tue, 11 Feb 2020 12:39:49 +0000
-Message-Id: <20200211123951.6945-1-broonie@kernel.org>
+Subject: [PATCH 2/3] arm64: ftrace: Correct annotation of ftrace_caller
+ assembly
+Date: Tue, 11 Feb 2020 12:39:50 +0000
+Message-Id: <20200211123951.6945-2-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200211123951.6945-1-broonie@kernel.org>
+References: <20200211123951.6945-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_043955_789872_D8098922 
-X-CRM114-Status: GOOD (  10.68  )
+X-CRM114-CacheID: sfid-20200211_043957_524571_D37DDA72 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -69,119 +72,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In an effort to clarify and simplify the annotation of assembly functions
-in the kernel new macros have been introduced. These replace ENTRY and
-ENDPROC and also add a new annotation for static functions which previously
-had no ENTRY equivalent. Update the annotations in the core kernel code to
-the new macros.
+In an effort to clarify and simplify the annotation of assembly
+functions new macros have been introduced. These replace ENTRY and
+ENDPROC with two different annotations for normal functions and those
+with unusual calling conventions.
+
+The patchable function entry versions of ftrace_*_caller don't follow the
+usual AAPCS rules, pushing things onto the stack which they don't clean up,
+and therefore should be annotated as code rather than functions.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/kernel/entry-ftrace.S | 28 ++++++++++++++--------------
- 1 file changed, 14 insertions(+), 14 deletions(-)
+ arch/arm64/kernel/entry-ftrace.S | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
 diff --git a/arch/arm64/kernel/entry-ftrace.S b/arch/arm64/kernel/entry-ftrace.S
-index 7d02f9966d34..3d32b6d325d7 100644
+index 3d32b6d325d7..baf5a20a5566 100644
 --- a/arch/arm64/kernel/entry-ftrace.S
 +++ b/arch/arm64/kernel/entry-ftrace.S
-@@ -91,11 +91,11 @@ ENTRY(ftrace_common)
- 	ldr_l	x2, function_trace_op		// op
- 	mov	x3, sp				// regs
+@@ -75,17 +75,17 @@
+ 	add	x29, sp, #S_STACKFRAME
+ 	.endm
  
--GLOBAL(ftrace_call)
-+SYM_INNER_LABEL(ftrace_call, SYM_L_GLOBAL)
- 	bl	ftrace_stub
+-ENTRY(ftrace_regs_caller)
++SYM_CODE_START(ftrace_regs_caller)
+ 	ftrace_regs_entry	1
+ 	b	ftrace_common
+-ENDPROC(ftrace_regs_caller)
++SYM_CODE_END(ftrace_regs_caller)
  
- #ifdef CONFIG_FUNCTION_GRAPH_TRACER
--GLOBAL(ftrace_graph_call)		// ftrace_graph_caller();
-+SYM_INNER_LABEL(ftrace_graph_call, SYM_L_GLOBAL) // ftrace_graph_caller();
- 	nop				// If enabled, this will be replaced
- 					// "b ftrace_graph_caller"
- #endif
-@@ -218,7 +218,7 @@ ENDPROC(ftrace_graph_caller)
-  *     - tracer function to probe instrumented function's entry,
-  *     - ftrace_graph_caller to set up an exit hook
-  */
--ENTRY(_mcount)
-+SYM_FUNC_START(_mcount)
- 	mcount_enter
- 
- 	ldr_l	x2, ftrace_trace_function
-@@ -242,7 +242,7 @@ skip_ftrace_call:			// }
- 	b.ne	ftrace_graph_caller	//     ftrace_graph_caller();
- #endif /* CONFIG_FUNCTION_GRAPH_TRACER */
- 	mcount_exit
--ENDPROC(_mcount)
-+SYM_FUNC_END(_mcount)
- EXPORT_SYMBOL(_mcount)
- NOKPROBE(_mcount)
- 
-@@ -253,9 +253,9 @@ NOKPROBE(_mcount)
-  * and later on, NOP to branch to ftrace_caller() when enabled or branch to
-  * NOP when disabled per-function base.
-  */
--ENTRY(_mcount)
-+SYM_FUNC_START(_mcount)
- 	ret
--ENDPROC(_mcount)
-+SYM_FUNC_END(_mcount)
- EXPORT_SYMBOL(_mcount)
- NOKPROBE(_mcount)
- 
-@@ -268,24 +268,24 @@ NOKPROBE(_mcount)
-  *     - tracer function to probe instrumented function's entry,
-  *     - ftrace_graph_caller to set up an exit hook
-  */
 -ENTRY(ftrace_caller)
-+SYM_FUNC_START(ftrace_caller)
- 	mcount_enter
++SYM_CODE_START(ftrace_caller)
+ 	ftrace_regs_entry	0
+ 	b	ftrace_common
+-ENDPROC(ftrace_caller)
++SYM_CODE_END(ftrace_caller)
  
- 	mcount_get_pc0	x0		//     function's pc
- 	mcount_get_lr	x1		//     function's lr
+-ENTRY(ftrace_common)
++SYM_CODE_START(ftrace_common)
+ 	sub	x0, x30, #AARCH64_INSN_SIZE	// ip (callsite's BL insn)
+ 	mov	x1, x9				// parent_ip (callsite's LR)
+ 	ldr_l	x2, function_trace_op		// op
+@@ -122,17 +122,17 @@ ftrace_common_return:
+ 	add	sp, sp, #S_FRAME_SIZE + 16
  
--GLOBAL(ftrace_call)			// tracer(pc, lr);
-+SYM_INNER_LABEL(ftrace_call, SYM_L_GLOBAL)	// tracer(pc, lr);
- 	nop				// This will be replaced with "bl xxx"
- 					// where xxx can be any kind of tracer.
+ 	ret	x9
+-ENDPROC(ftrace_common)
++SYM_CODE_END(ftrace_common)
  
  #ifdef CONFIG_FUNCTION_GRAPH_TRACER
--GLOBAL(ftrace_graph_call)		// ftrace_graph_caller();
-+SYM_INNER_LABEL(ftrace_graph_call)		// ftrace_graph_caller();
- 	nop				// If enabled, this will be replaced
- 					// "b ftrace_graph_caller"
+-ENTRY(ftrace_graph_caller)
++SYM_CODE_START(ftrace_graph_caller)
+ 	ldr	x0, [sp, #S_PC]
+ 	sub	x0, x0, #AARCH64_INSN_SIZE	// ip (callsite's BL insn)
+ 	add	x1, sp, #S_LR			// parent_ip (callsite's LR)
+ 	ldr	x2, [sp, #S_FRAME_SIZE]	   	// parent fp (callsite's FP)
+ 	bl	prepare_ftrace_return
+ 	b	ftrace_common_return
+-ENDPROC(ftrace_graph_caller)
++SYM_CODE_END(ftrace_graph_caller)
  #endif
  
- 	mcount_exit
--ENDPROC(ftrace_caller)
-+SYM_FUNC_END(ftrace_caller)
- #endif /* CONFIG_DYNAMIC_FTRACE */
- 
- #ifdef CONFIG_FUNCTION_GRAPH_TRACER
-@@ -298,20 +298,20 @@ ENDPROC(ftrace_caller)
-  * the call stack in order to intercept instrumented function's return path
-  * and run return_to_handler() later on its exit.
-  */
--ENTRY(ftrace_graph_caller)
-+SYM_FUNC_START(ftrace_graph_caller)
- 	mcount_get_pc		  x0	//     function's pc
- 	mcount_get_lr_addr	  x1	//     pointer to function's saved lr
- 	mcount_get_parent_fp	  x2	//     parent's fp
- 	bl	prepare_ftrace_return	// prepare_ftrace_return(pc, &lr, fp)
- 
- 	mcount_exit
--ENDPROC(ftrace_graph_caller)
-+SYM_FUNC_END(ftrace_graph_caller)
- #endif /* CONFIG_FUNCTION_GRAPH_TRACER */
- #endif /* CONFIG_DYNAMIC_FTRACE_WITH_REGS */
- 
--ENTRY(ftrace_stub)
-+SYM_FUNC_START(ftrace_stub)
- 	ret
--ENDPROC(ftrace_stub)
-+SYM_FUNC_END(ftrace_stub)
- 
- #ifdef CONFIG_FUNCTION_GRAPH_TRACER
- /*
+ #else /* CONFIG_DYNAMIC_FTRACE_WITH_REGS */
 -- 
 2.20.1
 
