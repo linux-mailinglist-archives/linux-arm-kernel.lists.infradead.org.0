@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 942AF159697
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:50:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5518215969D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 18:51:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i3saqtJt6jJ4H4odySFaUc8PQrUbskU5yBxPoHB0AEM=; b=S/CBLA7DY7vgpH
-	7bbcGBJhgO8OKMeXRolEDWPYJuP76jHhbLA7iaUohFYtArxGxO7eyq7fUy1fymYSGcbPgyQ96qtsO
-	rHrVXi8tXK4A+/EiRjH0AWMYQWsKND4YGvBF8n9RkVItO67B+/QkIbd31KGNvOPB3RZgD82prXL3m
-	wx9DsYppkhn5JJeEU8Sl6Xl4Q0VY+yfGK/jxDqZscm6P4suTrRBzc94p3vNsJpSPr6VpsekX437/Z
-	RQrTZYwmgh37rMPMDf+Ph0eaUTHoSEWL7dRazDLF/0mPVAKzmKN7CQqDIyexAUawyAyq9loFVwjav
-	AXZHqgVQ3+fE8Fic2jxA==;
+	List-Owner; bh=FYNt7I0VTIbtTia+NiqOI0gm11LD3ddfKhrzN2A97bE=; b=pC4bgKOFfjXxQW
+	Wsa1CjCs1kL8doae2ZPYWfHzNqry0Sag59sCCfWs3UUBufv4RhDUHSFm1Hpb1nxsiU/z9wDLLqSl8
+	YqrJMpYxW2dHSf786i18hXaWPxlqSWPmT+YEEgLFFvCyMs8m00JNfLnYWAAo7206vd276kvgv7bcK
+	6hANFEYU1UqPAXwcw0aVVVfL6EWHMxCcF57NXAyxAnTxdOpxcVbPO/SwJLRow/JCZ+y5AE5d6z4uK
+	fWAMszPlMGH0QhsN3RrQjRmWAMAvHvxxdXqHCl452VvRoITHC2cjDzFv6IqDwPAy4KnzC007rNpsR
+	3VgbwUmoxscoWTkx/lTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1Zft-0007N0-Nr; Tue, 11 Feb 2020 17:50:17 +0000
+	id 1j1ZgV-0000mx-Uy; Tue, 11 Feb 2020 17:50:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ZfY-0007LS-Hw
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:49:57 +0000
+ id 1j1ZfZ-0007Lt-4H
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 17:49:59 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1CB14206CC;
+ by mail.kernel.org (Postfix) with ESMTPSA id AFB26206D6;
  Tue, 11 Feb 2020 17:49:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1581443396;
- bh=CDfmi4wjycuxqXp0yX9NnOipKJiEr/tNVdnuxQnjckU=;
+ bh=v75bdtDTtT7CfBGhCaWYCJiae6UIVY+xjVSdDNEavQs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=AiLkh9rTX0sSunjQf5l8DcZvGYeqfXpGnAP+AYT82nTxYjF654jf1FVFloOgavoxc
- fdhGEQ3XsYP1Ju0ACwNFv7GdEOAPKKrXvXzkXrwkSlQ6zbmxiZIwkV6KluCrIQezRo
- 0uHQlTlODNKyYfyplOwlmuWuCnJVrFY7LM+XzI7s=
+ b=jgZzRu0c36DUP47L4nJvqtGczn12oTEMkp9acNacaMpu7m5Ey/sdCLRRSBRpFwxoN
+ Hjq9g40sSaKnQo8alQzAZSSLCOJKF8u05mzICDMsiNKSxwGnL8d1XXKhGK2i4S6dk9
+ 7ozN9ngGelnWdiJjVQKC1K0NlQ5erqz1jfhrOips=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j1ZfW-004O7k-E0; Tue, 11 Feb 2020 17:49:54 +0000
+ id 1j1ZfX-004O7k-09; Tue, 11 Feb 2020 17:49:55 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH v2 01/94] KVM: arm64: Move __load_guest_stage2 to kvm_mmu.h
-Date: Tue, 11 Feb 2020 17:48:05 +0000
-Message-Id: <20200211174938.27809-2-maz@kernel.org>
+Subject: [PATCH v2 02/94] arm64: Add ARM64_HAS_NESTED_VIRT cpufeature
+Date: Tue, 11 Feb 2020 17:48:06 +0000
+Message-Id: <20200211174938.27809-3-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200211174938.27809-1-maz@kernel.org>
 References: <20200211174938.27809-1-maz@kernel.org>
@@ -61,8 +61,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_094956_625709_7EF72DA3 
-X-CRM114-Status: GOOD (  12.37  )
+X-CRM114-CacheID: sfid-20200211_094957_204855_A7A983F9 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,81 +102,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Having __load_guest_stage2 in kvm_hyp.h is quickly going to trigger
-a circular include problem. In order to avoid this, let's move
-it to kvm_mmu.h, where it will be a better fit anyway.
+From: Jintack Lim <jintack.lim@linaro.org>
 
-In the process, drop the __hyp_text annotation, which doesn't help
-as the function is marked as __always_inline.
+Add a new ARM64_HAS_NESTED_VIRT feature to indicate that the
+CPU has the ARMv8.3 nested virtualization capability.
 
+This will be used to support nested virtualization in KVM.
+
+Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
+Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/include/asm/kvm_hyp.h | 18 ------------------
- arch/arm64/include/asm/kvm_mmu.h | 17 +++++++++++++++++
- 2 files changed, 17 insertions(+), 18 deletions(-)
+ .../admin-guide/kernel-parameters.txt         |  4 +++
+ arch/arm64/include/asm/cpucaps.h              |  3 ++-
+ arch/arm64/include/asm/sysreg.h               |  1 +
+ arch/arm64/kernel/cpufeature.c                | 26 +++++++++++++++++++
+ 4 files changed, 33 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/kvm_hyp.h b/arch/arm64/include/asm/kvm_hyp.h
-index a3a6a2ba9a63..4899a5b74fc3 100644
---- a/arch/arm64/include/asm/kvm_hyp.h
-+++ b/arch/arm64/include/asm/kvm_hyp.h
-@@ -10,7 +10,6 @@
- #include <linux/compiler.h>
- #include <linux/kvm_host.h>
- #include <asm/alternative.h>
--#include <asm/kvm_mmu.h>
- #include <asm/sysreg.h>
+diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+index dbc22d684627..cb61ace641f1 100644
+--- a/Documentation/admin-guide/kernel-parameters.txt
++++ b/Documentation/admin-guide/kernel-parameters.txt
+@@ -2151,6 +2151,10 @@
+ 			[KVM,ARM] Allow use of GICv4 for direct injection of
+ 			LPIs.
  
- #define __hyp_text __section(.hyp.text) notrace
-@@ -81,22 +80,5 @@ void deactivate_traps_vhe_put(void);
- u64 __guest_enter(struct kvm_vcpu *vcpu, struct kvm_cpu_context *host_ctxt);
- void __noreturn __hyp_do_panic(unsigned long, ...);
- 
--/*
-- * Must be called from hyp code running at EL2 with an updated VTTBR
-- * and interrupts disabled.
-- */
--static __always_inline void __hyp_text __load_guest_stage2(struct kvm *kvm)
--{
--	write_sysreg(kvm->arch.vtcr, vtcr_el2);
--	write_sysreg(kvm_get_vttbr(kvm), vttbr_el2);
--
--	/*
--	 * ARM errata 1165522 and 1530923 require the actual execution of the
--	 * above before we can switch to the EL1/EL0 translation regime used by
--	 * the guest.
--	 */
--	asm(ALTERNATIVE("nop", "isb", ARM64_WORKAROUND_SPECULATIVE_AT_VHE));
--}
--
- #endif /* __ARM64_KVM_HYP_H__ */
- 
-diff --git a/arch/arm64/include/asm/kvm_mmu.h b/arch/arm64/include/asm/kvm_mmu.h
-index 53d846f1bfe7..ee47f7637f28 100644
---- a/arch/arm64/include/asm/kvm_mmu.h
-+++ b/arch/arm64/include/asm/kvm_mmu.h
-@@ -604,5 +604,22 @@ static __always_inline u64 kvm_get_vttbr(struct kvm *kvm)
- 	return kvm_phys_to_vttbr(baddr) | vmid_field | cnp;
- }
- 
-+/*
-+ * Must be called from hyp code running at EL2 with an updated VTTBR
-+ * and interrupts disabled.
-+ */
-+static __always_inline void __load_guest_stage2(struct kvm *kvm)
-+{
-+	write_sysreg(kvm->arch.vtcr, vtcr_el2);
-+	write_sysreg(kvm_get_vttbr(kvm), vttbr_el2);
++	kvm-arm.nested=
++			[KVM,ARM] Allow nested virtualization in KVM/ARM.
++			Default is 0 (disabled)
 +
-+	/*
-+	 * ARM erratum 1165522 requires the actual execution of the above
-+	 * before we can switch to the EL1/EL0 translation regime used by
-+	 * the guest.
-+	 */
-+	asm(ALTERNATIVE("nop", "isb", ARM64_WORKAROUND_SPECULATIVE_AT_VHE));
+ 	kvm-intel.ept=	[KVM,Intel] Disable extended page tables
+ 			(virtualized MMU) support on capable Intel chips.
+ 			Default is 1 (enabled)
+diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
+index 865e0253fc1e..21f0067d8d40 100644
+--- a/arch/arm64/include/asm/cpucaps.h
++++ b/arch/arm64/include/asm/cpucaps.h
+@@ -58,7 +58,8 @@
+ #define ARM64_WORKAROUND_SPECULATIVE_AT_NVHE	48
+ #define ARM64_HAS_E0PD				49
+ #define ARM64_HAS_RNG				50
++#define ARM64_HAS_NESTED_VIRT			51
+ 
+-#define ARM64_NCAPS				51
++#define ARM64_NCAPS				52
+ 
+ #endif /* __ASM_CPUCAPS_H */
+diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+index b91570ff9db1..00b283d6d31a 100644
+--- a/arch/arm64/include/asm/sysreg.h
++++ b/arch/arm64/include/asm/sysreg.h
+@@ -687,6 +687,7 @@
+ #define ID_AA64MMFR2_E0PD_SHIFT		60
+ #define ID_AA64MMFR2_FWB_SHIFT		40
+ #define ID_AA64MMFR2_AT_SHIFT		32
++#define ID_AA64MMFR2_NV_SHIFT		24
+ #define ID_AA64MMFR2_LVA_SHIFT		16
+ #define ID_AA64MMFR2_IESB_SHIFT		12
+ #define ID_AA64MMFR2_LSM_SHIFT		8
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 0b6715625cf6..f0e58450eb16 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -243,6 +243,7 @@ static const struct arm64_ftr_bits ftr_id_aa64mmfr2[] = {
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_E0PD_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_FWB_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_AT_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_NV_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_LVA_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_IESB_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64MMFR2_LSM_SHIFT, 4, 0),
+@@ -1241,6 +1242,21 @@ static void cpu_copy_el2regs(const struct arm64_cpu_capabilities *__unused)
+ 	if (!alternative_is_applied(ARM64_HAS_VIRT_HOST_EXTN))
+ 		write_sysreg(read_sysreg(tpidr_el1), tpidr_el2);
+ }
++
++static bool nested_param;
++static bool has_nested_virt_support(const struct arm64_cpu_capabilities *cap,
++				    int scope)
++{
++	return has_cpuid_feature(cap, scope) &&
++		nested_param;
 +}
 +
- #endif /* __ASSEMBLY__ */
- #endif /* __ARM64_KVM_MMU_H__ */
++static int __init kvmarm_nested_cfg(char *buf)
++{
++	return strtobool(buf, &nested_param);
++}
++
++early_param("kvm-arm.nested", kvmarm_nested_cfg);
+ #endif
+ 
+ static void cpu_has_fwb(const struct arm64_cpu_capabilities *__unused)
+@@ -1419,6 +1435,16 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 		.matches = runs_at_el2,
+ 		.cpu_enable = cpu_copy_el2regs,
+ 	},
++	{
++		.desc = "Nested Virtualization Support",
++		.capability = ARM64_HAS_NESTED_VIRT,
++		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
++		.matches = has_nested_virt_support,
++		.sys_reg = SYS_ID_AA64MMFR2_EL1,
++		.sign = FTR_UNSIGNED,
++		.field_pos = ID_AA64MMFR2_NV_SHIFT,
++		.min_field_value = 1,
++	},
+ #endif	/* CONFIG_ARM64_VHE */
+ 	{
+ 		.desc = "32-bit EL0 Support",
 -- 
 2.20.1
 
