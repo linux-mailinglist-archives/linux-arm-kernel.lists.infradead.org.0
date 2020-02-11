@@ -2,64 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78D76158C42
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 10:59:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD4BD158C47
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 11:00:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BpcFDeG064uwIcB8hhLCkAFMdjlBJxYN0SrMqnNbr/k=; b=ds8aRcqsDKZjx9
-	dBCPsi7BT6BkTogy9yFnC+YrdvyzOYiV4qDKv0L08f/7eqdnWqrLY/e/ZNeLT+f1vo5lgClb5aA4K
-	w5HDQQc0d+lWNtlemF0nddvynOGrtj6IVRpKF76HOK3r+EEVgE5UPrbaK9bHToYwmYIGL6c1bS/WF
-	/gYnOP8hrrxy90qW1rpiatappRdYDuXgtkFFVPXq5Hki8B9R4XXQYDPPok8NRu890xmEHIx3dDT+w
-	pHVMTp4sv0gkt/uh6rTn+Yaoj/kB3fGBLNHMVhvUT7aOdOXUJzsKdTMurW/DjqmzS6me3u6TOzKqw
-	74dQdzxDmwJkr/Y1mcDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5z/Wv/rGk0l1ZdJjmYc+n3ESy8jCjW5Ya5q00u3E/ow=; b=EXH3O/2VfNzWOSxuaDfuAojCO
+	qvc1fkl97yf3KyRL04Sc2yr8AGX5ahCE51ZTnPTpyEm2AmXKj9EGUd4Hx1pM+gqHyhd1OcgZJWpDM
+	qzFqyL6PaxTZlQIA76TfLa6/MHEv1W9hqgq9VKHdnukNzweQmZJiUw/MY6u6da+7wvv5tl2pW9rZ5
+	aCObzsMa4vhq1LpSLczVJOibJH0zG6oSvJ0Jq8KZq3Ah+RYfJi+Pf+cCwVlbqnVWbVzRE8nj8zxnM
+	01l9Wtgnft5L0xotfWEzDhGWU8uoPYs1qqnONDwv9dtgrig0PVfoQuzjtuRnZBB+SNYiuFrZdUrj1
+	AByHtTpjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1SKO-0004F5-MW; Tue, 11 Feb 2020 09:59:36 +0000
+	id 1j1SL1-0005gi-HD; Tue, 11 Feb 2020 10:00:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1SKG-0004Ek-4T
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 09:59:29 +0000
-Received: from mail-lf1-f47.google.com (mail-lf1-f47.google.com
- [209.85.167.47])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1j1SKt-0005SP-Pe
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 10:00:09 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7CB052086A
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 09:59:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5851D20714;
+ Tue, 11 Feb 2020 10:00:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581415167;
- bh=eZTJW3fyuVfF78EHcMrcN6Hj2iRFml/KLBuxmsVst/I=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Ontb1bxQ5hDW5q1FR8Br/ISHJ7XHTUW3ug/87faSNg2bqLqit8Rl8hfXZsGqLbSJq
- hJw4R7PUK3ijRg0f8YseHgmgZlH61VXB6J80qFs5xjpKY/rHGAE8NnaVwdbMf9DhdK
- BfhtnOclYZp6S2JCpvk8o1itiL2qrI3frrZZk4MU=
-Received: by mail-lf1-f47.google.com with SMTP id r14so6534893lfm.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 01:59:27 -0800 (PST)
-X-Gm-Message-State: APjAAAUZI0hBJDjckxzO4ufYvqmtWA5qeJwAOTWYf/etel1pORbqBAWF
- E8Vg7v/zOUl550jAZZl/wC9lrIWiVIvok+cIUBA=
-X-Google-Smtp-Source: APXvYqwAHORsy+C2v7lVpCe02Mf1CVE+/0/5jXb/E/zbgMCk+yjlFnDzUNYbiYCIu0+5WnyY8bNqPOsV8tBJAugOUOM=
-X-Received: by 2002:a19:228c:: with SMTP id i134mr3249949lfi.2.1581415165575; 
- Tue, 11 Feb 2020 01:59:25 -0800 (PST)
+ s=default; t=1581415207;
+ bh=Rf1cVsXYoyZPTMZMbH8vZlwFAWASWhkCsYObkjMQ9Ko=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=ZjYMZLNqPENaRh+mcuqb7UfkV1Eo12AXIsjC468Zej2Z0m3Xd4BRmSMg9JSvvGj5H
+ d9HH7b+bMenMTDHwqZ70TklYjBBZWv2Wy0UHKUXpqRyPPMqRkx8b8FAYDwNKRYW4Ui
+ v81OVzKUWodAvvqpc8bQnpxEao6X/kS36AWJyp8o=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j1SKn-004I7J-J6; Tue, 11 Feb 2020 10:00:01 +0000
 MIME-Version: 1.0
-References: <20200210061544.7600-1-yuehaibing@huawei.com>
- <9351a746-8823-ee26-70da-fd3127a02c91@linux.intel.com>
- <be093793-3514-840a-ff2f-4dc21d8ee7f1@huawei.com>
- <CAEnQRZDWFgXocRJxtc2e7McRCAtod6-GwPJaVMdb4ymBZgSD1w@mail.gmail.com>
-In-Reply-To: <CAEnQRZDWFgXocRJxtc2e7McRCAtod6-GwPJaVMdb4ymBZgSD1w@mail.gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Tue, 11 Feb 2020 10:59:14 +0100
-X-Gmail-Original-Message-ID: <CAJKOXPcxL2vpWGwO1OL9Vv0g6hzbW-AyGJNn=7Yq2iy10_cbhg@mail.gmail.com>
-Message-ID: <CAJKOXPcxL2vpWGwO1OL9Vv0g6hzbW-AyGJNn=7Yq2iy10_cbhg@mail.gmail.com>
-Subject: Re: [alsa-devel] [PATCH -next] ASoC: SOF: imx8: Fix randbuild error
-To: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Tue, 11 Feb 2020 10:00:01 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v7 09/11] arm64: disable SCS for hypervisor code
+In-Reply-To: <20200211095519.GB8560@willie-the-truck>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200128184934.77625-1-samitolvanen@google.com>
+ <20200128184934.77625-10-samitolvanen@google.com>
+ <6f62b3c0-e796-e91c-f53b-23bd80fcb065@arm.com>
+ <20200210175214.GA23318@willie-the-truck>
+ <20200210180327.GB20840@lakrids.cambridge.arm.com>
+ <20200210180740.GA24354@willie-the-truck>
+ <43839239237869598b79cab90e100127@kernel.org>
+ <20200211095519.GB8560@willie-the-truck>
+Message-ID: <fed83df0e9140b9655b00f315814fab8@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: will@kernel.org, mark.rutland@arm.com, james.morse@arm.com,
+ samitolvanen@google.com, catalin.marinas@arm.com, rostedt@goodmis.org,
+ mhiramat@kernel.org, ard.biesheuvel@linaro.org, Dave.Martin@arm.com,
+ keescook@chromium.org, labbott@redhat.com, ndesaulniers@google.com,
+ jannh@google.com, miguel.ojeda.sandonis@gmail.com,
+ yamada.masahiro@socionext.com, clang-built-linux@googlegroups.com,
+ kernel-hardening@lists.openwall.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_015928_219551_55743794 
-X-CRM114-Status: GOOD (  23.94  )
+X-CRM114-CacheID: sfid-20200211_020007_878844_CBBEF746 
+X-CRM114-Status: GOOD (  19.42  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,90 +102,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Baluta <daniel.baluta@nxp.com>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Yuehaibing <yuehaibing@huawei.com>, Takashi Iwai <tiwai@suse.com>,
- Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
+ Sami Tolvanen <samitolvanen@google.com>, clang-built-linux@googlegroups.com,
+ kernel-hardening@lists.openwall.com, Laura Abbott <labbott@redhat.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 11 Feb 2020 at 10:46, Daniel Baluta <daniel.baluta@gmail.com> wrote:
->
-> On Tue, Feb 11, 2020 at 3:59 AM Yuehaibing <yuehaibing@huawei.com> wrote:
-> >
-> > On 2020/2/11 5:00, Pierre-Louis Bossart wrote:
-> > >
-> > >
-> > > On 2/10/20 12:15 AM, YueHaibing wrote:
-> > >> when do randconfig like this:
-> > >> CONFIG_SND_SOC_SOF_IMX8_SUPPORT=y
-> > >> CONFIG_SND_SOC_SOF_IMX8=y
-> > >> CONFIG_SND_SOC_SOF_OF=y
-> > >> CONFIG_IMX_DSP=m
-> > >> CONFIG_IMX_SCU=y
-> > >>
-> > >> there is a link error:
-> > >>
-> > >> sound/soc/sof/imx/imx8.o: In function 'imx8_send_msg':
-> > >> imx8.c:(.text+0x380): undefined reference to 'imx_dsp_ring_doorbell'
-> > >>
-> > >> Select IMX_DSP in SND_SOC_SOF_IMX8_SUPPORT to fix this
-> > >>
-> > >> Reported-by: Hulk Robot <hulkci@huawei.com>
-> > >> Fixes: f9ad75468453 ("ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF dependency")
-> > >> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> > >
-> > > Thanks for the report.
-> > >
-> > > Would you mind sharing the .config and instructions to reproduce this case? we have an unrelated issue with allyesconfig that was reviewed here:
-> > >
-> > > https://github.com/thesofproject/linux/pull/1778
-> > >
-> > > and I'd probably a good thing to fix everything in one shot.
-> >
-> > config is attached, which is on x86_64
->
-> Thanks, I think this is legit. It was introduced with:
->
-> commit f52cdcce9197fef9d4a68792dd3b840ad2b77117
-> Author: Daniel Baluta <daniel.baluta@nxp.com>
-> Date:   Sat Jan 4 15:39:53 2020 +0000
->
->     firmware: imx: Allow IMX DSP to be selected as module
->
->     IMX DSP is only needed by SOF or any other module that
->     wants to communicate with the DSP. When SOF is build
->     as a module IMX DSP is forced to be built inside the
->     kernel image. This is not optimal, so allow IMX DSP
->     to be built as a module.
->
->     Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
->     Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+On 2020-02-11 09:55, Will Deacon wrote:
+> On Tue, Feb 11, 2020 at 09:14:52AM +0000, Marc Zyngier wrote:
+>> On 2020-02-10 18:07, Will Deacon wrote:
+>> > On Mon, Feb 10, 2020 at 06:03:28PM +0000, Mark Rutland wrote:
+>> > > On Mon, Feb 10, 2020 at 05:52:15PM +0000, Will Deacon wrote:
+>> > > > On Mon, Feb 10, 2020 at 05:18:58PM +0000, James Morse wrote:
+>> > > > > On 28/01/2020 18:49, Sami Tolvanen wrote:
+>> > > > > > Filter out CC_FLAGS_SCS and -ffixed-x18 for code that runs at a
+>> > > > > > different exception level.
+>> > > > >
+>> > > > > Hmmm, there are two things being disabled here.
+>> > > > >
+>> > > > > Stashing the lr in memory pointed to by VA won't work transparently at EL2 ... but
+>> > > > > shouldn't KVM's C code still treat x18 as a fixed register?
+>> > > >
+>> > > > My review of v6 suggested dropping the -ffixed-x18 as well, since it's only
+>> > > > introduced by SCS (in patch 5) and so isn't required by anything else. Why
+>> > > > do you think it's needed?
+>> > >
+>> > > When EL1 code calls up to hyp, it expects x18 to be preserved across
+>> > > the
+>> > > call, so hyp needs to either preserve it explicitly across a
+>> > > transitions
+>> > > from/to EL1 or always preserve it.
+>> >
+>> > I thought we explicitly saved/restored it across the call after
+>> > af12376814a5 ("arm64: kvm: stop treating register x18 as caller save").
+>> > Is
+>> > that not sufficient?
+>> >
+>> > > The latter is easiest since any code used by VHE hyp code will need
+>> > > x18
+>> > > saved anyway (ans so any common hyp code needs to).
+>> >
+>> > I would personally prefer to split the VHE and non-VHE code so they can
+>> > be
+>> > compiled with separate options.
+>> 
+>> This is going to generate a lot of code duplication (or at least 
+>> object
+>> duplication),
+>> as the two code paths are intricately linked and splitting them to 
+>> support
+>> different
+>> compilation options and/or calling conventions.
+>> 
+>> I'm not fundamentally opposed to that, but it should come with ways to 
+>> still
+>> manage it as a unified code base as much as possible, as ways to 
+>> discard the
+>> unused part at runtime (which should become easy to do once we have 
+>> two
+>> distinct sets of objects).
+> 
+> Agreed, and I don't want to hold up the SCS patches because of this. 
+> I'm
+> just nervous about the function attribute because I've only ever had
+> terrible experiences with them. Maybe it will work this time (!)
 
-Hi,
+I have the same experience chasing missing __hyp_text attributes. Until 
+we
+have tooling that picks on this *at compile time*, we'll have to play
+wack-a-mole with them...
 
-Since it's a module, don't you just miss EXPORT_SYMBOL there?
-
-> So, I think we should change the Fixes tag. Are there
-> any clear rules on when to use select vs depends?
->
-> On my side, I know what both are doing but it is not clear
-> when to use them.
-
-Visible symbols usually should not be selected. The same with symbols
-with dependencies. The docs have this rule mentioned.
-
-Best regards,
-Krzysztof
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
