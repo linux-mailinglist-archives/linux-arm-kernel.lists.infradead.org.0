@@ -2,90 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C136D158A09
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 07:40:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54458158A11
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 07:49:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rfHPnqrQxUODCGsHhPV9zjbjlQnwiSOuD2si2xKVCbk=; b=ljdBRuKMl7+Uh6
-	HSs9QnRMLE2VpQGZpoc1oBq9wzFoBWBDlAeBc9c9HAaFDRb6QpY4+JdmFjcIaU4+SOdogsDuuPFJU
-	iY+HClcbTVlxx5tpXxt4Y4mioIcnCSv1Z64AQhLS9TUA+cYkTjanaC6dhQUELFBE9ScYaLb2NRa4y
-	OqTOj9xNRmDEFQY15fddEUA0K8YlVBO31l2U5URZ9z9z3B850Xx0Uopnk3mlT6OnA9QjX5UNIJTgL
-	FyzaieWqea593wxFVWCvxfC7Le8IoiEwobuVcdDZY4EJmZGdvY6X101Yha/oRCR5agEjIcxm2a7G3
-	6ufu7vZfrlxXWZ4ly1Mg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3D/e6Y+lSnqzJQiW92AlMvcCDZGrnX+Xr2t/hFIaJwY=; b=fDEZVUAVXdeWHjB67I213xzLD
+	bv1lDrKKx+Cp9c2HFsoeDyjyM34F8RuqxMclztxHgyMolsVH5wFGHuaMCJVr/HLlgiwUFwIyzotEK
+	OqtdCpUMlkWSydgSMDX6X9oR1sr6LnbLKHsCtyRb3Xkn1dadyQnbWqDRuJqVC2jodrByEg4hTgbSY
+	1TASQR4aotewAtC7V+9BALBejldlJDTOSWEsTU5X2zKCN4J2vnuLU2MPMKAuWeuEw5fwk0VQBJEp6
+	dyc/DfJMJ6zeoYomSJ34pSO9i+wZ2ns/I9kfc4fJRODk4+z3M8iplqqCNhjcfj6daQ3EdTp1m948k
+	WCzXsWL2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1PDx-0001Vx-Ii; Tue, 11 Feb 2020 06:40:45 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1j1PMe-0003lv-P7; Tue, 11 Feb 2020 06:49:44 +0000
+Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1PDp-0001Uu-5M
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 06:40:39 +0000
-Received: by mail-ed1-f67.google.com with SMTP id v28so3349746edw.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 22:40:35 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=fv/t2lPvzd/c6evGoFWSGvw45Jr9b11uQzUTPkD838A=;
- b=hy+uwQ15u/zBao6nQ2cSTGHjRT9Sahh3X3URtxKcugRqYTkx1X9jcC02F3TXvWFG0u
- qzCFr6h/FIPVZnTC1u8wW0b2pFazndMQd0WoQvGB4ujXQz/poP3dS8SsLNJ4zlpZYj9D
- 8l9D8NReiPSkyTNCFzEeT8MDMDVtRbMoH8V+9qkBDKhkQ0PHPLPErNakTqxSPWeGDI2Z
- oYZ+vKpKKEkadptg9yanLTnzyH10PtC/69x64k7ddZt2vlAEbujofrjSn+Ff1Ei2DGJ1
- Eet3wm8sqYeo+JV67VqLUOeyth0eSb9PBPwB9dHl3cAW7p4BGK1IGxt6Ezu4+yRqUIRE
- 6ttw==
-X-Gm-Message-State: APjAAAUL/uosv2PBkj+fIcqatt0xJDB1RiLPMCeG2Wd6aKQkHQHtL+lO
- cE8fdt4H0yVYE8EA+hLd1DOkC6LE7J8=
-X-Google-Smtp-Source: APXvYqxicTo7caxyLrrL0SKD/3Z3s6bnJRy6aZ7xXNgi6qyt4dxX9//VWo9qD/7ZNRNNCnvMG6FRWg==
-X-Received: by 2002:a17:906:e083:: with SMTP id
- gh3mr4463612ejb.231.1581403233772; 
- Mon, 10 Feb 2020 22:40:33 -0800 (PST)
-Received: from mail-wr1-f51.google.com (mail-wr1-f51.google.com.
- [209.85.221.51])
- by smtp.gmail.com with ESMTPSA id w12sm165685edq.94.2020.02.10.22.40.33
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 10 Feb 2020 22:40:33 -0800 (PST)
-Received: by mail-wr1-f51.google.com with SMTP id m16so10720847wrx.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 10 Feb 2020 22:40:33 -0800 (PST)
-X-Received: by 2002:a5d:6805:: with SMTP id w5mr6896277wru.64.1581403233013;
- Mon, 10 Feb 2020 22:40:33 -0800 (PST)
-MIME-Version: 1.0
-References: <20200210222807.206426-1-jernej.skrabec@siol.net>
- <20200210222807.206426-2-jernej.skrabec@siol.net>
-In-Reply-To: <20200210222807.206426-2-jernej.skrabec@siol.net>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 11 Feb 2020 14:40:22 +0800
-X-Gmail-Original-Message-ID: <CAGb2v659Znu1E74Ph8w4Un_cC8qovWmmLfOEDW0ax4jrLVs7GQ@mail.gmail.com>
-Message-ID: <CAGb2v659Znu1E74Ph8w4Un_cC8qovWmmLfOEDW0ax4jrLVs7GQ@mail.gmail.com>
-Subject: Re: [PATCH 1/7] clk: sunxi-ng: sun8i-de2: Sort structures
+ id 1j1PMX-0003lO-Lw
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 06:49:39 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 32CC221FC6;
+ Tue, 11 Feb 2020 01:49:30 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Tue, 11 Feb 2020 01:49:30 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=XdztXMV9iyXzMFlJWwifunfdijp
+ ZRx0c+G9mn+c5wW4=; b=gFq6btPzW+RpRULrPtwkrOzprABO+88TuN7FjK6PjiH
+ cuZDuxURE2jMWvg3+zXYfbf/za4X06QjtSbnWYgGeWN0RszLy7jXbz3wDI8g2y+Y
+ A39qbWuCOiwp00cVxNqYXBXQCDqeCiyERsvuXRGF2MWEtD3C9aQkAOD0+hceOuY4
+ j7oVjR2xUPp2u4OTrL5RCb3IyCbd9IaGuQQUPI9JdV0TDJifDBNcHE5Y3D+/0zUo
+ GsxSi1jQjopXopwAtfgWx9RpSiWC9gt1gOjzNDaJm1cL+UhjiHBNnFLdrlWFN5oB
+ OpqfpaFS+GGZl3u+45p2ZEbVvCmQZ/NQ4GHbtB+lu/w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=XdztXM
+ V9iyXzMFlJWwifunfdijpZRx0c+G9mn+c5wW4=; b=X1enKO5gTifLFa1Tyq39P9
+ IZomnM1+PMGLA6dOvBmOrZmJrAySBoNu4wYwDa9w9vq8Tz1Oxv5VR0C2c+A6uPR3
+ SnMfFFWBKnGO9tBRcMAENzappH5aE0Dt5x0x9rJvGQo+tT0D+GZ4ZWzOUexCw/qv
+ qX2ArAqCqF6GVWMDEq0fWogXSjmZ3Lvwry0hqVCK/eEV4V48lMFy/2Ms8ni6CPV7
+ 6SC8sob0bYo9p74F3e46OgBGt8SDrcjP82gxRe/iQWxNeBwOMyRsCnkLu880wJ0w
+ IGsEPfxTyYrfOxK2SUv3cCKtn8xahZvKZvDuCPq4JCTbhayPKUMdkVE97mf8tIeQ
+ ==
+X-ME-Sender: <xms:eE5CXsffZtlZVleiv-xYIOb7dSUU1tXVbmXaqhLacrcVX6rLcc3bkA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedriedvgdellecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:eE5CXizdT_P2cmtLz9-0qpl2aw-5W7Jrx13LktK0vfB6p5hQE5pWZA>
+ <xmx:eE5CXi8394U4vLUXdnborBVnucisXG-X3X23NwonmszUeDGO2WXt6w>
+ <xmx:eE5CXkkhGSrQzszh99htJax3bgSvKJc5p0ydGn0nDzdTs1hHC0woug>
+ <xmx:ek5CXna2lWWhM6KBrYlE2fM7k798qQytAwxLRhg2a5cS6V1jJm1ipA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 491B3328005D;
+ Tue, 11 Feb 2020 01:49:28 -0500 (EST)
+Date: Tue, 11 Feb 2020 07:49:26 +0100
+From: Maxime Ripard <maxime@cerno.tech>
 To: Jernej Skrabec <jernej.skrabec@siol.net>
+Subject: Re: [PATCH v2 0/5] arm64: dts: allwinner: a64: Enable deinterlace core
+Message-ID: <20200211064926.muxnaphoq4nbrs72@gilmour.lan>
+References: <20200210170656.82265-1-jernej.skrabec@siol.net>
+MIME-Version: 1.0
+In-Reply-To: <20200210170656.82265-1-jernej.skrabec@siol.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200210_224037_206225_261AF096 
-X-CRM114-Status: GOOD (  19.29  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200210_224937_869160_E359220C 
+X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [wens213[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [wens213[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.29 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,127 +103,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, wens@csie.org,
+ robh+dt@kernel.org, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============0523221460374731250=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 11, 2020 at 6:28 AM Jernej Skrabec <jernej.skrabec@siol.net> wrote:
->
-> Current structures are not sorted by family first and then
-> alphabetically. Let's do that now.
->
-> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 
-I would do this at the end of the patch series for a couple of reasons.
-First of all, moving code around before the fixes make the fixes less
-likely to directly apply to stable kernels, and second, the H6 clks
-and resets lists disappear after all the changes.
+--===============0523221460374731250==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="rwr2mhgisf5go3ox"
+Content-Disposition: inline
 
-ChenYu
 
-> ---
->  drivers/clk/sunxi-ng/ccu-sun8i-de2.c | 56 ++++++++++++++--------------
->  1 file changed, 28 insertions(+), 28 deletions(-)
+--rwr2mhgisf5go3ox
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Mon, Feb 10, 2020 at 06:06:51PM +0100, Jernej Skrabec wrote:
+> Allwinner A64 contains deinterlace core, compatible to the one found in
+> H3. It can be used in combination with VPU to playback interlaced videos.
 >
-> diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-> index d9668493c3f9..a928e0c32222 100644
-> --- a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-> +++ b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-> @@ -51,24 +51,6 @@ static SUNXI_CCU_M(mixer1_div_a83_clk, "mixer1-div", "pll-de", 0x0c, 4, 4,
->  static SUNXI_CCU_M(wb_div_a83_clk, "wb-div", "pll-de", 0x0c, 8, 4,
->                    CLK_SET_RATE_PARENT);
->
-> -static struct ccu_common *sun50i_h6_de3_clks[] = {
-> -       &mixer0_clk.common,
-> -       &mixer1_clk.common,
-> -       &wb_clk.common,
-> -
-> -       &bus_mixer0_clk.common,
-> -       &bus_mixer1_clk.common,
-> -       &bus_wb_clk.common,
-> -
-> -       &mixer0_div_clk.common,
-> -       &mixer1_div_clk.common,
-> -       &wb_div_clk.common,
-> -
-> -       &bus_rot_clk.common,
-> -       &rot_clk.common,
-> -       &rot_div_clk.common,
-> -};
-> -
->  static struct ccu_common *sun8i_a83t_de2_clks[] = {
->         &mixer0_clk.common,
->         &mixer1_clk.common,
-> @@ -108,6 +90,24 @@ static struct ccu_common *sun8i_v3s_de2_clks[] = {
->         &wb_div_clk.common,
->  };
->
-> +static struct ccu_common *sun50i_h6_de3_clks[] = {
-> +       &mixer0_clk.common,
-> +       &mixer1_clk.common,
-> +       &wb_clk.common,
-> +
-> +       &bus_mixer0_clk.common,
-> +       &bus_mixer1_clk.common,
-> +       &bus_wb_clk.common,
-> +
-> +       &mixer0_div_clk.common,
-> +       &mixer1_div_clk.common,
-> +       &wb_div_clk.common,
-> +
-> +       &bus_rot_clk.common,
-> +       &rot_clk.common,
-> +       &rot_div_clk.common,
-> +};
-> +
->  static struct clk_hw_onecell_data sun8i_a83t_de2_hw_clks = {
->         .hws    = {
->                 [CLK_MIXER0]            = &mixer0_clk.common.hw,
-> @@ -219,6 +219,16 @@ static const struct sunxi_ccu_desc sun8i_h3_de2_clk_desc = {
->         .num_resets     = ARRAY_SIZE(sun8i_a83t_de2_resets),
->  };
->
-> +static const struct sunxi_ccu_desc sun8i_v3s_de2_clk_desc = {
-> +       .ccu_clks       = sun8i_v3s_de2_clks,
-> +       .num_ccu_clks   = ARRAY_SIZE(sun8i_v3s_de2_clks),
-> +
-> +       .hw_clks        = &sun8i_v3s_de2_hw_clks,
-> +
-> +       .resets         = sun8i_a83t_de2_resets,
-> +       .num_resets     = ARRAY_SIZE(sun8i_a83t_de2_resets),
-> +};
-> +
->  static const struct sunxi_ccu_desc sun50i_a64_de2_clk_desc = {
->         .ccu_clks       = sun8i_h3_de2_clks,
->         .num_ccu_clks   = ARRAY_SIZE(sun8i_h3_de2_clks),
-> @@ -239,16 +249,6 @@ static const struct sunxi_ccu_desc sun50i_h6_de3_clk_desc = {
->         .num_resets     = ARRAY_SIZE(sun50i_h6_de3_resets),
->  };
->
-> -static const struct sunxi_ccu_desc sun8i_v3s_de2_clk_desc = {
-> -       .ccu_clks       = sun8i_v3s_de2_clks,
-> -       .num_ccu_clks   = ARRAY_SIZE(sun8i_v3s_de2_clks),
-> -
-> -       .hw_clks        = &sun8i_v3s_de2_hw_clks,
-> -
-> -       .resets         = sun8i_a83t_de2_resets,
-> -       .num_resets     = ARRAY_SIZE(sun8i_a83t_de2_resets),
-> -};
-> -
->  static int sunxi_de2_clk_probe(struct platform_device *pdev)
->  {
->         struct resource *res;
-> --
-> 2.25.0
->
+> Please take a look.
+
+Applied, thanks!
+Maxime
+
+--rwr2mhgisf5go3ox
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkJOdgAKCRDj7w1vZxhR
+xU35AQD3LjdGbe0ijT1ImTTyhYz9dseJPfQ+YsQLd+m3QBvTEwD8DJEmtNRM/8AC
+3IZoFJmm5wKb4si4CoYWpoVwsaHnnwk=
+=dTRv
+-----END PGP SIGNATURE-----
+
+--rwr2mhgisf5go3ox--
+
+
+--===============0523221460374731250==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0523221460374731250==--
+
