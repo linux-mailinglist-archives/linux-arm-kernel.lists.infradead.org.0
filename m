@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36E9815994E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 20:01:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B575159952
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 11 Feb 2020 20:02:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KIfbmKv9qBQz6nHtG9mLcCKfmjPWPkNIEUUj6/e9AmA=; b=VezpeTHA8iaXOF
-	ftJOnBm1aun1HD5adKr4JrNLXYw38FSLKX0pRPqaXab7nQE8Fmn3GglkgY79YNH1BoCxDSyVbWYvM
-	7QWi+xcEm1JVp4Wvvr5cJu9HZAKXlduG2C31MKInbCTFxWWYtxOXX+MIBna2VGJuXClSk7q7YHUwf
-	cA1UEgNo7w+gWT5K2+e38sLrTTGaD6a4WMTbN5oaYqgNH17fgJEtoTB9R9u0+i1z84RYDhSoNTg2T
-	QPsfi+qL4iLzJ5GOZ9sSIcI86roXG1mTsd5STy5qLnPRxxYcWnZ+6pU6rOpO1aQDAMMWRYPTKdFsS
-	uqNCD85a3XzcI8sEFdvQ==;
+	List-Owner; bh=N/SQ5bCPnm1exCyLRDY4Bs3tU2LXuAHHMsgqSW9UU0I=; b=gfYjs3mKkNO6xG
+	AA1QzXsWAi4VF8NNXC/9TwzF0Cel4QDHq75vgWHU3cie5hofUkD5jWP8ijJYrsDHazygW5U91fVxE
+	Eeo8yM+VOroXKZLcJifyi95Cj4Ve/Gn9wngWS4KyQsWfwOM+DSl28zNQhAHltEWLZa9DpHWhhW2z1
+	vSwgJrfAm41ei5v7V7DTMkECc6F36OuWl66zngfEJrCvxqjk/FxXuMx192FuOKtmIje2e5cC/76SD
+	iFhP30szh/BM9vWOmDkWCr3Vs+VJs7fUv7gCXMhQQfuqim8H89SY13i94Iu3G1l8KjxL1kO07Ap99
+	eXp2pquTl/Re5giuhhrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1an0-0004VK-Hk; Tue, 11 Feb 2020 19:01:42 +0000
-Received: from mailoutvs31.siol.net ([185.57.226.222] helo=mail.siol.net)
+	id 1j1anQ-00053h-GK; Tue, 11 Feb 2020 19:02:08 +0000
+Received: from mailoutvs60.siol.net ([185.57.226.251] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ama-0004Kz-5y
- for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 19:01:18 +0000
+ id 1j1amb-0004LF-QG
+ for linux-arm-kernel@lists.infradead.org; Tue, 11 Feb 2020 19:01:19 +0000
 Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id EDFEA520674;
- Tue, 11 Feb 2020 20:01:09 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTP id 6686B520F5A;
+ Tue, 11 Feb 2020 20:01:12 +0100 (CET)
 X-Virus-Scanned: amavisd-new at psrvmta11.zcs-production.pri
 Received: from mail.siol.net ([127.0.0.1])
  by localhost (psrvmta11.zcs-production.pri [127.0.0.1]) (amavisd-new,
  port 10032)
- with ESMTP id BhECTqe-gCir; Tue, 11 Feb 2020 20:01:09 +0100 (CET)
+ with ESMTP id uxr_8-pvhZ7V; Tue, 11 Feb 2020 20:01:12 +0100 (CET)
 Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 9403252012A;
- Tue, 11 Feb 2020 20:01:09 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPS id 1B9B9520E21;
+ Tue, 11 Feb 2020 20:01:12 +0100 (CET)
 Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
  [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Postfix) with ESMTPSA id 526AA525187;
- Tue, 11 Feb 2020 20:01:07 +0100 (CET)
+ by mail.siol.net (Postfix) with ESMTPSA id A9FA0520551;
+ Tue, 11 Feb 2020 20:01:09 +0100 (CET)
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 To: mripard@kernel.org,
 	wens@csie.org
-Subject: [PATCH v2 3/7] clk: sunxi-ng: sun8i-de2: H6 doesn't have rotate core
-Date: Tue, 11 Feb 2020 19:59:32 +0100
-Message-Id: <20200211185936.245174-4-jernej.skrabec@siol.net>
+Subject: [PATCH v2 4/7] clk: sunxi-ng: sun8i-de2: Don't reuse A83T resets
+Date: Tue, 11 Feb 2020 19:59:33 +0100
+Message-Id: <20200211185936.245174-5-jernej.skrabec@siol.net>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200211185936.245174-1-jernej.skrabec@siol.net>
 References: <20200211185936.245174-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_110116_385028_FA201380 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20200211_110118_002858_74DA4268 
+X-CRM114-Status: GOOD (  11.63  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.222 listed in list.dnswl.org]
+ low trust [185.57.226.251 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,119 +79,65 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DE3 documentation regarding presence of rotate core in H6 is a bit
-confusing. Register descriptions mention bits for enabling rotate core
-clocks and reset, but general overview doesn't list it as feature of H6
-display engine, BSP kernel doesn't support it and there is no interrupt
-listed for it. Manual poking registers also didn't reveal presence of
-rotate core.
+Currently, V3s and H3 reuse A83T reset structure. However, A83T contains
+additional core for rotation, which is not present in V3s and H3.
 
-Let's assume there isn't any rotate core on H6 present and remove
-related clocks. With that done, structures are same as those for H5, so
-just reuse H5 structure.
+Make new reset structure for H3 and let V3s reuse it. A83T reset
+structure will be amended in subsequent commit.
 
-Fixes: 56808da9f97f ("clk: sunxi-ng: Add support for H6 DE3 clocks")
 Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 ---
- drivers/clk/sunxi-ng/ccu-sun8i-de2.c | 57 +---------------------------
- 1 file changed, 1 insertion(+), 56 deletions(-)
+ drivers/clk/sunxi-ng/ccu-sun8i-de2.c | 23 ++++++++++++++++-------
+ 1 file changed, 16 insertions(+), 7 deletions(-)
 
 diff --git a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-index c6220be8e205..87a30d072ae9 100644
+index 87a30d072ae9..bbbe1ed7aba1 100644
 --- a/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
 +++ b/drivers/clk/sunxi-ng/ccu-sun8i-de2.c
-@@ -51,24 +51,6 @@ static SUNXI_CCU_M(mixer1_div_a83_clk, "mixer1-div", "pll-de", 0x0c, 4, 4,
- static SUNXI_CCU_M(wb_div_a83_clk, "wb-div", "pll-de", 0x0c, 8, 4,
- 		   CLK_SET_RATE_PARENT);
- 
--static struct ccu_common *sun50i_h6_de3_clks[] = {
--	&mixer0_clk.common,
--	&mixer1_clk.common,
--	&wb_clk.common,
--
--	&bus_mixer0_clk.common,
--	&bus_mixer1_clk.common,
--	&bus_wb_clk.common,
--
--	&mixer0_div_clk.common,
--	&mixer1_div_clk.common,
--	&wb_div_clk.common,
--
--	&bus_rot_clk.common,
--	&rot_clk.common,
--	&rot_div_clk.common,
--};
--
- static struct ccu_common *sun8i_a83t_de2_clks[] = {
- 	&mixer0_clk.common,
- 	&mixer1_clk.common,
-@@ -194,26 +176,6 @@ static struct clk_hw_onecell_data sun50i_a64_de2_hw_clks = {
- 	.num	= CLK_NUMBER_WITH_ROT,
- };
- 
--static struct clk_hw_onecell_data sun50i_h6_de3_hw_clks = {
--	.hws	= {
--		[CLK_MIXER0]		= &mixer0_clk.common.hw,
--		[CLK_MIXER1]		= &mixer1_clk.common.hw,
--		[CLK_WB]		= &wb_clk.common.hw,
--		[CLK_ROT]		= &rot_clk.common.hw,
--
--		[CLK_BUS_MIXER0]	= &bus_mixer0_clk.common.hw,
--		[CLK_BUS_MIXER1]	= &bus_mixer1_clk.common.hw,
--		[CLK_BUS_WB]		= &bus_wb_clk.common.hw,
--		[CLK_BUS_ROT]		= &bus_rot_clk.common.hw,
--
--		[CLK_MIXER0_DIV]	= &mixer0_div_clk.common.hw,
--		[CLK_MIXER1_DIV]	= &mixer1_div_clk.common.hw,
--		[CLK_WB_DIV]		= &wb_div_clk.common.hw,
--		[CLK_ROT_DIV]		= &rot_div_clk.common.hw,
--	},
--	.num	= CLK_NUMBER_WITH_ROT,
--};
--
+@@ -179,9 +179,18 @@ static struct clk_hw_onecell_data sun50i_a64_de2_hw_clks = {
  static struct ccu_reset_map sun8i_a83t_de2_resets[] = {
  	[RST_MIXER0]	= { 0x08, BIT(0) },
  	/*
-@@ -237,13 +199,6 @@ static struct ccu_reset_map sun50i_h5_de2_resets[] = {
+-	 * For A83T, H3 and R40, mixer1 reset line is shared with wb, so
+-	 * only RST_WB is exported here.
+-	 * For V3s there's just no mixer1, so it also shares this struct.
++	 * Mixer1 reset line is shared with wb, so only RST_WB is
++	 * exported here.
++	 */
++	[RST_WB]	= { 0x08, BIT(2) },
++};
++
++static struct ccu_reset_map sun8i_h3_de2_resets[] = {
++	[RST_MIXER0]	= { 0x08, BIT(0) },
++	/*
++	 * Mixer1 reset line is shared with wb, so only RST_WB is
++	 * exported here.
++	 * V3s doesn't have mixer1, so it also shares this struct.
+ 	 */
  	[RST_WB]	= { 0x08, BIT(2) },
  };
+@@ -215,8 +224,8 @@ static const struct sunxi_ccu_desc sun8i_h3_de2_clk_desc = {
  
--static struct ccu_reset_map sun50i_h6_de3_resets[] = {
--	[RST_MIXER0]	= { 0x08, BIT(0) },
--	[RST_MIXER1]	= { 0x08, BIT(1) },
--	[RST_WB]	= { 0x08, BIT(2) },
--	[RST_ROT]	= { 0x08, BIT(3) },
--};
--
- static const struct sunxi_ccu_desc sun8i_a83t_de2_clk_desc = {
- 	.ccu_clks	= sun8i_a83t_de2_clks,
- 	.num_ccu_clks	= ARRAY_SIZE(sun8i_a83t_de2_clks),
-@@ -284,16 +239,6 @@ static const struct sunxi_ccu_desc sun50i_h5_de2_clk_desc = {
- 	.num_resets	= ARRAY_SIZE(sun50i_h5_de2_resets),
+ 	.hw_clks	= &sun8i_h3_de2_hw_clks,
+ 
+-	.resets		= sun8i_a83t_de2_resets,
+-	.num_resets	= ARRAY_SIZE(sun8i_a83t_de2_resets),
++	.resets		= sun8i_h3_de2_resets,
++	.num_resets	= ARRAY_SIZE(sun8i_h3_de2_resets),
  };
  
--static const struct sunxi_ccu_desc sun50i_h6_de3_clk_desc = {
--	.ccu_clks	= sun50i_h6_de3_clks,
--	.num_ccu_clks	= ARRAY_SIZE(sun50i_h6_de3_clks),
--
--	.hw_clks	= &sun50i_h6_de3_hw_clks,
--
--	.resets		= sun50i_h6_de3_resets,
--	.num_resets	= ARRAY_SIZE(sun50i_h6_de3_resets),
--};
--
- static const struct sunxi_ccu_desc sun8i_v3s_de2_clk_desc = {
- 	.ccu_clks	= sun8i_v3s_de2_clks,
- 	.num_ccu_clks	= ARRAY_SIZE(sun8i_v3s_de2_clks),
-@@ -406,7 +351,7 @@ static const struct of_device_id sunxi_de2_clk_ids[] = {
- 	},
- 	{
- 		.compatible = "allwinner,sun50i-h6-de3-clk",
--		.data = &sun50i_h6_de3_clk_desc,
-+		.data = &sun50i_h5_de2_clk_desc,
- 	},
- 	{ }
+ static const struct sunxi_ccu_desc sun50i_a64_de2_clk_desc = {
+@@ -245,8 +254,8 @@ static const struct sunxi_ccu_desc sun8i_v3s_de2_clk_desc = {
+ 
+ 	.hw_clks	= &sun8i_v3s_de2_hw_clks,
+ 
+-	.resets		= sun8i_a83t_de2_resets,
+-	.num_resets	= ARRAY_SIZE(sun8i_a83t_de2_resets),
++	.resets		= sun8i_h3_de2_resets,
++	.num_resets	= ARRAY_SIZE(sun8i_h3_de2_resets),
  };
+ 
+ static int sunxi_de2_clk_probe(struct platform_device *pdev)
 -- 
 2.25.0
 
