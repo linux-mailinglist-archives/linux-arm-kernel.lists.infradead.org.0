@@ -2,79 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9475415AF87
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 19:14:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B027B15AFA2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 19:20:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yV/ldTvWqLFDC/OLskr3z7dX7Lj+AUq7sCHYex9aG5w=; b=gL4jqtI6Vo1ucB
-	7vAUEl0mkvlbDWX7i60J+GKvBebYbIx6r7/5ASh+nqGG1ZJyi6mkaLLOS7B/ZR0y1Cb4ivs2zqll7
-	m+2dlGegOm3U//o78JI2zDhlk2KqJhz46Dm0AJ6AvDUoIKxKHe/MNiBohpfzJP1dAGGbZPLirTmN1
-	xd1VNLuTiT+H9WM39Lv2lSuIm0HBsGJ5kNU8kHvYxFNpUi5/lQdphjP6B4R/jKVb1Jo//niNCFipB
-	ub79Xr03CiCV9U78G8usbPXDrmwzVydnDXRfr/hFWkt8mEA3MZMifr1OajSgN1hgRzhU1yziIZWT8
-	8ihiTzmta+nByFchJnIQ==;
+	List-Owner; bh=QJTNY492Mdo/TYKhfpDMa8n4ojGym9UaeL/rmTUhUOc=; b=P6bRT273X+3sc0
+	ChCA4WvwyWMDJ+1k5wAJPEeqVxK3/pvSDpuZpnlKVHraRmGLurT6Y9O9M3ZbCEV0KaONs8aO1PW12
+	psWCo+M1c/iM9pLmaMHuL+5vyl+NWXHNbZKq4MH6OcOpthM5yvR7JMlIVTMuQVQIz2aaVM2RXVEkH
+	uf0wY2pupk2mIfzVqrdN1fW3hmSmK1FtfeBS10tahajbgCoYfWu863Ndw4do5fnCM7zX8IipQEVZL
+	QD3Niz/t/kez40i3fh9WjY7QPterLAuw66TS4P+uxQgOBfuzH9XIo+W71hyNR+aLJNTdNTEwkNRj1
+	4ZBwGkmNVC6reQjlRlYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1wWt-0002jg-Cc; Wed, 12 Feb 2020 18:14:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1wWk-0002ik-Gb; Wed, 12 Feb 2020 18:14:25 +0000
-Received: from mail-qv1-f53.google.com (mail-qv1-f53.google.com
- [209.85.219.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 255FA24649;
- Wed, 12 Feb 2020 18:14:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581531261;
- bh=XPutHtfrd9L6DCjKR/i4gzTwtBJqO9VVCF2dsQMhOT0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=H0t1S9X9r5QrGUd7DvAOuSUSqqXDsgdC1XTVAcFbzj4EY2h/S8r/mWZNvB10mdCQa
- 38EaQisKKJidSQ7TOlCXmLvne+3QnPgrSM7v03v8XngdUW7peGivsjAvtTOAtfr4CA
- wewf/BxAmAKE916HXnBmP76nvVhL3jH9qCPQp3LY=
-Received: by mail-qv1-f53.google.com with SMTP id db9so1363424qvb.3;
- Wed, 12 Feb 2020 10:14:21 -0800 (PST)
-X-Gm-Message-State: APjAAAWj/Gc9lpFAm6Y6KUN4V+dyNriHskEFpxJ9jktH7EIr3zY8+GDr
- /O7WuqVCx+REaEyLG4SicEXYB3a8zHb5f7hQzA==
-X-Google-Smtp-Source: APXvYqwYf7OiqvLmE/STxKkwBxfQm+rxJyw5z6FFooFuohKsTmQUlxLvZAqUvV1R4jPQEGjoiAS5DvHkVqtRkL1b//c=
-X-Received: by 2002:a05:6214:11ac:: with SMTP id
- u12mr8482894qvv.85.1581531260167; 
- Wed, 12 Feb 2020 10:14:20 -0800 (PST)
+	id 1j1wcU-0005l0-R4; Wed, 12 Feb 2020 18:20:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1wcN-0005kA-L9
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 18:20:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5029930E;
+ Wed, 12 Feb 2020 10:20:10 -0800 (PST)
+Received: from localhost (unknown [10.1.198.52])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E5B563F68E;
+ Wed, 12 Feb 2020 10:20:09 -0800 (PST)
+Date: Wed, 12 Feb 2020 18:20:08 +0000
+From: Ionela Voinescu <ionela.voinescu@arm.com>
+To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
+Subject: Re: [PATCH v3 1/7] arm64: add support for the AMU extension v1
+Message-ID: <20200212182008.GA25421@arm.com>
+References: <20200211184542.29585-1-ionela.voinescu@arm.com>
+ <20200211184542.29585-2-ionela.voinescu@arm.com>
+ <93472f17-6465-641d-ea82-3230b5697ffd@arm.com>
+ <20200212161045.GA7475@arm.com>
+ <133890f7-59bb-63b9-0ca8-2294e3596058@arm.com>
 MIME-Version: 1.0
-References: <20200207052627.130118-1-drinkcat@chromium.org>
- <20200207052627.130118-8-drinkcat@chromium.org>
- <CANMq1KBL-S2DVKbCB2h_XNpfUro+pZ96-C5ft0p-8GX_tbXELQ@mail.gmail.com>
-In-Reply-To: <CANMq1KBL-S2DVKbCB2h_XNpfUro+pZ96-C5ft0p-8GX_tbXELQ@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Wed, 12 Feb 2020 12:14:08 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLuo+2G2MjiwS9cwNhMV2pGBojXFGNqEfLv3fP-Y04mfA@mail.gmail.com>
-Message-ID: <CAL_JsqLuo+2G2MjiwS9cwNhMV2pGBojXFGNqEfLv3fP-Y04mfA@mail.gmail.com>
-Subject: Re: [PATCH v4 7/7] RFC: drm/panfrost: devfreq: Add support for 2
- regulators
-To: Nicolas Boichat <drinkcat@chromium.org>
+Content-Disposition: inline
+In-Reply-To: <133890f7-59bb-63b9-0ca8-2294e3596058@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_101422_982531_1EDFC21B 
-X-CRM114-Status: GOOD (  22.09  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200212_102011_790508_424EFDE2 
+X-CRM114-Status: GOOD (  25.03  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,85 +66,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Devicetree List <devicetree@vger.kernel.org>,
- Ulf Hansson <ulf.hansson@linaro.org>,
- Tomeu Vizoso <tomeu.vizoso@collabora.com>, David Airlie <airlied@linux.ie>,
- lkml <linux-kernel@vger.kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Steven Price <steven.price@arm.com>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Mark Brown <broonie@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, maz@kernel.org, linux-doc@vger.kernel.org,
+ peterz@infradead.org, catalin.marinas@arm.com, linux-pm@vger.kernel.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, mingo@redhat.com,
+ viresh.kumar@linaro.org, linux-arm-kernel@lists.infradead.org,
+ sudeep.holla@arm.com, will@kernel.org, valentin.schneider@arm.com,
+ lukasz.luba@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 12, 2020 at 2:49 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
->
-> +Viresh Kumar +Stephen Boyd for clock advice.
->
-> On Fri, Feb 7, 2020 at 1:27 PM Nicolas Boichat <drinkcat@chromium.org> wrote:
-> >
-> > The Bifrost GPU on MT8183 uses 2 regulators (core and SRAM) for
-> > devfreq, and provides OPP table with 2 sets of voltages.
-> >
-> > TODO: This is incomplete as we'll need add support for setting
-> > a pair of voltages as well.
->
-> So all we need for this to work (at least apparently, that is, I can
-> change frequency) is this:
-> https://lore.kernel.org/patchwork/patch/1192945/
-> (ah well, Viresh just replied, so, probably not, I'll check that out
-> and use the correct API)
->
-> But then there's a slight problem: panfrost_devfreq uses a bunch of
-> clk_get_rate calls, and the clock PLLs (at least on MTK platform) are
-> never fully precise, so we get back 299999955 for 300 Mhz and
-> 799999878 for 800 Mhz. That means that the kernel is unable to keep
-> devfreq stats as neither of these values are in the table:
-> [ 4802.470952] devfreq devfreq1: Couldn't update frequency transition
-> information.
-> The kbase driver fixes this by remembering the last set frequency, and
-> reporting that to devfreq. Should we do that as well or is there a
-> better fix?
->
-> Another thing that I'm not implementing is the dance that Mediatek
-> does in their kbase driver when changing the clock (described in patch
-> 2/7):
-> ""
-> The binding we use with out-of-tree Mali drivers includes more
-> clocks, this is used for devfreq: the out-of-tree driver switches
-> clk_mux to clk_sub_parent (26Mhz), adjusts clk_main_parent, then
-> switches clk_mux back to clk_main_parent:
-> (see https://chromium.googlesource.com/chromiumos/third_party/kernel/+/chromeos-4.19/drivers/gpu/arm/midgard/platform/mediatek/mali_kbase_runtime_pm.c#423)
-> clocks =
->         <&topckgen CLK_TOP_MFGPLL_CK>,
->         <&topckgen CLK_TOP_MUX_MFG>,
->         <&clk26m>,
->         <&mfgcfg CLK_MFG_BG3D>;
-> clock-names =
->         "clk_main_parent",
->         "clk_mux",
->         "clk_sub_parent",
->         "subsys_mfg_cg";
-> ""
-> Is there a clean/simple way to implement this in the clock
-> framework/device tree? Or should we implement something in the
-> panfrost driver?
+Hi Suzuki,
 
-Putting parent clocks into 'clocks' for a device is a pretty common
-abuse. The 'assigned-clocks' binding is what's used for parent clock
-setup. Not sure that's going to help here though. Is this dance
-because the parent clock frequency can't be changed cleanly? If up to
-me, I'd put that dance in the clock driver. The GPU shouldn't have to
-care.
+On Wednesday 12 Feb 2020 at 16:20:56 (+0000), Suzuki Kuruppassery Poulose wrote:
+> > > > +static bool has_amu(const struct arm64_cpu_capabilities *cap,
+> > > > +		       int __unused)
+> > > > +{
+> > > > +	/*
+> > > > +	 * The AMU extension is a non-conflicting feature: the kernel can
+> > > > +	 * safely run a mix of CPUs with and without support for the
+> > > > +	 * activity monitors extension. Therefore, if not disabled through
+> > > > +	 * the kernel command line early parameter, enable the capability
+> > > > +	 * to allow any late CPU to use the feature.
+> > > > +	 *
+> > > > +	 * With this feature enabled, the cpu_enable function will be called
+> > > > +	 * for all CPUs that match the criteria, including secondary and
+> > > > +	 * hotplugged, marking this feature as present on that respective CPU.
+> > > > +	 * The enable function will also print a detection message.
+> > > > +	 */
+> > > > +
+> > > > +	if (!disable_amu && !zalloc_cpumask_var(&amu_cpus, GFP_KERNEL)) {
+> > > 
+> > > This looks problematic. Don't we end up in allocating the memory during
+> > > "each CPU" check and thus leaking memory ? Do we really need to allocate
+> > > this dynamically ?
+> > > 
+> > 
+> > Yes, it does make some assumptions. Given that the AMU capability is
+> > a WEAK_LOCAL_CPU_FEATURE I relied on the match function being called
+> > only once, when the return value is true. If the return value is false,
+> 
+> That is not correct. A WEAK_LOCAL_CPU_FEATURE is still SCOPE_LOCAL_CPU,
+> implies it is run on all the booting CPUs (including the hotplugged
+> ones). The WEAK is there to imply that its "permitted" or "optional"
+> for a hotplugged CPU. So, eventually you will re-allocate this variable
+> every single time a CPU turns up, where you could also loose the current
+> state.
+> 
 
-Rob
+> > which will result in it being called multiple times, it's either because
+> > disable_amu == false, or it has become false due to a previous failed
+> > allocation, in which case a new allocation will not be attempted.
+
+First of all, I agree with you that this should be corrected.
+
+But for completion (and my education) I retraced my steps in regards
+to my assumption above. While cpu_enable is called for all CPUs - boot,
+secondary, hotplugged, the matches function (in this case has_amu) is
+not always called for all CPUs, and that's where the confusion came
+from.
+
+Looking over the update_cpu_capabilities function, that's called from
+both setup_boot_cpu_capabilities and check_local_cpu_capabilities
+(secondary CPUs) for SCOPE_LOCAL_CPU:
+
+-----
+static void update_cpu_capabilities(u16 scope_mask)
+{
+        int i;
+        const struct arm64_cpu_capabilities *caps;
+
+        scope_mask &= ARM64_CPUCAP_SCOPE_MASK;
+        for (i = 0; i < ARM64_NCAPS; i++) {
+                caps = cpu_hwcaps_ptrs[i];
+                if (!caps || !(caps->type & scope_mask) ||
+                    cpus_have_cap(caps->capability) ||
+                    !caps->matches(caps, cpucap_default_scope(caps)))
+                        continue;
+
+--> The matches function is only called if !cpus_have_cap
+
+
+                if (caps->desc)
+                        pr_info("detected: %s\n", caps->desc);
+                cpus_set_cap(caps->capability);
+
+--> If matches returns true we mark it as present in cpu_hwcaps.
+
+                if ((scope_mask & SCOPE_BOOT_CPU) && (caps->type & SCOPE_BOOT_CPU))
+                        set_bit(caps->capability, boot_capabilities);
+        }   
+}
+---
+
+Therefore caps->matches (in this case has_amu) will only be called as
+long as it returns false. This is where my assumption above came from.
+Also, this is the reason it was working nicely in my testing, as I did
+not test hotplug this time.
+
+Where the has_amu code breaks is when we end up calling
+verify_local_cpu_capabilities instead of update_cpu_capabilities after
+sys_caps_initialised, which will happen for hotplugged CPUs.
+In that case we call caps->matches for all CPUs. Also, if anyone in the
+future ends up calling this_cpu_has_cap for the AMU capability.
+
+I will fix this.
+
+Thank you,
+Ionela.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
