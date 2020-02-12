@@ -2,61 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6713015A591
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:02:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33AE515A646
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:26:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hvL6nnDznU4a0yUrzugyfy+bCaZHOAoWtPjm+VUeNq8=; b=MKvKt2BSguWCnE8VeZEI4yVL5
-	fxsx3TNJLZv2xxS4XC8UQDbT4Tyd3luhruCRFasBShwx00N5lS8AnD2CpdauRWlZ/leaVy1in6qhN
-	dyhkObUgQfR6GoqZ+UYE4WTQIXK/tKrA8bnBANMq66Hs9TWeOlvUnuy+zZIxikFXbTlfpECSY8DeS
-	A2YCZq/oLqiRCFx8czTQPX2OeXgKQus7fag4CFwSuFg8sl5cSzAkbMM4lXL7pFFmzuaxk2d7/ogS8
-	ARGFbywvU4tJ9kV5OLYIkXSfZnCXlC7Amv69vdGB5TnfHnsG/LmGv1RMMFEgnhIfks9qEnZKSTUAv
-	1Z5m+2Yog==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=UeZE0jD9EsDdBJr0nKGLP0hlePPz40JGS3+VDC5Aa0c=; b=Pug
+	UCVKPGpeXm0t946W9XeTRy3k7lXjC7otHHKMXvhT6r5n/xHWyypwX/50EvrnUyPSgkH/ycaIQOKtz
+	90T2kRlFXWWllKMoImJyR6wHDp0kK45exiErXj+lCI/eGgD11kGAAiWcxB+HTEblmVB87QOBWiy2b
+	UAcn1/Oc3MNzKLs8iAAZAcLgP2g2ae+p7ut8/mI1T8eYGT4Rp2yJ26fTDolyxMjgSLau9rLEdyGuQ
+	6B1b7yeBrVxaPzI7JsTVNnowfm5TFUMhjEJtmiMl/9XflP2MIdf/nOwAb4cAG/gBpA8hoVoaMdlqY
+	yZGemuVv84V/5pDVZeCl11WfjSaqrXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1oqT-0005eQ-3y; Wed, 12 Feb 2020 10:02:13 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1oqJ-0005dR-2Q
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 10:02:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 516BF30E;
- Wed, 12 Feb 2020 02:02:00 -0800 (PST)
-Received: from [10.37.12.187] (unknown [10.37.12.187])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BCACC3F68F;
- Wed, 12 Feb 2020 02:01:56 -0800 (PST)
-Subject: Re: [PATCH v3 7/7] clocksource/drivers/arm_arch_timer: validate
- arch_timer_rate
-To: Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
- will@kernel.org, mark.rutland@arm.com, maz@kernel.org,
- suzuki.poulose@arm.com, sudeep.holla@arm.com, valentin.schneider@arm.com,
- rjw@rjwysocki.net
-References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-8-ionela.voinescu@arm.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <89339501-5ee4-e871-3076-c8b02c6fbf6e@arm.com>
-Date: Wed, 12 Feb 2020 10:01:54 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20200211184542.29585-8-ionela.voinescu@arm.com>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_020203_204901_9D63CA09 
-X-CRM114-Status: GOOD (  23.79  )
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+	id 1j1pDU-0007hq-Cf; Wed, 12 Feb 2020 10:26:00 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1pD3-0006Rz-4W
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 12 Feb 2020 10:25:33 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Message-Id:Date:Subject:Cc:To:From:
+ Sender:Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding:
+ Content-ID:Content-Description:In-Reply-To:References;
+ bh=suyB3h9ymK6CP8F2Bu89jnW4Krg9WTnc1zFYUunw61Y=; b=f1aTyHDeiqS951zBetOTvswq57
+ btsxej1Yfwo2lv7waTtWrEXep5QQAk7nh1336aLqdtKeckyT3pqB3fa4NVrIc+eYcIRz8yKeVhZ1W
+ tcd6f/YJTgFD2/3eqOKmf/gZrXQZTwvaAEbpYrNSB6K9f/3BSq6SH6FF9LACKN4JripbHGDdu2rWg
+ 8vl+hQD0gXqysBaqO0sy/T6bxhAbZuZAgmrH+JXqMkb8ItHa8EOo6IThx/oDSWRwwSPQosiqjPzbX
+ 3CYgUbjNxokX8rOkObc6rBsFgGXPJCpiieFvixol2rsm3ga8q09ctNpGO6ip5xPcZ3EudIpCnEjzE
+ jWl8QuHQ==;
+Received: from newton.telenet-ops.be ([2a02:1800:120:4::f00:d])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1owt-0006he-PR
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 10:08:52 +0000
+Received: from baptiste.telenet-ops.be (baptiste.telenet-ops.be
+ [IPv6:2a02:1800:120:4::f00:13])
+ by newton.telenet-ops.be (Postfix) with ESMTPS id 48Hb2M5DBRzMrFHK
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Feb 2020 11:08:43 +0100 (CET)
+Received: from ramsan ([84.195.182.253])
+ by baptiste.telenet-ops.be with bizsmtp
+ id 1m8Y2200H5USYZQ01m8YUq; Wed, 12 Feb 2020 11:08:39 +0100
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1j1owa-0001EO-IO; Wed, 12 Feb 2020 11:08:32 +0100
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1j1owa-0000LV-FB; Wed, 12 Feb 2020 11:08:32 +0100
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Russell King <linux@armlinux.org.uk>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Lubomir Rintel <lkundrak@v3.sk>,
+ Heiko Stuebner <heiko@sntech.de>, Magnus Damm <magnus.damm@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Michal Simek <michal.simek@xilinx.com>
+Subject: [PATCH 0/7] ARM: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+Date: Wed, 12 Feb 2020 11:08:23 +0100
+Message-Id: <20200212100830.446-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: 2.7 (++)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a02:1800:120:4:0:0:f00:d listed in] [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.7 SUBJ_OBFU_PUNCT_FEW    Possible punctuation-obfuscated Subject:
+ header
+ 1.7 SUBJ_OBFU_PUNCT_MANY   Punctuation-obfuscated Subject: header
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,105 +87,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, peterz@infradead.org, viresh.kumar@linaro.org,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, mingo@redhat.com,
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ionela, Valentin
+	Hi all,
 
-On 2/11/20 6:45 PM, Ionela Voinescu wrote:
-> From: Valentin Schneider <valentin.schneider@arm.com>
-> 
-> Using an arch timer with a frequency of less than 1MHz can result in an
-> incorrect functionality of the system which assumes a reasonable rate.
-> 
-> One example is the use of activity monitors for frequency invariance
-> which uses the rate of the arch timer as the known rate of the constant
-> cycle counter in computing its ratio compared to the maximum frequency
-> of a CPU. For arch timer frequencies less than 1MHz this ratio could
-> end up being 0 which is an invalid value for its use.
-> 
-> Therefore, warn if the arch timer rate is below 1MHz which contravenes
-> the recommended architecture interval of 1 to 50MHz.
-> 
-> Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Marc Zyngier <maz@kernel.org>
-> ---
->   drivers/clocksource/arm_arch_timer.c | 18 +++++++++++++++---
->   1 file changed, 15 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/clocksource/arm_arch_timer.c b/drivers/clocksource/arm_arch_timer.c
-> index 9a5464c625b4..4faa930eabf8 100644
-> --- a/drivers/clocksource/arm_arch_timer.c
-> +++ b/drivers/clocksource/arm_arch_timer.c
-> @@ -885,6 +885,17 @@ static int arch_timer_starting_cpu(unsigned int cpu)
->   	return 0;
->   }
->   
-> +static int validate_timer_rate(void)
-> +{
-> +	if (!arch_timer_rate)
-> +		return -EINVAL;
-> +
-> +	/* Arch timer frequency < 1MHz can cause trouble */
-> +	WARN_ON(arch_timer_rate < 1000000);
+The OF clock helpers were moved to <linux/of_clk.h> a while ago.
+Hence code that is not a clock provider, but just needs to call
+of_clk_init(), can (and should) include <linux/of_clk.h> instead of
+<linux/clk-provider.h>.
 
-I don't see a big value of having a patch just to add one extra warning,
-in a situation which we handle in our code with in 6/7 with:
+All these patches are independent of each others, and thus can be
+applied by the corresponding subsystem maintainers.
 
-+	if (!ratio) {
-+		pr_err("System timer frequency too low.\n");
-+		return -EINVAL;
-+	}
+Thanks!
 
-Furthermore, the value '100000' here is because of our code and
-calculation in there, so it does not belong to arch timer. Someone
-might ask why it's not 200000 or a define in our header...
-Or questions asking why do you warn when that arch timer and cpu is not
-AMU capable...
+Geert Uytterhoeven (7):
+  ARM/time: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: mediatek: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: mmp: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: rockchip: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: shmobile: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: sunxi: Replace <linux/clk-provider.h> by <linux/of_clk.h>
+  ARM: zynq: Replace <linux/clk-provider.h> by <linux/of_clk.h>
 
-> +
-> +	return 0;
-> +}
-> +
->   /*
->    * For historical reasons, when probing with DT we use whichever (non-zero)
->    * rate was probed first, and don't verify that others match. If the first node
-> @@ -900,7 +911,7 @@ static void arch_timer_of_configure_rate(u32 rate, struct device_node *np)
->   		arch_timer_rate = rate;
->   
->   	/* Check the timer frequency. */
-> -	if (arch_timer_rate == 0)
-> +	if (validate_timer_rate())
->   		pr_warn("frequency not available\n");
->   }
->   
-> @@ -1594,9 +1605,10 @@ static int __init arch_timer_acpi_init(struct acpi_table_header *table)
->   	 * CNTFRQ value. This *must* be correct.
->   	 */
->   	arch_timer_rate = arch_timer_get_cntfrq();
-> -	if (!arch_timer_rate) {
-> +	ret = validate_timer_rate();
-> +	if (ret) {
->   		pr_err(FW_BUG "frequency not available.\n");
-> -		return -EINVAL;
-> +		return ret;
->   	}
->   
->   	arch_timer_uses_ppi = arch_timer_select_ppi();
-> 
+ arch/arm/kernel/time.c                   | 2 +-
+ arch/arm/mach-mediatek/mediatek.c        | 2 +-
+ arch/arm/mach-mmp/mmp-dt.c               | 2 +-
+ arch/arm/mach-mmp/mmp2-dt.c              | 2 +-
+ arch/arm/mach-rockchip/rockchip.c        | 2 +-
+ arch/arm/mach-shmobile/setup-rcar-gen2.c | 2 +-
+ arch/arm/mach-sunxi/sunxi.c              | 2 +-
+ arch/arm/mach-zynq/common.c              | 2 +-
+ 8 files changed, 8 insertions(+), 8 deletions(-)
 
-Lastly, this is arch timer.
-To increase chances of getting merge soon, I would recommend to drop
-the patch from this series.
+-- 
+2.17.1
 
-Regards,
-Lukasz
+Gr{oetje,eeting}s,
+
+						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
