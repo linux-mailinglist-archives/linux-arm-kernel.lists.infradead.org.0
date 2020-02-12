@@ -2,66 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F58E15AC56
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 16:49:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC45015ACA2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 17:03:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CgQb6qXZmbI5AnITE0+AVOsptncLKeJvF+LPh5rBJgw=; b=iTkPEgoiDn1R++0CI99iozRVG
-	Zp3uH/p1Z/NRV/XGePtUNamigIgfz3NRdBO1D8+GTXKaKrrMic+N4TcxvZ4f5nt+UcpNT73JQwI2l
-	zjI9AVbrXIwCu+/kbCkxamY75zjFlsmqcewQWb0kSTxjq33/hBM4LcePry85mBVgDnB9vfXAkJJ+u
-	3RMqNW1rNvPa+njPgRQqdKM3VmO/nHgt3+cmpXre7r9K64lM/2drS5s8f52EkeKc+Mb1pLPdLTTcU
-	BpviVYTAV4yjtnz49oyswJBNiZ+xjJcL3soiLMRAhstDrlz8wUYirqSfhglG88D/+fagPfe2SQRnp
-	jLosaqwQQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U6pH+UJT0DYz18OZVF+FNFs6JgMllB/VDhCsAYjYqAM=; b=eUwYrYXIS+gd0B
+	yJDUx087hV6oMatcDSnCCn3y2ZRd/ZugFh4gsI5sGIFukdCIHvNsJHglwUH5N8F9mJtqPwN4nGlyS
+	PkxrM5yRRK9c/kRr4tecVfdGa3OULr03ObPRpWVWQKS4M0ZVELN2g9TGBtfgrn5j9YeS2K/YhBG05
+	qxGNijriwYuhyfdjqq1YULj9J39CZSWYCHa9Lphy2GxxSH7qTqJW6FQg1PydK771HPZ/h6q8jroKZ
+	Ii61ycALbdGTC+mXjxcLkGqxAr5mJTO6Pw0j0I9gWr+FikbAelonCd6rNR5nNZozaMbPzmZ7Dp/Ev
+	mE9MqUStbAia/9uyIcGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1uGX-0000JV-8s; Wed, 12 Feb 2020 15:49:29 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1j1uUC-00064c-1W; Wed, 12 Feb 2020 16:03:36 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1uGP-0000I5-7Q
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 15:49:23 +0000
-Received: from LHREML710-CAH.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id 57CD0E97AC3E97CA8733;
- Wed, 12 Feb 2020 15:49:02 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- LHREML710-CAH.china.huawei.com (10.201.108.33) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 12 Feb 2020 15:49:01 +0000
-Received: from [127.0.0.1] (10.202.226.45) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 12 Feb
- 2020 15:49:01 +0000
-Subject: Re: [PATCH] perf tools: Add arm64 version of get_cpuid()
-To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
-References: <1576245255-210926-1-git-send-email-john.garry@huawei.com>
- <1005f572-e32a-a90e-1572-c85a2f202fdf@huawei.com>
- <20200212134024.GC22501@kernel.org>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <ae11aac0-0edf-633c-cafd-6db39faef6b1@huawei.com>
-Date: Wed, 12 Feb 2020 15:49:01 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1j1uU0-00063j-VE
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 16:03:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581523400;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=HnKDCKwyuda4gW5Ivrg+jIsW4pfOis6x+0ZhUg+C7PU=;
+ b=SpwPPKocXy3IaMyQ9w2Zgy24qOnJ4z8LnalslVUF9ZCyHtvsSLCrItX3kDjSEg+J9OEpYt
+ zStAFZxvoGZ8uOnV3T+gzXPPAya7FUJ6Chs7IFXKkSOOpxmwn+mscgm/owfYJKKmuM21u/
+ N2mU78u4QZHqWMfuR/JEgIZfvRhktgs=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-208-c5nkZBysMaus_cy780aHZQ-1; Wed, 12 Feb 2020 11:01:20 -0500
+X-MC-Unique: c5nkZBysMaus_cy780aHZQ-1
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 2F23CDBA3;
+ Wed, 12 Feb 2020 16:01:19 +0000 (UTC)
+Received: from redhat.com (dhcp-10-20-1-15.bss.redhat.com [10.20.1.15])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id C8E195C1B0;
+ Wed, 12 Feb 2020 16:01:17 +0000 (UTC)
+Date: Wed, 12 Feb 2020 11:01:16 -0500
+From: Peter Jones <pjones@redhat.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH 2/2] efi/libstub: take noinitrd cmdline argument into
+ account for devpath initrd
+Message-ID: <20200212160116.3xypcgmtafj7fm47@redhat.com>
+References: <20200206140352.6300-1-ardb@kernel.org>
+ <20200206140352.6300-3-ardb@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200212134024.GC22501@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.202.226.45]
-X-ClientProxiedBy: lhreml720-chm.china.huawei.com (10.201.108.71) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200206140352.6300-3-ardb@kernel.org>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_074921_416346_D3FAE257 
-X-CRM114-Status: GOOD (  18.53  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200212_080325_520407_A2740AC6 
+X-CRM114-Status: GOOD (  19.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,162 +89,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, will@kernel.org,
- linux-kernel@vger.kernel.org, linuxarm@huawei.com,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
- jolsa@redhat.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-efi@vger.kernel.org, xypron.glpk@gmx.de, daniel.kiper@oracle.com,
+ ilias.apalodimas@linaro.org, mjg59@google.com, agraf@csgraf.de,
+ leif@nuviainc.com, lersek@redhat.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/02/2020 13:40, Arnaldo Carvalho de Melo wrote:
-> Em Tue, Jan 07, 2020 at 09:13:43AM +0000, John Garry escreveu:
->> On 13/12/2019 13:54, John Garry wrote:
->>
->> Hi Arnaldo,
->>
->> Do we need some reviews on this? Or was it missed/still catching up?
+On Thu, Feb 06, 2020 at 02:03:52PM +0000, Ard Biesheuvel wrote:
+> One of the advantages of using what basically amounts to a callback
+> interface into the bootloader for loading the initrd is that it provides
+> a natural place for the bootloader or firmware to measure the initrd
+> contents while they are being passed to the kernel.
 > 
-> Got lost in the holidays, devconf.cz, vacations, sorry, picking it up
-> now, together with a Tested-by by Shaokun Zhang, some issues with the
-> formatting of the patch:
+> Unfortunately, this is not a guarantee that the initrd will in fact be
+> loaded and its /init invoked by the kernel, since the command line may
+> contain the 'noinitrd' option, in which case the initrd is ignored, but
+> this will not be reflected in the PCR that covers the initrd measurement.
 > 
-> - Avoid starting lines with '#' as those will vanish when I use 'git am'
+> This could be addressed by measuring the command line as well, and
+> including that PCR in the attestation policy, but this locks down the
+> command line completely, which may be too restrictive.
 
-ah, so this must be why people use, for example, '/include "..."' in 
-commit logs
+In practice I think we need to be measuring the command line anyway.  In
+current existing deployments, we measure kernel and initramfs into PCR9,
+and measure the kernel command line into PCR8 (both are reserved in the
+TIS for OS use).  This allows users farther down the stack to choose
+whether which things they seal against, based on their requirements.
 
-> 
-> - Separate the commit log message from the diff using a '---' at the
->    begining of the line, otherwise 'git am' fails
+> So let's take the noinitrd argument into account in the stub, too. This
+> forces the PCR that covers the initrd to assume a different value when
+> noinitrd is passed, allowing an attestation policy to disregard the
+> command line if there is no need to take its measurement into account
+> for other reasons.
 
-apologizes, I must have cut that by mistake
+I think we also need to log a capping EV_SEPARATOR event with an log entry
+that says it's for noinitrd into PCR9, in order to prevent any
+scenarios where an attacker prevents the normal initramfs from loading,
+and then replays the events from a prior log in order to unseal secrets.
 
-> 
-> I fixed those up now, will test with my build containers, thanks.
-> 
-
-Thanks
-
-> - Arnaldo
->   
->> Cheers,
->> John
->>
->>> Add an arm64 version of get_cpuid(), which is used for various annotation
->>> and headers - for example, I now get the CPUID in "perf report --header",
->>> as shown in this snippet:
->>>
->>> # hostname : ubuntu
->>> # os release : 5.5.0-rc1-dirty
->>> # perf version : 5.5.rc1.gbf8a13dc9851
->>> # arch : aarch64
->>> # nrcpus online : 96
->>> # nrcpus avail : 96
->>> # cpuid : 0x00000000480fd010
->>>
->>> Since much of the code to read the MIDR is already in get_cpuid_str(),
->>> factor out this code.
->>>
->>> Signed-off-by: John Garry <john.garry@huawei.com>
->>>
->>> diff --git a/tools/perf/arch/arm64/util/header.c b/tools/perf/arch/arm64/util/header.c
->>> index a32e4b72a98f..d730666ab95d 100644
->>> --- a/tools/perf/arch/arm64/util/header.c
->>> +++ b/tools/perf/arch/arm64/util/header.c
->>> @@ -1,8 +1,10 @@
->>>    #include <stdio.h>
->>>    #include <stdlib.h>
->>>    #include <perf/cpumap.h>
->>> +#include <util/cpumap.h>
->>>    #include <internal/cpumap.h>
->>>    #include <api/fs/fs.h>
->>> +#include <errno.h>
->>>    #include "debug.h"
->>>    #include "header.h"
->>> @@ -12,26 +14,21 @@
->>>    #define MIDR_VARIANT_SHIFT      20
->>>    #define MIDR_VARIANT_MASK       (0xf << MIDR_VARIANT_SHIFT)
->>> -char *get_cpuid_str(struct perf_pmu *pmu)
->>> +static int _get_cpuid(char *buf, size_t sz, struct perf_cpu_map *cpus)
->>>    {
->>> -	char *buf = NULL;
->>> -	char path[PATH_MAX];
->>>    	const char *sysfs = sysfs__mountpoint();
->>> -	int cpu;
->>>    	u64 midr = 0;
->>> -	struct perf_cpu_map *cpus;
->>> -	FILE *file;
->>> +	int cpu;
->>> -	if (!sysfs || !pmu || !pmu->cpus)
->>> -		return NULL;
->>> +	if (!sysfs || sz < MIDR_SIZE)
->>> +		return EINVAL;
->>> -	buf = malloc(MIDR_SIZE);
->>> -	if (!buf)
->>> -		return NULL;
->>> +	cpus = perf_cpu_map__get(cpus);
->>> -	/* read midr from list of cpus mapped to this pmu */
->>> -	cpus = perf_cpu_map__get(pmu->cpus);
->>>    	for (cpu = 0; cpu < perf_cpu_map__nr(cpus); cpu++) {
->>> +		char path[PATH_MAX];
->>> +		FILE *file;
->>> +
->>>    		scnprintf(path, PATH_MAX, "%s/devices/system/cpu/cpu%d"MIDR,
->>>    				sysfs, cpus->map[cpu]);
->>> @@ -57,12 +54,48 @@ char *get_cpuid_str(struct perf_pmu *pmu)
->>>    		break;
->>>    	}
->>> -	if (!midr) {
->>> +	perf_cpu_map__put(cpus);
->>> +
->>> +	if (!midr)
->>> +		return EINVAL;
->>> +
->>> +	return 0;
->>> +}
->>> +
->>> +int get_cpuid(char *buf, size_t sz)
->>> +{
->>> +	struct perf_cpu_map *cpus = perf_cpu_map__new(NULL);
->>> +	int ret;
->>> +
->>> +	if (!cpus)
->>> +		return EINVAL;
->>> +
->>> +	ret = _get_cpuid(buf, sz, cpus);
->>> +
->>> +	perf_cpu_map__put(cpus);
->>> +
->>> +	return ret;
->>> +}
->>> +
->>> +char *get_cpuid_str(struct perf_pmu *pmu)
->>> +{
->>> +	char *buf = NULL;
->>> +	int res;
->>> +
->>> +	if (!pmu || !pmu->cpus)
->>> +		return NULL;
->>> +
->>> +	buf = malloc(MIDR_SIZE);
->>> +	if (!buf)
->>> +		return NULL;
->>> +
->>> +	/* read midr from list of cpus mapped to this pmu */
->>> +	res = _get_cpuid(buf, MIDR_SIZE, pmu->cpus);
->>> +	if (res) {
->>>    		pr_err("failed to get cpuid string for PMU %s\n", pmu->name);
->>>    		free(buf);
->>>    		buf = NULL;
->>>    	}
->>> -	perf_cpu_map__put(cpus);
->>>    	return buf;
->>>    }
->>>
->>
-> 
+-- 
+  Peter
 
 
 _______________________________________________
