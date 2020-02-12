@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05FAC15A2B2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 09:04:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1129A15A2D5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 09:06:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uDbRkVp0i4JLXwT+WuHwSrkihPPzOBqgLhYSKtdtn8o=; b=AcLLtFz2btLYVg
-	D6yZEjzIVpRhO/LJrJB1kchGbBhf7nNeywKzzJXZJTrLrIcwW6VXPKqXHOfECIxQMOUQr7FDYIuXd
-	Pyx/LfCsYRQV6x5leuwpEK1QqxkqxtStPUtsSCkYqQQkZXUskFwiUISCAG5eLGEEh6HHAfRbZESy9
-	Lk6Let6SEKxNEe79zu4aLt3BZG9z5F6uRuPMiQZXQKwG+cyCPZcmCdRqv8fZ51Mwb9VQi04CXCqNE
-	ZUR6L3BvnUUUAP4DHHE6BFVZ3oc1KrATJZZ3kNEXssfo7eA3QBAwIfntmRRxue0w4C7dMvfwxQkCq
-	30ecBU10lu2G0whQhsVQ==;
+	List-Owner; bh=CIit0wnvLC1DI/tzHMDr9qFov+H7AZxwGDw6Mzp4sC0=; b=ttAkXFsqxt5tIB
+	tMyUYmg3xj7+rKstdG+wEgtIUPOP6T0hM06mbU5F2nkOgN9fDbeB3/UODQcxWjMBDUzdpi5FRU2iz
+	ra8RwcjGCiunJw2crYAsoHXdKWO/KAnpkq7QSHEyD6Mq9HT5sEx/c+8XAE91JvmUaG/tMXLLFQo+0
+	vX9dIlG03MVd/DgTkfNTURA5Bgk6jkxyDR5uNNUgkwOb7wiayqKq7Y9FjWNTv1iDR5bFgVy1c5ikB
+	I93IQIQvdBPGsLKb6h6jXy4l88tlB15qrhqdQ8bilZMcs6BiU+0kP8xeFFcEq0Vp3RkINz/wPvpAt
+	tAcEws93VUY2mMcxNpbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1n0M-00007S-3g; Wed, 12 Feb 2020 08:04:18 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1j1n1v-0002LJ-IE; Wed, 12 Feb 2020 08:05:55 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1n0A-00006K-Hp
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 08:04:10 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id gv17so543965pjb.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Feb 2020 00:04:06 -0800 (PST)
+ id 1j1n1j-0002KC-V5; Wed, 12 Feb 2020 08:05:49 +0000
+Received: by mail-pg1-x541.google.com with SMTP id 6so806305pgk.0;
+ Wed, 12 Feb 2020 00:05:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=4pGtwP7gniexb9Dp+LYDn9n7CRQXhfOKIPB9Tlsc0qQ=;
- b=okD4+5DQjhKz4uyEvX1VqvBZCeN247UfASVNUVvM1egBIq+VcUXbsj14ISCb2x5UsF
- JaN//8nMphd/pFutuTbofiApHY3tc5nc+hv2aIQemEdOY64K6kG1PHF6ZzAQKokCIPZ7
- 2ZBuDTT7tejMerved2qw+JVZRJX2vzhakOxcNdmhbBamSMCsw3v8YMl+2jLjjzKauFw7
- rguFt04x2N4VkTA5GHAev6+sDWumFIs2DCaVU3FqJ82kOaIKB9oo1z3/gSdWQSEIKn9k
- UquIypNjDUbvD7QKYOjiutSrvjlX3ODuEt2v/GGv4KNYccB31LOz6DaYgSRrCXq6xxZL
- hLEw==
+ bh=7NTFOitQBitq49JIw5xod2DFKocBu9wrzA2rfbBMAWc=;
+ b=P9wEhJuOxYAJGC5bCyVvqeU7m3GIydUkXSR9j7qOQpMW1Wlf+NKNDo9hMEuVSGojt+
+ mQqJItBhSOqHDpXNTmBraW9YJaJvMbke6YsIsgWV93axkXE5/N8AQNnYvVOn+0UJqHqV
+ HdCmL4RuUbyD6lcnGG5GouoJMeb+tnvHZB3PdhIQQOLAe11eUetmLHggW1rDngWBwkRZ
+ Xy+wq0r1KjvcFl0qXy4s4RvbTccvIXg80KdmbX3N59aiaWr/HGkxtmMSHxziT7k7E6X1
+ R564At7pIYpiWtma97HHP9gRhiKnshrhbJm+n+gvkFxtq9U+l4h/bmYnhqYJcsafwa6I
+ 3DAw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=4pGtwP7gniexb9Dp+LYDn9n7CRQXhfOKIPB9Tlsc0qQ=;
- b=ntPPr+zNcSKj+e4q2ZE9NcZ4B3w0m6UCdOqdU5FxTjV84hE7palcM1Uq/sm7Z+Tm15
- ZmyUOCJVKhCR/h/mYz2crNo58zSt+qCYmumR3pEiMdKEVBKSERiTgSQ6x6BqZDy0G0RN
- fVfbxlK5vnc3ZAFVw9LI65TK9kTKjw7xTvMpzPY67Nzh7uyqgmz0rxf6YubF4vQSlUzU
- ajYAacs3p2XC0JD0v9qaHwH1n1cpq20i9AytqhsDSyQPoDHG4XQjhb9CmgQsouRzjpWh
- kb43xGnSVWlF1j6hM+aD7B4LIjjAZoMFzgNzLdW/MDotRzbJ+PeK2dJ2FLqRxhJTrwku
- OhIQ==
-X-Gm-Message-State: APjAAAW8+Ac5CWapK3M72SmcbpCuQvKJxleVuYARHr9qcr1S9xzUP8PF
- R/+P/4rLeNNjvh5M2EGq86KWjfNaIDA=
-X-Google-Smtp-Source: APXvYqz6Z5yPk5GMvepB2WwjoVC2tOQwJj6T9edzrFj6oaOvoHCJVvhTdmWS5L+RxPzaKcZ5adip0A==
-X-Received: by 2002:a17:902:103:: with SMTP id 3mr22131569plb.34.1581494644917; 
- Wed, 12 Feb 2020 00:04:04 -0800 (PST)
+ bh=7NTFOitQBitq49JIw5xod2DFKocBu9wrzA2rfbBMAWc=;
+ b=aTcT2CnGdg/QZVwuDjQYwIwj4yJtYU8iizJUsWEAFDHru4f8hxT3HN56IqvgjcLDcY
+ vxU9yatJ0cF8DfEhiqr0cM287Ah5Oqjkg4hq4cFg7BRm/BGt5B5gZX0/+xvCvmKLgmG4
+ +TEvrj9NxWjnVXLk/VkNnslV6NCySdyQsC3Aspo8Z3q+heAX6GEzRVPTlbE//Bim8R4n
+ WMQMxWBLcOymsuc7Vqdz3POTydbJsw3Dlx/JC/2t5WDQNLnuY/9nTl/iBRdq+BER7nbA
+ uussBPuIXOpwd+A2UWHVoCFNbLpFNP58XvCz4etu8smdgFco2plDiqVQA2uRc6j3Bq2E
+ 1glw==
+X-Gm-Message-State: APjAAAWdw+zZM4+6sDyFduytIR65LI8l/zeVLfTMZVwnAVeodZ1cc7Mg
+ vRxLr6DCMupBht+pCJoSDqA=
+X-Google-Smtp-Source: APXvYqzg1xMCBrbBr4CrKSxcRLgQTzxG/T2KubUYGxIgTTWIBkojsetugYRksNZ4360gzbjoj2/3gA==
+X-Received: by 2002:a63:fe14:: with SMTP id p20mr6953287pgh.94.1581494742973; 
+ Wed, 12 Feb 2020 00:05:42 -0800 (PST)
 Received: from localhost ([106.51.21.91])
- by smtp.gmail.com with ESMTPSA id s124sm7315570pfc.57.2020.02.12.00.04.03
+ by smtp.gmail.com with ESMTPSA id e2sm5683189pjs.25.2020.02.12.00.05.42
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 12 Feb 2020 00:04:04 -0800 (PST)
-Date: Wed, 12 Feb 2020 13:34:02 +0530
+ Wed, 12 Feb 2020 00:05:42 -0800 (PST)
+Date: Wed, 12 Feb 2020 13:35:40 +0530
 From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 08/18] MIPS: Replace setup_irq() by request_irq()
-Message-ID: <8a2dea939f78f085c882478bc4a3ab38bd1f813a.1581478324.git.afzal.mohd.ma@gmail.com>
+To: linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-amlogic@lists.infradead.org
+Subject: [PATCH 16/18] clocksource: Replace setup_irq() by request_irq()
+Message-ID: <109d17402bc75ed186a2e151dfda1edf05463b5a.1581478324.git.afzal.mohd.ma@gmail.com>
 References: <cover.1581478323.git.afzal.mohd.ma@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <cover.1581478323.git.afzal.mohd.ma@gmail.com>
 User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_000406_605113_5C22DE3C 
-X-CRM114-Status: GOOD (  19.04  )
+X-CRM114-CacheID: sfid-20200212_000544_939543_2147B23E 
+X-CRM114-Status: GOOD (  20.48  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -77,6 +76,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [106.51.21.91 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [afzal.mohd.ma[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -100,17 +102,21 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
- Paul Burton <paulburton@kernel.org>, Richard Fontana <rfontana@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Yifeng Li <tomli@tomli.me>,
- Jiaxun Yang <jiaxun.yang@flygoat.com>,
- Thomas Bogendoerfer <tbogendoerfer@suse.de>,
- Alexios Zavras <alexios.zavras@intel.com>,
- bcm-kernel-feedback-list@broadcom.com, Ralf Baechle <ralf@linux-mips.org>,
- "Maciej W. Rozycki" <macro@linux-mips.org>, John Crispin <john@phrozen.org>,
- Jilayne Lovejoy <opensource@jilayne.com>, Huacai Chen <chenhc@lemote.com>,
- Thomas Gleixner <tglx@linutronix.de>, Keguang Zhang <keguang.zhang@gmail.com>,
- Allison Randal <allison@lohutok.net>, Steve Winslow <swinslow@gmail.com>
+ Linus Walleij <linus.walleij@linaro.org>, Shawn Guo <shawnguo@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, NXP Linux Team <linux-imx@nxp.com>,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Ray Jui <rjui@broadcom.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ Barry Song <baohua@kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Tony Prisk <linux@prisktech.co.nz>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Enrico Weigelt <info@metux.net>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -137,1485 +143,733 @@ Since cc'ing cover letter to all maintainers/reviewers would be too
 many, refer for cover letter,
  https://lkml.kernel.org/r/cover.1581478323.git.afzal.mohd.ma@gmail.com
 
- arch/mips/alchemy/common/time.c               | 11 +---
- arch/mips/ar7/irq.c                           | 18 +++---
- arch/mips/ath25/ar2315.c                      |  9 +--
- arch/mips/ath25/ar5312.c                      |  9 +--
- arch/mips/bcm63xx/irq.c                       | 38 +++++-------
- arch/mips/cobalt/irq.c                        | 14 ++---
- arch/mips/dec/setup.c                         | 59 ++++++++-----------
- arch/mips/emma/markeins/irq.c                 | 20 +++----
- arch/mips/include/asm/sni.h                   |  2 +-
- arch/mips/jazz/irq.c                          | 12 +---
- arch/mips/kernel/cevt-bcm1480.c               | 11 +---
- arch/mips/kernel/cevt-ds1287.c                |  9 +--
- arch/mips/kernel/cevt-gt641xx.c               |  9 +--
- arch/mips/kernel/cevt-r4k.c                   |  4 +-
- arch/mips/kernel/cevt-sb1250.c                | 11 +---
- arch/mips/kernel/cevt-txx9.c                  | 11 +---
- arch/mips/kernel/i8253.c                      | 10 +---
- arch/mips/kernel/rtlx-mt.c                    |  8 +--
- arch/mips/kernel/smp.c                        | 33 ++++-------
- arch/mips/lasat/interrupt.c                   | 10 +---
- arch/mips/loongson2ef/common/bonito-irq.c     |  9 +--
- .../loongson2ef/common/cs5536/cs5536_mfgpt.c  | 10 +---
- arch/mips/loongson2ef/fuloong-2e/irq.c        | 14 ++---
- arch/mips/loongson2ef/lemote-2f/irq.c         | 20 ++-----
- arch/mips/loongson32/common/irq.c             | 21 ++++---
- arch/mips/loongson32/common/time.c            | 12 ++--
- arch/mips/loongson64/hpet.c                   | 10 +---
- arch/mips/mti-malta/malta-int.c               | 10 +---
- arch/mips/netlogic/xlr/fmn.c                  |  9 +--
- arch/mips/pmcs-msp71xx/msp_irq.c              | 28 ++++-----
- arch/mips/pmcs-msp71xx/msp_smp.c              | 22 ++-----
- arch/mips/pmcs-msp71xx/msp_time.c             |  7 ++-
- arch/mips/ralink/cevt-rt3352.c                | 17 +++---
- arch/mips/sgi-ip22/ip22-eisa.c                |  8 +--
- arch/mips/sgi-ip22/ip22-int.c                 | 49 +++++----------
- arch/mips/sgi-ip32/ip32-irq.c                 | 18 ++----
- arch/mips/sni/a20r.c                          |  4 +-
- arch/mips/sni/irq.c                           |  8 +--
- arch/mips/sni/pcit.c                          |  8 ++-
- arch/mips/sni/rm200.c                         | 23 +++-----
- arch/mips/sni/time.c                          | 10 +---
- arch/mips/vr41xx/common/irq.c                 |  9 +--
- 42 files changed, 228 insertions(+), 406 deletions(-)
+ drivers/clocksource/bcm2835_timer.c       |  8 +---
+ drivers/clocksource/bcm_kona_timer.c      | 10 ++---
+ drivers/clocksource/dw_apb_timer.c        | 11 ++---
+ drivers/clocksource/exynos_mct.c          | 12 ++----
+ drivers/clocksource/mxs_timer.c           | 10 +----
+ drivers/clocksource/nomadik-mtu.c         | 11 ++---
+ drivers/clocksource/samsung_pwm_timer.c   | 12 ++----
+ drivers/clocksource/timer-atlas7.c        | 50 +++++++++++------------
+ drivers/clocksource/timer-cs5535.c        | 10 ++---
+ drivers/clocksource/timer-efm32.c         | 10 +----
+ drivers/clocksource/timer-fsl-ftm.c       | 10 +----
+ drivers/clocksource/timer-imx-gpt.c       | 10 +----
+ drivers/clocksource/timer-integrator-ap.c | 11 ++---
+ drivers/clocksource/timer-meson6.c        | 11 ++---
+ drivers/clocksource/timer-orion.c         |  9 +---
+ drivers/clocksource/timer-prima2.c        | 11 +----
+ drivers/clocksource/timer-pxa.c           | 10 +----
+ drivers/clocksource/timer-sp804.c         | 11 ++---
+ drivers/clocksource/timer-u300.c          |  9 +---
+ drivers/clocksource/timer-vf-pit.c        | 10 +----
+ drivers/clocksource/timer-vt8500.c        | 11 ++---
+ drivers/clocksource/timer-zevio.c         | 13 +++---
+ include/linux/dw_apb_timer.h              |  1 -
+ 23 files changed, 81 insertions(+), 190 deletions(-)
 
-diff --git a/arch/mips/alchemy/common/time.c b/arch/mips/alchemy/common/time.c
-index 3a21a6a18da7..7d6b1532221a 100644
---- a/arch/mips/alchemy/common/time.c
-+++ b/arch/mips/alchemy/common/time.c
-@@ -72,13 +72,6 @@ static struct clock_event_device au1x_rtcmatch2_clockdev = {
- 	.cpumask	= cpu_possible_mask,
+diff --git a/drivers/clocksource/bcm2835_timer.c b/drivers/clocksource/bcm2835_timer.c
+index b235f446ee50..1592650b2c92 100644
+--- a/drivers/clocksource/bcm2835_timer.c
++++ b/drivers/clocksource/bcm2835_timer.c
+@@ -31,7 +31,6 @@ struct bcm2835_timer {
+ 	void __iomem *compare;
+ 	int match_mask;
+ 	struct clock_event_device evt;
+-	struct irqaction act;
  };
  
--static struct irqaction au1x_rtcmatch2_irqaction = {
--	.handler	= au1x_rtcmatch2_irq,
--	.flags		= IRQF_TIMER,
--	.name		= "timer",
--	.dev_id		= &au1x_rtcmatch2_clockdev,
--};
--
- static int __init alchemy_time_init(unsigned int m2int)
- {
- 	struct clock_event_device *cd = &au1x_rtcmatch2_clockdev;
-@@ -130,7 +123,9 @@ static int __init alchemy_time_init(unsigned int m2int)
- 	cd->min_delta_ns = clockevent_delta2ns(9, cd);
- 	cd->min_delta_ticks = 9;	/* ~0.28ms */
- 	clockevents_register_device(cd);
--	setup_irq(m2int, &au1x_rtcmatch2_irqaction);
-+	if (request_irq(m2int, au1x_rtcmatch2_irq, IRQF_TIMER, "timer",
-+			&au1x_rtcmatch2_clockdev))
-+		pr_err("request_irq() on %s failed\n", "timer");
+ static void __iomem *system_clock __read_mostly;
+@@ -113,12 +112,9 @@ static int __init bcm2835_timer_init(struct device_node *node)
+ 	timer->evt.features = CLOCK_EVT_FEAT_ONESHOT;
+ 	timer->evt.set_next_event = bcm2835_time_set_next_event;
+ 	timer->evt.cpumask = cpumask_of(0);
+-	timer->act.name = node->name;
+-	timer->act.flags = IRQF_TIMER | IRQF_SHARED;
+-	timer->act.dev_id = timer;
+-	timer->act.handler = bcm2835_time_interrupt;
  
- 	printk(KERN_INFO "Alchemy clocksource installed\n");
- 
-diff --git a/arch/mips/ar7/irq.c b/arch/mips/ar7/irq.c
-index 93a331fe0641..4e55e83078a8 100644
---- a/arch/mips/ar7/irq.c
-+++ b/arch/mips/ar7/irq.c
-@@ -83,12 +83,6 @@ static struct irq_chip ar7_sec_irq_type = {
- 	.irq_ack = ar7_ack_sec_irq,
- };
- 
--static struct irqaction ar7_cascade_action = {
--	.handler = no_action,
--	.name = "AR7 cascade interrupt",
--	.flags = IRQF_NO_THREAD,
--};
--
- static void __init ar7_irq_init(int base)
- {
- 	int i;
-@@ -116,8 +110,16 @@ static void __init ar7_irq_init(int base)
- 						 handle_level_irq);
- 	}
- 
--	setup_irq(2, &ar7_cascade_action);
--	setup_irq(ar7_irq_base, &ar7_cascade_action);
-+	if (request_irq(2, no_action, IRQF_NO_THREAD, "AR7 cascade interrupt",
-+			NULL)) {
-+		pr_err("request_irq() on %s failed\n",
-+		       "AR7 cascade interrupt");
-+	}
-+	if (request_irq(ar7_irq_base, no_action, IRQF_NO_THREAD,
-+			"AR7 cascade interrupt", NULL)) {
-+		pr_err("request_irq() on %s failed\n",
-+		       "AR7 cascade interrupt");
-+	}
- 	set_c0_status(IE_IRQ0);
- }
- 
-diff --git a/arch/mips/ath25/ar2315.c b/arch/mips/ath25/ar2315.c
-index 24f619199ee7..0f292b7f47ec 100644
---- a/arch/mips/ath25/ar2315.c
-+++ b/arch/mips/ath25/ar2315.c
-@@ -64,11 +64,6 @@ static irqreturn_t ar2315_ahb_err_handler(int cpl, void *dev_id)
+-	ret = setup_irq(irq, &timer->act);
++	ret = request_irq(irq, bcm2835_time_interrupt, IRQF_TIMER | IRQF_SHARED,
++			  node->name, timer);
+ 	if (ret) {
+ 		pr_err("Can't set up timer IRQ\n");
+ 		goto err_timer_free;
+diff --git a/drivers/clocksource/bcm_kona_timer.c b/drivers/clocksource/bcm_kona_timer.c
+index 5c40be9880f5..b57b2fbdac33 100644
+--- a/drivers/clocksource/bcm_kona_timer.c
++++ b/drivers/clocksource/bcm_kona_timer.c
+@@ -160,12 +160,6 @@ static irqreturn_t kona_timer_interrupt(int irq, void *dev_id)
  	return IRQ_HANDLED;
  }
  
--static struct irqaction ar2315_ahb_err_interrupt  = {
--	.handler	= ar2315_ahb_err_handler,
--	.name		= "ar2315-ahb-error",
+-static struct irqaction kona_timer_irq = {
+-	.name = "Kona Timer Tick",
+-	.flags = IRQF_TIMER,
+-	.handler = kona_timer_interrupt,
 -};
 -
- static void ar2315_misc_irq_handler(struct irq_desc *desc)
+ static int __init kona_timer_init(struct device_node *node)
  {
- 	u32 pending = ar2315_rst_reg_read(AR2315_ISR) &
-@@ -159,7 +154,9 @@ void __init ar2315_arch_init_irq(void)
- 		panic("Failed to add IRQ domain");
+ 	u32 freq;
+@@ -192,7 +186,9 @@ static int __init kona_timer_init(struct device_node *node)
+ 	kona_timer_disable_and_clear(timers.tmr_regs);
  
- 	irq = irq_create_mapping(domain, AR2315_MISC_IRQ_AHB);
--	setup_irq(irq, &ar2315_ahb_err_interrupt);
-+	if (request_irq(irq, ar2315_ahb_err_handler, 0, "ar2315-ahb-error",
-+			NULL))
-+		pr_err("request_irq() on %s failed\n", "ar2315-ahb-error");
+ 	kona_timer_clockevents_init();
+-	setup_irq(timers.tmr_irq, &kona_timer_irq);
++	if (request_irq(timers.tmr_irq, kona_timer_interrupt, IRQF_TIMER,
++			"Kona Timer Tick", NULL))
++		pr_err("request_irq() on %s failed\n", "Kona Timer Tick");
+ 	kona_timer_set_next_event((arch_timer_rate / HZ), NULL);
  
- 	irq_set_chained_handler_and_data(AR2315_IRQ_MISC,
- 					 ar2315_misc_irq_handler, domain);
-diff --git a/arch/mips/ath25/ar5312.c b/arch/mips/ath25/ar5312.c
-index 47f3e98974fc..2ea2a7a999bf 100644
---- a/arch/mips/ath25/ar5312.c
-+++ b/arch/mips/ath25/ar5312.c
-@@ -68,11 +68,6 @@ static irqreturn_t ar5312_ahb_err_handler(int cpl, void *dev_id)
+ 	return 0;
+diff --git a/drivers/clocksource/dw_apb_timer.c b/drivers/clocksource/dw_apb_timer.c
+index 654766538f93..b207a77b0831 100644
+--- a/drivers/clocksource/dw_apb_timer.c
++++ b/drivers/clocksource/dw_apb_timer.c
+@@ -270,15 +270,10 @@ dw_apb_clockevent_init(int cpu, const char *name, unsigned rating,
+ 	dw_ced->ced.rating = rating;
+ 	dw_ced->ced.name = name;
+ 
+-	dw_ced->irqaction.name		= dw_ced->ced.name;
+-	dw_ced->irqaction.handler	= dw_apb_clockevent_irq;
+-	dw_ced->irqaction.dev_id	= &dw_ced->ced;
+-	dw_ced->irqaction.irq		= irq;
+-	dw_ced->irqaction.flags		= IRQF_TIMER | IRQF_IRQPOLL |
+-					  IRQF_NOBALANCING;
+-
+ 	dw_ced->eoi = apbt_eoi;
+-	err = setup_irq(irq, &dw_ced->irqaction);
++	err = request_irq(irq, dw_apb_clockevent_irq,
++			  IRQF_TIMER | IRQF_IRQPOLL | IRQF_NOBALANCING,
++			  dw_ced->ced.name, &dw_ced->ced);
+ 	if (err) {
+ 		pr_err("failed to request timer irq\n");
+ 		kfree(dw_ced);
+diff --git a/drivers/clocksource/exynos_mct.c b/drivers/clocksource/exynos_mct.c
+index a267fe31ef13..cde7c00dbcff 100644
+--- a/drivers/clocksource/exynos_mct.c
++++ b/drivers/clocksource/exynos_mct.c
+@@ -329,19 +329,15 @@ static irqreturn_t exynos4_mct_comp_isr(int irq, void *dev_id)
  	return IRQ_HANDLED;
  }
  
--static struct irqaction ar5312_ahb_err_interrupt  = {
--	.handler = ar5312_ahb_err_handler,
--	.name    = "ar5312-ahb-error",
+-static struct irqaction mct_comp_event_irq = {
+-	.name		= "mct_comp_irq",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= exynos4_mct_comp_isr,
+-	.dev_id		= &mct_comp_device,
 -};
 -
- static void ar5312_misc_irq_handler(struct irq_desc *desc)
+ static int exynos4_clockevent_init(void)
  {
- 	u32 pending = ar5312_rst_reg_read(AR5312_ISR) &
-@@ -154,7 +149,9 @@ void __init ar5312_arch_init_irq(void)
- 		panic("Failed to add IRQ domain");
- 
- 	irq = irq_create_mapping(domain, AR5312_MISC_IRQ_AHB_PROC);
--	setup_irq(irq, &ar5312_ahb_err_interrupt);
-+	if (request_irq(irq, ar5312_ahb_err_handler, 0, "ar5312-ahb-error",
-+			NULL))
-+		pr_err("request_irq() on %s failed\n", "ar5312-ahb-error");
- 
- 	irq_set_chained_handler_and_data(AR5312_IRQ_MISC,
- 					 ar5312_misc_irq_handler, domain);
-diff --git a/arch/mips/bcm63xx/irq.c b/arch/mips/bcm63xx/irq.c
-index ec694b9628c0..e7a386a1a080 100644
---- a/arch/mips/bcm63xx/irq.c
-+++ b/arch/mips/bcm63xx/irq.c
-@@ -399,26 +399,6 @@ static struct irq_chip bcm63xx_external_irq_chip = {
- 	.irq_set_type	= bcm63xx_external_irq_set_type,
- };
- 
--static struct irqaction cpu_ip2_cascade_action = {
--	.handler	= no_action,
--	.name		= "cascade_ip2",
--	.flags		= IRQF_NO_THREAD,
--};
--
--#ifdef CONFIG_SMP
--static struct irqaction cpu_ip3_cascade_action = {
--	.handler	= no_action,
--	.name		= "cascade_ip3",
--	.flags		= IRQF_NO_THREAD,
--};
--#endif
--
--static struct irqaction cpu_ext_cascade_action = {
--	.handler	= no_action,
--	.name		= "cascade_extirq",
--	.flags		= IRQF_NO_THREAD,
--};
--
- static void bcm63xx_init_irq(void)
- {
- 	int irq_bits;
-@@ -544,14 +524,24 @@ void __init arch_init_irq(void)
- 					 handle_edge_irq);
- 
- 	if (!is_ext_irq_cascaded) {
--		for (i = 3; i < 3 + ext_irq_count; ++i)
--			setup_irq(MIPS_CPU_IRQ_BASE + i, &cpu_ext_cascade_action);
-+		for (i = 3; i < 3 + ext_irq_count; ++i) {
-+			if (request_irq(MIPS_CPU_IRQ_BASE + i, no_action,
-+					IRQF_NO_THREAD, "cascade_extirq",
-+					NULL)) {
-+				pr_err("request_irq() on %s failed\n",
-+				       "cascade_extirq");
-+			}
-+		}
- 	}
- 
--	setup_irq(MIPS_CPU_IRQ_BASE + 2, &cpu_ip2_cascade_action);
-+	if (request_irq(MIPS_CPU_IRQ_BASE + 2, no_action, IRQF_NO_THREAD,
-+			"cascade_ip2", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade_ip2");
- #ifdef CONFIG_SMP
- 	if (is_ext_irq_cascaded) {
--		setup_irq(MIPS_CPU_IRQ_BASE + 3, &cpu_ip3_cascade_action);
-+		if (request_irq(MIPS_CPU_IRQ_BASE + 3, no_action,
-+				IRQF_NO_THREAD, "cascade_ip3", NULL))
-+			pr_err("request_irq() on %s failed\n", "cascade_ip3");
- 		bcm63xx_internal_irq_chip.irq_set_affinity =
- 			bcm63xx_internal_set_affinity;
- 
-diff --git a/arch/mips/cobalt/irq.c b/arch/mips/cobalt/irq.c
-index 965c777d3561..266b15f058a8 100644
---- a/arch/mips/cobalt/irq.c
-+++ b/arch/mips/cobalt/irq.c
-@@ -45,18 +45,16 @@ asmlinkage void plat_irq_dispatch(void)
- 		spurious_interrupt();
- }
- 
--static struct irqaction cascade = {
--	.handler	= no_action,
--	.name		= "cascade",
--	.flags		= IRQF_NO_THREAD,
--};
--
- void __init arch_init_irq(void)
- {
- 	mips_cpu_irq_init();
- 	gt641xx_irq_init();
- 	init_i8259_irqs();
- 
--	setup_irq(GT641XX_CASCADE_IRQ, &cascade);
--	setup_irq(I8259_CASCADE_IRQ, &cascade);
-+	if (request_irq(GT641XX_CASCADE_IRQ, no_action, IRQF_NO_THREAD,
-+			"cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
-+	if (request_irq(I8259_CASCADE_IRQ, no_action, IRQF_NO_THREAD,
-+			"cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
- }
-diff --git a/arch/mips/dec/setup.c b/arch/mips/dec/setup.c
-index 61a0bf13e308..c2e73f61207d 100644
---- a/arch/mips/dec/setup.c
-+++ b/arch/mips/dec/setup.c
-@@ -103,28 +103,8 @@ int_ptr asic_mask_nr_tbl[DEC_MAX_ASIC_INTS][2] = {
- int cpu_fpu_mask = DEC_CPU_IRQ_MASK(DEC_CPU_INR_FPU);
- int *fpu_kstat_irq;
- 
--static struct irqaction ioirq = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD,
--};
--static struct irqaction fpuirq = {
--	.handler = no_action,
--	.name = "fpu",
--	.flags = IRQF_NO_THREAD,
--};
--
--static struct irqaction busirq = {
--	.name = "bus error",
--	.flags = IRQF_NO_THREAD,
--};
--
--static struct irqaction haltirq = {
--	.handler = dec_intr_halt,
--	.name = "halt",
--	.flags = IRQF_NO_THREAD,
--};
--
-+static irq_handler_t busirq_handler;
-+static unsigned int busirq_flags = IRQF_NO_THREAD;
- 
- /*
-  * Bus error (DBE/IBE exceptions and bus interrupts) handling setup.
-@@ -134,21 +114,21 @@ static void __init dec_be_init(void)
- 	switch (mips_machtype) {
- 	case MACH_DS23100:	/* DS2100/DS3100 Pmin/Pmax */
- 		board_be_handler = dec_kn01_be_handler;
--		busirq.handler = dec_kn01_be_interrupt;
--		busirq.flags |= IRQF_SHARED;
-+		busirq_handler = dec_kn01_be_interrupt;
-+		busirq_flags |= IRQF_SHARED;
- 		dec_kn01_be_init();
- 		break;
- 	case MACH_DS5000_1XX:	/* DS5000/1xx 3min */
- 	case MACH_DS5000_XX:	/* DS5000/xx Maxine */
- 		board_be_handler = dec_kn02xa_be_handler;
--		busirq.handler = dec_kn02xa_be_interrupt;
-+		busirq_handler = dec_kn02xa_be_interrupt;
- 		dec_kn02xa_be_init();
- 		break;
- 	case MACH_DS5000_200:	/* DS5000/200 3max */
- 	case MACH_DS5000_2X0:	/* DS5000/240 3max+ */
- 	case MACH_DS5900:	/* DS5900 bigmax */
- 		board_be_handler = dec_ecc_be_handler;
--		busirq.handler = dec_ecc_be_interrupt;
-+		busirq_handler = dec_ecc_be_interrupt;
- 		dec_ecc_be_init();
- 		break;
- 	}
-@@ -764,20 +744,29 @@ void __init arch_init_irq(void)
- 		int irq_fpu;
- 
- 		irq_fpu = dec_interrupt[DEC_IRQ_FPU];
--		setup_irq(irq_fpu, &fpuirq);
-+		if (request_irq(irq_fpu, no_action, IRQF_NO_THREAD, "fpu",
-+				NULL))
-+			pr_err("request_irq() on %s failed\n", "fpu");
- 		desc_fpu = irq_to_desc(irq_fpu);
- 		fpu_kstat_irq = this_cpu_ptr(desc_fpu->kstat_irqs);
- 	}
--	if (dec_interrupt[DEC_IRQ_CASCADE] >= 0)
--		setup_irq(dec_interrupt[DEC_IRQ_CASCADE], &ioirq);
--
-+	if (dec_interrupt[DEC_IRQ_CASCADE] >= 0) {
-+		if (request_irq(dec_interrupt[DEC_IRQ_CASCADE], no_action,
-+				IRQF_NO_THREAD, "cascade", NULL))
-+			pr_err("request_irq() on %s failed\n", "cascade");
-+	}
- 	/* Register the bus error interrupt. */
--	if (dec_interrupt[DEC_IRQ_BUS] >= 0 && busirq.handler)
--		setup_irq(dec_interrupt[DEC_IRQ_BUS], &busirq);
--
-+	if (dec_interrupt[DEC_IRQ_BUS] >= 0 && busirq_handler) {
-+		if (request_irq(dec_interrupt[DEC_IRQ_BUS], busirq_handler,
-+				busirq_flags, "bus error", NULL))
-+			pr_err("request_irq() on %s failed\n", "bus error");
-+	}
- 	/* Register the HALT interrupt. */
--	if (dec_interrupt[DEC_IRQ_HALT] >= 0)
--		setup_irq(dec_interrupt[DEC_IRQ_HALT], &haltirq);
-+	if (dec_interrupt[DEC_IRQ_HALT] >= 0) {
-+		if (request_irq(dec_interrupt[DEC_IRQ_HALT], dec_intr_halt,
-+				IRQF_NO_THREAD, "halt", NULL))
-+			pr_err("request_irq() on %s failed\n", "halt");
-+	}
- }
- 
- asmlinkage unsigned int dec_irq_dispatch(unsigned int irq)
-diff --git a/arch/mips/emma/markeins/irq.c b/arch/mips/emma/markeins/irq.c
-index 09427a49e7ae..88842c22eba7 100644
---- a/arch/mips/emma/markeins/irq.c
-+++ b/arch/mips/emma/markeins/irq.c
-@@ -153,14 +153,6 @@ void emma2rh_gpio_irq_init(void)
- 					      handle_edge_irq, "edge");
- }
- 
--static struct irqaction irq_cascade = {
--	   .handler = no_action,
--	   .flags = IRQF_NO_THREAD,
--	   .name = "cascade",
--	   .dev_id = NULL,
--	   .next = NULL,
--};
--
- /*
-  * the first level int-handler will jump here if it is a emma2rh irq
-  */
-@@ -272,9 +264,15 @@ void __init arch_init_irq(void)
- 	mips_cpu_irq_init();
- 
- 	/* setup cascade interrupts */
--	setup_irq(EMMA2RH_IRQ_BASE + EMMA2RH_SW_CASCADE, &irq_cascade);
--	setup_irq(EMMA2RH_IRQ_BASE + EMMA2RH_GPIO_CASCADE, &irq_cascade);
--	setup_irq(MIPS_CPU_IRQ_BASE + 2, &irq_cascade);
-+	if (request_irq(EMMA2RH_IRQ_BASE + EMMA2RH_SW_CASCADE, no_action,
-+			IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
-+	if (request_irq(EMMA2RH_IRQ_BASE + EMMA2RH_GPIO_CASCADE, no_action,
-+			IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
-+	if (request_irq(MIPS_CPU_IRQ_BASE + 2, no_action, IRQF_NO_THREAD,
-+			"cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
- }
- 
- asmlinkage void plat_irq_dispatch(void)
-diff --git a/arch/mips/include/asm/sni.h b/arch/mips/include/asm/sni.h
-index a107201a2e1e..b8653de25ca1 100644
---- a/arch/mips/include/asm/sni.h
-+++ b/arch/mips/include/asm/sni.h
-@@ -239,6 +239,6 @@ static inline int sni_eisa_root_init(void)
- 
- /* common irq stuff */
- extern void (*sni_hwint)(void);
--extern struct irqaction sni_isa_irq;
-+extern irqreturn_t sni_isa_irq_handler(int dummy, void *p);
- 
- #endif /* __ASM_SNI_H */
-diff --git a/arch/mips/jazz/irq.c b/arch/mips/jazz/irq.c
-index 5d6828b2a750..b6110d19c1da 100644
---- a/arch/mips/jazz/irq.c
-+++ b/arch/mips/jazz/irq.c
-@@ -125,24 +125,18 @@ static irqreturn_t r4030_timer_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction r4030_timer_irqaction = {
--	.handler	= r4030_timer_interrupt,
--	.flags		= IRQF_TIMER,
--	.name		= "R4030 timer",
--};
--
- void __init plat_time_init(void)
- {
- 	struct clock_event_device *cd = &r4030_clockevent;
--	struct irqaction *action = &r4030_timer_irqaction;
- 	unsigned int cpu = smp_processor_id();
- 
- 	BUG_ON(HZ != 100);
- 
- 	cd->cpumask		= cpumask_of(cpu);
- 	clockevents_register_device(cd);
--	action->dev_id = cd;
--	setup_irq(JAZZ_TIMER_IRQ, action);
-+	if (request_irq(JAZZ_TIMER_IRQ, r4030_timer_interrupt, IRQF_TIMER,
-+			"R4030 timer", cd))
-+		pr_err("request_irq() on %s failed\n", "R4030 timer");
- 
- 	/*
- 	 * Set clock to 100Hz.
-diff --git a/arch/mips/kernel/cevt-bcm1480.c b/arch/mips/kernel/cevt-bcm1480.c
-index b3e8c11a8fa5..8d1c44d31f3e 100644
---- a/arch/mips/kernel/cevt-bcm1480.c
-+++ b/arch/mips/kernel/cevt-bcm1480.c
-@@ -91,14 +91,12 @@ static irqreturn_t sibyte_counter_handler(int irq, void *dev_id)
- }
- 
- static DEFINE_PER_CPU(struct clock_event_device, sibyte_hpt_clockevent);
--static DEFINE_PER_CPU(struct irqaction, sibyte_hpt_irqaction);
- static DEFINE_PER_CPU(char [18], sibyte_hpt_name);
- 
- void sb1480_clockevent_init(void)
- {
- 	unsigned int cpu = smp_processor_id();
- 	unsigned int irq = K_BCM1480_INT_TIMER_0 + cpu;
--	struct irqaction *action = &per_cpu(sibyte_hpt_irqaction, cpu);
- 	struct clock_event_device *cd = &per_cpu(sibyte_hpt_clockevent, cpu);
- 	unsigned char *name = per_cpu(sibyte_hpt_name, cpu);
- 
-@@ -133,11 +131,8 @@ void sb1480_clockevent_init(void)
- 
- 	bcm1480_unmask_irq(cpu, irq);
- 
--	action->handler = sibyte_counter_handler;
--	action->flags	= IRQF_PERCPU | IRQF_TIMER;
--	action->name	= name;
--	action->dev_id	= cd;
--
- 	irq_set_affinity(irq, cpumask_of(cpu));
--	setup_irq(irq, action);
-+	if (request_irq(irq, sibyte_counter_handler, IRQF_PERCPU | IRQF_TIMER,
-+			name, cd))
-+		pr_err("request_irq() on %s failed\n", name);
- }
-diff --git a/arch/mips/kernel/cevt-ds1287.c b/arch/mips/kernel/cevt-ds1287.c
-index 1e1edab4a63f..9b855257fc65 100644
---- a/arch/mips/kernel/cevt-ds1287.c
-+++ b/arch/mips/kernel/cevt-ds1287.c
-@@ -100,12 +100,6 @@ static irqreturn_t ds1287_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction ds1287_irqaction = {
--	.handler	= ds1287_interrupt,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--	.name		= "ds1287",
--};
--
- int __init ds1287_clockevent_init(int irq)
- {
- 	struct clock_event_device *cd;
-@@ -122,5 +116,6 @@ int __init ds1287_clockevent_init(int irq)
- 
- 	clockevents_register_device(&ds1287_clockevent);
- 
--	return setup_irq(irq, &ds1287_irqaction);
-+	return request_irq(irq, ds1287_interrupt, IRQF_PERCPU | IRQF_TIMER,
-+			   "ds1287", NULL);
- }
-diff --git a/arch/mips/kernel/cevt-gt641xx.c b/arch/mips/kernel/cevt-gt641xx.c
-index eb53548d2538..5b132e8c51da 100644
---- a/arch/mips/kernel/cevt-gt641xx.c
-+++ b/arch/mips/kernel/cevt-gt641xx.c
-@@ -120,12 +120,6 @@ static irqreturn_t gt641xx_timer0_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction gt641xx_timer0_irqaction = {
--	.handler	= gt641xx_timer0_interrupt,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--	.name		= "gt641xx_timer0",
--};
--
- static int __init gt641xx_timer0_clockevent_init(void)
- {
- 	struct clock_event_device *cd;
-@@ -146,6 +140,7 @@ static int __init gt641xx_timer0_clockevent_init(void)
- 
- 	clockevents_register_device(&gt641xx_timer0_clockevent);
- 
--	return setup_irq(GT641XX_TIMER0_IRQ, &gt641xx_timer0_irqaction);
-+	return request_irq(GT641XX_TIMER0_IRQ, gt641xx_timer0_interrupt,
-+			   IRQF_PERCPU | IRQF_TIMER, "gt641xx_timer0", NULL);
- }
- arch_initcall(gt641xx_timer0_clockevent_init);
-diff --git a/arch/mips/kernel/cevt-r4k.c b/arch/mips/kernel/cevt-r4k.c
-index dd6a18bc10ab..a3476e00ea67 100644
---- a/arch/mips/kernel/cevt-r4k.c
-+++ b/arch/mips/kernel/cevt-r4k.c
-@@ -291,7 +291,9 @@ int r4k_clockevent_init(void)
- 
- 	cp0_timer_irq_installed = 1;
- 
--	setup_irq(irq, &c0_compare_irqaction);
-+	if (request_irq(irq, c0_compare_interrupt,
-+			IRQF_PERCPU | IRQF_TIMER | IRQF_SHARED, "timer", NULL))
-+		pr_err("request_irq() on %s failed\n", "timer");
+ 	mct_comp_device.cpumask = cpumask_of(0);
+ 	clockevents_config_and_register(&mct_comp_device, clk_rate,
+ 					0xf, 0xffffffff);
+-	setup_irq(mct_irqs[MCT_G0_IRQ], &mct_comp_event_irq);
++	if (request_irq(mct_irqs[MCT_G0_IRQ], exynos4_mct_comp_isr,
++			IRQF_TIMER | IRQF_IRQPOLL, "mct_comp_irq",
++			&mct_comp_device))
++		pr_err("request_irq() on %s failed\n", "mct_comp_irq");
  
  	return 0;
  }
-diff --git a/arch/mips/kernel/cevt-sb1250.c b/arch/mips/kernel/cevt-sb1250.c
-index e1a08606c27e..f32896de0880 100644
---- a/arch/mips/kernel/cevt-sb1250.c
-+++ b/arch/mips/kernel/cevt-sb1250.c
-@@ -90,14 +90,12 @@ static irqreturn_t sibyte_counter_handler(int irq, void *dev_id)
- }
- 
- static DEFINE_PER_CPU(struct clock_event_device, sibyte_hpt_clockevent);
--static DEFINE_PER_CPU(struct irqaction, sibyte_hpt_irqaction);
- static DEFINE_PER_CPU(char [18], sibyte_hpt_name);
- 
- void sb1250_clockevent_init(void)
- {
- 	unsigned int cpu = smp_processor_id();
- 	unsigned int irq = K_INT_TIMER_0 + cpu;
--	struct irqaction *action = &per_cpu(sibyte_hpt_irqaction, cpu);
- 	struct clock_event_device *cd = &per_cpu(sibyte_hpt_clockevent, cpu);
- 	unsigned char *name = per_cpu(sibyte_hpt_name, cpu);
- 
-@@ -133,11 +131,8 @@ void sb1250_clockevent_init(void)
- 
- 	sb1250_unmask_irq(cpu, irq);
- 
--	action->handler = sibyte_counter_handler;
--	action->flags	= IRQF_PERCPU | IRQF_TIMER;
--	action->name	= name;
--	action->dev_id	= cd;
--
- 	irq_set_affinity(irq, cpumask_of(cpu));
--	setup_irq(irq, action);
-+	if (request_irq(irq, sibyte_counter_handler, IRQF_PERCPU | IRQF_TIMER,
-+			name, cd))
-+		pr_err("request_irq() on %s failed\n", name);
- }
-diff --git a/arch/mips/kernel/cevt-txx9.c b/arch/mips/kernel/cevt-txx9.c
-index 7b17c8f5009d..4704127d5dc2 100644
---- a/arch/mips/kernel/cevt-txx9.c
-+++ b/arch/mips/kernel/cevt-txx9.c
-@@ -174,13 +174,6 @@ static irqreturn_t txx9tmr_interrupt(int irq, void *dev_id)
+diff --git a/drivers/clocksource/mxs_timer.c b/drivers/clocksource/mxs_timer.c
+index f6ddae30933f..bc96a4cbf26c 100644
+--- a/drivers/clocksource/mxs_timer.c
++++ b/drivers/clocksource/mxs_timer.c
+@@ -117,13 +117,6 @@ static irqreturn_t mxs_timer_interrupt(int irq, void *dev_id)
  	return IRQ_HANDLED;
  }
  
--static struct irqaction txx9tmr_irq = {
--	.handler	= txx9tmr_interrupt,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--	.name		= "txx9tmr",
--	.dev_id		= &txx9_clock_event_device,
+-static struct irqaction mxs_timer_irq = {
+-	.name		= "MXS Timer Tick",
+-	.dev_id		= &mxs_clockevent_device,
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= mxs_timer_interrupt,
 -};
 -
- void __init txx9_clockevent_init(unsigned long baseaddr, int irq,
- 				 unsigned int imbusclk)
+ static void mxs_irq_clear(char *state)
  {
-@@ -202,7 +195,9 @@ void __init txx9_clockevent_init(unsigned long baseaddr, int irq,
- 	cd->irq = irq;
- 	cd->cpumask = cpumask_of(0),
- 	clockevents_register_device(cd);
--	setup_irq(irq, &txx9tmr_irq);
-+	if (request_irq(irq, txx9tmr_interrupt, IRQF_PERCPU | IRQF_TIMER,
-+			"txx9tmr", &txx9_clock_event_device))
-+		pr_err("request_irq() on %s failed\n", "txx9tmr");
- 	printk(KERN_INFO "TXx9: clockevent device at 0x%lx, irq %d\n",
- 	       baseaddr, irq);
+ 	/* Disable interrupt in timer module */
+@@ -277,6 +270,7 @@ static int __init mxs_timer_init(struct device_node *np)
+ 	if (irq <= 0)
+ 		return -EINVAL;
+ 
+-	return setup_irq(irq, &mxs_timer_irq);
++	return request_irq(irq, mxs_timer_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
++			   "MXS Timer Tick", &mxs_clockevent_device);
  }
-diff --git a/arch/mips/kernel/i8253.c b/arch/mips/kernel/i8253.c
-index df7ddd246eaa..3d0b64e31f9e 100644
---- a/arch/mips/kernel/i8253.c
-+++ b/arch/mips/kernel/i8253.c
-@@ -18,16 +18,12 @@ static irqreturn_t timer_interrupt(int irq, void *dev_id)
+ TIMER_OF_DECLARE(mxs, "fsl,timrot", mxs_timer_init);
+diff --git a/drivers/clocksource/nomadik-mtu.c b/drivers/clocksource/nomadik-mtu.c
+index 3f7fa8c01367..8faa6616c5e5 100644
+--- a/drivers/clocksource/nomadik-mtu.c
++++ b/drivers/clocksource/nomadik-mtu.c
+@@ -181,13 +181,6 @@ static irqreturn_t nmdk_timer_interrupt(int irq, void *dev_id)
  	return IRQ_HANDLED;
  }
  
--static struct irqaction irq0  = {
--	.handler = timer_interrupt,
--	.flags = IRQF_NOBALANCING | IRQF_TIMER,
--	.name = "timer"
+-static struct irqaction nmdk_timer_irq = {
+-	.name		= "Nomadik Timer Tick",
+-	.flags		= IRQF_TIMER,
+-	.handler	= nmdk_timer_interrupt,
+-	.dev_id		= &nmdk_clkevt,
 -};
 -
- void __init setup_pit_timer(void)
+ static int __init nmdk_timer_init(void __iomem *base, int irq,
+ 				   struct clk *pclk, struct clk *clk)
  {
- 	clockevent_i8253_init(true);
--	setup_irq(0, &irq0);
-+	if (request_irq(0, timer_interrupt, IRQF_NOBALANCING | IRQF_TIMER,
-+			"timer", NULL))
-+		pr_err("request_irq() on %s failed\n", "timer");
- }
+@@ -232,7 +225,9 @@ static int __init nmdk_timer_init(void __iomem *base, int irq,
+ 	sched_clock_register(nomadik_read_sched_clock, 32, rate);
  
- static int __init init_pit_clocksource(void)
-diff --git a/arch/mips/kernel/rtlx-mt.c b/arch/mips/kernel/rtlx-mt.c
-index cb95470e2e69..38c6925a1bea 100644
---- a/arch/mips/kernel/rtlx-mt.c
-+++ b/arch/mips/kernel/rtlx-mt.c
-@@ -51,11 +51,6 @@ static irqreturn_t rtlx_interrupt(int irq, void *dev_id)
+ 	/* Timer 1 is used for events, register irq and clockevents */
+-	setup_irq(irq, &nmdk_timer_irq);
++	if (request_irq(irq, nmdk_timer_interrupt, IRQF_TIMER,
++			"Nomadik Timer Tick", &nmdk_clkevt))
++		pr_err("request_irq() on %s failed\n", "Nomadik Timer Tick");
+ 	nmdk_clkevt.cpumask = cpumask_of(0);
+ 	nmdk_clkevt.irq = irq;
+ 	clockevents_config_and_register(&nmdk_clkevt, rate, 2, 0xffffffffU);
+diff --git a/drivers/clocksource/samsung_pwm_timer.c b/drivers/clocksource/samsung_pwm_timer.c
+index dae1b2b5a0c5..bad1d3bad532 100644
+--- a/drivers/clocksource/samsung_pwm_timer.c
++++ b/drivers/clocksource/samsung_pwm_timer.c
+@@ -256,13 +256,6 @@ static irqreturn_t samsung_clock_event_isr(int irq, void *dev_id)
  	return IRQ_HANDLED;
  }
  
--static struct irqaction rtlx_irq = {
--	.handler	= rtlx_interrupt,
--	.name		= "RTLX",
+-static struct irqaction samsung_clock_event_irq = {
+-	.name		= "samsung_time_irq",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= samsung_clock_event_isr,
+-	.dev_id		= &time_event_device,
 -};
 -
- static int rtlx_irq_num = MIPS_CPU_IRQ_BASE + MIPS_CPU_RTLX_IRQ;
- 
- void _interrupt_sp(void)
-@@ -124,8 +119,7 @@ int __init rtlx_module_init(void)
- 		goto out_class;
- 	}
- 
--	rtlx_irq.dev_id = rtlx;
--	err = setup_irq(rtlx_irq_num, &rtlx_irq);
-+	err = request_irq(rtlx_irq_num, rtlx_interrupt, 0, "RTLX", rtlx);
- 	if (err)
- 		goto out_class;
- 
-diff --git a/arch/mips/kernel/smp.c b/arch/mips/kernel/smp.c
-index f510c00bda88..d0e911f2421b 100644
---- a/arch/mips/kernel/smp.c
-+++ b/arch/mips/kernel/smp.c
-@@ -207,25 +207,13 @@ static irqreturn_t ipi_call_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction irq_resched = {
--	.handler	= ipi_resched_interrupt,
--	.flags		= IRQF_PERCPU,
--	.name		= "IPI resched"
--};
--
--static struct irqaction irq_call = {
--	.handler	= ipi_call_interrupt,
--	.flags		= IRQF_PERCPU,
--	.name		= "IPI call"
--};
--
--static void smp_ipi_init_one(unsigned int virq,
--				    struct irqaction *action)
-+static void smp_ipi_init_one(unsigned int virq, const char *name,
-+			     irq_handler_t handler)
+ static void __init samsung_clockevent_init(void)
  {
- 	int ret;
+ 	unsigned long pclk;
+@@ -282,7 +275,10 @@ static void __init samsung_clockevent_init(void)
+ 						clock_rate, 1, pwm.tcnt_max);
  
- 	irq_set_handler(virq, handle_percpu_irq);
--	ret = setup_irq(virq, action);
-+	ret = request_irq(virq, handler, IRQF_PERCPU, name, NULL);
- 	BUG_ON(ret);
- }
+ 	irq_number = pwm.irq[pwm.event_id];
+-	setup_irq(irq_number, &samsung_clock_event_irq);
++	if (request_irq(irq_number, samsung_clock_event_isr,
++			IRQF_TIMER | IRQF_IRQPOLL, "samsung_time_irq",
++			&time_event_device))
++		pr_err("request_irq() on %s failed\n", "samsung_time_irq");
  
-@@ -278,12 +266,15 @@ int mips_smp_ipi_allocate(const struct cpumask *mask)
- 		int cpu;
+ 	if (pwm.variant.has_tint_cstat) {
+ 		u32 mask = (1 << pwm.event_id);
+diff --git a/drivers/clocksource/timer-atlas7.c b/drivers/clocksource/timer-atlas7.c
+index 93c3ac6d72bd..c21c91c2bc56 100644
+--- a/drivers/clocksource/timer-atlas7.c
++++ b/drivers/clocksource/timer-atlas7.c
+@@ -159,29 +159,23 @@ static struct clocksource sirfsoc_clocksource = {
+ 	.resume = sirfsoc_clocksource_resume,
+ };
  
- 		for_each_cpu(cpu, mask) {
--			smp_ipi_init_one(call_virq + cpu, &irq_call);
--			smp_ipi_init_one(sched_virq + cpu, &irq_resched);
-+			smp_ipi_init_one(call_virq + cpu, "IPI call",
-+					 ipi_call_interrupt);
-+			smp_ipi_init_one(sched_virq + cpu, "IPI resched",
-+					 ipi_resched_interrupt);
- 		}
- 	} else {
--		smp_ipi_init_one(call_virq, &irq_call);
--		smp_ipi_init_one(sched_virq, &irq_resched);
-+		smp_ipi_init_one(call_virq, "IPI call", ipi_call_interrupt);
-+		smp_ipi_init_one(sched_virq, "IPI resched",
-+				 ipi_resched_interrupt);
- 	}
+-static struct irqaction sirfsoc_timer_irq = {
+-	.name = "sirfsoc_timer0",
+-	.flags = IRQF_TIMER | IRQF_NOBALANCING,
+-	.handler = sirfsoc_timer_interrupt,
+-};
+-
+-static struct irqaction sirfsoc_timer1_irq = {
+-	.name = "sirfsoc_timer1",
+-	.flags = IRQF_TIMER | IRQF_NOBALANCING,
+-	.handler = sirfsoc_timer_interrupt,
+-};
++static unsigned int sirfsoc_timer_irq, sirfsoc_timer1_irq;
  
+ static int sirfsoc_local_timer_starting_cpu(unsigned int cpu)
+ {
+ 	struct clock_event_device *ce = per_cpu_ptr(sirfsoc_clockevent, cpu);
+-	struct irqaction *action;
+-
+-	if (cpu == 0)
+-		action = &sirfsoc_timer_irq;
+-	else
+-		action = &sirfsoc_timer1_irq;
++	unsigned int irq;
++	const char *name;
++
++	if (cpu == 0) {
++		irq = sirfsoc_timer_irq;
++		name = "sirfsoc_timer0";
++	} else {
++		irq = sirfsoc_timer1_irq;
++		name = "sirfsoc_timer1";
++	}
+ 
+-	ce->irq = action->irq;
++	ce->irq = irq;
+ 	ce->name = "local_timer";
+ 	ce->features = CLOCK_EVT_FEAT_ONESHOT;
+ 	ce->rating = 200;
+@@ -196,9 +190,9 @@ static int sirfsoc_local_timer_starting_cpu(unsigned int cpu)
+ 	ce->min_delta_ticks = 2;
+ 	ce->cpumask = cpumask_of(cpu);
+ 
+-	action->dev_id = ce;
+-	BUG_ON(setup_irq(ce->irq, action));
+-	irq_force_affinity(action->irq, cpumask_of(cpu));
++	BUG_ON(request_irq(ce->irq, sirfsoc_timer_interrupt,
++			   IRQF_TIMER | IRQF_NOBALANCING, name, ce));
++	irq_force_affinity(ce->irq, cpumask_of(cpu));
+ 
+ 	clockevents_register_device(ce);
  	return 0;
-@@ -311,8 +302,8 @@ int mips_smp_ipi_free(const struct cpumask *mask)
- 		int cpu;
+@@ -206,12 +200,14 @@ static int sirfsoc_local_timer_starting_cpu(unsigned int cpu)
  
- 		for_each_cpu(cpu, mask) {
--			remove_irq(call_virq + cpu, &irq_call);
--			remove_irq(sched_virq + cpu, &irq_resched);
-+			free_irq(call_virq + cpu, NULL);
-+			free_irq(sched_virq + cpu, NULL);
- 		}
- 	}
- 	irq_destroy_ipi(call_virq, mask);
-diff --git a/arch/mips/lasat/interrupt.c b/arch/mips/lasat/interrupt.c
-index 0f3a8975081d..757ad18ad586 100644
---- a/arch/mips/lasat/interrupt.c
-+++ b/arch/mips/lasat/interrupt.c
-@@ -90,12 +90,6 @@ asmlinkage void plat_irq_dispatch(void)
- 	}
- }
- 
--static struct irqaction cascade = {
--	.handler	= no_action,
--	.name		= "cascade",
--	.flags		= IRQF_NO_THREAD,
--};
--
- void __init arch_init_irq(void)
+ static int sirfsoc_local_timer_dying_cpu(unsigned int cpu)
  {
- 	int i;
-@@ -119,5 +113,7 @@ void __init arch_init_irq(void)
- 	for (i = LASAT_IRQ_BASE; i <= LASAT_IRQ_END; i++)
- 		irq_set_chip_and_handler(i, &lasat_irq_type, handle_level_irq);
++	struct clock_event_device *ce = per_cpu_ptr(sirfsoc_clockevent, cpu);
++
+ 	sirfsoc_timer_count_disable(1);
  
--	setup_irq(LASAT_CASCADE_IRQ, &cascade);
-+	if (request_irq(LASAT_CASCADE_IRQ, no_action, IRQF_NO_THREAD, "cascade",
-+			NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
+ 	if (cpu == 0)
+-		remove_irq(sirfsoc_timer_irq.irq, &sirfsoc_timer_irq);
++		free_irq(sirfsoc_timer_irq, ce);
+ 	else
+-		remove_irq(sirfsoc_timer1_irq.irq, &sirfsoc_timer1_irq);
++		free_irq(sirfsoc_timer1_irq, ce);
+ 	return 0;
  }
-diff --git a/arch/mips/loongson2ef/common/bonito-irq.c b/arch/mips/loongson2ef/common/bonito-irq.c
-index 82352cc25e4c..646f93fea506 100644
---- a/arch/mips/loongson2ef/common/bonito-irq.c
-+++ b/arch/mips/loongson2ef/common/bonito-irq.c
-@@ -30,11 +30,6 @@ static struct irq_chip bonito_irq_type = {
- 	.irq_unmask	= bonito_irq_enable,
- };
  
--static struct irqaction __maybe_unused dma_timeout_irqaction = {
--	.handler	= no_action,
--	.name		= "dma_timeout",
--};
--
- void bonito_irq_init(void)
- {
- 	u32 i;
-@@ -44,6 +39,8 @@ void bonito_irq_init(void)
- 					 handle_level_irq);
+@@ -268,14 +264,14 @@ static int __init sirfsoc_of_timer_init(struct device_node *np)
+ 		return -ENXIO;
+ 	}
  
- #ifdef CONFIG_CPU_LOONGSON2E
--	setup_irq(LOONGSON_IRQ_BASE + 10, &dma_timeout_irqaction);
-+	if (request_irq(LOONGSON_IRQ_BASE + 10, no_action, 0, "dma_timeout",
-+			NULL))
-+		pr_err("request_irq() on %s failed\n", "dma_timeout");
- #endif
- }
-diff --git a/arch/mips/loongson2ef/common/cs5536/cs5536_mfgpt.c b/arch/mips/loongson2ef/common/cs5536/cs5536_mfgpt.c
-index 30af1b7c7529..9d63033f4a89 100644
---- a/arch/mips/loongson2ef/common/cs5536/cs5536_mfgpt.c
-+++ b/arch/mips/loongson2ef/common/cs5536/cs5536_mfgpt.c
-@@ -100,12 +100,6 @@ static irqreturn_t timer_interrupt(int irq, void *dev_id)
+-	sirfsoc_timer_irq.irq = irq_of_parse_and_map(np, 0);
+-	if (!sirfsoc_timer_irq.irq) {
++	sirfsoc_timer_irq = irq_of_parse_and_map(np, 0);
++	if (!sirfsoc_timer_irq) {
+ 		pr_err("No irq passed for timer0 via DT\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	sirfsoc_timer1_irq.irq = irq_of_parse_and_map(np, 1);
+-	if (!sirfsoc_timer1_irq.irq) {
++	sirfsoc_timer1_irq = irq_of_parse_and_map(np, 1);
++	if (!sirfsoc_timer1_irq) {
+ 		pr_err("No irq passed for timer1 via DT\n");
+ 		return -EINVAL;
+ 	}
+diff --git a/drivers/clocksource/timer-cs5535.c b/drivers/clocksource/timer-cs5535.c
+index 8f6bc536bef2..51ea0509fb25 100644
+--- a/drivers/clocksource/timer-cs5535.c
++++ b/drivers/clocksource/timer-cs5535.c
+@@ -131,12 +131,6 @@ static irqreturn_t mfgpt_tick(int irq, void *dev_id)
  	return IRQ_HANDLED;
  }
  
--static struct irqaction irq5 = {
--	.handler = timer_interrupt,
--	.flags = IRQF_NOBALANCING | IRQF_TIMER,
--	.name = "timer"
+-static struct irqaction mfgptirq  = {
+-	.handler = mfgpt_tick,
+-	.flags = IRQF_NOBALANCING | IRQF_TIMER | IRQF_SHARED,
+-	.name = DRV_NAME,
 -};
 -
- /*
-  * Initialize the conversion factor and the min/max deltas of the clock event
-  * structure and register the clock event source with the framework.
-@@ -134,7 +128,9 @@ void __init setup_mfgpt0_timer(void)
- 
- 	clockevents_register_device(cd);
- 
--	setup_irq(CS5536_MFGPT_INTR, &irq5);
-+	if (request_irq(CS5536_MFGPT_INTR, timer_interrupt,
-+			IRQF_NOBALANCING | IRQF_TIMER, "timer", NULL))
-+		pr_err("request_irq() on %s failed\n", "timer");
- }
- 
- /*
-diff --git a/arch/mips/loongson2ef/fuloong-2e/irq.c b/arch/mips/loongson2ef/fuloong-2e/irq.c
-index 32278e7bf85c..23218b32a013 100644
---- a/arch/mips/loongson2ef/fuloong-2e/irq.c
-+++ b/arch/mips/loongson2ef/fuloong-2e/irq.c
-@@ -35,12 +35,6 @@ asmlinkage void mach_irq_dispatch(unsigned int pending)
- 		spurious_interrupt();
- }
- 
--static struct irqaction cascade_irqaction = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD,
--};
--
- void __init mach_init_irq(void)
+ static int __init cs5535_mfgpt_init(void)
  {
- 	/* init all controller
-@@ -59,7 +53,11 @@ void __init mach_init_irq(void)
- 	bonito_irq_init();
- 
- 	/* bonito irq at IP2 */
--	setup_irq(MIPS_CPU_IRQ_BASE + 2, &cascade_irqaction);
-+	if (request_irq(MIPS_CPU_IRQ_BASE + 2, no_action, IRQF_NO_THREAD,
-+			"cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
- 	/* 8259 irq at IP5 */
--	setup_irq(MIPS_CPU_IRQ_BASE + 5, &cascade_irqaction);
-+	if (request_irq(MIPS_CPU_IRQ_BASE + 5, no_action, IRQF_NO_THREAD,
-+			"cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
- }
-diff --git a/arch/mips/loongson2ef/lemote-2f/irq.c b/arch/mips/loongson2ef/lemote-2f/irq.c
-index c58a044c6c07..a40d17351af3 100644
---- a/arch/mips/loongson2ef/lemote-2f/irq.c
-+++ b/arch/mips/loongson2ef/lemote-2f/irq.c
-@@ -90,18 +90,6 @@ static irqreturn_t ip6_action(int cpl, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction ip6_irqaction = {
--	.handler = ip6_action,
--	.name = "cascade",
--	.flags = IRQF_SHARED | IRQF_NO_THREAD,
--};
--
--static struct irqaction cascade_irqaction = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD | IRQF_NO_SUSPEND,
--};
--
- void __init mach_init_irq(void)
- {
- 	/* init all controller
-@@ -120,7 +108,11 @@ void __init mach_init_irq(void)
- 	bonito_irq_init();
- 
- 	/* setup north bridge irq (bonito) */
--	setup_irq(LOONGSON_NORTH_BRIDGE_IRQ, &ip6_irqaction);
-+	if (request_irq(LOONGSON_NORTH_BRIDGE_IRQ, ip6_action,
-+			IRQF_SHARED | IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
- 	/* setup source bridge irq (i8259) */
--	setup_irq(LOONGSON_SOUTH_BRIDGE_IRQ, &cascade_irqaction);
-+	if (request_irq(LOONGSON_SOUTH_BRIDGE_IRQ, no_action,
-+			IRQF_NO_THREAD | IRQF_NO_SUSPEND, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
- }
-diff --git a/arch/mips/loongson32/common/irq.c b/arch/mips/loongson32/common/irq.c
-index 168d221d4178..8d09c2525aa9 100644
---- a/arch/mips/loongson32/common/irq.c
-+++ b/arch/mips/loongson32/common/irq.c
-@@ -149,12 +149,6 @@ asmlinkage void plat_irq_dispatch(void)
- 
- }
- 
--static struct irqaction cascade_irqaction = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD,
--};
--
- static void __init ls1x_irq_init(int base)
- {
- 	int n;
-@@ -176,12 +170,17 @@ static void __init ls1x_irq_init(int base)
- 					 handle_level_irq);
+ 	struct cs5535_mfgpt_timer *timer;
+@@ -158,7 +152,9 @@ static int __init cs5535_mfgpt_init(void)
  	}
  
--	setup_irq(INT0_IRQ, &cascade_irqaction);
--	setup_irq(INT1_IRQ, &cascade_irqaction);
--	setup_irq(INT2_IRQ, &cascade_irqaction);
--	setup_irq(INT3_IRQ, &cascade_irqaction);
-+	if (request_irq(INT0_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
-+	if (request_irq(INT1_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
-+	if (request_irq(INT2_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
-+	if (request_irq(INT3_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
- #if defined(CONFIG_LOONGSON1_LS1C)
--	setup_irq(INT4_IRQ, &cascade_irqaction);
-+	if (request_irq(INT4_IRQ, no_action, IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
- #endif
- }
- 
-diff --git a/arch/mips/loongson32/common/time.c b/arch/mips/loongson32/common/time.c
-index 4cc73f7ac0d4..3981226f8a3b 100644
---- a/arch/mips/loongson32/common/time.c
-+++ b/arch/mips/loongson32/common/time.c
-@@ -176,13 +176,6 @@ static struct clock_event_device ls1x_clockevent = {
- 	.tick_resume		= ls1x_clockevent_tick_resume,
- };
- 
--static struct irqaction ls1x_pwmtimer_irqaction = {
--	.name		= "ls1x-pwmtimer",
--	.handler	= ls1x_clockevent_isr,
--	.dev_id		= &ls1x_clockevent,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--};
--
- static void __init ls1x_time_init(void)
- {
- 	struct clock_event_device *cd = &ls1x_clockevent;
-@@ -206,7 +199,10 @@ static void __init ls1x_time_init(void)
- 	if (ret)
- 		panic(KERN_ERR "Failed to register clocksource: %d\n", ret);
- 
--	setup_irq(LS1X_TIMER_IRQ, &ls1x_pwmtimer_irqaction);
-+	if (request_irq(LS1X_TIMER_IRQ, ls1x_clockevent_isr,
-+			IRQF_PERCPU | IRQF_TIMER, "ls1x-pwmtimer",
-+			&ls1x_clockevent))
-+		pr_err("request_irq() on %s failed\n", "ls1x-pwmtimer");
- }
- #endif /* CONFIG_CEVT_CSRC_LS1X */
- 
-diff --git a/arch/mips/loongson64/hpet.c b/arch/mips/loongson64/hpet.c
-index ed15430ad64f..19c21b2f5ef3 100644
---- a/arch/mips/loongson64/hpet.c
-+++ b/arch/mips/loongson64/hpet.c
-@@ -187,12 +187,6 @@ static irqreturn_t hpet_irq_handler(int irq, void *data)
- 	return IRQ_NONE;
- }
- 
--static struct irqaction hpet_irq = {
--	.handler = hpet_irq_handler,
--	.flags = IRQF_NOBALANCING | IRQF_TIMER,
--	.name = "hpet",
--};
--
- /*
-  * hpet address assignation and irq setting should be done in bios.
-  * but pmon don't do this, we just setup here directly.
-@@ -247,7 +241,9 @@ void __init setup_hpet_timer(void)
- 	cd->min_delta_ticks = HPET_MIN_PROG_DELTA;
- 
- 	clockevents_register_device(cd);
--	setup_irq(HPET_T0_IRQ, &hpet_irq);
-+	if (request_irq(HPET_T0_IRQ, hpet_irq_handler,
-+			IRQF_NOBALANCING | IRQF_TIMER, "hpet", NULL))
-+		pr_err("request_irq() on %s failed\n", "hpet");
- 	pr_info("hpet clock event device register\n");
- }
- 
-diff --git a/arch/mips/mti-malta/malta-int.c b/arch/mips/mti-malta/malta-int.c
-index a840e0c1642c..3e54c9c6b61b 100644
---- a/arch/mips/mti-malta/malta-int.c
-+++ b/arch/mips/mti-malta/malta-int.c
-@@ -144,12 +144,6 @@ static irqreturn_t corehi_handler(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction corehi_irqaction = {
--	.handler = corehi_handler,
--	.name = "CoreHi",
--	.flags = IRQF_NO_THREAD,
--};
--
- static msc_irqmap_t msc_irqmap[] __initdata = {
- 	{MSC01C_INT_TMR,		MSC01_IRQ_EDGE, 0},
- 	{MSC01C_INT_PCI,		MSC01_IRQ_LEVEL, 0},
-@@ -223,5 +217,7 @@ void __init arch_init_irq(void)
- 		corehi_irq = MIPS_CPU_IRQ_BASE + MIPSCPU_INT_COREHI;
- 	}
- 
--	setup_irq(corehi_irq, &corehi_irqaction);
-+	if (request_irq(corehi_irq, corehi_handler, IRQF_NO_THREAD, "CoreHi",
-+			NULL))
-+		pr_err("request_irq() on %s failed\n", "CoreHi");
- }
-diff --git a/arch/mips/netlogic/xlr/fmn.c b/arch/mips/netlogic/xlr/fmn.c
-index d428e8471eec..b7b575a63e44 100644
---- a/arch/mips/netlogic/xlr/fmn.c
-+++ b/arch/mips/netlogic/xlr/fmn.c
-@@ -110,12 +110,6 @@ static irqreturn_t fmn_message_handler(int irq, void *data)
- 	return IRQ_HANDLED;
- }
- 
--struct irqaction fmn_irqaction = {
--	.handler = fmn_message_handler,
--	.flags = IRQF_PERCPU,
--	.name = "fmn",
--};
--
- void xlr_percpu_fmn_init(void)
- {
- 	struct xlr_fmn_info *cpu_fmn_info;
-@@ -196,7 +190,8 @@ void nlm_setup_fmn_irq(void)
- 	uint32_t flags;
- 
- 	/* setup irq only once */
--	setup_irq(IRQ_FMN, &fmn_irqaction);
-+	if (request_irq(IRQ_FMN, fmn_message_handler, IRQF_PERCPU, "fmn", NULL))
-+		pr_err("request_irq() on %s failed\n", "fmn");
- 
- 	flags = nlm_cop2_enable_irqsave();
- 	nlm_fmn_setup_intr(IRQ_FMN, (1 << nlm_threads_per_core) - 1);
-diff --git a/arch/mips/pmcs-msp71xx/msp_irq.c b/arch/mips/pmcs-msp71xx/msp_irq.c
-index 8d53d7a2ed45..aff7b9b89bab 100644
---- a/arch/mips/pmcs-msp71xx/msp_irq.c
-+++ b/arch/mips/pmcs-msp71xx/msp_irq.c
-@@ -107,18 +107,6 @@ asmlinkage void plat_irq_dispatch(void)
- 		do_IRQ(MSP_INT_SW1);
- }
- 
--static struct irqaction cic_cascade_msp = {
--	.handler = no_action,
--	.name	 = "MSP CIC cascade",
--	.flags	 = IRQF_NO_THREAD,
--};
--
--static struct irqaction per_cascade_msp = {
--	.handler = no_action,
--	.name	 = "MSP PER cascade",
--	.flags	 = IRQF_NO_THREAD,
--};
--
- void __init arch_init_irq(void)
- {
- 	/* assume we'll be using vectored interrupt mode except in UP mode*/
-@@ -142,8 +130,12 @@ void __init arch_init_irq(void)
- #endif	/* CONFIG_MIPS_MT_SMP */
- #endif	/* CONFIG_MIPS_MT */
- 	/* setup the cascaded interrupts */
--	setup_irq(MSP_INT_CIC, &cic_cascade_msp);
--	setup_irq(MSP_INT_PER, &per_cascade_msp);
-+	if (request_irq(MSP_INT_CIC, no_action, IRQF_NO_THREAD,
-+			"MSP CIC cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "MSP CIC cascade");
-+	if (request_irq(MSP_INT_PER, no_action, IRQF_NO_THREAD,
-+			"MSP PER cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "MSP PER cascade");
- 
- #else
- 	/*
-@@ -153,7 +145,11 @@ void __init arch_init_irq(void)
- 	msp_slp_irq_init();
- 
- 	/* setup the cascaded SLP/PER interrupts */
--	setup_irq(MSP_INT_SLP, &cic_cascade_msp);
--	setup_irq(MSP_INT_PER, &per_cascade_msp);
-+	if (request_irq(MSP_INT_SLP, no_action, IRQF_NO_THREAD,
-+			"MSP CIC cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "MSP CIC cascade");
-+	if (request_irq(MSP_INT_PER, no_action, IRQF_NO_THREAD,
-+			"MSP PER cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "MSP PER cascade");
- #endif
- }
-diff --git a/arch/mips/pmcs-msp71xx/msp_smp.c b/arch/mips/pmcs-msp71xx/msp_smp.c
-index 8f00d26f2a53..f5a828a36535 100644
---- a/arch/mips/pmcs-msp71xx/msp_smp.c
-+++ b/arch/mips/pmcs-msp71xx/msp_smp.c
-@@ -38,21 +38,10 @@ static irqreturn_t ipi_call_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static struct irqaction irq_resched = {
--	.handler	= ipi_resched_interrupt,
--	.flags		= IRQF_PERCPU,
--	.name		= "IPI_resched"
--};
--
--static struct irqaction irq_call = {
--	.handler	= ipi_call_interrupt,
--	.flags		= IRQF_PERCPU,
--	.name		= "IPI_call"
--};
--
--void __init arch_init_ipiirq(int irq, struct irqaction *action)
-+void __init arch_init_ipiirq(int irq, const char *name, irq_handler_t handler)
- {
--	setup_irq(irq, action);
-+	if (request_irq(irq, handler, IRQF_PERCPU, name, NULL))
-+		pr_err("request_irq() on %s failed\n", name);
- 	irq_set_handler(irq, handle_percpu_irq);
- }
- 
-@@ -60,7 +49,8 @@ void __init msp_vsmp_int_init(void)
- {
- 	set_vi_handler(MIPS_CPU_IPI_RESCHED_IRQ, ipi_resched_dispatch);
- 	set_vi_handler(MIPS_CPU_IPI_CALL_IRQ, ipi_call_dispatch);
--	arch_init_ipiirq(MIPS_CPU_IPI_RESCHED_IRQ, &irq_resched);
--	arch_init_ipiirq(MIPS_CPU_IPI_CALL_IRQ, &irq_call);
-+	arch_init_ipiirq(MIPS_CPU_IPI_RESCHED_IRQ, "IPI_resched",
-+			 ipi_resched_interrupt);
-+	arch_init_ipiirq(MIPS_CPU_IPI_CALL_IRQ, "IPI_call", ipi_call_interrupt);
- }
- #endif /* CONFIG_MIPS_MT_SMP */
-diff --git a/arch/mips/pmcs-msp71xx/msp_time.c b/arch/mips/pmcs-msp71xx/msp_time.c
-index d83de01f00b8..3acf9b6670b3 100644
---- a/arch/mips/pmcs-msp71xx/msp_time.c
-+++ b/arch/mips/pmcs-msp71xx/msp_time.c
-@@ -27,7 +27,6 @@
- #define get_current_vpe()   \
- 	((read_c0_tcbind() >> TCBIND_CURVPE_SHIFT) & TCBIND_CURVPE)
- 
--static struct irqaction timer_vpe1;
- static int tim_installed;
- 
- void __init plat_time_init(void)
-@@ -79,8 +78,10 @@ unsigned int get_c0_compare_int(void)
- {
- 	/* MIPS_MT modes may want timer for second VPE */
- 	if ((get_current_vpe()) && !tim_installed) {
--		memcpy(&timer_vpe1, &c0_compare_irqaction, sizeof(timer_vpe1));
--		setup_irq(MSP_INT_VPE1_TIMER, &timer_vpe1);
-+		if (request_irq(MSP_INT_VPE1_TIMER, c0_compare_interrupt,
-+				IRQF_PERCPU | IRQF_TIMER | IRQF_SHARED, "timer",
-+				NULL))
-+			pr_err("request_irq() on %s failed\n", "timer");
- 		tim_installed++;
- 	}
- 
-diff --git a/arch/mips/ralink/cevt-rt3352.c b/arch/mips/ralink/cevt-rt3352.c
-index 61a08943eb2f..d98d9b68fc70 100644
---- a/arch/mips/ralink/cevt-rt3352.c
-+++ b/arch/mips/ralink/cevt-rt3352.c
-@@ -82,12 +82,6 @@ static struct systick_device systick = {
+ 	/* And register it with the kernel */
+-	ret = setup_irq(timer_irq, &mfgptirq);
++	ret = request_irq(timer_irq, mfgpt_tick,
++			  IRQF_NOBALANCING | IRQF_TIMER | IRQF_SHARED,
++			  DRV_NAME, NULL);
+ 	if (ret) {
+ 		printk(KERN_ERR DRV_NAME ": Unable to set up the interrupt.\n");
+ 		goto err_irq;
+diff --git a/drivers/clocksource/timer-efm32.c b/drivers/clocksource/timer-efm32.c
+index 5a22cb079ad3..441a4b916841 100644
+--- a/drivers/clocksource/timer-efm32.c
++++ b/drivers/clocksource/timer-efm32.c
+@@ -119,13 +119,6 @@ static struct efm32_clock_event_ddata clock_event_ddata = {
  	},
  };
  
--static struct irqaction systick_irqaction = {
--	.handler = systick_interrupt,
--	.flags = IRQF_PERCPU | IRQF_TIMER,
--	.dev_id = &systick.dev,
+-static struct irqaction efm32_clock_event_irq = {
+-	.name = "efm32 clockevent",
+-	.flags = IRQF_TIMER,
+-	.handler = efm32_clock_event_handler,
+-	.dev_id = &clock_event_ddata,
 -};
 -
- static int systick_shutdown(struct clock_event_device *evt)
+ static int __init efm32_clocksource_init(struct device_node *np)
  {
- 	struct systick_device *sdev;
-@@ -108,8 +102,14 @@ static int systick_set_oneshot(struct clock_event_device *evt)
+ 	struct clk *clk;
+@@ -230,7 +223,8 @@ static int __init efm32_clockevent_init(struct device_node *np)
+ 					DIV_ROUND_CLOSEST(rate, 1024),
+ 					0xf, 0xffff);
  
- 	sdev = container_of(evt, struct systick_device, dev);
+-	ret = setup_irq(irq, &efm32_clock_event_irq);
++	ret = request_irq(irq, efm32_clock_event_handler, IRQF_TIMER,
++			  "efm32 clockevent", &clock_event_ddata);
+ 	if (ret) {
+ 		pr_err("Failed setup irq\n");
+ 		goto err_setup_irq;
+diff --git a/drivers/clocksource/timer-fsl-ftm.c b/drivers/clocksource/timer-fsl-ftm.c
+index a9d9a3ca5996..12a2ed7cfaff 100644
+--- a/drivers/clocksource/timer-fsl-ftm.c
++++ b/drivers/clocksource/timer-fsl-ftm.c
+@@ -176,13 +176,6 @@ static struct clock_event_device ftm_clockevent = {
+ 	.rating			= 300,
+ };
  
--	if (!sdev->irq_requested)
--		setup_irq(systick.dev.irq, &systick_irqaction);
-+	if (!sdev->irq_requested) {
-+		if (request_irq(systick.dev.irq, systick_interrupt,
-+				IRQF_PERCPU | IRQF_TIMER, systick.dev.name,
-+				&systick.dev)) {
-+			pr_err("request_irq() on %s failed\n",
-+				systick.dev.name);
-+		}
-+	}
- 	sdev->irq_requested = 1;
- 	iowrite32(CFG_EXT_STK_EN | CFG_CNT_EN,
- 		  systick.membase + SYSTICK_CONFIG);
-@@ -125,7 +125,6 @@ static int __init ralink_systick_init(struct device_node *np)
- 	if (!systick.membase)
- 		return -ENXIO;
+-static struct irqaction ftm_timer_irq = {
+-	.name		= "Freescale ftm timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= ftm_evt_interrupt,
+-	.dev_id		= &ftm_clockevent,
+-};
+-
+ static int __init ftm_clockevent_init(unsigned long freq, int irq)
+ {
+ 	int err;
+@@ -192,7 +185,8 @@ static int __init ftm_clockevent_init(unsigned long freq, int irq)
  
--	systick_irqaction.name = np->name;
- 	systick.dev.name = np->name;
- 	clockevents_calc_mult_shift(&systick.dev, SYSTICK_FREQ, 60);
- 	systick.dev.max_delta_ns = clockevent_delta2ns(0x7fff, &systick.dev);
-diff --git a/arch/mips/sgi-ip22/ip22-eisa.c b/arch/mips/sgi-ip22/ip22-eisa.c
-index a0a79222ce0b..cdf432990588 100644
---- a/arch/mips/sgi-ip22/ip22-eisa.c
-+++ b/arch/mips/sgi-ip22/ip22-eisa.c
-@@ -92,11 +92,6 @@ static irqreturn_t ip22_eisa_intr(int irq, void *dev_id)
- 	return IRQ_NONE;
+ 	ftm_reset_counter(priv->clkevt_base);
+ 
+-	err = setup_irq(irq, &ftm_timer_irq);
++	err = request_irq(irq, ftm_evt_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
++			  "Freescale ftm timer", &ftm_clockevent);
+ 	if (err) {
+ 		pr_err("ftm: setup irq failed: %d\n", err);
+ 		return err;
+diff --git a/drivers/clocksource/timer-imx-gpt.c b/drivers/clocksource/timer-imx-gpt.c
+index 706c0d0ff56c..7b2c70f2f353 100644
+--- a/drivers/clocksource/timer-imx-gpt.c
++++ b/drivers/clocksource/timer-imx-gpt.c
+@@ -67,7 +67,6 @@ struct imx_timer {
+ 	struct clk *clk_ipg;
+ 	const struct imx_gpt_data *gpt;
+ 	struct clock_event_device ced;
+-	struct irqaction act;
+ };
+ 
+ struct imx_gpt_data {
+@@ -273,7 +272,6 @@ static irqreturn_t mxc_timer_interrupt(int irq, void *dev_id)
+ static int __init mxc_clockevent_init(struct imx_timer *imxtm)
+ {
+ 	struct clock_event_device *ced = &imxtm->ced;
+-	struct irqaction *act = &imxtm->act;
+ 
+ 	ced->name = "mxc_timer1";
+ 	ced->features = CLOCK_EVT_FEAT_ONESHOT | CLOCK_EVT_FEAT_DYNIRQ;
+@@ -287,12 +285,8 @@ static int __init mxc_clockevent_init(struct imx_timer *imxtm)
+ 	clockevents_config_and_register(ced, clk_get_rate(imxtm->clk_per),
+ 					0xff, 0xfffffffe);
+ 
+-	act->name = "i.MX Timer Tick";
+-	act->flags = IRQF_TIMER | IRQF_IRQPOLL;
+-	act->handler = mxc_timer_interrupt;
+-	act->dev_id = ced;
+-
+-	return setup_irq(imxtm->irq, act);
++	return request_irq(imxtm->irq, mxc_timer_interrupt,
++			   IRQF_TIMER | IRQF_IRQPOLL, "i.MX Timer Tick", ced);
  }
  
--static struct irqaction eisa_action = {
--	.handler	= ip22_eisa_intr,
--	.name		= "EISA",
+ static void imx1_gpt_setup_tctl(struct imx_timer *imxtm)
+diff --git a/drivers/clocksource/timer-integrator-ap.c b/drivers/clocksource/timer-integrator-ap.c
+index c90a69c7b5fa..b0fcbaac58b0 100644
+--- a/drivers/clocksource/timer-integrator-ap.c
++++ b/drivers/clocksource/timer-integrator-ap.c
+@@ -123,13 +123,6 @@ static struct clock_event_device integrator_clockevent = {
+ 	.rating			= 300,
+ };
+ 
+-static struct irqaction integrator_timer_irq = {
+-	.name		= "timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= integrator_timer_interrupt,
+-	.dev_id		= &integrator_clockevent,
 -};
 -
- int __init ip22_eisa_init(void)
+ static int integrator_clockevent_init(unsigned long inrate,
+ 				      void __iomem *base, int irq)
  {
- 	int i, c;
-@@ -138,7 +133,8 @@ int __init ip22_eisa_init(void)
+@@ -149,7 +142,9 @@ static int integrator_clockevent_init(unsigned long inrate,
+ 	timer_reload = rate / HZ;
+ 	writel(ctrl, clkevt_base + TIMER_CTRL);
  
- 	/* Cannot use request_irq because of kmalloc not being ready at such
- 	 * an early stage. Yes, I've been bitten... */
--	setup_irq(SGI_EISA_IRQ, &eisa_action);
-+	if (request_irq(SGI_EISA_IRQ, ip22_eisa_intr, 0, "EISA", NULL))
-+		pr_err("request_irq() on %s failed\n", "EISA");
+-	ret = setup_irq(irq, &integrator_timer_irq);
++	ret = request_irq(irq, integrator_timer_interrupt,
++			  IRQF_TIMER | IRQF_IRQPOLL, "timer",
++			  &integrator_clockevent);
+ 	if (ret)
+ 		return ret;
  
- 	EISA_bus = 1;
+diff --git a/drivers/clocksource/timer-meson6.c b/drivers/clocksource/timer-meson6.c
+index 9e8b467c71da..99f5510a2b56 100644
+--- a/drivers/clocksource/timer-meson6.c
++++ b/drivers/clocksource/timer-meson6.c
+@@ -150,13 +150,6 @@ static irqreturn_t meson6_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction meson6_timer_irq = {
+-	.name		= "meson6_timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= meson6_timer_interrupt,
+-	.dev_id		= &meson6_clockevent,
+-};
+-
+ static int __init meson6_timer_init(struct device_node *node)
+ {
+ 	u32 val;
+@@ -194,7 +187,9 @@ static int __init meson6_timer_init(struct device_node *node)
+ 	/* Stop the timer A */
+ 	meson6_clkevt_time_stop();
+ 
+-	ret = setup_irq(irq, &meson6_timer_irq);
++	ret = request_irq(irq, meson6_timer_interrupt,
++			  IRQF_TIMER | IRQF_IRQPOLL, "meson6_timer",
++			  &meson6_clockevent);
+ 	if (ret) {
+ 		pr_warn("failed to setup irq %d\n", irq);
+ 		return ret;
+diff --git a/drivers/clocksource/timer-orion.c b/drivers/clocksource/timer-orion.c
+index 7d487107e3cd..d01ff4181867 100644
+--- a/drivers/clocksource/timer-orion.c
++++ b/drivers/clocksource/timer-orion.c
+@@ -114,12 +114,6 @@ static irqreturn_t orion_clkevt_irq_handler(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction orion_clkevt_irq = {
+-	.name		= "orion_event",
+-	.flags		= IRQF_TIMER,
+-	.handler	= orion_clkevt_irq_handler,
+-};
+-
+ static int __init orion_timer_init(struct device_node *np)
+ {
+ 	unsigned long rate;
+@@ -172,7 +166,8 @@ static int __init orion_timer_init(struct device_node *np)
+ 	sched_clock_register(orion_read_sched_clock, 32, rate);
+ 
+ 	/* setup timer1 as clockevent timer */
+-	ret = setup_irq(irq, &orion_clkevt_irq);
++	ret = request_irq(irq, orion_clkevt_irq_handler, IRQF_TIMER,
++			  "orion_event", NULL);
+ 	if (ret) {
+ 		pr_err("%pOFn: unable to setup irq\n", np);
+ 		return ret;
+diff --git a/drivers/clocksource/timer-prima2.c b/drivers/clocksource/timer-prima2.c
+index d4a9dcf5fba2..3d202813f992 100644
+--- a/drivers/clocksource/timer-prima2.c
++++ b/drivers/clocksource/timer-prima2.c
+@@ -165,14 +165,6 @@ static struct clocksource sirfsoc_clocksource = {
+ 	.resume = sirfsoc_clocksource_resume,
+ };
+ 
+-static struct irqaction sirfsoc_timer_irq = {
+-	.name = "sirfsoc_timer0",
+-	.flags = IRQF_TIMER,
+-	.irq = 0,
+-	.handler = sirfsoc_timer_interrupt,
+-	.dev_id = &sirfsoc_clockevent,
+-};
+-
+ /* Overwrite weak default sched_clock with more precise one */
+ static u64 notrace sirfsoc_read_sched_clock(void)
+ {
+@@ -234,7 +226,8 @@ static int __init sirfsoc_prima2_timer_init(struct device_node *np)
+ 
+ 	sched_clock_register(sirfsoc_read_sched_clock, 64, PRIMA2_CLOCK_FREQ);
+ 
+-	ret = setup_irq(sirfsoc_timer_irq.irq, &sirfsoc_timer_irq);
++	ret = request_irq(sirfsoc_timer_irq.irq, sirfsoc_timer_interrupt,
++			  IRQF_TIMER, "sirfsoc_timer0", &sirfsoc_clockevent);
+ 	if (ret) {
+ 		pr_err("Failed to setup irq\n");
+ 		return ret;
+diff --git a/drivers/clocksource/timer-pxa.c b/drivers/clocksource/timer-pxa.c
+index 913a5d354a1f..7ad0e5adb2ff 100644
+--- a/drivers/clocksource/timer-pxa.c
++++ b/drivers/clocksource/timer-pxa.c
+@@ -143,13 +143,6 @@ static struct clock_event_device ckevt_pxa_osmr0 = {
+ 	.resume			= pxa_timer_resume,
+ };
+ 
+-static struct irqaction pxa_ost0_irq = {
+-	.name		= "ost0",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= pxa_ost0_interrupt,
+-	.dev_id		= &ckevt_pxa_osmr0,
+-};
+-
+ static int __init pxa_timer_common_init(int irq, unsigned long clock_tick_rate)
+ {
+ 	int ret;
+@@ -161,7 +154,8 @@ static int __init pxa_timer_common_init(int irq, unsigned long clock_tick_rate)
+ 
+ 	ckevt_pxa_osmr0.cpumask = cpumask_of(0);
+ 
+-	ret = setup_irq(irq, &pxa_ost0_irq);
++	ret = request_irq(irq, pxa_ost0_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
++			  "ost0", &ckevt_pxa_osmr0);
+ 	if (ret) {
+ 		pr_err("Failed to setup irq\n");
+ 		return ret;
+diff --git a/drivers/clocksource/timer-sp804.c b/drivers/clocksource/timer-sp804.c
+index 9c841980eed1..ae0b26879ca9 100644
+--- a/drivers/clocksource/timer-sp804.c
++++ b/drivers/clocksource/timer-sp804.c
+@@ -168,13 +168,6 @@ static struct clock_event_device sp804_clockevent = {
+ 	.rating			= 300,
+ };
+ 
+-static struct irqaction sp804_timer_irq = {
+-	.name		= "timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= sp804_timer_interrupt,
+-	.dev_id		= &sp804_clockevent,
+-};
+-
+ int __init __sp804_clockevents_init(void __iomem *base, unsigned int irq, struct clk *clk, const char *name)
+ {
+ 	struct clock_event_device *evt = &sp804_clockevent;
+@@ -200,7 +193,9 @@ int __init __sp804_clockevents_init(void __iomem *base, unsigned int irq, struct
+ 
+ 	writel(0, base + TIMER_CTRL);
+ 
+-	setup_irq(irq, &sp804_timer_irq);
++	if (request_irq(irq, sp804_timer_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
++			"timer", &sp804_clockevent))
++		pr_err("request_irq() on %s failed\n", "timer");
+ 	clockevents_config_and_register(evt, rate, 0xf, 0xffffffff);
+ 
  	return 0;
-diff --git a/arch/mips/sgi-ip22/ip22-int.c b/arch/mips/sgi-ip22/ip22-int.c
-index 3804895fa697..e6d4133e99f6 100644
---- a/arch/mips/sgi-ip22/ip22-int.c
-+++ b/arch/mips/sgi-ip22/ip22-int.c
-@@ -159,36 +159,7 @@ static void __irq_entry indy_buserror_irq(void)
- 	irq_exit();
- }
- 
--static struct irqaction local0_cascade = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "local0 cascade",
--};
--
--static struct irqaction local1_cascade = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "local1 cascade",
--};
--
--static struct irqaction buserr = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "Bus Error",
--};
--
--static struct irqaction map0_cascade = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "mapable0 cascade",
--};
--
- #ifdef USE_LIO3_IRQ
--static struct irqaction map1_cascade = {
--	.handler	= no_action,
--	.flags		= IRQF_NO_THREAD,
--	.name		= "mapable1 cascade",
--};
- #define SGI_INTERRUPTS	SGINT_END
- #else
- #define SGI_INTERRUPTS	SGINT_LOCAL3
-@@ -322,14 +293,24 @@ void __init arch_init_irq(void)
- 	}
- 
- 	/* vector handler. this register the IRQ as non-sharable */
--	setup_irq(SGI_LOCAL_0_IRQ, &local0_cascade);
--	setup_irq(SGI_LOCAL_1_IRQ, &local1_cascade);
--	setup_irq(SGI_BUSERR_IRQ, &buserr);
-+	if (request_irq(SGI_LOCAL_0_IRQ, no_action, IRQF_NO_THREAD,
-+			"local0 cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "local0 cascade");
-+	if (request_irq(SGI_LOCAL_1_IRQ, no_action, IRQF_NO_THREAD,
-+			"local1 cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "local1 cascade");
-+	if (request_irq(SGI_BUSERR_IRQ, no_action, IRQF_NO_THREAD, "Bus Error",
-+			NULL))
-+		pr_err("request_irq() on %s failed\n", "Bus Error");
- 
- 	/* cascade in cascade. i love Indy ;-) */
--	setup_irq(SGI_MAP_0_IRQ, &map0_cascade);
-+	if (request_irq(SGI_MAP_0_IRQ, no_action, IRQF_NO_THREAD,
-+			"mapable0 cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "mapable0 cascade");
- #ifdef USE_LIO3_IRQ
--	setup_irq(SGI_MAP_1_IRQ, &map1_cascade);
-+	if (request_irq(SGI_MAP_1_IRQ, no_action, IRQF_NO_THREAD,
-+			"mapable1 cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "mapable1 cascade");
- #endif
- 
- #ifdef CONFIG_EISA
-diff --git a/arch/mips/sgi-ip32/ip32-irq.c b/arch/mips/sgi-ip32/ip32-irq.c
-index a6a0ff7f5aed..8d845747c137 100644
---- a/arch/mips/sgi-ip32/ip32-irq.c
-+++ b/arch/mips/sgi-ip32/ip32-irq.c
-@@ -111,16 +111,6 @@ static inline void flush_mace_bus(void)
- extern irqreturn_t crime_memerr_intr(int irq, void *dev_id);
- extern irqreturn_t crime_cpuerr_intr(int irq, void *dev_id);
- 
--static struct irqaction memerr_irq = {
--	.handler = crime_memerr_intr,
--	.name = "CRIME memory error",
--};
--
--static struct irqaction cpuerr_irq = {
--	.handler = crime_cpuerr_intr,
--	.name = "CRIME CPU error",
--};
--
- /*
-  * This is for pure CRIME interrupts - ie not MACE.  The advantage?
-  * We get to split the register in half and do faster lookups.
-@@ -497,8 +487,12 @@ void __init arch_init_irq(void)
- 			break;
- 		}
- 	}
--	setup_irq(CRIME_MEMERR_IRQ, &memerr_irq);
--	setup_irq(CRIME_CPUERR_IRQ, &cpuerr_irq);
-+	if (request_irq(CRIME_MEMERR_IRQ, crime_memerr_intr, 0,
-+			"CRIME memory error", NULL))
-+		pr_err("request_irq() on %s failed\n", "CRIME memory error");
-+	if (request_irq(CRIME_CPUERR_IRQ, crime_cpuerr_intr, 0,
-+			"CRIME CPU error", NULL))
-+		pr_err("request_irq() on %s failed\n", "CRIME CPU error");
- 
- #define ALLINTS (IE_IRQ0 | IE_IRQ1 | IE_IRQ2 | IE_IRQ3 | IE_IRQ4 | IE_IRQ5)
- 	change_c0_status(ST0_IM, ALLINTS);
-diff --git a/arch/mips/sni/a20r.c b/arch/mips/sni/a20r.c
-index f9407e170476..2cb1da5d206d 100644
---- a/arch/mips/sni/a20r.c
-+++ b/arch/mips/sni/a20r.c
-@@ -222,7 +222,9 @@ void __init sni_a20r_irq_init(void)
- 		irq_set_chip_and_handler(i, &a20r_irq_type, handle_level_irq);
- 	sni_hwint = a20r_hwint;
- 	change_c0_status(ST0_IM, IE_IRQ0);
--	setup_irq(SNI_A20R_IRQ_BASE + 3, &sni_isa_irq);
-+	if (request_irq(SNI_A20R_IRQ_BASE + 3, sni_isa_irq_handler,
-+			IRQF_SHARED, "ISA", NULL))
-+		pr_err("request_irq() on %s failed\n", "ISA");
- }
- 
- void sni_a20r_init(void)
-diff --git a/arch/mips/sni/irq.c b/arch/mips/sni/irq.c
-index ac61b90bcc66..dec89afc9886 100644
---- a/arch/mips/sni/irq.c
-+++ b/arch/mips/sni/irq.c
-@@ -27,7 +27,7 @@ asmlinkage void plat_irq_dispatch(void)
- }
- 
- /* ISA irq handler */
--static irqreturn_t sni_isa_irq_handler(int dummy, void *p)
-+irqreturn_t sni_isa_irq_handler(int dummy, void *p)
- {
- 	int irq;
- 
-@@ -39,12 +39,6 @@ static irqreturn_t sni_isa_irq_handler(int dummy, void *p)
+diff --git a/drivers/clocksource/timer-u300.c b/drivers/clocksource/timer-u300.c
+index 32adc3057dda..37cba8dfd45f 100644
+--- a/drivers/clocksource/timer-u300.c
++++ b/drivers/clocksource/timer-u300.c
+@@ -330,12 +330,6 @@ static irqreturn_t u300_timer_interrupt(int irq, void *dev_id)
  	return IRQ_HANDLED;
  }
  
--struct irqaction sni_isa_irq = {
--	.handler = sni_isa_irq_handler,
--	.name = "ISA",
--	.flags = IRQF_SHARED
+-static struct irqaction u300_timer_irq = {
+-	.name		= "U300 Timer Tick",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= u300_timer_interrupt,
 -};
 -
  /*
-  * On systems with i8259-style interrupt controllers we assume for
-  * driver compatibility reasons interrupts 0 - 15 to be the i8295
-diff --git a/arch/mips/sni/pcit.c b/arch/mips/sni/pcit.c
-index 05bb51676e82..80ddd6b13e4d 100644
---- a/arch/mips/sni/pcit.c
-+++ b/arch/mips/sni/pcit.c
-@@ -244,7 +244,9 @@ void __init sni_pcit_irq_init(void)
- 	*(volatile u32 *)SNI_PCIT_INT_REG = 0;
- 	sni_hwint = sni_pcit_hwint;
- 	change_c0_status(ST0_IM, IE_IRQ1);
--	setup_irq(SNI_PCIT_INT_START + 6, &sni_isa_irq);
-+	if (request_irq(SNI_PCIT_INT_START + 6, sni_isa_irq_handler,
-+			IRQF_SHARED, "ISA", NULL))
-+		pr_err("request_irq() on %s failed\n", "ISA");
- }
+  * Override the global weak sched_clock symbol with this
+  * local implementation which uses the clocksource to get some
+@@ -420,7 +414,8 @@ static int __init u300_timer_init_of(struct device_node *np)
+ 		u300_timer_base + U300_TIMER_APP_RGPT1);
  
- void __init sni_pcit_cplus_irq_init(void)
-@@ -257,7 +259,9 @@ void __init sni_pcit_cplus_irq_init(void)
- 	*(volatile u32 *)SNI_PCIT_INT_REG = 0x40000000;
- 	sni_hwint = sni_pcit_hwint_cplus;
- 	change_c0_status(ST0_IM, IE_IRQ0);
--	setup_irq(MIPS_CPU_IRQ_BASE + 3, &sni_isa_irq);
-+	if (request_irq(MIPS_CPU_IRQ_BASE + 3, sni_isa_irq_handler,
-+			IRQF_SHARED, "ISA", NULL))
-+		pr_err("request_irq() on %s failed\n", "ISA");
- }
+ 	/* Set up the IRQ handler */
+-	ret = setup_irq(irq, &u300_timer_irq);
++	ret = request_irq(irq, u300_timer_interrupt,
++			  IRQF_TIMER | IRQF_IRQPOLL, "U300 Timer Tick", NULL);
+ 	if (ret)
+ 		return ret;
  
- void __init sni_pcit_init(void)
-diff --git a/arch/mips/sni/rm200.c b/arch/mips/sni/rm200.c
-index f6fa9afcbfd3..00c55eacc3df 100644
---- a/arch/mips/sni/rm200.c
-+++ b/arch/mips/sni/rm200.c
-@@ -356,11 +356,6 @@ void sni_rm200_init_8259A(void)
- /*
-  * IRQ2 is cascade interrupt to second interrupt controller
-  */
--static struct irqaction sni_rm200_irq2 = {
--	.handler = no_action,
--	.name = "cascade",
--	.flags = IRQF_NO_THREAD,
+diff --git a/drivers/clocksource/timer-vf-pit.c b/drivers/clocksource/timer-vf-pit.c
+index fef0bb4e0c8c..7ad4a8b008c2 100644
+--- a/drivers/clocksource/timer-vf-pit.c
++++ b/drivers/clocksource/timer-vf-pit.c
+@@ -123,19 +123,13 @@ static struct clock_event_device clockevent_pit = {
+ 	.rating		= 300,
+ };
+ 
+-static struct irqaction pit_timer_irq = {
+-	.name		= "VF pit timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= pit_timer_interrupt,
+-	.dev_id		= &clockevent_pit,
 -};
+-
+ static int __init pit_clockevent_init(unsigned long rate, int irq)
+ {
+ 	__raw_writel(0, clkevt_base + PITTCTRL);
+ 	__raw_writel(PITTFLG_TIF, clkevt_base + PITTFLG);
  
- static struct resource sni_rm200_pic1_resource = {
- 	.name = "onboard ISA pic1",
-@@ -389,12 +384,6 @@ static irqreturn_t sni_rm200_i8259A_irq_handler(int dummy, void *p)
+-	BUG_ON(setup_irq(irq, &pit_timer_irq));
++	BUG_ON(request_irq(irq, pit_timer_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
++			   "VF pit timer", &clockevent_pit);
+ 
+ 	clockevent_pit.cpumask = cpumask_of(0);
+ 	clockevent_pit.irq = irq;
+diff --git a/drivers/clocksource/timer-vt8500.c b/drivers/clocksource/timer-vt8500.c
+index bb424bcefbb3..a469b1b5f972 100644
+--- a/drivers/clocksource/timer-vt8500.c
++++ b/drivers/clocksource/timer-vt8500.c
+@@ -101,13 +101,6 @@ static irqreturn_t vt8500_timer_interrupt(int irq, void *dev_id)
  	return IRQ_HANDLED;
  }
  
--struct irqaction sni_rm200_i8259A_irq = {
--	.handler = sni_rm200_i8259A_irq_handler,
--	.name = "onboard ISA",
--	.flags = IRQF_SHARED
+-static struct irqaction irq = {
+-	.name    = "vt8500_timer",
+-	.flags   = IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler = vt8500_timer_interrupt,
+-	.dev_id  = &clockevent,
 -};
 -
- void __init sni_rm200_i8259_irqs(void)
+ static int __init vt8500_timer_init(struct device_node *np)
  {
- 	int i;
-@@ -417,7 +406,9 @@ void __init sni_rm200_i8259_irqs(void)
- 		irq_set_chip_and_handler(i, &sni_rm200_i8259A_chip,
- 					 handle_level_irq);
+ 	int timer_irq, ret;
+@@ -139,7 +132,9 @@ static int __init vt8500_timer_init(struct device_node *np)
  
--	setup_irq(RM200_I8259A_IRQ_BASE + PIC_CASCADE_IR, &sni_rm200_irq2);
-+	if (request_irq(RM200_I8259A_IRQ_BASE + PIC_CASCADE_IR, no_action,
-+			IRQF_NO_THREAD, "cascade", NULL))
-+		pr_err("request_irq() on %s failed\n", "cascade");
- }
+ 	clockevent.cpumask = cpumask_of(0);
  
+-	ret = setup_irq(timer_irq, &irq);
++	ret = request_irq(timer_irq, vt8500_timer_interrupt,
++			  IRQF_TIMER | IRQF_IRQPOLL, "vt8500_timer",
++			  &clockevent);
+ 	if (ret) {
+ 		pr_err("%s: setup_irq failed for %s\n", __func__,
+ 							clockevent.name);
+diff --git a/drivers/clocksource/timer-zevio.c b/drivers/clocksource/timer-zevio.c
+index c0041561f1be..381c3e8fb900 100644
+--- a/drivers/clocksource/timer-zevio.c
++++ b/drivers/clocksource/timer-zevio.c
+@@ -53,7 +53,6 @@ struct zevio_timer {
  
-@@ -481,8 +472,12 @@ void __init sni_rm200_irq_init(void)
- 		irq_set_chip_and_handler(i, &rm200_irq_type, handle_level_irq);
- 	sni_hwint = sni_rm200_hwint;
- 	change_c0_status(ST0_IM, IE_IRQ0);
--	setup_irq(SNI_RM200_INT_START + 0, &sni_rm200_i8259A_irq);
--	setup_irq(SNI_RM200_INT_START + 1, &sni_isa_irq);
-+	if (request_irq(SNI_RM200_INT_START + 0, sni_rm200_i8259A_irq_handler,
-+			IRQF_SHARED, "onboard ISA", NULL))
-+		pr_err("request_irq() on %s failed\n", "onboard ISA");
-+	if (request_irq(SNI_RM200_INT_START + 1, sni_isa_irq_handler,
-+			IRQF_SHARED, "ISA", NULL))
-+		pr_err("request_irq() on %s failed\n", "ISA");
- }
+ 	struct clk *clk;
+ 	struct clock_event_device clkevt;
+-	struct irqaction clkevt_irq;
  
- void __init sni_rm200_init(void)
-diff --git a/arch/mips/sni/time.c b/arch/mips/sni/time.c
-index dbace1f3e1a9..dcf94709ad64 100644
---- a/arch/mips/sni/time.c
-+++ b/arch/mips/sni/time.c
-@@ -55,12 +55,6 @@ static irqreturn_t a20r_interrupt(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
+ 	char clocksource_name[64];
+ 	char clockevent_name[64];
+@@ -172,12 +171,12 @@ static int __init zevio_timer_add(struct device_node *node)
+ 		/* Interrupt to occur when timer value matches 0 */
+ 		writel(0, timer->base + IO_MATCH(TIMER_MATCH));
  
--static struct irqaction a20r_irqaction = {
--	.handler	= a20r_interrupt,
--	.flags		= IRQF_PERCPU | IRQF_TIMER,
--	.name		= "a20r-timer",
--};
+-		timer->clkevt_irq.name		= timer->clockevent_name;
+-		timer->clkevt_irq.handler	= zevio_timer_interrupt;
+-		timer->clkevt_irq.dev_id	= timer;
+-		timer->clkevt_irq.flags		= IRQF_TIMER | IRQF_IRQPOLL;
 -
- /*
-  * a20r platform uses 2 counters to divide the input frequency.
-  * Counter 2 output is connected to Counter 0 & 1 input.
-@@ -74,7 +68,9 @@ static void __init sni_a20r_timer_setup(void)
- 	cd->cpumask		= cpumask_of(cpu);
- 	clockevents_register_device(cd);
- 	action->dev_id = cd;
--	setup_irq(SNI_A20R_IRQ_TIMER, &a20r_irqaction);
-+	if (request_irq(SNI_A20R_IRQ_TIMER, a20r_interrupt,
-+			IRQF_PERCPU | IRQF_TIMER, "a20r-timer", NULL))
-+		pr_err("request_irq() on %s failed\n", "a20r-timer");
- }
+-		setup_irq(irqnr, &timer->clkevt_irq);
++		if (request_irq(irqnr, zevio_timer_interrupt,
++				IRQF_TIMER | IRQF_IRQPOLL,
++				timer->clockevent_name, timer)) {
++			pr_err("request_irq() on %s failed\n",
++			       timer->clockevent_name);
++		}
  
- #define SNI_8254_TICK_RATE	  1193182UL
-diff --git a/arch/mips/vr41xx/common/irq.c b/arch/mips/vr41xx/common/irq.c
-index 7a826fbf9060..8f68446ff2d9 100644
---- a/arch/mips/vr41xx/common/irq.c
-+++ b/arch/mips/vr41xx/common/irq.c
-@@ -17,12 +17,6 @@ typedef struct irq_cascade {
+ 		clockevents_config_and_register(&timer->clkevt,
+ 				clk_get_rate(timer->clk), 0x0001, 0xffff);
+diff --git a/include/linux/dw_apb_timer.h b/include/linux/dw_apb_timer.h
+index 14f072edbca5..82ebf9223948 100644
+--- a/include/linux/dw_apb_timer.h
++++ b/include/linux/dw_apb_timer.h
+@@ -25,7 +25,6 @@ struct dw_apb_timer {
+ struct dw_apb_clock_event_device {
+ 	struct clock_event_device		ced;
+ 	struct dw_apb_timer			timer;
+-	struct irqaction			irqaction;
+ 	void					(*eoi)(struct dw_apb_timer *);
+ };
  
- static irq_cascade_t irq_cascade[NR_IRQS] __cacheline_aligned;
- 
--static struct irqaction cascade_irqaction = {
--	.handler	= no_action,
--	.name		= "cascade",
--	.flags		= IRQF_NO_THREAD,
--};
--
- int cascade_irq(unsigned int irq, int (*get_irq)(unsigned int))
- {
- 	int retval = 0;
-@@ -36,7 +30,8 @@ int cascade_irq(unsigned int irq, int (*get_irq)(unsigned int))
- 	irq_cascade[irq].get_irq = get_irq;
- 
- 	if (get_irq != NULL) {
--		retval = setup_irq(irq, &cascade_irqaction);
-+		retval = request_irq(irq, no_action, IRQF_NO_THREAD,
-+				     "cascade", NULL);
- 		if (retval < 0)
- 			irq_cascade[irq].get_irq = NULL;
- 	}
 -- 
 2.24.1
 
