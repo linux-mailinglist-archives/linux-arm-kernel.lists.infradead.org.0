@@ -2,77 +2,157 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A419315A9D5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 14:14:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B500A15AA14
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 14:32:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C1B+EZQKm/vw+orny5Df0ZEj+BNJfHPhqg2tUSBpRcw=; b=U/+JLKZt9w9g9C
-	7DtjmLHdnjZ1hDBNEoj7EO+gnDAmCu3LIQGx2GsBmf9826rtx97ExIhnNIGhfHDyO0CIEneIzJx6t
-	8L7egBYM0qsTrbwgG5rXHlNXxffK1k3X0E+SoSliGcE73L3MSfK9B0ya+YyqqXdL26/VEXRXjza/C
-	gH/q4PV9F4bVoJLqojv5KNO6emmkcewVliT/cHJooCxBkYsSxJ89nuQiKBe8VuW1XIh6UoY3cx6x0
-	0ceDQ2pt1QWRN9dfXrqG4Jgj/Xr45UNVmFsGSGfsa5AKkcqUCh3y0lNsVHuafrM6G81IU4aDkMU/6
-	L3j3Tdu+2iJI2sXDkknA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yvknK4bIxgs2Q+jCAbLsHhRtNFMfhU6KiCrOblpvZQI=; b=QROt5wss8NqTJRUIKYgoSvdvx
+	WAES/b+3ZM+IOiRLXXvlHAsv7RtqVK1yCnjcS2I6eqYi0A7abApsgEOGkTt2eTz7VjAmVF5f561mp
+	hBPSDkt6rO47S+VaF85WpViUOfHNbVpUQHDgvMK/nNpVNVs1ce0og57l2NJQY38UGVvGujWopE0nS
+	KS0CnDgEATrP0RmnHDAwazRMdT081+BgW2CmUEvwBkFEgBliKejLq19Lh4esCU8f+L/9IxTpIrJvC
+	Pcqt9TRW8i2CPmELD2sK4AzdQIowzsZiMRVR2t6XNAlt0KcOdbVveKFthJtSgQmGwFM7T+/H80TCU
+	TLoXPtHFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1rqG-0004Fz-07; Wed, 12 Feb 2020 13:14:12 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1j1s7a-0002xE-Bi; Wed, 12 Feb 2020 13:32:06 +0000
+Received: from updc19pa21.eemsg.mail.mil ([214.24.27.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1rq8-0004FY-KD
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 13:14:07 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01CDCo5s006703; Wed, 12 Feb 2020 14:13:54 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=cMQSvP5y+t4Vew7hK0VJeB3JFY/VZ4Yym6bNVW+GnoE=;
- b=ueDX8jK4FDD9zhDO10OpFljVEn1+vUtxJiT+ZxQ6OWF5tvh318PDyTEQYiuMAuFiY54L
- p+cLMuj1lUgtAJ0pqmRxrFChBIsdRypjxYeoVpYWYKqDpkrQ0x2XPHPic4ieKaldfzAm
- 7IsX1MD0h+cDtVFesLzh5ctezUZivET9N1wXmEv48Ppvr/pW1smzOtClO+9wpqPpF4Zw
- jX59Evjn3CPvSjdlz1+/RavklZoHbijid2xHt9197kNZXJ4ODoLR9ufmTgU1FRtA79um
- Na12sY3ggM8JYtRMw0jacl6Way2eqiT4NgvdF6bFoadpW4NsGWzFK3bsIYn7oRCo9yQQ tA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2y1urhehmu-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 12 Feb 2020 14:13:54 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BEC7510002A;
- Wed, 12 Feb 2020 14:13:46 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag6node2.st.com [10.75.127.17])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 87F5D2B2054;
- Wed, 12 Feb 2020 14:13:46 +0100 (CET)
-Received: from localhost (10.75.127.47) by SFHDAG6NODE2.st.com (10.75.127.17)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2;
- Wed, 12 Feb 2020 14:13:45 +0100
-From: Olivier Moysan <olivier.moysan@st.com>
-To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
- <tiwai@suse.com>, <alexandre.torgue@st.com>, <robh@kernel.org>,
- <mark.rutland@arm.com>
-Subject: [PATCH v2] ASoC: dt-bindings: stm32: convert sai to json-schema
-Date: Wed, 12 Feb 2020 14:12:59 +0100
-Message-ID: <20200212131259.18805-1-olivier.moysan@st.com>
-X-Mailer: git-send-email 2.17.1
+ id 1j1s7R-0002ug-CC
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 13:31:59 +0000
+X-EEMSG-check-017: 58189835|UPDC19PA21_ESA_OUT03.csd.disa.mil
+X-IronPort-AV: E=Sophos;i="5.70,433,1574121600"; d="scan'208";a="58189835"
+Received: from emsm-gh1-uea10.ncsc.mil ([214.29.60.2])
+ by UPDC19PA21.eemsg.mail.mil with ESMTP/TLS/DHE-RSA-AES256-SHA256;
+ 12 Feb 2020 13:31:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=tycho.nsa.gov; i=@tycho.nsa.gov; q=dns/txt;
+ s=tycho.nsa.gov; t=1581514302; x=1613050302;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=4E6NdF8sYemfNDGEjWXx29tiVX+0McGJ92YpwPd8UrY=;
+ b=dTj/HpjMFK+CwtnbH1SUjnUs2qiieY9aegIGStqkXVcTHbj+T2exW639
+ aIjwWvVLPAP4BJLSKBWac+8oco+GIVASc643tIjmyfDuS3Jpo/WOEHcpW
+ N4WtMkFSwcMQUuHeM/VVNNBrbJDLXsHT0nA685D5I+aOvoNrJ+EabyQan
+ lviQytvbflrE+FZfn1MomFLbGsE6U8+jeqeux1VOF3JwK0dfG2zEoMXNx
+ M7GAWD6zAnydXscQnpbc9UpmuoTUcvOKl1eI/W7yGPxyLWItRD226wxjc
+ bszB71lu6n34OjpkpqGDTPaCE/VjLtQLHfxiYNpEgBwB7LG/no1CKEixq w==;
+X-IronPort-AV: E=Sophos;i="5.70,428,1574121600"; d="scan'208";a="32966495"
+IronPort-PHdr: =?us-ascii?q?9a23=3AQxEdcxMOstBwQrwplEYl6mtUPXoX/o7sNwtQ0K?=
+ =?us-ascii?q?IMzox0Kf37r8bcNUDSrc9gkEXOFd2Cra4d16yI7uu9AyQp2tWojjMrSNR0TR?=
+ =?us-ascii?q?gLiMEbzUQLIfWuLgnFFsPsdDEwB89YVVVorDmROElRH9viNRWJ+iXhpTEdFQ?=
+ =?us-ascii?q?/iOgVrO+/7BpDdj9it1+C15pbffxhEiCCybL9vIxi6twTcu8kZjYZiNKo61w?=
+ =?us-ascii?q?fErGZPd+lKymxkIk6ekQzh7cmq5p5j9CpQu/Ml98FeVKjxYro1Q79FAjk4Km?=
+ =?us-ascii?q?45/MLkuwXNQguJ/XscT34ZkgFUDAjf7RH1RYn+vy3nvedgwiaaPMn2TbcpWT?=
+ =?us-ascii?q?S+6qpgVRHlhDsbOzM/7WrakdJ7gr5Frx29phx/24/Ub5+TNPpiZaPWYNcWSX?=
+ =?us-ascii?q?NcUspNSyBNB4WxYIUVD+oFIO1WsY/zqVUTphe6HAWhCufixjpOi3Tr36M1zv?=
+ =?us-ascii?q?4hHBnb0gI+EdIAsHfaotv7O6gdU++60KbGwC7fb/5Vwzrx9JTEfx4jrPyKQL?=
+ =?us-ascii?q?l+cdDRyU4qFw7dk1uQtZLqPyuV1usTtWiQ8vduVee1hG4jrwF+vDiuzdorh4?=
+ =?us-ascii?q?nSm40V0UvJ9Tl5wYkpJd24T1R3Ydi/EJRKrS2aOIx2Qt07TmxupS00yaUGtI?=
+ =?us-ascii?q?amcCUFx5kr3R7SZ+Gdf4SW7R/vSvydLSp+iXl4YrywnQyy/lKlyuDkU8m010?=
+ =?us-ascii?q?tFoTRdn9nXs3ANywTT6s+aSvth5kuh2SiA1wTU6uxcPUA7j7DbK588wr4rjJ?=
+ =?us-ascii?q?YTsELDHiHxmEXtkqCZal8o+vSo6uv7YrXmoYWQN4lohQHlLqsigMm/AeU8Mg?=
+ =?us-ascii?q?QWXmib//qz1KH78EHkT7hHgec6n6nEvJzAO8gWqbC1DxVI3oo77hawFTam0N?=
+ =?us-ascii?q?AWnXkdK1JFfQqKj5P0NFHVO/34Efe+jEiskDds3fzGOKbhDY/XInjMl7fhY6?=
+ =?us-ascii?q?5x61RAxwor0dBf+5VUB6kbL/L3REDwu8LXDx8jPwOv3uboFc9y1oUdWWKIHK?=
+ =?us-ascii?q?+UK6fSsV6O5uIyLOiAfo4VuDDhK/c74/7il2M2mVgYfaOxx5sYdGi4Huh6I0?=
+ =?us-ascii?q?WeeXfjmNMBHnkFvwUgTezmkkaCUSJJaHaoWKI8+DY7CIO6DYfEWICgm7OB3C?=
+ =?us-ascii?q?KhEZ1XYmBKEEyDEXDtd4+cQfcDdDqSItN9kjwDTbWhU5Eu1Q2wuw/gyrtqNe?=
+ =?us-ascii?q?vU+isWtZL5ztd6+vPcmgsv+jBuCMSdyW6NRXlunmwUXz82wLx/oUtlx1iZza?=
+ =?us-ascii?q?d4huJXGMdQ5/xXSAc6M4DTz+hgB9D1QALBcc+DSEy6TdW+HTExUtUxzscLY0?=
+ =?us-ascii?q?Z8HdWigRfD0jGwA7ALirOLBIY78r7G03ftIMZ9zm7M1LM9gFk+XstPKWqmi7?=
+ =?us-ascii?q?Z99wfJAY7Jkl+Vl6CrdaQfwS7N8H2MwHGKvEFZVg5wTKrEUWoeZkvQsdT2+E?=
+ =?us-ascii?q?fCQ6WyBrQgNwtL0dSCJbdSat31kVVGQ+/uONbZY2K2nWe/Hw2IyqmIbIXwe2?=
+ =?us-ascii?q?UdwCTdCE4anAAV5nuGMQk+BiG8o2PRFjBuFFTvY1/y/ul6sn+0Ukg0zwSSZU?=
+ =?us-ascii?q?17y7W14gIVheCbS/4LxLIEvzouqy91HFay2NLaEcSApwt/fKVdet494VFH1X?=
+ =?us-ascii?q?7HuAx5JJCvM6dihlsGeQRto0zuzwl3CplHkcUyt3wl0gxyKaKD3VNCaTyYx5?=
+ =?us-ascii?q?bwNaPTKmXo4B+vcbTZ2kre0NaX/KcP5+40q1L5vAGmDkAi6Wlo08FJ03uA4Z?=
+ =?us-ascii?q?XHFBISXojsUkYz6hh6vKrXYjIn6IPRznJjK7O4sjjY29ImHOEl0Aqvf89DMK?=
+ =?us-ascii?q?OYEw//C8gaB9CwJ+ExhVepahYEM/5I9K4xJcymceGK2K+2M+p6hj2mkHxN4J?=
+ =?us-ascii?q?ph3UKU6yp8VunI0o4Hw/6C2wuISSz8gE26vcDwhYBEeTYSHm+7ySf6BI9cfa?=
+ =?us-ascii?q?1ycpwNCWe1PcK3wM1+iIT3W35E8l6sGUkG2NSpeRqTd1zxxxFf1UMSoXa/gy?=
+ =?us-ascii?q?u30yR0ky01rqqYxCHO2PrtdAAIOmFVX2RijU3jIYywj9EaWkikdRQmlByg5U?=
+ =?us-ascii?q?zi3ahUuLx/L3XPQUdPZyX2LWRiUqyqtrqYYs5P84glsSNNX+S5f1+aS6Txox?=
+ =?us-ascii?q?wA0yPsB2Fe3iw0dym2upXlmBx3kGycLHd3rHrdY81/2AnQ68bASv5W2DoLXz?=
+ =?us-ascii?q?N3iSPSBlSmI9ap+tCUnY/Zsu+iT2KhSoFTcS7zwIOFriS7/25qDQeln/Cuht?=
+ =?us-ascii?q?3nFRI10Snm2NRxTyrIthP8bpP32KS9NOJtZlNoC0Pk68pmBoF+lZM9hIsK2X?=
+ =?us-ascii?q?gbmpqY5nkHnnnpMdVdx63+aGABRTkRw97a+ALlwlFsLmqVx4LlUXWQ2tFuZ8?=
+ =?us-ascii?q?KmYm4N2SIy8dpKCKGK47xAhyd1pUC4rQ3Ja/hngjgd0ecu6GIdg+wRugotyS?=
+ =?us-ascii?q?GdAqsIEkRDJyzjiQmH79Cko6VLfmqgbb+w1E9ml9C7EL6Cuh1cWGr+epo6By?=
+ =?us-ascii?q?Bw7d5yMFbN0H3194Hld8PcbdMVth2IjRjAi/JZJ442lvoPnSBnI37yvWU5y+?=
+ =?us-ascii?q?4nihxjxY+1vJKdJGVr/aK2GBhYOyb6Z8MU/THtgqJekdiM04+zGZVhHy0BXI?=
+ =?us-ascii?q?H0QvKwDDISqfPnOh6PED04t3eUAqDQHRSf6Eh4tH/ACZOrOGuSJHYDzNVuXg?=
+ =?us-ascii?q?WSJEtagAoMRjU1goY5Fhy2xMzmaEp2/DQR6UD3qxRWzOJnKgfwUn3FqAezaj?=
+ =?us-ascii?q?c0SYOfLBpV7gFD4UfYKsie7uN1HyFF8Zyttg2NKmqHZwtWCWEFQFCLB1fmPr?=
+ =?us-ascii?q?O2/9nP7/CYBvaiL/vJebiOr/ZRV/KIxZOvz4tm+TmMO96MPnZ8Ff073FRMXX?=
+ =?us-ascii?q?RjF8TegTUPRDQdlzjRYM6DuBe85ip3o9ik8PTsXgLv6o+PC7pPMdp04RC5m7?=
+ =?us-ascii?q?mDN++WhCZ2MjtY2IgDyWXUx7gY2V4YkztueCW1EbQcqS7NS7rdmqtWDx4cbS?=
+ =?us-ascii?q?N8Ks9I47gz3gVXPc7UkNX12aN2j/ErEVdFUV3hmseyaMwLJWG9KE3IBEKROL?=
+ =?us-ascii?q?uaIj3Lxtn9YbmgRr1IkOVUqxqwtC6HE0/sOjSCmCLkVxSuMeFKkSGbIAZeuI?=
+ =?us-ascii?q?a7chZsBmnvVs/pZQOjOt9tkTI22aE0hm/NNWMENTh8ckVNrqCf7C9BgfVwBX?=
+ =?us-ascii?q?ZB7nx7IumAgCuZ8ebYJYgMsfdxASR7ifha4HIkxLtR9i1EQ+Z1mCTKpN50v1?=
+ =?us-ascii?q?6mivWPyiZgUBdWrjZLhYSLvVhtOKnA7ZlPR2rL/A8X7WWRFxQLp8JpCtjou6?=
+ =?us-ascii?q?9N19jPkLz8JSxc89Lb48QcHdLYKMGZP3o7NxrmBjrUABECTT6xOmHVn1Zdn+?=
+ =?us-ascii?q?2K9n2Jspg6rYDhmIEQRb9fVVw1EO4aC0t+EdwcL5d4QCkknaSYjMEW/3q+qg?=
+ =?us-ascii?q?feRMFAspDATPKSDu3lKCyFgrlcexsI3bT4IJwSNo39x0xtdF16kJ3FG0reUt?=
+ =?us-ascii?q?FAuSlhbg4voEVR63hyVGMz21j7ZQyz/XAcC+W0nh0qigt5eeQh7jDs4004Jl?=
+ =?us-ascii?q?DSvis/jFExmcn5gTCWaDPxKKawXYdLCyv7rkQxKon0Qxx0bQ2pgUNpLynER7?=
+ =?us-ascii?q?1PgLt6b2xrixHTuYFJGfFCSa1IehgQxeuYZ/8wy1RTtj2nxVNb5evCEZZikA?=
+ =?us-ascii?q?oqcZixr3NPwwJjdMI6KbXNK6VX0FhdnaaOvi6z1uAt2w8SPUEN8WKWeCESo0?=
+ =?us-ascii?q?MILaMqJy2y/uxj8QaCgSdMeHAQV/o2pfJn7kc9O+WGzyL93L9PM1q+N/aaL6?=
+ =?us-ascii?q?+AuGjPi9SIQlUu2UMMjERF+bl20dw/c0qPTUwvzb2RFxoTNcXYNA5acdBd+2?=
+ =?us-ascii?q?XJcSaJq+XNzop/P5+hGeDwUe+OqKEUj1qgHAYoGYQM88sAEoC00E7GN8fnIq?=
+ =?us-ascii?q?cJyQg25Av1PlWFF+9EeAyEkDgZucGz1px30pdHJjEbH2p9NT+75rHNpg8lmP?=
+ =?us-ascii?q?CDRss5Ym8GXosYMXI7QMq6mzZDv3RHAjm30+YZxxab4z/4pyTQFyX8YsFnZP?=
+ =?us-ascii?q?eVfhNsFMq29S8k86i4k1LX9IvRJ33iP9R4ptDP8f8ap4qAC/5MSbl9rlvcm4?=
+ =?us-ascii?q?5DSnOwVm7AC8K6KILoa4ktcdz7EHK6Xka5iz0rU8eidOqqe4GMjBHlVM5+rY?=
+ =?us-ascii?q?WS2jMkK4fpHzUTCxph4ese6Kt6ZgodS546ZwP48QU4K6G7Zgyf14P9bXyqLG?=
+ =?us-ascii?q?5tU/RHzei8L4dSxi4oY/7ynGAsVbkm3uK39ggLX5hMgRbAk6XwL7JCWDT+Ty?=
+ =?us-ascii?q?QOMz7EojA0wi04bbc/?=
+X-IPAS-Result: =?us-ascii?q?A2BPBACF/ENe/wHyM5BmHgELHIN4gWwBIBIqhBSJA4ZlA?=
+ =?us-ascii?q?QEBAQEBBoE3iXCRSQkBAQEBAQEBAQE3AQGEQAKCbTgTAhABAQEEAQEBAQEFA?=
+ =?us-ascii?q?wEBbIVDgjspAYMCAQUdBg8BBUEQCQIYAgImAgJXBg0GAgEBgmM/glclj1Gbe?=
+ =?us-ascii?q?YEyhUqDSIE+gQ4qjD55gQeBEScPgl0+h1uCXgSNTYJPh298lm+CRIJOikaJN?=
+ =?us-ascii?q?QYcgkiIEpA7Lat0IoFYKwgCGAghD4MnUBgNjikXFY4sIwMwApFfAQE?=
+Received: from tarius.tycho.ncsc.mil (HELO tarius.infosec.tycho.ncsc.mil)
+ ([144.51.242.1])
+ by EMSM-GH1-UEA10.NCSC.MIL with ESMTP; 12 Feb 2020 13:31:40 +0000
+Received: from moss-pluto.infosec.tycho.ncsc.mil (moss-pluto [192.168.25.131])
+ by tarius.infosec.tycho.ncsc.mil (8.14.7/8.14.4) with ESMTP id
+ 01CDU4TT018798; Wed, 12 Feb 2020 08:30:10 -0500
+Subject: Re: [PATCH v5 01/10] capabilities: introduce CAP_PERFMON to kernel
+ and user space
+To: Alexey Budankov <alexey.budankov@linux.intel.com>
+References: <0548c832-7f4b-dc4c-8883-3f2b6d351a08@linux.intel.com>
+ <9b77124b-675d-5ac7-3741-edec575bd425@linux.intel.com>
+ <64cab472-806e-38c4-fb26-0ffbee485367@tycho.nsa.gov>
+ <05297eff-8e14-ccdf-55a4-870c64516de8@linux.intel.com>
+ <CAADnVQK-JzK-GUk4KOozn4c1xr=7TiCpB9Fi0QDC9nE6iVn8iQ@mail.gmail.com>
+ <537bdb28-c9e4-f44f-d665-25250065a6bb@linux.intel.com>
+ <63d9700f-231d-7973-5307-3e56a48c54cb@linux.intel.com>
+ <d7213569-9578-7201-6106-f5ebc95bd6be@tycho.nsa.gov>
+ <2e38c33d-f085-1320-8cc2-45f74b6ad86d@linux.intel.com>
+From: Stephen Smalley <sds@tycho.nsa.gov>
+Message-ID: <dd6a1382-7b2f-a6e6-a1ac-009566d7f556@tycho.nsa.gov>
+Date: Wed, 12 Feb 2020 08:32:07 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG6NODE2.st.com
- (10.75.127.17)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-12_07:2020-02-11,
- 2020-02-12 signatures=0
+In-Reply-To: <2e38c33d-f085-1320-8cc2-45f74b6ad86d@linux.intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_051405_151753_AB37CFF7 
-X-CRM114-Status: GOOD (  18.99  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200212_053158_086365_B21414B8 
+X-CRM114-Status: GOOD (  16.08  )
+X-Spam-Score: -2.4 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [214.24.27.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -80,8 +160,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 FROM_GOV_DKIM_AU       From Government address and DKIM signed
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,344 +173,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- olivier.moysan@st.com, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ "benh@kernel.crashing.org" <benh@kernel.crashing.org>,
+ "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
+ Will Deacon <will.deacon@arm.com>, Alexei Starovoitov <ast@kernel.org>,
+ Stephane Eranian <eranian@google.com>,
+ "james.bottomley@hansenpartnership.com"
+ <james.bottomley@hansenpartnership.com>, Paul Mackerras <paulus@samba.org>,
+ Jiri Olsa <jolsa@redhat.com>,
+ Alexei Starovoitov <alexei.starovoitov@gmail.com>,
+ Andi Kleen <ak@linux.intel.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ Igor Lubashev <ilubashe@akamai.com>, James Morris <jmorris@namei.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, oprofile-list@lists.sf.net,
+ Serge Hallyn <serge@hallyn.com>, Robert Richter <rric@kernel.org>,
+ "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ "jani.nikula@linux.intel.com" <jani.nikula@linux.intel.com>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ "rodrigo.vivi@intel.com" <rodrigo.vivi@intel.com>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Lionel Landwerlin <lionel.g.landwerlin@intel.com>,
+ Andy Lutomirski <luto@amacapital.net>,
+ "linux-perf-users@vger.kernel.org" <linux-perf-users@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the STM32 SAI bindings to DT schema format using json-schema.
-
-Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
----
-Changes in v2:
-- use pattern for compatible of child nodes
-- rework dmas and clocks properties
-- add "additionalProperties"
----
- .../bindings/sound/st,stm32-sai.txt           | 107 ----------
- .../bindings/sound/st,stm32-sai.yaml          | 191 ++++++++++++++++++
- 2 files changed, 191 insertions(+), 107 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/sound/st,stm32-sai.txt
- create mode 100644 Documentation/devicetree/bindings/sound/st,stm32-sai.yaml
-
-diff --git a/Documentation/devicetree/bindings/sound/st,stm32-sai.txt b/Documentation/devicetree/bindings/sound/st,stm32-sai.txt
-deleted file mode 100644
-index 944743dd9212..000000000000
---- a/Documentation/devicetree/bindings/sound/st,stm32-sai.txt
-+++ /dev/null
-@@ -1,107 +0,0 @@
--STMicroelectronics STM32 Serial Audio Interface (SAI).
--
--The SAI interface (Serial Audio Interface) offers a wide set of audio protocols
--as I2S standards, LSB or MSB-justified, PCM/DSP, TDM, and AC'97.
--The SAI contains two independent audio sub-blocks. Each sub-block has
--its own clock generator and I/O lines controller.
--
--Required properties:
--  - compatible: Should be "st,stm32f4-sai" or "st,stm32h7-sai"
--  - reg: Base address and size of SAI common register set.
--  - clocks: Must contain phandle and clock specifier pairs for each entry
--	in clock-names.
--  - clock-names: Must contain "pclk" "x8k" and "x11k"
--	"pclk": Clock which feeds the peripheral bus interface.
--	        Mandatory for "st,stm32h7-sai" compatible.
--	        Not used for "st,stm32f4-sai" compatible.
--	"x8k": SAI parent clock for sampling rates multiple of 8kHz.
--	"x11k": SAI parent clock for sampling rates multiple of 11.025kHz.
--  - interrupts: cpu DAI interrupt line shared by SAI sub-blocks
--
--Optional properties:
--  - resets: Reference to a reset controller asserting the SAI
--
--SAI subnodes:
--Two subnodes corresponding to SAI sub-block instances A et B can be defined.
--Subnode can be omitted for unsused sub-block.
--
--SAI subnodes required properties:
--  - compatible: Should be "st,stm32-sai-sub-a" or "st,stm32-sai-sub-b"
--	for SAI sub-block A or B respectively.
--  - reg: Base address and size of SAI sub-block register set.
--  - clocks: Must contain one phandle and clock specifier pair
--	for sai_ck which feeds the internal clock generator.
--	If the SAI shares a master clock, with another SAI set as MCLK
--	clock provider, SAI provider phandle must be specified here.
--  - clock-names: Must contain "sai_ck".
--	Must also contain "MCLK", if SAI shares a master clock,
--	with a SAI set as MCLK clock provider.
--  - dmas: see Documentation/devicetree/bindings/dma/stm32-dma.txt
--  - dma-names: identifier string for each DMA request line
--	"tx": if sai sub-block is configured as playback DAI
--	"rx": if sai sub-block is configured as capture DAI
--  - pinctrl-names: should contain only value "default"
--  - pinctrl-0: see Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
--
--SAI subnodes Optional properties:
--  - st,sync: specify synchronization mode.
--	By default SAI sub-block is in asynchronous mode.
--	This property sets SAI sub-block as slave of another SAI sub-block.
--	Must contain the phandle and index of the sai sub-block providing
--	the synchronization.
--  - st,iec60958: support S/PDIF IEC6958 protocol for playback
--	IEC60958 protocol is not available for capture.
--	By default, custom protocol is assumed, meaning that protocol is
--	configured according to protocol defined in related DAI link node,
--	such as i2s, left justified, right justified, dsp and pdm protocols.
--	Note: ac97 protocol is not supported by SAI driver
--   - #clock-cells: should be 0. This property must be present if the SAI device
--	is a master clock provider, according to clocks bindings, described in
--	Documentation/devicetree/bindings/clock/clock-bindings.txt.
--
--The device node should contain one 'port' child node with one child 'endpoint'
--node, according to the bindings defined in Documentation/devicetree/bindings/
--graph.txt.
--
--Example:
--sound_card {
--	compatible = "audio-graph-card";
--	dais = <&sai1b_port>;
--};
--
--sai1: sai1@40015800 {
--	compatible = "st,stm32h7-sai";
--	#address-cells = <1>;
--	#size-cells = <1>;
--	ranges = <0 0x40015800 0x400>;
--	reg = <0x40015800 0x4>;
--	clocks = <&rcc SAI1_CK>, <&rcc PLL1_Q>, <&rcc PLL2_P>;
--	clock-names = "pclk", "x8k", "x11k";
--	interrupts = <87>;
--
--	sai1a: audio-controller@40015804 {
--		compatible = "st,stm32-sai-sub-a";
--		reg = <0x4 0x1C>;
--		clocks = <&rcc SAI1_CK>;
--		clock-names = "sai_ck";
--		dmas = <&dmamux1 1 87 0x400 0x0>;
--		dma-names = "tx";
--		pinctrl-names = "default";
--		pinctrl-0 = <&pinctrl_sai1a>;
--
--		sai1b_port: port {
--			cpu_endpoint: endpoint {
--				remote-endpoint = <&codec_endpoint>;
--				format = "i2s";
--			};
--		};
--	};
--};
--
--audio-codec {
--	codec_port: port {
--		codec_endpoint: endpoint {
--			remote-endpoint = <&cpu_endpoint>;
--		};
--	};
--};
-diff --git a/Documentation/devicetree/bindings/sound/st,stm32-sai.yaml b/Documentation/devicetree/bindings/sound/st,stm32-sai.yaml
-new file mode 100644
-index 000000000000..51dd2b3bdeb1
---- /dev/null
-+++ b/Documentation/devicetree/bindings/sound/st,stm32-sai.yaml
-@@ -0,0 +1,191 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/sound/st,stm32-sai.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: STMicroelectronics STM32 Serial Audio Interface (SAI)
-+
-+maintainers:
-+  - Olivier Moysan <olivier.moysan@st.com>
-+
-+description:
-+  The SAI interface (Serial Audio Interface) offers a wide set of audio
-+  protocols as I2S standards, LSB or MSB-justified, PCM/DSP, TDM, and AC'97.
-+  The SAI contains two independent audio sub-blocks. Each sub-block has
-+  its own clock generator and I/O lines controller.
-+
-+properties:
-+  compatible:
-+    enum:
-+      - st,stm32f4-sai
-+      - st,stm32h7-sai
-+
-+  reg:
-+    items:
-+      - description: Base address and size of SAI common register set.
-+      - description: Base address and size of SAI identification register set.
-+    minItems: 1
-+    maxItems: 2
-+
-+  ranges:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+  "#address-cells":
-+    const: 1
-+
-+  "#size-cells":
-+    const: 1
-+
-+  clocks:
-+    items:
-+      - description: pclk feeds the peripheral bus interface.
-+      - description: x8k, SAI parent clock for sampling rates multiple of 8kHz.
-+      - description: x11k, SAI parent clock for sampling rates multiple of 11.025kHz.
-+
-+  clock-names:
-+    items:
-+      - const: pclk
-+      - const: x8k
-+      - const: x11k
-+
-+required:
-+  - compatible
-+  - reg
-+  - ranges
-+  - "#address-cells"
-+  - "#size-cells"
-+  - clocks
-+  - clock-names
-+
-+patternProperties:
-+  "^audio-controller@[0-9a-f]+$":
-+    type: object
-+    description:
-+      Two subnodes corresponding to SAI sub-block instances A et B
-+      can be defined. Subnode can be omitted for unsused sub-block.
-+
-+    properties:
-+      compatible:
-+        description: Compatible for SAI sub-block A or B.
-+        pattern: "st,stm32-sai-sub-[ab]"
-+
-+      "#sound-dai-cells":
-+        const: 0
-+
-+      reg:
-+        maxItems: 1
-+
-+      clocks:
-+        items:
-+          - description: sai_ck clock feeding the internal clock generator.
-+          - description: MCLK clock from a SAI set as master clock provider.
-+        minItems: 1
-+        maxItems: 2
-+
-+      clock-names:
-+        items:
-+          - const: sai_ck
-+          - const: MCLK
-+        minItems: 1
-+        maxItems: 2
-+
-+      dmas:
-+        maxItems: 1
-+
-+      dma-names:
-+        description: |
-+          rx: SAI sub-block is configured as a capture DAI.
-+          tx: SAI sub-block is configured as a playback DAI.
-+        enum: [ rx, tx ]
-+
-+      st,sync:
-+        description:
-+          Configure the SAI sub-block as slave of another SAI sub-block.
-+          By default SAI sub-block is in asynchronous mode.
-+          Must contain the phandle and index of the SAI sub-block providing
-+          the synchronization.
-+        allOf:
-+          - $ref: /schemas/types.yaml#definitions/phandle-array
-+          - maxItems: 1
-+
-+      st,iec60958:
-+        description:
-+          If set, support S/PDIF IEC6958 protocol for playback.
-+          IEC60958 protocol is not available for capture.
-+          By default, custom protocol is assumed, meaning that protocol is
-+          configured according to protocol defined in related DAI link node,
-+          such as i2s, left justified, right justified, dsp and pdm protocols.
-+        allOf:
-+          - $ref: /schemas/types.yaml#definitions/flag
-+
-+      "#clock-cells":
-+        description: Configure the SAI device as master clock provider.
-+        const: 0
-+
-+    required:
-+      - compatible
-+      - "#sound-dai-cells"
-+      - reg
-+      - clocks
-+      - clock-names
-+      - dmas
-+      - dma-names
-+
-+    additionalProperties: false
-+
-+allOf:
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: st,stm32f4-sai
-+
-+  - then:
-+      properties:
-+        clocks:
-+          items:
-+            - description: x8k, SAI parent clock for sampling rates multiple of 8kHz.
-+            - description: x11k, SAI parent clock for sampling rates multiple of 11.025kHz.        
-+
-+        clock-names:
-+          items:
-+            - const: x8k
-+            - const: x11k
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+    #include <dt-bindings/clock/stm32mp1-clks.h>
-+    #include <dt-bindings/reset/stm32mp1-resets.h>
-+    sai1: sai@4400a000 {
-+      compatible = "st,stm32h7-sai";
-+      #address-cells = <1>;
-+      #size-cells = <1>;
-+      ranges = <0 0x4400a000 0x400>;
-+      reg = <0x4400a000 0x4>, <0x4400a3f0 0x10>;
-+      interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>;
-+      clocks = <&rcc SAI1>, <&rcc PLL1_Q>, <&rcc PLL2_P>;
-+      clock-names = "pclk", "x8k", "x11k";
-+      resets = <&rcc SAI1_R>;
-+
-+      sai1a: audio-controller@4400a004 {
-+        compatible = "st,stm32-sai-sub-a";
-+        #sound-dai-cells = <0>;
-+        reg = <0x4 0x1c>;
-+        clocks = <&rcc SAI1_K>;
-+        clock-names = "sai_ck";
-+        dmas = <&dmamux1 87 0x400 0x01>;
-+        dma-names = "tx";
-+      };
-+    };
-+
-+...
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMi8xMi8yMCAzOjUzIEFNLCBBbGV4ZXkgQnVkYW5rb3Ygd3JvdGU6Cj4gSGkgU3RlcGhlbiwK
+PiAKPiBPbiAyMi4wMS4yMDIwIDE3OjA3LCBTdGVwaGVuIFNtYWxsZXkgd3JvdGU6Cj4+IE9uIDEv
+MjIvMjAgNTo0NSBBTSwgQWxleGV5IEJ1ZGFua292IHdyb3RlOgo+Pj4KPj4+IE9uIDIxLjAxLjIw
+MjAgMjE6MjcsIEFsZXhleSBCdWRhbmtvdiB3cm90ZToKPj4+Pgo+Pj4+IE9uIDIxLjAxLjIwMjAg
+MjA6NTUsIEFsZXhlaSBTdGFyb3ZvaXRvdiB3cm90ZToKPj4+Pj4gT24gVHVlLCBKYW4gMjEsIDIw
+MjAgYXQgOTozMSBBTSBBbGV4ZXkgQnVkYW5rb3YKPj4+Pj4gPGFsZXhleS5idWRhbmtvdkBsaW51
+eC5pbnRlbC5jb20+IHdyb3RlOgo+Pj4+Pj4KPj4+Pj4+Cj4+Pj4+PiBPbiAyMS4wMS4yMDIwIDE3
+OjQzLCBTdGVwaGVuIFNtYWxsZXkgd3JvdGU6Cj4+Pj4+Pj4gT24gMS8yMC8yMCA2OjIzIEFNLCBB
+bGV4ZXkgQnVkYW5rb3Ygd3JvdGU6Cj4+Pj4+Pj4+Cj4gPFNOSVA+Cj4+Pj4+Pj4+IEludHJvZHVj
+ZSBDQVBfUEVSRk1PTiBjYXBhYmlsaXR5IGRlc2lnbmVkIHRvIHNlY3VyZSBzeXN0ZW0gcGVyZm9y
+bWFuY2UKPj4+Pj4+Pgo+Pj4+Pj4+IFdoeSBfbm9hdWRpdCgpP8KgIE5vcm1hbGx5IG9ubHkgdXNl
+ZCB3aGVuIGEgcGVybWlzc2lvbiBmYWlsdXJlIGlzIG5vbi1mYXRhbCB0byB0aGUgb3BlcmF0aW9u
+LsKgIE90aGVyd2lzZSwgd2Ugd2FudCB0aGUgYXVkaXQgbWVzc2FnZS4KPj4+Cj4+PiBTbyBmYXIg
+c28gZ29vZCwgSSBzdWdnZXN0IHVzaW5nIHRoZSBzaW1wbGVzdCB2ZXJzaW9uIGZvciB2NjoKPj4+
+Cj4+PiBzdGF0aWMgaW5saW5lIGJvb2wgcGVyZm1vbl9jYXBhYmxlKHZvaWQpCj4+PiB7Cj4+PiAg
+wqDCoMKgwqByZXR1cm4gY2FwYWJsZShDQVBfUEVSRk1PTikgfHwgY2FwYWJsZShDQVBfU1lTX0FE
+TUlOKTsKPj4+IH0KPj4+Cj4+PiBJdCBrZWVwcyB0aGUgaW1wbGVtZW50YXRpb24gc2ltcGxlIGFu
+ZCByZWFkYWJsZS4gVGhlIGltcGxlbWVudGF0aW9uIGlzIG1vcmUKPj4+IHBlcmZvcm1hbnQgaW4g
+dGhlIHNlbnNlIG9mIGNhbGxpbmcgdGhlIEFQSSAtIG9uZSBjYXBhYmxlKCkgY2FsbCBmb3IgQ0FQ
+X1BFUkZNT04KPj4+IHByaXZpbGVnZWQgcHJvY2Vzcy4KPj4+Cj4+PiBZZXMsIGl0IGJsb2F0cyBh
+dWRpdCBsb2cgZm9yIENBUF9TWVNfQURNSU4gcHJpdmlsZWdlZCBhbmQgdW5wcml2aWxlZ2VkIHBy
+b2Nlc3NlcywKPj4+IGJ1dCB0aGlzIGJsb2F0aW5nIGFsc28gYWR2ZXJ0aXNlcyBhbmQgbGV2ZXJh
+Z2VzIHVzaW5nIG1vcmUgc2VjdXJlIENBUF9QRVJGTU9OCj4+PiBiYXNlZCBhcHByb2FjaCB0byB1
+c2UgcGVyZl9ldmVudF9vcGVuIHN5c3RlbSBjYWxsLgo+Pgo+PiBJIGNhbiBsaXZlIHdpdGggdGhh
+dC7CoCBXZSBqdXN0IG5lZWQgdG8gZG9jdW1lbnQgdGhhdCB3aGVuIHlvdSBzZWUgYm90aCBhIENB
+UF9QRVJGTU9OIGFuZCBhIENBUF9TWVNfQURNSU4gYXVkaXQgbWVzc2FnZSBmb3IgYSBwcm9jZXNz
+LCB0cnkgb25seSBhbGxvd2luZyBDQVBfUEVSRk1PTiBmaXJzdCBhbmQgc2VlIGlmIHRoYXQgcmVz
+b2x2ZXMgdGhlIGlzc3VlLsKgIFdlIGhhdmUgYSBzaW1pbGFyIGlzc3VlIHdpdGggQ0FQX0RBQ19S
+RUFEX1NFQVJDSCB2ZXJzdXMgQ0FQX0RBQ19PVkVSUklERS4KPiAKPiBJIGFtIHRyeWluZyB0byBy
+ZXByb2R1Y2UgdGhpcyBkb3VibGUgbG9nZ2luZyB3aXRoIENBUF9QRVJGTU9OLgo+IEkgYW0gdXNp
+bmcgdGhlIHJlZnBvbGljeSB2ZXJzaW9uIHdpdGggZW5hYmxlZCBwZXJmX2V2ZW50IHRjbGFzcyBb
+MV0sIGluIHBlcm1pc3NpdmUgbW9kZS4KPiBXaGVuIHJ1bm5pbmcgcGVyZiBzdGF0IC1hIEkgYW0g
+b2JzZXJ2aW5nIHRoaXMgQVZDIGF1ZGl0IG1lc3NhZ2VzOgo+IAo+IHR5cGU9QVZDIG1zZz1hdWRp
+dCgxNTgxNDk2Njk1LjY2Njo4NjkxKTogYXZjOiAgZGVuaWVkICB7IG9wZW4gfSBmb3IgIHBpZD0y
+Nzc5IGNvbW09InBlcmYiIHNjb250ZXh0PXVzZXJfdTp1c2VyX3I6dXNlcl9zeXN0ZW1kX3QgdGNv
+bnRleHQ9dXNlcl91OnVzZXJfcjp1c2VyX3N5c3RlbWRfdCB0Y2xhc3M9cGVyZl9ldmVudCBwZXJt
+aXNzaXZlPTEKPiB0eXBlPUFWQyBtc2c9YXVkaXQoMTU4MTQ5NjY5NS42NjY6ODY5MSk6IGF2Yzog
+IGRlbmllZCAgeyBrZXJuZWwgfSBmb3IgIHBpZD0yNzc5IGNvbW09InBlcmYiIHNjb250ZXh0PXVz
+ZXJfdTp1c2VyX3I6dXNlcl9zeXN0ZW1kX3QgdGNvbnRleHQ9dXNlcl91OnVzZXJfcjp1c2VyX3N5
+c3RlbWRfdCB0Y2xhc3M9cGVyZl9ldmVudCBwZXJtaXNzaXZlPTEKPiB0eXBlPUFWQyBtc2c9YXVk
+aXQoMTU4MTQ5NjY5NS42NjY6ODY5MSk6IGF2YzogIGRlbmllZCAgeyBjcHUgfSBmb3IgIHBpZD0y
+Nzc5IGNvbW09InBlcmYiIHNjb250ZXh0PXVzZXJfdTp1c2VyX3I6dXNlcl9zeXN0ZW1kX3QgdGNv
+bnRleHQ9dXNlcl91OnVzZXJfcjp1c2VyX3N5c3RlbWRfdCB0Y2xhc3M9cGVyZl9ldmVudCBwZXJt
+aXNzaXZlPTEKPiB0eXBlPUFWQyBtc2c9YXVkaXQoMTU4MTQ5NjY5NS42NjY6ODY5Mik6IGF2Yzog
+IGRlbmllZCAgeyB3cml0ZSB9IGZvciAgcGlkPTI3NzkgY29tbT0icGVyZiIgc2NvbnRleHQ9dXNl
+cl91OnVzZXJfcjp1c2VyX3N5c3RlbWRfdCB0Y29udGV4dD11c2VyX3U6dXNlcl9yOnVzZXJfc3lz
+dGVtZF90IHRjbGFzcz1wZXJmX2V2ZW50IHBlcm1pc3NpdmU9MQo+IAo+IEhvd2V2ZXIgdGhlcmUg
+aXMgbm8gY2FwYWJpbGl0eSByZWxhdGVkIG1lc3NhZ2VzIGFyb3VuZC4gSSBzdXBwb3NlIG15IHJl
+ZnBvbGljeSBzaG91bGQKPiBiZSBtb2RpZmllZCBzb21laG93IHRvIG9ic2VydmUgY2FwYWJpbGl0
+eSByZWxhdGVkIEFWQ3MuCj4gCj4gQ291bGQgeW91IHBsZWFzZSBjb21tZW50IG9yIGNsYXJpZnkg
+b24gaG93IHRvIGVuYWJsZSBjYXBzIHJlbGF0ZWQgQVZDcyBpbiBvcmRlcgo+IHRvIHRlc3QgdGhl
+IGNvbmNlcm5lZCBsb2dnaW5nLgoKVGhlIG5ldyBwZXJmbW9uIHBlcm1pc3Npb24gaGFzIHRvIGJl
+IGRlZmluZWQgaW4geW91ciBwb2xpY3k7IHlvdSdsbCBoYXZlIAphIG1lc3NhZ2UgaW4gZG1lc2cg
+YWJvdXQgIlBlcm1pc3Npb24gcGVyZm1vbiBpbiBjbGFzcyBjYXBhYmlsaXR5MiBub3QgCmRlZmlu
+ZWQgaW4gcG9saWN5LiIuICBZb3UgY2FuIGVpdGhlciBhZGQgaXQgdG8gdGhlIGNvbW1vbiBjYXAy
+IApkZWZpbml0aW9uIGluIHJlZnBvbGljeS9wb2xpY3kvZmxhc2svYWNjZXNzX3ZlY3RvcnMgYW5k
+IHJlYnVpbGQgeW91ciAKcG9saWN5IG9yIGV4dHJhY3QgeW91ciBiYXNlIG1vZHVsZSBhcyBDSUws
+IGFkZCBpdCB0aGVyZSwgYW5kIGluc2VydCB0aGUgCnVwZGF0ZWQgbW9kdWxlLgoKCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
