@@ -2,59 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9165515AD2C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 17:21:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78BDD15AD3F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 17:22:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=c8fkT8VXsfxhCi6fdr3V5Dulceoh39mM4ksaERk9ov0=; b=sFxej0f7s7xUB7SkEHp+xS7HG
-	mwP0opQQQesIXMTBuFkYK6Dw3/Y3huyo+fYvG1ClnJxUmKmXMv75bb8oMUZnoxN8NvayhD90NGmRF
-	OBSCwI4Bv30eeqPCsVQZdlt7L89Xt6VLhPFTpptWKxor1XTeWYdgN9nE2JaSNrj5/d+AG0KNTnupm
-	5KvWvlZmpVqxHbd3f/Epc4ZK1VSo8av2FgWMXrloofyfP8jbtjWhZLyaRjIK6rE1zosc+SjjZ1kL5
-	uOgtbKm92bhS/XUs8mHYaPux9zHLBjlfgRKUwvvVWtI9EhB5lZkrAnhUi1qbLVdIumDkwhpYvGyNL
-	wNA/oY/KA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eKaBPb868YBJzAy9arsgVjHq3jBZ9qeLhu+tfuWJ6hw=; b=DaESRacGLafzJS
+	PPWNb4FkAAKxq6OhvzSE93DAcCAZiLKl+1cjf3d2SOIphGT5Gpmc8D18daH7ygV3DjB+hoU9vZ3iq
+	A4N2o0HJMJrOjzjUbxAd2TmQjK0d32xtjuo6KEZicWkAzp/5MPtRlaOpA0Jsxcsdr15c5fXL80gUW
+	2IMQ8KmMG9kUO0Pb4dNQ6fYulDomuToq8tFb7wuHoY2PDTxsfwAoAYvFRlUR0bHon7BrgEYTVw2ih
+	CMFgKLQfPrj20rdT5FEA2SS6Q0HcksdDiA+eDo6Wxp+sCziuuayyhHjilgSbhigWIlZqMv6M5yvJW
+	BUgLEvWnBh3vpRumi7Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1ulA-0004t9-J3; Wed, 12 Feb 2020 16:21:08 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ul2-0004sK-OA
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 16:21:02 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BD813328;
- Wed, 12 Feb 2020 08:20:59 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BE1A63F68F;
- Wed, 12 Feb 2020 08:20:57 -0800 (PST)
-Subject: Re: [PATCH v3 1/7] arm64: add support for the AMU extension v1
-To: Ionela Voinescu <ionela.voinescu@arm.com>
-References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-2-ionela.voinescu@arm.com>
- <93472f17-6465-641d-ea82-3230b5697ffd@arm.com>
- <20200212161045.GA7475@arm.com>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <133890f7-59bb-63b9-0ca8-2294e3596058@arm.com>
-Date: Wed, 12 Feb 2020 16:20:56 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+	id 1j1umY-0005Dg-Gb; Wed, 12 Feb 2020 16:22:34 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1umR-0005CO-NP
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 16:22:29 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 4so1471471pfz.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Feb 2020 08:22:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=i/S/gu5ls056hur5YDfXFsWlqa/VXA1YVt8W07oi8A0=;
+ b=t4Q/rqVY5SzGQA3770fHEw4TUpO31savs1Ccvpjf9zd84waVs3yJM9pfnejClHR1UE
+ Lkp0sns0cE09dZfQRmq0oBofdY/9iVWCF74zdbMQWdFJsibQaCR/Wkpk7VSi5NCMrOTn
+ FesMXEcb+2UEfy27+9j8iysokL7EZwdF07767X/5FXrobZfLI+8TCaTcIPe70Um0JggX
+ qSAcy19J5mp5d1/lU2nLrFTadHzRHzD3f4cQ18i84bdKvjuTVxHi5uvrNXN+xyysxxE3
+ ZpdgdexrOcsf6Xy54p3acue3hOABe+IBI5+5XfOCRiOmULIb1TFF6cTljQJOB3NDRPp0
+ ixNg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=i/S/gu5ls056hur5YDfXFsWlqa/VXA1YVt8W07oi8A0=;
+ b=Q0hjI5lICm/6yuUOXwqEQcKIVdcTaja7r9xZPQGV+VBXeeaia1f03XASLZAy/IFEsO
+ hIavLk9khlqJlCToACr+xKM5+44giI5YJgw2/6ZbZtau3Az3sEWvUbenXyBmADUrca3Q
+ NdSO79WeunvyNQoDkf4YqUMhGl8REw3xUUveNzNNf80qQmGBc5QatJgeh4ysrGO/tIB1
+ Z1jjhBiUc4jjRyIYe1EaPG49U9fSq/iWFtp3lgLoQb75SsmJTRt+oQ4mNiGhYwn9GMtk
+ G05On9zGbTymqAZlmQjU8JISOK5ooJLQl82MW1VAgghELqrByXvMXpJ/pbEDJs0YoyKC
+ 5wHg==
+X-Gm-Message-State: APjAAAUrnWdKJpKGb1Mo57d3e8dmrOglqPGGd0RWuuBEParx7SyAIONM
+ xMib1Dc4d8qq1KaNeBwzUnT3HLDXYIgXE2YtAK0=
+X-Google-Smtp-Source: APXvYqyxHKklmuKov1yA4Urj79T+gfbmYj+Vp5gE+wLeOgEhYafxRpjw4Lg5cY3ZnSZXyB3yPILql+1nG6BAZerDyog=
+X-Received: by 2002:a63:583:: with SMTP id 125mr9258604pgf.100.1581524546569; 
+ Wed, 12 Feb 2020 08:22:26 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200212161045.GA7475@arm.com>
-Content-Language: en-US
+References: <20200128110102.11522-1-martin@kaiser.cx>
+ <20200128110102.11522-2-martin@kaiser.cx>
+In-Reply-To: <20200128110102.11522-2-martin@kaiser.cx>
+From: PrasannaKumar Muralidharan <prasannatsmkumar@gmail.com>
+Date: Wed, 12 Feb 2020 21:52:15 +0530
+Message-ID: <CANc+2y4Suv0iZ38uxC97U0x73RcKnKiRnjcC-xNh9gNZYn3aUQ@mail.gmail.com>
+Subject: Re: [PATCH 1/6] hwrng: imx-rngc - fix an error path
+To: Martin Kaiser <martin@kaiser.cx>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_082100_874595_C0DB3D4C 
-X-CRM114-Status: GOOD (  31.90  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200212_082227_768601_0003A9A3 
+X-CRM114-Status: GOOD (  16.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [prasannatsmkumar[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,117 +93,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, linux-doc@vger.kernel.org,
- peterz@infradead.org, catalin.marinas@arm.com, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, mingo@redhat.com,
- viresh.kumar@linaro.org, linux-arm-kernel@lists.infradead.org,
- sudeep.holla@arm.com, will@kernel.org, valentin.schneider@arm.com,
- lukasz.luba@arm.com
+Cc: Herbert Xu <herbert@gondor.apana.org.au>,
+ open list <linux-kernel@vger.kernel.org>, stable@vger.kernel.org,
+ "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
+ <linux-crypto@vger.kernel.org>, linux-arm-kernel@lists.infradead.org,
+ NXP Linux Team <linux-imx@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ionela,
+Hi Martin,
 
-On 12/02/2020 16:10, Ionela Voinescu wrote:
-> Hi Suzuki,
-> 
-> On Wednesday 12 Feb 2020 at 11:30:44 (+0000), Suzuki Kuruppassery Poulose wrote:
->>> +static int __init set_disable_amu(char *str)
->>> +{
->>> +	int value = 0;
->>> +
->>> +	disable_amu = get_option(&str, &value) ? !!value : true;
->>
->> minor nit: You could simply use strtobool(str) here, which accepts:
->>
->> disable_amu= [0/1/on/off/y/n]
->>
-> 
-> Yes, this was intentional as I wanted "disable_amu" to be a valid option
-> as well, not only "disable_amu=<option>".
-> 
-> If you don't mind I'd like to keep it like this. Currently the use of
+On Tue, 28 Jan 2020 at 16:31, Martin Kaiser <martin@kaiser.cx> wrote:
+>
+> Make sure that the rngc interrupt is masked if the rngc self test fails.
+> Self test failure means that probe fails as well. Interrupts should be
+> masked in this case, regardless of the error.
+>
+> Cc: stable@vger.kernel.org
+> Fixes: 1d5449445bd0 ("hwrng: mx-rngc - add a driver for Freescale RNGC")
+> Signed-off-by: Martin Kaiser <martin@kaiser.cx>
+> ---
+>  drivers/char/hw_random/imx-rngc.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/char/hw_random/imx-rngc.c b/drivers/char/hw_random/imx-rngc.c
+> index 30cf00f8e9a0..0576801944fd 100644
+> --- a/drivers/char/hw_random/imx-rngc.c
+> +++ b/drivers/char/hw_random/imx-rngc.c
+> @@ -105,8 +105,10 @@ static int imx_rngc_self_test(struct imx_rngc *rngc)
+>                 return -ETIMEDOUT;
+>         }
+>
+> -       if (rngc->err_reg != 0)
+> +       if (rngc->err_reg != 0) {
+> +               imx_rngc_irq_mask_clear(rngc);
+>                 return -EIO;
+> +       }
+>
+>         return 0;
+>  }
+> --
+> 2.20.1
+>
 
-Sure, thats fine.
+Looks good to me. You can add
+Reviewed-by: PrasannaKumar Muralidharan <prasannatsmkumar@gmail.com>
 
->>> +
->>> +	return 0;
->>> +}
->>> +early_param("disable_amu", set_disable_amu);
->>> +
->>> +static bool has_amu(const struct arm64_cpu_capabilities *cap,
->>> +		       int __unused)
->>> +{
->>> +	/*
->>> +	 * The AMU extension is a non-conflicting feature: the kernel can
->>> +	 * safely run a mix of CPUs with and without support for the
->>> +	 * activity monitors extension. Therefore, if not disabled through
->>> +	 * the kernel command line early parameter, enable the capability
->>> +	 * to allow any late CPU to use the feature.
->>> +	 *
->>> +	 * With this feature enabled, the cpu_enable function will be called
->>> +	 * for all CPUs that match the criteria, including secondary and
->>> +	 * hotplugged, marking this feature as present on that respective CPU.
->>> +	 * The enable function will also print a detection message.
->>> +	 */
->>> +
->>> +	if (!disable_amu && !zalloc_cpumask_var(&amu_cpus, GFP_KERNEL)) {
->>
->> This looks problematic. Don't we end up in allocating the memory during
->> "each CPU" check and thus leaking memory ? Do we really need to allocate
->> this dynamically ?
->>
-> 
-> Yes, it does make some assumptions. Given that the AMU capability is
-> a WEAK_LOCAL_CPU_FEATURE I relied on the match function being called
-> only once, when the return value is true. If the return value is false,
-
-That is not correct. A WEAK_LOCAL_CPU_FEATURE is still SCOPE_LOCAL_CPU,
-implies it is run on all the booting CPUs (including the hotplugged
-ones). The WEAK is there to imply that its "permitted" or "optional"
-for a hotplugged CPU. So, eventually you will re-allocate this variable
-every single time a CPU turns up, where you could also loose the current
-state.
-
-> which will result in it being called multiple times, it's either because
-> disable_amu == false, or it has become false due to a previous failed
-> allocation, in which case a new allocation will not be attempted.
-> 
-> For better handling I could have a cpumask_available check before the
-> allocation just in case the capability type changes in the future, or to
-> at least not rely on assumptions based on the type of the capability.
-> 
-> The reason this is dynamic is that I wanted to avoid the memory being
-> allocated when disable_amu is true - as Valentin mentioned in a comment
-> in the meantime "the static allocation is done against NR_CPUS whereas
-> the dynamic one is done against nr_cpu_ids".
-> 
-> Would this be alright?
-> 
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 182e05ca3410..4cee6b147ddd 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -1222,7 +1222,11 @@ static bool has_amu(const struct arm64_cpu_capabilities *cap,
->           * The enable function will also print a detection message.
->           */
->   
-> -       if (!disable_amu && !zalloc_cpumask_var(&amu_cpus, GFP_KERNEL)) {
-> +       if (disable_amu)
-> +               return false;
-> +
-> +       if (!cpumask_available(amu_cpus) &&
-> +           !zalloc_cpumask_var(&amu_cpus, GFP_KERNEL)) {
->                  pr_err("Activity Monitors Unit (AMU): fail to allocate memory");
->                  disable_amu = true;
->          }
-
-This looks fine.
-
-Cheers
-Suzuki
+Regards,
+PrasannaKumar
 
 _______________________________________________
 linux-arm-kernel mailing list
