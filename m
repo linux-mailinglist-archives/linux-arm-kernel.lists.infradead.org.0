@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28D1215B25B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 21:57:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC77915B25F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 21:58:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+b+GJdFQ/MJ3ZZaKDjvB4shHoyz5dv3AQYDMzEPK+Pk=; b=MJ2qzi+hoLps4l
-	OLcdyP25qCsOWo8QRppe1aYxLRrzmcn2ESebkyCyt9PI85wUMJuueql//0dCpBP2UiWjZLg0XjHKs
-	UBAoXp2oSRAZYqenTJ449ANcsMlelzxqtnHOhxIEW/nwxxjoiQIQcaQE+otC+xiek/EuHfnwwZLd7
-	mv2N54Q3jK72yLriKnyacI3yzpv6VLX3BDhlC7lu6UMdiBJkxASC/XsZcUWnEZa25l073/Ymx+erI
-	kLwcmK+nSpUVFq7lpJb+MjN+OKC1lFjt8M3b8qov6Lqj8D39NFlgStJSKO+35CzGI76uRNPH6Qtbc
-	iNjWoIVFzgerXIYKay+w==;
+	List-Owner; bh=9B0VCJJTwslJ0kI5RiRdGpXCrGblqrc6IYdhFfjl7Go=; b=IFlPR4OmkKTgsP
+	1zJf3sLOKaLQF2Ke5lnDNfOX04ECYrs4wP8E1EjwufZJxf+7wEW38mApM/0ekOVPYJpobiSFDnP33
+	rMoEkZRUokIYwe3YuCVIbmUmsgI/yN201bLfh/99/vI4A39C3GlKpXf0UDomlgz2Ac8c8ST/8bjyF
+	0gzMsWvRp5/sR2qfPjVD1aR9yJMUwQoapF+AfVH05ZoUkWbxObgQqTJ8bGWPkH+Z3PFWoyClMrHgE
+	UMZmhMxmg2+6sJ0rGdKR9Vycy3oCAGeo2CxIE8zukKaS2Qib+HlRJgM+X9LkSjN7rWUIHzE6fRIQ8
+	d9ff4IM6qnTdIR5lsDrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1z51-00039e-U1; Wed, 12 Feb 2020 20:57:55 +0000
+	id 1j1z5i-0003XG-74; Wed, 12 Feb 2020 20:58:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1z4H-0002bV-Pc
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 20:57:11 +0000
+ id 1j1z5a-0003Wu-0n
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 20:58:31 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2B89F24681;
- Wed, 12 Feb 2020 20:57:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9B3D9206D7;
+ Wed, 12 Feb 2020 20:58:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581541029;
- bh=cH/GvDcI5icHSrX1KzJxqGNWxsBUEqIC9+265JxXyFQ=;
+ s=default; t=1581541109;
+ bh=2vpa1skMHHv9Ha3+HKM2dSp/5etVHrkhSZVxv7QjBc4=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=08pG/Nqjx7K0Ga/+1IycS9fCtJymUDhlnV9u6Cu4CEd0ey8ngpo6odqHGdJTdX8JH
- XKlIw/Igo3vTQsxr5Ok5EXIM316FGYFcdhB0XYCWoyRB7vJlFHNRDaYWc9JOpDNZpL
- KBD42FXBfU6rOaNNMvlzBiVaWSeNHawm70yxI3z4=
+ b=NfTnP7cKKKy2a1j5JTEK3r4kcg7buqdLFwNdkk97cDqmkWgjo98aE9cFpTUewSkYx
+ L/3Snkn4R0zlcWAl7P3lE5+oXF3XfC5qvno5l0he7pNDRwP+zhuJOPO+YT14keSPZ5
+ bBUpczqAMTrTqybgXDCY03WArDERNSjglw7DAAuE=
 MIME-Version: 1.0
-In-Reply-To: <1581508657-12107-5-git-send-email-Anson.Huang@nxp.com>
-References: <1581508657-12107-1-git-send-email-Anson.Huang@nxp.com>
- <1581508657-12107-5-git-send-email-Anson.Huang@nxp.com>
-Subject: Re: [PATCH 5/5] clk: imx8mp: Add missing of_node_put()
+In-Reply-To: <1581498584-14674-1-git-send-email-Anson.Huang@nxp.com>
+References: <1581498584-14674-1-git-send-email-Anson.Huang@nxp.com>
+Subject: Re: [PATCH] clk: imx7ulp: Include clk-provider.h instead of clk.h
 From: Stephen Boyd <sboyd@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>, abel.vesa@nxp.com, allison@lohutok.net,
- festevam@gmail.com, gregkh@linuxfoundation.org, kernel@pengutronix.de,
- leonard.crestez@nxp.com, linux-arm-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
- mturquette@baylibre.com, peng.fan@nxp.com, ping.bai@nxp.com,
- s.hauer@pengutronix.de, shawnguo@kernel.org, tglx@linutronix.de
-Date: Wed, 12 Feb 2020 12:57:08 -0800
-Message-ID: <158154102844.184098.4130794456263378461@swboyd.mtv.corp.google.com>
+To: Anson Huang <Anson.Huang@nxp.com>, abel.vesa@nxp.com, chen.fang@nxp.com,
+ festevam@gmail.com, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mturquette@baylibre.com, peng.fan@nxp.com,
+ s.hauer@pengutronix.de, shawnguo@kernel.org
+Date: Wed, 12 Feb 2020 12:58:28 -0800
+Message-ID: <158154110894.184098.12745716367701333930@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_125709_901537_870FD8CD 
-X-CRM114-Status: UNSURE (   5.20  )
+X-CRM114-CacheID: sfid-20200212_125830_082738_45083D65 
+X-CRM114-Status: UNSURE (   5.72  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -88,9 +86,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Anson Huang (2020-02-12 03:57:37)
-> After finishing using device node got from of_find_compatible_node(),
-> of_node_put() needs to be called.
+Quoting Anson Huang (2020-02-12 01:09:43)
+> The i.MX7ULP clock driver is provider, NOT consumer, so clk-provider.h
+> should be used instead of clk.h.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
