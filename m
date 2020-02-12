@@ -2,76 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12C0B15A31F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 09:19:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5214615A377
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 09:41:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T9Ka3am0fsBz67YyKoHaG6caOy1FpVaGO0asL4EuvgU=; b=lVfXPzawDCZ5U1
-	CGU1Xz0BnCq3t97+3dSVEjZOGSo9AkMhDffw0rBTMBcc9LtUSzVdUb0mLAdQ3LVavFDHtswPaDf0A
-	ccg71eIbj0oZY/z+xL/hjcm3khA92ISK6u9vpjf2jmdr0evhDp6n9F3EHsG7XlyYl8T4z70XeC+O7
-	7hePZYluo+xvUvuUmw94PHK1Icrv02pWkjYOVH1V1XMHMEwmRuTSREZOkvWMkGy1tTNbR4X62//x2
-	Ru3yNg3JT8LuJeyQ4ehq2wZWGWuJI9AfvHGhLs8pyZVfDtc4qSAoABHgXXfSPPCGrXxsNTBMGkTfp
-	fCXItz53MF5ka+A9r4gw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zgETVAK9saUgzSioZ4p+2dcjNCNmVIQmePk8iLI+zhw=; b=WKMxZimp7NVZFC
+	eKpW2XC0Ps4iCkyhisV+8NfzB2t96Ut3h1l9BV7SIIxsttqKUVRji0nVlrarje9YhGpgTGqcMC3lX
+	0mr63verSoKKXG42BBmLPDAHr0fGQ/u75uQhy3oLgpgCQdldTDIA/MMi6YAziYvCq9TSC72V90wL3
+	Tfsvxb3u4dUGwf+bWsQEIQRLWfZrIGJWBTu7QCSKXioPn6VRL43tUNgr8hrcXSD0HlRclGSHzBTAo
+	mTrlveYQOrf3cSywm+0/cXT3jXtpNw2EGSjJXkJ1PBiq2c1ix8GlFyOoVXNX38bEwc7T9roOp8U64
+	XzZixShzC3sTCGJnxylw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1nFE-0007Gx-Ri; Wed, 12 Feb 2020 08:19:40 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j1nZp-0007K2-Te; Wed, 12 Feb 2020 08:40:57 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1nF3-0007Fi-6S; Wed, 12 Feb 2020 08:19:30 +0000
-X-UUID: 1177e930cf794b7484d5f6296ab89741-20200212
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=WTR3IyGTtiHoAq1wxcteE4V4GBjK4qM6cnQ1Vs7Y5e4=; 
- b=oLhNGi+I+Rma92S81fCP0y77PVdsTJDZmWur1Ou+uMLG7m1Jjf1OSTtFg9/apKKesd4YcQWwFvOEniTA4bZZ191ouvazyElHbawHgrd0FLQ1m5aWyVC4I88H8cZNSGOVi3Fy7+iJ+qyGp4Lll98mWkoZZFKurC+uXxqF3kTA6+4=;
-X-UUID: 1177e930cf794b7484d5f6296ab89741-20200212
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1332018070; Wed, 12 Feb 2020 00:19:17 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Feb 2020 00:19:25 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Feb 2020 16:17:37 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 12 Feb 2020 16:19:42 +0800
-Message-ID: <1581495554.22603.2.camel@mtksdaap41>
-Subject: Re: [PATCH v2 2/3] drm/mediatek: support HDMI jack status reporting
-From: CK Hu <ck.hu@mediatek.com>
-To: Tzung-Bi Shih <tzungbi@google.com>
-Date: Wed, 12 Feb 2020 16:19:14 +0800
-In-Reply-To: <20200206102509.2.I230fd59de28e73934a91cb01424e25b9e84727f4@changeid>
-References: <20200206031752.193298-1-tzungbi@google.com>
- <20200206102509.2.I230fd59de28e73934a91cb01424e25b9e84727f4@changeid>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1j1nZ2-0005V5-4m
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 08:40:10 +0000
+Received: by mail-wr1-x443.google.com with SMTP id t2so1133506wrr.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Feb 2020 00:40:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=monstr-eu.20150623.gappssmtp.com; s=20150623;
+ h=sender:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=sh9edya09m3ampotYP3rKXxFWAQAZ1sl203zZxDnubY=;
+ b=Rd9ZsYVqBQpLNRN1NUoCJwtgrHIvxjFXbiYEbesFFL+EtggZeSkMBsmX6aQN4sRPqk
+ BFm7ziMyioakOHPenVv+pazCq1xMgITET4yi3liedrfDOAYUiIlLzo7E7XNEIvegXUBX
+ VVryKZVBrlSDZxSLbfYqPEDFJgSbi3oy3nDXlTZs8GcWdZZwU3frgCCR/swJU89rUorq
+ q2MuolQSmMWjjazZ+JadmnTMhsRcwMVWiPPvoHqIzEPRmpPdhSyYd0CI+AdR0i+Jc/rO
+ DdIo+gr5eG0/N7R7ER0Wvm5aB55R/zxAvE9YDjWfOqt+5/iPXeOQxA4BGm1SPsdQctNB
+ PeXw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
+ :mime-version:content-transfer-encoding;
+ bh=sh9edya09m3ampotYP3rKXxFWAQAZ1sl203zZxDnubY=;
+ b=p2FlOJO0zRnT0RhniNUetW6COhST0EoSXxB1ijuHg7wYfatC0HR3+qA32dI6Xbr3r+
+ 1Q2PA0Q40BDMcsyivatYPIc9qkZz0idXS2tIVRA8vfqELA7KYOUp8GViwVcYUukdaJnk
+ ulr4yxYT741+fQO859f05eTVtXDlBi2ye+r8ucYCDhQr9XWSVmbCv+poOkarT+0EEpzK
+ od0jJ1g9Vnvy5Ge8Vv8LF30BF6c+ogNMrzJPoi1IapVPO4aNpmpF5wWleCTKf5XBK1vW
+ rrVRsddnVzAJoL5xCl+cHz/SpRHsTNv69uLsg6d7BXCmPxuhZZWy/Qh7acNq+2cw+mta
+ GNWQ==
+X-Gm-Message-State: APjAAAVQxXlPypWNEmBtRanMr2R57vGOFLjuml9rrTSNqr36z+vHIxUs
+ ex7p0lz4UCW8ThzCUwTCV7UU0g==
+X-Google-Smtp-Source: APXvYqwuS7+TqsdETIEjYnS5F+Hk3WQXvU5tJoIGMYYgCfRi7CqmSIQCIAeJ5eLjixqHvrdhZP54DA==
+X-Received: by 2002:a5d:42c6:: with SMTP id t6mr13871376wrr.151.1581496800421; 
+ Wed, 12 Feb 2020 00:40:00 -0800 (PST)
+Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
+ by smtp.gmail.com with ESMTPSA id x17sm8482201wrt.74.2020.02.12.00.39.59
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 12 Feb 2020 00:39:59 -0800 (PST)
+From: Michal Simek <michal.simek@xilinx.com>
+To: linux-kernel@vger.kernel.org, monstr@monstr.eu, michal.simek@xilinx.com,
+ git@xilinx.com
+Subject: [PATCH 0/3] irqchip: xilinx: Switch to generic domain handler
+Date: Wed, 12 Feb 2020 09:39:55 +0100
+Message-Id: <cover.1581496793.git.michal.simek@xilinx.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_001929_248736_5688E53B 
-X-CRM114-Status: GOOD (  16.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200212_004008_238267_DDB9AD9D 
+X-CRM114-Status: GOOD (  10.18  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,128 +94,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, cychiang@google.com, airlied@linux.ie,
- dri-devel@lists.freedesktop.org, broonie@kernel.org,
- linux-mediatek@lists.infradead.org, daniel@ffwll.ch, matthias.bgg@gmail.com,
- p.zabel@pengutronix.de, dgreid@google.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Stefan Asserhall <stefan.asserhall@xilinx.com>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ Mubin Sayyed <mubinusm@xilinx.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Tzung-Bi:
+Hi,
 
-On Thu, 2020-02-06 at 11:17 +0800, Tzung-Bi Shih wrote:
-> 1.
-> Provides a callback (i.e. mtk_hdmi_audio_hook_plugged_cb) to hdmi-codec.
-> When ASoC machine driver calls hdmi_codec_set_jack_detect(), the
-> callback will be invoked to save plugged_cb and codec_dev parameters.
-> 
-> +---------+  set_jack_  +------------+ plugged_cb  +----------+
-> | machine | ----------> | hdmi-codec | ----------> | mtk-hdmi |
-> +---------+  detect()   +------------+ codec_dev   +----------+
-> 
-> 2.
-> When there is any jack status changes, mtk-hdmi will call the
-> plugged_cb() to notify hdmi-codec.  And then hdmi-codec will call
-> snd_soc_jack_report().
-> 
-> +----------+ plugged_cb  +------------+
-> | mtk-hdmi | ----------> | hdmi-codec | -> snd_soc_jack_report()
-> +----------+ codec_dev   +------------+
->              connector_status
-> 
-> Signed-off-by: Tzung-Bi Shih <tzungbi@google.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_hdmi.c | 34 ++++++++++++++++++++++++++---
->  1 file changed, 31 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-> index 23c2b0e8693d..fccdd975947d 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
-> @@ -169,6 +169,8 @@ struct mtk_hdmi {
->  	bool audio_enable;
->  	bool powered;
->  	bool enabled;
-> +	hdmi_codec_plugged_cb plugged_cb;
-> +	struct device *codec_dev;
->  };
->  
->  static inline struct mtk_hdmi *hdmi_ctx_from_bridge(struct drm_bridge *b)
-> @@ -1194,13 +1196,23 @@ static void mtk_hdmi_clk_disable_audio(struct mtk_hdmi *hdmi)
->  	clk_disable_unprepare(hdmi->clk[MTK_HDMI_CLK_AUD_SPDIF]);
->  }
->  
-> +static enum drm_connector_status
-> +mtk_hdmi_update_plugged_status(struct mtk_hdmi *hdmi)
-> +{
-> +	bool connected = mtk_cec_hpd_high(hdmi->cec_dev);
-> +
-> +	if (hdmi->plugged_cb && hdmi->codec_dev)
-> +		hdmi->plugged_cb(hdmi->codec_dev, connected);
-> +
-> +	return connected ?
-> +	       connector_status_connected : connector_status_disconnected;
-> +}
-> +
->  static enum drm_connector_status hdmi_conn_detect(struct drm_connector *conn,
->  						  bool force)
->  {
->  	struct mtk_hdmi *hdmi = hdmi_ctx_from_conn(conn);
-> -
-> -	return mtk_cec_hpd_high(hdmi->cec_dev) ?
-> -	       connector_status_connected : connector_status_disconnected;
-> +	return mtk_hdmi_update_plugged_status(hdmi);
->  }
->  
->  static void hdmi_conn_destroy(struct drm_connector *conn)
-> @@ -1648,20 +1660,36 @@ static int mtk_hdmi_audio_get_eld(struct device *dev, void *data, uint8_t *buf,
->  	return 0;
->  }
->  
-> +static int mtk_hdmi_audio_hook_plugged_cb(struct device *dev, void *data,
-> +					  hdmi_codec_plugged_cb fn,
-> +					  struct device *codec_dev)
-> +{
-> +	struct mtk_hdmi *hdmi = data;
-> +
-> +	hdmi->plugged_cb = fn;
-> +	hdmi->codec_dev = codec_dev;
-> +	mtk_hdmi_update_plugged_status(hdmi);
+this series is based on cascade mode patch sent by Mubin
+(https://lkml.org/lkml/2020/2/11/888 - v3 series).
 
-I think hdmi_conn_detect() and mtk_hdmi_audio_hook_plugged_cb() would be
-called in different thread. So it's necessary to use a mutex to protect
-this.
+The first patch is just fixing error patch. The second and the third are
+converting microblaze do_IRQ() to generic IRQ handler with appropriate
+changes in xilinx intc driver. I have done it in two steps to be visible
+how it was done.
 
-Regards,
-CK
+The last patch removes concurrent_irq global variable which wasn't wired
+anywhere but it stores number of concurrent IRQs handled by one call. There
+is option to get it back if needed but I haven't seen it in other archs
+that's why I have removed it too.
 
-> +
-> +	return 0;
-> +}
-> +
->  static const struct hdmi_codec_ops mtk_hdmi_audio_codec_ops = {
->  	.hw_params = mtk_hdmi_audio_hw_params,
->  	.audio_startup = mtk_hdmi_audio_startup,
->  	.audio_shutdown = mtk_hdmi_audio_shutdown,
->  	.digital_mute = mtk_hdmi_audio_digital_mute,
->  	.get_eld = mtk_hdmi_audio_get_eld,
-> +	.hook_plugged_cb = mtk_hdmi_audio_hook_plugged_cb,
->  };
->  
->  static int mtk_hdmi_register_audio_driver(struct device *dev)
->  {
-> +	struct mtk_hdmi *hdmi = dev_get_drvdata(dev);
->  	struct hdmi_codec_pdata codec_data = {
->  		.ops = &mtk_hdmi_audio_codec_ops,
->  		.max_i2s_channels = 2,
->  		.i2s = 1,
-> +		.data = hdmi,
->  	};
->  	struct platform_device *pdev;
->  
+Thanks,
+Michal
+
+
+Michal Simek (3):
+  irqchip: xilinx: Fill error code when irq domain registration fails
+  irqchip: xilinx: Enable generic irq multi handler
+  irqchip: xilinx: Use handle_domain_irq()
+
+ arch/microblaze/Kconfig           |  2 ++
+ arch/microblaze/include/asm/irq.h |  3 ---
+ arch/microblaze/kernel/irq.c      | 21 +------------------
+ drivers/irqchip/irq-xilinx-intc.c | 35 ++++++++++++++++++-------------
+ 4 files changed, 24 insertions(+), 37 deletions(-)
+
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
