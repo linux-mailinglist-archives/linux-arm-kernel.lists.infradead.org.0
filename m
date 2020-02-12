@@ -2,77 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B15E15A2FF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 09:13:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B72815A311
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 09:15:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cYKlKrpNmTuD61O2fxT39AVIHJTQTpBrRBczWEJ6+eA=; b=s9wb5XLmf6ZKtBPaBKdOFIGfC
-	1R4dCcRB8+LXvPVu/jBducPuuLegJFY94bQxTYxIO/AYT2uO7xlimHPBH9/dxwx52VbRB0Cit/oSZ
-	/feXzU8CULDeArMlJlmCkjvGPRNsBxs0e2ZFFgGR04vLhqIhzkiy+oTyzCxSDr8gztF2dAYfzpWqU
-	PYtlAphNB2yE3MnkuCwgD9Q1H1POtZfPCYD/Hf5a1j6ItaacFONxVED9YuLLPoFOyy+K8+FtBc2EC
-	zWAcFeh1wTGgBt2ersFrDY3l3HuICcsnDEe03xhvn99HhSy4AzRnJlpvmmm4RmGrMKQsN97YyjE7s
-	V1acnTxLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wvkT75VaK8k5VEnC+Lv/b9exgpvNFAX3iYSfVSUKlRs=; b=OPRIz/v/YM1eQl
+	B53EfRywNLYxuOlpRqjyI7lPzQybMOrLSRyGifAwgoVQlLCx1vWYJWvdYSvKpJtwMQs1leIzFMxQQ
+	WtkAXJOZ6fErwoidvWadOhj6DqFQ8hQ7CLqwRfn1Trq/mgK4BAyrSckV+zh4u9jM1+bo7VJt1IKI2
+	mKITXFwL8HAP364y0xI82n+MIGwagT8gL7dYLslhkFYzteZQzadtPhgNd/yQUxO1hth3Hn91Eyi8Z
+	WfM86rTrcRYGt4AgsffDtiTr9DRtO2xCjAKK5KLS/XL8JF2I+ahTBTSLk5LzJ4/Ia8sAo0SH6q08/
+	uRY2D71MH6iQhhAJYvBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1n9Q-00056l-LF; Wed, 12 Feb 2020 08:13:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j1nBH-0006fG-34; Wed, 12 Feb 2020 08:15:35 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1n9H-00056M-LS; Wed, 12 Feb 2020 08:13:33 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 22DEF20714;
- Wed, 12 Feb 2020 08:13:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581495211;
- bh=T4eFhqnFIGrFD+wHtvfDeHQzq+mCGSZ+1lYReIAedFE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=MFYt3vgmTGN1Vi5bdDbJXeFUPpC0AaXvxXGz0Eir4tw4whbGXLGnVva5c0RgwDHhc
- tjr7OHsttPYVv+oHNFmX+N08PY8ZQKmaUsNiAmrlGsELU4gnpJxsfIZMRD1MblkROH
- 3LLxwWFIpEEM4a4lWW7CO3DlxhXO4vFVxy/rQvxI=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j1n9F-004Wgw-DL; Wed, 12 Feb 2020 08:13:29 +0000
+ id 1j1nBB-0006dt-0B
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 08:15:30 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01C8E565008026; Wed, 12 Feb 2020 09:15:22 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=PtC6MNcf5VPs91Jldvobvz5GRjrwYDD84llnPUFRTL0=;
+ b=fLOmkqx94vwZALx+mLsgvtHIr0HUe1cy2XPFcoRq/OGj8RfZPNe/0NtjNzT7mjnPzGKs
+ fYiiua5hrBMKV3MUONUDB+gRAg6EkgbcQNJ5wTLQ0iQFHIGPILin7PC3at4HRHN1Yyhi
+ R3dCv/56cWP8qThjbbPC94tDPiUVPiwPYlKpFK7mK5hI2p8bVd0PENBEDarz8UL2tF9V
+ yjHpWrHLGZRq6C7bBBdFJrJACXi+OCwx1pXQfk2MjTS57fxsJxaKNx6XhMG9FWO4w/kN
+ P0BGAkLLjJNkC/JNq2XzpInfWM02EPZoXtyEbvcQfOEETYFSgMgDqqFv2KE8PD65eqoJ Tw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2y1uvdmhmx-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 12 Feb 2020 09:15:22 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DCCAE10002A;
+ Wed, 12 Feb 2020 09:15:21 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BFBE3220BCC;
+ Wed, 12 Feb 2020 09:15:21 +0100 (CET)
+Received: from lmecxl0889.lme.st.com (10.75.127.46) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 12 Feb
+ 2020 09:15:20 +0100
+Subject: Re: [PATCH v4 0/5] remoteproc: Add elf64 support
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+References: <527785289.2852303.1581062223707.JavaMail.zimbra@kalray.eu>
+ <20200210162209.23149-1-cleger@kalray.eu>
+ <5b8045be-0942-2ecf-5dba-dad58071f6af@st.com> <20200211231253.GC27770@xps15>
+From: Arnaud POULIQUEN <arnaud.pouliquen@st.com>
+Message-ID: <8fa9ed3c-240f-1b82-913e-a4393013d333@st.com>
+Date: Wed, 12 Feb 2020 09:15:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Date: Wed, 12 Feb 2020 08:13:29 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Lukas Wunner <lukas@wunner.de>
-Subject: Re: [PATCH v2] irqchip/bcm2835: Quiesce IRQs left enabled by
- bootloader
-In-Reply-To: <8be2f3e95fb29abdf80240f2b8a38621c42eb2a9.1581327911.git.lukas@wunner.de>
-References: <713627a200d9c8fd7cac424d69e98166@kernel.org>
- <8be2f3e95fb29abdf80240f2b8a38621c42eb2a9.1581327911.git.lukas@wunner.de>
-Message-ID: <d49218987c0d1d573aaa3bcccf44ffe3@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: lukas@wunner.de, tglx@linutronix.de, jason@lakedaemon.net,
- nsaenzjulienne@suse.de, f.fainelli@gmail.com, rjui@broadcom.com,
- sbranden@broadcom.com, bcm-kernel-feedback-list@broadcom.com,
- linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, serge@raspberrypi.org,
- notstina@gmail.com, wahrenst@gmx.net, mbrugger@suse.com,
- kernel@martin.sperl.org, phil@raspberrypi.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200211231253.GC27770@xps15>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG3NODE1.st.com
+ (10.75.127.7)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-12_02:2020-02-11,
+ 2020-02-12 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_001331_747003_3574379D 
-X-CRM114-Status: GOOD (  33.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200212_001529_400107_5C099D78 
+X-CRM114-Status: GOOD (  19.45  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -82,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,178 +99,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Florian Fainelli <f.fainelli@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- Stefan Wahren <wahrenst@gmx.net>, Serge Schneider <serge@raspberrypi.org>,
- linux-kernel@vger.kernel.org, Phil Elwell <phil@raspberrypi.org>,
- Matthias Brugger <mbrugger@suse.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Martin Sperl <kernel@martin.sperl.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Kristina Brooks <notstina@gmail.com>
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, Loic PALLARDY <loic.pallardy@st.com>,
+ Jonathan Corbet <corbet@lwn.net>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-doc@vger.kernel.org,
+ linux-remoteproc@vger.kernel.org, Patrice Chotard <patrice.chotard@st.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Clement Leger <cleger@kalray.eu>,
+ Andy Gross <agross@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, linux-arm-msm@vger.kernel.org,
+ s-anna <s-anna@ti.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Lukas,
 
-Thanks for the update on this.
 
-On 2020-02-10 09:52, Lukas Wunner wrote:
-> Customers of our "Revolution Pi" open source PLCs (which are based on
-> the Raspberry Pi) have reported random lockups as well as jittery eMMC,
-> UART and SPI latency.  We were able to reproduce the lockups in our lab
-> and hooked up a JTAG debugger:
+On 2/12/20 12:12 AM, Mathieu Poirier wrote:
+> On Tue, Feb 11, 2020 at 04:57:18PM +0100, Arnaud POULIQUEN wrote:
+>> Hi Clement,
+>>
+>> I tested the series on the stm32 platform for remote proc firmwre load: no regression found.
+>> I do not test the da_to_va feature as not implemented on stm32 platform.
 > 
-> It turns out that the USB controller's interrupt is already enabled 
-> when
-> the kernel boots.  All interrupts are disabled when the chip comes out
-> of power-on reset, according to the spec.  So apparently the bootloader
-> enables the interrupt but neglects to disable it before handing over
-> control to the kernel.
-> 
-> The bootloader is a closed source blob provided by the Raspberry Pi
-> Foundation.  Development of an alternative open source bootloader was
-> begun by Kristina Brooks but it's not fully functional yet.  Usage of
-> the blob is thus without alternative for the time being.
-> 
-> The Raspberry Pi Foundation's downstream kernel has a performance-
-> optimized USB driver (which we use on our Revolution Pi products).
-> The driver takes advantage of the FIQ fast interrupt.  Because the
-> regular USB interrupt was left enabled by the bootloader, both the
-> FIQ and the normal interrupt is enabled once the USB driver probes.
-> 
-> The spec has the following to say on simultaneously enabling the FIQ
-> and the normal interrupt of a peripheral:
-> 
-> "One interrupt source can be selected to be connected to the ARM FIQ
->  input.  An interrupt which is selected as FIQ should have its normal
->  interrupt enable bit cleared.  Otherwise a normal and an FIQ interrupt
->  will be fired at the same time.  Not a good idea!"
->                                   ^^^^^^^^^^^^^^^
-> https://www.raspberrypi.org/app/uploads/2012/02/BCM2835-ARM-Peripherals.pdf
-> page 110
-> 
-> On a multicore Raspberry Pi, the Foundation's kernel routes all normal
-> interrupts to CPU 0 and the FIQ to CPU 1.  Because both the FIQ and the
-> normal interrupt is enabled, a USB interrupt causes CPU 0 to spin in
-> bcm2836_chained_handle_irq() until the FIQ on CPU 1 has cleared it.
-> Interrupts with a lower priority than USB are starved as long.
-> 
-> That explains the jittery eMMC, UART and SPI latency:  On one occasion
-> I've seen CPU 0 blocked for no less than 2.9 msec.  Basically,
-> everything not USB takes a performance hit:  Whereas eMMC throughput
-> on a Compute Module 3 remains relatively constant at 23.5 MB/s with
-> this commit, it irregularly dips to 23.0 MB/s without this commit.
-> 
-> The lockups occur when CPU 0 receives a USB interrupt while holding a
-> lock which CPU 1 is trying to acquire while the FIQ is temporarily
-> disabled on CPU 1.
-> 
-> I've tested old releases of the Foundation's bootloader as far back as
-> 1.20160202-1 and they all leave the USB interrupt enabled.  Still older
-> releases fail to boot a contemporary kernel on a Compute Module 1 or 3,
-> which are the only Raspberry Pi variants I have at my disposal for
-> testing.
-> 
-> Fix by disabling IRQs left enabled by the bootloader.  Although the
-> impact is most pronounced on the Foundation's downstream kernel,
-> it seems prudent to apply the fix to the upstream kernel to guard
-> against such mistakes in any present and future bootloader.
+> It would be very interesting if you could test the coredump, that would give us
+> a lot more confidence in the implementation.
+I also tested the coredump generation. LGTM
 
-While the story is interesting, it doesn't really belong to a commit 
-message.
-Please trim it down to something along the lines of:
-
-- The RPi bootloader is a bit crap, as it leaves IRQs and FIQs enabled
-   and for the OS to deal with the consequences
-
-- The kernel driver is not great either, as it doesn't properly 
-initialize
-   the interrupt state, resulting in both IRQ and FIQ misfiring and 
-resulting
-   in bizarre behaviours
-
-- Properly initializing the irqchip fixes the issue. Add a couple a 
-warnings
-   for a good measure, so that people realize their favourite toy comes 
-with
-   sub-par SW.
-
-> Signed-off-by: Lukas Wunner <lukas@wunner.de>
-> Cc: Serge Schneider <serge@raspberrypi.org>
-> Cc: Kristina Brooks <notstina@gmail.com>
-> Cc: stable@vger.kernel.org
-> ---
-> Changes since v1:
-> * Use "relaxed" MMIO accessors to avoid memory barriers (Marc)
-> * Use u32 instead of int for register access (Marc)
-> * Quiesce FIQ as well (Marc)
-> * Quiesce IRQs after mapping them for better readability
-> * Drop alternative approach from commit message (Marc)
 > 
-> Link to v1:
-> https://lore.kernel.org/lkml/988737dbbc4e499c2faaaa4e567ba3ed8deb9a89.1581089797.git.lukas@wunner.de/
+> Thanks,
+> Mathieu
 > 
->  drivers/irqchip/irq-bcm2835.c | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
-> 
-> diff --git a/drivers/irqchip/irq-bcm2835.c 
-> b/drivers/irqchip/irq-bcm2835.c
-> index 418245d31921..63539c88ac3a 100644
-> --- a/drivers/irqchip/irq-bcm2835.c
-> +++ b/drivers/irqchip/irq-bcm2835.c
-> @@ -61,6 +61,7 @@
->  					| SHORTCUT1_MASK | SHORTCUT2_MASK)
-> 
->  #define REG_FIQ_CONTROL		0x0c
-> +#define REG_FIQ_ENABLE		0x80
-> 
->  #define NR_BANKS		3
->  #define IRQS_PER_BANK		32
-> @@ -135,6 +136,7 @@ static int __init armctrl_of_init(struct 
-> device_node *node,
->  {
->  	void __iomem *base;
->  	int irq, b, i;
-> +	u32 reg;
-> 
->  	base = of_iomap(node, 0);
->  	if (!base)
-> @@ -157,6 +159,19 @@ static int __init armctrl_of_init(struct 
-> device_node *node,
->  				handle_level_irq);
->  			irq_set_probe(irq);
->  		}
-> +
-> +		reg = readl_relaxed(intc.enable[b]);
-> +		if (reg) {
-> +			writel_relaxed(reg, intc.disable[b]);
-> +			pr_err(FW_BUG "Bootloader left irq enabled: "
-> +			       "bank %d irq %*pbl\n", b, IRQS_PER_BANK, &reg);
-> +		}
-> +	}
-> +
-> +	reg = readl_relaxed(base + REG_FIQ_CONTROL);
-> +	if (reg & REG_FIQ_ENABLE) {
-> +		writel_relaxed(0, base + REG_FIQ_CONTROL);
-> +		pr_err(FW_BUG "Bootloader left fiq enabled\n");
->  	}
-> 
->  	if (is_2836) {
-
-It otherwise looks good. You can either resend it with a fixed commit 
-message,
-or provide me with a commit message that I can stick there while 
-applying it.
-
-Thanks,
-
-        M.
--- 
-Jazz is not dead. It just smells funny...
+>>
+>> Regards,
+>> Arnaud
+>>
+>>
+>>
+>> On 2/10/20 5:22 PM, Clement Leger wrote:
+>>> This serie add support for elf64 in remoteproc (elf loader, coredump). 
+>>> First two patches modifies the type of len argument (in da_to_va) and
+>>> boot_addr in order to allow loading elf64 segment with a u64 size
+>>> and a u64 entry point.
+>>> Next patch introduce a set of macros to access elf64 and elf32
+>>> transparently.
+>>> Last two patches are the actual modification in the elf loader and
+>>> remoteproc coredump support to add elf64 support.
+>>>
+>>> Changes from V3:
+>>>  - Adapt coredump to elf64 file format
+>>>  - Rename remoteproc_elf_loader.h to remoteproc_elf_helpers.h
+>>>  - Update copyright year in remoteproc_elf_helpers.h
+>>>  - Rename macros elf_hdr_* to elf_get_hdr_* for coherency with elf_hdr_set_*
+>>>  - Split elf64 loader patch in 3:
+>>>    - boot_addr u64 change
+>>>    - remoteproc_elf_helpers.h creation
+>>>    - elf64 loading
+>>>
+>>> Clement Leger (5):
+>>>   remoteproc: Use u64 len for da_to_va
+>>>   remoteproc: Use u64 type for boot_addr
+>>>   remoteproc: Add elf helpers to access elf64 and elf32 fields
+>>>   remoteproc: Add elf64 support in elf loader
+>>>   remoteproc: Adapt coredump to generate correct elf type
+>>>
+>>>  Documentation/remoteproc.txt                |   2 +-
+>>>  drivers/remoteproc/imx_rproc.c              |  11 +-
+>>>  drivers/remoteproc/keystone_remoteproc.c    |   4 +-
+>>>  drivers/remoteproc/qcom_q6v5_adsp.c         |   2 +-
+>>>  drivers/remoteproc/qcom_q6v5_mss.c          |   2 +-
+>>>  drivers/remoteproc/qcom_q6v5_pas.c          |   2 +-
+>>>  drivers/remoteproc/qcom_q6v5_wcss.c         |   2 +-
+>>>  drivers/remoteproc/qcom_wcnss.c             |   2 +-
+>>>  drivers/remoteproc/remoteproc_core.c        |  69 +++++++------
+>>>  drivers/remoteproc/remoteproc_elf_helpers.h |  95 ++++++++++++++++++
+>>>  drivers/remoteproc/remoteproc_elf_loader.c  | 150 ++++++++++++++++++----------
+>>>  drivers/remoteproc/remoteproc_internal.h    |   4 +-
+>>>  drivers/remoteproc/st_remoteproc.c          |   2 +-
+>>>  drivers/remoteproc/st_slim_rproc.c          |   4 +-
+>>>  drivers/remoteproc/wkup_m3_rproc.c          |   4 +-
+>>>  include/linux/remoteproc.h                  |   7 +-
+>>>  16 files changed, 252 insertions(+), 110 deletions(-)
+>>>  create mode 100644 drivers/remoteproc/remoteproc_elf_helpers.h
+>>>
 
 _______________________________________________
 linux-arm-kernel mailing list
