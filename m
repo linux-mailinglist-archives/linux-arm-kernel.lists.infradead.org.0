@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 703FC159E36
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 01:42:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0AE3159E39
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 01:43:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4DR01ra/uWwn3dsqPLPp7sNaBYoSmFHYxVnui2vYOJ4=; b=qxVgZ4emsdP21n
-	6/XVTbvKOYl+Fbdrhg6/gqc5970LrRAFjerfmWJTf8tXLSoG2zGdb87tNrhnyDk1xge58JGzrtloW
-	ce0kLum4EtiA2wI9L94gBAX3T94r35gxBYZPNIaJO9LJqZ405BCpdihfnpmsSkHXaTKkt0gkt7bTL
-	+MTV2oknbjNiGC4s1L/4MtcTFVXyeEi21tsq6BfJTdpvdqwVje6LlybraOTwSUXaXUajn354oNGnX
-	vXa9g5nHVieZoSTcEA9TCqsGj6xqCIai2CPWb2VBo06uZ+VbzheamYM9u5n3Bmf2VPMMba6ldbsb/
-	wvTcaKO4mZ3HPDQ1GVeQ==;
+	List-Owner; bh=l/IZ+SANlmX/SxiRxiMDJ9mXZ3+LEq+VoHaJZS9JzWg=; b=cjtsVmmk1DoA69
+	GTP9E6D45uNqrj4s//qb9D4uUTfHJbv7WJVlFnlcXzEzD7Sj0d2V8Pb72y+VGj55hTU2K8nEszsu9
+	s4CY9i1Svpq/wOa77AVdBp7kXP1FGyleM4Ah/Mv32ffFtiKu0SD4t6ov9cth8n9iMdmJV4Iwey+fu
+	fTP4Y70ntcdop7s0b+MzR/+VjGcmlAIuZ/4WbxRAlyzirgPWqhIq9103Ck9oH+r/zTp45m4ZHnDlX
+	Do5ngM8Qog+s8b9oukVtmkXndan1O+WmoIB68DR3myrBgTAanWlVqx+m8FdpAdIemGB26NjvRJxVv
+	WwtniMKEswcIIPJbm3Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1g70-0001is-2n; Wed, 12 Feb 2020 00:42:42 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1j1g7C-0001xj-9i; Wed, 12 Feb 2020 00:42:54 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1g4g-0008DT-Vo; Wed, 12 Feb 2020 00:40:20 +0000
-Received: by mail-lj1-x243.google.com with SMTP id r19so278441ljg.3;
- Tue, 11 Feb 2020 16:40:18 -0800 (PST)
+ id 1j1g4i-0008EC-8f; Wed, 12 Feb 2020 00:40:21 +0000
+Received: by mail-lj1-x244.google.com with SMTP id e18so234127ljn.12;
+ Tue, 11 Feb 2020 16:40:20 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=LKDP1hyiuSxJLJzh6PxtETHxlHhTQ3RNvBVBm9ROckc=;
- b=TWER0fxRPSTs5r+v24XbrG3jeVC7fikohs6urpewgZ329P+lFVUPmGspl4I5MUzM76
- XyA9DhMCVkyg6gxFfiOuRN8tviL6kEP9U4TpAoAZ79CQOuDU4tyOYwkPMHjhh7GAgkHy
- xS2AH5iaJxI+IR0DStViI6ZqLf6n7fwHMes7KfTavO20xrces1xeWPi1ajjwNUdREz8/
- PcqJevItqEi8/PB+RPGD2Qf6sQOwATSUy8J+hcoy/OyVF5bgZef6ZTQ6egA0T8Avn4/u
- 27aArAd4t87sKe+Dd6a2ApCQNEV2agN2JeOk+TXpdTsu8g75dHO82T+suDHD8lgTH1tA
- I68A==
+ bh=ttJW9peokq5rUpFOQPvSx+wLa406veCgVEoVyR6YAV8=;
+ b=SHcDvUlKTDjrSUyYrLPEjMYJTvRDrw/kwd1X2ZFXrBSCah3TbdHcdOnpB/sdh+Cjbf
+ Z3+loashg/BSX7zm1xHB0W+YgWvQ3iA8VQTogN73YaMluPA97Gg7d6wYVOck+f+5YRxH
+ 01YZjhYwC49vPTcoHoTD8EYcXq/wj63Cb5C+5Xt+tlu/gSN+Y85OCic5r1bRg51TsnW3
+ 05BudZ7Mt9kohFXmGNF74A3ZGE+mh3Mj3lT3rGJVhIbUdLGjVlDON2Hfgnls//ISsp8B
+ 3TAh/IExYhEiGEwLHODItVelxBWh230DfJp9RNLFRZsWMqdnoFX+L3KJ3Ag8VTHxzlpM
+ 4x+Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=LKDP1hyiuSxJLJzh6PxtETHxlHhTQ3RNvBVBm9ROckc=;
- b=s9r2jfMihvurihhJmnkEu9DCObFsj9EksWOwMn5D0X3XK127Xar69h6hfbcHvMNx2r
- tp8rYaJzqMQ4Mdt99aeUkK6STP7uvDLIzhfKDeOlK3RloE0XnU8sZisBWPFaU/W8Lz0A
- EQn9Y/RoUY7ulmEUMoMl3PnKfML8ynfPCUUh8JGBPrHc16uJFBlzwUflePC3cybT3w32
- yqr2QWkapNXDAu1uTAAa/W0yuqYtTA8ACNL7iXvJdLxFZPm82pc7lXJzJq9lsJGGFeoh
- V35JLTit3rjTBQJIRmq0xroBobMwIa0lx+urUJyrgNeskqA8OQ1gk6bsZl9q2fQmgGBB
- uekQ==
-X-Gm-Message-State: APjAAAXQwpPnpLAW6lfntDmQzULWZOSrIGNyAocCCwp5+cgseLq8OFHe
- t9TOODSs3m7QGOU4pm88ieY=
-X-Google-Smtp-Source: APXvYqzpKF76+7JafsOPb+hJUBKmkk6qQI4meZuR66EOWTQPQWrs9dxfJECmmgTjt7dnRy0P3ahykw==
-X-Received: by 2002:a2e:97cc:: with SMTP id m12mr5871701ljj.241.1581468017616; 
- Tue, 11 Feb 2020 16:40:17 -0800 (PST)
+ bh=ttJW9peokq5rUpFOQPvSx+wLa406veCgVEoVyR6YAV8=;
+ b=uoL/60DcFN/X8vFeYshXUYyOHpgPjdNjl+TwBjY47WvQy9ERRquJ2PDtzq+/qU+G2n
+ jUleiSkri6enQaXHu5XSJ6z+POzdmXtXR3IdjYvsOmxotnVd8YgW/7TPgDPs1golnO8C
+ bxdZ/qvBjc+6m/KMLPLD6XhyOl5w/qKwyME8S0YI7z0khzStYz9hwt2OdbkWKi7yDlBG
+ i9Sf8QbD0p3GWNOpUqnxwK29ttrh55unwXgn4GKVwbLHiMHm9GzcliT4nAWSV09IQyKM
+ 4LL3oWKu4UKjkLPIjDi/ksfmQ/rHFHR7IdIZzetCKaCgKqothFOS6ic90kWYJlE5bi0o
+ NXJQ==
+X-Gm-Message-State: APjAAAWDQAw5gwCa/zUFdPPDC72Fwyv1u0xxNIHV3B26dd8DrN1eWUS5
+ Deo2BeCFNi3LF0ipC2YT2Mg=
+X-Google-Smtp-Source: APXvYqwnNi3Y4kZzLlTAlPxy+jEgL87XZNvOHJv/JSD1vBuRqr4PxxEZvgCLUMMsg5LNGxXQvOlRpg==
+X-Received: by 2002:a2e:b4ef:: with SMTP id s15mr6242730ljm.20.1581468018867; 
+ Tue, 11 Feb 2020 16:40:18 -0800 (PST)
 Received: from z50.gdansk-morena.vectranet.pl
  (109241122244.gdansk.vectranet.pl. [109.241.122.244])
- by smtp.gmail.com with ESMTPSA id e8sm3621935ljb.45.2020.02.11.16.40.16
+ by smtp.gmail.com with ESMTPSA id e8sm3621935ljb.45.2020.02.11.16.40.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 11 Feb 2020 16:40:17 -0800 (PST)
+ Tue, 11 Feb 2020 16:40:18 -0800 (PST)
 From: Janusz Krzysztofik <jmkrzyszt@gmail.com>
 To: Miquel Raynal <miquel.raynal@bootlin.com>,
  Richard Weinberger <richard@nod.at>
-Subject: [RFC PATCH 04/14 v4] mtd: rawnand: ams-delta: Drop board specific
- partition info
-Date: Wed, 12 Feb 2020 01:39:19 +0100
-Message-Id: <20200212003929.6682-5-jmkrzyszt@gmail.com>
+Subject: [RFC PATCH 05/14] mtd: rawnand: ams-delta: Enable OF partition info
+ support
+Date: Wed, 12 Feb 2020 01:39:20 +0100
+Message-Id: <20200212003929.6682-6-jmkrzyszt@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200212003929.6682-1-jmkrzyszt@gmail.com>
 References: <20200212003929.6682-1-jmkrzyszt@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_164019_059341_C496CFFA 
-X-CRM114-Status: GOOD (  12.44  )
+X-CRM114-CacheID: sfid-20200211_164020_334858_FA1C6629 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.4 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  1.0 HK_RANDOM_FROM         From username looks random
  0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
@@ -110,76 +111,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now as we support fetching partition info from device platform data and
-the Amstrad Delta board file provides that info, drop it from the
-driver code.
-
-v2: rebase on top of gpio_nand_platdata extension
+Provide MTD layer with device OF node info required by OF partition
+parser.
 
 Signed-off-by: Janusz Krzysztofik <jmkrzyszt@gmail.com>
 ---
-Changelog:
-v4: rebase on top of gpio_nand_platdata driver/board extensions,
-  - drop no longer required command line parser related bits,
-  - adjust commit description,
-  - move OF fix to a separate patch.
-v3: add information on the requirement for passing partition info via
-    kernel command line to the board Kconfig entry help text.
-v2: fix a typo poitned out by Aaro - thanks!,
-  - fix device_node not passed to OF parser via mtd_info,
-  - commit message reworded and reformatted a bit for better
-    readability.
-
- drivers/mtd/nand/raw/ams-delta.c | 29 ++---------------------------
- 1 file changed, 2 insertions(+), 27 deletions(-)
+ drivers/mtd/nand/raw/ams-delta.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/mtd/nand/raw/ams-delta.c b/drivers/mtd/nand/raw/ams-delta.c
-index fbab7cc14607..25f121adea6f 100644
+index 25f121adea6f..fb96f6a3b0b3 100644
 --- a/drivers/mtd/nand/raw/ams-delta.c
 +++ b/drivers/mtd/nand/raw/ams-delta.c
-@@ -42,31 +42,6 @@ struct ams_delta_nand {
- 	bool			data_in;
- };
+@@ -222,6 +222,7 @@ static int ams_delta_init(struct platform_device *pdev)
+ 	mtd->dev.parent = &pdev->dev;
  
--/*
-- * Define partitions for flash devices
-- */
--
--static const struct mtd_partition partition_info[] = {
--	{ .name		= "Kernel",
--	  .offset	= 0,
--	  .size		= 3 * SZ_1M + SZ_512K },
--	{ .name		= "u-boot",
--	  .offset	= 3 * SZ_1M + SZ_512K,
--	  .size		= SZ_256K },
--	{ .name		= "u-boot params",
--	  .offset	= 3 * SZ_1M + SZ_512K + SZ_256K,
--	  .size		= SZ_256K },
--	{ .name		= "Amstrad LDR",
--	  .offset	= 4 * SZ_1M,
--	  .size		= SZ_256K },
--	{ .name		= "File system",
--	  .offset	= 4 * SZ_1M + 1 * SZ_256K,
--	  .size		= 27 * SZ_1M },
--	{ .name		= "PBL reserved",
--	  .offset	= 32 * SZ_1M - 3 * SZ_256K,
--	  .size		=  3 * SZ_256K },
--};
--
- static void ams_delta_write_commit(struct ams_delta_nand *priv)
- {
- 	gpiod_set_value(priv->gpiod_nwe, 0);
-@@ -222,8 +197,8 @@ static const struct nand_controller_ops ams_delta_ops = {
- static int ams_delta_init(struct platform_device *pdev)
- {
- 	struct gpio_nand_platdata *pdata = dev_get_platdata(&pdev->dev);
--	const struct mtd_partition *partitions = partition_info;
--	int num_partitions = ARRAY_SIZE(partition_info);
-+	const struct mtd_partition *partitions = NULL;
-+	int num_partitions = 0;
- 	struct ams_delta_nand *priv;
- 	struct nand_chip *this;
- 	struct mtd_info *mtd;
+ 	nand_set_controller_data(this, priv);
++	nand_set_flash_node(this, pdev->dev.of_node);
+ 
+ 	priv->gpiod_rdy = devm_gpiod_get_optional(&pdev->dev, "rdy", GPIOD_IN);
+ 	if (IS_ERR(priv->gpiod_rdy)) {
 -- 
 2.24.1
 
