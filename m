@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5897015B42A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 23:56:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B418615B44D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 00:02:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qt6I7/NTHSuLMMvQZ3Loty0Nt/PpXtsvXoLdfEVqDHE=; b=nDaR/VV948+AD6
-	sOcf1Zj4WJTA/1F6ZxQROap75rQBgEdO/b2R5+F9UoWTw/8a52j0uCAHCvRRu43AC2IIhtfIZ9c4D
-	oMTg8GsoL+zTRxiJc/GrR6NR0LCFPQ4enKZ6sMOtibNOxi6e2vNTS751BBuyVO391ZqWtWB5f7gBR
-	vABka3+l+5BvFAzoKS4M9+dusrBvxBT5i3HyW++OlSjx0RlzdgKGUwP9g2WTQ3DcaqvmytTQiCinh
-	K3osGiuOtxqkzDcAwB5/+BAAyTriiVz2ib9L/jj4d4ke8qmlUNejj40DYwFyyHO3DpWJ6PHKke3xP
-	DlOmV7x3vcJ3/BSHvKiA==;
+	List-Owner; bh=95Tu355CsC4KkXaGcZ1Z8e7jtIZut+pJhCrjCyilxlY=; b=eM9L3XsLPoc4u2
+	QMLUj6CpGc4tvUIEx+1EU+7LwnT5ImkBcwsAGBFouuMzWkJcEORnIOI0VVavh5Q28k538eIWei/eJ
+	RbxFZHZlyk6N6J+2QICj5eS2vtleNNQCEc/PUMkyZOJqFdXO8p4FJd4zRlrud7IqC8ZAA0a57bmTh
+	kcsq/jaYknIXPuIqz0u/1MMlAPxl6vMGZQknPW/VQr+chNlUwpzTpflI9XNmGHsKr2e4Fzykbkqti
+	AYK7fEqSJBeBpPb75uCcdGnwBILDx1s6ifypJ8exYxHaVzfYZqeC/UPSuSX9zwnx9HsTDGleIaHSh
+	aLB0UNQ0Jswplja2b/Zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j20vb-0005As-L2; Wed, 12 Feb 2020 22:56:19 +0000
+	id 1j2118-0007WQ-Ip; Wed, 12 Feb 2020 23:02:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j20vS-0005AU-MB
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 22:56:11 +0000
+ id 1j2111-0007VQ-A4
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 23:01:56 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D357B2168B;
- Wed, 12 Feb 2020 22:56:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D49E521569;
+ Wed, 12 Feb 2020 23:01:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581548169;
- bh=SCnNSfEGNeaLvEPYBFXgqfow4bBeZQwy5T7gptghPE8=;
+ s=default; t=1581548514;
+ bh=1Dc+b6kANOK+MTUko6hygKOXL+SmgqNxbhJ3tJ96sug=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=x/+w7+6ZCMH4J8zy6pThODObm0WIsKddbKyctJ1uGJ2hLo2RqxUYjFhzF/DOhJgqJ
- /IQuYnyWJxDNkg8SRGiWkoBFl0RP6kIuVEMXx6kOgGrOqFvvX7H8FBGG7prp5Hl2Xa
- sP9pjAeUtAb6P53W5C0wakF+gvlwUz82LxutybE4=
+ b=B02hWz3753ZHM5ekoQQLoas2pIjQX/l6HIjRBD/qLVakEVqrolq2dMisDy2ZrmOBj
+ uI5cD+KoD+MoDWoDB43+lY112neAIEoLEiC5BJTxVB5IW8iC/5G+7Lsn8WV40so9vC
+ 1/xXlA7jUoSX70HtV6x5CkGw/S7Q1b00RW+ZO23Y=
 MIME-Version: 1.0
-In-Reply-To: <1581490943-17920-1-git-send-email-Anson.Huang@nxp.com>
-References: <1581490943-17920-1-git-send-email-Anson.Huang@nxp.com>
-Subject: Re: [PATCH] clk: imx: Include clk-provider.h instead of clk.h for
- i.MX8M SoCs clock driver
+In-Reply-To: <1581498180-2652-1-git-send-email-Anson.Huang@nxp.com>
+References: <1581498180-2652-1-git-send-email-Anson.Huang@nxp.com>
+Subject: Re: [PATCH] clk: imx: drop redundant initialization
 From: Stephen Boyd <sboyd@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>, abel.vesa@nxp.com, festevam@gmail.com,
- jun.li@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, mturquette@baylibre.com, peng.fan@nxp.com,
- ping.bai@nxp.com, s.hauer@pengutronix.de, shawnguo@kernel.org
-Date: Wed, 12 Feb 2020 14:56:09 -0800
-Message-ID: <158154816906.184098.11837279192030973805@swboyd.mtv.corp.google.com>
+To: Anson Huang <Anson.Huang@nxp.com>, abel.vesa@nxp.com, allison@lohutok.net,
+ broonie@kernel.org, festevam@gmail.com, gregkh@linuxfoundation.org,
+ info@metux.net, kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
+ mturquette@baylibre.com, peng.fan@nxp.com, rfontana@redhat.com,
+ s.hauer@pengutronix.de, shawnguo@kernel.org, tglx@linutronix.de
+Date: Wed, 12 Feb 2020 15:01:54 -0800
+Message-ID: <158154851405.184098.10235896077677896514@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_145610_747880_9278C402 
-X-CRM114-Status: UNSURE (   5.92  )
+X-CRM114-CacheID: sfid-20200212_150155_371168_F47C3603 
+X-CRM114-Status: UNSURE (   4.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -87,9 +87,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Anson Huang (2020-02-11 23:02:23)
-> The i.MX8M SoCs clock driver are provider, NOT consumer, so clk-provider.h
-> should be used instead of clk.h.
+Quoting Anson Huang (2020-02-12 01:03:00)
+> No need to initialize flags as 0, remove the initialization.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
