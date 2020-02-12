@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0617815AE6F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 18:10:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E206B15AE72
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 18:11:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kvVuHkUGjKgwSUHdoyoj92dWks4CVDUMpjjvIc4EkIs=; b=iN4K3iYRVFlrN5
-	IpTzE5HMBrp+tXxnEZeTT4pvmiNGkrhTuFhYZBq/cXhlmlC4GX0t9DaCLoVWBYNCoX1OADA+hRa6B
-	dE1HJOz9o8hdsS4m7gqg+YxbsHsCPqUF66nBPQCJK/U5TWC3fWqR5/opvOGcBcRNtG3CP2CBQL32/
-	rQgY7OmrJJX660BempClHY1WffNtgrH8izhnjNQ3aaMgiRYMwdV2eYW4zKwVGly1M2oU/J1X4m5kU
-	11+kz1uO9vXZ+vwmigTSLJfh7eHRzV2GnVlQr/Jb5ktpoIrcOtWZ9JIYzYBvPCMJHLJ2cpz33/4w6
-	FFvk1Wc8Ixn0P7LoTJYA==;
+	List-Owner; bh=neG0Z0umssvMAdXkUcoQvtzbuX+XMThVKNrKQfufuQU=; b=lZSQuGLW+SAsEC
+	1yLKhQJoYNgXMdGQfViKlVefwUXt4BFPsFw/4OhxHOV23Pfz/tHKZ7lCc0Z6o/BpmQEAbjU+qt2+H
+	5EzldhR+sxUPst68hfxP1pO0PH4wMcGp82pTSuzmZV/wAmKTuZln8ZSLj1LuZeERfP+BMLqHyk8wT
+	eghOuZun92VUC1qVPEcGNlRhFkpQ/fVqkAZPUUxnRYcqknQei37t8HeaJ5POnu3M0mHASKkNFI9IP
+	ocOx/3zAbxRiUcsfdaA7NscQxn9OcaSp7NIx/L3bIUzV6iCBJt4lSvyePQ6SJtpDYQWLP99uDuaHG
+	zChcCaPSgUU4xNQjDPUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1vX7-0002OP-8m; Wed, 12 Feb 2020 17:10:41 +0000
+	id 1j1vXR-0002eJ-3r; Wed, 12 Feb 2020 17:11:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1vWC-0000OW-FN; Wed, 12 Feb 2020 17:09:45 +0000
+ id 1j1vWP-0000bY-T3; Wed, 12 Feb 2020 17:09:59 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C1D2B20658;
- Wed, 12 Feb 2020 17:09:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2FF9820658;
+ Wed, 12 Feb 2020 17:09:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581527383;
- bh=cpW5hQOQpVJNwP+6xV9ON+eO+BNIAnV7EBPjZ8w1IgM=;
+ s=default; t=1581527397;
+ bh=AcHXHQJXyMWIuztIi80OjgoPGl5MdYrZDvL2NW3Vq0Y=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=FqHk1hODDFQgCzZvgauqTMOq/a/UGvtW6Y/RW7mkDXdeMXH+P+EG/e/CqfXs00RcH
- zV3LDMoFA7fNfoUWmVj/QjGi2oi6od52EuBJBz8lRo33J6dLNaLCuLnwy7vgZDcDKG
- V/Ft4kMc7O3dKcTsLR6nrYsxykBSGqGV0YC4hp1s=
+ b=uomKJQQAVHX/x+ZP+YJIqHPI6SZtSV0EtJtPWxHagEVhn4LxzPvQ3MuB3Vn3epyRS
+ WIgoTl9hW/QIdFEOblMDVJ1a2F5EiB2tmg1gkhKlcnHyORpEdKytRDsfGKUAxMYF84
+ DFmmDrvgSN7u/HYE4Tqz/aVPzJcBbQPYTPXRjSKI=
 MIME-Version: 1.0
-In-Reply-To: <20200212100830.446-6-geert+renesas@glider.be>
+In-Reply-To: <20200212100830.446-7-geert+renesas@glider.be>
 References: <20200212100830.446-1-geert+renesas@glider.be>
- <20200212100830.446-6-geert+renesas@glider.be>
-Subject: Re: [PATCH 5/7] ARM: shmobile: Replace <linux/clk-provider.h> by
+ <20200212100830.446-7-geert+renesas@glider.be>
+Subject: Re: [PATCH 6/7] ARM: sunxi: Replace <linux/clk-provider.h> by
  <linux/of_clk.h>
 From: Stephen Boyd <sboyd@kernel.org>
 To: Chen-Yu Tsai <wens@csie.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
@@ -46,12 +46,12 @@ To: Chen-Yu Tsai <wens@csie.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
  Magnus Damm <magnus.damm@gmail.com>, Matthias Brugger <matthias.bgg@gmail.com>,
  Maxime Ripard <mripard@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
  Russell King <linux@armlinux.org.uk>
-Date: Wed, 12 Feb 2020 09:09:43 -0800
-Message-ID: <158152738307.121156.11685196530624094812@swboyd.mtv.corp.google.com>
+Date: Wed, 12 Feb 2020 09:09:56 -0800
+Message-ID: <158152739647.121156.16877229572128607400@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_090944_561248_DA3F1778 
-X-CRM114-Status: UNSURE (   7.24  )
+X-CRM114-CacheID: sfid-20200212_090957_979894_DF3DE42B 
+X-CRM114-Status: UNSURE (   7.06  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -90,8 +90,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Geert Uytterhoeven (2020-02-12 02:08:28)
-> The R-Car Gen2 platform code is not a clock provider, and just needs to
+Quoting Geert Uytterhoeven (2020-02-12 02:08:29)
+> The Allwinner platform code is not a clock provider, and just needs to
 > call of_clk_init().
 > 
 > Hence it can include <linux/of_clk.h> instead of <linux/clk-provider.h>.
