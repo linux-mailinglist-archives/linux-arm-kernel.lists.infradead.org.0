@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7AF615AC0A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 16:36:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A51CF15AC13
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 16:36:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PCt8UmYBOzXKf2N7QWsN9ASgWMCK2gtHm3iJfZryq7c=; b=fZQzmI6XnkTOqN
-	jjDTzLDZyVlV4l+auEhwwHQckdIw63F1GNtqZxLmsE7q3psNrsg+p8NyGTG5SAvtUwtqNFWuSlRAh
-	bn1Y7d2H59hbf/voRbWh04O2l4csioNA0c+00StFwFu9q4SOXv83WIULCjVlHMLOqetseOAGrcu76
-	JETqaCwACP0rYN01acy54AAd0GIwiYgcp80eEd94AI0L9hfA4iwAcVD/wts92YnXVyaN2Kde0ARgr
-	ZQzQi+n0FaHZrUNaSmSwNTJ9fJvSVSA5wQR9QraMnUCZIqG/q5vQWVd/s2mxx8KXl1j6vO+O3mwGe
-	YWmwfECudomBFz2Xe3KQ==;
+	List-Owner; bh=Fou6bQHJncJQ37kGO+3zsyRCok7izVbWDl1GgupaRZU=; b=mJOIhU6CL0tHTC
+	W7PVyuq0TuKEWr1xSnEutZraMwLN8z7A6FaeAlf6jsShoI4ZYVOIS3wuYZPeeB04XesY7TjoM75cR
+	3eCk0lw1+pYGp5joQOb/8mcvhIQyAhrp81Sxi1pgWk3tzl7mTSpPTCbuHDv6Sw6wJxX9lDPN1QbO9
+	KoOAHm1prisO4edMiXGms7DLDV+mkovKbaXY0Pw45YmNMY8XLwSGy8RtOpKVV8ngXtQnWmGhTbi4p
+	+1z+i1zTFYOaaAWlgkjemFgYpWlx+9jciWxIQrJHd1wj/tMxzleJ4EEhEHC4scuAJwiIAmLgjaHBu
+	nHofWeWhR9JiDzS+YwDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1u49-0002iZ-65; Wed, 12 Feb 2020 15:36:41 +0000
+	id 1j1u4K-0002wb-St; Wed, 12 Feb 2020 15:36:52 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1u3v-0002fk-Do
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 15:36:28 +0000
+ id 1j1u41-0002ma-T6
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 15:36:35 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D9B54328;
- Wed, 12 Feb 2020 07:36:26 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 51894328;
+ Wed, 12 Feb 2020 07:36:33 -0800 (PST)
 Received: from [10.1.194.46] (e113632-lin.cambridge.arm.com [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 909A13F68F;
- Wed, 12 Feb 2020 07:36:24 -0800 (PST)
-Subject: Re: [PATCH v3 3/7] arm64/kvm: disable access to AMU registers from
- kvm guests
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E6B833F68F;
+ Wed, 12 Feb 2020 07:36:30 -0800 (PST)
+Subject: Re: [PATCH v3 4/7] Documentation: arm64: document support for the AMU
+ extension
 To: Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
  will@kernel.org, mark.rutland@arm.com, maz@kernel.org,
  suzuki.poulose@arm.com, sudeep.holla@arm.com, lukasz.luba@arm.com,
  rjw@rjwysocki.net
 References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-4-ionela.voinescu@arm.com>
+ <20200211184542.29585-5-ionela.voinescu@arm.com>
 From: Valentin Schneider <valentin.schneider@arm.com>
-Message-ID: <a4d66284-a0fc-4bbb-3a98-ea4093bcf389@arm.com>
-Date: Wed, 12 Feb 2020 15:36:23 +0000
+Message-ID: <66e5b5ad-c714-d81c-7b91-47dd5c14d87c@arm.com>
+Date: Wed, 12 Feb 2020 15:36:29 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200211184542.29585-4-ionela.voinescu@arm.com>
+In-Reply-To: <20200211184542.29585-5-ionela.voinescu@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_073627_519301_BA34CD14 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20200212_073634_029875_997B1C7A 
+X-CRM114-Status: UNSURE (   8.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,10 +69,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, peterz@infradead.org, viresh.kumar@linaro.org,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, mingo@redhat.com,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
+Cc: Jonathan Corbet <corbet@lwn.net>, linux-doc@vger.kernel.org,
+ peterz@infradead.org, viresh.kumar@linaro.org, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mingo@redhat.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -79,27 +79,20 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 11/02/2020 18:45, Ionela Voinescu wrote:
-> Access to the AMU counters should be disabled by default in kvm guests,
-> as information from the counters might reveal activity in other guests
-> or activity on the host.
+> The activity monitors extension is an optional extension introduced
+> by the ARMv8.4 CPU architecture.
 > 
-> Therefore, disable access to AMU registers from EL0 and EL1 in kvm
-> guests by:
->  - Hiding the presence of the extension in the feature register
->    (SYS_ID_AA64PFR0_EL1) on the VCPU.
->  - Disabling access to the AMU registers before switching to the guest.
->  - Trapping accesses and injecting an undefined instruction into the
->    guest.
+> Add initial documentation for the AMUv1 extension:
+>  - arm64/amu.txt: AMUv1 documentation
+>  - arm64/booting.txt: system registers initialisation
 > 
 > Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> Cc: Marc Zyngier <maz@kernel.org>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
-> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
 > Cc: Catalin Marinas <catalin.marinas@arm.com>
 > Cc: Will Deacon <will@kernel.org>
+> Cc: Jonathan Corbet <corbet@lwn.net>
 
-Reviewed-by: Valentin Schneider <valentin.schneider@arm.com> 
+
+Reviewed-by: Valentin Schneider <valentin.schneider@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
