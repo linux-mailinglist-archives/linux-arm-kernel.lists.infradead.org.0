@@ -2,159 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA25415A613
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:18:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69A4F15A62C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:20:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tz0UjidGM5lDroQTxhYzSLjv2Js3viMDUcGFJrIWAwM=; b=Rie5PQqiBGJtob
-	DwcLpdHffMaDVYU8GDvwz0kgLhbUUzDAFc7d2NYJg9IO+jskO2fVAMZPMORJofs56CqJG0W4H3Xmw
-	+uxwNirQ0LAvY8hK8sWGuZl/HA8ekTjCPpuF/LG9OtDnVDkV4c4gyJXxrlI3Flj+LOrQrCyzms4+T
-	jp1fobMNyx2DuCh+LlIP87KKTCGpmjlJLNp1EVbK9Sy23gwujSeHKuslJdwPzjDdN+EOie2C2g+oL
-	AoYAD27KfYmiWabXMHnawulTc40gQLFc/GtiS3G2YaRW7RxF6rEa84WLzO0hDh21aKrfuNjjDjBzd
-	b5JkvIB+fQJMONPu9rgA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:List-Owner; bh=bQhkhN+WQzEeqDbKz6T6B3GM2DN0JvxVNoOnjuOqAnQ=; b=WD
+	4HGD+Wlfe8fVAR4gDI8rVe0CbGD1FX2JchUp+GhTJDmVG/7AntV16HoJJQlJ2+rANBDx2xWNBfxMX
+	vOK05PNon2kASVIzLy1UycLcMVtkEZwb9H/OdB90LzMbLiWoXODx64Y0wEE2aBewUCK/Ec+Gbt3zV
+	Y88zQjk1v8sEnJVRoSYc/6GMGNZMh+7Cu3r9cMsQs+vL3zlkj55uKxLdnYYRF8vH9LNK4y1Caeaol
+	HYuycVIdHJjMCxmz1YAC2bwvqX9CXGW5HXdFFt8okWqkVjGCxBNXy+N6pjrmqvPq9uqxy/0j1r3V8
+	2XjcP3F9MfQ+rFvCIIp1DkQlnB8Zalng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1p5u-0003Pc-NL; Wed, 12 Feb 2020 10:18:10 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j1p8H-000531-Eq; Wed, 12 Feb 2020 10:20:37 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1p5e-0003OY-CD; Wed, 12 Feb 2020 10:17:55 +0000
-Received: by mail-wr1-x442.google.com with SMTP id g3so1478627wrs.12;
- Wed, 12 Feb 2020 02:17:53 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=RiLSOzSQqH2K+5mtqWU1/VvgqTQPm8zs0bfN/OnhddU=;
- b=dSr3J5WfjlyUPVN3WpQTYigWQcsG4nTnY53SFJgDeAQI/u+Aq/dZuLAQ7IrWa0YqLF
- hIjlMf653h/9uixMCu9Tr0tfcxkEWbUNLKNwRCpzsP3PGCT8T6ykrtk3Sbs2wH+jLbm3
- AGZbSYwwxjbch+iRlfC3nVFSFFurQdFlNcVjaiHLPtnh0Be3HeePPqxkrpV37IDFkxGz
- VeTJ4T3MLnsQJWzviJxiqunZbeTJWGKD+MsQksoVQKvcIOnmPwcT6C56nFlCk3t4/P2X
- xWuseD2i6niZGCns+WUKl4/PYIt+7NhHdt55z3jxl9lRXvfavbHM2+WCPxOW14v1HwXe
- dm2A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=RiLSOzSQqH2K+5mtqWU1/VvgqTQPm8zs0bfN/OnhddU=;
- b=MYaOR+K/7ym0lPqkOn10XBZ5dXSTCtN6HqPOaHZgd/0E8QcLE1AQMwD78+Yda99ibw
- v8nJsqUPdayFQ/zmznzqOkrqvtKAaq/GHPiQWOrHPBVCwyHm1GatM8B2cnehUZe7xm6y
- O+g8DDDh9MC5AtQqqC7NZCS+QaEV1/w6IkF3RTMAfBICyvC3P5kUpF7nBSmFPzaDPh0O
- umrimwFQYoBkNLEBxlFk2lz5K3pM+75+s0TDbsOEFoz8Z/CNWdS6GapuFjrgcHNkHQ7G
- D76KEVHfPuUJ68VYWGikOzr2NbIgTm3FIIsrrjrNnmWM2ndxzi50QuZjWwG1EZtCRPC+
- Kreg==
-X-Gm-Message-State: APjAAAXWnJaUx3NaxHqCQkl+q7WeoQzBiTmDoX83Hb+sP2q1kfdWC/uV
- 5N4bl0eq/yk2f/wtCG0j+3w=
-X-Google-Smtp-Source: APXvYqy0ppUWHrV4RDKzHlCLXDa/ghFxU/rzeve20LS85XvsmSSgh0TaXxY+2AXb4ZG5uzEbzy6nSg==
-X-Received: by 2002:a5d:4a8c:: with SMTP id o12mr14027627wrq.43.1581502672272; 
- Wed, 12 Feb 2020 02:17:52 -0800 (PST)
-Received: from ziggy.stardust ([37.223.145.31])
- by smtp.gmail.com with ESMTPSA id d16sm41220wrg.27.2020.02.12.02.17.51
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 12 Feb 2020 02:17:51 -0800 (PST)
-Subject: Re: [PATCH] arm64: dts: mt8173: add arm,no-tick-in-suspend in timer
-To: Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org
-References: <20200212060536.156890-1-hsinyi@chromium.org>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <b9d6be0d-a0ea-e0cc-8c87-338fa7e6df0b@gmail.com>
-Date: Wed, 12 Feb 2020 11:17:50 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <20200212060536.156890-1-hsinyi@chromium.org>
-Content-Language: en-US
+ id 1j1p86-00051T-QJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 10:20:28 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200212102023euoutp029f5f219bc89825046c36ac3573ca3709~yoHBYFwTD0651706517euoutp02T
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Feb 2020 10:20:23 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200212102023euoutp029f5f219bc89825046c36ac3573ca3709~yoHBYFwTD0651706517euoutp02T
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1581502823;
+ bh=nJIMo/hmctKSAepFMBORmUEOiA95WQ4W8/e/ZxU9jaM=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=AqY+HzEvHjbhTHD5uuMNZrzwBjIQo6W//piVoKe9k/diB0hU8cdbj9+BFGF5V1RGp
+ xQvPeucEsBH9Z5eAeW2NZokxtY+tVGWIXKg0jOfcMW4A/sj6JoElY1wqkdPzcw2xpH
+ T3+8NNdWD8I9kHbLcV9cWoNpEoX9aR6HX4I2IvZw=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200212102023eucas1p2555d9d8d2bc71e11a5b185788e5001ba~yoHBJn__T0070600706eucas1p2A;
+ Wed, 12 Feb 2020 10:20:23 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 54.CC.60679.761D34E5; Wed, 12
+ Feb 2020 10:20:23 +0000 (GMT)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200212102022eucas1p1c49daf15d3e63eda9a56124bc4eafb57~yoHA3l_qw0607406074eucas1p1Y;
+ Wed, 12 Feb 2020 10:20:22 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200212102022eusmtrp1d294fd0d12b2145c659cd794b3725792~yoHA2__-n1418814188eusmtrp1v;
+ Wed, 12 Feb 2020 10:20:22 +0000 (GMT)
+X-AuditID: cbfec7f4-0cbff7000001ed07-2b-5e43d167bc3c
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 7C.9E.08375.661D34E5; Wed, 12
+ Feb 2020 10:20:22 +0000 (GMT)
+Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200212102022eusmtip2426b56ff9c670b9f841aa901adba3b19~yoHAd-Rsm1735217352eusmtip2a;
+ Wed, 12 Feb 2020 10:20:22 +0000 (GMT)
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+To: linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] ARM: bcm2835_defconfig: add minimal support for Raspberry Pi4
+Date: Wed, 12 Feb 2020 11:20:09 +0100
+Message-Id: <20200212102009.17428-1-m.szyprowski@samsung.com>
+X-Mailer: git-send-email 2.17.1
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrGIsWRmVeSWpSXmKPExsWy7djPc7rpF53jDE7fFbDY9Pgaq8XlXXPY
+ LCbe3sBusfbIXXaLbbOWs1lsWnGDzYHNY+stU4/NS+o9+rasYvTYfLra4/MmuQDWKC6blNSc
+ zLLUIn27BK6M1kaVgh9sFZ8XtzE2MLawdTFyckgImEisnfsIyObiEBJYwSgxf9JeRgjnC6NE
+ 6+vtLBDOZ0aJ0/PnMsK0HJt3EaplOaPE9tuz2OBalp88wgJSxSZgKNH1tgsowcEhIpAnsfZT
+ MkiYWaCLUeJ3GzeILSwQIPF77g12EJtFQFWi6fAtsAW8ArYSa688grpPXmL1hgPMIPMlBI6w
+ SVy6cpIJIuEi0fb/LwuELSzx6vgWdghbRuL05B4WiIZmRomH59ayQzg9jBKXm2ZA/WAtcefc
+ L7DrmAU0Jdbv0ocIO0o83baJHSQsIcAnceOtIMTRfBKTtk1nhgjzSnS0CUFUq0nMOr4Obu3B
+ C5eYIWwPiaVXZoEtEhKIlXjT94J1AqPcLIRdCxgZVzGKp5YW56anFhvlpZbrFSfmFpfmpesl
+ 5+duYgTG/ul/x7/sYNz1J+kQowAHoxIPr8N0pzgh1sSy4srcQ4wSHMxKIrzijc5xQrwpiZVV
+ qUX58UWlOanFhxilOViUxHmNF72MFRJITyxJzU5NLUgtgskycXBKNTDueLjalfVej/7Vazs/
+ +N0pv5nXOOmXz9Imganse+4ksZgevfznMaOGt4v7eb3a6lbdi/e6/s+UUZCrVHl3sTTjbeYs
+ A3FtzZN7e06e4xXV2WazQkfEaf2EL+1SGW+di9nSb/+JkMvfNWt1Q/6DwwXuer9uZc6O9T12
+ JKG4Qk034JjK+x8i0t1KLMUZiYZazEXFiQDEwgvT+QIAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrLLMWRmVeSWpSXmKPExsVy+t/xe7ppF53jDObdNbfY9Pgaq8XlXXPY
+ LCbe3sBusfbIXXaLbbOWs1lsWnGDzYHNY+stU4/NS+o9+rasYvTYfLra4/MmuQDWKD2bovzS
+ klSFjPziElulaEMLIz1DSws9IxNLPUNj81grI1MlfTublNSczLLUIn27BL2M1kaVgh9sFZ8X
+ tzE2MLawdTFyckgImEgcm3cRyObiEBJYyiixpXUOK0RCRuLktAYoW1jiz7UuqKJPjBKTuiew
+ gyTYBAwlut52gU0SESiQOPnlGytIEbNAD6PEqSPvmEASwgJ+Ev+XPQCzWQRUJZoO32IEsXkF
+ bCXWXnkEdYa8xOoNB5gnMPIsYGRYxSiSWlqcm55bbKhXnJhbXJqXrpecn7uJERh024793LyD
+ 8dLG4EOMAhyMSjy8DtOd4oRYE8uKK3MPMUpwMCuJ8Io3OscJ8aYkVlalFuXHF5XmpBYfYjQF
+ Wj6RWUo0OR8YEXkl8YamhuYWlobmxubGZhZK4rwdAgdjhATSE0tSs1NTC1KLYPqYODilGhgb
+ BTyZJ/1S+JWsNo+nK2TuI37XNb1n7l0P/v9M6zJrOHPZ456T9l9atdW8hWf/4ytYO7fNNzdE
+ bGvxGtkrkXv0nr2UKHx886BlwsQ50ibRMXuis5YFXr7xet3tdxxVMzbf0Hr9dfUdIb7i27UL
+ j93YunrtQ85cx9v7n89iKTlVzuyWFarWKHlEiaU4I9FQi7moOBEAxg5WslACAAA=
+X-CMS-MailID: 20200212102022eucas1p1c49daf15d3e63eda9a56124bc4eafb57
+X-Msg-Generator: CA
+X-RootMTR: 20200212102022eucas1p1c49daf15d3e63eda9a56124bc4eafb57
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200212102022eucas1p1c49daf15d3e63eda9a56124bc4eafb57
+References: <CGME20200212102022eucas1p1c49daf15d3e63eda9a56124bc4eafb57@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_021754_426401_16437B5A 
-X-CRM114-Status: GOOD (  17.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200212_022027_066138_95DE677B 
+X-CRM114-Status: GOOD (  10.70  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -162,6 +119,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -173,47 +132,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Add drivers for the minimal set of devices needed to boot Raspberry Pi4
+board.
 
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+---
+ arch/arm/configs/bcm2835_defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
 
-On 12/02/2020 07:05, Hsin-Yi Wang wrote:
-> Arch timer stops during system suspend. Add arm,no-tick-in-suspend
-> property in timer.
-> 
-> This is a follow up for d8ec7595a013
-> ("clocksource/drivers/arm_arch_timer: Don't assume clock runs in
-> suspend")
-> 
+diff --git a/arch/arm/configs/bcm2835_defconfig b/arch/arm/configs/bcm2835_defconfig
+index 519ff58e67b3..b5e7c1bd95f2 100644
+--- a/arch/arm/configs/bcm2835_defconfig
++++ b/arch/arm/configs/bcm2835_defconfig
+@@ -72,6 +72,7 @@ CONFIG_BLK_DEV_SD=y
+ CONFIG_SCSI_CONSTANTS=y
+ CONFIG_SCSI_SCAN_ASYNC=y
+ CONFIG_NETDEVICES=y
++CONFIG_BCMGENET=y
+ CONFIG_USB_LAN78XX=y
+ CONFIG_USB_USBNET=y
+ CONFIG_USB_NET_SMSC95XX=y
+@@ -99,6 +100,8 @@ CONFIG_THERMAL=y
+ CONFIG_BCM2835_THERMAL=y
+ CONFIG_WATCHDOG=y
+ CONFIG_BCM2835_WDT=y
++CONFIG_REGULATOR=y
++CONFIG_REGULATOR_GPIO=y
+ CONFIG_MEDIA_SUPPORT=y
+ CONFIG_MEDIA_CAMERA_SUPPORT=y
+ CONFIG_DRM=y
+-- 
+2.17.1
 
-pushed to v5.6-next/dts64
-
-Thanks!
-
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> ---
->  arch/arm64/boot/dts/mediatek/mt8173.dtsi | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> index 8b4e806d5119..1a9ad90bd7a6 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> @@ -331,6 +331,7 @@ timer {
->  			      (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
->  			     <GIC_PPI 10
->  			      (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
-> +		arm,no-tick-in-suspend;
->  	};
->  
->  	soc {
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
