@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CE0615B125
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 20:31:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 676EF15B126
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 20:31:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WYYhHPu8SyI8AE9XOzCCHyA9O4PiQbXIeh16CWRJk0g=; b=MwY6bNMJlwF6H5
-	ykHPL3Z0PN2wHaTjNqpWgD4Lvsk41EdWQjD/EqvdnB6v+QasC+WNxf54In/27zZ8mMeNxrWlvejcP
-	4faiG5tQkBIUKXXbERZs8Mnq9x9laMlxTtvgteD4RtvtKhfdIdEen7v6WzMOkaaT/zKFM+d6aNtPu
-	k+59b2V/TYBuGYbA4uB8Vhp8inhlwYhAbKoZyXIYGVvJ/7CcnzuANNY6q/QTdc4dliOSCQ9KeskRY
-	RrU2NuRmf+bIXsPVuWKIwR2kFxYew5RlpNW3eEJSKd3qWf2jHz1DwdCmt/08chCfg/f/iXhaf2UHC
-	dLRqQM5/1MTR4nUHmyAA==;
+	List-Owner; bh=7izrDOfrWBZFzu3pZupNkZB9pdu0vKgqiOHXtC8i2Lo=; b=bmIITabSzxOGj7
+	mdH7dUI/mDUU+0rMksUFInzaNcz78Sm2zLq8BzyqkKYOrItrvFCucbD0b7u0GBg00S2k8VlNlDJF8
+	VRoAnrNqD80I8BQYxIjRAs1ynw3DDUDw5Sr6yd88Wvhxwoc6s9v6kJq4UwPMsd1QKmFJUqlyyzQeF
+	3deBqtJhvHPrHTZzOdE2BOeyouD90dyT8tFdyFfyOU+49tCA8tf4EMcKWsaD+aAY90Lr100wE2haN
+	xk2cyFI4Xtf9f1EhfNLzI/f5Ha26Gq+GkEz7kSGrkkOxhHIj1dlvpOZwRpsLFQDRveqTuOGnkhcu+
+	0dITplHjk7gL3lAnNGzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1xj4-0002D6-AB; Wed, 12 Feb 2020 19:31:10 +0000
+	id 1j1xjK-0002RN-3E; Wed, 12 Feb 2020 19:31:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1xhO-00081E-7l
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 19:29:27 +0000
+ id 1j1xhQ-00084X-JV
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 19:29:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5978F101E;
- Wed, 12 Feb 2020 11:29:25 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8A025106F;
+ Wed, 12 Feb 2020 11:29:27 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AEF1C3F68E;
- Wed, 12 Feb 2020 11:29:24 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E006E3F68E;
+ Wed, 12 Feb 2020 11:29:26 -0800 (PST)
 From: Mark Brown <broonie@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
 	Will Deacon <will@kernel.org>
-Subject: [PATCH v6 06/11] arm64: BTI: Decode BTYPE bits when printing PSTATE
-Date: Wed, 12 Feb 2020 19:29:01 +0000
-Message-Id: <20200212192906.53366-7-broonie@kernel.org>
+Subject: [PATCH v6 07/11] arm64: unify native/compat instruction skipping
+Date: Wed, 12 Feb 2020 19:29:02 +0000
+Message-Id: <20200212192906.53366-8-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200212192906.53366-1-broonie@kernel.org>
 References: <20200212192906.53366-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_112926_396925_4B8330C6 
-X-CRM114-Status: GOOD (  11.01  )
+X-CRM114-CacheID: sfid-20200212_112928_842476_1EDE23BF 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -64,8 +64,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Paul Elliott <paul.elliott@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>, Andrew Jones <drjones@redhat.com>,
+ Amit Kachhap <amit.kachhap@arm.com>,
  Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
  Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
  Szabolcs Nagy <szabolcs.nagy@arm.com>, Dave Martin <Dave.Martin@arm.com>,
@@ -84,68 +85,88 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Martin <Dave.Martin@arm.com>
 
-The current code to print PSTATE symbolically when generating
-backtraces etc., does not include the BTYPE field used by Branch
-Target Identification.
+Skipping of an instruction on AArch32 works a bit differently from
+AArch64, mainly due to the different CPSR/PSTATE semantics.
 
-So, decode BTYPE and print it too.
+Currently arm64_skip_faulting_instruction() is only suitable for
+AArch64, and arm64_compat_skip_faulting_instruction() handles the IT
+state machine but is local to traps.c.
 
-In the interests of human-readability, print the classes of BTI
-matched.  The symbolic notation, BTYPE (PSTATE[11:10]) and
-permitted classes of subsequent instruction are:
+Since manual instruction skipping implies a trap, it's a relatively
+slow path.
 
-    -- (BTYPE=0b00): any insn
-    jc (BTYPE=0b01): BTI jc, BTI j, BTI c, PACIxSP
-    -c (BTYPE=0b10): BTI jc, BTI c, PACIxSP
-    j- (BTYPE=0b11): BTI jc, BTI j
+So, make arm64_skip_faulting_instruction() handle both compat and
+native, and get rid of the arm64_compat_skip_faulting_instruction()
+special case.
 
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/kernel/process.c | 17 +++++++++++++++--
- 1 file changed, 15 insertions(+), 2 deletions(-)
+ arch/arm64/kernel/traps.c | 18 ++++++++----------
+ 1 file changed, 8 insertions(+), 10 deletions(-)
 
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 7545a3f743c4..2e244a0d9d60 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -211,6 +211,15 @@ void machine_restart(char *cmd)
- 	while (1);
- }
- 
-+#define bstr(suffix, str) [PSR_BTYPE_ ## suffix >> PSR_BTYPE_SHIFT] = str
-+static const char *const btypes[] = {
-+	bstr(NONE, "--"),
-+	bstr(  JC, "jc"),
-+	bstr(   C, "-c"),
-+	bstr(  J , "j-")
-+};
-+#undef bstr
-+
- static void print_pstate(struct pt_regs *regs)
- {
- 	u64 pstate = regs->pstate;
-@@ -229,7 +238,10 @@ static void print_pstate(struct pt_regs *regs)
- 			pstate & PSR_AA32_I_BIT ? 'I' : 'i',
- 			pstate & PSR_AA32_F_BIT ? 'F' : 'f');
- 	} else {
--		printk("pstate: %08llx (%c%c%c%c %c%c%c%c %cPAN %cUAO)\n",
-+		const char *btype_str = btypes[(pstate & PSR_BTYPE_MASK) >>
-+					       PSR_BTYPE_SHIFT];
-+
-+		printk("pstate: %08llx (%c%c%c%c %c%c%c%c %cPAN %cUAO BTYPE=%s)\n",
- 			pstate,
- 			pstate & PSR_N_BIT ? 'N' : 'n',
- 			pstate & PSR_Z_BIT ? 'Z' : 'z',
-@@ -240,7 +252,8 @@ static void print_pstate(struct pt_regs *regs)
- 			pstate & PSR_I_BIT ? 'I' : 'i',
- 			pstate & PSR_F_BIT ? 'F' : 'f',
- 			pstate & PSR_PAN_BIT ? '+' : '-',
--			pstate & PSR_UAO_BIT ? '+' : '-');
-+			pstate & PSR_UAO_BIT ? '+' : '-',
-+			btype_str);
+diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+index b8c714dda851..bc9f4292bfc3 100644
+--- a/arch/arm64/kernel/traps.c
++++ b/arch/arm64/kernel/traps.c
+@@ -272,6 +272,8 @@ void arm64_notify_die(const char *str, struct pt_regs *regs,
  	}
  }
+ 
++static void advance_itstate(struct pt_regs *regs);
++
+ void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
+ {
+ 	regs->pc += size;
+@@ -282,6 +284,9 @@ void arm64_skip_faulting_instruction(struct pt_regs *regs, unsigned long size)
+ 	 */
+ 	if (user_mode(regs))
+ 		user_fastforward_single_step(current);
++
++	if (regs->pstate & PSR_MODE32_BIT)
++		advance_itstate(regs);
+ }
+ 
+ static LIST_HEAD(undef_hook);
+@@ -644,19 +649,12 @@ static void advance_itstate(struct pt_regs *regs)
+ 	compat_set_it_state(regs, it);
+ }
+ 
+-static void arm64_compat_skip_faulting_instruction(struct pt_regs *regs,
+-						   unsigned int sz)
+-{
+-	advance_itstate(regs);
+-	arm64_skip_faulting_instruction(regs, sz);
+-}
+-
+ static void compat_cntfrq_read_handler(unsigned int esr, struct pt_regs *regs)
+ {
+ 	int reg = (esr & ESR_ELx_CP15_32_ISS_RT_MASK) >> ESR_ELx_CP15_32_ISS_RT_SHIFT;
+ 
+ 	pt_regs_write_reg(regs, reg, arch_timer_get_rate());
+-	arm64_compat_skip_faulting_instruction(regs, 4);
++	arm64_skip_faulting_instruction(regs, 4);
+ }
+ 
+ static const struct sys64_hook cp15_32_hooks[] = {
+@@ -676,7 +674,7 @@ static void compat_cntvct_read_handler(unsigned int esr, struct pt_regs *regs)
+ 
+ 	pt_regs_write_reg(regs, rt, lower_32_bits(val));
+ 	pt_regs_write_reg(regs, rt2, upper_32_bits(val));
+-	arm64_compat_skip_faulting_instruction(regs, 4);
++	arm64_skip_faulting_instruction(regs, 4);
+ }
+ 
+ static const struct sys64_hook cp15_64_hooks[] = {
+@@ -697,7 +695,7 @@ void do_cp15instr(unsigned int esr, struct pt_regs *regs)
+ 		 * There is no T16 variant of a CP access, so we
+ 		 * always advance PC by 4 bytes.
+ 		 */
+-		arm64_compat_skip_faulting_instruction(regs, 4);
++		arm64_skip_faulting_instruction(regs, 4);
+ 		return;
+ 	}
  
 -- 
 2.20.1
