@@ -2,63 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAA9E15A4CE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 10:31:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 948AB15A4D0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 10:31:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nGv9t1IFFGFZRXUgnJi70I36rHpKJJC7KLUeu7q5oD8=; b=OtxBS20HW1z2cnajetkQ0BRJr
-	7JyqWor1WGccmp//WzLjWssjjGlUhF6XfpFEOgLDDgiOfthtcJHKiZNqA4LTXc2/pTVIJt6EOArlW
-	/zn7Tvf5Ot1iKinMcUA1zn3sXp/ZzHvA4+AxlM/lnzlmjb4c1wd6r6J+31ZYJNmqcY5QT1TRCPGCB
-	tgu951Uu18RNQ7oiPo17tqTr1OZ3AY+yqKsokxeaFKZhiaLYkql3jumkJKgWWlvhck+0HmecRCYVq
-	NTK4iSldA8x/o/nliRSddLBB4WN4W2gr9WCZzo21shGiJ765nacsHG3dqz4iWvZU7oS3qUmgpWA4s
-	LTk/IYZnQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3cITan6CIUFTXc+g6aWsSK04GLsstwseedW/e9IhrjQ=; b=jplue4PDYhtVFZ
+	6Z4N+5dv+gYRkUqu4c3Zft5UNKOvY3SHN2o8+moL1hIp4u9YISnZCQnCDlimOoGcdhlIHiR9ZnmW8
+	tTvRhyJiCn8ggmB4hPgpSGxPYj87Y+MpLbPfiUDN1+eo+ArfMC36nzyXqGDcPxFN3OC1c7znWqnYj
+	/7TMY+M0aQm00QsZjsiP6hmsb5HkQuQ25PR6ROFwOG8QLisc4ku8AsVORQosoXhvlIy/GzCxjsI4X
+	8r96Seq6hwCmeEtL4Y4gG8h6+TOAfzrXVndN5OXFYi7PIYPfstQ5BJSzaqtyX7qRhs3RpGLqWInGO
+	cZdFe5Nt8ihjXIwGGUmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1oMO-00035O-2k; Wed, 12 Feb 2020 09:31:08 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1j1oMh-0003L4-Dc; Wed, 12 Feb 2020 09:31:27 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1oMD-00033c-5G
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 09:30:58 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga003.jf.intel.com ([10.7.209.27])
- by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 12 Feb 2020 01:30:55 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,428,1574150400"; d="scan'208";a="233735616"
-Received: from mylly.fi.intel.com (HELO [10.237.72.157]) ([10.237.72.157])
- by orsmga003.jf.intel.com with ESMTP; 12 Feb 2020 01:30:52 -0800
-Subject: Re:
-To: Rajat Jain <rajatja@google.com>, Daniel Mack <daniel@zonque.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-spi@vger.kernel.org,
- linux-kernel@vger.kernel.org
-References: <20200211223400.107604-1-rajatja@google.com>
-From: Jarkko Nikula <jarkko.nikula@linux.intel.com>
-Message-ID: <b3397374-0cb8-cf6c-0555-34541a1c108c@linux.intel.com>
-Date: Wed, 12 Feb 2020 11:30:51 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ id 1j1oMY-0003HV-1y
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 09:31:19 +0000
+Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 7BA28551258B46250CA0;
+ Wed, 12 Feb 2020 17:31:07 +0800 (CST)
+Received: from [127.0.0.1] (10.74.221.148) by DGGEMS406-HUB.china.huawei.com
+ (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Wed, 12 Feb 2020
+ 17:30:56 +0800
+Subject: Re: [PATCH] perf tools: Add arm64 version of get_cpuid()
+To: John Garry <john.garry@huawei.com>, <peterz@infradead.org>,
+ <mingo@redhat.com>, <acme@kernel.org>, <mark.rutland@arm.com>,
+ <alexander.shishkin@linux.intel.com>, <jolsa@redhat.com>,
+ <namhyung@kernel.org>
+References: <1576245255-210926-1-git-send-email-john.garry@huawei.com>
+From: Shaokun Zhang <zhangshaokun@hisilicon.com>
+Message-ID: <4ccf4455-b33d-441b-50ed-28211dd87c7c@hisilicon.com>
+Date: Wed, 12 Feb 2020 17:30:56 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.1.1
 MIME-Version: 1.0
-In-Reply-To: <20200211223400.107604-1-rajatja@google.com>
-Content-Language: en-US
+In-Reply-To: <1576245255-210926-1-git-send-email-john.garry@huawei.com>
+X-Originating-IP: [10.74.221.148]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_013057_231054_87027E37 
-X-CRM114-Status: GOOD (  26.97  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200212_013118_271637_2D45A737 
+X-CRM114-Status: GOOD (  16.71  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,112 +67,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rajatxjain@gmail.com, shobhit.srivastava@intel.com,
- Evan Green <evgreen@chromium.org>, evgreen@google.com,
- porselvan.muthukrishnan@intel.com,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Cc: will@kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linuxarm@huawei.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+Hi John,
 
-+ Andy
+I tested this patch on my new ARM64 Kunpeng 920 server.
+[root@node1 zsk]# ./perf --version
+perf version 5.6.rc1.g2cdb955b7252
 
-On 2/12/20 12:34 AM, Rajat Jain wrote:
-> From: Evan Green <evgreen@chromium.org>
-> 
-> Date: Wed, 29 Jan 2020 13:54:16 -0800
-> Subject: [PATCH] spi: pxa2xx: Add CS control clock quirk
-> 
-This patch subject is missing from mail subject.
+Both perf list and perf stat can work.
 
-> In some circumstances on Intel LPSS controllers, toggling the LPSS
-> CS control register doesn't actually cause the CS line to toggle.
-> This seems to be failure of dynamic clock gating that occurs after
-> going through a suspend/resume transition, where the controller
-> is sent through a reset transition. This ruins SPI transactions
-> that either rely on delay_usecs, or toggle the CS line without
-> sending data.
-> 
-> Whenever CS is toggled, momentarily set the clock gating register
-> to "Force On" to poke the controller into acting on CS.
-> 
-Could you share the test case how to trigger this? What's the platform 
-here? I'd like to check does this reproduce on other Intel LPSS 
-platforms so is there need to add quirk for them too.
+Tested-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
 
-> Signed-off-by: Evan Green <evgreen@chromium.org>
-> Signed-off-by: Rajat Jain <rajatja@google.com>
-> ---
->   drivers/spi/spi-pxa2xx.c | 23 +++++++++++++++++++++++
->   1 file changed, 23 insertions(+)
+Thanks,
+Shaokun
+
+On 2019/12/13 21:54, John Garry wrote:
+> Add an arm64 version of get_cpuid(), which is used for various annotation
+> and headers - for example, I now get the CPUID in "perf report --header",
+> as shown in this snippet:
 > 
-> diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-> index 4c7a71f0fb3e..2e318158fca9 100644
-> --- a/drivers/spi/spi-pxa2xx.c
-> +++ b/drivers/spi/spi-pxa2xx.c
-> @@ -70,6 +70,10 @@ MODULE_ALIAS("platform:pxa2xx-spi");
->   #define LPSS_CAPS_CS_EN_SHIFT			9
->   #define LPSS_CAPS_CS_EN_MASK			(0xf << LPSS_CAPS_CS_EN_SHIFT)
->   
-> +#define LPSS_PRIV_CLOCK_GATE 0x38
-> +#define LPSS_PRIV_CLOCK_GATE_CLK_CTL_MASK 0x3
-> +#define LPSS_PRIV_CLOCK_GATE_CLK_CTL_FORCE_ON 0x3
+> # hostname : ubuntu
+> # os release : 5.5.0-rc1-dirty
+> # perf version : 5.5.rc1.gbf8a13dc9851
+> # arch : aarch64
+> # nrcpus online : 96
+> # nrcpus avail : 96
+> # cpuid : 0x00000000480fd010
+> 
+> Since much of the code to read the MIDR is already in get_cpuid_str(),
+> factor out this code.
+> 
+> Signed-off-by: John Garry <john.garry@huawei.com>
+> 
+> diff --git a/tools/perf/arch/arm64/util/header.c b/tools/perf/arch/arm64/util/header.c
+> index a32e4b72a98f..d730666ab95d 100644
+> --- a/tools/perf/arch/arm64/util/header.c
+> +++ b/tools/perf/arch/arm64/util/header.c
+> @@ -1,8 +1,10 @@
+>  #include <stdio.h>
+>  #include <stdlib.h>
+>  #include <perf/cpumap.h>
+> +#include <util/cpumap.h>
+>  #include <internal/cpumap.h>
+>  #include <api/fs/fs.h>
+> +#include <errno.h>
+>  #include "debug.h"
+>  #include "header.h"
+>  
+> @@ -12,26 +14,21 @@
+>  #define MIDR_VARIANT_SHIFT      20
+>  #define MIDR_VARIANT_MASK       (0xf << MIDR_VARIANT_SHIFT)
+>  
+> -char *get_cpuid_str(struct perf_pmu *pmu)
+> +static int _get_cpuid(char *buf, size_t sz, struct perf_cpu_map *cpus)
+>  {
+> -	char *buf = NULL;
+> -	char path[PATH_MAX];
+>  	const char *sysfs = sysfs__mountpoint();
+> -	int cpu;
+>  	u64 midr = 0;
+> -	struct perf_cpu_map *cpus;
+> -	FILE *file;
+> +	int cpu;
+>  
+> -	if (!sysfs || !pmu || !pmu->cpus)
+> -		return NULL;
+> +	if (!sysfs || sz < MIDR_SIZE)
+> +		return EINVAL;
+>  
+> -	buf = malloc(MIDR_SIZE);
+> -	if (!buf)
+> -		return NULL;
+> +	cpus = perf_cpu_map__get(cpus);
+>  
+> -	/* read midr from list of cpus mapped to this pmu */
+> -	cpus = perf_cpu_map__get(pmu->cpus);
+>  	for (cpu = 0; cpu < perf_cpu_map__nr(cpus); cpu++) {
+> +		char path[PATH_MAX];
+> +		FILE *file;
 > +
->   struct lpss_config {
->   	/* LPSS offset from drv_data->ioaddr */
->   	unsigned offset;
-> @@ -86,6 +90,8 @@ struct lpss_config {
->   	unsigned cs_sel_shift;
->   	unsigned cs_sel_mask;
->   	unsigned cs_num;
-> +	/* Quirks */
-> +	unsigned cs_clk_stays_gated : 1;
->   };
->   
->   /* Keep these sorted with enum pxa_ssp_type */
-> @@ -156,6 +162,7 @@ static const struct lpss_config lpss_platforms[] = {
->   		.tx_threshold_hi = 56,
->   		.cs_sel_shift = 8,
->   		.cs_sel_mask = 3 << 8,
-> +		.cs_clk_stays_gated = true,
->   	},
->   };
->   
-> @@ -383,6 +390,22 @@ static void lpss_ssp_cs_control(struct spi_device *spi, bool enable)
->   	else
->   		value |= LPSS_CS_CONTROL_CS_HIGH;
->   	__lpss_ssp_write_priv(drv_data, config->reg_cs_ctrl, value);
-> +	if (config->cs_clk_stays_gated) {
-> +		u32 clkgate;
+>  		scnprintf(path, PATH_MAX, "%s/devices/system/cpu/cpu%d"MIDR,
+>  				sysfs, cpus->map[cpu]);
+>  
+> @@ -57,12 +54,48 @@ char *get_cpuid_str(struct perf_pmu *pmu)
+>  		break;
+>  	}
+>  
+> -	if (!midr) {
+> +	perf_cpu_map__put(cpus);
 > +
-> +		/*
-> +		 * Changing CS alone when dynamic clock gating is on won't
-> +		 * actually flip CS at that time. This ruins SPI transfers
-> +		 * that specify delays, or have no data. Toggle the clock mode
-> +		 * to force on briefly to poke the CS pin to move.
-> +		 */
-> +		clkgate = __lpss_ssp_read_priv(drv_data, LPSS_PRIV_CLOCK_GATE);
-> +		value = (clkgate & ~LPSS_PRIV_CLOCK_GATE_CLK_CTL_MASK) |
-> +			LPSS_PRIV_CLOCK_GATE_CLK_CTL_FORCE_ON;
+> +	if (!midr)
+> +		return EINVAL;
 > +
-> +		__lpss_ssp_write_priv(drv_data, LPSS_PRIV_CLOCK_GATE, value);
-> +		__lpss_ssp_write_priv(drv_data, LPSS_PRIV_CLOCK_GATE, clkgate);
-> +	}
->   }
->   
-I wonder is it enough to have this quick toggling only or is time or 
-actually number of clock cycles dependent? Now there is no delay between 
-but I'm thinking if it needs certain number cycles does this still work 
-when using low ssp_clk rates similar than in commit d0283eb2dbc1 ("spi: 
-pxa2xx: Add output control for multiple Intel LPSS chip selects").
+> +	return 0;
+> +}
+> +
+> +int get_cpuid(char *buf, size_t sz)
+> +{
+> +	struct perf_cpu_map *cpus = perf_cpu_map__new(NULL);
+> +	int ret;
+> +
+> +	if (!cpus)
+> +		return EINVAL;
+> +
+> +	ret = _get_cpuid(buf, sz, cpus);
+> +
+> +	perf_cpu_map__put(cpus);
+> +
+> +	return ret;
+> +}
+> +
+> +char *get_cpuid_str(struct perf_pmu *pmu)
+> +{
+> +	char *buf = NULL;
+> +	int res;
+> +
+> +	if (!pmu || !pmu->cpus)
+> +		return NULL;
+> +
+> +	buf = malloc(MIDR_SIZE);
+> +	if (!buf)
+> +		return NULL;
+> +
+> +	/* read midr from list of cpus mapped to this pmu */
+> +	res = _get_cpuid(buf, MIDR_SIZE, pmu->cpus);
+> +	if (res) {
+>  		pr_err("failed to get cpuid string for PMU %s\n", pmu->name);
+>  		free(buf);
+>  		buf = NULL;
+>  	}
+>  
+> -	perf_cpu_map__put(cpus);
+>  	return buf;
+>  }
+> 
 
-I'm thinking can this be done only once after resume and may other LPSS 
-blocks need the same? I.e. should this be done in drivers/mfd/intel-lpss.c?
-
-Jarkko
 
 _______________________________________________
 linux-arm-kernel mailing list
