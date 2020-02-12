@@ -2,64 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2624615A5F2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:16:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA25415A613
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:18:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AQhIKCzXgjFFSzK24n1/vkDi+1eDEckhKrdGM827mnk=; b=DG8LfATUcgutZ1
-	EenlsfU5mSowhCOaJHUSWzJeFW4eOMrY+Bn/3oZ7w08vW0TR0sBI+LGZVWAcBIZkTkdFLS0yBr0nc
-	VC3d9Va69X7ZmlQGHrrUNia/PJU4xq8kgiGBfFdKSBZT3/xH8V5xqSmCSIhUAChWmF5nGREc7iCa4
-	1wLZ7Ufo3gJ9JHPanaYssVjUDoapCSXbRoFZTrpFYrXoBogCkm0X0XFEvIhIlbMVO8cpBzlarTC9S
-	u/9VA/vuKIl9LN+Uep4BBuumatDt7t6Hy6DspOe9lfoIRdJcXteYZyrE7bUr/kS0f4hhCCz5N9XT4
-	HjsaVxwlb0Jq4KfQYkUw==;
+	List-Owner; bh=tz0UjidGM5lDroQTxhYzSLjv2Js3viMDUcGFJrIWAwM=; b=Rie5PQqiBGJtob
+	DwcLpdHffMaDVYU8GDvwz0kgLhbUUzDAFc7d2NYJg9IO+jskO2fVAMZPMORJofs56CqJG0W4H3Xmw
+	+uxwNirQ0LAvY8hK8sWGuZl/HA8ekTjCPpuF/LG9OtDnVDkV4c4gyJXxrlI3Flj+LOrQrCyzms4+T
+	jp1fobMNyx2DuCh+LlIP87KKTCGpmjlJLNp1EVbK9Sy23gwujSeHKuslJdwPzjDdN+EOie2C2g+oL
+	AoYAD27KfYmiWabXMHnawulTc40gQLFc/GtiS3G2YaRW7RxF6rEa84WLzO0hDh21aKrfuNjjDjBzd
+	b5JkvIB+fQJMONPu9rgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1p3k-000327-Cw; Wed, 12 Feb 2020 10:15:56 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j1p5u-0003Pc-NL; Wed, 12 Feb 2020 10:18:10 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1p3V-0002ub-VY; Wed, 12 Feb 2020 10:15:43 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a5so1469631wmb.0;
- Wed, 12 Feb 2020 02:15:40 -0800 (PST)
+ id 1j1p5e-0003OY-CD; Wed, 12 Feb 2020 10:17:55 +0000
+Received: by mail-wr1-x442.google.com with SMTP id g3so1478627wrs.12;
+ Wed, 12 Feb 2020 02:17:53 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=xZhA6P/WyhbXtyr6LF2g4j5CgrZWSC92Rp+z9iszic0=;
- b=GCwqSg9U3Oxjwp082Jb5aGD3a+Tc2Y5EIaHLFc0osEPMagZ4CWdh4VpRjOcOCK+GGB
- dHuUA8C1N0RiectY8n/xXoERIQ/SruVetbjsubUZ6bnjsOeIhL1diG5ZJjF56/v+ATyu
- vx7i/LeRItI251SPorEiyQN2nGNg4mMe0r5vrsFOXvvDg3LssMoUdUQqeTkdr+Zr9/+O
- xOVBXbFMHYThCduLoMaJa/Gpa4LvI1cYbGwGKFZ/0Itr0ItS4eKdT9aJ9KFzRABwfSi/
- OoVbwd12CrSaQ7xz9hb4o0WrjSk85EcHv3m7tPWtMNl1hyjKGGm2v4+3ZzwOGKS+8sNX
- 5GGw==
+ bh=RiLSOzSQqH2K+5mtqWU1/VvgqTQPm8zs0bfN/OnhddU=;
+ b=dSr3J5WfjlyUPVN3WpQTYigWQcsG4nTnY53SFJgDeAQI/u+Aq/dZuLAQ7IrWa0YqLF
+ hIjlMf653h/9uixMCu9Tr0tfcxkEWbUNLKNwRCpzsP3PGCT8T6ykrtk3Sbs2wH+jLbm3
+ AGZbSYwwxjbch+iRlfC3nVFSFFurQdFlNcVjaiHLPtnh0Be3HeePPqxkrpV37IDFkxGz
+ VeTJ4T3MLnsQJWzviJxiqunZbeTJWGKD+MsQksoVQKvcIOnmPwcT6C56nFlCk3t4/P2X
+ xWuseD2i6niZGCns+WUKl4/PYIt+7NhHdt55z3jxl9lRXvfavbHM2+WCPxOW14v1HwXe
+ dm2A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=xZhA6P/WyhbXtyr6LF2g4j5CgrZWSC92Rp+z9iszic0=;
- b=b1zsDGyUhHqDefxGtsizB/w9S81rqQiniCEUT+jGbrGdi2tHdKPfbALrL3el4ZqTb8
- YnwqhlZuT0wDZpFKO8yLRnE3hz2NbLMkBpJDuPc/t6IbmkoojNRCIbUXZd9vRgbNg7cf
- NCjXGmW7PufRjPbNZDpUxBclr4wdf6HJwrdulxILjCmHpmIUUMs4yAXlZ9SUXkRn1Qoe
- 2+ZAOq5a5CexuJwtgOzfp5xeLbKwp8xjOb/x3N8cj1Uakqn5ijS8WHeOX1jtTsJRNrXN
- GvI32fX7JEZ1p1oefb7+IrJxzX8+jkNMjo4oeX+esy93JE3CP3fB/w8s/0gUDZXjSU5g
- Wk/g==
-X-Gm-Message-State: APjAAAVFU1omMPCNYANi5HF5h4KWkABWoW7ce+2+++Koc0bMoG1D9m6e
- kQh40U7aT5wTXDzuEpCCAqyau+xd
-X-Google-Smtp-Source: APXvYqyqtxAWpKwjnzAMKgCni0ULfftLntT2/0QuQgYjNM4o+bvOdO/htL1mEN1vtSmDDn4nR5K0HQ==
-X-Received: by 2002:a7b:c847:: with SMTP id c7mr11395466wml.3.1581502539504;
- Wed, 12 Feb 2020 02:15:39 -0800 (PST)
+ bh=RiLSOzSQqH2K+5mtqWU1/VvgqTQPm8zs0bfN/OnhddU=;
+ b=MYaOR+K/7ym0lPqkOn10XBZ5dXSTCtN6HqPOaHZgd/0E8QcLE1AQMwD78+Yda99ibw
+ v8nJsqUPdayFQ/zmznzqOkrqvtKAaq/GHPiQWOrHPBVCwyHm1GatM8B2cnehUZe7xm6y
+ O+g8DDDh9MC5AtQqqC7NZCS+QaEV1/w6IkF3RTMAfBICyvC3P5kUpF7nBSmFPzaDPh0O
+ umrimwFQYoBkNLEBxlFk2lz5K3pM+75+s0TDbsOEFoz8Z/CNWdS6GapuFjrgcHNkHQ7G
+ D76KEVHfPuUJ68VYWGikOzr2NbIgTm3FIIsrrjrNnmWM2ndxzi50QuZjWwG1EZtCRPC+
+ Kreg==
+X-Gm-Message-State: APjAAAXWnJaUx3NaxHqCQkl+q7WeoQzBiTmDoX83Hb+sP2q1kfdWC/uV
+ 5N4bl0eq/yk2f/wtCG0j+3w=
+X-Google-Smtp-Source: APXvYqy0ppUWHrV4RDKzHlCLXDa/ghFxU/rzeve20LS85XvsmSSgh0TaXxY+2AXb4ZG5uzEbzy6nSg==
+X-Received: by 2002:a5d:4a8c:: with SMTP id o12mr14027627wrq.43.1581502672272; 
+ Wed, 12 Feb 2020 02:17:52 -0800 (PST)
 Received: from ziggy.stardust ([37.223.145.31])
- by smtp.gmail.com with ESMTPSA id z8sm29183wrq.22.2020.02.12.02.15.38
+ by smtp.gmail.com with ESMTPSA id d16sm41220wrg.27.2020.02.12.02.17.51
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 12 Feb 2020 02:15:38 -0800 (PST)
-Subject: Re: [RESEND,v2,1/1] arm: dts: mediatek: add mt7629 pwm support
-To: Sam Shih <sam.shih@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-References: <1581474926-28633-1-git-send-email-sam.shih@mediatek.com>
- <1581474926-28633-2-git-send-email-sam.shih@mediatek.com>
+ Wed, 12 Feb 2020 02:17:51 -0800 (PST)
+Subject: Re: [PATCH] arm64: dts: mt8173: add arm,no-tick-in-suspend in timer
+To: Hsin-Yi Wang <hsinyi@chromium.org>, linux-arm-kernel@lists.infradead.org
+References: <20200212060536.156890-1-hsinyi@chromium.org>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -135,23 +133,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <38f2cdcf-2908-33a1-a99f-b5d748c78d82@gmail.com>
-Date: Wed, 12 Feb 2020 11:15:37 +0100
+Message-ID: <b9d6be0d-a0ea-e0cc-8c87-338fa7e6df0b@gmail.com>
+Date: Wed, 12 Feb 2020 11:17:50 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <1581474926-28633-2-git-send-email-sam.shih@mediatek.com>
+In-Reply-To: <20200212060536.156890-1-hsinyi@chromium.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_021542_046561_D5219C3A 
-X-CRM114-Status: GOOD (  17.48  )
+X-CRM114-CacheID: sfid-20200212_021754_426401_16437B5A 
+X-CRM114-Status: GOOD (  17.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -175,8 +173,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -184,53 +183,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 12/02/2020 03:35, Sam Shih wrote:
-> This adds pwm support for MT7629.
-
-The information below should not be part of the commit message, the next time
-please put it below the line "---".
-
-> Used:
-> https://patchwork.kernel.org/patch/11160851/
+On 12/02/2020 07:05, Hsin-Yi Wang wrote:
+> Arch timer stops during system suspend. Add arm,no-tick-in-suspend
+> property in timer.
 > 
-> Change since v1:
-> remove unused property num-pwm
+> This is a follow up for d8ec7595a013
+> ("clocksource/drivers/arm_arch_timer: Don't assume clock runs in
+> suspend")
 > 
-> Signed-off-by: Sam Shih <sam.shih@mediatek.com>
+
+pushed to v5.6-next/dts64
+
+Thanks!
+
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
 > ---
->  arch/arm/boot/dts/mt7629.dtsi | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
+>  arch/arm64/boot/dts/mediatek/mt8173.dtsi | 1 +
+>  1 file changed, 1 insertion(+)
 > 
-> diff --git a/arch/arm/boot/dts/mt7629.dtsi b/arch/arm/boot/dts/mt7629.dtsi
-> index 867b88103b9d..ce2a30a24017 100644
-> --- a/arch/arm/boot/dts/mt7629.dtsi
-> +++ b/arch/arm/boot/dts/mt7629.dtsi
-> @@ -241,6 +241,20 @@
->  			status = "disabled";
->  		};
+> diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+> index 8b4e806d5119..1a9ad90bd7a6 100644
+> --- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+> +++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+> @@ -331,6 +331,7 @@ timer {
+>  			      (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
+>  			     <GIC_PPI 10
+>  			      (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
+> +		arm,no-tick-in-suspend;
+>  	};
 >  
-> +		pwm: pwm@11006000 {
-> +			compatible = "mediatek,mt7629-pwm";
-> +			reg = <0x11006000 0x1000>;
-> +			interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_LOW>;
-> +			clocks = <&topckgen CLK_TOP_PWM_SEL>,
-> +				 <&pericfg CLK_PERI_PWM_PD>,
-> +				 <&pericfg CLK_PERI_PWM1_PD>;
-> +			clock-names = "top", "main", "pwm1";
-> +			assigned-clocks = <&topckgen CLK_TOP_PWM_SEL>;
-> +			assigned-clock-parents =
-> +					<&topckgen CLK_TOP_UNIVPLL2_D4>;
-> +			status = "disabled";
-> +		};
-> +
-
-This does not match the binding description.
-Please fix that.
-
-
->  		i2c: i2c@11007000 {
->  			compatible = "mediatek,mt7629-i2c",
->  				     "mediatek,mt2712-i2c";
+>  	soc {
 > 
 
 _______________________________________________
