@@ -2,70 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2122B15A6F8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:49:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA4CF15A71A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:55:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pHbiMO2NI0WQWM9Nbg9OjbQZL/zZyN7JpolYOsuAwVQ=; b=r40QfnsCZ3gWIk
-	ulwZw8XSht2cS6r0gOvB0Ry6HoI0vgXdQDD2OuPt0mUTFRAvEi2+jtE9frXBKduonK/RTyo1xiJZM
-	vHYzI2tCqUL9LCoGoP83JnC1qcJHtfnYjIsJFXLTY0rza6GqCV7NmmFBK3T9e/2rbbxztbWUGuwuq
-	+S5EBGk269OKDOPyLpCi86cCYNZgcpWQdCzTfhTt1BYn3FGKzyC9WZAobljFiMZ3J59Skeo0ySS0m
-	OhOvKkMhYI/cOjf27o9ULrhBT/+nVuHb9SVNQSCU2sKX2iGiwGH8iqUM153Es196xf/Pm1YXaXrp2
-	xN+2FLjgt+SooZxsORVg==;
+	List-Owner; bh=TnxMmGOQj0kOq/7qANW8PDEcZ0aFl2+fSe+h0IDks68=; b=q5p7a+hpen8+x4
+	j7lgmQKGTTHS/A3ZWCpY57ize42dkKBmbktpNwnw4MtmBsdzhhQIbBdRUYKELXsdHR6khxrPFKv+j
+	Q8z2yyMbhUl1hFi/aeHASUkZa74PzWCD+lWUYWtMQHZBNSPh37HrdXXOxzIJY5k5w0AhKTA0U/7Ql
+	A4hfzh6X6PEmhbHPlSP+vzz+3Tt91+y1IJEjoGsf0/qo40cHPMrxvxkdIJgkVmydupRVuVDZZUOU4
+	YA2T+COZg1DeZ4PU61PUW/oD8JCcGRD4hmkAmUs6oHh+t26u9ZAeKG+kEuQh5jvierKxXrq0M+2t5
+	nZyDddR8OWoWo8X84vHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1paL-0000o3-6j; Wed, 12 Feb 2020 10:49:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1pZs-0000b4-OZ
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 10:49:09 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AA3D32082F;
- Wed, 12 Feb 2020 10:49:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581504548;
- bh=e7/KyaTyypq+Fd/F2Np5hVC5zzZzRMc32NuzncQ3qr4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=k3CZSF6H7D/ew3dYU1hxbYGV9FK3JiiBQCudA+bcHr5Dk5IZycoxRNeIIAczEJqZx
- If5vFyX31y5yq6FxhPyHwSCDqIAJJh6SwTK1/8xMwNCt3TKZ/W20LPfEpWgZrOpiXN
- VIfGeiSbNiAu4H64sjCjLwY8SP/gbnSeWNK9h0qc=
-Date: Wed, 12 Feb 2020 10:49:03 +0000
-From: Will Deacon <will@kernel.org>
-To: Li Yang <leoyang.li@nxp.com>
-Subject: Re: [PATCH] iommu/arm-smmu: fix the module name to be consistent
- with older kernel
-Message-ID: <20200212104902.GA3664@willie-the-truck>
-References: <1581467841-25397-1-git-send-email-leoyang.li@nxp.com>
+	id 1j1pfp-0003fs-3g; Wed, 12 Feb 2020 10:55:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1pfU-0003fW-Sl
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 10:54:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 201F530E;
+ Wed, 12 Feb 2020 02:54:56 -0800 (PST)
+Received: from localhost (unknown [10.1.198.52])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B52ED3F68F;
+ Wed, 12 Feb 2020 02:54:55 -0800 (PST)
+Date: Wed, 12 Feb 2020 10:54:54 +0000
+From: Ionela Voinescu <ionela.voinescu@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v3 7/7] clocksource/drivers/arm_arch_timer: validate
+ arch_timer_rate
+Message-ID: <20200212105439.GA3755@arm.com>
+References: <20200211184542.29585-1-ionela.voinescu@arm.com>
+ <20200211184542.29585-8-ionela.voinescu@arm.com>
+ <89339501-5ee4-e871-3076-c8b02c6fbf6e@arm.com>
+ <a24aa6c86e7a565b6269f48d4026bca2@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1581467841-25397-1-git-send-email-leoyang.li@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <a24aa6c86e7a565b6269f48d4026bca2@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_024908_816600_90081981 
-X-CRM114-Status: GOOD (  13.33  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200212_025457_021285_9F392E52 
+X-CRM114-Status: GOOD (  30.83  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,33 +66,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- iommu@lists.linux-foundation.org, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, peterz@infradead.org,
+ catalin.marinas@arm.com, linux-pm@vger.kernel.org, linux-doc@vger.kernel.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, mingo@redhat.com,
+ viresh.kumar@linaro.org, linux-arm-kernel@lists.infradead.org,
+ sudeep.holla@arm.com, will@kernel.org, valentin.schneider@arm.com,
+ Lukasz Luba <lukasz.luba@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 11, 2020 at 06:37:20PM -0600, Li Yang wrote:
-> Commit cd221bd24ff5 ("iommu/arm-smmu: Allow building as a module")
-> introduced a side effect that changed the module name from arm-smmu to
-> arm-smmu-mod.  This breaks the users of kernel parameters for the driver
-> (e.g. arm-smmu.disable_bypass).  This patch changes the module name back
-> to be consistent.
+Hi guys,
+
+On Wednesday 12 Feb 2020 at 10:12:32 (+0000), Marc Zyngier wrote:
+> On 2020-02-12 10:01, Lukasz Luba wrote:
+> > Hi Ionela, Valentin
+> > 
+> > On 2/11/20 6:45 PM, Ionela Voinescu wrote:
+> > > From: Valentin Schneider <valentin.schneider@arm.com>
+> > > 
+> > > Using an arch timer with a frequency of less than 1MHz can result in
+> > > an
+> > > incorrect functionality of the system which assumes a reasonable rate.
+> > > 
+> > > One example is the use of activity monitors for frequency invariance
+> > > which uses the rate of the arch timer as the known rate of the
+> > > constant
+> > > cycle counter in computing its ratio compared to the maximum frequency
+> > > of a CPU. For arch timer frequencies less than 1MHz this ratio could
+> > > end up being 0 which is an invalid value for its use.
+> > > 
+> > > Therefore, warn if the arch timer rate is below 1MHz which contravenes
+> > > the recommended architecture interval of 1 to 50MHz.
+> > > 
+> > > Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
+> > > Cc: Mark Rutland <mark.rutland@arm.com>
+> > > Cc: Marc Zyngier <maz@kernel.org>
+> > > ---
+> > >   drivers/clocksource/arm_arch_timer.c | 18 +++++++++++++++---
+> > >   1 file changed, 15 insertions(+), 3 deletions(-)
+> > > 
+> > > diff --git a/drivers/clocksource/arm_arch_timer.c
+> > > b/drivers/clocksource/arm_arch_timer.c
+> > > index 9a5464c625b4..4faa930eabf8 100644
+> > > --- a/drivers/clocksource/arm_arch_timer.c
+> > > +++ b/drivers/clocksource/arm_arch_timer.c
+> > > @@ -885,6 +885,17 @@ static int arch_timer_starting_cpu(unsigned int
+> > > cpu)
+> > >   	return 0;
+> > >   }
+> > >   +static int validate_timer_rate(void)
+> > > +{
+> > > +	if (!arch_timer_rate)
+> > > +		return -EINVAL;
+> > > +
+> > > +	/* Arch timer frequency < 1MHz can cause trouble */
+> > > +	WARN_ON(arch_timer_rate < 1000000);
+> > 
+> > I don't see a big value of having a patch just to add one extra warning,
+> > in a situation which we handle in our code with in 6/7 with:
+> > 
+> > +	if (!ratio) {
+> > +		pr_err("System timer frequency too low.\n");
+> > +		return -EINVAL;
+> > +	}
+> > 
+> > Furthermore, the value '100000' here is because of our code and
+> > calculation in there, so it does not belong to arch timer. Someone
+> > might ask why it's not 200000 or a define in our header...
+> > Or questions asking why do you warn when that arch timer and cpu is not
+> > AMU capable...
 > 
-> Signed-off-by: Li Yang <leoyang.li@nxp.com>
-> ---
->  drivers/iommu/Makefile                          | 4 ++--
->  drivers/iommu/{arm-smmu.c => arm-smmu-common.c} | 0
->  2 files changed, 2 insertions(+), 2 deletions(-)
->  rename drivers/iommu/{arm-smmu.c => arm-smmu-common.c} (100%)
+> Because, as the commit message outlines it, such a frequency is terribly
+> out of spec?
+> 
 
-Can't we just override MODULE_PARAM_PREFIX instead of renaming the file?
+Probably it could have been better emphasised in the commit message but,
+yes, [1] specifies a typical range of 1-50Mhz. Therefore, taken
+independently the role of this patch is to warn about an out of spec arch
+timer rate. 
+The link to AMU is here just as an example of a scenario where an out of
+spec rate can affect functionality, but there is no dependency between
+the threshold chosen here and AMU. AMU functionality only assumes the rate
+recommended in the spec.
 
-Will
+[1] https://static.docs.arm.com/ddi0487/ea/DDI0487E_a_armv8_arm.pdf
+
+> > 
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +
+> > >   /*
+> > >    * For historical reasons, when probing with DT we use whichever
+> > > (non-zero)
+> > >    * rate was probed first, and don't verify that others match. If
+> > > the first node
+> > > @@ -900,7 +911,7 @@ static void arch_timer_of_configure_rate(u32
+> > > rate, struct device_node *np)
+> > >   		arch_timer_rate = rate;
+> > >     	/* Check the timer frequency. */
+> > > -	if (arch_timer_rate == 0)
+> > > +	if (validate_timer_rate())
+> > >   		pr_warn("frequency not available\n");
+> > >   }
+> > >   @@ -1594,9 +1605,10 @@ static int __init
+> > > arch_timer_acpi_init(struct acpi_table_header *table)
+> > >   	 * CNTFRQ value. This *must* be correct.
+> > >   	 */
+> > >   	arch_timer_rate = arch_timer_get_cntfrq();
+> > > -	if (!arch_timer_rate) {
+> > > +	ret = validate_timer_rate();
+> > > +	if (ret) {
+> > >   		pr_err(FW_BUG "frequency not available.\n");
+> > > -		return -EINVAL;
+> > > +		return ret;
+> > >   	}
+> > >     	arch_timer_uses_ppi = arch_timer_select_ppi();
+> > > 
+> > 
+> > Lastly, this is arch timer.
+> > To increase chances of getting merge soon, I would recommend to drop
+> > the patch from this series.
+> 
+> And? It seems to address a potential issue where the time frequency
+> is out of spec, and makes sure we don't end up with additional problems
+> in the AMU code.
+> 
+> On its own, it is perfectly sensible and could be merged as part of this
+> series with my
+> 
+> Acked-by: Marc Zyngier <maz@kernel.org>
+> 
+>         M.
+
+Thanks, Marc! I'll keep this patch here then with some changes in the commit
+message for more clarity and the change in author.
+
+Thank you all,
+Ionela.
+
+> -- 
+> Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
