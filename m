@@ -2,82 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48B2815B353
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 23:03:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D91315B369
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 23:10:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ulnVjzWjmKJsjDiXbO6mnRj5hDjFUEE+2x+8R1gtGAs=; b=gw1y/BPwUMQiE5
-	rYMjCMowE2URHOSmF7ABfys+4qRA6LcoxU8fMK74L8qbyTemoipeBIvFpPpzNzCyLpHTxm+GsX4Zs
-	++1B7iF5PLEubus11xt2lLDXxYc36MdQ4OlovShIhJMWQXg4BEddu+btHPVvwMi3vF7fEJVMXV3m6
-	HNIncMSIiBMFi8Ei0idaIMG8Hw2c98ge4OlZEURq4oOBgqbnnQXhGUTvHcpRBNLfG/MsJ1f2oDyjQ
-	GX6q1PFuCvIlG59LOkL0yi8IPuch2WZJIeQU1jbV7xM3vfzp4/iEnddfDDa1jizsBKsoqgX6CF2M8
-	KgXxQB9fdx7we9gtFQRw==;
+	List-Owner; bh=pwzsoPYb1sFoEZBv4SxjfHkQaW4KGu9TY3tHy5oVLzI=; b=vBor8NLnq8IFIK
+	/smQxFaeFN0K79MtjwfQ0N8/9FUax1NsqddpUmh42oJOqtsM4k23i0+Cy9uPkyMa0bFcvHC4HTPFY
+	AeRq/1C9nigFN/rZnrRUf+n6LQBV/uUz6xq74+gsihFn705e6BtnLN2vMbR5pfCYw27dh8D/khe0J
+	9JWetnxz2vPjZhtqaWoOUMOdOrOrT7RBVD7IbTCVqyCRveLs044iZmI0jic/odDgXgn74isnMRd2K
+	f1hh55CBUEjCQAvs83UQ+Rgz7RuyYqqFtv6GHZNm2kPP7EWtGN3prMOk86GAU4HdhowWGKB4ogQz5
+	Z/NEqkIgaMML1uUwSARw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j206I-0002ia-No; Wed, 12 Feb 2020 22:03:18 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1j20D0-0005nV-JR; Wed, 12 Feb 2020 22:10:14 +0000
+Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2069-0002hV-ME; Wed, 12 Feb 2020 22:03:10 +0000
-Received: by mail-qk1-x743.google.com with SMTP id b7so3697183qkl.7;
- Wed, 12 Feb 2020 14:03:08 -0800 (PST)
+ id 1j20Cr-0005Fk-UU; Wed, 12 Feb 2020 22:10:07 +0000
+Received: by mail-qv1-xf43.google.com with SMTP id m5so1705322qvv.4;
+ Wed, 12 Feb 2020 14:10:05 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:content-transfer-encoding:in-reply-to;
- bh=vktZgdwHT9wecNxCGbvMxpCvSL0TwzAxN3Sq+MPR+iE=;
- b=nfgfpDftMtMJpWLxiSSs1X2OYcR9WlCI1amDpodmsLKxPgHkq8bnF4qf1qtxMLl199
- uWMc6cYmIs/jgWcwFKkmA1JHNWG82eW/IKsMlZpt3mUHo1pedk+LHU2F5vGJTvd7qkuE
- fNGTvtRWPXIit3HMzALvF1UOg3gvWURxXh51WA1HcgiQsiQD6P2hroKRk0XCvfHR6Dzc
- dUViLRXSEg/GOVAWO3L349vTzL+TvRhuWrvH/RL4CyOMUBipTQvLtVcjhMg5rGBxSPCP
- gHaie3hPJkpPL/U0oSQ8fkXX54m7zGqVd3HOJjXK3WbYxhlGgnFofw7ctLXn1muu7S9S
- mjSg==
+ bh=cdFC4Sw+amJDnEOMffYysz3PsfK9sMY043rnSWe7/YM=;
+ b=KAdSUhYCm4EKSCvAwuyjpY9CBE8LkbBg+RlKisgUNO2Gp0VpVBxINmGcQqUFUjWf2T
+ e20M3V0f5wA5yiqnJi2kJ/EXBV0Dl6xWgNdwpVyvjdZegwbvseDkjvsZNALFZQOvhliN
+ VllY7hDUn5+cDbxx2pKS+H2AG2RUHhMwPD6C1kZ8/pCoXNg93+BnJVRJKWjjhelynDeJ
+ BoWhGrPYv0YnZRVCDvCWSJhQsvb757R7wMhajhvhImQpghd1/01Us6N6oEs4IfNxXmsA
+ aQLsb5baITGLE4uDuw0JxWjWNyslVzFaWD2ym7uGdtGBheqZVFgDfphydU//+bVS/pn8
+ WsLA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
  :references:mime-version:content-disposition
  :content-transfer-encoding:in-reply-to;
- bh=vktZgdwHT9wecNxCGbvMxpCvSL0TwzAxN3Sq+MPR+iE=;
- b=sKqv1uCFxY6hDTFXr2Kdf7F9OI2+q6gSjQKnAfk1Vc3saTEm3TQT/J7FXE0kwgIxI1
- fJBJBzDwseBo1Mc9K8QkCmYTytLRjd//ehAs1+1lYwlraK/vxqjtzYB2ERj4NtZhmJM1
- 8XWJpj1Bk6KCUDW3ngODT9klX5lnWelE4uXY6BX6lhNZyGodSUJ+hFD1fy1mrz4RQSs4
- 3LvOOfFUMv1UrJZdhWNhe1+uBzreWe94cZaWquFsSi+3RCARllzHAqLz46+UK9AWJ/hN
- 9gy6hn1F7Gghf1cRRHkHkkNOcFqg53Bc1vKKTLL6HYalqCEGnKQyQD0CtrZkKvYkMDwu
- e0XQ==
-X-Gm-Message-State: APjAAAVNfb3ARlrdSS+A6ezPkGfcb6H1bQ3j3y84RqHc1ZP/5JagqyN1
- gzgMB8ZpnGiFfqSQCknBdxk=
-X-Google-Smtp-Source: APXvYqzT+6mBAxj1e5FLwLyZnqWru8muuUku/e/rxOQlawFETlZgZCjz3d0Bvp6LGi4KM4HKO8a+DA==
-X-Received: by 2002:a37:7a83:: with SMTP id v125mr13061546qkc.22.1581544987943; 
- Wed, 12 Feb 2020 14:03:07 -0800 (PST)
+ bh=cdFC4Sw+amJDnEOMffYysz3PsfK9sMY043rnSWe7/YM=;
+ b=Cc3pzlytrMMOS+qUnHFO3hm0G6/FnHbtLln/QCIYRqaEkerXsK9ab1H2+UcbIHpjSt
+ I9cL5tQxVPlhGmuE1AM1kfCtIfGEayI/AxIAWf4KWWoKaA3jDJ7kADDHBflaBiBez7Wy
+ HSXH8c7QlbQwC3nTIOWsGVcgJnhytyEKMvXcE7361n0yHy/t4a6AtWjGfVLNzMDPo8Kc
+ P0SteHEBlZjXnqgSnyZIUgUdYDBkpmsKk5an8EoJXKufxL1IJPLJ9skuBhxE/aiYZCMm
+ 4cNAsa3jezYtnw/E2+PtDJDYrnm3lMbIYsJTPK1mxzFCNT2FBc2CfS17+CFgYJEKsukX
+ Kr7w==
+X-Gm-Message-State: APjAAAUR9k2gfNpCtZaNfv6Dsi6xblAUG54Omk/CTCJQwsotPl5hYwwf
+ CIMgMAdJJZjJfM6iiLq75sQ=
+X-Google-Smtp-Source: APXvYqye2t37XZd6Z9apOR3wigBgtJDxhvPSPYG/19AuNeNK60F3VhB9U+/UkRAyZrCWhH9scv8Vjw==
+X-Received: by 2002:ad4:518d:: with SMTP id b13mr9041062qvp.141.1581545404154; 
+ Wed, 12 Feb 2020 14:10:04 -0800 (PST)
 Received: from localhost ([2620:10d:c091:500::1:985a])
- by smtp.gmail.com with ESMTPSA id z5sm335513qta.7.2020.02.12.14.03.06
+ by smtp.gmail.com with ESMTPSA id w41sm283605qtj.49.2020.02.12.14.10.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 12 Feb 2020 14:03:07 -0800 (PST)
-Date: Wed, 12 Feb 2020 17:03:06 -0500
+ Wed, 12 Feb 2020 14:10:03 -0800 (PST)
+Date: Wed, 12 Feb 2020 17:10:03 -0500
 From: Tejun Heo <tj@kernel.org>
 To: Michal =?iso-8859-1?Q?Koutn=FD?= <mkoutny@suse.com>
-Subject: Re: [PATCH v2 1/3] cgroup: Iterate tasks that did not finish do_exit()
-Message-ID: <20200212220306.GH80993@mtj.thefacebook.com>
+Subject: Re: [PATCH v2 3/3] kselftest/cgroup: add cgroup destruction test
+Message-ID: <20200212221003.GI80993@mtj.thefacebook.com>
 References: <20200120145635.GA30904@blackbody.suse.cz>
  <20200124114017.8363-1-mkoutny@suse.com>
- <20200124114017.8363-2-mkoutny@suse.com>
+ <20200124114017.8363-4-mkoutny@suse.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200124114017.8363-2-mkoutny@suse.com>
+In-Reply-To: <20200124114017.8363-4-mkoutny@suse.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_140309_751970_1E2821AF 
-X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-CacheID: sfid-20200212_141006_018308_9D795659 
+X-CRM114-Status: UNSURE (   8.42  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -113,30 +110,24 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jan 24, 2020 at 12:40:15PM +0100, Michal Koutn=FD wrote:
-> PF_EXITING is set earlier than actual removal from css_set when a task
-> is exitting. This can confuse cgroup.procs readers who see no PF_EXITING
-> tasks, however, rmdir is checking against css_set membership so it can
-> transitionally fail with EBUSY.
+On Fri, Jan 24, 2020 at 12:40:17PM +0100, Michal Koutn=FD wrote:
+> From: Suren Baghdasaryan <surenb@google.com>
 > =
 
-> Fix this by listing tasks that weren't unlinked from css_set active
-> lists.
-> It may happen that other users of the task iterator (without
-> CSS_TASK_ITER_PROCS) spot a PF_EXITING task before cgroup_exit(). This
-> is equal to the state before commit c03cd7738a83 ("cgroup: Include dying
-> leaders with live threads in PROCS iterations") but it may be reviewed
-> later.
+> Add new test to verify that a cgroup with dead processes can be destroyed.
+> The test spawns a child process which allocates and touches 100MB of RAM
+> to ensure prolonged exit. Subsequently it kills the child, waits until
+> the cgroup containing the child is empty and destroys the cgroup.
 > =
 
-> Reported-by: Suren Baghdasaryan <surenb@google.com>
-> Fixes: c03cd7738a83 ("cgroup: Include dying leaders with live threads in =
-PROCS iterations")
+> Signed-off-by: Suren Baghdasaryan <surenb@google.com>
+> [mkoutny@suse.com: Fix typo in test_cgcore_destroy comment]
+> Acked-by: Michal Koutn=FD <mkoutny@suse.com>
 > Signed-off-by: Michal Koutn=FD <mkoutny@suse.com>
 
-Applied to cgroup/for-5.6-fixes.
+Applied 2-3 to cgroup/for-5.7.
 
-Thanks.
+Thanks a lot for working on this!
 
 -- =
 
