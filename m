@@ -2,51 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BFFE15A826
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 12:45:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76DAE15A830
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 12:45:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1lZRxr8M2aH/IzRjeMfEcL6H3DK8WVMGDwtddG4GU8U=; b=R4I3J9UDKaoTg6RQUTICNn/TK
-	ODuG0itxmXwfsXeUpibu5q+Hz+qoo5r7QMZDQ9UNMYOXoqfl9viT1/kRMmJ4TrtwW8AgFL6F6lSNZ
-	bUbhUo7BdfycUqfQBUlPkUjxOBtfgWpcoV/Y6/tEfEfemrkTGut50ulzBGx8n87U4Q8W8dA4SpGaf
-	LjgSqKICg+RlwAYKN3oKeOSwx+pBmMQWNUpTB966yFhKcMTUlzAS1e5aaXVU57Hq3/xueVRwUhgGM
-	H88R15vOp5BtWWJUgekHdN5lr8cQ4Y/BrHVVGw4ztsYjow5Dh3ih1kuZbNEoJHJN7l2jEazPicYCn
-	W51F3Pypw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/IJvvxIgKGPvhw35Ncgyf9GEiFlGdjZJzeMYq+vHCFw=; b=RZosb2didJNKv8
+	DLygB7bjacmdB8ya8srVgTmqvRnHjKIZEabFIgzICQYjHfXsgIEW0H6Mn52fpPy4JkNuCvB4bB85h
+	fqXw2gcu33tBSgQoAc5o7kN5hTi4oz4pUMs/ADsu4WsVupMVIo4oJ0FfPrALvZv3Cd9D16bjbEFEQ
+	QTSWhVpRxryL65gVsqgHaMsIWYEDxoKXylNH8QzeNGfkUj2d8TGW3qrU8hSR3810oyMlGFs45JroL
+	doH6ElCZaXYB/tOBPcqwLs4FMmX4Kh8n7pWWQuVC8kctrLOufv4rvimJPSdwF0843XeyU5hVvBb+t
+	inNyUsKUPsoCdAGrrxOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1qSA-0001A6-5S; Wed, 12 Feb 2020 11:45:14 +0000
+	id 1j1qST-000248-VZ; Wed, 12 Feb 2020 11:45:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1qRz-0000hR-L9
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 11:45:05 +0000
+ id 1j1qSI-00022Q-8Y
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 11:45:24 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C93730E;
- Wed, 12 Feb 2020 03:45:03 -0800 (PST)
-Received: from [10.1.197.1] (ewhatever.cambridge.arm.com [10.1.197.1])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E2F583F68F;
- Wed, 12 Feb 2020 03:45:00 -0800 (PST)
-Subject: Re: [PATCH v3 2/7] arm64: trap to EL1 accesses to AMU counters from
- EL0
-To: Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
- will@kernel.org, mark.rutland@arm.com, maz@kernel.org, sudeep.holla@arm.com,
- lukasz.luba@arm.com, valentin.schneider@arm.com, rjw@rjwysocki.net
-References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-3-ionela.voinescu@arm.com>
-From: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Message-ID: <fe7cc5d0-fd1f-ad36-2e56-bafe94d52ac4@arm.com>
-Date: Wed, 12 Feb 2020 11:44:59 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 59E9A30E;
+ Wed, 12 Feb 2020 03:45:21 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 09B723F68F; Wed, 12 Feb 2020 03:45:19 -0800 (PST)
+Date: Wed, 12 Feb 2020 11:45:17 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Kevin Brodsky <kevin.brodsky@arm.com>
+Subject: Re: [PATCH 19/22] arm64: mte: Allow user control of the tag check
+ mode via prctl()
+Message-ID: <20200212114517.GF488264@arrakis.emea.arm.com>
+References: <20191211184027.20130-1-catalin.marinas@arm.com>
+ <20191211184027.20130-20-catalin.marinas@arm.com>
+ <cdd9d203-00c8-0a63-69b5-66234c0e9d9a@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200211184542.29585-3-ionela.voinescu@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <cdd9d203-00c8-0a63-69b5-66234c0e9d9a@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_034503_760478_BDBEC7E8 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20200212_034522_340652_EC3885ED 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,40 +64,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, peterz@infradead.org, viresh.kumar@linaro.org,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org, Steve Capper <steve.capper@arm.com>
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, Marc Zyngier <maz@kernel.org>,
+ linux-mm@kvack.org, Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/02/2020 18:45, Ionela Voinescu wrote:
-> The activity monitors extension is an optional extension introduced
-> by the ARMv8.4 CPU architecture. In order to access the activity
-> monitors counters safely, if desired, the kernel should detect the
-> presence of the extension through the feature register, and mediate
-> the access.
-> 
-> Therefore, disable direct accesses to activity monitors counters
-> from EL0 (userspace) and trap them to EL1 (kernel).
-> 
-> To be noted that the ARM64_AMU_EXTN kernel config and the disable_amu
-> kernel parameter do not have an effect on this code. Given that the
-> amuserenr_el0 resets to an UNKNOWN value, setting the trap of EL0
-> accesses to EL1 is always attempted for safety and security
-> considerations. Therefore firmware should still ensure accesses to
-> AMU registers are not trapped in EL2/EL3 as this code cannot be
-> bypassed if the CPU implements the Activity Monitors Unit.
-> 
-> Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Steve Capper <steve.capper@arm.com>
-> ---
+On Fri, Dec 27, 2019 at 02:34:32PM +0000, Kevin Brodsky wrote:
+> Not just related to this patch, but here goes. While trying to debug an
+> MTE-enabled process, I realised that there's no way to tell the tagged addr
+> / MTE thread configuration from outside of the thread. At this point I
+> thought it'd be really nice if this were to be exposed in /proc/pid, maybe
+> in /proc/pid/status. Unfortunately there seems to be no precedent for an
+> arch-specific feature to be exposed there. I guess a ptrace call would work
+> as well, although it wouldn't be as practical without using a debugger.
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+There is proc_pid_arch_status(), currently only used by x86 to report
+the avx512 status. We could do the same on arm64 and provide information
+information on the MTE status, SVE configuration, ptrauth. I think this
+can be a separate patch covering all these.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
