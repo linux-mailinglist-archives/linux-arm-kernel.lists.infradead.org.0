@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F7C915B4CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 00:32:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0334615B4CF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 00:33:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FZuug8ixxrq7b0VlwM5+iPBv+a/7aKLyLiVxsifCh3k=; b=utbkdLNciBr9Bn
-	IkYA3OnJ3I+qgf5AbYPNPBtkqyFFZI/ue6yiFiOeAFxT/ZYg5ILbsIuSaWkSCGz6mM4akezfAgARL
-	KGuZ9UNz0sg15Z6uyz9QG2JHWPQGTZ9k6nL/dC68jCxAG2YQ+CmK4gBBj5Wk3FZWvLSXgpnv/xnhr
-	x6Jk758lC6BWYrXjdaIpFM4neU1Nea58Z47khQX6jgHUSLtM/Hrjd16jR2yt1pWTUuQVir+KPMa8D
-	H3sOOPnlYZUb5MUAHqcl3T+Nzqb/jrA3mCnq5QQdCigpVPZFxJxvOuXHJiDmWELR2GUTs37oaMncS
-	mPqkQQaP4IANzLyivB+A==;
+	List-Owner; bh=2Snz4DDr2DwteGgz+qG6ma+EzIV7v67SHYREkMZDPQ0=; b=J6/kCJ7rt/Hl2b
+	YwQ0U2fzZMkk30A1xqYIkiO0kJdEz4HBtFME17xrhbGoz/JI0P7B+zO0idVzpHDBNG/gRmc85Wv4m
+	9l/Htx7n4mOIzAoXBSIebYZ3kvd7/x8oTzYy+NfkeJawlzWUj67kmDrqfJ4PkIlbT4K6ZBAw0/pks
+	Lbx6m2FFVCWSZAAk5ACJbH0aoliyoNcSvB+gNJHV5ooRcS3cPlixm3M+nL2Lxq0wqpocy3RUyvlZo
+	x1BOpvtuD/Ezf68a3uUNE0zCg/1j9jNt0TTFnMts8mA4dIntpKd/6D4zdUIqSrkjioCZDN6p6s1+C
+	3uNBheXCcrJhNrZd4f8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j21Ur-00030Z-OE; Wed, 12 Feb 2020 23:32:45 +0000
+	id 1j21V3-0003Fq-DX; Wed, 12 Feb 2020 23:32:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j21UU-0002oM-Hp
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 23:32:24 +0000
+ id 1j21Ue-0002yt-JZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 23:32:35 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7F51320578;
- Wed, 12 Feb 2020 23:32:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0A58D20578;
+ Wed, 12 Feb 2020 23:32:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581550341;
- bh=Sx7mVuf/x+Km9lDwz5M4AufiDC+BvLCJ+/UJUAOLWB0=;
+ s=default; t=1581550352;
+ bh=QUur6Tdhxx3i8fGGfMoEGp6FV02eDB8MM+/SlamQqQE=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=S3BBEpAcBvWxAdUoD7YPP7WabTann2mJjeP9Y754XEJX02V3opsx8Dx5YARGKB4fM
- 7i+3yjYCupX2cpNi/tZC31QgJV60/ltUZ6oQdvRf+IKqKs4KG6SBriSKxTVgdgoxTJ
- My01g0eaj6NyNMSxY/WCBu+E0uBLByYeAnOPx6tk=
+ b=Tnr3CbsNxfO01g8yvQkNowCz3Yt+ePdCaSITNALP2tISz4ya2nBO+KykqwUulUxWf
+ u2xYAmVHrqczHOGg9AFBKK4Z78EkyxjftxkRgce/IGaCLj9jc41a8TifW9+T6uTAhm
+ e+zYUhaSWde9AxRmj57MONjrXva9O6xZrAZODf3c=
 MIME-Version: 1.0
-In-Reply-To: <1579261009-4573-4-git-send-email-claudiu.beznea@microchip.com>
+In-Reply-To: <1579261009-4573-5-git-send-email-claudiu.beznea@microchip.com>
 References: <1579261009-4573-1-git-send-email-claudiu.beznea@microchip.com>
- <1579261009-4573-4-git-send-email-claudiu.beznea@microchip.com>
-Subject: Re: [PATCH 3/4] clk: at91: usb: use proper usbs_mask
+ <1579261009-4573-5-git-send-email-claudiu.beznea@microchip.com>
+Subject: Re: [PATCH 4/4] clk: at91: usb: introduce num_parents in driver's
+ structure
 From: Stephen Boyd <sboyd@kernel.org>
 To: Claudiu Beznea <claudiu.beznea@microchip.com>,
  alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
  mturquette@baylibre.com, nicolas.ferre@microchip.com
-Date: Wed, 12 Feb 2020 15:32:20 -0800
-Message-ID: <158155034081.184098.1411951142774904787@swboyd.mtv.corp.google.com>
+Date: Wed, 12 Feb 2020 15:32:31 -0800
+Message-ID: <158155035131.184098.9806897959771690426@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_153222_630176_F599ECD6 
-X-CRM114-Status: UNSURE (   5.48  )
+X-CRM114-CacheID: sfid-20200212_153232_713985_5D93308B 
+X-CRM114-Status: UNSURE (   5.56  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -86,11 +87,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Claudiu Beznea (2020-01-17 03:36:48)
-> Use usbs_mask passed as argument. The usbs_mask is different for
-> SAM9X60.
+Quoting Claudiu Beznea (2020-01-17 03:36:49)
+> SAM9X60 USB clock may have up to 3 parents. Save the number of parents in
+> driver's data structure and validate against it when setting parent.
 > 
-> Fixes: 2423eeaead6f8 ("clk: at91: usb: Add sam9x60 support")
 > Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
 
