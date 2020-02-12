@@ -2,55 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D3C7015ADF8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 18:04:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8207E15AE0B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 18:06:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gWaZVPWoce02p57hfvx+f8rNkxE6f6WkMgGxb9eneWU=; b=gyIWquaMr3Wg9T
-	BSBS8Gt91bo/AlahfISY0wmQ9/H3ZB1+qcl+ygN52exQFVHfIB4LawXirXGoqIES2XTgjqUnLRAjJ
-	gyDmYDbR+LczJ716Mda3kRtCTzGYtqfXJzpyXW16cKcCj3lExoVbBSBvbd5+t2oNvZ6KIet6buyig
-	IWUlz/FjlUQwKr5y9TY3NL2Nqp2T8OlMWSSBv57aHuJ5VdSvKr6bf1i4d/8c8LSLg+YBLttVE/CWr
-	mnT01q31GISOEO6iQuB8D5rDw+A0NmhZ2ysOT2bBc6HG1/iYMvDR+AC9rQ4JW2XyTrq45QzHGdnv4
-	X8++Yq/5qW7s7sm3rQhQ==;
+	List-Owner; bh=Pl3qr31CvGI1bmJJk2iTPmYs7WlfxWzjxSnrolid3h4=; b=T6QPdRmmwYCSvJ
+	7OEtzFOubNMfdLEnUhl9PtKISCtjG4X/vEHAws/7lz40ln0+oPQ/CiJ/WAR4e4bkqyFZE01ZOesf+
+	xvw+b8A9WBLK3OCgjKINtN7MkDkuICROoybhxaqdnLhpD+orcQfi+ca3A/EX+qCag5dagoSaGylUD
+	9M4u9eUCw2wxkrAGogtNMQXgzGo1lSnAjhPmcImKiEoEQORRqo0x/WpRgzXx0L3cuzi+1DoXWV79M
+	JkfhBy/yukkvJcQnmSXRaNisbdA5N8q43B7BQ5YduT/UJNRJvOhmGMDM+nI2M/UEpZdY+wRTAKGGf
+	p5OQKnnbvDY15Hrg/1tA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1vQe-0005hd-SE; Wed, 12 Feb 2020 17:04:00 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1vQZ-0005hJ-HK
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 17:03:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2CF6630E;
- Wed, 12 Feb 2020 09:03:54 -0800 (PST)
-Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 80FD73F68F; Wed, 12 Feb 2020 09:03:52 -0800 (PST)
-Date: Wed, 12 Feb 2020 17:03:50 +0000
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Peter Collingbourne <pcc@google.com>
-Subject: Re: [PATCH] arm64: mte: Clear SCTLR_EL1.TCF0 on exec
-Message-ID: <20200212170350.GB587247@arrakis.emea.arm.com>
-References: <CAMn1gO4iv1FsxV+aR3CgU=jgmVjHL0YQF-xJJG0UMv3nJZnOBw@mail.gmail.com>
- <20191220014853.223389-1-pcc@google.com>
+	id 1j1vTD-0007En-9m; Wed, 12 Feb 2020 17:06:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1vT5-0007EU-Eb
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 17:06:32 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1043D20658;
+ Wed, 12 Feb 2020 17:06:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581527191;
+ bh=HYaCa1NZ3zHYWSJtAxpUAsm/WycgVuTpFXAh6ovDzJM=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=XKCw6/+5FhioGy+tOq5QSQrAXjNupK/keY/KggdSlp7bfWHZ+k84WYselyQHA+fTx
+ qz42uUD2Wg0usywByDI+zCjCUkZH+gg/soda42sP2avNfEb0fatgce7vkdFauGWf1y
+ 5RoZkFhQmHjhur1jfMbk9/AEG8LEfUqfuXblobqY=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191220014853.223389-1-pcc@google.com>
+In-Reply-To: <20200212100934.20322-1-geert+renesas@glider.be>
+References: <20200212100934.20322-1-geert+renesas@glider.be>
+Subject: Re: [PATCH] arm64: time: Replace <linux/clk-provider.h> by
+ <linux/of_clk.h>
+From: Stephen Boyd <sboyd@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Will Deacon <will@kernel.org>
+Date: Wed, 12 Feb 2020 09:06:30 -0800
+Message-ID: <158152719034.121156.15651357571349859540@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_090355_615996_4567F5DE 
-X-CRM114-Status: GOOD (  13.57  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200212_090631_509500_A5808AA5 
+X-CRM114-Status: UNSURE (   6.94  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,51 +78,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- linux-mm@kvack.org, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Marc Zyngier <maz@kernel.org>, Kevin Brodsky <kevin.brodsky@arm.com>,
- Kostya Serebryany <kcc@google.com>, Evgenii Stepanov <eugenis@google.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Dec 19, 2019 at 05:48:53PM -0800, Peter Collingbourne wrote:
-> On Thu, Dec 19, 2019 at 12:32 PM Peter Collingbourne <pcc@google.com> wro=
-te:
-> > On Wed, Dec 11, 2019 at 10:45 AM Catalin Marinas
-> > <catalin.marinas@arm.com> wrote:
-> > > + =A0 =A0 =A0 if (current->thread.sctlr_tcf0 !=3D next->thread.sctlr_=
-tcf0)
-> > > + =A0 =A0 =A0 =A0 =A0 =A0 =A0 update_sctlr_el1_tcf0(next->thread.sctl=
-r_tcf0);
-> >
-> > I don't entirely understand why yet, but I've found that this check is
-> > insufficient for ensuring consistency between SCTLR_EL1.TCF0 and
-> > sctlr_tcf0. In my Android test environment with some processes having
-> > sctlr_tcf0=3DSCTLR_EL1_TCF0_SYNC and others having sctlr_tcf0=3D0, I am
-> > seeing intermittent tag failures coming from the sctlr_tcf0=3D0
-> > processes. With this patch:
-[...]
-> > Since sysreg_clear_set only sets the sysreg if it ended up changing, I
-> > wouldn't expect this to cause a significant performance hit unless
-> > just reading SCTLR_EL1 is expensive. That being said, if the
-> > inconsistency is indicative of a deeper problem, we should probably
-> > address that.
-> =
+Quoting Geert Uytterhoeven (2020-02-12 02:09:34)
+> The arm64 time code is not a clock provider, and just needs to call
+> of_clk_init().
+> 
+> Hence it can include <linux/of_clk.h> instead of <linux/clk-provider.h>.
+> 
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> ---
 
-> I tracked it down to the flush_mte_state() function setting sctlr_tcf0 but
-> failing to update SCTLR_EL1.TCF0. With this patch I am not seeing any more
-> inconsistencies.
-
-Thanks Peter. I folded in your fix.
-
--- =
-
-Catalin
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
