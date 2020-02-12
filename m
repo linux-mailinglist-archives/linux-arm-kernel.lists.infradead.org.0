@@ -2,111 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E598D15A8DB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 13:11:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB30915A8E8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 13:16:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=x79+tuPLDwXcW2QUShC0V1+uCUHGrG6Z5URNyDNtQm8=; b=ByhYt3jNweUPIh
-	h4uZluO0oz99j9amrFaxSZ5P9vNfeSmU1o1tX/yhnw5uTFQfNkQdPnDycoAPb/SjO2n8W/I4H5WjH
-	mPQO4GECscKIHUbscEhib4EfF22zTuMC7xCAdX8ULEZbzf5Fx/OERGJ2kubrFSiN1+SEh9x3mGENn
-	fTD+CnKTRyAQ4nzK4Fy9AnoamdNKQ4LurUGEKZTXvgUxlbINf+03+c/fsfcFgsrZhxlIZobBlAkTc
-	wztIw66NPXZnkD8XESdYbIUB3oktdM/iKB0LYxAfOdNk2P01wMaq4qMf1in5AdRcaanpa+d0MvZtY
-	05me/ERnF3h5pEeO5NEA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=crTrSg3xPkYi3rFCbuwovCS85fjxc9AjTws+LpaVruc=; b=QNy8/jdsGqlMSl
+	ZUBUbHbm389Kcv9u+UVfOXjVkYlSgW5R8At0I7uIdcOUieRHK1bFZxwSyEJYp+8Art0TMiTUT2bgq
+	o5GShxJ24TpDpuKgVKy0kbHEAmJpG+tYaenEwJ5mP7vYmNSbcJQ3XNzLQplUMkxNlpDxouR1kMibN
+	f2Mv5qazqs5rSnFQRdvFk9Gl2lNitIJZx+rQPe0smaaRWh6nMg0/g7jLQ0GtPL45+Hts4RBD3TIsH
+	rcn39W//c40WB3QAFmdVMcCfDi2Zbpzg+H/T1ZdiAZuUXDd5IHjjncu4jWAch2CAnHtEzTXX5tz9n
+	87zTrlBog6mtt07PNnJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1qrn-000612-UR; Wed, 12 Feb 2020 12:11:43 +0000
-Received: from mail-am6eur05on2086.outbound.protection.outlook.com
- ([40.107.22.86] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1j1qwN-0007pL-Gn; Wed, 12 Feb 2020 12:16:27 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1qrg-00060M-Lj
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 12:11:38 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NlaIVdRRGAls01qfAHo2XJp/ncF/bt3ELe150W6k/KzX98H5E2HQwLRRF2IuRzTYQQAdtNLkjmedgzGynB+IrZj1vudsF/ouFc5OExBYBWBJbLWIWUypWHPpXmKhI7rkkq/Lw2i5FxSWut6xJgsCEmk05VS6rfePXefNdUvjgt31V+7vN8zeDGShC8XvDzbjGoAymYc85he8cctwRbBNaX+nVrsmW25dTmsy/QFh4iQztvroCub+ErAm6TZvVL+xMYmrkhmgpz851R12C77c7QqR6TRS+3D2uFD20ibSuWH5PmYbwcdVTstJrOHjSE0wScasAI2LwUytpGOSnU9zeg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=s9EsvhWrOSCnWXnJMtNt6IExwGmy22qfMvEmbNYxl6s=;
- b=CB3mJ8K6p+qcG7XxQ3dBcXsoasw9DU+c2gRRQv+6MsGmlA6JHKKMlF4nQUgEQ81qCwi9UNVgPXwPrzw96VFKM3h46++tID4c000KZ+h7WrPmtI242GpB8X39RnoCaTUdQ4632XYLHC7hPPBcOIxXmF39HiaqeuQP1QLWZ3T1C+tU27Mel/JX4gi4jXAJQjztgwTfLJFfWb/E+yei/egVUSpo0hXecj8dO5u9hpiZ8cCHDph5sW/VZHIw1LMmW8FC7be5zG4wIwsJ32/PR0ayrxX3mKMdQd5CzX8zLX8U1lGJHPyZuD+JlSrc54p03cxsIGeZZLcrK08pHLFBVLDJsA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=s9EsvhWrOSCnWXnJMtNt6IExwGmy22qfMvEmbNYxl6s=;
- b=CQVwx4h6xibt4JKhYhK5XfIhuTiCzgfNAqQaH52rNcVTSP6hPHX+WQHcWnLkGA6B2l4FX46TUGlWy3hukM6xAaYx7eNDNYejgWIAwhH0Nnc/5TdzmpWoQ2ZI34B6nabm2l542VINNQ6V3/biYlISfyMwHKP9PXJeKshrGv7alKE=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=qiangqing.zhang@nxp.com; 
-Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
- DB7PR04MB4026.eurprd04.prod.outlook.com (52.134.107.27) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.25; Wed, 12 Feb 2020 12:11:31 +0000
-Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
- ([fe80::5cb4:81c8:1618:5ca]) by DB7PR04MB4618.eurprd04.prod.outlook.com
- ([fe80::5cb4:81c8:1618:5ca%7]) with mapi id 15.20.2707.030; Wed, 12 Feb 2020
- 12:11:30 +0000
-From: Joakim Zhang <qiangqing.zhang@nxp.com>
-To: will@kernel.org,
-	mark.rutland@arm.com,
-	robin.murphy@arm.com
-Subject: [PATCH] perf/imx_ddr: add stop counter support for i.MX8MP
-Date: Wed, 12 Feb 2020 20:09:00 +0800
-Message-Id: <20200212120900.6004-1-qiangqing.zhang@nxp.com>
-X-Mailer: git-send-email 2.17.1
-X-ClientProxiedBy: SG2PR06CA0183.apcprd06.prod.outlook.com (2603:1096:4:1::15)
- To DB7PR04MB4618.eurprd04.prod.outlook.com
- (2603:10a6:5:38::23)
+ id 1j1qwF-0007om-Lv
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 12:16:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581509778;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=4w2cIOIGw1HoVz/WUq0BjNTIHQBA2v9eFc0Bu90fD18=;
+ b=CQ0MHcAJ6SQOZWvuVRpwInrjQRMsfsvaZDIEA7Ux9ruSYM3+2wDABztZhKKhbslPWop0dN
+ jCBG2x66WLUjp5eBTR5vDTr5wXewuA/nd9w+zynYyI9Q5WoksT44qE3QLqUCJygXUllQI8
+ eyRu6XP2K9ayHd8OOtji5hgaK5AVN6g=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-419-YqeJu8ahNyuQ5F4EDMGqbA-1; Wed, 12 Feb 2020 07:16:12 -0500
+X-MC-Unique: YqeJu8ahNyuQ5F4EDMGqbA-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id DA015107ACC5;
+ Wed, 12 Feb 2020 12:16:09 +0000 (UTC)
+Received: from krava (ovpn-204-247.brq.redhat.com [10.40.204.247])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 4A9D15C110;
+ Wed, 12 Feb 2020 12:16:06 +0000 (UTC)
+Date: Wed, 12 Feb 2020 13:16:03 +0100
+From: Jiri Olsa <jolsa@redhat.com>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: [PATCH RFC 5/7] perf pmu: Support matching by sysid
+Message-ID: <20200212121603.GJ183981@krava>
+References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
+ <1579876505-113251-6-git-send-email-john.garry@huawei.com>
+ <20200210120759.GG1907700@krava>
+ <63799909-067b-e5f4-dcf1-9ba1ec145348@huawei.com>
+ <20200211134704.GB93194@krava>
+ <2a51ce93-fa68-8088-f31f-2fd692253335@huawei.com>
+ <f72c7f52-a285-e052-8656-de2940a6fc7f@huawei.com>
 MIME-Version: 1.0
-Received: from localhost.localdomain (119.31.174.71) by
- SG2PR06CA0183.apcprd06.prod.outlook.com (2603:1096:4:1::15) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.23 via Frontend Transport; Wed, 12 Feb 2020 12:11:28 +0000
-X-Mailer: git-send-email 2.17.1
-X-Originating-IP: [119.31.174.71]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 4fd45836-a755-4c3c-3af5-08d7afb4b1b1
-X-MS-TrafficTypeDiagnostic: DB7PR04MB4026:|DB7PR04MB4026:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <DB7PR04MB40265E834CD0F2403E2B742CE61B0@DB7PR04MB4026.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
-X-Forefront-PRVS: 0311124FA9
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(366004)(39860400002)(376002)(346002)(136003)(189003)(199004)(8676002)(1076003)(2906002)(186003)(36756003)(66556008)(8936002)(6666004)(6486002)(66946007)(4326008)(66476007)(16526019)(52116002)(26005)(81166006)(5660300002)(81156014)(2616005)(316002)(6512007)(69590400006)(86362001)(478600001)(6506007)(956004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4026;
- H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: UF2mqi8ZpodRKMfOWx6ZI7D5ypeW88corTV92tC72xQEn8jpUeS/Vq+idCPGV8p+o+jQXEWD7+/XNYWrVZiohGW+IHT2rTg/LgFjwwV6CTSGqI8LfMngtc9dTx5T4zP3lLNt/wX5g1oIdLHihgunwz7pwrWpVXfxcLGhK7YEzyUz+S8CvxqErxN1tNIAoa+AvE0Ga2vE4ymRboyc16VgB84mo3tZl4G2txYD+IADyiwxSuB7Y4oy8UGT4239A2TfkeH7ErQ1h/zPMagN2yqUQfBqtNzT0Q/iQHBlRkf70TpisLrWwvJLoFWsJf2XUIEzkM0A4aX+04uZWw6qX90fERJ4pTI2GtL6sfqhwN2xKDQblWo0w4UQ5rM0MJ5WlYcwOtj7R11raRDL/mGHGZoKy93pKh+4ykfuLM6iALJ/AUdUJQf++BkG669AyTHJp0uzS6lxTbdkRSKsP0fQgC4MTfeQL8O7J9sQfNLVuvfE66yPaYFVp3o0TsCtGWLG+jQ/6/Tefhk56cLxUTpbyuVEdPHZKr2Fg7ELMLwSLeAkl/g=
-X-MS-Exchange-AntiSpam-MessageData: FkhKncoWkJSTDcyE58gDTwqYyQYldRNWhbZonIFtWil1mQwuYisQRqUV5icAYdmF9zp/mK6W/db2o2H2MMsGcRaksrHaATAd7vUJTk3c2O63DItp0v35ESUn5ogK2NvcM7YssE93Uf3QQBSjTlD1ow==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4fd45836-a755-4c3c-3af5-08d7afb4b1b1
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Feb 2020 12:11:30.9089 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: oB3ueQ1swwOc2cF5tXT1nMuuLIQ2/Em96lqFi6u0CUsD9b7nheEi1jXXYPaL3aVO5zPqnBJkUQMiQUPeFjIdgg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4026
+Content-Disposition: inline
+In-Reply-To: <f72c7f52-a285-e052-8656-de2940a6fc7f@huawei.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_041136_713068_6570331E 
-X-CRM114-Status: GOOD (  16.56  )
+X-CRM114-CacheID: sfid-20200212_041619_799485_63DB7D99 
+X-CRM114-Status: GOOD (  19.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.22.86 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.22.86 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -114,7 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,167 +93,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-imx@nxp.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, "liuqi \(BA\)" <liuqi115@huawei.com>,
+ ak@linux.intel.com, suzuki.poulose@arm.com, peterz@infradead.org,
+ robin.murphy@arm.com, linuxarm@huawei.com, acme@kernel.org,
+ linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, james.clark@arm.com,
+ namhyung@kernel.org, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DDR perf driver now only supports free running counter, add stop counter
-support which would be compabile to free running counter, since i.MX8MP is
-not free running.
+On Wed, Feb 12, 2020 at 10:08:44AM +0000, John Garry wrote:
 
-Add spinlock for counter value update and clear.
+SNIP
 
-Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
----
- drivers/perf/fsl_imx8_ddr_perf.c | 69 ++++++++++++++++++++++++--------
- 1 file changed, 52 insertions(+), 17 deletions(-)
+> > > 
+> > > I wish to see some test for all this.. I can only think about having
+> > > 'test' json files compiled with perf and 'perf test' that looks them
+> > > up and checks that all is in the proper place
+> > 
+> > OK, let me consider this part for perf test support.
+> 
+> I will note that perf test has many issues on my arm64 board:
+> 
+> do] password for john:
+>  1: vmlinux symtab matches kallsyms                       : Skip
+>  2: Detect openat syscall event                           : FAILED!
+>  3: Detect openat syscall event on all cpus               : FAILED!
+>  4: Read samples using the mmap interface                 : FAILED!
+>  5: Test data source output                               : Ok
+>  6: Parse event definition strings                        : FAILED!
+>  7: Simple expression parser                              : Ok
+>  8: PERF_RECORD_* events & perf_sample fields             : Ok
+>  9: Parse perf pmu format                                 : Ok
+> 10: DSO data read                                         : Ok
+> 11: DSO data cache                                        : Ok
+> 12: DSO data reopen                                       : Ok
+> 13: Roundtrip evsel->name                                 : Ok
+> 14: Parse sched tracepoints fields                        : FAILED!
+> 15: syscalls:sys_enter_openat event fields                : FAILED!
 
-diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-index 95dca2cb5265..0a029715ca6c 100644
---- a/drivers/perf/fsl_imx8_ddr_perf.c
-+++ b/drivers/perf/fsl_imx8_ddr_perf.c
-@@ -14,6 +14,7 @@
- #include <linux/of_device.h>
- #include <linux/of_irq.h>
- #include <linux/perf_event.h>
-+#include <linux/spinlock.h>
- #include <linux/slab.h>
- 
- #define COUNTER_CNTL		0x0
-@@ -82,6 +83,7 @@ struct ddr_pmu {
- 	const struct fsl_ddr_devtype_data *devtype_data;
- 	int irq;
- 	int id;
-+	spinlock_t lock;
- };
- 
- enum ddr_perf_filter_capabilities {
-@@ -368,16 +370,20 @@ static void ddr_perf_event_update(struct perf_event *event)
- 	struct hw_perf_event *hwc = &event->hw;
- 	u64 delta, prev_raw_count, new_raw_count;
- 	int counter = hwc->idx;
-+	unsigned long flags;
- 
--	do {
--		prev_raw_count = local64_read(&hwc->prev_count);
--		new_raw_count = ddr_perf_read_counter(pmu, counter);
--	} while (local64_cmpxchg(&hwc->prev_count, prev_raw_count,
--			new_raw_count) != prev_raw_count);
-+	spin_lock_irqsave(&pmu->lock, flags);
-+
-+	prev_raw_count = local64_read(&hwc->prev_count);
-+	new_raw_count = ddr_perf_read_counter(pmu, counter);
- 
- 	delta = (new_raw_count - prev_raw_count) & 0xFFFFFFFF;
- 
- 	local64_add(delta, &event->count);
-+	local64_set(&hwc->prev_count, new_raw_count);
-+
-+	spin_unlock_irqrestore(&pmu->lock, flags);
-+
- }
- 
- static void ddr_perf_counter_enable(struct ddr_pmu *pmu, int config,
-@@ -402,6 +408,15 @@ static void ddr_perf_counter_enable(struct ddr_pmu *pmu, int config,
- 	}
- }
- 
-+static bool ddr_perf_counter_overflow(struct ddr_pmu *pmu, int counter)
-+{
-+	int val;
-+
-+	val = readl_relaxed(pmu->base + counter * 4 + COUNTER_CNTL);
-+
-+	return val & CNTL_OVER ? true : false;
-+}
-+
- static void ddr_perf_event_start(struct perf_event *event, int flags)
- {
- 	struct ddr_pmu *pmu = to_ddr_pmu(event->pmu);
-@@ -532,9 +547,9 @@ static int ddr_perf_init(struct ddr_pmu *pmu, void __iomem *base,
- 
- static irqreturn_t ddr_perf_irq_handler(int irq, void *p)
- {
--	int i;
-+	int i, ret;
- 	struct ddr_pmu *pmu = (struct ddr_pmu *) p;
--	struct perf_event *event, *cycle_event = NULL;
-+	struct perf_event *event;
- 
- 	/* all counter will stop if cycle counter disabled */
- 	ddr_perf_counter_enable(pmu,
-@@ -544,12 +559,7 @@ static irqreturn_t ddr_perf_irq_handler(int irq, void *p)
- 	/*
- 	 * When the cycle counter overflows, all counters are stopped,
- 	 * and an IRQ is raised. If any other counter overflows, it
--	 * continues counting, and no IRQ is raised.
--	 *
--	 * Cycles occur at least 4 times as often as other events, so we
--	 * can update all events on a cycle counter overflow and not
--	 * lose events.
--	 *
-+	 * will stop and no IRQ is raised.
- 	 */
- 	for (i = 0; i < NUM_COUNTERS; i++) {
- 
-@@ -559,17 +569,41 @@ static irqreturn_t ddr_perf_irq_handler(int irq, void *p)
- 		event = pmu->events[i];
- 
- 		ddr_perf_event_update(event);
-+	}
-+
-+	spin_lock(&pmu->lock);
- 
--		if (event->hw.idx == EVENT_CYCLES_COUNTER)
--			cycle_event = event;
-+	for (i = 0; i < NUM_COUNTERS; i++) {
-+		if (!pmu->events[i])
-+			continue;
-+
-+		if (i == EVENT_CYCLES_COUNTER)
-+			continue;
-+
-+		event = pmu->events[i];
-+
-+		/* check non-cycle counters overflow */
-+		ret = ddr_perf_counter_overflow(pmu, event->hw.idx);
-+		if (ret)
-+			dev_warn(pmu->dev, "Counter%d (not cycle counter) overflow happened, data incorrect!\n", i);
-+
-+		/* clear non-cycle counters */
-+		ddr_perf_counter_enable(pmu, event->attr.config, event->hw.idx, true);
-+
-+		/* update the prev_conter */
-+		local64_set(&event->hw.prev_count, 0);
- 	}
- 
-+	if (pmu->events[EVENT_CYCLES_ID])
-+		local64_set(&pmu->events[EVENT_CYCLES_ID]->hw.prev_count, 0);
-+
-+	/* enable cycle counter to start all counters */
- 	ddr_perf_counter_enable(pmu,
- 			      EVENT_CYCLES_ID,
- 			      EVENT_CYCLES_COUNTER,
- 			      true);
--	if (cycle_event)
--		ddr_perf_event_update(cycle_event);
-+
-+	spin_unlock(&pmu->lock);
- 
- 	return IRQ_HANDLED;
- }
-@@ -617,6 +651,7 @@ static int ddr_perf_probe(struct platform_device *pdev)
- 	num = ddr_perf_init(pmu, base, &pdev->dev);
- 
- 	platform_set_drvdata(pdev, pmu);
-+	spin_lock_init(&pmu->lock);
- 
- 	name = devm_kasprintf(&pdev->dev, GFP_KERNEL, DDR_PERF_DEV_NAME "%d",
- 			      num);
--- 
-2.17.1
+looks like some issue with tracepoints
+
+> 16: Setup struct perf_event_attr                          : Skip
+> 17: Match and link multiple hists                         : Ok
+> 18: 'import perf' in python                               : Ok
+> 21: Breakpoint accounting                                 : Ok
+> 22: Watchpoint                                            :
+> 22.1: Read Only Watchpoint                                : Ok
+> 22.2: Write Only Watchpoint                               : Ok
+> 22.3: Read / Write Watchpoint                             : Ok
+> 22.4: Modify Watchpoint                                   : Ok
+> 23: Number of exit events of a simple workload            : Ok
+> 24: Software clock events period values                   : Ok
+> 25: Object code reading                                   : Ok
+> 26: Sample parsing                                        : Ok
+> 27: Use a dummy software event to keep tracking           : Ok
+> 28: Parse with no sample_id_all bit set                   : Ok
+> 29: Filter hist entries                                   : Ok
+> 30: Lookup mmap thread                                    : Ok
+> 31: Share thread maps                                     : Ok
+> 32: Sort output of hist entries                           : Ok
+> 33: Cumulate child hist entries                           : Ok
+> 34: Track with sched_switch                               : Ok
+> 35: Filter fds with revents mask in a fdarray             : Ok
+> 36: Add fd to a fdarray, making it autogrow               : Ok
+> 37: kmod_path__parse                                      : Ok
+> 38: Thread map                                            : Ok
+> 39: LLVM search and compile                               :
+> 39.1: Basic BPF llvm compile                              : Skip
+> 39.2: kbuild searching                                    : Skip
+> 39.3: Compile source for BPF prologue generation          : Skip
+> 39.4: Compile source for BPF relocation                   : Skip
+
+Skip is fine ;-)
+
+> 40: Session topology                                      : FAILED!
+
+I'd expect that one to fail if we don't have special
+code to support arm in there
+
+> 41: BPF filter                                            :
+> 41.1: Basic BPF filtering                                 : Skip
+> 41.2: BPF pinning                                         : Skip
+> 41.3: BPF prologue generation                             : Skip
+> 41.4: BPF relocation checker                              : Skip
+> 42: Synthesize thread map                                 : Ok
+> 43: Remove thread map                                     : Ok
+> 44: Synthesize cpu map                                    : Ok
+> 45: Synthesize stat config                                : Ok
+> 46: Synthesize stat                                       : Ok
+> 47: Synthesize stat round                                 : Ok
+> 48: Synthesize attr update                                : Ok
+> 49: Event times                                           : Ok
+> 50: Read backward ring buffer                             : FAILED!
+
+hum, I thought this was generic code that would work across archs
+
+> 51: Print cpu map                                         : Ok
+> 52: Merge cpu map                                         : Ok
+> 53: Probe SDT events                                      : Ok
+> 54: is_printable_array                                    : Ok
+> 55: Print bitmap                                          : Ok
+> 56: perf hooks                          umber__scnprintf                : Ok
+> 59: mem2node                                              : Ok
+> 60: time utils                                            : Ok
+> 61: Test jit_write_elf                                    : Ok
+> 62: maps__merge_in                                        : Ok
+> 63: DWARF unwind                                          : Ok
+> 64: Check open filename arg using perf trace + vfs_getname: FAILED!
+> 65: Add vfs_getname probe to get syscall args filenames   : FAILED!
+> 66: Use vfs_getname probe to get syscall args filenames   : FAILED!
+
+with these we have always a problem across archs,
+it's tricky to make script test that works everywhere :-\
+
+> 67: Zstd perf.data compression/decompression              : Ok
+> 68: probe libc's inet_pton & backtrace it with ping       : Skip
+> john@ubuntu:~/linux$
+> 
+> I know that the perf tool definitely has issues for system topology for
+> arm64, which I need to check on.
+> 
+> Maybe I can conscribe help internally to help check the rest...
+
+the json/alias test would be also to make sure the x86 still works,
+so regardless of some tests failing on arm, I think it's still better
+to have that test
+
+thanks,
+jirka
 
 
 _______________________________________________
