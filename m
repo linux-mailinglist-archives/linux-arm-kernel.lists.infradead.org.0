@@ -2,115 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1824C15B27A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 22:08:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 156E315B29D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 22:15:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=Uew6bmcQN6EzWKTKz45UiKakwQWqaYKm4EidrB44wdk=; b=TEg3Mac5jNKKhL
-	sqqXkwCOBTZ3EfuUHEXrsSrBWUqEF4fA+eaUHALoZ0a02g+P4/y/zh+qlYTVRDE2xHfqoFVWK89QA
-	sVkBb+zM3YYYy6BEgWPzpykWad+CldBDjjs+JD0Ig76g2rKuY1vooh61Yp/vrh8V6U1HJ2XBPktoj
-	XVOwYD6jGUFeFkobxQSjlsQvlS7okj+Jr/44VR4YR4Xj87nVlVI5oXOaBCrzwkSPcr/iW/h51YnOA
-	jsZNpSd7lLOyw7ugwz1UJ3N9WnkYVnl2J1rkCP1eogEacbHFBt82cYdhnK8EXuNO4bgrWiBwV79Tz
-	PnjDeYkVA0HxmuB6A8Ag==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p4zeARZ/bny9Xc0pGj/ipSOucegCMEMpmTlufOmQgwg=; b=F5PV7Jj6ylBr8T
+	8WCR2QrH+h9xSjpT3dih4Sqx7IOMepwT/bOrw21JPAymK8rHL83JEE7BOd90zS/9/PDmmDTTwhZgC
+	/0kUQlzsjnhWFKvFjF5RZzb+PNPrfJzFedMc/9bt3KqiB3sXQFuFDb3tla423bUrTNACeHeoZql7q
+	79p/ithMTz2CjSra32eZkDFTIsGiWCiy3PbEWAZpcq5m15LCOm2SYZjNFOCdDqAy1LFwFH58T/SGH
+	Yhz8x3KD419WwUrGVivf8cn6j8d3i0jZ4WsuzX++iXrqFGJu9uXST4adh7zRbzL6LMAbLCaFHh+tu
+	0TV3fn9i/YuIuDfLnttA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1zF2-0007Y8-Fs; Wed, 12 Feb 2020 21:08:16 +0000
-Received: from mail-eopbgr70071.outbound.protection.outlook.com ([40.107.7.71]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1j1zM5-0002Yg-Ve; Wed, 12 Feb 2020 21:15:33 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1zEu-0007Wq-OZ
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 21:08:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=hO8D3K6u2kWLscQv3/wT4PFN/9fZqqwvGp14ivhOpH9AL2rXnP/ic2l+K6otRoTcXJkMHupDGJRpdYVvUa7T/UrsAJ04lXO/pconwZM6d4dfIzHOPMqzsLPffkxnaCWhXhG3N88sgFrsafINTunfiYaN0mATnBH8sgXbC9zHe2zRJl4BKC668b6JjgNCbyD3qnDGrTA74OzCQJdNbYYA4bU5HIfjhBlr9YCDwsiSn5njzYd7qjOSYdgQuJ2FlKz0ZI7RAYRZm+Xw7RaAdiA8U6qB6jF5zvMWZBT1lBfnNhfTx9NGSWGgQVHs0oVz8TvepJOrtC193W1SJEG/DWMcGA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RUalFHTmreuyimJusmKyrlY0jZ9TCaTplrUE/OhyEow=;
- b=Q2BoeQ79YMHQHvCVKPfdZeYr1ws/XHTm678Kd3vo+oxtsaWaxYSSM66SwtKZ7e4ow9CcwAXyaQNCUxBkOIBkt11q4e6F85+rn+R+FGf61cnqcNtc5TpGIZwIUqV1wz8R4iJwgyOc0XrVA6LeSFNE4YGpPbpsrQ1ZPoOtZ0/79TX+p91ImwuyuLPrmm0feKAQEtierIjxKgqEX9Jl6k6FX4iykSN+YhYCLIpvOclpxtRiY2vCYabIDLJu1591x8+/rKkUFhVS9tpBCo48DqxeARFzotybuP3Xh3vIETilY2QJ6JS8Zc2AFkLUeGDKzZ9viRf+IwIkLGdqLVTUVM/sAQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RUalFHTmreuyimJusmKyrlY0jZ9TCaTplrUE/OhyEow=;
- b=pIoxKMcbqBoc3wph5VAUSQkdILg95YlMrqcFWWgzikXUtzOQwNeeYb9iBC+IKvpd/pD2WvtB/9QaatOHTF6WlaeMDu3eJixF8oZoCG84jxtjxtmhLf3awnSpo3oviDynPjSmZpZudLmYbI3vnUP9W6TjHxio6NqMtYbRHpfEo1o=
-Received: from AM0PR0402MB3476.eurprd04.prod.outlook.com (52.133.50.141) by
- AM0PR0402MB3313.eurprd04.prod.outlook.com (52.133.46.10) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2707.24; Wed, 12 Feb 2020 21:08:01 +0000
-Received: from AM0PR0402MB3476.eurprd04.prod.outlook.com
- ([fe80::dc6e:5cc4:dd53:3088]) by AM0PR0402MB3476.eurprd04.prod.outlook.com
- ([fe80::dc6e:5cc4:dd53:3088%5]) with mapi id 15.20.2707.030; Wed, 12 Feb 2020
- 21:08:01 +0000
-From: Horia Geanta <horia.geanta@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Stephen Boyd <sboyd@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Abel Vesa <abel.vesa@nxp.com>
-Subject: Re: [PATCH v2 0/3] clk: imx8mn: add snvs clock
-Thread-Topic: [PATCH v2 0/3] clk: imx8mn: add snvs clock
-Thread-Index: AQHVzD/OjZFqJodHNUiVYUZ4iWuZWA==
-Date: Wed, 12 Feb 2020 21:08:01 +0000
-Message-ID: <AM0PR0402MB3476CCC69A3726CDF4D7CB0B981B0@AM0PR0402MB3476.eurprd04.prod.outlook.com>
-References: <20200116073718.4475-1-horia.geanta@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=horia.geanta@nxp.com; 
-x-originating-ip: [84.117.251.185]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: a9de6f52-f3db-45f7-0fcc-08d7afffa517
-x-ms-traffictypediagnostic: AM0PR0402MB3313:|AM0PR0402MB3313:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR0402MB3313AB1CF3565DE9A5EF268C981B0@AM0PR0402MB3313.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3044;
-x-forefront-prvs: 0311124FA9
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(39860400002)(376002)(396003)(366004)(136003)(189003)(199004)(44832011)(9686003)(86362001)(53546011)(7696005)(6506007)(81156014)(478600001)(26005)(55016002)(966005)(8676002)(8936002)(54906003)(110136005)(81166006)(186003)(66556008)(66446008)(66476007)(64756008)(76116006)(66946007)(52536014)(71200400001)(33656002)(4744005)(5660300002)(4326008)(2906002)(7416002)(316002)(6636002)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR0402MB3313;
- H:AM0PR0402MB3476.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: kuuohzxJRwcQnZkEiL3ydaeC9iXwHmEbXKK+ga/cqmhrrlS1ZlDstyKOsa8HlZdDFBm1gI8wq4mcC9AsZ6GH/5Hcx1fq++G82zgMCYxLHd1RLBvU8ZFdzRADTwG11R3zbOmAAzLl4uLuVSujVx04E3JNFj25JP1It3YPlXjeShpNCtM8xy3h3HuGhKWWjdUz0Ync3UitwVJEJg2VPms2qyrlJBfMV90j7DNuUW/NjZ546tl9/PB+jzrDAmKqkRwf0Mq42P6Ij1EJHRbl7+y1FpQzFrmXOs/+5SX/KsOZHw6Clf6lDrxqtrMdcbKiodoSccAu11LqPr6IqqJ5PCjTxbD0fFiYk/+NEtRr067h5nlWnmQ7b8Wfcm5ltwVu8aMBvmPEga6FCfdSJAae6vVQ1Y8XK1lvKVGm8Qh9DmByqSISrdPxXK5LxSq//xd8wC70uUb73LKtXiyqEBa+qL6shYj3VdYkBGxuT5bv2YRqE2c1HxuZU2hj72xO+mtQYtVQs8UHyXL23Tm41Fykevn1LiPjMckc6yQqqO80zQr8kDEF8lda7ZFtNGzPThCg1TSS
-x-ms-exchange-antispam-messagedata: 7pSI2MHIob+fl5dstG4ZWlZ6ITz/TA7gCjIj9kH8zwA1Z4T7LMNneMcCT0ytyNibgx9m62/xxzSfCnpL0KIFQIvkmYVt4DM41ncVmcKAvooV7vd4Ki8l8peHsPwd3Ry6C+Tb/edvCqkjRAC2lMTn4w==
+ id 1j1zLy-00019i-Bm; Wed, 12 Feb 2020 21:15:27 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 12 Feb 2020 13:13:25 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,434,1574150400"; d="scan'208";a="432449589"
+Received: from wendeand-mobl.ger.corp.intel.com (HELO kekkonen.fi.intel.com)
+ ([10.252.52.16])
+ by fmsmga005.fm.intel.com with ESMTP; 12 Feb 2020 13:13:20 -0800
+Received: by kekkonen.fi.intel.com (Postfix, from userid 1000)
+ id 0320921D13; Wed, 12 Feb 2020 23:13:17 +0200 (EET)
+Date: Wed, 12 Feb 2020 23:13:17 +0200
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+Subject: Re: [PATCH v8 05/14] media: rkisp1: add Rockchip ISP1 subdev driver
+Message-ID: <20200212211317.GD3087@kekkonen.localdomain>
+References: <20190730184256.30338-1-helen.koike@collabora.com>
+ <20190730184256.30338-6-helen.koike@collabora.com>
+ <20190808091406.GQ21370@paasikivi.fi.intel.com>
+ <da6c1d01-e3f6-ad73-db55-145d7832a665@collabora.com>
+ <20190815082422.GM6133@paasikivi.fi.intel.com>
+ <20190815131748.GS6133@paasikivi.fi.intel.com>
+ <78856358-1afd-31a7-86dd-22f7d6d7fb05@collabora.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a9de6f52-f3db-45f7-0fcc-08d7afffa517
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Feb 2020 21:08:01.6458 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: YMSVD44gSsc32cajtPbA0WS14tVPvfSiT/eCvpbIDZSVM12Oteloe5BrdoDC0PrTg4v/fXSgAtCArSyPR60Bxg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR0402MB3313
+Content-Disposition: inline
+In-Reply-To: <78856358-1afd-31a7-86dd-22f7d6d7fb05@collabora.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_130808_957602_B8B693FD 
-X-CRM114-Status: GOOD (  11.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200212_131526_425050_30A8A91B 
+X-CRM114-Status: GOOD (  25.15  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.7.71 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.7.71 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,51 +74,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Anson Huang <anson.huang@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-2"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
+ heiko@sntech.de, jacob2.chen@rock-chips.com,
+ Dafna Hirschfeld <dafna3@gmail.com>, jeffy.chen@rock-chips.com,
+ zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
+ Allon Huang <allon.huang@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ Helen Koike <helen.koike@collabora.com>, Jacob Chen <cc@rock-chips.com>,
+ hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
+ zhengsq@rock-chips.com, mchehab@kernel.org, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 1/16/2020 9:37 AM, Horia Geant=E3 wrote:
-> v2: add commmit message for trivial patch 1/3
-> =
+Hi Dafna,
 
-> This patch set adds the clock for snvs module on imx8mn.
-> DT bindings, clk driver are updated accordingly.
-> DT for imx8mn (snvs-rtc-lp node) is also updated.
-> =
+Apologies for the late reply. I learned the mail had got lost due to mail
+server issues.
 
-> Horia Geant=E3 (3):
->   dt-bindings: clock: imx8mn: add SNVS clock
->   clk: imx8mn: add SNVS clock to clock tree
->   arm64: dts: imx8mn: add clock for snvs rtc node
-> =
+On Fri, Jan 31, 2020 at 08:38:34PM +0100, Dafna Hirschfeld wrote:
+> Hi,
+> I (Dafna Hirschfeld) will work in following months with Helen Koike to fix the issues
+> in the TODO file of this driver: drivers/staging/media/rkisp1/TODO
+> 
+> On 15.08.19 15:17, Sakari Ailus wrote:
+> > On Thu, Aug 15, 2019 at 11:24:22AM +0300, Sakari Ailus wrote:
+> > > Hi Helen,
+> > > 
+> > > On Wed, Aug 14, 2019 at 09:58:05PM -0300, Helen Koike wrote:
+> > > 
+> > > ...
+> > > 
+> > > > > > +static int rkisp1_isp_sd_set_fmt(struct v4l2_subdev *sd,
+> > > > > > +				 struct v4l2_subdev_pad_config *cfg,
+> > > > > > +				 struct v4l2_subdev_format *fmt)
+> > > > > > +{
+> > > > > > +	struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
+> > > > > > +	struct rkisp1_isp_subdev *isp_sd = &isp_dev->isp_sdev;
+> > > > > > +	struct v4l2_mbus_framefmt *mf = &fmt->format;
+> > > > > > +
+> > > > > 
+> > > > > Note that for sub-device nodes, the driver is itself responsible for
+> > > > > serialising the access to its data structures.
+> > > > 
+> > > > But looking at subdev_do_ioctl_lock(), it seems that it serializes the
+> > > > ioctl calls for subdevs, no? Or I'm misunderstanding something (which is
+> > > > most probably) ?
+> > > 
+> > > Good question. I had missed this change --- subdev_do_ioctl_lock() is
+> > > relatively new. But setting that lock is still not possible as the struct
+> 
+> 'the struct' - do you mean the 'vdev' struct allocated in
+> 'v4l2_device_register_subdev_nodes' ?
 
->  arch/arm64/boot/dts/freescale/imx8mn.dtsi | 1 +
->  drivers/clk/imx/clk-imx8mn.c              | 1 +
->  include/dt-bindings/clock/imx8mn-clock.h  | 4 +++-
->  3 files changed, 5 insertions(+), 1 deletion(-)
-> =
+Yes.
 
-Kind reminder.
+> 
+> > > is allocated in the framework and the device is registered before the
+> 
+> > > driver gets hold of it. It's a good idea to provide the same serialisation
+> > > for subdevs as well.
+> > > 
+> > > I'll get back to this later.
+> > 
+> > The main reason is actually that these ops are also called through the
+> > sub-device kAPI, not only through the uAPI, and the locks are only taken
+> > through the calls via uAPI.
+> 
+> actually it seems that although 'subdev_do_ioctl_lock' exit, I wonder if
+> any subdevice uses that vdev->lock in  subdev_do_ioctl_lock.
+> It is not initialized in v4l2_device_register_subdev_nodes where the vdev is allocated
+> and I wonder if any subdevice actually initialize it somewhere else. For example it is null in this
+> driver and in vimc.
 
-Patch set is here:
-https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=3D229047=
-&archive=3Dboth&state=3D*
-Let me know if I should resend it.
+It needs to be set before the video device is registered, so indeed, it
+seems no driver can make use it.
 
-Thanks,
-Horia
+> 
+> > 
+> > So adding the locks to uAPI calls alone would not address the issue.
+> 
+> What I can do is add a mutex to every struct of a subdevice and lock it
+> at the beginning of each subdevice operation.
+> Is this an acceptable solution?
+
+Please do. That's what other drivers do at the moment as well.
+
+-- 
+Kind regards,
+
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
