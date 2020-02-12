@@ -2,59 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B027B15AFA2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 19:20:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAAFC15AFB1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 19:26:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QJTNY492Mdo/TYKhfpDMa8n4ojGym9UaeL/rmTUhUOc=; b=P6bRT273X+3sc0
-	ChCA4WvwyWMDJ+1k5wAJPEeqVxK3/pvSDpuZpnlKVHraRmGLurT6Y9O9M3ZbCEV0KaONs8aO1PW12
-	psWCo+M1c/iM9pLmaMHuL+5vyl+NWXHNbZKq4MH6OcOpthM5yvR7JMlIVTMuQVQIz2aaVM2RXVEkH
-	uf0wY2pupk2mIfzVqrdN1fW3hmSmK1FtfeBS10tahajbgCoYfWu863Ndw4do5fnCM7zX8IipQEVZL
-	QD3Niz/t/kez40i3fh9WjY7QPterLAuw66TS4P+uxQgOBfuzH9XIo+W71hyNR+aLJNTdNTEwkNRj1
-	4ZBwGkmNVC6reQjlRlYA==;
+	List-Owner; bh=SRxf7JpPSio2ss7mCO8RCn00RvPtA+tOAFpBuWlM8J8=; b=mavcqBVS5swcnd
+	IcrQNDVIVVZjMIidvtiKcmnoGl6WZal91GlXXeOQZf5HEWSyS/1Qx70ZK8xD3/2BFScarYbSTIlaP
+	n1E4dV+PGms57upWJ4axE4CmUf3FkD7TiuQgp2in408BD/axo8pQq8wH1Ttwp021aQ/gK6u0vjW/k
+	dd0DikrhLeeKVBqXleqtfzmPn6K0jFPBkgXrIIsN4v1K1QKCJBdkFsRUf+P5enp0BqGwthHlufJU+
+	2GdxA6agizVzhoGVxTVnT/h/T19DZkg2xSSzkzuiW080EungHZLP3WFy1qkJY1SNHOtNAtPszULqi
+	frhnXfptrIkf4yBp7jsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1wcU-0005l0-R4; Wed, 12 Feb 2020 18:20:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1wcN-0005kA-L9
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 18:20:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5029930E;
- Wed, 12 Feb 2020 10:20:10 -0800 (PST)
-Received: from localhost (unknown [10.1.198.52])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E5B563F68E;
- Wed, 12 Feb 2020 10:20:09 -0800 (PST)
-Date: Wed, 12 Feb 2020 18:20:08 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Suzuki Kuruppassery Poulose <suzuki.poulose@arm.com>
-Subject: Re: [PATCH v3 1/7] arm64: add support for the AMU extension v1
-Message-ID: <20200212182008.GA25421@arm.com>
-References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-2-ionela.voinescu@arm.com>
- <93472f17-6465-641d-ea82-3230b5697ffd@arm.com>
- <20200212161045.GA7475@arm.com>
- <133890f7-59bb-63b9-0ca8-2294e3596058@arm.com>
+	id 1j1wi5-00087f-Em; Wed, 12 Feb 2020 18:26:05 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1why-00086z-Du; Wed, 12 Feb 2020 18:25:59 +0000
+Received: by mail-lj1-x242.google.com with SMTP id w1so3474006ljh.5;
+ Wed, 12 Feb 2020 10:25:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=sdJy3y/pjaYpYWC4J4QN/ZTkobn3EjGqqaK/ExDj4B8=;
+ b=PDl+NqgL/n+cptSpvy3o69nsnQDeFVZK5EcckuzH9CtGJU9MGCvbmo9l1XlFtSY9NP
+ PjsnyN6dRhKPnjP0+M0v5Bvbmga87Wqa667VT5KGe13SNrj2vaySsTgqFNRJkBO+jcGS
+ 1PX3uePvSoDEBBXCHQfZDqxymmTSnSx2UYsL5KJU/hdDtmX3PnWWuyAELrQIXk4zZ0pC
+ GZMmLubj2cJJiSAsvBxi0RO+97Zxd8BbkKHfaPqnp7MmP4RuKXZwDEq2WYaKow8je3Xg
+ rBie8/l18sE7TqlahXXzNDoeOC45Sa61/4NmdKNBdXsKRlHD1l+MhwOaebh7RoQ2zmD1
+ c1SA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=sdJy3y/pjaYpYWC4J4QN/ZTkobn3EjGqqaK/ExDj4B8=;
+ b=BUfDhk2w3DxYOgCNYZj/j+MkmEgrlxSJRuOIkxuRNyz1eL/hgCENBH8QDKKyTzwZYD
+ eIbvBhsemNIWWZBPsE6+QUPR7CWvvWdhCJ2kuX70v9TqpKg82TJAGTi3zof4zZOtCVRB
+ kCzIuX6ysj2GVcb++Ghxj8MI8U8C3y3pZFHTvKS32n67viBO5wG0IZa+ftF2q7q1IDQP
+ wvsJ15SzVY4jXyTUT5VCXZ5eH0hvye1B8HXuPFr9YbBGauZE+qlnIM4nzK4UsNSWKX9W
+ 9s5jT/FVIV5HPKxeXsmndEXBqVdgQIlBMI6SZgI51tl+cKXWh1lBwOZ3B+ksCoovGHma
+ +yiA==
+X-Gm-Message-State: APjAAAUd2W5cicnAW0bdXylM6gFyoBVaK0VKcbkOKcraWg8DvmQjhFKs
+ lS1gqFJDDPH1fe7c1VHh3kM=
+X-Google-Smtp-Source: APXvYqwW8lp+R+SCYfdudPq/rEy1BJkdsJzEMeiG2qAC1OaWJKbtuvvqTu29yUSv5jGGKPKIep94DA==
+X-Received: by 2002:a2e:5854:: with SMTP id x20mr8026053ljd.287.1581531955333; 
+ Wed, 12 Feb 2020 10:25:55 -0800 (PST)
+Received: from z50.localnet (109241122244.gdansk.vectranet.pl.
+ [109.241.122.244])
+ by smtp.gmail.com with ESMTPSA id 14sm669227lfz.47.2020.02.12.10.25.53
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 12 Feb 2020 10:25:54 -0800 (PST)
+From: Janusz Krzysztofik <jmkrzyszt@gmail.com>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [RFC PATCH 03/14] ARM: OMAP1: ams-delta: Provide board specific
+ partition info
+Date: Wed, 12 Feb 2020 19:25:52 +0100
+Message-ID: <4506487.GXAFRqVoOG@z50>
+In-Reply-To: <20200212145154.GK64767@atomide.com>
+References: <20200212003929.6682-1-jmkrzyszt@gmail.com>
+ <20200212003929.6682-4-jmkrzyszt@gmail.com>
+ <20200212145154.GK64767@atomide.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <133890f7-59bb-63b9-0ca8-2294e3596058@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_102011_790508_424EFDE2 
-X-CRM114-Status: GOOD (  25.03  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200212_102558_471935_06D9AD5B 
+X-CRM114-Status: GOOD (  10.41  )
+X-Spam-Score: 1.4 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ 1.0 HK_RANDOM_FROM         From username looks random
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jmkrzyszt[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,115 +101,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, linux-doc@vger.kernel.org,
- peterz@infradead.org, catalin.marinas@arm.com, linux-pm@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, mingo@redhat.com,
- viresh.kumar@linaro.org, linux-arm-kernel@lists.infradead.org,
- sudeep.holla@arm.com, will@kernel.org, valentin.schneider@arm.com,
- lukasz.luba@arm.com
+Cc: Vignesh Raghavendra <vigneshr@ti.com>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Richard Weinberger <richard@nod.at>, Janusz Krzysztofik <jmkrzyszt@gmail.com>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Suzuki,
+Hi Tony,
 
-On Wednesday 12 Feb 2020 at 16:20:56 (+0000), Suzuki Kuruppassery Poulose wrote:
-> > > > +static bool has_amu(const struct arm64_cpu_capabilities *cap,
-> > > > +		       int __unused)
-> > > > +{
-> > > > +	/*
-> > > > +	 * The AMU extension is a non-conflicting feature: the kernel can
-> > > > +	 * safely run a mix of CPUs with and without support for the
-> > > > +	 * activity monitors extension. Therefore, if not disabled through
-> > > > +	 * the kernel command line early parameter, enable the capability
-> > > > +	 * to allow any late CPU to use the feature.
-> > > > +	 *
-> > > > +	 * With this feature enabled, the cpu_enable function will be called
-> > > > +	 * for all CPUs that match the criteria, including secondary and
-> > > > +	 * hotplugged, marking this feature as present on that respective CPU.
-> > > > +	 * The enable function will also print a detection message.
-> > > > +	 */
-> > > > +
-> > > > +	if (!disable_amu && !zalloc_cpumask_var(&amu_cpus, GFP_KERNEL)) {
-> > > 
-> > > This looks problematic. Don't we end up in allocating the memory during
-> > > "each CPU" check and thus leaking memory ? Do we really need to allocate
-> > > this dynamically ?
-> > > 
-> > 
-> > Yes, it does make some assumptions. Given that the AMU capability is
-> > a WEAK_LOCAL_CPU_FEATURE I relied on the match function being called
-> > only once, when the return value is true. If the return value is false,
+On Wednesday, February 12, 2020 3:51:54 P.M. CET Tony Lindgren wrote:
+> * Janusz Krzysztofik <jmkrzyszt@gmail.com> [200212 00:41]:
+> > Now as the Amstrad Delta NAND driver supports fetching information on
+> > MTD partitions from device platform data, add partition info to the
+> > NAND device configuration.
 > 
-> That is not correct. A WEAK_LOCAL_CPU_FEATURE is still SCOPE_LOCAL_CPU,
-> implies it is run on all the booting CPUs (including the hotplugged
-> ones). The WEAK is there to imply that its "permitted" or "optional"
-> for a hotplugged CPU. So, eventually you will re-allocate this variable
-> every single time a CPU turns up, where you could also loose the current
-> state.
+> Fine if you want hardcoded partition info :) Not sure if the partition
+> info coming from bootloader is any better either.. Ideally there would
+> be a partition table somewhere on the device like we have for disks..
+
+Yeah, but Amstrad didn't provide anything like that, and we may want to get 
+convenient access to factory content of the flash.  We might use command line 
+for that, though nobody seemed to really like my previous proposal to use 
+command line partition info exclusively.
+
+> Anyways, this is best merged together with the mtd patches so:
 > 
+> Acked-by: Tony Lindgren <tony@atomide.com>
 
-> > which will result in it being called multiple times, it's either because
-> > disable_amu == false, or it has become false due to a previous failed
-> > allocation, in which case a new allocation will not be attempted.
+Thanks for your A-b:.  BTW, patch 06/14 also touches the board file and would 
+require your acceptance before being merged via mtd, so could you please have 
+a look?
 
-First of all, I agree with you that this should be corrected.
-
-But for completion (and my education) I retraced my steps in regards
-to my assumption above. While cpu_enable is called for all CPUs - boot,
-secondary, hotplugged, the matches function (in this case has_amu) is
-not always called for all CPUs, and that's where the confusion came
-from.
-
-Looking over the update_cpu_capabilities function, that's called from
-both setup_boot_cpu_capabilities and check_local_cpu_capabilities
-(secondary CPUs) for SCOPE_LOCAL_CPU:
-
------
-static void update_cpu_capabilities(u16 scope_mask)
-{
-        int i;
-        const struct arm64_cpu_capabilities *caps;
-
-        scope_mask &= ARM64_CPUCAP_SCOPE_MASK;
-        for (i = 0; i < ARM64_NCAPS; i++) {
-                caps = cpu_hwcaps_ptrs[i];
-                if (!caps || !(caps->type & scope_mask) ||
-                    cpus_have_cap(caps->capability) ||
-                    !caps->matches(caps, cpucap_default_scope(caps)))
-                        continue;
-
---> The matches function is only called if !cpus_have_cap
+Thanks,
+Janusz
 
 
-                if (caps->desc)
-                        pr_info("detected: %s\n", caps->desc);
-                cpus_set_cap(caps->capability);
-
---> If matches returns true we mark it as present in cpu_hwcaps.
-
-                if ((scope_mask & SCOPE_BOOT_CPU) && (caps->type & SCOPE_BOOT_CPU))
-                        set_bit(caps->capability, boot_capabilities);
-        }   
-}
----
-
-Therefore caps->matches (in this case has_amu) will only be called as
-long as it returns false. This is where my assumption above came from.
-Also, this is the reason it was working nicely in my testing, as I did
-not test hotplug this time.
-
-Where the has_amu code breaks is when we end up calling
-verify_local_cpu_capabilities instead of update_cpu_capabilities after
-sys_caps_initialised, which will happen for hotplugged CPUs.
-In that case we call caps->matches for all CPUs. Also, if anyone in the
-future ends up calling this_cpu_has_cap for the AMU capability.
-
-I will fix this.
-
-Thank you,
-Ionela.
 
 
 _______________________________________________
