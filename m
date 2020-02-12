@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEA59159E47
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 01:45:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 984F5159E46
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 01:45:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dzN2FltOEQzl1gELDrGAx0RE+2iPiOcqQnBWlZ6/3Rw=; b=ZeA9UPxbnsm8kD
-	oYtPTdaYdm8MCIS0hEcNZIfg4j7bqCe5qLcyX653y1rUpuFycpFGob1Zk3t8Oz8sapMw1mbjUYHxf
-	zhl+lWn6TnYVUnzBX5p2lvXLVMCENBCGQxymDjC/taWIysHCqMZm/lXirqKZfCW7thdj0MED9RKVx
-	V7ACmjz4gqOwiYRbglNKIIUa6qsOHVv+c82mfGL/VFZTCV/hw5iHwUtGLwNyiqbYqAn6RgEeOJX32
-	7p9j3rWheQ62B9O3/BLCrPnzQoiVA+nS87MZ0XJ31zP5Pz780x1b7FRLwpzUTR8DUKN9PJ7pIfidr
-	5VnnnyYJ3o06Et4eYwfg==;
+	List-Owner; bh=c0iO4ay74XxWXNLfpt0GHdayPoDR885Y2fHB8CKVz9k=; b=uu+vh94oNh2EeD
+	d43HMN/6huT5O1wunU3OgL0Se/4N3n+ucwFmPLfQPMCIJFwDS3vYgh/DFA8LmyGSJq335DbmzjQc6
+	WSB39zLUS3OxNKpkiZux3+CzkqAwBfF3ZM0QO7nD8Mt/jwLhJ95d5Jb+Md9qxBO097Zs4i7r0S75a
+	Ut6Y0kjEdy1qSdBJVG3E0UEm8Rv3lOPvOU5AKkJwVfCOHXC7o7ZbgUy+1/l7akEoisrtY8SpMiIl0
+	4btBnXRVC1+qWxXv1ADUz8Zpve8uuC33YHtUbjhekQ5pLeOIj8H/YpPMkm8EP3AIs7jGQtlakCHe7
+	+wTa9/8U+yzy6ug2C/Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1g9t-0005eE-TB; Wed, 12 Feb 2020 00:45:41 +0000
+	id 1j1g9h-0005Is-BC; Wed, 12 Feb 2020 00:45:29 +0000
 Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1g4r-0008KR-CT; Wed, 12 Feb 2020 00:40:31 +0000
-Received: by mail-lf1-x141.google.com with SMTP id m30so263267lfp.8;
- Tue, 11 Feb 2020 16:40:27 -0800 (PST)
+ id 1j1g4r-0008LD-C9; Wed, 12 Feb 2020 00:40:31 +0000
+Received: by mail-lf1-x141.google.com with SMTP id r14so275179lfm.5;
+ Tue, 11 Feb 2020 16:40:28 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=brE3/g7u0N/gg2OgUxbSqylt9cNqdnoOIHKUd4Jqf/I=;
- b=aUPEiqJkISxLDvjpf3W2bPilp4oLV1bN0j7U/z/pSsTs8ADP3MhrmBZ9ZqhBLdktug
- oc5O/08eOSIqGfnJLCqBzkPj9k7pHITjd0WveqVhUx92RP4fP36iTF7SewsKAZbHo8eg
- 1Rmq6GSA9P1kfN5jQ6VTjSIvgnfmVNOkM6BI0VqJn+I3sOqIMloRVorlSjOMxQpfibfF
- pzbuBM5fKGQsdrOlovubVn/nLSzXkpZ1oFL9BGEaLM2SY3BWJH3wpzH4GnVE7snPOkED
- R8WiRvn5ll2wkCPeGklOt+tv1I948ov7R1zvoia5vIftzHh25c57BrVVieqHhNwsHh77
- DYUA==
+ bh=v/6tTpO3ty9Ickxrg60llaPHKJlLlwszXGl2q4ZEWdA=;
+ b=XXy+baYR3VmU8+0MGUBmeB6Ufp/HhTXjpTNcm302ZvTcMx1EevlSI36N7AfkUkFY+L
+ hikN/KF45d4Z3VpgD4ep9+f5bnN6R9yOvtZD6IKtW6JF30+QsQdYKL6ANu3J23pA2zPC
+ vMQdRiXUl7QMICn0fkSYS4MjnkQ9yGjELAbk761xAGcGiTv5ew4ysYqRn60qsjpToxZp
+ LdP4g+dkLb2RagCz7Srr7VCQBngZBot1UyOaQ/WSyyXpNmSVXCy6qUaKuJrhOHfOetnx
+ +nI6CWdxR8IatlCyIFlRpeJ+xQEWEj9sCVcSc1FKF4cqaFeyYI/kEQKixttD8PiMxyIe
+ HjJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=brE3/g7u0N/gg2OgUxbSqylt9cNqdnoOIHKUd4Jqf/I=;
- b=SH6lmYNVSxRj+QkahHXiC3VsGEOU34/XuANJ1p9dGILYcf7Vvtw0C2fMZw5JYRncGB
- EIQfQo4hsLzWisw7r323YE9d/L64BWapkZ+13Vk0FgInmnt1t9tkbA7nFOffmhAtqZlL
- xBLIlUFZtddMHdc/+rfwUISA1QScoSapaGbMP8ROQ53LVWblgmpMmuBRSKe7wd6IBrkK
- T5MZFAegc5P9wee/93Dp9ihLy0r7dpH4m53dpnnxX3loFBDA9fXLPjEWZX9BFHianpW4
- gwWbxAqN/eDp0dIqpZFwDo3+wkfE0BmeUomWVSam5+LMQ5UC6RSFBWykoGSFpdxhnvWH
- 1seQ==
-X-Gm-Message-State: APjAAAXZlYcjxujA32N7egJRaW079UTlUJuJmoAe3PrWKbSyJHT0Yc0A
- afW1fbOdlx7oswvH5Vp0Z9Y=
-X-Google-Smtp-Source: APXvYqywmdJL4ETEOowYVGw711/cu1ENWKG7wwEqkKKOXa2c0GrDEFSOpOtQ6O6KBhMLMU76YfQIFQ==
-X-Received: by 2002:a19:740a:: with SMTP id v10mr5014210lfe.65.1581468025589; 
- Tue, 11 Feb 2020 16:40:25 -0800 (PST)
+ bh=v/6tTpO3ty9Ickxrg60llaPHKJlLlwszXGl2q4ZEWdA=;
+ b=Dxk4U1xzFoKO9qZt8AFeEiB1XsADuLZSSq70bouPfyEoX/LWFwyNHqTiN+6J0QI4mV
+ u4IE0tfo+V1iNlUsvdl4U04AUHWVnMTiaZhoQXug6jAyQMWKfMR7EwQuxJphGa4HEAd2
+ ro3chNzbjFyJcCfpiwtvK0hcPC1hvkAUQUqTuvteBPgss6yHR1lUNCfrZo3xZ+j8RgHr
+ rADYySnrNehu1MAtEL5y9QxdsYMHQM7Ycr+P8hlklx0MZlVe7z3vK1hTf1JsxC80TTIH
+ 5+JKIPNvMF/tiwPgcCes4xvxiqRqMnyELQ3Irtx7OJMnpk7vLI+Bu86MEmw2IHa6HA/d
+ bMig==
+X-Gm-Message-State: APjAAAX1z5RGt9xZsx9ICLT+km39Ql5/1+ZnwNxDdcAenOHuElGX3xvL
+ HPPdA8wOdGAwVkB/EISuzPc=
+X-Google-Smtp-Source: APXvYqzJQMZWjP7I8oQrWw3hIto+GJNhsSDnYXYqbb56cNLMkwksMbMcf+Z2BxWEJFVtQsbKN+icfg==
+X-Received: by 2002:ac2:5f74:: with SMTP id c20mr5161323lfc.15.1581468026840; 
+ Tue, 11 Feb 2020 16:40:26 -0800 (PST)
 Received: from z50.gdansk-morena.vectranet.pl
  (109241122244.gdansk.vectranet.pl. [109.241.122.244])
- by smtp.gmail.com with ESMTPSA id e8sm3621935ljb.45.2020.02.11.16.40.24
+ by smtp.gmail.com with ESMTPSA id e8sm3621935ljb.45.2020.02.11.16.40.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 11 Feb 2020 16:40:25 -0800 (PST)
+ Tue, 11 Feb 2020 16:40:26 -0800 (PST)
 From: Janusz Krzysztofik <jmkrzyszt@gmail.com>
 To: Miquel Raynal <miquel.raynal@bootlin.com>,
  Richard Weinberger <richard@nod.at>
-Subject: [RFC PATCH 10/14] mtd: rawnand: ams-delta: Add module device tables
-Date: Wed, 12 Feb 2020 01:39:25 +0100
-Message-Id: <20200212003929.6682-11-jmkrzyszt@gmail.com>
+Subject: [RFC PATCH 11/14] mtd: rawnand: ams-delta: Support custom driver
+ initialisation
+Date: Wed, 12 Feb 2020 01:39:26 +0100
+Message-Id: <20200212003929.6682-12-jmkrzyszt@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200212003929.6682-1-jmkrzyszt@gmail.com>
 References: <20200212003929.6682-1-jmkrzyszt@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_164029_447685_C5CDAACA 
-X-CRM114-Status: GOOD (  10.01  )
+X-CRM114-CacheID: sfid-20200211_164029_447478_E5310F5E 
+X-CRM114-Status: GOOD (  11.10  )
 X-Spam-Score: 1.4 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.4 points)
@@ -109,49 +110,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for merging the driver with "gpio-nand", introduce
-module device tables where new device models can be accommodated as
-soon as respective support is added.
+In preparation for extending the driver with custom I/O support, try to
+obtain device specific initialisation routine from a matching device
+table entry and run it as an additional step of device probe.
 
 Signed-off-by: Janusz Krzysztofik <jmkrzyszt@gmail.com>
 ---
- drivers/mtd/nand/raw/ams-delta.c | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ drivers/mtd/nand/raw/ams-delta.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
 diff --git a/drivers/mtd/nand/raw/ams-delta.c b/drivers/mtd/nand/raw/ams-delta.c
-index 0c88e94e9b71..9857ce25debf 100644
+index 9857ce25debf..97e3b6629c72 100644
 --- a/drivers/mtd/nand/raw/ams-delta.c
 +++ b/drivers/mtd/nand/raw/ams-delta.c
-@@ -370,11 +370,29 @@ static int ams_delta_cleanup(struct platform_device *pdev)
- 	return 0;
- }
+@@ -22,6 +22,7 @@
+ #include <linux/mtd/nand-gpio.h>
+ #include <linux/mtd/rawnand.h>
+ #include <linux/mtd/partitions.h>
++#include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <linux/sizes.h>
  
-+static const struct of_device_id gpio_nand_of_id_table[] = {
-+	{
-+		/* sentinel */
-+	},
-+};
-+MODULE_DEVICE_TABLE(of, gpio_nand_of_id_table);
-+
-+static const struct platform_device_id gpio_nand_plat_id_table[] = {
-+	{
-+		.name	= "ams-delta-nand",
-+	}, {
-+		/* sentinel */
-+	},
-+};
-+MODULE_DEVICE_TABLE(of, gpio_nand_plat_id_table);
-+
- static struct platform_driver ams_delta_nand_driver = {
- 	.probe		= ams_delta_init,
- 	.remove		= ams_delta_cleanup,
-+	.id_table	= gpio_nand_plat_id_table,
- 	.driver		= {
- 		.name	= "ams-delta-nand",
-+		.of_match_table = of_match_ptr(gpio_nand_of_id_table),
- 	},
- };
+@@ -230,6 +231,7 @@ static int ams_delta_init(struct platform_device *pdev)
+ 	struct nand_chip *this;
+ 	struct mtd_info *mtd;
+ 	struct gpio_descs *data_gpiods;
++	int (*probe)(struct platform_device *pdev, struct ams_delta_nand *priv);
+ 	int err = 0;
  
+ 	if (pdata) {
+@@ -319,6 +321,15 @@ static int ams_delta_init(struct platform_device *pdev)
+ 	priv->data_gpiods = data_gpiods;
+ 	priv->data_in = true;
+ 
++	if (pdev->id_entry)
++		probe = (void *) pdev->id_entry->driver_data;
++	else
++		probe = of_device_get_match_data(&pdev->dev);
++	if (probe)
++		err = probe(pdev, priv);
++	if (err)
++		return err;
++
+ 	/* Initialize the NAND controller object embedded in ams_delta_nand. */
+ 	priv->base.ops = &ams_delta_ops;
+ 	nand_controller_init(&priv->base);
 -- 
 2.24.1
 
