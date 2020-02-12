@@ -2,91 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5553415A9BB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 14:09:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 21F7315A9C3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 14:11:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xXYcfR2zRJygmB0Ku5YIyid2wf1ynu7+LAMJKtvpJzo=; b=KwyyyMMDappJmZ
-	sB/NeufqTlXersQI0nFag8WvaA+7n/5AqyBGv+bva5m7KKt553bfvoAqr3YskElCzS6uJpMZrZOMT
-	X/6+89nf1aXqsAsjQbkYyCNLL6SsDA3oio2aA+tOYKQIp0vFnGhfclK2J9PL+fYpSMKl+DGzGb636
-	UrufC8bkroqJY/JfoGf7Ca40VpJDTKvBHovo6iujdwcP94QS6pGn1KbeUnUkciQZAM4mB0bZ+cjNb
-	qmRnnuoJTiw205fLIDGIMhf5+qRQt7Kw/O4mKY/1kntsM9Ug7DhXxSVvXuxRoI+3lo0MPoHnaPoGF
-	hzupLDijxcMnFnxgTYKA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LfQHLl3Xq1T4ps/QyyleIIGzISfWuPlleIij3fPa69E=; b=dUR1lUPAFA3+aG
+	iLXvrqLwxaDq20nXb14cjdlVVNeQ1MgjcG7dDRWb7WTIN4XhwBQxfWNICAtPOV786WZZP3wd1RpdY
+	uyWYdoJhMP1QVV/YLMfKex8MYGp1G3Rl39FkTrRi9G/FnBJB2zkrdbMuupRiqm4u4sGOZXZ8mW9yz
+	BnjpjWreQKVJWIHy9gjSYkxSmS4zx0LjdszLjAZBa4CtPR80moxlP3+zsq5KrtiHNUxlDAc0QgAdW
+	obGPD3TGoYn4kQP1gS2z1SM4dmdn3fLRKY40pEsfmC7D5wTt7rwv/zcQX0vPE48R3aYp8KOhbBQQt
+	Z/mQWvL6TnsfvifAG59w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1rlR-0002Kd-Tp; Wed, 12 Feb 2020 13:09:13 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1j1rnT-0003rW-Kj; Wed, 12 Feb 2020 13:11:19 +0000
+Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1rlH-0002Js-Qf
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 13:09:05 +0000
-Received: by mail-il1-x144.google.com with SMTP id b15so1678119iln.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Feb 2020 05:09:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=lwgzXOkICXCQfXrNHWXrCftoLfH9Scd8moCWKuZ8A7c=;
- b=uwP0fhVrX+cKaPrA9gZuzCsKp0yddAX94jEyXD+oxpoLTWMMqVteKVFhQIfbax7itw
- LTgnQhEBPH1h/TZFReuXAGeaSeQs3IeZGCBz9HlL5RRSoErDbx/VHPZz1N9s6W4tavzm
- tRI7PsSWpP61qEZOKSCUIjyPXdiR1pfk5omo4L+DP4BGIMk76I6FO9jnbIsamlo43As1
- vE6g7V0GDiRYWnLArr4NKRwoaRkGq92lsMI7sj8ISNP5sQit0d+XhUhDDSwyBqtr8A82
- nPjSpLQlG48uHNHO8yaTHauwI0bT2iFl7Ih0ObcSXH56oeHLWsj+0PBQvlsD3p8ywO9E
- l4Qw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=lwgzXOkICXCQfXrNHWXrCftoLfH9Scd8moCWKuZ8A7c=;
- b=rBsLU4Wa+hA2oSQxhSNJh7unhL1Um0G3iBrw5Ib0nAXYGoqagZD8ZLjkAD+NJPb7cO
- 8+gIQi7tudYG/vC3zytTxzgFG04TtKZtSoGqjIqEvGwgqW0FzNWiA7y/YlqzqMbBi7Rg
- ZFLlZ9kejI2Q9yma/+ARPGkymGb9KBzltRf1Z7KtgPYmUB5jkkSkx8/x4OAFdm7ZSCsm
- uWgaO35yhb6rO/ylzYaT7klFuTuLKD6CUSoqdKcS2xlSeysGWP5TtXgbHCLVmjRykair
- /g6cseZ9PunVuWVWymRrt+At+XinDxktK76RJmkUqvuAjahI6/7spmdpFrviCMtS+ahz
- JzVg==
-X-Gm-Message-State: APjAAAXy8ogdS+8KFIdMXh6zy5XLEYUmI5xF5zXclbUHdHxj3nZfmz/i
- dFU4KyF5ql2WLyVyxh+Qlg9smmLorxqJZaR3KAI=
-X-Google-Smtp-Source: APXvYqzwGZCfLCucPj5npcA6pFh/Daw5mAO0fUTiKusa4iACLpoLiJs+a3YdEul7VJ0Sa7qkhI7BVMm1OAQ3UfESN3g=
-X-Received: by 2002:a92:350d:: with SMTP id c13mr11345711ila.205.1581512940477; 
- Wed, 12 Feb 2020 05:09:00 -0800 (PST)
+ id 1j1rnJ-0003qo-R2
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 13:11:11 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 12 Feb 2020 05:11:08 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,428,1574150400"; d="scan'208";a="347513465"
+Received: from ahunter-desktop.fi.intel.com (HELO [10.237.72.167])
+ ([10.237.72.167])
+ by fmsmga001.fm.intel.com with ESMTP; 12 Feb 2020 05:11:05 -0800
+Subject: Re: [PATCH v4 0/4] perf tools: Add support for some spe events and
+ precise ip
+To: Jiri Olsa <jolsa@redhat.com>, James Clark <james.clark@arm.com>
+References: <20200210122509.GA2005279@krava>
+ <20200211140445.21986-1-james.clark@arm.com> <20200212122425.GA194466@krava>
+From: Adrian Hunter <adrian.hunter@intel.com>
+Organization: Intel Finland Oy, Registered Address: PL 281, 00181 Helsinki,
+ Business Identity Code: 0357606 - 4, Domiciled in Helsinki
+Message-ID: <abac26ad-2b27-0bc7-d1d6-9a92ece3718e@intel.com>
+Date: Wed, 12 Feb 2020 15:10:11 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <20200202125950.1825013-1-aford173@gmail.com>
- <20200202125950.1825013-2-aford173@gmail.com>
- <CAOMZO5D3emrAk84wDS04qJC-3AyvFnqodhoMsXO-ukHnYsU+PQ@mail.gmail.com>
- <CAHCN7xJyZRwJhnWW2mAbOeGyrMsB7Au_e6AvwiNmNS8gFUfSyw@mail.gmail.com>
- <20200212120753.GF4028@sirena.org.uk>
-In-Reply-To: <20200212120753.GF4028@sirena.org.uk>
-From: Adam Ford <aford173@gmail.com>
-Date: Wed, 12 Feb 2020 07:08:49 -0600
-Message-ID: <CAHCN7x+5bACfYVX49Lib+fmNq-dEOkcyi0gXt7rtYxrGaYbH1Q@mail.gmail.com>
-Subject: Re: [PATCH V2 2/5] spi: fspi: dynamically alloc AHB memory
-To: Mark Brown <broonie@kernel.org>
+In-Reply-To: <20200212122425.GA194466@krava>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_050903_869408_9A2D4633 
-X-CRM114-Status: GOOD (  18.29  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200212_051110_710489_F1216A82 
+X-CRM114-Status: GOOD (  17.61  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.100 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [aford173[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [aford173[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,52 +71,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Ashish Kumar <ashish.kumar@nxp.com>,
- linux-spi <linux-spi@vger.kernel.org>, Yogesh Gaur <yogeshgaur.83@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Han Xu <han.xu@nxp.com>,
- Fabio Estevam <festevam@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: nd@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 12, 2020 at 6:07 AM Mark Brown <broonie@kernel.org> wrote:
->
-> On Mon, Feb 03, 2020 at 04:53:34AM -0600, Adam Ford wrote:
->
-> > My motivation is to get the flexspi on the i.MX8MM to work, and I did
-> > a list of the patches applied on the NXP branch to see what was
-> > applied on top of their 4.19 kernel and this patch series generated
-> > from that list.  Most of the NXP commits are one-line commits, and I
-> > don't know the motivation for what's happening.  NXP did it, and I
-> > know it works on the Flexspi driver.
->
-> Adding new compatibles and so on seems fine but the patches making
-> random changes without explanation like the one for octal mode I just
-> replied to are more worrying, do they work with older versions of the IP
-> or in all use cases for example?  I'd suggest cutting the initial patch
-> series down to the bare minimum needed to get things working and then
-> building on top of that if that's not already been done.
+On 12/02/20 2:24 pm, Jiri Olsa wrote:
+> On Tue, Feb 11, 2020 at 02:04:41PM +0000, James Clark wrote:
+>> Hi Jirka,
+>>
+>> Oops. I've removed all the changes to evlist.c and evsel.h
+> 
+> hi,
+> it looks ok from my POV, but I don't follow auxtrace that much
+> 
+> Adrian,
+> it's changing some generic bits of the auxtrace framework,
+> could you please check?
 
-The original author was copied on the initial commit.  I literally
-generated the patch from NXP's branch,  added my notes, and pushed
-them to the mailing lists after testing them on the  the Linux master
-branch.   I am a bit disappointed that NXP's author hasn't responded
-to any of the comments or feedback.  NXP knows their hardware and
-better understands the details as to what is happening and why.  In
-any case,  I'll try to scale the patch series back to just enough to
-get it working on the i.MX8M Mini.  I'll expand a bit on the commit
-message based on what I've learned about the various in-implemented
-quirks and send a V2 series.
+Sure, in the next few days.
 
-adam
+> 
+> thanks,
+> jirka
+> 
+>>
+>>
+>> James
+>>
+>> Tan Xiaojun (4):
+>>   perf tools: Move arm-spe-pkt-decoder.h/c to the new dir
+>>   perf tools: Add support for "report" for some spe events
+>>   perf report: Add SPE options to --itrace argument
+>>   perf tools: Support "branch-misses:pp" on arm64
+>>
+>>  tools/perf/Documentation/itrace.txt           |   5 +-
+>>  tools/perf/arch/arm/util/auxtrace.c           |  38 +
+>>  tools/perf/builtin-record.c                   |   5 +
+>>  tools/perf/util/Build                         |   2 +-
+>>  tools/perf/util/arm-spe-decoder/Build         |   1 +
+>>  .../util/arm-spe-decoder/arm-spe-decoder.c    | 225 ++++++
+>>  .../util/arm-spe-decoder/arm-spe-decoder.h    |  66 ++
+>>  .../arm-spe-pkt-decoder.c                     |   0
+>>  .../arm-spe-pkt-decoder.h                     |   2 +
+>>  tools/perf/util/arm-spe.c                     | 756 +++++++++++++++++-
+>>  tools/perf/util/arm-spe.h                     |   3 +
+>>  tools/perf/util/auxtrace.c                    |  13 +
+>>  tools/perf/util/auxtrace.h                    |  14 +-
+>>  13 files changed, 1089 insertions(+), 41 deletions(-)
+>>  create mode 100644 tools/perf/util/arm-spe-decoder/Build
+>>  create mode 100644 tools/perf/util/arm-spe-decoder/arm-spe-decoder.c
+>>  create mode 100644 tools/perf/util/arm-spe-decoder/arm-spe-decoder.h
+>>  rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.c (100%)
+>>  rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.h (96%)
+>>
+>> -- 
+>> 2.17.1
+>>
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
