@@ -2,77 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CC5915A98C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 13:58:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5553415A9BB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 14:09:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L7bqiOHmzw/pkgQKfcVkFMxddE59q+aN5JU8vxxeTH4=; b=uruv11DpDlBjJm
-	9COSuc1cBCy+jtFQd6rK88qFYQCORut8oFDyQp3SRHhUZOfR6bRKteyZuX+PrAZYw8GhkO7cfXVUL
-	rQkuZOizE36NEDKCReZh3dIVeMxSR9JwBOUOwdqDOVd/GSTjihJ7AWjO5mDISPAxFS4KzwJDfYIwx
-	GB0fiKaONqJMmXfpsXMU/VKeoThpFe4z7S7FBQOWiFd2iG8OC35/uaxAWepzdvi0LeQJOGQy83qy4
-	lPZvWFdYgHcGV4VJrsn9fFv/68Id8x3Fvm8NNwOKj4IEJATDejiGcfEsKMb5tuBc+7QP5Aqo09tfG
-	oQyk73FoXKlTF6oYMh3A==;
+	List-Owner; bh=xXYcfR2zRJygmB0Ku5YIyid2wf1ynu7+LAMJKtvpJzo=; b=KwyyyMMDappJmZ
+	sB/NeufqTlXersQI0nFag8WvaA+7n/5AqyBGv+bva5m7KKt553bfvoAqr3YskElCzS6uJpMZrZOMT
+	X/6+89nf1aXqsAsjQbkYyCNLL6SsDA3oio2aA+tOYKQIp0vFnGhfclK2J9PL+fYpSMKl+DGzGb636
+	UrufC8bkroqJY/JfoGf7Ca40VpJDTKvBHovo6iujdwcP94QS6pGn1KbeUnUkciQZAM4mB0bZ+cjNb
+	qmRnnuoJTiw205fLIDGIMhf5+qRQt7Kw/O4mKY/1kntsM9Ug7DhXxSVvXuxRoI+3lo0MPoHnaPoGF
+	hzupLDijxcMnFnxgTYKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1ray-00072L-O8; Wed, 12 Feb 2020 12:58:24 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j1rlR-0002Kd-Tp; Wed, 12 Feb 2020 13:09:13 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1ran-00071F-LB
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 12:58:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1581512291;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=WNE9XiYfIRFh5LYCvgVuz7J2bfIjYJxs9twoYqkH1vE=;
- b=B6rLVHGrult10fEy9RK0Vcx6KCvD4yIlOFG6NwJfU+QAtVTKF9HIqurSDoagx9oRuhmwAe
- oO8tDMozVSZnL28ujrjZ4aVktqrwio4jTrwTMta4kwjR9z0DkHCwjMc4c19kO2U/YMZNm5
- 6+6AxMjn8XgN9v9XM/2dAgWxw+XlDxU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-416-GUBT95-nNVi27y58GnvC5Q-1; Wed, 12 Feb 2020 07:58:03 -0500
-X-MC-Unique: GUBT95-nNVi27y58GnvC5Q-1
-Received: from smtp.corp.redhat.com (int-mx04.intmail.prod.int.phx2.redhat.com
- [10.5.11.14])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 04ABD108F25C;
- Wed, 12 Feb 2020 12:58:02 +0000 (UTC)
-Received: from mail (ovpn-122-89.rdu2.redhat.com [10.10.122.89])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 733DC5DA7B;
- Wed, 12 Feb 2020 12:57:58 +0000 (UTC)
-Date: Wed, 12 Feb 2020 07:57:57 -0500
-From: Andrea Arcangeli <aarcange@redhat.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH 2/2] arm64: tlb: skip tlbi broadcast for single threaded
- TLB flushes
-Message-ID: <20200212125757.GD3699@redhat.com>
-References: <20200203201745.29986-1-aarcange@redhat.com>
- <20200203201745.29986-3-aarcange@redhat.com>
- <20200210175106.GA27215@arrakis.emea.arm.com>
- <20200210201411.GC3699@redhat.com>
- <20200211140025.GB153117@arrakis.emea.arm.com>
+ id 1j1rlH-0002Js-Qf
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 13:09:05 +0000
+Received: by mail-il1-x144.google.com with SMTP id b15so1678119iln.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Feb 2020 05:09:01 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=lwgzXOkICXCQfXrNHWXrCftoLfH9Scd8moCWKuZ8A7c=;
+ b=uwP0fhVrX+cKaPrA9gZuzCsKp0yddAX94jEyXD+oxpoLTWMMqVteKVFhQIfbax7itw
+ LTgnQhEBPH1h/TZFReuXAGeaSeQs3IeZGCBz9HlL5RRSoErDbx/VHPZz1N9s6W4tavzm
+ tRI7PsSWpP61qEZOKSCUIjyPXdiR1pfk5omo4L+DP4BGIMk76I6FO9jnbIsamlo43As1
+ vE6g7V0GDiRYWnLArr4NKRwoaRkGq92lsMI7sj8ISNP5sQit0d+XhUhDDSwyBqtr8A82
+ nPjSpLQlG48uHNHO8yaTHauwI0bT2iFl7Ih0ObcSXH56oeHLWsj+0PBQvlsD3p8ywO9E
+ l4Qw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lwgzXOkICXCQfXrNHWXrCftoLfH9Scd8moCWKuZ8A7c=;
+ b=rBsLU4Wa+hA2oSQxhSNJh7unhL1Um0G3iBrw5Ib0nAXYGoqagZD8ZLjkAD+NJPb7cO
+ 8+gIQi7tudYG/vC3zytTxzgFG04TtKZtSoGqjIqEvGwgqW0FzNWiA7y/YlqzqMbBi7Rg
+ ZFLlZ9kejI2Q9yma/+ARPGkymGb9KBzltRf1Z7KtgPYmUB5jkkSkx8/x4OAFdm7ZSCsm
+ uWgaO35yhb6rO/ylzYaT7klFuTuLKD6CUSoqdKcS2xlSeysGWP5TtXgbHCLVmjRykair
+ /g6cseZ9PunVuWVWymRrt+At+XinDxktK76RJmkUqvuAjahI6/7spmdpFrviCMtS+ahz
+ JzVg==
+X-Gm-Message-State: APjAAAXy8ogdS+8KFIdMXh6zy5XLEYUmI5xF5zXclbUHdHxj3nZfmz/i
+ dFU4KyF5ql2WLyVyxh+Qlg9smmLorxqJZaR3KAI=
+X-Google-Smtp-Source: APXvYqzwGZCfLCucPj5npcA6pFh/Daw5mAO0fUTiKusa4iACLpoLiJs+a3YdEul7VJ0Sa7qkhI7BVMm1OAQ3UfESN3g=
+X-Received: by 2002:a92:350d:: with SMTP id c13mr11345711ila.205.1581512940477; 
+ Wed, 12 Feb 2020 05:09:00 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200211140025.GB153117@arrakis.emea.arm.com>
-User-Agent: Mutt/1.13.1 (2019-12-14)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.14
+References: <20200202125950.1825013-1-aford173@gmail.com>
+ <20200202125950.1825013-2-aford173@gmail.com>
+ <CAOMZO5D3emrAk84wDS04qJC-3AyvFnqodhoMsXO-ukHnYsU+PQ@mail.gmail.com>
+ <CAHCN7xJyZRwJhnWW2mAbOeGyrMsB7Au_e6AvwiNmNS8gFUfSyw@mail.gmail.com>
+ <20200212120753.GF4028@sirena.org.uk>
+In-Reply-To: <20200212120753.GF4028@sirena.org.uk>
+From: Adam Ford <aford173@gmail.com>
+Date: Wed, 12 Feb 2020 07:08:49 -0600
+Message-ID: <CAHCN7x+5bACfYVX49Lib+fmNq-dEOkcyi0gXt7rtYxrGaYbH1Q@mail.gmail.com>
+Subject: Re: [PATCH V2 2/5] spi: fspi: dynamically alloc AHB memory
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_045815_120843_E2BFC306 
-X-CRM114-Status: GOOD (  11.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200212_050903_869408_9A2D4633 
+X-CRM114-Status: GOOD (  18.29  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [aford173[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [aford173[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -81,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,29 +98,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rafael Aquini <aquini@redhat.com>, Jon Masters <jcm@jonmasters.org>,
- linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- Mark Salter <msalter@redhat.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Ashish Kumar <ashish.kumar@nxp.com>,
+ linux-spi <linux-spi@vger.kernel.org>, Yogesh Gaur <yogeshgaur.83@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, Han Xu <han.xu@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+On Wed, Feb 12, 2020 at 6:07 AM Mark Brown <broonie@kernel.org> wrote:
+>
+> On Mon, Feb 03, 2020 at 04:53:34AM -0600, Adam Ford wrote:
+>
+> > My motivation is to get the flexspi on the i.MX8MM to work, and I did
+> > a list of the patches applied on the NXP branch to see what was
+> > applied on top of their 4.19 kernel and this patch series generated
+> > from that list.  Most of the NXP commits are one-line commits, and I
+> > don't know the motivation for what's happening.  NXP did it, and I
+> > know it works on the Flexspi driver.
+>
+> Adding new compatibles and so on seems fine but the patches making
+> random changes without explanation like the one for octal mode I just
+> replied to are more worrying, do they work with older versions of the IP
+> or in all use cases for example?  I'd suggest cutting the initial patch
+> series down to the bare minimum needed to get things working and then
+> building on top of that if that's not already been done.
 
-On Tue, Feb 11, 2020 at 02:00:25PM +0000, Catalin Marinas wrote:
-> I think there is another race here. IIUC, the assumption you make is
-> that when mm_users <= 1 && mm_count == 1, the only active user of this
-> pgd/ASID is on the CPU doing the TLBI. This is not the case for
-> try_to_unmap() where the above condition may be true but the active
-> thread on a different CPU won't notice the local TLBI.
+The original author was copied on the initial commit.  I literally
+generated the patch from NXP's branch,  added my notes, and pushed
+them to the mailing lists after testing them on the  the Linux master
+branch.   I am a bit disappointed that NXP's author hasn't responded
+to any of the comments or feedback.  NXP knows their hardware and
+better understands the details as to what is happening and why.  In
+any case,  I'll try to scale the patch series back to just enough to
+get it working on the i.MX8M Mini.  I'll expand a bit on the commit
+message based on what I've learned about the various in-implemented
+quirks and send a V2 series.
 
-The "current->mm == mm" check is what shall prevent the above.
-
-Thanks,
-Andrea
-
+adam
 
 _______________________________________________
 linux-arm-kernel mailing list
