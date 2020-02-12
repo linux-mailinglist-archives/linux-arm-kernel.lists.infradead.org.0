@@ -2,67 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 156E315B29D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 22:15:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80D3815B331
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 22:57:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p4zeARZ/bny9Xc0pGj/ipSOucegCMEMpmTlufOmQgwg=; b=F5PV7Jj6ylBr8T
-	8WCR2QrH+h9xSjpT3dih4Sqx7IOMepwT/bOrw21JPAymK8rHL83JEE7BOd90zS/9/PDmmDTTwhZgC
-	/0kUQlzsjnhWFKvFjF5RZzb+PNPrfJzFedMc/9bt3KqiB3sXQFuFDb3tla423bUrTNACeHeoZql7q
-	79p/ithMTz2CjSra32eZkDFTIsGiWCiy3PbEWAZpcq5m15LCOm2SYZjNFOCdDqAy1LFwFH58T/SGH
-	Yhz8x3KD419WwUrGVivf8cn6j8d3i0jZ4WsuzX++iXrqFGJu9uXST4adh7zRbzL6LMAbLCaFHh+tu
-	0TV3fn9i/YuIuDfLnttA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=1wa5V5qtMcjv+vBE6xiqVFGCUPiioyFhtQHiqHweRKg=; b=AJb
+	XdnlBrcQwnR/JOQqYCyMp9JkBuo1q2tABq32lLYXLZlEbXxL6KbCh3IU7BnrYbwmmSXujTGL0gNLg
+	fm/XURpLY9ooQwYA9i4Eljg0Ib6uWS4GO+dUpD76P/z0AFl1Pjk3Cc7/1flz8UvvpuQFe88dZEGyc
+	FGte/cPnIKsv/OOYW9IxeXGFS7v/bJj7hCZMdoGf9vpdmCCcL5S+5r8qAg9ureaVhGUrXG71qf92b
+	4VoJgyvV2RFHityxyQFOtlI7jw9BICGAaroTp9bbZb1GFJCUHrNEU27TYaNJQB8i8DJZiYkkeyHPA
+	3/PEmVYk38UvH7XnEe795ciNuqykBJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1zM5-0002Yg-Ve; Wed, 12 Feb 2020 21:15:33 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1j200n-0007fs-NR; Wed, 12 Feb 2020 21:57:37 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1zLy-00019i-Bm; Wed, 12 Feb 2020 21:15:27 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga005.fm.intel.com ([10.253.24.32])
- by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 12 Feb 2020 13:13:25 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,434,1574150400"; d="scan'208";a="432449589"
-Received: from wendeand-mobl.ger.corp.intel.com (HELO kekkonen.fi.intel.com)
- ([10.252.52.16])
- by fmsmga005.fm.intel.com with ESMTP; 12 Feb 2020 13:13:20 -0800
-Received: by kekkonen.fi.intel.com (Postfix, from userid 1000)
- id 0320921D13; Wed, 12 Feb 2020 23:13:17 +0200 (EET)
-Date: Wed, 12 Feb 2020 23:13:17 +0200
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH v8 05/14] media: rkisp1: add Rockchip ISP1 subdev driver
-Message-ID: <20200212211317.GD3087@kekkonen.localdomain>
-References: <20190730184256.30338-1-helen.koike@collabora.com>
- <20190730184256.30338-6-helen.koike@collabora.com>
- <20190808091406.GQ21370@paasikivi.fi.intel.com>
- <da6c1d01-e3f6-ad73-db55-145d7832a665@collabora.com>
- <20190815082422.GM6133@paasikivi.fi.intel.com>
- <20190815131748.GS6133@paasikivi.fi.intel.com>
- <78856358-1afd-31a7-86dd-22f7d6d7fb05@collabora.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <78856358-1afd-31a7-86dd-22f7d6d7fb05@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1j200d-0007fF-4i
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 21:57:28 +0000
+Received: by mail-pl1-x641.google.com with SMTP id ay11so1477705plb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Feb 2020 13:57:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=fnUhPBKcSJIh4dSE9ZDVA1HmaYlN0KtrojiReV2ykb0=;
+ b=cu2HVdgFsneUjNAodwp0mnQFtoeN6mjv2Ze87w4aV7ChgNbJ8jExut24J2vW66PS6T
+ koVG7aLqf7ULojlqtp726KnUimqivbcuoUV9NtssprL5ko3YprdPY5xvqnlkTdPaIU/r
+ 8sM5Sd0Qpm6pjQxOwAl9BQbYkjdRX7X68XoEgg8aDvvtGHrTBoVcR05S8hcmY3wT23FZ
+ T4Q3nCX9mPO7fNbwnOSAJqdM8mt/maw+2dkLhWpkNJSgWQaOGZTea+Jlfky6SrNUIQ4k
+ 1gqChzMwo5bt8sp/VLS/L4gnilV6Mhufl+oV3miS3u82WSBHBCTpb3KSoBpHxOn28S+A
+ 2UwA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=fnUhPBKcSJIh4dSE9ZDVA1HmaYlN0KtrojiReV2ykb0=;
+ b=eiDaCoZUHbmEaXJ3Xxq7V71wG37iJ4OR07FlAr3MtaI8T6ZOyQHH/NwksjdB5Q9cqz
+ w9ZFtsaWGbn7heAUDgBDt7VK/PTVZ2tR+0nx8iHWLjCnSnuBWD9OUB8Tivuq6ypJfTgk
+ 3m/ur9EXiDmhXWMICRgqXWiUic4Jfzy5gBteyN9ngj77UuMHSa35Cmxi3P/affdm0nUF
+ oaNPNArE0FS+Td9+WDDXcflP2cokCCimuymb7H6iB/o7b0MMymHEZ0Poel87/t3wRR3s
+ MLJu8jJl+V3UQrWIPKHfP1fpu8N0EbEVQlzxMam/pTd3gsR/Rm6V6ZC5rrpl6jZKYY24
+ xO/w==
+X-Gm-Message-State: APjAAAX3zab5yP28syPhdhwuC1Y2AV94MBsGAiCtUhwGOVlucn9TZl3k
+ 5cGHdXzrOHzQOImu6jVeWno=
+X-Google-Smtp-Source: APXvYqyH1U4B5ayiip+FCyTBRMApO8id3his1NPhWKEoZ9RMaWpVNfNcOs6FCRURmy4EYX2Y/41kVw==
+X-Received: by 2002:a17:90a:fe02:: with SMTP id
+ ck2mr1313325pjb.10.1581544646327; 
+ Wed, 12 Feb 2020 13:57:26 -0800 (PST)
+Received: from taoren-ubuntu-R90MNF91.thefacebook.com
+ ([2620:10d:c090:200::3:533f])
+ by smtp.gmail.com with ESMTPSA id r6sm214431pfh.91.2020.02.12.13.57.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 12 Feb 2020 13:57:25 -0800 (PST)
+From: rentao.bupt@gmail.com
+To: Felipe Balbi <balbi@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ openbmc@lists.ozlabs.org, taoren@fb.com
+Subject: [PATCH v2 0/5] aspeed-g6: enable usb support
+Date: Wed, 12 Feb 2020 13:57:12 -0800
+Message-Id: <20200212215717.9474-1-rentao.bupt@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_131526_425050_30A8A91B 
-X-CRM114-Status: GOOD (  25.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200212_135727_215039_2D5022B4 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rentao.bupt[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,97 +106,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, eddie.cai.linux@gmail.com, kernel@collabora.com,
- heiko@sntech.de, jacob2.chen@rock-chips.com,
- Dafna Hirschfeld <dafna3@gmail.com>, jeffy.chen@rock-chips.com,
- zyc@rock-chips.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- Allon Huang <allon.huang@rock-chips.com>, linux-rockchip@lists.infradead.org,
- Helen Koike <helen.koike@collabora.com>, Jacob Chen <cc@rock-chips.com>,
- hans.verkuil@cisco.com, laurent.pinchart@ideasonboard.com,
- zhengsq@rock-chips.com, mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Tao Ren <rentao.bupt@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dafna,
+From: Tao Ren <rentao.bupt@gmail.com>
 
-Apologies for the late reply. I learned the mail had got lost due to mail
-server issues.
+The patch series aims at enabling USB Host and Gadget support on AST2600
+platforms.
 
-On Fri, Jan 31, 2020 at 08:38:34PM +0100, Dafna Hirschfeld wrote:
-> Hi,
-> I (Dafna Hirschfeld) will work in following months with Helen Koike to fix the issues
-> in the TODO file of this driver: drivers/staging/media/rkisp1/TODO
-> 
-> On 15.08.19 15:17, Sakari Ailus wrote:
-> > On Thu, Aug 15, 2019 at 11:24:22AM +0300, Sakari Ailus wrote:
-> > > Hi Helen,
-> > > 
-> > > On Wed, Aug 14, 2019 at 09:58:05PM -0300, Helen Koike wrote:
-> > > 
-> > > ...
-> > > 
-> > > > > > +static int rkisp1_isp_sd_set_fmt(struct v4l2_subdev *sd,
-> > > > > > +				 struct v4l2_subdev_pad_config *cfg,
-> > > > > > +				 struct v4l2_subdev_format *fmt)
-> > > > > > +{
-> > > > > > +	struct rkisp1_device *isp_dev = sd_to_isp_dev(sd);
-> > > > > > +	struct rkisp1_isp_subdev *isp_sd = &isp_dev->isp_sdev;
-> > > > > > +	struct v4l2_mbus_framefmt *mf = &fmt->format;
-> > > > > > +
-> > > > > 
-> > > > > Note that for sub-device nodes, the driver is itself responsible for
-> > > > > serialising the access to its data structures.
-> > > > 
-> > > > But looking at subdev_do_ioctl_lock(), it seems that it serializes the
-> > > > ioctl calls for subdevs, no? Or I'm misunderstanding something (which is
-> > > > most probably) ?
-> > > 
-> > > Good question. I had missed this change --- subdev_do_ioctl_lock() is
-> > > relatively new. But setting that lock is still not possible as the struct
-> 
-> 'the struct' - do you mean the 'vdev' struct allocated in
-> 'v4l2_device_register_subdev_nodes' ?
+Patch #1 replaces hardcoded vhub port/endpoint number with device tree
+properties, so that it's more convenient to add support for ast2600-vhub
+which provides more downstream ports and endpoints.
 
-Yes.
+Patch #2 and #3 add vhub port/endpoint properties into aspeed-g4 and
+aspeed-g5 dtsi.
 
-> 
-> > > is allocated in the framework and the device is registered before the
-> 
-> > > driver gets hold of it. It's a good idea to provide the same serialisation
-> > > for subdevs as well.
-> > > 
-> > > I'll get back to this later.
-> > 
-> > The main reason is actually that these ops are also called through the
-> > sub-device kAPI, not only through the uAPI, and the locks are only taken
-> > through the calls via uAPI.
-> 
-> actually it seems that although 'subdev_do_ioctl_lock' exit, I wonder if
-> any subdevice uses that vdev->lock in  subdev_do_ioctl_lock.
-> It is not initialized in v4l2_device_register_subdev_nodes where the vdev is allocated
-> and I wonder if any subdevice actually initialize it somewhere else. For example it is null in this
-> driver and in vimc.
+Patch #4 enables ast2600 support in aspeed-vhub usb gadget driver.
 
-It needs to be set before the video device is registered, so indeed, it
-seems no driver can make use it.
+Patch #5 adds USB devices and according pin groups in aspeed-g6 dtsi.
 
-> 
-> > 
-> > So adding the locks to uAPI calls alone would not address the issue.
-> 
-> What I can do is add a mutex to every struct of a subdevice and lock it
-> at the beginning of each subdevice operation.
-> Is this an acceptable solution?
+The patch series is sanity tested on AST2520 (Yamp) BMC and AST2600-A0
+eval board:
+  - AST2520: created 5 gadget devices with 15 endpoints, and all of them
+    can be enumerated from usb-host side.
+  - AST2600: created 7 gadget devices with 20 endpoints, and all of them
+    can be enumerated from usb-host side.
 
-Please do. That's what other drivers do at the moment as well.
+Tao Ren (5):
+  usb: gadget: aspeed: read vhub properties from device tree
+  ARM: dts: aspeed-g4: add vhub port and endpoint properties
+  ARM: dts: aspeed-g5: add vhub port and endpoint properties
+  usb: gadget: aspeed: add ast2600 vhub support
+  ARM: dts: aspeed-g6: add usb functions
+
+ arch/arm/boot/dts/aspeed-g4.dtsi           |  2 +
+ arch/arm/boot/dts/aspeed-g5.dtsi           |  2 +
+ arch/arm/boot/dts/aspeed-g6-pinctrl.dtsi   | 25 ++++++++
+ arch/arm/boot/dts/aspeed-g6.dtsi           | 45 ++++++++++++++
+ drivers/usb/gadget/udc/aspeed-vhub/Kconfig |  4 +-
+ drivers/usb/gadget/udc/aspeed-vhub/core.c  | 71 ++++++++++++++--------
+ drivers/usb/gadget/udc/aspeed-vhub/dev.c   | 30 ++++++---
+ drivers/usb/gadget/udc/aspeed-vhub/epn.c   |  4 +-
+ drivers/usb/gadget/udc/aspeed-vhub/hub.c   | 26 +++++---
+ drivers/usb/gadget/udc/aspeed-vhub/vhub.h  | 23 +++----
+ 10 files changed, 170 insertions(+), 62 deletions(-)
 
 -- 
-Kind regards,
+2.17.1
 
-Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
