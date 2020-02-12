@@ -2,87 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2B1D15B40D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 23:47:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5897015B42A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 23:56:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vDjYg6y8tDKt3IU+YEwiI2vBrPcfdia83UY/laXr/bI=; b=JrdfQj6lNRk2iN
-	cWPyoKxVfypFBwYo5Wo8pOHjC8kzoVLnA3jccTpxFXkrYnPILygMkrInB7N7ERGjMCSaQbGxJ9SF2
-	HrinRXf91LDyQnl/65kn+AyWbaL50xj9XIWmNXt/zCG/tlc6KbW0L11vAWuvic5Yl/MRv5XgAdAIZ
-	roLEB/7Pbj3qMJ+q4PXl48RXjfcbAH6TTz92oR4eFzZMCuj65hq+LbExWwYRRNWCfzdP66i5X5VRL
-	6x0H4TAvbkNRivuHUbh5bpCF0fgJKPBWGNJQ+T4n5besMgh8uy/pK24f2UMiEhiO+rGfrNEzdEX6N
-	mfytG3seXYWXZjHe6V4A==;
+	List-Owner; bh=Qt6I7/NTHSuLMMvQZ3Loty0Nt/PpXtsvXoLdfEVqDHE=; b=nDaR/VV948+AD6
+	sOcf1Zj4WJTA/1F6ZxQROap75rQBgEdO/b2R5+F9UoWTw/8a52j0uCAHCvRRu43AC2IIhtfIZ9c4D
+	oMTg8GsoL+zTRxiJc/GrR6NR0LCFPQ4enKZ6sMOtibNOxi6e2vNTS751BBuyVO391ZqWtWB5f7gBR
+	vABka3+l+5BvFAzoKS4M9+dusrBvxBT5i3HyW++OlSjx0RlzdgKGUwP9g2WTQ3DcaqvmytTQiCinh
+	K3osGiuOtxqkzDcAwB5/+BAAyTriiVz2ib9L/jj4d4ke8qmlUNejj40DYwFyyHO3DpWJ6PHKke3xP
+	DlOmV7x3vcJ3/BSHvKiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j20mf-0001z7-O7; Wed, 12 Feb 2020 22:47:05 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1j20vb-0005As-L2; Wed, 12 Feb 2020 22:56:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j20mX-0001y1-NG
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 22:46:59 +0000
-Received: by mail-lj1-x244.google.com with SMTP id q8so4254812ljj.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Feb 2020 14:46:57 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=jrYNxcmAESHKexGAddHOv9wtAKXJzgWh89e239PGRQo=;
- b=PFFtJaHKIrNlUKS6NsRZWetgbbjhBlkI0g7tnl2WGU5kaUqi+zNun/iNdoK/DEDDiS
- HNkQw6hvXdwZihxbQefigPoLmceiAnmLwudOExlfolrXpKRtXYlySM+UthcT1qsmvcW/
- zbuCIaL+5o+Ap8LUBQHJ5+Xp+LEU2psM35r/B68UVaY+CMkXphIpRo3a3FgszEnO2dsf
- yWVpHOk5hKgOE+XnVzmh4Bv26YqiKa6cn6T0wDFLu6ZUnh5lg9aVjSNs/Ic7RI4Mpj9I
- Izlj168dzT7UUt+SpupM16uiM260AIE494w59HZJZTa6fTgWRVmatKFAYvMqLwd/2GKr
- duBw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=jrYNxcmAESHKexGAddHOv9wtAKXJzgWh89e239PGRQo=;
- b=Hgvm0C3EMv7HfybTxlFYvyVZ1uNP55BKthmBJuqciuiAM0MAUlIWAkk9+WXeiALhJc
- vwBytWaHaAHCWTSAwJHXplgv+h2dTqgIljcR5rjU8Yc8nJfuO7ClKb3bC89fC/OMt2ac
- ff6WvjldwleNugKH65H98DgmpLLSuDacYmBUCTS1kKaoLjSGGeNXsuEfZs4sVRbZUjlu
- Lm4CMdDCySUFZWsvuVrg84OuqbnBcZpQOfGsL7OPtq55boEPXwoXO6Hq1D+i9YrLEBCt
- X/YAnUEpYdljxp/gdy0OgoQYUqPArVRRy0qsQdDf9cmG7+1n2G1sEP3XRni4sO25zpIy
- B4ew==
-X-Gm-Message-State: APjAAAU0D8wvE5gaMB+BfrzHuGHL2i3YUkiYMJOGrwt1q7sUgNYWnZfZ
- Hw2a+XhDISJ6qHjqGBn3Qk4=
-X-Google-Smtp-Source: APXvYqybqDLRJg2IrAK1fX24sksSPwXxUp90d3598YjdvkPi0K1jiArVzSr4wzrM3vq8gpEnprObzw==
-X-Received: by 2002:a2e:7818:: with SMTP id t24mr8865749ljc.195.1581547615958; 
- Wed, 12 Feb 2020 14:46:55 -0800 (PST)
-Received: from kedthinkpad ([5.20.204.163])
- by smtp.gmail.com with ESMTPSA id v7sm257086ljd.12.2020.02.12.14.46.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 12 Feb 2020 14:46:55 -0800 (PST)
-Date: Thu, 13 Feb 2020 00:46:53 +0200
-From: Andrey Lebedev <andrey.lebedev@gmail.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH 1/1] Support LVDS output on Allwinner A20
-Message-ID: <20200212224653.GA19494@kedthinkpad>
-References: <20200210195633.GA21832@kedthinkpad>
- <20200211072004.46tbqixn5ftilxae@gilmour.lan>
- <20200211204828.GA4361@kedthinkpad>
- <20200212125345.j6e3txfjqekuxh2s@gilmour.lan>
+ id 1j20vS-0005AU-MB
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 22:56:11 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D357B2168B;
+ Wed, 12 Feb 2020 22:56:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581548169;
+ bh=SCnNSfEGNeaLvEPYBFXgqfow4bBeZQwy5T7gptghPE8=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=x/+w7+6ZCMH4J8zy6pThODObm0WIsKddbKyctJ1uGJ2hLo2RqxUYjFhzF/DOhJgqJ
+ /IQuYnyWJxDNkg8SRGiWkoBFl0RP6kIuVEMXx6kOgGrOqFvvX7H8FBGG7prp5Hl2Xa
+ sP9pjAeUtAb6P53W5C0wakF+gvlwUz82LxutybE4=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200212125345.j6e3txfjqekuxh2s@gilmour.lan>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1581490943-17920-1-git-send-email-Anson.Huang@nxp.com>
+References: <1581490943-17920-1-git-send-email-Anson.Huang@nxp.com>
+Subject: Re: [PATCH] clk: imx: Include clk-provider.h instead of clk.h for
+ i.MX8M SoCs clock driver
+From: Stephen Boyd <sboyd@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>, abel.vesa@nxp.com, festevam@gmail.com,
+ jun.li@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mturquette@baylibre.com, peng.fan@nxp.com,
+ ping.bai@nxp.com, s.hauer@pengutronix.de, shawnguo@kernel.org
+Date: Wed, 12 Feb 2020 14:56:09 -0800
+Message-ID: <158154816906.184098.11837279192030973805@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_144657_782422_BEE92D2D 
-X-CRM114-Status: GOOD (  17.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200212_145610_747880_9278C402 
+X-CRM114-Status: UNSURE (   5.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andrey.lebedev[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -91,6 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,48 +81,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, wens@csie.org, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 12, 2020 at 01:53:45PM +0100, Maxime Ripard wrote:
-> > > Side question, this will need some DT changes too, right?
-> >
-> > Hm, I agree. I think it would be reasonable to include LVDS0/1 pins
+Quoting Anson Huang (2020-02-11 23:02:23)
+> The i.MX8M SoCs clock driver are provider, NOT consumer, so clk-provider.h
+> should be used instead of clk.h.
 > 
-> That, but most importantly, the reset and clocks for the LVDS
-> block. Also from looking at it, I'm not entirely sure that the TCON1
-> has a LVDS output
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
 
-I also have impression that LVDS is only supported on TCON0, but that's
-mostly from this comment in sun4i_lvds.c:
-
-	/* The LVDS encoder can only work with the TCON channel 0 */
-
-> do you have a board when you have been able to test it?
-
-Yes, I have the hardware (Cubieboard 2) at hand, but I cannot change the
-any physical connections on it. FWIW, it is https://openvario.org, the
-device we are (painfully) trying to upgrade from old kernel-3.4 with
-proprietary mali drivers to contemporary software.
-
-> > and sample (but disabled) lvds panel,
-> 
-> That's good for the sake of the example, but it shouldn't be in the
-> same patch, it won't be merged.
-
-I jave just submitted version 2 of the patches - set of 2 patches this
-time. Addressed your comments, please take a look.
-
-
--- 
-Andrey Lebedev aka -.- . -.. -.. . .-.
-Software engineer
-Homepage: http://lebedev.lt/
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
