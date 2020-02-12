@@ -2,98 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B074F15AF31
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 18:56:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 560A515AF5B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 19:02:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:References:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j1mms9QL6MsjaGPKYQGGeHCZmpHEbgoyJFbJyWFJgU0=; b=bliGgArHDREDP3
-	BpxzZnUXAXwjU1jq7I1AGzxursInjPbWaC2HPlmT2FFvtcVmH+yKPXhoqvL5JKEBxVu2j62EjUn3m
-	Mi/0VTkC/vmKMcCYJJf1zKS8j4qSgbnxg2uxWzCGsm1vqjWkfWa0cHqIxt8wVTOGZtX3pCMv2EPbT
-	VbSm3uw2EpSEFz9N1Sc3/ucE4UZDRUBe7slYGTwBdfc8u9wzWknj19T7z2GPzfQIwca5hZi0QA8PK
-	bOCphVTMqrAXIpS8wpiTmWRw1hcWoNXxgaQCZ6t8RoLhKBeDXl5plV6iy7StKAnQdmA62FZXq80IV
-	+uhmQNaKKp1XCylO5SwA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ehTPSBT1fuNR8gQKBhKxZWPlNK6Ydh1HGNYSonENOlk=; b=OzOb4a7so3rOTc2h2V710lGG4
+	Ckh0xOzbUlGZmKKC34Vzo0qkA0jxghddSCQPqrXHU7diEgkCA2K8e5J8OfLeRz7Xkcffcmz52kMLh
+	f0AJg0CwWewCqlhUT/R4J1O470QWRA8ABmqvlc6SGrg4kczO16eufga8eqrRAOGmsrVV2GzCOtKSh
+	UokYfBng3mdkdeGYSiP0PjSo7lUR8ebpHfsBj/lpR8T0TKhYX+fu7WP0vQEZW8XYrwgqFsmgvSbZn
+	SEbotyRrk8GEqZ+//HiunSwGHYEbSzhC3bHts4vaFbuzPRtdYorDTbBiIG5CX2sjmMpU9bWquJ3m9
+	QFwmdvPAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1wFK-0005DE-PP; Wed, 12 Feb 2020 17:56:22 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1j1wKe-0007UL-9F; Wed, 12 Feb 2020 18:01:52 +0000
+Received: from wout2-smtp.messagingengine.com ([64.147.123.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1wF4-00059S-Ml
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 17:56:09 +0000
-Received: from pps.filterd (m0098421.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01CHn2ZY138027
- for <linux-arm-kernel@lists.infradead.org>; Wed, 12 Feb 2020 12:56:04 -0500
-Received: from e06smtp05.uk.ibm.com (e06smtp05.uk.ibm.com [195.75.94.101])
- by mx0a-001b2d01.pphosted.com with ESMTP id 2y4j8ajj21-1
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 12 Feb 2020 12:56:03 -0500
-Received: from localhost
- by e06smtp05.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
- Violators will be prosecuted
- for <linux-arm-kernel@lists.infradead.org> from <gerald.schaefer@de.ibm.com>; 
- Wed, 12 Feb 2020 17:56:01 -0000
-Received: from b06cxnps3075.portsmouth.uk.ibm.com (9.149.109.195)
- by e06smtp05.uk.ibm.com (192.168.101.135) with IBM ESMTP SMTP Gateway:
- Authorized Use Only! Violators will be prosecuted; 
- (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
- Wed, 12 Feb 2020 17:55:51 -0000
-Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
- [9.149.105.59])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 01CHtoBV51576916
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 12 Feb 2020 17:55:50 GMT
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 8E98CA4055;
- Wed, 12 Feb 2020 17:55:50 +0000 (GMT)
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 5B2C5A4057;
- Wed, 12 Feb 2020 17:55:49 +0000 (GMT)
-Received: from thinkpad (unknown [9.152.96.168])
- by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Wed, 12 Feb 2020 17:55:49 +0000 (GMT)
-Date: Wed, 12 Feb 2020 18:55:48 +0100
-From: Gerald Schaefer <gerald.schaefer@de.ibm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V12] mm/debug: Add tests validating architecture page
- table helpers
-In-Reply-To: <b169ff9d-7b87-91f4-b3d0-e97f86680d0c@arm.com>
-References: <1580174873-18117-1-git-send-email-anshuman.khandual@arm.com>
- <20200210153716.GB9283@E121110.arm.com>
- <b169ff9d-7b87-91f4-b3d0-e97f86680d0c@arm.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1j1wKT-0007Tp-V4
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 18:01:43 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.west.internal (Postfix) with ESMTP id CF6F3889;
+ Wed, 12 Feb 2020 13:01:33 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Wed, 12 Feb 2020 13:01:34 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=X0tUEgWYpJskWtZqIPoTJqiI8dE
+ WemwbHtY1RuLYLac=; b=S3codB0SjgfiIeerPWZhWCajm4HsdDALTl7fEkpMSD+
+ eTtCk0tBX/aaMgE6NiI3ZYCRSB8L3Qpm/oQtC9uKtxa/mygebsxXLRPI1S+GGoPk
+ FKzM0uZvzjV7GY55Oxr8iwsh8lBqYIv4tEMwI1Z//tIKc4slQQkVLUyN0KqEi40j
+ kN0/fI1SiCubXxhmSJejIlyF3K7PrqK1hQPmZnDhAXfCUoYlZKhDuey2fslIRxvn
+ HgLGbSKqU9ld0/FSZ0sd2rfe1rKzXZtdV/aF2XofZD03eJa91QFiklt33nRSE/6T
+ tVbQU6++FLZd5aVosEqGp/p7LeKdfd+Bgngek1fzVIg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=X0tUEg
+ WYpJskWtZqIPoTJqiI8dEWemwbHtY1RuLYLac=; b=DKi/2qYkOb4RXiyBa0ZtqP
+ VlIpTADIqROLl600En03rfr0/3XG4PGk4RKjV7trRkGwQRHMVHGXRlgey410zib5
+ PkRS5LeVrZhTkR7q5Z+IwweUWaPX1gRo+ku34IrAH8B6ntRincJXTESm9MnXepgM
+ 6YEBsVFpjzl5dke+cG6ibcdE5BLdCPDetH0wa6yATxC2bxGdkSceKg9ETL7f6Edx
+ WwYsEeO5mwXQlpIn0ssYXsnH8MQQ1lcEXhdOntxmtY9FYbaW666/5qqrOmKo3r3O
+ QzszbqksMGs1QlHkfge77LSak8ymVnm20m3X+5rO4+uTKLB/2uau54io9uFiwWDA
+ ==
+X-ME-Sender: <xms:fD1EXgncqtNlKrmcXmTRI4OPNk4OtsF-8B_knl0x1Q75ufg5Kg2aqQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrieehgdduuddtucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:fD1EXnJb43z0HlyQTC8HtyJzy3SBxOBRT9xyaOew91gFXah7c4q6DA>
+ <xmx:fD1EXhTL0-N2gPgABFG_wBbwHEPvr5_KKzXY6VoC_zerTiwDxGtD1g>
+ <xmx:fD1EXmqUM0DYEA2_Wcm2XI_tATG7lXCXnIdH6jxtjxwkUqxgD_-tAA>
+ <xmx:fT1EXlPb8FRYWG31si6SJypIn8ezCY230mMzItnY3AVP3zHI1Uu6AA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 462ED3280059;
+ Wed, 12 Feb 2020 13:01:32 -0500 (EST)
+Date: Wed, 12 Feb 2020 19:01:30 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Jernej Skrabec <jernej.skrabec@siol.net>
+Subject: Re: [PATCH v2 0/7] clk: sunxi-ng: sun8i-de2: Multiple fixes
+Message-ID: <20200212180130.kqxcafhbhw76gbmu@gilmour.lan>
+References: <20200211185936.245174-1-jernej.skrabec@siol.net>
 MIME-Version: 1.0
-X-TM-AS-GCONF: 00
-x-cbid: 20021217-0020-0000-0000-000003A98A3E
-X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
-x-cbparentid: 20021217-0021-0000-0000-00002201718D
-Message-Id: <20200212185548.3274ec2e@thinkpad>
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-12_08:2020-02-12,
- 2020-02-12 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 phishscore=0
- mlxlogscore=999 clxscore=1015 impostorscore=0 mlxscore=0 adultscore=0
- lowpriorityscore=0 malwarescore=0 bulkscore=0 spamscore=0
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2001150001 definitions=main-2002120131
+In-Reply-To: <20200211185936.245174-1-jernej.skrabec@siol.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_095606_861367_5CEBC6C6 
-X-CRM114-Status: GOOD (  26.60  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200212_100142_045912_12FD9EF0 
+X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ low trust [64.147.123.25 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,81 +103,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, Ingo Molnar <mingo@kernel.org>,
- linux-s390@vger.kernel.org, Jason Gunthorpe <jgg@ziepe.ca>,
- Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Vlastimil Babka <vbabka@suse.cz>, James Hogan <jhogan@kernel.org>,
- linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Dan Williams <dan.j.williams@intel.com>, Mark Brown <broonie@kernel.org>,
- "Kirill A
- . Shutemov" <kirill@shutemov.name>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Dave Hansen <dave.hansen@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: sboyd@kernel.org, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
+ wens@csie.org, linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ icenowy@aosc.io
+Content-Type: multipart/mixed; boundary="===============0709251034771287244=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 12 Feb 2020 15:12:54 +0530
-Anshuman Khandual <anshuman.khandual@arm.com> wrote:
 
-> >> +/*
-> >> + * On s390 platform, the lower 12 bits are used to identify given page table
-> >> + * entry type and for other arch specific requirements. But these bits might
-> >> + * affect the ability to clear entries with pxx_clear(). So while loading up
-> >> + * the entries skip all lower 12 bits in order to accommodate s390 platform.
-> >> + * It does not have affect any other platform.
-> >> + */
-> >> +#define RANDOM_ORVALUE	(0xfffffffffffff000UL)  
-> > 
-> > I'd suggest you generate this mask with something like
-> > GENMASK(BITS_PER_LONG, PAGE_SHIFT).  
-> 
-> IIRC the lower 12 bits constrains on s390 platform might not be really related
-> to it's PAGE_SHIFT which can be a variable, but instead just a constant number.
-> But can definitely use GENMASK or it's variants here.
-> 
-> https://lkml.org/lkml/2019/9/5/862
+--===============0709251034771287244==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="svjny34pbuqgftj2"
+Content-Disposition: inline
 
-PAGE_SHIFT would be fine, it is 12 on s390. However, in order to be
-more precise, we do not really need all 12 bits, only the last 4 bits.
-So, something like this would work:
 
-#define RANDOM_ORVALUE GENMASK(BITS_PER_LONG - 1, 4)
+--svjny34pbuqgftj2
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-The text in the comment could then also be changed from 12 to 4, and
-be a bit more specific on the fact that the impact on pxx_clear()
-results from the dynamic page table folding logic on s390:
+On Tue, Feb 11, 2020 at 07:59:29PM +0100, Jernej Skrabec wrote:
+> In current sun8i-de2 clock driver, rotation core related clocks and
+> reset weren't considered properly. All SoC which have that core don't
+> have those definitions. Even worse, the only SoC which have rotation
+> core related definitions doesn't have that core at all.
+>
+> This series fixes this mess.
 
-/*
- * On s390 platform, the lower 4 bits are used to identify given page table
- * entry type. But these bits might affect the ability to clear entries with
- * pxx_clear() because of how dynamic page table folding works on s390. So
- * while loading up the entries do not change the lower 4 bits.
- * It does not have affect any other platform.
- */
+Applied all of them, thanks!
+Maxime
 
+--svjny34pbuqgftj2
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkQ9egAKCRDj7w1vZxhR
+xRlkAP9fPgQUlJwexenVqLaVnutT9EYmHdW/yd43xbmwPlJpgAD/fyvsNedPpviW
+OWmV/BPxV3fmlN3vlGhTn9TsLWNrjAc=
+=PIcB
+-----END PGP SIGNATURE-----
+
+--svjny34pbuqgftj2--
+
+
+--===============0709251034771287244==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0709251034771287244==--
+
