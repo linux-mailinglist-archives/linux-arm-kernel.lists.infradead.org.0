@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 520B715AFBD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 19:28:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 94AD215AFC0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 19:29:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rsHyvPLGJcNiByt3aXOEi4ta6ADp0+l5rns3bIm8QEs=; b=j5pmcv7Za3seBz
-	PY/MSl34OPuhw9WwHQZBH1F6P+dikMjCOje1yuhNBKqglumjivlQtsUlkMjB6cGhCZOaq9+LWfxux
-	pYoxhYdJJASGtQHhBl2ncPfXiYTwGWvoxueIq+bvIVPhbyGyqtHMLvPIhwjOzhxA4AAfztctN6hB7
-	+2TTgNiDqKapYE6EnfxVs4l+Qce1h1Als6bI1y3zYqgtqKEnuc9ZGZBGoMldQCYYlVVr4G9EQDLpu
-	sOyUpDttZaGWBI76dQ5qadc3rWr2U6nEKV72NzC0j7YIWkzW3OOJ6qivKMCua0bhWXMnI44SCuF0f
-	JnSP0/rkOCjieLP9RTlg==;
+	List-Owner; bh=/pvQHZmNizKxIDfcP1267XkwYe3xfUAyc1OvuFQmJ38=; b=Wy5pjHNWf4fVnn
+	0DKkvtVuJalLIn9jBURkuNI+4B8fTi2VTf49eoYc/pViga5Ovz46TuKzJ5z56dDU1g6Xmef/fPIOD
+	p9yo/FYVvKOmgFOCBt8+WBuZCs5hMxGUi2S7PzgkOwJm1Rue2V5tz0Rx1uh8OGZyWDHsCvDyFLh22
+	cZ457X3aAyyd/URsiFuQVbgOZzWMvU4XBVPYQw3Vt21kvq8mZeN6irrkEwW7gTVQCPsiBRvj0ZwLE
+	cpxcsXdLejbBOlIraEek9yOZSum9kKt5Hut2lBStfCuI0nqYMNzMquwZIrNoc5ZWzFwR+2yc/oa/H
+	+mO4u/nRvMkhpDGp1ddQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1wkK-0000Vx-1I; Wed, 12 Feb 2020 18:28:24 +0000
+	id 1j1wkk-0000vZ-ID; Wed, 12 Feb 2020 18:28:50 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1wkB-0000Uz-J1; Wed, 12 Feb 2020 18:28:16 +0000
+ id 1j1wkY-0000tr-Ow; Wed, 12 Feb 2020 18:28:39 +0000
 Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 566EB80F6;
- Wed, 12 Feb 2020 18:28:53 +0000 (UTC)
-Date: Wed, 12 Feb 2020 10:28:06 -0800
+ by muru.com (Postfix) with ESMTPS id 56BB080F6;
+ Wed, 12 Feb 2020 18:29:22 +0000 (UTC)
+Date: Wed, 12 Feb 2020 10:28:35 -0800
 From: Tony Lindgren <tony@atomide.com>
 To: Janusz Krzysztofik <jmkrzyszt@gmail.com>
-Subject: Re: [RFC PATCH 06/14] mtd: rawnand: ams-delta: Push inversion
- handling to gpiolib
-Message-ID: <20200212182806.GL64767@atomide.com>
+Subject: Re: [RFC PATCH 03/14] ARM: OMAP1: ams-delta: Provide board specific
+ partition info
+Message-ID: <20200212182835.GM64767@atomide.com>
 References: <20200212003929.6682-1-jmkrzyszt@gmail.com>
- <20200212003929.6682-7-jmkrzyszt@gmail.com>
+ <20200212003929.6682-4-jmkrzyszt@gmail.com>
+ <20200212145154.GK64767@atomide.com> <4506487.GXAFRqVoOG@z50>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200212003929.6682-7-jmkrzyszt@gmail.com>
+In-Reply-To: <4506487.GXAFRqVoOG@z50>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_102815_668964_E2EAA1F1 
-X-CRM114-Status: UNSURE (   5.73  )
+X-CRM114-CacheID: sfid-20200212_102838_846158_63E11420 
+X-CRM114-Status: UNSURE (   4.65  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -69,15 +70,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Janusz Krzysztofik <jmkrzyszt@gmail.com> [200212 00:41]:
-> Let platforms take care of declaring correct GPIO pin polarity so we
-> can just ask a GPIO line to be asserted or deasserted and gpiolib deals
-> with the rest depending on how the platform is configured.
-> 
-> Inspired by similar changes to regulator drivers by Linus Walleij
-> <linus.walleij@linaro.org>, thanks!
+* Janusz Krzysztofik <jmkrzyszt@gmail.com> [200212 18:26]:
+> Thanks for your A-b:.  BTW, patch 06/14 also touches the board file and would 
+> require your acceptance before being merged via mtd, so could you please have 
+> a look?
 
-Acked-by: Tony Lindgren <tony@atomide.com>
+OK looks good to me, acked that one too.
+
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
