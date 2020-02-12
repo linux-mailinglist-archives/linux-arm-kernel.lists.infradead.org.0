@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA4CF15A71A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:55:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0636215A723
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 11:56:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TnxMmGOQj0kOq/7qANW8PDEcZ0aFl2+fSe+h0IDks68=; b=q5p7a+hpen8+x4
-	j7lgmQKGTTHS/A3ZWCpY57ize42dkKBmbktpNwnw4MtmBsdzhhQIbBdRUYKELXsdHR6khxrPFKv+j
-	Q8z2yyMbhUl1hFi/aeHASUkZa74PzWCD+lWUYWtMQHZBNSPh37HrdXXOxzIJY5k5w0AhKTA0U/7Ql
-	A4hfzh6X6PEmhbHPlSP+vzz+3Tt91+y1IJEjoGsf0/qo40cHPMrxvxkdIJgkVmydupRVuVDZZUOU4
-	YA2T+COZg1DeZ4PU61PUW/oD8JCcGRD4hmkAmUs6oHh+t26u9ZAeKG+kEuQh5jvierKxXrq0M+2t5
-	nZyDddR8OWoWo8X84vHA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OdPKc6ecacRXngi0xQ+r4o1JvKAM7pXni9g9fGRjH24=; b=Dw4qK+1WxAN3HTireh5ah4kzk
+	kLd+c4xbAhlXbtQMnPYnkolYGfxdO5vamhDKn+OucEqkYIw8/ttLIEQQY2IHPzZTAVOyHPtVskU5p
+	/gXR8XZnYuRTXWsZMYjaxyA7bWSu2uiVBKBD3+h0d5A61qeEQmawOcKwih4pdFKlyex+iAFevRxmo
+	HZ7IgHcrdc7DeCr6acue+/izTHM6DvZyyBvu+/09c9miheHn/6Yh5m3kG3tqwmGsMXUpX1DgRo7nz
+	31Yx5ubxv3woQznvJ7ir8ohlrLEUSfvG7iZ3HzpoMP25JI1chUAvWnRQz0ds/OVVEiyumECl8o9zg
+	i0o67NJfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1pfp-0003fs-3g; Wed, 12 Feb 2020 10:55:17 +0000
+	id 1j1pgk-0005A4-7P; Wed, 12 Feb 2020 10:56:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1pfU-0003fW-Sl
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 10:54:58 +0000
+ id 1j1pga-00059B-K4
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 10:56:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 201F530E;
- Wed, 12 Feb 2020 02:54:56 -0800 (PST)
-Received: from localhost (unknown [10.1.198.52])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B52ED3F68F;
- Wed, 12 Feb 2020 02:54:55 -0800 (PST)
-Date: Wed, 12 Feb 2020 10:54:54 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Marc Zyngier <maz@kernel.org>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6060030E;
+ Wed, 12 Feb 2020 02:56:03 -0800 (PST)
+Received: from [10.37.12.187] (unknown [10.37.12.187])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2FCBE3F68F;
+ Wed, 12 Feb 2020 02:56:00 -0800 (PST)
 Subject: Re: [PATCH v3 7/7] clocksource/drivers/arm_arch_timer: validate
  arch_timer_rate
-Message-ID: <20200212105439.GA3755@arm.com>
+To: Marc Zyngier <maz@kernel.org>
 References: <20200211184542.29585-1-ionela.voinescu@arm.com>
  <20200211184542.29585-8-ionela.voinescu@arm.com>
  <89339501-5ee4-e871-3076-c8b02c6fbf6e@arm.com>
  <a24aa6c86e7a565b6269f48d4026bca2@kernel.org>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <289c6110-b7ea-1d61-d795-551723263803@arm.com>
+Date: Wed, 12 Feb 2020 10:55:58 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
 In-Reply-To: <a24aa6c86e7a565b6269f48d4026bca2@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_025457_021285_9F392E52 
-X-CRM114-Status: GOOD (  30.83  )
+X-CRM114-CacheID: sfid-20200212_025604_748766_523B4D98 
+X-CRM114-Status: GOOD (  24.33  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,151 +67,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, peterz@infradead.org,
- catalin.marinas@arm.com, linux-pm@vger.kernel.org, linux-doc@vger.kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, mingo@redhat.com,
- viresh.kumar@linaro.org, linux-arm-kernel@lists.infradead.org,
- sudeep.holla@arm.com, will@kernel.org, valentin.schneider@arm.com,
- Lukasz Luba <lukasz.luba@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, will@kernel.org, suzuki.poulose@arm.com,
+ peterz@infradead.org, catalin.marinas@arm.com, linux-pm@vger.kernel.org,
+ linux-doc@vger.kernel.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, viresh.kumar@linaro.org, sudeep.holla@arm.com,
+ Ionela Voinescu <ionela.voinescu@arm.com>, valentin.schneider@arm.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi guys,
-
-On Wednesday 12 Feb 2020 at 10:12:32 (+0000), Marc Zyngier wrote:
-> On 2020-02-12 10:01, Lukasz Luba wrote:
-> > Hi Ionela, Valentin
-> > 
-> > On 2/11/20 6:45 PM, Ionela Voinescu wrote:
-> > > From: Valentin Schneider <valentin.schneider@arm.com>
-> > > 
-> > > Using an arch timer with a frequency of less than 1MHz can result in
-> > > an
-> > > incorrect functionality of the system which assumes a reasonable rate.
-> > > 
-> > > One example is the use of activity monitors for frequency invariance
-> > > which uses the rate of the arch timer as the known rate of the
-> > > constant
-> > > cycle counter in computing its ratio compared to the maximum frequency
-> > > of a CPU. For arch timer frequencies less than 1MHz this ratio could
-> > > end up being 0 which is an invalid value for its use.
-> > > 
-> > > Therefore, warn if the arch timer rate is below 1MHz which contravenes
-> > > the recommended architecture interval of 1 to 50MHz.
-> > > 
-> > > Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> > > Cc: Mark Rutland <mark.rutland@arm.com>
-> > > Cc: Marc Zyngier <maz@kernel.org>
-> > > ---
-> > >   drivers/clocksource/arm_arch_timer.c | 18 +++++++++++++++---
-> > >   1 file changed, 15 insertions(+), 3 deletions(-)
-> > > 
-> > > diff --git a/drivers/clocksource/arm_arch_timer.c
-> > > b/drivers/clocksource/arm_arch_timer.c
-> > > index 9a5464c625b4..4faa930eabf8 100644
-> > > --- a/drivers/clocksource/arm_arch_timer.c
-> > > +++ b/drivers/clocksource/arm_arch_timer.c
-> > > @@ -885,6 +885,17 @@ static int arch_timer_starting_cpu(unsigned int
-> > > cpu)
-> > >   	return 0;
-> > >   }
-> > >   +static int validate_timer_rate(void)
-> > > +{
-> > > +	if (!arch_timer_rate)
-> > > +		return -EINVAL;
-> > > +
-> > > +	/* Arch timer frequency < 1MHz can cause trouble */
-> > > +	WARN_ON(arch_timer_rate < 1000000);
-> > 
-> > I don't see a big value of having a patch just to add one extra warning,
-> > in a situation which we handle in our code with in 6/7 with:
-> > 
-> > +	if (!ratio) {
-> > +		pr_err("System timer frequency too low.\n");
-> > +		return -EINVAL;
-> > +	}
-> > 
-> > Furthermore, the value '100000' here is because of our code and
-> > calculation in there, so it does not belong to arch timer. Someone
-> > might ask why it's not 200000 or a define in our header...
-> > Or questions asking why do you warn when that arch timer and cpu is not
-> > AMU capable...
-> 
-> Because, as the commit message outlines it, such a frequency is terribly
-> out of spec?
-> 
-
-Probably it could have been better emphasised in the commit message but,
-yes, [1] specifies a typical range of 1-50Mhz. Therefore, taken
-independently the role of this patch is to warn about an out of spec arch
-timer rate. 
-The link to AMU is here just as an example of a scenario where an out of
-spec rate can affect functionality, but there is no dependency between
-the threshold chosen here and AMU. AMU functionality only assumes the rate
-recommended in the spec.
-
-[1] https://static.docs.arm.com/ddi0487/ea/DDI0487E_a_armv8_arm.pdf
-
-> > 
-> > > +
-> > > +	return 0;
-> > > +}
-> > > +
-> > >   /*
-> > >    * For historical reasons, when probing with DT we use whichever
-> > > (non-zero)
-> > >    * rate was probed first, and don't verify that others match. If
-> > > the first node
-> > > @@ -900,7 +911,7 @@ static void arch_timer_of_configure_rate(u32
-> > > rate, struct device_node *np)
-> > >   		arch_timer_rate = rate;
-> > >     	/* Check the timer frequency. */
-> > > -	if (arch_timer_rate == 0)
-> > > +	if (validate_timer_rate())
-> > >   		pr_warn("frequency not available\n");
-> > >   }
-> > >   @@ -1594,9 +1605,10 @@ static int __init
-> > > arch_timer_acpi_init(struct acpi_table_header *table)
-> > >   	 * CNTFRQ value. This *must* be correct.
-> > >   	 */
-> > >   	arch_timer_rate = arch_timer_get_cntfrq();
-> > > -	if (!arch_timer_rate) {
-> > > +	ret = validate_timer_rate();
-> > > +	if (ret) {
-> > >   		pr_err(FW_BUG "frequency not available.\n");
-> > > -		return -EINVAL;
-> > > +		return ret;
-> > >   	}
-> > >     	arch_timer_uses_ppi = arch_timer_select_ppi();
-> > > 
-> > 
-> > Lastly, this is arch timer.
-> > To increase chances of getting merge soon, I would recommend to drop
-> > the patch from this series.
-> 
-> And? It seems to address a potential issue where the time frequency
-> is out of spec, and makes sure we don't end up with additional problems
-> in the AMU code.
-> 
-> On its own, it is perfectly sensible and could be merged as part of this
-> series with my
-> 
-> Acked-by: Marc Zyngier <maz@kernel.org>
-> 
->         M.
-
-Thanks, Marc! I'll keep this patch here then with some changes in the commit
-message for more clarity and the change in author.
-
-Thank you all,
-Ionela.
-
-> -- 
-> Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAyLzEyLzIwIDEwOjEyIEFNLCBNYXJjIFp5bmdpZXIgd3JvdGU6Cj4gT24gMjAyMC0wMi0x
+MiAxMDowMSwgTHVrYXN6IEx1YmEgd3JvdGU6Cj4+IEhpIElvbmVsYSwgVmFsZW50aW4KPj4KPj4g
+T24gMi8xMS8yMCA2OjQ1IFBNLCBJb25lbGEgVm9pbmVzY3Ugd3JvdGU6Cj4+PiBGcm9tOiBWYWxl
+bnRpbiBTY2huZWlkZXIgPHZhbGVudGluLnNjaG5laWRlckBhcm0uY29tPgo+Pj4KPj4+IFVzaW5n
+IGFuIGFyY2ggdGltZXIgd2l0aCBhIGZyZXF1ZW5jeSBvZiBsZXNzIHRoYW4gMU1IeiBjYW4gcmVz
+dWx0IGluIGFuCj4+PiBpbmNvcnJlY3QgZnVuY3Rpb25hbGl0eSBvZiB0aGUgc3lzdGVtIHdoaWNo
+IGFzc3VtZXMgYSByZWFzb25hYmxlIHJhdGUuCj4+Pgo+Pj4gT25lIGV4YW1wbGUgaXMgdGhlIHVz
+ZSBvZiBhY3Rpdml0eSBtb25pdG9ycyBmb3IgZnJlcXVlbmN5IGludmFyaWFuY2UKPj4+IHdoaWNo
+IHVzZXMgdGhlIHJhdGUgb2YgdGhlIGFyY2ggdGltZXIgYXMgdGhlIGtub3duIHJhdGUgb2YgdGhl
+IGNvbnN0YW50Cj4+PiBjeWNsZSBjb3VudGVyIGluIGNvbXB1dGluZyBpdHMgcmF0aW8gY29tcGFy
+ZWQgdG8gdGhlIG1heGltdW0gZnJlcXVlbmN5Cj4+PiBvZiBhIENQVS4gRm9yIGFyY2ggdGltZXIg
+ZnJlcXVlbmNpZXMgbGVzcyB0aGFuIDFNSHogdGhpcyByYXRpbyBjb3VsZAo+Pj4gZW5kIHVwIGJl
+aW5nIDAgd2hpY2ggaXMgYW4gaW52YWxpZCB2YWx1ZSBmb3IgaXRzIHVzZS4KPj4+Cj4+PiBUaGVy
+ZWZvcmUsIHdhcm4gaWYgdGhlIGFyY2ggdGltZXIgcmF0ZSBpcyBiZWxvdyAxTUh6IHdoaWNoIGNv
+bnRyYXZlbmVzCj4+PiB0aGUgcmVjb21tZW5kZWQgYXJjaGl0ZWN0dXJlIGludGVydmFsIG9mIDEg
+dG8gNTBNSHouCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogSW9uZWxhIFZvaW5lc2N1IDxpb25lbGEu
+dm9pbmVzY3VAYXJtLmNvbT4KPj4+IENjOiBNYXJrIFJ1dGxhbmQgPG1hcmsucnV0bGFuZEBhcm0u
+Y29tPgo+Pj4gQ2M6IE1hcmMgWnluZ2llciA8bWF6QGtlcm5lbC5vcmc+Cj4+PiAtLS0KPj4+IMKg
+IGRyaXZlcnMvY2xvY2tzb3VyY2UvYXJtX2FyY2hfdGltZXIuYyB8IDE4ICsrKysrKysrKysrKysr
+Ky0tLQo+Pj4gwqAgMSBmaWxlIGNoYW5nZWQsIDE1IGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25z
+KC0pCj4+Pgo+Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvY2xvY2tzb3VyY2UvYXJtX2FyY2hfdGlt
+ZXIuYyAKPj4+IGIvZHJpdmVycy9jbG9ja3NvdXJjZS9hcm1fYXJjaF90aW1lci5jCj4+PiBpbmRl
+eCA5YTU0NjRjNjI1YjQuLjRmYWE5MzBlYWJmOCAxMDA2NDQKPj4+IC0tLSBhL2RyaXZlcnMvY2xv
+Y2tzb3VyY2UvYXJtX2FyY2hfdGltZXIuYwo+Pj4gKysrIGIvZHJpdmVycy9jbG9ja3NvdXJjZS9h
+cm1fYXJjaF90aW1lci5jCj4+PiBAQCAtODg1LDYgKzg4NSwxNyBAQCBzdGF0aWMgaW50IGFyY2hf
+dGltZXJfc3RhcnRpbmdfY3B1KHVuc2lnbmVkIGludCAKPj4+IGNwdSkKPj4+IMKgwqDCoMKgwqAg
+cmV0dXJuIDA7Cj4+PiDCoCB9Cj4+PiDCoCArc3RhdGljIGludCB2YWxpZGF0ZV90aW1lcl9yYXRl
+KHZvaWQpCj4+PiArewo+Pj4gK8KgwqDCoCBpZiAoIWFyY2hfdGltZXJfcmF0ZSkKPj4+ICvCoMKg
+wqDCoMKgwqDCoCByZXR1cm4gLUVJTlZBTDsKPj4+ICsKPj4+ICvCoMKgwqAgLyogQXJjaCB0aW1l
+ciBmcmVxdWVuY3kgPCAxTUh6IGNhbiBjYXVzZSB0cm91YmxlICovCj4+PiArwqDCoMKgIFdBUk5f
+T04oYXJjaF90aW1lcl9yYXRlIDwgMTAwMDAwMCk7Cj4+Cj4+IEkgZG9uJ3Qgc2VlIGEgYmlnIHZh
+bHVlIG9mIGhhdmluZyBhIHBhdGNoIGp1c3QgdG8gYWRkIG9uZSBleHRyYSB3YXJuaW5nLAo+PiBp
+biBhIHNpdHVhdGlvbiB3aGljaCB3ZSBoYW5kbGUgaW4gb3VyIGNvZGUgd2l0aCBpbiA2Lzcgd2l0
+aDoKPj4KPj4gK8KgwqDCoCBpZiAoIXJhdGlvKSB7Cj4+ICvCoMKgwqDCoMKgwqDCoCBwcl9lcnIo
+IlN5c3RlbSB0aW1lciBmcmVxdWVuY3kgdG9vIGxvdy5cbiIpOwo+PiArwqDCoMKgwqDCoMKgwqAg
+cmV0dXJuIC1FSU5WQUw7Cj4+ICvCoMKgwqAgfQo+Pgo+PiBGdXJ0aGVybW9yZSwgdGhlIHZhbHVl
+ICcxMDAwMDAnIGhlcmUgaXMgYmVjYXVzZSBvZiBvdXIgY29kZSBhbmQKPj4gY2FsY3VsYXRpb24g
+aW4gdGhlcmUsIHNvIGl0IGRvZXMgbm90IGJlbG9uZyB0byBhcmNoIHRpbWVyLiBTb21lb25lCj4+
+IG1pZ2h0IGFzayB3aHkgaXQncyBub3QgMjAwMDAwIG9yIGEgZGVmaW5lIGluIG91ciBoZWFkZXIu
+Li4KPj4gT3IgcXVlc3Rpb25zIGFza2luZyB3aHkgZG8geW91IHdhcm4gd2hlbiB0aGF0IGFyY2gg
+dGltZXIgYW5kIGNwdSBpcyBub3QKPj4gQU1VIGNhcGFibGUuLi4KPiAKPiBCZWNhdXNlLCBhcyB0
+aGUgY29tbWl0IG1lc3NhZ2Ugb3V0bGluZXMgaXQsIHN1Y2ggYSBmcmVxdWVuY3kgaXMgdGVycmli
+bHkKPiBvdXQgb2Ygc3BlYz8KCkkgZG9uJ3Qgc2VlIGluIHRoZSBSTSB0aGF0IDwgMU1IeiBpcyB0
+ZXJyaWJseSBvdXQgb2Ygc3BlYy4KJ0ZyZXF1ZW5jeQpJbmNyZW1lbnRzIGF0IGEgZml4ZWQgZnJl
+cXVlbmN5LCB0eXBpY2FsbHkgaW4gdGhlIHJhbmdlIDEtNTBNSHouCkNhbiBzdXBwb3J0IG9uZSBv
+ciBtb3JlIGFsdGVybmF0aXZlIG9wZXJhdGluZyBtb2RlcyBpbiB3aGljaCBpdCAKaW5jcmVtZW50
+cyBieSBsYXJnZXIgYW1vdW50cyBhdCBhCmxvd2VyIGZyZXF1ZW5jeSwgdHlwaWNhbGx5IGZvciBw
+b3dlci1zYXZpbmcuJwoKVGhlcmUgaXMgZXZlbiBhbiBleGFtcGxlIGhvdyB0byBvcGVyYXRlIGF0
+IDIwa0h6IGFuZCBpbmNyZW1lbnQgYnkgNTAwLgoKSSBkb24ndCBrbm93IHRoZSBjb2RlIGlmIGl0
+J3Mgc3VwcG9ydGVkLCB0aG91Z2h0LgoKPiAKPj4KPj4+ICsKPj4+ICvCoMKgwqAgcmV0dXJuIDA7
+Cj4+PiArfQo+Pj4gKwo+Pj4gwqAgLyoKPj4+IMKgwqAgKiBGb3IgaGlzdG9yaWNhbCByZWFzb25z
+LCB3aGVuIHByb2Jpbmcgd2l0aCBEVCB3ZSB1c2Ugd2hpY2hldmVyIAo+Pj4gKG5vbi16ZXJvKQo+
+Pj4gwqDCoCAqIHJhdGUgd2FzIHByb2JlZCBmaXJzdCwgYW5kIGRvbid0IHZlcmlmeSB0aGF0IG90
+aGVycyBtYXRjaC4gSWYgCj4+PiB0aGUgZmlyc3Qgbm9kZQo+Pj4gQEAgLTkwMCw3ICs5MTEsNyBA
+QCBzdGF0aWMgdm9pZCBhcmNoX3RpbWVyX29mX2NvbmZpZ3VyZV9yYXRlKHUzMiAKPj4+IHJhdGUs
+IHN0cnVjdCBkZXZpY2Vfbm9kZSAqbnApCj4+PiDCoMKgwqDCoMKgwqDCoMKgwqAgYXJjaF90aW1l
+cl9yYXRlID0gcmF0ZTsKPj4+IMKgwqDCoMKgwqDCoMKgIC8qIENoZWNrIHRoZSB0aW1lciBmcmVx
+dWVuY3kuICovCj4+PiAtwqDCoMKgIGlmIChhcmNoX3RpbWVyX3JhdGUgPT0gMCkKPj4+ICvCoMKg
+wqAgaWYgKHZhbGlkYXRlX3RpbWVyX3JhdGUoKSkKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBwcl93
+YXJuKCJmcmVxdWVuY3kgbm90IGF2YWlsYWJsZVxuIik7Cj4+PiDCoCB9Cj4+PiDCoCBAQCAtMTU5
+NCw5ICsxNjA1LDEwIEBAIHN0YXRpYyBpbnQgX19pbml0IAo+Pj4gYXJjaF90aW1lcl9hY3BpX2lu
+aXQoc3RydWN0IGFjcGlfdGFibGVfaGVhZGVyICp0YWJsZSkKPj4+IMKgwqDCoMKgwqDCoCAqIENO
+VEZSUSB2YWx1ZS4gVGhpcyAqbXVzdCogYmUgY29ycmVjdC4KPj4+IMKgwqDCoMKgwqDCoCAqLwo+
+Pj4gwqDCoMKgwqDCoCBhcmNoX3RpbWVyX3JhdGUgPSBhcmNoX3RpbWVyX2dldF9jbnRmcnEoKTsK
+Pj4+IC3CoMKgwqAgaWYgKCFhcmNoX3RpbWVyX3JhdGUpIHsKPj4+ICvCoMKgwqAgcmV0ID0gdmFs
+aWRhdGVfdGltZXJfcmF0ZSgpOwo+Pj4gK8KgwqDCoCBpZiAocmV0KSB7Cj4+PiDCoMKgwqDCoMKg
+wqDCoMKgwqAgcHJfZXJyKEZXX0JVRyAiZnJlcXVlbmN5IG5vdCBhdmFpbGFibGUuXG4iKTsKPj4+
+IC3CoMKgwqDCoMKgwqDCoCByZXR1cm4gLUVJTlZBTDsKPj4+ICvCoMKgwqDCoMKgwqDCoCByZXR1
+cm4gcmV0Owo+Pj4gwqDCoMKgwqDCoCB9Cj4+PiDCoMKgwqDCoMKgwqDCoCBhcmNoX3RpbWVyX3Vz
+ZXNfcHBpID0gYXJjaF90aW1lcl9zZWxlY3RfcHBpKCk7Cj4+Pgo+Pgo+PiBMYXN0bHksIHRoaXMg
+aXMgYXJjaCB0aW1lci4KPj4gVG8gaW5jcmVhc2UgY2hhbmNlcyBvZiBnZXR0aW5nIG1lcmdlIHNv
+b24sIEkgd291bGQgcmVjb21tZW5kIHRvIGRyb3AKPj4gdGhlIHBhdGNoIGZyb20gdGhpcyBzZXJp
+ZXMuCj4gCj4gQW5kPyBJdCBzZWVtcyB0byBhZGRyZXNzIGEgcG90ZW50aWFsIGlzc3VlIHdoZXJl
+IHRoZSB0aW1lIGZyZXF1ZW5jeQo+IGlzIG91dCBvZiBzcGVjLCBhbmQgbWFrZXMgc3VyZSB3ZSBk
+b24ndCBlbmQgdXAgd2l0aCBhZGRpdGlvbmFsIHByb2JsZW1zCj4gaW4gdGhlIEFNVSBjb2RlLgoK
+VGhpcyBwYXRjaCBqdXN0IHByaW50cyB3YXJuaW5nLCBkb2VzIG5vdCBjaGFuZ2UgYW55dGhpbmcg
+aW4gYm9vdGluZyBvcgppbiBhbnkgY29kZSByZWxhdGVkIHRvIEFNVS4KCj4gCj4gT24gaXRzIG93
+biwgaXQgaXMgcGVyZmVjdGx5IHNlbnNpYmxlIGFuZCBjb3VsZCBiZSBtZXJnZWQgYXMgcGFydCBv
+ZiB0aGlzCj4gc2VyaWVzIHdpdGggbXkKPiAKPiBBY2tlZC1ieTogTWFyYyBaeW5naWVyIDxtYXpA
+a2VybmVsLm9yZz4KPiAKPiAgwqDCoMKgwqDCoMKgwqAgTS4KClJlZ2FyZHMsCkx1a2FzegoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
+cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
+bAo=
