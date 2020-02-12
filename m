@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84F8C15A295
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 09:01:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04B9A15A2A3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 09:02:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7os2kVFvJwWKV7WmoUUjgkJ2BwShcYO+8ukC5Zn00kQ=; b=CDyyZFJ2Uq9OrN
-	x5n24nzIAO8hnP9+sZBt8CtcOOpg/O6L4VCwT+Q0GAyKOgPxBsW/nzjCYRT5+AEhXEFYZlcnjMeM3
-	aMktlufWVoNyK80afL1QSwINVy5Q20i1K8Rnn/O/moVT5HnnKTdXKHfeVwDmst/CHOd+EDakGzkpX
-	QxUtmmHpm6t4+eHe2sbHcjGzZEOa6pDDmQmNNyjhV807T65d82cLDOw7wR4wNRUs2EkmwcZQvmLmT
-	WxxGS4owxCteYBeRVjsnlFKpoVRC/X0Lbz7VuqivTszyGbgeZCzN1004OpAnJnEzMYwQ/EP2FJgoj
-	ratKAlF6n2YWy0e//4BA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MMS6ihaGLDITDAkXGzELrFnAMZ5fA902MStg2YSXj/E=; b=VwcagzFiVrhLJv
+	1LlhfrzwhXuFma2scfLL+tNjimt4GOmLdeNsx5u40bbhxD+2NihlrREV0B9aiiT80NE/CWLVqjfIJ
+	ps9fgsd9AhYGRQOESLfdjyRknJXBWBI4wuwmm4e89JgRX2VpuVYv4ZCzBFNV5Ef+aw5f8V5NlzAjB
+	3iNQLbEibuROaxEGPEkklmG1oCij/myxERqxSybOyTaOiLqq9XIOhYOSJSDWqmy5igF/a60DoCKgv
+	xaRQ/tTQxP/ls2WrWA1tLhsDhhwUV3TePiW46VWWHDk38P3cI6hLmJ7ga/BXqDi7QsKdqQEOP3Nau
+	MbArDkz8VQKEI8fKmMPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1mxy-0007iR-Bk; Wed, 12 Feb 2020 08:01:50 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1j1mz0-00080B-Jo; Wed, 12 Feb 2020 08:02:54 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1mxn-0007hc-6J; Wed, 12 Feb 2020 08:01:44 +0000
-Received: by mail-pg1-x544.google.com with SMTP id u12so422147pgb.10;
- Wed, 12 Feb 2020 00:01:38 -0800 (PST)
+ id 1j1mys-0007zU-B2
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 08:02:48 +0000
+Received: by mail-pl1-x643.google.com with SMTP id j7so663432plt.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Feb 2020 00:02:46 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=bp8GhH+lTv01Fj7emi77JJtm4UgQcmSv8y6hx+7VcaM=;
- b=V6idpjeWbkdm3Yg9WsocEttNBMzG2tMCV7v/Jnkbmv4/1mib46u42IMshvuecDSvSf
- 2yOmAMxdZpFwtzksCp1LV9a3YGgQlOoUP4SbVF+wPlttoXbtqwM0I49vJS6ae4t0YZF1
- Z1uqi8KJ6Zau4OUy3+MsydCGC1VDnR6pplZNzS6f5PRm/C7QdWLR2luKNrgUgfxoDk00
- Mnu2M8v5Q4cbGSnXBDWZkPnqq5qDT+Uq/KETlGpkpqsS+EHPorvjMlK0D/WxcBdtvtHj
- +3x7nastEvjNOZhinDexpYlJjaguSs0t0W2LcIkvRDpoWHUMgRtitGbR6FzUIg40eRn+
- GkmA==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=7JydPUOiGuLPP9Bxc8X2KaiSOM0G03fcjvAo18j8aEM=;
+ b=qCwuq7QE+utPaKeUTnNatx8PRV52v9xbMOxz0tEbfbitLKwnTH8TzUhT7XE0cRWZnM
+ Q9HUoA68tsSHWZQCaeTyrdUxregQyr9VoLRoIN6Mke8kWN6ICwfhc35+pyc+vOcR0fSk
+ 4404894O2p7tkLtpIsgoQQm3aVj0NdQUqDoyiQSnV+Taqe4MXUrcDnUiMM89MtBfvaR1
+ 4lhuTfsSx/lCHZMMuMJJjAVKiSQDeqO0Ql8aUv8n4UBuVFMZwFlEqUiwIfkg3NN7nh/1
+ IemgjKFjmKTkaneOJ4wRSptJSKh0+OGLXqvm7kIw4xY9YT1+2HvWSp6dcPyjXe6DvHlA
+ px9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=bp8GhH+lTv01Fj7emi77JJtm4UgQcmSv8y6hx+7VcaM=;
- b=rKzh8pyloAnupxkmOeTQAvaQW4quEzAH91kA8gw132FSN70SdqA8nOi5eDk+FEhrZl
- hkXDHAMl7u1CwXHJD3GUxRQqbwoT0OlwUlbQEJHNAZgtBORwTARGQ25BPY6rMNBHe62D
- FVqui4TZTZODH8WjhvZkf5yeilI/nDS+s5kMjDdq+jh34BXgvCnP+vfVu9we3Dc7luTE
- ZAfxXg2ZNXb6Bk0fJtPM4glD0PBaGuWJt3ORRSfifAxBqEL2MniK/oiMYEzx4xeEf0eN
- FBg8Pvah4CGXDDSKY0CvuW1H12rNEpsqdib2LoK7h5kDJdZsZMQK5mEQW3K5v/uyITqS
- hlTA==
-X-Gm-Message-State: APjAAAUGbZ67HGQ+rU8iercHlR0Rj0c4boNQfsffWa4T2LyYoR6gI/2l
- pRNWyegtZutDcvFA5xHfSa3sAUNC
-X-Google-Smtp-Source: APXvYqxnV3nb/q4uy+L2rUWwz9UZlvNCyFsUzxgcQG4BajmKp/4rH+WqeHW/QL79FLpx5lTeAmqV6A==
-X-Received: by 2002:a63:8f5c:: with SMTP id r28mr7323021pgn.351.1581494497731; 
- Wed, 12 Feb 2020 00:01:37 -0800 (PST)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=7JydPUOiGuLPP9Bxc8X2KaiSOM0G03fcjvAo18j8aEM=;
+ b=bkS2fMmFJGSqdXMbzSL+IGUj2gFvi/O8uytaV2XsP6Z438GpeAqtO2ccNXISOUw0jn
+ pePkzYSYPar0+dvRel40H3+ZdsrzPLsNrG5tyRZ0jG/4EQ8kJmCcF65jp6VzwcHJphNG
+ mrwqAIo+sEcr3JYXnInnoch6dh9FYFLhAKD3sMNi6TragDEy3fILpjID4o9tRVnK0E46
+ Ovjnpb7SZMxQkvT+EvtFqCK3/Noc8If7Sl3b/HkApihfRKuJLXu2cRKDzdX4iYlcRUQD
+ 4xFHbWBO5LwXQ1UYi6oHI1roOGyBPPomr/Ae4s45RInisgVLp27jFAmyKW/rFQPhBVvx
+ UAZw==
+X-Gm-Message-State: APjAAAXb5iaeNl1v54i8tc69mOIp+ogtZhQTef9RkRlabAaj/XzORWOn
+ 3im7EobcSxB/JjtsovahyOFc9iiMLXo=
+X-Google-Smtp-Source: APXvYqzjM+KMoUQCs91vyrR+I80ebRr27aduSWh/bv2/yPboNm8ItXPI+3rEZvhWZEFq+BtXErcMMQ==
+X-Received: by 2002:a17:90a:9f93:: with SMTP id
+ o19mr8646326pjp.76.1581494565278; 
+ Wed, 12 Feb 2020 00:02:45 -0800 (PST)
 Received: from localhost ([106.51.21.91])
- by smtp.gmail.com with ESMTPSA id t63sm7164236pfb.70.2020.02.12.00.01.36
+ by smtp.gmail.com with ESMTPSA id 188sm6670834pgf.24.2020.02.12.00.02.44
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 12 Feb 2020 00:01:37 -0800 (PST)
-Date: Wed, 12 Feb 2020 13:31:35 +0530
+ Wed, 12 Feb 2020 00:02:44 -0800 (PST)
+Date: Wed, 12 Feb 2020 13:32:43 +0530
 From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, x86@kernel.org,
- linux-sh@vger.kernel.org, linux-s390@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
- linux-ia64@vger.kernel.org, linux-hexagon@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, linux-omap@vger.kernel.org,
- linux-alpha@vger.kernel.org
-Subject: [PATCH 00/18] genirq: Remove setup_irq()
-Message-ID: <cover.1581478323.git.afzal.mohd.ma@gmail.com>
+To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-omap@vger.kernel.org
+Subject: [PATCH 02/18] ARM: replace setup_irq() by request_irq()
+Message-ID: <da7d11b6cf808ea95e2d852a2e8cbca3fde28b6f.1581478324.git.afzal.mohd.ma@gmail.com>
+References: <cover.1581478323.git.afzal.mohd.ma@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <cover.1581478323.git.afzal.mohd.ma@gmail.com>
 User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_000139_237478_0D5A6A48 
-X-CRM114-Status: GOOD (  13.37  )
+X-CRM114-CacheID: sfid-20200212_000246_383002_6C774854 
+X-CRM114-Status: GOOD (  17.94  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [106.51.21.91 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [afzal.mohd.ma[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,376 +103,482 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julia Lawall <Julia.Lawall@lip6.fr>, Thomas Gleixner <tglx@linutronix.de>,
- Michal Marek <michal.lkml@markovi.net>, Nicolas Palix <nicolas.palix@imag.fr>,
- Gilles Muller <Gilles.Muller@lip6.fr>
+Cc: Andrew Lunn <andrew@lunn.ch>, Enrico Weigelt <info@metux.net>,
+ Jason Cooper <jason@lakedaemon.net>, Arnd Bergmann <arnd@arndb.de>,
+ Kevin Hilman <khilman@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Viresh Kumar <vireshk@kernel.org>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Russell King <linux@armlinux.org.uk>,
+ Hartley Sweeten <hsweeten@visionengravers.com>,
+ Lubomir Rintel <lkundrak@v3.sk>, Krzysztof Halasa <khalasa@piap.pl>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Alexander Sverdlin <alexander.sverdlin@gmail.com>,
+ Shiraz Hashim <shiraz.linux.kernel@gmail.com>,
+ Allison Randal <allison@lohutok.net>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While trying to understand internals of irq handling, came across a
-thread [1] in which tglx was referring to avoid usage of setup_irq().
-Existing callers of setup_irq() reached mostly via 'init_IRQ()' &
-'time_init()', while memory allocators are ready by 'mm_init()'.
+request_irq() is preferred over setup_irq(). Existing callers of
+setup_irq() reached mostly via 'init_IRQ()' & 'time_init()', while
+memory allocators are ready by 'mm_init()'.
 
-Hence instances of setup_irq() is replaced by request_irq() &
-setup_irq() (along with remove_irq()) definition deleted in the last
-patch.
+Per tglx[1], setup_irq() existed in olden days when allocators were not
+ready by the time early interrupts were initialized.
+
+Hence replace setup_irq() by request_irq().
 
 Seldom remove_irq() usage has been observed coupled with setup_irq(),
 wherever that has been found, it too has been replaced by free_irq().
 
-Build & boot tested on ARM & x86_64 platforms (ensured that on the
-machines used for testing there was an existing setup_irq()
-invocation occuring at runtime)
-
-Much of the changes were created using Coccinelle with an intention
-to learn it. spatch command was directly run w/ semantic patch below.
-But not everything could be automated.
-
-Searching with 'git grep -n '\Wsetup_irq('' & avoiding the irrelevant
-ones, 153 invocation's of setup_irq() were found. 112 could be replaced
-w/ cocci, of which in a few files some desired hunks were missing or
-not as expected, these were fixed up manually. Also the remaining 41
-had to be done manually.
-
-Although cocci could replace 112, because of line continue not
-happening at paranthesis for request_irq(), around 80 had to be
-manually aligned in the request_irq() statement. Problem was with my
-below cocci snippet,
-
-- setup_irq(E1,&act);
-+ if (request_irq(E1,f_handler,f_flags,f_name,f_dev_id))
-+ 	pr_err("request_irq() on %s failed\n", f_name);
-
-Instead of the above, if below is used, line continue happens exactly
-at paranthesis, but it lacks addition of printing on request_irq()
-failure where existing setup_irq() failure was not doing it.
-
-- setup_irq(E1,&act)
-+ request_irq(E1,f_handler,f_flags,f_name,f_dev_id)
-
-Above had an additional advantage of replacing instances of
-if (setup_irq()) & BUG(setup_irq()), but luckily those instances were
-very few.
-
-So though many changes could be automated, there are a considerable
-amount of manual changes, please review carefully especially mips &
-alpha.
-
-Usage of setup_percpu_irq() is untouched w/ this series.
-
-There are 2 checkpatch warning about usage of BUG() [which was already
-there w/ setup_irq()], they are left as is as it seems appropriate for
-tick timer interrupt.
-
 [1] https://lkml.kernel.org/r/alpine.DEB.2.20.1710191609480.1971@nanos
 
---->8---
+Signed-off-by: afzal mohammed <afzal.mohd.ma@gmail.com>
+---
 
-@r1@
-identifier ret;
-@@
+Since cc'ing cover letter to all maintainers/reviewers would be too
+many, refer for cover letter,
+ https://lkml.kernel.org/r/cover.1581478323.git.afzal.mohd.ma@gmail.com
 
-(
-setup_irq(...);
-|
-ret = setup_irq(...);
-)
+ arch/arm/mach-cns3xxx/core.c             | 10 +++-------
+ arch/arm/mach-ebsa110/core.c             | 10 +++-------
+ arch/arm/mach-ep93xx/timer-ep93xx.c      | 12 ++++--------
+ arch/arm/mach-footbridge/dc21285-timer.c | 11 +++--------
+ arch/arm/mach-footbridge/isa-irq.c       |  8 ++------
+ arch/arm/mach-footbridge/isa-timer.c     | 11 +++--------
+ arch/arm/mach-iop32x/time.c              | 12 ++++--------
+ arch/arm/mach-mmp/time.c                 | 11 +++--------
+ arch/arm/mach-omap1/pm.c                 | 22 +++++++++++++---------
+ arch/arm/mach-omap1/time.c               | 10 +++-------
+ arch/arm/mach-omap1/timer32k.c           | 10 +++-------
+ arch/arm/mach-omap2/timer.c              | 11 +++--------
+ arch/arm/mach-rpc/time.c                 |  8 ++------
+ arch/arm/mach-spear/time.c               |  9 ++-------
+ arch/arm/plat-orion/time.c               | 10 +++-------
+ 15 files changed, 54 insertions(+), 111 deletions(-)
 
-
-@r2 depends on r1@
-identifier act;
-@@
-
-static struct irqaction act = {
-};
-
-@r11 depends on r2@
-identifier r2.act;
-identifier f_handler;
-@@
-
-(
-- act.handler = f_handler;
-|
-static struct irqaction act = {
- .handler = f_handler,
-};
-)
-
-@r12 depends on r2@
-identifier r2.act;
-expression f_name;
-@@
-
-(
-- act.name = f_name;
-|
-static struct irqaction act = {
- .name = f_name,
-};
-)
-
-@r15 depends on r2@
-identifier r2.act;
-expression f_dev_id;
-@@
-
-(
-- act.dev_id = f_dev_id;
-|
-static struct irqaction act = {
- .dev_id = f_dev_id,
-};
-)
-
-@r16 depends on r2@
-identifier r2.act;
-expression f_flags;
-@@
-
-(
-- act.flags = f_flags;
-|
-static struct irqaction act = {
- .flags = f_flags,
-};
-)
-
-@r21 depends on r2@
-identifier r2.act;
-@@
-
-- static struct irqaction act = {
-- ...
-- };
-
-@r22 depends on r2 && r11 && r12 && r15 && r16@
-identifier r2.act;
-identifier r11.f_handler;
-expression r12.f_name;
-expression r15.f_dev_id;
-expression r16.f_flags;
-expression E1;
-identifier ret;
-@@
-
-(
-- setup_irq(E1,&act);
-+ if (request_irq(E1,f_handler,f_flags,f_name,f_dev_id))
-+ 	pr_err("request_irq() on %s failed\n", f_name);
-|
-- ret = setup_irq(E1,&act);
-+ ret = request_irq(E1,f_handler,f_flags,f_name,f_dev_id);
-)
-
-@r23 depends on r2 && r11 && r12 && !r15 && r16@
-identifier r2.act;
-identifier r11.f_handler;
-expression r12.f_name;
-expression r16.f_flags;
-expression E1;
-identifier ret;
-@@
-
-(
-- setup_irq(E1,&act);
-+ if (request_irq(E1,f_handler,f_flags,f_name,NULL))
-+ 	pr_err("request_irq() on %s failed\n", f_name);
-|
-- ret = setup_irq(E1,&act);
-+ ret = request_irq(E1,f_handler,f_flags,f_name,NULL);
-)
-
-@r24 depends on r2 && r11 && r12 && r15 && !r16@
-identifier r2.act;
-identifier r11.f_handler;
-expression r12.f_name;
-expression r15.f_dev_id;
-expression E1;
-identifier ret;
-@@
-
-(
-- setup_irq(E1,&act);
-+ if (request_irq(E1,f_handler,0,f_name,f_dev_id))
-+ 	pr_err("request_irq() on %s failed\n", f_name);
-|
-- ret = setup_irq(E1,&act);
-+ ret = request_irq(E1,f_handler,0,f_name,f_dev_id);
-)
-
-@r25 depends on r2 && r11 && r12 && !r15 && !r16@
-identifier r2.act;
-identifier r11.f_handler;
-expression r12.f_name;
-expression E1;
-identifier ret;
-@@
-
-(
-- setup_irq(E1,&act);
-+ if (request_irq(E1,f_handler,0,f_name,NULL))
-+ 	pr_err("request_irq() on %s failed\n", f_name);
-|
-- ret = setup_irq(E1,&act);
-+ ret = request_irq(E1,f_handler,0,f_name,NULL);
-)
-
---->8---
-
-afzal mohammed (18):
-  alpha: replace setup_irq() by request_irq()
-  ARM: replace setup_irq() by request_irq()
-  c6x: replace setup_irq() by request_irq()
-  hexagon: replace setup_irq() by request_irq()
-  ia64: replace setup_irq() by request_irq()
-  m68k: Replace setup_irq() by request_irq()
-  microblaze: Replace setup_irq() by request_irq()
-  MIPS: Replace setup_irq() by request_irq()
-  parisc: Replace setup_irq() by request_irq()
-  powerpc: Replace setup_irq() by request_irq()
-  s390: replace setup_irq() by request_irq()
-  sh: replace setup_irq() by request_irq()
-  unicore32: replace setup_irq() by request_irq()
-  x86: Replace setup_irq() by request_irq()
-  xtensa: replace setup_irq() by request_irq()
-  clocksource: Replace setup_irq() by request_irq()
-  irqchip: Replace setup_irq() by request_irq()
-  genirq: Remove setup_irq() and remove_irq()
-
- arch/alpha/kernel/irq_alpha.c                 | 29 ++-------
- arch/alpha/kernel/irq_i8259.c                 |  8 +--
- arch/alpha/kernel/irq_impl.h                  |  7 +--
- arch/alpha/kernel/irq_pyxis.c                 |  3 +-
- arch/alpha/kernel/sys_alcor.c                 |  3 +-
- arch/alpha/kernel/sys_cabriolet.c             |  3 +-
- arch/alpha/kernel/sys_eb64p.c                 |  3 +-
- arch/alpha/kernel/sys_marvel.c                |  2 +-
- arch/alpha/kernel/sys_miata.c                 |  6 +-
- arch/alpha/kernel/sys_ruffian.c               |  3 +-
- arch/alpha/kernel/sys_rx164.c                 |  3 +-
- arch/alpha/kernel/sys_sx164.c                 |  3 +-
- arch/alpha/kernel/sys_wildfire.c              |  7 +--
- arch/alpha/kernel/time.c                      |  6 +-
- arch/arm/mach-cns3xxx/core.c                  | 10 +---
- arch/arm/mach-ebsa110/core.c                  | 10 +---
- arch/arm/mach-ep93xx/timer-ep93xx.c           | 12 ++--
- arch/arm/mach-footbridge/dc21285-timer.c      | 11 +---
- arch/arm/mach-footbridge/isa-irq.c            |  8 +--
- arch/arm/mach-footbridge/isa-timer.c          | 11 +---
- arch/arm/mach-iop32x/time.c                   | 12 ++--
- arch/arm/mach-mmp/time.c                      | 11 +---
- arch/arm/mach-omap1/pm.c                      | 22 ++++---
- arch/arm/mach-omap1/time.c                    | 10 +---
- arch/arm/mach-omap1/timer32k.c                | 10 +---
- arch/arm/mach-omap2/timer.c                   | 11 +---
- arch/arm/mach-rpc/time.c                      |  8 +--
- arch/arm/mach-spear/time.c                    |  9 +--
- arch/arm/plat-orion/time.c                    | 10 +---
- arch/c6x/platforms/timer64.c                  | 11 +---
- arch/hexagon/kernel/smp.c                     | 17 +++---
- arch/hexagon/kernel/time.c                    | 11 +---
- arch/ia64/kernel/irq_ia64.c                   | 42 +++++--------
- arch/ia64/kernel/mca.c                        | 51 +++++-----------
- arch/m68k/68000/timers.c                      |  9 +--
- arch/m68k/coldfire/pit.c                      |  9 +--
- arch/m68k/coldfire/sltimers.c                 | 19 ++----
- arch/m68k/coldfire/timers.c                   | 19 ++----
- arch/microblaze/kernel/timer.c                | 10 +---
- arch/mips/alchemy/common/time.c               | 11 +---
- arch/mips/ar7/irq.c                           | 18 +++---
- arch/mips/ath25/ar2315.c                      |  9 +--
- arch/mips/ath25/ar5312.c                      |  9 +--
- arch/mips/bcm63xx/irq.c                       | 38 +++++-------
- arch/mips/cobalt/irq.c                        | 14 ++---
- arch/mips/dec/setup.c                         | 59 ++++++++-----------
- arch/mips/emma/markeins/irq.c                 | 20 +++----
- arch/mips/include/asm/sni.h                   |  2 +-
- arch/mips/jazz/irq.c                          | 12 +---
- arch/mips/kernel/cevt-bcm1480.c               | 11 +---
- arch/mips/kernel/cevt-ds1287.c                |  9 +--
- arch/mips/kernel/cevt-gt641xx.c               |  9 +--
- arch/mips/kernel/cevt-r4k.c                   |  4 +-
- arch/mips/kernel/cevt-sb1250.c                | 11 +---
- arch/mips/kernel/cevt-txx9.c                  | 11 +---
- arch/mips/kernel/i8253.c                      | 10 +---
- arch/mips/kernel/rtlx-mt.c                    |  8 +--
- arch/mips/kernel/smp.c                        | 33 ++++-------
- arch/mips/lasat/interrupt.c                   | 10 +---
- arch/mips/loongson2ef/common/bonito-irq.c     |  9 +--
- .../loongson2ef/common/cs5536/cs5536_mfgpt.c  | 10 +---
- arch/mips/loongson2ef/fuloong-2e/irq.c        | 14 ++---
- arch/mips/loongson2ef/lemote-2f/irq.c         | 20 ++-----
- arch/mips/loongson32/common/irq.c             | 21 ++++---
- arch/mips/loongson32/common/time.c            | 12 ++--
- arch/mips/loongson64/hpet.c                   | 10 +---
- arch/mips/mti-malta/malta-int.c               | 10 +---
- arch/mips/netlogic/xlr/fmn.c                  |  9 +--
- arch/mips/pmcs-msp71xx/msp_irq.c              | 28 ++++-----
- arch/mips/pmcs-msp71xx/msp_smp.c              | 22 ++-----
- arch/mips/pmcs-msp71xx/msp_time.c             |  7 ++-
- arch/mips/ralink/cevt-rt3352.c                | 17 +++---
- arch/mips/sgi-ip22/ip22-eisa.c                |  8 +--
- arch/mips/sgi-ip22/ip22-int.c                 | 49 +++++----------
- arch/mips/sgi-ip32/ip32-irq.c                 | 18 ++----
- arch/mips/sni/a20r.c                          |  4 +-
- arch/mips/sni/irq.c                           |  8 +--
- arch/mips/sni/pcit.c                          |  8 ++-
- arch/mips/sni/rm200.c                         | 23 +++-----
- arch/mips/sni/time.c                          | 10 +---
- arch/mips/vr41xx/common/irq.c                 |  9 +--
- arch/parisc/kernel/irq.c                      | 21 ++-----
- arch/powerpc/platforms/85xx/mpc85xx_cds.c     | 10 +---
- arch/powerpc/platforms/8xx/cpm1.c             |  9 +--
- arch/powerpc/platforms/8xx/m8xx_setup.c       |  9 +--
- arch/powerpc/platforms/chrp/setup.c           | 14 ++---
- arch/powerpc/platforms/powermac/pic.c         | 31 ++++------
- arch/powerpc/platforms/powermac/smp.c         |  9 +--
- arch/s390/kernel/irq.c                        |  8 +--
- arch/sh/boards/mach-cayman/irq.c              | 18 ++----
- arch/sh/drivers/dma/dma-pvr2.c                |  9 +--
- arch/unicore32/kernel/time.c                  | 11 +---
- arch/x86/kernel/irqinit.c                     | 18 +++---
- arch/x86/kernel/time.c                        | 10 +---
- arch/xtensa/kernel/smp.c                      |  8 +--
- arch/xtensa/kernel/time.c                     | 10 +---
- drivers/clocksource/bcm2835_timer.c           |  8 +--
- drivers/clocksource/bcm_kona_timer.c          | 10 +---
- drivers/clocksource/dw_apb_timer.c            | 11 +---
- drivers/clocksource/exynos_mct.c              | 12 ++--
- drivers/clocksource/mxs_timer.c               | 10 +---
- drivers/clocksource/nomadik-mtu.c             | 11 +---
- drivers/clocksource/samsung_pwm_timer.c       | 12 ++--
- drivers/clocksource/timer-atlas7.c            | 50 ++++++++--------
- drivers/clocksource/timer-cs5535.c            | 10 +---
- drivers/clocksource/timer-efm32.c             | 10 +---
- drivers/clocksource/timer-fsl-ftm.c           | 10 +---
- drivers/clocksource/timer-imx-gpt.c           | 10 +---
- drivers/clocksource/timer-integrator-ap.c     | 11 +---
- drivers/clocksource/timer-meson6.c            | 11 +---
- drivers/clocksource/timer-orion.c             |  9 +--
- drivers/clocksource/timer-prima2.c            | 11 +---
- drivers/clocksource/timer-pxa.c               | 10 +---
- drivers/clocksource/timer-sp804.c             | 11 +---
- drivers/clocksource/timer-u300.c              |  9 +--
- drivers/clocksource/timer-vf-pit.c            | 10 +---
- drivers/clocksource/timer-vt8500.c            | 11 +---
- drivers/clocksource/timer-zevio.c             | 13 ++--
- drivers/irqchip/irq-i8259.c                   |  9 +--
- drivers/irqchip/irq-ingenic.c                 | 11 ++--
- drivers/parisc/eisa.c                         |  8 +--
- drivers/s390/cio/airq.c                       |  8 +--
- drivers/s390/cio/cio.c                        |  8 +--
- include/linux/dw_apb_timer.h                  |  1 -
- include/linux/irq.h                           |  2 -
- kernel/irq/manage.c                           | 44 --------------
- 126 files changed, 528 insertions(+), 1111 deletions(-)
-
-
-base-commit: v5.6-rc1
+diff --git a/arch/arm/mach-cns3xxx/core.c b/arch/arm/mach-cns3xxx/core.c
+index 1d61a7701c11..2e8d0062ea72 100644
+--- a/arch/arm/mach-cns3xxx/core.c
++++ b/arch/arm/mach-cns3xxx/core.c
+@@ -189,12 +189,6 @@ static irqreturn_t cns3xxx_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction cns3xxx_timer_irq = {
+-	.name		= "timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= cns3xxx_timer_interrupt,
+-};
+-
+ /*
+  * Set up the clock source and clock events devices
+  */
+@@ -245,7 +239,9 @@ static void __init __cns3xxx_timer_init(unsigned int timer_irq)
+ 	writel(val, cns3xxx_tmr1 + TIMER1_2_CONTROL_OFFSET);
+ 
+ 	/* Make irqs happen for the system timer */
+-	setup_irq(timer_irq, &cns3xxx_timer_irq);
++	if (request_irq(timer_irq, cns3xxx_timer_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "timer", NULL))
++		pr_err("request_irq() on %s failed\n", "timer");
+ 
+ 	cns3xxx_clockevents_init(timer_irq);
+ }
+diff --git a/arch/arm/mach-ebsa110/core.c b/arch/arm/mach-ebsa110/core.c
+index da2ff4f61d6b..cf79aa7637fc 100644
+--- a/arch/arm/mach-ebsa110/core.c
++++ b/arch/arm/mach-ebsa110/core.c
+@@ -201,12 +201,6 @@ ebsa110_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction ebsa110_timer_irq = {
+-	.name		= "EBSA110 Timer Tick",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= ebsa110_timer_interrupt,
+-};
+-
+ /*
+  * Set up timer interrupt.
+  */
+@@ -221,7 +215,9 @@ void __init ebsa110_timer_init(void)
+ 	__raw_writeb(COUNT & 0xff, PIT_T1);
+ 	__raw_writeb(COUNT >> 8, PIT_T1);
+ 
+-	setup_irq(IRQ_EBSA110_TIMER0, &ebsa110_timer_irq);
++	if (request_irq(IRQ_EBSA110_TIMER0, ebsa110_timer_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "EBSA110 Timer Tick", NULL))
++		pr_err("request_irq() on %s failed\n", "EBSA110 Timer Tick");
+ }
+ 
+ static struct plat_serial8250_port serial_platform_data[] = {
+diff --git a/arch/arm/mach-ep93xx/timer-ep93xx.c b/arch/arm/mach-ep93xx/timer-ep93xx.c
+index de998830f534..0335f3b93340 100644
+--- a/arch/arm/mach-ep93xx/timer-ep93xx.c
++++ b/arch/arm/mach-ep93xx/timer-ep93xx.c
+@@ -117,13 +117,6 @@ static irqreturn_t ep93xx_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction ep93xx_timer_irq = {
+-	.name		= "ep93xx timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= ep93xx_timer_interrupt,
+-	.dev_id		= &ep93xx_clockevent,
+-};
+-
+ void __init ep93xx_timer_init(void)
+ {
+ 	/* Enable and register clocksource and sched_clock on timer 4 */
+@@ -136,7 +129,10 @@ void __init ep93xx_timer_init(void)
+ 			     EP93XX_TIMER4_RATE);
+ 
+ 	/* Set up clockevent on timer 3 */
+-	setup_irq(IRQ_EP93XX_TIMER3, &ep93xx_timer_irq);
++	if (request_irq(IRQ_EP93XX_TIMER3, ep93xx_timer_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "ep93xx timer",
++			&ep93xx_clockevent))
++		pr_err("request_irq() on %s failed\n", "ep93xx timer");
+ 	clockevents_config_and_register(&ep93xx_clockevent,
+ 					EP93XX_TIMER123_RATE,
+ 					1,
+diff --git a/arch/arm/mach-footbridge/dc21285-timer.c b/arch/arm/mach-footbridge/dc21285-timer.c
+index f76212d2dbf1..151b8a76896f 100644
+--- a/arch/arm/mach-footbridge/dc21285-timer.c
++++ b/arch/arm/mach-footbridge/dc21285-timer.c
+@@ -101,13 +101,6 @@ static irqreturn_t timer1_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction footbridge_timer_irq = {
+-	.name		= "dc21285_timer1",
+-	.handler	= timer1_interrupt,
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.dev_id		= &ckevt_dc21285,
+-};
+-
+ /*
+  * Set up timer interrupt.
+  */
+@@ -118,7 +111,9 @@ void __init footbridge_timer_init(void)
+ 
+ 	clocksource_register_hz(&cksrc_dc21285, rate);
+ 
+-	setup_irq(ce->irq, &footbridge_timer_irq);
++	if (request_irq(ce->irq, timer1_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
++			"dc21285_timer1", &ckevt_dc21285))
++		pr_err("request_irq() on %s failed\n", "dc21285_timer1");
+ 
+ 	ce->cpumask = cpumask_of(smp_processor_id());
+ 	clockevents_config_and_register(ce, rate, 0x4, 0xffffff);
+diff --git a/arch/arm/mach-footbridge/isa-irq.c b/arch/arm/mach-footbridge/isa-irq.c
+index 88a553932c33..85f1c3cad83e 100644
+--- a/arch/arm/mach-footbridge/isa-irq.c
++++ b/arch/arm/mach-footbridge/isa-irq.c
+@@ -96,11 +96,6 @@ static void isa_irq_handler(struct irq_desc *desc)
+ 	generic_handle_irq(isa_irq);
+ }
+ 
+-static struct irqaction irq_cascade = {
+-	.handler = no_action,
+-	.name = "cascade",
+-};
+-
+ static struct resource pic1_resource = {
+ 	.name	= "pic1",
+ 	.start	= 0x20,
+@@ -160,7 +155,8 @@ void __init isa_init_irq(unsigned int host_irq)
+ 
+ 		request_resource(&ioport_resource, &pic1_resource);
+ 		request_resource(&ioport_resource, &pic2_resource);
+-		setup_irq(IRQ_ISA_CASCADE, &irq_cascade);
++		if (request_irq(IRQ_ISA_CASCADE, no_action, 0, "cascade", NULL))
++			pr_err("request_irq() on %s failed\n", "cascade");
+ 
+ 		irq_set_chained_handler(host_irq, isa_irq_handler);
+ 
+diff --git a/arch/arm/mach-footbridge/isa-timer.c b/arch/arm/mach-footbridge/isa-timer.c
+index 82f45591fb2c..3c1aed290fde 100644
+--- a/arch/arm/mach-footbridge/isa-timer.c
++++ b/arch/arm/mach-footbridge/isa-timer.c
+@@ -25,17 +25,12 @@ static irqreturn_t pit_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction pit_timer_irq = {
+-	.name		= "pit",
+-	.handler	= pit_timer_interrupt,
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.dev_id		= &i8253_clockevent,
+-};
+-
+ void __init isa_timer_init(void)
+ {
+ 	clocksource_i8253_init();
+ 
+-	setup_irq(i8253_clockevent.irq, &pit_timer_irq);
++	if (request_irq(i8253_clockevent.irq, pit_timer_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "pit", &i8253_clockevent))
++		pr_err("request_irq() on %s failed\n", "pit");
+ 	clockevent_i8253_init(false);
+ }
+diff --git a/arch/arm/mach-iop32x/time.c b/arch/arm/mach-iop32x/time.c
+index 18a4df5c1baa..241637fcffff 100644
+--- a/arch/arm/mach-iop32x/time.c
++++ b/arch/arm/mach-iop32x/time.c
+@@ -137,13 +137,6 @@ iop_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction iop_timer_irq = {
+-	.name		= "IOP Timer Tick",
+-	.handler	= iop_timer_interrupt,
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.dev_id		= &iop_clockevent,
+-};
+-
+ static unsigned long iop_tick_rate;
+ unsigned long get_iop_tick_rate(void)
+ {
+@@ -168,7 +161,10 @@ void __init iop_init_time(unsigned long tick_rate)
+ 	 */
+ 	write_tmr0(timer_ctl & ~IOP_TMR_EN);
+ 	write_tisr(1);
+-	setup_irq(IRQ_IOP32X_TIMER0, &iop_timer_irq);
++	if (request_irq(IRQ_IOP32X_TIMER0, iop_timer_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "IOP Timer Tick",
++			&iop_clockevent))
++		pr_err("request_irq() on %s failed\n", "IOP Timer Tick");
+ 	iop_clockevent.cpumask = cpumask_of(0);
+ 	clockevents_config_and_register(&iop_clockevent, tick_rate,
+ 					0xf, 0xfffffffe);
+diff --git a/arch/arm/mach-mmp/time.c b/arch/arm/mach-mmp/time.c
+index c65cfc1ad99b..a5f157b4b981 100644
+--- a/arch/arm/mach-mmp/time.c
++++ b/arch/arm/mach-mmp/time.c
+@@ -175,13 +175,6 @@ static void __init timer_config(void)
+ 	__raw_writel(0x2, mmp_timer_base + TMR_CER);
+ }
+ 
+-static struct irqaction timer_irq = {
+-	.name		= "timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= timer_interrupt,
+-	.dev_id		= &ckevt,
+-};
+-
+ void __init mmp_timer_init(int irq, unsigned long rate)
+ {
+ 	timer_config();
+@@ -190,7 +183,9 @@ void __init mmp_timer_init(int irq, unsigned long rate)
+ 
+ 	ckevt.cpumask = cpumask_of(0);
+ 
+-	setup_irq(irq, &timer_irq);
++	if (request_irq(irq, timer_interrupt, IRQF_TIMER | IRQF_IRQPOLL,
++			"timer", &ckevt))
++		pr_err("request_irq() on %s failed\n", "timer");
+ 
+ 	clocksource_register_hz(&cksrc, rate);
+ 	clockevents_config_and_register(&ckevt, rate, MIN_DELTA, MAX_DELTA);
+diff --git a/arch/arm/mach-omap1/pm.c b/arch/arm/mach-omap1/pm.c
+index d068958d6f8a..ae03fae5b75d 100644
+--- a/arch/arm/mach-omap1/pm.c
++++ b/arch/arm/mach-omap1/pm.c
+@@ -596,11 +596,6 @@ static irqreturn_t omap_wakeup_interrupt(int irq, void *dev)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction omap_wakeup_irq = {
+-	.name		= "peripheral wakeup",
+-	.handler	= omap_wakeup_interrupt
+-};
+-
+ 
+ 
+ static const struct platform_suspend_ops omap_pm_ops = {
+@@ -655,10 +650,19 @@ static int __init omap_pm_init(void)
+ 
+ 	arm_pm_idle = omap1_pm_idle;
+ 
+-	if (cpu_is_omap7xx())
+-		setup_irq(INT_7XX_WAKE_UP_REQ, &omap_wakeup_irq);
+-	else if (cpu_is_omap16xx())
+-		setup_irq(INT_1610_WAKE_UP_REQ, &omap_wakeup_irq);
++	if (cpu_is_omap7xx()) {
++		if (request_irq(INT_7XX_WAKE_UP_REQ, omap_wakeup_interrupt, 0,
++				"peripheral wakeup", NULL)) {
++			pr_err("request_irq() on %s failed\n",
++			       "peripheral wakeup");
++		}
++	} else if (cpu_is_omap16xx()) {
++		if (request_irq(INT_1610_WAKE_UP_REQ, omap_wakeup_interrupt, 0,
++				"peripheral wakeup", NULL)) {
++			pr_err("request_irq() on %s failed\n",
++			       "peripheral wakeup");
++		}
++	}
+ 
+ 	/* Program new power ramp-up time
+ 	 * (0 for most boards since we don't lower voltage when in deep sleep)
+diff --git a/arch/arm/mach-omap1/time.c b/arch/arm/mach-omap1/time.c
+index 524977a31a49..da5685013e2c 100644
+--- a/arch/arm/mach-omap1/time.c
++++ b/arch/arm/mach-omap1/time.c
+@@ -155,15 +155,11 @@ static irqreturn_t omap_mpu_timer1_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction omap_mpu_timer1_irq = {
+-	.name		= "mpu_timer1",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= omap_mpu_timer1_interrupt,
+-};
+-
+ static __init void omap_init_mpu_timer(unsigned long rate)
+ {
+-	setup_irq(INT_TIMER1, &omap_mpu_timer1_irq);
++	if (request_irq(INT_TIMER1, omap_mpu_timer1_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "mpu_timer1", NULL))
++		pr_err("request_irq() on %s failed\n", "mpu_timer1");
+ 	omap_mpu_timer_start(0, (rate / HZ) - 1, 1);
+ 
+ 	clockevent_mpu_timer1.cpumask = cpumask_of(0);
+diff --git a/arch/arm/mach-omap1/timer32k.c b/arch/arm/mach-omap1/timer32k.c
+index 0ae6c52a7d70..e6bf8b48b7bb 100644
+--- a/arch/arm/mach-omap1/timer32k.c
++++ b/arch/arm/mach-omap1/timer32k.c
+@@ -148,15 +148,11 @@ static irqreturn_t omap_32k_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction omap_32k_timer_irq = {
+-	.name		= "32KHz timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= omap_32k_timer_interrupt,
+-};
+-
+ static __init void omap_init_32k_timer(void)
+ {
+-	setup_irq(INT_OS_TIMER, &omap_32k_timer_irq);
++	if (request_irq(INT_OS_TIMER, omap_32k_timer_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "32KHz timer", NULL))
++		pr_err("request_irq() on %s failed\n", "32KHz timer");
+ 
+ 	clockevent_32k_timer.cpumask = cpumask_of(0);
+ 	clockevents_config_and_register(&clockevent_32k_timer,
+diff --git a/arch/arm/mach-omap2/timer.c b/arch/arm/mach-omap2/timer.c
+index 0d0a731cb476..e60f1fdc4a60 100644
+--- a/arch/arm/mach-omap2/timer.c
++++ b/arch/arm/mach-omap2/timer.c
+@@ -91,12 +91,6 @@ static irqreturn_t omap2_gp_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction omap2_gp_timer_irq = {
+-	.name		= "gp_timer",
+-	.flags		= IRQF_TIMER | IRQF_IRQPOLL,
+-	.handler	= omap2_gp_timer_interrupt,
+-};
+-
+ static int omap2_gp_timer_set_next_event(unsigned long cycles,
+ 					 struct clock_event_device *evt)
+ {
+@@ -382,8 +376,9 @@ static void __init omap2_gp_clockevent_init(int gptimer_id,
+ 				     &clockevent_gpt.name, OMAP_TIMER_POSTED);
+ 	BUG_ON(res);
+ 
+-	omap2_gp_timer_irq.dev_id = &clkev;
+-	setup_irq(clkev.irq, &omap2_gp_timer_irq);
++	if (request_irq(clkev.irq, omap2_gp_timer_interrupt,
++			IRQF_TIMER | IRQF_IRQPOLL, "gp_timer", &clkev))
++		pr_err("request_irq() on %s failed\n", "gp_timer");
+ 
+ 	__omap_dm_timer_int_enable(&clkev, OMAP_TIMER_INT_OVERFLOW);
+ 
+diff --git a/arch/arm/mach-rpc/time.c b/arch/arm/mach-rpc/time.c
+index 1d750152b160..14460c84aca4 100644
+--- a/arch/arm/mach-rpc/time.c
++++ b/arch/arm/mach-rpc/time.c
+@@ -85,11 +85,6 @@ ioc_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction ioc_timer_irq = {
+-	.name		= "timer",
+-	.handler	= ioc_timer_interrupt
+-};
+-
+ /*
+  * Set up timer interrupt.
+  */
+@@ -97,5 +92,6 @@ void __init ioc_timer_init(void)
+ {
+ 	WARN_ON(clocksource_register_hz(&ioctime_clocksource, RPC_CLOCK_FREQ));
+ 	ioctime_init();
+-	setup_irq(IRQ_TIMER0, &ioc_timer_irq);
++	if (request_irq(IRQ_TIMER0, ioc_timer_interrupt, 0, "timer", NULL))
++		pr_err("request_irq() on %s failed\n", "timer");
+ }
+diff --git a/arch/arm/mach-spear/time.c b/arch/arm/mach-spear/time.c
+index 289e036c9c30..92b2850eeb4f 100644
+--- a/arch/arm/mach-spear/time.c
++++ b/arch/arm/mach-spear/time.c
+@@ -181,12 +181,6 @@ static irqreturn_t spear_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction spear_timer_irq = {
+-	.name = "timer",
+-	.flags = IRQF_TIMER,
+-	.handler = spear_timer_interrupt
+-};
+-
+ static void __init spear_clockevent_init(int irq)
+ {
+ 	u32 tick_rate;
+@@ -201,7 +195,8 @@ static void __init spear_clockevent_init(int irq)
+ 
+ 	clockevents_config_and_register(&clkevt, tick_rate, 3, 0xfff0);
+ 
+-	setup_irq(irq, &spear_timer_irq);
++	if (request_irq(irq, spear_timer_interrupt, IRQF_TIMER, "timer", NULL))
++		pr_err("request_irq() on %s failed\n", "timer");
+ }
+ 
+ static const struct of_device_id timer_of_match[] __initconst = {
+diff --git a/arch/arm/plat-orion/time.c b/arch/arm/plat-orion/time.c
+index ffb93db68e9c..877ded7c8b28 100644
+--- a/arch/arm/plat-orion/time.c
++++ b/arch/arm/plat-orion/time.c
+@@ -177,12 +177,6 @@ static irqreturn_t orion_timer_interrupt(int irq, void *dev_id)
+ 	return IRQ_HANDLED;
+ }
+ 
+-static struct irqaction orion_timer_irq = {
+-	.name		= "orion_tick",
+-	.flags		= IRQF_TIMER,
+-	.handler	= orion_timer_interrupt
+-};
+-
+ void __init
+ orion_time_set_base(void __iomem *_timer_base)
+ {
+@@ -236,7 +230,9 @@ orion_time_init(void __iomem *_bridge_base, u32 _bridge_timer1_clr_mask,
+ 	/*
+ 	 * Setup clockevent timer (interrupt-driven).
+ 	 */
+-	setup_irq(irq, &orion_timer_irq);
++	if (request_irq(irq, orion_timer_interrupt, IRQF_TIMER, "orion_tick",
++			NULL))
++		pr_err("request_irq() on %s failed\n", "orion_tick");
+ 	orion_clkevt.cpumask = cpumask_of(0);
+ 	clockevents_config_and_register(&orion_clkevt, tclk, 1, 0xfffffffe);
+ }
 -- 
 2.24.1
 
