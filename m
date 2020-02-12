@@ -2,87 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61332159F26
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 03:38:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA69A159F3B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 03:56:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LymFQ5ma7KimvSxDNMz/gBM7til9vKGejJSIUxcR4qk=; b=m07C0Igr7sLwy1
-	TeXj2/qrt7dQ2Na1EHBNOQbmqQqldUHkNv1ARTeDCcZtu8jzMYi3TruWkx9tViHEDJSg6q1YGLvVS
-	teDNwQTLuL6h0l2JdeffFcj/N+fAJ/1mkNoGgHHXx5l4cBrQqLuC73Xc4xG00Ea2fiT2lGs1K0/6h
-	YJCtodIdJX+JyQ7DdFuCXfJwjuJHnpFyb/FOMQ4d2iaq6/sfbweD57UV3Fz/9QO+61qFcc/ceaZd8
-	fMjclOO7A5IAwGXgEJvGBNJMKriVEWeavRmCaD5wZTCB0RcZ2ovNh4y9b5YcV3kJkhHlOBdDLo//U
-	efunyCLcpNLXAeCsVDOw==;
+	List-Owner; bh=L3j4TutpaaMycsR2dFXfo48XVZNkBTbDXN52xZWdRUA=; b=G4abSpJnUzC4AO
+	1Q9AmQ05QX8uVwBkq2uNkiWxYd6FRYmdGp1O94fuSf+FlvfeVWpCuHSTqyDI9nc43xAM4T/41F3ZM
+	06+6TREbPCIOhnsDSfeVwcwdi2j6rZuLG9n+cCqtq/sTUzNf1pe9+oyJpiT6wSgnQK2dV3I9bNPR4
+	zWSl66h0v/goTwFcvdZHVqoCSFn/X5vzIZ7yriJqb4Dj9flYJ5AQJmFIhZcqcZj32YvYtyh0BQiO1
+	mqSGQAxdIIr1SDOxmtWs9+/mEcWS3ZPzH5vOJv5yd3k+bMHt4TCUCbEWmgBdD6VkfR7bp0AtueBFp
+	PyR1mzrajKn8yissP6Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1hue-0004gf-1c; Wed, 12 Feb 2020 02:38:04 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1j1iC3-0003Dd-GL; Wed, 12 Feb 2020 02:56:03 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1huW-0004fx-HX
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 02:37:58 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id q39so210611pjc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 11 Feb 2020 18:37:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=vv3NHPZnBve5XiluETZotYu+d3bqwg0qJCx+3uhyaM4=;
- b=LqDTnVdwykUbgj17vRiSu0wFe6uQuLuoNTYxnt1hV1zA7zQJZ3Bu1dEQt4RI34I1TS
- Or2/lgMlxpcFQzXW463ugd85BrgR6lgMSKBiGhOmWpfD0H1f7PcEbVJhflRk3lwMfWo3
- x6wskEcFMMckElySxG0JLuRGy9KCJ0rFQPawyC295ueBCdHjobHOguzNBOOR7WlBwRaR
- OY5syFDOcpl+E49w1qaBDG105le2WjLWE+eQ6YJg8AubgePkguj0UTz+MB/RBxroaW0n
- lx2EFjfL5QjrX69I8wUKWAO2/nYbY5A1X27OhsVEa2/65vOy8MgC2ffxYouJxHKW6a/V
- 4QZQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=vv3NHPZnBve5XiluETZotYu+d3bqwg0qJCx+3uhyaM4=;
- b=hyE0YluP7XBHeRQJ3TjJJ1P8rBSWQcHhPACTQWiIW2UG8300Sbzkd0bYqBA2/lR/nV
- rkHuUu7N0tVqQR0ko7boD05pxQ7KA60bpF83tr554W8SutaIO+Rxiv1Y1b13nNvs3qFX
- 0lJWq3hADe2y402z1io0DXbzSfjiEqnwTU+mpC1hsrEin8gPV91omzuq1Fh1Dlh2e9hG
- FM5lOa7IuwtE2sibsEGWi2cEn66vZZ71562PgXU4y7xeVvDux5CoTtg42guDc5wJx8me
- MamjPPyhC4QT3WrgPGS7ehiKiuS0H5z5sIHkopcPKdzfYDHMu1VHvwPLOYKJ1B9fXTix
- nnNA==
-X-Gm-Message-State: APjAAAUhomvWTcHnz1g9yHjjXOz7WlNR+c6sXFaEjwpiz8+36qWngkkL
- HGg4MK5LmMvWEgp74ur95ac=
-X-Google-Smtp-Source: APXvYqyuDguANzB58wFOK/4Z7FCp2UtZ0LngNySWG7JX3V31NtSorTHf3Kf9HvxxX7mtQN6BVwdbmw==
-X-Received: by 2002:a17:90a:c388:: with SMTP id
- h8mr6993554pjt.83.1581475075299; 
- Tue, 11 Feb 2020 18:37:55 -0800 (PST)
-Received: from taoren-ubuntu-R90MNF91 ([2620:10d:c090:200::80a4])
- by smtp.gmail.com with ESMTPSA id d15sm5740978pgn.6.2020.02.11.18.37.53
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 11 Feb 2020 18:37:54 -0800 (PST)
-Date: Tue, 11 Feb 2020 18:37:47 -0800
-From: Tao Ren <rentao.bupt@gmail.com>
-To: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-Subject: Re: [PATCH 1/3] usb: gadget: aspeed: read vhub config from
- of_device_id
-Message-ID: <20200212023746.GA9834@taoren-ubuntu-R90MNF91>
-References: <20200131222157.20849-1-rentao.bupt@gmail.com>
- <20200131222157.20849-2-rentao.bupt@gmail.com>
- <CACPK8Xe0b+zVNqf8v5YXOLkzqDeb4JHqec-bqFpaVFGTwHThhA@mail.gmail.com>
- <386e905fb705266efcac0c1b3a10053889c7fead.camel@kernel.crashing.org>
- <20200210190744.GA5346@taoren-ubuntu-R90MNF91>
- <746b08aabf7ea976a382ad2ca30fa10a095e7ed8.camel@kernel.crashing.org>
+ id 1j1iBq-0003C6-KU; Wed, 12 Feb 2020 02:55:52 +0000
+X-UUID: 1519654140784ce3b1c3a4e0c2e249ca-20200211
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=CVp4/457QAcB9wBguvlF+YzoJtmCC32/wC6AaT16HVE=; 
+ b=csWWydTsu9ngEofcRv1BJ8GYM40V4EBgriQHAkrEENY4+pA2bFucqKgk/PKLfXqOipK51R8bzH7afcoKLQMJqvYR2oo3iIn9DxHPdTzW+ZYW4Ek0W/UiCR0kckrKJtrbRCHsCi7fFRFL0sjiAoshSEmzUpVGioEDuJAfNG20LHc=;
+X-UUID: 1519654140784ce3b1c3a4e0c2e249ca-20200211
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <weiyi.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 535903644; Tue, 11 Feb 2020 18:55:45 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 11 Feb 2020 18:55:53 -0800
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 12 Feb 2020 10:53:20 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 12 Feb 2020 10:54:43 +0800
+Message-ID: <1581476141.22901.34.camel@mtksdaap41>
+Subject: Re: [PATCH v11 06/10] soc: mediatek: Add subsys clock control for
+ bus protection
+From: Weiyi Lu <weiyi.lu@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Wed, 12 Feb 2020 10:55:41 +0800
+In-Reply-To: <b9ad8252-36e7-dacd-9040-de14e13f34f8@gmail.com>
+References: <1576813564-23927-1-git-send-email-weiyi.lu@mediatek.com>
+ <1576813564-23927-7-git-send-email-weiyi.lu@mediatek.com>
+ <b9ad8252-36e7-dacd-9040-de14e13f34f8@gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <746b08aabf7ea976a382ad2ca30fa10a095e7ed8.camel@kernel.crashing.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-TM-SNTS-SMTP: 54481D8A4ABDDD25C5769B993302F1CFD271ED756CD3293C7E88ACD64CF27E212000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200211_183756_606307_B8AF4386 
-X-CRM114-Status: GOOD (  18.40  )
+X-CRM114-CacheID: sfid-20200211_185550_694171_F0A4D9DF 
+X-CRM114-Status: GOOD (  32.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rentao.bupt[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,6 +75,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,60 +88,240 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Felipe Balbi <balbi@kernel.org>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- devicetree <devicetree@vger.kernel.org>, Andrew Jeffery <andrew@aj.id.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>, linux-usb@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
- Joel Stanley <joel@jms.id.au>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Colin Ian King <colin.king@canonical.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Rob Herring <robh@kernel.org>, Nicolas Boichat <drinkcat@chromium.org>,
+ srv_heupstream@mediatek.com, James Liao <jamesjj.liao@mediatek.com>,
+ linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Sascha Hauer <kernel@pengutronix.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 11, 2020 at 09:50:42AM +0100, Benjamin Herrenschmidt wrote:
-> On Mon, 2020-02-10 at 11:07 -0800, Tao Ren wrote:
-> > > > This looks generally okay. We should wait for Ben's ack before
-> > > > applying.
-> > > 
-> > > Shouldn't we instead have DT fields indicating those values ?
+On Tue, 2020-02-11 at 18:54 +0100, Matthias Brugger wrote:
+> 
+> On 20/12/2019 04:46, Weiyi Lu wrote:
+> > Add subsys CG control flow before/after the bus protect control
+> > due to bus protection need SMI bus relative CGs enabled to feedback
+> > its ack.
 > > 
-> > May I ask why we prefer adding dt fields (such as "aspeed,vhub-max-ports"
-> > and "aspeed,vhub-max-endpoints") instead of assigning these values based
-> > on aspeed family? For example, is it to allow users to set a smaller
-> > number of ports/endpoints?
 > 
-> It's not a strong drive but it makes it more convenient to add support
-> to newer revisions if the only differences are those numbers.
+> Sorry, I don't understand the commit message. Can you please rephrase and
+> explain better what this change is for.
+> 
 
-Got it. Thanks for the clarify. Will send out v2 patches after more
-testing.
+OK! I'll reword it.
 
+> > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+> > Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
+> > ---
+> >  drivers/soc/mediatek/mtk-scpsys.c | 72 +++++++++++++++++++++++++++++++++++++--
+> >  1 file changed, 70 insertions(+), 2 deletions(-)
 > > 
-> > > Also we should add a DT representation for the various ID/strings of
-> > > the hub itself so manufacturers can customize them.
+> > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> > index 763ca58..32be4b3 100644
+> > --- a/drivers/soc/mediatek/mtk-scpsys.c
+> > +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> > @@ -79,6 +79,7 @@
+> >  #define PWR_STATUS_WB			BIT(27)	/* MT7622 */
+> >  
+> >  #define MAX_CLKS	3
+> > +#define MAX_SUBSYS_CLKS 10
+> >  
+> >  /**
+> >   * struct scp_domain_data - scp domain data for power on/off flow
+> > @@ -88,6 +89,8 @@
+> >   * @sram_pdn_bits: The mask for sram power control bits.
+> >   * @sram_pdn_ack_bits: The mask for sram power control acked bits.
+> >   * @basic_clk_name: The basic clocks required by this power domain.
+> > + * @subsys_clk_prefix: The prefix name of the clocks need to be enabled
+> > + *                     before releasing bus protection.
+> >   * @caps: The flag for active wake-up action.
+> >   * @bp_table: The mask table for multiple step bus protection.
+> >   */
+> > @@ -98,6 +101,7 @@ struct scp_domain_data {
+> >  	u32 sram_pdn_bits;
+> >  	u32 sram_pdn_ack_bits;
+> >  	const char *basic_clk_name[MAX_CLKS];
+> > +	const char *subsys_clk_prefix;
+> >  	u8 caps;
+> >  	struct bus_prot bp_table[MAX_STEPS];
+> >  };
+> > @@ -108,6 +112,7 @@ struct scp_domain {
+> >  	struct generic_pm_domain genpd;
+> >  	struct scp *scp;
+> >  	struct clk *clk[MAX_CLKS];
+> > +	struct clk *subsys_clk[MAX_SUBSYS_CLKS];
+> >  	const struct scp_domain_data *data;
+> >  	struct regulator *supply;
+> >  };
+> > @@ -301,16 +306,22 @@ static int scpsys_power_on(struct generic_pm_domain *genpd)
+> >  	val |= PWR_RST_B_BIT;
+> >  	writel(val, ctl_addr);
+> >  
+> > -	ret = scpsys_sram_enable(scpd, ctl_addr);
+> > +	ret = scpsys_clk_enable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
+> 
+> Why can't we enable the subsystem clocks together with the rest just after
+> enabeling the regulator?
+> 
+
+Subsys CG could only be enabled when its own power domain is already
+turned ON, and vice versa.
+In the dt-binding doc we mentioned there would have two groups of
+clocks.
+e.g.,
+BASIC clocks need to be enabled before enabling the corresponding power
+domain.
+SUBSYS clocks need to be enabled before releasing the bus protection.
+
+> >  	if (ret < 0)
+> >  		goto err_pwr_ack;
+> >  
+> > +	ret = scpsys_sram_enable(scpd, ctl_addr);
+> > +	if (ret < 0)
+> > +		goto err_sram;
+> > +
+> >  	ret = scpsys_bus_protect_disable(scpd);
+> >  	if (ret < 0)
+> > -		goto err_pwr_ack;
+> > +		goto err_sram;
+> >  
+> >  	return 0;
+> >  
+> > +err_sram:
+> > +	scpsys_clk_disable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
+> >  err_pwr_ack:
+> >  	scpsys_clk_disable(scpd->clk, MAX_CLKS);
+> >  err_clk:
+> > @@ -337,6 +348,8 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+> >  	if (ret < 0)
+> >  		goto out;
+> >  
+> > +	scpsys_clk_disable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
+> > +
+> 
+> Same here, why can't we disable the clocks in the scpsys_clk_disable call?
+> 
+> >  	/* subsys power off */
+> >  	val = readl(ctl_addr);
+> >  	val |= PWR_ISO_BIT;
+> > @@ -374,6 +387,48 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+> >  	return ret;
+> >  }
+> >  
+> > +static int init_subsys_clks(struct platform_device *pdev,
+> > +		const char *prefix, struct clk **clk)
+> > +{
+> > +	struct device_node *node = pdev->dev.of_node;
+> > +	u32 prefix_len, sub_clk_cnt = 0;
+> > +	struct property *prop;
+> > +	const char *clk_name;
+> > +
+> > +	if (!node) {
+> > +		dev_err(&pdev->dev, "Cannot find scpsys node: %ld\n",
+> > +			PTR_ERR(node));
+> > +		return PTR_ERR(node);
+> > +	}
+> > +
+> > +	prefix_len = strlen(prefix);
+> > +
+> > +	of_property_for_each_string(node, "clock-names", prop, clk_name) {
+> > +		if (!strncmp(clk_name, prefix, prefix_len) &&
+> > +				(clk_name[prefix_len] == '-')) {
+> > +			if (sub_clk_cnt >= MAX_SUBSYS_CLKS) {
+> > +				dev_err(&pdev->dev,
+> > +					"subsys clk out of range %d\n",
+> > +					sub_clk_cnt);
+> > +				return -ENOMEM;
+> 
+> EINVAL maybe, ENOMEM seems wrong here.
+> 
+
+OK, I'll fix with correct error.
+
+> > +			}
+> > +
+> > +			clk[sub_clk_cnt] = devm_clk_get(&pdev->dev,
+> > +						clk_name);
+> 
+> Here we get hit by the bad design of this driver in the first place. As we need
+> the subsystem-name (eg mm-0, mm-1) to group clocks to one scp_domain.
+> I think we should better try to model the domains and subdomains in DTS and add
+> their clocks to it. This way we can also get rid of the scp_subdomain which can
+> hit it's limit anytime soon when we have a chip with a sub-subdomain.
+> That will need a new driver, but as it seems the mt8183 and the mt6765 have a
+> more complex design I think it is worth it.
+> 
+> That said, given that you are in v11 already I understand that your motivation
+> to start over isn't the biggest. The problem is, any new driver will have new
+> bindings and won't work with older DTS. So adding a lot of stuff on top of a not
+> really nice driver isn't something I'm very keen on. On the other hand you
+> already put a lot of work into this solution.
+> 
+> My proposal, I'll try to bake up a new driver this week. If I fail to deliver,
+> it's up to you to decide if you want to go on with the approach in this series
+> or try to work on the new one.
+
+> Regards,
+> Matthias
+> 
+
+Thanks for considering our request.
+
+> > +
+> > +			if (IS_ERR(clk[sub_clk_cnt])) {
+> > +				dev_err(&pdev->dev,
+> > +					"Subsys clk get fail %ld\n",
+> > +					PTR_ERR(clk[sub_clk_cnt]));
+> > +				return PTR_ERR(clk[sub_clk_cnt]);
+> > +			}
+> > +			sub_clk_cnt++;
+> > +		}
+> > +	}
+> > +
+> > +	return sub_clk_cnt;
+> > +}
+> > +
+> >  static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
+> >  			const char * const *name)
+> >  {
+> > @@ -466,6 +521,7 @@ static struct scp *init_scp(struct platform_device *pdev,
+> >  		struct scp_domain *scpd = &scp->domains[i];
+> >  		struct generic_pm_domain *genpd = &scpd->genpd;
+> >  		const struct scp_domain_data *data = &scp_domain_data[i];
+> > +		int clk_cnt;
+> 
+> clk_cnt sounds to me like clock count, but the variable actually is only used to
+> check the return value of init_subsys_clks. Please rename it to ret or something
+> like this.
+> 
+
+OK, I'll fix it.
+
+> >  
+> >  		pd_data->domains[i] = genpd;
+> >  		scpd->scp = scp;
+> > @@ -476,6 +532,18 @@ static struct scp *init_scp(struct platform_device *pdev,
+> >  		if (ret)
+> >  			return ERR_PTR(ret);
+> >  
+> > +		if (data->subsys_clk_prefix) {
+> > +			clk_cnt = init_subsys_clks(pdev,
+> > +					data->subsys_clk_prefix,
+> > +					scpd->subsys_clk);
+> > +			if (clk_cnt < 0) {
+> > +				dev_err(&pdev->dev,
+> > +					"%s: subsys clk unavailable\n",
+> > +					data->name);
+> > +				return ERR_PTR(clk_cnt);
+> > +			}
+> > +		}
+> > +
+> >  		genpd->name = data->name;
+> >  		genpd->power_off = scpsys_power_off;
+> >  		genpd->power_on = scpsys_power_on;
 > > 
-> > Sure. I will add DT nodes for vendor/product/device IDs/strings. As it's
-> > not directly related to ast2600-support, shall I handle it in a separate
-> > patch? Or I can include the patch in this patch series?
-> 
-> Separate. Thanks !
-
-Will take care of the change once this patch series is accepted.
-
-
-Cheers,
-
-Tao
-> 
-> Cheers,
-> Ben.
-> 
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
