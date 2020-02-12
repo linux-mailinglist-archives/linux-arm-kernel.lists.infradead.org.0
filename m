@@ -2,62 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A51CF15AC13
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 16:36:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C06A15AC29
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 12 Feb 2020 16:41:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fou6bQHJncJQ37kGO+3zsyRCok7izVbWDl1GgupaRZU=; b=mJOIhU6CL0tHTC
-	W7PVyuq0TuKEWr1xSnEutZraMwLN8z7A6FaeAlf6jsShoI4ZYVOIS3wuYZPeeB04XesY7TjoM75cR
-	3eCk0lw1+pYGp5joQOb/8mcvhIQyAhrp81Sxi1pgWk3tzl7mTSpPTCbuHDv6Sw6wJxX9lDPN1QbO9
-	KoOAHm1prisO4edMiXGms7DLDV+mkovKbaXY0Pw45YmNMY8XLwSGy8RtOpKVV8ngXtQnWmGhTbi4p
-	+1z+i1zTFYOaaAWlgkjemFgYpWlx+9jciWxIQrJHd1wj/tMxzleJ4EEhEHC4scuAJwiIAmLgjaHBu
-	nHofWeWhR9JiDzS+YwDw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hUPLtHfMn5ac+2tUnWl7vx2oCzd3QncAAnfPs1cKfdk=; b=CBaBaHljcdIzhA
+	4kxgU5Z5gRaKoiP5MmRc9FwCmCUJsgAD+eMmA7CFWWbLqiTjwTKBMiI1LEkiFFp5T/bhCeEBfwDLn
+	bDw0fhb9fVteePyiYO5pm+ZZZcyE6EeR30YynRW2V9acuHv0xPZmi0O5ulnBc40xde+pb0yt5ElLO
+	iXmzMkbQEZqZMovnr+zMf5EnPeaP7GEwui94vS8/a5+9UpVhpcknd7EgMNsBUiueq5FwaKCtR8kdv
+	nKP6/w6GZtULtuJMxepT7YbKI9z3cH8TkzyfcURhRhgfdnsyRDiO64cKDyWnFwwSNsSGqscZeriNM
+	RHd+IOw3gMoymqFa/0uA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j1u4K-0002wb-St; Wed, 12 Feb 2020 15:36:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j1u41-0002ma-T6
- for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 15:36:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 51894328;
- Wed, 12 Feb 2020 07:36:33 -0800 (PST)
-Received: from [10.1.194.46] (e113632-lin.cambridge.arm.com [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E6B833F68F;
- Wed, 12 Feb 2020 07:36:30 -0800 (PST)
-Subject: Re: [PATCH v3 4/7] Documentation: arm64: document support for the AMU
- extension
-To: Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
- will@kernel.org, mark.rutland@arm.com, maz@kernel.org,
- suzuki.poulose@arm.com, sudeep.holla@arm.com, lukasz.luba@arm.com,
- rjw@rjwysocki.net
-References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-5-ionela.voinescu@arm.com>
-From: Valentin Schneider <valentin.schneider@arm.com>
-Message-ID: <66e5b5ad-c714-d81c-7b91-47dd5c14d87c@arm.com>
-Date: Wed, 12 Feb 2020 15:36:29 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j1u8o-0005GR-7t; Wed, 12 Feb 2020 15:41:30 +0000
+Received: from mx2.suse.de ([195.135.220.15])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j1u8e-0005Fd-NY
+ for linux-arm-kernel@lists.infradead.org; Wed, 12 Feb 2020 15:41:22 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id AD517B004;
+ Wed, 12 Feb 2020 15:41:16 +0000 (UTC)
+Date: Wed, 12 Feb 2020 16:41:16 +0100
+From: Petr Mladek <pmladek@suse.com>
+To: Grygorii Strashko <grygorii.strashko@ti.com>
+Subject: Re: Question about kthread_mod_delayed_work() allowed context
+Message-ID: <20200212154116.hh2vdyi7e2xflxr5@pathway.suse.cz>
+References: <cfa886ad-e3b7-c0d2-3ff8-58d94170eab5@ti.com>
 MIME-Version: 1.0
-In-Reply-To: <20200211184542.29585-5-ionela.voinescu@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <cfa886ad-e3b7-c0d2-3ff8-58d94170eab5@ti.com>
+User-Agent: NeoMutt/20170912 (1.9.0)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_073634_029875_997B1C7A 
-X-CRM114-Status: UNSURE (   8.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200212_074120_918684_0C98DCCC 
+X-CRM114-Status: GOOD (  15.58  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,30 +63,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>, linux-doc@vger.kernel.org,
- peterz@infradead.org, viresh.kumar@linaro.org, linux-pm@vger.kernel.org,
- linux-kernel@vger.kernel.org, mingo@redhat.com,
- linux-arm-kernel@lists.infradead.org
+Cc: netdev <netdev@vger.kernel.org>, Richard Cochran <richardcochran@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-rt-users@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/02/2020 18:45, Ionela Voinescu wrote:
-> The activity monitors extension is an optional extension introduced
-> by the ARMv8.4 CPU architecture.
+On Tue 2020-02-11 12:23:59, Grygorii Strashko wrote:
+> Hi All,
 > 
-> Add initial documentation for the AMUv1 extension:
->  - arm64/amu.txt: AMUv1 documentation
->  - arm64/booting.txt: system registers initialisation
+> I'd like to ask question about allowed calling context for kthread_mod_delayed_work().
 > 
-> Signed-off-by: Ionela Voinescu <ionela.voinescu@arm.com>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Jonathan Corbet <corbet@lwn.net>
+> The comment to kthread_mod_delayed_work() says:
+> 
+>  * This function is safe to call from any context including IRQ handler.
+>  * See __kthread_cancel_work() and kthread_delayed_work_timer_fn()
+>  * for details.
+>  */
+> 
+> But it has del_timer_sync() inside which seems can't be called from hard_irq context:
+> kthread_mod_delayed_work()
+>   |-__kthread_cancel_work()
+>      |- del_timer_sync()
+> 	|- WARN_ON(in_irq() && !(timer->flags & TIMER_IRQSAFE));
+
+It is safe because kthread_delayed_work_timer_fn() is IRQ safe.
+Note that it uses raw_spin_lock_irqsave(). It is the reason why
+the timer could have set TIMER_IRQSAFE flag, see
+KTHREAD_DELAYED_WORK_INIT().
+
+In more details. The timer is either canceled before the callback
+is called. Or it waits for the callback but the callback is safe
+because it can't sleep.
 
 
-Reviewed-by: Valentin Schneider <valentin.schneider@arm.com>
+> My use case is related to PTP processing using PTP auxiliary worker:
+> (commit d9535cb7b760 ("ptp: introduce ptp auxiliary worker")):
+>  - periodic work A is started and res-schedules itself for every dtX
+>  - on IRQ - the work A need to be scheduled immediately
+
+This is exactly where kthread_mod_delayed_work() need to be used
+in the IRQ context with 0 delay.
+
+
+> Any advice on how to proceed?
+> Can kthread_queue_work() be used even if there is delayed work is
+> scheduled already (in general, don't care if work A will be executed one
+> more time after timer expiration)?
+
+Yes, it can be used this way. It should behave the same way as
+the workqueue API.
+
+I am happy that there are more users for this API. I wanted to
+convert more kthreads but it was just falling down in my TODO.
+
+I hope that I answered all questions. Feel free to ask more
+when in doubts.
+
+Best Regards,
+Petr
 
 _______________________________________________
 linux-arm-kernel mailing list
