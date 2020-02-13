@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5668D15C7AD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 17:17:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DE7B15C7B2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 17:17:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jZXSCXkVOEfmTci+5e82QoHcnAPD1kvW3dCuiI79a9Q=; b=tKn1Uwl1CB4SZ0
-	0OPwW6p5x0NtPTvzxuXkJIwCxXzEdQdcOZSLFR2+81Fgm2GSUXYgIb/zYe9tU5kIzwEgeUoUeD9ms
-	7WrfgnhhvOp2cPpssaoHAF9pbBJEn2vCPETrIQHX0AWOH4bxt95SHzOR3EYpLwt/aeAU/uNWkJMog
-	zUW1oR+tnBfZZKh7fL+pVg2FQ+4nNI6j6FbWL4s35m+Ob1cEnj4fvPLFp9I8f3zXNqGxdvbWLc7U2
-	dWyK9hd+WGi8fG13X7k5sJSXJ/+UD7lusx0N6R9uflepf13JKgLt6hMMxfAnk3hRW52VaP4B8gwU1
-	buhulSQPnGiJ6GXaz9OQ==;
+	List-Owner; bh=KJune9R41S2QbBxCUGfpSx49FF8mAteLsokgVD4i56w=; b=L5N4IErqMNbbKE
+	yaNJB07OKMuoA5lQiQTBx+hkrXIa5ZfQBDGElgOkKPQtrq43c/FF3hZK8qpj/ue5fL0TmopBhVIQm
+	MLvqtHgry/R4wybNay2A0xbQ7m1L1N3QRzfRsMClIOlCN10V9xaYCnXGGDqjHsDLmJh2xjRpEwznF
+	Bfgy9IoXFzOO5AbMnlJyU7qNxRtmUEOzmH8AuI1bJoEoOLbUupuk//ItKtEZ8FzHQQgt+OvvUtUVD
+	1Ul0m5scOB3+OLTtcO3Rs+JZSBS9AYa53lOog7qEMq7CzAj2RC655eNyuzZ7XATji5VwtUMDguFps
+	8kFBTP9tSIHN0n+VgiuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2HB0-0003to-1G; Thu, 13 Feb 2020 16:17:18 +0000
+	id 1j2HBG-0004IM-SD; Thu, 13 Feb 2020 16:17:34 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2HAV-0003kE-HF
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 16:16:49 +0000
+ id 1j2HAW-0003lx-TS
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 16:16:50 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A69F41045;
- Thu, 13 Feb 2020 08:16:45 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 680AC1063;
+ Thu, 13 Feb 2020 08:16:48 -0800 (PST)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 235143F6CF;
- Thu, 13 Feb 2020 08:16:43 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DB9DD3F6CF;
+ Thu, 13 Feb 2020 08:16:45 -0800 (PST)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  clang-built-linux@googlegroups.com, x86@kernel.org
-Subject: [PATCH 01/19] linux/const.h: Extract common header for vDSO
-Date: Thu, 13 Feb 2020 16:15:56 +0000
-Message-Id: <20200213161614.23246-2-vincenzo.frascino@arm.com>
+Subject: [PATCH 02/19] linux/bits.h: Extract common header for vDSO
+Date: Thu, 13 Feb 2020 16:15:57 +0000
+Message-Id: <20200213161614.23246-3-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200213161614.23246-1-vincenzo.frascino@arm.com>
 References: <20200213161614.23246-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_081647_619801_E4F8E298 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20200213_081648_996033_7D6A128B 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -79,47 +79,46 @@ a userspace library (UAPI and a minimal set of kernel headers). To make
 this possible it is necessary to isolate from the kernel headers the
 common parts that are strictly necessary to build the library.
 
-Split const.h into linux and common headers to make the latter suitable
+Split bits.h into linux and common headers to make the latter suitable
 for inclusion in the vDSO library.
 
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- include/common/const.h | 10 ++++++++++
- include/linux/const.h  |  5 +----
- 2 files changed, 11 insertions(+), 4 deletions(-)
- create mode 100644 include/common/const.h
+ include/common/bits.h | 9 +++++++++
+ include/linux/bits.h  | 2 +-
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+ create mode 100644 include/common/bits.h
 
-diff --git a/include/common/const.h b/include/common/const.h
+diff --git a/include/common/bits.h b/include/common/bits.h
 new file mode 100644
-index 000000000000..cc209eec47a1
+index 000000000000..6da493992e52
 --- /dev/null
-+++ b/include/common/const.h
-@@ -0,0 +1,10 @@
++++ b/include/common/bits.h
+@@ -0,0 +1,9 @@
 +/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __COMMON_CONST_H
-+#define __COMMON_CONST_H
++#ifndef __COMMON_BITS_H
++#define __COMMON_BITS_H
 +
-+#include <uapi/linux/const.h>
-+
-+#define UL(x)		(_UL(x))
-+#define ULL(x)		(_ULL(x))
-+
-+#endif /* __COMMON_CONST_H */
-diff --git a/include/linux/const.h b/include/linux/const.h
-index 7b55a55f5911..447a5b98d5a3 100644
---- a/include/linux/const.h
-+++ b/include/linux/const.h
-@@ -1,9 +1,6 @@
- #ifndef _LINUX_CONST_H
- #define _LINUX_CONST_H
- 
--#include <uapi/linux/const.h>
--
--#define UL(x)		(_UL(x))
--#define ULL(x)		(_ULL(x))
 +#include <common/const.h>
++
++#define BIT(nr)			(UL(1) << (nr))
++
++#endif	/* __COMMON_BITS_H */
+diff --git a/include/linux/bits.h b/include/linux/bits.h
+index 669d69441a62..aeb76fede77a 100644
+--- a/include/linux/bits.h
++++ b/include/linux/bits.h
+@@ -3,9 +3,9 @@
+ #define __LINUX_BITS_H
  
- #endif /* _LINUX_CONST_H */
+ #include <linux/const.h>
++#include <common/bits.h>
+ #include <asm/bitsperlong.h>
+ 
+-#define BIT(nr)			(UL(1) << (nr))
+ #define BIT_ULL(nr)		(ULL(1) << (nr))
+ #define BIT_MASK(nr)		(UL(1) << ((nr) % BITS_PER_LONG))
+ #define BIT_WORD(nr)		((nr) / BITS_PER_LONG)
 -- 
 2.25.0
 
