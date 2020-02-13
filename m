@@ -2,72 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E2F715CB6D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 20:55:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA8BC15CBB3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:09:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mz3qpQi/QNnePqeKfC5hUcsD4e9Qx3g86Au1nHvddy8=; b=jWQbaF3fqYD5SG
-	INcP0EZxoKLTDiomZF7Qwx0cyjZhKpTQbHicFffsmUGpUsezcSusrEO1UnoyXxyWqoRbbO27ZNgnC
-	ssOk+bTfxkXAyQBdEVbqT8FwxPPJ6p/LhRW2zJkPfbAxWtlYfuXy+M0RHuw0dPg4IXk97H0rsBfIi
-	GbBDeOrejdtgUmnCxaIUGJ9c4ZQR/ZN7UKcav+uTxRwV1ApqrAHSCPvLdc+kXc3fmYFRSIXQTXZq8
-	hgYYpkchfLxjm8+X3l+bblBUh8g+n0XbQr3ZzviF3SfM2aYfVV4bIKPmmoP4eXLosWaPWWEbQO/N2
-	ThSrzFPocLBlml14DMNg==;
+	List-Owner; bh=2vMXmGQCAu8R1xbVj3Rf5RoKp9Tn5KkvWGbsjekOxQ8=; b=olb+T51x+4conL
+	x5CQjumDcPlCvP27PNZv1TgX9C84oF/DvsvzG8k765q9i5vgyNmoqo41Hc07fBU4dMHK1y9Xn898J
+	9nSv0iPfoi647m15AgF0KiWKooGtlDDmInbXlF7mUGXyhFmoiq5hDm37li6YVEsPUJ9u9moa5Zhvd
+	g1evnp1OM1wlY8tZD00NU2LjkSqNHTMaeozxvKCNTr6U77D3ieRwVeucxJ97Iz7hgDKzaccgDXG+t
+	wuxCLkeCFU+qdZcWpaiqgFoLWbqxIs+bXWw3GXYkysaaUCTIr8MA3U3gpkBUc+Bg3XeCrcQkMWv0j
+	pwM6GoLr+JELu1Dg1OMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2KZX-0006hA-72; Thu, 13 Feb 2020 19:54:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j2Kmt-0003Nw-Oe; Thu, 13 Feb 2020 20:08:39 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2KZJ-0006gi-SY
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 19:54:41 +0000
-Received: from mail-qk1-f179.google.com (mail-qk1-f179.google.com
- [209.85.222.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 21DF2217F4
+ id 1j2Kmk-0003N6-6r
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 20:08:31 +0000
+Received: by mail-lj1-x244.google.com with SMTP id q8so8088511ljb.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 19:54:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581623677;
- bh=ZjBK3ZOdaBBTAWvFDrSILiFRaEmIfeUA9Bda4Zoq/TY=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Oopda02/3uKgx3wobFBaGSPTqHXmIw4xcVqxfnYIRaKI5eWAOWohATXyqTv8vMllW
- enH8X6zYIQz0YXIFGZ+4ul+kWh1Ghh6GWVgGVtT6NCJ9fFgrLfjOgM2jnC26hZ8p21
- YvgyB/t0UKKmyEFRFMvxrBYbEKw/F0soVXnBcBb4=
-Received: by mail-qk1-f179.google.com with SMTP id c188so6920281qkg.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 11:54:37 -0800 (PST)
-X-Gm-Message-State: APjAAAUFRtHsQhrnl4aE0KpBnJ4+kxiv/3QqvtFHyFV177z02J4XGf7u
- mJ/EcW+cQ5+WLf1H+ToGyElml8dcbffb7XaVwA==
-X-Google-Smtp-Source: APXvYqxJjJ6TQ/6a7fL7VW4f10t6FNQJlKeTU1QhyzrQwlRk3MOdpkPnDMq8r+Ctc/zOdmZHOvnLiq+Mx1z2Gqjy454=
-X-Received: by 2002:a37:85c4:: with SMTP id
- h187mr17585169qkd.223.1581623676270; 
- Thu, 13 Feb 2020 11:54:36 -0800 (PST)
+ Thu, 13 Feb 2020 12:08:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=BGyZT7dbwMQ7jRrV7OPOX8exFdqWmXNOVwOPlJZyRbk=;
+ b=Q7Nd/9vPTfJrYfCbCnUoPbPOpTzh3mz2xPJW1hQXDfbva2G/ahXsRqzD1wUuPZ0P3d
+ +VywfqW7xB0c1jzTKa7NJz6yLxoDyvNlvg34cVn9HgdBE0NIoNuEjhR1q5M5tg+WKX1s
+ VR/cE6zJ0oW3d9yoa95wrCDl733BktZ0XiN5OqGki05JxaBJP9SLsgtvO6NIKNtbC2QN
+ laeEw6HaaasnQGqEFM8QClPBWowIpVDKLEz5clAkkVrjEM5nZOWjCb0qr8FpJMzm7oWl
+ MBgsia3Si3eM8ZVXJqbn+jwHsq5CG7Hr1ZPF2HhnxEJvtGIJfwYCRkECqsnu3hYJRJai
+ b5mg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=BGyZT7dbwMQ7jRrV7OPOX8exFdqWmXNOVwOPlJZyRbk=;
+ b=jGUnR12FKhS//Tdk4CxEvs+lASOPF/AyHvPBqfXWkNCHqFSixjJ4PyreavPfrncjmP
+ Pw+Ft/5tk4DkQl0w50tJf6uHZ9mnfwKzoneZDd21cGuTYHovmBitndq6yVmVuoeHAzfP
+ OivZpmtZs1yP/UCxoLAmlklxFbFqxNsYKRX5peE/fTs6J6Ly0Uk/+5WYaCV/3bBwX+I8
+ eNchWbFaZi8l/ksJl/JCwj/ggOGrXIc/I5NmuDembitcq6eI8FDN6xryL3JKiRknIJPc
+ ioS5yCBDg8UvIkHsnJq++BJVw8U3h2Q7o49Ofc12H4Z1bhK1LrsYCiUV6MinadvA4VVO
+ /Kag==
+X-Gm-Message-State: APjAAAWdnnHJ6vfxDuf2RFmLBs2dy5ontmuW5Twe6kvxxc0YhQeVnZL/
+ q7CMhcNM5VqgvX0GGTmBw4o=
+X-Google-Smtp-Source: APXvYqztD+iqwv6Xp+koxjrHW1aZ2Qay9QARoJlk+46QWn4zlAo+rJAYb4gEbYwOOYOAAItaIZGLEw==
+X-Received: by 2002:a2e:98c6:: with SMTP id s6mr12200884ljj.14.1581624505681; 
+ Thu, 13 Feb 2020 12:08:25 -0800 (PST)
+Received: from kedthinkpad ([5.20.204.163])
+ by smtp.gmail.com with ESMTPSA id d20sm2132164ljg.95.2020.02.13.12.08.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 13 Feb 2020 12:08:24 -0800 (PST)
+Date: Thu, 13 Feb 2020 22:08:23 +0200
+From: Andrey Lebedev <andrey.lebedev@gmail.com>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH v2 2/2] ARM: sun7i: dts: Add LVDS panel support on A20
+Message-ID: <20200213200823.GA28336@kedthinkpad>
+References: <20200210195633.GA21832@kedthinkpad>
+ <20200212222355.17141-2-andrey.lebedev@gmail.com>
+ <20200213094304.hf3glhgmquypxpyf@gilmour.lan>
 MIME-Version: 1.0
-References: <20200117211628.27888-1-robh@kernel.org>
- <2d04f201-3457-08ad-db8e-735f8315d74e@redhat.com>
-In-Reply-To: <2d04f201-3457-08ad-db8e-735f8315d74e@redhat.com>
-From: Rob Herring <robh@kernel.org>
-Date: Thu, 13 Feb 2020 13:54:24 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+3=YbcUi=wte-Cmiq-BuD7hRXwSEnHN7E9_bSnHHxG1g@mail.gmail.com>
-Message-ID: <CAL_Jsq+3=YbcUi=wte-Cmiq-BuD7hRXwSEnHN7E9_bSnHHxG1g@mail.gmail.com>
-Subject: Re: [PATCH v2] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation
- support
-To: Auger Eric <eric.auger@redhat.com>
+Content-Disposition: inline
+In-Reply-To: <20200213094304.hf3glhgmquypxpyf@gilmour.lan>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_115437_971916_8AA98797 
-X-CRM114-Status: GOOD (  28.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200213_120830_251947_FB052BEE 
+X-CRM114-Status: GOOD (  17.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andrey.lebedev[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -76,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,121 +101,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
- Linux IOMMU <iommu@lists.linux-foundation.org>, Will Deacon <will@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: airlied@linux.ie, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Andrey Lebedev <andrey@lebedev.lt>, wens@csie.org, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 30, 2020 at 9:06 AM Auger Eric <eric.auger@redhat.com> wrote:
->
-> Hi Rob,
-> On 1/17/20 10:16 PM, Rob Herring wrote:
-> > Arm SMMUv3.2 adds support for TLB range invalidate operations.
-> > Support for range invalidate is determined by the RIL bit in the IDR3
-> > register.
+On Thu, Feb 13, 2020 at 10:43:04AM +0100, Maxime Ripard wrote:
+> On Thu, Feb 13, 2020 at 12:23:57AM +0200, andrey.lebedev@gmail.com wrote:
+> > From: Andrey Lebedev <andrey@lebedev.lt>
 > >
-> > The range invalidate is in units of the leaf page size and operates on
-> > 1-32 chunks of a power of 2 multiple pages. First, we determine from the
-> > size what power of 2 multiple we can use. Then we calculate how many
-> > chunks (1-31) of the power of 2 size for the range on the iteration. On
-> > each iteration, we move up in size by at least 5 bits.
+> > Define pins for LVDS channels 0 and 1, configure reset line for tcon0 and
+> > provide sample LVDS panel, connected to tcon0.
 > >
-> > Cc: Eric Auger <eric.auger@redhat.com>
-> > Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Robin Murphy <robin.murphy@arm.com>
-> > Cc: Joerg Roedel <joro@8bytes.org>
-> > Signed-off-by: Rob Herring <robh@kernel.org>
-> > ---
-> >  drivers/iommu/arm-smmu-v3.c | 66 ++++++++++++++++++++++++++++++++++++-
-> >  1 file changed, 65 insertions(+), 1 deletion(-)
+> > Signed-off-by: Andrey Lebedev <andrey@lebedev.lt>
+> 
+> And this prefix should be ARM: dts: sun7i ;)
+
+Ah, thanks, I think I've got the pattern now!
+
+> > +			/omit-if-no-ref/
+> > +			lcd_lvds0_pins: lcd_lvds0_pins {
+> 
+> underscores in the node names will create a dtc warning at
+> compilation, you should use lcd-lvds0-pins instead.
+
+You're right, I wasn't following the naming convention here. dtc doesn't
+produce any warning on this though. Fixed that anyway.
+
+> This will create a spurious warning message for TCON1, since we
+> adjusted the driver to tell it supports LVDS, but there's no LVDS
+> reset line, so we need to make it finer grained.
+
+Yes, I can attribute two of the messages in my dmesg log [1] to this
+("Missing LVDS properties" and "LVDS output disabled". "sun4i-tcon
+1c0d000.lcd-controller" is indeed tcon1). And yes, I can see how they
+can be confusing to someone.
+
+I'd need some pointers on how to deal with that though (if we want to do
+it in this scope).
+
+[1] excerpt from kernel boot log:
+
+[    4.890975] sun4i-drm display-engine: bound 1e00000.display-frontend (ops sun4i_frontend_driver_exit [sun4i_frontend])
+[    4.902032] sun4i-drm display-engine: bound 1e20000.display-frontend (ops sun4i_frontend_driver_exit [sun4i_frontend])
+[    4.913467] sun4i-drm display-engine: bound 1e60000.display-backend (ops sun4i_backend_ops [sun4i_backend])
+[    4.923806] sun4i-drm display-engine: bound 1e40000.display-backend (ops sun4i_backend_ops [sun4i_backend])
+[    4.934451] sun4i-drm display-engine: bound 1c0c000.lcd-controller (ops sun4i_tcon_platform_driver_exit [sun4i_tcon])
+[    4.945254] sun4i-tcon 1c0d000.lcd-controller: Missing LVDS properties, Please upgrade your DT
+[    4.953935] sun4i-tcon 1c0d000.lcd-controller: LVDS output disabled
+[    4.960857] sun4i-drm display-engine: No panel or bridge found... RGB output disabled
+[    4.968845] sun4i-drm display-engine: bound 1c0d000.lcd-controller (ops sun4i_tcon_platform_driver_exit [sun4i_tcon])
+[    5.080874] sun4i-drm display-engine: bound 1c16000.hdmi (ops sun4i_hdmi_driver_exit [sun4i_drm_hdmi])
+[    5.110087] [drm] Initialized sun4i-drm 1.0.0 20150629 for display-engine on minor 0
+[    5.763064] sun4i-drm display-engine: fb0: sun4i-drmdrmfb frame buffer device
 
 
-> > @@ -2003,7 +2024,7 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
-> >  {
-> >       u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
-> >       struct arm_smmu_device *smmu = smmu_domain->smmu;
-> > -     unsigned long start = iova, end = iova + size;
-> > +     unsigned long start = iova, end = iova + size, num_pages = 0, tg = 0;
-> >       int i = 0;
-> >       struct arm_smmu_cmdq_ent cmd = {
-> >               .tlbi = {
-> > @@ -2022,12 +2043,50 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
-> >               cmd.tlbi.vmid   = smmu_domain->s2_cfg.vmid;
-> >       }
-> >
-> > +     if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
-> > +             /* Get the leaf page size */
-> > +             tg = __ffs(smmu_domain->domain.pgsize_bitmap);
-> > +
-> > +             /* Convert page size of 12,14,16 (log2) to 1,2,3 */
-> > +             cmd.tlbi.tg = ((tg - ilog2(SZ_4K)) / 2) + 1;
-> > +
-> > +             /* Determine what level the granule is at */
-> > +             cmd.tlbi.ttl = 4 - ((ilog2(granule) - 3) / (tg - 3));
-> > +
-> > +             num_pages = size / (1UL << tg);
-> > +     }
-> > +
-> >       while (iova < end) {
-> >               if (i == CMDQ_BATCH_ENTRIES) {
-> >                       arm_smmu_cmdq_issue_cmdlist(smmu, cmds, i, false);
-> >                       i = 0;
-> >               }
-> >
-> > +             if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
-> > +                     /*
-> > +                      * On each iteration of the loop, the range is 5 bits
-> > +                      * worth of the aligned size remaining.
-> > +                      * The range in pages is:
-> > +                      *
-> > +                      * range = (num_pages & (0x1f << __ffs(num_pages)))
-> > +                      */
-> > +                     unsigned long scale, num;
-> > +
-> > +                     /* Determine the power of 2 multiple number of pages */
-> > +                     scale = __ffs(num_pages);
-> > +                     cmd.tlbi.scale = scale;
-> > +
-> > +                     /* Determine how many chunks of 2^scale size we have */
-> > +                     num = (num_pages >> scale) & CMDQ_TLBI_RANGE_NUM_MAX;
-> > +                     cmd.tlbi.num = num - 1;
-> > +
-> > +                     /* range is num * 2^scale * pgsize */
-> > +                     granule = num << (scale + tg);
-> > +
-> > +                     /* Clear out the lower order bits for the next iteration */
-> > +                     num_pages -= num << scale;
-> Regarding the 2 options given in
-> https://lore.kernel.org/linux-arm-kernel/CAL_JsqKABoE+0crGwyZdNogNgEoG=MOOpf6deQgH6s73c0UNdA@mail.gmail.com/raw,
->
-> I understand you implemented 2) but I still do not understand why you
-> preferred that one against 1).
->
-> In your case of 1023*4k pages this will invalidate by 31 32*2^0*4K +
-> 31*2^0*4K pages
-> whereas you could achieve that with 10 invalidations with the 1st algo.
-> I did not get the case where it is more efficient. Please can you detail.
-
-No, it's only 2 commands. We do 31*4K and then 31*2^5*4K. Here's a the
-output of a test case:
-
-iova=10001000, num_pages=0x3e0, granule=1f000, num=31, scale=0, ttl=3
-iova=10020000, num_pages=0x0, granule=3e0000, num=31, scale=5, ttl=3
-
-(num_pages being what's left at end of the loop)
-
-As I mentioned on v1, worst case is 4 commands for up to 4GB. It's
-20-bits of size (32-12) and each loop processes a minimum of 5 bits.
-Each loop becomes a larger aligned size, so scale goes up each pass.
-This is what I tried to explain in the top comment.
-
-Rob
+-- 
+Andrey Lebedev aka -.- . -.. -.. . .-.
+Software engineer
+Homepage: http://lebedev.lt/
 
 _______________________________________________
 linux-arm-kernel mailing list
