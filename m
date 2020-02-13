@@ -2,69 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0C8F15B6AB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 02:27:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3F7915B6CC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 02:44:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kp84+MNw+N6A53Ci21u3Lpd5zalFUPn1Q9PLAiTOtDM=; b=LbGdNy6wxLP+E7
-	8NnK4ERWX1pTXtYd1peFqw7xeRPrqOfq4QCeWjho8fR0UU4JmuEwcDb7rIRVhl2EVXXEzO41a3TGD
-	pJ06/Z0stW0HypQwLWOmiiIK1XQIvm0Ux9GAzfRLbl4rSFJ4TIjNHQkG5pxd7krJUtICZgxP8w82/
-	NXPI2yNxguPbzYz8QhS4pqElUypRDZBJDCaW8plGy7wUy1MnRkS2ajuayDzSnroPhy9U5xUkYrPHG
-	nRnhjTk0kFea9HNZK5aCmc6QwsFhRYphEfeZhnKHCcVM1NQi3pgvZXjDWwyA2npmMi9CaU6FiiVQD
-	yZ8dFe7XlYd/kMeYcVRg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I33U+lZYMGL5z9U3ge57CzchsrB5WNEHD4CkKB2muu8=; b=VSk6riWOIt19zA
+	Ngvvt4y59dzddVX5pOC50YYDxzR39P0s9Vbr9uS5hPbhsv1xdaJFNcZ0ZQzb4j6B/kgYlhQHn6OEa
+	4Rc2OHF/YlZh9LIclTx6nc4WquU+AeIGOqNEKZk+bDDP0hc6AlnEdk8qYI0Z3nB0qbqbVpnlfE6VA
+	9nxWknjgBmmBiyEM1YevlVl2QSYxCaifWRHw15gzuWaTSGCC2CN7ADBgkgbhcrQ2taTDkmK4E2LxL
+	d2HYKI517oVd3t6dDoSGmF4KZcKD3gpOZnM9e1pDMIiVBUGx355X5q0D7AsdiPOuPtGNOG/hrfiH1
+	d7wQx6iFHhqOWdgu1M7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j23HY-0001rP-VK; Thu, 13 Feb 2020 01:27:08 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j23Y0-0007fH-4q; Thu, 13 Feb 2020 01:44:08 +0000
+Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j23HR-0001qq-0Q; Thu, 13 Feb 2020 01:27:02 +0000
-X-UUID: a3f9354c9b19414ebd8f2ee998026917-20200212
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=yOSBqxqyM2MBNdVtLEcUpyckrLNC7q1s0wr5YIz7XTw=; 
- b=rvxiq1ffA/1uEyJ0mg3lMBWqFgHfnwv/KutQjyBKQ6Ko9WVMLOm2CKZaHGfUXI1U3qoHskVIpbzHR8l4l1ZlFufYbzVjNO6LxxAw5uUZh/p1QXjWlVdSbIbefthKeUPGQf1BVmuWkFUgYu31Q6aOzBbn3NpFB9Y46Y23yJrJuEo=;
-X-UUID: a3f9354c9b19414ebd8f2ee998026917-20200212
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <bibby.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1866105080; Wed, 12 Feb 2020 17:26:58 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Feb 2020 17:26:56 -0800
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Feb 2020 09:26:07 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 13 Feb 2020 09:27:23 +0800
-Message-ID: <1581557213.12296.0.camel@mtksdaap41>
-Subject: Re: [PATCH 1/2] arm64: dts: mt8183: Add gce setting in display node
-From: Bibby Hsieh <bibby.hsieh@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>
-Date: Thu, 13 Feb 2020 09:26:53 +0800
-In-Reply-To: <1581504514.26347.4.camel@mtksdaap41>
-References: <20200212095501.12124-1-bibby.hsieh@mediatek.com>
- <1581504514.26347.4.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1j23Xt-0007XG-6Y
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 01:44:02 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 0BBBC75F4;
+ Wed, 12 Feb 2020 20:43:56 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute5.internal (MEProxy); Wed, 12 Feb 2020 20:43:56 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ subject:to:cc:references:from:message-id:date:mime-version
+ :in-reply-to:content-type:content-transfer-encoding; s=fm1; bh=8
+ T4iiTyw3eLQepB6swSO7o/IfktgWfWV0D82VwCjj/E=; b=f3fRodTyc87ROjGZg
+ f6xhISXZ8IB4FeYJ2BWIeWPLgahI9JYegZPO7P3CcMH6/E4ydS7USxBYX2uSIqqS
+ j62qH7kzAabWTmpAVWPikAKGKFD/QG5SFc6Od2kIc6ut7vCx200g/R3VVLgZSuNc
+ VHmSqEkF1SY43S7Usd4yCT2NzLl0v23IpC2N+Hb/6RldnsWJJCeAFwMPy9jj0/rC
+ oIUvhGpeCvQT7eyybmFmraHrBilL1k5ys8ollF57F1bJNZjx+hIO5ovAu8vCMOri
+ 8lIQetjnk/emqeAK9wG9NZbzoKw8BCAgyWSP7VduZfBv71R85r9vzKIUSEbtpHvR
+ FLZKg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm2; bh=8T4iiTyw3eLQepB6swSO7o/IfktgWfWV0D82VwCjj
+ /E=; b=drnYkKGaLTWK14k5w3ipnZ0N5vk+Z9lFw9AqTR7g3IZo/uZR3r4Pi215u
+ BCNDdsa2swlyANH3o90lDNa9E2HJxm4mAVkX3MHXRVp/0G3azrsu0/lyCtV8Vy83
+ IBLbA7B2MNJ2VQVbhgP7tmRBwBoh6IhpUoNIwCiQ7w+yOQQDv2vfwYI0UohX3QPc
+ iCHZEnZgbhOXdzo3kkpNH+42s0oWlR7HDVWK4w0/kFbX2+ylgJySJ8tEld6jHMXE
+ 9L32xohyxvReK865aZXNm6GdMJ7y/l9+ajDXnzNI/HSC6DKK0dEsOtLsR6oVOn8j
+ pzPgsmWTVCEvdRd6+bu8x1i/i+UiA==
+X-ME-Sender: <xms:26lEXr8b79IcrzKys9NpAd6DwBB77LrlZx_bbpvVslYAvylDCO-JEQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrieejgdeflecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
+ lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
+ epjedtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghr
+ rghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
+X-ME-Proxy: <xmx:26lEXr9f9XlBa5oH29pVAzdTfXbpVeaYIDa2u5YUyTRzjS8wwnXjYQ>
+ <xmx:26lEXkBLPgkXz84vAue5vmJFLZ_p9mUjFH2TTkHEnYWC4MxW_ZKNZw>
+ <xmx:26lEXryTINXz7iU6GoqyhRcI4gKucxJm_VTijjkYJmJ_nADf4geiLQ>
+ <xmx:26lEXtsaxZdRgXSTUxrimXLAZYwEysseRnM26aYv-EFsaNnmo91MaQ>
+Received: from [192.168.50.169]
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 88B8C3060717;
+ Wed, 12 Feb 2020 20:43:54 -0500 (EST)
+Subject: Re: [PATCH v6 0/6] Allwinner sun6i message box support
+To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jassi Brar <jassisinghbrar@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Ondrej Jirman <megous@megous.com>, Vasily Khoruzhick <anarsoul@gmail.com>
+References: <20200113051852.15996-1-samuel@sholland.org>
+From: Samuel Holland <samuel@sholland.org>
+Message-ID: <36f1fee4-c2b7-af55-d867-21edd6bf1e56@sholland.org>
+Date: Wed, 12 Feb 2020 19:43:53 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20200113051852.15996-1-samuel@sholland.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_172701_059059_EEB775CC 
-X-CRM114-Status: GOOD (  13.23  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200212_174401_387730_950A3CA3 
+X-CRM114-Status: GOOD (  12.67  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.224 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -72,8 +98,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,160 +109,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, Yongqiang Niu <yongqiang.niu@mediatek.com>,
- srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, tfiga@chromium.org,
- YT Shen <yt.shen@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
- linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-02-12 at 18:48 +0800, CK Hu wrote:
-> On Wed, 2020-02-12 at 17:55 +0800, Bibby Hsieh wrote:
-> > In order to use GCE function, we need add some information
-> > into display node (mboxes, mediatek,gce-client-reg, mediatek,gce-events).
-> > 
-> > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> > Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > ---
-> >  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 16 ++++++++++++++++
-> >  1 file changed, 16 insertions(+)
-> > 
-> > diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > index be4428c92f35..1f0fc281bc2d 100644
-> > --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > @@ -9,6 +9,7 @@
-> >  #include <dt-bindings/interrupt-controller/arm-gic.h>
-> >  #include <dt-bindings/interrupt-controller/irq.h>
-> >  #include <dt-bindings/power/mt8183-power.h>
-> > +#include <dt-bindings/gce/mt8183-gce.h>
-> >  #include "mt8183-pinfunc.h"
-> >  
-> >  / {
-> > @@ -664,6 +665,9 @@
-> >  			reg = <0 0x14000000 0 0x1000>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			#clock-cells = <1>;
-> > +			mboxes = <&gce 0 CMDQ_THR_PRIO_HIGHEST 1>,
-> 
-> I would like to remove atomic parameter, so please follow [1] to remove
-> it.
-> 
-> [1] https://patchwork.kernel.org/patch/10765419/
+Jassi,
 
-Hi, CK,
+On 1/12/20 11:18 PM, Samuel Holland wrote:
+> This series adds support for the "hardware message box" in sun8i, sun9i,
+> and sun50i SoCs, used for communication with the ARISC management
+> processor (the platform's equivalent of the ARM SCP). The end goal is to
+> use the arm_scpi driver as a client, communicating with firmware running
+> on the ARISC CPU.
+> 
+> I have tested this driver with various firmware programs and mailbox
+> clients on the A64, H5, and H6 SoCs (including specifically the arm_scpi
+> driver), and Ondrej Jirman has tested the driver on the A83T (using a
+> similar patch to arm_scpi).
 
-Yeah, I'm trying remove atomic feature.
+Ping. Any comments on this? Can this be merged?
 
-Thanks
-
-Bibby
-> 
-> Regards,
-> CK
-> 
-> > +				 <&gce 1 CMDQ_THR_PRIO_HIGHEST 1>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
-> >  		};
-> >  
-> >  		ovl0: ovl@14008000 {
-> > @@ -672,6 +676,7 @@
-> >  			interrupts = <GIC_SPI 225 IRQ_TYPE_LEVEL_LOW>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_OVL0>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x8000 0x1000>;
-> >  		};
-> >  
-> >  		ovl_2l0: ovl@14009000 {
-> > @@ -680,6 +685,7 @@
-> >  			interrupts = <GIC_SPI 226 IRQ_TYPE_LEVEL_LOW>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_OVL0_2L>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x9000 0x1000>;
-> >  		};
-> >  
-> >  		ovl_2l1: ovl@1400a000 {
-> > @@ -688,6 +694,7 @@
-> >  			interrupts = <GIC_SPI 227 IRQ_TYPE_LEVEL_LOW>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_OVL1_2L>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xa000 0x1000>;
-> >  		};
-> >  
-> >  		rdma0: rdma@1400b000 {
-> > @@ -697,6 +704,7 @@
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_RDMA0>;
-> >  			mediatek,rdma_fifo_size = <5120>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xb000 0x1000>;
-> >  		};
-> >  
-> >  		rdma1: rdma@1400c000 {
-> > @@ -706,6 +714,7 @@
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_RDMA1>;
-> >  			mediatek,rdma_fifo_size = <2048>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xc000 0x1000>;
-> >  		};
-> >  
-> >  		color0: color@1400e000 {
-> > @@ -715,6 +724,7 @@
-> >  			interrupts = <GIC_SPI 231 IRQ_TYPE_LEVEL_LOW>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_COLOR0>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xe000 0x1000>;
-> >  		};
-> >  
-> >  		ccorr0: ccorr@1400f000 {
-> > @@ -723,6 +733,7 @@
-> >  			interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_LOW>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_CCORR0>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xf000 0x1000>;
-> >  		};
-> >  
-> >  		aal0: aal@14010000 {
-> > @@ -732,6 +743,7 @@
-> >  			interrupts = <GIC_SPI 233 IRQ_TYPE_LEVEL_LOW>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_AAL0>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0 0x1000>;
-> >  		};
-> >  
-> >  		gamma0: gamma@14011000 {
-> > @@ -741,6 +753,7 @@
-> >  			interrupts = <GIC_SPI 234 IRQ_TYPE_LEVEL_LOW>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_GAMMA0>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x1000 0x1000>;
-> >  		};
-> >  
-> >  		dither0: dither@14012000 {
-> > @@ -749,6 +762,7 @@
-> >  			interrupts = <GIC_SPI 235 IRQ_TYPE_LEVEL_LOW>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> >  			clocks = <&mmsys CLK_MM_DISP_DITHER0>;
-> > +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x2000 0x1000>;
-> >  		};
-> >  
-> >  		mutex: mutex@14016000 {
-> > @@ -756,6 +770,8 @@
-> >  			reg = <0 0x14016000 0 0x1000>;
-> >  			interrupts = <GIC_SPI 217 IRQ_TYPE_LEVEL_LOW>;
-> >  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
-> > +			mediatek,gce-events = <CMDQ_EVENT_MUTEX_STREAM_DONE0>,
-> > +					      <CMDQ_EVENT_MUTEX_STREAM_DONE1>;
-> >  		};
-> >  
-> >  		smi_common: smi@14019000 {
-> 
-> 
+Thanks,
+Samuel Holland
 
 _______________________________________________
 linux-arm-kernel mailing list
