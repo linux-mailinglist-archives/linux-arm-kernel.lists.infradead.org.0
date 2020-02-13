@@ -2,70 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 676F715BEDB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 14:00:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C9F915BF16
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 14:22:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mXdpUpQN7bEFnSZwg8eX1lB382sTSpH/75LKvoWrBGU=; b=hbXeny/+sGQt4q
-	6XFQhKJupJn7maHF/OnV+2zqNorDTldcv/YhBvWT4NYh9MwzKBZi4gzwSCT0nVDqbE6xpO32cfFpO
-	rIkqoXukVUa3DHgmTsEpsnNdZf+18czH+VIutqw0v2udnzWtl+UpLw4bQJXDrvaVfQohpbCkyijED
-	k08vVdAoEXBGggQcPozmVv9Q9VHinKydnTp0KRKUWpOxB0C/JXgXmfxLSAkWPO5Mkd5ISSNvLvjCS
-	OJcIVrzxxtHK4oxVsMIKsvSBuTxQaM548K6rBRWsO+Ljzr0lbBK8Aij9WRN4gXxcwy+O8sPQGsC51
-	JlD1Ij4ns0gIQVS3+msA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5I6DqGTz5tOGZIrNlbK8VhW3L09tQhplsPPSSGmrwgI=; b=Z7sEFUbN6gXC/JFbhhl8sNK/6
+	UnlX8Yxz307cVMLMnJz549GIbHQVSxU7hdmoIp8DQIA7wG3nOB3jXlLjHm0u1KxbzzUzt0xbiBJD/
+	uJgYMSqQ9eAXZCsj4YNxyxyc+lHNil9R4TMQdY4ZAldflhp7Dzd3lSvE+xf7fUOkDcWUPBB1QvPZz
+	n+xqVilUSLMR7UYvxZidKywQY96v3HHDR+TxQ5Ie3ImffVAVtFY4yz+sDl5/PEZZ1db4TzpM3eTxR
+	ChxzWCyAtGWLVgcs/nK33ogT8NwnWHdT9Jwreht4j6NLWQE3TMNDqxTMbkjhAYEU0JhySJfXG6Vwu
+	hLlq6L0CA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2E66-0000JC-Be; Thu, 13 Feb 2020 13:00:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2E5s-0000Is-4S
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 12:59:49 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 23ACB24650;
- Thu, 13 Feb 2020 12:59:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581598787;
- bh=QOFqPYutkec0orz4z0WywbUYBiObUdKnEtf5dNYYWPQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=0/N6cgoXHN0dgYEVZJTDaD0DP6bfxG5zbm26qKHAmWsdRY3TUiSHZnQVkAsDp9bxO
- 5/uZARZBiOVMuM2gSazOhj+4rAkO/lV//dgKYuqayDEum4z5Xf1yqHEULKnYKDpfRC
- rNZV7POzWB8dM8p0W7hoWoZEwWw8fIQWj+DI0Tbc=
-Date: Thu, 13 Feb 2020 20:59:41 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH v3 1/2] ARM: dts: imx6: phycore-som: fix arm and soc
- minimum voltage
-Message-ID: <20200213125940.GP11096@dragon>
-References: <20200116140108.6069-1-m.felsch@pengutronix.de>
+	id 1j2ERI-00009R-P1; Thu, 13 Feb 2020 13:21:56 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2ERA-000088-DQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 13:21:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 958BA1FB;
+ Thu, 13 Feb 2020 05:21:44 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 20A203F6CF;
+ Thu, 13 Feb 2020 05:21:44 -0800 (PST)
+Subject: Re: [PATCH 1/2] bus: Add DT bindings for Integrator/AP logical modules
+To: Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200213124620.34982-1-linus.walleij@linaro.org>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <8dc141ce-d866-6a4b-48af-68c259461b5b@arm.com>
+Date: Thu, 13 Feb 2020 13:21:42 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200116140108.6069-1-m.felsch@pengutronix.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200213124620.34982-1-linus.walleij@linaro.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_045948_193590_6A8D3A04 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200213_052148_544935_6F2225EC 
+X-CRM114-Status: GOOD (  21.67  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,67 +64,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: s.riedmueller@phytec.de, festevam@gmail.com, chf.fritz@googlemail.com,
- robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de, c.hemp@phytec.de,
- s.christ@phytec.de, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 16, 2020 at 03:01:07PM +0100, Marco Felsch wrote:
-> The current set minimum voltage of 730000=B5V seems to be wrong. I don't
-> know the document which specifies that but the imx6qdl datasheets says
-> that the minimum voltage should be 0.925V for VDD_ARM (LDO bypassed,
-> lowest opp) and 1.15V for VDD_SOC (LDO bypassed, lowest opp).
-> =
+Hi Linus,
 
-> Fixes: ddec5d1c0047 ("ARM: dts: imx6: Add initial support for phyCORE-i.M=
-X 6 SOM")
-> Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+On 13/02/2020 12:46 pm, Linus Walleij wrote:
+> This adds YAML device tree bindings for the Integrator/AP
+> logical modules. These are plug-in tiles used typically for
+> FPGA prototyping.
 
-I failed to apply it.  Please rebase and resend.
+Linguistic nit: s/logical/logic/g (for both patches)
 
-Shawn
-
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 > ---
-> v3:
-> - fix commit message
-> v2:
-> - use ldo bypassed values
-> ---
->  arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> =
+>   .../bindings/bus/arm,integrator-ap-lm.yaml    | 89 +++++++++++++++++++
+>   1 file changed, 89 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml b/Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml
+> new file mode 100644
+> index 000000000000..dfabfa466c05
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml
+> @@ -0,0 +1,89 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/bus/arm,integrator-ap-lm.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Integrator/AP Logical Module extension bus
+> +
+> +maintainers:
+> +  - Linus Walleij <linusw@kernel.org>
+> +
+> +description: The Integrator/AP is a prototyping platform and as such has a
+> +  site for stacking up to four logical modules (LM) designed specifically for
+> +  use with this platform. A special system controller register can be read to
+> +  determine if a logical module is connected at index 0, 1, 2 or 3. The logical
+> +  module connector is described in this binding. The logical modules per se
+> +  then have their own specific per-module bindings and they will be described
+> +  as subnodes under this logical module extension bus.
+> +
+> +properties:
+> +  "#address-cells":
+> +    const: 2
+> +
+> +  "#size-cells":
+> +    const: 1
+> +
+> +  compatible:
+> +    items:
+> +      - const: arm,integrator-ap-lm
+> +
+> +  ranges: true
+> +  dma-ranges: true
+> +
+> +patternProperties:
+> +  "^.*@[0-3],[0-9a-f]+$":
+> +    description: Nodes on the Logical Module bus represent logical modules
+> +      and are named with index,relative-address. The first module is at
+> +      0x00000000, the second at 0x10000000 and so on until the top of the
+> +      memory of the system at 0xffffffff.
+> +    type: object
+> +    properties:
+> +      reg:
+> +        maxItems: 1
+> +
+> +    required:
+> +      - compatible
+> +
+> +required:
+> +  - compatible
+> +
+> +examples:
+> +  - |
+> +    external-bus@c0000000 {
+> +      compatible = "arm,integrator-ap-lm";
+> +      #address-cells = <2>;
+> +      #size-cells = <1>;
+> +      ranges = <0 0x0 0xc0000000 0x10000000>,
+> +               <1 0x0 0xd0000000 0x10000000>,
+> +               <2 0x0 0xe0000000 0x10000000>,
+> +               <3 0x0 0xf0000000 0x10000000>;
+> +      dma-ranges = <0 0x0 0xc0000000 0x10000000>,
+> +               <1 0x0 0xd0000000 0x10000000>,
+> +               <2 0x0 0xe0000000 0x10000000>,
+> +               <3 0x0 0xf0000000 0x10000000>;
 
-> diff --git a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi b/arch/arm=
-/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> index a1e2c5094d58..51a47a242783 100644
-> --- a/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> +++ b/arch/arm/boot/dts/imx6qdl-phytec-phycore-som.dtsi
-> @@ -111,14 +111,14 @@
->  		regulators {
->  			vdd_arm: buck1 {
->  				regulator-name =3D "vdd_arm";
-> -				regulator-min-microvolt =3D <730000>;
-> +				regulator-min-microvolt =3D <925000>;
->  				regulator-max-microvolt =3D <1380000>;
->  				regulator-always-on;
->  			};
->  =
+Is that dma-ranges mapping definitely appropriate? My impression from 
+skimming the AP manual is that logic module masters would all see SDRAM 
+through the 2GB-3GB alias region, independent of how their slaves are 
+decoding incoming accesses. Even in the case of peer-to-peer accesses 
+between logic modules, I'd imagine that the process of obtaining the 
+target address to program would inherently go through the "ranges" 
+translation and result in an 'absolute' PA anyway.
 
->  			vdd_soc: buck2 {
->  				regulator-name =3D "vdd_soc";
-> -				regulator-min-microvolt =3D <730000>;
-> +				regulator-min-microvolt =3D <1150000>;
->  				regulator-max-microvolt =3D <1380000>;
->  				regulator-always-on;
->  			};
-> -- =
+Robin.
 
-> 2.20.1
-> =
-
+> +      im-pd1@0,0 {
+> +        compatible = "simple-bus";
+> +        ranges = <0 0 0 0x10000000>;
+> +        dma-ranges = <0 0 0 0x10000000>;
+> +        #address-cells = <1>;
+> +        #size-cells = <1>;
+> +
+> +        uart@c0100000 {
+> +          compatible = "arm,pl011", "arm,primecell";
+> +          reg = <0x00100000 0x1000>;
+> +          interrupts-extended = <&impd1_vic 1>;
+> +        };
+> +
+> +        impd1_vic: interrupt-controller@c3000000 {
+> +          compatible = "arm,pl192-vic";
+> +          interrupt-controller;
+> +          #interrupt-cells = <1>;
+> +          reg = <0x03000000 0x1000>;
+> +          valid-mask = <0x00000bff>;
+> +          interrupts-extended = <&pic 9>;
+> +        };
+> +      };
+> +    };
+> +
+> +additionalProperties: false
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
