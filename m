@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BECBD15C7BB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 17:19:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0383B15C7BD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 17:19:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lJDn+No2sGXJoY8BgA4fiY3xjG5Mtb0INUuZ2n5ikbc=; b=j9owTPIbeAda0O
-	upT8ZFewg/MvBIp+b9W5yfUe5Asm+t4IqE+JNuID9YWJ3KykcYa8dGZjeGrX4YnagzSo2hSj9Dtkh
-	0IXy3PnKxQTduMoA+n3GJKbuifz/kQ4rf3i28JtkGWa/DDYPxy5ZhngUza2fQT6RbcLDCJFEONGZ6
-	j1Ty1Fbv0Mw5RbGJQl2Cpwi/A8cmEV4jGysCatscRYdfDPWHL2L4V+wjzL5dkTujGfFxv7Y14vxKx
-	VJuk+Kt7KVYg5AeCGCiIXRprKEd9cQCdB6MMc1bwacdabzNHD+27zjGBpelHkw+DN0rmSIo7LcjAJ
-	LJbp3a6Hv2Vf8ryAV93A==;
+	List-Owner; bh=+iCxW8vj9B1LLYrj1sLAjMd7jo6P2fq8VmifTG4JmAg=; b=IcNshJU8OdCL39
+	faIYGaKE8Hja/xc4ezBRqeIjhvzfk2/sbgta8Q2Fk7IPEpiYCpzipOfXtyy759SpqQD+FNHG657/c
+	ENHhKkTXY26Y4u0VcH0sUgmDomP69h9sYv7o5yDMeAf/rQFcS1dgIWB8fORepssQSBC6AW/ClBadc
+	hWOPM52uCmKr6P85IkhqfyYHgYbOWxhOoJO4o8Kh6w3arfWt5JAPikxgi2R7T6vGlcyPHD/2wD9JA
+	oUzofxVs5TtRCa7HraP0FWpCuy9Km4jtV8BEbHHHFY/2nXuXYTZL6Z5j+S+oK+yWJaYTdVopdymbx
+	7hunhLqGgKtaQD4fVLwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2HD5-0006G2-TC; Thu, 13 Feb 2020 16:19:27 +0000
+	id 1j2HDG-0006Vf-57; Thu, 13 Feb 2020 16:19:38 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2HAq-00048y-Lj
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 16:17:10 +0000
+ id 1j2HAt-0004BW-6u
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 16:17:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A0142328;
- Thu, 13 Feb 2020 08:17:07 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 62B641045;
+ Thu, 13 Feb 2020 08:17:10 -0800 (PST)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1F5E43F6CF;
- Thu, 13 Feb 2020 08:17:05 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D546A3F6CF;
+ Thu, 13 Feb 2020 08:17:07 -0800 (PST)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
  clang-built-linux@googlegroups.com, x86@kernel.org
-Subject: [PATCH 09/19] linux/ktime.h: Extract common header for vDSO
-Date: Thu, 13 Feb 2020 16:16:04 +0000
-Message-Id: <20200213161614.23246-10-vincenzo.frascino@arm.com>
+Subject: [PATCH 10/19] common: Introduce processor.h
+Date: Thu, 13 Feb 2020 16:16:05 +0000
+Message-Id: <20200213161614.23246-11-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200213161614.23246-1-vincenzo.frascino@arm.com>
 References: <20200213161614.23246-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_081708_981526_05021827 
-X-CRM114-Status: GOOD (  12.85  )
+X-CRM114-CacheID: sfid-20200213_081711_325360_BBDACF2A 
+X-CRM114-Status: GOOD (  10.11  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -79,58 +79,35 @@ a userspace library (UAPI and a minimal set of kernel headers). To make
 this possible it is necessary to isolate from the kernel headers the
 common parts that are strictly necessary to build the library.
 
-Split ktime.h into linux and common headers to make the latter suitable
-for inclusion in the vDSO library.
+Introduce processor.h to contain all the processor specific functions
+that are suitable for vDSO inclusion.
 
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- include/common/ktime.h | 16 ++++++++++++++++
- include/linux/ktime.h  |  9 +--------
- 2 files changed, 17 insertions(+), 8 deletions(-)
- create mode 100644 include/common/ktime.h
+ include/common/processor.h | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 include/common/processor.h
 
-diff --git a/include/common/ktime.h b/include/common/ktime.h
+diff --git a/include/common/processor.h b/include/common/processor.h
 new file mode 100644
-index 000000000000..4dd6c6762ad4
+index 000000000000..f9f971cb4235
 --- /dev/null
-+++ b/include/common/ktime.h
-@@ -0,0 +1,16 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __COMMON_KTIME_H
-+#define __COMMON_KTIME_H
-+
-+#include <common/jiffies.h>
-+
++++ b/include/common/processor.h
+@@ -0,0 +1,14 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
 +/*
-+ * The resolution of the clocks. The resolution value is returned in
-+ * the clock_getres() system call to give application programmers an
-+ * idea of the (in)accuracy of timers. Timer values are rounded up to
-+ * this resolution values.
++ * Copyright (C) 2020 ARM Ltd.
 + */
-+#define LOW_RES_NSEC		TICK_NSEC
-+#define KTIME_LOW_RES		(LOW_RES_NSEC)
++#ifndef __COMMON_PROCESSOR_H
++#define __COMMON_PROCESSOR_H
 +
-+#endif /* __COMMON_KTIME_H */
-diff --git a/include/linux/ktime.h b/include/linux/ktime.h
-index b2bb44f87f5a..0e1fadeb23c3 100644
---- a/include/linux/ktime.h
-+++ b/include/linux/ktime.h
-@@ -253,14 +253,7 @@ static inline __must_check bool ktime_to_timespec64_cond(const ktime_t kt,
- 	}
- }
- 
--/*
-- * The resolution of the clocks. The resolution value is returned in
-- * the clock_getres() system call to give application programmers an
-- * idea of the (in)accuracy of timers. Timer values are rounded up to
-- * this resolution values.
-- */
--#define LOW_RES_NSEC		TICK_NSEC
--#define KTIME_LOW_RES		(LOW_RES_NSEC)
-+#include <common/ktime.h>
- 
- static inline ktime_t ns_to_ktime(u64 ns)
- {
++#ifndef __ASSEMBLY__
++
++#include <asm/common/processor.h>
++
++#endif /* __ASSEMBLY__ */
++
++#endif /* __COMMON_PROCESSOR_H */
 -- 
 2.25.0
 
