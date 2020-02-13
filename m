@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3924015C0DA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 16:00:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61C8B15C0DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 16:00:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=RTDkv/v5ZF4reLqMavxTKsYwWLIJh9JcpJrdboRbifM=; b=JwftL6JkYrVwBXSPxm900JpADC
-	fco2UxazxPxXqDXj/yJBIzr+YXkf64IC3z/ZqOuKGnHb3O4D8D5EXgqQsC9Q2nl/8WEJMHGh/v49t
-	5trf5D7aMJVAbWMutG6uj7YKlM2quQSrr+RBRseAEvyHK2Z6w/vvmmPq0lbA8Q3S5W/JtxcFntfxI
-	SiYy2aHK2lvLVcM+kMNWhJUBhSEKECf0Eyhf+tzJaYdYUoSg1tTheNqbz+pgEIh3wt1SxDje2yuBI
-	hNsRywX3X5xMY+CY6FzKb1rc+dEXNNdITahY4dJ/ny9FcpJZBPGn8xnhTyzuKcODozlAk4GGjfnPU
-	6nU+QjEQ==;
+	bh=HCzSbIt1nm6rvp+5x3zxyZubsHhD6W1ARw9S1BK1J3Y=; b=QOb/WhBLWRRZ8ReTHCQHFFGoqw
+	J5MjS2GH2kO3mOu5FW4TZpgcMMx6Y6XNJHGhCR98N51qYrXi5XOilMorQp0AedMf9EswPr7S+CcbM
+	VVb4c6GSNxRNfoSgCUwG3y2MXj7OlRy3gUrvKvqo/LGglWPWIS53Xs+t2vh52TBwPkjawB6UgL2Kf
+	hHzkOYEaL34UhPS4WmUvbQCMDPqQAeglAFH41WkpeDakRcNtAR2SFmEzr/uGrwo/VU4CSA+8psYTq
+	X9BZNjtwoCUlDeoHuqmalkcRR3HANwGQCHf+dlH/hyTI1X1gtGrVjpjqM/a4t43PHCQxe899NCzuV
+	nr2RZYbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2FyV-0001cL-0M; Thu, 13 Feb 2020 15:00:19 +0000
+	id 1j2Fyj-00031j-OM; Thu, 13 Feb 2020 15:00:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Fy2-0001SS-Ti
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 14:59:52 +0000
+ id 1j2Fy7-0001XM-2A
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 14:59:56 +0000
 Received: from cam-smtp0.cambridge.arm.com (fw-tnat.cambridge.arm.com
  [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 96EF3218AC;
- Thu, 13 Feb 2020 14:59:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1B4AE2082F;
+ Thu, 13 Feb 2020 14:59:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581605990;
- bh=dzXGEwPuXZ+ThiLE83ovGglZj5LrVvfa4e0a9juvxuU=;
+ s=default; t=1581605994;
+ bh=tP/nrC7vqmTYk59YGXGbjbDeHTY+3bz/+I3O4muIg1Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=wtHnBCqALVbLhbo8hURER56BK+MTrVKkiDo3sAmQyWwtVEJUfFeLWNd3DfzUChHJj
- 1a86/2gx5cxXcZly4NqcuM1CuZ0BxDerG5+fiLyaKNQWVu2ANeSFLHBYU3f8AeyIJI
- ODQB3FiQakHD+n7/ZrMPEzbyZjygZ1UcscBEcNsQ=
+ b=jmCmL6S+RZ4t0UJu/CDPzcpFn1jwmsGuhH6HHICJm8ZHRPFEunNaSXg0GWXeJDrg3
+ CrnMEkDW1H/XZvkaI4ZdIxIfnGfmdIQz9rEo5UClNBLsqpSjyEfFd2iUjqjYVBOP6f
+ PEu1N2G3zp+KDbUwcqNAtzuGr5slHjzqi4pRHNtw=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [RFC PATCH 1/3] efi/x86: drop redundant .bss section
-Date: Thu, 13 Feb 2020 15:59:26 +0100
-Message-Id: <20200213145928.7047-2-ardb@kernel.org>
+Subject: [RFC PATCH 2/3] efi/x86: add true mixed mode entry point into .compat
+ section
+Date: Thu, 13 Feb 2020 15:59:27 +0100
+Message-Id: <20200213145928.7047-3-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200213145928.7047-1-ardb@kernel.org>
 References: <20200213145928.7047-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_065951_022718_FBB0436A 
-X-CRM114-Status: GOOD (  12.93  )
+X-CRM114-CacheID: sfid-20200213_065955_273514_B65CC87D 
+X-CRM114-Status: GOOD (  15.69  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,141 +87,167 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In commit c7fb93ec51d462ec ("x86/efi: Include a .bss section within
-the PE/COFF headers"), we added a separate .bss section to the PE/COFF
-header of the compressed kernel describing the static memory footprint
-of the decompressor, to ensure that it has enough headroom to decompress
-itself.
+Currently, mixed mode is closely tied to the EFI handover protocol
+and relies on intimate knowledge of the bootparams structure, setup
+header etc, all of which are rather byzantine and entirely specific
+to x86.
 
-We can achieve the exact same result by increasing the virtual size of
-the .text section, without changing the raw size, which, as per the
-PE/COFF specification, requires the loader to zero initialize the delta.
+Even though no other EFI supported architectures are currently known
+that could support something like mixed mode, it makes sense to
+abstract a bit from this, and make it part of a generic Linux on EFI
+boot protocol.
 
-Doing so frees up a slot in the section table, which we will use later
-to describe the mixed mode entrypoint.
+To that end, add a .compat section to the mixed mode binary, and populate
+it with the PE machine type and entry point address, allowing firmware
+implementations to match it to their native machine type, and invoke
+non-native binaries using a secondary entry point.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/x86/boot/header.S      | 21 +-----------
- arch/x86/boot/tools/build.c | 35 ++++++++------------
- 2 files changed, 14 insertions(+), 42 deletions(-)
+ arch/x86/boot/Makefile      |  2 +-
+ arch/x86/boot/header.S      | 20 +++++++++++-
+ arch/x86/boot/tools/build.c | 32 +++++++++++++++++++-
+ 3 files changed, 51 insertions(+), 3 deletions(-)
 
+diff --git a/arch/x86/boot/Makefile b/arch/x86/boot/Makefile
+index 012b82fc8617..ef9e1f2c836c 100644
+--- a/arch/x86/boot/Makefile
++++ b/arch/x86/boot/Makefile
+@@ -88,7 +88,7 @@ $(obj)/vmlinux.bin: $(obj)/compressed/vmlinux FORCE
+ 
+ SETUP_OBJS = $(addprefix $(obj)/,$(setup-y))
+ 
+-sed-zoffset := -e 's/^\([0-9a-fA-F]*\) [a-zA-Z] \(startup_32\|startup_64\|efi32_stub_entry\|efi64_stub_entry\|efi_pe_entry\|input_data\|kernel_info\|_end\|_ehead\|_text\|z_.*\)$$/\#define ZO_\2 0x\1/p'
++sed-zoffset := -e 's/^\([0-9a-fA-F]*\) [a-zA-Z] \(startup_32\|startup_64\|efi32_stub_entry\|efi64_stub_entry\|efi_pe_entry\|efi32_pe_entry\|input_data\|kernel_info\|_end\|_ehead\|_text\|z_.*\)$$/\#define ZO_\2 0x\1/p'
+ 
+ quiet_cmd_zoffset = ZOFFSET $@
+       cmd_zoffset = $(NM) $< | sed -n $(sed-zoffset) > $@
 diff --git a/arch/x86/boot/header.S b/arch/x86/boot/header.S
-index 97d9b6d6c1af..d59f6604bb42 100644
+index d59f6604bb42..76a485013771 100644
 --- a/arch/x86/boot/header.S
 +++ b/arch/x86/boot/header.S
 @@ -106,7 +106,7 @@ coff_header:
  #else
  	.word	0x8664				# x86-64
  #endif
--	.word	4				# nr_sections
-+	.word	3				# nr_sections
+-	.word	3				# nr_sections
++	.word	section_count			# nr_sections
  	.long	0 				# TimeDateStamp
  	.long	0				# PointerToSymbolTable
  	.long	1				# NumberOfSymbols
-@@ -248,25 +248,6 @@ section_table:
+@@ -230,6 +230,23 @@ section_table:
+ 	.word	0				# NumberOfLineNumbers
+ 	.long	0x42100040			# Characteristics (section flags)
+ 
++#ifdef CONFIG_EFI_MIXED
++	#
++	# The offset & size fields are filled in by build.c.
++	#
++	.asciz	".compat"
++	.long	0
++	.long	0x0
++	.long	0				# Size of initialized data
++						# on disk
++	.long	0x0
++	.long	0				# PointerToRelocations
++	.long	0				# PointerToLineNumbers
++	.word	0				# NumberOfRelocations
++	.word	0				# NumberOfLineNumbers
++	.long	0x60500020			# Characteristics (section flags)
++#endif
++
+ 	#
+ 	# The offset & size fields are filled in by build.c.
+ 	#
+@@ -248,6 +265,7 @@ section_table:
  	.word	0				# NumberOfLineNumbers
  	.long	0x60500020			# Characteristics (section flags)
  
--	#
--	# The offset & size fields are filled in by build.c.
--	#
--	.ascii	".bss"
--	.byte	0
--	.byte	0
--	.byte	0
--	.byte	0
--	.long	0
--	.long	0x0
--	.long	0				# Size of initialized data
--						# on disk
--	.long	0x0
--	.long	0				# PointerToRelocations
--	.long	0				# PointerToLineNumbers
--	.word	0				# NumberOfRelocations
--	.word	0				# NumberOfLineNumbers
--	.long	0xc8000080			# Characteristics (section flags)
--
++	.set	section_count, (. - section_table) / 40
  #endif /* CONFIG_EFI_STUB */
  
  	# Kernel attributes; used by setup.  This is part 1 of the
 diff --git a/arch/x86/boot/tools/build.c b/arch/x86/boot/tools/build.c
-index 55e669d29e54..0c8c5a52f1f0 100644
+index 0c8c5a52f1f0..707b979566ca 100644
 --- a/arch/x86/boot/tools/build.c
 +++ b/arch/x86/boot/tools/build.c
-@@ -203,10 +203,12 @@ static void update_pecoff_setup_and_reloc(unsigned int size)
- 	put_unaligned_le32(10, &buf[reloc_offset + 4]);
- }
+@@ -53,9 +53,16 @@ u8 buf[SETUP_SECT_MAX*512];
  
--static void update_pecoff_text(unsigned int text_start, unsigned int file_sz)
-+static void update_pecoff_text(unsigned int text_start, unsigned int file_sz,
-+			       unsigned int init_sz)
- {
- 	unsigned int pe_header;
- 	unsigned int text_sz = file_sz - text_start;
-+	unsigned int bss_sz = init_sz - file_sz;
+ #define PECOFF_RELOC_RESERVE 0x20
  
- 	pe_header = get_unaligned_le32(&buf[0x3c]);
- 
-@@ -216,28 +218,19 @@ static void update_pecoff_text(unsigned int text_start, unsigned int file_sz)
- 	 */
- 	put_unaligned_le32(file_sz - 512, &buf[pe_header + 0x1c]);
- 
--	/*
--	 * Address of entry point for PE/COFF executable
--	 */
--	put_unaligned_le32(text_start + efi_pe_entry, &buf[pe_header + 0x28]);
--
--	update_pecoff_section_header(".text", text_start, text_sz);
--}
--
--static void update_pecoff_bss(unsigned int file_sz, unsigned int init_sz)
--{
--	unsigned int pe_header;
--	unsigned int bss_sz = init_sz - file_sz;
--
--	pe_header = get_unaligned_le32(&buf[0x3c]);
--
- 	/* Size of uninitialized data */
- 	put_unaligned_le32(bss_sz, &buf[pe_header + 0x24]);
- 
- 	/* Size of image */
- 	put_unaligned_le32(init_sz, &buf[pe_header + 0x50]);
- 
--	update_pecoff_section_header_fields(".bss", file_sz, bss_sz, 0, 0);
-+	/*
-+	 * Address of entry point for PE/COFF executable
-+	 */
-+	put_unaligned_le32(text_start + efi_pe_entry, &buf[pe_header + 0x28]);
++#ifdef CONFIG_EFI_MIXED
++#define PECOFF_COMPAT_RESERVE 0x20
++#else
++#define PECOFF_COMPAT_RESERVE 0x0
++#endif
 +
-+	update_pecoff_section_header_fields(".text", text_start, text_sz + bss_sz,
-+					    text_sz, text_start);
+ unsigned long efi32_stub_entry;
+ unsigned long efi64_stub_entry;
+ unsigned long efi_pe_entry;
++unsigned long efi32_pe_entry;
+ unsigned long kernel_info;
+ unsigned long startup_64;
+ 
+@@ -189,7 +196,8 @@ static void update_pecoff_section_header(char *section_name, u32 offset, u32 siz
+ static void update_pecoff_setup_and_reloc(unsigned int size)
+ {
+ 	u32 setup_offset = 0x200;
+-	u32 reloc_offset = size - PECOFF_RELOC_RESERVE;
++	u32 reloc_offset = size - PECOFF_RELOC_RESERVE - PECOFF_COMPAT_RESERVE;
++	u32 compat_offset = reloc_offset + PECOFF_RELOC_RESERVE;
+ 	u32 setup_size = reloc_offset - setup_offset;
+ 
+ 	update_pecoff_section_header(".setup", setup_offset, setup_size);
+@@ -201,6 +209,20 @@ static void update_pecoff_setup_and_reloc(unsigned int size)
+ 	 */
+ 	put_unaligned_le32(reloc_offset + 10, &buf[reloc_offset]);
+ 	put_unaligned_le32(10, &buf[reloc_offset + 4]);
++
++#ifdef CONFIG_EFI_MIXED
++	update_pecoff_section_header(".compat", compat_offset, PECOFF_COMPAT_RESERVE);
++
++	/*
++	 * Put the IA-32 machine type (0x14c) and the associated entry point
++	 * address in the .compat section, so loaders can figure out which other
++	 * execution modes this image supports.
++	 */
++	buf[compat_offset] = 0x1;
++	buf[compat_offset + 1] = 0x8;
++	put_unaligned_le16(0x14c, &buf[compat_offset + 2]);
++	put_unaligned_le32(efi32_pe_entry + size, &buf[compat_offset + 4]);
++#endif
  }
  
- static int reserve_pecoff_reloc_section(int c)
-@@ -278,9 +271,8 @@ static void efi_stub_entry_update(void)
+ static void update_pecoff_text(unsigned int text_start, unsigned int file_sz,
+@@ -282,6 +304,12 @@ static inline int reserve_pecoff_reloc_section(int c)
+ }
+ #endif /* CONFIG_EFI_STUB */
  
- static inline void update_pecoff_setup_and_reloc(unsigned int size) {}
- static inline void update_pecoff_text(unsigned int text_start,
--				      unsigned int file_sz) {}
--static inline void update_pecoff_bss(unsigned int file_sz,
--				     unsigned int init_sz) {}
-+				      unsigned int file_sz,
-+				      unsigned int init_sz) {}
- static inline void efi_stub_defaults(void) {}
- static inline void efi_stub_entry_update(void) {}
++static int reserve_pecoff_compat_section(int c)
++{
++	/* Reserve 0x20 bytes for .compat section */
++	memset(buf+c, 0, PECOFF_COMPAT_RESERVE);
++	return PECOFF_COMPAT_RESERVE;
++}
  
-@@ -406,9 +398,8 @@ int main(int argc, char ** argv)
- 	buf[0x1f1] = setup_sectors-1;
- 	put_unaligned_le32(sys_size, &buf[0x1f4]);
+ /*
+  * Parse zoffset.h and find the entry points. We could just #include zoffset.h
+@@ -314,6 +342,7 @@ static void parse_zoffset(char *fname)
+ 		PARSE_ZOFS(p, efi32_stub_entry);
+ 		PARSE_ZOFS(p, efi64_stub_entry);
+ 		PARSE_ZOFS(p, efi_pe_entry);
++		PARSE_ZOFS(p, efi32_pe_entry);
+ 		PARSE_ZOFS(p, kernel_info);
+ 		PARSE_ZOFS(p, startup_64);
  
--	update_pecoff_text(setup_sectors * 512, i + (sys_size * 16));
- 	init_sz = get_unaligned_le32(&buf[0x260]);
--	update_pecoff_bss(i + (sys_size * 16), init_sz);
-+	update_pecoff_text(setup_sectors * 512, i + (sys_size * 16), init_sz);
+@@ -357,6 +386,7 @@ int main(int argc, char ** argv)
+ 		die("Boot block hasn't got boot flag (0xAA55)");
+ 	fclose(file);
  
- 	efi_stub_entry_update();
++	c += reserve_pecoff_compat_section(c);
+ 	c += reserve_pecoff_reloc_section(c);
  
+ 	/* Pad unused space with zeros */
 -- 
 2.17.1
 
