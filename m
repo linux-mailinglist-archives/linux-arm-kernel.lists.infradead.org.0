@@ -2,66 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D23BC15CD0C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 22:15:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2487315CD5D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 22:34:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PTdJ4qoin7VHyKceKVajzC5l7neUBUxtq+lssdsbTIQ=; b=RsDW2AUdKYpuJ3
-	yN0nPbR0lvlSdVdqN7C2N8OI+2GB8bS+CVGlO8vo127riMRwA8sdIKf1ZZlw/NW6xdz7H/Xo1aaPT
-	T9SiQYZA+wIhZkfgrh3wmoAQIaTrVK9vwodMag8fWOQK3KpT9F+INonTMAtECvw1XfodIRTqG/Wte
-	z27AeaHC01gOShAbNjdMx6SNj29ip0Wh1PePTz9UVdh2G2LzFw4Xv5AM4teJQO4MMAqVEFjy1bBQO
-	uNm0mBOAEevZ9Fwtxu1LoD8TgP7gGUya0l7iQKUdxyQ4YJqd25SgsyF5nmK73xZ7ocNVWY6lnGPUd
-	vJgcVbAHES9sfhyZWEpQ==;
+	List-Owner; bh=1HIQq+mo/wdq392ETF4PZdCeQDqpfzh+6HUhGrA0lYw=; b=hfBTCtRbExCX+M
+	stHfwQUuxFUniVlbnxCMNjS7DF9KrI4HJGH9yEBlFYXxXVgyNp2DjOgZFyU9rFKbQU6DpOP5rmfnr
+	lAPFwvsOqCsGLm6fVlB3qdb0/+yXRXZu1PD1DD+jkVKxlmiKaRqdOEhcIeVzHU/n08XS0Xrkot3Uj
+	FqdNa9MCZfRhtClZgC48dWWCv5AT6PJdLceSZ+uRMaAnM9tRc0nPJPCV8b0I260ZD8ws2LnIhcicG
+	qxVAvOAtaEQ/GItudmG8URDIFFOyORHnp93BjDNX9zNypdKWzRc8PSsSszkWihcPcwRgmFStRdp6n
+	uJh9M+7G2elHcHH18NWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Lpc-0002nA-TK; Thu, 13 Feb 2020 21:15:32 +0000
-Received: from mailoutvs18.siol.net ([185.57.226.209] helo=mail.siol.net)
+	id 1j2M7d-00085k-Tp; Thu, 13 Feb 2020 21:34:09 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Lox-00018X-0W
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 21:14:52 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTP id 13682522D11;
- Thu, 13 Feb 2020 22:14:44 +0100 (CET)
-X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id blpx3g2otjaM; Thu, 13 Feb 2020 22:14:43 +0100 (CET)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTPS id 934EC524CAB;
- Thu, 13 Feb 2020 22:14:43 +0100 (CET)
-Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
- [194.152.20.232]) (Authenticated sender: 031275009)
- by mail.siol.net (Zimbra) with ESMTPSA id DA1E9522D11;
- Thu, 13 Feb 2020 22:14:40 +0100 (CET)
-From: Jernej Skrabec <jernej.skrabec@siol.net>
-To: mripard@kernel.org,
-	wens@csie.org
-Subject: [PATCH 2/2] arm64: dts: allwinner: h6: Move ext. oscillator to board
- DTs
-Date: Thu, 13 Feb 2020 22:14:27 +0100
-Message-Id: <20200213211427.33004-3-jernej.skrabec@siol.net>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200213211427.33004-1-jernej.skrabec@siol.net>
-References: <20200213211427.33004-1-jernej.skrabec@siol.net>
+ id 1j2M7U-00085Q-I0
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 21:34:02 +0000
+Received: by mail-wr1-x441.google.com with SMTP id u6so8568822wrt.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Feb 2020 13:33:59 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=thrfidZEXfFD2ylg+vGXSjTreZQAX0NX3YGDxc6rNSg=;
+ b=pcr2ELWAOW3MYGXvvBfDBoRM3qbzHOybRv9WbmKycoQa37rKhRF10aLaXGi249l6iS
+ ARkoY8V3FMzw/a/h9madJHc0Au9LYSL85VXUMTMd39Ux9GuOkx8cxAUB7/ly5y5NzrNS
+ Tck0J2JXltDadRBBPPv7p6lc5sdxKWipFZLTdvv8O6Lp9sl+pVRdN+QxQ+wMLRaSvpJ+
+ WVgcBFgbH9SyinnWl/BU0T12s7qVNKVSNOutpswWaMNQEkfBKbFZXVDi3897bnNcPr2M
+ xfJqP+vS87iPr/LytrK/2SXbbpmD2qVbwKbospaYTl8FBXFjf+WuJdrpdYgcRsNTK95U
+ IY0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=thrfidZEXfFD2ylg+vGXSjTreZQAX0NX3YGDxc6rNSg=;
+ b=DOYZ4DFDUJEvbGLDLaGrL6yIE/YhF72t4mTj8In3gseuz2/5OdpWDOxl3DbmWViLnd
+ gq9J2xYoB+jqPH5Af2dSGr0q/7TOW2I7KfT2fCgm4ag1HhwnwsbmL9LyowTXpD9dP1Gb
+ tVDvF8syhrTo36OYzM8+sr8fZmznROIGE4FdzVCieHaEIQvTRk4jZUNtudukHPlF6nOW
+ mX0qJk6xAm9pxWiD/y4SziybzjEggdieU3MBPY4Ly9sp2I/qPsDQI3WmNHyi5nmlNUmO
+ oMaUfmBV9nfCzrqsUtjxQgHv6r8BfJz6hnl5VSgnQRLC7OI6abnqEsydX5og0ius4z07
+ bVEg==
+X-Gm-Message-State: APjAAAVXsM8crt3woySqPP43cN6UzevtY4lFb8cI7mXCh22HPMbLrWNi
+ YtBDTBr2o78Z3tND9wLW6e5TWykzKA1hVbtsLWrJSg==
+X-Google-Smtp-Source: APXvYqzr00y2DFZH5q6ouHgsRGIlUhbotdyNjCkLctIPWaycNmnAKQS7K2YoXX/AfBSCa4EPho4zGte6nnlUhEioJ/g=
+X-Received: by 2002:adf:fd8d:: with SMTP id d13mr8318827wrr.208.1581629638081; 
+ Thu, 13 Feb 2020 13:33:58 -0800 (PST)
 MIME-Version: 1.0
+References: <79b91017-b52a-8aff-4b9c-913ae655f7bf@wizzup.org>
+ <185CD173-C13C-4D56-B3DE-9A8D7784963C@goldelico.com>
+ <20200207163623.GA64767@atomide.com>
+ <da14d6bb-f241-2dd4-8e94-886217a40ed7@wizzup.org>
+ <20200207165344.GB64767@atomide.com>
+ <20200207170149.GC64767@atomide.com> <op.0fmv4jevhxa7s4@supervisor.net28>
+ <8a19bde5-f49f-ad58-3b3b-6df8a764f1f2@wizzup.org>
+In-Reply-To: <8a19bde5-f49f-ad58-3b3b-6df8a764f1f2@wizzup.org>
+From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Date: Thu, 13 Feb 2020 21:33:47 +0000
+Message-ID: <CAKv+Gu8Yh2Y5Rg6rVtL5zsm1CJhgRKjug3NW4j_uuuO+YhMzRA@mail.gmail.com>
+Subject: Re: Nokia N900 on 5.4 and 5.5
+To: Merlijn Wajer <merlijn@wizzup.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_131451_206742_B15DAF01 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200213_133400_604806_99CED97B 
+X-CRM114-Status: GOOD (  17.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.209 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,175 +96,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
- devicetree@vger.kernel.org, jernej.skrabec@siol.net,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
+Cc: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>,
+ Kees Cook <keescook@chromium.org>, Nicolas Pitre <nico@fluxnic.net>,
+ Tony Lindgren <tony@atomide.com>, "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ linux-omap <linux-omap@vger.kernel.org>, "Arthur D." <spinal.by@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It turns out that not all H6 boards have external 32kHz oscillator.
-Currently the only one known such H6 board is Tanix TX6.
+On Sat, 8 Feb 2020 at 02:48, Merlijn Wajer <merlijn@wizzup.org> wrote:
+>
+> Hi,
+>
+> On 07/02/2020 21:20, Arthur D. wrote:
+> > Hi.
+> >
+> > I was able to build linux-5.5 and run it on N900 with no problems.
+> > Even WiFi works, mmc0 is in place too. It seems you're doing something
+> > wrong.
+>
+> Well, I didn't try mmc0 on 5.5 (since it was also non-booting due to
+> issue below), so I will have to try that this weekend. The steps I
+> applied to build either kernels (5.1 with our patches, 5.4.18 and 5.5.2
+> are identical, except for the defconfig for our 5.1 branch)
+>
+> > Were you able to build linux-5.1 with your scripts and run it on the
+> > phone? I mean the pure linux-5.1 without configs and changes done
+> > in https://github.com/maemo-leste/n9xx-linux.
+> >
+> > BTW, I didn't find STACKPROTECTOR_PER_TASK option to be enabled in
+> > omap2plus_defconfig.
+>
+> Well, I can assure you it was turned on on my system after a
+> omap2plus_defconfig. I do run Gentoo Hardened on my daily systems, so
+> perhaps that somehow makes a difference in what defconfig is picked.
+>
+> Either way - the option is turned on by default after I make
+> omap2plus_defconfig, and it breaks appended DTB loading, so I hope we
+> can look at fixing that.
+>
 
-Move external oscillator node from common H6 dtsi to board specific dts
-files where present.
+The STACKPROTECTOR_PER_TASK Kconfig option is only selectable if the
+prerequisite GCC headers are found on your system which are needed to
+build GCC plugins.
 
-Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
----
- .../boot/dts/allwinner/sun50i-h6-beelink-gs1.dts      | 11 +++++++++++
- .../arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts | 11 +++++++++++
- arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi | 11 +++++++++++
- arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts  | 11 +++++++++++
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi          |  8 --------
- 5 files changed, 44 insertions(+), 8 deletions(-)
-
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts
-index df6d872c34e2..8f09d209359b 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-beelink-gs1.dts
-@@ -32,6 +32,13 @@ hdmi_con_in: endpoint {
- 		};
- 	};
- 
-+	ext_osc32k: ext_osc32k_clk {
-+		#clock-cells = <0>;
-+		compatible = "fixed-clock";
-+		clock-frequency = <32768>;
-+		clock-output-names = "ext_osc32k";
-+	};
-+
- 	leds {
- 		compatible = "gpio-leds";
- 
-@@ -275,6 +282,10 @@ &r_pio {
- 	vcc-pm-supply = <&reg_aldo1>;
- };
- 
-+&rtc {
-+	clocks = <&ext_osc32k>;
-+};
-+
- &spdif {
- 	status = "okay";
- };
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-index c311eee52a35..ca11e19c2d17 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-@@ -32,6 +32,13 @@ hdmi_con_in: endpoint {
- 		};
- 	};
- 
-+	ext_osc32k: ext_osc32k_clk {
-+		#clock-cells = <0>;
-+		compatible = "fixed-clock";
-+		clock-frequency = <32768>;
-+		clock-output-names = "ext_osc32k";
-+	};
-+
- 	leds {
- 		compatible = "gpio-leds";
- 
-@@ -276,6 +283,10 @@ &r_ir {
- 	status = "okay";
- };
- 
-+&rtc {
-+	clocks = <&ext_osc32k>;
-+};
-+
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_ph_pins>;
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi
-index 37f4c57597d4..37fc3f3697f7 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi.dtsi
-@@ -20,6 +20,13 @@ chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
- 
-+	ext_osc32k: ext_osc32k_clk {
-+		#clock-cells = <0>;
-+		compatible = "fixed-clock";
-+		clock-frequency = <32768>;
-+		clock-output-names = "ext_osc32k";
-+	};
-+
- 	leds {
- 		compatible = "gpio-leds";
- 
-@@ -197,6 +204,10 @@ &r_ir {
- 	status = "okay";
- };
- 
-+&rtc {
-+	clocks = <&ext_osc32k>;
-+};
-+
- &uart0 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart0_ph_pins>;
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
-index 3c9dd0d69754..b0642d841933 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64.dts
-@@ -21,6 +21,13 @@ chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
- 
-+	ext_osc32k: ext_osc32k_clk {
-+		#clock-cells = <0>;
-+		compatible = "fixed-clock";
-+		clock-frequency = <32768>;
-+		clock-output-names = "ext_osc32k";
-+	};
-+
- 	hdmi_connector: connector {
- 		compatible = "hdmi-connector";
- 		type = "a";
-@@ -279,6 +286,10 @@ &r_pio {
- 	vcc-pm-supply = <&reg_aldo1>;
- };
- 
-+&rtc {
-+	clocks = <&ext_osc32k>;
-+};
-+
- /*
-  * The CS pin is shared with the MMC2 CMD pin, so we cannot have the SPI
-  * flash and eMMC at the same time, as one of them would fail probing.
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-index 41b58ffa8596..3ad7c78e9c43 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-@@ -62,13 +62,6 @@ osc24M: osc24M_clk {
- 		clock-output-names = "osc24M";
- 	};
- 
--	ext_osc32k: ext_osc32k_clk {
--		#clock-cells = <0>;
--		compatible = "fixed-clock";
--		clock-frequency = <32768>;
--		clock-output-names = "ext_osc32k";
--	};
--
- 	pmu {
- 		compatible = "arm,cortex-a53-pmu",
- 			     "arm,armv8-pmuv3";
-@@ -855,7 +848,6 @@ rtc: rtc@7000000 {
- 			interrupts = <GIC_SPI 101 IRQ_TYPE_LEVEL_HIGH>,
- 				     <GIC_SPI 102 IRQ_TYPE_LEVEL_HIGH>;
- 			clock-output-names = "osc32k", "osc32k-out", "iosc";
--			clocks = <&ext_osc32k>;
- 			#clock-cells = <1>;
- 		};
- 
--- 
-2.25.0
-
+Is there any way you can enable early serial output one one of these
+boards, to see if you are making it through the decompressor all the
+way into the kernel?
 
 _______________________________________________
 linux-arm-kernel mailing list
