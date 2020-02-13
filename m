@@ -2,94 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8445615CAA2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 19:45:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3090815CAA6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 19:46:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IWtFJH+4ce62xSlMRLcxJGvI+DR5yPcD+s2GMJXphSg=; b=rlmqy9IFn9Covk
-	RDDCsWdlIXpRhzvAKQZoWibM2HSdiCWyf9vX6Aqkx9oaeXRO5cFpkSwxo5q0zywyB7HIlGaAJd98G
-	JDK+eNYCmeENamLknv7WBPa8ihVg7q/Ew3Lg+lKCEy2t194lcxqdSJSGUAePMrr/xBEi2fW7UL7JA
-	+QmM1/mihUTs3vZc/vcvXA+QeqNsMnXRqOF1DgVqNLdpA7b+Fa55vml1gbshA/bSLJg8VaL9qhEhD
-	NY3sdcxg/ex5WGxAiTUhiDbhBrtcQeIpXIrnsugHl+RFcWSLLSiW/ZxQLud/cp98TPOarHpt7MFj3
-	fwVP6eHUl6Lq2qTeG9LA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DfZmn0JOwNoiXetNCxllyLtMm5oy5dQ7nP2d3wKNhWM=; b=cD0L9KlsFyAz8A7bTG7yPnAho
+	10Y8HCf/ZntFTL9ndnQuitzgYgHN0EGgmIyZ8gf2uQC0PXfOGv1Gw66/sOmGQsgs5YfVSyehMlDsg
+	7dphrIwt9z+EvqU+yK9fDyyseHWgibRoBf0m4x4ouMlIahcCuXzdavMFCQdEURO2LKcOLZXh8CVDv
+	MCv023f+ZXwYhvja9b0fXYYsqZU5m4chSGmL2pRJ9TAvbHCj19KQLSNUgJGq8ahKAgiwRfobsjQrt
+	9TahpsNZz8N8buw+nQ1FaZyDAqtLbI4rs2wfzc16RHnYzhUM+b4/2kpkZFN+V9jkCFh8ov0QY8wKE
+	R9+yweBYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2JU9-0006uO-2q; Thu, 13 Feb 2020 18:45:13 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2JTt-0006u3-TW
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 18:44:59 +0000
-Received: by mail-oi1-x242.google.com with SMTP id a22so6795149oid.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 10:44:57 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=VMfn8PswbJmJdlO37QEJbyEduZmdzRHRACLwl4PEk8k=;
- b=rXsK2+iVg+xAfKgvi8EJ+xRiZDZt0bawe08UY4AzUK/QxcpXAUmYzPuw5Qe7XCMnPS
- tZmzuVkVUVXxEupPwU/YXXodbsdKtthv4T+BBBq8URGrUJ1o7hAfIh0Sd9dohGvv5EIQ
- f53iQUD4rXqVzeH6ddG3CL1x4L51BMbJzNbBLADFJYxR4/0bW/ybjDX/REtyW/700YaR
- 5oseD972Bfj3ZCtTInx+MQVCKJbE8Hka8ka9o7uuUqI5tAlVmhZ/zt5x5KcBppLqgUBF
- U6UrSKM3wIKl8sXU0LUGs+T/ABgd9EWNoteBxkwYi/Wo3FlcS8spkr8gU1uTDGoDHDgc
- O3jA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=VMfn8PswbJmJdlO37QEJbyEduZmdzRHRACLwl4PEk8k=;
- b=uCwCrYZ/xBpYlGMFHfDdJO1JV6X/u32BJKeLYrJjfWSpPFQZh/blzmoYPwvdClY6Fx
- mdADJMjHaoAPHZDU9GtQDyrALLsOR7apCvALEq+QSEsDDW+zOGpF1syez0QYs2B6a4t9
- 9maWZ7I39lbd0RHxmY6+tQAEAOPOi0k/TWgO1GbVNNbiYg/HX+b/UN/BuhM1eJhoug6h
- E0jNxjy+9d9Fj6otmCmC8AdpOPHqdEGaEi3EWfp8aEwdqjPryxZZbTVFTae4udj/wMrY
- qvHM902siWMtk5ys9FG2jguiNrYdAqsklYWCNME9+/k+evBhsZHexRPwTt6z7KwjIQzd
- n61g==
-X-Gm-Message-State: APjAAAXGQK/vQacfswNu9WqfPo0fOH0MBaV6DyPPCx2aS1svb/m3TbYj
- V8GpNodld05VJziyy5q5mHE=
-X-Google-Smtp-Source: APXvYqynTIfheT81Tmv6YGZbDN/SxN5IZ1aShJnYqGSRbGS5am4J0OAyqhZh6lHjOP9ROpiUTekYoA==
-X-Received: by 2002:a05:6808:218:: with SMTP id
- l24mr3689993oie.108.1581619496475; 
- Thu, 13 Feb 2020 10:44:56 -0800 (PST)
-Received: from ubuntu-m2-xlarge-x86 ([2604:1380:4111:8b00::1])
- by smtp.gmail.com with ESMTPSA id q5sm951383oia.21.2020.02.13.10.44.55
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Feb 2020 10:44:56 -0800 (PST)
-Date: Thu, 13 Feb 2020 11:44:54 -0700
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH 19/19] arm64: vdso32: Enable Clang Compilation
-Message-ID: <20200213184454.GA4663@ubuntu-m2-xlarge-x86>
-References: <20200213161614.23246-1-vincenzo.frascino@arm.com>
- <20200213161614.23246-20-vincenzo.frascino@arm.com>
+	id 1j2JVU-0008QA-W1; Thu, 13 Feb 2020 18:46:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2JVM-0008PG-LP
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 18:46:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0F84B328;
+ Thu, 13 Feb 2020 10:46:27 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 842C93F68E;
+ Thu, 13 Feb 2020 10:46:26 -0800 (PST)
+Date: Thu, 13 Feb 2020 18:46:25 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Adam Ford <aford173@gmail.com>
+Subject: Re: [PATCH V2 2/5] spi: fspi: dynamically alloc AHB memory
+Message-ID: <20200213184624.GK4333@sirena.org.uk>
+References: <20200202125950.1825013-1-aford173@gmail.com>
+ <20200202125950.1825013-2-aford173@gmail.com>
+ <CAOMZO5D3emrAk84wDS04qJC-3AyvFnqodhoMsXO-ukHnYsU+PQ@mail.gmail.com>
+ <CAHCN7xJyZRwJhnWW2mAbOeGyrMsB7Au_e6AvwiNmNS8gFUfSyw@mail.gmail.com>
+ <20200212120753.GF4028@sirena.org.uk>
+ <CAHCN7x+5bACfYVX49Lib+fmNq-dEOkcyi0gXt7rtYxrGaYbH1Q@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200213161614.23246-20-vincenzo.frascino@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <CAHCN7x+5bACfYVX49Lib+fmNq-dEOkcyi0gXt7rtYxrGaYbH1Q@mail.gmail.com>
+X-Cookie: Academicians care, that's who.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_104457_952337_E5B3CFB7 
-X-CRM114-Status: GOOD (  17.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200213_104628_745482_0FC7677F 
+X-CRM114-Status: GOOD (  11.26  )
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [natechancellor[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,77 +69,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, ndesaulniers@google.com, 0x7f454c46@gmail.com,
- avagin@openvz.org, arnd@arndb.de, sboyd@kernel.org, catalin.marinas@arm.com,
- x86@kernel.org, will.deacon@arm.com, linux-kernel@vger.kernel.org,
- linux-mips@vger.kernel.org, clang-built-linux@googlegroups.com,
- paul.burton@mips.com, mingo@redhat.com, bp@alien8.de, luto@kernel.org,
- linux@armlinux.org.uk, tglx@linutronix.de, salyzyn@android.com, pcc@google.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Ashish Kumar <ashish.kumar@nxp.com>,
+ linux-spi <linux-spi@vger.kernel.org>, Yogesh Gaur <yogeshgaur.83@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, Han Xu <han.xu@nxp.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============7075494164552252174=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 04:16:14PM +0000, Vincenzo Frascino wrote:
-> Enable Clang Compilation for the vdso32 library.
-> 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> ---
->  arch/arm64/kernel/vdso32/Makefile | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
-> index 04df57b43cb1..209639101044 100644
-> --- a/arch/arm64/kernel/vdso32/Makefile
-> +++ b/arch/arm64/kernel/vdso32/Makefile
-> @@ -11,8 +11,10 @@ include $(srctree)/lib/vdso/Makefile
->  # Same as cc-*option, but using CC_COMPAT instead of CC
->  ifeq ($(CONFIG_CC_IS_CLANG), y)
->  CC_COMPAT ?= $(CC)
-> +LD_COMPAT ?= $(CROSS_COMPILE_COMPAT)gcc
 
-Well this is unfortunate :/
+--===============7075494164552252174==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Ah40dssYA/cDqAW1"
+Content-Disposition: inline
 
-It looks like adding the --target flag to VDSO_LDFLAGS allows
-clang to link the vDSO just fine although it does warn that -nostdinc
-is unused:
 
-clang-11: warning: argument unused during compilation: '-nostdinc'
-[-Wunused-command-line-argument]
+--Ah40dssYA/cDqAW1
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-It would be nice if the logic of commit fe00e50b2db8 ("ARM: 8858/1:
-vdso: use $(LD) instead of $(CC) to link VDSO") could be adopted here
-but I get that this Makefile is its own beast :) at the very least, I
-think that the --target flag should be added to VDSO_LDFLAGS so that gcc
-is not a requirement for this but I am curious if you tried that already
-and noticed any issues with it.
+On Wed, Feb 12, 2020 at 07:08:49AM -0600, Adam Ford wrote:
 
-Cheers,
-Nathan
+> The original author was copied on the initial commit.  I literally
+> generated the patch from NXP's branch,  added my notes, and pushed
+> them to the mailing lists after testing them on the  the Linux master
+> branch.   I am a bit disappointed that NXP's author hasn't responded
+> to any of the comments or feedback.  NXP knows their hardware and
 
->  else
->  CC_COMPAT ?= $(CROSS_COMPILE_COMPAT)gcc
-> +LD_COMPAT ?= $(CC_COMPAT)
->  endif
->  
->  cc32-option = $(call try-run,\
-> @@ -171,7 +173,7 @@ quiet_cmd_vdsold_and_vdso_check = LD32    $@
->        cmd_vdsold_and_vdso_check = $(cmd_vdsold); $(cmd_vdso_check)
->  
->  quiet_cmd_vdsold = LD32    $@
-> -      cmd_vdsold = $(CC_COMPAT) -Wp,-MD,$(depfile) $(VDSO_LDFLAGS) \
-> +      cmd_vdsold = $(LD_COMPAT) -Wp,-MD,$(depfile) $(VDSO_LDFLAGS) \
->                     -Wl,-T $(filter %.lds,$^) $(filter %.o,$^) -o $@
->  quiet_cmd_vdsocc = CC32    $@
->        cmd_vdsocc = $(CC_COMPAT) -Wp,-MD,$(depfile) $(VDSO_CFLAGS) -c -o $@ $<
-> -- 
-> 2.25.0
-> 
+Bear in mind that it's been the spring festival and there's been quite a
+bit of delay in getting back to work in China resulting from coronavirus
+stuff so hopefully it's just a delay in replying.
+
+--Ah40dssYA/cDqAW1
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5FmYAACgkQJNaLcl1U
+h9BIJQf/YCuS+PbvoZjpzEq+oZbCnmY0R0BkFrp7Sc1PV9zHgjKqGmQAr9RVSeSI
+kfalZEPSUkUEpxgouX+I3VVvKPpQhDEhj46+y+IXYWH/Y0QA58bDv7ctWOhIBn+Q
+vW7iTl/+CHsJdTptylbI5K0TiVP3D5wDGbiym/rvAjIGpe7FXzd9WUteXNKeLJMy
+QmhJg6z+gAVwf/mYiyM03MRx1Gn1c5C/cMkan6s189g77et3avP4nEfKb6UyApgi
+FY+BqvQCyBK7OSErmJ7H+NpqM9Rq0b7xJLknFwbfOLTpqvG8iRhGzvQyNg3uPAqt
+aAm0o3dppPZAbuc4HFV4OF5n2YoGBA==
+=r4u7
+-----END PGP SIGNATURE-----
+
+--Ah40dssYA/cDqAW1--
+
+
+--===============7075494164552252174==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7075494164552252174==--
+
