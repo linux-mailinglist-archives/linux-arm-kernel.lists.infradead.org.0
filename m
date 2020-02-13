@@ -2,89 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7757715CD02
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 22:12:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DBB915CD0A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 22:15:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C2NYA94ia12n1qs+pLg/4wz6j+1r+AK5sUd6+GNLPSk=; b=gh6zLKDVTEECEc
-	nnPn26Mtfw681SKrrvi36auNvePDuODAsDitmhX++jNWoViowR15s2pTl0NTFk2G3EeWc2HgXL9OQ
-	I3gn/czGQBxI3h7CmergwXAPUtxm9/tNNlsWMAru/p6SPiotgrBHxkVqTEEg4NIsdujLwV0nSTSRn
-	lqIB3XFJCTNrcG5QsUQ1pJufe8lnApqytt57SKDpHxqPcyuoPJTIFv2X5hdD7Q7ukHklNTT+FncYz
-	afkxvYj01Xc1qY1hlcPc+0Bqrr+dlJ/VqhecdosiQigGqh9EPSOc1Aq3TjvlFyORU9AjH0ci9lHFC
-	eAgJ2v9ADK0+LHYHzDFw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=L0jHkXcSOFavDKDXRMezwUI9xkqxFNMFbnOhoAmxjdU=; b=Ol40KV7Inommh6
+	bPGKXHYHDK/Ddwhm7oBFerFOI0UpU+PrdIU6rEnPepwt1soXLvt7IJ2nfD6TQQwh7NuKlFgVMcer1
+	Oxp90zrTE9UNy9b1FrsXIMo8g0XUTrCflvQx86+Gihlw3u3f0Nx+D1pHls/B9LisqQbBTsRVUzOI2
+	DGiV5WuC/OLquOUO1sgaKvEvIOjPevpbxhlAt7myD84eI0GIEP/deYb2WTDclnRF/aRFR+1yAUGUt
+	hRfGvWgHjJ6FZjQg21RmFsugIBaxguhtnv8S9jEB9vjS1Kn3BNk956wb7K4HtrfQEBXLhvKHZ/K72
+	5Hozely44jMClBd2XqtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Lmu-0000kV-IT; Thu, 13 Feb 2020 21:12:44 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j2Lp3-0001A6-MJ; Thu, 13 Feb 2020 21:14:57 +0000
+Received: from mailoutvs42.siol.net ([185.57.226.233] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Lmm-0000jy-89
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 21:12:37 +0000
-Received: by mail-wr1-x443.google.com with SMTP id c9so8473497wrw.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 13:12:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=iLnuSGH6jNEPRpXsbLdWMvvm70on1OtXGRCIuCTYax4=;
- b=THiYYtRd1Hw9OOJtDh3m0bsQpuPbcL6D15Or8KKVQBdszixBwTMpdrWI1sdey73UL6
- OMnfWvyrWMTpxJtIWoOC3klZgu1IWrwgGpKzMr1l6YiTs0DTZmmHJJcXX96UNF87RkqM
- HIFVzoYj/EtPV4PceO73UE9E2E+l505vMkvdCLvqEdLKR6NepxAChTX8Ksv5A3MY10wx
- MRDdAInFdByqnE458Nnhm4UsbhvGkS+b6VwbMIinCdiLagqLPLJoH+eJrkk9PW7dAYay
- e6CshZ/C9jEucmAiBLXhWu3nU7PBF+CispXbP2m0DDejFGVPd1+CTDQtGHZ+f7WzC7Ag
- k7gQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=iLnuSGH6jNEPRpXsbLdWMvvm70on1OtXGRCIuCTYax4=;
- b=mZ/0mQsQnIJzL1veiS13Tp9NUqBbwzkRvP2VqY4l0Ken8PUf/KOsWpKQWynaIbv2dd
- IViUCS0aUzE4SLzNFfhCkfSCd/iAyLSMh8aZUA55Gwj/slQB4kKZ0XLcnndhpghGA429
- Ds3UDh85aC1eMgMqiUUvgqwGAEuHQX7Fkf5A5ynq48gMDKMbHW7Mj5VsNtGxgwr5zlCV
- C8HcAT3WEeGjSCw18czoxN2b28PMPnnMTNQuSQuryg2xEknwmGsdWYZ28OYZeYDfZFM7
- hdaZaLe9mQPHHVxVhgJzZq1BAUQh/gKwLdzWnCbwH95uuriS4GkpTVN50wtd638tAWrY
- QdRw==
-X-Gm-Message-State: APjAAAXAT85QmMTHh9leHGDH/vAU8g02bsKbro6oxP6COUx7V+VSFi1p
- C5xOSJpUgp3fVHVOkFyBocSbpOyJtb+/tvKXGsA=
-X-Google-Smtp-Source: APXvYqz2/8nyozAwb5c39LHVAvkkzIlzsIxS4KXcp3M3SHYFP+afkm8+EUw7r7XUouiqxTfEbIygo0weNf0szTqLQ0o=
-X-Received: by 2002:adf:ed09:: with SMTP id a9mr24147253wro.350.1581628354989; 
- Thu, 13 Feb 2020 13:12:34 -0800 (PST)
+ id 1j2Lot-00017t-16
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 21:14:49 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTP id 029C5524C0C;
+ Thu, 13 Feb 2020 22:14:38 +0100 (CET)
+X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id kdriWTPBAfgS; Thu, 13 Feb 2020 22:14:37 +0100 (CET)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Zimbra) with ESMTPS id 993CE524BFE;
+ Thu, 13 Feb 2020 22:14:37 +0100 (CET)
+Received: from localhost.localdomain (cpe-194-152-20-232.static.triera.net
+ [194.152.20.232]) (Authenticated sender: 031275009)
+ by mail.siol.net (Zimbra) with ESMTPSA id E013B522D11;
+ Thu, 13 Feb 2020 22:14:34 +0100 (CET)
+From: Jernej Skrabec <jernej.skrabec@siol.net>
+To: mripard@kernel.org,
+	wens@csie.org
+Subject: [PATCH 0/2] rtc: sun6i: Make external oscillator optional
+Date: Thu, 13 Feb 2020 22:14:25 +0100
+Message-Id: <20200213211427.33004-1-jernej.skrabec@siol.net>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-References: <20200210061544.7600-1-yuehaibing@huawei.com>
- <9351a746-8823-ee26-70da-fd3127a02c91@linux.intel.com>
- <be093793-3514-840a-ff2f-4dc21d8ee7f1@huawei.com>
- <CAEnQRZDWFgXocRJxtc2e7McRCAtod6-GwPJaVMdb4ymBZgSD1w@mail.gmail.com>
- <CAJKOXPcxL2vpWGwO1OL9Vv0g6hzbW-AyGJNn=7Yq2iy10_cbhg@mail.gmail.com>
-In-Reply-To: <CAJKOXPcxL2vpWGwO1OL9Vv0g6hzbW-AyGJNn=7Yq2iy10_cbhg@mail.gmail.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Thu, 13 Feb 2020 23:12:23 +0200
-Message-ID: <CAEnQRZBgpcLz29PG6pY_6xaULO6siGumqrsO0gRReMRwUOqW2w@mail.gmail.com>
-Subject: Re: [alsa-devel] [PATCH -next] ASoC: SOF: imx8: Fix randbuild error
-To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_131236_292429_9690D92C 
-X-CRM114-Status: GOOD (  23.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200213_131447_230882_CCF9BF3F 
+X-CRM114-Status: UNSURE (   7.20  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.233 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [daniel.baluta[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,98 +70,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Baluta <daniel.baluta@nxp.com>,
- Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Yuehaibing <yuehaibing@huawei.com>, Takashi Iwai <tiwai@suse.com>,
- Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
+ devicetree@vger.kernel.org, jernej.skrabec@siol.net,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 11, 2020 at 11:59 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> On Tue, 11 Feb 2020 at 10:46, Daniel Baluta <daniel.baluta@gmail.com> wrote:
-> >
-> > On Tue, Feb 11, 2020 at 3:59 AM Yuehaibing <yuehaibing@huawei.com> wrote:
-> > >
-> > > On 2020/2/11 5:00, Pierre-Louis Bossart wrote:
-> > > >
-> > > >
-> > > > On 2/10/20 12:15 AM, YueHaibing wrote:
-> > > >> when do randconfig like this:
-> > > >> CONFIG_SND_SOC_SOF_IMX8_SUPPORT=y
-> > > >> CONFIG_SND_SOC_SOF_IMX8=y
-> > > >> CONFIG_SND_SOC_SOF_OF=y
-> > > >> CONFIG_IMX_DSP=m
-> > > >> CONFIG_IMX_SCU=y
-> > > >>
-> > > >> there is a link error:
-> > > >>
-> > > >> sound/soc/sof/imx/imx8.o: In function 'imx8_send_msg':
-> > > >> imx8.c:(.text+0x380): undefined reference to 'imx_dsp_ring_doorbell'
-> > > >>
-> > > >> Select IMX_DSP in SND_SOC_SOF_IMX8_SUPPORT to fix this
-> > > >>
-> > > >> Reported-by: Hulk Robot <hulkci@huawei.com>
-> > > >> Fixes: f9ad75468453 ("ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF dependency")
-> > > >> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> > > >
-> > > > Thanks for the report.
-> > > >
-> > > > Would you mind sharing the .config and instructions to reproduce this case? we have an unrelated issue with allyesconfig that was reviewed here:
-> > > >
-> > > > https://github.com/thesofproject/linux/pull/1778
-> > > >
-> > > > and I'd probably a good thing to fix everything in one shot.
-> > >
-> > > config is attached, which is on x86_64
-> >
-> > Thanks, I think this is legit. It was introduced with:
-> >
-> > commit f52cdcce9197fef9d4a68792dd3b840ad2b77117
-> > Author: Daniel Baluta <daniel.baluta@nxp.com>
-> > Date:   Sat Jan 4 15:39:53 2020 +0000
-> >
-> >     firmware: imx: Allow IMX DSP to be selected as module
-> >
-> >     IMX DSP is only needed by SOF or any other module that
-> >     wants to communicate with the DSP. When SOF is build
-> >     as a module IMX DSP is forced to be built inside the
-> >     kernel image. This is not optimal, so allow IMX DSP
-> >     to be built as a module.
-> >
-> >     Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
-> >     Signed-off-by: Shawn Guo <shawnguo@kernel.org>
->
-> Hi,
->
-> Since it's a module, don't you just miss EXPORT_SYMBOL there?
->
-> > So, I think we should change the Fixes tag. Are there
-> > any clear rules on when to use select vs depends?
-> >
-> > On my side, I know what both are doing but it is not clear
-> > when to use them.
->
-> Visible symbols usually should not be selected. The same with symbols
-> with dependencies. The docs have this rule mentioned.
+This is implementation of idea discussed here:
+https://lore.kernel.org/linux-arm-kernel/20200117183901.lkieha3hu6nz2hoj@gilmour.lan/T/
 
-You mean if module X depends on module Y, we shouldn't use select?
-But this exactly what this patch does :).
+Part of first patch commit message:
 
-The problem here is that when X depends on Y, and X=y and Y=m
-when we try to compile X if get an error because we cannot find a symbol from Y.
+Some boards, like OrangePi PC2 (H5), OrangePi Plus 2E (H3) and Tanix TX6
+(H6) don't have external 32kHz oscillator. Till H6, it didn't really
+matter if external oscillator was enabled because HW detected error and
+fall back to internal one. H6 has same functionality but it's the first
+SoC which have "auto switch bypass" bit documented and always enabled in
+driver. This prevents RTC to work correctly if external crystal is not
+present on board. There are other side effects - all peripherals which
+depends on this clock also don't work (HDMI CEC for example).
 
-I think if X depends on Y, and X is forced to "y" then also Y should
-be forced on "y".
+In this series I fixed only H6 based boards since improper settings have
+real impact due to explicitly forbidden fallback to internal oscillator.
+Since most boards actually contain external oscillator, I wonder if it's
+better to leave external oscillator in common H6 dtsi and just delete
+clocks property in rtc node and ext. oscillator node in board dts file?
+
+What do you think?
+
+Best regards,
+Jernej
+
+Jernej Skrabec (2):
+  rtc: sun6i: Make external 32k oscillator optional
+  arm64: dts: allwinner: h6: Move ext. oscillator to board DTs
+
+ .../boot/dts/allwinner/sun50i-h6-beelink-gs1.dts   | 11 +++++++++++
+ .../boot/dts/allwinner/sun50i-h6-orangepi-3.dts    | 11 +++++++++++
+ .../boot/dts/allwinner/sun50i-h6-orangepi.dtsi     | 11 +++++++++++
+ .../boot/dts/allwinner/sun50i-h6-pine-h64.dts      | 11 +++++++++++
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi       |  8 --------
+ drivers/rtc/rtc-sun6i.c                            | 14 ++++++--------
+ 6 files changed, 50 insertions(+), 16 deletions(-)
+
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
