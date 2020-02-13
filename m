@@ -2,61 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4788615BE2B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 13:00:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 287F415BE30
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 13:01:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PO/uwP2s3rxwUqmO2IXCIvCukn0V5AkQ2Vjpxq5kng4=; b=NTJLtmCxlUMgT1
-	iY7RukLlreWr+q7nyRkzCLIU+7m9mMz0WN3he2/DpSmpSxk9iDaFtRzuc73Yba6vnPi96fsnz2eXA
-	pX8HVxyDpG9JxR/wnfqq9eeVRzH/GO7o0JeVFe1Vp3mXSHH3enLXqDUywjFcUbjEIFBpZPHPugF0L
-	VpupYZ4qBz9MlXWN7VkQM5pCH+if6UDE1o29NbXO15NcBCyoP4x7Y4DKxqNvNplXzCjuNiMw0CDx/
-	4fJLGeqWmDndPVOnZQhxyYp2qLRZ7AbN3vtHHU87xn8HogQ2wNDkfvaO1AzjpcjFUJvxzM+bRRGDu
-	Dv1p1TU0zun8z0O3ew4g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5sl5YXgrNE+sTCEnahUJixxVIhJ21GsHNQm73rsVT3g=; b=t4+vZVsdwsYq85
+	OBq6qaPRy07fuQiyduNCZ1IX1UD0dkbP4yzUGS20P9REEcV5M2L5ZQzIIUfoo8HsZwhXRKRzEGGN1
+	8Sw3PBPAR8f6iE5rmRVZpEd4aBzTE9PYm2vNHVAPCGjhzC733MJmID7yqdiNqvaHsXZBJaiL0ljmh
+	usTh8HVQKPtoxnsohuBcgXelxrb3Gs9b4h9uKAYaTkNOhcLjsb+8mE11sY/bdCSue66/Jm3wfM0Fm
+	inaUhahJPwmW0Xz01R4HDXIupr1TlH6CWMwy3yPD/BH5ZWKYgXMS23Nt5IcB8TjgwkXrHNq1bh1Hf
+	UXTY2SbaIK7GrkdcAURw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2DAT-00038j-Lr; Thu, 13 Feb 2020 12:00:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2DAG-0002Lu-JH
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 12:00:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EB8D61FB;
- Thu, 13 Feb 2020 04:00:02 -0800 (PST)
-Received: from [10.1.195.59] (ifrit.cambridge.arm.com [10.1.195.59])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E1AA03F6CF;
- Thu, 13 Feb 2020 04:00:00 -0800 (PST)
-Subject: Re: [PATCH v3 5/7] cpufreq: add function to get the hardware max
- frequency
-To: Ionela Voinescu <ionela.voinescu@arm.com>, catalin.marinas@arm.com,
- will@kernel.org, mark.rutland@arm.com, maz@kernel.org,
- suzuki.poulose@arm.com, sudeep.holla@arm.com, lukasz.luba@arm.com,
- rjw@rjwysocki.net
-References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-6-ionela.voinescu@arm.com>
-From: Valentin Schneider <valentin.schneider@arm.com>
-Message-ID: <b63a4a47-99e5-9c71-73be-740aedde4714@arm.com>
-Date: Thu, 13 Feb 2020 11:59:56 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1j2DBW-0003Sh-2m; Thu, 13 Feb 2020 12:01:34 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2DBH-0003Rb-Ij; Thu, 13 Feb 2020 12:01:21 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 8D7602950AB
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH] drm/mediatek: Update the fb property
+ mtk_plane_atomic_async_update
+Date: Thu, 13 Feb 2020 13:01:03 +0100
+Message-Id: <20200213120103.823501-1-enric.balletbo@collabora.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-In-Reply-To: <20200211184542.29585-6-ionela.voinescu@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_040016_683695_7B9238AA 
-X-CRM114-Status: GOOD (  12.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200213_040119_754565_2536B978 
+X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,43 +58,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, peterz@infradead.org, viresh.kumar@linaro.org,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, mingo@redhat.com,
+Cc: drinkcat@chromium.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ CK Hu <ck.hu@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>, hsinyi@chromium.org,
+ matthias.bgg@gmail.com, Daniel Vetter <daniel@ffwll.ch>,
+ Collabora Kernel ML <kernel@collabora.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/11/20 6:45 PM, Ionela Voinescu wrote:
-> +/**
-> + * cpufreq_get_hw_max_freq - get the max hardware frequency of the CPU
-> + * @cpu: CPU number
-> + *
-> + * The default return value is the max_freq field of cpuinfo.
-> + */
-> +__weak unsigned int cpufreq_get_hw_max_freq(unsigned int cpu)
-> +{
-> +	struct cpufreq_policy *policy = cpufreq_cpu_get(cpu);
-> +	unsigned int ret_freq = 0;
-> +
-> +	if (policy) {
-> +		ret_freq = policy->cpuinfo.max_freq;
-> +		cpufreq_cpu_put(policy);
+Commit 920fffcc8912 ("drm/mediatek: update cursors by using async atomic
+update") added support to async updates of cursors by using the new atomic
+interface for that. Unfortunately, introduced two issues. The first one is
+that since then, the drm_atomic_helper_async_commit triggers a WARNING due
+current fb is not the new fb. The second one, is that we get a black screen
+connecting the external display on Elm device and another WARNING due vblank
+wait timed out.
 
-What about intel_pstate / turbo stuff? IIRC one of Giovanni's issues was that
-turbo freq is not always reported as the max freq. Dunno if we can do
-anything about it; at the very least maybe document the caveat?
+Swap the fb in mtk_plane_atomic_async_update to fix both issues.
 
-> +	}
-> +
-> +	return ret_freq;
-> +}
-> +EXPORT_SYMBOL(cpufreq_get_hw_max_freq);
-> +
->  static unsigned int __cpufreq_get(struct cpufreq_policy *policy)
->  {
->  	if (unlikely(policy_is_inactive(policy)))
+Fixes: 920fffcc8912 ("drm/mediatek: update cursors by using async atomic update")
+Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+---
+
+ drivers/gpu/drm/mediatek/mtk_drm_plane.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+index 914cc7619cd7..7eb10115e72a 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+@@ -116,6 +116,7 @@ static void mtk_plane_atomic_async_update(struct drm_plane *plane,
+ 	plane->state->src_h = new_state->src_h;
+ 	plane->state->src_w = new_state->src_w;
+ 	state->pending.async_dirty = true;
++	swap(plane->state->fb, new_state->fb);
+ 
+ 	mtk_drm_crtc_async_update(new_state->crtc, plane, new_state);
+ }
+-- 
+2.25.0
 
 
 _______________________________________________
