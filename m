@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F0E915C8E7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 17:54:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A7B815C8E8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 17:54:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ooF9JeORS8eY/OIkrbQw54NCoSDeEPJvXujMy/Iviv4=; b=DfHN+2G+G6SDh6
-	6rNNRQpuQ9X1j4uLGvgv/2zvepEF6PGF3cZzCYD4gBCxO9HXzbrrJMa/s8XlYav56N9E1CrR/EYIL
-	1SpcKNay+BpD/OEG/l9DdE6vbmi/lE5ynSj/eOpCsyecV2c3wILbyA4vVe4nBSgrlfVe00cQ3laoz
-	VuR907vPJRafIRZXEtfBGncHTd8r5IXQaDJMLSqQTp+zn1pj7d88scrRCZbtZTCC0GmZtMpvjYacd
-	apuNoK+RBd+JjAHGW21EQ+9/RGes++K+Ksng1fyrThHzNlcQ1wCz3CNQwZNcbbAUQ8NqR5G7Muql+
-	berVtPFb973GoVQzdQ5g==;
+	List-Owner; bh=7pXk9HzLUFA/g8j8YopmTuQZGYPWnx9tPD6MQyDK42g=; b=JtkXXjEZ6IRWLP
+	5wjkUnYpnTZ/aznqaExgzVnR8ok+DFO44YIbS1gAbEKEePtAN5A6E07kJhxGSQfgXhyY+8jW1KvIj
+	tZSLZItKaMpUbpq1z0qL9D/AAhBCv9QXPYQ/uYRsvuN5uS2lZSoYCWhGz7umkXnJg3+iSIR9ywsUl
+	wF2CDPiQ9aoah3GEGsNmIyiC9AnM09A6hAOtJygHQHYzFV9p2dMhlG+rlXuG0/PRaq35aRzlKlHdq
+	9czObz3VvOBFZqAjMGbYNFWzeEu4/8sC3IWM1GRora+UhcYI4mHlt74NZvkDyEYZ9im2xkgyK4lCZ
+	L+yJKgLlqLnbPag1Bujw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Hke-0007ZD-Li; Thu, 13 Feb 2020 16:54:08 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1j2Hkr-0007ot-1j; Thu, 13 Feb 2020 16:54:21 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Hio-0005uq-4T
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 16:52:15 +0000
-Received: by mail-wm1-x343.google.com with SMTP id a9so7544813wmj.3
+ id 1j2Hip-0005vj-BR
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 16:52:16 +0000
+Received: by mail-wm1-x344.google.com with SMTP id b17so7570208wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 08:52:13 -0800 (PST)
+ Thu, 13 Feb 2020 08:52:14 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=U26fffvgwp71+SNBZes7kN68yqENzqleBMzpKeSvYfk=;
- b=Iz+vmyg7ylIYn6p7q9yd68KiPD4WwU9BkBaQerkI2NZdwzP5RRGj2wGHMVtCtezAPj
- u9bwehyH/NAlF9xyvFYYt9G82ostbC0FdUsO6U9xm/GVk0pYppfITCABiL8OFgK4KdC2
- VSZYeLfzQQvXfnC5qPGdZHw1KHNVOQSizYQ6Pgc6n8542Kng0v8keVX+xH1LbP7xSSpg
- uIi6TMeDA0Kv/w5GdtWY083xSiqHItXR9sT7EPm3ixtOzf66CJlPNnc4N/CWisrWmkjI
- Ybt5zO3XS7dRVC8RKFKepqhMG7zvG3xAiFjhjBL1ATOBv5o4hB54Wk8Nh2QMNFzB8P5f
- ppFw==
+ bh=0vxAgnwgCi5tQ5T4tG4I38wvW8TUR4SKTYQ5b+iyeZ4=;
+ b=rI28DsCSktD93OGWztli5kHgpw2K88deSfarovudDtCGLfZder9iNg0E10dhs9fZpk
+ eFTsc3Fn6EAr9ouNGbiVBRkKPPK69q7RPGGtMBnyQCpqnyYvLAyAZqdIG/GIsLmqRzzi
+ 12LIcEDQwvb3OQl7giRwQQNgiq+VK/5XXRBsF1abm2y1vArf+0wGRt0YpzwOshhxB9zM
+ Ix4415qok1sXN1TmaKBbTV/JM8kQC5iCIQJ1JAAK2NX29bDiYAkyRr6OEhmiVI8n9MLc
+ mqbryRMGESOmDUg+tOlIH5s27bZYFv0z5XJC5YvNUltOxU5Eij2jAeBJnEveZ7p4bVI3
+ Dzyg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=U26fffvgwp71+SNBZes7kN68yqENzqleBMzpKeSvYfk=;
- b=IPnwGXwflFzuRyHhILDmLGCgecP1lU5VIATFczd5iTlIIK7AVcFXW9kRVLZ/OIq0uR
- 06PJhiBhBZluurSiMxVfabOa0TP239wo4bVWQt411AtQxSwHQZJGOuJQ+cnYfXcLLOpu
- hIrdDSDi1xBUhYhGfXO2ntuAILmm3njwN5tMaKq86HXobjz2AOA18Ncw/IbpFkmiOLKY
- gt1WbA7bNDpfV8sn7u6lryOrhsZJ0PckPJ9200ovFhrRa7fNOEdGtP6fUuJp7erBChbK
- 2YOQdgG6ccy7Lp9ivU5hCoFcPR9nCFMBkccT1CpyPVcbRoCKGegcWCXRsimg+Q9i79Rz
- XFdw==
-X-Gm-Message-State: APjAAAWrADU0uSKiiM53VkyH9hp4SLHUjbU635ahlt/VAVP3QeEn+CNf
- yH0XLypOto+Rd+jg5xnzrQhwFg==
-X-Google-Smtp-Source: APXvYqwEOVyFHf6MJNfobIBMxCR5I4cYgsgZ8hgKlRwEfXmjyl79QF77D1oEmVHeHNVbhhjKa0kvHw==
-X-Received: by 2002:a7b:cc81:: with SMTP id p1mr6550304wma.62.1581612732115;
- Thu, 13 Feb 2020 08:52:12 -0800 (PST)
+ bh=0vxAgnwgCi5tQ5T4tG4I38wvW8TUR4SKTYQ5b+iyeZ4=;
+ b=c/X+rxdzy3ypkW8jdWmZvgiJuAASxE7jo88ICdMvU3PwmUL6zWmqqyMsAYqf0zQZRV
+ it5IAm3h8bPlhLbBCdi3teRKHxoM3/5hpZuirU4UFR+ahPUFrxO9xHVx2UmOwq0O247J
+ CCrgbjvY2Td/sFQgLHj6mcEpPtFWrBo8nE7RGRyRFVNMFVcpeNG9b4cWrk/zEBqLbx0e
+ 2fyTnG6A9iGAKXBU+4rXrqzDblPheY/3LyAZ4RXvGWwjakRBGHxVwqbs4cIidEm3gRIa
+ CbJSTLtePe3QFTomNC2Za7Z5kWZhmsRtugAuzkb87L1+GmQAE9PCgPcT0xIL71Ibya6S
+ o+nQ==
+X-Gm-Message-State: APjAAAXYIrNbZDlz9mudZjV2dqafUec7xwqVmaT//QJ5GmEnLkrNFCoZ
+ U7eRhNCA2nE5RaMv3wgIMP2jvA==
+X-Google-Smtp-Source: APXvYqya188D5MEbRkey+kBb9V0Qc0uxPc2c2lngtBX0mBG9/xBeCp7D0V/fZbJc3uSzBYe3p4UBoQ==
+X-Received: by 2002:a7b:c5d9:: with SMTP id n25mr7111336wmk.65.1581612733245; 
+ Thu, 13 Feb 2020 08:52:13 -0800 (PST)
 Received: from localhost.localdomain ([2001:171b:2276:930:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id y6sm3484807wrl.17.2020.02.13.08.52.10
+ by smtp.gmail.com with ESMTPSA id y6sm3484807wrl.17.2020.02.13.08.52.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 13 Feb 2020 08:52:11 -0800 (PST)
+ Thu, 13 Feb 2020 08:52:12 -0800 (PST)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: bhelgaas@google.com, will@kernel.org, robh+dt@kernel.org,
  lorenzo.pieralisi@arm.com, joro@8bytes.org, baolu.lu@linux.intel.com,
  linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org
-Subject: [PATCH 07/11] iommu/arm-smmu-v3: Use pci_ats_supported()
-Date: Thu, 13 Feb 2020 17:50:45 +0100
-Message-Id: <20200213165049.508908-8-jean-philippe@linaro.org>
+Subject: [PATCH 08/11] iommu/vt-d: Use pci_ats_supported()
+Date: Thu, 13 Feb 2020 17:50:46 +0100
+Message-Id: <20200213165049.508908-9-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200213165049.508908-1-jean-philippe@linaro.org>
 References: <20200213165049.508908-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_085214_243006_E20EAD24 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20200213_085215_421151_8B0C53DD 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,48 +109,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The new pci_ats_supported() function checks if a device supports ATS and
-is allowed to use it.
+The pci_ats_supported() function checks if a device supports ATS and is
+allowed to use it.
 
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 18 +++---------------
- 1 file changed, 3 insertions(+), 15 deletions(-)
+ drivers/iommu/intel-iommu.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 034ad9671b83..bd2cfd946a36 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -2577,26 +2577,14 @@ static void arm_smmu_install_ste_for_dev(struct arm_smmu_master *master)
- 	}
- }
+diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
+index 9dc37672bf89..668f1b99111b 100644
+--- a/drivers/iommu/intel-iommu.c
++++ b/drivers/iommu/intel-iommu.c
+@@ -1449,8 +1449,7 @@ static void iommu_enable_dev_iotlb(struct device_domain_info *info)
+ 	    !pci_reset_pri(pdev) && !pci_enable_pri(pdev, 32))
+ 		info->pri_enabled = 1;
+ #endif
+-	if (!pdev->untrusted && info->ats_supported &&
+-	    pci_ats_page_aligned(pdev) &&
++	if (info->ats_supported && pci_ats_page_aligned(pdev) &&
+ 	    !pci_enable_ats(pdev, VTD_PAGE_SHIFT)) {
+ 		info->ats_enabled = 1;
+ 		domain_update_iotlb(info->domain);
+@@ -2611,10 +2610,8 @@ static struct dmar_domain *dmar_insert_one_dev_info(struct intel_iommu *iommu,
+ 	if (dev && dev_is_pci(dev)) {
+ 		struct pci_dev *pdev = to_pci_dev(info->dev);
  
--#ifdef CONFIG_PCI_ATS
- static bool arm_smmu_ats_supported(struct arm_smmu_master *master)
- {
--	struct pci_dev *pdev;
-+	struct device *dev = master->dev;
- 	struct arm_smmu_device *smmu = master->smmu;
--	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(master->dev);
--
--	if (!(smmu->features & ARM_SMMU_FEAT_ATS) || !dev_is_pci(master->dev) ||
--	    !(fwspec->flags & IOMMU_FWSPEC_PCI_RC_ATS) || pci_ats_disabled())
--		return false;
+-		if (!pdev->untrusted &&
+-		    !pci_ats_disabled() &&
+-		    ecap_dev_iotlb_support(iommu->ecap) &&
+-		    pci_find_ext_capability(pdev, PCI_EXT_CAP_ID_ATS) &&
++		if (ecap_dev_iotlb_support(iommu->ecap) &&
++		    pci_ats_supported(pdev) &&
+ 		    dmar_find_matched_atsr_unit(pdev))
+ 			info->ats_supported = 1;
  
--	pdev = to_pci_dev(master->dev);
--	return !pdev->untrusted && pdev->ats_cap;
-+	return (smmu->features & ARM_SMMU_FEAT_ATS) && dev_is_pci(dev) &&
-+		pci_ats_supported(to_pci_dev(dev));
- }
--#else
--static bool arm_smmu_ats_supported(struct arm_smmu_master *master)
--{
--	return false;
--}
--#endif
- 
- static void arm_smmu_enable_ats(struct arm_smmu_master *master)
- {
 -- 
 2.25.0
 
