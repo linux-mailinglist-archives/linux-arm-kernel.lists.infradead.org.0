@@ -2,61 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09EB515B9C3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 07:49:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9CB915B9DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 08:03:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=WoYN5wg19S6dQgvPgit+mz8iOAb8Tv0SL/D4uFgvjZg=; b=gPq
-	iY2EJP7OafTNSXo4NjzMoRgMq6B2ki2KlheK9GzFrcUTqkWx1g5Xb3SiLUvOn4AtJkNTk1SwLG3bs
-	HddmywqbpZYHLMlBBw6U3w1M7tVKJiGDYDzRWs0uP6DCy3xstjnMmsekSFZdjqNd3UJLXc+apm0gC
-	DjRdZg+Ewm/CNtVP6vDwhNey7HmTaIgZ04hqOXPnTG79/h0fuqFkyEhDAhnsu54wdxJFYnPEbi7DA
-	6Ptg3busCqKzmtEFT0znATuV6eGlS3iOxAdTCLP2EU7AikjHrhqKFugBWqROKQxQJDoU2aItLMFtq
-	/mbZEatv85GBhRj8N4VfArtNV53rzOQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7hqGgTzGeOHkuB5TsV/TmvO3YYD7QbdYqlPnzmZshgg=; b=MS/jbXPXqwVMhu
+	m/2OZSTvXeDsT/gz8qSpP9jxZYMjT2tkUhLN3J015ev7siCruYUkA6+Kt84BpDGaPZ4IVPA4PTCca
+	RjxvFHoJej6Ko2dKqVhUIV5gHewrQj5pIsz5gqm/hE1gZeJvl8ZMgLr6M7AgNOVT90BLfNfjX8hJY
+	17wCrUBoRHLFLd2X3zROP7ehF1DyNBTdoOidDqVI05RZFMgNpA4zTyXB5RZVyQUB4iQU0Pa4G3PO2
+	8sS8WRUEjUkomHLlEuPJVDuvkd/6IYrsQ2AuLtjuYrEfsGqr7Kqmgw2jWRBvqSYdNSP+Qq8/pYAVO
+	hh0HhqFZAyJVQqk7nPhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j28Iz-0001iC-BT; Thu, 13 Feb 2020 06:48:57 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j28XH-0006oT-Ew; Thu, 13 Feb 2020 07:03:43 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j28Ir-0001hd-7U
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 06:48:51 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B95D3205268;
- Thu, 13 Feb 2020 07:48:45 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8BB8D226483;
- Thu, 13 Feb 2020 07:48:39 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id D1E5340297;
- Thu, 13 Feb 2020 14:48:32 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] ARM: dts: imx6sx: Add missing uart mux function
-Date: Thu, 13 Feb 2020 14:43:09 +0800
-Message-Id: <1581576189-20490-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1j28XA-0006ni-6S
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 07:03:38 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01D72dkA002664; Thu, 13 Feb 2020 08:03:29 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=Qyy1L07BH1L5Cv6RE/nYDx0PsDCpdtrPRXQEdj+m4fE=;
+ b=o09ULSGD+CcV+4iKCcMhTcL7Ep4ROC0d06xhuD3NVK7lyYdDeIQmVTnLVWp1sltstFxx
+ UvuKWy5gjqwdLL87rd2YpzObmqFNXEIjDMEnSM8cAp9sY9LpvNcywHEqmWYj8mLb01W7
+ U7SRs6tdQwQzZFSxKz15bJQdIqsANeeuPWQxwcXTT7O+Lad9vcykvyeLOFUDhnbxHUFN
+ jMw/r9IrKBWZ9/QgWOPSKxkmRC1F0iJcC3hv4FWtnDtBlzKbR3ZEhUv/ExFi85rQxtky
+ dv2aZ4Uq20saaF2yXmBpNASRNsyJMfOSh/6gYNrEvKB61NfIsHxCGTYEyJ/5l2HD0rkE 6w== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2y1ufhka9d-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 13 Feb 2020 08:03:29 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BC795100038;
+ Thu, 13 Feb 2020 08:03:28 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag4node1.st.com [10.75.127.10])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 78ED821FE84;
+ Thu, 13 Feb 2020 08:03:28 +0100 (CET)
+Received: from SFHDAG5NODE3.st.com (10.75.127.15) by SFHDAG4NODE1.st.com
+ (10.75.127.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 13 Feb
+ 2020 08:03:27 +0100
+Received: from SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47]) by
+ SFHDAG5NODE3.st.com ([fe80::7c09:5d6b:d2c7:5f47%20]) with mapi id
+ 15.00.1473.003; Thu, 13 Feb 2020 08:03:27 +0100
+From: Christophe ROULLIER <christophe.roullier@st.com>
+To: David Miller <davem@davemloft.net>
+Subject: Re: [PATCH 1/1] net: ethernet: stmmac: simplify phy modes management
+ for stm32
+Thread-Topic: [PATCH 1/1] net: ethernet: stmmac: simplify phy modes management
+ for stm32
+Thread-Index: AQHV1pIW1y791lwjMUusjpFyRZvewKgDJNKAgBWUnwA=
+Date: Thu, 13 Feb 2020 07:03:27 +0000
+Message-ID: <643e23a7-131f-f801-d3e7-280f211589dd@st.com>
+References: <20200128083942.17823-1-christophe.roullier@st.com>
+ <20200129.115131.1101786807458791369.davem@davemloft.net>
+ <05adc7cc-19cb-7e6e-f6df-07ec8f5e841f@st.com>
+In-Reply-To: <05adc7cc-19cb-7e6e-f6df-07ec8f5e841f@st.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.46]
+Content-ID: <A7CFD59FA7949A47B1C3DAC66BD19033@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-13_01:2020-02-12,
+ 2020-02-13 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_224849_554584_7969E479 
-X-CRM114-Status: UNSURE (   5.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200212_230336_728351_228E1666 
+X-CRM114-Status: GOOD (  14.48  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,239 +109,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "joabreu@synopsys.com" <joabreu@synopsys.com>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ Peppe CAVALLARO <peppe.cavallaro@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Anson Huang <b20788@freescale.com>
-
-Update i.MX6SX pinfunc header to add uart mux function.
-
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm/boot/dts/imx6sx-pinfunc.h | 26 ++++++++++++++++++++++++++
- 1 file changed, 26 insertions(+)
-
-diff --git a/arch/arm/boot/dts/imx6sx-pinfunc.h b/arch/arm/boot/dts/imx6sx-pinfunc.h
-index aa194a2..df9a6c5 100644
---- a/arch/arm/boot/dts/imx6sx-pinfunc.h
-+++ b/arch/arm/boot/dts/imx6sx-pinfunc.h
-@@ -66,6 +66,7 @@
- #define MX6SX_PAD_GPIO1_IO06__ENET2_MDC                           0x002C 0x0374 0x0000 0x2 0x0
- #define MX6SX_PAD_GPIO1_IO06__CSI1_MCLK                           0x002C 0x0374 0x0000 0x3 0x0
- #define MX6SX_PAD_GPIO1_IO06__UART1_RTS_B                         0x002C 0x0374 0x082C 0x4 0x0
-+#define MX6SX_PAD_GPIO1_IO06__UART1_CTS_B                         0x002C 0x0374 0x0000 0x4 0x0
- #define MX6SX_PAD_GPIO1_IO06__GPIO1_IO_6                          0x002C 0x0374 0x0000 0x5 0x0
- #define MX6SX_PAD_GPIO1_IO06__SRC_ANY_PU_RESET                    0x002C 0x0374 0x0000 0x6 0x0
- #define MX6SX_PAD_GPIO1_IO06__OCOTP_CTRL_WRAPPER_FUSE_LATCHED     0x002C 0x0374 0x0000 0x7 0x0
-@@ -75,6 +76,7 @@
- #define MX6SX_PAD_GPIO1_IO07__ENET2_MDIO                          0x0030 0x0378 0x0770 0x2 0x0
- #define MX6SX_PAD_GPIO1_IO07__AUDMUX_MCLK                         0x0030 0x0378 0x0000 0x3 0x0
- #define MX6SX_PAD_GPIO1_IO07__UART1_CTS_B                         0x0030 0x0378 0x0000 0x4 0x0
-+#define MX6SX_PAD_GPIO1_IO07__UART1_RTS_B                         0x0030 0x0378 0x082C 0x4 0x1
- #define MX6SX_PAD_GPIO1_IO07__GPIO1_IO_7                          0x0030 0x0378 0x0000 0x5 0x0
- #define MX6SX_PAD_GPIO1_IO07__SRC_EARLY_RESET                     0x0030 0x0378 0x0000 0x6 0x0
- #define MX6SX_PAD_GPIO1_IO07__DCIC2_OUT                           0x0030 0x0378 0x0000 0x7 0x0
-@@ -84,6 +86,7 @@
- #define MX6SX_PAD_GPIO1_IO08__SDMA_EXT_EVENT_0                    0x0034 0x037C 0x081C 0x2 0x0
- #define MX6SX_PAD_GPIO1_IO08__CCM_PMIC_RDY                        0x0034 0x037C 0x069C 0x3 0x1
- #define MX6SX_PAD_GPIO1_IO08__UART2_RTS_B                         0x0034 0x037C 0x0834 0x4 0x0
-+#define MX6SX_PAD_GPIO1_IO08__UART2_CTS_B                         0x0034 0x037C 0x0000 0x4 0x0
- #define MX6SX_PAD_GPIO1_IO08__GPIO1_IO_8                          0x0034 0x037C 0x0000 0x5 0x0
- #define MX6SX_PAD_GPIO1_IO08__SRC_SYSTEM_RESET                    0x0034 0x037C 0x0000 0x6 0x0
- #define MX6SX_PAD_GPIO1_IO08__DCIC1_OUT                           0x0034 0x037C 0x0000 0x7 0x0
-@@ -93,6 +96,7 @@
- #define MX6SX_PAD_GPIO1_IO09__SDMA_EXT_EVENT_1                    0x0038 0x0380 0x0820 0x2 0x0
- #define MX6SX_PAD_GPIO1_IO09__CCM_OUT0                            0x0038 0x0380 0x0000 0x3 0x0
- #define MX6SX_PAD_GPIO1_IO09__UART2_CTS_B                         0x0038 0x0380 0x0000 0x4 0x0
-+#define MX6SX_PAD_GPIO1_IO09__UART2_RTS_B                         0x0038 0x0380 0x0834 0x4 0x1
- #define MX6SX_PAD_GPIO1_IO09__GPIO1_IO_9                          0x0038 0x0380 0x0000 0x5 0x0
- #define MX6SX_PAD_GPIO1_IO09__SRC_INT_BOOT                        0x0038 0x0380 0x0000 0x6 0x0
- #define MX6SX_PAD_GPIO1_IO09__OBSERVE_MUX_OUT_4                   0x0038 0x0380 0x0000 0x7 0x0
-@@ -200,6 +204,7 @@
- #define MX6SX_PAD_CSI_DATA06__I2C4_SCL                            0x0064 0x03AC 0x07C0 0x2 0x2
- #define MX6SX_PAD_CSI_DATA06__KPP_COL_7                           0x0064 0x03AC 0x07D0 0x3 0x0
- #define MX6SX_PAD_CSI_DATA06__UART6_RTS_B                         0x0064 0x03AC 0x0854 0x4 0x0
-+#define MX6SX_PAD_CSI_DATA06__UART6_CTS_B                         0x0064 0x03AC 0x0000 0x4 0x0
- #define MX6SX_PAD_CSI_DATA06__GPIO1_IO_20                         0x0064 0x03AC 0x0000 0x5 0x0
- #define MX6SX_PAD_CSI_DATA06__WEIM_DATA_17                        0x0064 0x03AC 0x0000 0x6 0x0
- #define MX6SX_PAD_CSI_DATA06__DCIC2_OUT                           0x0064 0x03AC 0x0000 0x7 0x0
-@@ -210,6 +215,7 @@
- #define MX6SX_PAD_CSI_DATA07__I2C4_SDA                            0x0068 0x03B0 0x07C4 0x2 0x2
- #define MX6SX_PAD_CSI_DATA07__KPP_ROW_7                           0x0068 0x03B0 0x07DC 0x3 0x0
- #define MX6SX_PAD_CSI_DATA07__UART6_CTS_B                         0x0068 0x03B0 0x0000 0x4 0x0
-+#define MX6SX_PAD_CSI_DATA07__UART6_RTS_B                         0x0068 0x03B0 0x0854 0x4 0x1
- #define MX6SX_PAD_CSI_DATA07__GPIO1_IO_21                         0x0068 0x03B0 0x0000 0x5 0x0
- #define MX6SX_PAD_CSI_DATA07__WEIM_DATA_16                        0x0068 0x03B0 0x0000 0x6 0x0
- #define MX6SX_PAD_CSI_DATA07__DCIC1_OUT                           0x0068 0x03B0 0x0000 0x7 0x0
-@@ -219,6 +225,7 @@
- #define MX6SX_PAD_CSI_HSYNC__ESAI_TX0                             0x006C 0x03B4 0x0790 0x1 0x1
- #define MX6SX_PAD_CSI_HSYNC__AUDMUX_AUD6_TXD                      0x006C 0x03B4 0x0678 0x2 0x1
- #define MX6SX_PAD_CSI_HSYNC__UART4_RTS_B                          0x006C 0x03B4 0x0844 0x3 0x2
-+#define MX6SX_PAD_CSI_HSYNC__UART4_CTS_B                          0x006C 0x03B4 0x0000 0x3 0x0
- #define MX6SX_PAD_CSI_HSYNC__MQS_LEFT                             0x006C 0x03B4 0x0000 0x4 0x0
- #define MX6SX_PAD_CSI_HSYNC__GPIO1_IO_22                          0x006C 0x03B4 0x0000 0x5 0x0
- #define MX6SX_PAD_CSI_HSYNC__WEIM_DATA_25                         0x006C 0x03B4 0x0000 0x6 0x0
-@@ -251,6 +258,7 @@
- #define MX6SX_PAD_CSI_VSYNC__ESAI_TX5_RX0                         0x0078 0x03C0 0x07A4 0x1 0x1
- #define MX6SX_PAD_CSI_VSYNC__AUDMUX_AUD6_RXD                      0x0078 0x03C0 0x0674 0x2 0x1
- #define MX6SX_PAD_CSI_VSYNC__UART4_CTS_B                          0x0078 0x03C0 0x0000 0x3 0x0
-+#define MX6SX_PAD_CSI_VSYNC__UART4_RTS_B                          0x0078 0x03C0 0x0844 0x3 0x3
- #define MX6SX_PAD_CSI_VSYNC__MQS_RIGHT                            0x0078 0x03C0 0x0000 0x4 0x0
- #define MX6SX_PAD_CSI_VSYNC__GPIO1_IO_25                          0x0078 0x03C0 0x0000 0x5 0x0
- #define MX6SX_PAD_CSI_VSYNC__WEIM_DATA_24                         0x0078 0x03C0 0x0000 0x6 0x0
-@@ -353,6 +361,7 @@
- #define MX6SX_PAD_ENET2_RX_CLK__ENET2_REF_CLK_25M                 0x009C 0x03E4 0x0000 0x1 0x0
- #define MX6SX_PAD_ENET2_RX_CLK__I2C3_SCL                          0x009C 0x03E4 0x07B8 0x2 0x1
- #define MX6SX_PAD_ENET2_RX_CLK__UART1_RTS_B                       0x009C 0x03E4 0x082C 0x3 0x2
-+#define MX6SX_PAD_ENET2_RX_CLK__UART1_CTS_B                       0x009C 0x03E4 0x0000 0x3 0x0
- #define MX6SX_PAD_ENET2_RX_CLK__MLB_DATA                          0x009C 0x03E4 0x07EC 0x4 0x1
- #define MX6SX_PAD_ENET2_RX_CLK__GPIO2_IO_8                        0x009C 0x03E4 0x0000 0x5 0x0
- #define MX6SX_PAD_ENET2_RX_CLK__USB_OTG2_OC                       0x009C 0x03E4 0x085C 0x6 0x1
-@@ -363,6 +372,7 @@
- #define MX6SX_PAD_ENET2_TX_CLK__ENET2_REF_CLK2                    0x00A0 0x03E8 0x076C 0x1 0x1
- #define MX6SX_PAD_ENET2_TX_CLK__I2C3_SDA                          0x00A0 0x03E8 0x07BC 0x2 0x1
- #define MX6SX_PAD_ENET2_TX_CLK__UART1_CTS_B                       0x00A0 0x03E8 0x0000 0x3 0x0
-+#define MX6SX_PAD_ENET2_TX_CLK__UART1_RTS_B                       0x00A0 0x03E8 0x082C 0x3 0x3
- #define MX6SX_PAD_ENET2_TX_CLK__MLB_CLK                           0x00A0 0x03E8 0x07E8 0x4 0x1
- #define MX6SX_PAD_ENET2_TX_CLK__GPIO2_IO_9                        0x00A0 0x03E8 0x0000 0x5 0x0
- #define MX6SX_PAD_ENET2_TX_CLK__USB_OTG2_PWR                      0x00A0 0x03E8 0x0000 0x6 0x0
-@@ -372,6 +382,7 @@
- #define MX6SX_PAD_KEY_COL0__KPP_COL_0                             0x00A4 0x03EC 0x0000 0x0 0x0
- #define MX6SX_PAD_KEY_COL0__USDHC3_CD_B                           0x00A4 0x03EC 0x0000 0x1 0x0
- #define MX6SX_PAD_KEY_COL0__UART6_RTS_B                           0x00A4 0x03EC 0x0854 0x2 0x2
-+#define MX6SX_PAD_KEY_COL0__UART6_CTS_B                           0x00A4 0x03EC 0x0000 0x2 0x0
- #define MX6SX_PAD_KEY_COL0__ECSPI1_SCLK                           0x00A4 0x03EC 0x0710 0x3 0x0
- #define MX6SX_PAD_KEY_COL0__AUDMUX_AUD5_TXC                       0x00A4 0x03EC 0x066C 0x4 0x0
- #define MX6SX_PAD_KEY_COL0__GPIO2_IO_10                           0x00A4 0x03EC 0x0000 0x5 0x0
-@@ -390,6 +401,7 @@
- #define MX6SX_PAD_KEY_COL2__KPP_COL_2                             0x00AC 0x03F4 0x0000 0x0 0x0
- #define MX6SX_PAD_KEY_COL2__USDHC4_CD_B                           0x00AC 0x03F4 0x0874 0x1 0x1
- #define MX6SX_PAD_KEY_COL2__UART5_RTS_B                           0x00AC 0x03F4 0x084C 0x2 0x2
-+#define MX6SX_PAD_KEY_COL2__UART5_CTS_B                           0x00AC 0x03F4 0x0000 0x2 0x0
- #define MX6SX_PAD_KEY_COL2__CAN1_TX                               0x00AC 0x03F4 0x0000 0x3 0x0
- #define MX6SX_PAD_KEY_COL2__CANFD_TX1                             0x00AC 0x03F4 0x0000 0x4 0x0
- #define MX6SX_PAD_KEY_COL2__GPIO2_IO_12                           0x00AC 0x03F4 0x0000 0x5 0x0
-@@ -415,6 +427,7 @@
- #define MX6SX_PAD_KEY_ROW0__KPP_ROW_0                             0x00B8 0x0400 0x0000 0x0 0x0
- #define MX6SX_PAD_KEY_ROW0__USDHC3_WP                             0x00B8 0x0400 0x0000 0x1 0x0
- #define MX6SX_PAD_KEY_ROW0__UART6_CTS_B                           0x00B8 0x0400 0x0000 0x2 0x0
-+#define MX6SX_PAD_KEY_ROW0__UART6_RTS_B                           0x00B8 0x0400 0x0854 0x2 0x3
- #define MX6SX_PAD_KEY_ROW0__ECSPI1_MOSI                           0x00B8 0x0400 0x0718 0x3 0x0
- #define MX6SX_PAD_KEY_ROW0__AUDMUX_AUD5_TXD                       0x00B8 0x0400 0x0660 0x4 0x0
- #define MX6SX_PAD_KEY_ROW0__GPIO2_IO_15                           0x00B8 0x0400 0x0000 0x5 0x0
-@@ -434,6 +447,7 @@
- #define MX6SX_PAD_KEY_ROW2__KPP_ROW_2                             0x00C0 0x0408 0x0000 0x0 0x0
- #define MX6SX_PAD_KEY_ROW2__USDHC4_WP                             0x00C0 0x0408 0x0878 0x1 0x1
- #define MX6SX_PAD_KEY_ROW2__UART5_CTS_B                           0x00C0 0x0408 0x0000 0x2 0x0
-+#define MX6SX_PAD_KEY_ROW2__UART5_RTS_B                           0x00C0 0x0408 0x084C 0x2 0x3
- #define MX6SX_PAD_KEY_ROW2__CAN1_RX                               0x00C0 0x0408 0x068C 0x3 0x1
- #define MX6SX_PAD_KEY_ROW2__CANFD_RX1                             0x00C0 0x0408 0x0694 0x4 0x1
- #define MX6SX_PAD_KEY_ROW2__GPIO2_IO_17                           0x00C0 0x0408 0x0000 0x5 0x0
-@@ -816,6 +830,7 @@
- #define MX6SX_PAD_NAND_DATA04__USDHC2_DATA4                       0x0160 0x04A8 0x0000 0x1 0x0
- #define MX6SX_PAD_NAND_DATA04__QSPI2_B_SS1_B                      0x0160 0x04A8 0x0000 0x2 0x0
- #define MX6SX_PAD_NAND_DATA04__UART3_RTS_B                        0x0160 0x04A8 0x083C 0x3 0x0
-+#define MX6SX_PAD_NAND_DATA04__UART3_CTS_B                        0x0160 0x04A8 0x0000 0x3 0x0
- #define MX6SX_PAD_NAND_DATA04__AUDMUX_AUD4_RXFS                   0x0160 0x04A8 0x0650 0x4 0x0
- #define MX6SX_PAD_NAND_DATA04__GPIO4_IO_8                         0x0160 0x04A8 0x0000 0x5 0x0
- #define MX6SX_PAD_NAND_DATA04__WEIM_AD_4                          0x0160 0x04A8 0x0000 0x6 0x0
-@@ -826,6 +841,7 @@
- #define MX6SX_PAD_NAND_DATA05__USDHC2_DATA5                       0x0164 0x04AC 0x0000 0x1 0x0
- #define MX6SX_PAD_NAND_DATA05__QSPI2_B_DQS                        0x0164 0x04AC 0x0000 0x2 0x0
- #define MX6SX_PAD_NAND_DATA05__UART3_CTS_B                        0x0164 0x04AC 0x0000 0x3 0x0
-+#define MX6SX_PAD_NAND_DATA05__UART3_RTS_B                        0x0164 0x04AC 0x083C 0x3 0x1
- #define MX6SX_PAD_NAND_DATA05__AUDMUX_AUD4_RXC                    0x0164 0x04AC 0x064C 0x4 0x0
- #define MX6SX_PAD_NAND_DATA05__GPIO4_IO_9                         0x0164 0x04AC 0x0000 0x5 0x0
- #define MX6SX_PAD_NAND_DATA05__WEIM_AD_5                          0x0164 0x04AC 0x0000 0x6 0x0
-@@ -968,6 +984,7 @@
- #define MX6SX_PAD_QSPI1A_SS1_B__SDMA_DEBUG_PC_3                   0x019C 0x04E4 0x0000 0x9 0x0
- #define MX6SX_PAD_QSPI1B_DATA0__QSPI1_B_DATA_0                    0x01A0 0x04E8 0x0000 0x0 0x0
- #define MX6SX_PAD_QSPI1B_DATA0__UART3_CTS_B                       0x01A0 0x04E8 0x0000 0x1 0x0
-+#define MX6SX_PAD_QSPI1B_DATA0__UART3_RTS_B                       0x01A0 0x04E8 0x083C 0x1 0x4
- #define MX6SX_PAD_QSPI1B_DATA0__ECSPI3_MOSI                       0x01A0 0x04E8 0x0738 0x2 0x1
- #define MX6SX_PAD_QSPI1B_DATA0__ESAI_RX_FS                        0x01A0 0x04E8 0x0778 0x3 0x2
- #define MX6SX_PAD_QSPI1B_DATA0__CSI1_DATA_22                      0x01A0 0x04E8 0x06F4 0x4 0x1
-@@ -976,6 +993,7 @@
- #define MX6SX_PAD_QSPI1B_DATA0__SIM_M_HADDR_9                     0x01A0 0x04E8 0x0000 0x7 0x0
- #define MX6SX_PAD_QSPI1B_DATA1__QSPI1_B_DATA_1                    0x01A4 0x04EC 0x0000 0x0 0x0
- #define MX6SX_PAD_QSPI1B_DATA1__UART3_RTS_B                       0x01A4 0x04EC 0x083C 0x1 0x5
-+#define MX6SX_PAD_QSPI1B_DATA1__UART3_CTS_B                       0x01A4 0x04EC 0x0000 0x1 0x0
- #define MX6SX_PAD_QSPI1B_DATA1__ECSPI3_MISO                       0x01A4 0x04EC 0x0734 0x2 0x1
- #define MX6SX_PAD_QSPI1B_DATA1__ESAI_RX_CLK                       0x01A4 0x04EC 0x0788 0x3 0x2
- #define MX6SX_PAD_QSPI1B_DATA1__CSI1_DATA_21                      0x01A4 0x04EC 0x06F0 0x4 0x1
-@@ -1247,6 +1265,7 @@
- #define MX6SX_PAD_SD1_DATA2__PWM3_OUT                             0x0230 0x0578 0x0000 0x2 0x0
- #define MX6SX_PAD_SD1_DATA2__GPT_COMPARE2                         0x0230 0x0578 0x0000 0x3 0x0
- #define MX6SX_PAD_SD1_DATA2__UART2_CTS_B                          0x0230 0x0578 0x0000 0x4 0x0
-+#define MX6SX_PAD_SD1_DATA2__UART2_RTS_B                          0x0230 0x0578 0x0834 0x4 0x2
- #define MX6SX_PAD_SD1_DATA2__GPIO6_IO_4                           0x0230 0x0578 0x0000 0x5 0x0
- #define MX6SX_PAD_SD1_DATA2__ECSPI4_RDY                           0x0230 0x0578 0x0000 0x6 0x0
- #define MX6SX_PAD_SD1_DATA2__CCM_OUT0                             0x0230 0x0578 0x0000 0x7 0x0
-@@ -1256,6 +1275,7 @@
- #define MX6SX_PAD_SD1_DATA3__AUDMUX_AUD5_RXD                      0x0234 0x057C 0x065C 0x2 0x2
- #define MX6SX_PAD_SD1_DATA3__GPT_COMPARE3                         0x0234 0x057C 0x0000 0x3 0x0
- #define MX6SX_PAD_SD1_DATA3__UART2_RTS_B                          0x0234 0x057C 0x0834 0x4 0x3
-+#define MX6SX_PAD_SD1_DATA3__UART2_CTS_B                          0x0234 0x057C 0x0000 0x4 0x0
- #define MX6SX_PAD_SD1_DATA3__GPIO6_IO_5                           0x0234 0x057C 0x0000 0x5 0x0
- #define MX6SX_PAD_SD1_DATA3__ECSPI4_SS1                           0x0234 0x057C 0x0000 0x6 0x0
- #define MX6SX_PAD_SD1_DATA3__CCM_PMIC_RDY                         0x0234 0x057C 0x069C 0x7 0x2
-@@ -1326,6 +1346,7 @@
- #define MX6SX_PAD_SD2_DATA3__MMDC_DEBUG_31                        0x024C 0x0594 0x0000 0x9 0x0
- #define MX6SX_PAD_SD3_CLK__USDHC3_CLK                             0x0250 0x0598 0x0000 0x0 0x0
- #define MX6SX_PAD_SD3_CLK__UART4_CTS_B                            0x0250 0x0598 0x0000 0x1 0x0
-+#define MX6SX_PAD_SD3_CLK__UART4_RTS_B                            0x0250 0x0598 0x0844 0x1 0x0
- #define MX6SX_PAD_SD3_CLK__ECSPI4_SCLK                            0x0250 0x0598 0x0740 0x2 0x0
- #define MX6SX_PAD_SD3_CLK__AUDMUX_AUD6_RXFS                       0x0250 0x0598 0x0680 0x3 0x0
- #define MX6SX_PAD_SD3_CLK__LCDIF2_VSYNC                           0x0250 0x0598 0x0000 0x4 0x0
-@@ -1365,6 +1386,7 @@
- #define MX6SX_PAD_SD3_DATA1__SDMA_DEBUG_EVT_CHN_LINES_1           0x025C 0x05A4 0x0000 0x9 0x0
- #define MX6SX_PAD_SD3_DATA2__USDHC3_DATA2                         0x0260 0x05A8 0x0000 0x0 0x0
- #define MX6SX_PAD_SD3_DATA2__UART4_RTS_B                          0x0260 0x05A8 0x0844 0x1 0x1
-+#define MX6SX_PAD_SD3_DATA2__UART4_CTS_B                          0x0260 0x05A8 0x0000 0x1 0x0
- #define MX6SX_PAD_SD3_DATA2__ECSPI4_SS0                           0x0260 0x05A8 0x074C 0x2 0x0
- #define MX6SX_PAD_SD3_DATA2__AUDMUX_AUD6_TXFS                     0x0260 0x05A8 0x0688 0x3 0x0
- #define MX6SX_PAD_SD3_DATA2__LCDIF2_CLK                           0x0260 0x05A8 0x0000 0x4 0x0
-@@ -1410,6 +1432,7 @@
- #define MX6SX_PAD_SD3_DATA6__CAN2_TX                              0x0270 0x05B8 0x0000 0x1 0x0
- #define MX6SX_PAD_SD3_DATA6__CANFD_TX2                            0x0270 0x05B8 0x0000 0x2 0x0
- #define MX6SX_PAD_SD3_DATA6__UART3_RTS_B                          0x0270 0x05B8 0x083C 0x3 0x2
-+#define MX6SX_PAD_SD3_DATA6__UART3_CTS_B                          0x0270 0x05B8 0x0000 0x3 0x0
- #define MX6SX_PAD_SD3_DATA6__LCDIF2_DATA_4                        0x0270 0x05B8 0x0000 0x4 0x0
- #define MX6SX_PAD_SD3_DATA6__GPIO7_IO_8                           0x0270 0x05B8 0x0000 0x5 0x0
- #define MX6SX_PAD_SD3_DATA6__ENET1_1588_EVENT0_OUT                0x0270 0x05B8 0x0000 0x6 0x0
-@@ -1420,6 +1443,7 @@
- #define MX6SX_PAD_SD3_DATA7__CAN1_RX                              0x0274 0x05BC 0x068C 0x1 0x0
- #define MX6SX_PAD_SD3_DATA7__CANFD_RX1                            0x0274 0x05BC 0x0694 0x2 0x0
- #define MX6SX_PAD_SD3_DATA7__UART3_CTS_B                          0x0274 0x05BC 0x0000 0x3 0x0
-+#define MX6SX_PAD_SD3_DATA7__UART3_RTS_B                          0x0274 0x05BC 0x083C 0x3 0x3
- #define MX6SX_PAD_SD3_DATA7__LCDIF2_DATA_5                        0x0274 0x05BC 0x0000 0x4 0x0
- #define MX6SX_PAD_SD3_DATA7__GPIO7_IO_9                           0x0274 0x05BC 0x0000 0x5 0x0
- #define MX6SX_PAD_SD3_DATA7__ENET1_1588_EVENT0_IN                 0x0274 0x05BC 0x0000 0x6 0x0
-@@ -1511,6 +1535,7 @@
- #define MX6SX_PAD_SD4_DATA6__USDHC4_DATA6                         0x0298 0x05E0 0x0000 0x0 0x0
- #define MX6SX_PAD_SD4_DATA6__RAWNAND_CE3_B                        0x0298 0x05E0 0x0000 0x1 0x0
- #define MX6SX_PAD_SD4_DATA6__UART5_RTS_B                          0x0298 0x05E0 0x084C 0x2 0x0
-+#define MX6SX_PAD_SD4_DATA6__UART5_CTS_B                          0x0298 0x05E0 0x0000 0x2 0x0
- #define MX6SX_PAD_SD4_DATA6__ECSPI3_MISO                          0x0298 0x05E0 0x0734 0x3 0x0
- #define MX6SX_PAD_SD4_DATA6__LCDIF2_DATA_6                        0x0298 0x05E0 0x0000 0x4 0x0
- #define MX6SX_PAD_SD4_DATA6__GPIO6_IO_20                          0x0298 0x05E0 0x0000 0x5 0x0
-@@ -1521,6 +1546,7 @@
- #define MX6SX_PAD_SD4_DATA7__USDHC4_DATA7                         0x029C 0x05E4 0x0000 0x0 0x0
- #define MX6SX_PAD_SD4_DATA7__RAWNAND_DATA08                       0x029C 0x05E4 0x0000 0x1 0x0
- #define MX6SX_PAD_SD4_DATA7__UART5_CTS_B                          0x029C 0x05E4 0x0000 0x2 0x0
-+#define MX6SX_PAD_SD4_DATA7__UART5_RTS_B                          0x029C 0x05E4 0x084C 0x2 0x1
- #define MX6SX_PAD_SD4_DATA7__ECSPI3_SS0                           0x029C 0x05E4 0x073C 0x3 0x0
- #define MX6SX_PAD_SD4_DATA7__LCDIF2_DATA_15                       0x029C 0x05E4 0x0000 0x4 0x0
- #define MX6SX_PAD_SD4_DATA7__GPIO6_IO_21                          0x029C 0x05E4 0x0000 0x5 0x0
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+R2VudGxlIHJlbWluZGVyDQoNClRoYW5rcw0KDQpPbiAxLzMwLzIwIDI6MjkgUE0sIENocmlzdG9w
+aGUgUk9VTExJRVIgd3JvdGU6DQo+IE9uIDEvMjkvMjAgMTE6NTEgQU0sIERhdmlkIE1pbGxlciB3
+cm90ZToNCj4+IEZyb206IENocmlzdG9waGUgUm91bGxpZXIgPGNocmlzdG9waGUucm91bGxpZXJA
+c3QuY29tPg0KPj4gRGF0ZTogVHVlLCAyOCBKYW4gMjAyMCAwOTozOTo0MiArMDEwMA0KPj4NCj4+
+PiBObyBuZXcgZmVhdHVyZSwganVzdCB0byBzaW1wbGlmeSBzdG0zMiBwYXJ0IHRvIGJlIGVhc2ll
+ciB0byB1c2UuDQo+Pj4gQWRkIGJ5IGRlZmF1bHQgYWxsIEV0aGVybmV0IGNsb2NrcyBpbiBEVCwg
+YW5kIGFjdGl2YXRlIG9yIG5vdCBpbiANCj4+PiBmdW5jdGlvbg0KPj4+IG9mIHBoeSBtb2RlLCBj
+bG9jayBmcmVxdWVuY3ksIGlmIHByb3BlcnR5ICJzdCxleHQtcGh5Y2xrIiBpcyBzZXQgb3IgDQo+
+Pj4gbm90Lg0KPj4+IEtlZXAgYmFja3dhcmQgY29tcGF0aWJpbGl0eQ0KPj4+IC0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tDQo+Pj4gfFBIWV9NT0RFIHwgTm9ybWFsIHwgUEhZIHdvIGNyeXN0YWx8wqDCoCBQSFkgd28g
+Y3J5c3RhbMKgwqAgfMKgIE5vIDEyNU1oesKgIHwNCj4+PiB8wqDCoMKgwqDCoMKgwqDCoCB8wqDC
+oMKgwqDCoMKgwqAgfMKgwqDCoMKgwqAgMjVNSHrCoMKgwqAgfMKgwqDCoMKgwqDCoMKgIDUwTUh6
+wqDCoMKgwqDCoMKgIHwgZnJvbSBQSFnCoMKgIHwNCj4+PiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KPj4+IHzC
+oCBNSUnCoMKgwqAgfMKgwqDCoMKgIC3CoMKgwqAgfMKgwqDCoMKgIGV0aC1ja8KgwqDCoCB8wqDC
+oMKgwqDCoMKgIG4vYSB8wqDCoMKgwqDCoMKgwqAgbi9hwqAgfA0KPj4+IHzCoMKgwqDCoMKgwqDC
+oMKgIHzCoMKgwqDCoMKgwqDCoCB8IHN0LGV4dC1waHljbGsgfCB8wqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgIHwNCj4+PiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQ0KPj4+IHzCoCBHTUlJwqDCoCB8wqDCoMKgwqAg
+LcKgwqDCoCB8wqDCoMKgwqAgZXRoLWNrwqDCoMKgIHzCoMKgwqDCoMKgwqAgbi9hIHzCoMKgwqDC
+oMKgwqDCoCBuL2HCoCB8DQo+Pj4gfMKgwqDCoMKgwqDCoMKgwqAgfMKgwqDCoMKgwqDCoMKgIHwg
+c3QsZXh0LXBoeWNsayB8IHzCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfA0KPj4+IC0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tDQo+Pj4gfCBSR01JScKgwqAgfMKgwqDCoMKgIC3CoMKgwqAgfMKgwqDCoMKgIGV0aC1j
+a8KgwqDCoCB8wqDCoMKgwqDCoMKgIG4vYSB8wqDCoMKgwqDCoCBldGgtY2vCoCB8DQo+Pj4gfMKg
+wqDCoMKgwqDCoMKgwqAgfMKgwqDCoMKgwqDCoMKgIHwgc3QsZXh0LXBoeWNsayB8IHxzdCxldGgt
+Y2xrLXNlbHwNCj4+PiB8wqDCoMKgwqDCoMKgwqDCoCB8wqDCoMKgwqDCoMKgwqAgfMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgfCB8wqDCoMKgwqDCoMKgIG9ywqDCoMKgwqAgfA0KPj4+IHzC
+oMKgwqDCoMKgwqDCoMKgIHzCoMKgwqDCoMKgwqDCoCB8wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCB8wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfCANCj4+PiBzdCxl
+eHQtcGh5Y2xrfA0KPj4+IC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSANCj4+Pg0KPj4+IHwgUk1JScKgwqDCoCB8
+wqDCoMKgwqAgLcKgwqDCoCB8wqDCoMKgwqAgZXRoLWNrwqDCoMKgIHzCoMKgwqDCoMKgIGV0aC1j
+ayB8wqDCoMKgwqDCoMKgwqDCoCBuL2HCoCB8DQo+Pj4gfMKgwqDCoMKgwqDCoMKgwqAgfMKgwqDC
+oMKgwqDCoMKgIHwgc3QsZXh0LXBoeWNsayB8IHN0LGV0aC1yZWYtY2xrLXNlbCANCj4+PiB8wqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfA0KPj4+IHzCoMKgwqDCoMKgwqDCoMKgIHzCoMKgwqDC
+oMKgwqDCoCB8wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8IG9yIHN0LGV4dC1waHljbGsg
+fMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHwNCj4+PiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gDQo+Pj4N
+Cj4+Pg0KPj4+IFNpZ25lZC1vZmYtYnk6IENocmlzdG9waGUgUm91bGxpZXIgPGNocmlzdG9waGUu
+cm91bGxpZXJAc3QuY29tPg0KPj4gSWYgYW55dGhpbmcsIHRoaXMgaXMgbW9yZSBvZiBhIGNsZWFu
+dXAsIGFuZCB0aGVyZWZvcmUgb25seSANCj4+IGFwcHJvcHJpYXRlIGZvcg0KPj4gbmV0LW5leHQg
+d2hlbiBpdCBvcGVucyBiYWNrIHVwLg0KPiBUaGFua3MgRGF2aWQsIEl0IGlzIG5vdCB1cmdlbnQs
+IGRvIHlvdSB3YW50IHRoYXQgSSByZS1wdXNoIGl0IHdpdGggDQo+ICJQQVRDSCBuZXQgbmV4dCIg
+PwpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
