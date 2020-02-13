@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71C9215CC69
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:32:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D26F15CC70
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:35:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2adsKgR3xHjw45wDBGecwy/XuJmZ6azopncg24lqniw=; b=P1abJuBsZO1V3S
-	PyRBDfv9yH/voU0q5Yaq0DhHkrAikERlU1rNVeWiDXvoaEb+pHsMaXVYgN7IdoWQrn1UhuzeaxNnU
-	7ylPWsWa1ipsVq4+xvfTMrD59OqHYgcdczGKtOReOFB9Qy6avsCfi7B1J1hXMDSmWsGuDBY59s4aG
-	RuiyiY3JibNFoomnAi4UfVckkNcB/iL73FsWgm7in/Zu+AMAfIQPxeUYPaLnIpL1yI49wSzAgDUvB
-	L/mjXUfih1tomiYssxCsqOhmawroJ2L4oDAfR4PL4eIHgg3oMGddrnog270rXobR9eKiYFJUaW/hP
-	fGerKB4TAnrLuUDQlzVA==;
+	List-Owner; bh=QF87S1Jc//nTDKRN8nnW+UJYNTx1qaqi2j8zRx8IBs8=; b=Msa39TVsp5Mklh
+	HhFw1Vztt8WL/0rq9+bzJsZuGOCi7yGPZdeZkK/JSQcnzZ6zGVoUxMs5+msK/qBxySUwfoKVQvEb/
+	cdHBomVnOs7SjeRRNnDemj3m8eoSdg+kH0+D4Qf7N6Vavt0+d5cxXOlUr2i9GViBUDnt1D20HdeSO
+	D70BkwXp/rrhV+24iJABCvL7mx8FrNki6jN/SeEl+eQ4+7C4wlxxm8NLjhmwCbCtzGtx0fw/YQl6G
+	vc3voi4oZZ5gzCUw0kCbY/xdUO0eO2cBMC0d0BFV62+aEVAMoi2X8iVN2TmvVbV11PyhvZ96VQDMt
+	e9yS3iLbQAkJGFpDOHTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2L9m-0000Tn-0O; Thu, 13 Feb 2020 20:32:18 +0000
+	id 1j2LCm-0002MR-9U; Thu, 13 Feb 2020 20:35:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2L9f-0000TP-CP
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 20:32:12 +0000
-Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com
- [209.85.222.181])
+ id 1j2LCd-0002Lc-GY
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 20:35:17 +0000
+Received: from mail-qt1-f180.google.com (mail-qt1-f180.google.com
+ [209.85.160.180])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D00D022314
+ by mail.kernel.org (Postfix) with ESMTPSA id 0E7F424650
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 20:32:10 +0000 (UTC)
+ Thu, 13 Feb 2020 20:35:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581625931;
- bh=s6hNakGk8DlI2Hml+xfexVBE89u4vI8XO7PqrZIAoig=;
+ s=default; t=1581626115;
+ bh=j7xkB4UBP/a4SB+tL6k6ZUvIyVPprRWnw43EzRyPaW8=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=kDvVbkYNMl3pzPQ9BQkwn+AbxllHGvFKq53dBK2fOmcYtSqfSCDFISRpHds9UEVYF
- KsdnbS5fUEAcZS/6R/9IDzkXok1dXVoCM3p/7/wmSMxcmGqpiEhFfNLsz80KvozPDt
- Hm38rc64TrS3I8Zu0uUcx4PgsjYLJToWl6GRvNwI=
-Received: by mail-qk1-f181.google.com with SMTP id o28so5679397qkj.9
+ b=auLiMZ2UtabEA2a0gidgvM/qpqynCtWAh2YJU5yJ6JQt11GPonS3ognsM5zCb4uDw
+ el4WZgCjHqVZF95vmDZKMfHcarTLtL/jgViGwRj0WKxHUwBS8qBLUmwVEiJS39l0lQ
+ jU5VxGLIoT06xND5Hn8pEkpEfCj+vFUnuxzABb00=
+Received: by mail-qt1-f180.google.com with SMTP id n17so5444151qtv.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 12:32:10 -0800 (PST)
-X-Gm-Message-State: APjAAAXD2NqL9lhO3Cbb3z9efMQnvIjtzbyvgcmGQTAR/MupSL9hun8+
- qSThWcKBpdoLAykqngqs2dFazdviFsvHWQsliQ==
-X-Google-Smtp-Source: APXvYqy6UPBCM+/cAO8IS299fsQ6zI91H9yLFW9wXNsDzsB5RIzaiAPn6ppjU4UuYJwys2PBtMGp1gyUFULWWr55CeA=
-X-Received: by 2002:a37:85c4:: with SMTP id
- h187mr17727937qkd.223.1581625929896; 
- Thu, 13 Feb 2020 12:32:09 -0800 (PST)
+ Thu, 13 Feb 2020 12:35:15 -0800 (PST)
+X-Gm-Message-State: APjAAAWwviRZU6VQEWhXN4ZB3bAR3rV2oEYQ/GQ1Xghn893guZm5bUQ+
+ pdgP1go9VS4QHgNKprysSb4Lbe7M8O5wtMtwLA==
+X-Google-Smtp-Source: APXvYqwqr4BVYshVjg/S/mtUAD4tutWsr+wyOQtF1RhL365vMoqi766XHHE1A6knTgq1BghE5fQpEY38ESYEixHRCEM=
+X-Received: by 2002:ac8:5513:: with SMTP id j19mr13527148qtq.143.1581626114034; 
+ Thu, 13 Feb 2020 12:35:14 -0800 (PST)
 MIME-Version: 1.0
-References: <20200213124620.34982-1-linus.walleij@linaro.org>
-In-Reply-To: <20200213124620.34982-1-linus.walleij@linaro.org>
-From: Rob Herring <robh@kernel.org>
-Date: Thu, 13 Feb 2020 14:31:59 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJqP=DfTBQsshgZBwLaOk1uYtXOvb796Ya1K-UCyG3bCg@mail.gmail.com>
-Message-ID: <CAL_JsqJqP=DfTBQsshgZBwLaOk1uYtXOvb796Ya1K-UCyG3bCg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] bus: Add DT bindings for Integrator/AP logical modules
+References: <20200210092713.279105-1-linus.walleij@linaro.org>
+ <20200210092713.279105-6-linus.walleij@linaro.org>
+In-Reply-To: <20200210092713.279105-6-linus.walleij@linaro.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 13 Feb 2020 14:35:03 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLG4dR6aeY2bP9ihjALT8DmQ3tHQy2mYdZBNay6xxanjA@mail.gmail.com>
+Message-ID: <CAL_JsqLG4dR6aeY2bP9ihjALT8DmQ3tHQy2mYdZBNay6xxanjA@mail.gmail.com>
+Subject: Re: [PATCH 5/7] dt-bindings: arm: Add RealView YAML schema
 To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_123211_466431_2FED1D62 
-X-CRM114-Status: GOOD (  21.69  )
+X-CRM114-CacheID: sfid-20200213_123515_593547_BF298F30 
+X-CRM114-Status: GOOD (  19.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,139 +86,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+ <linux-arm-kernel@lists.infradead.org>, Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 6:46 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+On Mon, Feb 10, 2020 at 3:27 AM Linus Walleij <linus.walleij@linaro.org> wrote:
 >
-> This adds YAML device tree bindings for the Integrator/AP
-> logical modules. These are plug-in tiles used typically for
-> FPGA prototyping.
+> This implements the top-level schema for the ARM RealView
+> platforms.
 >
-> Cc: devicetree@vger.kernel.org
+> Cc: Sudeep Holla <sudeep.holla@arm.com>
 > Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 > ---
->  .../bindings/bus/arm,integrator-ap-lm.yaml    | 89 +++++++++++++++++++
->  1 file changed, 89 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml
+>  .../devicetree/bindings/arm/arm,realview.yaml | 123 ++++++++++++++++++
+>  1 file changed, 123 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/arm/arm,realview.yaml
+
+Same comments as patch 3 apply here...
+
 >
-> diff --git a/Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml b/Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml
+> diff --git a/Documentation/devicetree/bindings/arm/arm,realview.yaml b/Documentation/devicetree/bindings/arm/arm,realview.yaml
 > new file mode 100644
-> index 000000000000..dfabfa466c05
+> index 000000000000..d6e85d198afe
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/bus/arm,integrator-ap-lm.yaml
-> @@ -0,0 +1,89 @@
+> +++ b/Documentation/devicetree/bindings/arm/arm,realview.yaml
+> @@ -0,0 +1,123 @@
 > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/bus/arm,integrator-ap-lm.yaml#
+> +$id: http://devicetree.org/schemas/arm/arm,realview.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: Integrator/AP Logical Module extension bus
+> +title: ARM RealView Boards Device Tree Bindings
 > +
 > +maintainers:
-> +  - Linus Walleij <linusw@kernel.org>
+> +  - Linus Walleij <linus.walleij@linaro.org>
 > +
-> +description: The Integrator/AP is a prototyping platform and as such has a
-> +  site for stacking up to four logical modules (LM) designed specifically for
-> +  use with this platform. A special system controller register can be read to
-> +  determine if a logical module is connected at index 0, 1, 2 or 3. The logical
-> +  module connector is described in this binding. The logical modules per se
-> +  then have their own specific per-module bindings and they will be described
-> +  as subnodes under this logical module extension bus.
+> +description: |+
+> +  The ARM RealView series of reference designs were built to explore the ARM
+> +  11, Cortex A-8 and Cortex A-9 CPUs. This included new features compared to
+> +  the earlier CPUs such as TrustZone and multicore (MPCore).
 > +
 > +properties:
-> +  "#address-cells":
-> +    const: 2
-> +
-> +  "#size-cells":
-> +    const: 1
-> +
+> +  $nodename:
+> +    const: '/'
 > +  compatible:
-> +    items:
-> +      - const: arm,integrator-ap-lm
+> +    oneOf:
+> +      - description: ARM RealView Emulation Baseboard (HBI-0140) was created
+> +          as a generic platform to test different FPGA designs, and has
+> +          pluggable CPU modules, see ARM DUI 0303E.
+> +        items:
+> +          - const: arm,realview-eb
+> +      - description: ARM RealView Platform Baseboard for ARM1176JZF-S
+> +          (HBI-0147) was created as a development board to test ARM TrustZone,
+> +          CoreSight and Intelligent Energy Management (IEM) see ARM DUI 0425F.
+> +        items:
+> +          - const: arm,realview-pb1176
+> +      - description: ARM RealView Platform Baseboard for ARM 11 MPCore
+> +          (HBI-0159, HBI-0175 and HBI-0176) was created to showcase
+> +          multiprocessing with ARM11 using MPCore using symmetric
+> +          multiprocessing (SMP). See ARM DUI 0351E.
+> +        items:
+> +          - const: arm,realview-pb11mp
+> +      - description: ARM RealView Platform Baseboard for Cortex-A8 (HBI-0178,
+> +          HBI-0176 and HBI-0175) was the first reference platform for the
+> +          Cortex CPU family, including a Cortex-A8 test chip.
+> +        items:
+> +          - const: arm,realview-pba8
+> +      - description: ARM RealView Platform Baseboard Explore for Cortex-A9
+> +          (HBI-0182 and HBI-0183) was the reference platform for the Cortex-A9
+> +          CPU.
+> +        items:
+> +          - const: arm,realview-pbx
 > +
-> +  ranges: true
-> +  dma-ranges: true
-> +
-> +patternProperties:
-> +  "^.*@[0-3],[0-9a-f]+$":
-> +    description: Nodes on the Logical Module bus represent logical modules
-> +      and are named with index,relative-address. The first module is at
-> +      0x00000000, the second at 0x10000000 and so on until the top of the
-> +      memory of the system at 0xffffffff.
-
-What's the point of the index if the address alone is enough?
-
+> +  soc:
+> +    description: All RealView boards must provide a soc node in the root of the
+> +      device tree, representing the System-on-Chip since these test chips are
+> +      rather complex.
 > +    type: object
 > +    properties:
-> +      reg:
-> +        maxItems: 1
+> +      compatible:
+> +        oneOf:
+> +          - items:
+> +            - const: arm,realview-eb-soc
+> +            - const: simple-bus
+> +          - items:
+> +            - const: arm,realview-pb1176-soc
+> +            - const: simple-bus
+> +          - items:
+> +            - const: arm,realview-pb11mp-soc
+> +            - const: simple-bus
+> +          - items:
+> +            - const: arm,realview-pba8-soc
+> +            - const: simple-bus
+> +          - items:
+> +            - const: arm,realview-pbx-soc
+> +            - const: simple-bus
+
+Can be simplified.
+
+> +
+> +    patternProperties:
+> +      "^.*syscon@[0-9a-f]+$":
+> +        type: object
+> +        description: All RealView boards must provide a syscon system controller
+> +          node inside the soc node.
+> +        properties:
+> +          compatible:
+> +            oneOf:
+> +              - items:
+> +                - const: arm,realview-eb11mp-revb-syscon
+> +                - const: arm,realview-eb-syscon
+> +                - const: syscon
+> +                - const: simple-mfd
+> +              - items:
+> +                - const: arm,realview-eb11mp-revc-syscon
+> +                - const: arm,realview-eb-syscon
+> +                - const: syscon
+> +                - const: simple-mfd
+
+These 2 can be 1 items list.
+
+> +              - items:
+> +                - const: arm,realview-eb-syscon
+> +                - const: syscon
+> +                - const: simple-mfd
+> +              - items:
+> +                - const: arm,realview-pb1176-syscon
+> +                - const: syscon
+> +                - const: simple-mfd
+> +              - items:
+> +                - const: arm,realview-pb11mp-syscon
+> +                - const: syscon
+> +                - const: simple-mfd
+> +              - items:
+> +                - const: arm,realview-pba8-syscon
+> +                - const: syscon
+> +                - const: simple-mfd
+> +              - items:
+> +                - const: arm,realview-pbx-syscon
+> +                - const: syscon
+> +                - const: simple-mfd
+
+And these 5 1 items list.
+
+> +
+> +        required:
+> +          - compatible
+> +          - reg
 > +
 > +    required:
 > +      - compatible
-
-'reg' should be required given a unit address is.
-
 > +
 > +required:
 > +  - compatible
+> +  - soc
 > +
-> +examples:
-> +  - |
-> +    external-bus@c0000000 {
-
-Node names should be generic:
-
-bus@...
-
-> +      compatible = "arm,integrator-ap-lm";
-> +      #address-cells = <2>;
-> +      #size-cells = <1>;
-> +      ranges = <0 0x0 0xc0000000 0x10000000>,
-> +               <1 0x0 0xd0000000 0x10000000>,
-> +               <2 0x0 0xe0000000 0x10000000>,
-> +               <3 0x0 0xf0000000 0x10000000>;
-> +      dma-ranges = <0 0x0 0xc0000000 0x10000000>,
-> +               <1 0x0 0xd0000000 0x10000000>,
-> +               <2 0x0 0xe0000000 0x10000000>,
-> +               <3 0x0 0xf0000000 0x10000000>;
-> +      im-pd1@0,0 {
-
-bus@...
-
-> +        compatible = "simple-bus";
-> +        ranges = <0 0 0 0x10000000>;
-> +        dma-ranges = <0 0 0 0x10000000>;
-> +        #address-cells = <1>;
-> +        #size-cells = <1>;
-> +
-> +        uart@c0100000 {
-
-serial@100000
-
-> +          compatible = "arm,pl011", "arm,primecell";
-> +          reg = <0x00100000 0x1000>;
-> +          interrupts-extended = <&impd1_vic 1>;
-> +        };
-> +
-> +        impd1_vic: interrupt-controller@c3000000 {
-> +          compatible = "arm,pl192-vic";
-> +          interrupt-controller;
-> +          #interrupt-cells = <1>;
-> +          reg = <0x03000000 0x1000>;
-> +          valid-mask = <0x00000bff>;
-> +          interrupts-extended = <&pic 9>;
-> +        };
-> +      };
-> +    };
-> +
-> +additionalProperties: false
+> +...
 > --
 > 2.23.0
 >
