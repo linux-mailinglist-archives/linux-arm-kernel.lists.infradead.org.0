@@ -2,61 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E9D815C955
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 18:20:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F50E15C95B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 18:23:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RgYbrvoPZXhkYlyIqHkG+sHkow9zCT73pnFamEoCCp8=; b=k3YytHTxaaOKlj
-	RDon2EZvGiqbALF3uYdNMu8S84SZRbvDqyGtFCS7h0zQDfOJ+tksv48cYkQ3TqQqnFZ2p2SOLGIJa
-	sNoXw6/JIHXNRGicJyi02zR5syjgykq9YCRd7yBK6VS7q2WNQg2DUCBze3SFe0qVI+Yz5v/6y9e4T
-	dEghK96sOIDAZRAPDhVE8Qt5V0PjihI1JuW7FKt8d3N9J23IYx3d/EV1ZBQSMIppBFJ0UvHLeiHG0
-	hEQ4312rqQXK9ROJs5Gx7oT8sDwSnN+uk7kcmlqCNYFhCR0m6BRMIjmP5cJCr2uoKdkuUAkCpmdpt
-	S7SmYkIKxWRWXZtagVQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SiHGSXw2ZrcX0eksX1rmLc5NXDTYRFDEZCuGzCHv9IQ=; b=eGyHs1LnhS06pSmm+M7DZ687P
+	sOBTC4+S/nWZ66rQeGAH290p9+cZppdjdBNJewr1N6F5TVKXSXxPS9a2JGjPzVZ6jYfsAQJq+PUB3
+	yLGiVlApGV9Mx+Hhx9x+VrbC3OGRXKM0dSB1bGnyCe87iR501LafQN3IIZVPnIOR9NhPUM9PWf0Zu
+	dc0BTNJO83iYnbgZfqfioofFxg6zJxYKBclH4avrMha//7baBhbcT2PPqJWrO43niUi5TWXjL1B1u
+	/caZzJE1c4PdY3IaCyDSQiDXctuLaYl686PyhwUW7S5xOuovTdCnWGv82ao/y/XxF8Dy69/piHph2
+	cKXe7kcig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2IAT-0003oC-My; Thu, 13 Feb 2020 17:20:49 +0000
-Received: from mga17.intel.com ([192.55.52.151])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2IAM-0002TX-P3
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 17:20:44 +0000
-X-Amp-Result: UNKNOWN
-X-Amp-Original-Verdict: FILE UNKNOWN
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 13 Feb 2020 09:18:38 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,437,1574150400"; d="scan'208";a="267204517"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga002.fm.intel.com with ESMTP; 13 Feb 2020 09:18:35 -0800
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1j2I8K-001B0E-Ab; Thu, 13 Feb 2020 19:18:36 +0200
-Date: Thu, 13 Feb 2020 19:18:36 +0200
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: "Srivastava, Shobhit" <shobhit.srivastava@intel.com>
-Subject: Re: Re: [PATCH] spi: pxa2xx: Add CS control clock quirk
-Message-ID: <20200213171836.GD10400@smile.fi.intel.com>
-References: <CB4ED07B85D6BB40B8B44F6D5442E4F6572C1523@BGSMSX101.gar.corp.intel.com>
+	id 1j2ID8-00049a-Sn; Thu, 13 Feb 2020 17:23:34 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2ID0-00048t-OH
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 17:23:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E75ED328;
+ Thu, 13 Feb 2020 09:23:25 -0800 (PST)
+Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 568773F6CF;
+ Thu, 13 Feb 2020 09:23:24 -0800 (PST)
+Subject: Re: [PATCH v4 0/5] memory: Introduce memory controller mini-framework
+To: Thierry Reding <thierry.reding@gmail.com>, Arnd Bergmann <arnd@arndb.de>, 
+ Will Deacon <will@kernel.org>, Rob Herring <robh+dt@kernel.org>
+References: <20200213163959.819733-1-thierry.reding@gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <9841eb35-65e4-632a-ceff-bb2ba3b11bb0@arm.com>
+Date: Thu, 13 Feb 2020 17:23:23 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CB4ED07B85D6BB40B8B44F6D5442E4F6572C1523@BGSMSX101.gar.corp.intel.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <20200213163959.819733-1-thierry.reding@gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_092042_828703_485BFB2F 
-X-CRM114-Status: GOOD (  14.94  )
+X-CRM114-CacheID: sfid-20200213_092326_887861_D372C9AC 
+X-CRM114-Status: GOOD (  24.08  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -69,43 +64,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Evan Green <evgreen@chromium.org>,
- "rajatxjain@gmail.com" <rajatxjain@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Jarkko Nikula <jarkko.nikula@linux.intel.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "evgreen@google.com" <evgreen@google.com>, Rajat Jain <rajatja@google.com>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>,
- "Muthukrishnan, Porselvan" <porselvan.muthukrishnan@intel.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Joerg Roedel <joro@8bytes.org>, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, linux-tegra@vger.kernel.org,
+ iommu@lists.linux-foundation.org, Olof Johansson <olof@lixom.net>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBGZWIgMTMsIDIwMjAgYXQgMDQ6NTc6MjRQTSArMDAwMCwgU3JpdmFzdGF2YSwgU2hv
-YmhpdCB3cm90ZToKPiA+IE9uIDIvMTIvMjAgMTI6MzQgQU0sIFJhamF0IEphaW4gd3JvdGU6Cgou
-Li4KCj4gPiBJIHdvbmRlciBpcyBpdCBlbm91Z2ggdG8gaGF2ZSB0aGlzIHF1aWNrIHRvZ2dsaW5n
-IG9ubHkgb3IgaXMgdGltZSBvciBhY3R1YWxseQo+ID4gbnVtYmVyIG9mIGNsb2NrIGN5Y2xlcyBk
-ZXBlbmRlbnQ/IE5vdyB0aGVyZSBpcyBubyBkZWxheSBiZXR3ZWVuIGJ1dCBJJ20KPiA+IHRoaW5r
-aW5nIGlmIGl0IG5lZWRzIGNlcnRhaW4gbnVtYmVyIGN5Y2xlcyBkb2VzIHRoaXMgc3RpbGwgd29y
-ayB3aGVuIHVzaW5nIGxvdwo+ID4gc3NwX2NsayByYXRlcyBzaW1pbGFyIHRoYW4gaW4gY29tbWl0
-IGQwMjgzZWIyZGJjMSAoInNwaToKPiA+IHB4YTJ4eDogQWRkIG91dHB1dCBjb250cm9sIGZvciBt
-dWx0aXBsZSBJbnRlbCBMUFNTIGNoaXAgc2VsZWN0cyIpLgo+ID4gCj4gPiBJJ20gdGhpbmtpbmcg
-Y2FuIHRoaXMgYmUgZG9uZSBvbmx5IG9uY2UgYWZ0ZXIgcmVzdW1lIGFuZCBtYXkgb3RoZXIgTFBT
-Uwo+ID4gYmxvY2tzIG5lZWQgdGhlIHNhbWU/IEkuZS4gc2hvdWxkIHRoaXMgYmUgZG9uZSBpbiBk
-cml2ZXJzL21mZC9pbnRlbC1scHNzLmM/Cgo+IFRoaXMgYmVoYXZpb3IgaXMgc2VlbiBhZnRlciBT
-MGl4IHJlc3VtZSwgYnV0IGl0IGlzIG5vdCBzZWVuIGFmdGVyIFMzIHJlc3VtZS4KCkkgYWxyZWFk
-eSBjb21tZW50ZWQgaW4gdGhlIG90aGVyIHRocmVhZCBhYm91dCB0aGlzLgoKSGF2ZSB5b3UgY2hl
-Y2tlZCB3aGF0J3MgZ29pbmcgb24gaW4gaW50ZWxfbHBzc19zdXNwZW5kKCkgYW5kCmludGVsX2xw
-c3NfcmVzdW1lKCkgZm9yIHlvdXIgY2FzZT8KCklzIGludGVsX2xwc3NfcHJlcGFyZSgpIGNhbGxl
-ZCBkdXJpbmcgUzBpeCBleGl0PwoKPiBJIGFtIHRoaW5raW5nIHRoYXQgaXQgaGFwcGVucyBiZWNh
-dXNlIHdlIGFyZSBub3QgZW5hYmxpbmcgdGhlIFNTUCBhZnRlciByZXN1bWUuIAo+IEl0IGlzIGRl
-ZmVycmVkIHVudGlsIHdlIG5lZWQgdG8gc2VuZCBkYXRhLiBCeSBlbmFibGluZyB0aGUgU1NQIGlu
-IHJlc3VtZSwgSSBkb27igJl0IHNlZSB0aGUgaXNzdWUuCj4gRm9yIFMzLCBJIHRoaW5rIEJJT1Mg
-cmUtZW5hYmxlcyB0aGUgU1NQIGluIHJlc3VtZSBmbG93LgoKLS0gCldpdGggQmVzdCBSZWdhcmRz
-LApBbmR5IFNoZXZjaGVua28KCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
-bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+[+ Maxime]
+
+On 13/02/2020 4:39 pm, Thierry Reding wrote:
+> From: Thierry Reding <treding@nvidia.com>
+> 
+> Hi,
+> 
+> this set of patches adds a new binding that allows device tree nodes to
+> explicitly define the DMA parent for a given device. This supplements
+> the existing interconnect bindings and is useful to disambiguate in the
+> case where a device has multiple paths to system memory. Beyond that it
+> can also be useful when there aren't any actual interconnect paths that
+> can be controlled, so in simple cases this can serve as a simpler
+> variant of interconnect paths.
+
+Isn't that still squarely the intent of the "dma-mem" binding, though? 
+i.e. it's not meant to be a 'real' interconnect provider, but a very 
+simple way to encode DMA parentage piggybacked onto a more general 
+binding (with the *option* of being a full-blown interconnect if it 
+wants to, but certainly no expectation).
+
+Robin.
+
+> One other case where this is useful is to describe the relationship
+> between devices such as the memory controller and an IOMMU, for example.
+> On Tegra186 and later, the memory controller is programmed with a set of
+> stream IDs that are to be associated with each memory client. This
+> programming needs to happen before translations through the IOMMU start,
+> otherwise the used stream IDs may deviate from the expected values. The
+> memory-controllers property is used in this case to ensure that the
+> memory controller driver has been probed (and hence has programmed the
+> stream ID mappings) before the IOMMU becomes available.
+> 
+> Patch 1 introduces the memory controller bindings, both from the
+> perspective of the provider and the consumer. Patch 2 makes use of a
+> memory-controllers property to determine the DMA parent for the purpose
+> of setting up DMA masks (based on the dma-ranges property of the DMA
+> parent). Patch 3 introduces a minimalistic framework that is used to
+> register memory controllers with along with a set of helpers to look up
+> the memory controller from device tree.
+> 
+> An example of how to register a memory controller is shown in patch 4
+> for Tegra186 (and later) and finally the ARM SMMU driver is extended to
+> become a consumer of an (optional) memory controller. As described
+> above, the goal is to defer probe as long as the memory controller has
+> not yet programmed the stream ID mappings.
+> 
+> Thierry
+> 
+> Thierry Reding (5):
+>    dt-bindings: Add memory controller bindings
+>    of: Use memory-controllers property for DMA parent
+>    memory: Introduce memory controller mini-framework
+>    memory: tegra186: Register as memory controller
+>    iommu: arm-smmu: Get reference to memory controller
+> 
+>   .../bindings/memory-controllers/consumer.yaml |  14 +
+>   .../memory-controllers/memory-controller.yaml |  32 +++
+>   drivers/iommu/arm-smmu.c                      |  11 +
+>   drivers/iommu/arm-smmu.h                      |   2 +
+>   drivers/memory/Makefile                       |   1 +
+>   drivers/memory/core.c                         | 248 ++++++++++++++++++
+>   drivers/memory/tegra/tegra186.c               |   9 +-
+>   drivers/of/address.c                          |  25 +-
+>   include/linux/memory-controller.h             |  34 +++
+>   9 files changed, 366 insertions(+), 10 deletions(-)
+>   create mode 100644 Documentation/devicetree/bindings/memory-controllers/consumer.yaml
+>   create mode 100644 Documentation/devicetree/bindings/memory-controllers/memory-controller.yaml
+>   create mode 100644 drivers/memory/core.c
+>   create mode 100644 include/linux/memory-controller.h
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
