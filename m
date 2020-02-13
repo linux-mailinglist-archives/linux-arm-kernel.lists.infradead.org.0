@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA8BC15CBB3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:09:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 512CE15CBDB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:19:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2vMXmGQCAu8R1xbVj3Rf5RoKp9Tn5KkvWGbsjekOxQ8=; b=olb+T51x+4conL
-	x5CQjumDcPlCvP27PNZv1TgX9C84oF/DvsvzG8k765q9i5vgyNmoqo41Hc07fBU4dMHK1y9Xn898J
-	9nSv0iPfoi647m15AgF0KiWKooGtlDDmInbXlF7mUGXyhFmoiq5hDm37li6YVEsPUJ9u9moa5Zhvd
-	g1evnp1OM1wlY8tZD00NU2LjkSqNHTMaeozxvKCNTr6U77D3ieRwVeucxJ97Iz7hgDKzaccgDXG+t
-	wuxCLkeCFU+qdZcWpaiqgFoLWbqxIs+bXWw3GXYkysaaUCTIr8MA3U3gpkBUc+Bg3XeCrcQkMWv0j
-	pwM6GoLr+JELu1Dg1OMQ==;
+	List-Owner; bh=+wZXxxZub3jadKvsmP6UPTCXy/TW9Y6/htrHMTbOFA8=; b=sfHQdcTYgFw0d/
+	NQKVlLeN4GoUmtv7HPn937lyHr5HBm5cKJcE5hP7zJYRRSkaMvggxCnLxWvNMQ88cMavkdn+vvVsK
+	ZVeJipG3q9g8FaiSfKNAVtiQdZxWYOpd7kyiHQi4HuPmJtdjedRnk7DF8N4GgS6PsqXptFHkl8F67
+	PReKuG8OtYGml0ftT9CgMIalohKjhpmnViIZMJDlXOXEo108wlLSc+cntbFtJpkKMwURvuxDLhm+C
+	FvSv9UY+2B98q/RRPbRBayUxWtaOQZAT0QxncMaSgFQOR6orIVbLM7vgQ7Xdd3cPgz3PCDpnTKZDn
+	zriPo0iFpCrnIGektPKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Kmt-0003Nw-Oe; Thu, 13 Feb 2020 20:08:39 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1j2Kxb-0006f7-4y; Thu, 13 Feb 2020 20:19:43 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Kmk-0003N6-6r
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 20:08:31 +0000
-Received: by mail-lj1-x244.google.com with SMTP id q8so8088511ljb.2
+ id 1j2KxS-0006eU-W1
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 20:19:36 +0000
+Received: by mail-lj1-x242.google.com with SMTP id o15so8103031ljg.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 12:08:27 -0800 (PST)
+ Thu, 13 Feb 2020 12:19:34 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=BGyZT7dbwMQ7jRrV7OPOX8exFdqWmXNOVwOPlJZyRbk=;
- b=Q7Nd/9vPTfJrYfCbCnUoPbPOpTzh3mz2xPJW1hQXDfbva2G/ahXsRqzD1wUuPZ0P3d
- +VywfqW7xB0c1jzTKa7NJz6yLxoDyvNlvg34cVn9HgdBE0NIoNuEjhR1q5M5tg+WKX1s
- VR/cE6zJ0oW3d9yoa95wrCDl733BktZ0XiN5OqGki05JxaBJP9SLsgtvO6NIKNtbC2QN
- laeEw6HaaasnQGqEFM8QClPBWowIpVDKLEz5clAkkVrjEM5nZOWjCb0qr8FpJMzm7oWl
- MBgsia3Si3eM8ZVXJqbn+jwHsq5CG7Hr1ZPF2HhnxEJvtGIJfwYCRkECqsnu3hYJRJai
- b5mg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=DwVZSFEq0W28DM18hDTvCj9e8HcEAgSZLjRA5gyrBFU=;
+ b=Vyc3sRQ1QOwrox+evcccNRQBSMXSNzw3PVk3EXZdtOms1u9chLhvINkI9cUllcwCFT
+ DPYjFaEUwuJajVUA0tq5EIDfLt97XP36OrNkXGsrbdqJqvIGkoxYifu40N8EXJT7qWrO
+ 64bRzYRBYqxe1FECL+BOJrtNLARWyDIaVTLt+OH53m3TMMVXiTIY9rNvY8DdyabgUnQW
+ dsqIy8TFk0OLSt38yhjIz5KISZQsdbW3tb7XxanhUnc0asTbpI+G5YiMoSr9rZMH8d34
+ vDab9/gn11rrz26yB5mw+myU2xNaKBgioPgvXrwdomzxEJ/2cqpdWhmFiTZQOZG6D9Wr
+ xPYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=BGyZT7dbwMQ7jRrV7OPOX8exFdqWmXNOVwOPlJZyRbk=;
- b=jGUnR12FKhS//Tdk4CxEvs+lASOPF/AyHvPBqfXWkNCHqFSixjJ4PyreavPfrncjmP
- Pw+Ft/5tk4DkQl0w50tJf6uHZ9mnfwKzoneZDd21cGuTYHovmBitndq6yVmVuoeHAzfP
- OivZpmtZs1yP/UCxoLAmlklxFbFqxNsYKRX5peE/fTs6J6Ly0Uk/+5WYaCV/3bBwX+I8
- eNchWbFaZi8l/ksJl/JCwj/ggOGrXIc/I5NmuDembitcq6eI8FDN6xryL3JKiRknIJPc
- ioS5yCBDg8UvIkHsnJq++BJVw8U3h2Q7o49Ofc12H4Z1bhK1LrsYCiUV6MinadvA4VVO
- /Kag==
-X-Gm-Message-State: APjAAAWdnnHJ6vfxDuf2RFmLBs2dy5ontmuW5Twe6kvxxc0YhQeVnZL/
- q7CMhcNM5VqgvX0GGTmBw4o=
-X-Google-Smtp-Source: APXvYqztD+iqwv6Xp+koxjrHW1aZ2Qay9QARoJlk+46QWn4zlAo+rJAYb4gEbYwOOYOAAItaIZGLEw==
-X-Received: by 2002:a2e:98c6:: with SMTP id s6mr12200884ljj.14.1581624505681; 
- Thu, 13 Feb 2020 12:08:25 -0800 (PST)
-Received: from kedthinkpad ([5.20.204.163])
- by smtp.gmail.com with ESMTPSA id d20sm2132164ljg.95.2020.02.13.12.08.24
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=DwVZSFEq0W28DM18hDTvCj9e8HcEAgSZLjRA5gyrBFU=;
+ b=de5ikcl5FJOomOM8iQ0x9QTmfnXJwP/CqlXc6h0bLbASoSJQR5ZIRh62PKX4LV/ZTU
+ HAy7eOv+R3LXOpvIbqu4GMDb/A2HsdGFTeXlk0O01echSjX2i8QrWRICth7AvcHP6Vex
+ i9Gt+gCPZf83vnYvH/eKYBrCO3r1k9bOO8POjPmbZNvTKwwl28CrTbwbooBPypwCYijo
+ stQ8q3rkPOqZWEeE7zTFhObuWN1qOyym8/vfXkzpvKF2kqqTKRcYz2p+Ee25pKX1VSOo
+ m9VUAumFO8ZIqfSkfQCfg5GfH/99qaSerPwE9qXJKlqNskM9M+NcG8bDhGbUrKRU59ZH
+ 08xw==
+X-Gm-Message-State: APjAAAWzlaXvWzcYTNyHHd9nQ2LVf1LnqTzmoKwHI2X2887D3etitB38
+ wqW2O7C8ge4vVu7FKVOvCaY=
+X-Google-Smtp-Source: APXvYqx038IS+Ijfeh1//hkEoQpHVSqFBNIuH5C+1O568EPNKOQjnbiPQh7Uf1VmGHESUeIqO/HpLg==
+X-Received: by 2002:a2e:9a51:: with SMTP id k17mr11552111ljj.206.1581625172663; 
+ Thu, 13 Feb 2020 12:19:32 -0800 (PST)
+Received: from localhost.localdomain ([5.20.204.163])
+ by smtp.gmail.com with ESMTPSA id s22sm2209470ljm.41.2020.02.13.12.19.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 13 Feb 2020 12:08:24 -0800 (PST)
-Date: Thu, 13 Feb 2020 22:08:23 +0200
+ Thu, 13 Feb 2020 12:19:32 -0800 (PST)
 From: Andrey Lebedev <andrey.lebedev@gmail.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH v2 2/2] ARM: sun7i: dts: Add LVDS panel support on A20
-Message-ID: <20200213200823.GA28336@kedthinkpad>
+To: mripard@kernel.org, wens@csie.org, airlied@linux.ie, daniel@ffwll.ch,
+ dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH v3 1/3] drm/sun4i: tcon: Introduce LVDS setup routine setting
+Date: Thu, 13 Feb 2020 22:18:53 +0200
+Message-Id: <20200213201854.810-1-andrey.lebedev@gmail.com>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200210195633.GA21832@kedthinkpad>
 References: <20200210195633.GA21832@kedthinkpad>
- <20200212222355.17141-2-andrey.lebedev@gmail.com>
- <20200213094304.hf3glhgmquypxpyf@gilmour.lan>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200213094304.hf3glhgmquypxpyf@gilmour.lan>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_120830_251947_FB052BEE 
-X-CRM114-Status: GOOD (  17.23  )
+X-CRM114-CacheID: sfid-20200213_121935_039532_BCED8B3F 
+X-CRM114-Status: GOOD (  15.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -101,69 +100,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Andrey Lebedev <andrey@lebedev.lt>, wens@csie.org, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrey Lebedev <andrey@lebedev.lt>, linux-sunxi@googlegroups.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 10:43:04AM +0100, Maxime Ripard wrote:
-> On Thu, Feb 13, 2020 at 12:23:57AM +0200, andrey.lebedev@gmail.com wrote:
-> > From: Andrey Lebedev <andrey@lebedev.lt>
-> >
-> > Define pins for LVDS channels 0 and 1, configure reset line for tcon0 and
-> > provide sample LVDS panel, connected to tcon0.
-> >
-> > Signed-off-by: Andrey Lebedev <andrey@lebedev.lt>
-> 
-> And this prefix should be ARM: dts: sun7i ;)
+From: Andrey Lebedev <andrey@lebedev.lt>
 
-Ah, thanks, I think I've got the pattern now!
+Different sunxi flavors require slightly different sequence for enabling
+LVDS output. This allows to differentiate between them.
 
-> > +			/omit-if-no-ref/
-> > +			lcd_lvds0_pins: lcd_lvds0_pins {
-> 
-> underscores in the node names will create a dtc warning at
-> compilation, you should use lcd-lvds0-pins instead.
+Signed-off-by: Andrey Lebedev <andrey@lebedev.lt>
+---
+ drivers/gpu/drm/sun4i/sun4i_tcon.c | 68 ++++++++++++++++--------------
+ drivers/gpu/drm/sun4i/sun4i_tcon.h |  3 ++
+ 2 files changed, 39 insertions(+), 32 deletions(-)
 
-You're right, I wasn't following the naming convention here. dtc doesn't
-produce any warning on this though. Fixed that anyway.
-
-> This will create a spurious warning message for TCON1, since we
-> adjusted the driver to tell it supports LVDS, but there's no LVDS
-> reset line, so we need to make it finer grained.
-
-Yes, I can attribute two of the messages in my dmesg log [1] to this
-("Missing LVDS properties" and "LVDS output disabled". "sun4i-tcon
-1c0d000.lcd-controller" is indeed tcon1). And yes, I can see how they
-can be confusing to someone.
-
-I'd need some pointers on how to deal with that though (if we want to do
-it in this scope).
-
-[1] excerpt from kernel boot log:
-
-[    4.890975] sun4i-drm display-engine: bound 1e00000.display-frontend (ops sun4i_frontend_driver_exit [sun4i_frontend])
-[    4.902032] sun4i-drm display-engine: bound 1e20000.display-frontend (ops sun4i_frontend_driver_exit [sun4i_frontend])
-[    4.913467] sun4i-drm display-engine: bound 1e60000.display-backend (ops sun4i_backend_ops [sun4i_backend])
-[    4.923806] sun4i-drm display-engine: bound 1e40000.display-backend (ops sun4i_backend_ops [sun4i_backend])
-[    4.934451] sun4i-drm display-engine: bound 1c0c000.lcd-controller (ops sun4i_tcon_platform_driver_exit [sun4i_tcon])
-[    4.945254] sun4i-tcon 1c0d000.lcd-controller: Missing LVDS properties, Please upgrade your DT
-[    4.953935] sun4i-tcon 1c0d000.lcd-controller: LVDS output disabled
-[    4.960857] sun4i-drm display-engine: No panel or bridge found... RGB output disabled
-[    4.968845] sun4i-drm display-engine: bound 1c0d000.lcd-controller (ops sun4i_tcon_platform_driver_exit [sun4i_tcon])
-[    5.080874] sun4i-drm display-engine: bound 1c16000.hdmi (ops sun4i_hdmi_driver_exit [sun4i_drm_hdmi])
-[    5.110087] [drm] Initialized sun4i-drm 1.0.0 20150629 for display-engine on minor 0
-[    5.763064] sun4i-drm display-engine: fb0: sun4i-drmdrmfb frame buffer device
-
-
+diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+index c81cdce6ed55..cc6b05ca2c69 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
++++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+@@ -114,46 +114,48 @@ static void sun4i_tcon_channel_set_status(struct sun4i_tcon *tcon, int channel,
+ 	}
+ }
+ 
++static void sun6i_tcon_setup_lvds_phy(struct sun4i_tcon *tcon,
++				      const struct drm_encoder *encoder)
++{
++	u8 val;
++
++	regmap_write(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
++		     SUN6I_TCON0_LVDS_ANA0_C(2) |
++		     SUN6I_TCON0_LVDS_ANA0_V(3) |
++		     SUN6I_TCON0_LVDS_ANA0_PD(2) |
++		     SUN6I_TCON0_LVDS_ANA0_EN_LDO);
++	udelay(2);
++
++	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
++			   SUN6I_TCON0_LVDS_ANA0_EN_MB,
++			   SUN6I_TCON0_LVDS_ANA0_EN_MB);
++	udelay(2);
++
++	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
++			   SUN6I_TCON0_LVDS_ANA0_EN_DRVC,
++			   SUN6I_TCON0_LVDS_ANA0_EN_DRVC);
++
++	if (sun4i_tcon_get_pixel_depth(encoder) == 18)
++		val = 7;
++	else
++		val = 0xf;
++
++	regmap_write_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
++			  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(0xf),
++			  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(val));
++
++}
++
+ static void sun4i_tcon_lvds_set_status(struct sun4i_tcon *tcon,
+ 				       const struct drm_encoder *encoder,
+ 				       bool enabled)
+ {
+ 	if (enabled) {
+-		u8 val;
+-
+ 		regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_IF_REG,
+ 				   SUN4I_TCON0_LVDS_IF_EN,
+ 				   SUN4I_TCON0_LVDS_IF_EN);
+-
+-		/*
+-		 * As their name suggest, these values only apply to the A31
+-		 * and later SoCs. We'll have to rework this when merging
+-		 * support for the older SoCs.
+-		 */
+-		regmap_write(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
+-			     SUN6I_TCON0_LVDS_ANA0_C(2) |
+-			     SUN6I_TCON0_LVDS_ANA0_V(3) |
+-			     SUN6I_TCON0_LVDS_ANA0_PD(2) |
+-			     SUN6I_TCON0_LVDS_ANA0_EN_LDO);
+-		udelay(2);
+-
+-		regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
+-				   SUN6I_TCON0_LVDS_ANA0_EN_MB,
+-				   SUN6I_TCON0_LVDS_ANA0_EN_MB);
+-		udelay(2);
+-
+-		regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
+-				   SUN6I_TCON0_LVDS_ANA0_EN_DRVC,
+-				   SUN6I_TCON0_LVDS_ANA0_EN_DRVC);
+-
+-		if (sun4i_tcon_get_pixel_depth(encoder) == 18)
+-			val = 7;
+-		else
+-			val = 0xf;
+-
+-		regmap_write_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
+-				  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(0xf),
+-				  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(val));
++		if (tcon->quirks->setup_lvds_phy)
++			tcon->quirks->setup_lvds_phy(tcon, encoder);
+ 	} else {
+ 		regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_IF_REG,
+ 				   SUN4I_TCON0_LVDS_IF_EN, 0);
+@@ -1465,12 +1467,14 @@ static const struct sun4i_tcon_quirks sun8i_a33_quirks = {
+ 	.has_channel_0		= true,
+ 	.has_lvds_alt		= true,
+ 	.dclk_min_div		= 1,
++	.setup_lvds_phy		= sun6i_tcon_setup_lvds_phy,
+ };
+ 
+ static const struct sun4i_tcon_quirks sun8i_a83t_lcd_quirks = {
+ 	.supports_lvds		= true,
+ 	.has_channel_0		= true,
+ 	.dclk_min_div		= 1,
++	.setup_lvds_phy		= sun6i_tcon_setup_lvds_phy,
+ };
+ 
+ static const struct sun4i_tcon_quirks sun8i_a83t_tv_quirks = {
+diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.h b/drivers/gpu/drm/sun4i/sun4i_tcon.h
+index a62ec826ae71..2974e59ef9f2 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_tcon.h
++++ b/drivers/gpu/drm/sun4i/sun4i_tcon.h
+@@ -228,6 +228,9 @@ struct sun4i_tcon_quirks {
+ 
+ 	/* callback to handle tcon muxing options */
+ 	int	(*set_mux)(struct sun4i_tcon *, const struct drm_encoder *);
++	/* handler for LVDS setup routine */
++	void	(*setup_lvds_phy)(struct sun4i_tcon *tcon,
++				  const struct drm_encoder *encoder);
+ };
+ 
+ struct sun4i_tcon {
 -- 
-Andrey Lebedev aka -.- . -.. -.. . .-.
-Software engineer
-Homepage: http://lebedev.lt/
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
