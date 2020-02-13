@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67B1F15B7FF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 04:58:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 968ED15B802
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 04:58:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8NkQSvKpmA+pMO5I2V3SlhUUIXERncO+1z6YqONMQf0=; b=QNPheJs3K6LIzV
-	nhUrerb8mFcCi5HsPqsYuCAuQzua5kxPg0CXNwLMU1jpc6Lk94G7Gi6bLKNXRrsYsFiXJpNSXXrq5
-	p82JfpWIn++fZa2BcoSYbVCvvvF+1An7QRMD5mDvqqb5bRKrY657wTxM04OYMtkiNZhMIPRVc0535
-	3faS3t/D/oxkZ/HdIzNIzmHfGCPpimJvvjpmAiEH+jKTDLqctw5yruhjWVOXkj7FYWPTghwoP0UrZ
-	215DM8g7kh25C0xwMY7iL7dsA6qFeNrpvf9gIlS9eDepLjm7rlppOSuzJ5tFCI225HLMVQUI3+xzT
-	CK3/gjZ/0u6qyjj6pJHw==;
+	List-Owner; bh=UQ6iKHwM+G0R4VVkLl6G4AM5rLoCGnAODfdCZFCeY5E=; b=FkSILWW2ESLo0H
+	eOcQcuGG2EBiNkKtlBPfK+XjpIoyigniF8/p1ZoILfZyI092mXQcZRtQ5y5vF2sHakEZnl/kL122B
+	kuKji36zFa7imnL8NovwsFVLOO6yUudlsP6og2yywQExeSG7wsrjL3bKpfbOi2zeag0C+gQZ/46sI
+	rMfC1Yg0ErBRa9uw9pw6d8U7QMEa6PJE3CxItJIjdsDy57MqJbjy09AV1D9tY/FGCOiPEg0t4OePy
+	YMX7BUKIpowxPHBd6N+wcgVIjeqbL2t6m0RwzCQgy4Q6kOZTP4ZVYLb8Z4NR6YJNYFwKowpU4X0oM
+	j2kvA10OiT1Kn67pFzjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j25e1-0008HK-5R; Thu, 13 Feb 2020 03:58:29 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1j25eS-0008WS-UO; Thu, 13 Feb 2020 03:58:56 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j25dt-0008Gl-Qs
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 03:58:23 +0000
-Received: by mail-pl1-x644.google.com with SMTP id ay11so1794572plb.0
+ id 1j25eL-0008W3-6i
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 03:58:50 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id dw13so1770777pjb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Feb 2020 19:58:19 -0800 (PST)
+ Wed, 12 Feb 2020 19:58:49 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=zflr/iTTksVOfsKcKKhy40p87pCDdvscArKQByKqnJU=;
- b=gGJVyL7BsiZXQYacCcTjJRxYbRyq4Mb/9NpptkzACR8alkdq52ihmtiv34uVyxsMwW
- CuR9PLy/gQ/XfW8CN+e6QoSpxn+pO+1PcupAN1ZlhM3jEsQUqYWeZktGIMI/66sLCuu+
- qmsF3IeyKnMT17G5fBvSBdObfzOP3tCC+u9hay0Rq+D4CyYQW5bcVaiN5m/GCv6bswB0
- g9Dkszh8lPHfj9F/zndQvGRimvbaISIgjfNzJ6hN3LO2Mnl13t9VAAYnO2s5i5i9gS5J
- ltqYwjER2crZLpTWD7rWA+wmKB1B/HfpDwjG1BgCSfVXwTKHAgFue8wQFyV4WqMOwI99
- pqpw==
+ bh=nbjlYlfhBY+UHixlStQoXg09UzzSEedx4Ji7HfMzHdM=;
+ b=r83nfN4fsprCVE1aSKVNuRsBosnAaXuj8OAOXQnK9NZcEZoax/+3O9pDtiT0ckjr/3
+ Jr2Zd0Wu9B2NqDMPiHJLDUURZ5eIcgHbzRmHFiEc+SYOGuIhC2luO5w0lAXxAWpU960L
+ ATr43Qc3e5BSwGROmyt+nUO316SSXw+8xQQYh9ETGmL73E6erZhF7+WuhOiYU6Q/zKNZ
+ vJmapTmBUmrzpmIbKXRCbvg6utUsXIwLcgu+j/HioTKNBg7aW+DwManzcsP0kXRZSWzT
+ oOwDchiZLcRLuvd4XwBnS+Mu2u7p1CLQJ3URYG+Y6Nw53uvnKClepBDg5kjq9yPfztWv
+ GYrw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=zflr/iTTksVOfsKcKKhy40p87pCDdvscArKQByKqnJU=;
- b=hZvXcojH6lGcNG2U2wh/AbAacByCRlW1F+N5oEA+EZY0ePhstUtQzNibJd48nEd0XS
- qcrLp6c3SfasC8tlvog04fTRgGbSHgq3f3xEYvQ/V6GBejc9VZStxlusWA7WFVU/d/UQ
- rNo2dtN9JsbYrtdy371ZdJ7BYFjDaJKe1XRMstEjRZBHUWMWG7qZQq3hbgX3NBOkr4tL
- JRISjZEGuALSnXHlVH3f5NMaD3WeMtLrlWot/zadH7sy7+Ty+0V+Gmd9BQc/rfW+i4xT
- T3pEUzuDuhXEL8EihyZB0HQ0/kGxONK8w8ahx5zlklNiHZPZnPod8Bqnn9G36bS4pN3y
- H/rw==
-X-Gm-Message-State: APjAAAU8CrH38H+USi5TMxuJ0QddqetZrMLEBQO1w07e022+PLiVS2Ow
- Qb/Leg4SN9lGX2/lacfuv3awaAWG
-X-Google-Smtp-Source: APXvYqwuO3xb8g50J9gUStoHDo3kKWwD+ioqZ3XXXFnLjU0OJNa9TSoszeWoysa0wzqRaBN0pZ4hjA==
-X-Received: by 2002:a17:902:7790:: with SMTP id
- o16mr11256809pll.271.1581566299005; 
- Wed, 12 Feb 2020 19:58:19 -0800 (PST)
+ bh=nbjlYlfhBY+UHixlStQoXg09UzzSEedx4Ji7HfMzHdM=;
+ b=Juw5G2ebSZCQOU0/rHwZgipFHpDk8cOoM2XGFISlcB4TzzbHVOK1uNtSM+gydH6eC1
+ PQXCPfUumHZ9A5ZyPF9zT7skyv7kaRXsvl3kdAjL+Wr0AdH7i2/0rLURPbt59JFRKxtm
+ WD7pw0tHdN1Re/WXTQXnvadUxlbyphmTr1py597sNdljjartroFRVBo+r+yD18Tn1GNK
+ uF494viga4ezaZOzxkhAmEmc972ks3jM5glDhtYjvh6BlRhlnn1wflxRJHt4hGWjd1re
+ JYCHxQs546xpfcjdLUm7puQEYpBy5P2SLsO2CsqbcilBaTP+9PTkcMeR+HjyWbgTIynS
+ BRFw==
+X-Gm-Message-State: APjAAAWUk5YciDwrDRNETyrtqRtcX/J1IuSe4ju5AP14A1aEI6qS1hXw
+ Ia7rdXqHQa1m24bdbrkwYRs=
+X-Google-Smtp-Source: APXvYqwqtvCWTmCYtQaF20qYQgf9s9NKbxvuHishOIDtG3QhneQz0PtJAh8BwsO/OvTmuRHBWtVUjQ==
+X-Received: by 2002:a17:902:b696:: with SMTP id
+ c22mr25276386pls.97.1581566328537; 
+ Wed, 12 Feb 2020 19:58:48 -0800 (PST)
 Received: from [10.230.28.123] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id u13sm621020pjn.29.2020.02.12.19.58.17
+ by smtp.gmail.com with ESMTPSA id a35sm638912pgl.20.2020.02.12.19.58.47
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 12 Feb 2020 19:58:18 -0800 (PST)
-Subject: Re: [PATCH 1/3] PCI: brcmstb: Enable ARCH_BRCMSTB
+ Wed, 12 Feb 2020 19:58:48 -0800 (PST)
+Subject: Re: [PATCH 2/3] PCI: brcmstb: Add regulator support
 To: Jaedon Shin <jaedon.shin@gmail.com>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  bcm-kernel-feedback-list@broadcom.com,
  Jim Quinlan <james.quinlan@Broadcom.com>
 References: <20200213025930.27943-1-jaedon.shin@gmail.com>
- <20200213025930.27943-2-jaedon.shin@gmail.com>
+ <20200213025930.27943-3-jaedon.shin@gmail.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -120,24 +120,21 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <6c6d240d-b9d3-907b-df79-8823a281e480@gmail.com>
-Date: Wed, 12 Feb 2020 19:58:16 -0800
+Message-ID: <aaa85a4d-8b36-893e-3e7a-dc27b4d6bae5@gmail.com>
+Date: Wed, 12 Feb 2020 19:58:45 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.2
 MIME-Version: 1.0
-In-Reply-To: <20200213025930.27943-2-jaedon.shin@gmail.com>
+In-Reply-To: <20200213025930.27943-3-jaedon.shin@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_195821_873119_2E27A2CE 
-X-CRM114-Status: GOOD (  15.42  )
+X-CRM114-CacheID: sfid-20200212_195849_251688_6FA79943 
+X-CRM114-Status: GOOD (  21.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
@@ -175,49 +172,112 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 2/12/2020 6:59 PM, Jaedon Shin wrote:
-> Add PCIe support for ARM-based Broadcom STB SoCs.
+> ARM-based Broadcom STB SoCs have GPIO-based voltage regulator for PCIe
+> turning off/on power supplies.
 > 
 > Signed-off-by: Jaedon Shin <jaedon.shin@gmail.com>
 > ---
->  Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml | 8 +++++++-
->  drivers/pci/controller/Kconfig                           | 2 +-
->  drivers/pci/controller/pcie-brcmstb.c                    | 1 +
->  3 files changed, 9 insertions(+), 2 deletions(-)
+>  drivers/gpio/gpio-brcmstb.c           | 13 ++++-
+>  drivers/pci/controller/pcie-brcmstb.c | 76 +++++++++++++++++++++++++++
+>  2 files changed, 88 insertions(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> index 77d3e81a437b..fb1a78606f78 100644
-> --- a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> +++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> @@ -14,7 +14,13 @@ allOf:
->  
->  properties:
->    compatible:
-> -    const: brcm,bcm2711-pcie # The Raspberry Pi 4
-> +    oneOf:
-> +      - description:
-> +          BCM2711 based Boards
-> +        const: brcm,bcm2711-pcie
-> +      - description:
-> +          ARM-based BCM7XXX Broadcom STB Boards
-> +        const: brcm,bcm7445-pcie
+> diff --git a/drivers/gpio/gpio-brcmstb.c b/drivers/gpio/gpio-brcmstb.c
+> index 05e3f99ae59c..0cee5fcd2782 100644
+> --- a/drivers/gpio/gpio-brcmstb.c
+> +++ b/drivers/gpio/gpio-brcmstb.c
+> @@ -777,7 +777,18 @@ static struct platform_driver brcmstb_gpio_driver = {
+>  	.remove = brcmstb_gpio_remove,
+>  	.shutdown = brcmstb_gpio_shutdown,
+>  };
+> -module_platform_driver(brcmstb_gpio_driver);
+> +
+> +static int __init brcmstb_gpio_init(void)
+> +{
+> +	return platform_driver_register(&brcmstb_gpio_driver);
+> +}
+> +subsys_initcall(brcmstb_gpio_init);
+> +
+> +static void __exit brcmstb_gpio_exit(void)
+> +{
+> +	platform_driver_unregister(&brcmstb_gpio_driver);
+> +}
+> +module_exit(brcmstb_gpio_exit);
 
-You would also need to document the regulator properties as optional here.
+We do this in the downstream tree, but there is no reason, we should
+just deal with EPROBE_DEFER being returned from the regulator subsystem
+until the GPIO provide is available.
 
->  
->    reg:
->      maxItems: 1
-> diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
-> index 20bf00f587bd..c60a27cff81a 100644
-> --- a/drivers/pci/controller/Kconfig
-> +++ b/drivers/pci/controller/Kconfig
-> @@ -254,7 +254,7 @@ config VMD
->  
->  config PCIE_BRCMSTB
->  	tristate "Broadcom Brcmstb PCIe host controller"
-> -	depends on ARCH_BCM2835 || COMPILE_TEST
-> +	depends on ARCH_BCM2835 || ARCH_BRCMSTB || COMPILE_TEST
+[snip]
 
-This part looks entirely reasonable.
+> +static void brcm_pcie_regulator_init(struct brcm_pcie *pcie)
+> +{
+> +	struct device_node *np = pcie->dev->of_node;
+> +	struct device *dev = pcie->dev;
+> +	const char *name;
+> +	struct regulator *reg;
+> +	int i;
+> +
+> +	pcie->num_regs = of_property_count_strings(np, "supply-names");
+> +	if (pcie->num_regs <= 0) {
+> +		pcie->num_regs = 0;
+> +		return;
+> +	}
+> +
+> +	pcie->regs = devm_kcalloc(dev, pcie->num_regs, sizeof(pcie->regs[0]),
+> +				  GFP_KERNEL);
+> +	if (!pcie->regs) {
+> +		pcie->num_regs = 0;
+> +		return;
+> +	}
+> +
+> +	for (i = 0; i < pcie->num_regs; i++) {
+> +		if (of_property_read_string_index(np, "supply-names", i, &name))
+> +			continue;
+> +
+> +		reg = devm_regulator_get_optional(dev, name);
+> +		if (IS_ERR(reg))
+> +			continue;
+
+You need to handle EPROBE_DEFER here and propagate that back to the
+caller to defer the entire driver from probing until the regulator
+providers are available.
+
+> +
+> +		pcie->regs[i] = reg;
+> +	}
+> +}
+> +#else
+> +static inline void brcm_pcie_regulator_enable(struct brcm_pcie *pcie) { }
+> +static inline void brcm_pcie_regulator_disable(struct brcm_pcie *pcie) { }
+> +static inline void brcm_pcie_regulator_init(struct brcm_pcie *pcie) { }
+> +#endif
+> +
+>  /*
+>   * This is to convert the size of the inbound "BAR" region to the
+>   * non-linear values of PCIE_X_MISC_RC_BAR[123]_CONFIG_LO.SIZE
+> @@ -898,6 +970,7 @@ static void __brcm_pcie_remove(struct brcm_pcie *pcie)
+>  {
+>  	brcm_msi_remove(pcie);
+>  	brcm_pcie_turn_off(pcie);
+> +	brcm_pcie_regulator_disable(pcie);
+>  	clk_disable_unprepare(pcie->clk);
+>  	clk_put(pcie->clk);
+>  }
+> @@ -955,6 +1028,9 @@ static int brcm_pcie_probe(struct platform_device *pdev)
+>  		return ret;
+>  	}
+>  
+> +	brcm_pcie_regulator_init(pcie);
+> +	brcm_pcie_regulator_enable(pcie);
+
+And deal with errors here.
+
+> +
+>  	ret = brcm_pcie_setup(pcie);
+>  	if (ret)
+>  		goto fail;
+> 
+
 -- 
 Florian
 
