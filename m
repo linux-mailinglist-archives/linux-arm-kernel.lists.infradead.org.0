@@ -2,53 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4081315CC45
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:24:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9195715CC47
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:24:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xaNwb3CZb3re0YuN2OnWODwA57BmEDYASHzr3Sb2DYc=; b=Aj6rnqeieNei3g
-	1vDL/kx8e497aZLO5EILglv3KM7CGrF+AfgrbzoBm8YqAQoesGQ6vPKatScWPsfZzXJlIXPhuCpML
-	23Ph0XtwTQBomFIg7eRFXpPcL3EOtNHt/U/fx/O9ZX0mFelIumy8bLGI8Va0YPyXyZaRL0pZC0QF3
-	FvpRiTPfbrAPPr8I9n4/Xxx4UsRZyGE5AkZsDbuVxC6Jbb9IqN3pjITLjRmbUbGQiFkGzcgkb/gMl
-	K/kNKG4hAXFqCI+kXZcmUN+Ldh5AIT7MtZRbkuB1BCftlgsz43pho9W5kIa0kZ4/Pd5tckkaxE2RJ
-	MzgcI61Z7DNWFmpK03XQ==;
+	List-Owner; bh=GPNRu7kDU2n4sw102Us7P1+yt5r8pv4MN9d9hrpP5w0=; b=nXWv2u7R2EPXoS
+	m+emZOI5zKqs16ru7egOQlIz/hCz0OcMydoHI2jQRJjJqY74v22Exy22P4IoHxY2q2ZOeAfqakPFB
+	20hNRUL8uZnHADsWW+wNI0W3Jccz5/SrqYXNPEVTsA9xOOMu/z+LZNHQA/ocwNF9MfOajHRLOX1ZA
+	dc+6m5+J87QNTOl+f+2HGgfiW1yv0HcCF/auILDQp8mfupNwgf8kFrpTW+i9N5p3LNGppBBHgCDFa
+	ITrTvkfIbmlfNjO9v2pOlLpVjWlT+KFuGkFBtzbMoa4l8FciyFuJA5BjCpzPcvkI21oTK9bfI8i1m
+	nD0X5bcVOsPHAxH4UIzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2L2N-0004J9-3f; Thu, 13 Feb 2020 20:24:39 +0000
+	id 1j2L2e-0004d1-N8; Thu, 13 Feb 2020 20:24:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Kz1-0000lB-5X; Thu, 13 Feb 2020 20:21:12 +0000
-Received: from ziggy.cz (unknown [37.223.145.31])
+ id 1j2L1v-00049C-Ic
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 20:24:13 +0000
+Received: from mail-qv1-f49.google.com (mail-qv1-f49.google.com
+ [209.85.219.49])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6EAFE246AF;
- Thu, 13 Feb 2020 20:21:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6178F24693
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Feb 2020 20:24:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581625270;
- bh=DixFOO1GKT4exK4e47L4oEKto/snnxtafkHfLyzoRjE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=aoQVPXYTBM5OOAECJE/bFoLv6kRxp2NCvyDhOWHJsrnOAbKQLbnfxHIZ8LjZtSCsC
- ApqfRu79GzpDKRUSbQbon2hwwIiZsGhBYUDMVYJGw4rD3SOCh7oWTlZxDV9B1WYhXo
- pLz5f5al64vrKwo51arNt5Ucl74Gm0bmXnKu+SJ0=
-From: matthias.bgg@kernel.org
-To: robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
- p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
- sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
- laurent.pinchart@ideasonboard.com, enric.balletbo@collabora.com
-Subject: [PATCH v7 13/13] drm/mediatek: Add support for mmsys through a pdev
-Date: Thu, 13 Feb 2020 21:19:53 +0100
-Message-Id: <20200213201953.15268-14-matthias.bgg@kernel.org>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200213201953.15268-1-matthias.bgg@kernel.org>
-References: <20200213201953.15268-1-matthias.bgg@kernel.org>
+ s=default; t=1581625450;
+ bh=N9a+BVoiRLAWlMQYqOvNOgYl0ZU8s6znAZLOX+gpEAg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=YdPh3EGw+QWQVVqHsMg9hNFXHacHaK7sr+Dmdv7j3MlHW9CT23s9m93H6F6SOwCoL
+ 6IDaXzP3wkNbSOdyhe0j4uWmYZAKOrCOKKJJRJUTRUV5R1u6sXYUPhhgRb1F5OBHk3
+ j5THtWcKp7FsxhB45Ro9yIAR3vjQS20IQm0sJIyE=
+Received: by mail-qv1-f49.google.com with SMTP id dc14so3240007qvb.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Feb 2020 12:24:10 -0800 (PST)
+X-Gm-Message-State: APjAAAWrSfhWMhXMjPfozAf7d1BOa1Cc/t2fipzBeyYvgAXnmGDQio7d
+ ApUnd1cVobBkLw4BSSayFfXZK9D7FjSA83ehlA==
+X-Google-Smtp-Source: APXvYqzySaRcn1yJ5/y7FYHk+Er01trcCUflqTCPJ+GCFdvM7asA/lZD7VyTokV1bgOliI+T0Zf5Vgc8A/I7WGsIK8o=
+X-Received: by 2002:ad4:4511:: with SMTP id k17mr12491088qvu.135.1581625449440; 
+ Thu, 13 Feb 2020 12:24:09 -0800 (PST)
 MIME-Version: 1.0
+References: <20200210092713.279105-1-linus.walleij@linaro.org>
+ <20200210092713.279105-4-linus.walleij@linaro.org>
+In-Reply-To: <20200210092713.279105-4-linus.walleij@linaro.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 13 Feb 2020 14:23:58 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+4bx=sOmexqBC-+Yv6-KwoS_0uLqVTLuiL+hLh+G03bA@mail.gmail.com>
+Message-ID: <CAL_Jsq+4bx=sOmexqBC-+Yv6-KwoS_0uLqVTLuiL+hLh+G03bA@mail.gmail.com>
+Subject: Re: [PATCH 3/7] dt-bindings: arm: Add Integrator YAML schema
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_122111_266607_996D6182 
-X-CRM114-Status: GOOD (  16.99  )
+X-CRM114-CacheID: sfid-20200213_122411_715803_2FD74BC0 
+X-CRM114-Status: GOOD (  22.32  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,156 +86,142 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, drinkcat@chromium.org, frank-w@public-files.de,
- sean.wang@mediatek.com, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, wens@csie.org,
- Matthias Brugger <mbrugger@suse.com>, linux-mediatek@lists.infradead.org,
- rdunlap@infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- matthias.bgg@kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
- hsinyi@chromium.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Sudeep Holla <sudeep.holla@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Matthias Brugger <mbrugger@suse.com>
+On Mon, Feb 10, 2020 at 3:27 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+>
+> This implements the top-level schema for the ARM Integrator
+> platforms.
+>
+> Cc: Sudeep Holla <sudeep.holla@arm.com>
+> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+> ---
+>  .../bindings/arm/arm,integrator.yaml          | 85 +++++++++++++++++++
+>  1 file changed, 85 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/arm/arm,integrator.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/arm/arm,integrator.yaml b/Documentation/devicetree/bindings/arm/arm,integrator.yaml
+> new file mode 100644
+> index 000000000000..39aa3e31f934
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/arm/arm,integrator.yaml
+> @@ -0,0 +1,85 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/arm/arm,integrator.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: ARM Integrator Boards Device Tree Bindings
+> +
+> +maintainers:
+> +  - Linus Walleij <linus.walleij@linaro.org>
+> +
+> +description: |+
+> +  These were the first ARM platforms officially supported by ARM Ltd.
+> +  They are ARMv4, ARMv5 and ARMv6-capable using different core tiles,
+> +  so the system is modular and can host a variety of CPU tiles called
+> +  "core tiles" and referred to in the device tree as "core modules".
+> +
+> +properties:
+> +  $nodename:
+> +    const: '/'
+> +  compatible:
+> +    oneOf:
+> +      - description: ARM Integrator Application Platform, this board has a PCI
+> +          host and several PCI slots, as well as a number of slots for logical
+> +          expansion modules, it is referred to as an "ASIC Development
+> +          Motherboard" and is extended with custom FPGA and is intended for
+> +          rapid prototyping. See ARM DUI 0098B. This board can physically come
+> +          pre-packaged in a PC Tower form factor called Integrator/PP1 or a
+> +          special metal fixture called Integrator/PP2, see ARM DUI 0169A.
+> +        items:
+> +          - const: arm,integrator-ap
+> +      - description: ARM Integrator Compact Platform (HBI-0086), this board has
+> +          a compact form factor and mainly consists of the bare minimum
+> +          peripherals to make use of the core module. See ARM DUI 0159B.
+> +        items:
+> +          - const: arm,integrator-cp
+> +      - description: ARM Integrator Standard Development Board (SDB) Platform,
+> +          this board is a PCI-based board conforming to the Microsoft SDB
+> +          (HARP) specification. See ARM DUI 0099A.
+> +        items:
+> +          - const: arm,integrator-sp
+> +
+> +  syscon:
 
-The MMSYS subsystem includes clocks and drm components.
-This patch adds an initailization path through a platform device
-for the clock part, so that both drivers get probed from the same
-device tree compatible.
+Given there's a 'reg' property here, this should have a unit-address.
 
-Signed-off-by: Matthias Brugger <mbrugger@suse.com>
-Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> +    description: All Integrator boards must provide a system controller as a
+> +      node in the root of the device tree.
+> +    type: object
+> +    properties:
+> +      compatible:
+> +        oneOf:
+> +          - items:
+> +            - const: arm,integrator-ap-syscon
+> +            - const: syscon
+> +          - items:
+> +            - const: arm,integrator-cp-syscon
+> +            - const: syscon
+> +          - items:
+> +            - const: arm,integrator-sp-syscon
+> +            - const: syscon
 
----
+No need for oneOf:
 
-Changes in v7:
-- Add Rv-by from Enric
+items:
+  - enum:
+      - arm,integrator-ap-syscon
+      - arm,integrator-cp-syscon
+      - arm,integrator-sp-syscon
+  - const: syscon
 
-Changes in v6:
-- re-arrange the patch order
-- generate platform_device for mmsys clock driver inside the DRM driver
-- fix DTS binding accordingly
-- switch all mmsys clock driver to platform probing
-- fix mt8173 platform driver remove function
-- fix probe defer path in HDMI driver
-- fix probe defer path in mtk_mdp_comp
-- fix identation of error messages
+> +    required:
+> +      - compatible
+> +      - reg
 
-Changes in v5:
-- fix missing regmap accessors in drm diver (patch 1)
-- omit probe deffered warning on all drivers (patch 5)
-- update drm and clk bindings (patch 6 and 7)
-- put mmsys clock part in dts child node of mmsys. Only done
-for HW where no dts backport compatible breakage is expected
-(either DRM driver not yet implemented or no HW available to
-the public) (patch 9 to 12)
+'reg' should be listed as property too. How many entries?
 
-Changes in v4:
-- use platform device to probe clock driver
-- add Acked-by CK Hu for the probe deferred patch
+> +
+> +patternProperties:
+> +  "^core-module@[0-9a-f]+$":
+> +    type: object
+> +    description: the root node in the Integrator platforms must contain
+> +      a core module child node. They are always at physical address
+> +      0x10000000 in all the Integrator variants.
 
-Changes in v3:
-- fix kconfig typo (shame on me)
-- delete __initconst from mm_clocks as converted to a platform driver
+Then do 'core-module@10000000' for the property name.
 
-Changes in v2:
-- add binding documentation
-- ddp: use regmap_update_bits
-- ddp: ignore EPROBE_DEFER on clock probing
-- mfd: delete mmsys_private
-- add Reviewed-by and Acked-by tags
+> +    properties:
+> +      compatible:
+> +        contains:
+> +          const: arm,core-module-integrator
+> +        description: this node is the core module node, it can be compatible
+> +          with syscon and simple-bus as well
 
- drivers/gpu/drm/mediatek/mtk_drm_drv.c | 24 ++++++++++++++++++++++++
- drivers/gpu/drm/mediatek/mtk_drm_drv.h |  2 ++
- 2 files changed, 26 insertions(+)
+Those compatibles should be listed, too.
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-index b68837ea02b3..68605dedf997 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-@@ -125,6 +125,7 @@ static const struct mtk_mmsys_driver_data mt2701_mmsys_driver_data = {
- 	.ext_path = mt2701_mtk_ddp_ext,
- 	.ext_len = ARRAY_SIZE(mt2701_mtk_ddp_ext),
- 	.shadow_register = true,
-+	.clk_drv_name = "clk-mt2701-mm",
- };
- 
- static const struct mtk_mmsys_driver_data mt2712_mmsys_driver_data = {
-@@ -134,6 +135,7 @@ static const struct mtk_mmsys_driver_data mt2712_mmsys_driver_data = {
- 	.ext_len = ARRAY_SIZE(mt2712_mtk_ddp_ext),
- 	.third_path = mt2712_mtk_ddp_third,
- 	.third_len = ARRAY_SIZE(mt2712_mtk_ddp_third),
-+	.clk_drv_name = "clk-mt2712-mm",
- };
- 
- static const struct mtk_mmsys_driver_data mt8173_mmsys_driver_data = {
-@@ -141,6 +143,7 @@ static const struct mtk_mmsys_driver_data mt8173_mmsys_driver_data = {
- 	.main_len = ARRAY_SIZE(mt8173_mtk_ddp_main),
- 	.ext_path = mt8173_mtk_ddp_ext,
- 	.ext_len = ARRAY_SIZE(mt8173_mtk_ddp_ext),
-+	.clk_drv_name = "clk-mt8173-mm",
- };
- 
- static int mtk_drm_kms_init(struct drm_device *drm)
-@@ -437,6 +440,24 @@ static int mtk_drm_probe(struct platform_device *pdev)
- 
- 	private->data = of_device_get_match_data(dev);
- 
-+	/*
-+	 * MMSYS includes apart from components management a block providing
-+	 * clocks for the subsystem. We probe this clock driver via a platform
-+	 * device.
-+	 */
-+	if (private->data->clk_drv_name) {
-+		private->clk_dev = platform_device_register_data(dev,
-+						private->data->clk_drv_name, -1,
-+						NULL, 0);
-+
-+		if (IS_ERR(private->clk_dev)) {
-+			dev_err(dev, "failed to register %s platform device\n",
-+				private->data->clk_drv_name);
-+
-+			return PTR_ERR(private->clk_dev);
-+		}
-+	}
-+
- 	private->config_regs = syscon_node_to_regmap(dev->of_node);
- 	if (IS_ERR(private->config_regs))
- 		return PTR_ERR(private->config_regs);
-@@ -544,6 +565,9 @@ static int mtk_drm_remove(struct platform_device *pdev)
- 	for (i = 0; i < DDP_COMPONENT_ID_MAX; i++)
- 		of_node_put(private->comp_node[i]);
- 
-+	if (private->clk_dev)
-+		platform_device_unregister(private->clk_dev);
-+
- 	return 0;
- }
- 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-index 03201080688d..15652264c233 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-@@ -29,11 +29,13 @@ struct mtk_mmsys_driver_data {
- 	unsigned int third_len;
- 
- 	bool shadow_register;
-+	const char *clk_drv_name;
- };
- 
- struct mtk_drm_private {
- 	struct drm_device *drm;
- 	struct device *dma_dev;
-+	struct platform_device *clk_dev;
- 
- 	unsigned int num_pipes;
- 
--- 
-2.24.1
-
+> +
+> +    required:
+> +      - compatible
+> +      - reg
+> +
+> +required:
+> +  - compatible
+> +  - syscon
+> +  - core-module@10000000
+> +
+> +...
+> --
+> 2.23.0
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
