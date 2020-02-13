@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C6FF15CCF7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 22:10:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7757715CD02
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 22:12:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FX/ro1JBor7BnctXWvTLL0jg3oV+591t2I6mFa9Blco=; b=IFpOzTG1R8Tb86
-	Yk3650YkM2oNrS9jShZ7Ee8GDKFUy37/Kc7erPla5tyE6E76ImUS2qaXuj5yrHqfhPSbwLM85WNzR
-	BdUslvl6B9A4rr/YcQKPlf6nG/xK7khG8XurNkAgdm/Z35FQaenW/oGEvihn9fE5RO8tbsM7F/Up7
-	lChSgz8FGw6D6BjH3LkOaDColduK0ft9XpZoKFr4HvQ4iJLbmOnb+Is1B49agNKPhFidWdCxV7ZzI
-	BCq8zyGynVeim+F9S6zB+PcW5ukSczACwszyCPbB6s9w6UJJLqyG+i7zbrIhmS3Le98Hzs/EUTpPo
-	7ZcbSt5uwff10Qo80i8A==;
+	List-Owner; bh=C2NYA94ia12n1qs+pLg/4wz6j+1r+AK5sUd6+GNLPSk=; b=gh6zLKDVTEECEc
+	nnPn26Mtfw681SKrrvi36auNvePDuODAsDitmhX++jNWoViowR15s2pTl0NTFk2G3EeWc2HgXL9OQ
+	I3gn/czGQBxI3h7CmergwXAPUtxm9/tNNlsWMAru/p6SPiotgrBHxkVqTEEg4NIsdujLwV0nSTSRn
+	lqIB3XFJCTNrcG5QsUQ1pJufe8lnApqytt57SKDpHxqPcyuoPJTIFv2X5hdD7Q7ukHklNTT+FncYz
+	afkxvYj01Xc1qY1hlcPc+0Bqrr+dlJ/VqhecdosiQigGqh9EPSOc1Aq3TjvlFyORU9AjH0ci9lHFC
+	eAgJ2v9ADK0+LHYHzDFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2LkJ-0007bC-Gp; Thu, 13 Feb 2020 21:10:03 +0000
+	id 1j2Lmu-0000kV-IT; Thu, 13 Feb 2020 21:12:44 +0000
 Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Lk9-0007aA-Cv
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 21:09:54 +0000
-Received: by mail-wr1-x443.google.com with SMTP id m16so8423814wrx.11
+ id 1j2Lmm-0000jy-89
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 21:12:37 +0000
+Received: by mail-wr1-x443.google.com with SMTP id c9so8473497wrw.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 13:09:52 -0800 (PST)
+ Thu, 13 Feb 2020 13:12:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZtGcUpA5w76Gcek+VkqKEDd0yDqjEFq7/gNXQdanLGM=;
- b=Mf3W1BUftM+nHyrzCX/s/zOBXQMM8Okj/NIiHqnyaNOVn9jeL+X5uDsvbhzPHs4ZYm
- Eywp6G8pCTJEPMEOzfDlStUka5S959F5fX2EOBMECYxssoK5tkYaGz5fR740k+uwX471
- xr7QHag/Smbp2tbSvoVKpw9CmTlS4i0HGeiXZhZ3mXb/Aila2GCHeova4TFb8L7ki8cc
- 8Cb/+2IB82/9tcSUyspxstMFFE03/nSdqiwVBfLvGYn0fVx0uxDIH24GzIGcgxrN9TWW
- /foFhhuCCVAYNigjgDUFZ4sb0kgTydppAjzxko/meQW72KN2UZo9k129RSjVX01uo5ph
- CPKQ==
+ :cc; bh=iLnuSGH6jNEPRpXsbLdWMvvm70on1OtXGRCIuCTYax4=;
+ b=THiYYtRd1Hw9OOJtDh3m0bsQpuPbcL6D15Or8KKVQBdszixBwTMpdrWI1sdey73UL6
+ OMnfWvyrWMTpxJtIWoOC3klZgu1IWrwgGpKzMr1l6YiTs0DTZmmHJJcXX96UNF87RkqM
+ HIFVzoYj/EtPV4PceO73UE9E2E+l505vMkvdCLvqEdLKR6NepxAChTX8Ksv5A3MY10wx
+ MRDdAInFdByqnE458Nnhm4UsbhvGkS+b6VwbMIinCdiLagqLPLJoH+eJrkk9PW7dAYay
+ e6CshZ/C9jEucmAiBLXhWu3nU7PBF+CispXbP2m0DDejFGVPd1+CTDQtGHZ+f7WzC7Ag
+ k7gQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ZtGcUpA5w76Gcek+VkqKEDd0yDqjEFq7/gNXQdanLGM=;
- b=XxJ+dmflsCNYwj9vpa+1Sk0GajnjgcjRKVIufoMqN2mMwFh8lWZl8WiKqfwY3AVshF
- n2sNzVB+2oOOpOxXhEa1JdeISjycnF7ZfyABwdgG7Eo8bPLXflp1zKisDV/wCIQn3PU7
- sucfm5VQK5Xuk2hSHHGKoJJooV1MoNYe7VI8alqh7h74DMzKBZtjTMTsEoIVB0iDlHgc
- TXtXBJ1d1fciDSdQmREB1lcLzDjJSkvT8VpvnckDBQnVJSElJ8fG9CQdpmb74X3Rzhko
- AQjhehx2Ih21d5fG2gfE/l9GShwptWEwxz6mOdOb2TFHzDzWKv7kDpvbsirCsclfIBLA
- /wrw==
-X-Gm-Message-State: APjAAAXSiqfr/CAMrMjFtyx44G/RauNKwWIZ0jrLaqbtWiHBeOV91oZ7
- ult7RZ5Dg7pGrGinXjE6Gzap5wCdOiYoinNOeCk=
-X-Google-Smtp-Source: APXvYqzGqv+wev1io566qMCQSBk8Usb8vOHvyhzTsTli9ft0dX6qZZT5ThpS8E5SOs7v3YSOIfjh2hVo6p2lk1M1uxE=
-X-Received: by 2002:a05:6000:367:: with SMTP id
- f7mr23219823wrf.174.1581628191354; 
- Thu, 13 Feb 2020 13:09:51 -0800 (PST)
+ bh=iLnuSGH6jNEPRpXsbLdWMvvm70on1OtXGRCIuCTYax4=;
+ b=mZ/0mQsQnIJzL1veiS13Tp9NUqBbwzkRvP2VqY4l0Ken8PUf/KOsWpKQWynaIbv2dd
+ IViUCS0aUzE4SLzNFfhCkfSCd/iAyLSMh8aZUA55Gwj/slQB4kKZ0XLcnndhpghGA429
+ Ds3UDh85aC1eMgMqiUUvgqwGAEuHQX7Fkf5A5ynq48gMDKMbHW7Mj5VsNtGxgwr5zlCV
+ C8HcAT3WEeGjSCw18czoxN2b28PMPnnMTNQuSQuryg2xEknwmGsdWYZ28OYZeYDfZFM7
+ hdaZaLe9mQPHHVxVhgJzZq1BAUQh/gKwLdzWnCbwH95uuriS4GkpTVN50wtd638tAWrY
+ QdRw==
+X-Gm-Message-State: APjAAAXAT85QmMTHh9leHGDH/vAU8g02bsKbro6oxP6COUx7V+VSFi1p
+ C5xOSJpUgp3fVHVOkFyBocSbpOyJtb+/tvKXGsA=
+X-Google-Smtp-Source: APXvYqz2/8nyozAwb5c39LHVAvkkzIlzsIxS4KXcp3M3SHYFP+afkm8+EUw7r7XUouiqxTfEbIygo0weNf0szTqLQ0o=
+X-Received: by 2002:adf:ed09:: with SMTP id a9mr24147253wro.350.1581628354989; 
+ Thu, 13 Feb 2020 13:12:34 -0800 (PST)
 MIME-Version: 1.0
 References: <20200210061544.7600-1-yuehaibing@huawei.com>
  <9351a746-8823-ee26-70da-fd3127a02c91@linux.intel.com>
@@ -60,13 +59,13 @@ References: <20200210061544.7600-1-yuehaibing@huawei.com>
  <CAJKOXPcxL2vpWGwO1OL9Vv0g6hzbW-AyGJNn=7Yq2iy10_cbhg@mail.gmail.com>
 In-Reply-To: <CAJKOXPcxL2vpWGwO1OL9Vv0g6hzbW-AyGJNn=7Yq2iy10_cbhg@mail.gmail.com>
 From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Thu, 13 Feb 2020 23:09:39 +0200
-Message-ID: <CAEnQRZA4W-i4zcF8jUL2zp5-dO-iX=KSp5Do2pCK9_oZiVtYEQ@mail.gmail.com>
+Date: Thu, 13 Feb 2020 23:12:23 +0200
+Message-ID: <CAEnQRZBgpcLz29PG6pY_6xaULO6siGumqrsO0gRReMRwUOqW2w@mail.gmail.com>
 Subject: Re: [alsa-devel] [PATCH -next] ASoC: SOF: imx8: Fix randbuild error
 To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_130953_466247_3F2BAB50 
-X-CRM114-Status: GOOD (  19.63  )
+X-CRM114-CacheID: sfid-20200213_131236_292429_9690D92C 
+X-CRM114-Status: GOOD (  23.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -171,11 +170,24 @@ On Tue, Feb 11, 2020 at 11:59 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
 > Hi,
 >
 > Since it's a module, don't you just miss EXPORT_SYMBOL there?
+>
+> > So, I think we should change the Fixes tag. Are there
+> > any clear rules on when to use select vs depends?
+> >
+> > On my side, I know what both are doing but it is not clear
+> > when to use them.
+>
+> Visible symbols usually should not be selected. The same with symbols
+> with dependencies. The docs have this rule mentioned.
 
-Hi Krzysztof,
+You mean if module X depends on module Y, we shouldn't use select?
+But this exactly what this patch does :).
 
-Which symbol misses an EXPORT_SYMBOL?
-We already have EXPORT_SYMBOL(imx_dsp_ring_doorbell);
+The problem here is that when X depends on Y, and X=y and Y=m
+when we try to compile X if get an error because we cannot find a symbol from Y.
+
+I think if X depends on Y, and X is forced to "y" then also Y should
+be forced on "y".
 
 _______________________________________________
 linux-arm-kernel mailing list
