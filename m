@@ -2,71 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 469CC15B6EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 02:57:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A21D15B6F7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 03:02:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sH9VlqkV9tFly42MpoX1AWpwrhhE8iLckZ/DJn1lqDo=; b=G2vXF2vzExBQNs
-	tff8opcAp2ZeOJsnTx7p62oD9Nlqc7Yuk/PahHYUTtazi9vvQ8LsyqOzxNisHmAPrG9tXPWHGqelL
-	GmpOif3NTd6vsjKOnNu34VbLKt1gcsPgnSMr/JLJsS8kpLGA5VW+4euNsvcB0AAueBaNfLsk3WVM2
-	uyQKOSt/04a8cOEZkFlUzyEsDG5PC1uYqjs/qSP6cm8NOFMuqrFRmnsIJEkxd26K1cRBAkJSX0Nx5
-	vEaRk753uq00PxiGk4/k39Ttj8U+Ztwmo+TW34xpNCsKwkXWuRKvS3tSwe7fErUWigEkAhNLz/9FO
-	pk354buAWf0irH6orqCQ==;
+	List-Owner; bh=dqpY3EhxtYawHE2SDjsmBbmMZKuxtZokxnu/PtaBBEk=; b=FiXptV+V+r9GMd
+	8sK5Xlx4ZxYXiOwF8oAlM7TD2INVfconEDqQ5nkiRXOclsgnXhC7koSdI2AnDVkSpAS6OfPmcX/zg
+	86PnJfanGT67vJQ53N01kfU/wDAAL6jOaAsYqSSC8biGe+vXTZjYQt+juiqTg3s3uMZ/5veP5f/1Z
+	igeyVq3TSF2N50VzRwv7EpDzWQEDNZZzQoZAAfY2uZtIYQHLHHEIsUiDqFNAyFYpTp0mq3A39sbvb
+	5GNL9TrAUAS10iRHpYkPsBwZqEyey8aGeZ3HC7QY9czOrLBOO8AeX41NEdwItvrhs81agVDL3eJif
+	Y0S7ZNH9/rsjctjxOIoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j23l3-0004IM-BF; Thu, 13 Feb 2020 01:57:37 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j23q3-0006DF-0f; Thu, 13 Feb 2020 02:02:47 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j23kp-0004H0-9z; Thu, 13 Feb 2020 01:57:25 +0000
-X-UUID: f51863081e5444dd90bc72f7a3b2636f-20200212
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=SS2WJ9TnlTdWxgp0Ian/hWdeQ6K5JRe2gnRD2HiUUuo=; 
- b=hne3FsPDQO9jeuZ9Tnc+sCBIQjIKoA+2MLp1XYmlv2S9RNIOUMa9d/wgECzF/Aq9pE7mQo7seqIPGY+ZET3B3W3TQm4nQkv93k2TkB6sDKUcFx3BpoN7MKiGX7bdzCDK7aSH0SR6KCRt2M57suGHRfmxkEnuOppdWwgt4l32BR4=;
-X-UUID: f51863081e5444dd90bc72f7a3b2636f-20200212
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 195385892; Wed, 12 Feb 2020 17:57:17 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Feb 2020 17:57:27 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Feb 2020 09:55:50 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 13 Feb 2020 09:57:18 +0800
-Message-ID: <1581559033.14792.9.camel@mtksdaap41>
-Subject: Re: [PATCH v2 2/3] drm/mediatek: support HDMI jack status reporting
-From: CK Hu <ck.hu@mediatek.com>
-To: Tzung-Bi Shih <tzungbi@google.com>
-Date: Thu, 13 Feb 2020 09:57:13 +0800
-In-Reply-To: <CA+Px+wXjC1rchzUGhYYCJVyEbm7RQNFnqf-sQNaky6d82DyLyw@mail.gmail.com>
-References: <20200206031752.193298-1-tzungbi@google.com>
- <20200206102509.2.I230fd59de28e73934a91cb01424e25b9e84727f4@changeid>
- <1581495554.22603.2.camel@mtksdaap41>
- <CA+Px+wXjC1rchzUGhYYCJVyEbm7RQNFnqf-sQNaky6d82DyLyw@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1j23pu-0006CQ-RF
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 02:02:40 +0000
+Received: by mail-io1-xd42.google.com with SMTP id d15so4678194iog.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Feb 2020 18:02:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=JNctVHQXMHRMoLVHSnQu0meBGnR1Lkb/YWbGwQhQKXY=;
+ b=oEZfD6c0cXQISVAJtbLhL96sNT9nGk93VWwf13BYufaRBk0UiEL9bkUxdnt2YCKGeu
+ qF5JhTN9cxHQ/xZIHZlpyFNI4hOas/fiwX/H6fiIqLeh0n8twoIX6eqxyqX+OJ85q+By
+ BpyXH0IKtwb8+G4ssC7sebZYEWTGDP3K3rT8+XJkFPmd4rQ8WimhZPKhaAgiVnxztya/
+ ArwEioUkb12Dsb2zJgdMG0anxTeBsJXo70/9g/HblXtgVJZe1kgsaq8Q/uv6kOF68b82
+ 1ke9fGmOETf/0cCJJaCyIl3X7I0GUO9fIsDjyRpKl/MaZ1Sw/UATl8YpV/oQMSumuO5z
+ L31w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=JNctVHQXMHRMoLVHSnQu0meBGnR1Lkb/YWbGwQhQKXY=;
+ b=PwIdmIRXZ9XsbKmp93tbOan1SJX0IpNuI4CMtD4yikAkJ0B7Y9UGAd2UKDFluRkdYP
+ VYkKIbAsftR3m+tnu8+Ja8VX0J4JL9+rBCb0kz9fJpP7Sqk15fmKUW6cD9Vo95E62Q5v
+ LSUFr2gTbb7pbCKU+IAmlJC5JF3wMfTAuitGcviPty2wgrc8uvtS1t9FfA75g12IzF80
+ Iz1/2SIjtSaHgvsX4QdMQRnR8Rx1AVmt3aZX9IYvWCwB5veylPyHoanT3XmfGlSk8z4r
+ GqQ76O7avmYPtFLj+H33BEtsohFmCeEPpjFvcqdQlNI98nvfg8FZtxqagME70BcU7PMa
+ 09EQ==
+X-Gm-Message-State: APjAAAWY52IB3jv0FjRu7vFZhOAUmbyq2emiWq2zfPNTEVqNpDvIW8OX
+ ugYoEzd4XkBJ9QBBSLImZiK2CgANLoGtvChexm8=
+X-Google-Smtp-Source: APXvYqxRLFhg7y/Ul+Ohfd1JDI8e5yvBFMQhWXHpXwwW9UL1nvuKxDSaN0zFwBWZ/FoUQJkD5MKh126lxnk+I4pHGk4=
+X-Received: by 2002:a02:c856:: with SMTP id r22mr20946779jao.67.1581559356960; 
+ Wed, 12 Feb 2020 18:02:36 -0800 (PST)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 242DD775477EA9B69ECE3E92EE470D936050FE8CEE227D1CA21D57919E72DCD62000:8
-X-MTK: N
+References: <20200113051852.15996-1-samuel@sholland.org>
+ <20200113051852.15996-3-samuel@sholland.org>
+In-Reply-To: <20200113051852.15996-3-samuel@sholland.org>
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Wed, 12 Feb 2020 20:02:26 -0600
+Message-ID: <CABb+yY2MJ-1i0K7XVkPT3+6ac1XR9-3zf-GDNeswOMp6Zn_Ufw@mail.gmail.com>
+Subject: Re: [PATCH v6 2/6] mailbox: sun6i-msgbox: Add a new mailbox driver
+To: Samuel Holland <samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_175723_355082_5DB19407 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200212_180238_907403_FEA856C3 
+X-CRM114-Status: GOOD (  13.79  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jassisinghbrar[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -75,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,51 +93,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA development <alsa-devel@alsa-project.org>,
- Jimmy Cheng-Yi Chiang <cychiang@google.com>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, Mark Brown <broonie@kernel.org>,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- Matthias Brugger <matthias.bgg@gmail.com>, p.zabel@pengutronix.de, Dylan
- Reid <dgreid@google.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Ondrej Jirman <megous@megous.com>,
+ Devicetree List <devicetree@vger.kernel.org>, linux-sunxi@googlegroups.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Philipp Zabel <p.zabel@pengutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Tzung-Bi:
+On Sun, Jan 12, 2020 at 11:18 PM Samuel Holland <samuel@sholland.org> wrote:
+>
+> +static int sun6i_msgbox_send_data(struct mbox_chan *chan, void *data)
+> +{
+> +       struct sun6i_msgbox *mbox = to_sun6i_msgbox(chan);
+> +       int n = channel_number(chan);
+> +       uint32_t msg = *(uint32_t *)data;
+> +
+> +       /* Using a channel backwards gets the hardware into a bad state. */
+> +       if (WARN_ON_ONCE(!(readl(mbox->regs + CTRL_REG(n)) & CTRL_TX(n))))
+> +               return 0;
+> +
+> +       /* We cannot post a new message if the FIFO is full. */
+> +       if (readl(mbox->regs + FIFO_STAT_REG(n)) & FIFO_STAT_MASK) {
+> +               mbox_dbg(mbox, "Channel %d busy sending 0x%08x\n", n, msg);
+> +               return -EBUSY;
+> +       }
+> +
+This check should go into sun6i_msgbox_last_tx_done().
+send_data() assumes all is clear to send next packet.
 
-On Wed, 2020-02-12 at 19:31 +0800, Tzung-Bi Shih wrote:
-> On Wed, Feb 12, 2020 at 4:19 PM CK Hu <ck.hu@mediatek.com> wrote:
-> > I think hdmi_conn_detect() and mtk_hdmi_audio_hook_plugged_cb() would be
-> > called in different thread. So it's necessary to use a mutex to protect
-> > this.
-> 
-> Thanks for the reminder.  I feel using mutex here is overkill.  Please
-> see https://patchwork.kernel.org/patch/11378413/ for my proposed
-> solution.
-> 
+.....
+> +
+> +       mbox->controller.dev           = dev;
+> +       mbox->controller.ops           = &sun6i_msgbox_chan_ops;
+> +       mbox->controller.chans         = chans;
+> +       mbox->controller.num_chans     = NUM_CHANS;
+> +       mbox->controller.txdone_irq    = false;
+> +       mbox->controller.txdone_poll   = true;
+> +       mbox->controller.txpoll_period = 5;
+> +
+nit:  just a single space should do too.
 
-I'm not only consider the race condition of plugged_cb and codec_dev. I
-also care about the atomic of mtk_cec_hpd_high() and hdmi->plugged_cb().
-If these two function is not an atomic operation, below is an example of
-problem:
+Sorry, for some reason I thought I had replied to this patch, but
+apparently not. My mistake. Do you want to revise this submission or
+send another patch on top?
 
-<Status disconnected>
-1. Thread A call mtk_hdmi_audio_hook_plugged_cb()
-2. Thread A call mtk_cec_hpd_high() and get disconnected.
-<Status connected>
-3. Thread B call hdmi_conn_detect()
-4. Thread B call mtk_cec_hpd_high() and get connected
-5. Thread B callback plugged_cb() with connected
-6. Thread A callback plugged_cb() with disconnected (Bug here)
-
-Regards,
-CK
-
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
