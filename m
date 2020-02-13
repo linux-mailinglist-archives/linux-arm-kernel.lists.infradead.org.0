@@ -2,122 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 162D615B87F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 05:18:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 514A415B88D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 05:25:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GMRNT/4uEAErYjG6bBu6urVnOKjPzGVo656lN5OjqvU=; b=eAhrSgcHV0i5Hp
-	mmhLZ9fVztscxbALuaFaCNKHahL+H8XfGD7lcSUx7MNWDYKwJ9VvmKH9vjQy5HRmjUXxGYZ/9wHyx
-	JZRl9xBIU5f+1+kT7SW20G5NRq7femTqCFtipmhRR56Q9fAIqtnUvTzCBF6Max8JpnJneb3gsCL4L
-	iJJvdxdfs1F5NWXypmP0qTDHhFN5Yaze4+r3uYpklhLHxO+vFC/FXmDbeww8OjFrROpzS5Cue5csq
-	t0+AYgxce80LB6JtqV1ACXkXqVHkFX87MMPc/w+MMlPV+MUElNL3pZg56EzSoz9HyZ9tLayc27QVr
-	52wt+goPi8xvaz6GARAg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=F7bfbDv9+5eaALmWucsFwNSZGLYtz++4QIN4tUZ/JYU=; b=bspMg/fnnfGC3T
+	XBIhbSKRS+nToYlrY5uzoqkG46KOt9JAvw3vIEDFft4BOkZr7pb5Sg2EhCulnt8XuAlxRxHbw9mgl
+	hNJws3vTizZahRELP2vC7HZWlnaifbQbriUgZL8uT7Jk4ibDG8cF8GCuRtrhXmrh2zeX/LXmQ3B+g
+	Km+ld2GEqmJYNlcapRlCLJsHUks6uihAgaLdSqI4w06gAk8HOD5hpRnhTSOErnd3ojKbSyY3w7eAM
+	GP98Xsu06ud80aHaESLH6ELMLvzG4NMJuFSqADwiv0fTrhMgnA9Zrlc9LPiE+HwdgWTGEw1hT7Mz1
+	oGVkcsgAD0Dts12JnTQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j25xI-0004LT-Jr; Thu, 13 Feb 2020 04:18:24 +0000
-Received: from mail-eopbgr1300108.outbound.protection.outlook.com
- ([40.107.130.108] helo=APC01-HK2-obe.outbound.protection.outlook.com)
+	id 1j263u-0006hg-FW; Thu, 13 Feb 2020 04:25:14 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j25x5-0004I4-50
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 04:18:12 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ftCPQbXhlsOzfJtPPsmxl/d43JNxqv6pZpSFD0a4Fz9iMrS/xOyCVMTmZFjSsvRlFjuiRLQG+oe38nLKtsWpQyjRAjnVdILo5M2mWY1lQ9FzYPvBakZi2utJ96SbphiShBhJ5AIXTmWiuid3w88ssPBuVGUJq3e6BJ+64xKleOq5jxe6DNVCpBSXBiwF0e3ukj7aMmkSVKxh9cRRwcPLBVYw3dTP1OSjEVuXXXl29Hz3pUvzPMWqmRghPOS6ZtaJRqoHT5dxV2aC+2gggxBMNUHluOMWIhsNuODuOzY/aCX8pjiKPjNG/hmkAZyD9crA8vMCv+CJ1u8bzOPcHIa/QQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fGTIQeg0+eKDbwcVyrM63ya+ly96ipnAwkEi5ZVgu+g=;
- b=kBomwKf3u1x/GdBsubJyfzkz27u45UzkibOInFzOrNQV9byMCFmQ500sIyY1YqUXZghk7S6uFLBcuueO+uedXsl29KlO7mcoshnl/nwAp3l8Zo89wDUSgfBtnENutITdXoO4rUzAlPDyjlNmXSPZanJX7pa3+owxZJlPay/L0XRrUn+63xAKP14SiEWMf/nzmgnUa57XFc7Tb0d8ONSoPu0O6XyP6wSQFrwUoVRDOJMRQzg3B6tAN65t3QS/JH60dZaPd80shR1zvd/ZvstERbjpyy494UX6n86rrUWKcwWNMEImXXBoRAmBx+KCa7yBi7m/vz9zxnDWl5JzR9OmDw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microsoft.com; dmarc=pass action=none
- header.from=microsoft.com; dkim=pass header.d=microsoft.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fGTIQeg0+eKDbwcVyrM63ya+ly96ipnAwkEi5ZVgu+g=;
- b=d4AOQsMaJ3MTgGO8D94KI2tJywTYv7udlvUKkEmqtQvfAS0eF4GxLMcZ329JFndFfNQajD9NxlJWKjTib/9sKYxAjdtdo/Y+LNBvykFdKkThsaAW0884kBaPqc5MBFxS/5ffbxFJ0PjOkJENw2rz6RMQ/PFc3C0fBANOB86NEZc=
-Received: from HK0P153MB0148.APCP153.PROD.OUTLOOK.COM (52.133.156.139) by
- HK0P153MB0290.APCP153.PROD.OUTLOOK.COM (52.132.236.143) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.2; Thu, 13 Feb 2020 04:18:01 +0000
-Received: from HK0P153MB0148.APCP153.PROD.OUTLOOK.COM
- ([fe80::58ea:c6ae:4ea3:8432]) by HK0P153MB0148.APCP153.PROD.OUTLOOK.COM
- ([fe80::58ea:c6ae:4ea3:8432%5]) with mapi id 15.20.2750.007; Thu, 13 Feb 2020
- 04:18:01 +0000
-From: Dexuan Cui <decui@microsoft.com>
-To: Boqun Feng <boqun.feng@gmail.com>, "linux-pci@vger.kernel.org"
- <linux-pci@vger.kernel.org>, "linux-hyperv@vger.kernel.org"
- <linux-hyperv@vger.kernel.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH v3 3/3] PCI: hv: Introduce hv_msi_entry
-Thread-Topic: [PATCH v3 3/3] PCI: hv: Introduce hv_msi_entry
-Thread-Index: AQHV38PZxjAi0xWAZkW4JMZC1Le8B6gYh+3Q
-Date: Thu, 13 Feb 2020 04:18:01 +0000
-Message-ID: <HK0P153MB0148834D630E95D055CE051CBF1A0@HK0P153MB0148.APCP153.PROD.OUTLOOK.COM>
-References: <20200210033953.99692-1-boqun.feng@gmail.com>
- <20200210033953.99692-4-boqun.feng@gmail.com>
-In-Reply-To: <20200210033953.99692-4-boqun.feng@gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled=True;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId=72f988bf-86f1-41af-91ab-2d7cd011db47;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner=decui@microsoft.com;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate=2020-02-13T04:17:59.5083367Z;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name=General;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application=Microsoft Azure
- Information Protection;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId=638e90be-ea16-4589-af53-af25dfb78032;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method=Automatic
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=decui@microsoft.com; 
-x-originating-ip: [2601:600:a280:7f70:c129:4d3:3571:d407]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 675f161b-6400-41bd-d577-08d7b03bb6ec
-x-ms-traffictypediagnostic: HK0P153MB0290:|HK0P153MB0290:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <HK0P153MB02901B88A669AD74C3ABA5C6BF1A0@HK0P153MB0290.APCP153.PROD.OUTLOOK.COM>
-x-ms-oob-tlc-oobclassifiers: OLM:6108;
-x-forefront-prvs: 031257FE13
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(136003)(346002)(366004)(376002)(396003)(39860400002)(199004)(189003)(110136005)(8676002)(81156014)(81166006)(54906003)(6506007)(8990500004)(478600001)(55016002)(9686003)(10290500003)(2906002)(86362001)(4326008)(7416002)(4744005)(316002)(66446008)(76116006)(5660300002)(66946007)(52536014)(66476007)(8936002)(7696005)(33656002)(66556008)(186003)(71200400001)(64756008);
- DIR:OUT; SFP:1102; SCL:1; SRVR:HK0P153MB0290;
- H:HK0P153MB0148.APCP153.PROD.OUTLOOK.COM; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microsoft.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 6RwGZMCuSSzDhboykzAGybYDG1aQ9PboIHleaIeNXX764UC3bSVKc0M5KNRGl0ZVf5xnNlMd1bi/bgTyFDBUd4xheWmUo4Ws2Y+AVEqMx/Tahb8ty4WvraL9I+bvLM41hXcQZyush7QXsadnegOplHZPounrc9KYW+pZjEfBP61RJk3wtIb0P5eGSgXwXeUWSw0xDt2h/lULfTvTI93Sc2Dno0b1Yqf0QaPSOeDiNVOfgi5MR6Bz5ax15DpntUh6Q8nPhW6Qfv7RLuBbTK894lhj8raas8poAd3HEugd531q3dMW1ddSJx2oSFr82c+snRYWCq4TZcXb8H9aDU4Ge8GgNlvxPqZwvrDh9dEK6WQM9a/mmFU7lvkhOH6ZcoWLULA5NL8c/FlHRbKHJoMia++3JwWfzvvscxvsSsaOa1EV1xzcpiR25RJhfbAaI9qN
-x-ms-exchange-antispam-messagedata: tKrFCSzonWEko5Qa9fGTZVqILqFhOHAhJ+SouEREKgQFIp+LAAbCvW+rgp/C5jaRm0jtpaMhG8iIMFyivbz1JMJt/plCAUaDiUlsItFadQniI/48oQzKth8ITKhrX9yWjQQzO0HeYCEZnu3DN06abBu1An7AMGeNwLY5AE9WsK9y+EHXo4fqWPSDeaAU8qCwvUwhTtiwGFjPCmcluH3FCQ==
+ id 1j263i-00069a-9F
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 04:25:03 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailout.nyi.internal (Postfix) with ESMTP id 4D68F21ED6;
+ Wed, 12 Feb 2020 23:24:59 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute5.internal (MEProxy); Wed, 12 Feb 2020 23:24:59 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm1; bh=iZubnMrBjXEk8g508J0BHfR8oe
+ p9plnUPmPYucbo4Ws=; b=GJZQGNDodRtGD0R9q1c0WPj71h5Fo9pKqeQDjU3jkt
+ dCB6oUFV4uW+CAV09y5toD/+Qxd3FLNXrujTsyyLSiXESMCkCqPPmESktoR6MXNC
+ 0uEwiLf/6uM1h3RjUDLMk6LqpTfFag18ZWQ+Gv6l+U/m9K2xi7zB2bdfxRmx/sk7
+ 7FTSRInu+hM6hMdrefJ2cCSkyucYjWzFebm/WbzV1t/cXYe88SQp8qDZ05WorLqb
+ a3skqJ9cZSbbwoB6CpYRm4sOOoP7C0vRaf+0E24CPf/2AdDW0dI15S4JBl+qaja5
+ Ob257cozmP0b21CtZaPO5jfA/7Wh6FVZhCN5N4OBLBNA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=iZubnMrBjXEk8g508
+ J0BHfR8oep9plnUPmPYucbo4Ws=; b=cLlgoPPa8ER6SDyy0/9fTB/89XLbO4fQJ
+ cseOwzv5A1C1/uqGs42nwyYNG7n60KV/pmeu/N5FAfWH1iHsWlhdwQ0hSbbIo5oC
+ BPUgG0CazWxv9b9sgMmWdCqcJVbYShID6D+MhgwIGJZHMXQovTIsGCMkVoV+Wy+k
+ o/rgm7hb4EFCWLrzJjUfC6GPIl1fX6padzv8O6sCVQazYlLUAVk85PlnIYDzYMDj
+ a+kHnygs9sFwqUYToomMXywcPvtQTwSivF1N1B0TE2vWhzp360OW7d66yqSKfMLK
+ kgrY74R08b2iMNnQR7ift7we0GOYF9pIfo+ZAPn3Tbwv+NCYDPKBg==
+X-ME-Sender: <xms:m89EXijq7Nxiibf0W93WlOyLaOEb7rZ80Ih5vHjiuRSj72AISQHVcQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrieejgdejvdcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomhepufgrmhhuvghlucfj
+ ohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecukfhppeejtd
+ drudefhedrudegkedrudehudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhep
+ mhgrihhlfhhrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
+X-ME-Proxy: <xmx:m89EXnSYRBmHkrAJ04UPFZ5QlLLC6VnsMAb-R9JoBE91RHGv-ZRJyw>
+ <xmx:m89EXlEOyEe68ycGUL3uGzV2QoEKNRw21Hg9vy6Pu1U6msjDp4XZFQ>
+ <xmx:m89EXvnntcwwE0iaTWfCtcRu7WL2FFvYJLYQYy7yxYh0i7BO5OOV-Q>
+ <xmx:m89EXtwFakvAb95eHuEP8MaRhe0XK8VvEizd7mEnb4_cPhpDke9CTg>
+Received: from titanium.stl.sholland.net
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id B147230607B0;
+ Wed, 12 Feb 2020 23:24:58 -0500 (EST)
+From: Samuel Holland <samuel@sholland.org>
+To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Mark Brown <broonie@kernel.org>
+Subject: [PATCH] arm64: kaslr: Fix build failure with CONFIG_ARCH_RANDOM=n
+Date: Wed, 12 Feb 2020 22:24:57 -0600
+Message-Id: <20200213042457.17842-1-samuel@sholland.org>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-X-OriginatorOrg: microsoft.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 675f161b-6400-41bd-d577-08d7b03bb6ec
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 Feb 2020 04:18:01.0230 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Bqc4X/R8cZQ1lgKqFfXBJC+Eos/vwDnHCiI8Qg017y2V5bbFjrJask/hYdhvBVTvao4PgUoW0bpEBTVlEIpfzQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HK0P153MB0290
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_201811_199120_0371B86B 
-X-CRM114-Status: UNSURE (   7.41  )
+X-CRM114-CacheID: sfid-20200212_202502_663477_6161AFA5 
+X-CRM114-Status: UNSURE (   8.11  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.130.108 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.26 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -125,7 +93,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -137,37 +105,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Stephen Hemminger <sthemmin@microsoft.com>,
- Haiyang Zhang <haiyangz@microsoft.com>, "x86@kernel.org" <x86@kernel.org>,
- Michael Kelley <mikelley@microsoft.com>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, "H. Peter Anvin" <hpa@zytor.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, KY Srinivasan <kys@microsoft.com>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Samuel Holland <samuel@sholland.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: linux-hyperv-owner@vger.kernel.org
-> <linux-hyperv-owner@vger.kernel.org> On Behalf Of Boqun Feng
-> diff --git a/arch/x86/include/asm/hyperv-tlfs.h
-> b/arch/x86/include/asm/hyperv-tlfs.h
-> 
-> +union hv_msi_entry {
-> +	u64 as_uint64;
-> +	struct {
-> +		u32 address;
-> +		u32 data;
-> +	} __packed;
-> +};
+Commit 2e8e1ea88cbc ("arm64: Use v8.5-RNG entropy for KASLR seed")
+introduced unconditional use of arm64-specific functions exported by
+asm/archrandom.h. With CONFIG_ARCH_RANDOM=y, this header is transitively
+included through linux/random.h. However, with CONFIG_ARCH_RANDOM=n,
+this header is not included, and the kernel fails to build.
 
-Just a small thing: should we move the __packed to after the "}" of
-the union hv_msi_entry ?
+Explicitly include asm/archrandom.h so __early_cpu_has_rndr() and
+__arm64_rndr() are always available, even when they are just stubs.
 
-Reviewed-by: Dexuan Cui <decui@microsoft.com>
+Fixes: 2e8e1ea88cbc ("arm64: Use v8.5-RNG entropy for KASLR seed")
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ arch/arm64/kernel/kaslr.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
+index 53b8a4ee64ff..91a83104c6e8 100644
+--- a/arch/arm64/kernel/kaslr.c
++++ b/arch/arm64/kernel/kaslr.c
+@@ -11,6 +11,7 @@
+ #include <linux/sched.h>
+ #include <linux/types.h>
+ 
++#include <asm/archrandom.h>
+ #include <asm/cacheflush.h>
+ #include <asm/fixmap.h>
+ #include <asm/kernel-pgtable.h>
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
