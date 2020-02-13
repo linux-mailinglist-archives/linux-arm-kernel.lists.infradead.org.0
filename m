@@ -2,50 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EEDF315C930
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 18:10:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0666515C93C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 18:13:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W+pEV8XK6gsfTyYClOU9dXR8XGOuPuJExPO65zyYCJs=; b=lhPYjee+MnV5zX
-	CyEFYzjRl6f2yZgv9CUrbqLII8nKdf1tSoSvi0rrgxKsimYwgcgVWx1JUsshgqWRlTiqv1EApBmhu
-	WJixJ0rrsL4LJTeXqhGJJldDroYvHiHLf7xq8MKgnRAU3LTyaIHn+u/tjvhe+hkpbicGQqiYad29G
-	fZx9sTSRNcaH9sUBKWlxwo8PVkVDX2nDR19AyJrk9ZmJ8ZE0I/tCyt8c/coIOynS+yq9Yqr54hDsv
-	dY5rM8XQZKiRJCFWMP05WiBNR5CU1dPtPpwsV6gsRgas9VtD1FnLuqGduelWQXSIEDRTVfa+Hn0BM
-	27gsRxSelSt+n+x+tx1g==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jw5GXUCsfpQtxSXRJXc1C3C/1wiLn7n1Sa8HvIc5aLk=; b=BpQyyvQGsR93mS
+	s0jmROZ7MjqZxBwCCJnlQHBAIJvd70ZJnmJa9fRzTuA1x9XXyavu0aiPR8ojmi/Iwx4ZtytysrAeh
+	oUN8CX6HrKyuiso2WR6ccCaKVBSOtLap6DaAF5x+LtJ67gocWCvyHnPm+qCtAOVlHSw14LuJfQxdl
+	btd9+Ji5YFS25FLGoUg4AQ9KsQK5wtcrJ0swhjHGgPlXGG9MDnyEMTaPZ41yo3M6r5rUl8Yp6y0t1
+	snkfhe7TYfhwp331dZIP7N7Lw3rGx5i2URf1RixhXvuzxKhru3Nswm6tjnfqBdP+TVrbGqi6dxlnq
+	/8DLa6liumoT30sr0VVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2I0G-0008Gm-V1; Thu, 13 Feb 2020 17:10:16 +0000
+	id 1j2I3E-0000Cw-NA; Thu, 13 Feb 2020 17:13:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2I07-0007wM-A6
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 17:10:08 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 09E91206DB;
- Thu, 13 Feb 2020 17:10:05 +0000 (UTC)
+ id 1j2I37-0000CU-CX
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 17:13:14 +0000
+Received: from mail-wr1-f47.google.com (mail-wr1-f47.google.com
+ [209.85.221.47])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B44CF24671
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Feb 2020 17:13:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581613807;
- bh=VpkWJb4isxHvmOg1Hu6QcydGX0DlgRZPbNjqdx6Ddug=;
- h=Date:From:To:Cc:Subject:From;
- b=MHQKhHNxZDfm29u+C1w5r5D1GRNZK5aog7ONSslDSc3VVxe/iOPrJSR2V2Es1Uq8s
- AjdknZzRYqYRN236MJM3oR1mjy8Ub25czZbUVjmhoWZ3jKnp2wzjSA4s/ZHjhup2gt
- 2uMiqC2KzIxwfvfNGqq43hQadHA9LmePB73SRuko=
-Date: Thu, 13 Feb 2020 17:10:02 +0000
-From: Will Deacon <will@kernel.org>
-To: torvalds@linux-foundation.org
-Subject: [GIT PULL] arm64 fixes for -rc2
-Message-ID: <20200213171002.GA8807@willie-the-truck>
+ s=default; t=1581613993;
+ bh=l56qEB9k44eSpvcs/9db1OGeL5hy9h6oE3gaJUII1rg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=PGJl0ZsOHuUXBA+DysErbQ8+43epyDksEZdXWC3xdLBYB67KYpuknKqxPNuw0/Q/+
+ 3bvVU8W+dp2xMpK7FOIvUzfcvYN0vPDNQXBcugYiII90YZMfmovxH4y/BS6JrxFHyI
+ rffZ8wWqskztlbg7HA3bphJ44g1ADaEAiyZFUjeA=
+Received: by mail-wr1-f47.google.com with SMTP id y17so7641098wrh.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Feb 2020 09:13:12 -0800 (PST)
+X-Gm-Message-State: APjAAAVxs6XWFmiAoQLwqDukXpr1MYg/EmMGeG6botAMgZQznqCVSbbN
+ r4d7x0/FNqKEjEnAWhEU/INnSQEVjPqVHOvaeXgJmg==
+X-Google-Smtp-Source: APXvYqwfGp+HHdQIFAu23pxn/wIxIFeKFu5EuoFB2R6CPKb8dbBhH47KafSTgYtv8BXGr/P3P1dm1egDcwSvkEKvWZ8=
+X-Received: by 2002:a5d:65cf:: with SMTP id e15mr22245562wrw.126.1581613991021; 
+ Thu, 13 Feb 2020 09:13:11 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200213145928.7047-1-ardb@kernel.org>
+ <20200213145928.7047-3-ardb@kernel.org>
+ <20200213165902.GA1400002@rani.riverdale.lan>
+In-Reply-To: <20200213165902.GA1400002@rani.riverdale.lan>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Thu, 13 Feb 2020 17:13:00 +0000
+X-Gmail-Original-Message-ID: <CAKv+Gu-w74DH8jG6GiL+Ydn-qdG7CW17AtZiHCoU+RpT-Teasw@mail.gmail.com>
+Message-ID: <CAKv+Gu-w74DH8jG6GiL+Ydn-qdG7CW17AtZiHCoU+RpT-Teasw@mail.gmail.com>
+Subject: Re: [RFC PATCH 2/3] efi/x86: add true mixed mode entry point into
+ .compat section
+To: Arvind Sankar <nivedita@alum.mit.edu>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_091007_378035_FB8B4DFF 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20200213_091313_450653_AD0CF47A 
+X-CRM114-Status: GOOD (  16.76  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -74,83 +88,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, kernel-team@android.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-efi <linux-efi@vger.kernel.org>, Alexander Graf <agraf@csgraf.de>,
+ Daniel Kiper <daniel.kiper@oracle.com>, Matthew Garrett <mjg59@google.com>,
+ Michael Brown <mbrown@fensystems.co.uk>, Hans de Goede <hdegoede@redhat.com>,
+ Peter Jones <pjones@redhat.com>, Leif Lindholm <leif@nuviainc.com>,
+ Laszlo Ersek <lersek@redhat.com>, Ingo Molnar <mingo@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+On Thu, 13 Feb 2020 at 17:59, Arvind Sankar <nivedita@alum.mit.edu> wrote:
+>
+> On Thu, Feb 13, 2020 at 03:59:27PM +0100, Ard Biesheuvel wrote:
+> > Currently, mixed mode is closely tied to the EFI handover protocol
+> > and relies on intimate knowledge of the bootparams structure, setup
+> > header etc, all of which are rather byzantine and entirely specific
+> > to x86.
+> >
+> > Even though no other EFI supported architectures are currently known
+> > that could support something like mixed mode, it makes sense to
+> > abstract a bit from this, and make it part of a generic Linux on EFI
+> > boot protocol.
+> >
+> > To that end, add a .compat section to the mixed mode binary, and populate
+> > it with the PE machine type and entry point address, allowing firmware
+> > implementations to match it to their native machine type, and invoke
+> > non-native binaries using a secondary entry point.
+>
+> This patch refers to efi32_pe_entry which is only defined in the next
+> one.
 
-Please pull these arm64 fixes for -rc2. Summary in the tag, but it's all
-reasonably straightforward. There are some more fixes on the horizon,
-but nothing disastrous yet.
-
-Cheers,
-
-Will
-
---->8
-
-The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
-
-  Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
-
-for you to fetch changes up to d91771848f0ae2eec250a9345926a1a3558fa943:
-
-  arm64: time: Replace <linux/clk-provider.h> by <linux/of_clk.h> (2020-02-12 17:26:38 +0000)
-
-----------------------------------------------------------------
-arm64 fixes for -rc2
-
-- Fix build when KASLR is enabled but CONFIG_ARCH_RANDOM is not set
-
-- Fix context-switching of SSBS state on systems that implement it
-
-- Fix spinlock compiler warning introduced during the merge window
-
-- Fix incorrect header inclusion (linux/clk-provider.h)
-
-- Use SYSCTL_{ZERO,ONE} instead of rolling our own static variables
-
-- Don't scream if optional SMMUv3 PMU irq is missing
-
-- Remove some unused function prototypes
-
-----------------------------------------------------------------
-Anshuman Khandual (1):
-      arm64: Drop do_el0_ia_bp_hardening() & do_sp_pc_abort() declarations
-
-Geert Uytterhoeven (1):
-      arm64: time: Replace <linux/clk-provider.h> by <linux/of_clk.h>
-
-John Garry (1):
-      perf/smmuv3: Use platform_get_irq_optional() for wired interrupt
-
-Matteo Croce (1):
-      arm64: use shared sysctl constants
-
-Qian Cai (1):
-      arm64/spinlock: fix a -Wunused-function warning
-
-Robin Murphy (1):
-      arm64: Fix CONFIG_ARCH_RANDOM=n build
-
-Will Deacon (1):
-      arm64: ssbs: Fix context-switch when SSBS is present on all CPUs
-
- arch/arm64/include/asm/exception.h |  4 ----
- arch/arm64/include/asm/spinlock.h  |  6 +++++-
- arch/arm64/kernel/kaslr.c          |  1 +
- arch/arm64/kernel/process.c        | 13 +++++++++----
- arch/arm64/kernel/time.c           |  2 +-
- drivers/perf/arm_smmuv3_pmu.c      |  2 +-
- 6 files changed, 17 insertions(+), 11 deletions(-)
+Indeed. So the .compat section will be emitted with a bogus entry
+point when applying this patch but not the next one, so perhaps I
+should simply reorder them .
 
 _______________________________________________
 linux-arm-kernel mailing list
