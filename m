@@ -2,81 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34D5E15CCA6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:56:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C6FF15CCF7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 22:10:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=v2cmqBWPFKDHmU6Zbqp+S6fSvp3bEG0NE8YjvG4aaWo=; b=tKyCjcuKY/uw1o
-	Z46Q5jyp6mwSVBjCk50js+157opUn62x5V+Mi+H9e6v6M14PrBcu391JiBN4j1dRrTA2uNLCXuXct
-	u2LnAXJG6tcTqtgrpfNurcgMBkf9awpxk+jQCdfd24QnPs+CnB8szAE1Oss2pK68Iamw8WVZp0cH8
-	J3J0u1vOt3AIjhlJ8nVghiQftqFzqZgzEAXNFPw6SyXQ5xcz43ZjO2DK0NDNO/WhBiwELaKJkr0HC
-	SfNY5Uu8BZyWTnhyfbF7OsQ43wn4EIgi20IzstKNWYJlKzZ71TOWfiVqBp3LC227Fu1KD3OWQHr0+
-	g/1J6o64aKhreaPZ/oZw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FX/ro1JBor7BnctXWvTLL0jg3oV+591t2I6mFa9Blco=; b=IFpOzTG1R8Tb86
+	Yk3650YkM2oNrS9jShZ7Ee8GDKFUy37/Kc7erPla5tyE6E76ImUS2qaXuj5yrHqfhPSbwLM85WNzR
+	BdUslvl6B9A4rr/YcQKPlf6nG/xK7khG8XurNkAgdm/Z35FQaenW/oGEvihn9fE5RO8tbsM7F/Up7
+	lChSgz8FGw6D6BjH3LkOaDColduK0ft9XpZoKFr4HvQ4iJLbmOnb+Is1B49agNKPhFidWdCxV7ZzI
+	BCq8zyGynVeim+F9S6zB+PcW5ukSczACwszyCPbB6s9w6UJJLqyG+i7zbrIhmS3Le98Hzs/EUTpPo
+	7ZcbSt5uwff10Qo80i8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2LWt-00039Q-11; Thu, 13 Feb 2020 20:56:11 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1j2LkJ-0007bC-Gp; Thu, 13 Feb 2020 21:10:03 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2LWk-0002yR-St
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 20:56:04 +0000
-Received: by mail-ot1-f65.google.com with SMTP id g64so6954271otb.13
+ id 1j2Lk9-0007aA-Cv
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 21:09:54 +0000
+Received: by mail-wr1-x443.google.com with SMTP id m16so8423814wrx.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 12:56:02 -0800 (PST)
+ Thu, 13 Feb 2020 13:09:52 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZtGcUpA5w76Gcek+VkqKEDd0yDqjEFq7/gNXQdanLGM=;
+ b=Mf3W1BUftM+nHyrzCX/s/zOBXQMM8Okj/NIiHqnyaNOVn9jeL+X5uDsvbhzPHs4ZYm
+ Eywp6G8pCTJEPMEOzfDlStUka5S959F5fX2EOBMECYxssoK5tkYaGz5fR740k+uwX471
+ xr7QHag/Smbp2tbSvoVKpw9CmTlS4i0HGeiXZhZ3mXb/Aila2GCHeova4TFb8L7ki8cc
+ 8Cb/+2IB82/9tcSUyspxstMFFE03/nSdqiwVBfLvGYn0fVx0uxDIH24GzIGcgxrN9TWW
+ /foFhhuCCVAYNigjgDUFZ4sb0kgTydppAjzxko/meQW72KN2UZo9k129RSjVX01uo5ph
+ CPKQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=8T4KZ9WPX/QG720bALpUhREygAU9QP3LfeGnDm+c2RA=;
- b=jI5PzJcLwjEzdBlvRokyNw434tulnU+LQuRyWp9wpNLOCLtqc8wtmjv6vAn320zUZ1
- oBo9jJnbxx/dg8TTfWAoyuPApT3R2ZYDhP1MXmmfB6rwQeZPBkEE7yfhXjKzqwA8YH42
- XEOZGiP3B/cH1gdhR+UYSbXXuud8fT6e6ytx91UM6PJ/8lZnxznrPimh1Ml3wEhMHyj7
- iXYuj08uFXl9j8Yq0KJUpxOrGQ1IffWxsuDJbE5Xbm8c6GLyEV/aPqLPBVmt047Gker2
- ExFe7483IYaha7BL0Sh2mKxWVAPfEKIL2f5gt1ZMgqmOdWLJZbNHUSBO31YBAIRZbDcd
- lk5A==
-X-Gm-Message-State: APjAAAV4MpaAW/96u27bD9lIIKKpIHk1EKPB6QGTLxPAdUjtLeGX+3um
- KyNotF+BUSuZImPqDN48Tg==
-X-Google-Smtp-Source: APXvYqyjQU7dv79E9GbBxsmRvWQGcRrem7mUgXwGmLPvnHpl2Xl7OXrwF+Jt97aDkPa6p9cgvuSJFg==
-X-Received: by 2002:a9d:7e99:: with SMTP id m25mr14436716otp.212.1581627361538; 
- Thu, 13 Feb 2020 12:56:01 -0800 (PST)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id t131sm1051285oih.35.2020.02.13.12.56.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 13 Feb 2020 12:56:01 -0800 (PST)
-From: Rob Herring <robh@kernel.org>
-To: iommu@lists.linux-foundation.org
-Subject: [PATCH v2] iommu/arm-smmu-v3: Batch ATC invalidation commands
-Date: Thu, 13 Feb 2020 14:56:00 -0600
-Message-Id: <20200213205600.19690-1-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZtGcUpA5w76Gcek+VkqKEDd0yDqjEFq7/gNXQdanLGM=;
+ b=XxJ+dmflsCNYwj9vpa+1Sk0GajnjgcjRKVIufoMqN2mMwFh8lWZl8WiKqfwY3AVshF
+ n2sNzVB+2oOOpOxXhEa1JdeISjycnF7ZfyABwdgG7Eo8bPLXflp1zKisDV/wCIQn3PU7
+ sucfm5VQK5Xuk2hSHHGKoJJooV1MoNYe7VI8alqh7h74DMzKBZtjTMTsEoIVB0iDlHgc
+ TXtXBJ1d1fciDSdQmREB1lcLzDjJSkvT8VpvnckDBQnVJSElJ8fG9CQdpmb74X3Rzhko
+ AQjhehx2Ih21d5fG2gfE/l9GShwptWEwxz6mOdOb2TFHzDzWKv7kDpvbsirCsclfIBLA
+ /wrw==
+X-Gm-Message-State: APjAAAXSiqfr/CAMrMjFtyx44G/RauNKwWIZ0jrLaqbtWiHBeOV91oZ7
+ ult7RZ5Dg7pGrGinXjE6Gzap5wCdOiYoinNOeCk=
+X-Google-Smtp-Source: APXvYqzGqv+wev1io566qMCQSBk8Usb8vOHvyhzTsTli9ft0dX6qZZT5ThpS8E5SOs7v3YSOIfjh2hVo6p2lk1M1uxE=
+X-Received: by 2002:a05:6000:367:: with SMTP id
+ f7mr23219823wrf.174.1581628191354; 
+ Thu, 13 Feb 2020 13:09:51 -0800 (PST)
 MIME-Version: 1.0
+References: <20200210061544.7600-1-yuehaibing@huawei.com>
+ <9351a746-8823-ee26-70da-fd3127a02c91@linux.intel.com>
+ <be093793-3514-840a-ff2f-4dc21d8ee7f1@huawei.com>
+ <CAEnQRZDWFgXocRJxtc2e7McRCAtod6-GwPJaVMdb4ymBZgSD1w@mail.gmail.com>
+ <CAJKOXPcxL2vpWGwO1OL9Vv0g6hzbW-AyGJNn=7Yq2iy10_cbhg@mail.gmail.com>
+In-Reply-To: <CAJKOXPcxL2vpWGwO1OL9Vv0g6hzbW-AyGJNn=7Yq2iy10_cbhg@mail.gmail.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Thu, 13 Feb 2020 23:09:39 +0200
+Message-ID: <CAEnQRZA4W-i4zcF8jUL2zp5-dO-iX=KSp5Do2pCK9_oZiVtYEQ@mail.gmail.com>
+Subject: Re: [alsa-devel] [PATCH -next] ASoC: SOF: imx8: Fix randbuild error
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_125602_936365_6E512E53 
-X-CRM114-Status: GOOD (  14.98  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200213_130953_466247_3F2BAB50 
+X-CRM114-Status: GOOD (  19.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ provider [daniel.baluta[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,125 +97,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will@kernel.org>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Daniel Baluta <daniel.baluta@nxp.com>,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Yuehaibing <yuehaibing@huawei.com>, Takashi Iwai <tiwai@suse.com>,
+ Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Similar to commit 2af2e72b18b4 ("iommu/arm-smmu-v3: Defer TLB
-invalidation until ->iotlb_sync()"), build up a list of ATC invalidation
-commands and submit them all at once to the command queue instead of
-one-by-one.
+On Tue, Feb 11, 2020 at 11:59 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> On Tue, 11 Feb 2020 at 10:46, Daniel Baluta <daniel.baluta@gmail.com> wrote:
+> >
+> > On Tue, Feb 11, 2020 at 3:59 AM Yuehaibing <yuehaibing@huawei.com> wrote:
+> > >
+> > > On 2020/2/11 5:00, Pierre-Louis Bossart wrote:
+> > > >
+> > > >
+> > > > On 2/10/20 12:15 AM, YueHaibing wrote:
+> > > >> when do randconfig like this:
+> > > >> CONFIG_SND_SOC_SOF_IMX8_SUPPORT=y
+> > > >> CONFIG_SND_SOC_SOF_IMX8=y
+> > > >> CONFIG_SND_SOC_SOF_OF=y
+> > > >> CONFIG_IMX_DSP=m
+> > > >> CONFIG_IMX_SCU=y
+> > > >>
+> > > >> there is a link error:
+> > > >>
+> > > >> sound/soc/sof/imx/imx8.o: In function 'imx8_send_msg':
+> > > >> imx8.c:(.text+0x380): undefined reference to 'imx_dsp_ring_doorbell'
+> > > >>
+> > > >> Select IMX_DSP in SND_SOC_SOF_IMX8_SUPPORT to fix this
+> > > >>
+> > > >> Reported-by: Hulk Robot <hulkci@huawei.com>
+> > > >> Fixes: f9ad75468453 ("ASoC: SOF: imx: fix reverse CONFIG_SND_SOC_SOF_OF dependency")
+> > > >> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+> > > >
+> > > > Thanks for the report.
+> > > >
+> > > > Would you mind sharing the .config and instructions to reproduce this case? we have an unrelated issue with allyesconfig that was reviewed here:
+> > > >
+> > > > https://github.com/thesofproject/linux/pull/1778
+> > > >
+> > > > and I'd probably a good thing to fix everything in one shot.
+> > >
+> > > config is attached, which is on x86_64
+> >
+> > Thanks, I think this is legit. It was introduced with:
+> >
+> > commit f52cdcce9197fef9d4a68792dd3b840ad2b77117
+> > Author: Daniel Baluta <daniel.baluta@nxp.com>
+> > Date:   Sat Jan 4 15:39:53 2020 +0000
+> >
+> >     firmware: imx: Allow IMX DSP to be selected as module
+> >
+> >     IMX DSP is only needed by SOF or any other module that
+> >     wants to communicate with the DSP. When SOF is build
+> >     as a module IMX DSP is forced to be built inside the
+> >     kernel image. This is not optimal, so allow IMX DSP
+> >     to be built as a module.
+> >
+> >     Signed-off-by: Daniel Baluta <daniel.baluta@nxp.com>
+> >     Signed-off-by: Shawn Guo <shawnguo@kernel.org>
+>
+> Hi,
+>
+> Since it's a module, don't you just miss EXPORT_SYMBOL there?
 
-As there is only one caller of arm_smmu_atc_inv_master() left, we can
-simplify it and avoid passing in struct arm_smmu_cmdq_ent.
+Hi Krzysztof,
 
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Cc: Will Deacon <will@kernel.org>
-Cc: Robin Murphy <robin.murphy@arm.com>
-Cc: Joerg Roedel <joro@8bytes.org>
-Signed-off-by: Rob Herring <robh@kernel.org>
----
-v2:
- - Simplify arm_smmu_atc_inv_master()
- - Rebase on v5.6-rc1
-
- drivers/iommu/arm-smmu-v3.c | 38 ++++++++++++++++++++++++-------------
- 1 file changed, 25 insertions(+), 13 deletions(-)
-
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index aa3ac2a03807..8161d9e6c068 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -2132,17 +2132,16 @@ arm_smmu_atc_inv_to_cmd(int ssid, unsigned long iova, size_t size,
- 	cmd->atc.size	= log2_span;
- }
- 
--static int arm_smmu_atc_inv_master(struct arm_smmu_master *master,
--				   struct arm_smmu_cmdq_ent *cmd)
-+static int arm_smmu_atc_inv_master(struct arm_smmu_master *master)
- {
- 	int i;
-+	struct arm_smmu_cmdq_ent cmd;
- 
--	if (!master->ats_enabled)
--		return 0;
-+	arm_smmu_atc_inv_to_cmd(0, 0, 0, &cmd);
- 
- 	for (i = 0; i < master->num_sids; i++) {
--		cmd->atc.sid = master->sids[i];
--		arm_smmu_cmdq_issue_cmd(master->smmu, cmd);
-+		cmd.atc.sid = master->sids[i];
-+		arm_smmu_cmdq_issue_cmd(master->smmu, &cmd);
- 	}
- 
- 	return arm_smmu_cmdq_issue_sync(master->smmu);
-@@ -2151,10 +2150,11 @@ static int arm_smmu_atc_inv_master(struct arm_smmu_master *master,
- static int arm_smmu_atc_inv_domain(struct arm_smmu_domain *smmu_domain,
- 				   int ssid, unsigned long iova, size_t size)
- {
--	int ret = 0;
-+	int i, cmdn = 0;
- 	unsigned long flags;
- 	struct arm_smmu_cmdq_ent cmd;
- 	struct arm_smmu_master *master;
-+	u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
- 
- 	if (!(smmu_domain->smmu->features & ARM_SMMU_FEAT_ATS))
- 		return 0;
-@@ -2179,11 +2179,25 @@ static int arm_smmu_atc_inv_domain(struct arm_smmu_domain *smmu_domain,
- 	arm_smmu_atc_inv_to_cmd(ssid, iova, size, &cmd);
- 
- 	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
--	list_for_each_entry(master, &smmu_domain->devices, domain_head)
--		ret |= arm_smmu_atc_inv_master(master, &cmd);
-+	list_for_each_entry(master, &smmu_domain->devices, domain_head) {
-+		if (!master->ats_enabled)
-+			continue;
-+
-+		for (i = 0; i < master->num_sids; i++) {
-+			if (cmdn == CMDQ_BATCH_ENTRIES) {
-+				arm_smmu_cmdq_issue_cmdlist(smmu_domain->smmu,
-+					cmds, cmdn, false);
-+				cmdn = 0;
-+			}
-+
-+			cmd.atc.sid = master->sids[i];
-+			arm_smmu_cmdq_build_cmd(&cmds[cmdn * CMDQ_ENT_DWORDS], &cmd);
-+			cmdn++;
-+		}
-+	}
- 	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
- 
--	return ret ? -ETIMEDOUT : 0;
-+	return arm_smmu_cmdq_issue_cmdlist(smmu_domain->smmu, cmds, cmdn, true);
- }
- 
- /* IO_PGTABLE API */
-@@ -2611,7 +2625,6 @@ static void arm_smmu_enable_ats(struct arm_smmu_master *master)
- 
- static void arm_smmu_disable_ats(struct arm_smmu_master *master)
- {
--	struct arm_smmu_cmdq_ent cmd;
- 	struct arm_smmu_domain *smmu_domain = master->domain;
- 
- 	if (!master->ats_enabled)
-@@ -2623,8 +2636,7 @@ static void arm_smmu_disable_ats(struct arm_smmu_master *master)
- 	 * ATC invalidation via the SMMU.
- 	 */
- 	wmb();
--	arm_smmu_atc_inv_to_cmd(0, 0, 0, &cmd);
--	arm_smmu_atc_inv_master(master, &cmd);
-+	arm_smmu_atc_inv_master(master);
- 	atomic_dec(&smmu_domain->nr_ats_masters);
- }
- 
--- 
-2.20.1
-
+Which symbol misses an EXPORT_SYMBOL?
+We already have EXPORT_SYMBOL(imx_dsp_ring_doorbell);
 
 _______________________________________________
 linux-arm-kernel mailing list
