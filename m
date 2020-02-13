@@ -2,64 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E581415BCB5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 11:25:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9A5E15BCC4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 11:25:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=O84zaWH9uZ2uUNOWPdYYSMqNhCawBjot/D1uSfVO0vE=; b=oxIfsvBRrtrqK1
-	0m/+6ZUqRIzzFw3zErTrejG/0Re2f0PSVcogdKSk/FTWobg3FMcp+LGaCJGna2JRb9cBuLVuvzaz9
-	LtQGMKYAQWw9z6gQxqF8jWZPxcPobR1gdfXQqGQN69MswAs8nfC3lkZ6pdKmN91gcZn6qW5qzo/ni
-	4O4Utlj6EEQdGnheJDht1lBu5dFuiAnU1nap3F7NL/+yU0i4F+Xr4Zu+gxNy7LnL6U5QSZEKU+tQh
-	1fYtmbgwvGcMsbwvZY/D1R3uyhDECtjv8h389hoZUib5QYq5K2ZFanrASdr7ZCM4jN2W4WrEW3SNR
-	fHtDtyniD648WoqbZJfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nhRMoAR3jhPOJz5UX/7WBOKn5XIlIhUsXVwnSl9LUgs=; b=I5e+ZOTg3ia0yU
+	uLp79vdsL6oMenUVLza+lPGndBlbEugMfQwAFDaL++ayb4Sx8SnEs0fGKOmFWjDY94vGS4tCFaWob
+	mIHrxOti4Serlq1L315kQVwyHZ0WeDwa/ZTqiZi9d6Ln6vGZfyzR0mnLHcu8z6JsKX7GGOyvHG1xF
+	xJaSBaFVghQB93UYzkeMtOZ02UteGKxy+AObsPEuwkzdkvvEqAxz1CqY+c5gO6WqeUFgSTbk+BuEv
+	wlRXdPXpfyIXfWZai8tLAcpyJ3aO7PprveL2UI04hV5gHYfGEp8ETbHiWbYBh4K7LCFRcmqugYTJJ
+	6iE2BRgDPP1ak128K9/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2BgW-0000Ov-7P; Thu, 13 Feb 2020 10:25:28 +0000
+	id 1j2Bgo-0000b1-RO; Thu, 13 Feb 2020 10:25:46 +0000
 Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2BgI-0000Nd-V8
+ id 1j2BgI-0000Nc-VB
  for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 10:25:16 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01DAOv5H103276;
- Thu, 13 Feb 2020 04:24:57 -0600
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01DAP0WD103283;
+ Thu, 13 Feb 2020 04:25:00 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1581589497;
- bh=txHZv0otXJyIYJZzcbb6130T3NOshgUyHxIn6qc3fv8=;
- h=From:To:CC:Subject:Date;
- b=JNxjVO4sms3FgjgLVnw0JAYNTpfkMkN7+WW1ldfXT9hbEMoNxMqawc6QIjVPv5RV9
- LiOS/P3uNmwyNynXRZt7PC7EwXIiURd2zR5m1qhtanO+DTjrliLQIdu6jcOu6WKkm9
- /TpDSuUL1wHXuOSMXPoLfgQFf4U50jjtV5XQrkq0=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01DAOvEl074336
+ s=ti-com-17Q1; t=1581589500;
+ bh=6svoZS6jE8bthk+pW7DGRolNK2y92ktr2SV3GIqMGfU=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=T0uuYWb7g0a9c0FHNV4wdQRjnU/6CB+oc0urR5kRmyG6ne/2QLIYHLhSKs1kwop3c
+ 8I1n19cjN14PiVUx/fQatCCQoOz5NY36S729OTBBz37S9Zwy5ayG8HeIxI/xJamwmQ
+ +IOHPP6ynLIvCjLSzV1esDc8Q7AuEyfjKilzvhqI=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01DAP07p019329
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 13 Feb 2020 04:24:57 -0600
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ Thu, 13 Feb 2020 04:25:00 -0600
+Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 13
- Feb 2020 04:24:56 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ Feb 2020 04:25:00 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 13 Feb 2020 04:24:56 -0600
+ Frontend Transport; Thu, 13 Feb 2020 04:25:00 -0600
 Received: from a0393675ula.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01DAOqpX011317;
- Thu, 13 Feb 2020 04:24:53 -0600
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01DAOqpY011317;
+ Thu, 13 Feb 2020 04:24:57 -0600
 From: Keerthy <j-keerthy@ti.com>
 To: <rui.zhang@intel.com>, <robh+dt@kernel.org>, <daniel.lezcano@linaro.org>
-Subject: [PATCH 0/4] thermal: k3: Add support for bandgap sensors
-Date: Thu, 13 Feb 2020 15:54:36 +0530
-Message-ID: <20200213102440.20539-1-j-keerthy@ti.com>
+Subject: [PATCH 1/4] dt-bindings: thermal: k3: Add VTM bindings documentation
+Date: Thu, 13 Feb 2020 15:54:37 +0530
+Message-ID: <20200213102440.20539-2-j-keerthy@ti.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200213102440.20539-1-j-keerthy@ti.com>
+References: <20200213102440.20539-1-j-keerthy@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_022515_107695_F1730727 
-X-CRM114-Status: GOOD (  12.71  )
+X-CRM114-CacheID: sfid-20200213_022515_109478_BFC238B1 
+X-CRM114-Status: GOOD (  13.42  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -97,7 +99,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add VTM thermal support. In the Voltage Thermal
+Add VTM bindings documentation. In the Voltage Thermal
 Management Module(VTM), K3 AM654 supplies a voltage
 reference and a temperature sensor feature that are gathered in the band
 gap voltage and temperature sensor (VBGAPTS) module. The band
@@ -106,26 +108,77 @@ circuits and other analog IP blocks. The analog-to-digital
 converter (ADC) produces an output value that is proportional
 to the silicon temperature.
 
-Add support for bandgap sensors. Currently reading temperatures
-and trend computing is supported. 
-
-Keerthy (4):
-  dt-bindings: thermal: k3: Add VTM bindings documentation
-  thermal: k3: Add support for bandgap sensors
-  arm64: dts: ti: am654: Add thermal zones
-  arm64: dts: ti: am6: Add VTM node
-
- .../bindings/thermal/ti,am654-thermal.yaml    |  59 +++
- .../boot/dts/ti/am654-industrial-thermal.dtsi |  45 +++
- arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi    |  11 +
- drivers/thermal/Kconfig                       |  12 +
- drivers/thermal/Makefile                      |   1 +
- drivers/thermal/k3_bandgap.c                  | 342 ++++++++++++++++++
- 6 files changed, 470 insertions(+)
+Signed-off-by: Keerthy <j-keerthy@ti.com>
+---
+ .../bindings/thermal/ti,am654-thermal.yaml    | 59 +++++++++++++++++++
+ 1 file changed, 59 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
- create mode 100644 arch/arm64/boot/dts/ti/am654-industrial-thermal.dtsi
- create mode 100644 drivers/thermal/k3_bandgap.c
 
+diff --git a/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+new file mode 100644
+index 000000000000..bb2e8d7000e5
+--- /dev/null
++++ b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+@@ -0,0 +1,59 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++Copyright 2020 Texas Instruments Incorporated
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/thermal/ti,am654-thermal.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: STexas Instruments VTM (DTS) binding
++
++maintainers:
++  - Keerthy <j-keerthy@ti.com>
++
++properties:
++  compatible:
++    const: ti,am654-vtm
++
++  reg:
++    maxItems: 1
++
++  power-domains:
++    maxItems: 1
++    description: phandle to the associated power domain
++
++  "#thermal-sensor-cells":
++    const: 1
++
++required:
++  - "#thermal-sensor-cells"
++  - compatible
++  - reg
++  - power-domains
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/soc/ti,sci_pm_domain.h>
++    wkup_vtm0: wkup_vtm0@42050000 {
++        compatible = "ti,am654-vtm";
++        reg = <0x0 0x42050000 0x0 0x25c>;
++        power-domains = <&k3_pds 80 TI_SCI_PD_EXCLUSIVE>;
++        #thermal-sensor-cells = <1>;
++    };
++
++
++    mpu0_thermal: mpu0_thermal {
++	polling-delay-passive = <250>; /* milliseconds */
++	polling-delay = <500>; /* milliseconds */
++	thermal-sensors = <&wkup_vtm0 0>;
++
++	trips {
++		mpu0_crit: mpu0_crit {
++			temperature = <125000>; /* milliCelsius */
++			hysteresis = <2000>; /* milliCelsius */
++			type = "critical";
++		};
++	};
++    };
++...
 -- 
 2.17.1
 
