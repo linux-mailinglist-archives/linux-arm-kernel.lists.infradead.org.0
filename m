@@ -2,55 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EA2E15BB67
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 10:17:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FFD615BB6B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 10:17:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2V5MTm08x26TD4MDUUsAf6UTRRZKHFZPeHFKGe+ALZU=; b=FthviDoawo+Az+
-	OM+GINgB9o+gbHfZxAFFezwoJ8OsK3ip78+y/k0jFE9mq8xEg5GW8u+fm2TpGdYx538r2URF4B15e
-	HTVDjshgGUsYfWDCDjGclDmTxQjTKRtQ0qHCujiqIA4jNxMCr1UVcXkA1pVx5KNaQfs8Wrz/Q3Kky
-	knYlZXokDaobouMQMTbd1Ih9R76srDshLqD+IeQU2xhMMV9ZlNSBtFyxpWHlpeOh7vuyUWbhys6wT
-	o6B7jj+dwIbq5ejTgzjXZo+/7YEaVFBTYWAA0agf48IjV4cgsNb3oX4LeSxipBLPBPotIEhbKioFH
-	B30JovgUZqZmgEGgPWtg==;
+	List-Owner; bh=CcQYELXXPgxzKOu777CNMWS5ssL/ATQM7Hv+dLOsne4=; b=N5A+IFXba5jtuk
+	Wma784wIp/lS8r6XJPg9iZ10UZKRfxBCEibQIpMV8OyOwpfOa8Mr1dT0u2avz6HGx+DGCzoRti0j8
+	yMshw76Z42g5KzzK2gc9sT1Wrou1zh+HISeuqu+D/mhFXfrui1LCeE7KGRZDtoQgHJmF7puuujvJH
+	VeljdujvPshK2wVPmdoFNxGuHtkvvqg3j85/ncvYLGP8ptVDtb1ka4XI6LbPkHPXOqidtxWNAM+EY
+	zL3ycMujxAWl/fcnfnsaC5HOxIwARPmb1yWkay1pQMxTYC1gQMTffDzL17T3S3vtIRbn0DGRkEuN/
+	Tzd0QrZILTN99UJnLl/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2AcC-00040P-J3; Thu, 13 Feb 2020 09:16:56 +0000
+	id 1j2Acs-0004Mg-HT; Thu, 13 Feb 2020 09:17:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Abv-0003w3-L5
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 09:16:41 +0000
+ id 1j2Acj-0004Lz-3W
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 09:17:30 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4556620848;
- Thu, 13 Feb 2020 09:16:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CC7E521734;
+ Thu, 13 Feb 2020 09:17:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581585398;
- bh=GiebtmJpNzAk9Qikj9svaXnffKSNLaoVx4iZEJ1f9R8=;
+ s=default; t=1581585448;
+ bh=NV2EcoccPdwUw4SNFQbawZlRnPI4yYMQRsUYIbM/MI0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Tl6c66Z/muXXGGsR8OFmt//7oEMoFMLpSOdMqTmIZMcSapkUUhJ5KhzDiPIeGnuRs
- s6L05Zr2yBZTqQxPgrTxwf/vJZuS09jUreCa650odBkGyci7sfrn50FK2D+S/FgaEJ
- hzkiirULO+oY9fiFM996uGnX90vfzqRz2rcR9e4g=
-Date: Thu, 13 Feb 2020 09:16:33 +0000
+ b=KFaWvFnYfd2PhTwWBlSReHfzGLGK6O25//fL+tSECBXPXo94QuZ6/aaAm6c51lva/
+ TefnJt0/OBlDSYX7UYVUOCLnb0a+GZ+cwgj3VYYNrllj/dBdIiQG+BNaS/O/qkj7rQ
+ tJQi1FQ2QBT9/UGxJGKYEd1FWX5HkvpZ4J/EOCWw=
+Date: Thu, 13 Feb 2020 09:17:24 +0000
 From: Will Deacon <will@kernel.org>
-To: Li Yang <leoyang.li@nxp.com>
-Subject: Re: [PATCH] iommu/arm-smmu: fix the module name to be consistent
- with older kernel
-Message-ID: <20200213091633.GA849@willie-the-truck>
-References: <1581467841-25397-1-git-send-email-leoyang.li@nxp.com>
- <20200212104902.GA3664@willie-the-truck>
- <CADRPPNQ-FcA-xdjp02ybsYeU9UFxCZU5dpf0wHThTmLHcjovCQ@mail.gmail.com>
+To: Samuel Holland <samuel@sholland.org>
+Subject: Re: [PATCH] arm64: kaslr: Fix build failure with CONFIG_ARCH_RANDOM=n
+Message-ID: <20200213091724.GB849@willie-the-truck>
+References: <20200213042457.17842-1-samuel@sholland.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CADRPPNQ-FcA-xdjp02ybsYeU9UFxCZU5dpf0wHThTmLHcjovCQ@mail.gmail.com>
+In-Reply-To: <20200213042457.17842-1-samuel@sholland.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_011639_736953_8D23D0CB 
-X-CRM114-Status: GOOD (  18.64  )
+X-CRM114-CacheID: sfid-20200213_011729_171010_C9FC9D1C 
+X-CRM114-Status: GOOD (  14.89  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,43 +76,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- lkml <linux-kernel@vger.kernel.org>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- Robin Murphy <robin.murphy@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 12, 2020 at 01:59:46PM -0600, Li Yang wrote:
-> On Wed, Feb 12, 2020 at 4:50 AM Will Deacon <will@kernel.org> wrote:
-> >
-> > On Tue, Feb 11, 2020 at 06:37:20PM -0600, Li Yang wrote:
-> > > Commit cd221bd24ff5 ("iommu/arm-smmu: Allow building as a module")
-> > > introduced a side effect that changed the module name from arm-smmu to
-> > > arm-smmu-mod.  This breaks the users of kernel parameters for the driver
-> > > (e.g. arm-smmu.disable_bypass).  This patch changes the module name back
-> > > to be consistent.
-> > >
-> > > Signed-off-by: Li Yang <leoyang.li@nxp.com>
-> > > ---
-> > >  drivers/iommu/Makefile                          | 4 ++--
-> > >  drivers/iommu/{arm-smmu.c => arm-smmu-common.c} | 0
-> > >  2 files changed, 2 insertions(+), 2 deletions(-)
-> > >  rename drivers/iommu/{arm-smmu.c => arm-smmu-common.c} (100%)
-> >
-> > Can't we just override MODULE_PARAM_PREFIX instead of renaming the file?
+On Wed, Feb 12, 2020 at 10:24:57PM -0600, Samuel Holland wrote:
+> Commit 2e8e1ea88cbc ("arm64: Use v8.5-RNG entropy for KASLR seed")
+> introduced unconditional use of arm64-specific functions exported by
+> asm/archrandom.h. With CONFIG_ARCH_RANDOM=y, this header is transitively
+> included through linux/random.h. However, with CONFIG_ARCH_RANDOM=n,
+> this header is not included, and the kernel fails to build.
 > 
-> I can do that.  But on the other hand, the "mod" in the module name
-> arm-smmu-mod.ko seems to be redundant and looks a little bit weird.
-> Wouldn't it be cleaner to make it just arm-smmu.ko?
+> Explicitly include asm/archrandom.h so __early_cpu_has_rndr() and
+> __arm64_rndr() are always available, even when they are just stubs.
+> 
+> Fixes: 2e8e1ea88cbc ("arm64: Use v8.5-RNG entropy for KASLR seed")
+> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> ---
+>  arch/arm64/kernel/kaslr.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
+> index 53b8a4ee64ff..91a83104c6e8 100644
+> --- a/arch/arm64/kernel/kaslr.c
+> +++ b/arch/arm64/kernel/kaslr.c
+> @@ -11,6 +11,7 @@
+>  #include <linux/sched.h>
+>  #include <linux/types.h>
+>  
+> +#include <asm/archrandom.h>
+>  #include <asm/cacheflush.h>
+>  #include <asm/fixmap.h>
+>  #include <asm/kernel-pgtable.h>
 
-I just didn't fancy renaming the file because it's a pain for backports
-and why does the name of the module matter?
+Already queued up in arm64 for-next/fixes:
+
+https://fixes.arm64.dev/
 
 Will
 
