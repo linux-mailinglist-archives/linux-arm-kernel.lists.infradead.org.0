@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 392E915C884
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 17:41:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B5CA15C885
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 17:41:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y2JV9LqxyX60iVhDqm5ma+qpEYAlnpaDNk2GDLlBj3E=; b=Uypd28rcNuS58H
-	z/t1tXwo4W4DqACHmW8MD0qQ+atE1XxkD6OWu2S8J1gVKvWEpMP2qs2G2r5Sovle33U8XlQ3NZZWY
-	YvxvCqoKNq+lOuekH7IcqobxskdH2KQFMI18taPOaQ0K9Ut4sscVk4ArAE1MkVJihgcszqhr8M9g+
-	+AqEt9zD53kBVdPsnomQjMngKDJmbyDGrYN5fvURiEJgotjBapaVoyHE/cduzdRAHVPYa7j1LwyQu
-	H0E5ZdSdtdKkQRWbNlUrgdpeOaOqeXK8uKy1XbjoO5xU2SpTe9s0PafB+EtM1QgS4s5f5jMLQgjeS
-	/gBlb59IKq6gkL8b4iCw==;
+	List-Owner; bh=sR3DuErcuNoiJxmXblwGuujSTLssBmWcjSuT+yjyr10=; b=SkCS7y2sWrZJtB
+	vZ0hp54cPYgE1txYHkVPalRvJ0zpjLbxfoQIRYmDI3JhGl338cfAVVW1weRitVYoRJKxQElU/ROMn
+	BQQBiGjw/Q4Fgd7SA2CewI6a9vlG9sBrqfQJr+ftXzZiiH25KGjEBZMwJ7fJ94fmpO/xv6m28PTL8
+	DI6awbuXQM/bFqOQFvPS9vch80e+N4h2sd1NnvANEoTQGg4vDbPrON11X7QlqR2aWYp3tURK1XVh3
+	myUHS4zH+megpxTiXQ8GOjD8G3z3L/6VS+TUG+7a9Nr69hVIu7Gb2rdbPKpNIskl3KvsKqkpFvLvg
+	D/A2nRaBWn72IDgUWJYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2HYP-0001fL-Qr; Thu, 13 Feb 2020 16:41:29 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j2HYc-0001tR-21; Thu, 13 Feb 2020 16:41:42 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2HXE-0000VJ-RX
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 16:40:18 +0000
-Received: by mail-wr1-x444.google.com with SMTP id w12so7516269wrt.2
+ id 1j2HXH-0000XQ-4b
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 16:40:20 +0000
+Received: by mail-wm1-x341.google.com with SMTP id a5so6997541wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 08:40:16 -0800 (PST)
+ Thu, 13 Feb 2020 08:40:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=OYWSVDDbY/UxSIzaZwoEm71Xw+c2/ceHjCKgkFAt7oc=;
- b=LOBGN7F6A+j/KSjmlfWKAL6xYBfzNY6jWq/aJt0gIVfRpWfAdpTomvbazv587FWCH4
- b/jLQO2aILx3cSL6MH6XlveVUiXrJp6WYV6aTNox5A5uYyXlqIVkutunXN7PdA6YJPOM
- i+aDHTC0xR7l5mJ/0q0uMx9lDOtuH3TWZHMCaoCbk66JMPp0T5lUh7rYwEluVoxipwhJ
- 2pcEfBwmhfTLC0DSn6OjH7g5Bp4TdoXUJEIVC8r3n+XEZin08tulv6BagQSY7vXyS1TU
- JAKfqoLYunkSTGldInLrCBlTL/PXTyG92O15pRv6cFXwf8qlxemwTUTMZSDK0OTHSMuz
- D5EQ==
+ bh=ljIvDHLN6tog1gjQ51iNc2XMRU3cMi+uSkVVHu8cuT4=;
+ b=OMkAGME7j7rQnbLnlKwKqvhjvo5FGigM7wlHU4CrcLnpiLC86ihdKcBsofYTSxPYRa
+ KGW5vVaAF/GZ3G/ddvB9xGhznGLkrPRgmy1cagbrgJD4JfTiVEpTAZrru5VrHjeeaPWI
+ kE4FOcM/lEx5lU7e3eD+mqvL3xOyFU1BQORJ26Q6jaH6IbjDtsO9XLK8oUVw478zdqa/
+ peqvVcAUWFVhRbH9/zAv/g/e40YHVFdd6Zm8zBdbxlsYd8GAFHF+Va2g313xWjGqd/gX
+ Ax+Hi+JHQVG0hbR23B73PHZWmAtYDIDUPCFX5cW8ktC2+XWiC1JDzhN4Ka03y8Fsh5cM
+ /C+w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=OYWSVDDbY/UxSIzaZwoEm71Xw+c2/ceHjCKgkFAt7oc=;
- b=ll/RTHXswHfU3jCr7zaLPy8gbBrQULSFc6DLEMnt4wOAi1j0ok5PVM5QNVE1htpw26
- irCRVBtW/n0/sXrsT/PEIY/I234wn5oj60Ky2/G6e5B9W5RtTJJSARLYIVAw3GBkeX9m
- 7vEGx4rDFmD2VIlzlz2KYgiBwh7PjmOUEm9vVUMWDf4ci8jQUzc/qY+JtOkt4K4JgzDS
- nA8RZ7aPhcCTwFkzlsZaawDxodD6CBs4PcTq2SCMadY/rncuYZJ5T5i+rldNAeOxN1SM
- JxC09SRnnwZP0SMMVFkFvyw9LCvpzBrkLVagfNUW5t4W8YwJge23BpHF3U+5sWfjqTLk
- uACA==
-X-Gm-Message-State: APjAAAVMJ8zGTBX2zFzBXvsj35XDKLjeZRWArf92g22eiTrmaUqpe6ui
- 0lKJZvBG8YGSb9ccSVMPSLY=
-X-Google-Smtp-Source: APXvYqwcKc8OQOLbjhzBWeyXihMSClM0SSK/ywAQmwsvkxrLdQEL2WkFxm0wyd0LYcMkdI11IjjTZg==
-X-Received: by 2002:a5d:6151:: with SMTP id y17mr22130398wrt.110.1581612015663; 
- Thu, 13 Feb 2020 08:40:15 -0800 (PST)
+ bh=ljIvDHLN6tog1gjQ51iNc2XMRU3cMi+uSkVVHu8cuT4=;
+ b=HIBjYCGSPi3t48OUwqPStI9EDKMTX8cZkqtYqS1VkKhbd4bH8fQdU6uroLgDrHS1Fl
+ tHK65G5m9+jktgI/r2suyzRSyzsbjBuXGxQGDTBRC9QGYGKjH87Zb570T8zFnxYRXrta
+ DQmxHrlF5fo8i1YgiRCkS+x/qm3nmqyBHQ2vUfh9ui3PU8ZXsCvM4zHQPmNzUyYQt5SL
+ P/Y8AiA+7+HwkJV4SiILJb1WO5tYdin3Z88YyZyDzbDlRfdlnIYHemySWKcVGQzKQonQ
+ gP8l2NETA2+GgCOn8bWK7vry3d5d87i3CYV+6qqrfa19FQF5+ZT8e70U4ZZshBbnpzfV
+ fIvQ==
+X-Gm-Message-State: APjAAAVLfnGud/Z/kPPuVq84Nt69j+Shnplzu0psB3OMYWH1nOe6XodE
+ dnzJyjd8pfigTH9db8Y0VKl/kosp
+X-Google-Smtp-Source: APXvYqw7sINzUbnoD5ydFKpKcLaCTZ30fHyF6HFAksiO/pDQK8NvJDQvWRxVCSqMtK3CJfsOF10GSg==
+X-Received: by 2002:a1c:5445:: with SMTP id p5mr6643132wmi.75.1581612017438;
+ Thu, 13 Feb 2020 08:40:17 -0800 (PST)
 Received: from localhost (p2E5BEF3F.dip0.t-ipconnect.de. [46.91.239.63])
- by smtp.gmail.com with ESMTPSA id o9sm592460wrw.20.2020.02.13.08.40.14
+ by smtp.gmail.com with ESMTPSA id y7sm3352850wrr.56.2020.02.13.08.40.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 13 Feb 2020 08:40:14 -0800 (PST)
+ Thu, 13 Feb 2020 08:40:16 -0800 (PST)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Arnd Bergmann <arnd@arndb.de>, Will Deacon <will@kernel.org>,
  Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4 4/5] memory: tegra186: Register as memory controller
-Date: Thu, 13 Feb 2020 17:39:58 +0100
-Message-Id: <20200213163959.819733-5-thierry.reding@gmail.com>
+Subject: [PATCH v4 5/5] iommu: arm-smmu: Get reference to memory controller
+Date: Thu, 13 Feb 2020 17:39:59 +0100
+Message-Id: <20200213163959.819733-6-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200213163959.819733-1-thierry.reding@gmail.com>
 References: <20200213163959.819733-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_084016_903543_7D642058 
+X-CRM114-CacheID: sfid-20200213_084019_238785_9BB49F8E 
 X-CRM114-Status: GOOD (  13.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -109,55 +109,63 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-Registering as memory controller allows other drivers to obtain a
-reference to it. This is mostly useful as a way of ordering probe
-between devices depending on one another.
+Use the memory controller framework to obtain a reference to the memory
+controller to which the SMMU will make memory requests. This allows the
+two drivers to properly order their probes so that the memory controller
+can be programmed first.
+
+An example where this is required is Tegra186 where the stream IDs need
+to be associated with memory clients before memory requests are emitted
+with the correct stream ID.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/memory/tegra/tegra186.c | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+ drivers/iommu/arm-smmu.c | 11 +++++++++++
+ drivers/iommu/arm-smmu.h |  2 ++
+ 2 files changed, 13 insertions(+)
 
-diff --git a/drivers/memory/tegra/tegra186.c b/drivers/memory/tegra/tegra186.c
-index 5d53f11ca7b6..8c43702340e8 100644
---- a/drivers/memory/tegra/tegra186.c
-+++ b/drivers/memory/tegra/tegra186.c
-@@ -4,6 +4,7 @@
-  */
+diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+index 16c4b87af42b..862ea55018e8 100644
+--- a/drivers/iommu/arm-smmu.c
++++ b/drivers/iommu/arm-smmu.c
+@@ -2109,6 +2109,17 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
+ 	}
+ 	smmu->dev = dev;
  
- #include <linux/io.h>
-+#include <linux/memory-controller.h>
- #include <linux/module.h>
- #include <linux/mod_devicetable.h>
- #include <linux/of_device.h>
-@@ -32,6 +33,7 @@ struct tegra186_mc_soc {
- };
- 
- struct tegra186_mc {
-+	struct memory_controller base;
- 	struct device *dev;
- 	void __iomem *regs;
- 
-@@ -1532,13 +1534,18 @@ static int tegra186_mc_probe(struct platform_device *pdev)
- 		return -ENOMEM;
- 
- 	mc->soc = of_device_get_match_data(&pdev->dev);
-+	mc->dev = &pdev->dev;
- 
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	mc->regs = devm_ioremap_resource(&pdev->dev, res);
- 	if (IS_ERR(mc->regs))
- 		return PTR_ERR(mc->regs);
- 
--	mc->dev = &pdev->dev;
-+	mc->base.dev = &pdev->dev;
++	smmu->mc = devm_memory_controller_get_optional(dev, NULL);
++	if (IS_ERR(smmu->mc)) {
++		err = PTR_ERR(smmu->mc);
 +
-+	err = memory_controller_register(&mc->base);
-+	if (err < 0)
++		if (err != -EPROBE_DEFER)
++			dev_err(dev, "failed to get memory controller: %d\n",
++				err);
++
 +		return err;
++	}
++
+ 	if (dev->of_node)
+ 		err = arm_smmu_device_dt_probe(pdev, smmu);
+ 	else
+diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
+index 8d1cd54d82a6..d38bcd3ce447 100644
+--- a/drivers/iommu/arm-smmu.h
++++ b/drivers/iommu/arm-smmu.h
+@@ -18,6 +18,7 @@
+ #include <linux/io-64-nonatomic-hi-lo.h>
+ #include <linux/io-pgtable.h>
+ #include <linux/iommu.h>
++#include <linux/memory-controller.h>
+ #include <linux/mutex.h>
+ #include <linux/spinlock.h>
+ #include <linux/types.h>
+@@ -253,6 +254,7 @@ enum arm_smmu_implementation {
  
- 	err = of_platform_populate(pdev->dev.of_node, NULL, NULL, &pdev->dev);
- 	if (err < 0)
+ struct arm_smmu_device {
+ 	struct device			*dev;
++	struct memory_controller	*mc;
+ 
+ 	void __iomem			*base;
+ 	unsigned int			numpage;
 -- 
 2.24.1
 
