@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8505115BBEA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 10:43:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 987BA15BBEF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 10:44:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=SiX2au6+TcuM18Pay+IU0nQf0dYAPu4OOj7tQY0m8Jw=; b=KJfXbefyaKetA6FZB7Et/RBx50
-	haMpQ1n3QhN3UbggYiSb8iwemXvxr/3TVvomXS8BBIyKgu1UVWUQgMzGHOIft6l3/ib0uJ4wAo/x+
-	pnf9yBbGqWvWbo1JP1Nyx2mUO5tFeaB3T2rkgLti8hCedDj3KwB/UGcJzFD27e/R1ChMoDW0xlXAt
-	izQa4BrfKrQZO3YbBfUByh36KSz+3kDjYwxG9Ge9919eLKsIdBQaX/xgwylf0C+fMJynq3xjAzAHW
-	XXGnRpv0yn0KInWPXTYROfkApZ4k6lNwr10Q2QZ2IwVAabBzPR0fIB9ouqy8b5yzzz0c0LgGYScW+
-	uMxUab8Q==;
+	bh=x3S860yHkalfgm/eOmG3cxB7XTcUA8ar2++FHJN7rkI=; b=Mzan9ovcaJqMphXzYudNzbPYZV
+	Rc9xp0n3cyNe9PjSQ0YjXeCN/oV9h+sqCNplUwfnPVkH5Zfi7jiEAZEhsPEOmXe6MwJjOn50DcFW/
+	kMbYwSLc4EqQ4nOY0g13/PPeSGJxjM3Ut0AUgWNYfqNovlRgPDre+57n0MO423RFoC2n1b5aDss7b
+	uxRYLkaHAYmmQEUxStCgG52KJcA1538Q1lp4CWo63Hg0j/biSiPHknctM8jTPq+iy96ugi6e8T53U
+	GM9y3qTp1Oj9PZ/XN6ObnWoy+tSLWHNT/jfYkK1uBbl8aQhzvKPesP12k5ghxMT8OrmNHrsoRD8aT
+	B6jkZtIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2B1q-0007fC-5t; Thu, 13 Feb 2020 09:43:27 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1j2B2O-0008Ef-QB; Thu, 13 Feb 2020 09:44:00 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2B1L-0007S5-QO
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 09:42:58 +0000
-Received: by mail-pf1-x443.google.com with SMTP id y73so2812800pfg.2
+ id 1j2B1a-0007iA-97
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 09:43:12 +0000
+Received: by mail-pl1-x643.google.com with SMTP id g6so2135790plt.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 01:42:55 -0800 (PST)
+ Thu, 13 Feb 2020 01:43:09 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=GZ5nyXgOdQJHZ2cR30e/+vtSPLvl2FoSgBANtMAsC3w=;
- b=krwQ6sIKq1EtFX9uJx37mA/JlSIdFZBp9pSRKe0hxbRsdNfhL+NWHJ/7btNCGQ06h5
- ckpj1vPA072BGG8kAahDKoqZtN8u16iEypF7iTJwlJb7aMZ93KNoKUjBdWkO1gZkWTCd
- gfmJtVTGe8p5gWV3vg4fTtTcOtOn21+oXXjiz859yYzqHoNSteC53vrut/mpj8BlrKVf
- i0zurWflO9wJe9xzrhWEJKeF1JfTz/EsQgLnPccNQdZ2RD91oHGuiCq7ZyIlaLyUKL7g
- 7kuTD/tXHWvB/+lQPXIoNI1qMyJMAs/eGC0zBd9yalzwNNDJwCxcVBv6XGRgA0WlztUV
- zV3Q==
+ bh=iWu/QSz7Eja04sifvqVzX17vMjMTVW+/pXoDLb+iIrE=;
+ b=B5LlPfBbU24Kkv2Q4BpY0EMSO/3YN6MlfeR+ABnGaRbjDEwG2AAREj1T+GhpNJWfqs
+ f/cY+vOTqmihCPKo58NJtAZ4YiJ8iEkp4zQ6kI+r5Um7lXFVb9UUzDvtlMT6IST74of9
+ T+uPjRcs6y+YFl5izwi7iVyMFQQWV61azMIHZYGEWNoYxGLo4cGrH7BfzJ/F1zBDqEc/
+ Mvkz/tEQ6FL8dpuFpaEt7KiOplTuARl6H+ouIpTox13roeI2EytBgGAN5BsYKDPmOwUB
+ oye6lo3R8AcYMkPWekQfXEOgQOS1NewvaS494lpHEr2GQLZdMf/FX+cfkJgPODK8eoqS
+ Ytbg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=GZ5nyXgOdQJHZ2cR30e/+vtSPLvl2FoSgBANtMAsC3w=;
- b=dX6zuMycf7RTYChvnL2QWizuMi2lG8ONUbFRh10K7pEyDqsiH3a22LiHuKvBvMwjOx
- jBsrt5XtRN4gqS/hLhFOojmR915IUAD5DsRDCAFCAP5lgGFttuCHIjco8FPuH07MhumT
- LCo3z6Cy4z0obax8PpMYv/dkGMGlN1ozgSKDGfwy7OlRQ1a/0Eynur+mkB+Z61/q48Na
- vjTnnotAKeIWRDJJ3Fcw3PHQx6gMei09dn6Riok43uIRaJPhu3KjnEXrZ6Kslx1XA6GD
- rWGpN95mIK9khKRx7VNzWnxBeUh3fiEJK5PNzSWnyp6N7ei7K+P6NpL2DDOGO0xge4Jt
- FRvg==
-X-Gm-Message-State: APjAAAWBFZG9ls4cO9/ef5V3o7SMjuPVY0VcDKNxVgFxFhOvc4IJFlbh
- mNw+SKmULpv0NlSKnb0csXvSFg==
-X-Google-Smtp-Source: APXvYqwwFnhUMc3e+nIoi46LQxwZ/BKqxx5Qc3gbVTYD2Yj6SMe+VVEZ1UYEjQ7mExqzjyNoMkXzUg==
-X-Received: by 2002:aa7:9205:: with SMTP id 5mr13196607pfo.213.1581586974535; 
- Thu, 13 Feb 2020 01:42:54 -0800 (PST)
+ bh=iWu/QSz7Eja04sifvqVzX17vMjMTVW+/pXoDLb+iIrE=;
+ b=lJqN/oOZkp/1S2DDviPYYRGvaJAtgudF9+L3vzpeIQSdM68CJFNI7TMJV/e5bScVym
+ o4gPnPp2/XMuB6EfHGSr4VyNmHn8ojKJmVHzkxiod2YQmBRTUY47Q3o8EC/9ETISEHmG
+ c6vwjnxb8IE9Hzy98tKts6X0sn4GZW6GuCgz3T+xCrm8jUmdlzfZjv/Ap8oycXbQ9XiC
+ uFTnSbsJeFemsUn1PKYzVL3ZtwShingM0/LsSSWD0afqyGyP+87dG/5E4SuIZnTeX26r
+ CyaTnUIEHGXdOsj2XnjXCepSFP4Hi7JjhbMTBVdR9w50hzD147nU1EgeWaP+MElcLErc
+ iSgg==
+X-Gm-Message-State: APjAAAWocOswTgnGpO9EIFUBz7YiVrvt9JIuZ01rMlzqjq6TLaDvqpiY
+ 6M7ERPp/UujF+vYd0dTXd9fHvA==
+X-Google-Smtp-Source: APXvYqylNpwu9++FIvk/aaFj9S+Uwnf6MciaZTrLNhqZhyF98LIe9cCzIHtb6YGNjqysPRQsN/R1JA==
+X-Received: by 2002:a17:902:9a84:: with SMTP id
+ w4mr12722133plp.21.1581586988826; 
+ Thu, 13 Feb 2020 01:43:08 -0800 (PST)
 Received: from localhost.localdomain (li1441-214.members.linode.com.
  [45.118.134.214])
- by smtp.gmail.com with ESMTPSA id 3sm2310277pfi.13.2020.02.13.01.42.42
+ by smtp.gmail.com with ESMTPSA id 3sm2310277pfi.13.2020.02.13.01.42.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 13 Feb 2020 01:42:54 -0800 (PST)
+ Thu, 13 Feb 2020 01:43:08 -0800 (PST)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
@@ -68,22 +69,22 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  Coresight ML <coresight@lists.linaro.org>
-Subject: [PATCH v4 2/5] perf cs-etm: Continuously record last branch
-Date: Thu, 13 Feb 2020 17:42:01 +0800
-Message-Id: <20200213094204.2568-3-leo.yan@linaro.org>
+Subject: [PATCH v4 3/5] perf cs-etm: Correct synthesizing instruction samples
+Date: Thu, 13 Feb 2020 17:42:02 +0800
+Message-Id: <20200213094204.2568-4-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200213094204.2568-1-leo.yan@linaro.org>
 References: <20200213094204.2568-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_014256_397176_0853C63E 
-X-CRM114-Status: GOOD (  14.64  )
+X-CRM114-CacheID: sfid-20200213_014310_417873_530DD8FE 
+X-CRM114-Status: GOOD (  21.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,56 +113,180 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Every time synthesize instruction sample, the last branch recording
-will be reset.  This is fine if the instruction period is big enough,
-for example if use the option '--itrace=i100000', the last branch
-array is reset for every sample with 100000 instructions per period;
-before generate the next instruction sample, there has the sufficient
-packets coming to fill the last branch array.
+When 'etm->instructions_sample_period' is less than
+'tidq->period_instructions', the function cs_etm__sample() cannot handle
+this case properly with its logic.
 
-On the other hand, if set a very small period, the packets will be
-significantly reduced between two continuous instruction samples, thus
-the last branch array is almost empty for new instruction sample by
-frequently resetting.
+Let's see below flow as an example:
 
-To allow the last branches to work properly for any instruction periods,
-this patch avoids to reset the last branch for every instruction sample
-and only reset it when flush the trace data.  The last branches will
-be reset only for two cases, one is for trace starting, another case
-is for discontinuous trace; other cases can keep recording last branches
-for continuous instruction samples.
+- If we set itrace option '--itrace=i4', then function cs_etm__sample()
+  has variables with initialized values:
 
+  tidq->period_instructions = 0
+  etm->instructions_sample_period = 4
+
+- When the first packet is coming:
+
+  packet->instr_count = 10; the number of instructions executed in this
+  packet is 10, thus update period_instructions as below:
+
+  tidq->period_instructions = 0 + 10 = 10
+  instrs_over = 10 - 4 = 6
+  offset = 10 - 6 - 1 = 3
+  tidq->period_instructions = instrs_over = 6
+
+- When the second packet is coming:
+
+  packet->instr_count = 10; in the second pass, assume 10 instructions
+  in the trace sample again:
+
+  tidq->period_instructions = 6 + 10 = 16
+  instrs_over = 16 - 4 = 12
+  offset = 10 - 12 - 1 = -3  -> the negative value
+  tidq->period_instructions = instrs_over = 12
+
+So after handle these two packets, there have below issues:
+
+The first issue is that cs_etm__instr_addr() returns the address within
+the current trace sample of the instruction related to offset, so the
+offset is supposed to be always unsigned value.  But in fact, function
+cs_etm__sample() might calculate a negative offset value (in handling
+the second packet, the offset is -3) and pass to cs_etm__instr_addr()
+with u64 type with a big positive integer.
+
+The second issue is it only synthesizes 2 samples for sample period = 4.
+In theory, every packet has 10 instructions so the two packets have
+total 20 instructions, 20 instructions should generate 5 samples
+(4 x 5 = 20).  This is because cs_etm__sample() only calls once
+cs_etm__synth_instruction_sample() to generate instruction sample per
+range packet.
+
+This patch fixes the logic in function cs_etm__sample(); the basic
+idea for handling coming packet is:
+
+- To synthesize the first instruction sample, it combines the left
+  instructions from the previous packet and the head of the new
+  packet; then generate continuous samples with sample period;
+- At the tail of the new packet, if it has the rest instructions,
+  these instructions will be left for the sequential sample.
+
+Suggested-by: Mike Leach <mike.leach@linaro.org>
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
-Reviewed-by: Mike Leach <mike.leach@linaro.org>
 ---
- tools/perf/util/cs-etm.c | 7 ++++---
- 1 file changed, 4 insertions(+), 3 deletions(-)
+ tools/perf/util/cs-etm.c | 87 ++++++++++++++++++++++++++++++++--------
+ 1 file changed, 70 insertions(+), 17 deletions(-)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 84f30c2de185..b2f31390126a 100644
+index b2f31390126a..4b7d6c36ce3c 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -1170,9 +1170,6 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
- 			"CS ETM Trace: failed to deliver instruction event, error %d\n",
- 			ret);
+@@ -1356,9 +1356,12 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+ 	struct cs_etm_auxtrace *etm = etmq->etm;
+ 	int ret;
+ 	u8 trace_chan_id = tidq->trace_chan_id;
+-	u64 instrs_executed = tidq->packet->instr_count;
++	u64 instrs_prev;
  
--	if (etm->synth_opts.last_branch)
--		cs_etm__reset_last_branch_rb(tidq);
--
- 	return ret;
- }
- 
-@@ -1485,6 +1482,10 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
- swap_packet:
- 	cs_etm__packet_swap(etm, tidq);
- 
-+	/* Reset last branches after flush the trace */
-+	if (etm->synth_opts.last_branch)
-+		cs_etm__reset_last_branch_rb(tidq);
+-	tidq->period_instructions += instrs_executed;
++	/* Get instructions remainder from previous packet */
++	instrs_prev = tidq->period_instructions;
 +
- 	return err;
- }
++	tidq->period_instructions += tidq->packet->instr_count;
  
+ 	/*
+ 	 * Record a branch when the last instruction in
+@@ -1376,26 +1379,76 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+ 		 * TODO: allow period to be defined in cycles and clock time
+ 		 */
+ 
+-		/* Get number of instructions executed after the sample point */
+-		u64 instrs_over = tidq->period_instructions -
+-			etm->instructions_sample_period;
++		/*
++		 * Below diagram demonstrates the instruction samples
++		 * generation flows:
++		 *
++		 *    Instrs     Instrs       Instrs       Instrs
++		 *   Sample(n)  Sample(n+1)  Sample(n+2)  Sample(n+3)
++		 *    |            |            |            |
++		 *    V            V            V            V
++		 *   --------------------------------------------------
++		 *            ^                                  ^
++		 *            |                                  |
++		 *         Period                             Period
++		 *    instructions(Pi)                   instructions(Pi')
++		 *
++		 *            |                                  |
++		 *            \---------------- -----------------/
++		 *                             V
++		 *                 tidq->packet->instr_count
++		 *
++		 * Instrs Sample(n...) are the synthesised samples occurring
++		 * every etm->instructions_sample_period instructions - as
++		 * defined on the perf command line.  Sample(n) is being the
++		 * last sample before the current etm packet, n+1 to n+3
++		 * samples are generated from the current etm packet.
++		 *
++		 * tidq->packet->instr_count represents the number of
++		 * instructions in the current etm packet.
++		 *
++		 * Period instructions (Pi) contains the the number of
++		 * instructions executed after the sample point(n) from the
++		 * previous etm packet.  This will always be less than
++		 * etm->instructions_sample_period.
++		 *
++		 * When generate new samples, it combines with two parts
++		 * instructions, one is the tail of the old packet and another
++		 * is the head of the new coming packet, to generate
++		 * sample(n+1); sample(n+2) and sample(n+3) consume the
++		 * instructions with sample period.  After sample(n+3), the rest
++		 * instructions will be used by later packet and it is assigned
++		 * to tidq->period_instructions for next round calculation.
++		 */
+ 
+ 		/*
+-		 * Calculate the address of the sampled instruction (-1 as
+-		 * sample is reported as though instruction has just been
+-		 * executed, but PC has not advanced to next instruction)
++		 * Get the initial offset into the current packet instructions;
++		 * entry conditions ensure that instrs_prev is less than
++		 * etm->instructions_sample_period.
+ 		 */
+-		u64 offset = (instrs_executed - instrs_over - 1);
+-		u64 addr = cs_etm__instr_addr(etmq, trace_chan_id,
+-					      tidq->packet, offset);
++		u64 offset = etm->instructions_sample_period - instrs_prev;
++		u64 addr;
+ 
+-		ret = cs_etm__synth_instruction_sample(
+-			etmq, tidq, addr, etm->instructions_sample_period);
+-		if (ret)
+-			return ret;
++		while (tidq->period_instructions >=
++				etm->instructions_sample_period) {
++			/*
++			 * Calculate the address of the sampled instruction (-1
++			 * as sample is reported as though instruction has just
++			 * been executed, but PC has not advanced to next
++			 * instruction)
++			 */
++			addr = cs_etm__instr_addr(etmq, trace_chan_id,
++						  tidq->packet, offset - 1);
++			ret = cs_etm__synth_instruction_sample(
++				etmq, tidq, addr,
++				etm->instructions_sample_period);
++			if (ret)
++				return ret;
+ 
+-		/* Carry remaining instructions into next sample period */
+-		tidq->period_instructions = instrs_over;
++			offset += etm->instructions_sample_period;
++			tidq->period_instructions -=
++				etm->instructions_sample_period;
++		}
+ 	}
+ 
+ 	if (etm->sample_branches) {
 -- 
 2.17.1
 
