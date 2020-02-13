@@ -2,71 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A61A15BED5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 13:58:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D45715BED9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 13:59:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uWgKvqIX0SwlFyx0GN0N2Ja/EglV30NZxyH4SZuggg8=; b=KmsqLx4EURv18Z
-	MD/bBAzIl0O6/fpFOjd0YBivuqKdQSVWrzYBJMp43LdEqB8OljH70mfE/vw2buGjolGe3mjpM4JlH
-	XqkDNHvncUp95wVWb9h/c7isuF8H2MrLfUaAHGJoxnAXbOW1eU/wyVZSWYKW3sh8LNnUVHwF6KSQh
-	bzJSVgk7Rm2hC9MDVtrw+h8aSIRvFx1wY6+1oE9e4oDlp6e7qD3kAIF6WNcxcg0Cadi7kHmRS1WPT
-	6fbXUTn3TVZQJmahBoY4Mg1k7MlgHORYAl/FAwHKg3RUaRxe+WAl8aBsxl0F5POvvMroKvuT1EDkN
-	JK0WdKB7h+oqNQQpShDA==;
+	List-Owner; bh=bHJRFy4QO5Q545RYgyOP1u0w4pBMdCxgjhfWdVg2guI=; b=PHUjpq114deMJK
+	ng8JVKCpDmlcBDsGxCA0o/CePKhwPQO8njw8x/lbeTknh5kEPVX2KFG8JJ1cuGEMpvc459LyoGHUw
+	NPvD5HmWzh4nMOFUT/EZS72eZo8l7YMDhSOiMy3lMshGKA0mqjNTIeaxlXZO4/BGguRQPf9VFRl/e
+	QoeRM88Zz2maiJvM7tYkjA+NfqyVa7LKokCmx3aq3yAktime3bm5twkS+NB90ZBHcUSkdgYP6VENP
+	yaikLbvAYUEslHHNRHN3OAJYPyvcBE+8A5wCmPTaIjU4RP2p9kb4gSAX0WlMzFdbYH6KXPXQB9t7/
+	rMVgAXSccX5IIKaP9hUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2E4u-0008Fx-RM; Thu, 13 Feb 2020 12:58:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2E4n-0008FX-9x
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 12:58:42 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0876F2168B;
- Thu, 13 Feb 2020 12:58:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581598720;
- bh=qsnwqRufSnTuK8ERKhkDuCcurMHdvnXzTh7EcHChSPo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=QR+Pky9TwuAH/pQTlReJIFbclIZ5X3xogr69UMEZQ3AHi7LSGcX/b2zXSDBJX5Rfe
- GQmLoAuXxZbvM2UtazzUBCUGTdXeilS6TIwvXHjrzMlQj/hcuKDaHKDu0/j9RIW0H4
- 8p5JtPuf5ETC15lMooZTXhcsDdQ0s4ChQWCFI0FM=
-Date: Thu, 13 Feb 2020 20:58:31 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH v3 2/2] ARM: dts: imx6: phycore-som: fix emmc supply
-Message-ID: <20200213125830.GO11096@dragon>
-References: <20200116140108.6069-1-m.felsch@pengutronix.de>
- <20200116140108.6069-2-m.felsch@pengutronix.de>
+	id 1j2E5a-0008WL-6a; Thu, 13 Feb 2020 12:59:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2E5R-0008V2-9g
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 12:59:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B69091FB;
+ Thu, 13 Feb 2020 04:59:20 -0800 (PST)
+Received: from localhost (unknown [10.1.198.52])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 580063F6CF;
+ Thu, 13 Feb 2020 04:59:20 -0800 (PST)
+Date: Thu, 13 Feb 2020 12:59:18 +0000
+From: Ionela Voinescu <ionela.voinescu@arm.com>
+To: Valentin Schneider <valentin.schneider@arm.com>
+Subject: Re: [PATCH v3 5/7] cpufreq: add function to get the hardware max
+ frequency
+Message-ID: <20200213125918.GA2397@arm.com>
+References: <20200211184542.29585-1-ionela.voinescu@arm.com>
+ <20200211184542.29585-6-ionela.voinescu@arm.com>
+ <b63a4a47-99e5-9c71-73be-740aedde4714@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200116140108.6069-2-m.felsch@pengutronix.de>
+In-Reply-To: <b63a4a47-99e5-9c71-73be-740aedde4714@arm.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_045841_364578_9D9788A9 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200213_045921_378048_E3DDADDD 
+X-CRM114-Status: GOOD (  15.13  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,24 +65,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: s.riedmueller@phytec.de, festevam@gmail.com, chf.fritz@googlemail.com,
- robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de, c.hemp@phytec.de,
- s.christ@phytec.de, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
+ peterz@infradead.org, catalin.marinas@arm.com, linux-pm@vger.kernel.org,
+ linux-doc@vger.kernel.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ mingo@redhat.com, viresh.kumar@linaro.org,
+ linux-arm-kernel@lists.infradead.org, sudeep.holla@arm.com, will@kernel.org,
+ lukasz.luba@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jan 16, 2020 at 03:01:08PM +0100, Marco Felsch wrote:
-> Currently the vmmc is supplied by the 1.8V pmic rail but this is wrong.
-> The default module behaviour is to power VCCQ and VCC by the 3.3V power
-> rail. Optional the user can connect the VCCQ to the pmic 1.8V emmc
-> power rail using a solder jumper.
+On Thursday 13 Feb 2020 at 11:59:56 (+0000), Valentin Schneider wrote:
+> On 2/11/20 6:45 PM, Ionela Voinescu wrote:
+> > +/**
+> > + * cpufreq_get_hw_max_freq - get the max hardware frequency of the CPU
+> > + * @cpu: CPU number
+> > + *
+> > + * The default return value is the max_freq field of cpuinfo.
+> > + */
+> > +__weak unsigned int cpufreq_get_hw_max_freq(unsigned int cpu)
+> > +{
+> > +	struct cpufreq_policy *policy = cpufreq_cpu_get(cpu);
+> > +	unsigned int ret_freq = 0;
+> > +
+> > +	if (policy) {
+> > +		ret_freq = policy->cpuinfo.max_freq;
+> > +		cpufreq_cpu_put(policy);
 > 
-> Fixes: ddec5d1c0047 ("ARM: dts: imx6: Add initial support for phyCORE-i.MX 6 SOM")
-> Signed-off-by: Marco Felsch <m.felsch@pengutronix.de>
+> What about intel_pstate / turbo stuff? IIRC one of Giovanni's issues was that
+> turbo freq is not always reported as the max freq. Dunno if we can do
+> anything about it; at the very least maybe document the caveat?
+>
 
-Applied, thanks.
+Okay, I can add details in the description in regards to potential
+reasons to overwrite this function. But basically this is one of the
+reasons for making this a weak function. The best information we can
+generically get for maximum hardware frequency is cpuinfo.max_freq.
+But if platforms have the possibility to obtain this differently from
+either hardware or firmware they can overwrite this.
+
+Thanks,
+Ionela.
+
+> > +	}
+> > +
+> > +	return ret_freq;
+> > +}
+> > +EXPORT_SYMBOL(cpufreq_get_hw_max_freq);
+> > +
+> >  static unsigned int __cpufreq_get(struct cpufreq_policy *policy)
+> >  {
+> >  	if (unlikely(policy_is_inactive(policy)))
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
