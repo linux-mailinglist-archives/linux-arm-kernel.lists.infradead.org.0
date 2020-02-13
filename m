@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DDEE15C14C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 16:22:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 415B215C1AE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 16:25:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VQmRrCM0o58/Q8jcKliOjOcGA0HgJfMyTsryCz7Fr5k=; b=NRiRD5g5X375RP
-	knYOuN1xJZN7Zgr4B9rJQZyWtGswJif8SQxvy2BhVNlcdvtL9j1NwtQJtxBB8Kt3NGmUgtf5eWBxe
-	KZpAjiMHkH7qdBtSfeh3CGKkj5fjkDJ0WiWCG1RYzWmGp+yLokkHZXsL5xIwPcEZdZVeoC6Evm0wU
-	xUIiWJGdI94wDcoOJKKW0fJai3Bw0MFy80WiEcmzriccjn8yR1QMxCjashRosHxmfGxnLzIDFWWXa
-	Ft6RhPJwBZ/HHcxPzQtBuPN072NGjzVZd8NLcdjVTtAsSZ5g/IpIDEFY+tVUVmr1ggXXOLC2nV+Ti
-	PmFqMdfaX+sivzIsFhvQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GAUzfsXtRS7I4C+K2eCKcYPByZTQVNAA9gkk4zxRP9o=; b=bDusvmDSuXvA7mqFd7fjz8umQ
+	kYD4UL2I8LCAzQOsbe5xVtGvLCTnpPnJ0Ir6CeOEfrhdTGpEVf4C0DzkZbO50JE0212m/dxuctbMu
+	riAnyCPkQK6A4z5Zzxtg2kKmNPCVUGGA2YDXADixQ2EQrcBqlCMAtG7BN7+6egeAwFM+rKxy7SvQq
+	S1rTd0SRtZv5g3ld2NRVXSaLvPItmgDesiVLoJYLP6n+txx/NU0IeU7GRwbKK7mHhO5MDs5dwfIFU
+	j3wdcVNspcQ0JUk4001IXbxUwdXdkcfnYu2lkOb97+43hOE0w2bDgO/A0n7o3xUEnMHh7ZOMuJUx0
+	67KyAn2aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2GJu-0002cs-8i; Thu, 13 Feb 2020 15:22:26 +0000
+	id 1j2GMy-0004Sd-KN; Thu, 13 Feb 2020 15:25:36 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2GJn-0002bO-Qt
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 15:22:21 +0000
+ id 1j2GMp-0004Ry-GD; Thu, 13 Feb 2020 15:25:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 663CD328;
- Thu, 13 Feb 2020 07:22:14 -0800 (PST)
-Received: from [10.1.195.59] (ifrit.cambridge.arm.com [10.1.195.59])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5FE623F68E;
- Thu, 13 Feb 2020 07:22:12 -0800 (PST)
-Subject: Re: [PATCH v3 5/7] cpufreq: add function to get the hardware max
- frequency
-To: Ionela Voinescu <ionela.voinescu@arm.com>
-References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-6-ionela.voinescu@arm.com>
- <b63a4a47-99e5-9c71-73be-740aedde4714@arm.com>
- <20200213125918.GA2397@arm.com>
-From: Valentin Schneider <valentin.schneider@arm.com>
-Message-ID: <cf821516-e66b-94d4-ee63-5f94602a7cff@arm.com>
-Date: Thu, 13 Feb 2020 15:22:11 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3E55A328;
+ Thu, 13 Feb 2020 07:25:24 -0800 (PST)
+Received: from [10.37.12.116] (unknown [10.37.12.116])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 130463F68E;
+ Thu, 13 Feb 2020 07:25:13 -0800 (PST)
+Subject: Re: [PATCH v2 1/4] PM / EM: add devices to Energy Model
+To: Dietmar Eggemann <dietmar.eggemann@arm.com>,
+ linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
+ linux-omap@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-msm@vger.kernel.org, linux-imx@nxp.com
+References: <20200206134640.11367-1-lukasz.luba@arm.com>
+ <20200206134640.11367-2-lukasz.luba@arm.com>
+ <62a54ec9-0491-367d-0a36-7ea32c449acc@arm.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <6b1921bb-42c8-999f-abfa-5682e73015d5@arm.com>
+Date: Thu, 13 Feb 2020 15:25:11 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200213125918.GA2397@arm.com>
+In-Reply-To: <62a54ec9-0491-367d-0a36-7ea32c449acc@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_072219_914214_A314D964 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20200213_072527_627641_6EF911D8 
+X-CRM114-Status: GOOD (  17.84  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,34 +68,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-pm@vger.kernel.org,
- linux-doc@vger.kernel.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- mingo@redhat.com, viresh.kumar@linaro.org,
- linux-arm-kernel@lists.infradead.org, sudeep.holla@arm.com, will@kernel.org,
- lukasz.luba@arm.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, bjorn.andersson@linaro.org,
+ bsegall@google.com, festevam@gmail.com, Morten.Rasmussen@arm.com,
+ robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
+ khilman@kernel.org, daniel.lezcano@linaro.org, steven.price@arm.com,
+ cw00.choi@samsung.com, mingo@redhat.com, mgorman@suse.de, rui.zhang@intel.com,
+ alyssa.rosenzweig@collabora.com, daniel@ffwll.ch, b.zolnierkie@samsung.com,
+ s.hauer@pengutronix.de, rostedt@goodmis.org, matthias.bgg@gmail.com,
+ Chris.Redpath@arm.com, airlied@linux.ie, javi.merino@arm.com,
+ tomeu.vizoso@collabora.com, qperret@google.com, sboyd@kernel.org,
+ shawnguo@kernel.org, rjw@rjwysocki.net, agross@kernel.org,
+ kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
+ ionela.voinescu@arm.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/13/20 12:59 PM, Ionela Voinescu wrote:
->> What about intel_pstate / turbo stuff? IIRC one of Giovanni's issues was that
->> turbo freq is not always reported as the max freq. Dunno if we can do
->> anything about it; at the very least maybe document the caveat?
->>
-> 
-> Okay, I can add details in the description in regards to potential
-> reasons to overwrite this function. But basically this is one of the
-> reasons for making this a weak function. The best information we can
-> generically get for maximum hardware frequency is cpuinfo.max_freq.
-> But if platforms have the possibility to obtain this differently from
-> either hardware or firmware they can overwrite this.
-> 
 
-Right, that would be handled by a different implementation of
-that function, so this wasn't too relevant of a comment. Sorry!
 
+On 2/13/20 10:59 AM, Dietmar Eggemann wrote:
+> On 06/02/2020 14:46, lukasz.luba@arm.com wrote:
+>> From: Lukasz Luba <lukasz.luba@arm.com>
+> 
+> [..]
+> 
+>> @@ -26,7 +28,7 @@ framework, and interested clients reading the data from it::
+> 
+> s/::/: ?
+> 
+>>          | Thermal (IPA) |  | Scheduler (EAS) |  |     Other     |
+>>          +---------------+  +-----------------+  +---------------+
+>>                  |                   | em_pd_energy()    |
+>> -               |                   | em_cpu_get()      |
+>> +               |  em_get_pd()      | em_cpu_get()      |
+>>                  +---------+         |         +---------+
+> 
+> em_get_pd() and em_cpu_get()? Why not em_pd_get()? em_cpu_get() is a
+> specific em_get_pd(). right?
+
+Yes. I will rename 'em_get_pd' to 'em_pd_get'
+
+> 
+> [...]
+> 
+>> @@ -85,13 +89,20 @@ API.
+>>   2.3 Accessing performance domains
+>>   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>>   
+>> +There is two API functions which provide the access to the energy model:
+>> +em_cpu_get() which takes CPU id as an argument and em_get_pd() with device
+>> +pointer as an argument. It depends on the subsystem which interface it is
+>> +going to use, but in case of CPU devices both functions return the same
+>> +performance domain.
+> 
+> There is probably a reason why we need this specific function for CPU
+> devices? The reason should be described. People might ask why
+> em_get_pd() is not sufficient.
+
+True, good point. I will extend the comment in em_cpu_get().
+
+> 
+> [...]
+> 
+>> - * A "performance domain" represents a group of CPUs whose performance is
+>> - * scaled together. All CPUs of a performance domain must have the same
+>> - * micro-architecture. Performance domains often have a 1-to-1 mapping with
+>> - * CPUFreq policies.
+>> + * In case of CPU device, a "performance domain" represents a group of CPUs
+>> + * whose performance is scaled together. All CPUs of a performance domain
+>> + * must have the same micro-architecture. Performance domains often have
+>> + * a 1-to-1 mapping with CPUFreq policies.
+>> + * In case of other devices the 'priv' field is unused.
+>>    */
+>>   struct em_perf_domain {
+>> -	struct em_cap_state *table;
+>> -	int nr_cap_states;
+>> -	unsigned long cpus[0];
+>> +	struct em_perf_state *table;
+>> +	int nr_perf_states;
+>> +	void *priv;
+> 
+> In case you go back to the variable length field plus type field to
+> distingush EM devices, keep cpus[0] as the name.
+
+OK, I will.
+
+> 
+> [..]
+> 
+>>   /**
+>> - * em_pd_energy() - Estimates the energy consumed by the CPUs of a perf. domain
+>> + * em_pd_energy() - Estimates the energy consumed by the CPUs of a perf.
+>> +			domain
+> 
+> Why this change?
+
+hmmm, that's odd, maybe there was 'device' then I changed it back to
+'CPUs' but forgot to move the 'domain' to the old place.
+
+> 
+> [...]
+> 
+>> @@ -141,12 +210,12 @@ static struct em_perf_domain *em_create_pd(cpumask_t *span, int nr_states,
+>>   		 */
+>>   		opp_eff = freq / power;
+>>   		if (opp_eff >= prev_opp_eff)
+>> -			pr_warn("pd%d: hertz/watts ratio non-monotonically decreasing: em_cap_state %d >= em_cap_state%d\n",
+>> -					cpu, i, i - 1);
+>> +			dev_warn(dev, "energy_model: hertz/watts ratio non-monotonically decreasing: em_perf_state %d >= em_perf_state%d\n",
+> 
+> s/energy_model/EM ?
+
+OK, I will rename them in all places.
+
+Thank you for the review.
+
+Regards,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
