@@ -2,89 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E6B515B5E6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 01:35:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5310A15B634
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 01:55:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OyfjdF4MJJg1sR+nrfOtpAG79ZDld+ZA5etiXk8uulc=; b=RpnY4ggDttstvt
-	73+XJtm2eoPtk/RmUyh13wTcUkXLr2PRDAdRk4nafab19RIEdUpN4Y4zU5+sT/SGCNIf6SDvYZ0eZ
-	rmkkdLBtood/RLUYs2xRIK4/5/RuO4nzi9bkrQDUfagBfH3JYwgNGjuJ3I1EEy5+0Box3pAPxjgPE
-	VerLRyg2oQQg37Ry2XQmzXUxVwqkn5kPI9sKadaFVo2szRjVrUT++hQDkKmdHhltGmfuA+5OsE+yP
-	JazO27DWTiphGhHkf0AU2jSbrLx8xrx+nwVmQacSL/Ec/HP2YUoLqtEkHRe6+DJirlm5xEZhy2MyP
-	Cf9bCSTVeUGMPnPvVMBA==;
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fcxHiIJwXinfsZ17Ol3lni/QcW4yUS+7FrZg1MqlXOk=; b=QmN+nPF4YRjyEa
+	FVOR3J8x1d28L8eou7DhqEVQSx4c8igqSoFQwoBlkWVDRRdToTsiE7NoKxj6eyURRsHU4AmwvQGCs
+	8iJBOxEYVyepfnNCWEn3DSMAI7Oi7hNKsd672ChCQ52aoOrj+Xt4zG6lOgURmwpQVGV030pK7129l
+	vh5vI7JkuQNg/75U39ttuLQmQ8cLrfAIgQFFV5Sk27OJNYVaJqxrNvRR04R1j7dUGAGVIj/plXjGa
+	XrwWnjEiWoSplVNzshgKuO+ZKMCamzpI0YDnK7wbe7mXlBdaFsh4tVZBjMMEhTxNvWGksMxgpkf3H
+	nqmTMbD2qRUzWldoS3ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j22Ts-0001qK-QJ; Thu, 13 Feb 2020 00:35:48 +0000
-Received: from gateway24.websitewelcome.com ([192.185.51.202])
+	id 1j22mj-00009m-42; Thu, 13 Feb 2020 00:55:17 +0000
+Received: from wout4-smtp.messagingengine.com ([64.147.123.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j22Tk-0001pr-8K
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 00:35:41 +0000
-Received: from cm10.websitewelcome.com (cm10.websitewelcome.com [100.42.49.4])
- by gateway24.websitewelcome.com (Postfix) with ESMTP id 12C4E26614
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Feb 2020 18:35:39 -0600 (CST)
-Received: from gator4166.hostgator.com ([108.167.133.22]) by cmsmtp with SMTP
- id 22Tijc0knEfyq22Tjjlf16; Wed, 12 Feb 2020 18:35:39 -0600
-X-Authority-Reason: nr=8
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=embeddedor.com; s=default; h=Content-Type:MIME-Version:Message-ID:Subject:
- Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=fj1EsM7KBtbLu9zEu9J4LZPmGuqoK3e/mqA04voGYHM=; b=rdqPEorIYVAWijtrjXYLTv7gxJ
- bUbshf+azRdrdo4/l5HJo9EST8kvqO+WPoCpoTxXEp6YdOib1G7B7Pf404o9JEr9Jn/r7RkmdeBb4
- VV/ED7hO1B4eVQ1djz9gDGy+17mPhlNq9VXJaw6V3TDlmbbFziNWJa0UO2G/IPOxZBlqmDI7b9Wj2
- jG1r42X5XQOnBnFYACDMVJJ2klKSIyEECne1QOw3ARe3DNSKLTJr6eGd7nup0v3WtXQBaxaIa9RLi
- Aum6exNjXQiTfdnxRAmHnCaQa8+F/4T/4CTPl398yaQmDhicm9mGbzSYoBYnP+qi9GhBetsC8klC5
- N2pmV64w==;
-Received: from [200.68.141.42] (port=21619 helo=embeddedor)
- by gator4166.hostgator.com with esmtpa (Exim 4.92)
- (envelope-from <gustavo@embeddedor.com>)
- id 1j22Th-003f1y-39; Wed, 12 Feb 2020 18:35:37 -0600
-Date: Wed, 12 Feb 2020 18:35:35 -0600
-From: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
-To: Dan Williams <dan.j.williams@intel.com>, Vinod Koul <vkoul@kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: [PATCH] dmaengine: uniphier-mdmac: replace zero-length array with
- flexible-array member
-Message-ID: <20200213003535.GA3269@embeddedor.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - gator4166.hostgator.com
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - embeddedor.com
-X-BWhitelist: no
-X-Source-IP: 200.68.141.42
-X-Source-L: No
-X-Exim-ID: 1j22Th-003f1y-39
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: (embeddedor) [200.68.141.42]:21619
-X-Source-Auth: gustavo@embeddedor.com
-X-Email-Count: 46
-X-Source-Cap: Z3V6aWRpbmU7Z3V6aWRpbmU7Z2F0b3I0MTY2Lmhvc3RnYXRvci5jb20=
-X-Local-Domain: yes
+ id 1j22ma-0007Ns-3I
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 00:55:09 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.west.internal (Postfix) with ESMTP id 967B9EB3;
+ Wed, 12 Feb 2020 19:54:52 -0500 (EST)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Wed, 12 Feb 2020 19:54:53 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm2; bh=kvIcpzMnZDBTrKFTCocK1+6gG8eemWb
+ Co4P6LYqLFvs=; b=UDW8jybLIIdDBBt9Ku/iP0HlGSMGGALp9ncys+sWCqk9rIu
+ z8z14n2X3kds4Jen2mHXJvHiY8wXI57LdB1vdI2Zrf51g7VhVnaVKg/zmxl7FOCk
+ URzgO8f/f7OsRbaxvKjhGN/dLZMKYIH90g83pBr6F6+FYay7MdI3i18K1thyor0S
+ vgitlZFPD5KQ/I7EjW1hylmtElfuZ5UQ23hq8yAjuncEDV99TiDYw7Ka/ScKXOt5
+ JwgTKrD24wt0ea4VkH6JviGjE7wEX51KbG4WVKUTYftSdmhr4up+zIRSFDf7BvJe
+ SBR6ot6ROmM5+zLXfQo5oSa6zp4N1QqCM7BFM3w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=kvIcpz
+ MnZDBTrKFTCocK1+6gG8eemWbCo4P6LYqLFvs=; b=I3yYMJOj1MN3yYFnfM0cx1
+ RcbLzFg3aKsvsWTCDkMm1yPaly/2WKE4wm5JUWjoGJN8C0Vs+onpJfxwH24AVE8z
+ cgQ+1hMpI8J+BxMoOjlQZ6GgU1cEmw3wLJXZPYBUe+3YDQLyU4/z3H/Y/avphF8V
+ mRKGoylgYXVXn2LGN+Gdt1S45/GlG0jYY8p4RXzLddWoEKskcaLOZmRYmMXxskyE
+ I2TUqIXlUZgEucs3NTxRWJXNWIQrr68EJfF2UzJtdcPHw84Ht1wjksg84wklpVOT
+ 8UCakDbMVO+/SDT3NIhE5bz7aRrqhFPZ+X2s2iEckqJDZVwwgJoHsp9Wx5jG71sQ
+ ==
+X-ME-Sender: <xms:V55EXkAzRdV4rAbWN03GGELs2jHu3cs-01UwlblbWiYJoOgPXIrvpQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrieejgddvkecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderredtnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucevlhhush
+ htvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghj
+ rdhiugdrrghu
+X-ME-Proxy: <xmx:V55EXitAfaithfdZSxrv88Msl9bhCOoJmXkykQyPueu75xmPlVwuwg>
+ <xmx:V55EXqeqPTGQoKHodorareVjiqYA8HOLTpOiIWw9CxYW_twfnSqy5g>
+ <xmx:V55EXpa1i15G_s792VwBSjznbgXfEnso0YAI-Mir6eD5GF57kUnqTA>
+ <xmx:XJ5EXjdH7gkCb21m1W2jjnwGtewnUIkhfZxrbk93jpDtiNPh0k1oIQ>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id F3F98E00A2; Wed, 12 Feb 2020 19:54:46 -0500 (EST)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-802-g7a41c81-fmstable-20200203v1
+Mime-Version: 1.0
+Message-Id: <288ba2d7-77dc-40a7-90e8-f2781b3fe067@www.fastmail.com>
+In-Reply-To: <CACPK8Xdg0ocBzDqtkoo8cSCpUq+QjHQ1PKrsVZd8NPUvPFeFCw@mail.gmail.com>
+References: <20200206170234.84288-1-geissonator@gmail.com>
+ <CACPK8Xdg0ocBzDqtkoo8cSCpUq+QjHQ1PKrsVZd8NPUvPFeFCw@mail.gmail.com>
+Date: Thu, 13 Feb 2020 11:24:36 +1030
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Joel Stanley" <joel@jms.id.au>, "Andrew Geissler" <geissonator@gmail.com>
+Subject: Re: [PATCH v3] ARM: dts: aspeed: witherspoon: Add gpio line names
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_163540_385800_97C58D0E 
-X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-CacheID: sfid-20200212_165508_191808_63B4DC3A 
+X-CRM114-Status: UNSURE (   9.87  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.51.202 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.20 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -105,63 +104,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+Cc: devicetree <devicetree@vger.kernel.org>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Andrew Geissler <geissonator@yahoo.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The current codebase makes use of the zero-length array language
-extension to the C90 standard, but the preferred mechanism to declare
-variable-length types such as these ones is a flexible array member[1][2],
-introduced in C99:
 
-struct foo {
-        int stuff;
-        struct boo array[];
-};
 
-By making use of the mechanism above, we will get a compiler warning
-in case the flexible array does not occur last in the structure, which
-will help us prevent some kind of undefined behavior bugs from being
-inadvertently introduced[3] to the codebase from now on.
+On Mon, 10 Feb 2020, at 12:59, Joel Stanley wrote:
+> On Thu, 6 Feb 2020 at 17:03, Andrew Geissler <geissonator@gmail.com> wrote:
+> >
+> > From: Andrew Geissler <geissonator@yahoo.com>
+> >
+> > Name the GPIOs to help userspace work with them. The names describe the
+> > functionality the lines provide, not the net or ball name. This makes it
+> > easier to share userspace code across different systems and makes the
+> > use of the lines more obvious.
+> >
+> > Signed-off-by: Andrew Geissler <geissonator@yahoo.com>
+> 
+> Reviewed-by: Joel Stanley <joel@jms.id.au>
+> 
+> I will wait for  Andrew before merging, but this looks good to me.
 
-Also, notice that, dynamic memory allocations won't be affected by
-this change:
+To the best of my knowledge this is the only supported approach.
 
-"Flexible array members have incomplete type, and so the sizeof operator
-may not be applied. As a quirk of the original implementation of
-zero-length arrays, sizeof evaluates to zero."[1]
+I haven't checked the mapping of gpio lines to functions, but for
+the concept:
 
-This issue was found with the help of Coccinelle.
+Acked-by: Andrew Jeffery <andrew@aj.id.au>
 
-[1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
-[2] https://github.com/KSPP/linux/issues/21
-[3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
-
-Signed-off-by: Gustavo A. R. Silva <gustavo@embeddedor.com>
----
- drivers/dma/uniphier-mdmac.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/dma/uniphier-mdmac.c b/drivers/dma/uniphier-mdmac.c
-index 21b8f1131d55..618839df0748 100644
---- a/drivers/dma/uniphier-mdmac.c
-+++ b/drivers/dma/uniphier-mdmac.c
-@@ -68,7 +68,7 @@ struct uniphier_mdmac_device {
- 	struct dma_device ddev;
- 	struct clk *clk;
- 	void __iomem *reg_base;
--	struct uniphier_mdmac_chan channels[0];
-+	struct uniphier_mdmac_chan channels[];
- };
- 
- static struct uniphier_mdmac_chan *
--- 
-2.23.0
-
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
