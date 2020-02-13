@@ -2,148 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E972315BD27
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 11:54:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AFD015BD2A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 11:54:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zqxv7KE7ltjI2SHoK9uHn7irs+u7RW1FYgQ3vOjOYQs=; b=tprgGUFtqSkwLt
-	E91IJm9u5YCLqHkvFanIYUWG4gDOwvQX30w0RcxnX1ig7daUqqETBN49iERFzAXlvHPI80FlB15DQ
-	fWHS45VGQC4vYjR5mf82NH0Wy9kKo1qgFQeo26Ce0ncCooPj+7J1KGFE9BLMpr4JO67/wRNAYEZHr
-	OFcc3Xflgh8tDpmuF4NxuXh4/fjrt02O1QJHLV02TIrhExdrrm0NGrn71NcPkYqTdM4NWv1WrpCOn
-	oq1/DnXqw3WytK9qEitejC/Ud8EiMTGPPrHJwcK1sI0lf5As1qRVawLrKLLcv5fERPzX0RR5VcRVd
-	dLlFKDayZtZ6osPQ3Pzg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8W/MAiJaJk8WJOdS5r9zVxw/PIhMjC37W5/ZNrqsYw4=; b=Idl0klc0iwX4kv
+	TMkJQZqDA2k2wa+crnZ4LorqrjGPvWBfy+2ZI9d32jkYfEOS3VmDy9L2XuSpdhn41ZoMN8NuDaGUa
+	/orIa9dmvXL+ZfG7GDFSV7k0+qdMoqhksj5KXFapFYBT6IdpQPVp0+KGFwdcaFZLvOtoAdMcsqkv1
+	uLR8Ap2+WK2xfUk04rfI/WbflR1SZgw9H2VV0IPHvUR80Dp1lz2KLcP1pEdJ1R618XL/FasztlLjh
+	3OpXrVcVsWMj9/C5/Rgjzl+AZFURPMt0h2jr4qxjtm9ANNOBQE0EJQ6VybOywSU1BkZhUZJ/wiOK7
+	pQw3Ov1CuhODOfGWtO0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2C87-0003Aj-IA; Thu, 13 Feb 2020 10:53:59 +0000
-Received: from mout02.posteo.de ([185.67.36.66])
+	id 1j2C8T-0003QJ-D9; Thu, 13 Feb 2020 10:54:21 +0000
+Received: from mail-lf1-x129.google.com ([2a00:1450:4864:20::129])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2C7y-00039n-UO
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 10:53:52 +0000
-Received: from submission (posteo.de [89.146.220.130]) 
- by mout02.posteo.de (Postfix) with ESMTPS id D2310240102
+ id 1j2C8D-0003Kz-T3
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 10:54:07 +0000
+Received: by mail-lf1-x129.google.com with SMTP id y19so3922427lfl.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 11:53:41 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=posteo.de; s=2017;
- t=1581591221; bh=mA7MNu76VrdfaF31R+MslvhMKuM1R3H8nGbJ2BrWQqg=;
- h=Subject:From:To:Cc:Autocrypt:Date:From;
- b=h5K2KDjINRHkTq/VGcBE2WTrteB67XTdicjJ1WrodK72tNtqO9LKc2z1Df3J2kxH4
- LqZCBi6rlTDwz3c4kBIP1Mk0tfT+EsQw+i1LYM0w1bgCMz9Q+JgQ9f1i4Ojfz7+Emo
- t0PcIV4yLpVUTpM+me+jJTG1B+EN61r5h84rniCmzUkwFOED8xck1O46lmFNnsEdkL
- v7f8R1+Epz2ZG8amUOl3DqNcdgAZwCOa7P031BfiitPEDlujNwy6PqUIbtODkZoieP
- fPLAmHimf7oCNxo1QTpc0jrNW2zxmfno77quj8heewMDOk5xyNO16lDEcA29rEAIbv
- WE2MP7tDiD2kw==
-Received: from customer (localhost [127.0.0.1])
- by submission (posteo.de) with ESMTPSA id 48JCzZ1g4Fz9rxS;
- Thu, 13 Feb 2020 11:53:30 +0100 (CET)
-Subject: Re: [PATCH RFC v6 2/9] PM / devfreq: Add generic imx bus scaling
- driver
-From: Martin Kepplinger <martink@posteo.de>
-To: Leonard Crestez <leonard.crestez@nxp.com>, Angus Ainslie
- <angus@akkea.ca>, Jacky Bai <ping.bai@nxp.com>
-References: <cover.1573761527.git.leonard.crestez@nxp.com>
- <f329e715898a6b9fd0cee707a93fb1e144e31bd4.1573761527.git.leonard.crestez@nxp.com>
- <e311a376e6aec0c380686a7e307d2c07@akkea.ca>
- <VI1PR04MB70233920AC838AD88E1ECC26EE4F0@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <008f2fa973b23fc716d678c5bd35af54@akkea.ca>
- <VI1PR04MB7023E7C380EFA956629EEB67EE4F0@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <d1ca09bdeb7580c9b62b491c6eb30148@akkea.ca>
- <VI1PR04MB702329DCBBC98C405421D8DFEE4F0@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <9a8dac5b-25c0-7dca-8c25-9796ba2b4df5@posteo.de>
-Autocrypt: addr=martink@posteo.de; keydata=
- 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
-Message-ID: <671afc9c-66d0-03d5-c810-ffb4e4ad76d7@posteo.de>
-Date: Thu, 13 Feb 2020 11:53:29 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ Thu, 13 Feb 2020 02:54:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=wL0bjYN1U3bZfVJrL/SniZD6DwbHHKtxnem8CZOKtGk=;
+ b=JWucAaQjf6n2R/1TSCCRsqYWeQMJiipwREUnRsiCRThVRKXwMe1JGIJ+U/llae+Uz4
+ TiqyY9BuTdlGnGLxnYxU0heqw81RBa53P4tFSfgFHuknKoeZO63Sw5gei8UfEXGSZASr
+ DlWRrr+r8j3FUo9+8T6QrY3bj+t7pOAbYESCtCLcALO5wEC1y70H9TTXP1amnBi0WKFd
+ WNAkHaHFyW/qW4MrGiYnRhZjP75oaVkpEq8qKeE/bnev7bcp7MTuYOlQwylmm7okfQsW
+ vXkrmWin91f2xMSnmAer0tZk+XmlpRLDwEnFdU6SNsTAuqqNDmGvUU6NPutPt9jT8kpY
+ qbHg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wL0bjYN1U3bZfVJrL/SniZD6DwbHHKtxnem8CZOKtGk=;
+ b=r0T+CW+EurXCnHnDL2JfUNo8NxMgHutsYtIqEMeLm6dM/11cXGj7NDgSX+hliGdIMv
+ dNdqxok81R/2suZDryrJpUJxh+fBwCVKdxEi4Mi0tM47z5IKonAJzxJsuaGnEqwZ4x32
+ P4cFV6eadHHSJDPw7q3J+PyCq5ZmR+83MOx1AvHKkfql+b+ob2cWOlvrpXWNN8sWS+JO
+ ufQmZ0YL1EyD7AJ5L4efQctRiSmyAY62Wktj1JAMCZECUVe5YiNBpLblBGGPLI2HvGfh
+ XcrhWV/VieiDUOrl5cg71spx8Zh4D5+PaKS0wXnq++43QlDKH2KeBGiKVc+QtD2JZV2w
+ RFqg==
+X-Gm-Message-State: APjAAAUwytBitf2OMFa91kzBbG5sUX+dLTuJA2aTWnATiKUqKScJ+9Is
+ Jrz6rXqpZsdedOpjEci89KMrLVnwPBXOzpnSUwo=
+X-Google-Smtp-Source: APXvYqwSNBB2+D0KXNfmV+ovUFJYXdXU8EKGIo6CB+lmGfk2XFUOpz7aJvYvfcOiyUdCJpEzS1hmNELAhYa9adeWSTY=
+X-Received: by 2002:a19:3f51:: with SMTP id m78mr8962803lfa.70.1581591243210; 
+ Thu, 13 Feb 2020 02:54:03 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <9a8dac5b-25c0-7dca-8c25-9796ba2b4df5@posteo.de>
-Content-Language: en-US
+References: <CAOMZO5DMMCZPfwNbTaG8_iQhWg2K1XeO719nSA0Gsf2ywHy4jQ@mail.gmail.com>
+ <20200205092653.GB2737@bogon.m.sigxcpu.org>
+ <CAOMZO5AAzK0QprHpKHaFOANjspJKd_4YaoMqAoGYG4KftcyiYw@mail.gmail.com>
+ <VI1PR04MB5040A046E5D93265AE636B29901C0@VI1PR04MB5040.eurprd04.prod.outlook.com>
+ <VI1PR04MB504091C7991353F6092A8D91901A0@VI1PR04MB5040.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR04MB504091C7991353F6092A8D91901A0@VI1PR04MB5040.eurprd04.prod.outlook.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Thu, 13 Feb 2020 07:53:53 -0300
+Message-ID: <CAOMZO5CkSSidzLUSBUvJNAio3SnmU-fisTbDCiLN9v1EjS+HHQ@mail.gmail.com>
+Subject: Re: sdhci timeout on imx8mq
+To: BOUGH CHEN <haibo.chen@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_025351_268962_8DFEC3D9 
-X-CRM114-Status: GOOD (  16.09  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200213_025405_995972_CD34B3CC 
+X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.67.36.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:129 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -163,82 +97,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@partner.samsung.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Marco Felsch <m.felsch@pengutronix.de>,
- "linux-pm-owner@vger.kernel.org" <linux-pm-owner@vger.kernel.org>,
- Alexandre Bailon <abailon@baylibre.com>, Matthias Kaehlcke <mka@chromium.org>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, dl-linux-imx <linux-imx@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Silvano Di Ninno <silvano.dininno@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Aisheng Dong <aisheng.dong@nxp.com>, Saravana Kannan <saravanak@google.com>,
- Stephen Boyd <sboyd@kernel.org>, Kyungmin Park <kyungmin.park@samsung.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Georgi Djakov <georgi.djakov@linaro.org>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>,
+ linux-mmc <linux-mmc@vger.kernel.org>, Adrian Hunter <adrian.hunter@intel.com>,
+ dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04.02.20 10:45, Martin Kepplinger wrote:
-> On 20.11.19 19:02, Leonard Crestez wrote:
->> On 20.11.2019 18:38, Angus Ainslie wrote:
->>> On 2019-11-20 08:30, Leonard Crestez wrote:
->>>> On 20.11.2019 17:41, Angus Ainslie wrote:
->>>>> Hi Leonard,
->>>>>
->>>>> On 2019-11-20 07:04, Leonard Crestez wrote:
->>>>>> On 20.11.2019 16:08, Angus Ainslie wrote:
->>>>>> Is "mainline ATF" an important criteria for Purism?
->>>>>
->>>>> Yes we intend to bring all of our patches to mainline and were hoping
->>>>> that NXP would be doing the same. Shouldn't a mainline kernel run on a
->>>>> mainline ATF ?
->>>>
->>>> You can still use mainline ATF (tested right now) but the imx8m-ddrc
->>>> driver won't probe.
->>>
->>> Sorry I was talking about the DDR frequency scaling specifically. >
->>>> The ability to mix and match different branches of firmware and kernel
->>>> is very useful for testing. There might be slight incompatibilities but
->>>> in theory if a feature depends on both firmware and kernel support then
->>>> it should gracefully degrade rather than crash or hang.
->>>
->>> I saw the check you put in for the correct ATF version and that's very
->>> helpful thanks.
->>>
->>>> ATF support for this feature will be mainlined eventually, I picked the
->>>> linux side first because review is more challenging and changes are
->>>> much larger relative to what we have in our internal tree.
->>>
->>> Do you have a patch against mainline ATF that we can test this feature
->>> with ?
->>
->> Not right now, and imx atf is based on a slightly older version so some 
->> porting effort might be required.
->>
-> 
-> Hi Leonard,
-> 
-> Have you, by chance, looked at the mainline ATF side for your devfreq
-> work in the meantime? I'd happily test. (btw. the linux driver fails
-> "nicely" there.)
-> 
+Hi Bough,
 
-hi again. Do you have any plans regarding the ATF implementation of
-IMX_SIP_DDR_DVFS in mainline yet? The kernel is only one half of the
-devfreq solution after all. I'm asking just to schedule my work a bit :)
+On Wed, Feb 12, 2020 at 11:33 PM BOUGH CHEN <haibo.chen@nxp.com> wrote:
 
-thanks,
-                            martin
+> The board I use is SCH-29615 REV B4.  This board use Sandisk eMMC chip. Maybe your board use Micron eMMC.
+
+Mine is REV B3 with the Micron eMMC.
+
+> I attach the bootloader I use. Please try this bootloader on your side.
+
+I hope we don't have a bootloader dependency here.
+
+Thanks
 
 _______________________________________________
 linux-arm-kernel mailing list
