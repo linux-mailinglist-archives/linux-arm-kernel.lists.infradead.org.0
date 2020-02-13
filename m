@@ -2,111 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C4D615B815
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 05:05:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C18B515B806
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 05:01:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qWlQKjJC+TzuiVMLKSXaMUERbJKpcBoEpogY6fH44dk=; b=QxpII93/3uQyS/
-	Jlox45HEImc7MajA5t3qS0oCuui03RJmfR/ckLuPiRxHv/UBCPL/F19wCd97PBtL2qN7YfF009h49
-	xnMGqRmY+//lY8gQcI1Ms4rKBcTHNcusRTSwZv3RbI4o/dcOjo3P5+GPgACBPy3zxqQbHfbRRc0Un
-	VRTVfPvT5g4Gew6m6tDJlFTok5N3r8jiP422Q+kp7F1py+Xn12T+8kvA/42JlWLhFaS8XnrppIHhu
-	dsdo9cI4n1KnJ7QwaWB/t3kHfs02/IMF3QZudh3Z7Vv6/BAFhIoKYKqdi91vPa/L8YvvrT/kasgiQ
-	xvcC1Hx5mEn3GPGIG90A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ykzcr2f2wm+Tkk1GxtlRt+MPnV17B0lRPIPM6hcTbxc=; b=smIh9CYdz2Ftmb
+	i/7rN4L2VZ2jCqBcJGDvsEHZO0v5jAgoef8nRLyjRa6Qv0svHdtOjeVMLFrsyv3jQU8c/kepQpMau
+	JK3ybbrNySzCJJ9iL/6ggy3x1xQ9lbIiJGtyyu42V8C5D3jw2Z+7KvKdixKgG50o3pGhEnhGrnrC2
+	yan6KtU2h8HjbSq7/+iXjTCg4J9I9JDUqFq0vGoG9ySSnV2muuL/wvIKUf1bXeFpZ7D8aL1SjZzqI
+	v2Frx/DGlnqTihnb/MLVkJlQVdbq/5eEYeUiKjA0Tel5UzD1qr2a7jq+Ix37Ip+EyQdT6ra1jvHu2
+	5xvrpRKqtLnzvTgOFnkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j25ky-00046H-0e; Thu, 13 Feb 2020 04:05:40 +0000
-Received: from mail-eopbgr60086.outbound.protection.outlook.com ([40.107.6.86]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1j25gg-0001nl-Lg; Thu, 13 Feb 2020 04:01:14 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j25k5-0002ER-Oy
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 04:04:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=b3fLfDyQjS8dt5QFvOSJANnQ5TG5U6U06OzwurvAAXVsujJMXWSHGMpA2GlLzaO+YMBc3syerhD45QUI73zk5X48QRHDg8QVJTMssfWgjvDY+Souq9voEpqwuGQdQsM6xVRntlrR8i1fwxBFY2pJUiR6j1m6lO2HvkB6aNoNQlY2ntn9bdspxmFBzb/Gd3h5m/AkjSR5d9MKQFmKGysDS62dFSj6WbBXyJ2SJg4eyim8t6VJWD1MYdyyHOvrO8WJZFjfEMn8wEA/u52gV70GiSvibgMxjJR7RSosdP3f2Nsx9l4ZkoUZ5NJz6uzXbf4K1bW7v5u/TXMRBpoucff03Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XheuyLZGjlSMoeZrbaglHvPZyAbmZyDcXAeelAaIwNc=;
- b=Alir8ZdH+2gB/EKu+cQxz0RP2PzXB7I7gCSwTkz5Md36phebh2tCumhcI2AyqD9WERXEUcCMRqtCJkyC9b1cMiiacj99LHViAOV6aK+eE9q+yX/zU4ko5tOe3KnhF+eP+rUUgvapGKfGNnldLElZupZXabUrfXNoezNx8lKZduZGyynENDUdSWCwAzPCYJM9BF9GweG7gqD80S5G2zg6wjtpXx47yyzuCA19RNJNCm8H4kNAfB2zkY/aFRtfAUY1Ge5zHG2w5ESldL0I7PTCpr4lcvITHOSAUMfu/MfsXEmB9pCfDSgTNQzWZt/Sy9+01N9QcKe2oIxfgyBSXT1JvA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=XheuyLZGjlSMoeZrbaglHvPZyAbmZyDcXAeelAaIwNc=;
- b=AyV9L8THdf7PESYBaoAQ/+jsfgcZ6aWnY2U5v9Quql2JrYFhrIZYYDRvBaU7wcbc1jE3HOQoEvvjS8e3aId+ZXugoLrgjf4oQxi2yDLFfA8ER9pHiHJjdxbse6bJ4RFAHgVSBGnQ2K9KisoFKU1ToCDOO4JzY8/ctcQwBu0dOlo=
-Authentication-Results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB5220.eurprd04.prod.outlook.com (20.176.215.19) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2729.24; Thu, 13 Feb 2020 04:04:43 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2729.024; Thu, 13 Feb 2020
- 04:04:43 +0000
-From: peng.fan@nxp.com
-To: sudeep.holla@arm.com,
-	robh+dt@kernel.org,
-	mark.rutland@arm.com
-Subject: [PATCH V2 2/2] firmware: arm_scmi: add smc/hvc transports
-Date: Thu, 13 Feb 2020 11:58:50 +0800
-Message-Id: <1581566330-1029-3-git-send-email-peng.fan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1581566330-1029-1-git-send-email-peng.fan@nxp.com>
-References: <1581566330-1029-1-git-send-email-peng.fan@nxp.com>
-X-ClientProxiedBy: HK2PR03CA0056.apcprd03.prod.outlook.com
- (2603:1096:202:17::26) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
+ id 1j25gY-0001nD-Lc
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 04:01:07 +0000
+Received: by mail-pg1-x542.google.com with SMTP id l24so2346738pgk.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 12 Feb 2020 20:01:06 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=S8e5vp+IFpuolpVDbO9Tnu/3yLOcXGZxXhR3cBHJ/mE=;
+ b=p4ZnJD3+dxF9x7FAjg9UMl7sJ0xo6e5SMnM3D3mwcTXdcS5Js97vGxAw3dcYKGMPOp
+ /2u/cfceZjFRTOfkEk7rYNx37Fy1SufWRmEsWzoJhvB9gHHFW1s/m8YDN117clJVm1zp
+ UJedZejpro2iOuNDQmVFstWM/d8JJfbak0pWSZ46qfN3MB7Z1mAxx8VdMQIqzIo5cHsI
+ s9P/m1uL447cwsOqZ07ciS6n/zwtytKNERfhoicgrkxny3xLlYOCQIlt0ndT8qSrbPO2
+ e7wMwrmz7Ufg5MF3GahZ1/jclyiwPsMiUXxcWAHD0TpEGGYGNMyZo3Q0/kKvZJ58es5o
+ et9Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=S8e5vp+IFpuolpVDbO9Tnu/3yLOcXGZxXhR3cBHJ/mE=;
+ b=REHwwCU4ygfBlZF3ZvP528NGh5dIdQdes1/wS6nlHBQycGhqfBbGs3VD8Ty0QNxEfZ
+ /lFboSTzo1Ht0HZv6bccZm+A2B7mX7MuHvyjxxZrPJE1vyfXu78oC+CHZM3LOktWXnXu
+ uMMh5G5GK/hZE8tbDgP/Vd9Axb4dBRjV+BN98bFvsxg29k0uBx85O5foEa30VgZeN3sj
+ XeXxhWGClkKwzJOcJcYzbHjxH6cBo6xqHWHnT0tNTCoN0q04FGqddHE9eCmscEKPUVh5
+ F3f9UklGwxJCOYdNcwDMMA/nEaV3Om/ixEZAtqjVgrKkGEkYNE43X88E7zOBxgWY9liA
+ Lcag==
+X-Gm-Message-State: APjAAAVDdcF4ZhEbXnD7t9HTiYDyy6MGzJdRlH1drt7DJEWYH6GEHHCj
+ KuB/Wi1OBrGJEko3jBr3N4k=
+X-Google-Smtp-Source: APXvYqy5G9kD4HBcM1/R2+rH+zOH4+XyTE8tqgPBZM8mdAxYZxmCoyeahK14OUOZwKSI9n+9NFxydQ==
+X-Received: by 2002:a63:584:: with SMTP id 126mr16159646pgf.447.1581566465760; 
+ Wed, 12 Feb 2020 20:01:05 -0800 (PST)
+Received: from [10.230.28.123] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id x28sm616855pgc.83.2020.02.12.20.01.04
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 12 Feb 2020 20:01:05 -0800 (PST)
+Subject: Re: [PATCH 3/3] PCI: brcmstb: Drop clk_put when probe fails and remove
+To: Jaedon Shin <jaedon.shin@gmail.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Jim Quinlan <james.quinlan@broadcom.com>
+References: <20200213025930.27943-1-jaedon.shin@gmail.com>
+ <20200213025930.27943-4-jaedon.shin@gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ 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
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <0d75656c-071f-1a06-6eca-c67366dcd03a@gmail.com>
+Date: Wed, 12 Feb 2020 20:01:02 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-Received: from localhost.localdomain (119.31.174.66) by
- HK2PR03CA0056.apcprd03.prod.outlook.com (2603:1096:202:17::26) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2729.12 via Frontend Transport; Thu, 13 Feb 2020 04:04:40 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: c0913ae3-bd4f-4193-a7e0-08d7b039db05
-X-MS-TrafficTypeDiagnostic: AM0PR04MB5220:|AM0PR04MB5220:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB52205B216EAF02FB97ECB6B9881A0@AM0PR04MB5220.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:2512;
-X-Forefront-PRVS: 031257FE13
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(376002)(396003)(366004)(136003)(346002)(199004)(189003)(52116002)(4326008)(26005)(186003)(6666004)(36756003)(69590400006)(6486002)(956004)(2616005)(86362001)(8936002)(2906002)(478600001)(66476007)(5660300002)(81156014)(8676002)(81166006)(6506007)(9686003)(6512007)(316002)(66556008)(16526019)(66946007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5220;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-Received-SPF: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: tJOImuDg+HQFxrIQyH2nowDazAuXGJXVF/pKivueM0vKjFIRzJgjHb9IkfV5UntRk3tSw8XvDvZbIwONvhF4Pm35R4ser15+9r0LwzpTLCLj4yQ5g6AmRXAN7MNbF8wZO0gqLtxLZf8EuzPHQizdpLpabAEzG5Qwp8cQg7LKv4hIzB+FMkoWZv8znleepMVfAWsaFvMsWIzA6D9hIn2edpKFkRN3uAOUSnV2BhcJeaeh0WJG7gq5f550hFj98KzUHaCAxJLqxAzhnOnlXeW+yl+zDImJLxJy2gbq3oUCJCSRavgxRuwu+ZDs7z7myBUc/r+jmzvXUQ1wZlGRFeVEUFEQhVxO8Ci84LRC4BVJoPPK+ibkUYCfRFsEylfO6Z2QPNG5l37zAdmAgMzXgPV1D2/vjDDoegRkrF4NtspxBQaj/xzj0VSH8XijH/73ZgxY3irQeBPKH0Tbl6kOT2Mj27TWMR9mwGjXFngfJoG5DuUWyqhv+pYaBkqsLwJR+6nhYVTSNbeZ5X8SjEMj6Nlut0nzOxdOsdjtv7OEYNQzIuk=
-X-MS-Exchange-AntiSpam-MessageData: EvJRp7n/UcH0K5CDCyaXRBpw1S+4a3QUmrJgu19AsHnb/87H0N6Zl/9s/tBdME2nTXBRB99tq+ymb/gUviHoC2HQeeiWtfR1Kcy1bQRx0x4wh2nKAGaxd//A+c73NRv5/F2joOsZy8a7hgl44+qQUA==
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c0913ae3-bd4f-4193-a7e0-08d7b039db05
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Feb 2020 04:04:43.2648 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: qwqa0w60SD8ckQZ+hdSAiLqO+0XJn3dkeyGb1O6VHmdWzypOIv4Rf/UBp3Phf5yzeIgueHVrhftpZfbmSuLsEw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5220
+In-Reply-To: <20200213025930.27943-4-jaedon.shin@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_200445_953156_BBD18E43 
-X-CRM114-Status: GOOD (  18.72  )
+X-CRM114-CacheID: sfid-20200212_200106_735961_ADA870B1 
+X-CRM114-Status: GOOD (  15.16  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.86 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -114,7 +148,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,348 +159,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Peng Fan <peng.fan@nxp.com>,
- f.fainelli@gmail.com, viresh.kumar@linaro.org, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, andre.przywara@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-gpio@vger.kernel.org,
+ linux-pci@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Gregory Fong <gregory.0xf0@gmail.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
 
-Add SCMI smc/hvc transports support.
 
-Take smc-id as the 2nd arg, and protocol id as the 2nd arg when
-invokding SMC/HVC. Since we need protocol id, so add this parrameter
-to chan_setup, then smc transport driver could directly use it.
-There is no Rx, only Tx because of smc/hvc not support Rx.
+On 2/12/2020 6:59 PM, Jaedon Shin wrote:
+> devm_clk_get* APIs are device managed and get freed automatically when
+> the device detaches. so there is no reason to explicitly call clk_put()
+> in probe or remove functions.
+> 
+> Signed-off-by: Jaedon Shin <jaedon.shin@gmail.com>
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/firmware/arm_scmi/Makefile  |   2 +-
- drivers/firmware/arm_scmi/common.h  |   4 +-
- drivers/firmware/arm_scmi/driver.c  |  11 +-
- drivers/firmware/arm_scmi/mailbox.c |   2 +-
- drivers/firmware/arm_scmi/smc.c     | 222 ++++++++++++++++++++++++++++++++++++
- 5 files changed, 234 insertions(+), 7 deletions(-)
- create mode 100644 drivers/firmware/arm_scmi/smc.c
+Fixes: c0452137034b ("PCI: brcmstb: Add Broadcom STB PCIe host
+controller driver")
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 
-diff --git a/drivers/firmware/arm_scmi/Makefile b/drivers/firmware/arm_scmi/Makefile
-index 6694d0d908d6..6b1b0d6c6d0e 100644
---- a/drivers/firmware/arm_scmi/Makefile
-+++ b/drivers/firmware/arm_scmi/Makefile
-@@ -2,6 +2,6 @@
- obj-y	= scmi-bus.o scmi-driver.o scmi-protocols.o scmi-transport.o
- scmi-bus-y = bus.o
- scmi-driver-y = driver.o
--scmi-transport-y = mailbox.o shmem.o
-+scmi-transport-y = mailbox.o shmem.o smc.o
- scmi-protocols-y = base.o clock.o perf.o power.o reset.o sensors.o
- obj-$(CONFIG_ARM_SCMI_POWER_DOMAIN) += scmi_pm_domain.o
-diff --git a/drivers/firmware/arm_scmi/common.h b/drivers/firmware/arm_scmi/common.h
-index fd091a4ccbff..b8cd33be8272 100644
---- a/drivers/firmware/arm_scmi/common.h
-+++ b/drivers/firmware/arm_scmi/common.h
-@@ -182,7 +182,8 @@ struct scmi_chan_info {
-  */
- struct scmi_transport_ops {
- 	bool (*chan_available)(struct device *dev, int idx);
--	int (*chan_setup)(struct scmi_chan_info *cinfo, struct device *dev, bool tx);
-+	int (*chan_setup)(struct scmi_chan_info *cinfo, struct device *dev,
-+			  int prot_id, bool tx);
- 	int (*chan_free)(int id, void *p, void *data);
- 	int (*send_message)(struct scmi_chan_info *cinfo, struct scmi_xfer *xfer);
- 	void (*mark_txdone)(struct scmi_chan_info *cinfo, int ret);
-@@ -207,6 +208,7 @@ struct scmi_desc {
- };
- 
- extern const struct scmi_desc scmi_mailbox_desc;
-+extern const struct scmi_desc scmi_smc_desc;
- 
- void scmi_rx_callback(struct scmi_chan_info *cinfo, u32 msg_hdr);
- void scmi_free_channel(struct scmi_chan_info *cinfo, struct idr *idr, int id);
-diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
-index dbec767222e9..65c56328e6d8 100644
---- a/drivers/firmware/arm_scmi/driver.c
-+++ b/drivers/firmware/arm_scmi/driver.c
-@@ -595,7 +595,7 @@ static int scmi_chan_setup(struct scmi_info *info, struct device *dev,
- 
- 	cinfo->dev = dev;
- 
--	ret = info->desc->ops->chan_setup(cinfo, info->dev, tx);
-+	ret = info->desc->ops->chan_setup(cinfo, info->dev, prot_id, tx);
- 	if (ret)
- 		return ret;
- 
-@@ -687,8 +687,11 @@ static int scmi_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct device_node *child, *np = dev->of_node;
- 
--	desc = of_device_get_match_data(dev);
--	if (!desc)
-+	if (of_get_property(np, "mboxes", NULL))
-+		desc = &scmi_mailbox_desc;
-+	else if (of_get_property(np, "smc-id", NULL))
-+		desc = &scmi_smc_desc;
-+	else
- 		return -EINVAL;
- 
- 	info = devm_kzalloc(dev, sizeof(*info), GFP_KERNEL);
-@@ -826,7 +829,7 @@ ATTRIBUTE_GROUPS(versions);
- 
- /* Each compatible listed below must have descriptor associated with it */
- static const struct of_device_id scmi_of_match[] = {
--	{ .compatible = "arm,scmi", .data = &scmi_mailbox_desc },
-+	{ .compatible = "arm,scmi",  },
- 	{ /* Sentinel */ },
- };
- 
-diff --git a/drivers/firmware/arm_scmi/mailbox.c b/drivers/firmware/arm_scmi/mailbox.c
-index 73077bbc4ad9..b06d5d30fe90 100644
---- a/drivers/firmware/arm_scmi/mailbox.c
-+++ b/drivers/firmware/arm_scmi/mailbox.c
-@@ -53,7 +53,7 @@ static bool mailbox_chan_available(struct device *dev, int idx)
- }
- 
- static int mailbox_chan_setup(struct scmi_chan_info *cinfo, struct device *dev,
--			      bool tx)
-+			      int prot_id, bool tx)
- {
- 	const char *desc = tx ? "Tx" : "Rx";
- 	struct device *cdev = cinfo->dev;
-diff --git a/drivers/firmware/arm_scmi/smc.c b/drivers/firmware/arm_scmi/smc.c
-new file mode 100644
-index 000000000000..67bbf33efb1d
---- /dev/null
-+++ b/drivers/firmware/arm_scmi/smc.c
-@@ -0,0 +1,222 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * System Control and Management Interface (SCMI) Message SMC/HVC
-+ * Transport driver
-+ *
-+ * Copyright 2020 NXP
-+ */
-+
-+#include <linux/arm-smccc.h>
-+#include <linux/device.h>
-+#include <linux/err.h>
-+#include <linux/of.h>
-+#include <linux/of_address.h>
-+#include <linux/slab.h>
-+
-+#include "common.h"
-+
-+/**
-+ * struct scmi_smc - Structure representing a SCMI smc transport
-+ *
-+ * @cinfo: SCMI channel info
-+ * @shmem: Transmit/Receive shared memory area
-+ * @func_id: smc/hvc call function id
-+ * @prot_id: The protocol id
-+ */
-+
-+struct scmi_smc {
-+	struct scmi_chan_info *cinfo;
-+	struct scmi_shared_mem __iomem *shmem;
-+	u32 func_id;
-+	int prot_id;
-+};
-+
-+typedef unsigned long (scmi_smc_fn)(unsigned long, unsigned long,
-+				    unsigned long, unsigned long,
-+				    unsigned long, unsigned long,
-+				    unsigned long, unsigned long);
-+static scmi_smc_fn *invoke_scmi_smc_fn;
-+
-+#define client_to_scmi_smc(c) container_of(c, struct scmi_smc, cl)
-+
-+static bool smc_chan_available(struct device *dev, int idx)
-+{
-+	return true;
-+}
-+
-+static unsigned long
-+__invoke_scmi_fn_hvc(unsigned long function_id, unsigned long arg0,
-+		     unsigned long arg1, unsigned long arg2,
-+		     unsigned long arg3, unsigned long arg4,
-+		     unsigned long arg5, unsigned long arg6)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4, arg5,
-+		      arg6, &res);
-+
-+	return res.a0;
-+}
-+
-+static unsigned long
-+__invoke_scmi_fn_smc(unsigned long function_id, unsigned long arg0,
-+		     unsigned long arg1, unsigned long arg2,
-+		     unsigned long arg3, unsigned long arg4,
-+		     unsigned long arg5, unsigned long arg6)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_smc(function_id, arg0, arg1, arg2, arg3, arg4, arg5,
-+		      arg6, &res);
-+
-+	return res.a0;
-+}
-+
-+static int scmi_smc_conduit_method(struct device_node *np)
-+{
-+	const char *method;
-+
-+	if (invoke_scmi_smc_fn)
-+		return 0;
-+
-+	if (of_property_read_string(np, "method", &method))
-+		return -ENXIO;
-+
-+	if (!strcmp("hvc", method)) {
-+		invoke_scmi_smc_fn = __invoke_scmi_fn_hvc;
-+	} else if (!strcmp("smc", method)) {
-+		invoke_scmi_smc_fn = __invoke_scmi_fn_smc;
-+	} else {
-+		pr_warn("invalid \"method\" property: %s\n", method);
-+		return -EINVAL;
-+	}
-+
-+	return 0;
-+}
-+
-+static int smc_chan_setup(struct scmi_chan_info *cinfo, struct device *dev,
-+			  int prot_id, bool tx)
-+{
-+	struct device *cdev = cinfo->dev;
-+	struct scmi_smc *scmi_info;
-+	struct device_node *np;
-+	resource_size_t size;
-+	struct resource res;
-+	u32 func_id;
-+	int ret;
-+
-+	if (!tx)
-+		return -ENODEV;
-+
-+	scmi_info = devm_kzalloc(dev, sizeof(*scmi_info), GFP_KERNEL);
-+	if (!scmi_info)
-+		return -ENOMEM;
-+
-+	np = of_parse_phandle(cdev->of_node, "shmem", 0);
-+	if (!np)
-+		np = of_parse_phandle(dev->of_node, "shmem", 0);
-+	ret = of_address_to_resource(np, 0, &res);
-+	of_node_put(np);
-+	if (ret) {
-+		dev_err(cdev, "failed to get SCMI Tx shared memory\n");
-+		return ret;
-+	}
-+
-+	size = resource_size(&res);
-+	scmi_info->shmem = devm_ioremap(dev, res.start, size);
-+	if (!scmi_info->shmem) {
-+		dev_err(dev, "failed to ioremap SCMI Tx shared memory\n");
-+		return -EADDRNOTAVAIL;
-+	}
-+
-+	ret = of_property_read_u32(dev->of_node, "smc-id", &func_id);
-+	if (ret < 0)
-+		return ret;
-+
-+	np = of_find_node_by_path("/psci");
-+	if (!np) {
-+		dev_err(dev, "Not able to find /psci node\n");
-+		return -ENODEV;
-+	}
-+
-+	ret = scmi_smc_conduit_method(np);
-+	if (ret)
-+		return ret;
-+
-+	of_node_put(np);
-+
-+	scmi_info->func_id = func_id;
-+	scmi_info->cinfo = cinfo;
-+	scmi_info->prot_id = prot_id;
-+	cinfo->transport_info = scmi_info;
-+
-+	return 0;
-+}
-+
-+static int smc_chan_free(int id, void *p, void *data)
-+{
-+	struct scmi_chan_info *cinfo = p;
-+	struct scmi_smc *scmi_info = cinfo->transport_info;
-+
-+	cinfo->transport_info = NULL;
-+	scmi_info->cinfo = NULL;
-+
-+	scmi_free_channel(cinfo, data, id);
-+
-+	return 0;
-+}
-+
-+static int smc_send_message(struct scmi_chan_info *cinfo,
-+			    struct scmi_xfer *xfer)
-+{
-+	struct scmi_smc *scmi_info = cinfo->transport_info;
-+	int ret;
-+
-+	shmem_tx_prepare(scmi_info->shmem, xfer);
-+
-+	ret = invoke_scmi_smc_fn(scmi_info->func_id, scmi_info->prot_id,
-+				 0, 0, 0, 0, 0, 0);
-+	if (ret > 0)
-+		ret = 0;
-+
-+	scmi_rx_callback(scmi_info->cinfo, shmem_read_header(scmi_info->shmem));
-+
-+	return ret;
-+}
-+
-+static void smc_mark_txdone(struct scmi_chan_info *cinfo, int ret)
-+{
-+}
-+
-+static void smc_fetch_response(struct scmi_chan_info *cinfo,
-+			       struct scmi_xfer *xfer)
-+{
-+	struct scmi_smc *scmi_info = cinfo->transport_info;
-+
-+	shmem_fetch_response(scmi_info->shmem, xfer);
-+}
-+
-+static bool
-+smc_poll_done(struct scmi_chan_info *cinfo, struct scmi_xfer *xfer)
-+{
-+	struct scmi_smc *scmi_info = cinfo->transport_info;
-+
-+	return shmem_poll_done(scmi_info->shmem, xfer);
-+}
-+
-+static struct scmi_transport_ops scmi_smc_ops = {
-+	.chan_available = smc_chan_available,
-+	.chan_setup = smc_chan_setup,
-+	.chan_free = smc_chan_free,
-+	.send_message = smc_send_message,
-+	.mark_txdone = smc_mark_txdone,
-+	.fetch_response = smc_fetch_response,
-+	.poll_done = smc_poll_done,
-+};
-+
-+const struct scmi_desc scmi_smc_desc = {
-+	.ops = &scmi_smc_ops,
-+	.max_rx_timeout_ms = 30,
-+	.max_msg = 1,
-+	.max_msg_size = 128,
-+};
+
+> ---
+>  drivers/pci/controller/pcie-brcmstb.c | 1 -
+>  1 file changed, 1 deletion(-)
+> 
+> diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+> index 0e0ca39a680b..3e48d9e238bb 100644
+> --- a/drivers/pci/controller/pcie-brcmstb.c
+> +++ b/drivers/pci/controller/pcie-brcmstb.c
+> @@ -972,7 +972,6 @@ static void __brcm_pcie_remove(struct brcm_pcie *pcie)
+>  	brcm_pcie_turn_off(pcie);
+>  	brcm_pcie_regulator_disable(pcie);
+>  	clk_disable_unprepare(pcie->clk);
+> -	clk_put(pcie->clk);
+>  }
+>  
+>  static int brcm_pcie_remove(struct platform_device *pdev)
+> 
+
 -- 
-2.16.4
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
