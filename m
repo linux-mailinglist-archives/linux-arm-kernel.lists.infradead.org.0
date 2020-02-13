@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0421415BC96
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 11:18:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E581415BCB5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 11:25:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xM1AUA6xH/tRYngAGa92Z3hIxZYywo/K3LhP2knB9BE=; b=HJgbbp5EfoltFY
-	/hZNTFhnFVlry+11Fma425HJopErJjJ2jULg/Vv1y+TjaGb2RNV497LM5Okxj1vdzlTvzie7XFeW6
-	2tn/spcyeqUvQwWWtjShMNIi1Pd51dmu7pScEHPXXXiBLeFOQhzTjwC6XKs/nUKVWruBy+W3VT5Uv
-	17LNumeoTg3evsoRAzEZBZmkKp87k6aa5TbpQGBiy0xGhAAKnprdsudrBySmKqTPEKjWzw2LJHoP1
-	r67fLydIZ68Pyw4gE1ocmZ35JESrpt+qIGKCXpdYxvRVkFSLACEx2y+tiY07OI8zgsoht4AlfblNT
-	K165Y/7egyK+REpm3jcQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=O84zaWH9uZ2uUNOWPdYYSMqNhCawBjot/D1uSfVO0vE=; b=oxIfsvBRrtrqK1
+	0m/+6ZUqRIzzFw3zErTrejG/0Re2f0PSVcogdKSk/FTWobg3FMcp+LGaCJGna2JRb9cBuLVuvzaz9
+	LtQGMKYAQWw9z6gQxqF8jWZPxcPobR1gdfXQqGQN69MswAs8nfC3lkZ6pdKmN91gcZn6qW5qzo/ni
+	4O4Utlj6EEQdGnheJDht1lBu5dFuiAnU1nap3F7NL/+yU0i4F+Xr4Zu+gxNy7LnL6U5QSZEKU+tQh
+	1fYtmbgwvGcMsbwvZY/D1R3uyhDECtjv8h389hoZUib5QYq5K2ZFanrASdr7ZCM4jN2W4WrEW3SNR
+	fHtDtyniD648WoqbZJfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2BZH-0005eq-Su; Thu, 13 Feb 2020 10:17:59 +0000
-Received: from mail-ed1-f67.google.com ([209.85.208.67])
+	id 1j2BgW-0000Ov-7P; Thu, 13 Feb 2020 10:25:28 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2BZ9-0005e6-PX
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 10:17:53 +0000
-Received: by mail-ed1-f67.google.com with SMTP id r21so6181343edq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 02:17:50 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=RRIEPdo2GBfjmyVoBn6+vY/7+N02sDl5h1yeWIDZHL4=;
- b=K0YO4iK18DZOZrUt3N3+ANrBdM4z5BsMFXOQmqaFeWYdA8DugmICdZ+dah4Ncv45QO
- oQTke0C9jlDavvuKIo6tB6bmDEt2k+Ky6J+FB5H2hj4vN4givrLHBi68fB+sZLlXwJGW
- zd51GoUBitA5lGtFyzMN9ryKv38dEnrAd4ty81ibbNVRExjwTr/CP8UzAwqH/YUKidA+
- tiWa9MSUk+XF5JNyN6PcDI6qwatveOmzBHrKyDzcZOUUYZtZz8eR+4VhZxtwqGOsYttr
- t4h1+MYFtEuDcaQkp5F/KmtLlpJwHuXeFYW/Ysip/55hIjY7oD3wp8fKiCPLw7pt2Rpz
- GPXw==
-X-Gm-Message-State: APjAAAVI9PKmoyiSRzMFhUDhwXDN25p/iJKvsLCPjE1InI1C5zVyFWff
- yNyQUy0PRvh9+aSd60BpEcU=
-X-Google-Smtp-Source: APXvYqzJPEBHGEKtNpeIz/sbcpHCr12wSxQrNRMVB1G8sc2hvXl2J7zmFFF7vRMRvXQXSbI6JC33dg==
-X-Received: by 2002:a05:6402:1426:: with SMTP id
- c6mr7748047edx.49.1581589068803; 
- Thu, 13 Feb 2020 02:17:48 -0800 (PST)
-Received: from kozik-lap ([194.230.155.125])
- by smtp.googlemail.com with ESMTPSA id k11sm158564edr.38.2020.02.13.02.17.46
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 13 Feb 2020 02:17:48 -0800 (PST)
-Date: Thu, 13 Feb 2020 11:17:44 +0100
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Anand Moon <linux.amoon@gmail.com>
-Subject: Re: [PATCHv1 0/2] Add FSYS2 power domain for MMC driver
-Message-ID: <20200213101744.GA11087@kozik-lap>
-References: <20200212120237.1332-1-linux.amoon@gmail.com>
+ id 1j2BgI-0000Nd-V8
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 10:25:16 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01DAOv5H103276;
+ Thu, 13 Feb 2020 04:24:57 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1581589497;
+ bh=txHZv0otXJyIYJZzcbb6130T3NOshgUyHxIn6qc3fv8=;
+ h=From:To:CC:Subject:Date;
+ b=JNxjVO4sms3FgjgLVnw0JAYNTpfkMkN7+WW1ldfXT9hbEMoNxMqawc6QIjVPv5RV9
+ LiOS/P3uNmwyNynXRZt7PC7EwXIiURd2zR5m1qhtanO+DTjrliLQIdu6jcOu6WKkm9
+ /TpDSuUL1wHXuOSMXPoLfgQFf4U50jjtV5XQrkq0=
+Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01DAOvEl074336
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 13 Feb 2020 04:24:57 -0600
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 13
+ Feb 2020 04:24:56 -0600
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Thu, 13 Feb 2020 04:24:56 -0600
+Received: from a0393675ula.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01DAOqpX011317;
+ Thu, 13 Feb 2020 04:24:53 -0600
+From: Keerthy <j-keerthy@ti.com>
+To: <rui.zhang@intel.com>, <robh+dt@kernel.org>, <daniel.lezcano@linaro.org>
+Subject: [PATCH 0/4] thermal: k3: Add support for bandgap sensors
+Date: Thu, 13 Feb 2020 15:54:36 +0530
+Message-ID: <20200213102440.20539-1-j-keerthy@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200212120237.1332-1-linux.amoon@gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_021751_829669_311E7050 
-X-CRM114-Status: GOOD (  17.83  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200213_022515_107695_F1730727 
+X-CRM114-Status: GOOD (  12.71  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.67 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,48 +88,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
- Chanwoo Choi <cw00.choi@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- Sylwester Nawrocki <s.nawrocki@samsung.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ amit.kucheria@verdurent.com, linux-pm@vger.kernel.org, j-keerthy@ti.com,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 12, 2020 at 12:02:35PM +0000, Anand Moon wrote:
-> This patches add the power domain for MMC driver,
-> but somehow the suspend/resume feature is broken
-> so any input on how to fix this.
+Add VTM thermal support. In the Voltage Thermal
+Management Module(VTM), K3 AM654 supplies a voltage
+reference and a temperature sensor feature that are gathered in the band
+gap voltage and temperature sensor (VBGAPTS) module. The band
+gap provides current and voltage reference for its internal
+circuits and other analog IP blocks. The analog-to-digital
+converter (ADC) produces an output value that is proportional
+to the silicon temperature.
 
-I think S2R was working on XU3-family after Marek's fixes, so you mean
-that these patches break it?
+Add support for bandgap sensors. Currently reading temperatures
+and trend computing is supported. 
 
-Best regards,
-Krzysztof
+Keerthy (4):
+  dt-bindings: thermal: k3: Add VTM bindings documentation
+  thermal: k3: Add support for bandgap sensors
+  arm64: dts: ti: am654: Add thermal zones
+  arm64: dts: ti: am6: Add VTM node
 
+ .../bindings/thermal/ti,am654-thermal.yaml    |  59 +++
+ .../boot/dts/ti/am654-industrial-thermal.dtsi |  45 +++
+ arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi    |  11 +
+ drivers/thermal/Kconfig                       |  12 +
+ drivers/thermal/Makefile                      |   1 +
+ drivers/thermal/k3_bandgap.c                  | 342 ++++++++++++++++++
+ 6 files changed, 470 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+ create mode 100644 arch/arm64/boot/dts/ti/am654-industrial-thermal.dtsi
+ create mode 100644 drivers/thermal/k3_bandgap.c
 
-> 
-> Also on similar lines I tried to add power domain
-> FSYS for usb3 and usb2 nodes but this time
-> it failed to load the kernel, so how can I reslove
-> this issue.
-> 
-> -Anand
-> 
-> Anand Moon (2):
->   ARM: dts: exynos: Add FSYS2 power domain to Exynos542x
->   clk: samsung: exynos542x: Move FSYS2 subsystem clocks to its sub-CMU
-> 
->  arch/arm/boot/dts/exynos5420.dtsi    | 10 ++++++++++
->  drivers/clk/samsung/clk-exynos5420.c | 24 +++++++++++++++++++++---
->  2 files changed, 31 insertions(+), 3 deletions(-)
-> 
-> -- 
-> 2.25.0
-> 
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
