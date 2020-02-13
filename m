@@ -2,117 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D577615BA04
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 08:26:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA71B15BA0B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 08:27:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VhsjF3n2ku2VOEabGTh6cYh6wotV3amumlxpqvXLXMo=; b=sMLr+1D2QrxLpq
-	qrg2HSMGqQBApDnGIrxP8fwLgtApCD3k+TVpyFKqjO1R65+XzcULFRECP4nSAxWOnA11fZGPI1qFP
-	qpaivmU5A4izlbxWY/0wCezLbgpyuHRo5qVdtKtOt+izNEXt/GYz+Pkpi5G2z0JSFwwZ1ljkUI+v0
-	IsQcTTWWWE6xg2XjHu4s2xufLLtWdwB5NfWYXIruXVuObhsrX5B+9q+E+M8DUV28+1qJ2KQfqqU3/
-	1MSG5ZPp1vNas1NQdnNGp5V5VH3QyowDqOlCI8YdEbxdIwI0eOD8vjrMdJU6X0pXfDo3z00+PhGrX
-	/a1mKLUPBzRcALdFmrCg==;
+	List-Owner; bh=VvwZ8wZaldJQgsJIjDdTyDAeHPMZPQ7LiV65aXQmAf8=; b=qTtgnqFAGCbIxT
+	5TI1N4tsVhKmZDqjc0Wfo3SWym93Z7TrdPCmZDYuGiFEhJ301Ecv3/DoA42yWmCi/EQ2UFMvL4PcC
+	LGX2N/xJMgR7NpLkijuQEqjpLo6PFeGszxrRr3TmRQBnyMs1jZ4DCSl8qL95gtGjOq/pJsIpn3LAY
+	98banqtUHxZgsRU4pm2JsRp9E/eFCn6zAAqL6oAnUNXmRVBGvqBiMKW/Pt6Kt2AcDuuKijsBUCh0e
+	SeOPK8OW3Cz9AHjvvuVSic1Iq9Hgzts2gmLVRA5oplN47N2O+rbM4rWo4NWcD22iXbSJYqFVoFjHd
+	xzeMNs3cMZGbUigvpukQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j28tQ-000774-9s; Thu, 13 Feb 2020 07:26:36 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1j28uF-0007Nx-Pt; Thu, 13 Feb 2020 07:27:27 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j28tI-00075s-KK
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 07:26:29 +0000
-Received: by mail-qk1-x741.google.com with SMTP id c20so4785609qkm.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 12 Feb 2020 23:26:28 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=7afNFB8me/fcXvHEJ/JbjcmGZzZNdhFYzAAETu8NEbc=;
- b=CJJbyFaUT0wShMPCnHyAerAv1p/FLh/75t1o2pTxajbxTRaLR/fB/1fy2Kfe3e24zz
- qwa1XZYuPJiMeczcb1yZ3QDIo7VBJbZzuqrGM4PoXkHOUPoN0AvdpcQL1RZ8dGlonknC
- lkh0a1x/IyrJwZKWQXlLwB8XLhev81qAJSjMpO8uR087bOY+o2PsZ0UTT/H/SfTjv6Pq
- 6DyiU7Hymwm6Q8NyFsjm3oIaVAj1U4Q6KPLHHZtwaOcjrD7hBUM5K2SB4pe9NOeDSa8K
- LgdRtS84sYIq8CbUZTNB6oAkiRParteG3adCzz24m8oOEnG4MA/Err8kkb0pg3SFRJTo
- iPCw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=7afNFB8me/fcXvHEJ/JbjcmGZzZNdhFYzAAETu8NEbc=;
- b=EusyudHUDgMnWfxWf4f/QpfuePnxOqetjWNDnXoc11QAG6BXe7htOfSKA/iC3JRorB
- 7Pgj4l2vkpfDLdikWpDOLJ6EQsyrP2R4VipOjE7jjDZEEHmENi4IYkCUAfQ+600oIz4R
- YpkOhvoMzb3gSM5kbeva1QaIE/xuFxCBHKrml7DjvxBdSu6CDbw1V0GC+nROsni9H2l9
- 4XMkrUNcM7qtWQS4IOcj3JNBkgTsEz4uWr0p9K1VJdkKLL2wmhYXUF2dkRIqhDo4gOvW
- poJXLTmT8SOKzBeVZm8inolXPkgosHK7IkW3DIloxUeG6/nX+D2Fkh0B91YyEOrCMx4o
- YQuw==
-X-Gm-Message-State: APjAAAWsazZQVEcpDkFE8OLj/nk8bb97kNbCQA0yrC8dUTbOwwbNTgck
- gudL0trJS1LtrZKEnYEarK0DAi5h
-X-Google-Smtp-Source: APXvYqzKtb8FqZbfdgDJdCz94YM8zhQ+svCthzX4siWSSbnQ8pwrnAg7UAabGZKVZzYg5U1a7guSBw==
-X-Received: by 2002:a37:488f:: with SMTP id v137mr13898536qka.16.1581578787579; 
- Wed, 12 Feb 2020 23:26:27 -0800 (PST)
-Received: from auth1-smtp.messagingengine.com (auth1-smtp.messagingengine.com.
- [66.111.4.227])
- by smtp.gmail.com with ESMTPSA id v10sm1066872qtj.26.2020.02.12.23.26.25
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 12 Feb 2020 23:26:26 -0800 (PST)
-Received: from compute6.internal (compute6.nyi.internal [10.202.2.46])
- by mailauth.nyi.internal (Postfix) with ESMTP id B8CC221D25;
- Thu, 13 Feb 2020 02:26:25 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute6.internal (MEProxy); Thu, 13 Feb 2020 02:26:25 -0500
-X-ME-Sender: <xms:IPpEXu5yoFeaNHDeD6vxA516f4o5OC7rMP0rl1YSiCHLEltn_PDIgA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrieejgdduuddtucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehttdertddttddvnecuhfhrohhmpeeuohhquhhn
- ucfhvghnghcuoegsohhquhhnrdhfvghnghesghhmrghilhdrtghomheqnecukfhppeehvd
- drudehhedrudduuddrjedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehm
- rghilhhfrhhomhepsghoqhhunhdomhgvshhmthhprghuthhhphgvrhhsohhnrghlihhthi
- dqieelvdeghedtieegqddujeejkeehheehvddqsghoqhhunhdrfhgvnhhgpeepghhmrghi
- lhdrtghomhesfhhigihmvgdrnhgrmhgv
-X-ME-Proxy: <xmx:IPpEXrqIW7G12ewNcbsl7DoNSfr9NoUy_5VtguMF5cLWwYCdJ10SXA>
- <xmx:IPpEXmVfkP2zdp0wyx4uWphaXE1ZF5M3TxhxISS2elWiqW_3TA-Fsg>
- <xmx:IPpEXjTDQGIjl_tTaPdZpaGNJ2ZBRXbeQ6G36gE12OcwvXQbKB-Wqw>
- <xmx:IfpEXlIbcoJqnAeJmRBvIUOUkrzj0uslNnSJvcPMdTwHCHT9P804EXXsc6Q>
-Received: from localhost (unknown [52.155.111.71])
- by mail.messagingengine.com (Postfix) with ESMTPA id 773123280059;
- Thu, 13 Feb 2020 02:26:24 -0500 (EST)
-Date: Thu, 13 Feb 2020 15:26:23 +0800
-From: Boqun Feng <boqun.feng@gmail.com>
-To: Dexuan Cui <decui@microsoft.com>
-Subject: Re: [PATCH v3 2/3] PCI: hv: Move retarget related structures into
- tlfs header
-Message-ID: <20200213072623.GE69108@debian-boqun.qqnc3lrjykvubdpftowmye0fmh.lx.internal.cloudapp.net>
-References: <20200210033953.99692-1-boqun.feng@gmail.com>
- <20200210033953.99692-3-boqun.feng@gmail.com>
- <HK0P153MB01481A125819FC7660E067AFBF1A0@HK0P153MB0148.APCP153.PROD.OUTLOOK.COM>
+ id 1j28u9-0007Mb-5o
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 07:27:22 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j28u0-0005XO-CY; Thu, 13 Feb 2020 08:27:12 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j28ty-0007vn-A1; Thu, 13 Feb 2020 08:27:10 +0100
+Date: Thu, 13 Feb 2020 08:27:10 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH] ARM: dts: imx6sx: Add missing uart mux function
+Message-ID: <20200213072710.4snwbo3i7vfbroqy@pengutronix.de>
+References: <1581576189-20490-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <HK0P153MB01481A125819FC7660E067AFBF1A0@HK0P153MB0148.APCP153.PROD.OUTLOOK.COM>
+In-Reply-To: <1581576189-20490-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_232628_694149_796BFF15 
-X-CRM114-Status: GOOD (  19.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200212_232721_218386_C38C6776 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [boqun.feng[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,83 +68,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Stephen Hemminger <sthemmin@microsoft.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- Haiyang Zhang <haiyangz@microsoft.com>, "x86@kernel.org" <x86@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Michael Kelley <mikelley@microsoft.com>, Ingo Molnar <mingo@redhat.com>,
- Borislav Petkov <bp@alien8.de>, "H. Peter Anvin" <hpa@zytor.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Andrew Murray <andrew.murray@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, KY Srinivasan <kys@microsoft.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 04:17:34AM +0000, Dexuan Cui wrote:
-> > From: linux-hyperv-owner@vger.kernel.org
-> > <linux-hyperv-owner@vger.kernel.org> On Behalf Of Boqun Feng
-> > Sent: Sunday, February 9, 2020 7:40 PM
-> > 
-> > Currently, retarget_msi_interrupt and other structures it relys on are
-> > defined in pci-hyperv.c. However, those structures are actually defined
-> > in Hypervisor Top-Level Functional Specification [1] and may be
-> > different in sizes of fields or layout from architecture to
-> > architecture. Let's move those definitions into x86's tlfs header file
-> > to support virtual PCI on non-x86 architectures in the future. Note that
-> > "__packed" attribute is added to these structures during the movement
-> > for the same reason as we use the attribute for other TLFS structures in
-> > the header file: make sure the structures meet the specification and
-> > avoid anything unexpected from the compilers.
-> > 
-> > Additionally, rename struct retarget_msi_interrupt to
-> > hv_retarget_msi_interrupt for the consistent naming convention, also
-> > mirroring the name in TLFS.
-> > 
-> > diff --git a/arch/x86/include/asm/hyperv-tlfs.h
-> > b/arch/x86/include/asm/hyperv-tlfs.h
-> > +
-> > +struct hv_device_interrupt_target {
-> > +	u32 vector;
-> > +	u32 flags;
-> > +	union {
-> > +		u64 vp_mask;
-> > +		struct hv_vpset vp_set;
-> > +	};
-> > +} __packed;
-> > +
-> > +/* HvRetargetDeviceInterrupt hypercall */
-> 
-> Reviewed-by: Dexuan Cui <decui@microsoft.com>
-> 
+On Thu, Feb 13, 2020 at 02:43:09PM +0800, Anson Huang wrote:
+> From: Anson Huang <b20788@freescale.com>
+> =
 
-Thanks!
+> Update i.MX6SX pinfunc header to add uart mux function.
 
-> Just a small thing: would it be slightly better if we change the name 
-> in the above line to HVCALL_RETARGET_INTERRUPT ? 
-> 
-> HVCALL_RETARGET_INTERRUPT is a define, so it may help to locate the
-> actual value of the define here. And, HVCALL_RETARGET_INTERRUPT is
-> used several times in the patchset so IMO we'd better always use
-> the same name.
+I'm aware you add the macros in a consistent way to the already existing
+stuff. Still I think there is something to improve here. We now have
+definitions like:
 
-This might be a good suggestion, however, throughout the TLFS header,
-camel case is more commonly used for referencing hypercall. For example:
+	MX6SX_PAD_GPIO1_IO06__UART1_RTS_B
+	MX6SX_PAD_GPIO1_IO06__UART1_CTS_B
 
-	/* HvCallSendSyntheticClusterIpi hypercall */
+	MX6SX_PAD_GPIO1_IO07__UART1_CTS_B
+	MX6SX_PAD_GPIO1_IO07__UART1_RTS_B
 
-So I think it's better to let it as it is for this patch, and later on,
-if we reach a consensus, we can convert the names all together.
+where (ignoring other pins that could be used) only the following
+combinations are valid:
 
-Thoughts?
+	MX6SX_PAD_GPIO1_IO04__UART1_TX
+	MX6SX_PAD_GPIO1_IO05__UART1_RX
+	MX6SX_PAD_GPIO1_IO06__UART1_RTS_B
+	MX6SX_PAD_GPIO1_IO07__UART1_CTS_B
 
-Regards,
-Boqun
+(in DCE mode) and
+
+	MX6SX_PAD_GPIO1_IO04__UART1_RX
+	MX6SX_PAD_GPIO1_IO05__UART1_TX
+	MX6SX_PAD_GPIO1_IO06__UART1_CTS_B
+	MX6SX_PAD_GPIO1_IO07__UART1_RTS_B
+
+(in DTE mode).
+
+For i.MX6SLL, i.MX6UL, imx6ULL and i.MX7 the naming convention is saner,
+a typical definition there is:
+
+	MX7D_PAD_LPSR_GPIO1_IO04__UART5_DTE_RTS
+
+where the name includes DTE and where is it (more) obvious that this
+cannot be combined with
+
+	MX7D_PAD_LPSR_GPIO1_IO07__UART5_DCE_TX
+
+.
+
+I suggest to adapt the latter naming convention also for the other i.MX
+pinfunc headers, probably with introducing defines for not breaking
+existing dts files.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
