@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 222AE15B765
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 03:59:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF2D615B76D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 03:59:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=XzCAXerdpWPCHg6uFayYtD1E6Km2U9VzTCbhQaC7Gl0=; b=UBsrXz8HfGiTQ+Nf3K4UEbWiz9
-	ZsvQ4QznVp0/2gy+WqfmyfXwT4xSIuU8XsvHNZWeXq1f4F4TKSIqYFWhjP5cS7mgGZ4pZu11rp6yy
-	wOapRWQHHnwWrRsUyXAHbdxv6JWXsF4eYhnkm4DFCSUpV2HcaYgSyRUHian2RYyKmUGeiK9wL4GQ6
-	d7HCTEpsGcFJB75ZR2TPFeI6Lvo3cr6bX/H0nAYWHd35ycx6vatK5CiGZUz1uTHFYf34VaY4/oq1U
-	dTaT5gFzcgFGFv+dE/EX7+I2ifQGdgTDgUcA1yZGBTW4xsMhO3r6IBrnfBSF1ezkJfp269y5gZAqK
-	cXbEWiSQ==;
+	bh=wk2kYGyLZ55K8Of6HrBE/c5DjPK1WVnBabuTdloryLo=; b=P0Xu8WYY45UBt1zccPcmvP4Xr/
+	W5q5hymHrVq2Bhs5VL4KlHXcC/G47iL2WEW9kQFbY7T6nj+8KrtiMzPLVO2/FI/XQQJedcQednr5F
+	otHODkUwJgpgPdfPNOTePeN7TIk9xhegSvH2sJlVP7fOWgxXPl1OEwjwO05dTp+X5rR8Qvld4pxGl
+	tXZpAiD1runvoRBCuosjBbja4ws6ow0kOU/q+nULBtZbMv2Ex9Ms17p1YV9uzKN/wXp7FJrUJ8xWX
+	Tz2qZq3tV6fdFJk3ArXY85Hsfjk9E9BABtX9yNSTsnTf9h4de5lC5WxdDe6w14yiNo2dG34lnQC50
+	yUT7B3Rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j24iw-0001oV-SK; Thu, 13 Feb 2020 02:59:30 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1j24jB-00024Q-Eu; Thu, 13 Feb 2020 02:59:45 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j24i8-0001Ae-VX
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 02:58:42 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C18FB1A8D8A;
+ id 1j24iA-0001Af-0z
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 02:58:43 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C29E9208916;
  Thu, 13 Feb 2020 03:58:39 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7A5C01A8D87;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7A3BA208906;
  Thu, 13 Feb 2020 03:58:34 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 47775402F0;
- Thu, 13 Feb 2020 10:58:25 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 34B4E402F3;
+ Thu, 13 Feb 2020 10:58:26 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 4/5] ARM: dts: imx6ul: imx: make gpt node name generic
-Date: Thu, 13 Feb 2020 10:52:59 +0800
-Message-Id: <1581562380-26065-4-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 5/5] ARM: dts: imx7s: imx: make gpt node name generic
+Date: Thu, 13 Feb 2020 10:53:00 +0800
+Message-Id: <1581562380-26065-5-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1581562380-26065-1-git-send-email-Anson.Huang@nxp.com>
 References: <1581562380-26065-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_185841_188703_C8B49408 
-X-CRM114-Status: UNSURE (   7.99  )
+X-CRM114-CacheID: sfid-20200212_185842_238530_F3473AE6 
+X-CRM114-Status: UNSURE (   7.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -57,7 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,31 +82,49 @@ Node name should be generic, use "timer" instead of "gpt" for gpt node.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx6ul.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/imx7s.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
-index d9fdca1..1919f7d 100644
---- a/arch/arm/boot/dts/imx6ul.dtsi
-+++ b/arch/arm/boot/dts/imx6ul.dtsi
-@@ -430,7 +430,7 @@
+diff --git a/arch/arm/boot/dts/imx7s.dtsi b/arch/arm/boot/dts/imx7s.dtsi
+index 568d7a9..bfb4ca9 100644
+--- a/arch/arm/boot/dts/imx7s.dtsi
++++ b/arch/arm/boot/dts/imx7s.dtsi
+@@ -443,7 +443,7 @@
+ 				fsl,input-sel = <&iomuxc>;
+ 			};
+ 
+-			gpt1: gpt@302d0000 {
++			gpt1: timer@302d0000 {
+ 				compatible = "fsl,imx7d-gpt", "fsl,imx6sx-gpt";
+ 				reg = <0x302d0000 0x10000>;
+ 				interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
+@@ -452,7 +452,7 @@
+ 				clock-names = "ipg", "per";
+ 			};
+ 
+-			gpt2: gpt@302e0000 {
++			gpt2: timer@302e0000 {
+ 				compatible = "fsl,imx7d-gpt", "fsl,imx6sx-gpt";
+ 				reg = <0x302e0000 0x10000>;
+ 				interrupts = <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>;
+@@ -462,7 +462,7 @@
  				status = "disabled";
  			};
  
--			gpt1: gpt@2098000 {
-+			gpt1: timer@2098000 {
- 				compatible = "fsl,imx6ul-gpt", "fsl,imx6sx-gpt";
- 				reg = <0x02098000 0x4000>;
- 				interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
-@@ -704,7 +704,7 @@
- 				reg = <0x020e4000 0x4000>;
+-			gpt3: gpt@302f0000 {
++			gpt3: timer@302f0000 {
+ 				compatible = "fsl,imx7d-gpt", "fsl,imx6sx-gpt";
+ 				reg = <0x302f0000 0x10000>;
+ 				interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
+@@ -472,7 +472,7 @@
+ 				status = "disabled";
  			};
  
--			gpt2: gpt@20e8000 {
-+			gpt2: timer@20e8000 {
- 				compatible = "fsl,imx6ul-gpt", "fsl,imx6sx-gpt";
- 				reg = <0x020e8000 0x4000>;
- 				interrupts = <GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>;
+-			gpt4: gpt@30300000 {
++			gpt4: timer@30300000 {
+ 				compatible = "fsl,imx7d-gpt", "fsl,imx6sx-gpt";
+ 				reg = <0x30300000 0x10000>;
+ 				interrupts = <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>;
 -- 
 2.7.4
 
