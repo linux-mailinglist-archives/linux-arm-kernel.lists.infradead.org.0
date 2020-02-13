@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17C3F15B6A0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 02:24:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FFD315B69D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 02:24:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lqBrTWK5RXNtU1phqcYs5A3fRnrIgsQXWW0VnpJZ/iE=; b=JnAOdYvI0dqHjS
-	G/FVIkTJOVvKd/i+M0C3bIlKmBgXsb2a2wNX3vcItISTnPQ5398GrueMr7udVecSI48BrznuvcaVy
-	UwRlNxJmRYc/E33CWy/EsNAiDYbUlCnQ9OqihqZgaa9leS1MnOWREE6+jeErvZfyfx4+ohMqYmhSK
-	8FB1/jzobdO+WWpebP5EZMP/RiubPexp7hz+BwUC+DugoaregEyprvpr3eN7nYAB9mBlD+svYko47
-	qqjsSBDwfbgfQktDSyqi3V+8UdP8GXP67KU6no9cMIStAqAry81hLpSrVSh909AvOtNWedUd9Y6BR
-	KciFZXskCmuW5RKREg2A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3HMUeg5IE0lZZECbWjU4U1UrNPaFYohpsj4QrYiKtNs=; b=SPmH+NMGPyTZTi
+	iISDwaJGMOB8P41+hh9ew5rfBAc61CR5b33G7FpKGnsGWDtyri5ZyjClQ126l3GT+xKYYAZwAXi45
+	2PRvstGzrdDRHvbnM2kKBTr1okZork+tQqASu1of4A4Znbs8eTLu5rXjK4lVNtAxbmlx7TOoYEIXZ
+	BV6N4fsOlYpZlASnO+xTd7qwXqyCkBNjzOPTtMZlk3PxX4UddGq57sWFV3aGfxJpsFcIoyXbqF+Eb
+	FEiVy9tzDa5cgyDBTtd2RtMObfJuqvYokNErb48YElWIN4pWN3a9yauLGMmwOTJMOnLqj9I2gVC7X
+	TGsnx+o7D7LaSOORyBBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j23F3-0008Sj-Ln; Thu, 13 Feb 2020 01:24:33 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j23Ek-0008Kb-8f; Thu, 13 Feb 2020 01:24:14 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j23Eb-0008Ji-Pa; Thu, 13 Feb 2020 01:24:07 +0000
-X-UUID: f953441362584c63ae391c9a1f1b8733-20200212
+ id 1j23EZ-0008J7-Uo; Thu, 13 Feb 2020 01:24:05 +0000
+X-UUID: 653622ad729245908e7a6e91f99d9ae3-20200212
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=Y2Th+gHYhXqwVTZtN+Ab3LnVwLW4lWLwZX1aM07dOp4=; 
- b=eZQJRZ81MC9LeheYsOJ5sGcT3KMUqpOknl2xYlRPQAOQ5nyNQKiEpAEfjcyrONm1MBGUCEHbC02+LSVB0lxntMFCTkjkDNnAgvEgL7dNT+okQ1zYIFZwQMMlTk7JlsVhx9RyeZ0HZS9/RubEvEmo6rjhnQ6yCZjMcEtkgDLCXc8=;
-X-UUID: f953441362584c63ae391c9a1f1b8733-20200212
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=xxmEaRGjkWrQG8Gtb9KKre7wf2OJRxreHnt3z0nXk8c=; 
+ b=j+K2q+JAIaLEU05PnlmC9Hw+miN6fHIxsFrloHZWoEccD18zVwX+JxPOk2KvZ4kylF8xc4U+ysps2brUMhx7T+UY+bLwboDaHirVPfQUZUleqUfWgHfIDWRrfF8MCx9uJ5RQeR7ev4+FsdK0hb5R3EB8MlmG4YNb4llUd4VrcPI=;
+X-UUID: 653622ad729245908e7a6e91f99d9ae3-20200212
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <bibby.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 14602288; Wed, 12 Feb 2020 17:23:58 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 12 Feb 2020 17:24:37 -0800
+ with ESMTP id 1500309127; Wed, 12 Feb 2020 17:23:58 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 12 Feb 2020 17:24:07 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Feb 2020 09:24:28 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 13 Feb 2020 09:23:04 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Thu, 13 Feb 2020 09:23:59 +0800
@@ -46,21 +46,25 @@ From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 To: David Airlie <airlied@linux.ie>, Matthias Brugger
  <matthias.bgg@gmail.com>, Daniel Vetter <daniel.vetter@ffwll.ch>,
  <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>
-Subject: [PATCH 1/2] drm/mediatek: add plane check in async_check function
-Date: Thu, 13 Feb 2020 09:23:52 +0800
-Message-ID: <20200213012353.26815-1-bibby.hsieh@mediatek.com>
+Subject: [PATCH 2/2] drm/mediatek: add fb swap in async_update
+Date: Thu, 13 Feb 2020 09:23:53 +0800
+Message-ID: <20200213012353.26815-2-bibby.hsieh@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20200213012353.26815-1-bibby.hsieh@mediatek.com>
+References: <20200213012353.26815-1-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200212_172405_837340_59491083 
-X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-CacheID: sfid-20200212_172403_998771_FE835B25 
+X-CRM114-Status: UNSURE (   7.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -95,41 +99,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MTK do rotation checking and transferring in layer check function,
-but we do not check that in atomic_check,
-so add back in atomic_check function.
+Besides x, y position, width and height,
+fb also need updating in async update.
 
 Fixes: 920fffcc8912 ("drm/mediatek: update cursors by using async atomic update")
 
 Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_plane.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/gpu/drm/mediatek/mtk_drm_plane.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-index 189744d34f53..d32b494ff1de 100644
+index d32b494ff1de..e084c36fdd8a 100644
 --- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
 +++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
-@@ -81,6 +81,7 @@ static int mtk_plane_atomic_async_check(struct drm_plane *plane,
- 					struct drm_plane_state *state)
- {
- 	struct drm_crtc_state *crtc_state;
-+	int ret;
+@@ -122,6 +122,7 @@ static void mtk_plane_atomic_async_update(struct drm_plane *plane,
+ 	plane->state->src_y = new_state->src_y;
+ 	plane->state->src_h = new_state->src_h;
+ 	plane->state->src_w = new_state->src_w;
++	swap(plane->state->fb, new_state->fb);
+ 	state->pending.async_dirty = true;
  
- 	if (plane != state->crtc->cursor)
- 		return -EINVAL;
-@@ -91,6 +92,11 @@ static int mtk_plane_atomic_async_check(struct drm_plane *plane,
- 	if (!plane->state->fb)
- 		return -EINVAL;
- 
-+	ret = mtk_drm_crtc_plane_check(state->crtc, plane,
-+				       to_mtk_plane_state(state));
-+	if (ret)
-+		return ret;
-+
- 	if (state->state)
- 		crtc_state = drm_atomic_get_existing_crtc_state(state->state,
- 								state->crtc);
+ 	mtk_drm_crtc_async_update(new_state->crtc, plane, new_state);
 -- 
 2.18.0
 _______________________________________________
