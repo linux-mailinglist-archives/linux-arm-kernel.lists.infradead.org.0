@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3926615CBE4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:20:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A927915CBF5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 13 Feb 2020 21:20:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zjJbR/n8oU+MJy5R8e3QQivsIUZhZML/MqMGZpAxC9w=; b=NqrIIwmpzpi2ro
-	kajQZ8nVrynuCrjufA+mAArFZoEem3updbdXQs4XBjPfaR/SVV5/2XTvR+fIr8tNutaG2jvgsU9xa
-	iehfAdXGI13v1Bc0iuH7CtCGgqmyL9+qZ3NoNtTCgpv+hAhvY+YyY2Box83MpyW1NaMPmB535jFVI
-	I7IQ08hpss/WEcQpFFwSbCSboyTxcxMu/Kjg0Ep2RQH97hwEHWLF2IB6Ot1+q1x7bVDI8yCK2epY9
-	BLp7Jw2gQYUQ+Cv3LBHE3JzPLowm7yxnq339nCEv8mIymIQVuFJhy+zT+4ymO8gi35zFrtgY4xLOL
-	wgD6LkubeGTbsvcNpjcw==;
+	List-Owner; bh=1xdM27sEJfpWoK+qEJCXa/E4Etq/cxoHyPuOgOgEtps=; b=S8kq77APZ5CFhB
+	mXsqr5y75FkVMG52k7nBda7+tZR2jmhKN7F+DyjqPWAPAQqhRbg5QcPdCO5uejITLDG3N092PdV5B
+	Rc1y0HhDVfDOSs3xLQxkXLETrmOO4oJulqNXuhSLfn5ep6/8IhGgGq0uu9gXOi1djDX1879k2LfT4
+	NixvnJOV6vtpYkxJcdOkMPOEK4muwzKFp6lt8xoIjaOS68jjReyrLEV9hhwGesZGdbYvBGUjZHG5+
+	8L2MzEP6m8UhfP8bZaHaL9/g9XZN/Rn9l9AGckWam7Lqlh0hjctcvZdgR8I6L7PiDrT2oZb96eLEk
+	GnyKBNMtHPbx17noQkbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Ky5-0006tT-67; Thu, 13 Feb 2020 20:20:13 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1j2KyM-0008LB-P6; Thu, 13 Feb 2020 20:20:30 +0000
+Received: from mail-lj1-x22f.google.com ([2a00:1450:4864:20::22f])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Kxi-0006qz-V7
- for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 20:19:52 +0000
-Received: by mail-lf1-x144.google.com with SMTP id r14so5189249lfm.5
+ id 1j2Kxw-0006zW-UW
+ for linux-arm-kernel@lists.infradead.org; Thu, 13 Feb 2020 20:20:06 +0000
+Received: by mail-lj1-x22f.google.com with SMTP id e18so8062260ljn.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 12:19:49 -0800 (PST)
+ Thu, 13 Feb 2020 12:20:02 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=U3x8LznwfIOHEzFKzlxdqFwRCUCKp/X5F3uTKb+5kO8=;
- b=r2+YQvtLkH+6NOSpbgQnCewgfpF7LBPvBzm4isPF4njR+V4ekkCMBOvimCgWdEJffi
- wJYESGzRKbWgVhV3UPYtOVHHXDkgoPceXxjjS1FRH/+Ujwr1yeMyy0oRJqL1PQ/igMUW
- AKUcQ+IwYPU8uxwfVNZiu4VRR2EMTdxfOZyBtkBjBNkoq1UzSuuVJGnqD5bO0Um+RV+a
- smuEe1miOcWDkOBreXV214HcTvoSQpkKpmHDzC2FTLTl0oM7Yccp0qJ9/O/RHK0HHXj1
- dho2ybH4FqndggvgmNC9UBwRuoAyIMtDKa7MvhWofmUuda84bN1hqJJNKxJQqvbfkQ8Q
- G3Vw==
+ bh=mW6PukSxckGSUCke6VTFTCVByD+nJPm6k8mdLJlJUQ8=;
+ b=RC09I+Bvk9BEGM312oV5NW7pG1aKQPts5wE1yDyMZ5aunmfCjtpj/ZtkVQfg5cc4kX
+ n4rUd7Uw8Ed/epLUm9Gj7Q9rrTgeNaB7fA6T6msnWDT9n49NXzqbTh4gbBQ3D4ylyM2m
+ Db9pfSfadEt1TPmiY25g7eQP5kfvza19ucaRwOBa4LoatztuIsBGKZCRLtsT1qGzqb+x
+ 3R1jApficdWMUC38I6zCdiYLKbYUeP7ewABAHw3uNkUlziHLUZmEa77C55CQ9fX5E8yR
+ nhxT/uqgKTwmRXqalvyie7/fOEEnIe6JNxBaGyGoRwKVGvbXa2Gl0eaaV/pVBbzSbPgj
+ WORA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=U3x8LznwfIOHEzFKzlxdqFwRCUCKp/X5F3uTKb+5kO8=;
- b=dn0SQb+8B6hinYcCfprK1T3UVen2yHKxe52fztVHnHdNYkrdW1I/Ncp8j6CYUfnK12
- LTLu7O1RDRwhG0qXMQx2VlwcQQ+U8meKdTcQWaIzj6grCpKDQ0ShAs8SoHxQGQbpZLfl
- 1t91P/6ePDzOyBqHaLGNoTYU8c4EPDr9IzmuPEpGrjNiFZdyjOvPc7RML4V0b0rbot/k
- 6hsYjXuxqseTL88DpD7KcdKa7WgpdNVIu6Yd5hyxO4CKOF1o3v5tHoMVmmhctmbGZ7Ew
- NALVYZRfhxAMYoq61/m6lQ4vkJ5jP34MOQjNQamFc+wb9ZeAjhExO6N7/dG2nb8M3dJt
- g5qQ==
-X-Gm-Message-State: APjAAAUkzI74SNvkTCzYLh0GyHjwhrEEVWsE48x8hPFsSCMy4+8i7zAa
- pLFkTAEN6tIkFViGtNz6f2U=
-X-Google-Smtp-Source: APXvYqwaV3CvaxrlgCrOBOI9930fkISOFChEKsVF5+xwRyqJo9wJcYQPvXTiNMesnavqYkViTuhz5A==
-X-Received: by 2002:a19:ee1a:: with SMTP id g26mr10058246lfb.147.1581625187334; 
- Thu, 13 Feb 2020 12:19:47 -0800 (PST)
+ bh=mW6PukSxckGSUCke6VTFTCVByD+nJPm6k8mdLJlJUQ8=;
+ b=bf0YiBI321AGsq6mWXtKs4llc8hdlPUbKp/xq94x7/zp5u5+24d8xPtQlgWwX00Qf+
+ CWQ56J2E3AMyS92Q/iINn5jw7W5DPwBlQA+/ZWu4Ptk2OUS+5FZB/Hrt86ulkBezRztC
+ jPklICTpPuPYBtLLADIdcRd/kz0BiH9cNodSAsGL3b9eA+Aet2UH5+nFZn5wxB7xYXiY
+ xLKZF3yLfr5K6vSR/jSZjkEbaP76a3a7sCdkrDC/OUP9H1LdjTBlZ1q7LIm4mhFBO46H
+ w8mIMX94yZ2NbpHp3hmL/DvQR7RNT17vsa5tz1yrMznjD7GbULgtq1Mj98mUTVoqDi//
+ KHhQ==
+X-Gm-Message-State: APjAAAVfh7rumgm1UPPZecZIl5e7Ockgyubeqhc20c3nvxsoPuVxaRDB
+ jJhq4Oxd/1VimoeGgTgdkKg=
+X-Google-Smtp-Source: APXvYqxw0rZXUmiJIT9xq2xe3VuahXdAUOtscc4DdIG+xn5Y17KAhRRAUvyZVKqDwcbtKuS/oxnM5w==
+X-Received: by 2002:a2e:9e19:: with SMTP id e25mr12844931ljk.179.1581625199519; 
+ Thu, 13 Feb 2020 12:19:59 -0800 (PST)
 Received: from localhost.localdomain ([5.20.204.163])
- by smtp.gmail.com with ESMTPSA id s22sm2209470ljm.41.2020.02.13.12.19.46
+ by smtp.gmail.com with ESMTPSA id s22sm2209470ljm.41.2020.02.13.12.19.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 13 Feb 2020 12:19:46 -0800 (PST)
+ Thu, 13 Feb 2020 12:19:59 -0800 (PST)
 From: Andrey Lebedev <andrey.lebedev@gmail.com>
 To: mripard@kernel.org, wens@csie.org, airlied@linux.ie, daniel@ffwll.ch,
  dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v3 2/3] drm/sun4i: tcon: Support LVDS output on Allwinner A20
-Date: Thu, 13 Feb 2020 22:18:55 +0200
-Message-Id: <20200213201854.810-2-andrey.lebedev@gmail.com>
+Subject: [PATCH v3 3/3] ARM: dts: sun7i: Add LVDS panel support on A20
+Date: Thu, 13 Feb 2020 22:18:57 +0200
+Message-Id: <20200213201854.810-3-andrey.lebedev@gmail.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200210195633.GA21832@kedthinkpad>
 References: <20200210195633.GA21832@kedthinkpad>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_121950_999018_DD64F2AD 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20200213_122005_023310_2F32FACF 
+X-CRM114-Status: GOOD (  12.76  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:22f listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,94 +108,74 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andrey Lebedev <andrey@lebedev.lt>
 
-A20 SoC (found in Cubieboard 2 among others) requires different LVDS set
-up procedure than A33. Timing controller (tcon) driver only implements
-sun6i-style procedure, that doesn't work on A20 (sun7i).
+Define pins for LVDS channels 0 and 1, configure reset line for tcon0 and
+provide sample LVDS panel, connected to tcon0.
 
 Signed-off-by: Andrey Lebedev <andrey@lebedev.lt>
 ---
- drivers/gpu/drm/sun4i/sun4i_tcon.c | 26 ++++++++++++++++++++++++++
- drivers/gpu/drm/sun4i/sun4i_tcon.h | 11 +++++++++++
- 2 files changed, 37 insertions(+)
+ arch/arm/boot/dts/sun7i-a20.dtsi | 28 ++++++++++++++++++++++++++--
+ 1 file changed, 26 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-index cc6b05ca2c69..800a9bd86112 100644
---- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-+++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-@@ -114,6 +114,30 @@ static void sun4i_tcon_channel_set_status(struct sun4i_tcon *tcon, int channel,
- 	}
- }
+diff --git a/arch/arm/boot/dts/sun7i-a20.dtsi b/arch/arm/boot/dts/sun7i-a20.dtsi
+index 92b5be97085d..3b3c366a2bee 100644
+--- a/arch/arm/boot/dts/sun7i-a20.dtsi
++++ b/arch/arm/boot/dts/sun7i-a20.dtsi
+@@ -47,6 +47,7 @@
+ #include <dt-bindings/dma/sun4i-a10.h>
+ #include <dt-bindings/clock/sun7i-a20-ccu.h>
+ #include <dt-bindings/reset/sun4i-a10-ccu.h>
++#include <dt-bindings/pinctrl/sun4i-a10.h>
  
-+static void sun4i_tcon_setup_lvds_phy(struct sun4i_tcon *tcon,
-+				      const struct drm_encoder *encoder)
-+{
-+	regmap_write(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
-+		     SUN4I_TCON0_LVDS_ANA0_CK_EN |
-+		     SUN4I_TCON0_LVDS_ANA0_REG_V |
-+		     SUN4I_TCON0_LVDS_ANA0_REG_C |
-+		     SUN4I_TCON0_LVDS_ANA0_EN_MB |
-+		     SUN4I_TCON0_LVDS_ANA0_PD |
-+		     SUN4I_TCON0_LVDS_ANA0_DCHS);
+ / {
+ 	interrupt-parent = <&gic>;
+@@ -407,8 +408,8 @@
+ 			compatible = "allwinner,sun7i-a20-tcon";
+ 			reg = <0x01c0c000 0x1000>;
+ 			interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
+-			resets = <&ccu RST_TCON0>;
+-			reset-names = "lcd";
++			resets = <&ccu RST_TCON0>, <&ccu RST_LVDS>;
++			reset-names = "lcd", "lvds";
+ 			clocks = <&ccu CLK_AHB_LCD0>,
+ 				 <&ccu CLK_TCON0_CH0>,
+ 				 <&ccu CLK_TCON0_CH1>;
+@@ -444,6 +445,11 @@
+ 					#size-cells = <0>;
+ 					reg = <1>;
+ 
++					tcon0_out_lvds: endpoint@0 {
++						reg = <0>;
++						allwinner,tcon-channel = <0>;
++					};
 +
-+	udelay(2); /* delay at least 1200 ns */
-+	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA1_REG,
-+			   SUN4I_TCON0_LVDS_ANA1_INIT,
-+			   SUN4I_TCON0_LVDS_ANA1_INIT);
-+	udelay(1); /* delay at least 120 ns */
-+	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA1_REG,
-+			   SUN4I_TCON0_LVDS_ANA1_UPDATE,
-+			   SUN4I_TCON0_LVDS_ANA1_UPDATE);
-+	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
-+			   SUN4I_TCON0_LVDS_ANA0_EN_MB,
-+			   SUN4I_TCON0_LVDS_ANA0_EN_MB);
-+}
+ 					tcon0_out_hdmi: endpoint@1 {
+ 						reg = <1>;
+ 						remote-endpoint = <&hdmi_in_tcon0>;
+@@ -1162,6 +1168,24 @@
+ 				pins = "PI20", "PI21";
+ 				function = "uart7";
+ 			};
 +
- static void sun6i_tcon_setup_lvds_phy(struct sun4i_tcon *tcon,
- 				      const struct drm_encoder *encoder)
- {
-@@ -1456,11 +1480,13 @@ static const struct sun4i_tcon_quirks sun6i_a31s_quirks = {
- };
- 
- static const struct sun4i_tcon_quirks sun7i_a20_quirks = {
-+	.supports_lvds		= true,
- 	.has_channel_0		= true,
- 	.has_channel_1		= true,
- 	.dclk_min_div		= 4,
- 	/* Same display pipeline structure as A10 */
- 	.set_mux		= sun4i_a10_tcon_set_mux,
-+	.setup_lvds_phy		= sun4i_tcon_setup_lvds_phy,
- };
- 
- static const struct sun4i_tcon_quirks sun8i_a33_quirks = {
-diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.h b/drivers/gpu/drm/sun4i/sun4i_tcon.h
-index 2974e59ef9f2..cfbf4e6c1679 100644
---- a/drivers/gpu/drm/sun4i/sun4i_tcon.h
-+++ b/drivers/gpu/drm/sun4i/sun4i_tcon.h
-@@ -193,6 +193,13 @@
- #define SUN4I_TCON_MUX_CTRL_REG			0x200
- 
- #define SUN4I_TCON0_LVDS_ANA0_REG		0x220
-+#define SUN4I_TCON0_LVDS_ANA0_DCHS			BIT(16)
-+#define SUN4I_TCON0_LVDS_ANA0_PD			(BIT(20) | BIT(21))
-+#define SUN4I_TCON0_LVDS_ANA0_EN_MB			BIT(22)
-+#define SUN4I_TCON0_LVDS_ANA0_REG_C			(BIT(24) | BIT(25))
-+#define SUN4I_TCON0_LVDS_ANA0_REG_V			(BIT(26) | BIT(27))
-+#define SUN4I_TCON0_LVDS_ANA0_CK_EN			(BIT(29) | BIT(28))
++			/omit-if-no-ref/
++			lcd_lvds0_pins: lcd-lvds0-pins {
++				pins =
++					"PD0", "PD1", "PD2", "PD3", "PD4",
++					"PD5", "PD6", "PD7", "PD8", "PD9";
++				function = "lvds0";
++				allwinner,drive = <SUN4I_PINCTRL_10_MA>;
++			};
 +
- #define SUN6I_TCON0_LVDS_ANA0_EN_MB			BIT(31)
- #define SUN6I_TCON0_LVDS_ANA0_EN_LDO			BIT(30)
- #define SUN6I_TCON0_LVDS_ANA0_EN_DRVC			BIT(24)
-@@ -201,6 +208,10 @@
- #define SUN6I_TCON0_LVDS_ANA0_V(x)			(((x) & 3) << 8)
- #define SUN6I_TCON0_LVDS_ANA0_PD(x)			(((x) & 3) << 4)
++			/omit-if-no-ref/
++			lcd_lvds1_pins: lcd-lvds1-pins {
++				pins =
++					"PD10", "PD11", "PD12", "PD13", "PD14",
++					"PD15", "PD16", "PD17", "PD18", "PD19";
++				function = "lvds1";
++				allwinner,drive = <SUN4I_PINCTRL_10_MA>;
++			};
+ 		};
  
-+#define SUN4I_TCON0_LVDS_ANA1_REG		0x224
-+#define SUN4I_TCON0_LVDS_ANA1_INIT			(0x1f << 26 | 0x1f << 10)
-+#define SUN4I_TCON0_LVDS_ANA1_UPDATE			(0x1f << 16 | 0x1f << 00)
-+
- #define SUN4I_TCON1_FILL_CTL_REG		0x300
- #define SUN4I_TCON1_FILL_BEG0_REG		0x304
- #define SUN4I_TCON1_FILL_END0_REG		0x308
+ 		timer@1c20c00 {
 -- 
 2.20.1
 
