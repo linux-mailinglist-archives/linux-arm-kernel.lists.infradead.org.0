@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A01BA15E8B2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 18:02:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7D7515E8A5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 18:01:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9pa14bW/FBdIeA8itU+SGwozWWh5OEB8387a+to0g1Y=; b=O8nYlhcjI0DB4u
-	pP7I7s+ItzwuAhi6U542nxbRzgfUU4kKmGk1W+jqsC/FgEAHd42YTvHXhYvyvuUPTJZTltI0IgMFJ
-	x+YlMTM2bj3J9cnooVMvLvwslM7ukMpQsLPJQyzwSKboVy0f8tMQXJWn098X4R5MP9pLJeWPFP1cb
-	BaWjNzVIdXVe8EqSvecX7dhdO62iW/qC87mzT85Nd5mF4abVha7S2JhQf+NPv9dIsTF6QmokQ0ltX
-	M6ZsDAokSp72KO0PnHbHc+99U+Pd44eQpZhzChYeXR2bn0XWINjfskK9uvClyJaXjbG6kSz82923j
-	xtzBT0QogatSHnw3UDLw==;
+	List-Owner; bh=NNVL0tsJ6i/PvKCY2NfzC+uMiZtuSAJFC8erN93rgeo=; b=rudAAhZarpxnWI
+	HMRaQTf2mJjBEPrVukhlm1ezoQ7vVbGjYgbxiQVvKZl1mDsjn0M/CICwnUm89P5jxuhFRWHtPOylJ
+	cVBC0HwHFPuCWTFNDNs7c58wmQSfxBRJ6iE5p//gN5wvI5qjql1VI9ZbWDSsBuwhmpRiKDWqZB7r5
+	BdaUWHldAVRh9wpAeh1QgV5XHeNTlg4CncjxiVQNppYv8IIK1YqfL7bPchJXoO9s2HBsNaEHLUJpw
+	lmhdaJos7WvuEmnywx/aDkhm8C77HsQ61jAlzyMKKd0qjJv8D2BmKjnyKL306CyDrAbJ1MnMeJfG3
+	VELbAaFFCbsaiaoL8x+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eM4-0003YA-06; Fri, 14 Feb 2020 17:02:16 +0000
+	id 1j2eLZ-00033b-9o; Fri, 14 Feb 2020 17:01:45 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2e79-0000ER-1g
- for linux-arm-kernel@bombadil.infradead.org; Fri, 14 Feb 2020 16:46:51 +0000
+ id 1j2e78-0000Ga-O5
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 14 Feb 2020 16:46:50 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=TzIhZoh7qQLX/1CZXQ/QYmjM+xU64Tt9MZ0g/6MW1Ec=; b=iBidTovsoVGpgVi2oRKlgtSo/B
- FCPQddl5FTxLJYf7peTa8yMsjd5u3cN9nVrl0bZV9weuR4FjwvYp6+IKLdTgYM6EVwgQsL83L+uST
- PQgz5be0ahNdwyQjqhFMQqC7OqIEqPpGMuatZqNchmr29amWh3cpDfD8IV+QZ+mqqoKWXCqc91+Yt
- k3nRqiz1Ye9eCRXXtYdnTeLV+UIYpKX2n6wN2n8TLQSBOhz+T0n4lN7Q4GS730cnvcIAh8cnnTfQw
- v8+LXRcCpS+1AElARJjji6dzFD3VUHaPsXREUpIcgSLd8T7507i9tsl+hQQV260ibXzGeS5JRjj3Y
- rq5tItFQ==;
+ bh=mVcJT4sMvTKIPxMjl4IriqWkrqIIRIDzSUi0pAsqwds=; b=RElQ+4LxbDcMdLvcGSj33pyDZX
+ xUBcEVFxcOHPazgqzcbgCjqTMN2GSGJQQj9XQHrWpRnMmTSA715t/K+aWjI3Jzs3NGu5Lyd1QYPzU
+ qAecAWi/jIH3s+CSCMCphP8xEmJ25d4t0emq5rAT0Rw6O8jH/d9YNsqZWEsNUKpaHkSgZX62AJx8Y
+ pDDm/TXK1H0b1kIoTgPhJVzQnEE5u6tS/z/TC8h8xTpQlMe1Iqzj+mXBnr14G4U1g84oeUDxEYQoc
+ vOMOocjJKU+9wg7r+9Ke+Vu+U0vJz5vX+eFDCZaQHF1Le2Pv1/jWXx7ZPHlvBYMQAZbqldaH8bRXd
+ 6vIZcpCg==;
 Received: from mail.kernel.org ([198.145.29.99])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dbs-0007U1-Cx
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:14:33 +0000
+ id 1j2dc6-0007VQ-Ec
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:14:47 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C7520246C3;
- Fri, 14 Feb 2020 16:14:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A3446246D1;
+ Fri, 14 Feb 2020 16:14:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696871;
- bh=Ag7cfjgAZDTtorJGvLhjabkF2VDVmnJ8PY2cP1WcwfE=;
+ s=default; t=1581696885;
+ bh=IfYo5GkUeVfcL4RXB4WcxTzZDrn3bEBNAepBs8eLd9s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xY6Q47yeeXz5lr26XpoykRzf8NJPNe3TrjFSVu8grCiybgGuRpn7xp6gG5v9rhAXq
- ZHxbrczpCqABdyB7ACchkkoKB74LKWIGBnNRsVRoxwEDSbEVQpIabWDMZ6QUI7/Xph
- opN8zs8SbORvU0Cacd5A64AE8Usg/ZdAQhqjf32o=
+ b=wnvP+A9gBkSDekrajdkmddNjILaFH0cXlzZ3FRtALqKDHsoSNbhZIBGbiZ0Kso/jX
+ mF5idyLazO9UrNum2pPkFZcQb9egRuHd1GydDMLVLbzePYnUIVkBLohPw7mjVVD+9H
+ e1GQ5EU6C0iNRJBZZi/YcoXFX1WxzGXW4qqtH8Cs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 129/252] clk: uniphier: Add SCSSI clock gate for
- each channel
-Date: Fri, 14 Feb 2020 11:09:44 -0500
-Message-Id: <20200214161147.15842-129-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 139/252] crypto: atmel-sha - fix error handling
+ when setting hmac key
+Date: Fri, 14 Feb 2020 11:09:54 -0500
+Message-Id: <20200214161147.15842-139-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214161147.15842-1-sashal@kernel.org>
 References: <20200214161147.15842-1-sashal@kernel.org>
@@ -93,70 +93,56 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Stephen Boyd <sboyd@kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Eric Biggers <ebiggers@google.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+From: Eric Biggers <ebiggers@google.com>
 
-[ Upstream commit 1ec09a2ec67a0baa46a3ccac041dbcdbc6db2cb9 ]
+[ Upstream commit b529f1983b2dcc46354f311feda92e07b6e9e2da ]
 
-SCSSI has clock gates for each channel in the SoCs newer than Pro4,
-so this adds missing clock gates for channel 1, 2 and 3. And more, this
-moves MCSSI clock ID after SCSSI.
+HMAC keys can be of any length, and atmel_sha_hmac_key_set() can only
+fail due to -ENOMEM.  But atmel_sha_hmac_setkey() incorrectly treated
+any error as a "bad key length" error.  Fix it to correctly propagate
+the -ENOMEM error code and not set any tfm result flags.
 
-Fixes: ff388ee36516 ("clk: uniphier: add clock frequency support for SPI")
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
-Link: https://lkml.kernel.org/r/1577410925-22021-1-git-send-email-hayashi.kunihiko@socionext.com
-Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+Fixes: 81d8750b2b59 ("crypto: atmel-sha - add support to hmac(shaX)")
+Cc: Nicolas Ferre <nicolas.ferre@microchip.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Cc: Ludovic Desroches <ludovic.desroches@microchip.com>
+Signed-off-by: Eric Biggers <ebiggers@google.com>
+Reviewed-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/uniphier/clk-uniphier-peri.c | 13 ++++++++-----
- 1 file changed, 8 insertions(+), 5 deletions(-)
+ drivers/crypto/atmel-sha.c | 7 +------
+ 1 file changed, 1 insertion(+), 6 deletions(-)
 
-diff --git a/drivers/clk/uniphier/clk-uniphier-peri.c b/drivers/clk/uniphier/clk-uniphier-peri.c
-index 89b3ac378b3f9..8b75dc116a98c 100644
---- a/drivers/clk/uniphier/clk-uniphier-peri.c
-+++ b/drivers/clk/uniphier/clk-uniphier-peri.c
-@@ -27,8 +27,8 @@
- #define UNIPHIER_PERI_CLK_FI2C(idx, ch)					\
- 	UNIPHIER_CLK_GATE("i2c" #ch, (idx), "i2c", 0x24, 24 + (ch))
+diff --git a/drivers/crypto/atmel-sha.c b/drivers/crypto/atmel-sha.c
+index ef125d4be8fc4..cb548a0506c54 100644
+--- a/drivers/crypto/atmel-sha.c
++++ b/drivers/crypto/atmel-sha.c
+@@ -1921,12 +1921,7 @@ static int atmel_sha_hmac_setkey(struct crypto_ahash *tfm, const u8 *key,
+ {
+ 	struct atmel_sha_hmac_ctx *hmac = crypto_ahash_ctx(tfm);
  
--#define UNIPHIER_PERI_CLK_SCSSI(idx)					\
--	UNIPHIER_CLK_GATE("scssi", (idx), "spi", 0x20, 17)
-+#define UNIPHIER_PERI_CLK_SCSSI(idx, ch)				\
-+	UNIPHIER_CLK_GATE("scssi" #ch, (idx), "spi", 0x20, 17 + (ch))
+-	if (atmel_sha_hmac_key_set(&hmac->hkey, key, keylen)) {
+-		crypto_ahash_set_flags(tfm, CRYPTO_TFM_RES_BAD_KEY_LEN);
+-		return -EINVAL;
+-	}
+-
+-	return 0;
++	return atmel_sha_hmac_key_set(&hmac->hkey, key, keylen);
+ }
  
- #define UNIPHIER_PERI_CLK_MCSSI(idx)					\
- 	UNIPHIER_CLK_GATE("mcssi", (idx), "spi", 0x24, 14)
-@@ -44,7 +44,7 @@ const struct uniphier_clk_data uniphier_ld4_peri_clk_data[] = {
- 	UNIPHIER_PERI_CLK_I2C(6, 2),
- 	UNIPHIER_PERI_CLK_I2C(7, 3),
- 	UNIPHIER_PERI_CLK_I2C(8, 4),
--	UNIPHIER_PERI_CLK_SCSSI(11),
-+	UNIPHIER_PERI_CLK_SCSSI(11, 0),
- 	{ /* sentinel */ }
- };
- 
-@@ -60,7 +60,10 @@ const struct uniphier_clk_data uniphier_pro4_peri_clk_data[] = {
- 	UNIPHIER_PERI_CLK_FI2C(8, 4),
- 	UNIPHIER_PERI_CLK_FI2C(9, 5),
- 	UNIPHIER_PERI_CLK_FI2C(10, 6),
--	UNIPHIER_PERI_CLK_SCSSI(11),
--	UNIPHIER_PERI_CLK_MCSSI(12),
-+	UNIPHIER_PERI_CLK_SCSSI(11, 0),
-+	UNIPHIER_PERI_CLK_SCSSI(12, 1),
-+	UNIPHIER_PERI_CLK_SCSSI(13, 2),
-+	UNIPHIER_PERI_CLK_SCSSI(14, 3),
-+	UNIPHIER_PERI_CLK_MCSSI(15),
- 	{ /* sentinel */ }
- };
+ static int atmel_sha_hmac_init(struct ahash_request *req)
 -- 
 2.20.1
 
