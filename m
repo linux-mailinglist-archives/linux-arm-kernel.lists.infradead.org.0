@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37A4E15DCED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:56:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4569315DD00
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:57:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FnmvgXxUA1x5xP7tObwI8+7OHNs5zkPSTNRvvoz0f6I=; b=bqCrKNK1UaD2hH
-	yNPlwfHZDT7IojQcKw037IQ3/euAIzw5Gm5Y+hNubpnrbJH6jG6DEWjZ43H+1JdM+sEDrGSvwB36Y
-	t3LB59Y0xClwWbIuF8cWgz/7iBJm7q3j+QfVvFzKuBNmLpfOKuEVWz0odi+MsPqELYdjq1I0UGno2
-	NIiidQ7X18HJ4oeH9CEgGJ1fAVHrkRqe4fXe0q82RsDcuj1WyBUJh9h+Lrs6AeaEgz/L38ooDBh14
-	xHrGX0/rHBt4rNs317asmpzd4Es1cGvXwKL0SHFiTtNeZc0Qcf+qkoRnBSdDzasZCiyy8fOcgkKAh
-	K82WeLJ5jV8C/Fu34Q8g==;
+	List-Owner; bh=i/wLwu+vTmWX3eKZhn7gsFYjJg8j3yM5gTF1i4p/3l0=; b=g9BajKzY5huBuY
+	EC68anuSXo7FdleB8Zq21yBJDIeKjbIzAS0Vn7MBGYTAWPu1zv8dPMXuX28BHVVI9VPeZkxXJBWSP
+	rY0To7WPVtd+VnDwdFusk7wbiIn5bz8XQz8bucBYWcXynkwwhBBOEqr7FuF2O2fnSMs50yju30H17
+	sNvuHLbkccP7C45X9gXv21VU4B6XDKCkM2q5mE46oRJwCLDmAD3tlb5JxNdzqBUqQ57ccAqOKktyk
+	Oi8GGlJDe3kvpChPY2lMcmQucVioiaCpahf1O5WboxkQT4H7sitJ1zuLSClh+/wPNuXAmfWFCuo+u
+	l/TMlgATNUf4w3OLjyPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dKM-0001UZ-2c; Fri, 14 Feb 2020 15:56:26 +0000
+	id 1j2dKl-0001kE-2o; Fri, 14 Feb 2020 15:56:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dGe-0005kw-Dl; Fri, 14 Feb 2020 15:52:37 +0000
+ id 1j2dGg-0005o7-Nx
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:52:40 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1BCB3222C4;
- Fri, 14 Feb 2020 15:52:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 93B1324688;
+ Fri, 14 Feb 2020 15:52:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695556;
- bh=j27L0uvNh+GXvHJve/VVwZnTA0Mp4pOfRumbA87sMpU=;
+ s=default; t=1581695558;
+ bh=P6ka74hq+S9cWlwpKuE4fkuQlUl5IcnNTOP1eCnSy9s=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FF9XzIWHUnA8agRrkfyTnfPw0vDGyC+/EycHYZva1W55qQAI+addpJZfhhcBVfYJV
- OfAxyW1ZlDpvwEUrgzUtyFETVoTJLyCP5W920R4opCiWpKEQFjD7VMyBB77badTSAY
- SLu15OBE9RD7iH4QHtpMbWXa9aJt41Q8H88YrSu4=
+ b=aInGn3vRGXHIKL///8TfW2z0m9HNP9SSuukkbF8uiZraCHsxi8wu2Q9RpcO4RWDjb
+ wlObP0a5F4TlkajdsPrm8iGdxWQQW5YR/yxyjzqPQC63bQMcaBQG1mW9hrfRtTKMYM
+ 4mHbkF5qNk6hEqmvWi/VJhe6uSu+sTYMaSZT4aIY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 170/542] arm64: dts: rockchip: Fix NanoPC-T4
- cooling maps
-Date: Fri, 14 Feb 2020 10:42:42 -0500
-Message-Id: <20200214154854.6746-170-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 172/542] arm64: dts: uDPU: fix broken ethernet
+Date: Fri, 14 Feb 2020 10:42:44 -0500
+Message-Id: <20200214154854.6746-172-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075236_515299_D7204D37 
-X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-CacheID: sfid-20200214_075238_809426_5F064A74 
+X-CRM114-Status: UNSURE (   9.10  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -81,71 +81,60 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Robin Murphy <robin.murphy@arm.com>
+From: Russell King <rmk+kernel@armlinux.org.uk>
 
-[ Upstream commit a793e19c15f25a126138ac4ae9facf9204754af3 ]
+[ Upstream commit 1eebac0240580b531954b02c05068051df41142a ]
 
-Although it appeared to follow logically from the bindings, apparently
-the thermal framework can't properly cope with a single cooling device
-being shared between multiple maps. The CPU zone is probably easier to
-overheat, so remove the references to the (optional) fan from the GPU
-cooling zone to avoid things getting confused. Hopefully GPU-intensive
-tasks will leak enough heat across to the CPU zone to still hit the
-fan trips before reaching critical GPU temperatures.
+The uDPU uses both ethernet controllers, which ties up COMPHY 0 for
+eth1 and COMPHY 1 for eth0, with no USB3 comphy.  The addition of
+COMPHY support made the kernel override the setup by the boot loader
+breaking this platform by assuming that COMPHY 0 was always used for
+USB3.  Delete the USB3 COMPHY definition at platform level, and add
+phy specifications for the ethernet channels.
 
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-Link: https://lore.kernel.org/r/5bb39f3115df1a487d717d3ae87e523b03749379.1573908197.git.robin.murphy@arm.com
-Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Fixes: bd3d25b07342 ("arm64: dts: marvell: armada-37xx: link USB hosts with their PHYs")
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- .../boot/dts/rockchip/rk3399-nanopc-t4.dts    | 27 -------------------
- 1 file changed, 27 deletions(-)
+ arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts b/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
-index 2a127985ab171..d3ed8e5e770f1 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
-@@ -94,33 +94,6 @@
- 	};
+diff --git a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
+index bd4aab6092e0f..e31813a4f9722 100644
+--- a/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
++++ b/arch/arm64/boot/dts/marvell/armada-3720-uDPU.dts
+@@ -143,6 +143,7 @@
+ 	phy-mode = "sgmii";
+ 	status = "okay";
+ 	managed = "in-band-status";
++	phys = <&comphy1 0>;
+ 	sfp = <&sfp_eth0>;
  };
  
--&gpu_thermal {
--	trips {
--		gpu_warm: gpu_warm {
--			temperature = <55000>;
--			hysteresis = <2000>;
--			type = "active";
--		};
--
--		gpu_hot: gpu_hot {
--			temperature = <65000>;
--			hysteresis = <2000>;
--			type = "active";
--		};
--	};
--	cooling-maps {
--		map1 {
--			trip = <&gpu_warm>;
--			cooling-device = <&fan THERMAL_NO_LIMIT 1>;
--		};
--
--		map2 {
--			trip = <&gpu_hot>;
--			cooling-device = <&fan 2 THERMAL_NO_LIMIT>;
--		};
--	};
--};
--
- &pinctrl {
- 	ir {
- 		ir_rx: ir-rx {
+@@ -150,11 +151,14 @@
+ 	phy-mode = "sgmii";
+ 	status = "okay";
+ 	managed = "in-band-status";
++	phys = <&comphy0 1>;
+ 	sfp = <&sfp_eth1>;
+ };
+ 
+ &usb3 {
+ 	status = "okay";
++	phys = <&usb2_utmi_otg_phy>;
++	phy-names = "usb2-utmi-otg-phy";
+ };
+ 
+ &uart0 {
 -- 
 2.20.1
 
