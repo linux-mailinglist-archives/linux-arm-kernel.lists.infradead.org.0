@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29F5F15E597
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:43:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9B0915E598
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:43:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ifSkHWn0kK/RdxebQP/gCwSug3weHqEuSSEjYHo4jB4=; b=GV1ccU5VFRr1nJ
-	jmXXMFqq0jiY+yOfKqUHzTT9m9cH1N/ssPu8RUQ9aIAbF35gEkmmyR8P7KQNR29KevZT1BCm+cBN1
-	YRRkQvsuw2F+d9Ytl+WMuUnB/O/ckfkJjRsBaGpN67U7LLHZ73ym03B6zmvSGjFmetTfbJj5oLmQ1
-	MnkyV84vcjpcjkvu+yiWYPxCFa1UBbbLkZcuH5Jn8CtgmzyuF1etSu68gfSo61WRxcnLem3UaUYJ2
-	ruqqO74dE5r7kcAhbqN3/kev60QX2Pr4tGw9y3zAM/wa1wQOvD7aQb4KybsJqKaw15X44ZgcZNhYz
-	sNcOwATswdOcpBH0Ilbg==;
+	List-Owner; bh=VKIYSp9Po/b9cO89a1J8MqQlWdnsLaiaTgUpM7T8UCc=; b=LRRGeMrsSbhPx8
+	BxcCqhfhhX+tu+LABhSLRaziZiBVr5c4REkDU2fQkMe3t3q/6shgRJaB4Ph2St2vBobsPYOOaHQfQ
+	fgQcmMlDnxm1q4etHQAL6cndur+jCuuJBWuDqlSLoJ94K0ruG7EC6p4vvF0BRveGzCWaT6FIraDM8
+	u9SNc6rTT8w03RYL/1z6XCNBx1oVTgL+cNp9fPEay1sDG8B0z1Oe0fM6dQRjvLWmBh0mUuSJv/LF0
+	3w9k2ZYB7alHl1c/lO5VSBwrgGjVeSC3sKUN71fxexARt78HWCC/Tj2J13LbcWx6+UWhOCFr4W7cS
+	HTqiUHJU3OIwtOJIty9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2e3I-00045a-Ak; Fri, 14 Feb 2020 16:42:52 +0000
+	id 1j2e3f-0004NC-6a; Fri, 14 Feb 2020 16:43:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dc3-0006IT-CN
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:15:10 +0000
+ id 1j2dcA-0006Os-OU
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:15:22 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E3A11246AA;
- Fri, 14 Feb 2020 16:14:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 85B23246D9;
+ Fri, 14 Feb 2020 16:14:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696882;
- bh=tt4qicG9AyUyxBltT0C/4gAsKNu/2tuaYYs+7jDOo1w=;
+ s=default; t=1581696890;
+ bh=ZRemAd9JUT5EyKEKaCn4ULKhEfB6fsHOgt6oWQ3bx0I=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tL951TCSCdOPhLdnwaQ451puBbvIbEVyn5Y20W8fZ6sOlnlbhn3qp6g2F596doH6d
- AM69/rRovh408Z3ACMO454Db+LM/ggCfMO3h/8FIgDiYAvpe1iM03zV4kb8baVg6Lv
- uDxprYSPYHZPtuGYrbZclGM8BdThTozHVkz6GQMk=
+ b=flWKi5RDem8ibTS5JuGjAg9JCAx+S8YTsAGC53BdogO0Hq4cCG8ESFPwmyIPH5ZmP
+ 8v/NYz4gSdkhzbmA+na9KTv5bkojjHOfvXBBzx9nqu7YSyTYsLCJ8y722LV1aVgo89
+ ZZPTA8uGgNKyJjj5RdeHP4M4GfrZj8BHOtntyB8A=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 137/252] soc: fsl: qe: remove set but not used
- variable 'mm_gc'
-Date: Fri, 14 Feb 2020 11:09:52 -0500
-Message-Id: <20200214161147.15842-137-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 143/252] iommu/arm-smmu-v3: Populate VMID field
+ for CMDQ_OP_TLBI_NH_VA
+Date: Fri, 14 Feb 2020 11:09:58 -0500
+Message-Id: <20200214161147.15842-143-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214161147.15842-1-sashal@kernel.org>
 References: <20200214161147.15842-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_081443_447554_AEE18E20 
-X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-CacheID: sfid-20200214_081450_839883_1D1D9432 
+X-CRM114-Status: UNSURE (   9.06  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -81,54 +81,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Chen Zhou <chenzhou10@huawei.com>,
- YueHaibing <yuehaibing@huawei.com>, Li Yang <leoyang.li@nxp.com>,
- Hulk Robot <hulkci@huawei.com>, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, iommu@lists.linux-foundation.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: YueHaibing <yuehaibing@huawei.com>
+From: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
 
-[ Upstream commit 6e62bd36e9ad85a22d92b1adce6a0336ea549733 ]
+[ Upstream commit 935d43ba272e0001f8ef446a3eff15d8175cb11b ]
 
-drivers/soc/fsl/qe/gpio.c: In function qe_pin_request:
-drivers/soc/fsl/qe/gpio.c:163:26: warning: variable mm_gc set but not used [-Wunused-but-set-variable]
+CMDQ_OP_TLBI_NH_VA requires VMID and this was missing since
+commit 1c27df1c0a82 ("iommu/arm-smmu: Use correct address mask
+for CMD_TLBI_S2_IPA"). Add it back.
 
-commit 1e714e54b5ca ("powerpc: qe_lib-gpio: use gpiochip data pointer")
-left behind this unused variable.
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-Signed-off-by: Li Yang <leoyang.li@nxp.com>
+Fixes: 1c27df1c0a82 ("iommu/arm-smmu: Use correct address mask for CMD_TLBI_S2_IPA")
+Signed-off-by: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/soc/fsl/qe/gpio.c | 2 --
- 1 file changed, 2 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/soc/fsl/qe/gpio.c b/drivers/soc/fsl/qe/gpio.c
-index 51b3a47b5a559..2aa4088a63e6c 100644
---- a/drivers/soc/fsl/qe/gpio.c
-+++ b/drivers/soc/fsl/qe/gpio.c
-@@ -164,7 +164,6 @@ struct qe_pin *qe_pin_request(struct device_node *np, int index)
- {
- 	struct qe_pin *qe_pin;
- 	struct gpio_chip *gc;
--	struct of_mm_gpio_chip *mm_gc;
- 	struct qe_gpio_chip *qe_gc;
- 	int err;
- 	unsigned long flags;
-@@ -190,7 +189,6 @@ struct qe_pin *qe_pin_request(struct device_node *np, int index)
- 		goto err0;
- 	}
- 
--	mm_gc = to_of_mm_gpio_chip(gc);
- 	qe_gc = gpiochip_get_data(gc);
- 
- 	spin_lock_irqsave(&qe_gc->lock, flags);
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 2ab7100bcff12..eff1f3aa5ef43 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -810,6 +810,7 @@ static int arm_smmu_cmdq_build_cmd(u64 *cmd, struct arm_smmu_cmdq_ent *ent)
+ 		cmd[1] |= FIELD_PREP(CMDQ_CFGI_1_RANGE, 31);
+ 		break;
+ 	case CMDQ_OP_TLBI_NH_VA:
++		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_VMID, ent->tlbi.vmid);
+ 		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_ASID, ent->tlbi.asid);
+ 		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_LEAF, ent->tlbi.leaf);
+ 		cmd[1] |= ent->tlbi.addr & CMDQ_TLBI_1_VA_MASK;
 -- 
 2.20.1
 
