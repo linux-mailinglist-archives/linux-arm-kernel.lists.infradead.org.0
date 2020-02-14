@@ -2,73 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E90C15D13C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 05:50:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6564415D161
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 06:11:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cx1Cz1j2CJ2qkxlyRE/DrBKwlj2y4fPEy3kwUG5FKCM=; b=NftBl0CeVhVjEd
-	AET83bJXx6+lU8gmqTWOpL+d2TSPgSrSUTgqAX1HpULyRjW5yv3DyeyzY/H6/QrCaWOp0Hqu92GNk
-	wEWklC4244t+0kM7rJm4L2aHwzsBH1c2JcVTzX0FNTlahgoF5/RHTe/6H34mc5j6QXKpvK/wuHE7r
-	I5K6eme9sXF2SPFNs5GQTrAI4yeOoHmXZW8ExYoNsEI7+/2I3boq9xQ35fel9xoQeVIB3xo/hYUiu
-	WextU/XKqmv2ABqF1V8g10i2na1FuxHXXNkzHaj0zy39hfG6W5oRoiVs8TQrYG97yDOVcy4HKBNAA
-	9IOhalZVJ5PTSW1ltvgA==;
+	List-Owner; bh=jSZ/tzhgISCJOl9Kk20aEUWCdkoZ43ibpwqcdVre9To=; b=DX3xz/kGbDtmWh
+	XTg6wokcDJ8NiEzMXthtJwpDlihY9/UW1oB8na+jy0ABSitp+A0q9KnKg8NE44LzwM9uKZ0fKw8mL
+	3sPxj4F2eEm4QoAC9OtV2YDoIZjzOH0hAgG6RNgk3dIbsAu/SWVApMnJljR+D/mvfizyIs5JPEvdu
+	igElS/9LXdkZweaTdmUKDTpsz+Zq1ZjeeVcseBZACR77gXZjZV6S9LZxordqjQn+TqRPj6bJVNI9e
+	mwK2qMz2qBVpQVlmTlAqvdU8eHZfh8tJHOU8h28FoQDuwX9qOHpY3L4kaWG1YGMdwCo6YXG6AfG+N
+	zhLZSpHvlz9q3r8DW4eQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Svi-00029q-EE; Fri, 14 Feb 2020 04:50:18 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j2TG7-00027b-M0; Fri, 14 Feb 2020 05:11:23 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2SvS-0001i3-BJ; Fri, 14 Feb 2020 04:50:03 +0000
-X-UUID: e8e0f6f0ca144e3a9dc43c6f562c7209-20200213
+ id 1j2TFu-00026N-Kn; Fri, 14 Feb 2020 05:11:12 +0000
+X-UUID: 82b12ea381a44a71bb98198cda3a2122-20200213
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=os5KCgWF6A0fLJJLfDvO49SGJNON7eejfxhvN78nWGs=; 
- b=qrEqsyTXSX3k1sKRs4pjQK1/7XNbCOS0w0pvEKxv/GNg4srcK7UEuNocgDqnTbO/ndHnHZXrdgt4BOdudFMc2TKvRhdSYpyb00ZkuEjC2JjNbMlpmCupvZmrg4mlyjo4eT6tDhRugl1sSxdqi9qH1Up94YbiWis2KRp1YKoiyNY=;
-X-UUID: e8e0f6f0ca144e3a9dc43c6f562c7209-20200213
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <bibby.hsieh@mediatek.com>)
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=Nk30hZyMmCTsGuoRVVxRW3RnPZuvr/Vyq/uf64SMG/w=; 
+ b=tY83siKs+zarzkOB5JykZEfAHsvV5RJJu1MFJiPLBH2DV8w0NSB2VIvtuObOXuTV8eUfDz0psN7N+s+BhRK5av/BAfHm0QTRwiHsIaMwsdOCirRLenDvyJM7ljsdiM87W47U3Z+n8M29RiND0XAXmYvWVH5Bn400+KaBPphfAhI=;
+X-UUID: 82b12ea381a44a71bb98198cda3a2122-20200213
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 986750470; Thu, 13 Feb 2020 20:49:59 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ with ESMTP id 751781098; Thu, 13 Feb 2020 21:11:05 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 13 Feb 2020 20:50:11 -0800
+ 15.0.1395.4; Thu, 13 Feb 2020 21:06:05 -0800
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 14 Feb 2020 12:49:08 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 14 Feb 2020 12:49:56 +0800
-From: Bibby Hsieh <bibby.hsieh@mediatek.com>
-To: David Airlie <airlied@linux.ie>, Matthias Brugger
- <matthias.bgg@gmail.com>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>
-Subject: [PATCH 3/3] drm/mediatek: move gce event property to mutex device node
-Date: Fri, 14 Feb 2020 12:49:54 +0800
-Message-ID: <20200214044954.16923-3-bibby.hsieh@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200214044954.16923-1-bibby.hsieh@mediatek.com>
-References: <20200214044954.16923-1-bibby.hsieh@mediatek.com>
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 14 Feb 2020 13:05:00 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 14 Feb 2020 13:05:50 +0800
+Message-ID: <1581656751.9307.0.camel@mtksdaap41>
+Subject: Re: [PATCH 3/3] dt-binding: gce: remove atomic_exec in mboxes property
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Fri, 14 Feb 2020 13:05:51 +0800
+In-Reply-To: <20200214043325.16618-4-bibby.hsieh@mediatek.com>
+References: <20200214043325.16618-1-bibby.hsieh@mediatek.com>
+ <20200214043325.16618-4-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_205002_404690_497CA7DE 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200213_211110_691660_38ED2691 
+X-CRM114-Status: GOOD (  14.42  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -89,39 +83,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org, tfiga@chromium.org,
- CK Hu <ck.hu@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, YT Shen <yt.shen@mediatek.com>,
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ srv_heupstream@mediatek.com, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According mtk hardware design, stream_done0 and stream_done1 are
-generated by mutex, so we move gce event property to mutex device mode.
+Hi, Bibby:
 
-Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
----
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On Fri, 2020-02-14 at 12:33 +0800, Bibby Hsieh wrote:
+> There is not any client driver using this feature now,
+> so remove it from binding.
+> 
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index e35b66c5ba0f..e1cc7703a312 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -820,7 +820,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 			drm_crtc_index(&mtk_crtc->base));
- 		mtk_crtc->cmdq_client = NULL;
- 	}
--	ret = of_property_read_u32_index(dev->of_node, "mediatek,gce-events",
-+	ret = of_property_read_u32_index(priv->mutex_node, "mediatek,gce-events",
- 					 drm_crtc_index(&mtk_crtc->base),
- 					 &mtk_crtc->cmdq_event);
- 	if (ret)
--- 
-2.18.0
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
+
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  Documentation/devicetree/bindings/mailbox/mtk-gce.txt | 10 ++++------
+>  1 file changed, 4 insertions(+), 6 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/mailbox/mtk-gce.txt b/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
+> index 7b13787ab13d..0b5b2a6bcc48 100644
+> --- a/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
+> +++ b/Documentation/devicetree/bindings/mailbox/mtk-gce.txt
+> @@ -14,13 +14,11 @@ Required properties:
+>  - interrupts: The interrupt signal from the GCE block
+>  - clock: Clocks according to the common clock binding
+>  - clock-names: Must be "gce" to stand for GCE clock
+> -- #mbox-cells: Should be 3.
+> -	<&phandle channel priority atomic_exec>
+> +- #mbox-cells: Should be 2.
+> +	<&phandle channel priority>
+>  	phandle: Label name of a gce node.
+>  	channel: Channel of mailbox. Be equal to the thread id of GCE.
+>  	priority: Priority of GCE thread.
+> -	atomic_exec: GCE processing continuous packets of commands in atomic
+> -		way.
+>  
+>  Required properties for a client device:
+>  - mboxes: Client use mailbox to communicate with GCE, it should have this
+> @@ -54,8 +52,8 @@ Example for a client device:
+>  
+>  	mmsys: clock-controller@14000000 {
+>  		compatible = "mediatek,mt8173-mmsys";
+> -		mboxes = <&gce 0 CMDQ_THR_PRIO_LOWEST 1>,
+> -			 <&gce 1 CMDQ_THR_PRIO_LOWEST 1>;
+> +		mboxes = <&gce 0 CMDQ_THR_PRIO_LOWEST>,
+> +			 <&gce 1 CMDQ_THR_PRIO_LOWEST>;
+>  		mutex-event-eof = <CMDQ_EVENT_MUTEX0_STREAM_EOF
+>  				CMDQ_EVENT_MUTEX1_STREAM_EOF>;
+>  		mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x3000 0x1000>,
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
