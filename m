@@ -2,63 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79D8315E83F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:59:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6577D15E889
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 18:01:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oo6yCNgBZuoMIOWxXzFUdD7bcjguT1Ugqkte4YaRyLs=; b=kbciHYMmhFEqycftt7aQ0g/I3
-	ksnehgr3KUp/G4Sfo0HjJyC6oOIYl6eNh/hqgQ3BK7GGAtzkE03WyC1HbXZUSDydC30tkpQR/ZJsf
-	E0jTgAO3d+35M8D8oBQMr9rhnhlwwhqibW7E22yLBYKDsuNduIwPGHB6QlUQzFIT/OR3zoD0ehcIf
-	GRTnYbY7rZCDYd89ZWTe9Nm/d2iGQ9O+yG83JZdGl3MlyW019MFqqO9BcoRhCXhuYHOsz5XDvCU39
-	VwU8rJrdr6hn83fCI7/R9QFmAGPHOIGoHngxsPMEqB40RRU0BXgIhr/QiKNo1qDRPs3I7Idk2QJn7
-	JH7cHiSMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LH9wK6R+lkkp5CoKhH6UWBo7e4UW1n/LKu4XPpXiBKA=; b=gawz8bYumlOXOi
+	yUfC8o8hnic9AA13MMIsvwwnyVmEdK1B0o0q5k9NLZtiOllHp8GtcC4iV+FD4QX2rOWZBXncCBKT6
+	r0Svuugib5RsHNzR+DS3PzMVQsfHFamjIaqxVstvX9RXKEkjoPSBMiyN1d0FirbiEHinmi1d4tHAN
+	rfiPp5UaEmuthpzrFEQ6uOFsv/MC3dMhiDHXZC2hONpoi/qoEIpozh5HEmQAcK0eRPIePCgye9J32
+	a+eZScbW18biAZJK17vqDI+w4SjHXhQw+poN7QSqSjQeDGzQbO26ZiitDRKpIXku9ByoCUHxsJoa4
+	h3YN4OUbH5LftOIFzpDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eJJ-00086U-9o; Fri, 14 Feb 2020 16:59:25 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dqr-0006E9-6y
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:30:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ACE4C328;
- Fri, 14 Feb 2020 08:29:55 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 95FC63F68E;
- Fri, 14 Feb 2020 08:29:45 -0800 (PST)
-Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-To: Pankaj Bansal <pankaj.bansal@nxp.com>, Marc Zyngier <maz@kernel.org>
-References: <1580198925-50411-1-git-send-email-makarand.pawagi@nxp.com>
- <20200128110916.GA491@e121166-lin.cambridge.arm.com>
- <DB8PR04MB7164DDF48480956F05886DABEB070@DB8PR04MB7164.eurprd04.prod.outlook.com>
- <12531d6c569c7e14dffe8e288d9f4a0b@kernel.org>
- <CAKv+Gu8uaJBmy5wDgk=uzcmC4vkEyOjW=JRvhpjfsdh-HcOCLg@mail.gmail.com>
- <VI1PR0401MB249622CFA9B213632F1DE955F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
- <7349fa0e6d62a3e0d0e540f2e17646e0@kernel.org>
- <VI1PR0401MB2496373E0C6D1097F22B3026F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <7e1ab651-1eb5-b461-1d21-6fd5c8f3ade8@arm.com>
-Date: Fri, 14 Feb 2020 16:29:40 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j2eKy-0002IU-9w; Fri, 14 Feb 2020 17:01:08 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2dwN-00058a-Fh; Fri, 14 Feb 2020 16:35:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description;
+ bh=X1FIY36JkPPlRt9syaihRAiVQrR7KaQAAxvdKCe1Uzk=; b=X7BRzg2EuZTZKJZAe4ToWypTpw
+ Efseg8smbnbcZIpbPxOD8ngpqRzF9SdxAfphCSKTf+hdmlBPJtMIJPcHxtOl0XauiokVee++8od1r
+ +QAn+cxxqnebHLhsI+5l0WLf3WGfeoRdtbqLV1uFd/lSYvm74nQG/ehZK+qqjc0c+YoMvRJrcgtdG
+ ePLiPhcuqs4jS9TIncAL5aHm7a2Xzvq7Zei9IN9nSDefIcsjxBuk+AngukMGHtvGaep/Jtj3qZ/Zv
+ fQ5uCBXRLJKErhBXrD1R2pbyB8fKhO28dVxj/j+aFzdyAQZCinkr+RcHMLr02pAV9BAUQmtgQ9vzU
+ aw9qOaRg==;
+Received: from mail.kernel.org ([198.145.29.99])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2dba-0002P0-1G; Fri, 14 Feb 2020 16:14:18 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A13BC246D5;
+ Fri, 14 Feb 2020 16:14:11 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581696852;
+ bh=vVexZEER5O/jm8hcPhJvhiZ8rHMq++7YZdv102yM0tw=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=IhEnV7UGM8A7GwSoQ6wkT6VRDxNdd6wPyeSefu/3lPDtPUj5MORPtpjID+14vP3y1
+ /W0blwTDnsMRIRONOOmMOHU+8AHsi1Odz0qgdMKQi8DIu/jmBn5r861VhxUBzXiXql
+ iRLtauuhBdMuKF7dmwpLptOn8TOZY/wVJf1n9R7c=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 4.19 113/252] drm/mediatek: handle events when
+ enabling/disabling crtc
+Date: Fri, 14 Feb 2020 11:09:28 -0500
+Message-Id: <20200214161147.15842-113-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200214161147.15842-1-sashal@kernel.org>
+References: <20200214161147.15842-1-sashal@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <VI1PR0401MB2496373E0C6D1097F22B3026F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-Content-Language: en-GB
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_083001_463528_1516F217 
-X-CRM114-Status: GOOD (  16.07  )
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+X-CRM114-CacheID: sfid-20200214_161414_355031_FCD3F2A2 
+X-CRM114-Status: GOOD (  11.73  )
+X-Spam-Score: -7.1 (-------)
+X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
+ Content analysis details:   (-7.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,69 +94,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Calvin Johnson <calvin.johnson@nxp.com>,
- "stuyoder@gmail.com" <stuyoder@gmail.com>,
- "nleeder@codeaurora.org" <nleeder@codeaurora.org>,
- Ioana Ciornei <ioana.ciornei@nxp.com>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
- Will Deacon <will@kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "jon@solid-run.com" <jon@solid-run.com>, Russell King <linux@armlinux.org.uk>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Len Brown <lenb@kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- Andy Wang <Andy.Wang@arm.com>, Makarand Pawagi <makarand.pawagi@nxp.com>,
- Varun Sethi <V.Sethi@nxp.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>, Paul Yang <Paul.Yang@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Sudeep Holla <sudeep.holla@arm.com>
+Cc: Sasha Levin <sashal@kernel.org>, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ CK Hu <ck.hu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/02/2020 3:58 pm, Pankaj Bansal wrote:
-[...]
->> I don't understand what you mean. Platform MSI using IORT uses the DevID of
->> end-points. How could the ITS could work without specifying a DevID?
->> See for example how the SMMUv3 driver uses platform MSI.
-> 
-> DevID is input ID for PCIe devices. BUT what would be the input ID for platform device? Are we saying that Platform devices can't specify an Input ID ?
+From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 
-No, from the IORT perspective, the input for the ID mappings belonging 
-to a root complex is the PCI requester ID. The (ITS) DevID is the 
-ultimate *output* of a root complex mapping.
+[ Upstream commit 411f5c1eacfebb1f6e40b653d29447cdfe7282aa ]
 
-Whilst you can indeed represent the MC as a black-box Named Component 
-with an ID mapping range not using the "single mapping" flag, that means 
-your input IDs come from some device-specific domain beyond the scope of 
-IORT. That's why you can't easily get away from your special bus 
-integration code.
+The driver currently handles vblank events only when updating planes on
+an already enabled CRTC. The atomic update API however allows requesting
+an event when enabling or disabling a CRTC. This currently leads to
+event objects being leaked in the kernel and to events not being sent
+out. Fix it.
 
->>> While, IORT spec doesn't specify any such limitation.
->>>
->>> we can easily update iort.c to remove this limitation.
->>> But, I am not sure how the input id would be passed from platform MSI
->>> GIC layer to IORT.
->>> Most obviously, the input id should be supplied by dev itself.
->>
->> Why should the device know about its own ID? That's a bus/interconnect thing.
->> And nothing should be passed *to* IORT. IORT is the source.
-> 
-> IORT is translation between Input IDs <-> Output IDs. The Input ID is still expected to be passed to parse IORT table.
+Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Signed-off-by: CK Hu <ck.hu@mediatek.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-...except for single mappings, where the input ID is ignored and the 
-output ID is the "source", which is exactly what iort_node_get_id() 
-deals with for devices represented in IORT. With what you're talking 
-about, "the device" is *not* represented in IORT, but is something 
-beyond the MC 'bridge'. Now it probably is technically possible to 
-handle that somehow, but it's definitely not something that the existing 
-code was ever designed to anticipate.
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 92ecb9bf982cf..b86ee7d25af36 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -308,6 +308,7 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+ {
+ 	struct drm_device *drm = mtk_crtc->base.dev;
++	struct drm_crtc *crtc = &mtk_crtc->base;
+ 	int i;
+ 
+ 	DRM_DEBUG_DRIVER("%s\n", __func__);
+@@ -329,6 +330,13 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+ 	mtk_disp_mutex_unprepare(mtk_crtc->mutex);
+ 
+ 	pm_runtime_put(drm->dev);
++
++	if (crtc->state->event && !crtc->state->active) {
++		spin_lock_irq(&crtc->dev->event_lock);
++		drm_crtc_send_vblank_event(crtc, crtc->state->event);
++		crtc->state->event = NULL;
++		spin_unlock_irq(&crtc->dev->event_lock);
++	}
+ }
+ 
+ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+-- 
+2.20.1
 
-Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
