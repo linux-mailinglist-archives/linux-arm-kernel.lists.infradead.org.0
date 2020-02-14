@@ -2,72 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2AEB615E76E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:54:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 242C415E71E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:52:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oQAXTGpx+0wH+ngcB7nqUyrz9CUFA5p8z8ORFYrbovE=; b=OeA2yjCpzPEMub
-	rTjyfKUd1vJFzwEso23AgaQcT9zVFLuaYoo/RWaWpAMmT8w1DjEOJmR0OZ41MGUXnZqJmw+9pqFKn
-	1IjF+6POh4ZSecV0nC39AWAA4iwthWCrX701mkEyhbK1axm53R9cdJXtO6CwMhqghWr8eTcNp8B/f
-	eKA/FisC10lW5WvplS0AgC8t7d4tyWTag5o9/CK+BURn/lJMalGlQlPnWGmOK80d2lvRAjvHx+Q8Y
-	LqwweP8/MedThCKWV5V+1qvqBC322X730dhTKYrUCh0kAg7Brh6/Wwi0g+nhGkLx0alSeuUVVzhTS
-	adDHK1XVjt1mM03CwFZQ==;
+	List-Owner; bh=cFSMFK4bibB6FcBPmFCTBqSTaNUf2681gmoxFRq9Ji8=; b=oO+2cuntyYRKzc
+	XvZm5WoMPjiA6cnHfQKU9l7131DX0x0MVSp9Xn4X3HJqfWkUnqg+7ndX0bUEL+qazlJT0Wz2AkA3X
+	aqRNSz1V7mYPYuLLIUlVoi8GrqfQp9mIHmOridKxjFMo3Yu86Z+KYdVwRmne+Ej4Htg8DGG37D8rx
+	sE2v+7VSb+QVCZ6jlpH/Jb35ytQK+eNm2HEdGgAAYQMNstP2nfRP3QhW7Z7kl0pIREjA72TwslBY7
+	cJxZiioW54SkMLuKzoWbYLE8S9WM7VHTMU6yf4Rms5PGkYgyy1G6Sv4Zq5LXimRUt1eWqCtmGjKP7
+	KtI42wAOfC3S1Dyg6i8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eEH-0001rC-9o; Fri, 14 Feb 2020 16:54:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2djY-0006Fg-T5
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:22:35 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 92BC3246D9;
- Fri, 14 Feb 2020 16:22:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581697348;
- bh=lteqolzuU+UzVOoAG+rTJZd2wFSneRZ0L8io3FLpjn8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=1d889S5LbhArjuFejkXrS0IdWABDxHZEn40Jor0ycZY0UHPY83BfOQHkYnmZRD5cU
- 0H6V6VsI+xrVE0hDY2ajvbwN+Wgl7It7OSfedm50gEHB2kgmbOqpAAIUCfDKaQlYGw
- x2jPHp6KWfFlYIN61uuBJwixgzxv0oH4r6P2Ykyo=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 052/141] arm: dts: allwinner: H3: Add PMU node
-Date: Fri, 14 Feb 2020 11:19:52 -0500
-Message-Id: <20200214162122.19794-52-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200214162122.19794-1-sashal@kernel.org>
-References: <20200214162122.19794-1-sashal@kernel.org>
+	id 1j2eCu-0000GV-9u; Fri, 14 Feb 2020 16:52:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2dhM-0003QX-4l
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:20:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E7F21328;
+ Fri, 14 Feb 2020 08:20:06 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9512D3F68E;
+ Fri, 14 Feb 2020 08:20:03 -0800 (PST)
+Date: Fri, 14 Feb 2020 16:19:57 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Pankaj Bansal <pankaj.bansal@nxp.com>
+Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
+Message-ID: <20200214161957.GA27513@e121166-lin.cambridge.arm.com>
+References: <1580198925-50411-1-git-send-email-makarand.pawagi@nxp.com>
+ <20200128110916.GA491@e121166-lin.cambridge.arm.com>
+ <DB8PR04MB7164DDF48480956F05886DABEB070@DB8PR04MB7164.eurprd04.prod.outlook.com>
+ <12531d6c569c7e14dffe8e288d9f4a0b@kernel.org>
+ <CAKv+Gu8uaJBmy5wDgk=uzcmC4vkEyOjW=JRvhpjfsdh-HcOCLg@mail.gmail.com>
+ <VI1PR0401MB249622CFA9B213632F1DE955F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
+ <7349fa0e6d62a3e0d0e540f2e17646e0@kernel.org>
+ <VI1PR0401MB2496373E0C6D1097F22B3026F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+In-Reply-To: <VI1PR0401MB2496373E0C6D1097F22B3026F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_082228_974948_69118771 
-X-CRM114-Status: GOOD (  10.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200214_082012_257273_1FAC11A1 
+X-CRM114-Status: GOOD (  10.86  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,77 +70,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
- Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: Calvin Johnson <calvin.johnson@nxp.com>,
+ "stuyoder@gmail.com" <stuyoder@gmail.com>,
+ "nleeder@codeaurora.org" <nleeder@codeaurora.org>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
+ Will Deacon <will@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ "jon@solid-run.com" <jon@solid-run.com>, Russell King <linux@armlinux.org.uk>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Len Brown <lenb@kernel.org>, Jason Cooper <jason@lakedaemon.net>,
+ Andy Wang <Andy.Wang@arm.com>, Makarand Pawagi <makarand.pawagi@nxp.com>,
+ Varun Sethi <V.Sethi@nxp.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>, Paul Yang <Paul.Yang@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andre Przywara <andre.przywara@arm.com>
+On Fri, Feb 14, 2020 at 03:58:14PM +0000, Pankaj Bansal wrote:
 
-[ Upstream commit 0388a110747bec0c9d9de995842bb2a03a26aae1 ]
+[...]
 
-Add the Performance Monitoring Unit (PMU) device tree node to the H3
-.dtsi, which tells DT users which interrupts are triggered by PMU
-overflow events on each core. The numbers come from the manual and have
-been checked in U-Boot and with perf in Linux.
+> > Why should the device know about its own ID? That's a bus/interconnect thing.
+> > And nothing should be passed *to* IORT. IORT is the source.
+> 
+> IORT is translation between Input IDs <-> Output IDs. The Input ID is still expected to be passed to parse IORT table.
 
-Tested with perf record and taskset on an OrangePi Zero.
+Named components use an array of single mappings (as in entries with
+single mapping flag set) - Input ID is irrelevant.
 
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/boot/dts/sun8i-h3.dtsi | 15 ++++++++++++---
- 1 file changed, 12 insertions(+), 3 deletions(-)
+Not sure what your named component is though and what you want to do
+with it, the fact that IORT allows mapping for named components do
+not necessarily mean that it can describe what your system really is,
+on that you need to elaborate for us to be able to help.
 
-diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
-index f4ba088b225ed..08d65f252e172 100644
---- a/arch/arm/boot/dts/sun8i-h3.dtsi
-+++ b/arch/arm/boot/dts/sun8i-h3.dtsi
-@@ -60,25 +60,34 @@
- 			reg = <0>;
- 		};
- 
--		cpu@1 {
-+		cpu1: cpu@1 {
- 			compatible = "arm,cortex-a7";
- 			device_type = "cpu";
- 			reg = <1>;
- 		};
- 
--		cpu@2 {
-+		cpu2: cpu@2 {
- 			compatible = "arm,cortex-a7";
- 			device_type = "cpu";
- 			reg = <2>;
- 		};
- 
--		cpu@3 {
-+		cpu3: cpu@3 {
- 			compatible = "arm,cortex-a7";
- 			device_type = "cpu";
- 			reg = <3>;
- 		};
- 	};
- 
-+	pmu {
-+		compatible = "arm,cortex-a7-pmu";
-+		interrupts = <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-affinity = <&cpu0>, <&cpu1>, <&cpu2>, <&cpu3>;
-+	};
-+
- 	timer {
- 		compatible = "arm,armv7-timer";
- 		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
--- 
-2.20.1
-
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
