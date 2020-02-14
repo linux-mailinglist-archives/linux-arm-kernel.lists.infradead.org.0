@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3DE715E712
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:52:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F98B15E711
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:52:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mFhK++xV5Bh2RrciezxBUE2p+oEyo8+p4tp6T6MgxCc=; b=ZwlvDpvWMmv0fM
-	rKoV3hdyjRV8dOhJ9nJVmRRGXPN6iPHAi+EGR35BaQa/OEB3nXDvFIhQbZlfVRKviEOqM8aORigaL
-	6buK03gfiO2dy+o5+uPNtpQxnN+FvWUnAU6K3Z0yxerQt1hiIBe5Bsg1SiWz6Oz+74AhlOzx9nYfd
-	XmFFVCPoa+FHSc/cXZG/sCTZoVrT+PvbipLvue0W/qBlJ+P63yrNw1oiqOuwWdDgyhe/71rCXaSEt
-	w/5W/vYsCDz3h4DU1UzzQ9DSz5QYbxo0AX7enbsenkl0fU3JDKNMikLu/9POMeI/KUrpYLrIf/E6l
-	NjsFEfDdcR6YPxZ+c4WA==;
+	List-Owner; bh=ZYX8WSW+g8plJtnkIHSAdZ/dUd/TDvZuFRiBlvrJBjQ=; b=T8CeQpFRZ5aZph
+	xN4yVxU8sDV1COMJatpWlbo+mfxmDvW2aS1sAuJGg5z08e+mdVlsO9vnH3TU4pGUFUTaLScTvMiA9
+	bHnBwGZKbYAg+M3lcJvLpBQCKix2vnpu8U0jJtf8EYFUr2kyPh25V5lJnRUTjCDzY1hXXfBnb1Jm8
+	rBlNDAymhgKSmNi1c3OywRScEZB6IeUbfIEPgK/9wlPuM++GeDhDDFARUvZMthk/pbrNzzCfu/3zp
+	3Tenv84HLplDzhPJYDPgngEOmwZLQsrE4V6lw1Ad3AEWuL0SpA2srEymuifK/QU0dg0YZ+EHvCxgW
+	VIBijJEQxoPVvyGDmKag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eCU-00087g-Tr; Fri, 14 Feb 2020 16:52:22 +0000
+	id 1j2eCE-0007op-64; Fri, 14 Feb 2020 16:52:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dhF-00037O-Td
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:20:15 +0000
+ id 1j2dhJ-0003Zl-Gd
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:20:16 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 89E5F2472C;
- Fri, 14 Feb 2020 16:20:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 94DD02472E;
+ Fri, 14 Feb 2020 16:20:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581697204;
- bh=WejT3Jlm73icaZYufA+h2E/dA+9hbApxdmiA8FvbewE=;
+ s=default; t=1581697208;
+ bh=v8RggOWRhdTmTXGdZlCoonCe9F8oI4uaLtoXyKNSaKk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=18LPU1mTGvyoZmVX6Y9BlIaffz0Sg0hn1y/GAq8Q2ih/QDMi0N10lljAYoOQI3UxP
- LMC0nWFFTWweZoCRR+lBdXJg7hyYWZpJIBUOrJzcDFDJ5fGKCEgcAK/VStyLSO7CQn
- nZysXUNce0oFiDwwDNf1gPaWv84UZgTjg41tk+f8=
+ b=oXGa5R4BCUyAWwnnrao4H0za1DW4aW61OaUYnvWxDd3ZD+BlRT4jgdYjmBiMo4Bi1
+ h+U+wYbP/1mrPJvefYZevrjehONGteiBt12cTkf6e4YyMuxpEibTpKpuFCVYdQf5WG
+ RgznON12+xxMVSZDq7Xyct2F5/RhIbBo/i/1aeuw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 131/186] iommu/arm-smmu-v3: Use WRITE_ONCE() when
- changing validity of an STE
-Date: Fri, 14 Feb 2020 11:16:20 -0500
-Message-Id: <20200214161715.18113-131-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 134/186] arm64: fix alternatives with LLVM's
+ integrated assembler
+Date: Fri, 14 Feb 2020 11:16:23 -0500
+Message-Id: <20200214161715.18113-134-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214161715.18113-1-sashal@kernel.org>
 References: <20200214161715.18113-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_082006_056431_712C32B1 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20200214_082009_802212_0EF71B2F 
+X-CRM114-Status: GOOD (  11.14  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,47 +80,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Jean-Philippe Brucker <jean-philippe@linaro.org>,
- iommu@lists.linux-foundation.org, Will Deacon <will@kernel.org>,
+Cc: Sasha Levin <sashal@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, clang-built-linux@googlegroups.com,
+ Sami Tolvanen <samitolvanen@google.com>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will@kernel.org>
+From: Sami Tolvanen <samitolvanen@google.com>
 
-[ Upstream commit d71e01716b3606a6648df7e5646ae12c75babde4 ]
+[ Upstream commit c54f90c2627cc316d365e3073614731e17dbc631 ]
 
-If, for some bizarre reason, the compiler decided to split up the write
-of STE DWORD 0, we could end up making a partial structure valid.
+LLVM's integrated assembler fails with the following error when
+building KVM:
 
-Although this probably won't happen, follow the example of the
-context-descriptor code and use WRITE_ONCE() to ensure atomicity of the
-write.
+  <inline asm>:12:6: error: expected absolute expression
+   .if kvm_update_va_mask == 0
+       ^
+  <inline asm>:21:6: error: expected absolute expression
+   .if kvm_update_va_mask == 0
+       ^
+  <inline asm>:24:2: error: unrecognized instruction mnemonic
+          NOT_AN_INSTRUCTION
+          ^
+  LLVM ERROR: Error parsing inline asm
 
-Reported-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+These errors come from ALTERNATIVE_CB and __ALTERNATIVE_CFG,
+which test for the existence of the callback parameter in inline
+assembly using the following expression:
+
+  " .if " __stringify(cb) " == 0\n"
+
+This works with GNU as, but isn't supported by LLVM. This change
+splits __ALTERNATIVE_CFG and ALTINSTR_ENTRY into separate macros
+to fix the LLVM build.
+
+Link: https://github.com/ClangBuiltLinux/linux/issues/472
+Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
+Tested-by: Nick Desaulniers <ndesaulniers@google.com>
+Reviewed-by: Kees Cook <keescook@chromium.org>
 Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/iommu/arm-smmu-v3.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm64/include/asm/alternative.h | 32 ++++++++++++++++++----------
+ 1 file changed, 21 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 09eb258a9a7de..29feafa8007fb 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -1145,7 +1145,8 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_device *smmu, u32 sid,
- 	}
+diff --git a/arch/arm64/include/asm/alternative.h b/arch/arm64/include/asm/alternative.h
+index a91933b1e2e62..4cd4a793dc328 100644
+--- a/arch/arm64/include/asm/alternative.h
++++ b/arch/arm64/include/asm/alternative.h
+@@ -30,13 +30,16 @@ typedef void (*alternative_cb_t)(struct alt_instr *alt,
+ void __init apply_alternatives_all(void);
+ void apply_alternatives(void *start, size_t length);
  
- 	arm_smmu_sync_ste_for_sid(smmu, sid);
--	dst[0] = cpu_to_le64(val);
-+	/* See comment in arm_smmu_write_ctx_desc() */
-+	WRITE_ONCE(dst[0], cpu_to_le64(val));
- 	arm_smmu_sync_ste_for_sid(smmu, sid);
+-#define ALTINSTR_ENTRY(feature,cb)					      \
++#define ALTINSTR_ENTRY(feature)					              \
+ 	" .word 661b - .\n"				/* label           */ \
+-	" .if " __stringify(cb) " == 0\n"				      \
+ 	" .word 663f - .\n"				/* new instruction */ \
+-	" .else\n"							      \
++	" .hword " __stringify(feature) "\n"		/* feature bit     */ \
++	" .byte 662b-661b\n"				/* source len      */ \
++	" .byte 664f-663f\n"				/* replacement len */
++
++#define ALTINSTR_ENTRY_CB(feature, cb)					      \
++	" .word 661b - .\n"				/* label           */ \
+ 	" .word " __stringify(cb) "- .\n"		/* callback */	      \
+-	" .endif\n"							      \
+ 	" .hword " __stringify(feature) "\n"		/* feature bit     */ \
+ 	" .byte 662b-661b\n"				/* source len      */ \
+ 	" .byte 664f-663f\n"				/* replacement len */
+@@ -57,15 +60,14 @@ void apply_alternatives(void *start, size_t length);
+  *
+  * Alternatives with callbacks do not generate replacement instructions.
+  */
+-#define __ALTERNATIVE_CFG(oldinstr, newinstr, feature, cfg_enabled, cb)	\
++#define __ALTERNATIVE_CFG(oldinstr, newinstr, feature, cfg_enabled)	\
+ 	".if "__stringify(cfg_enabled)" == 1\n"				\
+ 	"661:\n\t"							\
+ 	oldinstr "\n"							\
+ 	"662:\n"							\
+ 	".pushsection .altinstructions,\"a\"\n"				\
+-	ALTINSTR_ENTRY(feature,cb)					\
++	ALTINSTR_ENTRY(feature)						\
+ 	".popsection\n"							\
+-	" .if " __stringify(cb) " == 0\n"				\
+ 	".pushsection .altinstr_replacement, \"a\"\n"			\
+ 	"663:\n\t"							\
+ 	newinstr "\n"							\
+@@ -73,17 +75,25 @@ void apply_alternatives(void *start, size_t length);
+ 	".popsection\n\t"						\
+ 	".org	. - (664b-663b) + (662b-661b)\n\t"			\
+ 	".org	. - (662b-661b) + (664b-663b)\n"			\
+-	".else\n\t"							\
++	".endif\n"
++
++#define __ALTERNATIVE_CFG_CB(oldinstr, feature, cfg_enabled, cb)	\
++	".if "__stringify(cfg_enabled)" == 1\n"				\
++	"661:\n\t"							\
++	oldinstr "\n"							\
++	"662:\n"							\
++	".pushsection .altinstructions,\"a\"\n"				\
++	ALTINSTR_ENTRY_CB(feature, cb)					\
++	".popsection\n"							\
+ 	"663:\n\t"							\
+ 	"664:\n\t"							\
+-	".endif\n"							\
+ 	".endif\n"
  
- 	/* It's likely that we'll want to use the new STE soon */
+ #define _ALTERNATIVE_CFG(oldinstr, newinstr, feature, cfg, ...)	\
+-	__ALTERNATIVE_CFG(oldinstr, newinstr, feature, IS_ENABLED(cfg), 0)
++	__ALTERNATIVE_CFG(oldinstr, newinstr, feature, IS_ENABLED(cfg))
+ 
+ #define ALTERNATIVE_CB(oldinstr, cb) \
+-	__ALTERNATIVE_CFG(oldinstr, "NOT_AN_INSTRUCTION", ARM64_CB_PATCH, 1, cb)
++	__ALTERNATIVE_CFG_CB(oldinstr, ARM64_CB_PATCH, 1, cb)
+ #else
+ 
+ #include <asm/assembler.h>
 -- 
 2.20.1
 
