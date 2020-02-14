@@ -2,97 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F3A615D269
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 07:50:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC72C15D27D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 08:03:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=AQAUhG5YpvZtd2TQI5y2SuzeyKsJYDSmoX/6cR7mW+k=; b=T9FTiGJ0OGz/nG
-	A9ew2LcecrjZ7D9DJ9LZF4VW08iScUsBvEXzsZPIbSk4qHIzQMkR/EswCZQGfwKbuNvD92sHw+vct
-	WVS2/OhfZfZPIF3wLLbW4abYdq9zjXYjL9UVkHDwRsGN4CPcVJN2X5wWAl3UnGpy2I5sFlWcmyu7t
-	lEkOZ4nkkjVuabBj5ctMIh1k7FP/fyp0K8HZuup6B2XpGMPNMJ9Ab/fKRSSPmUsOSuz3ynKuozWpL
-	ANw+4xgAkPOXnrOWEKlkNMAgeF/bx9M7+4ldaGYFqHSV3bw6F2ldfisH1kr4RmnpmxBj2bcFN+fdI
-	o11rxJ+eml3JaIHzAQsA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/kt9uNjmVbfhXd2xZ4YmOxL+yhD3bXBV+bHHeVwNWOo=; b=BTRgvLwspH1UDv
+	qdE2oRapu8H4HqKLam4eQfZtqVIiwpBuYyuOEYNNJBvTpTO/njrpWKas22D8giLQcEVMDMeKzYaV3
+	8IxtzxO3/Nm6XSfucLyErn6qYz2Y0BL8uoUHUhDXM2BKCX1eXqC39Mtkix/Nab4I/NsLhfp6ossDU
+	fe38oY6PuzHvW5jh9TL1fsP7wghof6UuqlCGz5I5/slwDfd2r5H3A12EsIDycTQY9PFLsOwUu68IC
+	HMdJHgRxsTnN51CmO3r5i1mVUy5DMfrzYE9/BAkybOdkQRJJPog0BtAnd2ln/QFVpMCmWP+76g58x
+	5DJ9rmgGx5MevZxY9UFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Unr-00055x-Tk; Fri, 14 Feb 2020 06:50:19 +0000
-Received: from gateway24.websitewelcome.com ([192.185.51.61])
+	id 1j2V0M-00009t-5V; Fri, 14 Feb 2020 07:03:14 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Unj-0003sv-Jd
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 06:50:13 +0000
-Received: from cm16.websitewelcome.com (cm16.websitewelcome.com [100.42.49.19])
- by gateway24.websitewelcome.com (Postfix) with ESMTP id E7B8C31125
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Feb 2020 00:49:57 -0600 (CST)
-Received: from br164.hostgator.com.br ([192.185.176.180]) by cmsmtp with SMTP
- id 2UnVjVddW8vkB2UnVjTK35; Fri, 14 Feb 2020 00:49:57 -0600
-X-Authority-Reason: nr=8
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=castello.eng.br; s=default; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=x3HqSZrL9+fZXJMxZEHFm+rcw99J7Dz8a7+GnuEr4Rw=; b=TWNAS05Xry4K2p0yjDxEBDZAdf
- O+NW/uoIPWMBCYQ9zxRTDOiPqhpISuK/+8j+L6rXQsKVl2JnM8Y6ocp/5An1eVoUG1wfb8eNBHQzI
- olaFwqqhcKEYYEpZe0Q51CAllGtlBBYqFY6GQXQ8izA3zJhbWR1P8f6hVzNk2Om57+VcsCSJNqhiK
- ysFxY9waAt23Wq9yFOH60UX8rJmvNf8cT07h9Euqt8vNvJLPhDIoz12olW5hmQh2KB3NRWz//J0Bt
- 0mE9yfynqz83Xt/aFV28uFpUX5tP4tAs/bKcmthIhlj+bPxwrntu8OnrizHaDtlf64BdgnWgOSHzx
- x2pd0Ggw==;
-Received: from [191.31.199.191] (port=34918 helo=castello.castello)
- by br164.hostgator.com.br with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
- (envelope-from <matheus@castello.eng.br>)
- id 1j2UnV-0014Dq-4o; Fri, 14 Feb 2020 03:49:57 -0300
-From: Matheus Castello <matheus@castello.eng.br>
-To: afaerber@suse.de,
-	manivannan.sadhasivam@linaro.org
-Subject: [PATCH] clocksource: owl: Improve owl_timer_init fail messages
-Date: Fri, 14 Feb 2020 03:49:23 -0300
-Message-Id: <20200214064923.190035-1-matheus@castello.eng.br>
-X-Mailer: git-send-email 2.25.0
+ id 1j2V0D-00008z-Eb
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 07:03:07 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j2Uzz-0000Rz-2W; Fri, 14 Feb 2020 08:02:51 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j2Uzv-000751-2u; Fri, 14 Feb 2020 08:02:47 +0100
+Date: Fri, 14 Feb 2020 08:02:47 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Anson Huang <anson.huang@nxp.com>
+Subject: Re: [PATCH] ARM: dts: imx6sx: Add missing uart mux function
+Message-ID: <20200214070247.wrh6yaccyqiwlezh@pengutronix.de>
+References: <1581576189-20490-1-git-send-email-Anson.Huang@nxp.com>
+ <20200213072710.4snwbo3i7vfbroqy@pengutronix.de>
+ <DB3PR0402MB39163A56BF6AA37E3C691964F51A0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <20200213095119.f6obrdqb6ql76qqy@pengutronix.de>
+ <DB3PR0402MB391620CB6FA1C3E86AD5C163F5150@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - br164.hostgator.com.br
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - castello.eng.br
-X-BWhitelist: no
-X-Source-IP: 191.31.199.191
-X-Source-L: No
-X-Exim-ID: 1j2UnV-0014Dq-4o
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: (castello.castello) [191.31.199.191]:34918
-X-Source-Auth: matheus@castello.eng.br
-X-Email-Count: 2
-X-Source-Cap: Y2FzdGUyNDg7Y2FzdGUyNDg7YnIxNjQuaG9zdGdhdG9yLmNvbS5icg==
-X-Local-Domain: yes
+Content-Disposition: inline
+In-Reply-To: <DB3PR0402MB391620CB6FA1C3E86AD5C163F5150@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_225011_789004_157CE19E 
-X-CRM114-Status: UNSURE (   8.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200213_230305_492362_1406DC06 
+X-CRM114-Status: GOOD (  10.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.51.61 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,66 +71,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tglx@linutronix.de, daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Matheus Castello <matheus@castello.eng.br>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adding error messages, in case of not having a defined clock property
-and in case of an error in clocksource_mmio_init, which may not be
-fatal, so just adding a pr_err to notify that it failed.
+Hello Anson,
 
-Signed-off-by: Matheus Castello <matheus@castello.eng.br>
----
+On Fri, Feb 14, 2020 at 05:11:11AM +0000, Anson Huang wrote:
+> >  - rename existing imx6sx symbols to contain DTE or DCE
+> >    (introducing defines that map the old name to the new)
+> =
 
-Tested on my Caninos Labrador s500 based board. If the clock property is not
-set this message would help debug:
+> Is the introducing defines that map to old name to the new mainly for
+> NOT breaking bisect? As pinfunc.h is changed in a separate patch other th=
+an dts files. =
 
-...
-[    0.000000] Failed to get OF clock for clocksource
-[    0.000000] Failed to initialize '/soc/timer@b0168000': -2
-[    0.000000] timer_probe: no matching timers found
-...
 
- drivers/clocksource/timer-owl.c | 11 ++++++++---
- 1 file changed, 8 insertions(+), 3 deletions(-)
+It's also for not breaking out-of-tree dts files. I'd put them at the
+bottom of the file with a comment that these are not supposed to be used
+any more and remove them after a bit of bitrotting there.
 
-diff --git a/drivers/clocksource/timer-owl.c b/drivers/clocksource/timer-owl.c
-index 900fe736145d..f53596f9e86c 100644
---- a/drivers/clocksource/timer-owl.c
-+++ b/drivers/clocksource/timer-owl.c
-@@ -135,8 +135,10 @@ static int __init owl_timer_init(struct device_node *node)
- 	}
+Best regards
+Uwe
 
- 	clk = of_clk_get(node, 0);
--	if (IS_ERR(clk))
-+	if (IS_ERR(clk)) {
-+		pr_err("Failed to get OF clock for clocksource\n");
- 		return PTR_ERR(clk);
-+	}
+-- =
 
- 	rate = clk_get_rate(clk);
-
-@@ -144,8 +146,11 @@ static int __init owl_timer_init(struct device_node *node)
- 	owl_timer_set_enabled(owl_clksrc_base, true);
-
- 	sched_clock_register(owl_timer_sched_read, 32, rate);
--	clocksource_mmio_init(owl_clksrc_base + OWL_Tx_VAL, node->name,
--			      rate, 200, 32, clocksource_mmio_readl_up);
-+	ret = clocksource_mmio_init(owl_clksrc_base + OWL_Tx_VAL, node->name,
-+				    rate, 200, 32, clocksource_mmio_readl_up);
-+
-+	if (ret)
-+		pr_err("Failed to register clocksource %d\n", ret);
-
- 	owl_timer_reset(owl_clkevt_base);
-
---
-2.25.0
-
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
