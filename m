@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EF0E15DCA4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:55:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 37A4E15DCED
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:56:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H5f5SZDd3uo0COvnN7LqWZ0xGXapKlvCvPW9N+Qkkuk=; b=nOr0U1Mks3RX9a
-	CpsQYkcSfHInGO1pdTPKnYd5luZTVMcpAGqDj6UTgBezMHsXo8L0eJIH0KIZm6pAXdG8KgUP2IsdZ
-	SgGAcN4FT67Z91XtEoG+KbwVpDVJXAZ7RWLXLcUGmfmCKKj0DQTfO2999dJ9d1VaPJRDucgrywL8K
-	+nGRSTGXyNWdx49jCO7qRsOayKsyKUVF99D8JRLXcx7mScySapZh4sf0rZ0fQ4YqioOzEzTRJsD9S
-	TpJsG7QJeyIzl9GXc7gwEA4VIDDo31DqBYXmG4qzxgyNhts0K4tPlIy9K37H1pFrWzJOO6u9nnmWr
-	BS7cJbq5NJeAAKoRT9aw==;
+	List-Owner; bh=FnmvgXxUA1x5xP7tObwI8+7OHNs5zkPSTNRvvoz0f6I=; b=bqCrKNK1UaD2hH
+	yNPlwfHZDT7IojQcKw037IQ3/euAIzw5Gm5Y+hNubpnrbJH6jG6DEWjZ43H+1JdM+sEDrGSvwB36Y
+	t3LB59Y0xClwWbIuF8cWgz/7iBJm7q3j+QfVvFzKuBNmLpfOKuEVWz0odi+MsPqELYdjq1I0UGno2
+	NIiidQ7X18HJ4oeH9CEgGJ1fAVHrkRqe4fXe0q82RsDcuj1WyBUJh9h+Lrs6AeaEgz/L38ooDBh14
+	xHrGX0/rHBt4rNs317asmpzd4Es1cGvXwKL0SHFiTtNeZc0Qcf+qkoRnBSdDzasZCiyy8fOcgkKAh
+	K82WeLJ5jV8C/Fu34Q8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dJf-0000pI-Dm; Fri, 14 Feb 2020 15:55:43 +0000
+	id 1j2dKM-0001UZ-2c; Fri, 14 Feb 2020 15:56:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dFr-0004rN-HK; Fri, 14 Feb 2020 15:51:50 +0000
+ id 1j2dGe-0005kw-Dl; Fri, 14 Feb 2020 15:52:37 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A88F524676;
- Fri, 14 Feb 2020 15:51:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1BCB3222C4;
+ Fri, 14 Feb 2020 15:52:34 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695506;
- bh=wKF6to/Ae7L+wJeSIQu3UCpCEcTa0xmUwfpSPCOZrZI=;
+ s=default; t=1581695556;
+ bh=j27L0uvNh+GXvHJve/VVwZnTA0Mp4pOfRumbA87sMpU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=mvScXVCZZGKbdhDLBBA8Pf1/tP6aX9MO+p+8ZaCwgzXkSUkc96Hr73x+FgaAS4iqc
- p5Qp3Ws/4Bp5FgBfZMjynkEPkUM0ZTkCvcdfilJVqVylr0uTI6L3b7ndalN9MlNgOa
- S29QIkVTgPNXErNpIPm+NWd6v6U4hg0CSbaifSVU=
+ b=FF9XzIWHUnA8agRrkfyTnfPw0vDGyC+/EycHYZva1W55qQAI+addpJZfhhcBVfYJV
+ OfAxyW1ZlDpvwEUrgzUtyFETVoTJLyCP5W920R4opCiWpKEQFjD7VMyBB77badTSAY
+ SLu15OBE9RD7iH4QHtpMbWXa9aJt41Q8H88YrSu4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 132/542] mt76: mt7615: fix max_nss in
- mt7615_eeprom_parse_hw_cap
-Date: Fri, 14 Feb 2020 10:42:04 -0500
-Message-Id: <20200214154854.6746-132-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 170/542] arm64: dts: rockchip: Fix NanoPC-T4
+ cooling maps
+Date: Fri, 14 Feb 2020 10:42:42 -0500
+Message-Id: <20200214154854.6746-170-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075147_612795_7F2726A6 
-X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-CacheID: sfid-20200214_075236_515299_D7204D37 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -80,45 +80,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Kalle Valo <kvalo@codeaurora.org>, Lorenzo Bianconi <lorenzo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lorenzo Bianconi <lorenzo@kernel.org>
+From: Robin Murphy <robin.murphy@arm.com>
 
-[ Upstream commit d08f3010f4a32eec3c8aa771f03a1b342a1472fa ]
+[ Upstream commit a793e19c15f25a126138ac4ae9facf9204754af3 ]
 
-Fix u8 cast reading max_nss from MT_TOP_STRAP_STA register in
-mt7615_eeprom_parse_hw_cap routine
+Although it appeared to follow logically from the bindings, apparently
+the thermal framework can't properly cope with a single cooling device
+being shared between multiple maps. The CPU zone is probably easier to
+overheat, so remove the references to the (optional) fan from the GPU
+cooling zone to avoid things getting confused. Hopefully GPU-intensive
+tasks will leak enough heat across to the CPU zone to still hit the
+fan trips before reaching critical GPU temperatures.
 
-Fixes: acf5457fd99db ("mt76: mt7615: read {tx,rx} mask from eeprom")
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
-Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
+Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+Link: https://lore.kernel.org/r/5bb39f3115df1a487d717d3ae87e523b03749379.1573908197.git.robin.murphy@arm.com
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ .../boot/dts/rockchip/rk3399-nanopc-t4.dts    | 27 -------------------
+ 1 file changed, 27 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c b/drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c
-index eccad4987ac83..17e277bf39e0f 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/eeprom.c
-@@ -92,8 +92,9 @@ static int mt7615_check_eeprom(struct mt76_dev *dev)
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts b/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
+index 2a127985ab171..d3ed8e5e770f1 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
+@@ -94,33 +94,6 @@
+ 	};
+ };
  
- static void mt7615_eeprom_parse_hw_cap(struct mt7615_dev *dev)
- {
--	u8 val, *eeprom = dev->mt76.eeprom.data;
-+	u8 *eeprom = dev->mt76.eeprom.data;
- 	u8 tx_mask, rx_mask, max_nss;
-+	u32 val;
- 
- 	val = FIELD_GET(MT_EE_NIC_WIFI_CONF_BAND_SEL,
- 			eeprom[MT_EE_WIFI_CONF]);
+-&gpu_thermal {
+-	trips {
+-		gpu_warm: gpu_warm {
+-			temperature = <55000>;
+-			hysteresis = <2000>;
+-			type = "active";
+-		};
+-
+-		gpu_hot: gpu_hot {
+-			temperature = <65000>;
+-			hysteresis = <2000>;
+-			type = "active";
+-		};
+-	};
+-	cooling-maps {
+-		map1 {
+-			trip = <&gpu_warm>;
+-			cooling-device = <&fan THERMAL_NO_LIMIT 1>;
+-		};
+-
+-		map2 {
+-			trip = <&gpu_hot>;
+-			cooling-device = <&fan 2 THERMAL_NO_LIMIT>;
+-		};
+-	};
+-};
+-
+ &pinctrl {
+ 	ir {
+ 		ir_rx: ir-rx {
 -- 
 2.20.1
 
