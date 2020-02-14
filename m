@@ -2,75 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF57D15D55D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 11:18:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ADAA15D566
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 11:20:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6sG1GqS5fiL0BvbdpGBWJu0sIbOOPCIndE/3rKy/owU=; b=oFj3ax6zi9LBXW
-	etDdTCTQ/gtCohpoyPAKdMoZRjdaxpc7W7Vy3SlITQ09zOzIMprnjOCvXgiu00q0xYpZufsVZcB57
-	LcMTJ1ZEKfaEEf9/CuZRHoQOOuppsyKCJKp/uNW3M3NLebGWVXOZnhLIpts0Vyue5pSJhGAaOLdJI
-	x69XkBmzOaGnm73GpICS6bYGwcZp8xtSdXUDcsH6uhPjKkvoaX9Gl8t6JQ3qF8MvRWi88jnw7TUjI
-	3gQp8yyKv/GjlXmMw2q0AH/MuBk6Gih/MaLFivNbI4jFm7GFPBWMpbknjaGAsrUrYAkU0ZG8GgW6a
-	23Ti5ndMWUgdbCgS9Zgw==;
+	List-Owner; bh=70ogmREzrMel53+PnNSxCAl9QNQ7YeR8BEcZZWLLSEI=; b=uKvgeEsX+hItKm
+	DEwf+nQu3g5mjyFcimul228dycZ9qMCbM1etxrXYEVTvJnCWFbuSSQ8X61F35aIMcQSxG0uORnulp
+	wgEeTUpoOPH7NP4mAhLwOBHYZDAte+7WzAe5rnaac0XnvP8NY3NoZgKMRoZndjkJIfptWpRER+IeZ
+	MWrYkSqBWyHGhHBb0ho3t40reB9gJXIuzNDRUgtJ7UXYKU2KeQK2CaBMRZMhIkbd4VSUU3P58lGl2
+	k7Am8tWr58dCi16s8ehCU88Lc69YqFTgx9OQN0v+uG3/eFlPlrwauiyLtOGZUMkmD8o8Ax42s42pS
+	eNH/BlhF3qmXaLRqbIxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2Y2r-0001EW-FS; Fri, 14 Feb 2020 10:18:01 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1j2Y54-0002p7-8G; Fri, 14 Feb 2020 10:20:18 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2Y2c-0001EC-Rz
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 10:17:48 +0000
-Received: by mail-lj1-x242.google.com with SMTP id n18so10099568ljo.7
+ id 1j2Y4t-0002Qa-Lq
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 10:20:09 +0000
+Received: by mail-lj1-x244.google.com with SMTP id o15so10106278ljg.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Feb 2020 02:17:46 -0800 (PST)
+ Fri, 14 Feb 2020 02:20:07 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=v8ypgl7dFd+FN00YxlfzHIJKl3YchrCCrbKgFjCVTDU=;
- b=MNxQ+HuCDY088dTom9PFOh4rxyHd576KmzzMsyWnYhyp0UpgWA19L6Nitp2AQc9dOy
- Karscw08YlX4Dg1W61ESUi5f/31NGIDZm4EqIus9tIQf+O5M28Y0jyTAuo9dR1Y0H0rz
- 2AVAJRbtO9yn7RjFNZXS30hjpVKDSBST7Y0jgBDL2snZDVKS2dRMHy3QacypQ2LxKwZV
- trk4g/jfx145+VkRAcZ465GPkGogpEK8AuFur1fwyfBP6l7dThSPi/EbX65bqU7Qi44y
- VyHWfpFOgYhi74jRlwh6ixM7165ALYt30ELZoP2vcFxOIAzfaRAipnLZObe3Kz/Jmo8W
- S6uQ==
+ :cc; bh=a84WNLM8wHkd5zEtxHoEDgoCVKtrYjUViLHMY7hthbM=;
+ b=Gj6tG+Qt7ycjUY4Q2ZAXyamt4t4+IDdww3s8W9LBz0qskerpmAwDH4ozKfHDaq9+3B
+ OawNf6cyiZJ4cMn5p8gXDPXDqWERgdiSM4tHnRLkyR1BUTncMg0AiBKlUIaPCigS/w+I
+ hHKj4YQAuRVNwLKDQMYcjNrsrORFZTl2NSe3GktvgggquQuVYglQ5uJOIzdg0855ye+C
+ 6uwaU4LtSMjMvgAJUzlgFZBaaBewg04d5gKNDb91yAuw834QulLqP095JhQvZkZMzb4Q
+ LdxB4L75YeD1jYbj+FRGGS3MFhhk6pwX/YoqCFfWzKu8x9R/PPKVWxQx7lYFPIbCtrq7
+ Zx/w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=v8ypgl7dFd+FN00YxlfzHIJKl3YchrCCrbKgFjCVTDU=;
- b=KBUCcoNwmk50dHpJS/wzn7Z0ZXAYtE1hlWpqXWpwCsVuMhTh+k8GYqVyJrvFRHA+gc
- R33J4rfwRGob0XH1AaKhI9KGHxKdLZZLt451VOl+6z/TPjNHqKh4ssWA9eXOyRKl3oFG
- RnKjrnGLi9TMp+T9O/SAEULnC2LblgPqkTEK8dzG71Mz5Sivm/mDFQTUA3sa3Vi5du1q
- 3O46QmihUNuWHu3M8oShOKN5aBANN4IsG/pg6bh9/x7c4/9fzc0i12yKQU7KAk3iE471
- LFXyqsztFe4QBpRzIjm5G5CLZuAx7P8CwrSLfLqZagixwJQPiINUkVm/hMmkta62nz/X
- IqQg==
-X-Gm-Message-State: APjAAAXwL9KTWSGGA5t66u+HnKj9/u4sDjlKgUKnWev3GwGu8N0SwR8g
- JPzoF099hODPtEYP7BWXcc05Q69V3zyVoGrS8XiFkXqiRgY=
-X-Google-Smtp-Source: APXvYqyC9kNfFIiiOrwmF4acw1MAKutkTjdFGe1E/MwMDJJksNCwGjs1TmU24KDB/f98Aqw0M3pRNognuV+WdjgeGVA=
-X-Received: by 2002:a2e:9013:: with SMTP id h19mr1678145ljg.223.1581675465087; 
- Fri, 14 Feb 2020 02:17:45 -0800 (PST)
+ bh=a84WNLM8wHkd5zEtxHoEDgoCVKtrYjUViLHMY7hthbM=;
+ b=q9/vmJTpt19fmJXD+Come2d9ydIxlO/sojIHVch6tgCSdTMaUI3AOEsJ3RBRMI9pXi
+ vXtrGWmb3f0mGpXRa3Dm5/sNVqY3fI3kt8m+/ELEs62frFvo8xRM8xz8z30NTdMZXPDp
+ tCKGkD7GfL0U4xHpO364T1XGZkPxZiIJoBVrSjEDhFgZtMCK7ThgkEUub6gY6ieciraf
+ xuQx2j1z1yxgRkFWF2Df594PnWzd7u4IFXh+uow2qqTdj2yTz+TP1MsaxcEFly0GVHQp
+ 3oiZ0n9tL3daAGMO7cohCr21RfwLrKdWLkdGMpP/wH5s8pftjv8jxxbir6NwP7F8DnbP
+ DJdg==
+X-Gm-Message-State: APjAAAV2UC6freNL07QkzM+cBoST/bNYHM1eL2PRkLsKiVyC8q1EQK56
+ k01rt+78us6xAs4pqVWj6Jy7hSCplxkqIEBp6a6itA==
+X-Google-Smtp-Source: APXvYqxqN7AMNMFOzd2fYojplBnENxRnOLrJhK/Z0n4uE8TLS7K1XSLI5bd514akMiltxuCr4HE2d8mGerIytGW52qo=
+X-Received: by 2002:a2e:b6ce:: with SMTP id m14mr1526961ljo.99.1581675606201; 
+ Fri, 14 Feb 2020 02:20:06 -0800 (PST)
 MIME-Version: 1.0
 References: <1579439601-14810-1-git-send-email-sricharan@codeaurora.org>
- <1579439601-14810-3-git-send-email-sricharan@codeaurora.org>
-In-Reply-To: <1579439601-14810-3-git-send-email-sricharan@codeaurora.org>
+In-Reply-To: <1579439601-14810-1-git-send-email-sricharan@codeaurora.org>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 14 Feb 2020 11:17:34 +0100
-Message-ID: <CACRpkdY-O3es1xcPxnb+3KKucUFx95WDXawnKeq1fo0rX9N+3A@mail.gmail.com>
-Subject: Re: [PATCH V6 2/5] pinctrl: qcom: Add ipq6018 pinctrl driver
+Date: Fri, 14 Feb 2020 11:19:55 +0100
+Message-ID: <CACRpkdZ1G-Rks+-JrY-bN6A1YpQGqRBoDKS5kYn9BfdWqYjXSQ@mail.gmail.com>
+Subject: Re: [PATCH V6 0/5] Add minimal boot support for IPQ6018
 To: Sricharan R <sricharan@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_021746_912882_29D749DD 
-X-CRM114-Status: UNSURE (   7.75  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200214_022007_744887_ECF61A72 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -93,14 +91,11 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Rajkumar Ayyasamy <arajkuma@codeaurora.org>,
- MSM <linux-arm-msm@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, MSM <linux-arm-msm@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Rob Herring <robh+dt@kernel.org>,
  "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Andy Gross <agross@kernel.org>,
- Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>,
- sivaprak@codeaurora.org,
+ Andy Gross <agross@kernel.org>, sivaprak@codeaurora.org,
  "open list:ARM/QUALCOMM SUPPORT" <linux-soc@vger.kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -110,19 +105,24 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Sun, Jan 19, 2020 at 2:13 PM Sricharan R <sricharan@codeaurora.org> wrote:
 
-> Add initial pinctrl driver to support pin configuration with
-> pinctrl framework for ipq6018.
+> The IPQ6018 is Qualcomm\u2019s 802.11ax SoC for Routers,
+> Gateways and Access Points.
 >
-> Co-developed-by: Rajkumar Ayyasamy <arajkuma@codeaurora.org>
-> Signed-off-by: Rajkumar Ayyasamy <arajkuma@codeaurora.org>
-> Co-developed-by: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
-> Signed-off-by: Selvam Sathappan Periakaruppan <speriaka@codeaurora.org>
-> Co-developed-by: Sivaprakash Murugesan <sivaprak@codeaurora.org>
-> Signed-off-by: Sivaprakash Murugesan <sivaprak@codeaurora.org>
-> Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> Signed-off-by: Sricharan R <sricharan@codeaurora.org>
+> This series adds minimal board boot support for ipq6018-cp01 board.
+>
+> [V6]
+>  * Addressed more review comments on pinctrl bindings from Rob.
+>  * Patch 4 arm64: dts: Add ipq6018 SoC and CP01 board support has build
+>    dependency with,
+>         https://lkml.org/lkml/2020/1/9/84
 
-Patch applied for v5.7.
+I have applied patches 1 & 2 and the remaining patches can be
+applied to the ARM SoC-relavent tree (Bjorn can handle this I think?)
+
+I am sorry it didn't make it into v5.6, this is caused by the bottleneck
+for YAML schema review, we would appreciate more people
+participating in writing and reviewing new schemas, we are currently
+in a bit of learning phase.
 
 Yours,
 Linus Walleij
