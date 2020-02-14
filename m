@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5BB115DDA9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:00:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C217915DDAA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:00:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6qfVFjYevST9MMNu0paEbOr3kjnd98Z+ok4SplwjwLY=; b=GYivCXWDuel10s
-	EP2DtPlzUDqbhmBJSXN1h2o9XTgxExQ0qg2YIeTVYcueo2/A89ZqER9rr/nxm2Iah3dg1p97PMbR9
-	c05RwqxkJFdMGNt8RAzj9JgdJTSmKokN17BThyEJC0fETvvFmfrot2xR2tmjvRK+juv32A9sK1l6R
-	ce/buvbtf8XYakeqhjj0FZvzFbEXgoQJ0NUiySl3ZpPJUQzkuMGkFbU1z8fZU15KDa2xNkBGq4IBw
-	X7bOauQTrgTzywKDjm+pvNPsz0m03nWB2gvsR7SIICvF5IfgbpTTLTF5S8jRsCrOyDFr2+tJ1Q1cb
-	7WH4AiWcXTyGH893a66A==;
+	List-Owner; bh=jZrj0bfnUI3T70BZL4UtWLeBslfUPLuM+aQ4KS/vRow=; b=rA5c7U8BGo2Gvy
+	rhf+qJhFx4Gb6omvWWGgEUpWoPgExzJYLXO+bom/KaNv7W1s3lWKRVSM0jS+CzHXTLDSv2T/J4zEf
+	bbWNMXaDJ7F7JJD+T649vNuPNx+CYw8jIAqalSwDFtJ3e2tmRA03ipG73zTxOH4iaj8Utm9TB1vEk
+	uKc3DGZZCi3FQSFWETVxsntNDaPtv92Tve+7A95Lgh1r/0qMvjKulxGg9Ogr+Lamy633bcLuhxpGq
+	K81J90qDPp25WUQaDyy/Kt0X3M6I0h7iD5P1V/fUsVUYqZiY8pSKt5GKqsuY4xdy8G1ls8lLFvmLx
+	0toyN2qw4f3CSB1droWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dOG-0006LG-Sd; Fri, 14 Feb 2020 16:00:28 +0000
+	id 1j2dOU-0006fu-6I; Fri, 14 Feb 2020 16:00:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dHg-0006gp-3N
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:53:41 +0000
+ id 1j2dHj-0006kb-VI
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:53:45 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CFECA2468F;
- Fri, 14 Feb 2020 15:53:38 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 98BB824682;
+ Fri, 14 Feb 2020 15:53:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695619;
- bh=umkV5fwuqprToRUAnQrW6cSjJXWD2Elo4G15T2wuuk0=;
+ s=default; t=1581695623;
+ bh=8ZM05lNKpU6kdaPrhIh/NDaUPwNaVKRoptZj+HHqS/A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ualH+9EKmxPq9hC6vZdDtIAemCOgG9U6zjVU6kUllZuX0MjQLGW82zX8tQpkTRIes
- YpeBv8fqP8F0k/YTToXTELXHGyWxbKUkJ1RMJML+hCOvUdgi+UfzL3er4I64qyZbmw
- Y/euPdSrpRKu+ocqkX3TfWGs+Vz4v3C5PtpCxE5w=
+ b=0X82fS4vqMCW82aYrM5qCPh1XoL5ECdTqViJON/O8jcCMiXlRtt+Fi5WJmcjZB2/A
+ oe1CyNnvExiLp0Lv5C5BD0zBtiBQdU9YrjGobf21lH7MdxJJku11QVlf5uzXrp9ueV
+ jyyqCFjuhgtRYEdtSgpN16k0nfROoGcdH52pwRIw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 219/542] ARM: OMAP2+: use separate IOMMU pdata to
- fix DRA7 IPU1 boot
-Date: Fri, 14 Feb 2020 10:43:31 -0500
-Message-Id: <20200214154854.6746-219-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 222/542] Revert "tty/serial: atmel: fix out of
+ range clock divider handling"
+Date: Fri, 14 Feb 2020 10:43:34 -0500
+Message-Id: <20200214154854.6746-222-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075340_206238_96C5F137 
-X-CRM114-Status: GOOD (  16.44  )
+X-CRM114-CacheID: sfid-20200214_075344_049382_847FB4D9 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,101 +81,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, Sasha Levin <sashal@kernel.org>,
- linux-omap@vger.kernel.org, Suman Anna <s-anna@ti.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-serial@vger.kernel.org,
+ David Engraf <david.engraf@sysgo.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Suman Anna <s-anna@ti.com>
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
-[ Upstream commit 4601832f40501efc3c2fd264a5a69bd1ac17d520 ]
+[ Upstream commit 6dbd54e4154dfe386b3333687de15be239576617 ]
 
-The IPU1 MMU has been using common IOMMU pdata quirks defined and
-used by all IPU IOMMU devices on OMAP4 and beyond. Separate out the
-pdata for IPU1 MMU with the additional .set_pwrdm_constraint ops
-plugged in, so that the IPU1 power domain can be restricted to ON
-state during the boot and active period of the IPU1 remote processor.
-This eliminates the pre-conditions for the IPU1 boot issue as
-described in commit afe518400bdb ("iommu/omap: fix boot issue on
-remoteprocs with AMMU/Unicache").
+This reverts commit 751d0017334db9c4d68a8909c59f662a6ecbcec6.
 
-NOTE:
-1. RET is not a valid target power domain state on DRA7 platforms,
-   and IPU power domain is normally programmed for OFF. The IPU1
-   still fails to boot though, and an unclearable l3_noc error is
-   thrown currently on 4.14 kernel without this fix. This behavior
-   is slightly different from previous 4.9 LTS kernel.
-2. The fix is currently applied only to IPU1 on DRA7xx SoC, as the
-   other affected processors on OMAP4/OMAP5/DRA7 are in domains
-   that are not entering RET. IPU2 on DRA7 is in CORE power domain
-   which is only programmed for ON power state. The fix can be easily
-   scaled if these domains do hit RET in the future.
-3. The issue was not seen on current DRA7 platforms if any of the
-   DSP remote processors were booted and using one of the GPTimers
-   5, 6, 7 or 8 on previous 4.9 LTS kernel. This was due to the
-   errata fix for i874 implemented in commit 1cbabcb9807e ("ARM:
-   DRA7: clockdomain: Implement timer workaround for errata i874")
-   which keeps the IPU1 power domain from entering RET when the
-   timers are active. But the timer workaround did not make any
-   difference on 4.14 kernel, and an l3_noc error was seen still
-   without this fix.
+The wrong commit got added to the tty-next tree, the correct one is in
+the tty-linus branch.
 
-Signed-off-by: Suman Anna <s-anna@ti.com>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
+Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
+Cc: David Engraf <david.engraf@sysgo.com>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mach-omap2/pdata-quirks.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ drivers/tty/serial/atmel_serial.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm/mach-omap2/pdata-quirks.c b/arch/arm/mach-omap2/pdata-quirks.c
-index 7a79bcc02a11b..c3be1db9685cd 100644
---- a/arch/arm/mach-omap2/pdata-quirks.c
-+++ b/arch/arm/mach-omap2/pdata-quirks.c
-@@ -43,6 +43,17 @@ struct pdata_init {
- static struct of_dev_auxdata omap_auxdata_lookup[];
- static struct twl4030_gpio_platform_data twl_gpio_auxdata;
+diff --git a/drivers/tty/serial/atmel_serial.c b/drivers/tty/serial/atmel_serial.c
+index 1ba9bc667e136..ab4d4a0b36497 100644
+--- a/drivers/tty/serial/atmel_serial.c
++++ b/drivers/tty/serial/atmel_serial.c
+@@ -2270,6 +2270,9 @@ static void atmel_set_termios(struct uart_port *port, struct ktermios *termios,
+ 		mode |= ATMEL_US_USMODE_NORMAL;
+ 	}
  
-+#if IS_ENABLED(CONFIG_OMAP_IOMMU)
-+int omap_iommu_set_pwrdm_constraint(struct platform_device *pdev, bool request,
-+				    u8 *pwrst);
-+#else
-+static inline int omap_iommu_set_pwrdm_constraint(struct platform_device *pdev,
-+						  bool request, u8 *pwrst)
-+{
-+	return 0;
-+}
-+#endif
++	/* set the mode, clock divisor, parity, stop bits and data size */
++	atmel_uart_writel(port, ATMEL_US_MR, mode);
 +
- #ifdef CONFIG_MACH_NOKIA_N8X0
- static void __init omap2420_n8x0_legacy_init(void)
- {
-@@ -286,6 +297,10 @@ static void __init omap5_uevm_legacy_init(void)
- #endif
- 
- #ifdef CONFIG_SOC_DRA7XX
-+static struct iommu_platform_data dra7_ipu1_dsp_iommu_pdata = {
-+	.set_pwrdm_constraint = omap_iommu_set_pwrdm_constraint,
-+};
-+
- static struct omap_hsmmc_platform_data dra7_hsmmc_data_mmc1;
- static struct omap_hsmmc_platform_data dra7_hsmmc_data_mmc2;
- static struct omap_hsmmc_platform_data dra7_hsmmc_data_mmc3;
-@@ -517,6 +532,12 @@ static struct of_dev_auxdata omap_auxdata_lookup[] = {
- 		       &dra7_hsmmc_data_mmc2),
- 	OF_DEV_AUXDATA("ti,dra7-hsmmc", 0x480ad000, "480ad000.mmc",
- 		       &dra7_hsmmc_data_mmc3),
-+	OF_DEV_AUXDATA("ti,dra7-dsp-iommu", 0x40d01000, "40d01000.mmu",
-+		       &dra7_ipu1_dsp_iommu_pdata),
-+	OF_DEV_AUXDATA("ti,dra7-dsp-iommu", 0x41501000, "41501000.mmu",
-+		       &dra7_ipu1_dsp_iommu_pdata),
-+	OF_DEV_AUXDATA("ti,dra7-iommu", 0x58882000, "58882000.mmu",
-+		       &dra7_ipu1_dsp_iommu_pdata),
- #endif
- 	/* Common auxdata */
- 	OF_DEV_AUXDATA("ti,sysc", 0, NULL, &ti_sysc_pdata),
+ 	/*
+ 	 * Set the baud rate:
+ 	 * Fractional baudrate allows to setup output frequency more
 -- 
 2.20.1
 
