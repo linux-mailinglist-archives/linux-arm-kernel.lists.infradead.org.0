@@ -2,82 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AA6A15D2E3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 08:35:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6118015D307
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 08:43:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HxzaVhUqI+N0D0t4DnsYMlgDEAPueTweP8Si+HQuLGs=; b=lSedCvSoIm/4Eh
-	sFNEgY07Cf9CpfHw/UKuY/eerY4kSPUYxGfz9ESJAzwSbU5tvqIT0G/kaMMiEUrmQ8cyKx6XEQ6kj
-	eWsQcupifgYyXjxCmsdW7HpwtGA60zrxcYdm5St0aYRZWr0Rbs81hnm8XB02+at9GFRl4VHlTMZCF
-	0AQ+rcANjDV1mnnEtK5XBWM/KfNSSla9DPmFC6gknd8DBqL2k2vdzE0kbhkpgVq8aoLiBoN4wbjaS
-	JLIq8gal6z8WoxvSZVXWLs5cx355WCmVm8SHyLo8kB/ZgPy2pQlFEFo0ix2uC2XKrtvXLiaI8guhu
-	Z2RFu+kvruTaxByABV4Q==;
+	List-Owner; bh=GMz8bmOssrQYIIWg9a2FS0mP2UmpqfHNbpTb92dMn3Y=; b=FtKbXeqBbg10mi
+	RvMWqWw10iAq6okaee2gTYRZnCVWJ+ebWW6yOX90K2D1n9whbLJn9ZVrPbnQV4i4/80SmQ82OOi8X
+	TbPx/MC/wH8wKTt3PON9ZI/aIOd/vHhA82K3RLSjWzoC+y1E9KSh8xoPjo87Ej2jSNW2UCbFGawF2
+	AGWR8SSfkV06BlwzVOH7DKrc6UTC7tP+zqI6UeezfX43H38lDB1gQS6/2rXeelAvm89Bt9Sppbmg9
+	qpHiPkVjp3RpQdaJs/xy3VwAZGdHpv19U3SYQd3sNTEXJwj4UhqcRGimOh/mb3j8vcQ/UdlLcs+Ur
+	dLkbc5xfDB1Ijv6uXwaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2VVk-0007Rp-3h; Fri, 14 Feb 2020 07:35:40 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1j2Vcv-0001Cx-Js; Fri, 14 Feb 2020 07:43:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2VVa-0007Qw-BP
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 07:35:31 +0000
-Received: by mail-il1-x143.google.com with SMTP id f70so7266673ill.6
+ id 1j2Vcm-0001BO-US
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 07:42:58 +0000
+Received: from mail-lj1-f181.google.com (mail-lj1-f181.google.com
+ [209.85.208.181])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 529EF20873
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 13 Feb 2020 23:35:27 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=I1eG2NiwnMHcD+8ZEBk/TQZkr1ocwevoK5Q1stsGPh0=;
- b=UZ6fDAw4oN8KlRZPMnBhJd0Ev8dZAqA7G1U4REXYuJiWgp0PEusoKpzvbadHqnAz/M
- KuGdLZbhYZ1znnKIXK1Dvcdh+8gFSkQq1PS3X2WfvZ/h91VHULyySwO0TTPA/H4LgRxR
- KiY61A4PCh63xBcYTtdEEow9lR9sIb0KkJ1E4V7ei5bxq4/XqhxVv1ZftYgq8/Zgb/rt
- ZH/X8w3p0MKGOrspJqJm4+U+8EBBU7ghgaJkhkORbSfzHDTqMxihRLzWwt2y4YrjlvDk
- l9myA1r5rLq84wDBjMMRPmYwWrpLwKsCG5Udq8zQeW1I5ivieU3AxYA805kVSpDOu3S/
- Yfzw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=I1eG2NiwnMHcD+8ZEBk/TQZkr1ocwevoK5Q1stsGPh0=;
- b=JD2qeLvdf6JL5O1foSIRHWkas1HQ4gpOW/tBYO+q8QBmZ8s+tlsV4kIUtfvbbPAHmv
- EReyUYiJ2UXTYRhsH1IY4tqYpoW57KjOdQNe2dRxd4VvbEiCu9xpT5hHtd8Ag2E/1MHQ
- kukBQcfQlTlGbc+Rb2uVURqOqN0TIkJoKH4E8z2DnVyNxKH+9xdBYMp3e2faw79dSSr+
- dM2N7CFf+TMvjdv9JYz9Uw25lEgwDg7t5j/TfaNDxzbXBXcWGj4drldFQ/MECn2lnoch
- HkwKvPC3xIV1jwHYLcOtP8Z5FuzwDNszwrF0A8LZ9kl9RnLecBZ6rNr/qnwxSJxoOnKT
- H1fg==
-X-Gm-Message-State: APjAAAVbDe2MHOCI+XSxG84VfVyVZi0MjmwJkYSQR9TIbVi9jHgwXbl4
- 0cTeHA+1kHJrsAhTHcg/h4zV7xplr4wHnqfBKlAlZA==
-X-Google-Smtp-Source: APXvYqzd5x9vUof79ss9P8ZSwc9sQuJX+BQLK7R4MtTtWZfQ+G1G0z3XtZitNmw0tqejxBn+XcigB+3jeNXBx5X/tnM=
-X-Received: by 2002:a92:9c52:: with SMTP id h79mr1618052ili.213.1581665726341; 
- Thu, 13 Feb 2020 23:35:26 -0800 (PST)
+ Fri, 14 Feb 2020 07:42:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581666175;
+ bh=m798uLVqmuYtv5ug6phfy9RoTjgQyqUELX3cTjvJVMw=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=YmBuwPtRGIYFABvzK00gyC3HUwpkhd/mEGyopNk7IWDExVBsz/aTGXp1t1UP1LsS3
+ uKmBHo2k084OlSvg3VUjTwOLInWLBXXNkuBsNi+4em8YHwmrLR1vMgiGCaz94CY188
+ daxj5etfGNvwT3FPWnhg4ZSyoFhNuG9BOFuYNC1U=
+Received: by mail-lj1-f181.google.com with SMTP id h23so9610261ljc.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Feb 2020 23:42:55 -0800 (PST)
+X-Gm-Message-State: APjAAAWC5ddNBqYfIIyOuwL4dGGC/OU/fe0+1YLhXdNBM7HpiKI8A9qr
+ j6Rgsz7qbnm/4p1xad4b7RSpcVAomumDMS/9t4I=
+X-Google-Smtp-Source: APXvYqy7gojEaGR75YMM57u2JXSw/yOVghVztLaVTcFLE+UKiZQ9sYF9fwVeQGU1YORQn5Pe+ddsEzhZzr9AWB0N5kk=
+X-Received: by 2002:a2e:9b52:: with SMTP id o18mr1197113ljj.270.1581666173493; 
+ Thu, 13 Feb 2020 23:42:53 -0800 (PST)
 MIME-Version: 1.0
-References: <20200213153226.I477092c2f104fd589133436c3ae4590e6fc6323b@changeid>
- <1581664042.20487.4.camel@mtksdaap41>
-In-Reply-To: <1581664042.20487.4.camel@mtksdaap41>
-From: Tzung-Bi Shih <tzungbi@google.com>
-Date: Fri, 14 Feb 2020 15:35:15 +0800
-Message-ID: <CA+Px+wW0BWz0-8L_UXJ-OYbwG6W9vmCWRr7kevpk0yokp+NKKg@mail.gmail.com>
-Subject: Re: [PATCH] drm/mediatek: fix race condition for HDMI jack status
- reporting
-To: CK Hu <ck.hu@mediatek.com>
+References: <20200210061544.7600-1-yuehaibing@huawei.com>
+ <9351a746-8823-ee26-70da-fd3127a02c91@linux.intel.com>
+ <be093793-3514-840a-ff2f-4dc21d8ee7f1@huawei.com>
+ <CAEnQRZDWFgXocRJxtc2e7McRCAtod6-GwPJaVMdb4ymBZgSD1w@mail.gmail.com>
+ <CAJKOXPcxL2vpWGwO1OL9Vv0g6hzbW-AyGJNn=7Yq2iy10_cbhg@mail.gmail.com>
+ <CAEnQRZA4W-i4zcF8jUL2zp5-dO-iX=KSp5Do2pCK9_oZiVtYEQ@mail.gmail.com>
+In-Reply-To: <CAEnQRZA4W-i4zcF8jUL2zp5-dO-iX=KSp5Do2pCK9_oZiVtYEQ@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Fri, 14 Feb 2020 08:42:41 +0100
+X-Gmail-Original-Message-ID: <CAJKOXPexfj9Rs+9jGSd4LWhcp0txdECBqsdvSJvHv7NdtNsaMA@mail.gmail.com>
+Message-ID: <CAJKOXPexfj9Rs+9jGSd4LWhcp0txdECBqsdvSJvHv7NdtNsaMA@mail.gmail.com>
+Subject: Re: [alsa-devel] [PATCH -next] ASoC: SOF: imx8: Fix randbuild error
+To: Daniel Baluta <daniel.baluta@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_233530_417946_4CCB792F 
-X-CRM114-Status: UNSURE (   7.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200213_234257_002977_B135CB84 
+X-CRM114-Status: GOOD (  10.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -86,8 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,24 +90,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ALSA development <alsa-devel@alsa-project.org>, p.zabel@pengutronix.de,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- Dylan Reid <dgreid@google.com>, linux-arm-kernel@lists.infradead.org,
- Jimmy Cheng-Yi Chiang <cychiang@google.com>
+Cc: Daniel Baluta <daniel.baluta@nxp.com>,
+ Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
+ Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Yuehaibing <yuehaibing@huawei.com>, Takashi Iwai <tiwai@suse.com>,
+ Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 14, 2020 at 3:07 PM CK Hu <ck.hu@mediatek.com> wrote:
-> I think sound driver could be removed for some reason, and fn should be
-> set to NULL before sound driver removed. In this case, codec_dev != NULL
-> and fn == NULL.
+On Thu, 13 Feb 2020 at 22:09, Daniel Baluta <daniel.baluta@gmail.com> wrote:
+> Hi Krzysztof,
+>
+> Which symbol misses an EXPORT_SYMBOL?
+> We already have EXPORT_SYMBOL(imx_dsp_ring_doorbell);
 
-No..if you see sound/soc/codecs/hdmi-codec.c, plugged_cb is statically
-allocated.
+Hi,
+
+Yes, exactly this one. That was just my guess.
+
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
