@@ -2,59 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6577D15E889
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 18:01:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44B1215E887
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 18:00:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LH9wK6R+lkkp5CoKhH6UWBo7e4UW1n/LKu4XPpXiBKA=; b=gawz8bYumlOXOi
-	yUfC8o8hnic9AA13MMIsvwwnyVmEdK1B0o0q5k9NLZtiOllHp8GtcC4iV+FD4QX2rOWZBXncCBKT6
-	r0Svuugib5RsHNzR+DS3PzMVQsfHFamjIaqxVstvX9RXKEkjoPSBMiyN1d0FirbiEHinmi1d4tHAN
-	rfiPp5UaEmuthpzrFEQ6uOFsv/MC3dMhiDHXZC2hONpoi/qoEIpozh5HEmQAcK0eRPIePCgye9J32
-	a+eZScbW18biAZJK17vqDI+w4SjHXhQw+poN7QSqSjQeDGzQbO26ZiitDRKpIXku9ByoCUHxsJoa4
-	h3YN4OUbH5LftOIFzpDg==;
+	List-Owner; bh=BmbSvHf3BKXAtfchYV69aU1+cJplfK5aG4Kb4OveQ1E=; b=EzQ8wxDl8t07BC
+	5CYIrFrN4jMcopnYyN3LOHG/TBniJqYK5h6x/SYK8LZTzBRLnnY/l3c2fyDxv2/RCEMT3+Lbv1S0K
+	x58G+62bqsBIgpeFN+Qp4/Zuze3Y0pUGrrYdCAMY6oLNvd0wV6X36MgcapSC7mrGmzI8dC+EYKjQa
+	Zybuj7scAe8vpUTmjMax09X4KC9LjKzgNHlQLcB4mcfV1mgfAwOliyNN5KHZ3lhazxPjsUJLkxqH5
+	5u1pZcyq3wYcvbw77iVOr/DW50sqrtDclWVi92TIscrv5XGZfZnp+jUrPyBYDbkTonoadmI2h0+zi
+	bBAgksF2afmPPNt6RsHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eKy-0002IU-9w; Fri, 14 Feb 2020 17:01:08 +0000
+	id 1j2eKm-00025G-9M; Fri, 14 Feb 2020 17:00:56 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dwN-00058a-Fh; Fri, 14 Feb 2020 16:35:43 +0000
+ id 1j2dwM-00058a-AL
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 14 Feb 2020 16:35:42 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=X1FIY36JkPPlRt9syaihRAiVQrR7KaQAAxvdKCe1Uzk=; b=X7BRzg2EuZTZKJZAe4ToWypTpw
- Efseg8smbnbcZIpbPxOD8ngpqRzF9SdxAfphCSKTf+hdmlBPJtMIJPcHxtOl0XauiokVee++8od1r
- +QAn+cxxqnebHLhsI+5l0WLf3WGfeoRdtbqLV1uFd/lSYvm74nQG/ehZK+qqjc0c+YoMvRJrcgtdG
- ePLiPhcuqs4jS9TIncAL5aHm7a2Xzvq7Zei9IN9nSDefIcsjxBuk+AngukMGHtvGaep/Jtj3qZ/Zv
- fQ5uCBXRLJKErhBXrD1R2pbyB8fKhO28dVxj/j+aFzdyAQZCinkr+RcHMLr02pAV9BAUQmtgQ9vzU
- aw9qOaRg==;
+ bh=mk8CoyJcsq5YtzNh3tpYg5cWpF5ocUXCyqcr8a4ESlQ=; b=NGj8u3hvAQ6cjq5dnHl7wq53tI
+ uVxHeHqfCMZtc1j8b9RSsp5Gq3RECQ3fdg01saXyDLD+rX9SCGC3lqBuGV1YRII06vmDKGuZoF5pX
+ kTLRqIhsNbiypBmWwDhtc3UQD5CADmclMK47XlE2h4skZtfG5V9fRHVHm/pn9yIhbRCydWIPWSZtX
+ 4jto7JcMHBhtM+4ZXg38m24Gititgy9E6GJ2vhtahS+vkIZyU+XIGGBjJiZkEbi5cyE0vYpHQ0oNY
+ uqOHa03rSIBTqnGazB5fHtOx4t+8tmj6E+YfUntbw9/EhUMkPWdzC936VPe8N48xT8PBEYV1AY9QI
+ qRYc0r1w==;
 Received: from mail.kernel.org ([198.145.29.99])
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dba-0002P0-1G; Fri, 14 Feb 2020 16:14:18 +0000
+ id 1j2dbf-0002PQ-PC
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:14:22 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A13BC246D5;
- Fri, 14 Feb 2020 16:14:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6CE04246D6;
+ Fri, 14 Feb 2020 16:14:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696852;
- bh=vVexZEER5O/jm8hcPhJvhiZ8rHMq++7YZdv102yM0tw=;
+ s=default; t=1581696858;
+ bh=GRvpBHdwaRmGyhqFV9SutAkddtjGkMHJbBSngALE17A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=IhEnV7UGM8A7GwSoQ6wkT6VRDxNdd6wPyeSefu/3lPDtPUj5MORPtpjID+14vP3y1
- /W0blwTDnsMRIRONOOmMOHU+8AHsi1Odz0qgdMKQi8DIu/jmBn5r861VhxUBzXiXql
- iRLtauuhBdMuKF7dmwpLptOn8TOZY/wVJf1n9R7c=
+ b=BCk8NFs6s9+VnZ72u+Vf6H2Hg8btTRXSNUAc6xcZh/B2bsipvvAE748NTWqIoyV79
+ E/dBYPUxAtDWCbBXHgPhbuYfjZW5MetjY1BdgFqcdyoowXVcX53reOvAoHYLjbI02b
+ zM8LyS2/QzNlvmGgL3pbLsVC4tnAjH50js6nft2M=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 113/252] drm/mediatek: handle events when
- enabling/disabling crtc
-Date: Fri, 14 Feb 2020 11:09:28 -0500
-Message-Id: <20200214161147.15842-113-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 118/252] dmaengine: imx-sdma: Fix memory leak
+Date: Fri, 14 Feb 2020 11:09:33 -0500
+Message-Id: <20200214161147.15842-118-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214161147.15842-1-sashal@kernel.org>
 References: <20200214161147.15842-1-sashal@kernel.org>
@@ -62,8 +63,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_161414_355031_FCD3F2A2 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20200214_161420_075082_8282A463 
+X-CRM114-Status: GOOD (  17.28  )
 X-Spam-Score: -7.1 (-------)
 X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
  Content analysis details:   (-7.1 points, 5.0 required)
@@ -94,57 +95,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Bibby Hsieh <bibby.hsieh@mediatek.com>,
- CK Hu <ck.hu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org,
+ Robin Gong <yibin.gong@nxp.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bibby Hsieh <bibby.hsieh@mediatek.com>
+From: Sascha Hauer <s.hauer@pengutronix.de>
 
-[ Upstream commit 411f5c1eacfebb1f6e40b653d29447cdfe7282aa ]
+[ Upstream commit 02939cd167095f16328a1bd5cab5a90b550606df ]
 
-The driver currently handles vblank events only when updating planes on
-an already enabled CRTC. The atomic update API however allows requesting
-an event when enabling or disabling a CRTC. This currently leads to
-event objects being leaked in the kernel and to events not being sent
-out. Fix it.
+The current descriptor is not on any list of the virtual DMA channel.
+Once sdma_terminate_all() is called when a descriptor is currently
+in flight then this one is forgotten to be freed. We have to call
+vchan_terminate_vdesc() on this descriptor to re-add it to the lists.
+Now that we also free the currently running descriptor we can (and
+actually have to) remove the current descriptor from its list also
+for the cyclic case.
 
-Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Signed-off-by: CK Hu <ck.hu@mediatek.com>
+Signed-off-by: Sascha Hauer <s.hauer@pengutronix.de>
+Reviewed-by: Robin Gong <yibin.gong@nxp.com>
+Tested-by: Robin Gong <yibin.gong@nxp.com>
+Link: https://lore.kernel.org/r/20191216105328.15198-10-s.hauer@pengutronix.de
+Signed-off-by: Vinod Koul <vkoul@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/dma/imx-sdma.c | 19 +++++++++++--------
+ 1 file changed, 11 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index 92ecb9bf982cf..b86ee7d25af36 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -308,6 +308,7 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
- static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
- {
- 	struct drm_device *drm = mtk_crtc->base.dev;
-+	struct drm_crtc *crtc = &mtk_crtc->base;
- 	int i;
- 
- 	DRM_DEBUG_DRIVER("%s\n", __func__);
-@@ -329,6 +330,13 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
- 	mtk_disp_mutex_unprepare(mtk_crtc->mutex);
- 
- 	pm_runtime_put(drm->dev);
+diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+index ceb82e74f5b4e..d66a7fdff898e 100644
+--- a/drivers/dma/imx-sdma.c
++++ b/drivers/dma/imx-sdma.c
+@@ -738,12 +738,8 @@ static void sdma_start_desc(struct sdma_channel *sdmac)
+ 		return;
+ 	}
+ 	sdmac->desc = desc = to_sdma_desc(&vd->tx);
+-	/*
+-	 * Do not delete the node in desc_issued list in cyclic mode, otherwise
+-	 * the desc allocated will never be freed in vchan_dma_desc_free_list
+-	 */
+-	if (!(sdmac->flags & IMX_DMA_SG_LOOP))
+-		list_del(&vd->node);
 +
-+	if (crtc->state->event && !crtc->state->active) {
-+		spin_lock_irq(&crtc->dev->event_lock);
-+		drm_crtc_send_vblank_event(crtc, crtc->state->event);
-+		crtc->state->event = NULL;
-+		spin_unlock_irq(&crtc->dev->event_lock);
-+	}
- }
++	list_del(&vd->node);
  
- static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+ 	sdma->channel_control[channel].base_bd_ptr = desc->bd_phys;
+ 	sdma->channel_control[channel].current_bd_ptr = desc->bd_phys;
+@@ -1044,7 +1040,6 @@ static void sdma_channel_terminate_work(struct work_struct *work)
+ 
+ 	spin_lock_irqsave(&sdmac->vc.lock, flags);
+ 	vchan_get_all_descriptors(&sdmac->vc, &head);
+-	sdmac->desc = NULL;
+ 	spin_unlock_irqrestore(&sdmac->vc.lock, flags);
+ 	vchan_dma_desc_free_list(&sdmac->vc, &head);
+ }
+@@ -1052,11 +1047,19 @@ static void sdma_channel_terminate_work(struct work_struct *work)
+ static int sdma_disable_channel_async(struct dma_chan *chan)
+ {
+ 	struct sdma_channel *sdmac = to_sdma_chan(chan);
++	unsigned long flags;
++
++	spin_lock_irqsave(&sdmac->vc.lock, flags);
+ 
+ 	sdma_disable_channel(chan);
+ 
+-	if (sdmac->desc)
++	if (sdmac->desc) {
++		vchan_terminate_vdesc(&sdmac->desc->vd);
++		sdmac->desc = NULL;
+ 		schedule_work(&sdmac->terminate_worker);
++	}
++
++	spin_unlock_irqrestore(&sdmac->vc.lock, flags);
+ 
+ 	return 0;
+ }
 -- 
 2.20.1
 
