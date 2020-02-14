@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42DF515F197
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 19:04:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F72B15F292
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 19:13:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q4Hoo5KUNk5MQJj8hJVYbQI7STM8gDrrBhT+PEV+Gnc=; b=OFpe0SFDrenHtU
-	ZE2hPzhfJoNWxxQ0K9z+h9VC7JtHHbqC3JHISGn/TWFjsGeHUC5E7nPqgcYKNE44d1e1Y53ZAJchV
-	2NKUXPGO3WHtp6DcatThCc1leP/M2AQnhs33ULpu5wY0wo4BborNf13sujA1xzE2Frqwqt7qRCrwT
-	6N25sEVSp0pWriBAhfHaNC5W222xce8ZnLBVmZvQ55bQQz72SJBSZ709RecI0drYqx2Bj4vTxooqd
-	fSXu5tz9DD+2RCWrmNS2hRsxFoUPRq5UUROaUpBb9quwyF5NgWh/gwTXR0qgiWnC2f9JHd1vpYoOe
-	SoBdzdeB3n3/mW4PJ94w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e4DH5uFJ3WXGG3sYZEwp7Iy+mpRHuBvLej3V0wFYg2E=; b=mnAZal1dWCZpfV
+	CPmrgm5fu2geZMBmX6Y5PXYM9Xukr0DZRAKea/QAaNSCik0/YRcclH+/S7xmUxKjEZKjJvDI3mQcw
+	0dvZl6S0WWUk5ZZgLTOUBpU4NbG/j8Cl8ixkbI0eSmtu8wO7CipMxUJeVFjoDGo72mrh//BEJnguJ
+	o2cEvSeDc2BwXdmIbNlDP8KfnliFHfPEfRSRs6++rcd3ufJJ6Zq7wLWVjeX9LNDBm5c2daBA9tC23
+	JAsCEMYGpzxvsdd9V0djlZ3UYfpypojAZHii4ofMX2yMMVceYrhErCLpK/dnOXu3BYp+dOiXhOK81
+	kKHFQCzdwEJ1MQcLJwmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2fK8-0005RY-F2; Fri, 14 Feb 2020 18:04:20 +0000
+	id 1j2fT5-0000jT-EB; Fri, 14 Feb 2020 18:13:35 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2fJx-0005QZ-KH
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 18:04:11 +0000
+ id 1j2fSu-0000hr-BO
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 18:13:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A21F328;
- Fri, 14 Feb 2020 10:04:08 -0800 (PST)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 344FD3F68E;
- Fri, 14 Feb 2020 10:04:07 -0800 (PST)
-Date: Fri, 14 Feb 2020 18:04:04 +0000
-From: Andre Przywara <andre.przywara@arm.com>
-To: Maxime Ripard <maxime@cerno.tech>, Mark Rutland <Mark.Rutland@arm.com>,
- Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 1/2] arm64: dts: allwinner: h5: Fix PMU compatible
-Message-ID: <20200214180404.24d67f86@donnerap.cambridge.arm.com>
-In-Reply-To: <20200210095600.77894-1-maxime@cerno.tech>
-References: <20200210095600.77894-1-maxime@cerno.tech>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3D5F6328;
+ Fri, 14 Feb 2020 10:13:19 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B62A53F68E;
+ Fri, 14 Feb 2020 10:13:16 -0800 (PST)
+Subject: Re: [PATCH v7 11/11] arm64: scs: add shadow stacks for SDEI
+To: Sami Tolvanen <samitolvanen@google.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200128184934.77625-1-samitolvanen@google.com>
+ <20200128184934.77625-12-samitolvanen@google.com>
+ <dbb090ae-d1ec-cb1a-0710-e1d3cfe762b9@arm.com>
+ <CABCJKudpeTDa4Ro1aCsCJ-=x97SG0qu5LGpj9ywj1aLOtboNkQ@mail.gmail.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <a0ca5766-fb76-a498-ab2f-3015f1335fe9@arm.com>
+Date: Fri, 14 Feb 2020 18:13:15 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <CABCJKudpeTDa4Ro1aCsCJ-=x97SG0qu5LGpj9ywj1aLOtboNkQ@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_100409_710672_FBC3383E 
-X-CRM114-Status: GOOD (  20.92  )
+X-CRM114-CacheID: sfid-20200214_101324_434558_5BF222F0 
+X-CRM114-Status: GOOD (  14.06  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,63 +67,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <mripard@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 10 Feb 2020 10:55:59 +0100
-Maxime Ripard <maxime@cerno.tech> wrote:
+Hi Sami,
 
-Hi,
+On 12/02/2020 20:59, Sami Tolvanen wrote:
+> On Tue, Feb 11, 2020 at 5:57 AM James Morse <james.morse@arm.com> wrote:
+>> On 28/01/2020 18:49, Sami Tolvanen wrote:
+>>> This change adds per-CPU shadow call stacks for the SDEI handler.
+>>> Similarly to how the kernel stacks are handled, we add separate shadow
+>>> stacks for normal and critical events.
+>>
+>> Reviewed-by: James Morse <james.morse@arm.com>
+>> Tested-by: James Morse <james.morse@arm.com>
 
-> The commit c35a516a4618 ("arm64: dts: allwinner: H5: Add PMU node")
-> introduced support for the PMU found on the Allwinner H5. However, the
-> binding only allows for a single compatible, while the patch was adding
-> two.
-
-Maxime, thanks for bringing this up, was that found by some validation tool?
-
-And while this is true, I wonder if this was intentional?
-I see several other combinations of PMU compatibles in the tree.
-
-Mark, Rob, can you shed any light on this?
-
-Actually I am wondering why we would need the PMU type in the first place, isn't that discoverable via the MIDR?
-And all we actually need from the DT is the interrupts and maybe some quirk info?
-
-It looks like ACPI is always using the generic PMUv3 map, so wouldn't it actually be better to replace the compatible string matching with MIDR matching? Or are those core specific maps somewhat obsolete anyway? Since I don't see any newer cores in there?
-
-Cheers,
-Andre
-
-> Make sure we follow the binding.
-
-
+>>> diff --git a/arch/arm64/kernel/scs.c b/arch/arm64/kernel/scs.c
+>>> index eaadf5430baa..dddb7c56518b 100644
+>>> --- a/arch/arm64/kernel/scs.c
+>>> +++ b/arch/arm64/kernel/scs.c
+>>
+>>> +static int scs_alloc_percpu(unsigned long * __percpu *ptr, int cpu)
+>>> +{
+>>> +     unsigned long *p;
+>>> +
+>>> +     p = __vmalloc_node_range(PAGE_SIZE, SCS_SIZE,
+>>> +                              VMALLOC_START, VMALLOC_END,
+>>> +                              GFP_SCS, PAGE_KERNEL,
+>>> +                              0, cpu_to_node(cpu),
+>>> +                              __builtin_return_address(0));
+>>
+>> (What makes this arch specific? arm64 has its own calls like this for the regular vmap
+>> stacks because it plays tricks with the alignment. Here the alignment requirement comes
+>> from the core SCS code... Would another architecture implement these
+>> scs_alloc_percpu()/scs_free_percpu() differently?)
 > 
-> Fixes: c35a516a4618 ("arm64: dts: allwinner: H5: Add PMU node")
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> ---
->  arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi | 3 +--
->  1 file changed, 1 insertion(+), 2 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-> index 9893aa64dd0b..4462a68c0681 100644
-> --- a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-> @@ -38,8 +38,7 @@ cpu3: cpu@3 {
->  	};
->  
->  	pmu {
-> -		compatible = "arm,cortex-a53-pmu",
-> -			     "arm,armv8-pmuv3";
-> +		compatible = "arm,cortex-a53-pmu";
->  		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
->  			     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>,
->  			     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
+> You are correct, these aren't necessarily specific to arm64. However,
+> right now, we are not allocating per-CPU shadow stacks anywhere else,
+> so this was a natural place for the helper functions.
 
+Fair enough,
+
+
+> Would you prefer me to move these to kernel/scs.c instead?
+
+I have no preference, as long as they don't get duplicated later!
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
