@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8169315DC22
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:52:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C86915DC37
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:53:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oAmceVqc+Ki+Veu0D1R3RmTKCfh92FVae2bnc6TpVRE=; b=oKKmwWoj0tqyHA
-	Iyb1hlIg13yRBsgNpmbVLKx07sWAHRoeEKzXSPr5N9QHZ/W1ASuIZ9anQ4vTUhHHiQ9oJ11havU8c
-	fmEXcbz6Rk6Jgdq3gQGjHXRGrZFiYWrSMLceKv47tNyaB66K336zmhzaEEZLkMNxs+r8B/U4AdhIt
-	+bZOUuKN/WOtxo8Jpu2A7hSyCt1sKHPCPWIq8XQqyi/p34qUCR8+jOpkp4uMfo33I7abl+/7YF5wX
-	R4+XXdB1XY0v0KH6jUQqnTT8IF6rnsoSva767m4GqDZ11ba/I9ayydfvqmsUNoFnVg37JQ9HJpTtZ
-	toP6haeO5vEaJeKnfYxw==;
+	List-Owner; bh=slqOrBaZu49eehaSirruyR0cJUr3IrZvegZuWRyJg+Q=; b=htw5jqdpEFCcqv
+	cmj1DtRA+KyGfvy+Oi+2QxAEcOzChol5EH5E0+uPocHwNA19kufxb8G09ZeMeriDZ9pNyR5jaCs3c
+	m0VOGGdgtR6V6CLAiz892F6u1jmkD6zndjWrAStak6XMMFSXHPQ71Dx/3zG4/qBsYqtth16wzyMm8
+	Aml31bohI88Hp6gdQULQujg6C/yvncFNRT8/w5xxS0RCDRuO044okH1WNJnsM9IvoE4xvKmvp5dWS
+	iH/QdzgqKvtBtRunxDxK9RlER0vPQDTM/tqyAHQc42BC6VBbjuASN0BJOxAfyvI6z/8kCJaDrFqW3
+	HScVIrrWOMwuYAP7A5NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dGc-0005UI-Ov; Fri, 14 Feb 2020 15:52:34 +0000
+	id 1j2dHA-0005yu-4C; Fri, 14 Feb 2020 15:53:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dEI-0002pi-Cp
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:50:12 +0000
+ id 1j2dEc-0003dW-Fh
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:50:41 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8F60824691;
- Fri, 14 Feb 2020 15:50:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 237EA2467D;
+ Fri, 14 Feb 2020 15:50:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695409;
- bh=OHflqUrzlm8/xx/dM//1K4Fu0XHAEpTzk5pVqK1KuwU=;
+ s=default; t=1581695430;
+ bh=xz74wdWetr21C9f11ZsRx1P/anaoJIBj+Ddglaa/a/Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pMmuEBmu0BG4wZHgr3zBeANTv3Qfx1WAkF5JXC1qO/7wInl5427zFGC1/LjQdpcUH
- MR/+w+v0N/F1/iIQsnS+9qm8f3wWhkHFQMCuldkoc2U1YGa1/dQXze2DXQbvJFP0aB
- M1m4Vx7OD+zP62Y+bqPNpm2eQgcDT19K82shQs+0=
+ b=MQpfaBSyupbOSjry+9vrOwrg+Ta0dyh7YgOdh/5iuy3rhOB3VQT7H/tryWM70F3u5
+ 3hbEJ94tvJ+HAWB88AgA7qpSCd2HYhHXXd7j/HXV+ub7Kl6f+KNHpfwg0PdoTArlHf
+ KjTAcwsStkzFCtuqk046zVZV8YS8W1G779exP+dI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 057/542] arm64: dts: marvell: clearfog-gt-8k: fix
- switch cpu port node
-Date: Fri, 14 Feb 2020 10:40:49 -0500
-Message-Id: <20200214154854.6746-57-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 073/542] arm64: cpufeature: Fix the type of no
+ FP/SIMD capability
+Date: Fri, 14 Feb 2020 10:41:05 -0500
+Message-Id: <20200214154854.6746-73-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075010_498542_9B2EC2B5 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200214_075037_950587_E44AAEC1 
+X-CRM114-Status: GOOD (  14.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,47 +80,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Andrew Lunn <andrew@lunn.ch>,
- Baruch Siach <baruch@tkos.co.il>, devicetree@vger.kernel.org,
- netdev@vger.kernel.org, Denis Odintsov <d.odintsov@traviangames.com>,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Baruch Siach <baruch@tkos.co.il>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-[ Upstream commit 62bba54d99407aedfe9b0a02e72e23c06e2b0116 ]
+[ Upstream commit 449443c03d8cfdacf7313e17779a2594ebf87e6d ]
 
-Explicitly set the switch cpu (upstream) port phy-mode and managed
-properties. This fixes the Marvell 88E6141 switch serdes configuration
-with the recently enabled phylink layer.
+The NO_FPSIMD capability is defined with scope SYSTEM, which implies
+that the "absence" of FP/SIMD on at least one CPU is detected only
+after all the SMP CPUs are brought up. However, we use the status
+of this capability for every context switch. So, let us change
+the scope to LOCAL_CPU to allow the detection of this capability
+as and when the first CPU without FP is brought up.
 
-Fixes: a6120833272c ("arm64: dts: add support for SolidRun Clearfog GT 8K")
-Reported-by: Denis Odintsov <d.odintsov@traviangames.com>
-Signed-off-by: Baruch Siach <baruch@tkos.co.il>
-Reviewed-by: Andrew Lunn <andrew@lunn.ch>
-Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
+Also, the current type allows hotplugged CPU to be brought up without
+FP/SIMD when all the current CPUs have FP/SIMD and we have the userspace
+up. Fix both of these issues by changing the capability to
+BOOT_RESTRICTED_LOCAL_CPU_FEATURE.
+
+Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
+Cc: Will Deacon <will@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/kernel/cpufeature.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-index bd881497b8729..a211a046b2f2f 100644
---- a/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-+++ b/arch/arm64/boot/dts/marvell/armada-8040-clearfog-gt-8k.dts
-@@ -408,6 +408,8 @@
- 				reg = <5>;
- 				label = "cpu";
- 				ethernet = <&cp1_eth2>;
-+				phy-mode = "2500base-x";
-+				managed = "in-band-status";
- 			};
- 		};
- 
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 04cf64e9f0c97..b4f84513655d6 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1368,7 +1368,7 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 	{
+ 		/* FP/SIMD is not implemented */
+ 		.capability = ARM64_HAS_NO_FPSIMD,
+-		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
++		.type = ARM64_CPUCAP_BOOT_RESTRICTED_CPU_LOCAL_FEATURE,
+ 		.min_field_value = 0,
+ 		.matches = has_no_fpsimd,
+ 	},
 -- 
 2.20.1
 
