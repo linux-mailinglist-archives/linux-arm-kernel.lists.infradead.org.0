@@ -2,55 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51EE115DAD9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:26:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 67DEB15DADB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:26:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yFqGMQMGIacnRbBPWlEYeD+mtb3uiDkNcIyk4oOfnHg=; b=kK4hk2iJYd1oxk
-	jEUyGX6cegLVZE/oGquvxNov5Apcwe3yNngqb84f0XhEKwPW2Z96ZiZnn7+YciA5Y7X+ye5YX0NSX
-	eldq/EX8PbaFsl2klpuC7/MrZqxLfiJ1dzpMYUyF6xnD3KgY3iW2P7Tq1gNGF08NqvzGdzlacCAOr
-	8f88Hh5N27LNkWOJM9tnCwV3TieJG0CyjyTtcM1Enb8T+4Csd/BACGH/kQEKpGL/v/F6AP3LWfz8e
-	itgsPPCOJ5t7qE+Kh6qVkwImDTO4AH6nWRMDvTZ1DNeAV4r4Mz/YT0x+rlYsVFpBvqDJPkk8ftHJa
-	38TvOref5/yPaX01lOmA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RKQkrqsTl3EiL5tZRM2FKYgmtPOFupp53sm1LOBdcq4=; b=C9EIG9lWfi0uw3
+	pVCi1qZeGVHBVGjGbLRkVD5bbJgebAMJVqSNZA/sisclCTMKVHIK2L8GXJhjHLk2B6R3cPkclCT6P
+	XQXscIeO/8afqA339z2I5ojf+Fgd3LWag4mWD2hQ5wICGNw7zzCtWPf/KPWPa+2FyWZXU2lpL/Qxv
+	HCQSTK1zJ3WFWmlf45j8n1V4FIUpfM51++/34xQml5KxmZZMKmZiH5U1YIQ8+gEHWwE9bpE7PxTcY
+	VOft/PzqWr43UOuyqe1RGU8tdVXR60dIY/djCDRnv+HVfJlX73fotKdV9NhQ7Cfjs1DbWE70sxNNZ
+	R0e/wU6ezQqtnK3wP7Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2cqo-0005ML-OZ; Fri, 14 Feb 2020 15:25:54 +0000
+	id 1j2cr6-0005pY-CR; Fri, 14 Feb 2020 15:26:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2cqD-000567-Cl
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:25:21 +0000
+ id 1j2cqv-0005o5-NY
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:26:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3CBAC328;
- Fri, 14 Feb 2020 07:25:16 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B2F373F68E;
- Fri, 14 Feb 2020 07:25:15 -0800 (PST)
-From: Mark Brown <broonie@kernel.org>
-To: Marc Zyngier <maz@kernel.org>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: [PATCH v2] arm64: kvm: Annotate assembly using modern annoations
-Date: Fri, 14 Feb 2020 15:25:13 +0000
-Message-Id: <20200214152513.43496-1-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 80B7E328;
+ Fri, 14 Feb 2020 07:25:59 -0800 (PST)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9F58A3F68E;
+ Fri, 14 Feb 2020 07:25:58 -0800 (PST)
+Subject: Re: [RFC PATCH 01/11] firmware: arm_scmi: Add receive buffer support
+ for notifications
+To: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
+References: <20200120122333.46217-1-cristian.marussi@arm.com>
+ <20200120122333.46217-2-cristian.marussi@arm.com>
+ <20200127170713.000013ee@Huawei.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <97365c4e-3672-64ec-50c7-28dc839a2d35@arm.com>
+Date: Fri, 14 Feb 2020 15:25:57 +0000
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200127170713.000013ee@Huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_072518_782657_4504858B 
-X-CRM114-Status: GOOD (  10.41  )
-X-Spam-Score: -2.0 (--)
+X-CRM114-CacheID: sfid-20200214_072601_955817_DD738D8C 
+X-CRM114-Status: GOOD (  19.55  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,160 +66,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: james.quinlan@broadcom.com, lukasz.luba@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ sudeep.holla@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In an effort to clarify and simplify the annotation of assembly functions
-in the kernel new macros have been introduced. These replace ENTRY and
-ENDPROC with separate annotations for standard C callable functions,
-data and code with different calling conventions.  Update the more
-straightforward annotations in the kvm code to the new macros.
+Hi
 
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
+On 27/01/2020 17:07, Jonathan Cameron wrote:
+> On Mon, 20 Jan 2020 12:23:23 +0000
+> Cristian Marussi <cristian.marussi@arm.com> wrote:
+> 
+>> From: Sudeep Holla <sudeep.holla@arm.com>
+>>
+>> With all the plumbing in place, let's just add the separate dedicated
+>> receive buffers to handle notifications that can arrive asynchronously
+>> from the platform firmware to OS.
+>>
+>> Also add check to see if the platform supports any receive channels
+>> before allocating the receive buffers.
+> 
+> Perhaps hand hold the reader a tiny bit more by saying that we need
+> to move the initialization later so that we can know *if* the receive
+> channels are supported.  Took me a moment to figure out why you did that ;)
+> 
 
-This drops the changes to __bp_harden_hyp_vecs and __smccc_workaround_1_smc
-which currently use an unusual style with _start and _end annotations
-and should be updated along with changes to their users to not use those
-separate annotations instead so should go in a separate patch.
+Addressed in v2.
 
- arch/arm64/kvm/hyp-init.S      |  8 ++++----
- arch/arm64/kvm/hyp.S           |  4 ++--
- arch/arm64/kvm/hyp/fpsimd.S    |  8 ++++----
- arch/arm64/kvm/hyp/hyp-entry.S | 15 ++++++++-------
- 4 files changed, 18 insertions(+), 17 deletions(-)
+> One minor suggestion inline.
+> 
+>>
+>> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+>> ---
+>>  drivers/firmware/arm_scmi/driver.c | 24 ++++++++++++++++++------
+>>  1 file changed, 18 insertions(+), 6 deletions(-)
+>>
+>> diff --git a/drivers/firmware/arm_scmi/driver.c b/drivers/firmware/arm_scmi/driver.c
+>> index 2c96f6b5a7d8..9611e8037d77 100644
+>> --- a/drivers/firmware/arm_scmi/driver.c
+>> +++ b/drivers/firmware/arm_scmi/driver.c
+>> @@ -123,6 +123,7 @@ struct scmi_chan_info {
+>>   * @version: SCMI revision information containing protocol version,
+>>   *	implementation version and (sub-)vendor identification.
+>>   * @tx_minfo: Universal Transmit Message management info
+>> + * @rx_minfo: Universal Receive Message management info
+>>   * @tx_idr: IDR object to map protocol id to Tx channel info pointer
+>>   * @rx_idr: IDR object to map protocol id to Rx channel info pointer
+>>   * @protocols_imp: List of protocols implemented, currently maximum of
+>> @@ -136,6 +137,7 @@ struct scmi_info {
+>>  	struct scmi_revision_info version;
+>>  	struct scmi_handle handle;
+>>  	struct scmi_xfers_info tx_minfo;
+>> +	struct scmi_xfers_info rx_minfo;
+>>  	struct idr tx_idr;
+>>  	struct idr rx_idr;
+>>  	u8 *protocols_imp;
+>> @@ -690,13 +692,13 @@ int scmi_handle_put(const struct scmi_handle *handle)
+>>  	return 0;
+>>  }
+>>  
+>> -static int scmi_xfer_info_init(struct scmi_info *sinfo)
+>> +static int __scmi_xfer_info_init(struct scmi_info *sinfo, bool tx)
+>>  {
+>>  	int i;
+>>  	struct scmi_xfer *xfer;
+>>  	struct device *dev = sinfo->dev;
+>>  	const struct scmi_desc *desc = sinfo->desc;
+>> -	struct scmi_xfers_info *info = &sinfo->tx_minfo;
+>> +	struct scmi_xfers_info *info = tx ? &sinfo->tx_minfo : &sinfo->rx_minfo;
+> 
+> Perhaps cleaner to just pass in the relevant info structure rather than a boolean
+> to pick it.  Saves people having to check if the boolean is saying it's
+> tx or rx when reading the call sites.
+> 
 
-diff --git a/arch/arm64/kvm/hyp-init.S b/arch/arm64/kvm/hyp-init.S
-index 160be2b4696d..84f32cf5abc7 100644
---- a/arch/arm64/kvm/hyp-init.S
-+++ b/arch/arm64/kvm/hyp-init.S
-@@ -18,7 +18,7 @@
- 
- 	.align	11
- 
--ENTRY(__kvm_hyp_init)
-+SYM_CODE_START(__kvm_hyp_init)
- 	ventry	__invalid		// Synchronous EL2t
- 	ventry	__invalid		// IRQ EL2t
- 	ventry	__invalid		// FIQ EL2t
-@@ -117,9 +117,9 @@ CPU_BE(	orr	x4, x4, #SCTLR_ELx_EE)
- 
- 	/* Hello, World! */
- 	eret
--ENDPROC(__kvm_hyp_init)
-+SYM_CODE_END(__kvm_hyp_init)
- 
--ENTRY(__kvm_handle_stub_hvc)
-+SYM_CODE_START(__kvm_handle_stub_hvc)
- 	cmp	x0, #HVC_SOFT_RESTART
- 	b.ne	1f
- 
-@@ -158,7 +158,7 @@ reset:
- 	ldr	x0, =HVC_STUB_ERR
- 	eret
- 
--ENDPROC(__kvm_handle_stub_hvc)
-+SYM_CODE_END(__kvm_handle_stub_hvc)
- 
- 	.ltorg
- 
-diff --git a/arch/arm64/kvm/hyp.S b/arch/arm64/kvm/hyp.S
-index c0094d520dff..3c79a1124af2 100644
---- a/arch/arm64/kvm/hyp.S
-+++ b/arch/arm64/kvm/hyp.S
-@@ -28,7 +28,7 @@
-  * and is used to implement hyp stubs in the same way as in
-  * arch/arm64/kernel/hyp_stub.S.
-  */
--ENTRY(__kvm_call_hyp)
-+SYM_FUNC_START(__kvm_call_hyp)
- 	hvc	#0
- 	ret
--ENDPROC(__kvm_call_hyp)
-+SYM_FUNC_END(__kvm_call_hyp)
-diff --git a/arch/arm64/kvm/hyp/fpsimd.S b/arch/arm64/kvm/hyp/fpsimd.S
-index 78ff53225691..5b8ff517ff10 100644
---- a/arch/arm64/kvm/hyp/fpsimd.S
-+++ b/arch/arm64/kvm/hyp/fpsimd.S
-@@ -11,12 +11,12 @@
- 	.text
- 	.pushsection	.hyp.text, "ax"
- 
--ENTRY(__fpsimd_save_state)
-+SYM_FUNC_START(__fpsimd_save_state)
- 	fpsimd_save	x0, 1
- 	ret
--ENDPROC(__fpsimd_save_state)
-+SYM_FUNC_END(__fpsimd_save_state)
- 
--ENTRY(__fpsimd_restore_state)
-+SYM_FUNC_START(__fpsimd_restore_state)
- 	fpsimd_restore	x0, 1
- 	ret
--ENDPROC(__fpsimd_restore_state)
-+SYM_FUNC_END(__fpsimd_restore_state)
-diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
-index ffa68d5713f1..0aea8f9ab23d 100644
---- a/arch/arm64/kvm/hyp/hyp-entry.S
-+++ b/arch/arm64/kvm/hyp/hyp-entry.S
-@@ -180,7 +180,7 @@ el2_error:
- 	eret
- 	sb
- 
--ENTRY(__hyp_do_panic)
-+SYM_FUNC_START(__hyp_do_panic)
- 	mov	lr, #(PSR_F_BIT | PSR_I_BIT | PSR_A_BIT | PSR_D_BIT |\
- 		      PSR_MODE_EL1h)
- 	msr	spsr_el2, lr
-@@ -188,18 +188,19 @@ ENTRY(__hyp_do_panic)
- 	msr	elr_el2, lr
- 	eret
- 	sb
--ENDPROC(__hyp_do_panic)
-+SYM_FUNC_END(__hyp_do_panic)
- 
--ENTRY(__hyp_panic)
-+SYM_CODE_START(__hyp_panic)
- 	get_host_ctxt x0, x1
- 	b	hyp_panic
--ENDPROC(__hyp_panic)
-+SYM_CODE_END(__hyp_panic)
- 
- .macro invalid_vector	label, target = __hyp_panic
- 	.align	2
-+SYM_CODE_START(\label)
- \label:
- 	b \target
--ENDPROC(\label)
-+SYM_CODE_END(\label)
- .endm
- 
- 	/* None of these should ever happen */
-@@ -246,7 +247,7 @@ check_preamble_length 661b, 662b
- check_preamble_length 661b, 662b
- .endm
- 
--ENTRY(__kvm_hyp_vector)
-+SYM_CODE_START(__kvm_hyp_vector)
- 	invalid_vect	el2t_sync_invalid	// Synchronous EL2t
- 	invalid_vect	el2t_irq_invalid	// IRQ EL2t
- 	invalid_vect	el2t_fiq_invalid	// FIQ EL2t
-@@ -266,7 +267,7 @@ ENTRY(__kvm_hyp_vector)
- 	valid_vect	el1_irq			// IRQ 32-bit EL1
- 	invalid_vect	el1_fiq_invalid		// FIQ 32-bit EL1
- 	valid_vect	el1_error		// Error 32-bit EL1
--ENDPROC(__kvm_hyp_vector)
-+SYM_CODE_END(__kvm_hyp_vector)
- 
- #ifdef CONFIG_KVM_INDIRECT_VECTORS
- .macro hyp_ventry
--- 
-2.20.1
+Done in the upcoming v2.
+
+Regards
+
+Cristian
+
+>>  
+>>  	/* Pre-allocated messages, no more than what hdr.seq can support */
+>>  	if (WARN_ON(desc->max_msg >= MSG_TOKEN_MAX)) {
+>> @@ -731,6 +733,16 @@ static int scmi_xfer_info_init(struct scmi_info *sinfo)
+>>  	return 0;
+>>  }
+>>  
+>> +static int scmi_xfer_info_init(struct scmi_info *sinfo)
+>> +{
+>> +	int ret = __scmi_xfer_info_init(sinfo, true);
+>> +
+>> +	if (!ret && idr_find(&sinfo->rx_idr, SCMI_PROTOCOL_BASE))
+>> +		ret = __scmi_xfer_info_init(sinfo, false);
+>> +
+>> +	return ret;
+>> +}
+>> +
+>>  static int scmi_mailbox_check(struct device_node *np, int idx)
+>>  {
+>>  	return of_parse_phandle_with_args(np, "mboxes", "#mbox-cells",
+>> @@ -908,10 +920,6 @@ static int scmi_probe(struct platform_device *pdev)
+>>  	info->desc = desc;
+>>  	INIT_LIST_HEAD(&info->node);
+>>  
+>> -	ret = scmi_xfer_info_init(info);
+>> -	if (ret)
+>> -		return ret;
+>> -
+>>  	platform_set_drvdata(pdev, info);
+>>  	idr_init(&info->tx_idr);
+>>  	idr_init(&info->rx_idr);
+>> @@ -924,6 +932,10 @@ static int scmi_probe(struct platform_device *pdev)
+>>  	if (ret)
+>>  		return ret;
+>>  
+>> +	ret = scmi_xfer_info_init(info);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>>  	ret = scmi_base_protocol_init(handle);
+>>  	if (ret) {
+>>  		dev_err(dev, "unable to communicate with SCMI(%d)\n", ret);
+> 
+> 
 
 
 _______________________________________________
