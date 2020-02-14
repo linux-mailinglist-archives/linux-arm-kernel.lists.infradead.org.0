@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4454515DAB6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:22:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F13015DAB8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:22:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ETsaQ81hY5P/zz5HWcgQe/8MtuDffHsV59vbTMQdIVE=; b=KTteyy/Yacq7x3
-	IROg8Uz0k7ZjWYDlet+AwpopnQ50FcsXjwlAIdJpf6bIHR4v3qeCjaMCBPiKrxhs3UdQAjBZWxWmO
-	4KIWhyAI3URHE93GfH6iWFUqDu06wkSFpE2t9q+X3bR6jnjQibROgYCPhxetnpbHKlIou5oFyUCUJ
-	FlXc5UtTw/iM4WXrdf26dCkAVEbTiLCwEPvZDCXQlsbAkrWY7I/09f9JgJA7/oF/FcTwNsZuL63o6
-	oNrYnHm67sc0YchAzrUh1+He7W2w8YIYsLJ3q3houS9peIy8ji2QGzJWfVjc0rvibOmvZ82FUkKWe
-	j393YXrqa2qn4OanlGwg==;
+	List-Owner; bh=4Dc8qtcQWwD5Bhg694tCE9BqCunrE8g4JpMcDrjy92M=; b=q2LF/YoySpBcYL
+	I+520H8BScGDu+XO6ZdCNaWoin4w00XaTgsPxLka6V35rAQpbcxPtOfdt1SduSwQQsJn1GZHfZ4ZS
+	qNctnD6SizRHmqso2NdblV8XMFjxhJTHdp7EaALbM/3IHQl9WUKEBbz7ySF0lpJkHfXpoj26BZ6l+
+	Jada1aGhQryof/5nHuvx5F3cyE3QTKgzAwsp2051IUAClIh1w3VvnoI1LWcKNs64M8dqyWwQkdTbF
+	GZ7ehoYUN3lLQ/y6VlIhsu85oVhAmB8Dm3+uPRMDxw0MbiZhs2BtMukWQCCPoLTv+b8MsOvCvHJK8
+	yOrj/mHH6I2tuxPrdD9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2cnU-0001dU-1o; Fri, 14 Feb 2020 15:22:28 +0000
+	id 1j2cno-0001oB-5o; Fri, 14 Feb 2020 15:22:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2cmG-0000EX-SA
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:21:14 +0000
+ id 1j2cmL-0000Jj-IQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:21:19 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 50A352168B;
- Fri, 14 Feb 2020 15:21:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 67B7C24650;
+ Fri, 14 Feb 2020 15:21:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581693672;
- bh=T0HXT57QkCmJWt2fIEDW9u7ILipbmmqwzalNG/8iegk=;
+ s=default; t=1581693676;
+ bh=h2RoilCmwImi3saDUnYm3AKVc94B/T2fB/SCs0dwkYY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=VIHFxtiKtfU38kguCWl1J3BlJ4DXk9xpOHfdQoivMDlsUcmfEDEb2MgpkMJkpgI7V
- bKbuWvPlo5PlZIDDvXPJhYKyJKN4lQrShJN7+gkPWcJU/8ykAOsCsB4VNAVbu7yC5M
- OG34l3GhSlncEeFYgehQrCHBxn1gRsjj0NMFo0so=
+ b=YJM+cy9JAnilWQrp92y7WUSRGC39/VkWPt6ELUClFU761U6ULGeAsK+nj2iwwF6dC
+ Jmi06xOIUOFIKVwS4HgaX0X24MdTjBDcbTwFrgvijvlokAjirOhAILegclzFSmz94r
+ QEFW0cO2bV5v/7BJ8ttSGl3RKcsVvhqUy6CbrJlM=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j2cPj-0057sw-4Y; Fri, 14 Feb 2020 14:57:55 +0000
+ id 1j2cPj-0057sw-QY; Fri, 14 Feb 2020 14:57:55 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v4 12/20] irqchip/gic-v4.1: Add VSGI property setup
-Date: Fri, 14 Feb 2020 14:57:28 +0000
-Message-Id: <20200214145736.18550-13-maz@kernel.org>
+Subject: [PATCH v4 13/20] irqchip/gic-v4.1: Eagerly vmap vPEs
+Date: Fri, 14 Feb 2020 14:57:29 +0000
+Message-Id: <20200214145736.18550-14-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214145736.18550-1-maz@kernel.org>
 References: <20200214145736.18550-1-maz@kernel.org>
@@ -62,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_072112_963185_2A3CBE0A 
-X-CRM114-Status: GOOD (  11.64  )
+X-CRM114-CacheID: sfid-20200214_072117_767629_E9737D50 
+X-CRM114-Status: GOOD (  15.13  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,50 +103,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the SGI configuration entry point for KVM to use.
+Now that we have HW-accelerated SGIs being delivered to VPEs, it
+becomes required to map the VPEs on all ITSs instead of relying
+on the lazy approach that we would use when using the ITS-list
+mechanism.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- drivers/irqchip/irq-gic-v4.c       | 13 +++++++++++++
- include/linux/irqchip/arm-gic-v4.h |  1 +
- 2 files changed, 14 insertions(+)
+ drivers/irqchip/irq-gic-v3-its.c | 39 +++++++++++++++++++++++++-------
+ 1 file changed, 31 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/irqchip/irq-gic-v4.c b/drivers/irqchip/irq-gic-v4.c
-index 99b33f60ac63..f3f06c5c7e54 100644
---- a/drivers/irqchip/irq-gic-v4.c
-+++ b/drivers/irqchip/irq-gic-v4.c
-@@ -320,6 +320,19 @@ int its_prop_update_vlpi(int irq, u8 config, bool inv)
- 	return irq_set_vcpu_affinity(irq, &info);
+diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
+index a2e824eae43f..7656b353a95f 100644
+--- a/drivers/irqchip/irq-gic-v3-its.c
++++ b/drivers/irqchip/irq-gic-v3-its.c
+@@ -1554,12 +1554,31 @@ static int its_irq_set_irqchip_state(struct irq_data *d,
+ 	return 0;
  }
  
-+int its_prop_update_vsgi(int irq, u8 priority, bool group)
++/*
++ * Two favourable cases:
++ *
++ * (a) Either we have a GICv4.1, and all vPEs have to be mapped at all times
++ *     for vSGI delivery
++ *
++ * (b) Or the ITSs do not use a list map, meaning that VMOVP is cheap enough
++ *     and we're better off mapping all VPEs always
++ *
++ * If neither (a) nor (b) is true, then we map vPEs on demand.
++ *
++ */
++static bool gic_requires_eager_mapping(void)
 +{
-+	struct its_cmd_info info = {
-+		.cmd_type = PROP_UPDATE_SGI,
-+		{
-+			.priority	= priority,
-+			.group		= group,
-+		},
-+	};
++	if (!its_list_map || gic_rdists->has_rvpeid)
++		return true;
 +
-+	return irq_set_vcpu_affinity(irq, &info);
++	return false;
 +}
 +
- int its_init_v4(struct irq_domain *domain,
- 		const struct irq_domain_ops *vpe_ops,
- 		const struct irq_domain_ops *sgi_ops)
-diff --git a/include/linux/irqchip/arm-gic-v4.h b/include/linux/irqchip/arm-gic-v4.h
-index 9fbd0418f569..46c167a6349f 100644
---- a/include/linux/irqchip/arm-gic-v4.h
-+++ b/include/linux/irqchip/arm-gic-v4.h
-@@ -129,6 +129,7 @@ int its_map_vlpi(int irq, struct its_vlpi_map *map);
- int its_get_vlpi(int irq, struct its_vlpi_map *map);
- int its_unmap_vlpi(int irq);
- int its_prop_update_vlpi(int irq, u8 config, bool inv);
-+int its_prop_update_vsgi(int irq, u8 priority, bool group);
+ static void its_map_vm(struct its_node *its, struct its_vm *vm)
+ {
+ 	unsigned long flags;
  
- struct irq_domain_ops;
- int its_init_v4(struct irq_domain *domain,
+-	/* Not using the ITS list? Everything is always mapped. */
+-	if (!its_list_map)
++	if (gic_requires_eager_mapping())
+ 		return;
+ 
+ 	raw_spin_lock_irqsave(&vmovp_lock, flags);
+@@ -1593,7 +1612,7 @@ static void its_unmap_vm(struct its_node *its, struct its_vm *vm)
+ 	unsigned long flags;
+ 
+ 	/* Not using the ITS list? Everything is always mapped. */
+-	if (!its_list_map)
++	if (gic_requires_eager_mapping())
+ 		return;
+ 
+ 	raw_spin_lock_irqsave(&vmovp_lock, flags);
+@@ -4192,8 +4211,12 @@ static int its_vpe_irq_domain_activate(struct irq_domain *domain,
+ 	struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
+ 	struct its_node *its;
+ 
+-	/* If we use the list map, we issue VMAPP on demand... */
+-	if (its_list_map)
++	/*
++	 * If we use the list map, we issue VMAPP on demand... Unless
++	 * we're on a GICv4.1 and we eagerly map the VPE on all ITSs
++	 * so that VSGIs can work.
++	 */
++	if (!gic_requires_eager_mapping())
+ 		return 0;
+ 
+ 	/* Map the VPE to the first possible CPU */
+@@ -4219,10 +4242,10 @@ static void its_vpe_irq_domain_deactivate(struct irq_domain *domain,
+ 	struct its_node *its;
+ 
+ 	/*
+-	 * If we use the list map, we unmap the VPE once no VLPIs are
+-	 * associated with the VM.
++	 * If we use the list map on GICv4.0, we unmap the VPE once no
++	 * VLPIs are associated with the VM.
+ 	 */
+-	if (its_list_map)
++	if (!gic_requires_eager_mapping())
+ 		return;
+ 
+ 	list_for_each_entry(its, &its_nodes, entry) {
 -- 
 2.20.1
 
