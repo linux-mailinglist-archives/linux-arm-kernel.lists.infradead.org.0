@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67F3315DE68
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:04:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE77015DE7C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:05:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VNwEFMeOGOYXXVEZWjNozZKhsARfXUhXaBPrSNoofOE=; b=nzRRv+uC+6AiCJ
-	qvMvoZaqVzieNOdf7r6ENfeO3NGYLJ/gcAcrChBY/af8UglLGgi7K6cCDyp+9tSTIFO6NbpDOXF7K
-	zpEZJKYe/R4H3gnmCVyFLNN9R7vePsWqXHrVLQ/5mpW19G7oRRIoNvnQV7Pi+VJmjVnb4RzeOK7L8
-	Uw2U6NahjZWnjIcHcJV9+Mi0kachyKoCFnGAm+X7MNeqPSmxAw41XWgLGcCXslu48oHloaHSL3oB5
-	pNUc46UH6v5nAGU7l8TXeQNKPb9rZ5RIECpkXT/n44UlruN7W2+DVm+o2So8KuwwS8hP2hDq4qNgR
-	7pfxKKHLYMKkfB4RTEOw==;
+	List-Owner; bh=zIZOJpuCtt7IIlxLUM6jE0Qvy2nSPpD6QwJCEjq3sYk=; b=MHyiEoK42C/bSw
+	4mf+Gud5qUKB2SisA/5s+rAI+ZpL1njL278wNj+jj6X1PIvrzG8t/hKBmllaPyn1TXm3gLhB1gDpl
+	p0jb/7x6yhIEJRfG2cL0NsOfHctag9M+A/cn7ZWq5/UmKMNCtpQQIdohxd1IsKeq+CsSRCCeUT7pd
+	E/ewnJQ7iEzaTQ2YMggWQqj1I3LAYHW2VpibbxToyM+Pk9Q29JJIUbEDKtaGKA/XIdctVn/fkFDRT
+	TPRlryoA2n6ZwG0ggXj0sDoWlKy4FJ1mr7uZSXdfJZNsUDLrUXP6rItU5ZPXrhYWIyj1iOj4TcTAu
+	Q7NLR/0Ir5Cn/cx5mmtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dSQ-000384-M1; Fri, 14 Feb 2020 16:04:46 +0000
+	id 1j2dSi-0003Pj-LO; Fri, 14 Feb 2020 16:05:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dJU-00015T-NF
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:55:35 +0000
+ id 1j2dJb-00019a-JH; Fri, 14 Feb 2020 15:55:46 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 591EF2467C;
- Fri, 14 Feb 2020 15:55:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8F87424682;
+ Fri, 14 Feb 2020 15:55:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695732;
- bh=8Yb5HhRfNtu90zyqPHEgbqHDjAy4hSB8qwaNWc47P64=;
+ s=default; t=1581695738;
+ bh=uyTSEKzssiXTjw2/MDuQphK+UDTxkooeOKp7U8Y6QyY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=o6rus/f3oqz8ScjHPeOvGNETQ1X43tt2ddezZQ80XyTTWetWk01uUmdEwkcVIJXP4
- Ki/90xOA/vIaqDFow5SwyV4C/cULprVfRvAsshOQ7fMc5QyNXfAmPwcj148Nk6hWrn
- L8kazU1h109Di6UcJ/QjeIL51oTSA7JriVgYTE7g=
+ b=d23n6UALZ3wJdCiJQ7z4cjb5Gc2O+u2SQL/3p51E7nEtF1YdYd/a+VNqotfX7aZgs
+ F47riaUNLWXo0WscvSZWRNzHofi7tuBoTgTL3GoWkTBbdgxUnuNs3KfOeT5S/iZhO4
+ hYBZzV5Bb82O0hN+HvEefUfdFLKzkGt3sDnove0o=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 306/542] ARM: dts: stm32: Add power-supply for DSI
- panel on stm32f469-disco
-Date: Fri, 14 Feb 2020 10:44:58 -0500
-Message-Id: <20200214154854.6746-306-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 311/542] drm/mediatek: Add gamma property
+ according to hardware capability
+Date: Fri, 14 Feb 2020 10:45:03 -0500
+Message-Id: <20200214154854.6746-311-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -50,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075533_941781_67157A91 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200214_075539_759071_8B660FF2 
+X-CRM114-Status: GOOD (  10.30  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,56 +79,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Benjamin Gaignard <benjamin.gaignard@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Sasha Levin <sashal@kernel.org>, dri-devel@lists.freedesktop.org,
+ linux-mediatek@lists.infradead.org, Yongqiang Niu <yongqiang.niu@mediatek.com>,
+ Hsin-Yi Wang <hsinyi@chromium.org>, CK Hu <ck.hu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
+From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 
-[ Upstream commit 0ff15a86d0c5a3f004fee2e92d65b88e56a3bc58 ]
+[ Upstream commit 4cebc1de506fa753301266a5a23bb21bca52ad3a ]
 
-Add a fixed regulator and use it as power supply for DSI panel.
+If there is no gamma function in the crtc
+display path, don't add gamma property
+for crtc
 
-Fixes: 18c8866266 ("ARM: dts: stm32: Add display support on stm32f469-disco")
-
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+Fixes: 2f3f4dda747c ("drm/mediatek: Add gamma correction.")
+Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+Signed-off-by: CK Hu <ck.hu@mediatek.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/stm32f469-disco.dts | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/stm32f469-disco.dts b/arch/arm/boot/dts/stm32f469-disco.dts
-index f3ce477b7bae6..9397db0c43de2 100644
---- a/arch/arm/boot/dts/stm32f469-disco.dts
-+++ b/arch/arm/boot/dts/stm32f469-disco.dts
-@@ -76,6 +76,13 @@
- 		regulator-max-microvolt = <3300000>;
- 	};
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 4132cd114a037..c3f5111fd563f 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -641,6 +641,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 	int pipe = priv->num_pipes;
+ 	int ret;
+ 	int i;
++	uint gamma_lut_size = 0;
  
-+	vdd_dsi: vdd-dsi {
-+		compatible = "regulator-fixed";
-+		regulator-name = "vdd_dsi";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+	};
+ 	if (!path)
+ 		return 0;
+@@ -691,6 +692,9 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 		}
+ 
+ 		mtk_crtc->ddp_comp[i] = comp;
 +
- 	soc {
- 		dma-ranges = <0xc0000000 0x0 0x10000000>;
- 	};
-@@ -155,6 +162,7 @@
- 		compatible = "orisetech,otm8009a";
- 		reg = <0>; /* dsi virtual channel (0..3) */
- 		reset-gpios = <&gpioh 7 GPIO_ACTIVE_LOW>;
-+		power-supply = <&vdd_dsi>;
- 		status = "okay";
++		if (comp->funcs && comp->funcs->gamma_set)
++			gamma_lut_size = MTK_LUT_SIZE;
+ 	}
  
- 		port {
+ 	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+@@ -711,8 +715,10 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 				NULL, pipe);
+ 	if (ret < 0)
+ 		return ret;
+-	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
+-	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
++
++	if (gamma_lut_size)
++		drm_mode_crtc_set_gamma_size(&mtk_crtc->base, gamma_lut_size);
++	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, gamma_lut_size);
+ 	priv->num_pipes++;
+ 
+ 	return 0;
 -- 
 2.20.1
 
