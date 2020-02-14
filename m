@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81FCB15E3C7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:32:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC20715E3D4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:32:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2VksAuP866Wh6lbRMk5J3GGepJB3cEmPp+768NXoR5o=; b=ZDOFZr4v5yahhz
-	/m0s5siPWda3N4E/5Rl5exw/f5k2rJotT5F2sfLKE++XETqIuLcS/DE9haabk+8G40ikTGNzo7ysR
-	Akz1UCX147J8zH2L9fCmlOjraXF7QTTajSV0GAKy6g3sVTdv+ZmU5SB0/j0KSj0BKhSGTmr+0nqfg
-	ZqsCAnfBjwNVvwp2Ltcs5Ro5UEECt1uw+KVDCt/TdQgbV4/IuOucag/l3nsQyv0kmu2sE41NjMeVE
-	/tNXrE8iyxdT5Fdx6AZBnuJ4KdMCl/gV4YOKPCeGCnqj6KIW6EGBK8k3eFCeIdfZq1ljBX1WdoAXg
-	b8+K6QTqtld6lxgBp/hg==;
+	List-Owner; bh=o+805BgAOdNzmX30d9h09YtNBqrTiI+mLNlaRVHfXm4=; b=HSaQsn5FocA3XY
+	5rumGguQ66qrTeWUima6sbWr8oW6XkMoy2OUG5GDSlADmuRM1sp4he1mQA3AkgIoaRc3KXiokRXOC
+	ETDtcFFeif7FwOky9kFoTqjjfWY2wk7R6DwVSaCqvajd97Ux971IONCLZYGUCyBuUB+ZwKIeMpRsB
+	MBF3mIvVmKe3bXvKMVZxP2wKlhRD8I3axA7rL+ppxuo0ZT/uwqLTJONlvogRN1/7j23dF9GxHTRt/
+	VcuFtxrL8JgQrlSLDg0KN6OjgFtAd992ViwwDbaxyVhke1R28qkSgwkCIMCvUqiMXYpUeEJ/Q+HaI
+	6crRUEY5Hfu2AVZYjhbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dtO-00015P-GJ; Fri, 14 Feb 2020 16:32:38 +0000
+	id 1j2dtb-0001JA-Kl; Fri, 14 Feb 2020 16:32:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dVS-0007bY-UU
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:07:56 +0000
+ id 1j2dVZ-0007iH-SD; Fri, 14 Feb 2020 16:08:03 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 49842206D7;
- Fri, 14 Feb 2020 16:07:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 412E72187F;
+ Fri, 14 Feb 2020 16:08:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696474;
- bh=8gg111GgiL284py8cdb/2hkDji1GxlitkItG9drCMpE=;
+ s=default; t=1581696481;
+ bh=wxI//oVLBA4AEXrM9q4sGKSYQOhNs7aqgQgAI+8cswo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=hlXwh3rPYScqJ/IZd/FUjq7FyDCaRmMQEiuwmbSNf0BQ5L6Dc1n1YhUqXfiT3ougz
- paoAGT3TCJUmKlyAR4WzhywWUgf1JKVxm0oW9deBHbyhBBhXoZ3+tqccvMZFMxsCSJ
- 9fByJZ0eTSqV2Qz3ntsF/U3FkJcTQoIblC29z0eU=
+ b=l+s/BKRGS1kOsAJ3Bkz4Q/IZ29eY+k8TqMsnYR1i88c/Knf3D3T2N7TR6lEekzhWo
+ +pUJiI80BAPRu9joDacQB9TOTbm1DsdAhgL5hILicv5BEpWXi7Rd1Jyhz8swqmtwA0
+ viHMY2KrhK8VWncPVqSL5oIUdfU0n1iBElCjCNoo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 282/459] ARM: at91: pm: use of_device_id array to
- find the proper shdwc node
-Date: Fri, 14 Feb 2020 10:58:52 -0500
-Message-Id: <20200214160149.11681-282-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 288/459] arm64: dts: rockchip: fix dwmmc clock
+ name for px30
+Date: Fri, 14 Feb 2020 10:58:58 -0500
+Message-Id: <20200214160149.11681-288-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080755_030766_787FAE95 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20200214_080801_970385_7D800A7B 
+X-CRM114-Status: GOOD (  11.93  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,59 +79,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Claudiu Beznea <claudiu.beznea@microchip.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Claudiu Beznea <claudiu.beznea@microchip.com>
+From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit ec6e618c8c018c1361d77789a100a5f6f6317178 ]
+[ Upstream commit 7f2147350291569acd1df5a26dcdfc573916016f ]
 
-Use of_device_id array to find the proper shdwc compatibile node.
-SAM9X60's shdwc changes were not integrated when
-commit eaedc0d379da ("ARM: at91: pm: add ULP1 support for SAM9X60")
-was integrated.
+An experimental test with the command below gives this error:
+px30-evb.dt.yaml: dwmmc@ff390000: clock-names:2:
+'ciu-drive' was expected
 
-Fixes: eaedc0d379da ("ARM: at91: pm: add ULP1 support for SAM9X60")
-Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-Link: https://lore.kernel.org/r/1576062248-18514-3-git-send-email-claudiu.beznea@microchip.com
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+'ciu-drv' is not a valid dwmmc clock name,
+so fix this by changing it to 'ciu-drive'.
+
+make ARCH=arm64 dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Link: https://lore.kernel.org/r/20200110161200.22755-1-jbx6244@gmail.com
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mach-at91/pm.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/rockchip/px30.dtsi | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm/mach-at91/pm.c b/arch/arm/mach-at91/pm.c
-index 03250768340e4..52665f30d236d 100644
---- a/arch/arm/mach-at91/pm.c
-+++ b/arch/arm/mach-at91/pm.c
-@@ -691,6 +691,12 @@ static void __init at91_pm_use_default_mode(int pm_mode)
- 		soc_pm.data.suspend_mode = AT91_PM_ULP0;
- }
- 
-+static const struct of_device_id atmel_shdwc_ids[] = {
-+	{ .compatible = "atmel,sama5d2-shdwc" },
-+	{ .compatible = "microchip,sam9x60-shdwc" },
-+	{ /* sentinel. */ }
-+};
-+
- static void __init at91_pm_modes_init(void)
- {
- 	struct device_node *np;
-@@ -700,7 +706,7 @@ static void __init at91_pm_modes_init(void)
- 	    !at91_is_pm_mode_active(AT91_PM_ULP1))
- 		return;
- 
--	np = of_find_compatible_node(NULL, NULL, "atmel,sama5d2-shdwc");
-+	np = of_find_matching_node(NULL, atmel_shdwc_ids);
- 	if (!np) {
- 		pr_warn("%s: failed to find shdwc!\n", __func__);
- 		goto ulp1_default;
+diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+index eb992d60e6baf..9e09909a510a1 100644
+--- a/arch/arm64/boot/dts/rockchip/px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+@@ -768,7 +768,7 @@
+ 		interrupts = <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_SDMMC>, <&cru SCLK_SDMMC>,
+ 			 <&cru SCLK_SDMMC_DRV>, <&cru SCLK_SDMMC_SAMPLE>;
+-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
++		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		pinctrl-names = "default";
+@@ -783,7 +783,7 @@
+ 		interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_SDIO>, <&cru SCLK_SDIO>,
+ 			 <&cru SCLK_SDIO_DRV>, <&cru SCLK_SDIO_SAMPLE>;
+-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
++		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		pinctrl-names = "default";
+@@ -798,7 +798,7 @@
+ 		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru HCLK_EMMC>, <&cru SCLK_EMMC>,
+ 			 <&cru SCLK_EMMC_DRV>, <&cru SCLK_EMMC_SAMPLE>;
+-		clock-names = "biu", "ciu", "ciu-drv", "ciu-sample";
++		clock-names = "biu", "ciu", "ciu-drive", "ciu-sample";
+ 		fifo-depth = <0x100>;
+ 		max-frequency = <150000000>;
+ 		power-domains = <&power PX30_PD_MMC_NAND>;
 -- 
 2.20.1
 
