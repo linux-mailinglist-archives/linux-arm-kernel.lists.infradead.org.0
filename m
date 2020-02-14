@@ -2,83 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B22515F8E1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 22:45:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B9FE15F8F2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 22:48:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Pb87Ip+nRN25/MBY1sHaPyKcyAft/HrjE7Ex4rz5f4Q=; b=sT3NeeCFuIGWtdmft74kyw3j3
-	ydd4dBDGPb5o2pMFJdIXdHl1xZkWi49ZYjDNaiMpV2hJ4sfx/sBdHcIh/EP4AesPLYMUAsv/bfcoE
-	UQMRJCyUY3qTO0gDI78gPQM51r1lUf4RdmVubUqR8jXFiXISl7fGJsqfYOsvJbMxRPIGDAOhj0SFg
-	GHu07Xq4Ur4zFK+BU/tUTzV//RgIvSHP43/9cPvZ1KeyG5f+wiGOIVqi3Kr1sgOwPXx5Vlbq7sZo0
-	+bU6afza+8H1/cWRccrETeyhwiPRyN0nvtrX12OlinwAzwrXGuRc2GUnvL8q4hvqCE951Fn6lMIfu
-	+BkAWKuZQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=3ZHUGvIY8QT1ccfTN6QbbhAFyug+l+2SqKu6bK4PHBM=; b=s4f
+	FlmQV9GirCbqQjvPQu5SHavkqpswUOphqjYZDZtpVcE6EVKgMEp/mWJigjX6e5KeS78tWBnvH8JwW
+	BnPuf1aZI0wR6uHGV3V05auYrSsT7SLIkFkBMBsWi6E0+iGpHE03elPIqPhvTMe1bcrpUKaWsEvkj
+	zkDdnfK0USlYvKAbZYX0b3Ti6ha1CEje/NjZd9dooZwFhqPvTV6FZFTOdYcAIpE8VpIrqCdQod0zC
+	mAjj64x/w8Yxic1PH2MLQE4G08eZN1RTLSSYr8s8WCH7Pl/QhZKGWRPlHXIX0zyL/OD3x3NvB/Fzy
+	HWWmfveCXRxvgiEhs7nJGnsccnt3JLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2imB-0004Wu-G8; Fri, 14 Feb 2020 21:45:31 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1j2iou-0005v0-CY; Fri, 14 Feb 2020 21:48:20 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2im4-0004WO-Fo
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 21:45:25 +0000
-Received: by mail-pg1-x544.google.com with SMTP id u12so5227471pgb.10
+ id 1j2ioi-0005t7-UA
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 21:48:11 +0000
+Received: by mail-wm1-x343.google.com with SMTP id b17so12341736wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Feb 2020 13:45:24 -0800 (PST)
+ Fri, 14 Feb 2020 13:48:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=X3k++zPE+sJUaSkRsR90u7Z+waK86MTRLdYHtDYo8Qc=;
- b=TGx6y5fUThAzKiGPPrR1HboWlMJPoX8PWImpJR2kFuB1x16oearTlMiGq9UDt+pzef
- cpJ62eFdDnZww/gDwXGJx8uAQ7rHWPRcmgBGdVwwLWLCkbI6cW6rgD8Rid8XMTKfsKu8
- sjAwaKbDNN7PitVT+CfYr7pBMcCIBhvEJLL5s=
+ h=from:to:cc:subject:date:message-id;
+ bh=tuhpf2H8a4ZzCABJWxUowWp6EKCvGrriOjGBgmmrUqk=;
+ b=hQ4SQQcTZJYMJuGZ+sQF+Ern+ux0UaPM5+ddU9VsawxMBSNRoBQ5HHGbv2iNajhR2x
+ oLZ6oWB9QvA3XrP3wpvBD8d4G8nrCqZZ8RlFLQfkp0Xe4UypOaGTNap69OXifGgIfN4d
+ 806OAX5oL1Eht/84kwnb/N8C5O5eo3AvMGVcM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=X3k++zPE+sJUaSkRsR90u7Z+waK86MTRLdYHtDYo8Qc=;
- b=sRtJiL8BzO+54xHvZC9hMB0NhNtymJv2t52PH9pSGvRPAFnQJwM33IF4SDUdOwBKS8
- MuhmqCsb7d2IRi5uksWgMwmIsewAGchqKIGpcs9pR/sUvTA/35JqeYgzUGqykF4jrc72
- 5Zm58O3rEvsHVNtIHDEbP1EAxWvIrtpp2eaLKb9Cs/SM1HHNmxfyrc2ejSQ5S9XOTiIt
- PkR6l7jIDW7dM0fD6v7Lk0Wbc5N47z2w6KdpQfmV+0WPq3e/VGQFzg4ctspy1VTCYuS2
- e3kYEGl9OZeUkLsv1doHp9dKI4DHqaQvEpLCxdxy0crlfXJTMd69B0/n+H+8z6GP8svY
- Gb5A==
-X-Gm-Message-State: APjAAAX+uilaUNDX6K4XSjMVUrwG7s4X+xWKFjJRKNk0BuJxEszHmMMS
- 8PQdgYRTtLfn6+dS97GT+IdVgz5abz1XOA8vNefIFSUfKnInZyYYuy51b4CEipv6VwA0QZ5pLN0
- 3e/o16bbGHab5tZoSjGdrQTw0SnI/NpPbCbmEaNbF1XAs8EHMAT/s6pSbAuPV9hRd4RuHzEATYd
- J3o9yFlm8BM30+S2WysfeTsQ==
-X-Google-Smtp-Source: APXvYqyzZJJFq1c38QhMNLslqHWYMOZuNFRjjazVVBYOiWk75QGD9U6hjRqAr9JRahny+PHXEzOwww==
-X-Received: by 2002:a62:16d0:: with SMTP id 199mr5436500pfw.96.1581716723255; 
- Fri, 14 Feb 2020 13:45:23 -0800 (PST)
-Received: from [10.136.13.65] ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id m128sm8165821pfm.183.2020.02.14.13.45.21
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 14 Feb 2020 13:45:22 -0800 (PST)
-Subject: Re: [PATCH] net: phy: restore mdio regs in the iproc mdio driver
-To: Florian Fainelli <f.fainelli@gmail.com>, Andrew Lunn <andrew@lunn.ch>
-References: <20200214194858.8528-1-scott.branden@broadcom.com>
- <20200214203310.GQ31084@lunn.ch>
- <2b0ef4fc-c3a1-9aeb-2e86-31e9de7a19eb@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=tuhpf2H8a4ZzCABJWxUowWp6EKCvGrriOjGBgmmrUqk=;
+ b=V7emwYPywSIYV9SV5KSKceB4D25NgWupsaL6zylE2chJYg34CXBMWBCmNqxqPXgMaP
+ RmlMv4gQKh8XB1aOu63kSMv8IIHhUpKEYG2Uc8E74WBPgf35ftSQ2hpgc8WTbNqkQidy
+ e2sUa7EinsiOFEY64Y7y8J+NxR7S4LQ/ULunkbrG8McpwKMWLgHrjilC8Bk2bM64S97d
+ Rekjj7UVTzICL3dBEDxfDMJQXa+GHrEZbcQhKXo7TkoNgEzbbmzwXKI4YZXrdIsJCQc1
+ V4y2URtxwHaiqExIphi2/Ln6BOL6UQaQvkBnBsmUFEl2mqZ2xmcbdRiLKP178zENNW1e
+ WTyg==
+X-Gm-Message-State: APjAAAVdfrCJZkwK2G5pmDi9UvZ6/Tdzsv4e8i4yaZ3Le2IC8n2+xjjb
+ cwgMbQA1dyCRfIp3wB/cghPYww==
+X-Google-Smtp-Source: APXvYqzPAS+OXaRY2OgIGYMo+NU6m1xw9xivVTbrwWXjQRsZAf0oh5rZLW12uHI+OCzLkzVtHm0Oag==
+X-Received: by 2002:a1c:9ed7:: with SMTP id h206mr6546114wme.67.1581716885231; 
+ Fri, 14 Feb 2020 13:48:05 -0800 (PST)
+Received: from lbrmn-lnxub113.broadcom.net ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id y12sm8842421wrw.88.2020.02.14.13.48.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 14 Feb 2020 13:48:04 -0800 (PST)
 From: Scott Branden <scott.branden@broadcom.com>
-Message-ID: <5ce01f06-c116-06f1-d60b-549024cc8864@broadcom.com>
-Date: Fri, 14 Feb 2020 13:45:20 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <2b0ef4fc-c3a1-9aeb-2e86-31e9de7a19eb@gmail.com>
-Content-Language: en-US
+To: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Subject: [PATCH v2] net: phy: restore mdio regs in the iproc mdio driver
+Date: Fri, 14 Feb 2020 13:47:46 -0800
+Message-Id: <20200214214746.10153-1-scott.branden@broadcom.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_134524_531965_4ADFF669 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20200214_134808_970920_81F85616 
+X-CRM114-Status: GOOD (  12.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,25 +90,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ray Jui <rjui@broadcom.com>,
+Cc: Scott Branden <scott.branden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
  Arun Parameswaran <arun.parameswaran@broadcom.com>,
  Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
  bcm-kernel-feedback-list@broadcom.com, netdev@vger.kernel.org,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAyMDIwLTAyLTE0IDEyOjM3IHAubS4sIEZsb3JpYW4gRmFpbmVsbGkgd3JvdGU6Cj4gT24g
-Mi8xNC8yMCAxMjozMyBQTSwgQW5kcmV3IEx1bm4gd3JvdGU6Cj4+IE9uIEZyaSwgRmViIDE0LCAy
-MDIwIGF0IDExOjQ4OjU4QU0gLTA4MDAsIFNjb3R0IEJyYW5kZW4gd3JvdGU6Cj4+PiBGcm9tOiBB
-cnVuIFBhcmFtZXN3YXJhbiA8YXJ1bi5wYXJhbWVzd2FyYW5AYnJvYWRjb20uY29tPgo+Pj4KPj4+
-IFRoZSBtaWkgbWFuYWdlbWVudCByZWdpc3RlciBpbiBpcHJvYyBtZGlvIGJsb2NrCj4+PiBkb2Vz
-IG5vdCBoYXZlIGEgcmVlbnRpb24gcmVnaXN0ZXIgc28gaXQgaXMgbG9zdCBvbiBzdXNwZW5kLgo+
-PiByZWVudGlvbj8KPiBSZXRlbnRpb24gcHJlc3VtYWJseS4KWWVzLCB0eXBvLsKgIFdpbGwgZml4
-IGNvbW1pdCBtZXNzYWdlLgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+From: Arun Parameswaran <arun.parameswaran@broadcom.com>
+
+The mii management register in iproc mdio block
+does not have a retention register so it is lost on suspend.
+Save and restore value of register while resuming from suspend.
+
+Fixes: bb1a619735b4 ("net: phy: Initialize mdio clock at probe function")
+
+Signed-off-by: Arun Parameswaran <arun.parameswaran@broadcom.com>
+Signed-off-by: Scott Branden <scott.branden@broadcom.com>
+---
+ drivers/net/phy/mdio-bcm-iproc.c | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+
+diff --git a/drivers/net/phy/mdio-bcm-iproc.c b/drivers/net/phy/mdio-bcm-iproc.c
+index 7e9975d25066..f1ded03f0229 100644
+--- a/drivers/net/phy/mdio-bcm-iproc.c
++++ b/drivers/net/phy/mdio-bcm-iproc.c
+@@ -178,6 +178,23 @@ static int iproc_mdio_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++#ifdef CONFIG_PM_SLEEP
++int iproc_mdio_resume(struct device *dev)
++{
++	struct platform_device *pdev = to_platform_device(dev);
++	struct iproc_mdio_priv *priv = platform_get_drvdata(pdev);
++
++	/* restore the mii clock configuration */
++	iproc_mdio_config_clk(priv->base);
++
++	return 0;
++}
++
++static const struct dev_pm_ops iproc_mdio_pm_ops = {
++	.resume = iproc_mdio_resume
++};
++#endif /* CONFIG_PM_SLEEP */
++
+ static const struct of_device_id iproc_mdio_of_match[] = {
+ 	{ .compatible = "brcm,iproc-mdio", },
+ 	{ /* sentinel */ },
+@@ -188,6 +205,9 @@ static struct platform_driver iproc_mdio_driver = {
+ 	.driver = {
+ 		.name = "iproc-mdio",
+ 		.of_match_table = iproc_mdio_of_match,
++#ifdef CONFIG_PM_SLEEP
++		.pm = &iproc_mdio_pm_ops,
++#endif
+ 	},
+ 	.probe = iproc_mdio_probe,
+ 	.remove = iproc_mdio_remove,
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
