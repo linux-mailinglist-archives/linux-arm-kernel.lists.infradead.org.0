@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB45A15D5FF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 11:46:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 795FA15D606
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 11:49:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gv5jLBTTdTACmYb0NiBa20R/8B8SpqRkNruU5Iu3uiI=; b=Bw9p8npjBD1fZP
-	fc+Gh+NI88ch0RNLdCdfFLJNCdtUTygHkK9ddofZba7qCgi5up1C7pCKHucKnWw5I/xKL4pzx/VOh
-	yLAYxa6/3RZekh9ugvE/Ko5vPdEJEiF3XLwzfYtrfL+ZsY4ExepJCo72M/J1kiL04Pa/tI7AsGLqU
-	LRXc1rcrW7CID6JQcK7TgUqxFrU4dTyeGRCcnP6CTLYmbVf0zPcKTF2e4rWGdwFt8iQ7t0ARnfFzw
-	vLztk45JL6vQAXSraRA5RDCDYQP7lRBjkptNpK5dnV8Os+7XzdV2Alf/18J4uyL5xvRBCPHID4dc3
-	ewKHcwKkYqtQS8QddUog==;
+	List-Owner; bh=yHnjCgD26CLLUM3JceQ419AMWlH9BeV8JemSy0iw8D8=; b=iGYNd3X8TJWmYG
+	iMgOI3ztIi6YqsbnDOj3XJRR2UdNtyqnKJq/Bzph34zvuFMlqAmsw5QOCFcjcZHcsrCUv8xlq34Oj
+	bny2lSkBRHDHVFv82JjJ+bn9Ik1QMZbTGmp4UPWr5pWO6LTWFANPOpzztYopDCQnSaxWXYsKA+GyW
+	sB1qh9+qGNqtv8USX2DkrDO+AWvktGOkKQhZIa4ArM7TmSoGwWwUU5bEajXG2X0t9Psd77gEehU3C
+	4XUw+1Va+Cnt7dL8VgrzzoA7NOYfFGWj787zs0rq+tpWAVdhtUKq7ViQT47uIInVavjPTneuM4vNe
+	83Qf+9o+tlVRUFZYc1zA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2YUk-0002kk-G1; Fri, 14 Feb 2020 10:46:50 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1j2YX5-0003E9-4j; Fri, 14 Feb 2020 10:49:15 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2YUU-0002kD-O3
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 10:46:35 +0000
-Received: by mail-lj1-x242.google.com with SMTP id x14so10161212ljd.13
+ id 1j2YWt-0003Dc-SO
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 10:49:05 +0000
+Received: by mail-lj1-x243.google.com with SMTP id q8so10155121ljj.11
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Feb 2020 02:46:34 -0800 (PST)
+ Fri, 14 Feb 2020 02:49:03 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NeXjnE7r2g7NW/QZCMY8eogb8019UjNBERpksRztscA=;
- b=RyOIgCO9rwzLHRMzkzF15r94Gm7EFLx/l5Ek2m+SmkOaLf8KCd29ymRKiQHGtHzMO+
- SjWc4wnVuhLkn/tE6g+Z/HhOMKZurtEWt1CLOk97/vkVcPe0PeaE8DgE5s5IrYdeMT/y
- 4hTSz3PGbn6yUUAsH+FyMtrWL23Hz3EuJc1ud4MtkQakJp19MzGQOs0kLLLPD8HQOccQ
- us9qWmU2bw2Km1qQjblxOgi5536a0XSIlPNm0UjAmRHkmSb8wdZixYiJuS9Sfl9qLRJK
- idQFhEdYShZ8OgDA0e++q6hokttEToCeomtqf8+akpiJmuT4T/6x2heIyQ5WvMHpum7B
- xFYA==
+ :cc; bh=1i4Q6/1RsyH8dGZF2vprm22L1oxGHlOcnNHReqoF9A0=;
+ b=Ts4DSDY7UpRHKDbUuCSly0SJGu9e3cuorS05YoXAWoiHfbT6gDZLHgtavc4t6uYro2
+ Jd8tKZgAGyBhN4SCSktaIRL6q1pQC6cNsNrG/hv0z/7DiwEjLZOuQG4ZMWSlDutuJMXz
+ odHlhJ6Gf6gUix4lqMvr+gIMmhodCE0+cEmdy8WwSmZUPu8Gy9rRYcvrduPsfERBkXcf
+ vgfVsRRfU6q7ad86bLwMrzpnaqLPKUpjHyb7QxWm8oLMUpszmFk2aq0scMy7Dc+yRMlb
+ TpmDpcBxPHLReyZNxloQ/XqdAjdMKu9wStXmE3ts8+fwSi/F52kjw6t1YMmk8mZ2MBUV
+ PRCw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=NeXjnE7r2g7NW/QZCMY8eogb8019UjNBERpksRztscA=;
- b=Am3ncC68KmZH9ej+C1RFkN0/piYqCXF31luDH0VpQJ5Dt7ZHCMLGMEq+Aj8MRZ3ALA
- 26SBfRlTwq8FhNp1r9RFpj/ncXQAJCZooie/G+bHoVEJ6mjMNEirq/YAynMgnSt0nvp1
- mORHw60q4ItFcY1fG6MjgPlKFo5qrXAVG3okyi/3/YIxVax8v7vZqYsP3ExD+nIKcF4J
- +5AwYNERlRfu77/SaclMDK96JRr7G5myQgHJGZBL23Jt6tZRjA9X5nzjvmktVYrWvGZA
- Lua17fQtL3WyBI1hgYwzraXENYsNINMO9tw4oUTkATqcknnOJ2zt5KBnAn8kLmMCujR9
- kXiA==
-X-Gm-Message-State: APjAAAUETk5mPmWze4w59Ztp4Sk20CHJXkmum4ohHhfQ8EeccSWPG7zY
- bWMa/TxwDlkja2Hf9SUl/4Hr4mSUPHcXpW4sZeUNrw==
-X-Google-Smtp-Source: APXvYqzmdLdE8Rx/NNo5kXSwKXXl3RzcxUAwmAthly7FtdF/BpafqywcjF0AbGsPfO06POTuomc507bYl1nJS4URe7E=
-X-Received: by 2002:a05:651c:1bb:: with SMTP id
- c27mr1767553ljn.277.1581677193251; 
- Fri, 14 Feb 2020 02:46:33 -0800 (PST)
+ bh=1i4Q6/1RsyH8dGZF2vprm22L1oxGHlOcnNHReqoF9A0=;
+ b=CmDCcmVWjs3FkrLJUBc3e7fejLg3LTRXB2gJILr7VFHJ+YfZHzdFLulBXw0Ftd/r6x
+ d6qRr+OliE8wOuYhZlqKBZi2Iaz1kcIBru8sAx40yX/rPBVfbWCtCpjsGj6En+KfmH5j
+ QAqnVWMpWReq5uesKqhlupP8Dl1y0oQ0LP3BMQCGTwUd1cVqg9+NiWGN4XW5ddTOH+ei
+ 8HpuEApfZPoc1QNoboA1/YUecXMsgc2RBEvk5P8G6rNc4mEYN7zFdy8Bd9L22sU/WnNk
+ gEzy5A3XOWwZFPM/GycvhbxZliLeijqj3OhVfBwwK3mKqR1LZK8fU0gn5pAHosRaCgV2
+ k6nw==
+X-Gm-Message-State: APjAAAWjJtXYvbQ2zzf08d552SdWau+CQnIR73hS4It05EBtlISdprXN
+ OInwjfcPi2vDIyXbqFumu/nfB9J4nw6w+ztgZkflHg==
+X-Google-Smtp-Source: APXvYqz+6XkhlYSkMAKGVhZEHaoBs4DSOaPtmDqULEN8Q7rW85h657r4NxLb6Kf9TtTlfZhQ2GV+rviqE3OrEyKx/q4=
+X-Received: by 2002:a05:651c:2c7:: with SMTP id
+ f7mr1665644ljo.125.1581677342094; 
+ Fri, 14 Feb 2020 02:49:02 -0800 (PST)
 MIME-Version: 1.0
-References: <1580148908-4863-1-git-send-email-stefan.wahren@i2se.com>
- <1580148908-4863-2-git-send-email-stefan.wahren@i2se.com>
-In-Reply-To: <1580148908-4863-2-git-send-email-stefan.wahren@i2se.com>
+References: <1581166975-22949-1-git-send-email-stefan.wahren@i2se.com>
+ <1581166975-22949-3-git-send-email-stefan.wahren@i2se.com>
+In-Reply-To: <1581166975-22949-3-git-send-email-stefan.wahren@i2se.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 14 Feb 2020 11:46:21 +0100
-Message-ID: <CACRpkdbcJwmVkT5kcR-ga3ejT4n8wbKPDJhFs_3Jp0-ZLKEWzQ@mail.gmail.com>
-Subject: Re: [RFC PATCH 1/4] pinctrl: bcm2835: Drop unused define
+Date: Fri, 14 Feb 2020 11:48:51 +0100
+Message-ID: <CACRpkdYKNYaLcy4T=CixZSkzP6wOvisFt_H_gqhEoANz2Bm4KA@mail.gmail.com>
+Subject: Re: [PATCH 2/4] pinctrl: bcm2835: Refactor platform data
 To: Stefan Wahren <stefan.wahren@i2se.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_024634_790184_B897A9AA 
-X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-CacheID: sfid-20200214_024903_917614_1122F349 
+X-CRM114-Status: UNSURE (   9.92  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -71,7 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,13 +105,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jan 27, 2020 at 7:15 PM Stefan Wahren <stefan.wahren@i2se.com> wrote:
+On Sat, Feb 8, 2020 at 2:03 PM Stefan Wahren <stefan.wahren@i2se.com> wrote:
 
-> There is no usage for this define, so drop it.
+> This prepares the platform data to be easier to extend for more GPIOs.
+> Except of this there is no functional change.
 >
 > Signed-off-by: Stefan Wahren <stefan.wahren@i2se.com>
 
-Patch applied.
+Patch applied with Nicolas' Review tag.
 
 Yours,
 Linus Walleij
