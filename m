@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C240E15DBD8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:51:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 196EC15DBEC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:51:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0ysf7xScjerm2mWwdlVlT4LjDF0bqbow3PcnXDHf+Rg=; b=WsgGvTQQlWCOP+
-	VgIDo3lSBSwD0aPy2+cyXXwaknYAMsyAhiVC/7WG7cHXLA32CJ2fhsBkAZSLPrGVMjOu+Wcwopv3Q
-	S9mXAl1y3G4nOcyp/BYxw2XwarmikbHi9vQpcMgKeil9Uw/5i2p2EFIDk8V+/RyGVf1bk8Nbpd03w
-	SSV4jJ2H2OGLShxy6AioAKNw+UkOpfkqpD9qsaj8MljGT/GKtHkHDdyB2o6eIK1s+DdhPXN563mq8
-	djnnFcNfhE54ZHqX9FGKXUp//ZlkS0g+0om3ALuSuA5A1o4y4z9seL0BErUMKp+Uk73YnEI+mIHNC
-	DVTjtNIiOiDDFg0OVyrQ==;
+	List-Owner; bh=xJqEKJWYQSwCEwt604QNdXVmxMJhxa++admng3+DmnY=; b=OR3NVA23jLXoaH
+	j+9W9F6Rb8r+l5CVgpfOrg1KKz4ZOXi0VP1FlvVdV7+vZR0CChajq7a7z8hWPMf3/MJOQmYVqfW6Q
+	yClESK+YpXcs3J4OTEIMNJ0BrZaqNL8pfSLiOZRfwlu7Wk0n5zAfuS7rFMdJKQTC1Glc2p5ERpj9A
+	5wUv1YdRV2vy6se4LsBTWntE4glGcBtAwrfGa/kP1FpmCdNAnehhKxtQ7ZAE6MEEAWrNIC4n8ZWOT
+	6N/y1QEAIG2m59FlqPO3wYmHYrJvxU/HZYl8+jGdYGwc1ASjUBJZCqvgDp+4D/28MtbnBy1AiRegg
+	Fyp/sWonsUsCuRtHDlSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dFM-00044L-8b; Fri, 14 Feb 2020 15:51:16 +0000
+	id 1j2dFb-0004Jr-I0; Fri, 14 Feb 2020 15:51:31 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dDz-0001vJ-B3
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:49:52 +0000
+ id 1j2dE1-0001wf-72
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:49:55 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 859B824684;
- Fri, 14 Feb 2020 15:49:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D845024688;
+ Fri, 14 Feb 2020 15:49:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695390;
- bh=B57KRccJ758jF0xN74+wxNnwCOVOgwAYcSyGiizN5Pg=;
+ s=default; t=1581695391;
+ bh=uTLnBEJERTGry/cuDv6VzwuoL0a2YHXZt5HbDHNk0wA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=vqq2TmAjXjUtP/FovRlWLuH3fstmwyv6yUFJULiR0qvmyBqP7fRu76ebMcSXVz9PU
- kBq/+7ev9O5wuTvjeCCN6qyGwe6u0fm8uAyZJzuKi3vARy96MEs8KeKFuPN512774Q
- 0Guyk4wWWgdjl1htNGrQeeTq7cmw83Y0f1rkegWY=
+ b=pGG9NRVdZc1Cw6KDvKcnb2hVoAmgJeuGNkjJbf4YtW75YztctrtC9JpiNSW1xEOUi
+ EcOJVYYxSANU+MBwWHK28gvAnm9QVgzNB+NMQouy3qrD07l9ik4RPq3GjnmCNca53o
+ AHwxoCiq50DPWy11JXYON44+a3TBWR/8fGR6PRg0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 043/542] media: sun4i-csi: Deal with DRAM offset
-Date: Fri, 14 Feb 2020 10:40:35 -0500
-Message-Id: <20200214154854.6746-43-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 044/542] media: sun4i-csi: Fix data sampling
+ polarity handling
+Date: Fri, 14 Feb 2020 10:40:36 -0500
+Message-Id: <20200214154854.6746-44-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_074951_406105_B4C79DEA 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20200214_074953_454425_7443EB0C 
+X-CRM114-Status: GOOD (  13.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,16 +92,16 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Chen-Yu Tsai <wens@csie.org>
 
-[ Upstream commit 249b286171fa9c358e8d5c825b48c4ebea97c498 ]
+[ Upstream commit cf9e6d5dbdd56ef2aa72f28c806711c4293c8848 ]
 
-On Allwinner SoCs, some high memory bandwidth devices do DMA directly
-over the memory bus (called MBUS), instead of the system bus. These
-devices include the CSI camera sensor interface, video (codec) engine,
-display subsystem, etc.. The memory bus has a different addressing
-scheme without the DRAM starting offset.
+The CLK_POL field specifies whether data is sampled on the falling or
+rising edge of PCLK, not whether the data lines are active high or low.
+Evidence of this can be found in the timing diagram labeled "horizontal
+size setting and pixel clock timing".
 
-Deal with this using the "interconnects" property from the device tree,
-or if that is not available, set dev->dma_pfn_offset to PHYS_PFN_OFFSET.
+Fix the setting by checking the correct flag, V4L2_MBUS_PCLK_SAMPLE_RISING.
+While at it, reorder the three polarity flag checks so HSYNC and VSYNC
+are grouped together.
 
 Fixes: 577bbf23b758 ("media: sunxi: Add A10 CSI driver")
 Signed-off-by: Chen-Yu Tsai <wens@csie.org>
@@ -109,49 +110,23 @@ Signed-off-by: Sakari Ailus <sakari.ailus@linux.intel.com>
 Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- .../platform/sunxi/sun4i-csi/sun4i_csi.c      | 22 +++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ drivers/media/platform/sunxi/sun4i-csi/sun4i_dma.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
-index f36dc6258900e..b8b07c1de2a8e 100644
---- a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
-+++ b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
-@@ -11,6 +11,7 @@
- #include <linux/module.h>
- #include <linux/mutex.h>
- #include <linux/of.h>
-+#include <linux/of_device.h>
- #include <linux/of_graph.h>
- #include <linux/platform_device.h>
- #include <linux/pm_runtime.h>
-@@ -155,6 +156,27 @@ static int sun4i_csi_probe(struct platform_device *pdev)
- 	subdev = &csi->subdev;
- 	vdev = &csi->vdev;
+diff --git a/drivers/media/platform/sunxi/sun4i-csi/sun4i_dma.c b/drivers/media/platform/sunxi/sun4i-csi/sun4i_dma.c
+index d6979e11a67b2..8b567d0f019bf 100644
+--- a/drivers/media/platform/sunxi/sun4i-csi/sun4i_dma.c
++++ b/drivers/media/platform/sunxi/sun4i-csi/sun4i_dma.c
+@@ -279,8 +279,8 @@ static int sun4i_csi_start_streaming(struct vb2_queue *vq, unsigned int count)
+ 	       csi->regs + CSI_WIN_CTRL_H_REG);
  
-+	/*
-+	 * On Allwinner SoCs, some high memory bandwidth devices do DMA
-+	 * directly over the memory bus (called MBUS), instead of the
-+	 * system bus. The memory bus has a different addressing scheme
-+	 * without the DRAM starting offset.
-+	 *
-+	 * In some cases this can be described by an interconnect in
-+	 * the device tree. In other cases where the hardware is not
-+	 * fully understood and the interconnect is left out of the
-+	 * device tree, fall back to a default offset.
-+	 */
-+	if (of_find_property(csi->dev->of_node, "interconnects", NULL)) {
-+		ret = of_dma_configure(csi->dev, csi->dev->of_node, true);
-+		if (ret)
-+			return ret;
-+	} else {
-+#ifdef PHYS_PFN_OFFSET
-+		csi->dev->dma_pfn_offset = PHYS_PFN_OFFSET;
-+#endif
-+	}
-+
- 	csi->mdev.dev = csi->dev;
- 	strscpy(csi->mdev.model, "Allwinner Video Capture Device",
- 		sizeof(csi->mdev.model));
+ 	hsync_pol = !!(bus->flags & V4L2_MBUS_HSYNC_ACTIVE_HIGH);
+-	pclk_pol = !!(bus->flags & V4L2_MBUS_DATA_ACTIVE_HIGH);
+ 	vsync_pol = !!(bus->flags & V4L2_MBUS_VSYNC_ACTIVE_HIGH);
++	pclk_pol = !!(bus->flags & V4L2_MBUS_PCLK_SAMPLE_RISING);
+ 	writel(CSI_CFG_INPUT_FMT(csi_fmt->input) |
+ 	       CSI_CFG_OUTPUT_FMT(csi_fmt->output) |
+ 	       CSI_CFG_VSYNC_POL(vsync_pol) |
 -- 
 2.20.1
 
