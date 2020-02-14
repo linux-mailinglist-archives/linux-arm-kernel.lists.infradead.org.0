@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7929415E8B1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 18:02:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A01BA15E8B2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 18:02:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zOMedoeZn4N30PHSXkEiDy5WfnOSPw3mcMl2pNjLrns=; b=dcrihKaOmSFLq3
-	U+7vhDjXSJvnnSO4a9ROvrRyZ9dkaYr8/PFoCPoPl1Wc+THdzpq1/jBuEbAuu/F/5jhRIFqKS6pmb
-	EHRmW9/qf2uZ7yUeQyJvdwhEATDle9mMV5W44l/NWipzi/R7Uu89V7O79qjlj83vUcrCzy5LTbg8m
-	2ZDKttUU5gIIYuHUEsMD1LU90Xtb88sQGPbkqidLnO0xvd46mwRoLhsZYHKhNpkgcbEa1FDxgEOKh
-	MkvxnDsEFmKKRbQXOR0viTVbZGMR9ekUfx81Wd79Up0Pev6q9FCw3y/329MC86oZpzznuH4bHZuul
-	lW+kvuSULDQvgvo+qGPg==;
+	List-Owner; bh=9pa14bW/FBdIeA8itU+SGwozWWh5OEB8387a+to0g1Y=; b=O8nYlhcjI0DB4u
+	pP7I7s+ItzwuAhi6U542nxbRzgfUU4kKmGk1W+jqsC/FgEAHd42YTvHXhYvyvuUPTJZTltI0IgMFJ
+	x+YlMTM2bj3J9cnooVMvLvwslM7ukMpQsLPJQyzwSKboVy0f8tMQXJWn098X4R5MP9pLJeWPFP1cb
+	BaWjNzVIdXVe8EqSvecX7dhdO62iW/qC87mzT85Nd5mF4abVha7S2JhQf+NPv9dIsTF6QmokQ0ltX
+	M6ZsDAokSp72KO0PnHbHc+99U+Pd44eQpZhzChYeXR2bn0XWINjfskK9uvClyJaXjbG6kSz82923j
+	xtzBT0QogatSHnw3UDLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eLp-0003FN-KN; Fri, 14 Feb 2020 17:02:01 +0000
+	id 1j2eM4-0003YA-06; Fri, 14 Feb 2020 17:02:16 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2e78-0000Bo-Sr
- for linux-arm-kernel@bombadil.infradead.org; Fri, 14 Feb 2020 16:46:50 +0000
+ id 1j2e79-0000ER-1g
+ for linux-arm-kernel@bombadil.infradead.org; Fri, 14 Feb 2020 16:46:51 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
  References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
  Content-Type:Content-ID:Content-Description;
- bh=HJlLLHXqSPMD8WaLFMJN0JIck3cK6L7Hgiky29ouBGs=; b=BikhnGB85z4GQDsTMwjXcSwcrm
- G/2n5hy/YTgrnP6hOcbY64Ikby4crAfKYEUDqgjlLQvqyUecuoJHRlTUTFsgqyoV3P6ChRcjbK3ZN
- /NlQRli4qTvsRKXcJJe5dhTiASapA6NR2yoMfQlOQR9yjAijkg7Bz7Fw8ONzTnxh/1qLaxBUSMhJR
- HTarU/0aONjmanMQQmSLNcq6zZLZ07RStV5GB2dEatpAvRua8dJzlPrGtVvRF+bgCo8Uoy9Hwakj/
- 0rDTGuewm0J1kPhxw55aeIkmrPfI9Eb/xpn8/42FWWUturAGU3ZxJyGi5Lll7u40UM9r6lQW8Cc0t
- 47RR0IAw==;
+ bh=TzIhZoh7qQLX/1CZXQ/QYmjM+xU64Tt9MZ0g/6MW1Ec=; b=iBidTovsoVGpgVi2oRKlgtSo/B
+ FCPQddl5FTxLJYf7peTa8yMsjd5u3cN9nVrl0bZV9weuR4FjwvYp6+IKLdTgYM6EVwgQsL83L+uST
+ PQgz5be0ahNdwyQjqhFMQqC7OqIEqPpGMuatZqNchmr29amWh3cpDfD8IV+QZ+mqqoKWXCqc91+Yt
+ k3nRqiz1Ye9eCRXXtYdnTeLV+UIYpKX2n6wN2n8TLQSBOhz+T0n4lN7Q4GS730cnvcIAh8cnnTfQw
+ v8+LXRcCpS+1AElARJjji6dzFD3VUHaPsXREUpIcgSLd8T7507i9tsl+hQQV260ibXzGeS5JRjj3Y
+ rq5tItFQ==;
 Received: from mail.kernel.org ([198.145.29.99])
  by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dbq-0007Tq-2s
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:14:31 +0000
+ id 1j2dbs-0007U1-Cx
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:14:33 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 50BC7246C9;
- Fri, 14 Feb 2020 16:14:28 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C7520246C3;
+ Fri, 14 Feb 2020 16:14:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696869;
- bh=tUg751Affnoyn3FW3QZPYI49oz153hfQFyw6kq9w/7c=;
+ s=default; t=1581696871;
+ bh=Ag7cfjgAZDTtorJGvLhjabkF2VDVmnJ8PY2cP1WcwfE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=DydkC+POnT3dwBRP3WzbOSYRIJm3ycCArGZZRur2iv0aLxxzycsHcvHbMN0/0bLqM
- m5Caq6g6/LQdbAPqKKt0o9hqwUfMXbI3CHlik0zXyr7kXe2SMyxY4AWe1x0wrpVQNs
- 8Nx25fE/Q8nNDhHA3tEnX5gtFIaHkXhDNF5D6tWA=
+ b=xY6Q47yeeXz5lr26XpoykRzf8NJPNe3TrjFSVu8grCiybgGuRpn7xp6gG5v9rhAXq
+ ZHxbrczpCqABdyB7ACchkkoKB74LKWIGBnNRsVRoxwEDSbEVQpIabWDMZ6QUI7/Xph
+ opN8zs8SbORvU0Cacd5A64AE8Usg/ZdAQhqjf32o=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 127/252] clk: sunxi-ng: add mux and pll notifiers
- for A64 CPU clock
-Date: Fri, 14 Feb 2020 11:09:42 -0500
-Message-Id: <20200214161147.15842-127-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 129/252] clk: uniphier: Add SCSSI clock gate for
+ each channel
+Date: Fri, 14 Feb 2020 11:09:44 -0500
+Message-Id: <20200214161147.15842-129-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214161147.15842-1-sashal@kernel.org>
 References: <20200214161147.15842-1-sashal@kernel.org>
@@ -92,85 +92,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Maxime Ripard <maxime@cerno.tech>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Icenowy Zheng <icenowy@aosc.io>
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 
-[ Upstream commit ec97faff743b398e21f74a54c81333f3390093aa ]
+[ Upstream commit 1ec09a2ec67a0baa46a3ccac041dbcdbc6db2cb9 ]
 
-The A64 PLL_CPU clock has the same instability if some factor changed
-without the PLL gated like other SoCs with sun6i-style CCU, e.g. A33,
-H3.
+SCSSI has clock gates for each channel in the SoCs newer than Pro4,
+so this adds missing clock gates for channel 1, 2 and 3. And more, this
+moves MCSSI clock ID after SCSSI.
 
-Add the mux and pll notifiers for A64 CPU clock to workaround the
-problem.
-
-Fixes: c6a0637460c2 ("clk: sunxi-ng: Add A64 clocks")
-Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Fixes: ff388ee36516 ("clk: uniphier: add clock frequency support for SPI")
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+Link: https://lkml.kernel.org/r/1577410925-22021-1-git-send-email-hayashi.kunihiko@socionext.com
+Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/sunxi-ng/ccu-sun50i-a64.c | 28 ++++++++++++++++++++++++++-
- 1 file changed, 27 insertions(+), 1 deletion(-)
+ drivers/clk/uniphier/clk-uniphier-peri.c | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-index dec4a130390a3..9ac6c299e0744 100644
---- a/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-+++ b/drivers/clk/sunxi-ng/ccu-sun50i-a64.c
-@@ -901,11 +901,26 @@ static const struct sunxi_ccu_desc sun50i_a64_ccu_desc = {
- 	.num_resets	= ARRAY_SIZE(sun50i_a64_ccu_resets),
+diff --git a/drivers/clk/uniphier/clk-uniphier-peri.c b/drivers/clk/uniphier/clk-uniphier-peri.c
+index 89b3ac378b3f9..8b75dc116a98c 100644
+--- a/drivers/clk/uniphier/clk-uniphier-peri.c
++++ b/drivers/clk/uniphier/clk-uniphier-peri.c
+@@ -27,8 +27,8 @@
+ #define UNIPHIER_PERI_CLK_FI2C(idx, ch)					\
+ 	UNIPHIER_CLK_GATE("i2c" #ch, (idx), "i2c", 0x24, 24 + (ch))
+ 
+-#define UNIPHIER_PERI_CLK_SCSSI(idx)					\
+-	UNIPHIER_CLK_GATE("scssi", (idx), "spi", 0x20, 17)
++#define UNIPHIER_PERI_CLK_SCSSI(idx, ch)				\
++	UNIPHIER_CLK_GATE("scssi" #ch, (idx), "spi", 0x20, 17 + (ch))
+ 
+ #define UNIPHIER_PERI_CLK_MCSSI(idx)					\
+ 	UNIPHIER_CLK_GATE("mcssi", (idx), "spi", 0x24, 14)
+@@ -44,7 +44,7 @@ const struct uniphier_clk_data uniphier_ld4_peri_clk_data[] = {
+ 	UNIPHIER_PERI_CLK_I2C(6, 2),
+ 	UNIPHIER_PERI_CLK_I2C(7, 3),
+ 	UNIPHIER_PERI_CLK_I2C(8, 4),
+-	UNIPHIER_PERI_CLK_SCSSI(11),
++	UNIPHIER_PERI_CLK_SCSSI(11, 0),
+ 	{ /* sentinel */ }
  };
  
-+static struct ccu_pll_nb sun50i_a64_pll_cpu_nb = {
-+	.common	= &pll_cpux_clk.common,
-+	/* copy from pll_cpux_clk */
-+	.enable	= BIT(31),
-+	.lock	= BIT(28),
-+};
-+
-+static struct ccu_mux_nb sun50i_a64_cpu_nb = {
-+	.common		= &cpux_clk.common,
-+	.cm		= &cpux_clk.mux,
-+	.delay_us	= 1, /* > 8 clock cycles at 24 MHz */
-+	.bypass_index	= 1, /* index of 24 MHz oscillator */
-+};
-+
- static int sun50i_a64_ccu_probe(struct platform_device *pdev)
- {
- 	struct resource *res;
- 	void __iomem *reg;
- 	u32 val;
-+	int ret;
- 
- 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	reg = devm_ioremap_resource(&pdev->dev, res);
-@@ -919,7 +934,18 @@ static int sun50i_a64_ccu_probe(struct platform_device *pdev)
- 
- 	writel(0x515, reg + SUN50I_A64_PLL_MIPI_REG);
- 
--	return sunxi_ccu_probe(pdev->dev.of_node, reg, &sun50i_a64_ccu_desc);
-+	ret = sunxi_ccu_probe(pdev->dev.of_node, reg, &sun50i_a64_ccu_desc);
-+	if (ret)
-+		return ret;
-+
-+	/* Gate then ungate PLL CPU after any rate changes */
-+	ccu_pll_notifier_register(&sun50i_a64_pll_cpu_nb);
-+
-+	/* Reparent CPU during PLL CPU rate changes */
-+	ccu_mux_notifier_register(pll_cpux_clk.common.hw.clk,
-+				  &sun50i_a64_cpu_nb);
-+
-+	return 0;
- }
- 
- static const struct of_device_id sun50i_a64_ccu_ids[] = {
+@@ -60,7 +60,10 @@ const struct uniphier_clk_data uniphier_pro4_peri_clk_data[] = {
+ 	UNIPHIER_PERI_CLK_FI2C(8, 4),
+ 	UNIPHIER_PERI_CLK_FI2C(9, 5),
+ 	UNIPHIER_PERI_CLK_FI2C(10, 6),
+-	UNIPHIER_PERI_CLK_SCSSI(11),
+-	UNIPHIER_PERI_CLK_MCSSI(12),
++	UNIPHIER_PERI_CLK_SCSSI(11, 0),
++	UNIPHIER_PERI_CLK_SCSSI(12, 1),
++	UNIPHIER_PERI_CLK_SCSSI(13, 2),
++	UNIPHIER_PERI_CLK_SCSSI(14, 3),
++	UNIPHIER_PERI_CLK_MCSSI(15),
+ 	{ /* sentinel */ }
+ };
 -- 
 2.20.1
 
