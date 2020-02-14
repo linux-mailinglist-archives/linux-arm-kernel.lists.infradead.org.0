@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6017915DC87
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:54:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3EA915DC8B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:54:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PDU7N+aplYJX/XnDTPc08YNNSUyg9Ntn/pNllffQvi0=; b=IZ/CbQIC15uBBe
-	HRRPVLzpdhmfh68veUMAeJyk5VlUVkA+rwvEzMEadCGHVzAa9Ok0NzdHP3vQ09qMb8xsuF9EZpXz6
-	mWYXjUUeq3OkWCoOV24oNG8gUTfLHAu4G+tefhKsFl59bNtPGd175x/3gJsfJBaalHQ0xxsmxv5K9
-	IJHEQiYj820fTYzUFJMIF8g3yzLgpR61pv0S1AVtxesaINblVeG/sj96R7znwmuU3bxYLY/p6oSuV
-	Mf0KM77VikKeZqats+Nw1svBYxHG1Pe/zr9+NLslnczMoIX7kX8+vclTyboxQ2yu4PdpKpgB8YzEJ
-	jFDmPM5IN3hg2Dgwt7Bg==;
+	List-Owner; bh=Eb9u8tHF7EbuWRpodVMhYMtcWvNw1tvOfmh/un8JYWg=; b=kt5vl9pNk2BMs+
+	Oii1yAOp8ryDAZbFUuWmZ6/DOwfj5pW19dxYezQmMGrY/ldN4sSuc72FW4f7q8Xi1HAepKsTuR5Ly
+	mznVAfwDqE/cGMuYsGW9iOFeMncRW1sG7oZrKIw8zIBQ9PMfMrTcbAzpkuMF5ZvgArIvNj9bedIbk
+	vWnQBchucJvOVxQ56GVKLoKT0fh4HlTlb2j1H0qbYKEl8UFkQZleir+0d9M8DXnC5xTSsWbCuPCjW
+	5FENn3e9HDkWGPtygpw7C5LSs+E2NxDXlaRmR+/Ah76/Yu8Lsm6uDovgV3pF5atEFXsEGtAyC+dSx
+	MLKJfurryoeyy6k0hgFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dHy-0006fz-Jq; Fri, 14 Feb 2020 15:53:58 +0000
+	id 1j2dIG-000700-Kv; Fri, 14 Feb 2020 15:54:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dEw-0003rn-TL; Fri, 14 Feb 2020 15:50:52 +0000
+ id 1j2dF0-0003wV-6G
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:50:57 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 55F93217F4;
- Fri, 14 Feb 2020 15:50:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 67A6B22314;
+ Fri, 14 Feb 2020 15:50:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695449;
- bh=UyL2HMLSULwjeHnxqhGqp+C5fWdMbs3EdEuLmEIGDvk=;
+ s=default; t=1581695453;
+ bh=+CBIJZj63ooSb9bI1j6y1JoV7Zz9dEHl9Rd4swku03k=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bSgwhoQT22gNZ8g/hoj1dVkjMTCV8mUL3XChDZTVmj2dNfYvx65rn85ZWzXSycIp9
- qyGUpuXTb8ztBvcGs2PMZsOPB4D9OkmewOPqnI0d5GGvIyCMbxhv3+rDKo0cOpL8eU
- QUuLzPAcz5uxKKLujF5AnuLbv35Mov6/zDQBwB+E=
+ b=zzSjXzmv+1DEuZ8nvx1tPPT1d3w2P6J5SlFTlLtJtzDivuzBGtfKCZRczANbmwp69
+ QK4UHUuRoTLT+rS9vPVTM4ecwbGE4XHBKoEC2Dyl0DldMctPAYgEdnTuBKrtqZDLWk
+ D5LZiOZjRa2qs1lEgey9nSuYK7pSf5a8BYaoPu8M=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 089/542] scsi: ufs: Fix ufshcd_probe_hba() reture
- value in case ufshcd_scsi_add_wlus() fails
-Date: Fri, 14 Feb 2020 10:41:21 -0500
-Message-Id: <20200214154854.6746-89-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 092/542] crypto: arm/chacha - fix build failured
+ when kernel mode NEON is disabled
+Date: Fri, 14 Feb 2020 10:41:24 -0500
+Message-Id: <20200214154854.6746-92-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075051_085491_41094E4D 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20200214_075054_385471_025E1A3C 
+X-CRM114-Status: GOOD (  13.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,51 +80,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-scsi@vger.kernel.org,
- "Martin K . Petersen" <martin.petersen@oracle.com>,
- linux-mediatek@lists.infradead.org, Alim Akhtar <alim.akhtar@samsung.com>,
- Bean Huo <beanhuo@micron.com>, Stanley Chu <stanley.chu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, Asutosh Das <asutoshd@codeaurora.org>
+Cc: Sasha Levin <sashal@kernel.org>, Herbert Xu <herbert@gondor.apana.org.au>,
+ Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>,
+ linux-crypto@vger.kernel.org, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bean Huo <beanhuo@micron.com>
+From: Ard Biesheuvel <ardb@kernel.org>
 
-[ Upstream commit b9fc5320212efdfb4e08b825aaa007815fd11d16 ]
+[ Upstream commit 0bc81767c5bd9d005fae1099fb39eb3688370cb1 ]
 
-A non-zero error value likely being returned by ufshcd_scsi_add_wlus() in
-case of failure of adding the WLs, but ufshcd_probe_hba() doesn't use this
-value, and doesn't report this failure to upper caller.  This patch is to
-fix this issue.
+When the ARM accelerated ChaCha driver is built as part of a configuration
+that has kernel mode NEON disabled, we expect the compiler to propagate
+the build time constant expression IS_ENABLED(CONFIG_KERNEL_MODE_NEON) in
+a way that eliminates all the cross-object references to the actual NEON
+routines, which allows the chacha-neon-core.o object to be omitted from
+the build entirely.
 
-Fixes: 2a8fa600445c ("ufs: manually add well known logical units")
-Link: https://lore.kernel.org/r/20200120130820.1737-2-huobean@gmail.com
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
-Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
-Signed-off-by: Bean Huo <beanhuo@micron.com>
-Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
+Unfortunately, this fails to work as expected in some cases, and we may
+end up with a build error such as
+
+  chacha-glue.c:(.text+0xc0): undefined reference to `chacha_4block_xor_neon'
+
+caused by the fact that chacha_doneon() has not been eliminated from the
+object code, even though it will never be called in practice.
+
+Let's fix this by adding some IS_ENABLED(CONFIG_KERNEL_MODE_NEON) tests
+that are not strictly needed from a logical point of view, but should
+help the compiler infer that the NEON code paths are unreachable in
+those cases.
+
+Fixes: b36d8c09e710c71f ("crypto: arm/chacha - remove dependency on generic ...")
+Reported-by: Russell King <linux@armlinux.org.uk>
+Cc: Arnd Bergmann <arnd@arndb.de>
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/scsi/ufs/ufshcd.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm/crypto/chacha-glue.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 03173f06ab963..3fbf9ea16c64e 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -7030,7 +7030,8 @@ static int ufshcd_probe_hba(struct ufs_hba *hba)
- 			ufshcd_init_icc_levels(hba);
+diff --git a/arch/arm/crypto/chacha-glue.c b/arch/arm/crypto/chacha-glue.c
+index 6ebbb2b241d2b..6fdb0ac62b3d8 100644
+--- a/arch/arm/crypto/chacha-glue.c
++++ b/arch/arm/crypto/chacha-glue.c
+@@ -115,7 +115,7 @@ static int chacha_stream_xor(struct skcipher_request *req,
+ 		if (nbytes < walk.total)
+ 			nbytes = round_down(nbytes, walk.stride);
  
- 		/* Add required well known logical units to scsi mid layer */
--		if (ufshcd_scsi_add_wlus(hba))
-+		ret = ufshcd_scsi_add_wlus(hba);
-+		if (ret)
- 			goto out;
+-		if (!neon) {
++		if (!IS_ENABLED(CONFIG_KERNEL_MODE_NEON) || !neon) {
+ 			chacha_doarm(walk.dst.virt.addr, walk.src.virt.addr,
+ 				     nbytes, state, ctx->nrounds);
+ 			state[12] += DIV_ROUND_UP(nbytes, CHACHA_BLOCK_SIZE);
+@@ -159,7 +159,7 @@ static int do_xchacha(struct skcipher_request *req, bool neon)
  
- 		/* Initialize devfreq after UFS device is detected */
+ 	chacha_init_generic(state, ctx->key, req->iv);
+ 
+-	if (!neon) {
++	if (!IS_ENABLED(CONFIG_KERNEL_MODE_NEON) || !neon) {
+ 		hchacha_block_arm(state, subctx.key, ctx->nrounds);
+ 	} else {
+ 		kernel_neon_begin();
 -- 
 2.20.1
 
