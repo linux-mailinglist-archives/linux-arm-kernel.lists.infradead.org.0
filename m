@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DF6015E297
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:24:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83B9015E2DF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:25:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Wpd79M7Hh6LHIvbTue3otMOum2rXdhdtGeCxoBsPaE=; b=LTxOO3JmEnYNJx
-	x3xW4AjAyNlEyOLfbmUA5gI/PA5MUoNA3bLP2tz/58hnrZg5ZvY9peXuI+hIvgQdJihZOrRJa0kL2
-	xp/u2LwICLYxnnW12tq3YdZsb+ivDgQdYiyuxzOUBqWrb8X/OTs1XFUjpc0wV2AGbkpzxH2FqyTEI
-	TKgJWNrCrOt9/I2nXThL+AbfBaduX41s0uN+enMmJof455wqHQodR7sjtQKI5P8/dmRNHiM9Jg0BA
-	34t1VvTFqm+ENsMoEyEPN4h9PCIxZecmumSG/09wPVnShw3lLPbhx57c0uyITSfnGqmUtwyGV4E7s
-	G57DFj5idcacztprTilA==;
+	List-Owner; bh=BnOwg4WktcPQMBc96WIfiO8mCbcDL/pVjT3D9FsXesQ=; b=ZKmMXsUeqGQk4j
+	PreAFWrnYaFwHKUJUEd4oIPOYlXJYL7ZFY0Y614AkJCkkn8WBVIKMdTtA3RqhyTFKY4k78L4w08vW
+	cmkxt6wYnDLE+2SbbXH3MUjbMGvBayrh68nhjqWt0ZBFkgD1I0IKrRQqETkHRovOuzK9vOTuhzFot
+	TIe9FXWm6TtM+8/ue3zXw6MHs8mNUasWsG4uRFlG9u9oiYiat4rCfIDp/9Uw0KFaMd2+5xqKbeqt1
+	Ja0pbzLa7qp7qs7KCD3uT+9Dzshv6UKM9uketybrF7TLF0N3sTK7n3MPJxt/aVXLnEUSuFfqDhAjT
+	R2yqn3VRQabNirZbd7oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dln-00087W-Ki; Fri, 14 Feb 2020 16:24:47 +0000
+	id 1j2dmW-0001RA-Bp; Fri, 14 Feb 2020 16:25:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dT2-0005Cr-2Q
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:05:26 +0000
+ id 1j2dTC-0005MB-EU
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:05:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A579024689;
- Fri, 14 Feb 2020 16:05:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EEA0C217F4;
+ Fri, 14 Feb 2020 16:05:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696323;
- bh=gQCl3t2EcBsDvz3br3y54JgMri+EC7RXVVMTJI5P1Wk=;
+ s=default; t=1581696333;
+ bh=D6q+W0uw71RZQXApkieYo4qW7HwpywQhRGI3KCCb+3o=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=0uCFqkJIQc4wt0V6A9Gp1VsOf/+ucAMKG5IG8Od4qeO7kk7UXAvbffRcwjSQZXOip
- 4FtkBRbs/DNFrsY10+kyXkvUmPt6CeuF4eKw95bOVeeoS6DzGHZVcfgwPtYRxPuAAS
- qH9Er9sEqtVLPuL8Lr0z1EE0ARqBkqsiYeUUA8GA=
+ b=uz9II/afRIVo1edRhrdnV5IyYU95iziYZ9Rqf3d7MHTbceiLp6H6dvE9HR0h8ykLb
+ lhnS9o51TKz2DuoDogppBjobMvHPN+abyGBiDL6zMyjmNecUzFDyIPwXCXDmFpgdjq
+ DwjERsYrBF6T4FZ2uCoQJIttOgeEKa7NT1rZDXIM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 163/459] ARM: dts: at91: Reenable UART TX pull-ups
-Date: Fri, 14 Feb 2020 10:56:53 -0500
-Message-Id: <20200214160149.11681-163-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 171/459] clk: imx: Add correct failure handling
+ for clk based helpers
+Date: Fri, 14 Feb 2020 10:57:01 -0500
+Message-Id: <20200214160149.11681-171-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -49,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080524_194379_04B21E73 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20200214_080534_596754_307C1765 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,243 +81,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ingo van Lil <inguin@gmx.de>, Peter Rosin <peda@axentia.se>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Abel Vesa <abel.vesa@nxp.com>, linux-arm-kernel@lists.infradead.org,
+ linux-clk@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ingo van Lil <inguin@gmx.de>
+From: Abel Vesa <abel.vesa@nxp.com>
 
-[ Upstream commit 9d39d86cd4af2b17b970d63307daad71f563d207 ]
+[ Upstream commit f60f1c62c3188fcca945581e35e3440ee3fdcc95 ]
 
-Pull-ups for SAM9 UART/USART TX lines were disabled in a previous
-commit. However, several chips in the SAM9 family require pull-ups to
-prevent the TX lines from falling (and causing an endless break
-condition) when the transceiver is disabled.
+If the clk_hw based API returns an error, trying to return the clk from
+hw will end up in a NULL pointer dereference. So adding the to_clk
+checker and using it inside every clk based macro helper we handle that
+case correctly.
 
-From the SAM9G20 datasheet, 32.5.1: "To prevent the TXD line from
-falling when the USART is disabled, the use of an internal pull up
-is mandatory.". This commit reenables the pull-ups for all chips having
-that sentence in their datasheets.
+This to_clk is also temporary and will go away along with the clk based
+macro helpers once there is no user that need them anymore.
 
-Fixes: 5e04822f7db5 ("ARM: dts: at91: fixes uart pinctrl, set pullup on rx, clear pullup on tx")
-Signed-off-by: Ingo van Lil <inguin@gmx.de>
-Cc: Peter Rosin <peda@axentia.se>
-Link: https://lore.kernel.org/r/20191203142147.875227-1-inguin@gmx.de
-Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
+Signed-off-by: Shawn Guo <shawnguo@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/at91sam9260.dtsi | 12 ++++++------
- arch/arm/boot/dts/at91sam9261.dtsi |  6 +++---
- arch/arm/boot/dts/at91sam9263.dtsi |  6 +++---
- arch/arm/boot/dts/at91sam9g45.dtsi |  8 ++++----
- arch/arm/boot/dts/at91sam9rl.dtsi  |  8 ++++----
- 5 files changed, 20 insertions(+), 20 deletions(-)
+ drivers/clk/imx/clk.h | 37 ++++++++++++++++++++++---------------
+ 1 file changed, 22 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm/boot/dts/at91sam9260.dtsi b/arch/arm/boot/dts/at91sam9260.dtsi
-index dee9c0c8a0964..16c6fd3c42462 100644
---- a/arch/arm/boot/dts/at91sam9260.dtsi
-+++ b/arch/arm/boot/dts/at91sam9260.dtsi
-@@ -187,7 +187,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 5 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
+index f7a389a50401a..6fe64ff8ffa12 100644
+--- a/drivers/clk/imx/clk.h
++++ b/drivers/clk/imx/clk.h
+@@ -51,48 +51,48 @@ struct imx_pll14xx_clk {
+ };
  
-@@ -221,7 +221,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOB 6 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 6 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 7 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_cpu(name, parent_name, div, mux, pll, step) \
+-	imx_clk_hw_cpu(name, parent_name, div, mux, pll, step)->clk
++	to_clk(imx_clk_hw_cpu(name, parent_name, div, mux, pll, step))
  
-@@ -239,7 +239,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOB 8 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 8 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 9 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define clk_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
+ 				cgr_val, clk_gate_flags, lock, share_count) \
+-	clk_hw_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
+-				cgr_val, clk_gate_flags, lock, share_count)->clk
++	to_clk(clk_hw_register_gate2(dev, name, parent_name, flags, reg, bit_idx, \
++				cgr_val, clk_gate_flags, lock, share_count))
  
-@@ -257,7 +257,7 @@
- 				usart3 {
- 					pinctrl_usart3: usart3-0 {
- 						atmel,pins =
--							<AT91_PIOB 10 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 10 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 11 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_pllv3(type, name, parent_name, base, div_mask) \
+-	imx_clk_hw_pllv3(type, name, parent_name, base, div_mask)->clk
++	to_clk(imx_clk_hw_pllv3(type, name, parent_name, base, div_mask))
  
-@@ -275,7 +275,7 @@
- 				uart0 {
- 					pinctrl_uart0: uart0-0 {
- 						atmel,pins =
--							<AT91_PIOA 31 AT91_PERIPH_B AT91_PINCTRL_NONE
-+							<AT91_PIOA 31 AT91_PERIPH_B AT91_PINCTRL_PULL_UP
- 							 AT91_PIOA 30 AT91_PERIPH_B AT91_PINCTRL_PULL_UP>;
- 					};
- 				};
-@@ -283,7 +283,7 @@
- 				uart1 {
- 					pinctrl_uart1: uart1-0 {
- 						atmel,pins =
--							<AT91_PIOB 12 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 12 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 13 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
- 				};
-diff --git a/arch/arm/boot/dts/at91sam9261.dtsi b/arch/arm/boot/dts/at91sam9261.dtsi
-index dba025a985270..5ed3d745ac867 100644
---- a/arch/arm/boot/dts/at91sam9261.dtsi
-+++ b/arch/arm/boot/dts/at91sam9261.dtsi
-@@ -329,7 +329,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOC 8 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOC 8 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOC 9 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_pfd(name, parent_name, reg, idx) \
+-	imx_clk_hw_pfd(name, parent_name, reg, idx)->clk
++	to_clk(imx_clk_hw_pfd(name, parent_name, reg, idx))
  
-@@ -347,7 +347,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOC 12 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOC 12 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOC 13 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_gate_exclusive(name, parent, reg, shift, exclusive_mask) \
+-	imx_clk_hw_gate_exclusive(name, parent, reg, shift, exclusive_mask)->clk
++	to_clk(imx_clk_hw_gate_exclusive(name, parent, reg, shift, exclusive_mask))
  
-@@ -365,7 +365,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOC 14 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOC 14 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOC 15 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_fixed_factor(name, parent, mult, div) \
+-	imx_clk_hw_fixed_factor(name, parent, mult, div)->clk
++	to_clk(imx_clk_hw_fixed_factor(name, parent, mult, div))
  
-diff --git a/arch/arm/boot/dts/at91sam9263.dtsi b/arch/arm/boot/dts/at91sam9263.dtsi
-index 99678abdda930..5c990cfae254e 100644
---- a/arch/arm/boot/dts/at91sam9263.dtsi
-+++ b/arch/arm/boot/dts/at91sam9263.dtsi
-@@ -183,7 +183,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOA 26 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOA 26 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOA 27 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_divider2(name, parent, reg, shift, width) \
+-	imx_clk_hw_divider2(name, parent, reg, shift, width)->clk
++	to_clk(imx_clk_hw_divider2(name, parent, reg, shift, width))
  
-@@ -201,7 +201,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOD 0 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOD 0 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOD 1 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_gate_dis(name, parent, reg, shift) \
+-	imx_clk_hw_gate_dis(name, parent, reg, shift)->clk
++	to_clk(imx_clk_hw_gate_dis(name, parent, reg, shift))
  
-@@ -219,7 +219,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOD 2 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOD 2 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOD 3 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_gate2(name, parent, reg, shift) \
+-	imx_clk_hw_gate2(name, parent, reg, shift)->clk
++	to_clk(imx_clk_hw_gate2(name, parent, reg, shift))
  
-diff --git a/arch/arm/boot/dts/at91sam9g45.dtsi b/arch/arm/boot/dts/at91sam9g45.dtsi
-index 691c95ea61754..fd179097a4bfd 100644
---- a/arch/arm/boot/dts/at91sam9g45.dtsi
-+++ b/arch/arm/boot/dts/at91sam9g45.dtsi
-@@ -556,7 +556,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOB 19 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 19 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 18 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_gate2_flags(name, parent, reg, shift, flags) \
+-	imx_clk_hw_gate2_flags(name, parent, reg, shift, flags)->clk
++	to_clk(imx_clk_hw_gate2_flags(name, parent, reg, shift, flags))
  
-@@ -574,7 +574,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 4 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 5 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_gate2_shared2(name, parent, reg, shift, share_count) \
+-	imx_clk_hw_gate2_shared2(name, parent, reg, shift, share_count)->clk
++	to_clk(imx_clk_hw_gate2_shared2(name, parent, reg, shift, share_count))
  
-@@ -592,7 +592,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOB 6 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 6 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 7 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_gate3(name, parent, reg, shift) \
+-	imx_clk_hw_gate3(name, parent, reg, shift)->clk
++	to_clk(imx_clk_hw_gate3(name, parent, reg, shift))
  
-@@ -610,7 +610,7 @@
- 				usart3 {
- 					pinctrl_usart3: usart3-0 {
- 						atmel,pins =
--							<AT91_PIOB 8 AT91_PERIPH_A AT91_PINCTRL_NONE
-+							<AT91_PIOB 8 AT91_PERIPH_A AT91_PINCTRL_PULL_UP
- 							 AT91_PIOB 9 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_gate4(name, parent, reg, shift) \
+-	imx_clk_hw_gate4(name, parent, reg, shift)->clk
++	to_clk(imx_clk_hw_gate4(name, parent, reg, shift))
  
-diff --git a/arch/arm/boot/dts/at91sam9rl.dtsi b/arch/arm/boot/dts/at91sam9rl.dtsi
-index 8643b71515650..ea024e4b6e095 100644
---- a/arch/arm/boot/dts/at91sam9rl.dtsi
-+++ b/arch/arm/boot/dts/at91sam9rl.dtsi
-@@ -682,7 +682,7 @@
- 				usart0 {
- 					pinctrl_usart0: usart0-0 {
- 						atmel,pins =
--							<AT91_PIOA 6 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOA 6 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOA 7 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ #define imx_clk_mux(name, reg, shift, width, parents, num_parents) \
+-	imx_clk_hw_mux(name, reg, shift, width, parents, num_parents)->clk
++	to_clk(imx_clk_hw_mux(name, reg, shift, width, parents, num_parents))
  
-@@ -721,7 +721,7 @@
- 				usart1 {
- 					pinctrl_usart1: usart1-0 {
- 						atmel,pins =
--							<AT91_PIOA 11 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOA 11 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOA 12 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
+ struct clk *imx_clk_pll14xx(const char *name, const char *parent_name,
+ 		 void __iomem *base, const struct imx_pll14xx_clk *pll_clk);
+@@ -195,6 +195,13 @@ struct clk_hw *imx_clk_hw_fixup_mux(const char *name, void __iomem *reg,
+ 			      u8 shift, u8 width, const char * const *parents,
+ 			      int num_parents, void (*fixup)(u32 *val));
  
-@@ -744,7 +744,7 @@
- 				usart2 {
- 					pinctrl_usart2: usart2-0 {
- 						atmel,pins =
--							<AT91_PIOA 13 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOA 13 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOA 14 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
- 
-@@ -767,7 +767,7 @@
- 				usart3 {
- 					pinctrl_usart3: usart3-0 {
- 						atmel,pins =
--							<AT91_PIOB 0 AT91_PERIPH_A AT91_PINCTRL_NONE>,
-+							<AT91_PIOB 0 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>,
- 							<AT91_PIOB 1 AT91_PERIPH_A AT91_PINCTRL_PULL_UP>;
- 					};
- 
++static inline struct clk *to_clk(struct clk_hw *hw)
++{
++	if (IS_ERR_OR_NULL(hw))
++		return ERR_CAST(hw);
++	return hw->clk;
++}
++
+ static inline struct clk *imx_clk_fixed(const char *name, int rate)
+ {
+ 	return clk_register_fixed_rate(NULL, name, NULL, 0, rate);
 -- 
 2.20.1
 
