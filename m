@@ -2,65 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A82D15DDA5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:00:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1009F15DB3F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:44:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t9da9jik6ISTLCoo54jENtdtk75T1awwvTR2g/g9dwY=; b=cM3iCYhwMe+F67
-	SDbEb/of+hGbUakv+9BvG/kwHBldx0xIdvR6Tt2uPXj6dXiE9nsvZ6/dLNK8w064HWYxFRpLAC5pE
-	gkthfLm5OwP+rn+6JlrRDV6Bj1Qi6I2cu2i7ezFfPWBbB256ifN7DwpRJXWAMT0QfwnsUFeJiiP/9
-	bckK5bJ0/ccYROY+gVdiXDlkkJS8JbFR3YUh8qnTVFXc9ayIXP3NXKFjIxz+l+Mx3fkon7mzpIqZ9
-	Z1vNrfd8Ln3edi/u2dOBE3J/01lOPBbKfXmWQCBAE1VNCB7jGqu7uVI3bRisM8KyzCmFVOdSLQu7n
-	PFkOhPR9hQfxqKFA3L8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=lmF9hMacfh5ogQWNBLz2z/zKafrmzDw9hdN4FPMjFAQ=; b=smQmzovEVD0kn76ik1iNjjLwo
+	BqrLff13Y1vArs/6B9dDcOe/8hEiBTyRNs7xREmeJ7O3/0cnN62eX1dm8WAa6j0u/oPT/jUA+88ik
+	6hJKjOwb9zFBLsXVQ/NvfRRSbMNjb4FxbMKWCN+gSAfRcn0hHCJUgl7CczVOcQlFkMtJIwMo8I6sG
+	su3W1WLUK5Bo1dRXNCeGP+1VdA7lXNc2AyYW7dneX0W8UXl0PNpoLZjpj5K4JQq0vI5R4UEFOr+hh
+	NPB2iXZlPLuM198gocLzwJFUEBreG3bwf7zpDNAEvZSlxAIMip3vS5Fxqa4kyLarbNVcmfi1KinlX
+	Mwrt7A9mQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dO1-0004zj-0n; Fri, 14 Feb 2020 16:00:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j2d8e-00074j-9l; Fri, 14 Feb 2020 15:44:20 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dHe-0006fM-W4
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:53:40 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A60A724676;
- Fri, 14 Feb 2020 15:53:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695618;
- bh=gUEGfpV552sDu9X3kZ+5/zD3JhIkLGBT0fJ533BkoeE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Kthkcr7qlEBFntUjaLOLVX6TKiACvCTyMzWygK7z7OD4RVs8LaPsfru5ECYF7XJWK
- tRAsXPShHrCdUXbovT4kH+B4OeDmaJirrHpUEZ+4vxIkmLMQktId7ql06MwI3fxOZP
- JriROeaGnT5MX1XGELEJYx793/XsD7Ra2sETQ//s=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 218/542] ARM: OMAP2+: Add workaround for DRA7 DSP
- MStandby errata i879
-Date: Fri, 14 Feb 2020 10:43:30 -0500
-Message-Id: <20200214154854.6746-218-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
-References: <20200214154854.6746-1-sashal@kernel.org>
+ id 1j2d8U-00073z-OV
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:44:12 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 40E905CD1;
+ Fri, 14 Feb 2020 10:44:09 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Fri, 14 Feb 2020 10:44:09 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=n5v7Ksf5fN+HGYZQY4Cr6/EpGn+
+ eFDk1rQovPH6zOQU=; b=k+dQmLVjp1h/yH4XaeEmVKsC8XumRaOXMNNVI1cAaOI
+ uVDVHEwtAtIDB4hEB2Popc9ifkFA4dteIs/9nbd2RMvo40dmSBxaFJzbS+oa2gvW
+ 7UiMSSe3GRgN91WEOuZ6Xz9JOuPKjWENc3xQhOTaGEIlG/JKPEEvce0/PSa9Eg9P
+ O4uPJ7DbxXrCAyoMzCNYRZO8sxDihm+p5fR5SjPWlLvhicYiCuTjqMxjBxNJBOeN
+ viet7Cgi18ytKXsrZpVm+6cl79xYBiZ57o/axsPEEOTmJs+RWgOzXir+7xOV9XL0
+ scedVSGvykOerXakEMOaA3/iYkZ+vGvH/XMiIQOwTJQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=n5v7Ks
+ f5fN+HGYZQY4Cr6/EpGn+eFDk1rQovPH6zOQU=; b=rIA7N4TgCEXQwu43DKUW2L
+ W4++wGCiAERQclPw/7jCi/4LxxIpBDbsWUhz2Bf8azP+AUkSt+9Y3xQrHditj2pQ
+ uAJrx0xSRzp+moxYhgCPi8D5/kJkviLEKLScvhUZrcOZ8zad3RruSLo+pyGynmkH
+ u1ZfpsDKfPiBPiUaZXP4e9TvxR5yqgXJ9Md4+LyRp06TP/5nd/l9IAkhw52WJEyw
+ 2Z56cPbIW+XbzKpfH3Sqe3ukv8ojpGkZEgiF9oWYLOrs6rdAPPPV1LdD6Aeu/Cr/
+ PAOS9R1KQPhuUa614o9nCmt6ln5+zBK2QcmBLuh2pEV9kxoPyZB2mOSb1a54KT1Q
+ ==
+X-ME-Sender: <xms:R8BGXrT0Z-LrkYPf54YX95PM3kh0W0mk0CCcITPa8_Hvzi8QGsl8PQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjedtgdekudcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:R8BGXvvKwDo-3MEP4nIBCAsXoc1LBpljPg3kX3YUlAGQpXApwUL41g>
+ <xmx:R8BGXkNWpig5YSHaEkc9zD-IcbYVcAO5yuZtUUlZ-m-b46PgjX2C8Q>
+ <xmx:R8BGXijZhTpEesb32RwtqSX5HFkfNgzcVCAKoNw5nw-6SvAFI5TOVA>
+ <xmx:ScBGXphAPunMvxwS9HvlUFBGO3sk2OaMZiwuMs5fA-XN0hEjfpHlVw>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 20A1530606E9;
+ Fri, 14 Feb 2020 10:44:07 -0500 (EST)
+Date: Fri, 14 Feb 2020 16:44:05 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH 1/2] dt-bindings: display: sun4i-tcon: Add LVDS Dual Link
+ property
+Message-ID: <20200214154405.f5zuicm6uhhiczfs@gilmour.lan>
+References: <20200214123244.109300-1-maxime@cerno.tech>
+ <20200214131025.GI4831@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+In-Reply-To: <20200214131025.GI4831@pendragon.ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075339_091824_257F4398 
-X-CRM114-Status: GOOD (  15.72  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200214_074410_940879_4E78A4CB 
+X-CRM114-Status: GOOD (  18.67  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -68,7 +95,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,135 +107,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, Sasha Levin <sashal@kernel.org>,
- linux-omap@vger.kernel.org, Suman Anna <s-anna@ti.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Sean Paul <seanpaul@chromium.org>,
+ Daniel Vetter <daniel.vetter@intel.com>, Frank Rowand <frowand.list@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============7097310496338231855=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Suman Anna <s-anna@ti.com>
 
-[ Upstream commit 2f14101a1d760db72393910d481fbf7768c44530 ]
+--===============7097310496338231855==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="ocew46sopze2pn2e"
+Content-Disposition: inline
 
-Errata Title:
-i879: DSP MStandby requires CD_EMU in SW_WKUP
 
-Description:
-The DSP requires the internal emulation clock to be actively toggling
-in order to successfully enter a low power mode via execution of the
-IDLE instruction and PRCM MStandby/Idle handshake. This assumes that
-other prerequisites and software sequence are followed.
+--ocew46sopze2pn2e
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Workaround:
-The emulation clock to the DSP is free-running anytime CCS is connected
-via JTAG debugger to the DSP subsystem or when the CD_EMU clock domain
-is set in SW_WKUP mode. The CD_EMU domain can be set in SW_WKUP mode
-via the CM_EMU_CLKSTCTRL [1:0]CLKTRCTRL field.
+Hi Laurent,
 
-Implementation:
-This patch implements this workaround by denying the HW_AUTO mode
-for the EMU clockdomain during the power-up of any DSP processor
-and re-enabling the HW_AUTO mode during the shutdown of the last
-DSP processor (actually done during the enabling and disabling of
-the respective DSP MDMA MMUs). Reference counting has to be used to
-manage the independent sequencing between the multiple DSP processors.
+On Fri, Feb 14, 2020 at 03:10:25PM +0200, Laurent Pinchart wrote:
+> Hi Maxime,
+>
+> Thank you for the patch.
+>
+> On Fri, Feb 14, 2020 at 01:32:43PM +0100, Maxime Ripard wrote:
+> > SoCs that have multiple TCONs can use the two set of pins on the first TCON
+> > to drive a dual-link display. Add a property to enable the dual link.
+> >
+> > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> > ---
+> >  .../bindings/display/allwinner,sun4i-a10-tcon.yaml         | 7 +++++++
+> >  1 file changed, 7 insertions(+)
+> >
+> > diff --git a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> > index 86ad617d2327..aa6dd8409dbc 100644
+> > --- a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> > +++ b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> > @@ -105,6 +105,13 @@ properties:
+> >          - const: edp
+> >          - const: lvds
+> >
+> > +  allwinner,lvds-dual-link:
+> > +    type: boolean
+> > +    description: |
+> > +      On a SoC with two TCON with LVDS support, the first TCON can
+> > +      operate over both pins sets to output in a dual-link setup. This
+> > +      will be triggered by setting this property.
+>
+> Could you maybe provide an example of how this property is supposed to
+> be used ? I'm especially wondering what ports are used in that case and
+> how they're connected.
 
-This switching is done at runtime rather than a static clockdomain
-flags value to meet the target power domain state for the EMU power
-domain during suspend.
+It's pretty trivial to support, it's only a property to set on the
+encoder node itself.
 
-Note that the DSP MStandby behavior is not consistent across all
-boards prior to this fix. Please see commit 45f871eec6c0 ("ARM:
-OMAP2+: Extend DRA7 IPU1 MMU pdata quirks to DSP MDMA MMUs") for
-details.
+I'm not really sure what you meant by your question with the ports
+though :/
 
-Signed-off-by: Suman Anna <s-anna@ti.com>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/mach-omap2/omap-iommu.c | 43 +++++++++++++++++++++++++++++---
- 1 file changed, 40 insertions(+), 3 deletions(-)
+Maxime
 
-diff --git a/arch/arm/mach-omap2/omap-iommu.c b/arch/arm/mach-omap2/omap-iommu.c
-index f1a6ece8108e4..78247e6f4a720 100644
---- a/arch/arm/mach-omap2/omap-iommu.c
-+++ b/arch/arm/mach-omap2/omap-iommu.c
-@@ -11,14 +11,43 @@
- 
- #include "omap_hwmod.h"
- #include "omap_device.h"
-+#include "clockdomain.h"
- #include "powerdomain.h"
- 
-+static void omap_iommu_dra7_emu_swsup_config(struct platform_device *pdev,
-+					     bool enable)
-+{
-+	static struct clockdomain *emu_clkdm;
-+	static DEFINE_SPINLOCK(emu_lock);
-+	static atomic_t count;
-+	struct device_node *np = pdev->dev.of_node;
-+
-+	if (!of_device_is_compatible(np, "ti,dra7-dsp-iommu"))
-+		return;
-+
-+	if (!emu_clkdm) {
-+		emu_clkdm = clkdm_lookup("emu_clkdm");
-+		if (WARN_ON_ONCE(!emu_clkdm))
-+			return;
-+	}
-+
-+	spin_lock(&emu_lock);
-+
-+	if (enable && (atomic_inc_return(&count) == 1))
-+		clkdm_deny_idle(emu_clkdm);
-+	else if (!enable && (atomic_dec_return(&count) == 0))
-+		clkdm_allow_idle(emu_clkdm);
-+
-+	spin_unlock(&emu_lock);
-+}
-+
- int omap_iommu_set_pwrdm_constraint(struct platform_device *pdev, bool request,
- 				    u8 *pwrst)
- {
- 	struct powerdomain *pwrdm;
- 	struct omap_device *od;
- 	u8 next_pwrst;
-+	int ret = 0;
- 
- 	od = to_omap_device(pdev);
- 	if (!od)
-@@ -31,13 +60,21 @@ int omap_iommu_set_pwrdm_constraint(struct platform_device *pdev, bool request,
- 	if (!pwrdm)
- 		return -EINVAL;
- 
--	if (request)
-+	if (request) {
- 		*pwrst = pwrdm_read_next_pwrst(pwrdm);
-+		omap_iommu_dra7_emu_swsup_config(pdev, true);
-+	}
- 
- 	if (*pwrst > PWRDM_POWER_RET)
--		return 0;
-+		goto out;
- 
- 	next_pwrst = request ? PWRDM_POWER_ON : *pwrst;
- 
--	return pwrdm_set_next_pwrst(pwrdm, next_pwrst);
-+	ret = pwrdm_set_next_pwrst(pwrdm, next_pwrst);
-+
-+out:
-+	if (!request)
-+		omap_iommu_dra7_emu_swsup_config(pdev, false);
-+
-+	return ret;
- }
--- 
-2.20.1
+--ocew46sopze2pn2e
+Content-Type: application/pgp-signature; name="signature.asc"
 
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXkbARQAKCRDj7w1vZxhR
+xWgZAQCoX6IPh3nfofCSZf7uxIEwmYH/acb4D64t70G8fNoW4AEA0scufZoOcED6
+nd6GkciRxgxAXhF3LhkXYBnzHA7tnQY=
+=1YtU
+-----END PGP SIGNATURE-----
+
+--ocew46sopze2pn2e--
+
+
+--===============7097310496338231855==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7097310496338231855==--
+
