@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5B3115E55A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:42:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD0EA15E55C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:42:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vhL+rrFRROfFOO2rHsldd19urGe6E5Lmr7OOWrHHPkY=; b=I/6EZOjWkd611+
-	0cwPxtoHRcZ8nqJ7GDKm19YKy2dBTZso5lKA3pst0l150Gly5jaI0EXXCIWDsCKaDOKA3dxoiZXQS
-	W1wN1sTyiZN/nh4zIQ5vG2Fg7qpcmjuPimZvFVPAbIeV0NANpwUdJBf4sbZ2pbhi4TEigIh+uRAbR
-	c9yLmzbl7kHz071aKIZliqP4nd7J4pAX+EodyTayUCdPymj0ytHTTCQrGSwiZMMBAkKNaRZIh/Qz2
-	Lzi6IZa6+oc6xLndb4TbFfosVaCPHnFDqw5ea7dmUfJ9X3U42ooATiDmikDpOBUenUvp9hPVc20MO
-	9f0Qklok4deTXGYLVFiw==;
+	List-Owner; bh=H5OrpDp1F8ctdsts22/WzoYA3cW15zsMUj1aBQBEjbI=; b=i4pXnob3CV8UuY
+	1uTLuYIwOXPUT10JvUQh4SqXnQRTfALuR3t/yQ+WLHgIwkjL3RYl1koUarIPJO4pTPeUPK18WC05h
+	xIn7Nqls9o4o1rdk9cFDJINouCZkODU3iVZQl+S2NwbLu0/oEKIFVAAs0SmhgsAk7NXlIqhkRQg9B
+	jXjVL1qFjoGa3a63g8VlsTyTG55J0hlZhct9UnDEUEfab9qRdLp9Fcs+3rMimN9RFWiLZcUocDJgn
+	gf+0FqMAkEYAQ6y8Zn9sT4sNIuSgq5gKtcDINWT7ervOUY6Yk/B3ZSJBJY2fpTQaN5fQztOM5nHSE
+	4sfoFO8T/h8TJnWll/YQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2e2P-0003NJ-FF; Fri, 14 Feb 2020 16:41:57 +0000
+	id 1j2e2i-0003am-DK; Fri, 14 Feb 2020 16:42:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2db7-0005gI-IM
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:14:09 +0000
+ id 1j2dbK-0005p8-TT
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:14:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CC59D246DE;
- Fri, 14 Feb 2020 16:13:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6FB77246CF;
+ Fri, 14 Feb 2020 16:13:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696824;
- bh=eIfNHxaTaF6oemS/jKYLYEWreka0CQ5m1S3ahstw9uc=;
+ s=default; t=1581696838;
+ bh=WozPa1qStD4LufFFl3Dl7fGjdGPOMv7Wj8JbkNrLvLo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZKCye3p00wPGQdEK1Xhi630FoIEkqVTfO2xFwbNOUj1eLPANN6wflFFfCH8HxSSaD
- 8LSTDxmW1gZV1ixW9UIW4PCyL56fq2w+jNG3M9swF990EcjdAYZiFVqDTh6skYJZmw
- 5fR6Z4NnA3q8gGSDNiEMGq5bd0Y7Xo/d5FBpVAz4=
+ b=iRlTn9eC3WGD6A6/+qehpcs41joCo32z+U7napNfMsaDwGUzwDytNKLS8YKsquIJ7
+ EY9SNg66PWUMPHllvsy8aK8yvGVxooMGEjKHo1CriOBLxrmD37PwSQsjxH2Xza7wOH
+ mjaOWHasokNHbwOW9leHupk655fYjyFo6EvbgbXw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 091/252] PCI: iproc: Apply quirk_paxc_bridge()
- for module as well as built-in
-Date: Fri, 14 Feb 2020 11:09:06 -0500
-Message-Id: <20200214161147.15842-91-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 102/252] Revert "tty/serial: atmel: fix out of
+ range clock divider handling"
+Date: Fri, 14 Feb 2020 11:09:17 -0500
+Message-Id: <20200214161147.15842-102-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214161147.15842-1-sashal@kernel.org>
 References: <20200214161147.15842-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_081345_731772_2BC739E6 
-X-CRM114-Status: GOOD (  14.41  )
+X-CRM114-CacheID: sfid-20200214_081359_126800_465A5D97 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,111 +81,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, Sasha Levin <sashal@kernel.org>,
- Wei Liu <wei.liu@kernel.org>, linux-arm-kernel@lists.infradead.org,
- linux-pci@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-serial@vger.kernel.org,
+ David Engraf <david.engraf@sysgo.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Wei Liu <wei.liu@kernel.org>
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
-[ Upstream commit 574f29036fce385e28617547955dd6911d375025 ]
+[ Upstream commit 6dbd54e4154dfe386b3333687de15be239576617 ]
 
-Previously quirk_paxc_bridge() was applied when the iproc driver was
-built-in, but not when it was compiled as a module.
+This reverts commit 751d0017334db9c4d68a8909c59f662a6ecbcec6.
 
-This happened because it was under #ifdef CONFIG_PCIE_IPROC_PLATFORM:
-PCIE_IPROC_PLATFORM=y causes CONFIG_PCIE_IPROC_PLATFORM to be defined, but
-PCIE_IPROC_PLATFORM=m causes CONFIG_PCIE_IPROC_PLATFORM_MODULE to be
-defined.
+The wrong commit got added to the tty-next tree, the correct one is in
+the tty-linus branch.
 
-Move quirk_paxc_bridge() to pcie-iproc.c and drop the #ifdef so the quirk
-is always applied, whether iproc is built-in or a module.
-
-[bhelgaas: commit log, move to pcie-iproc.c, not pcie-iproc-platform.c]
-Link: https://lore.kernel.org/r/20191211174511.89713-1-wei.liu@kernel.org
-Signed-off-by: Wei Liu <wei.liu@kernel.org>
-Signed-off-by: Bjorn Helgaas <bhelgaas@google.com>
+Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
+Cc: David Engraf <david.engraf@sysgo.com>
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/pci/controller/pcie-iproc.c | 24 ++++++++++++++++++++++++
- drivers/pci/quirks.c                | 26 --------------------------
- 2 files changed, 24 insertions(+), 26 deletions(-)
+ drivers/tty/serial/atmel_serial.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-index 9d5cbc75d5ae0..ec86414216f97 100644
---- a/drivers/pci/controller/pcie-iproc.c
-+++ b/drivers/pci/controller/pcie-iproc.c
-@@ -1526,6 +1526,30 @@ DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0xd802,
- DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0xd804,
- 			quirk_paxc_disable_msi_parsing);
+diff --git a/drivers/tty/serial/atmel_serial.c b/drivers/tty/serial/atmel_serial.c
+index f34520e9ad6e5..19b926b44cc1e 100644
+--- a/drivers/tty/serial/atmel_serial.c
++++ b/drivers/tty/serial/atmel_serial.c
+@@ -2154,6 +2154,9 @@ static void atmel_set_termios(struct uart_port *port, struct ktermios *termios,
+ 		mode |= ATMEL_US_USMODE_NORMAL;
+ 	}
  
-+static void quirk_paxc_bridge(struct pci_dev *pdev)
-+{
-+	/*
-+	 * The PCI config space is shared with the PAXC root port and the first
-+	 * Ethernet device.  So, we need to workaround this by telling the PCI
-+	 * code that the bridge is not an Ethernet device.
-+	 */
-+	if (pdev->hdr_type == PCI_HEADER_TYPE_BRIDGE)
-+		pdev->class = PCI_CLASS_BRIDGE_PCI << 8;
++	/* set the mode, clock divisor, parity, stop bits and data size */
++	atmel_uart_writel(port, ATMEL_US_MR, mode);
 +
-+	/*
-+	 * MPSS is not being set properly (as it is currently 0).  This is
-+	 * because that area of the PCI config space is hard coded to zero, and
-+	 * is not modifiable by firmware.  Set this to 2 (e.g., 512 byte MPS)
-+	 * so that the MPS can be set to the real max value.
-+	 */
-+	pdev->pcie_mpss = 2;
-+}
-+DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0x16cd, quirk_paxc_bridge);
-+DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0x16f0, quirk_paxc_bridge);
-+DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0xd750, quirk_paxc_bridge);
-+DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0xd802, quirk_paxc_bridge);
-+DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0xd804, quirk_paxc_bridge);
-+
- MODULE_AUTHOR("Ray Jui <rjui@broadcom.com>");
- MODULE_DESCRIPTION("Broadcom iPROC PCIe common driver");
- MODULE_LICENSE("GPL v2");
-diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
-index 5b4c36ab15962..84f10cda539ea 100644
---- a/drivers/pci/quirks.c
-+++ b/drivers/pci/quirks.c
-@@ -2358,32 +2358,6 @@ DECLARE_PCI_FIXUP_ENABLE(PCI_VENDOR_ID_BROADCOM,
- 			 PCI_DEVICE_ID_TIGON3_5719,
- 			 quirk_brcm_5719_limit_mrrs);
- 
--#ifdef CONFIG_PCIE_IPROC_PLATFORM
--static void quirk_paxc_bridge(struct pci_dev *pdev)
--{
--	/*
--	 * The PCI config space is shared with the PAXC root port and the first
--	 * Ethernet device.  So, we need to workaround this by telling the PCI
--	 * code that the bridge is not an Ethernet device.
--	 */
--	if (pdev->hdr_type == PCI_HEADER_TYPE_BRIDGE)
--		pdev->class = PCI_CLASS_BRIDGE_PCI << 8;
--
--	/*
--	 * MPSS is not being set properly (as it is currently 0).  This is
--	 * because that area of the PCI config space is hard coded to zero, and
--	 * is not modifiable by firmware.  Set this to 2 (e.g., 512 byte MPS)
--	 * so that the MPS can be set to the real max value.
--	 */
--	pdev->pcie_mpss = 2;
--}
--DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0x16cd, quirk_paxc_bridge);
--DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0x16f0, quirk_paxc_bridge);
--DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0xd750, quirk_paxc_bridge);
--DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0xd802, quirk_paxc_bridge);
--DECLARE_PCI_FIXUP_EARLY(PCI_VENDOR_ID_BROADCOM, 0xd804, quirk_paxc_bridge);
--#endif
--
- /*
-  * Originally in EDAC sources for i82875P: Intel tells BIOS developers to
-  * hide device 6 which configures the overflow device access containing the
+ 	/*
+ 	 * Set the baud rate:
+ 	 * Fractional baudrate allows to setup output frequency more
 -- 
 2.20.1
 
