@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6361015E4A2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:37:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F38A315E4A1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:37:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vXcEWZTS6B+5/zFhcCSmBlhJ4GC0a2qWo3H7WHf/66Y=; b=VG6FRD3lpbfpHP
-	lch1xRSiwH1Ru4UR/6YR8XeOs2D4W5mn+pvicsI3msDHrUhgqZCjHKw76aLDX5iiDdHHZ1vEeIyUP
-	yRgOWIcAN3fk34VZkUx+O4mpjZF1nY3enz9oUPenpWPCkYukAnjxpyBA1ft3gIVvlhRD74JWGR3TI
-	jgRN1/zoWKGmwrH8HwEuG6AIDH8hvQWbEuGtFLAICbNQazClHN25V36me7RBm9QwoD/GJ5+TUaeKQ
-	7mrUEetCk1NLZs7bErlV7aeaWH1A+MgS6ox4Mn3QgWO0Uyt5YzZPtCbwTs7TS6VTGSbdkwbUcxyDD
-	wt7TLSgb01YunY7nAcvw==;
+	List-Owner; bh=ngThgyTx0ICsbiXSiivxzr0yq285QCr9ggUDFMUBCIg=; b=cRSSIpm5g1OO/G
+	VqL6jyqU+ip61ShRk03NfGyGv+L1xU2cnsMdkdiO5MoCy/HsIUQ+FJRmlZZtfTBQo5q3Bnt8e+gyf
+	bhXQu9EDx+LV5tjg/lxAtJFD3ydhJ2Bp8zSxL+/+ubSbXjfJ5qYYkl2Maw5KyMdyhmn4AdDfGNG0g
+	8/3GxGeWXi/hXQNB1llPjygI6Len1HAhi2+rGjm/FA5L3p+KYrHVFysIKFrEeypyOLh/GC59MMk+/
+	FOKlhQgrA1148f+KkahOSgNHgrxpLd6g7UKsq6VVCLijXGLSfUkrq/070+XYAHfueg8f7hTBPZz9+
+	s+iG5H3majxcK8nYW7og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dy4-0006cA-Pn; Fri, 14 Feb 2020 16:37:28 +0000
+	id 1j2dxu-0006O8-Eu; Fri, 14 Feb 2020 16:37:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dXq-0002dF-4J
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:10:24 +0000
+ id 1j2dXq-0002df-Ir
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:10:25 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 753252469D;
- Fri, 14 Feb 2020 16:10:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 880B8246A0;
+ Fri, 14 Feb 2020 16:10:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696621;
- bh=eE876jpDjIIko1hMQjdb/Pa6jHh6hICzrR88/8tAfN4=;
+ s=default; t=1581696622;
+ bh=wCma4w9oD9qUbgcIbmPKaHeJ+eYPd/7Xhrqw7fD7N8c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=wjGYVtf64fpytZguAIK4J7CTEVe1STfmQAGXa2RJIkgJcBq7HtjAx6DJLbTFZF6tn
- T7Rkd2/9sMLsJ3x8orTN7upXWIxXemjhiTNye7BKVY9b9EWaCxc/NG1V/pqOe3370f
- eyIvzeTHbUzgEsd1sIPHzD2L0xE2ciHJF75ibCNY=
+ b=z68FPPwV3S4EqmLDEdAgLN5h9ybbpvn6JCuAc7yKeT/itNEerL5FJ1mJLOhJ4oK1r
+ PSx05WZ2v9WZvChvukhBiLT6bGvQNRaw3iJwnV5gtrvp1urND/X9IVc0nNTL8Gs0UJ
+ OD2s+dyxY9KA0oMhaUU0O1e52cyix/nCgwHqlgEI=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 402/459] ARM: 8949/1: mm: mark free_memmap as
- __init
-Date: Fri, 14 Feb 2020 11:00:52 -0500
-Message-Id: <20200214160149.11681-402-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 403/459] ARM: 8951/1: Fix Kexec compilation issue.
+Date: Fri, 14 Feb 2020 11:00:53 -0500
+Message-Id: <20200214160149.11681-403-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_081023_589204_92D672EC 
-X-CRM114-Status: GOOD (  10.71  )
+X-CRM114-CacheID: sfid-20200214_081023_626692_8FE7A470 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,52 +79,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>, Sasha Levin <sashal@kernel.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
+Cc: Sasha Levin <sashal@kernel.org>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Olof Johansson <olof@lixom.net>
-
-[ Upstream commit 31f3010e60522ede237fb145a63b4af5a41718c2 ]
-
-As of commit ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING
-forcibly"), free_memmap() might not always be inlined, and thus is
-triggering a section warning:
-
-WARNING: vmlinux.o(.text.unlikely+0x904): Section mismatch in reference from the function free_memmap() to the function .meminit.text:memblock_free()
-
-Mark it as __init, since the faller (free_unused_memmap) already is.
-
-Fixes: ac7c3e4ff401 ("compiler: enable CONFIG_OPTIMIZE_INLINING forcibly")
-Signed-off-by: Olof Johansson <olof@lixom.net>
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/mm/init.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/arm/mm/init.c b/arch/arm/mm/init.c
-index b4be3baa83d4d..6f19ba53fd1f2 100644
---- a/arch/arm/mm/init.c
-+++ b/arch/arm/mm/init.c
-@@ -323,7 +323,7 @@ static inline void poison_init_mem(void *s, size_t count)
- 		*p++ = 0xe7fddef0;
- }
- 
--static inline void
-+static inline void __init
- free_memmap(unsigned long start_pfn, unsigned long end_pfn)
- {
- 	struct page *start_pg, *end_pg;
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogVmluY2Vuem8gRnJhc2Npbm8gPHZpbmNlbnpvLmZyYXNjaW5vQGFybS5jb20+CgpbIFVw
+c3RyZWFtIGNvbW1pdCA3Njk1MGY3MTYyY2FkNTFkMjIwMGViZDIyYzYyMGMxNGFmMzhmNzE4IF0K
+ClRvIHBlcmZvcm0gdGhlIHJlc2VydmVfY3Jhc2hrZXJuZWwoKSBvcGVyYXRpb24ga2V4ZWMgdXNl
+cyBTRUNUSU9OX1NJWkUgdG8KZmluZCBhIG1lbWJsb2NrIGluIGEgcmFuZ2UuClNFQ1RJT05fU0la
+RSBpcyBub3QgZGVmaW5lZCBmb3Igbm9tbXUgc3lzdGVtcy4gVHJ5aW5nIHRvIGNvbXBpbGUga2V4
+ZWMgaW4KdGhlc2UgY29uZGl0aW9ucyByZXN1bHRzIGluIGEgYnVpbGQgZXJyb3I6CgogIGxpbnV4
+L2FyY2gvYXJtL2tlcm5lbC9zZXR1cC5jOiBJbiBmdW5jdGlvbiDigJhyZXNlcnZlX2NyYXNoa2Vy
+bmVs4oCZOgogIGxpbnV4L2FyY2gvYXJtL2tlcm5lbC9zZXR1cC5jOjEwMTY6MjU6IGVycm9yOiDi
+gJhTRUNUSU9OX1NJWkXigJkgdW5kZWNsYXJlZAogICAgIChmaXJzdCB1c2UgaW4gdGhpcyBmdW5j
+dGlvbik7IGRpZCB5b3UgbWVhbiDigJhTRUNUSU9OU19XSURUSOKAmT8KICAgICAgICAgICAgIGNy
+YXNoX3NpemUsIFNFQ1RJT05fU0laRSk7CiAgICAgICAgICAgICAgICAgICAgICAgICBefn5+fn5+
+fn5+fn4KICAgICAgICAgICAgICAgICAgICAgICAgIFNFQ1RJT05TX1dJRFRICiAgbGludXgvYXJj
+aC9hcm0va2VybmVsL3NldHVwLmM6MTAxNjoyNTogbm90ZTogZWFjaCB1bmRlY2xhcmVkIGlkZW50
+aWZpZXIKICAgICBpcyByZXBvcnRlZCBvbmx5IG9uY2UgZm9yIGVhY2ggZnVuY3Rpb24gaXQgYXBw
+ZWFycyBpbgogIGxpbnV4L3NjcmlwdHMvTWFrZWZpbGUuYnVpbGQ6MjY1OiByZWNpcGUgZm9yIHRh
+cmdldCAnYXJjaC9hcm0va2VybmVsL3NldHVwLm8nCiAgICAgZmFpbGVkCgpNYWtlIEtFWEVDIGRl
+cGVuZCBvbiBNTVUgdG8gZml4IHRoZSBjb21waWxhdGlvbiBpc3N1ZS4KClNpZ25lZC1vZmYtYnk6
+IFZpbmNlbnpvIEZyYXNjaW5vIDx2aW5jZW56by5mcmFzY2lub0Bhcm0uY29tPgpTaWduZWQtb2Zm
+LWJ5OiBSdXNzZWxsIEtpbmcgPHJtaytrZXJuZWxAYXJtbGludXgub3JnLnVrPgpTaWduZWQtb2Zm
+LWJ5OiBTYXNoYSBMZXZpbiA8c2FzaGFsQGtlcm5lbC5vcmc+Ci0tLQogYXJjaC9hcm0vS2NvbmZp
+ZyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQoK
+ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL0tjb25maWcgYi9hcmNoL2FybS9LY29uZmlnCmluZGV4IDlm
+YWRmMzIyYTJiNzYuLjA1YzliYmZlNDQ0ZGYgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL0tjb25maWcK
+KysrIGIvYXJjaC9hcm0vS2NvbmZpZwpAQCAtMTkwNyw3ICsxOTA3LDcgQEAgY29uZmlnIFhJUF9E
+RUZMQVRFRF9EQVRBCiBjb25maWcgS0VYRUMKIAlib29sICJLZXhlYyBzeXN0ZW0gY2FsbCAoRVhQ
+RVJJTUVOVEFMKSIKIAlkZXBlbmRzIG9uICghU01QIHx8IFBNX1NMRUVQX1NNUCkKLQlkZXBlbmRz
+IG9uICFDUFVfVjdNCisJZGVwZW5kcyBvbiBNTVUKIAlzZWxlY3QgS0VYRUNfQ09SRQogCWhlbHAK
+IAkgIGtleGVjIGlzIGEgc3lzdGVtIGNhbGwgdGhhdCBpbXBsZW1lbnRzIHRoZSBhYmlsaXR5IHRv
+IHNodXRkb3duIHlvdXIKLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
