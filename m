@@ -2,56 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6DBD15F502
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 19:32:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7920215F501
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 19:32:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/Wn+HeUA5Iu2hLlWNRLL8Ta+nPsYq3e1k0r8arGhEoI=; b=OCYmiog4u2UNTG
-	Vg+et/rRxIWXECUcLlAFTKQf/Jmw3FtYtXHilah2VUy8lf1rp6zEWzls1olgwmKEoubG0iNPjbBlG
-	Ih/XFyTUmhcRewRgwoojyu1W655fKJwWvIkFOUTGlt81Kr0Y04V8skY5IkvkfoDUSAdfxwHZjut/S
-	QiBVLB8IX+JHoj1kwHKFK0jD4Ih1rs3AccBeUFtICHar2HI48DSr8Kc0gqRdZzR8JBmcvCpYFrTYS
-	/qEwQt8zI3bUmvrLu1mFdf5Qo4icbRzqRlsI88vxkVXMxUMLp/xe/B+1cXL15Q3Sb3MPk5sFAD1QY
-	5HrgqBT5xfw1V5807mNw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=s4SrVwUGt5/hFMNm8NmB1ydgAqRk0CCav9mYARjbwX8=; b=CkezKSj4cQX0zW
+	FT1otXNZ0qCnZnrRftvz4u6QfuJeoJZXdFJFUjZfw+OUwVErBR+3laEStnSGKCeD78NyybNliSoVZ
+	kj8Cwth/CC+fRbf9O4tkZQjko9trKXpJIkRPj1nkwqBg3CeTf7tXrDIzEgCSpQOvMukqmZei+xyLs
+	IUI8xoYVle0P8tXaOupVGHoFH5lLRC1awLyBfF32IW9F+whIqjbd8g3vimGXrqyAHouo7BfHfGenO
+	exMmU/cZLp90vGGkazBtCYvPfnhuGKJVTDEmSTmV2rWRObG2ZJeHK+9IQ31A0lmb3hXBoNMaPtzC6
+	j/meKELkzcHh6luOw7ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2fla-00029W-JL; Fri, 14 Feb 2020 18:32:42 +0000
-Received: from mail.z3ntu.xyz ([128.199.32.197])
+	id 1j2flO-0001z3-1y; Fri, 14 Feb 2020 18:32:30 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2flF-0001yA-6B
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 18:32:22 +0000
-Received: from localhost.localdomain (80-110-126-226.cgn.dynamic.surfer.at
- [80.110.126.226])
- by mail.z3ntu.xyz (Postfix) with ESMTPSA id 9C714C1FE9;
- Fri, 14 Feb 2020 18:32:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=z3ntu.xyz; s=z3ntu;
- t=1581705136; bh=UiqpIIbkbNmB5wRq46BoxgcEeQU9um7uzDZLMQ7F7a4=;
- h=From:To:Cc:Subject:Date;
- b=Bnc5+8xdmKl4YtiCnfMs/5Gt8uj7Tg4pt2PA2oqWACud5uinye6f0EPHY8nhWcdAM
- jIwOdXpLTHLYXPhIP3BQ1Np1XyNWoh8UfTjdAdn01vdzWRd7oMQtrxsnB/WT924LzH
- w4thPaHAcOazAB2wOPn87XmNWAFNbUCZj0dj/sTw=
-From: Luca Weiss <luca@z3ntu.xyz>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2] ARM: qcom_defconfig: Enable QRTR
-Date: Fri, 14 Feb 2020 19:31:11 +0100
-Message-Id: <20200214183111.50919-1-luca@z3ntu.xyz>
-X-Mailer: git-send-email 2.25.0
+ id 1j2flD-0001xx-VI
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 18:32:21 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01EIW6FW049974;
+ Fri, 14 Feb 2020 12:32:06 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1581705126;
+ bh=9JYMizinH2hk8xrhecX9Qq9awqbrX0eH4eIWvAG/GAQ=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=ts3RHCv3EO/ATymwAd98uW5uyntuDog7SsYKx5uEPyNs1b0fnEkKBYfXQ2CZn9TlK
+ ClylWeKcMm2NfzE5/p//Vr+kpqnKeCxFT9ti3a1aoGrXBlSCqiMGnl7EZPPpvrAWl3
+ oJ1o08keCcpZ4J05tMlILDN/GSPkR8XXORNZL+Mc=
+Received: from DLEE109.ent.ti.com (dlee109.ent.ti.com [157.170.170.41])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01EIW6jl001763;
+ Fri, 14 Feb 2020 12:32:06 -0600
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 14
+ Feb 2020 12:32:05 -0600
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Fri, 14 Feb 2020 12:32:06 -0600
+Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01EIW50q000848;
+ Fri, 14 Feb 2020 12:32:05 -0600
+Subject: Re: [PATCH AUTOSEL 5.4 191/459] ARM: OMAP2+: Add workaround for DRA7
+ DSP MStandby errata i879
+To: Sasha Levin <sashal@kernel.org>, <linux-kernel@vger.kernel.org>,
+ <stable@vger.kernel.org>
+References: <20200214160149.11681-1-sashal@kernel.org>
+ <20200214160149.11681-191-sashal@kernel.org>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <eccdc72d-759f-d3d8-0801-38e8d8cfd371@ti.com>
+Date: Fri, 14 Feb 2020 12:32:05 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20200214160149.11681-191-sashal@kernel.org>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_103221_369696_FFD3F972 
-X-CRM114-Status: UNSURE (   8.35  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.7 (+++)
+X-CRM114-CacheID: sfid-20200214_103220_110042_EB3C95D6 
+X-CRM114-Status: GOOD (  25.72  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (3.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.5 PDS_OTHER_BAD_TLD      Untrustworthy TLDs
- [URI: z3ntu.xyz (xyz)]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -59,8 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain 2.0 FROM_SUSPICIOUS_NTLD_FP From abused NTLD
- 0.5 FROM_SUSPICIOUS_NTLD   From abused NTLD
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,43 +93,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Luca Weiss <luca@z3ntu.xyz>,
- Jordan Crouse <jcrouse@codeaurora.org>, ~postmarketos/upstreaming@lists.sr.ht,
- =?UTF-8?q?Matti=20Lehtim=C3=A4ki?= <matti.lehtimaki@gmail.com>,
- Georgi Djakov <georgi.djakov@linaro.org>, linux-kernel@vger.kernel.org,
- Brian Masney <masneyb@onstation.org>
+Cc: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This option is useful on msm8974, so enable it.
+Hi Sasha,
 
-Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
----
-Changes from v1:
-- set options as =m instead of =y
+On 2/14/20 9:57 AM, Sasha Levin wrote:
+> From: Suman Anna <s-anna@ti.com>
+> 
+> [ Upstream commit 2f14101a1d760db72393910d481fbf7768c44530 ]
+> 
+> Errata Title:
+> i879: DSP MStandby requires CD_EMU in SW_WKUP
+> 
+> Description:
+> The DSP requires the internal emulation clock to be actively toggling
+> in order to successfully enter a low power mode via execution of the
+> IDLE instruction and PRCM MStandby/Idle handshake. This assumes that
+> other prerequisites and software sequence are followed.
+> 
+> Workaround:
+> The emulation clock to the DSP is free-running anytime CCS is connected
+> via JTAG debugger to the DSP subsystem or when the CD_EMU clock domain
+> is set in SW_WKUP mode. The CD_EMU domain can be set in SW_WKUP mode
+> via the CM_EMU_CLKSTCTRL [1:0]CLKTRCTRL field.
+> 
+> Implementation:
+> This patch implements this workaround by denying the HW_AUTO mode
+> for the EMU clockdomain during the power-up of any DSP processor
+> and re-enabling the HW_AUTO mode during the shutdown of the last
+> DSP processor (actually done during the enabling and disabling of
+> the respective DSP MDMA MMUs). Reference counting has to be used to
+> manage the independent sequencing between the multiple DSP processors.
+> 
+> This switching is done at runtime rather than a static clockdomain
+> flags value to meet the target power domain state for the EMU power
+> domain during suspend.
+> 
+> Note that the DSP MStandby behavior is not consistent across all
+> boards prior to this fix. Please see commit 45f871eec6c0 ("ARM:
+> OMAP2+: Extend DRA7 IPU1 MMU pdata quirks to DSP MDMA MMUs") for
+> details.
+> 
+> Signed-off-by: Suman Anna <s-anna@ti.com>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> Signed-off-by: Sasha Levin <sashal@kernel.org>
 
- arch/arm/configs/qcom_defconfig | 2 ++
- 1 file changed, 2 insertions(+)
+You can drop this from the 5.4-stable queue. Mainline doesn't yet boot
+the processors, so this is not needed for stable queue.
 
-diff --git a/arch/arm/configs/qcom_defconfig b/arch/arm/configs/qcom_defconfig
-index ad3417a63cdf..4702feef2cc9 100644
---- a/arch/arm/configs/qcom_defconfig
-+++ b/arch/arm/configs/qcom_defconfig
-@@ -44,6 +44,8 @@ CONFIG_IP_ROUTE_VERBOSE=y
- CONFIG_IP_PNP=y
- CONFIG_IP_PNP_DHCP=y
- # CONFIG_IPV6 is not set
-+CONFIG_QRTR=m
-+CONFIG_QRTR_SMD=m
- CONFIG_CFG80211=m
- CONFIG_MAC80211=m
- CONFIG_RFKILL=y
--- 
-2.25.0
+regards
+Suman
+
+> ---
+>  arch/arm/mach-omap2/omap-iommu.c | 43 +++++++++++++++++++++++++++++---
+>  1 file changed, 40 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm/mach-omap2/omap-iommu.c b/arch/arm/mach-omap2/omap-iommu.c
+> index f1a6ece8108e4..78247e6f4a720 100644
+> --- a/arch/arm/mach-omap2/omap-iommu.c
+> +++ b/arch/arm/mach-omap2/omap-iommu.c
+> @@ -11,14 +11,43 @@
+>  
+>  #include "omap_hwmod.h"
+>  #include "omap_device.h"
+> +#include "clockdomain.h"
+>  #include "powerdomain.h"
+>  
+> +static void omap_iommu_dra7_emu_swsup_config(struct platform_device *pdev,
+> +					     bool enable)
+> +{
+> +	static struct clockdomain *emu_clkdm;
+> +	static DEFINE_SPINLOCK(emu_lock);
+> +	static atomic_t count;
+> +	struct device_node *np = pdev->dev.of_node;
+> +
+> +	if (!of_device_is_compatible(np, "ti,dra7-dsp-iommu"))
+> +		return;
+> +
+> +	if (!emu_clkdm) {
+> +		emu_clkdm = clkdm_lookup("emu_clkdm");
+> +		if (WARN_ON_ONCE(!emu_clkdm))
+> +			return;
+> +	}
+> +
+> +	spin_lock(&emu_lock);
+> +
+> +	if (enable && (atomic_inc_return(&count) == 1))
+> +		clkdm_deny_idle(emu_clkdm);
+> +	else if (!enable && (atomic_dec_return(&count) == 0))
+> +		clkdm_allow_idle(emu_clkdm);
+> +
+> +	spin_unlock(&emu_lock);
+> +}
+> +
+>  int omap_iommu_set_pwrdm_constraint(struct platform_device *pdev, bool request,
+>  				    u8 *pwrst)
+>  {
+>  	struct powerdomain *pwrdm;
+>  	struct omap_device *od;
+>  	u8 next_pwrst;
+> +	int ret = 0;
+>  
+>  	od = to_omap_device(pdev);
+>  	if (!od)
+> @@ -31,13 +60,21 @@ int omap_iommu_set_pwrdm_constraint(struct platform_device *pdev, bool request,
+>  	if (!pwrdm)
+>  		return -EINVAL;
+>  
+> -	if (request)
+> +	if (request) {
+>  		*pwrst = pwrdm_read_next_pwrst(pwrdm);
+> +		omap_iommu_dra7_emu_swsup_config(pdev, true);
+> +	}
+>  
+>  	if (*pwrst > PWRDM_POWER_RET)
+> -		return 0;
+> +		goto out;
+>  
+>  	next_pwrst = request ? PWRDM_POWER_ON : *pwrst;
+>  
+> -	return pwrdm_set_next_pwrst(pwrdm, next_pwrst);
+> +	ret = pwrdm_set_next_pwrst(pwrdm, next_pwrst);
+> +
+> +out:
+> +	if (!request)
+> +		omap_iommu_dra7_emu_swsup_config(pdev, false);
+> +
+> +	return ret;
+>  }
+> 
 
 
 _______________________________________________
