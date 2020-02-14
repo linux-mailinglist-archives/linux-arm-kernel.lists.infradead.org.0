@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 340E915F503
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 19:33:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4692615F505
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 19:33:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0VY0UbWeKiGWZ4BgUtiIgHKtAKKrFxkEz2bHUsY3P74=; b=rFDEElvy102zsu
-	LohlK8gcL6VN2vYXm2P5FBrcxs45sV5EOl9wT3jpUZdIvx0uZzVPMDoSmBpOIKOZ+UYHA4xI1zshC
-	ct4fhbthtf2Ge+pA8lSZYsJnY459/NFQo0v3Y/MW1rKmIXu7iKaSHBe8YtssBEn1/LFccCALmfuA9
-	6aLwGPSzCyjjSf4goPWHrGe3XiJWGYhXl8W3X27CSpwnBjO/v5R5GVSiG82QQZ6x0IPa8inf1cvvS
-	/hWG3lsySmtVeuPIK918WnTu2TpvyrpVO7SaLPBBaSB0CDya7omNEAunSAqqKHz9ChzrDI/GTU1qT
-	fQ1IkSn3lPNv12Z+kB1g==;
+	List-Owner; bh=dct+C9Po+Ys65TN2zJ5efiuVJnHkUoLnPhTqF0uu4QU=; b=taFxf6gihAxaWK
+	iWEdxnSFAc6oMbMLA6HO+UdYKLzJG2rEbYhXl3/Ntr1CQWt9lwkXoFfmxf+pOlRNAYEc0ZTk4ejZ7
+	+06ht0FTX/+K4hFyInbMh1mr/FUbXdPP9iVJv3Jq8JVo81r0N3NjBN8qItBQjlPUENTH2VGtsxPiF
+	UhcaOxvlCzVS4Bwjx3AXU7TYs2D8+85bAgqHcXtQF2c306SlEYn+GB3BW0A9JS5rkweDQ6ZS0T3IV
+	f4kg1n58s7tmLFhzVtPweZXVnQuEOI5vewGUovB+rVZTdcAFSVIeMEWxMEsll0Sp0gYz5HS0ple9j
+	SzaKRGM4w2j/DxNeqfSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2fm0-0002XY-1g; Fri, 14 Feb 2020 18:33:08 +0000
+	id 1j2fmE-0002qA-9e; Fri, 14 Feb 2020 18:33:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2flp-0002Vo-4r
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 18:32:58 +0000
+ id 1j2fls-0002ZN-3d
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 18:33:01 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 380E5328;
- Fri, 14 Feb 2020 10:32:56 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1D83D101E;
+ Fri, 14 Feb 2020 10:32:59 -0800 (PST)
 Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B6F033F68E;
- Fri, 14 Feb 2020 10:32:55 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9D9BB3F68E;
+ Fri, 14 Feb 2020 10:32:58 -0800 (PST)
 From: James Morse <james.morse@arm.com>
-Subject: Re: [V2 1/3] firmware: arm_sdei: fix possible deadlock
+Subject: Re: [V2 2/3] firmware: arm_sdei: Removed multiple white lines.
 To: luanshi <zhangliguang@linux.alibaba.com>
 References: <1579145331-78633-1-git-send-email-zhangliguang@linux.alibaba.com>
-Message-ID: <2a86cb1b-f8e7-a106-68f2-42e7350a12d2@arm.com>
-Date: Fri, 14 Feb 2020 18:32:54 +0000
+ <1579145331-78633-2-git-send-email-zhangliguang@linux.alibaba.com>
+Message-ID: <bebb759e-ff1f-e11e-be6f-589c96a338c0@arm.com>
+Date: Fri, 14 Feb 2020 18:32:57 +0000
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <1579145331-78633-1-git-send-email-zhangliguang@linux.alibaba.com>
+In-Reply-To: <1579145331-78633-2-git-send-email-zhangliguang@linux.alibaba.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_103257_225859_9294BF7E 
-X-CRM114-Status: GOOD (  13.23  )
+X-CRM114-CacheID: sfid-20200214_103300_224047_C845A7F3 
+X-CRM114-Status: GOOD (  14.53  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,38 +73,31 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Luanshi,
 
 On 16/01/2020 03:28, luanshi wrote:
-> We call sdei_reregister_event() with sdei_list_lock held but
-> _sdei_event_register() and sdei_event_destroy() also acquires
-> sdei_list_lock thus creating A-A deadlock.
+> Remove one unnecessary white line.
 > 
-> Fixes: da351827240e ("firmware: arm_sdei: Add support for CPU and system
-> power states")
-> 
-
-(Nit: stray whitespace in the fixes tag, the backport tools may choke on this)
-
-(Please include 'PATCH' in the [] section of the subject when posting, its part of the
-'canonical patch format', and my scripts for pulling a series of the list depend on it!)
-
-
+> Signed-off-by: Liguang Zhang <zhangliguang@linux.alibaba.com>
 > ---
+>  drivers/firmware/arm_sdei.c | 1 -
+>  1 file changed, 1 deletion(-)
+> 
+> diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
+> index 37e9bf0..f81c09e 100644
+> --- a/drivers/firmware/arm_sdei.c
+> +++ b/drivers/firmware/arm_sdei.c
+> @@ -599,7 +599,6 @@ static int _sdei_event_register(struct sdei_event *event)
+>  					       event->registered,
+>  					       SDEI_EVENT_REGISTER_RM_ANY, 0);
+>  
+> -
+>  	err = sdei_do_cross_call(_local_event_register, event);
+>  	if (err) {
+>  		spin_lock(&event->sdei_event_lock);
 
-Thanks for picking up my suggestion, ... it was what I think should have been done in the
-first place to avoid this bug.
-Looking at your patch, we'd need to take the per-event lock around the reads of reregister
-and reenable in sdei_cpuhp_up() too, and sdei_reregister_shared(), ... and this quickly
-becomes much noisier than a patch for stable should be. (Sorry, I should have tried it
-before suggesting it!)
+I'm afraid these whitespace-only patches aren't worth sending. If its not caught at
+review, it gets to annoy the reader until someone can do a drive-by fix when they are
+changing adjacent code.
 
-
-I've picked up your first version, but instead of duplicating the contents of the
-function, I've added '_llocked' wrappers to account for that lock already being held. This
-isn't great as we have _locked too, but lockdep should keep us honest.
-Because I started with your patch, git has kept you as author.
-This ended up as patch 2, because it was also necessary to move those reregister updates
-into their callers to fix hibernate.
-
-I'll posted what I have next week, sorry for the hiatus.
+I've merged this with the first patch in the eventual series.
 
 
 Thanks,
