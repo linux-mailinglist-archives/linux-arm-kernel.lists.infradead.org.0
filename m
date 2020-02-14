@@ -2,73 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C912015D4A6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 10:23:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E12515D4D1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 10:35:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=InS8GYBOu2/8qTSg2nxOncNtl2T5AvB47o8KQoAmvLM=; b=T1jWqENNUiJA5u
-	gG6eoN2yZos3DTKpJqdV0yLsqr30i+DM2ts8Gqsf14wz94fM7egddn26Pe+Pz8JXb0h9XIet1O69s
-	mnfm7irTGWoMtCCNDN947F3INOHJ5NG9m2Y7ztJqQP5+/u4slCfoHZTM7FiAtI3CGPX/7zfgHudRB
-	8NB/T6agFECoPTgnismi7CcfvK2rV8wdBuQ56EtHCtvuCYDf7ID5dnMzNYS1rcyHvgejEnC8KyUMo
-	wTGpfUsUq5WXXdbj3c1sQpg4DUKBW0GmIFqea0/peHnwvfOqCQp/4VClU0brOoU7qDV6nb3OtXohz
-	8OCybwifOVrGKhgGKpqg==;
+	List-Owner; bh=9swkz4u5eOk9DEAXAFsVkvoRohSrzOFVJubDFPzv0S0=; b=C8nf8GlQEeQn3B
+	FppAckNY6ljCD19cbvfWgB/a+yISg+4b62KoqJnLeG9+fLvAtjMb91ITDSaZRr6BnaRDEpIMinqKe
+	CGSlwLaf1uAx7DVFlvTBYDenOkpXY/CsNqqhEZSuY0sr3ntfBGS7mNJ14RHI+/MHihHUSDJFUeADg
+	3dhIkcDBJIo/X2NC/l3i0L5ViOme8YDp2ebjPhMwB1PIjnc/UQN2AFUlT+y5gJ0G629U54qfQdTD/
+	36NKCxugBpDVvXpF8pp/cVcDyaDCAkJ5Uivr+FBSc0KvmFT+HyKaPSfBo985ZNTtvXWEgfLPQEg1C
+	GZUFFrvYpxmuh4/yoCEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2XBv-0005VK-AR; Fri, 14 Feb 2020 09:23:19 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1j2XNb-0002eR-Q5; Fri, 14 Feb 2020 09:35:23 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2XBR-00052h-U2
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 09:22:51 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01E9Mg3w113503;
- Fri, 14 Feb 2020 03:22:42 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1581672162;
- bh=pIyaS5ys8ohp+Z+ExkY5QFJRkuhfYRBSJTMw3mE1fgs=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=IrSmm8TVtrW84YYCRBXCTPEbgbQOSYNyE3oZNGJ2WfIvu4VgAZiobdbCoXXJlSyIN
- ExB3loQb5rDxuSLHdEgWMMHw3xVZr4Fi0liwlEJeLPTb9pLwT85lnX2cqKXl4uHa41
- pucLrFhGSTBG3DPwpUByzUcQeRbi0tyvBCclv4oc=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01E9MgcK026731
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 14 Feb 2020 03:22:42 -0600
-Received: from DLEE110.ent.ti.com (157.170.170.21) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 14
- Feb 2020 03:22:41 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 14 Feb 2020 03:22:41 -0600
-Received: from jadmar.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01E9MJj8086345;
- Fri, 14 Feb 2020 03:22:30 -0600
-From: Jyri Sarha <jsarha@ti.com>
-To: <dri-devel@lists.freedesktop.org>, <ssantosh@kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>
-Subject: [PATCH resend 2/2] ARM: dts: keystone-k2g-evm: add HDMI video support
-Date: Fri, 14 Feb 2020 11:22:15 +0200
-Message-ID: <f6f51177e44a36db2ba9f3411ee26db387c38e2f.1581671951.git.jsarha@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1581671951.git.jsarha@ti.com>
-References: <cover.1581671951.git.jsarha@ti.com>
+ id 1j2XNR-0002cs-2w
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 09:35:14 +0000
+Received: by mail-pf1-x443.google.com with SMTP id x185so4613597pfc.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Feb 2020 01:35:12 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=5AfLEWxBfNqD1QkilGzCQL+klQ2n6nhzMgLjS7kpjJM=;
+ b=GoEjXRGHToaAgFkeLpViY1gsJSUIEVFtb8QW+MOKy9T8+kP7xEFTsFYvjUW6MSs7gy
+ o28Rzuk0lUdIq/2gWktTi8aG6FVSe5Fp1qD6uMY3WpVJREQ0h3/avtmmbfeIwMUFGd43
+ 5rx0TuSgzQZHI3TlPFC52tzrHGnYIgDgvMgvA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=5AfLEWxBfNqD1QkilGzCQL+klQ2n6nhzMgLjS7kpjJM=;
+ b=OfHMeV3dYveKyy9pm6c4myIgTKGRF9WgNYV8BfSp7iMTNoDRSqvpUk4z22d0RvMCP7
+ sYXRTO+Jax3YHdyvMA63jRA3kAH4joBtwHgX43cVk8pEGRPi74WLKn4fwvd2wURy5y6O
+ qc1UsDy+yabIafAHZ/hz5VS1uHBbEpaEnR8n4i4qnFTU+tkgzoI2i29qS4SaK0rBobZB
+ eC7iHCTiZ2SWIhtDDL9JFQQDZ+ju9k/BHAXPb9viipNc/Pbyyw0+saj44M7VofJIBVEQ
+ W6I5NSS+ygunMaxCI78au7UoGghRiHvWAyDB/g1RY+yd4feMC2Sd6fK6Rv1AI3euEO4Z
+ sWXA==
+X-Gm-Message-State: APjAAAW1zOEFjxMCkW2Fwm4dQ208GkJBRghYSU44n9K/AMRmsRj2g6wm
+ 2eAbRJbrQFNvxR9bEqoQcJ1AfQ==
+X-Google-Smtp-Source: APXvYqzWsScMU1xLX4fTpri3lhL7mpabTPnY7iU6UbbEijI0fSi9fuMBHpf+qZeK5MxPv57X50roQA==
+X-Received: by 2002:a65:4486:: with SMTP id l6mr2326605pgq.1.1581672911556;
+ Fri, 14 Feb 2020 01:35:11 -0800 (PST)
+Received: from chromium.org ([2401:fa00:8f:203:f5fe:2a5e:f953:c0ed])
+ by smtp.gmail.com with ESMTPSA id w11sm6067926pgh.5.2020.02.14.01.35.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 14 Feb 2020 01:35:10 -0800 (PST)
+Date: Fri, 14 Feb 2020 18:35:06 +0900
+From: Tomasz Figa <tfiga@chromium.org>
+To: Xia Jiang <xia.jiang@mediatek.com>
+Subject: Re: [PATCH v6 1/5] media: platform: Fix jpeg dec driver bug and
+ improve code quality
+Message-ID: <20200214093506.GA193786@chromium.org>
+References: <20200121095320.32258-1-xia.jiang@mediatek.com>
+ <20200121095320.32258-2-xia.jiang@mediatek.com>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200121095320.32258-2-xia.jiang@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_012250_094082_C95C0663 
-X-CRM114-Status: GOOD (  12.64  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200214_013513_124723_9056FA2D 
+X-CRM114-Status: GOOD (  13.46  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -90,155 +97,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, bparrot@ti.com, praneeth@ti.com, robh+dt@kernel.org,
- peter.ujfalusi@ti.com, tomi.valkeinen@ti.com,
- laurent.pinchart@ideasonboard.com
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ Rick Chang <rick.chang@mediatek.com>, linux-kernel@vger.kernel.org,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-mediatek@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add DT nodes for HDMI video support for K2G EVM. The HDMI uses SiI9022
-DPI as HDMI encoder. The DSS DPI is connected to SiI9022 HDMI
-encoder's video input and encoder's output goes to HDMI connector.
+Hi Xia,
 
-Signed-off-by: Jyri Sarha <jsarha@ti.com>
----
- arch/arm/boot/dts/keystone-k2g-evm.dts | 101 +++++++++++++++++++++++++
- 1 file changed, 101 insertions(+)
+On Tue, Jan 21, 2020 at 05:53:17PM +0800, Xia Jiang wrote:
+> Fix v4l2-compliance test bug and improve code quality of jpeg decode
+> driver, because the jpeg encode driver will base on it.
+> 
+> Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
+> ---
+> v6: alignment 'MTK_JPEG_DCTSIZE' match open parenthesis.
+>                                            
+> v5: Use clamp()to replace mtk_jpeg_bound_align_image() and round_up()
+>     to replace mtk_jpeg_align().
+>     Get correct compose value in mtk_jpeg_selection().
+>     Cancel spin lock and unlock operation in device run function.
+>     Change register offset hex numberals from upercase to lowercase.
+> 
+> v4: new add patch for v4l2-compliance test bug fix.
 
-diff --git a/arch/arm/boot/dts/keystone-k2g-evm.dts b/arch/arm/boot/dts/keystone-k2g-evm.dts
-index b7f10bf94576..db640bab8c1d 100644
---- a/arch/arm/boot/dts/keystone-k2g-evm.dts
-+++ b/arch/arm/boot/dts/keystone-k2g-evm.dts
-@@ -45,6 +45,19 @@
- 		regulator-max-microvolt = <1800000>;
- 		regulator-always-on;
- 	};
-+
-+	hdmi: connector {
-+		compatible = "hdmi-connector";
-+		label = "hdmi";
-+
-+		type = "a";
-+
-+		port {
-+			hdmi_connector_in: endpoint {
-+				remote-endpoint = <&sii9022_out>;
-+			};
-+		};
-+	};
- };
- 
- &k2g_pinctrl {
-@@ -89,6 +102,13 @@
- 		>;
- 	};
- 
-+	i2c1_pins: pinmux_i2c1_pins {
-+		pinctrl-single,pins = <
-+			K2G_CORE_IOPAD(0x1384) (BUFFER_CLASS_B | PIN_PULLUP | MUX_MODE0)	/* i2c1_scl.i2c1_scl */
-+			K2G_CORE_IOPAD(0x1388) (BUFFER_CLASS_B | PIN_PULLUP | MUX_MODE0)	/* i2c1_sda.i2c1_sda */
-+		>;
-+	};
-+
- 	ecap0_pins: ecap0_pins {
- 		pinctrl-single,pins = <
- 			K2G_CORE_IOPAD(0x1374) (BUFFER_CLASS_B | MUX_MODE4)	/* pr1_mdio_data.ecap0_in_apwm0_out */
-@@ -160,6 +180,40 @@
- 			K2G_CORE_IOPAD(0x1188) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0)	/* MDIO_DATA.MDIO_DATA */
- 		>;
- 	};
-+
-+	vout_pins: pinmux_vout_pins {
-+		pinctrl-single,pins = <
-+			K2G_CORE_IOPAD(0x1078) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata23.dssdata23 */
-+			K2G_CORE_IOPAD(0x107c) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata22.dssdata22 */
-+			K2G_CORE_IOPAD(0x1080) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata21.dssdata21 */
-+			K2G_CORE_IOPAD(0x1084) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata20.dssdata20 */
-+			K2G_CORE_IOPAD(0x1088) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata19.dssdata19 */
-+			K2G_CORE_IOPAD(0x108c) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata18.dssdata18 */
-+			K2G_CORE_IOPAD(0x1090) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata17.dssdata17 */
-+			K2G_CORE_IOPAD(0x1094) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata16.dssdata16 */
-+			K2G_CORE_IOPAD(0x1098) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata15.dssdata15 */
-+			K2G_CORE_IOPAD(0x109c) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata14.dssdata14 */
-+			K2G_CORE_IOPAD(0x10a0) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata13.dssdata13 */
-+			K2G_CORE_IOPAD(0x10a4) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata12.dssdata12 */
-+			K2G_CORE_IOPAD(0x10a8) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata11.dssdata11 */
-+			K2G_CORE_IOPAD(0x10ac) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata10.dssdata10 */
-+			K2G_CORE_IOPAD(0x10b0) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata9.dssdata9 */
-+			K2G_CORE_IOPAD(0x10b4) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata8.dssdata8 */
-+			K2G_CORE_IOPAD(0x10b8) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata7.dssdata7 */
-+			K2G_CORE_IOPAD(0x10bc) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata6.dssdata6 */
-+			K2G_CORE_IOPAD(0x10c0) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata5.dssdata5 */
-+			K2G_CORE_IOPAD(0x10c4) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata4.dssdata4 */
-+			K2G_CORE_IOPAD(0x10c8) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata3.dssdata3 */
-+			K2G_CORE_IOPAD(0x10cc) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata2.dssdata2 */
-+			K2G_CORE_IOPAD(0x10d0) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata1.dssdata1 */
-+			K2G_CORE_IOPAD(0x10d4) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssdata0.dssdata0 */
-+			K2G_CORE_IOPAD(0x10d8) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssvsync.dssvsync */
-+			K2G_CORE_IOPAD(0x10dc) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dsshsync.dsshsync */
-+			K2G_CORE_IOPAD(0x10e0) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dsspclk.dsspclk */
-+			K2G_CORE_IOPAD(0x10e4) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssde.dssde */
-+			K2G_CORE_IOPAD(0x10e8) (BUFFER_CLASS_B | PULL_DISABLE | MUX_MODE0) /* dssfid.dssfid */
-+		>;
-+	};
- };
- 
- &uart0 {
-@@ -357,3 +411,50 @@
- 	pinctrl-0 = <&emac_pins>;
- 	status = "okay";
- };
-+
-+&i2c1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&i2c1_pins>;
-+	status = "okay";
-+	clock-frequency = <400000>;
-+
-+	sii9022: sii9022@3b {
-+		#sound-dai-cells = <0>;
-+		compatible = "sil,sii9022";
-+		reg = <0x3b>;
-+
-+		ports {
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+
-+			port@0 {
-+				reg = <0>;
-+
-+				sii9022_in: endpoint {
-+					remote-endpoint = <&dpi_out>;
-+				};
-+			};
-+
-+			port@1 {
-+				reg = <1>;
-+
-+				sii9022_out: endpoint {
-+					remote-endpoint = <&hdmi_connector_in>;
-+				};
-+			};
-+		};
-+	};
-+};
-+
-+&dss {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&vout_pins>;
-+	status = "ok";
-+
-+	port {
-+		dpi_out: endpoint {
-+			remote-endpoint = <&sii9022_in>;
-+			data-lines = <24>;
-+		};
-+	};
-+};
--- 
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Thanks for the patch. The changes look good to me, but each of the
+unrelated changes should be split into its own patch, with proper
+explanation in its commit message. Especially the ones that introduce
+behavior changes, such as the S_SELECTION or locking change.
+
+Also please see one comment inline.
+
+[snip]
+
+> @@ -801,7 +778,6 @@ static void mtk_jpeg_device_run(void *priv)
+>  	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
+>  	struct vb2_v4l2_buffer *src_buf, *dst_buf;
+>  	enum vb2_buffer_state buf_state = VB2_BUF_STATE_ERROR;
+> -	unsigned long flags;
+>  	struct mtk_jpeg_src_buf *jpeg_src_buf;
+>  	struct mtk_jpeg_bs bs;
+>  	struct mtk_jpeg_fb fb;
+> @@ -829,13 +805,11 @@ static void mtk_jpeg_device_run(void *priv)
+>  	if (mtk_jpeg_set_dec_dst(ctx, &jpeg_src_buf->dec_param, &dst_buf->vb2_buf, &fb))
+>  		goto dec_end;
+>  
+> -	spin_lock_irqsave(&jpeg->hw_lock, flags);
+
+Why is it safe to remove the locking here?
+
+>  	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
+>  	mtk_jpeg_dec_set_config(jpeg->dec_reg_base,
+>  				&jpeg_src_buf->dec_param, &bs, &fb);
+>  
+>  	mtk_jpeg_dec_start(jpeg->dec_reg_base);
+> -	spin_unlock_irqrestore(&jpeg->hw_lock, flags);
+>  	return;
+>  
+>  dec_end:
+
+Best regards,
+Tomasz
 
 
 _______________________________________________
