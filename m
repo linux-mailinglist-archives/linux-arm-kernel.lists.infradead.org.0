@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD36315E427
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:34:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12D0615E428
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:34:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j8EWp3X133K6OZ+BW3+ACJoDAKEFWzIk4uns/rSTa5s=; b=LG0KpGH88vO62X
-	5+XL0EmZnpMCGraFnbbSjhRf23oXS5HoJwwafHcOfnChFo3p0ggbas5+Nk1a8i43yJkiymYsnuuxs
-	VZwClr1IWwX8LgHS9++DrgLJ07AYkf6nLwmbqSetueKyGTrCIFn/wc7Bt66Gt+y0p/ZD54lWj7y97
-	SfBc4DHLE8slwrmkF+wpOIKmfXSjgRFW5ZQ/ozY/uTFpoPGeYjwQkEWWDL4KzV4bBqdTJQqmIjwbL
-	tJn+7Blshytxk139XCwfB5nJ7LqzoaVe7YFgxtLiZElU/hc8Ad1AHe/EvvILC+yPg1AYIB0G0bOZ9
-	XIhkBc7Kjvf97x75hLlA==;
+	List-Owner; bh=mMO791IOZR2D04dl89tVtWH8KK/eTKb1XdfwAcVEjMc=; b=hBZLpC/n/vdotF
+	UDQjBKhUkH+fw+JrOrcUAF96gQbhGzEe2NBwj0Q0JRWdWH76vbLG3yRqXO1+byCXZE9FIz5wX6s3c
+	D07PMckH6XP9z1a9c8jPXGtIat6NdlUvtkIszByAXxy2G/5l3x4cBqUdt6oTe4DQc4brcT6+wwTdv
+	E8Tjv4c7llsEXlozMhe79GcEIOHJBdWV20/46BKqTH5fGvzQywiFMl/ONoEV16Icn4exXAX0bZNXW
+	qL3D17zjl/M8z9aIPRbaRU2WzrIOzGxX+ayyNlQObOgOtYFGfFfWfINBrTrCcmyi+kYnByA6b2KYP
+	Na7Dy03I6EmQ8gAqnmvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2duz-0002eS-5S; Fri, 14 Feb 2020 16:34:17 +0000
+	id 1j2dvG-0002sr-5U; Fri, 14 Feb 2020 16:34:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dVu-0007zn-CR
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:08:24 +0000
+ id 1j2dVv-000815-En
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:08:25 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B3BE62187F;
- Fri, 14 Feb 2020 16:08:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1CBA024685;
+ Fri, 14 Feb 2020 16:08:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696501;
- bh=9Onc6yBaTK0vf3pnvxuTPWRzUkQNXkqY0FeLVSBuDFU=;
+ s=default; t=1581696503;
+ bh=2PP+fPd+ZacIsgZN2bDcTOTTRzSnumjZn67dvgY/+0c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=FAoxjYnGvKOXqVD0wsU7Ki+w9zD8Rmd8cJOMWtzJ4ZiFVSlgMFoN9KWAUZmYiQC+w
- ZMXyY4BYlMxeinfnMZK6moEIaogQ5W8r5883267W2ddlVfIJonQwisUjWBydvA7BWl
- Ybxv76PyZ3/ciPBNcgIVndmiWf9p6UJEgQMPrWyk=
+ b=OfbR7KjH0JKLopCbBk1iiDBrROo8DRjkqMs9dRqhyVTD++QS3UBotZUA+MFNqcvzC
+ F+NpG0MGopgc2xmvehrJlrxeGh4vVdIPVUYI2B+ZVim9aauBVleLVczAu8d2jC7JK0
+ NEh/dSPck2KHlzOsgf1v+5HlDjsglYiMQDB0VX1k=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 305/459] arm64: cpufeature: Set the FP/SIMD compat
- HWCAP bits properly
-Date: Fri, 14 Feb 2020 10:59:15 -0500
-Message-Id: <20200214160149.11681-305-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 306/459] arm64: ptrace: nofpsimd: Fail FP/SIMD
+ regset operations
+Date: Fri, 14 Feb 2020 10:59:16 -0500
+Message-Id: <20200214160149.11681-306-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080822_515516_FB2AD62D 
-X-CRM114-Status: GOOD (  13.75  )
+X-CRM114-CacheID: sfid-20200214_080823_545610_F81B9942 
+X-CRM114-Status: GOOD (  11.41  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,14 +91,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-[ Upstream commit 7559950aef1ab8792c50797c6c5c7c5150a02460 ]
+[ Upstream commit c9d66999f064947e6b577ceacc1eb2fbca6a8d3c ]
 
-We set the compat_elf_hwcap bits unconditionally on arm64 to
-include the VFP and NEON support. However, the FP/SIMD unit
-is optional on Arm v8 and thus could be missing. We already
-handle this properly in the kernel, but still advertise to
-the COMPAT applications that the VFP is available. Fix this
-to make sure we only advertise when we really have them.
+When fp/simd is not supported on the system, fail the operations
+of FP/SIMD regsets.
 
 Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
 Cc: Will Deacon <will@kernel.org>
@@ -109,73 +105,83 @@ Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/kernel/cpufeature.c | 37 +++++++++++++++++++++++++++++++---
- 1 file changed, 34 insertions(+), 3 deletions(-)
+ arch/arm64/kernel/ptrace.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index a35c0b3af321b..f400cb29b811a 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -32,9 +32,7 @@ static unsigned long elf_hwcap __read_mostly;
- #define COMPAT_ELF_HWCAP_DEFAULT	\
- 				(COMPAT_HWCAP_HALF|COMPAT_HWCAP_THUMB|\
- 				 COMPAT_HWCAP_FAST_MULT|COMPAT_HWCAP_EDSP|\
--				 COMPAT_HWCAP_TLS|COMPAT_HWCAP_VFP|\
--				 COMPAT_HWCAP_VFPv3|COMPAT_HWCAP_VFPv4|\
--				 COMPAT_HWCAP_NEON|COMPAT_HWCAP_IDIV|\
-+				 COMPAT_HWCAP_TLS|COMPAT_HWCAP_IDIV|\
- 				 COMPAT_HWCAP_LPAE)
- unsigned int compat_elf_hwcap __read_mostly = COMPAT_ELF_HWCAP_DEFAULT;
- unsigned int compat_elf_hwcap2 __read_mostly;
-@@ -1595,6 +1593,12 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.match_list = list,						\
- 	}
+diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+index 21176d02e21a1..9168c4f1a37f1 100644
+--- a/arch/arm64/kernel/ptrace.c
++++ b/arch/arm64/kernel/ptrace.c
+@@ -615,6 +615,13 @@ static int gpr_set(struct task_struct *target, const struct user_regset *regset,
+ 	return 0;
+ }
  
-+#define HWCAP_CAP_MATCH(match, cap_type, cap)					\
-+	{									\
-+		__HWCAP_CAP(#cap, cap_type, cap)				\
-+		.matches = match,						\
-+	}
-+
- #ifdef CONFIG_ARM64_PTR_AUTH
- static const struct arm64_cpu_capabilities ptr_auth_hwcap_addr_matches[] = {
- 	{
-@@ -1668,8 +1672,35 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
- 	{},
- };
- 
-+#ifdef CONFIG_COMPAT
-+static bool compat_has_neon(const struct arm64_cpu_capabilities *cap, int scope)
++static int fpr_active(struct task_struct *target, const struct user_regset *regset)
 +{
-+	/*
-+	 * Check that all of MVFR1_EL1.{SIMDSP, SIMDInt, SIMDLS} are available,
-+	 * in line with that of arm32 as in vfp_init(). We make sure that the
-+	 * check is future proof, by making sure value is non-zero.
-+	 */
-+	u32 mvfr1;
-+
-+	WARN_ON(scope == SCOPE_LOCAL_CPU && preemptible());
-+	if (scope == SCOPE_SYSTEM)
-+		mvfr1 = read_sanitised_ftr_reg(SYS_MVFR1_EL1);
-+	else
-+		mvfr1 = read_sysreg_s(SYS_MVFR1_EL1);
-+
-+	return cpuid_feature_extract_unsigned_field(mvfr1, MVFR1_SIMDSP_SHIFT) &&
-+		cpuid_feature_extract_unsigned_field(mvfr1, MVFR1_SIMDINT_SHIFT) &&
-+		cpuid_feature_extract_unsigned_field(mvfr1, MVFR1_SIMDLS_SHIFT);
++	if (!system_supports_fpsimd())
++		return -ENODEV;
++	return regset->n;
 +}
-+#endif
 +
- static const struct arm64_cpu_capabilities compat_elf_hwcaps[] = {
- #ifdef CONFIG_COMPAT
-+	HWCAP_CAP_MATCH(compat_has_neon, CAP_COMPAT_HWCAP, COMPAT_HWCAP_NEON),
-+	HWCAP_CAP(SYS_MVFR1_EL1, MVFR1_SIMDFMAC_SHIFT, FTR_UNSIGNED, 1, CAP_COMPAT_HWCAP, COMPAT_HWCAP_VFPv4),
-+	/* Arm v8 mandates MVFR0.FPDP == {0, 2}. So, piggy back on this for the presence of VFP support */
-+	HWCAP_CAP(SYS_MVFR0_EL1, MVFR0_FPDP_SHIFT, FTR_UNSIGNED, 2, CAP_COMPAT_HWCAP, COMPAT_HWCAP_VFP),
-+	HWCAP_CAP(SYS_MVFR0_EL1, MVFR0_FPDP_SHIFT, FTR_UNSIGNED, 2, CAP_COMPAT_HWCAP, COMPAT_HWCAP_VFPv3),
- 	HWCAP_CAP(SYS_ID_ISAR5_EL1, ID_ISAR5_AES_SHIFT, FTR_UNSIGNED, 2, CAP_COMPAT_HWCAP2, COMPAT_HWCAP2_PMULL),
- 	HWCAP_CAP(SYS_ID_ISAR5_EL1, ID_ISAR5_AES_SHIFT, FTR_UNSIGNED, 1, CAP_COMPAT_HWCAP2, COMPAT_HWCAP2_AES),
- 	HWCAP_CAP(SYS_ID_ISAR5_EL1, ID_ISAR5_SHA1_SHIFT, FTR_UNSIGNED, 1, CAP_COMPAT_HWCAP2, COMPAT_HWCAP2_SHA1),
+ /*
+  * TODO: update fp accessors for lazy context switching (sync/flush hwstate)
+  */
+@@ -637,6 +644,9 @@ static int fpr_get(struct task_struct *target, const struct user_regset *regset,
+ 		   unsigned int pos, unsigned int count,
+ 		   void *kbuf, void __user *ubuf)
+ {
++	if (!system_supports_fpsimd())
++		return -EINVAL;
++
+ 	if (target == current)
+ 		fpsimd_preserve_current_state();
+ 
+@@ -676,6 +686,9 @@ static int fpr_set(struct task_struct *target, const struct user_regset *regset,
+ {
+ 	int ret;
+ 
++	if (!system_supports_fpsimd())
++		return -EINVAL;
++
+ 	ret = __fpr_set(target, regset, pos, count, kbuf, ubuf, 0);
+ 	if (ret)
+ 		return ret;
+@@ -1134,6 +1147,7 @@ static const struct user_regset aarch64_regsets[] = {
+ 		 */
+ 		.size = sizeof(u32),
+ 		.align = sizeof(u32),
++		.active = fpr_active,
+ 		.get = fpr_get,
+ 		.set = fpr_set
+ 	},
+@@ -1348,6 +1362,9 @@ static int compat_vfp_get(struct task_struct *target,
+ 	compat_ulong_t fpscr;
+ 	int ret, vregs_end_pos;
+ 
++	if (!system_supports_fpsimd())
++		return -EINVAL;
++
+ 	uregs = &target->thread.uw.fpsimd_state;
+ 
+ 	if (target == current)
+@@ -1381,6 +1398,9 @@ static int compat_vfp_set(struct task_struct *target,
+ 	compat_ulong_t fpscr;
+ 	int ret, vregs_end_pos;
+ 
++	if (!system_supports_fpsimd())
++		return -EINVAL;
++
+ 	uregs = &target->thread.uw.fpsimd_state;
+ 
+ 	vregs_end_pos = VFP_STATE_SIZE - sizeof(compat_ulong_t);
+@@ -1438,6 +1458,7 @@ static const struct user_regset aarch32_regsets[] = {
+ 		.n = VFP_STATE_SIZE / sizeof(compat_ulong_t),
+ 		.size = sizeof(compat_ulong_t),
+ 		.align = sizeof(compat_ulong_t),
++		.active = fpr_active,
+ 		.get = compat_vfp_get,
+ 		.set = compat_vfp_set
+ 	},
 -- 
 2.20.1
 
