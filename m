@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C63F715E710
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:51:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3DE715E712
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:52:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BhyQtRkZL3eyMI+v2Ch0ToTk9TvYwcM7FZccP75DIkA=; b=BaMa8J3283H1wF
-	9JEu3FPvyeyo6EPKJgVxLNraNlyHmyEPp6py6degspRYPVx13vLpRnu3jZEMS6yFoHBqGPQ4tWJ3v
-	lWQjHz+Lb0JpOecnTKTg3iNIlgZsvsmpliIGGDOvHvRkJeeVtGYRiWFTCUT6MIvo4QIfgfiESGUUH
-	rZsskYZ0JL/ufwhVK/hNjXpVrOHdaoNyhSgugIzkgVtK8ghlv9mPRsNg8aKWprf7y0uacWnAyMcaG
-	SaU4PzXMm+il4EFtqMOiO7clt4g0zgYIzMQUHc5Av6610X6+Ocj1OiKU3G+QAa8rzh8qUGiQrtl0W
-	sUBe+ee8oHVAuV2L7Y1Q==;
+	List-Owner; bh=mFhK++xV5Bh2RrciezxBUE2p+oEyo8+p4tp6T6MgxCc=; b=ZwlvDpvWMmv0fM
+	rKoV3hdyjRV8dOhJ9nJVmRRGXPN6iPHAi+EGR35BaQa/OEB3nXDvFIhQbZlfVRKviEOqM8aORigaL
+	6buK03gfiO2dy+o5+uPNtpQxnN+FvWUnAU6K3Z0yxerQt1hiIBe5Bsg1SiWz6Oz+74AhlOzx9nYfd
+	XmFFVCPoa+FHSc/cXZG/sCTZoVrT+PvbipLvue0W/qBlJ+P63yrNw1oiqOuwWdDgyhe/71rCXaSEt
+	w/5W/vYsCDz3h4DU1UzzQ9DSz5QYbxo0AX7enbsenkl0fU3JDKNMikLu/9POMeI/KUrpYLrIf/E6l
+	NjsFEfDdcR6YPxZ+c4WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eBw-0007WR-Ac; Fri, 14 Feb 2020 16:51:48 +0000
+	id 1j2eCU-00087g-Tr; Fri, 14 Feb 2020 16:52:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dgy-0002kN-1T
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:19:54 +0000
+ id 1j2dhF-00037O-Td
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:20:15 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E57D24713;
- Fri, 14 Feb 2020 16:19:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 89E5F2472C;
+ Fri, 14 Feb 2020 16:20:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581697187;
- bh=GVGRG8gK82aBCwUZLoqTcSU04M881wJnQ7d3V3BZkjw=;
+ s=default; t=1581697204;
+ bh=WejT3Jlm73icaZYufA+h2E/dA+9hbApxdmiA8FvbewE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dpiGH1KidptRObU5C26hG0NojwJDtX6GY5vHrvSbYm5NPOVL8cKedC4R0bykT/RAC
- UkO0gulrlO9p8UMT3NrnVe/BcNNLvpEVL/pYMBxE5jAOrhpLHoduyIKtI6TJZYqrEp
- 1aMCiFwCypupMaPeCX/QvuPnYOaeJQeB7QTH91jM=
+ b=18LPU1mTGvyoZmVX6Y9BlIaffz0Sg0hn1y/GAq8Q2ih/QDMi0N10lljAYoOQI3UxP
+ LMC0nWFFTWweZoCRR+lBdXJg7hyYWZpJIBUOrJzcDFDJ5fGKCEgcAK/VStyLSO7CQn
+ nZysXUNce0oFiDwwDNf1gPaWv84UZgTjg41tk+f8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 117/186] ASoC: atmel: fix build error with
- CONFIG_SND_ATMEL_SOC_DMA=m
-Date: Fri, 14 Feb 2020 11:16:06 -0500
-Message-Id: <20200214161715.18113-117-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 131/186] iommu/arm-smmu-v3: Use WRITE_ONCE() when
+ changing validity of an STE
+Date: Fri, 14 Feb 2020 11:16:20 -0500
+Message-Id: <20200214161715.18113-131-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214161715.18113-1-sashal@kernel.org>
 References: <20200214161715.18113-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_081948_245489_133C5BF1 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200214_082006_056431_712C32B1 
+X-CRM114-Status: GOOD (  10.71  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,49 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- Chen Zhou <chenzhou10@huawei.com>, Hulk Robot <hulkci@huawei.com>,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ iommu@lists.linux-foundation.org, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen Zhou <chenzhou10@huawei.com>
+From: Will Deacon <will@kernel.org>
 
-[ Upstream commit 8fea78029f5e6ed734ae1957bef23cfda1af4354 ]
+[ Upstream commit d71e01716b3606a6648df7e5646ae12c75babde4 ]
 
-If CONFIG_SND_ATMEL_SOC_DMA=m, build error:
+If, for some bizarre reason, the compiler decided to split up the write
+of STE DWORD 0, we could end up making a partial structure valid.
 
-sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
-(.text+0x7cd): undefined reference to `atmel_pcm_dma_platform_register'
+Although this probably won't happen, follow the example of the
+context-descriptor code and use WRITE_ONCE() to ensure atomicity of the
+write.
 
-Function atmel_pcm_dma_platform_register is defined under
-CONFIG SND_ATMEL_SOC_DMA, so select SND_ATMEL_SOC_DMA in
-CONFIG SND_ATMEL_SOC_SSC, same to CONFIG_SND_ATMEL_SOC_PDC.
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-Link: https://lore.kernel.org/r/20200113133242.144550-1-chenzhou10@huawei.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Reported-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- sound/soc/atmel/Kconfig | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/iommu/arm-smmu-v3.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
-index 4a56f3dfba513..23887613b5c39 100644
---- a/sound/soc/atmel/Kconfig
-+++ b/sound/soc/atmel/Kconfig
-@@ -25,6 +25,8 @@ config SND_ATMEL_SOC_DMA
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 09eb258a9a7de..29feafa8007fb 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -1145,7 +1145,8 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_device *smmu, u32 sid,
+ 	}
  
- config SND_ATMEL_SOC_SSC_DMA
- 	tristate
-+	select SND_ATMEL_SOC_DMA
-+	select SND_ATMEL_SOC_PDC
+ 	arm_smmu_sync_ste_for_sid(smmu, sid);
+-	dst[0] = cpu_to_le64(val);
++	/* See comment in arm_smmu_write_ctx_desc() */
++	WRITE_ONCE(dst[0], cpu_to_le64(val));
+ 	arm_smmu_sync_ste_for_sid(smmu, sid);
  
- config SND_ATMEL_SOC_SSC
- 	tristate
+ 	/* It's likely that we'll want to use the new STE soon */
 -- 
 2.20.1
 
