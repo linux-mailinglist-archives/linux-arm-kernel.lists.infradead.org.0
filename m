@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A14615DF5D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:08:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5A4915DF75
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:09:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kxLJSmUhBzKaRqSuVpqsIEnoQ6grFqscAr6a2MzJoBc=; b=Hg4dnU7QTkXZRX
-	Q/70S/5szYBhyRZ2ghMl15bm9JLLShBOoJ+Vo9wz2estgDSN4/iah4ke31eGDpZg1P650HddHQAJx
-	NMTzhF/ehaNx7QseMyAWpxqA+oCdkpvEKsaWCxfl701mVUyUN4xCtIRGhf9Pr3sUHZDRTc+qTj+Nt
-	MHvsR9k1aIBRGOfMxX5EO59yVH1G/310ENOE03mj3y24xZwywGPbC9cIQ6K70t3Mfdx+o+rZgAv7G
-	ZF18BQvzc94E4T+1rsk9s/Fl+3IgP5DGif6xj/4wACaIROfImr+JR4QXREE/k9InhEXJWxtFYzTiy
-	6szZWe6Vh8OMB0qq+YDw==;
+	List-Owner; bh=Huqcpq+YLOje4XB+4o4mgGR/p//MItdNTZgC5yluswc=; b=H4tBvOvp4jJKqu
+	lpVL68f7at+20YQnxgwJwk658AT9dFgWkMieo200N7dYTKMlyaagmTKPq23TxrmawPh2JHWNlrJa5
+	SwvTIARRsYKI75MurYV1jwA6jGL8ELEHpvkt60CPfNvpwiEIWhtzjDfPtDrWYuLAlHPSj489YE7tC
+	dbyz3FGY9fdswwvzR/f2F5T6XFwgzCzoRmKRCZoG27h6qnR7Ee++yAhA4Y9hUYLcIhxu2dKYm16ns
+	E8ouwdHm2bYRtsyEAcDDGt5wWYDwrqWIphpQogvK4YtsprMvOSFP/YD3dIDNknZjgke/kBX+xUc3w
+	Dj3IabvtKqTdLo801HRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dW2-0007xd-Jq; Fri, 14 Feb 2020 16:08:30 +0000
+	id 1j2dWR-0008Fo-FS; Fri, 14 Feb 2020 16:08:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dK4-0001UT-CR
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:56:10 +0000
+ id 1j2dK7-0001Wn-AY
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:56:13 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CA39124685;
- Fri, 14 Feb 2020 15:56:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 872462086A;
+ Fri, 14 Feb 2020 15:56:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695767;
- bh=FLZzOL6P9wTGzHQT/Jx3T0luRs0YyHB9UZhwVaCmjqM=;
+ s=default; t=1581695770;
+ bh=abcxH2FDkY67ywKz9OWa3xtvSrEUbS2mzMluiL1bXfE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=qohPAfKSxy/jbnHoxt93Tm4CpCvnLUxvGFo0kjJoGqvSpXyPEz1xBkrlR+tT1jbOz
- dR0uPbaIbdOpL9dwDw9/U0frfK+3WjXxuZkj7mvViJLhkHPOa2x6xx5cgc1jU7EYWj
- ykqS7Wzhpn9UJfjZrKwl8jsS4YR0qMC3/p0Lh/uQ=
+ b=gy2I3QzMmn7ZMpyXRsQj8CbZFDydmVIUDh6fagBdSvKkEryCsrkYm6TrijOdhAbO5
+ uVHRum4XnKFC8hskrzffT5EDiV6Sewe6+SI23ZEQvNpPy2t7ruQXj8jVIS+8CKCyl2
+ eKEchITBYEUMWz0erKoUBzDsXPhdEyjULGGuGduA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 334/542] arm64: kernel: Correct annotation of end
- of el0_sync
-Date: Fri, 14 Feb 2020 10:45:26 -0500
-Message-Id: <20200214154854.6746-334-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 336/542] ASoC: atmel: fix build error with
+ CONFIG_SND_ATMEL_SOC_DMA=m
+Date: Fri, 14 Feb 2020 10:45:28 -0500
+Message-Id: <20200214154854.6746-336-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075608_619222_D9D40DDF 
-X-CRM114-Status: GOOD (  10.10  )
+X-CRM114-CacheID: sfid-20200214_075611_535632_A5F3C7B0 
+X-CRM114-Status: UNSURE (   8.26  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,65 +81,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Mark Brown <broonie@kernel.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
+ Chen Zhou <chenzhou10@huawei.com>, Hulk Robot <hulkci@huawei.com>,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mark Brown <broonie@kernel.org>
+From: Chen Zhou <chenzhou10@huawei.com>
 
-[ Upstream commit 73d6890fe8ff40e357039b626537ac82d8782aeb ]
+[ Upstream commit 8fea78029f5e6ed734ae1957bef23cfda1af4354 ]
 
-Commit 582f95835a8fc812c ("arm64: entry: convert el0_sync to C") caused
-the ENDPROC() annotating the end of el0_sync to be placed after the code
-for el0_sync_compat. This replaced the previous annotation where it was
-located after all the cases that are now converted to C, including after
-the currently unannotated el0_irq_compat and el0_error_compat. Move the
-annotation to the end of the function and add separate annotations for
-the _compat ones.
+If CONFIG_SND_ATMEL_SOC_DMA=m, build error:
 
-Fixes: 582f95835a8fc812c (arm64: entry: convert el0_sync to C)
+sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
+(.text+0x7cd): undefined reference to `atmel_pcm_dma_platform_register'
+
+Function atmel_pcm_dma_platform_register is defined under
+CONFIG SND_ATMEL_SOC_DMA, so select SND_ATMEL_SOC_DMA in
+CONFIG SND_ATMEL_SOC_SSC, same to CONFIG_SND_ATMEL_SOC_PDC.
+
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
+Link: https://lore.kernel.org/r/20200113133242.144550-1-chenzhou10@huawei.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
-Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/kernel/entry.S | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ sound/soc/atmel/Kconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 7c6a0a41676f8..d54d165b286a3 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -653,6 +653,7 @@ el0_sync:
- 	mov	x0, sp
- 	bl	el0_sync_handler
- 	b	ret_to_user
-+ENDPROC(el0_sync)
+diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
+index f118c229ed829..d1dc8e6366dcb 100644
+--- a/sound/soc/atmel/Kconfig
++++ b/sound/soc/atmel/Kconfig
+@@ -19,6 +19,8 @@ config SND_ATMEL_SOC_DMA
  
- #ifdef CONFIG_COMPAT
- 	.align	6
-@@ -661,16 +662,18 @@ el0_sync_compat:
- 	mov	x0, sp
- 	bl	el0_sync_compat_handler
- 	b	ret_to_user
--ENDPROC(el0_sync)
-+ENDPROC(el0_sync_compat)
+ config SND_ATMEL_SOC_SSC
+ 	tristate
++	select SND_ATMEL_SOC_DMA
++	select SND_ATMEL_SOC_PDC
  
- 	.align	6
- el0_irq_compat:
- 	kernel_entry 0, 32
- 	b	el0_irq_naked
-+ENDPROC(el0_irq_compat)
- 
- el0_error_compat:
- 	kernel_entry 0, 32
- 	b	el0_error_naked
-+ENDPROC(el0_error_compat)
- #endif
- 
- 	.align	6
+ config SND_ATMEL_SOC_SSC_PDC
+ 	tristate "SoC PCM DAI support for AT91 SSC controller using PDC"
 -- 
 2.20.1
 
