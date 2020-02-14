@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 871AD15DFBC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:10:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4603015DFC1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:11:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=opQrHvFFUIiNXdIK6f5/9Ps7EfOGYi/n86JufHmwdq0=; b=ShvXbDtX8+iv6j
-	RrqvTEHVN9vBZygQkuGFUfZMY881AqNsFQrbY8tZvy28pKvKWhXtvabnw9wGoLfrJGc5YxSPG6d0S
-	hDJoeP/mUCsFPpmoRzJFaiZteYHheysEtGbG6zm16Od555a1sGBTuLN2wL+3zroOGm3F6jBxi0k8m
-	KpuOHdC5iTHdY6YFlcSQBLcSj40SRZEKTlpRHf/sGEbCAlwIEf9HgCl5bqkrGMES3f9wT4ecZ4xTq
-	EznmQrTOU7Y/Teqj+boEDYw4IbC7FfvZXR14yUBZbsOZFYwU8eNbyoGe4NkfDPyZNOZ2e11g8DWgF
-	TpNs6wXlQ4QzW05qEWiw==;
+	List-Owner; bh=0pn3DrmiKsgkjxVt9XFovVwsRzoW1M+d4HlK6NKC7x4=; b=anpKHZO9D1ET5L
+	/a5wGXvrpp6depWsHUOyT0wa1G/ZKedIO+rz4OIhcjWSIIgUgKeT7t5A4aLiUnJ1a9TohKW2qaCj0
+	AdWTdXcpR7xrAh3n2BvlwwMzYHN77niTrroCORvgfbL0pHwrnPAzvdQ6blGOaW87M49iq/lMObFji
+	5Y3361Q+JASkkX78SlBpn/r3yUQ0z13rKvj03UArNVkwq0FOee05HMxjMIFvyy6vEhmDsuDKdr2OX
+	cY9IgCGSU8jzENV1fni9+7JfirCcBh3h/SwB3fWEfHOjoGbeZ4bCdiSbtEhAOugnrQWFrDh5hEJbe
+	vlon+aQVmJ01lw5if8wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dYG-0002gR-JB; Fri, 14 Feb 2020 16:10:48 +0000
+	id 1j2dYQ-0002zV-Mk; Fri, 14 Feb 2020 16:10:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dKe-0001vG-3k
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:56:45 +0000
+ id 1j2dKm-00022c-Hs
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:56:54 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A68002187F;
- Fri, 14 Feb 2020 15:56:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3CEC1206D7;
+ Fri, 14 Feb 2020 15:56:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695803;
- bh=Oq3imaSnvk3qp2sKFwj8TW2fh3DxiGumyaDniiv4fZE=;
+ s=default; t=1581695812;
+ bh=p1qYiOUmSP50rnBYmOOO5qvMBfzp7DHgdmMWOpbQvyU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zkj1vR1x/PYwrmfz2CygT9BuDX5T+Gtijp6QC9cT3/Mow0PeofPGMeVaaRs4n+mJC
- LAHYfKVpmFkjI4eulEtRM/czScXs5Y3N1rMe56v6pQZdiu9YBn9zrKwmxsy8AY/O2z
- PFqeq2VrXPYLQoaboyQgELuEA6vyrUUVk4rDgw1Q=
+ b=p+xZ2//RRpBN5afxa/9hDNaTuyuWBYya3b33DZq41SSJ0u7V9yHFtsnHT7K4eBdxT
+ 6uH8iDBHaZmdUSa6hw9ygUQAIyEheb+m/beKOAgcDqrnlEzfSGlaboNBsfM//cG3m/
+ tZ2a8blyBROilzdbRbOz/zjEbLQpzVaJb6h9W3+0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 363/542] perf/imx_ddr: Fix cpu hotplug state
- cleanup
-Date: Fri, 14 Feb 2020 10:45:55 -0500
-Message-Id: <20200214154854.6746-363-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 370/542] iommu/arm-smmu-v3: Use WRITE_ONCE() when
+ changing validity of an STE
+Date: Fri, 14 Feb 2020 10:46:02 -0500
+Message-Id: <20200214154854.6746-370-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075644_233715_F1C2017E 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20200214_075652_618679_B52F1CDB 
+X-CRM114-Status: GOOD (  10.73  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,85 +80,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
- Will Deacon <will@kernel.org>, Joakim Zhang <qiangqing.zhang@nxp.com>,
+Cc: Sasha Levin <sashal@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ iommu@lists.linux-foundation.org, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Leonard Crestez <leonard.crestez@nxp.com>
+From: Will Deacon <will@kernel.org>
 
-[ Upstream commit 9ee68b314e9aa63ed11b98beb8a68810b8234dcf ]
+[ Upstream commit d71e01716b3606a6648df7e5646ae12c75babde4 ]
 
-This driver allocates a dynamic cpu hotplug state but never releases it.
-If reloaded in a loop it will quickly trigger a WARN message:
+If, for some bizarre reason, the compiler decided to split up the write
+of STE DWORD 0, we could end up making a partial structure valid.
 
-	"No more dynamic states available for CPU hotplug"
+Although this probably won't happen, follow the example of the
+context-descriptor code and use WRITE_ONCE() to ensure atomicity of the
+write.
 
-Fix by calling cpuhp_remove_multi_state on remove like several other
-perf pmu drivers.
-
-Also fix the cleanup logic on probe error paths: add the missing
-cpuhp_remove_multi_state call and properly check the return value from
-cpuhp_state_add_instant_nocalls.
-
-Fixes: 9a66d36cc7ac ("drivers/perf: imx_ddr: Add DDR performance counter support to perf")
-Acked-by: Joakim Zhang <qiangqing.zhang@nxp.com>
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+Reported-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/perf/fsl_imx8_ddr_perf.c | 16 +++++++++++-----
- 1 file changed, 11 insertions(+), 5 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
-index 55083c67b2bb0..95dca2cb52650 100644
---- a/drivers/perf/fsl_imx8_ddr_perf.c
-+++ b/drivers/perf/fsl_imx8_ddr_perf.c
-@@ -633,13 +633,17 @@ static int ddr_perf_probe(struct platform_device *pdev)
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 2f7680faba49e..6bd6a3f3f4710 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -1643,7 +1643,8 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
+ 						 STRTAB_STE_1_EATS_TRANS));
  
- 	if (ret < 0) {
- 		dev_err(&pdev->dev, "cpuhp_setup_state_multi failed\n");
--		goto ddr_perf_err;
-+		goto cpuhp_state_err;
- 	}
+ 	arm_smmu_sync_ste_for_sid(smmu, sid);
+-	dst[0] = cpu_to_le64(val);
++	/* See comment in arm_smmu_write_ctx_desc() */
++	WRITE_ONCE(dst[0], cpu_to_le64(val));
+ 	arm_smmu_sync_ste_for_sid(smmu, sid);
  
- 	pmu->cpuhp_state = ret;
- 
- 	/* Register the pmu instance for cpu hotplug */
--	cpuhp_state_add_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-+	ret = cpuhp_state_add_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-+	if (ret) {
-+		dev_err(&pdev->dev, "Error %d registering hotplug\n", ret);
-+		goto cpuhp_instance_err;
-+	}
- 
- 	/* Request irq */
- 	irq = of_irq_get(np, 0);
-@@ -673,9 +677,10 @@ static int ddr_perf_probe(struct platform_device *pdev)
- 	return 0;
- 
- ddr_perf_err:
--	if (pmu->cpuhp_state)
--		cpuhp_state_remove_instance_nocalls(pmu->cpuhp_state, &pmu->node);
--
-+	cpuhp_state_remove_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-+cpuhp_instance_err:
-+	cpuhp_remove_multi_state(pmu->cpuhp_state);
-+cpuhp_state_err:
- 	ida_simple_remove(&ddr_ida, pmu->id);
- 	dev_warn(&pdev->dev, "i.MX8 DDR Perf PMU failed (%d), disabled\n", ret);
- 	return ret;
-@@ -686,6 +691,7 @@ static int ddr_perf_remove(struct platform_device *pdev)
- 	struct ddr_pmu *pmu = platform_get_drvdata(pdev);
- 
- 	cpuhp_state_remove_instance_nocalls(pmu->cpuhp_state, &pmu->node);
-+	cpuhp_remove_multi_state(pmu->cpuhp_state);
- 	irq_set_affinity_hint(pmu->irq, NULL);
- 
- 	perf_pmu_unregister(&pmu->pmu);
+ 	/* It's likely that we'll want to use the new STE soon */
 -- 
 2.20.1
 
