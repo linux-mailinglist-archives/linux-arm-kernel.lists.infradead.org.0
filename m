@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB32815E32D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:28:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3887015E33D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:28:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0/VChwXrSzKyYm36qjnOp2pvK5dDaFIuQjvoDjXZhc0=; b=Uaf/urf8wv93PR
-	0ft6RxVB8FnYjT0P8XW02UcjKr6zyi2Ual28iJAQV8iXuva91rwYHjtTjk5v6B0VBXbdxNaJYQFZe
-	vR1CvtsvUubDG0lS4r51e+lnPpyj54utM0QxhJ9tXJcp//2qCQIZTaWJy9px92dXQBpTlVrPoBX5k
-	dBLpVbzNQ+k4eKNnkhiNsj5LWuyMGvd3GGC5pxXurZI+MOmVLCSYj2PKPd90UCfDjb5jDyysM/6Rq
-	OdLaF3ARdUlBJWm4Gjp7RjDdI6MDM6kVnefu8PcOKGQjfInunF/wqoX8/RQg4kMUGLuaKM0rMYl+y
-	7v20p2oZmG9c9LWw/kcQ==;
+	List-Owner; bh=t3VWdIX7DUq28/8tN3nZK4h1q6Cc65BGCG7jxw97ym0=; b=br24FfyVMRPmB+
+	t0w8CiAF6vpQOWoFIyLFN8xMLm+C8zNpgYj8HQ+i7QUbMlZgWu2Vtc9cfUibL0AGZg28JXyYrVwoL
+	tN0uStdjGdkfgRS+kvurXtib6rzTQUb3eukjJMPTzOJ55Szx+31ldqpC5oi/wRMv/I54vZpfLjyIm
+	oZNWiTUCkI9He32a/4Ga7ldb/diUSPwCOy2zlnZMSiXM35tpBX6SMIB3ljU3pQa0gSLw4Z/BYpTSj
+	qEloN2dwtdAqnfZp4nuYxEk5LIpQ/WDBzrCi4Wgaet9v0/9vOGQI7wA6YyRajPgZ64rX2GuJkFAxX
+	icEivn2g3iH9mubG2+ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dp9-000464-QW; Fri, 14 Feb 2020 16:28:15 +0000
+	id 1j2dpM-0004OR-7o; Fri, 14 Feb 2020 16:28:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dUQ-0006Vc-Pm
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:06:52 +0000
+ id 1j2dUX-0006eB-OC
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:06:59 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 01D1F24676;
- Fri, 14 Feb 2020 16:06:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 02E4A206D7;
+ Fri, 14 Feb 2020 16:06:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696409;
- bh=I6FKwP+LM7+J5E/prXxfyE67zXp+oC1gcc+XNAtkz3Q=;
+ s=default; t=1581696415;
+ bh=RAbthy+G2lB0nNHDZTr4dUxOkTT5aKM66BXOrQ6RQ/Q=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=r27mktdzT7FblANcr/YSV8CrlBz0r+sNJ9Gdz4qsNGivRYg/muJhFlzBx9ijl8aBr
- oBT/QUr7ylarof5vXOxg58qXhlz9xPmvLtk6X9HIVyj0fOsgzII0C955xjH4MPSs1f
- kr8q0E//lZSQK/PBOZSos9Of0NP1oMZNIyPdwugQ=
+ b=queeLnCcbmAmrzSsbb14MDjbX7eUAwt6BoEfNco1B5sRju+CDNI7TYEPcV7DHwDwd
+ LwOy7pqK7EcMOg4CgnXPLRWVthUzu6ndaUEYZVVBYW0mxx5KDaUam8V4pdNay3Akck
+ lE5lxtmMqBiZwOaLleIXMfRiS4DPvNYSW+/nO3NQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 232/459] PM / devfreq: exynos-ppmu: Fix excessive
- stack usage
-Date: Fri, 14 Feb 2020 10:58:02 -0500
-Message-Id: <20200214160149.11681-232-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 237/459] reset: uniphier: Add SCSSI reset control
+ for each channel
+Date: Fri, 14 Feb 2020 10:58:07 -0500
+Message-Id: <20200214160149.11681-237-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080650_916914_8D472DDB 
-X-CRM114-Status: GOOD (  14.84  )
+X-CRM114-CacheID: sfid-20200214_080657_860904_E294223A 
+X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,80 +81,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-samsung-soc@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
- Chanwoo Choi <cw00.choi@samsung.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Arnd Bergmann <arnd@arndb.de>
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 
-[ Upstream commit d4556f5e99d5f603913bac01adaff8670cb2d08b ]
+[ Upstream commit f4aec227e985e31d2fdc5608daf48e3de19157b7 ]
 
-Putting a 'struct devfreq_event_dev' object on the stack is generally
-a bad idea and here it leads to a warnig about potential stack overflow:
+SCSSI has reset controls for each channel in the SoCs newer than Pro4,
+so this adds missing reset controls for channel 1, 2 and 3. And more, this
+moves MCSSI reset ID after SCSSI.
 
-drivers/devfreq/event/exynos-ppmu.c:643:12: error: stack frame size of 1040 bytes in function 'exynos_ppmu_probe' [-Werror,-Wframe-larger-than=]
-
-There is no real need for the device structure, only the string inside
-it, so add an internal helper function that simply takes the string
-as its argument and remove the device structure.
-
-Fixes: 1dd62c66d345 ("PM / devfreq: events: extend events by type of counted data")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-[cw00.choi: Fix the issue from 'desc->name' to 'desc[j].name']
-Signed-off-by: Chanwoo Choi <cw00.choi@samsung.com>
+Fixes: 6b39fd590aeb ("reset: uniphier: add reset control support for SPI")
+Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/devfreq/event/exynos-ppmu.c | 13 ++++++++-----
+ drivers/reset/reset-uniphier.c | 13 ++++++++-----
  1 file changed, 8 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/devfreq/event/exynos-ppmu.c b/drivers/devfreq/event/exynos-ppmu.c
-index 87b42055e6bc9..c4873bb791f88 100644
---- a/drivers/devfreq/event/exynos-ppmu.c
-+++ b/drivers/devfreq/event/exynos-ppmu.c
-@@ -101,17 +101,22 @@ static struct __exynos_ppmu_events {
- 	PPMU_EVENT(dmc1_1),
+diff --git a/drivers/reset/reset-uniphier.c b/drivers/reset/reset-uniphier.c
+index 74e589f5dd6a6..279e535bf5d80 100644
+--- a/drivers/reset/reset-uniphier.c
++++ b/drivers/reset/reset-uniphier.c
+@@ -193,8 +193,8 @@ static const struct uniphier_reset_data uniphier_pro5_sd_reset_data[] = {
+ #define UNIPHIER_PERI_RESET_FI2C(id, ch)		\
+ 	UNIPHIER_RESETX((id), 0x114, 24 + (ch))
+ 
+-#define UNIPHIER_PERI_RESET_SCSSI(id)			\
+-	UNIPHIER_RESETX((id), 0x110, 17)
++#define UNIPHIER_PERI_RESET_SCSSI(id, ch)		\
++	UNIPHIER_RESETX((id), 0x110, 17 + (ch))
+ 
+ #define UNIPHIER_PERI_RESET_MCSSI(id)			\
+ 	UNIPHIER_RESETX((id), 0x114, 14)
+@@ -209,7 +209,7 @@ static const struct uniphier_reset_data uniphier_ld4_peri_reset_data[] = {
+ 	UNIPHIER_PERI_RESET_I2C(6, 2),
+ 	UNIPHIER_PERI_RESET_I2C(7, 3),
+ 	UNIPHIER_PERI_RESET_I2C(8, 4),
+-	UNIPHIER_PERI_RESET_SCSSI(11),
++	UNIPHIER_PERI_RESET_SCSSI(11, 0),
+ 	UNIPHIER_RESET_END,
  };
  
--static int exynos_ppmu_find_ppmu_id(struct devfreq_event_dev *edev)
-+static int __exynos_ppmu_find_ppmu_id(const char *edev_name)
- {
- 	int i;
+@@ -225,8 +225,11 @@ static const struct uniphier_reset_data uniphier_pro4_peri_reset_data[] = {
+ 	UNIPHIER_PERI_RESET_FI2C(8, 4),
+ 	UNIPHIER_PERI_RESET_FI2C(9, 5),
+ 	UNIPHIER_PERI_RESET_FI2C(10, 6),
+-	UNIPHIER_PERI_RESET_SCSSI(11),
+-	UNIPHIER_PERI_RESET_MCSSI(12),
++	UNIPHIER_PERI_RESET_SCSSI(11, 0),
++	UNIPHIER_PERI_RESET_SCSSI(12, 1),
++	UNIPHIER_PERI_RESET_SCSSI(13, 2),
++	UNIPHIER_PERI_RESET_SCSSI(14, 3),
++	UNIPHIER_PERI_RESET_MCSSI(15),
+ 	UNIPHIER_RESET_END,
+ };
  
- 	for (i = 0; i < ARRAY_SIZE(ppmu_events); i++)
--		if (!strcmp(edev->desc->name, ppmu_events[i].name))
-+		if (!strcmp(edev_name, ppmu_events[i].name))
- 			return ppmu_events[i].id;
- 
- 	return -EINVAL;
- }
- 
-+static int exynos_ppmu_find_ppmu_id(struct devfreq_event_dev *edev)
-+{
-+	return __exynos_ppmu_find_ppmu_id(edev->desc->name);
-+}
-+
- /*
-  * The devfreq-event ops structure for PPMU v1.1
-  */
-@@ -556,13 +561,11 @@ static int of_get_devfreq_events(struct device_node *np,
- 			 * use default if not.
- 			 */
- 			if (info->ppmu_type == EXYNOS_TYPE_PPMU_V2) {
--				struct devfreq_event_dev edev;
- 				int id;
- 				/* Not all registers take the same value for
- 				 * read+write data count.
- 				 */
--				edev.desc = &desc[j];
--				id = exynos_ppmu_find_ppmu_id(&edev);
-+				id = __exynos_ppmu_find_ppmu_id(desc[j].name);
- 
- 				switch (id) {
- 				case PPMU_PMNCNT0:
 -- 
 2.20.1
 
