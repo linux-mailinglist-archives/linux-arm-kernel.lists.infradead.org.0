@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEE2B15E37F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:30:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FEF515E3A3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:31:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ta7AUbF31hjl86XowL5DHArM5H6SZFS/d4V8t8vqMAo=; b=fJe++IsuoMN4ui
-	RRfUaZaU1xy3yBP08/LKnGtHYWG7kiCg78yN3fhLJrwCxCtNwcSgFBqdmZuMgx5/vF/Tbhk0wj7Zq
-	zseUJm51eeZsxK1exZeqyjbRhZ+kzQttmtA/XUyGzb/iLKU9BAxu1OpvtY3RLf8/B0sih0Nzk1Tcw
-	f2c/7xcDdHMzJSyekiO5/HnYJNGvohmU1U/vjbHDy/2sN8xHP26g64Hqc2LpidrW1Pmw0gv8sIaMu
-	ZLAjwF9/eKmmp7+tH1BJk5nHdn/FsQuuB10hnS6RRJCDtUTWyiSt6ArteZSG0a0hjYwqilqYn6TrI
-	3sG1MerGxKts7uhCr3Hg==;
+	List-Owner; bh=MsJqa8UXxPgFrwVM7FyHDwROzQGtrDoqZSVsBOsuI/Q=; b=euZ3JXVa+ngTcW
+	H92qnZCmPD/4P4LwUNd3mZ/hRVxKYIwjEkR3iHA7cZPcF4cJhTcboCwHgec8k3UJwwUdAvBmFmGOF
+	GMyF2WXZSXCGeydNk+bkCzDZWdVt47F8N0jo3k8m44cZpsl75rfZjmmdgCMfrWEW2n6SmTZZVyBlp
+	v92s2spger/LQ1FqixaMybs5lKhX77OIa3GI0t+9jVvzV9D9ggmHIWq8ytBJhnIWk2CPT45+X3Srj
+	KAZksYo7/rgr/+xMSLAk4rA+8IBLuG4aHslh+rxKOgt6zTSh49+N6W6X4+8oe21qsAxFBdZVTSP3s
+	aGmCJ2Aayh65BOZsWQCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2drb-0007oc-I1; Fri, 14 Feb 2020 16:30:47 +0000
+	id 1j2dsK-0008Ra-SJ; Fri, 14 Feb 2020 16:31:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dVE-0007On-Co; Fri, 14 Feb 2020 16:07:42 +0000
+ id 1j2dVF-0007PH-8L
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:07:43 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 035832067D;
- Fri, 14 Feb 2020 16:07:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 61021206D7;
+ Fri, 14 Feb 2020 16:07:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696458;
- bh=fnx7SJY0GVFCyYRf53hfDuerPrwVmGYhI3JvugVoLLg=;
+ s=default; t=1581696460;
+ bh=B4hsJd84MGsALojLjJWgnNZLBKF6xB1oL1k8gRdTYlE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=xLOwjpdfHF7/xpWJya84oDKURXrNR1RVpOUNVnnhSmhbE36Q1AisPvkA9XE9/MyiR
- 5+laB7HTARYErJI064hu7uvDBUaHdSXCiMKY730qEgY5ABhyb6vtRzjVUFpPpc6gOt
- 4or7blyzk3egUFwZwNnG6rGNypc3cxqrEumma05k=
+ b=j8fELqIbOqfsWeLmyu6/ZDrlA+5x70TiaLSo2hWaSmuyu7QZymXQTjSGVMRJqJbCY
+ kzIQuBpSi2pkRe0+kGELxp7DvV353TV/zQb4Fm5791KAsLRrXwmQrk+bW1HbC7TX+f
+ tHQdMzfs6RaFed/jUwAaHkFlVIHH2eokOeSG0FkY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 270/459] drm/mediatek: Add gamma property
- according to hardware capability
-Date: Fri, 14 Feb 2020 10:58:40 -0500
-Message-Id: <20200214160149.11681-270-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 271/459] iommu/arm-smmu-v3: Populate VMID field
+ for CMDQ_OP_TLBI_NH_VA
+Date: Fri, 14 Feb 2020 10:58:41 -0500
+Message-Id: <20200214160149.11681-271-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -49,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080740_656630_50EB8954 
-X-CRM114-Status: GOOD (  10.25  )
+X-CRM114-CacheID: sfid-20200214_080741_388216_E07ABF5D 
+X-CRM114-Status: UNSURE (   9.06  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,67 +81,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, Yongqiang Niu <yongqiang.niu@mediatek.com>,
- Hsin-Yi Wang <hsinyi@chromium.org>, CK Hu <ck.hu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, iommu@lists.linux-foundation.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+From: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
 
-[ Upstream commit 4cebc1de506fa753301266a5a23bb21bca52ad3a ]
+[ Upstream commit 935d43ba272e0001f8ef446a3eff15d8175cb11b ]
 
-If there is no gamma function in the crtc
-display path, don't add gamma property
-for crtc
+CMDQ_OP_TLBI_NH_VA requires VMID and this was missing since
+commit 1c27df1c0a82 ("iommu/arm-smmu: Use correct address mask
+for CMD_TLBI_S2_IPA"). Add it back.
 
-Fixes: 2f3f4dda747c ("drm/mediatek: Add gamma correction.")
-Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-Signed-off-by: CK Hu <ck.hu@mediatek.com>
+Fixes: 1c27df1c0a82 ("iommu/arm-smmu: Use correct address mask for CMD_TLBI_S2_IPA")
+Signed-off-by: Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 10 ++++++++--
- 1 file changed, 8 insertions(+), 2 deletions(-)
+ drivers/iommu/arm-smmu-v3.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-index 0b3d284d19569..e6c049f4f08bb 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-@@ -537,6 +537,7 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 	int pipe = priv->num_pipes;
- 	int ret;
- 	int i;
-+	uint gamma_lut_size = 0;
- 
- 	if (!path)
- 		return 0;
-@@ -587,6 +588,9 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 		}
- 
- 		mtk_crtc->ddp_comp[i] = comp;
-+
-+		if (comp->funcs && comp->funcs->gamma_set)
-+			gamma_lut_size = MTK_LUT_SIZE;
- 	}
- 
- 	mtk_crtc->layer_nr = mtk_ddp_comp_layer_nr(mtk_crtc->ddp_comp[0]);
-@@ -609,8 +613,10 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
- 				NULL, pipe);
- 	if (ret < 0)
- 		return ret;
--	drm_mode_crtc_set_gamma_size(&mtk_crtc->base, MTK_LUT_SIZE);
--	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
-+
-+	if (gamma_lut_size)
-+		drm_mode_crtc_set_gamma_size(&mtk_crtc->base, gamma_lut_size);
-+	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, gamma_lut_size);
- 	priv->num_pipes++;
- 
- 	return 0;
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index ed90361b84dc7..ee8d48d863e16 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -856,6 +856,7 @@ static int arm_smmu_cmdq_build_cmd(u64 *cmd, struct arm_smmu_cmdq_ent *ent)
+ 		cmd[1] |= FIELD_PREP(CMDQ_CFGI_1_RANGE, 31);
+ 		break;
+ 	case CMDQ_OP_TLBI_NH_VA:
++		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_VMID, ent->tlbi.vmid);
+ 		cmd[0] |= FIELD_PREP(CMDQ_TLBI_0_ASID, ent->tlbi.asid);
+ 		cmd[1] |= FIELD_PREP(CMDQ_TLBI_1_LEAF, ent->tlbi.leaf);
+ 		cmd[1] |= ent->tlbi.addr & CMDQ_TLBI_1_VA_MASK;
 -- 
 2.20.1
 
