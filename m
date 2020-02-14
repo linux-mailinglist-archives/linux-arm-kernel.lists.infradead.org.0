@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6201215E59D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:44:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54D7215E5D0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:44:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n0JDplcDylC3YORV9l7GKtG7WHi4p8e0IRd+J0vpMEg=; b=k0weokQdH64s3W
-	skeDM+hrsrltrW8vTkShYlgk80PYxemNuynIznWJh8ySDPbpKZlSxmUh3AHocNqI3/PLgDOM8vHSd
-	sIfRIcdsA3AogvNitXquwNWesQnNmy6b9fLjj0Ge2U5ycT2HGSfI2d5RdwwZtdHZ4WiFCnboIbxB7
-	Fdfc/NSlG2rtnzsQbUWNE1BT+ir22BvPKGiRPxcGpRvWtykwnysT2VbifWz3VcYe3Y0mjmRAqidii
-	OMLCI4WFucB83oeA8lR02O9XIsunoYEUkcTQWthjmt+dM+4j5LyiCnhYdT77a8I2fvHnWug3tuNfg
-	LqJd/irDtRqVEQlCiSBA==;
+	List-Owner; bh=NfOm5yi8h9YsVk8HuaeM1vweQ3BUkny6ChAjj/kcnEs=; b=CPZe3FhHdlOMIN
+	fAdoRvZUUP/YJRmRbvB7wCYE/j0KG1E3f7qi/7vosKLq5+gMg3Am3pmggE69SiG6Jwi64XjqwXCx9
+	xSaRluwnhsk/kLjaP/NpYc3siMXq6un7gmngJ0qmVpfADqnEWgsVJZAL76nmwiBMUYtO/3oToNnpy
+	dYov97eqLbEbKdHkJ+CYTHj6tr3+Oi1G59M0TRc/j5FxZPS7nHMxAzBSQqfg/if5dK94y/kwaXzp1
+	Trk2s/CFDo79lPJhZHS7fFYZJAewHeXUlwzzWGUgzs73CN2P0WQzy8vBcDD31FQdl50P/2clXXzwr
+	fiOl8sHxp/BmWm/2GZgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2e4T-000520-8g; Fri, 14 Feb 2020 16:44:05 +0000
+	id 1j2e4i-0005JY-RX; Fri, 14 Feb 2020 16:44:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dcR-0006tG-25
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:15:27 +0000
+ id 1j2dcb-0007pT-KQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:15:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A7EC4246E6;
- Fri, 14 Feb 2020 16:15:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1440D246C3;
+ Fri, 14 Feb 2020 16:15:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696905;
- bh=3kbU4PpQCtspoH5V5Ms/X/D2pQJR9+ziZQiWMj764e8=;
+ s=default; t=1581696917;
+ bh=TBOsrmr/DXkvGft9h+7ko9BhhNlAYvV4cUeByn3hQ3U=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fmSSGRew/47yA0yEBxLwKTOqXE0TvQtg3hyll+OPj9M4tSid3rRH6zcf6HFjWRC/N
- /kHtoHE88BBhXRJbt5y1CBQ/383FYe70m7HXBHaO9WgbkciFlnoOh1er2eoamcltZk
- hN1enDJj3whD4owIIuJvhpSRqApNj9hn4y7hughA=
+ b=DtCBPDQcOA8a1iuGj79sdJU5lyrJy9/r+vuuGGcOqDhsN3rkgVhxXrJ+bX+Mzj/q9
+ x8fdmOw8Gz+g+AYH6JmLmwMLAU4wPJSTu8qRw9/K48qzVdzizgbBzmxmX8923fFJto
+ Q4OoVGm5bblOq0A2BmTrMemDOov9htb4i5fBnMn0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 155/252] ASoC: atmel: fix build error with
- CONFIG_SND_ATMEL_SOC_DMA=m
-Date: Fri, 14 Feb 2020 11:10:10 -0500
-Message-Id: <20200214161147.15842-155-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 165/252] arm64: ptrace: nofpsimd: Fail FP/SIMD
+ regset operations
+Date: Fri, 14 Feb 2020 11:10:20 -0500
+Message-Id: <20200214161147.15842-165-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214161147.15842-1-sashal@kernel.org>
 References: <20200214161147.15842-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_081507_229097_5038C98D 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200214_081517_775260_C557CEAA 
+X-CRM114-Status: GOOD (  11.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,49 +80,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- Chen Zhou <chenzhou10@huawei.com>, Hulk Robot <hulkci@huawei.com>,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen Zhou <chenzhou10@huawei.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-[ Upstream commit 8fea78029f5e6ed734ae1957bef23cfda1af4354 ]
+[ Upstream commit c9d66999f064947e6b577ceacc1eb2fbca6a8d3c ]
 
-If CONFIG_SND_ATMEL_SOC_DMA=m, build error:
+When fp/simd is not supported on the system, fail the operations
+of FP/SIMD regsets.
 
-sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
-(.text+0x7cd): undefined reference to `atmel_pcm_dma_platform_register'
-
-Function atmel_pcm_dma_platform_register is defined under
-CONFIG SND_ATMEL_SOC_DMA, so select SND_ATMEL_SOC_DMA in
-CONFIG SND_ATMEL_SOC_SSC, same to CONFIG_SND_ATMEL_SOC_PDC.
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-Link: https://lore.kernel.org/r/20200113133242.144550-1-chenzhou10@huawei.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
+Cc: Will Deacon <will@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- sound/soc/atmel/Kconfig | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/kernel/ptrace.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
-index 64b784e96f844..dad778e5884bd 100644
---- a/sound/soc/atmel/Kconfig
-+++ b/sound/soc/atmel/Kconfig
-@@ -25,6 +25,8 @@ config SND_ATMEL_SOC_DMA
+diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+index 0211c3c7533b0..38aab5b34cc49 100644
+--- a/arch/arm64/kernel/ptrace.c
++++ b/arch/arm64/kernel/ptrace.c
+@@ -627,6 +627,13 @@ static int gpr_set(struct task_struct *target, const struct user_regset *regset,
+ 	return 0;
+ }
  
- config SND_ATMEL_SOC_SSC_DMA
- 	tristate
-+	select SND_ATMEL_SOC_DMA
-+	select SND_ATMEL_SOC_PDC
++static int fpr_active(struct task_struct *target, const struct user_regset *regset)
++{
++	if (!system_supports_fpsimd())
++		return -ENODEV;
++	return regset->n;
++}
++
+ /*
+  * TODO: update fp accessors for lazy context switching (sync/flush hwstate)
+  */
+@@ -649,6 +656,9 @@ static int fpr_get(struct task_struct *target, const struct user_regset *regset,
+ 		   unsigned int pos, unsigned int count,
+ 		   void *kbuf, void __user *ubuf)
+ {
++	if (!system_supports_fpsimd())
++		return -EINVAL;
++
+ 	if (target == current)
+ 		fpsimd_preserve_current_state();
  
- config SND_ATMEL_SOC_SSC
- 	tristate
+@@ -688,6 +698,9 @@ static int fpr_set(struct task_struct *target, const struct user_regset *regset,
+ {
+ 	int ret;
+ 
++	if (!system_supports_fpsimd())
++		return -EINVAL;
++
+ 	ret = __fpr_set(target, regset, pos, count, kbuf, ubuf, 0);
+ 	if (ret)
+ 		return ret;
+@@ -990,6 +1003,7 @@ static const struct user_regset aarch64_regsets[] = {
+ 		 */
+ 		.size = sizeof(u32),
+ 		.align = sizeof(u32),
++		.active = fpr_active,
+ 		.get = fpr_get,
+ 		.set = fpr_set
+ 	},
+@@ -1176,6 +1190,9 @@ static int compat_vfp_get(struct task_struct *target,
+ 	compat_ulong_t fpscr;
+ 	int ret, vregs_end_pos;
+ 
++	if (!system_supports_fpsimd())
++		return -EINVAL;
++
+ 	uregs = &target->thread.uw.fpsimd_state;
+ 
+ 	if (target == current)
+@@ -1209,6 +1226,9 @@ static int compat_vfp_set(struct task_struct *target,
+ 	compat_ulong_t fpscr;
+ 	int ret, vregs_end_pos;
+ 
++	if (!system_supports_fpsimd())
++		return -EINVAL;
++
+ 	uregs = &target->thread.uw.fpsimd_state;
+ 
+ 	vregs_end_pos = VFP_STATE_SIZE - sizeof(compat_ulong_t);
+@@ -1266,6 +1286,7 @@ static const struct user_regset aarch32_regsets[] = {
+ 		.n = VFP_STATE_SIZE / sizeof(compat_ulong_t),
+ 		.size = sizeof(compat_ulong_t),
+ 		.align = sizeof(compat_ulong_t),
++		.active = fpr_active,
+ 		.get = compat_vfp_get,
+ 		.set = compat_vfp_set
+ 	},
 -- 
 2.20.1
 
