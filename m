@@ -2,70 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C772715DA50
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:07:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D05C15DA5A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:10:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l3W+CHU8gO53nO5C/9zJQHEcmOhQBvZc+/gU3zo3eCo=; b=KYwEdzqGaKhWgg
-	Oz/e74N6QToubvzWGqgI/886TOXc5nRkiMRMI4ITD1bx9s45M8KfLltscqJ4s3hMVa7MykuBCD46r
-	0egdppd7bSy2NwcxoElREYJKFNLxhlKqR0zq8FMMhbDxmVMzgO1qZLbmIPfLoZciZLMTH2kWrOdVU
-	2CrwwHj75XuMhNQdpxQbAnQGcnV5YDToBhgHOOvc7I5av3PX5mNPdcgtnHv5ntnH3wcXg7fv8djUp
-	xQwnK+IVX7zcee2/K7GK1HA1p47lOnAwdROFcstu8U4wYSPwoxxFTDj1cTdCSktD1RmmWyqhCFQQq
-	fQ8BQJ0keaVi9SxdhiJA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=53oczAMD7PBmh8ij7xaXwHqT1tUYEs7do3oBJoXLkYg=; b=F4dsTNGZXJwMXC
+	jshDbzM8zVEraCTb3TeCcLswanZZgnREyehcx7UpkAv209TlDBKPlZIB2yqS99fy2XjvjfWnSTuIg
+	wprLzEPvWUg9VxF96ace5PPsuQnLGC7iYY9auE2kWkp6dnKrEBY+WQozCp6PDtOMrnV6Y3urc0Ccc
+	3amKzsIju7+TUZOFgkwsvzHiTyz58RgU+FvpNt3bqVjUJYUNHvor+YMnuM+HxuYYHTU4x3jfLDpVp
+	JqN3vY8LHQu9OMy/CnqHKxmEuBApCC306V4JF0+FeLd+260roDalwTx+ZuqU6HACggzaySuqYZNZX
+	jxBuxLAnihuN3ux/9VHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2cZB-0002JM-L9; Fri, 14 Feb 2020 15:07:41 +0000
-Received: from lb3-smtp-cloud8.xs4all.net ([194.109.24.29])
+	id 1j2cbu-0003wl-Ck; Fri, 14 Feb 2020 15:10:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2cYj-0002H5-6s; Fri, 14 Feb 2020 15:07:16 +0000
-Received: from [IPv6:2001:983:e9a7:1:bd23:d5c7:5f0e:7bef]
- ([IPv6:2001:983:e9a7:1:bd23:d5c7:5f0e:7bef])
- by smtp-cloud8.xs4all.net with ESMTPA
- id 2cYejJPw28i432cYfjQOhO; Fri, 14 Feb 2020 16:07:10 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
- t=1581692830; bh=AAdQ2O5Q1ACsRdyVOjDcQqOlYqcXsuuagPvM38HU83Y=;
- h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
- Subject;
- b=dLheoqF8Hlo7AyoDKbBpR9LlenS8WHrlC1z5gQkHG+Rcc+v1GPTrc+QZOsXfYT+8B
- rTGILjj6H0toQeXF/BN8pMa0UBBj1jQjUNJUHfHWchrGJlOG1ljj9GfiKLVbBlnhxz
- sjCU6eRe/CYyjMiT7H7TfHGjo6mWF34yTVIuQkkSnRtgxPH5WW+IOI+YQ1swsszkzY
- fZ2QFMLHUNzFFCaN3A1YHAliEURyZy6IiHyhSriFenqvPQXORqR0B2zjmLyPfgg8Ph
- 9a7Q4tEVAlNeUBV8Ro73jhkvpslxWKW+2L2vFgtMnldv0m9AbZ+z2MEc96etOsNzL9
- 3hDyqHS3u45XA==
-Subject: Re: [PATCH v4 3/5] media: meson: vdec: add common HEVC decoder support
-To: Neil Armstrong <narmstrong@baylibre.com>, mchehab@kernel.org,
- hans.verkuil@cisco.com
-References: <20200206084152.7070-1-narmstrong@baylibre.com>
- <20200206084152.7070-4-narmstrong@baylibre.com>
-From: Hans Verkuil <hverkuil@xs4all.nl>
-Message-ID: <4d9d3785-ef16-1c22-da60-1321bd584f1f@xs4all.nl>
-Date: Fri, 14 Feb 2020 16:07:08 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.2
+ id 1j2cbg-0003wB-Sm
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:10:18 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7BDA624670;
+ Fri, 14 Feb 2020 15:10:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581693016;
+ bh=C4ruZYaMs1nYd0gqhHvdOmkB8OWOp8lsaC2jN1arpN4=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=MqGmGnJOi1zsbXYPrFEHiIwrN2I30wVnvtp2y/QcFlG6xq1uFuCM2B1R98BgAeMN1
+ G+AY1N+t4s4uwug0E1lKcUdbGsa8aLwXJMDSAPAO1HbB1FvNzDZ8nfSKBMG2qDZ9DI
+ /eIC4B8BTkmwjE06SoLeKrYmO2wuvRPMo0x55uZM=
+Date: Fri, 14 Feb 2020 15:10:11 +0000
+From: Jonathan Cameron <jic23@kernel.org>
+To: Olivier MOYSAN <olivier.moysan@st.com>
+Subject: Re: [PATCH 4/4] iio: adc: stm32-dfsdm: add scale and offset support
+Message-ID: <20200214151011.20111e8c@archlinux>
+In-Reply-To: <5b2e74a0-71bd-46d0-0096-b33ff17f780b@st.com>
+References: <20200204101008.11411-1-olivier.moysan@st.com>
+ <20200204101008.11411-5-olivier.moysan@st.com>
+ <20200208161847.76c7d6e8@archlinux>
+ <8400827e-5f3d-ad3f-99c8-986934b1a7b8@st.com>
+ <20200214131113.70aa36b8@archlinux>
+ <5b2e74a0-71bd-46d0-0096-b33ff17f780b@st.com>
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20200206084152.7070-4-narmstrong@baylibre.com>
-Content-Language: en-US
-X-CMAE-Envelope: MS4wfP3eT0E0kWMGOqds3kI38yjhObfyY7zdymgSZUVe/rV4lRgDntGIECL+e3ixMLvRI7PukNKSPjzi/U0D+3r8F2JcRMvJTj1Dx7JbGgh25clX7dZnlglh
- 6/KUjLw+sA/mXpxc/z2ZYQY1w3VlUv6BW7/K2ywALYE+GEphXd/3BbpKukdpuXjcd4z8uZ1hJjTnQ+4zjQxLAs9NxR9Yo/bq4e8vDg53UJXFHAAIdcNe7fNv
- 5JR2r0gt4rlMAgmSHuVQ/dI3atJ8c/asNaH+9q+mTi+wMD2S28n5O5YlYumjPNRMIT3h4///be3DJ/fUWYDgX6CRA1g3yiJB/rsaA0mEUIbpfkgNFfc/WYZh
- muoPk67beK4jIMARYX3qZryVMT8VlSNe7YVRRUdNxJzfpQWLYNbaA/nygUFudSqxJKtdYCfJSykU2WwgkbZrMR40EZILhgYLeHttE0QoNzl0bhmy4p9KEtmY
- Jnifmg8CuMtbBn8cQQyJCdv4gBb1P3qfWWgG+k5L0LwDDg1Iy4w34xUxIrhVDLcbAnnUad+gltNlLW2x
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_070713_587134_E9CB72CB 
-X-CRM114-Status: GOOD (  20.25  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200214_071016_978971_73B97F64 
+X-CRM114-Status: GOOD (  33.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [194.109.24.29 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [194.109.24.29 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -75,7 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,937 +81,233 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Jourdan <mjourdan@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "lars@metafoo.de" <lars@metafoo.de>,
+ "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "pmeerw@pmeerw.net" <pmeerw@pmeerw.net>, "knaack.h@gmx.de" <knaack.h@gmx.de>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/6/20 9:41 AM, Neil Armstrong wrote:
-> From: Maxime Jourdan <mjourdan@baylibre.com>
-> 
-> Add support for the HEVC & VP9 common decoder support, handling
-> Amlogic GXBB, GXL, G12A and SM1 platforms.
-> 
-> This handles the "HEVC" hw decoder used for HEVC and VP9, and will be
-> using in the new H264 multi-instance decoder for G12A & SM1 platforms.
-> 
-> Signed-off-by: Maxime Jourdan <mjourdan@baylibre.com>
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-
-I'm getting some checkpatch warnings/checks:
-
-WARNING: Possible unnecessary 'out of memory' message
-#219: FILE: drivers/staging/media/meson/vdec/codec_hevc_common.c:171:
-+               if (!vaddr) {
-+                       dev_err(dev, "Couldn't allocate FBC buffer %u\n", idx);
-
-WARNING: Possible unnecessary 'out of memory' message
-#273: FILE: drivers/staging/media/meson/vdec/codec_hevc_common.c:225:
-+               if (!vaddr) {
-+                       dev_err(dev, "Couldn't allocate MMU header %u\n", idx);
-
-WARNING: Possible unnecessary 'out of memory' message
-#692: FILE: drivers/staging/media/meson/vdec/vdec_hevc.c:52:
-+       if (!mc_addr) {
-+               dev_err(dev, "Failed allocating memory for firmware loading\n");
-
-CHECK: usleep_range is preferred over udelay; see Documentation/timers/timers-howto.rst
-#819: FILE: drivers/staging/media/meson/vdec/vdec_hevc.c:179:
-+       udelay(10);
-
-CHECK: usleep_range is preferred over udelay; see Documentation/timers/timers-howto.rst
-#857: FILE: drivers/staging/media/meson/vdec/vdec_hevc.c:217:
-+       udelay(10);
-
-Can you take a look?
-
-Regards,
-
-	Hans
-
-> ---
->  drivers/staging/media/meson/vdec/Makefile     |   4 +-
->  .../media/meson/vdec/codec_hevc_common.c      | 286 ++++++++++++++++++
->  .../media/meson/vdec/codec_hevc_common.h      |  77 +++++
->  drivers/staging/media/meson/vdec/hevc_regs.h  | 211 +++++++++++++
->  drivers/staging/media/meson/vdec/vdec_hevc.c  | 231 ++++++++++++++
->  drivers/staging/media/meson/vdec/vdec_hevc.h  |  13 +
->  6 files changed, 820 insertions(+), 2 deletions(-)
->  create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_common.c
->  create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_common.h
->  create mode 100644 drivers/staging/media/meson/vdec/hevc_regs.h
->  create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.c
->  create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.h
-> 
-> diff --git a/drivers/staging/media/meson/vdec/Makefile b/drivers/staging/media/meson/vdec/Makefile
-> index 711d990c760e..f55b6e625034 100644
-> --- a/drivers/staging/media/meson/vdec/Makefile
-> +++ b/drivers/staging/media/meson/vdec/Makefile
-> @@ -2,7 +2,7 @@
->  # Makefile for Amlogic meson video decoder driver
->  
->  meson-vdec-objs = esparser.o vdec.o vdec_helpers.o vdec_platform.o
-> -meson-vdec-objs += vdec_1.o
-> -meson-vdec-objs += codec_mpeg12.o codec_h264.o
-> +meson-vdec-objs += vdec_1.o vdec_hevc.o
-> +meson-vdec-objs += codec_mpeg12.o codec_h264.o codec_hevc_common.o
->  
->  obj-$(CONFIG_VIDEO_MESON_VDEC) += meson-vdec.o
-> diff --git a/drivers/staging/media/meson/vdec/codec_hevc_common.c b/drivers/staging/media/meson/vdec/codec_hevc_common.c
-> new file mode 100644
-> index 000000000000..335bcba062ac
-> --- /dev/null
-> +++ b/drivers/staging/media/meson/vdec/codec_hevc_common.c
-> @@ -0,0 +1,286 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright (C) 2018 Maxime Jourdan <mjourdan@baylibre.com>
-> + */
-> +
-> +#include <media/v4l2-mem2mem.h>
-> +#include <media/videobuf2-dma-contig.h>
-> +
-> +#include "codec_hevc_common.h"
-> +#include "vdec_helpers.h"
-> +#include "hevc_regs.h"
-> +
-> +#define MMU_COMPRESS_HEADER_SIZE 0x48000
-> +#define MMU_MAP_SIZE 0x4800
-> +
-> +/* Configure decode head read mode */
-> +void codec_hevc_setup_decode_head(struct amvdec_session *sess, int is_10bit)
-> +{
-> +	struct amvdec_core *core = sess->core;
-> +	u32 body_size = amvdec_am21c_body_size(sess->width, sess->height);
-> +	u32 head_size = amvdec_am21c_head_size(sess->width, sess->height);
-> +
-> +	if (!codec_hevc_use_fbc(sess->pixfmt_cap, is_10bit)) {
-> +		/* Enable 2-plane reference read mode */
-> +		amvdec_write_dos(core, HEVCD_MPP_DECOMP_CTL1, BIT(31));
-> +		return;
-> +	}
-> +
-> +	if (codec_hevc_use_mmu(core->platform->revision,
-> +			       sess->pixfmt_cap, is_10bit))
-> +		amvdec_write_dos(core, HEVCD_MPP_DECOMP_CTL1, BIT(4));
-> +	else
-> +		amvdec_write_dos(core, HEVCD_MPP_DECOMP_CTL1, 0);
-> +
-> +	if (core->platform->revision < VDEC_REVISION_SM1)
-> +		amvdec_write_dos(core, HEVCD_MPP_DECOMP_CTL2, body_size / 32);
-> +	amvdec_write_dos(core, HEVC_CM_BODY_LENGTH, body_size);
-> +	amvdec_write_dos(core, HEVC_CM_HEADER_OFFSET, body_size);
-> +	amvdec_write_dos(core, HEVC_CM_HEADER_LENGTH, head_size);
-> +}
-> +EXPORT_SYMBOL_GPL(codec_hevc_setup_decode_head);
-> +
-> +static void codec_hevc_setup_buffers_gxbb(struct amvdec_session *sess,
-> +					  struct codec_hevc_common *comm,
-> +					  int is_10bit)
-> +{
-> +	struct amvdec_core *core = sess->core;
-> +	struct v4l2_m2m_buffer *buf;
-> +	u32 buf_num = v4l2_m2m_num_dst_bufs_ready(sess->m2m_ctx);
-> +	dma_addr_t buf_y_paddr = 0;
-> +	dma_addr_t buf_uv_paddr = 0;
-> +	u32 idx = 0;
-> +	u32 val;
-> +	int i;
-> +
-> +	amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR, 0);
-> +
-> +	v4l2_m2m_for_each_dst_buf(sess->m2m_ctx, buf) {
-> +		struct vb2_buffer *vb = &buf->vb.vb2_buf;
-> +
-> +		idx = vb->index;
-> +
-> +		if (codec_hevc_use_downsample(sess->pixfmt_cap, is_10bit))
-> +			buf_y_paddr = comm->fbc_buffer_paddr[idx];
-> +		else
-> +			buf_y_paddr = vb2_dma_contig_plane_dma_addr(vb, 0);
-> +
-> +		if (codec_hevc_use_fbc(sess->pixfmt_cap, is_10bit)) {
-> +			val = buf_y_paddr | (idx << 8) | 1;
-> +			amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR,
-> +					 val);
-> +		} else {
-> +			buf_uv_paddr = vb2_dma_contig_plane_dma_addr(vb, 1);
-> +			val = buf_y_paddr | ((idx * 2) << 8) | 1;
-> +			amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR,
-> +					 val);
-> +			val = buf_uv_paddr | ((idx * 2 + 1) << 8) | 1;
-> +			amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR,
-> +					 val);
-> +		}
-> +	}
-> +
-> +	if (codec_hevc_use_fbc(sess->pixfmt_cap, is_10bit))
-> +		val = buf_y_paddr | (idx << 8) | 1;
-> +	else
-> +		val = buf_y_paddr | ((idx * 2) << 8) | 1;
-> +
-> +	/* Fill the remaining unused slots with the last buffer's Y addr */
-> +	for (i = buf_num; i < MAX_REF_PIC_NUM; ++i)
-> +		amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR, val);
-> +
-> +	amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR, 1);
-> +	amvdec_write_dos(core, HEVCD_MPP_ANC_CANVAS_ACCCONFIG_ADDR, 1);
-> +	for (i = 0; i < 32; ++i)
-> +		amvdec_write_dos(core, HEVCD_MPP_ANC_CANVAS_DATA_ADDR, 0);
-> +}
-> +
-> +static void codec_hevc_setup_buffers_gxl(struct amvdec_session *sess,
-> +					 struct codec_hevc_common *comm,
-> +					 int is_10bit)
-> +{
-> +	struct amvdec_core *core = sess->core;
-> +	struct v4l2_m2m_buffer *buf;
-> +	u32 revision = core->platform->revision;
-> +	u32 pixfmt_cap = sess->pixfmt_cap;
-> +	int i;
-> +
-> +	amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR,
-> +			 BIT(2) | BIT(1));
-> +
-> +	v4l2_m2m_for_each_dst_buf(sess->m2m_ctx, buf) {
-> +		struct vb2_buffer *vb = &buf->vb.vb2_buf;
-> +		dma_addr_t buf_y_paddr = 0;
-> +		dma_addr_t buf_uv_paddr = 0;
-> +		u32 idx = vb->index;
-> +
-> +		if (codec_hevc_use_mmu(revision, pixfmt_cap, is_10bit))
-> +			buf_y_paddr = comm->mmu_header_paddr[idx];
-> +		else if (codec_hevc_use_downsample(pixfmt_cap, is_10bit))
-> +			buf_y_paddr = comm->fbc_buffer_paddr[idx];
-> +		else
-> +			buf_y_paddr = vb2_dma_contig_plane_dma_addr(vb, 0);
-> +
-> +		amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_DATA,
-> +				 buf_y_paddr >> 5);
-> +
-> +		if (!codec_hevc_use_fbc(pixfmt_cap, is_10bit)) {
-> +			buf_uv_paddr = vb2_dma_contig_plane_dma_addr(vb, 1);
-> +			amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_DATA,
-> +					 buf_uv_paddr >> 5);
-> +		}
-> +	}
-> +
-> +	amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR, 1);
-> +	amvdec_write_dos(core, HEVCD_MPP_ANC_CANVAS_ACCCONFIG_ADDR, 1);
-> +	for (i = 0; i < 32; ++i)
-> +		amvdec_write_dos(core, HEVCD_MPP_ANC_CANVAS_DATA_ADDR, 0);
-> +}
-> +
-> +void codec_hevc_free_fbc_buffers(struct amvdec_session *sess,
-> +				 struct codec_hevc_common *comm)
-> +{
-> +	struct device *dev = sess->core->dev;
-> +	u32 am21_size = amvdec_am21c_size(sess->width, sess->height);
-> +	int i;
-> +
-> +	for (i = 0; i < MAX_REF_PIC_NUM; ++i) {
-> +		if (comm->fbc_buffer_vaddr[i]) {
-> +			dma_free_coherent(dev, am21_size,
-> +					  comm->fbc_buffer_vaddr[i],
-> +					  comm->fbc_buffer_paddr[i]);
-> +			comm->fbc_buffer_vaddr[i] = NULL;
-> +		}
-> +	}
-> +}
-> +EXPORT_SYMBOL_GPL(codec_hevc_free_fbc_buffers);
-> +
-> +static int codec_hevc_alloc_fbc_buffers(struct amvdec_session *sess,
-> +					struct codec_hevc_common *comm)
-> +{
-> +	struct device *dev = sess->core->dev;
-> +	struct v4l2_m2m_buffer *buf;
-> +	u32 am21_size = amvdec_am21c_size(sess->width, sess->height);
-> +
-> +	v4l2_m2m_for_each_dst_buf(sess->m2m_ctx, buf) {
-> +		u32 idx = buf->vb.vb2_buf.index;
-> +		dma_addr_t paddr;
-> +		void *vaddr = dma_alloc_coherent(dev, am21_size, &paddr,
-> +						 GFP_KERNEL);
-> +		if (!vaddr) {
-> +			dev_err(dev, "Couldn't allocate FBC buffer %u\n", idx);
-> +			codec_hevc_free_fbc_buffers(sess, comm);
-> +			return -ENOMEM;
-> +		}
-> +
-> +		comm->fbc_buffer_vaddr[idx] = vaddr;
-> +		comm->fbc_buffer_paddr[idx] = paddr;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +void codec_hevc_free_mmu_headers(struct amvdec_session *sess,
-> +				 struct codec_hevc_common *comm)
-> +{
-> +	struct device *dev = sess->core->dev;
-> +	int i;
-> +
-> +	for (i = 0; i < MAX_REF_PIC_NUM; ++i) {
-> +		if (comm->mmu_header_vaddr[i]) {
-> +			dma_free_coherent(dev, MMU_COMPRESS_HEADER_SIZE,
-> +					  comm->mmu_header_vaddr[i],
-> +					  comm->mmu_header_paddr[i]);
-> +			comm->mmu_header_vaddr[i] = NULL;
-> +		}
-> +	}
-> +
-> +	if (comm->mmu_map_vaddr) {
-> +		dma_free_coherent(dev, MMU_MAP_SIZE,
-> +				  comm->mmu_map_vaddr,
-> +				  comm->mmu_map_paddr);
-> +		comm->mmu_map_vaddr = NULL;
-> +	}
-> +}
-> +EXPORT_SYMBOL_GPL(codec_hevc_free_mmu_headers);
-> +
-> +static int codec_hevc_alloc_mmu_headers(struct amvdec_session *sess,
-> +					struct codec_hevc_common *comm)
-> +{
-> +	struct device *dev = sess->core->dev;
-> +	struct v4l2_m2m_buffer *buf;
-> +
-> +	comm->mmu_map_vaddr = dma_alloc_coherent(dev, MMU_MAP_SIZE,
-> +						 &comm->mmu_map_paddr,
-> +						 GFP_KERNEL);
-> +	if (!comm->mmu_map_vaddr)
-> +		return -ENOMEM;
-> +
-> +	v4l2_m2m_for_each_dst_buf(sess->m2m_ctx, buf) {
-> +		u32 idx = buf->vb.vb2_buf.index;
-> +		dma_addr_t paddr;
-> +		void *vaddr = dma_alloc_coherent(dev, MMU_COMPRESS_HEADER_SIZE,
-> +						 &paddr, GFP_KERNEL);
-> +		if (!vaddr) {
-> +			dev_err(dev, "Couldn't allocate MMU header %u\n", idx);
-> +			codec_hevc_free_mmu_headers(sess, comm);
-> +			return -ENOMEM;
-> +		}
-> +
-> +		comm->mmu_header_vaddr[idx] = vaddr;
-> +		comm->mmu_header_paddr[idx] = paddr;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +int codec_hevc_setup_buffers(struct amvdec_session *sess,
-> +			     struct codec_hevc_common *comm,
-> +			     int is_10bit)
-> +{
-> +	struct amvdec_core *core = sess->core;
-> +	int ret;
-> +
-> +	if (codec_hevc_use_downsample(sess->pixfmt_cap, is_10bit)) {
-> +		ret = codec_hevc_alloc_fbc_buffers(sess, comm);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	if (codec_hevc_use_mmu(core->platform->revision,
-> +			       sess->pixfmt_cap, is_10bit)) {
-> +		ret = codec_hevc_alloc_mmu_headers(sess, comm);
-> +		if (ret) {
-> +			codec_hevc_free_fbc_buffers(sess, comm);
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	if (core->platform->revision == VDEC_REVISION_GXBB)
-> +		codec_hevc_setup_buffers_gxbb(sess, comm, is_10bit);
-> +	else
-> +		codec_hevc_setup_buffers_gxl(sess, comm, is_10bit);
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(codec_hevc_setup_buffers);
-> +
-> +void codec_hevc_fill_mmu_map(struct amvdec_session *sess,
-> +			     struct codec_hevc_common *comm,
-> +			     struct vb2_buffer *vb)
-> +{
-> +	u32 size = amvdec_am21c_size(sess->width, sess->height);
-> +	u32 nb_pages = size / PAGE_SIZE;
-> +	u32 *mmu_map = comm->mmu_map_vaddr;
-> +	u32 first_page;
-> +	u32 i;
-> +
-> +	if (sess->pixfmt_cap == V4L2_PIX_FMT_NV12M)
-> +		first_page = comm->fbc_buffer_paddr[vb->index] >> PAGE_SHIFT;
-> +	else
-> +		first_page = vb2_dma_contig_plane_dma_addr(vb, 0) >> PAGE_SHIFT;
-> +
-> +	for (i = 0; i < nb_pages; ++i)
-> +		mmu_map[i] = first_page + i;
-> +}
-> +EXPORT_SYMBOL_GPL(codec_hevc_fill_mmu_map);
-> diff --git a/drivers/staging/media/meson/vdec/codec_hevc_common.h b/drivers/staging/media/meson/vdec/codec_hevc_common.h
-> new file mode 100644
-> index 000000000000..de16d2e43061
-> --- /dev/null
-> +++ b/drivers/staging/media/meson/vdec/codec_hevc_common.h
-> @@ -0,0 +1,77 @@
-> +/* SPDX-License-Identifier: GPL-2.0+ */
-> +/*
-> + * Copyright (C) 2018 BayLibre, SAS
-> + * Author: Maxime Jourdan <mjourdan@baylibre.com>
-> + */
-> +
-> +#ifndef __MESON_VDEC_HEVC_COMMON_H_
-> +#define __MESON_VDEC_HEVC_COMMON_H_
-> +
-> +#include "vdec.h"
-> +
-> +#define PARSER_CMD_SKIP_CFG_0 0x0000090b
-> +#define PARSER_CMD_SKIP_CFG_1 0x1b14140f
-> +#define PARSER_CMD_SKIP_CFG_2 0x001b1910
-> +static const u16 vdec_hevc_parser_cmd[] = {
-> +	0x0401,	0x8401,	0x0800,	0x0402,
-> +	0x9002,	0x1423,	0x8CC3,	0x1423,
-> +	0x8804,	0x9825,	0x0800,	0x04FE,
-> +	0x8406,	0x8411,	0x1800,	0x8408,
-> +	0x8409,	0x8C2A,	0x9C2B,	0x1C00,
-> +	0x840F,	0x8407,	0x8000,	0x8408,
-> +	0x2000,	0xA800,	0x8410,	0x04DE,
-> +	0x840C,	0x840D,	0xAC00,	0xA000,
-> +	0x08C0,	0x08E0,	0xA40E,	0xFC00,
-> +	0x7C00
-> +};
-> +
-> +#define MAX_REF_PIC_NUM	24
-> +
-> +struct codec_hevc_common {
-> +	void      *fbc_buffer_vaddr[MAX_REF_PIC_NUM];
-> +	dma_addr_t fbc_buffer_paddr[MAX_REF_PIC_NUM];
-> +
-> +	void      *mmu_header_vaddr[MAX_REF_PIC_NUM];
-> +	dma_addr_t mmu_header_paddr[MAX_REF_PIC_NUM];
-> +
-> +	void      *mmu_map_vaddr;
-> +	dma_addr_t mmu_map_paddr;
-> +};
-> +
-> +/* Returns 1 if we must use framebuffer compression */
-> +static inline int codec_hevc_use_fbc(u32 pixfmt, int is_10bit)
-> +{
-> +	/* TOFIX: Handle Amlogic Compressed buffer for 8bit also */
-> +	return is_10bit;
-> +}
-> +
-> +/* Returns 1 if we are decoding 10-bit but outputting 8-bit NV12 */
-> +static inline int codec_hevc_use_downsample(u32 pixfmt, int is_10bit)
-> +{
-> +	return is_10bit;
-> +}
-> +
-> +/* Returns 1 if we are decoding using the IOMMU */
-> +static inline int codec_hevc_use_mmu(u32 revision, u32 pixfmt, int is_10bit)
-> +{
-> +	return revision >= VDEC_REVISION_G12A &&
-> +	       codec_hevc_use_fbc(pixfmt, is_10bit);
-> +}
-> +
-> +/**
-> + * Configure decode head read mode
-> + */
-> +void codec_hevc_setup_decode_head(struct amvdec_session *sess, int is_10bit);
-> +
-> +void codec_hevc_free_fbc_buffers(struct amvdec_session *sess,
-> +				 struct codec_hevc_common *comm);
-> +
-> +int codec_hevc_setup_buffers(struct amvdec_session *sess,
-> +			     struct codec_hevc_common *comm,
-> +			     int is_10bit);
-> +
-> +void codec_hevc_fill_mmu_map(struct amvdec_session *sess,
-> +			     struct codec_hevc_common *comm,
-> +			     struct vb2_buffer *vb);
-> +
-> +#endif
-> diff --git a/drivers/staging/media/meson/vdec/hevc_regs.h b/drivers/staging/media/meson/vdec/hevc_regs.h
-> new file mode 100644
-> index 000000000000..55c1a80b955a
-> --- /dev/null
-> +++ b/drivers/staging/media/meson/vdec/hevc_regs.h
-> @@ -0,0 +1,211 @@
-> +/* SPDX-License-Identifier: GPL-2.0+ */
-> +/*
-> + * Copyright (C) 2015 Amlogic, Inc. All rights reserved.
-> + */
-> +
-> +#ifndef __MESON_VDEC_HEVC_REGS_H_
-> +#define __MESON_VDEC_HEVC_REGS_H_
-> +
-> +#define HEVC_ASSIST_MMU_MAP_ADDR 0xc024
-> +
-> +#define HEVC_ASSIST_MBOX1_CLR_REG 0xc1d4
-> +#define HEVC_ASSIST_MBOX1_MASK 0xc1d8
-> +
-> +#define HEVC_ASSIST_SCRATCH_0 0xc300
-> +#define HEVC_ASSIST_SCRATCH_1 0xc304
-> +#define HEVC_ASSIST_SCRATCH_2 0xc308
-> +#define HEVC_ASSIST_SCRATCH_3 0xc30c
-> +#define HEVC_ASSIST_SCRATCH_4 0xc310
-> +#define HEVC_ASSIST_SCRATCH_5 0xc314
-> +#define HEVC_ASSIST_SCRATCH_6 0xc318
-> +#define HEVC_ASSIST_SCRATCH_7 0xc31c
-> +#define HEVC_ASSIST_SCRATCH_8 0xc320
-> +#define HEVC_ASSIST_SCRATCH_9 0xc324
-> +#define HEVC_ASSIST_SCRATCH_A 0xc328
-> +#define HEVC_ASSIST_SCRATCH_B 0xc32c
-> +#define HEVC_ASSIST_SCRATCH_C 0xc330
-> +#define HEVC_ASSIST_SCRATCH_D 0xc334
-> +#define HEVC_ASSIST_SCRATCH_E 0xc338
-> +#define HEVC_ASSIST_SCRATCH_F 0xc33c
-> +#define HEVC_ASSIST_SCRATCH_G 0xc340
-> +#define HEVC_ASSIST_SCRATCH_H 0xc344
-> +#define HEVC_ASSIST_SCRATCH_I 0xc348
-> +#define HEVC_ASSIST_SCRATCH_J 0xc34c
-> +#define HEVC_ASSIST_SCRATCH_K 0xc350
-> +#define HEVC_ASSIST_SCRATCH_L 0xc354
-> +#define HEVC_ASSIST_SCRATCH_M 0xc358
-> +#define HEVC_ASSIST_SCRATCH_N 0xc35c
-> +
-> +#define HEVC_PARSER_VERSION 0xc400
-> +#define HEVC_STREAM_CONTROL 0xc404
-> +#define HEVC_STREAM_START_ADDR 0xc408
-> +#define HEVC_STREAM_END_ADDR 0xc40c
-> +#define HEVC_STREAM_WR_PTR 0xc410
-> +#define HEVC_STREAM_RD_PTR 0xc414
-> +#define HEVC_STREAM_LEVEL 0xc418
-> +#define HEVC_STREAM_FIFO_CTL 0xc41c
-> +#define HEVC_SHIFT_CONTROL 0xc420
-> +#define HEVC_SHIFT_STARTCODE 0xc424
-> +#define HEVC_SHIFT_EMULATECODE 0xc428
-> +#define HEVC_SHIFT_STATUS 0xc42c
-> +#define HEVC_SHIFTED_DATA 0xc430
-> +#define HEVC_SHIFT_BYTE_COUNT 0xc434
-> +#define HEVC_SHIFT_COMMAND 0xc438
-> +#define HEVC_ELEMENT_RESULT 0xc43c
-> +#define HEVC_CABAC_CONTROL 0xc440
-> +#define HEVC_PARSER_SLICE_INFO 0xc444
-> +#define HEVC_PARSER_CMD_WRITE 0xc448
-> +#define HEVC_PARSER_CORE_CONTROL 0xc44c
-> +#define HEVC_PARSER_CMD_FETCH 0xc450
-> +#define HEVC_PARSER_CMD_STATUS 0xc454
-> +#define HEVC_PARSER_LCU_INFO 0xc458
-> +#define HEVC_PARSER_HEADER_INFO 0xc45c
-> +#define HEVC_PARSER_INT_CONTROL 0xc480
-> +#define HEVC_PARSER_INT_STATUS 0xc484
-> +#define HEVC_PARSER_IF_CONTROL 0xc488
-> +#define HEVC_PARSER_PICTURE_SIZE 0xc48c
-> +#define HEVC_PARSER_LCU_START 0xc490
-> +#define HEVC_PARSER_HEADER_INFO2 0xc494
-> +#define HEVC_PARSER_QUANT_READ 0xc498
-> +#define HEVC_PARSER_RESERVED_27 0xc49c
-> +#define HEVC_PARSER_CMD_SKIP_0 0xc4a0
-> +#define HEVC_PARSER_CMD_SKIP_1 0xc4a4
-> +#define HEVC_PARSER_CMD_SKIP_2 0xc4a8
-> +#define HEVC_SAO_IF_STATUS 0xc4c0
-> +#define HEVC_SAO_IF_DATA_Y 0xc4c4
-> +#define HEVC_SAO_IF_DATA_U 0xc4c8
-> +#define HEVC_SAO_IF_DATA_V 0xc4cc
-> +#define HEVC_STREAM_SWAP_ADDR 0xc4d0
-> +#define HEVC_STREAM_SWAP_CTRL 0xc4d4
-> +#define HEVC_IQIT_IF_WAIT_CNT 0xc4d8
-> +#define HEVC_MPRED_IF_WAIT_CNT 0xc4dc
-> +#define HEVC_SAO_IF_WAIT_CNT 0xc4e0
-> +
-> +#define HEVC_MPRED_VERSION 0xc800
-> +#define HEVC_MPRED_CTRL0 0xc804
-> +	#define MPRED_CTRL0_NEW_PIC	BIT(2)
-> +	#define MPRED_CTRL0_NEW_TILE	BIT(3)
-> +	#define MPRED_CTRL0_NEW_SLI_SEG	BIT(4)
-> +	#define MPRED_CTRL0_TMVP	BIT(5)
-> +	#define MPRED_CTRL0_LDC		BIT(6)
-> +	#define MPRED_CTRL0_COL_FROM_L0	BIT(7)
-> +	#define MPRED_CTRL0_ABOVE_EN	BIT(9)
-> +	#define MPRED_CTRL0_MV_WR_EN	BIT(10)
-> +	#define MPRED_CTRL0_MV_RD_EN	BIT(11)
-> +	#define MPRED_CTRL0_BUF_LINEAR	BIT(13)
-> +#define HEVC_MPRED_CTRL1 0xc808
-> +#define HEVC_MPRED_INT_EN 0xc80c
-> +#define HEVC_MPRED_INT_STATUS 0xc810
-> +#define HEVC_MPRED_PIC_SIZE 0xc814
-> +#define HEVC_MPRED_PIC_SIZE_LCU 0xc818
-> +#define HEVC_MPRED_TILE_START 0xc81c
-> +#define HEVC_MPRED_TILE_SIZE_LCU 0xc820
-> +#define HEVC_MPRED_REF_NUM 0xc824
-> +#define HEVC_MPRED_REF_EN_L0 0xc830
-> +#define HEVC_MPRED_REF_EN_L1 0xc834
-> +#define HEVC_MPRED_COLREF_EN_L0 0xc838
-> +#define HEVC_MPRED_COLREF_EN_L1 0xc83c
-> +#define HEVC_MPRED_AXI_WCTRL 0xc840
-> +#define HEVC_MPRED_AXI_RCTRL 0xc844
-> +#define HEVC_MPRED_ABV_START_ADDR 0xc848
-> +#define HEVC_MPRED_MV_WR_START_ADDR 0xc84c
-> +#define HEVC_MPRED_MV_RD_START_ADDR 0xc850
-> +#define HEVC_MPRED_MV_WPTR 0xc854
-> +#define HEVC_MPRED_MV_RPTR 0xc858
-> +#define HEVC_MPRED_MV_WR_ROW_JUMP 0xc85c
-> +#define HEVC_MPRED_MV_RD_ROW_JUMP 0xc860
-> +#define HEVC_MPRED_CURR_LCU 0xc864
-> +#define HEVC_MPRED_ABV_WPTR 0xc868
-> +#define HEVC_MPRED_ABV_RPTR 0xc86c
-> +#define HEVC_MPRED_CTRL2 0xc870
-> +#define HEVC_MPRED_CTRL3 0xc874
-> +#define HEVC_MPRED_L0_REF00_POC 0xc880
-> +#define HEVC_MPRED_L1_REF00_POC 0xc8c0
-> +
-> +#define HEVC_MPRED_CUR_POC 0xc980
-> +#define HEVC_MPRED_COL_POC 0xc984
-> +#define HEVC_MPRED_MV_RD_END_ADDR 0xc988
-> +
-> +#define HEVC_MSP 0xcc00
-> +#define HEVC_MPSR 0xcc04
-> +#define HEVC_MCPU_INTR_MSK 0xcc10
-> +#define HEVC_MCPU_INTR_REQ 0xcc14
-> +#define HEVC_CPSR 0xcc84
-> +
-> +#define HEVC_IMEM_DMA_CTRL 0xcd00
-> +#define HEVC_IMEM_DMA_ADR 0xcd04
-> +#define HEVC_IMEM_DMA_COUNT 0xcd08
-> +
-> +#define HEVCD_IPP_TOP_CNTL 0xd000
-> +#define HEVCD_IPP_LINEBUFF_BASE 0xd024
-> +#define HEVCD_IPP_AXIIF_CONFIG 0xd02c
-> +
-> +#define HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR 0xd180
-> +#define HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR 0xd184
-> +#define HEVCD_MPP_ANC2AXI_TBL_DATA 0xd190
-> +
-> +#define HEVCD_MPP_ANC_CANVAS_ACCCONFIG_ADDR 0xd300
-> +#define HEVCD_MPP_ANC_CANVAS_DATA_ADDR 0xd304
-> +#define HEVCD_MPP_DECOMP_CTL1 0xd308
-> +#define HEVCD_MPP_DECOMP_CTL2 0xd30c
-> +#define HEVCD_MCRCC_CTL1 0xd3c0
-> +#define HEVCD_MCRCC_CTL2 0xd3c4
-> +#define HEVCD_MCRCC_CTL3 0xd3c8
-> +
-> +#define HEVC_DBLK_CFG0 0xd400
-> +#define HEVC_DBLK_CFG1 0xd404
-> +#define HEVC_DBLK_CFG2 0xd408
-> +#define HEVC_DBLK_CFG3 0xd40c
-> +#define HEVC_DBLK_CFG4 0xd410
-> +#define HEVC_DBLK_CFG5 0xd414
-> +#define HEVC_DBLK_CFG6 0xd418
-> +#define HEVC_DBLK_CFG7 0xd41c
-> +#define HEVC_DBLK_CFG8 0xd420
-> +#define HEVC_DBLK_CFG9 0xd424
-> +#define HEVC_DBLK_CFGA 0xd428
-> +#define HEVC_DBLK_STS0 0xd42c
-> +#define HEVC_DBLK_STS1 0xd430
-> +#define HEVC_DBLK_CFGE 0xd438
-> +
-> +#define HEVC_SAO_VERSION 0xd800
-> +#define HEVC_SAO_CTRL0 0xd804
-> +#define HEVC_SAO_CTRL1 0xd808
-> +#define HEVC_SAO_PIC_SIZE 0xd814
-> +#define HEVC_SAO_PIC_SIZE_LCU 0xd818
-> +#define HEVC_SAO_TILE_START 0xd81c
-> +#define HEVC_SAO_TILE_SIZE_LCU 0xd820
-> +#define HEVC_SAO_Y_START_ADDR 0xd82c
-> +#define HEVC_SAO_Y_LENGTH 0xd830
-> +#define HEVC_SAO_C_START_ADDR 0xd834
-> +#define HEVC_SAO_C_LENGTH 0xd838
-> +#define HEVC_SAO_Y_WPTR 0xd83c
-> +#define HEVC_SAO_C_WPTR 0xd840
-> +#define HEVC_SAO_ABV_START_ADDR 0xd844
-> +#define HEVC_SAO_VB_WR_START_ADDR 0xd848
-> +#define HEVC_SAO_VB_RD_START_ADDR 0xd84c
-> +#define HEVC_SAO_ABV_WPTR 0xd850
-> +#define HEVC_SAO_ABV_RPTR 0xd854
-> +#define HEVC_SAO_VB_WPTR 0xd858
-> +#define HEVC_SAO_VB_RPTR 0xd85c
-> +#define HEVC_SAO_CTRL2 0xd880
-> +#define HEVC_SAO_CTRL3 0xd884
-> +#define HEVC_SAO_CTRL4 0xd888
-> +#define HEVC_SAO_CTRL5 0xd88c
-> +#define HEVC_SAO_CTRL6 0xd890
-> +#define HEVC_SAO_CTRL7 0xd894
-> +#define HEVC_CM_BODY_START_ADDR 0xd898
-> +#define HEVC_CM_BODY_LENGTH 0xd89c
-> +#define HEVC_CM_HEADER_START_ADDR 0xd8a0
-> +#define HEVC_CM_HEADER_LENGTH 0xd8a4
-> +#define HEVC_CM_HEADER_OFFSET 0xd8ac
-> +#define HEVC_SAO_MMU_VH0_ADDR 0xd8e8
-> +#define HEVC_SAO_MMU_VH1_ADDR 0xd8ec
-> +
-> +#define HEVC_IQIT_CLK_RST_CTRL 0xdc00
-> +#define HEVC_IQIT_SCALELUT_WR_ADDR 0xdc08
-> +#define HEVC_IQIT_SCALELUT_RD_ADDR 0xdc0c
-> +#define HEVC_IQIT_SCALELUT_DATA 0xdc10
-> +
-> +#define HEVC_PSCALE_CTRL 0xe444
-> +
-> +#endif
-> diff --git a/drivers/staging/media/meson/vdec/vdec_hevc.c b/drivers/staging/media/meson/vdec/vdec_hevc.c
-> new file mode 100644
-> index 000000000000..af41215e106c
-> --- /dev/null
-> +++ b/drivers/staging/media/meson/vdec/vdec_hevc.c
-> @@ -0,0 +1,231 @@
-> +// SPDX-License-Identifier: GPL-2.0+
-> +/*
-> + * Copyright (C) 2018 Maxime Jourdan <maxi.jourdan@wanadoo.fr>
-> + *
-> + * VDEC_HEVC is a video decoding block that allows decoding of
-> + * HEVC, VP9
-> + */
-> +
-> +#include <linux/firmware.h>
-> +#include <linux/clk.h>
-> +
-> +#include "vdec_1.h"
-> +#include "vdec_helpers.h"
-> +#include "hevc_regs.h"
-> +#include "dos_regs.h"
-> +
-> +/* AO Registers */
-> +#define AO_RTI_GEN_PWR_SLEEP0	0xe8
-> +#define AO_RTI_GEN_PWR_ISO0	0xec
-> +	#define GEN_PWR_VDEC_HEVC (BIT(7) | BIT(6))
-> +	#define GEN_PWR_VDEC_HEVC_SM1 (BIT(2))
-> +
-> +#define MC_SIZE	(4096 * 4)
-> +
-> +static int vdec_hevc_load_firmware(struct amvdec_session *sess,
-> +				   const char *fwname)
-> +{
-> +	struct amvdec_core *core = sess->core;
-> +	struct device *dev = core->dev_dec;
-> +	const struct firmware *fw;
-> +	static void *mc_addr;
-> +	static dma_addr_t mc_addr_map;
-> +	int ret;
-> +	u32 i = 100;
-> +
-> +	ret = request_firmware(&fw, fwname, dev);
-> +	if (ret < 0)  {
-> +		dev_err(dev, "Unable to request firmware %s\n", fwname);
-> +		return ret;
-> +	}
-> +
-> +	if (fw->size < MC_SIZE) {
-> +		dev_err(dev, "Firmware size %zu is too small. Expected %u.\n",
-> +			fw->size, MC_SIZE);
-> +		ret = -EINVAL;
-> +		goto release_firmware;
-> +	}
-> +
-> +	mc_addr = dma_alloc_coherent(core->dev, MC_SIZE, &mc_addr_map,
-> +				     GFP_KERNEL);
-> +	if (!mc_addr) {
-> +		dev_err(dev, "Failed allocating memory for firmware loading\n");
-> +		ret = -ENOMEM;
-> +		goto release_firmware;
-> +	}
-> +
-> +	memcpy(mc_addr, fw->data, MC_SIZE);
-> +
-> +	amvdec_write_dos(core, HEVC_MPSR, 0);
-> +	amvdec_write_dos(core, HEVC_CPSR, 0);
-> +
-> +	amvdec_write_dos(core, HEVC_IMEM_DMA_ADR, mc_addr_map);
-> +	amvdec_write_dos(core, HEVC_IMEM_DMA_COUNT, MC_SIZE / 4);
-> +	amvdec_write_dos(core, HEVC_IMEM_DMA_CTRL, (0x8000 | (7 << 16)));
-> +
-> +	while (i && (readl(core->dos_base + HEVC_IMEM_DMA_CTRL) & 0x8000))
-> +		i--;
-> +
-> +	if (i == 0) {
-> +		dev_err(dev, "Firmware load fail (DMA hang?)\n");
-> +		ret = -ENODEV;
-> +	}
-> +
-> +	dma_free_coherent(core->dev, MC_SIZE, mc_addr, mc_addr_map);
-> +release_firmware:
-> +	release_firmware(fw);
-> +	return ret;
-> +}
-> +
-> +static void vdec_hevc_stbuf_init(struct amvdec_session *sess)
-> +{
-> +	struct amvdec_core *core = sess->core;
-> +
-> +	amvdec_write_dos(core, HEVC_STREAM_CONTROL,
-> +			 amvdec_read_dos(core, HEVC_STREAM_CONTROL) & ~1);
-> +	amvdec_write_dos(core, HEVC_STREAM_START_ADDR, sess->vififo_paddr);
-> +	amvdec_write_dos(core, HEVC_STREAM_END_ADDR,
-> +			 sess->vififo_paddr + sess->vififo_size);
-> +	amvdec_write_dos(core, HEVC_STREAM_RD_PTR, sess->vififo_paddr);
-> +	amvdec_write_dos(core, HEVC_STREAM_WR_PTR, sess->vififo_paddr);
-> +}
-> +
-> +/* VDEC_HEVC specific ESPARSER configuration */
-> +static void vdec_hevc_conf_esparser(struct amvdec_session *sess)
-> +{
-> +	struct amvdec_core *core = sess->core;
-> +
-> +	/* set vififo_vbuf_rp_sel=>vdec_hevc */
-> +	amvdec_write_dos(core, DOS_GEN_CTRL0, 3 << 1);
-> +	amvdec_write_dos(core, HEVC_STREAM_CONTROL,
-> +			 amvdec_read_dos(core, HEVC_STREAM_CONTROL) | BIT(3));
-> +	amvdec_write_dos(core, HEVC_STREAM_CONTROL,
-> +			 amvdec_read_dos(core, HEVC_STREAM_CONTROL) | 1);
-> +	amvdec_write_dos(core, HEVC_STREAM_FIFO_CTL,
-> +			 amvdec_read_dos(core, HEVC_STREAM_FIFO_CTL) | BIT(29));
-> +}
-> +
-> +static u32 vdec_hevc_vififo_level(struct amvdec_session *sess)
-> +{
-> +	return readl_relaxed(sess->core->dos_base + HEVC_STREAM_LEVEL);
-> +}
-> +
-> +static int vdec_hevc_stop(struct amvdec_session *sess)
-> +{
-> +	struct amvdec_core *core = sess->core;
-> +	struct amvdec_codec_ops *codec_ops = sess->fmt_out->codec_ops;
-> +
-> +	/* Disable interrupt */
-> +	amvdec_write_dos(core, HEVC_ASSIST_MBOX1_MASK, 0);
-> +	/* Disable firmware processor */
-> +	amvdec_write_dos(core, HEVC_MPSR, 0);
-> +
-> +	if (sess->priv)
-> +		codec_ops->stop(sess);
-> +
-> +	/* Enable VDEC_HEVC Isolation */
-> +	if (core->platform->revision == VDEC_REVISION_SM1)
-> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_ISO0,
-> +				   GEN_PWR_VDEC_HEVC_SM1,
-> +				   GEN_PWR_VDEC_HEVC_SM1);
-> +	else
-> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_ISO0,
-> +				   0xc00, 0xc00);
-> +
-> +	/* VDEC_HEVC Memories */
-> +	amvdec_write_dos(core, DOS_MEM_PD_HEVC, 0xffffffffUL);
-> +
-> +	if (core->platform->revision == VDEC_REVISION_SM1)
-> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
-> +				   GEN_PWR_VDEC_HEVC_SM1,
-> +				   GEN_PWR_VDEC_HEVC_SM1);
-> +	else
-> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
-> +				   GEN_PWR_VDEC_HEVC, GEN_PWR_VDEC_HEVC);
-> +
-> +	clk_disable_unprepare(core->vdec_hevc_clk);
-> +	if (core->platform->revision == VDEC_REVISION_G12A ||
-> +	    core->platform->revision == VDEC_REVISION_SM1)
-> +		clk_disable_unprepare(core->vdec_hevcf_clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static int vdec_hevc_start(struct amvdec_session *sess)
-> +{
-> +	int ret;
-> +	struct amvdec_core *core = sess->core;
-> +	struct amvdec_codec_ops *codec_ops = sess->fmt_out->codec_ops;
-> +
-> +	if (core->platform->revision == VDEC_REVISION_G12A ||
-> +	    core->platform->revision == VDEC_REVISION_SM1) {
-> +		clk_set_rate(core->vdec_hevcf_clk, 666666666);
-> +		ret = clk_prepare_enable(core->vdec_hevcf_clk);
-> +		if (ret)
-> +			return ret;
-> +	}
-> +
-> +	clk_set_rate(core->vdec_hevc_clk, 666666666);
-> +	ret = clk_prepare_enable(core->vdec_hevc_clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (core->platform->revision == VDEC_REVISION_SM1)
-> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
-> +				   GEN_PWR_VDEC_HEVC_SM1, 0);
-> +	else
-> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
-> +				   GEN_PWR_VDEC_HEVC, 0);
-> +	udelay(10);
-> +
-> +	/* Reset VDEC_HEVC*/
-> +	amvdec_write_dos(core, DOS_SW_RESET3, 0xffffffff);
-> +	amvdec_write_dos(core, DOS_SW_RESET3, 0x00000000);
-> +
-> +	amvdec_write_dos(core, DOS_GCLK_EN3, 0xffffffff);
-> +
-> +	/* VDEC_HEVC Memories */
-> +	amvdec_write_dos(core, DOS_MEM_PD_HEVC, 0x00000000);
-> +
-> +	/* Remove VDEC_HEVC Isolation */
-> +	if (core->platform->revision == VDEC_REVISION_SM1)
-> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_ISO0,
-> +				   GEN_PWR_VDEC_HEVC_SM1, 0);
-> +	else
-> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_ISO0,
-> +				   0xc00, 0);
-> +
-> +	amvdec_write_dos(core, DOS_SW_RESET3, 0xffffffff);
-> +	amvdec_write_dos(core, DOS_SW_RESET3, 0x00000000);
-> +
-> +	vdec_hevc_stbuf_init(sess);
-> +
-> +	ret = vdec_hevc_load_firmware(sess, sess->fmt_out->firmware_path);
-> +	if (ret)
-> +		goto stop;
-> +
-> +	ret = codec_ops->start(sess);
-> +	if (ret)
-> +		goto stop;
-> +
-> +	amvdec_write_dos(core, DOS_SW_RESET3, BIT(12) | BIT(11));
-> +	amvdec_write_dos(core, DOS_SW_RESET3, 0);
-> +	amvdec_read_dos(core, DOS_SW_RESET3);
-> +
-> +	amvdec_write_dos(core, HEVC_MPSR, 1);
-> +	/* Let the firmware settle */
-> +	udelay(10);
-> +
-> +	return 0;
-> +
-> +stop:
-> +	vdec_hevc_stop(sess);
-> +	return ret;
-> +}
-> +
-> +struct amvdec_ops vdec_hevc_ops = {
-> +	.start = vdec_hevc_start,
-> +	.stop = vdec_hevc_stop,
-> +	.conf_esparser = vdec_hevc_conf_esparser,
-> +	.vififo_level = vdec_hevc_vififo_level,
-> +};
-> diff --git a/drivers/staging/media/meson/vdec/vdec_hevc.h b/drivers/staging/media/meson/vdec/vdec_hevc.h
-> new file mode 100644
-> index 000000000000..cd576a73a966
-> --- /dev/null
-> +++ b/drivers/staging/media/meson/vdec/vdec_hevc.h
-> @@ -0,0 +1,13 @@
-> +/* SPDX-License-Identifier: GPL-2.0+ */
-> +/*
-> + * Copyright (C) 2018 Maxime Jourdan <maxi.jourdan@wanadoo.fr>
-> + */
-> +
-> +#ifndef __MESON_VDEC_VDEC_HEVC_H_
-> +#define __MESON_VDEC_VDEC_HEVC_H_
-> +
-> +#include "vdec.h"
-> +
-> +extern struct amvdec_ops vdec_hevc_ops;
-> +
-> +#endif
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCAxNCBGZWIgMjAyMCAxNDo0OToxOCArMDAwMApPbGl2aWVyIE1PWVNBTiA8b2xpdmll
+ci5tb3lzYW5Ac3QuY29tPiB3cm90ZToKCj4gSGkgSm9uYXRoYW4sCj4gCj4gT24gMi8xNC8yMCAy
+OjExIFBNLCBKb25hdGhhbiBDYW1lcm9uIHdyb3RlOgo+ID4gT24gVHVlLCAxMSBGZWIgMjAyMCAx
+NToxOTowMSArMDAwMAo+ID4gT2xpdmllciBNT1lTQU4gPG9saXZpZXIubW95c2FuQHN0LmNvbT4g
+d3JvdGU6Cj4gPiAgCj4gPj4gSGkgSm9uYXRoYW4sCj4gPj4KPiA+PiBPbiAyLzgvMjAgNToxOCBQ
+TSwgSm9uYXRoYW4gQ2FtZXJvbiB3cm90ZTogIAo+ID4+PiBPbiBUdWUsIDQgRmViIDIwMjAgMTE6
+MTA6MDggKzAxMDAKPiA+Pj4gT2xpdmllciBNb3lzYW4gPG9saXZpZXIubW95c2FuQHN0LmNvbT4g
+d3JvdGU6Cj4gPj4+ICAgICAKPiA+Pj4+IEFkZCBzY2FsZSBhbmQgb2Zmc2V0IGF0dHJpYnV0ZXMg
+c3VwcG9ydCB0byBTVE0zMiBERlNETS4KPiA+Pj4+Cj4gPj4+PiBTaWduZWQtb2ZmLWJ5OiBPbGl2
+aWVyIE1veXNhbiA8b2xpdmllci5tb3lzYW5Ac3QuY29tPiAgCj4gPj4+IEhtbS4gSSBjYW4ndCBy
+ZW1lbWJlciB0aGlzIGhpc3Rvcnkgb2YgdGhpcyBidXQgd2UndmUga2luZCBvZgo+ID4+PiBlbmRl
+ZCB1cCBiYWNrd2FyZHMgd3J0IHRvIG90aGVyIGNvbnN1bWVyIGRyaXZlcnMuCj4gPj4+Cj4gPj4+
+IEluIHNvbWUgc2Vuc2UgdGhpcyBpcyBzaW1pbGFyIHRvIHRoZSBhbmFsb2cgZ3lyb3Njb3Blcy4g
+IEluIHRob3NlCj4gPj4+IHRoZSBjb25zdW1lciBkcml2ZXIgaXMgdGhlIGd5cm9zY29wZSB3aGlj
+aCBpcyBjb25zdW1pbmcgdGhlIHJhdwo+ID4+PiByZWFkaW5ncyBmcm9tIGFuIEFEQyBjb25uZWN0
+ZWQgdG8gdGhlIGNoYW5uZWwuICBUaGlzIHJlc3VsdHMKPiA+Pj4gaW4gdXMgZ2V0dGluZyByZWFk
+aW5ncyByZXBvcnRlZCBieSB0aGUgZ3lyb3Njb3BlIGRyaXZlci4KPiA+Pj4KPiA+Pj4gSGVyZSB3
+ZSBoYXZlIGEgc2lnbWEgZGVsdGEgY29udmVydG9yIGNvbnN1bWluZyB0aGUgcHVsc2UgdHJhaW4K
+PiA+Pj4gZnJvbSBhIHNpZ21hIGRlbHRhIGRldmljZS4gIFNvIHRoZSBjaGFubmVscyBhcmUgcmVw
+b3J0ZWQgYnkKPiA+Pj4gdGhlIHNpZ21hIGRlbHRhIHJlY2VpdmVyLCB3aGVyZWFzIGkgdGhpbmsg
+dGhlIG5lYXJlc3QgZXF1aXZhbGVudAo+ID4+PiB0byB0aGUgYW5hbG9nIHZvbHRhZ2Ugb3V0cHV0
+aW5nIGd5cm9zY29wZXMgd291bGQgaGF2ZSBiZWVuIGlmCj4gPj4+IHdlIGhhZCByZXBvcnRlZCB0
+aGUgY2hhbm5lbCB2YWx1ZXMgYXQgdGhlIHNpZ21hIGRlbHRhIGNvbnZlcnRlci4gIAo+ID4+IFRo
+ZSBERlNETSBkcml2ZXIgaXMgY3VycmVudGx5IHVzZWQgYXMgYSBjb25zdW1lciBvZiB0aGUgc2Qg
+bW9kdWxhdG9yLgo+ID4+IFRoZSBzY2FsZSBhbmQgb2Zmc2V0IHZhbHVlcyBvZiB0aGUgY2hhbm5l
+bHMgYXJlIGFscmVhZHkgY29tcHV0ZWQgYnkKPiA+PiB0aGUgREZTRE0gZHJpdmVyLCBhbmQgcHJv
+dmlkZWQgYnkgdGhpcyBkcml2ZXIgdG8gdGhlIElJTyBBQkkuCj4gPj4gSG93ZXZlciwgdGhlIERG
+U0RNIGhhcyBubyB2b2x0YWdlIHJlZmVyZW5jZSwgc28gaXQgaGFzIHRvIHJldHJpZXZlCj4gPj4g
+aXQgZnJvbSBzZC1tb2R1bGF0b3IgY2hhbm5lbHMsIGZvciB0aGUgc2NhbGUgZmFjdG9yIGNvbXB1
+dGF0aW9uLgo+ID4+Cj4gPj4gICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHNjYWxlwqAgb2Zmc2V0Cj4gPj4gICDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoCBewqDCoMKgwqDCoCBeCj4gPj4gICDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8
+wqDCoMKgwqDCoCB8wqDCoMKgwqDCoMKgIElJTyBBQkkKPiA+PiArLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSsKPiA+PiAgIMKgwqDC
+oMKgwqDCoMKgwqAgKy0tLS0tLS0tLS0tLS0tLSvCoMKgwqDCoMKgwqDCoMKgwqAgKy0tLS0tLS0t
+LS0tLS0rCj4gPj4gICDCoMKgwqDCoMKgwqDCoMKgIHxzZCBkcml2ZXLCoMKgwqDCoMKgIHzCoMKg
+wqDCoMKgwqDCoMKgwqAgfERGU0RNIGRyaXZlciB8Cj4gPj4gICDCoMKgwqDCoMKgwqDCoMKgICst
+LS0tLS0tLS0tLS0tLS0rwqDCoMKgwqDCoMKgwqDCoMKgICstLS0tLS0tLS0tLS0tKwo+ID4+ICst
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tKwo+ID4+ICAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCBIVwo+ID4+ICAgwqDCoMKgwqDCoMKgwqDCoCArLS0tLS0tLS0tLS0tLS0tK8Kg
+wqDCoMKgwqDCoMKgwqDCoCArLS0tLS0tLS0tLS0tLSsKPiA+PiArLS0tLS0tLT4rIHNkLW1vZHVs
+YXRvcsKgICstLS0tLS0tLS0+KyBERlNETSArLS0tLS0tLS0+Cj4gPj4gYW5hbG9nwqDCoCArLS0t
+LS0tKy0tLS0tLS0tK8KgwqDCoMKgwqDCoMKgwqDCoCArLS0tLS0tLS0tLS0tLSsgb3V0cHV0Cj4g
+Pj4gaW5wdXTCoMKgwqDCoMKgwqDCoMKgwqDCoCBeCj4gPj4gICDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgwqAgfCB2cmVmCj4gPj4gICDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAg
+Kwo+ID4+Cj4gPj4KPiA+PiBJcyBpdCB0aGUgdG9wb2xvZ3kgeW91ciBhcmUgZXhwZWN0aW5nID8g
+IAo+ID4gSXQncyBub3QgdGhlIG9uZSB3ZSdkIGV4cGVjdCBpZiB3ZSBhcmUgYWxpZ25pbmcgd2l0
+aCBzaW1pbGFyIGNhc2VzCj4gPiBlbHNld2hlcmUgaW4gSUlPLiAgRm9yIGV4YW1wbGUsIGlmIHdl
+IGF0dGFjaCBhbiBhbmFsb2cgYWNjZWxlcm9tZXRlcgo+ID4gdG8gYW4gQURDLCB3ZSByZXBvcnQg
+dGhlIGFjY2VsIGNoYW5uZWxzIG9uIHRoZSBhY2NlbGVyb21ldGVyIG5vdCB0aGUKPiA+IEFEQy4g
+IFRoZSBlcXVpdmFsZW50IHdvdWxkIGJlIHRvIHNlZSB0aGUgREZTRE0gYXMgcHJvdmlkaW5nIGEK
+PiA+IGNvbnZlcnNpb24gc2VydmljZSB0byB0aGUgU0QgZGV2aWNlIHdoaWNoIGlzIGFjdHVhbGx5
+IGV4ZWN1dGluZwo+ID4gdGhlIG1lYXN1cmVtZW50IGFuZCBoYXMgdGhlIGlucHV0IGNoYW5uZWxz
+Lgo+ID4KPiA+Cj4gPiAgwqDCoMKgwqDCoMKgwqDCoCBzY2FsZcKgIG9mZnNldCAgcmF3Cj4gPiAg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgXsKgwqDCoMKgwqAgXiAgICAgIF4KPiA+ICDCoMKgwqDCoMKg
+wqDCoMKgwqDCoCB8wqDCoMKgwqDCoCB8wqDCoMKgwqAgIHwgIMKgwqAgICAgICAgICAgICAgICAg
+ICAgICAgICAgIElJTyBBQkkKPiA+ICAgKy0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rCj4gPiAgICDCoMKgwqDCoMKgwqDCoMKgICst
+LS0tLS0tLS0tLS0tLS0rwqDCoMKgwqDCoMKgwqDCoMKgICstLS0tLS0tLS0tLS0tKwo+ID4gICAg
+wqDCoMKgwqDCoMKgwqDCoCB8c2QgZHJpdmVywqDCoMKgwqDCoCB8wqDCoMKgwqDCoMKgwqDCoMKg
+IHxERlNETSBkcml2ZXIgfAo+ID4gICAgwqDCoMKgwqDCoMKgwqDCoCArLS0tLS0tLS0tLS0tLS0t
+K8KgwqDCoMKgwqDCoMKgwqDCoCArLS0tLS0tLS0tLS0tLSsKPiA+ICAgKy0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rCj4gPiAgICDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIEhX
+Cj4gPiAgICDCoMKgwqDCoMKgwqDCoMKgICstLS0tLS0tLS0tLS0tLS0rwqDCoMKgwqDCoMKgwqDC
+oMKgICstLS0tLS0tLS0tLS0tKwo+ID4gICArLS0tLS0tLT4rIHNkLW1vZHVsYXRvcsKgICstLS0t
+LS0tLS0+KyBERlNETSArLS0tLS0tLS0+Cj4gPiAgIGFuYWxvZ8KgwqAgKy0tLS0tLSstLS0tLS0t
+LSvCoMKgwqDCoMKgwqDCoMKgwqAgKy0tLS0tLS0tLS0tLS0rIG91dHB1dAo+ID4gICBpbnB1dMKg
+wqDCoMKgwqDCoMKgwqDCoMKgIF4KPiA+ICAgIMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oCB8IHZyZWYgIAo+ID4+ICAgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICsKPiA+PiAg
+Cj4gVGhhbmtzIGZvciB5b3VyIGNsYXJpZmljYXRpb24uCj4gb2ssIG1vdmluZyB0byB0aGlzIGxv
+Z2ljIGlzIGEgc2lnbmlmaWNhbnQgY2hhbmdlLgo+IEkgbmVlZCB0byBldmFsdWF0ZSBmdXJ0aGVy
+IHRoZSBpbXBhY3Qgb24gdGhlIGRmc2RtIGRyaXZlci4KClVuZGVyc3Rvb2QhICBJZiB3ZSBjYW4n
+dCBkbyBpdCB3aXRob3V0IHBvdGVudGlhbGx5IGJyZWFraW5nIHVzZXJzIHRoZW4Kc3VjaCBpcyBs
+aWZlLgoKSm9uYXRoYW4KCj4gCj4gUmVnYXJkcwo+IE9saXZpZXIKPiA+PiBJZiBub3QsIEkgcHJv
+YmFibHkgbWlzc2Vkc29tZXRoaW5nLiBDb3VsZCB5b3UgcGxlYXNlIGNsYXJpZnkgdGhpcyBwb2lu
+dCA/Cj4gPj4KPiA+PiBSZWdhcmRzCj4gPj4gT2xpdmllciAgCj4gPj4+IFRoaXMgd2Fzbid0IHJl
+YWxseSBhbiBpc3N1ZSB3aGVuIHRoZSBvbmx5IHZhbHVlcyBhdmFpbGFibGUgd2VyZQo+ID4+PiBy
+YXcsIGJ1dCBpZiB3ZSBhcmUgYWRkaW5nIHNjYWxlIGFuZCBvZmZzZXQsIHRoZXkgYXJlIHRoaW5n
+cyB0aGF0Cj4gPj4+IGJlbG9uZyB0byB0aGUgYWQxMjAxIGZvciBleGFtcGxlLCBub3QgdGhlIHVw
+c3RyZWFtIHN0bTMyLWRmc2RtIHVuaXQuCj4gPj4+Cj4gPj4+IFRoaW5raW5nIG9mIGl0IGFub3Ro
+ZXIgd2F5LCB3ZSBkb24ndCByZXBvcnQgYW4gU1BJIEFEQyBvdXRwdXQgaW4KPiA+Pj4gdGhlIGRy
+aXZlciBmb3IgdGhlIFNQSSBtYXN0ZXIuCj4gPj4+Cj4gPj4+IENvdWxkIHdlIGZsaXAgaXQgYXJv
+dW5kIHdpdGhvdXQgYnJlYWtpbmcgYW55dGhpbmc/Cj4gPj4+Cj4gPj4+IEpvbmF0aGFuCj4gPj4+
+ICAgICAKPiA+Pj4+IC0tLQo+ID4+Pj4gICAgZHJpdmVycy9paW8vYWRjL3N0bTMyLWRmc2RtLWFk
+Yy5jIHwgMTA1ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrLQo+ID4+Pj4gICAgMSBmaWxl
+IGNoYW5nZWQsIDEwMiBpbnNlcnRpb25zKCspLCAzIGRlbGV0aW9ucygtKQo+ID4+Pj4KPiA+Pj4+
+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2lpby9hZGMvc3RtMzItZGZzZG0tYWRjLmMgYi9kcml2ZXJz
+L2lpby9hZGMvc3RtMzItZGZzZG0tYWRjLmMKPiA+Pj4+IGluZGV4IDA3YjlkZmRmOGU3Ni4uYjg1
+ZmQzZTkwNDk2IDEwMDY0NAo+ID4+Pj4gLS0tIGEvZHJpdmVycy9paW8vYWRjL3N0bTMyLWRmc2Rt
+LWFkYy5jCj4gPj4+PiArKysgYi9kcml2ZXJzL2lpby9hZGMvc3RtMzItZGZzZG0tYWRjLmMKPiA+
+Pj4+IEBAIC0xMCw2ICsxMCw3IEBACj4gPj4+PiAgICAjaW5jbHVkZSA8bGludXgvZG1hLW1hcHBp
+bmcuaD4KPiA+Pj4+ICAgICNpbmNsdWRlIDxsaW51eC9paW8vYWRjL3N0bTMyLWRmc2RtLWFkYy5o
+Pgo+ID4+Pj4gICAgI2luY2x1ZGUgPGxpbnV4L2lpby9idWZmZXIuaD4KPiA+Pj4+ICsjaW5jbHVk
+ZSA8bGludXgvaWlvL2NvbnN1bWVyLmg+Cj4gPj4+PiAgICAjaW5jbHVkZSA8bGludXgvaWlvL2h3
+LWNvbnN1bWVyLmg+Cj4gPj4+PiAgICAjaW5jbHVkZSA8bGludXgvaWlvL3N5c2ZzLmg+Cj4gPj4+
+PiAgICAjaW5jbHVkZSA8bGludXgvaWlvL3RpbWVyL3N0bTMyLWxwdGltLXRyaWdnZXIuaD4KPiA+
+Pj4+IEBAIC02Nyw2ICs2OCwxMyBAQCBzdHJ1Y3Qgc3RtMzJfZGZzZG1fZGV2X2RhdGEgewo+ID4+
+Pj4gICAgCWNvbnN0IHN0cnVjdCByZWdtYXBfY29uZmlnICpyZWdtYXBfY2ZnOwo+ID4+Pj4gICAg
+fTsKPiA+Pj4+ICAgIAo+ID4+Pj4gK3N0cnVjdCBzdG0zMl9kZnNkbV9zZF9jaGFuX2luZm8gewo+
+ID4+Pj4gKwlpbnQgc2NhbGVfdmFsOwo+ID4+Pj4gKwlpbnQgc2NhbGVfdmFsMjsKPiA+Pj4+ICsJ
+aW50IG9mZnNldDsKPiA+Pj4+ICsJdW5zaWduZWQgaW50IGRpZmZlcmVudGlhbDsKPiA+Pj4+ICt9
+Owo+ID4+Pj4gKwo+ID4+Pj4gICAgc3RydWN0IHN0bTMyX2Rmc2RtX2FkYyB7Cj4gPj4+PiAgICAJ
+c3RydWN0IHN0bTMyX2Rmc2RtICpkZnNkbTsKPiA+Pj4+ICAgIAljb25zdCBzdHJ1Y3Qgc3RtMzJf
+ZGZzZG1fZGV2X2RhdGEgKmRldl9kYXRhOwo+ID4+Pj4gQEAgLTc5LDYgKzg3LDcgQEAgc3RydWN0
+IHN0bTMyX2Rmc2RtX2FkYyB7Cj4gPj4+PiAgICAJc3RydWN0IGlpb19od19jb25zdW1lciAqaHdj
+Owo+ID4+Pj4gICAgCXN0cnVjdCBjb21wbGV0aW9uIGNvbXBsZXRpb247Cj4gPj4+PiAgICAJdTMy
+ICpidWZmZXI7Cj4gPj4+PiArCXN0cnVjdCBzdG0zMl9kZnNkbV9zZF9jaGFuX2luZm8gKnNkX2No
+YW47Cj4gPj4+PiAgICAKPiA+Pj4+ICAgIAkvKiBBdWRpbyBzcGVjaWZpYyAqLwo+ID4+Pj4gICAg
+CXVuc2lnbmVkIGludCBzcGlfZnJlcTsgIC8qIFNQSSBidXMgY2xvY2sgZnJlcXVlbmN5ICovCj4g
+Pj4+PiBAQCAtMTI3MSw3ICsxMjgwLDEwIEBAIHN0YXRpYyBpbnQgc3RtMzJfZGZzZG1fcmVhZF9y
+YXcoc3RydWN0IGlpb19kZXYgKmluZGlvX2RldiwKPiA+Pj4+ICAgIAkJCQlpbnQgKnZhbDIsIGxv
+bmcgbWFzaykKPiA+Pj4+ICAgIHsKPiA+Pj4+ICAgIAlzdHJ1Y3Qgc3RtMzJfZGZzZG1fYWRjICph
+ZGMgPSBpaW9fcHJpdihpbmRpb19kZXYpOwo+ID4+Pj4gLQlpbnQgcmV0Owo+ID4+Pj4gKwlzdHJ1
+Y3Qgc3RtMzJfZGZzZG1fZmlsdGVyICpmbCA9ICZhZGMtPmRmc2RtLT5mbF9saXN0W2FkYy0+Zmxf
+aWRdOwo+ID4+Pj4gKwlzdHJ1Y3Qgc3RtMzJfZGZzZG1fZmlsdGVyX29zciAqZmxvID0gJmZsLT5m
+bG9bZmwtPmZhc3RdOwo+ID4+Pj4gKwl1MzIgbWF4ID0gZmxvLT5tYXggPDwgKGZsby0+bHNoaWZ0
+IC0gY2hhbi0+c2Nhbl90eXBlLnNoaWZ0KTsKPiA+Pj4+ICsJaW50IHJldCwgaWR4ID0gY2hhbi0+
+c2Nhbl9pbmRleDsKPiA+Pj4+ICAgIAo+ID4+Pj4gICAgCXN3aXRjaCAobWFzaykgewo+ID4+Pj4g
+ICAgCWNhc2UgSUlPX0NIQU5fSU5GT19SQVc6Cj4gPj4+PiBAQCAtMTMwNyw2ICsxMzE5LDQxIEBA
+IHN0YXRpYyBpbnQgc3RtMzJfZGZzZG1fcmVhZF9yYXcoc3RydWN0IGlpb19kZXYgKmluZGlvX2Rl
+diwKPiA+Pj4+ICAgIAkJKnZhbCA9IGFkYy0+c2FtcGxlX2ZyZXE7Cj4gPj4+PiAgICAKPiA+Pj4+
+ICAgIAkJcmV0dXJuIElJT19WQUxfSU5UOwo+ID4+Pj4gKwo+ID4+Pj4gKwljYXNlIElJT19DSEFO
+X0lORk9fU0NBTEU6Cj4gPj4+PiArCQkvKgo+ID4+Pj4gKwkJICogU2NhbGUgaXMgZXhwcmVzc2Vk
+IGluIG1WLgo+ID4+Pj4gKwkJICogV2hlbiBmYXN0IG1vZGUgaXMgZGlzYWJsZWQsIGFjdHVhbCBy
+ZXNvbHV0aW9uIG1heSBiZSBsb3dlcgo+ID4+Pj4gKwkJICogdGhhbiAyXm4sIHdoZXJlIG49cmVh
+bGJpdHMtMS4KPiA+Pj4+ICsJCSAqIFRoaXMgbGVhZHMgdG8gdW5kZXJlc3RpbWF0aW5nIGlucHV0
+IHZvbHRhZ2UuIFRvCj4gPj4+PiArCQkgKiBjb21wZW5zYXRlIHRoaXMgZGV2aWF0aW9uLCB0aGUg
+dm9sdGFnZSByZWZlcmVuY2UgY2FuIGJlCj4gPj4+PiArCQkgKiBjb3JyZWN0ZWQgd2l0aCBhIGZh
+Y3RvciA9IHJlYWxiaXRzIHJlc29sdXRpb24gLyBhY3R1YWwgbWF4Cj4gPj4+PiArCQkgKi8KPiA+
+Pj4+ICsJCSp2YWwgPSBkaXZfdTY0KCh1NjQpYWRjLT5zZF9jaGFuW2lkeF0uc2NhbGVfdmFsICoK
+PiA+Pj4+ICsJCQkgICAgICAgKHU2NClCSVQoREZTRE1fREFUQV9SRVMgLSAxKSwgbWF4KTsKPiA+
+Pj4+ICsJCSp2YWwyID0gY2hhbi0+c2Nhbl90eXBlLnJlYWxiaXRzOwo+ID4+Pj4gKwkJaWYgKGFk
+Yy0+c2RfY2hhbltpZHhdLmRpZmZlcmVudGlhbCkKPiA+Pj4+ICsJCQkqdmFsICo9IDI7Cj4gPj4+
+PiArCj4gPj4+PiArCQlyZXR1cm4gSUlPX1ZBTF9GUkFDVElPTkFMX0xPRzI7Cj4gPj4+PiArCj4g
+Pj4+PiArCWNhc2UgSUlPX0NIQU5fSU5GT19PRkZTRVQ6Cj4gPj4+PiArCQkvKgo+ID4+Pj4gKwkJ
+ICogREZTRE0gb3V0cHV0IGRhdGEgYXJlIGluIHRoZSByYW5nZSBbLTJebiwyXm4tMV0sCj4gPj4+
+PiArCQkgKiB3aXRoIG49cmVhbGJpdHMtMS4KPiA+Pj4+ICsJCSAqIC0gRGlmZmVyZW50aWFsIG1v
+ZHVsYXRvcjoKPiA+Pj4+ICsJCSAqIE9mZnNldCBjb3JyZXNwb25kIHRvIFNEIG1vZHVsYXRvciBv
+ZmZzZXQuCj4gPj4+PiArCQkgKiAtIFNpbmdsZSBlbmRlZCBtb2R1bGF0b3I6Cj4gPj4+PiArCQkg
+KiBJbnB1dCBpcyBpbiBbMFYsVnJlZl0gcmFuZ2UsIHdoZXJlIDBWIGNvcnJlc3BvbmRzIHRvIC0y
+Xm4uCj4gPj4+PiArCQkgKiBBZGQgMl5uIHRvIG9mZnNldC4gKGkuZS4gbWlkZGxlIG9mIGlucHV0
+IHJhbmdlKQo+ID4+Pj4gKwkJICogb2Zmc2V0ID0gb2Zmc2V0KHNkKSAqIHZyZWYgLyByZXMoc2Qp
+ICogbWF4IC8gdnJlZi4KPiA+Pj4+ICsJCSAqLwo+ID4+Pj4gKwkJKnZhbCA9IGRpdl91NjQoKHU2
+NCltYXggKiBhZGMtPnNkX2NoYW5baWR4XS5vZmZzZXQsCj4gPj4+PiArCQkJICAgICAgIEJJVChh
+ZGMtPnNkX2NoYW5baWR4XS5zY2FsZV92YWwyIC0gMSkpOwo+ID4+Pj4gKwkJaWYgKCFhZGMtPnNk
+X2NoYW5baWR4XS5kaWZmZXJlbnRpYWwpCj4gPj4+PiArCQkJKnZhbCArPSBtYXg7Cj4gPj4+PiAr
+Cj4gPj4+PiArCQlyZXR1cm4gSUlPX1ZBTF9JTlQ7Cj4gPj4+PiAgICAJfQo+ID4+Pj4gICAgCj4g
+Pj4+PiAgICAJcmV0dXJuIC1FSU5WQUw7Cj4gPj4+PiBAQCAtMTQzMCw3ICsxNDc3LDkgQEAgc3Rh
+dGljIGludCBzdG0zMl9kZnNkbV9hZGNfY2hhbl9pbml0X29uZShzdHJ1Y3QgaWlvX2RldiAqaW5k
+aW9fZGV2LAo+ID4+Pj4gICAgCSAqIElJT19DSEFOX0lORk9fUkFXOiB1c2VkIHRvIGNvbXB1dGUg
+cmVndWxhciBjb252ZXJzaW9uCj4gPj4+PiAgICAJICogSUlPX0NIQU5fSU5GT19PVkVSU0FNUExJ
+TkdfUkFUSU86IHVzZWQgdG8gc2V0IG92ZXJzYW1wbGluZwo+ID4+Pj4gICAgCSAqLwo+ID4+Pj4g
+LQljaC0+aW5mb19tYXNrX3NlcGFyYXRlID0gQklUKElJT19DSEFOX0lORk9fUkFXKTsKPiA+Pj4+
+ICsJY2gtPmluZm9fbWFza19zZXBhcmF0ZSA9IEJJVChJSU9fQ0hBTl9JTkZPX1JBVykgfAo+ID4+
+Pj4gKwkJCQkgQklUKElJT19DSEFOX0lORk9fU0NBTEUpIHwKPiA+Pj4+ICsJCQkJIEJJVChJSU9f
+Q0hBTl9JTkZPX09GRlNFVCk7Cj4gPj4+PiAgICAJY2gtPmluZm9fbWFza19zaGFyZWRfYnlfYWxs
+ID0gQklUKElJT19DSEFOX0lORk9fT1ZFUlNBTVBMSU5HX1JBVElPKSB8Cj4gPj4+PiAgICAJCQkJ
+CUJJVChJSU9fQ0hBTl9JTkZPX1NBTVBfRlJFUSk7Cj4gPj4+PiAgICAKPiA+Pj4+IEBAIC0xNDgx
+LDggKzE1MzAsMTAgQEAgc3RhdGljIGludCBzdG0zMl9kZnNkbV9hZGNfaW5pdChzdHJ1Y3QgaWlv
+X2RldiAqaW5kaW9fZGV2KQo+ID4+Pj4gICAgewo+ID4+Pj4gICAgCXN0cnVjdCBpaW9fY2hhbl9z
+cGVjICpjaDsKPiA+Pj4+ICAgIAlzdHJ1Y3Qgc3RtMzJfZGZzZG1fYWRjICphZGMgPSBpaW9fcHJp
+dihpbmRpb19kZXYpOwo+ID4+Pj4gKwlzdHJ1Y3QgaWlvX2NoYW5uZWwgKmNoYW5uZWxzLCAqY2hh
+bjsKPiA+Pj4+ICsJc3RydWN0IHN0bTMyX2Rmc2RtX3NkX2NoYW5faW5mbyAqc2RfY2hhbjsKPiA+
+Pj4+ICAgIAlpbnQgbnVtX2NoOwo+ID4+Pj4gLQlpbnQgcmV0LCBjaGFuX2lkeDsKPiA+Pj4+ICsJ
+aW50IHJldCwgY2hhbl9pZHgsIHZhbDI7Cj4gPj4+PiAgICAKPiA+Pj4+ICAgIAlhZGMtPm92ZXJz
+YW1wID0gREZTRE1fREVGQVVMVF9PVkVSU0FNUExJTkc7Cj4gPj4+PiAgICAJcmV0ID0gc3RtMzJf
+ZGZzZG1fY29tcHV0ZV9hbGxfb3NycyhpbmRpb19kZXYsIGFkYy0+b3ZlcnNhbXApOwo+ID4+Pj4g
+QEAgLTE1MDYsNiArMTU1NywyMiBAQCBzdGF0aWMgaW50IHN0bTMyX2Rmc2RtX2FkY19pbml0KHN0
+cnVjdCBpaW9fZGV2ICppbmRpb19kZXYpCj4gPj4+PiAgICAJaWYgKCFjaCkKPiA+Pj4+ICAgIAkJ
+cmV0dXJuIC1FTk9NRU07Cj4gPj4+PiAgICAKPiA+Pj4+ICsJLyogR2V0IFNEIG1vZHVsYXRvciBj
+aGFubmVscyAqLwo+ID4+Pj4gKwljaGFubmVscyA9IGlpb19jaGFubmVsX2dldF9hbGwoJmluZGlv
+X2Rldi0+ZGV2KTsKPiA+Pj4+ICsJaWYgKElTX0VSUihjaGFubmVscykpIHsKPiA+Pj4+ICsJCWRl
+dl9lcnIoJmluZGlvX2Rldi0+ZGV2LCAiRmFpbGVkIHRvIGdldCBjaGFubmVsICVsZFxuIiwKPiA+
+Pj4+ICsJCQlQVFJfRVJSKGNoYW5uZWxzKSk7Cj4gPj4+PiArCQlyZXR1cm4gUFRSX0VSUihjaGFu
+bmVscyk7Cj4gPj4+PiArCX0KPiA+Pj4+ICsJY2hhbiA9ICZjaGFubmVsc1swXTsKPiA+Pj4+ICsK
+PiA+Pj4+ICsJYWRjLT5zZF9jaGFuID0gZGV2bV9remFsbG9jKCZpbmRpb19kZXYtPmRldiwKPiA+
+Pj4+ICsJCQkJICAgIHNpemVvZigqYWRjLT5zZF9jaGFuKSAqIG51bV9jaCwgR0ZQX0tFUk5FTCk7
+Cj4gPj4+PiArCWlmICghYWRjLT5zZF9jaGFuKQo+ID4+Pj4gKwkJcmV0dXJuIC1FTk9NRU07Cj4g
+Pj4+PiArCj4gPj4+PiArCXNkX2NoYW4gPSBhZGMtPnNkX2NoYW47Cj4gPj4+PiArCj4gPj4+PiAg
+ICAJZm9yIChjaGFuX2lkeCA9IDA7IGNoYW5faWR4IDwgbnVtX2NoOyBjaGFuX2lkeCsrKSB7Cj4g
+Pj4+PiAgICAJCWNoW2NoYW5faWR4XS5zY2FuX2luZGV4ID0gY2hhbl9pZHg7Cj4gPj4+PiAgICAJ
+CXJldCA9IHN0bTMyX2Rmc2RtX2FkY19jaGFuX2luaXRfb25lKGluZGlvX2RldiwgJmNoW2NoYW5f
+aWR4XSk7Cj4gPj4+PiBAQCAtMTUxMyw2ICsxNTgwLDM4IEBAIHN0YXRpYyBpbnQgc3RtMzJfZGZz
+ZG1fYWRjX2luaXQoc3RydWN0IGlpb19kZXYgKmluZGlvX2RldikKPiA+Pj4+ICAgIAkJCWRldl9l
+cnIoJmluZGlvX2Rldi0+ZGV2LCAiQ2hhbm5lbHMgaW5pdCBmYWlsZWRcbiIpOwo+ID4+Pj4gICAg
+CQkJcmV0dXJuIHJldDsKPiA+Pj4+ICAgIAkJfQo+ID4+Pj4gKwo+ID4+Pj4gKwkJaWYgKCFjaGFu
+LT5pbmRpb19kZXYpCj4gPj4+PiArCQkJcmV0dXJuIC1FSU5WQUw7Cj4gPj4+PiArCj4gPj4+PiAr
+CQlyZXQgPSBpaW9fcmVhZF9jaGFubmVsX3NjYWxlKGNoYW4sICZzZF9jaGFuLT5zY2FsZV92YWws
+Cj4gPj4+PiArCQkJCQkgICAgICZzZF9jaGFuLT5zY2FsZV92YWwyKTsKPiA+Pj4+ICsJCWlmIChy
+ZXQgPCAwKSB7Cj4gPj4+PiArCQkJZGV2X2VycigmaW5kaW9fZGV2LT5kZXYsCj4gPj4+PiArCQkJ
+CSJGYWlsZWQgdG8gZ2V0IGNoYW5uZWwgJWQgc2NhbGVcbiIsIGNoYW5faWR4KTsKPiA+Pj4+ICsJ
+CQlyZXR1cm4gcmV0Owo+ID4+Pj4gKwkJfQo+ID4+Pj4gKwo+ID4+Pj4gKwkJaWYgKGlpb19jaGFu
+bmVsX2hhc19pbmZvKGNoYW4tPmNoYW5uZWwsIElJT19DSEFOX0lORk9fT0ZGU0VUKSkgewo+ID4+
+Pj4gKwkJCXJldCA9IGlpb19yZWFkX2NoYW5uZWxfb2Zmc2V0KGNoYW4sICZzZF9jaGFuLT5vZmZz
+ZXQsCj4gPj4+PiArCQkJCQkJICAgICAgJnZhbDIpOwo+ID4+Pj4gKwkJCWlmIChyZXQgPCAwKSB7
+Cj4gPj4+PiArCQkJCWRldl9lcnIoJmluZGlvX2Rldi0+ZGV2LAo+ID4+Pj4gKwkJCQkJIkZhaWxl
+ZCB0byBnZXQgY2hhbm5lbCAlZCBvZmZzZXRcbiIsCj4gPj4+PiArCQkJCQljaGFuX2lkeCk7Cj4g
+Pj4+PiArCQkJCXJldHVybiByZXQ7Cj4gPj4+PiArCQkJfQo+ID4+Pj4gKwkJfQo+ID4+Pj4gKwo+
+ID4+Pj4gKwkJc2RfY2hhbi0+ZGlmZmVyZW50aWFsID0gY2hhbi0+Y2hhbm5lbC0+ZGlmZmVyZW50
+aWFsOwo+ID4+Pj4gKwo+ID4+Pj4gKwkJZGV2X2RiZygmaW5kaW9fZGV2LT5kZXYsICJDaGFubmVs
+ICVkICVzIHNjYWxlIHJlZj0lZCBvZmZzZXQ9JWQiLAo+ID4+Pj4gKwkJCWNoYW5faWR4LCBjaGFu
+LT5jaGFubmVsLT5kaWZmZXJlbnRpYWwgPwo+ID4+Pj4gKwkJCSJkaWZmZXJlbnRpYWwiIDogInNp
+bmdsZS1lbmRlZCIsCj4gPj4+PiArCQkJc2RfY2hhbi0+c2NhbGVfdmFsLCBzZF9jaGFuLT5vZmZz
+ZXQpOwo+ID4+Pj4gKwo+ID4+Pj4gKwkJY2hhbisrOwo+ID4+Pj4gKwkJc2RfY2hhbisrOwo+ID4+
+Pj4gICAgCX0KPiA+Pj4+ICAgIAo+ID4+Pj4gICAgCWluZGlvX2Rldi0+bnVtX2NoYW5uZWxzID0g
+bnVtX2NoOyAgCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
