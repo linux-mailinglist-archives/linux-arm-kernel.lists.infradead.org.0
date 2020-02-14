@@ -2,59 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FF1215F29E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 19:19:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6DBD15F502
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 19:32:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GFOHC/UsaEZlZRpgzdq4zOxlo7jLRbnTZmOfVMERVQw=; b=oKHgK0QypPKzTpqdn+ayAGHvy
-	r609EwpGL1bo1b+rGoTWr86/eH3Z9PEfFONGXkHejpuZElLQ1jztTOw4InRwSLfKOm4kXBPZEQ/IE
-	jckbL+2o/wTTJi0w3r/WCDTFsvWr7gUij6F9Tex06/P6KOYx6YrHnBj9QzLM5yeoT8UVW/YtuINr9
-	+asFyDc3WPVGEfs9IIkXrBs6vkX4EhLw7qBcy4xig2UDvWzHWUMHJ3UXSFHot9B9SUCUMc5r08a/h
-	mq+SfmB0TLGSnYk/QdBsx2ztlQ5ByXSZuSgHTUy9NENGlorH8ZvRvPVRGPiBMWWufeT/xEu30ouRA
-	SY6WhrNrA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/Wn+HeUA5Iu2hLlWNRLL8Ta+nPsYq3e1k0r8arGhEoI=; b=OCYmiog4u2UNTG
+	Vg+et/rRxIWXECUcLlAFTKQf/Jmw3FtYtXHilah2VUy8lf1rp6zEWzls1olgwmKEoubG0iNPjbBlG
+	Ih/XFyTUmhcRewRgwoojyu1W655fKJwWvIkFOUTGlt81Kr0Y04V8skY5IkvkfoDUSAdfxwHZjut/S
+	QiBVLB8IX+JHoj1kwHKFK0jD4Ih1rs3AccBeUFtICHar2HI48DSr8Kc0gqRdZzR8JBmcvCpYFrTYS
+	/qEwQt8zI3bUmvrLu1mFdf5Qo4icbRzqRlsI88vxkVXMxUMLp/xe/B+1cXL15Q3Sb3MPk5sFAD1QY
+	5HrgqBT5xfw1V5807mNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2fYD-0003Cj-UW; Fri, 14 Feb 2020 18:18:54 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2fY5-0003Bx-6A
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 18:18:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 67607328;
- Fri, 14 Feb 2020 10:18:44 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 731B43F68E;
- Fri, 14 Feb 2020 10:18:43 -0800 (PST)
-Subject: Re: [PATCH 1/2] arm64: dts: allwinner: h5: Fix PMU compatible
-To: Andre Przywara <andre.przywara@arm.com>, Maxime Ripard
- <maxime@cerno.tech>, Mark Rutland <Mark.Rutland@arm.com>,
- Rob Herring <robh@kernel.org>
-References: <20200210095600.77894-1-maxime@cerno.tech>
- <20200214180404.24d67f86@donnerap.cambridge.arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <8e9f3a0e-d803-77bf-8f0f-04a7f4a00687@arm.com>
-Date: Fri, 14 Feb 2020 18:18:41 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j2fla-00029W-JL; Fri, 14 Feb 2020 18:32:42 +0000
+Received: from mail.z3ntu.xyz ([128.199.32.197])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2flF-0001yA-6B
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 18:32:22 +0000
+Received: from localhost.localdomain (80-110-126-226.cgn.dynamic.surfer.at
+ [80.110.126.226])
+ by mail.z3ntu.xyz (Postfix) with ESMTPSA id 9C714C1FE9;
+ Fri, 14 Feb 2020 18:32:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=z3ntu.xyz; s=z3ntu;
+ t=1581705136; bh=UiqpIIbkbNmB5wRq46BoxgcEeQU9um7uzDZLMQ7F7a4=;
+ h=From:To:Cc:Subject:Date;
+ b=Bnc5+8xdmKl4YtiCnfMs/5Gt8uj7Tg4pt2PA2oqWACud5uinye6f0EPHY8nhWcdAM
+ jIwOdXpLTHLYXPhIP3BQ1Np1XyNWoh8UfTjdAdn01vdzWRd7oMQtrxsnB/WT924LzH
+ w4thPaHAcOazAB2wOPn87XmNWAFNbUCZj0dj/sTw=
+From: Luca Weiss <luca@z3ntu.xyz>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] ARM: qcom_defconfig: Enable QRTR
+Date: Fri, 14 Feb 2020 19:31:11 +0100
+Message-Id: <20200214183111.50919-1-luca@z3ntu.xyz>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-In-Reply-To: <20200214180404.24d67f86@donnerap.cambridge.arm.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_101845_272113_0A26C86C 
-X-CRM114-Status: GOOD (  25.61  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200214_103221_369696_FFD3F972 
+X-CRM114-Status: UNSURE (   8.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 3.7 (+++)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (3.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.5 PDS_OTHER_BAD_TLD      Untrustworthy TLDs
+ [URI: z3ntu.xyz (xyz)]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain 2.0 FROM_SUSPICIOUS_NTLD_FP From abused NTLD
+ 0.5 FROM_SUSPICIOUS_NTLD   From abused NTLD
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,84 +72,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-msm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Luca Weiss <luca@z3ntu.xyz>,
+ Jordan Crouse <jcrouse@codeaurora.org>, ~postmarketos/upstreaming@lists.sr.ht,
+ =?UTF-8?q?Matti=20Lehtim=C3=A4ki?= <matti.lehtimaki@gmail.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>, linux-kernel@vger.kernel.org,
+ Brian Masney <masneyb@onstation.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/02/2020 6:04 pm, Andre Przywara wrote:
-> On Mon, 10 Feb 2020 10:55:59 +0100
-> Maxime Ripard <maxime@cerno.tech> wrote:
-> 
-> Hi,
-> 
->> The commit c35a516a4618 ("arm64: dts: allwinner: H5: Add PMU node")
->> introduced support for the PMU found on the Allwinner H5. However, the
->> binding only allows for a single compatible, while the patch was adding
->> two.
-> 
-> Maxime, thanks for bringing this up, was that found by some validation tool?
-> 
-> And while this is true, I wonder if this was intentional?
-> I see several other combinations of PMU compatibles in the tree.
-> 
-> Mark, Rob, can you shed any light on this?
-> 
-> Actually I am wondering why we would need the PMU type in the first place, isn't that discoverable via the MIDR?
+This option is useful on msm8974, so enable it.
 
-"the" MIDR... ;)
+Signed-off-by: Luca Weiss <luca@z3ntu.xyz>
+---
+Changes from v1:
+- set options as =m instead of =y
 
-Usual big.LITTLE vs. CPU hotplug rules apply.
+ arch/arm/configs/qcom_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-> And all we actually need from the DT is the interrupts and maybe some quirk info?
-> 
-> It looks like ACPI is always using the generic PMUv3 map, so wouldn't it actually be better to replace the compatible string matching with MIDR matching? Or are those core specific maps somewhat obsolete anyway? Since I don't see any newer cores in there?
+diff --git a/arch/arm/configs/qcom_defconfig b/arch/arm/configs/qcom_defconfig
+index ad3417a63cdf..4702feef2cc9 100644
+--- a/arch/arm/configs/qcom_defconfig
++++ b/arch/arm/configs/qcom_defconfig
+@@ -44,6 +44,8 @@ CONFIG_IP_ROUTE_VERBOSE=y
+ CONFIG_IP_PNP=y
+ CONFIG_IP_PNP_DHCP=y
+ # CONFIG_IPV6 is not set
++CONFIG_QRTR=m
++CONFIG_QRTR_SMD=m
+ CONFIG_CFG80211=m
+ CONFIG_MAC80211=m
+ CONFIG_RFKILL=y
+-- 
+2.25.0
 
-Mostly they're just long overdue for an update (and somewhat mitigated 
-by the userspace JSON stuff in perf tools, but in principle there are 
-still other users of perf_events). IIRC, the generic PMUv3 compatible 
-was only ever meant to be for things like the AEM without a specific 
-microarchitecture (cf. the "arm,armv8" CPU binding).
-
-Robin.
-
-> 
-> Cheers,
-> Andre
-> 
->> Make sure we follow the binding.
-> 
-> 
->>
->> Fixes: c35a516a4618 ("arm64: dts: allwinner: H5: Add PMU node")
->> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
->> ---
->>   arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi | 3 +--
->>   1 file changed, 1 insertion(+), 2 deletions(-)
->>
->> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
->> index 9893aa64dd0b..4462a68c0681 100644
->> --- a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
->> +++ b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
->> @@ -38,8 +38,7 @@ cpu3: cpu@3 {
->>   	};
->>   
->>   	pmu {
->> -		compatible = "arm,cortex-a53-pmu",
->> -			     "arm,armv8-pmuv3";
->> +		compatible = "arm,cortex-a53-pmu";
->>   		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
->>   			     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>,
->>   			     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
