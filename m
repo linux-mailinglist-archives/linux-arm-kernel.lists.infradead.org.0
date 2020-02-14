@@ -2,110 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C26E215DA4B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:06:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C772715DA50
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:07:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FckUedq2Q9tP+38ED7Ve6kCLDxLazKWgwmJOYfQXiPk=; b=QEiHHCRzF6LhlR
-	3laSkakCG5Uu2yeL016LpMxkXG4rFOLl88vI7Z5B2rCVjqqcoK+7yLLgHLxBEo4IHOMUbxv7Srkyx
-	0UDPJ5/NpIJEZwqz6y16zM/DtulkJj2gd3apueknACIoi3QxdOMmpBx5cskrZEuY9gk0aLUqaDGCb
-	3Q3GZlOKZBKX8kjzw/u32+zl2CMmg7asOh1JgdCeJ7TXrv71LmDIt9COFEYzWi5ls1TpLM16GlOVe
-	r0G1joRTmR55CiJYd/cv0OyjrSnFYnsdF1vaSGaGrN4PjnIEvur5e7T6ANyBMNgSAr5F5ka1ANXm8
-	htmv5BShr0a9MUnqDZjA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l3W+CHU8gO53nO5C/9zJQHEcmOhQBvZc+/gU3zo3eCo=; b=KYwEdzqGaKhWgg
+	Oz/e74N6QToubvzWGqgI/886TOXc5nRkiMRMI4ITD1bx9s45M8KfLltscqJ4s3hMVa7MykuBCD46r
+	0egdppd7bSy2NwcxoElREYJKFNLxhlKqR0zq8FMMhbDxmVMzgO1qZLbmIPfLoZciZLMTH2kWrOdVU
+	2CrwwHj75XuMhNQdpxQbAnQGcnV5YDToBhgHOOvc7I5av3PX5mNPdcgtnHv5ntnH3wcXg7fv8djUp
+	xQwnK+IVX7zcee2/K7GK1HA1p47lOnAwdROFcstu8U4wYSPwoxxFTDj1cTdCSktD1RmmWyqhCFQQq
+	fQ8BQJ0keaVi9SxdhiJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2cXc-0001rm-Rg; Fri, 14 Feb 2020 15:06:05 +0000
-Received: from mail-eopbgr60053.outbound.protection.outlook.com ([40.107.6.53]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1j2cZB-0002JM-L9; Fri, 14 Feb 2020 15:07:41 +0000
+Received: from lb3-smtp-cloud8.xs4all.net ([194.109.24.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2cXO-0001qn-7l
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:05:52 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RSM1USVGnkoFJOqYySJF3AwO1eD6YO2NSE8VkT+P0c+iyww3rDPqf+STZ+R33Uihz8yKs9+Aqkco7d/En4Bw4l3hKIxMPf3dHRKbq6SbTFQnliBgB/sXlJdC1Ya2y48b/scFT7HO9AkolCwJVSbfmPf1nNP4vFWOzjiY5yN/pJuixIezDoWPT+5UtK3YfScTA2IVAnP/e+NXVlYTTFh/0NwDN5HFkpHVle1qCaoDY6+33CGwX8Mq89UMVQKlIJbopE0/TfnklHKRTGOPo7KCI/j66c/U08REQ4TwY61URxqk79DRYY0ja3+lCoAsmxBomxCg5UeK2Jihjzpc0dwubw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LeWoqiZAXpxzaQZKOGkY/mVDAwn2lgaw6Yc3BR09c9c=;
- b=WO4bmmf0bSC5DI4ZCbt8SH/7hzOTH5018UNjyRZ4OAi5hYoUb+BARcNS+Tg1j1em2cGCRx9FgcWgcshf4eCX7DsCiVnY8D+a5lyTagXx3OBR4k809offFUUp7/6FtWL3/MZ4PQurQLkvVkpshgJ0Ln/sh+HtFhtBAOyw+DG9iUWfVF4trxoKPFGAseS+4sv1eV01zrR95bBq3A3ojLWqxcfd/mpchocxEVeDSXbMTAxeZ7niIOrO2IhOUOrLluOdtKM6NlKvyenYPbq4VytdFgBtzTePL00AbAhJkgFs6oiO/9BNqYBW4/sgkNpeX8AMqBOZ3dIbHUqz+axo4e763Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LeWoqiZAXpxzaQZKOGkY/mVDAwn2lgaw6Yc3BR09c9c=;
- b=ZMO1RxDcW8VkHC8O7NVOjF5M/VHHvxsdjYjGgU2lIYsSzhSOFNkFWRkGHL8jV0NY1Fl7pFh5pcmJfoJhaadm97UU8DhmFC1ZD2vsoCJhF/8pekHIrERVD1u8BA023Ho2xZ5KzMganRk4EEAoBrFCxi3NQ1zzEkVezL7pdDeQkVc=
-Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com (10.168.65.10) by
- VI1PR0401MB2624.eurprd04.prod.outlook.com (10.168.66.8) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2729.23; Fri, 14 Feb 2020 15:05:44 +0000
-Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com
- ([fe80::196a:28a9:bb9:2fae]) by VI1PR0401MB2496.eurprd04.prod.outlook.com
- ([fe80::196a:28a9:bb9:2fae%9]) with mapi id 15.20.2729.025; Fri, 14 Feb 2020
- 15:05:44 +0000
-From: Pankaj Bansal <pankaj.bansal@nxp.com>
-To: Ard Biesheuvel <ard.biesheuvel@linaro.org>, Marc Zyngier <maz@kernel.org>, 
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: RE: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-Thread-Topic: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-Thread-Index: AQHV1bJZgaFB40NXxUCtFFLRVXyi06f/610AgAStpQCAAAiuAIAAD1yAgBYviuA=
-Date: Fri, 14 Feb 2020 15:05:44 +0000
-Message-ID: <VI1PR0401MB249622CFA9B213632F1DE955F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-References: <1580198925-50411-1-git-send-email-makarand.pawagi@nxp.com>
- <20200128110916.GA491@e121166-lin.cambridge.arm.com>
- <DB8PR04MB7164DDF48480956F05886DABEB070@DB8PR04MB7164.eurprd04.prod.outlook.com>
- <12531d6c569c7e14dffe8e288d9f4a0b@kernel.org>
- <CAKv+Gu8uaJBmy5wDgk=uzcmC4vkEyOjW=JRvhpjfsdh-HcOCLg@mail.gmail.com>
-In-Reply-To: <CAKv+Gu8uaJBmy5wDgk=uzcmC4vkEyOjW=JRvhpjfsdh-HcOCLg@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=pankaj.bansal@nxp.com; 
-x-originating-ip: [49.36.135.121]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 14995233-0412-4610-c990-08d7b15f5d75
-x-ms-traffictypediagnostic: VI1PR0401MB2624:|VI1PR0401MB2624:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0401MB2624D87791263780BCBC57CFF1150@VI1PR0401MB2624.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 03137AC81E
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10001)(10009020)(4636009)(39860400002)(366004)(396003)(376002)(346002)(136003)(199004)(189003)(2906002)(7696005)(54906003)(478600001)(966005)(26005)(9686003)(53546011)(6506007)(110136005)(52536014)(44832011)(45080400002)(33656002)(66556008)(76116006)(8936002)(86362001)(5660300002)(71200400001)(316002)(186003)(55016002)(4326008)(81156014)(81166006)(8676002)(66946007)(66476007)(7416002)(64756008)(66446008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0401MB2624;
- H:VI1PR0401MB2496.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: QWSDsgXuHdhjQdXaHHL/GTa3MbbHfW6zZB9no1LUKC3abVGqzGGLqxBwBgNcwYBLdAqvIwfhL2PurhkDgQPCMn49ar1cEhIKs0N9mh8tj4nDOi7//TmZ8MeLBpm79qcGcfJ7ZITP9Qxx0qDqNRyDnxSleFVnFIxtk+bqAgkG0Ffb1KTwkTJPWehT8Wz95fnrAgmPom5ihmeuhZZjxmrjmcXuoepyJcPJKQyojZ81z4IqwQ4jpC31PFmaSfHFEqahrdQt5PIvr1GgcjpDSpAvJZKJ21vX7zjottoT7NxEfvSqBZk9S9UPM2S9DahxCETp1DiTcYg4cRk4flxklxSHMPYIpTteC9hXWbCGg19pQntpECyC799csUlZlBoZcpoJ0utpIVqPxNRLAC1F0VFR1VkomQbOTB2MfZYQSbHKPVFkBF7rbgVi5cR3MHBPgpBBaWjkMsGd1FrWyKsoo/i6Ok9Y5x1V4swWHrri+GU5OPD5+sft5Smj994qC/0Lmv2ZHIxfsBXjYK5uqYGOyFIMpZbcFuLoO72o8wyhRLeJp9jl5kbgXTMzbPq3q2SVpWsxP0/cKyBeydr7nEVKnWFiw5xN7l+/G0UGNQPk+2uxCZeUYjX6c3Lc9Kf3vNsru61t
-x-ms-exchange-antispam-messagedata: HNrqWFWma3rrZ7bUlBz9wffztDsAi7pOu0iCgJKWWZMbeWnABVH9tmLWof4Y5gkoc3CysmWLBhsSb+ogbRJAnmwVhgaT3CD7iIbUUhcMAaENmPaRKQXjO51jfYxUiF3Acs92/f8EMLcAwDfjpij1uQ==
+ id 1j2cYj-0002H5-6s; Fri, 14 Feb 2020 15:07:16 +0000
+Received: from [IPv6:2001:983:e9a7:1:bd23:d5c7:5f0e:7bef]
+ ([IPv6:2001:983:e9a7:1:bd23:d5c7:5f0e:7bef])
+ by smtp-cloud8.xs4all.net with ESMTPA
+ id 2cYejJPw28i432cYfjQOhO; Fri, 14 Feb 2020 16:07:10 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xs4all.nl; s=s1;
+ t=1581692830; bh=AAdQ2O5Q1ACsRdyVOjDcQqOlYqcXsuuagPvM38HU83Y=;
+ h=Subject:To:From:Message-ID:Date:MIME-Version:Content-Type:From:
+ Subject;
+ b=dLheoqF8Hlo7AyoDKbBpR9LlenS8WHrlC1z5gQkHG+Rcc+v1GPTrc+QZOsXfYT+8B
+ rTGILjj6H0toQeXF/BN8pMa0UBBj1jQjUNJUHfHWchrGJlOG1ljj9GfiKLVbBlnhxz
+ sjCU6eRe/CYyjMiT7H7TfHGjo6mWF34yTVIuQkkSnRtgxPH5WW+IOI+YQ1swsszkzY
+ fZ2QFMLHUNzFFCaN3A1YHAliEURyZy6IiHyhSriFenqvPQXORqR0B2zjmLyPfgg8Ph
+ 9a7Q4tEVAlNeUBV8Ro73jhkvpslxWKW+2L2vFgtMnldv0m9AbZ+z2MEc96etOsNzL9
+ 3hDyqHS3u45XA==
+Subject: Re: [PATCH v4 3/5] media: meson: vdec: add common HEVC decoder support
+To: Neil Armstrong <narmstrong@baylibre.com>, mchehab@kernel.org,
+ hans.verkuil@cisco.com
+References: <20200206084152.7070-1-narmstrong@baylibre.com>
+ <20200206084152.7070-4-narmstrong@baylibre.com>
+From: Hans Verkuil <hverkuil@xs4all.nl>
+Message-ID: <4d9d3785-ef16-1c22-da60-1321bd584f1f@xs4all.nl>
+Date: Fri, 14 Feb 2020 16:07:08 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 14995233-0412-4610-c990-08d7b15f5d75
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Feb 2020 15:05:44.3224 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 1uQp0D4F3jagWnxS5Pbr1AMugXq7XBDzrUSgk7W3dSlQKoUn5/gFb9Gq3gzwR5aVJtar5dxi5KwebvuissRjGw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0401MB2624
+In-Reply-To: <20200206084152.7070-4-narmstrong@baylibre.com>
+Content-Language: en-US
+X-CMAE-Envelope: MS4wfP3eT0E0kWMGOqds3kI38yjhObfyY7zdymgSZUVe/rV4lRgDntGIECL+e3ixMLvRI7PukNKSPjzi/U0D+3r8F2JcRMvJTj1Dx7JbGgh25clX7dZnlglh
+ 6/KUjLw+sA/mXpxc/z2ZYQY1w3VlUv6BW7/K2ywALYE+GEphXd/3BbpKukdpuXjcd4z8uZ1hJjTnQ+4zjQxLAs9NxR9Yo/bq4e8vDg53UJXFHAAIdcNe7fNv
+ 5JR2r0gt4rlMAgmSHuVQ/dI3atJ8c/asNaH+9q+mTi+wMD2S28n5O5YlYumjPNRMIT3h4///be3DJ/fUWYDgX6CRA1g3yiJB/rsaA0mEUIbpfkgNFfc/WYZh
+ muoPk67beK4jIMARYX3qZryVMT8VlSNe7YVRRUdNxJzfpQWLYNbaA/nygUFudSqxJKtdYCfJSykU2WwgkbZrMR40EZILhgYLeHttE0QoNzl0bhmy4p9KEtmY
+ Jnifmg8CuMtbBn8cQQyJCdv4gBb1P3qfWWgG+k5L0LwDDg1Iy4w34xUxIrhVDLcbAnnUad+gltNlLW2x
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_070550_455586_A3C769D3 
-X-CRM114-Status: GOOD (  25.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200214_070713_587134_E9CB72CB 
+X-CRM114-Status: GOOD (  20.25  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.6.53 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [194.109.24.29 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [194.109.24.29 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -114,6 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,214 +87,936 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Calvin Johnson <calvin.johnson@nxp.com>,
- "stuyoder@gmail.com" <stuyoder@gmail.com>,
- "nleeder@codeaurora.org" <nleeder@codeaurora.org>,
- Ioana Ciornei <ioana.ciornei@nxp.com>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
- Will Deacon <will@kernel.org>, "jon@solid-run.com" <jon@solid-run.com>,
- Russell King <linux@armlinux.org.uk>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Len Brown <lenb@kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- Andy Wang <Andy.Wang@arm.com>, Makarand Pawagi <makarand.pawagi@nxp.com>,
- Varun Sethi <V.Sethi@nxp.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>, Paul Yang <Paul.Yang@arm.com>,
- "<netdev@vger.kernel.org>" <netdev@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>
+Cc: Maxime Jourdan <mjourdan@baylibre.com>, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-> -----Original Message-----
-> From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-> Sent: Friday, January 31, 2020 5:32 PM
-> To: Marc Zyngier <maz@kernel.org>
-> Cc: Makarand Pawagi <makarand.pawagi@nxp.com>; Calvin Johnson
-> <calvin.johnson@nxp.com>; stuyoder@gmail.com; nleeder@codeaurora.org;
-> Ioana Ciornei <ioana.ciornei@nxp.com>; Cristi Sovaiala
-> <cristian.sovaiala@nxp.com>; Hanjun Guo <guohanjun@huawei.com>; Will
-> Deacon <will@kernel.org>; Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>;
-> Pankaj Bansal <pankaj.bansal@nxp.com>; jon@solid-run.com; Russell King
-> <linux@armlinux.org.uk>; ACPI Devel Maling List <linux-acpi@vger.kernel.org>;
-> Len Brown <lenb@kernel.org>; Jason Cooper <jason@lakedaemon.net>; Andy
-> Wang <Andy.Wang@arm.com>; Varun Sethi <V.Sethi@nxp.com>; Thomas
-> Gleixner <tglx@linutronix.de>; linux-arm-kernel <linux-arm-
-> kernel@lists.infradead.org>; Laurentiu Tudor <laurentiu.tudor@nxp.com>; Paul
-> Yang <Paul.Yang@arm.com>; <netdev@vger.kernel.org>
-> <netdev@vger.kernel.org>; Rafael J. Wysocki <rjw@rjwysocki.net>; Linux Kernel
-> Mailing List <linux-kernel@vger.kernel.org>; Shameerali Kolothum Thodi
-> <shameerali.kolothum.thodi@huawei.com>; Sudeep Holla
-> <sudeep.holla@arm.com>; Robin Murphy <robin.murphy@arm.com>
-> Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
+On 2/6/20 9:41 AM, Neil Armstrong wrote:
+> From: Maxime Jourdan <mjourdan@baylibre.com>
 > 
-> On Fri, 31 Jan 2020 at 12:06, Marc Zyngier <maz@kernel.org> wrote:
-> >
-> > On 2020-01-31 10:35, Makarand Pawagi wrote:
-> > >> -----Original Message-----
-> > >> From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > >> Sent: Tuesday, January 28, 2020 4:39 PM
-> > >> To: Makarand Pawagi <makarand.pawagi@nxp.com>
-> > >> Cc: netdev@vger.kernel.org; linux-kernel@vger.kernel.org;
-> > >> linux-arm- kernel@lists.infradead.org; linux-acpi@vger.kernel.org;
-> > >> linux@armlinux.org.uk; jon@solid-run.com; Cristi Sovaiala
-> > >> <cristian.sovaiala@nxp.com>; Laurentiu Tudor
-> > >> <laurentiu.tudor@nxp.com>; Ioana Ciornei <ioana.ciornei@nxp.com>;
-> > >> Varun Sethi <V.Sethi@nxp.com>; Calvin Johnson
-> > >> <calvin.johnson@nxp.com>; Pankaj Bansal <pankaj.bansal@nxp.com>;
-> > >> guohanjun@huawei.com; sudeep.holla@arm.com; rjw@rjwysocki.net;
-> > >> lenb@kernel.org; stuyoder@gmail.com; tglx@linutronix.de;
-> > >> jason@lakedaemon.net; maz@kernel.org;
-> > >> shameerali.kolothum.thodi@huawei.com; will@kernel.org;
-> > >> robin.murphy@arm.com; nleeder@codeaurora.org
-> > >> Subject: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-> > >>
-> > >> Caution: EXT Email
-> > >>
-> > >> On Tue, Jan 28, 2020 at 01:38:45PM +0530, Makarand Pawagi wrote:
-> > >> > ACPI support is added in the fsl-mc driver. Driver will parse MC
-> > >> > DSDT table to extract memory and other resorces.
-> > >> >
-> > >> > Interrupt (GIC ITS) information will be extracted from MADT table
-> > >> > by drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c.
-> > >> >
-> > >> > IORT table will be parsed to configure DMA.
-> > >> >
-> > >> > Signed-off-by: Makarand Pawagi <makarand.pawagi@nxp.com>
-> > >> > ---
-> > >> >  drivers/acpi/arm64/iort.c                   | 53 +++++++++++++++++++++
-> > >> >  drivers/bus/fsl-mc/dprc-driver.c            |  3 +-
-> > >> >  drivers/bus/fsl-mc/fsl-mc-bus.c             | 48 +++++++++++++------
-> > >> >  drivers/bus/fsl-mc/fsl-mc-msi.c             | 10 +++-
-> > >> >  drivers/bus/fsl-mc/fsl-mc-private.h         |  4 +-
-> > >> >  drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c | 71
-> > >> ++++++++++++++++++++++++++++-
-> > >> >  include/linux/acpi_iort.h                   |  5 ++
-> > >> >  7 files changed, 174 insertions(+), 20 deletions(-)
-> > >> >
-> > >> > diff --git a/drivers/acpi/arm64/iort.c
-> > >> > b/drivers/acpi/arm64/iort.c index 33f7198..beb9cd5 100644
-> > >> > --- a/drivers/acpi/arm64/iort.c
-> > >> > +++ b/drivers/acpi/arm64/iort.c
-> > >> > @@ -15,6 +15,7 @@
-> > >> >  #include <linux/kernel.h>
-> > >> >  #include <linux/list.h>
-> > >> >  #include <linux/pci.h>
-> > >> > +#include <linux/fsl/mc.h>
-> > >> >  #include <linux/platform_device.h>  #include <linux/slab.h>
-> > >> >
-> > >> > @@ -622,6 +623,29 @@ static int iort_dev_find_its_id(struct
-> > >> > device *dev, u32 req_id,  }
-> > >> >
-> > >> >  /**
-> > >> > + * iort_get_fsl_mc_device_domain() - Find MSI domain related to
-> > >> > +a device
-> > >> > + * @dev: The device.
-> > >> > + * @mc_icid: ICID for the fsl_mc device.
-> > >> > + *
-> > >> > + * Returns: the MSI domain for this device, NULL otherwise  */
-> > >> > +struct irq_domain *iort_get_fsl_mc_device_domain(struct device *dev,
-> > >> > +                                                     u32 mc_icid) {
-> > >> > +     struct fwnode_handle *handle;
-> > >> > +     int its_id;
-> > >> > +
-> > >> > +     if (iort_dev_find_its_id(dev, mc_icid, 0, &its_id))
-> > >> > +             return NULL;
-> > >> > +
-> > >> > +     handle = iort_find_domain_token(its_id);
-> > >> > +     if (!handle)
-> > >> > +             return NULL;
-> > >> > +
-> > >> > +     return irq_find_matching_fwnode(handle,
-> > >> > +DOMAIN_BUS_FSL_MC_MSI); }
-> > >>
-> > >> NAK
-> > >>
-> > >> I am not willing to take platform specific code in the generic IORT
-> > >> layer.
-> > >>
-> > >> ACPI on ARM64 works on platforms that comply with SBSA/SBBR
-> > >> guidelines:
-> > >>
-> > >>
-> > >> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fd
-> > >> eveloper.arm.com%2Farchitectures%2Fplatform-design%2Fserver-systems
-> > >>
-> &amp;data=02%7C01%7Cpankaj.bansal%40nxp.com%7Cdb56d889d85646277ee
-> 30
-> > >>
-> 8d7a64562fa%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C0%7C6371606
-> 892
-> > >>
-> 50769265&amp;sdata=C7nCty8%2BVeuq6VhcEUXCwiAinN01rCfe12NRVnXJCIY%
-> 3D
-> > >> &amp;reserved=0
-> > >>
-> > >> Deviating from those requires butchering ACPI specifications (ie
-> > >> IORT) and related kernel code which goes totally against what ACPI
-> > >> is meant for on ARM64 systems, so there is no upstream pathway for
-> > >> this code I am afraid.
-> > >>
-> > > Reason of adding this platform specific function in the generic IORT
-> > > layer is That iort_get_device_domain() only deals with PCI bus
-> > > (DOMAIN_BUS_PCI_MSI).
-> > >
-> > > fsl-mc objects when probed, need to find irq_domain which is
-> > > associated with the fsl-mc bus (DOMAIN_BUS_FSL_MC_MSI). It will not
-> > > be possible to do that if we do not add this function because there
-> > > are no other suitable APIs exported by IORT layer to do the job.
-> >
-> > I think we all understood the patch. What both Lorenzo and myself are
-> > saying is that we do not want non-PCI support in IORT.
-> >
+> Add support for the HEVC & VP9 common decoder support, handling
+> Amlogic GXBB, GXL, G12A and SM1 platforms.
 > 
-> IORT supports platform devices (aka named components) as well, and
-> there is some support for platform MSIs in the GIC layer.
+> This handles the "HEVC" hw decoder used for HEVC and VP9, and will be
+> using in the new H264 multi-instance decoder for G12A & SM1 platforms.
 > 
-> So it may be possible to hide your exotic bus from the OS entirely,
-> and make the firmware instantiate a DSDT with device objects and
-> associated IORT nodes that describe whatever lives on that bus as
-> named components.
-> 
-> That way, you will not have to change the OS at all, so your hardware
-> will not only be supported in linux v5.7+, it will also be supported
-> by OSes that commercial distro vendors are shipping today. *That* is
-> the whole point of using ACPI.
-> 
-> If you are going to bother and modify the OS, you lose this advantage,
-> and ACPI gives you no benefit over DT at all.
+> Signed-off-by: Maxime Jourdan <mjourdan@baylibre.com>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 
-I am replying to old message in this conversation, because the discussion got sidetracked from IORT
-table to SFP/QSFP/devlink stuff from this point onwards, which is not related to IORT.
-I will only focus on representing the MC device in IORT and using the same in linux.
-As Ard said:
-"IORT supports platform devices (aka named components) as well, and
-there is some support for platform MSIs in the GIC layer."
+I'm getting some checkpatch warnings/checks:
 
-We can represent MC bus as named component in IORT table and use platform MSIs.
-The only caveat is that with current implementation of platform MSIs, the Input id of a device is not considered.
-https://elixir.bootlin.com/linux/latest/source/drivers/irqchip/irq-gic-v3-its-platform-msi.c#L50
-https://elixir.bootlin.com/linux/latest/source/drivers/acpi/arm64/iort.c#L464
+WARNING: Possible unnecessary 'out of memory' message
+#219: FILE: drivers/staging/media/meson/vdec/codec_hevc_common.c:171:
++               if (!vaddr) {
++                       dev_err(dev, "Couldn't allocate FBC buffer %u\n", idx);
 
-While, IORT spec doesn't specify any such limitation.
+WARNING: Possible unnecessary 'out of memory' message
+#273: FILE: drivers/staging/media/meson/vdec/codec_hevc_common.c:225:
++               if (!vaddr) {
++                       dev_err(dev, "Couldn't allocate MMU header %u\n", idx);
 
-we can easily update iort.c to remove this limitation.
-But, I am not sure how the input id would be passed from platform MSI GIC layer to IORT.
-Most obviously, the input id should be supplied by dev itself.
+WARNING: Possible unnecessary 'out of memory' message
+#692: FILE: drivers/staging/media/meson/vdec/vdec_hevc.c:52:
++       if (!mc_addr) {
++               dev_err(dev, "Failed allocating memory for firmware loading\n");
 
-Any thoughts?
+CHECK: usleep_range is preferred over udelay; see Documentation/timers/timers-howto.rst
+#819: FILE: drivers/staging/media/meson/vdec/vdec_hevc.c:179:
++       udelay(10);
 
-If we go by this path, I think we can remove special handling for fsl-mc for of* cases altogether.
-https://elixir.bootlin.com/linux/latest/source/drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c
+CHECK: usleep_range is preferred over udelay; see Documentation/timers/timers-howto.rst
+#857: FILE: drivers/staging/media/meson/vdec/vdec_hevc.c:217:
++       udelay(10);
+
+Can you take a look?
 
 Regards,
-Pankaj Bansal
+
+	Hans
+
+> ---
+>  drivers/staging/media/meson/vdec/Makefile     |   4 +-
+>  .../media/meson/vdec/codec_hevc_common.c      | 286 ++++++++++++++++++
+>  .../media/meson/vdec/codec_hevc_common.h      |  77 +++++
+>  drivers/staging/media/meson/vdec/hevc_regs.h  | 211 +++++++++++++
+>  drivers/staging/media/meson/vdec/vdec_hevc.c  | 231 ++++++++++++++
+>  drivers/staging/media/meson/vdec/vdec_hevc.h  |  13 +
+>  6 files changed, 820 insertions(+), 2 deletions(-)
+>  create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_common.c
+>  create mode 100644 drivers/staging/media/meson/vdec/codec_hevc_common.h
+>  create mode 100644 drivers/staging/media/meson/vdec/hevc_regs.h
+>  create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.c
+>  create mode 100644 drivers/staging/media/meson/vdec/vdec_hevc.h
+> 
+> diff --git a/drivers/staging/media/meson/vdec/Makefile b/drivers/staging/media/meson/vdec/Makefile
+> index 711d990c760e..f55b6e625034 100644
+> --- a/drivers/staging/media/meson/vdec/Makefile
+> +++ b/drivers/staging/media/meson/vdec/Makefile
+> @@ -2,7 +2,7 @@
+>  # Makefile for Amlogic meson video decoder driver
+>  
+>  meson-vdec-objs = esparser.o vdec.o vdec_helpers.o vdec_platform.o
+> -meson-vdec-objs += vdec_1.o
+> -meson-vdec-objs += codec_mpeg12.o codec_h264.o
+> +meson-vdec-objs += vdec_1.o vdec_hevc.o
+> +meson-vdec-objs += codec_mpeg12.o codec_h264.o codec_hevc_common.o
+>  
+>  obj-$(CONFIG_VIDEO_MESON_VDEC) += meson-vdec.o
+> diff --git a/drivers/staging/media/meson/vdec/codec_hevc_common.c b/drivers/staging/media/meson/vdec/codec_hevc_common.c
+> new file mode 100644
+> index 000000000000..335bcba062ac
+> --- /dev/null
+> +++ b/drivers/staging/media/meson/vdec/codec_hevc_common.c
+> @@ -0,0 +1,286 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright (C) 2018 Maxime Jourdan <mjourdan@baylibre.com>
+> + */
+> +
+> +#include <media/v4l2-mem2mem.h>
+> +#include <media/videobuf2-dma-contig.h>
+> +
+> +#include "codec_hevc_common.h"
+> +#include "vdec_helpers.h"
+> +#include "hevc_regs.h"
+> +
+> +#define MMU_COMPRESS_HEADER_SIZE 0x48000
+> +#define MMU_MAP_SIZE 0x4800
+> +
+> +/* Configure decode head read mode */
+> +void codec_hevc_setup_decode_head(struct amvdec_session *sess, int is_10bit)
+> +{
+> +	struct amvdec_core *core = sess->core;
+> +	u32 body_size = amvdec_am21c_body_size(sess->width, sess->height);
+> +	u32 head_size = amvdec_am21c_head_size(sess->width, sess->height);
+> +
+> +	if (!codec_hevc_use_fbc(sess->pixfmt_cap, is_10bit)) {
+> +		/* Enable 2-plane reference read mode */
+> +		amvdec_write_dos(core, HEVCD_MPP_DECOMP_CTL1, BIT(31));
+> +		return;
+> +	}
+> +
+> +	if (codec_hevc_use_mmu(core->platform->revision,
+> +			       sess->pixfmt_cap, is_10bit))
+> +		amvdec_write_dos(core, HEVCD_MPP_DECOMP_CTL1, BIT(4));
+> +	else
+> +		amvdec_write_dos(core, HEVCD_MPP_DECOMP_CTL1, 0);
+> +
+> +	if (core->platform->revision < VDEC_REVISION_SM1)
+> +		amvdec_write_dos(core, HEVCD_MPP_DECOMP_CTL2, body_size / 32);
+> +	amvdec_write_dos(core, HEVC_CM_BODY_LENGTH, body_size);
+> +	amvdec_write_dos(core, HEVC_CM_HEADER_OFFSET, body_size);
+> +	amvdec_write_dos(core, HEVC_CM_HEADER_LENGTH, head_size);
+> +}
+> +EXPORT_SYMBOL_GPL(codec_hevc_setup_decode_head);
+> +
+> +static void codec_hevc_setup_buffers_gxbb(struct amvdec_session *sess,
+> +					  struct codec_hevc_common *comm,
+> +					  int is_10bit)
+> +{
+> +	struct amvdec_core *core = sess->core;
+> +	struct v4l2_m2m_buffer *buf;
+> +	u32 buf_num = v4l2_m2m_num_dst_bufs_ready(sess->m2m_ctx);
+> +	dma_addr_t buf_y_paddr = 0;
+> +	dma_addr_t buf_uv_paddr = 0;
+> +	u32 idx = 0;
+> +	u32 val;
+> +	int i;
+> +
+> +	amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR, 0);
+> +
+> +	v4l2_m2m_for_each_dst_buf(sess->m2m_ctx, buf) {
+> +		struct vb2_buffer *vb = &buf->vb.vb2_buf;
+> +
+> +		idx = vb->index;
+> +
+> +		if (codec_hevc_use_downsample(sess->pixfmt_cap, is_10bit))
+> +			buf_y_paddr = comm->fbc_buffer_paddr[idx];
+> +		else
+> +			buf_y_paddr = vb2_dma_contig_plane_dma_addr(vb, 0);
+> +
+> +		if (codec_hevc_use_fbc(sess->pixfmt_cap, is_10bit)) {
+> +			val = buf_y_paddr | (idx << 8) | 1;
+> +			amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR,
+> +					 val);
+> +		} else {
+> +			buf_uv_paddr = vb2_dma_contig_plane_dma_addr(vb, 1);
+> +			val = buf_y_paddr | ((idx * 2) << 8) | 1;
+> +			amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR,
+> +					 val);
+> +			val = buf_uv_paddr | ((idx * 2 + 1) << 8) | 1;
+> +			amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR,
+> +					 val);
+> +		}
+> +	}
+> +
+> +	if (codec_hevc_use_fbc(sess->pixfmt_cap, is_10bit))
+> +		val = buf_y_paddr | (idx << 8) | 1;
+> +	else
+> +		val = buf_y_paddr | ((idx * 2) << 8) | 1;
+> +
+> +	/* Fill the remaining unused slots with the last buffer's Y addr */
+> +	for (i = buf_num; i < MAX_REF_PIC_NUM; ++i)
+> +		amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR, val);
+> +
+> +	amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR, 1);
+> +	amvdec_write_dos(core, HEVCD_MPP_ANC_CANVAS_ACCCONFIG_ADDR, 1);
+> +	for (i = 0; i < 32; ++i)
+> +		amvdec_write_dos(core, HEVCD_MPP_ANC_CANVAS_DATA_ADDR, 0);
+> +}
+> +
+> +static void codec_hevc_setup_buffers_gxl(struct amvdec_session *sess,
+> +					 struct codec_hevc_common *comm,
+> +					 int is_10bit)
+> +{
+> +	struct amvdec_core *core = sess->core;
+> +	struct v4l2_m2m_buffer *buf;
+> +	u32 revision = core->platform->revision;
+> +	u32 pixfmt_cap = sess->pixfmt_cap;
+> +	int i;
+> +
+> +	amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR,
+> +			 BIT(2) | BIT(1));
+> +
+> +	v4l2_m2m_for_each_dst_buf(sess->m2m_ctx, buf) {
+> +		struct vb2_buffer *vb = &buf->vb.vb2_buf;
+> +		dma_addr_t buf_y_paddr = 0;
+> +		dma_addr_t buf_uv_paddr = 0;
+> +		u32 idx = vb->index;
+> +
+> +		if (codec_hevc_use_mmu(revision, pixfmt_cap, is_10bit))
+> +			buf_y_paddr = comm->mmu_header_paddr[idx];
+> +		else if (codec_hevc_use_downsample(pixfmt_cap, is_10bit))
+> +			buf_y_paddr = comm->fbc_buffer_paddr[idx];
+> +		else
+> +			buf_y_paddr = vb2_dma_contig_plane_dma_addr(vb, 0);
+> +
+> +		amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_DATA,
+> +				 buf_y_paddr >> 5);
+> +
+> +		if (!codec_hevc_use_fbc(pixfmt_cap, is_10bit)) {
+> +			buf_uv_paddr = vb2_dma_contig_plane_dma_addr(vb, 1);
+> +			amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_DATA,
+> +					 buf_uv_paddr >> 5);
+> +		}
+> +	}
+> +
+> +	amvdec_write_dos(core, HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR, 1);
+> +	amvdec_write_dos(core, HEVCD_MPP_ANC_CANVAS_ACCCONFIG_ADDR, 1);
+> +	for (i = 0; i < 32; ++i)
+> +		amvdec_write_dos(core, HEVCD_MPP_ANC_CANVAS_DATA_ADDR, 0);
+> +}
+> +
+> +void codec_hevc_free_fbc_buffers(struct amvdec_session *sess,
+> +				 struct codec_hevc_common *comm)
+> +{
+> +	struct device *dev = sess->core->dev;
+> +	u32 am21_size = amvdec_am21c_size(sess->width, sess->height);
+> +	int i;
+> +
+> +	for (i = 0; i < MAX_REF_PIC_NUM; ++i) {
+> +		if (comm->fbc_buffer_vaddr[i]) {
+> +			dma_free_coherent(dev, am21_size,
+> +					  comm->fbc_buffer_vaddr[i],
+> +					  comm->fbc_buffer_paddr[i]);
+> +			comm->fbc_buffer_vaddr[i] = NULL;
+> +		}
+> +	}
+> +}
+> +EXPORT_SYMBOL_GPL(codec_hevc_free_fbc_buffers);
+> +
+> +static int codec_hevc_alloc_fbc_buffers(struct amvdec_session *sess,
+> +					struct codec_hevc_common *comm)
+> +{
+> +	struct device *dev = sess->core->dev;
+> +	struct v4l2_m2m_buffer *buf;
+> +	u32 am21_size = amvdec_am21c_size(sess->width, sess->height);
+> +
+> +	v4l2_m2m_for_each_dst_buf(sess->m2m_ctx, buf) {
+> +		u32 idx = buf->vb.vb2_buf.index;
+> +		dma_addr_t paddr;
+> +		void *vaddr = dma_alloc_coherent(dev, am21_size, &paddr,
+> +						 GFP_KERNEL);
+> +		if (!vaddr) {
+> +			dev_err(dev, "Couldn't allocate FBC buffer %u\n", idx);
+> +			codec_hevc_free_fbc_buffers(sess, comm);
+> +			return -ENOMEM;
+> +		}
+> +
+> +		comm->fbc_buffer_vaddr[idx] = vaddr;
+> +		comm->fbc_buffer_paddr[idx] = paddr;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +void codec_hevc_free_mmu_headers(struct amvdec_session *sess,
+> +				 struct codec_hevc_common *comm)
+> +{
+> +	struct device *dev = sess->core->dev;
+> +	int i;
+> +
+> +	for (i = 0; i < MAX_REF_PIC_NUM; ++i) {
+> +		if (comm->mmu_header_vaddr[i]) {
+> +			dma_free_coherent(dev, MMU_COMPRESS_HEADER_SIZE,
+> +					  comm->mmu_header_vaddr[i],
+> +					  comm->mmu_header_paddr[i]);
+> +			comm->mmu_header_vaddr[i] = NULL;
+> +		}
+> +	}
+> +
+> +	if (comm->mmu_map_vaddr) {
+> +		dma_free_coherent(dev, MMU_MAP_SIZE,
+> +				  comm->mmu_map_vaddr,
+> +				  comm->mmu_map_paddr);
+> +		comm->mmu_map_vaddr = NULL;
+> +	}
+> +}
+> +EXPORT_SYMBOL_GPL(codec_hevc_free_mmu_headers);
+> +
+> +static int codec_hevc_alloc_mmu_headers(struct amvdec_session *sess,
+> +					struct codec_hevc_common *comm)
+> +{
+> +	struct device *dev = sess->core->dev;
+> +	struct v4l2_m2m_buffer *buf;
+> +
+> +	comm->mmu_map_vaddr = dma_alloc_coherent(dev, MMU_MAP_SIZE,
+> +						 &comm->mmu_map_paddr,
+> +						 GFP_KERNEL);
+> +	if (!comm->mmu_map_vaddr)
+> +		return -ENOMEM;
+> +
+> +	v4l2_m2m_for_each_dst_buf(sess->m2m_ctx, buf) {
+> +		u32 idx = buf->vb.vb2_buf.index;
+> +		dma_addr_t paddr;
+> +		void *vaddr = dma_alloc_coherent(dev, MMU_COMPRESS_HEADER_SIZE,
+> +						 &paddr, GFP_KERNEL);
+> +		if (!vaddr) {
+> +			dev_err(dev, "Couldn't allocate MMU header %u\n", idx);
+> +			codec_hevc_free_mmu_headers(sess, comm);
+> +			return -ENOMEM;
+> +		}
+> +
+> +		comm->mmu_header_vaddr[idx] = vaddr;
+> +		comm->mmu_header_paddr[idx] = paddr;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +int codec_hevc_setup_buffers(struct amvdec_session *sess,
+> +			     struct codec_hevc_common *comm,
+> +			     int is_10bit)
+> +{
+> +	struct amvdec_core *core = sess->core;
+> +	int ret;
+> +
+> +	if (codec_hevc_use_downsample(sess->pixfmt_cap, is_10bit)) {
+> +		ret = codec_hevc_alloc_fbc_buffers(sess, comm);
+> +		if (ret)
+> +			return ret;
+> +	}
+> +
+> +	if (codec_hevc_use_mmu(core->platform->revision,
+> +			       sess->pixfmt_cap, is_10bit)) {
+> +		ret = codec_hevc_alloc_mmu_headers(sess, comm);
+> +		if (ret) {
+> +			codec_hevc_free_fbc_buffers(sess, comm);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	if (core->platform->revision == VDEC_REVISION_GXBB)
+> +		codec_hevc_setup_buffers_gxbb(sess, comm, is_10bit);
+> +	else
+> +		codec_hevc_setup_buffers_gxl(sess, comm, is_10bit);
+> +
+> +	return 0;
+> +}
+> +EXPORT_SYMBOL_GPL(codec_hevc_setup_buffers);
+> +
+> +void codec_hevc_fill_mmu_map(struct amvdec_session *sess,
+> +			     struct codec_hevc_common *comm,
+> +			     struct vb2_buffer *vb)
+> +{
+> +	u32 size = amvdec_am21c_size(sess->width, sess->height);
+> +	u32 nb_pages = size / PAGE_SIZE;
+> +	u32 *mmu_map = comm->mmu_map_vaddr;
+> +	u32 first_page;
+> +	u32 i;
+> +
+> +	if (sess->pixfmt_cap == V4L2_PIX_FMT_NV12M)
+> +		first_page = comm->fbc_buffer_paddr[vb->index] >> PAGE_SHIFT;
+> +	else
+> +		first_page = vb2_dma_contig_plane_dma_addr(vb, 0) >> PAGE_SHIFT;
+> +
+> +	for (i = 0; i < nb_pages; ++i)
+> +		mmu_map[i] = first_page + i;
+> +}
+> +EXPORT_SYMBOL_GPL(codec_hevc_fill_mmu_map);
+> diff --git a/drivers/staging/media/meson/vdec/codec_hevc_common.h b/drivers/staging/media/meson/vdec/codec_hevc_common.h
+> new file mode 100644
+> index 000000000000..de16d2e43061
+> --- /dev/null
+> +++ b/drivers/staging/media/meson/vdec/codec_hevc_common.h
+> @@ -0,0 +1,77 @@
+> +/* SPDX-License-Identifier: GPL-2.0+ */
+> +/*
+> + * Copyright (C) 2018 BayLibre, SAS
+> + * Author: Maxime Jourdan <mjourdan@baylibre.com>
+> + */
+> +
+> +#ifndef __MESON_VDEC_HEVC_COMMON_H_
+> +#define __MESON_VDEC_HEVC_COMMON_H_
+> +
+> +#include "vdec.h"
+> +
+> +#define PARSER_CMD_SKIP_CFG_0 0x0000090b
+> +#define PARSER_CMD_SKIP_CFG_1 0x1b14140f
+> +#define PARSER_CMD_SKIP_CFG_2 0x001b1910
+> +static const u16 vdec_hevc_parser_cmd[] = {
+> +	0x0401,	0x8401,	0x0800,	0x0402,
+> +	0x9002,	0x1423,	0x8CC3,	0x1423,
+> +	0x8804,	0x9825,	0x0800,	0x04FE,
+> +	0x8406,	0x8411,	0x1800,	0x8408,
+> +	0x8409,	0x8C2A,	0x9C2B,	0x1C00,
+> +	0x840F,	0x8407,	0x8000,	0x8408,
+> +	0x2000,	0xA800,	0x8410,	0x04DE,
+> +	0x840C,	0x840D,	0xAC00,	0xA000,
+> +	0x08C0,	0x08E0,	0xA40E,	0xFC00,
+> +	0x7C00
+> +};
+> +
+> +#define MAX_REF_PIC_NUM	24
+> +
+> +struct codec_hevc_common {
+> +	void      *fbc_buffer_vaddr[MAX_REF_PIC_NUM];
+> +	dma_addr_t fbc_buffer_paddr[MAX_REF_PIC_NUM];
+> +
+> +	void      *mmu_header_vaddr[MAX_REF_PIC_NUM];
+> +	dma_addr_t mmu_header_paddr[MAX_REF_PIC_NUM];
+> +
+> +	void      *mmu_map_vaddr;
+> +	dma_addr_t mmu_map_paddr;
+> +};
+> +
+> +/* Returns 1 if we must use framebuffer compression */
+> +static inline int codec_hevc_use_fbc(u32 pixfmt, int is_10bit)
+> +{
+> +	/* TOFIX: Handle Amlogic Compressed buffer for 8bit also */
+> +	return is_10bit;
+> +}
+> +
+> +/* Returns 1 if we are decoding 10-bit but outputting 8-bit NV12 */
+> +static inline int codec_hevc_use_downsample(u32 pixfmt, int is_10bit)
+> +{
+> +	return is_10bit;
+> +}
+> +
+> +/* Returns 1 if we are decoding using the IOMMU */
+> +static inline int codec_hevc_use_mmu(u32 revision, u32 pixfmt, int is_10bit)
+> +{
+> +	return revision >= VDEC_REVISION_G12A &&
+> +	       codec_hevc_use_fbc(pixfmt, is_10bit);
+> +}
+> +
+> +/**
+> + * Configure decode head read mode
+> + */
+> +void codec_hevc_setup_decode_head(struct amvdec_session *sess, int is_10bit);
+> +
+> +void codec_hevc_free_fbc_buffers(struct amvdec_session *sess,
+> +				 struct codec_hevc_common *comm);
+> +
+> +int codec_hevc_setup_buffers(struct amvdec_session *sess,
+> +			     struct codec_hevc_common *comm,
+> +			     int is_10bit);
+> +
+> +void codec_hevc_fill_mmu_map(struct amvdec_session *sess,
+> +			     struct codec_hevc_common *comm,
+> +			     struct vb2_buffer *vb);
+> +
+> +#endif
+> diff --git a/drivers/staging/media/meson/vdec/hevc_regs.h b/drivers/staging/media/meson/vdec/hevc_regs.h
+> new file mode 100644
+> index 000000000000..55c1a80b955a
+> --- /dev/null
+> +++ b/drivers/staging/media/meson/vdec/hevc_regs.h
+> @@ -0,0 +1,211 @@
+> +/* SPDX-License-Identifier: GPL-2.0+ */
+> +/*
+> + * Copyright (C) 2015 Amlogic, Inc. All rights reserved.
+> + */
+> +
+> +#ifndef __MESON_VDEC_HEVC_REGS_H_
+> +#define __MESON_VDEC_HEVC_REGS_H_
+> +
+> +#define HEVC_ASSIST_MMU_MAP_ADDR 0xc024
+> +
+> +#define HEVC_ASSIST_MBOX1_CLR_REG 0xc1d4
+> +#define HEVC_ASSIST_MBOX1_MASK 0xc1d8
+> +
+> +#define HEVC_ASSIST_SCRATCH_0 0xc300
+> +#define HEVC_ASSIST_SCRATCH_1 0xc304
+> +#define HEVC_ASSIST_SCRATCH_2 0xc308
+> +#define HEVC_ASSIST_SCRATCH_3 0xc30c
+> +#define HEVC_ASSIST_SCRATCH_4 0xc310
+> +#define HEVC_ASSIST_SCRATCH_5 0xc314
+> +#define HEVC_ASSIST_SCRATCH_6 0xc318
+> +#define HEVC_ASSIST_SCRATCH_7 0xc31c
+> +#define HEVC_ASSIST_SCRATCH_8 0xc320
+> +#define HEVC_ASSIST_SCRATCH_9 0xc324
+> +#define HEVC_ASSIST_SCRATCH_A 0xc328
+> +#define HEVC_ASSIST_SCRATCH_B 0xc32c
+> +#define HEVC_ASSIST_SCRATCH_C 0xc330
+> +#define HEVC_ASSIST_SCRATCH_D 0xc334
+> +#define HEVC_ASSIST_SCRATCH_E 0xc338
+> +#define HEVC_ASSIST_SCRATCH_F 0xc33c
+> +#define HEVC_ASSIST_SCRATCH_G 0xc340
+> +#define HEVC_ASSIST_SCRATCH_H 0xc344
+> +#define HEVC_ASSIST_SCRATCH_I 0xc348
+> +#define HEVC_ASSIST_SCRATCH_J 0xc34c
+> +#define HEVC_ASSIST_SCRATCH_K 0xc350
+> +#define HEVC_ASSIST_SCRATCH_L 0xc354
+> +#define HEVC_ASSIST_SCRATCH_M 0xc358
+> +#define HEVC_ASSIST_SCRATCH_N 0xc35c
+> +
+> +#define HEVC_PARSER_VERSION 0xc400
+> +#define HEVC_STREAM_CONTROL 0xc404
+> +#define HEVC_STREAM_START_ADDR 0xc408
+> +#define HEVC_STREAM_END_ADDR 0xc40c
+> +#define HEVC_STREAM_WR_PTR 0xc410
+> +#define HEVC_STREAM_RD_PTR 0xc414
+> +#define HEVC_STREAM_LEVEL 0xc418
+> +#define HEVC_STREAM_FIFO_CTL 0xc41c
+> +#define HEVC_SHIFT_CONTROL 0xc420
+> +#define HEVC_SHIFT_STARTCODE 0xc424
+> +#define HEVC_SHIFT_EMULATECODE 0xc428
+> +#define HEVC_SHIFT_STATUS 0xc42c
+> +#define HEVC_SHIFTED_DATA 0xc430
+> +#define HEVC_SHIFT_BYTE_COUNT 0xc434
+> +#define HEVC_SHIFT_COMMAND 0xc438
+> +#define HEVC_ELEMENT_RESULT 0xc43c
+> +#define HEVC_CABAC_CONTROL 0xc440
+> +#define HEVC_PARSER_SLICE_INFO 0xc444
+> +#define HEVC_PARSER_CMD_WRITE 0xc448
+> +#define HEVC_PARSER_CORE_CONTROL 0xc44c
+> +#define HEVC_PARSER_CMD_FETCH 0xc450
+> +#define HEVC_PARSER_CMD_STATUS 0xc454
+> +#define HEVC_PARSER_LCU_INFO 0xc458
+> +#define HEVC_PARSER_HEADER_INFO 0xc45c
+> +#define HEVC_PARSER_INT_CONTROL 0xc480
+> +#define HEVC_PARSER_INT_STATUS 0xc484
+> +#define HEVC_PARSER_IF_CONTROL 0xc488
+> +#define HEVC_PARSER_PICTURE_SIZE 0xc48c
+> +#define HEVC_PARSER_LCU_START 0xc490
+> +#define HEVC_PARSER_HEADER_INFO2 0xc494
+> +#define HEVC_PARSER_QUANT_READ 0xc498
+> +#define HEVC_PARSER_RESERVED_27 0xc49c
+> +#define HEVC_PARSER_CMD_SKIP_0 0xc4a0
+> +#define HEVC_PARSER_CMD_SKIP_1 0xc4a4
+> +#define HEVC_PARSER_CMD_SKIP_2 0xc4a8
+> +#define HEVC_SAO_IF_STATUS 0xc4c0
+> +#define HEVC_SAO_IF_DATA_Y 0xc4c4
+> +#define HEVC_SAO_IF_DATA_U 0xc4c8
+> +#define HEVC_SAO_IF_DATA_V 0xc4cc
+> +#define HEVC_STREAM_SWAP_ADDR 0xc4d0
+> +#define HEVC_STREAM_SWAP_CTRL 0xc4d4
+> +#define HEVC_IQIT_IF_WAIT_CNT 0xc4d8
+> +#define HEVC_MPRED_IF_WAIT_CNT 0xc4dc
+> +#define HEVC_SAO_IF_WAIT_CNT 0xc4e0
+> +
+> +#define HEVC_MPRED_VERSION 0xc800
+> +#define HEVC_MPRED_CTRL0 0xc804
+> +	#define MPRED_CTRL0_NEW_PIC	BIT(2)
+> +	#define MPRED_CTRL0_NEW_TILE	BIT(3)
+> +	#define MPRED_CTRL0_NEW_SLI_SEG	BIT(4)
+> +	#define MPRED_CTRL0_TMVP	BIT(5)
+> +	#define MPRED_CTRL0_LDC		BIT(6)
+> +	#define MPRED_CTRL0_COL_FROM_L0	BIT(7)
+> +	#define MPRED_CTRL0_ABOVE_EN	BIT(9)
+> +	#define MPRED_CTRL0_MV_WR_EN	BIT(10)
+> +	#define MPRED_CTRL0_MV_RD_EN	BIT(11)
+> +	#define MPRED_CTRL0_BUF_LINEAR	BIT(13)
+> +#define HEVC_MPRED_CTRL1 0xc808
+> +#define HEVC_MPRED_INT_EN 0xc80c
+> +#define HEVC_MPRED_INT_STATUS 0xc810
+> +#define HEVC_MPRED_PIC_SIZE 0xc814
+> +#define HEVC_MPRED_PIC_SIZE_LCU 0xc818
+> +#define HEVC_MPRED_TILE_START 0xc81c
+> +#define HEVC_MPRED_TILE_SIZE_LCU 0xc820
+> +#define HEVC_MPRED_REF_NUM 0xc824
+> +#define HEVC_MPRED_REF_EN_L0 0xc830
+> +#define HEVC_MPRED_REF_EN_L1 0xc834
+> +#define HEVC_MPRED_COLREF_EN_L0 0xc838
+> +#define HEVC_MPRED_COLREF_EN_L1 0xc83c
+> +#define HEVC_MPRED_AXI_WCTRL 0xc840
+> +#define HEVC_MPRED_AXI_RCTRL 0xc844
+> +#define HEVC_MPRED_ABV_START_ADDR 0xc848
+> +#define HEVC_MPRED_MV_WR_START_ADDR 0xc84c
+> +#define HEVC_MPRED_MV_RD_START_ADDR 0xc850
+> +#define HEVC_MPRED_MV_WPTR 0xc854
+> +#define HEVC_MPRED_MV_RPTR 0xc858
+> +#define HEVC_MPRED_MV_WR_ROW_JUMP 0xc85c
+> +#define HEVC_MPRED_MV_RD_ROW_JUMP 0xc860
+> +#define HEVC_MPRED_CURR_LCU 0xc864
+> +#define HEVC_MPRED_ABV_WPTR 0xc868
+> +#define HEVC_MPRED_ABV_RPTR 0xc86c
+> +#define HEVC_MPRED_CTRL2 0xc870
+> +#define HEVC_MPRED_CTRL3 0xc874
+> +#define HEVC_MPRED_L0_REF00_POC 0xc880
+> +#define HEVC_MPRED_L1_REF00_POC 0xc8c0
+> +
+> +#define HEVC_MPRED_CUR_POC 0xc980
+> +#define HEVC_MPRED_COL_POC 0xc984
+> +#define HEVC_MPRED_MV_RD_END_ADDR 0xc988
+> +
+> +#define HEVC_MSP 0xcc00
+> +#define HEVC_MPSR 0xcc04
+> +#define HEVC_MCPU_INTR_MSK 0xcc10
+> +#define HEVC_MCPU_INTR_REQ 0xcc14
+> +#define HEVC_CPSR 0xcc84
+> +
+> +#define HEVC_IMEM_DMA_CTRL 0xcd00
+> +#define HEVC_IMEM_DMA_ADR 0xcd04
+> +#define HEVC_IMEM_DMA_COUNT 0xcd08
+> +
+> +#define HEVCD_IPP_TOP_CNTL 0xd000
+> +#define HEVCD_IPP_LINEBUFF_BASE 0xd024
+> +#define HEVCD_IPP_AXIIF_CONFIG 0xd02c
+> +
+> +#define HEVCD_MPP_ANC2AXI_TBL_CONF_ADDR 0xd180
+> +#define HEVCD_MPP_ANC2AXI_TBL_CMD_ADDR 0xd184
+> +#define HEVCD_MPP_ANC2AXI_TBL_DATA 0xd190
+> +
+> +#define HEVCD_MPP_ANC_CANVAS_ACCCONFIG_ADDR 0xd300
+> +#define HEVCD_MPP_ANC_CANVAS_DATA_ADDR 0xd304
+> +#define HEVCD_MPP_DECOMP_CTL1 0xd308
+> +#define HEVCD_MPP_DECOMP_CTL2 0xd30c
+> +#define HEVCD_MCRCC_CTL1 0xd3c0
+> +#define HEVCD_MCRCC_CTL2 0xd3c4
+> +#define HEVCD_MCRCC_CTL3 0xd3c8
+> +
+> +#define HEVC_DBLK_CFG0 0xd400
+> +#define HEVC_DBLK_CFG1 0xd404
+> +#define HEVC_DBLK_CFG2 0xd408
+> +#define HEVC_DBLK_CFG3 0xd40c
+> +#define HEVC_DBLK_CFG4 0xd410
+> +#define HEVC_DBLK_CFG5 0xd414
+> +#define HEVC_DBLK_CFG6 0xd418
+> +#define HEVC_DBLK_CFG7 0xd41c
+> +#define HEVC_DBLK_CFG8 0xd420
+> +#define HEVC_DBLK_CFG9 0xd424
+> +#define HEVC_DBLK_CFGA 0xd428
+> +#define HEVC_DBLK_STS0 0xd42c
+> +#define HEVC_DBLK_STS1 0xd430
+> +#define HEVC_DBLK_CFGE 0xd438
+> +
+> +#define HEVC_SAO_VERSION 0xd800
+> +#define HEVC_SAO_CTRL0 0xd804
+> +#define HEVC_SAO_CTRL1 0xd808
+> +#define HEVC_SAO_PIC_SIZE 0xd814
+> +#define HEVC_SAO_PIC_SIZE_LCU 0xd818
+> +#define HEVC_SAO_TILE_START 0xd81c
+> +#define HEVC_SAO_TILE_SIZE_LCU 0xd820
+> +#define HEVC_SAO_Y_START_ADDR 0xd82c
+> +#define HEVC_SAO_Y_LENGTH 0xd830
+> +#define HEVC_SAO_C_START_ADDR 0xd834
+> +#define HEVC_SAO_C_LENGTH 0xd838
+> +#define HEVC_SAO_Y_WPTR 0xd83c
+> +#define HEVC_SAO_C_WPTR 0xd840
+> +#define HEVC_SAO_ABV_START_ADDR 0xd844
+> +#define HEVC_SAO_VB_WR_START_ADDR 0xd848
+> +#define HEVC_SAO_VB_RD_START_ADDR 0xd84c
+> +#define HEVC_SAO_ABV_WPTR 0xd850
+> +#define HEVC_SAO_ABV_RPTR 0xd854
+> +#define HEVC_SAO_VB_WPTR 0xd858
+> +#define HEVC_SAO_VB_RPTR 0xd85c
+> +#define HEVC_SAO_CTRL2 0xd880
+> +#define HEVC_SAO_CTRL3 0xd884
+> +#define HEVC_SAO_CTRL4 0xd888
+> +#define HEVC_SAO_CTRL5 0xd88c
+> +#define HEVC_SAO_CTRL6 0xd890
+> +#define HEVC_SAO_CTRL7 0xd894
+> +#define HEVC_CM_BODY_START_ADDR 0xd898
+> +#define HEVC_CM_BODY_LENGTH 0xd89c
+> +#define HEVC_CM_HEADER_START_ADDR 0xd8a0
+> +#define HEVC_CM_HEADER_LENGTH 0xd8a4
+> +#define HEVC_CM_HEADER_OFFSET 0xd8ac
+> +#define HEVC_SAO_MMU_VH0_ADDR 0xd8e8
+> +#define HEVC_SAO_MMU_VH1_ADDR 0xd8ec
+> +
+> +#define HEVC_IQIT_CLK_RST_CTRL 0xdc00
+> +#define HEVC_IQIT_SCALELUT_WR_ADDR 0xdc08
+> +#define HEVC_IQIT_SCALELUT_RD_ADDR 0xdc0c
+> +#define HEVC_IQIT_SCALELUT_DATA 0xdc10
+> +
+> +#define HEVC_PSCALE_CTRL 0xe444
+> +
+> +#endif
+> diff --git a/drivers/staging/media/meson/vdec/vdec_hevc.c b/drivers/staging/media/meson/vdec/vdec_hevc.c
+> new file mode 100644
+> index 000000000000..af41215e106c
+> --- /dev/null
+> +++ b/drivers/staging/media/meson/vdec/vdec_hevc.c
+> @@ -0,0 +1,231 @@
+> +// SPDX-License-Identifier: GPL-2.0+
+> +/*
+> + * Copyright (C) 2018 Maxime Jourdan <maxi.jourdan@wanadoo.fr>
+> + *
+> + * VDEC_HEVC is a video decoding block that allows decoding of
+> + * HEVC, VP9
+> + */
+> +
+> +#include <linux/firmware.h>
+> +#include <linux/clk.h>
+> +
+> +#include "vdec_1.h"
+> +#include "vdec_helpers.h"
+> +#include "hevc_regs.h"
+> +#include "dos_regs.h"
+> +
+> +/* AO Registers */
+> +#define AO_RTI_GEN_PWR_SLEEP0	0xe8
+> +#define AO_RTI_GEN_PWR_ISO0	0xec
+> +	#define GEN_PWR_VDEC_HEVC (BIT(7) | BIT(6))
+> +	#define GEN_PWR_VDEC_HEVC_SM1 (BIT(2))
+> +
+> +#define MC_SIZE	(4096 * 4)
+> +
+> +static int vdec_hevc_load_firmware(struct amvdec_session *sess,
+> +				   const char *fwname)
+> +{
+> +	struct amvdec_core *core = sess->core;
+> +	struct device *dev = core->dev_dec;
+> +	const struct firmware *fw;
+> +	static void *mc_addr;
+> +	static dma_addr_t mc_addr_map;
+> +	int ret;
+> +	u32 i = 100;
+> +
+> +	ret = request_firmware(&fw, fwname, dev);
+> +	if (ret < 0)  {
+> +		dev_err(dev, "Unable to request firmware %s\n", fwname);
+> +		return ret;
+> +	}
+> +
+> +	if (fw->size < MC_SIZE) {
+> +		dev_err(dev, "Firmware size %zu is too small. Expected %u.\n",
+> +			fw->size, MC_SIZE);
+> +		ret = -EINVAL;
+> +		goto release_firmware;
+> +	}
+> +
+> +	mc_addr = dma_alloc_coherent(core->dev, MC_SIZE, &mc_addr_map,
+> +				     GFP_KERNEL);
+> +	if (!mc_addr) {
+> +		dev_err(dev, "Failed allocating memory for firmware loading\n");
+> +		ret = -ENOMEM;
+> +		goto release_firmware;
+> +	}
+> +
+> +	memcpy(mc_addr, fw->data, MC_SIZE);
+> +
+> +	amvdec_write_dos(core, HEVC_MPSR, 0);
+> +	amvdec_write_dos(core, HEVC_CPSR, 0);
+> +
+> +	amvdec_write_dos(core, HEVC_IMEM_DMA_ADR, mc_addr_map);
+> +	amvdec_write_dos(core, HEVC_IMEM_DMA_COUNT, MC_SIZE / 4);
+> +	amvdec_write_dos(core, HEVC_IMEM_DMA_CTRL, (0x8000 | (7 << 16)));
+> +
+> +	while (i && (readl(core->dos_base + HEVC_IMEM_DMA_CTRL) & 0x8000))
+> +		i--;
+> +
+> +	if (i == 0) {
+> +		dev_err(dev, "Firmware load fail (DMA hang?)\n");
+> +		ret = -ENODEV;
+> +	}
+> +
+> +	dma_free_coherent(core->dev, MC_SIZE, mc_addr, mc_addr_map);
+> +release_firmware:
+> +	release_firmware(fw);
+> +	return ret;
+> +}
+> +
+> +static void vdec_hevc_stbuf_init(struct amvdec_session *sess)
+> +{
+> +	struct amvdec_core *core = sess->core;
+> +
+> +	amvdec_write_dos(core, HEVC_STREAM_CONTROL,
+> +			 amvdec_read_dos(core, HEVC_STREAM_CONTROL) & ~1);
+> +	amvdec_write_dos(core, HEVC_STREAM_START_ADDR, sess->vififo_paddr);
+> +	amvdec_write_dos(core, HEVC_STREAM_END_ADDR,
+> +			 sess->vififo_paddr + sess->vififo_size);
+> +	amvdec_write_dos(core, HEVC_STREAM_RD_PTR, sess->vififo_paddr);
+> +	amvdec_write_dos(core, HEVC_STREAM_WR_PTR, sess->vififo_paddr);
+> +}
+> +
+> +/* VDEC_HEVC specific ESPARSER configuration */
+> +static void vdec_hevc_conf_esparser(struct amvdec_session *sess)
+> +{
+> +	struct amvdec_core *core = sess->core;
+> +
+> +	/* set vififo_vbuf_rp_sel=>vdec_hevc */
+> +	amvdec_write_dos(core, DOS_GEN_CTRL0, 3 << 1);
+> +	amvdec_write_dos(core, HEVC_STREAM_CONTROL,
+> +			 amvdec_read_dos(core, HEVC_STREAM_CONTROL) | BIT(3));
+> +	amvdec_write_dos(core, HEVC_STREAM_CONTROL,
+> +			 amvdec_read_dos(core, HEVC_STREAM_CONTROL) | 1);
+> +	amvdec_write_dos(core, HEVC_STREAM_FIFO_CTL,
+> +			 amvdec_read_dos(core, HEVC_STREAM_FIFO_CTL) | BIT(29));
+> +}
+> +
+> +static u32 vdec_hevc_vififo_level(struct amvdec_session *sess)
+> +{
+> +	return readl_relaxed(sess->core->dos_base + HEVC_STREAM_LEVEL);
+> +}
+> +
+> +static int vdec_hevc_stop(struct amvdec_session *sess)
+> +{
+> +	struct amvdec_core *core = sess->core;
+> +	struct amvdec_codec_ops *codec_ops = sess->fmt_out->codec_ops;
+> +
+> +	/* Disable interrupt */
+> +	amvdec_write_dos(core, HEVC_ASSIST_MBOX1_MASK, 0);
+> +	/* Disable firmware processor */
+> +	amvdec_write_dos(core, HEVC_MPSR, 0);
+> +
+> +	if (sess->priv)
+> +		codec_ops->stop(sess);
+> +
+> +	/* Enable VDEC_HEVC Isolation */
+> +	if (core->platform->revision == VDEC_REVISION_SM1)
+> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_ISO0,
+> +				   GEN_PWR_VDEC_HEVC_SM1,
+> +				   GEN_PWR_VDEC_HEVC_SM1);
+> +	else
+> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_ISO0,
+> +				   0xc00, 0xc00);
+> +
+> +	/* VDEC_HEVC Memories */
+> +	amvdec_write_dos(core, DOS_MEM_PD_HEVC, 0xffffffffUL);
+> +
+> +	if (core->platform->revision == VDEC_REVISION_SM1)
+> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
+> +				   GEN_PWR_VDEC_HEVC_SM1,
+> +				   GEN_PWR_VDEC_HEVC_SM1);
+> +	else
+> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
+> +				   GEN_PWR_VDEC_HEVC, GEN_PWR_VDEC_HEVC);
+> +
+> +	clk_disable_unprepare(core->vdec_hevc_clk);
+> +	if (core->platform->revision == VDEC_REVISION_G12A ||
+> +	    core->platform->revision == VDEC_REVISION_SM1)
+> +		clk_disable_unprepare(core->vdec_hevcf_clk);
+> +
+> +	return 0;
+> +}
+> +
+> +static int vdec_hevc_start(struct amvdec_session *sess)
+> +{
+> +	int ret;
+> +	struct amvdec_core *core = sess->core;
+> +	struct amvdec_codec_ops *codec_ops = sess->fmt_out->codec_ops;
+> +
+> +	if (core->platform->revision == VDEC_REVISION_G12A ||
+> +	    core->platform->revision == VDEC_REVISION_SM1) {
+> +		clk_set_rate(core->vdec_hevcf_clk, 666666666);
+> +		ret = clk_prepare_enable(core->vdec_hevcf_clk);
+> +		if (ret)
+> +			return ret;
+> +	}
+> +
+> +	clk_set_rate(core->vdec_hevc_clk, 666666666);
+> +	ret = clk_prepare_enable(core->vdec_hevc_clk);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (core->platform->revision == VDEC_REVISION_SM1)
+> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
+> +				   GEN_PWR_VDEC_HEVC_SM1, 0);
+> +	else
+> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
+> +				   GEN_PWR_VDEC_HEVC, 0);
+> +	udelay(10);
+> +
+> +	/* Reset VDEC_HEVC*/
+> +	amvdec_write_dos(core, DOS_SW_RESET3, 0xffffffff);
+> +	amvdec_write_dos(core, DOS_SW_RESET3, 0x00000000);
+> +
+> +	amvdec_write_dos(core, DOS_GCLK_EN3, 0xffffffff);
+> +
+> +	/* VDEC_HEVC Memories */
+> +	amvdec_write_dos(core, DOS_MEM_PD_HEVC, 0x00000000);
+> +
+> +	/* Remove VDEC_HEVC Isolation */
+> +	if (core->platform->revision == VDEC_REVISION_SM1)
+> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_ISO0,
+> +				   GEN_PWR_VDEC_HEVC_SM1, 0);
+> +	else
+> +		regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_ISO0,
+> +				   0xc00, 0);
+> +
+> +	amvdec_write_dos(core, DOS_SW_RESET3, 0xffffffff);
+> +	amvdec_write_dos(core, DOS_SW_RESET3, 0x00000000);
+> +
+> +	vdec_hevc_stbuf_init(sess);
+> +
+> +	ret = vdec_hevc_load_firmware(sess, sess->fmt_out->firmware_path);
+> +	if (ret)
+> +		goto stop;
+> +
+> +	ret = codec_ops->start(sess);
+> +	if (ret)
+> +		goto stop;
+> +
+> +	amvdec_write_dos(core, DOS_SW_RESET3, BIT(12) | BIT(11));
+> +	amvdec_write_dos(core, DOS_SW_RESET3, 0);
+> +	amvdec_read_dos(core, DOS_SW_RESET3);
+> +
+> +	amvdec_write_dos(core, HEVC_MPSR, 1);
+> +	/* Let the firmware settle */
+> +	udelay(10);
+> +
+> +	return 0;
+> +
+> +stop:
+> +	vdec_hevc_stop(sess);
+> +	return ret;
+> +}
+> +
+> +struct amvdec_ops vdec_hevc_ops = {
+> +	.start = vdec_hevc_start,
+> +	.stop = vdec_hevc_stop,
+> +	.conf_esparser = vdec_hevc_conf_esparser,
+> +	.vififo_level = vdec_hevc_vififo_level,
+> +};
+> diff --git a/drivers/staging/media/meson/vdec/vdec_hevc.h b/drivers/staging/media/meson/vdec/vdec_hevc.h
+> new file mode 100644
+> index 000000000000..cd576a73a966
+> --- /dev/null
+> +++ b/drivers/staging/media/meson/vdec/vdec_hevc.h
+> @@ -0,0 +1,13 @@
+> +/* SPDX-License-Identifier: GPL-2.0+ */
+> +/*
+> + * Copyright (C) 2018 Maxime Jourdan <maxi.jourdan@wanadoo.fr>
+> + */
+> +
+> +#ifndef __MESON_VDEC_VDEC_HEVC_H_
+> +#define __MESON_VDEC_VDEC_HEVC_H_
+> +
+> +#include "vdec.h"
+> +
+> +extern struct amvdec_ops vdec_hevc_ops;
+> +
+> +#endif
+> 
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
