@@ -2,58 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AD6115DB58
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:45:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D05A815DB61
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:45:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L1J2Eezu8EypWhkLy/JlQCQb6lhskrTNlIpGM22yrXI=; b=i3xZwWjZ6JpqXH
-	IKyBp73MSaAC0zML8HK4Q+CRb+aHrlWl/gSZjsUpOHrP4JeXCi++I9m5qzqh1yNFU6bDFZyusTuoM
-	xD/tueZspVh887HK6RH2BrK642nJrsDPbmLYBDHKXJ7Je5xRZ1pMGr1/cnvt97S7L65yWcD+wp4cr
-	yZirWXVSLvS+u6HGvO0Z7+xY5/cgRbV5YPCJlkAmYJMSkksM/L05dkf9QXRBWaD36mk9uUa6AsCvp
-	Bt/0VivmB3i4qJD5qA4DJ5Z7Wkvama0uJoiG71FV8L/rZOvZo+mW4y3MGAIBfbpl1dpvz1pSc7rd0
-	IfysFe68ouYH/6aEH+aw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EQrEbK7w/R9COZJ6S5Feq/FEMNZts8lZYRGt9IG0wDA=; b=aJ474nCoXv7opj47U+9gtE7Ql
+	0hm9/vwhjDzv/IklDMx3rrrxeW5Id6xxgojpx8S6fKYqlgICzFsCy7zkRIvlwYLtTD5IfMxQeVGPy
+	2r/hmIeJbWZ444ZC3oBkg0Z4Oh3dv0lejuoOxchsPO+9kguSjuv2pGRv9mm19wb58GIW4s5CjU5Uh
+	rjYlmXA04T3BZIyuN3JGnjqQ57J9UuTv7OI6Yz3sqzCUkcHJCMBm5CcfTKx1ZeG0YNOA6TIiV9D+x
+	+hgPwHEOU0JDiV+lfZloHe+5hmuq9PAsQO8L1F6I8H7Lhl9PeK1PbRGeXxnCgVE1Z3wndE9AdH2NH
+	c7Y2PRfaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2d9t-0000DA-G6; Fri, 14 Feb 2020 15:45:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2d9k-000081-V4
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:45:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CA4AC328;
- Fri, 14 Feb 2020 07:45:26 -0800 (PST)
-Received: from localhost (e108754-lin.cambridge.arm.com [10.1.198.52])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B5D83F68E;
- Fri, 14 Feb 2020 07:45:26 -0800 (PST)
-Date: Fri, 14 Feb 2020 15:45:25 +0000
-From: Ionela Voinescu <ionela.voinescu@arm.com>
-To: Thomas Gleixner <tglx@linutronix.de>
-Subject: Re: [PATCH v3 7/7] clocksource/drivers/arm_arch_timer: validate
- arch_timer_rate
-Message-ID: <20200214154525.GA21875@arm.com>
-References: <20200211184542.29585-1-ionela.voinescu@arm.com>
- <20200211184542.29585-8-ionela.voinescu@arm.com>
- <87mu9mgg41.fsf@nanos.tec.linutronix.de>
+	id 1j2dA6-0000Qi-KH; Fri, 14 Feb 2020 15:45:50 +0000
+Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2d9u-0000M4-Gf
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:45:40 +0000
+Received: by mail-qv1-xf41.google.com with SMTP id y8so4469159qvk.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Feb 2020 07:45:37 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=vqqrjWtgUXu/aUZkcdCKcPP3tDkK54zNyKD1IFKENHw=;
+ b=vjEgGCCl5WpSIxHhiLQxvIzjkbSrELd1BDobEdNJAoFWPU4QUkwP9A0jBBfPuGv02h
+ qmZs4n//zLbJy5w58zgj9PxAhUTpBYzqvxlUC3CgKSxGJDp1pazKFbgHSCYhfED6Rwi6
+ sTmWlIsN5SEcsUaxqiTXEiDnjVMlmSOQB7A25z8YQ8RLw8QHI5w9P2jO1bMwztA2UMmC
+ 6CqNLFM2ylE6kGha+lwHtU6ZJF1ifusWH1HZ+ZE9QEdzBrlvuJ1O1V8cWwngSjGUzZn0
+ jqC2S3uuhDCsH14ag2wnUWqgRLD6WiuX/faNYv7VGH6CH5+de42J7YWel1WeUepo9p0i
+ 2S3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=vqqrjWtgUXu/aUZkcdCKcPP3tDkK54zNyKD1IFKENHw=;
+ b=hknu0jxCwnShM1YmQPmU35N49DkqOOwEKnW2O8eB2I8aAyvTmkuZAMy5KEYulCt30C
+ gzSt9zRCm+cmbKNGhnS03e7qfND0xUVsrohi8/7kId11S7Fl4Za9qb4dbdrRbiwZ5Mfj
+ rkUTzYM72miu+fjRTlkevgEVq6auF5e4ua7y8DGsdObnVAaS/QH+Tsq5N5qfOR+Sfivd
+ cmIB7crX2jZCSejKfFWJK7OlTVnGijE50PZ36s3h3zTovokW/y+zA7XYQfW/zk3SRAtt
+ 85+tmmH0a6d1nGKSh2/tzNDpDYtc5JH53kSIvhgBP1atmeyzQ45f92CZk3M4VGQ6da4+
+ AOKw==
+X-Gm-Message-State: APjAAAUDpjMvxC0rJbiOb4+a7Ny2R9PSFdtBB6j+vi0BUfsWwSAfcgfY
+ LbrqtRWEvjKExzh+clBRnqc+fg==
+X-Google-Smtp-Source: APXvYqwrfiQIR2itEW8Zy2V1EpokrYNo8vVcgLgCH606BWBarGRAMIovn+WGJWU5MVnEfX6Uwak25g==
+X-Received: by 2002:a0c:f7c3:: with SMTP id f3mr2749095qvo.52.1581695136721;
+ Fri, 14 Feb 2020 07:45:36 -0800 (PST)
+Received: from [192.168.0.185] ([191.34.221.109])
+ by smtp.gmail.com with ESMTPSA id q6sm3366082qkm.46.2020.02.14.07.45.33
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 14 Feb 2020 07:45:35 -0800 (PST)
+Subject: Re: [arm64, debug] PTRACE_SINGLESTEP does not single-step a valid
+ instruction
+From: Luis Machado <luis.machado@linaro.org>
+To: Will Deacon <will@kernel.org>
+References: <1eed6d69-d53d-9657-1fc9-c089be07f98c@linaro.org>
+ <20191118131525.GA4180@willie-the-truck>
+ <b3a9ae7e-8a45-7c14-7bc6-1d3b62728a0c@linaro.org>
+ <307ece3d-4e9d-21c4-0abf-9f4f3b313e74@linaro.org>
+ <82cb3dea-db82-1c71-3b08-957102b85c93@linaro.org>
+ <20200213120115.GD1405@willie-the-truck>
+ <ae8c0cd4-f072-deaf-f30e-46e2265d6392@linaro.org>
+Message-ID: <5028f457-5b7d-1a88-912f-3fa97b567985@linaro.org>
+Date: Fri, 14 Feb 2020 12:45:31 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87mu9mgg41.fsf@nanos.tec.linutronix.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <ae8c0cd4-f072-deaf-f30e-46e2265d6392@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_074529_049120_F8C75E75 
-X-CRM114-Status: GOOD (  18.20  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200214_074538_592628_2279AD79 
+X-CRM114-Status: GOOD (  19.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,62 +103,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, maz@kernel.org, suzuki.poulose@arm.com,
- peterz@infradead.org, catalin.marinas@arm.com, linux-pm@vger.kernel.org,
- linux-doc@vger.kernel.org, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- mingo@redhat.com, viresh.kumar@linaro.org,
- linux-arm-kernel@lists.infradead.org, sudeep.holla@arm.com, will@kernel.org,
- valentin.schneider@arm.com, lukasz.luba@arm.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgVGhvbWFzLAoKT24gRnJpZGF5IDE0IEZlYiAyMDIwIGF0IDAxOjM1OjU4ICgrMDEwMCksIFRo
-b21hcyBHbGVpeG5lciB3cm90ZToKPiBJb25lbGEgVm9pbmVzY3UgPGlvbmVsYS52b2luZXNjdUBh
-cm0uY29tPiB3cml0ZXM6Cj4gCj4gPiBGcm9tOiBWYWxlbnRpbiBTY2huZWlkZXIgPHZhbGVudGlu
-LnNjaG5laWRlckBhcm0uY29tPgo+ID4KPiA+IFVzaW5nIGFuIGFyY2ggdGltZXIgd2l0aCBhIGZy
-ZXF1ZW5jeSBvZiBsZXNzIHRoYW4gMU1IeiBjYW4gcmVzdWx0IGluIGFuCj4gPiBpbmNvcnJlY3Qg
-ZnVuY3Rpb25hbGl0eSBvZiB0aGUgc3lzdGVtIHdoaWNoIGFzc3VtZXMgYSByZWFzb25hYmxlIHJh
-dGUuCj4gPgo+ID4gT25lIGV4YW1wbGUgaXMgdGhlIHVzZSBvZiBhY3Rpdml0eSBtb25pdG9ycyBm
-b3IgZnJlcXVlbmN5IGludmFyaWFuY2UKPiA+IHdoaWNoIHVzZXMgdGhlIHJhdGUgb2YgdGhlIGFy
-Y2ggdGltZXIgYXMgdGhlIGtub3duIHJhdGUgb2YgdGhlIGNvbnN0YW50Cj4gPiBjeWNsZSBjb3Vu
-dGVyIGluIGNvbXB1dGluZyBpdHMgcmF0aW8gY29tcGFyZWQgdG8gdGhlIG1heGltdW0gZnJlcXVl
-bmN5Cj4gPiBvZiBhIENQVS4gRm9yIGFyY2ggdGltZXIgZnJlcXVlbmNpZXMgbGVzcyB0aGFuIDFN
-SHogdGhpcyByYXRpbyBjb3VsZAo+ID4gZW5kIHVwIGJlaW5nIDAgd2hpY2ggaXMgYW4gaW52YWxp
-ZCB2YWx1ZSBmb3IgaXRzIHVzZS4KPiA+Cj4gPiBUaGVyZWZvcmUsIHdhcm4gaWYgdGhlIGFyY2gg
-dGltZXIgcmF0ZSBpcyBiZWxvdyAxTUh6IHdoaWNoIGNvbnRyYXZlbmVzCj4gPiB0aGUgcmVjb21t
-ZW5kZWQgYXJjaGl0ZWN0dXJlIGludGVydmFsIG9mIDEgdG8gNTBNSHouCj4gPgo+ID4gU2lnbmVk
-LW9mZi1ieTogSW9uZWxhIFZvaW5lc2N1IDxpb25lbGEudm9pbmVzY3VAYXJtLmNvbT4KPiAKPiBT
-byB0aGlzIHBhdGNoIGlzIGZyb20gVmFsZW50aW4uIFdoZXJlIGlzIGhpcyBTaWduZWQtb2ZmLWJ5
-Pwo+IAoKWWVzLCBzb3JyeSBhYm91dCB0aGlzLiBUaGlzIHdhcyBiYXNlZCBvbiBhIGRpZmYgdGhh
-dCBWYWxlbnRpbiBwcm92aWRlZAppbiB2Mi4gSSdsbCBjaGFuZ2UgdGhlIGF1dGhvciBhcyBhZ3Jl
-ZWQgYXQ6Cmh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL2xrbWwvMjAyMDAyMTIxMDMyNDkuR0ExOTA0
-MUBhcm0uY29tLwoKPiA+ICAKPiA+ICtzdGF0aWMgaW50IHZhbGlkYXRlX3RpbWVyX3JhdGUodm9p
-ZCkKPiA+ICt7Cj4gPiArCWlmICghYXJjaF90aW1lcl9yYXRlKQo+ID4gKwkJcmV0dXJuIC1FSU5W
-QUw7Cj4gPiArCj4gPiArCS8qIEFyY2ggdGltZXIgZnJlcXVlbmN5IDwgMU1IeiBjYW4gY2F1c2Ug
-dHJvdWJsZSAqLwo+ID4gKwlXQVJOX09OKGFyY2hfdGltZXJfcmF0ZSA8IDEwMDAwMDApOwo+IAo+
-IFRoaXMgZG9lcyBub3QgbWFrZSBzZW5zZSB0byBtZS4gSWYgdGhlIHJhdGUgaXMgb3V0IG9mIGJv
-dW5kcyB0aGVuIHdoeQo+IHdhcm4gYW4ganVzdCBjb250aW51ZSBpbnN0ZWFkIG9mIG1ha2luZyBp
-dCBmYWlsPwo+IAoKQmVjYXVzZSBpdCdzIG5vdCBhIGhhcmQgcmVzdHJpY3Rpb24sIGl0J3MganVz
-dCBhdHlwaWNhbCBmb3IgdGhlIHJhdGUgdG8KYmUgYmVsb3cgMU1oei4gVGhlIHNwZWMgb25seSBt
-ZW50aW9ucyBhIHR5cGljYWwgcmFuZ2Ugb2YgMSB0byA1ME1IeiBhbmQKdGhlIHdhcm5pbmcgaXMg
-b25seSBoZXJlIHRvIGZsYWcgYSBwb3RlbnRpYWxseSBwcm9ibGVtYXRpYyByYXRlLCBiZWxvdwp3
-aGF0IGlzIGFzc3VtZWQgdHlwaWNhbCBpbiB0aGUgc3BlYy4KCkluIFsxXSwgd2hlcmUgSSdtIGFj
-dHVhbGx5IHJlbHlpbmcgb24gYXJjaF90aW1lcl9yYXRlIGJlaW5nIGhpZ2hlciB0aGFuCnRoYW4g
-MS9TQ0hFRF9DQVBBQ0lUWV9TQ0FMRcKyIG9mIHRoZSBtYXhpbXVtIGZyZXF1ZW5jeSwgSSBhbSBt
-YWtpbmcgaXQKZmFpbCwgYXMsIGZvciB0aGF0IHNjZW5hcmlvLCBpdCBpcyBhIGhhcmQgcmVzdHJp
-Y3Rpb24uCgoKKwkgKiBXZSB1c2UgYSBmYWN0b3Igb2YgMiAqIFNDSEVEX0NBUEFDSVRZX1NISUZU
-IC0+IFNDSEVEX0NBUEFDSVRZX1NDQUxFwrIKKwkgKiBpbiBvcmRlciB0byBlbnN1cmUgYSBnb29k
-IHJlc29sdXRpb24gZm9yIGFyY2hfbWF4X2ZyZXFfc2NhbGUgZm9yCisJICogdmVyeSBsb3cgYXJj
-aCB0aW1lciBmcmVxdWVuY2llcyAodXAgdG8gdGhlIEtIeiByYW5nZSB3aGljaCBzaG91bGQgYmUK
-KwkgKiB1bmxpa2VseSkuCisJICovCisJcmF0aW8gPSAodTY0KWFyY2hfdGltZXJfZ2V0X3JhdGUo
-KSA8PCAoMiAqIFNDSEVEX0NBUEFDSVRZX1NISUZUKTsKKwlyYXRpbyA9IGRpdjY0X3U2NChyYXRp
-bywgbWF4X2ZyZXFfaHopOworCWlmICghcmF0aW8pIHsKKwkJcHJfZXJyKCJTeXN0ZW0gdGltZXIg
-ZnJlcXVlbmN5IHRvbyBsb3cuXG4iKTsKKwkJcmV0dXJuIC1FSU5WQUw7CisJfQorCgpbMV0gaHR0
-cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGttbC84OTMzOTUwMS01ZWU0LWU4NzEtMzA3Ni1jOGIwMmM2
-ZmJmNmVAYXJtLmNvbS8KClRoYW5rcywKSW9uZWxhLgoKPiBUaGFua3MsCj4gCj4gICAgICAgICB0
-Z2x4CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+Will,
+
+On 2/13/20 2:07 PM, Luis Machado wrote:
+> Hi Will,
+> 
+> On 2/13/20 9:01 AM, Will Deacon wrote:
+>> Hi Luis,
+>>
+>> Sorry for the very slow reply. I talked to Mark about this a bit but it
+>> seems that we never followed up here.
+> 
+> No worries.
+> 
+>>
+>> On Tue, Dec 10, 2019 at 05:00:18PM -0300, Luis Machado wrote:
+>>> Do you have any input regarding this particular situation?
+>>>
+>>> It would be nice to get this fixed before the release of another GDB
+>>> version, if the fix is to live in GDB itself.
+>>
+>> Basically, I'm very nervous about fixing this in the kernel because
+>> whatever we do will be visible to userspace. On the other hand, this
+>> part of the ptrace interface is only seriously used by GDB and we should
+>> make sure that it works well.
+>>
+>> Does the diff below solve the problem? If so, can you confirm that it
+>> doesn't appear to regress anything else for GDB?
+> 
+> Thanks for the patch. I'll exercise this in various ways to see if 
+> anything breaks.
+> 
+
+I gave this a try with the particular test in GDB's testsuite that 
+exposed the problem. It is working as expected now, so we're 
+single-stepping past the instruction correctly instead of getting a 
+spurious SIGTRAP.
+
+I managed to run a few other tests related to syscalls and signals and 
+they also executed as expected. But this was inside QEMU.
+
+Do you see any potential scenarios where this change may break things? 
+Other things i should try to exercise?
+
+Given we need to be careful with a kernel patch at this stage, i just 
+want to make sure I covered all/most the possible cases.
+
+Otherwise, I'm happy with this change. Thanks for putting it together!
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
