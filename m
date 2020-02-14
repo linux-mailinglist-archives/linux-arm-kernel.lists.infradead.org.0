@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C10EB15D75C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 13:26:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC20615D75E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 13:26:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W0du43s3PuKqMqz9rmEVtlzDNBKgB0MOLhuNVT5svPk=; b=mcv2AYDfbttJe+
-	XiS7tSWNSNo/q/XKhMwa2W83dndxmagN9VtdHO0B3wkgFSd1Yds6Nlbg8dmn/jAFv4InO8vwvOF6K
-	8nxdblf2wtPzmWrZ2AWmfplCtEm698rCk/yTQbu7IMTWSqvHvpovGxmut+zNP6lzhIWNHOv7M7iiZ
-	XUKuXLp6S4dhMHuM4g/m9C6fVVy2nsTKid3gNcMXbZTkffdVUPHZNHd4W8Y8M6JdtRWMSnLj91gbh
-	m7Lco9xyPX/N/MCfWVJ7AyMrqvcM5fdC2b93RyxQqN+l3ugGZtRQSJ4a45n68fVycbUMVOP9tBW88
-	q5Aod3BRfaATbwctrYDA==;
+	List-Owner; bh=BkiTYQVfR1prsgqOhjRoxf4GXy5S6M6hybfzF4/6mHI=; b=FFPHoRdkn6CjfS
+	gz5BpSrnyqvQeJU9Vz9IQp75RU0CBURCx8VD2Ec5Ic+iPacOE6YlYDCPpW/wco04+huzkIcy+SuGA
+	ll580rCpC9ZFWqCNhUdWtzDUDiBhvSpnExrrd0zGAsU1F1M7b34RkKOEFzEWKZkmXcsmzfjATxEeL
+	oEVpuAIhDMumkDWDwqTZWdMx8OytXTzdqeMvKZ4AgQ4J2t/8vk42WTYX/JquvdQCa2r/5IpSwJYr2
+	eu4HC73gYMPi1CYa8a80RlOKTPqyVz3cFyzd4ORXY5IxT6lF11VhsybrREO+oEaI2epuv5yn+tcSy
+	3YlGdBx9vDn45+xKpEjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2a2c-0004lc-Te; Fri, 14 Feb 2020 12:25:54 +0000
+	id 1j2a2q-0004zD-81; Fri, 14 Feb 2020 12:26:08 +0000
 Received: from new4-smtp.messagingengine.com ([66.111.4.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2a1Z-0002t1-DO
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 12:24:51 +0000
+ id 1j2a1a-0002uD-Rt
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 12:24:52 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id B3A9C7352;
- Fri, 14 Feb 2020 07:24:48 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Fri, 14 Feb 2020 07:24:48 -0500
+ by mailnew.nyi.internal (Postfix) with ESMTP id 333FC734E;
+ Fri, 14 Feb 2020 07:24:50 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Fri, 14 Feb 2020 07:24:50 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=aGIlfA2KuBAok
- WapNsxvxuUq+3OyrK2C0WS49FNUGu4=; b=tUVxtqrh+vW/O2BpQj+bR9+uhbZPd
- RjCe0jJLlss1RVaLKUAyd5JM9rv6a79cHUJatJfwAJZxJOA1gyTylKKtglYHNntl
- ikL+X2ThGq/5hvjDk9wwC/ZY2Gw5QjHMccH8zJAAqnrB/zLMiWqKwtuJpn5yl2Nc
- 3GFuiupwc3/Yw8Epp6dzR9QAF5oeuGbtdmTfS7s8pV0gI6w5/2na9VXkhq49hU6J
- TgspOkIPpZMdd3b61kOohpUUoxOopEQ1mzwwUByeLzMlBAgEH87osj19/PJcO3Q1
- edlxfw1g32sCH0Al41pXOOBVkp/3Onhn69eLVh0s343SIX61pNdFtqcYA==
+ :mime-version:content-transfer-encoding; s=fm2; bh=bC7S86a4jGL63
+ niIbDq1SRfkrzDp7RcwzpEdiRnR5HQ=; b=tjVpa68swhCHL7XkAD4r3YiwBDAk9
+ AsTaFK31nPwN+5FI/obez2qZjo4kgraENOyfJrx1UEvWiTSn0Ks9TfDkHZcjSHT3
+ Ya77mY44vvdhnYbP12yF3cPSLnrnYJ8QW912zlIGtIK3Bz23zYzhG9MlgoOF31Ow
+ aSp5aetfk0ojcp6xIRi+E6bTze/DqLC30SFutGfTknxtnTNAwLJsCcS+LQwlDmjH
+ I2GoeIQlTOWTu4GwZTg6aBQOmxQyz0jwMsgE17CfPt4r+LHlpDjJZdHRnoPDxsXN
+ jb6kLZEek7M4Us3W18b+PUE0uN0wTx05QUIb5sH2pBa9GkhU+BH6CgXxA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=aGIlfA2KuBAokWapNsxvxuUq+3OyrK2C0WS49FNUGu4=; b=U6HoPEPH
- k5ZpvAkq40wNODLGmqWtZlTHImZwFZWPlu6GJoUTUkUzruh09ULKlzRAJkB4PhQg
- ddlewVly7VXFAC7CG3qrLr6RwIektH7Ln6xPco0Nh/DFUlaSepGhwbMxfE2+g+OI
- 9qPaKKsBI9lVbX+F+XyvbH3IM5gFY1/Jic19yH8ybzmSsX4U/iNH0fGHuc0gf1+D
- WmqS/RH4nqcjyxoXhboEaPz3VmhWNqhTXwflF5r7GXOBeoHpjkl6uD4q2Fd42jfD
- wkqIQyoKC6vtGKVwiYlvfq+QD7Vf+n+clpTh+5//NdvwfnfFjNJz/trYdIXR3cMk
- m+LFhvhCA5GtAA==
-X-ME-Sender: <xms:kJFGXnj3Tewq_HMV-xwPvLWFuU5krV-iib8MpsDZTfk6K3_UlRr40A>
+ fm2; bh=bC7S86a4jGL63niIbDq1SRfkrzDp7RcwzpEdiRnR5HQ=; b=YRsFt0v4
+ 1LH+T6thCxVx7vprAn5UedpAkslwwc//hZB102bNJgEhTPFAh+csany84R916EIp
+ HSQE9KgBKRYvb3hVgvMGs8yz1Sw0YgqT8zVlCX5Zlx0RgxHtgknPzeCH4x7a2voU
+ lOqjbJNjMjhX7VxDLII0vMNcfxCdsG+cHO/6A1q2JuhacAZRJ071L7VNh21jgnQK
+ vkLbZGAtOh6OuqVJiaGHcxvO8SFdQHtvFhEm5j4v9MpeJWrg7Is/ox/ErAOMhSFo
+ vPQe6cwrSdxSS8BSQ3kwD8BgxZuFduI0jx0zy+z9Ph0xzeS3QQ3H4i+Hku/ZyMFS
+ q6VD5MbtD9pTyw==
+X-ME-Sender: <xms:kpFGXhsusgwAHOvZcK7Kxvw037sIa4Rvd1G6b0N91JwEWSKrNo2voA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjedtgdegtdcutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
  fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomhepofgrgihimhgv
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
+ ekledrieekrdejieenucevlhhushhtvghrufhiiigvpeefnecurfgrrhgrmhepmhgrihhl
  fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:kJFGXlRKglcr9Uy1m2LmnuruiZJMviq-OX65GcZBKQExG3_x2bFp4g>
- <xmx:kJFGXvgheTHC0eJRs3zCIcAAr0R_kjJxFVeHxRX5DIrcsQAyrHpBZA>
- <xmx:kJFGXqdXKZho5XVpF5Nank1fXsShs6SHz0VCptx-G6n0Z8qECn95Eg>
- <xmx:kJFGXnwr2qMbb1zYOROgntbivBlGYj31nMc0Uwo0fnuqLk_m-H-FrA>
+X-ME-Proxy: <xmx:kpFGXvab4L3-G1AVtcr9IekTDnEp9b6OfTc4w5xlnjP22tJOu_Uabw>
+ <xmx:kpFGXgRJ3qct5HqMTOaNbL4FzfMp-o6wvm1Kmhg-J_CRfZt0FhVXGw>
+ <xmx:kpFGXrW0E1ZQWX8IGIQEvoI0K02zNH66es2IatLgJLlh79WLuzJccA>
+ <xmx:kpFGXnMKd3W62XOua_YekANTasW8RddF4Y2ogTrkEj20EKjNCiQk5g>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 51D1E328005A;
- Fri, 14 Feb 2020 07:24:48 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id C60113060EF2;
+ Fri, 14 Feb 2020 07:24:49 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
  dri-devel@lists.freedesktop.org
-Subject: [PATCH 3/4] drm/panel: lvds: Support data and clock polarity flags
-Date: Fri, 14 Feb 2020 13:24:40 +0100
-Message-Id: <bf302a84ca3ce9c4f83293d33e43925a9d7aeac9.1581682983.git-series.maxime@cerno.tech>
+Subject: [PATCH 4/4] drm/sun4i: lvds: Support data and clock polarity flags
+Date: Fri, 14 Feb 2020 13:24:41 +0100
+Message-Id: <011bbc064e12acb5d8848721f8ff94e50754a9e4.1581682983.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <cover.b12a054012ce067fa2094894147f953ab816d8d0.1581682983.git-series.maxime@cerno.tech>
 References: <cover.b12a054012ce067fa2094894147f953ab816d8d0.1581682983.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_042449_643401_B1BA217F 
-X-CRM114-Status: GOOD (  11.65  )
+X-CRM114-CacheID: sfid-20200214_042451_080241_B70C82DE 
+X-CRM114-Status: GOOD (  10.76  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -116,71 +116,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device tree properties to the panel-lvds driver to set the bus
-flags properly.
+Our LVDS encoder can change the polarity of data and clock signals on
+the LVDS link. Make sure we don't ignore the matching bus flags.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/panel/panel-lvds.c | 25 ++++++++++++++++++++++---
- 1 file changed, 22 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/sun4i/sun4i_tcon.c | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/gpu/drm/panel/panel-lvds.c b/drivers/gpu/drm/panel/panel-lvds.c
-index 5ce3f4a2b7a1..c0d6dcd9e9fc 100644
---- a/drivers/gpu/drm/panel/panel-lvds.c
-+++ b/drivers/gpu/drm/panel/panel-lvds.c
-@@ -31,6 +31,8 @@ struct panel_lvds {
- 	unsigned int height;
- 	struct videomode video_mode;
- 	unsigned int bus_format;
-+	bool clk_active_low;
-+	bool data_active_low;
- 	bool data_mirror;
- 
- 	struct regulator *supply;
-@@ -83,6 +85,7 @@ static int panel_lvds_get_modes(struct drm_panel *panel,
+diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+index c81cdce6ed55..fdf143042f83 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
++++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+@@ -404,6 +404,8 @@ static void sun4i_tcon0_mode_set_lvds(struct sun4i_tcon *tcon,
+ 				      const struct drm_encoder *encoder,
+ 				      const struct drm_display_mode *mode)
  {
- 	struct panel_lvds *lvds = to_panel_lvds(panel);
- 	struct drm_display_mode *mode;
-+	unsigned int flags = 0;
++	struct drm_connector *connector = sun4i_tcon_get_connector(encoder);
++	const struct drm_display_info *info = &connector->display_info;
+ 	unsigned int bp;
+ 	u8 clk_delay;
+ 	u32 reg, val = 0;
+@@ -449,9 +451,17 @@ static void sun4i_tcon0_mode_set_lvds(struct sun4i_tcon *tcon,
+ 		     SUN4I_TCON0_BASIC2_V_TOTAL(mode->crtc_vtotal * 2) |
+ 		     SUN4I_TCON0_BASIC2_V_BACKPORCH(bp));
  
- 	mode = drm_mode_create(connector->dev);
- 	if (!mode)
-@@ -96,9 +99,23 @@ static int panel_lvds_get_modes(struct drm_panel *panel,
- 	connector->display_info.height_mm = lvds->height;
- 	drm_display_info_set_bus_formats(&connector->display_info,
- 					 &lvds->bus_format, 1);
--	connector->display_info.bus_flags = lvds->data_mirror
--					  ? DRM_BUS_FLAG_DATA_LSB_TO_MSB
--					  : DRM_BUS_FLAG_DATA_MSB_TO_LSB;
-+
-+	if (lvds->data_mirror)
-+		flags |= DRM_BUS_FLAG_DATA_LSB_TO_MSB;
+-	reg = SUN4I_TCON0_LVDS_IF_CLK_SEL_TCON0 |
+-		SUN4I_TCON0_LVDS_IF_DATA_POL_NORMAL |
+-		SUN4I_TCON0_LVDS_IF_CLK_POL_NORMAL;
++	reg = SUN4I_TCON0_LVDS_IF_CLK_SEL_TCON0;
++	if (info->bus_flags & DRM_BUS_FLAG_PIXDATA_NEGEDGE)
++		reg |= SUN4I_TCON0_LVDS_IF_CLK_POL_INV;
 +	else
-+		flags |= DRM_BUS_FLAG_DATA_MSB_TO_LSB;
++		reg |= SUN4I_TCON0_LVDS_IF_CLK_POL_NORMAL;
 +
-+	if (lvds->clk_active_low)
-+		flags |= DRM_BUS_FLAG_PIXDATA_NEGEDGE;
++	if (info->bus_flags & DRM_BUS_FLAG_DATA_LOW)
++		reg |= SUN4I_TCON0_LVDS_IF_DATA_POL_INV;
 +	else
-+		flags |= DRM_BUS_FLAG_PIXDATA_POSEDGE;
++		reg |= SUN4I_TCON0_LVDS_IF_DATA_POL_NORMAL;
 +
-+	if (lvds->data_active_low)
-+		flags |= DRM_BUS_FLAG_DATA_LOW;
-+	else
-+		flags |= DRM_BUS_FLAG_DATA_HIGH;
-+
-+	connector->display_info.bus_flags = flags;
- 
- 	return 1;
- }
-@@ -159,6 +176,8 @@ static int panel_lvds_parse_dt(struct panel_lvds *lvds)
- 		return -EINVAL;
- 	}
- 
-+	lvds->clk_active_low = of_property_read_bool(np, "clock-active-low");
-+	lvds->data_active_low = of_property_read_bool(np, "data-active-low");
- 	lvds->data_mirror = of_property_read_bool(np, "data-mirror");
- 
- 	return 0;
+ 	if (sun4i_tcon_get_pixel_depth(encoder) == 24)
+ 		reg |= SUN4I_TCON0_LVDS_IF_BITWIDTH_24BITS;
+ 	else
 -- 
 git-series 0.9.1
 
