@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 858C515F9C9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 23:31:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BCB615FA12
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 23:59:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TXQguX11aN/9zrdME3jgL4ezaI88JZ303ffsQsv4ozQ=; b=nAHVbABqRh/ZJr
-	4ixowNoXaLV+RHDInlSZ+mo1cW3xN1e5s3CoUpDwQiGe1hh8hbJU7ax+Fp7aO0uuEU0+3wG8VXcYN
-	bDF1gOSoXyGQph1bAjX0N3SXGPJ2i0dpdxuUrAUHbnuuo4oFE3dY7NaW9NXUB/fLgF5dJ7BKBL35l
-	7daBl8djH1Byij4hhjR0QtULwtAu1iArUitOYeuOZTSSWuaQEj0WPHb7ciMrYwb7rbsiDnsvbrW8d
-	QBRzR/iM9c/XxZTGcgozl4bTMGlD6IQjq9Fp6GCWUdkOKVJ0qAJZp1qnQY/xhRtOBNQbGEsia7MYr
-	xBqwFc7L0irSwEW0qeBg==;
+	List-Owner; bh=ZMz8vxQ0DCCO3rBorBxRBl8nB/mYA8Q19P4Vyw9lr5s=; b=oQCT1EAdKEepEu
+	J988CytXQW0xMMcVpledENhA69k/Uu7C7XWlwXksmGCfsSO9N9g1j8fuNs9KAQ/mJHbFqPw4csXfb
+	OAREO3pmRN/3xHTmmBYnfbsk9+NYXQyABZnRIXy+/xel1EsUtf3bj4Jdi7YehHLInlIhiJxRtKPuQ
+	niAGek5yTrYf/wb/V+NyGwTeXFPFK2omGWib8IVej91upQnASK9rK0qVezrQPDffLIvsL3QFXAbyw
+	7t4HlTPgfjBWnngPXKoBjQUj1prV38RqTN56kR8Dg03YDnyrcepSJHpvejWYEvKLyqY0YMfm8UrXE
+	lJfZPoqCBZaephim0XfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2jUd-0007Fw-U6; Fri, 14 Feb 2020 22:31:27 +0000
-Received: from mail-yb1-xb42.google.com ([2607:f8b0:4864:20::b42])
+	id 1j2jvD-00074J-LM; Fri, 14 Feb 2020 22:58:55 +0000
+Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2jUU-0007F5-9e
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 22:31:20 +0000
-Received: by mail-yb1-xb42.google.com with SMTP id b141so5551910ybg.10
+ id 1j2jv2-00073u-1b
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 22:58:45 +0000
+Received: by mail-yb1-xb44.google.com with SMTP id w17so5606311ybm.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Feb 2020 14:31:15 -0800 (PST)
+ Fri, 14 Feb 2020 14:58:43 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=zOoACw77ep1wy+Wyw/chs5Xn92RTyLfJh27q15HRooU=;
- b=JE+jgO0/8F38g2n0VuvmRO1k3tAN2dqoAys4yQXvG/94RjB0Q84Ts9xHcv8DVQlNpS
- dISOCRpTWIHLFRb0fgFXnFHKF+G6BQ0Y1QYrTYWjlAokTVITsWdvmNL9glFd6QLie1rv
- +nPT4GMad1eMSBP4Jlw493dB+FsRckaCqKw1uMWS9BjvP/Z4uFqve3+PwTkIGbv6q16M
- X/LjhzBWRBnw37EC7Ea+CTQ/KX+mqARy7h60ZFVucVAiH5zrLgrQ1/N633KRKUFU9kUj
- vVOtQ/RTfvcpbdI2SxOzQ9zO/9kMzTXficqZLyLLVZlOAxVx/FVIdBZAHCTSiVrfmzHR
- zIBQ==
+ bh=OfncaOBUirWGLh9Iq7kwxxSsByucOt2Wppw4ynvXDuo=;
+ b=u90Wxsf5Ig6CIpSBubkniP8EqwOm+uA3CGPM2VlU1xJwm/CNWNMzqWgIgc4zTvEKnZ
+ pXIiA2MJtIB5CaDlq0rjvS5gBY7vXxXr1nTjo5Ber3QKd8vkG51mHN2D3JbfQLrFsQDA
+ 1Dbm6iHADDO1Q6eUbS+x/kWC0EkLDSzWXa9LJHgp139x0L6qTtm8MVNkfj92bSkWE4O3
+ Z1jWuFWLfGlcFh+dD/4KvBYKz9ssSO9bEo7/MpSw93nIxa1FFVBq5MLgwCeZhPo0KOwk
+ gQXux8ij+iBCPMTfbs+DsjU9Hchfr4oxd9RgjsohIAaTo2JcuonM/kV1CFl0WIwtqSjO
+ e0hg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=zOoACw77ep1wy+Wyw/chs5Xn92RTyLfJh27q15HRooU=;
- b=NB8RMsYgbpb8vgRcL11IKhnCM0tJq8S3FB3Jg/uuPS9miHkPkyKBxIVjfsQBZVQ2nd
- Mm0XkrdYw3c6lZYNy4VZB4KezMqYc+PnLEmNjB6KFYfTtWgIvZLiUwo+cjtEWOb/OzfM
- MXZ6/Her6hDPJ2zit+KbPSK4pIjWYAY9/OxUuu8a7VREKvCbpIRXUY1qjLZRIQWjaegm
- Jc3JYpWgqaRm4KoUkj7VHg4BO5mwrY7pirZHnWn7UKpILemcQ/3J+hn1q3u2TftFOOUW
- 69QqBZNYdcApPgDr57oWlqqeb09onIDamXK99wpTL8xZ3hP24WcpTnwcllHGuJilKSn8
- cHqQ==
-X-Gm-Message-State: APjAAAXm/wAYvU33H9JgMXyGthJaQzf9y/ppJmnqgbyUc+wMdC3ZFISj
- ildegVtwiedY2a4jpKvWFQgeug==
-X-Google-Smtp-Source: APXvYqxQH1vOghth0zLCSbjENMZlafZpppslkqVGjm52mIoiUn2K/q8QkdMKSoNjDqh7O0KflCu/qQ==
-X-Received: by 2002:a25:7395:: with SMTP id o143mr4692408ybc.435.1581719474152; 
- Fri, 14 Feb 2020 14:31:14 -0800 (PST)
+ bh=OfncaOBUirWGLh9Iq7kwxxSsByucOt2Wppw4ynvXDuo=;
+ b=iwEWWDK8JtwAyloSwb5QXCYaewbLwnWeaHT6HT2anJqwSCdpVEyhBhBP+skys46bZx
+ cXVGnmJpqnI+SIaCCRfdWpmXEbAqtuLRr62thvmuJ22CH88FfwH7pWxzwqUhTrZhSfD8
+ EF09Ffs/j8usm0ysZ8M7rNwZZDJxqprghoHWy+ARdTwraD8VhLmA7kVJWtC8GZFPBLh7
+ mY1Rr0iiuY/GxyhbQVG7UVhwFIK+n8k0O0OgVyYIZ2QZqzoNqAE8tmehxAvJAVkGpF/w
+ 3B2+2tfzS0nBGNfr2vsB2rKVth6SNq6qU94p1lPeC7b8waxDj+aRSSm2r/CN6vCxS3F8
+ JgJw==
+X-Gm-Message-State: APjAAAX42WwsiFgiMdGBjlYiv+rAGqTYuibt9UoTyxUVrXfiE+Jq8MLT
+ eEpB0v85V8g+jl6ODvelTRrhqA==
+X-Google-Smtp-Source: APXvYqzE3ne/xD31Jgns9lDh+Obe40lIZIm7x1bBVViPpTWpRAdA9aqaJHaVEF5ciDTUGB5ipW67/w==
+X-Received: by 2002:a25:6d88:: with SMTP id i130mr5279654ybc.402.1581721122491; 
+ Fri, 14 Feb 2020 14:58:42 -0800 (PST)
 Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id d22sm3096795ywb.77.2020.02.14.14.31.12
+ by smtp.gmail.com with ESMTPSA id c84sm3331908ywa.1.2020.02.14.14.58.41
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 14 Feb 2020 14:31:13 -0800 (PST)
-Date: Fri, 14 Feb 2020 15:31:11 -0700
+ Fri, 14 Feb 2020 14:58:42 -0800 (PST)
+Date: Fri, 14 Feb 2020 15:58:39 -0700
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH v4 4/6] coresight: Expose device connections via sysfs
-Message-ID: <20200214223111.GA20024@xps15>
+Subject: Re: [PATCH v4 5/6] coresight: cti: Add in sysfs links to other
+ coresight devices.
+Message-ID: <20200214225839.GB20024@xps15>
 References: <20200211105808.27884-1-mike.leach@linaro.org>
- <20200211105808.27884-5-mike.leach@linaro.org>
+ <20200211105808.27884-6-mike.leach@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200211105808.27884-5-mike.leach@linaro.org>
+In-Reply-To: <20200211105808.27884-6-mike.leach@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_143118_347464_F9BFF739 
-X-CRM114-Status: GOOD (  32.61  )
+X-CRM114-CacheID: sfid-20200214_145844_119949_5A3A3E98 
+X-CRM114-Status: GOOD (  20.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,287 +106,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike,
-
-On Tue, Feb 11, 2020 at 10:58:06AM +0000, Mike Leach wrote:
-> From: Suzuki K Poulose <suzuki.poulose@arm.com>
+On Tue, Feb 11, 2020 at 10:58:07AM +0000, Mike Leach wrote:
+> Adds in sysfs links for connections where the connected device is another
+> coresight device. This allows examination of the coresight topology.
 > 
-> Coresight device connections are a bit complicated and is not
-> exposed currently to the user. One has to look at the platform
-> descriptions (DT bindings or ACPI bindings) to make an understanding.
-> Given the new naming scheme, it will be helpful to have this information
-> to choose the appropriate devices for tracing. This patch exposes
-> the device connections via links in the sysfs directories.
+> Non-coresight connections remain just as a reference name.
 > 
-> e.g, for a connection devA[OutputPort_X] -> devB[InputPort_Y]
-> is represented as two symlinks:
-> 
->   /sys/bus/coresight/.../devA/out:X -> /sys/bus/coresight/.../devB
->   /sys/bus/coresight/.../devB/in:Y  -> /sys/bus/coresight/.../devA
-> 
-> Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> 
-> Revised to use the generic sysfs links functions & link structures.
-> Provides a connections sysfs group to hold the links.
-> 
-> Co-developed-by: Mike Leach <mike.leach@linaro.org>
 > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> ---
+>  drivers/hwtracing/coresight/coresight-cti.c | 41 ++++++++++++++++++++-
+>  1 file changed, 40 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+> index 9e18e176831c..f620e9460e7d 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti.c
+> @@ -441,6 +441,37 @@ int cti_channel_setop(struct device *dev, enum cti_chan_set_op op,
+>  	return err;
+>  }
+>  
+> +static void cti_add_sysfs_link(struct cti_drvdata *drvdata,
+> +			       struct cti_trig_con *tc)
+> +{
+> +	struct coresight_sysfs_link link_info;
+> +
+> +	link_info.orig = drvdata->csdev;
+> +	link_info.orig_name = tc->con_dev_name;
+> +	link_info.target = tc->con_dev;
+> +	link_info.target_name = dev_name(&drvdata->csdev->dev);
+> +	coresight_add_sysfs_link(&link_info);
 
-Because this patch is "From:" Suzuki, this should be:
+I understand there isn't much to do if a problem occurs so just catch the error
+and add a comment to assert you're doing this on purpose.
 
-Co-developed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> +}
+> +
+> +static void cti_remove_all_sysfs_links(struct cti_drvdata *drvdata)
+> +{
+> +	struct cti_trig_con *tc;
+> +	struct cti_device *ctidev = &drvdata->ctidev;
+> +	struct coresight_sysfs_link link_info;
+> +
+> +	/* origin device and target link name constant for this cti */
+> +	link_info.orig = drvdata->csdev;
+> +	link_info.target_name = dev_name(&drvdata->csdev->dev);
+> +
+> +	list_for_each_entry(tc, &ctidev->trig_cons, node) {
+> +		if (tc->con_dev) {
+> +			link_info.target = tc->con_dev;
+> +			link_info.orig_name = tc->con_dev_name;
+> +			coresight_remove_sysfs_link(&link_info);
+> +		}
+> +	}
+> +}
+> +
+>  /*
+>   * Look for a matching connection device name in the list of connections.
+>   * If found then swap in the csdev name, set trig con association pointer
+> @@ -452,6 +483,8 @@ cti_match_fixup_csdev(struct cti_device *ctidev, const char *node_name,
+>  {
+>  	struct cti_trig_con *tc;
+>  	const char *csdev_name;
+> +	struct cti_drvdata *drvdata = container_of(ctidev, struct cti_drvdata,
+> +						   ctidev);
+>  
+>  	list_for_each_entry(tc, &ctidev->trig_cons, node) {
+>  		if (tc->con_dev_name) {
+> @@ -462,6 +495,7 @@ cti_match_fixup_csdev(struct cti_device *ctidev, const char *node_name,
+>  					devm_kstrdup(&csdev->dev, csdev_name,
+>  						     GFP_KERNEL);
+>  				tc->con_dev = csdev;
+> +				cti_add_sysfs_link(drvdata, tc);
+>  				return true;
+>  			}
+>  		}
+> @@ -546,10 +580,12 @@ static void cti_update_conn_xrefs(struct cti_drvdata *drvdata)
+>  	struct cti_device *ctidev = &drvdata->ctidev;
+>  
+>  	list_for_each_entry(tc, &ctidev->trig_cons, node) {
+> -		if (tc->con_dev)
+> +		if (tc->con_dev) {
+>  			/* set tc->con_dev->ect_dev */
+>  			coresight_set_assoc_ectdev_mutex(tc->con_dev,
+>  							 drvdata->csdev);
+> +			cti_add_sysfs_link(drvdata, tc);
+> +		}
+>  	}
+>  }
+>  
+> @@ -602,6 +638,9 @@ static void cti_device_release(struct device *dev)
+>  	mutex_lock(&ect_mutex);
+>  	cti_remove_conn_xrefs(drvdata);
+>  
+> +	/* clear the dynamic sysfs associate with connections */
 
-You can expand on Suzuki's contribution or the modifications you've done to it
-in the changelog.
+s/associate/associated
+
+> +	cti_remove_all_sysfs_links(drvdata);
+> +
+>  	/* remove from the list */
+>  	list_for_each_entry_safe(ect_item, ect_tmp, &ect_net, node) {
+>  		if (ect_item == drvdata) {
 
 With the above:
 
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-> ---
->  drivers/hwtracing/coresight/coresight-priv.h  |  5 ++
->  drivers/hwtra cing/coresight/coresight-sysfs.c | 80 +++++++++++++++++++
->  drivers/hwtracing/coresight/coresight.c       | 46 ++++++++---
->  include/linux/coresight.h                     |  2 +
->  4 files changed, 121 insertions(+), 12 deletions(-)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
-> index a4a658d46045..5a36f0f50899 100644
-> --- a/drivers/hwtracing/coresight/coresight-priv.h
-> +++ b/drivers/hwtracing/coresight/coresight-priv.h
-> @@ -157,6 +157,11 @@ int coresight_add_sysfs_link(struct coresight_sysfs_link *info);
->  void coresight_remove_sysfs_link(struct coresight_sysfs_link *info);
->  int coresight_create_conns_sysfs_group(struct coresight_device *csdev);
->  void coresight_remove_conns_sysfs_group(struct coresight_device *csdev);
-> +int coresight_make_links(struct coresight_device *orig,
-> +			 struct coresight_connection *conn,
-> +			 struct coresight_device *target);
-> +void coresight_remove_links(struct coresight_device *orig,
-> +			    struct coresight_connection *conn);
->  
->  #ifdef CONFIG_CORESIGHT_SOURCE_ETM3X
->  extern int etm_readl_cp14(u32 off, unsigned int *val);
-> diff --git a/drivers/hwtracing/coresight/coresight-sysfs.c b/drivers/hwtracing/coresight/coresight-sysfs.c
-> index 17d565941e5e..0f18332b9f19 100644
-> --- a/drivers/hwtracing/coresight/coresight-sysfs.c
-> +++ b/drivers/hwtracing/coresight/coresight-sysfs.c
-> @@ -122,3 +122,83 @@ void coresight_remove_sysfs_link(struct coresight_sysfs_link *info)
->  	info->orig->nr_links--;
->  	info->target->nr_links--;
->  }
-> +
-> +/*
-> + * coresight_make_links: Make a link for a connection from a @orig
-> + * device to @target, represented by @conn.
-> + *
-> + *   e.g, for devOrig[output_X] -> devTarget[input_Y] is represented
-> + *   as two symbolic links :
-> + *
-> + *	/sys/.../devOrig/out:X	-> /sys/.../devTarget/
-> + *	/sys/.../devTarget/in:Y	-> /sys/.../devOrig/
-> + *
-> + * The link names are allocated for a device where it appears. i.e, the
-> + * "out" link on the master and "in" link on the slave device.
-> + * The link info is stored in the connection record for avoiding
-> + * the reconstruction of names for removal.
-> + */
-> +int coresight_make_links(struct coresight_device *orig,
-> +			 struct coresight_connection *conn,
-> +			 struct coresight_device *target)
-> +{
-> +	int ret = -ENOMEM;
-> +	char *outs = NULL, *ins = NULL;
-> +	struct coresight_sysfs_link *link = NULL;
-> +
-> +	do {
-> +		outs = devm_kasprintf(&orig->dev, GFP_KERNEL,
-> +				      "out:%d", conn->outport);
-> +		if (!outs)
-> +			break;
-> +		ins = devm_kasprintf(&target->dev, GFP_KERNEL,
-> +				     "in:%d", conn->child_port);
-> +		if (!ins)
-> +			break;
-> +		link = devm_kzalloc(&orig->dev,
-> +				    sizeof(struct coresight_sysfs_link),
-> +				    GFP_KERNEL);
-> +		if (!link)
-> +			break;
-> +
-> +		link->orig = orig;
-> +		link->target = target;
-> +		link->orig_name = outs;
-> +		link->target_name = ins;
-> +
-> +		ret = coresight_add_sysfs_link(link);
-> +		if (ret)
-> +			break;
-> +
-> +		conn->link = link;
-> +
-> +		/*
-> +		 * Install the device connection. This also indicates that
-> +		 * the links are operational on both ends.
-> +		 */
-> +		conn->child_dev = target;
-> +		return 0;
-> +	} while (0);
-> +
-> +	return ret;
-> +}
-> +
-> +/*
-> + * coresight_remove_links: Remove the sysfs links for a given connection @conn,
-> + * from @orig device to @target device. See coresight_make_links() for more
-> + * details.
-> + */
-> +void coresight_remove_links(struct coresight_device *orig,
-> +			    struct coresight_connection *conn)
-> +{
-> +	if (!orig || !conn->link)
-> +		return;
-> +
-> +	coresight_remove_sysfs_link(conn->link);
-> +
-> +	devm_kfree(&conn->child_dev->dev, conn->link->target_name);
-> +	devm_kfree(&orig->dev, conn->link->orig_name);
-> +	devm_kfree(&orig->dev, conn->link);
-> +	conn->link = NULL;
-> +	conn->child_dev = NULL;
-> +}
-> diff --git a/drivers/hwtracing/coresight/coresight.c b/drivers/hwtracing/coresight/coresight.c
-> index 07f66a3968f1..4f10cfa9dc18 100644
-> --- a/drivers/hwtracing/coresight/coresight.c
-> +++ b/drivers/hwtracing/coresight/coresight.c
-> @@ -1031,7 +1031,7 @@ static void coresight_device_release(struct device *dev)
->  
->  static int coresight_orphan_match(struct device *dev, void *data)
->  {
-> -	int i;
-> +	int i, ret = 0;
->  	bool still_orphan = false;
->  	struct coresight_device *csdev, *i_csdev;
->  	struct coresight_connection *conn;
-> @@ -1056,19 +1056,23 @@ static int coresight_orphan_match(struct device *dev, void *data)
->  		/* We have found at least one orphan connection */
->  		if (conn->child_dev == NULL) {
->  			/* Does it match this newly added device? */
-> -			if (conn->child_fwnode == csdev->dev.fwnode)
-> -				conn->child_dev = csdev;
-> -			else
-> +			if (conn->child_fwnode == csdev->dev.fwnode) {
-> +				ret = coresight_make_links(i_csdev,
-> +							   conn, csdev);
-> +				if (ret)
-> +					return ret;
-> +			} else {
->  				/* This component still has an orphan */
->  				still_orphan = true;
-> +			}
->  		}
->  	}
->  
->  	i_csdev->orphan = still_orphan;
->  
->  	/*
-> -	 * Returning '0' ensures that all known component on the
-> -	 * bus will be checked.
-> +	 * Returning '0' in case we didn't encounter any error,
-> +	 * ensures that all known component on the bus will be checked.
->  	 */
->  	return 0;
->  }
-> @@ -1082,15 +1086,21 @@ static int coresight_fixup_orphan_conns(struct coresight_device *csdev)
->  
->  static int coresight_fixup_device_conns(struct coresight_device *csdev)
->  {
-> -	int i;
-> +	int i, ret = 0;
->  
->  	for (i = 0; i < csdev->pdata->nr_outport; i++) {
->  		struct coresight_connection *conn = &csdev->pdata->conns[i];
->  
->  		conn->child_dev =
->  			coresight_find_csdev_by_fwnode(conn->child_fwnode);
-> -		if (!conn->child_dev)
-> +		if (conn->child_dev) {
-> +			ret = coresight_make_links(csdev, conn,
-> +						   conn->child_dev);
-> +			if (ret)
-> +				break;
-> +		} else {
->  			csdev->orphan = true;
-> +		}
->  	}
->  
->  	return 0;
-> @@ -1121,7 +1131,7 @@ static int coresight_remove_match(struct device *dev, void *data)
->  
->  		if (csdev->dev.fwnode == conn->child_fwnode) {
->  			iterator->orphan = true;
-> -			conn->child_dev = NULL;
-> +			coresight_remove_links(iterator, conn);
->  			/*
->  			 * Drop the reference to the handle for the remote
->  			 * device acquired in parsing the connections from
-> @@ -1215,13 +1225,23 @@ void coresight_release_platform_data(struct coresight_device *csdev,
->  				     struct coresight_platform_data *pdata)
->  {
->  	int i;
-> +	struct coresight_connection *conns = pdata->conns;
->  
->  	for (i = 0; i < pdata->nr_outport; i++) {
-> -		if (pdata->conns[i].child_fwnode) {
-> -			fwnode_handle_put(pdata->conns[i].child_fwnode);
-> +		/* If we have made the links, remove them now */
-> +		if (csdev && conns[i].child_dev)
-> +			coresight_remove_links(csdev, &conns[i]);
-> +		/*
-> +		 * Drop the refcount and clear the handle as this device
-> +		 * is going away
-> +		 */
-> +		if (conns[i].child_fwnode) {
-> +			fwnode_handle_put(conns[i].child_fwnode);
->  			pdata->conns[i].child_fwnode = NULL;
->  		}
->  	}
-> +	if (csdev)
-> +		coresight_remove_conns_sysfs_group(csdev);
->  }
->  
->  struct coresight_device *coresight_register(struct coresight_desc *desc)
-> @@ -1303,7 +1323,9 @@ struct coresight_device *coresight_register(struct coresight_desc *desc)
->  
->  	mutex_lock(&coresight_mutex);
->  
-> -	ret = coresight_fixup_device_conns(csdev);
-> +	ret = coresight_create_conns_sysfs_group(csdev);
-> +	if (!ret)
-> +		ret = coresight_fixup_device_conns(csdev);
->  	if (!ret)
->  		ret = coresight_fixup_orphan_conns(csdev);
->  	if (!ret)
-> diff --git a/include/linux/coresight.h b/include/linux/coresight.h
-> index a2ec25e02ca9..ccd17304d7bd 100644
-> --- a/include/linux/coresight.h
-> +++ b/include/linux/coresight.h
-> @@ -140,12 +140,14 @@ struct coresight_desc {
->   * @chid_fwnode: remote component's fwnode handle.
->   * @child_dev:	a @coresight_device representation of the component
->  		connected to @outport.
-> + * @link: Representation of the connection as a sysfs link.
->   */
->  struct coresight_connection {
->  	int outport;
->  	int child_port;
->  	struct fwnode_handle *child_fwnode;
->  	struct coresight_device *child_dev;
-> +	struct coresight_sysfs_link *link;
->  };
->  
->  /**
 > -- 
 > 2.17.1
 > 
