@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C64215E1E4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:21:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83AA615E212
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:22:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+fjm1GGbQtYWXqU2ScRMNfFbT276Ld1s8Voq//ItuNo=; b=KEEeMgjw6BQL9Q
-	2xbwRljAKicDGiEBOX31JzTb72dHj8KLU8MsuMbtlD4HaLMBOLqEAi9AnAHyc95pj/t96A1LBQgQK
-	N9dt6zbx4d4QC6oX9wW28CpHYGgnYNdwN0zsCpFTWTrQ4G/TETaNkE7dHcXpqQNfnJHPNUZCSF2U1
-	m62Ca4qZh/RIJ1vsozKGk1s4uektgZLg/4A8yunoAUwxJsUAIpROIuoc9nefUjc77bPdqYY2FdsQY
-	DMdktzMfXsmOedBV3nNyb2u24rvXCITvK5jdEHjH6laHYdSQu8MtbN2wu0ae47o/o7H9ScJV8RExA
-	ctExe4VIIOAfNqWaHrnQ==;
+	List-Owner; bh=c7Iv9wcedO+jfIrzb4CWGWQnI3qvMw1HXDNIHVoydVQ=; b=YKyzKOPqSWN8Nt
+	C7U/H+pYs4kpYpf/IMco55/3WwREbXLdtusp81oRo+U1lz4kkWMU/dFAqRhuG12asB9JK6PLfil7I
+	kTvHUNKow+63eMEmxDzLPlp3YegiTDxBt+IQGnlkafdyjp+kS7Lhotq2sRtbVf/7obOsgGGXMY9ST
+	o2vFnAOVfDzN8j9xq+2pD1p321wIow4lxltCE8gsAeX8pPlr3OPe6Ji83LH501M3zOhPK5aS/Zmt7
+	uS2M4nFJhJ3UypyIRkMi1zpNuQkgR2IkVCPulS5jqBQ9uyDzHr/jZnQlSsl1bECSVXCWaH0dNpkIP
+	mxl67qPIAU7xBCr0c7rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dip-0005Iu-4j; Fri, 14 Feb 2020 16:21:43 +0000
+	id 1j2dj6-0005Yj-2l; Fri, 14 Feb 2020 16:22:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dRI-0001uf-9d; Fri, 14 Feb 2020 16:03:38 +0000
+ id 1j2dRU-00029U-La
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:03:50 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5A9D32467D;
- Fri, 14 Feb 2020 16:03:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7350A24696;
+ Fri, 14 Feb 2020 16:03:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696215;
- bh=bF3mm8LgK4WLj9DZFyScvnTUuhRmv0kvP5u5CVxcBuw=;
+ s=default; t=1581696228;
+ bh=34CbnzDIZ+vLOwvSOHav9qUkGCcD8Lq+e6pvkM/8zjU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ozb+ZQ8kaafj5iAKmnntAR4VDZ/mPoERy6SF5x/Fmm4axPjqFZMI5nobmNn2Z8jWq
- RfWz4zorYUDJ1gTlVVWbr1eyuK6XArtqrUSmCs2bfJ5xFr+tMQM+XH8rpMbImGzl+m
- HjRt20N31n2IEikd7lyV7QI+HD/AFdqSB9FaDIBg=
+ b=RwcQHeQFkIXwMp34+LrPhuTQBTxhghWhA6GaJN9gVa4DqK/eBSQhWVZEB4bwrLfzZ
+ ryyZJxBazLsFTgDs/c7f7TyYo7mpET7azd3dBgu0PTKHhMxsu77QgJyHfdWCvt/X6i
+ 6/C2+WF5Y9UoTgtUJET+1jVSscavL9uAX9EmnnEs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 079/459] scsi: ufs: Fix ufshcd_probe_hba() reture
- value in case ufshcd_scsi_add_wlus() fails
-Date: Fri, 14 Feb 2020 10:55:29 -0500
-Message-Id: <20200214160149.11681-79-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 090/459] ARM: 8952/1: Disable kmemleak on XIP
+ kernels
+Date: Fri, 14 Feb 2020 10:55:40 -0500
+Message-Id: <20200214160149.11681-90-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080336_472410_1EF42D79 
-X-CRM114-Status: GOOD (  10.14  )
+X-CRM114-CacheID: sfid-20200214_080348_768790_1D8A0E03 
+X-CRM114-Status: GOOD (  12.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,51 +80,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, linux-scsi@vger.kernel.org,
- "Martin K . Petersen" <martin.petersen@oracle.com>,
- linux-mediatek@lists.infradead.org, Alim Akhtar <alim.akhtar@samsung.com>,
- Bean Huo <beanhuo@micron.com>, Stanley Chu <stanley.chu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, Asutosh Das <asutoshd@codeaurora.org>
+Cc: Sasha Levin <sashal@kernel.org>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bean Huo <beanhuo@micron.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 
-[ Upstream commit b9fc5320212efdfb4e08b825aaa007815fd11d16 ]
+[ Upstream commit bc420c6ceefbb86cbbc8c00061bd779c17fa6997 ]
 
-A non-zero error value likely being returned by ufshcd_scsi_add_wlus() in
-case of failure of adding the WLs, but ufshcd_probe_hba() doesn't use this
-value, and doesn't report this failure to upper caller.  This patch is to
-fix this issue.
+Kmemleak relies on specific symbols to register the read only data
+during init (e.g. __start_ro_after_init).
+Trying to build an XIP kernel on arm results in the linking error
+reported below because when this option is selected read only data
+after init are not allowed since .data is read only (.rodata).
 
-Fixes: 2a8fa600445c ("ufs: manually add well known logical units")
-Link: https://lore.kernel.org/r/20200120130820.1737-2-huobean@gmail.com
-Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-Reviewed-by: Alim Akhtar <alim.akhtar@samsung.com>
-Reviewed-by: Stanley Chu <stanley.chu@mediatek.com>
-Signed-off-by: Bean Huo <beanhuo@micron.com>
-Signed-off-by: Martin K. Petersen <martin.petersen@oracle.com>
+  arm-linux-gnueabihf-ld: mm/kmemleak.o: in function `kmemleak_init':
+  kmemleak.c:(.init.text+0x148): undefined reference to `__end_ro_after_init'
+  arm-linux-gnueabihf-ld: kmemleak.c:(.init.text+0x14c):
+     undefined reference to `__end_ro_after_init'
+  arm-linux-gnueabihf-ld: kmemleak.c:(.init.text+0x150):
+     undefined reference to `__start_ro_after_init'
+  arm-linux-gnueabihf-ld: kmemleak.c:(.init.text+0x156):
+     undefined reference to `__start_ro_after_init'
+  arm-linux-gnueabihf-ld: kmemleak.c:(.init.text+0x162):
+     undefined reference to `__start_ro_after_init'
+  arm-linux-gnueabihf-ld: kmemleak.c:(.init.text+0x16a):
+     undefined reference to `__start_ro_after_init'
+  linux/Makefile:1078: recipe for target 'vmlinux' failed
+
+Fix the issue enabling kmemleak only on non XIP kernels.
+
+Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/scsi/ufs/ufshcd.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 0d41a7dc1d6b2..b0d6978d78bf8 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -6953,7 +6953,8 @@ static int ufshcd_probe_hba(struct ufs_hba *hba)
- 			ufshcd_init_icc_levels(hba);
- 
- 		/* Add required well known logical units to scsi mid layer */
--		if (ufshcd_scsi_add_wlus(hba))
-+		ret = ufshcd_scsi_add_wlus(hba);
-+		if (ret)
- 			goto out;
- 
- 		/* Initialize devfreq after UFS device is detected */
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 39002d769d956..9fadf322a2b76 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -75,7 +75,7 @@ config ARM
+ 	select HAVE_CONTEXT_TRACKING
+ 	select HAVE_COPY_THREAD_TLS
+ 	select HAVE_C_RECORDMCOUNT
+-	select HAVE_DEBUG_KMEMLEAK
++	select HAVE_DEBUG_KMEMLEAK if !XIP_KERNEL
+ 	select HAVE_DMA_CONTIGUOUS if MMU
+ 	select HAVE_DYNAMIC_FTRACE if !XIP_KERNEL && !CPU_ENDIAN_BE32 && MMU
+ 	select HAVE_DYNAMIC_FTRACE_WITH_REGS if HAVE_DYNAMIC_FTRACE
 -- 
 2.20.1
 
