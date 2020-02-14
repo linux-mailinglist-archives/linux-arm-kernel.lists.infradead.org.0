@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C55915E3FF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:33:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FEB515E40D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:34:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Huqcpq+YLOje4XB+4o4mgGR/p//MItdNTZgC5yluswc=; b=C5LdRNMBYxmcyg
-	tIxVvMPfgPyl5hLkKQmbDNht9KUBTN/IR5ljwnnMfhcnMB095YxXpcay5jbhgOsOwxJ20c0P9MWYl
-	VF7hmqysTq8qyvAP4mFKZ5jo097RrjjS7o5GmLGSqkQs8a9QNjh+192XkrANpqa0R2JFz6cYFyVeC
-	7Jq5kb9+ShKtr1yM1onteDZpQs1uDlhkbfAQ9arOXzFjFexGAWsbrIPUWmd+JDcyiDeHlMG11Nels
-	SjIDAfd3mLcdvoM/Jpi5XH4zf4tTSDSGTyuFt+5xAeH8SWJLeNNsg+/U9C1UoFSyIxVdlgtx6u68I
-	qDvERV7anke6fhiUd8Qg==;
+	List-Owner; bh=lffSBJG+SRg7dPyyIXKTuff2jXIKYfK8Zp2asTV3XNc=; b=B4Lgf2fQmirSD1
+	wiGKVD8hz8rWx0byrA4HtTB2i9lAJD+4I/Zfj0H6VBAQPA3gPbpKSdQ8LJ1J8GK2r47GCkTegD0Jk
+	ErUUvcQNt297EdPsgJQgeCD+Ekjh1ez1F9ilpbqX41XmltzWiM9elgKSu9/1Q5b3zCBDSiplKSK4R
+	p/Ngkp90gvVzJ7HiSZ4w8VE9IhNzmSzDCTK+ZPeRX6PkU7F1VSxXFLOvR4XlB4NicHCEXikppoEUF
+	K+IYjBN0NDL2b1Mqbb3zE3bnKzW0meYDk3D5NJJ1QsAQDid/IwJI3CsjUVmb+bVuM6zPpfWQF+mNR
+	2eMgIQaeKvouAQd3aO2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2duI-0001zO-GQ; Fri, 14 Feb 2020 16:33:34 +0000
+	id 1j2dui-0002RY-5p; Fri, 14 Feb 2020 16:34:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dVf-0007ln-8r
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:08:09 +0000
+ id 1j2dVn-0007th-HS
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:08:17 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 91266222C2;
- Fri, 14 Feb 2020 16:08:05 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A3F712067D;
+ Fri, 14 Feb 2020 16:08:13 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696486;
- bh=abcxH2FDkY67ywKz9OWa3xtvSrEUbS2mzMluiL1bXfE=;
+ s=default; t=1581696494;
+ bh=tRYepbfaD7Zd5Bn6ptVzfWced5IDJEWaxH48PkLZIew=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Kx88ZxmPEFGf3efP04Cj49sxWbjo47Y+dR6ttjlsXBISmdIOQOJJykuV5WEBOCIVK
- bIX+OU23gpyGCQVA9yDbPX+/gfIEz7z6fooOrKidx0ixs8ZusDjGk5N3fghs8uz9Yx
- lUJJbcJu/knaUUA8wytQmgw2m6jYWFhzoXFZK+Ww=
+ b=y2fKV6h4UNlT6IYgssJGz697jNmxKJwmlw4Znuv1paPsm4VIVEHAl1FiZntqkp8pp
+ /3Df1+kjz2iWpx8WbjlCi0pQ3x1o0lv5PYB0NxR22cGUrBQLSw3Coo7g2AQfEr45r5
+ wVMcUg2fFoKoRHmnGkJzMpQPoDSDlnK8vdUQDeQM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 292/459] ASoC: atmel: fix build error with
- CONFIG_SND_ATMEL_SOC_DMA=m
-Date: Fri, 14 Feb 2020 10:59:02 -0500
-Message-Id: <20200214160149.11681-292-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 299/459] misc: xilinx_sdfec: fix xsdfec_poll()'s
+ return type
+Date: Fri, 14 Feb 2020 10:59:09 -0500
+Message-Id: <20200214160149.11681-299-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080807_380638_8EBD2B5A 
-X-CRM114-Status: UNSURE (   8.26  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200214_080815_631228_3B1069D3 
+X-CRM114-Status: GOOD (  12.28  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,49 +80,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- Chen Zhou <chenzhou10@huawei.com>, Hulk Robot <hulkci@huawei.com>,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dragan Cvetic <dragan.cvetic@xilinx.com>, linux-arm-kernel@lists.infradead.org,
+ Derek Kiernan <derek.kiernan@xilinx.com>,
+ Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen Zhou <chenzhou10@huawei.com>
+From: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
 
-[ Upstream commit 8fea78029f5e6ed734ae1957bef23cfda1af4354 ]
+[ Upstream commit fa4e7fc1386078edcfddd8848cb0374f4af74fe7 ]
 
-If CONFIG_SND_ATMEL_SOC_DMA=m, build error:
+xsdfec_poll() is defined as returning 'unsigned int' but the
+.poll method is declared as returning '__poll_t', a bitwise type.
 
-sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
-(.text+0x7cd): undefined reference to `atmel_pcm_dma_platform_register'
+Fix this by using the proper return type and using the EPOLL
+constants instead of the POLL ones, as required for __poll_t.
 
-Function atmel_pcm_dma_platform_register is defined under
-CONFIG SND_ATMEL_SOC_DMA, so select SND_ATMEL_SOC_DMA in
-CONFIG SND_ATMEL_SOC_SSC, same to CONFIG_SND_ATMEL_SOC_PDC.
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
-Link: https://lore.kernel.org/r/20200113133242.144550-1-chenzhou10@huawei.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
+CC: Derek Kiernan <derek.kiernan@xilinx.com>
+CC: Dragan Cvetic <dragan.cvetic@xilinx.com>
+Signed-off-by: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Acked-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
+Link: https://lore.kernel.org/r/20191209213655.57985-1-luc.vanoostenryck@gmail.com
+Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- sound/soc/atmel/Kconfig | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/misc/xilinx_sdfec.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
-index f118c229ed829..d1dc8e6366dcb 100644
---- a/sound/soc/atmel/Kconfig
-+++ b/sound/soc/atmel/Kconfig
-@@ -19,6 +19,8 @@ config SND_ATMEL_SOC_DMA
+diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
+index 11835969e9828..48ba7e02bed72 100644
+--- a/drivers/misc/xilinx_sdfec.c
++++ b/drivers/misc/xilinx_sdfec.c
+@@ -1025,25 +1025,25 @@ static long xsdfec_dev_compat_ioctl(struct file *file, unsigned int cmd,
+ }
+ #endif
  
- config SND_ATMEL_SOC_SSC
- 	tristate
-+	select SND_ATMEL_SOC_DMA
-+	select SND_ATMEL_SOC_PDC
+-static unsigned int xsdfec_poll(struct file *file, poll_table *wait)
++static __poll_t xsdfec_poll(struct file *file, poll_table *wait)
+ {
+-	unsigned int mask = 0;
++	__poll_t mask = 0;
+ 	struct xsdfec_dev *xsdfec;
  
- config SND_ATMEL_SOC_SSC_PDC
- 	tristate "SoC PCM DAI support for AT91 SSC controller using PDC"
+ 	xsdfec = container_of(file->private_data, struct xsdfec_dev, miscdev);
+ 
+ 	if (!xsdfec)
+-		return POLLNVAL | POLLHUP;
++		return EPOLLNVAL | EPOLLHUP;
+ 
+ 	poll_wait(file, &xsdfec->waitq, wait);
+ 
+ 	/* XSDFEC ISR detected an error */
+ 	spin_lock_irqsave(&xsdfec->error_data_lock, xsdfec->flags);
+ 	if (xsdfec->state_updated)
+-		mask |= POLLIN | POLLPRI;
++		mask |= EPOLLIN | EPOLLPRI;
+ 
+ 	if (xsdfec->stats_updated)
+-		mask |= POLLIN | POLLRDNORM;
++		mask |= EPOLLIN | EPOLLRDNORM;
+ 	spin_unlock_irqrestore(&xsdfec->error_data_lock, xsdfec->flags);
+ 
+ 	return mask;
 -- 
 2.20.1
 
