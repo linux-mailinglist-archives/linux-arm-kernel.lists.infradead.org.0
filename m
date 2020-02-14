@@ -2,85 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B328A15D3AF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 09:20:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C19BA15D3DD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 09:33:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=thE7AdsamfkQ1osirJHbIIYc8A4tSvGvT3tfChKQGPo=; b=g4izHas9g1zUQV
-	4A9/edw70vKe1UuXkvEe4NkNSJl5e+G2pLZNl+qXi/zgOkrAtFbr4FWIG++iZumpIn9DnevTPXcKW
-	7QQ02mY0yZR4rr3yoI4P0pJGZ8X8BZy6En/JgtEpxZnA7297HqLx69X+SW0MqZHQy6gg+Rq0BbXx9
-	hyy/1CB6yWdIj9tSGeQKnlTGsm+m9r1c4qnNKbf53fdzN8KU+1rtR/5Y3/G9vzJG8HcF/pawsz2St
-	rjE2FFt4gyJOwhOzMgR1EBTC9LKAts4X8tDkVYk45o48G0wRw19g8vwpR+5FPA5KVrdH/BI6GqQlO
-	2pCxdusJPsGJTVEQ1Geg==;
+	List-Owner; bh=/8RlVtlroS45jfrhyO3Kh1x0AzSxK1uY/zzrSNAT0hA=; b=c+gGtrsbx6idn2
+	RAMMjMBENETx/i6IkbUy3yj72kX6mvPnfbp7GhnqnhBXjxZZZKre8Xca/qDJIjo6oYE6mjDdsU8SN
+	wNUiqKHXjFVcQVzaftE3hDid70cqdQ1IYqssElLDsSrEtbtiPN3tqSQ/A4oKjPGVAUW0pVtn19leH
+	W/YzYMQgIYepquLUFe8zoXarU57GtFFwJTVP5/hsHj5CeNF5g7FZ21TdPrTIlNYuCedwkkma/WZiO
+	chSdlLJozRMu6Vj4MiAAUNxtKCT7DMIY0SNeu3SL6rrG36FiBWf+ezvyNwwRRXhHNObzgDtsrY8j3
+	XRiGmQz44Lfl69E67oWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2WCu-0006kl-O0; Fri, 14 Feb 2020 08:20:16 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1j2WP7-0002ek-2W; Fri, 14 Feb 2020 08:32:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2WCi-0006JI-O1
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 08:20:06 +0000
-Received: by mail-lj1-x244.google.com with SMTP id x14so9688039ljd.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Feb 2020 00:20:02 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=f0FNgLnPWTEeOMv1dtdFcuHjTdzn6pGg8x44ibkEQPE=;
- b=tThJYyFgqDr0xjywQZpcUPswh6u2cBZitMBXL5HlvwWA/mmVulnlTwrHfoBaVo/rKo
- HegUHvyXUcIl9tZABp8eAoWjbCinqMDkumrHTSwh/hwDCSxJE7dU85/SlSpaeWaFviEo
- MCph3+YOCwsF9NiqaZ71muLOPxYjDA4G35LCPXBdDX71CGCZYxXvjNmRmbYy5Sbw8g28
- SpuH5UvD8RzQJCbp7mnH1ASd/6s/6DU7hmsujYfjr2CvFLdnXdz0GOVUguSlUgyshdaU
- XXe/61A3srbpQgboc8XsEHzBe7oLOR3kkjLGa35CuTe9shFEjooOntG5UckFPdvD5TE8
- pVYg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=f0FNgLnPWTEeOMv1dtdFcuHjTdzn6pGg8x44ibkEQPE=;
- b=pqJyXNF/4rEt4WHHdesxgVnpDINKK18R5xTmy9cm9LnvV9jur7a3+Qqp3NTcpVGI7W
- y7OVmFp++lLY0/YoGCl5gBfUpz5WLlBhu4V50T4XlGt/5U0qxBHtMpyAWQo57ZPy81Us
- scoyMm01IZ4Z6rEHS3ABNq6eKndsfgwQ+tMB2xZjJsBi/tDAl9zmNUDS/26KBT0YnSZf
- hJ+rML3JSGGFltH8DfH9YkN0ccxpasLlLuYXSWnV09/I4PrO5LSH5xO2BlMbHAf7xjqp
- 7b0sChMKG6sbsGt+uF5fTRXwydaqWX0SyArKN9Dy2kgc+AmXkGTmVAhkjxvNzgbbfy3b
- GwfA==
-X-Gm-Message-State: APjAAAXcKGZCLNg1JoWgU+Q/tv2apORYW4va4xOptq+KXv7MzH74fP+r
- ac0hBc2I636C8L+USBfN25aLUWs3AwCTytkSzwy3Zg==
-X-Google-Smtp-Source: APXvYqy/sFLvdsy8AbVPYR/LBprLucz97Uq/5AQ1kxvx6NdtxQvxfagBozm3o+gZIAbeNZthrmn2zyDwBKBcUSMB3mI=
-X-Received: by 2002:a2e:81c3:: with SMTP id s3mr1292161ljg.168.1581668397598; 
- Fri, 14 Feb 2020 00:19:57 -0800 (PST)
+ id 1j2WOw-0002eF-NI
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 08:32:43 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4668420873;
+ Fri, 14 Feb 2020 08:32:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581669162;
+ bh=Hw5z4C04dvgDdgjwZX9sbW+U/h9mRyaYkFTxfMoV9rI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=rGuXm0DAYYdFvoXOA59Sy1pGJdtM2VWWJPQwq+ZXZhkqeJCSUmUiYnVxDG2bCv1h5
+ 9iiG9o48fbxLQPKTUZhrPryC3Xtz3JWednyhkYIITa2OpLJALHu8pMMqSL/6Rn2ueF
+ LfiTPsMGnSgCD9GXsdn38883h+c52sPH58FIwlaY=
+Date: Fri, 14 Feb 2020 16:32:33 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
+Subject: Re: [PATCH 2/6] ARM: dts: imx7-colibri: fix muxing of usbc_det pin
+Message-ID: <20200214083232.GA25543@dragon>
+References: <20200204111151.3426090-1-oleksandr.suvorov@toradex.com>
+ <20200204111151.3426090-3-oleksandr.suvorov@toradex.com>
 MIME-Version: 1.0
-References: <20200213124833.35545-1-linus.walleij@linaro.org>
- <CAKMK7uGDG7N1j53hPwNpnK+E=jiPDnEg3MofgC4fKmej_BUm2w@mail.gmail.com>
-In-Reply-To: <CAKMK7uGDG7N1j53hPwNpnK+E=jiPDnEg3MofgC4fKmej_BUm2w@mail.gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 14 Feb 2020 09:19:46 +0100
-Message-ID: <CACRpkdbuOutb0t+rnkM6dauWnEnJ3HzmZ86FWqbDjpaDHFu+Mg@mail.gmail.com>
-Subject: Re: [PATCH] drm/pl111: Support Integrator IM-PD1 module
-To: Daniel Vetter <daniel@ffwll.ch>
+Content-Disposition: inline
+In-Reply-To: <20200204111151.3426090-3-oleksandr.suvorov@toradex.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_002004_820701_37C85FA3 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200214_003242_778007_059B02E6 
+X-CRM114-Status: GOOD (  10.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,29 +77,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sean Paul <sean@poorly.run>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- Maxime Ripard <mripard@kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Igor Opaniuk <igor.opaniuk@toradex.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Stefan Agner <stefan@agner.ch>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 3:49 PM Daniel Vetter <daniel@ffwll.ch> wrote:
+On Tue, Feb 04, 2020 at 01:11:47PM +0200, Oleksandr Suvorov wrote:
+> USB_C_DET pin shouldn't be in ethernet group.
+> 
+> Creating a separate group allows one to use this pin
+> as an USB ID pin.
+> 
+> Fixes: b326629f25b7 ("ARM: dts: imx7: add Toradex Colibri iMX7S/iMX7D suppor")
+> Signed-off-by: Oleksandr Suvorov <oleksandr.suvorov@toradex.com>
 
-> Looking around in the arm/mach-integrator code this seems to match
-> roughly :-) I noticed there's also two more outputs for two panels,
-> but not here. Do we not care about these anymore?
-
-I actually have that hardware too (Integrator/PP2) and it is trivial to
-support using the existing code, one can just define the panel in the
-device tree. It might need some new define in panel-simple.c as
-well.
-
-Yours,
-Linus Walleij
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
