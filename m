@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 939D715DBA1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:51:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C240E15DBD8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:51:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fasITRR85lXKW3Zb9Ml3QXezkUI0W1+ip2esAmQTpac=; b=nbGOPUieYhjLd2
-	qKGWgZaqYEhu+eP1n/O5MstbCK7iEPWJygIZLblvLgLHVQK+1LoLPut4Puzr+YD0chfJKlkj4K0K2
-	D25xI8aI8q7ruMCP8gh74LNtJ6bIVvxxZq2/tb91DR43ScmXR//5HcfkyNzf0QB++gfLjSU5C8YO2
-	U0gjxsFhAP1uhBVdjEQ9gOtCKJLp9q8nX6/M5merM9Jv0jV4kaeyVKEJiClYQw4fHssmJPJXcEuQu
-	/a5UWXE1z9BwLMVC1er5GcizXGtmQ6nLPuI4jN4PG/P7BtsYjH5WCj+cwdT9lmhbJFlRJ1MH06f/B
-	EldnhQf9pxPZsjaOPXdA==;
+	List-Owner; bh=0ysf7xScjerm2mWwdlVlT4LjDF0bqbow3PcnXDHf+Rg=; b=WsgGvTQQlWCOP+
+	VgIDo3lSBSwD0aPy2+cyXXwaknYAMsyAhiVC/7WG7cHXLA32CJ2fhsBkAZSLPrGVMjOu+Wcwopv3Q
+	S9mXAl1y3G4nOcyp/BYxw2XwarmikbHi9vQpcMgKeil9Uw/5i2p2EFIDk8V+/RyGVf1bk8Nbpd03w
+	SSV4jJ2H2OGLShxy6AioAKNw+UkOpfkqpD9qsaj8MljGT/GKtHkHDdyB2o6eIK1s+DdhPXN563mq8
+	djnnFcNfhE54ZHqX9FGKXUp//ZlkS0g+0om3ALuSuA5A1o4y4z9seL0BErUMKp+Uk73YnEI+mIHNC
+	DVTjtNIiOiDDFg0OVyrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dF5-0003ne-H4; Fri, 14 Feb 2020 15:50:59 +0000
+	id 1j2dFM-00044L-8b; Fri, 14 Feb 2020 15:51:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dDX-0001Tt-HZ; Fri, 14 Feb 2020 15:49:24 +0000
+ id 1j2dDz-0001vJ-B3
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:49:52 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 96B7A2468D;
- Fri, 14 Feb 2020 15:49:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 859B824684;
+ Fri, 14 Feb 2020 15:49:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695362;
- bh=dxyccyigJhbpHPCQ2eWhVt7tV6C/oCPf9Cj4BDUW/vo=;
+ s=default; t=1581695390;
+ bh=B57KRccJ758jF0xN74+wxNnwCOVOgwAYcSyGiizN5Pg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rKy42ZJogbJiVIB0vxRQpET6l3+9EMQzeXR3cbqqH8r+dLG4Yki40Q9/vXKPyLlrc
- 7yarKQN48r11rAJTbgoegpieXLNbyRaunXVlD11md8ai+gnUkGIwD5JzMZ/z3I1qRu
- wUUzEpM4edvipZ9eOVQlKEwgxeAw88EDe0+iSd1A=
+ b=vqq2TmAjXjUtP/FovRlWLuH3fstmwyv6yUFJULiR0qvmyBqP7fRu76ebMcSXVz9PU
+ kBq/+7ev9O5wuTvjeCCN6qyGwe6u0fm8uAyZJzuKi3vARy96MEs8KeKFuPN512774Q
+ 0Guyk4wWWgdjl1htNGrQeeTq7cmw83Y0f1rkegWY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 021/542] clk: meson: pll: Fix by 0 division in
- __pll_params_to_rate()
-Date: Fri, 14 Feb 2020 10:40:13 -0500
-Message-Id: <20200214154854.6746-21-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 043/542] media: sun4i-csi: Deal with DRAM offset
+Date: Fri, 14 Feb 2020 10:40:35 -0500
+Message-Id: <20200214154854.6746-43-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_074923_662076_F0C2EADA 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20200214_074951_406105_B4C79DEA 
+X-CRM114-Status: GOOD (  12.60  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,84 +80,78 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Remi Pommarel <repk@triplefau.lt>, linux-amlogic@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Remi Pommarel <repk@triplefau.lt>
+From: Chen-Yu Tsai <wens@csie.org>
 
-[ Upstream commit d8488a41800d9f5c80bc0d17b9cc2c91b4841464 ]
+[ Upstream commit 249b286171fa9c358e8d5c825b48c4ebea97c498 ]
 
-Some meson pll registers can be initialized with 0 as N value, introducing
-the following division by 0 when computing rate :
+On Allwinner SoCs, some high memory bandwidth devices do DMA directly
+over the memory bus (called MBUS), instead of the system bus. These
+devices include the CSI camera sensor interface, video (codec) engine,
+display subsystem, etc.. The memory bus has a different addressing
+scheme without the DRAM starting offset.
 
-  UBSAN: Undefined behaviour in drivers/clk/meson/clk-pll.c:75:9
-  division by zero
-  CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.4.0-rc3-608075-g86c9af8630e1-dirty #400
-  Call trace:
-   dump_backtrace+0x0/0x1c0
-   show_stack+0x14/0x20
-   dump_stack+0xc4/0x100
-   ubsan_epilogue+0x14/0x68
-   __ubsan_handle_divrem_overflow+0x98/0xb8
-   __pll_params_to_rate+0xdc/0x140
-   meson_clk_pll_recalc_rate+0x278/0x3a0
-   __clk_register+0x7c8/0xbb0
-   devm_clk_hw_register+0x54/0xc0
-   meson_eeclkc_probe+0xf4/0x1a0
-   platform_drv_probe+0x54/0xd8
-   really_probe+0x16c/0x438
-   driver_probe_device+0xb0/0xf0
-   device_driver_attach+0x94/0xa0
-   __driver_attach+0x70/0x108
-   bus_for_each_dev+0xd8/0x128
-   driver_attach+0x30/0x40
-   bus_add_driver+0x1b0/0x2d8
-   driver_register+0xbc/0x1d0
-   __platform_driver_register+0x78/0x88
-   axg_driver_init+0x18/0x20
-   do_one_initcall+0xc8/0x24c
-   kernel_init_freeable+0x2b0/0x344
-   kernel_init+0x10/0x128
-   ret_from_fork+0x10/0x18
+Deal with this using the "interconnects" property from the device tree,
+or if that is not available, set dev->dma_pfn_offset to PHYS_PFN_OFFSET.
 
-This checks if N is null before doing the division.
-
-Fixes: 7a29a869434e ("clk: meson: Add support for Meson clock controller")
-Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Signed-off-by: Remi Pommarel <repk@triplefau.lt>
-[jbrunet@baylibre.com: update the comment in above the fix]
-Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
+Fixes: 577bbf23b758 ("media: sunxi: Add A10 CSI driver")
+Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+Acked-by: Maxime Ripard <mripard@kernel.org>
+Signed-off-by: Sakari Ailus <sakari.ailus@linux.intel.com>
+Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/clk/meson/clk-pll.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ .../platform/sunxi/sun4i-csi/sun4i_csi.c      | 22 +++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
-diff --git a/drivers/clk/meson/clk-pll.c b/drivers/clk/meson/clk-pll.c
-index ddb1e56347395..3a5853ca98c6c 100644
---- a/drivers/clk/meson/clk-pll.c
-+++ b/drivers/clk/meson/clk-pll.c
-@@ -77,6 +77,15 @@ static unsigned long meson_clk_pll_recalc_rate(struct clk_hw *hw,
- 	unsigned int m, n, frac;
+diff --git a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
+index f36dc6258900e..b8b07c1de2a8e 100644
+--- a/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
++++ b/drivers/media/platform/sunxi/sun4i-csi/sun4i_csi.c
+@@ -11,6 +11,7 @@
+ #include <linux/module.h>
+ #include <linux/mutex.h>
+ #include <linux/of.h>
++#include <linux/of_device.h>
+ #include <linux/of_graph.h>
+ #include <linux/platform_device.h>
+ #include <linux/pm_runtime.h>
+@@ -155,6 +156,27 @@ static int sun4i_csi_probe(struct platform_device *pdev)
+ 	subdev = &csi->subdev;
+ 	vdev = &csi->vdev;
  
- 	n = meson_parm_read(clk->map, &pll->n);
-+
 +	/*
-+	 * On some HW, N is set to zero on init. This value is invalid as
-+	 * it would result in a division by zero. The rate can't be
-+	 * calculated in this case
++	 * On Allwinner SoCs, some high memory bandwidth devices do DMA
++	 * directly over the memory bus (called MBUS), instead of the
++	 * system bus. The memory bus has a different addressing scheme
++	 * without the DRAM starting offset.
++	 *
++	 * In some cases this can be described by an interconnect in
++	 * the device tree. In other cases where the hardware is not
++	 * fully understood and the interconnect is left out of the
++	 * device tree, fall back to a default offset.
 +	 */
-+	if (n == 0)
-+		return 0;
++	if (of_find_property(csi->dev->of_node, "interconnects", NULL)) {
++		ret = of_dma_configure(csi->dev, csi->dev->of_node, true);
++		if (ret)
++			return ret;
++	} else {
++#ifdef PHYS_PFN_OFFSET
++		csi->dev->dma_pfn_offset = PHYS_PFN_OFFSET;
++#endif
++	}
 +
- 	m = meson_parm_read(clk->map, &pll->m);
- 
- 	frac = MESON_PARM_APPLICABLE(&pll->frac) ?
+ 	csi->mdev.dev = csi->dev;
+ 	strscpy(csi->mdev.model, "Allwinner Video Capture Device",
+ 		sizeof(csi->mdev.model));
 -- 
 2.20.1
 
