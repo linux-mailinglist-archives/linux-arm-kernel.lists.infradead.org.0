@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE1E615E3DD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:33:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C55915E3FF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:33:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qDw+0uwXQKk+Rz8Hz2Mbt0LqA2nVfZCwZw1lCeB8CsU=; b=bOUuBuglRQgUXS
-	ILEb83TRhNVCVgBSeqw9+JYEJAaj9C89tjMbvigfchuDCn+YaYKzotBUzsr/GXRNHxPWdN89kNLYv
-	XcqK5xQEdhtDTtlVka5g9PnBzyOEvtdItEnTIbM9/a7EpGZWeT0BjGrN5iNQ5JjimFpr/mBSRPFzo
-	91Yus3KqgeeGqnaMRbBVETzbzWmzoaOojnZXYFjcykRAc+S56vWVne+DwzPMZQtCNDXh8v5l8E+VY
-	WF8dAmJPswR5OX8lKIxjKceC4yvSw1OAsW2O+txpXXVJTgnTG7pr+nMN51PgYO2CcHjBS+lYgl6OO
-	N+q48CXolIEctV+3KDvg==;
+	List-Owner; bh=Huqcpq+YLOje4XB+4o4mgGR/p//MItdNTZgC5yluswc=; b=C5LdRNMBYxmcyg
+	tIxVvMPfgPyl5hLkKQmbDNht9KUBTN/IR5ljwnnMfhcnMB095YxXpcay5jbhgOsOwxJ20c0P9MWYl
+	VF7hmqysTq8qyvAP4mFKZ5jo097RrjjS7o5GmLGSqkQs8a9QNjh+192XkrANpqa0R2JFz6cYFyVeC
+	7Jq5kb9+ShKtr1yM1onteDZpQs1uDlhkbfAQ9arOXzFjFexGAWsbrIPUWmd+JDcyiDeHlMG11Nels
+	SjIDAfd3mLcdvoM/Jpi5XH4zf4tTSDSGTyuFt+5xAeH8SWJLeNNsg+/U9C1UoFSyIxVdlgtx6u68I
+	qDvERV7anke6fhiUd8Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2du3-0001nn-2c; Fri, 14 Feb 2020 16:33:19 +0000
+	id 1j2duI-0001zO-GQ; Fri, 14 Feb 2020 16:33:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dVc-0007kB-L7; Fri, 14 Feb 2020 16:08:08 +0000
+ id 1j2dVf-0007ln-8r
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:08:09 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EF9D624699;
- Fri, 14 Feb 2020 16:08:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 91266222C2;
+ Fri, 14 Feb 2020 16:08:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696483;
- bh=JvWkGWu+zJTSt92/+C6IwYRDtjcfu7RIC81rjcj5734=;
+ s=default; t=1581696486;
+ bh=abcxH2FDkY67ywKz9OWa3xtvSrEUbS2mzMluiL1bXfE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ugOKhRb0nHHGn5bOFsv7z+sgnj/4FLQwW6el7IlzxNnKpbCz+39EoZL1S5VNZ4dI7
- cNMYK3QAHY22Yx1dz2PjqVmikfTudb3Wt9oagD0BnqsnGyaNKh5gAG0dYEs3TLNxPA
- 8vYN/JCEi8STkb++k6cD58nzC74iI6sxlrqq1WIg=
+ b=Kx88ZxmPEFGf3efP04Cj49sxWbjo47Y+dR6ttjlsXBISmdIOQOJJykuV5WEBOCIVK
+ bIX+OU23gpyGCQVA9yDbPX+/gfIEz7z6fooOrKidx0ixs8ZusDjGk5N3fghs8uz9Yx
+ lUJJbcJu/knaUUA8wytQmgw2m6jYWFhzoXFZK+Ww=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 290/459] ARM: dts: rockchip: add reg property to
- brcmf sub node for rk3188-bqedison2qc
-Date: Fri, 14 Feb 2020 10:59:00 -0500
-Message-Id: <20200214160149.11681-290-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 292/459] ASoC: atmel: fix build error with
+ CONFIG_SND_ATMEL_SOC_DMA=m
+Date: Fri, 14 Feb 2020 10:59:02 -0500
+Message-Id: <20200214160149.11681-292-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -49,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080804_754263_5A2C1E67 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20200214_080807_380638_8EBD2B5A 
+X-CRM114-Status: UNSURE (   8.26  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,53 +81,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
- Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
+ Chen Zhou <chenzhou10@huawei.com>, Hulk Robot <hulkci@huawei.com>,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Johan Jonker <jbx6244@gmail.com>
+From: Chen Zhou <chenzhou10@huawei.com>
 
-[ Upstream commit cf206bca178cd5b5a436494b2e0cea75295944f4 ]
+[ Upstream commit 8fea78029f5e6ed734ae1957bef23cfda1af4354 ]
 
-An experimental test with the command below gives this error:
-rk3188-bqedison2qc.dt.yaml: dwmmc@10218000: wifi@1:
-'reg' is a required property
+If CONFIG_SND_ATMEL_SOC_DMA=m, build error:
 
-So fix this by adding a reg property to the brcmf sub node.
-Also add #address-cells and #size-cells to prevent more warnings.
+sound/soc/atmel/atmel_ssc_dai.o: In function `atmel_ssc_set_audio':
+(.text+0x7cd): undefined reference to `atmel_pcm_dma_platform_register'
 
-make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/mmc/rockchip-dw-mshc.yaml
+Function atmel_pcm_dma_platform_register is defined under
+CONFIG SND_ATMEL_SOC_DMA, so select SND_ATMEL_SOC_DMA in
+CONFIG SND_ATMEL_SOC_SSC, same to CONFIG_SND_ATMEL_SOC_PDC.
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200110134420.11280-1-jbx6244@gmail.com
-Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
+Link: https://lore.kernel.org/r/20200113133242.144550-1-chenzhou10@huawei.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/rk3188-bqedison2qc.dts | 3 +++
- 1 file changed, 3 insertions(+)
+ sound/soc/atmel/Kconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm/boot/dts/rk3188-bqedison2qc.dts b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-index c8b62bbd6a4a4..ad1afd403052a 100644
---- a/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-+++ b/arch/arm/boot/dts/rk3188-bqedison2qc.dts
-@@ -466,9 +466,12 @@
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&sd1_clk>, <&sd1_cmd>, <&sd1_bus4>;
- 	vmmcq-supply = <&vccio_wl>;
-+	#address-cells = <1>;
-+	#size-cells = <0>;
- 	status = "okay";
+diff --git a/sound/soc/atmel/Kconfig b/sound/soc/atmel/Kconfig
+index f118c229ed829..d1dc8e6366dcb 100644
+--- a/sound/soc/atmel/Kconfig
++++ b/sound/soc/atmel/Kconfig
+@@ -19,6 +19,8 @@ config SND_ATMEL_SOC_DMA
  
- 	brcmf: wifi@1 {
-+		reg = <1>;
- 		compatible = "brcm,bcm4329-fmac";
- 		interrupt-parent = <&gpio3>;
- 		interrupts = <RK_PD2 GPIO_ACTIVE_HIGH>;
+ config SND_ATMEL_SOC_SSC
+ 	tristate
++	select SND_ATMEL_SOC_DMA
++	select SND_ATMEL_SOC_PDC
+ 
+ config SND_ATMEL_SOC_SSC_PDC
+ 	tristate "SoC PCM DAI support for AT91 SSC controller using PDC"
 -- 
 2.20.1
 
