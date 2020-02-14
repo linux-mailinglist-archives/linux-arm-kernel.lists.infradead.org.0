@@ -2,75 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F5D815D208
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 07:26:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E24115D214
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 07:27:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=w6sPiCZK9Vi69c/DmCjgSobIRPoaLDFK/0tJ7m0lAZY=; b=o1BURMnYym9a/vrVkAg+Ig7bf
-	eY9sUbPzNyTeVEaAHEkB2XJx1KRVniub8q5gdEUgiATkJ8pNIbaS3TdgRdIpvgHTq07wZeOeiNNHc
-	3gfLwlKMG2ORtoyqWOJeUmEJoVQnOyr2CDHGj+0wkGT72773gpxh+RzefmRY6gOzT4o5NA3nnuzDi
-	KJPzZUpKdMhEoLTIkndGCztGuEu2jvmYk6/IDRt1oOL5a8hjSq4GLZ/xfNZZvwX4Z3wRDCyKb27F9
-	w2czM3kqxh7wBcqBHGJ/VLIt/yj6ROpbDW8w7LFI+r9GQEtNJojY7ZtZpT2kECxDTIxiuEEx6ZbJR
-	ebQwpLsWQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fUbY9UK9G/4HPGzatNJwJFs8TbLAJDB7bxblOWwSh1Y=; b=A1UkxY9LcQx0e3
+	WonUZJO//M4VEFwjPSKuUqhAby6LPStH2xwN2RzUFMKIagtaDkvOtXTgeNUEa9cE/O67eEaosByxd
+	75lIIamLh7R+/DEWw1+9NNPUKYqJEZ8HoIoiL4vij97zIqEdo5mtcNresWyFM5KTaGczemlyQv4fi
+	wjUBlBqNzBsX9ehIXhY0qyl4ceLezC0wHYztBsnr3ubLDppCP2aecjq2psF8DKt3dgmgzpCOX+YBG
+	23WY0oJPwIBENaxxalWTNN7aBs3vICZh18yP18ybWk6Zhs9fdHR1KreRY5jE7OXT9Jjle5QTYrSxS
+	qqFq0RfdkulNZSzFKp5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2UQI-0002R8-6I; Fri, 14 Feb 2020 06:25:58 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1j2URG-0002iF-KP; Fri, 14 Feb 2020 06:26:58 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2UQB-0002Qh-0u
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 06:25:52 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01E6PbU2128154;
- Fri, 14 Feb 2020 00:25:37 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1581661537;
- bh=emb6isgivzlz8Xro3qZE3VzauclA19pQtNe3HZ5RsiM=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=s0GVC/VOy1gt1pkmomlQO63U+pvhLhjJfAhegZ4sPGqG+fcQNuGRzL3Co76h/HThd
- WmVxGPXJkdbGWe3FbBYYIVMYBa455HVTI10ItlRj8WWBcXvI0NxR8c7ksNljWPkY0a
- E48x9QtW8mJrr5Tv10DK0OLIyJvPwLSDcca2I2rQ=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01E6PbXr120829;
- Fri, 14 Feb 2020 00:25:37 -0600
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Fri, 14
- Feb 2020 00:25:37 -0600
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Fri, 14 Feb 2020 00:25:37 -0600
-Received: from [10.24.69.174] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01E6PXrW103970;
- Fri, 14 Feb 2020 00:25:34 -0600
-Subject: Re: [PATCH 1/4] dt-bindings: thermal: k3: Add VTM bindings
- documentation
-To: Rob Herring <robh@kernel.org>
-References: <20200213102440.20539-1-j-keerthy@ti.com>
- <20200213102440.20539-2-j-keerthy@ti.com> <20200213204738.GA2973@bogus>
-From: Keerthy <j-keerthy@ti.com>
-Message-ID: <a1022021-1c4c-4a4b-8391-776df0d03a82@ti.com>
-Date: Fri, 14 Feb 2020 11:55:39 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j2UR8-0002hU-Hp
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 06:26:52 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id q39so3507459pjc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 13 Feb 2020 22:26:50 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=eCrhZ74+BntL1ASmsZknwx81NOpQkF74lLsvD9sBub0=;
+ b=f3T6NdVHZxNDFtYQX+iekyEp0Bj2gxg4PzjB4yrO524wQr2gUIHTtFAGcvT0x+wfxY
+ xgHw8Oc7tgN48emrBRNtwlfgTheC5sPIifAvxhb1VHFp42qc5buBVrLVuqMTscO3BeVg
+ gMN5M9wfjGBaooPpixSwRakGOYGWDa2gtcbaE=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=eCrhZ74+BntL1ASmsZknwx81NOpQkF74lLsvD9sBub0=;
+ b=cGa7lOiQ2gJ/i9Dmt4PFnL7R4jRnX/CxlkrYjo9Gevbha4BwGaAmSNd8bUSwB6PGRn
+ ZQ4ch1pO/re0pv24IWEv1YRxgKYT7UeIpXitueinzR29entJ1sq/Giz6kM+nspc9u18g
+ xvWDELiAC4npm7ZW50CqsKwq0uTZyrpH56jO3kvw9L1M+3jjxF1sDqEFHKKBCG76Hgwq
+ 22NMyp159y8Lu4yrV8tfgmMaEMxn6n8+R4lRxIm7t/hOB3nSoKT5hDiV+1q7vny016w6
+ YNygk8RxBZBV1gha9O+SjdAdZgArcCo1LtY+7yGe3hIBegYKk7pKQB6fe85FXm2Rky5Z
+ wxpA==
+X-Gm-Message-State: APjAAAUDY2pBq3j2tt6EJXVmftyGlSMl9Se5/ZOAbdeBO739ZQR5viRH
+ d/Yn2sGl8fKtTCBjo2RvQzGRfA==
+X-Google-Smtp-Source: APXvYqyn5ehjzmo5Eos0aPWzc2ZSt6d7nE5vtqIbR/GyaAShL8VPgieCBvCjTwVgiNarWUm9OnDtxg==
+X-Received: by 2002:a17:90a:9dc3:: with SMTP id
+ x3mr1620345pjv.45.1581661609563; 
+ Thu, 13 Feb 2020 22:26:49 -0800 (PST)
+Received: from localhost ([2401:fa00:9:14:1105:3e8a:838d:e326])
+ by smtp.gmail.com with ESMTPSA id o73sm4636778pje.7.2020.02.13.22.26.41
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 13 Feb 2020 22:26:48 -0800 (PST)
+From: Evan Benn <evanbenn@chromium.org>
+To: LKML <linux-kernel@vger.kernel.org>
+Subject: [PATCH 0/2] Add a watchdog driver that uses ARM Secure Monitor Calls.
+Date: Fri, 14 Feb 2020 17:26:35 +1100
+Message-Id: <20200214062637.216209-1-evanbenn@chromium.org>
+X-Mailer: git-send-email 2.25.0.265.gbab2e86ba0-goog
 MIME-Version: 1.0
-In-Reply-To: <20200213204738.GA2973@bogus>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_222551_164956_31D659CC 
-X-CRM114-Status: GOOD (  16.90  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200213_222650_615658_5000DDC9 
+X-CRM114-Status: GOOD (  12.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,74 +90,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- amit.kucheria@verdurent.com, linux-pm@vger.kernel.org,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, t-kristo@ti.com,
- robh+dt@kernel.org, rui.zhang@intel.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
+ Rob Herring <robh@kernel.org>, Anson Huang <Anson.Huang@nxp.com>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ =?UTF-8?q?Cl=C3=A9ment=20P=C3=A9ron?= <peron.clem@gmail.com>,
+ Evan Benn <evanbenn@chromium.org>, Guenter Roeck <linux@roeck-us.net>,
+ devicetree@vger.kernel.org, linux-watchdog@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Dinh Nguyen <dinguyen@kernel.org>, Olof Johansson <olof@lixom.net>,
+ jwerner@chromium.org, Shawn Guo <shawnguo@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This is currently supported in firmware deployed on oak, hana and elm mt8173
+chromebook devices. The kernel driver is written to be a generic SMC
+watchdog driver.
+
+Arm Trusted Firmware upstreaming review:
+    https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/3405
+
+Patch to add oak, hana, elm device tree:
+    https://lore.kernel.org/linux-arm-kernel/20200110073730.213789-1-hsinyi@chromium.org/
+I would like to add the device tree support after the above patch is
+accepted.
 
 
-On 14/02/20 2:17 am, Rob Herring wrote:
-> On Thu, 13 Feb 2020 15:54:37 +0530, Keerthy wrote:
->> Add VTM bindings documentation. In the Voltage Thermal
->> Management Module(VTM), K3 AM654 supplies a voltage
->> reference and a temperature sensor feature that are gathered in the band
->> gap voltage and temperature sensor (VBGAPTS) module. The band
->> gap provides current and voltage reference for its internal
->> circuits and other analog IP blocks. The analog-to-digital
->> converter (ADC) produces an output value that is proportional
->> to the silicon temperature.
->>
->> Signed-off-by: Keerthy <j-keerthy@ti.com>
->> ---
->>   .../bindings/thermal/ti,am654-thermal.yaml    | 59 +++++++++++++++++++
->>   1 file changed, 59 insertions(+)
->>   create mode 100644 Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
->>
-> 
-> My bot found errors running 'make dt_binding_check' on your patch:
+Evan Benn (1):
+  dt-bindings: watchdog: Add arm,smc-wdt watchdog arm,smc-wdt compatible
 
-I will fix them and resend v2.
+Julius Werner (1):
+  watchdog: Add new arm_smc_wdt watchdog driver
 
-> 
-> warning: no schema found in file: Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
-> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml: ignoring, error parsing file
-> Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
-> Traceback (most recent call last):
->    File "/usr/local/bin/dt-doc-validate", line 35, in check_doc
->      testtree = dtschema.load(filename, line_number=line_number, duplicate_keys=False)
->    File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 513, in load
->      return yaml.load(f.read())
->    File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/main.py", line 343, in load
->      return constructor.get_single_data()
->    File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 111, in get_single_data
->      node = self.composer.get_single_node()
->    File "_ruamel_yaml.pyx", line 718, in _ruamel_yaml.CParser.get_single_node
-> ruamel.yaml.composer.ComposerError: expected a single document in the stream
->    in "<unicode string>", line 2, column 1
-> but found another document
->    in "<unicode string>", line 4, column 1
-> 
-> During handling of the above exception, another exception occurred:
-> 
-> Traceback (most recent call last):
->    File "/usr/local/bin/dt-doc-validate", line 74, in <module>
->      ret = check_doc(args.yamldt)
->    File "/usr/local/bin/dt-doc-validate", line 40, in check_doc
->      print(filename + ":", exc.path[-1], exc.message)
-> AttributeError: 'ComposerError' object has no attribute 'path'
-> Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/thermal/ti,am654-thermal.example.dts' failed
-> make[1]: *** [Documentation/devicetree/bindings/thermal/ti,am654-thermal.example.dts] Error 1
-> Makefile:1263: recipe for target 'dt_binding_check' failed
-> make: *** [dt_binding_check] Error 2
-> 
-> See https://patchwork.ozlabs.org/patch/1237405
-> Please check and re-submit.
-> 
+ .../bindings/watchdog/arm,smc-wdt.yaml        |  30 +++
+ MAINTAINERS                                   |   7 +
+ arch/arm64/configs/defconfig                  |   1 +
+ drivers/watchdog/Kconfig                      |  12 ++
+ drivers/watchdog/Makefile                     |   1 +
+ drivers/watchdog/arm_smc_wdt.c                | 191 ++++++++++++++++++
+ 6 files changed, 242 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/watchdog/arm,smc-wdt.yaml
+ create mode 100644 drivers/watchdog/arm_smc_wdt.c
+
+-- 
+2.25.0.265.gbab2e86ba0-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
