@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70B5E15E13F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:18:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D30D615E13D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:18:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CB9IjEKDLzOp0Dh4h+TIE1lUUfVMs7TgN4DIsnWNsJs=; b=eV4Zlj3vf+hMwa
-	p176OwtQEPbVCdTfS2DkXnmGXI0i/SP0SFsUdaIjx4IeoctWcLCC2ulkkluYEMAYZcgFmS72UOlBE
-	K+S+m6ezc3WhGAcCvshipEzkLkOBCtbFjbyxu/a3w3RIhFQor9PSu4ierWDvqWNGSJ0VJcW2XhOD6
-	dlBLEqKNQbKJvFIKhaf3Z8ZAVCQ9MTG7rstm8Zc4iPN1HW/SdWpxOTNsKNve/zGkY9JZ6tBQ/Jt76
-	EeRoQdYa+7jeMXZhmTRgFi374B4mzIfbPrd2aw3Zb9h3RHp6RqkUSZ8fh2wUu3x4u0T+i0zzTe871
-	s+9IBdgPCPPwJ3/+YfjQ==;
+	List-Owner; bh=50eYwp6zskpXsWISxM7fv+vGYihoOxib8+X3b9DT4nM=; b=OlT7ls1GSkmZt5
+	w0rbXIjX96Wz8SOCKY31uTon0X8SNUzOOQpemmcuhJsKd7jtC0lkm/xW6jW1DFTlIE/UryN5+EiRH
+	OutmNAduowixYjC/fkJPj+uSWaK4zxRqsRS9BZjB6omIn7fc73jNlbT7VA55gYtfQGUETwUCw6l5N
+	lUtcy/guZdILmiTvtQxfXGYDdO+w4wuKN3ussMZpvj0AGSEejeV/wswDsGIb2LsLzsQLZF5HXpJgI
+	JJVw0mbZ5ma8usJpGxgdpSIsZOVEH77CE4ZDvADm5tSjkjI5gqmvTBmfB9fXhaSrHipjlcp7kV8J2
+	h1kK3NTSUsN7RIlYc6kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dfT-0001PQ-1A; Fri, 14 Feb 2020 16:18:15 +0000
+	id 1j2df7-0001Cq-Ru; Fri, 14 Feb 2020 16:17:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dPv-0000Jn-Kc; Fri, 14 Feb 2020 16:02:13 +0000
+ id 1j2dPx-0000Lg-8R; Fri, 14 Feb 2020 16:02:14 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9C4B024676;
- Fri, 14 Feb 2020 16:02:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 47E2E24654;
+ Fri, 14 Feb 2020 16:02:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696130;
- bh=HDNfsmOpb9MK1yv2aN+/E97lXV9iDVXQh3D1EFAviJE=;
+ s=default; t=1581696132;
+ bh=ml9s32sxFxF2khA9u9Gzm/r5nsPwJ65bZbYiix3UbLY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=nCeP60jhUGVvFg+8vLNWolMx7SIrbn2HxbQKN5BzRWlP/8Kw/Uts61Tcsm/XVi3iO
- pPFhJSsLqPnpW2WD/ozY94wtFflbVGLsfkmpq224GOocSGdZxtN6F73tbG5L/1rdCs
- weoyd/ubyLDYNWSWN3MzPqXIyn+mpuvgkTR204MU=
+ b=ogfAG4Q2/ulyttPT9laYVPuYkjmgcm9jBn3GQg19dbCDTkaqvaPDe0xDf64noPH/A
+ 6tF4ajsveknKCpkbi+0E1h0vBYPZy3rTSR5zMI2j7X73HXIEXdEKChaan9B3Ege4D9
+ OzzikMlcqSMhGfPRSZ+9Z2/1Ly5wNOkbSiWS2OWM=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 015/459] media: meson: add missing allocation
- failure check on new_buf
-Date: Fri, 14 Feb 2020 10:54:25 -0500
-Message-Id: <20200214160149.11681-15-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 016/459] clk: meson: g12a: fix missing uart2 in
+ regmap table
+Date: Fri, 14 Feb 2020 10:54:26 -0500
+Message-Id: <20200214160149.11681-16-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080211_721982_837C6383 
-X-CRM114-Status: UNSURE (   8.56  )
+X-CRM114-CacheID: sfid-20200214_080213_396776_0AB663D0 
+X-CRM114-Status: UNSURE (   9.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -80,51 +80,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devel@driverdev.osuosl.org,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Colin Ian King <colin.king@canonical.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, Dmitry Shmidt <dimitrysh@google.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman <khilman@baylibre.com>,
+ linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Colin Ian King <colin.king@canonical.com>
+From: Jerome Brunet <jbrunet@baylibre.com>
 
-[ Upstream commit 11e0e167d071a28288a7a0a211d48c571d19b56f ]
+[ Upstream commit b1b3f0622a9d52ac19a63619911823c89a4d85a4 ]
 
-Currently if the allocation of new_buf fails then a null pointer
-dereference occurs when assiging new_buf->vb. Avoid this by returning
-early on a memory allocation failure as there is not much more can
-be done at this point.
+UART2 peripheral is missing from the regmap fixup table of the g12a family
+clock controller. As it is, any access to this clock would Oops, which is
+not great.
 
-Addresses-Coverity: ("Dereference null return")
+Add the clock to the table to fix the problem.
 
-Fixes: 3e7f51bd9607 ("media: meson: add v4l2 m2m video decoder driver")
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
-Reviewed-by: Kevin Hilman <khilman@baylibre.com>
-Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Fixes: 085a4ea93d54 ("clk: meson: g12a: add peripheral clock controller")
+Reported-by: Dmitry Shmidt <dimitrysh@google.com>
+Tested-by: Dmitry Shmidt <dimitrysh@google.com>
+Acked-by: Neil Armstrong <narmstrong@baylibre.com>
+Tested-by: Kevin Hilman <khilman@baylibre.com>
+Signed-off-by: Jerome Brunet <jbrunet@baylibre.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/staging/media/meson/vdec/vdec.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/clk/meson/g12a.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/staging/media/meson/vdec/vdec.c b/drivers/staging/media/meson/vdec/vdec.c
-index 0a1a04fd5d13d..8dd1396909d7e 100644
---- a/drivers/staging/media/meson/vdec/vdec.c
-+++ b/drivers/staging/media/meson/vdec/vdec.c
-@@ -133,6 +133,8 @@ vdec_queue_recycle(struct amvdec_session *sess, struct vb2_buffer *vb)
- 	struct amvdec_buffer *new_buf;
- 
- 	new_buf = kmalloc(sizeof(*new_buf), GFP_KERNEL);
-+	if (!new_buf)
-+		return;
- 	new_buf->vb = vb;
- 
- 	mutex_lock(&sess->bufs_recycle_lock);
+diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
+index b3af61cc6fb94..d2760a021301d 100644
+--- a/drivers/clk/meson/g12a.c
++++ b/drivers/clk/meson/g12a.c
+@@ -4692,6 +4692,7 @@ static struct clk_regmap *const g12a_clk_regmaps[] = {
+ 	&g12a_bt656,
+ 	&g12a_usb1_to_ddr,
+ 	&g12a_mmc_pclk,
++	&g12a_uart2,
+ 	&g12a_vpu_intr,
+ 	&g12a_gic,
+ 	&g12a_sd_emmc_a_clk0,
 -- 
 2.20.1
 
