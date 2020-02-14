@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 720C215D04B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 04:07:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B061A15D04C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 04:07:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=1ge/xsWdeiP/NSjEIS+Y/liCwY5fmt00QMdBiFffLEQ=; b=nJ1
-	KosxgbzS5N+bBwwOquTbe3SAtcSshKe0bC/LXfTDW0etjKI+yuk6jPXkGCtNjDZ/8+LSL/Ol1Pkox
-	GMkGMpfhbB8ONKcXYXWte8K2i4DFfP74T9TVBaQNf/CRgPbnpCLKV0xiQoeAx5hODYJhTYZKSo+y5
-	L2Xt0ybno7ATtxdUJ7XV5LtBsW4neqX5Cm7dia5yO5NqFjzdzRCJ0Dzny7+251lK7trj+G5xblMnk
-	yatI3A5T+gw8HooPUIKEm/cxxJtPUFvKty/0h86d5Q7A4bj8v1HChQ4PLCMVFIxrMp/sXc4DhhJAi
-	zkibkY4keiG/N/u5S+InjIJUnxergDQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=onZBqaHoW2SLEfL5D2bWMtuHeahE4oyzxl5ylltiMKI=; b=eHiHialjb6Fif4wlx37UagBZ3I
+	IQ6hrxN6ZO6nuxwTh0wkensSbYHjjwIdryP6HdvAcRRSPA2b6HdkuAxlgruC1lOPfBtL0huavysPJ
+	m+Kf25G++m++YwuriiVEqPx9PtSS+tTP6TDm6lODdz3+zQP5WoCy6lAC4TF30zObUghUPVNKnIIsO
+	rqsZrg26obchd4Vv6n91RcSo6ZzlPTgclJmUnC82mHNw+WdrfQ3kXVmPuI0k/J/LFkHIe/mkSynj+
+	ZEPNlFuCEZNMkVO2QcKOe3ra+253S5qLacKRsHcGeivMtIN7pJWuHSBGwZ8Xq55Xi/AKtcPiApkq8
+	lTqpJDGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2RJy-0004EV-03; Fri, 14 Feb 2020 03:07:14 +0000
+	id 1j2RKD-0004Pq-R0; Fri, 14 Feb 2020 03:07:29 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2RJl-0004CU-L5
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 03:07:02 +0000
+ id 1j2RJm-0004CV-7A
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 03:07:03 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 647A01A9F22;
- Fri, 14 Feb 2020 04:06:58 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 51C9D1A9F17;
+ Fri, 14 Feb 2020 04:06:59 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1CA251A9EFD;
- Fri, 14 Feb 2020 04:06:53 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0AA9F1A9F16;
+ Fri, 14 Feb 2020 04:06:54 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7AAE8402DD;
- Fri, 14 Feb 2020 11:06:46 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 68E0D402E0;
+ Fri, 14 Feb 2020 11:06:47 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/5] ARM: dts: imx6qdl: make clks node name generic
-Date: Fri, 14 Feb 2020 10:59:36 +0800
-Message-Id: <1581649180-26086-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/5] ARM: dts: imx6sx: make clks node name generic
+Date: Fri, 14 Feb 2020 10:59:37 +0800
+Message-Id: <1581649180-26086-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1581649180-26086-1-git-send-email-Anson.Huang@nxp.com>
+References: <1581649180-26086-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200213_190701_838154_EDAF8F09 
-X-CRM114-Status: UNSURE (   8.67  )
+X-CRM114-CacheID: sfid-20200213_190702_398764_6FEF1178 
+X-CRM114-Status: UNSURE (   9.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -80,22 +83,22 @@ Node name should be generic, use "clock-controller" instead of
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx6qdl.dtsi | 2 +-
+ arch/arm/boot/dts/imx6sx.dtsi | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-index b0d9295..7f4bca6 100644
---- a/arch/arm/boot/dts/imx6qdl.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl.dtsi
-@@ -684,7 +684,7 @@
+diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
+index 4b5a276..3f54bb1 100644
+--- a/arch/arm/boot/dts/imx6sx.dtsi
++++ b/arch/arm/boot/dts/imx6sx.dtsi
+@@ -582,7 +582,7 @@
  				status = "disabled";
  			};
  
 -			clks: ccm@20c4000 {
 +			clks: clock-controller@20c4000 {
- 				compatible = "fsl,imx6q-ccm";
+ 				compatible = "fsl,imx6sx-ccm";
  				reg = <0x020c4000 0x4000>;
- 				interrupts = <0 87 IRQ_TYPE_LEVEL_HIGH>,
+ 				interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>,
 -- 
 2.7.4
 
