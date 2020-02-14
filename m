@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E331A15DABD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:23:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9BDD15DAB5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 16:22:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nOBxTyYHDYeA5BPAiP0XgeZ4HEjrGqnXufvhh9Si5p0=; b=bcYxUYtt8NeJRe
-	k6TFpEeKAmu7eOE6cK10KIsqlrif6e+5Uc6jZ1simST8F+B8gv5gr034T1z5AMplME+RP+Pdbb80B
-	LI6z+6d1t81GXh+TGMh68TNhvPJGjALPUmC0cVmChLsyy42kNQslNzfgsXGxmN2S8RiNG/nAVghNM
-	qvIhlDSA5AYhz/tIHeaxQwkGBb0nxMWPlrEPSrgaF3ipo0REcA1C8j5MdjbmDwkgcKy0JSaWYNert
-	Kbze0VjxNv5BcfjbnTJZvIryrxiZ+JpQud9jGLOSfEk/S7PYJt/Ixfz/uac0j1KAkJIljP/DpFL+w
-	hP/aV6e0s9UHCM72dg5Q==;
+	List-Owner; bh=FMJ3mc6QAeOlPU/V+K6zfYb+fkNMqzQElHOobJ+yJls=; b=YoS5rSLqePjY63
+	deYOA3VokNCe4TgwrF5TPAvb5QoRFgkUPPbyLPk0e/hkxkEJ5tGD9iMmHZfnkt4ynAj5EWEtzmJCy
+	i5X7skGSS7Nsr2poVDwXcjTUyXROw86jTZyqdVVdw6ExtmzV/UOs5Kbuup0QHr3Yh7tr86/KVuMK7
+	+jkrfrmbkMePJy/WBLa1CTl/ygcQwEElpTnEu0nQtoajJiqrdQWAWLdgnNiTNsDDqkotQNKgcH85z
+	pMd+Mpkbtt4VS0QPnvH3iMFqJFzVnhyjWCpZax89KFnw7Xmxxit/zBWZ4nr5B4ij1QjmNRl/f892V
+	Ru3+17HQabOWXp3u9BVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2cob-0002X3-Nh; Fri, 14 Feb 2020 15:23:37 +0000
+	id 1j2cnG-0001Hv-Bz; Fri, 14 Feb 2020 15:22:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2cmP-0000Og-Jr
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:21:23 +0000
+ id 1j2cmE-0000BP-IA
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:21:11 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 906422168B;
- Fri, 14 Feb 2020 15:21:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DB4AC2467C;
+ Fri, 14 Feb 2020 15:21:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581693680;
- bh=zs9uTIdqIptvD67687rTIjRyfAw5CGCiB/C59vEbt1o=;
+ s=default; t=1581693670;
+ bh=OU3i052ZF//Wu4rkWcKgh+KLFM8jnoqZQPBXrJ+hcAM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Az+XUSINNWEkyHCJJGrBlD+KnINOizrRbSnnkz/nDk/5X2bAEGEvleyFCAi/82GrE
- 0uEdLOd/D+PSjET6K5C242RO7a626A2acKa5aqCDTuP84UeZvvrnXjeMe3MSZgRbZj
- 1u/AM/+/9f6EU87Bcd0waf71uxTIoM0NVfXpHh+c=
+ b=FcIq9xxR596Ms+iMP+w7cYCAq+GGR/SV3k/b6TnemUnUtm/+crWs5BsINrqli26fB
+ 6A508Us+oDAOvvP/WNocCdoGlSNStsgK4bYcQ0flnrjiBkZYMxNqYz3THWcnuZ0Sza
+ qEYHtLiRhRYknoW2EaQvIGNqAdoUwtlOe+C2u1Z4=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j2cPp-0057sw-JV; Fri, 14 Feb 2020 14:58:01 +0000
+ id 1j2cPq-0057sw-74; Fri, 14 Feb 2020 14:58:02 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v4 19/20] KVM: arm64: GICv4.1: Allow non-trapping WFI when
- using HW SGIs
-Date: Fri, 14 Feb 2020 14:57:35 +0000
-Message-Id: <20200214145736.18550-20-maz@kernel.org>
+Subject: [PATCH v4 20/20] KVM: arm64: GICv4.1: Expose HW-based SGIs in debugfs
+Date: Fri, 14 Feb 2020 14:57:36 +0000
+Message-Id: <20200214145736.18550-21-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214145736.18550-1-maz@kernel.org>
 References: <20200214145736.18550-1-maz@kernel.org>
@@ -63,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_072121_807027_BFC0F3A6 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20200214_072110_633483_E63E2CA2 
+X-CRM114-Status: GOOD (  12.89  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,30 +103,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Just like for VLPIs, it is beneficial to avoid trapping on WFI when the
-vcpu is using the GICv4.1 SGIs.
-
-Add such a check to vcpu_clear_wfx_traps().
+The vgic-state debugfs file could do with showing the pending state
+of the HW-backed SGIs. Plug it into the low-level code.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/include/asm/kvm_emulate.h | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ virt/kvm/arm/vgic/vgic-debug.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
-index 688c63412cc2..755654c839e2 100644
---- a/arch/arm64/include/asm/kvm_emulate.h
-+++ b/arch/arm64/include/asm/kvm_emulate.h
-@@ -89,7 +89,8 @@ static inline unsigned long *vcpu_hcr(struct kvm_vcpu *vcpu)
- static inline void vcpu_clear_wfx_traps(struct kvm_vcpu *vcpu)
+diff --git a/virt/kvm/arm/vgic/vgic-debug.c b/virt/kvm/arm/vgic/vgic-debug.c
+index cc12fe9b2df3..b13a9e3f99dd 100644
+--- a/virt/kvm/arm/vgic/vgic-debug.c
++++ b/virt/kvm/arm/vgic/vgic-debug.c
+@@ -178,6 +178,8 @@ static void print_irq_state(struct seq_file *s, struct vgic_irq *irq,
+ 			    struct kvm_vcpu *vcpu)
  {
- 	vcpu->arch.hcr_el2 &= ~HCR_TWE;
--	if (atomic_read(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe.vlpi_count))
-+	if (atomic_read(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe.vlpi_count) ||
-+	    vcpu->kvm->arch.vgic.nassgireq)
- 		vcpu->arch.hcr_el2 &= ~HCR_TWI;
- 	else
- 		vcpu->arch.hcr_el2 |= HCR_TWI;
+ 	char *type;
++	bool pending;
++
+ 	if (irq->intid < VGIC_NR_SGIS)
+ 		type = "SGI";
+ 	else if (irq->intid < VGIC_NR_PRIVATE_IRQS)
+@@ -190,6 +192,16 @@ static void print_irq_state(struct seq_file *s, struct vgic_irq *irq,
+ 	if (irq->intid ==0 || irq->intid == VGIC_NR_PRIVATE_IRQS)
+ 		print_header(s, irq, vcpu);
+ 
++	pending = irq->pending_latch;
++	if (irq->hw && vgic_irq_is_sgi(irq->intid)) {
++		int err;
++
++		err = irq_get_irqchip_state(irq->host_irq,
++					    IRQCHIP_STATE_PENDING,
++					    &pending);
++		WARN_ON_ONCE(err);
++	}
++
+ 	seq_printf(s, "       %s %4d "
+ 		      "    %2d "
+ 		      "%d%d%d%d%d%d%d "
+@@ -201,7 +213,7 @@ static void print_irq_state(struct seq_file *s, struct vgic_irq *irq,
+ 		      "\n",
+ 			type, irq->intid,
+ 			(irq->target_vcpu) ? irq->target_vcpu->vcpu_id : -1,
+-			irq->pending_latch,
++			pending,
+ 			irq->line_level,
+ 			irq->active,
+ 			irq->enabled,
 -- 
 2.20.1
 
