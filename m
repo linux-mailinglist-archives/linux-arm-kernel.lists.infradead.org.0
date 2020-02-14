@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C759E15E283
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:24:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB73615E287
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:24:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C1Oq3eBO0Gbt2cuTd1eonP24Ru/gyES+AFwz6MBtfCM=; b=HCuKPim3QSoh06
-	J4OpdExNP8d34zCkVboQU8+YJdCd7C5OPw0IVFS5+HuU1yo6CccD57uFE9XK9/A0bWy9WAUFoJtZE
-	KhR0N551mTDk2GTmi61A4K7MGY/f0sf8i7XNNeg0dXxMH1Z0nnLNbhsb7vojhJLaHXeDuSm9PBFSa
-	JNUoeML4d3zDVeREIMwxHiN9ljN1FxVny0JGNQC7P/NvOmXhBVJ5XG6eIJrgO1TE7s1D5QLSUfc0g
-	yumRU4RhpqkmgzR2lgmz3Aymw/Wv8lg4TQLONAKdD/gGMYqAyAu6FurOOLXeqKsVc0WlA7f0dVdQS
-	DT6JaM7CfRL+FBnGufyQ==;
+	List-Owner; bh=SVPnCyA8Th7HP/P2SrrQlFeewPwvLFHaX3DiBWhh55A=; b=iPlFBooyugnSPa
+	EbLI63jbrsJ/SgQBMipaSlKkZohsW1m+GjLsgcHJB//oaM1SyPucM8zuUmbWWgu9SFww6URi95G5a
+	bJbB327RNhWH/nQgOkpWB8va0BH7jESqes/2WKLnthY2raE9tP+fS3fuHISVVIOypwXSDPV4PJEHA
+	q4NzeLN3Ftrrwq9EEb8oUKtgs4AWW3et73wq4/+zDfgQN9G655BRkr09iF9VsHwBm3sP4abBJnId9
+	Ez886drv/34Or96kQ8aZjvhtpiuxkI9TQFTsuCuKJfwPSCcvzt9CJM+5x7dQNAw5SXZKEYtIRuNlP
+	VS7iLI/rqJ9j6+Mq551A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dl4-0007Ie-Km; Fri, 14 Feb 2020 16:24:02 +0000
+	id 1j2dlH-0007bO-Ag; Fri, 14 Feb 2020 16:24:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dSy-00058Y-EP
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:05:21 +0000
+ id 1j2dSz-0005A1-MU
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:05:23 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1EB7824681;
- Fri, 14 Feb 2020 16:05:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4E6F02467D;
+ Fri, 14 Feb 2020 16:05:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696319;
- bh=8HUB1l7K/kfrc9BPVRbNuWolaKKk6PF6kPZqwuYtyTg=;
+ s=default; t=1581696321;
+ bh=Axi621C+trmYJ2hkH6lGnJy9hkrtz3txnGYSyx8Bdg8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=UxE/z+Slei+YF8x+h/ggXz1TTZkFpWjzin5tul9TCjmqghJiKfeCfuaOex3eKPC8i
- soBYRGuKLZmKpwcNRuIzYMCOTfTcTo/9yMXXsvPGlKBpMCLQrY+EBd4Uy9t7al3yLO
- rwKjXVR/2JByedbXgCC6YydIO3ISME0FJVC/AThw=
+ b=pu8WQQpyq7Rj+SBKqIh0g09iOURTrPt4t8ZOgHOHUiyTBgxHXCie6/MiGO2Uzw3+8
+ +O4UXaGurRknlx38biqSRdYBkommO6lQy5lMpBLqkztA8lLWXApwn3KcQCtlMJg0dV
+ b+3KRTA4WT/hbaspXF+/va7MtuGJ8b6rPSgd67pQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 160/459] arm64: dts: allwinner: H5: Add PMU node
-Date: Fri, 14 Feb 2020 10:56:50 -0500
-Message-Id: <20200214160149.11681-160-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 161/459] arm: dts: allwinner: H3: Add PMU node
+Date: Fri, 14 Feb 2020 10:56:51 -0500
+Message-Id: <20200214160149.11681-161-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -49,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080520_565557_1B58500A 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200214_080521_810154_1D2A94ED 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,70 +89,69 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andre Przywara <andre.przywara@arm.com>
 
-[ Upstream commit c35a516a46187c8eeb7a56c64505ec6f7e22a0c7 ]
+[ Upstream commit 0388a110747bec0c9d9de995842bb2a03a26aae1 ]
 
-Add the Performance Monitoring Unit (PMU) device tree node to the H5
+Add the Performance Monitoring Unit (PMU) device tree node to the H3
 .dtsi, which tells DT users which interrupts are triggered by PMU
-overflow events on each core.
-As with the A64, the interrupt numbers from the manual were wrong (off
-by 4), the actual SPI IDs have been gathered in U-Boot, and were
-verified with perf in Linux.
+overflow events on each core. The numbers come from the manual and have
+been checked in U-Boot and with perf in Linux.
 
-Tested with perf record and taskset on an OrangePi PC2.
+Tested with perf record and taskset on an OrangePi Zero.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi | 16 +++++++++++++---
- 1 file changed, 13 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/sun8i-h3.dtsi | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-index f002a496d7cbb..1d34e3eefda3f 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi
-@@ -54,21 +54,21 @@
- 			enable-method = "psci";
+diff --git a/arch/arm/boot/dts/sun8i-h3.dtsi b/arch/arm/boot/dts/sun8i-h3.dtsi
+index e37c30e811d3b..6056f206c9e39 100644
+--- a/arch/arm/boot/dts/sun8i-h3.dtsi
++++ b/arch/arm/boot/dts/sun8i-h3.dtsi
+@@ -80,7 +80,7 @@
+ 			#cooling-cells = <2>;
  		};
  
 -		cpu@1 {
 +		cpu1: cpu@1 {
- 			compatible = "arm,cortex-a53";
+ 			compatible = "arm,cortex-a7";
  			device_type = "cpu";
  			reg = <1>;
- 			enable-method = "psci";
+@@ -90,7 +90,7 @@
+ 			#cooling-cells = <2>;
  		};
  
 -		cpu@2 {
 +		cpu2: cpu@2 {
- 			compatible = "arm,cortex-a53";
+ 			compatible = "arm,cortex-a7";
  			device_type = "cpu";
  			reg = <2>;
- 			enable-method = "psci";
+@@ -100,7 +100,7 @@
+ 			#cooling-cells = <2>;
  		};
  
 -		cpu@3 {
 +		cpu3: cpu@3 {
- 			compatible = "arm,cortex-a53";
+ 			compatible = "arm,cortex-a7";
  			device_type = "cpu";
  			reg = <3>;
-@@ -76,6 +76,16 @@
+@@ -111,6 +111,15 @@
  		};
  	};
  
 +	pmu {
-+		compatible = "arm,cortex-a53-pmu",
-+			     "arm,armv8-pmuv3";
-+		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>;
++		compatible = "arm,cortex-a7-pmu";
++		interrupts = <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 122 IRQ_TYPE_LEVEL_HIGH>,
++			     <GIC_SPI 123 IRQ_TYPE_LEVEL_HIGH>;
 +		interrupt-affinity = <&cpu0>, <&cpu1>, <&cpu2>, <&cpu3>;
 +	};
 +
- 	psci {
- 		compatible = "arm,psci-0.2";
- 		method = "smc";
+ 	timer {
+ 		compatible = "arm,armv7-timer";
+ 		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
 -- 
 2.20.1
 
