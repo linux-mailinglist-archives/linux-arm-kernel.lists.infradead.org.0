@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2CB515E492
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:36:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 789B415E4A0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:37:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Byx3ZPBmu2WIIaRCCowxUEJNXk08uQ2ePRdYT6WAbU4=; b=ayRISdXDBbiBLk
-	p4zZavVcGcSUsLZzQrQ18ERoAqLgpo6bCQhDb8+799LhwXA8ud94jOJN9jZDsv2CHxY29ZiIxexdN
-	OgpwFdH4FIfZ4qDNFNwaIkApT4Z7b4gUud6a93n0iLSYLcKrdUGh6jnSyS6U7dMilLD6Kp839SE8x
-	c0q8rks4m6gmTzuQcgwE3pYebgg3+bA+2bITIT5cezcPT166CXoScGzoa3joiahnPOgPQpKy+hnpF
-	CHPFqwcOU6kJzBg/tcEOQzb+AwqtFcU6gZCfOro3bQ4Sp/leF+3iy83pJxLh3tDixpLfiGBr9rcF3
-	DOsyq3ULR0UeAp1jlYFg==;
+	List-Owner; bh=/Npn6W3o08P2ubk1s6eY/MUtVwTVbE0EXqj7Bbx9V4M=; b=IhUk8UTgX3Z6UO
+	ZPG7ygHPscWyGQtYJVirKu05rY38FYa2DhquVLDWrzYKUp17q5P5mgc2C481BUK0Gv0Ko2kTW0rzx
+	rA4CmN9067Qs2KhpqjQh3NIVS1nANooQfVpsJsWvGWj1Jo6hjLQnoJOeFfg8Rceo210R4PAEKENGw
+	4nSDmj5wa/Ixr5PDFfJY1nHrpUw92cQkvgdFdzcIKbR56wtPWA7iQNHXbt7vPRu204Wxy7hhlrO2E
+	Ayyg/4LwlP8dcXrN/dawHluKP/ClqiEf5HyuRSkTc2ZDUhL0hYzGgyygBHnLkZ1j03VjHmLoBK7NP
+	CZIozuaJwL/rCP77jtQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dxR-0005zM-AZ; Fri, 14 Feb 2020 16:36:49 +0000
+	id 1j2dxi-0006AQ-Rd; Fri, 14 Feb 2020 16:37:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dWg-0000G2-7r
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:09:11 +0000
+ id 1j2dWo-0000O8-5n
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 16:09:21 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 988AD24681;
- Fri, 14 Feb 2020 16:09:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BD36D24694;
+ Fri, 14 Feb 2020 16:09:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696549;
- bh=JisXudK13Jk6Kspb8myNxbaBJxcABpU3ZxO3USpbX0w=;
+ s=default; t=1581696556;
+ bh=JFmU9L5DKs2efaKZkAdEWbq9vodAIhVGttA8t5P2wVI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=P2Ry/xdDrIas9EIQFjWqwaivTqr4jLFRNEbauVx4khClXSiL7ubtnUgha2OnPDFuF
- u/jS8/WwYWM1KrJqyyfVUOdGrfB5xKbuFaTg7U7LkCKL29a0TDgqK5nWKIn+2hPXTp
- 8Wkw0iqbYAe8nh7OJCLzq5tOmCHCTIgRtV6jPU9M=
+ b=AFNfTmk5OzeDi88VV6+MH2eXwchC26GE1RTIXcS49HF3Oicilc+zJGQb2XeNw2WTb
+ BBvie9FibnMmZfeZPWkrXxAf6QR1si0mEv7K6Ru7E+cAi+LH/miIUmQisCGQ7zSM91
+ bl13TfWuTXNPZ6991QGZarKiuh2rnhff6EravLd0=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 342/459] arm64: dts: ti: k3-j721e-main: Add
- missing power-domains for smmu
-Date: Fri, 14 Feb 2020 10:59:52 -0500
-Message-Id: <20200214160149.11681-342-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 347/459] ACPI/IORT: Fix 'Number of IDs' handling
+ in iort_id_map()
+Date: Fri, 14 Feb 2020 10:59:57 -0500
+Message-Id: <20200214160149.11681-347-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214160149.11681-1-sashal@kernel.org>
 References: <20200214160149.11681-1-sashal@kernel.org>
@@ -50,9 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_080910_326924_508670EA 
-X-CRM114-Status: UNSURE (   9.44  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200214_080918_308153_CAF74090 
+X-CRM114-Status: GOOD (  17.94  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,43 +80,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Lokesh Vutla <lokeshvutla@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Suman Anna <s-anna@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-acpi@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lokesh Vutla <lokeshvutla@ti.com>
+From: Hanjun Guo <guohanjun@huawei.com>
 
-[ Upstream commit 3f03a58b25753843ce9e4511e9e246c51bd11011 ]
+[ Upstream commit 3c23b83a88d00383e1d498cfa515249aa2fe0238 ]
 
-Add power-domains entry for smmu, so that the it is accessible as long
-as the driver is active. Without this device shutdown is throwing the
-below warning:
-"[   44.736348] arm-smmu-v3 36600000.smmu: failed to clear cr0"
+The IORT specification [0] (Section 3, table 4, page 9) defines the
+'Number of IDs' as 'The number of IDs in the range minus one'.
 
-Reported-by: Suman Anna <s-anna@ti.com>
-Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
-Signed-off-by: Tero Kristo <t-kristo@ti.com>
+However, the IORT ID mapping function iort_id_map() treats the 'Number
+of IDs' field as if it were the full IDs mapping count, with the
+following check in place to detect out of boundary input IDs:
+
+InputID >= Input base + Number of IDs
+
+This check is flawed in that it considers the 'Number of IDs' field as
+the full number of IDs mapping and disregards the 'minus one' from
+the IDs count.
+
+The correct check in iort_id_map() should be implemented as:
+
+InputID > Input base + Number of IDs
+
+this implements the specification correctly but unfortunately it breaks
+existing firmwares that erroneously set the 'Number of IDs' as the full
+IDs mapping count rather than IDs mapping count minus one.
+
+e.g.
+
+PCI hostbridge mapping entry 1:
+Input base:  0x1000
+ID Count:    0x100
+Output base: 0x1000
+Output reference: 0xC4  //ITS reference
+
+PCI hostbridge mapping entry 2:
+Input base:  0x1100
+ID Count:    0x100
+Output base: 0x2000
+Output reference: 0xD4  //ITS reference
+
+Two mapping entries which the second entry's Input base = the first
+entry's Input base + ID count, so for InputID 0x1100 and with the
+correct InputID check in place in iort_id_map() the kernel would map
+the InputID to ITS 0xC4 not 0xD4 as it would be expected.
+
+Therefore, to keep supporting existing flawed firmwares, introduce a
+workaround that instructs the kernel to use the old InputID range check
+logic in iort_id_map(), so that we can support both firmwares written
+with the flawed 'Number of IDs' logic and the correct one as defined in
+the specifications.
+
+[0]: http://infocenter.arm.com/help/topic/com.arm.doc.den0049d/DEN0049D_IO_Remapping_Table.pdf
+
+Reported-by: Pankaj Bansal <pankaj.bansal@nxp.com>
+Link: https://lore.kernel.org/linux-acpi/20191215203303.29811-1-pankaj.bansal@nxp.com/
+Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
+Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Cc: Pankaj Bansal <pankaj.bansal@nxp.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Sudeep Holla <sudeep.holla@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Robin Murphy <robin.murphy@arm.com>
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/acpi/arm64/iort.c | 57 +++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 55 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-index 698ef9a1d5b75..96445111e3985 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-@@ -43,6 +43,7 @@
- 	smmu0: smmu@36600000 {
- 		compatible = "arm,smmu-v3";
- 		reg = <0x0 0x36600000 0x0 0x100000>;
-+		power-domains = <&k3_pds 229 TI_SCI_PD_EXCLUSIVE>;
- 		interrupt-parent = <&gic500>;
- 		interrupts = <GIC_SPI 772 IRQ_TYPE_EDGE_RISING>,
- 			     <GIC_SPI 768 IRQ_TYPE_EDGE_RISING>;
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index 5a7551d060f25..161b609e4cdfb 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -298,6 +298,59 @@ static acpi_status iort_match_node_callback(struct acpi_iort_node *node,
+ 	return status;
+ }
+ 
++struct iort_workaround_oem_info {
++	char oem_id[ACPI_OEM_ID_SIZE + 1];
++	char oem_table_id[ACPI_OEM_TABLE_ID_SIZE + 1];
++	u32 oem_revision;
++};
++
++static bool apply_id_count_workaround;
++
++static struct iort_workaround_oem_info wa_info[] __initdata = {
++	{
++		.oem_id		= "HISI  ",
++		.oem_table_id	= "HIP07   ",
++		.oem_revision	= 0,
++	}, {
++		.oem_id		= "HISI  ",
++		.oem_table_id	= "HIP08   ",
++		.oem_revision	= 0,
++	}
++};
++
++static void __init
++iort_check_id_count_workaround(struct acpi_table_header *tbl)
++{
++	int i;
++
++	for (i = 0; i < ARRAY_SIZE(wa_info); i++) {
++		if (!memcmp(wa_info[i].oem_id, tbl->oem_id, ACPI_OEM_ID_SIZE) &&
++		    !memcmp(wa_info[i].oem_table_id, tbl->oem_table_id, ACPI_OEM_TABLE_ID_SIZE) &&
++		    wa_info[i].oem_revision == tbl->oem_revision) {
++			apply_id_count_workaround = true;
++			pr_warn(FW_BUG "ID count for ID mapping entry is wrong, applying workaround\n");
++			break;
++		}
++	}
++}
++
++static inline u32 iort_get_map_max(struct acpi_iort_id_mapping *map)
++{
++	u32 map_max = map->input_base + map->id_count;
++
++	/*
++	 * The IORT specification revision D (Section 3, table 4, page 9) says
++	 * Number of IDs = The number of IDs in the range minus one, but the
++	 * IORT code ignored the "minus one", and some firmware did that too,
++	 * so apply a workaround here to keep compatible with both the spec
++	 * compliant and non-spec compliant firmwares.
++	 */
++	if (apply_id_count_workaround)
++		map_max--;
++
++	return map_max;
++}
++
+ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+ 		       u32 *rid_out)
+ {
+@@ -314,8 +367,7 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+ 		return -ENXIO;
+ 	}
+ 
+-	if (rid_in < map->input_base ||
+-	    (rid_in >= map->input_base + map->id_count))
++	if (rid_in < map->input_base || rid_in > iort_get_map_max(map))
+ 		return -ENXIO;
+ 
+ 	*rid_out = map->output_base + (rid_in - map->input_base);
+@@ -1637,5 +1689,6 @@ void __init acpi_iort_init(void)
+ 		return;
+ 	}
+ 
++	iort_check_id_count_workaround(iort_table);
+ 	iort_init_platform_devices();
+ }
 -- 
 2.20.1
 
