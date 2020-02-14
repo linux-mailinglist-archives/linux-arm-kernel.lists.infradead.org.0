@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 211BA15DF86
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:09:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E6AB15DF89
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 14 Feb 2020 17:09:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lffSBJG+SRg7dPyyIXKTuff2jXIKYfK8Zp2asTV3XNc=; b=Ho3C26SqCPgc7l
-	YD2mgB7VH2Rf9wtFZJ/vntEhtDubRJv7UL22tNwh3F4C3xiRT7khiI4TAQwz5g/00Tdn4fHFA0ua/
-	jlvKFTowxGHy1QsXobb+8RBTs+9d91g8uMBIhVJcVvMIcGzhL+fgJqQ2dWlm+TWegj69ijIZqKAsf
-	6/JHOVxtvylSet3u51iPMVpKzzXzsrkhgckKt667kiaflF8yTXkkIM9hWkCjFdBum0qMA1hjLOltt
-	yBDK65TqQXUqJmJjZvoPr6huTCxZ3FW7JgWI2wpNtZFD5xQOQnxOtt27uBe415nGrinHJJYdQIhU3
-	RGm9aIQKFXGx7iPwzccA==;
+	List-Owner; bh=ZeIbqICpJ1QQZUfZWe7oVzPyClHlYzGGdW9iWhUUapU=; b=YBNjFkYg4zQjaN
+	dsCDUxd/4uXJLu+h5BmQ9N71S4uDvl3sGVQuGF9j1ljwfFaMcs9ftHW6jnhrymyJWTNSEu00MNlw/
+	fTNs/rFsnpw+Rknndc4HFq2RBd2MS4GYYaE2cRabWQhaPUxwDj+jzXvRKPh+KVzsQMWNN5yEBgaYm
+	6GGr32WNbviWI26AB1Y82Iiq7uYHK0CC2aWgnRgFbyoFy/WvptZgXMOnq8cYHwUWJe2EvqoMzNxSM
+	4U3mKuOZ+E5tO6AlvqYxfqkoJxSSOLFF/OQHu2ZjGcHC/tX1gQ68UGJW1hIeKm/dBZqS1/ah7FjHM
+	nE+3+1PtO1g9ubiAv4JA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2dWs-0000Ei-TO; Fri, 14 Feb 2020 16:09:22 +0000
+	id 1j2dX9-0000Wr-CE; Fri, 14 Feb 2020 16:09:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dKG-0001eZ-Dw
- for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:56:22 +0000
+ id 1j2dKN-0001jk-PH
+ for linux-arm-kernel@lists.infradead.org; Fri, 14 Feb 2020 15:56:34 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2369F24649;
- Fri, 14 Feb 2020 15:56:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2B060206D7;
+ Fri, 14 Feb 2020 15:56:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581695780;
- bh=tRYepbfaD7Zd5Bn6ptVzfWced5IDJEWaxH48PkLZIew=;
+ s=default; t=1581695787;
+ bh=GGU8DdWLVVhfyXBYRoS4adQmKb9iGWQy0fA0JnGNyjg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=W/d7FSyHqaUSenp6/KQkZsUAyG1tB8EoFDvPkdqQ+L4u68Hv3MnSZte2NSMWf5Knk
- mV4Xv0ClFIzEHlcXBNnKVlHgeov/gbO2WUTUlGTMllTy4RGmRNOzfEMhTLv/Z+W+p/
- 2aickbq/MNfaqkhrfVaIyMP+ZiiqZjMldxd5P2zQ=
+ b=ZMAQbT9ir7L8EBKhsIJJLCg8OE6Jza45El/0pJDAwUaPRsDRfk0/TXR+FVVcQ9viy
+ PPWMQohPSb1w6xisRpwg491mAaronNT4I6NGHz7aO9gBxmMp51RzLa3vEB84cGpOcK
+ VhIwVVKzVU8y2Q3qMaOli144KhR0caz1w/v/55Vk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.5 344/542] misc: xilinx_sdfec: fix xsdfec_poll()'s
- return type
-Date: Fri, 14 Feb 2020 10:45:36 -0500
-Message-Id: <20200214154854.6746-344-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.5 350/542] arm64: cpufeature: Set the FP/SIMD compat
+ HWCAP bits properly
+Date: Fri, 14 Feb 2020 10:45:42 -0500
+Message-Id: <20200214154854.6746-350-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
 References: <20200214154854.6746-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_075620_523210_82881C61 
-X-CRM114-Status: GOOD (  12.28  )
+X-CRM114-CacheID: sfid-20200214_075627_905091_DDE654A7 
+X-CRM114-Status: GOOD (  13.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,72 +80,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dragan Cvetic <dragan.cvetic@xilinx.com>, linux-arm-kernel@lists.infradead.org,
- Derek Kiernan <derek.kiernan@xilinx.com>,
- Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Sasha Levin <sashal@kernel.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-[ Upstream commit fa4e7fc1386078edcfddd8848cb0374f4af74fe7 ]
+[ Upstream commit 7559950aef1ab8792c50797c6c5c7c5150a02460 ]
 
-xsdfec_poll() is defined as returning 'unsigned int' but the
-.poll method is declared as returning '__poll_t', a bitwise type.
+We set the compat_elf_hwcap bits unconditionally on arm64 to
+include the VFP and NEON support. However, the FP/SIMD unit
+is optional on Arm v8 and thus could be missing. We already
+handle this properly in the kernel, but still advertise to
+the COMPAT applications that the VFP is available. Fix this
+to make sure we only advertise when we really have them.
 
-Fix this by using the proper return type and using the EPOLL
-constants instead of the POLL ones, as required for __poll_t.
-
-CC: Derek Kiernan <derek.kiernan@xilinx.com>
-CC: Dragan Cvetic <dragan.cvetic@xilinx.com>
-Signed-off-by: Luc Van Oostenryck <luc.vanoostenryck@gmail.com>
-Acked-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
-Link: https://lore.kernel.org/r/20191209213655.57985-1-luc.vanoostenryck@gmail.com
-Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Fixes: 82e0191a1aa11abf ("arm64: Support systems without FP/ASIMD")
+Cc: Will Deacon <will@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/misc/xilinx_sdfec.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
+ arch/arm64/kernel/cpufeature.c | 37 +++++++++++++++++++++++++++++++---
+ 1 file changed, 34 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-index 11835969e9828..48ba7e02bed72 100644
---- a/drivers/misc/xilinx_sdfec.c
-+++ b/drivers/misc/xilinx_sdfec.c
-@@ -1025,25 +1025,25 @@ static long xsdfec_dev_compat_ioctl(struct file *file, unsigned int cmd,
- }
- #endif
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index b4f84513655d6..32eff833a43c5 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -32,9 +32,7 @@ static unsigned long elf_hwcap __read_mostly;
+ #define COMPAT_ELF_HWCAP_DEFAULT	\
+ 				(COMPAT_HWCAP_HALF|COMPAT_HWCAP_THUMB|\
+ 				 COMPAT_HWCAP_FAST_MULT|COMPAT_HWCAP_EDSP|\
+-				 COMPAT_HWCAP_TLS|COMPAT_HWCAP_VFP|\
+-				 COMPAT_HWCAP_VFPv3|COMPAT_HWCAP_VFPv4|\
+-				 COMPAT_HWCAP_NEON|COMPAT_HWCAP_IDIV|\
++				 COMPAT_HWCAP_TLS|COMPAT_HWCAP_IDIV|\
+ 				 COMPAT_HWCAP_LPAE)
+ unsigned int compat_elf_hwcap __read_mostly = COMPAT_ELF_HWCAP_DEFAULT;
+ unsigned int compat_elf_hwcap2 __read_mostly;
+@@ -1596,6 +1594,12 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 		.match_list = list,						\
+ 	}
  
--static unsigned int xsdfec_poll(struct file *file, poll_table *wait)
-+static __poll_t xsdfec_poll(struct file *file, poll_table *wait)
- {
--	unsigned int mask = 0;
-+	__poll_t mask = 0;
- 	struct xsdfec_dev *xsdfec;
++#define HWCAP_CAP_MATCH(match, cap_type, cap)					\
++	{									\
++		__HWCAP_CAP(#cap, cap_type, cap)				\
++		.matches = match,						\
++	}
++
+ #ifdef CONFIG_ARM64_PTR_AUTH
+ static const struct arm64_cpu_capabilities ptr_auth_hwcap_addr_matches[] = {
+ 	{
+@@ -1669,8 +1673,35 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
+ 	{},
+ };
  
- 	xsdfec = container_of(file->private_data, struct xsdfec_dev, miscdev);
- 
- 	if (!xsdfec)
--		return POLLNVAL | POLLHUP;
-+		return EPOLLNVAL | EPOLLHUP;
- 
- 	poll_wait(file, &xsdfec->waitq, wait);
- 
- 	/* XSDFEC ISR detected an error */
- 	spin_lock_irqsave(&xsdfec->error_data_lock, xsdfec->flags);
- 	if (xsdfec->state_updated)
--		mask |= POLLIN | POLLPRI;
-+		mask |= EPOLLIN | EPOLLPRI;
- 
- 	if (xsdfec->stats_updated)
--		mask |= POLLIN | POLLRDNORM;
-+		mask |= EPOLLIN | EPOLLRDNORM;
- 	spin_unlock_irqrestore(&xsdfec->error_data_lock, xsdfec->flags);
- 
- 	return mask;
++#ifdef CONFIG_COMPAT
++static bool compat_has_neon(const struct arm64_cpu_capabilities *cap, int scope)
++{
++	/*
++	 * Check that all of MVFR1_EL1.{SIMDSP, SIMDInt, SIMDLS} are available,
++	 * in line with that of arm32 as in vfp_init(). We make sure that the
++	 * check is future proof, by making sure value is non-zero.
++	 */
++	u32 mvfr1;
++
++	WARN_ON(scope == SCOPE_LOCAL_CPU && preemptible());
++	if (scope == SCOPE_SYSTEM)
++		mvfr1 = read_sanitised_ftr_reg(SYS_MVFR1_EL1);
++	else
++		mvfr1 = read_sysreg_s(SYS_MVFR1_EL1);
++
++	return cpuid_feature_extract_unsigned_field(mvfr1, MVFR1_SIMDSP_SHIFT) &&
++		cpuid_feature_extract_unsigned_field(mvfr1, MVFR1_SIMDINT_SHIFT) &&
++		cpuid_feature_extract_unsigned_field(mvfr1, MVFR1_SIMDLS_SHIFT);
++}
++#endif
++
+ static const struct arm64_cpu_capabilities compat_elf_hwcaps[] = {
+ #ifdef CONFIG_COMPAT
++	HWCAP_CAP_MATCH(compat_has_neon, CAP_COMPAT_HWCAP, COMPAT_HWCAP_NEON),
++	HWCAP_CAP(SYS_MVFR1_EL1, MVFR1_SIMDFMAC_SHIFT, FTR_UNSIGNED, 1, CAP_COMPAT_HWCAP, COMPAT_HWCAP_VFPv4),
++	/* Arm v8 mandates MVFR0.FPDP == {0, 2}. So, piggy back on this for the presence of VFP support */
++	HWCAP_CAP(SYS_MVFR0_EL1, MVFR0_FPDP_SHIFT, FTR_UNSIGNED, 2, CAP_COMPAT_HWCAP, COMPAT_HWCAP_VFP),
++	HWCAP_CAP(SYS_MVFR0_EL1, MVFR0_FPDP_SHIFT, FTR_UNSIGNED, 2, CAP_COMPAT_HWCAP, COMPAT_HWCAP_VFPv3),
+ 	HWCAP_CAP(SYS_ID_ISAR5_EL1, ID_ISAR5_AES_SHIFT, FTR_UNSIGNED, 2, CAP_COMPAT_HWCAP2, COMPAT_HWCAP2_PMULL),
+ 	HWCAP_CAP(SYS_ID_ISAR5_EL1, ID_ISAR5_AES_SHIFT, FTR_UNSIGNED, 1, CAP_COMPAT_HWCAP2, COMPAT_HWCAP2_AES),
+ 	HWCAP_CAP(SYS_ID_ISAR5_EL1, ID_ISAR5_SHA1_SHIFT, FTR_UNSIGNED, 1, CAP_COMPAT_HWCAP2, COMPAT_HWCAP2_SHA1),
 -- 
 2.20.1
 
