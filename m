@@ -2,82 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DEC115FCF1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 06:36:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDDFA15FD11
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 07:20:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XMg25IZHmoeiM/wJdaPZT1f5GihrfM3t+Jy9K31PmLk=; b=LLMp+YWqG+himm
-	ful9zcIBTSAwW6Dm98LgHrYBoQ1fu9THuwpuWu6DsHxS3g3KdVuEb+gIiuakyEG2uiOmOGJ4T9Jh2
-	pnVPIjlNewOadBnMvHjwFkk7jxTcWHFoqcCHfDFyHIQ1sJr3yJFOOj5T+kqE2MxY7MjEYq49iIhHS
-	4vS8yNOdTGo7bCNI4VIXsSeDSazCGMRklRj9w+ideUtkJ4ChJiqmzg3CGyiW1Qvio4YmKoA61RSWt
-	mWDfv/gS+Bc4JQV3Sdp4vR8T6IOc1b4D0tfwDlNbW/h1/aNUrjj/cFLpbx8iieK5iNKqdTXu3mjUI
-	bebId3buO8jhlvs0hygQ==;
+	List-Owner; bh=LfPbu0QTReqYbw5wyPqTeEg5yDoc+VFYBY4i3uIOBbo=; b=ByCVJcrsW+JSVX
+	f4fuyeCy/JAOBM0HtCKM4bs2LaRQpuPY7FUbFhcSupLyHMyF5dHXWOECddXOAjryZjU9hij3QaBMs
+	sDTRq3qm5k4QxNei6XBfibX1KS82yxmBdF/zFsSssC2jNzo4GEe7qVDA7aD8O20uMySKyu+k+kQ8z
+	K+3mbgfsF+dRnsaqb6dNuGkJnm+GyC3R/Qm06ifLEqTqHRiG7sMemq6yLnVCeLpTQpda5K5FlWX2j
+	acL/WuU07qUuVMZ0BZpbmUBzwGKTTrYbqp/jmzxG5QNanP+ldj4l3VTE1hNwJNg/eAISV7aJAxpQG
+	8cPkVKLEsCK3ySqqfVnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2q7o-0004Gs-9R; Sat, 15 Feb 2020 05:36:20 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1j2qoI-0001ij-VX; Sat, 15 Feb 2020 06:20:14 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2q7e-0004Fj-Pt
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 05:36:12 +0000
-Received: by mail-pg1-x544.google.com with SMTP id 6so6132085pgk.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Feb 2020 21:36:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=umSLSqFdcTUcW15IlOni/Tuec1i7imfq7Q7J9RYYX4g=;
- b=cIxrqNRp65WCtK+fiYn9g3PVPZKXWCeUB0uFKNIzbK215QX3Al36Ke7lSPKliczQPG
- zRn7Bi6DqLKPjlqWNiNyIv1hfnOjroG9dJAo7zBVoxdcOscAu96nnIAHZ0M1KbXjm0Sl
- ZR04ZlFB/h9Rx1G6+2XpmHZ6qc00E2hKTf9RBjGMhvM/S7iYiuAY2TTttm/rFAuLs3bq
- Tl4EPCrQfsVTe0Oz0o9vN+XxWzhv+LiQ+CYz/xTgBuLMVClebtR7iuNxNAyHBtWlm0Wp
- bHYgpgS19tzczImghBSGzs7yS4YbFHy+7+42F6gNr1Xyalax7P6gX0gNY6JBKTkCYKiJ
- SqhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=umSLSqFdcTUcW15IlOni/Tuec1i7imfq7Q7J9RYYX4g=;
- b=oKzscZ+eBltwNDAU25exvaLeoxzoamUmjVGOB4yZ+7SXx/S45lInov40dmgQEHDiL0
- puO1hlLlx2xtNtmcSZjgcLsUbFwZNIZVZ5Hka7mpltuYgSyrbjMWMMv9CapwqKWjj/0S
- Ju9C816V+yD26t3Om9/j3miOzYnZLomyD+zzcMi9SWCAp4xr/Khc9oV7NGWHMdRNMcYE
- mPQde89uLUFoxzrL8/i0y0GcQTTToxrKKoSSLa/u3jp9IzxkCKyunSjtLWclSIS9Vqhw
- RTSULM7uXQ3Gyqfrvad1oeu254la9aE2Yz4yMdxta7hUQM+vCsjmPsg66GRfUzSyj9U9
- PcUA==
-X-Gm-Message-State: APjAAAV/rLLdx8n8qB0twgK7riJKJGDn41SVUoyoc9XslCOd22f7NMDa
- sptcZu3jsY0CBOf63mmVNlla/A==
-X-Google-Smtp-Source: APXvYqzk4mzSWnD3eisseNOAoKEFSWYJ3iXu/MnMV3x1ieUnd9jyOy7C/UGmCSr9X/1fRkBJKg6m3w==
-X-Received: by 2002:a62:6842:: with SMTP id d63mr6945184pfc.113.1581744969478; 
- Fri, 14 Feb 2020 21:36:09 -0800 (PST)
-Received: from ripper (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id q12sm8411743pfh.158.2020.02.14.21.36.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 14 Feb 2020 21:36:08 -0800 (PST)
-Date: Fri, 14 Feb 2020 21:35:17 -0800
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
-Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
-Message-ID: <20200215053517.GN955802@ripper>
-References: <20191112141819.GA22076@localhost.localdomain>
+ id 1j2qo6-0000xz-Pf
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 06:20:04 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 2C36D63BC;
+ Sat, 15 Feb 2020 01:19:56 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute5.internal (MEProxy); Sat, 15 Feb 2020 01:19:56 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding; s=fm1; bh=hSouSsobAjpXD
+ JaLkOFL8Uc12VDY8WT1xUChd1bBKcU=; b=gv/O6tdl9sBP7jCtfkxkDFrwgjAph
+ YddeeE8QyFfunM6WNW6WDhp6dKRxJ9ZSS4ElI1PjXuTL+C1dGpnsJWCPmV6FLPTx
+ oNFzQSG2JSgsxyhnT1y7RH4bj1nDWQlc6zcL02QFTQOPi6AKljAZe38I+dfWjLoU
+ hS+ivdXIGEoaXFLs1iOIm74Ob6RnQB8QGBKYoUXEh0rUP5UuQI+pKWDGHP0Nu82w
+ obz/2eAtLNk+jsoWvWKFfktYwuOW31JN0vnf5l8d7baNQmZUazEolpiumy/Y/mPr
+ JAn6TLgkZDQBDDuVHZZoJsS+ynEtb/Qgxz9d7x9FfDpmN60PxzntCPe5w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :in-reply-to:message-id:mime-version:references:subject:to
+ :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+ fm2; bh=hSouSsobAjpXDJaLkOFL8Uc12VDY8WT1xUChd1bBKcU=; b=Pknkfcus
+ VEhmh2/e/67xrculb+Cf1x1qh08QQ3jqF/fTLvjLtcsA7LGP00bxKeMosbWEwoSU
+ eFZdxQAfr3UDcdEYdH6aWckCN2JTMCFDKoEDQ6jxjqf8NakV4zVfjZfYqbUIbbdD
+ Ye+l/eym5Ug+xN91gQM4b7+42KhQMNDQSzQ4YEUmdHRmCh2SrbdOkx6HvAMV8P/g
+ jLUhL4jAJFDuF7yxfdeNE63Vc10ipmLEwn1Ml5L+CDZBtiAPKKSPOW12fAxR8EFZ
+ hHMC0v/gaJsHYeyF/YqbgeduDTHNP+jhy2DjaOhpOwVKjCUCttVHeeHp9x2IsHub
+ SIA0oRh82zsukA==
+X-ME-Sender: <xms:io1HXllp69IbqtJ9lpATLUNQATSoDiBOkHH8zlAMmRaeX3ISPP_R6g>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjedugdelgecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefhvffufffkofgjfhgggfestdekredtredttdenucfhrhhomhepufgrmhhuvghl
+ ucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecukfhppe
+ ejtddrudefhedrudegkedrudehudenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgr
+ mhepmhgrihhlfhhrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
+X-ME-Proxy: <xmx:io1HXsinOja78dQD1nBmUXgITMcFwhP7cQgiZKK6Jbd1cgluN8IzPw>
+ <xmx:io1HXigYibKXVHcRJAPs0k5iRmasKioU6BBjBalgfWKvcOGKyg2gOg>
+ <xmx:io1HXqb533JF4gzO8q94uxezXd3aHn_7W_79tEZnf2i6uw4l58P57w>
+ <xmx:jI1HXtqHGJCqWLrw1TUkGQnqZm7zRylMPOYJilxH_ZsXN0uoEqOalg>
+Received: from titanium.stl.sholland.net
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 061CF328005A;
+ Sat, 15 Feb 2020 01:19:53 -0500 (EST)
+From: Samuel Holland <samuel@sholland.org>
+To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Jassi Brar <jassisinghbrar@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Ondrej Jirman <megous@megous.com>,
+ Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: [PATCH] mailbox: sun6i-msgbox: Remove unneeded FIFO status check
+Date: Sat, 15 Feb 2020 00:19:53 -0600
+Message-Id: <20200215061953.55300-1-samuel@sholland.org>
+X-Mailer: git-send-email 2.24.1
+In-Reply-To: <CABb+yY3T1cL+E6Y1tGb5cuKLSY5m_zi=VOx4AJzuX40TMOSQTw@mail.gmail.com>
+References: <CABb+yY3T1cL+E6Y1tGb5cuKLSY5m_zi=VOx4AJzuX40TMOSQTw@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20191112141819.GA22076@localhost.localdomain>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_213610_851206_5F9522E8 
-X-CRM114-Status: GOOD (  12.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200214_222002_991954_CA7347A6 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +97,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,55 +111,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Patrice Chotard <patrice.chotard@st.com>, Paul Cercueil <paul@crapouillou.net>,
- Eric Anholt <eric@anholt.net>, linux-stm32@st-md-mailman.stormreply.com,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Gregory Clement <gregory.clement@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- linux-rockchip@lists.infradead.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Andy Gross <agross@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-arm-msm@vger.kernel.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
- Jason Cooper <jason@lakedaemon.net>, mazziesaccount@gmail.com,
- Ray Jui <rjui@broadcom.com>, linux-gpio@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
- Sean Wang <sean.wang@kernel.org>, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Stefan Wahren <wahrenst@gmx.net>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, linux-oxnas@groups.io
+Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Samuel Holland <samuel@sholland.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 12 Nov 06:18 PST 2019, Matti Vaittinen wrote:
-> diff --git a/drivers/pinctrl/qcom/pinctrl-msm.c b/drivers/pinctrl/qcom/pinctrl-msm.c
-> index 763da0be10d6..8844ca1261d5 100644
-> --- a/drivers/pinctrl/qcom/pinctrl-msm.c
-> +++ b/drivers/pinctrl/qcom/pinctrl-msm.c
-> @@ -485,8 +485,8 @@ static int msm_gpio_get_direction(struct gpio_chip *chip, unsigned int offset)
->  
->  	val = msm_readl_ctl(pctrl, g);
->  
-> -	/* 0 = output, 1 = input */
-> -	return val & BIT(g->oe_bit) ? 0 : 1;
-> +	return val & BIT(g->oe_bit) ? GPIO_LINE_DIRECTION_OUT :
-> +				      GPIO_LINE_DIRECTION_IN;
+A transmit FIFO can never be full, because the mailbox framework
+waits until mbox->ops->last_tx_done() succeeds before sending the next
+message. sun6i_msgbox_last_tx_done() ensures that the FIFO is empty.
 
-For pinctrl-msm:
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Since the extra check here is unnecessary, remove it.
 
->  }
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+---
+ drivers/mailbox/sun6i-msgbox.c | 6 ------
+ 1 file changed, 6 deletions(-)
 
-Regards,
-Bjorn
+diff --git a/drivers/mailbox/sun6i-msgbox.c b/drivers/mailbox/sun6i-msgbox.c
+index 15d6fd522dc5..ccecf2e5941d 100644
+--- a/drivers/mailbox/sun6i-msgbox.c
++++ b/drivers/mailbox/sun6i-msgbox.c
+@@ -106,12 +106,6 @@ static int sun6i_msgbox_send_data(struct mbox_chan *chan, void *data)
+ 	if (WARN_ON_ONCE(!(readl(mbox->regs + CTRL_REG(n)) & CTRL_TX(n))))
+ 		return 0;
+ 
+-	/* We cannot post a new message if the FIFO is full. */
+-	if (readl(mbox->regs + FIFO_STAT_REG(n)) & FIFO_STAT_MASK) {
+-		mbox_dbg(mbox, "Channel %d busy sending 0x%08x\n", n, msg);
+-		return -EBUSY;
+-	}
+-
+ 	writel(msg, mbox->regs + MSG_DATA_REG(n));
+ 	mbox_dbg(mbox, "Channel %d sent 0x%08x\n", n, msg);
+ 
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
