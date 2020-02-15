@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5E3A160032
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 20:42:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AF48160037
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 20:43:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=j4NDwUfdrYKoddGHtyyo3vW0nDaTQXLYbItAMeJrx/M=; b=uFGsVqN/esNINpVP0DXhkDHkgI
-	Oxy2fa+BxjEyelgoAf4EyO4e59Pc+pEJLjy4O2fdxb4NMYNEP8XNXLP7Wajb/X7ohJiMIhYWRki1S
-	fEgP8lTAUFXfNcfApnCKN3dW33JoLnoAbiBU7e5SLLC9Bt5zjI37gxSnBlfq6D/3jt7yoCaAex7sd
-	LV96USwalWE9gkkMnItEtWB1tFJaKf2Pe9tFXaYZqmkJ+XWSSyVCXnedDPgwujIkPHhauW1tC3BNC
-	f36uOpMcoVabmNF6AxbmEIt0b+me8cuCLHTJOCSgrbm05Z5uKtl80N4lLQDr/cCb4PIjjU0186KqW
-	Ddn0iLvA==;
+	bh=AEuKwu5OcUT3rSZoseg19eJbxZi3l+ZtqPbTT9hBrh0=; b=L+KAMwnyJ9wXLMgm+E4MMn5I9f
+	H3j+iT7ERujxD95FcLSVDUNsgTYvfQZ/0Yrbn82iE347QOesE64IgNpIMEF9qtfzFKbtBe4txV+/h
+	kxYb/fPDVgkRSvgWDuf/yXBmwhathF3lEyR6QPJ4NU8hcYQ90ZCr4RmvvSXbXP4D7ylZ0c7UVjfsv
+	8nui2ulxT5VIBopNxNH+RGZq9zkLAoAhNW56NEoI4zGyDdaeHCGQdFKhA/DLEi57Y/uAuxYUHXFjc
+	cJSpCvMJ8HYUeb9G0lQdHEqpI4wSb/w0ltcfz78zp3h9/iVtvpBfxMZvApclIDjzjPwv5zw5Fnesr
+	TW8IG+Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j33Kp-0008D8-KY; Sat, 15 Feb 2020 19:42:39 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1j33L8-00009s-9V; Sat, 15 Feb 2020 19:42:58 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j33KJ-00083X-Me
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 19:42:08 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id n96so5450312pjc.3
+ id 1j33KN-000859-CX
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 19:42:12 +0000
+Received: by mail-pf1-x444.google.com with SMTP id s1so6740167pfh.10
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 15 Feb 2020 11:42:07 -0800 (PST)
+ Sat, 15 Feb 2020 11:42:10 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=tEFP9EfjLyBSm2GDbhHW2vsbKN5BJT5FKVyhRHQNMY8=;
- b=NeCzqZcsM4ip7J7p8r3xMhsXey+xbtIN2mBvJ1q8bfFgPJcbmjrWbrDeqdjK0DaecD
- Xn6Hx2DveLYiARrGYdhFJqPFL3phkhmYxwMj/taPdb4kAY/PMyVVCVoUzXc/AAGWMq/9
- cmY0pdFaf5/Gk657YOPDH47MNlvWDnyQ67bR/2n8cVvGuUmi16t7Pb3F26FTeQ2RMzdY
- R7xpokIM8VXtXh8FwXuPRrodGtsPNn06qB+IXrlmU1Kew7168WXEqqo9S0B23ax6rAEj
- i1yapst7ruP2VALkb6DRCsokK4vdJWKeEjRqugfgQ3+m6bo63ay3YLHulpWfonSQlgzP
- noDA==
+ bh=GoHwA/NUt6bdmcBWMk3GrpTBSbEsSYQ8eBgsnOl6FH8=;
+ b=TGhkM8HhZmjY6DuPQb4msMGHcL2dzou1bD6wb1KGAftp1o3QHahLkCxh3w2vLkJLAW
+ L+KiqIFB35nAHd5eUFpbR9RaqzFZwb8ZAC/atCwwXQM0Tnje/D2Z4++AprA6vSkwa8js
+ 8buim4rd11xf7othSwdH1CR9PwauFkp23Iiwv8R62DtUJ65ngGFaZjyaR0i2I+2r9fkv
+ lHQdo2tWRyANKH8czra1L2U/nMnigwRTlv7vgR/ovAXu4Q3+roMzvJ9aupaOhLpwPizY
+ cO+n85XdHuwByzNr5GPH3/8RZTJYXoLOvvvVoUjCl1A7kix84J9ysgVv04C9X5UiGD3S
+ nUXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=tEFP9EfjLyBSm2GDbhHW2vsbKN5BJT5FKVyhRHQNMY8=;
- b=b5enfrEQywohqFI39Ql5JMjgxmMdbkfzFF+Ou77YowAWSxu89AkaQ1BLplsYEQbJEi
- Tsw+b43QnZKmp9xhPeNLPqMi4ZnH6pQt7NWsdMlZk+T3E4RAYn4sa2qjnauJb8deWjyB
- 9vpBQmQDjYVJc11BQZozLfZoFeDZvuKBZADpN0I/3gKCC+KfCu0w4j4BpKayo2pHA4TT
- LXawhu8iJdTK1Uk0+hQkdWPINqcNi8TOXZepmRNVzdmAFQvIxDxo97gvguVUC9W2+r3s
- 9RE/66WikuQ2rxkJXj/+Q1oGfNpVovNFHC09QEDpvXtAM7WgMLt3i4E54C1M10FE5mv/
- DShw==
-X-Gm-Message-State: APjAAAUIwHEvi9d7DynD0RRHnaebpHb4+nXeLK3vszjKOwreN6Q5Oxxu
- jZ8Et78JHqNmUkPsXsQWVyU=
-X-Google-Smtp-Source: APXvYqx/mg4tIU1tr63Knwf6hjq0RDp8xtlDDNDD8XPHG9TpxACQT79+bFj90QYux56vF+roPlpqSA==
-X-Received: by 2002:a17:902:7d93:: with SMTP id
- a19mr9130882plm.283.1581795726696; 
- Sat, 15 Feb 2020 11:42:06 -0800 (PST)
+ bh=GoHwA/NUt6bdmcBWMk3GrpTBSbEsSYQ8eBgsnOl6FH8=;
+ b=emsBwA/jtJjTU+vA7RiuQU7UHaR3i3AcwLBvx5Ek51hLZzzEA3uRlHetBKVexUBL9I
+ usiUxMCaHuXYk5Gq8rCJzH5yyFXAmdSupUegWkoMEgit7SJxjrIJobIfk73ix4Q1n/X6
+ ydjcUUsd0LLDTyiA+fiW7EaYw8YekC89wY7iAQ1MgyokjoJ3YKq8n/k2xIDB1I5iPxG4
+ ZWBKwYKIjcL++eAlwskQTz05tiw9NB0z6MxAObc3+Y2m+v+kgwnq9+lK5wUl3CoMbHet
+ /Tc5WjqDDVoKyFD1A1aNxk/qYoXbmYavpO+5AjYcvTNF0BgjQP9znf7cNvJCzpPLVmxZ
+ YzUw==
+X-Gm-Message-State: APjAAAWAsVv2krpaFlWGqqsVIlfNp9arR8rYFYq1g/WwjqlYuERqfviB
+ Chpm6qSlRtLVofPUb+f8K6I=
+X-Google-Smtp-Source: APXvYqykL2GsAy4uDFniQNsQVMLOFN4GwHeH/9K6Btq7YRMenUHjMOgBREWJ9t33xXFT+4LdznuKdw==
+X-Received: by 2002:aa7:8654:: with SMTP id a20mr9407051pfo.88.1581795729527; 
+ Sat, 15 Feb 2020 11:42:09 -0800 (PST)
 Received: from majic.sklembedded.com (c-73-202-231-77.hsd1.ca.comcast.net.
  [73.202.231.77])
- by smtp.googlemail.com with ESMTPSA id q4sm11802751pfl.175.2020.02.15.11.42.05
+ by smtp.googlemail.com with ESMTPSA id q4sm11802751pfl.175.2020.02.15.11.42.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 15 Feb 2020 11:42:06 -0800 (PST)
+ Sat, 15 Feb 2020 11:42:09 -0800 (PST)
 From: Steve Longerbeam <slongerbeam@gmail.com>
 To: linux-media@vger.kernel.org
-Subject: [RESEND PATCH v3 03/17] media: imx: csi: Implement get_fwnode_pad op
-Date: Sat, 15 Feb 2020 11:41:22 -0800
-Message-Id: <20200215194136.10131-4-slongerbeam@gmail.com>
+Subject: [RESEND PATCH v3 04/17] media: imx: mipi csi-2: Implement
+ get_fwnode_pad op
+Date: Sat, 15 Feb 2020 11:41:23 -0800
+Message-Id: <20200215194136.10131-5-slongerbeam@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200215194136.10131-1-slongerbeam@gmail.com>
 References: <20200215194136.10131-1-slongerbeam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200215_114207_735381_25130B02 
-X-CRM114-Status: GOOD (  12.21  )
+X-CRM114-CacheID: sfid-20200215_114211_452426_6969CF86 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -104,7 +107,6 @@ Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
  open list <linux-kernel@vger.kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
  Philipp Zabel <p.zabel@pengutronix.de>,
  Steve Longerbeam <slongerbeam@gmail.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
  Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
@@ -114,54 +116,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The CSI does not have a 1:1 relationship between fwnode port numbers and
-pad indexes. In fact the CSI fwnode device is itself a port which is the
-sink, containing only a single fwnode endpoint. Implement media_entity
-operation get_fwnode_pad to first verify the given endpoint is the CSI's
-sink endpoint, and if so return the CSI sink pad index.
+Implement get_fwnode_pad operation. If the endpoint is owned by the MIPI
+CSI-2 receiver, return the endpoint's port number. The MIPI CSI-2 receiver
+maps port numbers and pad indexes 1:1.
 
 Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
 ---
- drivers/staging/media/imx/imx-media-csi.c | 23 +++++++++++++++++++++++
- 1 file changed, 23 insertions(+)
+ drivers/staging/media/imx/imx6-mipi-csi2.c | 28 ++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
-diff --git a/drivers/staging/media/imx/imx-media-csi.c b/drivers/staging/media/imx/imx-media-csi.c
-index b60ed4f22f6d..dc5fe25fe7b8 100644
---- a/drivers/staging/media/imx/imx-media-csi.c
-+++ b/drivers/staging/media/imx/imx-media-csi.c
-@@ -1825,9 +1825,32 @@ static void csi_unregistered(struct v4l2_subdev *sd)
- 		ipu_csi_put(priv->csi);
+diff --git a/drivers/staging/media/imx/imx6-mipi-csi2.c b/drivers/staging/media/imx/imx6-mipi-csi2.c
+index c1d1afeea53a..e27a342751fc 100644
+--- a/drivers/staging/media/imx/imx6-mipi-csi2.c
++++ b/drivers/staging/media/imx/imx6-mipi-csi2.c
+@@ -507,9 +507,37 @@ static int csi2_registered(struct v4l2_subdev *sd)
+ 				      640, 480, 0, V4L2_FIELD_NONE, NULL);
  }
  
-+/*
-+ * The CSI has only one fwnode endpoint, at the sink pad. Verify the
-+ * endpoint belongs to us, and return CSI_SINK_PAD.
-+ */
-+static int csi_get_fwnode_pad(struct media_entity *entity,
-+			      struct fwnode_endpoint *endpoint)
++static int csi2_get_fwnode_pad(struct media_entity *entity,
++			       struct fwnode_endpoint *endpoint)
 +{
 +	struct v4l2_subdev *sd = media_entity_to_v4l2_subdev(entity);
-+	struct csi_priv *priv = v4l2_get_subdevdata(sd);
-+	struct fwnode_handle *csi_port = dev_fwnode(priv->dev);
-+	struct fwnode_handle *csi_ep;
-+	int ret;
++	struct csi2_dev *csi2 = sd_to_dev(sd);
++	struct fwnode_handle *csi2_ep;
 +
-+	csi_ep = fwnode_get_next_child_node(csi_port, NULL);
++	/*
++	 * If the endpoint is one of ours, return the endpoint's port
++	 * number. This device maps port numbers and pad indexes 1:1.
++	 */
++	fwnode_graph_for_each_endpoint(dev_fwnode(csi2->dev), csi2_ep) {
++		if (endpoint->local_fwnode == csi2_ep) {
++			struct fwnode_endpoint fwep;
++			int ret;
 +
-+	ret = endpoint->local_fwnode == csi_ep ? CSI_SINK_PAD : -ENXIO;
++			ret = fwnode_graph_parse_endpoint(csi2_ep, &fwep);
 +
-+	fwnode_handle_put(csi_ep);
++			fwnode_handle_put(csi2_ep);
 +
-+	return ret;
++			return ret ? ret : fwep.port;
++		}
++	}
++
++	return -ENXIO;
 +}
 +
- static const struct media_entity_operations csi_entity_ops = {
- 	.link_setup = csi_link_setup,
+ static const struct media_entity_operations csi2_entity_ops = {
+ 	.link_setup = csi2_link_setup,
  	.link_validate = v4l2_subdev_link_validate,
-+	.get_fwnode_pad = csi_get_fwnode_pad,
++	.get_fwnode_pad = csi2_get_fwnode_pad,
  };
  
- static const struct v4l2_subdev_core_ops csi_core_ops = {
+ static const struct v4l2_subdev_video_ops csi2_video_ops = {
 -- 
 2.17.1
 
