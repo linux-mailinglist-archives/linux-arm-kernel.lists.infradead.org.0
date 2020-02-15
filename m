@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF23A16004A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 20:44:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 000DE16004B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 20:44:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,73 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=p05784nLpmbjsgbuZ54mko7IN6d7kTXOSup4Tl7TiRs=; b=pkE0VnuRpz5fhhX7vmAQ/we3sF
-	h7U9XEVRZHkm+fLQSMVMRz+luFFjjfLI8m/HOwFN0rOQ/wh/GQcISGqyOs6FiAejn9MMhkcJA8pNP
-	xa2cLn/uCy+vm3f6cDvm28Q4B+6adt3uPbCKGqBunc5Hvc0jo5NBqLsijQrn+imvfjIpsJ/VXL4wf
-	wbzkxs1Mku0nhosOSdIuUfAs9ngM951UwBQ62H5LLbcUxOJ1c1O3mZZADHWdsruG6n0gKf1YPa7fq
-	YoPaEOPeh8xIxoCJFe+aMRJk+afVraXoevmTZhYaw2Kital4jaKSya9WhCfVnvcjDbcIeV+CgUQd4
-	/mzmgr6g==;
+	bh=qkk0dfmLAfkly0kZOyylwC5yu6h1IZvQ2YZYrpCe43g=; b=JnmegdBSFPl6AZkbKmXNKw0vKp
+	PwBSJ/Mh+WpPB2kKfVYrOuXRR+iLRcSEwQ2NB+EoXisTFnK1sS8PQhh3aKZ9vzDYdgSRNTL2ivnwz
+	Olwx396oT0d6OppjQyKKNQlk/6aGEkL9F2BdHJEHuny0V/AVe5fPLdOCR7aPMNKPqU//zJb0mTmK5
+	r+AQtcKg52yjLdjYNdPbJkX8/gHe6Hl4Hwin2L24bGlvIoUZyueRlKe0FBSDH03zPOdLNZNaJqnjb
+	ZvDXNNiR6dvetinLo1yePJyNw+vbsRcOwRxTRXpIEHVhknoTeCbM0r3qC8VPYY56Hdhg51/qBSwiq
+	+qP8iAMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j33MT-0001U6-MS; Sat, 15 Feb 2020 19:44:21 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1j33Mg-0001jY-95; Sat, 15 Feb 2020 19:44:34 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j33Kn-000076-Fo
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 19:42:39 +0000
-Received: by mail-pl1-x641.google.com with SMTP id p11so5129465plq.10
+ id 1j33Kr-00009n-5x
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 19:42:47 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id q39so5500541pjc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 15 Feb 2020 11:42:37 -0800 (PST)
+ Sat, 15 Feb 2020 11:42:40 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=nw6qFQx6S/L6ma/0AlsKxKIDrQ4PZDVJaM1fr3Im7gQ=;
- b=k3GIXKvWft0N1NbpenDUFg5zblDqcbUwzZDit6j5Lnn/XVvhgo5upPEa6pf+6EAMEz
- Xt3hbI7ZN7uQ3ZpDboF8dsqWS8SmiaQmTx7VTEHl/ogj+jq5hURSLNGK4VHhyJZj/Qus
- +bYF9uSPWj7Z8BwAyKR14ry4FKmhnTxJnPRiFZM9Vq4XZLEY9Al273TDUbppvZnGanEN
- XgsTT3BtOW7qp0sc+wDR8OgJhZGQ16Af0TNYgqSPglzYcYGIUZbTkO3OohkZb/hBFwDh
- v72JbltSB5enu0WPMOhZW9Ko/dsfsGdL+Qu6goM7QvrgD4+O2up1IqK+TKGYEk2J8ha6
- rYcA==
+ bh=WaBGbAVLvbw1Oa8PBijA4rVNFNBvvrFDnIgEYRds3L8=;
+ b=jmZpkjWsbaobRG1GO0fyalos/nZWZE80HVu13ABf0t7B0ahTcSHiWCChAHZuZiBurG
+ b57uODg71jswZRofJSWEa22pIiXiJfsimHlu+cdxpuvye67KXdorOhPsJJKPmK1AIPOD
+ G/K7RLOTsPMM03LJifKz3uhbRvnz45jpuCH19Tlc+9o1b52xj5pFK+qmFxRqn1H3vw8/
+ 4yL09zC4e1YwJnSezJS/M6CM+kAy/t3/T1BmzVN9SxbGMhY6p26MyzAkq1ruMUE+M5r7
+ GVT03WQol/jICxoaUmRBiTu2K71nTj3KGgo6z/IBIUZT2CmLoZsZhRhwgbK9WXZyPgiV
+ I9yA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=nw6qFQx6S/L6ma/0AlsKxKIDrQ4PZDVJaM1fr3Im7gQ=;
- b=tBusSIZBM35KoexIq3CTr3BiYHklpSZbjyNdxHNaX6Myb8Nd7pIbO2F/PW96RpcLP8
- 3IISMwSiJxZ70qGuNGo+dmZSXqa5/5qwzlgMGyTT4m4OxZCaJWifnoK04PCMteRVIWBE
- Y1mZzjsHoM7SSVdDOh0Wnp9dnng84aCqpFVZpOTBDpvIEztPv6Idx9VPEV2j88CXkfOM
- SsBOCklNhCrv6Nfdr/2Hbeokq5tsUFZ5j4dKVnsLUoNmMII7vVrtDmQxFKq0mZ52Ff37
- lh1cGTOz5V4XwHr6r6fjVBP2BNzHPwpSz0KcUlVSDy5QWxeTqCXh3S6aEdkW24mJ5FnG
- Xr5g==
-X-Gm-Message-State: APjAAAXBak/866vig7DRiD1BWajM/qLE3S4yh1QE793PQLuQOvnZGYXj
- BDn5pe7C8ES3ttW3DdJaMzk=
-X-Google-Smtp-Source: APXvYqzkUXyKopzlHELwFuMNAOIllbGui1hUS/4slzE0JVfp8tA7A3yD2KKHvzv5nTeYgrIuLTwJ1w==
-X-Received: by 2002:a17:902:5ace:: with SMTP id
- g14mr8946961plm.311.1581795756922; 
- Sat, 15 Feb 2020 11:42:36 -0800 (PST)
+ bh=WaBGbAVLvbw1Oa8PBijA4rVNFNBvvrFDnIgEYRds3L8=;
+ b=k3Y8dvm51htRhb998hFt/soBP2Ci+DzQAh/joxTznbcNvURI0KAJf2Hq1JQCNq6DNW
+ mjpyF+nHiSay6DByS5AiceyhYGlpP7HZIMGiTQGgK0BjEGTPpT1jg9Rz4vksXUvgeVtO
+ 89QEZReV1S/MO5Qwv9D2eOFpnF88Lq46lj1pGo7EzFoGolKrWHRDokGwwA+V8j1ltpiB
+ DITJ+8GCNrrTZZlKC1gLkxzakNojvHKN/8hD2sTWBtSq1bRl5QLQEADlQsvi1GBYm+Y+
+ ybgsxnv+CtWI4VP9na8nZ+bpJ1U6nLXEqwd2SRzCCd9zXLdKCpwYH1/0kQu7lVPqIDn8
+ 9nCg==
+X-Gm-Message-State: APjAAAVDtge4D35ZjLq54Wb0Q/R2Vbjng9YHf3RoUlj4ElhWEzxFiNM8
+ aCJ0tfJxanl0cPRZEyzFT8I=
+X-Google-Smtp-Source: APXvYqyieLo6TkLDnsQ1I1ozugLJM2j6uZo5Kq0sitsB01Xv44YmxnyulZiU7C4+ngGeqMUn+Oprtw==
+X-Received: by 2002:a17:902:b70e:: with SMTP id
+ d14mr9221633pls.295.1581795759976; 
+ Sat, 15 Feb 2020 11:42:39 -0800 (PST)
 Received: from majic.sklembedded.com (c-73-202-231-77.hsd1.ca.comcast.net.
  [73.202.231.77])
- by smtp.googlemail.com with ESMTPSA id q4sm11802751pfl.175.2020.02.15.11.42.35
+ by smtp.googlemail.com with ESMTPSA id q4sm11802751pfl.175.2020.02.15.11.42.38
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 15 Feb 2020 11:42:36 -0800 (PST)
+ Sat, 15 Feb 2020 11:42:39 -0800 (PST)
 From: Steve Longerbeam <slongerbeam@gmail.com>
 To: linux-media@vger.kernel.org
-Subject: [RESEND PATCH v3 11/17] media: imx: csi: Embed notifier in struct
- csi_priv
-Date: Sat, 15 Feb 2020 11:41:30 -0800
-Message-Id: <20200215194136.10131-12-slongerbeam@gmail.com>
+Subject: [RESEND PATCH v3 12/17] media: imx: csi: Add missing notifier
+ unregister/cleanup
+Date: Sat, 15 Feb 2020 11:41:31 -0800
+Message-Id: <20200215194136.10131-13-slongerbeam@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200215194136.10131-1-slongerbeam@gmail.com>
 References: <20200215194136.10131-1-slongerbeam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200215_114237_604861_C143D25C 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20200215_114241_331568_823B66F0 
+X-CRM114-Status: GOOD (  10.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -105,11 +102,13 @@ Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Sascha Hauer <s.hauer@pengutronix.de>,
- open list <linux-kernel@vger.kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, NXP Linux Team <linux-imx@nxp.com>,
  Philipp Zabel <p.zabel@pengutronix.de>,
  Steve Longerbeam <slongerbeam@gmail.com>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 MIME-Version: 1.0
@@ -118,84 +117,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Embed the notifier in 'struct csi_priv', instead of dynamically allocating
-it, to make it possible to retrieve csi_priv in a notifier callback op.
+Add the missing calls to unregister and cleanup the subdev notifier in
+imx_csi_remove().
 
+Fixes: c893500a16baf ("media: imx: csi: Register a subdev notifier")
 Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
 ---
- drivers/staging/media/imx/imx-media-csi.c | 25 +++++++++--------------
- 1 file changed, 10 insertions(+), 15 deletions(-)
+ drivers/staging/media/imx/imx-media-csi.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/drivers/staging/media/imx/imx-media-csi.c b/drivers/staging/media/imx/imx-media-csi.c
-index dc5fe25fe7b8..3e2afdd59276 100644
+index 3e2afdd59276..bea6a70cc353 100644
 --- a/drivers/staging/media/imx/imx-media-csi.c
 +++ b/drivers/staging/media/imx/imx-media-csi.c
-@@ -58,6 +58,8 @@ struct csi_priv {
- 	struct ipu_soc *ipu;
- 	struct v4l2_subdev sd;
- 	struct media_pad pad[CSI_NUM_PADS];
-+	struct v4l2_async_notifier notifier;
-+
- 	/* the video device at IDMAC output pad */
- 	struct imx_media_video_dev *vdev;
- 	struct imx_media_fim *fim;
-@@ -1896,31 +1898,28 @@ static int imx_csi_parse_endpoint(struct device *dev,
+@@ -2030,6 +2030,8 @@ static int imx_csi_remove(struct platform_device *pdev)
  
- static int imx_csi_async_register(struct csi_priv *priv)
- {
--	struct v4l2_async_notifier *notifier;
- 	struct fwnode_handle *fwnode;
- 	unsigned int port;
- 	int ret;
- 
--	notifier = kzalloc(sizeof(*notifier), GFP_KERNEL);
--	if (!notifier)
--		return -ENOMEM;
--
--	v4l2_async_notifier_init(notifier);
-+	v4l2_async_notifier_init(&priv->notifier);
- 
- 	fwnode = dev_fwnode(priv->dev);
- 
- 	/* get this CSI's port id */
- 	ret = fwnode_property_read_u32(fwnode, "reg", &port);
- 	if (ret < 0)
--		goto out_free;
-+		return ret;
- 
- 	ret = v4l2_async_notifier_parse_fwnode_endpoints_by_port(
--		priv->dev->parent, notifier, sizeof(struct v4l2_async_subdev),
-+		priv->dev->parent, &priv->notifier,
-+		sizeof(struct v4l2_async_subdev),
- 		port, imx_csi_parse_endpoint);
- 	if (ret < 0)
- 		goto out_cleanup;
- 
--	ret = v4l2_async_subdev_notifier_register(&priv->sd, notifier);
-+	ret = v4l2_async_subdev_notifier_register(&priv->sd,
-+						  &priv->notifier);
- 	if (ret < 0)
- 		goto out_cleanup;
- 
-@@ -1928,16 +1927,12 @@ static int imx_csi_async_register(struct csi_priv *priv)
- 	if (ret < 0)
- 		goto out_unregister;
- 
--	priv->sd.subdev_notifier = notifier;
--
- 	return 0;
- 
- out_unregister:
--	v4l2_async_notifier_unregister(notifier);
+ 	v4l2_ctrl_handler_free(&priv->ctrl_hdlr);
+ 	mutex_destroy(&priv->lock);
 +	v4l2_async_notifier_unregister(&priv->notifier);
- out_cleanup:
--	v4l2_async_notifier_cleanup(notifier);
--out_free:
--	kfree(notifier);
 +	v4l2_async_notifier_cleanup(&priv->notifier);
+ 	v4l2_async_unregister_subdev(sd);
+ 	media_entity_cleanup(&sd->entity);
  
- 	return ret;
- }
 -- 
 2.17.1
 
