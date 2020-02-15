@@ -2,65 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C094215FCB5
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 06:22:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DEC115FCF1
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 06:36:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=p9Eqg8bexh1cRWY3L510MAewfUrGPD7O0mEbznfbCtE=; b=H4NHWRVhI2wI3d10r0o2SR+I7+
-	+/fGro2dMGvkcGahPI2Wyt/+6WDeCllBOJoQMIakWijnEO09VXm/fFgj3G5dENa+Ql/mWcsvF8Kje
-	tOUuUjBzydhWzjRh2oiymSLNvGhBMyNGuzar1YZYNS716XfmGxAdNP8nqqCTA+t15iS4Rm/hfxO+p
-	WW7Y57KuycHpGtd1U/ETZbllzNq6y8hQVmx1YBwv8Yj+U6i6HYThdOj+FN6yhGhAUud4Toqxnil1S
-	zK++AVmdmAgz3t+FcrVz5P1clRwraYkxa7XTfGfsnJmFWraDfyqThJEnp84/BumXUHr1DMcUoVNhI
-	MqTIfe3Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XMg25IZHmoeiM/wJdaPZT1f5GihrfM3t+Jy9K31PmLk=; b=LLMp+YWqG+himm
+	ful9zcIBTSAwW6Dm98LgHrYBoQ1fu9THuwpuWu6DsHxS3g3KdVuEb+gIiuakyEG2uiOmOGJ4T9Jh2
+	pnVPIjlNewOadBnMvHjwFkk7jxTcWHFoqcCHfDFyHIQ1sJr3yJFOOj5T+kqE2MxY7MjEYq49iIhHS
+	4vS8yNOdTGo7bCNI4VIXsSeDSazCGMRklRj9w+ideUtkJ4ChJiqmzg3CGyiW1Qvio4YmKoA61RSWt
+	mWDfv/gS+Bc4JQV3Sdp4vR8T6IOc1b4D0tfwDlNbW/h1/aNUrjj/cFLpbx8iieK5iNKqdTXu3mjUI
+	bebId3buO8jhlvs0hygQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2puR-0006OG-7O; Sat, 15 Feb 2020 05:22:31 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1j2q7o-0004Gs-9R; Sat, 15 Feb 2020 05:36:20 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2ptk-0005wT-78
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 05:21:50 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 053F01A6BF7;
- Sat, 15 Feb 2020 06:21:47 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 41EDF1A6BC8;
- Sat, 15 Feb 2020 06:21:41 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2B8914030D;
- Sat, 15 Feb 2020 13:21:34 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, u.kleine-koenig@pengutronix.de
-Subject: [PATCH V2 7/7] ARM: dts: imx6sx-udoo-neo: Use new pin names with
- DCE/DTE for UART pins
-Date: Sat, 15 Feb 2020 13:15:58 +0800
-Message-Id: <1581743758-4475-8-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1581743758-4475-1-git-send-email-Anson.Huang@nxp.com>
-References: <1581743758-4475-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1j2q7e-0004Fj-Pt
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 05:36:12 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 6so6132085pgk.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Feb 2020 21:36:10 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=umSLSqFdcTUcW15IlOni/Tuec1i7imfq7Q7J9RYYX4g=;
+ b=cIxrqNRp65WCtK+fiYn9g3PVPZKXWCeUB0uFKNIzbK215QX3Al36Ke7lSPKliczQPG
+ zRn7Bi6DqLKPjlqWNiNyIv1hfnOjroG9dJAo7zBVoxdcOscAu96nnIAHZ0M1KbXjm0Sl
+ ZR04ZlFB/h9Rx1G6+2XpmHZ6qc00E2hKTf9RBjGMhvM/S7iYiuAY2TTttm/rFAuLs3bq
+ Tl4EPCrQfsVTe0Oz0o9vN+XxWzhv+LiQ+CYz/xTgBuLMVClebtR7iuNxNAyHBtWlm0Wp
+ bHYgpgS19tzczImghBSGzs7yS4YbFHy+7+42F6gNr1Xyalax7P6gX0gNY6JBKTkCYKiJ
+ SqhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=umSLSqFdcTUcW15IlOni/Tuec1i7imfq7Q7J9RYYX4g=;
+ b=oKzscZ+eBltwNDAU25exvaLeoxzoamUmjVGOB4yZ+7SXx/S45lInov40dmgQEHDiL0
+ puO1hlLlx2xtNtmcSZjgcLsUbFwZNIZVZ5Hka7mpltuYgSyrbjMWMMv9CapwqKWjj/0S
+ Ju9C816V+yD26t3Om9/j3miOzYnZLomyD+zzcMi9SWCAp4xr/Khc9oV7NGWHMdRNMcYE
+ mPQde89uLUFoxzrL8/i0y0GcQTTToxrKKoSSLa/u3jp9IzxkCKyunSjtLWclSIS9Vqhw
+ RTSULM7uXQ3Gyqfrvad1oeu254la9aE2Yz4yMdxta7hUQM+vCsjmPsg66GRfUzSyj9U9
+ PcUA==
+X-Gm-Message-State: APjAAAV/rLLdx8n8qB0twgK7riJKJGDn41SVUoyoc9XslCOd22f7NMDa
+ sptcZu3jsY0CBOf63mmVNlla/A==
+X-Google-Smtp-Source: APXvYqzk4mzSWnD3eisseNOAoKEFSWYJ3iXu/MnMV3x1ieUnd9jyOy7C/UGmCSr9X/1fRkBJKg6m3w==
+X-Received: by 2002:a62:6842:: with SMTP id d63mr6945184pfc.113.1581744969478; 
+ Fri, 14 Feb 2020 21:36:09 -0800 (PST)
+Received: from ripper (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id q12sm8411743pfh.158.2020.02.14.21.36.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 14 Feb 2020 21:36:08 -0800 (PST)
+Date: Fri, 14 Feb 2020 21:35:17 -0800
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>
+Subject: Re: [PATCH 2/2] pinctrl: Use new GPIO_LINE_DIRECTION
+Message-ID: <20200215053517.GN955802@ripper>
+References: <20191112141819.GA22076@localhost.localdomain>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191112141819.GA22076@localhost.localdomain>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_212148_400070_B916CE5F 
-X-CRM114-Status: UNSURE (   7.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200214_213610_851206_5F9522E8 
+X-CRM114-Status: GOOD (  12.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,82 +97,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Heiko Stuebner <heiko@sntech.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Patrice Chotard <patrice.chotard@st.com>, Paul Cercueil <paul@crapouillou.net>,
+ Eric Anholt <eric@anholt.net>, linux-stm32@st-md-mailman.stormreply.com,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Gregory Clement <gregory.clement@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ linux-rockchip@lists.infradead.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Andy Gross <agross@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-msm@vger.kernel.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>,
+ Jason Cooper <jason@lakedaemon.net>, mazziesaccount@gmail.com,
+ Ray Jui <rjui@broadcom.com>, linux-gpio@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
+ Sean Wang <sean.wang@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, Stefan Wahren <wahrenst@gmx.net>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, linux-oxnas@groups.io
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use new pin names containing DCE/DTE for UART RX/TX/RTS/CTS pins, this
-is to distinguish the DCE/DTE functions.
+On Tue 12 Nov 06:18 PST 2019, Matti Vaittinen wrote:
+> diff --git a/drivers/pinctrl/qcom/pinctrl-msm.c b/drivers/pinctrl/qcom/pinctrl-msm.c
+> index 763da0be10d6..8844ca1261d5 100644
+> --- a/drivers/pinctrl/qcom/pinctrl-msm.c
+> +++ b/drivers/pinctrl/qcom/pinctrl-msm.c
+> @@ -485,8 +485,8 @@ static int msm_gpio_get_direction(struct gpio_chip *chip, unsigned int offset)
+>  
+>  	val = msm_readl_ctl(pctrl, g);
+>  
+> -	/* 0 = output, 1 = input */
+> -	return val & BIT(g->oe_bit) ? 0 : 1;
+> +	return val & BIT(g->oe_bit) ? GPIO_LINE_DIRECTION_OUT :
+> +				      GPIO_LINE_DIRECTION_IN;
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm/boot/dts/imx6sx-udoo-neo.dtsi | 28 ++++++++++++++--------------
- 1 file changed, 14 insertions(+), 14 deletions(-)
+For pinctrl-msm:
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-diff --git a/arch/arm/boot/dts/imx6sx-udoo-neo.dtsi b/arch/arm/boot/dts/imx6sx-udoo-neo.dtsi
-index 25d4aa9..ee64565 100644
---- a/arch/arm/boot/dts/imx6sx-udoo-neo.dtsi
-+++ b/arch/arm/boot/dts/imx6sx-udoo-neo.dtsi
-@@ -235,28 +235,28 @@
- 
- 	pinctrl_uart1: uart1grp {
- 		fsl,pins =
--			<MX6SX_PAD_GPIO1_IO04__UART1_TX		0x1b0b1>,
--			<MX6SX_PAD_GPIO1_IO05__UART1_RX		0x1b0b1>;
-+			<MX6SX_PAD_GPIO1_IO04__UART1_DCE_TX	0x1b0b1>,
-+			<MX6SX_PAD_GPIO1_IO05__UART1_DCE_RX	0x1b0b1>;
- 	};
- 
- 	pinctrl_uart2: uart2grp {
- 		fsl,pins =
--			<MX6SX_PAD_GPIO1_IO06__UART2_TX		0x1b0b1>,
--			<MX6SX_PAD_GPIO1_IO07__UART2_RX		0x1b0b1>;
-+			<MX6SX_PAD_GPIO1_IO06__UART2_DCE_TX	0x1b0b1>,
-+			<MX6SX_PAD_GPIO1_IO07__UART2_DCE_RX	0x1b0b1>;
- 	};
- 
- 	pinctrl_uart3: uart3grp {
- 		fsl,pins =
--			<MX6SX_PAD_SD3_DATA4__UART3_RX          0x13059>,
--			<MX6SX_PAD_SD3_DATA5__UART3_TX          0x13059>,
--			<MX6SX_PAD_SD3_DATA6__UART3_RTS_B       0x13059>,
--			<MX6SX_PAD_SD3_DATA7__UART3_CTS_B       0x13059>;
-+			<MX6SX_PAD_SD3_DATA4__UART3_DCE_RX	0x13059>,
-+			<MX6SX_PAD_SD3_DATA5__UART3_DCE_TX	0x13059>,
-+			<MX6SX_PAD_SD3_DATA6__UART3_DCE_RTS	0x13059>,
-+			<MX6SX_PAD_SD3_DATA7__UART3_DCE_CTS	0x13059>;
- 	};
- 
- 	pinctrl_uart5: uart5grp {
- 		fsl,pins =
--			<MX6SX_PAD_SD4_DATA4__UART5_RX		0x1b0b1>,
--			<MX6SX_PAD_SD4_DATA5__UART5_TX		0x1b0b1>;
-+			<MX6SX_PAD_SD4_DATA4__UART5_DCE_RX	0x1b0b1>,
-+			<MX6SX_PAD_SD4_DATA5__UART5_DCE_TX	0x1b0b1>;
- 	};
- 
- 	pinctrl_uart6: uart6grp {
-@@ -265,10 +265,10 @@
- 			<MX6SX_PAD_CSI_DATA01__UART6_DSR_B	0x1b0b1>,
- 			<MX6SX_PAD_CSI_DATA02__UART6_DTR_B	0x1b0b1>,
- 			<MX6SX_PAD_CSI_DATA03__UART6_DCD_B	0x1b0b1>,
--			<MX6SX_PAD_CSI_DATA04__UART6_RX		0x1b0b1>,
--			<MX6SX_PAD_CSI_DATA05__UART6_TX		0x1b0b1>,
--			<MX6SX_PAD_CSI_DATA06__UART6_RTS_B	0x1b0b1>,
--			<MX6SX_PAD_CSI_DATA07__UART6_CTS_B	0x1b0b1>;
-+			<MX6SX_PAD_CSI_DATA04__UART6_DCE_RX	0x1b0b1>,
-+			<MX6SX_PAD_CSI_DATA05__UART6_DCE_TX	0x1b0b1>,
-+			<MX6SX_PAD_CSI_DATA06__UART6_DCE_RTS	0x1b0b1>,
-+			<MX6SX_PAD_CSI_DATA07__UART6_DCE_CTS	0x1b0b1>;
- 	};
- 
- 	pinctrl_otg1_reg: otg1grp {
--- 
-2.7.4
+>  }
 
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
