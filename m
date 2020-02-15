@@ -2,73 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4268515FBD9
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 01:58:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D992915FBCB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 01:55:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZjKbqk9JRlGTGG/J0ruca7C2c2gEm16F8FNJmOmvvNo=; b=H+lhKKfEKdCKzh
-	N83i7qO5edF7gkMYzR9MfctNtJlBbBZtlYWvlYlWkqXCtFEQBlXYVankrLHDdRY42M2mqUVE7KLpX
-	akGmCfe+B6gIZAaV6lmMxjjFPL36aMG/4+63AuzpfGT7x5j3Dzn9AO2NmnJZZzSyHpajXuHN3U+j/
-	qKXfIjxN5aUQLHUJ4+FJqFebi5LBgQVjQ4hpNCbab8pzHsu7ItwBUQJAfm5fTijrHrZ3gDJuUx2Ug
-	r5B8DQhEZk5J6TyBwgKbQRNp3naKL5eR2LeqQF3tJhp2q6aRPy45YKRdWCG7BwZNVHQiEFIz7921j
-	7LfK8fxaYDaH3qS2Hp4A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=UCr/na8sgFsukssaO7eQHmZLn1ssgTCJqlng7D70bAo=; b=HN/OgKJ07FtXys/6oI6KiitO95
+	nlR7J/wlSN037csT3gWXlIdhOWW2D1mcKAFUAsHYNOu4R/nmSFDQfzfXtoshpwrq34J+tJh9o77oT
+	k6lXkBoFCI0MLVmjV2/QfSaX/IGXenS3NHxwGJpxhz2coVTnJUQ/v1d9+fnXFiGPYsRdKxkKTek2Q
+	tYSuxLvUYvsV9UUdnOe/rttyzKgrid1O0iV7O/sogHDeYn/AcLej54m/Mpn0ojsiZ4Lo56DYFZYYO
+	a1Dkjj5Nd1wIDtkzlW1w4Ty/nM7HO7XAOBwMwTpB2MgGmzfoXFykPGIxUZ2IaIqs4emdluBc5sIeF
+	Kz7os/3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2lnF-0007ha-Bm; Sat, 15 Feb 2020 00:58:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j2ljV-00062w-Qi; Sat, 15 Feb 2020 00:54:57 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2ln6-0007h6-1a
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 00:58:41 +0000
-Received: from localhost (unknown [38.98.37.142])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9BFF720726;
- Sat, 15 Feb 2020 00:58:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581728318;
- bh=epAipassIVTXLEk61xbPswQ/wJFZR8JeHH7+aNFL18w=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=LJ7VCwPEWnIEAj+lS8iPopr8Gi5FgFwj1wdOvOdgCLWp/8gK/V4Ij8yF6l734w1Cf
- n0D+VkC39CWrj1swmFEjR1TCM2g9XODsAG9y930H/cSJzSGIvYyyXCTw1obME+cKus
- SU8s68S+0oKLyV1ne3cxnSsHAmp0LQX5c6pSXhaE=
-Date: Fri, 14 Feb 2020 19:52:35 -0500
-From: 'Greg KH' <gregkh@linuxfoundation.org>
-To: Jolly Shah <jolly.shah@xilinx.com>
-Subject: Re: [PATCH v2 1/4] firmware: xilinx: Add sysfs interface
-Message-ID: <20200215005235.GA32359@kroah.com>
-References: <20200124060339.GB2906795@kroah.com>
- <2D4B924A-D10C-4A90-A8E6-507BF6C30654@xilinx.com>
- <20200128062814.GA2097606@kroah.com>
- <4EF659A1-2844-46B9-9ED6-5A6A20401D9D@xilinx.com>
- <20200131061038.GA2180358@kroah.com>
- <BYAPR02MB40559D6B62C4532C0EAD0281B7070@BYAPR02MB4055.namprd02.prod.outlook.com>
- <20200131093646.GA2271937@kroah.com>
- <3ef20e9d-052f-665c-7fc8-69a1f8bc9bd2@xilinx.com>
- <20200214171005.GB4034785@kroah.com>
- <c2914eae-bf95-ad51-79a4-07f199f37e27@xilinx.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c2914eae-bf95-ad51-79a4-07f199f37e27@xilinx.com>
+ id 1j2ljO-00062U-7R
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 00:54:51 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id m7so1124792pjs.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 14 Feb 2020 16:54:49 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=t/Ae0ThnHgseaBLN7DLSea9YhAAyHLCHWTCUQ/Cd0kU=;
+ b=dmb7qpA2kFDG/NeGqhlDaCtOJWwEN5yo+psjRdIA/bxIrzPR3KzcxIxfolRXzD6CcP
+ 2NC+PI/DxfYxt7rXTp8/PiZ1MGGbum2c4Kl5D03YD277KB61qw7nslgxLzjHjKHBhKcJ
+ ZBsP0TljWgjefXI4xv3hkW+INuat00Dau0n8hyhSxpcHMPfWtp7ZgyCYqZznVJEEPtqG
+ x+frDrsbZR9CKGFdbltKjXzek8iwS8kZGV0rJTshxAsX08Yr5lmS6KgA35GMs+Cr9XxZ
+ OcaIJR0FTgSD16qySdGsQZIsrqWu058/ATIayvioSzsnYxp88B8ZMpiMzmRZiqdOQb83
+ d02w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=t/Ae0ThnHgseaBLN7DLSea9YhAAyHLCHWTCUQ/Cd0kU=;
+ b=p18MCrCGmsPYm9zoK3wshqN+R5AXtN0gDLCFvcJyugBxlN9JvliI3El28+jgTwIngm
+ qlYxiYTol7T9wyrngE1RmBYyeACtHAaFBwMBtEijVXi5/+xGoXezA3z4/dtqN5OPhCbW
+ 37KTFk+zeUCXNVs7/M7Kqt1TGxx2/7TGpqRVO76MjLuhERGo/M470YRxXb8ZQToLZH2r
+ 9J2SPDrqOs/u0BhAY+BwuwzMWmB6gJuZIT8bZLavQb1hprqc9SNVEUViU+W/0Evpooi9
+ 0ScA2NHwDAn9zfr2nnLfwm7dvvft6GKwm60l7sKrS9tB6THN52n2P/2Er5FM4gLkPUWJ
+ 4KLA==
+X-Gm-Message-State: APjAAAX2xSmNUpFeLHEsy5gBzLjnnvefzW4sB1ZkbBMQctoiv5kXMH8e
+ oZVcUr433LXLVaCXYWZ1zFNqzg==
+X-Google-Smtp-Source: APXvYqyjZLi/e9QST8sioy2HdXygGOdJ9mbIInRhBVQPczjn+5/OJPK4T7vMHeDuqoNVw8iYHt85OA==
+X-Received: by 2002:a17:902:bb88:: with SMTP id
+ m8mr5848515pls.63.1581728088542; 
+ Fri, 14 Feb 2020 16:54:48 -0800 (PST)
+Received: from nuc7.sifive.com ([12.206.222.5])
+ by smtp.gmail.com with ESMTPSA id b25sm8108857pfo.38.2020.02.14.16.54.47
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Fri, 14 Feb 2020 16:54:47 -0800 (PST)
+From: Alan Mikhak <alan.mikhak@sifive.com>
+X-Google-Original-From: Alan Mikhak < alan.mikhak@sifive.com >
+To: ard.biesheuvel@linaro.org
+Subject: [PATCH 2/3] pci: designware: add separate driver for the MSI part of
+ the RC
+Date: Fri, 14 Feb 2020 16:54:25 -0800
+Message-Id: <1581728065-5862-1-git-send-email-alan.mikhak@sifive.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <20170821192907.8695-3-ard.biesheuvel@linaro.org>
+References: <20170821192907.8695-3-ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_165840_106896_1AABB785 
-X-CRM114-Status: GOOD (  14.97  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200214_165450_330872_16000017 
+X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,53 +96,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "keescook@chromium.org" <keescook@chromium.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- "matt@codeblueprint.co.uk" <matt@codeblueprint.co.uk>,
- "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rajan Vaja <RAJANV@xilinx.com>, Michal Simek <michals@xilinx.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "mingo@kernel.org" <mingo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "hkallweit1@gmail.com" <hkallweit1@gmail.com>
+Cc: Joao.Pinto@synopsys.com, graeme.gregory@linaro.org, marc.zyngier@arm.com,
+ jingoohan1@gmail.com, leif.lindholm@linaro.org, linux-pci@vger.kernel.org,
+ bhelgaas@google.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Feb 14, 2020 at 04:37:16PM -0800, Jolly Shah wrote:
-> > Just make the direct call to the firmware driver, no need to muck around
-> > with tables of function pointers.  In fact, with the spectre changes,
-> > you just made things slower than needed, and you can get back a bunch of
-> > throughput by removing that whole middle layer.
-> > 
-> 
-> arm,scpi is doing the same way and we thought this approach will be more
-> acceptable than direct function calls but happy to change as suggested.
+Hi..
 
-Just because one random tiny thing does it the wrong way does not mean
-to focus on that design pattern and ignore the thousands of other
-apis/interfaces in the kernel that do not do it that way :)
+What is the right approach for adding MSI support for the generic
+Linux PCI host driver?
 
-> > So go do that first please, before adding any new stuff.
-> > 
-> > Now for the ioctl, yeah, that's not a "normal" pattern either.  But
-> > right now you only have 2 "different" ioctls that you call.  So why not
-> > just turn those 2 into real function calls as well that then makes the
-> > "ioctl" call to the hardware?  That makes things a lot more obvious on
-> > the kernel driver side exactly what is going on.
-> > 
-> 
-> Sure as i understand firmware driver will provide real function calls to be
-> used by user drivers and underneath it will call ioctl for desired
-> operation. Please correct if I misunderstood.
+I came across this patch which seems to address a similar
+situation. It seems to have been dropped in v3 of the patchset
+with the explanation "drop MSI patch [for now], since it
+turns out we may not need it".
 
-You do not misunderstand.
+[PATCH 2/3] pci: designware: add separate driver for the MSI part of the RC
+https://lore.kernel.org/linux-pci/20170821192907.8695-3-ard.biesheuvel@linaro.org/
 
-thanks,
+[PATCH v2 2/3] pci: designware: add separate driver for the MSI part of the RC
+https://lore.kernel.org/linux-pci/20170824184321.19432-3-ard.biesheuvel@linaro.org/
 
-greg k-h
+[PATCH v3 0/2] pci: add support for firmware initialized designware RCs
+https://lore.kernel.org/linux-pci/20170828180437.2646-1-ard.biesheuvel@linaro.org/
+
+
+Regards,
+Alan Mikhak
 
 _______________________________________________
 linux-arm-kernel mailing list
