@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D992915FBCB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 01:55:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43C8415FC20
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 15 Feb 2020 02:40:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=UCr/na8sgFsukssaO7eQHmZLn1ssgTCJqlng7D70bAo=; b=HN/OgKJ07FtXys/6oI6KiitO95
-	nlR7J/wlSN037csT3gWXlIdhOWW2D1mcKAFUAsHYNOu4R/nmSFDQfzfXtoshpwrq34J+tJh9o77oT
-	k6lXkBoFCI0MLVmjV2/QfSaX/IGXenS3NHxwGJpxhz2coVTnJUQ/v1d9+fnXFiGPYsRdKxkKTek2Q
-	tYSuxLvUYvsV9UUdnOe/rttyzKgrid1O0iV7O/sogHDeYn/AcLej54m/Mpn0ojsiZ4Lo56DYFZYYO
-	a1Dkjj5Nd1wIDtkzlW1w4Ty/nM7HO7XAOBwMwTpB2MgGmzfoXFykPGIxUZ2IaIqs4emdluBc5sIeF
-	Kz7os/3g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=goysm6LtNVCnaKsYwbJuR9r9DXAblR1unNNUUApejhY=; b=OBX3LcS5SfBnf+
+	jDAY2DmNPEhzAJy84yuSNmT8q460Sl0mC1iNEc/w9Dead+0YwVXrZ/NjUcdB+LO1FARmY8eZwodJS
+	BYzLJzZI8m0g3nosW0TMHr/Wa/P1j+NQvCryg/7Cdb1lSO2ECFuwLJTyhW6zJME326hRjQJx4Bsn0
+	XFCHBhpF/s+gjAOcPj8qWCukCqYhyO4Gx32YR/buq1cPJ822YtgNXGtBrvhLdPpFDBabGdqbLCl5r
+	EjCIsdLTAqmLhfiBjgw72E0SNcoFIMMNPjunWx9HnZaYvvEaUBwhxEYW/HP3BYPZKCaSSrkkMnCl3
+	G07cBogJTWAvIVX1SwWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2ljV-00062w-Qi; Sat, 15 Feb 2020 00:54:57 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1j2mRH-0007RG-V2; Sat, 15 Feb 2020 01:40:11 +0000
+Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2ljO-00062U-7R
- for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 00:54:51 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id m7so1124792pjs.0
+ id 1j2mQw-0007Pe-Am
+ for linux-arm-kernel@lists.infradead.org; Sat, 15 Feb 2020 01:39:56 +0000
+Received: by mail-ua1-x943.google.com with SMTP id c7so4267522uaf.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 14 Feb 2020 16:54:49 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=t/Ae0ThnHgseaBLN7DLSea9YhAAyHLCHWTCUQ/Cd0kU=;
- b=dmb7qpA2kFDG/NeGqhlDaCtOJWwEN5yo+psjRdIA/bxIrzPR3KzcxIxfolRXzD6CcP
- 2NC+PI/DxfYxt7rXTp8/PiZ1MGGbum2c4Kl5D03YD277KB61qw7nslgxLzjHjKHBhKcJ
- ZBsP0TljWgjefXI4xv3hkW+INuat00Dau0n8hyhSxpcHMPfWtp7ZgyCYqZznVJEEPtqG
- x+frDrsbZR9CKGFdbltKjXzek8iwS8kZGV0rJTshxAsX08Yr5lmS6KgA35GMs+Cr9XxZ
- OcaIJR0FTgSD16qySdGsQZIsrqWu058/ATIayvioSzsnYxp88B8ZMpiMzmRZiqdOQb83
- d02w==
+ Fri, 14 Feb 2020 17:39:47 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kMs0i+uoo9dEPE33t+AXfXB1++1njbxKLeTu5JqtYr0=;
+ b=fXNn7AqPrZ5ZwcZLjbkNrdxYZMTjnSacepUQ1h0/QR7892FFCnDn7C47Us/bBOetFQ
+ X01EKp+TRXzsQl9vd1FlE3GKII5nj2LbiJppR9s/S2uzzT4zkgje6NSiNxGdoxERSlWK
+ X5PypfkyXAc9TEycom6L8cgdPWAn8V93M3Y/ZexYz+o/TvKMLwHxv0cPaTDSTuVjESNE
+ WoUDTfsgE/FIneJ49vWD5j8PvgRKWutgdNraTDfzQZSQazElkfpYxqL8Jyg+Fjxjt76D
+ U0Nsmg15IT6ho38kecVo+Dr3/Y0NwKk68sqs5mDih8NUxyFnczcsucgY/Go1UUTmJTes
+ dM3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=t/Ae0ThnHgseaBLN7DLSea9YhAAyHLCHWTCUQ/Cd0kU=;
- b=p18MCrCGmsPYm9zoK3wshqN+R5AXtN0gDLCFvcJyugBxlN9JvliI3El28+jgTwIngm
- qlYxiYTol7T9wyrngE1RmBYyeACtHAaFBwMBtEijVXi5/+xGoXezA3z4/dtqN5OPhCbW
- 37KTFk+zeUCXNVs7/M7Kqt1TGxx2/7TGpqRVO76MjLuhERGo/M470YRxXb8ZQToLZH2r
- 9J2SPDrqOs/u0BhAY+BwuwzMWmB6gJuZIT8bZLavQb1hprqc9SNVEUViU+W/0Evpooi9
- 0ScA2NHwDAn9zfr2nnLfwm7dvvft6GKwm60l7sKrS9tB6THN52n2P/2Er5FM4gLkPUWJ
- 4KLA==
-X-Gm-Message-State: APjAAAX2xSmNUpFeLHEsy5gBzLjnnvefzW4sB1ZkbBMQctoiv5kXMH8e
- oZVcUr433LXLVaCXYWZ1zFNqzg==
-X-Google-Smtp-Source: APXvYqyjZLi/e9QST8sioy2HdXygGOdJ9mbIInRhBVQPczjn+5/OJPK4T7vMHeDuqoNVw8iYHt85OA==
-X-Received: by 2002:a17:902:bb88:: with SMTP id
- m8mr5848515pls.63.1581728088542; 
- Fri, 14 Feb 2020 16:54:48 -0800 (PST)
-Received: from nuc7.sifive.com ([12.206.222.5])
- by smtp.gmail.com with ESMTPSA id b25sm8108857pfo.38.2020.02.14.16.54.47
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Fri, 14 Feb 2020 16:54:47 -0800 (PST)
-From: Alan Mikhak <alan.mikhak@sifive.com>
-X-Google-Original-From: Alan Mikhak < alan.mikhak@sifive.com >
-To: ard.biesheuvel@linaro.org
-Subject: [PATCH 2/3] pci: designware: add separate driver for the MSI part of
- the RC
-Date: Fri, 14 Feb 2020 16:54:25 -0800
-Message-Id: <1581728065-5862-1-git-send-email-alan.mikhak@sifive.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <20170821192907.8695-3-ard.biesheuvel@linaro.org>
-References: <20170821192907.8695-3-ard.biesheuvel@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kMs0i+uoo9dEPE33t+AXfXB1++1njbxKLeTu5JqtYr0=;
+ b=nvu/oryn/wqUTcGW0eQGFBYj+j41YHlFEUw5avAX1WcfMWHWmU5BbMB098v1L0le/K
+ jLMQh6N6NpC3sBd4+Ycf2Xe1e1QZHUggPPNJobXZ3xR2QEcxNOqR7CJUtoRRjmFJRM0W
+ bPdDJ8mvJFHiA94AjlY20GBLBhMTtA75fT0SXbTmkLGNFv38vW3uwvepNngIYYl6/XO6
+ QYM4M+kZzQcspyoa8NytRSqps3gZF60j1OV6ofC5Tok7ym8avN0hH3K5xzhuTn8SCAIg
+ Koe4XhM0fyh5Cy/x2Qfjwbk6nHoOzuzJnPVAs9reRQS/v8zTdG8mtsXbHjasLXtCSqyo
+ Gilg==
+X-Gm-Message-State: APjAAAXnBAN3U4lRSta+KXwNYnsQ0jKYATx2W32wqRaSrKI9yhWownBy
+ 7gmKn5119T5mD4OMSij2p+cScn6T58u/dvvV+z6WUw==
+X-Google-Smtp-Source: APXvYqyRF8/JMZJhylgjcPF+Qhj2QxTzBoJcSQm2A3xYu1dpgHXvJA+yiR3FUgFfdj8dXU/4MSre36eYYR9XKPHdYUk=
+X-Received: by 2002:ab0:2006:: with SMTP id v6mr2955494uak.22.1581730786453;
+ Fri, 14 Feb 2020 17:39:46 -0800 (PST)
+MIME-Version: 1.0
+References: <20200214062637.216209-1-evanbenn@chromium.org>
+ <20200214172512.2.I7c8247c29891a538f258cb47828d58acf22c95a2@changeid>
+ <804d3cc5-688d-7025-cb87-10b9616f4d9b@roeck-us.net>
+ <CAODwPW-d_PpV4Jhg2CC+7Tfyrrh=gh6hRfcEKFb4gj+LB6vrWw@mail.gmail.com>
+In-Reply-To: <CAODwPW-d_PpV4Jhg2CC+7Tfyrrh=gh6hRfcEKFb4gj+LB6vrWw@mail.gmail.com>
+From: Evan Benn <evanbenn@google.com>
+Date: Sat, 15 Feb 2020 12:39:22 +1100
+Message-ID: <CAKz_xw3NH7saKUda3o0uz3qf4rSc63Yn6E0KrHW=ncxVsk78ZQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] watchdog: Add new arm_smc_wdt watchdog driver
+To: Julius Werner <jwerner@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_165450_330872_16000017 
-X-CRM114-Status: UNSURE (   9.45  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200214_173950_404888_F5C7517E 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -85,6 +86,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,37 +99,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao.Pinto@synopsys.com, graeme.gregory@linaro.org, marc.zyngier@arm.com,
- jingoohan1@gmail.com, leif.lindholm@linaro.org, linux-pci@vger.kernel.org,
- bhelgaas@google.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Rob Herring <robh@kernel.org>, Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-watchdog@vger.kernel.org, Anson Huang <Anson.Huang@nxp.com>,
+ Dinh Nguyen <dinguyen@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ LKML <linux-kernel@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Olof Johansson <olof@lixom.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Evan Benn <evanbenn@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>, Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi..
+> > As written, one would assume this to work on all systems implementing
+> > ARM secure firmware, which is not the case. Please select a different
+> > name, and provide information about the systems where this is actually
+> > supported.
 
-What is the right approach for adding MSI support for the generic
-Linux PCI host driver?
+> Back when I wrote this I was hoping it could be something that other
+> platforms can pick up if they want to, but that hasn't happened yet
+> and the code on the Trusted Firmware side is still MediaTek-specific.
 
-I came across this patch which seems to address a similar
-situation. It seems to have been dropped in v3 of the patchset
-with the explanation "drop MSI patch [for now], since it
-turns out we may not need it".
+Thanks, I will re-word as mediatek,mt8173-smc-wdt, and address other comments.
+In the event this does become a standard arm watchdog interface, I assume
+but do not know that it will be straightforward to change the name here.
 
-[PATCH 2/3] pci: designware: add separate driver for the MSI part of the RC
-https://lore.kernel.org/linux-pci/20170821192907.8695-3-ard.biesheuvel@linaro.org/
+I am not sure how to proceed with modifying Julius' authored patch in
+kernel preferred way.
+I can add myself as co-authored-by and modify patch 2, or add a patch
+3 to make preferred changes.
 
-[PATCH v2 2/3] pci: designware: add separate driver for the MSI part of the RC
-https://lore.kernel.org/linux-pci/20170824184321.19432-3-ard.biesheuvel@linaro.org/
-
-[PATCH v3 0/2] pci: add support for firmware initialized designware RCs
-https://lore.kernel.org/linux-pci/20170828180437.2646-1-ard.biesheuvel@linaro.org/
-
-
-Regards,
-Alan Mikhak
+I will use approach 2 for now unless otherwise advised.
 
 _______________________________________________
 linux-arm-kernel mailing list
