@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F81B16057B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 19:27:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C06416057C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 19:27:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6fqP+q+bCL1cK4dK7q24aNkWFmp8jn3N9w755Gci1Og=; b=KxAKxrp3Z76lKyO+dKunizGAHT
-	eBYs4VN8jdsPPDy0IYvmAO/bedBEv8p/DGSCMORfBLLVWQ0WGqX1frBiDAUURz/Jng/Zf/vhZcs2+
-	DLI/YXkXuLQcL24dDRqvw5Fl5MCOq0FIAAui2QAh8tpwXvBW4sF057Zc50eQhnkUQ2oGMmju0Ea/d
-	Jv8PzWPwRJVaPwcydkI1ltLgFkKGW3AFhePLibGv8wCRvQipfRnjVpKWw8L4duUsGZkPOs7YDbX0+
-	H2gISfqnmg6nXpxlOUqF0vx6GgEJY/kqV/PyBlv5v0MlBnGNQlGDzVFPxXAFp0wrDrRp5OHz6CqKA
-	dZffP26g==;
+	bh=oZA0O7FucI05n9K9DqXaTNurzLSfgWjZh1bQ7uYdzzI=; b=Ktyligb+qOhuCyeXObfZdMC8V/
+	ZjWRvazV3sflv/sHDDRFGeKQYIktqAwk6+a7Wb5CWH/wxp+o0XBF1TdJ2u3aYimtpOlXBRo92BTO0
+	cYoWBKYCFzB4UZNFBE7YKIP21b63DGMUFs4sPJQAautDg8vLnOWnP72FkmnY2NrS/rojdUmAjdm95
+	si14mpUnewgzVDKS06l/ng/6B/bC6PJ4tvFIa71WO8itGA2YjlmUJhFh87F7CRE4ppBcY8x5e9sED
+	UJBayGT517o15W9r1KXOwYx6Lh0OLLw3dp8h08YH+5zoAMAq81DNV5jjthIr/qoiK2QMqLSUM0w9U
+	ynNdZzyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3OdB-0001aG-5b; Sun, 16 Feb 2020 18:27:01 +0000
+	id 1j3OdT-0001o9-8u; Sun, 16 Feb 2020 18:27:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3OaK-0006Tq-O6
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 18:24:09 +0000
+ id 1j3OaM-0006V7-Tn
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 18:24:10 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1234B2465D;
- Sun, 16 Feb 2020 18:24:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BAE3624125;
+ Sun, 16 Feb 2020 18:24:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581877443;
- bh=M6CtQIWxWimc9CTNa99EsOazRYurLdEN+0lz9EbRkzY=;
+ s=default; t=1581877445;
+ bh=535G2Z6StN4Ag1aO0gRi6xti0zt7h38+r39I0O3lAk8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HF+fSYYCHuFY90WdfozOQ/Gg+MLB1ebGPUlwlpGiC5OyQbuTT7J7qecISnVTyY8Fz
- w7Z1mlXr2uRiv6VsFCnhx8poDOo8eS3nvWJQA9Hw/NeTHiAOqiPapXEntfifvNZvo3
- hoes4JQxVBBy9jejNEh4C6g5Oiox3GkIeL9mvBl4=
+ b=sFiyKrgOP9c19cScnbZQghLN4QA0LCqNwm75+aGlG0FUblmVzZv8FqPCDO2ubjczS
+ Ed+qzRTyxJ5mXoRvja33ngrr8OrRohFwRgACnrScf/qSmZet864xPbdbqYn92FPQa1
+ OnwbKMFZ8bHrSiFCDSNdODl8UvwC3SpRWaifqMwU=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [PATCH 10/18] efi/ia64: switch to efi_config_parse_tables()
-Date: Sun, 16 Feb 2020 19:23:26 +0100
-Message-Id: <20200216182334.8121-11-ardb@kernel.org>
+Subject: [PATCH 11/18] efi: make efi_config_init() x86 only
+Date: Sun, 16 Feb 2020 19:23:27 +0100
+Message-Id: <20200216182334.8121-12-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200216182334.8121-1-ardb@kernel.org>
 References: <20200216182334.8121-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_102405_046470_53F27FFD 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200216_102407_287272_104C3647 
+X-CRM114-Status: GOOD (  12.96  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,32 +84,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-IA64 calls efi_config_parse_tables() via efi_config_init(), which
-does an explicit memremap() of the tables, which is unnecessary
-on IA64. So let's call efi_config_parse_tables() directly, passing
-the __va() of the config table array.
+The efi_config_init() routine is no longer shared with ia64 so let's
+move it into the x86 arch code before making further x86 specific
+changes to it.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/ia64/kernel/efi.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ arch/x86/platform/efi/efi.c | 30 +++++++++++++++++++
+ drivers/firmware/efi/efi.c  | 31 --------------------
+ include/linux/efi.h         |  1 -
+ 3 files changed, 30 insertions(+), 32 deletions(-)
 
-diff --git a/arch/ia64/kernel/efi.c b/arch/ia64/kernel/efi.c
-index 81bc5031a115..3b5cf551489c 100644
---- a/arch/ia64/kernel/efi.c
-+++ b/arch/ia64/kernel/efi.c
-@@ -531,7 +531,10 @@ efi_init (void)
+diff --git a/arch/x86/platform/efi/efi.c b/arch/x86/platform/efi/efi.c
+index 777373423a67..26d905e6b579 100644
+--- a/arch/x86/platform/efi/efi.c
++++ b/arch/x86/platform/efi/efi.c
+@@ -434,6 +434,36 @@ static int __init efi_systab_init(u64 phys)
+ 	return 0;
+ }
  
- 	palo_phys      = EFI_INVALID_TABLE_ADDR;
++static int __init efi_config_init(efi_config_table_type_t *arch_tables)
++{
++	void *config_tables;
++	int sz, ret;
++
++	if (efi.systab->nr_tables == 0)
++		return 0;
++
++	if (efi_enabled(EFI_64BIT))
++		sz = sizeof(efi_config_table_64_t);
++	else
++		sz = sizeof(efi_config_table_32_t);
++
++	/*
++	 * Let's see what config tables the firmware passed to us.
++	 */
++	config_tables = early_memremap(efi.systab->tables,
++				       efi.systab->nr_tables * sz);
++	if (config_tables == NULL) {
++		pr_err("Could not map Configuration table!\n");
++		return -ENOMEM;
++	}
++
++	ret = efi_config_parse_tables(config_tables, efi.systab->nr_tables, sz,
++				      arch_tables);
++
++	early_memunmap(config_tables, efi.systab->nr_tables * sz);
++	return ret;
++}
++
+ void __init efi_init(void)
+ {
+ 	if (IS_ENABLED(CONFIG_X86_32) &&
+diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
+index 80fe0044f2e2..2bfd6c0806ce 100644
+--- a/drivers/firmware/efi/efi.c
++++ b/drivers/firmware/efi/efi.c
+@@ -601,37 +601,6 @@ int __init efi_config_parse_tables(void *config_tables, int count, int sz,
+ 	return 0;
+ }
  
--	if (efi_config_init(arch_tables) != 0)
-+	if (efi_config_parse_tables(__va(efi_systab->tables),
-+				    efi_systab->nr_tables,
-+				    sizeof(efi_config_table_t),
-+				    arch_tables) != 0)
- 		return;
+-int __init efi_config_init(efi_config_table_type_t *arch_tables)
+-{
+-	void *config_tables;
+-	int sz, ret;
+-
+-	if (efi.systab->nr_tables == 0)
+-		return 0;
+-
+-	if (efi_enabled(EFI_64BIT))
+-		sz = sizeof(efi_config_table_64_t);
+-	else
+-		sz = sizeof(efi_config_table_32_t);
+-
+-	/*
+-	 * Let's see what config tables the firmware passed to us.
+-	 */
+-	config_tables = early_memremap(efi.systab->tables,
+-				       efi.systab->nr_tables * sz);
+-	if (config_tables == NULL) {
+-		pr_err("Could not map Configuration table!\n");
+-		return -ENOMEM;
+-	}
+-
+-	ret = efi_config_parse_tables(config_tables, efi.systab->nr_tables, sz,
+-				      arch_tables);
+-
+-	early_memunmap(config_tables, efi.systab->nr_tables * sz);
+-	return ret;
+-}
+-
+-
+ int __init efi_systab_check_header(const efi_table_hdr_t *systab_hdr,
+ 				   int min_major_version)
+ {
+diff --git a/include/linux/efi.h b/include/linux/efi.h
+index 287510e84dfb..d61c25fd5824 100644
+--- a/include/linux/efi.h
++++ b/include/linux/efi.h
+@@ -608,7 +608,6 @@ extern int __init efi_memmap_split_count(efi_memory_desc_t *md,
+ extern void __init efi_memmap_insert(struct efi_memory_map *old_memmap,
+ 				     void *buf, struct efi_mem_range *mem);
  
- 	if (palo_phys != EFI_INVALID_TABLE_ADDR)
+-extern int efi_config_init(efi_config_table_type_t *arch_tables);
+ #ifdef CONFIG_EFI_ESRT
+ extern void __init efi_esrt_init(void);
+ #else
 -- 
 2.17.1
 
