@@ -2,62 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E21B160589
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 19:32:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FA9916059D
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 19:54:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dPU964RlLhklmUnjb4n2J/O/rM2d3+fq1fvkpkrn5Cs=; b=u9qqr6PMnMEcCr
-	PKq1A5mf/gn/oJEmDcj4WuJZSlOkQJAiyOvQM5oO47qIR8eTPSQaP17oC5YJGziSvOJ2tAQKBVSQQ
-	DqELzFAHHcxJdPcgoleWVKW08RVfBbVjcgYCfaUb5wvqdKc+n/Lyar+LGhQyDP9yNigyKdVNAaxZ1
-	uptumGOIXaP3btNkqkbpQw7tFypjCNuqyie3YtguV/6a6v/P/OHZXqVeKZ6rtjaSVhOr9MMVaZP7L
-	VrhUoHz+f3IvNaYRHMR7Ri+gyJimGSlmNi1k169ETJflHw1wXchNOtjBdE8BwXC5L2qrui3xPGQUi
-	XC+fvbsLY4FWvGLcCDFw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kjwrzzPrQY1mCYmGLcoW79398iqK3B7DH2t1xThqgvo=; b=JgLS8gbsEe0MjT
+	FYMuDmoDzf3TuJdtpBUtQcO+VylZElpyDNr2YnlxAQvzv92J6alcbf15oPlCiiCsgCNYwQJPQRTO0
+	e6Z/u1YKZUARzkMuYVhgeN785yRV56b03MVhnpGsDpx3G+TObpQrsWSeOXQNS2HAIMWdcGYhwtpin
+	sQSl8tXdTVmbhXMaKZaPwBi0eELvA9MrEb0QX5c/N1OUFMoV7OyLshyl0hUT7sbUMGaCcaX7/7kog
+	YKj1INE5im3hCg8TuRqlwiHAinD/vSYTzHHizXiW3sqckYZwtX9Zzj8336QA5U/nBzk8P4rXhb6rx
+	ZiG9cn+EiYcwpOsdNz/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3OiK-0005QB-D8; Sun, 16 Feb 2020 18:32:20 +0000
+	id 1j3P39-0002wj-Ts; Sun, 16 Feb 2020 18:53:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3OiB-0005PN-Ru
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 18:32:13 +0000
-Received: from mail-wm1-f50.google.com (mail-wm1-f50.google.com
- [209.85.128.50])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1j3P2y-0002vC-P4
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 18:53:41 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 424262086A
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Feb 2020 18:32:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A672E20857;
+ Sun, 16 Feb 2020 18:53:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581877931;
- bh=EDzR1SWoeTP3PS53iYm+v8llO5Y8uiP2GNaxmMQ4++U=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=KzopiJlktkgo2BlJO3vgl9MaBGiKPsegU24YVDwiGiNOx04Jx3efc0f1wclBd3Bhn
- qNwAuE/6o4lvolmI2A1RjPmwU2me/Dpa28WarONn07FACnuW/Dh868BsbeNOBMXQaO
- T+iKtMs189lciumH3sR2ZYGPWH+hzmUcib4g5lr0=
-Received: by mail-wm1-f50.google.com with SMTP id m10so5809338wmc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Feb 2020 10:32:11 -0800 (PST)
-X-Gm-Message-State: APjAAAW/C8v/YtRVtsPlwtLvB/Wqtzvb71bD4JYSa05sR60kJl/28nq/
- +jYLjiJoqlXfXBxF8ByjejTWF26RkHarMBue7iB3og==
-X-Google-Smtp-Source: APXvYqw49cvCSIJYQeUyUb39Yo8eW5vIIraLjTmETS76Q9vf74bEtQkragmJ5CnqaAMS9OSHHTRcJG9ASHNzdzoQm8Y=
-X-Received: by 2002:a7b:c4cc:: with SMTP id g12mr18463603wmk.68.1581877929530; 
- Sun, 16 Feb 2020 10:32:09 -0800 (PST)
+ s=default; t=1581879219;
+ bh=CDMcIuGZauuEKnBrc2rOLv93aehoxJbaP6h3f0RnX18=;
+ h=From:To:Cc:Subject:Date:From;
+ b=hcLuvQ6t0pWiScsDk331LZ8xUf9I4J6C+AiHvBLI3vBXX3yrK/XbyHYS20LSJm7YS
+ X6PJnMmZQk1psVCfFEa5F8a92HT7yAYyrI5or5hNtb/dYcsUpg9QytOly26kPX5D2n
+ 0ayVE3bL7IL1dSbRJJwUUkf/Vakab8Ine9qDJ0Wc=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why.lan) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j3P2v-005iWD-O3; Sun, 16 Feb 2020 18:53:37 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+Subject: [PATCH 0/5] Random debug/PMU fixes for 5.6
+Date: Sun, 16 Feb 2020 18:53:19 +0000
+Message-Id: <20200216185324.32596-1-maz@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20200216182334.8121-1-ardb@kernel.org>
-In-Reply-To: <20200216182334.8121-1-ardb@kernel.org>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Sun, 16 Feb 2020 19:31:58 +0100
-X-Gmail-Original-Message-ID: <CAKv+Gu-4N6B0LPL1fn5C2EAh9y3ECZ=mSi92p0AyJf67mJoWmw@mail.gmail.com>
-Message-ID: <CAKv+Gu-4N6B0LPL1fn5C2EAh9y3ECZ=mSi92p0AyJf67mJoWmw@mail.gmail.com>
-Subject: Re: [PATCH 00/18] efi: clean up contents of struct efi
-To: linux-efi <linux-efi@vger.kernel.org>, Tony Luck <tony.luck@intel.com>, 
- "Yu, Fenghua" <fenghua.yu@intel.com>
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, peter.maydell@linaro.org,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_103211_942888_2CFD304B 
-X-CRM114-Status: GOOD (  20.44  )
+X-CRM114-CacheID: sfid-20200216_105340_827757_0B76CF60 
+X-CRM114-Status: UNSURE (   8.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,98 +88,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arvind Sankar <nivedita@alum.mit.edu>,
- the arch/x86 maintainers <x86@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Peter Maydell <peter.maydell@linaro.org>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-(+ Tony and Fenghua)
+Here's a few cleanups and fixes for 5.6, all around our debug and
+PMU ID register emulation:
 
-On Sun, 16 Feb 2020 at 19:23, Ard Biesheuvel <ardb@kernel.org> wrote:
->
-> The generic r/w singleton object 'struct efi efi' is currently being used
-> as a dumping ground for memory addresses of firmware tables that only have
-> significance for a single architecture, or only at boot time [whereas
-> struct efi is an object with indefinite lifetime, and which is exported
-> to modules]
->
-> Since we're expecting a new arrival that does affect all architectures,
-> which will need to be added to struct efi as well, let's do a cleanup
-> pass, and move out all the per-arch pieces and other stuff that does not
-> need to live in a global r/w struct.
->
-> As a side effect, I ran into some other things that can be refactored
-> so that more code is shared between architectures, or made x86 specific
-> if it is something that should maybe not have existed in the first place,
-> and x86 is the only architecture where we cannot remove it for compatibility
-> reasons.
->
-> Finally, we get rid of the struct efi::systab member, which we only need
-> at runtime to get at the 'runtime' pointer, so let's store that instead.
-> This allows us to drop some ugly handling of the remapped systab address,
-> which we cannot discover as easily as the remapped 'runtime' pointer.
->
-> Cc: nivedita@alum.mit.edu
-> Cc: x86@kernel.org
->
+1) Missing RES1 bit in DBGDIDR
+2) Limiting PMU version to v8.1
+3) Limiting debug version to ARMv8.0
+4) Support for ARMv8.4-PMU
 
-Apologies to the IA64 maintainers for forgetting to cc you.
+(1) was reported by Peter, (2) had a patch from Andrew Murray on the
+list, but it's been a while since he was going to rebase and fix it,
+so I did bite the bullet. (3) is needed until we implement the right
+thing with NV. (4) was too easy not to be done right away.
 
-The whole series can be found at
-https://lore.kernel.org/linux-efi/20200216182334.8121-1-ardb@kernel.org/
+Patch #2 is a cleanup that helps the following patches.
 
-Please let me know if you need me to resend with the missing cc's added.
+Unless someone objects, I'd like to take this into 5.6 (except maybe
+for the last patch).
 
+Marc Zyngier (5):
+  KVM: arm64: Fix missing RES1 in emulation of DBGBIDR
+  KVM: arm64: Refactor filtering of ID registers
+  kvm: arm64: Limit PMU version to ARMv8.1
+  KVM: arm64: Limit the debug architecture to ARMv8.0
+  KVM: arm64: Upgrade PMU support to ARMv8.4
 
+ arch/arm64/include/asm/sysreg.h |  2 ++
+ arch/arm64/kvm/sys_regs.c       | 35 +++++++++++++++++++++++++--------
+ 2 files changed, 29 insertions(+), 8 deletions(-)
 
+-- 
+2.20.1
 
-> Ard Biesheuvel (18):
->   efi: drop handling of 'boot_info' configuration table
->   efi/ia64: move HCDP and MPS table handling into IA64 arch code
->   efi: move UGA and PROP table handling to x86 code
->   efi: make rng_seed table handling local to efi.c
->   efi: move mem_attr_table out of struct efi
->   efi: make memreserve table handling local to efi.c
->   efi: merge EFI system table revision and vendor checks
->   efi/ia64: use existing helpers to locate ESI table
->   efi/ia64: use local variable for EFI system table address
->   efi/ia64: switch to efi_config_parse_tables()
->   efi: make efi_config_init() x86 only
->   efi: clean up config_parse_tables()
->   efi/x86: remove runtime table address from kexec EFI setup data
->   efi/x86: make fw_vendor, config_table and runtime sysfs nodes x86
->     specific
->   efi/x86: merge assignments of efi.runtime_version
->   efi: add 'runtime' pointer to struct efi
->   efi/arm: drop unnecessary references to efi.systab
->   efi/x86: drop 'systab' member from struct efi
->
->  arch/ia64/kernel/efi.c                  |  55 ++--
->  arch/ia64/kernel/esi.c                  |  21 +-
->  arch/x86/include/asm/efi.h              |   6 +-
->  arch/x86/kernel/asm-offsets_32.c        |   5 +
->  arch/x86/kernel/kexec-bzimage64.c       |   5 +-
->  arch/x86/platform/efi/efi.c             | 262 ++++++++++----------
->  arch/x86/platform/efi/efi_32.c          |  13 +-
->  arch/x86/platform/efi/efi_64.c          |  14 +-
->  arch/x86/platform/efi/efi_stub_32.S     |  21 +-
->  arch/x86/platform/efi/quirks.c          |   2 +-
->  drivers/firmware/efi/arm-init.c         |  68 ++---
->  drivers/firmware/efi/arm-runtime.c      |  18 --
->  drivers/firmware/efi/efi.c              | 237 ++++++++----------
->  drivers/firmware/efi/memattr.c          |  13 +-
->  drivers/firmware/efi/runtime-wrappers.c |   4 +-
->  drivers/firmware/pcdp.c                 |   8 +-
->  include/linux/efi.h                     |  76 +++---
->  17 files changed, 379 insertions(+), 449 deletions(-)
->
-> --
-> 2.17.1
->
 
 _______________________________________________
 linux-arm-kernel mailing list
