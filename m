@@ -2,99 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B7C21605B1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 20:12:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C879160611
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 20:54:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3aewt9UrGWQECcfIbSmtMQ4Oy4AmFUdrZ8OJ/g89RJE=; b=HloedL7n0HLHym
-	lRBvM1wQWx7M4l+wpD/0ZqvtlxJKh5k5rzBlUmWCth3ZeCgWu1xtsuM8JaHaXQD20ggdlcv6wwR+C
-	XwuJ9waKvJC/G1M3ruahv1jbfnx7IHgahi0IELo5GqWakaxSz88CrXJdd6oezA6c7D24coGzQmPll
-	TrNM/HTXa/iGIoOAu4/rXL8MtA0nsRzFlEhdzDJOy0Zc4nwwF2ljyFl8RhG4rTdKLY71J8kZVadhy
-	1WjlO7QtMq4qyr+AtZfHbHkIh9utAmgeoSPdTVr10R3byOfy/omzVvF1hMQPFEmPaw2DjkwXSa118
-	dagpyGRTWzTG+t3f7mJw==;
+	List-Owner; bh=K4LrnL6wTubfGMQFDdjJnLw2X4hmEcXUTcvKD+Vj6K0=; b=G63JWF4Dck5UND
+	iC88YBlZ1rxgrdK5F7vH3ukhdQoFnJB7zdAAu/Nv9bw5Xp/7KmqX0wylbOG0A7fs5U8TdEqhXtyYV
+	P4Dx0pO4ZmlopA1V2/acBAm+q2NyYbIG8XWtJN7XuNH+CuQGn8Mzn3cvtDIXLZ7NrgqPv2qSjGaN4
+	kPlkTEul8ZduAGMLCtqCzVdO74FrX9CM5vmTj/7xlKafqqDO6yXRb4QC+sNdCCGJqT5OJj+t5fjXU
+	ObwA+XzaCpvxo1sNoGEnJ7K093n7DN9zYUSZv8qK9WAr/1TEukN2xom4sJwT5Jv5g9I6K+yeJItt4
+	FbkMAyPaThNjgzI4+wDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3PLH-0003V9-3u; Sun, 16 Feb 2020 19:12:35 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1j3Q0C-00079r-DE; Sun, 16 Feb 2020 19:54:52 +0000
+Received: from mail-eopbgr1410093.outbound.protection.outlook.com
+ ([40.107.141.93] helo=JPN01-OS2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3PL7-0003UT-5n
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 19:12:27 +0000
-Received: by mail-qk1-x743.google.com with SMTP id w25so14249776qki.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Feb 2020 11:12:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:date:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=bD6rrmziSctqGG/b+du2AiEZ+/WT7QBGT4lN7okINdo=;
- b=iP1W7z13cHf0KgknW7F62ENi14GYqG0johntcLxrYg4M9Mh2fDwAGy2UN8JlZhKMvP
- jkUR6SAIo6QygRqd5+xf3p9nw43G9DmWlV7PRjk1hwEKXryxEmpmV+jsqz1QoOGD5hMe
- P2v4E1mJikpaC9TVcDb6kVWY7CUQEPWuoojP9IQbDzCSi8SqtEFBaDJp9aixAdEmHi9m
- i4VtQhnXsP0E2MYXKgITnhpagix0JU1EmsAb5ZKFCHddneYQ7/z1N7ZqAkbJKytQGYuw
- bXlU5weBQ/frcpS6qWwW9mK0l6ckcnB3ZkVBrQJgYRFzgVrnlB+Baf3rzBrWElH7Xnro
- 0O3w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:date:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=bD6rrmziSctqGG/b+du2AiEZ+/WT7QBGT4lN7okINdo=;
- b=QzgJNzeo2ZSt9TYlLeM2GuPbhqUHmO1D6Ibr/HaUa0WVep3b40/3rCgzNEoeG0qsE3
- tIjYwPh1wsBw1JHAKDiGjP4YjjCVKnd5x4PJANz5qmWmSpjz/floa4594IE/HiJW3ApN
- gP5whEVt/reoD5uPfHzn71pMRNhTRnvuVpguT38P/59p+izzYTKmuEgsCR+6bBTO3ZPt
- p9cPvbkudJK3iY70amFABibfiRiP8JNrCwYSD7ZR27VAVTupxdRFOivRk+HAAoEA+SxZ
- Uzk2+6Hvxwp7fTzC75yOIiaQGboUJSszWxbZ4hz7DbcEc+HYWkMhfuFSZW8erR5m5km7
- mXUA==
-X-Gm-Message-State: APjAAAXqlTjeDjGIt2xlFanbZLYgx9qcNRSY/KHhpT/Ebgq1w66feRDy
- IWqcSCKsdUcv0yi1PstBKd4=
-X-Google-Smtp-Source: APXvYqwfu5o0ZsmVsnXB4LYtScalYumpQCdwybEscNX+DLvQVEFk1pY7BpYLezWIlAbFeotE6QfI+w==
-X-Received: by 2002:a37:6785:: with SMTP id
- b127mr10455424qkc.240.1581880341431; 
- Sun, 16 Feb 2020 11:12:21 -0800 (PST)
-Received: from rani.riverdale.lan ([2001:470:1f07:5f3::b55f])
- by smtp.gmail.com with ESMTPSA id g11sm6100160qtc.48.2020.02.16.11.12.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 16 Feb 2020 11:12:21 -0800 (PST)
-From: Arvind Sankar <nivedita@alum.mit.edu>
-X-Google-Original-From: Arvind Sankar <arvind@rani.riverdale.lan>
-Date: Sun, 16 Feb 2020 14:12:19 -0500
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH 12/18] efi: clean up config_parse_tables()
-Message-ID: <20200216191219.GA589207@rani.riverdale.lan>
-References: <20200216182334.8121-1-ardb@kernel.org>
- <20200216182334.8121-13-ardb@kernel.org>
+ id 1j3Q03-00078o-PY
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 19:54:45 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Ferxquqvt0UCp/B/uDEgBRQ+2hjLn/VhY838Yt4NGJi7gcE0uFA7M38ZUv1xpJFsCKr+JVDHiX/z8sEWv9gT1mb/YVbLCV3/bOZW+eJtYZ1ZjrI898zVILACB4Z2a/tVOUiy1e/CYXuXdQTJnv2p0swItPREfYecQ/azU10CISPzJ+Dbx7K3efJhD0xtlw6N6Rwt9BFOJo0z0h4wOEHUD0nye4ren5IuUcPGY1JljwI2vaLyTyHJLm31PxzvtfVkG9sSW1NQI84BRm+NOe8ZNK29ISUD8Tk8mkfs1ZIP287r4Kz2OB0/xaEN/CROe8+psKfnMbThcdHXe/tRG0j0Eg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6JWHHdjximhgCT4QAkEXrYqy68MStrBcmJ2e94W3ZRs=;
+ b=Ga75TUHtJFfAIBQUmInjE5ZLLn4Y5urzfPDzClSyUFyQ6jsIobYjszAim5PpoFqmI5Jc6c6PW5OMKbGHGMMCZZU+QkI+UKjWUNfhpgNy+8wSE6+X7W5qll2O5xYfc1R7DcZdehCNt+bltEvugbtReXlMI1r7z4U+0IytSxcQ0U6vg6NXgqUkaEq4+oy4bWNGo2B/xAiLz4/XqKJPgfZUin7LfaWCjEgrDj9Pr5nNZIwt/RjHgqG66eDvbAV/TWfGoUApCe8XwixNE8KBXIbgW/dEUfePzOFD7YLRm+k+1cP3h7Q96yHQLo7bXFRd1yjZfYGqOf2R0zWteGn0LwDH1w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=renesas.com; dmarc=pass action=none header.from=renesas.com;
+ dkim=pass header.d=renesas.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=renesasgroup.onmicrosoft.com; s=selector2-renesasgroup-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=6JWHHdjximhgCT4QAkEXrYqy68MStrBcmJ2e94W3ZRs=;
+ b=ffzrYpUYEplTwgwRRnMQoA84WozMSqpIJJ8onkJr9PM7H2EId/MRdIpVYcJpZGMy5uop6kk4ID39OraaUGTnLO68qGuG3W59i9bgC9AlhiRxJcbZU0IfQFjOvnO3fCIIgSyGPORrOu/S/mDEoQQLusRtq5DV8IclVzreHYCJYbM=
+Received: from TYAPR01MB2285.jpnprd01.prod.outlook.com (52.133.177.145) by
+ TYAPR01MB3712.jpnprd01.prod.outlook.com (20.178.137.141) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2729.23; Sun, 16 Feb 2020 19:54:34 +0000
+Received: from TYAPR01MB2285.jpnprd01.prod.outlook.com
+ ([fe80::1045:4879:77ed:8a70]) by TYAPR01MB2285.jpnprd01.prod.outlook.com
+ ([fe80::1045:4879:77ed:8a70%7]) with mapi id 15.20.2729.028; Sun, 16 Feb 2020
+ 19:54:34 +0000
+From: Chris Paterson <Chris.Paterson2@renesas.com>
+To: Geert Uytterhoeven <geert@linux-m68k.org>, Arnd Bergmann <arnd@arndb.de>
+Subject: RE: [PATCH] vfs: keep inodes with page cache off the inode shrinker
+ LRU
+Thread-Topic: [PATCH] vfs: keep inodes with page cache off the inode shrinker
+ LRU
+Thread-Index: AQHV4UBCokgUzaN+lUSpKIEPQqBkX6gXQFUAgAIZNoCAAsk4AIAAXS4AgAEY+wCAAKfGYA==
+Date: Sun, 16 Feb 2020 19:54:34 +0000
+Message-ID: <TYAPR01MB228505DD9E7C85F9FA4AA785B7170@TYAPR01MB2285.jpnprd01.prod.outlook.com>
+References: <20200211175507.178100-1-hannes@cmpxchg.org>
+ <29b6e848ff4ad69b55201751c9880921266ec7f4.camel@surriel.com>
+ <20200211193101.GA178975@cmpxchg.org>
+ <20200211154438.14ef129db412574c5576facf@linux-foundation.org>
+ <CAHk-=wiGbz3oRvAVFtN-whW-d2F-STKsP1MZT4m_VeycAr1_VQ@mail.gmail.com>
+ <20200211164701.4ac88d9222e23d1e8cc57c51@linux-foundation.org>
+ <CAHk-=wg1ZDADD3Vuw_sXhmBOrQ2xsp8YWxmtWiA6vG0RT-ZQ+A@mail.gmail.com>
+ <20200212085004.GL25745@shell.armlinux.org.uk>
+ <CAK8P3a3pzgVvwyDhHPoiSOqyv+h_ixbsdWMqG3sELenRJqFuew@mail.gmail.com>
+ <CAMuHMdV8-=dj5n-FM1nHjXq1DhkJVOh4rLFxERt33jAQmU4h_A@mail.gmail.com>
+ <CAK8P3a0m574dHYuKBPLf6q2prnbFxX1w7xe4-JX-drN6dqH6TQ@mail.gmail.com>
+ <CAMuHMdVpTngVXUnLzpS3hZWuVg97GVTf2Y3X8md--41AtaD1Ug@mail.gmail.com>
+In-Reply-To: <CAMuHMdVpTngVXUnLzpS3hZWuVg97GVTf2Y3X8md--41AtaD1Ug@mail.gmail.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Chris.Paterson2@renesas.com; 
+x-originating-ip: [176.27.142.199]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 2a184311-dcf4-4352-d7db-08d7b31a0c02
+x-ms-traffictypediagnostic: TYAPR01MB3712:
+x-microsoft-antispam-prvs: <TYAPR01MB371261E645276A94CEBBDBE6B7170@TYAPR01MB3712.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6430;
+x-forefront-prvs: 03152A99FF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(396003)(366004)(136003)(376002)(346002)(39850400004)(199004)(189003)(4326008)(33656002)(81156014)(8936002)(81166006)(86362001)(8676002)(7416002)(71200400001)(478600001)(55016002)(9686003)(5660300002)(7696005)(76116006)(2906002)(53546011)(66946007)(6506007)(316002)(54906003)(110136005)(186003)(26005)(66476007)(66556008)(66446008)(52536014)(64756008);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:TYAPR01MB3712;
+ H:TYAPR01MB2285.jpnprd01.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: renesas.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 3zKmvziL4Tsvl8IkfZo1A8khxZlxiW38F+8fRUxjK1lLm8BltTitRB3BET0b+CiTpzKKpDiLObNdJqZxNYmiqAs8g56JcR3Lrjj978pW1G4kIAGLmhF8n09w3aJkoqgnIgCaNaZ5S0yZECWb16wO4CsxJbFyDnulsOdxBOe1yk+9egDgA2TjpiUr/n5gIIdUBR0G0nNhTUXukb/b8Ot+PGO3cleMnrHjRHpTFxv4D2Odfs2ishbXDW3B5gikGT1OfErRHzpjJ9CWBqnsVQVGTLjKfzkzFZh1rk4rrPea0QYYVV3rf5mke/bRpq3LkLL4IMxPt3HCTOrDlY62WXomWlRfk00bFMknPOaRxiBEOEiT2Md9OU9rkCv7paYfsn4x61OMyU8AUYs5bEfDQN+3JpLgQwmN0QPSiyC2aJ8NbHe0V4PIuz3498tr1d/dHsHi
+x-ms-exchange-antispam-messagedata: Zr4Dz1d7bB/W52KB4vH2WwEm7Oi3eCITMTQXP6o1Dv79YGCsj8JboLRuAN6b0giuw73HKxlMIW1ybRx8rbJRzfIdbcjIhiq4osprr2X/8kqZYRqDSXkuoZMkKFykCNZO5KFvyXw3hSLLVJWRWfGvcw==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200216182334.8121-13-ardb@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: renesas.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2a184311-dcf4-4352-d7db-08d7b31a0c02
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Feb 2020 19:54:34.4371 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 53d82571-da19-47e4-9cb4-625a166a4a2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: L5IeZBppSCXHAIcaU4f0oJIU7OcbJefultakuQC9+zbn1JifeG5c/EBWiKMxgRQJ7dkcNtl2PJWezG/2RZuP+imBTZ1iIA+vrh5Hf3IKJLs=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TYAPR01MB3712
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_111225_224081_7228B8C4 
-X-CRM114-Status: GOOD (  20.65  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20200216_115443_867777_A21776CE 
+X-CRM114-Status: GOOD (  19.65  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [niveditas98[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [40.107.141.93 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [niveditas98[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,221 +130,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: x86@kernel.org, nivedita@alum.mit.edu, linux-efi@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Hocko <mhocko@suse.com>, Rik van Riel <riel@surriel.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Santosh Shilimkar <ssantosh@kernel.org>, Dave Chinner <david@fromorbit.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux-MM <linux-mm@kvack.org>, Yafang Shao <laoar.shao@gmail.com>,
+ Al Viro <viro@zeniv.linux.org.uk>,
+ "cip-dev@lists.cip-project.org" <cip-dev@lists.cip-project.org>,
+ Johannes Weiner <hannes@cmpxchg.org>,
+ linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ "kernel-team@fb.com" <kernel-team@fb.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Roman Gushchin <guro@fb.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Feb 16, 2020 at 07:23:28PM +0100, Ard Biesheuvel wrote:
-> config_parse_tables() is a jumble of pointer arithmetic, due to the
-> fact that on x86, we may be dealing with firmware whose native word
-> size differs from the kernel's.
-> 
-> This is not a concern on other architectures, and doesn't quite
-> justify the state of the code, so let's clean it up by adding a
-> non-x86 code path, constifying statically allocated tables and
-> replacing preprocessor conditionals with IS_ENABLED() checks.
-> 
-> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> ---
->  arch/ia64/kernel/efi.c          |  3 +-
->  arch/x86/platform/efi/efi.c     |  6 +--
->  drivers/firmware/efi/arm-init.c |  5 +--
->  drivers/firmware/efi/efi.c      | 47 ++++++++++----------
->  include/linux/efi.h             |  5 ++-
->  5 files changed, 32 insertions(+), 34 deletions(-)
-> 
-> diff --git a/arch/ia64/kernel/efi.c b/arch/ia64/kernel/efi.c
-> index 3b5cf551489c..f69f3fe0532e 100644
-> --- a/arch/ia64/kernel/efi.c
-> +++ b/arch/ia64/kernel/efi.c
-> @@ -56,7 +56,7 @@ unsigned long __initdata esi_phys = EFI_INVALID_TABLE_ADDR;
->  unsigned long hcdp_phys = EFI_INVALID_TABLE_ADDR;
->  unsigned long sal_systab_phys = EFI_INVALID_TABLE_ADDR;
->  
-> -static __initdata efi_config_table_type_t arch_tables[] = {
-> +static const efi_config_table_type_t arch_tables[] __initconst = {
->  	{ESI_TABLE_GUID, "ESI", &esi_phys},
->  	{HCDP_TABLE_GUID, "HCDP", &hcdp_phys},
->  	{MPS_TABLE_GUID, "MPS", &mps_phys},
-> @@ -533,7 +533,6 @@ efi_init (void)
->  
->  	if (efi_config_parse_tables(__va(efi_systab->tables),
->  				    efi_systab->nr_tables,
-> -				    sizeof(efi_config_table_t),
->  				    arch_tables) != 0)
->  		return;
->  
-> diff --git a/arch/x86/platform/efi/efi.c b/arch/x86/platform/efi/efi.c
-> index 26d905e6b579..f7025b9075b4 100644
-> --- a/arch/x86/platform/efi/efi.c
-> +++ b/arch/x86/platform/efi/efi.c
-> @@ -60,7 +60,7 @@ static u64 efi_systab_phys __initdata;
->  static unsigned long prop_phys = EFI_INVALID_TABLE_ADDR;
->  static unsigned long uga_phys = EFI_INVALID_TABLE_ADDR;
->  
-> -static efi_config_table_type_t arch_tables[] __initdata = {
-> +static const efi_config_table_type_t arch_tables[] __initconst = {
->  	{EFI_PROPERTIES_TABLE_GUID, "PROP", &prop_phys},
->  	{UGA_IO_PROTOCOL_GUID, "UGA", &uga_phys},
->  #ifdef CONFIG_X86_UV
-> @@ -434,7 +434,7 @@ static int __init efi_systab_init(u64 phys)
->  	return 0;
->  }
->  
-> -static int __init efi_config_init(efi_config_table_type_t *arch_tables)
-> +static int __init efi_config_init(const efi_config_table_type_t *arch_tables)
->  {
->  	void *config_tables;
->  	int sz, ret;
-> @@ -457,7 +457,7 @@ static int __init efi_config_init(efi_config_table_type_t *arch_tables)
->  		return -ENOMEM;
->  	}
->  
-> -	ret = efi_config_parse_tables(config_tables, efi.systab->nr_tables, sz,
-> +	ret = efi_config_parse_tables(config_tables, efi.systab->nr_tables,
->  				      arch_tables);
->  
->  	early_memunmap(config_tables, efi.systab->nr_tables * sz);
-> diff --git a/drivers/firmware/efi/arm-init.c b/drivers/firmware/efi/arm-init.c
-> index a656bfcd7e27..d1f44c847841 100644
-> --- a/drivers/firmware/efi/arm-init.c
-> +++ b/drivers/firmware/efi/arm-init.c
-> @@ -55,7 +55,7 @@ static phys_addr_t efi_to_phys(unsigned long addr)
->  
->  static __initdata unsigned long screen_info_table = EFI_INVALID_TABLE_ADDR;
->  
-> -static __initdata efi_config_table_type_t arch_tables[] = {
-> +static const efi_config_table_type_t arch_tables[] __initconst = {
->  	{LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID, NULL, &screen_info_table},
->  	{NULL_GUID, NULL, NULL}
->  };
-> @@ -85,7 +85,7 @@ static void __init init_screen_info(void)
->  
->  static int __init uefi_init(void)
->  {
-> -	void *config_tables;
-> +	efi_config_table_t *config_tables;
->  	size_t table_size;
->  	int retval;
->  
-> @@ -118,7 +118,6 @@ static int __init uefi_init(void)
->  		goto out;
->  	}
->  	retval = efi_config_parse_tables(config_tables, efi.systab->nr_tables,
-> -					 sizeof(efi_config_table_t),
->  					 arch_tables);
->  
->  	if (!retval)
-> diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
-> index 2bfd6c0806ce..db1fe765380f 100644
-> --- a/drivers/firmware/efi/efi.c
-> +++ b/drivers/firmware/efi/efi.c
-> @@ -460,7 +460,7 @@ void __init efi_mem_reserve(phys_addr_t addr, u64 size)
->  	efi_arch_mem_reserve(addr, size);
->  }
->  
-> -static __initdata efi_config_table_type_t common_tables[] = {
-> +static const efi_config_table_type_t common_tables[] __initconst = {
->  	{ACPI_20_TABLE_GUID, "ACPI 2.0", &efi.acpi20},
->  	{ACPI_TABLE_GUID, "ACPI", &efi.acpi},
->  	{SMBIOS_TABLE_GUID, "SMBIOS", &efi.smbios},
-> @@ -477,9 +477,9 @@ static __initdata efi_config_table_type_t common_tables[] = {
->  	{NULL_GUID, NULL, NULL},
->  };
->  
-> -static __init int match_config_table(efi_guid_t *guid,
-> +static __init int match_config_table(const efi_guid_t *guid,
->  				     unsigned long table,
-> -				     efi_config_table_type_t *table_types)
-> +				     const efi_config_table_type_t *table_types)
->  {
->  	int i;
->  
-> @@ -498,39 +498,38 @@ static __init int match_config_table(efi_guid_t *guid,
->  	return 0;
->  }
->  
-> -int __init efi_config_parse_tables(void *config_tables, int count, int sz,
-> -				   efi_config_table_type_t *arch_tables)
-> +int __init efi_config_parse_tables(const efi_config_table_t *config_tables,
-> +				   int count,
-> +				   const efi_config_table_type_t *arch_tables)
->  {
-> -	void *tablep;
-> +	const efi_config_table_64_t *tbl64 = (void *)config_tables;
-> +	const efi_config_table_32_t *tbl32 = (void *)config_tables;
-> +	const efi_guid_t *guid;
-> +	unsigned long table;
->  	int i;
->  
-> -	tablep = config_tables;
->  	pr_info("");
->  	for (i = 0; i < count; i++) {
-> -		efi_guid_t guid;
-> -		unsigned long table;
-> -
-> -		if (efi_enabled(EFI_64BIT)) {
-> -			u64 table64;
-> -			guid = ((efi_config_table_64_t *)tablep)->guid;
-> -			table64 = ((efi_config_table_64_t *)tablep)->table;
-> -			table = table64;
-> -#ifndef CONFIG_64BIT
-> -			if (table64 >> 32) {
-> +		if (!IS_ENABLED(CONFIG_X86)) {
-> +			guid = &config_tables[i].guid;
-> +			table = (unsigned long)config_tables[i].table;
-> +		} else if (efi_enabled(EFI_64BIT)) {
-> +			guid = &tbl64[i].guid;
-> +			table = tbl64[i].table;
-> +
-> +			if (IS_ENABLED(CONFIG_X64_32) &&
-					      ^^^ typo, should be X86
+Hello Arnd, Geert,
 
-> +			    tbl64[i].table > U32_MAX) {
->  				pr_cont("\n");
->  				pr_err("Table located above 4GB, disabling EFI.\n");
->  				return -EINVAL;
->  			}
-> -#endif
->  		} else {
-> -			guid = ((efi_config_table_32_t *)tablep)->guid;
-> -			table = ((efi_config_table_32_t *)tablep)->table;
-> +			guid = &tbl32[i].guid;
-> +			table = tbl32[i].table;
->  		}
->  
-> -		if (!match_config_table(&guid, table, common_tables))
-> -			match_config_table(&guid, table, arch_tables);
-> -
-> -		tablep += sz;
-> +		if (!match_config_table(guid, table, common_tables))
-> +			match_config_table(guid, table, arch_tables);
->  	}
->  	pr_cont("\n");
->  	set_bit(EFI_CONFIG_TABLES, &efi.flags);
-> diff --git a/include/linux/efi.h b/include/linux/efi.h
-> index d61c25fd5824..99a7fcbe5e9b 100644
-> --- a/include/linux/efi.h
-> +++ b/include/linux/efi.h
-> @@ -613,8 +613,9 @@ extern void __init efi_esrt_init(void);
->  #else
->  static inline void efi_esrt_init(void) { }
->  #endif
-> -extern int efi_config_parse_tables(void *config_tables, int count, int sz,
-> -				   efi_config_table_type_t *arch_tables);
-> +extern int efi_config_parse_tables(const efi_config_table_t *config_tables,
-> +				   int count,
-> +				   const efi_config_table_type_t *arch_tables);
->  extern int efi_systab_check_header(const efi_table_hdr_t *systab_hdr,
->  				   int min_major_version);
->  extern void efi_systab_report_header(const efi_table_hdr_t *systab_hdr,
-> -- 
-> 2.17.1
+> From: Geert Uytterhoeven <geert@linux-m68k.org>
+> Sent: 16 February 2020 09:45
+> To: Arnd Bergmann <arnd@arndb.de>
 > 
+> Hi Arnd,
+> 
+> On Sat, Feb 15, 2020 at 5:59 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> > On Sat, Feb 15, 2020 at 12:25 PM Geert Uytterhoeven
+> > <geert@linux-m68k.org> wrote:
+> > > On Thu, Feb 13, 2020 at 5:54 PM Arnd Bergmann <arnd@arndb.de>
+> wrote:
+> > > > On Wed, Feb 12, 2020 at 9:50 AM Russell King - ARM Linux admin
+> > > > <linux@armlinux.org.uk> wrote:
+> > >
+> > > The CIP-supported RZ/G1 SoCs can have up to 4 GiB, typically split (even
+> > > for 1 GiB or 2 GiB configurations) in two parts, one below and one above
+> > > the 32-bit physical limit.
 
+Yep. One example is r8a7743-iwg20m.dtsi.
+
+> >
+> > Good to know. I think there are several other chips that have dual-channel
+> > DDR3 and thus /can/ support this configuration, but this rarely happens.
+> > Are you aware of commercial products that use a 4GB configuration, aside
+> from
+> > the reference board?
+
+iWave Systems make a range of SOM modules using the RZ/G1 SoCs.
+I believe there are options for some of these to use 4 GB, although 1 or 2 GB is used in the boards we've upstreamed support for.
+
+There are also other SOM vendors (e.g. Emtrion) and end users of RZ/G1, but I'm not sure of the details.
+
+Kind regards, Chris
+
+> 
+> Unfortunately I don't know.
+> Chris Paterson might know.
+> 
+> Gr{oetje,eeting}s,
+> 
+>                         Geert
+> 
+> --
+> Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-
+> m68k.org
+> 
+> In personal conversations with technical people, I call myself a hacker. But
+> when I'm talking to journalists I just say "programmer" or something like that.
+>                                 -- Linus Torvalds
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
