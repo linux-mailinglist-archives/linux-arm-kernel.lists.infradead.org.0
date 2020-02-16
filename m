@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B73E16059E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 19:54:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C17AD1605A0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 19:54:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7jNdyY/IeJYoGroKFnnw4h/MZsTCcMbuIsh8tUb5xws=; b=OOCnDbj7VgXE1N
-	lfG6fGXbhGq+j+57f2PTAnKWhnjiHiTN0SEfhNGZGTB/KwesgcTpxdzOymuyIR+qxo2zYBujR81Qs
-	AJyhCEYyl4i2g3yvRiuLUN5T1rzOXkGtEKs6+fWsBnaKOxlfPla1McWitFzjBXLppUmePaL7vitlx
-	H+hyYOPuMe8pReSX2S5EzsrlhNoOb5f/ibTN3USvvHW9MPzOEHp5511gcWNK/QUic8Bq7c/5ZPjA2
-	WhgNM2dow0EiKldLLOXu4MTzM5R0aEcbQmrYeG2/fkLZGrYW5thtKknBiSffyHoZjrAebxpSjh9pS
-	r+M1Bg6q1TQQV+Juf56g==;
+	List-Owner; bh=fa0Qm/ULpz1+XAkija3mf+YLGLEKSprDksLO3KWEOS8=; b=tr4OIBCfWHXk1u
+	VAN0y8NyPvjv7Fbda6cHcfIouQdufOqnCh3leD0L8OmvW6Esa99KWNnhLuk1DcHuLymwPcmvprb0V
+	s2bVu5ZpMdbxpT2Omk9cqmC+BFD9j+WTNV/CwNBgGLTc4nOILaTo0fjgES8NzUhFzp5zD4/ZFO0TB
+	rlhyH877xv7EhEm8Ms0IAkRp+VT/QbPdSzXTGtbBxyP7QWaO1FQZOJdgQTqYbtLch1W3c+vG5nE7X
+	EN/SgqEMf9DKd98qL/XGCFgowkZT38ACw2/irZCHIAk0mt9ov5HlzaAe6HXJw4q82SVOcayJCqDkL
+	jrG1/EWcKlMTc/A/OS7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3P3O-00036w-Kq; Sun, 16 Feb 2020 18:54:06 +0000
+	id 1j3P3s-0003aY-00; Sun, 16 Feb 2020 18:54:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3P2y-0002vD-Oo
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 18:53:41 +0000
+ id 1j3P2z-0002vE-17
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 18:53:43 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DD1E0208C4;
- Sun, 16 Feb 2020 18:53:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 514722086A;
+ Sun, 16 Feb 2020 18:53:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1581879220;
- bh=W0DXE0Y6+7MX/BeEDfPtsK4Pl3uK+rz6OmCb9Cb4oyc=;
+ bh=sOrUNfgGhb/0cFC+oq2qNi6ipOyDmpg18HkTEB25a4U=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PtNr/Z3Kz1m00IzB61aegM9IO8i7TZ+S/jUqTW2WuN3qQbylw+ZgE7hsMi4JKjY7T
- QmMAbqFuwFmq0BsQD3QVoNIn2l+MNKRfxJg9jxODUB4pIOcn4vNKyAeosQhNCXX2QX
- RnRgDKtfVTQCfv8OF6LWWfYlZv2FwfIyVz73sUEc=
+ b=mX4Ho7ZTmuTSbJa/EQNSw1ezEFfbdgTpqqOwx81qENOkIMb9Pu/p985h8TOKTzlSk
+ vwtPwq0Y/bFZ5iwafEAMY4Au5gYrHSS1L+2S4VQN2ITOuQZiKlACzQXDkWiLiJFquv
+ qAU9ys8hRr6GRqTNusOudY8JdHyhBMok2xaUBTec=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1j3P2w-005iWD-86; Sun, 16 Feb 2020 18:53:38 +0000
+ id 1j3P2w-005iWD-M1; Sun, 16 Feb 2020 18:53:38 +0000
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
  kvm@vger.kernel.org
-Subject: [PATCH 1/5] KVM: arm64: Fix missing RES1 in emulation of DBGBIDR
-Date: Sun, 16 Feb 2020 18:53:20 +0000
-Message-Id: <20200216185324.32596-2-maz@kernel.org>
+Subject: [PATCH 2/5] KVM: arm64: Refactor filtering of ID registers
+Date: Sun, 16 Feb 2020 18:53:21 +0000
+Message-Id: <20200216185324.32596-3-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200216185324.32596-1-maz@kernel.org>
 References: <20200216185324.32596-1-maz@kernel.org>
@@ -59,8 +59,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_105340_827370_4CB594B9 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20200216_105341_090735_853A9D36 
+X-CRM114-Status: GOOD (  11.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -97,28 +97,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The AArch32 CP14 DBGDIDR has bit 15 set to RES1, which our current
-emulation doesn't set. Just add the missing bit.
+Our current ID register filtering is starting to be a mess of if()
+statements, and isn't going to get any saner.
 
-Reported-by: Peter Maydell <peter.maydell@linaro.org>
+Let's turn it into a switch(), which has a chance of being more
+readable.
+
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/sys_regs.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/kvm/sys_regs.c | 22 +++++++++++++++-------
+ 1 file changed, 15 insertions(+), 7 deletions(-)
 
 diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index 3e909b117f0c..da82c4b03aab 100644
+index da82c4b03aab..682fedd7700f 100644
 --- a/arch/arm64/kvm/sys_regs.c
 +++ b/arch/arm64/kvm/sys_regs.c
-@@ -1658,7 +1658,7 @@ static bool trap_dbgidr(struct kvm_vcpu *vcpu,
- 		p->regval = ((((dfr >> ID_AA64DFR0_WRPS_SHIFT) & 0xf) << 28) |
- 			     (((dfr >> ID_AA64DFR0_BRPS_SHIFT) & 0xf) << 24) |
- 			     (((dfr >> ID_AA64DFR0_CTX_CMPS_SHIFT) & 0xf) << 20)
--			     | (6 << 16) | (el3 << 14) | (el3 << 12));
-+			     | (6 << 16) | (1 << 15) | (el3 << 14) | (el3 << 12));
- 		return true;
- 	}
+@@ -9,6 +9,7 @@
+  *          Christoffer Dall <c.dall@virtualopensystems.com>
+  */
+ 
++#include <linux/bitfield.h>
+ #include <linux/bsearch.h>
+ #include <linux/kvm_host.h>
+ #include <linux/mm.h>
+@@ -1070,6 +1071,8 @@ static bool access_arch_timer(struct kvm_vcpu *vcpu,
+ 	return true;
  }
+ 
++#define FEATURE(x)	(GENMASK_ULL(x##_SHIFT + 3, x##_SHIFT))
++
+ /* Read a sanitised cpufeature ID register by sys_reg_desc */
+ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
+ 		struct sys_reg_desc const *r, bool raz)
+@@ -1078,13 +1081,18 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
+ 			 (u32)r->CRn, (u32)r->CRm, (u32)r->Op2);
+ 	u64 val = raz ? 0 : read_sanitised_ftr_reg(id);
+ 
+-	if (id == SYS_ID_AA64PFR0_EL1 && !vcpu_has_sve(vcpu)) {
+-		val &= ~(0xfUL << ID_AA64PFR0_SVE_SHIFT);
+-	} else if (id == SYS_ID_AA64ISAR1_EL1 && !vcpu_has_ptrauth(vcpu)) {
+-		val &= ~((0xfUL << ID_AA64ISAR1_APA_SHIFT) |
+-			 (0xfUL << ID_AA64ISAR1_API_SHIFT) |
+-			 (0xfUL << ID_AA64ISAR1_GPA_SHIFT) |
+-			 (0xfUL << ID_AA64ISAR1_GPI_SHIFT));
++	switch (id) {
++	case SYS_ID_AA64PFR0_EL1:
++		if (!vcpu_has_sve(vcpu))
++			val &= ~FEATURE(ID_AA64PFR0_SVE);
++		break;
++	case SYS_ID_AA64ISAR1_EL1:
++		if (!vcpu_has_ptrauth(vcpu))
++			val &= ~(FEATURE(ID_AA64ISAR1_APA) |
++				 FEATURE(ID_AA64ISAR1_API) |
++				 FEATURE(ID_AA64ISAR1_GPA) |
++				 FEATURE(ID_AA64ISAR1_GPI));
++		break;
+ 	}
+ 
+ 	return val;
 -- 
 2.20.1
 
