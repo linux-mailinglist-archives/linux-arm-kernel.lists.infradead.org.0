@@ -2,82 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 409A21605A2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 19:55:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B7C21605B1
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 20:12:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EmK+6iDXm7QjoV4BSQrMccliM3JlbomMkfDXRf7ZsJM=; b=uIkTAyMQ9p0pxw
-	WZ5Q9GpuKfWZ3TWGlB8Nrx0qASXxKZtmrZNqUx3AdEq+DDMavce0UYK7+pDqWP1QN+vpPp5gaRbgZ
-	cahMYx+NiklvyM2zKZ6ursf0gzPh4UDQvsuGmfSVYDrevibA4P88l2cR6De2zocOpNZhtt6+m8zXv
-	udvnFYvSYYw6NvI74uQZ84cJtgPG64zk0MhqsFnhHXT5HPcxcoms2pB+qohnLDn5ItCVcSaviTwlu
-	lisNCdp+7VcJXi6hjzRfIbleo6waPUZKoosspHQF+lidxP4fJeHmXLNUvavZDoy8PbR9NCasy/RL9
-	uHa7uve2fL2Y55iNJ1nQ==;
+	List-Owner; bh=3aewt9UrGWQECcfIbSmtMQ4Oy4AmFUdrZ8OJ/g89RJE=; b=HloedL7n0HLHym
+	lRBvM1wQWx7M4l+wpD/0ZqvtlxJKh5k5rzBlUmWCth3ZeCgWu1xtsuM8JaHaXQD20ggdlcv6wwR+C
+	XwuJ9waKvJC/G1M3ruahv1jbfnx7IHgahi0IELo5GqWakaxSz88CrXJdd6oezA6c7D24coGzQmPll
+	TrNM/HTXa/iGIoOAu4/rXL8MtA0nsRzFlEhdzDJOy0Zc4nwwF2ljyFl8RhG4rTdKLY71J8kZVadhy
+	1WjlO7QtMq4qyr+AtZfHbHkIh9utAmgeoSPdTVr10R3byOfy/omzVvF1hMQPFEmPaw2DjkwXSa118
+	dagpyGRTWzTG+t3f7mJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3P4T-00040x-7U; Sun, 16 Feb 2020 18:55:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j3PLH-0003V9-3u; Sun, 16 Feb 2020 19:12:35 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3P30-0002wS-82
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 18:53:43 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CD98524125;
- Sun, 16 Feb 2020 18:53:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581879221;
- bh=oXOY45B0ay/QrkVsrHg4dNSnoA3eobeplPmN8P58bQg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=TxpmM6AmMudS9VIjtp5puwQ26etTs9NujwgtEHtPCDV011pPUdT9E8xwCn38Umawf
- py212W7AUT8MuEZf5ikqL9+L1EdUDHf4o3C5xstd3PoxaqFZeX5Btrzz3QcJqJlwai
- F+Ff6HKL3nr4N7TPF8F/3GKU7z25YuHFw/RqgRYQ=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j3P2y-005iWD-55; Sun, 16 Feb 2020 18:53:40 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-Subject: [PATCH 5/5] KVM: arm64: Upgrade PMU support to ARMv8.4
-Date: Sun, 16 Feb 2020 18:53:24 +0000
-Message-Id: <20200216185324.32596-6-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200216185324.32596-1-maz@kernel.org>
-References: <20200216185324.32596-1-maz@kernel.org>
+ id 1j3PL7-0003UT-5n
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 19:12:27 +0000
+Received: by mail-qk1-x743.google.com with SMTP id w25so14249776qki.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 16 Feb 2020 11:12:22 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:from:date:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=bD6rrmziSctqGG/b+du2AiEZ+/WT7QBGT4lN7okINdo=;
+ b=iP1W7z13cHf0KgknW7F62ENi14GYqG0johntcLxrYg4M9Mh2fDwAGy2UN8JlZhKMvP
+ jkUR6SAIo6QygRqd5+xf3p9nw43G9DmWlV7PRjk1hwEKXryxEmpmV+jsqz1QoOGD5hMe
+ P2v4E1mJikpaC9TVcDb6kVWY7CUQEPWuoojP9IQbDzCSi8SqtEFBaDJp9aixAdEmHi9m
+ i4VtQhnXsP0E2MYXKgITnhpagix0JU1EmsAb5ZKFCHddneYQ7/z1N7ZqAkbJKytQGYuw
+ bXlU5weBQ/frcpS6qWwW9mK0l6ckcnB3ZkVBrQJgYRFzgVrnlB+Baf3rzBrWElH7Xnro
+ 0O3w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:from:date:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=bD6rrmziSctqGG/b+du2AiEZ+/WT7QBGT4lN7okINdo=;
+ b=QzgJNzeo2ZSt9TYlLeM2GuPbhqUHmO1D6Ibr/HaUa0WVep3b40/3rCgzNEoeG0qsE3
+ tIjYwPh1wsBw1JHAKDiGjP4YjjCVKnd5x4PJANz5qmWmSpjz/floa4594IE/HiJW3ApN
+ gP5whEVt/reoD5uPfHzn71pMRNhTRnvuVpguT38P/59p+izzYTKmuEgsCR+6bBTO3ZPt
+ p9cPvbkudJK3iY70amFABibfiRiP8JNrCwYSD7ZR27VAVTupxdRFOivRk+HAAoEA+SxZ
+ Uzk2+6Hvxwp7fTzC75yOIiaQGboUJSszWxbZ4hz7DbcEc+HYWkMhfuFSZW8erR5m5km7
+ mXUA==
+X-Gm-Message-State: APjAAAXqlTjeDjGIt2xlFanbZLYgx9qcNRSY/KHhpT/Ebgq1w66feRDy
+ IWqcSCKsdUcv0yi1PstBKd4=
+X-Google-Smtp-Source: APXvYqwfu5o0ZsmVsnXB4LYtScalYumpQCdwybEscNX+DLvQVEFk1pY7BpYLezWIlAbFeotE6QfI+w==
+X-Received: by 2002:a37:6785:: with SMTP id
+ b127mr10455424qkc.240.1581880341431; 
+ Sun, 16 Feb 2020 11:12:21 -0800 (PST)
+Received: from rani.riverdale.lan ([2001:470:1f07:5f3::b55f])
+ by smtp.gmail.com with ESMTPSA id g11sm6100160qtc.48.2020.02.16.11.12.21
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 16 Feb 2020 11:12:21 -0800 (PST)
+From: Arvind Sankar <nivedita@alum.mit.edu>
+X-Google-Original-From: Arvind Sankar <arvind@rani.riverdale.lan>
+Date: Sun, 16 Feb 2020 14:12:19 -0500
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH 12/18] efi: clean up config_parse_tables()
+Message-ID: <20200216191219.GA589207@rani.riverdale.lan>
+References: <20200216182334.8121-1-ardb@kernel.org>
+ <20200216182334.8121-13-ardb@kernel.org>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, peter.maydell@linaro.org,
- james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200216182334.8121-13-ardb@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_105342_322278_E820A880 
-X-CRM114-Status: GOOD (  13.13  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200216_111225_224081_7228B8C4 
+X-CRM114-Status: GOOD (  20.65  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [niveditas98[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [niveditas98[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,69 +106,220 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: x86@kernel.org, nivedita@alum.mit.edu, linux-efi@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Upgrading the PMU code from ARMv8.1 to ARMv8.4 turns out to be
-pretty easy. All that is required is support for PMMIR_EL1, which
-is read-only, and for which returning 0 is a valid option.
+On Sun, Feb 16, 2020 at 07:23:28PM +0100, Ard Biesheuvel wrote:
+> config_parse_tables() is a jumble of pointer arithmetic, due to the
+> fact that on x86, we may be dealing with firmware whose native word
+> size differs from the kernel's.
+> 
+> This is not a concern on other architectures, and doesn't quite
+> justify the state of the code, so let's clean it up by adding a
+> non-x86 code path, constifying statically allocated tables and
+> replacing preprocessor conditionals with IS_ENABLED() checks.
+> 
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> ---
+>  arch/ia64/kernel/efi.c          |  3 +-
+>  arch/x86/platform/efi/efi.c     |  6 +--
+>  drivers/firmware/efi/arm-init.c |  5 +--
+>  drivers/firmware/efi/efi.c      | 47 ++++++++++----------
+>  include/linux/efi.h             |  5 ++-
+>  5 files changed, 32 insertions(+), 34 deletions(-)
+> 
+> diff --git a/arch/ia64/kernel/efi.c b/arch/ia64/kernel/efi.c
+> index 3b5cf551489c..f69f3fe0532e 100644
+> --- a/arch/ia64/kernel/efi.c
+> +++ b/arch/ia64/kernel/efi.c
+> @@ -56,7 +56,7 @@ unsigned long __initdata esi_phys = EFI_INVALID_TABLE_ADDR;
+>  unsigned long hcdp_phys = EFI_INVALID_TABLE_ADDR;
+>  unsigned long sal_systab_phys = EFI_INVALID_TABLE_ADDR;
+>  
+> -static __initdata efi_config_table_type_t arch_tables[] = {
+> +static const efi_config_table_type_t arch_tables[] __initconst = {
+>  	{ESI_TABLE_GUID, "ESI", &esi_phys},
+>  	{HCDP_TABLE_GUID, "HCDP", &hcdp_phys},
+>  	{MPS_TABLE_GUID, "MPS", &mps_phys},
+> @@ -533,7 +533,6 @@ efi_init (void)
+>  
+>  	if (efi_config_parse_tables(__va(efi_systab->tables),
+>  				    efi_systab->nr_tables,
+> -				    sizeof(efi_config_table_t),
+>  				    arch_tables) != 0)
+>  		return;
+>  
+> diff --git a/arch/x86/platform/efi/efi.c b/arch/x86/platform/efi/efi.c
+> index 26d905e6b579..f7025b9075b4 100644
+> --- a/arch/x86/platform/efi/efi.c
+> +++ b/arch/x86/platform/efi/efi.c
+> @@ -60,7 +60,7 @@ static u64 efi_systab_phys __initdata;
+>  static unsigned long prop_phys = EFI_INVALID_TABLE_ADDR;
+>  static unsigned long uga_phys = EFI_INVALID_TABLE_ADDR;
+>  
+> -static efi_config_table_type_t arch_tables[] __initdata = {
+> +static const efi_config_table_type_t arch_tables[] __initconst = {
+>  	{EFI_PROPERTIES_TABLE_GUID, "PROP", &prop_phys},
+>  	{UGA_IO_PROTOCOL_GUID, "UGA", &uga_phys},
+>  #ifdef CONFIG_X86_UV
+> @@ -434,7 +434,7 @@ static int __init efi_systab_init(u64 phys)
+>  	return 0;
+>  }
+>  
+> -static int __init efi_config_init(efi_config_table_type_t *arch_tables)
+> +static int __init efi_config_init(const efi_config_table_type_t *arch_tables)
+>  {
+>  	void *config_tables;
+>  	int sz, ret;
+> @@ -457,7 +457,7 @@ static int __init efi_config_init(efi_config_table_type_t *arch_tables)
+>  		return -ENOMEM;
+>  	}
+>  
+> -	ret = efi_config_parse_tables(config_tables, efi.systab->nr_tables, sz,
+> +	ret = efi_config_parse_tables(config_tables, efi.systab->nr_tables,
+>  				      arch_tables);
+>  
+>  	early_memunmap(config_tables, efi.systab->nr_tables * sz);
+> diff --git a/drivers/firmware/efi/arm-init.c b/drivers/firmware/efi/arm-init.c
+> index a656bfcd7e27..d1f44c847841 100644
+> --- a/drivers/firmware/efi/arm-init.c
+> +++ b/drivers/firmware/efi/arm-init.c
+> @@ -55,7 +55,7 @@ static phys_addr_t efi_to_phys(unsigned long addr)
+>  
+>  static __initdata unsigned long screen_info_table = EFI_INVALID_TABLE_ADDR;
+>  
+> -static __initdata efi_config_table_type_t arch_tables[] = {
+> +static const efi_config_table_type_t arch_tables[] __initconst = {
+>  	{LINUX_EFI_ARM_SCREEN_INFO_TABLE_GUID, NULL, &screen_info_table},
+>  	{NULL_GUID, NULL, NULL}
+>  };
+> @@ -85,7 +85,7 @@ static void __init init_screen_info(void)
+>  
+>  static int __init uefi_init(void)
+>  {
+> -	void *config_tables;
+> +	efi_config_table_t *config_tables;
+>  	size_t table_size;
+>  	int retval;
+>  
+> @@ -118,7 +118,6 @@ static int __init uefi_init(void)
+>  		goto out;
+>  	}
+>  	retval = efi_config_parse_tables(config_tables, efi.systab->nr_tables,
+> -					 sizeof(efi_config_table_t),
+>  					 arch_tables);
+>  
+>  	if (!retval)
+> diff --git a/drivers/firmware/efi/efi.c b/drivers/firmware/efi/efi.c
+> index 2bfd6c0806ce..db1fe765380f 100644
+> --- a/drivers/firmware/efi/efi.c
+> +++ b/drivers/firmware/efi/efi.c
+> @@ -460,7 +460,7 @@ void __init efi_mem_reserve(phys_addr_t addr, u64 size)
+>  	efi_arch_mem_reserve(addr, size);
+>  }
+>  
+> -static __initdata efi_config_table_type_t common_tables[] = {
+> +static const efi_config_table_type_t common_tables[] __initconst = {
+>  	{ACPI_20_TABLE_GUID, "ACPI 2.0", &efi.acpi20},
+>  	{ACPI_TABLE_GUID, "ACPI", &efi.acpi},
+>  	{SMBIOS_TABLE_GUID, "SMBIOS", &efi.smbios},
+> @@ -477,9 +477,9 @@ static __initdata efi_config_table_type_t common_tables[] = {
+>  	{NULL_GUID, NULL, NULL},
+>  };
+>  
+> -static __init int match_config_table(efi_guid_t *guid,
+> +static __init int match_config_table(const efi_guid_t *guid,
+>  				     unsigned long table,
+> -				     efi_config_table_type_t *table_types)
+> +				     const efi_config_table_type_t *table_types)
+>  {
+>  	int i;
+>  
+> @@ -498,39 +498,38 @@ static __init int match_config_table(efi_guid_t *guid,
+>  	return 0;
+>  }
+>  
+> -int __init efi_config_parse_tables(void *config_tables, int count, int sz,
+> -				   efi_config_table_type_t *arch_tables)
+> +int __init efi_config_parse_tables(const efi_config_table_t *config_tables,
+> +				   int count,
+> +				   const efi_config_table_type_t *arch_tables)
+>  {
+> -	void *tablep;
+> +	const efi_config_table_64_t *tbl64 = (void *)config_tables;
+> +	const efi_config_table_32_t *tbl32 = (void *)config_tables;
+> +	const efi_guid_t *guid;
+> +	unsigned long table;
+>  	int i;
+>  
+> -	tablep = config_tables;
+>  	pr_info("");
+>  	for (i = 0; i < count; i++) {
+> -		efi_guid_t guid;
+> -		unsigned long table;
+> -
+> -		if (efi_enabled(EFI_64BIT)) {
+> -			u64 table64;
+> -			guid = ((efi_config_table_64_t *)tablep)->guid;
+> -			table64 = ((efi_config_table_64_t *)tablep)->table;
+> -			table = table64;
+> -#ifndef CONFIG_64BIT
+> -			if (table64 >> 32) {
+> +		if (!IS_ENABLED(CONFIG_X86)) {
+> +			guid = &config_tables[i].guid;
+> +			table = (unsigned long)config_tables[i].table;
+> +		} else if (efi_enabled(EFI_64BIT)) {
+> +			guid = &tbl64[i].guid;
+> +			table = tbl64[i].table;
+> +
+> +			if (IS_ENABLED(CONFIG_X64_32) &&
+					      ^^^ typo, should be X86
 
-Let's just do that and adjust what we return to the guest.
-
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- arch/arm64/include/asm/sysreg.h | 2 ++
- arch/arm64/kvm/sys_regs.c       | 9 ++++++---
- 2 files changed, 8 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index b91570ff9db1..16d91ed51d06 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -312,6 +312,8 @@
- #define SYS_PMINTENSET_EL1		sys_reg(3, 0, 9, 14, 1)
- #define SYS_PMINTENCLR_EL1		sys_reg(3, 0, 9, 14, 2)
- 
-+#define SYS_PMMIR_EL1			sys_reg(3, 0, 9, 14, 6)
-+
- #define SYS_MAIR_EL1			sys_reg(3, 0, 10, 2, 0)
- #define SYS_AMAIR_EL1			sys_reg(3, 0, 10, 3, 0)
- 
-diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index 43087b50a211..4eee61fb94be 100644
---- a/arch/arm64/kvm/sys_regs.c
-+++ b/arch/arm64/kvm/sys_regs.c
-@@ -1097,9 +1097,11 @@ static u64 read_id_reg(const struct kvm_vcpu *vcpu,
- 		/* Limit debug to ARMv8.0 */
- 		val &= ~FEATURE(ID_AA64DFR0_DEBUGVER);
- 		val |= FIELD_PREP(FEATURE(ID_AA64DFR0_DEBUGVER), 6);
--		/* Limit PMU to ARMv8.1 */
--		val &= ~FEATURE(ID_AA64DFR0_PMUVER);
--		val |= FIELD_PREP(FEATURE(ID_AA64DFR0_PMUVER), 4);
-+		/* Limit PMU to ARMv8.4 */
-+		if (FIELD_GET(FEATURE(ID_AA64DFR0_PMUVER), val) > 5) {
-+			val &= ~FEATURE(ID_AA64DFR0_PMUVER);
-+			val |= FIELD_PREP(FEATURE(ID_AA64DFR0_PMUVER), 5);
-+		}
- 		break;
- 	}
- 
-@@ -1524,6 +1526,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
- 
- 	{ SYS_DESC(SYS_PMINTENSET_EL1), access_pminten, reset_unknown, PMINTENSET_EL1 },
- 	{ SYS_DESC(SYS_PMINTENCLR_EL1), access_pminten, NULL, PMINTENSET_EL1 },
-+	{ SYS_DESC(SYS_PMMIR_EL1), trap_raz_wi },
- 
- 	{ SYS_DESC(SYS_MAIR_EL1), access_vm_reg, reset_unknown, MAIR_EL1 },
- 	{ SYS_DESC(SYS_AMAIR_EL1), access_vm_reg, reset_amair_el1, AMAIR_EL1 },
--- 
-2.20.1
-
+> +			    tbl64[i].table > U32_MAX) {
+>  				pr_cont("\n");
+>  				pr_err("Table located above 4GB, disabling EFI.\n");
+>  				return -EINVAL;
+>  			}
+> -#endif
+>  		} else {
+> -			guid = ((efi_config_table_32_t *)tablep)->guid;
+> -			table = ((efi_config_table_32_t *)tablep)->table;
+> +			guid = &tbl32[i].guid;
+> +			table = tbl32[i].table;
+>  		}
+>  
+> -		if (!match_config_table(&guid, table, common_tables))
+> -			match_config_table(&guid, table, arch_tables);
+> -
+> -		tablep += sz;
+> +		if (!match_config_table(guid, table, common_tables))
+> +			match_config_table(guid, table, arch_tables);
+>  	}
+>  	pr_cont("\n");
+>  	set_bit(EFI_CONFIG_TABLES, &efi.flags);
+> diff --git a/include/linux/efi.h b/include/linux/efi.h
+> index d61c25fd5824..99a7fcbe5e9b 100644
+> --- a/include/linux/efi.h
+> +++ b/include/linux/efi.h
+> @@ -613,8 +613,9 @@ extern void __init efi_esrt_init(void);
+>  #else
+>  static inline void efi_esrt_init(void) { }
+>  #endif
+> -extern int efi_config_parse_tables(void *config_tables, int count, int sz,
+> -				   efi_config_table_type_t *arch_tables);
+> +extern int efi_config_parse_tables(const efi_config_table_t *config_tables,
+> +				   int count,
+> +				   const efi_config_table_type_t *arch_tables);
+>  extern int efi_systab_check_header(const efi_table_hdr_t *systab_hdr,
+>  				   int min_major_version);
+>  extern void efi_systab_report_header(const efi_table_hdr_t *systab_hdr,
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
