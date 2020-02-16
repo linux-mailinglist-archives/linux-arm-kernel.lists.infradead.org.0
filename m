@@ -2,70 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33C4D16023F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 07:27:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B618160287
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 09:19:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FvLt+Ib2XkbLl0GhQgWbhh6syLhbF/rJhh8iKIk+t6E=; b=ht2W+d3SISDIeX
-	kVTXkawqPJ0mIW6hylsThUScjcWd83JTS1lYn0oBtGQGXSLk7c3fWmTSu68n13YLAPdyLiV/QuWdT
-	81WyljyXAk4+us5CuzR+wJ8lzrcLk+dVIn9exPxWtqLWfe1CZlUXOGxYD0QPP0mVj38X7bBKpO+Fg
-	caGHE4tC59kv/izapXdDi/cYy35W3K02KwcTwzeqTlJUqxtRDZaRj6cZwLjtMR1p5FEhZYmXpRXT8
-	6RhqmZmJKw4vfj3atFGU62rzvWyoSry8I9Z6y3KbXSkdIFv3v6T4A51bgGPbdVeMKY9kh/YooLBfD
-	yC7A4CV2gKujeJot9JnQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Y1FQT6kMh54hGHQk6wOVcJlebX2+Y0Pd3NCFuxzz8XU=; b=oYrSPBRINDEWeF
+	CVtZjzY8BRr+sMErOIuQ8SqNsLw3k7VMhT8VYQH6KLeeMOKXDWaQHDjAu4vfig7dcvMgL7nz5Fdrs
+	Q7gXFBrmFwMjt9GCvphMblnDxCbMv2QeE+2pJn31h5HUdCwTKe/0z/y+Q1kX1tOXXJ71yF8qLs5LP
+	b9W2Ir4PlafghM6IqBt7cV6jQWPQsdXER2zv1I+hcLtTh4M1zOqeKsrc9fV8LoDTrwHHTDZDr9eAe
+	tArkjQmT7O5xA5UG9tVyfN6RWnjZMfHiMzlCQ+4zDVgAh+Ffg/FKi1oXbl7kCSD5ifds+F/0+T16j
+	BHtHZV27hwo2zt+lvU4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3DP6-0002tn-0x; Sun, 16 Feb 2020 06:27:44 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j3F8q-0002ph-NJ; Sun, 16 Feb 2020 08:19:04 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3DOx-0002sP-GW; Sun, 16 Feb 2020 06:27:37 +0000
-X-UUID: 2af9ce0501204a17a09436987a0cc01c-20200215
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=JPuHBETG3svatvxI3nD/Ybp2rxLQs4/ldc9/9myf3bI=; 
- b=nypz3xKJDKCkeBPqKTrrUxslWJCBNqkLDibij63k953eq7pWHlOqLQBAZ7w3boFOJZJak3zo6PVPnCgBsImaA4dLMbDZl/MITQjJ4n1jNQUtyJSVvQk8TFFyMbpL+AkDwfOUGlpQK//nRMhGVQos9bCV6srQlGJOZL8AZNojcQ4=;
-X-UUID: 2af9ce0501204a17a09436987a0cc01c-20200215
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <argus.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2117309031; Sat, 15 Feb 2020 22:27:32 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 15 Feb 2020 22:18:16 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 16 Feb 2020 14:16:20 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Sun, 16 Feb 2020 14:17:19 +0800
-From: Argus Lin <argus.lin@mediatek.com>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Catalin Marinas
- <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>
-Subject: [PATCH v2 3/3] soc: mediatek: pwrap: add support for MT6359 PMIC
-Date: Sun, 16 Feb 2020 14:17:23 +0800
-Message-ID: <1581833843-4485-4-git-send-email-argus.lin@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1581833843-4485-1-git-send-email-argus.lin@mediatek.com>
-References: <1581833843-4485-1-git-send-email-argus.lin@mediatek.com>
+ id 1j3F8j-0002pM-BC
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 08:18:58 +0000
+Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6DFE8206E2;
+ Sun, 16 Feb 2020 08:18:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581841136;
+ bh=uOm/w1LvbUniJRU6oBgmKsoo2r45zuKfYTZIlp+VEas=;
+ h=From:To:Cc:Subject:Date:From;
+ b=ypq+hzlSBgo7vT86/XBQ4S1ZCTw/nfY/YpzHJWYAJgU4W9vpVdIiTo4WBFLNVMWaa
+ mEqd5SQZXKay8YUlKOrH1RnE0OOB9BYS2j2C7wKWxIhrDOoaqf93tmzYSMMHhaUfex
+ v4qv2x5ntxN9kHpg/8qF9RTGzwDANyHfQEpVF5aw=
+From: Mike Rapoport <rppt@kernel.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2 00/13] mm: remove __ARCH_HAS_5LEVEL_HACK
+Date: Sun, 16 Feb 2020 10:18:30 +0200
+Message-Id: <20200216081843.28670-1-rppt@kernel.org>
+X-Mailer: git-send-email 2.24.0
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200215_222735_561390_D45A1E68 
-X-CRM114-Status: GOOD (  11.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200216_001857_430153_14C58CA2 
+X-CRM114-Status: GOOD (  12.35  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -73,8 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,139 +73,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, argus.lin@mediatek.com,
- wsd_upstream@mediatek.com, Chenglin Xu <chenglin.xu@mediatek.com>, Sean
- Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
- henryc.chen@mediatek.com, flora.fu@mediatek.com,
- Christophe Jaillet <christophe.jaillet@wanadoo.fr>,
- linux-mediatek@lists.infradead.org, Chen Zhong <chen.zhong@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>, linux-sh@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, linux-hexagon@vger.kernel.org,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Jonas Bonn <jonas@southpole.se>, linux-arch@vger.kernel.org,
+ Brian Cain <bcain@codeaurora.org>, Marc Zyngier <maz@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
+ Mike Rapoport <rppt@linux.ibm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ uclinux-h8-devel@lists.sourceforge.jp, Fenghua Yu <fenghua.yu@intel.com>,
+ Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ kvm-ppc@vger.kernel.org,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ openrisc@lists.librecores.org, Stafford Horne <shorne@gmail.com>,
+ Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, James Morse <james.morse@arm.com>,
+ Michael Ellerman <mpe@ellerman.id.au>, nios2-dev@lists.rocketboards.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ Mike Rapoport <rppt@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MT6359 is a new power management IC and it is used for
-MT6779 SoCs. To define mt6359_regs for pmic register mapping
-and pmic_mt6359 for accessing register.
+From: Mike Rapoport <rppt@linux.ibm.com>
 
-Signed-off-by: Argus Lin <argus.lin@mediatek.com>
----
- drivers/soc/mediatek/mtk-pmic-wrap.c | 71 ++++++++++++++++++++++++++++++++++++
- 1 file changed, 71 insertions(+)
+Hi,
 
-diff --git a/drivers/soc/mediatek/mtk-pmic-wrap.c b/drivers/soc/mediatek/mtk-pmic-wrap.c
-index 1f8189a..5d34e8b 100644
---- a/drivers/soc/mediatek/mtk-pmic-wrap.c
-+++ b/drivers/soc/mediatek/mtk-pmic-wrap.c
-@@ -111,6 +111,28 @@ enum dew_regs {
- 	PWRAP_RG_SPI_CON13,
- 	PWRAP_SPISLV_KEY,
+These patches convert several architectures to use page table folding and
+remove __ARCH_HAS_5LEVEL_HACK along with include/asm-generic/5level-fixup.h.
 
-+	/* MT6359 only regs */
-+	PWRAP_DEW_CRC_SWRST,
-+	PWRAP_DEW_RG_EN_RECORD,
-+	PWRAP_DEW_RECORD_CMD0,
-+	PWRAP_DEW_RECORD_CMD1,
-+	PWRAP_DEW_RECORD_CMD2,
-+	PWRAP_DEW_RECORD_CMD3,
-+	PWRAP_DEW_RECORD_CMD4,
-+	PWRAP_DEW_RECORD_CMD5,
-+	PWRAP_DEW_RECORD_WDATA0,
-+	PWRAP_DEW_RECORD_WDATA1,
-+	PWRAP_DEW_RECORD_WDATA2,
-+	PWRAP_DEW_RECORD_WDATA3,
-+	PWRAP_DEW_RECORD_WDATA4,
-+	PWRAP_DEW_RECORD_WDATA5,
-+	PWRAP_DEW_RG_ADDR_TARGET,
-+	PWRAP_DEW_RG_ADDR_MASK,
-+	PWRAP_DEW_RG_WDATA_TARGET,
-+	PWRAP_DEW_RG_WDATA_MASK,
-+	PWRAP_DEW_RG_SPI_RECORD_CLR,
-+	PWRAP_DEW_RG_CMD_ALERT_CLR,
-+
- 	/* MT6397 only regs */
- 	PWRAP_DEW_EVENT_OUT_EN,
- 	PWRAP_DEW_EVENT_SRC_EN,
-@@ -197,6 +219,42 @@ enum dew_regs {
- 	[PWRAP_SPISLV_KEY] =		0x044a,
- };
+The changes are mostly about mechanical replacement of pgd accessors with p4d
+ones and the addition of higher levels to page table traversals.
 
-+static const u32 mt6359_regs[] = {
-+	[PWRAP_DEW_RG_EN_RECORD] =	0x040a,
-+	[PWRAP_DEW_DIO_EN] =		0x040c,
-+	[PWRAP_DEW_READ_TEST] =		0x040e,
-+	[PWRAP_DEW_WRITE_TEST] =	0x0410,
-+	[PWRAP_DEW_CRC_SWRST] =		0x0412,
-+	[PWRAP_DEW_CRC_EN] =		0x0414,
-+	[PWRAP_DEW_CRC_VAL] =		0x0416,
-+	[PWRAP_DEW_CIPHER_KEY_SEL] =	0x0418,
-+	[PWRAP_DEW_CIPHER_IV_SEL] =	0x041a,
-+	[PWRAP_DEW_CIPHER_EN] =		0x041c,
-+	[PWRAP_DEW_CIPHER_RDY] =	0x041e,
-+	[PWRAP_DEW_CIPHER_MODE] =	0x0420,
-+	[PWRAP_DEW_CIPHER_SWRST] =	0x0422,
-+	[PWRAP_DEW_RDDMY_NO] =		0x0424,
-+	[PWRAP_DEW_RECORD_CMD0] =	0x0428,
-+	[PWRAP_DEW_RECORD_CMD1] =	0x042a,
-+	[PWRAP_DEW_RECORD_CMD2] =	0x042c,
-+	[PWRAP_DEW_RECORD_CMD3] =	0x042e,
-+	[PWRAP_DEW_RECORD_CMD4] =	0x0430,
-+	[PWRAP_DEW_RECORD_CMD5] =	0x0432,
-+	[PWRAP_DEW_RECORD_WDATA0] =	0x0434,
-+	[PWRAP_DEW_RECORD_WDATA1] =	0x0436,
-+	[PWRAP_DEW_RECORD_WDATA2] =	0x0438,
-+	[PWRAP_DEW_RECORD_WDATA3] =	0x043a,
-+	[PWRAP_DEW_RECORD_WDATA4] =	0x043c,
-+	[PWRAP_DEW_RECORD_WDATA5] =	0x043e,
-+	[PWRAP_DEW_RG_ADDR_TARGET] =	0x0440,
-+	[PWRAP_DEW_RG_ADDR_MASK] =	0x0442,
-+	[PWRAP_DEW_RG_WDATA_TARGET] =	0x0444,
-+	[PWRAP_DEW_RG_WDATA_MASK] =	0x0446,
-+	[PWRAP_DEW_RG_SPI_RECORD_CLR] =	0x0448,
-+	[PWRAP_DEW_RG_CMD_ALERT_CLR] =	0x0448,
-+	[PWRAP_SPISLV_KEY] =		0x044a,
-+};
-+
- static const u32 mt6397_regs[] = {
- 	[PWRAP_DEW_BASE] =		0xbc00,
- 	[PWRAP_DEW_EVENT_OUT_EN] =	0xbc00,
-@@ -977,6 +1035,7 @@ enum pmic_type {
- 	PMIC_MT6351,
- 	PMIC_MT6357,
- 	PMIC_MT6358,
-+	PMIC_MT6359,
- 	PMIC_MT6380,
- 	PMIC_MT6397,
- };
-@@ -1752,6 +1811,15 @@ static irqreturn_t pwrap_interrupt(int irqno, void *dev_id)
- 	.pwrap_write = pwrap_write16,
- };
+All the patches were sent separately to the respective arch lists and
+maintainers hence the "v2" prefix.
 
-+static const struct pwrap_slv_type pmic_mt6359 = {
-+	.dew_regs = mt6359_regs,
-+	.type = PMIC_MT6359,
-+	.regmap = &pwrap_regmap_config16,
-+	.caps = PWRAP_SLV_CAP_DUALIO,
-+	.pwrap_read = pwrap_read16,
-+	.pwrap_write = pwrap_write16,
-+};
-+
- static const struct pwrap_slv_type pmic_mt6380 = {
- 	.dew_regs = NULL,
- 	.type = PMIC_MT6380,
-@@ -1785,6 +1853,9 @@ static irqreturn_t pwrap_interrupt(int irqno, void *dev_id)
- 		.compatible = "mediatek,mt6358",
- 		.data = &pmic_mt6358,
- 	}, {
-+		.compatible = "mediatek,mt6359",
-+		.data = &pmic_mt6359,
-+	}, {
- 		/* The MT6380 PMIC only implements a regulator, so we bind it
- 		 * directly instead of using a MFD.
- 		 */
---
-1.8.1.1.dirty
+Geert Uytterhoeven (1):
+  sh: fault: Modernize printing of kernel messages
+
+Mike Rapoport (12):
+  arm/arm64: add support for folded p4d page tables
+  h8300: remove usage of __ARCH_USE_5LEVEL_HACK
+  hexagon: remove __ARCH_USE_5LEVEL_HACK
+  ia64: add support for folded p4d page tables
+  nios2: add support for folded p4d page tables
+  openrisc: add support for folded p4d page tables
+  powerpc: add support for folded p4d page tables
+  sh: drop __pXd_offset() macros that duplicate pXd_index() ones
+  sh: add support for folded p4d page tables
+  unicore32: remove __ARCH_USE_5LEVEL_HACK
+  asm-generic: remove pgtable-nop4d-hack.h
+  mm: remove __ARCH_HAS_5LEVEL_HACK and include/asm-generic/5level-fixup.h
+
+ arch/arm/include/asm/kvm_mmu.h                |   5 +-
+ arch/arm/include/asm/pgtable.h                |   1 -
+ arch/arm/include/asm/stage2_pgtable.h         |  15 +-
+ arch/arm/lib/uaccess_with_memcpy.c            |   9 +-
+ arch/arm/mach-sa1100/assabet.c                |   2 +-
+ arch/arm/mm/dump.c                            |  29 ++-
+ arch/arm/mm/fault-armv.c                      |   7 +-
+ arch/arm/mm/fault.c                           |  28 ++-
+ arch/arm/mm/idmap.c                           |   3 +-
+ arch/arm/mm/init.c                            |   2 +-
+ arch/arm/mm/ioremap.c                         |  12 +-
+ arch/arm/mm/mm.h                              |   2 +-
+ arch/arm/mm/mmu.c                             |  35 ++-
+ arch/arm/mm/pgd.c                             |  40 +++-
+ arch/arm64/include/asm/kvm_mmu.h              |  10 +-
+ arch/arm64/include/asm/pgalloc.h              |  10 +-
+ arch/arm64/include/asm/pgtable-types.h        |   5 +-
+ arch/arm64/include/asm/pgtable.h              |  37 ++--
+ arch/arm64/include/asm/stage2_pgtable.h       |  48 +++-
+ arch/arm64/kernel/hibernate.c                 |  44 +++-
+ arch/arm64/mm/fault.c                         |   9 +-
+ arch/arm64/mm/hugetlbpage.c                   |  15 +-
+ arch/arm64/mm/kasan_init.c                    |  26 ++-
+ arch/arm64/mm/mmu.c                           |  52 +++--
+ arch/arm64/mm/pageattr.c                      |   7 +-
+ arch/h8300/include/asm/pgtable.h              |   1 -
+ arch/hexagon/include/asm/fixmap.h             |   4 +-
+ arch/hexagon/include/asm/pgtable.h            |   1 -
+ arch/ia64/include/asm/pgalloc.h               |   4 +-
+ arch/ia64/include/asm/pgtable.h               |  17 +-
+ arch/ia64/mm/fault.c                          |   7 +-
+ arch/ia64/mm/hugetlbpage.c                    |  18 +-
+ arch/ia64/mm/init.c                           |  28 ++-
+ arch/nios2/include/asm/pgtable.h              |   3 +-
+ arch/nios2/mm/fault.c                         |   9 +-
+ arch/nios2/mm/ioremap.c                       |   6 +-
+ arch/openrisc/include/asm/pgtable.h           |   1 -
+ arch/openrisc/mm/fault.c                      |  10 +-
+ arch/openrisc/mm/init.c                       |   4 +-
+ arch/powerpc/include/asm/book3s/32/pgtable.h  |   1 -
+ arch/powerpc/include/asm/book3s/64/hash.h     |   4 +-
+ arch/powerpc/include/asm/book3s/64/pgalloc.h  |   4 +-
+ arch/powerpc/include/asm/book3s/64/pgtable.h  |  58 +++--
+ arch/powerpc/include/asm/book3s/64/radix.h    |   6 +-
+ arch/powerpc/include/asm/nohash/32/pgtable.h  |   1 -
+ arch/powerpc/include/asm/nohash/64/pgalloc.h  |   2 +-
+ .../include/asm/nohash/64/pgtable-4k.h        |  32 +--
+ arch/powerpc/include/asm/nohash/64/pgtable.h  |   6 +-
+ arch/powerpc/include/asm/pgtable.h            |   8 +
+ arch/powerpc/kvm/book3s_64_mmu_radix.c        |  59 ++++-
+ arch/powerpc/lib/code-patching.c              |   7 +-
+ arch/powerpc/mm/book3s32/mmu.c                |   2 +-
+ arch/powerpc/mm/book3s32/tlb.c                |   4 +-
+ arch/powerpc/mm/book3s64/hash_pgtable.c       |   4 +-
+ arch/powerpc/mm/book3s64/radix_pgtable.c      |  19 +-
+ arch/powerpc/mm/book3s64/subpage_prot.c       |   6 +-
+ arch/powerpc/mm/hugetlbpage.c                 |  28 ++-
+ arch/powerpc/mm/kasan/kasan_init_32.c         |   8 +-
+ arch/powerpc/mm/mem.c                         |   4 +-
+ arch/powerpc/mm/nohash/40x.c                  |   4 +-
+ arch/powerpc/mm/nohash/book3e_pgtable.c       |  15 +-
+ arch/powerpc/mm/pgtable.c                     |  25 ++-
+ arch/powerpc/mm/pgtable_32.c                  |  28 ++-
+ arch/powerpc/mm/pgtable_64.c                  |  10 +-
+ arch/powerpc/mm/ptdump/hashpagetable.c        |  20 +-
+ arch/powerpc/mm/ptdump/ptdump.c               |  22 +-
+ arch/powerpc/xmon/xmon.c                      |  17 +-
+ arch/sh/include/asm/pgtable-2level.h          |   1 -
+ arch/sh/include/asm/pgtable-3level.h          |   1 -
+ arch/sh/include/asm/pgtable_32.h              |   5 +-
+ arch/sh/include/asm/pgtable_64.h              |   5 +-
+ arch/sh/kernel/io_trapped.c                   |   7 +-
+ arch/sh/mm/cache-sh4.c                        |   4 +-
+ arch/sh/mm/cache-sh5.c                        |   7 +-
+ arch/sh/mm/fault.c                            |  65 ++++--
+ arch/sh/mm/hugetlbpage.c                      |  28 ++-
+ arch/sh/mm/init.c                             |  15 +-
+ arch/sh/mm/kmap.c                             |   2 +-
+ arch/sh/mm/tlbex_32.c                         |   6 +-
+ arch/sh/mm/tlbex_64.c                         |   7 +-
+ arch/unicore32/include/asm/pgtable.h          |   1 -
+ arch/unicore32/kernel/hibernate.c             |   4 +-
+ include/asm-generic/5level-fixup.h            |  58 -----
+ include/asm-generic/pgtable-nop4d-hack.h      |  64 ------
+ include/asm-generic/pgtable-nopud.h           |   4 -
+ include/linux/mm.h                            |   6 -
+ mm/kasan/init.c                               |  11 -
+ mm/memory.c                                   |   8 -
+ virt/kvm/arm/mmu.c                            | 209 +++++++++++++++---
+ 89 files changed, 988 insertions(+), 500 deletions(-)
+ delete mode 100644 include/asm-generic/5level-fixup.h
+ delete mode 100644 include/asm-generic/pgtable-nop4d-hack.h
+
+-- 
+2.24.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
