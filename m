@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 665E6160579
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 19:26:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F81B16057B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 16 Feb 2020 19:27:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wLD6JuNv8Y7uY6MlLnZOMB7K6Mptszg2NTjW1M+SP9Y=; b=NsrHlSlIQH5VHuL+TLddIKa0XJ
-	FteqK2b7KU9oDdo6OkCl2je+JOvr/RiR0G4n6SwySIws93HYmjCO3vbiskYPCd/tclY4WyH2Qp5Jz
-	dezrW3nfTqI/omllKPGyLAalKCsYJu+cF73kw9MzrQv8KlR3diPl1WuayJNiYb+mEYbZXELRguUsx
-	f0i7E3ZOfSPQtQO/4sPtVDLkX0fPqhf/PSsEF+4sf5c3dwPY1cpPnby3wkLZPugLDRdaC1ss4EHVh
-	Fqet83KMbuhuxDDH0XjNyY+iwM66xJ7z9H9hlqXGaCRGFsXkMu8wYfYbHi0Q7em0AK1pEmqaxepBh
-	7oOxTBTw==;
+	bh=6fqP+q+bCL1cK4dK7q24aNkWFmp8jn3N9w755Gci1Og=; b=KxAKxrp3Z76lKyO+dKunizGAHT
+	eBYs4VN8jdsPPDy0IYvmAO/bedBEv8p/DGSCMORfBLLVWQ0WGqX1frBiDAUURz/Jng/Zf/vhZcs2+
+	DLI/YXkXuLQcL24dDRqvw5Fl5MCOq0FIAAui2QAh8tpwXvBW4sF057Zc50eQhnkUQ2oGMmju0Ea/d
+	Jv8PzWPwRJVaPwcydkI1ltLgFkKGW3AFhePLibGv8wCRvQipfRnjVpKWw8L4duUsGZkPOs7YDbX0+
+	H2gISfqnmg6nXpxlOUqF0vx6GgEJY/kqV/PyBlv5v0MlBnGNQlGDzVFPxXAFp0wrDrRp5OHz6CqKA
+	dZffP26g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3Oce-00015Z-AI; Sun, 16 Feb 2020 18:26:28 +0000
+	id 1j3OdB-0001aG-5b; Sun, 16 Feb 2020 18:27:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3OaI-0006Rz-8J
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 18:24:03 +0000
+ id 1j3OaK-0006Tq-O6
+ for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 18:24:09 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5E2102086A;
- Sun, 16 Feb 2020 18:24:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1234B2465D;
+ Sun, 16 Feb 2020 18:24:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581877441;
- bh=j3nSc1ziDeAOZ+GMaZJ73PIdlDUEWebRMtAgq39UXfs=;
+ s=default; t=1581877443;
+ bh=M6CtQIWxWimc9CTNa99EsOazRYurLdEN+0lz9EbRkzY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=iqZ9ZlllVcZiNnNk8PL/flvephl9ku9KJYSiyBxqtBcQBrRodDzq86YSHV8aqPWWy
- O9mdOL0iIQU0P1EIkskzsJiFN+pro0ivbUT1nk6CimLwxyH720r+n+V/b0cWnnEo11
- Z6i8sRHBC6mIlFObDNM47f+2QzWWhAbF37M0tmo8=
+ b=HF+fSYYCHuFY90WdfozOQ/Gg+MLB1ebGPUlwlpGiC5OyQbuTT7J7qecISnVTyY8Fz
+ w7Z1mlXr2uRiv6VsFCnhx8poDOo8eS3nvWJQA9Hw/NeTHiAOqiPapXEntfifvNZvo3
+ hoes4JQxVBBy9jejNEh4C6g5Oiox3GkIeL9mvBl4=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [PATCH 09/18] efi/ia64: use local variable for EFI system table
- address
-Date: Sun, 16 Feb 2020 19:23:25 +0100
-Message-Id: <20200216182334.8121-10-ardb@kernel.org>
+Subject: [PATCH 10/18] efi/ia64: switch to efi_config_parse_tables()
+Date: Sun, 16 Feb 2020 19:23:26 +0100
+Message-Id: <20200216182334.8121-11-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200216182334.8121-1-ardb@kernel.org>
 References: <20200216182334.8121-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_102402_417176_28A0EF30 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200216_102405_046470_53F27FFD 
+X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,58 +85,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The IA64 code never refers to the EFI system table except from
-inside the scope of efi_init(). So let's use a local variable
-instead of efi.systab, which will be going away soon.
+IA64 calls efi_config_parse_tables() via efi_config_init(), which
+does an explicit memremap() of the tables, which is unnecessary
+on IA64. So let's call efi_config_parse_tables() directly, passing
+the __va() of the config table array.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/ia64/kernel/efi.c | 11 ++++++-----
- 1 file changed, 6 insertions(+), 5 deletions(-)
+ arch/ia64/kernel/efi.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/arch/ia64/kernel/efi.c b/arch/ia64/kernel/efi.c
-index 74fad89ae209..81bc5031a115 100644
+index 81bc5031a115..3b5cf551489c 100644
 --- a/arch/ia64/kernel/efi.c
 +++ b/arch/ia64/kernel/efi.c
-@@ -484,6 +484,7 @@ efi_map_pal_code (void)
- void __init
- efi_init (void)
- {
-+	const efi_system_table_t *efi_systab;
- 	void *efi_map_start, *efi_map_end;
- 	u64 efi_desc_size;
- 	char *cp;
-@@ -516,17 +517,17 @@ efi_init (void)
- 		printk(KERN_INFO "Ignoring memory above %lluMB\n",
- 		       max_addr >> 20);
- 
--	efi.systab = __va(ia64_boot_param->efi_systab);
-+	efi_systab = __va(ia64_boot_param->efi_systab);
- 
- 	/*
- 	 * Verify the EFI Table
- 	 */
--	if (efi.systab == NULL)
-+	if (efi_systab == NULL)
- 		panic("Whoa! Can't find EFI system table.\n");
--	if (efi_systab_check_header(&efi.systab->hdr, 1))
-+	if (efi_systab_check_header(&efi_systab->hdr, 1))
- 		panic("Whoa! EFI system table signature incorrect\n");
- 
--	efi_systab_report_header(&efi.systab->hdr, efi.systab->fw_vendor);
-+	efi_systab_report_header(&efi_systab->hdr, efi_systab->fw_vendor);
+@@ -531,7 +531,10 @@ efi_init (void)
  
  	palo_phys      = EFI_INVALID_TABLE_ADDR;
  
-@@ -536,7 +537,7 @@ efi_init (void)
- 	if (palo_phys != EFI_INVALID_TABLE_ADDR)
- 		handle_palo(palo_phys);
+-	if (efi_config_init(arch_tables) != 0)
++	if (efi_config_parse_tables(__va(efi_systab->tables),
++				    efi_systab->nr_tables,
++				    sizeof(efi_config_table_t),
++				    arch_tables) != 0)
+ 		return;
  
--	runtime = __va(efi.systab->runtime);
-+	runtime = __va(efi_systab->runtime);
- 	efi.get_time = phys_get_time;
- 	efi.set_time = phys_set_time;
- 	efi.get_wakeup_time = phys_get_wakeup_time;
+ 	if (palo_phys != EFI_INVALID_TABLE_ADDR)
 -- 
 2.17.1
 
