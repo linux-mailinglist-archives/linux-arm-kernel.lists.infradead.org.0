@@ -2,71 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02837160C35
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 09:06:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E271F160C39
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 09:06:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IWZ/QSlhKq6YtJ4LTGwwq1MHCQgacRv9hxymFZpLPtE=; b=iEAyI6NnPvi4dS
-	zvXwoTgMoO16f8eNjqvg5puq9iopkIKp4n2R8TwEjHoUwqr8qy61ZV89QJuRTekrcRT8VhZ7ykjxt
-	VGzIUOVYkONISvUd5tjmdza7c7G9NdVeeMoiQMsuIopXfDuWv64fxtR8Dpz/kgkZyRksS0duvbLUo
-	6ORcsY3aQy2E2IaD030EASXn9z5MI6Gz4YKzumK+ZeB6eBwf/ZXYHZ7UhObD81xVijO/aP+NZKdla
-	AMB6T2mXj4JDIFwXutK/x+Tf5XbkL7PeYw0SNiM52gKFzSQc3oAs6/cJPhtrU4d3jdmkFFy8xPCw9
-	Z1hGwuR4W8IAq0rnDWew==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DEp0zQhyhUb4xoS096oIThbSPXoJjd0QBL0pG+w8Hks=; b=OdPQBuuDF8McI6
+	w7hxexzSlabbCJf16w70Sxcfn+2qdA63nTmHl5lPeARZKcJt4E+mKWdlEWdquk3OVWytNiPPIgyTd
+	uu6nycwpgp3cfMS1Zn5szeKuIubq+ZQpog7XFEYVb+oA9HGT9zgWhkx1EBXGsj0Cuq+5F2jF4l0gg
+	jhMMt/Ug5hHzUFzuAQyrOVUb5aHRmSmb4N4CriDaBEjGUm7FAxQ5LaGImuD2hsAN97Uv73MiJH6iA
+	oqMKjW6aPPlWkTj8r88r0zlimOb9eXwr7T6OQGytw1Ktlm+jXsqf5hzG1LWj2JLjbu5v/0mLFMAhL
+	tD2PQVtGeHZzUqefucww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3bQ2-0007D9-30; Mon, 17 Feb 2020 08:06:18 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1j3bQb-0007dS-Fj; Mon, 17 Feb 2020 08:06:53 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3bPs-0007CM-H1
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 08:06:10 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by orsmga105.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 17 Feb 2020 00:06:07 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,451,1574150400"; d="scan'208";a="239000292"
-Received: from linux.intel.com ([10.54.29.200])
- by orsmga006.jf.intel.com with ESMTP; 17 Feb 2020 00:06:07 -0800
-Received: from [10.125.252.180] (abudanko-mobl.ccr.corp.intel.com
- [10.125.252.180])
- by linux.intel.com (Postfix) with ESMTP id CFA1D58052E;
- Mon, 17 Feb 2020 00:06:01 -0800 (PST)
-Subject: [PATCH v7 01/12] capabilities: introduce CAP_PERFMON to kernel and
- user space
-From: Alexey Budankov <alexey.budankov@linux.intel.com>
-To: James Morris <jmorris@namei.org>, Serge Hallyn <serge@hallyn.com>,
- Stephen Smalley <sds@tycho.nsa.gov>, Peter Zijlstra <peterz@infradead.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Alexei Starovoitov <ast@kernel.org>, Will Deacon <will@kernel.org>,
- Paul Mackerras <paulus@samba.org>, Helge Deller <deller@gmx.de>,
- Thomas Gleixner <tglx@linutronix.de>
-References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
-Organization: Intel Corp.
-Message-ID: <f56fbb5c-1477-44d5-7346-85a1ca0869dc@linux.intel.com>
-Date: Mon, 17 Feb 2020 11:06:00 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j3bQG-0007aa-Tn; Mon, 17 Feb 2020 08:06:34 +0000
+Received: by mail-io1-xd43.google.com with SMTP id h8so5035552iob.2;
+ Mon, 17 Feb 2020 00:06:32 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=p4iErZEeHdLP/k4A9lJOInup/YFd9m5dp1K6FqMWj0s=;
+ b=r4lTZKFkelyQbz679rc7YQ8WGMITje3bKOmCHvs+Q5j/Rr1HBfh2kI1MHWyR+CSksT
+ IzanKGI/HDGMH/3l958t+tHn+BQykhIVokans18248p9ouurocRZvMjmq/5G3NPDWjOc
+ /K8JsCM4NbwFk8b7noddTFElZkQzGmDwdkdZFrY0/EDZTKKKXYdU67HPoh9P6Hux+qEJ
+ a+36sUjN7ghK+0IiDs3yLD6ytmWt5JvLIm4OdaBEOGjpLihhDYEq6XqKjEBba+aRNRcv
+ 2J6D8scwACDFLfbvZrWxyDnYNrR23/PpbqLou5NNRQ6gZEKsHyfiXjnrT3Bljd3LAL22
+ jbfA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=p4iErZEeHdLP/k4A9lJOInup/YFd9m5dp1K6FqMWj0s=;
+ b=kLpsBujiT14NO9p7A0URLe6DAXhyzbYL2Mcq6JmTnIA5IH1aWlBI9IP7O3QRdwcRKr
+ St04+mNp83GSngj0dsU26iLm67aCzESXTaRbM2ixN77Q4FNiI37MRu1CL4TlFYaP2rbn
+ C9V7HCP6tn4NBDRGeGnnej9RKkA9YdfDfu6nuc3vWzVsB7upsxGaA9U91NwcrsywaEBo
+ bW29AsO2aQaApEGlQGiMAS66zxqdADmHJ5zGW6D1YEIMx8xkgA0vCvmR+IMfH5Hbk7T0
+ 6kqohl/F0GuTHEm1ZWQedoA2S8NUo550bh6Az55/I9A4KCgmP0gPyeZHZn+hRbksdOXB
+ 20pg==
+X-Gm-Message-State: APjAAAVX19rdh24eyPwl7chpWN9cZYDX0dSziOl9D7fRZpYnrjLWzGbx
+ /+GzxFs8vM3yEhe7xVmQCzNVJGHeMrd18sbAEoyvDQ==
+X-Google-Smtp-Source: APXvYqwT6KOGaK3oTFNEspTWDTqsYMPcRLQVAN6wvSFTTlhryrCpMH7JZXDt+Ot+X/F8lBhIHH9/d+si6uF0Ts+z/C4=
+X-Received: by 2002:a05:6638:1a3:: with SMTP id
+ b3mr11936540jaq.84.1581926791843; 
+ Mon, 17 Feb 2020 00:06:31 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
-Content-Language: en-US
+References: <20200216202101.2810-1-linux.amoon@gmail.com>
+ <1jpnedzmr2.fsf@starbuckisacylon.baylibre.com>
+In-Reply-To: <1jpnedzmr2.fsf@starbuckisacylon.baylibre.com>
+From: Anand Moon <linux.amoon@gmail.com>
+Date: Mon, 17 Feb 2020 13:36:21 +0530
+Message-ID: <CANAwSgR918Q3wGtJN_u9tjM+t1ZMod+PpZzJcBLT5jyqYEnP6g@mail.gmail.com>
+Subject: Re: [PATCH] arm64: dts: amlogic: odroid-n2: set usb-pwr-en regulator
+ always on
+To: Jerome Brunet <jbrunet@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_000608_628840_90AEC370 
-X-CRM114-Status: GOOD (  16.43  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200217_000632_984699_F07FA03E 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [linux.amoon[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,136 +94,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-man@vger.kernel.org, Andi Kleen <ak@linux.intel.com>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- Igor Lubashev <ilubashe@akamai.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Stephane Eranian <eranian@google.com>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>, oprofile-list@lists.sf.net,
- Jiri Olsa <jolsa@redhat.com>,
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Jerome,
 
-Introduce CAP_PERFMON capability designed to secure system performance
-monitoring and observability operations so that CAP_PERFMON would assist
-CAP_SYS_ADMIN capability in its governing role for performance
-monitoring and observability subsystems.
+On Mon, 17 Feb 2020 at 13:08, Jerome Brunet <jbrunet@baylibre.com> wrote:
+>
+>
+> On Sun 16 Feb 2020 at 21:21, Anand Moon <linux.amoon@gmail.com> wrote:
+>
+> > usb-pwr-en regulator is getting disable after booting, setting
+> > regulator-alway-on help enable the regulator after booting.
+>
+> This explains what your patch does, not why it needs to be done.
+> Why does this regulator need be on at all time ? What device needs it
+> and cannot claim it properly ?
+>
 
-CAP_PERFMON hardens system security and integrity during performance
-monitoring and observability operations by decreasing attack surface
-that is available to a CAP_SYS_ADMIN privileged process [2]. Providing
-the access to system performance monitoring and observability operations
-under CAP_PERFMON capability singly, without the rest of CAP_SYS_ADMIN
-credentials, excludes chances to misuse the credentials and makes the
-operation more secure. Thus, CAP_PERFMON implements the principal of
-least privilege for performance monitoring and observability operations
-(POSIX IEEE 1003.1e: 2.2.2.39 principle of least privilege: A security
-design principle that states that a process or program be granted only
-those privileges (e.g., capabilities) necessary to accomplish its
-legitimate function, and only for the time that such privileges are
-actually required)
+I missed this node is for micro usb, plz discard this patch.
+I am relay sorry for this, sorry for the noise.
 
-CAP_PERFMON meets the demand to secure system performance monitoring and
-observability operations for adoption in security sensitive, restricted,
-multiuser production environments (e.g. HPC clusters, cloud and virtual
-compute environments), where root or CAP_SYS_ADMIN credentials are not
-available to mass users of a system, and securely unblocks accessibility
-of system performance monitoring and observability operations beyond
-the root and CAP_SYS_ADMIN use cases.
-
-CAP_PERFMON takes over CAP_SYS_ADMIN credentials related to system
-performance monitoring and observability operations and balances amount
-of CAP_SYS_ADMIN credentials following the recommendations in the
-capabilities man page [1] for CAP_SYS_ADMIN: "Note: this capability is
-overloaded; see Notes to kernel developers, below." For backward
-compatibility reasons access to system performance monitoring and
-observability subsystems of the kernel remains open for CAP_SYS_ADMIN
-privileged processes but CAP_SYS_ADMIN usage for secure system
-performance monitoring and observability operations is discouraged with
-respect to the designed CAP_PERFMON capability.
-
-Although the software running under CAP_PERFMON can not ensure avoidance
-of related hardware issues, the software can still mitigate these issues
-following the official hardware issues mitigation procedure [2].
-The bugs in the software itself can be fixed following the standard
-kernel development process [3] to maintain and harden security of system
-performance monitoring and observability operations.
-
-[1] http://man7.org/linux/man-pages/man7/capabilities.7.html
-[2] https://www.kernel.org/doc/html/latest/process/embargoed-hardware-issues.html
-[3] https://www.kernel.org/doc/html/latest/admin-guide/security-bugs.html
-
-Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
----
- include/linux/capability.h          | 4 ++++
- include/uapi/linux/capability.h     | 8 +++++++-
- security/selinux/include/classmap.h | 4 ++--
- 3 files changed, 13 insertions(+), 3 deletions(-)
-
-diff --git a/include/linux/capability.h b/include/linux/capability.h
-index ecce0f43c73a..027d7e4a853b 100644
---- a/include/linux/capability.h
-+++ b/include/linux/capability.h
-@@ -251,6 +251,10 @@ extern bool privileged_wrt_inode_uidgid(struct user_namespace *ns, const struct
- extern bool capable_wrt_inode_uidgid(const struct inode *inode, int cap);
- extern bool file_ns_capable(const struct file *file, struct user_namespace *ns, int cap);
- extern bool ptracer_capable(struct task_struct *tsk, struct user_namespace *ns);
-+static inline bool perfmon_capable(void)
-+{
-+	return capable(CAP_PERFMON) || capable(CAP_SYS_ADMIN);
-+}
- 
- /* audit system wants to get cap info from files as well */
- extern int get_vfs_caps_from_disk(const struct dentry *dentry, struct cpu_vfs_cap_data *cpu_caps);
-diff --git a/include/uapi/linux/capability.h b/include/uapi/linux/capability.h
-index 272dc69fa080..e58c9636741b 100644
---- a/include/uapi/linux/capability.h
-+++ b/include/uapi/linux/capability.h
-@@ -367,8 +367,14 @@ struct vfs_ns_cap_data {
- 
- #define CAP_AUDIT_READ		37
- 
-+/*
-+ * Allow system performance and observability privileged operations
-+ * using perf_events, i915_perf and other kernel subsystems
-+ */
-+
-+#define CAP_PERFMON		38
- 
--#define CAP_LAST_CAP         CAP_AUDIT_READ
-+#define CAP_LAST_CAP         CAP_PERFMON
- 
- #define cap_valid(x) ((x) >= 0 && (x) <= CAP_LAST_CAP)
- 
-diff --git a/security/selinux/include/classmap.h b/security/selinux/include/classmap.h
-index 986f3ac14282..d233ab3f1533 100644
---- a/security/selinux/include/classmap.h
-+++ b/security/selinux/include/classmap.h
-@@ -27,9 +27,9 @@
- 	    "audit_control", "setfcap"
- 
- #define COMMON_CAP2_PERMS  "mac_override", "mac_admin", "syslog", \
--		"wake_alarm", "block_suspend", "audit_read"
-+		"wake_alarm", "block_suspend", "audit_read", "perfmon"
- 
--#if CAP_LAST_CAP > CAP_AUDIT_READ
-+#if CAP_LAST_CAP > CAP_PERFMON
- #error New capability defined, please update COMMON_CAP2_PERMS.
- #endif
- 
--- 
-2.20.1
-
-
+-Anand
 
 _______________________________________________
 linux-arm-kernel mailing list
