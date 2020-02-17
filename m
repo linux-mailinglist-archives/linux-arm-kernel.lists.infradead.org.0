@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1962716096A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 05:02:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0088E160972
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 05:05:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dovUMQzDgmqZrp0O0ri7Pjm6KQ8BAaQKUYmOmP8qV0k=; b=O+40K6BgLFbuhy
-	z/yraTuvQV2qf00TACvKHZYLS9Wok8cZP5DqnSWXXZY2a19ZawLacuwSAvoymUswj6JwngHFR4QTN
-	PBMlrRIZ1aUe9ctWAhmRLLlcKqAL/qBFwifMk4x2D9wqf18LkS0bHmPVvvXKOv7WRaJ+kzD55qPp0
-	QRvOCVjHo6gqVqIbGPAx4Uo76KoyA8DdwCYJjwXFKG5yqWpDBNiBa4l6ZoHAcYxjSrq7BHh8O7dOF
-	2Sp4GqgXNxyYk8RbHgsJarx7XV4KFNOrDRAl1MgKHISJfV16ttfPkT9LW+28sn+oWF+PjyEXETSSh
-	LqVBvwTJephRrMsfadOQ==;
+	List-Owner; bh=xl1ao48uiLvbqaezqgIcFWeEhEDfqtVNDGaCZd7GC3Q=; b=oAasy4MK4iZSWq
+	Ir4Ly8ezGSBgoju2yKozofzeNabff3kNZr2/zwYlFZgBrfavbw5thFeo8CY/K0LgTbD3nQEbSaqsf
+	GK2LxLoFambKJCDeBcYF3QTGWv8AUQIcZpWTe9pllvDVimncdh3yZ/ly70yD8b0kaSKX19Ys9fmOz
+	XMRk3sLy1f8GzYR1xMFVexXdGoukKu4OzIf99SXM76BPkWmfuE86gEA6zEz60eYXGVFxxGn8iKYvl
+	dhyuVDlrsZDri7ZEulPMS9b5e8cXlv3gUmCBewlxsvKJ4QrDf0VoZ+8UjuyZnip1PoT2RwEPPUwRX
+	wpEVLkhCexKHRGBQRFVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3XcH-0002N8-BC; Mon, 17 Feb 2020 04:02:41 +0000
+	id 1j3XfE-0004d3-R9; Mon, 17 Feb 2020 04:05:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3Xc3-0002Lf-6V
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 04:02:28 +0000
+ id 1j3Xf3-0004ci-It
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 04:05:34 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 38D9020726;
- Mon, 17 Feb 2020 04:02:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E83C120726;
+ Mon, 17 Feb 2020 04:05:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581912146;
- bh=XQOujdjrFUN4YnehuiyzCYCn7bsdy4tjBnZOyqleE4Q=;
+ s=default; t=1581912333;
+ bh=COHRYy09mHaqje5Vnj5MQFsJbA5qpkK8tfzGXCr5eog=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=nTXTxTvIL6ZEDXx7KAe7ydIxNsxkLHOOXEfj+RpLf/d3uxiAko6HxUi7ilWRVHPPr
- TtjmLOxI8MkfFHFjcGF4bEIlGO/QL3e9qF95w9caYwnLT5FnXwXVFdZyjXPmXHyWfa
- kYG9AedJRjrajjd05pwy1ZuvqA/xTZNTSITOkDh0=
-Date: Mon, 17 Feb 2020 12:02:17 +0800
+ b=Fke/f2Phbi9bhv8nqVj8HuRjf/h3SzwMJW2UZUazCSRQIeEM+5jw9Pv4QE3VloeoH
+ 1gmbN/PrErT7/QozAM0WA2klfauYDW9v5i20xJS//TxMgtsBx+8UZdM8n5SBlYDgwk
+ Fz2uK4i8LETUHP/xvbmQkRzyEoe7ZRC9+X5It3Kk=
+Date: Mon, 17 Feb 2020 12:05:25 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Martin Kepplinger <martin.kepplinger@puri.sm>
-Subject: Re: [PATCH v1 03/12] arm64: dts: librem5-devkit: allow modem to wake
- the system from suspend
-Message-ID: <20200217040216.GD5395@dragon>
+Subject: Re: [PATCH v1 05/12] arm64: dts: librem5-devkit: add the sgtl5000
+ i2c audio codec
+Message-ID: <20200217040524.GE5395@dragon>
 References: <20200205143003.28408-1-martin.kepplinger@puri.sm>
- <20200205143003.28408-4-martin.kepplinger@puri.sm>
+ <20200205143003.28408-6-martin.kepplinger@puri.sm>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200205143003.28408-4-martin.kepplinger@puri.sm>
+In-Reply-To: <20200205143003.28408-6-martin.kepplinger@puri.sm>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_200227_267615_D5906133 
-X-CRM114-Status: GOOD (  16.69  )
+X-CRM114-CacheID: sfid-20200216_200533_642961_70B18A56 
+X-CRM114-Status: GOOD (  14.90  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,77 +88,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 05, 2020 at 03:29:54PM +0100, Martin Kepplinger wrote:
+On Wed, Feb 05, 2020 at 03:29:56PM +0100, Martin Kepplinger wrote:
 > From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 > 
-> Connect the WoWWAN signal to a gpio key to wake up the system from suspend.
+> Describe the sgtl5000 of the librem 5 devkit in devicetree.
 > 
 > Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 > ---
->  .../dts/freescale/imx8mq-librem5-devkit.dts   | 27 +++++++++++++++----
->  1 file changed, 22 insertions(+), 5 deletions(-)
+>  .../boot/dts/freescale/imx8mq-librem5-devkit.dts    | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
 > 
 > diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> index 8162576e8f3d..ac6ba227e1da 100644
+> index e7e3766198c6..56b4ac286801 100644
 > --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
 > +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> @@ -33,7 +33,7 @@
->  	gpio-keys {
->  		compatible = "gpio-keys";
->  		pinctrl-names = "default";
-> -		pinctrl-0 = <&pinctrl_gpio_keys>;
-> +		pinctrl-0 = <&pinctrl_gpio_keys>, <&pinctrl_wwan_in>;
->  
->  		btn1 {
->  			label = "VOL_UP";
-> @@ -55,6 +55,15 @@
->  			wakeup-source;
->  			linux,code = <KEY_HP>;
->  		};
-> +
-> +		wwan_wake {
-> +			label = "WWAN_WAKE";
-> +			gpios = <&gpio3 8 GPIO_ACTIVE_LOW>;
-> +			interrupt-parent = <&gpio3>;
-> +			interrupts = <8 GPIO_ACTIVE_LOW>;
-> +			wakeup-source;
-> +			linux,code = <KEY_PHONE>;
-> +		};
+> @@ -480,6 +480,19 @@
+>  		vddio-supply = <&reg_3v3_p>;
 >  	};
 >  
->  	leds {
-> @@ -767,11 +776,19 @@
->  		>;
->  	};
->  
-> -	pinctrl_wwan: wwangrp {
-> +	pinctrl_wwan_in: wwaningrp {
-> +		fsl,pins = <
-> +		/* nWoWWAN */
-> +		MX8MQ_IOMUXC_NAND_DATA02_GPIO3_IO8	0x80
+> +	sgtl5000: sgtl5000@a {
 
-Why not just add it to pinctrl_gpio_keys to make the change minimal.
+audio-codec for the node name.
 
-> +		>;
+> +		compatible = "fsl,sgtl5000";
+> +		clocks = <&clk IMX8MQ_CLK_SAI2_ROOT>;
+> +		assigned-clocks = <&clk IMX8MQ_CLK_SAI2>;
+> +		assigned-clock-parents = <&clk IMX8MQ_AUDIO_PLL1_OUT>;
+> +		assigned-clock-rates = <24576000>;
+> +		#sound-dai-cells = <0>;
+> +		reg = <0x0a>;
+> +		VDDD-supply = <&reg_1v8_p>;
+> +		VDDIO-supply = <&reg_3v3_p>;
+> +		VDDA-supply = <&reg_3v3_p>;
 > +	};
 > +
-> +	pinctrl_wwan_out: wwanoutgrp {
->  		fsl,pins = <
-> -			MX8MQ_IOMUXC_NAND_CE3_B_GPIO3_IO4	0x09 /* nWWAN_DISABLE */
-> -			MX8MQ_IOMUXC_NAND_DATA02_GPIO3_IO8	0x80 /* nWoWWAN */
-> -			MX8MQ_IOMUXC_NAND_DATA03_GPIO3_IO9	0x19 /* WWAN_RESET */
-> +		/* nWWAN_DISABLE */
-> +		MX8MQ_IOMUXC_NAND_CE3_B_GPIO3_IO4	0x09
-> +		/* WWAN_RESET */
-> +		MX8MQ_IOMUXC_NAND_DATA03_GPIO3_IO9	0x19
 
-Unnecessary changes.
+Add a device only when there is a user for it.
 
 Shawn
 
->  		>;
->  	};
->  };
+>  	touchscreen@5d {
+>  		compatible = "goodix,gt5688";
+>  		reg = <0x5d>;
 > -- 
 > 2.20.1
 > 
