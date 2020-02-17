@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 60DAA160A62
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 07:24:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64B24160A67
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 07:27:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5zNwqz0jIIBILsQYfelC7W706SmBdjk7dEDUQVIMUP0=; b=N85Jx7TXnv+SpN
-	3XqkI7hp3nCd0QRDuqTb6s7KEmgiFpbCs4y1K0G4fbn3hnjXDYkGNj/OkXHZBVHxC2pPt4Gy6MC2v
-	T2fpaQ7A32s3WD5He1vUonMXd797hS3ImGM0scBhksdmBaB4mFwmLBvkJnvl3n/BQ5GK6b4J4WzVu
-	aOp6E/cG0HMUDnPmIApgqfGk7Ejp49exvPVrzcoDWIAmgC2/eA+FxS8HlKsTkxNd63pfzQ7DXcPIC
-	1CyOH0pCEi5ZCH+ZuylBpW3xuuMSz343pZceXHDkie89utHjwUSQpBUWDyz3/jtObJTJHbNMY8C5q
-	juSVeAWgaKR8tbXta7qw==;
+	List-Owner; bh=V5sRUTaAYWnDIxJiTirvZwdvPA4+DdPEWoaFxFeh1zg=; b=o/wKjJ1vQmz+/3
+	N1rRjI6vlJsptSGgGeY1hOKxSJ8nqUA4vm4fGm5t/WJ47bDYICypHquCQrSDRtqE3LCCo0LLRjMzQ
+	4v+X3Xa+WqYNA/+2Y+7oe4Ut6gMpEK8hxrkichE6WIctP0VczDf/hFwbDThJ7IkLftsqgriUf41H/
+	OrKmCuOLGoIuXSK490auFcEIb63li3oelCT+FZ1lwXwzBMZimCk6hmTfuw/NW8qFyDsDkVCrBXFPd
+	wJp7hjBhTf7ZWhQQQ4AdJr+oGQy81pigKbk6+ArOeOTilyJQAKCP6ibqS/DhHtMx+N7NJLkS8f1fo
+	4mYTqNrgdLMgJoaMBZkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3ZpA-0002ff-0N; Mon, 17 Feb 2020 06:24:08 +0000
+	id 1j3ZsO-0004L8-5V; Mon, 17 Feb 2020 06:27:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3Zp1-0002eZ-3e
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 06:24:00 +0000
-Received: from hump (unknown [87.71.56.52])
+ id 1j3ZsE-0004Kr-6z
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 06:27:19 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A24120718;
- Mon, 17 Feb 2020 06:23:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2620020718;
+ Mon, 17 Feb 2020 06:27:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581920638;
- bh=/x16WuB9ipweEdbRODxI3vPb27s/qMR9LxZj9eSXNFE=;
+ s=default; t=1581920837;
+ bh=KgSYnzHHJzBCjBaAI6KjAC2O3NBeCAluTBC1sa9/DX0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=mJdZTvPNP7YeXjSuzPzV/mVObPxfKwGHjQ8p+ZHMpTmRtHHC4KJ+V+9rVhTjyc//R
- yxkqqla61U/GzHYInQ60SIgL3AIru2SOxlhJ63F/uuX7uFtPbBAVrgP2PtOiwMtu2+
- 8lDq6YKKg11ilpAZTu8jTZrVhQnL/nAs55Me23Y8=
-Date: Mon, 17 Feb 2020 08:23:44 +0200
-From: Mike Rapoport <rppt@kernel.org>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH v2 00/13] mm: remove __ARCH_HAS_5LEVEL_HACK
-Message-ID: <20200217062344.GA4729@hump>
-References: <20200216081843.28670-1-rppt@kernel.org>
- <20200216082230.GV25745@shell.armlinux.org.uk>
+ b=PyNf3OKGIP3comcBUhBg7VuYttapVBhZIdyvpXPQlmUeM3XqGTU+2bAEDvKa5nQi0
+ FhVogDlMiFnSMS5R0YM2DJL49HQLAzZP+EK5uJzpKmF0nQClSpvrCazz/QP3C32Pbo
+ teGAKSwrBpZvFHxzKLDQuufnw4QeRFgWeS5qDg10=
+Date: Mon, 17 Feb 2020 14:27:11 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH] clk: imx: Include clk-provider.h instead of clk.h for
+ i.MX8M SoCs clock driver
+Message-ID: <20200217062647.GA6862@dragon>
+References: <1581490943-17920-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200216082230.GV25745@shell.armlinux.org.uk>
+In-Reply-To: <1581490943-17920-1-git-send-email-Anson.Huang@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_222359_173025_05EBE598 
-X-CRM114-Status: GOOD (  13.97  )
+X-CRM114-CacheID: sfid-20200216_222718_276311_C9AEC02C 
+X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,67 +78,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-sh@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, linux-hexagon@vger.kernel.org,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Jonas Bonn <jonas@southpole.se>, linux-arch@vger.kernel.org,
- Brian Cain <bcain@codeaurora.org>, Marc Zyngier <maz@kernel.org>,
- Ley Foon Tan <ley.foon.tan@intel.com>, Mike Rapoport <rppt@linux.ibm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- uclinux-h8-devel@lists.sourceforge.jp, Fenghua Yu <fenghua.yu@intel.com>,
- Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- openrisc@lists.librecores.org, Stafford Horne <shorne@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Michael Ellerman <mpe@ellerman.id.au>,
- nios2-dev@lists.rocketboards.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org
+Cc: peng.fan@nxp.com, abel.vesa@nxp.com, sboyd@kernel.org,
+ mturquette@baylibre.com, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org, jun.li@nxp.com, Linux-imx@nxp.com,
+ kernel@pengutronix.de, leonard.crestez@nxp.com, festevam@gmail.com,
+ s.hauer@pengutronix.de, linux-arm-kernel@lists.infradead.org, ping.bai@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Feb 16, 2020 at 08:22:30AM +0000, Russell King - ARM Linux admin wrote:
-> On Sun, Feb 16, 2020 at 10:18:30AM +0200, Mike Rapoport wrote:
-> > From: Mike Rapoport <rppt@linux.ibm.com>
-> > 
-> > Hi,
-> > 
-> > These patches convert several architectures to use page table folding and
-> > remove __ARCH_HAS_5LEVEL_HACK along with include/asm-generic/5level-fixup.h.
-> > 
-> > The changes are mostly about mechanical replacement of pgd accessors with p4d
-> > ones and the addition of higher levels to page table traversals.
-> > 
-> > All the patches were sent separately to the respective arch lists and
-> > maintainers hence the "v2" prefix.
+On Wed, Feb 12, 2020 at 03:02:23PM +0800, Anson Huang wrote:
+> The i.MX8M SoCs clock driver are provider, NOT consumer, so clk-provider.h
+> should be used instead of clk.h.
 > 
-> You fail to explain why this change which adds 488 additional lines of
-> code is desirable.
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Right, I should have been more explicit about it.
-
-As Christophe mentioned in his reply, removing 'HACK' and 'fixup' is an
-improvement.
-Another thing is that when all architectures behave the same it opens
-opportunities for cleaning up repeating definitions of page table
-manipulation primitives.
-
- 
-> -- 
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-> According to speedtest.net: 11.9Mbps down 500kbps up
-
--- 
-Sincerely yours,
-Mike.
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
