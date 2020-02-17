@@ -2,78 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 657FC160DCF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 09:51:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9667160DD9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 09:55:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6dyB/oaOSpvAyxmgegaXHKQtix9Wy25n6n3X4t0ZCaM=; b=LRUYrcsrrUHnRr
-	x0+cahVrqxUhRQSi8LvDcukR1NuW07CKxnHU48g3xaTboct8SYEqj3bzDxttW5nOJ4uCBX2PKuAkt
-	r7blP8/CwpvgmJW4kYwIRHtgMm873qtqj78HIXmQ9dS4OYFuqcKtSl7OW6jzoZZnlVq6mT8afpvUh
-	GvmjUMtZU28Gopmw5/K97CuGmuxx2MrvHKBOt+yzasBgtdNQotr7YUuT0V7ReW5VUqpDXr0a2JNse
-	Qj+HqYSmg61ZYjUuveI4LBShWgsMvf3FjkaqhOKm2VUFJoHw8LzLvscXVT+eUQX7VGRoGxhdMT443
-	r6iPmkXqCTO0Xn3y25IQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eLMsIYBEP+9mLunQS80ylzxzh5zIxc1DyJuCHRF+gN8=; b=Up5Fqpd1CUEqZP
+	0wZLDMAmjhDUUQEfSNeTkykvRGzLVNMU6I2O8WZeQDjuOa7e+0n8L73TfDF+vqcIkUTRQCfU9yFKL
+	rIgAIfuMDM0PVVxRvE/ONWSGtovN8vNZOtd+LOTdEPzq8cj1W/KjLHRQYrGV5i64hUmqxFMOmzXlj
+	pUk2g48adikU6iSNKn7buILTV8zV+g+0tk0l0Ma9Onj+7XLivXSq/EuqptBXTe7Ud9eB/M3JagnJ6
+	ya305X49Kq1vwGaw6Q6WLQY3sTrwFv9c+Fnl0kz6Ked24L2FRzl2/oUgip84WlE3l61c/qGIIi9uY
+	26F3J4Rucwos+vhF0fYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3c87-0005b0-NP; Mon, 17 Feb 2020 08:51:51 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1j3cBf-0007gV-2m; Mon, 17 Feb 2020 08:55:31 +0000
+Received: from mail-eopbgr60068.outbound.protection.outlook.com ([40.107.6.68]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3c7y-0005Zq-5X; Mon, 17 Feb 2020 08:51:44 +0000
-Received: by mail-io1-xd44.google.com with SMTP id z16so17558911iod.11;
- Mon, 17 Feb 2020 00:51:40 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uHHGohWk9p+/nxk2GPpS7E9E1pqxMJMjyjsNhyVbaiU=;
- b=FykBzbYJMaN5c0YR2MF11eN63iW/0xfMqkMCO+S5HgLkR7Obiw/ot8yvZ0h49GIxZL
- S2+l6ayaFj2+5LRym2fXDwxpcqjaElQsUS/UwVeCnhxxXm8EUvPBt6YOb/PtxvOtG0Ny
- kD0XSHCBlYjcdIV+RbJcHbc6cEEgyGr/F4IZxKK1SNSk0PaWVCtgUP+EUXvPSgFYlTnC
- Zj30ph73zv2TbaGG1B2sygm90a1s0C5lJlJoNhibYSHoPJSkbE0Xi9OGa13S6xfzY87b
- HUOk4REAF/Nrz6QKXPhgktczj9FXPVYlo+bSXu/p3aohZPrYogUJznmim5SX21H6LjMm
- kn4Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uHHGohWk9p+/nxk2GPpS7E9E1pqxMJMjyjsNhyVbaiU=;
- b=Kq4YbALh0YUHzzSCNFihpvHOcn+k74et+FTvXnNYqslIb1fC4ccO0ET7tM2j1RWqx7
- /yOoHNNMn955vWRW24StV3sy9Pm7Hre8x8RDNwqssGAKSwZ67lNHS5sd7YUuU6rPAFUR
- 1ib7qMGEFYoSP2i6ep+8u2YamHV53B2MVhUJCdZJUOBYzOVSCkIMgZiuHm0IJ79dXKj6
- 8mrGTgzWR0gSQNK3SjAyD2AxGGYXxZAEU6/SrSK2CWO2OX3KkSGIpendVidMONVgBY1G
- ey85rt9Ke+ckv8IarlOtqFiUdPo+aWqjhtja0AIvVK5OugyAUWXZa/O40wJsBiRgbfyV
- H1cQ==
-X-Gm-Message-State: APjAAAVzBZG22Z+ZSL/39Q7RYZ8GHOsGAAjFhs/1nql611RabnmY2FYN
- X2NKPu4QbLlUBGf4N7Mw4Kv4ol2zHYL9in+VefI=
-X-Google-Smtp-Source: APXvYqy5Ao2fzvMvprdx/tvfqqCXbZoPO8C3N/gOUkzZph4zPWsllY1/gyAqJmaFDd+k4b6XjT7ZZp9Nv1LrIGgjhzQ=
-X-Received: by 2002:a5e:aa18:: with SMTP id s24mr10775126ioe.221.1581929499729; 
- Mon, 17 Feb 2020 00:51:39 -0800 (PST)
+ id 1j3cBX-0007fl-5Q
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 08:55:24 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=A7nwjWKlegqtO7ecCuTx/gA3bkLH9QK3o8jqJKysBUKVk1+GmOkT3KNeT030KNUGEfdzABjg6ylI/3llAcvhRR097y+uq0Yl59VwackWt/gVqFtsqiJmdfJJi3dcU0SVIJPXMM10lgrBjznvgM+On0GjA5vRRjKSwm9S9f4cx6EXoWzBGWFfgYfWn/9TCSw+o7YgY0bz50hWAoV9Q0qy2eIoIf24MA1do18w54S7x8JZPoGGFJJEm3YhCI3Wz/QEWJPcwwXW+zam4vi5haUTo5bWW9mwwMfmnuxAH00gG90sZnPYNyySyWGc6EpqR1DQQySa+XtF9EYbhcSUYSpOcA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=pQ7tGMSPobEIhwh6Usal09Dh2Tq0Ikkh7DfWkoYsfvw=;
+ b=X9bhDEBid/tUnVdNNg5RolLrYT05gBdXcNXTxYmPsaBbO/L/ZCAJfDQ2uUFQcxxuS+PvdJEKLUHWneZPXdFcq/4guciSlpBn5ceNDzEBqHgxyCeYoH+CwsWIkZrBrYAAs1Fp0Agh01cv+akJ67rxZNh733sYiJXBC9iZFUMSqwMMCCrXERcfuCX2auUMZItB4zRlsuOr3+83bE1oXASPaVPljABJwvmrh76xRilpFhvt/HOP9iGI4CnuH0ncRwV3SvcUFzcXKyJFq2RreI1dWirWndc/vV6yGtV1zd7QYyZngUjrPhMXchbJUnr/XkCYW/NOBkdli3VOmWhGbNRo/w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=pQ7tGMSPobEIhwh6Usal09Dh2Tq0Ikkh7DfWkoYsfvw=;
+ b=bn2Ivfz3EsURTSoulMCqp09oQyNf9puLi8gY5FhjjEIhFK+cMKk06YjoAD+usOtnYv+LW+GBLMzFBD6uRQ5dHyql3eQOPakt8Wmrjc18qmOBNdQ9IPfuEUYlkBc/v2XNoI6dmsbD0UEO5z1nmNCIKv0L7/LLqdVTMvoJl4x1zFU=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=pankaj.bansal@nxp.com; 
+Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com (10.168.65.10) by
+ VI1PR0401MB2415.eurprd04.prod.outlook.com (10.169.134.140) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2729.25; Mon, 17 Feb 2020 08:55:16 +0000
+Received: from VI1PR0401MB2496.eurprd04.prod.outlook.com
+ ([fe80::196a:28a9:bb9:2fae]) by VI1PR0401MB2496.eurprd04.prod.outlook.com
+ ([fe80::196a:28a9:bb9:2fae%9]) with mapi id 15.20.2729.032; Mon, 17 Feb 2020
+ 08:55:16 +0000
+From: Pankaj Bansal <pankaj.bansal@nxp.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Hanjun Guo <guohanjun@huawei.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Len Brown <lenb@kernel.org>,
+ Varun Sethi <V.Sethi@nxp.com>, linux-acpi@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] ACPI/IORT: fix output id retrieval for platform devices
+Date: Mon, 17 Feb 2020 19:45:04 +0530
+Message-Id: <20200217141504.4183-1-pankaj.bansal@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-ClientProxiedBy: BM1PR01CA0096.INDPRD01.PROD.OUTLOOK.COM (2603:1096:b00::12)
+ To VI1PR0401MB2496.eurprd04.prod.outlook.com
+ (2603:10a6:800:56::10)
 MIME-Version: 1.0
-References: <20200216173446.1823-1-linux.amoon@gmail.com>
- <20200216173446.1823-4-linux.amoon@gmail.com>
- <1jmu9hzlo2.fsf@starbuckisacylon.baylibre.com>
-In-Reply-To: <1jmu9hzlo2.fsf@starbuckisacylon.baylibre.com>
-From: Anand Moon <linux.amoon@gmail.com>
-Date: Mon, 17 Feb 2020 14:21:29 +0530
-Message-ID: <CANAwSgRurj6Mfkqq6OfW_ZORCj_UhQN24kx-tj+sUWfuqn_uoQ@mail.gmail.com>
-Subject: Re: [PATCHv1 3/3] clk: meson: g12a: set cpu clock divider flags too
- CLK_IS_CRITICAL
-To: Jerome Brunet <jbrunet@baylibre.com>
+Received: from uefi-workstation.ap.freescale.net (92.120.1.69) by
+ BM1PR01CA0096.INDPRD01.PROD.OUTLOOK.COM (2603:1096:b00::12) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2729.22 via Frontend Transport; Mon, 17 Feb 2020 08:55:14 +0000
+X-Mailer: git-send-email 2.17.1
+X-Originating-IP: [92.120.1.69]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 0c2cf02e-7e34-46f6-a15e-08d7b3871bca
+X-MS-TrafficTypeDiagnostic: VI1PR0401MB2415:|VI1PR0401MB2415:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR0401MB24155332E265715CABEA91ADF1160@VI1PR0401MB2415.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:3968;
+X-Forefront-PRVS: 0316567485
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(366004)(346002)(136003)(39860400002)(376002)(189003)(199004)(36756003)(1076003)(5660300002)(26005)(6666004)(16526019)(2906002)(6486002)(186003)(44832011)(81166006)(110136005)(8936002)(8676002)(956004)(2616005)(66476007)(66556008)(66946007)(86362001)(6506007)(81156014)(6512007)(52116002)(478600001)(316002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0401MB2415;
+ H:VI1PR0401MB2496.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+Received-SPF: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: AKjJaYuLdvavEbbk78aIBQTVxaTQwvY8qTIsR24V2C/fSXMafMyw1mEbUf2SUw9vuJmo4q1e7Ifl8dKvAB3rd1Wynvf/u6kQxWzbMmLvFda1nNTheBvbA2YEg8BO/CvNoDWUHl7ooVs8/AQTx5iRCBV8/p53vYigW99Cl+QDmZJh9zZ97oTwYkp4h3j/bor7IjLzFXUSX4oDxF2tkpR2sEkozEabhn4QO0pyM8DQefCBhG0tidI81ZcKURbg6yDaelyVB8USWusg7YItfSmCj6mFsVFrT8C6WPZe4Ogex7OSuu9MpjRLf9pXNqVUEZO3VTF7XZ45HQWO7Qh1kzIarpPPtG1WibowxwEtQn+wAFomcirv4ATT6lKQFj/DqYibPEbdmQojGp/Jny+DMsgoF4P1VQMHDgm7kyvdd1eVQFda1ZAwtMbFEeQHSta9shEp
+X-MS-Exchange-AntiSpam-MessageData: U+h/5Zq/9l9qaZLPw3KeXzRdXxQZItMcpFqAbnJohK/oO4FNwe6moPQ+5x9W4Hgutqa7uRiapz1R0jzooKZXH+XcJiBVANkChQ3ldBX53BtbRrGxu33DwEJP+xDL9/IfdBI45t/usaMdi4fdQ4k+1w==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0c2cf02e-7e34-46f6-a15e-08d7b3871bca
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Feb 2020 08:55:16.7104 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 6QhP/dF7CTiF6hObrjebCzo8m75rS8FW+x6kPaXSXWM8JE+XIlTH9SYULayCKWqo/+SaawIvErdChuZdM0vHag==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0401MB2415
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_005142_211527_1AF1ACF5 
-X-CRM114-Status: GOOD (  23.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200217_005523_257476_A4373AE4 
+X-CRM114-Status: GOOD (  15.35  )
+X-Spam-Score: 2.2 (++)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (2.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [linux.amoon[at]gmail.com]
+ no trust [40.107.6.68 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 2.4 DATE_IN_FUTURE_03_06   Date: is 3 to 6 hours after Received: date
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -82,6 +115,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,96 +127,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Kevin Hilman <khilman@baylibre.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Linux Kernel <linux-kernel@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-amlogic@lists.infradead.org,
- "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jerome,
+As per IORT spec if Single mapping flag is not defined for
+a node, the output id ought to to be retrieved using input
+id from an ID mapping.
 
-Thanks for your review comments.
+Current code of output id retrieval for platform devices
+ignored this case. fixed the same.
 
-On Mon, 17 Feb 2020 at 13:32, Jerome Brunet <jbrunet@baylibre.com> wrote:
->
->
-> On Sun 16 Feb 2020 at 18:34, Anand Moon <linux.amoon@gmail.com> wrote:
->
-> > Odroid N2 would fail to boot using microSD unless we set
-> > cpu freq clk divider flags to CLK_IS_CRITICAL to avoid stalling of
-> > cpu when booting, most likely because of PWM module linked to
->
-> Where did you see a PWM ?
->
-> > the CPU for DVFS is getting disabled in between the late_init call,
->
-> between the late_init call and what ?
->
-> > so gaiting the clock source shuts down the power to the codes.
->
-> what code ?
->
-> > Setting clk divider flags to CLK_IS_CRITICAL help resolve the issue.
-> >
-> > Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> > Cc: Jerome Brunet <jbrunet@baylibre.com>
-> > Cc: Neil Armstrong <narmstrong@baylibre.com>
-> > Suggested-by: Neil Armstrong <narmstrong@baylibre.com>
-> > Signed-off-by: Anand Moon <linux.amoon@gmail.com>
-> > ---
-> >
-> > Following Neil's suggestion, I have prepared this patch.
-> > https://patchwork.kernel.org/patch/11177441/#22964889
-> > ---
-> >  drivers/clk/meson/g12a.c | 3 ++-
-> >  1 file changed, 2 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
-> > index d2760a021301..accae3695fe5 100644
-> > --- a/drivers/clk/meson/g12a.c
-> > +++ b/drivers/clk/meson/g12a.c
-> > @@ -283,6 +283,7 @@ static struct clk_fixed_factor g12a_fclk_div2_div = {
-> >               .ops = &clk_fixed_factor_ops,
-> >               .parent_hws = (const struct clk_hw *[]) { &g12a_fixed_pll.hw },
-> >               .num_parents = 1,
-> > +             .flags = CLK_IS_CRITICAL,
->
-> This makes no sense for because:
-> * This clock cannot gate and none of its parents can either. IOW, the
-> output of this clock is never disabled.
-> * I cannot guess the relation between fdiv2 and the commit description
->
-> >       },
-> >  };
-> >
-> > @@ -681,7 +682,7 @@ static struct clk_regmap g12b_cpub_clk = {
-> >                       &g12a_sys_pll.hw
-> >               },
-> >               .num_parents = 2,
-> > -             .flags = CLK_SET_RATE_PARENT,
-> > +             .flags = CLK_SET_RATE_PARENT | CLK_IS_CRITICAL,
->
-> Why not. Neil what do you think of this ?
-> If nothing is claiming this clock and enabling it then I suppose it
-> could make sense.
->
->
-> >       },
-> >  };
->
+Signed-off-by: Pankaj Bansal <pankaj.bansal@nxp.com>
+---
+ drivers/acpi/arm64/iort.c | 36 +++++++++++++++++-------------------
+ 1 file changed, 17 insertions(+), 19 deletions(-)
 
-Sorry for the noise, I should not have send this patch in first place.
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index ed3d2d1a7ae9..00e562dadd2a 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -358,7 +358,9 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+ 	/* Single mapping does not care for input id */
+ 	if (map->flags & ACPI_IORT_ID_SINGLE_MAPPING) {
+ 		if (type == ACPI_IORT_NODE_NAMED_COMPONENT ||
+-		    type == ACPI_IORT_NODE_PCI_ROOT_COMPLEX) {
++		    type == ACPI_IORT_NODE_PCI_ROOT_COMPLEX ||
++		    type == ACPI_IORT_NODE_SMMU_V3 ||
++		    type == ACPI_IORT_NODE_PMCG) {
+ 			*rid_out = map->output_base;
+ 			return 0;
+ 		}
+@@ -376,7 +378,8 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+ }
+ 
+ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
+-					       u32 *id_out, int index)
++					       u32 id_in, u32 *id_out,
++					       int index)
+ {
+ 	struct acpi_iort_node *parent;
+ 	struct acpi_iort_id_mapping *map;
+@@ -398,15 +401,8 @@ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
+ 	parent = ACPI_ADD_PTR(struct acpi_iort_node, iort_table,
+ 			       map->output_reference);
+ 
+-	if (map->flags & ACPI_IORT_ID_SINGLE_MAPPING) {
+-		if (node->type == ACPI_IORT_NODE_NAMED_COMPONENT ||
+-		    node->type == ACPI_IORT_NODE_PCI_ROOT_COMPLEX ||
+-		    node->type == ACPI_IORT_NODE_SMMU_V3 ||
+-		    node->type == ACPI_IORT_NODE_PMCG) {
+-			*id_out = map->output_base;
+-			return parent;
+-		}
+-	}
++	if (!iort_id_map(map, node->type, id_in, id_out))
++		return parent;
+ 
+ 	return NULL;
+ }
+@@ -510,14 +506,14 @@ static struct acpi_iort_node *iort_node_map_id(struct acpi_iort_node *node,
+ }
+ 
+ static struct acpi_iort_node *iort_node_map_platform_id(
+-		struct acpi_iort_node *node, u32 *id_out, u8 type_mask,
+-		int index)
++		struct acpi_iort_node *node, u32 id_in, u32 *id_out,
++		u8 type_mask, int index)
+ {
+ 	struct acpi_iort_node *parent;
+ 	u32 id;
+ 
+ 	/* step 1: retrieve the initial dev id */
+-	parent = iort_node_get_id(node, &id, index);
++	parent = iort_node_get_id(node, id_in, &id, index);
+ 	if (!parent)
+ 		return NULL;
+ 
+@@ -592,7 +588,8 @@ u32 iort_msi_map_rid(struct device *dev, u32 req_id)
+ /**
+  * iort_pmsi_get_dev_id() - Get the device id for a device
+  * @dev: The device for which the mapping is to be done.
+- * @dev_id: The device ID found.
++ * @dev_id: On function entry the input id for device.
++ *          On successful function exit, the output device ID found.
+  *
+  * Returns: 0 for successful find a dev id, -ENODEV on error
+  */
+@@ -608,11 +605,11 @@ int iort_pmsi_get_dev_id(struct device *dev, u32 *dev_id)
+ 	index = iort_get_id_mapping_index(node);
+ 	/* if there is a valid index, go get the dev_id directly */
+ 	if (index >= 0) {
+-		if (iort_node_get_id(node, dev_id, index))
++		if (iort_node_get_id(node, *dev_id, dev_id, index))
+ 			return 0;
+ 	} else {
+ 		for (i = 0; i < node->mapping_count; i++) {
+-			if (iort_node_map_platform_id(node, dev_id,
++			if (iort_node_map_platform_id(node, *dev_id, dev_id,
+ 						      IORT_MSI_TYPE, i))
+ 				return 0;
+ 		}
+@@ -761,7 +758,7 @@ static struct irq_domain *iort_get_platform_device_domain(struct device *dev)
+ 
+ 	/* then find its msi parent node */
+ 	for (i = 0; i < node->mapping_count; i++) {
+-		msi_parent = iort_node_map_platform_id(node, NULL,
++		msi_parent = iort_node_map_platform_id(node, 0, NULL,
+ 						       IORT_MSI_TYPE, i);
+ 		if (msi_parent)
+ 			break;
+@@ -1038,7 +1035,8 @@ const struct iommu_ops *iort_iommu_configure(struct device *dev)
+ 			return NULL;
+ 
+ 		do {
+-			parent = iort_node_map_platform_id(node, &streamid,
++			parent = iort_node_map_platform_id(node, streamid,
++							   &streamid,
+ 							   IORT_IOMMU_TYPE,
+ 							   i++);
+ 
+-- 
+2.17.1
 
--Anand
 
 _______________________________________________
 linux-arm-kernel mailing list
