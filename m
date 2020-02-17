@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44B04160E92
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 10:30:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DC97160E93
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 10:31:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=F2w91+n2yn87WDKxiAQTUIST94q+PadPOde9I1YXxlI=; b=p3p8YG3lXTLxNqFW0Ari4O0mFI
-	UoaBkB5GpuQILnrCrVBNHHKJZ79ZVOFN570N9FEtevGmpB3K9PQkpwdIWrD8TgkT0jWJiiMzIMLD3
-	LZo5RPwmjYgf77cXz5Du2Ie1hUVSyitvPWjjxYXLcxpVA+AKqNVcSIwIwQ2sAHr3/bCouUfDMfi4l
-	CSAlaeeqCIrf8tf5oNa03MXgK+NFOFAsnNyWk0V+AaLTs1TXd6jmVMfr3+6QlEltF/j8mLLZBAx8J
-	5cBTdktDUMrexH/nztuDNhN+F4z8KwISYCWnT4FCShzjN2Se0NWVBhzb87Wl9DVCXcD5Bho4WVc6n
-	mel7rF4Q==;
+	bh=EYltoVNAE9H5RyXwzCGO/PVZ+hZhneLFZUHnDaAW9/U=; b=LkaxEjzH9rvJOQfWJghTB36fiF
+	9EkqtayPlSPU1rEgW6fy6OP8slxiN16TrWUyF1HTavGhTp0Wv1RKBtLSYQ3NuQyxE3KOqlHners8s
+	WpYx7w2qI5GLL8hqe6WQy3DOkkIFwnKWmj1zmQqJQQ+WxTdEaT6LAm5XI2T7g0k4D7NMHx4LIuRDJ
+	pzfMC5SqpSSHpDHz6Bmh9T4XgafHvVauy6mwHgyccKqkQWNBDxyrmQetDhq37zBlbpfWVdqiJ6SZY
+	lDExS3rtSDjOy5qaUeNunhwF2vq1Whj1ecxctprGF2r/ezVoC5mdBICJPim04wKEMObfma0OXTkoe
+	BWh2Dcaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3cjw-0000xK-Of; Mon, 17 Feb 2020 09:30:56 +0000
+	id 1j3ckC-00017D-Qq; Mon, 17 Feb 2020 09:31:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3chr-0006D1-SI
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 09:28:50 +0000
+ id 1j3chw-0006GS-9d
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 09:28:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6236030E;
- Mon, 17 Feb 2020 01:28:47 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9838230E;
+ Mon, 17 Feb 2020 01:28:51 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9B8CC3F6CF;
- Mon, 17 Feb 2020 01:28:43 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D40033F6CF;
+ Mon, 17 Feb 2020 01:28:47 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 10/17] arm64: initialize ptrauth keys for kernel booting
- task
-Date: Mon, 17 Feb 2020 14:57:41 +0530
-Message-Id: <1581931668-11559-11-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v5 11/17] arm64: mask PAC bits of __builtin_return_address
+Date: Mon, 17 Feb 2020 14:57:42 +0530
+Message-Id: <1581931668-11559-12-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
 References: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_012848_073437_370AFB4D 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20200217_012852_525432_A965832E 
+X-CRM114-Status: GOOD (  16.86  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,109 +77,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch uses the existing boot_init_stack_canary arch function
-to initialize the ptrauth keys for the booting task in the primary
-core. The requirement here is that it should be always inline and
-the caller must never return.
+This redefines __builtin_return_address to mask pac bits
+when Pointer Authentication is enabled. As __builtin_return_address
+is used mostly used to refer to the caller function symbol address
+so masking runtime generated pac bits will help to find the match.
 
-As pointer authentication too detects a subset of stack corruption
-so it makes sense to place this code here.
+This patch adds a new file (asm/compiler.h) and is transitively
+included (via include/compiler_types.h) on the compiler command line
+so it is guaranteed to be loaded and the users of this macro will
+not find a wrong version.
 
-Both pointer authentication and stack canary codes are protected
-by their respective config option.
+A helper macro ptrauth_kernel_pac_mask is created for this purpose
+and added in this file. A similar macro ptrauth_user_pac_mask exists
+in pointer_auth.h and is now moved here for the sake of consistency.
 
-Suggested-by: Ard Biesheuvel <ardb@kernel.org>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+This change fixes the utilities like cat /proc/vmallocinfo to show
+correct symbol names.
+
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
- arch/arm64/include/asm/pointer_auth.h   | 11 ++++++++++-
- arch/arm64/include/asm/stackprotector.h |  5 +++++
- include/linux/stackprotector.h          |  2 +-
- 3 files changed, 16 insertions(+), 2 deletions(-)
+ arch/arm64/Kconfig                    |  1 +
+ arch/arm64/include/asm/compiler.h     | 20 ++++++++++++++++++++
+ arch/arm64/include/asm/pointer_auth.h | 13 +++++--------
+ 3 files changed, 26 insertions(+), 8 deletions(-)
+ create mode 100644 arch/arm64/include/asm/compiler.h
 
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 87e2cbb..115ceea 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -118,6 +118,7 @@ config ARM64
+ 	select HAVE_ALIGNED_STRUCT_PAGE if SLUB
+ 	select HAVE_ARCH_AUDITSYSCALL
+ 	select HAVE_ARCH_BITREVERSE
++	select HAVE_ARCH_COMPILER_H
+ 	select HAVE_ARCH_HUGE_VMAP
+ 	select HAVE_ARCH_JUMP_LABEL
+ 	select HAVE_ARCH_JUMP_LABEL_RELATIVE
+diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+new file mode 100644
+index 0000000..085e7cd0
+--- /dev/null
++++ b/arch/arm64/include/asm/compiler.h
+@@ -0,0 +1,20 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++#ifndef __ASM_COMPILER_H
++#define __ASM_COMPILER_H
++
++#if defined(CONFIG_ARM64_PTR_AUTH)
++
++/*
++ * The EL0/EL1 pointer bits used by a pointer authentication code.
++ * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
++ */
++#define ptrauth_user_pac_mask()		GENMASK_ULL(54, vabits_actual)
++#define ptrauth_kernel_pac_mask()	GENMASK_ULL(63, vabits_actual)
++
++#define __builtin_return_address(val)				\
++	(void *)((unsigned long)__builtin_return_address(val) |	\
++	ptrauth_kernel_pac_mask())
++
++#endif /* CONFIG_ARM64_PTR_AUTH */
++
++#endif /* __ASM_COMPILER_H */
 diff --git a/arch/arm64/include/asm/pointer_auth.h b/arch/arm64/include/asm/pointer_auth.h
-index aa956ca..833d3f9 100644
+index 833d3f9..5340dbb 100644
 --- a/arch/arm64/include/asm/pointer_auth.h
 +++ b/arch/arm64/include/asm/pointer_auth.h
-@@ -54,12 +54,18 @@ do {								\
- 	write_sysreg_s(__pki_v.hi, SYS_ ## k ## KEYHI_EL1);	\
- } while (0)
+@@ -68,16 +68,13 @@ static __always_inline void ptrauth_keys_switch_kernel(struct ptrauth_keys_kerne
  
--static inline void ptrauth_keys_init_kernel(struct ptrauth_keys_kernel *keys)
-+static __always_inline void ptrauth_keys_init_kernel(struct ptrauth_keys_kernel *keys)
- {
- 	if (system_supports_address_auth())
- 		get_random_bytes(&keys->apia, sizeof(keys->apia));
- }
- 
-+static __always_inline void ptrauth_keys_switch_kernel(struct ptrauth_keys_kernel *keys)
-+{
-+	if (system_supports_address_auth())
-+		__ptrauth_key_install(APIA, keys->apia);
-+}
-+
  extern int ptrauth_prctl_reset_keys(struct task_struct *tsk, unsigned long arg);
  
- /*
-@@ -78,12 +84,15 @@ static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
- 	ptrauth_keys_init_user(&(tsk)->thread.keys_user)
- #define ptrauth_thread_init_kernel(tsk)					\
- 	ptrauth_keys_init_kernel(&(tsk)->thread.keys_kernel)
-+#define ptrauth_thread_switch_kernel(tsk)				\
-+	ptrauth_keys_switch_kernel(&(tsk)->thread.keys_kernel)
- 
- #else /* CONFIG_ARM64_PTR_AUTH */
- #define ptrauth_prctl_reset_keys(tsk, arg)	(-EINVAL)
- #define ptrauth_strip_insn_pac(lr)	(lr)
- #define ptrauth_thread_init_user(tsk)
- #define ptrauth_thread_init_kernel(tsk)
-+#define ptrauth_thread_switch_kernel(tsk)
- #endif /* CONFIG_ARM64_PTR_AUTH */
- 
- #endif /* __ASM_POINTER_AUTH_H */
-diff --git a/arch/arm64/include/asm/stackprotector.h b/arch/arm64/include/asm/stackprotector.h
-index 5884a2b..7263e0b 100644
---- a/arch/arm64/include/asm/stackprotector.h
-+++ b/arch/arm64/include/asm/stackprotector.h
-@@ -15,6 +15,7 @@
- 
- #include <linux/random.h>
- #include <linux/version.h>
-+#include <asm/pointer_auth.h>
- 
- extern unsigned long __stack_chk_guard;
- 
-@@ -26,6 +27,7 @@ extern unsigned long __stack_chk_guard;
-  */
- static __always_inline void boot_init_stack_canary(void)
+-/*
+- * The EL0 pointer bits used by a pointer authentication code.
+- * This is dependent on TBI0 being enabled, or bits 63:56 would also apply.
+- */
+-#define ptrauth_user_pac_mask()	GENMASK(54, vabits_actual)
+-
+-/* Only valid for EL0 TTBR0 instruction pointers */
++/* Valid for EL0 TTBR0 and EL1 TTBR1 instruction pointers */
+ static inline unsigned long ptrauth_strip_insn_pac(unsigned long ptr)
  {
-+#if defined(CONFIG_STACKPROTECTOR)
- 	unsigned long canary;
- 
- 	/* Try to get a semi random initial value. */
-@@ -36,6 +38,9 @@ static __always_inline void boot_init_stack_canary(void)
- 	current->stack_canary = canary;
- 	if (!IS_ENABLED(CONFIG_STACKPROTECTOR_PER_TASK))
- 		__stack_chk_guard = current->stack_canary;
-+#endif
-+	ptrauth_thread_init_kernel(current);
-+	ptrauth_thread_switch_kernel(current);
+-	return ptr & ~ptrauth_user_pac_mask();
++	if (ptr & BIT_ULL(55))
++		return ptr | ptrauth_kernel_pac_mask();
++	else
++		return ptr & ~ptrauth_user_pac_mask();
  }
  
- #endif	/* _ASM_STACKPROTECTOR_H */
-diff --git a/include/linux/stackprotector.h b/include/linux/stackprotector.h
-index 6b792d0..4c678c4 100644
---- a/include/linux/stackprotector.h
-+++ b/include/linux/stackprotector.h
-@@ -6,7 +6,7 @@
- #include <linux/sched.h>
- #include <linux/random.h>
- 
--#ifdef CONFIG_STACKPROTECTOR
-+#if defined(CONFIG_STACKPROTECTOR) || defined(CONFIG_ARM64_PTR_AUTH)
- # include <asm/stackprotector.h>
- #else
- static inline void boot_init_stack_canary(void)
+ #define ptrauth_thread_init_user(tsk)					\
 -- 
 2.7.4
 
