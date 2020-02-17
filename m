@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE3761608E3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 04:27:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 759381608E4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 04:27:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=RzGb6jA7ozvWDBYzvNoQ07w8hHtfwOuZkw8ZHdyBmXw=; b=AKW5mymEAD++zQIXnxlFWVhoag
-	vTi4+jj8Q1v5SEvApPene47lxaLLs5Mxqjkzl37eQbJPU7MvYXoV0t5ZmnL7E+xx1mo3kCdyCL5LL
-	NX+wXuUdQ4s/QLUwt9MEqs7vRUYtPXzal/S5Sbp/HRlIJiapU1oXDDDQgLIKtwHnhhOTEhNip3378
-	XjWzG2JLnTHvtkCwcI7PkLDETTuhI83T6Rd1+hyykbaP3PozdmUfcEXlODhbU5gvSBE3kKrIAj3iM
-	B5gyPSHXAEop2T4rHEJq/8ILx1MwA4h8d2p+XsfRDTZ6F7aiqb/ggqyhLSCu+TIumAYJez40/Yy0D
-	L6vWaSgA==;
+	bh=Mpxf7MJ6Lx9YvBPJHzoaWvrq6wRHPP5M7tTMJS+Nkf8=; b=ScUbCzZkSFEIHLcd4nfUz5A91+
+	QAxw+BUETupg7qoJ7tu5qMmXv9k5dY6uikarrnRzCgq36XO2RvJJ2TJHnaXzMjBcWMhscUXZzRyyJ
+	Vx7ncDm5aUsHLLJLpg9YI47n3voqA5yGKAZe4QXHsSGpETUq9+eVR4irDcZeXPfdYDl+5966wxf3U
+	HrIo1w75PiBlV3DmV9KE9XPta/ZbKj6qzabrNRUlGjR05Wgie5TmybQ/sENpA7YGbHJh4Uz7P/Ycd
+	Www/fcw6eCqAzOS/BSGDeDm6nsLGOIQyJRwx2loKNKT5vupP3Dx5e7XBBxReBCTmtRJxj4Z+GGna6
+	X3BIUIug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3X4P-0008OS-Jn; Mon, 17 Feb 2020 03:27:41 +0000
+	id 1j3X4c-0000Bc-Vp; Mon, 17 Feb 2020 03:27:54 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3X3R-0007Vj-DR
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 03:26:43 +0000
+ id 1j3X3S-0007Wg-TG
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 03:26:44 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 319131A1F31;
- Mon, 17 Feb 2020 04:26:40 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A4C621A1F30;
+ Mon, 17 Feb 2020 04:26:41 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 29A4D1A1F41;
- Mon, 17 Feb 2020 04:26:30 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A895E1A1F39;
+ Mon, 17 Feb 2020 04:26:31 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E78E340320;
- Mon, 17 Feb 2020 11:26:18 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 72D68402E0;
+ Mon, 17 Feb 2020 11:26:20 +0800 (SGT)
 From: Joakim Zhang <qiangqing.zhang@nxp.com>
 To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
  mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de
-Subject: [PATCH 4/7] clk: imx: imx8qxp: Enable SCU and LPCG clocks for I2C in
- CM40 SS
-Date: Mon, 17 Feb 2020 11:19:18 +0800
-Message-Id: <1581909561-12058-5-git-send-email-qiangqing.zhang@nxp.com>
+Subject: [PATCH 5/7] arch: arm64: dts: imx8qxp: add device node for I2C and
+ INTMUX in CM40 SS
+Date: Mon, 17 Feb 2020 11:19:19 +0800
+Message-Id: <1581909561-12058-6-git-send-email-qiangqing.zhang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1581909561-12058-1-git-send-email-qiangqing.zhang@nxp.com>
 References: <1581909561-12058-1-git-send-email-qiangqing.zhang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_192641_766463_083E7DE3 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200216_192643_240735_DA43B7E4 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -82,79 +81,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable SCU and LPCG clocks for I2C in CM40 SS.
+Add device node for I2C and INTMUX in CM40 SS.
 
 Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
 ---
- drivers/clk/imx/clk-imx8qxp-lpcg.c | 12 ++++++++++++
- drivers/clk/imx/clk-imx8qxp-lpcg.h |  3 +++
- drivers/clk/imx/clk-imx8qxp.c      |  4 ++++
- 3 files changed, 19 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8qxp-mek.dts | 27 +++++++++++
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi    | 47 +++++++++++++++++++
+ 2 files changed, 74 insertions(+)
 
-diff --git a/drivers/clk/imx/clk-imx8qxp-lpcg.c b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-index 04c8ee35e14c..795909ecfba6 100644
---- a/drivers/clk/imx/clk-imx8qxp-lpcg.c
-+++ b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-@@ -151,6 +151,17 @@ static const struct imx8qxp_lpcg_data imx8qxp_lpcg_lsio[] = {
- 	{ IMX_LSIO_LPCG_PWM6_IPG_MSTR_CLK, "pwm6_lpcg_ipg_mstr_clk", "pwm6_clk", 0, LSIO_PWM_6_LPCG, 24, 0, },
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
+index d3d26cca7d52..f88402ee650c 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
++++ b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
+@@ -30,6 +30,26 @@
+ 	};
  };
  
-+static const struct imx8qxp_lpcg_data imx8qxp_lpcg_cm40[] = {
-+	{ IMX_CM40_LPCG_I2C_CLK, "cm40_lpcg_i2c_clk", "cm40_i2c_clk", 0, CM40_I2C_LPCG, 0, 0, },
-+	{ IMX_CM40_LPCG_I2C_IPG_CLK, "cm40_lpcg_i2c_ipg_clk", "cm40_ipg_clk_root", 0, CM40_I2C_LPCG, 16, 0, },
++&cm40_i2c {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_cm40_i2c>;
++	status = "okay";
++
++	pca6416: gpio@20 {
++		compatible = "nxp,pca6416";
++		reg = <0x20>;
++		gpio-controller;
++		#gpio-cells = <2>;
++	};
 +};
 +
-+static const struct imx8qxp_ss_lpcg imx8qxp_ss_cm40 = {
-+	.lpcg = imx8qxp_lpcg_cm40,
-+	.num_lpcg = ARRAY_SIZE(imx8qxp_lpcg_cm40),
-+	.num_max = IMX_CM40_LPCG_CLK_END,
++&cm40_intmux {
++	status = "okay";
 +};
 +
- static const struct imx8qxp_ss_lpcg imx8qxp_ss_lsio = {
- 	.lpcg = imx8qxp_lpcg_lsio,
- 	.num_lpcg = ARRAY_SIZE(imx8qxp_lpcg_lsio),
-@@ -219,6 +230,7 @@ static const struct of_device_id imx8qxp_lpcg_match[] = {
- 	{ .compatible = "fsl,imx8qxp-lpcg-adma", &imx8qxp_ss_adma, },
- 	{ .compatible = "fsl,imx8qxp-lpcg-conn", &imx8qxp_ss_conn, },
- 	{ .compatible = "fsl,imx8qxp-lpcg-lsio", &imx8qxp_ss_lsio, },
-+	{ .compatible = "fsl,imx8qxp-lpcg-cm40", &imx8qxp_ss_cm40, },
- 	{ /* sentinel */ }
+ &adma_lpuart0 {
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_lpuart0>;
+@@ -161,6 +181,13 @@
  };
  
-diff --git a/drivers/clk/imx/clk-imx8qxp-lpcg.h b/drivers/clk/imx/clk-imx8qxp-lpcg.h
-index 2a37ce57c500..28ca730dd135 100644
---- a/drivers/clk/imx/clk-imx8qxp-lpcg.h
-+++ b/drivers/clk/imx/clk-imx8qxp-lpcg.h
-@@ -99,4 +99,7 @@
- #define ADMA_FLEXCAN_1_LPCG		0x1ce0000
- #define ADMA_FLEXCAN_2_LPCG		0x1cf0000
- 
-+/* CM40 SS */
-+#define CM40_I2C_LPCG			0x60000
+ &iomuxc {
++	pinctrl_cm40_i2c: cm40i2cgrp {
++		fsl,pins = <
++			IMX8QXP_ADC_IN1_M40_I2C0_SDA                            0x0600004c
++			IMX8QXP_ADC_IN0_M40_I2C0_SCL                            0x0600004c
++		>;
++	};
 +
- #endif /* _IMX8QXP_LPCG_H */
-diff --git a/drivers/clk/imx/clk-imx8qxp.c b/drivers/clk/imx/clk-imx8qxp.c
-index 5e2903efc488..d051073ff042 100644
---- a/drivers/clk/imx/clk-imx8qxp.c
-+++ b/drivers/clk/imx/clk-imx8qxp.c
-@@ -53,6 +53,7 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
- 	clks[IMX_HSIO_PER_CLK]		= clk_hw_register_fixed_rate(NULL, "hsio_per_clk_root", NULL, 0, 133333333);
- 	clks[IMX_LSIO_MEM_CLK]		= clk_hw_register_fixed_rate(NULL, "lsio_mem_clk_root", NULL, 0, 200000000);
- 	clks[IMX_LSIO_BUS_CLK]		= clk_hw_register_fixed_rate(NULL, "lsio_bus_clk_root", NULL, 0, 100000000);
-+	clks[IMX_CM40_IPG_CLK]		= clk_hw_register_fixed_rate(NULL, "cm40_ipg_clk_root", NULL, 0, 132000000);
+ 	pinctrl_fec1: fec1grp {
+ 		fsl,pins = <
+ 			IMX8QXP_ENET0_MDC_CONN_ENET0_MDC			0x06000020
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+index fb5f752b15fe..cd10519eced7 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+@@ -213,6 +213,53 @@
+ 		clock-output-names = "xtal_24MHz";
+ 	};
  
- 	/* ARM core */
- 	clks[IMX_A35_CLK]		= imx_clk_scu("a35_clk", IMX_SC_R_A35, IMX_SC_PM_CLK_CPU);
-@@ -128,6 +129,9 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
- 	clks[IMX_GPU0_CORE_CLK]		= imx_clk_scu("gpu_core0_clk",	 IMX_SC_R_GPU_0_PID0, IMX_SC_PM_CLK_PER);
- 	clks[IMX_GPU0_SHADER_CLK]	= imx_clk_scu("gpu_shader0_clk", IMX_SC_R_GPU_0_PID0, IMX_SC_PM_CLK_MISC);
- 
-+	/* CM40 SS */
-+	clks[IMX_CM40_I2C_CLK]		= imx_clk_scu("cm40_i2c_clk", IMX_SC_R_M4_0_I2C, IMX_SC_PM_CLK_PER);
++	cm40_subsys: bus@34000000 {
++		compatible = "simple-bus";
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges = <0x34000000 0x0 0x34000000 0x4000000>;
 +
- 	for (i = 0; i < clk_data->num; i++) {
- 		if (IS_ERR(clks[i]))
- 			pr_warn("i.MX clk %u: register failed with %ld\n",
++		cm40_lpcg: clock-controller@375d0000 {
++			compatible = "fsl,imx8qxp-lpcg-cm40";
++			reg = <0x375d0000 0x70000>;
++			#clock-cells = <1>;
++		};
++
++		cm40_i2c: i2c@37230000 {
++			compatible = "fsl,imx8qxp-lpi2c", "fsl,imx7ulp-lpi2c";
++			reg = <0x37230000 0x1000>;
++			interrupts = <9 0>;
++			interrupt-parent = <&cm40_intmux>;
++			clocks = <&cm40_lpcg IMX_CM40_LPCG_I2C_CLK>,
++				 <&cm40_lpcg IMX_CM40_LPCG_I2C_IPG_CLK>;
++			clock-names = "per", "ipg";
++			assigned-clocks = <&clk IMX_CM40_I2C_CLK>;
++			assigned-clock-rates = <24000000>;
++			power-domains = <&pd IMX_SC_R_M4_0_I2C>;
++			status = "disabled";
++		};
++
++		cm40_intmux: intmux@37400000 {
++			compatible = "fsl,imx-intmux";
++			reg = <0x37400000 0x1000>;
++			interrupts = <GIC_SPI 16 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 23 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-controller;
++			interrupt-parent = <&gic>;
++			#interrupt-cells = <2>;
++			clocks = <&clk IMX_CM40_IPG_CLK>;
++			clock-names = "ipg";
++			power-domains = <&pd IMX_SC_R_M4_0_INTMUX>;
++			status = "disabled";
++		};
++	};
++
+ 	adma_subsys: bus@59000000 {
+ 		compatible = "simple-bus";
+ 		#address-cells = <1>;
 -- 
 2.17.1
 
