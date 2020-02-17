@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D76D161D16
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 23:04:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E77AA161D1C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 23:04:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=3zKanviPqDq5BdudYGiO7yTs4Pns4CKs7PqHgM14wX4=; b=nYd
-	KOdWJ3fREtohoat8zhR10tLcKLXOMz21OyvO/qKdsH4ED0AM3HruJGP0cUCXdDPZxPCcATfrBKaul
-	hBkUx6pgztKSjZbet0jtvpxi5YRDoYtMkwPyFKWZ++KQ9ZqZ0M4JdCgWR0r0DwtLpveUuz8HkiuLp
-	+04oFEeGenXz+tIB2RRKAxr8T/BNlrQz+EgsNC8g0SBivrnEcda6RC8xLtUp5cf4pj+z7aTcK519T
-	YasHOymS6oTdcByYhUdcwVBKr7+bWYFU4yDgXgJCpUoW/y5BUmi2TfPvmo9KY7zHnBXofry5eG3IB
-	/e33Tc9ecq5Kg2CLF+I/L83emylIu2Q==;
+	References:List-Owner; bh=zmrn5w4gPdJEQnZG+j+qt677mhHYVN0WUFCL90otn0U=; b=dkk
+	MENb4nHRV0OSOWpduRoywvi6rejh5pbza46uiVEhyHi7rmXpoHOBAcWqXT9xoUQH5U4R7bDG8RpkI
+	BcIkXA2ui/9WnUt2yD2gPypB7g4X/WbJPo0O9Fuy6ykXbhcXcKyh9S0IHQ/RpK29lTdvvKPiexQAb
+	Bwwcy4uaaTDnToac4cQol3pHfJEHyzt1t0ZQNsl1cXwGzzWu013jfbAS8Ip7nSh1Id+0q5A56H9/u
+	RdMnl82uvAsZF46fvnA/of/lkZuT5lScc1MF9be0EONn0IdXwL3ZPhdcIg8zNUQH6g4k9EwBHvycE
+	122N3ZZ5kJpfxfHeX8pbVuoFhOk4xKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3oUv-0005ZI-11; Mon, 17 Feb 2020 22:04:13 +0000
+	id 1j3oV7-0005vs-Px; Mon, 17 Feb 2020 22:04:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3oUa-0005ON-1q
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 22:03:53 +0000
+ id 1j3oUi-0005Xb-OC; Mon, 17 Feb 2020 22:04:02 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D88E130E;
- Mon, 17 Feb 2020 14:03:50 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EC783106F;
+ Mon, 17 Feb 2020 14:03:59 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A6EC3F703;
- Mon, 17 Feb 2020 14:03:50 -0800 (PST)
-Date: Mon, 17 Feb 2020 22:03:48 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6F72E3F703;
+ Mon, 17 Feb 2020 14:03:59 -0800 (PST)
+Date: Mon, 17 Feb 2020 22:03:57 +0000
 From: Mark Brown <broonie@kernel.org>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Applied "ASoC: sun8i-codec: Fix setting DAI data format" to the asoc
- tree
-In-Reply-To: <20200217064250.15516-7-samuel@sholland.org>
-Message-Id: <applied-20200217064250.15516-7-samuel@sholland.org>
+To: Tzung-Bi Shih <tzungbi@google.com>
+Subject: Applied "drm/mediatek: fix race condition for HDMI jack status
+ reporting" to the asoc tree
+In-Reply-To: <20200217105513.2.I477092c2f104fd589133436c3ae4590e6fc6323b@changeid>
+Message-Id: <applied-20200217105513.2.I477092c2f104fd589133436c3ae4590e6fc6323b@changeid>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_140352_134484_75610D8A 
-X-CRM114-Status: GOOD (  16.03  )
+X-CRM114-CacheID: sfid-20200217_140400_897588_03422343 
+X-CRM114-Status: GOOD (  16.92  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -63,14 +62,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Mark Brown <broonie@kernel.org>,
- =?utf-8?q?Myl=C3=A8ne_Josserand?= <mylene.josserand@free-electrons.com>,
- stable@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, cychiang@google.com, tzungbi@google.com,
+ airlied@linux.ie, dri-devel@lists.freedesktop.org, matthias.bgg@gmail.com,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ daniel@ffwll.ch, ck.hu@mediatek.com, p.zabel@pengutronix.de, dgreid@google.com,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -79,7 +75,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: sun8i-codec: Fix setting DAI data format
+   drm/mediatek: fix race condition for HDMI jack status reporting
 
 has been applied to the asoc tree at
 
@@ -104,45 +100,94 @@ to this mail.
 Thanks,
 Mark
 
-From 96781fd941b39e1f78098009344ebcd7af861c67 Mon Sep 17 00:00:00 2001
-From: Samuel Holland <samuel@sholland.org>
-Date: Mon, 17 Feb 2020 00:42:22 -0600
-Subject: [PATCH] ASoC: sun8i-codec: Fix setting DAI data format
+From f07980d4ed60fbb35857b655c94b111f4ddf2abf Mon Sep 17 00:00:00 2001
+From: Tzung-Bi Shih <tzungbi@google.com>
+Date: Mon, 17 Feb 2020 11:16:53 +0800
+Subject: [PATCH] drm/mediatek: fix race condition for HDMI jack status
+ reporting
 
-Use the correct mask for this two-bit field. This fixes setting the DAI
-data format to RIGHT_J or DSP_A.
+hdmi_conn_detect and mtk_hdmi_audio_hook_plugged_cb would be called
+by different threads.
 
-Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
-Signed-off-by: Samuel Holland <samuel@sholland.org>
-Acked-by: Chen-Yu Tsai <wens@csie.org>
-Cc: stable@kernel.org
-Link: https://lore.kernel.org/r/20200217064250.15516-7-samuel@sholland.org
+Imaging the following calling sequence:
+           Thread A                            Thread B
+--------------------------------------------------------------------
+mtk_hdmi_audio_hook_plugged_cb()
+mtk_cec_hpd_high() -> disconnected
+                                     hdmi_conn_detect()
+                                     mtk_cec_hpd_high() -> connected
+                                     plugged_cb(connected)
+plugged_cb(disconnected)
+
+The latest disconnected is false reported.  Makes mtk_cec_hpd_high
+and plugged_cb atomic to fix.
+
+Also uses the same lock to protect read/write of plugged_cb and codec_dev.
+
+Fixes: 5d3c64477392 ("drm/mediatek: support HDMI jack status reporting")
+Signed-off-by: Tzung-Bi Shih <tzungbi@google.com>
+Acked-by: CK Hu <ck.hu@mediatek.com>
+Link: https://lore.kernel.org/r/20200217105513.2.I477092c2f104fd589133436c3ae4590e6fc6323b@changeid
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/sunxi/sun8i-codec.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/mediatek/mtk_hdmi.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
 
-diff --git a/sound/soc/sunxi/sun8i-codec.c b/sound/soc/sunxi/sun8i-codec.c
-index 55798bc8eae2..686561df8e13 100644
---- a/sound/soc/sunxi/sun8i-codec.c
-+++ b/sound/soc/sunxi/sun8i-codec.c
-@@ -80,6 +80,7 @@
+diff --git a/drivers/gpu/drm/mediatek/mtk_hdmi.c b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+index 03aeb73005ef..d80017e3d84a 100644
+--- a/drivers/gpu/drm/mediatek/mtk_hdmi.c
++++ b/drivers/gpu/drm/mediatek/mtk_hdmi.c
+@@ -12,6 +12,7 @@
+ #include <linux/io.h>
+ #include <linux/kernel.h>
+ #include <linux/mfd/syscon.h>
++#include <linux/mutex.h>
+ #include <linux/of_platform.h>
+ #include <linux/of.h>
+ #include <linux/of_gpio.h>
+@@ -171,6 +172,7 @@ struct mtk_hdmi {
+ 	bool enabled;
+ 	hdmi_codec_plugged_cb plugged_cb;
+ 	struct device *codec_dev;
++	struct mutex update_plugged_status_lock;
+ };
  
- #define SUN8I_SYS_SR_CTRL_AIF1_FS_MASK		GENMASK(15, 12)
- #define SUN8I_SYS_SR_CTRL_AIF2_FS_MASK		GENMASK(11, 8)
-+#define SUN8I_AIF1CLK_CTRL_AIF1_DATA_FMT_MASK	GENMASK(3, 2)
- #define SUN8I_AIF1CLK_CTRL_AIF1_WORD_SIZ_MASK	GENMASK(5, 4)
- #define SUN8I_AIF1CLK_CTRL_AIF1_LRCK_DIV_MASK	GENMASK(8, 6)
- #define SUN8I_AIF1CLK_CTRL_AIF1_BCLK_DIV_MASK	GENMASK(12, 9)
-@@ -241,7 +242,7 @@ static int sun8i_set_fmt(struct snd_soc_dai *dai, unsigned int fmt)
- 		return -EINVAL;
- 	}
- 	regmap_update_bits(scodec->regmap, SUN8I_AIF1CLK_CTRL,
--			   BIT(SUN8I_AIF1CLK_CTRL_AIF1_DATA_FMT),
-+			   SUN8I_AIF1CLK_CTRL_AIF1_DATA_FMT_MASK,
- 			   value << SUN8I_AIF1CLK_CTRL_AIF1_DATA_FMT);
+ static inline struct mtk_hdmi *hdmi_ctx_from_bridge(struct drm_bridge *b)
+@@ -1199,10 +1201,13 @@ static void mtk_hdmi_clk_disable_audio(struct mtk_hdmi *hdmi)
+ static enum drm_connector_status
+ mtk_hdmi_update_plugged_status(struct mtk_hdmi *hdmi)
+ {
+-	bool connected = mtk_cec_hpd_high(hdmi->cec_dev);
++	bool connected;
+ 
++	mutex_lock(&hdmi->update_plugged_status_lock);
++	connected = mtk_cec_hpd_high(hdmi->cec_dev);
+ 	if (hdmi->plugged_cb && hdmi->codec_dev)
+ 		hdmi->plugged_cb(hdmi->codec_dev, connected);
++	mutex_unlock(&hdmi->update_plugged_status_lock);
+ 
+ 	return connected ?
+ 	       connector_status_connected : connector_status_disconnected;
+@@ -1669,8 +1674,11 @@ static int mtk_hdmi_audio_hook_plugged_cb(struct device *dev, void *data,
+ {
+ 	struct mtk_hdmi *hdmi = data;
+ 
++	mutex_lock(&hdmi->update_plugged_status_lock);
+ 	hdmi->plugged_cb = fn;
+ 	hdmi->codec_dev = codec_dev;
++	mutex_unlock(&hdmi->update_plugged_status_lock);
++
+ 	mtk_hdmi_update_plugged_status(hdmi);
  
  	return 0;
+@@ -1729,6 +1737,7 @@ static int mtk_drm_hdmi_probe(struct platform_device *pdev)
+ 		return ret;
+ 	}
+ 
++	mutex_init(&hdmi->update_plugged_status_lock);
+ 	platform_set_drvdata(pdev, hdmi);
+ 
+ 	ret = mtk_hdmi_output_init(hdmi);
 -- 
 2.20.1
 
