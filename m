@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 355C5160914
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 04:40:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4E7916092D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 04:46:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PonhIu/t1vIp+VambmakcN5A+7+vx6BSQsyT2xJ3e0I=; b=SIZyrHb6oTfqlo
-	/alR1YEvoYLa7VWADdaqgrsL7Dkt3w697lugtSb2lisYp/8wHvNp6n6ahgcCn0NKta0Rn5IRjP3aB
-	GkLw8l2Cr+1fIfHi6XEHTWJ3kwk8NTvR/K7DQGykCczrHEHHVrSLBPpKjPcnkuh1431Zm1urfa2n7
-	Z9c+sZM4QmLwNpealIQRjHAxkbOtWwgmmyl57v+BVI0OHTGonx53rAkfH1VbFr8PmRiTGkbkscXJ7
-	ruxPBjBvYh/IqdJutihKujo7+XWI4zVY0KDYdoCLYYeesbpIRBtoarsO0DZvD1bMopTSFbG2RMrIc
-	kWn7BUh4GAl/DiLXvLKw==;
+	List-Owner; bh=dqPVah99jeIwJHVo4ZvVk4fPbEc44b/xRgM9vjEmQa0=; b=HZDqA/Ut7EMCCL
+	nF6bsf7xC1/D5p7w4Nxy70VZHgdMse6ZsFMSy4xB4TNiPCaFZFhSHia/Egs5GHaKOYQUioFAkLkhR
+	Orvb9m5o7FkEvuTABfJYpV6Dkqp5wU6gR/vWGv/Xm5yy/9Dkp2VQ3sMZRJ60C9X3DxGitwRV0HJtd
+	XjXxBVJFlq0xo6EIfkBD00SqD2C2p9xrwej9kbsKVNXSXj/o0fwVEN9AG3Lj/9LL0bFPCVFonrrg8
+	nZycpAiktSpdHOQOWR+uIBywfdMEVL9IugdQwEIOwQvDj+Okg7gGZsQGxHNyQ3ALTMg495Ixd8kHT
+	von+TP3pxOEVQ3njzKuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3XGf-0005UE-0K; Mon, 17 Feb 2020 03:40:21 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j3XMp-0001Ql-3v; Mon, 17 Feb 2020 03:46:43 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3XGK-00051Y-WA; Mon, 17 Feb 2020 03:40:02 +0000
-X-UUID: 7c617e40f02142cc81d68862ede14933-20200216
+ id 1j3XLv-0000q9-1Q; Mon, 17 Feb 2020 03:45:48 +0000
+X-UUID: f4c5d029bd154c37a3be9c842f536889-20200216
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=9X5uWL1YgmrDZcTKHn0A/YVVUbEE9hPvqMSvyGyBAwc=; 
- b=gQ77otS54Lr8AiKwhwydlR1cUVzUQgeyK08dkUyW/hJmyksbMRAOyAQNdnImDseHrXXFRKKK3NwxN3v78vSuUGZTVq8M75dQWGIMBgly2m4K1fVDG+0lW9ew20PpdXKpVfppOpBnWmdRNe7SpvQ/NL4cFfaBg1fhGTJtcos/PRc=;
-X-UUID: 7c617e40f02142cc81d68862ede14933-20200216
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ bh=osVJTfc3+O5/SgQjZzRAFBfpLdVSpvPrB0t6KZJcqcE=; 
+ b=iiGUMubU9tkEV4QlhsLSOkkFj4KTN5/GfyFHkEbCC9R1YrjOiFuJB82jtjH7M/6SRxpud6ccMsm7fVmTB0BrVhTHHHc+Q5ZUk5/lQ9QIdNJYDjPN7Rtxb1ILnLmesNOQPQDXmvpel5w52ZpbY02h1vlMAcP6D7/VUxyFuOBZbZg=;
+X-UUID: f4c5d029bd154c37a3be9c842f536889-20200216
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <weiyi.lu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2043173142; Sun, 16 Feb 2020 19:39:53 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 16 Feb 2020 19:35:37 -0800
+ with ESMTP id 625191634; Sun, 16 Feb 2020 19:45:33 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 16 Feb 2020 19:35:57 -0800
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 17 Feb 2020 11:33:48 +0800
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 17 Feb 2020 11:33:04 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Mon, 17 Feb 2020 11:35:08 +0800
@@ -46,25 +46,23 @@ From: Weiyi Lu <weiyi.lu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Nicolas Boichat
  <drinkcat@chromium.org>, Rob Herring <robh@kernel.org>, Sascha Hauer
  <kernel@pengutronix.de>
-Subject: [PATCH v12 06/10] soc: mediatek: Add subsys clock control for bus
- protection
-Date: Mon, 17 Feb 2020 11:35:23 +0800
-Message-ID: <1581910527-1636-7-git-send-email-weiyi.lu@mediatek.com>
+Subject: [PATCH v12 07/10] soc: mediatek: Add extra sram control
+Date: Mon, 17 Feb 2020 11:35:24 +0800
+Message-ID: <1581910527-1636-8-git-send-email-weiyi.lu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1581910527-1636-1-git-send-email-weiyi.lu@mediatek.com>
 References: <1581910527-1636-1-git-send-email-weiyi.lu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 7270D9102BF5A08544586E1DD8B16973E11E82F97F029B8A937CBC2B781CBFE92000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_194001_042308_F9A913EB 
-X-CRM114-Status: GOOD (  16.42  )
+X-CRM114-CacheID: sfid-20200216_194547_086445_790F8B00 
+X-CRM114-Status: GOOD (  11.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -98,156 +96,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For the bus protection operations, some subsys clocks need to be enabled
-before releasing the protection, and vise versa.
-But those subsys clocks could only be controlled once its corresponding
-power domain is turned on first.
-In this patch, we add the subsys clock control into its relavent steps.
+For some power domains like vpu_core on MT8183 whose sram need to
+do clock and internal isolation while power on/off sram.
+We add a cap "MTK_SCPD_SRAM_ISO" to judge if we need to do
+the extra sram isolation control or not.
 
 Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
 ---
- drivers/soc/mediatek/mtk-scpsys.c | 71 +++++++++++++++++++++++++++++++++++++--
- 1 file changed, 69 insertions(+), 2 deletions(-)
+ drivers/soc/mediatek/mtk-scpsys.c | 22 ++++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
-index a4fb0b23..2a9478f 100644
+index 2a9478f..98cc5ed 100644
 --- a/drivers/soc/mediatek/mtk-scpsys.c
 +++ b/drivers/soc/mediatek/mtk-scpsys.c
-@@ -80,6 +80,7 @@
- #define PWR_STATUS_WB			BIT(27)	/* MT7622 */
+@@ -26,6 +26,7 @@
  
- #define MAX_CLKS	3
-+#define MAX_SUBSYS_CLKS 10
+ #define MTK_SCPD_ACTIVE_WAKEUP		BIT(0)
+ #define MTK_SCPD_FWAIT_SRAM		BIT(1)
++#define MTK_SCPD_SRAM_ISO		BIT(2)
+ #define MTK_SCPD_CAPS(_scpd, _x)	((_scpd)->data->caps & (_x))
  
- /**
-  * struct scp_domain_data - scp domain data for power on/off flow
-@@ -89,6 +90,8 @@
-  * @sram_pdn_bits: The mask for sram power control bits.
-  * @sram_pdn_ack_bits: The mask for sram power control acked bits.
-  * @basic_clk_name: The basic clocks required by this power domain.
-+ * @subsys_clk_prefix: The prefix name of the clocks need to be enabled
-+ *                     before releasing bus protection.
-  * @caps: The flag for active wake-up action.
-  * @bp_table: The mask table for multiple step bus protection.
-  */
-@@ -99,6 +102,7 @@ struct scp_domain_data {
- 	u32 sram_pdn_bits;
- 	u32 sram_pdn_ack_bits;
- 	const char *basic_clk_name[MAX_CLKS];
-+	const char *subsys_clk_prefix;
- 	u8 caps;
- 	struct bus_prot bp_table[MAX_STEPS];
- };
-@@ -109,6 +113,7 @@ struct scp_domain {
- 	struct generic_pm_domain genpd;
- 	struct scp *scp;
- 	struct clk *clk[MAX_CLKS];
-+	struct clk *subsys_clk[MAX_SUBSYS_CLKS];
- 	const struct scp_domain_data *data;
- 	struct regulator *supply;
- };
-@@ -384,16 +389,22 @@ static int scpsys_power_on(struct generic_pm_domain *genpd)
- 	val |= PWR_RST_B_BIT;
- 	writel(val, ctl_addr);
+ #define SPM_VDE_PWR_CON			0x0210
+@@ -57,6 +58,8 @@
+ #define PWR_ON_BIT			BIT(2)
+ #define PWR_ON_2ND_BIT			BIT(3)
+ #define PWR_CLK_DIS_BIT			BIT(4)
++#define PWR_SRAM_CLKISO_BIT		BIT(5)
++#define PWR_SRAM_ISOINT_B_BIT		BIT(6)
  
--	ret = scpsys_sram_enable(scpd, ctl_addr);
-+	ret = scpsys_clk_enable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
- 	if (ret < 0)
- 		goto err_pwr_ack;
+ #define PWR_STATUS_CONN			BIT(1)
+ #define PWR_STATUS_DISP			BIT(3)
+@@ -234,6 +237,14 @@ static int scpsys_sram_enable(struct scp_domain *scpd, void __iomem *ctl_addr)
+ 			return ret;
+ 	}
  
-+	ret = scpsys_sram_enable(scpd, ctl_addr);
-+	if (ret < 0)
-+		goto err_sram;
++	if (MTK_SCPD_CAPS(scpd, MTK_SCPD_SRAM_ISO))	{
++		val = readl(ctl_addr) | PWR_SRAM_ISOINT_B_BIT;
++		writel(val, ctl_addr);
++		udelay(1);
++		val &= ~PWR_SRAM_CLKISO_BIT;
++		writel(val, ctl_addr);
++	}
 +
- 	ret = scpsys_bus_protect_disable(scpd);
- 	if (ret < 0)
--		goto err_pwr_ack;
-+		goto err_sram;
- 
  	return 0;
- 
-+err_sram:
-+	scpsys_clk_disable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
- err_pwr_ack:
- 	scpsys_clk_disable(scpd->clk, MAX_CLKS);
- err_clk:
-@@ -420,6 +431,8 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
- 	if (ret < 0)
- 		goto out;
- 
-+	scpsys_clk_disable(scpd->subsys_clk, MAX_SUBSYS_CLKS);
-+
- 	/* subsys power off */
- 	val = readl(ctl_addr);
- 	val |= PWR_ISO_BIT;
-@@ -457,6 +470,48 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
- 	return ret;
  }
  
-+static int init_subsys_clks(struct platform_device *pdev,
-+		const char *prefix, struct clk **clk)
-+{
-+	struct device_node *node = pdev->dev.of_node;
-+	u32 prefix_len, sub_clk_cnt = 0;
-+	struct property *prop;
-+	const char *clk_name;
-+
-+	if (!node) {
-+		dev_err(&pdev->dev, "Cannot find scpsys node: %ld\n",
-+			PTR_ERR(node));
-+		return PTR_ERR(node);
-+	}
-+
-+	prefix_len = strlen(prefix);
-+
-+	of_property_for_each_string(node, "clock-names", prop, clk_name) {
-+		if (!strncmp(clk_name, prefix, prefix_len) &&
-+				(clk_name[prefix_len] == '-')) {
-+			if (sub_clk_cnt >= MAX_SUBSYS_CLKS) {
-+				dev_err(&pdev->dev,
-+					"subsys clk out of range %d\n",
-+					sub_clk_cnt);
-+				return -EINVAL;
-+			}
-+
-+			clk[sub_clk_cnt] = devm_clk_get(&pdev->dev,
-+						clk_name);
-+
-+			if (IS_ERR(clk[sub_clk_cnt])) {
-+				dev_err(&pdev->dev,
-+					"Subsys clk get fail %ld\n",
-+					PTR_ERR(clk[sub_clk_cnt]));
-+				return PTR_ERR(clk[sub_clk_cnt]);
-+			}
-+			sub_clk_cnt++;
-+		}
-+	}
-+
-+	return sub_clk_cnt;
-+}
-+
- static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
- 			const char * const *name)
- {
-@@ -559,6 +614,18 @@ static struct scp *init_scp(struct platform_device *pdev,
- 		if (ret)
- 			return ERR_PTR(ret);
+@@ -243,8 +254,15 @@ static int scpsys_sram_disable(struct scp_domain *scpd, void __iomem *ctl_addr)
+ 	u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+ 	int tmp;
  
-+		if (data->subsys_clk_prefix) {
-+			ret = init_subsys_clks(pdev,
-+					data->subsys_clk_prefix,
-+					scpd->subsys_clk);
-+			if (ret < 0) {
-+				dev_err(&pdev->dev,
-+					"%s: subsys clk unavailable\n",
-+					data->name);
-+				return ERR_PTR(ret);
-+			}
-+		}
+-	val = readl(ctl_addr);
+-	val |= scpd->data->sram_pdn_bits;
++	if (MTK_SCPD_CAPS(scpd, MTK_SCPD_SRAM_ISO))	{
++		val = readl(ctl_addr) | PWR_SRAM_CLKISO_BIT;
++		writel(val, ctl_addr);
++		val &= ~PWR_SRAM_ISOINT_B_BIT;
++		writel(val, ctl_addr);
++		udelay(1);
++	}
 +
- 		genpd->name = data->name;
- 		genpd->power_off = scpsys_power_off;
- 		genpd->power_on = scpsys_power_on;
++	val = readl(ctl_addr) | scpd->data->sram_pdn_bits;
+ 	writel(val, ctl_addr);
+ 
+ 	/* Either wait until SRAM_PDN_ACK all 1 or 0 */
 -- 
 1.8.1.1.dirty
 _______________________________________________
