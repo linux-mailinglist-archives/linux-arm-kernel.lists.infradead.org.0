@@ -2,89 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BAC1160763
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 00:54:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4D35160777
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 01:14:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NtdrI97CcnHVYHh2GoGFzLTXs/LnxPw7UtJyt+Ojwrc=; b=gJ5ZtYAJJ0VT96
-	06faOS2yO3jq050u4d0VudPBhQ4+7SOzkmEuah/hF2a2OanD5yzqUF8PK9BsSdaxF5+8kVFQUIrNK
-	YxnlWZVwx3AIiSnj9ulVHynXXCWgneU4S2GYwxHoXm0KZug9WkRoT26vHnxy4a8M3DwIB3r0LOtTp
-	uM7OXzupABEIEOSEihlFEGR4kdCGbdQDdTeuSuCbfz0oYDiAMNnPwwuEn++lg78Up06IbdKM9NeZF
-	Nur3JykyYlE2cusbAJS1v1GQ0ScgnyAkiF7tXKb53k1Dt70hFSQXobfw25T9GpXTtWbOzKGPLwis/
-	k7/6LAOht5C0i2JaIDSw==;
+	List-Owner; bh=i2Jk5DHNXjKJlcWqWESM8y2VgMhY0ZQjg6mWeZFVv4E=; b=R2C4J3jvKNbt0F
+	+pCsXnpTO/fRDd+7vPMq5xq8EGfRaSpo1q7zqHAcO320NJHrMp8lyDrsOiE9HbGcGI9wWPlh2sqLu
+	919ITgy364v0jO2UbYdELID1qfGQ+PRKHyUzYldaLBA8pZO6VtX1Ae7/sYTAJAQngfMtr8sGpOMhD
+	WoXp3+1Xg8G03kN3qjI5miKuDAip4AcXYdDb+MjqQPV50B84uq9h5kHcq9Yvh9WheanzXebMgj0FO
+	TNmrhSggwnU69nS6oJNIvqfNNNqAixEgxPBoc7QCLWSKY67BWlsP+FTgToxSyoRxJMCGRAuH0q3Pz
+	njCW8pLmL6SKIRDtechQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3Tjz-0004wN-2G; Sun, 16 Feb 2020 23:54:23 +0000
-Received: from wout4-smtp.messagingengine.com ([64.147.123.20])
+	id 1j3U3k-0002dA-HU; Mon, 17 Feb 2020 00:14:48 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3Tjo-0004vZ-8R
- for linux-arm-kernel@lists.infradead.org; Sun, 16 Feb 2020 23:54:13 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id 3F727461;
- Sun, 16 Feb 2020 18:54:11 -0500 (EST)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Sun, 16 Feb 2020 18:54:11 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm2; bh=5jo981HWR/vHL9RhXlYEzz7DlTldAj/
- mpq+HV26LbAU=; b=NnB7dbbxE5kF/iQhc4qNwAB9rMcUenu45OBbD7WGy8wBXGI
- a/jKJyy/JdpzrRqujpBveKA731NjaeNG1Jz4vQVl6cRjS5XdAaPNLHDSAu4octvC
- mko8Hed5oGKkTR79quZ9kZ5xKEd0M+5dCHsa3K7eZ49sEAFe+u2BmjVkzA2eyoFG
- OV67Un65nU9kGXss5Br1I22WLlXSKGIE4OT5JGSf7p1XfrJb21cQpYFrSaEuS960
- JF6H6xJZmt6z57+3mKUZYXd7zfFZvBlLpUhq2cug0Kga8CEb5m7Kf6Jksz8P04cp
- 9zrd+P4pvOY7PXZ0LtJHxdbBk2vxyKGh+eAIgOA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=5jo981
- HWR/vHL9RhXlYEzz7DlTldAj/mpq+HV26LbAU=; b=zQoj4jGGwbaJpz1C/UxdE8
- 90XRyh8y6gTjT/1t51FqCeyLHN+8/N6LXSDGuoQt0VMYCeLC18S52A/GrHfPZrDn
- lOc4tikNl+2/y/USYZZe8q9Fg+vf0oCu9BMj0q0PqlYFOemHiICI2lCrYoRI8Gc0
- 0sKnDIPmqJ+/G62UdeA9+/0WrymVefQnZ5nLmPzY+TgapYzJV11AHnL6n0ic05YP
- 47wYHRvURvdksM2KMW2nlTgi6A2svR8GSoL2JdVMS3IAuFQhuFX+CrJpD77Z7SyN
- ETGkJX5I/wLum0s+eeoVd09/YnR37KZPfqS1kvepaj3QUvMxx26Oc6KJX0Bsy8SA
- ==
-X-ME-Sender: <xms:ItZJXjR7PPsQcrSo31ndDTPt-9FmQsIWG8EUQ32KGvQOgRe8TNtNzQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjeehgddugecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderreejnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucevlhhush
- htvghrufhiiigvpedunecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghj
- rdhiugdrrghu
-X-ME-Proxy: <xmx:ItZJXnnYIYc63__jHnvpZChvf2853Jf2No2MzzU1TNdGCc7ApnHChA>
- <xmx:ItZJXrnq5LCrJ4JlaeEDpVw_oNOXIcVqCWNGItX4HBMUArAWKdI4LA>
- <xmx:ItZJXmhWq_px8l07_bvrmyRlez9CmetSfZ2ydwr9qvD9siZhbHkAIA>
- <xmx:ItZJXtD8yZSJB4pjdjwjMRc3cdvZk9jxHPuWWNAqnb3FkgJkA0v7Eg>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id B4E41E00A2; Sun, 16 Feb 2020 18:54:10 -0500 (EST)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-802-g7a41c81-fmstable-20200203v1
-Mime-Version: 1.0
-Message-Id: <549d68fc-22ea-43d7-80ea-52143fe79321@www.fastmail.com>
-In-Reply-To: <1581363147-19310-3-git-send-email-eajames@linux.ibm.com>
-References: <1581363147-19310-1-git-send-email-eajames@linux.ibm.com>
- <1581363147-19310-3-git-send-email-eajames@linux.ibm.com>
-Date: Mon, 17 Feb 2020 10:24:03 +1030
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Eddie James" <eajames@linux.ibm.com>, linux-aspeed@lists.ozlabs.org
-Subject: =?UTF-8?Q?Re:_[PATCH_v2_2/2]_ARM:_dts:_aspeed:_ast2600:_Fix_SCU_IRQ_cont?=
- =?UTF-8?Q?roller_nodes?=
+ id 1j3U3a-0002cI-3i
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 00:14:39 +0000
+Received: by mail-lf1-x141.google.com with SMTP id f24so10533914lfh.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 16 Feb 2020 16:14:36 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+IGQ44b8ehFgo9r1oz6MUXO7lMciX3lsO+/mrOD8lKs=;
+ b=wNohhz24KyweaPRjF/ZHHazpqKxyZNG6eY/v2jPjEqflMXmdDA87blQaYxRrP52OhY
+ oJTM4/wtKG7H+a1O638elj6pNxgX47boYHKawJBnthqWtfiyVZ4wjeYuZUgaNoFf6tmj
+ OHix6PBfxoL2v75rtEk7TggEjhdRlnRIJocJs3QyjXC4ZKEUJVV6f2w4afRH/JV620mr
+ SiiSqZLcMoPYdi4oHPFYWVKg60WUqtCqSmOsPwK6qz2JQgU5S1H0YqmPMkMU76jDZTYn
+ lkP33PSLavtDBMXgIIfm9y3nM9p61Zer7u46FZWlhNRGCPbRQQdDAH4XsABPtGnW60B8
+ BE8w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+IGQ44b8ehFgo9r1oz6MUXO7lMciX3lsO+/mrOD8lKs=;
+ b=S9SODyxLQAumRu4CzD/SukCUj8UPYg/YsI+g+3HRNjnNSAEW8mzPVzVndKgxJG143B
+ u7NLipPaOUoKr0uOrmjZlQ6TUODCxgP6dI+2DCWbmficUkuh9w8AHaSMJqcDpPvJDflU
+ amzp6UrRsSLXPKxkYNe0Qj74zRDxNDHX3vpceeeTS+LxlQnr5eInYSpgZ6FGPf1/xX2e
+ NT3LPrcHLLDWPrgotZjqrUXEBK7KvzVjL4hu4bU723Wrmxm3UMO0gG5VfFs7O2pRD1KC
+ 6X/BnJyoqK7M0lvVBJ47NRasxeyi99Oz6aDdMIs7F4cch8byHZG6yiUayd6wfM7jPubJ
+ qHLQ==
+X-Gm-Message-State: APjAAAUxzCT8Uq9z+tEmHsfQd3+e8PDF7T2X3nriNo26Mrc/53bG5n9u
+ 0hk3FjJnJ3z9/Dllz5wHJk2qN8fmqno6ExkYStVNTA==
+X-Google-Smtp-Source: APXvYqzsIMSQIv73Gzmo6PpatlAiH1YXLjMsm2KELMYVI69mtO6l3/cej9L7YkzaEFTovPCBl/VZ0ymnuMu8PEaKD0Y=
+X-Received: by 2002:ac2:5dc8:: with SMTP id x8mr6411681lfq.217.1581898475042; 
+ Sun, 16 Feb 2020 16:14:35 -0800 (PST)
+MIME-Version: 1.0
+References: <20200210141324.21090-1-maz@kernel.org>
+In-Reply-To: <20200210141324.21090-1-maz@kernel.org>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 17 Feb 2020 01:14:24 +0100
+Message-ID: <CACRpkdYTpuONqYvhe2k7vpbBFRBbG6PVihzj8mKctpQiK4vXTQ@mail.gmail.com>
+Subject: Re: [RFC PATCH 0/5] Removing support for 32bit KVM/arm host
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_155412_342140_8FA614AA 
-X-CRM114-Status: GOOD (  10.06  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200216_161438_236213_5FE8A703 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.20 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -104,56 +91,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org
+Cc: Anders Berg <anders.berg@lsi.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ Russell King <linux@arm.linux.org.uk>, Arnd Bergmann <arnd@arndb.de>,
+ kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Quentin Perret <qperret@google.com>,
+ Christoffer Dall <Christoffer.Dall@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Feb 10, 2020 at 3:13 PM Marc Zyngier <maz@kernel.org> wrote:
 
+> it has been a good prototype for the arm64 version,
+> but it suffers a few problems:
 
-On Tue, 11 Feb 2020, at 06:02, Eddie James wrote:
-> The nodes were defined with a unit address but had no reg property,
-> resulting in a warning. Add the reg properties for consistency to fix
-> the warning.
-> 
-> Signed-off-by: Eddie James <eajames@linux.ibm.com>
+Wittgenstein wrote that sometimes an intellectual exercise work like such
+that you have to throw away the ladder after you climbed it. It often
+happens in engineering.
 
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+It also echoes Fred Brooks Mythical Man-Month:
+"In most projects, the first system built is barely usable....Hence plan to
+throw one away; you will, anyhow."
 
-> ---
->  arch/arm/boot/dts/aspeed-g6.dtsi | 6 ++++--
->  1 file changed, 4 insertions(+), 2 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/aspeed-g6.dtsi b/arch/arm/boot/dts/aspeed-g6.dtsi
-> index 82a3cd1..301fdb4 100644
-> --- a/arch/arm/boot/dts/aspeed-g6.dtsi
-> +++ b/arch/arm/boot/dts/aspeed-g6.dtsi
-> @@ -269,16 +269,18 @@
->  					reg = <0x180 0x40>;
->  				};
->  
-> -				scu_ic0: interrupt-controller@0 {
-> +				scu_ic0: interrupt-controller@560 {
->  					#interrupt-cells = <1>;
->  					compatible = "aspeed,ast2600-scu-ic0";
-> +					reg = <0x560 0x4>;
->  					interrupts = <GIC_SPI 12 IRQ_TYPE_LEVEL_HIGH>;
->  					interrupt-controller;
->  				};
->  
-> -				scu_ic1: interrupt-controller@1 {
-> +				scu_ic1: interrupt-controller@570 {
->  					#interrupt-cells = <1>;
->  					compatible = "aspeed,ast2600-scu-ic1";
-> +					reg = <0x570 0x4>;
->  					interrupts = <GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>;
->  					interrupt-controller;
->  				};
-> -- 
-> 1.8.3.1
-> 
->
+> To reiterate: 32bit guest support for arm64 stays, of course. Only
+> 32bit host goes.
+
+That sounds more useful.
+
+I won't miss it.
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
