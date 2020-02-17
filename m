@@ -2,80 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B470E1611E9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 13:20:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 580981611F3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 13:22:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rVFoxL0Ycp5/pVd/gZIxl7vyEZCVuDmytURIkebPndI=; b=G3s/RVu5usLlrKVzm9iJa2zFL
-	PPHMrhLcMC6M4Zx1ES5sKJo+4uGXlrxu3HLtC/EQl8Rhq8ktYTGGAyNhbdHfVaKPaVw4j3PFzmLC5
-	8a+f3ieP5+ig4yQkFNS6zG0rFp+V+0hVo+on/G/4Ow12tB8K/X+srQmIqRzPF+e1OoIg+A7yNxG4W
-	doolvn12NpHHZ3j2lrqKe2QBwrOeiUliKbqvykAc0F5TcIBZgNPhgSw5v4FtYqwVD1PMbhZq+Vi/K
-	QhZ723lxET98I1P+hvj7Fd1Jxw14/bO9HyhQFzXipOyqzaCScWVHdl5KIJ8GQmkYPqLPAL79VJ0NR
-	tpS4UGtUA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QBYGBN4MLpRF9IUsNuRcKi7RjZNiaksftjlMkFHtlO8=; b=IRxTot98puG+q7
+	VJMKmE8h/bHFEFQLEZ3VFAXGjIIsaBgOueyzq8HHRcghks06zK4LcwvKDXITGjsvF9UvlAvTQvspR
+	k+KozBU4ZRxhBbb3yfFvoB/ih9Cf28F3Sl7bGp5OuUd0ASzjvjUk52ot92+fe0r9ttLWUsK9xXq2M
+	0A6nlHyJNGnWjbPWKyJqOc1weBGM157quzavxon3RbQSoiPCDFhzT0rwfexPqFqddrORTwkuDgpqQ
+	sJ5apwqxOl/+Hjpp4YDkM1ieJIEno/YiQv5a+BULHMZtE6rUt1oHHFvf/MRxhs1aFCg/vZWXIIJuW
+	ucCpOUTnDZUv8tv3SHEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3fNr-0003gJ-4f; Mon, 17 Feb 2020 12:20:19 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1j3fQ4-00046D-Hf; Mon, 17 Feb 2020 12:22:36 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3fNh-0003WU-O3
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 12:20:11 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1581942008; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=Ak3LgBqGOZMnRKzcv+4G1EyGXh9VotBzC+KbdmXq/x0=;
- b=LmttVX4M3SfV/fKTRfVXKNSK6Hx7sCh8aUxs3h9UwuVG79dFx7mEqETeiuSTolsVF7cpR5X9
- xDQo8R5Phq7d775nbMltnSGOQJtpEEApQZ4T0LrZPOCjRnpOTMh6DNaM69JUCaEb9NT2pFTt
- n7yqNPTbNnjCdFGq1bjY+ncPD5g=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e4a84f7.7efb9121a848-smtp-out-n02;
- Mon, 17 Feb 2020 12:20:07 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 29DADC4479C; Mon, 17 Feb 2020 12:20:07 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 756CEC43383;
- Mon, 17 Feb 2020 12:20:05 +0000 (UTC)
+ id 1j3fPt-00045P-Rk
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 12:22:27 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200217122224euoutp025ee7d028917f9edf8014c6946608bb40~0L-_hwC-B1679516795euoutp02d
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Feb 2020 12:22:24 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200217122224euoutp025ee7d028917f9edf8014c6946608bb40~0L-_hwC-B1679516795euoutp02d
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1581942144;
+ bh=pepeLGM6JPh2niWR4Zq0KSrOrfT2c2MNZvG/qj9b8mA=;
+ h=Subject:To:From:Date:In-Reply-To:References:From;
+ b=E6dknFPREmy9aW6ZSNCTO1egqzsjCrjIE+w7aFdYtuN3R1drjQlxQE+Y/HJ7Q/Mnr
+ JHMd50lLLzQT31sVQnRsvjdujj6DhcOBILImhntu+6J9R4QPS6ycddlCVBVvrNR1eB
+ uRuYz2tu2MPMrsWvp752zIRjKrs+KPU7EDXVNupU=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200217122223eucas1p208d0aa69d3df2975b123de0e39411e46~0L-_Y6yJh3165531655eucas1p2s;
+ Mon, 17 Feb 2020 12:22:23 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id 98.8A.60698.F758A4E5; Mon, 17
+ Feb 2020 12:22:23 +0000 (GMT)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200217122223eucas1p22e5947908dcdc0c2ea1dfe958b851a4e~0L-_C7eBG3165531655eucas1p2r;
+ Mon, 17 Feb 2020 12:22:23 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200217122223eusmtrp1603ff6a3bd2c59d746cd03352112cea1~0L-_CTqhZ1377413774eusmtrp18;
+ Mon, 17 Feb 2020 12:22:23 +0000 (GMT)
+X-AuditID: cbfec7f5-a0fff7000001ed1a-e6-5e4a857f0170
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 4C.14.07950.F758A4E5; Mon, 17
+ Feb 2020 12:22:23 +0000 (GMT)
+Received: from [106.120.51.15] (unknown [106.120.51.15]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200217122223eusmtip2333914dac7ae29e7a91441ce3791af8d~0L-9qcuW-1085210852eusmtip2N;
+ Mon, 17 Feb 2020 12:22:23 +0000 (GMT)
+Subject: Re: [PATCH] ARM: bcm2835_defconfig: add minimal support for
+ Raspberry Pi4
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, Stefan Wahren
+ <stefan.wahren@i2se.com>, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <9330d511-dc7d-8d67-043a-acee7e6ebd73@samsung.com>
+Date: Mon, 17 Feb 2020 13:22:22 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Date: Mon, 17 Feb 2020 20:20:05 +0800
-From: Can Guo <cang@codeaurora.org>
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: Re: [PATCH v3 1/2] scsi: ufs: pass device information to
- apply_dev_quirks
-In-Reply-To: <1578726707-6596-2-git-send-email-stanley.chu@mediatek.com>
-References: <1578726707-6596-1-git-send-email-stanley.chu@mediatek.com>
- <1578726707-6596-2-git-send-email-stanley.chu@mediatek.com>
-Message-ID: <2a8fc44914b7ed8777a4a99ba6b8647a@codeaurora.org>
-X-Sender: cang@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+In-Reply-To: <C0LZGU1IU7QO.9VKWHWJ56XZV@vian>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprOKsWRmVeSWpSXmKPExsWy7djPc7r1rV5xBsd2m1psenyN1eLyrjls
+ FhNvb2C32DZrOZvFphU32BxYPbbeMvXYvKTeY/Ppao/Pm+QCWKK4bFJSczLLUov07RK4Mlr/
+ XmYpeMNfcbwnqoHxLU8XIyeHhICJxLt7XYxdjFwcQgIrGCUWXtrIDuF8YZTY+OM+VOYzo8S2
+ j7eZYFrmP1zMBmILCSxnlPh+WRKi6C2jxMdLvcwgCWGBEIktnXOYQRIiAicZJSbvP8cKkmAT
+ MJToetsF1s0rYCfxu6mJHcRmEVCV+PT9AtgGUYFYidkrD7NA1AhKnJz5BMjm4OAU0JU4MFkQ
+ JMwsIC+x/e0cZghbXOLWk/lMILskBNrZJabu+8wKcamLxMeDk9ghbGGJV8e3QNkyEqcn97BA
+ NDQzSjw8t5YdwulhlLjcNIMRospa4s65X2wgm5kFNCXW79KHCDtK/Lu2igkkLCHAJ3HjLdRB
+ fBKTtk1nhgjzSnS0CUFUq0nMOr4Obu3BC5egSjwk1j8Mn8CoOAvJk7OQfDYLyWezEE5YwMiy
+ ilE8tbQ4Nz212DgvtVyvODG3uDQvXS85P3cTIzC5nP53/OsOxn1/kg4xCnAwKvHwOoR4xgmx
+ JpYVV+YeYpTgYFYS4fUW94oT4k1JrKxKLcqPLyrNSS0+xCjNwaIkzmu86GWskEB6Yklqdmpq
+ QWoRTJaJg1OqgbE0M6/0azlL09/N6fWTBfX57kg+/hPfcvRL8wRv9Ryz0r1TM97E798j7Opv
+ EahyUX3NsT8thZV+Z7KtOv13b3masu/Apck/nqTNWfl3spxi+aKlfunOe8uvtEyxe6TszvNh
+ kVb67CMv+/O10jiPTrrTYrpe0kTBV1Dh8oE7LYEruaT/12x/lqHEUpyRaKjFXFScCAC2bjZc
+ KgMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprPIsWRmVeSWpSXmKPExsVy+t/xe7r1rV5xBvcXy1hsenyN1eLyrjls
+ FhNvb2C32DZrOZvFphU32BxYPbbeMvXYvKTeY/Ppao/Pm+QCWKL0bIryS0tSFTLyi0tslaIN
+ LYz0DC0t9IxMLPUMjc1jrYxMlfTtbFJSczLLUov07RL0Mlr/XmYpeMNfcbwnqoHxLU8XIyeH
+ hICJxPyHi9m6GLk4hASWMkrMnHiJHSIhI3FyWgMrhC0s8edaF1TRa0aJyW86wRLCAiEST3qX
+ sYMkRAROM0r8v3gYqqqBUeLVss9sIFVsAoYSXW+7wGxeATuJ301NYCtYBFQlPn2/wARiiwrE
+ StyY2cEEUSMocXLmE5YuRg4OTgFdiQOTBUHCzAJmEvM2P2SGsOUltr+dA2WLS9x6Mp9pAqPg
+ LCTds5C0zELSMgtJywJGllWMIqmlxbnpucVGesWJucWleel6yfm5mxiBkbPt2M8tOxi73gUf
+ YhTgYFTi4XUI8YwTYk0sK67MPcQowcGsJMLrLe4VJ8SbklhZlVqUH19UmpNafIjRFOi3icxS
+ osn5wKjOK4k3NDU0t7A0NDc2NzazUBLn7RA4GCMkkJ5YkpqdmlqQWgTTx8TBKdXAqPriUpCD
+ HOs3071czxKEKwtmfwnpX/ZXr7nwyIE51eePzLkyxbddx5qDyYzvcuK57VM+R54SPfxLeUNu
+ xvnizRxcv9PPsva+NLRQkVr0wpon8OT5xU/ztnfO4W76bqUU9WIm1+bYo+7fb73pZF9695G1
+ o8t0PokTxe8Y15Z2Pw0wtjMzFZj/SImlOCPRUIu5qDgRALGTGb2yAgAA
+X-CMS-MailID: 20200217122223eucas1p22e5947908dcdc0c2ea1dfe958b851a4e
+X-Msg-Generator: CA
+X-RootMTR: 20200214151840eucas1p2ccd15a69aea02a20eda1e4b6e9c8f44e
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200214151840eucas1p2ccd15a69aea02a20eda1e4b6e9c8f44e
+References: <CGME20200214151840eucas1p2ccd15a69aea02a20eda1e4b6e9c8f44e@eucas1p2.samsung.com>
+ <C0LZGU1IU7QO.9VKWHWJ56XZV@vian>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_042009_859233_9ADEA70F 
-X-CRM114-Status: GOOD (  21.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200217_042226_106473_7EC29169 
+X-CRM114-Status: GOOD (  15.59  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,144 +141,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, asutoshd@codeaurora.org,
- bvanassche@acm.org, linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-01-11 15:11, Stanley Chu wrote:
-> Pass UFS device information to vendor-specific variant callback
-> "apply_dev_quirks" because some platform vendors need to know such
-> information to apply special handlings or quirks in specific devices.
-> 
-> In the same time, modify existed vendor implementations according to
-> the new interface for those vendor drivers which will be built-in
-> or built as a module alone with UFS core driver.
-> 
-> Cc: Alim Akhtar <alim.akhtar@samsung.com>
-> Cc: Asutosh Das <asutoshd@codeaurora.org>
-> Cc: Avri Altman <avri.altman@wdc.com>
-> Cc: Bart Van Assche <bvanassche@acm.org>
-> Cc: Bean Huo <beanhuo@micron.com>
-> Cc: Can Guo <cang@codeaurora.org>
-> Cc: Matthias Brugger <matthias.bgg@gmail.com>
-> Reviewed-by: Avri Altman <avri.altman@wdc.com>
-> Reviewed-by: Bean Huo <beanhuo@micron.com>
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
->  drivers/scsi/ufs/ufs-qcom.c | 3 ++-
->  drivers/scsi/ufs/ufshcd.c   | 8 ++++----
->  drivers/scsi/ufs/ufshcd.h   | 7 ++++---
->  3 files changed, 10 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/scsi/ufs/ufs-qcom.c b/drivers/scsi/ufs/ufs-qcom.c
-> index c69c29a1ceb9..ebb5c66e069f 100644
-> --- a/drivers/scsi/ufs/ufs-qcom.c
-> +++ b/drivers/scsi/ufs/ufs-qcom.c
-> @@ -949,7 +949,8 @@ static int
-> ufs_qcom_quirk_host_pa_saveconfigtime(struct ufs_hba *hba)
->  	return err;
->  }
-> 
-> -static int ufs_qcom_apply_dev_quirks(struct ufs_hba *hba)
-> +static int ufs_qcom_apply_dev_quirks(struct ufs_hba *hba,
-> +				     struct ufs_dev_desc *card)
->  {
->  	int err = 0;
-> 
-> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> index 1b97f2dc0b63..7c85c890594c 100644
-> --- a/drivers/scsi/ufs/ufshcd.c
-> +++ b/drivers/scsi/ufs/ufshcd.c
-> @@ -6803,7 +6803,8 @@ static int
-> ufshcd_quirk_tune_host_pa_tactivate(struct ufs_hba *hba)
->  	return ret;
->  }
-> 
-> -static void ufshcd_tune_unipro_params(struct ufs_hba *hba)
-> +static void ufshcd_tune_unipro_params(struct ufs_hba *hba,
-> +				      struct ufs_dev_desc *card)
->  {
->  	if (ufshcd_is_unipro_pa_params_tuning_req(hba)) {
->  		ufshcd_tune_pa_tactivate(hba);
-> @@ -6817,7 +6818,7 @@ static void ufshcd_tune_unipro_params(struct 
-> ufs_hba *hba)
->  	if (hba->dev_quirks & UFS_DEVICE_QUIRK_HOST_PA_TACTIVATE)
->  		ufshcd_quirk_tune_host_pa_tactivate(hba);
-> 
-> -	ufshcd_vops_apply_dev_quirks(hba);
-> +	ufshcd_vops_apply_dev_quirks(hba, card);
+Hi Nicolas,
 
-Hi Stanley,
+On 14.02.2020 16:14, Nicolas Saenz Julienne wrote:
+> On Fri Feb 14, 2020 at 1:25 PM, Marek Szyprowski wrote:
+>> On 13.02.2020 10:59, Stefan Wahren wrote:
+>>> On 13.02.20 08:35, Marek Szyprowski wrote:
+>>>> On 12.02.2020 19:31, Nicolas Saenz Julienne wrote:
+>>>>> On Wed, 2020-02-12 at 11:20 +0100, Marek Szyprowski wrote:
+>>>>>> Add drivers for the minimal set of devices needed to boot Raspberry Pi4
+>>>>>> board.
+>>>>>>
+>>>>>> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+>>>>> Just so you know, the amount of support on the RPi4 you might be able to get
+>>>>> updating bcm2835_defconfig's config is very limited. Only 1GB of ram and no
+>>>>> PCIe (so no USBs).
+>>>> Yes, I know. A lots of core features is missing: SMP, HIGHMEM, LPAE, PCI
+>>>> and so on, but having a possibility to boot RPi4 with this defconfig
+>>>> increases the test coverage.
+>>> in case you want to increase test coverage, we better enable all
+>>> Raspberry Pi 4 relevant hardware parts (hwrng, thermal, PCI ...). This
+>>> is what we did for older Pi boards.
+>> Okay, I will add thermal in v2. HWRNG is already selected as module.
+>> Enabling PCI without LPAE makes no sense as the driver won't be able to
+>> initialize properly.
+> Agree on this.
+>>> SMP, HIGHMEM, LPAE are different and shouldn't be enabled in
+>>> bcm2835_defconfig from my PoV.
+>> Maybe it would make sense to also add bcm2711_defconfig or
+>> bcm2835_lpae_defconfig?
+> IMO bcm2711_defconfig if the last resort solution. I don't think you can
+> do bcm2835_lpae_defconfig as RPi and RPi2 SoCs don't support LPAE.
 
-Is this series merged? If no, would you mind moving
-ufshcd_vops_apply_dev_quirks(hba, card); a little bit? Like below.
+Okay, if you want I can send a patch adding bcm2711_defconfig.
 
-@@ -6852,14 +6852,14 @@ static void ufshcd_tune_unipro_params(struct 
-ufs_hba *hba)
-                 ufshcd_tune_pa_hibern8time(hba);
-         }
+>   An
+> intemediate solution is being discussed here:
+> https://lkml.org/lkml/2020/1/10/694
 
-+       ufshcd_vops_apply_dev_quirks(hba, card);
-+
-         if (hba->dev_quirks & UFS_DEVICE_QUIRK_PA_TACTIVATE)
-                 /* set 1ms timeout for PA_TACTIVATE */
-                 ufshcd_dme_set(hba, UIC_ARG_MIB(PA_TACTIVATE), 10);
+Right, I also agree that multi_v7_lpae_defconfig is needed. Best would 
+be to have both (bcm2711 for quick tests of board-dedicated kernel and 
+multi for distributions).
 
-In this way, vendor codes have a chance to modify the dev_quirks
-before ufshcd_tune_unipro_params() does the rest of its job.
+Best regards
+-- 
+Marek Szyprowski, PhD
+Samsung R&D Institute Poland
 
-Thanks,
-Can Guo.
-
->  }
-> 
->  static void ufshcd_clear_dbg_ufs_stats(struct ufs_hba *hba)
-> @@ -6980,10 +6981,9 @@ static int ufshcd_probe_hba(struct ufs_hba *hba)
->  	}
-> 
->  	ufs_fixup_device_setup(hba, &card);
-> +	ufshcd_tune_unipro_params(hba, &card);
->  	ufs_put_device_desc(&card);
-> 
-> -	ufshcd_tune_unipro_params(hba);
-> -
->  	/* UFS device is also active now */
->  	ufshcd_set_ufs_dev_active(hba);
->  	ufshcd_force_reset_auto_bkops(hba);
-> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-> index e05cafddc87b..4f3fa71303da 100644
-> --- a/drivers/scsi/ufs/ufshcd.h
-> +++ b/drivers/scsi/ufs/ufshcd.h
-> @@ -320,7 +320,7 @@ struct ufs_hba_variant_ops {
->  	void	(*setup_task_mgmt)(struct ufs_hba *, int, u8);
->  	void    (*hibern8_notify)(struct ufs_hba *, enum uic_cmd_dme,
->  					enum ufs_notify_change_status);
-> -	int	(*apply_dev_quirks)(struct ufs_hba *);
-> +	int	(*apply_dev_quirks)(struct ufs_hba *, struct ufs_dev_desc *);
->  	int     (*suspend)(struct ufs_hba *, enum ufs_pm_op);
->  	int     (*resume)(struct ufs_hba *, enum ufs_pm_op);
->  	void	(*dbg_register_dump)(struct ufs_hba *hba);
-> @@ -1052,10 +1052,11 @@ static inline void
-> ufshcd_vops_hibern8_notify(struct ufs_hba *hba,
->  		return hba->vops->hibern8_notify(hba, cmd, status);
->  }
-> 
-> -static inline int ufshcd_vops_apply_dev_quirks(struct ufs_hba *hba)
-> +static inline int ufshcd_vops_apply_dev_quirks(struct ufs_hba *hba,
-> +					       struct ufs_dev_desc *card)
->  {
->  	if (hba->vops && hba->vops->apply_dev_quirks)
-> -		return hba->vops->apply_dev_quirks(hba);
-> +		return hba->vops->apply_dev_quirks(hba, card);
->  	return 0;
->  }
 
 _______________________________________________
 linux-arm-kernel mailing list
