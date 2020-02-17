@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1764161A6E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 19:47:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14D31161A80
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 19:48:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q9CWBJ868jKXvqIDlmR5NphonRW/38CjbF7amxrmm4k=; b=PDLjBkm6pGeL8N
-	yvrgZ/VwCWtVVbona1tt+Vbq+DmKBxmvtIxrulYod0l8Dy4nSuYjlpURzgFkKsS8QkVMY5S5jHnq4
-	63Fml2ga8MZxfyagFCge2DIeZ2TeAn2UMlZjNQmjlaW3Z81dIXn5d09WSkrQGb0ImpQQjdMa6DIS5
-	0wbkFEoj14B5spy5sW6xKJ3KTVYPn00Bbwe1VPpWQaPnIvp+GnNvxXqpBz/HkjZrCAKMMB/DzX4vr
-	UhEK9gncKz62NB1R6eWYcBV8NMoMujH8mHKIae/nCW1o6/JIMYG3FcucMOrGymObvjilZsJZKIqE5
-	/7ElkPNGDUu2QmgIgAMw==;
+	List-Owner; bh=KLYzL1J+7FY0cSL/phNck4FXTnEcm5M5Tu8o3y75iN8=; b=eudHS/T694OgPd
+	h9Ak5i69sreXikda301TOMm8q2LY2m0Ujh0l/duQRHP8s/u9BXUELIMU12OtDw3UsMcEjRDg6LyZN
+	UR0mKh1kz2DXmxQG9851nNY9eU31nHSBZVc4sKeUTrBgFgxKnJPbmhgbazHYO7FBZAmr6juShUMFi
+	gG0Psw6lfb1dGFqgma7oTJRTCHoUoD9rf3DB5GAtnM7Tu2Q4Ru7UWg6yaSBfu+5lc0qmBUkCZWmUP
+	UsboQtIvLlurYxvdnaj+0wzB6RBJVcOE9YzfjpJYU+UtCkiwV7QSeqqLut15obZ8iI/W0dtml+aiF
+	3ViiWqF8r95yMkqWY94Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3lQe-0006F2-MM; Mon, 17 Feb 2020 18:47:36 +0000
+	id 1j3lRx-0006ml-CR; Mon, 17 Feb 2020 18:48:57 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3lQV-0006As-76
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 18:47:29 +0000
+ id 1j3lRn-0006kT-VN; Mon, 17 Feb 2020 18:48:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=PEbncHS+AnPBBIQlAnhVcVbOoHuWu9zHjb/jLxwT+dA=; b=Pi2R+UlrHLLQmotVF+73gOtYv
- XGfVs8bQtFm+sQ3jAz8jLT/tT+8oumWH4xWKXG0q5Ha/uaDIdrjRl6OX7YJDoJcgml6Jt6NYipAxx
- Jg780IP2SWGMN30EmJTirgg9+wBaEkhJVYXAPtDFpXfsaBklR5TNuYDcwms/teakTQUDz8w+Y83/d
- IPZHTUfRtSmQHQNNdiQ6FLvg3+D1maA/yZn5IxibPSHv46a+beJ56qOBpH9/ceFraOqD/iqbNpjwB
- 370NLnH6k/ySQz6+z5F92u1t41XvLYL9eCz62XINxjOGGXYTJlhZqXjKC6PS81NfNhm8jRwIdZ1w2
- N9oMAoPiQ==;
+ bh=GZnbZhFy+lu7UoJn/uqADUzy5uOIWmqyjmegoMJD5DU=; b=XQkKRMghvaybOVtjeWzCIfAFj
+ 79Pl+ZqFkk9k5pm6T0vp9t5AfT7YaPQznK9puDEjmS3gmoATKi7DxblvVje/UvYw7dAUcK/fNzSds
+ IHSdyrA/J+2A7LWOZV1HjHvpCByPVnNNiovaH1bMq7zrIA9h+geUE2K3rQiPE3+15nu10S7ikAbZ/
+ q+H8SSr+EpoIhr9Jksv4OULdGc0hGAkBUG0MEryCj21Kr0+CGqcYyElmMFRF4A0ZRbD26Fm7ZAaw6
+ BQMJxd9fRmVDs8/caQWCHjds/DfQHWlyOKrLA7VR5DSrya/NziLrRTnV8O4oBGTaEvFQKd9E/fRZj
+ iRg271EQQ==;
 Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:41632)
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:49148)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1j3lQI-0002WD-K0; Mon, 17 Feb 2020 18:47:14 +0000
+ id 1j3lRK-0002We-Hs; Mon, 17 Feb 2020 18:48:18 +0000
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j3lQF-0006XL-Nb; Mon, 17 Feb 2020 18:47:11 +0000
-Date: Mon, 17 Feb 2020 18:47:11 +0000
+ id 1j3lRE-0006XW-5L; Mon, 17 Feb 2020 18:48:12 +0000
+Date: Mon, 17 Feb 2020 18:48:12 +0000
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH net] net: macb: Properly handle phylink on at91rm9200
-Message-ID: <20200217184711.GA25745@shell.armlinux.org.uk>
-References: <20200217104348.43164-1-alexandre.belloni@bootlin.com>
- <20200217165644.GX25745@shell.armlinux.org.uk>
- <20200217174244.GD3316@piout.net>
+To: Matthew Wilcox <willy@infradead.org>
+Subject: Re: [CFT 1/8] net: phylink: propagate resolved link config via
+ mac_link_up()
+Message-ID: <20200217184812.GB25745@shell.armlinux.org.uk>
+References: <20200217172242.GZ25745@shell.armlinux.org.uk>
+ <E1j3k7e-00071q-3R@rmk-PC.armlinux.org.uk>
+ <20200217180359.GK7778@bombadil.infradead.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200217174244.GD3316@piout.net>
+In-Reply-To: <20200217180359.GK7778@bombadil.infradead.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_104727_260814_D42018C0 
-X-CRM114-Status: GOOD (  28.72  )
+X-CRM114-CacheID: sfid-20200217_104848_054587_A59EBEBC 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,90 +88,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Antoine =?iso-8859-1?Q?T=E9nart?= <antoine.tenart@bootlin.com>,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>, linux-doc@vger.kernel.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ linux-stm32@st-md-mailman.stormreply.com, Felix Fietkau <nbd@openwrt.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Ioana Radulescu <ruxandra.radulescu@nxp.com>, Jonathan Corbet <corbet@lwn.net>,
+ Michal Simek <michal.simek@xilinx.com>, Jose Abreu <joabreu@synopsys.com>,
+ Jakub Kicinski <kuba@kernel.org>, Vivien Didelot <vivien.didelot@gmail.com>,
+ Sean Wang <sean.wang@mediatek.com>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
+ Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 06:42:44PM +0100, Alexandre Belloni wrote:
-> On 17/02/2020 16:56:44+0000, Russell King - ARM Linux admin wrote:
-> > On Mon, Feb 17, 2020 at 11:43:48AM +0100, Alexandre Belloni wrote:
-> > > at91ether_init was handling the phy mode and speed but since the switch to
-> > > phylink, the NCFGR register got overwritten by macb_mac_config().
-> > 
-> > I don't think this actually explains anything - or at least I can't
-> > make sense of it with respect to your patch.
-> > 
-> > You claim that the NCFGR register gets overwritten in macb_mac_config(),
-> > but I see that the NCFGR register is read-modify-write in there,
-> > whereas your new implementation below doesn't bother reading the
-> > present value.
-> > 
-> > I think the issue you're referring to is the clearing of the PAE bit,
-> > which is also the RM9200_RMII for at91rm9200?
-> > 
+On Mon, Feb 17, 2020 at 10:03:59AM -0800, Matthew Wilcox wrote:
+> On Mon, Feb 17, 2020 at 05:23:54PM +0000, Russell King wrote:
+> > +   Please see :c:func:`mac_link_up` for more information on this.
 > 
-> This is the issue, I'll rework the commit message.
-
-Thanks.
-
-> > Next, there's some duplication of code introduced here - it seems
-> > that the tail end of macb_mac_link_down() and at91ether_mac_link_down()
-> > are identical, as are the tail end of macb_mac_link_up() and
-> > at91ether_mac_link_up().
-> > 
+> FYI, Jon recently added the ability to specify functions as
 > 
-> I was split between having a new phylink_mac_ops instance or
-> differentiating in the various callbacks. If your preference is the
-> latter, I'm fine with that.
-
-I haven't thought too much about what the code would look like after
-the phylink changes - I spent quite some time working out what the
-differences were between what is already in mainline and what your
-patch was adding back.
-
-As far as I'm concerned, however, any of the MAC drivers I've converted
-that I don't have the hardware for (which includes this driver) are
-merely illustrative patches that show the kind of thing I'm after
-there - and only become "real" patches once they're tested.
-
-> > > Add new phylink callbacks to handle emac and at91rm9200 properly.
-> > > 
-> > > Fixes: 7897b071ac3b ("net: macb: convert to phylink")
-> > > Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> > > ---
-> > 
-> > I posted a heads-up message last week about updates to phylink that
-> > I'll be submitting soon (most of the prerequisits have now been sent
-> > for review) which touch every phylink_mac_ops-using piece of code in
-> > the tree.  Unfortunately, this patch introduces a new instance that
-> > likely isn't going to get my attention, so it's going to create a
-> > subtle merge conflict between net-next and net trees unless we work
-> > out some way to deal with it.
-> > 
-> > I'm just mentioning that so that some thought can be applied now
-> > rather than when it actually happens - especially as I've no way to
-> > test the changes that will be necessary for this driver.
-> > 
+> +   Please see mac_link_up() for more information on this.
 > 
-> Does that help if I change the callbacks instead of adding a new
-> phylink_mac_ops instance? I can also wait for your work and rebase on
-> top of that but that would mean that the fix will not get backported.
+> and it's now the preferred way to do this.  Nothing that should stand in
+> the way of this patch-set, of course.
 
-Obviously, the phylink conversion for this driver caused a regression
-that should be fixed, so I think it's right to fix it in whatever way
-you think would be most suitable.  We just need to consider how to
-deal with the conflicts that are going to occur between net and
-net-next.
-
-One option would be to let davem know about the impending conflict,
-and with your patch merged into net, if he can then merge the net
-tree into net-next before applying my series - with an updated macb
-conversion patch from you (tested would be good!) - then everything
-should work out fine.
+Thanks for letting me know - it sounds like the subject of a future
+patch to convert all instances.  In the mean time, I suggest keeping
+to the current style in the file for consistency...
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
