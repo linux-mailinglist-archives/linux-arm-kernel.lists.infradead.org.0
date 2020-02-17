@@ -2,57 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80C7E161CB7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 22:19:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C244B161CBD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 22:20:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iOT+RI37E+X7x/phLSzWcHZFYpD2tus+S5fwfaTbPvg=; b=oe+hAPVHnbamUirVeXYyCpIkP
-	22KSSMQrQRv7Cnnz1bhx1UYkEikwLzqoJsXwg0ZJJly/Zm9drT1dpca6iKLGldB64qgtuXmmNUOIh
-	+XL7VBteeaSr2MaiEy7q7cr0bZq5CVImV0IrbAK4GxDY8eiHZMDiBCjjnaVF0qOrI/EizvukVkENi
-	FV4PUsho5y2iyebQkncZ4zcsHT9FOEztqT9XnJzlL4D70EZsWwz01m3aZ2bX2qvrNvga4cTOsZb04
-	bKbaIN2fg2oO1ny25yM8yT1hB8tIdoeC8rS/t84QdHObq/aTOYJ2+8W8pIzvHQY5ypgKVyu0HOU9Q
-	ShFnj8Swg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=R8zJJ1F6bZnveiWBy4PV3QybAHGl1E1XwijfNhD11nc=; b=OOWdUH1Sw9QFRN
+	q6EMyVEu/x5JLHAdagfiOW/hRxci64GxcA86LYXnylUMYUb9y4hShh7czFvGjAQG4Gkn5igfHhTjU
+	b9pGh0xIVLnC6h0nWFcdImS2Z48JZC96maoXLm10VLB0RyFx2Ea4LryZWsa9XT6ULedDyzdzUoNz+
+	Lw6cVCi7eXx89rT0/ulHYWWjgrFuqurzTGSrR2x6HiwYoC755A1DYhUdyqicgjyv89fyN+q74WgFw
+	8+dp38oGYvSESL1FfczZDVZLnd4pJge6cZUcZpOKIZe88ECMRCdXV5C7yRBNxuveNX4A29UM5mi29
+	HvpK/gIYhV0qfN87plwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3nng-0005GW-HY; Mon, 17 Feb 2020 21:19:32 +0000
-Received: from mx2.suse.de ([195.135.220.15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3nnZ-0005Fm-4F; Mon, 17 Feb 2020 21:19:26 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id CA941AD6C;
- Mon, 17 Feb 2020 21:19:22 +0000 (UTC)
-Message-ID: <7bd53a3ee156037132e85415589168345461ad7c.camel@suse.de>
-Subject: Re: [PATCH] usb: xhci-pci: Raspberry Pi FW loader for VIA VL805
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <f.fainelli@gmail.com>, Mathias Nyman
- <mathias.nyman@intel.com>, Ray Jui <rjui@broadcom.com>, Scott Branden
- <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
-Date: Mon, 17 Feb 2020 22:19:20 +0100
-In-Reply-To: <185f8cae-9898-ee72-00f1-ec79d98c43f4@gmail.com>
-References: <20200217100701.19949-1-nsaenzjulienne@suse.de>
- <185f8cae-9898-ee72-00f1-ec79d98c43f4@gmail.com>
-User-Agent: Evolution 3.34.3 
+	id 1j3nor-0006qX-M2; Mon, 17 Feb 2020 21:20:45 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j3noh-0006pm-N7
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 21:20:37 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 5C8B38087;
+ Mon, 17 Feb 2020 21:21:14 +0000 (UTC)
+Date: Mon, 17 Feb 2020 13:20:27 -0800
+From: Tony Lindgren <tony@atomide.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] arm: fix Kbuild issue caused by per-task stack protector
+ GCC plugin
+Message-ID: <20200217211953.GA35972@atomide.com>
+References: <20200217203013.20102-1-ardb@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200217203013.20102-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_131925_315504_8D76E030 
-X-CRM114-Status: GOOD (  14.70  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200217_132035_797496_16D13BB0 
+X-CRM114-Status: GOOD (  22.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,88 +59,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-usb@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- oneukum@suse.com, linux-kernel@vger.kernel.org, tim.gover@raspberrypi.org,
- linux-rpi-kernel@lists.infradead.org, phil@raspberrypi.com,
+Cc: Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Merlijn Wajer <merlijn@wizzup.org>, Russell King <linux@armlinux.org.uk>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, linux-omap@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0660732707422429755=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============0660732707422429755==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-6v5SE9lBM19zZDAYXHDY"
+* Ard Biesheuvel <ardb@kernel.org> [200217 20:31]:
+> When using plugins, GCC requires that the -fplugin= options precedes
+> any of its plugin arguments appearing on the command line as well.
+> This is usually not a concern, but as it turns out, this requirement
+> is causing some issues with ARM's per-task stack protector plugin
+> and Kbuild's implementation of $(cc-option).
+> 
+> When the per-task stack protector plugin is enabled, and we tweak
+> the implementation of cc-option not to pipe the stderr output of
+> GCC to /dev/null, the following output is generated when GCC is
+> executed in the context of cc-option:
+> 
+>   cc1: error: plugin arm_ssp_per_task_plugin should be specified before \
+>          -fplugin-arg-arm_ssp_per_task_plugin-tso=1 in the command line
+>   cc1: error: plugin arm_ssp_per_task_plugin should be specified before \
+>          -fplugin-arg-arm_ssp_per_task_plugin-offset=24 in the command line
+> 
+> These errors will cause any option passed to cc-option to be treated
+> as unsupported, which is obviously incorrect.
+> 
+> The cause of this issue is the fact that the -fplugin= argument is
+> added to GCC_PLUGINS_CFLAGS, whereas the arguments above are added
+> to KBUILD_CFLAGS, and the contents of the former get filtered out of
+> the latter before being passed to the GCC running the cc-option test,
+> and so the -fplugin= option does not appear at all on the GCC command
+> line.
+> 
+> Adding the arguments to GCC_PLUGINS_CFLAGS instead of KBUILD_CFLAGS
+> would be the correct approach here, if it weren't for the fact that we
+> are using $(eval) to defer the moment that they are added until after
+> asm-offsets.h is generated, which is after the point where the contents
+> of GCC_PLUGINS_CFLAGS are added to KBUILD_CFLAGS. So instead, we have
+> to add our plugin arguments to both.
+> 
+> For similar reasons, we cannot append DISABLE_ARM_SSP_PER_TASK_PLUGIN
+> to KBUILD_CFLAGS, as it will be passed to GCC when executing in the
+> context of cc-option, whereas the other plugin arguments will have
+> been filtered out, resulting in a similar error and false negative
+> result as above. So add it to ccflags-y instead.
+> 
+> Reported-by: Tony Lindgren <tony@atomide.com>
+> Fixes: 189af4657186da08 ("ARM: smp: add support for per-task stack canaries")
+> Cc: Kees Cook <keescook@chromium.org>
+> Cc: Russell King <linux@armlinux.org.uk>
+> Cc: Arnd Bergmann <arnd@arndb.de>
+> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 
+This fixes the appended dtb boot test case for me:
 
---=-6v5SE9lBM19zZDAYXHDY
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Tested-by: Tony Lindgren <tony@atomide.com>
 
-On Mon, 2020-02-17 at 12:52 -0800, Florian Fainelli wrote:
->=20
-> On 2/17/2020 2:07 AM, Nicolas Saenz Julienne wrote:
-> > On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either b=
-e
-> > loaded directly from an EEPROM or, if not present, by the SoC's
-> > VideCore.  Inform VideCore that VL805 was just reset, or defer xhci's
-> > probe if not yet joinable trough the mailbox interface.
-> >=20
-> > Based on Tim Gover's downstream implementation.
-> >=20
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->=20
-> Would it work if you registered the firmware loading as pci fixup such
-> that you would not even have to mangle xhci-pci.c at all and all the
-> logic could be contained within drivers/firmware/raspberrypi.c?
+Also adding Merlijn also to Cc to test his, he originally
+reported the issue. So I suggest you please also add:
 
-Not that simple, PCI fix-ups don't allow for probe deferring. We depend on =
-the
-firmware and mailbox drivers to be up prior running this, so it's essential=
-. We
-could cheat and do the deferring first thing during pcie-brcmstb's probe.
-
-Actually this might be a workable solution (as in upstreamable):
- - Wait for firmware to be up in pcie-brcmstb.c
- - Add firmware code in firmware/raspberrypi.c
- - Perform call in usb's quirk_usb_early_handoff() (usb/host/pci-quirks.c)
+Reported-by: Merlijn Wajer <merlijn@wizzup.org>
 
 Regards,
-Nicolas
+
+Tony
 
 
---=-6v5SE9lBM19zZDAYXHDY
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5LA1gACgkQlfZmHno8
-x/7pOQf/Rc4PUoWjbSaEnRadMhclCH4wKP/YYX30qB8pP4LdbbBhlVyFrL1pYqsA
-7SM/sYXSi77ZudG91Qdw0KZQO+8d8R/sC0AliG5qNe0qkc314TwqjAcu90kXkbEF
-lvLFkocleihvGcVPjY9LEwk2bPqSY4ScYt/WhrfGIaqvqyJ/ISqliY6HFlbjJfjq
-323xSs7Jp0SXjl8h2yOhL0kgV6HS/NTUbwUrW0lRXvZWjDyi0CM1uyxCgUy4EiRC
-wsSutseZ95JKX8Sw78dLrE1H0qQel1cAIbZSNb6/lVOvFinq8lKhh+EJVHmAiwOl
-7o2HJ9OsjY6Lb4mqgcvoPqFPVl5/tQ==
-=bl1/
------END PGP SIGNATURE-----
-
---=-6v5SE9lBM19zZDAYXHDY--
-
-
-
---===============0660732707422429755==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> ---
+>  arch/arm/Makefile                 | 4 +++-
+>  arch/arm/boot/compressed/Makefile | 4 ++--
+>  2 files changed, 5 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+> index db857d07114f..1fc32b611f8a 100644
+> --- a/arch/arm/Makefile
+> +++ b/arch/arm/Makefile
+> @@ -307,13 +307,15 @@ endif
+>  ifeq ($(CONFIG_STACKPROTECTOR_PER_TASK),y)
+>  prepare: stack_protector_prepare
+>  stack_protector_prepare: prepare0
+> -	$(eval KBUILD_CFLAGS += \
+> +	$(eval SSP_PLUGIN_CFLAGS := \
+>  		-fplugin-arg-arm_ssp_per_task_plugin-tso=$(shell	\
+>  			awk '{if ($$2 == "THREAD_SZ_ORDER") print $$3;}'\
+>  				include/generated/asm-offsets.h)	\
+>  		-fplugin-arg-arm_ssp_per_task_plugin-offset=$(shell	\
+>  			awk '{if ($$2 == "TI_STACK_CANARY") print $$3;}'\
+>  				include/generated/asm-offsets.h))
+> +	$(eval KBUILD_CFLAGS += $(SSP_PLUGIN_CFLAGS))
+> +	$(eval GCC_PLUGINS_CFLAGS += $(SSP_PLUGIN_CFLAGS))
+>  endif
+>  
+>  all:	$(notdir $(KBUILD_IMAGE))
+> diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
+> index da599c3a1193..9c11e7490292 100644
+> --- a/arch/arm/boot/compressed/Makefile
+> +++ b/arch/arm/boot/compressed/Makefile
+> @@ -101,7 +101,6 @@ clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S \
+>  		$(libfdt) $(libfdt_hdrs) hyp-stub.S
+>  
+>  KBUILD_CFLAGS += -DDISABLE_BRANCH_PROFILING
+> -KBUILD_CFLAGS += $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
+>  
+>  ifeq ($(CONFIG_FUNCTION_TRACER),y)
+>  ORIG_CFLAGS := $(KBUILD_CFLAGS)
+> @@ -117,7 +116,8 @@ CFLAGS_fdt_ro.o := $(nossp-flags-y)
+>  CFLAGS_fdt_rw.o := $(nossp-flags-y)
+>  CFLAGS_fdt_wip.o := $(nossp-flags-y)
+>  
+> -ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin -I$(obj)
+> +ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin \
+> +	     -I$(obj) $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
+>  asflags-y := -DZIMAGE
+>  
+>  # Supply kernel BSS size to the decompressor via a linker symbol.
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0660732707422429755==--
-
-
