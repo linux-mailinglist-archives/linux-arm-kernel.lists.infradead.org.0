@@ -2,81 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50D311613BA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 14:43:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35E111613DE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 14:46:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hINdH3e2VknULz4YdH3NwWhCsXKY8cO+GzwezP4y5vY=; b=gGgKiRKRY7ymAput3JT+j5vQJ
-	qBNXDkvFQtdZCYf9dh2k94vkJy3oyu0r/Q3hHbXO19etz68WGUmH1wE7YBQmDaXd0yVZMXg1QMWE7
-	xosY/DzEvDvAvJip6FNiX3MtE6uoED4G30h1N08E2tY4muG305dkdj38IxFAD9k+QZ0++snB/4ixZ
-	+jNx/fQs5Aj6e3/oRG/eCrmahdiXbQqCrvwzFxdO65WUzLd2kGKKPUxkMmKRw7MrKZzWKg9kszzqI
-	ri4C+P/w7agcaCiEVja4jmATVaoYqHIu0ajNR+aqJ3FmyujiJZyd4DzTPwENUjSCtKdQX+gJu/gDs
-	4zCr4glzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QUXS0DQGST4o1TkdTgDsfblXfFmHy8BkBab+i+sSOHI=; b=lr9DH8mgzaWQpI
+	7VSsjjwX1AlGCIpFZEw4xXaqZ4J3Ii0J6Oj0IQIbR+qB3n3xsmvM7NHxYouMDmoclvGycycg5UgnS
+	p0X2ZaYSaTvlJELGvjJJlcloAZyH/ZwhqmlMqw4c2HWLgDkuHmuW50omRqh87wO3gON4F4KFyDW9/
+	08EVor6XwncsEBMXlHczm6MaZ9wxtrpdQoBYdmrNhPq9A0bDynULP3sbB9EdXabiPLUz1dGwph9Oa
+	hm3DqX9CEMQOdStKnFLtC4roKF4dbNHcvVkUNRLOX070bPHjHRdd6Ik8MVCtODx/X2Le49627clC1
+	OE8VdXWIF9/Up6jT7rDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3gfm-0004PG-K1; Mon, 17 Feb 2020 13:42:54 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1j3gjV-0006iM-SH; Mon, 17 Feb 2020 13:46:45 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3gfc-0004ON-DY
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 13:42:46 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1581946965; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=SEXnp9cA3paejZ0P2RnhQ/ZYaeBEJbJoIBgTZMX7VMg=;
- b=HMVXesqU/ittXwmpZ6wmcOELlKdf3DXd0ymaFSB+mp5l2rpcjXbzYpQ021hcjXxoUP6pRSUO
- yzwUZ+5a1IJiFIEGgt/ZJ/wF/gC6ruJIvbSDROXovoiF7dcSbBML/FkVfNrTyumu9KshCAYP
- A5gJJZtKzWNrxWa/89QAv9SfYlQ=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5e4a984d.7fad760e2e68-smtp-out-n01;
- Mon, 17 Feb 2020 13:42:37 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id AB308C4479C; Mon, 17 Feb 2020 13:42:36 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: cang)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id E4707C43383;
- Mon, 17 Feb 2020 13:42:35 +0000 (UTC)
+ id 1j3gio-0006G7-Ll
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 13:46:04 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01HDhVxP007656; Mon, 17 Feb 2020 14:45:50 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=6krLsyTnJQGCuNqc99FBtGiT29OEuI/cKr9z9oLmia8=;
+ b=F84Im76Z7/5isx65KidMfCyyaLPXGt2Y5cGz2X+0BlsHzESPQg4vgRpUp6J5rEQhhCOe
+ emI2exVjxiGhhLWsO9coFpILiLMqcnTGanXsd8/dreBVmvJV9s+xVNDLvxpmtiKZnDBZ
+ oOo10cDgPlSLoH/6mQTiQsblEhz6AYncmx41dwxyscm2KLYjp07f0i7LErZxMD9F1++X
+ RepEMliZoXQWFD+zh64zpjOS3f4r+FEJc5b6wlExHGz3KG91Tkt+6QhI20r9vXqOl0Vy
+ RQ97DpGzb4/dRxwF5kjC1sYgtkzMYJhAoIkLtSz+gxvnNWLR/VyGI4YLyihMutFA56Rt FA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2y68dp3axk-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 17 Feb 2020 14:45:50 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 93321100034;
+ Mon, 17 Feb 2020 14:45:49 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7E01A2FF5C7;
+ Mon, 17 Feb 2020 14:45:49 +0100 (CET)
+Received: from localhost (10.75.127.47) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 17 Feb 2020 14:45:49
+ +0100
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <lee.jones@linaro.org>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
+ <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
+ <daniel.lezcano@linaro.org>, <tglx@linutronix.de>, <fabrice.gasnier@st.com>
+Subject: [PATCH v4 0/3] clockevent: add low power STM32 timer
+Date: Mon, 17 Feb 2020 14:45:43 +0100
+Message-ID: <20200217134546.14562-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-Date: Mon, 17 Feb 2020 21:42:35 +0800
-From: Can Guo <cang@codeaurora.org>
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: Re: [PATCH v1 1/2] scsi: ufs: add required delay after gating
- reference clock
-In-Reply-To: <1581946449.26304.15.camel@mtksdccf07>
-References: <20200217093559.16830-1-stanley.chu@mediatek.com>
- <20200217093559.16830-2-stanley.chu@mediatek.com>
- <c6874825dd60ea04ed401fbd1b5cb568@codeaurora.org>
- <1581945168.26304.4.camel@mtksdccf07>
- <e518c4d1d94ec15e9c4c31c34a9e42d1@codeaurora.org>
- <1581946449.26304.15.camel@mtksdccf07>
-Message-ID: <56c1fc80919491d058d904fcc7301835@codeaurora.org>
-X-Sender: cang@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-17_08:2020-02-17,
+ 2020-02-17 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_054245_290506_EEBEF3D6 
-X-CRM114-Status: GOOD (  17.99  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200217_054603_076761_B10F9506 
+X-CRM114-Status: GOOD (  13.48  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,86 +94,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, asutoshd@codeaurora.org,
- bvanassche@acm.org, linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-02-17 21:34, Stanley Chu wrote:
-> Hi Can,
-> 
-> On Mon, 2020-02-17 at 21:22 +0800, Can Guo wrote:
->> On 2020-02-17 21:12, Stanley Chu wrote:
->> > Hi Can,
->> >
->> >
->> >> >  			} else if (!on && clki->enabled) {
->> >> >  				clk_disable_unprepare(clki->clk);
->> >> > +				wait_us = hba->dev_info.clk_gating_wait_us;
->> >> > +				if (ref_clk && wait_us)
->> >> > +					usleep_range(wait_us, wait_us + 10);
->> >>
->> >> Hi St,anley,
->> >>
->> >> If wait_us is 1us, it would be inappropriate to use usleep_range()
->> >> here.
->> >> You have checks of the delay in patch #2, but why it is not needed
->> >> here?
->> >>
->> >> Thanks,
->> >> Can Guo.
->> >
->> > You are right. I could make that delay checking as common function so
->> > it
->> > can be used here as well to cover all possible values.
->> >
->> > Thanks for suggestion.
->> > Stanley
->> 
->> Hi Stanley,
->> 
->> One more thing, as in patch #2, you have already added delays in your
->> ufshcd_vops_setup_clocks(OFF, PRE_CHANGE) path, plus this delay here,
->> don't you delay for 2*bRefClkGatingWaitTime in ufshcd_setup_clocks()?
->> As the delay added in your vops also delays the actions of turning
->> off all the other clocks in ufshcd_setup_clocks(), you don't need the
->> delay here again, do you agree?
-> 
-> MediaTek driver is not using reference clocks named as "ref_clk" 
-> defined
-> in device tree, thus the delay specific for "ref_clk" in
-> ufshcd_setup_clocks() will not be applied in MediaTek platform.
-> 
-> This patch is aimed to add delay for this kind of "ref_clk" used by any
-> future vendors.
-> 
-> Anyway thanks for the reminding : )
-> 
->> 
->> Thanks,
->> Can Guo.
-> 
-> 
-> Thanks,
-> Stanley
+This series add low power timer as boadcast clockevent device.
+Low power timer could runs even when CPUs are in idle mode and 
+could wakeup them.
 
-Hi Stanley,
+version 4:
+- move defines in mfd/stm32-lptimer.h
+- change compatible and subnode names
+- document wakeup-source property
+- reword commit message
+- make driver Kconfig depends of MFD_STM32_LPTIMER
+- remove useless include
+- remove rate and clk fields from the private structure
+- to add comments about the registers sequence in stm32_clkevent_lp_set_timer
+- rework probe function and use devm_request_irq()
+- do not allow module to be removed
 
-Then we are unluckily hit by this change. We have ref_clk in DT, thus
-this change would add unwanted delays to our platforms. but still we
-disable device's ref_clk in vops. :)
+version 3:
+- fix timer set sequence
+- don't forget to free irq on remove function
+- use devm_kzalloc to simplify errors handling in probe function
 
-Could you please hold on patch #1 first? I need sometime to have a
-dicussion with my colleagues on this.
+version 2:
+- stm32 clkevent driver is now a child of the stm32 lp timer node
+- add a probe function and adpat the driver to use regmap provide
+  by it parent
+- stop using timer_of helpers
 
-Thanks.
-Can Guo.
+
+Benjamin Gaignard (3):
+  dt-bindings: mfd: Document STM32 low power timer bindings
+  mfd: stm32: Add defines to be used for clkevent purpose
+  clocksource: Add Low Power STM32 timers driver
+
+ .../devicetree/bindings/mfd/st,stm32-lptimer.yaml  |  16 ++
+ drivers/clocksource/Kconfig                        |   7 +
+ drivers/clocksource/Makefile                       |   1 +
+ drivers/clocksource/timer-stm32-lp.c               | 213 +++++++++++++++++++++
+ include/linux/mfd/stm32-lptimer.h                  |   5 +
+ 5 files changed, 242 insertions(+)
+ create mode 100644 drivers/clocksource/timer-stm32-lp.c
+
+-- 
+2.15.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
