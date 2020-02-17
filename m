@@ -2,96 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FCD5160E39
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 10:14:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B257160E4F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 10:18:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r59r0t7qhnLATad5q1umCmSXzHl/bY7+D10boPL0RFE=; b=YpLnt56UiI5TCy
-	GnK1zIvWZtBrUjF+LrgSRUvo/Ed5Dy54RYA753RARbtOr72eAXkV7u93adiQg844GS8Y1FKhoBCTM
-	ix6vJpcz8wprpPeGUWI7MQNJAr6AL2c2EWoD2SxP9SXSyN/lWIp2/qfV+95CceHEqfJMy+ENuBwr3
-	5l87TsizORT5TcxOu18gWEQUfdCtmJIaTpE/noh/FShERukeFLtyhi15l0gm6UXwD7j6YhBGVTQEX
-	hsVvUVv3awrt0C5NBmSXQ2A6w6djrln3GNZGHrdZHhsq9nTbkai3OYMs2Bico1tKu+/m0/rxmPFor
-	aFB0Vg00had0V4DDIOEA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OVEf1PkXYrM5HLGyWvKTit5wJjDIw0Y6CJVoZKd3eFQ=; b=upLS5S8xtuFUAxwXwCDZSUe1D
+	HN8Y2eom4XpeRZ3kxyO9Ivfkg0wonwP9fUKWYKH5n/zcgJCVhrLsOZVnpdeFqsH+arZuJC9EiVuvx
+	OuOBPT7O0aEGUY8/zT4S62AcTrYjZVcdPVbGBiwgxnLcrhsYl9D5CmNE8pUgBSEQxuxlG28VFnQ1+
+	HAHMhN9yq8Qe4UYYsBa2CspgXQJqKY3YkQeFKe20ba3O54RLe+gTWI1VZL8Wb1ofIQE8baIUd9DSs
+	TphlPbzMVt+MOGlMbe5Q+zHgFhlHzgBucyne620JiIpfmxiyaHHRMcexPcDH7EP/qRUEATgyWirsC
+	UBXWmdIxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3cUH-0007wy-4i; Mon, 17 Feb 2020 09:14:45 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1j3cXw-0001bI-Eq; Mon, 17 Feb 2020 09:18:32 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3cU7-0007w4-1R
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 09:14:36 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 23E8158D9;
- Mon, 17 Feb 2020 04:14:27 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Mon, 17 Feb 2020 04:14:27 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=I14qqSa44pqibysylqjnJvoStph
- owXN60qAH0HmIOOk=; b=EAuUGbIuhZh0DXzoXVHHztJTrb8eBm2mp9htdM6LVn/
- B4yzXZmGWryVzz9Fw8WCCnvJumnVY1EdR78GNUh9O/S4NzDZzeMieTUCK+KTLW95
- 9SXL7yIrbv0MrpjZzRs29MBVa7AAey6KOVjkCrfMeTlGgOe29OomQ5W/3KhfdHEB
- 2I5CkHHJpJ+tiQe+1huTRXXvfla2buzQbUWGLEtd0QpruMmX4P4tic+4rr3m9nZR
- uZ9HhmwQuWxJ/wYeKwtRGMLIMSsceuTg/J4y8PryN/u62SBmoP4ldSsAPytMHtuX
- aeXiNViClRaOK4gHgmwfPvbuadUde+HnJEY36xUeGRw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=I14qqS
- a44pqibysylqjnJvoStphowXN60qAH0HmIOOk=; b=lik8Lr7RVQqNSV3aPYfoUp
- H90Xt8Fpw3L2KIrMaoRynRmRd9D9C24cDxR8GAusJRkQEwWT2rHg7d+m4wOdyBcu
- AXthhxe+m8akQCKbyUJEdzv2aHGTXaQqxDXR77IqiiC4s0fvzgLT/PtwpMKItwYZ
- h3qtxU10iXxprv/nPOY5AR3ekqWqrWNy86YDf85SGHiO4MK9B+qmW8d3UeSfYPw/
- 6xcdTni4SXTveWcYtzegbp3NmNPy5CSl8Q2Vdq+f2x34PWZQ+3IG8eADG9cQU4hs
- G8+ZgJXCvqIhg/DYfdqlGlgIRzv/Tne7gU2+J3Kdswk7PZcIaeA+2OgCtz4YGSrQ
- ==
-X-ME-Sender: <xms:cVlKXg51H4uoiVdRpFvbxv5WaiiJHys340EmbcV2izrGll7g2Mp8eA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjeeigddtudcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesthdtredttddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:cVlKXjjKhtDjlU7U-ryVkWl9vjdPNTrE9gGOjfgHuR5pNC-o8u0TsQ>
- <xmx:cVlKXuITpIJ3ig2bMMiZbsUXKDTNM7wC1G_wEqOrfpQOLSOyqN_IXw>
- <xmx:cVlKXtraCBKH8gXKGfliAISdaG5b0xo3twF3iliEFo1SKbIXb1_DqA>
- <xmx:c1lKXgelgsQq-uTX3XtfZK319DHI1tQY9w1Fd2bvLlqtsutqVCD8oA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 83F823280062;
- Mon, 17 Feb 2020 04:14:25 -0500 (EST)
-Date: Mon, 17 Feb 2020 10:14:23 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [RFC PATCH 00/34] sun8i-codec fixes and new features
-Message-ID: <20200217091423.y2muniz3hosquho6@gilmour.lan>
-References: <20200217064250.15516-1-samuel@sholland.org>
+ id 1j3cXn-0001av-63
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 09:18:24 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 8B5BF7C85E4B5CC973CB;
+ Mon, 17 Feb 2020 17:18:18 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS413-HUB.china.huawei.com
+ (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Mon, 17 Feb 2020
+ 17:18:11 +0800
+Subject: Re: [PATCH v4 02/20] irqchip/gic-v3: Use SGIs without active state if
+ offered
+To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+References: <20200214145736.18550-1-maz@kernel.org>
+ <20200214145736.18550-3-maz@kernel.org>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <d8dc634f-bdd6-b2e6-a398-02b7e04efe67@huawei.com>
+Date: Mon, 17 Feb 2020 17:18:10 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200217064250.15516-1-samuel@sholland.org>
+In-Reply-To: <20200214145736.18550-3-maz@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_011435_227581_65059DCF 
-X-CRM114-Status: GOOD (  20.69  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200217_011823_396320_773D6146 
+X-CRM114-Status: GOOD (  12.11  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,64 +69,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
- =?utf-8?Q?Myl=C3=A8ne?= Josserand <mylene.josserand@free-electrons.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jason Cooper <jason@lakedaemon.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Eric Auger <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
+ James Morse <james.morse@arm.com>, Thomas
+ Gleixner <tglx@linutronix.de>, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Marc,
 
-On Mon, Feb 17, 2020 at 12:42:16AM -0600, Samuel Holland wrote:
-> The sun8i-codec driver, as used in the Allwinner A33 and A64, currently
-> only exposes a small subset of the available hardware features. In order
-> to use the A64 in a smartphone (the PinePhone), I've added the necessary
-> functionality to the driver:
->   * The full set of supported DAI format options
->   * Support for AIF2 and AIF3
->   * Additional routing knobs
->   * Additional volume controls
->
-> Unfortunately, due to preexisting issues with the driver, there are some
-> breaking changes, as explained further in the commit messages:
->   * The LRCK inversion issue means we need a new compatible for the A64.
->   * Some controls are named inaccurately, so they are renamed.
->   * Likewise, the DAPM widgets used in device trees were either named
->     wrong, or the device trees were using the wrong widgets in the first
->     place. (Specifically, the links between the analog codec and digital
->     codec happen at the ADC and DAC, not AIF1.)
->
-> I tended to take the philosophy of "while I'm breaking things, I might
-> as well do them right", so I've probably made a few more changes than
-> absolutely necessary. I'm not sure about where all of the policy
-> boundaries are, about how far I should go to maintain compatibility. For
-> example, for the DT widget usage, I could:
->   * Rename everything and update the DTS files (which is what I did)
->   * Keep the old (misleading/wrong) name for the widgets, but repurpose
->     them to work correctly
->       (i.e. "ADC Left" would be named "AIF1 Slot 0 Left ADC", but it
->        would work just like "ADC Left" does in this patchset)
->   * Keep the old widgets around as a compatibility layer, but add new
->     widgets and update the in-tree DTS files to use them
->       (i.e. "ADC Left" would have a path from "AIF1 Slot 0 Left ADC",
->        but "AIF1 Slot 0 Left ADC" would be a no-op widget)
->   * Something else entirely
+On 2020/2/14 22:57, Marc Zyngier wrote:
+> To allow the direct injection of SGIs into a guest, the GICv4.1
+> architecture has to sacrifice the Active state so that SGIs look
+> a lot like LPIs (they are injected by the same mechanism).
+> 
+> In order not to break existing software, the architecture gives
+> offers guests OSs the choice: SGIs with or without an active
+> state. It is the hypervisors duty to honor the guest's choice.
+> 
+> For this, the architecture offers a discovery bit indicating whether
+> the GIC supports GICv4.1 SGIs (GICD_TYPER2.nASSGIcap), and another
+> bit indicating whether the guest wants Active-less SGIs or not
+> (controlled by GICD_CTLR.nASSGIreq).
+> 
+> A hypervisor not supporting GICv4.1 SGIs would leave nASSGIcap
+> clear, and a guest not knowing about GICv4.1 SGIs (or definitely
+> wanting an Active state) would leave nASSGIreq clear (both being
+> thankfully backward compatible with oler revisions of the GIC).
+older?
 
-I'm not sure this is really a concern here. We need to maintain the
-compatibility with old DT's, but those will have an A33 compatible
-too, and as far as I can see, you're not changing anything for that
-compatible, so we're in the clear?
+> 
+> Since Linux is perfectly happy without an active state on SGIs,
+> inform the hypervisor that we'll use that if offered.
+> 
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
 
-If not, then the third option would probably be the best, especially
-since it's only a couple of them.
+Per the description of these two bits in the commit message,
 
-Maxime
+Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
+
+
+Thanks
+
 
 _______________________________________________
 linux-arm-kernel mailing list
