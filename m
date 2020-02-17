@@ -2,51 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF6EA16084F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 03:48:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0E3E160878
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 04:07:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Rqb3E4lVSLtdj22wcviopWyd8DPJMfyU/j4/LV5nP7w=; b=Ob4
-	r3QGtwPmhM9EJT1ZbRU1Zbk7MmXzqe7B1hRK3qW4Fw9639VgZeyYzQJqBJY5BMnhl0nawoppm3PiI
-	GX7xDJLXppGDIqxE5iD0I49NOZrr8FNfWD4/R6vbDM//ASh+yHquMdH0VMXRZ85/ll9D7oCEPmyvQ
-	ACVNvjKTl9AS8jwWJMqWBRmrcv063YjnvLWixb+/1DgVfVkYbBLkDjG5zoYGm2mo+MdHMcFT9fWqb
-	nmQYguuU3j5F4ogW/gIJZRzc0Th/fSK8/bV3EmjcHS2w7vxofEDS/xF5G7W3pbP3uzRmRl24j0rTy
-	EQmxN4Vgge048+ldZU8ShazqbtVUqMg==;
+	References:List-Owner; bh=tm3T5iDKB81mSnTARTI3XxzKexay7uhd1FLejU+0NyU=; b=btT
+	BI27R+I/clnG2uWe8ZQDd4q7OfhvTHB5v0TQ4MWhKZ+PVNwLIkUqmc8QRaKJ6OfjGXc5ipch7Tdgs
+	P35pO+La840x2oQFZ3IiN1W78KwUUDlQ5mkm1C1arHoHQkcSL9oN25nGR7Yfz63MAG20u2VJeVgbv
+	+1Oqz8/m7CkbmR+Y0gWLB6V4ylHBzK+PMdz1VLrIRbfIlaQqagfrgG3gAbgH+eVZkPn21wXV2vA1B
+	BnPHfMXiZ2Di40spgSQiETI+K5wQ02MWQ9QwJsTPUVpCAjxMSb7EboJyC070lIjNSjcgHTqyE6c+v
+	T2V/gn34GUdc6BKxY8cLn54e+MZmtJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3WS9-0000yB-4z; Mon, 17 Feb 2020 02:48:09 +0000
+	id 1j3Wl1-0007ID-3z; Mon, 17 Feb 2020 03:07:39 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3WS2-0000xi-3U
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 02:48:03 +0000
+ id 1j3Wkr-0007HY-2K
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 03:07:30 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 24A73200E5D;
- Mon, 17 Feb 2020 03:48:00 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6A4F8200776;
+ Mon, 17 Feb 2020 04:07:24 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6FDDC200044;
- Mon, 17 Feb 2020 03:47:54 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C9E74201DC3;
+ Mon, 17 Feb 2020 04:07:17 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 5EBEE402DD;
- Mon, 17 Feb 2020 10:47:47 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id AE17C402A7;
+ Mon, 17 Feb 2020 11:07:09 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
-To: dmitry.torokhov@gmail.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, mojha@codeaurora.org,
- swboyd@chromium.org, linux-input@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] input: keyboard: imx_keypad: Remove unused includes
-Date: Mon, 17 Feb 2020 10:42:13 +0800
-Message-Id: <1581907333-11493-1-git-send-email-Anson.Huang@nxp.com>
+To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ mripard@kernel.org, leonard.crestez@nxp.com, abel.vesa@nxp.com,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] clk: imx8mn: Fix incorrect clock defines
+Date: Mon, 17 Feb 2020 11:01:35 +0800
+Message-Id: <1581908495-11746-1-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_184802_285575_88C8FE33 
-X-CRM114-Status: UNSURE (   5.85  )
+X-CRM114-CacheID: sfid-20200216_190729_249912_A383E740 
+X-CRM114-Status: UNSURE (   6.70  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -75,33 +76,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is nothing in use from device.h/slab.h, remove them.
+IMX8MN_CLK_I2C4 and IMX8MN_CLK_UART1's index definitions are incorrect,
+fix them.
 
+Fixes: 1e80936a42e1 ("dt-bindings: imx: Add clock binding doc for i.MX8MN")
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- drivers/input/keyboard/imx_keypad.c | 2 --
- 1 file changed, 2 deletions(-)
+ include/dt-bindings/clock/imx8mn-clock.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/input/keyboard/imx_keypad.c b/drivers/input/keyboard/imx_keypad.c
-index 5a46d11..ba4bf80 100644
---- a/drivers/input/keyboard/imx_keypad.c
-+++ b/drivers/input/keyboard/imx_keypad.c
-@@ -5,7 +5,6 @@
- 
- #include <linux/clk.h>
- #include <linux/delay.h>
--#include <linux/device.h>
- #include <linux/err.h>
- #include <linux/input/matrix_keypad.h>
- #include <linux/interrupt.h>
-@@ -15,7 +14,6 @@
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/platform_device.h>
--#include <linux/slab.h>
- #include <linux/timer.h>
- 
- /*
+diff --git a/include/dt-bindings/clock/imx8mn-clock.h b/include/dt-bindings/clock/imx8mn-clock.h
+index 0f2b842..65ac6eb6 100644
+--- a/include/dt-bindings/clock/imx8mn-clock.h
++++ b/include/dt-bindings/clock/imx8mn-clock.h
+@@ -122,8 +122,8 @@
+ #define IMX8MN_CLK_I2C1				105
+ #define IMX8MN_CLK_I2C2				106
+ #define IMX8MN_CLK_I2C3				107
+-#define IMX8MN_CLK_I2C4				118
+-#define IMX8MN_CLK_UART1			119
++#define IMX8MN_CLK_I2C4				108
++#define IMX8MN_CLK_UART1			109
+ #define IMX8MN_CLK_UART2			110
+ #define IMX8MN_CLK_UART3			111
+ #define IMX8MN_CLK_UART4			112
 -- 
 2.7.4
 
