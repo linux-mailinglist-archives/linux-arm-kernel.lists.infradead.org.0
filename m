@@ -2,59 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EEBB1619B3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 19:25:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D2D81619BE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 19:29:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
+	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vkYlHLKnZ2ja+vEgiYnS0onMGX5WgLVivcKsKjYkdls=; b=BcwWzHk6v6N8U6NMXt3gDPhq3
-	sLXxGWq8V6KmqKJYr3SQtYeD1T4CmOUP1abxlbRW5Btdp9gD35Oh27BsJppkdMIrmNHTHCQnqYQHD
-	D/RaVkcesPXsBf2leDMeskzb6WyCTA0bkZeXu/18Z6SXiWhN8SrHLT6G2v6QqO1TjXIeWTvCbjZo2
-	5vppoEdaqcQcB2YSLHrX+5Z6AtoPesn5fr6FnBFosmXD+f2JaTKGJ7UJk+U+ituudG7ZSzVb/akkA
-	lc9JkP2xiTMM4DclgTa3w7AjcjRd5vXj5UF3Kd8D6psj4U8z4G4JeJkFhrptNjlSv5APXWBJ/IE5y
-	JZQ+O7ZQw==;
+	 bh=Qr1e7TsRXfKwuwc8AhqESkqKmgmby/nTKJ5uaUf8ozw=; b=kQgwadhOu6yxE4fHj2zSeTp87
+	oCMF1cpnYzdHnZuoZCy6Zlme5VDgIZALPJAINeRI+lvs/0YOrYL0WEnRckRjyeeaRQawmdyEErocf
+	di76Fj9ZdSWaUGXe9Z5vWCoCipWFnpFpse1h7be1bs/9ZJAcByxtqe/cGGNZJvf5AC2X0RPvGTwH3
+	SJwCt5T5iCyRTz9KJryPrH61FadrBYMh4VyY2tGWnf92TZ8mjSNzYh1TxFE2MJeBGJgFbKKjdBqg3
+	F9H5Gpu25RqMZhXGYdahiiAZsnnj+JbpU0L2SWc70NqzmHyN+bWBo48hB0TaDgPit3RRG8ba03lEU
+	iJr16gDRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3l55-0004Ov-Pb; Mon, 17 Feb 2020 18:25:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3l4y-0004OU-Ow
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 18:25:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 954A11FB;
- Mon, 17 Feb 2020 10:25:10 -0800 (PST)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C67753F68F;
- Mon, 17 Feb 2020 10:25:09 -0800 (PST)
-Subject: Re: [PATCH 0/5] arm64: add the time namespace support
-To: Andrei Vagin <avagin@gmail.com>
-References: <20200204175913.74901-1-avagin@gmail.com>
- <20200217153400.GA26105@gmail.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-X-Pep-Version: 2.0
-Message-ID: <c4793e4e-9622-efe9-4e6b-f91a67919919@arm.com>
-Date: Mon, 17 Feb 2020 18:25:08 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1j3l9I-0004wd-0F; Mon, 17 Feb 2020 18:29:40 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j3l96-0004wC-OU
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 18:29:30 +0000
+Received: by mail-wm1-x343.google.com with SMTP id m10so489714wmc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Feb 2020 10:29:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=qgbH6DAhDEcjUIoTkC0vIf476YB12oIaCGkw17tdaOk=;
+ b=qtlZm5C8jXyjJjOg6IbqpV8KD54qXiTLQcDnwQ/W57TA3fWjbvwv6Iv2AZyBV9TfY8
+ Izy1q1hmXeRt+8FKVC96d77+U9eiVlmcnrNqgVmllsNiNxIjKBrbSr9VYCixuKVo8YNM
+ cDHIkig1xpdp1IM31757Mw3CnfWBbTLWkzvY9G9c52sI4t1qPtZfwihR5sEdkXStvIY+
+ i44zIYWQPoi/tmaeqKFh7hcfUvBhQoRyZd3BFLklOH6V6IlRq+cUBFB7ety+3qe6FHgb
+ Jq/8DHo/EusV2DaOJQZoMtRZksN4raEB2O3/yFikBeucz4uaUGb/x2h/U7yqG/PB4Bz2
+ FpxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=qgbH6DAhDEcjUIoTkC0vIf476YB12oIaCGkw17tdaOk=;
+ b=JSayNriwvArib2lXpl9ogxycfU19uJ+PeVDGe/lJa+bu9aPSkoxtArN7WLHUQu+QCh
+ GYEl7+/jAkwzTF2nfujEYwnkuUJXva9uWlRZAWreqCHgKsm5Yj5olB86bqZ8cm8uImu6
+ Em2VkVvoDsqHXkXFrlTYlDUN5zax8+uStUk6d2EFQusuOTaEVRojoYBDlKPRAbq7s8oC
+ 3BgPuvMq/Af5+abwQn71aAbUB8cCb9n0/xGdr7UKMS8VTSdoR+dLLej7qMst7cbsJ0XN
+ /dKknf88nQsP6JQXFoPGdqeH9dGrTm9CLWe41daPbcIFIlJ+6ozoBt/vKHdJNXH0IvWX
+ hnUA==
+X-Gm-Message-State: APjAAAVp24JB1sgVJ1cOvFPpJhTjAYrg0eTB+h0o8Vyn9vTPZBc5GDIt
+ v5TO/9MZAsrK6QPenyVcby6irw==
+X-Google-Smtp-Source: APXvYqyaMD0oVCsJvrATvvKvPscfu239rotGRZo42mMqwnmR3xag2jXnV5T+04JDoRGRVmHimJbRcA==
+X-Received: by 2002:a1c:e108:: with SMTP id y8mr257638wmg.147.1581964167153;
+ Mon, 17 Feb 2020 10:29:27 -0800 (PST)
+Received: from myrica ([2001:171b:2276:930:116c:c27a:3e7f:5eaf])
+ by smtp.gmail.com with ESMTPSA id y8sm330395wma.10.2020.02.17.10.29.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 17 Feb 2020 10:29:26 -0800 (PST)
+Date: Mon, 17 Feb 2020 19:29:18 +0100
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2] iommu/arm-smmu-v3: Batch ATC invalidation commands
+Message-ID: <20200217182918.GE1650092@myrica>
+References: <20200213205600.19690-1-robh@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200217153400.GA26105@gmail.com>
-Content-Type: multipart/mixed; boundary="------------571946AD89B6AF070C0BEECD"
-Content-Language: en-US
+Content-Type: multipart/mixed; boundary="ew6BAiZeqk4r7MaW"
+Content-Disposition: inline
+In-Reply-To: <20200213205600.19690-1-robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_102512_902756_19E25F52 
-X-CRM114-Status: GOOD (  16.21  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200217_102928_833923_155DAE97 
+X-CRM114-Status: GOOD (  20.93  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,312 +97,212 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Gleixner <tglx@linutronix.de>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Dmitry Safonov <dima@arista.com>
+Cc: Robin Murphy <robin.murphy@arm.com>, iommu@lists.linux-foundation.org,
+ Will Deacon <will@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ linux-arm-kernel@lists.infradead.org
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is a multi-part message in MIME format.
---------------571946AD89B6AF070C0BEECD
-Content-Type: text/plain; charset=koi8-r
-Content-Transfer-Encoding: quoted-printable
 
-Hi Andrei,
+--ew6BAiZeqk4r7MaW
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-On 17/02/2020 15:34, Andrei Vagin wrote:
-> Vincenzo, could you take a look this patchset?
->=20
+On Thu, Feb 13, 2020 at 02:56:00PM -0600, Rob Herring wrote:
+> Similar to commit 2af2e72b18b4 ("iommu/arm-smmu-v3: Defer TLB
+> invalidation until ->iotlb_sync()"), build up a list of ATC invalidation
+> commands and submit them all at once to the command queue instead of
+> one-by-one.
+> 
+> As there is only one caller of arm_smmu_atc_inv_master() left, we can
+> simplify it and avoid passing in struct arm_smmu_cmdq_ent.
+> 
+> Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Robin Murphy <robin.murphy@arm.com>
+> Cc: Joerg Roedel <joro@8bytes.org>
+> Signed-off-by: Rob Herring <robh@kernel.org>
 
-Apologize for not getting to this yet. I will have a look at your patches=
- during
-this week.
+Reviewed-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 
-> On Tue, Feb 04, 2020 at 09:59:08AM -0800, Andrei Vagin wrote:
->> Allocate the time namespace page among VVAR pages and add the logic
->> to handle faults on VVAR properly.
->>
->> If a task belongs to a time namespace then the VVAR page which contain=
-s
->> the system wide VDSO data is replaced with a namespace specific page
->> which has the same layout as the VVAR page. That page has vdso_data->s=
-eq
->> set to 1 to enforce the slow path and vdso_data->clock_mode set to
->> VCLOCK_TIMENS to enforce the time namespace handling path.
->>
->> The extra check in the case that vdso_data->seq is odd, e.g. a concurr=
-ent
->> update of the VDSO data is in progress, is not really affecting regula=
-r
->> tasks which are not part of a time namespace as the task is spin waiti=
-ng
->> for the update to finish and vdso_data->seq to become even again.
->>
->> If a time namespace task hits that code path, it invokes the correspon=
-ding
->> time getter function which retrieves the real VVAR page, reads host ti=
-me
->> and then adds the offset for the requested clock which is stored in th=
-e
->> special VVAR page.
->>
->> Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>
->> Cc: Thomas Gleixner <tglx@linutronix.de>
->> Cc: Dmitry Safonov <dima@arista.com>
->>
->> Andrei Vagin (5):
->>   arm64/vdso: use the fault callback to map vvar pages
->>   arm64/vdso: Zap vvar pages when switching to a time namespace
->>   arm64/vdso: Add time napespace page
->>   arm64/vdso: Handle faults on timens page
->>   arm64/vdso: Restrict splitting VVAR VMA
->>
->>  arch/arm64/Kconfig                            |   1 +
->>  .../include/asm/vdso/compat_gettimeofday.h    |  11 ++
->>  arch/arm64/include/asm/vdso/gettimeofday.h    |   8 ++
->>  arch/arm64/kernel/vdso.c                      | 134 ++++++++++++++++-=
--
->>  arch/arm64/kernel/vdso/vdso.lds.S             |   3 +-
->>  arch/arm64/kernel/vdso32/vdso.lds.S           |   3 +-
->>  include/vdso/datapage.h                       |   1 +
->>  7 files changed, 147 insertions(+), 14 deletions(-)
->>
->> --=20
->> 2.24.1
->>
 
---=20
-Regards,
-Vincenzo
+Since I'm adding a third user of cmdq batching [1], I had a go at
+factoring them. I can send the attached patch with my next version, if it
+looks OK.
 
---------------571946AD89B6AF070C0BEECD
-Content-Type: application/pgp-keys;
- name="pEpkey.asc"
-Content-Transfer-Encoding: quoted-printable
+Thanks,
+Jean
+
+[1] https://lore.kernel.org/linux-iommu/20200213101435.229932-4-jean-philippe@linaro.org/
+
+
+--ew6BAiZeqk4r7MaW
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: attachment;
- filename="pEpkey.asc"
+	filename="0001-iommu-arm-smmu-v3-Factor-command-queue-batching.patch"
 
------BEGIN PGP PUBLIC KEY BLOCK-----
+From b304f322e6293be4ec8b5a01e2ef67e8fa34143c Mon Sep 17 00:00:00 2001
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Date: Mon, 17 Feb 2020 17:42:54 +0100
+Subject: [PATCH] iommu/arm-smmu-v3: Factor command queue batching
 
-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
-OYXvLNoskiekAsw77EBPeBrrsMg88G/AtWUvyT3i2x0mIlbTDESk0WiL2ksdzcRW
-AtZuC/55Ix7zMb0NrMC0eaLaP93+FSAnTiX7kUMQSbz9iAHak4xbzJNEg4+fNh63
-vFvWNazfnnSKXMlZ0exYWZGUswxdqsg/p+zRcFwrKp2IrLxMXBTRMB5Pdtr9PvOI
-TFa3jV1SfFp6CUCY1yOBG3Jvwxx7yUTis4Ap3qaTy0uQNgHbXvlP5CW0xL5GpBw0
-W6gUwBeHtnquzJwO203qds37uq3V+U2jR4Zs0KcTBFpMRPBX+kwm2gwR8tkRpqtQ
-zMgwjvz9VM+1pUoufUG3Gy/UBZRCamw84zKxkZS5/yIWQiTm7IMPUofgMe6P8Zk0
-1pyna1ld4iURBrXlpfUaOn3sjmt6C2WOmud+WJMBeYmJHAF0Th0GQ0uijxM6sEGV
-/8FYGnjWs8pFYNM4NcKJAjMEEAEKAB0WIQSf1RxT4LVjGP2VnD0j0NC60T16QwUC
-XW0xNgAKCRAj0NC60T16Q/TDEADEKTdkGD+bR752abN0raUI6UZwH1D2sXIwiZhE
-ezrwDoIe3ETAsV7Jh05yPOunWTBkDcjd3Xrf0ILwfIa76QWu1599AXl4nR62IBzM
-4gkRcdNV5lzRrBLkG/e6drB36DTATUxgmDy6fCEjuhSMfHApi/9k1CcU/h+tCEES
-sA/aS8TRbWbxSZb6MgUI1gNrAKzyEs/L8imvPbKR0JNc7IaK9oYSkhM4CXb6c+cx
-/iNehNegf2LaOBBvmjbHXsT8HEnqU3QWSiV3JXDjZCvwkXOD4uJGbbGNpWj0/EJj
-WC1c6FmzcXXq/6cnHNC6FlR0i8Au0eNEgDOUWPPL9hGv0Co3mT4++9QJwVtMY995
-/DKBdgVFlvZ9w3RwUjKkzCQV6AsI3dTS3c7YEE/rjdQacZ28X5hJ3ySHYoMuQktI
-72LluzC3YsHdfpgt4O6rtn1AE+oyVPRT2/3A8Axnd3PPEabIi4g2ROcU4fYjISh5
-iP3hrl7F7jPe05NdfJ/Rn4dSWdrapdzbnuDY4wV9dTCVjXYHZLGeFc0TeamafUJQ
-HOswZSorU2wt94/HGLb+Ps9PMpO1YD+TGwGWnJoGRwrXCpuxxDUB63twLyHU+zq6
-PSq0MMza6Ssq5qHT96xbyED+MDJER5Lbtc7bTPbeb1xKzwlrUHHDYXOkrT1rpV13
-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
-GrFxzNOCDuNG1w=3D=3D
-=3DVSiF
------END PGP PUBLIC KEY BLOCK-----
+Factor the code for command queue batching, which is now repeated three
+times for TLB, ATC and CFG invalidations.
 
---------------571946AD89B6AF070C0BEECD
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+---
+ drivers/iommu/arm-smmu-v3.c | 66 +++++++++++++++++++------------------
+ 1 file changed, 34 insertions(+), 32 deletions(-)
+
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 45da5c251b65..04c3077589be 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -548,6 +548,11 @@ struct arm_smmu_cmdq {
+ 	atomic_t			lock;
+ };
+ 
++struct arm_smmu_cmdq_batch {
++	u64				cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
++	int				num;
++};
++
+ struct arm_smmu_evtq {
+ 	struct arm_smmu_queue		q;
+ 	u32				max_stalls;
+@@ -1482,15 +1487,33 @@ static int arm_smmu_cmdq_issue_sync(struct arm_smmu_device *smmu)
+ 	return arm_smmu_cmdq_issue_cmdlist(smmu, NULL, 0, true);
+ }
+ 
++static void arm_smmu_cmdq_batch_add(struct arm_smmu_device *smmu,
++				    struct arm_smmu_cmdq_batch *cmds,
++				    struct arm_smmu_cmdq_ent *cmd)
++{
++	if (cmds->num == CMDQ_BATCH_ENTRIES) {
++		arm_smmu_cmdq_issue_cmdlist(smmu, cmds->cmds, cmds->num, false);
++		cmds->num = 0;
++	}
++	arm_smmu_cmdq_build_cmd(&cmds->cmds[cmds->num * CMDQ_ENT_DWORDS], cmd);
++	cmds->num++;
++}
++
++static int arm_smmu_cmdq_batch_submit(struct arm_smmu_device *smmu,
++				      struct arm_smmu_cmdq_batch *cmds)
++{
++	return arm_smmu_cmdq_issue_cmdlist(smmu, cmds->cmds, cmds->num, true);
++}
++
++
+ /* Context descriptor manipulation functions */
+ static void arm_smmu_sync_cd(struct arm_smmu_domain *smmu_domain,
+ 			     int ssid, bool leaf)
+ {
+ 	size_t i;
+-	int cmdn = 0;
+ 	unsigned long flags;
+ 	struct arm_smmu_master *master;
+-	u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
++	struct arm_smmu_cmdq_batch cmds = {};
+ 	struct arm_smmu_device *smmu = smmu_domain->smmu;
+ 	struct arm_smmu_cmdq_ent cmd = {
+ 		.opcode	= CMDQ_OP_CFGI_CD,
+@@ -1503,19 +1526,13 @@ static void arm_smmu_sync_cd(struct arm_smmu_domain *smmu_domain,
+ 	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
+ 	list_for_each_entry(master, &smmu_domain->devices, domain_head) {
+ 		for (i = 0; i < master->num_sids; i++) {
+-			if (cmdn == CMDQ_BATCH_ENTRIES) {
+-				arm_smmu_cmdq_issue_cmdlist(smmu, cmds, cmdn, false);
+-				cmdn = 0;
+-			}
+-
+ 			cmd.cfgi.sid = master->sids[i];
+-			arm_smmu_cmdq_build_cmd(&cmds[cmdn * CMDQ_ENT_DWORDS], &cmd);
+-			cmdn++;
++			arm_smmu_cmdq_batch_add(smmu, &cmds, &cmd);
+ 		}
+ 	}
+ 	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
+ 
+-	arm_smmu_cmdq_issue_cmdlist(smmu, cmds, cmdn, true);
++	arm_smmu_cmdq_batch_submit(smmu, &cmds);
+ }
+ 
+ static int arm_smmu_alloc_cd_leaf_table(struct arm_smmu_device *smmu,
+@@ -2160,11 +2177,11 @@ static int arm_smmu_atc_inv_master(struct arm_smmu_master *master)
+ static int arm_smmu_atc_inv_domain(struct arm_smmu_domain *smmu_domain,
+ 				   int ssid, unsigned long iova, size_t size)
+ {
+-	int i, cmdn = 0;
++	int i;
+ 	unsigned long flags;
+ 	struct arm_smmu_cmdq_ent cmd;
+ 	struct arm_smmu_master *master;
+-	u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
++	struct arm_smmu_cmdq_batch cmds = {};
+ 
+ 	if (!(smmu_domain->smmu->features & ARM_SMMU_FEAT_ATS))
+ 		return 0;
+@@ -2194,20 +2211,13 @@ static int arm_smmu_atc_inv_domain(struct arm_smmu_domain *smmu_domain,
+ 			continue;
+ 
+ 		for (i = 0; i < master->num_sids; i++) {
+-			if (cmdn == CMDQ_BATCH_ENTRIES) {
+-				arm_smmu_cmdq_issue_cmdlist(smmu_domain->smmu,
+-					cmds, cmdn, false);
+-				cmdn = 0;
+-			}
+-
+ 			cmd.atc.sid = master->sids[i];
+-			arm_smmu_cmdq_build_cmd(&cmds[cmdn * CMDQ_ENT_DWORDS], &cmd);
+-			cmdn++;
++			arm_smmu_cmdq_batch_add(smmu_domain->smmu, &cmds, &cmd);
+ 		}
+ 	}
+ 	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
+ 
+-	return arm_smmu_cmdq_issue_cmdlist(smmu_domain->smmu, cmds, cmdn, true);
++	return arm_smmu_cmdq_batch_submit(smmu_domain->smmu, &cmds);
+ }
+ 
+ /* IO_PGTABLE API */
+@@ -2242,10 +2252,9 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
+ 				   size_t granule, bool leaf,
+ 				   struct arm_smmu_domain *smmu_domain)
+ {
+-	u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
+ 	struct arm_smmu_device *smmu = smmu_domain->smmu;
+ 	unsigned long start = iova, end = iova + size;
+-	int i = 0;
++	struct arm_smmu_cmdq_batch cmds = {};
+ 	struct arm_smmu_cmdq_ent cmd = {
+ 		.tlbi = {
+ 			.leaf	= leaf,
+@@ -2264,18 +2273,11 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
+ 	}
+ 
+ 	while (iova < end) {
+-		if (i == CMDQ_BATCH_ENTRIES) {
+-			arm_smmu_cmdq_issue_cmdlist(smmu, cmds, i, false);
+-			i = 0;
+-		}
+-
+ 		cmd.tlbi.addr = iova;
+-		arm_smmu_cmdq_build_cmd(&cmds[i * CMDQ_ENT_DWORDS], &cmd);
++		arm_smmu_cmdq_batch_add(smmu, &cmds, &cmd);
+ 		iova += granule;
+-		i++;
+ 	}
+-
+-	arm_smmu_cmdq_issue_cmdlist(smmu, cmds, i, true);
++	arm_smmu_cmdq_batch_submit(smmu, &cmds);
+ 
+ 	/*
+ 	 * Unfortunately, this can't be leaf-only since we may have
+-- 
+2.25.0
+
+
+--ew6BAiZeqk4r7MaW
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -382,5 +313,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---------------571946AD89B6AF070C0BEECD--
+--ew6BAiZeqk4r7MaW--
 
