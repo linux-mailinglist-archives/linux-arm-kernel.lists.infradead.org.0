@@ -2,63 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 969E916185B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 17:56:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2523B161869
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 17:59:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Q45Gt+7cSoElS1/oyCeNE5s4RSZqxwBiaigsZFakx9s=; b=FoXHxsA7xZbUpL
-	FQYtTPkgso+B2UkfHcaep9jJE3UIA9fnZ5yZ/H0k4DzTGZelwVzbiilWqHtysZZPqrjjHzkWHbFcv
-	YPRJX3IVq2oFYAt/LC2fV5N7Vov2hhtTa+nfeJv6h/+wbnK8dZ2Z6SUPVIGe8UMpjAiRtRh1wYEo7
-	UN06+vwg4V3eFi0zvhRe9U+aRyfEU9oh9o+K6ccygyRLDq6XsU00r4R5IuAcsKodAiAUMvesaQDLP
-	tN5WHBVo/YUBarS//0QcFlB+qnOYQG/pu81DAwoB3KCkqS+JojjDpH6/iHbZOrMAZMLGV5JpXEtKM
-	XlFQmIs3V1dhwqTY/QPg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u/gVJmiRUdtJxMAAlUXvaQ6CZdUVz9L34oGdL6pOajQ=; b=c4nfBRfbathaMK
+	C021YiMWR1Nbsanf0vnWBZ9Jue6Rw9qO/UBcFIa0PLX6Hr/OPCch7q4FGCCHjOdNx6UmEtSZJPZu8
+	ju/Q0Fh4dd77IxvyE/1DG4LwXgpyX1/aCY6OeiO4znptvRg8HFJl2m7RHGRv6crxup8C/aAn/Jj2k
+	AMi+DyzJ7+X5+LHuOoLIuoBHKyQELDQMu/aX4KT/60ezVekYARNccHioOp6n+n0iCzD/llkOQZKen
+	T6DsMsHJk/rCw/9otUaukf66LFVNZG5RkJt6M1Ik93fWKqEACuFikVv1Q6VErNuz/aqu2ysN6Yq5/
+	5FXMujp5WZhqHQf+nemA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3jhS-0000s3-2K; Mon, 17 Feb 2020 16:56:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j3jk1-0001Ij-67; Mon, 17 Feb 2020 16:59:29 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3jhJ-0000ri-NM
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 16:56:43 +0000
-Received: from localhost.localdomain (unknown [194.230.155.125])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4FFAF20725;
- Mon, 17 Feb 2020 16:56:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581958601;
- bh=Edvx6KbF8UjElss9iYmaIvA5mtFtMhntgr5ab8Lgl/g=;
- h=From:To:Cc:Subject:Date:From;
- b=ubA0du5n7XqckDVKPrx7Qs0rSXq/UUmcCp2JKGCl94grdLcYnBovlzl8TDo2OKbqG
- 3KUiYJSkRAi48djgR1lqqqTuhXc7ey4fbEEbRmVanG3Sg2A8szJI9APB+9rM4JAJ9i
- OoZjr23gp8ovaUWEpjCbo96KbShIe1kACeUmMBg8=
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paulburton@kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com,
- =?UTF-8?q?Philippe=20Mathieu-Daud=C3=A9?= <f4bug@amsat.org>,
- linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2] MIPS: configs: Cleanup old Kconfig options
-Date: Mon, 17 Feb 2020 17:56:34 +0100
-Message-Id: <20200217165634.5362-1-krzk@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ id 1j3jjc-00014T-UA
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 16:59:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=2/En5IBaP1moV+pglClAUBUFc5ut9gbuR38WbrIBi8E=; b=iHB8AbZ1Vnw4mfaL2XpqFSha0
+ Phl21B5adT9qkUS+oIjhwKzNrJ9zF9ogY5LwOPq8/CwAacml5pUsOH/US9s33sSoRB0zaqGsEEH8K
+ ipyEWYXdeLXd+7K7lBqES9rPn8pJTBFsEr7XzFAA+rAUb/Sgm8oZLJI4uQKOiGWa3BUUhXJahyaaV
+ f4L5JMSjUAoZ5dAgRskiP0wGNqe6kqQ3vuTkoMey0doLT9/E53VLppdWit9LTNj4yTxWKb3NbN6XC
+ M+T+TP7Y8FwbUEVECeD0m94bSgLC6cQPj2uNP1xTmFmW3l02B3Cfv4M4psMwtJwbb9fQeP3ISwKc4
+ N0cJWPOLg==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:41594)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1j3jhO-0001yk-Pd; Mon, 17 Feb 2020 16:56:46 +0000
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1j3jhM-0006St-61; Mon, 17 Feb 2020 16:56:44 +0000
+Date: Mon, 17 Feb 2020 16:56:44 +0000
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Subject: Re: [PATCH net] net: macb: Properly handle phylink on at91rm9200
+Message-ID: <20200217165644.GX25745@shell.armlinux.org.uk>
+References: <20200217104348.43164-1-alexandre.belloni@bootlin.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200217104348.43164-1-alexandre.belloni@bootlin.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_085641_805220_5B961800 
-X-CRM114-Status: GOOD (  13.09  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200217_085905_251818_5BE9DF4E 
+X-CRM114-Status: GOOD (  23.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -66,7 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,165 +86,210 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Krzysztof Kozlowski <krzk@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Antoine =?iso-8859-1?Q?T=E9nart?= <antoine.tenart@bootlin.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Q09ORklHX01URF9OQU5EX0lEUyBpcyBnb25lIGFuZCBub3QgbmVlZGVkIChwYXJ0IG9mIENPTkZJ
-R19NVERfTkFORCkKc2luY2UgY29tbWl0IGYxNmJkN2NhMDQ1NyAoIm10ZDogbmFuZDogS2lsbCB0
-aGUgTVREX05BTkRfSURTIEtjb25maWcKb3B0aW9uIikuCgpDT05GSUdfSU9TQ0hFRF9ERUFETElO
-RSwgQ09ORklHX0lPU0NIRURfQ0ZRIGFuZCBDT05GSUdfREVGQVVMVF9OT09QIGFyZQpnb25lIHNp
-bmNlIGNvbW1pdCBmMzgyZmIwYmNlZjQgKCJibG9jazogcmVtb3ZlIGxlZ2FjeSBJTyBzY2hlZHVs
-ZXJzIikuCgpUaGUgSU9TQ0hFRF9ERUFETElORSB3YXMgcmVwbGFjZWQgYnkgTVFfSU9TQ0hFRF9E
-RUFETElORSBhbmQgaXQgd2lsbCBiZQpub3cgZW5hYmxlZCBieSBkZWZhdWx0IChhbG9uZyB3aXRo
-IE1RX0lPU0NIRURfS1lCRVIpLgoKVGhlIEJGUV9HUk9VUF9JT1NDSEVEIGlzIHRoZSBvbmx5IG11
-bHRpcXVldWUgc2NoZWR1bGVyIHdoaWNoIGNvbWVzIHdpdGgKZ3JvdXAgc2NoZWR1bGluZyBzbyBz
-ZWxlY3QgaXQgaW4gY29uZmlncyBwcmV2aW91c2x5IGNob29zaW5nCkNGUV9HUk9VUF9JT1NDSEVE
-LgoKU2lnbmVkLW9mZi1ieTogS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPgpS
-ZXZpZXdlZC1ieTogUGhpbGlwcGUgTWF0aGlldS1EYXVkw6kgPGY0YnVnQGFtc2F0Lm9yZz4KCi0t
-LQoKQ2hhbmdlcyBzaW5jZSB2MToKMS4gQWRkIFBoaWxpcHBlJ3MgcmV2aWV3LgotLS0KIGFyY2gv
-bWlwcy9jb25maWdzL2FyN19kZWZjb25maWcgICAgICAgICAgICAgICAgIHwgMSAtCiBhcmNoL21p
-cHMvY29uZmlncy9hdGgyNV9kZWZjb25maWcgICAgICAgICAgICAgICB8IDEgLQogYXJjaC9taXBz
-L2NvbmZpZ3MvYXRoNzlfZGVmY29uZmlnICAgICAgICAgICAgICAgfCAxIC0KIGFyY2gvbWlwcy9j
-b25maWdzL2JjbTYzeHhfZGVmY29uZmlnICAgICAgICAgICAgIHwgMiAtLQogYXJjaC9taXBzL2Nv
-bmZpZ3MvYm1pcHNfYmVfZGVmY29uZmlnICAgICAgICAgICAgfCAyIC0tCiBhcmNoL21pcHMvY29u
-Zmlncy9ibWlwc19zdGJfZGVmY29uZmlnICAgICAgICAgICB8IDIgLS0KIGFyY2gvbWlwcy9jb25m
-aWdzL2RiMXh4eF9kZWZjb25maWcgICAgICAgICAgICAgIHwgMSAtCiBhcmNoL21pcHMvY29uZmln
-cy9nZW5lcmljL2JvYXJkLW5pMTY5NDQ1LmNvbmZpZyB8IDEgLQogYXJjaC9taXBzL2NvbmZpZ3Mv
-bGFzYXRfZGVmY29uZmlnICAgICAgICAgICAgICAgfCAyIC0tCiBhcmNoL21pcHMvY29uZmlncy9s
-ZW1vdGUyZl9kZWZjb25maWcgICAgICAgICAgICB8IDIgKy0KIGFyY2gvbWlwcy9jb25maWdzL2xv
-b25nc29uM19kZWZjb25maWcgICAgICAgICAgIHwgNSArKystLQogYXJjaC9taXBzL2NvbmZpZ3Mv
-bXNwNzF4eF9kZWZjb25maWcgICAgICAgICAgICAgfCAyIC0tCiBhcmNoL21pcHMvY29uZmlncy9w
-bng4MzM1X3N0YjIyNV9kZWZjb25maWcgICAgICB8IDIgLS0KIGFyY2gvbWlwcy9jb25maWdzL3Ji
-NTMyX2RlZmNvbmZpZyAgICAgICAgICAgICAgIHwgMSAtCiBhcmNoL21pcHMvY29uZmlncy9ydDMw
-NXhfZGVmY29uZmlnICAgICAgICAgICAgICB8IDEgLQogYXJjaC9taXBzL2NvbmZpZ3MveHdheV9k
-ZWZjb25maWcgICAgICAgICAgICAgICAgfCAxIC0KIDE2IGZpbGVzIGNoYW5nZWQsIDQgaW5zZXJ0
-aW9ucygrKSwgMjMgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvYXJjaC9taXBzL2NvbmZpZ3Mv
-YXI3X2RlZmNvbmZpZyBiL2FyY2gvbWlwcy9jb25maWdzL2FyN19kZWZjb25maWcKaW5kZXggY2Vm
-Mjc1NGJkNDA4Li5jZjljNjMyOWI4MDcgMTAwNjQ0Ci0tLSBhL2FyY2gvbWlwcy9jb25maWdzL2Fy
-N19kZWZjb25maWcKKysrIGIvYXJjaC9taXBzL2NvbmZpZ3MvYXI3X2RlZmNvbmZpZwpAQCAtMjEs
-NyArMjEsNiBAQCBDT05GSUdfTU9EVUxFX1VOTE9BRD15CiAjIENPTkZJR19CTEtfREVWX0JTRyBp
-cyBub3Qgc2V0CiBDT05GSUdfUEFSVElUSU9OX0FEVkFOQ0VEPXkKIENPTkZJR19CU0RfRElTS0xB
-QkVMPXkKLSMgQ09ORklHX0lPU0NIRURfQ0ZRIGlzIG5vdCBzZXQKIENPTkZJR19ORVQ9eQogQ09O
-RklHX1BBQ0tFVD15CiBDT05GSUdfVU5JWD15CmRpZmYgLS1naXQgYS9hcmNoL21pcHMvY29uZmln
-cy9hdGgyNV9kZWZjb25maWcgYi9hcmNoL21pcHMvY29uZmlncy9hdGgyNV9kZWZjb25maWcKaW5k
-ZXggYzM1YWRkMmZkNzE2Li43MTQzNDQxZjU0NzYgMTAwNjQ0Ci0tLSBhL2FyY2gvbWlwcy9jb25m
-aWdzL2F0aDI1X2RlZmNvbmZpZworKysgYi9hcmNoL21pcHMvY29uZmlncy9hdGgyNV9kZWZjb25m
-aWcKQEAgLTIyLDcgKzIyLDYgQEAgQ09ORklHX0haXzEwMD15CiBDT05GSUdfTU9EVUxFUz15CiBD
-T05GSUdfTU9EVUxFX1VOTE9BRD15CiAjIENPTkZJR19CTEtfREVWX0JTRyBpcyBub3Qgc2V0Ci0j
-IENPTkZJR19JT1NDSEVEX0NGUSBpcyBub3Qgc2V0CiAjIENPTkZJR19DT01QQUNUSU9OIGlzIG5v
-dCBzZXQKIENPTkZJR19ORVQ9eQogQ09ORklHX1BBQ0tFVD15CmRpZmYgLS1naXQgYS9hcmNoL21p
-cHMvY29uZmlncy9hdGg3OV9kZWZjb25maWcgYi9hcmNoL21pcHMvY29uZmlncy9hdGg3OV9kZWZj
-b25maWcKaW5kZXggNGZmYzU5Y2FiNDM2Li4zZDE0ZDY3ZGM3NDYgMTAwNjQ0Ci0tLSBhL2FyY2gv
-bWlwcy9jb25maWdzL2F0aDc5X2RlZmNvbmZpZworKysgYi9hcmNoL21pcHMvY29uZmlncy9hdGg3
-OV9kZWZjb25maWcKQEAgLTIzLDcgKzIzLDYgQEAgQ09ORklHX1BDST15CiBDT05GSUdfTU9EVUxF
-Uz15CiBDT05GSUdfTU9EVUxFX1VOTE9BRD15CiAjIENPTkZJR19CTEtfREVWX0JTRyBpcyBub3Qg
-c2V0Ci0jIENPTkZJR19JT1NDSEVEX0NGUSBpcyBub3Qgc2V0CiBDT05GSUdfTkVUPXkKIENPTkZJ
-R19QQUNLRVQ9eQogQ09ORklHX1VOSVg9eQpkaWZmIC0tZ2l0IGEvYXJjaC9taXBzL2NvbmZpZ3Mv
-YmNtNjN4eF9kZWZjb25maWcgYi9hcmNoL21pcHMvY29uZmlncy9iY202M3h4X2RlZmNvbmZpZwpp
-bmRleCA1NGUyZjlhNjU5ZmIuLjg2MWY2ODAxODRiOSAxMDA2NDQKLS0tIGEvYXJjaC9taXBzL2Nv
-bmZpZ3MvYmNtNjN4eF9kZWZjb25maWcKKysrIGIvYXJjaC9taXBzL2NvbmZpZ3MvYmNtNjN4eF9k
-ZWZjb25maWcKQEAgLTIxLDggKzIxLDYgQEAgQ09ORklHX1BDST15CiBDT05GSUdfUENDQVJEPXkK
-IENPTkZJR19QQ01DSUFfQkNNNjNYWD15CiAjIENPTkZJR19CTEtfREVWX0JTRyBpcyBub3Qgc2V0
-Ci0jIENPTkZJR19JT1NDSEVEX0RFQURMSU5FIGlzIG5vdCBzZXQKLSMgQ09ORklHX0lPU0NIRURf
-Q0ZRIGlzIG5vdCBzZXQKIENPTkZJR19ORVQ9eQogQ09ORklHX1VOSVg9eQogQ09ORklHX0lORVQ9
-eQpkaWZmIC0tZ2l0IGEvYXJjaC9taXBzL2NvbmZpZ3MvYm1pcHNfYmVfZGVmY29uZmlnIGIvYXJj
-aC9taXBzL2NvbmZpZ3MvYm1pcHNfYmVfZGVmY29uZmlnCmluZGV4IGY2NjlhNDBlMDg1Yi4uMDMy
-YmI1MWRlZmU4IDEwMDY0NAotLS0gYS9hcmNoL21pcHMvY29uZmlncy9ibWlwc19iZV9kZWZjb25m
-aWcKKysrIGIvYXJjaC9taXBzL2NvbmZpZ3MvYm1pcHNfYmVfZGVmY29uZmlnCkBAIC0xMiw4ICsx
-Miw2IEBAIENPTkZJR19OUl9DUFVTPTQKICMgQ09ORklHX1NFQ0NPTVAgaXMgbm90IHNldAogQ09O
-RklHX01JUFNfTzMyX0ZQNjRfU1VQUE9SVD15CiAjIENPTkZJR19CTEtfREVWX0JTRyBpcyBub3Qg
-c2V0Ci0jIENPTkZJR19JT1NDSEVEX0RFQURMSU5FIGlzIG5vdCBzZXQKLSMgQ09ORklHX0lPU0NI
-RURfQ0ZRIGlzIG5vdCBzZXQKIENPTkZJR19ORVQ9eQogQ09ORklHX1BBQ0tFVD15CiBDT05GSUdf
-UEFDS0VUX0RJQUc9eQpkaWZmIC0tZ2l0IGEvYXJjaC9taXBzL2NvbmZpZ3MvYm1pcHNfc3RiX2Rl
-ZmNvbmZpZyBiL2FyY2gvbWlwcy9jb25maWdzL2JtaXBzX3N0Yl9kZWZjb25maWcKaW5kZXggYTBi
-Nzc1ODkzZGJhLi42MjViZDJkN2U2ODUgMTAwNjQ0Ci0tLSBhL2FyY2gvbWlwcy9jb25maWdzL2Jt
-aXBzX3N0Yl9kZWZjb25maWcKKysrIGIvYXJjaC9taXBzL2NvbmZpZ3MvYm1pcHNfc3RiX2RlZmNv
-bmZpZwpAQCAtMjEsOCArMjEsNiBAQCBDT05GSUdfQ1BVX0ZSRVFfR09WX0NPTlNFUlZBVElWRT15
-CiBDT05GSUdfQ1BVX0ZSRVFfR09WX1NDSEVEVVRJTD15CiBDT05GSUdfQk1JUFNfQ1BVRlJFUT15
-CiAjIENPTkZJR19CTEtfREVWX0JTRyBpcyBub3Qgc2V0Ci0jIENPTkZJR19JT1NDSEVEX0RFQURM
-SU5FIGlzIG5vdCBzZXQKLSMgQ09ORklHX0lPU0NIRURfQ0ZRIGlzIG5vdCBzZXQKIENPTkZJR19O
-RVQ9eQogQ09ORklHX1BBQ0tFVD15CiBDT05GSUdfUEFDS0VUX0RJQUc9eQpkaWZmIC0tZ2l0IGEv
-YXJjaC9taXBzL2NvbmZpZ3MvZGIxeHh4X2RlZmNvbmZpZyBiL2FyY2gvbWlwcy9jb25maWdzL2Ri
-MXh4eF9kZWZjb25maWcKaW5kZXggYmM5YjZhZTA0NmIyLi5lNmYzZThlM2RhMzkgMTAwNjQ0Ci0t
-LSBhL2FyY2gvbWlwcy9jb25maWdzL2RiMXh4eF9kZWZjb25maWcKKysrIGIvYXJjaC9taXBzL2Nv
-bmZpZ3MvZGIxeHh4X2RlZmNvbmZpZwpAQCAtMjgsNyArMjgsNiBAQCBDT05GSUdfUENNQ0lBX0FM
-Q0hFTVlfREVWQk9BUkQ9eQogQ09ORklHX0ZJUk1XQVJFX01FTU1BUD15CiBDT05GSUdfQkxLX0RF
-Vl9CU0dMSUI9eQogQ09ORklHX1BBUlRJVElPTl9BRFZBTkNFRD15Ci1DT05GSUdfREVGQVVMVF9O
-T09QPXkKIENPTkZJR19DTUE9eQogQ09ORklHX0NNQV9ERUJVRz15CiBDT05GSUdfTkVUPXkKZGlm
-ZiAtLWdpdCBhL2FyY2gvbWlwcy9jb25maWdzL2dlbmVyaWMvYm9hcmQtbmkxNjk0NDUuY29uZmln
-IGIvYXJjaC9taXBzL2NvbmZpZ3MvZ2VuZXJpYy9ib2FyZC1uaTE2OTQ0NS5jb25maWcKaW5kZXgg
-MWVkMGQzZTg3MTVlLi5mYzM1ODBlNGU2YmMgMTAwNjQ0Ci0tLSBhL2FyY2gvbWlwcy9jb25maWdz
-L2dlbmVyaWMvYm9hcmQtbmkxNjk0NDUuY29uZmlnCisrKyBiL2FyY2gvbWlwcy9jb25maWdzL2dl
-bmVyaWMvYm9hcmQtbmkxNjk0NDUuY29uZmlnCkBAIC0xOSw3ICsxOSw2IEBAIENPTkZJR19NVERf
-TkFORF9FQ0NfU1dfSEFNTUlORz15CiBDT05GSUdfTVREX05BTkRfRUNDX1NXX0JDSD15CiBDT05G
-SUdfTVREX1JBV19OQU5EPXkKIENPTkZJR19NVERfTkFORF9HUElPPXkKLUNPTkZJR19NVERfTkFO
-RF9JRFM9eQogCiBDT05GSUdfTVREX1VCST15CiBDT05GSUdfTVREX1VCSV9CTE9DSz15CmRpZmYg
-LS1naXQgYS9hcmNoL21pcHMvY29uZmlncy9sYXNhdF9kZWZjb25maWcgYi9hcmNoL21pcHMvY29u
-Zmlncy9sYXNhdF9kZWZjb25maWcKaW5kZXggYzY2Y2EzNzg1NjU1Li4wMGNmNDYxZGI5NzEgMTAw
-NjQ0Ci0tLSBhL2FyY2gvbWlwcy9jb25maWdzL2xhc2F0X2RlZmNvbmZpZworKysgYi9hcmNoL21p
-cHMvY29uZmlncy9sYXNhdF9kZWZjb25maWcKQEAgLTE2LDggKzE2LDYgQEAgQ09ORklHX0haXzEw
-MDA9eQogIyBDT05GSUdfU0VDQ09NUCBpcyBub3Qgc2V0CiBDT05GSUdfUENJPXkKICMgQ09ORklH
-X0JMS19ERVZfQlNHIGlzIG5vdCBzZXQKLSMgQ09ORklHX0lPU0NIRURfREVBRExJTkUgaXMgbm90
-IHNldAotIyBDT05GSUdfSU9TQ0hFRF9DRlEgaXMgbm90IHNldAogQ09ORklHX05FVD15CiBDT05G
-SUdfUEFDS0VUPXkKIENPTkZJR19VTklYPXkKZGlmZiAtLWdpdCBhL2FyY2gvbWlwcy9jb25maWdz
-L2xlbW90ZTJmX2RlZmNvbmZpZyBiL2FyY2gvbWlwcy9jb25maWdzL2xlbW90ZTJmX2RlZmNvbmZp
-ZwppbmRleCBmOWY5MzQyN2M5YmQuLjgyNTRkN2QxMzk2ZiAxMDA2NDQKLS0tIGEvYXJjaC9taXBz
-L2NvbmZpZ3MvbGVtb3RlMmZfZGVmY29uZmlnCisrKyBiL2FyY2gvbWlwcy9jb25maWdzL2xlbW90
-ZTJmX2RlZmNvbmZpZwpAQCAtMjYsNyArMjYsNyBAQCBDT05GSUdfTU9EVUxFUz15CiBDT05GSUdf
-TU9EVUxFX1VOTE9BRD15CiBDT05GSUdfTU9EVkVSU0lPTlM9eQogQ09ORklHX0JMS19ERVZfSU5U
-RUdSSVRZPXkKLUNPTkZJR19JT1NDSEVEX0RFQURMSU5FPW0KK0NPTkZJR19NUV9JT1NDSEVEX0RF
-QURMSU5FPW0KIENPTkZJR19CSU5GTVRfTUlTQz1tCiBDT05GSUdfTkVUPXkKIENPTkZJR19QQUNL
-RVQ9eQpkaWZmIC0tZ2l0IGEvYXJjaC9taXBzL2NvbmZpZ3MvbG9vbmdzb24zX2RlZmNvbmZpZyBi
-L2FyY2gvbWlwcy9jb25maWdzL2xvb25nc29uM19kZWZjb25maWcKaW5kZXggMzYwYzZiMmQzOTdh
-Li41MTY3NWY1MDAwZDYgMTAwNjQ0Ci0tLSBhL2FyY2gvbWlwcy9jb25maWdzL2xvb25nc29uM19k
-ZWZjb25maWcKKysrIGIvYXJjaC9taXBzL2NvbmZpZ3MvbG9vbmdzb24zX2RlZmNvbmZpZwpAQCAt
-MzgsOCArMzgsOSBAQCBDT05GSUdfTU9EVUxFX1VOTE9BRD15CiBDT05GSUdfTU9EVUxFX0ZPUkNF
-X1VOTE9BRD15CiBDT05GSUdfTU9EVkVSU0lPTlM9eQogQ09ORklHX1BBUlRJVElPTl9BRFZBTkNF
-RD15Ci1DT05GSUdfSU9TQ0hFRF9ERUFETElORT1tCi1DT05GSUdfQ0ZRX0dST1VQX0lPU0NIRUQ9
-eQorQ09ORklHX01RX0lPU0NIRURfREVBRExJTkU9bQorQ09ORklHX0lPU0NIRURfQkZRPXkKK0NP
-TkZJR19CRlFfR1JPVVBfSU9TQ0hFRD15CiBDT05GSUdfQklORk1UX01JU0M9bQogQ09ORklHX0tT
-TT15CiBDT05GSUdfTkVUPXkKZGlmZiAtLWdpdCBhL2FyY2gvbWlwcy9jb25maWdzL21zcDcxeHhf
-ZGVmY29uZmlnIGIvYXJjaC9taXBzL2NvbmZpZ3MvbXNwNzF4eF9kZWZjb25maWcKaW5kZXggMGZk
-YzAzZmRhMTJlLi42YWQxYTIzODEyMjYgMTAwNjQ0Ci0tLSBhL2FyY2gvbWlwcy9jb25maWdzL21z
-cDcxeHhfZGVmY29uZmlnCisrKyBiL2FyY2gvbWlwcy9jb25maWdzL21zcDcxeHhfZGVmY29uZmln
-CkBAIC0xNCw4ICsxNCw2IEBAIENPTkZJR19QQ0k9eQogQ09ORklHX01PRFVMRVM9eQogQ09ORklH
-X01PRFVMRV9VTkxPQUQ9eQogQ09ORklHX01PRFZFUlNJT05TPXkKLSMgQ09ORklHX0lPU0NIRURf
-REVBRExJTkUgaXMgbm90IHNldAotIyBDT05GSUdfSU9TQ0hFRF9DRlEgaXMgbm90IHNldAogQ09O
-RklHX05FVD15CiBDT05GSUdfVU5JWD15CiBDT05GSUdfWEZSTV9VU0VSPXkKZGlmZiAtLWdpdCBh
-L2FyY2gvbWlwcy9jb25maWdzL3BueDgzMzVfc3RiMjI1X2RlZmNvbmZpZyBiL2FyY2gvbWlwcy9j
-b25maWdzL3BueDgzMzVfc3RiMjI1X2RlZmNvbmZpZwppbmRleCA3MzhiYTNiMTM3NGIuLmQwNmRi
-NmI4Nzk1OSAxMDA2NDQKLS0tIGEvYXJjaC9taXBzL2NvbmZpZ3MvcG54ODMzNV9zdGIyMjVfZGVm
-Y29uZmlnCisrKyBiL2FyY2gvbWlwcy9jb25maWdzL3BueDgzMzVfc3RiMjI1X2RlZmNvbmZpZwpA
-QCAtMTQsOCArMTQsNiBAQCBDT05GSUdfSFpfMTI4PXkKIENPTkZJR19NT0RVTEVTPXkKIENPTkZJ
-R19NT0RVTEVfVU5MT0FEPXkKICMgQ09ORklHX0JMS19ERVZfQlNHIGlzIG5vdCBzZXQKLSMgQ09O
-RklHX0lPU0NIRURfREVBRExJTkUgaXMgbm90IHNldAotIyBDT05GSUdfSU9TQ0hFRF9DRlEgaXMg
-bm90IHNldAogQ09ORklHX05FVD15CiBDT05GSUdfUEFDS0VUPXkKIENPTkZJR19VTklYPXkKZGlm
-ZiAtLWdpdCBhL2FyY2gvbWlwcy9jb25maWdzL3JiNTMyX2RlZmNvbmZpZyBiL2FyY2gvbWlwcy9j
-b25maWdzL3JiNTMyX2RlZmNvbmZpZwppbmRleCA1Yjk0NzE4Mzg1MmIuLjI1MmQ0NzIzODdhYSAx
-MDA2NDQKLS0tIGEvYXJjaC9taXBzL2NvbmZpZ3MvcmI1MzJfZGVmY29uZmlnCisrKyBiL2FyY2gv
-bWlwcy9jb25maWdzL3JiNTMyX2RlZmNvbmZpZwpAQCAtMjMsNyArMjMsNiBAQCBDT05GSUdfTU9E
-VUxFX1VOTE9BRD15CiBDT05GSUdfUEFSVElUSU9OX0FEVkFOQ0VEPXkKIENPTkZJR19NQUNfUEFS
-VElUSU9OPXkKIENPTkZJR19CU0RfRElTS0xBQkVMPXkKLSMgQ09ORklHX0lPU0NIRURfQ0ZRIGlz
-IG5vdCBzZXQKIENPTkZJR19ORVQ9eQogQ09ORklHX1BBQ0tFVD15CiBDT05GSUdfVU5JWD15CmRp
-ZmYgLS1naXQgYS9hcmNoL21pcHMvY29uZmlncy9ydDMwNXhfZGVmY29uZmlnIGIvYXJjaC9taXBz
-L2NvbmZpZ3MvcnQzMDV4X2RlZmNvbmZpZwppbmRleCAxMTA5NDhiYzZiMzkuLjhjMmVhZDUzMDA3
-YSAxMDA2NDQKLS0tIGEvYXJjaC9taXBzL2NvbmZpZ3MvcnQzMDV4X2RlZmNvbmZpZworKysgYi9h
-cmNoL21pcHMvY29uZmlncy9ydDMwNXhfZGVmY29uZmlnCkBAIC0yMSw3ICsyMSw2IEBAIENPTkZJ
-R19NT0RVTEVTPXkKIENPTkZJR19NT0RVTEVfVU5MT0FEPXkKICMgQ09ORklHX0JMS19ERVZfQlNH
-IGlzIG5vdCBzZXQKIENPTkZJR19QQVJUSVRJT05fQURWQU5DRUQ9eQotIyBDT05GSUdfSU9TQ0hF
-RF9DRlEgaXMgbm90IHNldAogIyBDT05GSUdfQ09SRURVTVAgaXMgbm90IHNldAogIyBDT05GSUdf
-Q09NUEFDVElPTiBpcyBub3Qgc2V0CiBDT05GSUdfTkVUPXkKZGlmZiAtLWdpdCBhL2FyY2gvbWlw
-cy9jb25maWdzL3h3YXlfZGVmY29uZmlnIGIvYXJjaC9taXBzL2NvbmZpZ3MveHdheV9kZWZjb25m
-aWcKaW5kZXggNDliNWVhNmVmZjYyLi45YWJiYzBkZWJjMmEgMTAwNjQ0Ci0tLSBhL2FyY2gvbWlw
-cy9jb25maWdzL3h3YXlfZGVmY29uZmlnCisrKyBiL2FyY2gvbWlwcy9jb25maWdzL3h3YXlfZGVm
-Y29uZmlnCkBAIC0yMyw3ICsyMyw2IEBAIENPTkZJR19NT0RVTEVTPXkKIENPTkZJR19NT0RVTEVf
-VU5MT0FEPXkKICMgQ09ORklHX0JMS19ERVZfQlNHIGlzIG5vdCBzZXQKIENPTkZJR19QQVJUSVRJ
-T05fQURWQU5DRUQ9eQotIyBDT05GSUdfSU9TQ0hFRF9DRlEgaXMgbm90IHNldAogIyBDT05GSUdf
-Q09SRURVTVAgaXMgbm90IHNldAogIyBDT05GSUdfQ09NUEFDVElPTiBpcyBub3Qgc2V0CiBDT05G
-SUdfTkVUPXkKLS0gCjIuMTcuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Mon, Feb 17, 2020 at 11:43:48AM +0100, Alexandre Belloni wrote:
+> at91ether_init was handling the phy mode and speed but since the switch to
+> phylink, the NCFGR register got overwritten by macb_mac_config().
+
+I don't think this actually explains anything - or at least I can't
+make sense of it with respect to your patch.
+
+You claim that the NCFGR register gets overwritten in macb_mac_config(),
+but I see that the NCFGR register is read-modify-write in there,
+whereas your new implementation below doesn't bother reading the
+present value.
+
+I think the issue you're referring to is the clearing of the PAE bit,
+which is also the RM9200_RMII for at91rm9200?
+
+Next, there's some duplication of code introduced here - it seems
+that the tail end of macb_mac_link_down() and at91ether_mac_link_down()
+are identical, as are the tail end of macb_mac_link_up() and
+at91ether_mac_link_up().
+
+> Add new phylink callbacks to handle emac and at91rm9200 properly.
+> 
+> Fixes: 7897b071ac3b ("net: macb: convert to phylink")
+> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> ---
+
+I posted a heads-up message last week about updates to phylink that
+I'll be submitting soon (most of the prerequisits have now been sent
+for review) which touch every phylink_mac_ops-using piece of code in
+the tree.  Unfortunately, this patch introduces a new instance that
+likely isn't going to get my attention, so it's going to create a
+subtle merge conflict between net-next and net trees unless we work
+out some way to deal with it.
+
+I'm just mentioning that so that some thought can be applied now
+rather than when it actually happens - especially as I've no way to
+test the changes that will be necessary for this driver.
+
+>  drivers/net/ethernet/cadence/macb.h      |  1 +
+>  drivers/net/ethernet/cadence/macb_main.c | 81 +++++++++++++++++++++---
+>  2 files changed, 73 insertions(+), 9 deletions(-)
+> 
+> diff --git a/drivers/net/ethernet/cadence/macb.h b/drivers/net/ethernet/cadence/macb.h
+> index dbf7070fcdba..a3f0f27fc79a 100644
+> --- a/drivers/net/ethernet/cadence/macb.h
+> +++ b/drivers/net/ethernet/cadence/macb.h
+> @@ -652,6 +652,7 @@
+>  #define MACB_CAPS_GEM_HAS_PTP			0x00000040
+>  #define MACB_CAPS_BD_RD_PREFETCH		0x00000080
+>  #define MACB_CAPS_NEEDS_RSTONUBR		0x00000100
+> +#define MACB_CAPS_MACB_IS_EMAC			0x08000000
+>  #define MACB_CAPS_FIFO_MODE			0x10000000
+>  #define MACB_CAPS_GIGABIT_MODE_AVAILABLE	0x20000000
+>  #define MACB_CAPS_SG_DISABLED			0x40000000
+> diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
+> index def94e91883a..529a1d0d7dab 100644
+> --- a/drivers/net/ethernet/cadence/macb_main.c
+> +++ b/drivers/net/ethernet/cadence/macb_main.c
+> @@ -654,6 +654,72 @@ static const struct phylink_mac_ops macb_phylink_ops = {
+>  	.mac_link_up = macb_mac_link_up,
+>  };
+>  
+> +static void at91ether_mac_config(struct phylink_config *config,
+> +				 unsigned int mode,
+> +				 const struct phylink_link_state *state)
+> +{
+> +	struct net_device *ndev = to_net_dev(config->dev);
+> +	struct macb *bp = netdev_priv(ndev);
+> +	unsigned long flags;
+> +	u32 ctrl;
+> +
+> +	spin_lock_irqsave(&bp->lock, flags);
+> +
+> +	ctrl = MACB_BF(CLK, MACB_CLK_DIV32) | MACB_BIT(BIG);
+> +	if (state->speed == SPEED_100)
+> +		ctrl |= MACB_BIT(SPD);
+> +
+> +	if (state->duplex)
+> +		ctrl |= MACB_BIT(FD);
+> +
+> +	if (state->interface == PHY_INTERFACE_MODE_RMII)
+> +		ctrl |= MACB_BIT(RM9200_RMII);
+> +
+> +	macb_writel(bp, NCFGR, ctrl);
+> +
+> +	bp->speed = state->speed;
+> +
+> +	spin_unlock_irqrestore(&bp->lock, flags);
+> +}
+> +
+> +static void at91ether_mac_link_down(struct phylink_config *config,
+> +				    unsigned int mode,
+> +				    phy_interface_t interface)
+> +{
+> +	struct net_device *ndev = to_net_dev(config->dev);
+> +	struct macb *bp = netdev_priv(ndev);
+> +	u32 ctrl;
+> +
+> +	/* Disable Rx and Tx */
+> +	ctrl = macb_readl(bp, NCR) & ~(MACB_BIT(RE) | MACB_BIT(TE));
+> +	macb_writel(bp, NCR, ctrl);
+> +
+> +	netif_tx_stop_all_queues(ndev);
+> +}
+> +
+> +static void at91ether_mac_link_up(struct phylink_config *config,
+> +				  unsigned int mode,
+> +				  phy_interface_t interface,
+> +				  struct phy_device *phy)
+> +{
+> +	struct net_device *ndev = to_net_dev(config->dev);
+> +	struct macb *bp = netdev_priv(ndev);
+> +
+> +	/* Enable Rx and Tx */
+> +	macb_writel(bp, NCR, macb_readl(bp, NCR) | MACB_BIT(RE) | MACB_BIT(TE));
+> +
+> +	netif_tx_wake_all_queues(ndev);
+> +}
+> +
+> +static const struct phylink_mac_ops at91ether_phylink_ops = {
+> +	.validate = macb_validate,
+> +	.mac_pcs_get_state = macb_mac_pcs_get_state,
+> +	.mac_an_restart = macb_mac_an_restart,
+> +	.mac_config = at91ether_mac_config,
+> +	.mac_link_down = at91ether_mac_link_down,
+> +	.mac_link_up = at91ether_mac_link_up,
+> +};
+> +
+>  static bool macb_phy_handle_exists(struct device_node *dn)
+>  {
+>  	dn = of_parse_phandle(dn, "phy-handle", 0);
+> @@ -695,13 +761,17 @@ static int macb_phylink_connect(struct macb *bp)
+>  /* based on au1000_eth. c*/
+>  static int macb_mii_probe(struct net_device *dev)
+>  {
+> +	const struct phylink_mac_ops *phylink_ops = &macb_phylink_ops;
+>  	struct macb *bp = netdev_priv(dev);
+>  
+> +	if (bp->caps & MACB_CAPS_MACB_IS_EMAC)
+> +		phylink_ops = &at91ether_phylink_ops;
+> +
+>  	bp->phylink_config.dev = &dev->dev;
+>  	bp->phylink_config.type = PHYLINK_NETDEV;
+>  
+>  	bp->phylink = phylink_create(&bp->phylink_config, bp->pdev->dev.fwnode,
+> -				     bp->phy_interface, &macb_phylink_ops);
+> +				     bp->phy_interface, phylink_ops);
+>  	if (IS_ERR(bp->phylink)) {
+>  		netdev_err(dev, "Could not create a phylink instance (%ld)\n",
+>  			   PTR_ERR(bp->phylink));
+> @@ -4041,7 +4111,6 @@ static int at91ether_init(struct platform_device *pdev)
+>  	struct net_device *dev = platform_get_drvdata(pdev);
+>  	struct macb *bp = netdev_priv(dev);
+>  	int err;
+> -	u32 reg;
+>  
+>  	bp->queues[0].bp = bp;
+>  
+> @@ -4055,12 +4124,6 @@ static int at91ether_init(struct platform_device *pdev)
+>  
+>  	macb_writel(bp, NCR, 0);
+>  
+> -	reg = MACB_BF(CLK, MACB_CLK_DIV32) | MACB_BIT(BIG);
+> -	if (bp->phy_interface == PHY_INTERFACE_MODE_RMII)
+> -		reg |= MACB_BIT(RM9200_RMII);
+> -
+> -	macb_writel(bp, NCFGR, reg);
+> -
+>  	return 0;
+>  }
+>  
+> @@ -4218,7 +4281,7 @@ static const struct macb_config sama5d4_config = {
+>  };
+>  
+>  static const struct macb_config emac_config = {
+> -	.caps = MACB_CAPS_NEEDS_RSTONUBR,
+> +	.caps = MACB_CAPS_NEEDS_RSTONUBR | MACB_CAPS_MACB_IS_EMAC,
+>  	.clk_init = at91ether_clk_init,
+>  	.init = at91ether_init,
+>  };
+> -- 
+> 2.24.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
