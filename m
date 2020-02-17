@@ -2,76 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2982216149E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 15:28:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D51F41614A2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 15:28:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zD+oxZrfGYD/wVc3W74LkThYrirc6m8DSV0U/JJkS2g=; b=KGghS6NcJXlfG2
-	SW2WZGzY8Qa8U4/71C3nz+806PPV0yZjVftGBNoT4vQKT94bMKXuFXXJTpk5qMG9SgwQKvehyH7qx
-	fdarA6nlj4RSz6t8xvf+Abf39xZ9pb5N9STTggOYAnZCMF9yA3Xuv1eIZ9a1YUgBChZVEDyvkFdCC
-	92svN1Ouc/8r/+5Yv0HW6fms0HC96N4U64HdVAqZNKDpfq+ZOrKq7tSOAHIinftuOAC184RGjjo2H
-	vheH38xVwsgaykmKdwNcqElGB0VROmWEM4MHV6SuCb0EpuGCOmceUgAJbfeSsgUndmjy+XoJWzujG
-	/NKGFYj+Qo4n3Q2PQVWQ==;
+	List-Owner; bh=1gyFQuoUzfmS7M45Qm3q2L+Tysa+3uVxc91rbY7rLFU=; b=W9b1+07qXukT+Y
+	5E302KToST4ng12yCIZrijKU6h19X7flqQTgvpQz0L5njNmrEyBvfS5ppY/RB0xmTWJlQTb1Xs+ax
+	3b/jrdmoSppbabGTNgrFeUXMyD8tzjliiMjUtY01cDtL/Vz8FbiE/Eik2+2+uDEdXMPckt7jruIdj
+	RWLe91PjqSmGOl3x3vw3M63TBI6wM/Zrfq9FZ7Ko0StSvQ7JtWONlT8iMVfUZ3X1k9WFSCoFPGdA6
+	/nEusWqTD9yCiY/ZJ3zWkucMzO/ufFHdlhyvbTNfBRvsoN+tpOPbIn+9YLZXFpfGUYnp98d+ZcOcr
+	jVbaZKqu8x2sask3wpog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3hNI-0000Rv-F2; Mon, 17 Feb 2020 14:27:52 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1j3hNT-0000hV-CM; Mon, 17 Feb 2020 14:28:03 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3hMf-0008IT-RP
+ id 1j3hMf-0008Ic-Kp
  for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 14:27:15 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01HER5ni084812;
- Mon, 17 Feb 2020 08:27:05 -0600
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01HER8p6041844;
+ Mon, 17 Feb 2020 08:27:08 -0600
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1581949625;
- bh=MOTssjoB0GIV30lVcJaxAIVOL5DWVb4N01J+ze4pt64=;
+ s=ti-com-17Q1; t=1581949628;
+ bh=x20XuJyDG5O2+c37QkvjXakZ6PsI56wqgW7J8Vp8Wo8=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=mUDo/OGXVlzNFKGwEW1rIXWQYkfjSOHuH6Y8MLHM+cBsMqpHIOK6N55zKAoed6SmJ
- jXyevT2SOpBJR8jlfS62LsumwBhpZ/IvXVU0YEDdP8cJTztFPTn9EQCq3oZR2AvVJy
- RnwmPPjW6rFF/q+IblegAJ/i7bgvA37Q/0oEnjkQ=
-Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01HER4Un117386
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 17 Feb 2020 08:27:05 -0600
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ b=tgRDFPOqdqWFak0bU8cCloDasY+dLYgWOyjBs0QQyqJ3140cTUTkJaX5KkmLCrIg5
+ KkvdprNLDmi8wXZYwipdidm10AHKmToy0B7tJGY9lr1Si0T23BGaFcatFS84hpDm/z
+ ZoJzxIyoN8+ryGgjlZ2FS8uItpsY/ctan70MOBmw=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01HER86Q065030;
+ Mon, 17 Feb 2020 08:27:08 -0600
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 17
- Feb 2020 08:27:03 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ Feb 2020 08:27:08 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 17 Feb 2020 08:27:04 -0600
+ Frontend Transport; Mon, 17 Feb 2020 08:27:08 -0600
 Received: from a0230074-OptiPlex-7010.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01HEQoJN033875;
- Mon, 17 Feb 2020 08:26:59 -0600
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01HEQoJO033875;
+ Mon, 17 Feb 2020 08:27:04 -0600
 From: Faiz Abbas <faiz_abbas@ti.com>
 To: <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <devicetree@vger.kernel.org>, <netdev@vger.kernel.org>,
  <linux-can@vger.kernel.org>
-Subject: [PATCH v2 2/3] can: m_can: m_can_platform: Add support for enabling
- transceiver
-Date: Mon, 17 Feb 2020 19:58:35 +0530
-Message-ID: <20200217142836.23702-3-faiz_abbas@ti.com>
+Subject: [PATCH v2 3/3] arm64: defconfig: Add Support for Bosch M_CAN
+ controllers
+Date: Mon, 17 Feb 2020 19:58:36 +0530
+Message-ID: <20200217142836.23702-4-faiz_abbas@ti.com>
 X-Mailer: git-send-email 2.19.2
 In-Reply-To: <20200217142836.23702-1-faiz_abbas@ti.com>
 References: <20200217142836.23702-1-faiz_abbas@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_062713_984347_3F578B52 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20200217_062713_749549_8032F8DE 
+X-CRM114-Status: GOOD (  10.70  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -101,47 +100,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CAN transceivers on some boards have a standby line which can be
-toggled to enable/disable the transceiver. Model this as an optional
-fixed xceiver regulator.
+Enable configs for supporting Bosch M_CAN controllers.
 
 Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
-Acked-by: Sriram Dash <sriram.dash@samsung.com>
 ---
- drivers/net/can/m_can/m_can_platform.c | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm64/configs/defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/net/can/m_can/m_can_platform.c b/drivers/net/can/m_can/m_can_platform.c
-index 38ea5e600fb8..719468fab507 100644
---- a/drivers/net/can/m_can/m_can_platform.c
-+++ b/drivers/net/can/m_can/m_can_platform.c
-@@ -6,6 +6,7 @@
- // Copyright (C) 2018-19 Texas Instruments Incorporated - http://www.ti.com/
- 
- #include <linux/platform_device.h>
-+#include <linux/regulator/consumer.h>
- 
- #include "m_can.h"
- 
-@@ -57,6 +58,7 @@ static int m_can_plat_probe(struct platform_device *pdev)
- {
- 	struct m_can_classdev *mcan_class;
- 	struct m_can_plat_priv *priv;
-+	struct regulator *reg_xceiver;
- 	struct resource *res;
- 	void __iomem *addr;
- 	void __iomem *mram_addr;
-@@ -111,6 +113,10 @@ static int m_can_plat_probe(struct platform_device *pdev)
- 
- 	m_can_init_ram(mcan_class);
- 
-+	reg_xceiver = devm_regulator_get_optional(&pdev->dev, "xceiver");
-+	if (PTR_ERR(reg_xceiver) == -EPROBE_DEFER)
-+		return -EPROBE_DEFER;
-+
- 	ret = m_can_class_register(mcan_class);
- 
- failed_ret:
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 905109f6814f..b25bbcf691b6 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -161,6 +161,9 @@ CONFIG_QRTR=m
+ CONFIG_QRTR_SMD=m
+ CONFIG_QRTR_TUN=m
+ CONFIG_BPF_JIT=y
++CONFIG_CAN=m
++CONFIG_CAN_M_CAN=m
++CONFIG_CAN_M_CAN_PLATFORM=m
+ CONFIG_BT=m
+ CONFIG_BT_HIDP=m
+ # CONFIG_BT_HS is not set
 -- 
 2.19.2
 
