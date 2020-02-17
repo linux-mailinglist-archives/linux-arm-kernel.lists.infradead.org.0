@@ -2,92 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02312160BC8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 08:41:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 105DE160BCE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 08:42:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OJTNLV5lGdPe8IOYm1dz+LT1Y3X8rFoClvpmDlh7cjc=; b=TCccU3Cm5kLC5I
-	Dd3fJy9YrKBDlZYTfoPYxvkvj7wtMgmFrE3w+t9A/KxW3UMAn3X9uJkMdbbXoc5fLiL40oAKkVnGU
-	AKsfBDOG/f8wI8o151zkVDypoq9gJfVhqEkXlrjdl9fnqACiIYlJxh+heoXH+mfOcmXBfkIpH6kZ8
-	0xyRj7Qhs1T9QS6sBdXy4VRL9At6gThBllazREsrALTFpd8OqcpPrtyOabFranqRP6KTkTX/LCBz3
-	Byw1cHgtOg6ZyS7o6pHvcxi/yIY+ecgpXQMpEPR+kAya+0F7wDgRCCaV/Cm/nFBQEhxs3yC42GMxQ
-	yLOG8duhFhukPr2Jw0xw==;
+	List-Owner; bh=/IQ2tUmnzFTb5Rz3tO4Ut6yzhJeyZIwTWrM0YwOfz4s=; b=qIBj49NUbeUoVI
+	+9GgNOSxi4ZCZNnSAHnF7RtG5MFks2GM3Pe4sY1XZ2bKRGI6ShjCddxXmcQjChI+EZZZVfgBJLkyN
+	/obhB9/cvqAOM1IgZLVwo3a2pJ/JAeVWSCdtqMecj456WK9/PDTYXeH67JBTNYMvBgajA8oLQMd/5
+	lFHs6MDrrEti69g8uDlI2esJH5ZFWwsdonUcVbILY/2DxnBd24xTKmP4woPz9KckGOMdZbNRnaKJz
+	voUacnu5UYhFLVPl9jIz6K0Svy7pw5m9akEh8Gy5W3NtNiN01+RPke+mYzsivHoGWgaPcOtRKlpY+
+	fZfjlmVUIWdy7POhsURA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3b2N-00043b-0v; Mon, 17 Feb 2020 07:41:51 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1j3b2x-0004Vk-E2; Mon, 17 Feb 2020 07:42:27 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3b2F-000430-Co
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 07:41:44 +0000
-Received: by mail-ed1-f66.google.com with SMTP id g19so19514345eds.11
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Feb 2020 23:41:42 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=76WiewyfAQysMsVYcXQkeWLkjiTOOZNh8t0AnmKu14M=;
- b=JR9oNVUHHfHJinVwiAkVAVUwblCESOiPlR6mEery/iIOhS5ucqTtVj/Wa/ORo2QZCE
- 9QLdbXEwaSAPShVi13Cv1Kwk6vOIkoNfOpE1NlSfdYfrVlGTYUyiQW32xqQ6Sa0cisOg
- rbmFA1GdiDzoYp+XrSnKC06CTSlDWCSGjz/a2hnrQ/b2mPnfUFJpBk9suw55fDeAGcqp
- BkG1v/gU0LqCxK2saD61NI9z1JAq1uk4jWJXT2WGxSYHeqMMUfuGKlBI4ywJiBjfde26
- ijhbJVAlSxIPDhWsaNJVpNbRW2agRIrM+SAGrQPlZ9aJNlcWxUO3QRVpwuljP7RCcpXb
- DNAg==
-X-Gm-Message-State: APjAAAV5WgWmhTeb05OIpKKYhEcFWPoZWLpyuPVZM8hdukX2Ogvx4V+z
- nzyWjzZzTui5fnW2DyUahkmQcFvOrWs=
-X-Google-Smtp-Source: APXvYqx/Tvs1WNvy0ZQ5Nynei9dlVcKbHqWQsvWs7AI38mEypB6f7K2aIBQ3K4y9u6vqb35swa/fnQ==
-X-Received: by 2002:a05:6402:7da:: with SMTP id
- u26mr13670465edy.227.1581925301310; 
- Sun, 16 Feb 2020 23:41:41 -0800 (PST)
-Received: from mail-wr1-f51.google.com (mail-wr1-f51.google.com.
- [209.85.221.51])
- by smtp.gmail.com with ESMTPSA id qw15sm832695ejb.92.2020.02.16.23.41.40
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 16 Feb 2020 23:41:40 -0800 (PST)
-Received: by mail-wr1-f51.google.com with SMTP id m16so18314731wrx.11
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Feb 2020 23:41:40 -0800 (PST)
-X-Received: by 2002:a5d:484f:: with SMTP id n15mr20324028wrs.365.1581925300705; 
- Sun, 16 Feb 2020 23:41:40 -0800 (PST)
+ id 1j3b2o-0004Vc-Sq
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 17 Feb 2020 07:42:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description;
+ bh=hqMNovNPLBTkcDZOPcJd85GoyTDK28xkZ5YRxHDZcBM=; b=ie061spF1JdJmwzdGZphceeSIP
+ xs23p8a4AxWOA7drUweshdqOm6j8bm2qZzM/SueJa4le0XIWNzOQCEwDTmENqgdLB1LMIQdacWqyl
+ GeC2N4T7fnNVebt/IWJ+3p9m3A4YvSjmBuFKI3DSDge0PgVL/ZTgb6kJ337PgC3tcZtRts7z2y+mn
+ YuKX7sKZ7JxoH92WxyZX2WgaRWEFGQGflO9y9hEZBDLXOJunppN3faA1CADSgXDH/K8skhc4W8Qbn
+ T6lZsskiw8Rt7XFSPm1Z2Mp7Ga/y+VoGsHp2jGhFntil6tSV1rQ6bdFqyubbdPwI/Leanc/IL4tGE
+ 4UK9r11g==;
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j3b2l-0005oH-OL
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 07:42:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1581925313;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=hqMNovNPLBTkcDZOPcJd85GoyTDK28xkZ5YRxHDZcBM=;
+ b=ehZecdFbhkDmpuogn/fGY4Hn7cl2Mq+ft82DOojzr8RiU2EyV3LVGsa31VVQ2w/OnqcI7f
+ ei9tOexGAoMJnjy5S8EXAokTScG1mr7MtqWPPmPYwdnatQCbHb+J3673J7H+kZE6FhXu8K
+ LCLgl7kyKdVTrcKKjBRCOv7QIhBgjp8=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-216-tvWotQ_rP52F4XbMwzS7ew-1; Mon, 17 Feb 2020 02:41:50 -0500
+X-MC-Unique: tvWotQ_rP52F4XbMwzS7ew-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 94405800D53;
+ Mon, 17 Feb 2020 07:41:47 +0000 (UTC)
+Received: from carbon (ovpn-200-41.brq.redhat.com [10.40.200.41])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 299292CC39;
+ Mon, 17 Feb 2020 07:41:35 +0000 (UTC)
+Date: Mon, 17 Feb 2020 08:41:33 +0100
+From: Jesper Dangaard Brouer <brouer@redhat.com>
+To: Ilias Apalodimas <ilias.apalodimas@linaro.org>
+Subject: Re: [PATCH net-next v2] net: page_pool: API cleanup and comments
+Message-ID: <20200217084133.1a67ae63@carbon>
+In-Reply-To: <20200217062850.133121-1-ilias.apalodimas@linaro.org>
+References: <20200217062850.133121-1-ilias.apalodimas@linaro.org>
 MIME-Version: 1.0
-References: <20200217064250.15516-1-samuel@sholland.org>
- <20200217064250.15516-5-samuel@sholland.org>
-In-Reply-To: <20200217064250.15516-5-samuel@sholland.org>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Mon, 17 Feb 2020 15:41:29 +0800
-X-Gmail-Original-Message-ID: <CAGb2v6543yLuBUi_37DbFdfkOo_OBK8v-rB2hViex_BCzAurPQ@mail.gmail.com>
-Message-ID: <CAGb2v6543yLuBUi_37DbFdfkOo_OBK8v-rB2hViex_BCzAurPQ@mail.gmail.com>
-Subject: Re: [RFC PATCH 04/34] ASoC: sun8i-codec: Remove unused dev from codec
- struct
-To: Samuel Holland <samuel@sholland.org>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_234143_433731_21FEA85F 
-X-CRM114-Status: UNSURE (   8.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [wens213[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [wens213[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,28 +99,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Takashi Iwai <tiwai@suse.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
- Maxime Ripard <mripard@kernel.org>,
- =?UTF-8?Q?Myl=C3=A8ne_Josserand?= <mylene.josserand@free-electrons.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Daniel Borkmann <daniel@iogearbox.net>, netdev@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, toke@redhat.com,
+ John Fastabend <john.fastabend@gmail.com>, brouer@redhat.com,
+ Alexei Starovoitov <ast@kernel.org>, Jassi Brar <jaswinder.singh@linaro.org>,
+ Jose Abreu <joabreu@synopsys.com>, linux-arm-kernel@lists.infradead.org,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, jonathan.lemon@gmail.com,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, bpf@vger.kernel.org,
+ lorenzo@kernel.org, "David S. Miller" <davem@davemloft.net>,
+ linux-kernel@vger.kernel.org, Jesper Dangaard Brouer <hawk@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 2:42 PM Samuel Holland <samuel@sholland.org> wrote:
->
-> This field is not used anywhere in the driver, so remove it.
->
-> Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
+On Mon, 17 Feb 2020 08:28:49 +0200
+Ilias Apalodimas <ilias.apalodimas@linaro.org> wrote:
 
-Acked-by: Chen-Yu Tsai <wens@csie.org>
+> diff --git a/include/net/page_pool.h b/include/net/page_pool.h
+> index cfbed00ba7ee..7c1f23930035 100644
+> --- a/include/net/page_pool.h
+> +++ b/include/net/page_pool.h
+> @@ -162,39 +162,33 @@ static inline void page_pool_use_xdp_mem(struct page_pool *pool,
+>  }
+>  #endif
+>  
+> -/* Never call this directly, use helpers below */
+> -void __page_pool_put_page(struct page_pool *pool, struct page *page,
+> -			  unsigned int dma_sync_size, bool allow_direct);
+> +void page_pool_release_page(struct page_pool *pool, struct page *page);
+>  
+> -static inline void page_pool_put_page(struct page_pool *pool,
+> -				      struct page *page, bool allow_direct)
+> +/* If the page refcnt == 1, this will try to recycle the page.
+> + * if PP_FLAG_DMA_SYNC_DEV is set, it will try to sync the DMA area for
+> + * the configured size min(dma_sync_size, pool->max_len).
+> + * If the page refcnt != page will be returned
+
+Is this last comment line fully formed?
+
+
+> + */
+> +void page_pool_put_page(struct page_pool *pool, struct page *page,
+> +			unsigned int dma_sync_size, bool allow_direct);
+> +
+> +/* Same as above but will try to sync the entire area pool->max_len */
+> +static inline void page_pool_put_full_page(struct page_pool *pool,
+> +					   struct page *page, bool allow_direct)
+
+
+
+-- 
+Best regards,
+  Jesper Dangaard Brouer
+  MSc.CS, Principal Kernel Engineer at Red Hat
+  LinkedIn: http://www.linkedin.com/in/brouer
+
 
 _______________________________________________
 linux-arm-kernel mailing list
