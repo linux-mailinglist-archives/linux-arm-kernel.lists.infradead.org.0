@@ -2,62 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2928C160979
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 05:10:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BBC76160992
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 05:14:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MoCG5OqduV+7giJAAzode6XIRGUSJoLqooEB4xL/qOM=; b=EgT6VZfHKVhHCO
-	zKFdKGhxykJmaeqUZvNbzzA9BXyTWwRjpJq5yK0ebzj8feaKH2BRP6FZYYKkr2l9Y+mR/KzWo89Vi
-	OMkOoidI4Ee0GEqWl+genAFC1j1hY5rL7YiMxwzaKEucfceLV0uwp6P9kUjXAMknY8uOUcPjA8nia
-	SfbA9E4zmVF/XDFqQ9BTe6yNxIua5PTrqlQRIx6NE7aCTpZXhoJMK+eiK1zOMVwgJdnGD3T7Rtww+
-	gwrRmApj7MBghONdPTHq44rKDaYnxdrmjmtqtcy7PZ01zp8O9n97CK0ADhG21Mtjt/YTSGIlk3UND
-	G4s0unmwVNmNHqI91WMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XUheUVZtLdoFhtRoONCA4cMj3qodr8b1upAfYTh6R6k=; b=kngG7xuUsvLamD
+	qqvLn7HixmXquuCLsPdXHTBtPW7ZyQdq7952595CxBg4js8PIpKvT1zSkifs0kF+njQDViznjlgnp
+	N/5uvGATXe90QoA6O5r/ACgsvkJNmnZxZj4uTBEhvHnJApiwByieXDuogXEzt5n3FjXdpGSMNZSx3
+	pyBgJstv7W3vSUlG8Supe31csZTr2DeQANTyNkpP5spyq07F3QyCQtKrqP69ykxoVqo4pdY2sP9P7
+	PoyN6TSpPvToUfdC5nsM+7JL05daTNv3UkVhruJG5x9UCNJ0dEy5H1+f48I7lpkZFp/etukweIj5Y
+	25xFlW8Q/sODkYc1ejZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3XjQ-0005Fh-G4; Mon, 17 Feb 2020 04:10:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j3XnH-00083O-Ev; Mon, 17 Feb 2020 04:14:03 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3XjG-0005FL-4M
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 04:09:55 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4DDF920717;
- Mon, 17 Feb 2020 04:09:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581912593;
- bh=N6Y5KKKWqMwm7aFctqJ1MGvZUyDeIUpv6buvA4gPxUM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2F8+vWxe9UuNOOVTK+1AxAoBzcorwtXspYXHIItjZuNh5yW39woNtzY8Vsh76jdjC
- eblBjzyyiqNHjIEDi1gTvKWDaf6oA9s+g6rx9dvAtT4lQmCBTr5Lya9f+dA15wcbF/
- 76Zi0fXQJZajaAJ7o6rh2vHS1zZK2J6pjs7qgoxU=
-Date: Mon, 17 Feb 2020 12:09:43 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Martin Kepplinger <martin.kepplinger@puri.sm>
-Subject: Re: [PATCH v1 10/12] arm64: dts: librem5-devkit: configure VSELECT
-Message-ID: <20200217040942.GG5395@dragon>
-References: <20200205143003.28408-1-martin.kepplinger@puri.sm>
- <20200205143003.28408-11-martin.kepplinger@puri.sm>
+ id 1j3Xma-0007VS-J0; Mon, 17 Feb 2020 04:13:22 +0000
+X-UUID: 4a707f2d86ad4485add538ea2875b904-20200216
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=XXQOsLoB7tFXez5/loNRWj7lM3AnXVWqLDHsdOB8kd4=; 
+ b=dL4e6vZMmPM0EqKbGUkxVfrA1LXcQ1PZ4dSLxf+QyJNLZ6TgjXsvHF/DF0+tRjpSzdOzz29Q9ItQJdKDHhWjPz1dQbQxRsp9S/xKfBsNJ3HW06XEBCGRa2MoAgWhuBdJkav23p3dzf4iQMYSvL3UYXpkSZb2hf5tc+NTYFVv9Mo=;
+X-UUID: 4a707f2d86ad4485add538ea2875b904-20200216
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <chun-hung.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 656236981; Sun, 16 Feb 2020 20:13:15 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 16 Feb 2020 20:13:33 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 17 Feb 2020 12:12:19 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Mon, 17 Feb 2020 12:12:59 +0800
+From: Chun-Hung Wu <chun-hung.wu@mediatek.com>
+To: Chaotian Jing <chaotian.jing@mediatek.com>, Ulf Hansson
+ <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
+ <mark.rutland@arm.com>, Matthias Brugger <matthias.bgg@gmail.com>, "Linus
+ Walleij" <linus.walleij@linaro.org>, Pavel Machek <pavel@ucw.cz>, Kate
+ Stewart <kstewart@linuxfoundation.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Martin Blumenstingl
+ <martin.blumenstingl@googlemail.com>, Pan Bian <bianpan2016@163.com>, "Thomas
+ Gleixner" <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ "Mathieu Malaterre" <malat@debian.org>, Stanley Chu
+ <stanley.chu@mediatek.com>, "Kuohong Wang" <kuohong.wang@mediatek.com>
+Subject: [PATCH v2 0/4] mmc: mediatek: add mmc cqhci support
+Date: Mon, 17 Feb 2020 12:13:06 +0800
+Message-ID: <1581912790-19382-1-git-send-email-chun-hung.wu@mediatek.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200205143003.28408-11-martin.kepplinger@puri.sm>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_200954_196605_D893E386 
-X-CRM114-Status: GOOD (  13.26  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200216_201320_628892_F2B97286 
+X-CRM114-Status: UNSURE (   6.06  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -65,7 +79,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,62 +92,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, robh@kernel.org, kernel@puri.sm, Anson.Huang@nxp.com,
- devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, kernel-team@android.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 05, 2020 at 03:30:01PM +0100, Martin Kepplinger wrote:
-> From: "Angus Ainslie (Purism)" <angus@akkea.ca>
-> 
-> use vselect to set the io voltage to 1.8V
-> 
-> Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
-> ---
->  arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> index fbc7062c4633..8f920c554ebd 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> @@ -789,6 +789,7 @@
->  			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1	0xc3
->  			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2	0xc3
->  			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3	0xc3
-> +			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4	0xc1
+This series provides MediaTek cqhci implementations as below:
+  - Add expose MMC_CAP2_CQE* to dt
+  - Refine msdc timeout api to reduce redundant code
+  - MediaTek command queue support
+  - dt-bindings for mt6779
 
-How is the pin working without a pinctrl handle pointing it?
-
-Shawn
-
->  		>;
->  	};
->  
-> @@ -800,6 +801,7 @@
->  			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1	0xcd
->  			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2	0xcd
->  			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3	0xcd
-> +			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4	0xc1
->  		>;
->  	};
->  
-> @@ -811,6 +813,7 @@
->  			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1	0xcf
->  			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2	0xcf
->  			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3	0xcf
-> +			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4	0xc1
->  		>;
->  	};
->  
-> -- 
-> 2.20.1
-> 
+v1 -> v2:
+  - Add more patch details in commit message
+  - Separate msdc timeout api refine to individual patch
 
 _______________________________________________
 linux-arm-kernel mailing list
