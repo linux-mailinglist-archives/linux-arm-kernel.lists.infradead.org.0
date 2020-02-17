@@ -2,61 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E45F160951
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 04:54:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AEEC160953
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 04:55:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7Hp/EL3BRSW3ZufxG0TAvzFfBz1GlAVNVFE2mtqgT9E=; b=l4AsKtSRlXF+pU
-	OtmGXYtTv4wZAfVGknRunFBea1bxFdxWtSIIi6Nor3hOZrWjONRJxwyJtUtfs0ODNDV5Ib5wfyNSX
-	yfkT232UAmfhcoFc20EXu4wntJ/h6WC4Rxt08Wls2zN0Gpgt/eSasTzMROFuPW9Cwc1n1vTBEw27q
-	ancXodNiv5MSlOJM1yfNigFcHZdpxcrL1pO2mMjggUm7J6ikj7A3Y4YDAI/3D+fGGc2pd2v46ax9D
-	TmLiGqOHX0z+ncteyOAxd+cf3wokenLrCaN91EZAByZvjBa/A1Ts6+COsIi0wnAhw2mZvAK07/3Ow
-	fdu7GG10ciRN735Z1OmQ==;
+	List-Owner; bh=JF/m6YTV1evu3quP3ze6jgTAa1ARYIMljcqpcOE5liU=; b=BPODWWv25fXL6T
+	6AkyCwwnNhffz9M25DgWe1Gs+hMEP6LdKUbw87Q22wasbLqjeiCWs7yvgqst7iLq0cW7pRez6ce+H
+	tjnPLXUd4e3oIFCifKOVUcHICLZ3e+xMIq2GSnS1vlAjBu8XBXCks6HYoZUGuLz8p2WZyIiMHtUnT
+	Sc4+EX7mpVD0zAmSHrQnt6wznUwTkw4O1neJeA/HRu271sbhFSdewY93kSFd0HuwBIfVtKIpEVdSu
+	ZzABaEZgIWzSz25kXyljoXWExa3zGKKWevwkEWGKXc1HOc5W2jvqTznb3d50L0Yiwre3l6HHjscDc
+	t2+iMLQVmXK6FlB8TRDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3XUV-0005xc-HG; Mon, 17 Feb 2020 03:54:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j3XVZ-0007XR-3v; Mon, 17 Feb 2020 03:55:45 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3XUI-0005x3-FD
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 03:54:27 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B2BCC2072C;
- Mon, 17 Feb 2020 03:54:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581911666;
- bh=jrF0oNRyAPvPKYYpF8tmM5q6hhzDDWjQzsZFCTo4Ikc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PbppxtE2EaohmfIqplGUBKlCfsZT1Lp29fHIY07N/pv1pgPZ4spbRmWBdzLkL2bfq
- 2LsmfeIjF0Nrh5D/5DHXJLXYJ/03eipk3xWU0qvxjJ6awGWA/Oi4iOWdG0WdvxNloR
- Jbfp5PZ7ZrYgondMAjyP46dVAEpc6KdfCiu6ETGA=
-Date: Mon, 17 Feb 2020 11:54:16 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Martin Kepplinger <martin.kepplinger@puri.sm>
-Subject: Re: [PATCH v1 01/12] arm64: dts: librem5-devkit: add sai2 and sai6
- pinctrl definitions
-Message-ID: <20200217035416.GB5395@dragon>
-References: <20200205143003.28408-1-martin.kepplinger@puri.sm>
- <20200205143003.28408-2-martin.kepplinger@puri.sm>
+ id 1j3XVK-0007V1-UT
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 03:55:32 +0000
+Received: by mail-io1-xd44.google.com with SMTP id z16so16905996iod.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 16 Feb 2020 19:55:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MDRwOw0qxHT8lr0hMdZ3Qai+ub8w2eSiYOEUSVqxsao=;
+ b=gxFKXkh2sDRFMwdMCiVPpZM94a7Wqh//+i/PPGKzGqg109MExjedklZrYzYfEB1dOn
+ 1RSy4HwVcYyZEyQT2/50sKFaxsQXYw/KUtPQSDP0SgMbgkHZYACNmTy3pk+RfjP8wJ8H
+ vIQbzTSkumfZSiOX1QkrO62yBG89y3JCzRkpualHWXG0WOZs2WCVsNdPN/uMBuN1PInl
+ oqcehkB6H/Yc1VLJ3pAYtnF9A9V2mJze/G9H/eo22rOrbk+WDlH62AIzov8o++KQFpd7
+ KP75BTi8ZU1s49FOmVefZoWDFS4sgNo3WYKRPRPKOjsYYbG/apbzhJqjc7u5AOkSY0o2
+ u4qQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MDRwOw0qxHT8lr0hMdZ3Qai+ub8w2eSiYOEUSVqxsao=;
+ b=p9txdVyDGjZhY+wK5QlnJVbjD3PRvDLQ06PgkyaxqYRxA7HwiaoJJaNayubAM5am1L
+ ZfzfrXFiMRoUgQd4PNGckIfAxjIp3BVWsaGP+scCOhQyzBwO3D+NVZrrQdJFl6fexmio
+ 5jqDe11+1YrPfK5eosiYIGT3G0lz6gsYEct4uqg07004JUjH/TlbdkxmQAJHtHxTFajE
+ erhwXvzMZCmiUqAU3IZP8sfP9IDnbEnlRErXiqoQJykfadvnBhDux2v0TLLpUdPV+QuY
+ i3OAqCYNER19tDIAWu3vjba+R77+2PUHdgqVXVHnkpcO1eVuMees6tru3gm5QQqcPY/+
+ 4sQA==
+X-Gm-Message-State: APjAAAWRrAIDlQJ6l616j9e5UebsGoRnhSh6Ao09vbKWSOTvziJBdXWb
+ NkdGOkDhFMBUqfkeYW1gZs4FkZIyfL25RnKfUyIQ7A==
+X-Google-Smtp-Source: APXvYqzvM4FCMTrCi0v8wV4k9sbQWYIUffnsL+Kp3MW2/ZQ6XXOz2og41iziG0mONHGsGItgPmiMVNuzIdWL8NvO3J8=
+X-Received: by 2002:a02:2101:: with SMTP id e1mr11084540jaa.29.1581911728799; 
+ Sun, 16 Feb 2020 19:55:28 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200205143003.28408-2-martin.kepplinger@puri.sm>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200217031653.52345-1-tzungbi@google.com>
+ <20200217105513.2.I477092c2f104fd589133436c3ae4590e6fc6323b@changeid>
+ <1581911058.12629.1.camel@mtksdaap41>
+In-Reply-To: <1581911058.12629.1.camel@mtksdaap41>
+From: Tzung-Bi Shih <tzungbi@google.com>
+Date: Mon, 17 Feb 2020 11:55:17 +0800
+Message-ID: <CA+Px+wWRn1-t2fd+bD-PGRVjyLaAHqm1wF3W3T_GMUh0GXkA_A@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] drm/mediatek: fix race condition for HDMI jack
+ status reporting
+To: CK Hu <ck.hu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_195426_535196_A1750B10 
-X-CRM114-Status: GOOD (  13.71  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200216_195530_991836_338256D8 
+X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,7 +87,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,65 +100,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, robh@kernel.org, kernel@puri.sm, Anson.Huang@nxp.com,
- devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: ALSA development <alsa-devel@alsa-project.org>, p.zabel@pengutronix.de,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Dylan Reid <dgreid@google.com>, linux-arm-kernel@lists.infradead.org,
+ Jimmy Cheng-Yi Chiang <cychiang@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 05, 2020 at 03:29:52PM +0100, Martin Kepplinger wrote:
-> From: "Angus Ainslie (Purism)" <angus@akkea.ca>
-> 
-> Add missing sai2 and sai6 audio interface pinctrl definitions for the
-> Librem 5 devkit.
-> 
-> Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
-> ---
->  .../dts/freescale/imx8mq-librem5-devkit.dts   | 19 +++++++++++++++++++
->  1 file changed, 19 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> index 764a4cb4e125..9702db69d3ed 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> @@ -555,6 +555,25 @@
->  		>;
->  	};
->  
-> +	pinctrl_sai2: sai2grp {
-> +		fsl,pins = <
-> +		MX8MQ_IOMUXC_SAI2_TXFS_SAI2_TX_SYNC	0xd6
+On Mon, Feb 17, 2020 at 11:44 AM CK Hu <ck.hu@mediatek.com> wrote:
+> On Mon, 2020-02-17 at 11:16 +0800, Tzung-Bi Shih wrote:
+> > Fixes: 5d3c64477392 ("drm/mediatek: support HDMI jack status reporting")
+>
+> This patch looks good to me, but please merge this patch with the patch
+> it fix.
 
-Please be consistent with existing indentation style.
-
-Shawn
-
-> +		MX8MQ_IOMUXC_SAI2_TXC_SAI2_TX_BCLK	0xd6
-> +		MX8MQ_IOMUXC_SAI2_TXD0_SAI2_TX_DATA0	0xd6
-> +		MX8MQ_IOMUXC_SAI2_RXD0_SAI2_RX_DATA0	0xd6
-> +		MX8MQ_IOMUXC_SAI2_MCLK_SAI2_MCLK	0xd6
-> +		>;
-> +	};
-> +
-> +	pinctrl_sai6: sai6grp {
-> +		fsl,pins = <
-> +		MX8MQ_IOMUXC_SAI1_RXD5_SAI6_RX_DATA0	0xd6
-> +		MX8MQ_IOMUXC_SAI1_RXD6_SAI6_RX_SYNC	0xd6
-> +		MX8MQ_IOMUXC_SAI1_TXD4_SAI6_RX_BCLK     0xd6
-> +		MX8MQ_IOMUXC_SAI1_TXD5_SAI6_TX_DATA0	0xd6
-> +		>;
-> +	};
-> +
->  	pinctrl_typec: typecgrp {
->  		fsl,pins = <
->  			MX8MQ_IOMUXC_NAND_DATA06_GPIO3_IO12		0x16
-> -- 
-> 2.20.1
-> 
+5d3c64477392 ("drm/mediatek: support HDMI jack status reporting") has
+applied to ASoC for-next branch.  This is a fixup patch.
 
 _______________________________________________
 linux-arm-kernel mailing list
