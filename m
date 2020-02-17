@@ -2,78 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 431A8160BFE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 08:57:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40ACE160C02
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 08:58:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p7sO/kWpNdq1WSIxjUEG7wWuO2FdMHg9Ab5ByYUX2jA=; b=il6SaJot930yc4
-	9Dvt9/esIIaHK5AuWyJn6I/WkITGsAbqoWDKtJIR0JuUt3xLEjsO+TG4IVIJ0MwuQGTBo0w8rUad+
-	/ME2cZ4pvc6vHdqKQi610U1312s9vaeAIhkG+IZbq9N7S5FG0pmZTGc2eOiyqkud5mxubmuXV/2fd
-	zVFP5Etg1oPrBTYGVviuwmjn+PuPqn1AI/kDbmYuJGuRczNx03CnH3TkPNq6Iod++dlAqTHwoUAvE
-	BjDGVMqaCLebYc0QoESaEqaIBjGcVR5YCqugJjOiQZgLsCTkVwTHKUk4Sg+2eOKMXv7GK78zackd+
-	bi5xPLnPSKPIinyR9zZA==;
+	List-Owner; bh=nDPJRs9ENYoLbRQJv3Rh7oPKL2M4msyhEfk7gVMaOBo=; b=miz+KeUJJUQA1F
+	QJ8zXA87AgUta23NlcFW3QNzFPdjf4PLUgrxMqOsdh+AC5NB+2NhoYcoSOkGV+muP2u8LU5JlCDaN
+	D69wSb475e3OGRbISN9kzNT2Jm7mPjCgyfWnhgB3N8/RfH9ufI0/3bIA+tcB2vpGEcXzmuL8g92fE
+	/P6UfVN8RVaLNKCBRVvD2bBvcp+4ZFOl5uogfIGXSMYQQamuWwdiL+SU9Rt+qnG9uE6FqrGEuikco
+	alQNdnavdlQ/O4p5asvwpvMlSPnNp18bnlIaiW/HWg03JwdmfCDJPQRyzLf2dAPu5p+d2KSrJLgFy
+	ot2mxZWteJYjqNiXdNsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3bHm-0002SO-3p; Mon, 17 Feb 2020 07:57:46 +0000
+	id 1j3bId-0002hr-Nn; Mon, 17 Feb 2020 07:58:39 +0000
 Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3bHe-0002S2-Go
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 07:57:39 +0000
-Received: by mail-ed1-f68.google.com with SMTP id v28so19556623edw.12
+ id 1j3bIT-0002hL-Oy
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 07:58:30 +0000
+Received: by mail-ed1-f68.google.com with SMTP id p23so19582693edr.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Feb 2020 23:57:38 -0800 (PST)
+ Sun, 16 Feb 2020 23:58:29 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=RXwH2ZY89QD7QWNaSd/vgTmgRslu6k13i/RLcLVOpys=;
- b=X2yvx4tt6plgErZ0UBQmiN5VKDYj6rLJymwFgifydi/fdI2V2glPloJltEPcgweUqJ
- M0VbaQcvrUuYh1EXx7alY+KwnkQvMI9FVZj2Pz/4ooE/wzOTE/PKGA3RMskY0ADYE/yN
- pQUfdDqSccCdnu2O+mRsOtmIChtDi4tV8T8NM3pdMph/wVVIA9yadlIjBElJMMBTiDjY
- JeF2tzWVcSOss9PedVLI999k6wJ9rmx+W/QZMUUR50u7gjSUXGkj46nnIJbSNo3D/cub
- NE1zgLlHyHAHgQgCWXZtd030Z2SACFok/a8gLPHGEE15iCwM9cJEopBvmMTjGTv5Donp
- Fq/w==
-X-Gm-Message-State: APjAAAXXSMdwwy6SVnFt0zMATS5wR1n/vB6d9Hbo80akcue7bJtQbzbW
- GdGH3K7vg9C0sEQj35ygI91T2i92wN8=
-X-Google-Smtp-Source: APXvYqwrbu7GOJ3vuGtkrZrxaSZYuY/o0QkFkEha1LwTAI/WkokN1kRLrQMiFL0QozfSUwx3ROhgdw==
-X-Received: by 2002:a17:906:8d0:: with SMTP id
- o16mr13459233eje.101.1581926255941; 
- Sun, 16 Feb 2020 23:57:35 -0800 (PST)
-Received: from mail-wm1-f43.google.com (mail-wm1-f43.google.com.
- [209.85.128.43])
- by smtp.gmail.com with ESMTPSA id q18sm460810eds.7.2020.02.16.23.57.35
+ bh=qAkDAKXcgCBrOdSb/zgNyHSfr/RVZZb04YTPxwkLXA0=;
+ b=l6O4z/BVEEQ5B588wDSuNrQZMs6mOz7bBoJBendZa+H6CAPVTnG5kDmLllzPuMwhq1
+ L9W4+UItxeVW+ahtPPOQXgliNyKq4qecwbVMrGWj9ziOGow6lExXZCg4PrrGmkD+n95W
+ s+F9jBiX9GZIYvFyYwA3fOXZDEhLlNkLY1nQ3F+C/cm3xphYCC9+n1BqX4weUMa8VtTy
+ m3m+IdMZA8gXgTROOjptbNgrG+cKjHISDf5Fy0qialZPFmQtTpBird6YNbr9mItfFXj/
+ RaaAT+mZ41025NFd5E1JmfbwwbLyL8S9jj4Z429W8MO759aNa5jD4GeH647UOnqDsKgt
+ WkUw==
+X-Gm-Message-State: APjAAAVRKI9sFsAavQn0Mip5A0jsZcXmZHCk6bTDwN35wWQ8f1FgIjw7
+ d28BT6iPuDgr6Fm2dZ8Z6p2mDz9yTcI=
+X-Google-Smtp-Source: APXvYqwue4tbER2LLhZFJ553bIpdYlC5oUZ1k/R/oDeF0L2jBYumsboN2a5kFRHGERh0jE/alNRtKA==
+X-Received: by 2002:a17:906:23e2:: with SMTP id
+ j2mr13324433ejg.257.1581926308278; 
+ Sun, 16 Feb 2020 23:58:28 -0800 (PST)
+Received: from mail-wm1-f51.google.com (mail-wm1-f51.google.com.
+ [209.85.128.51])
+ by smtp.gmail.com with ESMTPSA id p16sm461122edr.83.2020.02.16.23.58.27
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 16 Feb 2020 23:57:35 -0800 (PST)
-Received: by mail-wm1-f43.google.com with SMTP id s144so6746946wme.1
+ Sun, 16 Feb 2020 23:58:27 -0800 (PST)
+Received: by mail-wm1-f51.google.com with SMTP id a5so16069935wmb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Feb 2020 23:57:35 -0800 (PST)
-X-Received: by 2002:a05:600c:34d:: with SMTP id
- u13mr21328621wmd.77.1581926254712; 
- Sun, 16 Feb 2020 23:57:34 -0800 (PST)
+ Sun, 16 Feb 2020 23:58:27 -0800 (PST)
+X-Received: by 2002:a1c:dc85:: with SMTP id t127mr22154598wmg.16.1581926307557; 
+ Sun, 16 Feb 2020 23:58:27 -0800 (PST)
 MIME-Version: 1.0
 References: <20200217064250.15516-1-samuel@sholland.org>
- <20200217064250.15516-15-samuel@sholland.org>
-In-Reply-To: <20200217064250.15516-15-samuel@sholland.org>
+ <20200217064250.15516-14-samuel@sholland.org>
+In-Reply-To: <20200217064250.15516-14-samuel@sholland.org>
 From: Chen-Yu Tsai <wens@csie.org>
-Date: Mon, 17 Feb 2020 15:57:24 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67ZtOajmfvoFNfsqWJ4K3pjfW16uoWYnMUcpqi7fg5XAw@mail.gmail.com>
-Message-ID: <CAGb2v67ZtOajmfvoFNfsqWJ4K3pjfW16uoWYnMUcpqi7fg5XAw@mail.gmail.com>
-Subject: Re: [RFC PATCH 14/34] ASoC: sun8i-codec: Fix AIF1_MXR_SRC field names
+Date: Mon, 17 Feb 2020 15:58:17 +0800
+X-Gmail-Original-Message-ID: <CAGb2v649-ZJZfnOoNtsRuQXFOsZLg69Bizz+vZbB6yML-T8z2g@mail.gmail.com>
+Message-ID: <CAGb2v649-ZJZfnOoNtsRuQXFOsZLg69Bizz+vZbB6yML-T8z2g@mail.gmail.com>
+Subject: Re: [RFC PATCH 13/34] ASoC: sun8i-codec: Fix AIF1_ADCDAT_CTRL field
+ names
 To: Samuel Holland <samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_235738_558889_DC4BA0AC 
-X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-CacheID: sfid-20200216_235829_812104_555B1EB0 
+X-CRM114-Status: UNSURE (   8.65  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.68 listed in wl.mailspike.net]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
  no trust [209.85.208.68 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -84,8 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [wens213[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -115,8 +115,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon, Feb 17, 2020 at 2:43 PM Samuel Holland <samuel@sholland.org> wrote:
 >
-> Even though they are for the left channel mixer, they are documented as
-> "MXR_SRC". This matches the naming scheme used for the main DAC.
+> They are controlling "AD0" (AIF1 slot 0), not "DA0".
 >
 > Fixes: eda85d1fee05 ("ASoC: sun8i-codec: Add ADC support for a33")
 > Signed-off-by: Samuel Holland <samuel@sholland.org>
