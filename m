@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49479160E97
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 10:31:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A66F5160E9B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 10:32:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=faUKDKi4XiNRv+sO4snOWcTHWOsKTnQvITMnAZ3QuIo=; b=Gpo7nNbmXGdk2QTMKAPV69ej2i
-	VnnIwEH+wTqTmVJP0YtTgl2Cv1aRaVEdXdl0LNjXBm+9NXyOno9FXUvXQu2+DV+fkpgsRfxu1gbNI
-	xJ2qUyv9pfKPWdORMnpsRy+P0mwDlczKzNN7uozYyw7KgtQkUbMhZIJS0isBITyyM+9hN+xWcgsKF
-	PNLD1PI1yU++mX6RBw9aLw5f1tFoFgPalU5N89LD8vZCWrEIzuWlQdR7bWBUTDC23NUbRvMkQkgDU
-	cdcwVSgUe1YI9+hfkPMn5Pc0ENQzR0SrtGG0/vk1oENrtkY4VgX1SCr8/hYYmdFqBA16jSiDWXE33
-	3BhITf+A==;
+	bh=2Gqw8AYmaqzkRU3xviCszloso5y4KoPwObNvM2c/peM=; b=h2V5qOZDAYCIrWlfdRkm1anGEE
+	jUHmsPaX4WXCnfJSmktJKSUEynKN4OLveG6rtzvuQOwaZMruFZcao2GZr35wej+H0TbWlyiNt9JqM
+	nFjcz+D9eZHiHy/hHWeoiFjgYWyK5B6n8hjRxrMcyWBO+Z7ZwzdwDE/wL4HRKa1t8uWp0IAoPf4Pm
+	ak2yMdZYnywO490rmTQAuuxQGYvFv9bBNTf/Kr6MpAaamzX0KTCF5RIm6NUuKueFU7wBkXJtnHkdp
+	yIb40xl8wrBNVTyepQpJkAYlwzmwfEhb/A/YZMWS5x6HWVUdhMro2s3pIUZ4ivOL1eWxoD0grTSgB
+	/WyY3VBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3ckj-0001hd-F7; Mon, 17 Feb 2020 09:31:45 +0000
+	id 1j3cl4-00020W-Jk; Mon, 17 Feb 2020 09:32:06 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3ci4-0006Nj-Oq
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 09:29:02 +0000
+ id 1j3ci9-0006RY-4v
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 09:29:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1CCF6328;
- Mon, 17 Feb 2020 01:29:00 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5C387328;
+ Mon, 17 Feb 2020 01:29:04 -0800 (PST)
 Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.32])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4D8BB3F6CF;
- Mon, 17 Feb 2020 01:28:56 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8EFA93F6CF;
+ Mon, 17 Feb 2020 01:29:00 -0800 (PST)
 From: Amit Daniel Kachhap <amit.kachhap@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 13/17] arm64: __show_regs: strip PAC from lr in printk
-Date: Mon, 17 Feb 2020 14:57:44 +0530
-Message-Id: <1581931668-11559-14-git-send-email-amit.kachhap@arm.com>
+Subject: [PATCH v5 14/17] arm64: suspend: restore the kernel ptrauth keys
+Date: Mon, 17 Feb 2020 14:57:45 +0530
+Message-Id: <1581931668-11559-15-git-send-email-amit.kachhap@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
 References: <1581931668-11559-1-git-send-email-amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_012900_861931_E2C7ABC0 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20200217_012905_260769_EFAFD674 
+X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -77,32 +78,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-lr is printed with %pS which will try to find an entry in kallsyms.
-After enabling pointer authentication, this match will fail due to
-PAC present in the lr.
+This patch restores the kernel keys from current task during
+cpu resume after the mmu is turned on and ptrauth is enabled.
 
-Strip PAC from the lr to display the correct symbol name.
-
-Suggested-by: James Morse <james.morse@arm.com>
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 ---
- arch/arm64/kernel/process.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/kernel/sleep.S | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-index 7db0302..cacae29 100644
---- a/arch/arm64/kernel/process.c
-+++ b/arch/arm64/kernel/process.c
-@@ -262,7 +262,7 @@ void __show_regs(struct pt_regs *regs)
+diff --git a/arch/arm64/kernel/sleep.S b/arch/arm64/kernel/sleep.S
+index 7b2f2e6..f9db925 100644
+--- a/arch/arm64/kernel/sleep.S
++++ b/arch/arm64/kernel/sleep.S
+@@ -2,6 +2,7 @@
+ #include <linux/errno.h>
+ #include <linux/linkage.h>
+ #include <asm/asm-offsets.h>
++#include <asm/asm_pointer_auth.h>
+ #include <asm/assembler.h>
+ #include <asm/smp.h>
  
- 	if (!user_mode(regs)) {
- 		printk("pc : %pS\n", (void *)regs->pc);
--		printk("lr : %pS\n", (void *)lr);
-+		printk("lr : %pS\n", (void *)ptrauth_strip_insn_pac(lr));
- 	} else {
- 		printk("pc : %016llx\n", regs->pc);
- 		printk("lr : %016llx\n", lr);
+@@ -134,6 +135,11 @@ ENTRY(_cpu_resume)
+ 	 */
+ 	bl	cpu_do_resume
+ 
++#ifdef CONFIG_ARM64_PTR_AUTH
++	get_current_task x1
++	ptrauth_keys_install_kernel x1, x2, x3, x4
++#endif
++
+ #ifdef CONFIG_KASAN
+ 	mov	x0, sp
+ 	bl	kasan_unpoison_task_stack_below
 -- 
 2.7.4
 
