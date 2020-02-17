@@ -2,94 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BBF3161046
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 11:42:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6C07161059
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 11:45:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=3u0M+5gh10bHM6kNYecCsb+NDYpYhNebK6hhP5EdtD0=; b=G/feohgM50T8OvqwuIywJ2V6R
-	fTbXEhJudz/Dh4qa1bMGw4iVEY4zfH0fvtC06aPOD35150YcD3wfv9K1gnUUC7ZQNV5eR1tr8E7pZ
-	uw9tFP6PAHIO2ZTtzaovloUhs6vVAE7chNV93O50ZZNm7mzd0Eh8bCDgwKltJg2zVegsR7qwo/kED
-	kn9r8dE8ukeo84Hy9hb5FVZUl5NR4mR5mBD798RM8K6qf+NpoKE8sm3cs9VGdI7nLk3WnFFLPA2yW
-	yUyRkTFfaVg5mm65bWYTQlHa4om1VDTXeQwT14UhPGXrQ5vrpvMbxhxQAuGqYLskz1VFx2lxVnOsg
-	Izr59V0gQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AUEb5PBoSeOu/LtCabqZePjGzxHf8MTwKofFDAF/NVk=; b=QNSiaJcRPllM5p
+	5/F+iZNQpB9mF95o06t7oH9FVYb1HYzWxY1KQgVbqAfeE/DVxnEtHnvA4MEUR8EFbfI/h5asE8kYR
+	Q1d02JYrs/Hbgy84b7kcxGbToI0kZ9+SzoPHW18dqshSlymks00oRsKDBla9gGYIH6aiYrMAfwAOF
+	4zZnKntPlTrhlePwQO0axSqtm5ZdTpR3mlAqYBanWjCyMOBt8Wg7mSwKKKuVlqfr+q9YBBOenO8vT
+	+4l/cvd0xeuCJ+vtzc9RQZbXa9qQB8xUhu07xOKlr1o7hJTZ1EZtoh9LcNa9HXK1LC2hc8BP6j3fg
+	mBte3nXMUfEARC2hurjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3dqw-0000J7-8S; Mon, 17 Feb 2020 10:42:14 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j3dts-0001Br-7Y; Mon, 17 Feb 2020 10:45:16 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3dqn-0000IX-QD
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 10:42:07 +0000
-Received: by mail-wr1-x444.google.com with SMTP id m16so19034046wrx.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Feb 2020 02:42:04 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=xK9gSeKjuTrA7UchFgBVdfbmk8btUEWvMGPvHLQD5JM=;
- b=QAYDuPa2ckyNKNs+uc/7kOYnDiCDyG5wPtjvhR59Myh+YznC8GYiN2AG06cTLVRObo
- ROlADqWcNe98jyG2/zOJx0GmEUb7kEPIEArlZgxJWwNRv6pJs1YlzY3L+ke9BHkM2j7B
- aeGz8B3EMSISeSPkbZNLZUTPgNCoEY5OjtpOX9CuwfzGD6qJdvOaxPi5UPWqYvGqaNar
- O4UT3VEF0GINCmmv6ibsepv9zdV9oM0/spTfYAhPLEwt03h0sQN//Tqp5MDrjEBICiV2
- dsGRIvt/baD8UMoaXtSA+m1K4rbKEYJv3mL7g6+jkeeZXV876uqoD2GDYmEfhrkqwPqN
- Vvrw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=xK9gSeKjuTrA7UchFgBVdfbmk8btUEWvMGPvHLQD5JM=;
- b=SvEMYs7antKH3IQKItRlZOCNmSUT6Bdz3l5Ic8MoFmahyBI1+Bd9uvdxHKyITBx427
- /KuppvgGQh55DdzJdciEFkbSfMKmLPZZDKF1+nr4IYVYRnBuKdjjrR5SgUXfdM4l8yZp
- kPb8kibqeq/Wtz0/2GvYkgEdeAZG+ivQrYeNwLP06REZ98EgzPVh133w0Waih/LFcFQt
- 1wCzoSuQmSok30/HzmNYgIC2+xRHwQ2fQ/f//blXL8eaNZZM6fdIJ3BC1eh3cecVcDog
- DkN8O/5xRNghgpeofv6t0VIZe5yazi67NU2ezhqFL+qlAByOo6bjxkIj8d42hdOg0+NL
- qE0w==
-X-Gm-Message-State: APjAAAWbiIiuwbV0HAqYPdUoXxkckfsAwWCbBuib8McQQF57qcOuduDp
- sQa74R4on2ZNXdwGupZ9MSyAxthGpUo=
-X-Google-Smtp-Source: APXvYqwWfS50fnch4zgS7Kfh2jKt9qZFo/AadUs19hGjKsVCFf3nDddgafWbzS4NxIxJ7cdTWz6aCw==
-X-Received: by 2002:adf:ea85:: with SMTP id s5mr21086636wrm.75.1581936123145; 
- Mon, 17 Feb 2020 02:42:03 -0800 (PST)
-Received: from [192.168.86.34]
- (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
- by smtp.googlemail.com with ESMTPSA id m3sm332833wrs.53.2020.02.17.02.42.01
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 17 Feb 2020 02:42:02 -0800 (PST)
-Subject: Re: [PATCH] nvmem: imx: ocotp: add i.MX8MP support
-To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
-References: <1579231433-14201-1-git-send-email-peng.fan@nxp.com>
-From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Message-ID: <05b29ecf-3873-067c-c480-ed32c388333b@linaro.org>
-Date: Mon, 17 Feb 2020 10:42:01 +0000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1j3dtg-0000xA-OV
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 17 Feb 2020 10:45:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:In-Reply-To:References;
+ bh=XcoS19YOFUuIJt3OL+kFrTqNSNiOR56rBVP8Cr3A+1o=; b=P4ZbrGrWHdFnv3EJ5P5Zru+/3C
+ TLOE0t49r5/Bv7FC6G2Yh4BvjgLyQuCa9LLO+1PB6Z7LQ32ibUCN5ISx48Pw5PNQvHSBQfwsLqM1l
+ UKrATN9Ut79gQsNDyJ5XshPqZlGqolBIbLPfOKkgp5HKFzOfwsFqIozaBp2m0HSqrlM8EwllBIWc/
+ xJ/wXNhA1bnkhzjxF82h+pHDhS3ogztqVqkH7CVFfY0ktM37ekhhKBdbcobPJW4+FmwpTyQLR6vul
+ lVoa+g9vm86dd/dWrypINUmy8LL6l3brrU5Py1A+jwOur578H4DSRZRisPFQlSUgcz35a1z2KF/av
+ oS0TJKuQ==;
+Received: from relay10.mail.gandi.net ([217.70.178.230])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j3dtc-0006mw-Fl
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 10:45:03 +0000
+Received: from localhost (lfbn-lyo-1-1670-129.w90-65.abo.wanadoo.fr
+ [90.65.102.129])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 7584724000D;
+ Mon, 17 Feb 2020 10:44:04 +0000 (UTC)
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: "David S. Miller" <davem@davemloft.net>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ =?UTF-8?q?Antoine=20T=C3=A9nart?= <antoine.tenart@bootlin.com>
+Subject: [PATCH net] net: macb: Properly handle phylink on at91rm9200
+Date: Mon, 17 Feb 2020 11:43:48 +0100
+Message-Id: <20200217104348.43164-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-In-Reply-To: <1579231433-14201-1-git-send-email-peng.fan@nxp.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_024205_855239_D555F22C 
-X-CRM114-Status: GOOD (  13.49  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20200217_104500_778474_17E3003F 
+X-CRM114-Status: GOOD (  15.59  )
+X-Spam-Score: -2.6 (--)
+X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
+ Content analysis details:   (-2.6 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.230 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,35 +76,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "festevam@gmail.com" <festevam@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: netdev@vger.kernel.org, Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+at91ether_init was handling the phy mode and speed but since the switch to
+phylink, the NCFGR register got overwritten by macb_mac_config().
 
+Add new phylink callbacks to handle emac and at91rm9200 properly.
 
-On 17/01/2020 03:28, Peng Fan wrote:
-> From: Peng Fan<peng.fan@nxp.com>
-> 
-> i.MX8MP has 96 banks with each bank 4 words. And it has different
-> ctrl register layout, so add new macros for that.
-> 
-> Signed-off-by: Peng Fan<peng.fan@nxp.com>
-> ---
-> 
-> dt-bindings doc has been posted by Anson Huang
-> 
->   drivers/nvmem/imx-ocotp.c | 21 +++++++++++++++++++++
->   1 file changed, 21 insertions(+)
+Fixes: 7897b071ac3b ("net: macb: convert to phylink")
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+---
+ drivers/net/ethernet/cadence/macb.h      |  1 +
+ drivers/net/ethernet/cadence/macb_main.c | 81 +++++++++++++++++++++---
+ 2 files changed, 73 insertions(+), 9 deletions(-)
 
-Applied Thanks,
+diff --git a/drivers/net/ethernet/cadence/macb.h b/drivers/net/ethernet/cadence/macb.h
+index dbf7070fcdba..a3f0f27fc79a 100644
+--- a/drivers/net/ethernet/cadence/macb.h
++++ b/drivers/net/ethernet/cadence/macb.h
+@@ -652,6 +652,7 @@
+ #define MACB_CAPS_GEM_HAS_PTP			0x00000040
+ #define MACB_CAPS_BD_RD_PREFETCH		0x00000080
+ #define MACB_CAPS_NEEDS_RSTONUBR		0x00000100
++#define MACB_CAPS_MACB_IS_EMAC			0x08000000
+ #define MACB_CAPS_FIFO_MODE			0x10000000
+ #define MACB_CAPS_GIGABIT_MODE_AVAILABLE	0x20000000
+ #define MACB_CAPS_SG_DISABLED			0x40000000
+diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
+index def94e91883a..529a1d0d7dab 100644
+--- a/drivers/net/ethernet/cadence/macb_main.c
++++ b/drivers/net/ethernet/cadence/macb_main.c
+@@ -654,6 +654,72 @@ static const struct phylink_mac_ops macb_phylink_ops = {
+ 	.mac_link_up = macb_mac_link_up,
+ };
+ 
++static void at91ether_mac_config(struct phylink_config *config,
++				 unsigned int mode,
++				 const struct phylink_link_state *state)
++{
++	struct net_device *ndev = to_net_dev(config->dev);
++	struct macb *bp = netdev_priv(ndev);
++	unsigned long flags;
++	u32 ctrl;
++
++	spin_lock_irqsave(&bp->lock, flags);
++
++	ctrl = MACB_BF(CLK, MACB_CLK_DIV32) | MACB_BIT(BIG);
++	if (state->speed == SPEED_100)
++		ctrl |= MACB_BIT(SPD);
++
++	if (state->duplex)
++		ctrl |= MACB_BIT(FD);
++
++	if (state->interface == PHY_INTERFACE_MODE_RMII)
++		ctrl |= MACB_BIT(RM9200_RMII);
++
++	macb_writel(bp, NCFGR, ctrl);
++
++	bp->speed = state->speed;
++
++	spin_unlock_irqrestore(&bp->lock, flags);
++}
++
++static void at91ether_mac_link_down(struct phylink_config *config,
++				    unsigned int mode,
++				    phy_interface_t interface)
++{
++	struct net_device *ndev = to_net_dev(config->dev);
++	struct macb *bp = netdev_priv(ndev);
++	u32 ctrl;
++
++	/* Disable Rx and Tx */
++	ctrl = macb_readl(bp, NCR) & ~(MACB_BIT(RE) | MACB_BIT(TE));
++	macb_writel(bp, NCR, ctrl);
++
++	netif_tx_stop_all_queues(ndev);
++}
++
++static void at91ether_mac_link_up(struct phylink_config *config,
++				  unsigned int mode,
++				  phy_interface_t interface,
++				  struct phy_device *phy)
++{
++	struct net_device *ndev = to_net_dev(config->dev);
++	struct macb *bp = netdev_priv(ndev);
++
++	/* Enable Rx and Tx */
++	macb_writel(bp, NCR, macb_readl(bp, NCR) | MACB_BIT(RE) | MACB_BIT(TE));
++
++	netif_tx_wake_all_queues(ndev);
++}
++
++static const struct phylink_mac_ops at91ether_phylink_ops = {
++	.validate = macb_validate,
++	.mac_pcs_get_state = macb_mac_pcs_get_state,
++	.mac_an_restart = macb_mac_an_restart,
++	.mac_config = at91ether_mac_config,
++	.mac_link_down = at91ether_mac_link_down,
++	.mac_link_up = at91ether_mac_link_up,
++};
++
+ static bool macb_phy_handle_exists(struct device_node *dn)
+ {
+ 	dn = of_parse_phandle(dn, "phy-handle", 0);
+@@ -695,13 +761,17 @@ static int macb_phylink_connect(struct macb *bp)
+ /* based on au1000_eth. c*/
+ static int macb_mii_probe(struct net_device *dev)
+ {
++	const struct phylink_mac_ops *phylink_ops = &macb_phylink_ops;
+ 	struct macb *bp = netdev_priv(dev);
+ 
++	if (bp->caps & MACB_CAPS_MACB_IS_EMAC)
++		phylink_ops = &at91ether_phylink_ops;
++
+ 	bp->phylink_config.dev = &dev->dev;
+ 	bp->phylink_config.type = PHYLINK_NETDEV;
+ 
+ 	bp->phylink = phylink_create(&bp->phylink_config, bp->pdev->dev.fwnode,
+-				     bp->phy_interface, &macb_phylink_ops);
++				     bp->phy_interface, phylink_ops);
+ 	if (IS_ERR(bp->phylink)) {
+ 		netdev_err(dev, "Could not create a phylink instance (%ld)\n",
+ 			   PTR_ERR(bp->phylink));
+@@ -4041,7 +4111,6 @@ static int at91ether_init(struct platform_device *pdev)
+ 	struct net_device *dev = platform_get_drvdata(pdev);
+ 	struct macb *bp = netdev_priv(dev);
+ 	int err;
+-	u32 reg;
+ 
+ 	bp->queues[0].bp = bp;
+ 
+@@ -4055,12 +4124,6 @@ static int at91ether_init(struct platform_device *pdev)
+ 
+ 	macb_writel(bp, NCR, 0);
+ 
+-	reg = MACB_BF(CLK, MACB_CLK_DIV32) | MACB_BIT(BIG);
+-	if (bp->phy_interface == PHY_INTERFACE_MODE_RMII)
+-		reg |= MACB_BIT(RM9200_RMII);
+-
+-	macb_writel(bp, NCFGR, reg);
+-
+ 	return 0;
+ }
+ 
+@@ -4218,7 +4281,7 @@ static const struct macb_config sama5d4_config = {
+ };
+ 
+ static const struct macb_config emac_config = {
+-	.caps = MACB_CAPS_NEEDS_RSTONUBR,
++	.caps = MACB_CAPS_NEEDS_RSTONUBR | MACB_CAPS_MACB_IS_EMAC,
+ 	.clk_init = at91ether_clk_init,
+ 	.init = at91ether_init,
+ };
+-- 
+2.24.1
 
---srini
 
 _______________________________________________
 linux-arm-kernel mailing list
