@@ -2,76 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D51F41614A2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 15:28:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41CDF1614DB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 15:41:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1gyFQuoUzfmS7M45Qm3q2L+Tysa+3uVxc91rbY7rLFU=; b=W9b1+07qXukT+Y
-	5E302KToST4ng12yCIZrijKU6h19X7flqQTgvpQz0L5njNmrEyBvfS5ppY/RB0xmTWJlQTb1Xs+ax
-	3b/jrdmoSppbabGTNgrFeUXMyD8tzjliiMjUtY01cDtL/Vz8FbiE/Eik2+2+uDEdXMPckt7jruIdj
-	RWLe91PjqSmGOl3x3vw3M63TBI6wM/Zrfq9FZ7Ko0StSvQ7JtWONlT8iMVfUZ3X1k9WFSCoFPGdA6
-	/nEusWqTD9yCiY/ZJ3zWkucMzO/ufFHdlhyvbTNfBRvsoN+tpOPbIn+9YLZXFpfGUYnp98d+ZcOcr
-	jVbaZKqu8x2sask3wpog==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Vd7kp2e/3W4bXYQUA1GjRV0lSln1cEorNcUx1yjBock=; b=NT8yVhNKJBXWmN
+	V2mntXnFXmnikfEjGPBm2KMA0EzXwckdI/jB5ITIoSL3dGCSGJsbgxbxq4qqJpHFivTgt42bg/5dE
+	GMfZ5O5oN+NU5pofHhzTjms5duayJ6fl8Vta7JEpRp4EN0shsbQPObMwtDyzayMtdelAO74/s4VZK
+	lj1IXRQKcXCgRTHtkuJjpDK68qy7GK5dF6P96lbUkDcOwPO7G8ws3ie6aK19vBCowb3QjxoGkQTLd
+	+9ZRXOkMQW/1wE/+nqKbHpy4yzjq950WjuxMf9koEJYUCkxEb4QYEXHgHscgebbl45EAqWoe9vpuU
+	R0fWmKEdbnVjP7TnhPaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3hNT-0000hV-CM; Mon, 17 Feb 2020 14:28:03 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1j3haI-0006i2-4f; Mon, 17 Feb 2020 14:41:18 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3hMf-0008Ic-Kp
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 14:27:15 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01HER8p6041844;
- Mon, 17 Feb 2020 08:27:08 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1581949628;
- bh=x20XuJyDG5O2+c37QkvjXakZ6PsI56wqgW7J8Vp8Wo8=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=tgRDFPOqdqWFak0bU8cCloDasY+dLYgWOyjBs0QQyqJ3140cTUTkJaX5KkmLCrIg5
- KkvdprNLDmi8wXZYwipdidm10AHKmToy0B7tJGY9lr1Si0T23BGaFcatFS84hpDm/z
- ZoJzxIyoN8+ryGgjlZ2FS8uItpsY/ctan70MOBmw=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01HER86Q065030;
- Mon, 17 Feb 2020 08:27:08 -0600
-Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 17
- Feb 2020 08:27:08 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 17 Feb 2020 08:27:08 -0600
-Received: from a0230074-OptiPlex-7010.india.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01HEQoJO033875;
- Mon, 17 Feb 2020 08:27:04 -0600
-From: Faiz Abbas <faiz_abbas@ti.com>
-To: <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <netdev@vger.kernel.org>,
- <linux-can@vger.kernel.org>
-Subject: [PATCH v2 3/3] arm64: defconfig: Add Support for Bosch M_CAN
- controllers
-Date: Mon, 17 Feb 2020 19:58:36 +0530
-Message-ID: <20200217142836.23702-4-faiz_abbas@ti.com>
-X-Mailer: git-send-email 2.19.2
-In-Reply-To: <20200217142836.23702-1-faiz_abbas@ti.com>
-References: <20200217142836.23702-1-faiz_abbas@ti.com>
+ id 1j3haA-0006hd-Dd
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 14:41:11 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01HEd51w036740;
+ Mon, 17 Feb 2020 14:41:01 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : mime-version : content-type; s=corp-2020-01-29;
+ bh=lNSy4MY7tJkmA0otKbFVvoWD69fUmaOTKq9HL2N/k5g=;
+ b=n0caQ1wrumvJUiuD2y/EgPAFj7yjuJJ68fr0zOq75KYU4eLcocxPk5kdKtETTWKQ1Uqc
+ U/+0ot+TG6ZHKh5CMv69aRrmZ22ZOe/q/IoXTgecPUBT0LoPUrd1g/DCW1dNW7Btyzx1
+ kh3cuttFsWYrsErClKBKre+PRcFBg8s6MPBU5xIQX30mmZGFnSM3TS2uYsGQLFcIA7SN
+ 8G+6pFR/JJ1Lt1m5keKtnUpwoz4J7nIf82472FsBI9TAFYxZmbHAA+s+Yge1izFCrloL
+ KdItVdNrD4dhsrSvPNahgPUQEeiCmff93wfbKLXzCVMfkCtYow62f7awb0jnpLBmohqN JA== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by aserp2120.oracle.com with ESMTP id 2y68kqrks4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 17 Feb 2020 14:41:01 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01HEbfSe125405;
+ Mon, 17 Feb 2020 14:41:01 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by aserp3020.oracle.com with ESMTP id 2y6tejawd3-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 17 Feb 2020 14:41:01 +0000
+Received: from abhmp0019.oracle.com (abhmp0019.oracle.com [141.146.116.25])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 01HEewYl015006;
+ Mon, 17 Feb 2020 14:40:58 GMT
+Received: from kili.mountain (/129.205.23.165)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 17 Feb 2020 06:40:57 -0800
+Date: Mon, 17 Feb 2020 17:40:50 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Linus Walleij <linus.walleij@stericsson.com>
+Subject: [PATCH] dmaengine: coh901318: Fix a double lock bug in dma_tc_handle()
+Message-ID: <20200217144050.3i4ymbytogod4ijn@kili.mountain>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+X-Mailer: git-send-email haha only kidding
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9533
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ phishscore=0 bulkscore=0
+ suspectscore=0 mlxscore=0 mlxlogscore=928 adultscore=0 spamscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
+ definitions=main-2002170121
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9533
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
+ spamscore=0
+ lowpriorityscore=0 mlxlogscore=985 malwarescore=0 priorityscore=1501
+ clxscore=1011 mlxscore=0 suspectscore=0 impostorscore=0 bulkscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2001150001 definitions=main-2002170121
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_062713_749549_8032F8DE 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20200217_064110_547161_02ECAD94 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -80,6 +95,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -92,37 +109,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, sriram.dash@samsung.com,
- lgirdwood@gmail.com, robh+dt@kernel.org, faiz_abbas@ti.com, broonie@kernel.org,
- mkl@pengutronix.de, dmurphy@ti.com, wg@grandegger.com
+Cc: kernel-janitors@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+ Jia-Ju Bai <baijiaju1990@gmail.com>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable configs for supporting Bosch M_CAN controllers.
+The caller is already holding the lock so this will deadlock.
 
-Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
+Fixes: 0b58828c923e ("DMAENGINE: COH 901 318 remove irq counting")
+Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
 ---
- arch/arm64/configs/defconfig | 3 +++
- 1 file changed, 3 insertions(+)
+This is the second double lock bug found using static analysis.  The
+previous one was commit 627469e4445b ("dmaengine: coh901318: Fix a
+double-lock bug").
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 905109f6814f..b25bbcf691b6 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -161,6 +161,9 @@ CONFIG_QRTR=m
- CONFIG_QRTR_SMD=m
- CONFIG_QRTR_TUN=m
- CONFIG_BPF_JIT=y
-+CONFIG_CAN=m
-+CONFIG_CAN_M_CAN=m
-+CONFIG_CAN_M_CAN_PLATFORM=m
- CONFIG_BT=m
- CONFIG_BT_HIDP=m
- # CONFIG_BT_HS is not set
+The fact that this has been broken for ten years suggests that no one
+has the hardware.
+
+ drivers/dma/coh901318.c | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/drivers/dma/coh901318.c b/drivers/dma/coh901318.c
+index e51d836afcc7..1092d4ce723e 100644
+--- a/drivers/dma/coh901318.c
++++ b/drivers/dma/coh901318.c
+@@ -1947,8 +1947,6 @@ static void dma_tc_handle(struct coh901318_chan *cohc)
+ 		return;
+ 	}
+ 
+-	spin_lock(&cohc->lock);
+-
+ 	/*
+ 	 * When we reach this point, at least one queue item
+ 	 * should have been moved over from cohc->queue to
+@@ -1969,8 +1967,6 @@ static void dma_tc_handle(struct coh901318_chan *cohc)
+ 	if (coh901318_queue_start(cohc) == NULL)
+ 		cohc->busy = 0;
+ 
+-	spin_unlock(&cohc->lock);
+-
+ 	/*
+ 	 * This tasklet will remove items from cohc->active
+ 	 * and thus terminates them.
 -- 
-2.19.2
+2.11.0
 
 
 _______________________________________________
