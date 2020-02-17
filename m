@@ -2,79 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B61E0160993
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 05:14:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A91A316099A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 05:20:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Afy04pxDrGwnyNEhZGrPBHehGc101rRrUbSYb1Ezib4=; b=b4X6LgmUeTg9IR
-	0Vanfq4Ci6I+RZ/d0lK23SXLwfHZz8BEpK4AYs8RX1d7Sy4kkFwOILKmzP4LwNPwFSft115PBIkgw
-	q7k90mp+Nm1eTGJLhqRqaMNLaOCloEP71iTRt8q3w657cfCRYi34UEpleVapcNe49LG3mMcGl/JQG
-	GRHEUPgYfyZNfZA+FOfK+R5/9kq3HgEG23N/nd8fKMDbxmwDbdmr8S82pPchJ78GTbHa4KBx7zcqT
-	awDVRtNR/wNGw0Toy67g1mtuoUwtk6y+oF20mBtLDTUzxx+K9odnPzQPyZZ5SmYOB/0/t1HwBRfcP
-	tFLZqVBIdYtN2C441OvA==;
+	List-Owner; bh=3TVegZ3Lkzb2/WpHozkHsWvu54xorDsRgpgXkzi5TkM=; b=qT5gl/pk3X+oLY
+	ocIPVOQCmKmdCyyPzdJM9SXwa4tbEJ8DKPyr/1u4bfct9cfsjnlrb2IK9c18uCzyTOOM6WvBsWS8P
+	iCOB598lpReLxZY3r+Gf+76UDILBre4N6TxP6YzLcOVcII4L/y3OPdvNRB8qduKqBd/3W/1Ed/qeA
+	/X+B/cwwZDdsutY6KikY48wHhmIOwiGxF0FRfvsAzD4IUxvafru57Aigvhtv+EMDl5/D6mt4p+OMt
+	1X36la2rislsXdi8F+CCXB/tow24i7MEpVpLktTRS2eCjSb3bb+d6sPvrjs/RX0ccB8JL761ORU3X
+	lytpeZf2iWcb8jTHAqkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3XnW-0008JS-8u; Mon, 17 Feb 2020 04:14:18 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j3Xt1-0001x0-L6; Mon, 17 Feb 2020 04:19:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3Xme-0007YC-0u; Mon, 17 Feb 2020 04:13:25 +0000
-X-UUID: 9191f5d4de4f4e56aac1213b523a3e61-20200216
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=feYX8zW0ZWQoMc1W0bskoB216n7Lm1ZtbWluuzSZ8/c=; 
- b=Lo36KXcyJL98fXOSkRjKR8lJpl5Zf+8QHayAZoZqeedhHtcX54nzAtcnsmR2QjhfextKs+z1hYA3XhD4IOhWKVdClJd7QV1D2V0KSyQsjz2y6sHWcUnipQGYblOdB3vOVS5uSN7rORYNiToZWpAPAOwkkxVnGPE/cjoN3vCKdT0=;
-X-UUID: 9191f5d4de4f4e56aac1213b523a3e61-20200216
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <chun-hung.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1904573788; Sun, 16 Feb 2020 20:13:21 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 16 Feb 2020 20:13:19 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 17 Feb 2020 12:12:23 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 17 Feb 2020 12:13:05 +0800
-From: Chun-Hung Wu <chun-hung.wu@mediatek.com>
-To: Chaotian Jing <chaotian.jing@mediatek.com>, Ulf Hansson
- <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, Matthias Brugger <matthias.bgg@gmail.com>, "Linus
- Walleij" <linus.walleij@linaro.org>, Pavel Machek <pavel@ucw.cz>, Kate
- Stewart <kstewart@linuxfoundation.org>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Martin Blumenstingl
- <martin.blumenstingl@googlemail.com>, Pan Bian <bianpan2016@163.com>, "Thomas
- Gleixner" <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
- "Mathieu Malaterre" <malat@debian.org>, Stanley Chu
- <stanley.chu@mediatek.com>, "Kuohong Wang" <kuohong.wang@mediatek.com>
-Subject: [PATCH v2 4/4] [4/4] dt-bindings: mmc: mediatek: Add document for
- mt6779
-Date: Mon, 17 Feb 2020 12:13:10 +0800
-Message-ID: <1581912790-19382-5-git-send-email-chun-hung.wu@mediatek.com>
-X-Mailer: git-send-email 1.9.1
-In-Reply-To: <1581912790-19382-1-git-send-email-chun-hung.wu@mediatek.com>
-References: <1581912790-19382-1-git-send-email-chun-hung.wu@mediatek.com>
+ id 1j3Xsr-0001wg-8X
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 04:19:50 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BE99B20679;
+ Mon, 17 Feb 2020 04:19:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581913188;
+ bh=vSJhH4hRafpBeA3RpiwKl7g8fobMI6k5ZvEMdAV6M0U=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=fwbH4t9J6U6wr0FuZn6up3R2tTvlBCdv0J+FfeIGqeOdJQuev2GFB1wC3wIuGj9CH
+ CL1msGCwJ7N+KUY+qLicZj16qmSLFHq0cIdb2lwl2H+Zu/xWqB1cJxyeHMh3cV2+BU
+ e9n2Nuq5Wxk93gyLNelA+YurjPjyxEwSP9i46gOA=
+Date: Mon, 17 Feb 2020 12:19:40 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Christian Gmeiner <christian.gmeiner@gmail.com>
+Subject: Re: [PATCH] ARM: multi_v7_defconfig: enable drm imx support
+Message-ID: <20200217041936.GH5395@dragon>
+References: <20200124084359.16817-1-christian.gmeiner@gmail.com>
+ <CAH9NwWfMwN9cRgMHPF5zPCmdmnrfX7E6cAYW8yfUGTf+t3=HzA@mail.gmail.com>
+ <CAJKOXPdM4s8DAVPh1zOt5kYyEjp4dmbseC3RdrKaVk4H41XOwg@mail.gmail.com>
+ <CAH9NwWdg5r1T9TkXAe4=3Zui2vMcnOc2UJ=e02NFbiPhb5n48w@mail.gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <CAH9NwWdg5r1T9TkXAe4=3Zui2vMcnOc2UJ=e02NFbiPhb5n48w@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_201324_095001_A0EFDE92 
-X-CRM114-Status: UNSURE (   9.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200216_201949_344422_B170E2C6 
+X-CRM114-Status: GOOD (  20.09  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,8 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,39 +79,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- Chun-Hung Wu <chun-hung.wu@mediatek.com>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- kernel-team@android.com, linux-arm-kernel@lists.infradead.org
+Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
+ Tony Lindgren <tony@atomide.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ LKML <linux-kernel@vger.kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Lubomir Rintel <lkundrak@v3.sk>,
+ Patrice Chotard <patrice.chotard@st.com>, Joel Stanley <joel@jms.id.au>,
+ Philipp Zabel <p.zabel@pengutronix.de>, Olof Johansson <olof@lixom.net>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add compatible node for mt6779 mmc
+On Mon, Feb 10, 2020 at 02:30:12PM +0100, Christian Gmeiner wrote:
+> Am Mo., 10. Feb. 2020 um 11:58 Uhr schrieb Krzysztof Kozlowski
+> <krzk@kernel.org>:
+> >
+> > On Mon, 10 Feb 2020 at 11:54, Christian Gmeiner
+> > <christian.gmeiner@gmail.com> wrote:
+> > >
+> > > Am Fr., 24. Jan. 2020 um 09:44 Uhr schrieb Christian Gmeiner
+> > > <christian.gmeiner@gmail.com>:
+> > > >
+> > > > Makes it possible to multi v7 defconfig for stm32 and imx based devices with
 
-Change-Id: Id36a136a75e892c9360ec95c7f52db06f5b308a4
-CR-Id:
-Feature:
-Signed-off-by: Chun-Hung Wu <chun-hung.wu@mediatek.com>
----
- Documentation/devicetree/bindings/mmc/mtk-sd.txt | 1 +
- 1 file changed, 1 insertion(+)
+What do you mean by stm32 based devices here?
 
-diff --git a/Documentation/devicetree/bindings/mmc/mtk-sd.txt b/Documentation/devicetree/bindings/mmc/mtk-sd.txt
-index 8a532f4..0c9cf6a 100644
---- a/Documentation/devicetree/bindings/mmc/mtk-sd.txt
-+++ b/Documentation/devicetree/bindings/mmc/mtk-sd.txt
-@@ -12,6 +12,7 @@ Required properties:
- 	"mediatek,mt8173-mmc": for mmc host ip compatible with mt8173
- 	"mediatek,mt8183-mmc": for mmc host ip compatible with mt8183
- 	"mediatek,mt8516-mmc": for mmc host ip compatible with mt8516
-+	"mediatek,mt6779-mmc": for mmc host ip compatible with mt6779
- 	"mediatek,mt2701-mmc": for mmc host ip compatible with mt2701
- 	"mediatek,mt2712-mmc": for mmc host ip compatible with mt2712
- 	"mediatek,mt7622-mmc": for MT7622 SoC
--- 
-1.9.1
+Shawn
+
+> > > > full drm support.
+> > > >
+> > > > Signed-off-by: Christian Gmeiner <christian.gmeiner@gmail.com>
+> > > > ---
+> > > >  arch/arm/configs/multi_v7_defconfig | 6 ++++++
+> > > >  1 file changed, 6 insertions(+)
+> > > >
+> > > > diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+> > > > index 3f1b96dc7faa..d213a35557ed 100644
+> > > > --- a/arch/arm/configs/multi_v7_defconfig
+> > > > +++ b/arch/arm/configs/multi_v7_defconfig
+> > > > @@ -637,6 +637,7 @@ CONFIG_CEC_PLATFORM_DRIVERS=y
+> > > >  CONFIG_VIDEO_SAMSUNG_S5P_CEC=m
+> > > >  CONFIG_VIDEO_ADV7180=m
+> > > >  CONFIG_VIDEO_ML86V7667=m
+> > > > +CONFIG_IMX_IPUV3_CORE=m
+> > > >  CONFIG_DRM=y
+> > > >  # CONFIG_DRM_I2C_CH7006 is not set
+> > > >  # CONFIG_DRM_I2C_SIL164 is not set
+> > > > @@ -652,6 +653,11 @@ CONFIG_ROCKCHIP_ANALOGIX_DP=y
+> > > >  CONFIG_ROCKCHIP_DW_HDMI=y
+> > > >  CONFIG_ROCKCHIP_DW_MIPI_DSI=y
+> > > >  CONFIG_ROCKCHIP_INNO_HDMI=y
+> > > > +CONFIG_DRM_IMX=m
+> > > > +CONFIG_DRM_IMX_PARALLEL_DISPLAY=m
+> > > > +CONFIG_DRM_IMX_TVE=m
+> > > > +CONFIG_DRM_IMX_LDB=m
+> > > > +CONFIG_DRM_IMX_HDMI=m
+> > > >  CONFIG_DRM_ATMEL_HLCDC=m
+> > > >  CONFIG_DRM_RCAR_DU=m
+> > > >  CONFIG_DRM_RCAR_LVDS=y
+> > > > --
+> > > > 2.24.1
+> > > >
+> > >
+> > >
+> > > ping
+> >
+> > Hi,
+> >
+> > It looks like you entirely skipped iMX maintainers in Cc/to list, so
+> > whom are you pinging?
+> >
+> 
+> I did use git send-email --cc-cmd='./scripts/get_maintainer.pl .. to
+> send out this patch so I am not the one to blame here.
+> 
+> Adding some imx maintainers...
+> 
+> -- 
+> Thanks
+> --
+> Christian Gmeiner, MSc
+> 
+> https://christian-gmeiner.info/privacypolicy
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
