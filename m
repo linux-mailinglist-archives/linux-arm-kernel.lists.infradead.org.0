@@ -2,59 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D190161C3A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 21:19:00 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC36C161C4F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 21:31:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ds0M7GNvMb89xf7GsKLNvRDiSJwm59UYF0L+UCNO00w=; b=sXbH5O2dRqvZHkFWzp+lZrwvi
-	CueaVHI3BiAHdc9OSCdj7DlIo0rbL6UXiIP3s0fFH8kxkV+bPhis4kiPu6V9fD9z+GA/EWjEJsKSn
-	3RJQ9soPj+hHwgQJvF+lvLZWQCMO0+xuKdFt0znGzEl24OAn7XDHL6IGmpXuaYz/cytGmHxJSpqGy
-	8kmkxwv2oHY03QmR2ZRUnr6kqHb+hANKG9nTTo7CoBGf5DLO2YY/oR9ovfNtBy7uodtuVFGQXKmPW
-	d7PSkM9JYMHD0jKdtBbD9VonqmyMs1kAqr3bDq7TPMnzHYH83o0BgtF/uxVal0KA1aemYEagjS984
-	etDySIfew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=KBda6WrEA99tDhLqp+T+mYtq8CKdW/df5LQJvuj8QPc=; b=biJ
+	mdCsXS5o4IBs3U6GUbScM9sc1WT2AyGbFT4FFnLtqUtGhGAC/5POuDN59hPEBzIbzAnAExiaAqQ81
+	8g+runV05dW1gYNWxBxw0rBpt321bpekwI1O4V0IvqLf52jmbTnEGowGAQrnBjk/R5wfExGUrjvL9
+	yd832ez2MPzb+mXhsYdL+pZaJ6sMIRF8KINm9Bm1lAW2JVARWGKn3uqpUe8d5phQa+4Z1qMzY9n5w
+	z2Q5J/Qrpgo7qugzZB8to7NOkRCaniggzsKyD4W6lFv7ZEcysMkpEZWKy6NQJVxzTdCZdCdFpFJzZ
+	NOqnfnZ5/N5dvrQFAJgdGu4OT8GkUgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3mqr-0007lj-Cv; Mon, 17 Feb 2020 20:18:45 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1j3n2g-00043x-7F; Mon, 17 Feb 2020 20:30:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3mqj-0007lL-Ba; Mon, 17 Feb 2020 20:18:38 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id AF18BAAC2;
- Mon, 17 Feb 2020 20:18:35 +0000 (UTC)
-Message-ID: <5eca1bbe77c8731f1eafd11a3bf0df25196d08d4.camel@suse.de>
-Subject: Re: [PATCH] ARM: bcm2835_defconfig: add minimal support for
- Raspberry Pi4
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Marek Szyprowski <m.szyprowski@samsung.com>, Stefan Wahren
- <stefan.wahren@i2se.com>, linux-rpi-kernel@lists.infradead.org, 
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Date: Mon, 17 Feb 2020 21:18:34 +0100
-In-Reply-To: <9330d511-dc7d-8d67-043a-acee7e6ebd73@samsung.com>
-References: <CGME20200214151840eucas1p2ccd15a69aea02a20eda1e4b6e9c8f44e@eucas1p2.samsung.com>
- <C0LZGU1IU7QO.9VKWHWJ56XZV@vian>
- <9330d511-dc7d-8d67-043a-acee7e6ebd73@samsung.com>
-User-Agent: Evolution 3.34.3 
-MIME-Version: 1.0
+ id 1j3n2Z-00042C-8R
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 20:30:52 +0000
+Received: from cam-smtp0.cambridge.arm.com (fw-tnat.cambridge.arm.com
+ [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6DE29207FD;
+ Mon, 17 Feb 2020 20:30:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581971450;
+ bh=SGQhgmuE1tkSZXILdSCmd2w9MGVUjjgoyJm9PODUW/w=;
+ h=From:To:Cc:Subject:Date:From;
+ b=lUjfK6z8//vPe6YoZPmknX2Q4DOtS3kwGZ6yfqE88PtArImv47OczZamJsFaCrljL
+ aSDvj29HxqCrBpH/zCDyexzTZ0FiAFkoRLzP70uKWym02jM8V9hg3V1YmV/iqd9VRk
+ Uqc8SGhN9pGpFx24Qig3JROweuGPPRwqXXvIz/Ck=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm: fix Kbuild issue caused by per-task stack protector GCC
+ plugin
+Date: Mon, 17 Feb 2020 21:30:13 +0100
+Message-Id: <20200217203013.20102-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_121837_542703_80F32683 
-X-CRM114-Status: GOOD (  12.27  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200217_123051_344388_4FCA4B18 
+X-CRM114-Status: GOOD (  16.38  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,83 +74,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>
-Content-Type: multipart/mixed; boundary="===============4905354602875297615=="
+Cc: Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ tony@atomide.com, Russell King <linux@armlinux.org.uk>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Ard Biesheuvel <ardb@kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+When using plugins, GCC requires that the -fplugin= options precedes
+any of its plugin arguments appearing on the command line as well.
+This is usually not a concern, but as it turns out, this requirement
+is causing some issues with ARM's per-task stack protector plugin
+and Kbuild's implementation of $(cc-option).
 
---===============4905354602875297615==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-J2gniWakOkK7NLSAQW+2"
+When the per-task stack protector plugin is enabled, and we tweak
+the implementation of cc-option not to pipe the stderr output of
+GCC to /dev/null, the following output is generated when GCC is
+executed in the context of cc-option:
 
+  cc1: error: plugin arm_ssp_per_task_plugin should be specified before \
+         -fplugin-arg-arm_ssp_per_task_plugin-tso=1 in the command line
+  cc1: error: plugin arm_ssp_per_task_plugin should be specified before \
+         -fplugin-arg-arm_ssp_per_task_plugin-offset=24 in the command line
 
---=-J2gniWakOkK7NLSAQW+2
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+These errors will cause any option passed to cc-option to be treated
+as unsupported, which is obviously incorrect.
 
-[ Adding Florian to the coversation ]
+The cause of this issue is the fact that the -fplugin= argument is
+added to GCC_PLUGINS_CFLAGS, whereas the arguments above are added
+to KBUILD_CFLAGS, and the contents of the former get filtered out of
+the latter before being passed to the GCC running the cc-option test,
+and so the -fplugin= option does not appear at all on the GCC command
+line.
 
-On Mon, 2020-02-17 at 13:22 +0100, Marek Szyprowski wrote:
-> Hi Nicolas,
-> On 14.02.2020 16:14, Nicolas Saenz Julienne wrote:
-> > IMO bcm2711_defconfig if the last resort solution. I don't think you ca=
-n
-> > do bcm2835_lpae_defconfig as RPi and RPi2 SoCs don't support LPAE.
->=20
-> Okay, if you want I can send a patch adding bcm2711_defconfig.
->=20
-> > An intemediate solution is being discussed here:
-> > https://lkml.org/lkml/2020/1/10/694
->=20
-> Right, I also agree that multi_v7_lpae_defconfig is needed. Best would=
-=20
-> be to have both (bcm2711 for quick tests of board-dedicated kernel and=
-=20
-> multi for distributions).
+Adding the arguments to GCC_PLUGINS_CFLAGS instead of KBUILD_CFLAGS
+would be the correct approach here, if it weren't for the fact that we
+are using $(eval) to defer the moment that they are added until after
+asm-offsets.h is generated, which is after the point where the contents
+of GCC_PLUGINS_CFLAGS are added to KBUILD_CFLAGS. So instead, we have
+to add our plugin arguments to both.
 
-So I understand you'd be creating a new bcm2711_defconfig based on
-bcm2835_defconfig plus whatever is needed. Sounds OK to me. It'd be nice to
-have a small kernel config to do bisects with.
+For similar reasons, we cannot append DISABLE_ARM_SSP_PER_TASK_PLUGIN
+to KBUILD_CFLAGS, as it will be passed to GCC when executing in the
+context of cc-option, whereas the other plugin arguments will have
+been filtered out, resulting in a similar error and false negative
+result as above. So add it to ccflags-y instead.
 
-Any comments Florian, Stefan?
+Reported-by: Tony Lindgren <tony@atomide.com>
+Fixes: 189af4657186da08 ("ARM: smp: add support for per-task stack canaries")
+Cc: Kees Cook <keescook@chromium.org>
+Cc: Russell King <linux@armlinux.org.uk>
+Cc: Arnd Bergmann <arnd@arndb.de>
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ arch/arm/Makefile                 | 4 +++-
+ arch/arm/boot/compressed/Makefile | 4 ++--
+ 2 files changed, 5 insertions(+), 3 deletions(-)
 
-Regards,
-Nicolas
+diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+index db857d07114f..1fc32b611f8a 100644
+--- a/arch/arm/Makefile
++++ b/arch/arm/Makefile
+@@ -307,13 +307,15 @@ endif
+ ifeq ($(CONFIG_STACKPROTECTOR_PER_TASK),y)
+ prepare: stack_protector_prepare
+ stack_protector_prepare: prepare0
+-	$(eval KBUILD_CFLAGS += \
++	$(eval SSP_PLUGIN_CFLAGS := \
+ 		-fplugin-arg-arm_ssp_per_task_plugin-tso=$(shell	\
+ 			awk '{if ($$2 == "THREAD_SZ_ORDER") print $$3;}'\
+ 				include/generated/asm-offsets.h)	\
+ 		-fplugin-arg-arm_ssp_per_task_plugin-offset=$(shell	\
+ 			awk '{if ($$2 == "TI_STACK_CANARY") print $$3;}'\
+ 				include/generated/asm-offsets.h))
++	$(eval KBUILD_CFLAGS += $(SSP_PLUGIN_CFLAGS))
++	$(eval GCC_PLUGINS_CFLAGS += $(SSP_PLUGIN_CFLAGS))
+ endif
+ 
+ all:	$(notdir $(KBUILD_IMAGE))
+diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
+index da599c3a1193..9c11e7490292 100644
+--- a/arch/arm/boot/compressed/Makefile
++++ b/arch/arm/boot/compressed/Makefile
+@@ -101,7 +101,6 @@ clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S \
+ 		$(libfdt) $(libfdt_hdrs) hyp-stub.S
+ 
+ KBUILD_CFLAGS += -DDISABLE_BRANCH_PROFILING
+-KBUILD_CFLAGS += $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
+ 
+ ifeq ($(CONFIG_FUNCTION_TRACER),y)
+ ORIG_CFLAGS := $(KBUILD_CFLAGS)
+@@ -117,7 +116,8 @@ CFLAGS_fdt_ro.o := $(nossp-flags-y)
+ CFLAGS_fdt_rw.o := $(nossp-flags-y)
+ CFLAGS_fdt_wip.o := $(nossp-flags-y)
+ 
+-ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin -I$(obj)
++ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin \
++	     -I$(obj) $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
+ asflags-y := -DZIMAGE
+ 
+ # Supply kernel BSS size to the decompressor via a linker symbol.
+-- 
+2.17.1
 
-
---=-J2gniWakOkK7NLSAQW+2
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5K9RoACgkQlfZmHno8
-x/7+CQgAlX6GuRQwDDhcjqF4J1qacdRU58hzBDuQDgSqKXrWBRseYfz6scxL16e8
-gGgBIHtSwkIsqaaJjEp/WYSYikXcQDwCBy7OS3zwe8L3UoYzV5/jJz6QZneFybTd
-VKhxnTshUc6sR1KCHdrnHIPLKK1uTAFedr1lNh6hCpGULt/j65fFWYaKCBk/BGq1
-hsYNgafWEGpN+EtnNJ0g3BBknUYtEcp8tUh1JpNK1wgYnjFKdgK5voJYwiTbEZXD
-3KyWicIpKoPUOza2OWj8desQGizfbmsqPcvcPv9MC9Vgk9Vr0pVBG1AT8t3Pz0oz
-zbPKnTOksDehURKeZzFwI5nj5/GPrA==
-=1B/n
------END PGP SIGNATURE-----
-
---=-J2gniWakOkK7NLSAQW+2--
-
-
-
---===============4905354602875297615==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4905354602875297615==--
-
-
