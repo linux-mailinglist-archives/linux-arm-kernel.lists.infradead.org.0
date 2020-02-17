@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3E4416139D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 14:34:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AA2E1613B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 14:41:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=077Td9HlJnbjSFKIyI8MvhaGijG9Oy0/tsrdVtCIchg=; b=ar3NOtV/yDHtWx
-	a1s5DdhqWH6+7+HHhlXmUQciJOPX81tQj2svvhHXZDZRB1En4I7GA+abKQpULb4ZQVEk/GpDiXjP7
-	gbB8Zpc4BWkfW1TOOv1nvA5tPNLFndYSn00KHWveLz1JqRhcH946agJ0WMlKMsrEVj6B56ORZ6Wbp
-	cUbJqbWKX899RAYkI9JEy2mN4khymPLyWGiyhyfNRpP5WDq6/a0UkZriRxNvgcfyOnsF182l1S3ye
-	kBGQdvd6AICrAvRRKFKi/mh3a/Vhv2J4sfrpLPU2odUKcF2wMxNIh7AU1Oq37Ju69WtEiDuPZDDfO
-	AHxFa6sP71Qh7PeOABnQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sWfd3OfVGOqs5c449CWvEuwCQzUVz64Qug8PqN4IJ5Y=; b=cn8gPIJ0AF1F9ArJS3jsAiOQ/
+	2aFHPSOiyb4C0rvUak5nhYEXTFQ4KfM5f7Glp9xfdb51rFIeO3zHosDplQ/hHvxHEuJQULMM7KxcZ
+	q04KTaXKppUZ885vX2uFJo5YFcl9w1jTIisWc7IiPz1QCcsBva9eKZwg37iz23mxG4HT3HVVhqaSM
+	LXhPr8brJS9Fkf1JSuGBDXsbmtWjf0j6ZAXIfB6yn3onDyD9hdC5zwiXQyeGxBqAnm51CgOtcGhSW
+	5bVg5n8VUOsqay85ohBwwDJBRYUCatJTM/N0ydBp8NSNFvOB8ob0FS75uAksN2f0Je1NhrTgdQwsn
+	DGYu3QaRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3gXe-0000js-N0; Mon, 17 Feb 2020 13:34:30 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1j3geT-00043z-7E; Mon, 17 Feb 2020 13:41:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3gXQ-0000iE-QI; Mon, 17 Feb 2020 13:34:18 +0000
-X-UUID: f94a4cd370c14d6388e0c9b079a79b60-20200217
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=nY3Ke1klULAjNa7h8M2psxk/X6t7HIt3248sL2BxSR4=; 
- b=qnAHORGVI3aJQur92wg0N4iIHjRBAJ2WyAkPw72wSAFmFZixNwIeseOxTycH74gJfPzt0N//F7o/sRpOusTvI2sMaH3sc+BzSKd9TfOoAHcwWbWxADu12PsxQT3f3Eb3qWJWq4lI/O7FNO672Hl2b44/oW/9oCbc6oeVNaq2JVI=;
-X-UUID: f94a4cd370c14d6388e0c9b079a79b60-20200217
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1012253574; Mon, 17 Feb 2020 05:34:12 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 17 Feb 2020 05:34:10 -0800
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 17 Feb 2020 21:32:35 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 17 Feb 2020 21:33:54 +0800
-Message-ID: <1581946449.26304.15.camel@mtksdccf07>
-Subject: Re: [PATCH v1 1/2] scsi: ufs: add required delay after gating
- reference clock
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: Can Guo <cang@codeaurora.org>
-Date: Mon, 17 Feb 2020 21:34:09 +0800
-In-Reply-To: <e518c4d1d94ec15e9c4c31c34a9e42d1@codeaurora.org>
-References: <20200217093559.16830-1-stanley.chu@mediatek.com>
- <20200217093559.16830-2-stanley.chu@mediatek.com>
- <c6874825dd60ea04ed401fbd1b5cb568@codeaurora.org>
- <1581945168.26304.4.camel@mtksdccf07>
- <e518c4d1d94ec15e9c4c31c34a9e42d1@codeaurora.org>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1j3geI-00043S-Gn
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 13:41:23 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 06D192070B;
+ Mon, 17 Feb 2020 13:41:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581946882;
+ bh=tbdEvdf/iPgFcEmtTo5xRVHBll2cVJBNEUT7VMieH2o=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=0y+9BYPbqi6vSSbFz5DTxlY+Gpnead5nMhaRnAy62noKXvukNSdoeYwrZGh4kDn1c
+ RQzqtxoaWV6Lf7AmhPCrvYe74cvfzZK5sGsf7DkvThIEfx8MF0nya9HeOnIFftJDNa
+ fSfx4YvR9b+0VfE9GUQm8iP6eCT5vQMoUT3Jx204=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j3geG-005vjd-1f; Mon, 17 Feb 2020 13:41:20 +0000
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 2685DCB7C055937DC0B6D9BC68FB0DDE9E72F441D9E0C6E1EBB4875D879A48E92000:8
-X-MTK: N
+Date: Mon, 17 Feb 2020 13:41:19 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v2 09/94] KVM: arm64: nv: Support virtual EL2 exceptions
+In-Reply-To: <20200217125240.GC47755@lakrids.cambridge.arm.com>
+References: <20200211174938.27809-1-maz@kernel.org>
+ <20200211174938.27809-10-maz@kernel.org>
+ <20200217125240.GC47755@lakrids.cambridge.arm.com>
+Message-ID: <6ad311202c1be408236899853f66c74a@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: mark.rutland@arm.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, andre.przywara@arm.com,
+ Dave.Martin@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_053416_890729_B03C4F31 
-X-CRM114-Status: GOOD (  15.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200217_054122_602464_15A346C9 
+X-CRM114-Status: GOOD (  15.61  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -77,8 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,72 +91,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, asutoshd@codeaurora.org,
- bvanassche@acm.org, linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ kvm@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Can,
-
-On Mon, 2020-02-17 at 21:22 +0800, Can Guo wrote:
-> On 2020-02-17 21:12, Stanley Chu wrote:
-> > Hi Can,
-> > 
-> > 
-> >> >  			} else if (!on && clki->enabled) {
-> >> >  				clk_disable_unprepare(clki->clk);
-> >> > +				wait_us = hba->dev_info.clk_gating_wait_us;
-> >> > +				if (ref_clk && wait_us)
-> >> > +					usleep_range(wait_us, wait_us + 10);
-> >> 
-> >> Hi St,anley,
-> >> 
-> >> If wait_us is 1us, it would be inappropriate to use usleep_range() 
-> >> here.
-> >> You have checks of the delay in patch #2, but why it is not needed 
-> >> here?
-> >> 
-> >> Thanks,
-> >> Can Guo.
-> > 
-> > You are right. I could make that delay checking as common function so 
-> > it
-> > can be used here as well to cover all possible values.
-> > 
-> > Thanks for suggestion.
-> > Stanley
+On 2020-02-17 12:52, Mark Rutland wrote:
+> On Tue, Feb 11, 2020 at 05:48:13PM +0000, Marc Zyngier wrote:
+>> From: Jintack Lim <jintack.lim@linaro.org>
+>> 
+>> Support injecting exceptions and performing exception returns to and
+>> from virtual EL2.  This must be done entirely in software except when
+>> taking an exception from vEL0 to vEL2 when the virtual 
+>> HCR_EL2.{E2H,TGE}
+>> == {1,1}  (a VHE guest hypervisor).
+>> 
+>> Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
+>> Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+>> Signed-off-by: Marc Zyngier <maz@kernel.org>
+>> ---
+>>  arch/arm64/include/asm/kvm_arm.h     |  17 +++
+>>  arch/arm64/include/asm/kvm_emulate.h |  22 ++++
+>>  arch/arm64/kvm/Makefile              |   2 +
+>>  arch/arm64/kvm/emulate-nested.c      | 183 
+>> +++++++++++++++++++++++++++
+>>  arch/arm64/kvm/inject_fault.c        |  12 --
+>>  arch/arm64/kvm/trace.h               |  56 ++++++++
+>>  6 files changed, 280 insertions(+), 12 deletions(-)
+>>  create mode 100644 arch/arm64/kvm/emulate-nested.c
 > 
-> Hi Stanley,
+> [...]
 > 
-> One more thing, as in patch #2, you have already added delays in your
-> ufshcd_vops_setup_clocks(OFF, PRE_CHANGE) path, plus this delay here,
-> don't you delay for 2*bRefClkGatingWaitTime in ufshcd_setup_clocks()?
-> As the delay added in your vops also delays the actions of turning
-> off all the other clocks in ufshcd_setup_clocks(), you don't need the
-> delay here again, do you agree?
-
-MediaTek driver is not using reference clocks named as "ref_clk" defined
-in device tree, thus the delay specific for "ref_clk" in
-ufshcd_setup_clocks() will not be applied in MediaTek platform.
-
-This patch is aimed to add delay for this kind of "ref_clk" used by any
-future vendors.
-
-Anyway thanks for the reminding : )
-
+>> +static void enter_el2_exception(struct kvm_vcpu *vcpu, u64 esr_el2,
+>> +				enum exception_type type)
+>> +{
+>> +	trace_kvm_inject_nested_exception(vcpu, esr_el2, type);
+>> +
+>> +	vcpu_write_sys_reg(vcpu, *vcpu_cpsr(vcpu), SPSR_EL2);
+>> +	vcpu_write_sys_reg(vcpu, *vcpu_pc(vcpu), ELR_EL2);
+>> +	vcpu_write_sys_reg(vcpu, esr_el2, ESR_EL2);
+>> +
+>> +	*vcpu_pc(vcpu) = get_el2_except_vector(vcpu, type);
+>> +	/* On an exception, PSTATE.SP becomes 1 */
+>> +	*vcpu_cpsr(vcpu) = PSR_MODE_EL2h;
+>> +	*vcpu_cpsr(vcpu) |= PSR_A_BIT | PSR_F_BIT | PSR_I_BIT | PSR_D_BIT;
+>> +}
 > 
-> Thanks,
-> Can Guo.
+> This needs to be fixed up to handle the rest of the PSTATE bits.
+> 
+> It should be possible to refactor get_except64_pstate() for that. I
+> *think* the only differences are bits affects by SCTLR controls, but
+> someone should audit that -- good thing we added references. :)
 
+Absolutely. It is on my list of things to fix for the next drop. Also,
+("arm64: KVM: nv: Honor SCTLR_EL2.SPAN on entering vEL2") should be
+folded in there (or simply dropped if we can reuse the EL1 stuff).
 
 Thanks,
-Stanley
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
