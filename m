@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D3E8161CFC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 22:54:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B91EA161D11
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 23:04:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2AzI1ztb1GpTsBUW37MkC2M2LPdy8lwX6dJlOZJqv4s=; b=Ik/r1GtipczRig
-	hlwRW86QCq6SEFN+qtacQR7GmdsLJQ3Ak7GVnYYdePnOeKe5YG3HpDLT7CyuPI75DHFaD2iOvzlEZ
-	c5y+WGIWapEgv76CiJdJyooDezYt/XBU5H0VFaBeODgX9huTWCIh32zODCeEfnITJB7J2VvoEZJHe
-	yjRyiRjrbdKyX/1rA3beJtTFxVAaq+Oncwu++qIrX2pHL9IrtQCt0ooXQhttlhCDF8NCKCvxqp4yN
-	3PeA2HEKv9LyTsRhKCel/XqC4Lj4c/JDr4TQbguL/awGAigPLNAlF6pIJ1NAWUhSsHqrULxf8hqU9
-	L+LRqzMtv1GJsA4BAK4A==;
+	List-Owner; bh=kauSL1z1ZPnwGCFN7xAja8/TpLKkA6LIrebaYrluBLc=; b=pP2jbmJ3DbIwd5
+	ejg69mlasdz0XNqb7ELyt3e+6GhRGS/gEqnABJexS2x1cX02QDCBW7QMSD3X6HY8vYEBH2NPc+8Si
+	HzmP1yeczWUPE0TK9IpGsBOKt6QwxCB3TFd4viPuFXaQ9cdTLnFDqMTnEBtvj8+xUOrf4XKkKDe5j
+	y9MaQMF5ghQM2sw1beL3BJUo+01DZH6Rre9/qMcKUkAOOhgvW7jfi+Hz2g8cYI6XrRa6jEnK2Lemy
+	/mrfnXibI8tIKl1CB3Fqyl1012sSgPiczbrr6+iGf0t4n8/py9by8uGgu0Ki7flpplmUTzBK0yLRY
+	JgkjQSjSwlQrJcXwsrmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3oLc-0001F8-QS; Mon, 17 Feb 2020 21:54:36 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1j3oUi-0005Ot-6m; Mon, 17 Feb 2020 22:04:00 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3oLR-0001Dw-1K; Mon, 17 Feb 2020 21:54:26 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id d5so91336pjz.5;
- Mon, 17 Feb 2020 13:54:22 -0800 (PST)
+ id 1j3oUZ-0005Nw-1t
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 22:03:52 +0000
+Received: by mail-pf1-x443.google.com with SMTP id s1so9580602pfh.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Feb 2020 14:03:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=9KA1cnON9nUgBOcd91Cxk/05DvN8hThYvAOFcclMh1Y=;
- b=Q3PqCm4qE9SOHGD208WoXpqkux34hF4KBQB9WS7+fwK83X5XF23wlRt1tc28LiqWC1
- zhGdZgrli2zLdyAuu+frCP836+MrTnBYnjWx8TvhhyCZi6S09ARZZxsbo8RefRTzadpx
- 6uvfy30duUgokd6raMYdcG+TTEWSbPw0gvjazL8n40UJAfd2eURkia0d05b5UPqyL1YB
- oMS+ZjSptBMNzXwsQoI03hUVtR8pt3ugpIF286AT3XJfs6LiQtcs2gZPcVI/RGDo1vWZ
- j/xgKhoQvrXLbzV1Z/pz2UynwaclRhB0qojfc+Ajf18wARuf9t28Ynu6dy9v3n6NgZmv
- zXEw==
+ bh=MpnrrTwvxmB8X9MwQWOuT52px/VnZrMnem9goyDgFE8=;
+ b=K4vdyevui/DtENS6p1ri3a+XpKfU76OG48i0+k7S+cfYDn85XFn0ExVmOykI/Xbpdm
+ zLBtQAsnKTDbxeNbo78m13c50l1FaXLpo/uJ8A8arUnrDdpLuTBUmJcjOKBdBSLRB8Fa
+ ADL8oxRwgdyu8yM4uWsxI4J4s9USN/wcE5sdfWIXsFQu+msXuozv5PmuB/bfSC+yKb7q
+ xLABLd4I5/usF8Bn1ypK5MT2ebFjy6Z1DKGhM8OcJiizhBk13fhzJSwnNErifib8+Oke
+ l4O5fP9Fp62tvGrzU6QUrs+wubf9rU6K7qnzUy1OVHsgjR/tQdDBwid8fFkje88m2Rd6
+ Iwdw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=9KA1cnON9nUgBOcd91Cxk/05DvN8hThYvAOFcclMh1Y=;
- b=RDcle7RSl+tiwDh5BaruvxV9SFbeFFu5IRHBOkQsGOuFaylRGLgHZgA1rQdPe8Hj22
- pGhWKyT0SeRoseLw6CyLZoQik21RwOG0GSBhSJiqneh1bOe38iUkWQ2xXam9Bv8QHIe8
- qEZFoj7iD3lhc1qhNyR9NxZ2ZbKCRAwnNDo6Dg4RJQuXf2YW4dBJH59MLALVNpBaBy0e
- 86klE/oD33IxkKf/YVJFCNOxRpctQtvfs+DMGHmfuX7gksx2AAolHQO8WWAFIILlAO2H
- qr7+Xz3M5H2k2e4lrmoFEUM+F9yoVp2WA+oE97uKdzNtoVcetsfqYZX2RReVFMuhLz+6
- UNRA==
-X-Gm-Message-State: APjAAAXlMUn/Dpy1Z1aGcQ0113CFM9h/T4sX/aKbXaUtLtrdQQQhhepY
- BBizeZ+zWMJLhcSYFN+cMxu6hisN
-X-Google-Smtp-Source: APXvYqwIN0mG3yrvjqj0Tz2YLNRZE2hRGjDdk03WJVa4J3yo2qkTUyOqGS0kXguh0YPvsFQnm8GwZg==
-X-Received: by 2002:a17:90a:a409:: with SMTP id
- y9mr1217614pjp.119.1581976462299; 
- Mon, 17 Feb 2020 13:54:22 -0800 (PST)
+ bh=MpnrrTwvxmB8X9MwQWOuT52px/VnZrMnem9goyDgFE8=;
+ b=PFnl4ZMSS4NvpQC5nFAvqwEZnUlxG9lRhZRZOEwMKXawBxUjqtl8/mHWJ9XIdphpvF
+ DAGfWNJh0R7aNSluMy9gqBGsDW6PYvrbTGZ+kJN1RVW7YntGLw5NvS5jE+QdHg+zVHAo
+ n0FzTqR+xsE4iBJ07x7x5eDZ09Rrc1p/0og6D4xqVIVtaE/tD1o5aK7kppNQ5lg/j3y0
+ ZkorHJ0MwQJV8dQy4oUcQx+0ykmH/o/K1HsOqnU+hpFm2Aky2SVcPHf6TXga2Tn1FP6v
+ 9MiFTRonFkjguM/ljb5ClwkzrIH3Bsno0oIcdAaZF8FCBuRdywy2Fi8eo+PMiy5rFA0/
+ weog==
+X-Gm-Message-State: APjAAAWkqXcRyZMXGC+2dpEjqUA/NfksA71oHC236w7ceCvcBv4u2R3y
+ sDwTu73yf3eFueRJRhjvah8Jzyag
+X-Google-Smtp-Source: APXvYqzAADBeQF5bTlV+b2RFpffc85ccEIT2eMWpGO+xygC7FiGwy8RDomLpp28a4JUv5krkXDcp3A==
+X-Received: by 2002:a63:2266:: with SMTP id t38mr20239443pgm.145.1581977029751; 
+ Mon, 17 Feb 2020 14:03:49 -0800 (PST)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- d15sm1968963pgn.6.2020.02.17.13.54.20
+ l1sm391962pjb.28.2020.02.17.14.03.48
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 17 Feb 2020 13:54:21 -0800 (PST)
-Subject: Re: [CFT 1/8] net: phylink: propagate resolved link config via
- mac_link_up()
-To: Russell King <rmk+kernel@armlinux.org.uk>, Andrew Lunn <andrew@lunn.ch>,
- Heiner Kallweit <hkallweit1@gmail.com>
-References: <20200217172242.GZ25745@shell.armlinux.org.uk>
- <E1j3k7e-00071q-3R@rmk-PC.armlinux.org.uk>
+ Mon, 17 Feb 2020 14:03:49 -0800 (PST)
+Subject: Re: [PATCH net] net: macb: Properly handle phylink on at91rm9200
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>,
+ =?UTF-8?Q?Antoine_T=c3=a9nart?= <antoine.tenart@bootlin.com>
+References: <20200217104348.43164-1-alexandre.belloni@bootlin.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -118,21 +119,24 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <16f6912c-84a9-f1ab-6688-6a55ebf34270@gmail.com>
-Date: Mon, 17 Feb 2020 13:54:19 -0800
+Message-ID: <661c1e61-11c8-0c54-83a2-5e81674246e0@gmail.com>
+Date: Mon, 17 Feb 2020 14:03:47 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <E1j3k7e-00071q-3R@rmk-PC.armlinux.org.uk>
+In-Reply-To: <20200217104348.43164-1-alexandre.belloni@bootlin.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_135425_104910_AEF475F9 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20200217_140351_126589_AF2CB044 
+X-CRM114-Status: GOOD (  14.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
@@ -155,20 +159,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-stm32@st-md-mailman.stormreply.com, Felix Fietkau <nbd@openwrt.org>,
- Ioana Radulescu <ruxandra.radulescu@nxp.com>, Jonathan Corbet <corbet@lwn.net>,
- Michal Simek <michal.simek@xilinx.com>, Jose Abreu <joabreu@synopsys.com>,
- Jakub Kicinski <kuba@kernel.org>, Vivien Didelot <vivien.didelot@gmail.com>,
- Sean Wang <sean.wang@mediatek.com>, Alexandre Torgue <alexandre.torgue@st.com>,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
- Mark Lee <Mark-MC.Lee@mediatek.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "David S. Miller" <davem@davemloft.net>
+Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -176,32 +168,35 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 2/17/2020 9:23 AM, Russell King wrote:
-> Propagate the resolved link parameters via the mac_link_up() call for
-> MACs that do not automatically track their PCS state.
+On 2/17/2020 2:43 AM, Alexandre Belloni wrote:
+> at91ether_init was handling the phy mode and speed but since the switch to
+> phylink, the NCFGR register got overwritten by macb_mac_config().
 > 
-> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> Add new phylink callbacks to handle emac and at91rm9200 properly.
+> 
+> Fixes: 7897b071ac3b ("net: macb: convert to phylink")
+> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 > ---
 
 [snip]
 
+> +static void at91ether_mac_link_up(struct phylink_config *config,
+> +				  unsigned int mode,
+> +				  phy_interface_t interface,
+> +				  struct phy_device *phy)
+> +{
+> +	struct net_device *ndev = to_net_dev(config->dev);
+> +	struct macb *bp = netdev_priv(ndev);
+> +
+> +	/* Enable Rx and Tx */
+> +	macb_writel(bp, NCR, macb_readl(bp, NCR) | MACB_BIT(RE) | MACB_BIT(TE));
+> +
+> +	netif_tx_wake_all_queues(ndev);
 
-> -static void macb_mac_link_up(struct phylink_config *config, unsigned int mode,
-> -			     phy_interface_t interface, struct phy_device *phy)
-> +static void macb_mac_link_up(struct phylink_config *config,
-> +			     struct phy_device *phy,
-> +			     unsigned int mode, phy_interface_t interface,
-> +			     int speed, int duplex,
-> +			     bool tx_pause, bool rx_pause)
-
-I have not been able to find an answer so I will ask this question, why
-not pass a const struct phylink_link_state reference here instead of
-splitting those link settings as individual function parameters? Or
-maybe introduce a phylink_link_settings comprised of all of those 4
-settings and embed it within phylink_link_state as well?
-
-You would obviously need to squash patch #1 and #2 past this submission
-stage to avoid bisection build failures.
+So this happens to be copied from the mvpp2 driver, if this is a
+requirement, should not this be moved to the phylink implementation
+since it already manages the carrier? Those two drivers are the only
+ones doing this.
 -- 
 Florian
 
