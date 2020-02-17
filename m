@@ -2,64 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 14D31161A80
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 19:48:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7AFC161B0D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 19:52:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KLYzL1J+7FY0cSL/phNck4FXTnEcm5M5Tu8o3y75iN8=; b=eudHS/T694OgPd
-	h9Ak5i69sreXikda301TOMm8q2LY2m0Ujh0l/duQRHP8s/u9BXUELIMU12OtDw3UsMcEjRDg6LyZN
-	UR0mKh1kz2DXmxQG9851nNY9eU31nHSBZVc4sKeUTrBgFgxKnJPbmhgbazHYO7FBZAmr6juShUMFi
-	gG0Psw6lfb1dGFqgma7oTJRTCHoUoD9rf3DB5GAtnM7Tu2Q4Ru7UWg6yaSBfu+5lc0qmBUkCZWmUP
-	UsboQtIvLlurYxvdnaj+0wzB6RBJVcOE9YzfjpJYU+UtCkiwV7QSeqqLut15obZ8iI/W0dtml+aiF
-	3ViiWqF8r95yMkqWY94Q==;
+	List-Owner; bh=1GDwZcrLqfcWwNfwzzPJB37uAhA6JrqNAvkVAR60+BE=; b=WdAJ9rqCZSJxOS
+	O3O7ZDDVCJ7wZxzx+YJaWkAZrb6wMAhhkHuiLoGpUFKWth8ftrusSSE5AmQvOEaTBaLBa7RqJxfp5
+	Bh4wOLdnLUuQFCDOoeeisiAFArcGMt6Xyc2xk7W1E/hNiewdGC97aAtlEfSI+y3vEAeSiqUukAyv6
+	GG5cZLhg9JYYl9eQFg6gIPgLC7OJFRpoJhhI6+mtnWF/3C8EXveVc98773QARmQ+DjqMViLJlsBA4
+	Jq52tQ0TCVbWEMIZz9SOAsqnM42fa0yhiLKCHNhe9j9PAO7DqY1nXEYceWr3jc0/9Q+eX24M47jfx
+	r/0k/Uj6MCDYJkOyf1Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3lRx-0006ml-CR; Mon, 17 Feb 2020 18:48:57 +0000
+	id 1j3lUz-0000Cc-Kp; Mon, 17 Feb 2020 18:52:05 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3lRn-0006kT-VN; Mon, 17 Feb 2020 18:48:49 +0000
+ id 1j3lUs-0000Bx-EF; Mon, 17 Feb 2020 18:52:00 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=GZnbZhFy+lu7UoJn/uqADUzy5uOIWmqyjmegoMJD5DU=; b=XQkKRMghvaybOVtjeWzCIfAFj
- 79Pl+ZqFkk9k5pm6T0vp9t5AfT7YaPQznK9puDEjmS3gmoATKi7DxblvVje/UvYw7dAUcK/fNzSds
- IHSdyrA/J+2A7LWOZV1HjHvpCByPVnNNiovaH1bMq7zrIA9h+geUE2K3rQiPE3+15nu10S7ikAbZ/
- q+H8SSr+EpoIhr9Jksv4OULdGc0hGAkBUG0MEryCj21Kr0+CGqcYyElmMFRF4A0ZRbD26Fm7ZAaw6
- BQMJxd9fRmVDs8/caQWCHjds/DfQHWlyOKrLA7VR5DSrya/NziLrRTnV8O4oBGTaEvFQKd9E/fRZj
- iRg271EQQ==;
+ bh=KvB6f7fGXolTqd/wL5HLgEvOSRwBBfxjMW4EXoEa9po=; b=yhcdWpgXTLtsE1Z1omWazoICP
+ DWJVggwX8ttrSOzK7AZnClBhh+SAi72l40EFLARh3Jt0rVM2r6xk1Jz88S9JIiJbImkK1IPxmu0/e
+ BU5wTD4PxDU4Vxrpj/2JsoAWktKHWB3LiN7E0FMjcZEE9aSIe+YD3fGyyaWanHJD01AyaRf+mfC/X
+ vfmW1ikUx1qrGertc+ueZLBDpuy2NdsBjPL/GjHm6b22OVdCPM3bfgQ9cLdBFmM0V2Zg1Jc85HXxO
+ oNRaL6CyA4ZnRywnqi5b7IVcoTtCVvXeqnXTixlkAA/EftaDf56IEL9tJAX8V7/7DEnxIs1Z8zlRP
+ 5zZhq40hg==;
 Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:49148)
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:41636)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1j3lRK-0002We-Hs; Mon, 17 Feb 2020 18:48:18 +0000
+ id 1j3lUU-0002YH-Ho; Mon, 17 Feb 2020 18:51:34 +0000
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j3lRE-0006XW-5L; Mon, 17 Feb 2020 18:48:12 +0000
-Date: Mon, 17 Feb 2020 18:48:12 +0000
+ id 1j3lUR-0006Xg-CX; Mon, 17 Feb 2020 18:51:31 +0000
+Date: Mon, 17 Feb 2020 18:51:31 +0000
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Matthew Wilcox <willy@infradead.org>
-Subject: Re: [CFT 1/8] net: phylink: propagate resolved link config via
- mac_link_up()
-Message-ID: <20200217184812.GB25745@shell.armlinux.org.uk>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [CFT 0/8] rework phylink interface for split MAC/PCS support
+Message-ID: <20200217185131.GC25745@shell.armlinux.org.uk>
 References: <20200217172242.GZ25745@shell.armlinux.org.uk>
- <E1j3k7e-00071q-3R@rmk-PC.armlinux.org.uk>
- <20200217180359.GK7778@bombadil.infradead.org>
+ <20200217173324.GI31084@lunn.ch>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200217180359.GK7778@bombadil.infradead.org>
+In-Reply-To: <20200217173324.GI31084@lunn.ch>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_104848_054587_A59EBEBC 
-X-CRM114-Status: GOOD (  11.07  )
+X-CRM114-CacheID: sfid-20200217_105158_520885_DA32DD2A 
+X-CRM114-Status: GOOD (  12.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,42 +86,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, linux-doc@vger.kernel.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+Cc: linux-doc@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  linux-stm32@st-md-mailman.stormreply.com, Felix Fietkau <nbd@openwrt.org>,
  Florian Fainelli <f.fainelli@gmail.com>,
  Ioana Radulescu <ruxandra.radulescu@nxp.com>, Jonathan Corbet <corbet@lwn.net>,
  Michal Simek <michal.simek@xilinx.com>, Jose Abreu <joabreu@synopsys.com>,
- Jakub Kicinski <kuba@kernel.org>, Vivien Didelot <vivien.didelot@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Mark Lee <Mark-MC.Lee@mediatek.com>,
  Sean Wang <sean.wang@mediatek.com>, Alexandre Torgue <alexandre.torgue@st.com>,
+ Hauke Mehrtens <hauke@hauke-m.de>,
  Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
  linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  Giuseppe Cavallaro <peppe.cavallaro@st.com>,
  linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
- Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Vivien Didelot <vivien.didelot@gmail.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "David S. Miller" <davem@davemloft.net>,
+ Vladimir Oltean <olteanv@gmail.com>, "David S. Miller" <davem@davemloft.net>,
  Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 10:03:59AM -0800, Matthew Wilcox wrote:
-> On Mon, Feb 17, 2020 at 05:23:54PM +0000, Russell King wrote:
-> > +   Please see :c:func:`mac_link_up` for more information on this.
+On Mon, Feb 17, 2020 at 06:33:24PM +0100, Andrew Lunn wrote:
+> On Mon, Feb 17, 2020 at 05:22:43PM +0000, Russell King - ARM Linux admin wrote:
+> > Hi,
+> > 
+> > The following series changes the phylink interface to allow us to
+> > better support split MAC / MAC PCS setups.  The fundamental change
+> > required for this turns out to be quite simple.
 > 
-> FYI, Jon recently added the ability to specify functions as
+> Hi Russell
 > 
-> +   Please see mac_link_up() for more information on this.
-> 
-> and it's now the preferred way to do this.  Nothing that should stand in
-> the way of this patch-set, of course.
+> Do you have a branch i can pull and test?
 
-Thanks for letting me know - it sounds like the subject of a future
-patch to convert all instances.  In the mean time, I suggest keeping
-to the current style in the file for consistency...
+Nothing beyond the branches I've mentioned in the previous heads-up as
+yet, sorry.
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
