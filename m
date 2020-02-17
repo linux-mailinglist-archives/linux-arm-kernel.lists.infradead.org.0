@@ -2,91 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A68E160B80
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 08:21:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CE32160B8F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 08:28:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wqIh+sMO1LS+wXrP5JOktpGqVHUYH6gI9M2al2+Fuf4=; b=OmIOEzhMIESORN
-	r4z/jpj8hdGLskTW8jQfpIzqnubKiLEC0Y2MKGq5WjLJQSHDmHKtaCf0uGhH4X74BktYXs7reIJhm
-	s98N/Q9clkQxWAB9Hxw+BwUazvFGC2J+GAGa3i/hGRZYxfQmIKES2Br1nvmcqaniQo0lVj6+bpqoj
-	72+CAp7I/VlMJycEnmC+rUZuQwHUrAGole+1up50RXRdbjmiputqTt4JSLVxitKw6zDlvjEgD6L9k
-	aYNJ0YylgZ53VxBJjoOlg8QDIrMKflRHCkrHI3DHLiGi4VRmfFanHWOjiOecUAKjhrpxbKcvGlJJS
-	mi4Qc3zl4xeQKjlkYhBw==;
+	List-Owner; bh=T5D/jWb5vdvUH0CZDK2NcVK0adTx133exQ7laqS8q4M=; b=aNAqqr41fzuCuD
+	qAyMJOGOz5sH3rSOoiM76ikLWT+8VdNrvwH6jsBi6XZSFGjXTq5biZ6TqEzlZDufHItkRlEeg+OqK
+	ZfH8uIjosHhnxlyW/EMxlTpNuQY+Di1Rrlhtg4jO7ZNIi0oJstv9PeQfOxu5KTi7MwV/4hg+s/qp3
+	zfxGRQJS/VrqM5uTAwl9tjb0HJgAjLt0YyC5vjRFdMxYuO2FcZpHSfY3dSfKuKNmFFHDvrDLWYul+
+	eVRqi+KfPSNcc+jqiOj8EHW7xG4LRj+5678KOpAq9tnBIAGWgR9uXJOSHwAWDHodD2OlidlCmQ60K
+	8Zj7hpf9n6PrBcCR0dpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3aiM-0003RV-Dk; Mon, 17 Feb 2020 07:21:10 +0000
-Received: from mail-ed1-f43.google.com ([209.85.208.43])
+	id 1j3apa-00056m-Ax; Mon, 17 Feb 2020 07:28:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3aiE-0003Qw-QS
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 07:21:04 +0000
-Received: by mail-ed1-f43.google.com with SMTP id e10so19465473edv.9
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Feb 2020 23:21:01 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=scxVOt7vJ8XADBjS9Kw7nULEogoDx5VlxsaehXEQC7Q=;
- b=EF65aDqqhztGydO2m8jQeYNzsu52JfAHBx7/UCCxy2usMpqtsCG9fMpaehmp5Cm0qp
- qZVrhYsErg500DGI8AGMmmwHktPqDCCff2yVakX5Y7AQ1Y3XG1PvJE/ipPLUt9ob8GXS
- mwJtU43EgcFqzWty0vVJwk7D7qMVprOJot0F+oBwpPyzquJC3Qm+uTaP1VNx4kIZH4bF
- LkcPEO14JY35yuC5LGpl2MptiwrIw0VYIYRdsF6twacXqDidKUF5zcywgmZ+sUSxG4Z8
- yCDpvFyBjwdUbCLMcGRpUPeIltUOMirkbZhFFw3H9hLyv2bgNkw58z1B/LHZ43CguCzO
- Coig==
-X-Gm-Message-State: APjAAAUrdsJ7ulTV/zy1TTLrVSkqEFSsy6/Ix4Il12sM4vISyYhFN4Uw
- ns9auj1BArZYV/kEWyPdL4i/aBALI9w=
-X-Google-Smtp-Source: APXvYqyHsSggKhmH+ic9X33635YftWzIs1qJD37tBZ+8OAVV7vc3Rym/0GJKFVYYiuGWxLoQvXZyvg==
-X-Received: by 2002:a17:906:a950:: with SMTP id
- hh16mr13502842ejb.75.1581924059323; 
- Sun, 16 Feb 2020 23:20:59 -0800 (PST)
-Received: from mail-wm1-f51.google.com (mail-wm1-f51.google.com.
- [209.85.128.51])
- by smtp.gmail.com with ESMTPSA id v16sm808433ejx.5.2020.02.16.23.20.58
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sun, 16 Feb 2020 23:20:59 -0800 (PST)
-Received: by mail-wm1-f51.google.com with SMTP id a6so17187036wme.2
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 16 Feb 2020 23:20:58 -0800 (PST)
-X-Received: by 2002:a1c:7915:: with SMTP id l21mr19642112wme.112.1581924058371; 
- Sun, 16 Feb 2020 23:20:58 -0800 (PST)
+ id 1j3apP-00056T-41
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 07:28:28 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AA7F320702;
+ Mon, 17 Feb 2020 07:28:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581924506;
+ bh=cPS7LQHL3jV9vM0N4GPZ8EkMZtcszWpjOmq6/0CNaa0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=AN8qdv9DhHJQyyGcNkA95/2kh6i0Gvl2FdI42Hdcto5Qy/Eo6udniNB550h8YIKYF
+ 5QV6idsBFxePUyBV66uEZgnl55cCJ7KbHMb45ZLMbQBMBN5XcxkQdzk4hKTr3ElB87
+ FNj/9KKjT5tST2sU/1QbFUgIbe99lSAGE1z4Qw/U=
+Date: Mon, 17 Feb 2020 15:28:21 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Robert Jones <rjones@gateworks.com>
+Subject: Re: [PATCH v2] ARM: dts: imx: ventana: add fxos8700 on gateworks
+ boards
+Message-ID: <20200217072820.GE7973@dragon>
+References: <20200214210155.32518-1-rjones@gateworks.com>
 MIME-Version: 1.0
-References: <20200217021813.53266-1-samuel@sholland.org>
- <20200217021813.53266-8-samuel@sholland.org>
-In-Reply-To: <20200217021813.53266-8-samuel@sholland.org>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Mon, 17 Feb 2020 15:20:47 +0800
-X-Gmail-Original-Message-ID: <CAGb2v67R7ObOSnU3o400PWNtnSFouNUait9ULP_1NQs4YnDccA@mail.gmail.com>
-Message-ID: <CAGb2v67R7ObOSnU3o400PWNtnSFouNUait9ULP_1NQs4YnDccA@mail.gmail.com>
-Subject: Re: [PATCH 7/8] ASoC: sun50i-codec-analog: Enable DAPM for line out
- switch
-To: Samuel Holland <samuel@sholland.org>
+Content-Disposition: inline
+In-Reply-To: <20200214210155.32518-1-rjones@gateworks.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_232102_857882_BD7B8D6F 
-X-CRM114-Status: GOOD (  11.09  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200216_232827_185011_4B7EB1B3 
+X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.43 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [wens213[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [wens213[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.43 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,31 +78,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Luca Weiss <luca@z3ntu.xyz>, Linux-ALSA <alsa-devel@alsa-project.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Takashi Iwai <tiwai@suse.com>,
- Maxime Ripard <mripard@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 10:18 AM Samuel Holland <samuel@sholland.org> wrote:
->
-> By including the line out mute switch in the DAPM graph, the
-> Mixer/DAC inputs can be powered off when the line output is muted.
->
-> The line outputs have an unusual routing scheme. The left side mute
-> switch is between the source selection and the amplifier, as usual.
-> The right side source selection comes *after* its amplifier (and
-> after the left side amplifier), and its mute switch controls
-> whichever source is currently selected. This matches the diagram in
-> the SoC manual.
->
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
+On Fri, Feb 14, 2020 at 01:01:55PM -0800, Robert Jones wrote:
+> Add fxos8700 iio imu entries for Gateworks ventana SBCs.
+> 
+> Signed-off-by: Robert Jones <rjones@gateworks.com>
 
-Reviewed-by: Chen-Yu Tsai <wens@csie.org>
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
