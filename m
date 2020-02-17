@@ -2,67 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24973161257
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 13:51:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1539916125B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 13:52:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=DBO1hC/qrREYAfSGt26OESLR6i9d6aJWpRzJdu/XmNw=; b=sxf
-	ONcyqAuUUOmQw+mqJVFnVC1kjwMhKgQ4O/PFGlwgxawl2rNQcelPqNxKU2bTCJjYhjwgD/uFmbc1W
-	a7e7K2Zvt7vrhk3tf9ljpXJGRoRIIKjGO2FAErtCzHi3vhoE6efgz6emO8atKAn4lXWPpcBHgLafl
-	gaPI8IVWOEiv1rxxVZe6jxIaIY3N4HmopNPIrW4Ro93i1+95GXzEm7X8V0X29fiR3GgGMm+BgDoDq
-	8R+FAr2PD4Fp5f21d15/1rA4s+Bxmko5P4a2sPSWQk0GDz3WjUCqyaprdXCEAJfnC2grQHtSaNF+X
-	BXM3ctDwJiga2edUluhkPg1HmhbRBHA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EojPOh/h2cia7E3XClGhamusFruMIm2DhIar4ThzXBI=; b=mlGTMrc6GvkaHS
+	fO8W5kDu6iycy8rKBZ3OcPT8qWcY6WcbXTqCglwWCOfj/qCpFElQ+YxhNigDjJKBrlQ4/tvFSRQLf
+	ROtzP+eRkyOwxyQlqUWNmdGsHvOETz5VfaMZgm5eUUg7vJDpHfVoikY1Lhww48F6HfolD+4DcBkk4
+	yx57/0ejnq12k9FYT+8LC4efyOIBgqMNlfvMfa7TQ+ZES0FYru6w+JVhu+crQwwYJ/8RXe+VNOpOC
+	8KG+dV9odhEQde2n91DgVKQ9bQnL4U/yBfBO39VUVAdepC4s+oPo4nk59iPHUGxc+AhB/Qnec84s4
+	9+pOBbiW0Qnl4C/NW2vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3frm-0004Wj-FR; Mon, 17 Feb 2020 12:51:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j3fsW-0004pd-CQ; Mon, 17 Feb 2020 12:52:00 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3fpr-00025Z-ID
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 12:49:42 +0000
-Received: from cam-smtp0.cambridge.arm.com (fw-tnat.cambridge.arm.com
- [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 868B92072C;
- Mon, 17 Feb 2020 12:49:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581943754;
- bh=D403G/YENHvhqBWOmrOQMEX7W27nh42rLWvxW8PMMEE=;
- h=From:To:Cc:Subject:Date:From;
- b=OwNExcCEwfzsIz6C8+QYcZouE03UOHjvkxMMqHUooV+go869y+lHqqR0isAirg5LR
- xb16eKQDhndrUPPkAsJaWmb15u9l8RsBCAwb4kXd2XrKYMyHoRul6yP5rmvrT77QIm
- h5GYmBp8s1JSC+Obk8Fn0xL+5B6uOMvNXsJMrwxo=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-efi@vger.kernel.org
-Subject: [PATCH] efi/libstub/arm: make efi_entry() an ordinary PE/COFF
- entrypoint
-Date: Mon, 17 Feb 2020 13:49:04 +0100
-Message-Id: <20200217124904.16331-1-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ id 1j3fs0-0004oG-UD
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 12:51:47 +0000
+Received: by mail-lj1-x243.google.com with SMTP id d10so18733294ljl.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Feb 2020 04:51:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=ragnatech-se.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=p7FyknOVWX4R66SQBUeluzCkbXYT5k3MWupHr8k4D/8=;
+ b=XJTQskTtjB9nRx0EqNx0e1ef/CbZIlzPBT3l2uJDbVpIDl7JcA3woZYVlHUethVpDH
+ YbTL2ncyQtSaEwj1AUz98VE0quMA2gR64qDB6Sfdmax/UgGFyadIQcx/kDPNudVtXoIc
+ Tro5D65MrhYZ6ph6ggmoFe0yeouvCrc57EN6Lf9vjACarrg9mFXnSTahJugL5Ekg3znK
+ WO9pkYrxSZkwHZfrJWL8rJNDEDJ/RR+3tKRILNjlSte6PoHdHYuhrJlcK/MVaKgerDPR
+ 1MJtoKXnq3KVUZwJHBvdLaG7mRR3FlNb/Cem+SUrVCjV9D9YHg/V6CjCpYpiq06A62Sj
+ iM4Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=p7FyknOVWX4R66SQBUeluzCkbXYT5k3MWupHr8k4D/8=;
+ b=NoJwc4kAxzU7Mqg7732VvbVtVogOtiVa53Azp90mEm6/McVpd1bqn5dYNsahyy8Cum
+ g5Rb2qz6ePNQOmesf+AG0diQtWmeEOBR3DmZaLfCbGfvphl2wXJuoNljPp2+pUiN3C9y
+ AYiMOmMBoQhFSzMvyCiuL5UMhLA8tRefm5CkxcQROVUc12VRW1/GR/lm69G0xAHs/7c2
+ Yesh5MLKbuwcoi8hfz2Kiv+AVty3TydPdyWlWAsDIZwIkg/2QLXSgKIER85XJ2u4Y0TG
+ CYcLVRhEsREdz3C2z20VJwpzKnAt0jdNV+GYd2oyB38m6tmq9wDcxHgvRXNN0naVybza
+ PxfA==
+X-Gm-Message-State: APjAAAWxLXRk90OR68x6AFtfTMMkhpP9/KnN2GC4fUT67O5iLt9wE+cq
+ 78pmvIhIch/d4QVbcqdaLw5NuA==
+X-Google-Smtp-Source: APXvYqxzNR3oKfgSKx256hPNVC4uZ8AYONQFRUjzyGqicN8jQhPOemT9wO+bN2D3q646sS/kUsDJag==
+X-Received: by 2002:a2e:3c05:: with SMTP id j5mr9246844lja.131.1581943885970; 
+ Mon, 17 Feb 2020 04:51:25 -0800 (PST)
+Received: from localhost (h-200-138.A463.priv.bahnhof.se. [176.10.200.138])
+ by smtp.gmail.com with ESMTPSA id k25sm353697lji.42.2020.02.17.04.51.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 17 Feb 2020 04:51:25 -0800 (PST)
+Date: Mon, 17 Feb 2020 13:51:25 +0100
+From: Niklas =?iso-8859-1?Q?S=F6derlund?= <niklas.soderlund@ragnatech.se>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: Re: [PATCH] arm64: defconfig: Enable additional support for Renesas
+ platforms
+Message-ID: <20200217125125.GW3013231@oden.dyn.berto.se>
+References: <20200217103251.5205-1-geert+renesas@glider.be>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200217103251.5205-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_044915_685047_6029AE71 
-X-CRM114-Status: GOOD (  23.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200217_045129_044157_0FDB2CBA 
+X-CRM114-Status: GOOD (  16.64  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,383 +96,175 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: atish.patra@wdc.com, leif@nuviainc.com, Ard Biesheuvel <ardb@kernel.org>,
+Cc: linux-renesas-soc@vger.kernel.org, Magnus Damm <magnus.damm@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Expose efi_entry() as the PE/COFF entrypoint directly, instead of
-jumping into a wrapper that fiddles with stack buffers and other
-stuff that the compiler is much better at. The only reason this
-code exists is to obtain a pointer to the base of the image, but
-we can get the same value from the loaded_image protocol, which
-we already need for other reasons anyway.
+Hi Geert,
 
-Update the return type as well, to make it consistent with what
-is required for a PE/COFF executable entrypoint.
+Thanks for your work.
 
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
----
-Apologies to Atish for making him track a moving target, but this is another
-bit of cleanup work that I would like to merge before taking the RISC-V
-changes on top.
+On 2020-02-17 11:32:51 +0100, Geert Uytterhoeven wrote:
+> Increase build and test coverage by enabling support for more hardware
+> present on Renesas SoCs and boards:
+>   - R-Car CAN and CAN-FD controllers,
+>   - MSIOF SPI controllers,
+>   - ROHM BD9571 GPIO support,
+>   - R-Car MIPI CSI-2 receivers,
+>   - R-Car Video Input,
 
-On RISC-V, I would expect efi_enter_kernel() to be implemented as a C routine
-that finds the hart id in the DT (which is passed as an argument), and pass
-it to the startup code of the kernel proper.
+For VIN and CSI-2,
 
- arch/arm/boot/compressed/efi-header.S     |  2 +-
- arch/arm/boot/compressed/head.S           | 44 +++-----------
- arch/arm64/kernel/efi-entry.S             | 64 +++-----------------
- arch/arm64/kernel/efi-header.S            |  2 +-
- drivers/firmware/efi/libstub/arm-stub.c   | 37 +++++------
- drivers/firmware/efi/libstub/arm32-stub.c |  1 +
- drivers/firmware/efi/libstub/arm64-stub.c |  3 +-
- 7 files changed, 42 insertions(+), 111 deletions(-)
+Reviewed-by: Niklas S=F6derlund <niklas.soderlund+renesas@ragnatech.se>
 
-diff --git a/arch/arm/boot/compressed/efi-header.S b/arch/arm/boot/compressed/efi-header.S
-index a5983588f96b..e38fbda02b93 100644
---- a/arch/arm/boot/compressed/efi-header.S
-+++ b/arch/arm/boot/compressed/efi-header.S
-@@ -60,7 +60,7 @@ optional_header:
- 		.long	__pecoff_code_size		@ SizeOfCode
- 		.long	__pecoff_data_size		@ SizeOfInitializedData
- 		.long	0				@ SizeOfUninitializedData
--		.long	efi_stub_entry - start		@ AddressOfEntryPoint
-+		.long	efi_entry - start		@ AddressOfEntryPoint
- 		.long	start_offset			@ BaseOfCode
- 		.long	__pecoff_data_start - start	@ BaseOfData
- 
-diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 088b0a060876..941cd28a13c3 100644
---- a/arch/arm/boot/compressed/head.S
-+++ b/arch/arm/boot/compressed/head.S
-@@ -1437,50 +1437,22 @@ __enter_kernel:
- reloc_code_end:
- 
- #ifdef CONFIG_EFI_STUB
--		.align	2
--_start:		.long	start - .
--
--ENTRY(efi_stub_entry)
--		@ allocate space on stack for passing current zImage address
--		@ and for the EFI stub to return of new entry point of
--		@ zImage, as EFI stub may copy the kernel. Pointer address
--		@ is passed in r2. r0 and r1 are passed through from the
--		@ EFI firmware to efi_entry
--		adr	ip, _start
--		ldr	r3, [ip]
--		add	r3, r3, ip
--		stmfd	sp!, {r3, lr}
--		mov	r2, sp			@ pass zImage address in r2
--		bl	efi_entry
--
--		@ Check for error return from EFI stub. r0 has FDT address
--		@ or error code.
--		cmn	r0, #1
--		beq	efi_load_fail
--
--		@ Preserve return value of efi_entry() in r4
--		mov	r4, r0
-+ENTRY(efi_enter_kernel)
-+		mov	r4, r0			@ preserve entrypoint
-+		mov	r5, r1			@ preserve DT pointer
- 		bl	cache_clean_flush
- 		bl	cache_off
- 
- 		@ Set parameters for booting zImage according to boot protocol
--		@ put FDT address in r2, it was returned by efi_entry()
--		@ r1 is the machine type, and r0 needs to be 0
- 		mov	r0, #0
- 		mov	r1, #0xFFFFFFFF
--		mov	r2, r4
-+		mov	r2, r5
- 
--		@ Branch to (possibly) relocated zImage that is in [sp]
--		ldr	lr, [sp]
-+		@ Branch to (possibly) relocated zImage @ [r4]
- 		ldr	ip, =start_offset
--		add	lr, lr, ip
--		mov	pc, lr				@ no mode switch
--
--efi_load_fail:
--		@ Return EFI_LOAD_ERROR to EFI firmware on error.
--		ldr	r0, =0x80000001
--		ldmfd	sp!, {ip, pc}
--ENDPROC(efi_stub_entry)
-+		add	r4, r4, ip
-+		mov	pc, r4			@ no mode switch
-+ENDPROC(efi_enter_kernel)
- #endif
- 
- 		.align
-diff --git a/arch/arm64/kernel/efi-entry.S b/arch/arm64/kernel/efi-entry.S
-index 304d5b02ca67..49e3b1ad1b36 100644
---- a/arch/arm64/kernel/efi-entry.S
-+++ b/arch/arm64/kernel/efi-entry.S
-@@ -10,55 +10,18 @@
- 
- #include <asm/assembler.h>
- 
--#define EFI_LOAD_ERROR 0x8000000000000001
--
- 	__INIT
- 
--	/*
--	 * We arrive here from the EFI boot manager with:
--	 *
--	 *    * CPU in little-endian mode
--	 *    * MMU on with identity-mapped RAM
--	 *    * Icache and Dcache on
--	 *
--	 * We will most likely be running from some place other than where
--	 * we want to be. The kernel image wants to be placed at TEXT_OFFSET
--	 * from start of RAM.
--	 */
--ENTRY(entry)
--	/*
--	 * Create a stack frame to save FP/LR with extra space
--	 * for image_addr variable passed to efi_entry().
--	 */
--	stp	x29, x30, [sp, #-32]!
--	mov	x29, sp
--
--	/*
--	 * Call efi_entry to do the real work.
--	 * x0 and x1 are already set up by firmware. Current runtime
--	 * address of image is calculated and passed via *image_addr.
--	 *
--	 * unsigned long efi_entry(void *handle,
--	 *                         efi_system_table_t *sys_table,
--	 *                         unsigned long *image_addr) ;
--	 */
--	adr_l	x8, _text
--	add	x2, sp, 16
--	str	x8, [x2]
--	bl	efi_entry
--	cmn	x0, #1
--	b.eq	efi_load_fail
--
-+ENTRY(efi_enter_kernel)
- 	/*
- 	 * efi_entry() will have copied the kernel image if necessary and we
--	 * return here with device tree address in x0 and the kernel entry
--	 * point stored at *image_addr. Save those values in registers which
--	 * are callee preserved.
-+	 * end up here with device tree address in x1 and the kernel entry
-+	 * point stored in x0. Save those values in registers which are
-+	 * callee preserved.
- 	 */
--	mov	x20, x0		// DTB address
--	ldr	x0, [sp, #16]	// relocated _text address
-+	mov	x20, x1			// DTB address
- 	ldr	w21, =stext_offset
--	add	x21, x0, x21
-+	add	x21, x0, x21		// relocated Image address
- 
- 	/*
- 	 * Calculate size of the kernel Image (same for original and copy).
-@@ -80,9 +43,8 @@ ENTRY(entry)
- 	 * entries for the VA range of the current image, so no maintenance is
- 	 * necessary.
- 	 */
--	adr	x0, entry
--	adr	x1, entry_end
--	sub	x1, x1, x0
-+	adr	x0, efi_enter_kernel
-+	mov	x1, efi_enter_kernel_size
- 	bl	__flush_dcache_area
- 
- 	/* Turn off Dcache and MMU */
-@@ -110,11 +72,5 @@ ENTRY(entry)
- 	mov	x2, xzr
- 	mov	x3, xzr
- 	br	x21
--
--efi_load_fail:
--	mov	x0, #EFI_LOAD_ERROR
--	ldp	x29, x30, [sp], #32
--	ret
--
--entry_end:
--ENDPROC(entry)
-+ENDPROC(efi_enter_kernel)
-+	.set	efi_enter_kernel_size, . - efi_enter_kernel
-diff --git a/arch/arm64/kernel/efi-header.S b/arch/arm64/kernel/efi-header.S
-index a7cfacce3e15..40c704c5d3a5 100644
---- a/arch/arm64/kernel/efi-header.S
-+++ b/arch/arm64/kernel/efi-header.S
-@@ -27,7 +27,7 @@ optional_header:
- 	.long	__initdata_begin - efi_header_end	// SizeOfCode
- 	.long	__pecoff_data_size			// SizeOfInitializedData
- 	.long	0					// SizeOfUninitializedData
--	.long	__efistub_entry - _head			// AddressOfEntryPoint
-+	.long	__efistub_efi_entry - _head		// AddressOfEntryPoint
- 	.long	efi_header_end - _head			// BaseOfCode
- 
- extra_header_fields:
-diff --git a/drivers/firmware/efi/libstub/arm-stub.c b/drivers/firmware/efi/libstub/arm-stub.c
-index 56e475c1aa55..439c094f7bf2 100644
---- a/drivers/firmware/efi/libstub/arm-stub.c
-+++ b/drivers/firmware/efi/libstub/arm-stub.c
-@@ -133,17 +133,20 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 				 unsigned long *reserve_size,
- 				 unsigned long dram_base,
- 				 efi_loaded_image_t *image);
-+
-+void __noreturn efi_enter_kernel(unsigned long entrypoint, unsigned long fdt);
-+
- /*
-  * EFI entry point for the arm/arm64 EFI stubs.  This is the entrypoint
-  * that is described in the PE/COFF header.  Most of the code is the same
-  * for both archictectures, with the arch-specific code provided in the
-  * handle_kernel_image() function.
-  */
--unsigned long efi_entry(void *handle, efi_system_table_t *sys_table_arg,
--			       unsigned long *image_addr)
-+efi_status_t efi_entry(efi_handle_t handle, efi_system_table_t *sys_table_arg)
- {
- 	efi_loaded_image_t *image;
- 	efi_status_t status;
-+	unsigned long image_addr;
- 	unsigned long image_size = 0;
- 	unsigned long dram_base;
- 	/* addr/point and size pairs for memory management*/
-@@ -153,7 +156,6 @@ unsigned long efi_entry(void *handle, efi_system_table_t *sys_table_arg,
- 	unsigned long fdt_size = 0;
- 	char *cmdline_ptr = NULL;
- 	int cmdline_size = 0;
--	unsigned long new_fdt_addr;
- 	efi_guid_t loaded_image_proto = LOADED_IMAGE_PROTOCOL_GUID;
- 	unsigned long reserve_addr = 0;
- 	unsigned long reserve_size = 0;
-@@ -165,8 +167,10 @@ unsigned long efi_entry(void *handle, efi_system_table_t *sys_table_arg,
- 	sys_table = sys_table_arg;
- 
- 	/* Check if we were booted by the EFI firmware */
--	if (sys_table->hdr.signature != EFI_SYSTEM_TABLE_SIGNATURE)
-+	if (sys_table->hdr.signature != EFI_SYSTEM_TABLE_SIGNATURE) {
-+		status = EFI_INVALID_PARAMETER;
- 		goto fail;
-+	}
- 
- 	status = check_platform_features();
- 	if (status != EFI_SUCCESS)
-@@ -187,6 +191,7 @@ unsigned long efi_entry(void *handle, efi_system_table_t *sys_table_arg,
- 	dram_base = get_dram_base();
- 	if (dram_base == EFI_ERROR) {
- 		pr_efi_err("Failed to find DRAM base\n");
-+		status = EFI_LOAD_ERROR;
- 		goto fail;
- 	}
- 
-@@ -198,6 +203,7 @@ unsigned long efi_entry(void *handle, efi_system_table_t *sys_table_arg,
- 	cmdline_ptr = efi_convert_cmdline(image, &cmdline_size, ULONG_MAX);
- 	if (!cmdline_ptr) {
- 		pr_efi_err("getting command line via LOADED_IMAGE_PROTOCOL\n");
-+		status = EFI_OUT_OF_RESOURCES;
- 		goto fail;
- 	}
- 
-@@ -213,7 +219,7 @@ unsigned long efi_entry(void *handle, efi_system_table_t *sys_table_arg,
- 
- 	si = setup_graphics();
- 
--	status = handle_kernel_image(image_addr, &image_size,
-+	status = handle_kernel_image(&image_addr, &image_size,
- 				     &reserve_addr,
- 				     &reserve_size,
- 				     dram_base, image);
-@@ -260,7 +266,7 @@ unsigned long efi_entry(void *handle, efi_system_table_t *sys_table_arg,
- 		pr_efi("Generating empty DTB\n");
- 
- 	if (!noinitrd()) {
--		max_addr = efi_get_max_initrd_addr(dram_base, *image_addr);
-+		max_addr = efi_get_max_initrd_addr(dram_base, image_addr);
- 		status = efi_load_initrd_dev_path(&initrd_addr, &initrd_size,
- 						  max_addr);
- 		if (status == EFI_SUCCESS) {
-@@ -311,33 +317,30 @@ unsigned long efi_entry(void *handle, efi_system_table_t *sys_table_arg,
- 
- 	install_memreserve_table();
- 
--	new_fdt_addr = fdt_addr;
- 	status = allocate_new_fdt_and_exit_boot(handle,
--				&new_fdt_addr, efi_get_max_fdt_addr(dram_base),
-+				&fdt_addr, efi_get_max_fdt_addr(dram_base),
- 				initrd_addr, initrd_size, cmdline_ptr,
- 				fdt_addr, fdt_size);
-+	if (status != EFI_SUCCESS)
-+		goto fail_free_initrd;
- 
--	/*
--	 * If all went well, we need to return the FDT address to the
--	 * calling function so it can be passed to kernel as part of
--	 * the kernel boot protocol.
--	 */
--	if (status == EFI_SUCCESS)
--		return new_fdt_addr;
-+	efi_enter_kernel(image_addr, fdt_addr);
-+	/* not reached */
- 
-+fail_free_initrd:
- 	pr_efi_err("Failed to update FDT and exit boot services\n");
- 
- 	efi_free(initrd_size, initrd_addr);
- 	efi_free(fdt_size, fdt_addr);
- 
- fail_free_image:
--	efi_free(image_size, *image_addr);
-+	efi_free(image_size, image_addr);
- 	efi_free(reserve_size, reserve_addr);
- fail_free_cmdline:
- 	free_screen_info(si);
- 	efi_free(cmdline_size, (unsigned long)cmdline_ptr);
- fail:
--	return EFI_ERROR;
-+	return status;
- }
- 
- /*
-diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
-index 7b2a6382b647..113298b8ea65 100644
---- a/drivers/firmware/efi/libstub/arm32-stub.c
-+++ b/drivers/firmware/efi/libstub/arm32-stub.c
-@@ -227,6 +227,7 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 	 * Relocate the zImage, so that it appears in the lowest 128 MB
- 	 * memory window.
- 	 */
-+	*image_addr = image->image_base;
- 	*image_size = image->image_size;
- 	status = efi_relocate_kernel(image_addr, *image_size, *image_size,
- 				     kernel_base + MAX_UNCOMP_KERNEL_SIZE, 0, 0);
-diff --git a/drivers/firmware/efi/libstub/arm64-stub.c b/drivers/firmware/efi/libstub/arm64-stub.c
-index 719d03a64329..9254cd8ab2d3 100644
---- a/drivers/firmware/efi/libstub/arm64-stub.c
-+++ b/drivers/firmware/efi/libstub/arm64-stub.c
-@@ -43,7 +43,6 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- {
- 	efi_status_t status;
- 	unsigned long kernel_size, kernel_memsize = 0;
--	void *old_image_addr = (void *)*image_addr;
- 	unsigned long preferred_offset;
- 	u64 phys_seed = 0;
- 
-@@ -141,7 +140,7 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 		}
- 		*image_addr = *reserve_addr + TEXT_OFFSET;
- 	}
--	memcpy((void *)*image_addr, old_image_addr, kernel_size);
-+	memcpy((void *)*image_addr, image->image_base, kernel_size);
- 
- 	return EFI_SUCCESS;
- }
--- 
-2.17.1
+>   - Renesas Fine Display Processors,
+>   - Renesas Digital Radio Interfaces,
+>   - R-Car Gen3 internal HDMI encoders,
+>   - Generic LVDS panel support,
+>   - Dumb VGA DAC Bridge support,
+>   - Thine THC63LVD1024 LVDS decoder bridges,
+>   - Synopsys Designware AHB Audio and CEC interfaces,
+>   - Renesas USBHS HCD support,
+>   - IDT VersaClock 5,6 devices,
+>   - Maxim max9611/max9612 ADCs,
+>   - ARM TrustZone CryptoCell security processors.
+> =
 
+> All of the above are modular, except for the VC5 clock driver, and the
+> SDR config gatekeepers.
+> =
+
+> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> ---
+> To be queued in renesas-devel for v5.7.
+> ---
+>  arch/arm64/configs/defconfig | 21 +++++++++++++++++++++
+>  1 file changed, 21 insertions(+)
+> =
+
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index 51b8b8555a6e4065..49053323323fe68b 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -161,6 +161,9 @@ CONFIG_QRTR=3Dm
+>  CONFIG_QRTR_SMD=3Dm
+>  CONFIG_QRTR_TUN=3Dm
+>  CONFIG_BPF_JIT=3Dy
+> +CONFIG_CAN=3Dm
+> +CONFIG_CAN_RCAR=3Dm
+> +CONFIG_CAN_RCAR_CANFD=3Dm
+>  CONFIG_BT=3Dm
+>  CONFIG_BT_HIDP=3Dm
+>  # CONFIG_BT_HS is not set
+> @@ -399,6 +402,7 @@ CONFIG_SPI_QCOM_QSPI=3Dm
+>  CONFIG_SPI_QUP=3Dy
+>  CONFIG_SPI_QCOM_GENI=3Dm
+>  CONFIG_SPI_S3C64XX=3Dy
+> +CONFIG_SPI_SH_MSIOF=3Dm
+>  CONFIG_SPI_SUN6I=3Dy
+>  CONFIG_SPI_SPIDEV=3Dm
+>  CONFIG_SPMI=3Dy
+> @@ -432,6 +436,7 @@ CONFIG_GPIO_XGENE_SB=3Dy
+>  CONFIG_GPIO_MAX732X=3Dy
+>  CONFIG_GPIO_PCA953X=3Dy
+>  CONFIG_GPIO_PCA953X_IRQ=3Dy
+> +CONFIG_GPIO_BD9571MWV=3Dm
+>  CONFIG_GPIO_MAX77620=3Dy
+>  CONFIG_POWER_AVS=3Dy
+>  CONFIG_QCOM_CPR=3Dy
+> @@ -516,19 +521,25 @@ CONFIG_MEDIA_SUPPORT=3Dm
+>  CONFIG_MEDIA_CAMERA_SUPPORT=3Dy
+>  CONFIG_MEDIA_ANALOG_TV_SUPPORT=3Dy
+>  CONFIG_MEDIA_DIGITAL_TV_SUPPORT=3Dy
+> +CONFIG_MEDIA_SDR_SUPPORT=3Dy
+>  CONFIG_MEDIA_CONTROLLER=3Dy
+>  CONFIG_VIDEO_V4L2_SUBDEV_API=3Dy
+>  # CONFIG_DVB_NET is not set
+>  CONFIG_MEDIA_USB_SUPPORT=3Dy
+>  CONFIG_USB_VIDEO_CLASS=3Dm
+>  CONFIG_V4L_PLATFORM_DRIVERS=3Dy
+> +CONFIG_VIDEO_RCAR_CSI2=3Dm
+> +CONFIG_VIDEO_RCAR_VIN=3Dm
+>  CONFIG_VIDEO_SUN6I_CSI=3Dm
+>  CONFIG_V4L_MEM2MEM_DRIVERS=3Dy
+>  CONFIG_VIDEO_SAMSUNG_S5P_JPEG=3Dm
+>  CONFIG_VIDEO_SAMSUNG_S5P_MFC=3Dm
+>  CONFIG_VIDEO_SAMSUNG_EXYNOS_GSC=3Dm
+> +CONFIG_VIDEO_RENESAS_FDP1=3Dm
+>  CONFIG_VIDEO_RENESAS_FCP=3Dm
+>  CONFIG_VIDEO_RENESAS_VSP1=3Dm
+> +CONFIG_SDR_PLATFORM_DRIVERS=3Dy
+> +CONFIG_VIDEO_RCAR_DRIF=3Dm
+>  CONFIG_DRM=3Dm
+>  CONFIG_DRM_I2C_NXP_TDA998X=3Dm
+>  CONFIG_DRM_NOUVEAU=3Dm
+> @@ -546,15 +557,21 @@ CONFIG_ROCKCHIP_DW_HDMI=3Dy
+>  CONFIG_ROCKCHIP_DW_MIPI_DSI=3Dy
+>  CONFIG_ROCKCHIP_INNO_HDMI=3Dy
+>  CONFIG_DRM_RCAR_DU=3Dm
+> +CONFIG_DRM_RCAR_DW_HDMI=3Dm
+>  CONFIG_DRM_SUN4I=3Dm
+>  CONFIG_DRM_SUN8I_DW_HDMI=3Dm
+>  CONFIG_DRM_SUN8I_MIXER=3Dm
+>  CONFIG_DRM_MSM=3Dm
+>  CONFIG_DRM_TEGRA=3Dm
+> +CONFIG_DRM_PANEL_LVDS=3Dm
+>  CONFIG_DRM_PANEL_SIMPLE=3Dm
+> +CONFIG_DRM_DUMB_VGA_DAC=3Dm
+>  CONFIG_DRM_SII902X=3Dm
+> +CONFIG_DRM_THINE_THC63LVD1024=3Dm
+>  CONFIG_DRM_TI_SN65DSI86=3Dm
+>  CONFIG_DRM_I2C_ADV7511=3Dm
+> +CONFIG_DRM_DW_HDMI_AHB_AUDIO=3Dm
+> +CONFIG_DRM_DW_HDMI_CEC=3Dm
+>  CONFIG_DRM_VC4=3Dm
+>  CONFIG_DRM_ETNAVIV=3Dm
+>  CONFIG_DRM_HISI_HIBMC=3Dm
+> @@ -605,6 +622,7 @@ CONFIG_USB_EHCI_HCD_PLATFORM=3Dy
+>  CONFIG_USB_OHCI_HCD=3Dy
+>  CONFIG_USB_OHCI_EXYNOS=3Dy
+>  CONFIG_USB_OHCI_HCD_PLATFORM=3Dy
+> +CONFIG_USB_RENESAS_USBHS_HCD=3Dm
+>  CONFIG_USB_RENESAS_USBHS=3Dm
+>  CONFIG_USB_STORAGE=3Dy
+>  CONFIG_USB_MUSB_HDRC=3Dy
+> @@ -712,6 +730,7 @@ CONFIG_COMMON_CLK_CS2000_CP=3Dy
+>  CONFIG_COMMON_CLK_S2MPS11=3Dy
+>  CONFIG_CLK_QORIQ=3Dy
+>  CONFIG_COMMON_CLK_PWM=3Dy
+> +CONFIG_COMMON_CLK_VC5=3Dy
+>  CONFIG_CLK_RASPBERRYPI=3Dm
+>  CONFIG_CLK_IMX8MM=3Dy
+>  CONFIG_CLK_IMX8MN=3Dy
+> @@ -792,6 +811,7 @@ CONFIG_EXTCON_USBC_CROS_EC=3Dy
+>  CONFIG_MEMORY=3Dy
+>  CONFIG_IIO=3Dy
+>  CONFIG_EXYNOS_ADC=3Dy
+> +CONFIG_MAX9611=3Dm
+>  CONFIG_QCOM_SPMI_ADC5=3Dm
+>  CONFIG_ROCKCHIP_SARADC=3Dm
+>  CONFIG_IIO_CROS_EC_SENSORS_CORE=3Dm
+> @@ -885,6 +905,7 @@ CONFIG_CRYPTO_DEV_FSL_CAAM=3Dm
+>  CONFIG_CRYPTO_DEV_HISI_ZIP=3Dm
+>  CONFIG_CRYPTO_USER_API_RNG=3Dm
+>  CONFIG_CRYPTO_DEV_QCOM_RNG=3Dm
+> +CONFIG_CRYPTO_DEV_CCREE=3Dm
+>  CONFIG_CMA_SIZE_MBYTES=3D32
+>  CONFIG_PRINTK_TIME=3Dy
+>  CONFIG_DEBUG_INFO=3Dy
+> -- =
+
+> 2.17.1
+> =
+
+
+-- =
+
+Regards,
+Niklas S=F6derlund
 
 _______________________________________________
 linux-arm-kernel mailing list
