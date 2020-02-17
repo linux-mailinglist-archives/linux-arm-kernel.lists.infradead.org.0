@@ -2,152 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B91EA161D11
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 23:04:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D76D161D16
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 23:04:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kauSL1z1ZPnwGCFN7xAja8/TpLKkA6LIrebaYrluBLc=; b=pP2jbmJ3DbIwd5
-	ejg69mlasdz0XNqb7ELyt3e+6GhRGS/gEqnABJexS2x1cX02QDCBW7QMSD3X6HY8vYEBH2NPc+8Si
-	HzmP1yeczWUPE0TK9IpGsBOKt6QwxCB3TFd4viPuFXaQ9cdTLnFDqMTnEBtvj8+xUOrf4XKkKDe5j
-	y9MaQMF5ghQM2sw1beL3BJUo+01DZH6Rre9/qMcKUkAOOhgvW7jfi+Hz2g8cYI6XrRa6jEnK2Lemy
-	/mrfnXibI8tIKl1CB3Fqyl1012sSgPiczbrr6+iGf0t4n8/py9by8uGgu0Ki7flpplmUTzBK0yLRY
-	JgkjQSjSwlQrJcXwsrmA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=3zKanviPqDq5BdudYGiO7yTs4Pns4CKs7PqHgM14wX4=; b=nYd
+	KOdWJ3fREtohoat8zhR10tLcKLXOMz21OyvO/qKdsH4ED0AM3HruJGP0cUCXdDPZxPCcATfrBKaul
+	hBkUx6pgztKSjZbet0jtvpxi5YRDoYtMkwPyFKWZ++KQ9ZqZ0M4JdCgWR0r0DwtLpveUuz8HkiuLp
+	+04oFEeGenXz+tIB2RRKAxr8T/BNlrQz+EgsNC8g0SBivrnEcda6RC8xLtUp5cf4pj+z7aTcK519T
+	YasHOymS6oTdcByYhUdcwVBKr7+bWYFU4yDgXgJCpUoW/y5BUmi2TfPvmo9KY7zHnBXofry5eG3IB
+	/e33Tc9ecq5Kg2CLF+I/L83emylIu2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3oUi-0005Ot-6m; Mon, 17 Feb 2020 22:04:00 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3oUZ-0005Nw-1t
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 22:03:52 +0000
-Received: by mail-pf1-x443.google.com with SMTP id s1so9580602pfh.10
- for <linux-arm-kernel@lists.infradead.org>;
+	id 1j3oUv-0005ZI-11; Mon, 17 Feb 2020 22:04:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j3oUa-0005ON-1q
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 22:03:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D88E130E;
  Mon, 17 Feb 2020 14:03:50 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=MpnrrTwvxmB8X9MwQWOuT52px/VnZrMnem9goyDgFE8=;
- b=K4vdyevui/DtENS6p1ri3a+XpKfU76OG48i0+k7S+cfYDn85XFn0ExVmOykI/Xbpdm
- zLBtQAsnKTDbxeNbo78m13c50l1FaXLpo/uJ8A8arUnrDdpLuTBUmJcjOKBdBSLRB8Fa
- ADL8oxRwgdyu8yM4uWsxI4J4s9USN/wcE5sdfWIXsFQu+msXuozv5PmuB/bfSC+yKb7q
- xLABLd4I5/usF8Bn1ypK5MT2ebFjy6Z1DKGhM8OcJiizhBk13fhzJSwnNErifib8+Oke
- l4O5fP9Fp62tvGrzU6QUrs+wubf9rU6K7qnzUy1OVHsgjR/tQdDBwid8fFkje88m2Rd6
- Iwdw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=MpnrrTwvxmB8X9MwQWOuT52px/VnZrMnem9goyDgFE8=;
- b=PFnl4ZMSS4NvpQC5nFAvqwEZnUlxG9lRhZRZOEwMKXawBxUjqtl8/mHWJ9XIdphpvF
- DAGfWNJh0R7aNSluMy9gqBGsDW6PYvrbTGZ+kJN1RVW7YntGLw5NvS5jE+QdHg+zVHAo
- n0FzTqR+xsE4iBJ07x7x5eDZ09Rrc1p/0og6D4xqVIVtaE/tD1o5aK7kppNQ5lg/j3y0
- ZkorHJ0MwQJV8dQy4oUcQx+0ykmH/o/K1HsOqnU+hpFm2Aky2SVcPHf6TXga2Tn1FP6v
- 9MiFTRonFkjguM/ljb5ClwkzrIH3Bsno0oIcdAaZF8FCBuRdywy2Fi8eo+PMiy5rFA0/
- weog==
-X-Gm-Message-State: APjAAAWkqXcRyZMXGC+2dpEjqUA/NfksA71oHC236w7ceCvcBv4u2R3y
- sDwTu73yf3eFueRJRhjvah8Jzyag
-X-Google-Smtp-Source: APXvYqzAADBeQF5bTlV+b2RFpffc85ccEIT2eMWpGO+xygC7FiGwy8RDomLpp28a4JUv5krkXDcp3A==
-X-Received: by 2002:a63:2266:: with SMTP id t38mr20239443pgm.145.1581977029751; 
- Mon, 17 Feb 2020 14:03:49 -0800 (PST)
-Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id
- l1sm391962pjb.28.2020.02.17.14.03.48
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 17 Feb 2020 14:03:49 -0800 (PST)
-Subject: Re: [PATCH net] net: macb: Properly handle phylink on at91rm9200
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "David S. Miller" <davem@davemloft.net>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- =?UTF-8?Q?Antoine_T=c3=a9nart?= <antoine.tenart@bootlin.com>
-References: <20200217104348.43164-1-alexandre.belloni@bootlin.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; keydata=
- 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
- a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <661c1e61-11c8-0c54-83a2-5e81674246e0@gmail.com>
-Date: Mon, 17 Feb 2020 14:03:47 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-MIME-Version: 1.0
-In-Reply-To: <20200217104348.43164-1-alexandre.belloni@bootlin.com>
-Content-Language: en-US
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A6EC3F703;
+ Mon, 17 Feb 2020 14:03:50 -0800 (PST)
+Date: Mon, 17 Feb 2020 22:03:48 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Samuel Holland <samuel@sholland.org>
+Subject: Applied "ASoC: sun8i-codec: Fix setting DAI data format" to the asoc
+ tree
+In-Reply-To: <20200217064250.15516-7-samuel@sholland.org>
+Message-Id: <applied-20200217064250.15516-7-samuel@sholland.org>
+X-Patchwork-Hint: ignore
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_140351_126589_AF2CB044 
-X-CRM114-Status: GOOD (  14.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200217_140352_134484_75610D8A 
+X-CRM114-Status: GOOD (  16.03  )
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -159,46 +63,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ Rob Herring <robh+dt@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>,
+ =?utf-8?q?Myl=C3=A8ne_Josserand?= <mylene.josserand@free-electrons.com>,
+ stable@kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The patch
 
+   ASoC: sun8i-codec: Fix setting DAI data format
 
-On 2/17/2020 2:43 AM, Alexandre Belloni wrote:
-> at91ether_init was handling the phy mode and speed but since the switch to
-> phylink, the NCFGR register got overwritten by macb_mac_config().
-> 
-> Add new phylink callbacks to handle emac and at91rm9200 properly.
-> 
-> Fixes: 7897b071ac3b ("net: macb: convert to phylink")
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> ---
+has been applied to the asoc tree at
 
-[snip]
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git 
 
-> +static void at91ether_mac_link_up(struct phylink_config *config,
-> +				  unsigned int mode,
-> +				  phy_interface_t interface,
-> +				  struct phy_device *phy)
-> +{
-> +	struct net_device *ndev = to_net_dev(config->dev);
-> +	struct macb *bp = netdev_priv(ndev);
-> +
-> +	/* Enable Rx and Tx */
-> +	macb_writel(bp, NCR, macb_readl(bp, NCR) | MACB_BIT(RE) | MACB_BIT(TE));
-> +
-> +	netif_tx_wake_all_queues(ndev);
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-So this happens to be copied from the mvpp2 driver, if this is a
-requirement, should not this be moved to the phylink implementation
-since it already manages the carrier? Those two drivers are the only
-ones doing this.
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 96781fd941b39e1f78098009344ebcd7af861c67 Mon Sep 17 00:00:00 2001
+From: Samuel Holland <samuel@sholland.org>
+Date: Mon, 17 Feb 2020 00:42:22 -0600
+Subject: [PATCH] ASoC: sun8i-codec: Fix setting DAI data format
+
+Use the correct mask for this two-bit field. This fixes setting the DAI
+data format to RIGHT_J or DSP_A.
+
+Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
+Signed-off-by: Samuel Holland <samuel@sholland.org>
+Acked-by: Chen-Yu Tsai <wens@csie.org>
+Cc: stable@kernel.org
+Link: https://lore.kernel.org/r/20200217064250.15516-7-samuel@sholland.org
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/sunxi/sun8i-codec.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/sound/soc/sunxi/sun8i-codec.c b/sound/soc/sunxi/sun8i-codec.c
+index 55798bc8eae2..686561df8e13 100644
+--- a/sound/soc/sunxi/sun8i-codec.c
++++ b/sound/soc/sunxi/sun8i-codec.c
+@@ -80,6 +80,7 @@
+ 
+ #define SUN8I_SYS_SR_CTRL_AIF1_FS_MASK		GENMASK(15, 12)
+ #define SUN8I_SYS_SR_CTRL_AIF2_FS_MASK		GENMASK(11, 8)
++#define SUN8I_AIF1CLK_CTRL_AIF1_DATA_FMT_MASK	GENMASK(3, 2)
+ #define SUN8I_AIF1CLK_CTRL_AIF1_WORD_SIZ_MASK	GENMASK(5, 4)
+ #define SUN8I_AIF1CLK_CTRL_AIF1_LRCK_DIV_MASK	GENMASK(8, 6)
+ #define SUN8I_AIF1CLK_CTRL_AIF1_BCLK_DIV_MASK	GENMASK(12, 9)
+@@ -241,7 +242,7 @@ static int sun8i_set_fmt(struct snd_soc_dai *dai, unsigned int fmt)
+ 		return -EINVAL;
+ 	}
+ 	regmap_update_bits(scodec->regmap, SUN8I_AIF1CLK_CTRL,
+-			   BIT(SUN8I_AIF1CLK_CTRL_AIF1_DATA_FMT),
++			   SUN8I_AIF1CLK_CTRL_AIF1_DATA_FMT_MASK,
+ 			   value << SUN8I_AIF1CLK_CTRL_AIF1_DATA_FMT);
+ 
+ 	return 0;
 -- 
-Florian
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
