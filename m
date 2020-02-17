@@ -2,133 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D9F216107F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 11:58:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72AEE16109C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 12:04:57 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BcBEZho1h052vLefINk3Y6vbQBjso2Xy4kqZpNLREQo=; b=R+zjyB3bhHzkd8
-	Li077J2foZ1Lt3WK2dpqd7jaGIXwRuf/VX/J6ePTCecgAJYu2o8zxiFLTBc8SId2ARtace8DnFI0I
-	hK1vF40ATsUhoaUdgxYuWB5GnnEo7xZCGrfuD36cS3lMVvGz4TzSAxZhwCXxRBPYXh7wkfVCsbZLE
-	hvLax33UR/dbFE6zdIJgOJrWyj40qe9NIYnYm50ft8DOPclHkNqGMf8H7vQMlXpKo4xdlDUS8Ow20
-	9TX9p2mFBrGvkYzyktdR5tIy0VP09MjiTM+dWaPxGYXTi60OBmx5uw0EXpbNWsP67mmbzM7U1/uat
-	5LAMrwkEYvCkoihaeeqQ==;
+	List-Owner; bh=9RP1gxb7x8EZxWE8nA2zgmbYzEcDszNc2IedA8maPZs=; b=CHVPLJO8s6Xvpa
+	E0gpuzn1wzBBM7NE5PoFzSih8l+zVCl1ZuTXB2bdsZ9O94iArxNjbBBF5SsZpz7QPIoL5PV5A4OmJ
+	x7453Ip3hobtxkLyFgTOFM+KsbAxPxlvtP/mjUsElLHJLRjY+F9yF7ZOXIghvHPRVCzefkDKgajGp
+	pcWxXEPIMQX4+fjiFTz9fr8AKYmF1VneXAj4RdVy2gHta/giI2TKBdastiuVudRuNZXH9OQ4jEjGz
+	+ayFB0tuj2xXj99BfJDFn7NbQaew912g97dtZEDwYhqGXvGCO05XJWXuB+u0XMibC5UsDqTyUFaMT
+	QmIszgPhGPxzXhekbosw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3e67-0007Ji-Cq; Mon, 17 Feb 2020 10:57:55 +0000
-Received: from mail-bn8nam12on2050.outbound.protection.outlook.com
- ([40.107.237.50] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3e5r-0007C8-Rq
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 10:57:41 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Usm1AVzAUtILIL4Pl8FS/YMIMW7cOZ3oEAxBZJuvscHZSX2fvdPkeBqmEE47xDgtxNw+k2MRV/v+CKTn14d+D82Va/aVZyicMAK2ejeaVOCVaLT/+n+ZHJoOuu0sUxcoy/stdO77y+EHpvZmWyZNbxScLFWMoFlQdAhPmIpaZOVKCaZDxvfUgWdfSkK5cmcVPtVPHWRR5JU3bVjhyFbNTifGCjUm4wlUvXYNQliToX7accGbxn7XfoQeGqO4vZZd50gYxbrom+7PNGNeNzqVVyDfLTLmmel7Vp/JlhRuv6bOVK246+CFWzsLAAzY83bfQrhA2IsMhhCx2W/CaxgwPg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rK9Xx0KNeikiAV719Gt1x1s9zPkk9K1i8A40AQCs03c=;
- b=IVaOYZn6G41O9RnstPCC6qhG4pPY3XkAMtTQd1gYFQoK4uUKY/XKGVxRRiQEPfbiVU3dW5INKZve7nSvHvFVpVqGGGCTt4BlzgNV5bCDi+x/iuOJcWPpCslq0c1CrmmHGlcegE8dIsFz3bqX6R97ubhG1DeJQYs1hNxQem0m+l1HJ8XVu6ttU/BurOYic+45cQYGpxSCynH3tmzdyTpaqYL+NI53QFj+kx8yFycUKv5iweMXlsXkkJnqDMxk3xTuUxUspJ9yxV+hwxSLhX2RIU1xkDfvFDhSf0sxA4zCtAaUSaHDwln0Vg5tEDzBlhpo/je12gKPpaNM22mVxKcyrA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=rK9Xx0KNeikiAV719Gt1x1s9zPkk9K1i8A40AQCs03c=;
- b=AnrJDGXRROZdiCmVJFNHWVWAz8YtGj6VSAnaqrrLiJx2cKz/6n8DQNlpRyXf9Cv+zK519PbMz169TUTl80/mJn1c/5YNkamEloWkVygbxAGsyZxw3u7AYpkzbUlHQwvMSpWf0dGDQC/KfXTbpaxJbhiF5eyNexNlr2UMli1efO4=
-Received: from SN4PR0201CA0048.namprd02.prod.outlook.com
- (2603:10b6:803:2e::34) by SN6PR02MB5389.namprd02.prod.outlook.com
- (2603:10b6:805:e1::13) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2729.25; Mon, 17 Feb
- 2020 10:57:35 +0000
-Received: from BL2NAM02FT051.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::209) by SN4PR0201CA0048.outlook.office365.com
- (2603:10b6:803:2e::34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2729.25 via Frontend
- Transport; Mon, 17 Feb 2020 10:57:35 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- BL2NAM02FT051.mail.protection.outlook.com (10.152.76.181) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2729.22
- via Frontend Transport; Mon, 17 Feb 2020 10:57:35 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <srinivas.neeli@xilinx.com>)
- id 1j3e5m-0007sL-Np; Mon, 17 Feb 2020 02:57:34 -0800
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <srinivas.neeli@xilinx.com>)
- id 1j3e5h-0000pT-KZ; Mon, 17 Feb 2020 02:57:29 -0800
-Received: from xsj-pvapsmtp01 (mailhost.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 01HAvPbx009867; 
- Mon, 17 Feb 2020 02:57:25 -0800
-Received: from [10.140.6.6] (helo=xhdappanad40.xilinx.com)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <srinivas.neeli@xilinx.com>)
- id 1j3e5c-0000oP-PD; Mon, 17 Feb 2020 02:57:25 -0800
-From: Srinivas Neeli <srinivas.neeli@xilinx.com>
-To: bgolaszewski@baylibre.com, michal.simek@xilinx.com,
- shubhrajyoti.datta@xilinx.com, sgoud@xilinx.com
-Subject: [PATCH 2/2] gpio: xilinx: Add irq support to the driver
-Date: Mon, 17 Feb 2020 16:27:19 +0530
-Message-Id: <1581937039-12964-2-git-send-email-srinivas.neeli@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1581937039-12964-1-git-send-email-srinivas.neeli@xilinx.com>
-References: <1581937039-12964-1-git-send-email-srinivas.neeli@xilinx.com>
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(136003)(396003)(376002)(346002)(199004)(189003)(6636002)(107886003)(4326008)(9786002)(7696005)(2616005)(44832011)(36756003)(5660300002)(26005)(8936002)(316002)(426003)(186003)(356004)(70206006)(478600001)(81166006)(8676002)(81156014)(70586007)(336012)(2906002)(6666004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:SN6PR02MB5389; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
+	id 1j3eCj-0001Y6-3V; Mon, 17 Feb 2020 11:04:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j3eCa-0001XG-Og
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 11:04:38 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F20D030E;
+ Mon, 17 Feb 2020 03:04:33 -0800 (PST)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BDB463F6CF;
+ Mon, 17 Feb 2020 03:04:32 -0800 (PST)
+Date: Mon, 17 Feb 2020 11:04:21 +0000
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Pankaj Bansal <pankaj.bansal@nxp.com>
+Subject: Re: [PATCH] ACPI/IORT: fix output id retrieval for platform devices
+Message-ID: <20200217110413.GA27550@e121166-lin.cambridge.arm.com>
+References: <20200217141504.4183-1-pankaj.bansal@nxp.com>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: e0cd010e-cd70-4b3d-0d9b-08d7b3983242
-X-MS-TrafficTypeDiagnostic: SN6PR02MB5389:
-X-Microsoft-Antispam-PRVS: <SN6PR02MB5389B1ADDDA4FF5B3652C4F9AF160@SN6PR02MB5389.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:2089;
-X-Forefront-PRVS: 0316567485
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 4ryFegQsTCPzv7ZqckdE+rom0r+iKPXlbiSYbDIK5zkErfjFzlgzJ4qCYnjVBwbqoc8zXf3UWVjcNXX6rbUmSG+G+CzymaVXv09jEB7cI3W0CupuG6E5oH/Y17EWYIWE7Esb2hYYRRJFH8xJRXJA/GKEBs7cp74pryZpoCYAlRvsNJTgWGSpq8X3dKD2yH2E4mGmwdIKMDxTqg02H3k6E/pL4GGWkMseDv2f/FaiiGyEnrSA0m3zg0XnD8pMKFUGw1K9jOo8xSXnU11xJ7TMa672vDU70OmanAeBkUwi7GY0ktZ0rk6U5VW+HBESTXHYRdLicAoNoMzBHFqBiDbe9qMLkKFplL27FtfD7bH/rl0wob4gnUx4s6T154OLxnczwWZZGl4YqpKfRDXG/TnSyFx/YxwHGc+93lfQpY+QoXEPLq3gq7d7S1D7GXEmS1vN
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 17 Feb 2020 10:57:35.3002 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: e0cd010e-cd70-4b3d-0d9b-08d7b3983242
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB5389
+Content-Disposition: inline
+In-Reply-To: <20200217141504.4183-1-pankaj.bansal@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_025739_969332_66DABE69 
-X-CRM114-Status: GOOD (  19.32  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200217_030436_889735_D8F50587 
+X-CRM114-Status: GOOD (  23.85  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.237.50 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -140,308 +63,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linus.walleij@linaro.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- git@xilinx.com
+Cc: Hanjun Guo <guohanjun@huawei.com>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+ Varun Sethi <V.Sethi@nxp.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allocate single chip for both channels.
-Add irq support to the driver.
-Supporting rising edge interrupts and in cascade mode supporting
-first channel for interrupts on 32bit machines.
+On Mon, Feb 17, 2020 at 07:45:04PM +0530, Pankaj Bansal wrote:
+> As per IORT spec if Single mapping flag is not defined for
+> a node, the output id ought to to be retrieved using input
+> id from an ID mapping.
+> 
+> Current code of output id retrieval for platform devices
+> ignored this case. fixed the same.
 
-Signed-off-by: Srinivas Neeli <srinivas.neeli@xilinx.com>
----
- drivers/gpio/gpio-xilinx.c | 233 ++++++++++++++++++++++++++++++++++++++++++++-
- 1 file changed, 232 insertions(+), 1 deletion(-)
+This patch fixes nothing, if anything it may break existing
+platforms. Please answer the question I asked:
 
-diff --git a/drivers/gpio/gpio-xilinx.c b/drivers/gpio/gpio-xilinx.c
-index 26753ae58295..f6dd316b2c62 100644
---- a/drivers/gpio/gpio-xilinx.c
-+++ b/drivers/gpio/gpio-xilinx.c
-@@ -16,6 +16,11 @@
- #include <linux/slab.h>
- #include <linux/pm_runtime.h>
- #include <linux/clk.h>
-+#include <linux/of_irq.h>
-+#include <linux/interrupt.h>
-+#include <linux/irq.h>
-+#include <linux/irqchip/chained_irq.h>
-+#include <linux/irqdomain.h>
- 
- /* Register Offset Definitions */
- #define XGPIO_DATA_OFFSET   (0x0)	/* Data register  */
-@@ -23,8 +28,13 @@
- 
- #define XGPIO_CHANNEL_OFFSET	0x8
- 
-+#define XGPIO_GIER_OFFSET      0x11c /* Global Interrupt Enable */
-+#define XGPIO_GIER_IE          BIT(31)
-+#define XGPIO_IPISR_OFFSET     0x120 /* IP Interrupt Status */
-+#define XGPIO_IPIER_OFFSET     0x128 /* IP Interrupt Enable */
-+
- /* Read/Write access to the GPIO registers */
--#if defined(CONFIG_ARCH_ZYNQ) || defined(CONFIG_X86)
-+#if defined(CONFIG_ARCH_ZYNQ) || defined(CONFIG_X86) || defined(CONFIG_ARM64)
- # define xgpio_readreg(offset)		readl(offset)
- # define xgpio_writereg(offset, val)	writel(val, offset)
- #else
-@@ -41,7 +51,11 @@
-  * @gpio_dir: GPIO direction shadow register
-  * @gpio_lock: Lock used for synchronization
-  * @clk: clock resource for this driver
-+ * @irq_base: GPIO channel irq base address
-+ * @irq_enable: GPIO irq enable/disable bitfield
-+ * @irq_domain: irq_domain of the controller
-  */
-+
- struct xgpio_instance {
- 	struct gpio_chip gc;
- 	void __iomem *regs;
-@@ -50,6 +64,9 @@ struct xgpio_instance {
- 	u32 gpio_dir[2];
- 	spinlock_t gpio_lock[2];	/* For serializing operations */
- 	struct clk *clk;
-+	int irq_base;
-+	u32 irq_enable;
-+	struct irq_domain *irq_domain;
- };
- 
- static inline int xgpio_index(struct xgpio_instance *chip, int gpio)
-@@ -324,6 +341,211 @@ static const struct dev_pm_ops xgpio_dev_pm_ops = {
- };
- 
- /**
-+ * xgpiops_irq_mask - Write the specified signal of the GPIO device.
-+ * @irq_data: per irq and chip data passed down to chip functions
-+ */
-+static void xgpio_irq_mask(struct irq_data *irq_data)
-+{
-+	unsigned long flags;
-+	struct xgpio_instance *chip = irq_data_get_irq_chip_data(irq_data);
-+	u32 offset = irq_data->irq - chip->irq_base;
-+	u32 temp;
-+	s32 val;
-+	int index = xgpio_index(chip, 0);
-+
-+	pr_debug("%s: Disable %d irq, irq_enable_mask 0x%x\n",
-+		 __func__, offset, chip->irq_enable);
-+
-+	spin_lock_irqsave(&chip->gpio_lock[index], flags);
-+
-+	chip->irq_enable &= ~BIT(offset);
-+
-+	if (!chip->irq_enable) {
-+		/* Enable per channel interrupt */
-+		temp = xgpio_readreg(chip->regs + XGPIO_IPIER_OFFSET);
-+		val = offset - chip->gpio_width[0] + 1;
-+		if (val > 0)
-+			temp &= 1;
-+		else
-+			temp &= 2;
-+		xgpio_writereg(chip->regs + XGPIO_IPIER_OFFSET, temp);
-+
-+		/* Disable global interrupt if channel interrupts are unused */
-+		temp = xgpio_readreg(chip->regs + XGPIO_IPIER_OFFSET);
-+		if (!temp)
-+			xgpio_writereg(chip->regs + XGPIO_GIER_OFFSET,
-+				       ~XGPIO_GIER_IE);
-+	}
-+	spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
-+}
-+
-+/**
-+ * xgpio_irq_unmask - Write the specified signal of the GPIO device.
-+ * @irq_data: per irq and chip data passed down to chip functions
-+ */
-+static void xgpio_irq_unmask(struct irq_data *irq_data)
-+{
-+	unsigned long flags;
-+	struct xgpio_instance *chip = irq_data_get_irq_chip_data(irq_data);
-+	u32 offset = irq_data->irq - chip->irq_base;
-+	u32 temp;
-+	s32 val;
-+	int index = xgpio_index(chip, 0);
-+
-+	pr_debug("%s: Enable %d irq, irq_enable_mask 0x%x\n",
-+		 __func__, offset, chip->irq_enable);
-+
-+	/* Setup pin as input */
-+	xgpio_dir_in(&chip->gc, offset);
-+
-+	spin_lock_irqsave(&chip->gpio_lock[index], flags);
-+
-+	chip->irq_enable |= BIT(offset);
-+
-+	if (chip->irq_enable) {
-+		/* Enable per channel interrupt */
-+		temp = xgpio_readreg(chip->regs + XGPIO_IPIER_OFFSET);
-+		val = offset - (chip->gpio_width[0] - 1);
-+		if (val > 0)
-+			temp |= 2;
-+		else
-+			temp |= 1;
-+		xgpio_writereg(chip->regs + XGPIO_IPIER_OFFSET, temp);
-+
-+		/* Enable global interrupts */
-+		xgpio_writereg(chip->regs + XGPIO_GIER_OFFSET, XGPIO_GIER_IE);
-+	}
-+
-+	spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
-+}
-+
-+/**
-+ * xgpio_set_irq_type - Write the specified signal of the GPIO device.
-+ * @irq_data: Per irq and chip data passed down to chip functions
-+ * @type: Interrupt type that is to be set for the gpio pin
-+ *
-+ * Return:
-+ * 0 if interrupt type is supported otherwise otherwise -EINVAL
-+ */
-+static int xgpio_set_irq_type(struct irq_data *irq_data, unsigned int type)
-+{
-+	/* Only rising edge case is supported now */
-+	if (type & IRQ_TYPE_EDGE_RISING)
-+		return 0;
-+
-+	return -EINVAL;
-+}
-+
-+/* irq chip descriptor */
-+static struct irq_chip xgpio_irqchip = {
-+	.name           = "xgpio",
-+	.irq_mask       = xgpio_irq_mask,
-+	.irq_unmask     = xgpio_irq_unmask,
-+	.irq_set_type   = xgpio_set_irq_type,
-+};
-+
-+/**
-+ * xgpio_to_irq - Find out gpio to Linux irq mapping
-+ * @gc: Pointer to gpio_chip device structure.
-+ * @offset: Gpio pin offset
-+ *
-+ * Return:
-+ * irq number otherwise -EINVAL
-+ */
-+static int xgpio_to_irq(struct gpio_chip *gc, unsigned int offset)
-+{
-+	struct xgpio_instance *chip = gpiochip_get_data(gc);
-+
-+	return irq_find_mapping(chip->irq_domain, offset);
-+}
-+
-+/**
-+ * xgpio_irqhandler - Gpio interrupt service routine
-+ * @desc: Pointer to interrupt description
-+ */
-+static void xgpio_irqhandler(struct irq_desc *desc)
-+{
-+	unsigned int irq = irq_desc_get_irq(desc);
-+	struct xgpio_instance *chip = (struct xgpio_instance *)
-+		irq_get_handler_data(irq);
-+	struct irq_chip *irqchip = irq_desc_get_chip(desc);
-+	u32 offset, status, channel = 1;
-+	unsigned long val;
-+
-+	chained_irq_enter(irqchip, desc);
-+
-+	val = xgpio_readreg(chip->regs);
-+	if (!val) {
-+		channel = 2;
-+		val = xgpio_readreg(chip->regs + XGPIO_CHANNEL_OFFSET);
-+		val = val << chip->gpio_width[0];
-+	}
-+
-+	/* Only rising edge is supported */
-+	val &= chip->irq_enable;
-+	for_each_set_bit(offset, &val, chip->gc.ngpio) {
-+		generic_handle_irq(chip->irq_base + offset);
-+	}
-+
-+	status = xgpio_readreg(chip->regs + XGPIO_IPISR_OFFSET);
-+	xgpio_writereg(chip->regs + XGPIO_IPISR_OFFSET, channel);
-+
-+	chained_irq_exit(irqchip, desc);
-+}
-+
-+static struct lock_class_key gpio_lock_class;
-+static struct lock_class_key gpio_request_class;
-+
-+/**
-+ * xgpio_irq_setup - Allocate irq for gpio and setup appropriate functions
-+ * @np: Device node of the GPIO chip
-+ * @chip: Pointer to private gpio channel structure
-+ *
-+ * Return:
-+ * 0 if success, otherwise -1
-+ */
-+static int xgpio_irq_setup(struct device_node *np, struct xgpio_instance *chip)
-+{
-+	u32 pin_num;
-+	struct resource res;
-+	int ret = of_irq_to_resource(np, 0, &res);
-+
-+	if (ret <= 0) {
-+		pr_info("GPIO IRQ not connected\n");
-+		return 0;
-+	}
-+
-+	chip->gc.to_irq = xgpio_to_irq;
-+	chip->irq_base = irq_alloc_descs(-1, 0, chip->gc.ngpio, 0);
-+	if (chip->irq_base < 0) {
-+		pr_err("Couldn't allocate IRQ numbers\n");
-+		return -1;
-+	}
-+	chip->irq_domain = irq_domain_add_legacy(np, chip->gc.ngpio,
-+						 chip->irq_base, 0,
-+						 &irq_domain_simple_ops, NULL);
-+	/*
-+	 * set the irq chip, handler and irq chip data for callbacks for
-+	 * each pin
-+	 */
-+	for (pin_num = 0; pin_num < chip->gc.ngpio; pin_num++) {
-+		u32 gpio_irq = irq_find_mapping(chip->irq_domain, pin_num);
-+
-+		irq_set_lockdep_class(gpio_irq, &gpio_lock_class,
-+				      &gpio_request_class);
-+		pr_debug("IRQ Base: %d, Pin %d = IRQ %d\n",
-+			 chip->irq_base, pin_num, gpio_irq);
-+		irq_set_chip_and_handler(gpio_irq, &xgpio_irqchip,
-+					 handle_simple_irq);
-+		irq_set_chip_data(gpio_irq, (void *)chip);
-+	}
-+	irq_set_handler_data(res.start, (void *)chip);
-+	irq_set_chained_handler(res.start, xgpio_irqhandler);
-+
-+	return 0;
-+}
-+
-+/**
-  * xgpio_of_probe - Probe method for the GPIO device.
-  * @pdev: pointer to the platform device
-  *
-@@ -434,6 +656,15 @@ static int xgpio_probe(struct platform_device *pdev)
- 		goto err_pm_put;
- 	}
- 
-+	status = xgpio_irq_setup(np, chip);
-+	if (status) {
-+		pr_err("%s: GPIO IRQ initialization failed %d\n",
-+		       np->full_name, status);
-+		goto err_pm_put;
-+	}
-+	pr_info("XGpio: %s: registered, base is %d\n", np->full_name,
-+		chip->gc.base);
-+
- 	pm_runtime_put(&pdev->dev);
- 	return 0;
- err_pm_put:
--- 
-2.7.4
+https://lore.kernel.org/lkml/20200214174949.GA30484@e121166-lin.cambridge.arm.com/
 
+> Signed-off-by: Pankaj Bansal <pankaj.bansal@nxp.com>
+> ---
+>  drivers/acpi/arm64/iort.c | 36 +++++++++++++++++-------------------
+>  1 file changed, 17 insertions(+), 19 deletions(-)
+> 
+> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+> index ed3d2d1a7ae9..00e562dadd2a 100644
+> --- a/drivers/acpi/arm64/iort.c
+> +++ b/drivers/acpi/arm64/iort.c
+> @@ -358,7 +358,9 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+>  	/* Single mapping does not care for input id */
+>  	if (map->flags & ACPI_IORT_ID_SINGLE_MAPPING) {
+>  		if (type == ACPI_IORT_NODE_NAMED_COMPONENT ||
+> -		    type == ACPI_IORT_NODE_PCI_ROOT_COMPLEX) {
+> +		    type == ACPI_IORT_NODE_PCI_ROOT_COMPLEX ||
+> +		    type == ACPI_IORT_NODE_SMMU_V3 ||
+> +		    type == ACPI_IORT_NODE_PMCG) {
+>  			*rid_out = map->output_base;
+>  			return 0;
+>  		}
+> @@ -376,7 +378,8 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+>  }
+>  
+>  static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
+> -					       u32 *id_out, int index)
+> +					       u32 id_in, u32 *id_out,
+> +					       int index)
+>  {
+>  	struct acpi_iort_node *parent;
+>  	struct acpi_iort_id_mapping *map;
+> @@ -398,15 +401,8 @@ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
+>  	parent = ACPI_ADD_PTR(struct acpi_iort_node, iort_table,
+>  			       map->output_reference);
+>  
+> -	if (map->flags & ACPI_IORT_ID_SINGLE_MAPPING) {
+> -		if (node->type == ACPI_IORT_NODE_NAMED_COMPONENT ||
+> -		    node->type == ACPI_IORT_NODE_PCI_ROOT_COMPLEX ||
+> -		    node->type == ACPI_IORT_NODE_SMMU_V3 ||
+> -		    node->type == ACPI_IORT_NODE_PMCG) {
+> -			*id_out = map->output_base;
+> -			return parent;
+> -		}
+> -	}
+> +	if (!iort_id_map(map, node->type, id_in, id_out))
+> +		return parent;
+>  
+>  	return NULL;
+>  }
+> @@ -510,14 +506,14 @@ static struct acpi_iort_node *iort_node_map_id(struct acpi_iort_node *node,
+>  }
+>  
+>  static struct acpi_iort_node *iort_node_map_platform_id(
+> -		struct acpi_iort_node *node, u32 *id_out, u8 type_mask,
+> -		int index)
+> +		struct acpi_iort_node *node, u32 id_in, u32 *id_out,
+> +		u8 type_mask, int index)
+>  {
+>  	struct acpi_iort_node *parent;
+>  	u32 id;
+>  
+>  	/* step 1: retrieve the initial dev id */
+> -	parent = iort_node_get_id(node, &id, index);
+> +	parent = iort_node_get_id(node, id_in, &id, index);
+>  	if (!parent)
+>  		return NULL;
+>  
+> @@ -592,7 +588,8 @@ u32 iort_msi_map_rid(struct device *dev, u32 req_id)
+>  /**
+>   * iort_pmsi_get_dev_id() - Get the device id for a device
+>   * @dev: The device for which the mapping is to be done.
+> - * @dev_id: The device ID found.
+> + * @dev_id: On function entry the input id for device.
+> + *          On successful function exit, the output device ID found.
+>   *
+>   * Returns: 0 for successful find a dev id, -ENODEV on error
+>   */
+> @@ -608,11 +605,11 @@ int iort_pmsi_get_dev_id(struct device *dev, u32 *dev_id)
+>  	index = iort_get_id_mapping_index(node);
+>  	/* if there is a valid index, go get the dev_id directly */
+>  	if (index >= 0) {
+> -		if (iort_node_get_id(node, dev_id, index))
+> +		if (iort_node_get_id(node, *dev_id, dev_id, index))
+>  			return 0;
+>  	} else {
+>  		for (i = 0; i < node->mapping_count; i++) {
+> -			if (iort_node_map_platform_id(node, dev_id,
+> +			if (iort_node_map_platform_id(node, *dev_id, dev_id,
+>  						      IORT_MSI_TYPE, i))
+>  				return 0;
+>  		}
+> @@ -761,7 +758,7 @@ static struct irq_domain *iort_get_platform_device_domain(struct device *dev)
+>  
+>  	/* then find its msi parent node */
+>  	for (i = 0; i < node->mapping_count; i++) {
+> -		msi_parent = iort_node_map_platform_id(node, NULL,
+> +		msi_parent = iort_node_map_platform_id(node, 0, NULL,
+>  						       IORT_MSI_TYPE, i);
+>  		if (msi_parent)
+>  			break;
+> @@ -1038,7 +1035,8 @@ const struct iommu_ops *iort_iommu_configure(struct device *dev)
+>  			return NULL;
+>  
+>  		do {
+> -			parent = iort_node_map_platform_id(node, &streamid,
+> +			parent = iort_node_map_platform_id(node, streamid,
+> +							   &streamid,
+>  							   IORT_IOMMU_TYPE,
+>  							   i++);
+>  
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
