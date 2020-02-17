@@ -2,63 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13FA116161F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 16:25:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4D9B16162F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 16:30:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5aJ3F9q0VroapdI3hC6h3dh1PxgqdKr+W6wDxmbvgCc=; b=LAONkuyNATjjMw
-	Xf53zcX8+3IkEQIjd2DXNxZtGl8lty7JH9aeOeDubQdirfr8xoOHWghQvgzQ806Yhn/jo+BvLNrMs
-	ilgiOmFV7icA+d7oRItKJnFDMn+8/5xoRMAN9mx6L3/3+hrTVhcnv7EN1fc3BGpWfQ/pVTa37XBWJ
-	j9eyXhx76MpXLFN0Ql1kcyu3BIvNXluEIG1R1i4hexOtEySjlygIR1x967hmGuFNK30AFQfXDlJEK
-	yoYBtY7vInLISx/j50pRkwFTPd85Ef6+QY1iG+tqcJDJ0uWE27Lnvz2VbEHlrG//kAayI0RfcNIv2
-	5nnxNQpAO9xHMZJwJpCg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=O8oIPRT3NKHz24KgxD7T6yoXneIWRjwL1x8lx80zZ2o=; b=G2m0RYTomcjs+qPpkC8e/78KT
+	enbWV5TIdro0UheGDEuj7jxiM+aJVwy5PtERQDacrXaj+9xj5N5WOwefAYS1wGVk06os6cPQCzuGu
+	HJ+r6MUkDFGYeV28idw3Nug5QNqlC/KxbFVZrK3GtghtIrvVwH1aM/SbX1p6O06BuPWRaMr8Mum1t
+	i8to1phVi5eyrr8TnR/o9q5RaaC6MJQz1oHCvFdVoDo6QXXEDrxTGEkt/5Eba0tF6wyfXp4g4y3Pb
+	GeYu7Nc9qkcX66H3CGtwlYjqzNkUSyFnc+anOgHAE64VLJn3KDAmShx15A4IWzeSbyUiSMNCcsXl4
+	XZKnpfjSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3iH9-0002vo-Kz; Mon, 17 Feb 2020 15:25:35 +0000
+	id 1j3iM2-0004fQ-0c; Mon, 17 Feb 2020 15:30:38 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3iH2-0002vM-D0
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 15:25:29 +0000
+ id 1j3iLr-0004en-2v
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 15:30:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B69030E;
- Mon, 17 Feb 2020 07:25:27 -0800 (PST)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 41D553F703;
- Mon, 17 Feb 2020 07:25:24 -0800 (PST)
-Date: Mon, 17 Feb 2020 15:25:18 +0000
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Pankaj Bansal <pankaj.bansal@nxp.com>
-Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-Message-ID: <20200217152518.GA18376@e121166-lin.cambridge.arm.com>
-References: <DB8PR04MB7164DDF48480956F05886DABEB070@DB8PR04MB7164.eurprd04.prod.outlook.com>
- <12531d6c569c7e14dffe8e288d9f4a0b@kernel.org>
- <CAKv+Gu8uaJBmy5wDgk=uzcmC4vkEyOjW=JRvhpjfsdh-HcOCLg@mail.gmail.com>
- <VI1PR0401MB249622CFA9B213632F1DE955F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
- <7349fa0e6d62a3e0d0e540f2e17646e0@kernel.org>
- <VI1PR0401MB2496373E0C6D1097F22B3026F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
- <20200214161957.GA27513@e121166-lin.cambridge.arm.com>
- <VI1PR0401MB2496800C88A3A2CF912959E6F1150@VI1PR0401MB2496.eurprd04.prod.outlook.com>
- <20200214174949.GA30484@e121166-lin.cambridge.arm.com>
- <VI1PR0401MB2496308C27B7DAA7A5396970F1160@VI1PR0401MB2496.eurprd04.prod.outlook.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CCCDE30E;
+ Mon, 17 Feb 2020 07:30:25 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4E50E3F703;
+ Mon, 17 Feb 2020 07:30:25 -0800 (PST)
+Date: Mon, 17 Feb 2020 15:30:23 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Samuel Holland <samuel@sholland.org>
+Subject: Re: [RFC PATCH 10/34] ASoC: sun8i-codec: Advertise only
+ hardware-supported rates
+Message-ID: <20200217153023.GL9304@sirena.org.uk>
+References: <20200217064250.15516-1-samuel@sholland.org>
+ <20200217064250.15516-11-samuel@sholland.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <VI1PR0401MB2496308C27B7DAA7A5396970F1160@VI1PR0401MB2496.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200217064250.15516-11-samuel@sholland.org>
+X-Cookie: There was a phone call for you.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_072528_529788_7295AD0A 
-X-CRM114-Status: GOOD (  23.31  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200217_073027_176399_95ECC070 
+X-CRM114-Status: GOOD (  12.01  )
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -72,141 +66,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Calvin Johnson <calvin.johnson@nxp.com>,
- "stuyoder@gmail.com" <stuyoder@gmail.com>,
- "nleeder@codeaurora.org" <nleeder@codeaurora.org>,
- Ioana Ciornei <ioana.ciornei@nxp.com>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
- Will Deacon <will@kernel.org>, Marc Zyngier <maz@kernel.org>,
- "jon@solid-run.com" <jon@solid-run.com>, Russell King <linux@armlinux.org.uk>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Len Brown <lenb@kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- Andy Wang <Andy.Wang@arm.com>, Makarand Pawagi <makarand.pawagi@nxp.com>,
- Varun Sethi <V.Sethi@nxp.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>, Paul Yang <Paul.Yang@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Sudeep Holla <sudeep.holla@arm.com>, Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ =?iso-8859-1?Q?Myl=E8ne?= Josserand <mylene.josserand@free-electrons.com>,
+ stable@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3166822561063455299=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 12:35:12PM +0000, Pankaj Bansal wrote:
-> 
-> 
-> > -----Original Message-----
-> > From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > Sent: Friday, February 14, 2020 11:20 PM
-> > To: Pankaj Bansal <pankaj.bansal@nxp.com>
-> > Cc: Marc Zyngier <maz@kernel.org>; Ard Biesheuvel
-> > <ard.biesheuvel@linaro.org>; Makarand Pawagi <makarand.pawagi@nxp.com>;
-> > Calvin Johnson <calvin.johnson@nxp.com>; stuyoder@gmail.com;
-> > nleeder@codeaurora.org; Ioana Ciornei <ioana.ciornei@nxp.com>; Cristi
-> > Sovaiala <cristian.sovaiala@nxp.com>; Hanjun Guo <guohanjun@huawei.com>;
-> > Will Deacon <will@kernel.org>; jon@solid-run.com; Russell King
-> > <linux@armlinux.org.uk>; ACPI Devel Maling List <linux-acpi@vger.kernel.org>;
-> > Len Brown <lenb@kernel.org>; Jason Cooper <jason@lakedaemon.net>; Andy
-> > Wang <Andy.Wang@arm.com>; Varun Sethi <V.Sethi@nxp.com>; Thomas
-> > Gleixner <tglx@linutronix.de>; linux-arm-kernel <linux-arm-
-> > kernel@lists.infradead.org>; Laurentiu Tudor <laurentiu.tudor@nxp.com>; Paul
-> > Yang <Paul.Yang@arm.com>; netdev@vger.kernel.org; Rafael J. Wysocki
-> > <rjw@rjwysocki.net>; Linux Kernel Mailing List <linux-kernel@vger.kernel.org>;
-> > Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>;
-> > Sudeep Holla <sudeep.holla@arm.com>; Robin Murphy
-> > <robin.murphy@arm.com>
-> > Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-> > 
-> > On Fri, Feb 14, 2020 at 04:35:10PM +0000, Pankaj Bansal wrote:
-> > 
-> > [...]
-> > 
-> > > > -----Original Message-----
-> > > > From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > > > Sent: Friday, February 14, 2020 9:50 PM
-> > > > To: Pankaj Bansal <pankaj.bansal@nxp.com>
-> > > > Cc: Marc Zyngier <maz@kernel.org>; Ard Biesheuvel
-> > > > <ard.biesheuvel@linaro.org>; Makarand Pawagi
-> > <makarand.pawagi@nxp.com>;
-> > > > Calvin Johnson <calvin.johnson@nxp.com>; stuyoder@gmail.com;
-> > > > nleeder@codeaurora.org; Ioana Ciornei <ioana.ciornei@nxp.com>; Cristi
-> > > > Sovaiala <cristian.sovaiala@nxp.com>; Hanjun Guo
-> > <guohanjun@huawei.com>;
-> > > > Will Deacon <will@kernel.org>; jon@solid-run.com; Russell King
-> > > > <linux@armlinux.org.uk>; ACPI Devel Maling List <linux-
-> > acpi@vger.kernel.org>;
-> > > > Len Brown <lenb@kernel.org>; Jason Cooper <jason@lakedaemon.net>;
-> > Andy
-> > > > Wang <Andy.Wang@arm.com>; Varun Sethi <V.Sethi@nxp.com>; Thomas
-> > > > Gleixner <tglx@linutronix.de>; linux-arm-kernel <linux-arm-
-> > > > kernel@lists.infradead.org>; Laurentiu Tudor <laurentiu.tudor@nxp.com>;
-> > Paul
-> > > > Yang <Paul.Yang@arm.com>; netdev@vger.kernel.org; Rafael J. Wysocki
-> > > > <rjw@rjwysocki.net>; Linux Kernel Mailing List <linux-
-> > kernel@vger.kernel.org>;
-> > > > Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>;
-> > > > Sudeep Holla <sudeep.holla@arm.com>; Robin Murphy
-> > > > <robin.murphy@arm.com>
-> > > > Subject: Re: [EXT] Re: [PATCH] bus: fsl-mc: Add ACPI support for fsl-mc
-> > Side note: would you mind removing the email headers (as above) in your
-> > replies please ?
 
-Read the question above please.
+--===============3166822561063455299==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="0qVF/w3MHQqLSynd"
+Content-Disposition: inline
 
-[...]
 
-> > > As stated above, in Linux MC is a bus (just like PCI bus, AMBA bus etc)
-> > > There can be multiple devices attached to this bus. Moreover, we can
-> > dynamically create/destroy these devices.
-> > > Now, we want to represent this BUS (not individual devices connected to bus)
-> > in IORT table.
-> > > The only possible way right now we see is that we describe it as Named
-> > components having a pool of ID mappings.
-> > > As and when devices are created and attached to bus, we sift through this pool
-> > to correctly determine the output ID for the device.
-> > > Now the input ID that we provide, can come from device itself.
-> > > Then we can use the Platform MSI framework for MC bus devices.
-> > 
-> > So are you asking me if that's OK ? Or there is something you can't
-> > describe with IORT ?
-> 
-> I am asking if that would be acceptable?
-> i.e. we represent MC bus as Named component is IORT table with a pool of IDs (without single ID mapping flag)
-> and then we use the Platform MSI framework for all children devices of MC bus.
-> Note that it would require the Platform MSI layer to correctly pass an input id for a platform device to IORT layer.
+--0qVF/w3MHQqLSynd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-How is this solved in DT ? You don't seem to need any DT binding on top
-of the msi-parent property, which is equivalent to IORT single mappings
-AFAICS so I would like to understand the whole DT flow (so that I
-understand how this FSL bus works) before commenting any further.
+On Mon, Feb 17, 2020 at 12:42:26AM -0600, Samuel Holland wrote:
+> The hardware does not support 64kHz, 88.2kHz, or 176.4kHz sample rates,
+> so the driver should not advertise them. The hardware can handle two
+> additional non-standard sample rates: 12kHz and 24kHz, so declare
+> support for them via SNDRV_PCM_RATE_KNOT.
+>=20
+> Cc: stable@kernel.org
+> Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
+> Fixes: eda85d1fee05 ("ASoC: sun8i-codec: Add ADC support for a33")
+> Signed-off-by: Samuel Holland <samuel@sholland.org>
 
-> And IORT layer ought to retrieve the output id based on single ID mapping flag as well as input id.
-> 
-> > 
-> > Side note: can you explain to me please how the MSI allocation flow
-> > and kernel data structures/drivers are modeled in DT ? I had a quick
-> > look at:
-> > 
-> > drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c
-> > 
-> > and to start with, does that code imply that we create a
-> > DOMAIN_BUS_FSL_MC_MSI on ALL DT systems with an ITS device node ?
-> 
-> Yes. It's being done for all DT systems having ITS node.
+The new sample rates are new functionality, they are definitely not
+stable material.   For the sample rates you are removing do we
+understand why they were added - do they work for people, are they
+perhaps supported for some users and not others for example?
 
-This does not seem correct to me, I will let Marc comment on
-the matter.
+--0qVF/w3MHQqLSynd
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> The domain creation is handled in drivers/bus/fsl-mc/fsl-mc-msi.c
+-----BEGIN PGP SIGNATURE-----
 
-Thanks,
-Lorenzo
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5KsY8ACgkQJNaLcl1U
+h9DgKwf/RkeIHeM2sJ2RgbLTXWX8YZmWkvlMjMbuWBeFxHTz/Hdo+gM34z7glK5D
+vTsYnMg6wYSVtkRJzw6JOjJE/YqT+KFTmpqMHlhJkHhh+0Ce33hnN5vhPWAOyDLX
+ajN4NNYMR/RvlHVhAD8YVCjWKy65hpslCTajh+74Pn5GNtXao1z2mH6vDaVOntZj
+KsuP3g6wxqKicdi4lrAYDS80cpUVlOD4OkMk49MT5h1U78w3hblZkKULqFjOt3BL
+jgdv2os2/zg+/7OxQCcAlJfrfd4m4kBHbI9HF+0IMV9CIt+pR7Kmy7H+zcliwi9L
+1zUYINK1EWJvcb+4lIeZcMRp0sH7aQ==
+=ZBtq
+-----END PGP SIGNATURE-----
+
+--0qVF/w3MHQqLSynd--
+
+
+--===============3166822561063455299==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3166822561063455299==--
+
