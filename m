@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C12C161583
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 16:06:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25F8316159A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 16:09:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OspU+WhwZgHUFW7K2z0asVL/mFnb3Qv6CSh3+7NGDhc=; b=p4D5sWNALHvGKfArrKh2MpkZS
-	eSOC6AKHgcnFnXhnOPdUGQrAwEM9i7uzK33uWMddPKa4ddgJ1txD4OItCpBaiF0nOyuRFggGZwZbC
-	7sok78TrL5oHiau3eZoyYls+Nyxb5MaPqNm1RlHkfAR/TQJT5CNCpqa2aG8A5LKUpZI54s4xEYshF
-	jbGZnh/Tw3JkEm3mUphgB5/DBaoWpUOA94pPuVhQ6AddaZbaLiWvQAIN2RhetkzkNxzXh3NHUXIHu
-	gtFIzSgZwr9+PKULX3q73s8URfz2WNtEzPipsupf4319g5BGhm6KvnQu5EKmx8iVROhXDA/23zTEE
-	GiU9/POSQ==;
+	 bh=UcpKTFm1vxSdlkr5M62+DqSQeDlIftI98XJK+x4jNpI=; b=f10A3CCtIW/EVrLCqhKrZ+XJN
+	wLWN/1WiO1QjhmoIq8IB0aX9nU4LyaSMveF8VTdY3eE/13fWUi3pvgzO8RVveotJQrQf6X5yF8wPm
+	filEAyeI+PvhQ1tYh1afIwuFD4sTb1gvtBTXyz9mQ2m4WYWRSXMtOQohe5DH/w9OOHHyXF4EBBSzf
+	q/CMkFPpzbp8Jq7vNpvEN4zZzWzJIrEnS827XOsCgJg71eDr4t/c1lTAqQF6aKtPA/hx4VMk6oezN
+	fAgSL1N8EY9fENJMy6RBO/yyjYh3D4Fqzbby44ZWskDPaIKX9Jv0qQj16J8rfm6G3m4kUL6ACTwF5
+	4dB73CZlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3hyI-0002CA-RV; Mon, 17 Feb 2020 15:06:06 +0000
+	id 1j3i1s-0002ge-JO; Mon, 17 Feb 2020 15:09:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3hy9-0002BP-6N
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 15:05:58 +0000
+ id 1j3i1i-0002gB-I6
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 15:09:39 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 76B05106F;
- Mon, 17 Feb 2020 07:05:54 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D841630E;
+ Mon, 17 Feb 2020 07:09:37 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EEE463F703;
- Mon, 17 Feb 2020 07:05:53 -0800 (PST)
-Date: Mon, 17 Feb 2020 15:05:52 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5B7BA3F703;
+ Mon, 17 Feb 2020 07:09:37 -0800 (PST)
+Date: Mon, 17 Feb 2020 15:09:35 +0000
 From: Mark Brown <broonie@kernel.org>
 To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [RFC PATCH 07/34] ASoC: sun8i-codec: Remove extraneous widgets
-Message-ID: <20200217150552.GI9304@sirena.org.uk>
-References: <20200217064250.15516-8-samuel@sholland.org>
+Subject: Re: [RFC PATCH 08/34] ASoC: sun8i-codec: Fix direction of AIF1 outputs
+Message-ID: <20200217150935.GJ9304@sirena.org.uk>
+References: <20200217064250.15516-1-samuel@sholland.org>
+ <20200217064250.15516-9-samuel@sholland.org>
 MIME-Version: 1.0
-In-Reply-To: <20200217064250.15516-8-samuel@sholland.org>
+In-Reply-To: <20200217064250.15516-9-samuel@sholland.org>
 X-Cookie: There was a phone call for you.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_070557_279486_841A7F9E 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20200217_070938_644629_6DB2FCCE 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -71,51 +72,52 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
  =?iso-8859-1?Q?Myl=E8ne?= Josserand <mylene.josserand@free-electrons.com>,
  stable@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4076693206894745125=="
+Content-Type: multipart/mixed; boundary="===============6765492671683386174=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4076693206894745125==
+--===============6765492671683386174==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="e5GLnnZ8mDMEwH4V"
+	protocol="application/pgp-signature"; boundary="4vpci17Ql0Nrbul2"
 Content-Disposition: inline
 
 
---e5GLnnZ8mDMEwH4V
+--4vpci17Ql0Nrbul2
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-On Mon, Feb 17, 2020 at 12:42:23AM -0600, Samuel Holland wrote:
-> This driver is for the digital part of the codec, which has no
-> microphone input. These widgets look like they were copied from
-> sun4i-codec. Since they do not belong here, remove them.
->=20
+On Mon, Feb 17, 2020 at 12:42:24AM -0600, Samuel Holland wrote:
+> The naming convention for AIFs in this codec is to call the "DAC" the
+> path from the AIF into the codec, and the ADC the path from the codec
+> back to the AIF, regardless of if there is any analog path involved.
+
+This renames widgets but does not update any DAPM routes from those
+widgets which will break things if this patch is applied.
+
 > Cc: stable@kernel.org
-> Fixes: eda85d1fee05 ("ASoC: sun8i-codec: Add ADC support for a33")
 
-This is a cleanup, why send it to stable?
+Why is this suitable for stable?  It's a random textual cleanup.
 
---e5GLnnZ8mDMEwH4V
+--4vpci17Ql0Nrbul2
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5Kq88ACgkQJNaLcl1U
-h9AO/wf+MRxer75LjO64950mSzyZv03H08zeydq4EqDjAfmEz4SKcz7U2c4saLDV
-rnK6SSDhIk+37PQH7f3K1vOkeS2vbdZ4jLlfv37BZM8W4Gjvmskw55ALcWYyEJUT
-NLbZapLoOL+r6G0jTNchN/Y9RxH02zUZjpaCkAu8pYQJ4H9uj4Tmo2ma08gsKe6Z
-5hJJGjVeiJMF7vekIeY6qzV44uWDXL2fEkP41L05NPQBA3bPzo0E35uJEz+q2aZC
-6M7cH9ezGYL4AtEJIFqzZnIUcQxVZkLHG/zpMqY4bxC1xFmNihLDzqi7HKQtGOEF
-NTKdQfX3VCJwv2632jbbdyiKMpeIUg==
-=zg40
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5KrK8ACgkQJNaLcl1U
+h9Ab9Af/b8sQj3zwynBYYxusscd9/aduwhw7qF+DAdPBw6PYNIA/g/Ts6oULrx9/
+F9O4MHo55RlwYbfi8iuyYJ8LpLv4y7txkM5x5y5oauIL+soV6TB8bszuwBvk5jHu
+qMxAhPDo6mD2D1QYL7GJeWvid+lBr7MGrlzbxg+0uW1jEw3pEJjXL4WTXu0e2l4T
+cTZ4Am744vhS15WDE0s/wJSvB2rxPn6xVVi93LtdEE9+YgE4lE9Y7ruezZibMFQb
+hrTkWC0l92y8sbIkHpAzlo5gh5qNn6UahJRlr+wCILtXuEJMgPEEmx0DoTciwQUr
+su1mRVq9kOQOtpw4mjBq3iDo8MiP3A==
+=UkmS
 -----END PGP SIGNATURE-----
 
---e5GLnnZ8mDMEwH4V--
+--4vpci17Ql0Nrbul2--
 
 
---===============4076693206894745125==
+--===============6765492671683386174==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -126,5 +128,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4076693206894745125==--
+--===============6765492671683386174==--
 
