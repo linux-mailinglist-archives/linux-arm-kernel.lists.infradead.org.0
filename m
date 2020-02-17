@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABA0E160A20
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 06:50:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D90C4160A23
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 06:53:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A1JMJIkrb2aJUbjHuUtoh74MCgiUDLKvCPPGv5HiLOA=; b=dTUTz32LayiKDe
-	1Qo5JkihvP+N256aQFtMZTJ+Whgt4Ov6xtn8Rml1Ix+Drvs7BDxP1nS2v8c5tzG3q2fQ7u9VcLMW/
-	++FVoPpMxVs86CFshsIyDzPbVeK90z880vwAhIrJMNZiw0AOfjFdfL2aVzJouH7zy/3O20DKHUngw
-	oQw3Eui3oFNJ3rwceLqi1V5t0ckP1dXfl2WJc1BsnbNWrAH70kL8EfHZ0o4/oTILWuhzCODquumT/
-	DEHWZzq9MdsNcUbK/pd/5QLnMs+FeQyd6O6UuWKgOglrV0bcqX06U0tcTWLo9lFu+jIkafphiQJqX
-	utp6K4LdluvXTTzXDBnA==;
+	List-Owner; bh=OXJhzuOhylZ4v0Yq/irY0ne7TkIPG1tsczQZqp/zlSU=; b=PQ35eJ6uRD+eQp
+	3jpA194qTDZKY08QuwHmmAJGIqByZ6E9Q6JoQzuHHL6sKnGjcRI4LlaCTNKK619p+k4jc5RfNWpIg
+	xMaDJaSxa/JKS2X7PSTFBMrVMMFgdyjC6ZheLv8HhR3LK3lw+xnoJRvhbZawAyNL9SgfEe0Le7FVh
+	Y7NS4tCFTfeXU+6vXiQ/bCMFZhlSWVGUidGNDbcMBWNG/CJCfJCxKuRozArCNbgehyUP2r4NPHY2P
+	Kkc1HteGm3E2t0b3pofHFT5YnE7/kZdWqcEXCW08n2kpDWYzud3GwnIjnKEklAKOG5ORK82Xxz/mD
+	8N+wi6z8QnlWg2ktd+6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3ZIq-0008B5-M7; Mon, 17 Feb 2020 05:50:44 +0000
+	id 1j3ZL6-0008Ta-En; Mon, 17 Feb 2020 05:53:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3ZIg-0008Am-Gq
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 05:50:35 +0000
+ id 1j3ZKv-0008TH-PH
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 05:52:55 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6EA1C2070B;
- Mon, 17 Feb 2020 05:50:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BCEAA206F4;
+ Mon, 17 Feb 2020 05:52:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581918633;
- bh=MjiPieCmyZRIzZ0W3qjRJdsz7q6ukow9JNgZCvHQULk=;
+ s=default; t=1581918773;
+ bh=3XZW45+oxiEd21pjOWOS/xVC/P/jx/HU3Cb4pITE3fw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=DnvSmgYEMsMlIYhxzZr94FjmiRqHBWTXU/6QhiRjG43Pa6/5SD2Y5Ur0/iTwTKKMJ
- wNIHG+6YYJw0XaUH+Htk4X3RGk6/wYkotG3QiyA7Ot37U4rQ4u0LVORQOIuMKt7ERS
- 8jF5vyeju74lhCviC1vI+OuLXPaBr3CMyrwICO98=
-Date: Mon, 17 Feb 2020 13:50:28 +0800
+ b=JqETqfL1YBqAvtHF2RyHkOTqG5cmAmPwE4k5mGeoZTCzh7dkTO64l6Ji1Vb7Vjgaw
+ cW9NWvgHNKBqOABc7ypk7UGIeKFonKSY95I1ug/KaPQc/oyChxB559B3aAkqtzqXpi
+ 6fAWeyngRMt5SOm3kvRFJ9GXX5eepwXlmifhDhx0=
+Date: Mon, 17 Feb 2020 13:52:47 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH 1/2] clk: imx8mm: Fix the CLKO1 source select list
-Message-ID: <20200217055027.GC6042@dragon>
-References: <20200211030813.13992-1-festevam@gmail.com>
+To: Yangbo Lu <yangbo.lu@nxp.com>
+Subject: Re: [PATCH] arm64: dts: ls1028a: support external trigger timestamp
+ fifo of PTP timer
+Message-ID: <20200217055246.GD6042@dragon>
+References: <20200211045758.8231-1-yangbo.lu@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200211030813.13992-1-festevam@gmail.com>
+In-Reply-To: <20200211045758.8231-1-yangbo.lu@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_215034_581244_4ED4F96F 
-X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-CacheID: sfid-20200216_215253_842661_AF7195CD 
+X-CRM114-Status: UNSURE (   8.70  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -77,32 +78,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- kernel@pengutronix.de, linux-clk@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 11, 2020 at 12:08:12AM -0300, Fabio Estevam wrote:
-> The CLKO1 clock source select list is the following as per the i.MX8MM
-> Reference Manual (put in increasing order):
+On Tue, Feb 11, 2020 at 12:57:58PM +0800, Yangbo Lu wrote:
+> There is an external trigger timestamp fifo for PTP timer
+> of LS1028A. Add property fsl,extts-fifo for that.
 > 
-> 000 - 24M_REF_CLK
-> 001 - SYSTEM_PLL1_CLK
-> 010 - None
-> 011 - SYSTEM_PLL1_DIV4
-> 100 - AUDIO_PLL2_CLK
-> 101 - SYSTEM_PLL2_DIV2
-> 110 - VPU_PLL_CLK
-> 111 - SYSTEM_PLL1_DIV10
-> 
-> Fix it accordingly.
-> 
-> Fixes: ba5625c3e272 ("clk: imx: Add clock driver support for imx8mm")
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
 
-Applied both, thanks.
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
