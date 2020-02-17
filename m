@@ -2,55 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D086A1622C6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 09:53:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E36EB162311
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 10:10:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=3EnLMLw4W1rco5Ftv4k+lNiRqIofY8lAjWwKq51R/lY=; b=UH7rauuI3GlOXSFvufiqyRsOcS
-	HPm/NeuNg3MI12Rih8kPaXZwW9YBlKeI03sGO+P9Jdta4QbmgmS4wQh7t//se0anQDsuO2BrPMaUH
-	Q+ifprHB6Lgw79uoAPUTDIoNhfcllMd4+519gkpia2Gy/YdN9UBkEGUpYZX0gDL9/DH2d/yWAcY/V
-	0q48NLm9GWwcJrRJMigh7GYvjfFeYRaN1xei8jtqQdUMzY57hYw16X0Gg2JyLRMyw1r5+G0fzHTgA
-	cACdvw4mfnMtpXy9lmXVP0lQEeJPMLeYbFOAgAuJOhJM7H/WHj+Hwl6AB4F0PfP0mEVI2kJHebhNz
-	mmTltSLA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vrrL+Yjq9eE1lnUCuNwjSWfcJtTryIV5arvJcix0cJU=; b=IzWqu3uul4SSLk
+	ySD1PeJfp+x/8mA35ufKzzeODaK4Q4PXPW8jwLElfS5GRcpu1Nnt40znzjZ/YmJYoUXi8EvVIpOjt
+	188205Uiv6DI4fkNlZ5W7lA/aMOS1Qfg2+G91ezUu5QYOGdDSivSva+HW+TbQsqD9A7+y8iKrs7WZ
+	hlRZMu6fpCHOTlHv17rhoI8KgC9U2YaDHnz6CWgZVmfvbHESOz+d6zMxFLF55/dwbAmSz1EgO0BlZ
+	GHILAwGkF0yit7SBRwg8hXAdPxiat8Nqgkf+1NoEimPNEnrKZWAAkNS2N1oAS+LK0Rc9bCN3V/lDb
+	rKEiu1xynyNpbBmHTjAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3ycy-0004PU-8u; Tue, 18 Feb 2020 08:53:12 +0000
-Received: from comms.puri.sm ([159.203.221.185])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3ybQ-0002tb-5N
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 08:51:40 +0000
-Received: from localhost (localhost [127.0.0.1])
- by comms.puri.sm (Postfix) with ESMTP id 8FE51E114C;
- Tue, 18 Feb 2020 00:51:04 -0800 (PST)
-Received: from comms.puri.sm ([127.0.0.1])
- by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id qYOfLCYxd975; Tue, 18 Feb 2020 00:51:03 -0800 (PST)
-From: Martin Kepplinger <martin.kepplinger@puri.sm>
-To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de
-Subject: [PATCH v2 9/9] arm64: dts: librem5-devkit: add lsm9ds1 mount matrix
-Date: Tue, 18 Feb 2020 09:49:42 +0100
-Message-Id: <20200218084942.4884-10-martin.kepplinger@puri.sm>
-In-Reply-To: <20200218084942.4884-1-martin.kepplinger@puri.sm>
-References: <20200218084942.4884-1-martin.kepplinger@puri.sm>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_005136_393412_5AA662CD 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [159.203.221.185 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+	id 1j3yty-00047r-QU; Tue, 18 Feb 2020 09:10:46 +0000
+Received: from x2f7fb70.dyn.telefonica.de ([2.247.251.112]
+ helo=bombadil.infradead.org)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j3ytq-00047E-Oc; Tue, 18 Feb 2020 09:10:39 +0000
+Received: from mchehab by bombadil.infradead.org with local (Exim 4.92.3)
+ (envelope-from <mchehab@bombadil.infradead.org>)
+ id 1j3j8V-000foa-PM; Mon, 17 Feb 2020 17:20:43 +0100
+From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
+Subject: [PATCH v2 00/24] Manually convert  thermal,
+ crypto and misc devices to ReST
+Date: Mon, 17 Feb 2020 17:20:18 +0100
+Message-Id: <cover.1581956285.git.mchehab+huawei@kernel.org>
+X-Mailer: git-send-email 2.24.1
+MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,49 +45,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kernel@puri.sm, Anson.Huang@nxp.com,
- Martin Kepplinger <martin.kepplinger@puri.sm>, linux-kernel@vger.kernel.org,
- Marco Felsch <m.felsch@pengutronix.de>, linux-imx@nxp.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Rich Felker <dalias@libc.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-sh@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-pci@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, keyrings@vger.kernel.org,
+ Paul Mackerras <paulus@samba.org>, Javi Merino <javi.merino@kernel.org>,
+ Will Deacon <will@kernel.org>, Herbert Xu <herbert@gondor.apana.org.au>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, Jonathan Corbet <corbet@lwn.net>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>, linux-pm@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Amit Daniel Kachhap <amit.kachhap@gmail.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-crypto@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The IMU chip on the librem5-devkit is not mounted at the "natural" place
-that would match normal phone orientation (see the documentation for the
-details about what that is).
 
-Since the lsm9ds1 driver supports providing a mount matrix, we can describe
-the orientation on the board in the dts:
+Manually convert some files from thermal, crypto and misc-devices
+to ReST format.
 
-Create a right-handed coordinate system (x * -1; see the datasheet for the
-axis) and rotate 180 degrees around the y axis because the device sits on
-the back side from the display.
+This patch is against linux-next 20200217 tag.
 
-Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
-Reviewed-by: Marco Felsch <m.felsch@pengutronix.de>
----
- arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 3 +++
- 1 file changed, 3 insertions(+)
+v2: 
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-index 4cb11ed17c24..19ca3b4f802f 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-@@ -537,6 +537,9 @@
- 		reg = <0x6a>;
- 		vdd-supply = <&reg_3v3_p>;
- 		vddio-supply = <&reg_3v3_p>;
-+		mount-matrix =  "1",  "0",  "0",
-+				"0",  "1",  "0",
-+				"0",  "0", "-1";
- 	};
- };
- 
+- a small change at patch 2 to avoid uneeded whitespace changes;
+- added 13 new patches at the end
+
+Mauro Carvalho Chehab (24):
+  docs: thermal: convert cpu-idle-cooling.rst to ReST
+  docs: crypto: convert asymmetric-keys.txt to ReST
+  docs: crypto: convert api-intro.txt to ReST format
+  docs: crypto: convert async-tx-api.txt to ReST format
+  docs: crypto: descore-readme.txt: convert to ReST format
+  docs: misc-devices/spear-pcie-gadget.txt: convert to ReST
+  docs: misc-devices/pci-endpoint-test.txt: convert to ReST
+  docs: misc-devices/pci-endpoint-test.txt: convert to ReST
+  docs: misc-devices/c2port.txt: convert to ReST format
+  docs: misc-devices/bh1770glc.txt: convert to ReST
+  docs: misc-devices/apds990x.txt: convert to ReST format
+  docs: pci: endpoint/function/binding/pci-test.txt convert to ReST
+  docs: arm64: convert perf.txt to ReST format
+  docs: cpu-freq: convert index.txt to ReST
+  docs: cpu-freq: convert amd-powernow.txt to ReST
+  docs: cpu-freq: convert core.txt to ReST
+  docs: cpu-freq: convert cpu-drivers.txt to ReST
+  docs: cpu-freq: convert cpufreq-nforce2.txt to ReST
+  docs: cpu-freq: convert cpufreq-stats.txt to ReST
+  docs: cpu-freq: convert pcc-cpufreq.txt to ReST
+  docs: powerpc: convert vcpudispatch_stats.txt to ReST
+  docs: sh: convert new-machine.txt to ReST
+  docs: sh: convert register-banks.txt to ReST
+  docs: trace: ring-buffer-design.txt: convert to ReST format
+
+ .../endpoint/function/binding/pci-test.rst    |  26 +
+ .../endpoint/function/binding/pci-test.txt    |  19 -
+ Documentation/PCI/endpoint/index.rst          |   2 +
+ Documentation/arm64/index.rst                 |   1 +
+ Documentation/arm64/{perf.txt => perf.rst}    |   7 +-
+ .../{amd-powernow.txt => amd-powernow.rst}    |  12 +-
+ Documentation/cpu-freq/{core.txt => core.rst} |  65 +-
+ .../{cpu-drivers.txt => cpu-drivers.rst}      | 129 ++-
+ ...pufreq-nforce2.txt => cpufreq-nforce2.rst} |  18 +-
+ .../{cpufreq-stats.txt => cpufreq-stats.rst}  | 121 +--
+ Documentation/cpu-freq/index.rst              |  42 +
+ Documentation/cpu-freq/index.txt              |  56 --
+ .../{pcc-cpufreq.txt => pcc-cpufreq.rst}      |  86 +-
+ .../crypto/{api-intro.txt => api-intro.rst}   | 186 ++--
+ ...symmetric-keys.txt => asymmetric-keys.rst} |  91 +-
+ .../{async-tx-api.txt => async-tx-api.rst}    | 253 +++---
+ ...{descore-readme.txt => descore-readme.rst} | 152 +++-
+ Documentation/crypto/index.rst                |   5 +
+ .../driver-api/thermal/cpu-idle-cooling.rst   |  18 +-
+ Documentation/driver-api/thermal/index.rst    |   1 +
+ Documentation/index.rst                       |   1 +
+ .../{ad525x_dpot.txt => ad525x_dpot.rst}      |  24 +-
+ .../{apds990x.txt => apds990x.rst}            |  31 +-
+ .../{bh1770glc.txt => bh1770glc.rst}          |  45 +-
+ .../misc-devices/{c2port.txt => c2port.rst}   |  58 +-
+ Documentation/misc-devices/index.rst          |   6 +
+ .../misc-devices/pci-endpoint-test.rst        |  56 ++
+ .../misc-devices/pci-endpoint-test.txt        |  41 -
+ .../misc-devices/spear-pcie-gadget.rst        | 170 ++++
+ .../misc-devices/spear-pcie-gadget.txt        | 130 ---
+ Documentation/powerpc/index.rst               |   1 +
+ ...patch_stats.txt => vcpudispatch_stats.rst} |  17 +-
+ Documentation/sh/index.rst                    |   6 +
+ .../sh/{new-machine.txt => new-machine.rst}   | 193 +++--
+ ...{register-banks.txt => register-banks.rst} |  12 +-
+ Documentation/trace/index.rst                 |   1 +
+ ...ffer-design.txt => ring-buffer-design.rst} | 802 ++++++++++--------
+ 37 files changed, 1603 insertions(+), 1281 deletions(-)
+ create mode 100644 Documentation/PCI/endpoint/function/binding/pci-test.rst
+ delete mode 100644 Documentation/PCI/endpoint/function/binding/pci-test.txt
+ rename Documentation/arm64/{perf.txt => perf.rst} (95%)
+ rename Documentation/cpu-freq/{amd-powernow.txt => amd-powernow.rst} (89%)
+ rename Documentation/cpu-freq/{core.txt => core.rst} (69%)
+ rename Documentation/cpu-freq/{cpu-drivers.txt => cpu-drivers.rst} (72%)
+ rename Documentation/cpu-freq/{cpufreq-nforce2.txt => cpufreq-nforce2.rst} (55%)
+ rename Documentation/cpu-freq/{cpufreq-stats.txt => cpufreq-stats.rst} (53%)
+ create mode 100644 Documentation/cpu-freq/index.rst
+ delete mode 100644 Documentation/cpu-freq/index.txt
+ rename Documentation/cpu-freq/{pcc-cpufreq.txt => pcc-cpufreq.rst} (80%)
+ rename Documentation/crypto/{api-intro.txt => api-intro.rst} (70%)
+ rename Documentation/crypto/{asymmetric-keys.txt => asymmetric-keys.rst} (91%)
+ rename Documentation/crypto/{async-tx-api.txt => async-tx-api.rst} (55%)
+ rename Documentation/crypto/{descore-readme.txt => descore-readme.rst} (81%)
+ rename Documentation/misc-devices/{ad525x_dpot.txt => ad525x_dpot.rst} (85%)
+ rename Documentation/misc-devices/{apds990x.txt => apds990x.rst} (86%)
+ rename Documentation/misc-devices/{bh1770glc.txt => bh1770glc.rst} (83%)
+ rename Documentation/misc-devices/{c2port.txt => c2port.rst} (59%)
+ create mode 100644 Documentation/misc-devices/pci-endpoint-test.rst
+ delete mode 100644 Documentation/misc-devices/pci-endpoint-test.txt
+ create mode 100644 Documentation/misc-devices/spear-pcie-gadget.rst
+ delete mode 100644 Documentation/misc-devices/spear-pcie-gadget.txt
+ rename Documentation/powerpc/{vcpudispatch_stats.txt => vcpudispatch_stats.rst} (94%)
+ rename Documentation/sh/{new-machine.txt => new-machine.rst} (73%)
+ rename Documentation/sh/{register-banks.txt => register-banks.rst} (88%)
+ rename Documentation/trace/{ring-buffer-design.txt => ring-buffer-design.rst} (55%)
+
 -- 
-2.20.1
+2.24.1
+
 
 
 _______________________________________________
