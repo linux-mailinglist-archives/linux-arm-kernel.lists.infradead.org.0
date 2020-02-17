@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1566F160B08
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 07:48:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 918D4160B0C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 07:48:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5AEBDSGroSGSLHm8qvwlZjXAN7UEaQRZkFf+rru3Le4=; b=VZCvsDUHiiFUDX
-	wFJRK5J/siEoBHymzpsU4mAA/1tVTwGxNybbMK6g7ZIiJsMJmLu2s4hl6H3QIOupEWugTcZvhuY6K
-	+m4NLFCDA82ePNuY1zaSYQdzwW9TRArwR1wBIcB4oPBrMFIda3UGKw2kDgF6OLB3fEWGsEh+Gl4qZ
-	1Ea/JEKGo3GGOG6IgCFsmbhw3fDR6tJqHV8wMvKX5G6HRZxrhXpcUBtEmaN4j1waw9FMFTRmd+vgx
-	XNfv6SjR0iQlP6SiJNz7Wo4sh6s3O2VDsbR6PqbgtegO56/ybRq+qiBZk9gWicD7AshrTJhvgD/rc
-	6g9uXViQb2RXMWoXP6rA==;
+	List-Owner; bh=iUWv6jBkbb8K8TLYxAtbA5MIKO2FCBT8yKBvyZEH2/w=; b=O4A9Bw4YAfzDn+
+	8pN86+RVyhBswEb1T0NBr64X8Ykqc3MFzf6WqAU9tU6fW8uO1LOnh46apTPaJqzUM7GrcMLNfA8rn
+	bQTM7bkJqi/+gNjbrRyIYhQ9RD8p+luP08l1g7Ry3iLCLLb+rno0gaUnRnxf2X8enrpJP/0kbJNtR
+	D1WIUWl9PZSW3w7eOBSgEJSQ7EEECS9pLWTdTtIAacJ1FLeGrxUqLZOLildKCaoBcX+WJdlAyIhm3
+	DGQf7YOEpIRS25t+S6cUnY0Ow25JHRw99NYsd2FV3xHPs038gduc3PN3v6/EjZBBGqmttGSPdgHc2
+	jONp8HjGyxaQkjpomUQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3aCG-00009B-Lw; Mon, 17 Feb 2020 06:48:00 +0000
+	id 1j3aCu-0000f7-GW; Mon, 17 Feb 2020 06:48:40 +0000
 Received: from new2-smtp.messagingengine.com ([66.111.4.224])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3a7R-0003lb-9o
+ id 1j3a7S-0003mW-6u
  for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 06:43:03 +0000
 Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 86F9A5529;
- Mon, 17 Feb 2020 01:43:00 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 3211C551A;
+ Mon, 17 Feb 2020 01:43:01 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute5.internal (MEProxy); Mon, 17 Feb 2020 01:43:00 -0500
+ by compute5.internal (MEProxy); Mon, 17 Feb 2020 01:43:01 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=bWdMIahH29yFf
- zqwPIeEk1em2GgGUD8m6unCtTeCgqs=; b=oDmFapVanONA3Slt7PN7tEJnclOhm
- tdlQ6XiGyxMevoxHuUMikFZhHM6eywY8irIudalh+02wtXA1Mzr5UN6cKLFAUPsp
- baeBXslamCMNxmfCZgnFougtNU1LtRN+OI5BySI+w7eLGIwL5S+C+locXD1AwdGy
- kWc7GNCwfq/EHLWnkGcoyYVnDEQ7P28HIfzPQvkPeuHNXpfRSQ9oX5za1zfn+auU
- 7odde6VyrqIPfqU7xwbGUXUx+7dw/BoyBhmroyGAganlcZ4nCitS2BGXdULF+AR4
- +Du2J9jvDUVUTt/HYBIG9/iHM072/J4nwPD5gx00oZioQSpD1Lc9NYvUw==
+ :mime-version:content-transfer-encoding; s=fm2; bh=uh4qnY4/Cy+hK
+ AUlOu+DvXZh4OqjGi9JOSBOe2IEtnE=; b=UkgOQurQZncmWBpLjsINz8Mhz1IBo
+ bY4MAHu260QmNFWo9p4KTknmv7z+xJN9NpeO3rbd9cJEandPqCbuRLgC3o4Mbqsb
+ uyPMf2I7NToheCJc5wazBTqOYGKSwQEtFbOUATMFxt08tSzdKfZYGaGlCsfdDlpl
+ S7ZgJDu1nRX83MPO5AWjweX8QxLmJe/6TfWWt16YJwCLGxXuKNEYIs2v4x9+RxNy
+ SSclgn4eSnmIwZZ0zGvWqK05eaXFABtMMX5rN5OR9wZB48rRihzgSCGC3ie0q4Z1
+ 5gT9RqLYY3Fy7cE5ojB9fuDub2vCEdFmDtQlSbXsHwrbke7CVet13eCuA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=bWdMIahH29yFfzqwPIeEk1em2GgGUD8m6unCtTeCgqs=; b=Gfk6BOFV
- 5zfCdamui7/Aovbs/sbmd47cRRRmgFhF/gIHUSVoSxFKpHwNjdk6w1jInKl7lXT4
- P8FhmCZfU55lJ8IXOTsqMzeI1j3FTfLn4Cu2gDW7LJFEARStHOY99OMdnzdHbbHZ
- kveQSffYUBaNAvzd5aMLFg1XZgYNeMsQ92V1RvM/emc9bbYjoAQsUmuE1D6gc91o
- WfaWxrgOBp9UMl3EpQuNMvG1XSvYS42xKnw3iegogqY4YUkTWmW2eaiiybIHS+IU
- zxqCS9xa9eNNHFiC91UaCKLSudxCD995iWU1d42Rb++VjWzjYX2vvexn//xqr61n
- qy28BIysxXMygg==
-X-ME-Sender: <xms:9DVKXv2Oybe4YvNfBc8OTA-hrH5ArG7P98gJQG0rOiTKtxMs3imlPA>
+ fm2; bh=uh4qnY4/Cy+hKAUlOu+DvXZh4OqjGi9JOSBOe2IEtnE=; b=Zqhn7Xc4
+ SEFikS3VmfFlQyNXHAVrT+Sr0hFxCezzVSf91NWHkp0pQyc/VknURct01LgWH3Vl
+ PEgwOpa5GjaNV0kMQ93HGgsqkVgSj2wGNavSqbXVPoOAt6/Z8q42AVSc39yOgoL2
+ 0jDA9MgSfRn392jPgQLpa7SUgPOF9o5VO+ExyPALRJYy4ZMrOuw+wTWyWhKNmE0B
+ Sz2mLqL/Mcj9U/uOmWrJXyGhmEpl4eTV5yafUdlCNAyIEpIVt6Ixib7IA8JwTswm
+ 4xeEp7frZSpUIZ6w3KvVE6UqVs+4c/bU8Kew8fkVSJQm0g0iJfpFvV/IW5aSihqc
+ 78eLQikYWh+4+A==
+X-ME-Sender: <xms:9TVKXqyeY95jqdjNFE_iCpNeA-BBOAVDAmOpVnwCU6-x_zsEsiNGMA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjeehgdelkecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
@@ -56,14 +56,14 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjeehgdelkecutefuodetggdote
  ucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecukfhppe
  ejtddrudefhedrudegkedrudehudenucevlhhushhtvghrufhiiigvpeejnecurfgrrhgr
  mhepmhgrihhlfhhrohhmpehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhg
-X-ME-Proxy: <xmx:9DVKXssjNf9P2VJhB7qaCyD2XDPjjoQo2YTXkrrdVBzymNRvqVJzmw>
- <xmx:9DVKXvgup7UmBZHeFUDXzqBgUpXELuWbWNToAkLRd4nhBpIg7jFkPw>
- <xmx:9DVKXrAwi2k8dWc3qso-tuKpuJG87IWiZlI4Ye_slPFXdBA487TOKw>
- <xmx:9DVKXnhyvJdLZiM8CNr_S3RxUz0AEGUa-R_6pGaS3vjB-rIaPPVnZA>
+X-ME-Proxy: <xmx:9TVKXkoB_PLbOWtW9o0FEDDDkTKl9rYwdwjyk6fGC9vXFuY2P9TYqg>
+ <xmx:9TVKXoXBGLbm95HyavDSgNzTQSu1wrXCXxZa4YN8ErfbJJR0MJYPNA>
+ <xmx:9TVKXjp6X0MynIYCcxmab8NQOdTQ4Nv8dFwZ7RkY8o50xZLyXUAv3g>
+ <xmx:9TVKXsRkyfUIHLq8msy5m5N3AHqPui6TfY4S183UyjwEml7nkCKz-g>
 Received: from titanium.stl.sholland.net
  (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id D1AD63280059;
- Mon, 17 Feb 2020 01:42:59 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 70F03328005A;
+ Mon, 17 Feb 2020 01:43:00 -0500 (EST)
 From: Samuel Holland <samuel@sholland.org>
 To: Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -71,16 +71,17 @@ To: Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
  Vasily Khoruzhick <anarsoul@gmail.com>,
  =?UTF-8?q?Myl=C3=A8ne=20Josserand?= <mylene.josserand@free-electrons.com>,
  Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>
-Subject: [RFC PATCH 15/34] ASoC: sun8i-codec: Fix ADC_DIG_CTRL field name
-Date: Mon, 17 Feb 2020 00:42:31 -0600
-Message-Id: <20200217064250.15516-16-samuel@sholland.org>
+Subject: [RFC PATCH 16/34] ASoC: sun8i-codec: Fix field bit number indentation
+Date: Mon, 17 Feb 2020 00:42:32 -0600
+Message-Id: <20200217064250.15516-17-samuel@sholland.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200217064250.15516-1-samuel@sholland.org>
 References: <20200217064250.15516-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_224301_528305_9928A171 
-X-CRM114-Status: GOOD (  10.15  )
+X-CRM114-CacheID: sfid-20200216_224302_471784_E746BD92 
+X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -116,36 +117,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is the enable bit for the "AD"C, no the "DA"C.
+Several fields have inconsistent indentation, presumably because it
+"looked correct" in the patch due to the additional character at the
+beginning of the line.
 
-Fixes: eda85d1fee05 ("ASoC: sun8i-codec: Add ADC support for a33")
+Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
- sound/soc/sunxi/sun8i-codec.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ sound/soc/sunxi/sun8i-codec.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
 diff --git a/sound/soc/sunxi/sun8i-codec.c b/sound/soc/sunxi/sun8i-codec.c
-index 6c2fe8549668..0063fa301fab 100644
+index 0063fa301fab..559dec719956 100644
 --- a/sound/soc/sunxi/sun8i-codec.c
 +++ b/sound/soc/sunxi/sun8i-codec.c
-@@ -64,7 +64,7 @@
- #define SUN8I_AIF1_MXR_SRC_AD0R_MXR_SRC_ADCR		9
- #define SUN8I_AIF1_MXR_SRC_AD0R_MXR_SRC_AIF2DACL	8
- #define SUN8I_ADC_DIG_CTRL				0x100
--#define SUN8I_ADC_DIG_CTRL_ENDA			15
-+#define SUN8I_ADC_DIG_CTRL_ENAD				15
+@@ -68,15 +68,15 @@
  #define SUN8I_ADC_DIG_CTRL_ADOUT_DTS			2
  #define SUN8I_ADC_DIG_CTRL_ADOUT_DLY			1
  #define SUN8I_DAC_DIG_CTRL				0x120
-@@ -392,7 +392,7 @@ static const struct snd_soc_dapm_widget sun8i_codec_dapm_widgets[] = {
- 	/* Digital parts of the DACs and ADC */
- 	SND_SOC_DAPM_SUPPLY("DAC", SUN8I_DAC_DIG_CTRL, SUN8I_DAC_DIG_CTRL_ENDA,
- 			    0, NULL, 0),
--	SND_SOC_DAPM_SUPPLY("ADC", SUN8I_ADC_DIG_CTRL, SUN8I_ADC_DIG_CTRL_ENDA,
-+	SND_SOC_DAPM_SUPPLY("ADC", SUN8I_ADC_DIG_CTRL, SUN8I_ADC_DIG_CTRL_ENAD,
- 			    0, NULL, 0),
+-#define SUN8I_DAC_DIG_CTRL_ENDA			15
++#define SUN8I_DAC_DIG_CTRL_ENDA				15
+ #define SUN8I_DAC_MXR_SRC				0x130
+-#define SUN8I_DAC_MXR_SRC_DACL_MXR_SRC_AIF1DA0L	15
+-#define SUN8I_DAC_MXR_SRC_DACL_MXR_SRC_AIF1DA1L	14
+-#define SUN8I_DAC_MXR_SRC_DACL_MXR_SRC_AIF2DACL	13
++#define SUN8I_DAC_MXR_SRC_DACL_MXR_SRC_AIF1DA0L		15
++#define SUN8I_DAC_MXR_SRC_DACL_MXR_SRC_AIF1DA1L		14
++#define SUN8I_DAC_MXR_SRC_DACL_MXR_SRC_AIF2DACL		13
+ #define SUN8I_DAC_MXR_SRC_DACL_MXR_SRC_ADCL		12
+-#define SUN8I_DAC_MXR_SRC_DACR_MXR_SRC_AIF1DA0R	11
+-#define SUN8I_DAC_MXR_SRC_DACR_MXR_SRC_AIF1DA1R	10
+-#define SUN8I_DAC_MXR_SRC_DACR_MXR_SRC_AIF2DACR	9
++#define SUN8I_DAC_MXR_SRC_DACR_MXR_SRC_AIF1DA0R		11
++#define SUN8I_DAC_MXR_SRC_DACR_MXR_SRC_AIF1DA1R		10
++#define SUN8I_DAC_MXR_SRC_DACR_MXR_SRC_AIF2DACR		9
+ #define SUN8I_DAC_MXR_SRC_DACR_MXR_SRC_ADCR		8
  
- 	/* Analog DAC AIF */
+ #define SUN8I_SYS_SR_CTRL_AIF1_FS_MASK		GENMASK(15, 12)
 -- 
 2.24.1
 
