@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13F49160976
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 05:08:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2928C160979
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 05:10:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bEcSVepQU/nH15OurH9omc7rL1MXyjSBSgiyQiTsdGM=; b=CN8+kjKPUZVHO9
-	/i/QRiugFDbispoK8dgbhnGnyvRFLK/7a8OJKV/jof7V4yg+wS+RMdRAY/RYz9mSHhQ9T0k+6+op6
-	qyQeVITe1c5fXi+wNW4Hn5OnOreak7ITn/IJCgJeF9hviamJkVPPACIMeBpOK3gHyn5q5oI9pwLMA
-	xlI3cpaPLHUsHhdjRukQa3keJYm+tKjsPpYSH1gQWWV1/f2VmAiEl7aJYDSpRdFpfn9B4PlSTDnf7
-	fg5JAGTltWjgR2fN3PzMWtVG22JHLxHlKG7HUTer6XbV+RgL47Pvs/MAujfCYS1s/5m/HGftFgYv7
-	1Bt/RlXcn8NV7KrotJ7w==;
+	List-Owner; bh=MoCG5OqduV+7giJAAzode6XIRGUSJoLqooEB4xL/qOM=; b=EgT6VZfHKVhHCO
+	zKFdKGhxykJmaeqUZvNbzzA9BXyTWwRjpJq5yK0ebzj8feaKH2BRP6FZYYKkr2l9Y+mR/KzWo89Vi
+	OMkOoidI4Ee0GEqWl+genAFC1j1hY5rL7YiMxwzaKEucfceLV0uwp6P9kUjXAMknY8uOUcPjA8nia
+	SfbA9E4zmVF/XDFqQ9BTe6yNxIua5PTrqlQRIx6NE7aCTpZXhoJMK+eiK1zOMVwgJdnGD3T7Rtww+
+	gwrRmApj7MBghONdPTHq44rKDaYnxdrmjmtqtcy7PZ01zp8O9n97CK0ADhG21Mtjt/YTSGIlk3UND
+	G4s0unmwVNmNHqI91WMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3Xhl-0004xc-Kn; Mon, 17 Feb 2020 04:08:21 +0000
+	id 1j3XjQ-0005Fh-G4; Mon, 17 Feb 2020 04:10:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3Xhb-0004x1-Hi
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 04:08:12 +0000
+ id 1j3XjG-0005FL-4M
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 04:09:55 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 13B3E20717;
- Mon, 17 Feb 2020 04:08:07 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4DDF920717;
+ Mon, 17 Feb 2020 04:09:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581912491;
- bh=/Mqu27AqpB+4XNsWQu4dQ/bmhKfjD2lKSZW9AtQdLNA=;
+ s=default; t=1581912593;
+ bh=N6Y5KKKWqMwm7aFctqJ1MGvZUyDeIUpv6buvA4gPxUM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=0X1NwE765Ub3qnrKRRSMBdMh6b+IrmisUUjmapkAPtZ0fKmIpwoxdlwfjAd78nyAx
- 3tGluL3tCh7z5j5q34VymWTX1y2PhlzNRTMb8beorMlewFHdlRBpcET0W2ocPm2qP7
- 6iRGZ3ohRwpEEaNzD+3Eou4+QRdsV2GFyPWAkx7U=
-Date: Mon, 17 Feb 2020 12:08:02 +0800
+ b=2F8+vWxe9UuNOOVTK+1AxAoBzcorwtXspYXHIItjZuNh5yW39woNtzY8Vsh76jdjC
+ eblBjzyyiqNHjIEDi1gTvKWDaf6oA9s+g6rx9dvAtT4lQmCBTr5Lya9f+dA15wcbF/
+ 76Zi0fXQJZajaAJ7o6rh2vHS1zZK2J6pjs7qgoxU=
+Date: Mon, 17 Feb 2020 12:09:43 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Martin Kepplinger <martin.kepplinger@puri.sm>
-Subject: Re: [PATCH v1 07/12] arm64: dts: librem5-devkit: add the regulators
- for DVFS
-Message-ID: <20200217040801.GF5395@dragon>
+Subject: Re: [PATCH v1 10/12] arm64: dts: librem5-devkit: configure VSELECT
+Message-ID: <20200217040942.GG5395@dragon>
 References: <20200205143003.28408-1-martin.kepplinger@puri.sm>
- <20200205143003.28408-8-martin.kepplinger@puri.sm>
+ <20200205143003.28408-11-martin.kepplinger@puri.sm>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200205143003.28408-8-martin.kepplinger@puri.sm>
+In-Reply-To: <20200205143003.28408-11-martin.kepplinger@puri.sm>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_200811_609093_29660698 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20200216_200954_196605_D893E386 
+X-CRM114-Status: GOOD (  13.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,52 +87,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 05, 2020 at 03:29:58PM +0100, Martin Kepplinger wrote:
+On Wed, Feb 05, 2020 at 03:30:01PM +0100, Martin Kepplinger wrote:
 > From: "Angus Ainslie (Purism)" <angus@akkea.ca>
 > 
-> Specify which regulator is used for cpufreq DVFS.
+> use vselect to set the io voltage to 1.8V
 > 
 > Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
 > ---
->  .../dts/freescale/imx8mq-librem5-devkit.dts   | 20 +++++++++++++++++++
->  1 file changed, 20 insertions(+)
+>  arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts | 3 +++
+>  1 file changed, 3 insertions(+)
 > 
 > diff --git a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> index ac0145839a69..6a8f6cee96cf 100644
+> index fbc7062c4633..8f920c554ebd 100644
 > --- a/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
 > +++ b/arch/arm64/boot/dts/freescale/imx8mq-librem5-devkit.dts
-> @@ -223,6 +223,26 @@
->  	};
->  };
->  
-> +&A53_0 {
-> +	operating-points-v2 = <&a53_opp_table>;
+> @@ -789,6 +789,7 @@
+>  			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1	0xc3
+>  			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2	0xc3
+>  			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3	0xc3
+> +			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4	0xc1
 
-The property has already been set in imx8mq.dtsi.
+How is the pin working without a pinctrl handle pointing it?
 
 Shawn
 
-> +	cpu-supply = <&buck2_reg>;
-> +};
-> +
-> +&A53_1 {
-> +	operating-points-v2 = <&a53_opp_table>;
-> +	cpu-supply = <&buck2_reg>;
-> +};
-> +
-> +&A53_2 {
-> +	operating-points-v2 = <&a53_opp_table>;
-> +	cpu-supply = <&buck2_reg>;
-> +};
-> +
-> +&A53_3 {
-> +	operating-points-v2 = <&a53_opp_table>;
-> +	cpu-supply = <&buck2_reg>;
-> +};
-> +
->  &clk {
->  	assigned-clocks = <&clk IMX8MQ_AUDIO_PLL1>, <&clk IMX8MQ_AUDIO_PLL2>;
->  	assigned-clock-rates = <786432000>, <722534400>;
+>  		>;
+>  	};
+>  
+> @@ -800,6 +801,7 @@
+>  			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1	0xcd
+>  			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2	0xcd
+>  			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3	0xcd
+> +			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4	0xc1
+>  		>;
+>  	};
+>  
+> @@ -811,6 +813,7 @@
+>  			MX8MQ_IOMUXC_SD2_DATA1_USDHC2_DATA1	0xcf
+>  			MX8MQ_IOMUXC_SD2_DATA2_USDHC2_DATA2	0xcf
+>  			MX8MQ_IOMUXC_SD2_DATA3_USDHC2_DATA3	0xcf
+> +			MX8MQ_IOMUXC_GPIO1_IO04_GPIO1_IO4	0xc1
+>  		>;
+>  	};
+>  
 > -- 
 > 2.20.1
 > 
