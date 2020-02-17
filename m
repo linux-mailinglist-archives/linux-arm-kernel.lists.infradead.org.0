@@ -2,84 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 775CF161905
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 18:43:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43A1E161915
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 18:48:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aooxq3yfz9p4WHR42VaNIhXAN+KeGSY3jwe0ScxtGZI=; b=oQfnqwTki5k2NZfN+zIVR3qNm
-	lIiPT4aooBW/bMHMeUEeCeeCC5wEea16w0t8xKDT7W3hJ7XIJzFwmzZkCR78jsao8Bp98FKtDbMg+
-	UPgkLcQvkb/h21IcC/Nq4cYaijBu+m2JuuhWCsH6T3M6A9piFpURxb+h6oDPNw6oEOBJWATOm+iKd
-	gPT9jQeW9G8lumTgDHoZuSsbkb8c0LUexxUcSm7paD64B2oagfNOor5k/ozGkNwk7kghjn1a4EFIS
-	i95Su7g3gu7egriR4v1chYwOxlpRMy/UVN7qP38Ara5kGVFcap4W+cKBtMEXkyZiwZFGtve7ZFHmF
-	SyuHKEfOw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fw3HrXBQG8NU/EipJroUVI5zTWtbVI0tdhtJqh3CnyU=; b=SpnPNz+6Ldwcc6
+	EPSSrxn6Xc97SzcA4bibIuTpZEYRH6fXylhdLXFjoTldPl4AT7Y7r3K5PlmGnGqe9Dltj4/XqK4im
+	G6VP5R97G+jcuUvkXpyRQ3Vfd44Yg5n0TFpy230V+x0WHNjbSYg6buABQ8G+rH6N8LCCVZP2/IUI8
+	tzEtZNMhRpooxwjBNHJl2d1jvq1d9FcXQguJ093x0BKFb3Wi6tLUykFj8G0jHJ6AFvWbC1jb3oRvB
+	h5JntgmLDQhrX9LZOkn2/OjFSI3x/MTOb1yNogNd9VoSsDsawgJbgLnl2asj3Xfvvf0hrnPHLyUMX
+	gOfDjs4gIjItsT0vtMZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3kQh-0002Rp-SA; Mon, 17 Feb 2020 17:43:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j3kVJ-0005So-SC; Mon, 17 Feb 2020 17:48:21 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3kQP-0002NR-Qi
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 17:43:19 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3535420725;
- Mon, 17 Feb 2020 17:43:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581961397;
- bh=lPr9M38+t5sBMw6u5u7ZBlJacBz/RdUPLYWWMEb5nNk=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=tVe05Pq6lqr4xtBpglJlPSurnLCwFA+rJdqpQZJ4DlhZQQZOrU/R/SeCPdQ+BFakp
- Ys32tvVejNhf5kOIa7yEQSSK1enWtUna1CieWb5rv+lvVLj484mHd4XD1vtZSj+Dhv
- 9RFZ4vr78BmGKFJX7E7dV67+fAnuYn03nZO/mzfc=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1j3kQN-005yzm-KA; Mon, 17 Feb 2020 17:43:15 +0000
+ id 1j3kV7-0005OT-5F; Mon, 17 Feb 2020 17:48:11 +0000
+Received: from [192.168.1.183] ([37.4.249.150]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.183]) with ESMTPSA (Nemesis) id
+ 1MpUQk-1jowEF3hTY-00pw6F; Mon, 17 Feb 2020 18:47:51 +0100
+Subject: Re: [PATCH] usb: xhci-pci: Raspberry Pi FW loader for VIA VL805
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Mathias Nyman <mathias.nyman@intel.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
+References: <20200217100701.19949-1-nsaenzjulienne@suse.de>
+From: Stefan Wahren <stefan.wahren@i2se.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=stefan.wahren@i2se.com; keydata=
+ xsFNBFt6gBMBEACub/pBevHxbvJefyZG32JINmn2bsEPX25V6fejmyYwmCGKjFtL/DoUMEVH
+ DxCJ47BMXo344fHV1C3AnudgN1BehLoBtLHxmneCzgH3KcPtWW7ptj4GtJv9CQDZy27SKoEP
+ xyaI8CF0ygRxJc72M9I9wmsPZ5bUHsLuYWMqQ7JcRmPs6D8gBkk+8/yngEyNExwxJpR1ylj5
+ bjxWDHyYQvuJ5LzZKuO9LB3lXVsc4bqXEjc6VFuZFCCk/syio/Yhse8N+Qsx7MQagz4wKUkQ
+ QbfXg1VqkTnAivXs42VnIkmu5gzIw/0tRJv50FRhHhxpyKAI8B8nhN8Qvx7MVkPc5vDfd3uG
+ YW47JPhVQBcUwJwNk/49F9eAvg2mtMPFnFORkWURvP+G6FJfm6+CvOv7YfP1uewAi4ln+JO1
+ g+gjVIWl/WJpy0nTipdfeH9dHkgSifQunYcucisMyoRbF955tCgkEY9EMEdY1t8iGDiCgX6s
+ 50LHbi3k453uacpxfQXSaAwPksl8MkCOsv2eEr4INCHYQDyZiclBuuCg8ENbR6AGVtZSPcQb
+ enzSzKRZoO9CaqID+favLiB/dhzmHA+9bgIhmXfvXRLDZze8po1dyt3E1shXiddZPA8NuJVz
+ EIt2lmI6V8pZDpn221rfKjivRQiaos54TgZjjMYI7nnJ7e6xzwARAQABzSlTdGVmYW4gV2Fo
+ cmVuIDxzdGVmYW4ud2FocmVuQGluLXRlY2guY29tPsLBdwQTAQgAIQUCXIdehwIbAwULCQgH
+ AgYVCAkKCwIEFgIDAQIeAQIXgAAKCRCUgewPEZDy2yHTD/9UF7QlDkGxzQ7AaCI6N95iQf8/
+ 1oSUaDNu2Y6IK+DzQpb1TbTOr3VJwwY8a3OWz5NLSOLMWeVxt+osMmlQIGubD3ODZJ8izPlG
+ /JrNt5zSdmN5IA5f3esWWQVKvghZAgTDqdpv+ZHW2EmxnAJ1uLFXXeQd3UZcC5r3/g/vSaMo
+ 9xek3J5mNuDm71lEWsAs/BAcFc+ynLhxwBWBWwsvwR8bHtJ5DOMWvaKuDskpIGFUe/Kb2B+j
+ ravQ3Tn6s/HqJM0cexSHz5pe+0sGvP+t9J7234BFQweFExriey8UIxOr4XAbaabSryYnU/zV
+ H9U1i2AIQZMWJAevCvVgQ/U+NeRhXude9YUmDMDo2sB2VAFEAqiF2QUHPA2m8a7EO3yfL4rM
+ k0iHzLIKvh6/rH8QCY8i3XxTNL9iCLzBWu/NOnCAbS+zlvLZaiSMh5EfuxTtv4PlVdEjf62P
+ +ZHID16gUDwEmazLAMrx666jH5kuUCTVymbL0TvB+6L6ARl8ANyM4ADmkWkpyM22kCuISYAE
+ fQR3uWXZ9YgxaPMqbV+wBrhJg4HaN6C6xTqGv3r4B2aqb77/CVoRJ1Z9cpHCwiOzIaAmvyzP
+ U6MxCDXZ8FgYlT4v23G5imJP2zgX5s+F6ACUJ9UQPD0uTf+J9Da2r+skh/sWOnZ+ycoHNBQv
+ ocZENAHQf87BTQRbeoATARAA2Hd0fsDVK72RLSDHby0OhgDcDlVBM2M+hYYpO3fX1r++shiq
+ PKCHVAsQ5bxe7HmJimHa4KKYs2kv/mlt/CauCJ//pmcycBM7GvwnKzmuXzuAGmVTZC6WR5Lk
+ akFrtHOzVmsEGpNv5Rc9l6HYFpLkbSkVi5SPQZJy+EMgMCFgjrZfVF6yotwE1af7HNtMhNPa
+ LDN1oUKF5j+RyRg5iwJuCDknHjwBQV4pgw2/5vS8A7ZQv2MbW/TLEypKXif78IhgAzXtE2Xr
+ M1n/o6ZH71oRFFKOz42lFdzdrSX0YsqXgHCX5gItLfqzj1psMa9o1eiNTEm1dVQrTqnys0l1
+ 8oalRNswYlQmnYBwpwCkaTHLMHwKfGBbo5dLPEshtVowI6nsgqLTyQHmqHYqUZYIpigmmC3S
+ wBWY1V6ffUEmkqpAACEnL4/gUgn7yQ/5d0seqnAq2pSBHMUUoCcTzEQUWVkiDv3Rk7hTFmhT
+ sMq78xv2XRsXMR6yQhSTPFZCYDUExElEsSo9FWHWr6zHyYcc8qDLFvG9FPhmQuT2s9Blx6gI
+ 323GnEq1lwWPJVzP4jQkJKIAXwFpv+W8CWLqzDWOvdlrDaTaVMscFTeH5W6Uprl65jqFQGMp
+ cRGCs8GCUW13H0IyOtQtwWXA4ny+SL81pviAmaSXU8laKaRu91VOVaF9f4sAEQEAAcLBXwQY
+ AQIACQUCW3qAEwIbDAAKCRCUgewPEZDy2+oXD/9cHHRkBZOfkmSq14Svx062PtU0KV470TSn
+ p/jWoYJnKIw3G0mXIRgrtH2dPwpIgVjsYyRSVMKmSpt5ZrDf9NtTbNWgk8VoLeZzYEo+J3oP
+ qFrTMs3aYYv7e4+JK695YnmQ+mOD9nia915tr5AZj95UfSTlyUmyic1d8ovsf1fP7XCUVRFc
+ RjfNfDF1oL/pDgMP5GZ2OwaTejmyCuHjM8IR1CiavBpYDmBnTYk7Pthy6atWvYl0fy/CqajT
+ Ksx7+p9xziu8ZfVX+iKBCc+He+EDEdGIDhvNZ/IQHfOB2PUXWGS+s9FNTxr/A6nLGXnA9Y6w
+ 93iPdYIwxS7KXLoKJee10DjlzsYsRflFOW0ZOiSihICXiQV1uqM6tzFG9gtRcius5UAthWaO
+ 1OwUSCQmfCOm4fvMIJIA9rxtoS6OqRQciF3crmo0rJCtN2awZfgi8XEif7d6hjv0EKM9XZoi
+ AZYZD+/iLm5TaKWN6oGIti0VjJv8ZZOZOfCb6vqFIkJW+aOu4orTLFMz28aoU3QyWpNC8FFm
+ dYsVua8s6gN1NIa6y3qa/ZB8bA/iky59AEz4iDIRrgUzMEg8Ak7Tfm1KiYeiTtBDCo25BvXj
+ bqsyxkQD1nkRm6FAVzEuOPIe8JuqW2xD9ixGYvjU5hkRgJp3gP5b+cnG3LPqquQ2E6goKUML AQ==
+Message-ID: <bf77d351-ca8c-d9fd-e5ea-71441ac00ab3@i2se.com>
+Date: Mon, 17 Feb 2020 18:47:49 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Date: Mon, 17 Feb 2020 17:43:15 +0000
-From: Marc Zyngier <maz@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v2 12/94] KVM: arm64: nv: Add EL2->EL1 translation helpers
-In-Reply-To: <20200217145630.GD47755@lakrids.cambridge.arm.com>
-References: <20200211174938.27809-1-maz@kernel.org>
- <20200211174938.27809-13-maz@kernel.org>
- <20200217145630.GD47755@lakrids.cambridge.arm.com>
-Message-ID: <97f6387adfec3b96182908f3d8f074ae@kernel.org>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/1.3.10
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: mark.rutland@arm.com, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, andre.przywara@arm.com,
- Dave.Martin@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200217100701.19949-1-nsaenzjulienne@suse.de>
+Content-Language: en-US
+X-Provags-ID: V03:K1:MEb+cWca3hrW4nDZ1ggAgFk9coBvX+/65EOeZDFWM3YU2lCE+4z
+ CCfBEJUUKkrd8L/4PY7EkBKjZXrhu32tNcDRrjg56fDdcT2HzI+AwBEoBgZVhniQNzy6LC3
+ vGIOE+c++1IckNzQa5YhE43tZRPZeoAE2ORAgaVMGIKjj/CbYtDdW6OUaHVoseC0DyHLYe0
+ ejGE14WZ9wqBihuviT8RA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:CtL1K4btfg8=:b0MJWvqdGLbwBJHopp8Gjc
+ qsJ0ntfLMykISUkWPD0JlJVXJ2/yHpHMSCm7tYteY65wDgapLBWxAiSfVZeIohXvSTazvkkfz
+ 4udwZDxnW2sUSGsehbUy6sPWW1fyePxQcWinLlsXS2xV3WTTDrRM0bmBFbhUzFINc4GFWQ8Tj
+ t372TSdmNb6TZYJFzpnrvix1110aCgcYdaEKTrMt+YIYnxoLXdtM72agogIzw0SAmvl7mSWsk
+ +ecYM/86NfwtMMvzYMRBST1VKbbBJKQ0bm6Qtt2at4cKkDTdKYuYMdrj26IZ5UUFMnsjDQOcs
+ elc9vUJWtWZkVJwi8/IUHznIUsFGB+UQWHTvhId4dcs6i725+UDHD6wpy98v0ex+DLByL+mFR
+ nQTeLZSbpRs9AUQqqhAOykM6H3VXmoCXP0aDTMEnbXRPmMSj7R3DSe11u0Jz1xBVeB/N2/WBF
+ cf7zpKKCfF9A8CLkJ7lFeV4fmXPi0eY1X1wG/h1YMuY8NY0p6DQXbvLQlKLHXBCmQjagD07J9
+ 0Jy5SOaRKb0lMz0KXzXBiveE+amPWGAhAI+AE3FCAgePEmLaFKyF5VqdLhO5Zv+m10tdFdOEb
+ bga7zeSu/xtXenvOg1QoQoP7xapQo0NEt6eIW6JVtELZKA64QsRlOR0u2J669wktqWcNEwMHm
+ ovUP/lrKZ9dt8BfAqIx5oG7CZlKUtlAOs5Y15aIvypLcYQLUJ/5VtGjz1V/XLbY5a2jlkU6iE
+ RYSbN4NDG28IX35ztFa4Y2RXYhvERkEfjaV6zeeD6+AGHoNaUlYaTWq8hsWS5SIiYTPowi+TP
+ u3fKJ1HlgahtFGLqpLGF2z/lZQI+ArTyL+wLWbfn2vvTSkp+SXQ85+76vgdh6mkSp3U6bVx
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_094317_942466_BA14C8C6 
-X-CRM114-Status: GOOD (  26.37  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200217_094809_498661_1E4238A8 
+X-CRM114-Status: GOOD (  25.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,187 +123,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- kvm@vger.kernel.org
+Cc: tim.gover@raspberrypi.org, oneukum@suse.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ phil@raspberrypi.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
+Hi Nicolas,
 
-Congratulations, you will now be CC'd on all the subsequent postings
-of this series! Yes, I'm that nice! ;-)
+Am 17.02.20 um 11:07 schrieb Nicolas Saenz Julienne:
+> On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
+> loaded directly from an EEPROM or, if not present, by the SoC's
+> VideCore.  Inform VideCore that VL805 was just reset, or defer xhci's
+> probe if not yet joinable trough the mailbox interface.
+>
+> Based on Tim Gover's downstream implementation.
+>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> ---
+>  drivers/usb/host/xhci-pci.c                | 50 ++++++++++++++++++++++
+>  include/soc/bcm2835/raspberrypi-firmware.h |  2 +-
+>  2 files changed, 51 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/usb/host/xhci-pci.c b/drivers/usb/host/xhci-pci.c
+> index 4917c5b033fa..eadace4a9339 100644
+> --- a/drivers/usb/host/xhci-pci.c
+> +++ b/drivers/usb/host/xhci-pci.c
+> @@ -13,6 +13,8 @@
+>  #include <linux/module.h>
+>  #include <linux/acpi.h>
+>  
+> +#include <soc/bcm2835/raspberrypi-firmware.h>
+> +
+>  #include "xhci.h"
+>  #include "xhci-trace.h"
+>  
+> @@ -308,6 +310,44 @@ static int xhci_pci_setup(struct usb_hcd *hcd)
+>  	return xhci_pci_reinit(xhci, pdev);
+>  }
+>  
+> +/*
+> + * On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
+> + * loaded directly from an EEPROM or, if not present, by the SoC's VideCore.
+> + * Inform VideCore that VL805 was just reset, or defer xhci's probe if not yet
+> + * joinable trough the mailbox interface.
+> + */
+> +static int raspberrypi_load_vl805_fw(struct pci_dev *pdev)
+> +{
+> +#ifdef CONFIG_RASPBERRYPI_FIRMWARE
+> +	struct device_node *fw_np;
+> +	struct rpi_firmware *fw;
+> +	u32 dev_addr;
+> +	int ret;
+> +
+> +	fw_np = of_find_compatible_node(NULL, NULL,
+> +					"raspberrypi,bcm2835-firmware");
+> +	if (!fw_np)
+> +		return 0;
+> +
+> +	fw = rpi_firmware_get(fw_np);
+> +	of_node_put(fw_np);
+> +	if (!fw)
+> +		return -EPROBE_DEFER;
+> +
+> +	dev_addr = pdev->bus->number << 20 | PCI_SLOT(pdev->devfn) << 15 |
+> +		   PCI_FUNC(pdev->devfn) << 12;
+> +
+> +	ret = rpi_firmware_property(fw, RPI_FIRMWARE_NOTIFY_XHCI_RESET,
+> +				    &dev_addr, sizeof(dev_addr));
+> +	if (ret)
+> +		return ret;
+not sure, but there could be a corner case which should be handled
+differently. In case the Raspberry Pi 4 has an EEPROM for the VL805
+firmware but the firmware is too old to handle
+RPI_FIRMWARE_NOTIFY_XHCI_RESET, we should return with 0. I don't know
+there is a change to detect this reliable. I just want to mention this.
+> +
+> +	dev_dbg(&pdev->dev, "loaded Raspberry Pi's VL805 firmware\n");
+> +
+> +#endif
+> +	return 0;
+> +}
+> +
+>  /*
+>   * We need to register our own PCI probe function (instead of the USB core's
+>   * function) in order to create a second roothub under xHCI.
+> @@ -321,6 +361,16 @@ static int xhci_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
+>  
+>  	driver = (struct hc_driver *)id->driver_data;
+>  
+> +	if (dev->vendor == PCI_VENDOR_ID_VIA && dev->device == 0x3483) {
+> +		retval = raspberrypi_load_vl805_fw(dev);
+> +		if (retval) {
+> +			if (retval != -EPROBE_DEFER)
+> +				dev_err(&dev->dev,
+> +					"Failed to load VL805's firmware");
+> +			return retval;
+> +		}
+> +	}
+> +
+>  	/* Prevent runtime suspending between USB-2 and USB-3 initialization */
+>  	pm_runtime_get_noresume(&dev->dev);
+>  
+> diff --git a/include/soc/bcm2835/raspberrypi-firmware.h b/include/soc/bcm2835/raspberrypi-firmware.h
+> index 7800e12ee042..cc9cdbc66403 100644
+> --- a/include/soc/bcm2835/raspberrypi-firmware.h
+> +++ b/include/soc/bcm2835/raspberrypi-firmware.h
+> @@ -90,7 +90,7 @@ enum rpi_firmware_property_tag {
+>  	RPI_FIRMWARE_SET_PERIPH_REG =                         0x00038045,
+>  	RPI_FIRMWARE_GET_POE_HAT_VAL =                        0x00030049,
+>  	RPI_FIRMWARE_SET_POE_HAT_VAL =                        0x00030050,
+> -
+> +	RPI_FIRMWARE_NOTIFY_XHCI_RESET =                      0x00030058,
 
-On 2020-02-17 14:56, Mark Rutland wrote:
-> On Tue, Feb 11, 2020 at 05:48:16PM +0000, Marc Zyngier wrote:
->> Some EL2 system registers immediately affect the current execution
->> of the system, so we need to use their respective EL1 counterparts.
->> For this we need to define a mapping between the two.
->> 
->> These helpers will get used in subsequent patches.
->> 
->> Co-developed-by: Andre Przywara <andre.przywara@arm.com>
->> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
->> Signed-off-by: Marc Zyngier <maz@kernel.org>
->> ---
->>  arch/arm64/include/asm/kvm_emulate.h |  6 ++++
->>  arch/arm64/kvm/sys_regs.c            | 48 
->> ++++++++++++++++++++++++++++
->>  2 files changed, 54 insertions(+)
->> 
->> diff --git a/arch/arm64/include/asm/kvm_emulate.h 
->> b/arch/arm64/include/asm/kvm_emulate.h
->> index 282e9ddbe1bc..486978d0346b 100644
->> --- a/arch/arm64/include/asm/kvm_emulate.h
->> +++ b/arch/arm64/include/asm/kvm_emulate.h
->> @@ -58,6 +58,12 @@ void kvm_emulate_nested_eret(struct kvm_vcpu 
->> *vcpu);
->>  int kvm_inject_nested_sync(struct kvm_vcpu *vcpu, u64 esr_el2);
->>  int kvm_inject_nested_irq(struct kvm_vcpu *vcpu);
->> 
->> +u64 translate_tcr(u64 tcr);
->> +u64 translate_cptr(u64 tcr);
->> +u64 translate_sctlr(u64 tcr);
->> +u64 translate_ttbr0(u64 tcr);
->> +u64 translate_cnthctl(u64 tcr);
-> 
-> Sorry to bikeshed, but could we please make the direction of 
-> translation
-> explicit in the name? e.g. tcr_el2_to_tcr_el1(), or tcr_el2_to_el1()?
+In past we updated the firmware mailbox property interface in a bunch as
+a separate patch. So we can avoid those gaps.
 
-Sure, that's an easy one!
+Best regards
+Stefan
 
-> 
->> +
->>  static inline bool vcpu_el1_is_32bit(struct kvm_vcpu *vcpu)
->>  {
->>  	return !(vcpu->arch.hcr_el2 & HCR_RW);
->> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
->> index 4b5310ea3bf8..634d3ee6799c 100644
->> --- a/arch/arm64/kvm/sys_regs.c
->> +++ b/arch/arm64/kvm/sys_regs.c
->> @@ -65,6 +65,54 @@ static bool write_to_read_only(struct kvm_vcpu 
->> *vcpu,
->>  	return false;
->>  }
->> 
->> +static u64 tcr_el2_ips_to_tcr_el1_ps(u64 tcr_el2)
->> +{
->> +	return ((tcr_el2 & TCR_EL2_PS_MASK) >> TCR_EL2_PS_SHIFT)
->> +		<< TCR_IPS_SHIFT;
->> +}
->> +
->> +u64 translate_tcr(u64 tcr)
->> +{
->> +	return TCR_EPD1_MASK |				/* disable TTBR1_EL1 */
->> +	       ((tcr & TCR_EL2_TBI) ? TCR_TBI0 : 0) |
->> +	       tcr_el2_ips_to_tcr_el1_ps(tcr) |
->> +	       (tcr & TCR_EL2_TG0_MASK) |
->> +	       (tcr & TCR_EL2_ORGN0_MASK) |
->> +	       (tcr & TCR_EL2_IRGN0_MASK) |
->> +	       (tcr & TCR_EL2_T0SZ_MASK);
->> +}
-> 
-> I'm guessing this is only meant to cover a !VHE guest EL2 for the
-> moment, so only covers HCR_EL2.E2H=0? It might be worth mentioning in
-> the commit message.
+>  
+>  	/* Dispmanx TAGS */
+>  	RPI_FIRMWARE_FRAMEBUFFER_ALLOCATE =                   0x00040001,
 
-Indeed, all the "translate_*" function have a single purpose: converting
-an !VHE EL2 layout into an EL1 layout.
-
-> It looks like this is missing some bits (e.g. TBID, HPD, HD, HA) that
-> could apply to the Guest-EL2 Stage-1. Maybe those are added by later
-> patches, but that's not obvious to me at this point in the series.
-
-ARMv8.3-PAUTH isn't supported, and ARMv8.1-TTHM cannot be supported at
-Stage-2, so we don't support it at Stage-1 either (even if we 
-technically
-could). Maybe worth suggesting to the powers that be...
-
-ARMv8.1-HPD is an oversight though, and we should be able to support it.
-
-> 
->> +
->> +u64 translate_cptr(u64 cptr_el2)
->> +{
->> +	u64 cpacr_el1 = 0;
->> +
->> +	if (!(cptr_el2 & CPTR_EL2_TFP))
->> +		cpacr_el1 |= CPACR_EL1_FPEN;
->> +	if (cptr_el2 & CPTR_EL2_TTA)
->> +		cpacr_el1 |= CPACR_EL1_TTA;
->> +	if (!(cptr_el2 & CPTR_EL2_TZ))
->> +		cpacr_el1 |= CPACR_EL1_ZEN;
->> +
->> +	return cpacr_el1;
->> +}
-> 
-> Looking in ARM DDI 0487E.a I also see TCPAC and TAM; I guess we don't
-> need to map those to anthing?
-
-TCPAC allows us to trap CPACR_EL1, but we always have the physical
-CPTR_EL2.TCPAC set in this case, so that bit doesn't need to translate
-into anything.
-
-TAM doesn't seem to translate into anything in CPACR_EL1, and I don't
-plan to support the AMU any time soon with NV! ;-)
-
-> 
->> +
->> +u64 translate_sctlr(u64 sctlr)
->> +{
->> +	/* Bit 20 is RES1 in SCTLR_EL1, but RES0 in SCTLR_EL2 */
->> +	return sctlr | BIT(20);
->> +}
-> 
-> Looking in ARM DDI 0487E.a section D13.2.105, bit 20 is TSCXT, so this
-> might need to be reconsidered.
-
-Huhuh, nice catch! We need to detect ARMv8.0-CSV2 here, and set the bit
-accordingly.
-
-> 
->> +
->> +u64 translate_ttbr0(u64 ttbr0)
->> +{
->> +	/* Force ASID to 0 (ASID 0 or RES0) */
->> +	return ttbr0 & ~GENMASK_ULL(63, 48);
->> +}
-> 
-> Again, I assume this is only meant to provide a !VHE EL2 as this 
-> stands.
-
-Indeed. I guess I need to write a better commit message to make this 
-clear.
-
-> 
->> +
->> +u64 translate_cnthctl(u64 cnthctl)
->> +{
->> +	return ((cnthctl & 0x3) << 10) | (cnthctl & 0xfc);
->> +}
-> 
-> I assume this yields CNTKCTL_EL1, but I don't entirely follow. For
-> virtual-EL2 don't we have to force EL1P(C)TEN so that virtual-EL2
-> accesses don't trap?
-
-A non-VHE guest will use the _EL2 instructions to access its own timer,
-which will trap. At the same time, we use the EL1 timer to implement
-the vEL2 timer, meaning we also need to trap the EL1 timer. Yes, !VHE
-looses on all fronts.
-
-We could treat !VHE specially in the wap we map timers (complete 
-emulation
-for vEL2, and direct access for guest timers). But this seems pretty
-complex for very little gain.
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
