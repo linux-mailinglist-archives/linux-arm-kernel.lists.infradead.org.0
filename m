@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3132C161547
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 15:57:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FD7216156A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 16:02:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=s8gRQ992cPUAGObOHY0wZB9opdKlIovPdiWLjVTnw9I=; b=V8vGKQ+zTNVjFw1IwHgiZVTBN
-	f8PZ46IT4gfELiaZiiyMzaqnBizol84FCKpn2WyKws4fOmHDuZEJIDSnSORise11byLzp4Uwd6X1Z
-	0WzqdAg1v28Pb7oa4TaIQmd4MJr0u0+woX5fMmqDnAywkUgKmp+okA0NwziGliW+s2g4JMp2V9lKy
-	Tc2Jvf5nCSieWbqw3BNEMZ7rLRuX3C2Ti0Fc2qbeMZMBzZauY6h1yQFCVroSTz0zRHmW0LDSxN85C
-	F1DK3bv02XRd/Nds/EZKpWav1RAMcWZkzT4wMuHuYbQ42DRmsaAb5SkEEheS9eSDzTE0M0IMs1izm
-	BLKlPCPLQ==;
+	 bh=sKPz533PLwnRGOOJ3KTY59Qw+d7eRdWrWsgDyn7h5Go=; b=kkU/cgVGrQPltDmC29eDDxA2m
+	4ZSSUiDuB/SnYnYBZ+fnzHcco4xigRukQQtTSRkDQilp79UL1fi6IDW8LzLMR9K4/8dd0ps2YdHr1
+	GGZbB3IuyOPUa+JjmTNsgO+UsT9qGdJXRem45JLk0W/A1j8lSPejuNGDOlRLG4/WREadFp3kuVGen
+	+yQ3gq8kXUFKxFW+Ak0gHome8yYW7sWJf2oKPLcJZJVcdfGWJ8YOeexUaGVQdT0909ZuYFIbwNn9D
+	0TcQS5XfFYjhC+NUgCIbA9x1K+mnwqQ9fq2gHfCHoEd/bWsJrsSBX1vKlfcmpwYDxd0/NHZBQ0g/B
+	PEw3EkF/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3hpY-0005XI-AF; Mon, 17 Feb 2020 14:57:04 +0000
+	id 1j3hug-00088S-AW; Mon, 17 Feb 2020 15:02:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3hpM-0005Vq-7E
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 14:56:53 +0000
+ id 1j3huW-000886-Eq
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 15:02:13 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E63430E;
- Mon, 17 Feb 2020 06:56:51 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8CD3730E;
+ Mon, 17 Feb 2020 07:02:10 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E733B3F703;
- Mon, 17 Feb 2020 06:56:50 -0800 (PST)
-Date: Mon, 17 Feb 2020 14:56:49 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0FF8C3F703;
+ Mon, 17 Feb 2020 07:02:09 -0800 (PST)
+Date: Mon, 17 Feb 2020 15:02:08 +0000
 From: Mark Brown <broonie@kernel.org>
 To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [RFC PATCH 03/34] arm64: dts: allwinner: a64: Fix the audio
- codec compatible
-Message-ID: <20200217145649.GF9304@sirena.org.uk>
+Subject: Re: [RFC PATCH 05/34] ASoC: sun8i-codec: Remove incorrect
+ SND_SOC_DAIFMT_DSP_B
+Message-ID: <20200217150208.GG9304@sirena.org.uk>
 References: <20200217064250.15516-1-samuel@sholland.org>
- <20200217064250.15516-4-samuel@sholland.org>
+ <20200217064250.15516-6-samuel@sholland.org>
 MIME-Version: 1.0
-In-Reply-To: <20200217064250.15516-4-samuel@sholland.org>
+In-Reply-To: <20200217064250.15516-6-samuel@sholland.org>
 X-Cookie: There was a phone call for you.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_065652_301174_5B658A20 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20200217_070212_541827_96DC1605 
+X-CRM114-Status: GOOD (  11.97  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -73,56 +73,55 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
  =?iso-8859-1?Q?Myl=E8ne?= Josserand <mylene.josserand@free-electrons.com>,
  stable@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0252161132854464817=="
+Content-Type: multipart/mixed; boundary="===============5091413271364732259=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0252161132854464817==
+--===============5091413271364732259==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="xaMk4Io5JJdpkLEb"
+	protocol="application/pgp-signature"; boundary="xjyYRNSh/RebjC6o"
 Content-Disposition: inline
 
 
---xaMk4Io5JJdpkLEb
+--xjyYRNSh/RebjC6o
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-On Mon, Feb 17, 2020 at 12:42:19AM -0600, Samuel Holland wrote:
-
+On Mon, Feb 17, 2020 at 12:42:21AM -0600, Samuel Holland wrote:
+> DSP_A and DSP_B are not interchangeable. The timing used by the codec in
+> DSP mode is consistent with DSP_A. This is verified with an EG25-G modem
+> connected to AIF2, as well as by comparing with the BSP driver.
+>=20
+> Remove the DSP_B option, as it is not supported by the hardware.
+>=20
 > Cc: stable@kernel.org
-> Fixes: ec4a95409d5c ("arm64: dts: allwinner: a64: add nodes necessary for analog sound support")
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
 
->  		codec: codec@1c22e00 {
->  			#sound-dai-cells = <0>;
-> -			compatible = "allwinner,sun8i-a33-codec";
-> +			compatible = "allwinner,sun50i-a64-codec";
+This can only break things for existing systems using stable, if they
+haven't noticed a problem with DSP B they'll certainly notice failing to
+set up the DAI at all without it.
 
-This is an incompatible change in the ABI, it's going to break unless
-it's applied at exactly the same time as the matching kernel update
-adding the new compatible string.  That's not suitable for stable, you
-need to keep the old compatible as a fallback.
-
---xaMk4Io5JJdpkLEb
+--xjyYRNSh/RebjC6o
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5KqbAACgkQJNaLcl1U
-h9CYUAf/ZCOyWpSkn3x5uej3JtTUW/4RmXdnFa/ZOH/PjJuGXBCc7m4ZbP2jo5t2
-2XdicNuPW5JUz9kmdxNzfeyUOYprNoheZyy/5i1u8EM9Br/zyszZFkMoApsLKSdF
-qPUhK51OvntU8eb4DFQAswJFw6HmKfGImygfRHvHSax37e5srjBSosR5ZeJv7lQO
-ZyP3iUjWXb9b8P/akkgxhQRpGkugDsrqx4oXSzKCzsj3kMpw6rE7yWXS9rQSVoaw
-amPYSjsE4prqOnOlHfR0/y+dU6HJGHfWIWZqeNIEXK+gf1flqLmqxlpwCNnFCtn0
-8rreEBr8qPilxVdhA7LpTMvLOCE8Jw==
-=uWDR
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5Kqu8ACgkQJNaLcl1U
+h9BrrQf8Cpji+kb3X7isTpniyau/SbCQwZlUb8Csww/ottxImXAngZtFxVJ223Tb
+sRxaUEFcUFbKuAx1BOMaW70RQ6qQskiNlrtvd2GxnKYNpGcSk6TsMHY185iiTu2s
+EeozYIThsqRXhDCrv0hRArGLf5kBFM1OaSm9idhJJgfY8gjO+aBsPJqz8mp0gxWN
+3jGVVLz7aNTaOxwTl6CcTvMm+7xj4f1tsYTkC7jYTysRVrf6rXkV9KBL7euDjMrg
+JTa3RdwK0VAKZus8KiAecYZfI5K+F8Kj8Stk4R9GtMpIbVDR4Sxy5giVnrY+XVoF
+hq2TJ94ZfIBzhexsmd+tDPsvUDHHtQ==
+=eNti
 -----END PGP SIGNATURE-----
 
---xaMk4Io5JJdpkLEb--
+--xjyYRNSh/RebjC6o--
 
 
---===============0252161132854464817==
+--===============5091413271364732259==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -133,5 +132,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0252161132854464817==--
+--===============5091413271364732259==--
 
