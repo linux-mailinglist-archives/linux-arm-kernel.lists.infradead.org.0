@@ -2,57 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC2991617DD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 17:27:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AEB9161837
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 17:46:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=m7v6lWWeaiHCJ1rvKLOTyLhy4mltGj0L2ILdcG/OMkk=; b=Gx6yWw5sYu7zr4yM70Az4Fdh/
-	JlDS58FoCPwyEe2oE9gMZeK6PFYmf+g9o5UmbcZyvrl+4dKIMv55eq/kCskbD9y2HemQBrEN1YgQi
-	PMys8aOKw+im0myDJpc3iip0QdonGMCmdrTn2Td0pPXJOkFmemkxI6HIZInTb7D91RbDstSIi44eR
-	a0xyS0kEIpTRUgCwx/eueJ2FTg7IFKvM0Mf/iQP413Jqko25sFenjuTF8rk69LGVvnvWhDpn7SaYe
-	EIrt8Jn9X1DOOGddxC4u9neC4UvCTApvXGIlRDaH6VoXIS+nhhETBbv19ZSIzgvy29BgLMNCX5shV
-	l2hXA/Hcg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ARg2g7L4HuTC4uyRPDrT6NCpwSjpatALRWcLqtFPyT0=; b=Qcya9GbxTNPS/X
+	kipBT0FBJQYSW36y33NkTcgtEpZ+RIFXl/qaE7Q1RKWm1rCKf7gp6GXf66m3bHy/oIo1DSVbhMhqn
+	C6jUjB0zA6BdCJDU/2wrO7IJyd0psS2tBtoQaV931lo4i+UJcspNgHVHn8yLWErszNpfkVBY/fPJH
+	jkkeWxJ/XD9016l3vAuTxYE7OwsW9We6qd+4V5cWmyH+0GtK6M6EtFabz5W7JZubltoUAIcrY8L0X
+	hd8iovsKgSq7+ROxmxbz/9VyqY5ZY9Ab17kG0MX9UyufTEG322KJwIuJAg/RnawzIyHoHqKsdsrsj
+	Vh1Ng83LLAew+Zm0wqPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3jEq-0006He-8F; Mon, 17 Feb 2020 16:27:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3jEV-0006B3-5W
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 16:26:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3729C30E;
- Mon, 17 Feb 2020 08:26:54 -0800 (PST)
-Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AD9143F68F;
- Mon, 17 Feb 2020 08:26:53 -0800 (PST)
-Date: Mon, 17 Feb 2020 16:26:52 +0000
-From: Mark Brown <broonie@kernel.org>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [RFC PATCH 00/34] sun8i-codec fixes and new features
-Message-ID: <20200217162652.GO9304@sirena.org.uk>
-References: <20200217064250.15516-1-samuel@sholland.org>
+	id 1j3jXS-0005Q5-8V; Mon, 17 Feb 2020 16:46:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j3jXF-0005PL-JA
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 16:46:18 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D5D1C214D8;
+ Mon, 17 Feb 2020 16:46:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581957976;
+ bh=/DaX8+TZSwBPiTZVH9FgOz76O3KL16JyFS/ijkhuk44=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=XKRFlaKp1IYIDGXDUJvH5mH8wXq/PXWxby8tJqhb0Gldfy+UFk8+5flsOaGzmHdfo
+ HlDNAYeeQrm/bDaFOCjFhUdWXO6SEKGWsxUiE0Of4uCTM0915fDbv4hNzC3UL8lKqY
+ xrdgGSn1GXDrxC+bKBaQ4bujFS0dC8o+hjZV23us=
+Date: Mon, 17 Feb 2020 16:46:09 +0000
+From: Will Deacon <will@kernel.org>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH 19/19] arm64: vdso32: Enable Clang Compilation
+Message-ID: <20200217164608.GA2708@willie-the-truck>
+References: <20200213161614.23246-1-vincenzo.frascino@arm.com>
+ <20200213161614.23246-20-vincenzo.frascino@arm.com>
+ <20200213184454.GA4663@ubuntu-m2-xlarge-x86>
+ <0cee3707-d526-3766-3dde-543c8dbd8e68@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200217064250.15516-1-samuel@sholland.org>
-X-Cookie: There was a phone call for you.
+Content-Disposition: inline
+In-Reply-To: <0cee3707-d526-3766-3dde-543c8dbd8e68@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_082655_341155_534105BF 
-X-CRM114-Status: GOOD (  16.56  )
-X-Spam-Score: -2.0 (--)
+X-CRM114-CacheID: sfid-20200217_084617_657897_DC05DB4A 
+X-CRM114-Status: GOOD (  18.80  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,80 +79,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Maxime Ripard <mripard@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- =?iso-8859-1?Q?Myl=E8ne?= Josserand <mylene.josserand@free-electrons.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1978961402329158723=="
+Cc: catalin.marinas@arm.com, 0x7f454c46@gmail.com, linux-mips@vger.kernel.org,
+ tglx@linutronix.de, linux-arch@vger.kernel.org, x86@kernel.org,
+ linux@armlinux.org.uk, clang-built-linux@googlegroups.com, mingo@redhat.com,
+ arnd@arndb.de, will.deacon@arm.com, bp@alien8.de, luto@kernel.org,
+ Nathan Chancellor <natechancellor@gmail.com>, pcc@google.com,
+ linux-arm-kernel@lists.infradead.org, avagin@openvz.org, sboyd@kernel.org,
+ ndesaulniers@google.com, linux-kernel@vger.kernel.org, salyzyn@android.com,
+ paul.burton@mips.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Feb 17, 2020 at 12:26:16PM +0000, Vincenzo Frascino wrote:
+> On 13/02/2020 18:44, Nathan Chancellor wrote:
+> > On Thu, Feb 13, 2020 at 04:16:14PM +0000, Vincenzo Frascino wrote:
+> >> Enable Clang Compilation for the vdso32 library.
+> 
+> [...]
+> 
+> >> +LD_COMPAT ?= $(CROSS_COMPILE_COMPAT)gcc
+> > 
+> > Well this is unfortunate :/
+> > 
+> > It looks like adding the --target flag to VDSO_LDFLAGS allows
+> > clang to link the vDSO just fine although it does warn that -nostdinc
+> > is unused:
+> > 
+> > clang-11: warning: argument unused during compilation: '-nostdinc'
+> > [-Wunused-command-line-argument]
+> >
+> 
+> This is why ended up in this "unfortunate" situation :) I wanted to avoid the
+> warning.
+> 
+> > It would be nice if the logic of commit fe00e50b2db8 ("ARM: 8858/1:
+> > vdso: use $(LD) instead of $(CC) to link VDSO") could be adopted here
+> > but I get that this Makefile is its own beast :) at the very least, I
+> > think that the --target flag should be added to VDSO_LDFLAGS so that gcc
+> > is not a requirement for this but I am curious if you tried that already
+> > and noticed any issues with it.
+> > 
+> 
+> --target is my preferred way as well, I can try to play another little bit with
+> the flags and see what I can come up with in the next version.
 
---===============1978961402329158723==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="jozmn01XJZjDjM3N"
-Content-Disposition: inline
+Yes, please. I'd even prefer the warning rather than silently assuming that
+a cross gcc is kicking around on the path.
 
-
---jozmn01XJZjDjM3N
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Feb 17, 2020 at 12:42:16AM -0600, Samuel Holland wrote:
-
-> There are several trivial fixes in here, and there are several commits
-> that just add new features without changing any existing behavior, but
-> there is enough changing that I thought it would be best to send the
-> whole thing as an RFC. I'm more than happy to reorganize this into one
-> or several patchsets in future revisions. It doesn't have to all go in
-> at once.
-
-This could definitely use being both split up and reordered, it's a 34
-patch series as things stand which is just far too big and I don't
-understand the ordering within the series - there's a mix of fixes,
-cleanups and new features which should come in that order but don't.
-This makes it difficult to get a handle on what's going on because what
-the series is doing jumps about a lot.  There's also a lot of overuse of
-fixes tags and stable tags which also makes things less clear.  I'd
-suggest first sending all the clear fixes as a separate series with the
-cleanups and new functionality separate.
-
-With regard to the ABI breaks they *may* be OK for mainline if we're
-confident that there's not going to be anyone broken by them but we
-should be looking to maintain compatibility if we can even if that's the
-case.
-
---jozmn01XJZjDjM3N
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5KvssACgkQJNaLcl1U
-h9AFkAf+PTXKlVW0kwCz5ifw7rANYaEVuHbffAG8xTZ4xnAb6OOQp6nrRyjbeCh+
-CVeQiWco9iMv0s3ViZrPNRu0cAY0q5yT9/3PtcSUnf9kdZU0j2NGgVcd8M1r36nG
-rqo32+9t3pM7PVuMFxprSYIWowjL4imVnijbUr4HKqMfgcSv11/A8/vrgeFDVw7s
-iaICzpZ7eEo7wz23UocFb3ZTLamvSqlUen7jJj8l2KlMZute7NlbH9WOZVV7KHoE
-i/eafDrmflwnVDqYffboBROuzLF3fBWbcvyBHsqt9ox5N4YIv9+IBp9u1JORKCPX
-tAZBXTMe3EN10DSbE3X0iXvk+gwzRw==
-=106H
------END PGP SIGNATURE-----
-
---jozmn01XJZjDjM3N--
-
-
---===============1978961402329158723==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1978961402329158723==--
-
