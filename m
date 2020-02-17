@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4EA3161660
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 16:40:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87E76161671
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 16:44:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kaqGuSUTRip3Z3MQZ2ZUgFgdytfdyJq+rAq7GfmOWrI=; b=u/64ISKXqShsOF
-	yLwEli6zxZvzaJWUiajxHG+kHnpXPSM1fCx83trkBdYjuaoNetfhsaosIMJN/iREB015v03q797wx
-	P4UDLJUGI9bYlkrKoLgjrT2i9r5s2+EtbNEgUky8qOjnOMLgK+VhYcgZUqWeVykiPstbUxm1o7fV3
-	hTk+KsVrv/OgIq8QcaVHm9zIJCYW5msjS1HpjxiyKiPs8FY20ShFGJMyRxX1ZNNoX7XfsBpvDqQf8
-	Vf+c0E5OaUciXVW9FjpVzUgEzTxSoSAKXuNTAZBD6O/TURY7x5cTHLqUIKFgz5d16oNJpsEJ/jZbF
-	i1MFrsZqfzafPSjkIdTQ==;
+	List-Owner; bh=tsaSNz3k0WfdQRQQBtKxWFfAKShlCxJaPaiizHJHLTw=; b=FPKalIlfgoXpIq
+	8o7N0zTCgfanNfgtH89dvWozo1I8oEs8/VPSSRWMxR5JsrMougKpD44mdFZYRbJkooKTd+YOl+w9Z
+	WzHUg3O02BXww40pucFO9wPFk5wYyWV9NeG0P4ntY2N8dA7soo+YVSqpihwwIG9T87eDP2w5ljl1K
+	iZFg96wuAo+Kbe+Rc5Xkn5IVFExYZGFdJqks3kPPMUt8GhF18eOC9PqcO9fwyn+cDcn4oE8BwAk/u
+	yEbtxAgOKvOhoitgLEHE90GzSgEzTq9jSHXbfKlcDPnJm2UZxIsn6FRFyU5eia3oC5PH+j/HHcQar
+	/vhAiU05CiAseDJKdtsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3iVe-0002E2-CC; Mon, 17 Feb 2020 15:40:34 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j3iZS-0002i6-By; Mon, 17 Feb 2020 15:44:30 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3iVU-0002Df-7I
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 15:40:25 +0000
-Received: by mail-wr1-x442.google.com with SMTP id m16so20246295wrx.11
+ id 1j3iZK-0002hn-H2
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 15:44:23 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 2so9073168pfg.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Feb 2020 07:40:23 -0800 (PST)
+ Mon, 17 Feb 2020 07:44:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=uBL44HTwPsTzK1hTlXHwrWPFvRz4I8cxeuhUA7nfr3s=;
- b=QUNDlRjh2O+ooQ41KWBChztMd4j9tV2M8HiE6TDGhh6KZcCXQYdQmMqHkRy/oPre/d
- E+T64sT8TUAqvGZCkZWcpAPXMK/psI/SMbqtUXH8WD/97O+XqMwt7rE0VgfYpg4SGCTu
- 72DvsxmGQ2FHB1KOF86wT5RUdwe9l5E14uXBkwlKILpzWF5nOlDot/mlGYQpzffkiZng
- dV1PcmwTrlY7TdA4Y7kgPv5XUqhxhLqt6oG02ccYRx64/bgjYrAaemMkV8MHRgYP/RlA
- RNsfj1wDY4F+M6s4FATLU+2N+UfYeGwZGxIXM15btV8V9U0AnPqJn9J60Be6mPZjxKkb
- OLhw==
+ :content-disposition:in-reply-to:user-agent;
+ bh=TJXDZSCq2C/hzS0+s/A5abIsTN6ZxXYpE+Pc/HXSqLk=;
+ b=drLOmyEZ4On7Q0EGZ6WeMzgYMsbPPXEW0fs1U8SREyy45mFunqI9xcCxFAvSFkd/5P
+ KlsS59REzQvT0qK/lWsmxh15FuH5z0EzabavpU5gDo61b9KOoHv2HJMjSIknIIwqLmK3
+ tMEnXMXUcGbnwVY2V2tlk9SYAskk6wRrXBO11z7lc6qhbOe4d/UrTTNTzw0XKmmldUNp
+ YQor96RvSt2btWB7uCE3S8kvTstl0ZQPKLv74zRdcon0DNXdPIUjJaj4++eFAEd2HvzQ
+ Ri1vZ5LZb4xIWXjuWIw1hir3pMq/ao3o37afR5rJ9pwZ5w3FuItdYRWjRRlCHQhTGStn
+ GnOw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=uBL44HTwPsTzK1hTlXHwrWPFvRz4I8cxeuhUA7nfr3s=;
- b=niV+0mBgI3M0z+CrDOQb51wM5KSH4aSGYOzqzXjWO6oAESkT3XOKcGIyl+6ijg8KEN
- 9W0X2dGHvvpK0XxyAcTpyrC11pRZ2gscRBxYQ1XCyrR+7H/35o7tHa8RNvX86okcCnKb
- l1YcT5B3eBhjEc26Oqd1K0/MaQQtcRw/VqPMhlcdmBODrldVuN40FUZhQ30sxZ3umcNB
- Ox2JYu5Y2KXjL5KNxKpBsNagwD/EwvBlJ3ipYjm68yh2xqLgAR7B2ww7Xtfxl7JPiBch
- 6yYckw4TAm3GnVcDcRkJasTLqrBgwCIhjUXqvlXiZcJEDLupsTbrhnDzC/8w4F738iIP
- xlGA==
-X-Gm-Message-State: APjAAAU/hakz+bpywGRAunKgM+Xq5Njjkx9gHtx1BBr/wISpa+fGrHO6
- VUXVQEhmP8nTLD7W1Nd9Ko6GCA==
-X-Google-Smtp-Source: APXvYqyK3wvWFPYLO6Oneazyxhd5g+tje1jkIBunochJVdUjHRcEMjjKDjk9tOFHPoHKB9Cr5dnXww==
-X-Received: by 2002:adf:f109:: with SMTP id r9mr22236398wro.406.1581954021861; 
- Mon, 17 Feb 2020 07:40:21 -0800 (PST)
-Received: from myrica ([2001:171b:2276:930:116c:c27a:3e7f:5eaf])
- by smtp.gmail.com with ESMTPSA id v131sm1106010wme.23.2020.02.17.07.40.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 17 Feb 2020 07:40:21 -0800 (PST)
-Date: Mon, 17 Feb 2020 16:40:12 +0100
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Subject: Re: [PATCH 02/11] PCI: Add ats_supported host bridge flag
-Message-ID: <20200217154012.GD1650092@myrica>
-References: <20200213165049.508908-3-jean-philippe@linaro.org>
- <20200215211047.GA124796@google.com>
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=TJXDZSCq2C/hzS0+s/A5abIsTN6ZxXYpE+Pc/HXSqLk=;
+ b=KBzSb4d7S6HTQESRnmxTdxg3Cekkim0uYR8F1jXe2fluBrm2moB4MZboT328Nzd4HJ
+ 8R86mU9Bb4a4WtF0IA9zX3rCCDl4FGwPjy0o76VSBRL6D+ZxUvLK2FuDUtkftbgt0zrT
+ 1khy5gHy7BpRABrrLrj61UIcxWaP20oazflY1GsDnm0+ZMiwyrjk3FHK2mwk1G5ibCNK
+ yd/zZl1gLb9GmHO+eU4q9JKAhmXn3oBmUCiUVc3139Ud90o+ifbxaNBKgGOUR+WqODqC
+ 56wBsEVyyQNB8gcycKo1F9cKrAtCpBFriqZ2DjOPuyEJ6tAX3BBqbQ1mIPh60NI/Nl1J
+ YXtA==
+X-Gm-Message-State: APjAAAVE+XeNyVwaGdtK3PUAxMd/00JrDLXcUt6rLabXTswX14L213YW
+ gQVJWGm9dMbb4UzO7UrB0BvLSA==
+X-Google-Smtp-Source: APXvYqxKKpZ5Wald3xIFqMGCzo3CdKzSugQnZ88lDLONA9k2+lVLBsaPE438KLhQsNycxQOCwVxdLg==
+X-Received: by 2002:aa7:8582:: with SMTP id w2mr16351595pfn.89.1581954261663; 
+ Mon, 17 Feb 2020 07:44:21 -0800 (PST)
+Received: from leoy-ThinkPad-X240s (li1441-214.members.linode.com.
+ [45.118.134.214])
+ by smtp.gmail.com with ESMTPSA id b133sm1314225pga.43.2020.02.17.07.44.11
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 17 Feb 2020 07:44:21 -0800 (PST)
+Date: Mon, 17 Feb 2020 23:44:02 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH v4 0/5] perf cs-etm: Fix synthesizing instruction samples
+Message-ID: <20200217154402.GA20241@leoy-ThinkPad-X240s>
+References: <20200213094204.2568-1-leo.yan@linaro.org>
+ <20200215032259.GA21048@leoy-ThinkPad-X240s>
+ <CANLsYkyw__tnn5FC=ro-LuaOibP19UhGvPPndjvJDodxcj6Ukg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200215211047.GA124796@google.com>
+In-Reply-To: <CANLsYkyw__tnn5FC=ro-LuaOibP19UhGvPPndjvJDodxcj6Ukg@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_074024_268204_BA53F54C 
-X-CRM114-Status: GOOD (  20.48  )
+X-CRM114-CacheID: sfid-20200217_074422_569044_43B8B27A 
+X-CRM114-Status: GOOD (  15.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -97,73 +100,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
- liviu.dudau@arm.com, guohanjun@huawei.com, frowand.list@gmail.com,
- lorenzo.pieralisi@arm.com, corbet@lwn.net, will@kernel.org, joro@8bytes.org,
- linux-acpi@vger.kernel.org, lenb@kernel.org, devicetree@vger.kernel.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org, dwmw2@infradead.org,
- rjw@rjwysocki.net, iommu@lists.linux-foundation.org, sudeep.holla@arm.com,
- baolu.lu@linux.intel.com, robin.murphy@arm.com, amurray@thegoodpenguin.co.uk
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Coresight ML <coresight@lists.linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Feb 15, 2020 at 03:10:47PM -0600, Bjorn Helgaas wrote:
-> On Thu, Feb 13, 2020 at 05:50:40PM +0100, Jean-Philippe Brucker wrote:
-> > Each vendor has their own way of describing whether a host bridge
-> > supports ATS.  The Intel and AMD ACPI tables selectively enable or
-> > disable ATS per device or sub-tree, while Arm has a single bit for each
-> > host bridge.  For those that need it, add an ats_supported bit to the
-> > host bridge structure.
-> > 
-> > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> > ---
-> >  drivers/pci/probe.c | 7 +++++++
-> >  include/linux/pci.h | 1 +
-> >  2 files changed, 8 insertions(+)
-> > 
-> > diff --git a/drivers/pci/probe.c b/drivers/pci/probe.c
-> > index 512cb4312ddd..75c0a25af44e 100644
-> > --- a/drivers/pci/probe.c
-> > +++ b/drivers/pci/probe.c
-> > @@ -598,6 +598,13 @@ static void pci_init_host_bridge(struct pci_host_bridge *bridge)
-> >  	bridge->native_shpc_hotplug = 1;
-> >  	bridge->native_pme = 1;
-> >  	bridge->native_ltr = 1;
-> > +
-> > +	/*
-> > +	 * Some systems may disable ATS at the host bridge (ACPI IORT,
-> > +	 * device-tree), other filter it with a smaller granularity (ACPI DMAR
-> > +	 * and IVRS).
-> > +	 */
-> > +	bridge->ats_supported = 1;
+Hi Mathieu,
+
+On Mon, Feb 17, 2020 at 08:30:37AM -0700, Mathieu Poirier wrote:
+> On Fri, 14 Feb 2020 at 20:23, Leo Yan <leo.yan@linaro.org> wrote:
+> >
+> > On Thu, Feb 13, 2020 at 05:41:59PM +0800, Leo Yan wrote:
+> > > This patch series is to address issues for synthesizing instruction
+> > > samples, especially when the instruction sample period is small enough,
+> > > the current logic cannot synthesize multiple instruction samples within
+> > > one instruction range packet.
+> >
+> > Thanks a lot for Mike's review.
+> >
+> > Hi Mathieu/Suzuki, I'd like get your green light before we can ask
+> > Arnaldo to help merge this patch set.  Thanks!
 > 
-> The cover letter says it's important to enable ATS only if the host
-> bridge supports it.  From the other patches, it looks like we learn if
-> the host bridge supports ATS from either a DT "ats-supported" property
-> or an ACPI IORT table.  If that's the case, shouldn't the default here
-> be "ATS is *not* supported"?
+> At the very least, please wait 10 days before pinging maintainers
+> about patch reviews.  I have never failed to review coresight patches
+> and this time is no different.
 
-The ACPI IVRS table (AMD) doesn't have a property for the host bridge, it
-can only deselect ATS for a sub-range of devices. Similarly the DMAR table
-(Intel) declares that ATS is supported either by the whole PCIe domain or
-for sub-ranges of devices. I selected ats_supported at the bridge by
-default since IVRS needs it and DMAR has its own fine-grained ATS support
-configuration.
-
-I'm still not sure this is the right approach, given that the
-ats_supported bridge property doesn't exactly correspond to a firmware
-property on all platforms. Maybe the device-tree implementation should
-follow the IORT one where each device carries a fwspec property stating
-"root-complex supports ATS". But it isn't nice either so I tried a cleaner
-implementation (as discussed with Robin back on the ATS-with-SMMUv3 series
-[1]).
+Understand and sorry for hurry pushing.  Take your time for reviewing
+and no rush :)
 
 Thanks,
-Jean
-
-[1] https://lore.kernel.org/linux-iommu/c10c7adb-c7f6-f8c6-05cc-f4f143427a2d@arm.com/
+Leo
 
 _______________________________________________
 linux-arm-kernel mailing list
