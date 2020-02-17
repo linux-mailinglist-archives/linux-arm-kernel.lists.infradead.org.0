@@ -2,88 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B3C21615EB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 16:15:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 11F5E1615CE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 16:13:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=y6o0Fi+4+N34pKYDl1rPpw4O5jmUC2QO9tpIJD5UQzs=; b=J2b95hyoPaJ+R2SpegNDMa3NA
-	+bBzGY3gq3ZCjWWKcyYLVVArbLqCqNcXmTikTuCZHGE3GKSENKU2nz52BUnc3/jt8rD4v8BUs1JaQ
-	YsMj6nzI+4vidc1x+ofr/iPfn7V/LvYxzib2ZwXBP4MgyqF0cpwm5yOk8Hqj6NTqYuAVVPXsoVmqb
-	F5WLkOTn9mrjyXqrJlGNe99b3w5gUOQRVkDCZs8fcB9RSq+ImZtMIiodZZQL9nweEUhGD1SzqLASY
-	Di89yLosBpoEojjD6N0eJ66b6+Up8YJZpLAqm1FRtNvV0y7dftt96waIVV2eWI5KXP5pEf/3p7e5C
-	fC7yzPyqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JVemfXi6h6DhD5rM4AKv0iFbp9ZV/7fKD2txg9zr/Lw=; b=H03fptfhzLpGIy
+	uJfVPCF7JBpGLEDaff9TfaKW6MYRS8+/gcz6lV0huFfBU7fx5tUXbNzQ9A1WfV9I20dPCtaLJrPyi
+	cwF8Y9sPVwyxWAv964AIyWYHkc5BNp2YWiTioG6xCbEJaSzb6ZX77DKzbvAJtJcfYXVED0WRPHBtc
+	2UFKl7e5ifvrhBr4a0k5J9BqSxnzds68CrXKe+y33bZYV+pO+x0xYn7AN3cPZMLVpRvc/zg/xm50e
+	Tmi58FjHnxs8PfJmwBJTJJXdAXcOh60VrZmeh/qdXtfbb8Aik2DIUOBRl0UC2rNfPdlpQDBUgbK5l
+	gU72bWC2qWkqSi0b1Y1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3i7h-0006ba-GU; Mon, 17 Feb 2020 15:15:49 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3i7Z-0006YP-Qg
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 15:15:43 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01HFFTk5125091;
- Mon, 17 Feb 2020 09:15:29 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1581952529;
- bh=sesL32PDsZi01y0X5NncQMWx/LULUnsHSmLX5Wya1Xc=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=gCgf3hT+IcPMAv4XKF0sDStZbR0mz80E4QENsSIj7d/a/S0T9abzOcR9XKl/l4VRP
- 2SmDJfX6EVy8ENek08jsvgB0YRJuZdn2JrQ2R1I74ByocsVYcggHmzoqhPB3jhe/ry
- f8Pk6FCS1OW8+2L6kaPAZzzqZsr6mp6T8TUrhg6o=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01HFFTfv119247
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 17 Feb 2020 09:15:29 -0600
-Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Mon, 17
- Feb 2020 09:15:28 -0600
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE110.ent.ti.com
- (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Mon, 17 Feb 2020 09:15:28 -0600
-Received: from [10.250.65.13] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01HFFSIB067034;
- Mon, 17 Feb 2020 09:15:28 -0600
-Subject: Re: [PATCH v2 2/3] can: m_can: m_can_platform: Add support for
- enabling transceiver
-To: Faiz Abbas <faiz_abbas@ti.com>, <linux-arm-kernel@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <netdev@vger.kernel.org>, <linux-can@vger.kernel.org>
-References: <20200217142836.23702-1-faiz_abbas@ti.com>
- <20200217142836.23702-3-faiz_abbas@ti.com>
-From: Dan Murphy <dmurphy@ti.com>
-Message-ID: <250f905a-33c3-dd17-15c9-e282299dd742@ti.com>
-Date: Mon, 17 Feb 2020 09:10:47 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+	id 1j3i5I-0004eC-EX; Mon, 17 Feb 2020 15:13:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j3i56-0004dR-Lv
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 15:13:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D54AE328;
+ Mon, 17 Feb 2020 07:13:07 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EF4A03F703;
+ Mon, 17 Feb 2020 07:13:06 -0800 (PST)
+Date: Mon, 17 Feb 2020 15:13:04 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v2 31/94] KVM: arm64: nv: Only toggle cache for virtual
+ EL2 when SCTLR_EL2 changes
+Message-ID: <20200217151304.GF47755@lakrids.cambridge.arm.com>
+References: <20200211174938.27809-1-maz@kernel.org>
+ <20200211174938.27809-32-maz@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200217142836.23702-3-faiz_abbas@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200211174938.27809-32-maz@kernel.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_071541_946390_32298B47 
-X-CRM114-Status: GOOD (  15.85  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200217_071310_691357_F011C7EF 
+X-CRM114-Status: GOOD (  19.67  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,62 +65,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, sriram.dash@samsung.com,
- lgirdwood@gmail.com, robh+dt@kernel.org, broonie@kernel.org,
- mkl@pengutronix.de, wg@grandegger.com
+Cc: Andre Przywara <andre.przywara@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ kvm@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Faiz
-
-On 2/17/20 8:28 AM, Faiz Abbas wrote:
-> CAN transceivers on some boards have a standby line which can be
-> toggled to enable/disable the transceiver. Model this as an optional
-> fixed xceiver regulator.
->
-> Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
-> Acked-by: Sriram Dash <sriram.dash@samsung.com>
+On Tue, Feb 11, 2020 at 05:48:35PM +0000, Marc Zyngier wrote:
+> From: Christoffer Dall <christoffer.dall@linaro.org>
+> 
+> So far we were flushing almost the entire universe whenever a VM would
+> load/unload the SCTLR_EL1 and the two versions of that register had
+> different MMU enabled settings.  This turned out to be so slow that it
+> prevented forward progress for a nested VM, because a scheduler timer
+> tick interrupt would always be pending when we reached the nested VM.
+> 
+> To avoid this problem, we consider the SCTLR_EL2 when evaluating if
+> caches are on or off when entering virtual EL2 (because this is the
+> value that we end up shadowing onto the hardware EL1 register).
+> 
+> Signed-off-by: Christoffer Dall <christoffer.dall@linaro.org>
+> Signed-off-by: Jintack Lim <jintack.lim@linaro.org>
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
 > ---
->   drivers/net/can/m_can/m_can_platform.c | 6 ++++++
->   1 file changed, 6 insertions(+)
->
-> diff --git a/drivers/net/can/m_can/m_can_platform.c b/drivers/net/can/m_can/m_can_platform.c
-> index 38ea5e600fb8..719468fab507 100644
-> --- a/drivers/net/can/m_can/m_can_platform.c
-> +++ b/drivers/net/can/m_can/m_can_platform.c
-> @@ -6,6 +6,7 @@
->   // Copyright (C) 2018-19 Texas Instruments Incorporated - http://www.ti.com/
->   
->   #include <linux/platform_device.h>
-> +#include <linux/regulator/consumer.h>
->   
->   #include "m_can.h"
->   
-> @@ -57,6 +58,7 @@ static int m_can_plat_probe(struct platform_device *pdev)
->   {
->   	struct m_can_classdev *mcan_class;
->   	struct m_can_plat_priv *priv;
-> +	struct regulator *reg_xceiver;
->   	struct resource *res;
->   	void __iomem *addr;
->   	void __iomem *mram_addr;
-> @@ -111,6 +113,10 @@ static int m_can_plat_probe(struct platform_device *pdev)
->   
->   	m_can_init_ram(mcan_class);
->   
-> +	reg_xceiver = devm_regulator_get_optional(&pdev->dev, "xceiver");
-> +	if (PTR_ERR(reg_xceiver) == -EPROBE_DEFER)
-> +		return -EPROBE_DEFER;
-> +
+>  arch/arm64/include/asm/kvm_mmu.h | 6 +++++-
+>  1 file changed, 5 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/kvm_mmu.h b/arch/arm64/include/asm/kvm_mmu.h
+> index ee47f7637f28..ec4de0613e7c 100644
+> --- a/arch/arm64/include/asm/kvm_mmu.h
+> +++ b/arch/arm64/include/asm/kvm_mmu.h
+> @@ -88,6 +88,7 @@ alternative_cb_end
+>  #include <asm/cacheflush.h>
+>  #include <asm/mmu_context.h>
+>  #include <asm/pgtable.h>
+> +#include <asm/kvm_emulate.h>
+>  
+>  void kvm_update_va_mask(struct alt_instr *alt,
+>  			__le32 *origptr, __le32 *updptr, int nr_inst);
+> @@ -305,7 +306,10 @@ struct kvm;
+>  
+>  static inline bool vcpu_has_cache_enabled(struct kvm_vcpu *vcpu)
+>  {
+> -	return (vcpu_read_sys_reg(vcpu, SCTLR_EL1) & 0b101) == 0b101;
+> +	if (vcpu_mode_el2(vcpu))
+> +		return (__vcpu_sys_reg(vcpu, SCTLR_EL2) & 0b101) == 0b101;
+> +	else
+> +		return (vcpu_read_sys_reg(vcpu, SCTLR_EL1) & 0b101) == 0b101;
+>  }
 
-Where is this regulator enabled?
+How about:
 
-Shouldn't the regulator be managed by runtime PM as well?
+static bool vcpu_has_cache_enabled(struct kvm_vcpu *vcpu)
+{
+	unsigned long cm = SCTLR_ELx_C | SCTLR_ELx_M;
+	unsigned long sctlr;
 
-Dan
+	if (vcpu_mode_el2(vcpu))
+		sctlr = __vcpu_sys_reg(vcpu, SCTLR_EL2);
+	else
+		sctlr = vcpu_read_sys_reg(vcpu, SCTLR_EL1);
+	
+	return (sctlr & cm) == cm;
+}
 
+... to avoid duplication and make it clearer which fields we're
+accessing.
+
+Thanks,
+Mark.
+
+>  
+>  static inline void __clean_dcache_guest_page(kvm_pfn_t pfn, unsigned long size)
+> -- 
+> 2.20.1
+> 
+> _______________________________________________
+> kvmarm mailing list
+> kvmarm@lists.cs.columbia.edu
+> https://lists.cs.columbia.edu/mailman/listinfo/kvmarm
 
 _______________________________________________
 linux-arm-kernel mailing list
