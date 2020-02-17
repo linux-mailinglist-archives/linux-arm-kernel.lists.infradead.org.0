@@ -2,41 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDE7E160C84
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 09:11:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96CCB160C8A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 09:11:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nV1rdnYTctiSwgMp8x1iHuRdbf0ZwIbpDSS6JP0z/Bc=; b=CfqjHMNdK5gAJ1
-	s7h2qLmrEGXKX+ke8Ux2bcgiLLmYONY7q/dKrCdJdGr0D0RB/0A1lLnJ8DHtPgSebaFaOAQbyN+EM
-	xBEB25heuGnzORO4KDmG08z1oUkdc7s4RKjv+EpmBprMUDNsRM4z4BcWON4EPNFVUMROfDLjclTUM
-	o0NJHa4Ti8qzl2nQHDH97NppCdIRnhoyxJA245lhq5srGhELXNBasXCrSV3TlgXE4b0cQWqAS0svh
-	JuXU6LYYRLTkoL+CZ1YI43xg7e9kBjE1AQfCdKo1STCONPh6dgovIPoQYATjtps06KUmVMQlOvhhe
-	Jfdx9EoMNoanT6L+z1Lg==;
+	List-Owner; bh=MPSd3n8fte9LImRZgj+dXquCJzGc+I+8U+Gif+V1NjM=; b=X6iCtniV95BnAT
+	O3Zv4ZHmhi2BNR+fIDP90hj3M5ZtGG2WNVBF24l10zPKtIvg89UAhVS4eWReTd3UJ+EauYIjsABTD
+	WA2GVR9cmFA2kKoks1YdoZLmV6b+Vg7YFbvyTZEMz14cmYOhN5fhIaEVvImj65iVTpHMb7rma6yVC
+	buprjb5olRzkXSzMhbTLQ93kSLLEz49j8f/RF2Og+IKWXzuU/m79ZWLv1dfH4bSa4pl3WY2FRvD6t
+	BMwJYkCEzotB4cV3abos+TdCfyiQarc9H2MRhelYioLYXYOTBArIrTZu8agEkHRD+smibMyqjFQy+
+	8FZGXEDgWCBpAJOFMHeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3bUn-00036T-Li; Mon, 17 Feb 2020 08:11:13 +0000
-Received: from mga05.intel.com ([192.55.52.43])
+	id 1j3bVQ-0003UJ-2O; Mon, 17 Feb 2020 08:11:52 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3bUb-00034R-Vk
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 08:11:06 +0000
+ id 1j3bVG-0003Tl-7k
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 08:11:43 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by fmsmga105.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 17 Feb 2020 00:11:01 -0800
+Received: from fmsmga003.fm.intel.com ([10.253.24.29])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 17 Feb 2020 00:11:41 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,451,1574150400"; d="scan'208";a="382108423"
+X-IronPort-AV: E=Sophos;i="5.70,451,1574150400"; d="scan'208";a="282456021"
 Received: from linux.intel.com ([10.54.29.200])
- by orsmga004.jf.intel.com with ESMTP; 17 Feb 2020 00:11:01 -0800
+ by FMSMGA003.fm.intel.com with ESMTP; 17 Feb 2020 00:11:40 -0800
 Received: from [10.125.252.180] (abudanko-mobl.ccr.corp.intel.com
  [10.125.252.180])
- by linux.intel.com (Postfix) with ESMTP id 71F155804A2;
- Mon, 17 Feb 2020 00:10:55 -0800 (PST)
-Subject: [PATCH v7 08/12] parisc/perf: open access for CAP_PERFMON privileged
+ by linux.intel.com (Postfix) with ESMTP id BFCDE5804A2;
+ Mon, 17 Feb 2020 00:11:33 -0800 (PST)
+Subject: [PATCH v7 09/12] drivers/perf: open access for CAP_PERFMON privileged
  process
 From: Alexey Budankov <alexey.budankov@linux.intel.com>
 To: James Morris <jmorris@namei.org>, Serge Hallyn <serge@hallyn.com>,
@@ -48,23 +48,23 @@ To: James Morris <jmorris@namei.org>, Serge Hallyn <serge@hallyn.com>,
  Thomas Gleixner <tglx@linutronix.de>
 References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
 Organization: Intel Corp.
-Message-ID: <29e45605-7a3c-944b-7bea-5959f8ff0793@linux.intel.com>
-Date: Mon, 17 Feb 2020 11:10:54 +0300
+Message-ID: <48baecd5-a015-3dbf-f774-9f2caee13893@linux.intel.com>
+Date: Mon, 17 Feb 2020 11:11:32 +0300
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
 In-Reply-To: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_001102_031465_C20083D2 
-X-CRM114-Status: GOOD (  14.86  )
+X-CRM114-CacheID: sfid-20200217_001142_284026_FF42E2AE 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -106,8 +106,8 @@ CAP_PERFMON implements the principal of least privilege for performance
 monitoring and observability operations (POSIX IEEE 1003.1e 2.2.2.39
 principle of least privilege: A security design principle that states
 that a process or program be granted only those privileges (e.g.,
-capabilities) necessary to accomplish its legitimate function, and only
-for the time that such privileges are actually required)
+capabilities) necessary to accomplish its legitimate function, and
+only for the time that such privileges are actually required)
 
 For backward compatibility reasons access to the monitoring remains
 open for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN usage
@@ -116,22 +116,31 @@ capability.
 
 Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
 ---
- arch/parisc/kernel/perf.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/perf/arm_spe_pmu.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/parisc/kernel/perf.c b/arch/parisc/kernel/perf.c
-index e1a8fee3ad49..d46b6709ec56 100644
---- a/arch/parisc/kernel/perf.c
-+++ b/arch/parisc/kernel/perf.c
-@@ -300,7 +300,7 @@ static ssize_t perf_write(struct file *file, const char __user *buf,
- 	else
- 		return -EFAULT;
+diff --git a/drivers/perf/arm_spe_pmu.c b/drivers/perf/arm_spe_pmu.c
+index 4e4984a55cd1..5dff81bc3324 100644
+--- a/drivers/perf/arm_spe_pmu.c
++++ b/drivers/perf/arm_spe_pmu.c
+@@ -274,7 +274,7 @@ static u64 arm_spe_event_to_pmscr(struct perf_event *event)
+ 	if (!attr->exclude_kernel)
+ 		reg |= BIT(SYS_PMSCR_EL1_E1SPE_SHIFT);
  
--	if (!capable(CAP_SYS_ADMIN))
-+	if (!perfmon_capable())
- 		return -EACCES;
+-	if (IS_ENABLED(CONFIG_PID_IN_CONTEXTIDR) && capable(CAP_SYS_ADMIN))
++	if (IS_ENABLED(CONFIG_PID_IN_CONTEXTIDR) && perfmon_capable())
+ 		reg |= BIT(SYS_PMSCR_EL1_CX_SHIFT);
  
- 	if (count != sizeof(uint32_t))
+ 	return reg;
+@@ -700,7 +700,7 @@ static int arm_spe_pmu_event_init(struct perf_event *event)
+ 		return -EOPNOTSUPP;
+ 
+ 	reg = arm_spe_event_to_pmscr(event);
+-	if (!capable(CAP_SYS_ADMIN) &&
++	if (!perfmon_capable() &&
+ 	    (reg & (BIT(SYS_PMSCR_EL1_PA_SHIFT) |
+ 		    BIT(SYS_PMSCR_EL1_CX_SHIFT) |
+ 		    BIT(SYS_PMSCR_EL1_PCT_SHIFT))))
 -- 
 2.20.1
 
