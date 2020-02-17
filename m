@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D4111608E7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 04:28:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2551B1608E8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 04:28:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,51 +11,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=sxsBOufBGAO/Z1a9Vrp1l7kCsDTJXMu239qJrJGxSrw=; b=OerdEEXFtrgsneY9mTxCTJw6/y
-	cUHCBhIfWSlt8TkYc1vmS0lvDbilQ1mLx873XcfKzzpdzL7R0W1bUc217uk/TnkrTog6Yn+dOMRwI
-	4xDbzNdNJjGVXLIlUQPOLXvJpXYWBf4PO/hv2r0Si3C5lLLgkZlMfcsXKcrwFQNIVG92Nyup2itzX
-	ao5qpwmc56eptE0vnErHRNp+r0XaMwfJXJ9Ju+g0a51DlP1fRv0wqdOQHn6EzcustqjomGnyANcg5
-	3blk9UrdwXkO0aokLdH3rLU9SHxVJ3BbilLkNxOc2twdsFmlVeBaEnrfF7/GrkfN+pd7Nd9uOdKzU
-	dDwN1pRA==;
+	bh=4nG7+RvmGZUGhn9EEprwlZDkg8jHcPf0df75qISbcEY=; b=LB3rWt8YHW8ICaQveTFmQQXhZf
+	DfbRHNeOuw6kwNrvPUcrv4c7OATSu1jaAVcJwWGuKrVwebJw1P6rzlVBqyR1nRo8CC3s0dnyYE7b+
+	AuqhtaVgfSQPoS46PdlV8y6P4ARnCqxZRgJBjmXVji3cwVz9kp61dTcNYVpsYRB3H1FSsWsvuMNXa
+	F6CcQHBbU0P+BNgnKG4xz9waDWs4yHTKLaEkjTwNyMXJUnFb4Jc7iDLG2fzaI+Jce9269lDf6Qdg9
+	rkD9DANU57v/wSHLqvoQ3uV0pCQ5uwF/T2/PqD1u/SH1+H+rx4WiMbzHsgnxxS3sbw6p/rFjLEzHV
+	i2JlMilA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3X4m-0000Oq-Rd; Mon, 17 Feb 2020 03:28:04 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j3X51-0000bW-NX; Mon, 17 Feb 2020 03:28:19 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3X3U-0007Yu-M9
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 03:26:46 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6EE18200EBF;
- Mon, 17 Feb 2020 04:26:43 +0100 (CET)
+ id 1j3X3W-0007cp-FV
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 03:26:48 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3E1FB1A1F30;
+ Mon, 17 Feb 2020 04:26:45 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A8ACB201E35;
- Mon, 17 Feb 2020 04:26:33 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 37F211A1F3D;
+ Mon, 17 Feb 2020 04:26:35 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id F2F7F402E1;
- Mon, 17 Feb 2020 11:26:21 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 87FD0402E5;
+ Mon, 17 Feb 2020 11:26:23 +0800 (SGT)
 From: Joakim Zhang <qiangqing.zhang@nxp.com>
 To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
  mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de
-Subject: [PATCH 6/7] clk: imx: imx8qxp: add LPCG clock for FlexCAN in ADMA SS
-Date: Mon, 17 Feb 2020 11:19:20 +0800
-Message-Id: <1581909561-12058-7-git-send-email-qiangqing.zhang@nxp.com>
+Subject: [PATCH 7/7] arch: arm64: dts: imx8qxp: add device node for CAN in
+ ADMA SS
+Date: Mon, 17 Feb 2020 11:19:21 +0800
+Message-Id: <1581909561-12058-8-git-send-email-qiangqing.zhang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1581909561-12058-1-git-send-email-qiangqing.zhang@nxp.com>
 References: <1581909561-12058-1-git-send-email-qiangqing.zhang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200216_192644_888174_2B5AACA8 
-X-CRM114-Status: UNSURE (   7.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200216_192646_863276_815BC217 
+X-CRM114-Status: GOOD (  10.37  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,27 +81,163 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add LPCG clock for FlexCAN in ADMA SS.
+Add device node for CAN in ADMA SS.
 
 Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
 ---
- drivers/clk/imx/clk-imx8qxp-lpcg.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/boot/dts/freescale/imx8qxp-mek.dts | 47 +++++++++++++++
+ arch/arm64/boot/dts/freescale/imx8qxp.dtsi    | 59 +++++++++++++++++++
+ 2 files changed, 106 insertions(+)
 
-diff --git a/drivers/clk/imx/clk-imx8qxp-lpcg.c b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-index 795909ecfba6..07aba029c3ba 100644
---- a/drivers/clk/imx/clk-imx8qxp-lpcg.c
-+++ b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-@@ -72,6 +72,9 @@ static const struct imx8qxp_lpcg_data imx8qxp_lpcg_adma[] = {
- 	{ IMX_ADMA_LPCG_I2C2_CLK, "i2c2_lpcg_clk", "i2c2_clk", 0, ADMA_LPI2C_2_LPCG, 0, 0, },
- 	{ IMX_ADMA_LPCG_I2C3_IPG_CLK, "i2c3_lpcg_ipg_clk", "dma_ipg_clk_root", 0, ADMA_LPI2C_3_LPCG, 16, 0, },
- 	{ IMX_ADMA_LPCG_I2C3_CLK, "i2c3_lpcg_clk", "i2c3_clk", 0, ADMA_LPI2C_3_LPCG, 0, 0, },
-+	{ IMX_ADMA_LPCG_CAN0_IPG_PE_CLK, "can0_lpcg_pe_clk", "can0_clk", 0, ADMA_FLEXCAN_0_LPCG, 0, 0, },
-+	{ IMX_ADMA_LPCG_CAN0_IPG_CLK, "can0_lpcg_ipg_clk", "dma_ipg_clk_root", 0, ADMA_FLEXCAN_0_LPCG, 16, 0, },
-+	{ IMX_ADMA_LPCG_CAN0_IPG_CHI_CLK, "can0_lpcg_chi_clk", "dma_ipg_clk_root", 0, ADMA_FLEXCAN_0_LPCG, 20, 0, },
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
+index f88402ee650c..72a45dd7129e 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
++++ b/arch/arm64/boot/dts/freescale/imx8qxp-mek.dts
+@@ -28,6 +28,25 @@
+ 		gpio = <&lsio_gpio4 19 GPIO_ACTIVE_HIGH>;
+ 		enable-active-high;
+ 	};
++
++	reg_can_en: regulator-can-en {
++		compatible = "regulator-fixed";
++		regulator-name = "can-en";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		gpio = <&pca6416 3 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++	};
++
++	reg_can_stby: regulator-can-stby {
++		compatible = "regulator-fixed";
++		regulator-name = "can-stby";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		gpio = <&pca6416 5 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++		vin-supply = <&reg_can_en>;
++	};
+ };
  
- 	{ IMX_ADMA_LPCG_DSP_CORE_CLK, "dsp_lpcg_core_clk", "dma_ipg_clk_root", 0, ADMA_HIFI_LPCG, 28, 0, },
- 	{ IMX_ADMA_LPCG_DSP_IPG_CLK, "dsp_lpcg_ipg_clk", "dma_ipg_clk_root", 0, ADMA_HIFI_LPCG, 20, 0, },
+ &cm40_i2c {
+@@ -80,6 +99,20 @@
+ 	};
+ };
+ 
++&adma_flexcan0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_flexcan0>;
++	xceiver-supply = <&reg_can_stby>;
++	status = "okay";
++};
++
++&adma_flexcan1 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_flexcan1>;
++	xceiver-supply = <&reg_can_stby>;
++	status = "okay";
++};
++
+ &adma_i2c1 {
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
+@@ -207,6 +240,20 @@
+ 		>;
+ 	};
+ 
++	pinctrl_flexcan0: flexcan0grp {
++		fsl,pins = <
++			IMX8QXP_FLEXCAN0_TX_ADMA_FLEXCAN0_TX			0x00000021
++			IMX8QXP_FLEXCAN0_RX_ADMA_FLEXCAN0_RX			0x00000021
++		>;
++	};
++
++	pinctrl_flexcan1: flexcan1grp {
++		fsl,pins = <
++			IMX8QXP_FLEXCAN1_TX_ADMA_FLEXCAN1_TX			0x00000021
++			IMX8QXP_FLEXCAN1_RX_ADMA_FLEXCAN1_RX			0x00000021
++		>;
++	};
++
+ 	pinctrl_ioexp_rst: ioexp_rst_grp {
+ 		fsl,pins = <
+ 			IMX8QXP_SPI2_SDO_LSIO_GPIO1_IO01			0x06000021
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+index cd10519eced7..f549e33d1c82 100644
+--- a/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8qxp.dtsi
+@@ -34,6 +34,9 @@
+ 		serial1 = &adma_lpuart1;
+ 		serial2 = &adma_lpuart2;
+ 		serial3 = &adma_lpuart3;
++		can0 = &adma_flexcan0;
++		can1 = &adma_flexcan1;
++		can2 = &adma_flexcan2;
+ 	};
+ 
+ 	cpus {
+@@ -384,6 +387,62 @@
+ 			power-domains = <&pd IMX_SC_R_I2C_3>;
+ 			status = "disabled";
+ 		};
++
++		adma_flexcan0: can@5a8d0000 {
++			compatible = "fsl,imx8qxp-flexcan", "fsl,imx8qm-flexcan";
++			reg = <0x5a8d0000 0x10000>;
++			interrupts = <GIC_SPI 235 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-parent = <&gic>;
++			clocks = <&adma_lpcg IMX_ADMA_LPCG_CAN0_IPG_CLK>,
++				 <&adma_lpcg IMX_ADMA_LPCG_CAN0_IPG_PE_CLK>;
++			clock-names = "ipg", "per";
++			assigned-clocks = <&clk IMX_ADMA_CAN0_CLK>;
++			assigned-clock-rates = <40000000>;
++			power-domains = <&pd IMX_SC_R_CAN_0>;
++			/* SLSlice[4] */
++			fsl,clk-source = <0>;
++			status = "disabled";
++		};
++
++		adma_flexcan1: can@5a8e0000 {
++			compatible = "fsl,imx8qxp-flexcan", "fsl,imx8qm-flexcan";
++			reg = <0x5a8e0000 0x10000>;
++			interrupts = <GIC_SPI 236 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-parent = <&gic>;
++			/* CAN0 clock and PD is shared among all CAN instances
++			 * as CAN1 shares CAN0's clock and to enable CAN0's
++			 * clock it has to be powered on.
++			 */
++			clocks = <&adma_lpcg IMX_ADMA_LPCG_CAN0_IPG_CLK>,
++				 <&adma_lpcg IMX_ADMA_LPCG_CAN0_IPG_PE_CLK>;
++			clock-names = "ipg", "per";
++			assigned-clocks = <&clk IMX_ADMA_CAN0_CLK>;
++			assigned-clock-rates = <40000000>;
++			power-domains = <&pd IMX_SC_R_CAN_1>;
++			/* SLSlice[4] */
++			fsl,clk-source = <0>;
++			status = "disabled";
++		};
++
++		adma_flexcan2: can@5a8f0000 {
++			compatible = "fsl,imx8qxp-flexcan", "fsl,imx8qm-flexcan";
++			reg = <0x5a8f0000 0x10000>;
++			interrupts = <GIC_SPI 237 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-parent = <&gic>;
++			/* CAN0 clock and PD is shared among all CAN instances
++			 * as CAN2 shares CAN0's clock and to enable CAN0's
++			 * clock it has to be powered on.
++			 */
++			clocks = <&adma_lpcg IMX_ADMA_LPCG_CAN0_IPG_CLK>,
++				 <&adma_lpcg IMX_ADMA_LPCG_CAN0_IPG_PE_CLK>;
++			clock-names = "ipg", "per";
++			assigned-clocks = <&clk IMX_ADMA_CAN0_CLK>;
++			assigned-clock-rates = <40000000>;
++			power-domains = <&pd IMX_SC_R_CAN_2>;
++			/* SLSlice[4] */
++			fsl,clk-source = <0>;
++			status = "disabled";
++		};
+ 	};
+ 
+ 	conn_subsys: bus@5b000000 {
 -- 
 2.17.1
 
