@@ -2,90 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B94A0160D23
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 09:23:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39B26160D27
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 09:24:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2EQ+BNQr7pLUigWZNsQg0eIIsFEv/GbJMUAX8ocRxns=; b=blR6ElQa7DmQOD
-	jJo8LhOfRpKI8MPf6idzueNdQhm5Lx7TW8tiipkioNwDn/k+6H59N7RCboX/QX0b4uU/jnCq7h/3n
-	HAH2KMXVxgtj/wkgyrSAq2LWcslcg7JrKLliVv+cNxDkccpM/pmusxO75nNOiavZLiaamraA00jA9
-	ZtlILIMPnGAkaWTbTC6LAiEY5To+fWYzKn7k3BIr/FC0q70+/At+qjPnhFoj7cRK2akTfObWlETAk
-	zLV9ZGqVTJeSJvKgKj7/6nNgo/BRA1Rbudqb3GpTImOmyfRVH9d9di06uilL3jtsbHHm8cMrEyXOR
-	z+oeXRF3ZAjzqyeBRB6w==;
+	List-Owner; bh=YEpAmkWkHdTiPpjn4hXqyk4TaCZqtW7feL6tmJNe97E=; b=LhQYo382nIb9nP
+	iQOo6c+7Qf00/kxhjNEFf95ZLk67rwnXjqAdTvAS2oMklRzaD2rDrr4gsVq787896g6UzBBSKiVGS
+	yx3jnOFL6pfauKDJlH6ktA9LCtlA+3LKwK4i5p9PC/QpbsAGLnNtwXkCAr71SPIt+1AKmWw003TLJ
+	nW1fvNtSVX5M/+tTYL5uwYLb3M+oE4gWA06G7XxXYa0nBi61hu7yYtpkbNWB5sL3A3Zx3M8+oyVtu
+	gWoqJznTspJWAR/YBfhbhdme6dJ7+BPqcK3L9tM4nuNlqy3XHhgH0ss4VCDW4kKFfg87f5gTNsPvO
+	2ZxcFWaDrJz1yULZPFtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3bh2-0000sF-Lk; Mon, 17 Feb 2020 08:23:52 +0000
-Received: from mail-ed1-f66.google.com ([209.85.208.66])
+	id 1j3bhL-00018U-78; Mon, 17 Feb 2020 08:24:11 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3bgu-0000rt-O0
- for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 08:23:45 +0000
-Received: by mail-ed1-f66.google.com with SMTP id j17so19680901edp.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Feb 2020 00:23:44 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RCvgYdsJcfvOF7DNGv6F0fWsfl3RWpjn9MSCG6l5nng=;
- b=LaQ1J3AAtOzHQcGxw7sn4APC9+6lR4d2pwcYtXpAgWWROaxSZTUXeiGHfMGoV3pIzB
- Xn7BAA1DCJbxtmxF7O/R+WVUhc3ustyUWl3d3SNkuAqYVg8HLKmX0Zuxyr860g9uc4fh
- ig2GkRCBTb6I3ZENzRnM4P+3D+SB4N+PFtvCR4ibhhokXSDh5jcCvEVf4h9ZBq2mTV4j
- bmrw0jfX6RlUmhed96UWQ7IHHsCqT/qQ/hpFPXQRMGTxceV7OEzOJE1xnx9HACfvQFMI
- Nx+sA2RiWx+XVtJU9neyM5PA9sN9IZ1fg95TIwF0GYwZvnurg5FW+1D0VrpfU/rXnO/A
- c+pQ==
-X-Gm-Message-State: APjAAAVl9qTjvZG1peY2x/ZvbDAwzGK0U8XaOUD8vuPseYdXGGqy48Mw
- aidkc+Vnjrg+wjvrOhEMBlpI/eWndas=
-X-Google-Smtp-Source: APXvYqwBBHzAfr2JH4dWa3J738q6b+R8UKsM5PSC/uKzq0ugPm7/eUAMO+you/mingMs3lw5ibE6sg==
-X-Received: by 2002:aa7:cd52:: with SMTP id v18mr12609882edw.205.1581927823045; 
- Mon, 17 Feb 2020 00:23:43 -0800 (PST)
-Received: from mail-wr1-f42.google.com (mail-wr1-f42.google.com.
- [209.85.221.42])
- by smtp.gmail.com with ESMTPSA id s11sm864299ejx.90.2020.02.17.00.23.42
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 17 Feb 2020 00:23:42 -0800 (PST)
-Received: by mail-wr1-f42.google.com with SMTP id z7so18456978wrl.13
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 17 Feb 2020 00:23:42 -0800 (PST)
-X-Received: by 2002:a5d:6805:: with SMTP id w5mr21282613wru.64.1581927822372; 
- Mon, 17 Feb 2020 00:23:42 -0800 (PST)
+ id 1j3bh6-00010N-BA
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 08:23:57 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j3bh0-0004ma-Ne; Mon, 17 Feb 2020 09:23:50 +0100
+Received: from ukl by ptx.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1j3bh0-000772-9G; Mon, 17 Feb 2020 09:23:50 +0100
+Date: Mon, 17 Feb 2020 09:23:50 +0100
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V2 1/7] ARM: dts: imx6sx: Improve UART pins macro defines
+Message-ID: <20200217082350.o4jjnoslptv74fh6@pengutronix.de>
+References: <1581743758-4475-1-git-send-email-Anson.Huang@nxp.com>
+ <1581743758-4475-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
-References: <20200217064250.15516-1-samuel@sholland.org>
- <20200217064250.15516-7-samuel@sholland.org>
-In-Reply-To: <20200217064250.15516-7-samuel@sholland.org>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Mon, 17 Feb 2020 16:23:31 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65pow6ufaz=6f8rWMXkmknLL2toYgUj-wM9sqns9Xy-ow@mail.gmail.com>
-Message-ID: <CAGb2v65pow6ufaz=6f8rWMXkmknLL2toYgUj-wM9sqns9Xy-ow@mail.gmail.com>
-Subject: Re: [RFC PATCH 06/34] ASoC: sun8i-codec: Fix setting DAI data format
-To: Samuel Holland <samuel@sholland.org>
+Content-Disposition: inline
+In-Reply-To: <1581743758-4475-2-git-send-email-Anson.Huang@nxp.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_002344_781037_BAB00A37 
-X-CRM114-Status: UNSURE (   9.77  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200217_002356_406962_94612D26 
+X-CRM114-Status: GOOD (  12.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.66 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.66 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [wens213[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [wens213[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,29 +68,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Takashi Iwai <tiwai@suse.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Jaroslav Kysela <perex@perex.cz>, Mark Brown <broonie@kernel.org>,
- Maxime Ripard <mripard@kernel.org>, stable@kernel.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Linux-imx@nxp.com, kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 2:43 PM Samuel Holland <samuel@sholland.org> wrote:
->
-> Use the correct mask for this two-bit field. This fixes setting the DAI
-> data format to RIGHT_J or DSP_A.
->
-> Cc: stable@kernel.org
-> Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
-> Signed-off-by: Samuel Holland <samuel@sholland.org>
+Hello Anson,
 
-Acked-by: Chen-Yu Tsai <wens@csie.org>
+On Sat, Feb 15, 2020 at 01:15:52PM +0800, Anson Huang wrote:
+> Add DCE/DTE to UART pins macro defines to distinguish the
+> DCE and DTE functions, keep old defines at the end of file
+> for some time to make it backward compatible.
+> =
+
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+
+Please squash the following diff into your patch:
+
+
+diff --git a/arch/arm/boot/dts/imx6sx-pinfunc.h b/arch/arm/boot/dts/imx6sx-=
+pinfunc.h
+index 738a0000f212..9814db090487 100644
+--- a/arch/arm/boot/dts/imx6sx-pinfunc.h
++++ b/arch/arm/boot/dts/imx6sx-pinfunc.h
+@@ -1016,8 +1016,8 @@
+ #define MX6SX_PAD_QSPI1B_SCLK__WEIM_DATA_8                        0x01B4 0=
+x04FC 0x0000 0x6 0x0
+ #define MX6SX_PAD_QSPI1B_SCLK__SIM_M_HADDR_11                     0x01B4 0=
+x04FC 0x0000 0x7 0x0
+ #define MX6SX_PAD_QSPI1B_SS0_B__QSPI1_B_SS0_B                     0x01B8 0=
+x0500 0x0000 0x0 0x0
+-#define MX6SX_PAD_QSPI1B_SS0_B__UART3_DTE_RX                      0x01B8 0=
+x0500 0x0840 0x1 0x5
+ #define MX6SX_PAD_QSPI1B_SS0_B__UART3_DCE_TX                      0x01B8 0=
+x0500 0x0000 0x1 0x0
++#define MX6SX_PAD_QSPI1B_SS0_B__UART3_DTE_RX                      0x01B8 0=
+x0500 0x0840 0x1 0x5
+ #define MX6SX_PAD_QSPI1B_SS0_B__ECSPI3_SS0                        0x01B8 0=
+x0500 0x073C 0x2 0x1
+ #define MX6SX_PAD_QSPI1B_SS0_B__ESAI_TX_HF_CLK                    0x01B8 0=
+x0500 0x0784 0x3 0x3
+ #define MX6SX_PAD_QSPI1B_SS0_B__CSI1_DATA_17                      0x01B8 0=
+x0500 0x06E0 0x4 0x1
+@@ -1334,8 +1334,8 @@
+ #define MX6SX_PAD_SD3_CLK__TPSMP_HDATA_29                         0x0250 0=
+x0598 0x0000 0x7 0x0
+ #define MX6SX_PAD_SD3_CLK__SDMA_DEBUG_EVENT_CHANNEL_5             0x0250 0=
+x0598 0x0000 0x9 0x0
+ #define MX6SX_PAD_SD3_CMD__USDHC3_CMD                             0x0254 0=
+x059C 0x0000 0x0 0x0
+-#define MX6SX_PAD_SD3_CMD__UART4_DTE_RX                           0x0254 0=
+x059C 0x0848 0x1 0x0
+ #define MX6SX_PAD_SD3_CMD__UART4_DCE_TX                           0x0254 0=
+x059C 0x0000 0x1 0x0
++#define MX6SX_PAD_SD3_CMD__UART4_DTE_RX                           0x0254 0=
+x059C 0x0848 0x1 0x0
+ #define MX6SX_PAD_SD3_CMD__ECSPI4_MOSI                            0x0254 0=
+x059C 0x0748 0x2 0x0
+ #define MX6SX_PAD_SD3_CMD__AUDMUX_AUD6_RXC                        0x0254 0=
+x059C 0x067C 0x3 0x0
+ #define MX6SX_PAD_SD3_CMD__LCDIF2_HSYNC                           0x0254 0=
+x059C 0x07E4 0x4 0x1
+@@ -1621,11 +1621,11 @@
+ #define MX6SX_PAD_SD2_DATA3__UART6_RX		MX6SX_PAD_SD2_DATA3__UART6_DTE_RX
+ #define MX6SX_PAD_SD2_DATA3__UART6_TX		MX6SX_PAD_SD2_DATA3__UART6_DCE_TX
+ #define MX6SX_PAD_SD3_CLK__UART4_CTS_B		MX6SX_PAD_SD3_CLK__UART4_DCE_CTS
++#define MX6SX_PAD_SD3_CMD__UART4_RX		MX6SX_PAD_SD3_CMD__UART4_DTE_RX
++#define MX6SX_PAD_SD3_CMD__UART4_TX		MX6SX_PAD_SD3_CMD__UART4_DCE_TX
+ #define MX6SX_PAD_SD3_DATA2__UART4_RTS_B	MX6SX_PAD_SD3_DATA2__UART4_DCE_RTS
+ #define MX6SX_PAD_SD3_DATA3__UART4_RX		MX6SX_PAD_SD3_DATA3__UART4_DCE_RX
+ #define MX6SX_PAD_SD3_DATA3__UART4_TX		MX6SX_PAD_SD3_DATA3__UART4_DTE_TX
+-#define MX6SX_PAD_SD3_CMD__UART4_RX		MX6SX_PAD_SD3_CMD__UART4_DTE_RX
+-#define MX6SX_PAD_SD3_CMD__UART4_TX		MX6SX_PAD_SD3_CMD__UART4_DCE_TX
+ #define MX6SX_PAD_SD3_DATA4__UART3_RX		MX6SX_PAD_SD3_DATA4__UART3_DCE_RX
+ #define MX6SX_PAD_SD3_DATA4__UART3_TX		MX6SX_PAD_SD3_DATA4__UART3_DTE_TX
+ #define MX6SX_PAD_SD3_DATA5__UART3_RX		MX6SX_PAD_SD3_DATA5__UART3_DTE_RX
+@@ -1636,7 +1636,7 @@
+ #define MX6SX_PAD_SD4_DATA4__UART5_TX		MX6SX_PAD_SD4_DATA4__UART5_DTE_TX
+ #define MX6SX_PAD_SD4_DATA5__UART5_RX		MX6SX_PAD_SD4_DATA5__UART5_DTE_RX
+ #define MX6SX_PAD_SD4_DATA5__UART5_TX		MX6SX_PAD_SD4_DATA5__UART5_DCE_TX
+-#define MX6SX_PAD_SD4_DATA7__UART5_CTS_B	MX6SX_PAD_SD4_DATA7__UART5_DCE_CTS
+ #define MX6SX_PAD_SD4_DATA6__UART5_RTS_B	MX6SX_PAD_SD4_DATA6__UART5_DCE_RTS
++#define MX6SX_PAD_SD4_DATA7__UART5_CTS_B	MX6SX_PAD_SD4_DATA7__UART5_DCE_CTS
+ =
+
+-#endif /*		__DTS_IMX6SX_PINFUNC_H */
++#endif /* __DTS_IMX6SX_PINFUNC_H */
+
+Apart from the last change it is just about ordering. i.e. always list
+the DCE function first consistently and have the compat defines in the
+same order than the old definition.
+
+Best regards
+Uwe
+
+-- =
+
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
