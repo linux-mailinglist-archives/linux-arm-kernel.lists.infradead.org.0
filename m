@@ -2,67 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA759161CE4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 22:41:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63887161CED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 22:44:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dxNKsv6rFU4Vtyl8exqj7FynLQoqHHDEtwkr6ebl9gg=; b=j7UXO1wXJC/21W
-	IZV6we4OLGXUYaerwl+QqwqldfdANrDnAtjNnpmwy85gLURM2afDia87eCSbGSl0S24cdVPfdPKer
-	Xs6uXytoX1PfQ5PS68QJoc1i/Km5c5bBeCAXlEMMefl/7FRBvewhxgoxo8do+gBfnPGyHKqV31Fyi
-	p8bWAbXpbFrX7x+GO11VU7n3EbEwo0Z/C2Gx+uzxMFyGH8EW3EZbF7yLbabrgbEI0YGQ6DDqRD0tW
-	QihXK8UEakgvQtT9un+91wfZf4/3U2HCbRIWgnEYUC2vRKvIoNWOEPB1+4EP/rNxAhXGnzq7uFvXy
-	dRJvGsGu8xwICP+xVkLQ==;
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=1fmKbyT3o8M4c9vj9AvaonDwmpmhMjkuTp9j1ccUSX8=; b=MGWWsFxsgcqgZjOMnrv8WOKU7x
+	7fwp2CZU56OYIUePBeBCS6IhuvYJQJcT/Pnx67n1ii+hU43hzau+OMtqmkKZ5Re1CeKCFslLRXkjR
+	XeWPey+gM+hpShWrk4RPCAM02fJ5KLMH8qhH5wHRs6Efl30mYYx3lAwfWyLlR63shSFeuW/ysH9IO
+	MMENTiLqxtdRJaxip06SyKRwcPpH6nKE+h3rVbs9pEhw/V5jadZiMHJoJfCTkRvR9NT6z/nnAk0iW
+	lIlB1lkNlJJLbwjm8wZ0vCbjWtps4ZvMWW7T5ajQaF7kHdiLWWlxsggX4yTLJUh3S05A4GC/304pZ
+	+WCifZ5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3o8d-0004sB-9o; Mon, 17 Feb 2020 21:41:11 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1j3oBn-0005HJ-6s; Mon, 17 Feb 2020 21:44:27 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3o8U-0004rf-P3; Mon, 17 Feb 2020 21:41:04 +0000
-Received: by mail-pf1-x442.google.com with SMTP id n7so9576279pfn.0;
- Mon, 17 Feb 2020 13:41:02 -0800 (PST)
+ id 1j3oBc-0005Gl-6m; Mon, 17 Feb 2020 21:44:17 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id e9so81672pjr.4;
+ Mon, 17 Feb 2020 13:44:16 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ h=subject:to:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=BVhHFz1MPQXVVACmoh6CowOJovCNHm0bJUQZEPIGlu0=;
- b=Nf3u8Uz2gPXPqLabKlMNVx+fnP8G8Geibt9cnK5207pL/OsH2GJmAelEfeiLJcHNoI
- c534iqATiw8EJeXGUXkTtSxXSSuOJH3WPpOcymAzYJrAKTmaQKsBc/c5uNE4tftDc9zz
- L5vFdTBOQAkiDhQ/jlcX2rQuc7hUCjaMiZFs2rQXnFCA7CvA7EIrBzksEmL0thKfeAtu
- 6I5SfOgQtTlIid26gtgwf5aOB8L5Uuhd4zer+p9s6wd1ixHJQAxoVHoj1BtxsZOG2XAc
- NIrh1nJ4RGY39vuiUt6LIjcyE4AuH6plI15k1DHQLtPJdbzQnHzhVKyEToZnyZHQbP+O
- lAsg==
+ bh=w27qsuZx10Vbc69sZj4Y3pLHnEYu9JJkWVQ759WZqtU=;
+ b=UZqg+07MWOqDsnws7h2aUem4u/TKIUGWLEhMcVMpkH9eXKTitWP0RkoR7vGmBsNp8m
+ POzBFT7mAGEUZRdxrHn2bhSfmmUIBiUFRQORhC5q1LgOLEBqyppecBoCYmJ2aIoIydi6
+ 73lAtAdDAEpmIs9Ql9pA6iqjKshfKUXCBd82wc+Ob3il4k0xOxkzEq8KLEOdnH5PkTuS
+ KBB8vE5rL0cKTD4bNVvB/0QzRi9m3yuZKPV5Kf8xfxMlnEhfb7FKJCRJ8faXCPMGGtxw
+ L+TEs/G2JysfOLxEoydIYFVSn5MJi7XQxhsvSi5hDrmba0Yfs5ZFtW4yoHT86MjkpnlB
+ DOEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=BVhHFz1MPQXVVACmoh6CowOJovCNHm0bJUQZEPIGlu0=;
- b=PNpFmeE/hsJ+rucw6kNuqvPWGAF4yLxevvgHTLV+Ic4eCcB13SCLMcfYBZw9feybJq
- sHblXNogUr2+Ye3QR98fIQUar8jMZ/m0nz7CHYMyLXzQJ1QLwRKzt93MWAPN5EJge9Qu
- EU1mpg2qbglHyBy9VdJ+KBoJqHv+BF8Pb/+tXDHouOx0EIRFLukjs2mPD64GmlqloTjl
- qdUJ+AHyKVNeBgwQzCvQCgrnyOxZvo0IhMaLc6fUqtaZxcbvsa9m8U92aauTjJ5+ofOO
- FXP2VeytNxxJJF3PKbuwdTcnXc9p/+qZEWWBnazfjhBTA1ox9XGP9mNCJ2SMlyKV5C14
- oXGw==
-X-Gm-Message-State: APjAAAVUibF3GP1Y/wnJuY/snEJUEbOROo/IJHdggCc+Im68pjTQIaqm
- BQAm4XKB/MUOhaU6gUf++KpGKpan
-X-Google-Smtp-Source: APXvYqze60tN3eh1Fw5r+0X0Sh19T2rkQPTCB2sN71mGWZ4w6NtFuZYvZUW4bt+xmcW7v46js5MGhA==
-X-Received: by 2002:a63:6c03:: with SMTP id h3mr18582912pgc.19.1581975661666; 
- Mon, 17 Feb 2020 13:41:01 -0800 (PST)
+ h=x-gm-message-state:subject:to:references:from:autocrypt:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=w27qsuZx10Vbc69sZj4Y3pLHnEYu9JJkWVQ759WZqtU=;
+ b=EB/tnhI1XwTKiKu/NRfu9neE5YxPSYPVvtb1zthnEPqbhezRY6Qz4UtPbaocmgkqf1
+ aFv+SUgwUK5uzvtHR/NyRynYDmiHIk3lNNNlmpjBT+mqAUax38dDJr5ooHVCQvoIDHHr
+ /Kf3ITWhUL4PKWm7cZA+veVmfTMaWDhDEipXtK0MghELK+12r3aRFv+2+VOzicYkDpd0
+ bCndLr9namnSCjUasio+KsBxvR0pe7yMCZN+R+IvK2N8u/0hzwaRH/AkZ2pqwC2+l9OR
+ ZivW4LBwaXaJF+xVHWACvaQLiDLlJwb02Dyv4Lh7lcyMdGRV9EmZs947ktvLPYaOvjMo
+ nE5g==
+X-Gm-Message-State: APjAAAUay55GwZ/kNLbKCqTCjCYHG4OgWBs04lzC5h3AcNZFdqU+cYAR
+ T16HS5nCuY6lIh8qH52h/4Q=
+X-Google-Smtp-Source: APXvYqyGI/8Yqw3R47rMKwanH0TzIGNPPefYMJrfqYHx6FaudyVxDpIa20dsA8w3QY/IfaQ4p0jokg==
+X-Received: by 2002:a17:90a:d986:: with SMTP id
+ d6mr1230336pjv.78.1581975855591; 
+ Mon, 17 Feb 2020 13:44:15 -0800 (PST)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- m128sm1303554pfm.183.2020.02.17.13.41.00
+ w26sm1358047pfj.119.2020.02.17.13.44.14
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 17 Feb 2020 13:41:01 -0800 (PST)
-Subject: Re: [PATCH] usb: xhci-pci: Raspberry Pi FW loader for VIA VL805
+ Mon, 17 Feb 2020 13:44:15 -0800 (PST)
+Subject: Re: [PATCH] ARM: bcm2835_defconfig: add minimal support for Raspberry
+ Pi4
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Mathias Nyman <mathias.nyman@intel.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
-References: <20200217100701.19949-1-nsaenzjulienne@suse.de>
- <185f8cae-9898-ee72-00f1-ec79d98c43f4@gmail.com>
- <7bd53a3ee156037132e85415589168345461ad7c.camel@suse.de>
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Stefan Wahren <stefan.wahren@i2se.com>,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <CGME20200214151840eucas1p2ccd15a69aea02a20eda1e4b6e9c8f44e@eucas1p2.samsung.com>
+ <C0LZGU1IU7QO.9VKWHWJ56XZV@vian>
+ <9330d511-dc7d-8d67-043a-acee7e6ebd73@samsung.com>
+ <5eca1bbe77c8731f1eafd11a3bf0df25196d08d4.camel@suse.de>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; keydata=
  mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -118,24 +124,21 @@ Autocrypt: addr=f.fainelli@gmail.com; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
  a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <e8543571-f1bc-ff58-474f-a1824d97df68@gmail.com>
-Date: Mon, 17 Feb 2020 13:40:59 -0800
+Message-ID: <d9833996-3163-fc82-3d0a-673fd5d1bd80@gmail.com>
+Date: Mon, 17 Feb 2020 13:44:13 -0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <7bd53a3ee156037132e85415589168345461ad7c.camel@suse.de>
+In-Reply-To: <5eca1bbe77c8731f1eafd11a3bf0df25196d08d4.camel@suse.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_134102_818385_2F7B4E01 
-X-CRM114-Status: GOOD (  16.09  )
+X-CRM114-CacheID: sfid-20200217_134416_341181_FE24CD73 
+X-CRM114-Status: GOOD (  15.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
@@ -158,10 +161,6 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-usb@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- oneukum@suse.com, linux-kernel@vger.kernel.org, tim.gover@raspberrypi.org,
- linux-rpi-kernel@lists.infradead.org, phil@raspberrypi.com,
- linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -169,40 +168,47 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 2/17/2020 1:19 PM, Nicolas Saenz Julienne wrote:
-> On Mon, 2020-02-17 at 12:52 -0800, Florian Fainelli wrote:
->>
->> On 2/17/2020 2:07 AM, Nicolas Saenz Julienne wrote:
->>> On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
->>> loaded directly from an EEPROM or, if not present, by the SoC's
->>> VideCore.  Inform VideCore that VL805 was just reset, or defer xhci's
->>> probe if not yet joinable trough the mailbox interface.
->>>
->>> Based on Tim Gover's downstream implementation.
->>>
->>> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->>
->> Would it work if you registered the firmware loading as pci fixup such
->> that you would not even have to mangle xhci-pci.c at all and all the
->> logic could be contained within drivers/firmware/raspberrypi.c?
+On 2/17/2020 12:18 PM, Nicolas Saenz Julienne wrote:
+> [ Adding Florian to the coversation ]
 > 
-> Not that simple, PCI fix-ups don't allow for probe deferring. We depend on the
-> firmware and mailbox drivers to be up prior running this, so it's essential. We
-> could cheat and do the deferring first thing during pcie-brcmstb's probe.
+> On Mon, 2020-02-17 at 13:22 +0100, Marek Szyprowski wrote:
+>> Hi Nicolas,
+>> On 14.02.2020 16:14, Nicolas Saenz Julienne wrote:
+>>> IMO bcm2711_defconfig if the last resort solution. I don't think you can
+>>> do bcm2835_lpae_defconfig as RPi and RPi2 SoCs don't support LPAE.
+>>
+>> Okay, if you want I can send a patch adding bcm2711_defconfig.
+>>
+>>> An intemediate solution is being discussed here:
+>>> https://lkml.org/lkml/2020/1/10/694
+>>
+>> Right, I also agree that multi_v7_lpae_defconfig is needed. Best would 
+>> be to have both (bcm2711 for quick tests of board-dedicated kernel and 
+>> multi for distributions).
 > 
-> Actually this might be a workable solution (as in upstreamable):
->  - Wait for firmware to be up in pcie-brcmstb.c
->  - Add firmware code in firmware/raspberrypi.c
->  - Perform call in usb's quirk_usb_early_handoff() (usb/host/pci-quirks.c)
+> So I understand you'd be creating a new bcm2711_defconfig based on
+> bcm2835_defconfig plus whatever is needed. Sounds OK to me. It'd be nice to
+> have a small kernel config to do bisects with.
+> 
+> Any comments Florian, Stefan?
 
-Humm, not a big fan of having to have pcie-brcmstb.c become aware of a
-firmware loader, because this does not scale great over PCIe root
-complex controller drivers for one and this is such a Pi4 (not even
-2711) specialism that it feels a bit too much... might as well go with
-your existing patch, just address Greg's feedback?
+If we can make bcm2711_defconfig a fragment that applies to
+bcm2835_defconfig then we are not maintaining a completely new
+configuration file and we take advantage of all existing coverage from
+bcm2835_defconfig. A completely new bcm2711_defconfig would be hard to
+justify IMHO when multi_v7_lpae_defconfig is sort of what we would prefer.
 
-Or how about introducing a type of fixup that could trigger a probe
-deferral?
+BTW, if you register the PCI outbound window as part of 2711's machine
+descriptor map_io callback, you should have it trickled down from
+iotable_init() -> create_mapping() -> __create_mapping() ->
+create_36bit_mapping which should allow the creation of such a mapping
+into the 32-bit virtual address space of the kernel. You would not quite
+be able to use the entire 4GB of DRAM in such a configuration because
+your virtual address space already needs ~41MB of register space + 64MB
+of PCIe outbound space but at least bcm2835_defconfig would keep working.
+
+NB: this only works AFAICT if you do this at map_io() time, not sure if
+ioremap() will accept a >= 4GB physical address.
 -- 
 Florian
 
