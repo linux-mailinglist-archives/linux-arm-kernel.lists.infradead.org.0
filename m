@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A83A160F17
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 10:46:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26390160EEC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 17 Feb 2020 10:39:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J26NYYXAojH65G5GtN8UqcI7NnVigahD+s/7+zlafB8=; b=I9RqeWaWiTFbfL
-	n6sw0rhg4KOORuzHTPBcb6Lv4Kl2PSUT/zboKyuOut11OzAqZMGmaPpxJjfYaez4EmSGisy5lGJ0b
-	JZuE0muVCJKe941u/ET95IY4bHuHL2AwOJqxk0cL55j6D5NSWBkX2C6gHax2mvWghRQPqPJj2DCU0
-	eXPBaLeqSOf3SezmlieFTDjBI+Q7C8aaH9ppMFetZ2L3tVjs+Dt8o1tLikzsj9zKZgWMTtQ732mwq
-	kkSgJ523QTRwQbys9GfmlMM9PoBEIqtm8zvlAlwV6BU5ZvPIh35rxTe6eUrdbFoMNiQlo9gNfe68w
-	E0iqzhQOuA6QcEJT4aKQ==;
+	List-Owner; bh=b0xX8rEnFjBSLYhNx2PlL07B2jGBpYd00V0qrhwsqio=; b=WKS9YZ1vLabA4R
+	OeCzZ3mpxy5HGhb7T2SPdMY6WwVpPMVbdVUDOJvTif2jn0xvTSaayXEQ0kQFSQX8jjHT8OB+9yxa+
+	Jzp5ev9l+pUlC1+ZuDAYs4aEBbzS4DZp6VHB+2bF3y/BhlYuid8ku68Omxz3XfeVHW3UIiu3CGPce
+	olZ2+jyVY0JBIXSqlCfQMD17pvMHH7AbjA01mB3jbEYt3uJ7LgYQhW21TV8BWtfMs4kSFtpgW7A2j
+	+1udT72+glHlCj6uZth3RXLOwjz8iwIZ2DRHiy2WJdp9NI2RWz7yaD9P7CuXtKChLBVLKNlNkm3t7
+	GOkQuYUa4/NxfrfxPKTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3czD-0003Gp-3y; Mon, 17 Feb 2020 09:46:43 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j3crm-0007sm-3v; Mon, 17 Feb 2020 09:39:02 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3cyj-0002zA-Mf; Mon, 17 Feb 2020 09:46:15 +0000
-X-UUID: adf6120956f645ce8d857d72b08f9d0d-20200217
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=j1shUdhIMGXtvTw4SkKdC2CAhrzkCOkweoDSyilUUBo=; 
- b=TTf5/rFTNAbBLj6+Uzfr7G0Gk3ywkP/lWKGHWyD4XZTWUwYRSUSFHv9bhSLZnpWYuogNvNnCzb5FuTo0/WgYe10wG7LW44WPWQGvsP3BY4hcywDWpH6/3SS1+AeFR3nw8h1WrmxV9sqnVZdX2JQs5/GQlXmBFo1zFQvYN0rqDiw=;
-X-UUID: adf6120956f645ce8d857d72b08f9d0d-20200217
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1047561318; Mon, 17 Feb 2020 01:46:09 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 17 Feb 2020 01:36:27 -0800
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 17 Feb 2020 17:34:17 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 17 Feb 2020 17:35:36 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v1 2/2] scsi: ufs: ufs-mediatek: add waiting time for
- reference clock
-Date: Mon, 17 Feb 2020 17:35:59 +0800
-Message-ID: <20200217093559.16830-3-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200217093559.16830-1-stanley.chu@mediatek.com>
-References: <20200217093559.16830-1-stanley.chu@mediatek.com>
+ id 1j3crf-0007s6-BZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 17 Feb 2020 09:38:57 +0000
+Received: by mail-qk1-x744.google.com with SMTP id p7so15571643qkh.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Feb 2020 01:38:54 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=Afwt3f5haicc54NjifQPcLwy6vygZPMQ4dpzw9cQKTs=;
+ b=0FeSRJlLGZWcE4RRPtM4gSIGicjoUxKa7odOoqFd72hdA+O7Xh2FTW49Fm7Lpsu7Mi
+ lh9RJGPKS+YWQzILdfhjbg2+ReSx1iyh/T9kJ1u7/SJZ6cgpgnWRAj/aO1VsoeNMHsj9
+ 4tbh6ZUDZ9kxXD6jidbjINrLnHYHzPbiO/uF0q9hQWRzKnuE0Gdv9DEGu6I1nZCgpBMa
+ IDiuVxZw031QBeoBhdhzfbPD6PdckAYJJjHUP5h4WH7M5YpAij0mqLKV58ZdYBbzUb+z
+ GTs0x/6AOtVfey0ERi+0yuJiGWyYX9Lk6Tp27N3EfBD+oPIIYXmO6rJ9UttLRpQc0KuK
+ 8KQw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=Afwt3f5haicc54NjifQPcLwy6vygZPMQ4dpzw9cQKTs=;
+ b=NLCOuO4RyggGCQfXRPkQsIdR8z9bCmYJCmIjaIDvFj8u3xKNedYN8uVN5SIN08Xv7K
+ 8f3dYHXGicrypsvbLp9yv+ZHjZfd4P6VBbW5lvtqsUI2dV1sBJlGTgrPXL9CppumJlWX
+ CdK4FiId6X/gVwL5x6OAWqzXakjZK/LeKq1gVGhlAgrNjfVOHzYkePoFSKGKKzQb2Bvu
+ OFZyAZPneMh1T0sxGKYDM05B0YW58ZnhZ/hk6I3eM0TnlyItTscP+sEioj6HTs1zv2pi
+ uxeL4IWY8Toh/FOcyPECsooitKmsixLOADddNnq1uTYj2nkDBUBYkuANFAXhc2Q2Xu/V
+ 4UGA==
+X-Gm-Message-State: APjAAAWGkYggE12YdF83/qogao+mS7q96rbgfJk1ZobjDxU/XTYae8PI
+ iXdTShuujZ3h1xPbCwyrE0dw4BPb8VSyuQ/8JM409w==
+X-Google-Smtp-Source: APXvYqy/AKGSo15DXUV1VHmJaTP8/sfbAtmwyM6qsJnZ0s7CRGTWMHJ7xZ5b5fHI3a6UNJekH+6m3F9i4rgssApSRAc=
+X-Received: by 2002:a37:8343:: with SMTP id f64mr12901966qkd.21.1581932333854; 
+ Mon, 17 Feb 2020 01:38:53 -0800 (PST)
 MIME-Version: 1.0
-X-MTK: N
+References: <20200211210618.GA29823@embeddedor>
+In-Reply-To: <20200211210618.GA29823@embeddedor>
+From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Date: Mon, 17 Feb 2020 10:38:43 +0100
+Message-ID: <CAMpxmJUDG6xq2qUq6yDRQQjbZGsjTTbDUCN8hGkiQwGZk=z05A@mail.gmail.com>
+Subject: Re: [PATCH] gpio: uniphier: Replace zero-length array with
+ flexible-array member
+To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_014613_740982_3C217BC1 
-X-CRM114-Status: GOOD (  11.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200217_013855_393426_781BB53B 
+X-CRM114-Status: GOOD (  10.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,132 +89,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stanley Chu <stanley.chu@mediatek.com>, bvanassche@acm.org,
- andy.teng@mediatek.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, beanhuo@micron.com,
- linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Linus Walleij <linus.walleij@linaro.org>, LKML <linux-kernel@vger.kernel.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ linux-gpio <linux-gpio@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some delays may be required either after gating or before ungating
-reference clock for device according to vendor requirements.
-
-Note that in UFS 3.0, the delay time after gating reference
-clock can be defined by attribute bRefClkGatingWaitTime. Use the
-formal value instead if it can be queried from device.
-
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/ufs-mediatek.c | 46 +++++++++++++++++++++++++++++++--
- drivers/scsi/ufs/ufs-mediatek.h |  2 ++
- 2 files changed, 46 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 9d05962feb15..de650822c9d9 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -100,6 +100,17 @@ static int ufs_mtk_bind_mphy(struct ufs_hba *hba)
- 	return err;
- }
- 
-+static void ufs_mtk_udelay(unsigned long us)
-+{
-+	if (!us)
-+		return;
-+
-+	if (us < 10)
-+		udelay(us);
-+	else
-+		usleep_range(us, us + 10);
-+}
-+
- static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
- {
- 	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
-@@ -112,6 +123,7 @@ static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
- 
- 	if (on) {
- 		ufs_mtk_ref_clk_notify(on, res);
-+		ufs_mtk_udelay(host->ref_clk_ungating_wait_us);
- 		ufshcd_writel(hba, REFCLK_REQUEST, REG_UFS_REFCLK_CTRL);
- 	} else {
- 		ufshcd_writel(hba, REFCLK_RELEASE, REG_UFS_REFCLK_CTRL);
-@@ -137,12 +149,29 @@ static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
- 
- out:
- 	host->ref_clk_enabled = on;
--	if (!on)
-+	if (!on) {
-+		ufs_mtk_udelay(host->ref_clk_gating_wait_us);
- 		ufs_mtk_ref_clk_notify(on, res);
-+	}
- 
- 	return 0;
- }
- 
-+static void ufs_mtk_setup_ref_clk_wait_us(struct ufs_hba *hba,
-+					  u16 gating_us, u16 ungating_us)
-+{
-+	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
-+
-+	if (hba->dev_info.clk_gating_wait_us) {
-+		host->ref_clk_gating_wait_us =
-+			hba->dev_info.clk_gating_wait_us;
-+	} else {
-+		host->ref_clk_gating_wait_us = gating_us;
-+	}
-+
-+	host->ref_clk_ungating_wait_us = ungating_us;
-+}
-+
- static u32 ufs_mtk_link_get_state(struct ufs_hba *hba)
- {
- 	u32 val;
-@@ -502,10 +531,23 @@ static void ufs_mtk_dbg_register_dump(struct ufs_hba *hba)
- static int ufs_mtk_apply_dev_quirks(struct ufs_hba *hba)
- {
- 	struct ufs_dev_info *dev_info = &hba->dev_info;
-+	u16 mid = dev_info->wmanufacturerid;
- 
--	if (dev_info->wmanufacturerid == UFS_VENDOR_SAMSUNG)
-+	if (mid == UFS_VENDOR_SAMSUNG)
- 		ufshcd_dme_set(hba, UIC_ARG_MIB(PA_TACTIVATE), 6);
- 
-+	/*
-+	 * Decide waiting time before gating reference clock and
-+	 * after ungating reference clock according to vendors'
-+	 * requirements.
-+	 */
-+	if (mid == UFS_VENDOR_SAMSUNG)
-+		ufs_mtk_setup_ref_clk_wait_us(hba, 1, 1);
-+	else if (mid == UFS_VENDOR_SKHYNIX)
-+		ufs_mtk_setup_ref_clk_wait_us(hba, 30, 30);
-+	else if (mid == UFS_VENDOR_TOSHIBA)
-+		ufs_mtk_setup_ref_clk_wait_us(hba, 100, 32);
-+
- 	return 0;
- }
- 
-diff --git a/drivers/scsi/ufs/ufs-mediatek.h b/drivers/scsi/ufs/ufs-mediatek.h
-index 492414e5f481..4c787b99fe41 100644
---- a/drivers/scsi/ufs/ufs-mediatek.h
-+++ b/drivers/scsi/ufs/ufs-mediatek.h
-@@ -92,6 +92,8 @@ struct ufs_mtk_host {
- 	struct ufs_hba *hba;
- 	struct phy *mphy;
- 	bool ref_clk_enabled;
-+	u16 ref_clk_ungating_wait_us;
-+	u16 ref_clk_gating_wait_us;
- };
- 
- #endif /* !_UFS_MEDIATEK_H */
--- 
-2.18.0
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+d3QuLCAxMSBsdXQgMjAyMCBvIDIyOjAzIEd1c3Rhdm8gQS4gUi4gU2lsdmEgPGd1c3Rhdm9AZW1i
+ZWRkZWRvci5jb20+Cm5hcGlzYcWCKGEpOgo+Cj4gVGhlIGN1cnJlbnQgY29kZWJhc2UgbWFrZXMg
+dXNlIG9mIHRoZSB6ZXJvLWxlbmd0aCBhcnJheSBsYW5ndWFnZQo+IGV4dGVuc2lvbiB0byB0aGUg
+QzkwIHN0YW5kYXJkLCBidXQgdGhlIHByZWZlcnJlZCBtZWNoYW5pc20gdG8gZGVjbGFyZQo+IHZh
+cmlhYmxlLWxlbmd0aCB0eXBlcyBzdWNoIGFzIHRoZXNlIG9uZXMgaXMgYSBmbGV4aWJsZSBhcnJh
+eSBtZW1iZXJbMV1bMl0sCj4gaW50cm9kdWNlZCBpbiBDOTk6Cj4KPiBzdHJ1Y3QgZm9vIHsKPiAg
+ICAgICAgIGludCBzdHVmZjsKPiAgICAgICAgIHN0cnVjdCBib28gYXJyYXlbXTsKPiB9Owo+Cj4g
+QnkgbWFraW5nIHVzZSBvZiB0aGUgbWVjaGFuaXNtIGFib3ZlLCB3ZSB3aWxsIGdldCBhIGNvbXBp
+bGVyIHdhcm5pbmcKPiBpbiBjYXNlIHRoZSBmbGV4aWJsZSBhcnJheSBkb2VzIG5vdCBvY2N1ciBs
+YXN0IGluIHRoZSBzdHJ1Y3R1cmUsIHdoaWNoCj4gd2lsbCBoZWxwIHVzIHByZXZlbnQgc29tZSBr
+aW5kIG9mIHVuZGVmaW5lZCBiZWhhdmlvciBidWdzIGZyb20gYmVpbmcKPiBpbmFkdmVydGVubHkg
+aW50cm9kdWNlZFszXSB0byB0aGUgY29kZWJhc2UgZnJvbSBub3cgb24uCj4KPiBUaGlzIGlzc3Vl
+IHdhcyBmb3VuZCB3aXRoIHRoZSBoZWxwIG9mIENvY2NpbmVsbGUuCj4KPiBbMV0gaHR0cHM6Ly9n
+Y2MuZ251Lm9yZy9vbmxpbmVkb2NzL2djYy9aZXJvLUxlbmd0aC5odG1sCj4gWzJdIGh0dHBzOi8v
+Z2l0aHViLmNvbS9LU1BQL2xpbnV4L2lzc3Vlcy8yMQo+IFszXSBjb21taXQgNzY0OTc3MzI5MzJm
+ICgiY3hnYjMvbDJ0OiBGaXggdW5kZWZpbmVkIGJlaGF2aW91ciIpCj4KPiBTaWduZWQtb2ZmLWJ5
+OiBHdXN0YXZvIEEuIFIuIFNpbHZhIDxndXN0YXZvQGVtYmVkZGVkb3IuY29tPgoKUGF0Y2ggYXBw
+bGllZCwgdGhhbmtzIQoKQmFydG9zegoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
