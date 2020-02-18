@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0A6816331D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 21:32:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 813A8163337
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 21:40:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+qqn79QztGMTJhJrq8/UrFpN+e66xHwh3NrBRMqq5/0=; b=C8HGulSfAW7+m4
-	07XzEIo4dTjSDWMh0D2WO1XpIdbkAlU7+LVRqf9+g9GumrwKxMACYTF8SmxcbxjuHn8R8x827o8w8
-	83z3aSAftUjuuS3BwfaVkeJWn9nViLgPCE3Xu/3S6NxOHnFliHiUGP6p+9HEs8SysBRZPSlZO61h1
-	Jumag6HQCTE9SybL3Jx72MbYAapBCP+1Ibs+1EO/LctpyeQ8lSZgixSKZO4SloQOLCUhc6U9cRtbT
-	qOe1U9VN/kz9F/jJxjO2vPj2UXxH98x12xSldmMhUkudwN55xGaZMMRAcnHc35Xbnrudwngv3BUQd
-	uWxHkDrq5FCdbsIhSpTA==;
+	List-Owner; bh=cc/3nJFRGaQXTZbtCrNT4CiTzBKG1+bn0uZJvlD/1Qs=; b=ujClzRNpSD1HGt
+	stMwXP6T2WcaoTcGjQHUlfXeIn2OCvFySqdA6W3iJ/VSUWKnq03dvZH/HWyxJ8Oy/+g1Pcwg956aI
+	kOLrYqbt1AA4Qs9enNfug8v88yPyMTZzhhqENVRRbBNB4wbpBOy/hnGwvAbBayzVI/HS2nL13LEaw
+	B5rqeV9GFuOVAEqiQDsxJrN84MnnNmQa67BDdwZYmfbYBJ9KLYGXAP+dq+TB0h6Jv7+KdCBLjL49f
+	d5VLDZK245TDVWJ16/giKZ+/Ers5/8F8VkDM1PP4RxBAHzWsuflH2mZooqHIkmDzH/o/g5BjHDLIk
+	yCbeF9xloY0QBmE2YDzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j49XK-0005i6-52; Tue, 18 Feb 2020 20:32:06 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1j49ey-0007uE-Nn; Tue, 18 Feb 2020 20:40:00 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j49X8-0005gq-PJ; Tue, 18 Feb 2020 20:31:56 +0000
-Received: by mail-oi1-f194.google.com with SMTP id p125so21467659oif.10;
- Tue, 18 Feb 2020 12:31:54 -0800 (PST)
+ id 1j49eq-0007tk-7c; Tue, 18 Feb 2020 20:39:53 +0000
+Received: by mail-ot1-f67.google.com with SMTP id z9so20893224oth.5;
+ Tue, 18 Feb 2020 12:39:51 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=J/VxJ3xiwdS6/BWNfUPWpgIlaLG5DINnCPtjKZgxKdM=;
- b=dBG6gTVnj8DfPuy2Mz0cFObHaIYmrxqrv/Xw9ECMM8uc/edkdyxoyCKWm484mqQDIS
- e+wBte1pMS6+l7P8u4GZY1d3w2W1V2NWQgaGq8L0R832lZIIppbXJ8NVBIMcJE4LqQ4Z
- r3rLzlbLFGCoJ9v2HLfMLMv/H6LiDbm0G9hzBPDhGWHHJz5ZjA3JlWQqKZXmXm+cIlqp
- 01jEtXVeIh04B4PPHKMtKCAZ5++Ygpg4pjfvWrQ1MiDygrINnpRuzUvJvoqgq3H6meM8
- JTsHhTcHHDrw3OLsEIbHhFJbcW91S6NiYKS3l+H45zp5KeC930jsLF46vVsB0vG7vIzd
- lGzw==
-X-Gm-Message-State: APjAAAVg2VjG9pgvIlM1EUMxk4H91s7gXN6H+cxyRYhODBZOP89blxvK
- +sbzxoZ90JZUmPATmZRKrg==
-X-Google-Smtp-Source: APXvYqz4+tMO0xRMFlD+Nj7EMFcqW+z3eblcWmDWok4aK303S3lbrgXPLQt5ovOmoCv1EkypuhWhDA==
-X-Received: by 2002:aca:af50:: with SMTP id y77mr2515745oie.8.1582057913671;
- Tue, 18 Feb 2020 12:31:53 -0800 (PST)
+ bh=C8j0O76ayqbfqE0bVu8zQXNeOaxgxzZC+4WywF7J+iw=;
+ b=GJqZxqNXicaA6RaP7WIIayVlw7vIIqEqJz1G2UjBLoTdpw9LwTQNrB6n43ad7vv6xi
+ J71KIcKkFW8+5N/K4r0zeO52NynKK5WOF/hg60JtM8Up8fLxmqBcLYOGZKgAgX8y3I/F
+ 4pTg9viqrYq2nASx3Gz7ClzkLzLa1zWbztVwzpKo7SJ4WMEMqTW/8gxLpyL9282SweZI
+ /z8n9voFb1IYFq24TZTJpU+mknTWUsQrn9DoOErERwWAvwCfFegCJE8gn0OMfPmNiT6g
+ QUmYy0e7d3n3abyPmhrG4vYke/SiUHp3x3Pz9S2AtpwFxyXmgemUMP5zR5SD7JfkkIyy
+ u5ZA==
+X-Gm-Message-State: APjAAAUR4MX16ZQHDoH/Pru6aJ341LDcp3H1NDukVhFjqt87hg/yZpa/
+ bNFxfYmmR4zcXhLjVHyEiw==
+X-Google-Smtp-Source: APXvYqyH1p5MWdMBardwNwTmNs1F6hhPi3TUJe8KGhFk/oPzVltIMKXI9kg6VgPOTDZoEaMQDFRXnA==
+X-Received: by 2002:a9d:116:: with SMTP id 22mr16069633otu.149.1582058390424; 
+ Tue, 18 Feb 2020 12:39:50 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id y25sm1716518oto.27.2020.02.18.12.31.51
+ by smtp.gmail.com with ESMTPSA id w197sm446590oia.12.2020.02.18.12.39.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 12:31:52 -0800 (PST)
-Received: (nullmailer pid 19094 invoked by uid 1000);
- Tue, 18 Feb 2020 20:31:51 -0000
-Date: Tue, 18 Feb 2020 14:31:51 -0600
+ Tue, 18 Feb 2020 12:39:49 -0800 (PST)
+Received: (nullmailer pid 31148 invoked by uid 1000);
+ Tue, 18 Feb 2020 20:39:48 -0000
+Date: Tue, 18 Feb 2020 14:39:48 -0600
 From: Rob Herring <robh@kernel.org>
-To: matthias.bgg@kernel.org
-Subject: Re: [PATCH v7 02/13] dt-bindings: display: mediatek: Add mmsys
- binding description
-Message-ID: <20200218203151.GA15948@bogus>
-References: <20200213201953.15268-1-matthias.bgg@kernel.org>
- <20200213201953.15268-3-matthias.bgg@kernel.org>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Subject: Re: [PATCH v7 1/7] dt-bindings: clock: mediatek: document clk
+ bindings for Mediatek MT6765 SoC
+Message-ID: <20200218203948.GA28003@bogus>
+References: <1581067250-12744-1-git-send-email-macpaul.lin@mediatek.com>
+ <1581067250-12744-2-git-send-email-macpaul.lin@mediatek.com>
+ <d606aeb2-5327-ff13-0043-e70ef37522f5@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200213201953.15268-3-matthias.bgg@kernel.org>
+In-Reply-To: <d606aeb2-5327-ff13-0043-e70ef37522f5@gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_123154_821293_BB0928A7 
-X-CRM114-Status: GOOD (  19.18  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200218_123952_271586_448940EA 
+X-CRM114-Status: GOOD (  13.16  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -77,8 +78,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,95 +94,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, airlied@linux.ie, mturquette@baylibre.com,
- dri-devel@lists.freedesktop.org, laurent.pinchart@ideasonboard.com,
- ulrich.hecht+renesas@gmail.com, linux-clk@vger.kernel.org,
- drinkcat@chromium.org, wens@csie.org, ck.hu@mediatek.com,
- linux-media@vger.kernel.org, devicetree@vger.kernel.org,
- Daniel Vetter <daniel@ffwll.ch>, frank-w@public-files.de,
- sean.wang@mediatek.com, linux-mediatek@lists.infradead.org,
- hsinyi@chromium.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Matthias Brugger <mbrugger@suse.com>,
- sboyd@kernel.org, rdunlap@infradead.org, linux-kernel@vger.kernel.org,
- p.zabel@pengutronix.de, enric.balletbo@collabora.com
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Loda Chou <loda.chou@mediatek.com>, Fabien Parent <fparent@baylibre.com>,
+ Mars Cheng <mars.cheng@mediatek.com>, Macpaul Lin <macpaul.lin@mediatek.com>,
+ Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
+ Ryder Lee <Ryder.Lee@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ Evan Green <evgreen@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, mtk01761 <wendell.lin@mediatek.com>,
+ Owen Chen <owen.chen@mediatek.com>, devicetree@vger.kernel.org,
+ Joerg Roedel <jroedel@suse.de>, Marc Zyngier <marc.zyngier@arm.com>,
+ Sean Wang <Sean.Wang@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Yong Wu <yong.wu@mediatek.com>, CC Hwang <cc.hwang@mediatek.com>,
+ Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 09:19:42PM +0100, matthias.bgg@kernel.org wrote:
-> From: Matthias Brugger <mbrugger@suse.com>
+On Tue, Feb 18, 2020 at 05:47:25PM +0100, Matthias Brugger wrote:
 > 
-> The MediaTek DRM has a block called mmsys, which sets
-> the routing and enables the different blocks.
-> This patch adds one line for the mmsys bindings description and changes
-> the mmsys description to use the generic form of referring to a specific
-> Soc.
 > 
-> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+> On 07/02/2020 10:20, Macpaul Lin wrote:
+> > From: Mars Cheng <mars.cheng@mediatek.com>
+> > 
+> > This patch adds the binding documentation for apmixedsys, audsys, camsys,
+> > imgsys, infracfg, mipi0a, topckgen, vcodecsys
+> > 
+> > Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
+> > Signed-off-by: Owen Chen <owen.chen@mediatek.com>
+> > Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+> > ---
+> >  .../arm/mediatek/mediatek,apmixedsys.txt      |  1 +
+> >  .../bindings/arm/mediatek/mediatek,audsys.txt |  1 +
+> >  .../bindings/arm/mediatek/mediatek,camsys.txt |  1 +
+> >  .../bindings/arm/mediatek/mediatek,imgsys.txt |  1 +
+> >  .../arm/mediatek/mediatek,infracfg.txt        |  1 +
+> >  .../bindings/arm/mediatek/mediatek,mipi0a.txt | 28 +++++++++++++++++++
+> >  .../bindings/arm/mediatek/mediatek,mmsys.txt  |  1 +
+> >  .../arm/mediatek/mediatek,pericfg.txt         |  1 +
+> >  .../arm/mediatek/mediatek,topckgen.txt        |  1 +
+> >  .../arm/mediatek/mediatek,vcodecsys.txt       | 27 ++++++++++++++++++
 > 
-> ---
-> 
-> Changes in v7:
-> - add hint to the mmsys binding document
-> - make mmsys description generic
-> - fix typo in commit message
-> 
-> Changes in v6: None
-> Changes in v5: None
-> Changes in v4: None
-> Changes in v3: None
-> Changes in v2: None
-> 
->  .../bindings/display/mediatek/mediatek,disp.txt          | 3 +++
->  .../bindings/display/mediatek/mediatek,mmsys.txt         | 9 +--------
->  2 files changed, 4 insertions(+), 8 deletions(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-> index b91e709db7a4..8e453026ef78 100644
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt
-> @@ -24,6 +24,7 @@ connected to.
->  For a description of the display interface sink function blocks, see
->  Documentation/devicetree/bindings/display/mediatek/mediatek,dsi.txt and
->  Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt.
-> +Documentation/devicetree/bindings/display/mediatek/mediatek,mmsys.txt.
->  
->  Required properties (all function blocks):
->  - compatible: "mediatek,<chip>-disp-<function>", one of
-> @@ -43,7 +44,9 @@ Required properties (all function blocks):
->  	"mediatek,<chip>-dpi"        		- DPI controller, see mediatek,dpi.txt
->  	"mediatek,<chip>-disp-mutex" 		- display mutex
->  	"mediatek,<chip>-disp-od"    		- overdrive
-> +	"mediatek,<chip>-mmsys", "syscon"	- provide clocks and components management
->    the supported chips are mt2701, mt2712 and mt8173.
-> +
->  - reg: Physical base address and length of the function block register space
->  - interrupts: The interrupt signal from the function block (required, except for
->    merge and split function blocks).
-> diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,mmsys.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,mmsys.txt
-> index 301eefbe1618..7bbadee820e3 100644
-> --- a/Documentation/devicetree/bindings/display/mediatek/mediatek,mmsys.txt
-> +++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,mmsys.txt
-> @@ -5,14 +5,7 @@ The Mediatek mmsys controller provides various clocks to the system.
->  
->  Required Properties:
->  
-> -- compatible: Should be one of:
-> -	- "mediatek,mt2701-mmsys", "syscon"
-> -	- "mediatek,mt2712-mmsys", "syscon"
-> -	- "mediatek,mt6779-mmsys", "syscon"
-> -	- "mediatek,mt6797-mmsys", "syscon"
-> -	- "mediatek,mt7623-mmsys", "mediatek,mt2701-mmsys", "syscon"
+> I think it's OK to put all the bindings, that only add one compatible in onw
+> patch. But I think mipi0a and vcodesys should each go into a separate patch, as
+> we will need a Ack by Rob for that.
 
-You've lost this information about the fallback...
-
-> -	- "mediatek,mt8173-mmsys", "syscon"
-> -	- "mediatek,mt8183-mmsys", "syscon"
-> +- compatible: "mediatek,<chip>-mmsys"
-
-You are just going to have to add these all back when this is converted 
-to schema.
+Yes, and DT schema for the new ones.
 
 Rob
 
