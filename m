@@ -2,73 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F45A162492
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 11:30:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F07671624A7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 11:34:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W4RkwHOf/iqO6cZu3dtR2LQlB7/WHKd8Cps4eyDH1cs=; b=UeDEGR7IxAsku4
-	7Doqw7N4dbcC2epQhXa0NAKOrpecbJbOIQqfarikniKguYWx30vNwJgczUf4S9hUOWUhKArlbV6qh
-	plE27LurrtdZt1yPvGWSjvjUEV66R7rP0LSt1CO6X3bHx6wcMrPXuQVJoYstUSIVNlFJugGoO5dDw
-	i/oSP6HdrXBnuAG2+sstTOwghUTHYkIhLgpE1CJQ6kGJvHMeMaa8NtN7ovIgNx32QbsojLbexHfij
-	O7IHDEgrUvszDhSihsLDQeUH5LM6DvSFM0DSa5RrtZ+aMFrKMj+3vGBA65HNoqf9FKBjw8TW9nBO8
-	bL4VR5uqmCe0fkPQNmcA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=R5LH/DBj8MqN6YbasamM4+YyfGT3ZaCOgT4ML4KT8aw=; b=HTbMzG9FVWm1Fo/J6mxmOOk5v
+	AiXKX1IGfne+tB+mkzIAyfyHm6wb1w+kF3qSqgmWP9CNFpEEmfPTftaDW+CIcB17hrUU3yOiiK2Aq
+	zXQrwR7GdPe7aoqOVxWEcyS0iMRU0HkWZI1rLVbEvNxIMCZ1s61NqlCKHsnU8duBEKf6XD0TxJ9HZ
+	TuhGZtinHPlTKvwbg+J3IwVlTNfBDKxwc1oKw+nzhgyAbuxCKX7ln6vICphiqM8wgQ9BqpmiudJbU
+	tXd49W9g+3cetrpBsaKU+xlgUMcqSZoH/I+CGwlDEadqOqNRWvTvwcO+UmVkNaQWVwHxt1rCoX4/A
+	nbCa2Vxdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j409L-0006xP-8Q; Tue, 18 Feb 2020 10:30:43 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1j40Cj-0007lY-OI; Tue, 18 Feb 2020 10:34:13 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4098-0006qT-6E; Tue, 18 Feb 2020 10:30:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=TsJ7rijmH0yW9ZZDdkUsZMwrbM/8nqThPqBsqCAkk4k=; b=L3ZDybIgpFGLp7UVUhoCXj1/g
- FS5mIbnpAfGKZgRDZJXQxOaKF06XZr57BggWSmgADckVoW4D7AMr8gTjS38MdEZOL9TeWol0l0bk+
- U7qlP7l1mreO6UVfaOl4hYzXYUSZN3aV7Csl2bEm/70CABSFHClKiUmgot65zS+mTuLvCFaHW4EzP
- q4UNUUwpLqYgMeyyoDkNqOwoK5Au+kfwgup4jtPJDiyVVuhwXFm73HYINp7x+qIXcY1YfRG43Wdu8
- 0VkAT1CiAiATvQN4La90Pz+i2MjCwKWWOvHYy3BGQ3QzKrP9haO2YhfeX1iybGW9bhxVrPw0JNkd0
- lQ9hjaEww==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:53586)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j408V-0006be-OY; Tue, 18 Feb 2020 10:29:52 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j408M-0000Lm-2I; Tue, 18 Feb 2020 10:29:42 +0000
-Date: Tue, 18 Feb 2020 10:29:42 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: Re: [CFT 0/8] rework phylink interface for split MAC/PCS support
-Message-ID: <20200218102941.GE25745@shell.armlinux.org.uk>
-References: <20200217172242.GZ25745@shell.armlinux.org.uk>
- <20200217173324.GI31084@lunn.ch>
- <20200217185131.GC25745@shell.armlinux.org.uk>
+ id 1j40Ca-0007km-7k
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 10:34:05 +0000
+Received: by mail-qt1-x842.google.com with SMTP id d9so14080077qte.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Feb 2020 02:34:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=pFmbarfw22a0ByEjVL/KCmPP1KaB0hCqG9Cj/tHu1N4=;
+ b=ZaWglp4m+t0n/gBn9a2cTcP3my44ZepXhqnTLd5Mr2CEmx5ZY9xeB7HhBxs1ZpQxA1
+ J4vQhHgXrKXXvjOh9OVKXfZrK4RclZ5WzgS6fxyM1HsNzjKZoWhk8UVbp/N3IIiR5zcu
+ TamONDhwIrl3OVziivNFJ4IvKg66PpANGsaGSCrEeq54vnjrVl7z0F6+mhmNlaR2fAr7
+ 2W0R61cKOzwI6X1GoshphLH82WV0L3gdv+c2bt8B+SD57QDOvkr9+n7J12yyvnlzVLpW
+ q8Wx2pA0LG4LUWCjA0t9Owu4KN52bJ0z66tSEo5s0BuO6+ZI3bWoS6WbsRzXdLlK6dyp
+ cziw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=pFmbarfw22a0ByEjVL/KCmPP1KaB0hCqG9Cj/tHu1N4=;
+ b=ScQHmwcRN1+UgN5f44uKSY+x9m2QHs13N/fCN7lHuV3BuHTe4wf3+p0X3ukzoOeUbQ
+ QSs/Gn29vabNH8VePc9jvZP9Iwo14HrS/vcPpb1h8sj+PhSytMxr3qxNrauUFQqXGcuH
+ suAulU4dPrK82Yf0ZiJpx5wWn0ALbIOAkKHJyfado2N0h1rtybocNlpZfPqrUC7KBx/Z
+ bIWZKdLz4rZJeJTvNtNs/OdofAwpM06OWeuP3/ZAJck4g4q7/IN0tzA5M24Oafb37tgO
+ ckMO/2Ofb2GNqxNDldzl7e5qrxixPTqx9iC3sHMSi5/AuQvi+/11qpMpPCFwAB8phgd1
+ TWqg==
+X-Gm-Message-State: APjAAAVGEKbCT1MfgLBBPdysrw2YJ8fif6JLko+b3UKK2xbKxoOiKegT
+ gx72w4H5hHgz7xby4vfyAlfgFWK7QLs=
+X-Google-Smtp-Source: APXvYqz6wYQhFdcVCJ8yYIwi+UzSoo/Q5tHj+Js6eUx0v6J97h8z1zRChFIhsZh2jnNRehdkFLJbOw==
+X-Received: by 2002:ac8:1aa6:: with SMTP id x35mr15910034qtj.32.1582022042496; 
+ Tue, 18 Feb 2020 02:34:02 -0800 (PST)
+Received: from [192.168.0.185] ([179.177.236.155])
+ by smtp.gmail.com with ESMTPSA id n189sm1640547qke.9.2020.02.18.02.34.00
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 18 Feb 2020 02:34:01 -0800 (PST)
+Subject: Re: [arm64, debug] PTRACE_SINGLESTEP does not single-step a valid
+ instruction
+To: Will Deacon <will@kernel.org>
+References: <1eed6d69-d53d-9657-1fc9-c089be07f98c@linaro.org>
+ <20191118131525.GA4180@willie-the-truck>
+ <b3a9ae7e-8a45-7c14-7bc6-1d3b62728a0c@linaro.org>
+ <307ece3d-4e9d-21c4-0abf-9f4f3b313e74@linaro.org>
+ <82cb3dea-db82-1c71-3b08-957102b85c93@linaro.org>
+ <20200213120115.GD1405@willie-the-truck>
+ <ae8c0cd4-f072-deaf-f30e-46e2265d6392@linaro.org>
+ <5028f457-5b7d-1a88-912f-3fa97b567985@linaro.org>
+ <20200218084359.GA16828@willie-the-truck>
+From: Luis Machado <luis.machado@linaro.org>
+Message-ID: <6e439023-7f09-849e-46b8-656739f133d8@linaro.org>
+Date: Tue, 18 Feb 2020 07:33:58 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200217185131.GC25745@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200218084359.GA16828@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_023033_865200_83E4A18E 
-X-CRM114-Status: GOOD (  13.74  )
+X-CRM114-CacheID: sfid-20200218_023404_310459_46A6F2CC 
+X-CRM114-Status: GOOD (  19.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -87,56 +108,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-stm32@st-md-mailman.stormreply.com, Felix Fietkau <nbd@openwrt.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Ioana Radulescu <ruxandra.radulescu@nxp.com>, Jonathan Corbet <corbet@lwn.net>,
- Michal Simek <michal.simek@xilinx.com>, Jose Abreu <joabreu@synopsys.com>,
- Jakub Kicinski <kuba@kernel.org>, Vivien Didelot <vivien.didelot@gmail.com>,
- Sean Wang <sean.wang@mediatek.com>, Alexandre Torgue <alexandre.torgue@st.com>,
- Hauke Mehrtens <hauke@hauke-m.de>,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- linux-arm-kernel@lists.infradead.org, netdev@vger.kernel.org,
- Mark Lee <Mark-MC.Lee@mediatek.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Vladimir Oltean <olteanv@gmail.com>, "David S. Miller" <davem@davemloft.net>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 06:51:31PM +0000, Russell King - ARM Linux admin wrote:
-> On Mon, Feb 17, 2020 at 06:33:24PM +0100, Andrew Lunn wrote:
-> > On Mon, Feb 17, 2020 at 05:22:43PM +0000, Russell King - ARM Linux admin wrote:
-> > > Hi,
-> > > 
-> > > The following series changes the phylink interface to allow us to
-> > > better support split MAC / MAC PCS setups.  The fundamental change
-> > > required for this turns out to be quite simple.
-> > 
-> > Hi Russell
-> > 
-> > Do you have a branch i can pull and test?
+On 2/18/20 5:44 AM, Will Deacon wrote:
+> On Fri, Feb 14, 2020 at 12:45:31PM -0300, Luis Machado wrote:
+>> On 2/13/20 2:07 PM, Luis Machado wrote:
+>>> On 2/13/20 9:01 AM, Will Deacon wrote:
+>>>> Sorry for the very slow reply. I talked to Mark about this a bit but it
+>>>> seems that we never followed up here.
+>>>
+>>> No worries.
+>>>
+>>>>
+>>>> On Tue, Dec 10, 2019 at 05:00:18PM -0300, Luis Machado wrote:
+>>>>> Do you have any input regarding this particular situation?
+>>>>>
+>>>>> It would be nice to get this fixed before the release of another GDB
+>>>>> version, if the fix is to live in GDB itself.
+>>>>
+>>>> Basically, I'm very nervous about fixing this in the kernel because
+>>>> whatever we do will be visible to userspace. On the other hand, this
+>>>> part of the ptrace interface is only seriously used by GDB and we should
+>>>> make sure that it works well.
+>>>>
+>>>> Does the diff below solve the problem? If so, can you confirm that it
+>>>> doesn't appear to regress anything else for GDB?
+>>>
+>>> Thanks for the patch. I'll exercise this in various ways to see if
+>>> anything breaks.
+>>>
+>>
+>> I gave this a try with the particular test in GDB's testsuite that exposed
+>> the problem. It is working as expected now, so we're single-stepping past
+>> the instruction correctly instead of getting a spurious SIGTRAP.
+>>
+>> I managed to run a few other tests related to syscalls and signals and they
+>> also executed as expected. But this was inside QEMU.
+>>
+>> Do you see any potential scenarios where this change may break things? Other
+>> things i should try to exercise?
 > 
-> Nothing beyond the branches I've mentioned in the previous heads-up as
-> yet, sorry.
+> Could you run the entire testsuite please and check there aren't any
+> regressions? Hardware would be best, but QEMU is still useful.
+> 
 
-In any case, for any particular network driver, there are three patches
-maximum that you need - the first, and the one or two patches specific
-to the network driver, depending whether it's a DSA driver or not. You
-don't need all 8 patches to test this series. All can be applied on top
-of yesterday's net-next, specifically
+I'll try to get a hold of hardware to do this. QEMU will be too slow and 
+we'll likely see some failures due to running things in QEMU as well.
 
-92df9f8a745e ("Merge branch 'mvneta-xdp-ethtool-stats'")
+I'll let you know.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+>> Given we need to be careful with a kernel patch at this stage, i just want
+>> to make sure I covered all/most the possible cases.
+>>
+>> Otherwise, I'm happy with this change. Thanks for putting it together!
+> 
+> I'll add your Tested-by, but I'd still like review from Mark.
+> 
+> Will
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
