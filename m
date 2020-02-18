@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72ADB162C89
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:20:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFEC3162CA1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:23:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hLSsrsjmhoniKbUrlnoRT5Jxuq9izMJc7sDMNfr/VIc=; b=ugNAl7JvP22reQ
-	iTozSdHiRmzzYTGx0YaCIYiFdlya32+Ic4tf+S1FQGoAAijLC6tG8V0v4kiCRxraGnhg7+udp10w6
-	84lXB+9Gixx+mhmezGjzN6/8gNah4LcYYTI/OVEd/t1US6IwgiEu7ePsFrnD3c6s2HA3k1hnxNhJY
-	+C6CKcXQxoMwA4TD2NYzuKfLtGqJ0cUjsmcvuTmOerPf+W5e6Xd9mfBbr5PHRXxzc9G9kd61uFeTQ
-	aZPs5oMiWibr+xdUHnWHhRbLJE+889JW5VhL1fpIY/vfM7mRdfPplL6BtWhAEgQk+aAmx4nDw7C7G
-	NlKVecdQUI68hN9tqJjw==;
+	List-Owner; bh=jjDyM2KhriiB9+nrJXKeFOmbkkXlbc6joyqRfi29ugc=; b=ElYdm6E+EWVkqd
+	9sFXsgIpFp+MdIV4zu7cxdUhfqdno18caHgYuXrqmKMafwmLyEBxNhYFVwpsIYppNPAPXdJpCl21L
+	7qzAsq2vuJWUg8FGYQ3jDjy3y+04Cd34dhXuio67qHKhu1UsrGIdHYNkdHRMlvCcE1jInbjBsJMLn
+	TQTdV9wQN8kWKXGLXwdHpKTkGjcsVIdyH65V+zjLFCQEZggf4QZf0OwMJSh4IuflP78rehAV2UQpO
+	S69hGYVUooNMyVCj3ezUJptKdUIgASjikEA30oxS2lezyl+9hp77zPN265wsT0jd+hzkod2UDIn/G
+	XEXMx1gZdQIT3dXLi8Xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j46Xj-0007T5-Ql; Tue, 18 Feb 2020 17:20:19 +0000
+	id 1j46aY-0000pS-IA; Tue, 18 Feb 2020 17:23:14 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j46XZ-0007SW-GZ
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:20:10 +0000
+ id 1j46aO-0000p9-JS
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:23:05 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2AA1D20801;
- Tue, 18 Feb 2020 17:20:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5306F20801;
+ Tue, 18 Feb 2020 17:22:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582046409;
- bh=1/QcFFVdy6vaYY3yC/qBVxENZ9VWu8BQUFNLPDxdkwc=;
+ s=default; t=1582046584;
+ bh=j2Iac1zey820mNpdh5yJdPFMBBkcx1p+/nwylqP9Bj4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=FUdza3Rmbg/mS79PNLWd5ZIzn/9300o9tKNwbcJP/mcDcJzUXNmpPjr3jh0X1zJQY
- 2DeI3v9A8QBOH7SD92VtvtrHYPjrF3geQHcK40Qmlnhfnh4LVkrgJXeC+f0XbtauyE
- Egn9ZDEQtvitjwxDPEpQNg8nsuu31Fls/i5PJ22g=
-Date: Tue, 18 Feb 2020 17:20:00 +0000
+ b=pGRedyRNM0efhtBXW3mukIv+0Uyx6UFrCDbXNxScGGlS2kUHuf6Z9u5cvnGH2VWIy
+ VkGS9156ykY8H/gDdmCTkV+MFWiVdh3DiGfyr7ajOhFrJqs4dkwqrQ6H6z1Yn7urSI
+ cJWxWOtaqgY9/KrBPR/ucs/jZ3LiWrbmvtYMmeq8=
+Date: Tue, 18 Feb 2020 17:22:56 +0000
 From: Will Deacon <will@kernel.org>
 To: Rob Herring <robh@kernel.org>
-Subject: Re: [RFC PATCH 06/11] iommu: arm-smmu: Remove Calxeda secure mode
- quirk
-Message-ID: <20200218172000.GF1133@willie-the-truck>
+Subject: Re: [RFC PATCH 11/11] dt-bindings: Remove Calxeda platforms bindings
+Message-ID: <20200218172255.GG1133@willie-the-truck>
 References: <20200218171321.30990-1-robh@kernel.org>
- <20200218171321.30990-7-robh@kernel.org>
+ <20200218171321.30990-12-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200218171321.30990-7-robh@kernel.org>
+In-Reply-To: <20200218171321.30990-12-robh@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_092009_572412_A14485DD 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20200218_092304_663515_7F517FE7 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -99,28 +99,20 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 11:13:16AM -0600, Rob Herring wrote:
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Robin Murphy <robin.murphy@arm.com>
-> Cc: Joerg Roedel <joro@8bytes.org>
-> Cc: iommu@lists.linux-foundation.org
+On Tue, Feb 18, 2020 at 11:13:21AM -0600, Rob Herring wrote:
+> Cc: devicetree@vger.kernel.org
 > Signed-off-by: Rob Herring <robh@kernel.org>
 > ---
-> Do not apply yet.
+>  .../devicetree/bindings/arm/calxeda.yaml      | 22 ----------
+>  .../devicetree/bindings/arm/calxeda/l2ecc.txt | 15 -------
+>  .../devicetree/bindings/ata/sata_highbank.txt | 44 -------------------
+>  .../devicetree/bindings/clock/calxeda.txt     | 17 -------
+>  .../memory-controllers/calxeda-ddr-ctrlr.txt  | 16 -------
+>  .../devicetree/bindings/net/calxeda-xgmac.txt | 18 --------
+>  .../bindings/phy/calxeda-combophy.txt         | 17 -------
 
-Pleeeeease? ;)
-
->  drivers/iommu/arm-smmu-impl.c | 43 -----------------------------------
->  1 file changed, 43 deletions(-)
-
-Yes, I'm happy to get rid of this. Sadly, I don't think we can remove
-anything from 'struct arm_smmu_impl' because most implementations fall
-just short of perfect.
-
-Anyway, let me know when I can push the button and I'll queue this in
-the arm-smmu tree.
-
-Cheers,
+You can drop the "calxeda,smmu-secure-config-access" from the Arm SMMU
+binding doc too (either here, or as part of the other patch).
 
 Will
 
