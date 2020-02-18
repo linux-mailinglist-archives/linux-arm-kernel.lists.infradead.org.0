@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73840162F6E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:09:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00E7D162FA2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:18:30 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yenbSzc0mBh+5ZtsCcc/trwCf2gRrgcD3YkCeWx0dtc=; b=FRd27DF/JI7YZ+
-	8BaBL4o6MgXMd2bn5qugfhghM6yrAc4eYCEtsPJdRaCnc1U9Wg4a1xm6fjp3yqxB5t7qFW4kgVh4i
-	gi+li5itm51bQHJTuxu2M008OymiwV4AUVt2oOkkK2UxUD6mAPXNvN+eBCw3d3sdAXbSK7j1uTOO1
-	4jp8hLzv90w/ljgBe7QPnpq2xoOvhmuxsWGpqggozpxbaXVcTpthkh0DiccqPJ8rpmScG0NkS/wNn
-	9Yk+1wp07ehTDLrfyAPudyHaun0/PL/eotAStxCaOVhp7rkDHeKZgRD/bizpvSya7cFVXOlcKz3VD
-	NMapraCv0VJUuhBJZ4FA==;
+	List-Owner; bh=l2PVfFVMvTZ7JdAD6FXclkO3bvtIENazsgyDJzvBOgc=; b=C5sCTf6v+YFkpv
+	FiqMkQaKO9JZqOk20x/j+N8MFIGa0+4UcT5hd+wVSYMZrPX3EL1Sno30dNmetZ5Hg4hVK+BxAAJhh
+	dwUGh+e6txz/eVD+T5hmbm54PrIvmkoJiJoImhFBCtlR3R1QtFvkoOuOTBdM8tqBkAWgoMFxDRNjF
+	u7n8jS2RB/WFuyev02JhF0sk1YpIAdpgebZ2eJuDI1A0J5ZuUmhA5U+/CYZGpoFNxqUYIPNgeSc+M
+	pTiHpthSumm2+8sRYWQsjk6r4Mn2aMBONQ4oeVyGvBxBOQ5qHV7+6Ja/F+xPdDrZ1sKb76lBTWuZB
+	3td2iy7pws6aowzMzKQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j48FS-0004J1-Si; Tue, 18 Feb 2020 19:09:34 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1j48Ny-0008Kl-HN; Tue, 18 Feb 2020 19:18:22 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j48FI-0004IA-6A
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:09:25 +0000
-Received: by mail-lf1-x143.google.com with SMTP id m30so15319855lfp.8
+ id 1j48Nl-0008IT-DW
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:18:15 +0000
+Received: by mail-pf1-x442.google.com with SMTP id p14so11133576pfn.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 11:09:22 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sgC+KcoeEeyex6eD3mMv5OuL0TkVAKrfj+D1k7Ogeuw=;
- b=B7SdNIl5IuU5K9WpPsBZx8JhLBx4fcihbbhrLKIvbz4QwExJuv3DWqhoiGC8ZIT2N+
- 0+7CBvSyOSHs+Yyomv29TbnfyH343iJX6GdGiK99hbWfXVocIxGU5HUhSc8j6xlgpi3X
- A+bGtseJKGz7F8M1cOwlu3ZTZZQUei37cDAigXu1DclhFt6dPQbkmfO7iKpoypxLBrnr
- IFESohfOEtq5Mrks2mPKYXZT66lsu8tofpUq3DUj06Sm5LpNi7B2OUUcKq2PxEEivKGt
- Otcy+/SdZdN6nV01wu62lRZWFz4mjBSXBphXpOInkHduve4r8pp07P7dXYcDjftabJ/D
- aogg==
+ Tue, 18 Feb 2020 11:17:58 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=es-iitr-ac-in.20150623.gappssmtp.com; s=20150623;
+ h=from:date:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=hdis5Be2VylUOrCt10Cz6Yqnuk5YbPer1SATYKuRYm8=;
+ b=d3gbxN0Eb1BCaa9gLyAoMPLm5uMOU4lHLgDMa8jfpH75ogLpXd95m95AIF0mTusmEH
+ MUeKNqN0pYIwbAenzEdd6QpZDEC3FdYztj5vWXSffv/HT+hONr42+wiXCyRKuFNj1apz
+ n1LZFAkPvnE/YliBP06K+CKh6vpG8IpwT9/g3jh7gZqPhdmJRh3TxNCoygUucNGuzWMU
+ b912pH7Dx43ouulUY7T/lbOSD+DiLBgyaO1gaPYf2pN8VNRYmL0dwodx8Rc4fiBCYnJ9
+ LS39tFVs1CRnOIgEToMois9djIZNuXBl5ptwoeDJX0ldqSpEPS5DeLhZj0mIua5gEtGN
+ rCeg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=sgC+KcoeEeyex6eD3mMv5OuL0TkVAKrfj+D1k7Ogeuw=;
- b=PpYp0sJW24sY3xXe1+gJNxHm/JMYdCVfqS/GQ579IXgxrMM65SWM7T7tGoX0sMDDvz
- 8MloQHREh/4NjjdB+lu2P+EMRBAEV0F9F++Tb3PbcvoKmYt4auzr3LusCQ4hwpyhzFnu
- Eff1dAh79ZNr5r8uUGQoQtsi39I0KjKZSqZCQOJqQKh6gQPVA7wbFqRaCMlyNbbC72MG
- K5gip221XiMMsCBajlZc0rMHn+Y+Bm5BHzqFF8lZ4u6gwmz+c6Fz1tqQ4eqdvSbUc9ZF
- wX9ME9MpuWMD//z+xFWatxwj//QROzldLBNBqoStjaoBGwnYXX3QQYpS0CPhOvT4UMBy
- nXkA==
-X-Gm-Message-State: APjAAAX/9YRh8fZTFiY56rUBPd8hV1UqbN2CoQhSUxVR/7uqbERHKmG9
- KgElqgfKNaXUaSfEk0meE9AXA1VVj5AwIfeJRTzdzw==
-X-Google-Smtp-Source: APXvYqyQa7SCnKGAund4lr/pos/r4SSc5cZAOL8kfuir0DSmhrrLVzgnRx9UUogyHTUSI5sPAqW9V3GBHuZN4nZBbgg=
-X-Received: by 2002:a19:dc14:: with SMTP id t20mr11044121lfg.47.1582052961407; 
- Tue, 18 Feb 2020 11:09:21 -0800 (PST)
+ h=x-gm-message-state:from:date:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=hdis5Be2VylUOrCt10Cz6Yqnuk5YbPer1SATYKuRYm8=;
+ b=cAxJdos266/Qkom8YF69lkyYT4ltWl+gnTR1wXaYpeTeK2U5mz6XUzQARsc71gMORZ
+ vC9bIJ9DeDL/YFF/c6MG4dPTJj6Aq5Q5HQaRy8dw+hVp9DHyBrEgS6ALkGueEv1LNPYK
+ Ev1oeSMFGkFaPWQieA+i88xmbds1t9WNFQyoaCyTph9st0sm67qepB0DkMUnCybnLWqO
+ bif7si9PDsT6ivDhQYrX49ff+tSZeQJ/42HS39WESA3Yq074tDFQtU5buZAcm8XGevqB
+ 67ehesqjQHIR14zsy7ZuvhvLmoKVnRbgChlVVJ7efuqmq3fKM/4EN9vdnHsSLbNABoOi
+ P+qA==
+X-Gm-Message-State: APjAAAXUqRPpe4U+qHOUexCpumdanMxydqgHCkwyEmAuLOPIZSCd2iV9
+ Gl7awL+Y+VU0hapetIbv0Zbo6Q==
+X-Google-Smtp-Source: APXvYqyh0pn6jwE7x9qEuaVNzph8xYHQuv1XhcCWUwyL8qLvGC2/yIcQyOL4I2O/iBd7nq53fqFDCg==
+X-Received: by 2002:a63:d18:: with SMTP id c24mr24447947pgl.218.1582053478100; 
+ Tue, 18 Feb 2020 11:17:58 -0800 (PST)
+Received: from kaaira-HP-Pavilion-Notebook ([103.37.201.173])
+ by smtp.gmail.com with ESMTPSA id a35sm5769697pgl.20.2020.02.18.11.17.53
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 18 Feb 2020 11:17:57 -0800 (PST)
+From: Kaaira Gupta <kgupta@es.iitr.ac.in>
+X-Google-Original-From: Kaaira Gupta <Kaairakgupta@es.iitr.ac.in>
+Date: Wed, 19 Feb 2020 00:47:47 +0530
+To: Dan Carpenter <dan.carpenter@oracle.com>
+Subject: [PATCH] staging: bcm2835-camera: call function instead of macro
+Message-ID: <20200218191747.GA12782@kaaira-HP-Pavilion-Notebook>
+References: <20200218160727.GA17010@kaaira-HP-Pavilion-Notebook>
+ <20200218183711.GE19641@kadam>
 MIME-Version: 1.0
-References: <20170821192907.8695-3-ard.biesheuvel@linaro.org>
- <1581728065-5862-1-git-send-email-alan.mikhak@sifive.com>
- <CAKv+Gu9W0v9owp85hkAatwCvu-y9z4BZxvbKf92N-s_nnD910Q@mail.gmail.com>
- <867e0o6ssr.wl-maz@kernel.org>
-In-Reply-To: <867e0o6ssr.wl-maz@kernel.org>
-From: Alan Mikhak <alan.mikhak@sifive.com>
-Date: Tue, 18 Feb 2020 11:09:10 -0800
-Message-ID: <CABEDWGxDz6njYYQN879XnGmY2vxOKvbygeg=9nBK54U6WP8_ug@mail.gmail.com>
-Subject: Re: [PATCH 2/3] pci: designware: add separate driver for the MSI part
- of the RC
-To: Marc Zyngier <maz@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20200218183711.GE19641@kadam>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_110924_259759_7E44BE32 
-X-CRM114-Status: GOOD (  25.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200218_111809_462161_660F7C5C 
+X-CRM114-Status: GOOD (  18.24  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,98 +96,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao Pinto <Joao.Pinto@synopsys.com>,
- Graeme Gregory <graeme.gregory@linaro.org>, Jingoo Han <jingoohan1@gmail.com>,
- linux-pci <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Leif Lindholm <leif@nuviainc.com>, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org, devel@driverdev.osuosl.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Ray Jui <rjui@broadcom.com>, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Feb 15, 2020 at 2:36 AM Marc Zyngier <maz@kernel.org> wrote:
+On Tue, Feb 18, 2020 at 09:37:11PM +0300, Dan Carpenter wrote:
+> On Tue, Feb 18, 2020 at 09:37:28PM +0530, Kaaira Gupta wrote:
+> > Fix checkpatch.pl warning of 'macro argument reuse' in bcm2835-camera.h
+> > by removing the macro and calling the function, written in macro in
+> > bcm2835-camera.h, directly in bcm2835-camera.c
+> > 
+> > Signed-off-by: Kaaira Gupta <kgupta@es.iitr.ac.in>
+> > ---
+> >  .../bcm2835-camera/bcm2835-camera.c           | 28 +++++++++++++++----
+> >  .../bcm2835-camera/bcm2835-camera.h           | 10 -------
+> >  2 files changed, 22 insertions(+), 16 deletions(-)
+> > 
+> > diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+> > index 1ef31a984741..19b3ba80d0e7 100644
+> > --- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+> > +++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+> > @@ -919,9 +919,17 @@ static int vidioc_g_fmt_vid_cap(struct file *file, void *priv,
+> >  	else
+> >  		f->fmt.pix.colorspace = V4L2_COLORSPACE_SMPTE170M;
+> >  	f->fmt.pix.priv = 0;
+> > -
+> > -	v4l2_dump_pix_format(1, bcm2835_v4l2_debug, &dev->v4l2_dev, &f->fmt.pix,
+> > -			     __func__);
+> > +	v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
+> > +		 "%s: w %u h %u field %u pfmt 0x%x bpl %u sz_img %u colorspace 0x%x priv %u\n",
+> > +		  __func__,
+> > +		 (&f->fmt.pix)->width,
+> > +		 (&f->fmt.pix)->height,
+> > +		 (&f->fmt.pix)->field,
+> > +		 (&f->fmt.pix)->pixelformat,
+> > +		 (&f->fmt.pix)->bytesperline,
+> > +		 (&f->fmt.pix)->sizeimage,
+> > +		 (&f->fmt.pix)->colorspace,
+> > +		 (&f->fmt.pix)->priv);
+> 
+> This is not as nice to look at as the original.  Just ignore the
+> warning.
+> 
+> regards,
+> dan carpenter
 >
-> On Sat, 15 Feb 2020 09:35:56 +0000,
-> Ard Biesheuvel <ardb@kernel.org> wrote:
-> >
-> > (updated some email addresses in cc, including my own)
-> >
-> > On Sat, 15 Feb 2020 at 01:54, Alan Mikhak <alan.mikhak@sifive.com> wrote:
-> > >
-> > > Hi..
-> > >
-> > > What is the right approach for adding MSI support for the generic
-> > > Linux PCI host driver?
-> > >
-> > > I came across this patch which seems to address a similar
-> > > situation. It seems to have been dropped in v3 of the patchset
-> > > with the explanation "drop MSI patch [for now], since it
-> > > turns out we may not need it".
-> > >
-> > > [PATCH 2/3] pci: designware: add separate driver for the MSI part of the RC
-> > > https://lore.kernel.org/linux-pci/20170821192907.8695-3-ard.biesheuvel@linaro.org/
-> > >
-> > > [PATCH v2 2/3] pci: designware: add separate driver for the MSI part of the RC
-> > > https://lore.kernel.org/linux-pci/20170824184321.19432-3-ard.biesheuvel@linaro.org/
-> > >
-> > > [PATCH v3 0/2] pci: add support for firmware initialized designware RCs
-> > > https://lore.kernel.org/linux-pci/20170828180437.2646-1-ard.biesheuvel@linaro.org/
-> > >
-> >
-> > For the platform in question, it turned out that we could use the MSI
-> > block of the core's GIC interrupt controller directly, which is a much
-> > better solution.
-> >
-> > In general, turning MSIs into wired interrupts is not a great idea,
-> > since the whole point of MSIs is that they are sufficiently similar to
-> > other DMA transactions to ensure that the interrupt won't arrive
-> > before the related memory transactions have completed.
-> >
-> > If your interrupt controller does not have this capability, then yes,
-> > you are stuck with this little widget that decodes an inbound write to
-> > a magic address and turns it into a wired interrupt.
->
-> I can only second this. It is much better to have a generic block
-> implementing MSI *in a non multiplexed way*, for multiple reasons:
->
-> - the interrupt vs DMA race that Ard mentions above,
->
-> - MSIs are very often used to describe the state of per-CPU queues. If
->   you multiplex MSIs behind a single multiplexing interrupt, it is
->   always the same CPU that gets interrupted, and you don't benefit
->   from having multiple queues at all.
->
-> Even if you have to implement the support as a bunch of wired
-> interrupts, there is still a lot of value in keeping a 1:1 mapping
-> between MSIs and wires.
->
-> Thanks,
->
->         M.
->
-> --
-> Jazz is not dead, it just smells funny.
+So, is this warning to be ignored from everywhere in every driver, as it
+doesn't look good? And if yes, then why is it there in the first place?
 
-Ard and Marc, Thanks for you comments. I will take a look at the code
-related to MSI block of GIC interrupt controller for some reference.
-
-I am looking into supporting MSI in a non-multiplexed way when using
-ECAM and the generic Linux PCI host driver when Linux is booted
-from U-Boot.
-
-Specifically, what is the right approach for sharing the physical
-address of the MSI data block used in Linux with U-Boot?
-
-I imagine the Linux driver for MSI interrupt controller allocates
-some DMA-able memory for use as the MSI data block. The
-U-Boot PCIe driver would program an inbound ATU region to
-map mem writes from endpoint devices to that MSI data block
-before booting Linux.
-
-Comments are appreciated.
-
-Alan
+Thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
