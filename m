@@ -2,122 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B066162104
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 07:38:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BFC9162141
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 08:01:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vl+p8EdMVosd3eUBwIkgvwPlTGG6pWxYGUiBPNmJWWg=; b=Om2FCdq6wFM8DD
-	4OAGZJr8pcfy8hJZbJd+Pi2ZTI4J7/a25Y1bTiKQv4G6S97yd2UdZjLq+EAH7o/H2ZMI6m7mNNZAY
-	oQC+SBiFZyUr72LgCzy+gAuaf35zV/zh5S5w/Qi/QKydxG5oOQFdwcJrhhJgYczjyxNsCz1IYtXJQ
-	klMiW/vOgAXVSNDdxsDEuY17+L0KyD9/vW8aDhOYsS97qOUFx4DVzltefCoqjmoNVhGZ6fPl3xuf4
-	B7ddPK+J5dwEyEueRxwM6WySwokgcsmBn46QoaDd/d8bZvxlkSmNIeKi3MCq+wkz+qk4+V1hLxsev
-	vXQ1I/nUwjRXpiCcBDJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=PqzdsnvW4pWKXaOXHhWe/5aWXP0onMpht12+oJEQDnY=; b=HZhfy/ggKoZXCbGcWvfo1CEtm
+	cGi7Cinsmv3BoVGN2qbOICUNQaWO3xqSm8wKkqicSOX5Mk/qVohGWpXoXzFPAmH/qICahuyFY0O4S
+	u7gWFFIFlPgRiQrgPbsuIr2nWUpbEgpoGJRPTxKITFOkT1d0d7Dv1WizoqT1RqM3bzGHSDgjtkb/O
+	X+vXA3HkQXfD/oWX+un73xNyagBf7iOKQMPTmHAiLJ3rvUNAOyoDBFtOvFg3wRu+tRZPgSrzdmacS
+	EDkjvQUWJn41M5GH9jwJpsWKXKIsan/Xc4itrEckWiB7+UxmOEIeqsA+cJhNBTz/qblUIfcLza1in
+	jkwyG4Hlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3wWZ-00084D-FD; Tue, 18 Feb 2020 06:38:27 +0000
-Received: from mail-eopbgr40056.outbound.protection.outlook.com ([40.107.4.56]
- helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+	id 1j3wsi-0000TC-Mw; Tue, 18 Feb 2020 07:01:20 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3wWL-00081l-GK
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 06:38:14 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=OfJ37iQ+W9iCbOCBrnPQ6gZAwY+cjIRslGikFwkoAezC4OJBt1zdNXWIqGUtQv5siosRYqYx4yHX6ftBuHhhdaOZ7APLsS3ANV3eU6VxumzW9KuFANqEf3NtEVSyJNWFJQpHx/gPYRzkHUwGHmfQi8SEMlCt9p8vjMIniroFmZXaYR1dESMFxUZHQvwGcm8+DD6Bi7aE+Lc3ht5NZ+B31leMgB38nepsYCAsoTYMzaGR0pWwwMz/Ma93FsSAkZ2i+74Jt8d55hTnFdD2YYKNpzcjsBRSpnGstVBosH+UVpzGRFW+A1TL5kIyk79s3d5pmLEySM2yKGhBtjRYHt15Nw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WehSuJh/StYJdKMdOSsx+Hr5FuhMeMwFTU5aHbBniqE=;
- b=fOQV66mn4n8Mg56KWYqKIYsTym1o7SMI/40IPxG9l6mBftG2ZUCzcDh3+oVnFbfHXQHzuqvLAHc1HcoSVHywO3aB6FeKkv/X7tueGRrk0JNbS2Z81DOT6kEb/pns+9p0P0L2fK1Dsy08m/rHjtXFOR/hLYAxoNpdROUUofTOqeyj0UdQiz+L+X1XZhD3GEulpT7XDo9usrF3EIc+842XmdJ/UDnal/vIe39UdRcfQaXDSPplUA22g/yBK8wRJ4sm2oEF+dRZZZ3iDr8ln76Ez/+brQ13vVg7BC6B5xcD+89FDiczTFM2vEJ7HnlyzL1JydtRgDsPFLy5DLYvb16AKw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WehSuJh/StYJdKMdOSsx+Hr5FuhMeMwFTU5aHbBniqE=;
- b=l1wJMqarAyYjhB/uAjrFdpTKSJ9MghHa9RXFkuc68kiO/L5zN3a1aDM8gOWGTY0J9NBa1fD+Bwpwd7pOTyLxap2ENQsUTJpsLxkTZD1o+jIze+CEQBBhXoaPTwG9zJtPBv0HI0TABRBgkbWNb4NEaWdRadteCEyfYSfS+8lLa3g=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3834.eurprd04.prod.outlook.com (52.134.71.33) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2729.23; Tue, 18 Feb 2020 06:38:10 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::e44d:fa34:a0af:d96%5]) with mapi id 15.20.2729.032; Tue, 18 Feb 2020
- 06:38:10 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "agx@sigxcpu.org" <agx@sigxcpu.org>, "andrew.smirnov@gmail.com"
- <andrew.smirnov@gmail.com>, Leonard Crestez <leonard.crestez@nxp.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ id 1j3wsa-0000S7-1Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 07:01:14 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 4669D921C802E35843D2;
+ Tue, 18 Feb 2020 15:01:03 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0; Tue, 18 Feb 2020
+ 15:00:55 +0800
+Subject: Re: [PATCH v4 08/20] irqchip/gic-v4.1: Plumb get/set_irqchip_state
+ SGI callbacks
+To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] soc: imx: Remove unused include in gpcv2.c
-Thread-Topic: [PATCH] soc: imx: Remove unused include in gpcv2.c
-Thread-Index: AQHV5iBSEpuvkLJISUqKDGnVgUsxmKggdMkAgAAKVNA=
-Date: Tue, 18 Feb 2020 06:38:10 +0000
-Message-ID: <DB3PR0402MB391676E0648E09A9E9864916F5110@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1582005089-23767-1-git-send-email-Anson.Huang@nxp.com>
- <AM0PR04MB448194F2C0E2043661556C8588110@AM0PR04MB4481.eurprd04.prod.outlook.com>
-In-Reply-To: <AM0PR04MB448194F2C0E2043661556C8588110@AM0PR04MB4481.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [220.161.57.125]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 1dea4a92-e965-4212-1ab5-08d7b43d1f2c
-x-ms-traffictypediagnostic: DB3PR0402MB3834:|DB3PR0402MB3834:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB383498538408AF04CE758F7FF5110@DB3PR0402MB3834.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 031763BCAF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(366004)(136003)(376002)(346002)(39860400002)(189003)(199004)(66946007)(76116006)(5660300002)(7696005)(2906002)(55016002)(9686003)(316002)(186003)(110136005)(66556008)(66446008)(64756008)(52536014)(26005)(66476007)(6506007)(4326008)(8676002)(86362001)(44832011)(8936002)(81166006)(81156014)(33656002)(478600001)(4744005)(71200400001)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3834;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 8k1HC2mR3MHVKKS9pQb8nzHf/9+OOuQuJdKJ1fbslC/Ts3U9PgfSuBD6ryDdPCHkGkEFAzdUj1bOFiI9vgJIBc8ccajLEEuIUXH4tJD9MnOAxaPmFwemMnyEn4Fgn2uoqOgsCiqEyboMm8kM+gRr4IMSqypCs5i4ptdWzmesaRocHwEDOtERzmdVeWTcfdqHD0Tethqm/40skVF1MtY55WkuA/yEs8RG39GlcEgRZsUGaOi5vIkG5NFJJLgLSruXzvlEW1AURUm9+BxUI7RIGnAoGTGLeAh2mPxYMSnuBlSTnJ0RsS0YBVn7zTvqhg/aRvAUibwu8XuMFCSxslJcfgVR++6yTA9XQpSkwPTzV0lofWuLTJkO6yBMByKg7VbYZjCpWDS2I/sA+UVJc6qdaEE1/qXGjyYshSQRtKB+pKZ2/MOAamEDQuX7o3c9ZbKhpEt574zMyd2ZrAP4+rPPCYE9sSwo42b2cNfn+jnK85qaTEP9qrOw66V1xv3G/Os/
-x-ms-exchange-antispam-messagedata: xTiIKNiKmMCkRQ0tVwclQjFIJQBJxAA3KtIcvQNzHMkRGzNh01UzEDCLnW7/o4pn2VT3iCxpqg2d8s3JPP2xMe2FvgXPPnVTGmHmXLRwf3l2wkPCeudLBMM64Q/kkNxQuhvJ8k5sguM/AHmwcv3MeQ==
+References: <20200214145736.18550-1-maz@kernel.org>
+ <20200214145736.18550-9-maz@kernel.org>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <4b7f71f1-5e7f-e6af-f47d-7ed0d3a8739f@huawei.com>
+Date: Tue, 18 Feb 2020 15:00:54 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1dea4a92-e965-4212-1ab5-08d7b43d1f2c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Feb 2020 06:38:10.4563 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: tVucgw/thfq8NDdjk5j1YES3afqmhJPcdZIEpohnwn+4Aa1MTDjiCRGEYtPXzBVwzP5uYJ5RU9GkZLd1AviGgA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3834
+In-Reply-To: <20200214145736.18550-9-maz@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_223813_543467_3CB1041A 
-X-CRM114-Status: UNSURE (   7.58  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200217_230113_049447_D5C26EDE 
+X-CRM114-Status: GOOD (  20.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.4.56 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,33 +69,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jason Cooper <jason@lakedaemon.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Eric Auger <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
+ James Morse <james.morse@arm.com>, Thomas
+ Gleixner <tglx@linutronix.de>, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Marc,
 
-
-> Subject: RE: [PATCH] soc: imx: Remove unused include in gpcv2.c
+On 2020/2/14 22:57, Marc Zyngier wrote:
+> To implement the get/set_irqchip_state callbacks (limited to the
+> PENDING state), we have to use a particular set of hacks:
 > 
-> > Subject: [PATCH] soc: imx: Remove unused include in gpcv2.c
-> >
-> > There is nothing in use from sizes.h, remove it.
+> - Reading the pending state is done by using a pair of new redistributor
+>    registers (GICR_VSGIR, GICR_VSGIPENDR), which allow the 16 interrupts
+>    state to be retrieved.
+> - Setting the pending state is done by generating it as we'd otherwise do
+>    for a guest (writing to GITS_SGIR)
+> - Clearing the pending state is done by emiting a VSGI command with the
+>    "clear" bit set.
 > 
-> This is needed when moving to support COMPILE_TEST for soc/imx, please
-> keep it.
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>   drivers/irqchip/irq-gic-v3-its.c   | 56 ++++++++++++++++++++++++++++++
+>   include/linux/irqchip/arm-gic-v3.h | 14 ++++++++
+>   2 files changed, 70 insertions(+)
+> 
+> diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
+> index 1e448d9a16ea..a9753435c4ff 100644
+> --- a/drivers/irqchip/irq-gic-v3-its.c
+> +++ b/drivers/irqchip/irq-gic-v3-its.c
+> @@ -3915,11 +3915,67 @@ static int its_sgi_set_affinity(struct irq_data *d,
+>   	return -EINVAL;
+>   }
+>   
+> +static int its_sgi_set_irqchip_state(struct irq_data *d,
+> +				     enum irqchip_irq_state which,
+> +				     bool state)
+> +{
+> +	if (which != IRQCHIP_STATE_PENDING)
+> +		return -EINVAL;
+> +
+> +	if (state) {
+> +		struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
+> +		struct its_node *its = find_4_1_its();
+> +		u64 val;
+> +
+> +		val  = FIELD_PREP(GITS_SGIR_VPEID, vpe->vpe_id);
+> +		val |= FIELD_PREP(GITS_SGIR_VINTID, d->hwirq);
+> +		writeq_relaxed(val, its->sgir_base + GITS_SGIR - SZ_128K);
+> +	} else {
+> +		its_configure_sgi(d, true);
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int its_sgi_get_irqchip_state(struct irq_data *d,
+> +				     enum irqchip_irq_state which, bool *val)
+> +{
+> +	struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
+> +	void __iomem *base = gic_data_rdist_cpu(vpe->col_idx)->rd_base + SZ_128K;
 
-Ah, yes, I did NOT notice below patch which is in purpose, so just ignore this patch.
+There might be a race on reading the 'vpe->col_idx' against a concurrent
+vPE schedule (col_idx will be modified in its_vpe_set_affinity)? Will we
+end up accessing the GICR_VSGI* registers of the old redistributor,
+while the vPE is now resident on the new one? Or is it harmful?
 
-commit b5cc96d3bfcbc495a350f78aa2e1295b238d26da
-Author: Leonard Crestez <leonard.crestez@nxp.com>
-Date:   Mon Jan 20 14:51:28 2020 +0200
+The same question for direct_lpi_inv(), where 'vpe->col_idx' will be
+used in irq_to_cpuid().
 
-    soc: imx: gpcv2: include linux/sizes.h
+> +	u32 count = 1000000;	/* 1s! */
+> +	u32 status;
+> +
+> +	if (which != IRQCHIP_STATE_PENDING)
+> +		return -EINVAL;
+> +
+> +	writel_relaxed(vpe->vpe_id, base + GICR_VSGIR);
+> +	do {
+> +		status = readl_relaxed(base + GICR_VSGIPENDR);
+> +		if (!(status & GICR_VSGIPENDR_BUSY))
+> +			goto out;
+> +
+> +		count--;
+> +		if (!count) {
+> +			pr_err_ratelimited("Unable to get SGI status\n");
+> +			goto out;
+> +		}
+> +		cpu_relax();
+> +		udelay(1);
+> +	} while(count);
+> +
+> +out:
+> +	*val = !!(status & (1 << d->hwirq));
+> +
+> +	return 0;
+> +}
+> +
+>   static struct irq_chip its_sgi_irq_chip = {
+>   	.name			= "GICv4.1-sgi",
+>   	.irq_mask		= its_sgi_mask_irq,
+>   	.irq_unmask		= its_sgi_unmask_irq,
+>   	.irq_set_affinity	= its_sgi_set_affinity,
+> +	.irq_set_irqchip_state	= its_sgi_set_irqchip_state,
+> +	.irq_get_irqchip_state	= its_sgi_get_irqchip_state,
+>   };
+>   
+>   static int its_sgi_irq_domain_alloc(struct irq_domain *domain,
+> diff --git a/include/linux/irqchip/arm-gic-v3.h b/include/linux/irqchip/arm-gic-v3.h
+> index a89578884263..64da945486ac 100644
+> --- a/include/linux/irqchip/arm-gic-v3.h
+> +++ b/include/linux/irqchip/arm-gic-v3.h
+> @@ -345,6 +345,15 @@
+>   #define GICR_VPENDBASER_4_1_VGRP1EN	(1ULL << 58)
+>   #define GICR_VPENDBASER_4_1_VPEID	GENMASK_ULL(15, 0)
+>   
+> +#define GICR_VSGIR			0x0080
+> +
+> +#define GICR_VSGIR_VPEID		GENMASK(15, 0)
+> +
+> +#define GICR_VSGIPENDR			0x0088
+> +
+> +#define GICR_VSGIPENDR_BUSY		(1U << 31)
+> +#define GICR_VSGIPENDR_PENDING		GENMASK(15, 0)
+> +
+>   /*
+>    * ITS registers, offsets from ITS_base
+>    */
+> @@ -368,6 +377,11 @@
+>   
+>   #define GITS_TRANSLATER			0x10040
+>   
+> +#define GITS_SGIR			0x20020
+> +
+> +#define GITS_SGIR_VPEID			GENMASK_ULL(47, 32)
+> +#define GITS_SGIR_VINTID		GENMASK_ULL(7, 0)
 
-thanks,
-Anson
+The spec says vINTID field is [3:0] of the GITS_SGIR.
+
+
+Thanks,
+Zenghui
+
+> +
+>   #define GITS_CTLR_ENABLE		(1U << 0)
+>   #define GITS_CTLR_ImDe			(1U << 1)
+>   #define	GITS_CTLR_ITS_NUMBER_SHIFT	4
+> 
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
