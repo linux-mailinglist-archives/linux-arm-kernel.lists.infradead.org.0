@@ -2,61 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B6B6162DBB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 19:05:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3C63162DD1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 19:10:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h/tGG4q887wxAWnSVB7Xr5eU4jKgmO6nJOfeL/udrzM=; b=XsSr0w3QHQ6ZET
-	oANf2bXDy3FfclYEv8mi7j+qWRu+V/FF5lfiSC2uSwqwqq7ck05AbQpZHxbVG6XOqWeRVdz8MxuP8
-	jaGv1xQQSPONPxkmC5pZl26rg4e0D9KWfaKbseXjF2cVK4KvEGWAWDpwd4otOavnkLYalDHroKSfJ
-	cOzfHXEmFMn8JzofI3exS5aKtOmKZUaoqH60XXmTaVNbwyVoK4Ye3h8RzfD60EfuNdKuI1OfGT80e
-	l/rrmF229iM4sMkHe/BRnxUyWLw0+0WJ7AMrK5wsfIH5p/gsGIMuW3wuEqFYP6v5vOlIKavjvV+Ss
-	LqiWItohgTbnpPvIGEhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1OCxCWNLxxIJE2N79kdF6DcK/x5OtHC4S+GXE+pbb+I=; b=Kw9gBS9SPqujJhuKD+SWL80/o
+	YLKQ6Jfyso5hKEQ14bl9oKxEOK8/pey//mKO0O4t8PUJmdmC0QtCvQf7hIGBWVCpGlkyZD/BgoNcN
+	qSDBcbjqEsUAUpKAEWkq3ARzRy60YP4KQ2eoeLc6QdBnOhQLlTzXhXV/FXpAmFkxvAiTjDAnxnLTI
+	wwVBiznDOI38nmOs5xOS8Kqk75qwMJtSguj4j8FvGfTKG47S3BhNNT0nHKLtStHV6ZBJY2vouEoaE
+	x31ABSdtHJNmt7mb1bMN6RjyLFMxJ7HdXFkXlq20LYUA/bJWPN5mko2Hdjhw7r3mmE15tYr5iFK10
+	bdOF6evBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j47FT-0004O8-CP; Tue, 18 Feb 2020 18:05:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j47KT-0006NR-9P; Tue, 18 Feb 2020 18:10:41 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j47FK-0004Nh-07
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 18:05:23 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9B3C22070B;
- Tue, 18 Feb 2020 18:05:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582049119;
- bh=+78s0epyDizPUB72JjGEwpBoBwUemjhbbETlNbB0BFk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Yo8zCDNlaU14Ju7Lv/exhU3uMTFdXVSkLxy+ezDxyXBRpJH+Rc9NHBUxeCfLmnQPr
- m9avdUPmKg8vp8BtgM6rcZIiw5Ht5PEbSunJpB4YhsYRRY5VNa62ENMxTH0/EfQb8E
- ubWWRAtvF+lcjItwpLK2fqOXHR0YJfCxJ+c7H+8g=
-Date: Tue, 18 Feb 2020 18:05:15 +0000
-From: Will Deacon <will@kernel.org>
-To: Sami Tolvanen <samitolvanen@google.com>
-Subject: Re: [PATCH] arm64: lse: Fix LSE atomics with LLVM
-Message-ID: <20200218180514.GA2655@willie-the-truck>
-References: <20200218164906.35685-1-vincenzo.frascino@arm.com>
- <20200218165451.GE1133@willie-the-truck>
- <CABCJKufJemUuh2SH_wBRe_g1HUA7mzOu696yLPj0KRCxD=DXcQ@mail.gmail.com>
+ id 1j47KK-0006Mt-7l
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 18:10:34 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 01IHrvve005912; Tue, 18 Feb 2020 19:10:18 +0100
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=xNEAHaZmjG+dizQJ5LA4/u9LlslrrIeo9frKOjluLvE=;
+ b=Sb5mUHF4yAYaVeseQBJjLZ7YzajRiE1kCopcm9LPWaRW1xn61nDZjUAxa+gxxFs8rJea
+ tmxeol4PqiGdtrkiqPrSLHPntmKa33mJ/1T8V06KIH40z0WWtJitSKkYVPvaqC/DQbTV
+ yn/DbmpuTJQIQjQxVS1XqEUcU8ilAZAgwPARUhpcVe+523xRVD4XzDDVSvmY+E4wu/bj
+ RRqbo40k6/RZBeJ8yc2uPcpSU+MpaFuci7htgzh1/Sca3AxpGEMNIY+xQdGSxtbL5A/0
+ Vqxizj+wlSZw6kouhxziZq8fr2BLfS5XG3h7vOxgDv1ngzIHTZrSoisJ8cz4l/XwU8iC EQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2y66ne2xwn-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 18 Feb 2020 19:10:18 +0100
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D8CFA10003D;
+ Tue, 18 Feb 2020 19:10:13 +0100 (CET)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A81F92BD50D;
+ Tue, 18 Feb 2020 19:10:13 +0100 (CET)
+Received: from lmecxl0912.lme.st.com (10.75.127.47) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 18 Feb
+ 2020 19:10:12 +0100
+Subject: Re: [PATCH v2 0/2] Add GPIO level-sensitive interrupt support
+To: Marek Vasut <marex@denx.de>, Thomas Gleixner <tglx@linutronix.de>, Jason
+ Cooper <jason@lakedaemon.net>, Marc Zyngier <marc.zyngier@arm.com>, Linus
+ Walleij <linus.walleij@linaro.org>
+References: <20200218131218.10789-1-alexandre.torgue@st.com>
+ <b5a2dcab-06db-4863-ac5c-28f4ef0c5ac9@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <32e409e6-d475-802a-6a90-c8ba6c0cf6d5@st.com>
+Date: Tue, 18 Feb 2020 19:10:12 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABCJKufJemUuh2SH_wBRe_g1HUA7mzOu696yLPj0KRCxD=DXcQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <b5a2dcab-06db-4863-ac5c-28f4ef0c5ac9@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
+ definitions=2020-02-18_05:2020-02-18,
+ 2020-02-18 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_100522_061599_C8F7424E 
-X-CRM114-Status: GOOD (  11.53  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200218_101032_721473_8C7E99C0 
+X-CRM114-Status: GOOD (  13.32  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -66,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,35 +100,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>, amit.kachhap@arm.com,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 10:02:24AM -0800, Sami Tolvanen wrote:
-> On Tue, Feb 18, 2020 at 8:54 AM Will Deacon <will@kernel.org> wrote:
-> > > -#define __LSE_PREAMBLE       ".arch armv8-a+lse\n"
-> > > +#define __LSE_PREAMBLE       ".arch_extension lse\n"
-> >
-> > I'm ok with this, but Sami assumedly changed this for a reason in
-> > e0d5896bd356cd ("arm64: lse: fix LSE atomics with LLVM's integrated
-> > assembler").
-> 
-> Correct, I changed this because clang's integrated assembler wasn't
-> happy with .arch_extension lse at the time. However, it looks like
-> current versions of clang don't have this problem, so this change
-> looks good to me.
-> 
-> Tested-by: Sami Tolvanen <samitolvanen@google.com>
+Hi Marek
 
-Cheers, I'll queue this with your tag.
+On 2/18/20 5:25 PM, Marek Vasut wrote:
+> On 2/18/20 2:12 PM, Alexandre Torgue wrote:
+>> This series adds the possibility to handle gpio interrupts on level.
+>>
+>> GPIO hardware block is directly linked to EXTI block but EXTI handles
+>> external interrupts only on edge. To be able to handle GPIO interrupt on
+>> level a "hack" is done in gpio irq chip: parent interrupt (exti irq chip)
+>> is retriggered following interrupt type and gpio line value.
+>>
+>> In exti irq chip, retrigger ops function is added.
+> 
+> btw. this might be unrelated, but is it possible to have e.g. gpioC2 set
+> as trigger-level-low and gpioD2 set as trigger-edge-falling ? It seems
+> 8eb2dfee9fb1 ("pinctrl: stm32: add lock mechanism for irqmux selection")
+> prevents that.
+> 
 
-Will
+No it's not possible. Each gpio line doesn't have a dedicated Exti line 
+Each Exti line is muxing between gpio banks.
+
+Mapping is done as following:
+
+EXTI0 = A0 or B0 or C0 .... or Z0 : selected by Mux
+EXTI1 = A1 or B1 or C1 ....or Z1 : selected by Mux
+EXTI2 = A2 or B2 or C2 ....or Z2 : selected by Mux
+...
+
+regards
+Alexandre
 
 _______________________________________________
 linux-arm-kernel mailing list
