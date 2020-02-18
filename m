@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1C3C16222F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 09:26:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3CEB162234
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 09:26:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=InZJfW/Er9N4JYg/A0H7eG3zgveWj8xaOxdy2KZnIOY=; b=bPdEaDwCwmYV5r
-	CfGWTGLgOHPp3HhJTflO6C7ZO5xH54dOXDw68kjmcQnQssOZgKtuNvw/j0KsJHF1QArwwL4HhvOBu
-	aaM1jOdhdkq6ygy0bVBNOY/BtHrhapnuarnEsaY6P7q8pl0XuuLqZutCdtUNFkj2JMx1wwKRd3fnI
-	XQ+pkkJzb4U/LxeB8ybohGPEZ+opeT6XbFnpwxoI1U1UjfsU5g+ivRokeBZsjAfp8h1p158lgWnIa
-	+lNhMA72lITlZRuGPmmYZELyOuWwssuyuK//OKo1YJ5MNigzzd3AN2PBCeOGPwvnmbHvtbRhvjRWF
-	BjhKNc5Lho3ARWPFqh/w==;
+	List-Owner; bh=nKIDa0VhxECuZYuif1hQvJVBlK8Q0capBXGq2oq8vt4=; b=TOpPOHgHpAz1ip
+	nf0jDiOVghXFteNVA9XuenWBXQ5jluDPKyYriZPYfDmLSnfPvUKRmjuAj6+J3zh4YWFpkkBGhUw8K
+	zQnmYrIbE/MdgQCGqq/ndUZZN/90+Tr+/BNyVyTUChuBSpk16Z3gnM2FjqXfACrOIcPNsq7I6lns/
+	fdIUbPCmt5GLKQmeDbrijGdzTocnKtdyflAks/Zcws9qv8aFFLft8DsoHB6ltq8d7nA03/l8vHnnl
+	ZHppYJThrvybUTiz9bSXe8E84mOV40mHLS4ukilUxcSrKLWt7laPUgnw6FCRdh0UD8e2Qi2XKv+d3
+	k8qW2o+4NgVaabjJrU/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3yD0-00084e-Rm; Tue, 18 Feb 2020 08:26:22 +0000
+	id 1j3yDG-0008Do-7d; Tue, 18 Feb 2020 08:26:38 +0000
 Received: from first.geanix.com ([116.203.34.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3yCr-00083L-7Y
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 08:26:15 +0000
+ id 1j3yD0-000898-04
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 08:26:23 +0000
 Received: from localhost (unknown [193.163.1.7])
- by first.geanix.com (Postfix) with ESMTPSA id 022A1C0025;
- Tue, 18 Feb 2020 08:25:19 +0000 (UTC)
+ by first.geanix.com (Postfix) with ESMTPSA id CEB4CC0026;
+ Tue, 18 Feb 2020 08:25:31 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=geanix.com; s=first;
- t=1582014320; bh=/5PMdnbcZEmMSf5cYP0ZOMULsq12k2qzbPlGi8rrhgU=;
+ t=1582014331; bh=qoOyWfzrbqLyzdPY/hjg2UBPWMBJE3nsF+rXsF0O5mw=;
  h=From:To:Cc:Subject:Date;
- b=ZgWAOP0Hylu0LjKdn3Be7eQFCzflLQxHlbF9uN5ym2/rCl6O/6VcuXiWzoCWPi7um
- VuwNlDTMwWLPnF3jARudkJRYDPOEcX0SNjE1foTw3ezYopjP7ZHlLG2CJ1ADDZNuiJ
- nyWO8ROCLMvNKZvk93KqX4SH7RIK+9UpcGQLUIQTzauvPCtKqVTmMgNbO3J7zGakb9
- QcB6UZr9jKQiv4JCpCc1dG8VK/LydOeIQM7I2FobwSwod2xomL4oGBcQcMKWwrGdnl
- OwoihCxFENs1TfKNVjtHvah/xoG5ucszhw/2PzirGJjgSRsWRavT8WW4C3PcI6n0/3
- FRiDfyPSgmKWw==
+ b=l4PYsw3bh9kdGsaJ7lo1bIxGxVqWrUj1Bu9jhShyb73EV+k9w7SsfvQpeKAZVKMw5
+ /TGLrOw1Q904u38D+9MkswUYt/spejVTERMRCsTSoFmXM6HAHj7+KL609NWASdjrf6
+ 4ByiSSKGbst/ELiFHMn5RcuCQNa4gdgAx6aMfLyXPQD8/qn+SDFJSo0T1013WRj2ym
+ lu7aHzqSmznI+4Gz5hzb6JLbALHA/S/ukcXUwVv3TZtrAwMTrv420DZwCWk3krrPmA
+ A+ybgrcTZYc97gBip/TD0Sf/nuQ26+VUzq76NMUqBX5ovjE+oMymvCgFJiN4yzExQQ
+ JnDhmuhE/0QgA==
 From: Esben Haabendal <esben@geanix.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH 0/8] net: ll_temac: Bugfixes and ethtool support
-Date: Tue, 18 Feb 2020 09:26:07 +0100
-Message-Id: <20200218082607.7035-1-esben@geanix.com>
+Subject: [PATCH 1/8] net: ll_temac: Fix race condition causing TX hang
+Date: Tue, 18 Feb 2020 09:26:19 +0100
+Message-Id: <20200218082619.7119-1-esben@geanix.com>
 X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-X-Spam-Status: No, score=1.0 required=4.0 tests=BAYES_50,DKIM_INVALID,
+X-Spam-Status: No, score=0.2 required=4.0 tests=BAYES_40,DKIM_INVALID,
  DKIM_SIGNED,UNPARSEABLE_RELAY,URIBL_BLOCKED autolearn=disabled
  version=3.4.3
-X-Spam-Level: *
 X-Spam-Checker-Version: SpamAssassin 3.4.3 (2019-12-06) on eb9da72b0f73
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_002613_856217_7D2071AC 
-X-CRM114-Status: UNSURE (   6.29  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200218_002622_196777_EEAB05AD 
+X-CRM114-Status: GOOD (  11.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -77,33 +75,69 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Andrew Lunn <andrew@lunn.ch>, Michal Simek <michal.simek@xilinx.com>,
- linux-kernel@vger.kernel.org, =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
+ stable@vger.kernel.org, linux-kernel@vger.kernel.org,
+ =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
  "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Patch 1-4 brings fixes a number of bugs observed.
-Patch 5-6 are simple cleanup, removing two unused struct fields.
-Patch 7-8 add ethtool support for controlling rx and tx ring sizes and irq
-coalesce parameters.
+It is possible that the interrupt handler fires and frees up space in
+the TX ring in between checking for sufficient TX ring space and
+stopping the TX queue in temac_start_xmit. If this happens, the
+queue wake from the interrupt handler will occur before the queue is
+stopped, causing a lost wakeup and the adapter's transmit hanging.
 
-Esben Haabendal (9):
-  net: ll_temac: Fix race condition causing TX hang
-  net: ll_temac: Add more error handling of dma_map_single() calls
-  net: ll_temac: Fix RX buffer descriptor handling on GFP_ATOMIC
-    pressure
-  net: ll_temac: Handle DMA halt condition caused by buffer underrun
-  net: ll_temac: Remove unused tx_bd_next struct field
-  net: ll_temac: Remove unused start_p variable
-  net: ll_temac: Make RX/TX ring sizes configurable
-  net: ll_temac: Add ethtool support for coalesce parameters
+To avoid this, after stopping the queue, check again whether there is
+sufficient space in the TX ring. If so, wake up the queue again.
 
- drivers/net/ethernet/xilinx/ll_temac.h      |  12 +-
- drivers/net/ethernet/xilinx/ll_temac_main.c | 435 ++++++++++++++++----
- 2 files changed, 367 insertions(+), 80 deletions(-)
+This is a port of the similar fix in axienet driver,
+commit 7de44285c1f6 ("net: axienet: Fix race condition causing TX hang").
 
+Signed-off-by: Esben Haabendal <esben@geanix.com>
+Cc: stable@vger.kernel.org
+---
+ drivers/net/ethernet/xilinx/ll_temac_main.c | 19 ++++++++++++++++---
+ 1 file changed, 16 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/net/ethernet/xilinx/ll_temac_main.c b/drivers/net/ethernet/xilinx/ll_temac_main.c
+index 6f11f52c9a9e..996004ef8bd4 100644
+--- a/drivers/net/ethernet/xilinx/ll_temac_main.c
++++ b/drivers/net/ethernet/xilinx/ll_temac_main.c
+@@ -788,6 +788,9 @@ static void temac_start_xmit_done(struct net_device *ndev)
+ 		stat = be32_to_cpu(cur_p->app0);
+ 	}
+ 
++	/* Matches barrier in temac_start_xmit */
++	smp_mb();
++
+ 	netif_wake_queue(ndev);
+ }
+ 
+@@ -830,9 +833,19 @@ temac_start_xmit(struct sk_buff *skb, struct net_device *ndev)
+ 	cur_p = &lp->tx_bd_v[lp->tx_bd_tail];
+ 
+ 	if (temac_check_tx_bd_space(lp, num_frag + 1)) {
+-		if (!netif_queue_stopped(ndev))
+-			netif_stop_queue(ndev);
+-		return NETDEV_TX_BUSY;
++		if (netif_queue_stopped(ndev))
++			return NETDEV_TX_BUSY;
++
++		netif_stop_queue(ndev);
++
++		/* Matches barrier in temac_start_xmit_done */
++		smp_mb();
++
++		/* Space might have just been freed - check again */
++		if (temac_check_tx_bd_space(lp, num_frag))
++			return NETDEV_TX_BUSY;
++
++		netif_wake_queue(ndev);
+ 	}
+ 
+ 	cur_p->app0 = 0;
 -- 
 2.25.0
 
