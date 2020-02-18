@@ -2,74 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D938F162B42
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:03:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93753162B8D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:08:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gnz5jC0Lp3np+4CfdmdEc9ONSY1m4cmJWAqKk3amIac=; b=OrfVFN12fekS5B
-	GUwDwvQtdlpqrb9HC4u12UwwdaonczLNrGtKUuUUI4KZgQnevB93gl6tZy5Zw5iGVjTBUdEwFxCAr
-	OUjdIlWxEkMxCdytY7kI01LvgLuaek+QpyrZdpQr9tPW/D5eU6nbr2K5vXib7T8WiZJCBHJUNWpBp
-	mVPz3ymAk8az/LtR7Z1xntG7kIGcq+YL5LcVbjAEdyqzYvOYZO6vQS612ham7/TuNOF59GkJmTmHy
-	Tu8fa3Wx+Kb0KGMpzdLoyqRhSwrpl4/yFDGvfJc5/BDHYDyue6Xda+zT5mRPsDajIOhfLCDvJy8xE
-	R0IJYEVTmQoI98wOuwPQ==;
+	List-Owner; bh=QwJD7gCIDh/NS+5I61NrgdOBUZpunTfrY2BlfUACQX8=; b=ANtgXMLqRPQuz3
+	JeDb9MpHTAZhDwfEA15l4GB0VBC716QExHdYQkes5UJIuq7tbpJTKp5CiF0pdYT0OnLY3t20nQ9os
+	f4osXPUNxEdizx4avcfAvkg0G2dVym/266X/Fi02Kav0q2HTSy8mXD0FJzKZ1Yxls2EgS1OFu5gYP
+	two9bWNgqYtqbGli+KMYLDER+qCFjmlIs2j3jmBoVA972kjdrX6bYC5sQqVs9ij6m709SiRSic2Xz
+	gBCHBSqj/Fv1ck09fB75bmYYLIm8JQcpp4JcFbGxnG0S5YDAWFsfKmQ6Xgk92sWqRl6vt28GpMhMO
+	QulDudDGkJIghYdFztng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j46He-0005ol-SM; Tue, 18 Feb 2020 17:03:43 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j46HP-0005fw-22
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:03:28 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 433282176D;
- Tue, 18 Feb 2020 17:03:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582045406;
- bh=z2e7Xc6lbz//zrWoEYkGn2Dr4Bqdef+y65nYdB4LW4w=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=yZw3tXvkgf00UtuPN0FGeiZYyA58t6dc3pToUfCxzWJYzfquCaO9KyeHDCZAHrOI7
- kZe7NU2wbosqQDcJ+nnMMfx8Fa3mWhdkrDFXPhPvs6vmV03hNhn2XddDXxDUiijs2r
- pU9Potw06nrODoiGEGtn60TJXc3ryNk372U49quw=
+	id 1j46MA-00087M-4G; Tue, 18 Feb 2020 17:08:22 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j46M1-00086T-5v
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:08:14 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AFF7731B;
+ Tue, 18 Feb 2020 09:08:10 -0800 (PST)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9A9DF3F703;
+ Tue, 18 Feb 2020 09:08:08 -0800 (PST)
+Date: Tue, 18 Feb 2020 17:08:03 +0000
+From: Mark Rutland <mark.rutland@arm.com>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: [PATCH RFC 0/7] perf pmu-events: Support event aliasing for
+ system PMUs
+Message-ID: <20200218170803.GA9968@lakrids.cambridge.arm.com>
+References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
+ <20200218125707.GB20212@willie-the-truck>
+ <a40903fe-d52f-96c6-a06a-fe834d71d625@huawei.com>
+ <20200218133943.GF20212@willie-the-truck>
+ <627cbc50-4b36-7f7f-179d-3d27d9e0215a@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <1582023806-6261-3-git-send-email-Anson.Huang@nxp.com>
-References: <1582023806-6261-1-git-send-email-Anson.Huang@nxp.com>
- <1582023806-6261-3-git-send-email-Anson.Huang@nxp.com>
-Subject: Re: [PATCH 3/3] clk: imx8mn: Remove unused includes
-From: Stephen Boyd <sboyd@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>, abel.vesa@nxp.com, festevam@gmail.com,
- kernel@pengutronix.de, leonard.crestez@nxp.com,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org, mturquette@baylibre.com, peng.fan@nxp.com,
- ping.bai@nxp.com, s.hauer@pengutronix.de, shawnguo@kernel.org
-Date: Tue, 18 Feb 2020 09:03:25 -0800
-Message-ID: <158204540554.184098.3218074345552740072@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+Content-Disposition: inline
+In-Reply-To: <627cbc50-4b36-7f7f-179d-3d27d9e0215a@huawei.com>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_090327_207509_B6584205 
-X-CRM114-Status: UNSURE (   4.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200218_090813_309827_0872B6E3 
+X-CRM114-Status: GOOD (  27.97  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,19 +68,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
+Cc: ak@linux.intel.com, Joakim Zhang <qiangqing.zhang@nxp.com>,
+ suzuki.poulose@arm.com, peterz@infradead.org, Will Deacon <will@kernel.org>,
+ linuxarm@huawei.com, acme@kernel.org, linux-kernel@vger.kernel.org,
+ zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
+ mingo@redhat.com, james.clark@arm.com, namhyung@kernel.org, jolsa@redhat.com,
+ linux-arm-kernel@lists.infradead.org, robin.murphy@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Anson Huang (2020-02-18 03:03:26)
-> There is nothing in use from init.h/of.h, remove them.
+On Tue, Feb 18, 2020 at 04:19:32PM +0000, John Garry wrote:
+> > > 
+> > > > Why don't we just expose SMMU_IIDR in the SMMUv3 PMU directory, so that
+> > > > you can key off that?
+> > > 
+> > > That does not sound like a standard sysfs interface.
+> > 
+> > It's standard in the sense that PMUs already have their own directory under
+> > sysfs where you can put things.
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
+> Sure, but then the perf tool will need to be able to interpret all these
+> custom PMU files, which has scalability issues.
+> 
+> Maybe this would work and I did consider it, but another concern is that the
+> PMU drivers will have problems making available some implementation-specific
+> identifier at all.
+> 
+> For example, the "caps" directory is a
+> > dumping ground for all sorts of PMU-specific information.
+> > 
+> > On the other hand, saying "please go figure out which SoC you're on"
+> > certainly isn't standard and is likely to lead to unreliable, spaghetti
+> > code.
+> 
+> I'm not sure how. The perf tool PMU event aliasing already takes a few
+> certain steps to figure out which cpuid to use:
+> 
+> static char *perf_pmu__getcpuid(struct perf_pmu *pmu)
+> {
+> 	char *cpuid;
+> 	static bool printed;
+> 
+> 	cpuid = getenv("PERF_CPUID");
+> 	if (cpuid)
+> 		cpuid = strdup(cpuid);
+> 	if (!cpuid)
+> 		cpuid = get_cpuid_str(pmu);
+> 	if (!cpuid)
+> 		return NULL;
+> 
+> 	if (!printed) {
+> 		pr_debug("Using CPUID %s\n", cpuid);
+> 		printed = true;
+> 	}
+> 	return cpuid;
+> }
+> 
+> And this would be something similar - just read some sysfs file.
+> 
+> > 
+> > > Anyway, I don't think that works for every case, quoting from
+> > > https://lkml.org/lkml/2019/10/16/465:
+> > > 
+> > > "> Note: I do acknowledge that an overall issue is that we assume all PMCG
+> > > IMP DEF events are same for a given SMMU model.
+> > > 
+> > > That assumption does technically fail already - I know MMU-600 has
+> > > different IMP-DEF events for its TCU and TBUs, however as long as we can
+> > > get as far as "this is some part of an MMU-600" the driver should be
+> > > able to figure out the rest ..."
+> > 
+> > Perhaps I'm misreading this, but it sounds like if you knew it was an
+> > MMU-600 then you'd be ok. I also don't understand how a SoC ID makes things
+> > any easier in this regard.
+> 
+> It's doesn't necessarily make things easier in this regard. But using a SoC
+> ID is an alternative to checking the SMMU_ID or the kernel driver having to
+> know that it was a MMU-600 at all.
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+Using SOC_ID means that going forward, userspace needs to learn about
+the integration details of each SoC in order to identify a component. As
+you said:
+
+| As constantly checking what the SoC ID means throughout system components
+| does not scale.
+
+... and I think that equally applies to userspace in this case. Who knows how
+many SoCs are going to have MMU-600?
+
+I also know that SOC_ID is going to be optional, and I think it's near-certain
+that someone will end up producing two SoCs exposing the same ID.
+
+For system PMUs, I'd rather the system PMU driver exposed some sort of
+implementation ID. e.g. the SMMU_ID for SMMU. We can give that a generic name,
+and mandate that where a driver exposes it, the format/meaning is defined in
+the documentation for the driver.
+
+That can be namespace by driver, so e.g. keys would be smmu_sysfs_name/<id> and
+ddrc_sysfs_name/<id>.
+
+> > > So even if it is solvable here, the kernel driver(s) will need to be
+> > > reworked. And that is just solving one case in many.
+> > 
+> > PMU drivers will need to expose more information to userspace so that they
+> > can be identified more precisely, yes. I wouldn't say they would need to be
+> > "reworked".
+> 
+> OK, so some combination of changes would still be required for the SMMU
+> PMCG, IORT, and SMMUv3 drivers.
+
+To expose the SMMU ID, surely that's just the driver? Or are there
+implementations where the ID register is bogus and have to be overridden?
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
