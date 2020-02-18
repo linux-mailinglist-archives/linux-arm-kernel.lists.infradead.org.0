@@ -2,61 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B84AE162181
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 08:26:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42278162187
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 08:29:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JIOH2yiojkV55+RO94VswPsicZAxFfYCzhykjr7vjK0=; b=fvQPEtNmi+3+pkfbUuix9cdVN
-	t6/x9sN96vQi/MB3o+TVXz8tGNpKcdoeDXvkEkBhVzyaWKd38VQl8DacG/yX5PyGg7tbggL16pq1O
-	wTOsgJZVQLa6SxJATV+4beJF+84uXeC+aED1XaYvDfpU2Fdj46AM2b/d3sEinvLZyDA+02Xe6REp3
-	KTe5cdjVHKXTvL7mLW+Ml/+UWXzzKOkWcqNUDKxZhN/w1ZAVLzJwe1jFVCxSDjqDyCksKu6b43jGu
-	kxArVzRGGd4x/4XloxmSN/VazAw9MxauBz8I0Mwz8DeSKAx0EpagfFgP7twPVGP0rQ6WEAmby8ypc
-	6/1i/yK1Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hGmfZPNEocgUliw4UxQ13toaQtZFmJbCT0zvW24yJVo=; b=Obp2PD1c9mJw7m
+	gcMVzXbEeDLzIprZg2A27WMDsGRaPwtBl2QTWwfXiuEkJIDoYBgXcmT7E268DIzXVeFiDPbXdvMb4
+	6KvT6jfVuyG7jn0R0chKeZLsZzCq/JS56q7DJyX/dysRsbVH0D69pOHyMeYH/SwdXWTg8t2aRc38n
+	AIhoo4j6qFP5+fTI/hR5hSmUrfI23KFMvTATHKzC6Jma+Lldxm3bvbj7k/UhKQXp4evfi48EtSkF1
+	cjsaRYVO5pchmC+AREzAU2ez50A7CFLji1qDkLElWZ5vnp3udavPlt1ibWvxiv4z1J+2KpcUAviE0
+	yZKs0p5/cfl3toUW+TgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3xGp-0002Hg-Dw; Tue, 18 Feb 2020 07:26:15 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1j3xJa-0002bN-5q; Tue, 18 Feb 2020 07:29:06 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3xGg-0002Ge-QC
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 07:26:08 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id B097B8991C3C8B467C50;
- Tue, 18 Feb 2020 15:25:58 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS411-HUB.china.huawei.com
- (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Tue, 18 Feb 2020
- 15:25:50 +0800
-Subject: Re: [PATCH v4 06/20] irqchip/gic-v4.1: Add initial SGI configuration
-To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-References: <20200214145736.18550-1-maz@kernel.org>
- <20200214145736.18550-7-maz@kernel.org>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <e47baffb-83a5-57d7-1721-eaee28aaaabf@huawei.com>
-Date: Tue, 18 Feb 2020 15:25:48 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1j3xJR-0002b5-70
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 07:28:58 +0000
+Received: by mail-lj1-x242.google.com with SMTP id x14so21694616ljd.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 17 Feb 2020 23:28:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2ecO73Tz4R3BzjxpGeijJ+hbGI3X2WrncLno2Gd5yhc=;
+ b=qvXPwFFrAD/ykGjO85luJE3kU77HQXUWu8f4slCNgNL8zyJDGMdLGg4PAlXA/DQAzl
+ WmhWIx3s3e9LKVudJlmMBEb/nh0DlDsExif6opzL9sNHX4eUz0lSTSIibX0pegnra0B1
+ YoJL9Sc6y9lO605QB1ckz4BlCOzKMFy9CA+RWRBJNEWJfuehXUSBd5IWdPcwgR0XiFL+
+ an95vxEta88S/rXaKQ20GRhq5AIq5k6OTQfnFt/O4mH+ogGeRh5p8ykc/p7qpOKlJtUY
+ TdOKvEU/5KjRVInPBKtkRKdCEJaaVmMEDuMDFhrT6v1E+2d/ebzPX1inrloJ73KO2McT
+ ojLQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2ecO73Tz4R3BzjxpGeijJ+hbGI3X2WrncLno2Gd5yhc=;
+ b=SRXWNm/ltzcBtTFHk5i3b07WAC9hLM4fXV+thVi/PJrmB5kXxuDuKAKQbXp7OSbvcC
+ H+3Pi7b4qSJUl5Vst2dYYjA1MttJUCYZ1LtpHiTvuxKmlEnOzpav7kyfQJoW9a+mWB9o
+ lfT0yVvyi0qY/UPswbc0r1T6oTcnl/zodUPQNgWNBQJ4nFRSErFiKItQt7N74jRunndG
+ 6yPwociwYlLlmZ7ZSdSQS5lc6GN2QXGGsNf7Aj4QxEFjPAWLmFuXFj54aWI32uV6iXjQ
+ OHhRqE7x88gpwN9/lxCF1SpKizP/Gj6voqcyxFeznIs+jdYHJ3OLMtDITjDbrnQr9Mx6
+ h2mg==
+X-Gm-Message-State: APjAAAUDfPwb8dsyxwyFnVl7P0UH7wnUxrwClBBW2rr2n59+Skuv1pF9
+ 2+tuvgMz2xOkgOQZvq1be4XOU22f3m5R06TehN0=
+X-Google-Smtp-Source: APXvYqzXF4qXUVGsYrNpcGaWpWuysDCxSYh9b0+WaFhTVbWD6IqzhOWe7wbQAi54Arggdc3xJEfAbyjZgbh42rkngzc=
+X-Received: by 2002:a2e:9618:: with SMTP id v24mr11955147ljh.181.1582010934474; 
+ Mon, 17 Feb 2020 23:28:54 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200214145736.18550-7-maz@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
+References: <20200125221410.8022-1-pthomas8589@gmail.com>
+ <CACRpkdZjFpyp=fySNRfMCnm6-JJ0xY-sGU4deDc6i6iPOuAG+w@mail.gmail.com>
+In-Reply-To: <CACRpkdZjFpyp=fySNRfMCnm6-JJ0xY-sGU4deDc6i6iPOuAG+w@mail.gmail.com>
+From: Paul Thomas <pthomas8589@gmail.com>
+Date: Tue, 18 Feb 2020 02:28:45 -0500
+Message-ID: <CAD56B7fNkP9oLD=+G8YSL+KBsdVG0Dk8X-mwr9F=EosUDpSC_g@mail.gmail.com>
+Subject: Re: [PATCH] GPIO, Fix bug where the wrong GPIO register is written to
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_232607_026942_06072B85 
-X-CRM114-Status: GOOD (  20.02  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200217_232857_282853_31E26976 
+X-CRM114-Status: UNSURE (   6.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pthomas8589[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [pthomas8589[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,177 +96,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Eric Auger <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
- James Morse <james.morse@arm.com>, Thomas
- Gleixner <tglx@linutronix.de>, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+> Fixed up the subject and applied, added a tag for stable.
+>
+> Thanks!
+> Linus Walleij
 
-On 2020/2/14 22:57, Marc Zyngier wrote:
-> The GICv4.1 ITS has yet another new command (VSGI) which allows
-> a VPE-targeted SGI to be configured (or have its pending state
-> cleared). Add support for this command and plumb it into the
-> activate irqdomain callback so that it is ready to be used.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->   drivers/irqchip/irq-gic-v3-its.c   | 76 +++++++++++++++++++++++++++++-
->   include/linux/irqchip/arm-gic-v3.h |  3 +-
->   2 files changed, 77 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
-> index 6121c8f2a8ce..229e4ae9c59b 100644
-> --- a/drivers/irqchip/irq-gic-v3-its.c
-> +++ b/drivers/irqchip/irq-gic-v3-its.c
-> @@ -354,6 +354,15 @@ struct its_cmd_desc {
->   		struct {
->   			struct its_vpe *vpe;
->   		} its_invdb_cmd;
-> +
-> +		struct {
-> +			struct its_vpe *vpe;
-> +			u8 sgi;
-> +			u8 priority;
-> +			bool enable;
-> +			bool group;
-> +			bool clear;
-> +		} its_vsgi_cmd;
->   	};
->   };
->   
-> @@ -502,6 +511,31 @@ static void its_encode_db(struct its_cmd_block *cmd, bool db)
->   	its_mask_encode(&cmd->raw_cmd[2], db, 63, 63);
->   }
->   
-> +static void its_encode_sgi_intid(struct its_cmd_block *cmd, u8 sgi)
-> +{
-> +	its_mask_encode(&cmd->raw_cmd[0], sgi, 35, 32);
-> +}
-> +
-> +static void its_encode_sgi_priority(struct its_cmd_block *cmd, u8 prio)
-> +{
-> +	its_mask_encode(&cmd->raw_cmd[0], prio >> 4, 23, 20);
-> +}
-> +
-> +static void its_encode_sgi_group(struct its_cmd_block *cmd, bool grp)
-> +{
-> +	its_mask_encode(&cmd->raw_cmd[0], grp, 10, 10);
-> +}
-> +
-> +static void its_encode_sgi_clear(struct its_cmd_block *cmd, bool clr)
-> +{
-> +	its_mask_encode(&cmd->raw_cmd[0], clr, 9, 9);
-> +}
-> +
-> +static void its_encode_sgi_enable(struct its_cmd_block *cmd, bool en)
-> +{
-> +	its_mask_encode(&cmd->raw_cmd[0], en, 8, 8);
-> +}
-> +
->   static inline void its_fixup_cmd(struct its_cmd_block *cmd)
->   {
->   	/* Let's fixup BE commands */
-> @@ -867,6 +901,26 @@ static struct its_vpe *its_build_invdb_cmd(struct its_node *its,
->   	return valid_vpe(its, desc->its_invdb_cmd.vpe);
->   }
->   
-> +static struct its_vpe *its_build_vsgi_cmd(struct its_node *its,
-> +					  struct its_cmd_block *cmd,
-> +					  struct its_cmd_desc *desc)
-> +{
-> +	if (WARN_ON(!is_v4_1(its)))
-> +		return NULL;
-> +
-> +	its_encode_cmd(cmd, GITS_CMD_VSGI);
-> +	its_encode_vpeid(cmd, desc->its_vsgi_cmd.vpe->vpe_id);
-> +	its_encode_sgi_intid(cmd, desc->its_vsgi_cmd.sgi);
-> +	its_encode_sgi_priority(cmd, desc->its_vsgi_cmd.priority);
-> +	its_encode_sgi_group(cmd, desc->its_vsgi_cmd.group);
-> +	its_encode_sgi_clear(cmd, desc->its_vsgi_cmd.clear);
-> +	its_encode_sgi_enable(cmd, desc->its_vsgi_cmd.enable);
-> +
-> +	its_fixup_cmd(cmd);
-> +
-> +	return valid_vpe(its, desc->its_vsgi_cmd.vpe);
-> +}
-> +
->   static u64 its_cmd_ptr_to_offset(struct its_node *its,
->   				 struct its_cmd_block *ptr)
->   {
-> @@ -3823,6 +3877,21 @@ static struct irq_chip its_vpe_4_1_irq_chip = {
->   	.irq_set_vcpu_affinity	= its_vpe_4_1_set_vcpu_affinity,
->   };
->   
-> +static void its_configure_sgi(struct irq_data *d, bool clear)
-> +{
-> +	struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
-> +	struct its_cmd_desc desc;
-> +
-> +	desc.its_vsgi_cmd.vpe = vpe;
-> +	desc.its_vsgi_cmd.sgi = d->hwirq;
-> +	desc.its_vsgi_cmd.priority = vpe->sgi_config[d->hwirq].priority;
-> +	desc.its_vsgi_cmd.enable = vpe->sgi_config[d->hwirq].enabled;
-> +	desc.its_vsgi_cmd.group = vpe->sgi_config[d->hwirq].group;
-> +	desc.its_vsgi_cmd.clear = clear;
-> +
-> +	its_send_single_vcommand(find_4_1_its(), its_build_vsgi_cmd, &desc);
-> +}
-> +
->   static int its_sgi_set_affinity(struct irq_data *d,
->   				const struct cpumask *mask_val,
->   				bool force)
-> @@ -3868,13 +3937,18 @@ static void its_sgi_irq_domain_free(struct irq_domain *domain,
->   static int its_sgi_irq_domain_activate(struct irq_domain *domain,
->   				       struct irq_data *d, bool reserve)
->   {
-> +	/* Write out the initial SGI configuration */
-> +	its_configure_sgi(d, false);
->   	return 0;
->   }
->   
->   static void its_sgi_irq_domain_deactivate(struct irq_domain *domain,
->   					  struct irq_data *d)
->   {
-> -	/* Nothing to do */
-> +	struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
-> +
-> +	vpe->sgi_config[d->hwirq].enabled = false;
-> +	its_configure_sgi(d, true);
+Thanks everyone, next time I'll do the subject better.
 
-The spec says, when C==1, VSGI clears the pending state of the vSGI,
-leaving the configuration unchanged.  So should we first clear the
-pending state and then disable vSGI (let E==0)?
-
-
-Thanks,
-Zenghui
-
->   }
->   
->   static struct irq_domain_ops its_sgi_domain_ops = {
-> diff --git a/include/linux/irqchip/arm-gic-v3.h b/include/linux/irqchip/arm-gic-v3.h
-> index c29a02678a6f..a89578884263 100644
-> --- a/include/linux/irqchip/arm-gic-v3.h
-> +++ b/include/linux/irqchip/arm-gic-v3.h
-> @@ -502,8 +502,9 @@
->   #define GITS_CMD_VMAPTI			GITS_CMD_GICv4(GITS_CMD_MAPTI)
->   #define GITS_CMD_VMOVI			GITS_CMD_GICv4(GITS_CMD_MOVI)
->   #define GITS_CMD_VSYNC			GITS_CMD_GICv4(GITS_CMD_SYNC)
-> -/* VMOVP and INVDB are the odd ones, as they dont have a physical counterpart */
-> +/* VMOVP, VSGI and INVDB are the odd ones, as they dont have a physical counterpart */
->   #define GITS_CMD_VMOVP			GITS_CMD_GICv4(2)
-> +#define GITS_CMD_VSGI			GITS_CMD_GICv4(3)
->   #define GITS_CMD_INVDB			GITS_CMD_GICv4(0xe)
->   
->   /*
-> 
-
+-Paul
 
 _______________________________________________
 linux-arm-kernel mailing list
