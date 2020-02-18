@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17E93162FB0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:22:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0540162FBC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:23:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DVOW+DPUbsKQhSyVbZa4DE/09JzCCskowaLqvAW4WIk=; b=RRZx6x5Ulag/Ax
-	oNaInpPIfNY1rTr+wn5AVCu1oM3ZQZYf44kBj4+qfk6hA0mfmn8mbYs0Hhal1oPQ4P3+8eG9BVTLF
-	BQWJyTyhY03VpoJuBFK8iBl8CUmmVZ7Su9F4WFzoD1ob7VO+nnujZhadQR8rVGQrvCGU0Dbu4aUvv
-	zrbVvmt25PAc9FuN1F/WsEjZXXgV/00wWEoe3imeg0KgiFjDm9G5e0OAdd30nNWla0bQZC9xgqZ6O
-	6zG9MgQplkj1eCAFiq8GSWJaMDdZ3+z/wxYWFsnyzZ51pYvfiKPMKAfBWQvXMdm+9hW6kFfLgQVsI
-	f/jDwMrlRKVBaUQyCgpg==;
+	List-Owner; bh=JLrF5ZLgki1QMVsauiclsYoBg3Rk2MDkEmKVXwSQprc=; b=B34cs2WyJA2ZAd
+	uPzvQhrq1NCWhV2+AiRsqxqjDiDxKfwZMeNDbUjsQDr7xELFsXX5sCr0DrZgkJFf0x/UxXRhEPtTM
+	baQygG/4U9deCPxjUUEpSfTIxmtuDu+tIecI22ZNBsFZgYUva2Ha3uM1THvzfeH7wiuHyIW1oEvIo
+	9ZT6hj8HowzD5a3oMyPbryCahYPHXPk+T6iBbGrkc3EPaE3DS2ZR/TnEvlsQwPcrgQD5qM4Rj1Ser
+	VQUE8ygZlRqYGRZnmYUfWGjUM5DhvKRzzkiQhgnDSjgDvawoXoleotOEn8CTPdKtRuq3ifn0Z6cx5
+	V2tQFAJK6k29nakbmRFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j48SG-0001qz-HC; Tue, 18 Feb 2020 19:22:48 +0000
+	id 1j48Sd-000275-Qz; Tue, 18 Feb 2020 19:23:11 +0000
 Received: from namei.org ([65.99.196.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j48S6-0001oh-G7
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:22:39 +0000
+ id 1j48SS-00026L-LY
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:23:02 +0000
 Received: from localhost (localhost [127.0.0.1])
- by namei.org (8.14.4/8.14.4) with ESMTP id 01IJMJhB013131;
- Tue, 18 Feb 2020 19:22:19 GMT
-Date: Wed, 19 Feb 2020 06:22:19 +1100 (AEDT)
+ by namei.org (8.14.4/8.14.4) with ESMTP id 01IJMet4013185;
+ Tue, 18 Feb 2020 19:22:40 GMT
+Date: Wed, 19 Feb 2020 06:22:40 +1100 (AEDT)
 From: James Morris <jmorris@namei.org>
 To: Alexey Budankov <alexey.budankov@linux.intel.com>
-Subject: Re: [PATCH v7 02/12] perf/core: open access to the core for
- CAP_PERFMON privileged process
-In-Reply-To: <e68be109-7174-2c9e-11a9-9770a6316834@linux.intel.com>
-Message-ID: <alpine.LRH.2.21.2002190622060.10165@namei.org>
+Subject: Re: [PATCH v7 03/12] perf/core: open access to probes for CAP_PERFMON
+ privileged process
+In-Reply-To: <3364fa26-b5d1-1808-aaee-c057f26e0eb4@linux.intel.com>
+Message-ID: <alpine.LRH.2.21.2002190622300.10165@namei.org>
 References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
- <e68be109-7174-2c9e-11a9-9770a6316834@linux.intel.com>
+ <3364fa26-b5d1-1808-aaee-c057f26e0eb4@linux.intel.com>
 User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_112238_612548_AD6243EE 
-X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-CacheID: sfid-20200218_112301_044130_29484866 
+X-CRM114-Status: UNSURE (   9.73  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -87,11 +87,16 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Mon, 17 Feb 2020, Alexey Budankov wrote:
 
 > 
-> Open access to monitoring of kernel code, cpus, tracepoints and
-> namespaces data for a CAP_PERFMON privileged process. Providing the
-> access under CAP_PERFMON capability singly, without the rest of
-> CAP_SYS_ADMIN credentials, excludes chances to misuse the credentials
-> and makes operation more secure.
+> Open access to monitoring via kprobes and uprobes and eBPF tracing for
+> CAP_PERFMON privileged process. Providing the access under CAP_PERFMON
+> capability singly, without the rest of CAP_SYS_ADMIN credentials,
+> excludes chances to misuse the credentials and makes operation more
+> secure.
+> 
+> perf kprobes and uprobes are used by ftrace and eBPF. perf probe uses
+> ftrace to define new kprobe events, and those events are treated as
+> tracepoint events. eBPF defines new probes via perf_event_open interface
+> and then the probes are used in eBPF tracing.
 > 
 > CAP_PERFMON implements the principal of least privilege for performance
 > monitoring and observability operations (POSIX IEEE 1003.1e 2.2.2.39
