@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7448616254C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 12:09:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE49F16254D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 12:10:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=x7/z9YfDNBjBDKr7DEi37rZiXwJbsquK8KE+zaKQY8Y=; b=nNGsGvjzVJPGymLXvfTWdc0U28
-	8Gfw1YjtznTphwYp4QiryQ9Vvak7FQUdFdFjBqHJdnlBLAqSrV89TyCyy1mJC+uXZR9wUmps1dpqG
-	B2S8F+I+6E5gSvkTOebBNEGzTp1l4uVX65Lb0RIxA2uzXzij0YCzEZUEGgMEmLNx6D7HErvMFLOA6
-	win3nqbLKcsC9VIQirAC+KCguo4CGhQ3XCzH71gKEH7FM1QAHIun9V/Vp6aJBIlbse3dnGtru5Ywh
-	itQd0SAlsEbwINs1r2pn/j4O/EdqxqxRMij9YXsF9T7vOFy+Bkje2VUv84eWdBjqvuxV0Le7StqvK
-	03IEN6HA==;
+	bh=5FbytePPKS8N6W8m/rkVsXjW1AWP7O7Q/DIE1wS1ekQ=; b=cmsELdnsFbxXvoYC+9A2iCAjp0
+	ipGpxeAI039sQvZs05BVoAsk1b88hqgM644kV9MP5skIHZRZw3HOydtI3ynv7FvNx3IxNWY4ODOKZ
+	vNmrxWNt7cb9xAflWvp1wxZNCHMIfm5vyCGxkVUyCUHHw0+K3InMwkWS3cH57VojUW9Zyr5/NEz+P
+	9sL47FVouRvRmod0ZAwl8NwFpbVoeGIdjm0tHTKVz880T/AdCjUP7bhaGsoYhXVsYbiX2RAoC9jmE
+	aF9km/gh/lbq37DDDHoc1VS8pg0H7fYIvfq9puC70e0Vb1yoNVTLuto+ffccKwP/Ak1rPmWP6S5fd
+	B4cINPVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j40lA-0004ll-A6; Tue, 18 Feb 2020 11:09:48 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1j40lY-0004wi-F9; Tue, 18 Feb 2020 11:10:12 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j40kk-0004aG-Dv
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 11:09:25 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 718BE1A01D8;
- Tue, 18 Feb 2020 12:09:20 +0100 (CET)
+ id 1j40kl-0004aP-9G
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 11:09:27 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1AD3B2037CE;
+ Tue, 18 Feb 2020 12:09:22 +0100 (CET)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6479A1A38D8;
- Tue, 18 Feb 2020 12:09:13 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0B40E2037A7;
+ Tue, 18 Feb 2020 12:09:15 +0100 (CET)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 3B032402E2;
- Tue, 18 Feb 2020 19:09:05 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 65E3C4029B;
+ Tue, 18 Feb 2020 19:09:06 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: mturquette@baylibre.com, sboyd@kernel.org, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  leonard.crestez@nxp.com, abel.vesa@nxp.com, peng.fan@nxp.com,
  ping.bai@nxp.com, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 2/3] clk: imx8mm: Remove unused includes
-Date: Tue, 18 Feb 2020 19:03:25 +0800
-Message-Id: <1582023806-6261-2-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 3/3] clk: imx8mn: Remove unused includes
+Date: Tue, 18 Feb 2020 19:03:26 +0800
+Message-Id: <1582023806-6261-3-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1582023806-6261-1-git-send-email-Anson.Huang@nxp.com>
 References: <1582023806-6261-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_030922_603158_F344AB20 
-X-CRM114-Status: UNSURE (   6.41  )
+X-CRM114-CacheID: sfid-20200218_030923_455938_97B0C31B 
+X-CRM114-Status: UNSURE (   6.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -58,7 +58,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -83,15 +83,15 @@ There is nothing in use from init.h/of.h, remove them.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- drivers/clk/imx/clk-imx8mm.c | 2 --
+ drivers/clk/imx/clk-imx8mn.c | 2 --
  1 file changed, 2 deletions(-)
 
-diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
-index 2f2c240..481d20a 100644
---- a/drivers/clk/imx/clk-imx8mm.c
-+++ b/drivers/clk/imx/clk-imx8mm.c
+diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
+index 67b826d..fb47f86 100644
+--- a/drivers/clk/imx/clk-imx8mn.c
++++ b/drivers/clk/imx/clk-imx8mn.c
 @@ -6,10 +6,8 @@
- #include <dt-bindings/clock/imx8mm-clock.h>
+ #include <dt-bindings/clock/imx8mn-clock.h>
  #include <linux/clk-provider.h>
  #include <linux/err.h>
 -#include <linux/init.h>
