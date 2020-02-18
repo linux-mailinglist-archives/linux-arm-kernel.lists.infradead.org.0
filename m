@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19A4F162575
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 12:24:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07BA6162577
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 12:25:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=dXpKmV2tew0M+C32Bbn0xakDEV/QsiOZSorMpaI53pk=; b=u26
-	+y7k22c34+IYhe1P8lT+SPyqzIJ6bncm1aAH0N1c84XY0CofFxrkbCtgp2ekoz809Na3+W7C5/DTD
-	eRKOeKqESiFQa+tSiAHo964DH85xIW97GyDZ7nEAEINIWHzOl/joRv3Ejp4yJd1jJrvMdPnaBWzZX
-	tDiCTjVAESqk/hyckc19X6Ef/ceYiyMPMKlBxTLU22d16bZwZx9rM/gmcTqndrStbVo6Z8I5OAl3y
-	wffn7LBi5jmFNYvQ77uxzMQuV7iS158UmkswRKJPJAkDUBozJW7LtooEZfNr7EcxNFhZOi/5agUAW
-	QkSW+YB8MDHSRA/KnTOTqDgTYD+UvHA==;
+	References:List-Owner; bh=8fvmDCzYWnqVxdgEpKzS+t931LUPbdztu6G1Dl3H2OU=; b=QwY
+	y3fvOZLA7qyUiY3+FLfptsv1mZAO13zbGgWYnJWXH9xhBCatbHntl/+h4A5PNi1sTyIPKJPeqHesf
+	wng5bWZuPaW9kpON4MxPPHXxLfkEaKSq5cAsiIpOVCqjVWGnNlKvlwCmbnXBB3AhD32UU0qG2wjcU
+	jIjK9Ysn+/biDyTf6tAsdvBfcZse1E3sjiZAB1iMGhhyu+op8f2Xzhet0h02hfArWDQMG9PHgR7Oh
+	HFnWZmWxCXGA9UCleJbLoobl7EeZIa4QV2PjzLlyCXPNm6niVuZd7YsjgWxlaXx1eDMLIR+jDfEpd
+	+VeSCGBe22n4L7oYAOc5k+enrx6pCCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j40zW-0002Pc-7o; Tue, 18 Feb 2020 11:24:38 +0000
-Received: from michel.telenet-ops.be ([2a02:1800:110:4::f00:18])
+	id 1j4106-0003PK-Ed; Tue, 18 Feb 2020 11:25:14 +0000
+Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j40zM-0002P1-QS
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 11:24:31 +0000
-Received: from ramsan ([84.195.182.253]) by michel.telenet-ops.be with bizsmtp
- id 4BQF2200G5USYZQ06BQFeN; Tue, 18 Feb 2020 12:24:15 +0100
+ id 1j40zs-0002dj-UU
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 11:25:04 +0000
+Received: from ramsan ([84.195.182.253]) by albert.telenet-ops.be with bizsmtp
+ id 4BQq2200W5USYZQ06BQqvp; Tue, 18 Feb 2020 12:24:50 +0100
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1j40z9-00042x-Gk; Tue, 18 Feb 2020 12:24:15 +0100
+ id 1j40zi-00043M-IS; Tue, 18 Feb 2020 12:24:50 +0100
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1j40z9-0001Sw-EJ; Tue, 18 Feb 2020 12:24:15 +0100
+ id 1j40zi-0001V3-GB; Tue, 18 Feb 2020 12:24:50 +0100
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH] arm64: dts: renesas: Remove use of ARCH_R8A7795
-Date: Tue, 18 Feb 2020 12:24:14 +0100
-Message-Id: <20200218112414.5591-1-geert+renesas@glider.be>
+Subject: [PATCH] soc: renesas: Remove ARCH_R8A7795
+Date: Tue, 18 Feb 2020 12:24:49 +0100
+Message-Id: <20200218112449.5723-1-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_032429_016055_615807DE 
-X-CRM114-Status: UNSURE (   6.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200218_032502_192636_AE9ABADB 
+X-CRM114-Status: GOOD (  10.00  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:110:4:0:0:f00:18 listed in]
+ low trust [2a02:1800:110:4:0:0:f00:1a listed in]
  [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -73,32 +72,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CONFIG_ARCH_R8A7795 was split in CONFIG_ARCH_R8A77950 and
-CONFIG_ARCH_R8A77951 in commit b925adfceb529389 ("soc: renesas: Add
-ARCH_R8A7795[01] for existing R-Car H3"), so its users can be removed.
+Replace the final user of CONFIG_ARCH_R8A7795 by CONFIG_ARCH_R8A77950 ||
+CONFIG_ARCH_R8A77951, and remove the now unused CONFIG_ARCH_R8A7795
+symbol definition.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
 To be queued in renesas-devel for v5.7.
 ---
- arch/arm64/boot/dts/renesas/Makefile | 4 ----
- 1 file changed, 4 deletions(-)
+ drivers/soc/renesas/Kconfig       | 16 ++++++++--------
+ drivers/soc/renesas/renesas-soc.c |  2 +-
+ 2 files changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/renesas/Makefile b/arch/arm64/boot/dts/renesas/Makefile
-index f63d8220a91594fb..0804af6547367dbd 100644
---- a/arch/arm64/boot/dts/renesas/Makefile
-+++ b/arch/arm64/boot/dts/renesas/Makefile
-@@ -5,10 +5,6 @@ dtb-$(CONFIG_ARCH_R8A774B1) += r8a774b1-hihope-rzg2n.dtb
- dtb-$(CONFIG_ARCH_R8A774B1) += r8a774b1-hihope-rzg2n-ex.dtb
- dtb-$(CONFIG_ARCH_R8A774C0) += r8a774c0-cat874.dtb r8a774c0-ek874.dtb \
- 			       r8a774c0-ek874-idk-2121wr.dtb
--dtb-$(CONFIG_ARCH_R8A7795) += r8a77950-salvator-x.dtb
--dtb-$(CONFIG_ARCH_R8A7795) += r8a77950-ulcb.dtb r8a77950-ulcb-kf.dtb
--dtb-$(CONFIG_ARCH_R8A7795) += r8a77951-salvator-x.dtb r8a77951-salvator-xs.dtb
--dtb-$(CONFIG_ARCH_R8A7795) += r8a77951-ulcb.dtb r8a77951-ulcb-kf.dtb
- dtb-$(CONFIG_ARCH_R8A77950) += r8a77950-salvator-x.dtb
- dtb-$(CONFIG_ARCH_R8A77950) += r8a77950-ulcb.dtb r8a77950-ulcb-kf.dtb
- dtb-$(CONFIG_ARCH_R8A77951) += r8a77951-salvator-x.dtb r8a77951-salvator-xs.dtb
+diff --git a/drivers/soc/renesas/Kconfig b/drivers/soc/renesas/Kconfig
+index de5cfe3fddd335d5..1982c7fb45fa2556 100644
+--- a/drivers/soc/renesas/Kconfig
++++ b/drivers/soc/renesas/Kconfig
+@@ -195,19 +195,19 @@ config ARCH_R8A774C0
+ 	  This enables support for the Renesas RZ/G2E SoC.
+ 
+ config ARCH_R8A77950
+-	bool
++	bool "Renesas R-Car H3 ES1.x SoC Platform"
++	select ARCH_RCAR_GEN3
++	select SYSC_R8A7795
++	help
++	  This enables support for the Renesas R-Car H3 SoC (revision 1.x).
+ 
+ config ARCH_R8A77951
+-	bool
+-
+-config ARCH_R8A7795
+-	bool "Renesas R-Car H3 SoC Platform"
+-	select ARCH_R8A77950
+-	select ARCH_R8A77951
++	bool "Renesas R-Car H3 ES2.0+ SoC Platform"
+ 	select ARCH_RCAR_GEN3
+ 	select SYSC_R8A7795
+ 	help
+-	  This enables support for the Renesas R-Car H3 SoC.
++	  This enables support for the Renesas R-Car H3 SoC (revisions 2.0 and
++	  later).
+ 
+ config ARCH_R8A77960
+ 	bool "Renesas R-Car M3-W SoC Platform"
+diff --git a/drivers/soc/renesas/renesas-soc.c b/drivers/soc/renesas/renesas-soc.c
+index 850f5733dc880a2d..c43e910b869d1ccf 100644
+--- a/drivers/soc/renesas/renesas-soc.c
++++ b/drivers/soc/renesas/renesas-soc.c
+@@ -259,7 +259,7 @@ static const struct of_device_id renesas_socs[] __initconst = {
+ #ifdef CONFIG_ARCH_R8A7794
+ 	{ .compatible = "renesas,r8a7794",	.data = &soc_rcar_e2 },
+ #endif
+-#ifdef CONFIG_ARCH_R8A7795
++#if defined(CONFIG_ARCH_R8A77950) || defined(CONFIG_ARCH_R8A77951)
+ 	{ .compatible = "renesas,r8a7795",	.data = &soc_rcar_h3 },
+ #endif
+ #ifdef CONFIG_ARCH_R8A77960
 -- 
 2.17.1
 
