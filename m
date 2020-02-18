@@ -2,78 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 073F9162A06
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 17:03:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28AD6162A0D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 17:08:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NI4gVSgieaaY7OvLmKSgQnLgWWqPbauiFBnZqe+C/x0=; b=WoHRvsDpMo53lb
-	+DxP7GFNEB8Dap2bjFWt/1dolnlIMvObwQYv9z3rq3OAlwWKogHnFQUN9JGX2h9kUbURMX7kS9fgf
-	aiKZEaf1jJMrc87V3ed67FYmRWmrdXxboF3DVDTs5PQhBTZhBHj/Pg+IqmHaYHVYthWScksMQ1qBH
-	F0FPWbItSMRWAMrY+PJtNl3BHF0kTnUevCMzB4YzE0g3R5Zz9WseS16OeWGwWUoavPbBBXhrhFhYW
-	4eunvgx9bIBvgZgkB+17cQznhq5KKWRKM8o3VqIqtqDlTTNXpdyQZSwqbfWdEciy4/L+iAxJbVG0w
-	cIch2Hr7xksZHE2xyU1g==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=R9QE2bUmbWsVT6O/dGvZ0jkaKX9JIHEqC7x57Tarj+8=; b=ZXksqU/lOvimLT
+	HBDXkwcsv+dbpezXlwLKROzBrU9VEqpjJc+QLkYvwTmZTsPgTBOH6XNxQOW8tHriVGtfaq/gFVsMv
+	3TpeBEdjPrPJyOF5o7yo1lEmEu+huBl4lAi+slgQ93mXVSqonpwUvVTCGy6cBOl7BdFCONfItEpZ1
+	bYMPl9fwD26OvacNoBrkNzzPnR47tDcMxS9d4zzFfMNmvedTOHtB8ov5PPzVZa9syrVrp9TrzU6hh
+	TgBL7VpZye7aHKZCib12gsz5YvrPP7gPr+0LVsx2zlUZjoiP0aNPVf5G2JBHcvjv+0rofA/ULqwrv
+	SfFU2ZDLi1MBOPMw18ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j45Ku-0006xE-2Z; Tue, 18 Feb 2020 16:03:00 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1j45Pm-0000Wh-PV; Tue, 18 Feb 2020 16:08:02 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j45Kl-0006vz-4n
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 16:02:53 +0000
-Received: by mail-qk1-x742.google.com with SMTP id a2so19915558qko.12
+ id 1j45Pa-0000Tw-HP
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 16:07:56 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id q39so1191743pjc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 08:02:49 -0800 (PST)
+ Tue, 18 Feb 2020 08:07:36 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=oto09LwYRX6FYX7brDPiPM4cxtWalpt3QASOWsbUoEE=;
- b=VHjT9YWf16e0vGy+6PMjeXMEGBDrB+6MVzit7ECRRkGRQZNDuJxA4Oh36+Zt3/HD+N
- 2cCxW0yl3EWIW9smgEJE9YkM8Tkzr948mFUsRte0lgzIPFWx+gZQf95TvhsK3abU2QYN
- UFGebw2AQsPeXCvXxAxNEhkSsuLSJmZs7uhOdPJte+CIlLJqISzSYEQSh+to4xeNBeGK
- g0OEeUkueFtOyw0LJlb0ImeIwUgo246HTGxcOOujr2EkAeWNTGtehdQCZTHXuUOxrGYV
- t1kz47nzFboU4WC9eNgCeHOPKO3PnpX4zvccOYjobtSqmq9kMGJyTN4yrFddIuFT7OTR
- Z4qQ==
+ d=es-iitr-ac-in.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=6IJPCaTEcBb2m8XkY4aRmJfNArzRhDFzGrCWNLyN7Ic=;
+ b=nNQYMPFNJpNoZxtqF2phDv1wjXg0AOZ/bl4BaeHLoULkitFcLFvO3rs4v3tmN7E108
+ tDWdJm31m3moyA169gHYrLc/puw5pYrowXS7G6CHHU23HSnEuG4+oX57a7ItNS9dBthQ
+ FH63MQBYEqz4zkoxEXkPInytkpJrdBCRH6oERlUbX3RvNVqi+F8nI39WXY1X2aJjPcJK
+ o0qLDJNkEtjRUJD3cwrd2M6y0rzsIRMkuBPaWdfRLaWiPyJgky/uEhnouXIPZWJsihld
+ F1Gim6pg0v5ed3RKxw86kVFL0I9AHP/84LExdk5/9NVFpulFphpKCcEYKx8Z+lp7wxpS
+ 0wug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=oto09LwYRX6FYX7brDPiPM4cxtWalpt3QASOWsbUoEE=;
- b=pwv/df5mrQa1VXfLJ7EU4YpY7yycoXqf83MHHsEv1PQmf7PjT4TFyM0tZec67oXeht
- CbjiJFOMUxuYr0MA+h+3+DS3fgXrXnIpgtP/tfOtJR2JYPBMZlHigGVQkX/7ENkyG8YB
- oyeha/IphPUl4eDB6n3CJ2zL6zOHgzjl4OtaiNo71ON1yhtXlfJD6xl37Tpffl4sEjI2
- SffnTSHS9HZYhQwEHVkmp72RCjAg9CTsg6mUBk6eIp/OxoR6Eh32wF7Zzs3tN3NATI3o
- z33AsFkkbdjaUR8Qgbu6gnYsm23ssBSTO5Mk1X59M7dDu//TPgv7oqXHUHFCc9pA8GHG
- QBCw==
-X-Gm-Message-State: APjAAAXl9lpcxDEmknByv4wN6SQKMrO88CdfNy9HcbKvbkkhWlYuVpn6
- 43l/W7IcR69yxwC2ASuhzHmYDNra/+3n2K0DfqXWiQ==
-X-Google-Smtp-Source: APXvYqx1VKVH7TrkVD81e10r+yji5B2W/p4EV6EBOujA2z0DjIBcHZQMiD1AiPiYIdZseFjwJmutWED/nwI7yrJKXiE=
-X-Received: by 2002:a37:8343:: with SMTP id f64mr18705569qkd.21.1582041768811; 
- Tue, 18 Feb 2020 08:02:48 -0800 (PST)
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=6IJPCaTEcBb2m8XkY4aRmJfNArzRhDFzGrCWNLyN7Ic=;
+ b=CL7dgCcr7PJW//LARC6DNYMSEC1ScYnPWDhRdbTXmXfuyMZ///diEosX9eawYUoNHa
+ tUe5mWipGjaAEQigFLYCJ1Gi3v2Wj6HtNMlksxthyYxREOl0xr70UV/MUMb3iKq8G6Cl
+ Nvlw6j+xwII4+dBqyOQ90nMqV+d+6o6WBGdoge8rNdxJ5JmYVunTDnMBCcMweqqOrHuC
+ hlsUvi5bc+v+SpC6XQ8gskHtSZ9JQilRYvqM/BWsE8auDEun/y+V5MbVxHBYT2BPdSYe
+ 4e0FtY4UKv6C1TBhp0CcwoMpcip7MAiD9j5b9tPXobMqZTkaoLRZo3kmikbVYcBRUAtR
+ graw==
+X-Gm-Message-State: APjAAAXJN2gmblvTe7xdjH2LXZK2gvfruT+QWvN14pFj9aLqBrrnz1Ps
+ W/8iKGgUBjYYFJjHqSspcFI9Vw==
+X-Google-Smtp-Source: APXvYqy8JRIuOTKUkj1s0uIaQjKYrPfy6Q91GTwrh/k+Pt+nzWjZ0HbG7DxYrRNO5RCTUzT9wAwWBw==
+X-Received: by 2002:a17:902:b583:: with SMTP id
+ a3mr21124343pls.180.1582042056382; 
+ Tue, 18 Feb 2020 08:07:36 -0800 (PST)
+Received: from kaaira-HP-Pavilion-Notebook ([103.37.201.176])
+ by smtp.gmail.com with ESMTPSA id g9sm4773300pfm.150.2020.02.18.08.07.32
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 18 Feb 2020 08:07:35 -0800 (PST)
+Date: Tue, 18 Feb 2020 21:37:28 +0530
+From: Kaaira Gupta <kgupta@es.iitr.ac.in>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, devel@driverdev.osuosl.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] staging: bcm2835-camera: call function instead of macro
+Message-ID: <20200218160727.GA17010@kaaira-HP-Pavilion-Notebook>
 MIME-Version: 1.0
-References: <1581937039-12964-1-git-send-email-srinivas.neeli@xilinx.com>
-In-Reply-To: <1581937039-12964-1-git-send-email-srinivas.neeli@xilinx.com>
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Date: Tue, 18 Feb 2020 17:02:37 +0100
-Message-ID: <CAMpxmJUkyaU_W2nuBVkun=Trxzvfo4+L5FV4kvBK_KqRbY-eng@mail.gmail.com>
-Subject: Re: [PATCH 1/2] gpio: xilinx: Add clock adaptation support
-To: Srinivas Neeli <srinivas.neeli@xilinx.com>
+Content-Disposition: inline
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_080251_190194_B81C0C0B 
-X-CRM114-Status: GOOD (  22.85  )
+X-CRM114-CacheID: sfid-20200218_080750_584632_B802B904 
+X-CRM114-Status: GOOD (  12.68  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,122 +96,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sgoud@xilinx.com, Linus Walleij <linus.walleij@linaro.org>,
- shubhrajyoti.datta@xilinx.com, Michal Simek <michal.simek@xilinx.com>,
- LKML <linux-kernel@vger.kernel.org>, linux-gpio <linux-gpio@vger.kernel.org>,
- git@xilinx.com, arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-cG9uLiwgMTcgbHV0IDIwMjAgbyAxMTo1NyBTcmluaXZhcyBOZWVsaSA8c3Jpbml2YXMubmVlbGlA
-eGlsaW54LmNvbT4gbmFwaXNhxYIoYSk6Cj4KPiBBZGQgc3VwcG9ydCBvZiBjbG9jayBhZGFwdGF0
-aW9uIGZvciBBWEkgR1BJTyBkcml2ZXIuCj4KPiBTaWduZWQtb2ZmLWJ5OiBTcmluaXZhcyBOZWVs
-aSA8c3Jpbml2YXMubmVlbGlAeGlsaW54LmNvbT4KPiAtLS0KPiAgZHJpdmVycy9ncGlvL2dwaW8t
-eGlsaW54LmMgfCAxMDUgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysr
-KystCj4gIDEgZmlsZSBjaGFuZ2VkLCAxMDMgaW5zZXJ0aW9ucygrKSwgMiBkZWxldGlvbnMoLSkK
-Pgo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwaW8vZ3Bpby14aWxpbnguYyBiL2RyaXZlcnMvZ3Bp
-by9ncGlvLXhpbGlueC5jCj4gaW5kZXggYTk3NDhiNTE5OGU2Li4yNjc1M2FlNTgyOTUgMTAwNjQ0
-Cj4gLS0tIGEvZHJpdmVycy9ncGlvL2dwaW8teGlsaW54LmMKPiArKysgYi9kcml2ZXJzL2dwaW8v
-Z3Bpby14aWxpbnguYwo+IEBAIC0xNCw2ICsxNCw4IEBACj4gICNpbmNsdWRlIDxsaW51eC9pby5o
-Pgo+ICAjaW5jbHVkZSA8bGludXgvZ3Bpby9kcml2ZXIuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L3Ns
-YWIuaD4KPiArI2luY2x1ZGUgPGxpbnV4L3BtX3J1bnRpbWUuaD4KPiArI2luY2x1ZGUgPGxpbnV4
-L2Nsay5oPgo+Cj4gIC8qIFJlZ2lzdGVyIE9mZnNldCBEZWZpbml0aW9ucyAqLwo+ICAjZGVmaW5l
-IFhHUElPX0RBVEFfT0ZGU0VUICAgKDB4MCkgICAgICAvKiBEYXRhIHJlZ2lzdGVyICAqLwo+IEBA
-IC0zOCw2ICs0MCw3IEBACj4gICAqIEBncGlvX3N0YXRlOiBHUElPIHN0YXRlIHNoYWRvdyByZWdp
-c3Rlcgo+ICAgKiBAZ3Bpb19kaXI6IEdQSU8gZGlyZWN0aW9uIHNoYWRvdyByZWdpc3Rlcgo+ICAg
-KiBAZ3Bpb19sb2NrOiBMb2NrIHVzZWQgZm9yIHN5bmNocm9uaXphdGlvbgo+ICsgKiBAY2xrOiBj
-bG9jayByZXNvdXJjZSBmb3IgdGhpcyBkcml2ZXIKPiAgICovCj4gIHN0cnVjdCB4Z3Bpb19pbnN0
-YW5jZSB7Cj4gICAgICAgICBzdHJ1Y3QgZ3Bpb19jaGlwIGdjOwo+IEBAIC00NSw3ICs0OCw4IEBA
-IHN0cnVjdCB4Z3Bpb19pbnN0YW5jZSB7Cj4gICAgICAgICB1bnNpZ25lZCBpbnQgZ3Bpb193aWR0
-aFsyXTsKPiAgICAgICAgIHUzMiBncGlvX3N0YXRlWzJdOwo+ICAgICAgICAgdTMyIGdwaW9fZGly
-WzJdOwo+IC0gICAgICAgc3BpbmxvY2tfdCBncGlvX2xvY2tbMl07Cj4gKyAgICAgICBzcGlubG9j
-a190IGdwaW9fbG9ja1syXTsgICAgICAgIC8qIEZvciBzZXJpYWxpemluZyBvcGVyYXRpb25zICov
-Cj4gKyAgICAgICBzdHJ1Y3QgY2xrICpjbGs7Cj4gIH07Cj4KPiAgc3RhdGljIGlubGluZSBpbnQg
-eGdwaW9faW5kZXgoc3RydWN0IHhncGlvX2luc3RhbmNlICpjaGlwLCBpbnQgZ3BpbykKPiBAQCAt
-MjU1LDYgKzI1OSw3MCBAQCBzdGF0aWMgdm9pZCB4Z3Bpb19zYXZlX3JlZ3Moc3RydWN0IHhncGlv
-X2luc3RhbmNlICpjaGlwKQo+ICAgICAgICAgICAgICAgICAgICAgICAgY2hpcC0+Z3Bpb19kaXJb
-MV0pOwo+ICB9Cj4KPiArc3RhdGljIGludCB4Z3Bpb19yZXF1ZXN0KHN0cnVjdCBncGlvX2NoaXAg
-KmNoaXAsIHVuc2lnbmVkIGludCBvZmZzZXQpCj4gK3sKPiArICAgICAgIGludCByZXQgPSBwbV9y
-dW50aW1lX2dldF9zeW5jKGNoaXAtPnBhcmVudCk7Cj4gKwo+ICsgICAgICAgLyoKPiArICAgICAg
-ICAqIElmIHRoZSBkZXZpY2UgaXMgYWxyZWFkeSBhY3RpdmUgcG1fcnVudGltZV9nZXQoKSB3aWxs
-IHJldHVybiAxIG9uCj4gKyAgICAgICAgKiBzdWNjZXNzLCBidXQgZ3Bpb19yZXF1ZXN0IHN0aWxs
-IG5lZWRzIHRvIHJldHVybiAwLgo+ICsgICAgICAgICovCj4gKyAgICAgICByZXR1cm4gcmV0IDwg
-MCA/IHJldCA6IDA7Cj4gK30KPiArCj4gK3N0YXRpYyB2b2lkIHhncGlvX2ZyZWUoc3RydWN0IGdw
-aW9fY2hpcCAqY2hpcCwgdW5zaWduZWQgaW50IG9mZnNldCkKPiArewo+ICsgICAgICAgcG1fcnVu
-dGltZV9wdXQoY2hpcC0+cGFyZW50KTsKPiArfQo+ICsKPiArc3RhdGljIGludCBfX21heWJlX3Vu
-dXNlZCB4Z3Bpb19zdXNwZW5kKHN0cnVjdCBkZXZpY2UgKmRldikKPiArewo+ICsgICAgICAgc3Ry
-dWN0IHBsYXRmb3JtX2RldmljZSAqcGRldiA9IHRvX3BsYXRmb3JtX2RldmljZShkZXYpOwo+ICsg
-ICAgICAgaW50IGlycSA9IHBsYXRmb3JtX2dldF9pcnEocGRldiwgMCk7Cj4gKyAgICAgICBzdHJ1
-Y3QgaXJxX2RhdGEgKmRhdGEgPSBpcnFfZ2V0X2lycV9kYXRhKGlycSk7Cj4gKwo+ICsgICAgICAg
-aWYgKCFpcnFkX2lzX3dha2V1cF9zZXQoZGF0YSkpCj4gKyAgICAgICAgICAgICAgIHJldHVybiBw
-bV9ydW50aW1lX2ZvcmNlX3N1c3BlbmQoZGV2KTsKPiArCj4gKyAgICAgICByZXR1cm4gMDsKPiAr
-fQo+ICsKPiArc3RhdGljIGludCBfX21heWJlX3VudXNlZCB4Z3Bpb19yZXN1bWUoc3RydWN0IGRl
-dmljZSAqZGV2KQo+ICt7Cj4gKyAgICAgICBzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2ID0g
-dG9fcGxhdGZvcm1fZGV2aWNlKGRldik7Cj4gKyAgICAgICBpbnQgaXJxID0gcGxhdGZvcm1fZ2V0
-X2lycShwZGV2LCAwKTsKPiArICAgICAgIHN0cnVjdCBpcnFfZGF0YSAqZGF0YSA9IGlycV9nZXRf
-aXJxX2RhdGEoaXJxKTsKPiArCj4gKyAgICAgICBpZiAoIWlycWRfaXNfd2FrZXVwX3NldChkYXRh
-KSkKPiArICAgICAgICAgICAgICAgcmV0dXJuIHBtX3J1bnRpbWVfZm9yY2VfcmVzdW1lKGRldik7
-Cj4gKwo+ICsgICAgICAgcmV0dXJuIDA7Cj4gK30KPiArCj4gK3N0YXRpYyBpbnQgX19tYXliZV91
-bnVzZWQgeGdwaW9fcnVudGltZV9zdXNwZW5kKHN0cnVjdCBkZXZpY2UgKmRldikKPiArewo+ICsg
-ICAgICAgc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldiA9IHRvX3BsYXRmb3JtX2RldmljZShk
-ZXYpOwo+ICsgICAgICAgc3RydWN0IHhncGlvX2luc3RhbmNlICpncGlvID0gcGxhdGZvcm1fZ2V0
-X2RydmRhdGEocGRldik7Cj4gKwo+ICsgICAgICAgY2xrX2Rpc2FibGUoZ3Bpby0+Y2xrKTsKPiAr
-Cj4gKyAgICAgICByZXR1cm4gMDsKPiArfQo+ICsKPiArc3RhdGljIGludCBfX21heWJlX3VudXNl
-ZCB4Z3Bpb19ydW50aW1lX3Jlc3VtZShzdHJ1Y3QgZGV2aWNlICpkZXYpCj4gK3sKPiArICAgICAg
-IHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYgPSB0b19wbGF0Zm9ybV9kZXZpY2UoZGV2KTsK
-PiArICAgICAgIHN0cnVjdCB4Z3Bpb19pbnN0YW5jZSAqZ3BpbyA9IHBsYXRmb3JtX2dldF9kcnZk
-YXRhKHBkZXYpOwo+ICsKPiArICAgICAgIHJldHVybiBjbGtfZW5hYmxlKGdwaW8tPmNsayk7Cj4g
-K30KPiArCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgZGV2X3BtX29wcyB4Z3Bpb19kZXZfcG1fb3Bz
-ID0gewo+ICsgICAgICAgU0VUX1NZU1RFTV9TTEVFUF9QTV9PUFMoeGdwaW9fc3VzcGVuZCwgeGdw
-aW9fcmVzdW1lKQo+ICsgICAgICAgU0VUX1JVTlRJTUVfUE1fT1BTKHhncGlvX3J1bnRpbWVfc3Vz
-cGVuZCwKPiArICAgICAgICAgICAgICAgICAgICAgICAgICB4Z3Bpb19ydW50aW1lX3Jlc3VtZSwg
-TlVMTCkKPiArfTsKPiArCj4gIC8qKgo+ICAgKiB4Z3Bpb19vZl9wcm9iZSAtIFByb2JlIG1ldGhv
-ZCBmb3IgdGhlIEdQSU8gZGV2aWNlLgo+ICAgKiBAcGRldjogcG9pbnRlciB0byB0aGUgcGxhdGZv
-cm0gZGV2aWNlCj4gQEAgLTMyMyw2ICszOTEsOCBAQCBzdGF0aWMgaW50IHhncGlvX3Byb2JlKHN0
-cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gICAgICAgICBjaGlwLT5nYy5kaXJlY3Rpb25f
-b3V0cHV0ID0geGdwaW9fZGlyX291dDsKPiAgICAgICAgIGNoaXAtPmdjLmdldCA9IHhncGlvX2dl
-dDsKPiAgICAgICAgIGNoaXAtPmdjLnNldCA9IHhncGlvX3NldDsKPiArICAgICAgIGNoaXAtPmdj
-LnJlcXVlc3QgPSB4Z3Bpb19yZXF1ZXN0Owo+ICsgICAgICAgY2hpcC0+Z2MuZnJlZSA9IHhncGlv
-X2ZyZWU7Cj4gICAgICAgICBjaGlwLT5nYy5zZXRfbXVsdGlwbGUgPSB4Z3Bpb19zZXRfbXVsdGlw
-bGU7Cj4KPiAgICAgICAgIGNoaXAtPmdjLmxhYmVsID0gZGV2X25hbWUoJnBkZXYtPmRldik7Cj4g
-QEAgLTMzMywxNSArNDAzLDQ1IEBAIHN0YXRpYyBpbnQgeGdwaW9fcHJvYmUoc3RydWN0IHBsYXRm
-b3JtX2RldmljZSAqcGRldikKPiAgICAgICAgICAgICAgICAgcmV0dXJuIFBUUl9FUlIoY2hpcC0+
-cmVncyk7Cj4gICAgICAgICB9Cj4KPiArICAgICAgIGNoaXAtPmNsayA9IGRldm1fY2xrX2dldCgm
-cGRldi0+ZGV2LCAic19heGlfYWNsayIpOwo+ICsgICAgICAgaWYgKElTX0VSUihjaGlwLT5jbGsp
-KSB7Cj4gKyAgICAgICAgICAgICAgIGlmIChQVFJfRVJSKGNoaXAtPmNsaykgIT0gLUVOT0VOVCkg
-ewo+ICsgICAgICAgICAgICAgICAgICAgICAgIGlmIChQVFJfRVJSKGNoaXAtPmNsaykgIT0gLUVQ
-Uk9CRV9ERUZFUikKPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGRldl9lcnIoJnBk
-ZXYtPmRldiwgIklucHV0IGNsb2NrIG5vdCBmb3VuZFxuIik7Cj4gKyAgICAgICAgICAgICAgICAg
-ICAgICAgcmV0dXJuIFBUUl9FUlIoY2hpcC0+Y2xrKTsKPiArICAgICAgICAgICAgICAgfQo+ICsg
-ICAgICAgICAgICAgICAvKgo+ICsgICAgICAgICAgICAgICAgKiBDbG9jayBmcmFtZXdvcmsgc3Vw
-cG9ydCBpcyBvcHRpb25hbCwgY29udGludWUgb24KPiArICAgICAgICAgICAgICAgICogYW55d2F5
-cyBpZiB3ZSBkb24ndCBmaW5kIGEgbWF0Y2hpbmcgY2xvY2suCj4gKyAgICAgICAgICAgICAgICAq
-LwoKV2h5IG5vdCB1c2UgZGV2bV9jbGtfZ2V0X29wdGlvbmFsKCkgdGhlbj8KCj4gKyAgICAgICAg
-ICAgICAgIGNoaXAtPmNsayA9IE5VTEw7Cj4gKyAgICAgICB9Cj4gKyAgICAgICBzdGF0dXMgPSBj
-bGtfcHJlcGFyZV9lbmFibGUoY2hpcC0+Y2xrKTsKPiArICAgICAgIGlmIChzdGF0dXMgPCAwKSB7
-Cj4gKyAgICAgICAgICAgICAgIGRldl9lcnIoJnBkZXYtPmRldiwgIkZhaWxlZCB0byBwcmVwYXJl
-IGNsa1xuIik7Cj4gKyAgICAgICAgICAgICAgIHJldHVybiBzdGF0dXM7Cj4gKyAgICAgICB9Cj4g
-KyAgICAgICBwbV9ydW50aW1lX2VuYWJsZSgmcGRldi0+ZGV2KTsKPiArICAgICAgIHN0YXR1cyA9
-IHBtX3J1bnRpbWVfZ2V0X3N5bmMoJnBkZXYtPmRldik7Cj4gKyAgICAgICBpZiAoc3RhdHVzIDwg
-MCkKPiArICAgICAgICAgICAgICAgZ290byBlcnJfdW5wcmVwYXJlX2NsazsKPiArCj4gICAgICAg
-ICB4Z3Bpb19zYXZlX3JlZ3MoY2hpcCk7Cj4KPiAgICAgICAgIHN0YXR1cyA9IGRldm1fZ3Bpb2No
-aXBfYWRkX2RhdGEoJnBkZXYtPmRldiwgJmNoaXAtPmdjLCBjaGlwKTsKPiAgICAgICAgIGlmIChz
-dGF0dXMpIHsKPiAgICAgICAgICAgICAgICAgZGV2X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRv
-IGFkZCBHUElPIGNoaXBcbiIpOwo+IC0gICAgICAgICAgICAgICByZXR1cm4gc3RhdHVzOwo+ICsg
-ICAgICAgICAgICAgICBnb3RvIGVycl9wbV9wdXQ7Cj4gICAgICAgICB9Cj4KPiArICAgICAgIHBt
-X3J1bnRpbWVfcHV0KCZwZGV2LT5kZXYpOwo+ICAgICAgICAgcmV0dXJuIDA7Cj4gK2Vycl9wbV9w
-dXQ6Cj4gKyAgICAgICBwbV9ydW50aW1lX3B1dCgmcGRldi0+ZGV2KTsKPiArZXJyX3VucHJlcGFy
-ZV9jbGs6Cj4gKyAgICAgICBwbV9ydW50aW1lX2Rpc2FibGUoJnBkZXYtPmRldik7Cj4gKyAgICAg
-ICBjbGtfdW5wcmVwYXJlKGNoaXAtPmNsayk7Cj4gKyAgICAgICByZXR1cm4gc3RhdHVzOwo+ICB9
-Cj4KPiAgc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQgeGdwaW9fb2ZfbWF0Y2hbXSA9
-IHsKPiBAQCAtMzU2LDYgKzQ1Niw3IEBAIHN0YXRpYyBzdHJ1Y3QgcGxhdGZvcm1fZHJpdmVyIHhn
-cGlvX3BsYXRfZHJpdmVyID0gewo+ICAgICAgICAgLmRyaXZlciAgICAgICAgID0gewo+ICAgICAg
-ICAgICAgICAgICAgICAgICAgIC5uYW1lID0gImdwaW8teGlsaW54IiwKPiAgICAgICAgICAgICAg
-ICAgICAgICAgICAub2ZfbWF0Y2hfdGFibGUgPSB4Z3Bpb19vZl9tYXRjaCwKPiArICAgICAgICAg
-ICAgICAgICAgICAgICAucG0gPSAmeGdwaW9fZGV2X3BtX29wcywKPiAgICAgICAgIH0sCj4gIH07
-Cj4KPiAtLQo+IDIuNy40Cj4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Fix checkpatch.pl warning of 'macro argument reuse' in bcm2835-camera.h
+by removing the macro and calling the function, written in macro in
+bcm2835-camera.h, directly in bcm2835-camera.c
+
+Signed-off-by: Kaaira Gupta <kgupta@es.iitr.ac.in>
+---
+ .../bcm2835-camera/bcm2835-camera.c           | 28 +++++++++++++++----
+ .../bcm2835-camera/bcm2835-camera.h           | 10 -------
+ 2 files changed, 22 insertions(+), 16 deletions(-)
+
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+index 1ef31a984741..19b3ba80d0e7 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
++++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
+@@ -919,9 +919,17 @@ static int vidioc_g_fmt_vid_cap(struct file *file, void *priv,
+ 	else
+ 		f->fmt.pix.colorspace = V4L2_COLORSPACE_SMPTE170M;
+ 	f->fmt.pix.priv = 0;
+-
+-	v4l2_dump_pix_format(1, bcm2835_v4l2_debug, &dev->v4l2_dev, &f->fmt.pix,
+-			     __func__);
++	v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
++		 "%s: w %u h %u field %u pfmt 0x%x bpl %u sz_img %u colorspace 0x%x priv %u\n",
++		  __func__,
++		 (&f->fmt.pix)->width,
++		 (&f->fmt.pix)->height,
++		 (&f->fmt.pix)->field,
++		 (&f->fmt.pix)->pixelformat,
++		 (&f->fmt.pix)->bytesperline,
++		 (&f->fmt.pix)->sizeimage,
++		 (&f->fmt.pix)->colorspace,
++		 (&f->fmt.pix)->priv);
+ 	return 0;
+ }
+ 
+@@ -995,9 +1003,17 @@ static int vidioc_try_fmt_vid_cap(struct file *file, void *priv,
+ 	v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
+ 		 "Now %dx%d format %08X\n",
+ 		f->fmt.pix.width, f->fmt.pix.height, f->fmt.pix.pixelformat);
+-
+-	v4l2_dump_pix_format(1, bcm2835_v4l2_debug, &dev->v4l2_dev, &f->fmt.pix,
+-			     __func__);
++	v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
++		 "%s: w %u h %u field %u pfmt 0x%x bpl %u sz_img %u colorspace 0x%x priv %u\n",
++		 __func__,
++		 (&f->fmt.pix)->width,
++		 (&f->fmt.pix)->height,
++		 (&f->fmt.pix)->field,
++		 (&f->fmt.pix)->pixelformat,
++		 (&f->fmt.pix)->bytesperline,
++		 (&f->fmt.pix)->sizeimage,
++		 (&f->fmt.pix)->colorspace,
++		 (&f->fmt.pix)->priv);
+ 	return 0;
+ }
+ 
+diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
+index b5fce38de038..2e3e1954e3ce 100644
+--- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
++++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.h
+@@ -121,16 +121,6 @@ int set_framerate_params(struct bm2835_mmal_dev *dev);
+ 
+ /* Debug helpers */
+ 
+-#define v4l2_dump_pix_format(level, debug, dev, pix_fmt, desc)	\
+-{	\
+-	v4l2_dbg(level, debug, dev,	\
+-"%s: w %u h %u field %u pfmt 0x%x bpl %u sz_img %u colorspace 0x%x priv %u\n", \
+-		desc,	\
+-		(pix_fmt)->width, (pix_fmt)->height, (pix_fmt)->field,	\
+-		(pix_fmt)->pixelformat, (pix_fmt)->bytesperline,	\
+-		(pix_fmt)->sizeimage, (pix_fmt)->colorspace, (pix_fmt)->priv); \
+-}
+-
+ #define v4l2_dump_win_format(level, debug, dev, win_fmt, desc)	\
+ {	\
+ 	v4l2_dbg(level, debug, dev,	\
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
