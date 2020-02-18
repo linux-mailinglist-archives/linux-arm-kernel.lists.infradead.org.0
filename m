@@ -2,72 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89A5E162BDB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:13:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D666162BDC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:14:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=gEzJFjTxc6mtNWx9z/O3FeffKt4N+PQhDvfHWdYCUY4=; b=Yg0R7lwyMcFoxd
-	QNbAeAq9T5VdVVGkjGmA+xE5ten9AmzU22Tm2QmYWUtP0Er+FTuF+6w5JSvw/ZnALJCympo2sjhTN
-	GBCN16pxj4TvRn/ylbkU6AAs2hCVWIru4ZFKxgTmJcJL6/hMYzxG4AY5Dhx1A+dKo9uFK0O76f4Ql
-	yagqa5r5Lr0fFXOrYBYfl85W5UfqKckadJbPPB+lagRUVdSy6zaV77ceoJFjFOHJ4DnwQgdY/EGh0
-	ob8Szbf+m16R2E3EE2qQs1vyemBu+QUHB6s2f/2lZSaypYaG8k279QqxzkvrXu8tCjRvHIFIvSbNK
-	pxHysLMDqPW16uWvUhew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YLBqYZtC1jdHjCtpduvynJ0UJekQqYetSfFch6g45jc=; b=jUdQCGSWihT04I
+	wEeqHB0rYIJVzLFnuqr2Zpctuiq/qibwH2bBKPe+5j5BQhJihwZVjig3prrUe2kkZdkxYQqmcNudq
+	jAaiXsSSmG/ZPkXj/G3X2UgfRiH6SJ6TudkXfG3opauMSar2OlkAM7xn/A+N5gcIG/jYkMx3EAQFf
+	FH06mtMFesxcwenbCIxdVTAl4bdKjuNVNmFOZ5iv/nRNnLhmh9gsJ4tLbQWE3tr+0sSMM8XJLxkPH
+	L0/ZvM7EuiBYvqPHzeHTkJUT4ETiVnitfHPlcfimtC436Uh3Ejk+jNPMKKIwIFl5zuQOJ7EviaOxx
+	QDnISQWKgUMrcxJZXpjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j46RN-0001ss-1q; Tue, 18 Feb 2020 17:13:45 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1j46Ri-0002AX-J4; Tue, 18 Feb 2020 17:14:06 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j46R3-0001rp-T8
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:13:27 +0000
-Received: by mail-ot1-f68.google.com with SMTP id j16so20269800otl.1
+ id 1j46R5-0001rr-NC
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:13:29 +0000
+Received: by mail-ot1-f66.google.com with SMTP id 66so20235133otd.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 09:13:24 -0800 (PST)
+ Tue, 18 Feb 2020 09:13:26 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=KxKWes5Maiiz92tj+onliCPmpibZ/Bkve3W+pNRz4Mc=;
- b=B7ci+cWBhed41NRFNiIQp0oNOUl0Y41c7omcwnh9Rm1mgO3PiXhWLgehn7/3bk/TV1
- vkPeZ/4R1VpTobX5clD0pBwPuG4VnijTvzM1CnVAWy6Ccbmd0MNlne1L5R9avFjaN99l
- I+/2tq4fuWcrbw+9PArfyrhJkIC90IBq8YwaWqeCGEknsdrmiqdB0fx5NypPEeP7MSBl
- 1Jv39eUBp/vNZFc7UmPznah4YNGq1A+oirGU8hkD7DxwZtWPnQexs+tsf62Ywwitjuu9
- b6ks2zNYwh6ns5UiubUycHjubYnnpUWP9KkHnqGHSqahNQZx3d1NvdeigOi8Y8gi02cc
- acMw==
-X-Gm-Message-State: APjAAAWIMXQfX8e/yXel42+JgbmIHPkH4YckLP2ZiqJA+uJhVHmkS2vn
- A82OM7LKiI11CHRcVPvjFFYI/Ls=
-X-Google-Smtp-Source: APXvYqw78RKkguXMrAM7M8gSXlZrfkdWkZ4c6zf2HSWTeBKpVzryzLJxnnrYZ2glk4KBR3Pi24m44w==
-X-Received: by 2002:a9d:10d:: with SMTP id 13mr4047747otu.238.1582046003552;
- Tue, 18 Feb 2020 09:13:23 -0800 (PST)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=4LxZR/H/qWaW6PLZe7czUDlSa5Ov9S/K1kfsaVdcFug=;
+ b=BCojIevanGf0/MVMNvzqIj23R46L29xrhbHlfArJ3a/Yas90VgUjN17sb+Ro9jYogG
+ hilGqWyVbG3qKNmeapRitmfO38KqQqwfwRcGTW/gp6BDkZCHiCX1+xeGiorIRNJ4pzPR
+ 4Hm7a1rbXQhVofi1JESu05niwsqFE+u4y/3Ib1JbqUQKg9LKyW3lYagkc4bF8m2OlqvY
+ NHy0rISfogqwiemBEQUkud0uRsmAgvq6CcIO9fljWZzPLVs4IlvOR3NsqaH5Q5H7qmfD
+ Q2b41qp56VzlIVbNvYk2TqfQwyGWEeCShdaRAlIS2smAbsLgPduS8HaVKpKmNF+pL7MK
+ t3yQ==
+X-Gm-Message-State: APjAAAVGBnipVaR1qoDrcEgqbgyLDNRC1wtsqaUth13wM8Dn3W3JO3Hl
+ uXx1XXd6nBsgFC7iXkOYNkeGC74=
+X-Google-Smtp-Source: APXvYqzcQiA7Kz1hw5DSMbv4x/r+JIz0TrIbtjHbvB5jqm2ONigiZ49RPglyPaLbn09y6q4zITnNIw==
+X-Received: by 2002:a05:6830:1f0c:: with SMTP id
+ u12mr16226750otg.253.1582046005180; 
+ Tue, 18 Feb 2020 09:13:25 -0800 (PST)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id y25sm1545755oto.27.2020.02.18.09.13.21
+ by smtp.googlemail.com with ESMTPSA id y25sm1545755oto.27.2020.02.18.09.13.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 09:13:22 -0800 (PST)
+ Tue, 18 Feb 2020 09:13:24 -0800 (PST)
 From: Rob Herring <robh@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  soc@kernel.org, Andre Przywara <andre.przywara@arm.com>,
  Robert Richter <rrichter@marvell.com>, Jon Loeliger <jdl@jdl.com>,
  Alexander Graf <graf@amazon.com>, Matthias Brugger <mbrugger@suse.com>,
  Mark Langsdorf <mlangsdo@redhat.com>
-Subject: [RFC PATCH 00/11] Removing Calxeda platform support
-Date: Tue, 18 Feb 2020 11:13:10 -0600
-Message-Id: <20200218171321.30990-1-robh@kernel.org>
+Subject: [RFC PATCH 01/11] vfio: Remove Calxeda XGMAC reset driver
+Date: Tue, 18 Feb 2020 11:13:11 -0600
+Message-Id: <20200218171321.30990-2-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200218171321.30990-1-robh@kernel.org>
+References: <20200218171321.30990-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_091325_944467_A459BE07 
-X-CRM114-Status: GOOD (  12.72  )
+X-CRM114-CacheID: sfid-20200218_091327_758309_4A185F05 
+X-CRM114-Status: GOOD (  15.18  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [209.85.210.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -77,7 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
@@ -109,117 +112,129 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Calxeda has been defunct for 6 years now. Use of Calxeda servers carried
-on for some time afterwards primarily as distro builders for 32-bit ARM.
-AFAIK, those systems have been retired in favor of 32-bit VMs on 64-bit
-hosts.
+Cc: Eric Auger <eric.auger@redhat.com>
+Cc: Alex Williamson <alex.williamson@redhat.com>
+Cc: Cornelia Huck <cohuck@redhat.com>
+Cc: kvm@vger.kernel.org
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+Do not apply yet.
 
-The other use of Calxeda Midway I'm aware of was testing 32-bit ARM KVM
-support as there are few or no other systems with enough RAM and LPAE. Now
-32-bit KVM host support is getting removed[1].
-
-While it's not much maintenance to support, I don't care to convert the
-Calxeda DT bindings to schema nor fix any resulting errors in the dts files
-(which already don't exactly match what's shipping in firmware).
-
-Rob
-
-[1] https://lore.kernel.org/linux-arm-kernel/20200210141324.21090-1-maz@kernel.org/
-
-Rob Herring (11):
-  vfio: Remove Calxeda XGMAC reset driver
-  ata: Remove Calxeda AHCI driver
-  cpuidle: Remove Calxeda driver
-  cpufreq: Remove Calxeda driver
-  EDAC: Remove Calxeda drivers
-  iommu: arm-smmu: Remove Calxeda secure mode quirk
-  net: Remove Calxeda XGMAC driver
-  clk: Remove Calxeda driver
-  ARM: Remove Calxeda platform support
-  ARM: dts: Remove Calxeda platforms
-  dt-bindings: Remove Calxeda platforms bindings
-
- .../devicetree/bindings/arm/calxeda.yaml      |   22 -
- .../devicetree/bindings/arm/calxeda/l2ecc.txt |   15 -
- .../devicetree/bindings/ata/sata_highbank.txt |   44 -
- .../devicetree/bindings/clock/calxeda.txt     |   17 -
- .../memory-controllers/calxeda-ddr-ctrlr.txt  |   16 -
- .../devicetree/bindings/net/calxeda-xgmac.txt |   18 -
- .../bindings/phy/calxeda-combophy.txt         |   17 -
- MAINTAINERS                                   |   14 -
- arch/arm/Kconfig                              |    2 -
- arch/arm/Kconfig.debug                        |   12 +-
- arch/arm/Makefile                             |    1 -
- arch/arm/boot/dts/Makefile                    |    3 -
- arch/arm/boot/dts/ecx-2000.dts                |  103 -
- arch/arm/boot/dts/ecx-common.dtsi             |  230 --
- arch/arm/boot/dts/highbank.dts                |  161 --
- arch/arm/configs/multi_v7_defconfig           |    5 -
- arch/arm/mach-highbank/Kconfig                |   19 -
- arch/arm/mach-highbank/Makefile               |    4 -
- arch/arm/mach-highbank/core.h                 |   18 -
- arch/arm/mach-highbank/highbank.c             |  175 --
- arch/arm/mach-highbank/pm.c                   |   49 -
- arch/arm/mach-highbank/smc.S                  |   25 -
- arch/arm/mach-highbank/sysregs.h              |   75 -
- arch/arm/mach-highbank/system.c               |   22 -
- drivers/ata/Kconfig                           |    9 -
- drivers/ata/Makefile                          |    1 -
- drivers/ata/sata_highbank.c                   |  635 ------
- drivers/clk/Makefile                          |    1 -
- drivers/clk/clk-highbank.c                    |  329 ---
- drivers/cpufreq/Kconfig.arm                   |   10 -
- drivers/cpufreq/Makefile                      |    3 +-
- drivers/cpufreq/cpufreq-dt-platdev.c          |    3 -
- drivers/cpufreq/highbank-cpufreq.c            |  106 -
- drivers/cpuidle/Kconfig.arm                   |    7 -
- drivers/cpuidle/Makefile                      |    1 -
- drivers/cpuidle/cpuidle-calxeda.c             |   72 -
- drivers/edac/Kconfig                          |   14 -
- drivers/edac/Makefile                         |    3 -
- drivers/edac/highbank_l2_edac.c               |  142 --
- drivers/edac/highbank_mc_edac.c               |  272 ---
- drivers/iommu/arm-smmu-impl.c                 |   43 -
- drivers/net/ethernet/Kconfig                  |    1 -
- drivers/net/ethernet/Makefile                 |    1 -
- drivers/net/ethernet/calxeda/Kconfig          |    9 -
- drivers/net/ethernet/calxeda/Makefile         |    2 -
- drivers/net/ethernet/calxeda/xgmac.c          | 1927 -----------------
- drivers/vfio/platform/reset/Kconfig           |    8 -
- drivers/vfio/platform/reset/Makefile          |    2 -
- .../reset/vfio_platform_calxedaxgmac.c        |   74 -
- 49 files changed, 2 insertions(+), 4740 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/calxeda.yaml
- delete mode 100644 Documentation/devicetree/bindings/arm/calxeda/l2ecc.txt
- delete mode 100644 Documentation/devicetree/bindings/ata/sata_highbank.txt
- delete mode 100644 Documentation/devicetree/bindings/clock/calxeda.txt
- delete mode 100644 Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.txt
- delete mode 100644 Documentation/devicetree/bindings/net/calxeda-xgmac.txt
- delete mode 100644 Documentation/devicetree/bindings/phy/calxeda-combophy.txt
- delete mode 100644 arch/arm/boot/dts/ecx-2000.dts
- delete mode 100644 arch/arm/boot/dts/ecx-common.dtsi
- delete mode 100644 arch/arm/boot/dts/highbank.dts
- delete mode 100644 arch/arm/mach-highbank/Kconfig
- delete mode 100644 arch/arm/mach-highbank/Makefile
- delete mode 100644 arch/arm/mach-highbank/core.h
- delete mode 100644 arch/arm/mach-highbank/highbank.c
- delete mode 100644 arch/arm/mach-highbank/pm.c
- delete mode 100644 arch/arm/mach-highbank/smc.S
- delete mode 100644 arch/arm/mach-highbank/sysregs.h
- delete mode 100644 arch/arm/mach-highbank/system.c
- delete mode 100644 drivers/ata/sata_highbank.c
- delete mode 100644 drivers/clk/clk-highbank.c
- delete mode 100644 drivers/cpufreq/highbank-cpufreq.c
- delete mode 100644 drivers/cpuidle/cpuidle-calxeda.c
- delete mode 100644 drivers/edac/highbank_l2_edac.c
- delete mode 100644 drivers/edac/highbank_mc_edac.c
- delete mode 100644 drivers/net/ethernet/calxeda/Kconfig
- delete mode 100644 drivers/net/ethernet/calxeda/Makefile
- delete mode 100644 drivers/net/ethernet/calxeda/xgmac.c
+ drivers/vfio/platform/reset/Kconfig           |  8 --
+ drivers/vfio/platform/reset/Makefile          |  2 -
+ .../reset/vfio_platform_calxedaxgmac.c        | 74 -------------------
+ 3 files changed, 84 deletions(-)
  delete mode 100644 drivers/vfio/platform/reset/vfio_platform_calxedaxgmac.c
 
+diff --git a/drivers/vfio/platform/reset/Kconfig b/drivers/vfio/platform/reset/Kconfig
+index 1edbe9ee7356..3668d1d92909 100644
+--- a/drivers/vfio/platform/reset/Kconfig
++++ b/drivers/vfio/platform/reset/Kconfig
+@@ -1,12 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+-config VFIO_PLATFORM_CALXEDAXGMAC_RESET
+-	tristate "VFIO support for calxeda xgmac reset"
+-	depends on VFIO_PLATFORM
+-	help
+-	  Enables the VFIO platform driver to handle reset for Calxeda xgmac
+-
+-	  If you don't know what to do here, say N.
+-
+ config VFIO_PLATFORM_AMDXGBE_RESET
+ 	tristate "VFIO support for AMD XGBE reset"
+ 	depends on VFIO_PLATFORM
+diff --git a/drivers/vfio/platform/reset/Makefile b/drivers/vfio/platform/reset/Makefile
+index 7294c5ea122e..be7960ce5dbc 100644
+--- a/drivers/vfio/platform/reset/Makefile
++++ b/drivers/vfio/platform/reset/Makefile
+@@ -1,7 +1,5 @@
+ # SPDX-License-Identifier: GPL-2.0
+-vfio-platform-calxedaxgmac-y := vfio_platform_calxedaxgmac.o
+ vfio-platform-amdxgbe-y := vfio_platform_amdxgbe.o
 
-base-commit: 11a48a5a18c63fd7621bb050228cebf13566e4d8
+-obj-$(CONFIG_VFIO_PLATFORM_CALXEDAXGMAC_RESET) += vfio-platform-calxedaxgmac.o
+ obj-$(CONFIG_VFIO_PLATFORM_AMDXGBE_RESET) += vfio-platform-amdxgbe.o
+ obj-$(CONFIG_VFIO_PLATFORM_BCMFLEXRM_RESET) += vfio_platform_bcmflexrm.o
+diff --git a/drivers/vfio/platform/reset/vfio_platform_calxedaxgmac.c b/drivers/vfio/platform/reset/vfio_platform_calxedaxgmac.c
+deleted file mode 100644
+index 09a9453b75c5..000000000000
+--- a/drivers/vfio/platform/reset/vfio_platform_calxedaxgmac.c
++++ /dev/null
+@@ -1,74 +0,0 @@
+-// SPDX-License-Identifier: GPL-2.0-only
+-/*
+- * VFIO platform driver specialized for Calxeda xgmac reset
+- * reset code is inherited from calxeda xgmac native driver
+- *
+- * Copyright 2010-2011 Calxeda, Inc.
+- * Copyright (c) 2015 Linaro Ltd.
+- *              www.linaro.org
+- */
+-
+-#include <linux/module.h>
+-#include <linux/kernel.h>
+-#include <linux/init.h>
+-#include <linux/io.h>
+-
+-#include "../vfio_platform_private.h"
+-
+-#define DRIVER_VERSION  "0.1"
+-#define DRIVER_AUTHOR   "Eric Auger <eric.auger@linaro.org>"
+-#define DRIVER_DESC     "Reset support for Calxeda xgmac vfio platform device"
+-
+-/* XGMAC Register definitions */
+-#define XGMAC_CONTROL           0x00000000      /* MAC Configuration */
+-
+-/* DMA Control and Status Registers */
+-#define XGMAC_DMA_CONTROL       0x00000f18      /* Ctrl (Operational Mode) */
+-#define XGMAC_DMA_INTR_ENA      0x00000f1c      /* Interrupt Enable */
+-
+-/* DMA Control registe defines */
+-#define DMA_CONTROL_ST          0x00002000      /* Start/Stop Transmission */
+-#define DMA_CONTROL_SR          0x00000002      /* Start/Stop Receive */
+-
+-/* Common MAC defines */
+-#define MAC_ENABLE_TX           0x00000008      /* Transmitter Enable */
+-#define MAC_ENABLE_RX           0x00000004      /* Receiver Enable */
+-
+-static inline void xgmac_mac_disable(void __iomem *ioaddr)
+-{
+-	u32 value = readl(ioaddr + XGMAC_DMA_CONTROL);
+-
+-	value &= ~(DMA_CONTROL_ST | DMA_CONTROL_SR);
+-	writel(value, ioaddr + XGMAC_DMA_CONTROL);
+-
+-	value = readl(ioaddr + XGMAC_CONTROL);
+-	value &= ~(MAC_ENABLE_TX | MAC_ENABLE_RX);
+-	writel(value, ioaddr + XGMAC_CONTROL);
+-}
+-
+-static int vfio_platform_calxedaxgmac_reset(struct vfio_platform_device *vdev)
+-{
+-	struct vfio_platform_region *reg = &vdev->regions[0];
+-
+-	if (!reg->ioaddr) {
+-		reg->ioaddr =
+-			ioremap(reg->addr, reg->size);
+-		if (!reg->ioaddr)
+-			return -ENOMEM;
+-	}
+-
+-	/* disable IRQ */
+-	writel(0, reg->ioaddr + XGMAC_DMA_INTR_ENA);
+-
+-	/* Disable the MAC core */
+-	xgmac_mac_disable(reg->ioaddr);
+-
+-	return 0;
+-}
+-
+-module_vfio_reset_handler("calxeda,hb-xgmac", vfio_platform_calxedaxgmac_reset);
+-
+-MODULE_VERSION(DRIVER_VERSION);
+-MODULE_LICENSE("GPL v2");
+-MODULE_AUTHOR(DRIVER_AUTHOR);
+-MODULE_DESCRIPTION(DRIVER_DESC);
 --
 2.20.1
 
