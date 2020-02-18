@@ -2,59 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10C02162E13
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 19:15:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B32F1162E4D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 19:20:28 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1GIQRh4jTe5HTzOpjLmV6WEHDBQhzMcbGtDY+zYVQIE=; b=tp8lENT9Qw+Vfb
-	v1MaiUP+5XKr+KIVABymHCdybQHv0EpIBIrZhjrfuFqN9aUye0oWUhRJx0xd6EUOat0u8p4N6DnDB
-	vivgh8r5L264aBpzPFh3ZK2fG6rHfxxLwabKACLcac9fJn1XhnYZf74YP4KbFsSv+hyC2KoQb4i1J
-	SLl0H/gh4hiiK1AQEu2OAyL+CYqb8s6FPlW1PHrqQTufzvlqqEcWCvKODVbF3hRCYGLCUhW27I0mr
-	Z0Dxz44TrAyvLjaNctJ39JjInhKlKJhzlMHKK7D7u729rjhPle1i7N2ILMRixp1dgKlESljJzbmsC
-	lMF6uOG+0kgec8KvSkrA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cFXzFLhLZzTROyRpCV2FxhnwDxqU76Mv6CGhvTwxfMY=; b=MNh90cdzDI2RG0
+	3aWBik4WImSGfcSUQOun3/eHdXamLv91HIEDLqTG+r3CV7tLfuSqoRr2QXI3+2/qMrnwh6QfGnP+a
+	7krc5cHZlTOwBucfhuljQn7UjL4baaoYLrH79T4stBAexfw9MbgYg0JDnfC2U4BzDVajyKkS6vRw5
+	5th9T959S0AlbJaXYFU+ZaulKHaMe5w+w6xbYU6VxtBWd+2Q/mH5JKodQaF6XFGh3oUYl9KSylbzZ
+	Qn94BHoAypKotSrcMM4YKQrMgsZihz9k+kh9IrDzV3HLh/UOnJMQdGqoZxXRjMTO+MA5za6h0Kro2
+	yEFNkGoI9K4zUVB+6lgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j47P5-0001FK-Kc; Tue, 18 Feb 2020 18:15:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j47Ou-0001EL-S3
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 18:15:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D8CE831B;
- Tue, 18 Feb 2020 10:15:15 -0800 (PST)
-Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9C3603F68F;
- Tue, 18 Feb 2020 10:15:14 -0800 (PST)
-Subject: Re: [PATCH 1/5] KVM: arm64: Fix missing RES1 in emulation of DBGBIDR
-To: Robin Murphy <robin.murphy@arm.com>, Marc Zyngier <maz@kernel.org>
-References: <20200216185324.32596-1-maz@kernel.org>
- <20200216185324.32596-2-maz@kernel.org>
- <c1bd5c57-666e-0d54-1e7c-e45d0535ffe3@arm.com>
- <a02252f6-1e9a-2a35-9944-f23e161583ab@arm.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <bf599b74-6ead-8722-d4d4-870a0cabc213@arm.com>
-Date: Tue, 18 Feb 2020 18:15:13 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1j47Tp-00028g-HP; Tue, 18 Feb 2020 18:20:21 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j47Te-00027c-Lk
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 18:20:12 +0000
+Received: by mail-lj1-x244.google.com with SMTP id e18so24037276ljn.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Feb 2020 10:20:07 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=mFpfQMXDcTILM8p6YZkURH/PZ0c/a3Gt7zfwkgA7PZs=;
+ b=FyQYrjqyqb21kEEx3w3LXCyRBFAjASj6lCrAa3Ha+O7l5IiRL4jnoXo9NxDLjeI1Qs
+ /rixHYxVJqzcG6EaiGZlVDUT3PnahWrZo4/UNYcvlHOYuYVRSJW83E+s1TnxiZaKjhHn
+ GJkStXXOTWn58ayGW+UHNKwFf0spIqZ3hneJwUUV+KH1x2PvQtdiiZthkgyFko00OOLg
+ sKXcC3L9KNviP+tq9VthA5TzyV843P2Ns+W+aCXfgeuXIzMChZgeJxp6+piIEJ0usF7L
+ HcjePpSCEeRIyJ9IIC0lM2HUSsoqhVt4yrm1wUN17ZZLt5lPLG9REEOxNyuTE4HvXfpN
+ yIoQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=mFpfQMXDcTILM8p6YZkURH/PZ0c/a3Gt7zfwkgA7PZs=;
+ b=NMMDY0VbIwxwFcevmUDpmFiIEMLj5jqGdOr1YkarP+et8rUOCnPg+T/V07rEzDqsmR
+ 5FhB2p5QXX+tM1I9+iUCmfX5QocHjKysW4IVdZxCxYEg5aqqcaoAFuHQXNwW7Uusl13o
+ yyv/0i2PYx03ofYqfM3o+9ECA5oPzsVZ8CaJHZTSooMKUQhNJvuP67pN5DM2nQ9KKeky
+ qx6ZT9QK6qr1XfkRe1glGmigCeJpH/ASsRGPgx1AUVO0gUrV1uQ7JfnsfvCCTZDv7rAO
+ P8ZHmQAVFv8e/nBn1zHfY197M14C7kphsh17N5Nif6+jYBzPVyA+AzX6yKji0r6TtAIl
+ jNUw==
+X-Gm-Message-State: APjAAAVKfe8d3nIeKGy8MFjKfVOSyrntAalNwcuaRruqOnHx1yokWeUK
+ U4BprLJNwp3JqZ/GECXDeHv5iq9wLhOpFc44zRmWVw==
+X-Google-Smtp-Source: APXvYqwqURRrVtjZm03lW6XQA7ZhZaAg148HuuceB26Lz99GzgTJCZLN/lZNTR1RHx1cjra7vjc/E+IlK3Q/BY845lE=
+X-Received: by 2002:a17:906:a44d:: with SMTP id
+ cb13mr21055283ejb.258.1582050004828; 
+ Tue, 18 Feb 2020 10:20:04 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <a02252f6-1e9a-2a35-9944-f23e161583ab@arm.com>
-Content-Language: en-GB
+References: <1580250823-30739-1-git-send-email-jcrouse@codeaurora.org>
+In-Reply-To: <1580250823-30739-1-git-send-email-jcrouse@codeaurora.org>
+From: Rob Clark <robdclark@gmail.com>
+Date: Tue, 18 Feb 2020 10:19:53 -0800
+Message-ID: <CAF6AEGvQyaZL8iSKkzTZ-X4nqXWcyO6RBf-pUfOZFg0w52BGUA@mail.gmail.com>
+Subject: Re: [RFC PATCH v1] iommu/arm-smmu: Allow domains to choose a context
+ bank
+To: Jordan Crouse <jcrouse@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_101516_960014_E6179A6F 
-X-CRM114-Status: GOOD (  11.40  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200218_102010_716517_0B1922CB 
+X-CRM114-Status: GOOD (  27.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robdclark[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,44 +94,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Robin Murphy <robin.murphy@arm.com>, Joerg Roedel <joro@8bytes.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, Will Deacon <will@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUm9iaW4sCgpPbiAxOC8wMi8yMDIwIDE4OjAxLCBSb2JpbiBNdXJwaHkgd3JvdGU6Cj4gT24g
-MTgvMDIvMjAyMCA1OjQzIHBtLCBKYW1lcyBNb3JzZSB3cm90ZToKPj4gT24gMTYvMDIvMjAyMCAx
-ODo1MywgTWFyYyBaeW5naWVyIHdyb3RlOgo+Pj4gVGhlIEFBcmNoMzIgQ1AxNCBEQkdESURSIGhh
-cyBiaXQgMTUgc2V0IHRvIFJFUzEsIHdoaWNoIG91ciBjdXJyZW50Cj4+PiBlbXVsYXRpb24gZG9l
-c24ndCBzZXQuIEp1c3QgYWRkIHRoZSBtaXNzaW5nIGJpdC4KCj4+PiBkaWZmIC0tZ2l0IGEvYXJj
-aC9hcm02NC9rdm0vc3lzX3JlZ3MuYyBiL2FyY2gvYXJtNjQva3ZtL3N5c19yZWdzLmMKPj4+IGlu
-ZGV4IDNlOTA5YjExN2YwYy4uZGE4MmM0YjAzYWFiIDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9hcm02
-NC9rdm0vc3lzX3JlZ3MuYwo+Pj4gKysrIGIvYXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYwo+Pj4g
-QEAgLTE2NTgsNyArMTY1OCw3IEBAIHN0YXRpYyBib29sIHRyYXBfZGJnaWRyKHN0cnVjdCBrdm1f
-dmNwdSAqdmNwdSwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoCBwLT5yZWd2YWwgPSAoKCgoZGZyID4+
-IElEX0FBNjRERlIwX1dSUFNfU0hJRlQpICYgMHhmKSA8PCAyOCkgfAo+Pj4gwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICgoKGRmciA+PiBJRF9BQTY0REZSMF9CUlBTX1NISUZU
-KSAmIDB4ZikgPDwgMjQpIHwKPj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oCAoKChkZnIgPj4gSURfQUE2NERGUjBfQ1RYX0NNUFNfU0hJRlQpICYgMHhmKSA8PCAyMCkKPj4+
-IC3CoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCB8ICg2IDw8IDE2KSB8IChlbDMgPDwg
-MTQpIHwgKGVsMyA8PCAxMikpOwo+Pj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-IHwgKDYgPDwgMTYpIHwgKDEgPDwgMTUpIHwgKGVsMyA8PCAxNCkgfCAoZWwzIDw8IDEyKSk7Cj4+
-Cj4+IEhtbW0sIHdoZXJlIGVsMyBpczoKPj4gfCB1MzIgZWwzID0gISFjcHVpZF9mZWF0dXJlX2V4
-dHJhY3RfdW5zaWduZWRfZmllbGQocGZyLCBJRF9BQTY0UEZSMF9FTDNfU0hJRlQpOwo+Pgo+PiBB
-cmVuJ3Qgd2UgZGVwZW5kaW5nIG9uIHRoZSBjb21waWxlcnMgJ3RydWUnIGJlaW5nIDEgaGVyZT8K
-PiAKPiBQcmV0dHkgbXVjaCwgYnV0IHRoYW5rZnVsbHkgdGhlIG9ubHkgY29tcGlsZXJzIHdlIHN1
-cHBvcnQgYXJlIEMgY29tcGlsZXJzOgo+IAo+ICJUaGUgcmVzdWx0IG9mIHRoZSBsb2dpY2FsIG5l
-Z2F0aW9uIG9wZXJhdG9yICEgaXMgMCBpZiB0aGUgdmFsdWUgb2YgaXRzIG9wZXJhbmQgY29tcGFy
-ZXMKPiB1bmVxdWFsIHRvIDAsIDEgaWYgdGhlIHZhbHVlIG9mIGl0cyBvcGVyYW5kIGNvbXBhcmVz
-IGVxdWFsIHRvIDAuIFRoZSByZXN1bHQgaGFzIHR5cGUgaW50LiIKCkV4Y2VsbGVudC4gSSB0aG91
-Z2h0IHRoaXMgd2FzIHRoZSBzb3J0IG9mIHRoaW5nIHRoYXQgY291bGRuJ3QgYmUgZGVwZW5kZWQg
-b24hCgoKPiBBbmQgbm93IEkgaGF2ZSB5b3UgdG8gdGhhbmsgZm9yIGZsYXNoYmFja3MgdG8gYml0
-d2lzZSBsb2dpY2FsIG9wZXJhdG9ycyBpbiBWaXN1YWwgQmFzaWMuLi4gOlAKCi4uLiBzb3JyeT8K
-CgoKVGhhbmtzLAoKSmFtZXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Jan 28, 2020 at 2:34 PM Jordan Crouse <jcrouse@codeaurora.org> wrote:
+>
+> Domains which are being set up for split pagetables usually want to be
+> on a specific context bank for hardware reasons. Force the context
+> bank for domains with the split-pagetable quirk to context bank 0.
+> If context bank 0 is taken, move that context bank to another unused
+> bank and rewrite the stream matching registers accordingly.
+
+Is the only reason for dealing with the case that bank 0 is already in
+use, due to the DMA domain that gets setup before driver probes?
+
+I'm kinda thinking that we need to invent a way to unwind/detatch the
+DMA domain, and unhook the iommu-dmaops, since this seems to already
+be already causing problems with dma-bufs imported from other drivers
+(who expect that dma_map_*(), with the importing device's dev ptr,
+will do something sane.
+
+BR,
+-R
+
+>
+> This is be used by [1] and [2] to leave context bank 0 open so that
+> the Adreno GPU can program it.
+>
+> [1] https://lists.linuxfoundation.org/pipermail/iommu/2020-January/041438.html
+> [2] https://lists.linuxfoundation.org/pipermail/iommu/2020-January/041444.html
+>
+> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+> ---
+>
+>  drivers/iommu/arm-smmu.c | 63 +++++++++++++++++++++++++++++++++++++++++++++---
+>  1 file changed, 59 insertions(+), 4 deletions(-)
+>
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index 85a6773..799a254 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -254,6 +254,43 @@ static int __arm_smmu_alloc_bitmap(unsigned long *map, int start, int end)
+>         return idx;
+>  }
+>
+> +static void arm_smmu_write_s2cr(struct arm_smmu_device *smmu, int idx);
+> +
+> +static int __arm_smmu_alloc_cb(struct arm_smmu_device *smmu, int start,
+> +               int target)
+> +{
+> +       int new, i;
+> +
+> +       /* Allocate a new context bank id */
+> +       new = __arm_smmu_alloc_bitmap(smmu->context_map, start,
+> +               smmu->num_context_banks);
+> +
+> +       if (new < 0)
+> +               return new;
+> +
+> +       /* If no target is set or we actually got the bank index we wanted */
+> +       if (target == -1 || new == target)
+> +               return new;
+> +
+> +       /* Copy the context configuration to the new index */
+> +       memcpy(&smmu->cbs[new], &smmu->cbs[target], sizeof(*smmu->cbs));
+> +       smmu->cbs[new].cfg->cbndx = new;
+> +
+> +       /* FIXME: Do we need locking here? */
+> +       for (i = 0; i < smmu->num_mapping_groups; i++) {
+> +               if (smmu->s2crs[i].cbndx == target) {
+> +                       smmu->s2crs[i].cbndx = new;
+> +                       arm_smmu_write_s2cr(smmu, i);
+> +               }
+> +       }
+> +
+> +       /*
+> +        * FIXME: Does getting here imply that 'target' is already set in the
+> +        * context_map?
+> +        */
+> +       return target;
+> +}
+> +
+>  static void __arm_smmu_free_bitmap(unsigned long *map, int idx)
+>  {
+>         clear_bit(idx, map);
+> @@ -770,6 +807,7 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>         struct arm_smmu_domain *smmu_domain = to_smmu_domain(domain);
+>         struct arm_smmu_cfg *cfg = &smmu_domain->cfg;
+>         unsigned long quirks = 0;
+> +       int forcecb = -1;
+>
+>         mutex_lock(&smmu_domain->init_mutex);
+>         if (smmu_domain->smmu)
+> @@ -844,8 +882,25 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>                          * SEP_UPSTREAM so we don't need to reduce the size of
+>                          * the ias to account for the sign extension bit
+>                          */
+> -                       if (smmu_domain->split_pagetables)
+> -                               quirks |= IO_PGTABLE_QUIRK_ARM_TTBR1;
+> +                       if (smmu_domain->split_pagetables) {
+> +                               /*
+> +                                * If split pagetables are enabled, assume that
+> +                                * the user's intent is to use per-instance
+> +                                * pagetables which, at least on a QCOM target,
+> +                                * means that this domain should be on context
+> +                                * bank 0.
+> +                                */
+> +
+> +                               /*
+> +                                * If we can't force to context bank 0 then
+> +                                * don't bother enabling split pagetables which
+> +                                * then would not allow aux domains
+> +                                */
+> +                               if (start == 0) {
+> +                                       forcecb = 0;
+> +                                       quirks |= IO_PGTABLE_QUIRK_ARM_TTBR1;
+> +                               }
+> +                       }
+>                 } else if (cfg->fmt == ARM_SMMU_CTX_FMT_AARCH32_L) {
+>                         fmt = ARM_32_LPAE_S1;
+>                         ias = min(ias, 32UL);
+> @@ -883,8 +938,8 @@ static int arm_smmu_init_domain_context(struct iommu_domain *domain,
+>                 ret = -EINVAL;
+>                 goto out_unlock;
+>         }
+> -       ret = __arm_smmu_alloc_bitmap(smmu->context_map, start,
+> -                                     smmu->num_context_banks);
+> +
+> +       ret = __arm_smmu_alloc_cb(smmu, start, forcecb);
+>         if (ret < 0)
+>                 goto out_unlock;
+>
+> --
+> 2.7.4
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
