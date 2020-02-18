@@ -2,60 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F4F61637CB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 00:57:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12A641637CE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 00:57:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+DSjMQn8abfyrA9k/6N+5OYvTwE2KvPb3XdsGu0dCQg=; b=ayqxcAa7SIPKD/
-	fFRcZF0YQKs8V7BccxIvGXosAGbdbUFm0cF+PEYoC5ruQCcLHlm775Y1oSCo2ZiTXB4RKuN4o84Pv
-	5jt0h0tG0M2/Jy1709uSktwPsNDszYZLuKlzd/Hgxs2gF3Gf1JLqr+UMeblUphCB0BX/BynCp9fjy
-	mzrZDtXLOYWQNhqw2F26FmHmebINwxaEsHWftJaP9rX2Y5rr3slbcRDaIt3InNe8mU3hjv2GDxFnK
-	6zPWA3lcmZkXPsAAIEuEjGM2cNoLZIoZ92Fru6nnuzooY6q0t9/JU1S6orwR7vgWeV+iRfhmQNBcQ
-	pIL7AwXsoXe2qYSZhROA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=dfFtsGCvuox9plNUr72MrsMpnOnTGvMwtMiDBMyyES4=; b=Xze
+	gE36LSp5KLYsUsY/JkrefaLACZzaUfTyEYULJhjKwvfmodQkKn97Bc7PQVYD1BCh9G9P74FIX1WVJ
+	Z14gqO2aQ8D4tz1CHCHcEKvAcJ2dKr59Gk2ygHJqHH/5+3YtNy7Pks+s4SnlgtOSkiIitqW1D+NSh
+	a8VyN7UWaQsu84vaw6kw/widozIhNYHmE5mk13Qu4FYMvGPePgBgQgbhWut//cljdijQFEo69ZRf/
+	HIvsB8jJvDJsmTEQaIA50N1o6pPOy2hCGIJRKt010I/F1w99sOaLhuj2VgwJjpEK4rcftrGU0SaBs
+	5mapmOllWvWaBeEYMtDRDx8uRXU2hQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Cjj-00032Y-3j; Tue, 18 Feb 2020 23:57:07 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1j4CkQ-0003ed-4T; Tue, 18 Feb 2020 23:57:50 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ChW-0008IE-Hs
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 23:54:52 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 18 Feb 2020 15:54:39 -0800
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,458,1574150400"; d="scan'208";a="224313180"
-Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
- by orsmga007.jf.intel.com with ESMTP; 18 Feb 2020 15:54:39 -0800
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 9/9] KVM: SVM: Annotate svm_x86_ops as __initdata
-Date: Tue, 18 Feb 2020 15:54:37 -0800
-Message-Id: <20200218235437.20533-10-sean.j.christopherson@intel.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200218235437.20533-1-sean.j.christopherson@intel.com>
-References: <20200218235437.20533-1-sean.j.christopherson@intel.com>
-MIME-Version: 1.0
+ id 1j4Cin-0002H1-F1
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 23:56:10 +0000
+Received: by mail-pf1-x444.google.com with SMTP id s1so11493091pfh.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Feb 2020 15:56:09 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=RaNnl3+uu7fV0u4Un9uuTw80YtZZSfmJ9Z7lllWiZwI=;
+ b=q3+9YPzso4OBjcsYS2BGJQuc8RXnF5FAOBKDmsn4C+kUWEPNeBpu34WaqyCW892Rx9
+ +ikfWY67U+3ZmXajhzgMqKeEuzNDfjI8hlYDQf+9PP/l7gSfgcQWQOdNP3T1TsPtP8+A
+ Zti+38TKv0ZapaDQnVOb/EtYxZh8XbF58UqIb3qEDYAeQzer+jWuPd8ngsgNoBxbltmv
+ 5JMOSDtI+7J9nvpLyQcWwd28aWQWysec9iFlnQ/LHc9YML1AVMtDSdO08srWz0rdBQZG
+ 3YjIBU7P2osVOZBfqQ4Q6/v/xcALtHxkLUy2CDGlY/ADQIctpN6FXmaMhuX98ogMctJK
+ 5I+Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=RaNnl3+uu7fV0u4Un9uuTw80YtZZSfmJ9Z7lllWiZwI=;
+ b=S7y13IyV0fPfBjM+k+RypeSnP10XlNtmXuUqAMbhr+kKbkDm+uszkmVq6l7s6RTf7H
+ UTlX7RfLci3oQA58X2EjkNGSq3EmSTefUrw43ZL557NChN0Ul52o9/4O2/ItFXHuKmdJ
+ Wq6q0HNB3n72aIstNAq8kPEkD3gwvIHlG8usOUJeu42Teiz4LsHVCmRjqXqE6D/d4tH5
+ lQVW+xv8KXc94FoefCN5zmcIIofaxI5vTkIAxosHQjKPKiF+fUUQbvfZKIgRjmuBT0x+
+ XPfsh4OGrthuTG7Yjpuf2fzRDDTh/gBDAviQTjx7+io583x8P4qElhmBDNnqcSyKSJrU
+ FsGg==
+X-Gm-Message-State: APjAAAURQKzT1+O3ik1agV/wSqkHaSy/iGBwfwapf7fQk6tV2JXa1Rzt
+ pOhlPSxeSx0EwV0w8NGZvh4=
+X-Google-Smtp-Source: APXvYqwZmgIEHqOxLQ1cyJyx3ogGpJoEg6ROKfneriZnTEoj6j1aqMsH+aDmEeM9a0OC3ahr/2pl2w==
+X-Received: by 2002:a63:5807:: with SMTP id m7mr23349426pgb.83.1582070168618; 
+ Tue, 18 Feb 2020 15:56:08 -0800 (PST)
+Received: from taoren-ubuntu-R90MNF91.thefacebook.com
+ ([2620:10d:c090:500::5:1718])
+ by smtp.gmail.com with ESMTPSA id d3sm80558pjx.10.2020.02.18.15.56.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 18 Feb 2020 15:56:08 -0800 (PST)
+From: rentao.bupt@gmail.com
+To: Felipe Balbi <balbi@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Colin Ian King <colin.king@canonical.com>,
+ Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ openbmc@lists.ozlabs.org, taoren@fb.com
+Subject: [PATCH 0/2] usb: gadget: aspeed: allow to customize vhub device
+Date: Tue, 18 Feb 2020 15:55:58 -0800
+Message-Id: <20200218235600.6763-1-rentao.bupt@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_155450_679648_476FEF2A 
-X-CRM114-Status: GOOD (  11.98  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200218_155609_558014_A1B5B12B 
+X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rentao.bupt[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,47 +105,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Wanpeng Li <wanpengli@tencent.com>,
- Janosch Frank <frankja@linux.ibm.com>, kvm@vger.kernel.org,
- David Hildenbrand <david@redhat.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Cornelia Huck <cohuck@redhat.com>,
- linux-mips@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- linux-kernel@vger.kernel.org, Paul Mackerras <paulus@ozlabs.org>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- James Morse <james.morse@arm.com>, kvm-ppc@vger.kernel.org,
- Vitaly Kuznetsov <vkuznets@redhat.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Jim Mattson <jmattson@google.com>
+Cc: Tao Ren <rentao.bupt@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tag svm_x86_ops with __initdata now the the struct is copied by value to
-a common x86 instance of kvm_x86_ops as part of kvm_init().
+From: Tao Ren <rentao.bupt@gmail.com>
 
-Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
----
- arch/x86/kvm/svm.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+This patch series allows people to customize IDs/strings in vhub's
+device descriptor through device tree properties.
 
-diff --git a/arch/x86/kvm/svm.c b/arch/x86/kvm/svm.c
-index 59af4f5386de..69d63e6dce0e 100644
---- a/arch/x86/kvm/svm.c
-+++ b/arch/x86/kvm/svm.c
-@@ -7374,7 +7374,7 @@ static void svm_pre_update_apicv_exec_ctrl(struct kvm *kvm, bool activate)
- 	avic_update_access_page(kvm, activate);
- }
- 
--static struct kvm_x86_ops svm_x86_ops __ro_after_init = {
-+static struct kvm_x86_ops svm_x86_ops __initdata = {
- 	.hardware_unsetup = svm_hardware_unsetup,
- 	.hardware_enable = svm_hardware_enable,
- 	.hardware_disable = svm_hardware_disable,
+Patch #1 overrides IDs and strings in device descriptor if according
+device tree properties are defined.
+
+Patch #2 moves fixup-usb1-device-descriptor logic from get_descriptor
+handler to "ast_vhub_fixup_dev_desc" function for consistency.
+
+The patch series needs to be applied on top of "aspeed-g6: enable usb
+support" patch set to avoid merge conflicts.
+
+Tao Ren (2):
+  usb: gadget: aspeed: allow to customize vhub device IDs/strings
+  usb: gadget: aspeed: fixup usb1 device descriptor at init time
+
+ drivers/usb/gadget/udc/aspeed-vhub/hub.c | 93 +++++++++++++++++-------
+ 1 file changed, 68 insertions(+), 25 deletions(-)
+
 -- 
-2.24.1
+2.17.1
 
 
 _______________________________________________
