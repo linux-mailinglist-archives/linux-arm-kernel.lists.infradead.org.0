@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A86A162FD7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:26:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F047162FDB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:27:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ohlewgkhXFQPf9Vl0vO+2ctvaJ4BygzBglctJyOvkok=; b=bEOPz6rfmZ8GNz
-	yFJ4G0HuYUi91L8Y5NqdycfEZ/v0975Rj0xVYA5nxy/0jEJzrLq1DuED/Yzf0f5Q0rXW9CQll90gp
-	LIG6PLbwtF1f2FYRWpa/p2dVXfFd3VViux4xWP3MVKk5ZPKs+DZmI23/XemtMsbENQ1dr9dN48Zvd
-	TMoyK8cDtTJFJU+yPKr46Xoxp+qevTomo1wkp5HLuLlDPqaEx0POK9tkRTuB2wdmJIkPsq+AOgib4
-	TkgVAer9jmZG2/3pX9eiHVPLmQF7e9EW03mY1bU8ll1Wg2S+xAa72XRuC95MPjBdrL2+rOV7cIHkR
-	jSlJQAABxSytNlpLy2ag==;
+	List-Owner; bh=prj0rZKGJVj/75QBfgY7Gie6jPv5H5HfFnUAvh6M1x8=; b=FSqhdIPm2BkHMS
+	eChXQd3VlZBoxNHkdZWhL9Woh9wasI0/BiN8eSP7QGnrh+474e4j6fD3XVW7bLiqGQaJqxGNlhkff
+	1dy/81l6c60IOO/XauXA7ToWVODp8CzGr0LXciBbhYC0b/3JXwJZqZfxs07K4DH5nzy8mC1L67C/a
+	untUZlMibPs7TOd+kd1fLmYh4573VqXQ3OGW1kvXRDAe4MzGhQTTKbeUejxdK7oV0HUKHynjJTjcR
+	GKdrAK/0JOaRPZbRCf1Iy7DRO+Lk+MCUYxohaFWGttC61utQ96idu34DDtntVmM5C3rUtOqULnbPJ
+	buIo28g6bsoSVKHxfZXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j48Vu-00041c-7m; Tue, 18 Feb 2020 19:26:34 +0000
+	id 1j48WG-0004Jj-UW; Tue, 18 Feb 2020 19:26:56 +0000
 Received: from namei.org ([65.99.196.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j48Vj-00041E-JX
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:26:24 +0000
+ id 1j48W8-0004JF-8a
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:26:49 +0000
 Received: from localhost (localhost [127.0.0.1])
- by namei.org (8.14.4/8.14.4) with ESMTP id 01IJP3Ub013606;
- Tue, 18 Feb 2020 19:25:03 GMT
-Date: Wed, 19 Feb 2020 06:25:03 +1100 (AEDT)
+ by namei.org (8.14.4/8.14.4) with ESMTP id 01IJPSnR013669;
+ Tue, 18 Feb 2020 19:25:28 GMT
+Date: Wed, 19 Feb 2020 06:25:28 +1100 (AEDT)
 From: James Morris <jmorris@namei.org>
 To: Alexey Budankov <alexey.budankov@linux.intel.com>
-Subject: Re: [PATCH v7 05/12] drm/i915/perf: open access for CAP_PERFMON
+Subject: Re: [PATCH v7 06/12] trace/bpf_trace: open access for CAP_PERFMON
  privileged process
-In-Reply-To: <8b408c10-9bb0-4b08-8681-93c0f4a1132e@linux.intel.com>
-Message-ID: <alpine.LRH.2.21.2002190624510.10165@namei.org>
+In-Reply-To: <fc689865-f8ff-1e85-ac0c-b2f1c28b7eb6@linux.intel.com>
+Message-ID: <alpine.LRH.2.21.2002190625150.10165@namei.org>
 References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
- <8b408c10-9bb0-4b08-8681-93c0f4a1132e@linux.intel.com>
+ <fc689865-f8ff-1e85-ac0c-b2f1c28b7eb6@linux.intel.com>
 User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_112623_717954_EBCF1CDD 
-X-CRM114-Status: UNSURE (   9.14  )
+X-CRM114-CacheID: sfid-20200218_112648_375809_76379E72 
+X-CRM114-Status: UNSURE (   9.06  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -87,7 +87,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Mon, 17 Feb 2020, Alexey Budankov wrote:
 
 > 
-> Open access to i915_perf monitoring for CAP_PERFMON privileged process.
+> Open access to bpf_trace monitoring for CAP_PERFMON privileged process.
 > Providing the access under CAP_PERFMON capability singly, without the
 > rest of CAP_SYS_ADMIN credentials, excludes chances to misuse the
 > credentials and makes operation more secure.
@@ -99,9 +99,9 @@ On Mon, 17 Feb 2020, Alexey Budankov wrote:
 > capabilities) necessary to accomplish its legitimate function, and only
 > for the time that such privileges are actually required)
 > 
-> For backward compatibility reasons access to i915_events subsystem
+> For backward compatibility reasons access to bpf_trace monitoring
 > remains open for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN
-> usage for secure i915_events monitoring is discouraged with respect to
+> usage for secure bpf_trace monitoring is discouraged with respect to
 > CAP_PERFMON capability.
 > 
 > Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
