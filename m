@@ -2,59 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97BC4162CF7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:32:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DEA8162D04
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:34:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0SG3J14xH0LPnbULdtb3S1gHJm0yzy+cACREVcX8wKo=; b=AyM00cxktHEuSzDtygn971iVo
-	DJtxiqv73ZwXA/ThjzIrxndkSU3QN+S3Fdj4SW2O8lNQ8fGVgW5zGTSqD/qur2Q4YiarO8NJdeo6V
-	Rg5+O8JPoQpmehf5G/KDItUMu0OsgIJ5TJNADEaLMxPpCgEEwyrny7xElc1yS+7tIj4zQADo4QzhF
-	LSbdOWYTmCgzogorU2RDWfenP6eIr/FU5K8fwzgo7pf53j9jP2YESNdudVDi6jyUAp7vhQQ0JsDsS
-	ddpkn5+B+ZYA/vzCD5Z69CA1U5eCPhAUaaD+SogI/w0Et+URpAqRKW46NOgxArbFWr3wOpWgQK/TJ
-	G4BgS4tPg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nywuRiYI1p21WI7Wrl8cwfO0jSP9v7driixZX3WVzF4=; b=iPoHrPRqVRhjAK
+	b9zzbJWshSZbFaN5Uh/HslQuBm0gRy/sbKCDCsWIFJMa4N2P/pCu563B82pfez5cWWF/fMSGxK64s
+	j9LV4glwOBsn8aaWzuO76gpWNihODg8iA2g4RSqP9ntVAAOu9GbeUZ7Lrb8DC1xloTNnTW60ihBU0
+	bwXFC9DONAni4ndH4d4jlvX1zKjr916WfEeRoh9IdOTOrBC+VlX65RU7/maz4PXCyEyaMn2W3a46v
+	j/JQ6laTdTMr+NS7/Ju8y209CK7attdlC4S28Y3UMHMm328P9g3wVyHgAf1J1iRBpMpDeSMgSt4zI
+	WUZCohXK8GdZEnO7FoxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j46jg-0005lh-Ap; Tue, 18 Feb 2020 17:32:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j46jX-0005ji-GO
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:32:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0F5C131B;
- Tue, 18 Feb 2020 09:32:29 -0800 (PST)
-Received: from [10.1.196.37] (e121345-lin.cambridge.arm.com [10.1.196.37])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 13CAC3F703;
- Tue, 18 Feb 2020 09:32:24 -0800 (PST)
-Subject: Re: [RFC PATCH 06/11] iommu: arm-smmu: Remove Calxeda secure mode
- quirk
-To: Will Deacon <will@kernel.org>, Rob Herring <robh@kernel.org>
+	id 1j46kt-00067Y-H4; Tue, 18 Feb 2020 17:33:55 +0000
+Received: from mail.skyhub.de ([5.9.137.197])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j46kk-00066D-AX
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:33:48 +0000
+Received: from zn.tnic (p200300EC2F0C1F0014C3F76BBACA8B76.dip0.t-ipconnect.de
+ [IPv6:2003:ec:2f0c:1f00:14c3:f76b:baca:8b76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 97C341EC0CE8;
+ Tue, 18 Feb 2020 18:33:39 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1582047219;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=RQeBvXI621OpNJABJKZKVWpEMPbJNSTe+fCxB2Fm/Vo=;
+ b=NVQltzJcnErUiTBnCebDnivFmAdUN1V2AohuWTMn272uhHsVO5AZK/O6ZHJRkwej6+Pjtj
+ lcIebZUtEpSiNP6fNloDnVP8/5nrBYHAr+mmwFcbARu9bY65pbsJKv6ZG0jSJDQJnQOq9J
+ qrcXwykORCUc99KOOqWRygFDieMasww=
+Date: Tue, 18 Feb 2020 18:33:40 +0100
+From: Borislav Petkov <bp@alien8.de>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [RFC PATCH 05/11] EDAC: Remove Calxeda drivers
+Message-ID: <20200218173339.GL14449@zn.tnic>
 References: <20200218171321.30990-1-robh@kernel.org>
- <20200218171321.30990-7-robh@kernel.org>
- <20200218172000.GF1133@willie-the-truck>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <38be84e3-d23f-1e91-4d3d-87fc11d7c089@arm.com>
-Date: Tue, 18 Feb 2020 17:32:23 +0000
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ <20200218171321.30990-6-robh@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200218172000.GF1133@willie-the-truck>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20200218171321.30990-6-robh@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_093231_593080_9C47F90A 
-X-CRM114-Status: GOOD (  16.63  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200218_093346_515523_A0A42929 
+X-CRM114-Status: GOOD (  11.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [5.9.137.197 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,10 +81,11 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Langsdorf <mlangsdo@redhat.com>, kvm@vger.kernel.org,
  Viresh Kumar <viresh.kumar@linaro.org>, linux-ide@vger.kernel.org,
- linux-clk@vger.kernel.org, soc@kernel.org, Joerg Roedel <joro@8bytes.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, devicetree@vger.kernel.org,
- Jon Loeliger <jdl@jdl.com>, linux-pm@vger.kernel.org,
- Andre Przywara <andre.przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
+ Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org, soc@kernel.org,
+ Joerg Roedel <joro@8bytes.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ devicetree@vger.kernel.org, Jon Loeliger <jdl@jdl.com>,
+ linux-pm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
+ Eric Auger <eric.auger@redhat.com>,
  Alex Williamson <alex.williamson@redhat.com>, Tony Luck <tony.luck@intel.com>,
  Alexander Graf <graf@amazon.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org,
@@ -80,46 +94,42 @@ Cc: Mark Langsdorf <mlangsdo@redhat.com>, kvm@vger.kernel.org,
  Cornelia Huck <cohuck@redhat.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
  Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
- Borislav Petkov <bp@alien8.de>, "David S. Miller" <davem@davemloft.net>
+ Robin Murphy <robin.murphy@arm.com>, "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18/02/2020 5:20 pm, Will Deacon wrote:
-> On Tue, Feb 18, 2020 at 11:13:16AM -0600, Rob Herring wrote:
->> Cc: Will Deacon <will@kernel.org>
->> Cc: Robin Murphy <robin.murphy@arm.com>
->> Cc: Joerg Roedel <joro@8bytes.org>
->> Cc: iommu@lists.linux-foundation.org
->> Signed-off-by: Rob Herring <robh@kernel.org>
->> ---
->> Do not apply yet.
+On Tue, Feb 18, 2020 at 11:13:15AM -0600, Rob Herring wrote:
+> Cc: Borislav Petkov <bp@alien8.de>
+> Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
+> Cc: Tony Luck <tony.luck@intel.com>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Robert Richter <rrichter@marvell.com>
+> Cc: linux-edac@vger.kernel.org
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+> Do not apply yet.
 > 
-> Pleeeeease? ;)
-> 
->>   drivers/iommu/arm-smmu-impl.c | 43 -----------------------------------
+>  MAINTAINERS                     |   6 -
+>  drivers/edac/Kconfig            |  14 --
+>  drivers/edac/Makefile           |   3 -
+>  drivers/edac/highbank_l2_edac.c | 142 -----------------
+>  drivers/edac/highbank_mc_edac.c | 272 --------------------------------
+>  5 files changed, 437 deletions(-)
+>  delete mode 100644 drivers/edac/highbank_l2_edac.c
+>  delete mode 100644 drivers/edac/highbank_mc_edac.c
 
-Presumably we also want to remove the definition of the option from 
-binding too.
+I'd obviously take patches like that any time of the week so lemme know
+when... :-)
 
->>   1 file changed, 43 deletions(-)
-> 
-> Yes, I'm happy to get rid of this. Sadly, I don't think we can remove
-> anything from 'struct arm_smmu_impl' because most implementations fall
-> just short of perfect.
+Thx.
 
-Right, this served as the prototype for register access hooks, but we 
-have at least one other known user for those.
+-- 
+Regards/Gruss,
+    Boris.
 
-> Anyway, let me know when I can push the button and I'll queue this in
-> the arm-smmu tree.
-
-FWIW the quirk has proven useful in other circumstances too, but I 
-imagine if we ever have to prototype an integration on VExpress-CA9 
-again, reverting this patch will hardly be the most unpleasant part :)
-
-Robin.
+https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 linux-arm-kernel mailing list
