@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12CE116303C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:35:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 433FC16303D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:35:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=meP2Fi6e7lUiPdL22Q8J5m10L9/zAN2887eFwurNPos=; b=nFnwbdP0A1fddX8m0Pku1kgkk8
-	Rppa+cclXQ+werS1n+f4zM97pGeHqBKGaITtC0p29cfYlAHUCx6XNH+LGnkDL7c2cfJUN85FgKPou
-	TsgHpApa53hNuD616+1m1hVmlMu9ksNZBuc5V2vD/jqMrayL/4lrIM/vi62zjhMKy+IbzJL1xfZzX
-	ulLbhB5IAT2TL+4IClCNpdp7KiBlrw1D2dEEnvwXs1y3vT7fr2YmiajF7aNc+mvxtCAWQlUspNWmX
-	OTu2be3s6ToSLeS9oq2trOFvF9Eqdp5M2T+Sl1e3xD+6U8G12zrx/mnWRN9hSx+s4OpnaFXX3FrHA
-	4bQLFOJw==;
+	bh=KlLgCDVzAZP6TEKa13oqqGlKM/qZw1DZxA2iHI9qK08=; b=SHNi3sSCQCTzxKTokM3q19QvYQ
+	osSjiefrcZqpLPjPwlZShcgBK6IYRh0QmDY8EpAVkqN/BX12FTJO247cPbeqbF9AU2j6gdgKppU2M
+	GDopzyYvM70qEV7ZYWvlr34wpN+Tf113Mrande36lz89mqHOf2tjK2PLdxOAGXtOIf/5IeEIJogBf
+	yyQ6P6/7O6ouO+sZ6M1A3XgZqXXSQM7ocv/KqreXm5N4isn1amjgwlXp7i9RsIZD+GsUCSPrOXZYX
+	zNIpwF9V4ufMuErm8R9onRaJXGVOPL9e+b/lTM11zkalleMsu5rVoIUxyMzZQh7WaHS5JS1JFDEhh
+	VHiAnqNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j48eN-0000sC-8i; Tue, 18 Feb 2020 19:35:19 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j48eb-0002J9-Tz; Tue, 18 Feb 2020 19:35:33 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j48cU-0007oK-Et
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:33:23 +0000
-Received: by mail-wr1-x443.google.com with SMTP id w12so25401532wrt.2
+ id 1j48cV-0007ow-ER
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:33:24 +0000
+Received: by mail-wm1-x343.google.com with SMTP id n3so1791057wmk.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 11:33:21 -0800 (PST)
+ Tue, 18 Feb 2020 11:33:22 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=AOWCbHndeZPS5+byfbryCBkvxECGgsEdFqsZA/3IxRs=;
- b=uU2854W9t9Wy+R1PcnzelLtDSm00kguTfVv2dKnIl6fYk87418YBQyB44AvSD0Tv43
- 7OJUIUpcXGYeEe6TRdeliUT0QK7jxD5wCt9BdXKfdHXqHtoKSO1T4C1Bi3r0BiGiwfSs
- BiPe35HKcbG5BK0ytQY4yWO/u7N7uU7AvsF9bmUFFooaBGFBrXRgQcUylWVA+G+Lkdp6
- fL3E05K9ryRVMePNm3y7zIaC/mtl99vU92cthki3SsP7I0GOcwUAV73zIT3pxQmuVZkM
- 91rP90GL8c20fRjpWCesgQjtUzZS1Z0EFkphxUuKw7mrrAjeiI/JrkjRQyHLPOX17RSS
- 2fEg==
+ bh=n2/6Go98pHaxpLCc5lRLRHeU4KxfdOQs2LuzJH/tK0k=;
+ b=RRR7WIr1e0sQU9K3EdoR/DhnYIc4/rh3LiZbPMP3o7KsDxgcrnlOejN0fh/4Y8Rh3Q
+ PlF1am3pvjHFriwsTGetrBUQ+vxK91j/cwtv861hpab+b7fFGhLBT/1KZMhBapKahvxp
+ +cMVOJ9slgZWA9SfAfKhFxyCeQizK0oe1imzaUNU5ICbKQepRp+X3gthGa65xy6AG37M
+ ymq1Q8iA1cfeopQSGsQ7Lq/TYulpxOdga90qXJW77ShQyoU3ip//MS9KhaqE7b4YUfaU
+ qEBv7669Xyp3pbtXR46v9X4zfy/GYbkyjOTmFk4dvqifb81mNHbp5lBHfYnb+JVH61UU
+ GZDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=AOWCbHndeZPS5+byfbryCBkvxECGgsEdFqsZA/3IxRs=;
- b=LlOManQsj7B7epGKW5YMgL5K229NKjl7eg7YuB4PGCsGBZBz2a1WR6twGR8YFrP8oB
- qZStLQ8Ffb6JAO2wNrAzFyDonsQ60yYk3RMgjuvcQTFwTnpLdFCM8gsX+PsEc31UM73e
- 8CqYJIJw7hOdgjPWfmow0nEO3wA/D5iWSDfb9IjgYdvS1/mF8lfq4/eVN7VfkSzKLq8W
- VqGXpGxrwktKSDis2w8vw4zQbIhGXarpcAS7gA4zyU9SJSn7y6QIEfUGatogVW5zqkKo
- Kqk97z+bDVr4SMzphQAE+GUex2Kbn4jogaweH8nf16Uqcg5DEGWZ+eBHDnY2r0f2rLSF
- aXDg==
-X-Gm-Message-State: APjAAAUnYptTBOqTN2b8VBAuS0Lh2VYEiX9waOO5nBot9KQuxsTbu/TO
- iUSDUawKjZATzmEXwzr6xf9/uw==
-X-Google-Smtp-Source: APXvYqxWwSnTlhW6CSi27BoAt02KsGM3sb4bgJm52rNZkiHzGKPso/pT/s28vLFiQQJ+HdZLVSIYhA==
-X-Received: by 2002:adf:d0c1:: with SMTP id z1mr32598309wrh.371.1582054400814; 
- Tue, 18 Feb 2020 11:33:20 -0800 (PST)
+ bh=n2/6Go98pHaxpLCc5lRLRHeU4KxfdOQs2LuzJH/tK0k=;
+ b=TnV0nnlkMbAPD8qAGFfHasvANgP0OSK0pr+HavE/qk5DZOXTutL0bvrIH6H2OD10ON
+ ukVjirL2ElJOxYYN7AlIZyfT+nKup2H/rAzQF89NAq0iYpADpr+WqGr+hVM+Krm8W1vl
+ 2rBf/n2FSwW+qqQyn8cSXcZWPZOhpI90jpJEbZZQqc8SVRFTsCWffGUHAr0CWzz9ubNm
+ c2e6fPhQUEuy4oabkQfhEG2dv/1Embf+ChhE8GzHEX864e8rX9rv7sqoTY0fQAaN2gHU
+ sqEBhJYLIYIAwwM7VCQ5ihRr0tlaNzFFVlDf0uGC1QksCoshiKdXSxoILA9cE1JazgU0
+ SP4A==
+X-Gm-Message-State: APjAAAUTWHYgHE2FoZ/4fvXCTXUEBEYMI8A/xCho8ot0NnL2UvOI8m4/
+ 9+ai0rbL17xcscxgzdiiBFM2ZQ==
+X-Google-Smtp-Source: APXvYqyC6GjfeEE6nKgfSsSWz1/SSC2ZJpbMalzrWcB1oLvQHLfxW6Z17TFDIAS/YBVFDc1UIIhZ2w==
+X-Received: by 2002:a1c:7c18:: with SMTP id x24mr4978411wmc.185.1582054401703; 
+ Tue, 18 Feb 2020 11:33:21 -0800 (PST)
 Received: from localhost.localdomain ([51.15.160.169])
  by smtp.googlemail.com with ESMTPSA id k16sm7649266wru.0.2020.02.18.11.33.20
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Tue, 18 Feb 2020 11:33:20 -0800 (PST)
+ Tue, 18 Feb 2020 11:33:21 -0800 (PST)
 From: Corentin Labbe <clabbe@baylibre.com>
 To: alexandre.belloni@bootlin.com, b-liu@ti.com, balbi@kernel.org,
  gregkh@linuxfoundation.org, ludovic.desroches@microchip.com,
  mathias.nyman@intel.com, nicolas.ferre@microchip.com,
  slemieux.tyco@gmail.com, stern@rowland.harvard.edu, vz@mleia.com
-Subject: [PATCH 06/20] usb: gadget: fotg210-udc: remove useless cast for
+Subject: [PATCH 07/20] usb: gadget: fusb300_udc: remove useless cast for
  driver.name
-Date: Tue, 18 Feb 2020 19:32:49 +0000
-Message-Id: <1582054383-35760-7-git-send-email-clabbe@baylibre.com>
+Date: Tue, 18 Feb 2020 19:32:50 +0000
+Message-Id: <1582054383-35760-8-git-send-email-clabbe@baylibre.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1582054383-35760-1-git-send-email-clabbe@baylibre.com>
 References: <1582054383-35760-1-git-send-email-clabbe@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_113322_503828_ECAEB5B3 
-X-CRM114-Status: GOOD (  13.34  )
+X-CRM114-CacheID: sfid-20200218_113323_515436_6BDBCCD7 
+X-CRM114-Status: GOOD (  13.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,22 +109,22 @@ udc_name (which is already const char).
 
 Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
 ---
- drivers/usb/gadget/udc/fotg210-udc.c | 2 +-
+ drivers/usb/gadget/udc/fusb300_udc.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/usb/gadget/udc/fotg210-udc.c b/drivers/usb/gadget/udc/fotg210-udc.c
-index 21f3e6c4e4d6..d6ca50f01985 100644
---- a/drivers/usb/gadget/udc/fotg210-udc.c
-+++ b/drivers/usb/gadget/udc/fotg210-udc.c
-@@ -1199,7 +1199,7 @@ static int fotg210_udc_probe(struct platform_device *pdev)
- 
- static struct platform_driver fotg210_driver = {
+diff --git a/drivers/usb/gadget/udc/fusb300_udc.c b/drivers/usb/gadget/udc/fusb300_udc.c
+index 00e3f66836a9..9af8b415f303 100644
+--- a/drivers/usb/gadget/udc/fusb300_udc.c
++++ b/drivers/usb/gadget/udc/fusb300_udc.c
+@@ -1507,7 +1507,7 @@ static int fusb300_probe(struct platform_device *pdev)
+ static struct platform_driver fusb300_driver = {
+ 	.remove =	fusb300_remove,
  	.driver		= {
--		.name =	(char *)udc_name,
+-		.name =	(char *) udc_name,
 +		.name =	udc_name,
  	},
- 	.probe		= fotg210_udc_probe,
- 	.remove		= fotg210_udc_remove,
+ };
+ 
 -- 
 2.24.1
 
