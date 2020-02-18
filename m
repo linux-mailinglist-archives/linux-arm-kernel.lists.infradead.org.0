@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01D79162DB0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 19:02:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22A95162DB5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 19:03:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H+KdaxM1rlnzTnxa+fFU6iGCd5J5N9Bjp16wvRzaahQ=; b=gDFqw7YIi7MH1M
-	BJiE51UDq/rD4iILbobyAMZFDh857UTMxSQLuDvYUDA0Hnm5tIsGuAkxtyWRI6rcWty3+Ym89wRka
-	RaPryNFYu+5ejtOTgXMw4y8DQPg5x31xoIXvDr0j+GMisdntf1+A8ZXFVaGbJYBIduvbUAZrdkWer
-	7r8YLuDSgcltp4LQbL2k85xHvZWRaE+eOIpYGvRvY2H8uGZgaJlr8xcsqYvFY68B1BvM5WU1ne19G
-	zT9pxDflSEVmUz3ZtbYe1B8BYOx8TYogK1iKI1y0cwyj7j5emSTu1pHXatLl01QG2U/S6QfwJkBbD
-	i2Z4rDqgkE2SfaHKMx7A==;
+	List-Owner; bh=dMkutcIFSHsLpGmYNv9K8xLm5oQSMPWVNP8ansrJ3gU=; b=agqeW4ApMHDJV1
+	tPS2DDr0v7AtVTZiWYYzyRGRutUo3gnyjsC9G4KYcmeEID1OpXl53/0WW4JQLfIy1Fm576XQZq4GB
+	YQqA0NxdUV5Uzgg/qaBUsjOTZjL2ECB9qpKEfHz9CIIzI2nGFTVSaslEwqN0e67KgYiD0XLalGSG5
+	zBgQrd8VKyHyD3Hqjt/dtwnJqtcW4QYvynqWWNtQgsCajJAYbW+i5yQe65riUJeYXsUVpvH+TdMT/
+	vfXJWJNtwaLyUTZUcp5cdyqDRHcRRXaZU/vRQidwIY5I3vIAGnGq21Qfzc6CyMLxAHxF5+2W49eb9
+	ZWcQ/tePZt3bqD6tpr7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j47Cq-0002IZ-4D; Tue, 18 Feb 2020 18:02:48 +0000
-Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+	id 1j47Dn-0002Z3-IF; Tue, 18 Feb 2020 18:03:47 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j47Ci-0002Hl-1a
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 18:02:41 +0000
-Received: by mail-vk1-xa42.google.com with SMTP id c129so5808540vkh.7
+ id 1j47Df-0002Ym-QF
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 18:03:41 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id r18so13616772vso.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 10:02:36 -0800 (PST)
+ Tue, 18 Feb 2020 10:03:39 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mFcWiVcZUQMebcgZTFfReAJeHHYrnI/Dwt+l66LM8ic=;
- b=j1juSeuAu6nmSYzruWyzHEB88nNxnGzE6+xvGqrC+TweE+VqsGa4TYHaggSNVTOzkI
- yztw/IF18VPK88Cj5uUrg8hgowoxJSA+z2y25VV93zeBDeb/X4Hd1deyWrlCi6cCJan5
- 1VNN8K8KRTUUWh2t8qe5Uy7S8/f7YI8Iw4oVrKvip2E76iIeupCp+Ew4cHzlvV5ZU1yh
- McwXuH3hjs9TytdxK0CCUPo3Rg/sr+r6/zx5ocpVydXU3iLhuCPwgYZLX0HnrJTkzj2K
- MZFRXtRvr3pmi1UphygjUbYH42DSFrw3hD6q3pHBl1/wj521SjuoI1/ceAyPmUgYtAtc
- Oggw==
+ :cc; bh=GlpfGKW7Z7qqsPIr6M1r8SsQ9+KujAiypp/sf8wkQEc=;
+ b=lL0ea2yJaqdzJznhETiLDc5kebVPD6fUG3B9tfyWKTZ258WUZqIBi3ugwAtw4baBH6
+ NWt48e3z138kQj76wPe0eMdbxDtHFuCj46cOhMzutLMgh6pXXSstaVGWL1I0R683X/pB
+ lB9qRgULElj1BnkHuG9mKZWSvMUqs09EIGJvDqjHdfO9Nlpk7W0E16YC9l8wh7rWwkM0
+ 1B+iBwV0innQhihazBBOLfnHkwhOHtPBWvp/lrjCkN/EvGkee1i5qlP6KGnorOXl5zH6
+ 58ceZ7W+kpxTn/ntszYHy4zMMoLhJtDJc+K+HeE6YBHPNA7FwJguydLHS49m9c3ML7d3
+ pb7A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=mFcWiVcZUQMebcgZTFfReAJeHHYrnI/Dwt+l66LM8ic=;
- b=AsdiWQra0Z+72XnpFE4a+MfFdYfLzppntoxs6fvL6+96a/1GjkBElywNR6QyQXeOOX
- xrQJhSsw5Ru7fIC7jltmMPtZTyAlL1J1rtT8DtM2LzlWNwgM7HONm9MsF2F0nsMqs55z
- b8WF72F8eN5whgupu241w72aTFAJTFvGm7A1bG8NkL09hn45hsUHOBOWEsp5iBg7qsIS
- 2NaBEm0vKfgeczKz9y37Vi44BQTKWFXJgbW3KwpKiOlBpgwE9KmBzQDyBUQYsrN2jsDz
- BSOiA3rUq9IOnBzTPm5xdN2nWRIVo9rya+gLniV9WwSC4CrkYbGYx1kBnXQNi+NPjmng
- gJnA==
-X-Gm-Message-State: APjAAAV4txZ+aqF8HLgEnb1Y+5lpvm/x/Sb6H4Jbx1rn+y/kgNCcSK56
- QuKFZMZ8nj7Ck0xhUiv4fnRg3V3DwiGgaf3QwP8P6w==
-X-Google-Smtp-Source: APXvYqwwFWhCba91xa0ZSJPKG13D+NLpYBJYF1jRLHslWBZVKyupSUxHhyLCNU6a6MXxhKV0hkG7q/ct9YWgd+TTRwc=
-X-Received: by 2002:a1f:264b:: with SMTP id m72mr8939701vkm.51.1582048955607; 
- Tue, 18 Feb 2020 10:02:35 -0800 (PST)
+ bh=GlpfGKW7Z7qqsPIr6M1r8SsQ9+KujAiypp/sf8wkQEc=;
+ b=IMUx6UEuxWVEMaCoeH0qEwmzb5j8jd89WxjdFCE7o+NoTk0MbGCRHJa6qauTHUPsD0
+ 4nLSBrULDn4Wm8PvJYeQTF7MVmwBD/uR4AqRtNIj4WfUygavXYlHfkoVQ5dufUf2AfSI
+ QXXmHQVoxUgd+7KyaCygADk24czF2+9+42Dm+U2oMVtUsVAjAO4I42AX9MuyI7Zi2lO0
+ J7zutNOCsI3eHhpkOjc5ce7ZYYj4X/q0htIWoIryqpYYjUbIVl0iPaB4pYSNVOnzXjGS
+ MNmAnF9h8Qk+9Vv9h1CkRGE8FWgypTgvYx93AsMdHrAZBIqb3DrYKCTavLZ6aPMzcq2e
+ AZ4g==
+X-Gm-Message-State: APjAAAV17MJSkY/gLzEGXHnQ8tFBkiGIdpE9abouHdFRxGvXflw7o26b
+ 3YRh+rhBHAWd4N/0chv0/qoypQep7vP66D1hflw6ag==
+X-Google-Smtp-Source: APXvYqwsJVK+b7dFqEdssZ17+a6M3lpXzATt+O5ZndOoPbfvqi8IS2/Oh2L13H9e1uCIJ6gtXpivkKwqRQXYsYao5P8=
+X-Received: by 2002:a05:6102:1c8:: with SMTP id
+ s8mr3019888vsq.44.1582049017940; 
+ Tue, 18 Feb 2020 10:03:37 -0800 (PST)
 MIME-Version: 1.0
 References: <20200218164906.35685-1-vincenzo.frascino@arm.com>
  <20200218165451.GE1133@willie-the-truck>
-In-Reply-To: <20200218165451.GE1133@willie-the-truck>
+ <b6bffd75-12fa-b91d-428e-2bf927636161@arm.com>
+In-Reply-To: <b6bffd75-12fa-b91d-428e-2bf927636161@arm.com>
 From: Sami Tolvanen <samitolvanen@google.com>
-Date: Tue, 18 Feb 2020 10:02:24 -0800
-Message-ID: <CABCJKufJemUuh2SH_wBRe_g1HUA7mzOu696yLPj0KRCxD=DXcQ@mail.gmail.com>
+Date: Tue, 18 Feb 2020 10:03:27 -0800
+Message-ID: <CABCJKufwkMNPMpPdK9H1Fjqc0KhftUCcnL9qi+fk3FgeNSOfsQ@mail.gmail.com>
 Subject: Re: [PATCH] arm64: lse: Fix LSE atomics with LLVM
-To: Will Deacon <will@kernel.org>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_100240_129381_44FDEE67 
-X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-CacheID: sfid-20200218_100339_851146_AB1F1646 
+X-CRM114-Status: UNSURE (   8.27  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -70,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
@@ -101,27 +103,21 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Catalin Marinas <catalin.marinas@arm.com>,
  Will Deacon <will.deacon@arm.com>,
  clang-built-linux <clang-built-linux@googlegroups.com>, amit.kachhap@arm.com,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Will Deacon <will@kernel.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 8:54 AM Will Deacon <will@kernel.org> wrote:
-> > -#define __LSE_PREAMBLE       ".arch armv8-a+lse\n"
-> > +#define __LSE_PREAMBLE       ".arch_extension lse\n"
->
-> I'm ok with this, but Sami assumedly changed this for a reason in
-> e0d5896bd356cd ("arm64: lse: fix LSE atomics with LLVM's integrated
-> assembler").
+On Tue, Feb 18, 2020 at 9:43 AM Vincenzo Frascino
+<vincenzo.frascino@arm.com> wrote:
+> The integrated assembler as far as I am aware cannot assemble the kernel for
+> reasons independent from lse (AS=clang generates a lot of errors). Not sure how
+> Sami is testing it. I would be happy to learn it myself.
 
-Correct, I changed this because clang's integrated assembler wasn't
-happy with .arch_extension lse at the time. However, it looks like
-current versions of clang don't have this problem, so this change
-looks good to me.
-
-Tested-by: Sami Tolvanen <samitolvanen@google.com>
+We use LTO in Android kernels, which flips on Clang's integrated
+assembler for inline assembly only.
 
 Sami
 
