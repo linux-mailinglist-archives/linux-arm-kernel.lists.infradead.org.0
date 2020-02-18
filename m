@@ -2,57 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16DA61637AB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 00:55:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B022B1637B4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 00:55:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=jzltWFo//Mg4nFOpPEgLfEp/9yeAsItNhANI1pT4msg=; b=X+1G46WL3u7NJ8
-	uy7qQbuHJ6Pz9Zgp0ZypkKdBSLuyNL1lvBEKLResLR6h9CbFTlMhKAUaatpw28glC4oKcKyIg4VG0
-	4mQiK0a6z7ifN0rAoPJ0qhZRAFV7xeaeqxeu4VvxwIlR4BRdF+1yXfUeNWKflZTva6or17T05uOuf
-	I5b0Yg5JcRATnYqsqsTS59+Eabvz8xnmhaS1wdPMKRTuKZ5uJvj04pHUAuKU3r/0k4N0yqb2Fg0Q8
-	MX8NUu75nC+bMzPyCrLCx7nNIgBAA1oOdsY8TzprmqjnLmOlq7pSb4GWTopd2sw8iOB9H+/nR8NuQ
-	bs4L82R1xJ878CRQJa4A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n75TQpDEhncwk72eRRK8ltHOLdJfIPx3J9bo/mwgw2o=; b=pH5yOD9awU7x8c
+	zY45jaJUMNLrv2Ytcw0XIqxL0USCPHfxzQAkh4HWY5fQ3+0PEIV1BXMrIhBn40KOcPxKdd+D+5vgl
+	dcsGM1C7973hVg/lRTCXkzSqY2XDx3ZKxwXgXI+Dag3AoOPvqZZqZigBjjc2ynbFv3VCDGley5/sS
+	UUWi70APaPqoY3FzeXkhAuV4tlclRUapyiUyFRTKupsfW8YMMDaZAbjkNfqwMaAoYe+xJlhDo+xAC
+	Cldo6Krl84JkavtQ5i79PnNlECDT99/nAmxCFDt7h60OmfxQtneKrRJN/WtRB8gY808ZHeVW2a7Rg
+	TXsm9YJQ0zWB8e/Z8y2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Chd-0008JI-5A; Tue, 18 Feb 2020 23:54:57 +0000
+	id 1j4CiC-000081-Cv; Tue, 18 Feb 2020 23:55:32 +0000
 Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ChP-0008HM-0R
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 23:54:44 +0000
+ id 1j4ChQ-0008HM-Jm
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 23:54:46 +0000
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga007.jf.intel.com ([10.7.209.58])
  by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
  18 Feb 2020 15:54:38 -0800
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.70,458,1574150400"; d="scan'208";a="224313154"
+X-IronPort-AV: E=Sophos;i="5.70,458,1574150400"; d="scan'208";a="224313156"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.202])
  by orsmga007.jf.intel.com with ESMTP; 18 Feb 2020 15:54:38 -0800
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH v2 0/9] KVM: Move x86 init ops to separate struct
-Date: Tue, 18 Feb 2020 15:54:28 -0800
-Message-Id: <20200218235437.20533-1-sean.j.christopherson@intel.com>
+Subject: [PATCH v2 1/9] KVM: Pass kvm_init()'s opaque param to additional arch
+ funcs
+Date: Tue, 18 Feb 2020 15:54:29 -0800
+Message-Id: <20200218235437.20533-2-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.24.1
+In-Reply-To: <20200218235437.20533-1-sean.j.christopherson@intel.com>
+References: <20200218235437.20533-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_155443_100845_031B2A6A 
-X-CRM114-Status: GOOD (  14.98  )
+X-CRM114-CacheID: sfid-20200218_155444_704120_5CFDE8B5 
+X-CRM114-Status: GOOD (  14.07  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [134.134.136.20 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.20 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -83,77 +86,191 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The non-x86 part of this series is wholly contained in patch 01.  Compared
-to other recent kvm-wide changes, this one is very straightforward (famous
-last words).
+Pass @opaque to kvm_arch_hardware_setup() and
+kvm_arch_check_processor_compat() to allow architecture specific code to
+reference @opaque without having to stash it away in a temporary global
+variable.  This will enable x86 to separate its vendor specific callback
+ops, which are passed via @opaque, into "init" and "runtime" ops without
+having to stash away the "init" ops.
 
-Like a few other architectures, e.g. PPC, x86 uses a set of global hooks
-to call back into vendor code on demand.  A handlful of the x86 hooks are
-used only within the scope of kvm_init().  This series moves the init-only
-hooks to a separate struct, partly to clean up the code a bit, but mainly
-so that the runtime hooks can be made available only after the x86 vendor
-has completed its ->hardware_setup().  While working on a different series
-I spent a fair bit of time scratching my as to why a kvm_x86_ops wasn't
-working, and eventually realized VMX's callback wasn't "ready" because the
-vmcs_config hadn't yet been populated.
+No functional change intended.
 
-Due to lack of a cross-compiling setup, the non-x86 changes in patch 01
-are untested.
+Reviewed-by: Cornelia Huck <cohuck@redhat.com>
+Tested-by: Cornelia Huck <cohuck@redhat.com> #s390
+Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+---
+ arch/mips/kvm/mips.c       |  4 ++--
+ arch/powerpc/kvm/powerpc.c |  4 ++--
+ arch/s390/kvm/kvm-s390.c   |  4 ++--
+ arch/x86/kvm/x86.c         |  4 ++--
+ include/linux/kvm_host.h   |  4 ++--
+ virt/kvm/arm/arm.c         |  4 ++--
+ virt/kvm/kvm_main.c        | 18 ++++++++++++++----
+ 7 files changed, 26 insertions(+), 16 deletions(-)
 
-The SVM changes in patch 02 are fairly well tested, e.g. fudged things
-enough to ensure KVM didn't explode on a null pointer.
-
-Patch 05 is a bit scary as a rogue dereference of kvm_x86_ops before
-->hardware_setup() will crash KVM (maybe the kernel?).  I didn't find any
-obvious ways to use kvm_x86_ops on AMD, and tested on a few different
-Intel CPUs, so I'm reasonably confident that there are no existing
-violations.
-
-v2:
-  - Rebase to kvm/queue, 2c2787938512 ("KVM: selftests: Stop ...")
-  - Collect tags. [Cornelia]
-  - Add a patch to make kvm_x86_ops its own instance and copy
-    {vmx,svm}_x86_ops by value, which saves a memory access on every
-    invocation of a kvm_x86_ops hook. [Paolo]
-  - Add patches to tag {vmx,svm}_x86_ops as __initdata after they're
-    copied by value.
-
-Sean Christopherson (9):
-  KVM: Pass kvm_init()'s opaque param to additional arch funcs
-  KVM: x86: Move init-only kvm_x86_ops to separate struct
-  KVM: VMX: Move hardware_setup() definition below vmx_x86_ops
-  KVM: VMX: Configure runtime hooks using vmx_x86_ops
-  KVM: x86: Set kvm_x86_ops only after ->hardware_setup() completes
-  KVM: x86: Copy kvm_x86_ops by value to eliminate layer of indirection
-  KVM: x86: Drop __exit from kvm_x86_ops' hardware_unsetup()
-  KVM: VMX: Annotate vmx_x86_ops as __initdata
-  KVM: SVM: Annotate svm_x86_ops as __initdata
-
- arch/mips/kvm/mips.c            |   4 +-
- arch/powerpc/kvm/powerpc.c      |   4 +-
- arch/s390/kvm/kvm-s390.c        |   4 +-
- arch/x86/include/asm/kvm_host.h |  35 +--
- arch/x86/kvm/cpuid.c            |  24 +-
- arch/x86/kvm/hyperv.c           |   8 +-
- arch/x86/kvm/kvm_cache_regs.h   |  10 +-
- arch/x86/kvm/lapic.c            |  30 +--
- arch/x86/kvm/mmu.h              |   4 +-
- arch/x86/kvm/mmu/mmu.c          |  38 ++--
- arch/x86/kvm/pmu.c              |  30 +--
- arch/x86/kvm/pmu.h              |   2 +-
- arch/x86/kvm/svm.c              |  21 +-
- arch/x86/kvm/trace.h            |   4 +-
- arch/x86/kvm/vmx/nested.c       |  17 +-
- arch/x86/kvm/vmx/nested.h       |   3 +-
- arch/x86/kvm/vmx/pmu_intel.c    |   2 +-
- arch/x86/kvm/vmx/vmx.c          | 353 +++++++++++++++--------------
- arch/x86/kvm/x86.c              | 384 ++++++++++++++++----------------
- arch/x86/kvm/x86.h              |   4 +-
- include/linux/kvm_host.h        |   4 +-
- virt/kvm/arm/arm.c              |   4 +-
- virt/kvm/kvm_main.c             |  18 +-
- 23 files changed, 519 insertions(+), 488 deletions(-)
-
+diff --git a/arch/mips/kvm/mips.c b/arch/mips/kvm/mips.c
+index 71244bf87c3a..68e27ce8bbba 100644
+--- a/arch/mips/kvm/mips.c
++++ b/arch/mips/kvm/mips.c
+@@ -118,12 +118,12 @@ void kvm_arch_hardware_disable(void)
+ 	kvm_mips_callbacks->hardware_disable();
+ }
+ 
+-int kvm_arch_hardware_setup(void)
++int kvm_arch_hardware_setup(void *opaque)
+ {
+ 	return 0;
+ }
+ 
+-int kvm_arch_check_processor_compat(void)
++int kvm_arch_check_processor_compat(void *opaque)
+ {
+ 	return 0;
+ }
+diff --git a/arch/powerpc/kvm/powerpc.c b/arch/powerpc/kvm/powerpc.c
+index 1af96fb5dc6f..ffa9d0ac5390 100644
+--- a/arch/powerpc/kvm/powerpc.c
++++ b/arch/powerpc/kvm/powerpc.c
+@@ -416,12 +416,12 @@ int kvm_arch_hardware_enable(void)
+ 	return 0;
+ }
+ 
+-int kvm_arch_hardware_setup(void)
++int kvm_arch_hardware_setup(void *opaque)
+ {
+ 	return 0;
+ }
+ 
+-int kvm_arch_check_processor_compat(void)
++int kvm_arch_check_processor_compat(void *opaque)
+ {
+ 	return kvmppc_core_check_processor_compat();
+ }
+diff --git a/arch/s390/kvm/kvm-s390.c b/arch/s390/kvm/kvm-s390.c
+index d7ff30e45589..5cae22b56ddd 100644
+--- a/arch/s390/kvm/kvm-s390.c
++++ b/arch/s390/kvm/kvm-s390.c
+@@ -228,7 +228,7 @@ int kvm_arch_hardware_enable(void)
+ 	return 0;
+ }
+ 
+-int kvm_arch_check_processor_compat(void)
++int kvm_arch_check_processor_compat(void *opaque)
+ {
+ 	return 0;
+ }
+@@ -293,7 +293,7 @@ static struct notifier_block kvm_clock_notifier = {
+ 	.notifier_call = kvm_clock_sync,
+ };
+ 
+-int kvm_arch_hardware_setup(void)
++int kvm_arch_hardware_setup(void *opaque)
+ {
+ 	gmap_notifier.notifier_call = kvm_gmap_notifier;
+ 	gmap_register_pte_notifier(&gmap_notifier);
+diff --git a/arch/x86/kvm/x86.c b/arch/x86/kvm/x86.c
+index fbabb2f06273..bdd0a613b374 100644
+--- a/arch/x86/kvm/x86.c
++++ b/arch/x86/kvm/x86.c
+@@ -9591,7 +9591,7 @@ void kvm_arch_hardware_disable(void)
+ 	drop_user_return_notifiers();
+ }
+ 
+-int kvm_arch_hardware_setup(void)
++int kvm_arch_hardware_setup(void *opaque)
+ {
+ 	int r;
+ 
+@@ -9627,7 +9627,7 @@ void kvm_arch_hardware_unsetup(void)
+ 	kvm_x86_ops->hardware_unsetup();
+ }
+ 
+-int kvm_arch_check_processor_compat(void)
++int kvm_arch_check_processor_compat(void *opaque)
+ {
+ 	struct cpuinfo_x86 *c = &cpu_data(smp_processor_id());
+ 
+diff --git a/include/linux/kvm_host.h b/include/linux/kvm_host.h
+index e89eb67356cb..fb33a95067bd 100644
+--- a/include/linux/kvm_host.h
++++ b/include/linux/kvm_host.h
+@@ -882,9 +882,9 @@ void kvm_arch_create_vcpu_debugfs(struct kvm_vcpu *vcpu);
+ 
+ int kvm_arch_hardware_enable(void);
+ void kvm_arch_hardware_disable(void);
+-int kvm_arch_hardware_setup(void);
++int kvm_arch_hardware_setup(void *opaque);
+ void kvm_arch_hardware_unsetup(void);
+-int kvm_arch_check_processor_compat(void);
++int kvm_arch_check_processor_compat(void *opaque);
+ int kvm_arch_vcpu_runnable(struct kvm_vcpu *vcpu);
+ bool kvm_arch_vcpu_in_kernel(struct kvm_vcpu *vcpu);
+ int kvm_arch_vcpu_should_kick(struct kvm_vcpu *vcpu);
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index d65a0faa46d8..c92a70f58966 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -64,12 +64,12 @@ int kvm_arch_vcpu_should_kick(struct kvm_vcpu *vcpu)
+ 	return kvm_vcpu_exiting_guest_mode(vcpu) == IN_GUEST_MODE;
+ }
+ 
+-int kvm_arch_hardware_setup(void)
++int kvm_arch_hardware_setup(void *opaque)
+ {
+ 	return 0;
+ }
+ 
+-int kvm_arch_check_processor_compat(void)
++int kvm_arch_check_processor_compat(void *opaque)
+ {
+ 	return 0;
+ }
+diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
+index 67ae2d5c37b2..d719e4ee9ff7 100644
+--- a/virt/kvm/kvm_main.c
++++ b/virt/kvm/kvm_main.c
+@@ -4425,14 +4425,22 @@ struct kvm_vcpu * __percpu *kvm_get_running_vcpus(void)
+         return &kvm_running_vcpu;
+ }
+ 
+-static void check_processor_compat(void *rtn)
++struct kvm_cpu_compat_check {
++	void *opaque;
++	int *ret;
++};
++
++static void check_processor_compat(void *data)
+ {
+-	*(int *)rtn = kvm_arch_check_processor_compat();
++	struct kvm_cpu_compat_check *c = data;
++
++	*c->ret = kvm_arch_check_processor_compat(c->opaque);
+ }
+ 
+ int kvm_init(void *opaque, unsigned vcpu_size, unsigned vcpu_align,
+ 		  struct module *module)
+ {
++	struct kvm_cpu_compat_check c;
+ 	int r;
+ 	int cpu;
+ 
+@@ -4456,12 +4464,14 @@ int kvm_init(void *opaque, unsigned vcpu_size, unsigned vcpu_align,
+ 		goto out_free_0;
+ 	}
+ 
+-	r = kvm_arch_hardware_setup();
++	r = kvm_arch_hardware_setup(opaque);
+ 	if (r < 0)
+ 		goto out_free_1;
+ 
++	c.ret = &r;
++	c.opaque = opaque;
+ 	for_each_online_cpu(cpu) {
+-		smp_call_function_single(cpu, check_processor_compat, &r, 1);
++		smp_call_function_single(cpu, check_processor_compat, &c, 1);
+ 		if (r < 0)
+ 			goto out_free_2;
+ 	}
 -- 
 2.24.1
 
