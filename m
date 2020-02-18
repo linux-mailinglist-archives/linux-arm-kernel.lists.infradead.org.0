@@ -2,109 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D1A5162D65
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:49:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1F64162D6A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:51:01 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=WTL7sseIXRxVjGv8iS7eS+mzSJEgqUpY9FokMXT47c8=; b=t8A+bAy7uIz+uK
-	FfaKJFXpEBL2JXjzeW6tM/KbAU1hKxlu909bjC5sNPVPIKL0eRQiMRU++pqGb+zyFXMo1M8LoCyZf
-	RQ+rNKHFADXAoHlYVVyBpyRI9j58seLtVpFMz7XS7wYQDlEEK353hbQRxtlylND8hqupQ6/kVNvvk
-	gOdi6gEuG6Zb0m0RogfE9+hj0N36d2W3wzuHGKki9YfD9XAaW4PsvEW8HpXNyYvMQGhv/BQTa3Cwp
-	Bk/1fRstyJnxUI80gL0E53AmgIS4i0cRaWbKZuOkJ2ZJ39A8nMEDpXY9b0JUhh8BjrgYzAEu2tz+o
-	rJ4EnyklmKDBZSaXsl8Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5R3bs2Uy4CeflkHnYYuayWHZDc/4Zloi7oamxjXguh0=; b=FPekIWMSdYzwRl
+	8CPtBw31qfwUhO0UyF1uzsp+tO6gbrY3UolpCeuAKSM5yvwAvEn+fp114o/qbp0056q13v56cEJPm
+	V215Pz56Q3l7AkSfyFiYx7eXL/66Afi4hrbMZPpnTMKz0rvyJOov7sCK3r5ZaeljVSQuMYlBMsBSt
+	zieYqDYBZb/poU+iUmA23K7s6zZWeU00NnpvP2dTYqsud1j3Ro2oc06g8dXvOcWnPY5siBp52uKkm
+	FvzzKwVpR2f92KwAp49X8VeoqhbbkaakzdVj44NeonFqVewbMuJf4c8ZakHBaiBRtt6vmRwx7k55Z
+	/rWxntzV/QU9aArbBBmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j46zb-0004MM-FJ; Tue, 18 Feb 2020 17:49:07 +0000
-Received: from mail-vi1eur05on2041.outbound.protection.outlook.com
- ([40.107.21.41] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1j471H-0005tu-A8; Tue, 18 Feb 2020 17:50:51 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j46zP-0004Kz-Bl
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:48:56 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=D9QaAI+omociSr3ChtBl26TVZnCoi/Tvv0QatzpFrk8gIdH1VY2Hw1377OxnxMIOvehFoiL4LURradRPUWsZ5dBccXpBkKFhCWjNJh4voDGA1PxmerTIseKcCY8GKhaEac7XmpkM4qt1K+PQDDWRNJhaSdcCh+GMx3sySqK9o6+9ohcEen2JfLt+I7ypznB0HOdOQRRn4raBVY75oaZhNUJoxEdJwJ4wD/JKSLGHvtainjdhwjcbtKEmHAu3dNrwIX/eTyKJVP4/eFSQgnEEdkfN6siCYqpZerImQlEytmyr+WsUQmXMVBpPSDvm+tAyZjvUKVa5jdTef8t0SmmEmw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Yz0kYFuv82HKWo/vr8c/lofCgWDiBaeUg061wNbgyAc=;
- b=MfTawPV1ZLbXWHv4u5yz2cwJ5Wl4VucRatdaJ/42RgsqbhWOF/QNWycvfX0nxO1P3KJwc3w3u6bRauchdFsWKLUX2bm1SDWM1qQfYfrs/bgoCmb5lLqDyFozYjSPWBBsPbaK7wjsu1LIQvihz2bLf2p86RPCOsYrqUZjjsJfsAxZTBa6uk14jxi7S8SmsjE2m3P5z9Jery4nvrOvm/dORDGLZprMqh97v+I1biY1LdwYh8C5aDk4TFt/8/1iDBM4xNjlUTDRWKhcv4z9qTCdZ5dU17nxl//Uwq+KxmwY/fzrBKcRjSyJI11Jt5L0aJkLTjTO/Qm2optHHWSS1sSoKw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Yz0kYFuv82HKWo/vr8c/lofCgWDiBaeUg061wNbgyAc=;
- b=aiZ0YFN1jwJUhXvmCl+s4CkGvua9fJAbO1Ht1mQqKS1/Pi7V9+e1QlhaEKYnyt/QJ9Qi84aCVagnxhbX8dT756gW0BQc5Wx/eEKVh/kdL8i4Iz6CCXCyJBhw75q5BoiVZGDumPDdugih4WVRtRNrOSkCuDjXKKdQHC2wr8yrhsU=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB2990.eurprd04.prod.outlook.com (10.170.227.29) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2729.29; Tue, 18 Feb 2020 17:48:50 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::58c5:f02f:2211:4953]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::58c5:f02f:2211:4953%7]) with mapi id 15.20.2729.032; Tue, 18 Feb 2020
- 17:48:50 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Sasha Levin <sashal@kernel.org>
-Subject: Re: [PATCH] firmware: imx: Align imx SC msg structs to 4
-Thread-Topic: [PATCH] firmware: imx: Align imx SC msg structs to 4
-Thread-Index: AQHV4SGqSL+k7/w06UOL1nyEN5GYug==
-Date: Tue, 18 Feb 2020 17:48:50 +0000
-Message-ID: <VI1PR04MB7023C1C536805130D9429E11EE110@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <3a8b6772a1edffdd7cdb54d6d50030b03ba0bebb.1581455751.git.leonard.crestez@nxp.com>
- <20200217062129.GB6790@dragon>
- <VI1PR04MB7023CDE9E4AD086F2E926495EE160@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <20200218091831.GB6075@dragon>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 7ba8ee1f-efb6-4296-5133-08d7b49ad049
-x-ms-traffictypediagnostic: VI1PR04MB2990:|VI1PR04MB2990:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB299084688AF8A783DDD2E122EE110@VI1PR04MB2990.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 031763BCAF
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(396003)(39860400002)(366004)(136003)(376002)(189003)(199004)(64756008)(66556008)(66446008)(71200400001)(66946007)(91956017)(66476007)(76116006)(5660300002)(8676002)(186003)(4326008)(8936002)(53546011)(6506007)(81156014)(81166006)(52536014)(54906003)(2906002)(9686003)(55016002)(478600001)(44832011)(316002)(7416002)(110136005)(86362001)(33656002)(7696005)(26005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB2990;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: WVc9fxQq0pl+JrAmh5hTaBssm/tHBO7aS2m4iQMF0g5Xh3r2+Q+pCPVICTBsxtRDd0W9rmq7cJQ8q3vaxMJl2+rOHfZzXvTKwZWI00KPdWsjcPq9A6rLMfOCb1SO8dKELIBK1JXZk6SGUbDjtu45QMBL/l8gDS1922cmu/RdJ+rEomsM70OW+b6paR/GxwVyi1Q/WXXJS4EqCK4g66TclZvb5qO1eCkLQJV+WjMb59Q2JkG6p65OxPFs+XDayr3Yz2r1WX6a7+0YaBPUnIvKFxCX74TNiEzonaQ1S8po3rE2fz1vuiF2MH2zFNQzq8Ee5v6G64h2EckRtzc/u/3QMwZme5JRcniGioUne7EYw908MV64zmqlVPndTQnSb6XOBoNR6c6jSu3KBgFmtOUvxOQQyLlxYDFhhcjWh5d+sa1KBbYWkwa4GklA2K4+gDa2
-x-ms-exchange-antispam-messagedata: VLY1Yd3N5w8Rzyg+E8T6q6K4CNq7YSgNND+PGw2iEF389IqRTEYqVGrgdWluDH2bre9WtF8ss5j0232nquxZhD8A5VaX7GKR83MnahZAtJVO2zJ3a5JJwTIrux87UIT7rszswB3zdnUDq/tzWi3FCg==
+ id 1j4718-0005tE-TE
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:50:45 +0000
+Received: by mail-lj1-x241.google.com with SMTP id x14so23969755ljd.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Feb 2020 09:50:42 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=jSPOPeuyv6X0CnInvNkcvya9Y67/qUcIjhk322wCKUc=;
+ b=MNwL8PSYhHdSj1F1zhVgb+7VBSF2GVAdZDTKEogPx0XtmbvzwexdZ3jipmGBLXTbRc
+ o35jq02YuHYhlPXIdY+Qtlf+byJ6ohM2WSIutfMQx23lgEMsBk9g3QC7SdWpfFUsr+Zx
+ AvaBRrsjiWbknRZZdD2YF3Vox+CqRNM2vXz0MNLH+HYa7VmWXF4kWktNg8g6zlhfGeHX
+ mhjg9O7mViWubwDH40xw72R8Se2+W6fzh82o6J3NivbLbZW+S2jgcWNvFM13O7DBfYXN
+ E17NibKIOvgJB7/kc3Z82y1/kMdEiUC8lvl7Eyzbj7Za23CJCDduMjPCzs5YK/Dn1twh
+ 5jog==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=jSPOPeuyv6X0CnInvNkcvya9Y67/qUcIjhk322wCKUc=;
+ b=oX92MgFP3fMYtDYVpWPeS5ilF94OnFaev0yrgVeqXn4DQfGhAZsiKeY/nczPZmmz7m
+ DW02GvzM4fBA9O8WeeUcKv19P3nTu1skaXqMcj9AxMfHSu6ynuHvN7p0yxYOeoUsAY5v
+ U7VOg5QU8cl3operjFvclVc5QoTzfEChG9apIgE2KFjReeuLmw4WGyujTa7Qqc1ya9d3
+ qSX3lN959fK1vAWyiMn6qB5nt9jgRkiPOmqELxYhX17BEWEXZk83yCAWiALvOyiPE/zq
+ UFeEb5aBvGQIMKdYzY+JZrqYDD4kNJn8VwecmMVkbXC6vFMZjooJr15lEN+64nB8DM+o
+ /Jsg==
+X-Gm-Message-State: APjAAAWcvIVLhZvEBZ1qAD+VcYPOsoX2zWK2tiGovxovGSpH9Ui4Sbnz
+ FxMhNKd0ME43XUfr55x7G3o=
+X-Google-Smtp-Source: APXvYqzPg8ZPFXLqhoYWrAMxsQWiNN6rzoOF4CLEUYfXurUp+aoaYr4o1PdNBdL4SAqF69N/gjy1Aw==
+X-Received: by 2002:a2e:b0c4:: with SMTP id g4mr13653725ljl.83.1582048235775; 
+ Tue, 18 Feb 2020 09:50:35 -0800 (PST)
+Received: from kedthinkpad ([5.20.204.163])
+ by smtp.gmail.com with ESMTPSA id l22sm2948359ljb.2.2020.02.18.09.50.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 18 Feb 2020 09:50:35 -0800 (PST)
+Date: Tue, 18 Feb 2020 19:50:33 +0200
+From: Andrey Lebedev <andrey.lebedev@gmail.com>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH v2 2/2] ARM: sun7i: dts: Add LVDS panel support on A20
+Message-ID: <20200218175033.GA25850@kedthinkpad>
+References: <20200210195633.GA21832@kedthinkpad>
+ <20200212222355.17141-2-andrey.lebedev@gmail.com>
+ <20200213094304.hf3glhgmquypxpyf@gilmour.lan>
+ <20200213200823.GA28336@kedthinkpad>
+ <20200214075218.huxdhmd4qfoakat2@gilmour.lan>
+ <20200214084358.GA25266@kedthinkpad>
+ <20200214085351.2whnfyulrmyex2va@gilmour.lan>
+ <20200214213231.GA6583@kedthinkpad>
+ <20200217175135.ldtqji4mrwz2wbn5@gilmour.lan>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7ba8ee1f-efb6-4296-5133-08d7b49ad049
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Feb 2020 17:48:50.7787 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: h/i72ZIVcUjXCbdcvDeuOsH3O+B2b5CMNXBRG+d24zhTN2uC9Svc9WJnm35A45CtDMxJNQ9mdOC8iiLhNMFwKw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB2990
+Content-Disposition: inline
+In-Reply-To: <20200217175135.ldtqji4mrwz2wbn5@gilmour.lan>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_094855_475304_B00AB898 
-X-CRM114-Status: UNSURE (   9.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200218_095042_942048_C4BBD546 
+X-CRM114-Status: GOOD (  19.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.21.41 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andrey.lebedev[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -123,61 +107,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Stefan Agner <stefan@agner.ch>,
- "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
- Franck Lenormand <franck.lenormand@nxp.com>,
- "open list:PIN CONTROLLER - FREESCALE" <linux-gpio@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "open list:REAL TIME CLOCK \(RTC\) SUBSYSTEM" <linux-rtc@vger.kernel.org>
+Cc: airlied@linux.ie, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Andrey Lebedev <andrey@lebedev.lt>, wens@csie.org, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18.02.2020 11:18, Shawn Guo wrote:
-> On Mon, Feb 17, 2020 at 08:37:45PM +0000, Leonard Crestez wrote:
->> On 17.02.2020 08:21, Shawn Guo wrote:
->>> On Tue, Feb 11, 2020 at 11:24:33PM +0200, Leonard Crestez wrote:
->>>> The imx SC api strongly assumes that messages are composed out of
->>>> 4-bytes words but some of our message structs have sizeof "6" and "7".
->>>>
->>>> This produces many oopses with CONFIG_KASAN=y:
->>>>
->>>> 	BUG: KASAN: stack-out-of-bounds in imx_mu_send_data+0x108/0x1f0
->>>>
->>>> It shouldn't cause an issues in normal use because these structs are
->>>> always allocated on the stack.
->>>>
->>>> Cc: stable@vger.kernel.org
->>>
->>> Should we have a fixes tag and send it for -rc?
->>
->> I haven't check but this would probably have to be split into multiple
->> patches because the structs were not added all at once.
+On Mon, Feb 17, 2020 at 06:51:35PM +0100, Maxime Ripard wrote:
+> > diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.h b/drivers/gpu/drm/sun4i/sun4i_tcon.h
+> > index cfbf4e6c1679..bc87d28ee341 100644
+> > --- a/drivers/gpu/drm/sun4i/sun4i_tcon.h
+> > +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.h
+> > @@ -235,6 +235,8 @@ struct sun4i_tcon_quirks {
+> >  	bool	needs_de_be_mux; /* sun6i needs mux to select backend */
+> >  	bool    needs_edp_reset; /* a80 edp reset needed for tcon0 access */
+> >  	bool	supports_lvds;   /* Does the TCON support an LVDS output? */
+> > +	/* "compatible" string of TCON that exclusively supports LVDS */
+> > +	const char *lvds_compatible_tcon;
 > 
-> Or maybe we can just drop the stable tag, as it addresses a corner
-> case issue which could concern very few people?
+> However this is far more complicated than needed, you can simply add a
+> new quirks structure associated to the tcon0 compatible in
+> sun4i_tcon_of_table, and that will do
 
-I think that "kernel does not boot with KASAN=y" is an issue worth fixing.
+Aha! Does this look good to you?
 
-I will split and resend with appropriate Fixes: tags.
+From 4ad2978e404c63d4cca1b7890bc5bdd4d1e8965d Mon Sep 17 00:00:00 2001
+From: Andrey Lebedev <andrey@lebedev.lt>
+Date: Tue, 18 Feb 2020 19:47:33 +0200
+Subject: [PATCH] Mark tcon0 to be the only tcon capable of LVDS on sun7i-a20
 
-It seems likely that this will be picked up for -stable anyway via 
-Sasha's automation scripts and those scripts benefit from Fixes: tags.
+This allows to avoid warnings about reset line not provided for tcon1.
 
---
-Regards,
-Leonard
+Signed-off-by: Andrey Lebedev <andrey@lebedev.lt>
+---
+ arch/arm/boot/dts/sun7i-a20.dtsi   |  6 ++++--
+ drivers/gpu/drm/sun4i/sun4i_tcon.c | 14 ++++++++++++--
+ 2 files changed, 16 insertions(+), 4 deletions(-)
 
+diff --git a/arch/arm/boot/dts/sun7i-a20.dtsi b/arch/arm/boot/dts/sun7i-a20.dtsi
+index dc4f3f249aee..d50263c1ca9a 100644
+--- a/arch/arm/boot/dts/sun7i-a20.dtsi
++++ b/arch/arm/boot/dts/sun7i-a20.dtsi
+@@ -405,7 +405,8 @@
+ 		};
+ 
+ 		tcon0: lcd-controller@1c0c000 {
+-			compatible = "allwinner,sun7i-a20-tcon";
++			compatible = "allwinner,sun7i-a20-tcon0",
++				     "allwinner,sun7i-a20-tcon";
+ 			reg = <0x01c0c000 0x1000>;
+ 			interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
+ 			resets = <&ccu RST_TCON0>, <&ccu RST_LVDS>;
+@@ -460,7 +461,8 @@
+ 		};
+ 
+ 		tcon1: lcd-controller@1c0d000 {
+-			compatible = "allwinner,sun7i-a20-tcon";
++			compatible = "allwinner,sun7i-a20-tcon1",
++				     "allwinner,sun7i-a20-tcon";
+ 			reg = <0x01c0d000 0x1000>;
+ 			interrupts = <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>;
+ 			resets = <&ccu RST_TCON1>;
+diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+index 800a9bd86112..d9605d331010 100644
+--- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
++++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
+@@ -1479,7 +1479,7 @@ static const struct sun4i_tcon_quirks sun6i_a31s_quirks = {
+ 	.dclk_min_div		= 1,
+ };
+ 
+-static const struct sun4i_tcon_quirks sun7i_a20_quirks = {
++static const struct sun4i_tcon_quirks sun7i_a20_tcon0_quirks = {
+ 	.supports_lvds		= true,
+ 	.has_channel_0		= true,
+ 	.has_channel_1		= true,
+@@ -1489,6 +1489,15 @@ static const struct sun4i_tcon_quirks sun7i_a20_quirks = {
+ 	.setup_lvds_phy		= sun4i_tcon_setup_lvds_phy,
+ };
+ 
++static const struct sun4i_tcon_quirks sun7i_a20_tcon1_quirks = {
++	.supports_lvds		= false,
++	.has_channel_0		= true,
++	.has_channel_1		= true,
++	.dclk_min_div		= 4,
++	/* Same display pipeline structure as A10 */
++	.set_mux		= sun4i_a10_tcon_set_mux,
++};
++
+ static const struct sun4i_tcon_quirks sun8i_a33_quirks = {
+ 	.has_channel_0		= true,
+ 	.has_lvds_alt		= true,
+@@ -1534,7 +1543,8 @@ const struct of_device_id sun4i_tcon_of_table[] = {
+ 	{ .compatible = "allwinner,sun5i-a13-tcon", .data = &sun5i_a13_quirks },
+ 	{ .compatible = "allwinner,sun6i-a31-tcon", .data = &sun6i_a31_quirks },
+ 	{ .compatible = "allwinner,sun6i-a31s-tcon", .data = &sun6i_a31s_quirks },
+-	{ .compatible = "allwinner,sun7i-a20-tcon", .data = &sun7i_a20_quirks },
++	{ .compatible = "allwinner,sun7i-a20-tcon0", .data = &sun7i_a20_tcon0_quirks },
++	{ .compatible = "allwinner,sun7i-a20-tcon1", .data = &sun7i_a20_tcon1_quirks },
+ 	{ .compatible = "allwinner,sun8i-a23-tcon", .data = &sun8i_a33_quirks },
+ 	{ .compatible = "allwinner,sun8i-a33-tcon", .data = &sun8i_a33_quirks },
+ 	{ .compatible = "allwinner,sun8i-a83t-tcon-lcd", .data = &sun8i_a83t_lcd_quirks },
+-- 
+2.20.1
+
+
+-- 
+Andrey Lebedev aka -.- . -.. -.. . .-.
+Software engineer
+Homepage: http://lebedev.lt/
 
 _______________________________________________
 linux-arm-kernel mailing list
