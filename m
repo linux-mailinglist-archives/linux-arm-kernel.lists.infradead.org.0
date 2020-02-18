@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65E9816319A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 21:03:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4534F16319B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 21:03:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8LP0ZM6oQz3xeEMQR2ql1xqeQce4nPKKVyyVIz6niAM=; b=r/nVTI8Ra09UcJ
-	NX/QjpzFbeHqqj48kvKW6jM63pk/X+NqBxZ0ylqPBBCohNrpIBQOYxQSTKZp7gdGUziQubaZ//FZj
-	4AXwt8S/Ab7AOJRu2q50h1xcGD9Mx1sLOA0K9WMKuJcZNCgWMpbiZNmovCyprWin59+jfGzfP5IxK
-	0sjnm2vYpsUfwidL5O5UVAq5yKh1mnfg2Sh8Cp133h693TK4F8IWzASa6SCNidzLvKLs7wcqaK34U
-	uIEwycKAQ47Rvev8rRN82YCVzzi/vC7ixPs8FhUZOD3wdv+H59JdcQ7TBgX0aK8RDiGcvrA5OXnQO
-	Ff2bSzpFc2i1YRwbDN8Q==;
+	List-Owner; bh=tTYJ+n9ts650kpOaLymZhs8r2qZce56Sni5eWPr2Cpg=; b=dL5qj0y7Zzv1Kq
+	uqmzOBrhDfT5Qp4BDNCKLQ2BZU1Ur/YZ34Dzpke4wDxXJ9Br7Motn8osaKMM8sW7nrcNy/0LXChgx
+	VQ2CP86aIA22ZMd53akpM9hW2WJOZSY3tmXGhWfIUhY5wgz7x5OtaMyyLm9wgobcebadzHbWip3y5
+	ZMTHJimHL+DQen4TNhEbn+2bciXv0WFFByeoomgBOGAYfC7b1gDGE6ux0uhoIzCxvRo3JKHtPA/R2
+	yi/9kpoJCW5r5bwX8fobkZIP/8wiMx7DCoTf598wGof3qayd8z2j/IuVDgU6RNowKpfzuKsHbJ0fQ
+	jaZhpCRA7Ly+jpWCCedQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j495a-0002hn-0o; Tue, 18 Feb 2020 20:03:26 +0000
+	id 1j495p-0002wK-4a; Tue, 18 Feb 2020 20:03:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j491l-0005m7-Ol
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:59:31 +0000
+ id 1j491o-0005uy-Ie
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:59:34 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9EC6931B;
- Tue, 18 Feb 2020 11:59:29 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D88DEFEC;
+ Tue, 18 Feb 2020 11:59:31 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 22BE63F68F;
- Tue, 18 Feb 2020 11:59:28 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5BF623F68F;
+ Tue, 18 Feb 2020 11:59:31 -0800 (PST)
 From: Mark Brown <broonie@kernel.org>
 To: Herbert Xu <herbert@gondor.apana.org.au>,
  "David S. Miller" <davem@davemloft.net>,
@@ -36,17 +36,16 @@ To: Herbert Xu <herbert@gondor.apana.org.au>,
  Marc Zyngier <maz@kernel.org>, James Morse <james.morse@arm.com>,
  Julien Thierry <julien.thierry.kdev@gmail.com>,
  Suzuki K Poulose <suzuki.poulose@arm.com>
-Subject: [PATCH 16/18] arm64: sdei: Annotate SDEI entry points using new style
- annotations
-Date: Tue, 18 Feb 2020 19:58:40 +0000
-Message-Id: <20200218195842.34156-17-broonie@kernel.org>
+Subject: [PATCH 17/18] arm64: vdso: Convert to modern assembler annotations
+Date: Tue, 18 Feb 2020 19:58:41 +0000
+Message-Id: <20200218195842.34156-18-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200218195842.34156-1-broonie@kernel.org>
 References: <20200218195842.34156-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_115929_871015_74321C71 
-X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-CacheID: sfid-20200218_115932_848536_19063E65 
+X-CRM114-Status: UNSURE (   9.69  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -70,9 +69,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Brown <broonie@kernel.org>, James Morse <james.Morse@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
+Cc: Mark Brown <broonie@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -81,74 +79,33 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 In an effort to clarify and simplify the annotation of assembly
 functions new macros have been introduced. These replace ENTRY and
 ENDPROC with two different annotations for normal functions and those
-with unusual calling conventions.
-
-The SDEI entry points are currently annotated as normal functions but
-are called from non-kernel contexts with non-standard calling convention
-and should therefore be annotated as such so do so.
+with unusual calling conventions. Convert the assembly function in the
+arm64 VDSO to the new macros.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
-Acked-by: James Morse <james.Morse@arm.com>
 ---
- arch/arm64/kernel/entry.S | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ arch/arm64/kernel/vdso/sigreturn.S | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 7439f29946fb..e5d4e30ee242 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -938,7 +938,7 @@ NOKPROBE(ret_from_fork)
-  */
- .ltorg
- .pushsection ".entry.tramp.text", "ax"
--ENTRY(__sdei_asm_entry_trampoline)
-+SYM_CODE_START(__sdei_asm_entry_trampoline)
- 	mrs	x4, ttbr1_el1
- 	tbz	x4, #USER_ASID_BIT, 1f
+diff --git a/arch/arm64/kernel/vdso/sigreturn.S b/arch/arm64/kernel/vdso/sigreturn.S
+index 0723aa398d6e..12324863d5c2 100644
+--- a/arch/arm64/kernel/vdso/sigreturn.S
++++ b/arch/arm64/kernel/vdso/sigreturn.S
+@@ -14,7 +14,7 @@
+ 	.text
  
-@@ -960,7 +960,7 @@ ENTRY(__sdei_asm_entry_trampoline)
- 	ldr	x4, =__sdei_asm_handler
- #endif
- 	br	x4
--ENDPROC(__sdei_asm_entry_trampoline)
-+SYM_CODE_END(__sdei_asm_entry_trampoline)
- NOKPROBE(__sdei_asm_entry_trampoline)
- 
- /*
-@@ -970,14 +970,14 @@ NOKPROBE(__sdei_asm_entry_trampoline)
-  * x2: exit_mode
-  * x4: struct sdei_registered_event argument from registration time.
-  */
--ENTRY(__sdei_asm_exit_trampoline)
-+SYM_CODE_START(__sdei_asm_exit_trampoline)
- 	ldr	x4, [x4, #(SDEI_EVENT_INTREGS + S_ORIG_ADDR_LIMIT)]
- 	cbnz	x4, 1f
- 
- 	tramp_unmap_kernel	tmp=x4
- 
- 1:	sdei_handler_exit exit_mode=x2
--ENDPROC(__sdei_asm_exit_trampoline)
-+SYM_CODE_END(__sdei_asm_exit_trampoline)
- NOKPROBE(__sdei_asm_exit_trampoline)
- 	.ltorg
- .popsection		// .entry.tramp.text
-@@ -1003,7 +1003,7 @@ SYM_DATA_END(__sdei_asm_trampoline_next_handler)
-  * follow SMC-CC. We save (or retrieve) all the registers as the handler may
-  * want them.
-  */
--ENTRY(__sdei_asm_handler)
-+SYM_CODE_START(__sdei_asm_handler)
- 	stp     x2, x3, [x1, #SDEI_EVENT_INTREGS + S_PC]
- 	stp     x4, x5, [x1, #SDEI_EVENT_INTREGS + 16 * 2]
- 	stp     x6, x7, [x1, #SDEI_EVENT_INTREGS + 16 * 3]
-@@ -1086,6 +1086,6 @@ alternative_else_nop_endif
- 	tramp_alias	dst=x5, sym=__sdei_asm_exit_trampoline
- 	br	x5
- #endif
--ENDPROC(__sdei_asm_handler)
-+SYM_CODE_END(__sdei_asm_handler)
- NOKPROBE(__sdei_asm_handler)
- #endif /* CONFIG_ARM_SDE_INTERFACE */
+ 	nop
+-ENTRY(__kernel_rt_sigreturn)
++SYM_FUNC_START(__kernel_rt_sigreturn)
+ 	.cfi_startproc
+ 	.cfi_signal_frame
+ 	.cfi_def_cfa	x29, 0
+@@ -23,4 +23,4 @@ ENTRY(__kernel_rt_sigreturn)
+ 	mov	x8, #__NR_rt_sigreturn
+ 	svc	#0
+ 	.cfi_endproc
+-ENDPROC(__kernel_rt_sigreturn)
++SYM_FUNC_END(__kernel_rt_sigreturn)
 -- 
 2.20.1
 
