@@ -2,53 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1A071623B7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 10:44:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 551971623CD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 10:46:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zj02CuOjaXv5FHCi7fIj2MZvrEgCJcCk1CPDuOYVCmw=; b=n8P1gfPd4zcNDK
-	fKQf43M+1q3jWXLJ/UeKc7PrpD5tQfZd74dPJaZljGRDIIdpWB2Fvn9eSE8pLVmZt18oCVyvdqfiD
-	HXktewzsw5vigbm7nEJnFXaTDs2IhS7pHFgUIl4s9j3b6BuQinwHb+qlxhCBzf2GUXI+xaNuT4IOm
-	1GqosHTtOdvb6Vwadci/HdO9mKSy4vFZ/PgRO9LMjwczN+70WAwCRBNKqY6jYnHsiz6pLpuP87gDr
-	K6hSAtiEsNNRz4ghnIVqVo/BW17H3VD2vDXlnmXi7EH2C8igkQPR5s533ZIoNVUMNxPwcVZpdPQ32
-	928TFEhKyEp5k/TFXS3g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AUoSKcP/z42e9vRgNvLrbDrXSWXlbmG6bNGF88EzYt8=; b=Xk1ovZXRu0dQGJdlCsn6Cmb93
+	TnBg7ZgrnZAT/a2or/zI5i4RqdVJNohEJhh5n2cB3gOh1VRXwfy2ECaavOUaEY6xyMA/Lhm78vbVi
+	Jn2nfG+h2wsbxY6DxgP+LnISGKcg8lbyED9gaYEmdhZGZWwt/2xAbUVgFcSpsQS6+qgzUZn/QLd7A
+	rEbE+geQ+New2eRLub0sqt9+a03aoSTaPZD5N/QIxbwTtua/Bu+krBm30MawCk5BVs/c9u/P3+cxp
+	SGaedNNfuyezOb4ePj5JRhfTeAcN8SveuqP0J6g0nwBuhcQmt9J+nw380424OC0z3s+ejg2mGFlfh
+	nMF+/mUcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3zQE-0008TS-VC; Tue, 18 Feb 2020 09:44:06 +0000
+	id 1j3zSR-00023W-8Z; Tue, 18 Feb 2020 09:46:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3zQ7-0008Sw-8S
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 09:44:00 +0000
-Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ id 1j3zSH-00022d-0Z
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 09:46:16 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A37B7206E2;
- Tue, 18 Feb 2020 09:43:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 417AD206E2;
+ Tue, 18 Feb 2020 09:46:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582019038;
- bh=glEd8LJg33O82qVtAetCni+HqVd9K5Kd0qvxg1Lw4x4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BnC8as/2IqxRU9Yof3Riunpd5ghLEMkDOCHPGVqmZ92/AY3wlU0/16p4BSv3F/2P3
- jZ0OwMQ+mStgxWyfe79suW0thBq9gNYEgONjCXPQKAtG9hNsK/5rVxLXcxWyEUlkOS
- qeALyMVj3ieInr8CvOc2QiBSjnZ3iKyF6ieeZkEk=
-Date: Tue, 18 Feb 2020 17:43:52 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V3 RESEND 1/7] ARM: dts: imx6sx: Improve UART pins macro
- defines
-Message-ID: <20200218094351.GE6075@dragon>
-References: <1581938021-16259-1-git-send-email-Anson.Huang@nxp.com>
+ s=default; t=1582019172;
+ bh=IMHp2n/+7oTwD0UMPuIj8WNmYZDuF7jfPDPHTkTYfds=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=VyGbrUNyvk2JJyr92klamHD9Lto3mF5e88GAPxsdBirRnVEK+iEZjLdPSfdI9GqLk
+ 3PdCSBYhoXLTi4LssEL5OsP7PB7OMmGExG/uRxgVBGspua2E3Kj4GQbt5N9MO/+Wij
+ oOk4IwquRePoKh6l9ZL8TbQ5Vs0Bwet7Q+K/CNyw=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j3zSE-006Bbs-Ih; Tue, 18 Feb 2020 09:46:10 +0000
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1581938021-16259-1-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Date: Tue, 18 Feb 2020 09:46:10 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Zenghui Yu <yuzenghui@huawei.com>
+Subject: Re: [PATCH v4 06/20] irqchip/gic-v4.1: Add initial SGI configuration
+In-Reply-To: <e47baffb-83a5-57d7-1721-eaee28aaaabf@huawei.com>
+References: <20200214145736.18550-1-maz@kernel.org>
+ <20200214145736.18550-7-maz@kernel.org>
+ <e47baffb-83a5-57d7-1721-eaee28aaaabf@huawei.com>
+Message-ID: <4a64bf17c015cb10e62d9c1a1ff64db5@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, lorenzo.pieralisi@arm.com, jason@lakedaemon.net,
+ rrichter@marvell.com, tglx@linutronix.de, eric.auger@redhat.com,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_014359_317090_2518133A 
-X-CRM114-Status: UNSURE (   8.35  )
+X-CRM114-CacheID: sfid-20200218_014615_297375_23983344 
+X-CRM114-Status: UNSURE (   9.49  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -78,25 +94,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
- kernel@pengutronix.de, u.kleine-koenig@pengutronix.de, festevam@gmail.com,
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jason Cooper <jason@lakedaemon.net>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
+ Eric Auger <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, kvmarm@lists.cs.columbia.edu,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 07:13:35PM +0800, Anson Huang wrote:
-> Add DCE/DTE to UART pins macro defines to distinguish the
-> DCE and DTE functions, keep old defines at the end of file
-> for some time to make it backward compatible.
-> =
+Hi Zenghui,
 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
+On 2020-02-18 07:25, Zenghui Yu wrote:
+> Hi Marc,
 
-Applied all, thanks.
+[...]
+
+>>     static void its_sgi_irq_domain_deactivate(struct irq_domain 
+>> *domain,
+>>   					  struct irq_data *d)
+>>   {
+>> -	/* Nothing to do */
+>> +	struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
+>> +
+>> +	vpe->sgi_config[d->hwirq].enabled = false;
+>> +	its_configure_sgi(d, true);
+> 
+> The spec says, when C==1, VSGI clears the pending state of the vSGI,
+> leaving the configuration unchanged.  So should we first clear the
+> pending state and then disable vSGI (let E==0)?
+
+Right you are again. We need two commands, not just one (the pseudocode 
+is
+pretty explicit).
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
