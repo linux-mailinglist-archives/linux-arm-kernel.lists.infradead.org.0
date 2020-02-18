@@ -2,74 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 981F7162F28
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 19:56:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1738162F3F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:03:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XZM+ZPjLPYMZqtUw4oFo4Jk8F5Nowm1RI0Gd0eajK/I=; b=hR09wVeaq1kNvI
-	tKXXD1zCCEj1tSeMeezkK1psBgO6mSrsJ7EG1ATWJ1bZnY5fUJfxf1iI7iD4zBKcY7N4Eva5zvtzZ
-	dIKoADPdrHntcWxgfyt26BJV+rb2dcXcZShXhatQmksUXUal+UTHysuA9fUcRl2DOd2t+g+MnlxlO
-	USUXocseREn4vOKqzKLVpocHv4Y12eKMpcRUyIKg27I0mwTBmwgTpJWo/IsblrYD4WS16c//zZkmu
-	mxTwBy68mum7qXuyCZMj3T7RWZvuLjqpVneIt790y8S/sMxxmzQJH0AUtWAV/r/nZeSReds773TjI
-	XMaCNBV5iyIZo5o/a53Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6xpR7tCibm0c/eCgUGAqpE+4UyXN9QCmLc3YtE4MykY=; b=uKf4XO3wC7LAbgV6osf+SyNO9
+	522FeMmcSnZx7DmdBhZ1XDD84WIjNwPG2NMpFeP06VVocyjHo5/hpm93rFKetV9C+t0W2OTrVuBLN
+	S2PMdNtfWs7n9f88aAZg9Z2TVc9wS9/O6E3/X4g9clAqjZti6jaewfVAHknaAEj+3CDB4+JGsqRk3
+	RjRy6Mqb5AQcvqtqxoYkCnF8cweX8zzJsouHmLxsOy7p6GWO/qW3GFlsqw99HiDqc5ujLueknx/EV
+	jlkRaQxUDPUroAwMEvz68dXCqkEVmG+FqQBn0cSyjv85eszyxUp/Xs2IWu3Q04rEdeLfexNsgA5eV
+	IRx0ECwpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4834-0000JF-0G; Tue, 18 Feb 2020 18:56:46 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1j489B-0002Cp-Uv; Tue, 18 Feb 2020 19:03:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j482u-0000IQ-PV
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 18:56:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1582052194;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=UGqjQEwBIAGIH2rlvtx+n4+mjmKd16dlzwe9jbo2/EQ=;
- b=gIYljOJMI/CDbHuQo03coWWwQgD2jDlaOc0ER7xtvK/mngVjnjnn/1iiWslXrzfi17ilGJ
- WNafyQqiS0WGOhqQtkvvnsUFZkcIMsvERHqkXSuAu0CN/ewclf5V0JnkK30LHnfob0G1VI
- XROaABK6X4MKn8ibMguNs8Lzlidepr0=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-20-WUsHyBmKMyO0YlUQF_9VXQ-1; Tue, 18 Feb 2020 13:56:24 -0500
-X-MC-Unique: WUsHyBmKMyO0YlUQF_9VXQ-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1j4892-0002C4-Pf
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:02:58 +0000
+Received: from localhost (c-73-47-72-35.hsd1.nh.comcast.net [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 01E3BDBA3;
- Tue, 18 Feb 2020 18:56:23 +0000 (UTC)
-Received: from mail (ovpn-120-118.rdu2.redhat.com [10.10.120.118])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id B10A560BE1;
- Tue, 18 Feb 2020 18:56:19 +0000 (UTC)
-Date: Tue, 18 Feb 2020 13:56:18 -0500
-From: Andrea Arcangeli <aarcange@redhat.com>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [PATCH 1/2] mm: use_mm: fix for arches checking mm_users to
- optimize TLB flushes
-Message-ID: <20200218185618.GB14027@redhat.com>
-References: <20200203201745.29986-1-aarcange@redhat.com>
- <20200203201745.29986-2-aarcange@redhat.com>
- <20200218113103.GB4151@dhcp22.suse.cz>
+ by mail.kernel.org (Postfix) with ESMTPSA id E1B0324655;
+ Tue, 18 Feb 2020 19:02:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582052575;
+ bh=yGg6yNRaAc7iDhwPELABRLvrPSnaAFrFM+ijBgVtWoo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=dQJS5bcavE0VoZy3dS/+CN4EqnAgMsL2HFP6co6j0tfwA/VryfUjJD+jLWGKNgP/s
+ 7QO45qSnZKAlxcLswZk8QyTW0yHgO6D+IZvIOhyIhkmq9+QCOiyce6wE7ufDXvGxU2
+ pRuXmqKCuzRTX4I3uR6QSvrSq7TyLtxmGr0TfG/w=
+Date: Tue, 18 Feb 2020 14:02:53 -0500
+From: Sasha Levin <sashal@kernel.org>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH] firmware: imx: Align imx SC msg structs to 4
+Message-ID: <20200218190253.GW1734@sasha-vm>
+References: <3a8b6772a1edffdd7cdb54d6d50030b03ba0bebb.1581455751.git.leonard.crestez@nxp.com>
+ <20200217062129.GB6790@dragon>
+ <VI1PR04MB7023CDE9E4AD086F2E926495EE160@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <20200218091831.GB6075@dragon>
+ <VI1PR04MB7023C1C536805130D9429E11EE110@VI1PR04MB7023.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200218113103.GB4151@dhcp22.suse.cz>
-User-Agent: Mutt/1.13.1 (2019-12-14)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+In-Reply-To: <VI1PR04MB7023C1C536805130D9429E11EE110@VI1PR04MB7023.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_105636_906180_509421B1 
-X-CRM114-Status: GOOD (  26.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200218_110256_855869_3A0BB844 
+X-CRM114-Status: GOOD (  10.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -91,100 +80,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rafael Aquini <aquini@redhat.com>, Jon Masters <jcm@jonmasters.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- linux-mm@kvack.org, Mark Salter <msalter@redhat.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Stefan Agner <stefan@agner.ch>,
+ "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
+ Franck Lenormand <franck.lenormand@nxp.com>,
+ "open list:PIN CONTROLLER - FREESCALE" <linux-gpio@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "open list:REAL TIME CLOCK \(RTC\) SUBSYSTEM" <linux-rtc@vger.kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Michal!
+On Tue, Feb 18, 2020 at 05:48:50PM +0000, Leonard Crestez wrote:
+>On 18.02.2020 11:18, Shawn Guo wrote:
+>> On Mon, Feb 17, 2020 at 08:37:45PM +0000, Leonard Crestez wrote:
+>>> On 17.02.2020 08:21, Shawn Guo wrote:
+>>>> On Tue, Feb 11, 2020 at 11:24:33PM +0200, Leonard Crestez wrote:
+>>>>> The imx SC api strongly assumes that messages are composed out of
+>>>>> 4-bytes words but some of our message structs have sizeof "6" and "7".
+>>>>>
+>>>>> This produces many oopses with CONFIG_KASAN=y:
+>>>>>
+>>>>> 	BUG: KASAN: stack-out-of-bounds in imx_mu_send_data+0x108/0x1f0
+>>>>>
+>>>>> It shouldn't cause an issues in normal use because these structs are
+>>>>> always allocated on the stack.
+>>>>>
+>>>>> Cc: stable@vger.kernel.org
+>>>>
+>>>> Should we have a fixes tag and send it for -rc?
+>>>
+>>> I haven't check but this would probably have to be split into multiple
+>>> patches because the structs were not added all at once.
+>>
+>> Or maybe we can just drop the stable tag, as it addresses a corner
+>> case issue which could concern very few people?
+>
+>I think that "kernel does not boot with KASAN=y" is an issue worth fixing.
+>
+>I will split and resend with appropriate Fixes: tags.
+>
+>It seems likely that this will be picked up for -stable anyway via
+>Sasha's automation scripts and those scripts benefit from Fixes: tags.
 
-On Tue, Feb 18, 2020 at 12:31:03PM +0100, Michal Hocko wrote:
-> On Mon 03-02-20 15:17:44, Andrea Arcangeli wrote:
-> > alpha, ia64, mips, powerpc, sh, sparc are relying on a check on
-> > mm->mm_users to know if they can skip some remote TLB flushes for
-> > single threaded processes.
-> > 
-> > Most callers of use_mm() tend to invoke mmget_not_zero() or
-> > get_task_mm() before use_mm() to ensure the mm will remain alive in
-> > between use_mm() and unuse_mm().
-> > 
-> > Some callers however don't increase mm_users and they instead rely on
-> > serialization in __mmput() to ensure the mm will remain alive in
-> > between use_mm() and unuse_mm(). Not increasing mm_users during
-> > use_mm() is however unsafe for aforementioned arch TLB flushes
-> > optimizations. So either mmget()/mmput() should be added to the
-> > problematic callers of use_mm()/unuse_mm() or we can embed them in
-> > use_mm()/unuse_mm() which is more robust.
-> 
-> I would prefer we do not do that because then the real owner of the mm
-> cannot really tear down the address space and the life time of it is
-> bound to a kernel thread doing the use_mm. This is undesirable I would
-> really prefer if the existing few users would use mmget only when they
-> really need to access mm.
+Even if not, we realy very much on KASAN working on stable kernels, so
+please do fix this :)
 
-If the existing few users that don't already do the explicit mmget
-will have to start doing it too, the end result will be exactly the
-same that you described in your "cons" (lieftime of the mm will still
-be up to who did mmget;use_mm and didn't call unuse_mm;mmput yet).
-
-One reason to prefer adding the mmget to the callers to forget it,
-would be to avoid an atomic op in use_mm (for those callers that
-didn't forget it), but if anybody is doing use_mm in a fast path that
-won't be very fast anyway so I didn't think this was worth the
-risk. If that microoptimization in a slow path is the reason we should
-add mmget to the callers that forgot it that would be fine with me
-although I think it's risky because if already happened once and it
-could happen again (and when it happens it only bits a few arches if
-used with a few drivers).
-
-On a side note the patch 2/2 should be dropped for now, I'm looking if
-we can optimize away TLB-i broadcasts from multithreaded apps too.
-
+-- 
 Thanks,
-Andrea
-
-> 
-> > Signed-off-by: Andrea Arcangeli <aarcange@redhat.com>
-> > ---
-> >  mm/mmu_context.c | 2 ++
-> >  1 file changed, 2 insertions(+)
-> > 
-> > diff --git a/mm/mmu_context.c b/mm/mmu_context.c
-> > index 3e612ae748e9..ced0e1218c0f 100644
-> > --- a/mm/mmu_context.c
-> > +++ b/mm/mmu_context.c
-> > @@ -30,6 +30,7 @@ void use_mm(struct mm_struct *mm)
-> >  		mmgrab(mm);
-> >  		tsk->active_mm = mm;
-> >  	}
-> > +	mmget(mm);
-> >  	tsk->mm = mm;
-> >  	switch_mm(active_mm, mm, tsk);
-> >  	task_unlock(tsk);
-> > @@ -57,6 +58,7 @@ void unuse_mm(struct mm_struct *mm)
-> >  	task_lock(tsk);
-> >  	sync_mm_rss(mm);
-> >  	tsk->mm = NULL;
-> > +	mmput(mm);
-> >  	/* active_mm is still 'mm' */
-> >  	enter_lazy_tlb(mm, tsk);
-> >  	task_unlock(tsk);
-> > 
-> > 
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-> -- 
-> Michal Hocko
-> SUSE Labs
-> 
-
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
