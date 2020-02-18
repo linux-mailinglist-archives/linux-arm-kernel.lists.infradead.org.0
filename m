@@ -2,74 +2,110 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AB70162B14
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 17:52:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B14B8162B1C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 17:54:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dSJe6mP7D3kloE5tn3RFWEbUxV0jaLG++fcTVvOHBCE=; b=iio7ZZat+NEosS
-	R1LZ8/A+uAYXtFKeVgCIfYJC2MjTc3345Rq+Exyy346NavKyKxoU8ThDo3ao4EO7j++yOikjb+hq0
-	A1Y8PMZ9zhBN3DZUEPI51c6N6DQsBGLV6FiSX240ivclhp+gHV40reE1iJ0xDhEZOepLhxVW46BDm
-	f/qMoRx3Bd8A6qJzIyC59Re2YM5UEySMXkhVLh2lv/g+xzByU++sbtXMbFAXbSqGNtnH9j7XSS8m0
-	WRdAed8FW4me0JcWFqxsQl6cvonE/PUtzlxGhopJrDttbZpSyxEZbH1+nR1Ant2TOpqcWfMHUNKP9
-	fscq08vbRJHhcC/RmRug==;
+	List-Owner; bh=kz1gNPe6x62KW5YfD/Is2v3UXLTFjXuk0L1eLDdDn3E=; b=dalfE+mZvKrP+3
+	+tHahVA6Tlnx1l+Iu5G/8KgwHnEN8EhslDa6IZtHHot2blheMICeKSuFco1gtyoDMV58lcCetCC6i
+	ChJ3F9DFWAhZT9VRRYRbDTfQzeq+SEmrgxVmNzBBQHUr7fK3/PbiRUpaEajmxw1wbtniVPWCxALHs
+	GnsdheEg3kaS+imySOdxLhs1GXPbH7diwY0j+mmaphkNIAl+ksggi/rLlUhteMLpwJL3YeIHwCtwl
+	dY7prkuugmRoit5YxBSQ0VeSbX4UVKOQjaxse5FpNl4PUujsVMbWbqqqye5p/D6eGRJPgtGp0E/H+
+	axdYMmbQ8pwxSwLteJnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j466W-0001Gc-QQ; Tue, 18 Feb 2020 16:52:12 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1j468Y-0001Zc-QO; Tue, 18 Feb 2020 16:54:18 +0000
+Received: from mail-eopbgr150079.outbound.protection.outlook.com
+ ([40.107.15.79] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j466P-0001Fh-Ac
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 16:52:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=xBLjHMP2eGbIVzYd5mfcYLe+V9nuLC9yBBNTiFPgH+8=; b=J12p8UC2nnNT4XrmssDUP2jD/
- 3zjetfjPdCrr3/fueG39+jDaHqUThGlv7Sg8q5y6RzKPRf3Cnu5t1nZpicCmpJc809U53llwT7ndt
- 3WHX6tunomuyXyJF1hBNc90NhxUX46TryamYJEhWYfWcywmRIumEtJEFDLIvm74hVQxkeWtad7dRw
- TCSIagtBPZKzLR+s1I5a3BXHBgOZ9cMoVh4v7HJHQxFj0UBRrrAeZ1mSiDdFocxEB4nrsb5iFyOpv
- Pq1PrRJtygtFBSOE1K6LCTBmXbI6mVJI63oFdosyK4YMc+KMJ1BZ+3N5pegOyWYIsLr0yWeV7a8ET
- tJwsZmxkA==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:49568)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1j466D-0008Ni-Ll; Tue, 18 Feb 2020 16:51:53 +0000
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1j4669-0000ap-MZ; Tue, 18 Feb 2020 16:51:49 +0000
-Date: Tue, 18 Feb 2020 16:51:49 +0000
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH 1/2] ARM: decompressor: prepare cache_clean_flush for
- doing by-VA maintenance
-Message-ID: <20200218165149.GK25745@shell.armlinux.org.uk>
-References: <20200218164430.32671-1-ardb@kernel.org>
- <20200218164430.32671-2-ardb@kernel.org>
+ id 1j468P-0001Z9-Ux
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 16:54:11 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=O0j2N1JX8HCtL5j57zisWnejuZzP+9NzK4cu5wsKUgpf+ADXnhATBV9uJCP8LcUhhsUncwu4in19M7vxeSubQg4ZmcqD5rjWJUa0q8T2nzOBik5kzp16rWHgaeFxsMWB57+fBOZR4E4JISNWnIFLSNsQ8ArWIGN6f3AAc5W3d6hIEb88J1ent29iFdagFpNyaz8+ZPXx5rlA1g9wzFfpKZqajlRfVf9/nLpinPUQF/qp2ugPipB3SZ4dRGn3aGqyUkGqWuULtKTztZ49cFKHqDBUih6HoUChXMGtcLaYhtzLV3isZar7vVr9zinQx9WUVOgc2jGNYwjqyUE1eQ3qpg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KKMxCb1mG3KkEYxtE8YDfXySNv2vkczNnN5hnO8yUSw=;
+ b=Gg5eD4x5dajHcl/s2LtgAUG/9r2rJwdY+UEfGz7Xrhu98mwNPIQZf7xM4GEF4e1ovXvB+maFC0s4xO2AhoS+mJ5SjpknLhry7VvgkOSOG4jmLYDi9E+X+rtK/QuIIbKptsynz/rNzHWO0Icjp1BzMpfijYVpuU6Q5LxfcfJRywPXNGAq2OfiT5KmwrhiWqiEOyrKHq7RDYdJJRRjKTyjkOzyfvayR+GpXqtHIGodTVm+Ac/Br/nvzvN7ktWSichZLBuPwF4Uo6/RiplVPWNN+U83gzgoIbKE4z5DA+v99buHzKBaJvMMCZFC5H/xabVdszY18MoMNSM0TY9mQS7qyw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KKMxCb1mG3KkEYxtE8YDfXySNv2vkczNnN5hnO8yUSw=;
+ b=lNpdbNppo8VJ3AxxEtL/HWfVgN6tJ0mrmSojrTfhRMNsWgro05t1auuek2swkcZBYMuvanMjC15gowR0sAG9izNs18na4tvaYV6nnT+91bZxKGcaFiLfqhrehvFSXkvAffT7nXIpUs1fGXaQsBQTyui/vh3spK5jZz1jeTHa1B8=
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com (20.179.234.30) by
+ VE1PR04MB6656.eurprd04.prod.outlook.com (20.179.235.95) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2729.25; Tue, 18 Feb 2020 16:54:06 +0000
+Received: from VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::b896:5bc0:c4dd:bd23]) by VE1PR04MB6687.eurprd04.prod.outlook.com
+ ([fe80::b896:5bc0:c4dd:bd23%2]) with mapi id 15.20.2729.032; Tue, 18 Feb 2020
+ 16:54:06 +0000
+From: Leo Li <leoyang.li@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Arnd Bergmann <arnd@arndb.de>, Olof
+ Johansson <olof@lixom.net>
+Subject: RE: [PATCH 1/2] arm64: defconfig: run through savedefconfig for
+ ordering
+Thread-Topic: [PATCH 1/2] arm64: defconfig: run through savedefconfig for
+ ordering
+Thread-Index: AQHV4HYQkBp5gNwa3EW+6CF+jjRMxage5usAgAJPBQA=
+Date: Tue, 18 Feb 2020 16:54:05 +0000
+Message-ID: <VE1PR04MB6687EFB8CC40D9A53E8D25008F110@VE1PR04MB6687.eurprd04.prod.outlook.com>
+References: <1581382559-18520-1-git-send-email-leoyang.li@nxp.com>
+ <20200217053427.GA6042@dragon>
+In-Reply-To: <20200217053427.GA6042@dragon>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=leoyang.li@nxp.com; 
+x-originating-ip: [64.157.242.222]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: e50be303-3f19-48e2-cc87-08d7b4932a6d
+x-ms-traffictypediagnostic: VE1PR04MB6656:
+x-microsoft-antispam-prvs: <VE1PR04MB66567772077F85E11FDB39368F110@VE1PR04MB6656.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 031763BCAF
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(376002)(346002)(396003)(136003)(366004)(199004)(189003)(186003)(33656002)(478600001)(81166006)(81156014)(6506007)(52536014)(316002)(110136005)(53546011)(54906003)(8936002)(7696005)(8676002)(55016002)(9686003)(2906002)(26005)(86362001)(5660300002)(66476007)(66946007)(76116006)(66556008)(64756008)(66446008)(4326008)(71200400001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6656;
+ H:VE1PR04MB6687.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: yvDBWnI/n8LKmHmBzX2EfxrqkYdIfGOO4mPevz2VRLukKDJzGwkXTgfKtE+5unmNt3c6W/ZUnxDPplK0fmKG1Pm4USY8f/z53ABAVm6bqT/wDFfUrL7W8IOhfiyc9O9WQnKtKcTlSD7FaqKQo4H1kl49qR8EbioZcHWkOLd+jxN9tErV4DDMSEe2HEsqAZCJE0ICR2SDhkduxz1B+AQwjNx45da74Xqa0d6QakIxkniiQhGKttym+6MKBBL/xWbAhVVbNRIcv0gKXaF8KyJZOCLfv+80jGLs6TlyBhGJybmUEDveWp2+7LuWCbj+cZ605G069K5nVQM/CQOf+x9wZyZDSYqmfYpZzJqK3ibnOkAXOGiCAiS7E9BatZpwnMJGtCl8+P+n6TZ1IA5OFqc0x9BAwvVAj3NAsu96cYuHWzndsyl6pJZpVng20GjjUuBt
+x-ms-exchange-antispam-messagedata: rpC6UYZb0lN332KRE12gfUggPTSo36oV+bI724z9HpscZMzGyqUfSiSbNkl4t6yjbIiSUxilPo7biE2dAGTxZpwJ4Q1O+wrwP1Tywt/oRkHCiGNUPifdWfzR46ukNtE5ZvhpckJCyBJihTa/zaCMdg==
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200218164430.32671-2-ardb@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e50be303-3f19-48e2-cc87-08d7b4932a6d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 Feb 2020 16:54:05.9936 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Zf57IO5YRY+NuEyrmFrmMFpn9aWney9KNd04SjkvhWoEo9Vik3WcSvbIyAHF9/1z+ir6/xa8Sb6KiYaqJ56FZg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6656
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_085205_370375_B167CD2B 
-X-CRM114-Status: GOOD (  17.94  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200218_085409_997920_76D52C18 
+X-CRM114-Status: GOOD (  17.66  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [40.107.15.79 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -77,6 +113,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,108 +125,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, linux-efi@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org, Nicolas Pitre <nico@fluxnic.net>
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 05:44:29PM +0100, Ard Biesheuvel wrote:
-> In preparation of turning the decompressor's cache clean/flush
-> operations into proper by-VA maintenance for v7 cores, pass the
-> start and end addresses of the regions that need cache maintenance
-> into cache_clean_flush in registers r0 and r1.
 
-Where's the documentation of the new calling convention?  This is
-assembly code, it needs such things documented as there's no
-function prototypes to give that information.
 
+> -----Original Message-----
+> From: Shawn Guo <shawnguo@kernel.org>
+> Sent: Sunday, February 16, 2020 11:34 PM
+> To: Leo Li <leoyang.li@nxp.com>; Arnd Bergmann <arnd@arndb.de>; Olof
+> Johansson <olof@lixom.net>
+> Cc: linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org
+> Subject: Re: [PATCH 1/2] arm64: defconfig: run through savedefconfig for
+> ordering
 > 
-> Currently, all implementations of cache_clean_flush ignore these
-> values, so no functional change is expected as a result of this
-> patch.
+> On Mon, Feb 10, 2020 at 06:55:58PM -0600, Li Yang wrote:
+> > Used "make defconfig savedefconfig" to regenerate defconfig file in the
+> > right order to prepare for additional defconfig changes.
+> >
+> > Signed-off-by: Li Yang <leoyang.li@nxp.com>
 > 
-> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> ---
->  arch/arm/boot/compressed/head.S | 28 +++++++++++++++++---
->  1 file changed, 25 insertions(+), 3 deletions(-)
+> Arnd, Olof,
 > 
-> diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-> index 7b86a2e1acce..935799b92198 100644
-> --- a/arch/arm/boot/compressed/head.S
-> +++ b/arch/arm/boot/compressed/head.S
-> @@ -525,12 +525,15 @@ dtb_check_done:
->  		/* cache_clean_flush may use the stack, so relocate it */
->  		add	sp, sp, r6
->  #endif
-> -
-> +		mov	r0, r9
-> +		ldr	r1, 0f
-> +		add	r1, r1, r0
->  		bl	cache_clean_flush
->  
->  		badr	r0, restart
->  		add	r0, r0, r6
->  		mov	pc, r0
-> +0:		.long	_edata - restart
->  
->  wont_overwrite:
->  /*
-> @@ -622,6 +625,21 @@ not_relocated:	mov	r0, #0
->  		add	r2, sp, #0x10000	@ 64k max
->  		mov	r3, r7
->  		bl	decompress_kernel
-> +
-> +		mov	r0, r4			@ base of inflated image
-> +		adr	r1, LC0			@ actual LC0
-> +		ldr	r2, [r1]		@ linktime LC0
-> +		sub	r2, r1, r2		@ LC0 delta
-> +		ldr	r1, [r1, #16]		@ link time inflated size offset
-> +		ldr	r1, [r1, r2]		@ actual inflated size (LE)
-> +#ifdef __ARMEB__
-> +		/* convert to big endian */
-> +		eor	r2, r1, r1, ror #16
-> +		bic	r2, r2, #0x00ff0000
-> +		mov	r1, r1, ror #8
-> +		eor	r1, r1, r2, lsr #8
-> +#endif
-> +		add	r1, r1, r0		@ end of inflated image
->  		bl	cache_clean_flush
->  		bl	cache_off
->  
-> @@ -1439,6 +1457,7 @@ reloc_code_end:
->  #ifdef CONFIG_EFI_STUB
->  		.align	2
->  _start:		.long	start - .
-> +__edata:	.long	_edata - .
->  
->  ENTRY(efi_stub_entry)
->  		@ allocate space on stack for passing current zImage address
-> @@ -1470,8 +1489,11 @@ ENTRY(efi_stub_entry)
->  		.align	2
->  0:		.long	start - (. + 4)
->  
-> -		@ Preserve return value of efi_entry() in r4
-> -		mov	r4, r0
-> +		mov	r4, r0				@ preserve DTB pointer
-> +		mov	r0, r1				@ start of image
-> +		adr	r2, __edata
-> +		ldr	r1, [r2]
-> +		add	r1, r1, r2			@ end of image
->  		bl	cache_clean_flush
->  		bl	cache_off
->  
-> -- 
-> 2.17.1
-> 
-> 
+> How do we handle arm64 defconfig savedefconfig changes? I think it will
+> likely cause conflicts with changes from other platform maintainers.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Actually I think it helps a lot for managing off-tree defconfig patches when we keep it sorted with savedefconfig because changes to the same option will always be at the same location and shown as proper conflicts when merging.
+
+Regards,
+Leo
+> 
+> Shawn
+> 
+> > ---
+> >  arch/arm64/configs/defconfig | 15 ++++++---------
+> >  1 file changed, 6 insertions(+), 9 deletions(-)
+> >
+> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > index 0f212889c931..618001ef5c81 100644
+> > --- a/arch/arm64/configs/defconfig
+> > +++ b/arch/arm64/configs/defconfig
+> > @@ -471,9 +471,9 @@ CONFIG_DW_WATCHDOG=y
+> >  CONFIG_SUNXI_WATCHDOG=m
+> >  CONFIG_IMX2_WDT=y
+> >  CONFIG_IMX_SC_WDT=m
+> > +CONFIG_QCOM_WDT=m
+> >  CONFIG_MESON_GXBB_WATCHDOG=m
+> >  CONFIG_MESON_WATCHDOG=m
+> > -CONFIG_QCOM_WDT=m
+> >  CONFIG_RENESAS_WDT=y
+> >  CONFIG_UNIPHIER_WATCHDOG=y
+> >  CONFIG_BCM2835_WDT=y
+> > @@ -594,8 +594,8 @@ CONFIG_SND_SOC_TAS571X=m
+> >  CONFIG_SND_SIMPLE_CARD=m
+> >  CONFIG_SND_AUDIO_GRAPH_CARD=m
+> >  CONFIG_I2C_HID=m
+> > -CONFIG_USB=y
+> >  CONFIG_USB_CONN_GPIO=m
+> > +CONFIG_USB=y
+> >  CONFIG_USB_OTG=y
+> >  CONFIG_USB_XHCI_HCD=y
+> >  CONFIG_USB_XHCI_TEGRA=y
+> > @@ -617,7 +617,6 @@ CONFIG_USB_CHIPIDEA_HOST=y
+> >  CONFIG_USB_ISP1760=y
+> >  CONFIG_USB_HSIC_USB3503=y
+> >  CONFIG_NOP_USB_XCEIV=y
+> > -CONFIG_USB_ULPI=y
+> >  CONFIG_USB_GADGET=y
+> >  CONFIG_USB_RENESAS_USBHS_UDC=m
+> >  CONFIG_USB_RENESAS_USB3=m
+> > @@ -756,7 +755,6 @@ CONFIG_OWL_PM_DOMAINS=y
+> >  CONFIG_RASPBERRYPI_POWER=y
+> >  CONFIG_IMX_SCU_SOC=y
+> >  CONFIG_QCOM_AOSS_QMP=y
+> > -CONFIG_QCOM_COMMAND_DB=y
+> >  CONFIG_QCOM_GENI_SE=y
+> >  CONFIG_QCOM_GLINK_SSR=m
+> >  CONFIG_QCOM_RMTFS_MEM=m
+> > @@ -771,14 +769,12 @@ CONFIG_ARCH_R8A774A1=y
+> >  CONFIG_ARCH_R8A774B1=y
+> >  CONFIG_ARCH_R8A774C0=y
+> >  CONFIG_ARCH_R8A7795=y
+> > -CONFIG_ARCH_R8A7796=y
+> >  CONFIG_ARCH_R8A77961=y
+> >  CONFIG_ARCH_R8A77965=y
+> >  CONFIG_ARCH_R8A77970=y
+> >  CONFIG_ARCH_R8A77980=y
+> >  CONFIG_ARCH_R8A77990=y
+> >  CONFIG_ARCH_R8A77995=y
+> > -CONFIG_QCOM_PDC=y
+> >  CONFIG_ROCKCHIP_PM_DOMAINS=y
+> >  CONFIG_ARCH_TEGRA_132_SOC=y
+> >  CONFIG_ARCH_TEGRA_210_SOC=y
+> > @@ -809,6 +805,7 @@ CONFIG_PWM_ROCKCHIP=y
+> >  CONFIG_PWM_SAMSUNG=y
+> >  CONFIG_PWM_SUN4I=m
+> >  CONFIG_PWM_TEGRA=m
+> > +CONFIG_QCOM_PDC=y
+> >  CONFIG_RESET_QCOM_AOSS=y
+> >  CONFIG_RESET_QCOM_PDC=m
+> >  CONFIG_RESET_TI_SCI=y
+> > @@ -880,16 +877,16 @@ CONFIG_NLS_ISO8859_1=y
+> >  CONFIG_SECURITY=y
+> >  CONFIG_CRYPTO_ECHAINIV=y
+> >  CONFIG_CRYPTO_ANSI_CPRNG=y
+> > +CONFIG_CRYPTO_USER_API_RNG=m
+> >  CONFIG_CRYPTO_DEV_SUN8I_CE=m
+> >  CONFIG_CRYPTO_DEV_FSL_CAAM=m
+> > -CONFIG_CRYPTO_DEV_HISI_ZIP=m
+> > -CONFIG_CRYPTO_USER_API_RNG=m
+> >  CONFIG_CRYPTO_DEV_QCOM_RNG=m
+> > +CONFIG_CRYPTO_DEV_HISI_ZIP=m
+> >  CONFIG_CMA_SIZE_MBYTES=32
+> >  CONFIG_PRINTK_TIME=y
+> >  CONFIG_DEBUG_INFO=y
+> > -CONFIG_DEBUG_FS=y
+> >  CONFIG_MAGIC_SYSRQ=y
+> > +CONFIG_DEBUG_FS=y
+> >  CONFIG_DEBUG_KERNEL=y
+> >  # CONFIG_SCHED_DEBUG is not set
+> >  # CONFIG_DEBUG_PREEMPT is not set
+> > --
+> > 2.17.1
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
