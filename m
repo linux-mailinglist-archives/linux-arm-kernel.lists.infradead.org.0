@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8E76162FC9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:24:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A86A162FD7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:26:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fJZTCmKjjeQiQ2iYEBK92/exKL72GsjOHrmwFglsxqQ=; b=RE89ORUXJSrizo
-	0E5KOs0u5pDysHk+TijljLdqbkH5Draa1A/8c2uxypQ93bID5HQ1uYKa7rnx0bGUIC6SERrb/DSCc
-	R7ZiuBtQaqssuSrKC/8POGG9OGXYlrW6EkD2gRM9mxR5Hjaiz3Z+kCocSVEiYnaaRFg8pHR0MJsVu
-	YRznOhB3NXLfnwUwf6jHgPZRDKbV1iyhqosC6+MRZf503yUlHRJsmdIv1inqTZD13ibh0/5g/Re8/
-	73uXcSrUo6D6lthm76PNLAep+6idGpKv+Kj5OODrzFKlcrDcEoLKBsT21UyYYkYYHZHNEX/KTP/s9
-	jBkzRqoTilX8teWsQzMA==;
+	List-Owner; bh=ohlewgkhXFQPf9Vl0vO+2ctvaJ4BygzBglctJyOvkok=; b=bEOPz6rfmZ8GNz
+	yFJ4G0HuYUi91L8Y5NqdycfEZ/v0975Rj0xVYA5nxy/0jEJzrLq1DuED/Yzf0f5Q0rXW9CQll90gp
+	LIG6PLbwtF1f2FYRWpa/p2dVXfFd3VViux4xWP3MVKk5ZPKs+DZmI23/XemtMsbENQ1dr9dN48Zvd
+	TMoyK8cDtTJFJU+yPKr46Xoxp+qevTomo1wkp5HLuLlDPqaEx0POK9tkRTuB2wdmJIkPsq+AOgib4
+	TkgVAer9jmZG2/3pX9eiHVPLmQF7e9EW03mY1bU8ll1Wg2S+xAa72XRuC95MPjBdrL2+rOV7cIHkR
+	jSlJQAABxSytNlpLy2ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j48Tu-0002QM-TK; Tue, 18 Feb 2020 19:24:30 +0000
+	id 1j48Vu-00041c-7m; Tue, 18 Feb 2020 19:26:34 +0000
 Received: from namei.org ([65.99.196.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j48Tm-0002Q5-PQ
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:24:23 +0000
+ id 1j48Vj-00041E-JX
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:26:24 +0000
 Received: from localhost (localhost [127.0.0.1])
- by namei.org (8.14.4/8.14.4) with ESMTP id 01IJO3sT013441;
- Tue, 18 Feb 2020 19:24:03 GMT
-Date: Wed, 19 Feb 2020 06:24:03 +1100 (AEDT)
+ by namei.org (8.14.4/8.14.4) with ESMTP id 01IJP3Ub013606;
+ Tue, 18 Feb 2020 19:25:03 GMT
+Date: Wed, 19 Feb 2020 06:25:03 +1100 (AEDT)
 From: James Morris <jmorris@namei.org>
 To: Alexey Budankov <alexey.budankov@linux.intel.com>
-Subject: Re: [PATCH v7 04/12] perf tool: extend Perf tool with CAP_PERFMON
- capability support
-In-Reply-To: <5f961a07-36d0-d8f4-1895-6cfc38bcb81e@linux.intel.com>
-Message-ID: <alpine.LRH.2.21.2002190623450.10165@namei.org>
+Subject: Re: [PATCH v7 05/12] drm/i915/perf: open access for CAP_PERFMON
+ privileged process
+In-Reply-To: <8b408c10-9bb0-4b08-8681-93c0f4a1132e@linux.intel.com>
+Message-ID: <alpine.LRH.2.21.2002190624510.10165@namei.org>
 References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
- <5f961a07-36d0-d8f4-1895-6cfc38bcb81e@linux.intel.com>
+ <8b408c10-9bb0-4b08-8681-93c0f4a1132e@linux.intel.com>
 User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_112422_898118_D50E8341 
-X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-CacheID: sfid-20200218_112623_717954_EBCF1CDD 
+X-CRM114-Status: UNSURE (   9.14  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -87,10 +87,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Mon, 17 Feb 2020, Alexey Budankov wrote:
 
 > 
-> Extend error messages to mention CAP_PERFMON capability as an option
-> to substitute CAP_SYS_ADMIN capability for secure system performance
-> monitoring and observability. Make perf_event_paranoid_check() and
-> __cmd_ftrace() to be aware of CAP_PERFMON capability.
+> Open access to i915_perf monitoring for CAP_PERFMON privileged process.
+> Providing the access under CAP_PERFMON capability singly, without the
+> rest of CAP_SYS_ADMIN credentials, excludes chances to misuse the
+> credentials and makes operation more secure.
 > 
 > CAP_PERFMON implements the principal of least privilege for performance
 > monitoring and observability operations (POSIX IEEE 1003.1e 2.2.2.39
@@ -99,9 +99,9 @@ On Mon, 17 Feb 2020, Alexey Budankov wrote:
 > capabilities) necessary to accomplish its legitimate function, and only
 > for the time that such privileges are actually required)
 > 
-> For backward compatibility reasons access to perf_events subsystem
+> For backward compatibility reasons access to i915_events subsystem
 > remains open for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN
-> usage for secure perf_events monitoring is discouraged with respect to
+> usage for secure i915_events monitoring is discouraged with respect to
 > CAP_PERFMON capability.
 > 
 > Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
