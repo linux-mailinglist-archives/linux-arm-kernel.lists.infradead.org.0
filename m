@@ -2,70 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 521FC162C79
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:18:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72ADB162C89
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:20:25 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TuIMXKgCWs5FqBJw2ba1A7K8qZvTKX0+sUya/flumrw=; b=qKMe45uUrbUdFv
-	JU+seuhnZI2ai09zTEwnSxUwhijENy4v1zk9CfkIE+TtVTs4LWOkS5ZOd3D7jj9Seo3DnDMjb9fWj
-	hhmCh02PjUSRcHBm00mzehRYshXzMOgLw6tLs4LJ1rYclWMfyQCNH4gojVUHjDgrTfZP4Bbe2K4Du
-	qduBnZXA1piYxJGmCDmmVtA3MFat9dXkiTyqRi22tNLOyIBkDPV9tzJeDVFGolT6OZGiePRSlLx3w
-	QyUqIO0SBWC+2wZOhl9rop7D6eJXwrHEGz3gHCNeq08oicY6eKha2ZuPtTTaaQpxc3/GHycQkoKHc
-	xLX/QLFkO1+sFntkstZg==;
+	List-Owner; bh=hLSsrsjmhoniKbUrlnoRT5Jxuq9izMJc7sDMNfr/VIc=; b=ugNAl7JvP22reQ
+	iTozSdHiRmzzYTGx0YaCIYiFdlya32+Ic4tf+S1FQGoAAijLC6tG8V0v4kiCRxraGnhg7+udp10w6
+	84lXB+9Gixx+mhmezGjzN6/8gNah4LcYYTI/OVEd/t1US6IwgiEu7ePsFrnD3c6s2HA3k1hnxNhJY
+	+C6CKcXQxoMwA4TD2NYzuKfLtGqJ0cUjsmcvuTmOerPf+W5e6Xd9mfBbr5PHRXxzc9G9kd61uFeTQ
+	aZPs5oMiWibr+xdUHnWHhRbLJE+889JW5VhL1fpIY/vfM7mRdfPplL6BtWhAEgQk+aAmx4nDw7C7G
+	NlKVecdQUI68hN9tqJjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j46Vt-00077c-02; Tue, 18 Feb 2020 17:18:25 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1j46Xj-0007T5-Ql; Tue, 18 Feb 2020 17:20:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j46Vk-00076t-9Q
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:18:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1582046293;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=ek37kVTDy+eubHSmBaHlU9802HiWJpZwSmyiNbGJoro=;
- b=GqRoJYmK9+ggf2tkU3bZD6KiC3z7tcsnhE0S3xQeoJ9QQWxLNko17NMIsn2LkLdjozEguA
- R3ckK/Nhr9yugFLNBW9jye2L/hg5DhtFJuwbfp+SskLLlUZ9yrrhkOD90XkKLW3lbnB7FP
- nuWbAGmU77FazF/anQZ1UcKsmZleqps=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-240-uC0VfL6AP3Ci3cM_MFvf2Q-1; Tue, 18 Feb 2020 12:18:10 -0500
-X-MC-Unique: uC0VfL6AP3Ci3cM_MFvf2Q-1
-Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
- [10.5.11.15])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3CD648010FF;
- Tue, 18 Feb 2020 17:18:06 +0000 (UTC)
-Received: from carbon (ovpn-200-26.brq.redhat.com [10.40.200.26])
- by smtp.corp.redhat.com (Postfix) with ESMTP id D179990F70;
- Tue, 18 Feb 2020 17:17:53 +0000 (UTC)
-Date: Tue, 18 Feb 2020 18:17:51 +0100
-From: Jesper Dangaard Brouer <brouer@redhat.com>
-To: Ilias Apalodimas <ilias.apalodimas@linaro.org>
-Subject: Re: [PATCH net-next v4] net: page_pool: API cleanup and comments
-Message-ID: <20200218181751.1d7139d2@carbon>
-In-Reply-To: <20200218141031.377860-1-ilias.apalodimas@linaro.org>
-References: <20200218141031.377860-1-ilias.apalodimas@linaro.org>
+ id 1j46XZ-0007SW-GZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:20:10 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2AA1D20801;
+ Tue, 18 Feb 2020 17:20:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582046409;
+ bh=1/QcFFVdy6vaYY3yC/qBVxENZ9VWu8BQUFNLPDxdkwc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=FUdza3Rmbg/mS79PNLWd5ZIzn/9300o9tKNwbcJP/mcDcJzUXNmpPjr3jh0X1zJQY
+ 2DeI3v9A8QBOH7SD92VtvtrHYPjrF3geQHcK40Qmlnhfnh4LVkrgJXeC+f0XbtauyE
+ Egn9ZDEQtvitjwxDPEpQNg8nsuu31Fls/i5PJ22g=
+Date: Tue, 18 Feb 2020 17:20:00 +0000
+From: Will Deacon <will@kernel.org>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [RFC PATCH 06/11] iommu: arm-smmu: Remove Calxeda secure mode
+ quirk
+Message-ID: <20200218172000.GF1133@willie-the-truck>
+References: <20200218171321.30990-1-robh@kernel.org>
+ <20200218171321.30990-7-robh@kernel.org>
 MIME-Version: 1.0
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
+Content-Disposition: inline
+In-Reply-To: <20200218171321.30990-7-robh@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_091816_409137_AC9F2F3E 
-X-CRM114-Status: GOOD (  15.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200218_092009_572412_A14485DD 
+X-CRM114-Status: GOOD (  10.66  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,52 +78,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Jakub Kicinski <kuba@kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>,
- Daniel Borkmann <daniel@iogearbox.net>, netdev@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, toke@redhat.com,
- John Fastabend <john.fastabend@gmail.com>, brouer@redhat.com,
- Alexei Starovoitov <ast@kernel.org>, Jassi Brar <jaswinder.singh@linaro.org>,
- Jose Abreu <joabreu@synopsys.com>, linux-arm-kernel@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, jonathan.lemon@gmail.com,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>, bpf@vger.kernel.org,
- lorenzo@kernel.org, "David S. Miller" <davem@davemloft.net>,
- linux-kernel@vger.kernel.org, Jesper Dangaard Brouer <hawk@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Langsdorf <mlangsdo@redhat.com>, kvm@vger.kernel.org,
+ Viresh Kumar <viresh.kumar@linaro.org>, linux-ide@vger.kernel.org,
+ linux-clk@vger.kernel.org, soc@kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, devicetree@vger.kernel.org,
+ Jon Loeliger <jdl@jdl.com>, linux-pm@vger.kernel.org,
+ Andre Przywara <andre.przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
+ Alex Williamson <alex.williamson@redhat.com>, Tony Luck <tony.luck@intel.com>,
+ Alexander Graf <graf@amazon.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org,
+ Jens Axboe <axboe@kernel.dk>, Matthias Brugger <mbrugger@suse.com>,
+ Stephen Boyd <sboyd@kernel.org>, netdev@vger.kernel.org,
+ Cornelia Huck <cohuck@redhat.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Robert Richter <rrichter@marvell.com>, James Morse <james.morse@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Robin Murphy <robin.murphy@arm.com>,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAxOCBGZWIgMjAyMCAxNjoxMDozMSArMDIwMApJbGlhcyBBcGFsb2RpbWFzIDxpbGlh
-cy5hcGFsb2RpbWFzQGxpbmFyby5vcmc+IHdyb3RlOgoKPiBGdW5jdGlvbnMgc3RhcnRpbmcgd2l0
-aCBfXyB1c3VhbGx5IGluZGljYXRlIHRob3NlIHdoaWNoIGFyZSBleHBvcnRlZCwKPiBidXQgc2hv
-dWxkIG5vdCBiZSBjYWxsZWQgZGlyZWN0bHkuIFVwZGF0ZSBzb21lIG9mIHRob3NlIGRlY2xhcmVk
-IGluIHRoZQo+IEFQSSBhbmQgbWFrZSBpdCBtb3JlIHJlYWRhYmxlLgo+IAo+IHBhZ2VfcG9vbF91
-bm1hcF9wYWdlKCkgYW5kIHBhZ2VfcG9vbF9yZWxlYXNlX3BhZ2UoKSB3ZXJlIGRvaW5nCj4gZXhh
-Y3RseSB0aGUgc2FtZSB0aGluZyBjYWxsaW5nIF9fcGFnZV9wb29sX2NsZWFuX3BhZ2UoKS4gIExl
-dCdzCj4gcmVuYW1lIF9fcGFnZV9wb29sX2NsZWFuX3BhZ2UoKSB0byBwYWdlX3Bvb2xfcmVsZWFz
-ZV9wYWdlKCkgYW5kCj4gZXhwb3J0IGl0IGluIG9yZGVyIHRvIHNob3cgdXAgb24gcGVyZiBsb2dz
-IGFuZCBnZXQgcmlkIG9mCj4gcGFnZV9wb29sX3VubWFwX3BhZ2UoKS4KPiAKPiBGaW5hbGx5IHJl
-bmFtZSBfX3BhZ2VfcG9vbF9wdXRfcGFnZSgpIHRvIHBhZ2VfcG9vbF9wdXRfcGFnZSgpIHNpbmNl
-IHdlCj4gY2FuIG5vdyBkaXJlY3RseSBjYWxsIGl0IGZyb20gZHJpdmVycyBhbmQgcmVuYW1lIHRo
-ZSBleGlzdGluZwo+IHBhZ2VfcG9vbF9wdXRfcGFnZSgpIHRvIHBhZ2VfcG9vbF9wdXRfZnVsbF9w
-YWdlKCkgc2luY2UgdGhleSBkbyB0aGUgc2FtZQo+IHRoaW5nIGJ1dCB0aGUgbGF0dGVyIGlzIHRy
-eWluZyB0byBzeW5jIHRoZSBmdWxsIERNQSBhcmVhLgo+IAo+IFRoaXMgcGF0Y2ggYWxzbyB1cGRh
-dGVzIG5ldHNlYywgbXZuZXRhIGFuZCBzdG1tYWMgZHJpdmVycyB3aGljaCB1c2UKPiB0aG9zZSBm
-dW5jdGlvbnMuCj4gCj4gQWNrZWQtYnk6IFRva2UgSMO4aWxhbmQtSsO4cmdlbnNlbiA8dG9rZUBy
-ZWRoYXQuY29tPgo+IFNpZ25lZC1vZmYtYnk6IElsaWFzIEFwYWxvZGltYXMgPGlsaWFzLmFwYWxv
-ZGltYXNAbGluYXJvLm9yZz4KCkxHVE0gLSBvbiBhIHF1aWNrIHJldmlldyAobm90IGNvbXBpbGUg
-dGVzdGVkLi4uKS4KCkFja2VkLWJ5OiBKZXNwZXIgRGFuZ2FhcmQgQnJvdWVyIDxicm91ZXJAcmVk
-aGF0LmNvbT4KCj4gLS0tCj4gQ2hhbmdlcyBzaW5jZQo+IHYxOgo+IC0gRml4ZWQgbmV0c2VjIGRy
-aXZlciBjb21waWxhdGlvbiBlcnJvcgo+IHYyOgo+IC0gSW1wcm92ZWQgY29tbWVudCBkZXNjcmlw
-dGlvbiBvZiBwYWdlX3Bvb2xfcHV0X3BhZ2UoKQo+IHYzOgo+IC0gUHJvcGVybHkgZGVmaW5lIHBh
-Z2VfcG9vbF9yZWxlYXNlX3BhZ2UoKSBpbiB0aGUgaGVhZGVyIGZpbGUKPiAgIHdpdGhpbiBhbiBp
-ZmRlZiBzaW5jZSB4ZHAuYyB1c2VzIGl0IGV2ZW4gaWYgQ09ORklHX1BBR0VfUE9PTCBpcyBub3Qg
-c2VsZWN0ZWQKPiAtIHJlbmFtZSBfX3BhZ2VfcG9vbF9jbGVhbl9wYWdlIC0+IHBhZ2VfcG9vbF9y
-ZWxlYXNlX3BhZ2UgYW5kIGdldCByaWQgb2YKPiBhbm90aGVyIHJlZHVuZGFudCBoZWxwZXIKCi0t
-IApCZXN0IHJlZ2FyZHMsCiAgSmVzcGVyIERhbmdhYXJkIEJyb3VlcgogIE1TYy5DUywgUHJpbmNp
-cGFsIEtlcm5lbCBFbmdpbmVlciBhdCBSZWQgSGF0CiAgTGlua2VkSW46IGh0dHA6Ly93d3cubGlu
-a2VkaW4uY29tL2luL2Jyb3VlcgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Feb 18, 2020 at 11:13:16AM -0600, Rob Herring wrote:
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Robin Murphy <robin.murphy@arm.com>
+> Cc: Joerg Roedel <joro@8bytes.org>
+> Cc: iommu@lists.linux-foundation.org
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+> Do not apply yet.
+
+Pleeeeease? ;)
+
+>  drivers/iommu/arm-smmu-impl.c | 43 -----------------------------------
+>  1 file changed, 43 deletions(-)
+
+Yes, I'm happy to get rid of this. Sadly, I don't think we can remove
+anything from 'struct arm_smmu_impl' because most implementations fall
+just short of perfect.
+
+Anyway, let me know when I can push the button and I'll queue this in
+the arm-smmu tree.
+
+Cheers,
+
+Will
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
