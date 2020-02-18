@@ -2,144 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83368162543
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 12:08:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16710162571
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 12:23:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LXs0Etn+7znqMSoenCUM2mRNY0CKASAOhdc3avqe4gs=; b=VKG+ZLsNpKEc9b
-	gNbf0wtprnY4GMZIa9cdGG+LzMHZtb4pI7XY0w/ClcNIsBaulQEXuhXp+KUJ9fwnW6o1gqijTZaEb
-	i3E3LfXolCarEpboB+qsUEaMQzwsHhCehLRBh40Q7L/CewPDFsr5/SCvyEjXKBy4VKg0cwJRWRdE+
-	4r+iOg6+KhVDrF2zbNFbdLPY+1BTa7c3ZK9fXgtGbgLv5vnFRT0CXNGgHsW5a2I5LLKnwVC0cNzQ2
-	aN4o3x4W5vj9/n7jlOugU5OTq3/VuLbMm67ENQ62gOEqnkS7FTI/YPT0dEGaIYYAPYXPRvQU6O76V
-	1TSYPcaFMGmvEGiF1sAw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
+	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
+	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cbfOII25RgSHbywce0O+DSvypV9QUDdaO1JteHGth0E=; b=W882lXnnjrRwDxPG85IlpBqyh
+	JjFufMspD1dZyFZ6MgUZ6LD6V/ziNswAU6eJ1I/Axqy4CbYf1cT3NAGObXW150paU2h0TFIFchfb5
+	MuXFL4VK8Za5vXVwpBZhAntha+D1VAwTnzbcPz5jqUs+Lyi4XLi9mnYo+IyDgnbChXIlSTwDWZezm
+	4yLqXvJljNMY1o90HtA/yGHayIAwjxXJBJ19BOuKYWcKgetYjwfWGIuSSARuYtdErVNNQruNvZyN2
+	FeXH6Tjiu6o3HyDMcp7qbAw7Bs+r/oy0XtxG5S09GeWHi9ZUyQnVvoSU110j8YdS29ujxG4QQBnP+
+	5uzkvNGQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j40k7-0004IS-Ir; Tue, 18 Feb 2020 11:08:43 +0000
-Received: from mailout1.samsung.com ([203.254.224.24])
+	id 1j40yM-00024e-LA; Tue, 18 Feb 2020 11:23:26 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j40jy-0004HH-Df
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 11:08:36 +0000
-Received: from epcas1p3.samsung.com (unknown [182.195.41.47])
- by mailout1.samsung.com (KnoxPortal) with ESMTP id
- 20200218110827epoutp0122783ee0229a672186cf23d0025752ac~0eotP-hOL0357603576epoutp01R
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 11:08:27 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
- 20200218110827epoutp0122783ee0229a672186cf23d0025752ac~0eotP-hOL0357603576epoutp01R
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1582024107;
- bh=5BHF8sxffFwnmAXK8ugvrthLsppbzxxxoZDHAX3S8qw=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=sbd4QaAlLIxX1/ADmWxvqtH4JeVDzAUoNAFWY8S3tt7KoWjI2wQBD1WtZigmyclKQ
- H3k25RwsbBIlZQ0FfNDDrZK3a0lSqo5q6C5WBJL/73O1S4b/ScDY3PFB55kGCHDX5p
- KUsyGlOCRem/PvNI+m82blaFlGVuzk/tFMyQU5zM=
-Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
- epcas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200218110827epcas1p2d476d2fed5bb7fce223cd3fe6fc85ec1~0eos4Hjjk0618006180epcas1p2n;
- Tue, 18 Feb 2020 11:08:27 +0000 (GMT)
-Received: from epsmges1p1.samsung.com (unknown [182.195.40.152]) by
- epsnrtp2.localdomain (Postfix) with ESMTP id 48MJ4T2lLyzMqYkW; Tue, 18 Feb
- 2020 11:08:25 +0000 (GMT)
-Received: from epcas1p4.samsung.com ( [182.195.41.48]) by
- epsmges1p1.samsung.com (Symantec Messaging Gateway) with SMTP id
- 45.0D.57028.9A5CB4E5; Tue, 18 Feb 2020 20:08:25 +0900 (KST)
-Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200218110823epcas1p1881cca768305c71c23ca161e35919a7e~0eopXL_T-1086810868epcas1p1B;
- Tue, 18 Feb 2020 11:08:23 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200218110823epsmtrp125af98158c0172719fbc7a0862f05b6f~0eopWhHMx2413024130epsmtrp1B;
- Tue, 18 Feb 2020 11:08:23 +0000 (GMT)
-X-AuditID: b6c32a35-4f3ff7000001dec4-4d-5e4bc5a9edff
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- C3.6E.10238.7A5CB4E5; Tue, 18 Feb 2020 20:08:23 +0900 (KST)
-Received: from [10.113.113.235] (unknown [10.113.113.235]) by
- epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200218110823epsmtip1c7059f2c7263044569e0b024e139f34c~0eopLbBnO3234732347epsmtip1T;
- Tue, 18 Feb 2020 11:08:23 +0000 (GMT)
-Subject: Re: RPI4: fail too boot with an initrd
-To: Matthias Brugger <mbrugger@suse.com>, LABBE Corentin
- <clabbe@baylibre.com>, Matthias Brugger <matthias.bgg@gmail.com>
-From: Jaehoon Chung <jh80.chung@samsung.com>
-Message-ID: <901d17c4-8265-a2a2-313b-cd9aeb7ecd63@samsung.com>
-Date: Tue, 18 Feb 2020 20:08:30 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1j40yE-00024E-1X
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 11:23:19 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 18 Feb 2020 03:23:17 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,456,1574150400"; 
+ d="gz'50?scan'50,208,50";a="268723537"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga002.fm.intel.com with ESMTP; 18 Feb 2020 03:23:12 -0800
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1j40y7-000GJ4-Uu; Tue, 18 Feb 2020 19:23:11 +0800
+Date: Tue, 18 Feb 2020 19:22:59 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Ilias Apalodimas <ilias.apalodimas@linaro.org>
+Subject: Re: [PATCH net-next] net: page_pool: API cleanup and comments
+Message-ID: <202002181917.X25VTBTn%lkp@intel.com>
+References: <20200216094056.8078-1-ilias.apalodimas@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <d9727fac-e7fd-7dfb-ce39-da0c5b0d12a2@suse.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrNJsWRmVeSWpSXmKPExsWy7bCmge7Ko95xBl9XC1us7T3KYnFp7Sw2
- i/v7ljNZbHp8jdXi8q45bBYTb29gt2hqMbZYMPkJq8XbvZ3sDpwea+atYfR4f6OV3WPW/bNs
- Hjtn3WX3OHtnB6PH5iX1Huu3XGXx+LxJLoAjKtsmIzUxJbVIITUvOT8lMy/dVsk7ON453tTM
- wFDX0NLCXEkhLzE31VbJxSdA1y0zB+g6JYWyxJxSoFBAYnGxkr6dTVF+aUmqQkZ+cYmtUmpB
- Sk6BZYFecWJucWleul5yfq6VoYGBkSlQYUJ2xu+FPxkL7hhUNC3rYWlgPKraxcjJISFgItG9
- 7TlrFyMXh5DADkaJyZ/us4EkhAQ+MUrc3eYIkfjGKNF8fTs7TMe6nXOgOvYySnxY3cQO0fGe
- UeL25lAQW1hAX6Lp5TxmEFtEoFri2LLZYA3MAhcYJVr7/oCtYBPQkdj+7TgTiM0rYCexpHEn
- 2CAWAVWJW//XATVzcIgKREic/poIUSIocXLmExYQm1PARmLeG4i9zALiEreezGeCsOUltr+d
- wwyyS0KgmV1i4ec1jBBXu0isOzKPDcIWlnh1fAvUN1ISL/vboOxqiV3NZ6CaOxglbm1rYoJI
- GEvsXzqZCeQgZgFNifW79CHCihI7f89lhFjMJ/Huaw8rSImEAK9ER5sQRImKxKXXL5lgVt19
- 8p8VwvaQmPt+C/sERsVZSF6bheSdWUjemYWweAEjyypGsdSC4tz01GLDAkPkyN7ECE64WqY7
- GKec8znEKMDBqMTDG9DnFSfEmlhWXJl7iFGCg1lJhNdbHCjEm5JYWZValB9fVJqTWnyI0RQY
- 8BOZpUST84HZIK8k3tDUyNjY2MLE0MzU0FBJnPdhpGackEB6YklqdmpqQWoRTB8TB6dUA6P0
- 0RlBp9a+/Cli8Wrr5Ly/Qf1rcv9prjeWCbjhcE3lbZcQz0R/D/Hm+JfH3r+el3vw7KxKi7yK
- J3XrDaSvsIk0Wl//o3EkW6nwZNCGtPatXAu9nwSfPla4WSL15I2Q0B8+7q+jq7MPB7453mI+
- ITjS83rW834NfumNRxuc9nqUHhZ0fZcfnqfEUpyRaKjFXFScCABjCnbpzgMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprNIsWRmVeSWpSXmKPExsWy7bCSnO7yo95xBv/uqFqs7T3KYnFp7Sw2
- i/v7ljNZbHp8jdXi8q45bBYTb29gt2hqMbZYMPkJq8XbvZ3sDpwea+atYfR4f6OV3WPW/bNs
- Hjtn3WX3OHtnB6PH5iX1Huu3XGXx+LxJLoAjissmJTUnsyy1SN8ugSvj98KfjAV3DCqalvWw
- NDAeVe1i5OSQEDCRWLdzDmsXIxeHkMBuRondp6ayQySkJD4/ncrWxcgBZAtLHD5cDFHzllHi
- Ut8uJpAaYQF9iaaX85hBbBGBaokLL3tYQWxmgQuMEsv6BCEa5jBLbJ79CKyBTUBHYvu342A2
- r4CdxJLGnWDLWARUJW79Xwc2SFQgQuL59huMEDWCEidnPmEBsTkFbCTmvWlih1igLvFn3iVm
- CFtc4taT+UwQtrzE9rdzmCcwCs1C0j4LScssJC2zkLQsYGRZxSiZWlCcm55bbFhgmJdarlec
- mFtcmpeul5yfu4kRHGVamjsYLy+JP8QowMGoxMO7YoJXnBBrYllxZe4hRgkOZiURXm9xoBBv
- SmJlVWpRfnxRaU5q8SFGaQ4WJXHep3nHIoUE0hNLUrNTUwtSi2CyTBycUg2MFe+U+BtrZp1l
- uG7qO3fOfN2vH/n+S9bJsd1NP2UTNM9pgtzOMO1ah3VbH/59/TkuqiKI8/CcbUJ5byeyPDmX
- HZ64e1sRw/uZ+gIvuY3tOfuuS/G5bS6bl31E78hZDeUS/z0H5DRXGhe+zFvSUhPx5pbRObmp
- WnxPi7c3hmVPbjhecN0g6qCwEktxRqKhFnNRcSIA+A1GfK4CAAA=
-X-CMS-MailID: 20200218110823epcas1p1881cca768305c71c23ca161e35919a7e
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20200218103651epcas1p4b6a9d599ec3577f1407ebc5b781c127f
-References: <20200214132748.GA23276@Red>
- <b726290c-1038-3771-5187-6ac370bc92c9@arm.com> <20200217103733.GA11379@Red>
- <c5a959d7-44b2-fab9-8269-d8e858790925@gmail.com>
- <20200217125301.GA31847@Red>
- <982c710c-d606-2c04-03ee-604626230bbc@gmail.com>
- <20200218100128.GB10369@Red>
- <CGME20200218103651epcas1p4b6a9d599ec3577f1407ebc5b781c127f@epcas1p4.samsung.com>
- <d9727fac-e7fd-7dfb-ce39-da0c5b0d12a2@suse.com>
+Content-Type: multipart/mixed; boundary="Dxnq1zWXvFF0Q93v"
+Content-Disposition: inline
+In-Reply-To: <20200216094056.8078-1-ilias.apalodimas@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_030835_028249_624B19E6 
-X-CRM114-Status: GOOD (  30.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200218_032318_108486_B4C4ABE0 
+X-CRM114-Status: UNSURE (   8.35  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.24 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.24 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,167 +72,326 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, u-boot@lists.denx.de,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, kbuild-all@lists.01.org,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Daniel Borkmann <daniel@iogearbox.net>, netdev@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ John Fastabend <john.fastabend@gmail.com>, Alexei Starovoitov <ast@kernel.org>,
+ linux-kernel@vger.kernel.org, Jassi Brar <jaswinder.singh@linaro.org>,
+ Jose Abreu <joabreu@synopsys.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, jonathan.lemon@gmail.com,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>, bpf@vger.kernel.org,
+ lorenzo@kernel.org, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org, Jesper Dangaard Brouer <hawk@kernel.org>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/18/20 7:36 PM, Matthias Brugger wrote:
-> 
-> 
-> On 18/02/2020 11:01, LABBE Corentin wrote:
->> On Mon, Feb 17, 2020 at 02:07:09PM +0100, Matthias Brugger wrote:
->>>
->>>
->>> On 17/02/2020 13:53, LABBE Corentin wrote:
->>>> On Mon, Feb 17, 2020 at 11:50:04AM +0100, Matthias Brugger wrote:
->>>>>
->>>>>
->>>>> On 17/02/2020 11:37, LABBE Corentin wrote:
->>>>>> On Fri, Feb 14, 2020 at 06:15:27PM +0000, James Morse wrote:
->>>>>>> Hi Corentin,
->>>>>>>
->>>>>>> On 14/02/2020 13:27, LABBE Corentin wrote:
->>>>>>>> Since the inclusion of the "enable network support in RPi4 config" serie on uboot, I
->>>>>>>> have started to work on adding the rpi4 in kernelCI.
->>>>>>>> But I fail to succeed in using a kernel/dtb/ramdisk downloaded via tftp.
->>>>>>>>
->>>>>>>> Using booti I hit:
->>>>>>>> [    0.000000] Linux version 5.6.0-rc1-next-20200212 (clabbe@build2-bionic-1804) (gcc version 7.4.1 20181213 [linaro-7.4-2019.02 revision 56ec6f6b99cc167ff0c2f8e1a2eed33b1edc85d4] (Linaro    GCC 7.4-2019.02)) #66 SMP PREEMPT Wed Feb 12 10:14:20 UTC 2020
->>>>>>>> [    0.000000] Machine model: Raspberry Pi 4 Model B
->>>>>>>> [    0.000000] earlycon: uart0 at MMIO32 0x00000000fe215040 (options '')
->>>>>>>> [    0.000000] printk: bootconsole [uart0] enabled
->>>>>>>> [    0.000000] efi: Getting EFI parameters from FDT:
->>>>>>>> [    0.000000] efi: UEFI not found.
->>>>>>>
->>>>>>> So no EFI,
->>>>>>>
->>>>>>>> [    0.000000] OF: reserved mem: failed to allocate memory for node 'linux,cma'
->>>>>>>
->>>>>>> Out of memory.
->>>>>>>
->>>>>>>> [    0.000000] cma: Failed to reserve 32 MiB
->>>>>>>> [    0.000000] Kernel panic - not syncing: Failed to allocate page table page
->>>>>>>
->>>>>>> Out of memory...
->>>>>>>
->>>>>>>> [    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted 5.6.0-rc1-next-20200212 #66
->>>>>>>> [    0.000000] Hardware name: Raspberry Pi 4 Model B (DT)
->>>>>>>> [    0.000000] Call trace:
->>>>>>>> [    0.000000]  dump_backtrace+0x0/0x1a0
->>>>>>>> [    0.000000]  show_stack+0x14/0x20
->>>>>>>> [    0.000000]  dump_stack+0xbc/0x104
->>>>>>>> [    0.000000]  panic+0x16c/0x37c
->>>>>>>> [    0.000000]  early_pgtable_alloc+0x30/0xa0
->>>>>>>
->>>>>>> ... really early!
->>>>>>>
->>>>>>>> [    0.000000]  __create_pgd_mapping+0x36c/0x588
->>>>>>>> [    0.000000]  map_kernel_segment+0x70/0xa4
->>>>>>>> [    0.000000]  paging_init+0xf4/0x528
->>>>>>>> [    0.000000]  setup_arch+0x250/0x5d8
->>>>>>>> [    0.000000]  start_kernel+0x90/0x6d8
->>>>>>>>
->>>>>>>>  
->>>>>>>> Since the same kernel boot with bootefi and that bootefi lack ramdisk address,
->>>>>>>
->>>>>>> Booting with EFI will cause linux to use the EFI memory map.
->>>>>>>
->>>>>>> Does your DT have a memory node? (or does it expect EFI to provide the information)
->>>>>>>
->>>>>>>
->>>>>>>> I tried to add the address in the dtb via:
->>>>>>>> fdt addr 0x02400000; fdt resize; fdt set /chosen linux,initrd-start 0x02700000; fdt set /chosen linux,initrd-end 0x10000000; bootefi 0x00080000 0x02400000
->>>>>>>> But with that, I get:
->>>>>>>> initrd not fully accessible via the linear mapping -- please check your bootloader ...
->>>>>>>
->>>>>>> So this one is an EFI boot, but you can't find where to put the initramfs such that the
->>>>>>> kernel agrees its in memory.
->>>>>>>
->>>>>>> If you boot with 'efi=debug', linux will print the EFI memory map. Could you compare that
->>>>>>> to where U-Boot thinks memory is?
->>>>>>>
->>>>>>> (it sounds like your DT memory node is missing, and your EFI memory map is surprisingly small)
->>>>>>
->>>>>> Hello
->>>>>>
->>>>>> Thanks for your advices.
->>>>>>
->>>>>> In the dtb of mainline linux:
->>>>>> 	/* Will be filled by the bootloader */
->>>>>> 	memory@0 {
->>>>>> 		device_type = "memory";
->>>>>> 		reg = <0 0 0>;
->>>>>> 	};
->>>>>>
->>>>>> In uboot I have:
->>>>>> static struct mm_region bcm2711_mem_map[] = {
->>>>>>         {
->>>>>>                 .virt = 0x00000000UL,
->>>>>>                 .phys = 0x00000000UL,
->>>>>>                 .size = 0xfe000000UL,
->>>>>>                 .attrs = PTE_BLOCK_MEMTYPE(MT_NORMAL) |
->>>>>>                          PTE_BLOCK_INNER_SHARE
->>>>>>         }, {
->>>>>>                 .virt = 0xfc000000UL,
->>>>>>                 .phys = 0xfc000000UL,
->>>>>>                 .size = 0x03800000UL,
->>>>>>                 .attrs = PTE_BLOCK_MEMTYPE(MT_DEVICE_NGNRNE) |
->>>>>>                          PTE_BLOCK_NON_SHARE |
->>>>>>                          PTE_BLOCK_PXN | PTE_BLOCK_UXN
->>>>>>         }, {
->>>>>>                 /* List terminator */
->>>>>>                 0,
->>>>>>         }
->>>>>> };
->>>>>> But I dont know if uboot use that for filling the memory node.
->>>>>
->>>>> No it doesn't. U-Boot uses the DT from the firmware and passes this to the
->>>>> kernel. But it seems you pass instead your own device-tree to the kernel, so you
->>>>> will need to update the memory node to show the available memory on you board.
->>>>>
->>>>
->>>> I dont understand, in the Linux commit "ARM: dts: Add minimal Raspberry Pi 4 support" I read:
->>>> The RPi 4 is available in 3 different variants (1, 2 and 4 GB RAM), so leave the memory size to zero and let the bootloader take care of it.
->>>> But if uboot dont fill that...
->>>> So the DTB in mainline is wrong, right ?
->>>>
->>>
->>> How do you pass your DTB to the kernel? Does the FW uses your DTB by putting it
->>> as bcm2711-rpi-4-b.dtb in the first FAT partition? Or do you load it from U-Boot
->>> afterwards? In the latter case you have to take care to add the needed size of
->>> memory. In the first case you use what is the default behavior for U-Boot; the
->>> RPi FW updates the node and then passes it to U-Boot then it get's passed to the
->>> kernel.
->>>
->>
->> Hello
->>
->> I load the dtb via uboot/tftp.
->> On another thread, I got the hint to enable CONFIG_ARCH_FIXUP_FDT_MEMORY and it made my problem solved.
-> 
-> Hm, so should we enable that for all RPi3/4/arm64 configs then?
 
-In u-boot, it's already enabled, except RPI4. I didn't check in more detail.
+--Dxnq1zWXvFF0Q93v
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-In RPI4's case, it doesn't set in config
-# CONFIG_ARCH_FIXUP_FDT_MEMORY is not set
+Hi Ilias,
 
-Best Regards,
-Jaehoon Chung
+I love your patch! Yet something to improve:
 
-> 
-> Regards,
-> Matthias
-> 
-> 
-> 
+[auto build test ERROR on v5.6-rc1]
+[also build test ERROR on next-20200217]
+[cannot apply to net-next/master net/master linus/master ipvs/master v5.6-rc2]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
 
+url:    https://github.com/0day-ci/linux/commits/Ilias-Apalodimas/net-page_pool-API-cleanup-and-comments/20200218-163634
+base:    bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9
+config: alpha-defconfig (attached as .config)
+compiler: alpha-linux-gcc (GCC) 7.5.0
+reproduce:
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # save the attached .config to linux build tree
+        GCC_VERSION=7.5.0 make.cross ARCH=alpha 
+
+If you fix the issue, kindly add following tag
+Reported-by: kbuild test robot <lkp@intel.com>
+
+All errors (new ones prefixed by >>):
+
+   net/core/xdp.o: In function `__xdp_release_frame':
+>> (.text+0x694): undefined reference to `page_pool_release_page'
+   (.text+0x698): undefined reference to `page_pool_release_page'
+
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+
+--Dxnq1zWXvFF0Q93v
+Content-Type: application/gzip
+Content-Disposition: attachment; filename=".config.gz"
+Content-Transfer-Encoding: base64
+
+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
+AAA=
+
+--Dxnq1zWXvFF0Q93v
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--Dxnq1zWXvFF0Q93v--
+
