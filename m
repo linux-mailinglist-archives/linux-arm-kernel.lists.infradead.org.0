@@ -2,76 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DD811626C9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 14:07:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 015041626CB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 14:08:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RS0xqpObvuEczG2hXYWmAhdPlwVoh6Jj3WTsG4IQiRI=; b=M3pUccrwkjxf+F
-	IAzbagRNVy+kAw8PLakOoTPeq2zlSXefvQmX5RHhdNkINV25gnt1yl/2QSPLGCwVwHbLZdKaFvMBe
-	FbM3zV3YJz06vZPPErMr+h8u5PfPqs3/XCHzcgIfOURZi/Crjamy8CsfDYUqVEI3n853PpeHeNpVp
-	L2QKoWpMHupZPIqcaSUJrKYAAt+HZSIcyqGT1wRYjETX3R09goqvfqeG2uIGf+z+Y00njP/CZmyxU
-	UVjMjR7piKdkMhvqBqKwSOUrPy7NsiCMZkhTX8NMaAenKned8xYlZCuCZ+SU6kUj9/kSo0cXIGgKl
-	0DX92UpuB9Lhok5PQGOA==;
+	List-Owner; bh=Vm/uvnrm6WzNPazfxQqvbtNRBpVp0hC8QilDh3Mc1Z8=; b=T6296bZTx47gx3
+	+i9vLV0SPsmUj25L0AwNxvVlQ07oQGBxBDs6CbiZcGveIu5Okiqf5VhWWoN3gRQ2+5OV440NuMe8i
+	43ELgaT8phinUbsFyeJVG5vUUszKwC3ByupeuRTyKS22iTyjzgfjGkVEXABg27SlfhYxAt47qHvDV
+	1MEF+kf7UiqI2Pl/0EHxAudsMM2KB6EziyPgxk19TG1u6FMhwKJCrKQZj6iBlpXSfR4VwGuoefFkz
+	n43ICB9oSI0ZIbWAMyet3IU/Qnu4LbpZUxt4lW0Ka8kqszNyvTpTiOOadcdM0WxwOM4OYAfKlFA3W
+	zyw0OWThoclPJMnjI5FA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j42aZ-00031l-Ko; Tue, 18 Feb 2020 13:06:59 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1j42bW-0003It-4C; Tue, 18 Feb 2020 13:07:58 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j42aQ-0002yj-2c
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 13:06:51 +0000
-Received: by mail-pf1-x444.google.com with SMTP id j9so10628391pfa.8
+ id 1j42bO-0003IW-5a
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 13:07:51 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id 12so981603pjb.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 05:06:47 -0800 (PST)
+ Tue, 18 Feb 2020 05:07:50 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=rO0+HTudurHIpLNnL3eo7xZsjczyqgXMhw0p9F9AXKc=;
- b=FyAUPeWqlKqhvKzz50Pl1H3asxCWMNFKyGG1j3jfNHVHYFIOgvFKGISZQexIv1+XGp
- ei9zxbs7N+5ZWUnshBLfVXE1wKDbqQGUHrH/Pw6sMPM/p/GQd8CAk5UF+OxXw9Qu9iJ7
- 4TpPCRAeCknN3qZMR4mVm90q94RPFr1PCVlGCP2rFdF8YupEqxxMsARHSFUgej3kfGlE
- 73ilkhIP6KK0N4GKYQrV3rYsyItGeDSCK7vjHLmgO3QunUSdBlKH0DeA1YYCrpRumBE2
- LgkNT6TGRtDPiTNkgjprUmKKKPFTj7iP0c//M6+XWT4s0UC92E2ShFQSDN8RGN735dU0
- UehA==
+ :cc; bh=Qo1YUJb/RWYJFwig6pzp9B2Ejd28xQg9RZwtPeZ5+II=;
+ b=p03h2q2oFzCsylq8kredNKQ01XRdkwUMvCYPUjYq/RzqX/imqMmY01sPPA/6euPoSQ
+ /SbxLVv6e4NoTFbPLgkLRPRI1KA45cBN1ZQJIoLvOFFvLUxu5UMliCWWJD5YcQmEQXoq
+ gvHQpy/ZirgJsF3bY2AUh3/wfYE8URE1jzed8uET9PCFvOILmWjwiLf2kX8GB/uYFMkP
+ Cwow0Bey0I1KTKj9wZzOxDbD3vGr2ocyengclQureo05E3vUAmkhndqvsPHXx86eqwAi
+ eE7TDhVdPVum9RjBB0m2fpmxWwjDQTG95fRdbomskE5PaoXSZLVwlfh+KDKqYBijROPU
+ JI5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=rO0+HTudurHIpLNnL3eo7xZsjczyqgXMhw0p9F9AXKc=;
- b=KMBXCMbxMEUHzpKBVzaGgvD7ey8EOJY98k7nUXhFSsq1ZKl/KkHU9Vw40xCNcQamEp
- lmrzGel94hjdMaxWffmWZEaqy2ZuFuuTpt31LuW4Y0uej+njxrGLMeECf8VCzLJ9u74S
- xDTVOeV68hGmaolVUoJsTy2BKuPHIZ7cbBchbCZZ6AdmMp4L4pNHGfJGe+62NAbXd4Ij
- ijDMUYMnwEJkh6eX5O77jf3sEblFjfhQZ2SHmntdZG8Y+SVbE6Jn4bEgiUorGGugmZy+
- WejqRCF1NPS7QO1EPJM6yD0aVFVBLb9aVaYvRs8bwceREY+sBl8pc0WxZdC0+0H5YRbT
- dP+g==
-X-Gm-Message-State: APjAAAUmIxT2H7Ce/6Q7T5qtRzrYPeNLsXt9FH8Ygh6NncOTE5snlRvT
- 93l7RcOdTLEN+GS1QeURQslFGp4mogtWJFnx5oINLw==
-X-Google-Smtp-Source: APXvYqx7HjbGglI6atITptUtHzHTlpn1BWPSVcbuHwx6KPRMS807SnR+1xfpZUOdmOzCQnJPqmgdkM50qiEcOY/S4oo=
-X-Received: by 2002:a63:615:: with SMTP id 21mr22865082pgg.440.1582031206806; 
- Tue, 18 Feb 2020 05:06:46 -0800 (PST)
+ bh=Qo1YUJb/RWYJFwig6pzp9B2Ejd28xQg9RZwtPeZ5+II=;
+ b=ricJdFlEpdU+LBVpuYhHgdFcQP/WQEu7NaMNIC7nJNyvS0718wd6uPBw+1Zr6g0HLv
+ d7a9SIOT6edUUG1ZV2Qxt5gqAr9OmyM5/eoPL6aWDcT6sOf5niFk7jjrl2bVNzITWKS7
+ 3nPfaUWoQ45WLm8lUzhmuPajjY1orBjcMPiFvQbe+k3zblkX4OOntQb5lVbEvFcjX6EY
+ 1+anBIaOeayEaIIkkoFh68e8DPBdQt/Fnn1HQ41msMZkjIaZWoWLgcpyDXSimLTOB9X2
+ YboUBWoJhTpHmH6qo+xnkaKNQkl67z2p0bi13OMggHwG9R+SIw80KlbtDc3zbDEIT0iT
+ cazA==
+X-Gm-Message-State: APjAAAVtTNkcC9nxMuyUjT9/2kcstZutNH+apv66tbNjQLMqU1+Lrr57
+ XuzAaQ4oZIX0feD7p9vIdlOh2Rc8bG6up+mohL/kDuRc
+X-Google-Smtp-Source: APXvYqxMy8oB1NG4dNDB1Xm/PatBGPZPL8iCKwCorX+nNCE6VB2xnOZH5zfiPiC11rVcY7hOuYQID9xq80Oo7TSvY5Q=
+X-Received: by 2002:a17:902:8682:: with SMTP id
+ g2mr20241607plo.336.1582031269417; 
+ Tue, 18 Feb 2020 05:07:49 -0800 (PST)
 MIME-Version: 1.0
 References: <20200218122310.72710-1-catalin.marinas@arm.com>
  <20200218123426.GA19776@willie-the-truck>
 In-Reply-To: <20200218123426.GA19776@willie-the-truck>
 From: Andrey Konovalov <andreyknvl@google.com>
-Date: Tue, 18 Feb 2020 14:06:35 +0100
-Message-ID: <CAAeHK+y0Xz6X5yt7f9RXVw4ijPbKuUm+zr+Mgm73rU=t=Ab0ng@mail.gmail.com>
+Date: Tue, 18 Feb 2020 14:07:38 +0100
+Message-ID: <CAAeHK+zKGLHVFVAmUB8Ccc2vuGiZ1uSt1kzxk=7SdDtbwVkvhQ@mail.gmail.com>
 Subject: Re: [PATCH] mm: Avoid creating virtual address aliases in
  brk()/mmap()/mremap()
 To: Evgenii Stepanov <eugenis@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_050650_139595_ECDC9F89 
-X-CRM114-Status: GOOD (  23.73  )
+X-CRM114-CacheID: sfid-20200218_050750_238690_D65D7701 
+X-CRM114-Status: GOOD (  23.66  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -99,9 +97,9 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Florian Weimer <fweimer@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Victor Stinner <vstinner@redhat.com>,
- Linux Memory Management List <linux-mm@kvack.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Victor Stinner <vstinner@redhat.com>,
  Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -129,6 +127,9 @@ On Tue, Feb 18, 2020 at 1:34 PM Will Deacon <will@kernel.org> wrote:
 > > Remove untagging in the above functions by partially reverting commit
 > > ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk"). In
 > > addition, update the arm64 tagged-address-abi.rst document accordingly.
+
+Evgenii, do you know if this will cause any issues for HWASAN?
+
 > >
 > > Fixes: ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk")
 > > Cc: <stable@vger.kernel.org> # 5.4.x-
