@@ -2,53 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6033F162651
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 13:44:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13E0216265E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 13:45:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E+QT14X0bzveXceE/G0asjbStcEu7cT+T1KQyhoFk4M=; b=JP2042R1Jz1sc/
-	iogKxEHaymlKF8wU9xnfjn3ls/PouXaNyBCbidObA+vRiWMxGesEUptPbDevrx/8rdcilLre911GA
-	Xc1PCMEfRtQnJZKDtJ1b/qYgNzXbblZL3GrsfxatibmhqMzmK4K9Ny2XQCAojnmNlRavgge5j67pS
-	quoPt0uBV9e4QF89wBUB5E/LZyRkb/04bZ86gUvpu2CXE+LVFTwvzIhxRtGgzA+wooBIdXtp5DbUb
-	Rk8Zan9bF/BA0D5DEqzk/mGhgvP5P0dkNjkZ6g9oRCwlIkKOXRxFm08VDwc/mhzQafOTRExIT0ppL
-	UOovfhaLtxIXvz9ykSWA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CU7TjkfJZZ5xjWLxWTdb2+fwaW67AsTsB/oezEL8pVA=; b=f2vZe30C3aPknR
+	pIZ+o1Woed3//s2NaNDK40tyLZRIColWAoEFQNO8uzrQZzgPgwakTkKwPc5Sod63ZZWfrayfdUw6h
+	LNTiF2oqcrcSirLsJebQbV/Lhso40ywZk1Eda3J/yluSNdCcY0UID3hqKyTdYCIa65pO5k37qgv6F
+	Bhe+mRqIQctopLLYmHgCXcE9shbIBLqfx+PmcGRaHoSkrIXsOISkfISEXDwVmqWSmooncm7o+VRdt
+	JiMN+2WYdlGFLrq/UvW6TZyjuXGiDUotKE7yTYJxEihCS2mJQOEipFEp2r7HfloAG8tKJybfPwoBy
+	J+VxcdkXLrV9J23FHNzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j42EU-0000RM-HE; Tue, 18 Feb 2020 12:44:10 +0000
-Received: from zeniv.linux.org.uk ([195.92.253.2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j42EM-0000HK-OP; Tue, 18 Feb 2020 12:44:04 +0000
-Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1j42C6-00Efka-5Y; Tue, 18 Feb 2020 12:41:42 +0000
-Date: Tue, 18 Feb 2020 12:41:42 +0000
-From: Al Viro <viro@zeniv.linux.org.uk>
-To: Macpaul Lin <macpaul.lin@mediatek.com>
-Subject: Re: [PATCH] lib: iov_iter.c: fix a possible calculation error on
- remaining bytes
-Message-ID: <20200218124142.GJ23230@ZenIV.linux.org.uk>
-References: <1582011672-17189-1-git-send-email-macpaul.lin@mediatek.com>
+	id 1j42FX-0001r3-LH; Tue, 18 Feb 2020 12:45:15 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j42FO-0001Il-0H
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 12:45:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F0AB71FB;
+ Tue, 18 Feb 2020 04:45:04 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 74B253F6CF;
+ Tue, 18 Feb 2020 04:45:04 -0800 (PST)
+From: Mark Brown <broonie@kernel.org>
+To: Marc Zyngier <maz@kernel.org>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Subject: [PATCH] arm64: kvm: Modernize annotation for __bp_harden_hyp_vecs
+Date: Tue, 18 Feb 2020 12:44:55 +0000
+Message-Id: <20200218124456.10615-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1582011672-17189-1-git-send-email-macpaul.lin@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_044402_793506_7D268C6F 
-X-CRM114-Status: GOOD (  17.85  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200218_044506_148083_C55C02A3 
+X-CRM114-Status: GOOD (  15.51  )
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.92.253.2 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.92.253.2 listed in wl.mailspike.net]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,75 +63,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Shen Jing <jingx.shen@intel.com>,
- CC Hwang <cc.hwang@mediatek.com>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
- Jerry Zhang <zhangjerry@google.com>, linux-usb@vger.kernel.org,
- Loda Chou <loda.chou@mediatek.com>, linux-kernel@vger.kernel.org,
- Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
- John Stultz <john.stultz@linaro.org>,
- Vincent Pelletier <plr.vincent@gmail.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 03:41:12PM +0800, Macpaul Lin wrote:
-> This issue was found when adbd trying to open functionfs with AIO mode.
-> Usually, we need to set "setprop sys.usb.ffs.aio_compat 0" to enable
-> adbd with AIO mode on Android.
-> 
-> When adbd is opening functionfs, it will try to read 24 bytes at the
-> fisrt read I/O control. If this reading has been failed, adbd will
-> try to send FUNCTIONFS_CLEAR_HALT to functionfs. When adbd is in AIO
-> mode, functionfs will be acted with asyncronized I/O path. After the
-> successful read transfer has been completed by gadget hardware, the
-> following series of functions will be called.
->   ffs_epfile_async_io_complete() -> ffs_user_copy_worker() ->
->     copy_to_iter() -> _copy_to_iter() -> copyout() ->
->     iterate_and_advance() -> iterate_iovec()
-> 
-> Adding debug trace to these functions, it has been found that in
-> iterate_iovec(), the calculation result of n will be turned into zero.
->    n = wanted - n; /* 0 == n = 24 - 24; */
-> Which causes copyout() won't copy data to userspace since the length
-> to be copied "v.iov_len" will be zero, which isn't correct. This also
-> leads ffs_copy_to_iter() always return -EFAULT. Finally adbd cannot
-> open functionfs and send FUNCTIONFS_CLEAR_HALT.
-> 
-> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
-> ---
->  lib/iov_iter.c | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/lib/iov_iter.c b/lib/iov_iter.c
-> index fb29c02c6a3c..f9334144e259 100644
-> --- a/lib/iov_iter.c
-> +++ b/lib/iov_iter.c
-> @@ -36,7 +36,8 @@
->  		skip = __v.iov_len;			\
->  		n -= __v.iov_len;			\
->  	}						\
-> -	n = wanted - n;					\
-> +	if (n != wanted)				\
-> +		n = wanted - n;				\
->  }
+We have recently introduced new macros for annotating assembly symbols
+for things that aren't C functions, SYM_CODE_START() and SYM_CODE_END(),
+in an effort to clarify and simplify our annotations of assembly files.
 
-	First of all, nothing in that line can possibly *cause*
-copyout() to do anything - it's after the calls of step.  What's
-more, this changes behaviour only when wanted would've been equal to
-n, doesn't it?  Which translates into "no decrements of n have
-happened at all", i.e. "nothing has been copied".  IOW, it's
-a consequence of no copyout, not the cause of such.  You can
-make copy_to_iter() lie and pretend if has copied everything
-when it has copied nothing, but that won't change the underlying
-bug.
+Using these for __bp_harden_hyp_vecs is more involved than for most symbols
+as this symbol is annotated quite unusually as rather than just have the
+explicit symbol we define _start and _end symbols which we then use to
+compute the length. This does not play at all nicely with the new style
+macros. Since the size of the vectors is a known constant which won't vary
+the simplest thing to do is simply to drop the separate _start and _end
+symbols and just use a #define for the size.
 
-	So I'm afraid your debugging is not finished - you
-still need to find out what causes the copyout failures and/or
-BS iov_iter padded by caller.
+Ideally we would have a build time assert to make sure we got this right
+but we don't have such a thing for assembly code and given how unlikely
+the size is to change it seems disproportionately difficult to write one
+just for this.
+
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ arch/arm64/include/asm/kvm_mmu.h | 9 ++++-----
+ arch/arm64/include/asm/mmu.h     | 5 ++++-
+ arch/arm64/kernel/cpu_errata.c   | 2 +-
+ arch/arm64/kvm/hyp/hyp-entry.S   | 4 ++--
+ 4 files changed, 11 insertions(+), 9 deletions(-)
+
+diff --git a/arch/arm64/include/asm/kvm_mmu.h b/arch/arm64/include/asm/kvm_mmu.h
+index 53d846f1bfe7..b5f723cf9599 100644
+--- a/arch/arm64/include/asm/kvm_mmu.h
++++ b/arch/arm64/include/asm/kvm_mmu.h
+@@ -480,7 +480,7 @@ static inline void *kvm_get_hyp_vector(void)
+ 	int slot = -1;
+ 
+ 	if (cpus_have_const_cap(ARM64_HARDEN_BRANCH_PREDICTOR) && data->fn) {
+-		vect = kern_hyp_va(kvm_ksym_ref(__bp_harden_hyp_vecs_start));
++		vect = kern_hyp_va(kvm_ksym_ref(__bp_harden_hyp_vecs));
+ 		slot = data->hyp_vectors_slot;
+ 	}
+ 
+@@ -509,14 +509,13 @@ static inline int kvm_map_vectors(void)
+ 	 *  HBP +  HEL2 -> use hardened vertors and use exec mapping
+ 	 */
+ 	if (cpus_have_const_cap(ARM64_HARDEN_BRANCH_PREDICTOR)) {
+-		__kvm_bp_vect_base = kvm_ksym_ref(__bp_harden_hyp_vecs_start);
++		__kvm_bp_vect_base = kvm_ksym_ref(__bp_harden_hyp_vecs);
+ 		__kvm_bp_vect_base = kern_hyp_va(__kvm_bp_vect_base);
+ 	}
+ 
+ 	if (cpus_have_const_cap(ARM64_HARDEN_EL2_VECTORS)) {
+-		phys_addr_t vect_pa = __pa_symbol(__bp_harden_hyp_vecs_start);
+-		unsigned long size = (__bp_harden_hyp_vecs_end -
+-				      __bp_harden_hyp_vecs_start);
++		phys_addr_t vect_pa = __pa_symbol(__bp_harden_hyp_vecs);
++		unsigned long size = __BP_HARDEN_HYP_VECS_SZ;
+ 
+ 		/*
+ 		 * Always allocate a spare vector slot, as we don't
+diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
+index e4d862420bb4..c6e811767a12 100644
+--- a/arch/arm64/include/asm/mmu.h
++++ b/arch/arm64/include/asm/mmu.h
+@@ -45,7 +45,10 @@ struct bp_hardening_data {
+ 
+ #if (defined(CONFIG_HARDEN_BRANCH_PREDICTOR) ||	\
+      defined(CONFIG_HARDEN_EL2_VECTORS))
+-extern char __bp_harden_hyp_vecs_start[], __bp_harden_hyp_vecs_end[];
++
++#define __BP_HARDEN_HYP_VECS_SZ (BP_HARDEN_EL2_SLOTS * SZ_2K)
++
++extern char __bp_harden_hyp_vecs[];
+ extern atomic_t arm64_el2_vector_last_slot;
+ #endif  /* CONFIG_HARDEN_BRANCH_PREDICTOR || CONFIG_HARDEN_EL2_VECTORS */
+ 
+diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+index 703ad0a84f99..0af2201cefda 100644
+--- a/arch/arm64/kernel/cpu_errata.c
++++ b/arch/arm64/kernel/cpu_errata.c
+@@ -119,7 +119,7 @@ extern char __smccc_workaround_1_smc_end[];
+ static void __copy_hyp_vect_bpi(int slot, const char *hyp_vecs_start,
+ 				const char *hyp_vecs_end)
+ {
+-	void *dst = lm_alias(__bp_harden_hyp_vecs_start + slot * SZ_2K);
++	void *dst = lm_alias(__bp_harden_hyp_vecs + slot * SZ_2K);
+ 	int i;
+ 
+ 	for (i = 0; i < SZ_2K; i += 0x80)
+diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
+index 0aea8f9ab23d..8976276685a1 100644
+--- a/arch/arm64/kvm/hyp/hyp-entry.S
++++ b/arch/arm64/kvm/hyp/hyp-entry.S
+@@ -312,11 +312,11 @@ alternative_cb_end
+ .endm
+ 
+ 	.align	11
+-ENTRY(__bp_harden_hyp_vecs_start)
++SYM_CODE_START(__bp_harden_hyp_vecs)
+ 	.rept BP_HARDEN_EL2_SLOTS
+ 	generate_vectors
+ 	.endr
+-ENTRY(__bp_harden_hyp_vecs_end)
++SYM_CODE_END(__bp_harden_hyp_vecs)
+ 
+ 	.popsection
+ 
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
