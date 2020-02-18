@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7440816303F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:36:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EE07163040
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:36:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,50 +11,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xge7HbZlUKhwcDhJi2nWzuQtX/ghY9HJq2dF1CyDsFk=; b=MlU883LeOoeXI0dmdbhn1SeBoN
-	7vp8fPwuEO0W4P9iqPy3UQ52YeLyhtXd5J65z4IrktSFlMLPSEAEGccSEs9Y8F7EVpSvUwrDYnAdx
-	pY+ouhVqPlbCuUxs4NQPWOJDyQPTC64hUSuX/15zSwFVOBID2npkCpPBu6BClsQIf7+HF4ZBZwT6z
-	LZUHX4IhjiCvaa5HUvbFM9fFj6URHkaSAbGfeIu2Ogge/4b7XDARUaOJrjmeANSjvlJBhZ3y3oqWo
-	B+dlbzcSC2O0QFuGx2jENxbM0ltO0psT7cMJjKdoL5lswyYGtZ5k3wl6YTPLAKPQBioPeNovDm2um
-	HpR5bJ+Q==;
+	bh=09qzPCECSTRHecEz77TdCtalPAUzOh/udHWmmOAvNDk=; b=HDgedg0rTP3J8e+kKDZdqSrmWE
+	AHZDqFNRUr2IugveszyQpeZenl32Skxrq6ZHbKDrlkjFgKRDpllgF5gTp/ONGZyGHRciLb5JSv4mS
+	udwBohsICzg1IpoCZeX15IJxEq36rIv9z8ywAYUwWoqCS4l/+NBxsD+nfQ//hBLzPSwpAdlHC3njx
+	YxBtij6MxwnXbLf8AJJhXurUwKH8cNEtPbtMm9axsv5cOGj0iM29Er0mKd9nRdrDLkhHidGd0rllb
+	EI0oCqqB3aUeCJN68IlkDeXbjITmvymgmsV1iHMLtwgq5LAaQmPRCBHDq4Kjrxr2Gkflpp/3RCX35
+	cW+vdBVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j48f6-0002rx-Pc; Tue, 18 Feb 2020 19:36:04 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j48fJ-00035B-U2; Tue, 18 Feb 2020 19:36:17 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j48cX-0007qe-Aw
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:33:26 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y11so25380122wrt.6
+ id 1j48cY-0007rc-03
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:33:27 +0000
+Received: by mail-wr1-x442.google.com with SMTP id g3so25350946wrs.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 11:33:24 -0800 (PST)
+ Tue, 18 Feb 2020 11:33:25 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=a7GEUna4G5RbXgq36EEYG2D0rjG6W8XH0Dtowe6As9s=;
- b=uRA4WO9lmxzJnN8WEkKi9RYhzj9YdW4cC5DYKICsVnNVacaQ9MyMZEa4pfRD5PaLh7
- t4uQnDrN90AItIWNienqvMAEsi0QfgYojLqhX8Cslw43H772RfSWRJ2e2IUOeKoSUiiM
- OtNwNmQ1yt9Qi3fO3AzxzoO083OuTRvtSFYnV89VAeUEPm2yiBEL90t0H5mp8tvDunq9
- czQIqOIzmzh6a/+kyiMFY5A35uqoNv37t0TJjaC68C90dxdGaUNw4yEfDRJKsMpvQZ2q
- L7qW/evqTpfiokn5ukUW+9GLzuBhFPFF4K42xCrxbVB04kMD1D3VguZdnT74SrPzX5Ie
- LULw==
+ bh=VMhMCON8OuPufsG3ipSiCKDEgdVOYQVgnIzCUNgOnkY=;
+ b=xB0Z0aPPPvTY5q59s/RiIVELERzjH2U8BFSMfOWfBxU2w29Zfc9KMc+U4jFuEPyX7a
+ uJ/OxOvBnsGCSNGOJ9l5BqsfOc8Oj/HkX1E7JK95tLefzhDZYcFbWpgM+GTIYQaS0q+M
+ 6YAbCjlcGgapYWOvCKTdsoJaM0ekXgBQCiNgCLo9oFbtNOY4Dsj1VuZ0AHGF27Cn833s
+ 63gK3tlkEQbl61aBlFDS6LJAMCPYSQK+cU3iOdRmeuPsv5VXxNl9X/HL4nV1KMW4e2Kc
+ wydsLep3EGtzxBHuZxoMEMPZ/DC7SefkXC4Mgh1lYfJgXyfXI2onhupUqgL/x2xFBL50
+ NATg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=a7GEUna4G5RbXgq36EEYG2D0rjG6W8XH0Dtowe6As9s=;
- b=DcQTRuA4dwYc118tUn4kU/bz8/puM5FC1c/vhwC+auuh9zqZXX1kA5lfSikMWCu89z
- t4eLywvmK5y+tssyH3AmiXt8Z9pSI/r/V/wO5dzqfRohpWDp4tPfgvOi17dDKXIuY8ZE
- BBvwCBdya2xKFGd2OHkmcN97WGn8ORCxszkA7WGsVtrJciD0QrGQ7RnrDjYM57Hq7foq
- GWh99SREkLoZ3SodZ4IkwSJGeAjFe+GzY1y/0tmPvOOir0Co3VguxYpbecdKGHjH6519
- InVLHUAdqq5VOhdhj0wcACFNQ/G5tOeT7ov7FWbpeuwchN82oqErv3Ey/J6jsLYADreg
- GB+g==
-X-Gm-Message-State: APjAAAXcr5CVGPhQNzxGLm9IdAup1AN3NE1S4iUAfq22rGK2IjuHRvXu
- ATwIABWcGyxTP2gD9ODxeK9IWw==
-X-Google-Smtp-Source: APXvYqxjXR4su4Hv72/U7GmAiRCFdmARwCRra/TybDUrWP+GSOq0Tnw/N56bhpE0fdQ/pQE08M6Y+Q==
-X-Received: by 2002:adf:f986:: with SMTP id f6mr31872129wrr.182.1582054403557; 
- Tue, 18 Feb 2020 11:33:23 -0800 (PST)
+ bh=VMhMCON8OuPufsG3ipSiCKDEgdVOYQVgnIzCUNgOnkY=;
+ b=NXLEtgH4z+pxCLhsrWPNpjrn09Gz2D0dabl0ImO8Dgxipo0HtFM/244NcKb04i0j59
+ fqBwUAp6al7XDdgzsfHg36WS0ZF+Wy0H0v7Kzdn+wzasexPsJkbvieEOmiBqyZ19rE0q
+ bo/bQIy+uuXK9F3ryl0qVChQH0+NxaTp/LM/JZtuytxQN1tPfEVz/j/FDBfDW+W5IWLq
+ PRS1sC5nD896j5+W5ageEWZVKUUFusA7fErn/cV1NsoiUq4u802gwxdvNNeyBRHOopzT
+ VYry2dONXRL/OANnjZlBIGAibk2A+jW4C6EzHAGLrOkd7gxwMHRCRq9Y/yid+7WXCbrx
+ KgJg==
+X-Gm-Message-State: APjAAAUUTDzfqGQTJCpjB7OWYh7ibOJXk2Q1Ct1+1klk+IDoCL/QnTzG
+ WOdanT5IuAMrktzjHV9t+M5doQ==
+X-Google-Smtp-Source: APXvYqzckUIyriHGnsYfrHwscI3IStYXXWUqfYiWyMM7Rh4jYCpfpR1iboxY9wA3gVwPxIiNgFDTCA==
+X-Received: by 2002:adf:dfc8:: with SMTP id q8mr30710027wrn.135.1582054404454; 
+ Tue, 18 Feb 2020 11:33:24 -0800 (PST)
 Received: from localhost.localdomain ([51.15.160.169])
- by smtp.googlemail.com with ESMTPSA id k16sm7649266wru.0.2020.02.18.11.33.22
+ by smtp.googlemail.com with ESMTPSA id k16sm7649266wru.0.2020.02.18.11.33.23
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
  Tue, 18 Feb 2020 11:33:23 -0800 (PST)
 From: Corentin Labbe <clabbe@baylibre.com>
@@ -62,23 +62,23 @@ To: alexandre.belloni@bootlin.com, b-liu@ti.com, balbi@kernel.org,
  gregkh@linuxfoundation.org, ludovic.desroches@microchip.com,
  mathias.nyman@intel.com, nicolas.ferre@microchip.com,
  slemieux.tyco@gmail.com, stern@rowland.harvard.edu, vz@mleia.com
-Subject: [PATCH 09/20] usb: gadget: lpc32xx_udc: remove useless cast for
+Subject: [PATCH 10/20] usb: gadget: m66592-udc: remove useless cast for
  driver.name
-Date: Tue, 18 Feb 2020 19:32:52 +0000
-Message-Id: <1582054383-35760-10-git-send-email-clabbe@baylibre.com>
+Date: Tue, 18 Feb 2020 19:32:53 +0000
+Message-Id: <1582054383-35760-11-git-send-email-clabbe@baylibre.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1582054383-35760-1-git-send-email-clabbe@baylibre.com>
 References: <1582054383-35760-1-git-send-email-clabbe@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_113325_438909_71410BA6 
-X-CRM114-Status: GOOD (  13.14  )
+X-CRM114-CacheID: sfid-20200218_113326_180807_FFE306EE 
+X-CRM114-Status: GOOD (  13.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,26 +105,25 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 device_driver name is const char pointer, so it not useful to cast
-driver_name (which is already const char).
-
+udc_name (which is already const char).
 Signed-off-by: Corentin Labbe <clabbe@baylibre.com>
 ---
- drivers/usb/gadget/udc/lpc32xx_udc.c | 2 +-
+ drivers/usb/gadget/udc/m66592-udc.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/usb/gadget/udc/lpc32xx_udc.c b/drivers/usb/gadget/udc/lpc32xx_udc.c
-index d14b2bb3f67c..cb997b82c008 100644
---- a/drivers/usb/gadget/udc/lpc32xx_udc.c
-+++ b/drivers/usb/gadget/udc/lpc32xx_udc.c
-@@ -3267,7 +3267,7 @@ static struct platform_driver lpc32xx_udc_driver = {
- 	.suspend	= lpc32xx_udc_suspend,
- 	.resume		= lpc32xx_udc_resume,
+diff --git a/drivers/usb/gadget/udc/m66592-udc.c b/drivers/usb/gadget/udc/m66592-udc.c
+index a8288df6aadf..75d16a8902e6 100644
+--- a/drivers/usb/gadget/udc/m66592-udc.c
++++ b/drivers/usb/gadget/udc/m66592-udc.c
+@@ -1691,7 +1691,7 @@ static int m66592_probe(struct platform_device *pdev)
+ static struct platform_driver m66592_driver = {
+ 	.remove =	m66592_remove,
  	.driver		= {
--		.name	= (char *) driver_name,
-+		.name	= driver_name,
- 		.of_match_table = of_match_ptr(lpc32xx_udc_of_match),
+-		.name =	(char *) udc_name,
++		.name =	udc_name,
  	},
  };
+ 
 -- 
 2.24.1
 
