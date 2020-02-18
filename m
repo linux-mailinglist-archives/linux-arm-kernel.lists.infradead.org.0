@@ -2,67 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82846162595
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 12:34:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 411AF162603
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 13:23:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9Wi9sz0Hl82ksHNOCMIpGmrq6Tb97DX2Gokd/bZvN8g=; b=X+q
-	ZVXsKUWQ8C337krWJiUpwxo0HCk8748Zois3sHpdahonC2BzkTECy8Og9ZAiKhSYqMV208ChAx/Jd
-	7TIUADCIi8J2jrAKPnTv54lg18pbYGd1sM7Y9xivwhymoMNvD7Ts23De+bbFa1jSxi9dWLXcxsAww
-	X5hIRiBRsi00OpVk0PCmbp59NnMDlEEEMJDcL4q2mc9y0kMHSsm6t/2JgyhsnXKjQwe2TgWn3e5xg
-	TFDTWOVWHBTvaWDP+GT24YNq2hH9qnRZrIsglqlZkp2kLptyGrVzOWOdLnGGPD15FT9Wg1nhaHntP
-	Gj8aj12ROmET7EvnWmn9ZuZa0GUdBRw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FkHQe0rpl1I1bG7B/C4aTJV2VwrYBSKVYXJD9aLaRl0=; b=ceIU5TlQzAKT+h
+	c2GDhgeQykIULnGC6cQ84oL/chs+gK3Ufx8EM7JHeoZgOilxaAJDR210e89SFiPSAkGSy0654N6en
+	LsIUDr3H4R7eR5tQyvVDqgTYBOZ1+L8pU5sdgdCOTqzZ2vusKcDc/gd366DJa3OFw6GSSGYZJOQ/6
+	QSjOie5xDejF7p2+aN+fTScZIsIvKaYADxr5hGl8pr0vtvCFU+cgcTHJSXdB0amqpyicwfNZnxvex
+	bj3n0lBYZrpLe8eRboIqRgpMf1GQSbruIUdKuwdgwSw23pSTesI514AY31Sxqf+tmFOD9DPioiSIA
+	i7Ouv67nKLr0+6zJqQAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j418v-0006lX-2F; Tue, 18 Feb 2020 11:34:21 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j418n-0006kz-EB
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 11:34:14 +0000
-Received: from e123331-lin.home
- (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E75D121D56;
- Tue, 18 Feb 2020 11:34:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582025653;
- bh=AdgygElFjm+9+VrUlac437cYd/rQkrwPTj+u9i3/SSw=;
- h=From:To:Cc:Subject:Date:From;
- b=SE1sAy3CDFfufWhk8g9D3KU1M8JIQb7e3vt/C3wWuSkCDeWCBcu/Aqz9xvmSK/2Bm
- hzjaFn8ZepB6CGmDumIEYq1aI6ejIzHNqCGEqr/35jgOzj2WkPU3afk4ETjiJ9Zi5f
- Mqo33c+TL85bMcGGOrU2474Iq8ItVxsfpv5nMrOg=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-efi@vger.kernel.org
-Subject: [PATCH] efi/arm: work around missing cache maintenance in
- decompressor handover
-Date: Tue, 18 Feb 2020 12:34:05 +0100
-Message-Id: <20200218113405.31342-1-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
+	id 1j41uT-0008LO-Ls; Tue, 18 Feb 2020 12:23:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j41uM-0008Ks-PA
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 12:23:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5CA681FB;
+ Tue, 18 Feb 2020 04:23:20 -0800 (PST)
+Received: from arrakis.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 27ACF3F6CF;
+ Tue, 18 Feb 2020 04:23:19 -0800 (PST)
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: linux-mm@kvack.org
+Subject: [PATCH] mm: Avoid creating virtual address aliases in
+ brk()/mmap()/mremap()
+Date: Tue, 18 Feb 2020 12:23:10 +0000
+Message-Id: <20200218122310.72710-1-catalin.marinas@arm.com>
+X-Mailer: git-send-email 2.25.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_033413_505366_3CE63FCB 
-X-CRM114-Status: GOOD (  12.49  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200218_042322_903746_90242B35 
+X-CRM114-Status: GOOD (  12.62  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,81 +61,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maz@kernel.org, ilias.apalodimas@linaro.org,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Florian Weimer <fweimer@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>, Victor Stinner <vstinner@redhat.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The EFI stub executes within the context of the zImage as it was
-loaded by the firmware, which means it is treated as an ordinary
-PE/COFF executable, which is loaded into memory, and cleaned to
-the PoU to ensure that it can be executed safely while the MMU
-and caches are on.
+Currently the arm64 kernel ignores the top address byte passed to brk(),
+mmap() and mremap(). When the user is not aware of the 56-bit address
+limit or relies on the kernel to return an error, untagging such
+pointers has the potential to create address aliases in user-space.
+Passing a tagged address to munmap(), madvise() is permitted since the
+tagged pointer is expected to be inside an existing mapping.
 
-When the EFI stub hands over to the decompressor, we clean the caches
-by set/way and disable the MMU and D-cache, to comply with the Linux
-boot protocol for ARM. However, cache maintenance by set/way is not
-sufficient to ensure that subsequent instruction fetches and data
-accesses done with the MMU off see the correct data. This means that
-proceeding as we do currently is not safe, especially since we also
-perform data accesses with the MMU off, from a literal pool as well as
-the stack.
+Remove untagging in the above functions by partially reverting commit
+ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk"). In
+addition, update the arm64 tagged-address-abi.rst document accordingly.
 
-So let's kick this can down the road a bit, and jump into the relocated
-zImage before disabling the caches. This removes the requirement to
-perform any by-VA cache maintenance on the original PE/COFF executable,
-but it does require that the relocated zImage is cleaned to the PoC,
-which is currently not the case. This will be addressed in a subsequent
-patch.
-
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+Fixes: ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk")
+Cc: <stable@vger.kernel.org> # 5.4.x-
+Cc: Andrey Konovalov <andreyknvl@google.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Andrew Morton <akpm@linux-foundation.org>
+Cc: Florian Weimer <fweimer@redhat.com>
+Reported-by: Victor Stinner <vstinner@redhat.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm/boot/compressed/head.S | 19 +++++++++++++------
- 1 file changed, 13 insertions(+), 6 deletions(-)
+ Documentation/arm64/tagged-address-abi.rst | 7 +++++--
+ mm/mmap.c                                  | 4 ----
+ mm/mremap.c                                | 1 -
+ 3 files changed, 5 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 088b0a060876..4010f6e4b047 100644
---- a/arch/arm/boot/compressed/head.S
-+++ b/arch/arm/boot/compressed/head.S
-@@ -1458,6 +1458,18 @@ ENTRY(efi_stub_entry)
- 		cmn	r0, #1
- 		beq	efi_load_fail
+diff --git a/Documentation/arm64/tagged-address-abi.rst b/Documentation/arm64/tagged-address-abi.rst
+index d4a85d535bf9..1771a8b5712e 100644
+--- a/Documentation/arm64/tagged-address-abi.rst
++++ b/Documentation/arm64/tagged-address-abi.rst
+@@ -44,8 +44,11 @@ The AArch64 Tagged Address ABI has two stages of relaxation depending
+ how the user addresses are used by the kernel:
  
-+		@ The PE/COFF loader might not have cleaned the code we are
-+		@ running beyond the PoU, and so calling cache_off below from
-+		@ inside the PE/COFF loader allocated region is unsafe. Let's
-+		@ assume our own zImage relocation code did a better job, and
-+		@ jump into it before proceeding.
-+		ldr	lr, [sp]			@ relocated zImage
-+		ldr	ip, 0f
-+		sub	lr, lr, ip
-+		mov	pc, lr				@ no mode switch
-+		.align	2
-+0:		.long	start - (. + 4)
-+
- 		@ Preserve return value of efi_entry() in r4
- 		mov	r4, r0
- 		bl	cache_clean_flush
-@@ -1469,12 +1481,7 @@ ENTRY(efi_stub_entry)
- 		mov	r0, #0
- 		mov	r1, #0xFFFFFFFF
- 		mov	r2, r4
+ 1. User addresses not accessed by the kernel but used for address space
+-   management (e.g. ``mmap()``, ``mprotect()``, ``madvise()``). The use
+-   of valid tagged pointers in this context is always allowed.
++   management (e.g. ``mprotect()``, ``madvise()``). The use of valid
++   tagged pointers in this context is allowed with the exception of
++   ``brk()``, ``mmap()`` and the ``new_address`` argument to
++   ``mremap()`` as these have the potential of aliasing with existing
++   user addresses.
+ 
+ 2. User addresses accessed by the kernel (e.g. ``write()``). This ABI
+    relaxation is disabled by default and the application thread needs to
+diff --git a/mm/mmap.c b/mm/mmap.c
+index 6756b8bb0033..d681a20eb4ea 100644
+--- a/mm/mmap.c
++++ b/mm/mmap.c
+@@ -195,8 +195,6 @@ SYSCALL_DEFINE1(brk, unsigned long, brk)
+ 	bool downgraded = false;
+ 	LIST_HEAD(uf);
+ 
+-	brk = untagged_addr(brk);
 -
--		@ Branch to (possibly) relocated zImage that is in [sp]
--		ldr	lr, [sp]
--		ldr	ip, =start_offset
--		add	lr, lr, ip
--		mov	pc, lr				@ no mode switch
-+		b	__efi_start
+ 	if (down_write_killable(&mm->mmap_sem))
+ 		return -EINTR;
  
- efi_load_fail:
- 		@ Return EFI_LOAD_ERROR to EFI firmware on error.
--- 
-2.17.1
-
+@@ -1557,8 +1555,6 @@ unsigned long ksys_mmap_pgoff(unsigned long addr, unsigned long len,
+ 	struct file *file = NULL;
+ 	unsigned long retval;
+ 
+-	addr = untagged_addr(addr);
+-
+ 	if (!(flags & MAP_ANONYMOUS)) {
+ 		audit_mmap_fd(fd, flags);
+ 		file = fget(fd);
+diff --git a/mm/mremap.c b/mm/mremap.c
+index 122938dcec15..af363063ea23 100644
+--- a/mm/mremap.c
++++ b/mm/mremap.c
+@@ -607,7 +607,6 @@ SYSCALL_DEFINE5(mremap, unsigned long, addr, unsigned long, old_len,
+ 	LIST_HEAD(uf_unmap);
+ 
+ 	addr = untagged_addr(addr);
+-	new_addr = untagged_addr(new_addr);
+ 
+ 	if (flags & ~(MREMAP_FIXED | MREMAP_MAYMOVE))
+ 		return ret;
 
 _______________________________________________
 linux-arm-kernel mailing list
