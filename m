@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B23C4161E94
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 02:35:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E9B8161EA0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 02:45:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QpvqCDypghhKnNly+uCEZAzTmFSzwO+GSO9eYhB00sk=; b=rJMaicS8EOszn0
-	6Rg3t1NEbrON3zfLxd/TbiLzzGVBbG9ZlUr4slIJT0pEnAuMf+48IhuZBCqEqPUzL/1+dHIlm0Ulb
-	7dgf3abh5BEAN5TMmahXN5HCoVSWcIan+Fv0BGdWh1oucIuSPX2jgSq7vL5jDiV2l3jqPO5fSsnMq
-	0KNVYn570IXC5xJGD0DY2ftTPpq+2GbOhZtji8K5P4/Cr4kZBSdVo0iSgkcl7ecfSZk3rsQQNNehC
-	Ovbi0Jj2CBkUGoEXuJ3facrWe75p1zSbGPKUytDynk0H2oRbkDdpmhG9trnS+wevSsnzvdC8vQd0N
-	bcP/uIN1QCeQaf4J+c4Q==;
+	List-Owner; bh=Zw7RknOXVGvIPuBx6Y7I5wWdAYPjOWKdrw52omtAVjM=; b=dmo+0JPiAuHaF5
+	yS4xqLhW0qvj53GOOO+kb+eujFsh2sRseJsgLWBmXIciALLX92w3WHdqtNq29aEX3Pqm6Y0dUOs6+
+	2hujeGf2xbJjAV7n79aTlX7FsASRYWUvSJzgsIsexBx1jn5rJbO6em0E5AOZkHwHGqdZIJGMl6sEV
+	lEafQQILmW9D2rdJ3J+5jCyjclcE1m8I7BuvAY5ediYHh3eWghkf74PkXIfpCU23pmoZ51sA1oCq6
+	8l+memQR6lmPxCQG1itYh8sI0u9SBSHTVz+R8u6ZDGU7DQEOIpMympQ4XM08CoU3rruZjgGdty09t
+	MSl+38PFrczF5DX+gDtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3rnO-0005Fu-49; Tue, 18 Feb 2020 01:35:30 +0000
+	id 1j3rwa-0007BH-4Z; Tue, 18 Feb 2020 01:45:00 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3rnF-0005FN-SB
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 01:35:23 +0000
+ id 1j3rwS-0007Au-Pk
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 01:44:54 +0000
 Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
- by mailnew.nyi.internal (Postfix) with ESMTP id 2C406713D;
- Mon, 17 Feb 2020 20:35:13 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id CC3CE6CB1;
+ Mon, 17 Feb 2020 20:44:51 -0500 (EST)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute5.internal (MEProxy); Mon, 17 Feb 2020 20:35:13 -0500
+ by compute5.internal (MEProxy); Mon, 17 Feb 2020 20:44:51 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
  subject:to:cc:references:from:message-id:date:mime-version
- :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=3
- /frFdDog4FFMXYLrMEqlb9W6/lavkPu4eDG9CYrLUs=; b=TBjUAvH2+r4py/WeH
- dYAXfAV4xxtqVJJvqORkLcT/xfwC5knGW4m8noq+FusysuQMjxp9A9H9lNss2gnE
- ymgEbL6i0MGS6OF8k1usR5lR+Cg9edB4Rv9Ib/c3SSX2UApy0Xa0c00d3U3ox/o9
- 4Q5K9XHW/gNfqp/j/Q0WXTD/9Qke/BMjRGiRYkbaheZ+HU2Jld0d6KfqMuxhuvr/
- OFqZyDIAvhvNiue09cak608wjlJRg9VirPCiEYtWK50FUC6uOZzuW/f2ekpg6F+M
- XIm0oTZZVUAWHUScEwFvVdjHnkB6zB5DnF6H0dAARSAY8Et9XLfz0qBp6j+TO5f/
- gZcfg==
+ :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=k
+ tP0xjLMEYow5iCaqBZHaqnwO8wceFlWoz7H7k4O0xM=; b=CSF1Iph5pp4vOyZeL
+ LGmqeplv+4ylrO/x70YmMfcWggiReinVQ3yb90y947u4uncH8wP66FQrAaIcXRY1
+ niPYqALKjfxthOU5BoK3N8KCBjjEuXdNrNJ7CUOHgax/mKCY4VtH/c4x8pwI+VEb
+ IOj6YcK3bGb0rkkL1NWBTFZ4KveA1N6Nl35GVlfRj8ZOldCctkvhwFPSb6xgbdcN
+ QaHgqAFk6QId33dp/3boQGeRuOJwmrDz8ZGi847KuAFi6n+d3jbq1VWOFcItMV/5
+ Wfvy7PvqW7M4nmqo8D5rqxadkZ8ek2LnfVL0Wl0TvfAPB9rPZyLYitdcs6zKOadG
+ kYaCg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:content-type
  :date:from:in-reply-to:message-id:mime-version:references
  :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
- :x-sasl-enc; s=fm2; bh=3/frFdDog4FFMXYLrMEqlb9W6/lavkPu4eDG9CYrL
- Us=; b=emEn5VRVxNTBoJPTmLWomfIy5R32M8Md760VVUhJ8eGdlPLXN/bBDeAhn
- +GcRJWZ+ZcfYF+TjHHHmpxUG2qZH9XzsdXTHFcnislY/u2Fx3s+0ze1T0G/q/Nr9
- pV0YUiWSfpM1yX7Qc08gt5hHW5RUaRe0kEN7x6p4rTO0uwbJYi5mzghsgYonmo5h
- UgrwwrrjA8pjcj8qu3DprW0R2++v1uvMz4mGtCPNJ5nt4KL8Ius1gwBwa8qRoyOd
- 6SvpNR9WOVvc26Rp8jw00FcSlVDTCEUoYaNwABsoBbqg4v/t6Gctsh1lsY6TtMHY
- fD5VzybJD8UZnTSBy9Lg6S1ohvpbw==
-X-ME-Sender: <xms:TT9LXgMZLVK3eoy7lHkwIhGNH59zEU_eNFtjj4jAdQj4T8gzQPs2xw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjeejgdefhecutefuodetggdotefrodftvf
+ :x-sasl-enc; s=fm2; bh=ktP0xjLMEYow5iCaqBZHaqnwO8wceFlWoz7H7k4O0
+ xM=; b=GVNTuwA5FHJB7rHrw/IlqU+ChDQVJwnXfOBzXIcglBuetJUkEzMBtyCk/
+ hSLS6RKANUBT8bIibhU+2mhlyVHauVATvTEcxtN1UJxjZnYDpxMvVSyFjWraokB/
+ Fduimjg06dChp9OeyqHfs/y38GTafH39Q6SNmaWmBJDb0jkMGYp+utesivcrRBre
+ imap9PkskDGb6Ot6RDo4ZjlvNC50W21naaSXfh227bNdhH/sxpiQBSw6mPdE16sZ
+ urL/zNgWFKYok8BYY+KH/O4jik7JjrDJjy3Wmp1Gp/6+KjhrSGv5ExrkT9GcmxRd
+ wKPT+SrqFtqxpXVjOgvVioDlp/49g==
+X-ME-Sender: <xms:kkFLXpFVoqimNSYPZ9i_OtN7A_2b2eQVo-jr8hcxqeEe16FtTMEE1w>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjeejgdefjecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
  fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
  lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
  epjedtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghr
  rghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
-X-ME-Proxy: <xmx:TT9LXo2V3EfTC9_V2ZPSxdf994TQft8hgcC1iX8yeLmBq9K211zslw>
- <xmx:TT9LXr3xwclyYDuE7X_abSeevmEbdYeyRHoI4C0PUBnTzHN2mAuSkg>
- <xmx:TT9LXmW8Slb9DKdlRHeHD8iOTo1pmbW9sKShTs1y-AM3XGHDPHyf9A>
- <xmx:UT9LXsmgCGu_GY9u1ruN_VtYA7ZhFghMMyHEI-o8EdG6-txapHEZVQ>
+X-ME-Proxy: <xmx:kkFLXp_ry0IomhF9gV77h-FQeJdENobIvLxdsoVEfGSdcG5fNB-KhA>
+ <xmx:kkFLXlmj-llT9aC3l-_jsDWxPiPcgd_2vWob-w5npInW2CvSx2JfBA>
+ <xmx:kkFLXs-b9KWeuSg9QslXBZhqkMGigL59cx7ZIhKs2042twxghnhAhA>
+ <xmx:k0FLXoVLLKcqDWrf4DXnoRpIvRmxqIcjWWh3soQfruWpxMbN4fCH7A>
 Received: from [192.168.50.169]
  (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 88DCB3060BD1;
- Mon, 17 Feb 2020 20:35:08 -0500 (EST)
-Subject: Re: [RFC PATCH 05/34] ASoC: sun8i-codec: Remove incorrect
- SND_SOC_DAIFMT_DSP_B
+ by mail.messagingengine.com (Postfix) with ESMTPA id 219B33060C28;
+ Mon, 17 Feb 2020 20:44:50 -0500 (EST)
+Subject: Re: [RFC PATCH 08/34] ASoC: sun8i-codec: Fix direction of AIF1 outputs
 To: Mark Brown <broonie@kernel.org>
 References: <20200217064250.15516-1-samuel@sholland.org>
- <20200217064250.15516-6-samuel@sholland.org>
- <20200217150208.GG9304@sirena.org.uk>
+ <20200217064250.15516-9-samuel@sholland.org>
+ <20200217150935.GJ9304@sirena.org.uk>
 From: Samuel Holland <samuel@sholland.org>
-Message-ID: <1cdcbc0d-39c7-25f2-68eb-a44e815fb9b8@sholland.org>
-Date: Mon, 17 Feb 2020 19:35:08 -0600
+Message-ID: <7108ff30-df7e-09bd-f895-2768347d45ba@sholland.org>
+Date: Mon, 17 Feb 2020 19:44:49 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.2
 MIME-Version: 1.0
-In-Reply-To: <20200217150208.GG9304@sirena.org.uk>
+In-Reply-To: <20200217150935.GJ9304@sirena.org.uk>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_173522_052987_C56A0A23 
-X-CRM114-Status: GOOD (  13.26  )
+X-CRM114-CacheID: sfid-20200217_174452_976998_FB146C98 
+X-CRM114-Status: GOOD (  13.28  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -124,27 +123,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/17/20 9:02 AM, Mark Brown wrote:
-> On Mon, Feb 17, 2020 at 12:42:21AM -0600, Samuel Holland wrote:
->> DSP_A and DSP_B are not interchangeable. The timing used by the codec in
->> DSP mode is consistent with DSP_A. This is verified with an EG25-G modem
->> connected to AIF2, as well as by comparing with the BSP driver.
->>
->> Remove the DSP_B option, as it is not supported by the hardware.
->>
->> Cc: stable@kernel.org
->> Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
+On 2/17/20 9:09 AM, Mark Brown wrote:
+> On Mon, Feb 17, 2020 at 12:42:24AM -0600, Samuel Holland wrote:
+>> The naming convention for AIFs in this codec is to call the "DAC" the
+>> path from the AIF into the codec, and the ADC the path from the codec
+>> back to the AIF, regardless of if there is any analog path involved.
 > 
-> This can only break things for existing systems using stable, if they
-> haven't noticed a problem with DSP B they'll certainly notice failing to
-> set up the DAI at all without it.
+> This renames widgets but does not update any DAPM routes from those
+> widgets which will break things if this patch is applied.
 
-Are you suggesting that I drop this patch entirely, or only that I remove the CC
-to stable (and/or Fixes: tag)? Is this something that can't be removed once it's
-there, or is the concern about making user-visible changes on stable?
+This commit doesn't change the widget name, only the widget type. My commit
+message did not make that clear.
 
-Thanks,
-Samuel
+>> Cc: stable@kernel.org
+> 
+> Why is this suitable for stable?  It's a random textual cleanup.
+
+This was one of the first patches I wrote. Now that I understand DAPM better, I
+realize that it has no functional impact, and this shouldn't go to stable.
+(snd_soc_dapm_aif_in and snd_soc_dapm_aif_out are handled exactly the same, so
+fixing the widget type is, as you say, just a textual cleanup.)
 
 _______________________________________________
 linux-arm-kernel mailing list
