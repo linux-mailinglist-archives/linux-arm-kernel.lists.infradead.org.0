@@ -2,87 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 813A8163337
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 21:40:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12B7A1633D3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 22:05:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cc/3nJFRGaQXTZbtCrNT4CiTzBKG1+bn0uZJvlD/1Qs=; b=ujClzRNpSD1HGt
-	stMwXP6T2WcaoTcGjQHUlfXeIn2OCvFySqdA6W3iJ/VSUWKnq03dvZH/HWyxJ8Oy/+g1Pcwg956aI
-	kOLrYqbt1AA4Qs9enNfug8v88yPyMTZzhhqENVRRbBNB4wbpBOy/hnGwvAbBayzVI/HS2nL13LEaw
-	B5rqeV9GFuOVAEqiQDsxJrN84MnnNmQa67BDdwZYmfbYBJ9KLYGXAP+dq+TB0h6Jv7+KdCBLjL49f
-	d5VLDZK245TDVWJ16/giKZ+/Ers5/8F8VkDM1PP4RxBAHzWsuflH2mZooqHIkmDzH/o/g5BjHDLIk
-	yCbeF9xloY0QBmE2YDzw==;
+	List-Owner; bh=bpK58ciBoo4T1Gtr7p/SIcWDC1ffcQlNKABxTmNw3hg=; b=WvPPk5pIdiYtDU
+	8qPxg/K5gBAw6BTDIM7mplQbNYj96VMpcENpUvIDkFoC+r/JebUwltElgwnKzK6rd4PlMAK91S2yb
+	Ikv4IUcTJ7W6MLk5IxeliI73Ysc5KgMq//K/bV0KY55M9RDYqn6zPbqaYQ7O06fjXEvwe1tG5+fwG
+	MlknC6RvjdMq8ITdQj+uwKK93BxsooSUgO9xU8db1L8xrV9wOwUMuLBtLBHBCDqEAx7SIYXqacuyS
+	eK9+CbZyR2w5uraZNGDzCt+ayO2or1t3UHR0XSVJByY99iGE7JwwQLEXk9JXZwgGadtPBTNl4E3aP
+	pLH4O7Ob0tvMPvyIPUmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j49ey-0007uE-Nn; Tue, 18 Feb 2020 20:40:00 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1j4A3m-0000dQ-My; Tue, 18 Feb 2020 21:05:38 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j49eq-0007tk-7c; Tue, 18 Feb 2020 20:39:53 +0000
-Received: by mail-ot1-f67.google.com with SMTP id z9so20893224oth.5;
- Tue, 18 Feb 2020 12:39:51 -0800 (PST)
+ id 1j4A3e-0000cj-TU
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 21:05:32 +0000
+Received: by mail-io1-xd42.google.com with SMTP id z8so12368204ioh.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Feb 2020 13:05:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FLBYyhbEVK2WxYe7XRcltkQcdTtblO766M7V/ij5lvI=;
+ b=vHbQzXXyoV+Y9zIOrjuFKrSsDtinOVGHe6Gcs+WggtyGJC4bR3luoPn/mUdOjXztHp
+ jJtJyIgxuPvzG7KlmDZwWutFhZmKJoq5MJT6oniyPaRRmi2nOK6j/9F5ErAO1Lz6xciT
+ 9SSXRHEEMto98eix6KMA7ibJDJf1ay8pWac7WWo1apLZp4Sf67HnBen+OQtrfb+W0Cby
+ 2XmVqclfi65JK/bpt0MuFZ/Ui7UX4MGLTea1ziwhDDqtP9D8NWnsI6HAXhO5VaNKC0Qx
+ jz6xGrp0XORRadoLS5jjL4fiwQM6ECUrNampu/I4Efj4AA8hq9PSJuvi+1mPK5Y+bUeY
+ Zr1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=C8j0O76ayqbfqE0bVu8zQXNeOaxgxzZC+4WywF7J+iw=;
- b=GJqZxqNXicaA6RaP7WIIayVlw7vIIqEqJz1G2UjBLoTdpw9LwTQNrB6n43ad7vv6xi
- J71KIcKkFW8+5N/K4r0zeO52NynKK5WOF/hg60JtM8Up8fLxmqBcLYOGZKgAgX8y3I/F
- 4pTg9viqrYq2nASx3Gz7ClzkLzLa1zWbztVwzpKo7SJ4WMEMqTW/8gxLpyL9282SweZI
- /z8n9voFb1IYFq24TZTJpU+mknTWUsQrn9DoOErERwWAvwCfFegCJE8gn0OMfPmNiT6g
- QUmYy0e7d3n3abyPmhrG4vYke/SiUHp3x3Pz9S2AtpwFxyXmgemUMP5zR5SD7JfkkIyy
- u5ZA==
-X-Gm-Message-State: APjAAAUR4MX16ZQHDoH/Pru6aJ341LDcp3H1NDukVhFjqt87hg/yZpa/
- bNFxfYmmR4zcXhLjVHyEiw==
-X-Google-Smtp-Source: APXvYqyH1p5MWdMBardwNwTmNs1F6hhPi3TUJe8KGhFk/oPzVltIMKXI9kg6VgPOTDZoEaMQDFRXnA==
-X-Received: by 2002:a9d:116:: with SMTP id 22mr16069633otu.149.1582058390424; 
- Tue, 18 Feb 2020 12:39:50 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w197sm446590oia.12.2020.02.18.12.39.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 12:39:49 -0800 (PST)
-Received: (nullmailer pid 31148 invoked by uid 1000);
- Tue, 18 Feb 2020 20:39:48 -0000
-Date: Tue, 18 Feb 2020 14:39:48 -0600
-From: Rob Herring <robh@kernel.org>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Subject: Re: [PATCH v7 1/7] dt-bindings: clock: mediatek: document clk
- bindings for Mediatek MT6765 SoC
-Message-ID: <20200218203948.GA28003@bogus>
-References: <1581067250-12744-1-git-send-email-macpaul.lin@mediatek.com>
- <1581067250-12744-2-git-send-email-macpaul.lin@mediatek.com>
- <d606aeb2-5327-ff13-0043-e70ef37522f5@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FLBYyhbEVK2WxYe7XRcltkQcdTtblO766M7V/ij5lvI=;
+ b=NAsbo5VeQzlSiepRy9W3ujDwamBtatcHwhg6PF26RThzNxgxFpqApEBgfkvZxSrDO+
+ yt1XAnQiAP1vPIAAGPT90q7d6OiD2Wtow/9P0l7Yo9J1HPgRG9fYLK1x9iqgpn25bOPT
+ yqkry4QOthhFWAZWtX3eCWub9oKcXjL49HIatIa2uoSfFXjYmnS4iKkNTLtcv7u/mgn1
+ 8YT5no3IxqjKuHBKQvzYQLxmuzHcFsp9PXcXzHZYFT+Y3oL7EPLJ4hL/Y4TnBAiJFoxi
+ 4uT9POvR7JAmF4UGWIZ4h8Gjc/0+ARZC6AOCAsV7QqU2laoCwBofoNgjWl7o/Tq3EjS6
+ Jx5A==
+X-Gm-Message-State: APjAAAUmddi9jAiPjuul0ZcsspdrVb3JIufM0S0oNrcIlKHXAwkFOw6M
+ CICGfSWhv4Qd6I/Mk/47rbMNMlrPsJd/RW8LGmhCGg==
+X-Google-Smtp-Source: APXvYqyIhJ2biuTZyCaoRFUVzvNeQwM4owFmTynxIZQ5l4t7g6zbJ1OKnQd4H+AaWIm2P2TPi9MpFTZ5VNcUxlWjWaU=
+X-Received: by 2002:a02:c85b:: with SMTP id r27mr17877406jao.57.1582059926803; 
+ Tue, 18 Feb 2020 13:05:26 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <d606aeb2-5327-ff13-0043-e70ef37522f5@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200218122310.72710-1-catalin.marinas@arm.com>
+ <20200218123426.GA19776@willie-the-truck>
+ <CAAeHK+zKGLHVFVAmUB8Ccc2vuGiZ1uSt1kzxk=7SdDtbwVkvhQ@mail.gmail.com>
+In-Reply-To: <CAAeHK+zKGLHVFVAmUB8Ccc2vuGiZ1uSt1kzxk=7SdDtbwVkvhQ@mail.gmail.com>
+From: Evgenii Stepanov <eugenis@google.com>
+Date: Tue, 18 Feb 2020 13:05:14 -0800
+Message-ID: <CAFKCwrhysxATNaPWQR9Nn-P1+ngBMXauPUuEdpaYRgKZH0XV7Q@mail.gmail.com>
+Subject: Re: [PATCH] mm: Avoid creating virtual address aliases in
+ brk()/mmap()/mremap()
+To: Andrey Konovalov <andreyknvl@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_123952_271586_448940EA 
-X-CRM114-Status: GOOD (  13.16  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200218_130530_978966_D03FB5CC 
+X-CRM114-Status: GOOD (  27.62  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,58 +99,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+Cc: Florian Weimer <fweimer@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Loda Chou <loda.chou@mediatek.com>, Fabien Parent <fparent@baylibre.com>,
- Mars Cheng <mars.cheng@mediatek.com>, Macpaul Lin <macpaul.lin@mediatek.com>,
- Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org,
- Ryder Lee <Ryder.Lee@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
- Evan Green <evgreen@chromium.org>, linux-arm-kernel@lists.infradead.org,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, mtk01761 <wendell.lin@mediatek.com>,
- Owen Chen <owen.chen@mediatek.com>, devicetree@vger.kernel.org,
- Joerg Roedel <jroedel@suse.de>, Marc Zyngier <marc.zyngier@arm.com>,
- Sean Wang <Sean.Wang@mediatek.com>, linux-mediatek@lists.infradead.org,
- Yong Wu <yong.wu@mediatek.com>, CC Hwang <cc.hwang@mediatek.com>,
- Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Victor Stinner <vstinner@redhat.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 05:47:25PM +0100, Matthias Brugger wrote:
-> 
-> 
-> On 07/02/2020 10:20, Macpaul Lin wrote:
-> > From: Mars Cheng <mars.cheng@mediatek.com>
-> > 
-> > This patch adds the binding documentation for apmixedsys, audsys, camsys,
-> > imgsys, infracfg, mipi0a, topckgen, vcodecsys
-> > 
-> > Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
-> > Signed-off-by: Owen Chen <owen.chen@mediatek.com>
-> > Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
-> > ---
-> >  .../arm/mediatek/mediatek,apmixedsys.txt      |  1 +
-> >  .../bindings/arm/mediatek/mediatek,audsys.txt |  1 +
-> >  .../bindings/arm/mediatek/mediatek,camsys.txt |  1 +
-> >  .../bindings/arm/mediatek/mediatek,imgsys.txt |  1 +
-> >  .../arm/mediatek/mediatek,infracfg.txt        |  1 +
-> >  .../bindings/arm/mediatek/mediatek,mipi0a.txt | 28 +++++++++++++++++++
-> >  .../bindings/arm/mediatek/mediatek,mmsys.txt  |  1 +
-> >  .../arm/mediatek/mediatek,pericfg.txt         |  1 +
-> >  .../arm/mediatek/mediatek,topckgen.txt        |  1 +
-> >  .../arm/mediatek/mediatek,vcodecsys.txt       | 27 ++++++++++++++++++
-> 
-> I think it's OK to put all the bindings, that only add one compatible in onw
-> patch. But I think mipi0a and vcodesys should each go into a separate patch, as
-> we will need a Ack by Rob for that.
+On Tue, Feb 18, 2020 at 5:07 AM Andrey Konovalov <andreyknvl@google.com> wrote:
+>
+> On Tue, Feb 18, 2020 at 1:34 PM Will Deacon <will@kernel.org> wrote:
+> >
+> > On Tue, Feb 18, 2020 at 12:23:10PM +0000, Catalin Marinas wrote:
+> > > Currently the arm64 kernel ignores the top address byte passed to brk(),
+> > > mmap() and mremap(). When the user is not aware of the 56-bit address
+> > > limit or relies on the kernel to return an error, untagging such
+> > > pointers has the potential to create address aliases in user-space.
+> > > Passing a tagged address to munmap(), madvise() is permitted since the
+> > > tagged pointer is expected to be inside an existing mapping.
+> >
+> > Might be worth mentioning that this is causing real issues for existing
+> > userspace:
+> >
+> > https://bugzilla.redhat.com/show_bug.cgi?id=1797052
+> >
+> > and so should be merged as a fix.
+> >
+> > > Remove untagging in the above functions by partially reverting commit
+> > > ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk"). In
+> > > addition, update the arm64 tagged-address-abi.rst document accordingly.
+>
+> Evgenii, do you know if this will cause any issues for HWASAN?
 
-Yes, and DT schema for the new ones.
+Is it possible to preserve the untagging behavior when a process has
+opted in TBI?
 
-Rob
+I have not seen an actual issue with a tagged pointer in mmap yet
+(I've seen two with mprotect, but not mmap or sbrk), so we should be
+fine either way.
+
+>
+> > >
+> > > Fixes: ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk")
+> > > Cc: <stable@vger.kernel.org> # 5.4.x-
+> > > Cc: Andrey Konovalov <andreyknvl@google.com>
+> > > Cc: Will Deacon <will@kernel.org>
+> > > Cc: Andrew Morton <akpm@linux-foundation.org>
+> > > Cc: Florian Weimer <fweimer@redhat.com>
+> > > Reported-by: Victor Stinner <vstinner@redhat.com>
+> > > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> > > ---
+> > >  Documentation/arm64/tagged-address-abi.rst | 7 +++++--
+> > >  mm/mmap.c                                  | 4 ----
+> > >  mm/mremap.c                                | 1 -
+> > >  3 files changed, 5 insertions(+), 7 deletions(-)
+> > >
+> > > diff --git a/Documentation/arm64/tagged-address-abi.rst b/Documentation/arm64/tagged-address-abi.rst
+> > > index d4a85d535bf9..1771a8b5712e 100644
+> > > --- a/Documentation/arm64/tagged-address-abi.rst
+> > > +++ b/Documentation/arm64/tagged-address-abi.rst
+> > > @@ -44,8 +44,11 @@ The AArch64 Tagged Address ABI has two stages of relaxation depending
+> > >  how the user addresses are used by the kernel:
+> > >
+> > >  1. User addresses not accessed by the kernel but used for address space
+> > > -   management (e.g. ``mmap()``, ``mprotect()``, ``madvise()``). The use
+> > > -   of valid tagged pointers in this context is always allowed.
+> > > +   management (e.g. ``mprotect()``, ``madvise()``). The use of valid
+> > > +   tagged pointers in this context is allowed with the exception of
+> > > +   ``brk()``, ``mmap()`` and the ``new_address`` argument to
+> > > +   ``mremap()`` as these have the potential of aliasing with existing
+> > > +   user addresses.
+> >
+> > Given that we're backporting this to stable kernels, perhaps it's worth
+> > a note here along the lines of:
+> >
+> > NOTE: This behaviour changed in v5.6 and so some earlier kernels may
+> > incorrectly accept valid tagged pointers for these system calls.
+> >
+> > With that:
+> >
+> > Acked-by: Will Deacon <will@kernel.org>
+> >
+> > Happy to take this as an arm64 fix for 5.6, unless Andrew would prefer
+> > to route it via his tree.
+> >
+> > Will
 
 _______________________________________________
 linux-arm-kernel mailing list
