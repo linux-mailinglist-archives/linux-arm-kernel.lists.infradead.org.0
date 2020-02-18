@@ -2,65 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1738162F3F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:03:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A9C8162F5A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:05:45 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6xpR7tCibm0c/eCgUGAqpE+4UyXN9QCmLc3YtE4MykY=; b=uKf4XO3wC7LAbgV6osf+SyNO9
-	522FeMmcSnZx7DmdBhZ1XDD84WIjNwPG2NMpFeP06VVocyjHo5/hpm93rFKetV9C+t0W2OTrVuBLN
-	S2PMdNtfWs7n9f88aAZg9Z2TVc9wS9/O6E3/X4g9clAqjZti6jaewfVAHknaAEj+3CDB4+JGsqRk3
-	RjRy6Mqb5AQcvqtqxoYkCnF8cweX8zzJsouHmLxsOy7p6GWO/qW3GFlsqw99HiDqc5ujLueknx/EV
-	jlkRaQxUDPUroAwMEvz68dXCqkEVmG+FqQBn0cSyjv85eszyxUp/Xs2IWu3Q04rEdeLfexNsgA5eV
-	IRx0ECwpw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FIC9y+vQ0IQp2ustgecRQNePSsIFa4RvWRPjpCoy+Gg=; b=oCEvuqCnT99oxR
+	yKmaFwK5vYgEcFDlPeWsfaKOZw7n+1ES/cFWdbtXoksni3aPaBucxnaCsZsbYySttok/SsMneVCRT
+	RvIKEXXYHxQWmfxQLqVsswlfRtuCBfEmtIHzhp23R+S2pyp/J01lyAckh383xqraT8vX/EVfHwaYZ
+	UvHMc8+D1fa/M8c4gVBQN9HfJ/lj0MEHAEN+S5NuukXak7YCRkq405jHQk8jcLhDl2hfK14yDb9tW
+	KEy2qnqo4aazlsQPwLd7Bt6PlW0xPFC2pB6GNxK6HOEjjqJIHoba/b2JXNFnKcK5XQDHBK60O6z2b
+	kScguRJMvaLgzNkN1IEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j489B-0002Cp-Uv; Tue, 18 Feb 2020 19:03:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j48Be-0003kR-Iw; Tue, 18 Feb 2020 19:05:38 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::8])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4892-0002C4-Pf
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:02:58 +0000
-Received: from localhost (c-73-47-72-35.hsd1.nh.comcast.net [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E1B0324655;
- Tue, 18 Feb 2020 19:02:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582052575;
- bh=yGg6yNRaAc7iDhwPELABRLvrPSnaAFrFM+ijBgVtWoo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dQJS5bcavE0VoZy3dS/+CN4EqnAgMsL2HFP6co6j0tfwA/VryfUjJD+jLWGKNgP/s
- 7QO45qSnZKAlxcLswZk8QyTW0yHgO6D+IZvIOhyIhkmq9+QCOiyce6wE7ufDXvGxU2
- pRuXmqKCuzRTX4I3uR6QSvrSq7TyLtxmGr0TfG/w=
-Date: Tue, 18 Feb 2020 14:02:53 -0500
-From: Sasha Levin <sashal@kernel.org>
-To: Leonard Crestez <leonard.crestez@nxp.com>
-Subject: Re: [PATCH] firmware: imx: Align imx SC msg structs to 4
-Message-ID: <20200218190253.GW1734@sasha-vm>
-References: <3a8b6772a1edffdd7cdb54d6d50030b03ba0bebb.1581455751.git.leonard.crestez@nxp.com>
- <20200217062129.GB6790@dragon>
- <VI1PR04MB7023CDE9E4AD086F2E926495EE160@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <20200218091831.GB6075@dragon>
- <VI1PR04MB7023C1C536805130D9429E11EE110@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ id 1j48BW-0003k0-6V
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:05:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1582052726;
+ s=strato-dkim-0002; d=gerhold.net;
+ h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=5D52tt6mIQclXNRsDvAzprjKbRWFDl8iC2bcJ4uR/M8=;
+ b=GJdo3IVUt+X+7op4EFxqcbzwTZIpSuCxoKUyzq4hnXfYcBR8Jo9TmYY7Hg6gIgRJ3Z
+ HUJOebh4RrkC4nGElkRFxkbXdiUe148sJ0cFjrhAIUDLYZLykYW7Zt151K7ivsuiU3BM
+ y5DYWqd8W0DPjsde08gJYi5wbKaZOdgIQZQy3c3Rq/CVaMlV2J1TtAJureIjqFDHT3qc
+ gmAikl96O2bxoxDyMyyDObazyRuULsKRO0Gwmifxsh6riM+S2IqQj48C3DA+g6msbUcy
+ Mt4CL6s8br+e5uEONo/oQr9EUzMriNTich8RzUKTuWdcKUdMoGKm/F9n+CCk14w25OwV
+ VOJA==
+X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u26zEodhPgRDZ8b7Ic/NaIo="
+X-RZG-CLASS-ID: mo00
+Received: from gerhold.net by smtp.strato.de (RZmta 46.1.12 DYNA|AUTH)
+ with ESMTPSA id a01fe9w1IJ5Mm3U
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+ (Client did not present a certificate);
+ Tue, 18 Feb 2020 20:05:22 +0100 (CET)
+Date: Tue, 18 Feb 2020 20:05:16 +0100
+From: Stephan Gerhold <stephan@gerhold.net>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] iommu/qcom: Fix bogus detach logic
+Message-ID: <20200218190516.GA19773@gerhold.net>
+References: <be92829c6e5467634b109add002351e6cf9e18d2.1582049382.git.robin.murphy@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <VI1PR04MB7023C1C536805130D9429E11EE110@VI1PR04MB7023.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <be92829c6e5467634b109add002351e6cf9e18d2.1582049382.git.robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_110256_855869_3A0BB844 
-X-CRM114-Status: GOOD (  10.83  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200218_110530_845373_07C1C87F 
+X-CRM114-Status: GOOD (  18.47  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:238:20a:202:5301:0:0:8 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -68,7 +70,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,64 +81,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- Stefan Agner <stefan@agner.ch>,
- "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
- Franck Lenormand <franck.lenormand@nxp.com>,
- "open list:PIN CONTROLLER - FREESCALE" <linux-gpio@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "open list:REAL TIME CLOCK \(RTC\) SUBSYSTEM" <linux-rtc@vger.kernel.org>
+Cc: linux-arm-msm@vger.kernel.org, joro@8bytes.org,
+ iommu@lists.linux-foundation.org, robdclark@gmail.com,
+ Naresh Kamboju <naresh.kamboju@linaro.org>,
+ linux-arm-kernel@lists.infradead.org, Brian Masney <masneyb@onstation.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 05:48:50PM +0000, Leonard Crestez wrote:
->On 18.02.2020 11:18, Shawn Guo wrote:
->> On Mon, Feb 17, 2020 at 08:37:45PM +0000, Leonard Crestez wrote:
->>> On 17.02.2020 08:21, Shawn Guo wrote:
->>>> On Tue, Feb 11, 2020 at 11:24:33PM +0200, Leonard Crestez wrote:
->>>>> The imx SC api strongly assumes that messages are composed out of
->>>>> 4-bytes words but some of our message structs have sizeof "6" and "7".
->>>>>
->>>>> This produces many oopses with CONFIG_KASAN=y:
->>>>>
->>>>> 	BUG: KASAN: stack-out-of-bounds in imx_mu_send_data+0x108/0x1f0
->>>>>
->>>>> It shouldn't cause an issues in normal use because these structs are
->>>>> always allocated on the stack.
->>>>>
->>>>> Cc: stable@vger.kernel.org
->>>>
->>>> Should we have a fixes tag and send it for -rc?
->>>
->>> I haven't check but this would probably have to be split into multiple
->>> patches because the structs were not added all at once.
->>
->> Or maybe we can just drop the stable tag, as it addresses a corner
->> case issue which could concern very few people?
->
->I think that "kernel does not boot with KASAN=y" is an issue worth fixing.
->
->I will split and resend with appropriate Fixes: tags.
->
->It seems likely that this will be picked up for -stable anyway via
->Sasha's automation scripts and those scripts benefit from Fixes: tags.
+On Tue, Feb 18, 2020 at 06:12:41PM +0000, Robin Murphy wrote:
+> Currently, the implementation of qcom_iommu_domain_free() is guaranteed
+> to do one of two things: WARN() and leak everything, or dereference NULL
+> and crash. That alone is terrible, but in fact the whole idea of trying
+> to track the liveness of a domain via the qcom_domain->iommu pointer as
+> a sanity check is full of fundamentally flawed assumptions. Make things
+> robust and actually functional by not trying to be quite so clever.
+> 
+> Reported-by: Brian Masney <masneyb@onstation.org>
+> Tested-by: Brian Masney <masneyb@onstation.org>
+> Reported-by: Naresh Kamboju <naresh.kamboju@linaro.org>
+> Fixes: 0ae349a0f33f ("iommu/qcom: Add qcom_iommu")
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 
-Even if not, we realy very much on KASAN working on stable kernels, so
-please do fix this :)
+This fixes the warning reported by Naresh Kamboju [1] for me. Thank you!
 
--- 
-Thanks,
-Sasha
+Tested-by: Stephan Gerhold <stephan@gerhold.net>
+
+[1]: https://lore.kernel.org/linux-arm-msm/CA+G9fYtScOpkLvx=__gP903uJ2v87RwZgkAuL6RpF9_DTDs9Zw@mail.gmail.com/
+
+> ---
+>  drivers/iommu/qcom_iommu.c | 28 ++++++++++++----------------
+>  1 file changed, 12 insertions(+), 16 deletions(-)
+> 
+> diff --git a/drivers/iommu/qcom_iommu.c b/drivers/iommu/qcom_iommu.c
+> index 39759db4f003..4328da0b0a9f 100644
+> --- a/drivers/iommu/qcom_iommu.c
+> +++ b/drivers/iommu/qcom_iommu.c
+> @@ -344,21 +344,19 @@ static void qcom_iommu_domain_free(struct iommu_domain *domain)
+>  {
+>  	struct qcom_iommu_domain *qcom_domain = to_qcom_iommu_domain(domain);
+>  
+> -	if (WARN_ON(qcom_domain->iommu))    /* forgot to detach? */
+> -		return;
+> -
+>  	iommu_put_dma_cookie(domain);
+>  
+> -	/* NOTE: unmap can be called after client device is powered off,
+> -	 * for example, with GPUs or anything involving dma-buf.  So we
+> -	 * cannot rely on the device_link.  Make sure the IOMMU is on to
+> -	 * avoid unclocked accesses in the TLB inv path:
+> -	 */
+> -	pm_runtime_get_sync(qcom_domain->iommu->dev);
+> -
+> -	free_io_pgtable_ops(qcom_domain->pgtbl_ops);
+> -
+> -	pm_runtime_put_sync(qcom_domain->iommu->dev);
+> +	if (qcom_domain->iommu) {
+> +		/*
+> +		 * NOTE: unmap can be called after client device is powered
+> +		 * off, for example, with GPUs or anything involving dma-buf.
+> +		 * So we cannot rely on the device_link.  Make sure the IOMMU
+> +		 * is on to avoid unclocked accesses in the TLB inv path:
+> +		 */
+> +		pm_runtime_get_sync(qcom_domain->iommu->dev);
+> +		free_io_pgtable_ops(qcom_domain->pgtbl_ops);
+> +		pm_runtime_put_sync(qcom_domain->iommu->dev);
+> +	}
+>  
+>  	kfree(qcom_domain);
+>  }
+> @@ -404,7 +402,7 @@ static void qcom_iommu_detach_dev(struct iommu_domain *domain, struct device *de
+>  	struct qcom_iommu_domain *qcom_domain = to_qcom_iommu_domain(domain);
+>  	unsigned i;
+>  
+> -	if (!qcom_domain->iommu)
+> +	if (WARN_ON(!qcom_domain->iommu))
+>  		return;
+>  
+>  	pm_runtime_get_sync(qcom_iommu->dev);
+> @@ -417,8 +415,6 @@ static void qcom_iommu_detach_dev(struct iommu_domain *domain, struct device *de
+>  		ctx->domain = NULL;
+>  	}
+>  	pm_runtime_put_sync(qcom_iommu->dev);
+> -
+> -	qcom_domain->iommu = NULL;
+>  }
+>  
+>  static int qcom_iommu_map(struct iommu_domain *domain, unsigned long iova,
+> -- 
+> 2.23.0.dirty
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
