@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C1D4163071
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:45:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BED82163078
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:45:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LFXxxhN77e8+vxAq/gCghXRccY1gZdjqnd7bbdrEEYI=; b=YF3NgT+z27CYf8
-	rMv1hziiwQxqJH3PwHRdnO2hMF6X9p4uJrcekozcwDTRkS+WCRORebyGpa4AbvsEKF1mqmRCd4iIH
-	2x3cIyslOH5NBLM4ffr9+aWxd6n8pgVA2/7g+TPiOK5j4+nYXKqL1UUffAPdh85eEZGC0gOgPhXtx
-	x+HWCRFYyEd44vRYwA9wxDDy3s/oDDVL4SpfzzJdWfEbh8PjFmESbPA3JmtofBBV7B1hL/H9FqWZh
-	3FRZ5ozoQ0kpEWB85puiUPlEEenxne+IkeHbRpLXYK90Ewrg6k+0JArCs2GNFWiAgGMnDnwqRsze4
-	5QctUI769X04VTum4zzw==;
+	List-Owner; bh=LFXxxhN77e8+vxAq/gCghXRccY1gZdjqnd7bbdrEEYI=; b=GjM0ecTbBKA9TK
+	0Qapr+5Apq8TxciE8Eyi/oNk0HgusqRsSISPNgL6EXgCfDeoj/3VprEHHvFUsr5QHVuLXSpIxhd16
+	awNsyGORDiGXq73X2sZTQu+vjLiX606dQu67SZvuwt0b1pkRSf2jQYBgKzwYYTnbMiP/BenltuCMu
+	qdfbtIX73oVLS9T03phcjb3S0444PaJlRns6dDMcdVMzkaAIe2VtDM12M0yKB3r7BTNKcZPb2iwHX
+	FymF8ZmLE/QqQfcxbEx7AhkZd3T+WJ8mmeuTaj795uGpKjbWMSyiNjdQu2yb5vTQ/R6DdKOeYaIrm
+	NlVmQBPS8s1KxuJ/IMcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j48oB-0000nH-GR; Tue, 18 Feb 2020 19:45:27 +0000
+	id 1j48oc-00014H-9r; Tue, 18 Feb 2020 19:45:54 +0000
 Received: from namei.org ([65.99.196.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j48o3-0000ms-Gd
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:45:20 +0000
+ id 1j48oT-00012Q-PU
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:45:46 +0000
 Received: from localhost (localhost [127.0.0.1])
- by namei.org (8.14.4/8.14.4) with ESMTP id 01IJhv9J016349;
- Tue, 18 Feb 2020 19:43:58 GMT
-Date: Wed, 19 Feb 2020 06:43:57 +1100 (AEDT)
+ by namei.org (8.14.4/8.14.4) with ESMTP id 01IJiQMI016417;
+ Tue, 18 Feb 2020 19:44:26 GMT
+Date: Wed, 19 Feb 2020 06:44:26 +1100 (AEDT)
 From: James Morris <jmorris@namei.org>
 To: Alexey Budankov <alexey.budankov@linux.intel.com>
-Subject: Re: [PATCH v7 09/12] drivers/perf: open access for CAP_PERFMON
+Subject: Re: [PATCH v7 10/12] drivers/oprofile: open access for CAP_PERFMON
  privileged process
-In-Reply-To: <48baecd5-a015-3dbf-f774-9f2caee13893@linux.intel.com>
-Message-ID: <alpine.LRH.2.21.2002190643390.10165@namei.org>
+In-Reply-To: <046beedf-e074-58e2-579d-df535799169c@linux.intel.com>
+Message-ID: <alpine.LRH.2.21.2002190644070.10165@namei.org>
 References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
- <48baecd5-a015-3dbf-f774-9f2caee13893@linux.intel.com>
+ <046beedf-e074-58e2-579d-df535799169c@linux.intel.com>
 User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_114519_632594_70961341 
+X-CRM114-CacheID: sfid-20200218_114545_913582_E3B4349E 
 X-CRM114-Status: UNSURE (   5.85  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
