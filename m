@@ -2,54 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34E47161EC1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 02:56:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F676161EC2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 02:56:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9PdB/hKVeqLfWo4OxRsVIBThzDoiaOEka9atujt1v2E=; b=JMeRSsILcZn/wC
-	OW7AMcB39MqBkfu947HIrkWlvHXCxofZn+rZc8PnIyfJxC4vFxBXU4sBGD23wsICVgTLEGXg3El+M
-	LzMhuZNwOw9xyjKAopL8lfAOSJatW2si1rbXLSku5XJ0lSICnis+AL9kSaQnyWYCiHif+Kc75h2LA
-	rGAzTZGtSjyHxmpVvkOTISAsD4UaL4m5i9yFCwVg3yhxydeoURkJVwSf0Gq/wla28ptUddd2Q0x/Z
-	2aV1v3VSyxChuyZluKlehSKPGKigsf6ly7t4PKZxSbLJlbrgrr1j15w8+5FjYaH2ofXuOufTvhXe1
-	XC+MMKssSDU9MmqncjxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gJ6uZUQ7aa3C3Nipa+/WYQP0bKYd6RRC8w0mA+rGSWI=; b=FiotbCqEgrLCt5
+	byYu+QbVrnPn6lrv1iqc496YuQd+VLt2/XgeNUfc/f7PqnYaF05/UIACxQd8Hut8IiGqR6NQVs7OT
+	17x9Dro+EY0GuquqETmXpwlPkYb+2zGfnv7FLUcFmkERXVO/DtKIBNOjKY2BhNjom/bTBPiVy81LE
+	ZR8whIPEwvriCwj9f3l6fHtG/n0dI1+CdG9wH4bE9NL7ZnIBOElfb6vrhojWqmIGDYB0+iKhgAEER
+	0D1mWHJFnCYx41xG6HcQjyL3kkpB//mIczgdPPHGL2mXM1aHaBY3G/taCy/nmfrytEMAVSDyY9cj6
+	+KAGqq6VV4g6InW3EB0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3s77-0004uB-TQ; Tue, 18 Feb 2020 01:55:53 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1j3s7L-0005Fn-2a; Tue, 18 Feb 2020 01:56:07 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3s6J-0002x1-K0; Tue, 18 Feb 2020 01:55:05 +0000
-Received: from droid10.amlogic.com (10.18.11.213) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Tue, 18 Feb 2020
- 09:55:09 +0800
-From: Hanjie Lin <hanjie.lin@amlogic.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Jerome Brunet
- <jbrunet@baylibre.com>, Neil Armstrong <narmstrong@baylibre.com>, Rob Herring
- <robh@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Kevin
- Hilman <khilman@baylibre.com>
-Subject: [PATCH v9 3/3] arm64: dts: meson: a1: Enable USB2 PHY and DWC3
- controller
-Date: Tue, 18 Feb 2020 09:54:19 +0800
-Message-ID: <1581990859-135234-4-git-send-email-hanjie.lin@amlogic.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1581990859-135234-1-git-send-email-hanjie.lin@amlogic.com>
-References: <1581990859-135234-1-git-send-email-hanjie.lin@amlogic.com>
+ id 1j3s6N-0003C5-JD
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 01:55:09 +0000
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+ by mailnew.nyi.internal (Postfix) with ESMTP id C6BE96244;
+ Mon, 17 Feb 2020 20:55:05 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute5.internal (MEProxy); Mon, 17 Feb 2020 20:55:05 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ subject:to:cc:references:from:message-id:date:mime-version
+ :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=e
+ YnIVvK0q9JrGCRBjZx29b4zt5fQgH9zuyMH2krGX/Q=; b=fey7V7774/zbe/0yv
+ b3XBejwmgGycVWMsDRgzIdvJyKIIot5v/YayVFxJYkAWynzfkZZi7c40XaSHH679
+ kEvUyvFr19eynPZ3uqtY/C5F9R1YLjOqSSuSKOuxLcqi3Tlf/ydffffSZPDDTOdJ
+ hbQDU+pkgxYGXNPb4M8PGqc13sEKgPyz6hdZfv49e7ZWbiNkDKDqQHd0vQ7F8JVJ
+ LLoP2AFIT8uE69d6ozHP7gFbENWz2QM6LVBfWhnlYwPI1boJCNIdz5/HoArm18E0
+ aWlAzmLQ/5zjeZMnLx5ly377rusi7rPSQET/6IDgclbcb5CIm1WuBBw29bVLarYr
+ 6uQIQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm2; bh=eYnIVvK0q9JrGCRBjZx29b4zt5fQgH9zuyMH2krGX
+ /Q=; b=2Z0CbNrXiu1UkDc7K9uMUkCp+5FJWshYrl+YnFiUKBX8LCjzt4JrlkqPV
+ U1itbYE8ERgzokozGP4ZXvoJX1QYKHlYLfQtYUMyBgb9Kw2doshmw5mPP9KECg7f
+ J9OctR7gPuxWGXEtHMEiE2MDtEaqx0a1h3roC/ZJnqqGMHJv+uZXv3RWBU6XkC0Q
+ sA/29i59E0IopUJvuXr/l7nGL4JSn5XxOeN1+9G+deKW+hKcg5RCBecaO/vmMTEB
+ 2deM4Dh3BN7uUW/yccDWq9wxSGwJSlrSbLPrvwtKUtXiH3JujWd2BEiHXWSRKNM1
+ +rBq+KlB1mgHQccXLH8/s+V19aHEw==
+X-ME-Sender: <xms:-ENLXp_TURkjTpR1RT4Js6KNp2HxmdctwrZOvbRh59H5JkMNlTgarw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjeejgdeflecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefuvfhfhffkffgfgggjtgfgsehtjeertddtfeejnecuhfhrohhmpefurghmuhgv
+ lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucfkph
+ epjedtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuihiivgeptdenucfrrghr
+ rghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghnugdrohhrgh
+X-ME-Proxy: <xmx:-ENLXh_qsOVkH-W6KKjsXtdJDWnLWtdjRV58uk-Od9QiX8xVGA4WLg>
+ <xmx:-ENLXiB26jZx2AygWC6W1A_zibyhp3hQLRerTwEkV7Uicc3MmsDqTA>
+ <xmx:-ENLXhwVdLwMfn9aPDPiaGXaT7cdsrumBN7K00Ou3C36KXtZg8Qkcw>
+ <xmx:-UNLXl4A6RAavdbkjdnZFSp2Jwo4x64JEHr3dc0qO6XsEBP8mGyEzw>
+Received: from [192.168.50.169]
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id EBF8B3060C28;
+ Mon, 17 Feb 2020 20:55:03 -0500 (EST)
+Subject: Re: [RFC PATCH 10/34] ASoC: sun8i-codec: Advertise only
+ hardware-supported rates
+To: Mark Brown <broonie@kernel.org>
+References: <20200217064250.15516-1-samuel@sholland.org>
+ <20200217064250.15516-11-samuel@sholland.org>
+ <20200217153023.GL9304@sirena.org.uk>
+From: Samuel Holland <samuel@sholland.org>
+Message-ID: <810f4889-d3ad-3b26-201c-0a237222c06c@sholland.org>
+Date: Mon, 17 Feb 2020 19:55:03 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.2
 MIME-Version: 1.0
-X-Originating-IP: [10.18.11.213]
+In-Reply-To: <20200217153023.GL9304@sirena.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200217_175503_697304_A9E8C5DD 
-X-CRM114-Status: UNSURE (   8.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200217_175507_947001_E9D49886 
+X-CRM114-Status: GOOD (  12.26  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,99 +112,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-usb@vger.kernel.org, Yue Wang <yue.wang@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Liang Yang <liang.yang@amlogic.com>, Qiufang Dai <qiufang.dai@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jian Hu <jian.hu@amlogic.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Maxime Ripard <mripard@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable USB2 PHY and DWC3 controller for Meson A1 SoC.
+On 2/17/20 9:30 AM, Mark Brown wrote:
+> On Mon, Feb 17, 2020 at 12:42:26AM -0600, Samuel Holland wrote:
+>> The hardware does not support 64kHz, 88.2kHz, or 176.4kHz sample rates,
+>> so the driver should not advertise them. The hardware can handle two
+>> additional non-standard sample rates: 12kHz and 24kHz, so declare
+>> support for them via SNDRV_PCM_RATE_KNOT.
+>>
+>> Cc: stable@kernel.org
+>> Fixes: 36c684936fae ("ASoC: Add sun8i digital audio codec")
+>> Fixes: eda85d1fee05 ("ASoC: sun8i-codec: Add ADC support for a33")
+>> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> 
+> The new sample rates are new functionality, they are definitely not
+> stable material.   For the sample rates you are removing do we
+> understand why they were added - do they work for people, are they
+> perhaps supported for some users and not others for example?
 
-Signed-off-by: Yue Wang <yue.wang@amlogic.com>
-Signed-off-by: Hanjie Lin <hanjie.lin@amlogic.com>
----
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi | 43 +++++++++++++++++++++++++++++++
- 1 file changed, 43 insertions(+)
+I do not know why they were added, but the sample rates I removed do not work
+today, for anyone.
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-index 6fdc0dd..3b7ca50 100644
---- a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -6,6 +6,9 @@
- #include <dt-bindings/interrupt-controller/irq.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/power/meson-a1-power.h>
-+#include <dt-bindings/reset/amlogic,meson-a1-reset.h>
-+#include <dt-bindings/clock/a1-pll-clkc.h>
-+#include <dt-bindings/clock/a1-clkc.h>
- 
- / {
- 	compatible = "amlogic,a1";
-@@ -100,6 +103,17 @@
- 				#power-domain-cells = <1>;
- 				status = "okay";
- 			};
-+
-+			usb2_phy1: phy@40000 {
-+				compatible = "amlogic,a1-usb2-phy";
-+				clocks = <&clkc_periphs CLKID_XTAL_USB_PHY>;
-+				clock-names = "xtal";
-+				reg = <0x0 0x40000 0x0 0x2000>;
-+				resets = <&reset RESET_USBPHY>;
-+				reset-names = "phy";
-+				#phy-cells = <0>;
-+				power-domains = <&pwrc PWRC_USB_ID>;
-+			};
- 		};
- 
- 		gic: interrupt-controller@ff901000 {
-@@ -114,6 +128,35 @@
- 			#interrupt-cells = <3>;
- 			#address-cells = <0>;
- 		};
-+
-+		usb: usb@ffe09000 {
-+			status = "disabled";
-+			compatible = "amlogic,meson-a1-usb-ctrl";
-+			reg = <0x0 0xffe09000 0x0 0xa0>;
-+			#address-cells = <2>;
-+			#size-cells = <2>;
-+			ranges;
-+
-+			clocks = <&clkc_periphs CLKID_USB_CTRL>,
-+				 <&clkc_periphs CLKID_USB_BUS>,
-+				 <&clkc_periphs CLKID_XTAL_USB_CTRL>;
-+			clock-names = "usb_ctrl", "usb_bus", "xtal_usb_ctrl";
-+			resets = <&reset RESET_USBCTRL>;
-+
-+			dr_mode = "host";
-+
-+			phys = <&usb2_phy1>;
-+			phy-names = "usb2-phy1";
-+
-+			dwc3: usb@ff400000 {
-+				compatible = "snps,dwc3";
-+				reg = <0x0 0xff400000 0x0 0x100000>;
-+				interrupts = <GIC_SPI 90 IRQ_TYPE_LEVEL_HIGH>;
-+				dr_mode = "host";
-+				snps,dis_u2_susphy_quirk;
-+				snps,quirk-frame-length-adjustment = <0x20>;
-+			};
-+		};
- 	};
- 
- 	timer {
--- 
-2.7.4
-
+The sample rate must be programmed into the hardware, and the removed sample
+rates do not map to one of the possible register values, so
+sun8i_codec_get_hw_rate(), and thus hw_params, will return -EINVAL if one of
+them is used.
 
 _______________________________________________
 linux-arm-kernel mailing list
