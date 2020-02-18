@@ -2,53 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EA9E163516
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 22:33:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EEB0163531
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 22:37:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=195B41wxrporB9vaa29iJ/7rc8gXZAXuqdZlmjiKF7k=; b=Hkbybr+EAdEf/MXuyihTJAMpTa
-	1RCr3Pw/5agjDN7VQiqH4uLUD4ASwub4Mihp8pWe4mFDFXNpyKKY1mYJgOBwmIw6I386nzH0UnvCB
-	mZHVdRCB93vVGSppFCxfJ340qZvoVTbBMJmgZko0wqjHnYBE+GQW2bmgQn7iJlPQjIXY2y5F6qbIW
-	97xhdZvEVzmiaD64ebGupp8BXqyyYtLyk3/L0iuiuMAUqTXYp/A6PpqPjGCUkqzTAyq/8UIXVhyUL
-	uJkWiBt8753zx1phYSLQFPTsO7deM5MgjApbKEDI0ExZjOaMoeYMlwjjL8p2+oSaVagd7mLVAwUMV
-	0HvTt0Fg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kB1IzNSKvGCIdjoHF7x0kdcLFb1EUhDn9LKeuAu1trI=; b=q5SaBTsUsi87/K
+	cqQiRR15n2cDng33WcTiFd89B4U2m7DVceBayUHgbnCZ5naH8gVGwx2Rg19h0od8xD3ITrr/OOjFF
+	J0AKl8GcSc7nP0cznh8uylrXo7fCzOsBPXE7S5l3ik+a9a70n++RYHaOOQwFtPjXf7tRPtHYjyyqC
+	TwwQudQ1YwyXu7RuWOf++iBadohmQJw7vTUTq3QXP2Yg6Jiu3LuTldQ7J3M6toinmWqXEjK3Ha8c1
+	+Bgrd/XqexfWetE50ctkJi4T9vwekqmyNZs+ImJFiZNnGBTr4qAMRqvxEafT7R6XGwoJ3QsZSIVoC
+	xiAhih0Fe35JEwAvquGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4AUV-0001Ih-4y; Tue, 18 Feb 2020 21:33:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ATd-0000a2-8E; Tue, 18 Feb 2020 21:32:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5DC6B1FB;
- Tue, 18 Feb 2020 13:32:20 -0800 (PST)
-Received: from DESKTOP-VLO843J.lan (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EA1A63F68F;
- Tue, 18 Feb 2020 13:32:18 -0800 (PST)
-From: Robin Murphy <robin.murphy@arm.com>
-To: lgirdwood@gmail.com,
-	broonie@kernel.org,
-	heiko@sntech.de
-Subject: [PATCH v2 3/3] arm64: dts: rockchip: Describe RK3328 GPIO_MUTE users
-Date: Tue, 18 Feb 2020 21:32:00 +0000
-Message-Id: <53637c0359ad9473dc1391a8428ba21017ec467e.1581376744.git.robin.murphy@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1581376744.git.robin.murphy@arm.com>
-References: <cover.1581376744.git.robin.murphy@arm.com>
+	id 1j4AYw-0003ET-3R; Tue, 18 Feb 2020 21:37:50 +0000
+Received: from fudo.makrotopia.org ([2a07:2ec0:3002::71])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4AYf-00032n-A5
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 21:37:35 +0000
+Received: from local
+ by fudo.makrotopia.org with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92.2) (envelope-from <daniel@makrotopia.org>)
+ id 1j4AYQ-0004QN-Fo
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 22:37:19 +0100
+Date: Tue, 18 Feb 2020 22:37:12 +0100
+From: Daniel Golle <daniel@makrotopia.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: Re: [RFC PATCH 0/5] Removing support for 32bit KVM/arm host
+Message-ID: <20200218213712.GD1382@makrotopia.org>
+References: <mailman.29637.1581344013.2486.linux-arm-kernel@lists.infradead.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <mailman.29637.1581344013.2486.linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_133221_379030_8B45577F 
-X-CRM114-Status: GOOD (  12.59  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200218_133733_347024_EBA31AA4 
+X-CRM114-Status: GOOD (  11.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,54 +58,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- pgwipeout@gmail.com, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add explicit properties to describe existing boards' GPIO_MUTE usage
-for the analog codec.
+> Message-ID: <20200210141324.21090-1-maz@kernel.org>
+> 
+> KVM/arm was merged just over 7 years ago, and has lived a very quiet
+> life so far. It mostly works if you're prepared to deal with its
+> limitations, it has been a good prototype for the arm64 version,
+> but it suffers a few problems:
+> 
+> - It is incomplete (no debug support, no PMU)
+> - It hasn't followed any of the architectural evolutions
+> - It has zero users (I don't count myself here)
 
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
----
+Not true. At least I'm using KVM on CortexA7 (sun7i aka. Allwinner A20)
+and it has been quite useful until now (running low memory footprint
+OpenWrt-based guests on yocto/OpenEmbedded host)
 
-v2: no change
+> - It is more and more getting in the way of new arm64 developments
 
- arch/arm64/boot/dts/rockchip/rk3328-a1.dts     | 1 +
- arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 1 +
- 2 files changed, 2 insertions(+)
+Can you elaborate more on how it is getting in the way? Just in terms
+of effort to maintain the necessary abstractions or does something
+really block ARM64 KVM support?
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-index 16f1656d5203..797e90a3ac92 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-a1.dts
-@@ -60,6 +60,7 @@
- };
- 
- &codec {
-+	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
- 	status = "okay";
- };
- 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-index 62936b432f9a..bf3e546f5266 100644
---- a/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-+++ b/arch/arm64/boot/dts/rockchip/rk3328-rock64.dts
-@@ -104,6 +104,7 @@
- };
- 
- &codec {
-+	mute-gpios = <&grf_gpio 0 GPIO_ACTIVE_LOW>;
- 	status = "okay";
- 
- 	port@0 {
--- 
-2.17.1
+> 
+> So here it is: unless someone screams and shows that they rely on
+> KVM/arm to be maintained upsteam, I'll remove 32bit host support
+> form the tree. One of the reasons that makes me confident nobody is
+> using it is that I never receive *any* bug report. Yes, it is perfect.
+> But if you depend on KVM/arm being available in mainline, please shout.
 
+I cetainly don't depend on it, meaning I'd have to replace hardware
+worth less than $100 in the near future, that's not too bad.
+And yes, it has just been working perfectly ;)
+
+
+Cheers
+
+
+Daniel
 
 _______________________________________________
 linux-arm-kernel mailing list
