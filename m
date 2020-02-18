@@ -2,62 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22896162299
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 09:47:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7B621622C2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 09:52:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QlExuJuoXN19kKxV8TU1adfgN+ApOdZGsJF/55qaFRQ=; b=U+8+jpqr+PvsfM7nHGrORHMYV
-	xnIAV65SrOXYE5gPMP99M2WLGsPijNBrGpNrwEDqEiYoAno3hVB028rJhuG2T5T+XJmFPxzPLvsaP
-	0NILMefCJLpJBgU6YDVQFSsuabUGb83YbJcbqexu2V0U5gDetyJY1A5NAxAXnR1oOXNaGzy0fu2Kq
-	xkOnxbUGfEoy6k7SixCMBMMUz7uuBXz4id49U8FIvHcB6jGaFnjsT+D/i0AbHXQsK2LNbucp1KaRk
-	tFhJ6NTctw3Sq/pe7nqa2MdVkDWO5wzwGlbe736ZHhC+JmhHne/N241G02M7WX+5fhdQye6yNlYIm
-	iAqUZSn1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=PY8AzddR4vcLy+Hrt3PYmubgtDYNXvKIDFG18Si9C2Q=; b=G63
+	OpbeXwUmPkUqWOL3UdHFtUm/RXDAsSDKI86VDt3QIQGk6iQnwRIwgLHFlXcels7H490JsBCBUhf97
+	ZUnhrDI9RLwizkfpfhbeoTjqXOulJsjNkdIGqz5QIPQ0eZ/FuQ1X68EBC5sXHtgKOWjC6hYYiZD0E
+	39NFi82D2k9SZk9psG5oXceFP+51q0ozKhfioYRngUeCW4FG8uY7AdxPi1rwbl6zrkSVklPcetMHu
+	I35OJeh5F1REom4EIDksTtXQWxBa55SnIvWxuY/4OTTy6zR8BgjpBzdNn7I8t1pSM0Q+0nlgH+A/v
+	cYGTGHTPvx9Jejlh64t9q92ADGjXhPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j3yXF-0000Lc-6s; Tue, 18 Feb 2020 08:47:17 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1j3ycQ-0003la-Ng; Tue, 18 Feb 2020 08:52:38 +0000
+Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j3yX4-0000K3-QB
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 08:47:08 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 91E34EA84E46E844F2CB;
- Tue, 18 Feb 2020 16:46:58 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS413-HUB.china.huawei.com
- (10.3.19.213) with Microsoft SMTP Server id 14.3.439.0; Tue, 18 Feb 2020
- 16:46:51 +0800
-Subject: Re: [PATCH v4 15/20] KVM: arm64: GICv4.1: Add direct injection
- capability to SGI registers
-To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-References: <20200214145736.18550-1-maz@kernel.org>
- <20200214145736.18550-16-maz@kernel.org>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <5e744173-5d7a-98b7-e44d-d1f8c47b3e3c@huawei.com>
-Date: Tue, 18 Feb 2020 16:46:50 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
-MIME-Version: 1.0
-In-Reply-To: <20200214145736.18550-16-maz@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
+ id 1j3ybA-0002fZ-8o
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 08:51:21 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by comms.puri.sm (Postfix) with ESMTP id 93F0EE1131;
+ Tue, 18 Feb 2020 00:50:37 -0800 (PST)
+Received: from comms.puri.sm ([127.0.0.1])
+ by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id TOJcBN2WAsxs; Tue, 18 Feb 2020 00:50:36 -0800 (PST)
+From: Martin Kepplinger <martin.kepplinger@puri.sm>
+To: robh@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de
+Subject: [PATCH v2 0/9] arm64: dts: librem5-devkit: description updates
+Date: Tue, 18 Feb 2020 09:49:33 +0100
+Message-Id: <20200218084942.4884-1-martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_004707_191994_414DB3DC 
-X-CRM114-Status: GOOD (  22.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200218_005120_352617_245F92AE 
+X-CRM114-Status: UNSURE (   6.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [159.203.221.185 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,249 +59,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jason Cooper <jason@lakedaemon.net>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Eric Auger <eric.auger@redhat.com>, Robert Richter <rrichter@marvell.com>,
- James Morse <james.morse@arm.com>, Thomas
- Gleixner <tglx@linutronix.de>, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: devicetree@vger.kernel.org, kernel@puri.sm, Anson.Huang@nxp.com,
+ Martin Kepplinger <martin.kepplinger@puri.sm>, linux-kernel@vger.kernel.org,
+ linux-imx@nxp.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+These are additions to the imx8mq-librem5-devkit devicetree description
+we are running for quite some time. All users should have them:
 
-On 2020/2/14 22:57, Marc Zyngier wrote:
-> Most of the GICv3 emulation code that deals with SGIs now has to be
-> aware of the v4.1 capabilities in order to benefit from it.
-> 
-> Add such support, keyed on the interrupt having the hw flag set and
-> being a SGI.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->   virt/kvm/arm/vgic/vgic-mmio-v3.c | 15 +++++-
->   virt/kvm/arm/vgic/vgic-mmio.c    | 88 ++++++++++++++++++++++++++++++--
->   2 files changed, 96 insertions(+), 7 deletions(-)
-> 
-> diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> index ebc218840fc2..de89da76a379 100644
-> --- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> +++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
-> @@ -6,6 +6,7 @@
->   #include <linux/irqchip/arm-gic-v3.h>
->   #include <linux/kvm.h>
->   #include <linux/kvm_host.h>
-> +#include <linux/interrupt.h>
->   #include <kvm/iodev.h>
->   #include <kvm/arm_vgic.h>
->   
-> @@ -942,8 +943,18 @@ void vgic_v3_dispatch_sgi(struct kvm_vcpu *vcpu, u64 reg, bool allow_group1)
->   		 * generate interrupts of either group.
->   		 */
->   		if (!irq->group || allow_group1) {
-> -			irq->pending_latch = true;
-> -			vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
-> +			if (!irq->hw) {
-> +				irq->pending_latch = true;
-> +				vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
-> +			} else {
-> +				/* HW SGI? Ask the GIC to inject it */
-> +				int err;
-> +				err = irq_set_irqchip_state(irq->host_irq,
-> +							    IRQCHIP_STATE_PENDING,
-> +							    true);
-> +				WARN_RATELIMIT(err, "IRQ %d", irq->host_irq);
-> +				raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
-> +			}
->   		} else {
->   			raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
->   		}
-> diff --git a/virt/kvm/arm/vgic/vgic-mmio.c b/virt/kvm/arm/vgic/vgic-mmio.c
-> index d656ebd5f9d4..0a1fb61e5b89 100644
-> --- a/virt/kvm/arm/vgic/vgic-mmio.c
-> +++ b/virt/kvm/arm/vgic/vgic-mmio.c
-> @@ -5,6 +5,8 @@
->   
->   #include <linux/bitops.h>
->   #include <linux/bsearch.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/irq.h>
->   #include <linux/kvm.h>
->   #include <linux/kvm_host.h>
->   #include <kvm/iodev.h>
-> @@ -59,6 +61,11 @@ unsigned long vgic_mmio_read_group(struct kvm_vcpu *vcpu,
->   	return value;
->   }
->   
-> +static void vgic_update_vsgi(struct vgic_irq *irq)
-> +{
-> +	WARN_ON(its_prop_update_vsgi(irq->host_irq, irq->priority, irq->group));
-> +}
-> +
->   void vgic_mmio_write_group(struct kvm_vcpu *vcpu, gpa_t addr,
->   			   unsigned int len, unsigned long val)
->   {
-> @@ -71,7 +78,12 @@ void vgic_mmio_write_group(struct kvm_vcpu *vcpu, gpa_t addr,
->   
->   		raw_spin_lock_irqsave(&irq->irq_lock, flags);
->   		irq->group = !!(val & BIT(i));
-> -		vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
-> +		if (irq->hw && vgic_irq_is_sgi(irq->intid)) {
-> +			vgic_update_vsgi(irq);
-> +			raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
-> +		} else {
-> +			vgic_queue_irq_unlock(vcpu->kvm, irq, flags);
-> +		}
->   
->   		vgic_put_irq(vcpu->kvm, irq);
->   	}
-> @@ -113,7 +125,21 @@ void vgic_mmio_write_senable(struct kvm_vcpu *vcpu,
->   		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
->   
->   		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-> -		if (vgic_irq_is_mapped_level(irq)) {
-> +		if (irq->hw && vgic_irq_is_sgi(irq->intid)) {
-> +			if (!irq->enabled) {
-> +				struct irq_data *data;
-> +
-> +				irq->enabled = true;
-> +				data = &irq_to_desc(irq->host_irq)->irq_data;
-> +				while (irqd_irq_disabled(data))
-> +					enable_irq(irq->host_irq);
-> +			}
-> +
-> +			raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
-> +			vgic_put_irq(vcpu->kvm, irq);
-> +
-> +			continue;
-> +		} else if (vgic_irq_is_mapped_level(irq)) {
->   			bool was_high = irq->line_level;
->   
->   			/*
-> @@ -148,6 +174,8 @@ void vgic_mmio_write_cenable(struct kvm_vcpu *vcpu,
->   		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
->   
->   		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-> +		if (irq->hw && vgic_irq_is_sgi(irq->intid) && irq->enabled)
-> +			disable_irq_nosync(irq->host_irq);
->   
->   		irq->enabled = false;
->   
-> @@ -167,10 +195,22 @@ unsigned long vgic_mmio_read_pending(struct kvm_vcpu *vcpu,
->   	for (i = 0; i < len * 8; i++) {
->   		struct vgic_irq *irq = vgic_get_irq(vcpu->kvm, vcpu, intid + i);
->   		unsigned long flags;
-> +		bool val;
->   
->   		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-> -		if (irq_is_pending(irq))
-> -			value |= (1U << i);
-> +		if (irq->hw && vgic_irq_is_sgi(irq->intid)) {
-> +			int err;
-> +
-> +			val = false;
-> +			err = irq_get_irqchip_state(irq->host_irq,
-> +						    IRQCHIP_STATE_PENDING,
-> +						    &val);
-> +			WARN_RATELIMIT(err, "IRQ %d", irq->host_irq);
-> +		} else {
-> +			val = irq_is_pending(irq);
-> +		}
-> +
-> +		value |= ((u32)val << i);
->   		raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
->   
->   		vgic_put_irq(vcpu->kvm, irq);
-> @@ -227,6 +267,21 @@ void vgic_mmio_write_spending(struct kvm_vcpu *vcpu,
->   		}
->   
->   		raw_spin_lock_irqsave(&irq->irq_lock, flags);
-> +
-> +		if (irq->hw && vgic_irq_is_sgi(irq->intid)) {
-> +			/* HW SGI? Ask the GIC to inject it */
-> +			int err;
-> +			err = irq_set_irqchip_state(irq->host_irq,
-> +						    IRQCHIP_STATE_PENDING,
-> +						    true);
-> +			WARN_RATELIMIT(err, "IRQ %d", irq->host_irq);
-> +
-> +			raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
-> +			vgic_put_irq(vcpu->kvm, irq);
-> +
-> +			continue;
-> +		}
-> +
->   		if (irq->hw)
->   			vgic_hw_irq_spending(vcpu, irq, is_uaccess);
->   		else
+revision history
+----------------
+v2: review by Shawn and Guido: remove a battery description
+    add SoB tags, coding style fixes, squash and reorder audio
+    descritions, remove redundant and unneeded changes.
+v1: https://lore.kernel.org/linux-arm-kernel/20200205143003.28408-1-martin.kepplinger@puri.sm/
 
-Should we consider taking the GICv4.1 support into uaccess_{read/write}
-callbacks for GICR_ISPENDR0 so that userspace can properly save/restore
-the pending state of GICv4.1 vSGIs?
+Angus Ainslie (Purism) (8):
+  arm64: dts: librem5-devkit: add sai2 and sai6 pinctrl definitions
+  arm64: dts: librem5-devkit: enable sai2 and sai6 audio interface
+  arm64: dts: librem5-devkit: add the simcom 7100 modem and sgtl5000
+    audio codec
+  arm64: dts: librem5-devkit: allow modem to wake the system from
+    suspend
+  arm64: dts: librem5-devkit: add a vbus supply to usb0
+  arm64: dts: librem5-devkit: add the regulators for DVFS
+  arm64: dts: librem5-devkit: allow the redpine card to be removed
+  arm64: dts: librem5-devkit: increase the VBUS current in the kernel
 
-I *think* we can do it because on restoration, GICD_CTLR(.nASSGIreq) is
-restored before GICR_ISPENDR0.  So we know whether we're restoring
-pending for vSGIs, and we can restore it to the HW level if v4.1 is
-supported by GIC. Otherwise restore it by the normal way.
+Martin Kepplinger (1):
+  arm64: dts: librem5-devkit: add lsm9ds1 mount matrix
 
-And saving is easy with the get_irqchip_state callback, right?
+ .../dts/freescale/imx8mq-librem5-devkit.dts   | 134 +++++++++++++++++-
+ 1 file changed, 131 insertions(+), 3 deletions(-)
 
-> @@ -281,6 +336,20 @@ void vgic_mmio_write_cpending(struct kvm_vcpu *vcpu,
->   
->   		raw_spin_lock_irqsave(&irq->irq_lock, flags);
->   
-> +		if (irq->hw && vgic_irq_is_sgi(irq->intid)) {
-> +			/* HW SGI? Ask the GIC to inject it */
-
-"Ask the GIC to clear its pending state" :-)
-
-
-Thanks,
-Zenghui
-
-> +			int err;
-> +			err = irq_set_irqchip_state(irq->host_irq,
-> +						    IRQCHIP_STATE_PENDING,
-> +						    false);
-> +			WARN_RATELIMIT(err, "IRQ %d", irq->host_irq);
-> +
-> +			raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
-> +			vgic_put_irq(vcpu->kvm, irq);
-> +
-> +			continue;
-> +		}
-> +
->   		if (irq->hw)
->   			vgic_hw_irq_cpending(vcpu, irq, is_uaccess);
->   		else
-> @@ -330,8 +399,15 @@ static void vgic_mmio_change_active(struct kvm_vcpu *vcpu, struct vgic_irq *irq,
->   
->   	raw_spin_lock_irqsave(&irq->irq_lock, flags);
->   
-> -	if (irq->hw) {
-> +	if (irq->hw && !vgic_irq_is_sgi(irq->intid)) {
->   		vgic_hw_irq_change_active(vcpu, irq, active, !requester_vcpu);
-> +	} else if (irq->hw && vgic_irq_is_sgi(irq->intid)) {
-> +		/*
-> +		 * GICv4.1 VSGI feature doesn't track an active state,
-> +		 * so let's not kid ourselves, there is nothing we can
-> +		 * do here.
-> +		 */
-> +		irq->active = false;
->   	} else {
->   		u32 model = vcpu->kvm->arch.vgic.vgic_model;
->   		u8 active_source;
-> @@ -505,6 +581,8 @@ void vgic_mmio_write_priority(struct kvm_vcpu *vcpu,
->   		raw_spin_lock_irqsave(&irq->irq_lock, flags);
->   		/* Narrow the priority range to what we actually support */
->   		irq->priority = (val >> (i * 8)) & GENMASK(7, 8 - VGIC_PRI_BITS);
-> +		if (irq->hw && vgic_irq_is_sgi(irq->intid))
-> +			vgic_update_vsgi(irq);
->   		raw_spin_unlock_irqrestore(&irq->irq_lock, flags);
->   
->   		vgic_put_irq(vcpu->kvm, irq);
-> 
+-- 
+2.20.1
 
 
 _______________________________________________
