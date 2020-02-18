@@ -2,52 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E437162FFE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:30:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92D19163002
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 20:30:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hcDS8c5ZfmW5TpvVgUv8He8L2sIRHRMBXpjYJng4y+E=; b=g1nqIAuEnrW5zo
-	BShSTepNH9DpG7M5eShWtZz+ApcCxtEuSePpcstWKu9clCjqUBWSRQggVa22xLYP4OCmiZClcjaLJ
-	Y33xn74x21jQ1SE0NeFnsRrToqL+ICiLY+hgW5rrfXRf8ELa55N9mufrCnUsT0mHrqy/6vgdBuFnw
-	k2YMH1rcAHWJr/euOVgpQTQwWmPUoi2t2aMNnEtYmOV24P96Hlsp8fdlcohjQjqb2tGohMFWPGbQe
-	o4fp4TbdrFuMheGl7NuuS5l+CQCAsXlw4pIeRARkSwyOg4BwRrIcFVSxxtb2jcqJY3pwprIYXmN4k
-	frOvn3KU0AYW8nF5qmiQ==;
+	List-Owner; bh=wFmENELgTXIW3Rq4yWS+2lj7ohdFEla3NaSI0713CKg=; b=FY6iJi5RW5YR4w
+	4iqSNelIDtkFj2DVLJTgnNW4aKT8kcvqSbyrCj9uK9ihLf/R6lH0Y2lWgCVxgG83cx7D/LnK7Vx0+
+	e7LJ80kpuOQ2HJx9M1i2QeH4QrhIMna0i8tlrmtdAoz2eS2Wh02s7Kk5C/5gD+GB9wgY8Ilmp6mLE
+	zlKT45x913W0LchfT0AOY/apt2Kv9j0c1wQD5SR6pCaw7z613H0q0iNyEkwa9XWPbuIwij9eoMyXR
+	QwAf2/9Gvl3x6gMqwmw4cCpB79VsBbZXHSSseY/PpGCToom7fxmN6HIJSwEn9KEz1RWfOcUKglX5Q
+	ajjykRUMCRHoABS6FVyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j48Zo-00073H-NC; Tue, 18 Feb 2020 19:30:36 +0000
-Received: from namei.org ([65.99.196.166])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j48ZY-00071w-Q4
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 19:30:22 +0000
-Received: from localhost (localhost [127.0.0.1])
- by namei.org (8.14.4/8.14.4) with ESMTP id 01IJT09I014208;
- Tue, 18 Feb 2020 19:29:00 GMT
-Date: Wed, 19 Feb 2020 06:29:00 +1100 (AEDT)
-From: James Morris <jmorris@namei.org>
-To: Alexey Budankov <alexey.budankov@linux.intel.com>
-Subject: Re: [PATCH v7 08/12] parisc/perf: open access for CAP_PERFMON
- privileged process
-In-Reply-To: <29e45605-7a3c-944b-7bea-5959f8ff0793@linux.intel.com>
-Message-ID: <alpine.LRH.2.21.2002190628460.10165@namei.org>
-References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
- <29e45605-7a3c-944b-7bea-5959f8ff0793@linux.intel.com>
-User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
+	id 1j48a1-0007Gc-QC; Tue, 18 Feb 2020 19:30:49 +0000
+Received: from [177.195.210.189] (helo=quaco.ghostprotocols.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j48Zc-0006yV-Gv; Tue, 18 Feb 2020 19:30:25 +0000
+Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
+ id B2047403AD; Tue, 18 Feb 2020 16:30:11 -0300 (-03)
+Date: Tue, 18 Feb 2020 16:30:11 -0300
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH v4 0/5] perf cs-etm: Fix synthesizing instruction samples
+Message-ID: <20200218193011.GB5365@kernel.org>
+References: <20200213094204.2568-1-leo.yan@linaro.org>
+ <20200218184934.GA11448@xps15>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_113020_921025_A6284598 
-X-CRM114-Status: UNSURE (   5.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+Content-Disposition: inline
+In-Reply-To: <20200218184934.GA11448@xps15>
+X-Url: http://acmel.wordpress.com
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,47 +46,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-man@vger.kernel.org,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
  Peter Zijlstra <peterz@infradead.org>,
- "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
- Alexei Starovoitov <ast@kernel.org>, Stephane Eranian <eranian@google.com>,
- Paul Mackerras <paulus@samba.org>, Jiri Olsa <jolsa@redhat.com>,
- Ingo Molnar <mingo@kernel.org>, Andi Kleen <ak@linux.intel.com>,
- Will Deacon <will@kernel.org>, Helge Deller <deller@gmx.de>,
- Igor Lubashev <ilubashe@akamai.com>, oprofile-list@lists.sf.net,
- Stephen Smalley <sds@tycho.nsa.gov>, Serge Hallyn <serge@hallyn.com>,
- "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
- "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "linux-security-module@vger.kernel.org"
- <linux-security-module@vger.kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
+ Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Leo Yan <leo.yan@linaro.org>,
+ Namhyung Kim <namhyung@kernel.org>, Robert Walker <robert.walker@arm.com>,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 17 Feb 2020, Alexey Budankov wrote:
-
-> For backward compatibility reasons access to the monitoring remains
-> open for CAP_SYS_ADMIN privileged processes but CAP_SYS_ADMIN usage
-> for secure monitoring is discouraged with respect to CAP_PERFMON
-> capability.
+Em Tue, Feb 18, 2020 at 11:49:34AM -0700, Mathieu Poirier escreveu:
+> On Thu, Feb 13, 2020 at 05:41:59PM +0800, Leo Yan wrote:
+> > This patch series is to address issues for synthesizing instruction
+> > samples, especially when the instruction sample period is small enough,
+> > the current logic cannot synthesize multiple instruction samples within
+> > one instruction range packet.
+> > 
+> > Patch 0001 is to swap packets for instruction samples, so this allow
+> > option '--itrace=iNNN' can work well.
+> > 
+> > Patch 0002 avoids to reset the last branches for every instruction
+> > sample; if reset the last branches for every time generating sample, the
+> > later samples in the same range packet cannot use the last branches
+> > anymore.
+> > 
+> > Patch 0003 is the fixing for handling different instruction periods,
+> > especially for small sample period.
+> > 
+> > Patch 0004 is an optimization for copying last branches; it only copies
+> > last branches once if the instruction samples share the same last
+> > branches.
+> > 
+> > Patch 0005 is a minor fix for unsigned variable comparison to zero.
+> > 
+> > This patch set has been rebased on the latest perf/core branch; and
+> > verified on Juno board with below commands:
+> > 
+> >   # perf script --itrace=i2
+> >   # perf script --itrace=i2il16
+> >   # perf inject --itrace=i2il16 -i perf.data -o perf.data.new
+> >   # perf inject --itrace=i100il16 -i perf.data -o perf.data.new
+> > 
+> > Changes from v3:
+> > * Refactored patch 0001 with new function cs_etm__packet_swap() (Mike);
+> > * Refined instruction sample generation flow with single while loop,
+> >   which completely uses Mike's suggestions (Mike);
+> > * Added Mike's review tags for patch 01/02/04/05.
+> > 
+> > Changes from v2:
+> > * Added patch 0001 which is to fix swapping packets for instruction
+> >   samples;
+> > * Refined minor commit logs and comments;
+> > * Rebased on the latest perf/core branch.
+> > 
+> > Changes from v1:
+> > * Rebased patch set on perf/core branch with latest commit 9fec3cd5fa4a
+> >   ("perf map: Check if the map still has some refcounts on exit").
+> > 
+> > 
+> > 
+> > Leo Yan (5):
+> >   perf cs-etm: Swap packets for instruction samples
+> >   perf cs-etm: Continuously record last branch
+> >   perf cs-etm: Correct synthesizing instruction samples
+> >   perf cs-etm: Optimize copying last branches
+> >   perf cs-etm: Fix unsigned variable comparison to zero
 > 
-> Signed-off-by: Alexey Budankov <alexey.budankov@linux.intel.com>
+> For all the patches in this set:
+> 
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> 
+> Unless Arnaldo says otherwise, I suggest you send a new V5 with Mike's RB for
+> patch 3/5 and mine for all of them.  That way he doesn't have to edit the
+> patches when applying them.
 
+Yeah, that would make things easier for me, always appreciated.
 
-Reviewed-by: James Morris <jamorris@linux.microsoft.com>
+- Arnaldo
+ 
+> Thanks,
+> Mathieu
+> 
+> > 
+> >  tools/perf/util/cs-etm.c | 157 +++++++++++++++++++++++++++------------
+> >  1 file changed, 111 insertions(+), 46 deletions(-)
+> > 
+> > -- 
+> > 2.17.1
+> > 
 
 -- 
-James Morris
-<jmorris@namei.org>
 
+- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
