@@ -2,66 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EAA3162717
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 14:25:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83E2A16271C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 14:30:13 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=T4LcZVw0nw5l/mvbDBZSWXgF4GZ3wkFJz/JX9sbuSIQ=; b=hcAYbOD66hoJEIMNjcdcBfJBK
-	gD+tKwLpu5fnvglnrbQNloanj7uG0jdXmWOszr1QUDBfEGDHzcfU/C8CoYqIsSIEoTsuPBBSsMBaO
-	NfCQZDVErXRCMtCFCxGMe1o1pFXcaNvGtwHBuHziU4uN89TCLlk7l81VgsxpQ5tKYpBd9ATPZkCKq
-	jIwGXJIeH7A/Oe+E1TVPC4IEM79KmZUFlp+dAcngknGVEAkZBkTcwG3D92MLthqBBSxlzeA+YVJdM
-	9/EfvVPqEdYI3wscjkh5pDd8/vTGA1PCGdf99XeD5r3HBVOL+advPhIT9A7fwl/cUjk+XjD6OEtSd
-	k1LoU9RlQ==;
+	 bh=47fsEuI2u4gl9Kmg5JS2/Gtc6StV2Y+ffeNLq1qtJ7s=; b=VX5kE7HmyqHNWEHhjHrJ6Y6ny
+	9VyTjeoTD32PlJxEbERu8o6Ecv+NW+wYgIclUyzIxj9VKqMyRVTHMdp2wymXhSB7gGi3Ba8JbtSJV
+	eFbfAPWaZixa6PdN9BeG90wE7h/191fjgqM+K6BxpZPvsUdODRDJxhaZX7OvHUb8ZNMd1aZTyLBNf
+	U7HI4aXP9BYIEpV1nAWeydEKXlC4hferW/FpkSTFzFKDdrK0WF1X00gRY8IxwWRL7uCilhnH5/yBr
+	Q7PuK4IJoocw9AtmB0Fpvsdj9Tzz1ny52Q9SFQL+Nlz7fgQ1nn99BQdB/D1h+ogTZHMh/4DZT9oT1
+	RiGn64KGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j42sF-0001VE-1c; Tue, 18 Feb 2020 13:25:15 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j42rv-0001UA-Gw
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 13:24:57 +0000
-Received: from lhreml701-cah.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id 7A16C82D34BC3905797B;
- Tue, 18 Feb 2020 13:24:40 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml701-cah.china.huawei.com (10.201.108.42) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Tue, 18 Feb 2020 13:24:40 +0000
-Received: from [127.0.0.1] (10.202.226.45) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5; Tue, 18 Feb
- 2020 13:24:39 +0000
-Subject: Re: [PATCH RFC 0/7] perf pmu-events: Support event aliasing for
- system PMUs
+	id 1j42wp-0003BJ-Dm; Tue, 18 Feb 2020 13:29:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j42wf-0003Ao-IK
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 13:29:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5E6EE1FB;
+ Tue, 18 Feb 2020 05:29:48 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D6A4D3F703;
+ Tue, 18 Feb 2020 05:29:47 -0800 (PST)
+Date: Tue, 18 Feb 2020 13:29:46 +0000
+From: Mark Brown <broonie@kernel.org>
 To: Will Deacon <will@kernel.org>
-References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <20200218125707.GB20212@willie-the-truck>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <a40903fe-d52f-96c6-a06a-fe834d71d625@huawei.com>
-Date: Tue, 18 Feb 2020 13:24:38 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+Subject: Re: [PATCH] arm64: kvm: Modernize annotation for __bp_harden_hyp_vecs
+Message-ID: <20200218132946.GF4232@sirena.org.uk>
+References: <20200218124456.10615-1-broonie@kernel.org>
+ <49f7de5f1d86e7edcc34edb55d5011be@kernel.org>
+ <20200218130953.GD20212@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200218125707.GB20212@willie-the-truck>
-Content-Language: en-US
-X-Originating-IP: [10.202.226.45]
-X-ClientProxiedBy: lhreml703-chm.china.huawei.com (10.201.108.52) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+In-Reply-To: <20200218130953.GD20212@willie-the-truck>
+X-Cookie: No alcohol, dogs or horses.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_052455_711317_244214C3 
-X-CRM114-Status: GOOD (  19.63  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200218_052949_649897_C065EDB1 
+X-CRM114-Status: GOOD (  12.42  )
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,77 +66,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, ak@linux.intel.com, suzuki.poulose@arm.com,
- peterz@infradead.org, robin.murphy@arm.com, linuxarm@huawei.com,
- acme@kernel.org, linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
- alexander.shishkin@linux.intel.com, mingo@redhat.com, james.clark@arm.com,
- namhyung@kernel.org, jolsa@redhat.com, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1471479411102707959=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18/02/2020 12:57, Will Deacon wrote:
-> On Fri, Jan 24, 2020 at 10:34:58PM +0800, John Garry wrote:
->> Currently event aliasing for only CPU and uncore PMUs is supported. In
->> fact, only uncore PMUs aliasing for when the uncore PMUs are fixed for a
->> CPU is supported, which may not always be the case for certain
->> architectures.
->>
->> This series adds support for PMU event aliasing for system and other
->> uncore PMUs which are not fixed to a specific CPU.
->>
->> For this, we introduce support for another per-arch mapfile, which maps a
->> particular system identifier to a set of system PMU events for that
->> system. This is much the same as what we do for CPU event aliasing.
->>
->> To support this, we need to change how we match a PMU to a mapfile,
->> whether it should use a CPU or system mapfile. For this we do the
->> following:
->>
->> - For CPU PMU, we always match for the event mapfile based on the CPUID.
->>    This has not changed.
->>
->> - For an uncore or system PMU, we match first based on the SYSID (if set).
->>    If this fails, then we match on the CPUID.
->>
->>    This works for x86, as x86 would not have any system mapfiles for uncore
->>    PMUs (and match on the CPUID).
->>
->> Initial reference support is also added for ARM SMMUv3 PMCG (Performance
->> Monitor Event Group) PMU for HiSilicon hip08 platform with only a single
->> event so far - see driver in drivers/perf/arm_smmuv3_pmu.c for that driver.
-> 
-> Why don't we just expose SMMU_IIDR in the SMMUv3 PMU directory, so that
-> you can key off that? 
 
-That does not sound like a standard sysfs interface.
+--===============1471479411102707959==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="xaMk4Io5JJdpkLEb"
+Content-Disposition: inline
 
-Anyway, I don't think that works for every case, quoting from 
-https://lkml.org/lkml/2019/10/16/465:
 
-"> Note: I do acknowledge that an overall issue is that we assume all 
-PMCG IMP DEF events are same for a given SMMU model.
+--xaMk4Io5JJdpkLEb
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-That assumption does technically fail already - I know MMU-600 has
-different IMP-DEF events for its TCU and TBUs, however as long as we can
-get as far as "this is some part of an MMU-600" the driver should be
-able to figure out the rest ..."
+On Tue, Feb 18, 2020 at 01:09:53PM +0000, Will Deacon wrote:
+> On Tue, Feb 18, 2020 at 12:56:52PM +0000, Marc Zyngier wrote:
+> > I'd really appreciate it if you could send these as a series, instead of
+> > an isolated patch every other day.
 
-So even if it is solvable here, the kernel driver(s) will need to be 
-reworked. And that is just solving one case in many.
+> Same for the non-KVM parts, please :)
 
-I'm nervous about coming up with a global "SYSID"
-> when we don't have the ability to standardise anything in that space.
+Ugh, right.  As one series or as different serieses for the different
+trees that apply things (eg, KVM and crypto)?  The multi tree stuff
+worries me.
 
-I understand totally, especially if any sysid is based on DT bindings.
+> I *think* the current ones to track are:
 
-But this is some sort of standardization:
-https://developer.arm.com/docs/den0028/c, see SMCCC_ARCH_SOC_ID
+Yes, apart from:
 
-John
+> [PATCH v6 00/11] arm64: Branch Target Identification support
+
+The BTI stuff is unrelated at this point, the annotations are only
+needed for in kernel BTI which I've not posted yet, it also depends on
+the in kernel pointer authentication stuff so I was waiting for that to
+settle down before I finish off the in kernel bits and post them.
+Pulling it into the series with the asm stuff would result in a very big
+series with an absurdly large CC list which doesn't seem helpful.
+
+--xaMk4Io5JJdpkLEb
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5L5skACgkQJNaLcl1U
+h9A0+wf9FFahSW1aXRWX6QOqWWehnMMCBtHBkDLgY+JP3PYifs+16nrVLf7SgS1k
+vRtZX3P9E1utLkdlT+Cm7OLrZ1lOaFzRO/GZRbmrAkjU9u/77UGrWjJtuD/hGT1B
+K2pozKaQvNN3qyWfGxZeASiPWCeWF0LDKkG9i4xHUlKNpkvfmrJGGXFqUiZ/cr/X
+ePL2BDA1ZUtTOoK7z/eE3e7ffessqk71dTYIczOWRDPVDSWQEG/7y+dD0aze+SA5
+Uwpni4LzpnTM1JuTSo6cKzZ5AUqmXGofsGtd1W8kT5nVjoWhx1iYcchTtv63kYF8
+o5yBVA/vK66i7TIOtqP2AnZHvI735Q==
+=1hZh
+-----END PGP SIGNATURE-----
+
+--xaMk4Io5JJdpkLEb--
+
+
+--===============1471479411102707959==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1471479411102707959==--
+
