@@ -2,76 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97561162BDD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:14:31 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A4C2162C20
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 18:15:10 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oN0g+6PPG4e8Zh1wFEDMp8VX98XuKrutJXjZGv4VFww=; b=QtcwK4AgK56ckP
-	GOkQNLiY3XkwOM+AeOChzGVWO4anUhsgyXf4ZsFRNAHOS80V2MMRRsnT4ddQAovtesBI+tM0G6sQh
-	9YySlLwucqIhnNu1/xJRB94kJt6xVkYE49Tp6TG8MJrj7Nm91NCdzok0Bp4cKtr+o58jn7S8uKaiD
-	I8JLvLSRx8ykrGgW7N4ppsCTBoLtMIqWRGxx440Mbq1JDprvuu6F3Z5Qz+9sboOvteL8wTM3bI3qr
-	Mlb1uQbPBgml8dGczymU0pJGk8LVgzooXSJWmiNrUSOdQqQYDqiTI+6QXsH4eD2Ydlo1rJR3qsPWd
-	EAf/3Q7o0IubHFJ6ztWg==;
+	List-Owner; bh=Qub9q7Kpqjr5qravpFqxBvu/Y00rJs68SRmtPq2ohtA=; b=VdTKFDY8BxYdw4
+	ubeDJravnw95kWy4ZexFRXkeiczN/PneJnec88jkKX9JSS3CROfeqI3EIfedmBoqOOKEyaFtI0gjs
+	PrTH1DhQhV9wmwBhdVf2NJI23rWYLbkRy4FHdyd9ePbeC696rr/4SJqU7F3MWluc8kSM8o9iRn8IF
+	TZAFdgRDaV2sNz/h1A8lPwJCoav+FpEZUhMPAihMrcimsCnvINbr+gGMY/wigm0PL442dwxSP+nVF
+	e+t5MPgwzxt88tFivh3r+9PX4o5j99eFcU8qWfIsUyx7YbnpIASsnFAnOGuuj2wyD3cZGZXCoUuuA
+	dhRiWvfazYQoqa+5r28g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j46S0-0002Ut-Fh; Tue, 18 Feb 2020 17:14:24 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1j46Sc-00031h-30; Tue, 18 Feb 2020 17:15:02 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j46R8-0001sr-DP
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:13:32 +0000
-Received: by mail-ot1-f65.google.com with SMTP id j20so20267959otq.3
+ id 1j46R9-0001ua-Fx
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 17:13:33 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 77so20231267oty.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 09:13:29 -0800 (PST)
+ Tue, 18 Feb 2020 09:13:31 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=W1u4wUo3NLYAMgXHhQ1JWTN6DImeyb7sdgcLty9LTVA=;
- b=qn71eB9gWE/BkXT5bQcdV2rUrdCMx+PFLCZOpzCPwHrX2c3YS7YNXLywbuHvACfqjv
- YzAgVcH+FkvwYGme/0z6RyYcgPRjFPm0tB29pvgsXnMLZkDzcvOEM2EMFcLJD72iMrRd
- Jj8JQAkq9uhFTN6hi5Wp4G3F49NL/3lbfmJllUdpB85tzc9y0Gw3JzHBmzCaubcEofEV
- liOvISPHIiNDWEfa4Ca5RgIICjf5rTl6e0UsoWA0POlKaW1Vse1zC0E8tEXZ4x1Wr3nY
- 1vM13oGN/ATpzG1ZiVjCA7nJsJKF3hjgW5h2oBOokFPqiDngg5wqlQxBCoOHk54Tqeiz
- 5/+g==
-X-Gm-Message-State: APjAAAXKrmTIQAyD0DUGPlI0PttKtnujGrUyk7MGB8/LHdSlrr8Gig7s
- pYVQD8+optsY0XOS1k951kzZbD4=
-X-Google-Smtp-Source: APXvYqz9vN5O196Hv3RX5j5QhodRWeWR1h2DBkM3xAqkcK92U7nZEFBLzVra3Zyy0nvATVFM6CGklA==
-X-Received: by 2002:a9d:7a89:: with SMTP id l9mr15588431otn.228.1582046008709; 
- Tue, 18 Feb 2020 09:13:28 -0800 (PST)
+ bh=JusgAl5N6MihYqm5uluXtGjWepTJgZcRc57DbXhWS1c=;
+ b=dI/c0l8ApOjfO4PpOJWFm4PYhR/B4/VOt/JKYnod7i3LJCZRJgRrmV6BoVu8zWlgB2
+ A+7gs+mHWXs0HF+Im0gTgdch4hm3JOdWH7VOMMuCDmaLLMtG8LJ6notT0v5KSM1LFkZl
+ L9gZnuu0y0iwzBYUv9wt2/4jWHOF7/sKUS//9Pw380bofYB2TJqmNc+kCFTwZmeVC0L2
+ ihDL2oVJp0uy99qkH2iQsz3wYTNVpYl2yAvg99U7Obv5YrM1pZuL2fzVDREd42GALSsI
+ 9cPF8ymu3JO6YYpzaptR9I3DzCSQi7uix3US5i5umS+KuDxF/d4sFAPicKZ0rr0sDMeY
+ Nq0Q==
+X-Gm-Message-State: APjAAAUg7CUps/Q05sy4LWgJMCmWZsrJpUytmj0TpaQpmf5Bf9fpnP97
+ +x13x3puSLj4gQLik9XtbVV0zVU=
+X-Google-Smtp-Source: APXvYqxtfwdO5ZrwB57qMGPOEsnz4rhk/PhIK9UqQ1I24Sd3few+yqThLV3He9kZDSP4GnJqg66xxQ==
+X-Received: by 2002:a05:6830:1042:: with SMTP id
+ b2mr16287928otp.306.1582046010353; 
+ Tue, 18 Feb 2020 09:13:30 -0800 (PST)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id y25sm1545755oto.27.2020.02.18.09.13.27
+ by smtp.googlemail.com with ESMTPSA id y25sm1545755oto.27.2020.02.18.09.13.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 09:13:28 -0800 (PST)
+ Tue, 18 Feb 2020 09:13:29 -0800 (PST)
 From: Rob Herring <robh@kernel.org>
 To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  soc@kernel.org, Andre Przywara <andre.przywara@arm.com>,
  Robert Richter <rrichter@marvell.com>, Jon Loeliger <jdl@jdl.com>,
  Alexander Graf <graf@amazon.com>, Matthias Brugger <mbrugger@suse.com>,
  Mark Langsdorf <mlangsdo@redhat.com>
-Subject: [RFC PATCH 03/11] cpuidle: Remove Calxeda driver
-Date: Tue, 18 Feb 2020 11:13:13 -0600
-Message-Id: <20200218171321.30990-4-robh@kernel.org>
+Subject: [RFC PATCH 04/11] cpufreq: Remove Calxeda driver
+Date: Tue, 18 Feb 2020 11:13:14 -0600
+Message-Id: <20200218171321.30990-5-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200218171321.30990-1-robh@kernel.org>
 References: <20200218171321.30990-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_091330_489098_64FB27F0 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20200218_091331_580271_CF6B184E 
+X-CRM114-Status: GOOD (  18.27  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
+ [209.85.210.67 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -112,126 +113,187 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
+Cc: Viresh Kumar <viresh.kumar@linaro.org>
 Cc: linux-pm@vger.kernel.org
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
 Do not apply yet.
 
- drivers/cpuidle/Kconfig.arm       |  7 ---
- drivers/cpuidle/Makefile          |  1 -
- drivers/cpuidle/cpuidle-calxeda.c | 72 -------------------------------
- 3 files changed, 80 deletions(-)
- delete mode 100644 drivers/cpuidle/cpuidle-calxeda.c
+ drivers/cpufreq/Kconfig.arm          |  10 ---
+ drivers/cpufreq/Makefile             |   3 +-
+ drivers/cpufreq/cpufreq-dt-platdev.c |   3 -
+ drivers/cpufreq/highbank-cpufreq.c   | 106 ---------------------------
+ 4 files changed, 1 insertion(+), 121 deletions(-)
+ delete mode 100644 drivers/cpufreq/highbank-cpufreq.c
 
-diff --git a/drivers/cpuidle/Kconfig.arm b/drivers/cpuidle/Kconfig.arm
-index 62272ecfa771..c2830d2ed44a 100644
---- a/drivers/cpuidle/Kconfig.arm
-+++ b/drivers/cpuidle/Kconfig.arm
-@@ -42,13 +42,6 @@ config ARM_CLPS711X_CPUIDLE
- 	help
- 	  Select this to enable cpuidle on Cirrus Logic CLPS711X SOCs.
+diff --git a/drivers/cpufreq/Kconfig.arm b/drivers/cpufreq/Kconfig.arm
+index 3858d86cf409..27fdd5ac21da 100644
+--- a/drivers/cpufreq/Kconfig.arm
++++ b/drivers/cpufreq/Kconfig.arm
+@@ -79,16 +79,6 @@ config ARM_BRCMSTB_AVS_CPUFREQ
 
--config ARM_HIGHBANK_CPUIDLE
--	bool "CPU Idle Driver for Calxeda processors"
--	depends on ARM_PSCI && !ARM64
--	select ARM_CPU_SUSPEND
+ 	  Say Y, if you have a Broadcom SoC with AVS support for DFS or DVFS.
+
+-config ARM_HIGHBANK_CPUFREQ
+-	tristate "Calxeda Highbank-based"
+-	depends on ARCH_HIGHBANK && CPUFREQ_DT && REGULATOR
+-	default m
 -	help
--	  Select this to enable cpuidle on Calxeda processors.
+-	  This adds the CPUFreq driver for Calxeda Highbank SoC
+-	  based boards.
 -
- config ARM_KIRKWOOD_CPUIDLE
- 	bool "CPU Idle Driver for Marvell Kirkwood SoCs"
- 	depends on (MACH_KIRKWOOD || COMPILE_TEST) && !ARM64
-diff --git a/drivers/cpuidle/Makefile b/drivers/cpuidle/Makefile
-index cc8c769d7fa9..eee5f276edf7 100644
---- a/drivers/cpuidle/Makefile
-+++ b/drivers/cpuidle/Makefile
-@@ -14,7 +14,6 @@ obj-$(CONFIG_HALTPOLL_CPUIDLE)		  += cpuidle-haltpoll.o
- obj-$(CONFIG_ARM_MVEBU_V7_CPUIDLE) += cpuidle-mvebu-v7.o
- obj-$(CONFIG_ARM_BIG_LITTLE_CPUIDLE)	+= cpuidle-big_little.o
- obj-$(CONFIG_ARM_CLPS711X_CPUIDLE)	+= cpuidle-clps711x.o
--obj-$(CONFIG_ARM_HIGHBANK_CPUIDLE)	+= cpuidle-calxeda.o
- obj-$(CONFIG_ARM_KIRKWOOD_CPUIDLE)	+= cpuidle-kirkwood.o
- obj-$(CONFIG_ARM_ZYNQ_CPUIDLE)		+= cpuidle-zynq.o
- obj-$(CONFIG_ARM_U8500_CPUIDLE)         += cpuidle-ux500.o
-diff --git a/drivers/cpuidle/cpuidle-calxeda.c b/drivers/cpuidle/cpuidle-calxeda.c
+-	  If in doubt, say N.
+-
+ config ARM_IMX6Q_CPUFREQ
+ 	tristate "Freescale i.MX6 cpufreq support"
+ 	depends on ARCH_MXC
+diff --git a/drivers/cpufreq/Makefile b/drivers/cpufreq/Makefile
+index f6670c4abbb0..47d773b9312a 100644
+--- a/drivers/cpufreq/Makefile
++++ b/drivers/cpufreq/Makefile
+@@ -5,7 +5,7 @@ obj-$(CONFIG_CPU_FREQ)			+= cpufreq.o freq_table.o
+ # CPUfreq stats
+ obj-$(CONFIG_CPU_FREQ_STAT)             += cpufreq_stats.o
+
+-# CPUfreq governors
++# CPUfreq governors
+ obj-$(CONFIG_CPU_FREQ_GOV_PERFORMANCE)	+= cpufreq_performance.o
+ obj-$(CONFIG_CPU_FREQ_GOV_POWERSAVE)	+= cpufreq_powersave.o
+ obj-$(CONFIG_CPU_FREQ_GOV_USERSPACE)	+= cpufreq_userspace.o
+@@ -52,7 +52,6 @@ obj-$(CONFIG_ARM_ARMADA_8K_CPUFREQ)	+= armada-8k-cpufreq.o
+ obj-$(CONFIG_ARM_BRCMSTB_AVS_CPUFREQ)	+= brcmstb-avs-cpufreq.o
+ obj-$(CONFIG_ACPI_CPPC_CPUFREQ)		+= cppc_cpufreq.o
+ obj-$(CONFIG_ARCH_DAVINCI)		+= davinci-cpufreq.o
+-obj-$(CONFIG_ARM_HIGHBANK_CPUFREQ)	+= highbank-cpufreq.o
+ obj-$(CONFIG_ARM_IMX6Q_CPUFREQ)		+= imx6q-cpufreq.o
+ obj-$(CONFIG_ARM_IMX_CPUFREQ_DT)	+= imx-cpufreq-dt.o
+ obj-$(CONFIG_ARM_KIRKWOOD_CPUFREQ)	+= kirkwood-cpufreq.o
+diff --git a/drivers/cpufreq/cpufreq-dt-platdev.c b/drivers/cpufreq/cpufreq-dt-platdev.c
+index f2ae9cd455c1..274294f83e7c 100644
+--- a/drivers/cpufreq/cpufreq-dt-platdev.c
++++ b/drivers/cpufreq/cpufreq-dt-platdev.c
+@@ -102,9 +102,6 @@ static const struct of_device_id whitelist[] __initconst = {
+ static const struct of_device_id blacklist[] __initconst = {
+ 	{ .compatible = "allwinner,sun50i-h6", },
+
+-	{ .compatible = "calxeda,highbank", },
+-	{ .compatible = "calxeda,ecx-2000", },
+-
+ 	{ .compatible = "fsl,imx7d", },
+ 	{ .compatible = "fsl,imx8mq", },
+ 	{ .compatible = "fsl,imx8mm", },
+diff --git a/drivers/cpufreq/highbank-cpufreq.c b/drivers/cpufreq/highbank-cpufreq.c
 deleted file mode 100644
-index b17d9a8418b0..000000000000
---- a/drivers/cpuidle/cpuidle-calxeda.c
+index 5a7f6dafcddb..000000000000
+--- a/drivers/cpufreq/highbank-cpufreq.c
 +++ /dev/null
-@@ -1,72 +0,0 @@
+@@ -1,106 +0,0 @@
 -// SPDX-License-Identifier: GPL-2.0-only
 -/*
-- * Copyright 2012 Calxeda, Inc.
+- * Copyright (C) 2012 Calxeda, Inc.
 - *
-- * Based on arch/arm/plat-mxc/cpuidle.c: #v3.7
-- * Copyright 2012 Freescale Semiconductor, Inc.
-- * Copyright 2012 Linaro Ltd.
-- *
-- * Maintainer: Rob Herring <rob.herring@calxeda.com>
+- * This driver provides the clk notifier callbacks that are used when
+- * the cpufreq-dt driver changes to frequency to alert the highbank
+- * EnergyCore Management Engine (ECME) about the need to change
+- * voltage. The ECME interfaces with the actual voltage regulators.
 - */
 -
--#include <linux/cpuidle.h>
--#include <linux/cpu_pm.h>
--#include <linux/init.h>
--#include <linux/mm.h>
+-#define pr_fmt(fmt)	KBUILD_MODNAME ": " fmt
+-
+-#include <linux/kernel.h>
+-#include <linux/module.h>
+-#include <linux/clk.h>
+-#include <linux/cpu.h>
+-#include <linux/err.h>
+-#include <linux/of.h>
+-#include <linux/pl320-ipc.h>
 -#include <linux/platform_device.h>
--#include <linux/psci.h>
 -
--#include <asm/cpuidle.h>
--#include <asm/suspend.h>
+-#define HB_CPUFREQ_CHANGE_NOTE	0x80000001
+-#define HB_CPUFREQ_IPC_LEN	7
+-#define HB_CPUFREQ_VOLT_RETRIES	15
 -
--#include <uapi/linux/psci.h>
--
--#define CALXEDA_IDLE_PARAM \
--	((0 << PSCI_0_2_POWER_STATE_ID_SHIFT) | \
--	 (0 << PSCI_0_2_POWER_STATE_AFFL_SHIFT) | \
--	 (PSCI_POWER_STATE_TYPE_POWER_DOWN << PSCI_0_2_POWER_STATE_TYPE_SHIFT))
--
--static int calxeda_idle_finish(unsigned long val)
+-static int hb_voltage_change(unsigned int freq)
 -{
--	return psci_ops.cpu_suspend(CALXEDA_IDLE_PARAM, __pa(cpu_resume));
+-	u32 msg[HB_CPUFREQ_IPC_LEN] = {HB_CPUFREQ_CHANGE_NOTE, freq / 1000000};
+-
+-	return pl320_ipc_transmit(msg);
 -}
 -
--static int calxeda_pwrdown_idle(struct cpuidle_device *dev,
--				struct cpuidle_driver *drv,
--				int index)
+-static int hb_cpufreq_clk_notify(struct notifier_block *nb,
+-				unsigned long action, void *hclk)
 -{
--	cpu_pm_enter();
--	cpu_suspend(0, calxeda_idle_finish);
--	cpu_pm_exit();
+-	struct clk_notifier_data *clk_data = hclk;
+-	int i = 0;
 -
--	return index;
+-	if (action == PRE_RATE_CHANGE) {
+-		if (clk_data->new_rate > clk_data->old_rate)
+-			while (hb_voltage_change(clk_data->new_rate))
+-				if (i++ > HB_CPUFREQ_VOLT_RETRIES)
+-					return NOTIFY_BAD;
+-	} else if (action == POST_RATE_CHANGE) {
+-		if (clk_data->new_rate < clk_data->old_rate)
+-			while (hb_voltage_change(clk_data->new_rate))
+-				if (i++ > HB_CPUFREQ_VOLT_RETRIES)
+-					return NOTIFY_BAD;
+-	}
+-
+-	return NOTIFY_DONE;
 -}
 -
--static struct cpuidle_driver calxeda_idle_driver = {
--	.name = "calxeda_idle",
--	.states = {
--		ARM_CPUIDLE_WFI_STATE,
--		{
--			.name = "PG",
--			.desc = "Power Gate",
--			.exit_latency = 30,
--			.power_usage = 50,
--			.target_residency = 200,
--			.enter = calxeda_pwrdown_idle,
--		},
--	},
--	.state_count = 2,
+-static struct notifier_block hb_cpufreq_clk_nb = {
+-	.notifier_call = hb_cpufreq_clk_notify,
 -};
 -
--static int calxeda_cpuidle_probe(struct platform_device *pdev)
+-static int hb_cpufreq_driver_init(void)
 -{
--	return cpuidle_register(&calxeda_idle_driver, NULL);
--}
+-	struct platform_device_info devinfo = { .name = "cpufreq-dt", };
+-	struct device *cpu_dev;
+-	struct clk *cpu_clk;
+-	struct device_node *np;
+-	int ret;
 -
--static struct platform_driver calxeda_cpuidle_plat_driver = {
--        .driver = {
--                .name = "cpuidle-calxeda",
--        },
--        .probe = calxeda_cpuidle_probe,
--};
--builtin_platform_driver(calxeda_cpuidle_plat_driver);
+-	if ((!of_machine_is_compatible("calxeda,highbank")) &&
+-		(!of_machine_is_compatible("calxeda,ecx-2000")))
+-		return -ENODEV;
+-
+-	cpu_dev = get_cpu_device(0);
+-	if (!cpu_dev) {
+-		pr_err("failed to get highbank cpufreq device\n");
+-		return -ENODEV;
+-	}
+-
+-	np = of_node_get(cpu_dev->of_node);
+-	if (!np) {
+-		pr_err("failed to find highbank cpufreq node\n");
+-		return -ENOENT;
+-	}
+-
+-	cpu_clk = clk_get(cpu_dev, NULL);
+-	if (IS_ERR(cpu_clk)) {
+-		ret = PTR_ERR(cpu_clk);
+-		pr_err("failed to get cpu0 clock: %d\n", ret);
+-		goto out_put_node;
+-	}
+-
+-	ret = clk_notifier_register(cpu_clk, &hb_cpufreq_clk_nb);
+-	if (ret) {
+-		pr_err("failed to register clk notifier: %d\n", ret);
+-		goto out_put_node;
+-	}
+-
+-	/* Instantiate cpufreq-dt */
+-	platform_device_register_full(&devinfo);
+-
+-out_put_node:
+-	of_node_put(np);
+-	return ret;
+-}
+-module_init(hb_cpufreq_driver_init);
+-
+-MODULE_AUTHOR("Mark Langsdorf <mark.langsdorf@calxeda.com>");
+-MODULE_DESCRIPTION("Calxeda Highbank cpufreq driver");
+-MODULE_LICENSE("GPL");
 --
 2.20.1
 
