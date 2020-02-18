@@ -2,93 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1672B16258B
+	by mail.lfdr.de (Postfix) with ESMTPS id 4371616258C
 	for <lists+linux-arm-kernel@lfdr.de>; Tue, 18 Feb 2020 12:31:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1wQLAEkmiBqW/2yIvoUYcSCBCUH4xP6uqZiyVpJewoo=; b=osBRfve3JfOvB+
-	+O9h0KWYDeNmGPbl5keg2J1Kys7Mo0qkJp9KHaXrDnhiMVydDFc++msycOF7FagueeYYtfu36zQB5
-	XPjPfAsowPxX/c520914grykddyFFS4YjRwPwCxb34fu+vRxY+9JsUXHR1Zh99/r26cjZqL95KQkl
-	2fmSdojWD3RZe1hheseoKRoNxj/ALefJbYAvcsyaJKe4R/T+GVIa0dHCWzA1u2liyoGJ/UYHgbfmg
-	7bDaRec2jVWTEZmNAvGOb6hsR3DGPCv3vhx5m+SXE/F7HCWR/X9N1qEWevBlN5isyAAaxH6MyuXY8
-	bOEq9malLmdy5JyQGO0g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lVd8yFn7AEcoohYV8gWUHJbEqluhdpHZDVC/Ahoa70c=; b=tJo7/LCk6AFY5F
+	hiQ2362k+OX9+WD/RBUnLjjQGovZSe9ikFiq6xYSBmvOlBknEu9D5aT6LAmHUFDocKfIFSfSCedCD
+	sGCOl5ymmtu7E9EueNbuK3TzscV8ydpHkm2wnzzteY7U7o3CuGI6x3I5aJxM6Es+rMmStF2LWwVE6
+	13RKL+6hXcqn5ATsmN1OaaFUn/2tWks8cNSfNSPq24RNNPq6m8kI2xvfiIAxVx/DXY9+7DGPycoEb
+	zHK50KHfUmRMYFQPukxl7RntzJhjDP57IHLzonB9iA5ARf2CRpSV/8EMPm6tBZvXDUvlV/uuvrOBH
+	ekNXo2WN6VzO1ieL/LLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j415u-0005ft-0q; Tue, 18 Feb 2020 11:31:14 +0000
-Received: from wout5-smtp.messagingengine.com ([64.147.123.21])
+	id 1j4169-0005o8-QG; Tue, 18 Feb 2020 11:31:29 +0000
+Received: from mail-wr1-f66.google.com ([209.85.221.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j415m-0005fF-1u
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 11:31:07 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id D8610727;
- Tue, 18 Feb 2020 06:30:53 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Tue, 18 Feb 2020 06:30:54 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding; s=fm2; bh=Dg2Cd9EZBtYB1HWPx6/lUlj2Ii
- YhZqrvqg7YHhAG3aY=; b=bZ3GcoAkurSfDs9AeIRql7IS0oB+3lENUOtz9+/KcK
- l1/3CbkoWiTCkhI+MIn+0JtunJZQ1p9GEhaYHbbyLMPhRX0XCRvmJQYSfnAD6YcH
- hyu0INbXLMgfFI/9C0lxGtPjG46KByzpVo+GAd0AgDrk5s8imUfai/budHWiObuZ
- osKy6PDf0n9O8VzhbyOzIMlXwe+ktPEUe5zUvhPE/Qy7SKNNKBGLeNi6HMg6lmMW
- qYMRqjtI//ThZ8symHWY533BddicjuT5ql51x9NJYwBtmGLg+1+dGY5F/6XPbf8P
- S9KjH25e1NFWLWJHLHvEz4cvIHN3Hc+Q+jqUX26rJBQQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
- :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=Dg2Cd9EZBtYB1HWPx
- 6/lUlj2IiYhZqrvqg7YHhAG3aY=; b=cx/Wg/eA1Hy4SSleVZwqCF1wCWeF+MjBm
- KXFjRAvqdclkdQetYFGD6/8Qw5WOQNf4MijYhp57D6m5Yd0G5GrBjOzTDEhtUGuy
- NPaqe1cSYuILqjj2I5FVhMq80OpWAsBMobFzpOEuWXEmFNLZZZbql7IxBKp5Y7Ha
- +6sHerWIEL79SauZEbLMTjfW+RSERhEZIP7Bql2qth6nJfa5PIvB5Fu2A9xGZQsI
- paufJOxO7HtUP6942t0A+wKR1n+Edi+AVzDtOmYJIyvpkudYA+Z1ZbahQLT+8KoT
- Etatf4jpNDHfRcUbNmXm6ywZ+Xt72fRHh5hS+ra6/g0y+0ocCYbZA==
-X-ME-Sender: <xms:7MpLXj4xtwTuHmXD0o08Rt_dl9BRvnCrImoQz2_NbCJnLB8lI_w43A>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrjeekgdeftdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffoggfgsedtkeertdertd
- dtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfiesrghjrdhi
- ugdrrghuqeenucfkphepudegrddvrdekvddrgeeknecuvehluhhsthgvrhfuihiivgeptd
- enucfrrghrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruh
-X-ME-Proxy: <xmx:7MpLXm9hrLLQwU1VaPo0_5zqzlUp8TC6nuFjJrrN02dMPnd8rYTx6g>
- <xmx:7MpLXqcxpakDEBW4zo3RC8U8yd1Y7cFzZWmU2ViUl5S3u64U6z5kYw>
- <xmx:7MpLXrLMfo3Q3tjOB3D5WUmQWACf-kQqsVWbJBcu7Vj6CtMmbkuACg>
- <xmx:7cpLXlcbukHKbtcHOrt7XghT_mq7DKpX-0Qla09Jb4e0SS0xBiKXfg>
-Received: from localhost.localdomain
- (ppp14-2-82-48.adl-apt-pir-bras31.tpg.internode.on.net [14.2.82.48])
- by mail.messagingengine.com (Postfix) with ESMTPA id 937DD3060C21;
- Tue, 18 Feb 2020 06:30:50 -0500 (EST)
-From: Andrew Jeffery <andrew@aj.id.au>
-To: linux-aspeed@lists.ozlabs.org
-Subject: [PATCH] ARM: dts: rainier: Enable VUART2
-Date: Tue, 18 Feb 2020 22:00:52 +1030
-Message-Id: <20200218113052.28392-1-andrew@aj.id.au>
-X-Mailer: git-send-email 2.20.1
+ id 1j415n-0005fN-9f
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 11:31:08 +0000
+Received: by mail-wr1-f66.google.com with SMTP id c9so23501727wrw.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Feb 2020 03:31:05 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=ZnoR/TIx7fKj96R5zmBvT3nyCVKnUxPHKYaYVRB0FaU=;
+ b=gyBTO3stKNV1Z7A8j/ME+Pp1LQFVCuoeU38CJMH1esnUDUUtuyHLQWsheSvNp+yNgs
+ LwrfPxcbB7T20I45uL1PeWQGgP9tkU+fxWbnUDgXSL1bPIVqx0DVLYOxhA4jdqN8Redx
+ gk7QCKX5snt1Pasn4Xmppu8h7ifjfTpp/Z8faNyE75Zstx23F1HdEXt8dTx2rVJuipne
+ 9B5ONtRuc/hIyRJq7Twslm3IMzVrGc4HlGi9YXJ+fkC6MH84u/2mYpncrqGzKr4C7IdR
+ cEtai3VxvwCbCGQAmjHYVXglM/S/AWjEqyTE3vidoHOIQ4gVNImt1ba3yFU5yrhKOGI2
+ fQrg==
+X-Gm-Message-State: APjAAAVvimYAPH625IjMqW+EiRw/iO/1t9otWf6n5LVSbKxd4FI3aBFd
+ CANNfRpg3mH7mFnhBB8IJrs=
+X-Google-Smtp-Source: APXvYqx87NFgrpW3Y1vBrUUCZftoRQVXXG7WEdLVovV2FtSe62x/EMmLQIe+n9wpkKP19tQQdaXYkA==
+X-Received: by 2002:adf:f401:: with SMTP id g1mr27996186wro.129.1582025464604; 
+ Tue, 18 Feb 2020 03:31:04 -0800 (PST)
+Received: from localhost (prg-ext-pat.suse.com. [213.151.95.130])
+ by smtp.gmail.com with ESMTPSA id b18sm5697555wru.50.2020.02.18.03.31.03
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 18 Feb 2020 03:31:03 -0800 (PST)
+Date: Tue, 18 Feb 2020 12:31:03 +0100
+From: Michal Hocko <mhocko@kernel.org>
+To: Andrea Arcangeli <aarcange@redhat.com>
+Subject: Re: [PATCH 1/2] mm: use_mm: fix for arches checking mm_users to
+ optimize TLB flushes
+Message-ID: <20200218113103.GB4151@dhcp22.suse.cz>
+References: <20200203201745.29986-1-aarcange@redhat.com>
+ <20200203201745.29986-2-aarcange@redhat.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200203201745.29986-2-aarcange@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_033106_119173_3F3CE298 
-X-CRM114-Status: UNSURE (   7.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200218_033107_331316_44654E70 
+X-CRM114-Status: GOOD (  17.93  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.221.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mstsxfx[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.221.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,38 +88,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, joel@jms.id.au,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Rafael Aquini <aquini@redhat.com>, Jon Masters <jcm@jonmasters.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Mark Salter <msalter@redhat.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The second VUART is used to expose multiplexed, non-hypervisor consoles.
+On Mon 03-02-20 15:17:44, Andrea Arcangeli wrote:
+> alpha, ia64, mips, powerpc, sh, sparc are relying on a check on
+> mm->mm_users to know if they can skip some remote TLB flushes for
+> single threaded processes.
+> 
+> Most callers of use_mm() tend to invoke mmget_not_zero() or
+> get_task_mm() before use_mm() to ensure the mm will remain alive in
+> between use_mm() and unuse_mm().
+> 
+> Some callers however don't increase mm_users and they instead rely on
+> serialization in __mmput() to ensure the mm will remain alive in
+> between use_mm() and unuse_mm(). Not increasing mm_users during
+> use_mm() is however unsafe for aforementioned arch TLB flushes
+> optimizations. So either mmget()/mmput() should be added to the
+> problematic callers of use_mm()/unuse_mm() or we can embed them in
+> use_mm()/unuse_mm() which is more robust.
 
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
----
- arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts | 4 ++++
- 1 file changed, 4 insertions(+)
+I would prefer we do not do that because then the real owner of the mm
+cannot really tear down the address space and the life time of it is
+bound to a kernel thread doing the use_mm. This is undesirable I would
+really prefer if the existing few users would use mmget only when they
+really need to access mm.
 
-diff --git a/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts b/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
-index 6232cd726a7f..61d4140a2601 100644
---- a/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-ibm-rainier.dts
-@@ -540,6 +540,10 @@
- 	status = "okay";
- };
- 
-+&vuart2 {
-+	status = "okay";
-+};
-+
- &lpc_ctrl {
- 	status = "okay";
- 	memory-region = <&flash_memory>;
+> Signed-off-by: Andrea Arcangeli <aarcange@redhat.com>
+> ---
+>  mm/mmu_context.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/mm/mmu_context.c b/mm/mmu_context.c
+> index 3e612ae748e9..ced0e1218c0f 100644
+> --- a/mm/mmu_context.c
+> +++ b/mm/mmu_context.c
+> @@ -30,6 +30,7 @@ void use_mm(struct mm_struct *mm)
+>  		mmgrab(mm);
+>  		tsk->active_mm = mm;
+>  	}
+> +	mmget(mm);
+>  	tsk->mm = mm;
+>  	switch_mm(active_mm, mm, tsk);
+>  	task_unlock(tsk);
+> @@ -57,6 +58,7 @@ void unuse_mm(struct mm_struct *mm)
+>  	task_lock(tsk);
+>  	sync_mm_rss(mm);
+>  	tsk->mm = NULL;
+> +	mmput(mm);
+>  	/* active_mm is still 'mm' */
+>  	enter_lazy_tlb(mm, tsk);
+>  	task_unlock(tsk);
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
 -- 
-2.20.1
-
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
