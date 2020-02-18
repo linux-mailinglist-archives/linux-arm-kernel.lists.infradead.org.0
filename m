@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4DE31637D6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 00:58:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3E9A1637DD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 00:58:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3RsVNCTqbMBEml7a0G8s4guKYrf+phALf1X16shEy5M=; b=rCZSDyV/8rStovY9GEBuTjxep+
-	WJ0gqoCXmWF3nxDRRDMEYQ4YrQCkr02FzRn9WMeiftfBP7WPVEJTngAX63ArS7fOVxL1Okxx3vM6e
-	W6Bm+u8cfdsKIlf8Aj2sm1GSZtYGkCI+RVc0+vGULcFFdPG9Kz/toF6IbgUNOXt0QFpF7kpjE1pze
-	1LiGPdRKMjIsER3EZeuGeQSFTNi5m4O+t1cH1zur93sJ9ZcbyaUoTVFfTwMu4uotfVi1g0Emp5Tyr
-	BTld8INbYUMptrKQwrM/gjhike2DeudA01FAywWv8yDbhPAXIXyF+WjBUXRIuuHXKqjQVgwq51GrD
-	gLHQyq/w==;
+	bh=yXNZwL3SW83fVyt5eNuQ0IySYTXIA0D8sZXl6nCT1v8=; b=Jqx2p0UUswROYfX8poDZylWO9g
+	lQlrGMz5VWxB3lFGRDtw02x/fXFQtt/s1Dvn0QRckRhrHTAvFZNN14HWXr067p3Ocylp0zuxb/zKc
+	7Fg+VUAngpDtPmM2s0+DhHJyRED9vIrcdXi93GGXiWYjbSKCOij2AQnv2gsOsA49gV32Qlkc1PCrx
+	XAZJ/BVrS2zPI25z2P4Y1gJWVTn4LXdgio4HSIKq7/DrwjTd83gT1MnFQTKlB8JHxx3GOtZzF7St+
+	ghLf8CisRB4mwkkUx419KPCSLmYuZZbi/JTG2etHIOjCY7U9jBkNuCbwVq3Fv1jMdgg/2jgx9jWRP
+	2w2yYEvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4CkY-0003sX-UB; Tue, 18 Feb 2020 23:57:58 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1j4Ckm-00042h-H8; Tue, 18 Feb 2020 23:58:12 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Cip-0002Id-Kl
- for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 23:56:13 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id dw13so1752804pjb.4
+ id 1j4Cir-0002KB-CR
+ for linux-arm-kernel@lists.infradead.org; Tue, 18 Feb 2020 23:56:15 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id q39so1714922pjc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 15:56:11 -0800 (PST)
+ Tue, 18 Feb 2020 15:56:13 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=gIZmq38PDK8maDWrzZ6tzbZwLb/TzUBYIhY9CLrQkGc=;
- b=S347hVOmVw9Nc2voSueUVI1ZhoqJ6pSLRS+4GIwZL68we0JXUeXVwwxpnLZVwXvPtY
- KKAWtrggxw6FDwj89J70/2Ulcf11cxM9ZxDdBWZriDovu+P9pku6AI4WfFWmZexBMrkN
- bU8nJbVHfImE/JyRThhMbO+RqWYDVke2ENRahA7mXxt+UTR04uRzEdVNpu2GIxjYjs3y
- 2E9uVPiWPyK/P3yB6nTHi+iKCvFvfWfOuqM/aMvgeoQPWo80w1LO9BcVC4t/hguNVRSc
- JKRXGSoROm/YheQVqbCftn8Jx+3seScjKAGEdK19LORWSxPkkBbs2O+M8b3Hi6PYlxsz
- JXnQ==
+ bh=i3Cj6jCmg8Re6HCriaAPvQ8Bt49I/I/XDNaSdtPwqac=;
+ b=iRujqTRISwGHP3FrC4HAQHsTqDffJ+OB/WFIZ8dqRIiGjwCWFYx4CFAxupO5MWnQXa
+ d3rVvJuJ5l8SnEwqdviSYlBmdGgcTPNrJ+HoZjxBX3FD5N5KwNg6Uf6tqtQXnUncRDOq
+ jLIj/xFZWknt1R9cPThVquMLLvfvrcYv2Uf7hJeZvSTPJhIDGCqxRfPs2bnTyR2epNpd
+ UEgRa+bMcUOxFlXK1TxWRcNJZ4NPwbm3OoPBi0oKhBT+TiNY9TualZ12pSy/JimnF80b
+ ZlgWdEDQin+GsFR91+qUeWx8iM7XRGb92vgjdn/oUQsUiZ2adrDA3p3WXLX9iW+rZHR0
+ dbnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=gIZmq38PDK8maDWrzZ6tzbZwLb/TzUBYIhY9CLrQkGc=;
- b=G9DLCaGLzMmOfabQrVavAfr2vecxIRRuQLK9Y+tU4NUOD+2/99Hpq3bxftZjUwHdwn
- 2ZgoAMGcKIo7meuW/XEJ9G42haosCaSWzYFnBrQtZFR9eIDRBTpaIBWPVfuSodVXtsQd
- hNLqZUCkFqioU18G4vD7oqCvfqp+q3uoRfCeW9WgSb22NkIM5TlhN2jo64fNyqtYHJE8
- R/BiKvNWhhIzv7jQwpNubLdaR23PxNmvPTq9Afq54Umw7sa/KbXTTuxJI7zqrCGLtgSN
- OZLRUgR/CM2VUCiWSZWNj5HYquUqJfvTxLXVvE7CMokzCDHcPHUKzDo4OR4ZKnFq5goB
- Y9DA==
-X-Gm-Message-State: APjAAAUIiBjihfWY8yjjzNwOCv7PXnXttIeEZYRtwJF7YQauMcZt6Rze
- 5IAhLz0KZtagzSJv5juDL8I=
-X-Google-Smtp-Source: APXvYqzu4kvt7c3D3fRouLnWb2bYfjUGbMXHN7cCvhLj8uE6HlJhHfa9o51uKfKMk/X5+9whB0WoQQ==
-X-Received: by 2002:a17:902:b611:: with SMTP id
- b17mr23055633pls.23.1582070170385; 
- Tue, 18 Feb 2020 15:56:10 -0800 (PST)
+ bh=i3Cj6jCmg8Re6HCriaAPvQ8Bt49I/I/XDNaSdtPwqac=;
+ b=bcO1OKXNCZmJlB227jVnfVVp68unQbbhP87hGu8Hv3zMrCCruwqCxvPFAs8YqojusW
+ /ZTnf+JXu4O3wzwOS6mkDNhTzp2BphngTtaby0Cb6SeJQJTxAhdqkltwGO/1Zm9ZxlkE
+ sCE1bsiVcP6qUB9EdyDvtcbUBMI24W6iZj6jAzTUU2IGI3GcIkvFSpbI4rrtWXVSzaeP
+ 3ibdLK+JhJzaJmtr4eUVoChTbMWf7iQEq5gQclpRknmPk3ieDaYmoiOm5hUf39GGdqpS
+ enKy8CzsO1bm3/inVegG/lXShs6ErdFlNbJ886ABImiAEeXfW3Ud5iezso+AG8cq2n7L
+ VIAA==
+X-Gm-Message-State: APjAAAVrteywKehL53ui4uZ/NN9naI5iekkL20Vg5eAozNKQozyIUAWg
+ /nQAjlS9jHCGg4z53CCY6k8=
+X-Google-Smtp-Source: APXvYqwisrukoS6yd93rdtw5m0FL5P7Ha4WhyctQfgcrYnU5l7WoT8AAOrF4pDzWWvOMx6BXpKzm0Q==
+X-Received: by 2002:a17:902:aa0b:: with SMTP id
+ be11mr22317242plb.181.1582070172122; 
+ Tue, 18 Feb 2020 15:56:12 -0800 (PST)
 Received: from taoren-ubuntu-R90MNF91.thefacebook.com
  ([2620:10d:c090:500::5:1718])
- by smtp.gmail.com with ESMTPSA id d3sm80558pjx.10.2020.02.18.15.56.08
+ by smtp.gmail.com with ESMTPSA id d3sm80558pjx.10.2020.02.18.15.56.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 15:56:09 -0800 (PST)
+ Tue, 18 Feb 2020 15:56:11 -0800 (PST)
 From: rentao.bupt@gmail.com
 To: Felipe Balbi <balbi@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
@@ -70,16 +70,16 @@ To: Felipe Balbi <balbi@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  openbmc@lists.ozlabs.org, taoren@fb.com
-Subject: [PATCH 1/2] usb: gadget: aspeed: allow to customize vhub device
- IDs/strings
-Date: Tue, 18 Feb 2020 15:55:59 -0800
-Message-Id: <20200218235600.6763-2-rentao.bupt@gmail.com>
+Subject: [PATCH 2/2] usb: gadget: aspeed: fixup usb1 device descriptor at init
+ time
+Date: Tue, 18 Feb 2020 15:56:00 -0800
+Message-Id: <20200218235600.6763-3-rentao.bupt@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200218235600.6763-1-rentao.bupt@gmail.com>
 References: <20200218235600.6763-1-rentao.bupt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_155611_706248_EF048E83 
-X-CRM114-Status: GOOD (  17.24  )
+X-CRM114-CacheID: sfid-20200218_155613_443233_8760BE42 
+X-CRM114-Status: GOOD (  14.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -116,148 +116,60 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Tao Ren <rentao.bupt@gmail.com>
 
-This patch allows people to customize vendor/product/device IDs and
-manufacture/product/serial strings in vhub's device descriptor through
-device tree properties.
+This patch moves fixup-usb1-device-descriptor logic from get_descriptor
+handler to "ast_vhub_fixup_dev_desc" function so the device descriptor
+is only patched once (at vhub init time).
 
 Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
 ---
- drivers/usb/gadget/udc/aspeed-vhub/hub.c | 73 +++++++++++++++++++-----
- 1 file changed, 59 insertions(+), 14 deletions(-)
+ drivers/usb/gadget/udc/aspeed-vhub/hub.c | 20 +++++++++-----------
+ 1 file changed, 9 insertions(+), 11 deletions(-)
 
 diff --git a/drivers/usb/gadget/udc/aspeed-vhub/hub.c b/drivers/usb/gadget/udc/aspeed-vhub/hub.c
-index 9c7e57fbd8ef..4e3ef83283a6 100644
+index 4e3ef83283a6..b8bf54b12adc 100644
 --- a/drivers/usb/gadget/udc/aspeed-vhub/hub.c
 +++ b/drivers/usb/gadget/udc/aspeed-vhub/hub.c
-@@ -43,19 +43,23 @@
-  *    - We may need to indicate TT support
-  *    - We may need a device qualifier descriptor
-  *	as devices can pretend to be usb1 or 2
-- *    - Make vid/did overridable
-  *    - make it look like usb1 if usb1 mode forced
-  */
- #define KERNEL_REL	bin2bcd(((LINUX_VERSION_CODE >> 16) & 0x0ff))
- #define KERNEL_VER	bin2bcd(((LINUX_VERSION_CODE >> 8) & 0x0ff))
- 
- enum {
-+	AST_VHUB_STR_INDEX_MAX = 4,
- 	AST_VHUB_STR_MANUF = 3,
- 	AST_VHUB_STR_PRODUCT = 2,
- 	AST_VHUB_STR_SERIAL = 1,
+@@ -76,13 +76,6 @@ static struct usb_device_descriptor ast_vhub_dev_desc = {
+ 	.bNumConfigurations	= 1,
  };
  
--static const struct usb_device_descriptor ast_vhub_dev_desc = {
-+/*
-+ * Below is the default Device Descriptor of the vhub device. Some fields
-+ * may be updated in "ast_vhub_fixup_dev_desc" function.
-+ */
-+static struct usb_device_descriptor ast_vhub_dev_desc = {
- 	.bLength		= USB_DT_DEVICE_SIZE,
- 	.bDescriptorType	= USB_DT_DEVICE,
- 	.bcdUSB			= cpu_to_le16(0x0200),
-@@ -148,10 +152,14 @@ static struct usb_hub_descriptor ast_vhub_hub_desc = {
- };
- 
- /*
-- * These strings converted to UTF-16 must be smaller than
-- * our EP0 buffer.
-+ * Below tables define the default Language ID and String Descriptors of
-+ * the vhub. Language ID and strings may be overridden if according device
-+ * tree properties are defined. Refer to "ast_vhub_fixup_dev_desc" function
-+ * for details.
-+ * Note: these strings converted to UTF-16 must be smaller than vhub EP0
-+ * buffer size.
-  */
--static const struct usb_string ast_vhub_str_array[] = {
-+static struct usb_string ast_vhub_str_array[] = {
- 	{
- 		.id = AST_VHUB_STR_SERIAL,
- 		.s = "00000000"
-@@ -167,7 +175,7 @@ static const struct usb_string ast_vhub_str_array[] = {
- 	{ }
- };
- 
--static const struct usb_gadget_strings ast_vhub_strings = {
-+static struct usb_gadget_strings ast_vhub_strings = {
- 	.language = 0x0409,
- 	.strings = (struct usb_string *)ast_vhub_str_array
- };
-@@ -320,18 +328,15 @@ static int ast_vhub_rep_string(struct ast_vhub_ep *ep,
- 			       u8 string_id, u16 lang_id,
- 			       u16 len)
- {
--	int rc = usb_gadget_get_string (&ast_vhub_strings, string_id, ep->buf);
+-/* Patches to the above when forcing USB1 mode */
+-static void ast_vhub_patch_dev_desc_usb1(struct usb_device_descriptor *desc)
+-{
+-	desc->bcdUSB = cpu_to_le16(0x0100);
+-	desc->bDeviceProtocol = 0;
+-}
 -
--	/*
--	 * This should never happen unless we put too big strings in
--	 * the array above
--	 */
--	BUG_ON(rc >= AST_VHUB_EP0_MAX_PACKET);
-+	int rc;
-+	u8 buf[256]; /* buffer size required by usb_gadget_get_string */
+ /*
+  * Configuration descriptor: same comments as above
+  * regarding handling USB1 mode.
+@@ -316,10 +309,6 @@ static int ast_vhub_rep_desc(struct ast_vhub_ep *ep,
+ 	if (len > dsize)
+ 		len = dsize;
  
--	if (rc < 0)
-+	rc = usb_gadget_get_string(&ast_vhub_strings, string_id, buf);
-+	if (rc < 0 || rc >= AST_VHUB_EP0_MAX_PACKET)
- 		return std_req_stall;
- 
+-	/* Patch it if forcing USB1 */
+-	if (desc_type == USB_DT_DEVICE && ep->vhub->force_usb1)
+-		ast_vhub_patch_dev_desc_usb1(ep->buf);
+-
  	/* Shoot it from the EP buffer */
-+	memcpy(ep->buf, buf, rc);
- 	return ast_vhub_reply(ep, NULL, min_t(u16, rc, len));
+ 	return ast_vhub_reply(ep, NULL, len);
  }
- 
-@@ -837,11 +842,51 @@ void ast_vhub_hub_reset(struct ast_vhub *vhub)
- 	writel(0, vhub->regs + AST_VHUB_EP1_STS_CHG);
- }
- 
-+static void ast_vhub_fixup_dev_desc(struct ast_vhub *vhub)
-+{
-+	int i;
-+	u8 id;
-+	u16 of_id;
-+	const char *of_str[AST_VHUB_STR_INDEX_MAX] = {NULL};
-+	struct device_node *np = vhub->pdev->dev.of_node;
+@@ -878,6 +867,15 @@ static void ast_vhub_fixup_dev_desc(struct ast_vhub *vhub)
+ 		if (of_str[id])
+ 			ast_vhub_str_array[i].s = of_str[id];
+ 	}
 +
 +	/*
-+	 * Update IDs in device descriptor if according properties are
-+	 * defined in device tree.
++	 * Update USB Release Number and Protocol code if vhub is running
++	 * at USB 1.x speed.
 +	 */
-+	if (!of_property_read_u16(np, "vendor-id", &of_id))
-+		ast_vhub_dev_desc.idVendor = cpu_to_le16(of_id);
-+	if (!of_property_read_u16(np, "product-id", &of_id))
-+		ast_vhub_dev_desc.idProduct = cpu_to_le16(of_id);
-+	if (!of_property_read_u16(np, "device-id", &of_id))
-+		ast_vhub_dev_desc.bcdDevice = cpu_to_le16(of_id);
-+
-+	/*
-+	 * Update string descriptors if according properties are defined
-+	 * in device tree.
-+	 */
-+	if (!of_property_read_u16(np, "language-id", &of_id))
-+		ast_vhub_strings.language = of_id;
-+
-+	of_str[AST_VHUB_STR_MANUF] = of_get_property(np, "manufacturer", NULL);
-+	of_str[AST_VHUB_STR_PRODUCT] = of_get_property(np, "product", NULL);
-+	of_str[AST_VHUB_STR_SERIAL] = of_get_property(np, "serial-number",
-+						      NULL);
-+
-+	for (i = 0; ast_vhub_str_array[i].s != NULL; i++) {
-+		id = ast_vhub_str_array[i].id;
-+		if (of_str[id])
-+			ast_vhub_str_array[i].s = of_str[id];
++	if (vhub->force_usb1) {
++		ast_vhub_dev_desc.bcdUSB = cpu_to_le16(0x0100);
++		ast_vhub_dev_desc.bDeviceProtocol = 0;
 +	}
-+}
-+
- void ast_vhub_init_hub(struct ast_vhub *vhub)
- {
- 	vhub->speed = USB_SPEED_UNKNOWN;
- 	INIT_WORK(&vhub->wake_work, ast_vhub_wake_work);
+ }
  
-+	ast_vhub_fixup_dev_desc(vhub);
-+
- 	/*
- 	 * Fixup number of ports in hub descriptor.
- 	 */
+ void ast_vhub_init_hub(struct ast_vhub *vhub)
 -- 
 2.17.1
 
