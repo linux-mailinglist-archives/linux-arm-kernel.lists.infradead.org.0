@@ -2,67 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F617164893
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 16:28:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B8631648A4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 16:30:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=veyWecPIzwO4SbCtxK1O24OqDIRKTLl6QUIl4fV1nJk=; b=XQUSDCSodcMJcS
-	jxRhkLqiJswqDc/wTncAfHhojnHJ8c0rQLzvWcYpIK5ONwLzaZdp0Sb7SZJSuuq5CGNJ47KAM8BdA
-	O6LAKuIWy+we+QVeTK7uciVvnLQ0vuk9V71V33VopVJJ0QO8LWi58L5XbprALBlWXIwn0wqKqNFwo
-	OJyW6vHncqD/VHjdylTk9bBhmO0z93m4OdOcBetpI2n0tUxsV/TFUHjksNM+k+v/NN7TdRH5lzCak
-	cL82GnhNqKCxKr/qcIkVlmIIPz0TLrhBME++EUMtCEHVrnwEbRsiauO//LPWKFcmyg34N3+hc40fH
-	4RL4AEB5RgyPw8itlqRQ==;
+	List-Owner; bh=GygrW5hLfIjNISHP2eGOf+MBoKozIIVi7kNQU0RqlQg=; b=CBX1o1A/zNYByP
+	snQ6bUEK+hFbbAmsY6lLZ+QsmK++PFb+mk5B8CI2ZoQqkaYZaHOTb7k8AEfAr+oCUmsBX4Hq4ex9w
+	ZZUf03/voH6Ok7VUg+PlHU7kW2eG1w4wfHheJjwMW4YJi8cZ+4lMxQUAAI714M2ls3PO4X0Itp0+E
+	nRF6NUk1giUKcbWQ8ZF4RDq8tUgR1PddJNHZ+8499U7ZCkZe7wFM33IbkdOBMGBs0/ykEwQGTAFdZ
+	SNgK6qwpASPNg2X9wqrIm+w+BPUVy2U67ZtzuDWFWnS/EnJBguZbdZAJsU0x3TcSfxKWLdBkKCzxF
+	GvHqoe17EM+5tFJ9csNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4RHF-00017E-Nw; Wed, 19 Feb 2020 15:28:41 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1j4RIu-0002w5-GU; Wed, 19 Feb 2020 15:30:24 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4RH4-00016r-B7
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 15:28:31 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 7190452B;
- Wed, 19 Feb 2020 16:28:27 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1582126107;
- bh=S3hwt9TMlVU5HobaEOMv2lev0QevEyU32s/7zeGqV60=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=SwuUYcaWCm3YnE//Co/L6TqBj4PgYw+ftIDyWbzrq0jRZi90EJNqALCUFa6rRyl4j
- ei2wh/Ch+LjBo00a+jgwl8k+pdFrEPzyhJoYCUS9SacAWr1DqGLDoEg5G38ksZb1L8
- q/pYiUl23hrjNle51MAmeMmv555nbLHAX/kKvqpA=
-Date: Wed, 19 Feb 2020 17:28:08 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH v2 2/4] ARM: dts: rzg1: Add reset control properties for
- display
-Message-ID: <20200219152808.GS5070@pendragon.ideasonboard.com>
-References: <20200218133019.22299-1-geert+renesas@glider.be>
- <20200218133019.22299-3-geert+renesas@glider.be>
+ id 1j4RIm-0002vc-HS
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 15:30:17 +0000
+Received: by mail-ot1-f68.google.com with SMTP id g64so464175otb.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 07:30:16 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=shBpwPxzVyVQAaD0oYTNTwZVsvu6OfaMaEjn1dFyQ28=;
+ b=CvtQlprVO4ZxK8JwhaTkTMABntJxFQtu1UMUiEGLjfGvwbgSqgrmatt8z6pr+7z97J
+ XAj5tuPfVz6Xw6emIR1q7rYERelQdTjdVulW+4mYAnvOW0WDdczVeBuwxuvy0UiktsWw
+ X6+Ua/ficwvNgpAsP7X+mY79hMGERgLRn1UDUNF7fKObWXv++wRGIAGd1E6xZImDu83z
+ w/UFnCsv5Q0fx9+uM2rbBZg5uWYPAPFsl/AaIuqHfmfGNiBolO2LsPUJiDxJn5z+EFMa
+ NwpDrpCW7n77IopYkQxAIoApV0Rz3aGztNEcIB9ALy2iuji1xCcYqGXXngUKHRENuwif
+ FcqA==
+X-Gm-Message-State: APjAAAXbV4T0IzVI4cy4IH98rWqvnEB8axuey43EohcS9caSWGBdhCoh
+ CoaBLKjyK9XPT3vmVXhAzkdls7ceH8Pcu2XoBbI=
+X-Google-Smtp-Source: APXvYqywY31zIL7CUSdv7ZV3QK0x0lsBl24rQPzCQmfsh68PXiEqDefgOyoG1LNgFAuKCPZ/8hXGHJTiHsbtJNn5ZdE=
+X-Received: by 2002:a05:6830:1d4:: with SMTP id
+ r20mr5840149ota.107.1582126215565; 
+ Wed, 19 Feb 2020 07:30:15 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200218133019.22299-3-geert+renesas@glider.be>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200218133019.22299-1-geert+renesas@glider.be>
+ <20200218133019.22299-2-geert+renesas@glider.be>
+ <20200219152728.GR5070@pendragon.ideasonboard.com>
+In-Reply-To: <20200219152728.GR5070@pendragon.ideasonboard.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 19 Feb 2020 16:30:04 +0100
+Message-ID: <CAMuHMdXoH6H6HiEFgANi8WMzTj0wFVr01-5-Ha9768MrPePKXQ@mail.gmail.com>
+Subject: Re: [PATCH v2 1/4] ARM: dts: rcar-gen2: Add reset control properties
+ for display
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_072830_530849_535198F9 
-X-CRM114-Status: GOOD (  15.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200219_073016_579496_03C38775 
+X-CRM114-Status: GOOD (  19.04  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,108 +86,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org,
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
  Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- Magnus Damm <magnus.damm@gmail.com>, linux-arm-kernel@lists.infradead.org
+ Magnus Damm <magnus.damm@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Geert Uytterhoeven <geert+renesas@glider.be>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
+Hi Laurent,
 
-Thank you for the patch.
+On Wed, Feb 19, 2020 at 4:27 PM Laurent Pinchart
+<laurent.pinchart@ideasonboard.com> wrote:
+> On Tue, Feb 18, 2020 at 02:30:16PM +0100, Geert Uytterhoeven wrote:
+> > Add reset control properties to the device nodes for the Display Units
+> > on all supported R-Car Gen2 SoCs.  Note that on these SoCs, there is
+> > only a single reset for all DU channels.
+> >
+> > Join the clocks lines while at it, to increase uniformity.
+> >
+> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> > ---
+> > v2:
+> >   - New.
+> > ---
+> >  arch/arm/boot/dts/r8a7790.dtsi | 2 ++
+> >  arch/arm/boot/dts/r8a7791.dtsi | 5 +++--
+> >  arch/arm/boot/dts/r8a7792.dtsi | 5 +++--
+> >  arch/arm/boot/dts/r8a7793.dtsi | 5 +++--
+> >  arch/arm/boot/dts/r8a7794.dtsi | 2 ++
+> >  5 files changed, 13 insertions(+), 6 deletions(-)
+> >
+> > diff --git a/arch/arm/boot/dts/r8a7790.dtsi b/arch/arm/boot/dts/r8a7790.dtsi
+> > index 334ba19769b998ac..e5ef9fd4284ae436 100644
+> > --- a/arch/arm/boot/dts/r8a7790.dtsi
+> > +++ b/arch/arm/boot/dts/r8a7790.dtsi
+> > @@ -1719,6 +1719,8 @@
+> >                       clocks = <&cpg CPG_MOD 724>, <&cpg CPG_MOD 723>,
+> >                                <&cpg CPG_MOD 722>;
+> >                       clock-names = "du.0", "du.1", "du.2";
+> > +                     resets = <&cpg 724>;
+> > +                     reset-names = "du.0";
+>
+> If there's a single reset for all channels, should it be just named "du"
+> ? Or maybe skip the name completely ?
 
-On Tue, Feb 18, 2020 at 02:30:17PM +0100, Geert Uytterhoeven wrote:
-> Add reset control properties to the devices node for the Display Units
-> on all supported RZ/G1 SoCs.  Note that on these SoCs, there is only a
-> single reset for all DU channels.
-> 
-> Join the clocks lines while at it, to increase uniformity.
-> 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
-> v2:
->   - New.
-> ---
->  arch/arm/boot/dts/r8a7743.dtsi  | 5 +++--
->  arch/arm/boot/dts/r8a7744.dtsi  | 5 +++--
->  arch/arm/boot/dts/r8a7745.dtsi  | 2 ++
->  arch/arm/boot/dts/r8a77470.dtsi | 5 +++--
->  4 files changed, 11 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/r8a7743.dtsi b/arch/arm/boot/dts/r8a7743.dtsi
-> index 1cd19a569bd0fb66..e8b340bb99bc3031 100644
-> --- a/arch/arm/boot/dts/r8a7743.dtsi
-> +++ b/arch/arm/boot/dts/r8a7743.dtsi
-> @@ -1669,9 +1669,10 @@
->  			reg = <0 0xfeb00000 0 0x40000>;
->  			interrupts = <GIC_SPI 256 IRQ_TYPE_LEVEL_HIGH>,
->  				     <GIC_SPI 268 IRQ_TYPE_LEVEL_HIGH>;
-> -			clocks = <&cpg CPG_MOD 724>,
-> -				 <&cpg CPG_MOD 723>;
-> +			clocks = <&cpg CPG_MOD 724>, <&cpg CPG_MOD 723>;
->  			clock-names = "du.0", "du.1";
-> +			resets = <&cpg 724>;
-> +			reset-names = "du.0";
+Doing so means the bindings should be updated first to reflect that.
 
-Same comment as for 1/4.
+Gr{oetje,eeting}s,
 
->  			status = "disabled";
->  
->  			ports {
-> diff --git a/arch/arm/boot/dts/r8a7744.dtsi b/arch/arm/boot/dts/r8a7744.dtsi
-> index 1c82dd0abd76c4c9..def840b8b2d3c0c4 100644
-> --- a/arch/arm/boot/dts/r8a7744.dtsi
-> +++ b/arch/arm/boot/dts/r8a7744.dtsi
-> @@ -1655,9 +1655,10 @@
->  			reg = <0 0xfeb00000 0 0x40000>;
->  			interrupts = <GIC_SPI 256 IRQ_TYPE_LEVEL_HIGH>,
->  				     <GIC_SPI 268 IRQ_TYPE_LEVEL_HIGH>;
-> -			clocks = <&cpg CPG_MOD 724>,
-> -				 <&cpg CPG_MOD 723>;
-> +			clocks = <&cpg CPG_MOD 724>, <&cpg CPG_MOD 723>;
->  			clock-names = "du.0", "du.1";
-> +			resets = <&cpg 724>;
-> +			reset-names = "du.0";
->  			status = "disabled";
->  
->  			ports {
-> diff --git a/arch/arm/boot/dts/r8a7745.dtsi b/arch/arm/boot/dts/r8a7745.dtsi
-> index 3b413658eb8d8fac..7ab58d8bb74010d6 100644
-> --- a/arch/arm/boot/dts/r8a7745.dtsi
-> +++ b/arch/arm/boot/dts/r8a7745.dtsi
-> @@ -1510,6 +1510,8 @@
->  				     <GIC_SPI 268 IRQ_TYPE_LEVEL_HIGH>;
->  			clocks = <&cpg CPG_MOD 724>, <&cpg CPG_MOD 723>;
->  			clock-names = "du.0", "du.1";
-> +			resets = <&cpg 724>;
-> +			reset-names = "du.0";
->  			status = "disabled";
->  
->  			ports {
-> diff --git a/arch/arm/boot/dts/r8a77470.dtsi b/arch/arm/boot/dts/r8a77470.dtsi
-> index 6efcef1670e15a95..f5515319227609a4 100644
-> --- a/arch/arm/boot/dts/r8a77470.dtsi
-> +++ b/arch/arm/boot/dts/r8a77470.dtsi
-> @@ -942,9 +942,10 @@
->  			reg = <0 0xfeb00000 0 0x40000>;
->  			interrupts = <GIC_SPI 256 IRQ_TYPE_LEVEL_HIGH>,
->  				     <GIC_SPI 268 IRQ_TYPE_LEVEL_HIGH>;
-> -			clocks = <&cpg CPG_MOD 724>,
-> -				 <&cpg CPG_MOD 723>;
-> +			clocks = <&cpg CPG_MOD 724>, <&cpg CPG_MOD 723>;
->  			clock-names = "du.0", "du.1";
-> +			resets = <&cpg 724>;
-> +			reset-names = "du.0";
->  			status = "disabled";
->  
->  			ports {
+                        Geert
 
 -- 
-Regards,
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-Laurent Pinchart
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
