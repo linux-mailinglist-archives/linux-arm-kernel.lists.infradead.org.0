@@ -2,62 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6BE3164541
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 14:24:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B4631645E6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 14:46:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ATOdSczEbkfElQXu4rjE/UtyFd4+ZMliSi4NVRSm19w=; b=hwiVfuGETN7xrm
-	njb945SZKwd2SFkWkBvNcMBuVg3MXKJYnmrhn5qzgcrvMo1P2lwRJBmlmRd81ip2V26XRHpnNM7mA
-	Z7PfRiBsyH6dgjBChQyO5lrhkS8QEQk7ixFDuTqdIMfM3mzOIINqBEx92qbPu5kNVnP/N7RXyOvMF
-	nwO3KhRndGQtzBCQ/MlbDbakqFxhuSD5dd6NHinE+AtQSK9naB1ETjTA+14MUlf1FBxXSRlVAH9XM
-	pv6dPRrpuiCt2jfm0srIgAuZvZ6tPSjtTN+JlsdBt5I5Q5+OA2xdwa7MxTbY/OzIiql45eNUL1DuU
-	mZSNgBbqaKiB/AEymGEA==;
+	List-Owner; bh=6FYKtPT/0GFIS42WI/cQj9SFUhSk+gFYqTbvzxU3KGE=; b=DQWYvQlIcg2qHR
+	zmcl5RdUh1c2kkdKhfNIpzQDlte4xHBMI1E/5WJkz1Y8KOE6zmyJBQUewcXI7ZMoSvzZMOoUXypJ8
+	ml4r+QCO3fe77i8EvPXb5YsXuymAMMGKEAWjObBDNWVWYztUDoJi31cF75OUnQUINVkb1PqAlCH//
+	+JXPDCeN0TEUQPmVnMIIZ4Lh4CZmr1quXLMgzrCfi3g9fp15hkSRnU1DP8XSAl0b5gWrNcAauv3BE
+	y7X79P4I7IszChMgPSorJB+sNjFUT/W7SUoMiW3kbCs8Ca0Rw/wHn76uh5Xx2E5d2D6TWcuaOCvnX
+	ouDr3GYdT39iRSLUJAig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4PLQ-0002NZ-W2; Wed, 19 Feb 2020 13:24:53 +0000
+	id 1j4Pg7-0002Jw-SG; Wed, 19 Feb 2020 13:46:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4PLF-0002N6-Uf
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 13:24:43 +0000
-Received: from hump (unknown [147.67.241.226])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 02D8B24654;
- Wed, 19 Feb 2020 13:24:32 +0000 (UTC)
+ id 1j4Pg0-0002JX-CC
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 13:46:09 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6DC3620801;
+ Wed, 19 Feb 2020 13:46:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582118681;
- bh=WeK8iDiz+u7KGQl8xdyYvIuPvj8pRW13k3gZGmGmUOU=;
+ s=default; t=1582119967;
+ bh=VCz4kDLLIpq2JqdJ2+ipuFM04RiXeKKl9ftTf4Uhf9g=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=CrDKTg0KsoKO1U07yyagx89/mJ6hieOjLuM/lo6w3mB9Y9R+aQAidXZSv/ywuM3au
- r4bYkFE2ZGGFM/SSIBeOb3LJun+6yquvbVIUq2PH+U+U65CCtHToRoSUxXZ4LnlfNf
- XO/4CZv966+4qxBk+L+tbRqcMNDfbzR2x3+83oH0=
-Date: Wed, 19 Feb 2020 14:24:20 +0100
-From: Mike Rapoport <rppt@kernel.org>
-To: Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: Re: [PATCH v2 07/13] powerpc: add support for folded p4d page tables
-Message-ID: <20200219132420.GA5559@hump>
-References: <20200216081843.28670-1-rppt@kernel.org>
- <20200216081843.28670-8-rppt@kernel.org>
- <5b7c3929-5833-8ceb-85c8-a8e92e6a138e@c-s.fr>
+ b=01zXz8eVQgvO3Y0oNpfFarZ6/ghmQR7gOQRql/5wwt7GH8yf2OtsglMlvrB8ByNQm
+ UQ980QXBiWBG+hKPpDzfN5B9OdTVsXX0/2WiKZYaoPMmHDLFQEY02AmHPb6tCeqfyU
+ NY+bFafPiHq6dlwyNqxzWUkQtMPLcX5iK3MQK6cE=
+Date: Wed, 19 Feb 2020 13:46:03 +0000
+From: Will Deacon <will@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v2] mm: Avoid creating virtual address aliases in
+ brk()/mmap()/mremap()
+Message-ID: <20200219134602.GB21366@willie-the-truck>
+References: <20200219123156.86952-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <5b7c3929-5833-8ceb-85c8-a8e92e6a138e@c-s.fr>
+In-Reply-To: <20200219123156.86952-1-catalin.marinas@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_052442_037963_7694620E 
+X-CRM114-CacheID: sfid-20200219_054608_439389_02E1B0EE 
 X-CRM114-Status: GOOD (  15.66  )
-X-Spam-Score: -3.7 (---)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-3.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [147.67.241.226 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,107 +77,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-sh@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, linux-hexagon@vger.kernel.org,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Jonas Bonn <jonas@southpole.se>, linux-arch@vger.kernel.org,
- Brian Cain <bcain@codeaurora.org>, Marc Zyngier <maz@kernel.org>,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Mike Rapoport <rppt@linux.ibm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- uclinux-h8-devel@lists.sourceforge.jp, Fenghua Yu <fenghua.yu@intel.com>,
- Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- openrisc@lists.librecores.org, Stafford Horne <shorne@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Tony Luck <tony.luck@intel.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Michael Ellerman <mpe@ellerman.id.au>, nios2-dev@lists.rocketboards.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Florian Weimer <fweimer@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Victor Stinner <vstinner@redhat.com>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 01:07:55PM +0100, Christophe Leroy wrote:
-> =
+On Wed, Feb 19, 2020 at 12:31:56PM +0000, Catalin Marinas wrote:
+> Currently the arm64 kernel ignores the top address byte passed to brk(),
+> mmap() and mremap(). When the user is not aware of the 56-bit address
+> limit or relies on the kernel to return an error, untagging such
+> pointers has the potential to create address aliases in user-space.
+> Passing a tagged address to munmap(), madvise() is permitted since the
+> tagged pointer is expected to be inside an existing mapping.
+> 
+> The current behaviour breaks the existing glibc malloc() implementation
+> which relies on brk() with an address beyond 56-bit to be rejected by
+> the kernel.
+> 
+> Remove untagging in the above functions by partially reverting commit
+> ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk"). In
+> addition, update the arm64 tagged-address-abi.rst document accordingly.
+> 
+> Link: https://bugzilla.redhat.com/1797052
+> Fixes: ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk")
+> Cc: <stable@vger.kernel.org> # 5.4.x-
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Florian Weimer <fweimer@redhat.com>
+> Reported-by: Victor Stinner <vstinner@redhat.com>
+> Acked-by: Will Deacon <will@kernel.org>
+> Acked-by: Andrey Konovalov <andreyknvl@google.com>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> ---
+> 
+> Changes in v2:
+> 
+> - Added note to tagged-address-abi.rst that this behaviour changed in v5.6 and
+>   some older kernel may still have the old behaviour.
+> 
+> - Updated the commit log to make it clearer we broke the user ABI, also adding
+>   link to the Red Hat bugzilla entry.
 
-> Le 16/02/2020 =E0 09:18, Mike Rapoport a =E9crit=A0:
-> > diff --git a/arch/powerpc/mm/ptdump/ptdump.c b/arch/powerpc/mm/ptdump/p=
-tdump.c
-> > index 206156255247..7bd4b81d5b5d 100644
-> > --- a/arch/powerpc/mm/ptdump/ptdump.c
-> > +++ b/arch/powerpc/mm/ptdump/ptdump.c
-> > @@ -277,9 +277,9 @@ static void walk_pmd(struct pg_state *st, pud_t *pu=
-d, unsigned long start)
-> >   	}
-> >   }
-> > -static void walk_pud(struct pg_state *st, pgd_t *pgd, unsigned long st=
-art)
-> > +static void walk_pud(struct pg_state *st, p4d_t *p4d, unsigned long st=
-art)
-> >   {
-> > -	pud_t *pud =3D pud_offset(pgd, 0);
-> > +	pud_t *pud =3D pud_offset(p4d, 0);
-> >   	unsigned long addr;
-> >   	unsigned int i;
-> > @@ -293,6 +293,22 @@ static void walk_pud(struct pg_state *st, pgd_t *p=
-gd, unsigned long start)
-> >   	}
-> >   }
-> > +static void walk_p4d(struct pg_state *st, pgd_t *pgd, unsigned long st=
-art)
-> > +{
-> > +	p4d_t *p4d =3D p4d_offset(pgd, 0);
-> > +	unsigned long addr;
-> > +	unsigned int i;
-> > +
-> > +	for (i =3D 0; i < PTRS_PER_P4D; i++, p4d++) {
-> > +		addr =3D start + i * P4D_SIZE;
-> > +		if (!p4d_none(*p4d) && !p4d_is_leaf(*p4d))
-> > +			/* p4d exists */
-> > +			walk_pud(st, p4d, addr);
-> > +		else
-> > +			note_page(st, addr, 2, p4d_val(*p4d));
-> =
+Cheers, I'll queue this up as I have a couple of other arm64 fixes pending
+now. (Andrew, please shout if you'd prefer to take it).
 
-> Level 2 is already used by walk_pud().
-> =
-
-> I think you have to increment the level used in walk_pud() and walk_pmd()
-> and walk_pte()
-
-Thanks for catching this!
-I'll fix the numbers in the next version.
- =
-
-> > +	}
-> > +}
-> > +
-> >   static void walk_pagetables(struct pg_state *st)
-> >   {
-> >   	unsigned int i;
-> > @@ -306,7 +322,7 @@ static void walk_pagetables(struct pg_state *st)
-> >   	for (i =3D pgd_index(addr); i < PTRS_PER_PGD; i++, pgd++, addr +=3D =
-PGDIR_SIZE) {
-> >   		if (!pgd_none(*pgd) && !pgd_is_leaf(*pgd))
-> >   			/* pgd exists */
-> > -			walk_pud(st, pgd, addr);
-> > +			walk_p4d(st, pgd, addr);
-> >   		else
-> >   			note_page(st, addr, 1, pgd_val(*pgd));
-> >   	}
-> =
-
-> Christophe
-
--- =
-
-Sincerely yours,
-Mike.
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
