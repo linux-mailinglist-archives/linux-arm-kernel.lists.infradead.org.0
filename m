@@ -2,72 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F79B163AAC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 04:02:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63494163AB4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 04:03:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hM9TVSGGCK4xRfjd+aT2N4juAQfGMV5e8aYSK9+8SYY=; b=teWp9LwUwohnVf
-	lrLcoTgakdpk2fIg7v3a2Mn63XI5o50lbSCN/rSMjYkgFFSkAgiLMXkOZdjap5LAyBr1Y71L0qkuH
-	8uTjQr9WfStyQ9+UsVIbtJSKZ20jdI59Q2JMvHVmrnwJfZZ/2CuHaktFwoAl02kGb3or6ABogfu2e
-	7GK1jB3zLtuzcs2QQJzmnhcUWX/38Nf7ccVB4vmvmg++EC/CKS+w38yC4m1lloM2/Nf/jatxjIqPX
-	MCEmOlbZxrUs86fqIPG0qjW3s616zu6VybeV/R9maTb8EOhyGpWRCFzqDI7mXU8Uqwtgms34fGbZY
-	lp+BN2HEhMM8KoGQGZ/A==;
+	List-Owner; bh=8ABDpTOPIEz2PiebEYeYwQRqycOZLnSCgvmtbyeZ5z4=; b=XtNyDLcQQZq/ba
+	asyuTQfcIFOJ4KsbeKFnW1Myw/+oxGown50ysTuFN0Jn++loCI6mWceXczV9rGdgpvLtomMKc0GjZ
+	seMtlAzhqM5YS/VHAhqDMdVztlOqhtCllcWHjkwKOfhCfPfJVEfTdwwRDkuQML7XmmPIyD3aLRzCm
+	DmB28Fmo53b+BXnYA3IjB0ADUak/YbbcTSgGCHKhPM02Vd+ek5meTPfgmspWOGFE/huJdsb4xfg5W
+	bMT6Vryx688cpW12EOoeLipa9ZQhb6scpFdb9WGAQHKGC0k6JOWADVwSVLSnpGKstGGkTNujxJQyA
+	8IyUzRrKNypZ4OomsjHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4FdH-0001Wn-It; Wed, 19 Feb 2020 03:02:39 +0000
-Received: from mail-ot1-f68.google.com ([209.85.210.68])
+	id 1j4FeD-0001rS-5S; Wed, 19 Feb 2020 03:03:37 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Fd7-0001VF-Hf; Wed, 19 Feb 2020 03:02:30 +0000
-Received: by mail-ot1-f68.google.com with SMTP id w6so12531033otk.0;
- Tue, 18 Feb 2020 19:02:28 -0800 (PST)
+ id 1j4Fe4-0001qe-HM
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 03:03:29 +0000
+Received: by mail-oi1-f195.google.com with SMTP id c16so22415963oic.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Feb 2020 19:03:28 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=wM36jiU/uEy31IzeR1mb5iKzvzrpChL40oT2SOGRUi0=;
- b=qmikZ+JAtHWuYxukuGOKvigIY05sIVHRTX6SgYrrpLKOGRH6XGm6FMpMeA3eMoXIre
- yKUTRDNcxAkHJjn+4YZBhzjs4Txh5cmH3Ppjn5EOWJcg0+HU4yQlgW3OLCnJm+BFjd4G
- ZcAzh9prPiWTTpGptqjNKBfoQ3k7wRauMMRxQz0okK5If/4VhmozdCdzWZi4G35ldbeh
- yAJo3a5TA/gykYvlzzWjAT6qISFm5XGa2LAAwmdmppHpmfaVnD7zHb5hQh1W4BC31CW2
- 28LazE6VwH0fpXarDMVQcwKXoqVWgOy6NlyxmK7B7vDhnw0UsFCr5UklcaoURV904YVk
- R1iQ==
-X-Gm-Message-State: APjAAAV/feZU86d/yIp2sU6Cb5TUvCAgLW6QRQRfZ0dtWRX6dhD5JUiu
- 55XGKbFvZVT+HZ13fYMsDg==
-X-Google-Smtp-Source: APXvYqyK+6EWyXhC3a/7xDZK0yFV9OL48vn100QsFjIeQ8ddy37zTQgKDMZU5KOrzSI/ZG374IuWig==
-X-Received: by 2002:a9d:4c8e:: with SMTP id m14mr17131477otf.245.1582081348149; 
- Tue, 18 Feb 2020 19:02:28 -0800 (PST)
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=Hf1f6QP19rHdaFJBEywe6mRYXkeEBsQdT49X3f8AQCs=;
+ b=RAHQq2Ds90PZuc6zrDYGRYjG+x4ONkQKJW7nDSWNMHuR4fFOWNwBL4pPgMLeUz91Jm
+ ANL2TVmVn8yLMkHgVu+cv7dEa5Wi20oTX2jXcB89IALLCYDUyuLtsCBAJ6fAhlYEAuKJ
+ ohGY4XF6oMwOPx34DH1rEnYIJ8Wt0z4u5T0n5BulUFP6DqhALwZtUliEGe38iE8qxUp2
+ 0LIV93sEE+dz1OHUgyyLd/wLf+CJ4KFMOyTvjpPuzcfx/Rg5vfRoGlpKjK2uT6hI69Bq
+ JrJml17XqvMttUmEq7k3IDD/8Mh4CuRY/7hK1LaEhcxxxf/cZ1LLG3pj3Y83dd9jdIuv
+ wuEg==
+X-Gm-Message-State: APjAAAVWkUekZ7IliSddrgNutb6N7ib84fOfo7frN5KfVSr6sGUWnLW0
+ 6yTnZ3bqRdcI/35iw1PFJg==
+X-Google-Smtp-Source: APXvYqzb9WboKkTWigfur8GY+H5M6QkRTHO++ZcVsbVhsDtpZ0hlIVyOR7AyTXVJ5W9SnTQCgMCmfQ==
+X-Received: by 2002:aca:4c90:: with SMTP id z138mr3411041oia.140.1582081406582; 
+ Tue, 18 Feb 2020 19:03:26 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id b15sm199703otl.60.2020.02.18.19.02.26
+ by smtp.gmail.com with ESMTPSA id b145sm303254oii.31.2020.02.18.19.03.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 19:02:27 -0800 (PST)
-Received: (nullmailer pid 14862 invoked by uid 1000);
- Wed, 19 Feb 2020 03:02:25 -0000
-Date: Tue, 18 Feb 2020 21:02:25 -0600
+ Tue, 18 Feb 2020 19:03:26 -0800 (PST)
+Received: (nullmailer pid 16294 invoked by uid 1000);
+ Wed, 19 Feb 2020 03:03:24 -0000
+Date: Tue, 18 Feb 2020 21:03:24 -0600
 From: Rob Herring <robh@kernel.org>
-To: Chun-Hung Wu <chun-hung.wu@mediatek.com>
-Subject: Re: [PATCH v3 4/4] dt-bindings: mmc: mediatek: Add document for mt6779
-Message-ID: <20200219030225.GA14824@bogus>
-References: <1581922564-24914-1-git-send-email-chun-hung.wu@mediatek.com>
- <1581922564-24914-5-git-send-email-chun-hung.wu@mediatek.com>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V3 RESEND 1/7] ARM: dts: imx6sx: Improve UART pins macro
+ defines
+Message-ID: <20200219030324.GA16230@bogus>
+References: <1581938021-16259-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1581922564-24914-5-git-send-email-chun-hung.wu@mediatek.com>
+In-Reply-To: <1581938021-16259-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_190229_585761_D8AAC919 
-X-CRM114-Status: GOOD (  11.23  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200218_190328_570476_808B93C9 
+X-CRM114-Status: GOOD (  11.34  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.68 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -76,9 +79,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.68 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,34 +94,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- Ulf Hansson <ulf.hansson@linaro.org>, wsd_upstream@mediatek.com,
- linux-mmc@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Pavel Machek <pavel@ucw.cz>, Chaotian Jing <chaotian.jing@mediatek.com>,
- kernel-team@android.com, Pan Bian <bianpan2016@163.com>,
- devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Chun-Hung Wu <chun-hung.wu@mediatek.com>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Stanley Chu <stanley.chu@mediatek.com>,
- Allison Randal <allison@lohutok.net>, linux-arm-kernel@lists.infradead.org,
- Mathieu Malaterre <malat@debian.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Kuohong Wang <kuohong.wang@mediatek.com>, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Linux-imx@nxp.com, kernel@pengutronix.de, u.kleine-koenig@pengutronix.de,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 17 Feb 2020 14:56:04 +0800, Chun-Hung Wu wrote:
-> Add compatible node for mt6779 mmc
-> 
-> Signed-off-by: Chun-Hung Wu <chun-hung.wu@mediatek.com>
+On Mon, 17 Feb 2020 19:13:35 +0800, Anson Huang wrote:
+> Add DCE/DTE to UART pins macro defines to distinguish the
+> DCE and DTE functions, keep old defines at the end of file
+> for some time to make it backward compatible.
+> =
+
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
 > ---
->  Documentation/devicetree/bindings/mmc/mtk-sd.txt | 1 +
->  1 file changed, 1 insertion(+)
-> 
+> Changes since V2:
+> 	- Adjust the definitions order to make DCE always before DTE, no other c=
+hange.
+> ---
+>  arch/arm/boot/dts/imx6sx-pinfunc.h | 260 +++++++++++++++++++++++++------=
+------
+>  1 file changed, 174 insertions(+), 86 deletions(-)
+> =
+
 
 Acked-by: Rob Herring <robh@kernel.org>
 
