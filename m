@@ -2,52 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D5F7F165337
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 00:55:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 246D416533E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 00:57:14 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GfZr8bZ9f+/c6IGntVVEVuDXZ2WdZsidpAyGnNhc9FA=; b=F+YVTNIYjwTcR+4XCGPizLvk3
-	iyD/lesMACqma5lFJrbT573Bj+EQ/Z2yMbMvvKANxALDb66ImXiKmKmQwxXs5E20NhGFOqiuur6Rg
-	faT723z3Gc7dp1VEezv97IKsf4rjiBgLrzQLsZCcCyBBmzDOJ6VNkcvL/8gfM+Bd6dVFDPgk3PL5/
-	yD+z86KIY4OfvsF9a8f2ybNy5+B7Vwu6XgIWzaMkTVOR/QWkKI2T4IW6NtUKS3yyeOPUlF6jHCc90
-	GwZ8++t43jPvR04R3N6n9j+J8jq7tPudHSlPR4cBto9ZPt67OhnkEQG4c/LactRLevkeTun0FPKH1
-	hyiBVc85g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dFAO/+JYCs8JqFdw4HvCUu8PjgZnWZhwh7Ufv1m2aKE=; b=ZL620x3y7oe8ww
+	t9hnh9eZtIiffJC/HOEZCvtw11LKkxtnJ7CphXkP5ObWCP+qc6HxFrkygGApoiuHfoBOMjrCteKWX
+	0tAujzeSojlP1cJ88qo7eFBQYV/QU1K5QpgwE73LELA1mOF0vpZ7DeulAH0QDPdimbO3hTf7Pmqc6
+	EGzGOKBUUJKVyhfE+VXrEBiUawT/o74RBQ64Euw6fu4I9XNxsXlN3TtoNlpCeai379uRqU1CuENSQ
+	A7d/z4oYyGzG9/r1yq613WnOY6+ahP+rGgPFWEzxju+JnN2S+YI2+h1n1uImzwCmAmrdSvWu/Y/8C
+	lyNkKqDFV5o3isY/sbVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ZBD-00038F-Ot; Wed, 19 Feb 2020 23:54:59 +0000
-Received: from jabberwock.ucw.cz ([46.255.230.98])
+	id 1j4ZDM-0004eK-3J; Wed, 19 Feb 2020 23:57:12 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ZB5-00037u-3m
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 23:54:53 +0000
-Received: by jabberwock.ucw.cz (Postfix, from userid 1017)
- id 88D151C013D; Thu, 20 Feb 2020 00:54:40 +0100 (CET)
-Date: Thu, 20 Feb 2020 00:54:40 +0100
-From: Pavel Machek <pavel@ucw.cz>
-To: Tony Lindgren <tony@atomide.com>
-Subject: Re: [PATCH] backlight: add led-backlight driver
-Message-ID: <20200219235440.GA25196@amd>
-References: <20200219191412.GA15905@amd> <20200219194540.GD37466@atomide.com>
- <20200219205322.GA1227@duo.ucw.cz>
- <20200219211513.GE37466@atomide.com>
+ id 1j4ZDC-0004do-Sj
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 23:57:04 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6749C206A5;
+ Wed, 19 Feb 2020 23:57:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582156622;
+ bh=1IW+yQwOQoK/ZE/qlAsbbc4XwXHuGcveuAoms/xk5dY=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=lCHRAKI9M7L12wHrBZ8MXGCU9Ueecj+GJJVICBRhdTihihtSzoKQ+dorDsMS8065t
+ 4yJYO4AmHlw7Zw20BJYYkhc4cH0wJuiNGAATeWdHGckhuZsychuFhiOhStetOYrolP
+ NdwhtJaead2pHVH4yXQW2ptWcTUjk+Onv7lOz+p8=
 MIME-Version: 1.0
-In-Reply-To: <20200219211513.GE37466@atomide.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <3a8b6772a1edffdd7cdb54d6d50030b03ba0bebb.1581455751.git.leonard.crestez@nxp.com>
+References: <3a8b6772a1edffdd7cdb54d6d50030b03ba0bebb.1581455751.git.leonard.crestez@nxp.com>
+Subject: Re: [PATCH] firmware: imx: Align imx SC msg structs to 4
+From: Stephen Boyd <sboyd@kernel.org>
+To: Dong Aisheng <aisheng.dong@nxp.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>
+Date: Wed, 19 Feb 2020 15:57:01 -0800
+Message-ID: <158215662160.184098.12475377410437970578@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_155451_306450_F4C8C4FF 
-X-CRM114-Status: GOOD (  13.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200219_155702_950154_DD679D4F 
+X-CRM114-Status: GOOD (  10.43  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.255.230.98 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,81 +76,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: daniel.thompson@linaro.org, mpartap@gmx.net, jingoohan1@gmail.com,
- merlijn@wizzup.org, martin_rysavy@centrum.cz,
- kernel list <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
- sre@kernel.org, nekit1000@gmail.com, tomi.valkeinen@ti.com, jjhiblot@ti.com,
- linux-omap@vger.kernel.org, Lee Jones <lee.jones@linaro.org>, agx@sigxcpu.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1191207725374678504=="
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stefan Agner <stefan@agner.ch>,
+ linux-clk@vger.kernel.org, Franck LENORMAND <franck.lenormand@nxp.com>,
+ linux-gpio@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <fabio.estevam@nxp.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Quoting Leonard Crestez (2020-02-11 13:24:33)
+> The imx SC api strongly assumes that messages are composed out of
+> 4-bytes words but some of our message structs have sizeof "6" and "7".
+> 
+> This produces many oopses with CONFIG_KASAN=y:
+> 
+>         BUG: KASAN: stack-out-of-bounds in imx_mu_send_data+0x108/0x1f0
 
---===============1191207725374678504==
-Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="AhhlLboLdkugWU4S"
-Content-Disposition: inline
+Can you share the full kasan bug report instead of the single line?
 
+> 
+> It shouldn't cause an issues in normal use because these structs are
+> always allocated on the stack.
 
---AhhlLboLdkugWU4S
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Is packed necessary for these? I thought that if the beginning of the
+struct was naturally aligned and there was sometimes a byte or two at
+the end then having __packed wasn't useful. So maybe it's better to just
+drop __packed on all these structs and let the compiler decide it can
+add some padding on the stack? Or do we have arrays of these structs
+sitting in memory all next to each other and they need to be that way to
+be sent through the mailbox?
 
-Hi!
-
-> > > If you guys instead want me to pick these both into my fixes
-> > > branch, just let me know and I'll do the explaining why these
-> > > are needed as fixes. Basically we no longer have a way to enable
-> > > the LCD backlight for droid4 manually starting with v5.6-rc1
-> > > unlike earlier.
-> >=20
-> > If you are willing to do that, it looks like good solution from my
-> > point of view.
->=20
-> OK. I'll apply them but won't push out yet in case Lee is already
-> applying the driver change..
->=20
-> Pavel, care to ack the dts patch?
-
-It looks okay to me (but did not test it yet).
-
-Acked-by: Pavel Machek <pavel@ucw.cz>
-
-Thanks,
-									Pavel
-
---=20
-(english) http://www.livejournal.com/~pavelmachek
-(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
-g.html
-
---AhhlLboLdkugWU4S
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: Digital signature
-
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1
-
-iEYEARECAAYFAl5NysAACgkQMOfwapXb+vKgwQCfSG1WQ+wP9YnFU9eAwSt70YBM
-p5IAn3MbCGg5s3cuMBDzM1Q7mLOb3XWJ
-=1Ygd
------END PGP SIGNATURE-----
-
---AhhlLboLdkugWU4S--
-
-
---===============1191207725374678504==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Reported-by: Iuliana Prodan <iuliana.prodan@nxp.com>
+> ---
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1191207725374678504==--
-
