@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF98D163DCC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:37:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7548A163DC9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:36:32 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PyNE1wyzUtyc3JV29yPxcL03NmdBXZjlEXkgijyG0Co=; b=LzqahtJeqRXe5P
-	uvJCOFc/667sD8pxKmz+AW/S8Z6GKAsS0GMLLUGYgh/k837RSejc5hfWGistML1HbxhWpoH+BlJsd
-	xVWKLx69W74YRkez5v/YgQnrKIuE/1lHvoOCo2KUCOMrNvVHWT5RNY3fTpJ0ZDA6C1FWGHp+AI7tz
-	PkwlDUf2/vsGE7KrIrU0f3vXgic8x/R714kaPTmImaiNsOT0TTbsfHWX8wWAn9wsCwNJnceIFfCcg
-	hoEpojbA2kNQ/dyq07EmQzsqeeQ/cyVnp6vEQsqlCct5SH9E0o4hogU4XWh+MF/yBktseCLih6+dd
-	PgfXYtM/rpsYENTteGRQ==;
+	List-Owner; bh=eqTNnVTzQ0Q3AwzBvFTA32hTL4czFO37HfI20hXKufo=; b=BWyRADxb1dBRoz
+	EDiTXqynuTuq/U/6WLPmtsk0Yd1D92UAjJZgLvD/EUh3h9KZbcA5YDF0U1T16+s+BdB/godQp9zXZ
+	takFcolTMAIsikS2pE20pC1TNzZeWcjE2b3IvfH0Vvwag6qr6G7uIb3OqOo/QLZH1+lYKCL8vGqN9
+	I2obZKEXYHDFcp4HW4IEvfMf3DGaqarCiF9m/j9PvkVwqorIxjmPLwX/Waiszt/mCc/qZPTLCzR/a
+	pG0hoZY/6AnXWPgZYfPhiBarh3I+4GpCs8cyDl0HRoPWbFZd37VpPUQn/amdpmnE8QXxXpjgi6bw1
+	27Bk/1XiINUwvbuM0EEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Juv-0002RQ-8B; Wed, 19 Feb 2020 07:37:09 +0000
+	id 1j4JuH-0001mx-SW; Wed, 19 Feb 2020 07:36:29 +0000
 Received: from [167.172.186.51] (helo=shell.v3.sk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Jrx-0007OK-45
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:34:08 +0000
+ id 1j4Jrx-0007PJ-S5
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:34:09 +0000
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 13665E007A;
- Wed, 19 Feb 2020 07:34:17 +0000 (UTC)
+ by zimbra.v3.sk (Postfix) with ESMTP id 375D1E005C;
+ Wed, 19 Feb 2020 07:34:19 +0000 (UTC)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id mWa3L8iDaQ_k; Wed, 19 Feb 2020 07:34:13 +0000 (UTC)
+ with ESMTP id ytSnHxQJ2Uja; Wed, 19 Feb 2020 07:34:14 +0000 (UTC)
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 8B236E0052;
- Wed, 19 Feb 2020 07:34:13 +0000 (UTC)
+ by zimbra.v3.sk (Postfix) with ESMTP id 04B20E006F;
+ Wed, 19 Feb 2020 07:34:14 +0000 (UTC)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id P04ULaU_ck5M; Wed, 19 Feb 2020 07:34:13 +0000 (UTC)
+ with ESMTP id VudPmGfcJW79; Wed, 19 Feb 2020 07:34:13 +0000 (UTC)
 Received: from furthur.lan (unknown [109.183.109.54])
- by zimbra.v3.sk (Postfix) with ESMTPSA id F18E1E0031;
- Wed, 19 Feb 2020 07:34:12 +0000 (UTC)
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 64067DFCA2;
+ Wed, 19 Feb 2020 07:34:13 +0000 (UTC)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH 01/10] clk: mmp2: Remove a unused prototype
-Date: Wed, 19 Feb 2020 08:33:44 +0100
-Message-Id: <20200219073353.184336-2-lkundrak@v3.sk>
+Subject: [PATCH 02/10] clk: mmp2: Constify some strings
+Date: Wed, 19 Feb 2020 08:33:45 +0100
+Message-Id: <20200219073353.184336-3-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200219073353.184336-1-lkundrak@v3.sk>
 References: <20200219073353.184336-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_233405_400440_67DA00F8 
-X-CRM114-Status: UNSURE (   6.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200218_233406_227461_869632B2 
+X-CRM114-Status: GOOD (  10.45  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -80,27 +79,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no mmp_clk_register_pll2() routine.
+All the parent clock names for the muxes are constant. Add const.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- drivers/clk/mmp/clk.h | 3 ---
- 1 file changed, 3 deletions(-)
+ drivers/clk/mmp/clk-mix.c     |  2 +-
+ drivers/clk/mmp/clk-of-mmp2.c | 13 +++++++------
+ drivers/clk/mmp/clk.h         |  4 ++--
+ 3 files changed, 10 insertions(+), 9 deletions(-)
 
+diff --git a/drivers/clk/mmp/clk-mix.c b/drivers/clk/mmp/clk-mix.c
+index d2cd36c54474f..7a351ec65564e 100644
+--- a/drivers/clk/mmp/clk-mix.c
++++ b/drivers/clk/mmp/clk-mix.c
+@@ -441,7 +441,7 @@ const struct clk_ops mmp_clk_mix_ops = {
+ 
+ struct clk *mmp_clk_register_mix(struct device *dev,
+ 					const char *name,
+-					const char **parent_names,
++					const char * const *parent_names,
+ 					u8 num_parents,
+ 					unsigned long flags,
+ 					struct mmp_clk_mix_config *config,
+diff --git a/drivers/clk/mmp/clk-of-mmp2.c b/drivers/clk/mmp/clk-of-mmp2.c
+index 6e71591e63a00..ee086d9714160 100644
+--- a/drivers/clk/mmp/clk-of-mmp2.c
++++ b/drivers/clk/mmp/clk-of-mmp2.c
+@@ -127,16 +127,16 @@ static void mmp2_pll_init(struct mmp2_clk_unit *pxa_unit)
+ static DEFINE_SPINLOCK(uart0_lock);
+ static DEFINE_SPINLOCK(uart1_lock);
+ static DEFINE_SPINLOCK(uart2_lock);
+-static const char *uart_parent_names[] = {"uart_pll", "vctcxo"};
++static const char * const uart_parent_names[] = {"uart_pll", "vctcxo"};
+ 
+ static DEFINE_SPINLOCK(ssp0_lock);
+ static DEFINE_SPINLOCK(ssp1_lock);
+ static DEFINE_SPINLOCK(ssp2_lock);
+ static DEFINE_SPINLOCK(ssp3_lock);
+-static const char *ssp_parent_names[] = {"vctcxo_4", "vctcxo_2", "vctcxo", "pll1_16"};
++static const char * const ssp_parent_names[] = {"vctcxo_4", "vctcxo_2", "vctcxo", "pll1_16"};
+ 
+ static DEFINE_SPINLOCK(timer_lock);
+-static const char *timer_parent_names[] = {"clk32", "vctcxo_4", "vctcxo_2", "vctcxo"};
++static const char * const timer_parent_names[] = {"clk32", "vctcxo_4", "vctcxo_2", "vctcxo"};
+ 
+ static DEFINE_SPINLOCK(reset_lock);
+ 
+@@ -190,7 +190,7 @@ static void mmp2_apb_periph_clk_init(struct mmp2_clk_unit *pxa_unit)
+ }
+ 
+ static DEFINE_SPINLOCK(sdh_lock);
+-static const char *sdh_parent_names[] = {"pll1_4", "pll2", "usb_pll", "pll1"};
++static const char * const sdh_parent_names[] = {"pll1_4", "pll2", "usb_pll", "pll1"};
+ static struct mmp_clk_mix_config sdh_mix_config = {
+ 	.reg_info = DEFINE_MIX_REG_INFO(4, 10, 2, 8, 32),
+ };
+@@ -201,11 +201,12 @@ static DEFINE_SPINLOCK(usbhsic1_lock);
+ 
+ static DEFINE_SPINLOCK(disp0_lock);
+ static DEFINE_SPINLOCK(disp1_lock);
+-static const char *disp_parent_names[] = {"pll1", "pll1_16", "pll2", "vctcxo"};
++static const char * const disp_parent_names[] = {"pll1", "pll1_16", "pll2", "vctcxo"};
+ 
+ static DEFINE_SPINLOCK(ccic0_lock);
+ static DEFINE_SPINLOCK(ccic1_lock);
+-static const char *ccic_parent_names[] = {"pll1_2", "pll1_16", "vctcxo"};
++static const char * const ccic_parent_names[] = {"pll1_2", "pll1_16", "vctcxo"};
++
+ static struct mmp_clk_mix_config ccic0_mix_config = {
+ 	.reg_info = DEFINE_MIX_REG_INFO(4, 17, 2, 6, 32),
+ };
 diff --git a/drivers/clk/mmp/clk.h b/drivers/clk/mmp/clk.h
-index 70bb73257647a..5bcbced3f458e 100644
+index 5bcbced3f458e..37d1e1d7b664c 100644
 --- a/drivers/clk/mmp/clk.h
 +++ b/drivers/clk/mmp/clk.h
-@@ -124,9 +124,6 @@ extern struct clk *mmp_clk_register_gate(struct device *dev, const char *name,
- 			u32 val_disable, unsigned int gate_flags,
- 			spinlock_t *lock);
- 
--
--extern struct clk *mmp_clk_register_pll2(const char *name,
--		const char *parent_name, unsigned long flags);
- extern struct clk *mmp_clk_register_apbc(const char *name,
- 		const char *parent_name, void __iomem *base,
- 		unsigned int delay, unsigned int apbc_flags, spinlock_t *lock);
+@@ -97,7 +97,7 @@ struct mmp_clk_mix {
+ extern const struct clk_ops mmp_clk_mix_ops;
+ extern struct clk *mmp_clk_register_mix(struct device *dev,
+ 					const char *name,
+-					const char **parent_names,
++					const char * const *parent_names,
+ 					u8 num_parents,
+ 					unsigned long flags,
+ 					struct mmp_clk_mix_config *config,
+@@ -193,7 +193,7 @@ void mmp_register_gate_clks(struct mmp_clk_unit *unit,
+ struct mmp_param_mux_clk {
+ 	unsigned int id;
+ 	char *name;
+-	const char **parent_name;
++	const char * const *parent_name;
+ 	u8 num_parents;
+ 	unsigned long flags;
+ 	unsigned long offset;
 -- 
 2.24.1
 
