@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50690164125
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:02:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DA20164127
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:02:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zTDYtmpiEDNKKido3lSn3DNzdx8Zr/MyXfJIfwjHbqU=; b=MM1qolesZdljkR
-	klcUIIHXp0pzxZgLyoqfv0K7VJprpsyhvOWQ2dod5EU5c0fGf7cwNOy1XXfpj7cp72vI128LC3u77
-	/1A1XZbT2JcrAqGSFymkB3sI/X1Aqs9yMJ+8o+sqEMoex4d5ipCGfvqxbn2Vy4TOTQkXfdQiCl3lg
-	d4U/c2cOUtT+qJojTG2SurfNtcMFEwyYsi7ltoLWMWJ8pO4JwRrMIwy0zSmYwdBkL0rnRtsnRcHHc
-	BkBtOFwl8yT4TX3mBqwOySQWnvIoGCmmAy1ZvYz5zPp9nCwf7imEGTBCm6DxiJXvJsDCTvNtIk3nO
-	kYjhrKLVVZ4O3qCxqdCg==;
+	List-Owner; bh=48W8JVMa8o/BKxvqglNnnYDU39LLfco3DGx/qbU+t3k=; b=JUDD89bfvpFfjT
+	g7q7PpO09CDIwRHC9Hxwzhgo9/O2CVCUohV97QLwBKTNr8YQogpqno6HZfguJ6E7W5Vcm/ATZ6++/
+	bX/MPAVguSXiLg4kO444QOkPJlqCOsnUwo+oeorn07DPgXU7lKnRNP+5fKT01rRLOXg5z8zu4a2CF
+	ig80hCvQ4MjBhPVYprIDBjZtVdja8yoLlB+YdWKKqsHdOsT715lrev1j+G2dmLLcOASRnLVtQXuqW
+	goz9GEc4i7FL3e9RS8fPHs8Rd4W/aNbUsUvjnvvpIEFqJHQ69ltQxTVbWE8miRcuTXCakT8creKi2
+	s9H6zC08DhyDvCWRm1UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4MBQ-00056y-6T; Wed, 19 Feb 2020 10:02:20 +0000
-Received: from mail-eopbgr30059.outbound.protection.outlook.com ([40.107.3.59]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1j4MBj-0005LR-7C; Wed, 19 Feb 2020 10:02:39 +0000
+Received: from mail-eopbgr60084.outbound.protection.outlook.com ([40.107.6.84]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4M9O-0002FA-U6
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:00:16 +0000
+ id 1j4M9V-0003RI-CN
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:00:22 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ZRgSXu7+D2HNLjkvica3zOoswzyuGlz9uOsn7ikcQfnRe+3/+p2OJ4wWZLeQQS4KbuCcLhMbsy0EwgoqxgIlSS0QxEGphWn79zzVN483BYQssnhYcU3M/anGLrDNgzYOfXwB/7vohovI4ui4tEK1uIi9Ea/k2H5KK9/ieYRqTkVvVPHGrDCphFt+NySmLoMa4yKBS4rtC6jo25NRzBEgKzssomVg8Y2bSTdZ0cA2IKh0M3rhYiJOV/WMzxaGvPpgtNgq0+ETDl6FhJTWk0dJjtVCjznGpWHTkBkOQnMK8ApG1a76sU1DLlfoCLTsAiVY4uCbf5PB6lXAaHapWC5bTQ==
+ b=gtlFd/FcrFOm+R75J4krxxW6kHY4bCj+Ekw7JTOPoRJB2HUjWQRtnPidhN6DTXZWNMqXXg0iXe5moMU5Vo6KIi22V55ozfBpvhS6RhNVWmYoqWQ8pDjyBO2LH5FLh2H3mSLhBiIVkWC5l8EYFuAqOqrcKuxQ9GHrQNBIJPTuVDEqPCFUpGAvZ+pj/rfHiY+XR5X0OzMpWaIB8YafM3tr0NZA6T6Cwde1yNeCCQEbl20ZDeSkgLcA7VRKi4tLjB5iKqpe2N1ngQgf/jE17HsjFN1RznsNe6PXVEeEj4w8tS9xRvabaRBb1sd6SR2+SNKJak8e/X0Jqjn1PXxKAUHmtw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=NnIP/LvffcyQRkVUHMCeJcefBacRUeRSPqlu5t1wdIc=;
- b=bYLAHOMOMxPleIkPaB+rRXXnVPlwbUbrLhhL32AkAAZrw0UIg5+EEDHEWvpYpmiJOjIcJX9pJuz9mcqq3qjgqt8Aio7+0L+GjKkeKVSWlj/aYOw11kZXJYu7H0QzVVVpWi47KY1bZYTRMh/ohq6mCOJ1JMLKkz7g54oUUncW0RzdFWHnpjWghhl2aSQvjqUMzawZAJIiMnn6k8PBTzcr8tE4R+Fs2f8x9uxudq5RQIp+Y8TUTd6lGbICOQ+kVvwovxst4y9QSk44rO31JuiiokcBijXihHqNH1YSEEn9i+ebdrs54EfcGsx51fnmGb3Uq7tSVPcZDl5dC/00A4FXWg==
+ bh=X3Oy1dR0aG8YGDdnOFrIOVj6WElHxZlH/iIKD9NQQQI=;
+ b=hsJxz0Py/6bFc+mf/pU5CguHmpiqQdvV7/2g469fkyfqmfmPnMH3ZttJf4oxsxmkvVmdusmi9Pav7fAkV84aydw3Gpf9rCLZ0ty7YjmWaVl53wTzZM05ifKyf24397G86RW0X3RnS3Mm9EFoOw65MC9otEaqfYSeMb+0+uUEeWIfa68CUXRpKkzKIdIjJF5yLQRFzsVCHtVYjMzEs138L5521gkwSbjc6re+jVa4+6fNn8xTZh8Ho2ytCK8iC/pEnvuR7Kzli+O4Q2a8gC/XuISKCtxLrdKLTWwpfrNqv0DyhrAdU8ta3sa01pVPiFR3WtPbc8pDXoipHyrudETtIQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=NnIP/LvffcyQRkVUHMCeJcefBacRUeRSPqlu5t1wdIc=;
- b=shvOWKDqqJT3fsmWN/4oLTeIqr/cUWbDnbQE7qYELohvnu8LvMGqKU8HrLDWV4ToMFkobtSNzr4Vq0291hxWqeOCB5yh6sz1dhvcoSGzy0qr2JNA9qYMHa8vIPoFlvxmYQd40JRkUb7Yu2LU/HzfXineoIX3uSLZ7tpJshP493Q=
+ bh=X3Oy1dR0aG8YGDdnOFrIOVj6WElHxZlH/iIKD9NQQQI=;
+ b=gn2oQ9cJGP19prF0B5sXhGtoO+inScnQyrGtVlU99Kgj+UYglOg36GhIme/BbQ8Vg0W8EIciOjcuokr0VBPMcFO1YoZu+ALrARPlBnsvf3PFfWfTPImnDY178g2yuZtbxHv2pGkoA9Ec6xuphZ+GHuJD3Tykbce65bbp98dIm/U=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6514.eurprd04.prod.outlook.com (20.179.254.19) with Microsoft SMTP
+ AM0PR04MB6770.eurprd04.prod.outlook.com (52.132.214.149) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.17; Wed, 19 Feb 2020 10:00:13 +0000
+ 15.20.2729.31; Wed, 19 Feb 2020 10:00:17 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2729.032; Wed, 19 Feb 2020
- 10:00:13 +0000
+ 10:00:17 +0000
 From: peng.fan@nxp.com
 To: sboyd@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  festevam@gmail.com, abel.vesa@nxp.com, leonard.crestez@nxp.com
-Subject: [PATCH V3 4/4] clk: imx: imx8mn: use imx8m_clk_hw_composite_core
-Date: Wed, 19 Feb 2020 17:53:41 +0800
-Message-Id: <1582106022-20926-8-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH v3 4/4] clk: imx: imx8mp: fix a53 cpu clock
+Date: Wed, 19 Feb 2020 17:53:42 +0800
+Message-Id: <1582106022-20926-9-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1582106022-20926-1-git-send-email-peng.fan@nxp.com>
 References: <1582106022-20926-1-git-send-email-peng.fan@nxp.com>
@@ -64,46 +64,46 @@ MIME-Version: 1.0
 Received: from localhost.localdomain (119.31.174.66) by
  HK2PR0302CA0008.apcprd03.prod.outlook.com (2603:1096:202::18) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2750.8 via Frontend Transport; Wed, 19 Feb 2020 10:00:08 +0000
+ 15.20.2750.8 via Frontend Transport; Wed, 19 Feb 2020 10:00:13 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 25fd5413-824e-4ac9-482a-08d7b522831a
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6514:|AM0PR04MB6514:
+X-MS-Office365-Filtering-Correlation-Id: f308db0a-d74f-490b-3b62-08d7b52285ea
+X-MS-TrafficTypeDiagnostic: AM0PR04MB6770:|AM0PR04MB6770:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB6514D2D3BBACBBCB9213A71B88100@AM0PR04MB6514.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:361;
+X-Microsoft-Antispam-PRVS: <AM0PR04MB6770815FD086C1B433A0028C88100@AM0PR04MB6770.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:3173;
 X-Forefront-PRVS: 0318501FAE
 X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(366004)(396003)(136003)(39860400002)(189003)(199004)(4326008)(2616005)(956004)(6512007)(5660300002)(8936002)(9686003)(16526019)(186003)(478600001)(81166006)(81156014)(8676002)(36756003)(2906002)(6486002)(6506007)(86362001)(66946007)(52116002)(69590400006)(66556008)(66476007)(316002)(6666004)(26005)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6514;
+ SFS:(10009020)(4636009)(39860400002)(346002)(366004)(396003)(376002)(136003)(189003)(199004)(66476007)(66946007)(4326008)(66556008)(6666004)(5660300002)(86362001)(69590400006)(16526019)(8936002)(2906002)(316002)(956004)(6486002)(36756003)(52116002)(26005)(6506007)(186003)(478600001)(81166006)(8676002)(9686003)(2616005)(6512007)(81156014)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6770;
  H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; MX:1; A:1; 
 Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: kcy4GhvawcAn3/UjkaHLwT8e8mY0Z5G6IdbHjB3s+JVry7o+XEDGzaFK9Tuza65/FsAZOk5LxSGlWiWoePCna4JLdpHrz1mGFg2Ffa6nvvZvWQN1W4GIxxkt+8Uqb1BhWlS1V9+3VB1SHVBca9490wXOz3xYKDPL9SBW2ZHCXySDmjvLKEweemmufJlSlcW89SN8gTpxwmu5oUunFgxiWRt2w8Z9Uqyp4L14jfw1DDz7O/fSEuC/Ky1f2ktwEYe55AsCKTRZKQJSuxDVO8ooLHQkOjsBIXDLuQ6nYc6fStVd1g07+RB7pmfG8keuhWHuET8kViYpB92fSDZ/ucTzTyk6ySHoREgt6oBSJJefo4Cr4jTZAzrvqpH97C8PViYqY0l7HlOD/44GUvnJPiLS/iuHRN/nnUvX3ZZ9kJurC6CyqIEhZUA5hEMZkl9PiTwfXhSNU2LxKfCwW1/O7OTMZKc+TkzhskGdmB3I1cquU1w3DcQ1kNsO9b9Xi51FanWs0462hN3CiMAWuDpdIEkp2LUq31/c0N7rnlS13X68g11GxGh5ddpy9gVuZ0LkQZig
-X-MS-Exchange-AntiSpam-MessageData: NJpYp7jxQ8dvvlvww036xzhhuDdm72f5jwHzmecEhVB4dOrIioT/TeQCGaRoXCObrAkTyIxzhTP8JTN/PWIDdyYlFgdqmaYZ3wRcMjT1wMDhREjL+JmjLjnNLLsTgReNQJwH33VpdHQs1jRQyJfmGA==
+X-Microsoft-Antispam-Message-Info: 5WnmOIZbeQ+hG3haYvRxAlTZZKJHYJVP3i3AFEom+yBzBkoA7gGztxopA/apTQjJaAkg001ZaecYnrs3kiBERYzgyhuxzSggT90pHCXXbQa4DwZY3Jsdsri7b/KzTFDidEIamf9b2LRHNolWr5xEsasPoS40RnLjLRAW0msPsoK4yhRbq+BQsFj6U4GKC9KlkF1qCVzVCJjILYcNFgN/WVdcnLJgiN+/b4MKqo2Aed+JrfPRY3VPiKcMihBSLyCk3hOrCDn6HEvLzYcFUcR7zuz3A3ojJQfswA8diNgAo66ar+Kk2lvyucnnkNCOA58ry2vF+RSpwo4Sixo5dZO8YSt6gQUbWrhBUzkRM7T4/Ig6IK1BN5CEuEk2cAlbGZcOrGxNbDgRLmgAectcDVMftD1KGxYS0scuipawgk9qkfXJ6FYiBYAxZrDnygNO8Kq7cUlfGKeWwxT7H+sVxqW9+abpNPtP+1eEsm/0v8jBg0TF9mXq8imtLvSaCTg+gWKRUBt6fkesz58M6wV9FeOMQdUVrOReiD8Ddy+VkTFKxugAbfovdNSOb84JySJXFmCr
+X-MS-Exchange-AntiSpam-MessageData: BYrnBWBoAo169dcoJH7e0i8szaYkKrlxk+MiQBpo7H9PY5AeC4HoVPUwyHuUa/1RpnTDpv0xTQIjpctB5cfA2E+G1HWwlX0MGTeyk8slpTkNkE4xhqgSAYJiCJPybBI9mfiEIraEbiRYfpAUWI8fKA==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 25fd5413-824e-4ac9-482a-08d7b522831a
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Feb 2020 10:00:13.1316 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: f308db0a-d74f-490b-3b62-08d7b52285ea
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Feb 2020 10:00:17.8629 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: m+fEwVWglCgxiMueub66Dfr6djRkxMZiFCLbL/OuGPgu+7HcG8/HcyNLoogmlMKeAiNsU2knMCfGPfUHkt/MMw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6514
+X-MS-Exchange-CrossTenant-UserPrincipalName: EP9Nntow6ExhkMXPb4tWSGU38SwmbOFPd2dOwgJ3imgEj6x5aNcKPC1naxQbqLCPgqqx+3x6MwD2G9YtQ9Ra6g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6770
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_020015_017896_0AE10D91 
-X-CRM114-Status: GOOD (  10.78  )
+X-CRM114-CacheID: sfid-20200219_020021_455229_D61D3D8D 
+X-CRM114-Status: GOOD (  12.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.3.59 listed in list.dnswl.org]
+ no trust [40.107.6.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -136,37 +136,84 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-Use imx8m_clk_hw_composite_core to simplify code.
+The A53 CCM clk root only accepts input up to 1GHz, CCM A53 root
+signoff timing is 1Ghz, however the A53 core which sources from CCM
+root could run above 1GHz which voilates the CCM.
 
-Reviewed-by: Abel Vesa <abel.vesa@nxp.com>
+There is a CORE_SEL slice before A53 core, we need configure the
+CORE_SEL slice source from ARM PLL, not A53 CCM clk root.
+
+The A53 CCM clk root should only be used when need to change ARM PLL
+frequency.
+
+Add arm_a53_core clk that could source from arm_a53_div and arm_pll_out.
+Configure a53 ccm root sources from 800MHz sys pll
+Configure a53 core sources from arm_pll_out
+Mark arm_a53_core as critical clk
+
+Reviewed-by: Jacky Bai <ping.bai@nxp.com>
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- drivers/clk/imx/clk-imx8mn.c | 10 +++-------
- 1 file changed, 3 insertions(+), 7 deletions(-)
+ drivers/clk/imx/clk-imx8mp.c             | 16 ++++++++++++----
+ include/dt-bindings/clock/imx8mp-clock.h |  3 ++-
+ 2 files changed, 14 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-index c5e7316b4c66..ce2ba3dce483 100644
---- a/drivers/clk/imx/clk-imx8mn.c
-+++ b/drivers/clk/imx/clk-imx8mn.c
-@@ -413,15 +413,11 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
+diff --git a/drivers/clk/imx/clk-imx8mp.c b/drivers/clk/imx/clk-imx8mp.c
+index a16af4fce044..d67ee36b84de 100644
+--- a/drivers/clk/imx/clk-imx8mp.c
++++ b/drivers/clk/imx/clk-imx8mp.c
+@@ -34,6 +34,8 @@ static const char * const imx8mp_a53_sels[] = {"osc_24m", "arm_pll_out", "sys_pl
+ 					       "sys_pll2_1000m", "sys_pll1_800m", "sys_pll1_400m",
+ 					       "audio_pll1_out", "sys_pll3_out", };
  
- 	/* CORE */
- 	hws[IMX8MN_CLK_A53_SRC] = imx_clk_hw_mux2("arm_a53_src", base + 0x8000, 24, 3, imx8mn_a53_sels, ARRAY_SIZE(imx8mn_a53_sels));
--	hws[IMX8MN_CLK_GPU_CORE_SRC] = imx_clk_hw_mux2("gpu_core_src", base + 0x8180, 24, 3,  imx8mn_gpu_core_sels, ARRAY_SIZE(imx8mn_gpu_core_sels));
--	hws[IMX8MN_CLK_GPU_SHADER_SRC] = imx_clk_hw_mux2("gpu_shader_src", base + 0x8200, 24, 3, imx8mn_gpu_shader_sels,  ARRAY_SIZE(imx8mn_gpu_shader_sels));
- 	hws[IMX8MN_CLK_A53_CG] = imx_clk_hw_gate3("arm_a53_cg", "arm_a53_src", base + 0x8000, 28);
--	hws[IMX8MN_CLK_GPU_CORE_CG] = imx_clk_hw_gate3("gpu_core_cg", "gpu_core_src", base + 0x8180, 28);
--	hws[IMX8MN_CLK_GPU_SHADER_CG] = imx_clk_hw_gate3("gpu_shader_cg", "gpu_shader_src", base + 0x8200, 28);
--
- 	hws[IMX8MN_CLK_A53_DIV] = imx_clk_hw_divider2("arm_a53_div", "arm_a53_cg", base + 0x8000, 0, 3);
--	hws[IMX8MN_CLK_GPU_CORE_DIV] = imx_clk_hw_divider2("gpu_core_div", "gpu_core_cg", base + 0x8180, 0, 3);
--	hws[IMX8MN_CLK_GPU_SHADER_DIV] = imx_clk_hw_divider2("gpu_shader_div", "gpu_shader_cg", base + 0x8200, 0, 3);
++static const char * const imx8mp_a53_core_sels[] = {"arm_a53_div", "arm_pll_out", };
 +
-+	hws[IMX8MN_CLK_GPU_CORE_DIV] = imx8m_clk_hw_composite_core("gpu_core_div", imx8mn_gpu_core_sels, base + 0x8180);
-+	hws[IMX8MN_CLK_GPU_SHADER_DIV] = imx8m_clk_hw_composite_core("gpu_shader_div", imx8mn_gpu_shader_sels, base + 0x8200);
+ static const char * const imx8mp_m7_sels[] = {"osc_24m", "sys_pll2_200m", "sys_pll2_250m",
+ 					      "vpu_pll_out", "sys_pll1_800m", "audio_pll1_out",
+ 					      "video_pll1_out", "sys_pll3_out", };
+@@ -554,6 +556,9 @@ static int imx8mp_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MP_CLK_HSIO_AXI_DIV] = imx_clk_hw_divider2("hsio_axi_div", "hsio_axi_cg", ccm_base + 0x8380, 0, 3);
+ 	hws[IMX8MP_CLK_MEDIA_ISP_DIV] = imx_clk_hw_divider2("media_isp_div", "media_isp_cg", ccm_base + 0x8400, 0, 3);
  
- 	/* BUS */
- 	hws[IMX8MN_CLK_MAIN_AXI] = imx8m_clk_hw_composite_critical("main_axi", imx8mn_main_axi_sels, base + 0x8800);
++	/* CORE SEL */
++	hws[IMX8MP_CLK_A53_CORE] = imx_clk_hw_mux2_flags("arm_a53_core", ccm_base + 0x9880, 24, 1, imx8mp_a53_core_sels, ARRAY_SIZE(imx8mp_a53_core_sels), CLK_IS_CRITICAL);
++
+ 	hws[IMX8MP_CLK_MAIN_AXI] = imx8m_clk_hw_composite_critical("main_axi", imx8mp_main_axi_sels, ccm_base + 0x8800);
+ 	hws[IMX8MP_CLK_ENET_AXI] = imx8m_clk_hw_composite("enet_axi", imx8mp_enet_axi_sels, ccm_base + 0x8880);
+ 	hws[IMX8MP_CLK_NAND_USDHC_BUS] = imx8m_clk_hw_composite_critical("nand_usdhc_bus", imx8mp_nand_usdhc_sels, ccm_base + 0x8900);
+@@ -724,11 +729,14 @@ static int imx8mp_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MP_CLK_VPU_ROOT] = imx_clk_hw_gate4("vpu_root_clk", "vpu_bus", ccm_base + 0x4630, 0);
+ 	hws[IMX8MP_CLK_AUDIO_ROOT] = imx_clk_hw_gate4("audio_root_clk", "ipg_root", ccm_base + 0x4650, 0);
+ 
+-	hws[IMX8MP_CLK_ARM] = imx_clk_hw_cpu("arm", "arm_a53_div",
+-					     hws[IMX8MP_CLK_A53_DIV]->clk,
+-					     hws[IMX8MP_CLK_A53_SRC]->clk,
++	clk_hw_set_parent(hws[IMX8MP_CLK_A53_SRC], hws[IMX8MP_SYS_PLL1_800M]);
++	clk_hw_set_parent(hws[IMX8MP_CLK_A53_CORE], hws[IMX8MP_ARM_PLL_OUT]);
++
++	hws[IMX8MP_CLK_ARM] = imx_clk_hw_cpu("arm", "arm_a53_core",
++					     hws[IMX8MP_CLK_A53_CORE]->clk,
++					     hws[IMX8MP_CLK_A53_CORE]->clk,
+ 					     hws[IMX8MP_ARM_PLL_OUT]->clk,
+-					     hws[IMX8MP_SYS_PLL1_800M]->clk);
++					     hws[IMX8MP_CLK_A53_DIV]->clk);
+ 
+ 	imx_check_clk_hws(hws, IMX8MP_CLK_END);
+ 
+diff --git a/include/dt-bindings/clock/imx8mp-clock.h b/include/dt-bindings/clock/imx8mp-clock.h
+index 2fab63186bca..c92d1f4117eb 100644
+--- a/include/dt-bindings/clock/imx8mp-clock.h
++++ b/include/dt-bindings/clock/imx8mp-clock.h
+@@ -294,7 +294,8 @@
+ #define IMX8MP_CLK_DRAM_ALT_ROOT		285
+ #define IMX8MP_CLK_DRAM_CORE			286
+ #define IMX8MP_CLK_ARM				287
++#define IMX8MP_CLK_A53_CORE			288
+ 
+-#define IMX8MP_CLK_END				288
++#define IMX8MP_CLK_END				289
+ 
+ #endif
 -- 
 2.16.4
 
