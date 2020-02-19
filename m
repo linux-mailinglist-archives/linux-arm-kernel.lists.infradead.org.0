@@ -2,144 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D815616411C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:01:18 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C420A1641CF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:23:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NMUjHgXgf1Edv+eYMIeY6mrZ/6IwydOu9rukqQGCR/Y=; b=ZtvNybMqBfleki
-	SqgkWgzXSJHKLjf+L3WQKcC7yGEWmbDE3rUy2iM891qSaxgGr7TUQdI37oBhHqJex0Smxn/WlF/3V
-	WPvGy0TPknRGXu6HPlklTvNEibW1r7YQNK/io7WiYj5ZZ6lxU7L4Q/7PJFsXE9f8xpWm9tefQhhx+
-	J6U/CI/OZOeD9pZD8+LaEK8yF7E4/Vnr7nS5zwHNLRCKux7rDBE3d4QaSNSxkpesjujZL6TKJmDyb
-	H3k/31FGFKNMK1aTEJoEqPViN666yaq1dZKDJk7UI8ONubTVPWiMGWCVUiDgylhS8QdSJTSOhspxN
-	yPpCkqpE0yEU/CFV26hQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sAY6/i7ZEksOAXyGZ3Iqvi75Q+grGJ/RzXnEYLpL2ks=; b=jfhMF0eFW3EwIZ
+	8RV3P7Liu/OsIevlSXFevZTy15l0aa7O6TQO9kVlCD8Ew+mPtfIpsa5Km+E9ifhxjExTWv/7mP7y9
+	BAblKxoxpPBxwZdaHZIwYhYtguTAUid6DP8+v+jUQJ8xPWjYzAS0XdE5XunbbHC066Wcenk4w3zHQ
+	sI0raj371Z0uh2Es874TKWxhWeyBRcrbwu00Q+1xoOTpTG1RJ17QZ5p55WARxN8wg9kc/9WE+KBNO
+	AGBdyohHFFY2klaa6anmLB4faGdmo/+ik7Xo5RyrIc3pN0u89w55EV9p4s8c1X6g5xEDv/2xAxf6d
+	7jx+CwCdJsxKsDakLvOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4MAI-0003yU-4c; Wed, 19 Feb 2020 10:01:10 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j4MVs-0005Kq-DF; Wed, 19 Feb 2020 10:23:28 +0000
+Received: from mail-eopbgr40054.outbound.protection.outlook.com ([40.107.4.54]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4M95-0001uN-Sn
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:59:59 +0000
-Received: by mail-wr1-x441.google.com with SMTP id u6so27509634wrt.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 01:59:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=B3zIt1X3TLLEJ/qVzyEqjATuS1sOPE0vjwCh7HxvDk0=;
- b=YTuYyL3/d/NefU0us0Yc50Xo/+F7SLC2CSWULWOu3o0PgT0QtMC+p4uPgNmHDdfJut
- Y81gwr58cw17rnJyUxA8eOxbS696hGXcI4NAJ9Vbjj8hbfqU8bBFfKq6T4rfi66TACfd
- IqUbFMUUamH/6eAPH2vN5t7TmMAUuR2JRK4kKjW5aU876fvd+5Et6VOop6RFzM57tdyq
- fNCgAr5n/avoWSLDHUKumPe0eMLTDpMJDKOVvbnbaBR5uHe1Myu8ffU9bc1VzqBjhhJR
- tbF636OaD87NAYsV366250mvLRU1qI3SvVST5D7bsYSu4NLvoFNl4/CAW/0fHjWunsD4
- Ia0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=B3zIt1X3TLLEJ/qVzyEqjATuS1sOPE0vjwCh7HxvDk0=;
- b=YAaq6GKxPqEvrPWRfy5Xh1N71ppBDTtkgdxp8GaQAulyFPNLEZCRy5PPMAFbc3bgps
- KC0xDec+5yJbPdpFd8yOAfObk3DOGxi6xCS2taoNg5OFAn4wIztflDf5+MzajvLqvOfw
- Gh3zJN7VcqDBv1Q9TIgywK5PElMb/wrfw7o9CjYtxS8s0h+2b+5Y0EMn1aU/1vzzoYTN
- js8wcu6ebd9kjKq+UKpoVGqti2Z981Tw2DF0wBAN1daXsn5uzvqJFMzrwKhEt5rex5uL
- SoCVAo1ViIX5/Z4XyN6wmPerrzCgIOzetycAnD7wmNCA5bKsUM/Gjkmdr0ghbM4bEHfT
- SyXA==
-X-Gm-Message-State: APjAAAXBlri36p2nA50+InK4pPXlGvtiHst93zOlswXB4uXbLznMkgA6
- v3H6Qjvl9ZRJlZit5QoML8PyxQ==
-X-Google-Smtp-Source: APXvYqyk/C2gk5Bk1VVqFf2/WlrXPGDkKgqIsYomJ1NOoLY2w5WaE02Ml5U1AANrPUCBBh3X6GYbAQ==
-X-Received: by 2002:a5d:6a02:: with SMTP id m2mr34768477wru.52.1582106393467; 
- Wed, 19 Feb 2020 01:59:53 -0800 (PST)
-Received: from [10.1.3.173]
- (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id c9sm2278046wme.41.2020.02.19.01.59.52
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 19 Feb 2020 01:59:52 -0800 (PST)
-Subject: Re: [PATCH v5 1/4] media: v4l2-mem2mem: handle draining, stopped and
- next-buf-is-last states
-To: Hans Verkuil <hverkuil@xs4all.nl>, mchehab@kernel.org
-References: <20200206082648.25184-1-narmstrong@baylibre.com>
- <20200206082648.25184-2-narmstrong@baylibre.com>
- <487e02e9-d7e3-04b6-7f30-ee0c4f154a1f@xs4all.nl>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <8ab4ceef-75df-e0e0-6322-5b99ddff7c04@baylibre.com>
-Date: Wed, 19 Feb 2020 10:59:52 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j4MVc-0005Jz-Lg
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:23:13 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=IyzqVx1DYcKAx5uk+u9b2TVeX0MYd+8fIVNq8v72KMI8GSfllGBeCzVfiF6Nq8V5yko+e6/aLqGt3LwBLvG8TScCqxcSf7EmEgiZI+08Ryw+2zY4NqT7OJHzCy15QWWj26T42CQ4q07137Cyog9PVxbOUVP9oL6JDRF6ZAA7pSaeX0ArsJbN8Q3BQjrGzDPKLoSbcOb4rW6xf3pJQvfkeYaW1jT+ueHznAwAXOXccOxtwJHxx1FuFUwL4E+9mxosbbdnuS+q/PRGwpqQB73bcO/AdsR+9znTPIh1TtzwxQu4UpNdlBQt3mL9QA5b0F62G2Oj484/RwgEveZrn5hjEw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=qUs0+8jKfz67XE1EDU0COV3hY0F1wHrKeEL5stXCfh4=;
+ b=dLERd8OlQEae1PdD55jYvQFqDsHy4KiiUv7WZjnRK/YN3UzjKX/5H1mf+n5ly6G3rNxW8MtEJdtRBb+hcihdaWuGLsG63GPFH9OiGLDPdKGAA0rHHcXyF7Vj9iFFBuCT0kIcwAzo4KgbrtEH0ErhrSsabGs20yDBLNGln1FsWzB80fqFy+21dGPSwHxXA1ZY9gSnzYTQ4CvJtxHpVwhbgLP1u/GsIIU/RuOiEnn5PPXuy+T80WZbPnnNwMkejDuQ+PutbENbprW6zjv/HuteoWJr6G98YCl5xQDMLFS+Jvf/HXbt1qepBOkK9Y/Eqb12lFet+tW6001nkyHkc5tIYA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=qUs0+8jKfz67XE1EDU0COV3hY0F1wHrKeEL5stXCfh4=;
+ b=eDnN/5gAkDA4EqKLXXJkynbU7v5k91mUUAuN0McGNI/5X7WG9ruOyvvY30TZ2TA0UrYnx/kxpUxFxnpFZkIex9dqaw4f9//Jdxs9c9bJ0ECdBtPI/kOJ/l4nreiXVVyJI56QYhyzZirfag4wSrj4PrEOrJ3G5ZXQtMEcJ8DmB2Q=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4676.eurprd04.prod.outlook.com (52.135.152.10) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2729.31; Wed, 19 Feb 2020 10:23:08 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2729.032; Wed, 19 Feb 2020
+ 10:23:08 +0000
+From: peng.fan@nxp.com
+To: sboyd@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ festevam@gmail.com, abel.vesa@nxp.com, leonard.crestez@nxp.com
+Subject: [PATCH RESEND v3 0/4] clk: imx: imx8m: fix a53 cpu clock
+Date: Wed, 19 Feb 2020 18:17:05 +0800
+Message-Id: <1582107429-21123-1-git-send-email-peng.fan@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-ClientProxiedBy: HKAPR04CA0014.apcprd04.prod.outlook.com
+ (2603:1096:203:d0::24) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
 MIME-Version: 1.0
-In-Reply-To: <487e02e9-d7e3-04b6-7f30-ee0c4f154a1f@xs4all.nl>
-Content-Language: en-US
+Received: from localhost.localdomain (119.31.174.66) by
+ HKAPR04CA0014.apcprd04.prod.outlook.com (2603:1096:203:d0::24) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.2729.23 via Frontend Transport; Wed, 19 Feb 2020 10:23:04 +0000
+X-Mailer: git-send-email 2.7.4
+X-Originating-IP: [119.31.174.66]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 5e70990e-8b29-43ee-7a65-08d7b525b6e2
+X-MS-TrafficTypeDiagnostic: AM0PR04MB4676:|AM0PR04MB4676:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM0PR04MB46769F0274F66B552AEA784588100@AM0PR04MB4676.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
+X-Forefront-PRVS: 0318501FAE
+X-Forefront-Antispam-Report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(346002)(366004)(39860400002)(396003)(136003)(189003)(199004)(6512007)(9686003)(86362001)(81166006)(36756003)(6486002)(5660300002)(8936002)(8676002)(316002)(2906002)(478600001)(81156014)(66946007)(66476007)(66556008)(52116002)(186003)(69590400006)(26005)(6506007)(16526019)(4326008)(956004)(2616005)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4676;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+Received-SPF: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: wgbbEG2aSUB3dRoo7KwG0lokd86t6fsxg2NI3/H6xfTpjSVohyPv+xiD/D7bS/u3o6WDYmesSdrQKxX+Swl2uIQAaIwHGog2ZPAg/P5vMVSlyBBxqZMaOalSPlqJsH9ycRkB7bWGg4kDNtMwhAXwK2Ih8y9HxNZOSREF2BMvOxRJDYZpH9XxFzgykEVP9OAnS85L2dbOMeUPQHKznCI0rz4lB5CLQFtzyacoKGR0AnnG/5LfnO1MwqN9yv5Y0cXr4zGMmq/EHYMQQtZKF8xoMZRFFSay1/DvzCk3XRuNYIuNN7QMZSAlsQwF1btlKtRn8dcU+HaEZyHFQIEK1mtrNMsADrUkpRO3v7M/9qFk32hSg0DRsbM1MZWX4E8ijgxdPLCnWloq3mgh5I6bu/h360pMrooEgrXUpAEMsdygDVxBP6sg+wymZrj3XnGQDhE6NluHiXzbPZVqf6TMpQPB1J738ZHpBU8TfsPzYNrVQKH38pYITYl0VO5XAR2Fxr7Q+47kKMNE3Stp/fDSCq2uCufa3w6dDqvV3G5mvbzFOAa8/YH9HoKiSXPQjWF4z72A
+X-MS-Exchange-AntiSpam-MessageData: RSrON4Z9hRsWQV53vHUDoEPD6ZtFPrdPOAZTNejqhpSeBDY4tt5erMkD/udiRP7W4evltxdWfn9n8xEB3Vxdk5EN5TKpwgXLF6gET9GpaM9iIaWchbgHg1acKYCpQ6JYuE74KtmVSy2jQZbn9q7K5A==
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5e70990e-8b29-43ee-7a65-08d7b525b6e2
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Feb 2020 10:23:08.6325 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 6rOrClj0yZtWOs2AXbMzKGo3fj3lSr7Hgs0OZUwRLYW6SUihlTJzeKZX5rhSKgJkswESyX0zCQ4fNgDsUtUxzA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4676
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_015956_162663_499000B4 
-X-CRM114-Status: GOOD (  34.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200219_022312_707257_9F587C15 
+X-CRM114-Status: UNSURE (   7.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [40.107.4.54 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,484 +124,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: aisheng.dong@nxp.com, Peng Fan <peng.fan@nxp.com>, ping.bai@nxp.com,
+ anson.huang@nxp.com, linux-kernel@vger.kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Hans,
+From: Peng Fan <peng.fan@nxp.com>
 
-On 14/02/2020 16:54, Hans Verkuil wrote:
-> On 2/6/20 9:26 AM, Neil Armstrong wrote:
->> Since the draining and stop phase of the HW decoder mem2mem bahaviour is
-> 
-> behavior
-> 
->> now clearly defined, we can move handling of the following states to the
->> common v4l2-mem2mem core code:
->> - draining
->> - stopped
->> - next-buf-is-last
->>
->> By introducing the following v4l2-mem2mem APIS:
-> 
-> APIs
-> 
->> - v4l2_m2m_encoder_cmd/v4l2_m2m_ioctl_encoder_cmd to handle start/stop command
->> - v4l2_m2m_decoder_cmd/v4l2_m2m_ioctl_decoder_cmd to handle start/stop command
->> - v4l2_m2m_start_streaming to handle start of streaming of the de/encoder queue
->> - v4l2_m2m_stop_streaming to handle stop of streaming of the de/encoder queue
->> - v4l2_m2m_last_buffer_done to maek the current dest buffer as the last one
-> 
-> make
-> 
->>
->> And inline helpers:
->> - v4l2_m2m_mark_stopped to mark the de/encoding process as stopped
->> - v4l2_m2m_clear_state to clear the de/encoding state
->> - v4l2_m2m_dst_buf_is_last to detect the current dequeud dst_buf is the last
-> 
-> dequeued
-> 
->> - v4l2_m2m_has_stopped to detect the de/encoding stopped state
->> - v4l2_m2m_is_last_draining_src_buf to detect the currect source buffer should
-> 
-> current
-> 
->>  be the last processing before stopping the de/encoding process
->>
->> The special next-buf-is-last when min_buffers != 1 case is also handled
->> in v4l2_m2m_qbuf() by reusing the other introduced APIs.
->>
->> This state management has been stolen from the vicodec implementation,
->> and is no-op for drivers not calling the v4l2_m2m_encoder_cmd or
->> v4l2_m2m_decoder_cmd and v4l2_m2m_start_streaming/v4l2_m2m_stop_streaming.
-> 
-> Documenting these new helpers in the commit log is not very useful, they should
-> be documented in v4l2-mem2mem.h.
+V3:
+ Rebased to Shawn's for-next branch
+ Typo fix
 
-I added an explicit documentation for these helpers.
+V2:
+ Fix i.MX8MP build
+ Update cover letter, i.MX7D not have this issue 
 
-> 
-> Since this is all fairly complex, I would like to see more comments in the
-> source as well, explaining what is happening and how/when to use it.
+The A53 CCM clk root only accepts input up to 1GHz, CCM A53 root
+signoff timing is 1Ghz, however the A53 core which sources from CCM
+root could run above 1GHz which voilates the CCM.
 
-Ok
+There is a CORE_SEL slice before A53 core, we need configure the
+CORE_SEL slice source from ARM PLL, not A53 CCM clk root.
 
-> 
->>
->> The vicodec will be the first one to be converted as an example.
->>
->> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->> ---
->>  drivers/media/v4l2-core/v4l2-mem2mem.c | 172 ++++++++++++++++++++++++-
->>  include/media/v4l2-mem2mem.h           |  95 ++++++++++++++
->>  2 files changed, 265 insertions(+), 2 deletions(-)
->>
->> diff --git a/drivers/media/v4l2-core/v4l2-mem2mem.c b/drivers/media/v4l2-core/v4l2-mem2mem.c
->> index 1afd9c6ad908..f221d6c7a137 100644
->> --- a/drivers/media/v4l2-core/v4l2-mem2mem.c
->> +++ b/drivers/media/v4l2-core/v4l2-mem2mem.c
->> @@ -340,6 +340,11 @@ static void __v4l2_m2m_try_queue(struct v4l2_m2m_dev *m2m_dev,
->>  		m2m_ctx->new_frame = !dst->vb2_buf.copied_timestamp ||
->>  			dst->vb2_buf.timestamp != src->vb2_buf.timestamp;
->>  
->> +	if (m2m_ctx->has_stopped) {
->> +		dprintk("Device has stopped\n");
->> +		goto job_unlock;
->> +	}
->> +
->>  	if (m2m_dev->m2m_ops->job_ready
->>  		&& (!m2m_dev->m2m_ops->job_ready(m2m_ctx->priv))) {
->>  		dprintk("Driver not ready\n");
->> @@ -556,6 +561,99 @@ int v4l2_m2m_querybuf(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
->>  }
->>  EXPORT_SYMBOL_GPL(v4l2_m2m_querybuf);
->>  
->> +void v4l2_m2m_last_buffer_done(struct v4l2_m2m_ctx *m2m_ctx,
->> +			       struct vb2_v4l2_buffer *vbuf)
->> +{
->> +	vbuf->flags |= V4L2_BUF_FLAG_LAST;
->> +	vb2_buffer_done(&vbuf->vb2_buf, VB2_BUF_STATE_DONE);
->> +
->> +	v4l2_m2m_mark_stopped(m2m_ctx);
->> +}
->> +EXPORT_SYMBOL_GPL(v4l2_m2m_last_buffer_done);
->> +
->> +static int v4l2_mark_last_buf(struct v4l2_m2m_ctx *m2m_ctx)
-> 
-> The name of this function is not very clear and actually confusing given
-> the name of the previous function v4l2_m2m_last_buffer_done(). Hopefully
-> you can come up with something a bit more descriptive.
+The A53 CCM clk root should only be used when need to change ARM PLL
+frequency.
 
-OK
+Peng Fan (4):
+  clk: imx: imx8mq: fix a53 cpu clock
+  clk: imx: imx8mm: fix a53 cpu clock
+  clk: imx: imx8mn: fix a53 cpu clock
+  clk: imx: imx8mp: fix a53 cpu clock
 
-> 
->> +{
->> +	struct vb2_v4l2_buffer *next_dst_buf;
->> +
->> +	if (m2m_ctx->is_draining)
->> +		return -EBUSY;
->> +
->> +	if (m2m_ctx->has_stopped)
->> +		return 0;
->> +
->> +	m2m_ctx->last_src_buf = v4l2_m2m_last_src_buf(m2m_ctx);
->> +	m2m_ctx->is_draining = true;
->> +
->> +	if (m2m_ctx->last_src_buf)
->> +		return 0;
->> +
->> +	next_dst_buf = v4l2_m2m_dst_buf_remove(m2m_ctx);
->> +	if (!next_dst_buf) {
->> +		m2m_ctx->next_buf_last = true;
->> +		return 0;
->> +	}
->> +
->> +	v4l2_m2m_last_buffer_done(m2m_ctx, next_dst_buf);
->> +
->> +	return 0;
->> +}
->> +
->> +void v4l2_m2m_start_streaming(struct v4l2_m2m_ctx *m2m_ctx, struct vb2_queue *q)
->> +{
->> +	if (V4L2_TYPE_IS_OUTPUT(q->type))
->> +		m2m_ctx->last_src_buf = NULL;
->> +}
->> +EXPORT_SYMBOL_GPL(v4l2_m2m_start_streaming);
->> +
->> +void v4l2_m2m_stop_streaming(struct v4l2_m2m_ctx *m2m_ctx, struct vb2_queue *q)
->> +{
->> +	if (V4L2_TYPE_IS_OUTPUT(q->type)) {
->> +		if (m2m_ctx->is_draining) {
->> +			struct vb2_v4l2_buffer *next_dst_buf;
->> +
->> +			m2m_ctx->last_src_buf = NULL;
->> +			next_dst_buf = v4l2_m2m_dst_buf_remove(m2m_ctx);
->> +			if (!next_dst_buf)
->> +				m2m_ctx->next_buf_last = true;
->> +			else
->> +				v4l2_m2m_last_buffer_done(m2m_ctx,
->> +							  next_dst_buf);
->> +		}
->> +	} else {
->> +		v4l2_m2m_clear_state(m2m_ctx);
->> +	}
->> +}
->> +EXPORT_SYMBOL_GPL(v4l2_m2m_stop_streaming);
-> 
-> Same for these two functions: the names suggest that these implement start and stop
-> streaming, but instead they are called from start and stop streaming to update the
-> state.
+ drivers/clk/imx/clk-imx8mm.c             | 16 ++++++++++++----
+ drivers/clk/imx/clk-imx8mn.c             | 16 ++++++++++++----
+ drivers/clk/imx/clk-imx8mp.c             | 16 ++++++++++++----
+ drivers/clk/imx/clk-imx8mq.c             | 16 ++++++++++++----
+ include/dt-bindings/clock/imx8mm-clock.h |  4 +++-
+ include/dt-bindings/clock/imx8mn-clock.h |  4 +++-
+ include/dt-bindings/clock/imx8mp-clock.h |  3 ++-
+ include/dt-bindings/clock/imx8mq-clock.h |  4 +++-
+ 8 files changed, 59 insertions(+), 20 deletions(-)
 
-Indeed, renaming
+-- 
+2.16.4
 
-> 
->> +
->> +static void v4l2_m2m_force_last_buf_done(struct v4l2_m2m_ctx *m2m_ctx,
->> +					 struct vb2_queue *q)
->> +{
->> +	struct vb2_buffer *vb;
->> +	struct vb2_v4l2_buffer *vbuf;
->> +	unsigned int i;
->> +
->> +	if (WARN_ON(q->is_output))
->> +		return;
->> +	if (list_empty(&q->queued_list))
->> +		return;
->> +
->> +	vb = list_first_entry(&q->queued_list, struct vb2_buffer, queued_entry);
->> +	for (i = 0; i < vb->num_planes; i++)
->> +		vb2_set_plane_payload(vb, i, 0);
->> +
->> +	/*
->> +	 * Since the buffer hasn't been queued to the ready queue,
->> +	 * mark is active and owned before marking it LAST and DONE
->> +	 */
->> +	vb->state = VB2_BUF_STATE_ACTIVE;
->> +	atomic_inc(&q->owned_by_drv_count);
->> +
->> +	vbuf = to_vb2_v4l2_buffer(vb);
->> +	vbuf->field = V4L2_FIELD_NONE;
->> +
->> +	v4l2_m2m_last_buffer_done(m2m_ctx, vbuf);
->> +}
->> +
->>  int v4l2_m2m_qbuf(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
->>  		  struct v4l2_buffer *buf)
->>  {
->> @@ -570,11 +668,25 @@ int v4l2_m2m_qbuf(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
->>  			__func__);
->>  		return -EPERM;
->>  	}
->> +
->>  	ret = vb2_qbuf(vq, vdev->v4l2_dev->mdev, buf);
->> -	if (!ret && !(buf->flags & V4L2_BUF_FLAG_IN_REQUEST))
->> +	if (ret)
->> +		return ret;
->> +
->> +	/*
->> +	 * If the capture queue is streaming, but streaming hasn't started
->> +	 * on the device, but was asked to stop, mark the previously queued
->> +	 * buffer as DONE with LAST flag since it won't be queued on the
->> +	 * device.
->> +	 */
->> +	if (!V4L2_TYPE_IS_OUTPUT(vq->type) &&
->> +	    vb2_is_streaming(vq) && !vb2_start_streaming_called(vq) &&
->> +	   (v4l2_m2m_has_stopped(m2m_ctx) || v4l2_m2m_dst_buf_is_last(m2m_ctx)))
->> +		v4l2_m2m_force_last_buf_done(m2m_ctx, vq);
->> +	else if (!(buf->flags & V4L2_BUF_FLAG_IN_REQUEST))
->>  		v4l2_m2m_try_schedule(m2m_ctx);
->>  
->> -	return ret;
->> +	return 0;
->>  }
->>  EXPORT_SYMBOL_GPL(v4l2_m2m_qbuf);
->>  
->> @@ -1225,6 +1337,62 @@ int v4l2_m2m_ioctl_try_decoder_cmd(struct file *file, void *fh,
->>  }
->>  EXPORT_SYMBOL_GPL(v4l2_m2m_ioctl_try_decoder_cmd);
->>  
->> +int v4l2_m2m_encoder_cmd(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
->> +			 struct v4l2_encoder_cmd *ec)
->> +{
->> +	if (ec->cmd != V4L2_ENC_CMD_STOP && ec->cmd != V4L2_ENC_CMD_START)
->> +		return -EINVAL;
->> +
->> +	if (ec->cmd == V4L2_ENC_CMD_STOP)
->> +		return v4l2_mark_last_buf(m2m_ctx);
->> +
->> +	if (m2m_ctx->is_draining)
->> +		return -EBUSY;
->> +
->> +	if (m2m_ctx->has_stopped)
->> +		m2m_ctx->has_stopped = false;
->> +
->> +	return 0;
->> +}
->> +EXPORT_SYMBOL_GPL(v4l2_m2m_encoder_cmd);
-> 
-> The next patch uses this function as follows in vicodec:
-> 
-> +	ret = v4l2_m2m_ioctl_encoder_cmd(file, fh, ec);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	if (ec->cmd == V4L2_ENC_CMD_STOP &&
-> +	    v4l2_m2m_has_stopped(ctx->fh.m2m_ctx))
-> +		v4l2_event_queue_fh(&ctx->fh, &vicodec_eos_event);
-> +
-> +	if (ec->cmd == V4L2_ENC_CMD_START &&
-> +	    v4l2_m2m_has_stopped(ctx->fh.m2m_ctx))
->  		vb2_clear_last_buffer_dequeued(&ctx->fh.m2m_ctx->cap_q_ctx.q);
-> 
-> I was wondering if that would be standard behavior for codecs and should
-> be added to v4l2_m2m_encoder_cmd. Ditto for decoder_cmd below.
-
-Unfortunately, no.
-
-The issue comes from the synchronous behaviour of the decoder, in the Amlogic case,
-the H264 decoder behavior with src and dst buf is asynchronous, where we need to dequeue
-and push to hardware a unknown variable number of buffers before getting capture buffers.
-This is not true for VP9 and HEVC for example, but since we need to manage all the
-different codecs in a single codebase, we can't assume/predict a direct
-src_buf->dst_buf relationship in all cases.
-
-This is why I left this in the vicodec code.
-
-> 
->> +
->> +int v4l2_m2m_decoder_cmd(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
->> +			 struct v4l2_decoder_cmd *dc)
->> +{
->> +	if (dc->cmd != V4L2_DEC_CMD_STOP && dc->cmd != V4L2_DEC_CMD_START)
->> +		return -EINVAL;
->> +
->> +	if (dc->cmd == V4L2_DEC_CMD_STOP)
->> +		return v4l2_mark_last_buf(m2m_ctx);
->> +
->> +	if (m2m_ctx->is_draining)
->> +		return -EBUSY;
->> +
->> +	if (m2m_ctx->has_stopped)
->> +		m2m_ctx->has_stopped = false;
->> +
->> +	return 0;
->> +}
->> +EXPORT_SYMBOL_GPL(v4l2_m2m_decoder_cmd);
->> +
->> +int v4l2_m2m_ioctl_encoder_cmd(struct file *file, void *priv,
->> +			       struct v4l2_encoder_cmd *ec)
->> +{
->> +	struct v4l2_fh *fh = file->private_data;
->> +
->> +	return v4l2_m2m_encoder_cmd(file, fh->m2m_ctx, ec);
->> +}
->> +EXPORT_SYMBOL_GPL(v4l2_m2m_ioctl_encoder_cmd);
->> +
->> +int v4l2_m2m_ioctl_decoder_cmd(struct file *file, void *priv,
->> +			       struct v4l2_decoder_cmd *dc)
->> +{
->> +	struct v4l2_fh *fh = file->private_data;
->> +
->> +	return v4l2_m2m_decoder_cmd(file, fh->m2m_ctx, dc);
->> +}
->> +EXPORT_SYMBOL_GPL(v4l2_m2m_ioctl_decoder_cmd);
->> +
->>  int v4l2_m2m_ioctl_stateless_try_decoder_cmd(struct file *file, void *fh,
->>  					     struct v4l2_decoder_cmd *dc)
->>  {
->> diff --git a/include/media/v4l2-mem2mem.h b/include/media/v4l2-mem2mem.h
->> index 1d85e24791e4..3476889af46c 100644
->> --- a/include/media/v4l2-mem2mem.h
->> +++ b/include/media/v4l2-mem2mem.h
->> @@ -80,6 +80,10 @@ struct v4l2_m2m_queue_ctx {
->>   *		for an existing frame. This is always true unless
->>   *		V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF is set, which
->>   *		indicates slicing support.
->> + * @is_draining: indicates device is in draining phase
->> + * @last_src_buf: indicate the last source buffer for draining
->> + * @next_buf_last: next capture queud buffer will be tagged as last
->> + * @has_stopped: indicate the device has been stopped
->>   * @m2m_dev: opaque pointer to the internal data to handle M2M context
->>   * @cap_q_ctx: Capture (output to memory) queue context
->>   * @out_q_ctx: Output (input from memory) queue context
->> @@ -98,6 +102,11 @@ struct v4l2_m2m_ctx {
->>  
->>  	bool				new_frame;
->>  
->> +	bool				is_draining;
->> +	struct vb2_v4l2_buffer		*last_src_buf;
->> +	bool				next_buf_last;
->> +	bool				has_stopped;
->> +
->>  	/* internal use only */
->>  	struct v4l2_m2m_dev		*m2m_dev;
->>  
->> @@ -215,6 +224,50 @@ v4l2_m2m_buf_done(struct vb2_v4l2_buffer *buf, enum vb2_buffer_state state)
->>  	vb2_buffer_done(&buf->vb2_buf, state);
->>  }
->>  
->> +static inline void
->> +v4l2_m2m_clear_state(struct v4l2_m2m_ctx *m2m_ctx)
->> +{
->> +	m2m_ctx->next_buf_last = false;
->> +	m2m_ctx->is_draining = false;
->> +	m2m_ctx->has_stopped = false;
->> +}
->> +
->> +static inline void
->> +v4l2_m2m_mark_stopped(struct v4l2_m2m_ctx *m2m_ctx)
->> +{
->> +	m2m_ctx->next_buf_last = false;
->> +	m2m_ctx->is_draining = false;
->> +	m2m_ctx->has_stopped = true;
->> +}
->> +
->> +static inline bool
->> +v4l2_m2m_dst_buf_is_last(struct v4l2_m2m_ctx *m2m_ctx)
->> +{
->> +	return m2m_ctx->is_draining && m2m_ctx->next_buf_last;
->> +}
->> +
->> +static inline bool
->> +v4l2_m2m_has_stopped(struct v4l2_m2m_ctx *m2m_ctx)
->> +{
->> +	return m2m_ctx->has_stopped;
->> +}
->> +
->> +static inline bool
->> +v4l2_m2m_is_last_draining_src_buf(struct v4l2_m2m_ctx *m2m_ctx,
->> +				       struct vb2_v4l2_buffer *buf)
->> +{
->> +	return m2m_ctx->is_draining && buf == m2m_ctx->last_src_buf;
->> +}
-> 
-> Comments are needed for all 5 functions above.
-
-Ok
-
-> 
->> +
->> +/**
->> + * v4l2_m2m_last_buffer_done() - marks the buffer with LAST flag and DONE
->> + *
->> + * @m2m_ctx: m2m context assigned to the instance given by struct &v4l2_m2m_ctx
->> + * @vbuf: pointer to struct &v4l2_buffer
->> + */
->> +void v4l2_m2m_last_buffer_done(struct v4l2_m2m_ctx *m2m_ctx,
->> +			       struct vb2_v4l2_buffer *vbuf);
->> +
->>  /**
->>   * v4l2_m2m_reqbufs() - multi-queue-aware REQBUFS multiplexer
->>   *
->> @@ -312,6 +365,44 @@ int v4l2_m2m_streamon(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
->>  int v4l2_m2m_streamoff(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
->>  		       enum v4l2_buf_type type);
->>  
->> +/**
->> + * v4l2_m2m_start_streaming() - handle start of streaming of a video queue
->> + *
->> + * @m2m_ctx: m2m context assigned to the instance given by struct &v4l2_m2m_ctx
->> + * @q: queue
->> + */
->> +void v4l2_m2m_start_streaming(struct v4l2_m2m_ctx *m2m_ctx,
->> +			      struct vb2_queue *q);
->> +
->> +/**
->> + * v4l2_m2m_stop_streaming() - handle stop of streaming of a video queue
->> + *
->> + * @m2m_ctx: m2m context assigned to the instance given by struct &v4l2_m2m_ctx
->> + * @q: queue
->> + */
->> +void v4l2_m2m_stop_streaming(struct v4l2_m2m_ctx *m2m_ctx,
->> +			     struct vb2_queue *q);
->> +
->> +/**
->> + * v4l2_m2m_encoder_cmd() - execute an encoder command
->> + *
->> + * @file: pointer to struct &file
->> + * @m2m_ctx: m2m context assigned to the instance given by struct &v4l2_m2m_ctx
->> + * @ec: pointer to the encoder command
->> + */
->> +int v4l2_m2m_encoder_cmd(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
->> +			 struct v4l2_encoder_cmd *ec);
->> +
->> +/**
->> + * v4l2_m2m_decoder_cmd() - execute a decoder command
->> + *
->> + * @file: pointer to struct &file
->> + * @m2m_ctx: m2m context assigned to the instance given by struct &v4l2_m2m_ctx
->> + * @dc: pointer to the decoder command
->> + */
->> +int v4l2_m2m_decoder_cmd(struct file *file, struct v4l2_m2m_ctx *m2m_ctx,
->> +			 struct v4l2_decoder_cmd *dc);
->> +
->>  /**
->>   * v4l2_m2m_poll() - poll replacement, for destination buffers only
->>   *
->> @@ -704,6 +795,10 @@ int v4l2_m2m_ioctl_streamon(struct file *file, void *fh,
->>  				enum v4l2_buf_type type);
->>  int v4l2_m2m_ioctl_streamoff(struct file *file, void *fh,
->>  				enum v4l2_buf_type type);
->> +int v4l2_m2m_ioctl_encoder_cmd(struct file *file, void *fh,
->> +			       struct v4l2_encoder_cmd *ec);
->> +int v4l2_m2m_ioctl_decoder_cmd(struct file *file, void *fh,
->> +			       struct v4l2_decoder_cmd *dc);
->>  int v4l2_m2m_ioctl_try_encoder_cmd(struct file *file, void *fh,
->>  				   struct v4l2_encoder_cmd *ec);
->>  int v4l2_m2m_ioctl_try_decoder_cmd(struct file *file, void *fh,
->>
-> 
-> Regards,
-> 
-> 	Hans
-> 
-
-Thanks for the review,
-Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
