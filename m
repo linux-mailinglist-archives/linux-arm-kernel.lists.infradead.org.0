@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7548A163DC9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:36:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AF34163DCB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:37:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eqTNnVTzQ0Q3AwzBvFTA32hTL4czFO37HfI20hXKufo=; b=BWyRADxb1dBRoz
-	EDiTXqynuTuq/U/6WLPmtsk0Yd1D92UAjJZgLvD/EUh3h9KZbcA5YDF0U1T16+s+BdB/godQp9zXZ
-	takFcolTMAIsikS2pE20pC1TNzZeWcjE2b3IvfH0Vvwag6qr6G7uIb3OqOo/QLZH1+lYKCL8vGqN9
-	I2obZKEXYHDFcp4HW4IEvfMf3DGaqarCiF9m/j9PvkVwqorIxjmPLwX/Waiszt/mCc/qZPTLCzR/a
-	pG0hoZY/6AnXWPgZYfPhiBarh3I+4GpCs8cyDl0HRoPWbFZd37VpPUQn/amdpmnE8QXxXpjgi6bw1
-	27Bk/1XiINUwvbuM0EEw==;
+	List-Owner; bh=NVaGyreo5OK5J0VXn853+AMydPp6dlw4Xe6BuBI7/NY=; b=Agc+Y7fMn5qF7U
+	gXZ3udf5XhryiJuX91LTcqb6yEKco4qP4PyP1YF2/ykr9/v+MqvjHB1hN/rWEp4BqDm6ZDQFM9CiZ
+	KNU8w+CGu31V5ZgO0/tw4lPxk6z/SOvlPLygs28qT2n6+ZyOp7f9IU/hqXnm9T4z5Nk8N+Oyv6Cjk
+	KVnMXdF9XQRzVlej6O+4WGxDPVezg5cLbm8aTt+VJeo1TqDu3vDkarbD99EgDkQrgNQVGlDHdnlcu
+	Q03Fo7Zh6VVDXNCopSaZ7OpjC6GxEPb+7fUyM3X2jsoKsCWpktcyqMh+1I6SPEgwgk4ovp0qu2yvr
+	RdDIA2yHGw1tcIWEjtig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4JuH-0001mx-SW; Wed, 19 Feb 2020 07:36:29 +0000
+	id 1j4Jue-0002Dl-71; Wed, 19 Feb 2020 07:36:52 +0000
 Received: from [167.172.186.51] (helo=shell.v3.sk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Jrx-0007PJ-S5
+ id 1j4Jry-0007Qe-KL
  for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:34:09 +0000
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 375D1E005C;
- Wed, 19 Feb 2020 07:34:19 +0000 (UTC)
+ by zimbra.v3.sk (Postfix) with ESMTP id AEC8BDFFF2;
+ Wed, 19 Feb 2020 07:34:20 +0000 (UTC)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id ytSnHxQJ2Uja; Wed, 19 Feb 2020 07:34:14 +0000 (UTC)
+ with ESMTP id vLXummS_giJV; Wed, 19 Feb 2020 07:34:14 +0000 (UTC)
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 04B20E006F;
+ by zimbra.v3.sk (Postfix) with ESMTP id 9E79BE0075;
  Wed, 19 Feb 2020 07:34:14 +0000 (UTC)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id VudPmGfcJW79; Wed, 19 Feb 2020 07:34:13 +0000 (UTC)
+ with ESMTP id 4kW7bA8pu7_1; Wed, 19 Feb 2020 07:34:14 +0000 (UTC)
 Received: from furthur.lan (unknown [109.183.109.54])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 64067DFCA2;
+ by zimbra.v3.sk (Postfix) with ESMTPSA id BE0DBE005C;
  Wed, 19 Feb 2020 07:34:13 +0000 (UTC)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH 02/10] clk: mmp2: Constify some strings
-Date: Wed, 19 Feb 2020 08:33:45 +0100
-Message-Id: <20200219073353.184336-3-lkundrak@v3.sk>
+Subject: [PATCH 03/10] dt-bindings: clock: Convert marvell,
+ mmp2-clock to json-schema
+Date: Wed, 19 Feb 2020 08:33:46 +0100
+Message-Id: <20200219073353.184336-4-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200219073353.184336-1-lkundrak@v3.sk>
 References: <20200219073353.184336-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_233406_227461_869632B2 
-X-CRM114-Status: GOOD (  10.45  )
+X-CRM114-CacheID: sfid-20200218_233406_993759_613AD956 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (1.3 points)
@@ -79,98 +80,116 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-All the parent clock names for the muxes are constant. Add const.
+Convert the fixed-factor-clock binding to DT schema format using
+json-schema.
+
+While at that, fix a couple of small errors: make the file base name
+match the compatible string, add an example and document the reg-names
+property.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- drivers/clk/mmp/clk-mix.c     |  2 +-
- drivers/clk/mmp/clk-of-mmp2.c | 13 +++++++------
- drivers/clk/mmp/clk.h         |  4 ++--
- 3 files changed, 10 insertions(+), 9 deletions(-)
+ .../bindings/clock/marvell,mmp2-clock.yaml    | 62 +++++++++++++++++++
+ .../bindings/clock/marvell,mmp2.txt           | 21 -------
+ 2 files changed, 62 insertions(+), 21 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/clock/marvell,mmp2-clock.yaml
+ delete mode 100644 Documentation/devicetree/bindings/clock/marvell,mmp2.txt
 
-diff --git a/drivers/clk/mmp/clk-mix.c b/drivers/clk/mmp/clk-mix.c
-index d2cd36c54474f..7a351ec65564e 100644
---- a/drivers/clk/mmp/clk-mix.c
-+++ b/drivers/clk/mmp/clk-mix.c
-@@ -441,7 +441,7 @@ const struct clk_ops mmp_clk_mix_ops = {
- 
- struct clk *mmp_clk_register_mix(struct device *dev,
- 					const char *name,
--					const char **parent_names,
-+					const char * const *parent_names,
- 					u8 num_parents,
- 					unsigned long flags,
- 					struct mmp_clk_mix_config *config,
-diff --git a/drivers/clk/mmp/clk-of-mmp2.c b/drivers/clk/mmp/clk-of-mmp2.c
-index 6e71591e63a00..ee086d9714160 100644
---- a/drivers/clk/mmp/clk-of-mmp2.c
-+++ b/drivers/clk/mmp/clk-of-mmp2.c
-@@ -127,16 +127,16 @@ static void mmp2_pll_init(struct mmp2_clk_unit *pxa_unit)
- static DEFINE_SPINLOCK(uart0_lock);
- static DEFINE_SPINLOCK(uart1_lock);
- static DEFINE_SPINLOCK(uart2_lock);
--static const char *uart_parent_names[] = {"uart_pll", "vctcxo"};
-+static const char * const uart_parent_names[] = {"uart_pll", "vctcxo"};
- 
- static DEFINE_SPINLOCK(ssp0_lock);
- static DEFINE_SPINLOCK(ssp1_lock);
- static DEFINE_SPINLOCK(ssp2_lock);
- static DEFINE_SPINLOCK(ssp3_lock);
--static const char *ssp_parent_names[] = {"vctcxo_4", "vctcxo_2", "vctcxo", "pll1_16"};
-+static const char * const ssp_parent_names[] = {"vctcxo_4", "vctcxo_2", "vctcxo", "pll1_16"};
- 
- static DEFINE_SPINLOCK(timer_lock);
--static const char *timer_parent_names[] = {"clk32", "vctcxo_4", "vctcxo_2", "vctcxo"};
-+static const char * const timer_parent_names[] = {"clk32", "vctcxo_4", "vctcxo_2", "vctcxo"};
- 
- static DEFINE_SPINLOCK(reset_lock);
- 
-@@ -190,7 +190,7 @@ static void mmp2_apb_periph_clk_init(struct mmp2_clk_unit *pxa_unit)
- }
- 
- static DEFINE_SPINLOCK(sdh_lock);
--static const char *sdh_parent_names[] = {"pll1_4", "pll2", "usb_pll", "pll1"};
-+static const char * const sdh_parent_names[] = {"pll1_4", "pll2", "usb_pll", "pll1"};
- static struct mmp_clk_mix_config sdh_mix_config = {
- 	.reg_info = DEFINE_MIX_REG_INFO(4, 10, 2, 8, 32),
- };
-@@ -201,11 +201,12 @@ static DEFINE_SPINLOCK(usbhsic1_lock);
- 
- static DEFINE_SPINLOCK(disp0_lock);
- static DEFINE_SPINLOCK(disp1_lock);
--static const char *disp_parent_names[] = {"pll1", "pll1_16", "pll2", "vctcxo"};
-+static const char * const disp_parent_names[] = {"pll1", "pll1_16", "pll2", "vctcxo"};
- 
- static DEFINE_SPINLOCK(ccic0_lock);
- static DEFINE_SPINLOCK(ccic1_lock);
--static const char *ccic_parent_names[] = {"pll1_2", "pll1_16", "vctcxo"};
-+static const char * const ccic_parent_names[] = {"pll1_2", "pll1_16", "vctcxo"};
+diff --git a/Documentation/devicetree/bindings/clock/marvell,mmp2-clock.yaml b/Documentation/devicetree/bindings/clock/marvell,mmp2-clock.yaml
+new file mode 100644
+index 0000000000000..c5fc2ad0236dd
+--- /dev/null
++++ b/Documentation/devicetree/bindings/clock/marvell,mmp2-clock.yaml
+@@ -0,0 +1,62 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/clock/marvell,mmp2-clock.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
- static struct mmp_clk_mix_config ccic0_mix_config = {
- 	.reg_info = DEFINE_MIX_REG_INFO(4, 17, 2, 6, 32),
- };
-diff --git a/drivers/clk/mmp/clk.h b/drivers/clk/mmp/clk.h
-index 5bcbced3f458e..37d1e1d7b664c 100644
---- a/drivers/clk/mmp/clk.h
-+++ b/drivers/clk/mmp/clk.h
-@@ -97,7 +97,7 @@ struct mmp_clk_mix {
- extern const struct clk_ops mmp_clk_mix_ops;
- extern struct clk *mmp_clk_register_mix(struct device *dev,
- 					const char *name,
--					const char **parent_names,
-+					const char * const *parent_names,
- 					u8 num_parents,
- 					unsigned long flags,
- 					struct mmp_clk_mix_config *config,
-@@ -193,7 +193,7 @@ void mmp_register_gate_clks(struct mmp_clk_unit *unit,
- struct mmp_param_mux_clk {
- 	unsigned int id;
- 	char *name;
--	const char **parent_name;
-+	const char * const *parent_name;
- 	u8 num_parents;
- 	unsigned long flags;
- 	unsigned long offset;
++title: Marvell MMP2 Clock Controller
++
++maintainers:
++  - Lubomir Rintel <lkundrak@v3.sk>
++
++description: |
++  The MMP2 clock subsystem generates and supplies clock to various
++  controllers within the MMP2 SoC.
++
++  Each clock is assigned an identifier and client nodes use this identifier
++  to specify the clock which they consume.
++
++  All these identifiers could be found in <dt-bindings/clock/marvell,mmp2.h>.
++
++properties:
++  compatible:
++    const: marvell,mmp2-clock # controller compatible with MMP2 SoC
++
++  reg:
++    items:
++      - description: MPMU register region
++      - description: APMU register region
++      - description: APBC register region
++
++  reg-names:
++    items:
++      - const: mpmu
++      - const: apmu
++      - const: apbc
++
++  '#clock-cells':
++    const: 1
++
++  '#reset-cells':
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - '#clock-cells'
++  - '#reset-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    clock-controller@d4050000 {
++      compatible = "marvell,mmp2-clock";
++      reg = <0xd4050000 0x1000>,
++            <0xd4282800 0x400>,
++            <0xd4015000 0x1000>;
++      reg-names = "mpmu", "apmu", "apbc";
++      #clock-cells = <1>;
++      #reset-cells = <1>;
++    };
+diff --git a/Documentation/devicetree/bindings/clock/marvell,mmp2.txt b/Documentation/devicetree/bindings/clock/marvell,mmp2.txt
+deleted file mode 100644
+index 23b52dc02266a..0000000000000
+--- a/Documentation/devicetree/bindings/clock/marvell,mmp2.txt
++++ /dev/null
+@@ -1,21 +0,0 @@
+-* Marvell MMP2 Clock Controller
+-
+-The MMP2 clock subsystem generates and supplies clock to various
+-controllers within the MMP2 SoC.
+-
+-Required Properties:
+-
+-- compatible: should be one of the following.
+-  - "marvell,mmp2-clock" - controller compatible with MMP2 SoC.
+-
+-- reg: physical base address of the clock subsystem and length of memory mapped
+-  region. There are 3 places in SOC has clock control logic:
+-  "mpmu", "apmu", "apbc". So three reg spaces need to be defined.
+-
+-- #clock-cells: should be 1.
+-- #reset-cells: should be 1.
+-
+-Each clock is assigned an identifier and client nodes use this identifier
+-to specify the clock which they consume.
+-
+-All these identifiers could be found in <dt-bindings/clock/marvell,mmp2.h>.
 -- 
 2.24.1
 
