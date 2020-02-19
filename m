@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A3E61639DD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 03:10:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C2321639E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 03:13:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fPKssgeLk3uFQHTpy3n/8DT8aThf69W3KBSh9u8yz+M=; b=loMD0A++oLsndE
-	KEcNJWbh2tMLmBWJy0b8QwuWE0xMlk8FKacc6gRscDGHt/TEhqfacJJP7FehG/Enm7zlbvh+3BV0w
-	wu9rxJ8GUjzpiQGkdUGSMR8avbl/RcdNILY/KImW9fVRH6+VbiOLTnJm8WhYe2l2on7tz5wckhzhb
-	1/kFpz2Dt8Ft3Pv9wN/eXmfgPBo7GqGTV3UfV+dHd3brX9k98tAqfyHoRYJxPrsw36ExqexyCGkv0
-	CRpwifUDYBWr7hjVWK21e0qmQqBs8cx/Dr0zJvoKRp2FPt1pPWcClhIX4wptoHV6EIRHQ/zLMFglN
-	j+11OJJP9A3SkhRe9ETg==;
+	List-Owner; bh=okrCSyinH7t4KcRIcD3VA7Ht0VyDx4UvxtpqOoy2VOE=; b=dyIgKEuA0GBTuG
+	82BG+sdKONbcrBLjbvyOv04R1FtSDGYpmNiwo1hOv70m7Z8VB7nu/vjRoQwi+6yUZxTa9tYAAfyFC
+	qkfPAA9ShjOBetdifYta24uPKxn0fYUmUFLYJxUkjLoHFBWCyCxS9z+gG1f1KKcqwItgZi07nKcAU
+	hmhg6DpQv8al51txsu5hTSG6Cs0sugfH54pVSeiQzmaZuOS/5GDTMa+JfxFBPFZZcas5cIPnFkoiI
+	0FfW7/TIxSUHY/6OUg2lkPlDq6tPp7zajILjXVsO98Jel+s57equ6xSe7v7qM8z7Jo7onWH8Yu5QG
+	uxKl+LDAqYt0r6XRK+1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Eoi-0005q6-AF; Wed, 19 Feb 2020 02:10:24 +0000
+	id 1j4Ert-0006GF-6A; Wed, 19 Feb 2020 02:13:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4EoX-0005pe-2M
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 02:10:14 +0000
+ id 1j4Erl-0006Fj-T0
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 02:13:35 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 78839207FD;
- Wed, 19 Feb 2020 02:10:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5011F2176D;
+ Wed, 19 Feb 2020 02:13:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582078212;
- bh=MpxY+5b6qJ7xwYDHWoktfEheHdhpYnXjzGlzpahT46A=;
+ s=default; t=1582078413;
+ bh=K3Ru7H0q8Sc6wbkr3yPMVanZvfqlkzIjRR1+NpRGYCI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dUi5pru8X665WUXEU7MktrvK2NQFNHh0Qwkxtqq8V3JNeqcSaYadx+OxJs+yRKpBQ
- w34BBMx5hiORC0VG+G2Bxn7I1diR8OSeUTiSI+LaBJ+k8kjeBZxuixyA6ckK3P/ALg
- b89DVDseIbrkZNiFqG2W8EbQhzwHDmFVODjJrsTg=
-Date: Wed, 19 Feb 2020 10:10:06 +0800
+ b=Gbk036e3RN920NrEprLdIzrEFksiqdonXA6Qb2l30VGdivSNt9u5k7DKAlesLk9Ws
+ C9/i7SoMQWOqJBn1+siQnLS4I56QxSf1emldxbOx7PkG6VKPqEO2OqXUEXn4d9Vf/x
+ YAdvZv+ppaHhPuMaIBwNsopEHZs/sdsE0e527OzQ=
+Date: Wed, 19 Feb 2020 10:13:25 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Michael Walle <michael@walle.cc>
-Subject: Re: [PATCH] arm64: dts: ls1028a: add missing SPI nodes
-Message-ID: <20200219021005.GH6075@dragon>
-References: <20200213185606.2747-1-michael@walle.cc>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: Re: [PATCH] arm64: dts: imx8qxp-mek: Remove unexisting Ethernet PHY
+Message-ID: <20200219021325.GI6075@dragon>
+References: <20200217191503.31444-1-festevam@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200213185606.2747-1-michael@walle.cc>
+In-Reply-To: <20200217191503.31444-1-festevam@gmail.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_181013_160996_8255B92B 
-X-CRM114-Status: GOOD (  11.03  )
+X-CRM114-CacheID: sfid-20200218_181333_956924_B7314C49 
+X-CRM114-Status: GOOD (  10.12  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,21 +76,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, robh@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 07:56:06PM +0100, Michael Walle wrote:
-> The LS1028A has three (dual) SPI controller. These are compatible with
-> the ones from the LS1021A. Add the nodes.
+On Mon, Feb 17, 2020 at 04:15:03PM -0300, Fabio Estevam wrote:
+> There is only on Ethernet port and one Ethernet PHY on imx8qxp-mek.
 > 
-> This was tested on a custom board.
+> Remove the unexisting ethphy1 port.
 > 
-> Signed-off-by: Michael Walle <michael@walle.cc>
+> This fixes a run-time warning:
+> 
+> mdio_bus 5b040000.ethernet-1: MDIO device at address 1 is missing.
+> 
+> Fixes: fdea904e85e1 ("arm64: dts: imx: add imx8qxp mek support")
+> Signed-off-by: Fabio Estevam <festevam@gmail.com>
 
 Applied, thanks.
 
