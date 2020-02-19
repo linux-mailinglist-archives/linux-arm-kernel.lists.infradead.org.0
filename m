@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A72F81640AB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:44:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D34BF1640AC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:45:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8IvLRb37gLzeBc9lblsJWNXBE7Q8VWxOeyFW+Ig70CA=; b=KvzhoKx9lH3ZlLTEh/IsjKYdEa
-	bKSjtyUN5+w3DzgrGhPztuZAdBnAJjZ0iPIB4YaL5xIWAN7eODm9T1LN1HoSWamWExRcpbobtufE2
-	aNo0KAWjwViLu+G2rzZoKSJIQ9wsBJEZodd9yx9BzyvLpSEd/Y4mg1/xKFqsEcBeeP0PLoCVbQkyX
-	X1/0Ze1qkTSsiYbwNmWgSTcwnuvZy5uLPYv/H6LYa5TKsUMb4hjW31LS1I36jMJZA1AaAh+qENTq6
-	7w0Yez8KItlmUGrfQiI81ivIVEq+UZluvRQjuTR3rGaX1NwV1jD0wq4NgXWrFo38Sk0s2HBJJoyg4
-	6LjB9b1w==;
+	bh=DchZqysGjJIELGck65eIG8yZ7ZWpAJeg5VPYmdzXb1I=; b=UcgbPfXPGF11SEKyaVy6i2pDxD
+	YMOytGz/V3nGkczmSU8LPsApyAIYF3ilWEIdQQ9+XtLk6dKnn7Pd+MvBMfJN4nFkjxajAYSbtKvd4
+	RkvgrGn15kQRE40uI9G7uGN0l48/6vHNmUq0Qf7AJTtn8Kny4USWETxOPIEHX9H5tZSjwid+Oo7Ih
+	7oH4/4LHCs0szV3xmTtJXzSY2gXg/sW1ZYBhzplDprrAslmoujfPM+Q81CPiBGEuf0Nt9kF3dgh66
+	OM3MgVu35Y+39x2ZV/pXfXLNNWgDaC/m7xEZaa9guzoXD2M69yeFDj141ls49hlgpm0ZvWZKKuzpX
+	tDObo0Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4LuE-0002K8-UQ; Wed, 19 Feb 2020 09:44:34 +0000
+	id 1j4LuW-0002Zw-83; Wed, 19 Feb 2020 09:44:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4LtY-0001wG-Nq
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:43:54 +0000
+ id 1j4Lta-0001xy-Qs
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:43:56 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D563F24673;
- Wed, 19 Feb 2020 09:43:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D066124670;
+ Wed, 19 Feb 2020 09:43:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582105432;
- bh=lFzKo6clSyD9Mf7ZXBNhtebcK98cxJK95ASmc7qCv0A=;
+ s=default; t=1582105434;
+ bh=nzX78Zffh24BLjHSXoPPyq8OpfUkaTb/SZZiYridmWQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=F9Q+7DQ1awwTlQX09DLd8nNQb5ZjSnu+WpmzHjy4nZvjaCi2xkMZtt9CQZ/iInqdf
- LMjgojxE/VsHoeND4tW+uiVOZAL7IRCXt+nv42rA4apeUiqN4v09RaoOLOHU8AS90H
- 0gl4230tZ79ryLkkvlJNmq9Fv7pIhI3GYZGyJFPE=
+ b=oEF4LkMbiUGVWI7t1nvMdu6IMDQU5N/TdAIEqU1oMxxadfawTeMYuJEXiYo2zRX5F
+ DeOnZnbgHX1wuJp+oeL2LM5bM0mM+ihlRYmXoUv/gHUsxRngPUvKzJdZzhj7agUpnY
+ Ks0gCtl13HxFTRl1bsYJPlj5/mOtTd/g/CYhtKww=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [PATCH v2 2/4] efi/arm: pass start and end addresses to
- cache_clean_flush()
-Date: Wed, 19 Feb 2020 10:43:38 +0100
-Message-Id: <20200219094340.16597-3-ardb@kernel.org>
+Subject: [PATCH v2 3/4] ARM: decompressor: prepare cache_clean_flush for doing
+ by-VA maintenance
+Date: Wed, 19 Feb 2020 10:43:39 +0100
+Message-Id: <20200219094340.16597-4-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200219094340.16597-1-ardb@kernel.org>
 References: <20200219094340.16597-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_014352_793304_60D80F1C 
-X-CRM114-Status: UNSURE (   9.47  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200219_014354_914971_AF1D04DD 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -99,36 +98,62 @@ patch.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/boot/compressed/head.S | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ arch/arm/boot/compressed/head.S | 21 ++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
 diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 6c98d3d2de2f..c11b1b0a3ac6 100644
+index c11b1b0a3ac6..5060a623e0d7 100644
 --- a/arch/arm/boot/compressed/head.S
 +++ b/arch/arm/boot/compressed/head.S
-@@ -1460,6 +1460,13 @@ ENTRY(efi_stub_entry)
+@@ -498,6 +498,7 @@ dtb_check_done:
+ 		bic	r9, r9, #31		@ ... of 32 bytes
+ 		add	r6, r9, r5
+ 		add	r9, r9, r10
++		stmdb	sp!, {r9 - r10}		@ preserve target region address
  
- 		@ Preserve return value of efi_entry() in r4
- 		mov	r4, r0
-+		add	r1, r4, #SZ_2M			@ DT end
-+		bl	cache_clean_flush
+ #ifdef DEBUG
+ 		sub     r10, r6, r5
+@@ -521,6 +522,8 @@ dtb_check_done:
+ 		/* Preserve offset to relocated code. */
+ 		sub	r6, r9, r6
+ 
++		ldr	r1, [sp], #4		@ end of target region
++		ldr	r0, [sp], #4		@ start of target region
+ #ifndef CONFIG_ZBOOT_ROM
+ 		/* cache_clean_flush may use the stack, so relocate it */
+ 		add	sp, sp, r6
+@@ -622,6 +625,21 @@ not_relocated:	mov	r0, #0
+ 		add	r2, sp, #0x10000	@ 64k max
+ 		mov	r3, r7
+ 		bl	decompress_kernel
 +
-+		ldr	r0, [sp]			@ relocated zImage
-+		adr	r2, __edata
-+		ldr	r1, [r2]
-+		add	r1, r1, r2			@ end of image
++		mov	r0, r4			@ base of inflated image
++		adr	r1, LC0			@ actual LC0
++		ldr	r2, [r1]		@ linktime LC0
++		sub	r2, r1, r2		@ LC0 delta
++		ldr	r1, [r1, #16]		@ link time inflated size offset
++		ldr	r1, [r1, r2]		@ actual inflated size (LE)
++#ifdef __ARMEB__
++		/* convert to big endian */
++		eor	r2, r1, r1, ror #16
++		bic	r2, r2, #0x00ff0000
++		mov	r1, r1, ror #8
++		eor	r1, r1, r2, lsr #8
++#endif
++		add	r1, r1, r0		@ end of inflated image
  		bl	cache_clean_flush
+ 		bl	cache_off
  
- 		@ The PE/COFF loader might not have cleaned the code we are
-@@ -1489,6 +1496,8 @@ efi_load_fail:
- 		ldr	r0, =0x80000001
- 		ldmfd	sp!, {ip, pc}
- ENDPROC(efi_stub_entry)
-+		.align	2
-+__edata:	.long	_edata - .
- #endif
- 
- 		.align
+@@ -1173,6 +1191,9 @@ __armv7_mmu_cache_off:
+ /*
+  * Clean and flush the cache to maintain consistency.
+  *
++ * On entry,
++ *  r0 = start address
++ *  r1 = end address (exclusive)
+  * On exit,
+  *  r1, r2, r3, r9, r10, r11, r12 corrupted
+  * This routine must preserve:
 -- 
 2.17.1
 
