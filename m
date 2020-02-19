@@ -2,78 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A43BE1641A8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:23:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE14C164221
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:29:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Mzn4fOdirDZ4TFIgyNPPZb8Tfl9J8VMCsgVvCB9Nn4=; b=EGThYoyEbEAwfT
-	7TazUk32aQj3zcHLvfm+fqS+lqoLVn6Q1cy/60HEwZPdi893Nq8o09byxSYooOPNgw9jIcUwpDxjo
-	hEdbR+ddtGOxur58b2S6ygRN1fjbTuzYz+0NbFld3X2q7KyNP8K/ao2TEUr9L/EDAOArNotkas+0a
-	dQt8Axy16kOtZoRR1DX7sYon+wo4hDY1sjpLcGsG/0aiqStmktxiQTjc7hnqYvB+yIszRYTW4g4kt
-	hu/kvw9TuPLXR8g5/3L7MAQXmm+Cj5FZ3jf5y4PUYa+pQAblMUduef7aIWCzXikSdqbBIAaKbvOrL
-	L9ff4HOhK0lB8Bok/zog==;
+	List-Owner; bh=XB7Q4J0I4ig0x0czaTbVMZjSi/09mNCdBKdLSWIaNwg=; b=GvCMLJTe5VZP9A
+	O4IYaAMf6Gw0jbsWqzkYpYbXUmcR12CS1wHO8b/dGyGAL5eI8u5DAk2Qjx0Pbsl0eT/Y7DTgekPed
+	zF6qAJeQH7EiYgvni8hdHF1B5VcHh4hQ4VzGxbPcwU+926jEPOAsv+HX317LDPDotzQkpLBB3sTJ6
+	h/IkwVkY5UdhhgpAPFHL3cdk+lvmAfijm+ak856DBgNVsaeFCW/q2e3SrQkYz8ZUr9acujp/8FIgT
+	XPBRJBAPRLrAyZT8htdG6HB5IzIQGijuO3D3D1CfOXc4QL7YHCXnMGyrqqX/hbxgDjxUeh1q2lYFf
+	47yf79ODYKSlI6o6/Vqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4MVQ-0004z6-2y; Wed, 19 Feb 2020 10:23:00 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1j4Mbs-00009Q-UH; Wed, 19 Feb 2020 10:29:40 +0000
+Received: from mail-ua1-x941.google.com ([2607:f8b0:4864:20::941])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4MUm-0004VZ-QC
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:22:22 +0000
-Received: by mail-wr1-x444.google.com with SMTP id u6so27602446wrt.0
+ id 1j4Mbh-00007v-Mw
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:29:31 +0000
+Received: by mail-ua1-x941.google.com with SMTP id a33so8623221uad.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 02:22:19 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=YSnq2pVWW+HKeYXXYM7BB1vTVqLVzuXFgXE6h06xFu0=;
- b=liIx7CqvQUzNFoG4ELSAG3R9vmPB0o85DvqOnShuce4VgyiZn/mciQMBO1AhL0XJWg
- OjqpsJYMUaXd2uAVaUgmLW7I9Q0LCxuoUwB16ZRnK4xIZT3Zr6KbI1h43R1iQxSf1gxa
- lNBDHZGDLOUpLkxXfaGxaExMwBJNCUM1/5Zs0=
+ Wed, 19 Feb 2020 02:29:28 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+JMXibqU7pdFIdII16L/Y2AeVX/CI11svigC46gf8uU=;
+ b=zzniWRwZoycxdKWo3bTAbQWaVxpy5CQGzW+0nidtIr77EZWl/cCZx19vDOZhjWvZRe
+ p4t9rQ1ONJU2pZbwkIfSnLHNBeSyGflqKTLg2X+xxPUp2/fP9F7zjv+4f2KkizcjUDH7
+ 84nBCzOIfyHlHBLIQRPB0LIaTvdf4cW1Ojn5641hnjyoRgjm2haN6JfhhoBmIGU4WHcS
+ gGuh6IZhW6sAQc0Csy727H0aAwHSk1cEjCFo3UdvwUH/ldH71Cm8rueaexzFTRgEjASO
+ LLuaDLyLelIt7eXTO+LLbenQ/4CZCDhNSkkA3ZlWI9T68Xhm5+3UiGC+3QHkZyUwVhHZ
+ jkTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=YSnq2pVWW+HKeYXXYM7BB1vTVqLVzuXFgXE6h06xFu0=;
- b=UGGLQvd/7rHIiE0tNoCyf2hKjVLCGlYds9g+YApg8DUA0QmokQk3eB4ncrx0JmqvD/
- 8rUnS7YbwxI54HSnVUbnCjlWh803Lg5Gj97xeesKskqK9VjRTA6sIuxwnwHdz9cbCHeO
- rcil1YZDabnoI9jinU1N6iqCrI1ArDcorD26dnaye3mW6smU6bxp2VDclb7xG9DsJs7U
- GJtt1seJJALbGFxgRYUV5KPXkkuNH7CiYsJlwGZhwpF/jbxp6hACFrD+9g4V7qB7BqO3
- KZUGJJsY7/++K0VFr1ZxOa9WzMSk84zDt3L5I5M9952AV7RXN9JWkP+CFePDo/aiAxza
- vxqA==
-X-Gm-Message-State: APjAAAVy9ljej7bHb7UusGSKzbF5aMc6lzvgfURNS2YHxzAJHpHPza4f
- A+JF3b8TJy4pAhFN7MiUag3R+w==
-X-Google-Smtp-Source: APXvYqy/e8jWrTjkXr2HY+OkVTrZXl8KRtvIPL5iL9prazJwu6GqRHfncrGgKjSWy6Dh2gzsPrnj6A==
-X-Received: by 2002:adf:f5cb:: with SMTP id k11mr34513767wrp.63.1582107738038; 
- Wed, 19 Feb 2020 02:22:18 -0800 (PST)
-Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id s23sm2370339wra.15.2020.02.19.02.22.16
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 02:22:17 -0800 (PST)
-From: Daniel Vetter <daniel.vetter@ffwll.ch>
-To: DRI Development <dri-devel@lists.freedesktop.org>
-Subject: [PATCH 39/52] drm/stm: Drop explicit drm_mode_config_cleanup call
-Date: Wed, 19 Feb 2020 11:21:09 +0100
-Message-Id: <20200219102122.1607365-40-daniel.vetter@ffwll.ch>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200219102122.1607365-1-daniel.vetter@ffwll.ch>
-References: <20200219102122.1607365-1-daniel.vetter@ffwll.ch>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+JMXibqU7pdFIdII16L/Y2AeVX/CI11svigC46gf8uU=;
+ b=KsFLPumB9eylMXNcj46P5/Y+mtCBHM2C3XTRz7/H4oaKyCSVfq5/ORxPPbj+IViU7C
+ yfvRzDY+WRw8F/5/wF0Y7ogcisN7Vpxow8Qg5eH5UivAZyGr5T1M9cS4xyTH9lNWDCYx
+ mALSHmfHsaVDfaZ8tbSiyS1og+xJQZnsAo9phZCFC60TxoCGaTwiR3nUQf3XIRnETA1r
+ iVfSeexBqnGMDPlw9AK/xxUNh9R4aI+l9NAZ1vxxdY+7pEEU95MCf5h3itvfdKNN/7yn
+ T9OJZtSb1fMmcwCJpVSC8ywWQldyDyfnub1L7ly/xl/1iKw1G4YD7JDCUDbhPaGfQSAr
+ wvpA==
+X-Gm-Message-State: APjAAAVM5vmvpklKk3qokWsGMgD4G92v9Ri9t9zOwfCu1W0cFp9Yau/b
+ r+ZBcpiI61FOtH5Pr2U2VLrOqmME+5V/3T6A1hZ76w==
+X-Google-Smtp-Source: APXvYqzltx18jQ/GN6j6y5PblztBh+anBxCtM5CqYz0EqlghKAvb6lvUng+oaF2oUU44zSaQHTDNiUkIX+LzpAamcAo=
+X-Received: by 2002:a9f:3046:: with SMTP id i6mr12953039uab.15.1582108167823; 
+ Wed, 19 Feb 2020 02:29:27 -0800 (PST)
 MIME-Version: 1.0
+References: <20200128090636.13689-1-ludovic.barre@st.com>
+In-Reply-To: <20200128090636.13689-1-ludovic.barre@st.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Wed, 19 Feb 2020 11:28:51 +0100
+Message-ID: <CAPDyKFr+7SvRasPPjFDA2kwG0ERS-Qp3FGbVbRGLrscz5N=L2g@mail.gmail.com>
+Subject: Re: [PATCH V2 0/9] mmc: mmci: sdmmc: add sdr104 support
+To: Ludovic Barre <ludovic.barre@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_022220_932257_1D68640B 
-X-CRM114-Status: GOOD (  13.51  )
+X-CRM114-CacheID: sfid-20200219_022929_781243_DCD98776 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:941 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,83 +90,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
- Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Philippe Cornu <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Daniel Vetter <daniel.vetter@intel.com>,
- Vincent Abriou <vincent.abriou@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- Alexandre Torgue <alexandre.torgue@st.com>
+Cc: DTML <devicetree@vger.kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's right above the drm_dev_put().
+On Tue, 28 Jan 2020 at 10:06, Ludovic Barre <ludovic.barre@st.com> wrote:
+>
+> To support the sdr104 mode, sdmmc variant needs:
+> -Hardware delay block support for sdmmc variant
+>  with tuning procedure
+> -Voltage switch callbacks
+> -sdmmc revision 2.0
+>
+> V2:
+> -regroup host->mmc_ops & mmc->ops assignment
+> -add timeout define
+> -rename prep_volt_switch to pre_sig_volt_switch
+> -rename volt_switch to post_sig_volt_switch
+> -add 'why' comment for "mmc: mmci: add volt_switch callbacks"
+>
+> Ludovic Barre (9):
+>   mmc: mmci: sdmmc: replace sg_dma_xxx macros
+>   mmc: mmci: sdmmc: rename sdmmc_priv struct to sdmmc_idma
+>   mmc: mmci: add a reference at mmc_host_ops in mmci struct
+>   mmc: mmci: add private pointer for variant
+>   dt-bindings: mmc: mmci: add delay block base register for sdmmc
+>   mmc: mmci: sdmmc: add execute tuning with delay block
+>   mmc: mmci: add volt_switch callbacks
+>   mmc: mmci: sdmmc: add voltage switch functions
+>   mmc: mmci: add sdmmc variant revision 2.0
+>
+>  .../devicetree/bindings/mmc/mmci.txt          |   2 +
+>  drivers/mmc/host/mmci.c                       |  42 +++-
+>  drivers/mmc/host/mmci.h                       |   8 +
+>  drivers/mmc/host/mmci_stm32_sdmmc.c           | 204 +++++++++++++++++-
+>  4 files changed, 248 insertions(+), 8 deletions(-)
+>
+> --
+> 2.17.1
+>
 
-Aside: Another driver with a bit much devm_kzalloc, which should
-probably use drmm_kzalloc instead ...
+Applied for next, thanks!
 
-Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
-Cc: Yannick Fertre <yannick.fertre@st.com>
-Cc: Philippe Cornu <philippe.cornu@st.com>
-Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>
-Cc: Vincent Abriou <vincent.abriou@st.com>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
----
- drivers/gpu/drm/stm/drv.c | 10 ++++------
- 1 file changed, 4 insertions(+), 6 deletions(-)
+I took the liberty to do minor amendments to some of the changelogs,
+but in particular I have change some of prefixes for the commit
+message headers into "mmc: mmci_sdmmc:".
 
-diff --git a/drivers/gpu/drm/stm/drv.c b/drivers/gpu/drm/stm/drv.c
-index ea9fcbdc68b3..5b374531dd8c 100644
---- a/drivers/gpu/drm/stm/drv.c
-+++ b/drivers/gpu/drm/stm/drv.c
-@@ -88,7 +88,9 @@ static int drv_load(struct drm_device *ddev)
- 
- 	ddev->dev_private = (void *)ldev;
- 
--	drm_mode_config_init(ddev);
-+	ret = drm_mode_config_init(ddev);
-+	if (ret)
-+		return ret;
- 
- 	/*
- 	 * set max width and height as default value.
-@@ -103,7 +105,7 @@ static int drv_load(struct drm_device *ddev)
- 
- 	ret = ltdc_load(ddev);
- 	if (ret)
--		goto err;
-+		return ret;
- 
- 	drm_mode_config_reset(ddev);
- 	drm_kms_helper_poll_init(ddev);
-@@ -111,9 +113,6 @@ static int drv_load(struct drm_device *ddev)
- 	platform_set_drvdata(pdev, ddev);
- 
- 	return 0;
--err:
--	drm_mode_config_cleanup(ddev);
--	return ret;
- }
- 
- static void drv_unload(struct drm_device *ddev)
-@@ -122,7 +121,6 @@ static void drv_unload(struct drm_device *ddev)
- 
- 	drm_kms_helper_poll_fini(ddev);
- 	ltdc_unload(ddev);
--	drm_mode_config_cleanup(ddev);
- }
- 
- static __maybe_unused int drv_suspend(struct device *dev)
--- 
-2.24.1
+Please tell, if there is anything that you want me to update.
 
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
