@@ -2,84 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 653511651C3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 22:38:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 787BB1651DE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 22:47:08 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iSvdFdjEEk0Xiegrcz+aUDyvCRt3FuxQ+03Df9zNMqE=; b=gxeOjEGR/8pERU
-	tBkUwBJGuOR6N2uEt3cEx1UDyQUjzlsSvWQhkyM7k1XUcYqDQeaU1KcLxLGHG1YDTlCk8drC2PMBs
-	Y/OYNmvUCWx4sislFx2qYzQ4ZLvcsC6QIEx+6za8cSg/kgNWrFomm1BmtPAeOkHr00cYHD738Gofs
-	qJDS0AX3YkI/HePdKe+ib54f5ZRO/ZUigbfAL4Pf5WfqBsLptK3PpgWnbELkHZmQRw3h+lXgLG2sM
-	qb35VHsNLjzl4o64fJ90/JoFT/xLitFNP6J+xvuxkD25UtLJ5Mz47mw/eZIx2ToMXHhnaDIK9e7gX
-	QxX5B3JFjVtMzNJOfTbw==;
+	List-Owner; bh=STgeGBm+Xvnx22VYsCrOyJJaKOO74RzdEgdAVpEFjQA=; b=q6mA5szw+RJVfq
+	i+xcSIXj5JP91XjIN/eLhACDQCJgu4FBxbtmy+GVsaslscrxy/eyCIMZ4vuBeQ+a3+d8YPl6ZYv0Z
+	hfHew7zUfHIfpYMPqbLz2f364iY5DkWHH0AQx2r8sPlSWcAIbK5ayTgXqfawnzHxq0dzvwKhwsix4
+	5lckNdbAVB97r7leYTNKwmZGXvYW0Efok1Ki7X70zdITfl4MOrWlO8jBAgBrxRdolHKk6mU70EqyU
+	xFId3O7DrR/nMryakss9RMJ5w7m3vTehfMnYnQ71e24IE61pcHdHQpijONQJazoYk/hPG2twKw45B
+	Hcldsadaya8/hSOgnhMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4X3L-0005oW-51; Wed, 19 Feb 2020 21:38:43 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1j4XBK-0001Qs-1z; Wed, 19 Feb 2020 21:46:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4X3A-0005nC-Rk; Wed, 19 Feb 2020 21:38:34 +0000
-Received: by mail-oi1-f196.google.com with SMTP id p125so25345205oif.10;
- Wed, 19 Feb 2020 13:38:32 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=E/e/t/Igu2jhBduZSv2AW4CMedwV0BIQbWhMahuclRw=;
- b=FfYg7txQmvwbeSMVJ346gM1t+zeJLA89CjvdcZMBbyGurWYYrsMaL2NAjwfG062cRS
- nz76qGBEd7UowxmIRAiCgxB62FTHbSnZGQeoPKaCl+2xi8jOUx8Expm+Hem+hI1VZoCi
- gGmiSmLpXCEgo3CMgTCX/ra5CMAC9YqypD3ZLWm76ilBNgAsIYW3yUQdrK4kf0MuNsES
- J0XWDRZ7ktoUBgwoBfx26lN3Zb7uhAyC9PZam0pCKHZrZ5FKQE8g8zv5+7ST1ArgVBxF
- 56U9gr0GT16pm0DtU1tlBDK15/iKDmfhv/k+qcfDqVHyrNO5SpETBNExJP5wcenqtGRL
- KTKQ==
-X-Gm-Message-State: APjAAAWW7Msh2H8LzaN8hfWHynZLM5sU3dvoVdxJ/ajBPFVWrEvuZGVt
- nR19ubSUVRWBLVzWx05p9g==
-X-Google-Smtp-Source: APXvYqzXRQu0rzVdzwAvjm3VOQxfppCool33P+2clSM/5tqQ9a4Gt59ZBgfIOhaxSQcWmeEQr5REYA==
-X-Received: by 2002:a54:4791:: with SMTP id o17mr5704299oic.70.1582148312171; 
- Wed, 19 Feb 2020 13:38:32 -0800 (PST)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w72sm378347oie.49.2020.02.19.13.38.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 13:38:31 -0800 (PST)
-Received: (nullmailer pid 15386 invoked by uid 1000);
- Wed, 19 Feb 2020 21:38:30 -0000
-Date: Wed, 19 Feb 2020 15:38:30 -0600
-From: Rob Herring <robh@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v2 1/3] ASoC: dt-bindings: Make RK3328 codec GPIO explicit
-Message-ID: <20200219213830.GA15330@bogus>
-References: <cover.1581376744.git.robin.murphy@arm.com>
- <5f7a399dea8a9dedef57f6f99f0f6ab1c1fdc56a.1581376744.git.robin.murphy@arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5f7a399dea8a9dedef57f6f99f0f6ab1c1fdc56a.1581376744.git.robin.murphy@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1j4XB9-0001QG-L0
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 21:46:49 +0000
+Received: from X1 (nat-ab2241.sltdut.senawave.net [162.218.216.4])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7624424654;
+ Wed, 19 Feb 2020 21:46:46 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582148806;
+ bh=HxfYRjJj58z+qAAsFwPuZfJ0KZbNY+dKSV+60i8qVIs=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Muu7wuj9ri3Wvcl3mc3d8sk4smKoASDoa02eUn9plYSjI6agD+f8aGFYssTJjKK05
+ dExvMbtjpSDHMgolAcpGJveYtVAWzY4uSeZlmuieDqqfaCRrfzk1yP2uHek5RCXGkW
+ HgHG5zDMhlIzFXL1XRhWZW9L3976VnXD5qU+VTjk=
+Date: Wed, 19 Feb 2020 13:46:45 -0800
+From: Andrew Morton <akpm@linux-foundation.org>
+To: Michal Hocko <mhocko@kernel.org>
+Subject: Re: [RFC PATCH] memory_hotplug: disable the functionality for 32b
+ (was: Re: [Bug 206401] kernel panic on Hyper-V after 5 minutes due to)
+ memory hot-add
+Message-Id: <20200219134645.7430db57e0e59f69e7386f46@linux-foundation.org>
+In-Reply-To: <20200218100532.GA4151@dhcp22.suse.cz>
+References: <20200218084700.GD21113@dhcp22.suse.cz>
+ <200218181900.M0115079@vega.pgw.jp>
+ <20200218100532.GA4151@dhcp22.suse.cz>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_133832_898367_58B48152 
-X-CRM114-Status: GOOD (  11.82  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200219_134647_780328_D01DA797 
+X-CRM114-Status: GOOD (  15.27  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,34 +75,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- lgirdwood@gmail.com, linux-rockchip@lists.infradead.org, broonie@kernel.org,
- pgwipeout@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, bhe@redhat.com, david@redhat.com,
+ bugzilla-daemon@bugzilla.kernel.org, linux-mm@kvack.org,
+ richardw.yang@linux.intel.com, n-horiguchi@ah.jp.nec.com, kkabe@vega.pgw.jp,
+ linux-arm-kernel@lists.infradead.org, osalvador@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 18 Feb 2020 21:31:58 +0000, Robin Murphy wrote:
-> Existing RK3328 codec drivers have overloaded the GRF phandle to assume
-> implicit control of the limited-function GPIO_MUTE pin, which is usually
-> used to enable an external audio line driver IC. Since this pin has a
-> proper binding of its own (see gpio/rockchip,rk3328-grf-gpio.txt), make
-> a GPIO explicit in the codec binding too. This will help avoid ambiguity
-> on boards that use that pin for some other purpose.
-> 
-> (and while touching the example, enforce the "don't include status" rule)
-> 
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> ---
-> 
-> v2: no change
-> 
->  .../devicetree/bindings/sound/rockchip,rk3328-codec.txt    | 7 ++++++-
->  1 file changed, 6 insertions(+), 1 deletion(-)
-> 
+On Tue, 18 Feb 2020 11:05:32 +0100 Michal Hocko <mhocko@kernel.org> wrote:
 
-Acked-by: Rob Herring <robh@kernel.org>
+> Subject: [PATCH] memory_hotplug: disable the functionality for 32b
+> 
+> Memory hotlug is broken for 32b systems at least since c6f03e2903c9
+> ("mm, memory_hotplug: remove zone restrictions") which has considerably
+> reworked how can be memory associated with movable/kernel zones. The
+> same is not really trivial to achieve in 32b where only lowmem is the
+> kernel zone. While we can tweak this immediate problem around there are
+> likely other land mines hidden at other places.
+> 
+> It is also quite dubious that there is a real usecase for the memory
+> hotplug on 32b in the first place. Low memory is just too small to be
+> hotplugable (for hot add) and generally unusable for hotremove. Adding
+> more memory to highmem is also dubious because it would increase the
+> low mem or vmalloc space pressure for memmaps.
+> 
+> Restrict the functionality to 64b systems. This will help future
+> development to focus on usecases that have real life application.  We
+> can remove this restriction in future in presence of a real life usecase
+> of course but until then make it explicit that hotplug on 32b is broken
+> and requires a non trivial amount of work to fix.
+
+(cc linux-arch)
+
+(and linux-arm-kernel, as ARM is a major 32-bit user)
+
+Does anyone see a problem with disabling memory hotplug on 32-bit builds?
 
 _______________________________________________
 linux-arm-kernel mailing list
