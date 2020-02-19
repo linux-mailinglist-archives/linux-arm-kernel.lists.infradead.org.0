@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9F09164190
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:22:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6654716419D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:22:53 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G8x1dj1/nuzFffkZzvVgSu+adO8XyhnKYJBNNGlUWA8=; b=rajx1uCs7VhK8g
-	eJaq86iqRe6jDXWDuRaiZfrQ/+ZX1SeUhdoyTo83tptAs35bUbM7yUS0vBi9uto19UrYkTZwm33Nf
-	3Vc97KiPp90YHvi8zJNjInT5UV5in6Myro40TuK55t85r48PE03UeydoBmemeXeaAv4SdSHDuhAaG
-	Grlu+yUZlmbnGdXgxnsisrs+n9k2M+K5y9Fs3cgto/WEk6IHsGcE0zQ3orao9hmr+nOJS9d64S8l4
-	AAblgGdVHOxfdu8If5j71Zk5ZjYgl72bkH1Mw+KMoD10X+Vzm70obc+tGde+P2qEUKSz0YsQZkGCy
-	zzqW0J8A6rq1bN+xSAtw==;
+	List-Owner; bh=wNG+f0aVZwzkhNaJkxXO2ki7ECYntQve5TWWcHrJWKY=; b=TOsyQH2+qG4hsI
+	bTwt9yRLPIIYQomq5m5XZMl4YFb89gNidACdRRsx1oScbA6cRsltWxPBphD92/WtDX0rZtraGcYma
+	/AArzAtIVrzD4gZ1Jz/qn/EHJXzLMfcBNeH6hNu76+3nbOTjK++ON9aAmYczK3ZEyRYEayEKuCr9l
+	vRlRuRyw9BLdET6uFUcUKNpICdNmo0ZpDWn7LBH3a7KVZUr1UkY8c2f/v812geiGgOi+WDmsWGqVe
+	XM18s+k47jw0kK10Jc0ZqPeyZMbzG8ykNRwbyrHGO2NnVnOqR1Oc0Tx459jath6PiRF3tsxpB3az1
+	0FAbHMIYjNmiXBLAzqnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4MUt-0004VU-Io; Wed, 19 Feb 2020 10:22:27 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j4MVB-0004nF-GK; Wed, 19 Feb 2020 10:22:45 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4MUh-0004UC-C3
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:22:16 +0000
-Received: by mail-wm1-x342.google.com with SMTP id p9so5871653wmc.2
+ id 1j4MUk-0004VS-Fz
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:22:21 +0000
+Received: by mail-wr1-x442.google.com with SMTP id r11so27486879wrq.10
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 02:22:14 -0800 (PST)
+ Wed, 19 Feb 2020 02:22:18 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=9HvFBn5C1ybJ3Jl6cvECGju7iOD2DUuUpqtaZAjKhPo=;
- b=PJzH6ke5ACy+gnyH1H0O/EOH30mw1GGgrDUmk5BBrZ/PUN2lMzraTEUZ80YFeUJy4i
- BT0R8EBhS9ae4DJVQVeEUw4g7yETEV2yMkMheO3s0PZmlK2E8r1Rt8aaMMGH+iMrxZ2+
- 6Km7jEfY3B17urqmHlHLEOm/FfWvNqws8o+K8=
+ bh=CMpRLsmk2k79rSr4KQhFtq3ElR3/0UtAr1kCQ3We7NU=;
+ b=O3jdQvb+9ovBVXNh5T60os5D7I3PwklUDEkTtY9Fd9ZxslmOCcFYC4A2/yLdbjk032
+ FqeYnBrZcoCUFlQD3eyk2D16mIxakVQz+p2j+tZpcJ1x1CHjgdVbt6bxwMknwRIuv5/G
+ z2vcwp88Gn5ikRGxdl6YqzL3Jl41rKE2zmDO8=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=9HvFBn5C1ybJ3Jl6cvECGju7iOD2DUuUpqtaZAjKhPo=;
- b=Olah8qbERzyuiQBn79zO0oNxkNmoVLofP5aRHqUZe/ucZNBxlNMH6mT2E+qq8gwdDo
- dzdYEXd7XSy9U0j6IgTcY5Rd4HUFKzJOc3rJ9n4ucpmSC/4i7JULE+rru36gwPakg0UG
- 1Nu03QBxxnE9vQZf3gW3EtfF3tKxUCM/BqNcLSWDsU0QMBorepXhgS7WR4uw5ioDt79L
- Ciwpwo/sZFtCjmmd/ZBUvE4bwIB2t+WVVyKrELuQ+5tS1zhzUFMfI66ep7vvxN1ew486
- bRPyO428CAPbQcUq5YacP+YltcZasVf9dknxJEd5TwlM5rg7k/ECwe2mwqsnUzDbDc3S
- RuyQ==
-X-Gm-Message-State: APjAAAXcpwMKM6YvG7SeHO1vPbAs+2089eS5THUTriWnUlNKQ5owdYeY
- cQjKRWUtO81uDB9rlZeL6tBO3g==
-X-Google-Smtp-Source: APXvYqwwkb8pYBRO6k0sbQ0TfL7rK6fN22BCq0dEtf+gNB0N9I1n8/PTpRHwumXVfIV0/n6efkAHzg==
-X-Received: by 2002:a1c:4905:: with SMTP id w5mr4798090wma.129.1582107733246; 
- Wed, 19 Feb 2020 02:22:13 -0800 (PST)
+ bh=CMpRLsmk2k79rSr4KQhFtq3ElR3/0UtAr1kCQ3We7NU=;
+ b=kci9HJvNbU8SjGJm3Wx5hONv9CnpiGiw8CJHMGMIhgoBwO4W+syXYaAksGY960Eoj0
+ pNKsOVyzXU2HVx6oanmAUAJb+JIZK886SJPtAz8YRpj9UtMw2nlMdOGrkOk7E2dbhY0f
+ ooyBtG8PsW+O8U1M6JuUtXlRtWX8m3sZsNk9J1hqycHS7n8zwgHaephSlupO9JAkvg31
+ f2jo5fTfevQQ6oBHPuquA9S/OcHdPOOXwlMRS6rtpOmvOeki9H22gdvESlfRqrF0EU/1
+ g4ooG2U8OolBsK70n32ZZ15viDocPe3q5oOA+wzaNkj9Bj4iucj5Mw4BaPhPDApA00/4
+ hWkw==
+X-Gm-Message-State: APjAAAXajVEgPVNc7Rkhq2KjCAUNouD2R+wa1UUmXUifXXfrsKyjK9Oj
+ k7AMvIFQ202crqJCGyP5gLFB+Q==
+X-Google-Smtp-Source: APXvYqwzq2IJDg4cLJQDZGtlmKCnczEtj6OtQr/NmLMYBmqn9J5kT1N+Crv5wlJsBfOekrIHBGRkOg==
+X-Received: by 2002:adf:a35e:: with SMTP id d30mr32693147wrb.33.1582107736797; 
+ Wed, 19 Feb 2020 02:22:16 -0800 (PST)
 Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id s23sm2370339wra.15.2020.02.19.02.22.11
+ by smtp.gmail.com with ESMTPSA id s23sm2370339wra.15.2020.02.19.02.22.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 02:22:12 -0800 (PST)
+ Wed, 19 Feb 2020 02:22:16 -0800 (PST)
 From: Daniel Vetter <daniel.vetter@ffwll.ch>
 To: DRI Development <dri-devel@lists.freedesktop.org>
-Subject: [PATCH 35/52] drm/meson: Drop explicit drm_mode_config_cleanup call
-Date: Wed, 19 Feb 2020 11:21:05 +0100
-Message-Id: <20200219102122.1607365-36-daniel.vetter@ffwll.ch>
+Subject: [PATCH 38/52] drm/rockchip: Drop explicit drm_mode_config_cleanup call
+Date: Wed, 19 Feb 2020 11:21:08 +0100
+Message-Id: <20200219102122.1607365-39-daniel.vetter@ffwll.ch>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200219102122.1607365-1-daniel.vetter@ffwll.ch>
 References: <20200219102122.1607365-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_022215_479595_29DA4B8F 
-X-CRM114-Status: GOOD (  13.62  )
+X-CRM114-CacheID: sfid-20200219_022218_577418_33613CF8 
+X-CRM114-Status: GOOD (  13.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,59 +93,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>,
- Daniel Vetter <daniel.vetter@intel.com>,
+Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
  Daniel Vetter <daniel.vetter@ffwll.ch>,
  Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Sandy Huang <hjc@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's right above the drm_dev_put().
-
-Aside: This driver gets its devm_ stuff all wrong wrt drm_device and
-anything hanging off that. Not the only one unfortunately.
-
-Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
-Cc: Neil Armstrong <narmstrong@baylibre.com>
-Cc: Kevin Hilman <khilman@baylibre.com>
-Cc: linux-amlogic@lists.infradead.org
-Cc: linux-arm-kernel@lists.infradead.org
----
- drivers/gpu/drm/meson/meson_drv.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
-index b5f5eb7b4bb9..ae94d14ab7bc 100644
---- a/drivers/gpu/drm/meson/meson_drv.c
-+++ b/drivers/gpu/drm/meson/meson_drv.c
-@@ -284,7 +284,9 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
- 	/* Remove early framebuffers (ie. simplefb) */
- 	meson_remove_framebuffers();
- 
--	drm_mode_config_init(drm);
-+	ret = drm_mode_config_init(drm);
-+	if (ret)
-+		goto free_drm;
- 	drm->mode_config.max_width = 3840;
- 	drm->mode_config.max_height = 2160;
- 	drm->mode_config.funcs = &meson_mode_config_funcs;
-@@ -379,7 +381,6 @@ static void meson_drv_unbind(struct device *dev)
- 	drm_dev_unregister(drm);
- 	drm_irq_uninstall(drm);
- 	drm_kms_helper_poll_fini(drm);
--	drm_mode_config_cleanup(drm);
- 	drm_dev_put(drm);
- }
- 
--- 
-2.24.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SXQncyAoYWxtb3N0LCB0aGVyZSdzIHNvbWUgaW9tbXUgc3R1ZmYgd2l0aG91dCBzaWduaWZpY2Fu
+Y2UpIHJpZ2h0CmFib3ZlIHRoZSBkcm1fZGV2X3B1dCgpLgoKQXNpZGU6IEFub3RoZXIgZHJpdmVy
+IHdpdGggYSBiaXQgbXVjaCBkZXZtX2t6YWxsb2MsIHdoaWNoIHNob3VsZApwcm9iYWJseSB1c2Ug
+ZHJtbV9remFsbG9jIGluc3RlYWQgLi4uCgpTaWduZWQtb2ZmLWJ5OiBEYW5pZWwgVmV0dGVyIDxk
+YW5pZWwudmV0dGVyQGludGVsLmNvbT4KQ2M6IFNhbmR5IEh1YW5nIDxoamNAcm9jay1jaGlwcy5j
+b20+CkNjOiAiSGVpa28gU3TDvGJuZXIiIDxoZWlrb0BzbnRlY2guZGU+CkNjOiBsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKQ2M6IGxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKLS0tCiBkcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfZHJtX2Rydi5j
+IHwgMTAgKysrLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgNyBkZWxl
+dGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBf
+ZHJtX2Rydi5jIGIvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2RybV9kcnYuYwpp
+bmRleCAyMGVjYjE1MDhhMjIuLmQwZWJhMjFlZWJjOSAxMDA2NDQKLS0tIGEvZHJpdmVycy9ncHUv
+ZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2RybV9kcnYuYworKysgYi9kcml2ZXJzL2dwdS9kcm0vcm9j
+a2NoaXAvcm9ja2NoaXBfZHJtX2Rydi5jCkBAIC0xMzUsNyArMTM1LDkgQEAgc3RhdGljIGludCBy
+b2NrY2hpcF9kcm1fYmluZChzdHJ1Y3QgZGV2aWNlICpkZXYpCiAJaWYgKHJldCkKIAkJZ290byBl
+cnJfZnJlZTsKIAotCWRybV9tb2RlX2NvbmZpZ19pbml0KGRybV9kZXYpOworCXJldCA9IGRybV9t
+b2RlX2NvbmZpZ19pbml0KGRybV9kZXYpOworCWlmIChyZXQpCisJCWdvdG8gZXJyX2ZyZWU7CiAK
+IAlyb2NrY2hpcF9kcm1fbW9kZV9jb25maWdfaW5pdChkcm1fZGV2KTsKIApAQCAtMTc0LDExICsx
+NzYsOCBAQCBzdGF0aWMgaW50IHJvY2tjaGlwX2RybV9iaW5kKHN0cnVjdCBkZXZpY2UgKmRldikK
+IGVycl91bmJpbmRfYWxsOgogCWNvbXBvbmVudF91bmJpbmRfYWxsKGRldiwgZHJtX2Rldik7CiBl
+cnJfbW9kZV9jb25maWdfY2xlYW51cDoKLQlkcm1fbW9kZV9jb25maWdfY2xlYW51cChkcm1fZGV2
+KTsKIAlyb2NrY2hpcF9pb21tdV9jbGVhbnVwKGRybV9kZXYpOwogZXJyX2ZyZWU6Ci0JZHJtX2Rl
+di0+ZGV2X3ByaXZhdGUgPSBOVUxMOwotCWRldl9zZXRfZHJ2ZGF0YShkZXYsIE5VTEwpOwogCWRy
+bV9kZXZfcHV0KGRybV9kZXYpOwogCXJldHVybiByZXQ7CiB9CkBAIC0xOTQsMTEgKzE5Myw4IEBA
+IHN0YXRpYyB2b2lkIHJvY2tjaGlwX2RybV91bmJpbmQoc3RydWN0IGRldmljZSAqZGV2KQogCiAJ
+ZHJtX2F0b21pY19oZWxwZXJfc2h1dGRvd24oZHJtX2Rldik7CiAJY29tcG9uZW50X3VuYmluZF9h
+bGwoZGV2LCBkcm1fZGV2KTsKLQlkcm1fbW9kZV9jb25maWdfY2xlYW51cChkcm1fZGV2KTsKIAly
+b2NrY2hpcF9pb21tdV9jbGVhbnVwKGRybV9kZXYpOwogCi0JZHJtX2Rldi0+ZGV2X3ByaXZhdGUg
+PSBOVUxMOwotCWRldl9zZXRfZHJ2ZGF0YShkZXYsIE5VTEwpOwogCWRybV9kZXZfcHV0KGRybV9k
+ZXYpOwogfQogCi0tIAoyLjI0LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
