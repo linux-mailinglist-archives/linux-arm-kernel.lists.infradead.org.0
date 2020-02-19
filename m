@@ -2,61 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 246D416533E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 00:57:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72021165343
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 00:58:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dFAO/+JYCs8JqFdw4HvCUu8PjgZnWZhwh7Ufv1m2aKE=; b=ZL620x3y7oe8ww
-	t9hnh9eZtIiffJC/HOEZCvtw11LKkxtnJ7CphXkP5ObWCP+qc6HxFrkygGApoiuHfoBOMjrCteKWX
-	0tAujzeSojlP1cJ88qo7eFBQYV/QU1K5QpgwE73LELA1mOF0vpZ7DeulAH0QDPdimbO3hTf7Pmqc6
-	EGzGOKBUUJKVyhfE+VXrEBiUawT/o74RBQ64Euw6fu4I9XNxsXlN3TtoNlpCeai379uRqU1CuENSQ
-	A7d/z4oYyGzG9/r1yq613WnOY6+ahP+rGgPFWEzxju+JnN2S+YI2+h1n1uImzwCmAmrdSvWu/Y/8C
-	lyNkKqDFV5o3isY/sbVw==;
+	List-Owner; bh=7nO3ErE5zW0iDGrXkYA7QnKLOge76rG5LxvgJV0Hrtg=; b=V+6D1PEKDPCUdC
+	d0KMXHfxLbgCJgYQ8y6U0L6V2nnDG3G6ilPcEIufEDyrJBD6ok8pmZLbx+bMPRSqFEwGYqtjENlqa
+	hFzbPDwCuyGRjQYiTGyhChCfBIov0Oc13P5mVYCTZlsd50Mh4RDjy5lfgjMMzBdT99KwJsBIkZ/Qh
+	tkjyxd8qIFYny+vXw30RAytuDyjn+wWBCh96v2FT9xhFHnrGKB6np3uCcNtRrQeKwyPm0fXpGypfU
+	yokj0UREjhKLi720kGOVNQHeC0aeOR7ySKCTfgKEHrA0ICR0Rm11UWiM2zaJ7Gp1sgSKR0qrQFbS3
+	MfsqSktcjDU/XO48i9aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ZDM-0004eK-3J; Wed, 19 Feb 2020 23:57:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j4ZEn-00055y-2V; Wed, 19 Feb 2020 23:58:41 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ZDC-0004do-Sj
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 23:57:04 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6749C206A5;
- Wed, 19 Feb 2020 23:57:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582156622;
- bh=1IW+yQwOQoK/ZE/qlAsbbc4XwXHuGcveuAoms/xk5dY=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=lCHRAKI9M7L12wHrBZ8MXGCU9Ueecj+GJJVICBRhdTihihtSzoKQ+dorDsMS8065t
- 4yJYO4AmHlw7Zw20BJYYkhc4cH0wJuiNGAATeWdHGckhuZsychuFhiOhStetOYrolP
- NdwhtJaead2pHVH4yXQW2ptWcTUjk+Onv7lOz+p8=
+ id 1j4ZER-0004uF-5F; Wed, 19 Feb 2020 23:58:20 +0000
+Received: by mail-oi1-x241.google.com with SMTP id c16so25737794oic.3;
+ Wed, 19 Feb 2020 15:58:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=BX9+oiU9NUzGK1+aV9/Uah0G+lhW9/DtCwBAHxWnn3I=;
+ b=KU1uqUYVxkoQfS26YEi+ztZu7uQD6NmCYAjnD4WbMrS3FbUgBPMQxL4cToOQRD6Uov
+ nHqZX7QwUxnmIRKEcKaP8NEsh/58I2e78+wWxDrpu1BXApMDiJMolk2hwg9CzqcOf9sW
+ YE4tYRCZaEyh/x1674lcZY1l/H0F0ArPvwmZIxON3DfEjagSV1uN/AxJKPXKBeA241xL
+ WqwyGwfYPVg0aO9XUojnJGQxro+u25NEoqXrbNR09NiA6eBYzNO4I80Q2dLPiRbdLZkb
+ 04tkTaqeTm6+rrMCyLbyFF+HCBtuFvxa0v0YSX5dAdbBWko9TEenvJpgjmfSY9CevQ+/
+ hitw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=BX9+oiU9NUzGK1+aV9/Uah0G+lhW9/DtCwBAHxWnn3I=;
+ b=uaHmbNI+fHWgYYRGZ/vrLituSI6l2iSFLq4EwM5G1NMTrrH1o0mvO2mn5kyOzE/26h
+ 1J27xxEyThzRnUzlbkn4d8+E2m6Tj53sidS9dT6hbWkX+FdLdgYsVbPXC5MysvkFZ9aZ
+ +8fYXM7BnfrvGduD7cv4qkePBj4f4dLngNssUGMA5cf1EHc7WEzPCqCqzFmrG7dVOe56
+ VMKT+LyXLd+mcrrlLG3ZdQIewwmNC0XniR3l2CNav2mj72a+7rEON7OtBmu/3rxsTTYt
+ blkEoQhwNF9hNiKUnHWTQhAK1VVpiWIMaML6KrD5xfzOhcd8zYu75IZEiH5qckVCrY5Q
+ /Z+w==
+X-Gm-Message-State: APjAAAXQrA9GZR/2Bt6syu/PJkJRc0Za0Mpjrg9s9S6IPUtdZCHiv54w
+ VWpoHI0CACsZBK5hLhvt1FZBQoPQZOfCEss5N1w=
+X-Google-Smtp-Source: APXvYqwRxzwlvasanDAZCzqmiAcIi+8du+kTb0XmBWuXgm+lcYoRDBqJdLFMRLpwiKeOks5taARgUtmAle4aHBvqjI0=
+X-Received: by 2002:aca:ddc2:: with SMTP id u185mr185041oig.24.1582156697455; 
+ Wed, 19 Feb 2020 15:58:17 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <3a8b6772a1edffdd7cdb54d6d50030b03ba0bebb.1581455751.git.leonard.crestez@nxp.com>
-References: <3a8b6772a1edffdd7cdb54d6d50030b03ba0bebb.1581455751.git.leonard.crestez@nxp.com>
-Subject: Re: [PATCH] firmware: imx: Align imx SC msg structs to 4
-From: Stephen Boyd <sboyd@kernel.org>
-To: Dong Aisheng <aisheng.dong@nxp.com>,
- Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>
-Date: Wed, 19 Feb 2020 15:57:01 -0800
-Message-ID: <158215662160.184098.12475377410437970578@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+References: <20200215065826.739102-1-gch981213@gmail.com>
+ <20200218125557.GD4232@sirena.org.uk>
+In-Reply-To: <20200218125557.GD4232@sirena.org.uk>
+From: Chuanhong Guo <gch981213@gmail.com>
+Date: Thu, 20 Feb 2020 07:58:06 +0800
+Message-ID: <CAJsYDVL03KJv7eewGekBPCfpbOuTX0tJ6qZaydvJnBDzZ5vEwg@mail.gmail.com>
+Subject: Re: [PATCH 0/2] rewrite mtk-quadspi spi-nor driver with spi-mem
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_155702_950154_DD679D4F 
-X-CRM114-Status: GOOD (  10.43  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200219_155819_225081_D5BA6EAD 
+X-CRM114-Status: GOOD (  12.01  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [gch981213[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [gch981213[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -64,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,46 +93,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Michael Turquette <mturquette@baylibre.com>, Stefan Agner <stefan@agner.ch>,
- linux-clk@vger.kernel.org, Franck LENORMAND <franck.lenormand@nxp.com>,
- linux-gpio@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <fabio.estevam@nxp.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
+ linux-spi@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Leonard Crestez (2020-02-11 13:24:33)
-> The imx SC api strongly assumes that messages are composed out of
-> 4-bytes words but some of our message structs have sizeof "6" and "7".
-> 
-> This produces many oopses with CONFIG_KASAN=y:
-> 
->         BUG: KASAN: stack-out-of-bounds in imx_mu_send_data+0x108/0x1f0
+Hi!
 
-Can you share the full kasan bug report instead of the single line?
+On Tue, Feb 18, 2020 at 8:55 PM Mark Brown <broonie@kernel.org> wrote:
+> This is an ABI break so you shouldn't be doing this, if the existing
+> binding works it should continue to work.
 
-> 
-> It shouldn't cause an issues in normal use because these structs are
-> always allocated on the stack.
+The missing spi-max-frequency is the only part preventing old
+device tree to work with this driver.
+If the goal is to make existing dt binding work, I could patch dt using
+of_add_property in v2. I saw similar device tree patching for legacy
+bindings in pinctrl-single driver.
 
-Is packed necessary for these? I thought that if the beginning of the
-struct was naturally aligned and there was sometimes a byte or two at
-the end then having __packed wasn't useful. So maybe it's better to just
-drop __packed on all these structs and let the compiler decide it can
-add some padding on the stack? Or do we have arrays of these structs
-sitting in memory all next to each other and they need to be that way to
-be sent through the mailbox?
+>
+> > 3. removing the old driver. I'll create this commit after 1 and 2 are
+> >    applied to avoid possible rebasing due to any changes in the old
+> >    driver.
+>
+> This isn't great as it means we have a period with two drivers for the
+> same thing in tree which is at best going to be confusing.  There's no
+> advantage to splitting this out.
 
-> 
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-> Reported-by: Iuliana Prodan <iuliana.prodan@nxp.com>
-> ---
+Got it. I'll add this patch in v2.
+
+--
+Regards,
+Chuanhong Guo
 
 _______________________________________________
 linux-arm-kernel mailing list
