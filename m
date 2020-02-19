@@ -2,51 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACEB3164270
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:43:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DD801642A2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:53:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fQ/lYjg6DoSZX0jTLws6QG8T3JBj45a/yZFL1pze7Wc=; b=KMl3ZVrkNaxMx8
-	1UbJcNKatVBgXV4h3xbvSuYjaLqQHFBjC+MGPDW4IL0xWLd/JKMrTmm48q61QMlHmdjA7zEHHznoP
-	SiFpTMAqaTpd0lt6EW+/1RucQwAs8xsfiibN72OGR1zOBN8XPexv2BI7EgSzyEBbN9lttWpaDZjOf
-	t2O0mB3U8xqj3fRg226jXR4jwf9IqLc78BILpUG6KFHAFRhUPjLkdgiQ0KTpeD8bin19euG2lGI28
-	WIHov2bgMwMkWT8Lmt+KTauhSo0OCBVGkQLvh5TaWeOrRw6rehuy4pD7v1GDKlfQXtHdBH493Sjwj
-	xDZgzrxCtviO3SGQixaA==;
+	List-Owner; bh=KGbxpTPe6g7tmqSogLAqSCsnoY6snfGSLqJkQfteTyU=; b=IaEba4J7ZMmrJX
+	FV/IVvU3Os/MkdkxaiAUL2z64o4O9NJZ85FHt2tR5JpSOo2zKnYxTdt+OxhXu08AqfXFRhCUVw//l
+	NEiBPehMwZ4lKperiF/lcBDtBARuKdpC776l1ZUwCDNQE88uetIvqf5UDkl92gN5VLzMUrzZ+Lz5m
+	RkJiB7pXM5d2dToS1DeH/R4FX2/UIiXQ0vyIr0Dg5nGDd1Pmjj43yCntXs6D4MPbo7mhAxmvrxmK8
+	g51YsjCXGkJITdeftLpxjzuHSe03HJ5XFRfkhlpNnRyIeIp6Dkv9zsiVxFfEmbXEJpxJkhIv79FRb
+	8icWVlWtkt5AEUF8rHsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Mot-0006e7-ED; Wed, 19 Feb 2020 10:43:07 +0000
-Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
- helo=theia.8bytes.org)
+	id 1j4Myj-0002Qk-9g; Wed, 19 Feb 2020 10:53:17 +0000
+Received: from first.geanix.com ([116.203.34.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Moi-0006d5-0H
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:42:57 +0000
-Received: by theia.8bytes.org (Postfix, from userid 1000)
- id C31CF36C; Wed, 19 Feb 2020 11:42:45 +0100 (CET)
-Date: Wed, 19 Feb 2020 11:42:44 +0100
-From: Joerg Roedel <joro@8bytes.org>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH 00/10] PCI/ATS: Device-tree support and other improvements
-Message-ID: <20200219104244.GD1961@8bytes.org>
-References: <20200213165049.508908-1-jean-philippe@linaro.org>
+ id 1j4MyY-0002Hn-CJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:53:08 +0000
+Received: from localhost (_gateway [172.20.0.1])
+ by first.geanix.com (Postfix) with ESMTPSA id 02379C002E;
+ Wed, 19 Feb 2020 10:53:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=geanix.com; s=first;
+ t=1582109581; bh=VW+jgWITWMNA+jY6FIGR7+cpj/MuFZAzw0f/ewJNF7g=;
+ h=From:To:Cc:Subject:References:Date:In-Reply-To;
+ b=hMU/sPilGZlwszhd5lSoK39aqNCiUQ79DXow8DJr08WITajb0g/jA4MXJ8abVeifh
+ nkhyCkvPWZLbJJDY90uF9MfKSTj+pNUX7UpiMYigxCpwXhkq5XMo0zJCBlegR62/35
+ 0Z3o2VRxtOYIlqL78WGk2XMqJ8fJdJ8EqTc1i+SRWkEaggvkhdi7QtQFyFoygxthe7
+ 3vQaSXjJFlJOnA4tS5WXh7nXt+muMECwd5KJahXqB33z1AnaRSv+ajCI2n/nNYCe3o
+ TDdekERClLYPV4o8AOAStO7eOx4l7SsDD8Q5UACLCul2XRgYQhQrXU1R1B7d7yqiyH
+ rMKFfq1D7sQmQ==
+From: Esben Haabendal <esben@geanix.com>
+To: David Miller <davem@davemloft.net>
+Subject: Re: [PATCH 0/8] net: ll_temac: Bugfixes and ethtool support
+References: <20200218082607.7035-1-esben@geanix.com>
+ <20200218.115014.2022578847900470441.davem@davemloft.net>
+Date: Wed, 19 Feb 2020 11:53:00 +0100
+In-Reply-To: <20200218.115014.2022578847900470441.davem@davemloft.net> (David
+ Miller's message of "Tue, 18 Feb 2020 11:50:14 -0800 (PST)")
+Message-ID: <875zg2n90z.fsf@geanix.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.3 (gnu/linux)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200213165049.508908-1-jean-philippe@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Spam-Status: No, score=-1.7 required=4.0 tests=BAYES_00,DKIM_INVALID,
+ DKIM_SIGNED,UNPARSEABLE_RELAY,URIBL_BLOCKED autolearn=disabled
+ version=3.4.3
+X-Spam-Checker-Version: SpamAssassin 3.4.3 (2019-12-06) on eb9da72b0f73
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_024256_197689_AF6EF7C3 
-X-CRM114-Status: UNSURE (   7.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200219_025306_731722_2777F311 
+X-CRM114-Status: GOOD (  10.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,43 +78,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
- liviu.dudau@arm.com, guohanjun@huawei.com, frowand.list@gmail.com,
- lorenzo.pieralisi@arm.com, corbet@lwn.net, will@kernel.org,
- linux-acpi@vger.kernel.org, lenb@kernel.org, devicetree@vger.kernel.org,
- robh+dt@kernel.org, bhelgaas@google.com, linux-arm-kernel@lists.infradead.org,
- dwmw2@infradead.org, rjw@rjwysocki.net, iommu@lists.linux-foundation.org,
- sudeep.holla@arm.com, baolu.lu@linux.intel.com, robin.murphy@arm.com,
- amurray@thegoodpenguin.co.uk
+Cc: andrew@lunn.ch, netdev@vger.kernel.org, michal.simek@xilinx.com,
+ linux-kernel@vger.kernel.org, ynezz@true.cz,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jean-Philippe,
+David Miller <davem@davemloft.net> writes:
 
+> Several errors in this submission:
+>
+> 1) Do not mix bug fixes and new features.  Submit the bug fixes
+>    targetting 'net', and then wait for net to be merged into
+>    net-next at which time you can submit the new features on
+>    top.
+>
+> 2) As per Documentation/networking/netdev-FAQ.rst you should not
+>    ever CC: stable for networking patches, we submit bug fixes to
+>    stable ourselves.
 
-On Thu, Feb 13, 2020 at 05:50:38PM +0100, Jean-Philippe Brucker wrote:
-> Jean-Philippe Brucker (11):
->   dt-bindings: PCI: generic: Add ats-supported property
->   PCI: Add ats_supported host bridge flag
->   PCI: OF: Check whether the host bridge supports ATS
->   ACPI/IORT: Check ATS capability in root complex node
->   PCI/ATS: Gather checks into pci_ats_supported()
->   iommu/amd: Use pci_ats_supported()
->   iommu/arm-smmu-v3: Use pci_ats_supported()
->   iommu/vt-d: Use pci_ats_supported()
->   ACPI/IORT: Drop ATS fwspec flag
->   arm64: dts: fast models: Enable PCIe ATS for Base RevC FVP
->   Documentation: Generalize the "pci=noats" boot parameter 
+Got it.  I will resend against net and net-next.
 
-Nice patch-set! Thanks for the consolidation work. I can take it into
-the iommu-tree, given that the non-iommu parts get the necessary Acks.
-
-
-Regards,
-
-	Joerg
+/Esben
 
 _______________________________________________
 linux-arm-kernel mailing list
