@@ -2,79 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6A16163FEE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:04:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3808F163FF9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:07:36 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HhDlzK9E2ryXSMFoF4z7DD+dXJ3DJJdteWbq/tyBBEw=; b=ODs
-	TVsAr9BL5NaEtlKK3wqdRcZfKbujewlTVaEfXuO8CbNC8Mssw2+kBcVvpogdhXD4qwPCNTrM3Mul3
-	WBvtj5ONwQ/+9yPaHOwqERYwh/C9kvS7QR4ABJXUNPAfQonY/IyI38+vdRWaqdBphPvvC6GGphO7m
-	pY/TtykqfulQu00Q50Fg3dL1ZgjwotflXI2IUDOEJ+AD9KB8VukQmKIZxay5Q1uuaL6R0ZD0q9hHj
-	JR7Iu8f+DoWlbdMCQkohMZTMfThWtYaH4bEOYT5DRAWo3Qjnl2idOZgTglFsxYuGX6iD2QapWDYUH
-	BVlDqqWuKm3QqvhtyTVeDNw1pfCfgwA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B6uzxCYImNX9BdmHvgYp7//7euE2ASVob+X6S9THYHo=; b=cfB+5s4pGg4uG9
+	2S3Y00kNNOyJ6DKmcGwiWh8OqF4+iybtvbGCIIlsPTbmUKqagwmpSBMybojtJGFUbl4wlHwf6U1/N
+	FARdd5JxxnxaqR9yrKK4nF68Ac9qoPFAllybsy2ymQfsFpolHxw5bB4S8Qhc3oaRsigQQPQlB6t+v
+	xlR9y3sa4HjX7UAyz7R9LCmmKrOvvRhMxEPLwQz420RfsFHxIoRRpl5JnCRYXDPQnWi3psWjq34cX
+	kpalEaKwnwe4Ncu3Frz8UzlKm7sh3LaVVepgSCdNXJ4CK9LlzGWTZTiY6zQS+vCCvVhGyzTfYHktb
+	ei/SWnX9tuU60Pmmb7Yg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4LHg-0001dZ-OD; Wed, 19 Feb 2020 09:04:44 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1j4LKP-0003Go-DU; Wed, 19 Feb 2020 09:07:33 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4LHY-0001cO-6j
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:04:38 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 2so12168996pfg.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 01:04:33 -0800 (PST)
+ id 1j4LK4-0003GI-Pj; Wed, 19 Feb 2020 09:07:14 +0000
+Received: by mail-ot1-x342.google.com with SMTP id r16so22461357otd.2;
+ Wed, 19 Feb 2020 01:07:12 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=zzjNsVT7oFssvopVPRdGW/YTCcDi0QZYWBWNA17kwhg=;
- b=eNHopnRDIVVrepw5vDCEHq2Oka1gXLsWwAXhAKzSHRO7h69Y9ZTIgAIKTw5sIE1zcr
- dDFIvcL0ReVbdcKCQOIsJTxWs7E9rSs/Ehg6Sjqt7C804okv8FBBfTp8WyrqoQ7qfyZ1
- um28qJXOkM72Gb0thvNp8UdV8ZDW5FB9sfqtK1Khzx5Lcw2l8j/DRfX3m6U/VHT3G7aO
- VA5Ql/nTRfhqLJGefDkORrM6q+9nmHHIeRph1hJVh9wwvnEzIF6Qp868Orz+oAtG3xow
- Cu4+wEg4IgD3AOV2KvTcJfY0sSWMMaac/CGvNqWXa9+rlA0eo1htT3NY7k7dZp/z5DPB
- bobQ==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=hl9R42S7bTmTIImSyFBNArkLnawsxqytbv3I5jer4iE=;
+ b=XwnW4WNhvn8JGvbdWoY7h4s3J9zIhVUWIk9heioPvbq/FxrffWd1t6dLCIQSjYfwps
+ SBSwawhTSiUw5UEU0m4jchppkrSpXXRgSDXT84Brg5JQg0XZbUWhvnLkAidZSr+beN7D
+ Dv1TjI6UmRs1GjZE2LaBCmoWAZVdPHTrEwoKM0k9vyRI1Avn+zIO+EF3ulIvlpqHw479
+ F2m/agZ1clfz1bpokaCGjmvVI+Tih4XM+li1o/gG0o/WiDoMBarpoP9Vm7EICL9mVaGg
+ +fmatW0lJPsQPnyHwIwyoGswfjj3TxNOV4c1OPY1PC36OyMuSDDGzdhoJt1n+ije6i7h
+ ilew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=zzjNsVT7oFssvopVPRdGW/YTCcDi0QZYWBWNA17kwhg=;
- b=FdKAqHgTW/C89TiPPmx6s+1jrqJXiLnv3gsbVJzo+UwqSasXN32TS+kP4nTbB7i7yc
- Z3ewGoe1r81MutLApRNYkmjQ6s6gX4LoLeOJwi6EF4dud3uwJI/EJXmyYtLKKaCiwMIu
- 9QlA4Ckn6Tb85RU6XUfsGQb1+Nr+tQJ7BL9cGJyJZNXQH9BbAlKQzqbcoi81+aJh3ba0
- W6RsGLDl0icY5VvzN3bkkevmiCAiQY+qqWtjUU/xGmvJbBBKO+eu0vz3w3CRG9EDJ3R/
- 5aoy3fD4xpiopZcVPQhek0NN4Zu7RvYvU2Uh4JQrXTimAQ3jjL5RDQhb1ix3dssJ4KHi
- f5Fw==
-X-Gm-Message-State: APjAAAWy4mElVpUaEaCOFW7Odhkyu9/SUD4WwNl0iDuPeoyV5y/TJLgS
- OEJxVa4lejDkwrEFfVDu4go=
-X-Google-Smtp-Source: APXvYqyUx/ed9xaA7LIfb73jmGtEiSRQm+UAORQvBANl91x/+R19025joyq1EtFB4+oxNnDeYjNruQ==
-X-Received: by 2002:a63:2a02:: with SMTP id q2mr26247331pgq.198.1582103073166; 
- Wed, 19 Feb 2020 01:04:33 -0800 (PST)
-Received: from localhost.localdomain ([101.13.197.106])
- by smtp.gmail.com with ESMTPSA id b25sm1849858pfo.38.2020.02.19.01.04.30
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Wed, 19 Feb 2020 01:04:32 -0800 (PST)
-From: Jeff Chang <richtek.jeff.chang@gmail.com>
-To: lgirdwood@gmail.com
-Subject: [PATCH v2] ASoC: MT6660 update to 1.0.8_G
-Date: Wed, 19 Feb 2020 17:04:24 +0800
-Message-Id: <1582103064-25088-1-git-send-email-richtek.jeff.chang@gmail.com>
-X-Mailer: git-send-email 2.7.4
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=hl9R42S7bTmTIImSyFBNArkLnawsxqytbv3I5jer4iE=;
+ b=m132KFhpUzmeufRZ2lkrBY+GgpndjKTvsRW9b8/2adYJmAlXn1P4WJdJJLWU2T1aHX
+ vdxgzVQqXJ8uS4SC23u7x2kseKNYBxCl3o+CYf3B8zpoxsNvdgAf+Cx2qYze1ei+KH7g
+ ZbAmWpCGHurrCzxpo66tDqS69V7PeSjAK5iIW5OH8fa2H4/+6/NvJ0+lmZ3Q5nneW7yA
+ yD5emsER3Uv83tEcnD4MQthSH1LNIiGgQveQqHJuel6znY9NSo5pPb1faiT+E9jDhDHK
+ nJmGNwuuPfLt9IiNQeRR6W2LBnWWrGTvQKZXhUj5pb98/7YxUNZ5p6Aw+HZ97SZv5pEr
+ 82OA==
+X-Gm-Message-State: APjAAAUZwuT7YtHxbPTRaI1S4XaPf+4CnKFAq7jlF0TYnR/MYrrysaMi
+ FGwVZRpX6UuNY9Wvckj/TmSK6eHy1iTQC+WFzWuTPkvF+ExSTQ==
+X-Google-Smtp-Source: APXvYqxHKoYOKLSVj2I0oZVyHx/701r0aK9W1LUqkpwYs0YWVF09ezzLoeZkXL7bRk/YGzWf/TnmQEwIspJzwjO/ZWo=
+X-Received: by 2002:a9d:d06:: with SMTP id 6mr19535224oti.176.1582103232048;
+ Wed, 19 Feb 2020 01:07:12 -0800 (PST)
+MIME-Version: 1.0
+References: <20200208183641.6674-2-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <20200212140127.GA127398@google.com>
+In-Reply-To: <20200212140127.GA127398@google.com>
+From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
+Date: Wed, 19 Feb 2020 09:06:45 +0000
+Message-ID: <CA+V-a8sBPT-RLvzRFFFwbNghD9X26P5qPntoUvgNHQ6_eUzQBg@mail.gmail.com>
+Subject: Re: [PATCH v4 1/6] PCI: rcar: Preparation for adding endpoint support
+To: Bjorn Helgaas <helgaas@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_010436_246544_BAAE5F79 
-X-CRM114-Status: GOOD (  14.01  )
+X-CRM114-CacheID: sfid-20200219_010712_838983_9568190E 
+X-CRM114-Status: GOOD (  28.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [richtek.jeff.chang[at]gmail.com]
+ provider [prabhakar.csengg[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,141 +91,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, richtek.jeff.chang@gmail.com,
- linux-kernel@vger.kernel.org, tiwai@suse.com, perex@perex.cz,
- jeff_chang@richtek.com, broonie@kernel.org, matthias.bgg@gmail.com,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, Heiko Stuebner <heiko@sntech.de>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, Will Deacon <will@kernel.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Kishon Vijay Abraham I <kishon@ti.com>,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ linux-pci <linux-pci@vger.kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Rob Herring <robh+dt@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Andrew Murray <andrew.murray@arm.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jeff Chang <jeff_chang@richtek.com>
+Hi Bjorn,
 
-1. add mt6660_component_settign for Component INIT Setting
+Thank you for the review.
 
-Signed-off-by: Jeff Chang <jeff_chang@richtek.com>
----
- sound/soc/codecs/mt6660.c | 78 +++++++++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 75 insertions(+), 3 deletions(-)
+On Wed, Feb 12, 2020 at 2:01 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
+>
+> To make the changelog from "git log --oneline" read nicely, the
+> subject should begin with a verb, e.g.,
+>
+>   PCI: rcar: Move shareable code to a common file
+>
+> On Sat, Feb 08, 2020 at 06:36:36PM +0000, Lad Prabhakar wrote:
+> > Prepare for adding endpoint support to rcar controller, there are no
+> > functional changes with this patch, a common file is created so that
+> > it can be shared with endpoint driver.
+>
+> This commit log doesn't tell us what this patch does.  "Prepare"
+> conveys no real information.  It's a giant patch and it's difficult
+> to verify that there's no functional change.
+>
+> I *think* what you did was move most of the #defines from pcie-rcar.c
+> to pcie-rcar.h and most of the code from pcie-rcar.c to
+> pcie-rcar-host.c.  And in both case, these were strict *moves* without
+> any changes.  If that's the case, please say that explicitly in the
+> commit log.
+>
+> That's good; thanks for making this a separate patch so it's not
+> mingled with real changes.
+>
+Agreed I shall split this patch further more, first patch just
+renaming the file from
+pcie-rcar.c to pcie-rcar-host.c along with Makefile/Kconfig/defconfig
+changes and
+the second patch pulling out common code that shall be share between
+two drivers.
+This shall make it more easier to review.
 
+> > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> > ---
+> >  arch/arm64/configs/defconfig            |    2 +-
+> >  drivers/pci/controller/Kconfig          |    4 +-
+> >  drivers/pci/controller/Makefile         |    2 +-
+> >  drivers/pci/controller/pcie-rcar-host.c | 1044 ++++++++++++++++++++++++++
+> >  drivers/pci/controller/pcie-rcar.c      | 1229 ++-----------------------------
+> >  drivers/pci/controller/pcie-rcar.h      |  126 ++++
+> >  6 files changed, 1227 insertions(+), 1180 deletions(-)
+> >  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+> >  create mode 100644 drivers/pci/controller/pcie-rcar.h
+> >
+> > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > index b2f6673..8a1f51d 100644
+> > --- a/arch/arm64/configs/defconfig
+> > +++ b/arch/arm64/configs/defconfig
+> > @@ -182,7 +182,7 @@ CONFIG_HOTPLUG_PCI=y
+> >  CONFIG_HOTPLUG_PCI_ACPI=y
+> >  CONFIG_PCI_AARDVARK=y
+> >  CONFIG_PCI_TEGRA=y
+> > -CONFIG_PCIE_RCAR=y
+> > +CONFIG_PCIE_RCAR_HOST=y
+> >  CONFIG_PCI_HOST_GENERIC=y
+> >  CONFIG_PCI_XGENE=y
+> >  CONFIG_PCIE_ALTERA=y
+> > diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+> > index f84e5ff..94bb5e9 100644
+> > --- a/drivers/pci/controller/Kconfig
+> > +++ b/drivers/pci/controller/Kconfig
+> > @@ -54,12 +54,12 @@ config PCI_RCAR_GEN2
+> >         There are 3 internal PCI controllers available with a single
+> >         built-in EHCI/OHCI host controller present on each one.
+> >
+> > -config PCIE_RCAR
+> > +config PCIE_RCAR_HOST
+>
+> The config symbol change should be mentioned in the commit log.  In
+> general we try to avoid changing config symbols because it's likely to
+> confuse people who keep their .config and update their kernel.  But I
+> guess your audience is probably pretty small.
+>
+I shall mention it in my commit message.
 
-changelogs between v2 & v1
-        - remove parse DT and apply function about Chip INIT SETTING.
-        - use hard coding for MT6660 Component INIT SETTING.
+> >       bool "Renesas R-Car PCIe controller"
+>
+> The description needs to be updated, too.  This is what people will
+> see in menuconfig.
+>
+I shall update it accordingly.
 
+> >       depends on ARCH_RENESAS || COMPILE_TEST
+> >       depends on PCI_MSI_IRQ_DOMAIN
+> >       help
+> > -       Say Y here if you want PCIe controller support on R-Car SoCs.
+> > +       Say Y here if you want PCIe controller support on R-Car SoCs in host mode.
+>
+> Wrap this so it fits in 80 columns like the rest of the file.
+>
+Will fix that.
 
-diff --git a/sound/soc/codecs/mt6660.c b/sound/soc/codecs/mt6660.c
-index a36c416..88cf228 100644
---- a/sound/soc/codecs/mt6660.c
-+++ b/sound/soc/codecs/mt6660.c
-@@ -9,7 +9,6 @@
- #include <linux/i2c.h>
- #include <linux/pm_runtime.h>
- #include <linux/delay.h>
--#include <linux/debugfs.h>
- #include <sound/soc.h>
- #include <sound/tlv.h>
- #include <sound/pcm_params.h>
-@@ -225,14 +224,87 @@ static int _mt6660_chip_power_on(struct mt6660_chip *chip, int on_off)
- 				 0x01, on_off ? 0x00 : 0x01);
- }
- 
-+struct reg_table {
-+	uint32_t addr;
-+	uint32_t mask;
-+	uint32_t val;
-+};
-+
-+static const struct reg_table mt6660_setting_table[] = {
-+	{ 0x20, 0x80, 0x00 },
-+	{ 0x30, 0x01, 0x00 },
-+	{ 0x50, 0x1c, 0x04 },
-+	{ 0xB1, 0x0c, 0x00 },
-+	{ 0xD3, 0x03, 0x03 },
-+	{ 0xE0, 0x01, 0x00 },
-+	{ 0x98, 0x44, 0x04 },
-+	{ 0xB9, 0xff, 0x82 },
-+	{ 0xB7, 0x7777, 0x7273 },
-+	{ 0xB6, 0x07, 0x03 },
-+	{ 0x6B, 0xe0, 0x20 },
-+	{ 0x07, 0xff, 0x70 },
-+	{ 0xBB, 0xff, 0x20 },
-+	{ 0x69, 0xff, 0x40 },
-+	{ 0xBD, 0xffff, 0x17f8 },
-+	{ 0x70, 0xff, 0x15 },
-+	{ 0x7C, 0xff, 0x00 },
-+	{ 0x46, 0xff, 0x1d },
-+	{ 0x1A, 0xffffffff, 0x7fdb7ffe },
-+	{ 0x1B, 0xffffffff, 0x7fdb7ffe },
-+	{ 0x51, 0xff, 0x58 },
-+	{ 0xA2, 0xff, 0xce },
-+	{ 0x33, 0xffff, 0x7fff },
-+	{ 0x4C, 0xffff, 0x0116 },
-+	{ 0x16, 0x1800, 0x0800 },
-+	{ 0x68, 0x1f, 0x07 },
-+};
-+
-+static int mt6660_component_setting(struct snd_soc_component *component)
-+{
-+	struct mt6660_chip *chip = snd_soc_component_get_drvdata(component);
-+	int ret = 0;
-+	size_t i = 0;
-+
-+	ret = _mt6660_chip_power_on(chip, 1);
-+	if (ret < 0) {
-+		dev_err(component->dev, "%s chip power on failed\n", __func__);
-+		return ret;
-+	}
-+
-+	for (i = 0; i < ARRAY_SIZE(mt6660_setting_table); i++) {
-+		ret = snd_soc_component_update_bits(component,
-+				mt6660_setting_table[i].addr,
-+				mt6660_setting_table[i].mask,
-+				mt6660_setting_table[i].val);
-+		if (ret < 0) {
-+			dev_err(component->dev, "%s update 0x%02x failed\n",
-+				__func__, mt6660_setting_table[i].addr);
-+			return ret;
-+		}
-+	}
-+
-+	ret = _mt6660_chip_power_on(chip, 0);
-+	if (ret < 0) {
-+		dev_err(component->dev, "%s chip power off failed\n", __func__);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
- static int mt6660_component_probe(struct snd_soc_component *component)
- {
- 	struct mt6660_chip *chip = snd_soc_component_get_drvdata(component);
-+	int ret;
- 
- 	dev_dbg(component->dev, "%s\n", __func__);
- 	snd_soc_component_init_regmap(component, chip->regmap);
- 
--	return 0;
-+	ret = mt6660_component_setting(component);
-+	if (ret < 0)
-+		dev_err(chip->dev, "mt6660 component setting failed\n");
-+
-+	return ret;
- }
- 
- static void mt6660_component_remove(struct snd_soc_component *component)
-@@ -506,4 +578,4 @@ module_i2c_driver(mt6660_i2c_driver);
- MODULE_AUTHOR("Jeff Chang <jeff_chang@richtek.com>");
- MODULE_DESCRIPTION("MT6660 SPKAMP Driver");
- MODULE_LICENSE("GPL");
--MODULE_VERSION("1.0.7_G");
-+MODULE_VERSION("1.0.8_G");
--- 
-2.7.4
+Cheers,
+--Prabhakar Lad
 
+> Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
