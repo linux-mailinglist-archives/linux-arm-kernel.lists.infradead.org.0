@@ -2,56 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CFDD16424B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:39:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D53F9164266
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:41:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+xNp7dCRPWZfin7mwaQMT/A8y4DvhLVuiw3Ylp7FYOo=; b=TT4loE/nbvK7bm
-	OFDtANcafngKSgNe4wNoX59tZ7w3BaHC/LbPOqTOAFPfL+Foa5KhHnpi0wC4GtkTPWBsVoNmK9KY8
-	fD2+4TB3czPunIO5Q9aq7N8ILl6+ys8PEzCAEZPzlyIQ6HAyihnEhSc1xsYajbKLg7Q1HWlfhwBC0
-	UWoJYSPMHeP9K4X/+SMZbYb3nw1a7gu/yYNPATTHaEIdYxLa/izMZoawOQ7jxE5jyDyqn3+rp4fEq
-	8KRtXsBKuouLCaKLj1JiaIUyVa4BTnKdHg84lESGMGCJeFnbIdjzlXDi+07z5km9yNKjaSXeFmvKJ
-	mwEJQl/Gr8ZliFTXeFJQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=HrRP5kPu47ORhNm9f9rja5RM4dIp7jd3yWr3oAkqQh8=; b=Y4E/4JczGPWBpe
+	1vOeUrsO77va8DYMOlZhFpeFkNk6nbClMOELNc7H9swrR/GiQ5Aaj3lhYSc8sdcbUnjVqV7+RrnH8
+	yc8+xdE/Bzu8ZWGqifn1ujUB7R2vv7yxAWG3G5fO2irKLdvH6RQXUg7j5wkzWV/VNJgrgcnnOZ8wF
+	ApEvFPd36KdasOsxTUBckiwMsA+rGIXt8UOwe6Z5A5fC8s78y23TrQUqyXCaInN3bZ5TJnPDn8uZH
+	FoxRfpbrhW7Aia8i6MQDIftx5b2ZPeqkIwyAMJM4uH/g6EQksHI1d2VGKHcCUxYjZycwYcG2TxmlV
+	27Utk9dw1K60+dnS+wvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Mlf-0004hr-6n; Wed, 19 Feb 2020 10:39:47 +0000
+	id 1j4Mna-0006Lt-2t; Wed, 19 Feb 2020 10:41:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4MlR-0004gx-Gl
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:39:35 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 92F0E2465D;
- Wed, 19 Feb 2020 10:39:31 +0000 (UTC)
+ id 1j4MnQ-0006LY-G8
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:41:37 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3A1CE2465D;
+ Wed, 19 Feb 2020 10:41:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582108773;
- bh=t6EucisUj3k9GKUi9HzDCHyuy6JHeDY4sFIA89ws9Zs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vKhrxTz7kLkP5Q3WCfvximPTS9d76j8T5d1IVUcaVRRdanVzi23IvRxv/oiDR3fsD
- FbgQUhB42zAKZNiz4BljbYQwUf9BRfFw762rCPVGjsXuHPLWGLF+nAPuWJAo54EiPl
- aNal4xwK6v1FkaX9bNp72NWnxU/3ocf4YTd8bSxE=
-Date: Wed, 19 Feb 2020 10:39:28 +0000
+ s=default; t=1582108896;
+ bh=U6to4otLXJGLB13o6RzYw7pCZ5asKRv2pkOtt9vkGms=;
+ h=From:To:Cc:Subject:Date:From;
+ b=xl4Cp7xBchKZx9ZkeBPRExGYG3NrRV2PCihn+lHV5zD4r84NXFh3jeHZKCrz6r2IB
+ GbtBQXOvH1G2/XsA22xsoXbh810x0EcpVZ4wvS7EWnE9NZwBWG5MKcrp5YAFMJWs5B
+ jBjWek1zesELJmvQUDOSwpAsGZAHZLBL2AUA/rQo=
 From: Will Deacon <will@kernel.org>
-To: Evgenii Stepanov <eugenis@google.com>
-Subject: Re: [PATCH] mm: Avoid creating virtual address aliases in
- brk()/mmap()/mremap()
-Message-ID: <20200219103927.GB16824@willie-the-truck>
-References: <20200218122310.72710-1-catalin.marinas@arm.com>
- <20200218123426.GA19776@willie-the-truck>
- <CAAeHK+zKGLHVFVAmUB8Ccc2vuGiZ1uSt1kzxk=7SdDtbwVkvhQ@mail.gmail.com>
- <CAFKCwrhysxATNaPWQR9Nn-P1+ngBMXauPUuEdpaYRgKZH0XV7Q@mail.gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: memory: Add missing brackets to untagged_addr() macro
+Date: Wed, 19 Feb 2020 10:41:31 +0000
+Message-Id: <20200219104131.18960-1-will@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFKCwrhysxATNaPWQR9Nn-P1+ngBMXauPUuEdpaYRgKZH0XV7Q@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_023933_582373_4329F458 
-X-CRM114-Status: GOOD (  19.22  )
+X-CRM114-CacheID: sfid-20200219_024136_557453_D313BFEF 
+X-CRM114-Status: GOOD (  11.85  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,60 +74,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Weimer <fweimer@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>, Victor Stinner <vstinner@redhat.com>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: catalin.marinas@arm.com, Linus Torvalds <torvalds@linux-foundation.org>,
+ Will Deacon <will@kernel.org>, stable@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 01:05:14PM -0800, Evgenii Stepanov wrote:
-> On Tue, Feb 18, 2020 at 5:07 AM Andrey Konovalov <andreyknvl@google.com> wrote:
-> >
-> > On Tue, Feb 18, 2020 at 1:34 PM Will Deacon <will@kernel.org> wrote:
-> > >
-> > > On Tue, Feb 18, 2020 at 12:23:10PM +0000, Catalin Marinas wrote:
-> > > > Currently the arm64 kernel ignores the top address byte passed to brk(),
-> > > > mmap() and mremap(). When the user is not aware of the 56-bit address
-> > > > limit or relies on the kernel to return an error, untagging such
-> > > > pointers has the potential to create address aliases in user-space.
-> > > > Passing a tagged address to munmap(), madvise() is permitted since the
-> > > > tagged pointer is expected to be inside an existing mapping.
-> > >
-> > > Might be worth mentioning that this is causing real issues for existing
-> > > userspace:
-> > >
-> > > https://bugzilla.redhat.com/show_bug.cgi?id=1797052
-> > >
-> > > and so should be merged as a fix.
-> > >
-> > > > Remove untagging in the above functions by partially reverting commit
-> > > > ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk"). In
-> > > > addition, update the arm64 tagged-address-abi.rst document accordingly.
-> >
-> > Evgenii, do you know if this will cause any issues for HWASAN?
-> 
-> Is it possible to preserve the untagging behavior when a process has
-> opted in TBI?
+Add brackets around the evaluation of the 'addr' parameter to the
+untagged_addr() macro so that the case to 'u64' applies to the result
+of the expression.
 
-It's /possible/, but without a concrete need I'm not keen to special case
-mmap() like this. "Avoid aliasing user addresses" is an enforceable rule
-across all system calls and is easily documented as such, so I'd prefer
-to start from that position and only add exceptions where they are really
-needed. That clearly doesn't preclude adding them later on with an extension
-to the current prctl() controls.
+Cc: <stable@vger.kernel.org>
+Fixes: 597399d0cb91 ("arm64: tags: Preserve tags for addresses translated via TTBR1")
+Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ arch/arm64/include/asm/memory.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> I have not seen an actual issue with a tagged pointer in mmap yet
-> (I've seen two with mprotect, but not mmap or sbrk), so we should be
-> fine either way.
+diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+index a4f9ca5479b0..4d94676e5a8b 100644
+--- a/arch/arm64/include/asm/memory.h
++++ b/arch/arm64/include/asm/memory.h
+@@ -213,7 +213,7 @@ static inline unsigned long kaslr_offset(void)
+ 	((__force __typeof__(addr))sign_extend64((__force u64)(addr), 55))
+ 
+ #define untagged_addr(addr)	({					\
+-	u64 __addr = (__force u64)addr;					\
++	u64 __addr = (__force u64)(addr);					\
+ 	__addr &= __untagged_addr(__addr);				\
+ 	(__force __typeof__(addr))__addr;				\
+ })
+-- 
+2.25.0.265.gbab2e86ba0-goog
 
-Right, and we're leaving mprotect() and madvise() as they were.
-
-Will
 
 _______________________________________________
 linux-arm-kernel mailing list
