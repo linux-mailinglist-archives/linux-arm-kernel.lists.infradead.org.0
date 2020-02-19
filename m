@@ -2,78 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17A0F1647E5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 16:09:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A98FF164842
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 16:16:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XasgCP4vnMJViY9SlobqONaxV9bUKh6GstOVRhZhWCk=; b=AMDvfUgq4rdhsL
-	+oxOJSesfw4LyJ7y4etwx2BBsoOYLIeQShWVjiIStdQdf2xhDdv+BePN69ZLH9+2rFLaMHGIEFbaE
-	MTiBAlmxlRB4wHaKFmCjWZ07LIy7fRrpCiI/33IB1oDb+Rrr2tg5JPJXQVVk1xqo5d6Q2mCLU31z2
-	FRuNtND8o4P6uPG9MlItI8Y4nRJBSdma7QvctfR6aCi8M369Ei+kJ4f++j58ISbxg2hm5uw0OAI9P
-	wYw9TnCUPPZFobr7ItdDxyj0dxYFWh5JsVQa6Utz7AI8XyMk09TFnqJxY/x3W79JJ/rkWgwfRtsOn
-	3jZ3XvHm8kmmrDeeOiXw==;
+	List-Owner; bh=xLvv1IA/JcAEsZyamiYQX3rsnYgYc2FxYML6UbYw71E=; b=NqniDktWIyf7Le
+	IwYPGkY9GGHH9O0f+tHK7iZpQJ5c9HOL78Gs3/8/X42rqd9gSf6ybfGugdWprG+j2WZMfdtOsC6Iz
+	qb0IVC3zcJAZHxxpLBBfDX5JaFaXT5+2NqB+Nd96ZojCxOmhLzXdYPK4eO6dGjDdInTMdbsSFBjjP
+	Md93+D/9BEc8Dv5vLmmH96A2Dj00vuWJlFPfNzukW1JgkAKBj6j7WVTV2njrQ9eR7PYM1/ap++VJH
+	7mUJGpv28TauBokuMJmkAqNZT8iOxMhvPso+nXB9YVO1aeNQOHyVIODrrqWPkIne5u9Q7U8epTuO1
+	vtymxLPbn6Zft+APWMWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Qz5-0006r8-4D; Wed, 19 Feb 2020 15:09:55 +0000
-Received: from mout.kundenserver.de ([212.227.17.24])
+	id 1j4R5S-0002bx-Pd; Wed, 19 Feb 2020 15:16:30 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Qyr-0006q3-8z
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 15:09:42 +0000
-Received: from mail-qv1-f52.google.com ([209.85.219.52]) by
- mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1M42X0-1j4Qyk3lYW-00088H for <linux-arm-kernel@lists.infradead.org>; Wed,
- 19 Feb 2020 16:09:35 +0100
-Received: by mail-qv1-f52.google.com with SMTP id s6so323187qvq.4
+ id 1j4R5I-0002bT-Sk
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 15:16:22 +0000
+Received: by mail-ot1-f66.google.com with SMTP id h9so428710otj.11
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 07:09:34 -0800 (PST)
-X-Gm-Message-State: APjAAAUldZ4ZpCuUakyfOFEgt1bsx7RPFdOxx/19cwMKTphywUtuoNjV
- qsLIUopEosCOXYQhS8yuB0akg/M9ULsF6ilA5+w=
-X-Google-Smtp-Source: APXvYqy3rlxWW3PibWcS7Utz29Jg0Z9gTgANCeAjjrXu+xhh/WzI1/Ni7Mlpywm71HMgkez+fQvQf5f2uWJlSlHGL2o=
-X-Received: by 2002:ad4:52eb:: with SMTP id p11mr20046350qvu.211.1582124973474; 
- Wed, 19 Feb 2020 07:09:33 -0800 (PST)
+ Wed, 19 Feb 2020 07:16:19 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=9UdK/NvuxAwd8nrf57s06dVQ9BD68d4hTcVv/rTIoIE=;
+ b=Gf+zYhxRYejG4JFVor4W5F1nTX2Kh+2O5bv0M1U2R4qB3FygxcfEOc2tfVN+syQPER
+ tV+rqe0yQEYlDP3xKRx/KC4p2jseBK5yRLfb9QrBG0kgZSMwb6YoddywCbaIoh2vu2cT
+ 1sPM87f3+vheezj5rHkXw6ubIEefMb2YVqrju8n1FtoYzwy2yKqYeEOkkjqqyg5AcUd/
+ 2jXH+2CLxOt8EaTDF5sKNs1s4C1rYscwzGt59Adkc+bJp11zMEAzXjAl0kefTm5ht9s6
+ jfQWSj7qlfbETpFoZFNVdvcEMjpdn/ppp8RJNPFBoPAwcPhoGEfoSr51b640L3oWNov0
+ rhYQ==
+X-Gm-Message-State: APjAAAXty8injYFygdVAQVU9FIDQoAfz2llAVMd1WqvhEFgAVJ+viEbs
+ GYrhr3nGEQNc6ZuIDYVJ0XBgIZQT3Q==
+X-Google-Smtp-Source: APXvYqxSw7z3z0fSVI98oBsaiy8eSFW+kYZqvDQzGZYLxH5iuNJf8ccK+XqBOmL+AtyXwEXekqkF0A==
+X-Received: by 2002:a9d:62ca:: with SMTP id z10mr3532395otk.263.1582125379181; 
+ Wed, 19 Feb 2020 07:16:19 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id r17sm749otq.70.2020.02.19.07.16.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 19 Feb 2020 07:16:18 -0800 (PST)
+Received: (nullmailer pid 5117 invoked by uid 1000);
+ Wed, 19 Feb 2020 15:16:17 -0000
+Date: Wed, 19 Feb 2020 09:16:17 -0600
+From: Rob Herring <robh@kernel.org>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Subject: Re: [PATCH v2] dt-bindings: mfd: Convert stmfx bindings to json-schema
+Message-ID: <20200219151617.GA22892@bogus>
+References: <20200207145712.24898-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-References: <20200210141324.21090-1-maz@kernel.org>
-In-Reply-To: <20200210141324.21090-1-maz@kernel.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 19 Feb 2020 16:09:17 +0100
-X-Gmail-Original-Message-ID: <CAK8P3a3V=ur4AgLfat2cSyw8GrkCS2t06eqkzC-gXcc0xBpEPw@mail.gmail.com>
-Message-ID: <CAK8P3a3V=ur4AgLfat2cSyw8GrkCS2t06eqkzC-gXcc0xBpEPw@mail.gmail.com>
-Subject: Re: [RFC PATCH 0/5] Removing support for 32bit KVM/arm host
-To: Marc Zyngier <maz@kernel.org>
-X-Provags-ID: V03:K1:gNOa1KfCDYq9U2nx9Br28h+AkeGMKHWhuyImd3VUTAtgAlG8HQe
- GVsArrAiOiaUc6Git7LuJfDl7j2F29v3do08vMLWNvG5V80TX8D5ynW+iAIKLqjCbvwvM1F
- cg2KKcbmCURo9iDk0byvZWZcZ289HgebRTJzjMK3OK5CVJMDCaV2V6kx9KutRBUgRp34sVE
- RDb4RmTtefBkftpCYnfJQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:0/ap4Yels3c=:dNmYUQAj1W0DRIuGUwdD32
- jL1QUq07s+eFIGfDBB2RzvFnXnaxCMFshbxPk6B20xKG6lobHk9tkR730o15BchfWx6lpk/7U
- 85udCbZEUePaIzKAFnfZGBn+cvKVR7yy0gdLBU4zA/OgbioDI22/Urx6j9oclEvL2X0Fl7MtF
- SEYPfcYM8HnX3m+Cx5PMxPmPrdWVF7ady68ogHRVXXMhN/xtb9U4RVVTjndoggvCqATOhVWjI
- Bhfunbh4c2r+eZ3/AiPBKLRnTVK3F2/bzBnoGqhGopmi1H21af5n6t3V8AgWRgy3SkEj/1zLz
- zYdjtz6Vl2dM9zupnJwvL2HBj53xkVZ4wviciVfUENZhNuCRBF7d528cfNsBc//iuz0PWDWtF
- 6xQT3XQydNAwFBPQR78xEAAs5vl8Lw+b6kVdx3PVnJsSK2aLIBrECaPdA/OxdmzBXh7eFrvnS
- 7051opZZ8kcFNAevNne8u8Q/CqBL8s5xwb9lY0UdcGPV8h5YIHByym9+qVo/YXz57DnnRrwjh
- okL0zECSNKF2Q3f+mLbyKIQ2uvYL+mDAs7/DKX9k7UMbRsoPwJNnmewBpSB9+4HnFDI2Z73V9
- XO85SSDUg/eRx86+S4CJom2TlXgZjChMVX/uIebIKAaItHkwlCMVUDvoB6/Nci+dqoxSLAHM1
- W+cDJqcLucUQtZ8dWeu/YjXC4IXCyNARuYXAI+clO4fxo114DzrElw6pgjA8/EkoweaBEO6ku
- JaqTUVVBeFQ6JQu1ztZblDcmKeL+25u4u/EvgDARm43r2FMJnXUzGFp5Jbcmh1n2c8F+/K3xI
- pAKWwqg62OO4+It1A+QQXrdLgX4Vfk9ODwO2qfNRw1ftBdjFIY=
+Content-Disposition: inline
+In-Reply-To: <20200207145712.24898-1-benjamin.gaignard@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_070941_615647_CD734B58 
-X-CRM114-Status: GOOD (  20.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200219_071620_931500_CAF46E0F 
+X-CRM114-Status: GOOD (  28.86  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.24 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,56 +93,343 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jailhouse-dev@googlegroups.com, Anders Berg <anders.berg@lsi.com>,
- Vladimir Murzin <vladimir.murzin@arm.com>,
- Russell King <linux@arm.linux.org.uk>, kvm list <kvm@vger.kernel.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, jean-philippe.brucker@arm.com,
- Jan Kiszka <jan.kiszka@siemens.com>, Quentin Perret <qperret@google.com>,
- Christoffer Dall <Christoffer.Dall@arm.com>, James Morse <james.morse@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: mark.rutland@arm.co, devicetree@vger.kernel.org, amelie.delaunay@st.com,
+ alexandre.torgue@st.com, linus.walleij@linaro.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org, lee.jones@linaro.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 10, 2020 at 3:13 PM Marc Zyngier <maz@kernel.org> wrote:
->
-> KVM/arm was merged just over 7 years ago, and has lived a very quiet
-> life so far. It mostly works if you're prepared to deal with its
-> limitations, it has been a good prototype for the arm64 version,
-> but it suffers a few problems:
->
-> - It is incomplete (no debug support, no PMU)
-> - It hasn't followed any of the architectural evolutions
-> - It has zero users (I don't count myself here)
-> - It is more and more getting in the way of new arm64 developments
->
-> So here it is: unless someone screams and shows that they rely on
-> KVM/arm to be maintained upsteam, I'll remove 32bit host support
-> form the tree. One of the reasons that makes me confident nobody is
-> using it is that I never receive *any* bug report. Yes, it is perfect.
-> But if you depend on KVM/arm being available in mainline, please shout.
->
-> To reiterate: 32bit guest support for arm64 stays, of course. Only
-> 32bit host goes. Once this is merged, I plan to move virt/kvm/arm to
-> arm64, and cleanup all the now unnecessary abstractions.
->
-> The patches have been generated with the -D option to avoid spamming
-> everyone with huge diffs, and there is a kvm-arm/goodbye branch in
-> my kernel.org repository.
+On Fri, Feb 07, 2020 at 03:57:12PM +0100, Benjamin Gaignard wrote:
+> Convert stmfx bindings to json-schema
+> 
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+> ---
+> version 2:
+> - fix description indentation
+> - change pin controller node name to pinctrl
+> - document pinctrl subnode properties
+> - add pinctrl subnode example
+> 
+>  Documentation/devicetree/bindings/mfd/stmfx.txt    |  28 -----
+>  Documentation/devicetree/bindings/mfd/stmfx.yaml   | 120 +++++++++++++++++++++
+>  .../devicetree/bindings/pinctrl/pinctrl-stmfx.txt  | 116 --------------------
+>  3 files changed, 120 insertions(+), 144 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/mfd/stmfx.txt
+>  create mode 100644 Documentation/devicetree/bindings/mfd/stmfx.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/pinctrl/pinctrl-stmfx.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/mfd/stmfx.txt b/Documentation/devicetree/bindings/mfd/stmfx.txt
+> deleted file mode 100644
+> index f0c2f7fcf5c7..000000000000
+> --- a/Documentation/devicetree/bindings/mfd/stmfx.txt
+> +++ /dev/null
+> @@ -1,28 +0,0 @@
+> -STMicroelectonics Multi-Function eXpander (STMFX) Core bindings
+> -
+> -ST Multi-Function eXpander (STMFX) is a slave controller using I2C for
+> -communication with the main MCU. Its main features are GPIO expansion, main
+> -MCU IDD measurement (IDD is the amount of current that flows through VDD) and
+> -resistive touchscreen controller.
+> -
+> -Required properties:
+> -- compatible: should be "st,stmfx-0300".
+> -- reg: I2C slave address of the device.
+> -- interrupts: interrupt specifier triggered by MFX_IRQ_OUT signal.
+> -  Please refer to ../interrupt-controller/interrupt.txt
+> -
+> -Optional properties:
+> -- drive-open-drain: configure MFX_IRQ_OUT as open drain.
+> -- vdd-supply: phandle of the regulator supplying STMFX.
+> -
+> -Example:
+> -
+> -	stmfx: stmfx@42 {
+> -		compatible = "st,stmfx-0300";
+> -		reg = <0x42>;
+> -		interrupts = <8 IRQ_TYPE_EDGE_RISING>;
+> -		interrupt-parent = <&gpioi>;
+> -		vdd-supply = <&v3v3>;
+> -	};
+> -
+> -Please refer to ../pinctrl/pinctrl-stmfx.txt for STMFX GPIO expander function bindings.
+> diff --git a/Documentation/devicetree/bindings/mfd/stmfx.yaml b/Documentation/devicetree/bindings/mfd/stmfx.yaml
+> new file mode 100644
+> index 000000000000..1af906fb876f
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/mfd/stmfx.yaml
+> @@ -0,0 +1,120 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/mfd/stmfx.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: STMicroelectonics Multi-Function eXpander (STMFX) bindings
+> +
+> +description: ST Multi-Function eXpander (STMFX) is a slave controller using I2C for
+> +               communication with the main MCU. Its main features are GPIO expansion,
+> +               main MCU IDD measurement (IDD is the amount of current that flows
+> +               through VDD) and resistive touchscreen controller.
+> +
+> +maintainers:
+> +  - Amelie Delaunay <amelie.delaunay@st.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: st,stmfx-0300
+> +
+> +  reg:
+> +    enum: [ 0x42, 0x43 ]
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  drive-open-drain: true
+> +
+> +  vdd-supply:
+> +    maxItems: 1
+> +
+> +  pinctrl:
+> +    type: object
+> +
+> +    $ref: ../pinctrl/pincfg-node.yaml
 
-Just one more thought before it's gone: is there any shared code
-(header files?) that is used by the jailhouse hypervisor?
+allOf needed here.
 
-If there is, are there any plans to merge that into the mainline kernel
-for arm32 in the near future?
+However, this is not in the right spot.
 
-I'm guessing the answer to at least one of those questions is 'no', so
-we don't need to worry about it, but it seems better to ask.
+> +
+> +    properties:
+> +      compatible:
+> +        const: st,stmfx-0300-pinctrl
+> +
+> +      "#gpio-cells":
+> +        const: 2
+> +
+> +      "#interrupt-cells":
+> +        const: 2
+> +
+> +      gpio-controller: true
+> +
+> +      interrupt-controller: true
+> +
+> +      gpio-ranges:
+> +        description: if all STMFX pins[24:0] are available (no other STMFX function in use),
+> +                     you should use gpio-ranges = <&stmfx_pinctrl 0 0 24>;
+> +                     if agpio[3:0] are not available (STMFX Touchscreen function in use),
+> +                     you should use gpio-ranges = <&stmfx_pinctrl 0 0 16>, <&stmfx_pinctrl 20 20 4>;
+> +                     if agpio[7:4] are not available (STMFX IDD function in use),
+> +                     you should use gpio-ranges = <&stmfx_pinctrl 0 0 20>;
+> +        maxItems: 1
+> +
+> +    patternProperties:
+> +      "^[a-zA-Z][a-zA-Z0-9_]+$":
 
-      Arnd
+I'm surprised this works because it is going to match on most of the 
+other properties in this node. You really need a node name pattern you 
+can match on like '-pins$'. Otherwise, you have to do:
+
+if:
+  type: object
+then:
+  ...
+
+I'd rather see the dts files fixed.
+
+> +        type: object
+> +        $ref: ../pinctrl/pinmux-node.yaml
+
+Actually, this is why it doesn't error. With no 'allOf', 'type: object' 
+is ignored.
+
+> +
+> +        properties:
+> +          pins: true
+> +          bias-disable: true
+> +          bias-pull-up: true
+> +          bias-pull-pin-default: true
+> +          bias-pull-down: true
+> +          drive-open-drain: true
+> +          drive-push-pull: true
+> +          output-high: true
+> +          output-low: true
+
+'additionalProperties: false' needed here.
+
+> +
+> +    required:
+> +      - compatible
+> +      - "#gpio-cells"
+> +      - "#interrupt-cells"
+> +      - gpio-controller
+> +      - interrupt-controller
+> +      - gpio-ranges
+> +
+> +additionalProperties: false
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    i2c@0 {
+> +      #address-cells = <1>;
+> +      #size-cells = <0>;
+> +      stmfx@42 {
+> +        compatible = "st,stmfx-0300";
+> +        reg = <0x42>;
+> +        interrupts = <8 IRQ_TYPE_EDGE_RISING>;
+> +        interrupt-parent = <&gpioi>;
+> +        vdd-supply = <&v3v3>;
+> +
+> +        stmfx_pinctrl: pinctrl {
+> +          compatible = "st,stmfx-0300-pinctrl";
+> +          #gpio-cells = <2>;
+> +          #interrupt-cells = <2>;
+> +          gpio-controller;
+> +          interrupt-controller;
+> +          gpio-ranges = <&stmfx_pinctrl 0 0 24>;
+> +
+> +          joystick_pins: joystick {
+> +            pins = "gpio0", "gpio1", "gpio2", "gpio3", "gpio4";
+> +            drive-push-pull;
+> +            bias-pull-up;
+> +          };
+> +        };
+> +      };
+> +    };
+> +...
+> diff --git a/Documentation/devicetree/bindings/pinctrl/pinctrl-stmfx.txt b/Documentation/devicetree/bindings/pinctrl/pinctrl-stmfx.txt
+> deleted file mode 100644
+> index c1b4c1819b84..000000000000
+> --- a/Documentation/devicetree/bindings/pinctrl/pinctrl-stmfx.txt
+> +++ /dev/null
+> @@ -1,116 +0,0 @@
+> -STMicroelectronics Multi-Function eXpander (STMFX) GPIO expander bindings
+> -
+> -ST Multi-Function eXpander (STMFX) offers up to 24 GPIOs expansion.
+> -Please refer to ../mfd/stmfx.txt for STMFX Core bindings.
+> -
+> -Required properties:
+> -- compatible: should be "st,stmfx-0300-pinctrl".
+> -- #gpio-cells: should be <2>, the first cell is the GPIO number and the second
+> -  cell is the gpio flags in accordance with <dt-bindings/gpio/gpio.h>.
+> -- gpio-controller: marks the device as a GPIO controller.
+> -- #interrupt-cells: should be <2>, the first cell is the GPIO number and the
+> -  second cell is the interrupt flags in accordance with
+> -  <dt-bindings/interrupt-controller/irq.h>.
+> -- interrupt-controller: marks the device as an interrupt controller.
+> -- gpio-ranges: specifies the mapping between gpio controller and pin
+> -  controller pins. Check "Concerning gpio-ranges property" below.
+> -Please refer to ../gpio/gpio.txt.
+> -
+> -Please refer to pinctrl-bindings.txt for pin configuration.
+> -
+> -Required properties for pin configuration sub-nodes:
+> -- pins: list of pins to which the configuration applies.
+> -
+> -Optional properties for pin configuration sub-nodes (pinconf-generic ones):
+> -- bias-disable: disable any bias on the pin.
+> -- bias-pull-up: the pin will be pulled up.
+> -- bias-pull-pin-default: use the pin-default pull state.
+> -- bias-pull-down: the pin will be pulled down.
+> -- drive-open-drain: the pin will be driven with open drain.
+> -- drive-push-pull: the pin will be driven actively high and low.
+> -- output-high: the pin will be configured as an output driving high level.
+> -- output-low: the pin will be configured as an output driving low level.
+> -
+> -Note that STMFX pins[15:0] are called "gpio[15:0]", and STMFX pins[23:16] are
+> -called "agpio[7:0]". Example, to refer to pin 18 of STMFX, use "agpio2".
+> -
+> -Concerning gpio-ranges property:
+> -- if all STMFX pins[24:0] are available (no other STMFX function in use), you
+> -  should use gpio-ranges = <&stmfx_pinctrl 0 0 24>;
+> -- if agpio[3:0] are not available (STMFX Touchscreen function in use), you
+> -  should use gpio-ranges = <&stmfx_pinctrl 0 0 16>, <&stmfx_pinctrl 20 20 4>;
+> -- if agpio[7:4] are not available (STMFX IDD function in use), you
+> -  should use gpio-ranges = <&stmfx_pinctrl 0 0 20>;
+> -
+> -
+> -Example:
+> -
+> -	stmfx: stmfx@42 {
+> -		...
+> -
+> -		stmfx_pinctrl: stmfx-pin-controller {
+> -			compatible = "st,stmfx-0300-pinctrl";
+> -			#gpio-cells = <2>;
+> -			#interrupt-cells = <2>;
+> -			gpio-controller;
+> -			interrupt-controller;
+> -			gpio-ranges = <&stmfx_pinctrl 0 0 24>;
+> -
+> -			joystick_pins: joystick {
+> -				pins = "gpio0", "gpio1", "gpio2", "gpio3", "gpio4";
+> -				drive-push-pull;
+> -				bias-pull-up;
+> -			};
+> -		};
+> -	};
+> -
+> -Example of STMFX GPIO consumers:
+> -
+> -	joystick {
+> -		compatible = "gpio-keys";
+> -		#address-cells = <1>;
+> -		#size-cells = <0>;
+> -		pinctrl-0 = <&joystick_pins>;
+> -		pinctrl-names = "default";
+> -		button-0 {
+> -			label = "JoySel";
+> -			linux,code = <KEY_ENTER>;
+> -			interrupt-parent = <&stmfx_pinctrl>;
+> -			interrupts = <0 IRQ_TYPE_EDGE_RISING>;
+> -		};
+> -		button-1 {
+> -			label = "JoyDown";
+> -			linux,code = <KEY_DOWN>;
+> -			interrupt-parent = <&stmfx_pinctrl>;
+> -			interrupts = <1 IRQ_TYPE_EDGE_RISING>;
+> -		};
+> -		button-2 {
+> -			label = "JoyLeft";
+> -			linux,code = <KEY_LEFT>;
+> -			interrupt-parent = <&stmfx_pinctrl>;
+> -			interrupts = <2 IRQ_TYPE_EDGE_RISING>;
+> -		};
+> -		button-3 {
+> -			label = "JoyRight";
+> -			linux,code = <KEY_RIGHT>;
+> -			interrupt-parent = <&stmfx_pinctrl>;
+> -			interrupts = <3 IRQ_TYPE_EDGE_RISING>;
+> -		};
+> -		button-4 {
+> -			label = "JoyUp";
+> -			linux,code = <KEY_UP>;
+> -			interrupt-parent = <&stmfx_pinctrl>;
+> -			interrupts = <4 IRQ_TYPE_EDGE_RISING>;
+> -		};
+> -	};
+> -
+> -	leds {
+> -		compatible = "gpio-leds";
+> -		orange {
+> -			gpios = <&stmfx_pinctrl 17 1>;
+> -		};
+> -
+> -		blue {
+> -			gpios = <&stmfx_pinctrl 19 1>;
+> -		};
+> -	}
+> -- 
+> 2.15.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
