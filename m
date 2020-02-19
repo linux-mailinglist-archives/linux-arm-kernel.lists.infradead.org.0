@@ -2,64 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BB761643FE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 13:14:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4F5616440F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 13:19:12 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pDEqf6KYnLu0lEUvagZaeTQq0SqC2OgIwzpNHKDJ/QU=; b=aO+889qV8aeK7R
-	x57NbumD+W2EJv3jazsCCD/hSn1iY2VqNPTLupd9a6SgKrAM6A+140xNzfd4+Ids6ULPDXScNllaL
-	K5E9k0Z+27MFjl6TXGCbBlYkOaPiGoyxwQ859adiM2blz3I3XInOabrz4JyMlUU2NA99+u1LEcN9O
-	t5Qimmg7bydCD1jcKvtBmckiLJMn6InAsLaaZMOXLaH+hfed20YmrGTHlQeSUerwBOmPunlkXt5ni
-	KHvQ8IUxwWOSO656gT5PVSK58IQh1csr1dqM3QsFxJstNt/3cVAMR7j0Q0W5xGBWFddIR06dpmunM
-	Hx8obvln6/oXhKWtY6Jg==;
+	List-Owner; bh=qHXA7I604BFfjSq1e++VY4M9x++ePpbAVjVNoUXW4KE=; b=AYC999TO8l3n7W
+	xnyM++YoLBxvC0qeWLlJCBNLqpivJIMQY3uIsTu8US7J6c6zd9biYld3uDeXv/1k062NDc5BnOLl5
+	KVfsa3tgfhDw7VI7gbSQ8o/CzcQPl0fO53kWf7VfZYVxtljrQiAZSkLSyJxK86d6Und77OiMlnxNc
+	YeZGuOjCUlInpEAsBJI1WGpOgtfh4t7Lhxa3Du1Dwzeur8wceTagCFrW7B4dkeszTtR3wceNrgQfv
+	0BEnb6o3BvHxKOORbP8eFx4wcMo1USKan4N17CsPDC2G8GGEEG4JYveVITJYj6lfnLBfPXpArH9Ky
+	QQbOkT6Y1XYk5v5WCh5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4OFV-0004tX-SI; Wed, 19 Feb 2020 12:14:41 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1j4OJl-0006td-J8; Wed, 19 Feb 2020 12:19:05 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4OFL-0004sM-3b
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 12:14:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582114465; bh=LBA0OH0LGSn5q2o3L6sg17qe8iS+vJij63Yj2IJHsB0=;
- h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=dvGcwYJJZLS/xFu1ybo56J0BAjHKnrYfVUk3M+k4oXa0oOJ+vK/r+mmexvgN/O3+7
- V4ZYYZ970DFyi3RfWCLmndM3lhr8HDwymiDHyO/HXJP9xib7xnnjK77E0/9tpT9p1T
- T7QrfHCKnH+F5eHduStJqxSTxzYMELJI1oPd1y24=
-Date: Wed, 19 Feb 2020 13:14:24 +0100
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [PATCH] bus: sunxi-rsb: Return correct data when mixing 16-bit
- and 8-bit reads
-Message-ID: <20200219121424.dfvrwfcavupmwbvw@core.my.home>
-Mail-Followup-To: Chen-Yu Tsai <wens@csie.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- Maxime Ripard <mripard@kernel.org>,
- Samuel Holland <samuel@sholland.org>,
- Stephen Boyd <swboyd@chromium.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>, 
- open list <linux-kernel@vger.kernel.org>
-References: <20200219010951.395599-1-megous@megous.com>
- <CAGb2v67BLODmDmQOJH-m-KWVtXS2EGrnPxi9czj6oipHPDTfjw@mail.gmail.com>
+ id 1j4OJc-0006tJ-GL
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 12:18:57 +0000
+Received: by mail-pl1-x644.google.com with SMTP id t14so9640plr.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 04:18:56 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=w3P9TdBjFh0vATkgitLWzvzr6wzTEMeglnTFjOVQk1I=;
+ b=XerOxm05Ox54idaV/ojpa+K64U4Ude9W3bd91UbCClypYPfo7nYltMf4Vxx7wmh/jh
+ rhE5IFQCHvBGufUyG76zEfBLuxfhCOr2x2MLX4HX3oOK/5lkxX1OKvN1eQBZdVfxjFwC
+ cTS7yPv9EkIGyqd23njgAUV3rSETJNXURwEzqyEwivJ9wSWTlhmSggw2pQyOC+/zgreu
+ pp0frEdCcOHneTIZtMpqgKa0NKq8gWu3Jhn8vHkC0D9hM0IIlWhCbBciem3awRct3arw
+ P2f9PPW8hJnscmwnnVk8fnzZZQ7y+tNTwuHlHeHK6ftoH2878zg4VCwH5Z8vSHSSd2dz
+ Lb2w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=w3P9TdBjFh0vATkgitLWzvzr6wzTEMeglnTFjOVQk1I=;
+ b=mic1EYxUhP55NS6hMXMDD9xawmlCvhFX7YWAJzg21hD7pJzQyifIVo/YBzc+aCJayi
+ syVJkTWl2fjqaOttf1TFKNZ8+F483lHbZ0FoN1uHARn9EXwIrjlvldqhsYywKdc5Phf3
+ O2tNZ1lGJ+vsETaQ1/lhpJsYdXDS7WIb/lPSDAy0HEPo8US9OhuKPrXikevo5Xu7DkxY
+ m0T7i6QmlgsPeNofJbx+pkNE1i1kjT/5pPadHMc+PaxSeYaCJ8uVkDFmdidthzcQyCgA
+ vhnNpv8wzBCfRPZi7uSJ1v8ysX+tUBPoJvZF1hWiZOkScEBLXUW7SzhONY5tz4Wa64gN
+ bVcw==
+X-Gm-Message-State: APjAAAU1DsziIDre+RiQpqL1nTiSadtNOuRkNS+eQMHkYcdYWJILbME/
+ LltwXgFV7GqZwgvrBIix7/mJxKeps8QoOlAgJjJXXA==
+X-Google-Smtp-Source: APXvYqyW05FD/DL2/IoTnDevuDn+1c13YIyPNoh/rgaR5TH6AObZA4byaPNdHLew5ygfRbzqFij/FB9O/YlOBxLQPD4=
+X-Received: by 2002:a17:902:8486:: with SMTP id
+ c6mr26696192plo.147.1582114735626; 
+ Wed, 19 Feb 2020 04:18:55 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAGb2v67BLODmDmQOJH-m-KWVtXS2EGrnPxi9czj6oipHPDTfjw@mail.gmail.com>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
+References: <20200218122310.72710-1-catalin.marinas@arm.com>
+In-Reply-To: <20200218122310.72710-1-catalin.marinas@arm.com>
+From: Andrey Konovalov <andreyknvl@google.com>
+Date: Wed, 19 Feb 2020 13:18:44 +0100
+Message-ID: <CAAeHK+xNm1vv6EdfAYFbJkyh_3-hVNeWT=m14sYsNwtOLByF2A@mail.gmail.com>
+Subject: Re: [PATCH] mm: Avoid creating virtual address aliases in
+ brk()/mmap()/mremap()
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_041431_323513_B5073655 
-X-CRM114-Status: GOOD (  22.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200219_041856_568816_5F716776 
+X-CRM114-Status: GOOD (  21.79  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -67,6 +85,8 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,153 +98,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Samuel Holland <samuel@sholland.org>,
- open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Florian Weimer <fweimer@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Victor Stinner <vstinner@redhat.com>,
+ Linux Memory Management List <linux-mm@kvack.org>,
+ Evgenii Stepanov <eugenis@google.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 10:49:18AM +0800, Chen-Yu Tsai wrote:
-> On Wed, Feb 19, 2020 at 9:10 AM Ondrej Jirman <megous@megous.com> wrote:
-> >
-> > When doing a 16-bit read that returns data in the MSB byte, the
-> > RSB_DATA register will keep the MSB byte unchanged when doing
-> > the following 8-bit read. sunxi_rsb_read() will then return
-> > a result that contains high byte from 16-bit read mixed with
-> > the 8-bit result.
-> >
-> > The consequence is that after this happens the PMIC's regmap will
-> > look like this: (0x33 is the high byte from the 16-bit read)
-> >
-> > % cat /sys/kernel/debug/regmap/sunxi-rsb-3a3/registers
-> > 00: 33
-> > 01: 33
-> > 02: 33
-> > 03: 33
-> > 04: 33
-> > 05: 33
-> > 06: 33
-> > 07: 33
-> > 08: 33
-> > 09: 33
-> > 0a: 33
-> > 0b: 33
-> > 0c: 33
-> > 0d: 33
-> > 0e: 33
-> > [snip]
-> >
-> > Fix this by masking the result of the read with the correct mask
-> > based on the size of the read. There are no 16-bit users in the
-> > mainline kernel, so this doesn't need to get into the stable tree.
-> >
-> > Signed-off-by: Ondrej Jirman <megous@megous.com>
-> 
-> Acked-by: Chen-Yu Tsai <wens@csie.org>
-> 
-> for the fix, however it's not entirely clear to me how the MSB 0x33
-> value got into the regmap. Looks like I expected the regmap core to
-> handle any overflows, or didn't expect the lingering MSB from 16-bit
-> reads, as I didn't have any 16-bit register devices back when I wrote
-> this.
+On Tue, Feb 18, 2020 at 1:23 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+>
+> Currently the arm64 kernel ignores the top address byte passed to brk(),
+> mmap() and mremap(). When the user is not aware of the 56-bit address
+> limit or relies on the kernel to return an error, untagging such
+> pointers has the potential to create address aliases in user-space.
+> Passing a tagged address to munmap(), madvise() is permitted since the
+> tagged pointer is expected to be inside an existing mapping.
+>
+> Remove untagging in the above functions by partially reverting commit
+> ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk"). In
+> addition, update the arm64 tagged-address-abi.rst document accordingly.
+>
+> Fixes: ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk")
+> Cc: <stable@vger.kernel.org> # 5.4.x-
+> Cc: Andrey Konovalov <andreyknvl@google.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Florian Weimer <fweimer@redhat.com>
+> Reported-by: Victor Stinner <vstinner@redhat.com>
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 
-Now I feel like I masked some other bug. Though explanation may be quite simple.
+Acked-by: Andrey Konovalov <andreyknvl@google.com>
 
-For example when AXP core does regmap_read on some values for showing charging
-current or battery voltage, because regmap_read works with unsigned int, it
-will simply get a number that's too big. And that was the major symptom
-I observed. I got readings from sysfs that my tablet is consuming 600A or 200A,
-etc. And this value was jumping around based on AC100 activity (as the MSB
-byte got changed).
-
-In other places where the driver does regmap_update_bits, I think nothing bad
-happened. The write after the read would simply discard the MSB byte.
-
-And for the debugfs/regmap/*/registers, those are printed such:
-
-https://elixir.bootlin.com/linux/latest/source/drivers/base/regmap/regmap-debugfs.c#L256
-
-	snprintf(buf + buf_pos, count - buf_pos,
-		"%.*x", map->debugfs_val_len, val);
-	
-This doesn't truncate values, so the larger number gets printed to (for example):
-
-        33fe
-
-But regmap debugfs code truncates this by cutting off the formatted string to
-this length:
-
-  https://elixir.bootlin.com/linux/latest/source/drivers/base/regmap/regmap-debugfs.c#L189
-
-So in the end, only:
-
-        00: 33
-
-remains, instead of the correct value of:
-
-        00: fe
-
-So in the case of debugfs this is just a cosmetic/formatting issue, that didn't
-affect anything else.
-
-I think regmap_bus->reg_read API simply expects the returned value to not exceed
-the sensible range.
-
-regards,
-	o.
-
-
-> ChenYu
-> 
-> 
-> > ---
-> >  drivers/bus/sunxi-rsb.c | 6 +++++-
-> >  1 file changed, 5 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-> > index b8043b58568ac..8ab6a3865f569 100644
-> > --- a/drivers/bus/sunxi-rsb.c
-> > +++ b/drivers/bus/sunxi-rsb.c
-> > @@ -316,6 +316,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
-> >  {
-> >         u32 cmd;
-> >         int ret;
-> > +       u32 mask;
-> >
-> >         if (!buf)
-> >                 return -EINVAL;
-> > @@ -323,12 +324,15 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
-> >         switch (len) {
-> >         case 1:
-> >                 cmd = RSB_CMD_RD8;
-> > +               mask = 0xffu;
-> >                 break;
-> >         case 2:
-> >                 cmd = RSB_CMD_RD16;
-> > +               mask = 0xffffu;
-> >                 break;
-> >         case 4:
-> >                 cmd = RSB_CMD_RD32;
-> > +               mask = 0xffffffffu;
-> >                 break;
-> >         default:
-> >                 dev_err(rsb->dev, "Invalid access width: %zd\n", len);
-> > @@ -345,7 +349,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
-> >         if (ret)
-> >                 goto unlock;
-> >
-> > -       *buf = readl(rsb->regs + RSB_DATA);
-> > +       *buf = readl(rsb->regs + RSB_DATA) & mask;
-> >
-> >  unlock:
-> >         mutex_unlock(&rsb->lock);
-> > --
-> > 2.25.1
-> >
+> ---
+>  Documentation/arm64/tagged-address-abi.rst | 7 +++++--
+>  mm/mmap.c                                  | 4 ----
+>  mm/mremap.c                                | 1 -
+>  3 files changed, 5 insertions(+), 7 deletions(-)
+>
+> diff --git a/Documentation/arm64/tagged-address-abi.rst b/Documentation/arm64/tagged-address-abi.rst
+> index d4a85d535bf9..1771a8b5712e 100644
+> --- a/Documentation/arm64/tagged-address-abi.rst
+> +++ b/Documentation/arm64/tagged-address-abi.rst
+> @@ -44,8 +44,11 @@ The AArch64 Tagged Address ABI has two stages of relaxation depending
+>  how the user addresses are used by the kernel:
+>
+>  1. User addresses not accessed by the kernel but used for address space
+> -   management (e.g. ``mmap()``, ``mprotect()``, ``madvise()``). The use
+> -   of valid tagged pointers in this context is always allowed.
+> +   management (e.g. ``mprotect()``, ``madvise()``). The use of valid
+> +   tagged pointers in this context is allowed with the exception of
+> +   ``brk()``, ``mmap()`` and the ``new_address`` argument to
+> +   ``mremap()`` as these have the potential of aliasing with existing
+> +   user addresses.
+>
+>  2. User addresses accessed by the kernel (e.g. ``write()``). This ABI
+>     relaxation is disabled by default and the application thread needs to
+> diff --git a/mm/mmap.c b/mm/mmap.c
+> index 6756b8bb0033..d681a20eb4ea 100644
+> --- a/mm/mmap.c
+> +++ b/mm/mmap.c
+> @@ -195,8 +195,6 @@ SYSCALL_DEFINE1(brk, unsigned long, brk)
+>         bool downgraded = false;
+>         LIST_HEAD(uf);
+>
+> -       brk = untagged_addr(brk);
+> -
+>         if (down_write_killable(&mm->mmap_sem))
+>                 return -EINTR;
+>
+> @@ -1557,8 +1555,6 @@ unsigned long ksys_mmap_pgoff(unsigned long addr, unsigned long len,
+>         struct file *file = NULL;
+>         unsigned long retval;
+>
+> -       addr = untagged_addr(addr);
+> -
+>         if (!(flags & MAP_ANONYMOUS)) {
+>                 audit_mmap_fd(fd, flags);
+>                 file = fget(fd);
+> diff --git a/mm/mremap.c b/mm/mremap.c
+> index 122938dcec15..af363063ea23 100644
+> --- a/mm/mremap.c
+> +++ b/mm/mremap.c
+> @@ -607,7 +607,6 @@ SYSCALL_DEFINE5(mremap, unsigned long, addr, unsigned long, old_len,
+>         LIST_HEAD(uf_unmap);
+>
+>         addr = untagged_addr(addr);
+> -       new_addr = untagged_addr(new_addr);
+>
+>         if (flags & ~(MREMAP_FIXED | MREMAP_MAYMOVE))
+>                 return ret;
 
 _______________________________________________
 linux-arm-kernel mailing list
