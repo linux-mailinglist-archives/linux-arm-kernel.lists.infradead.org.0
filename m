@@ -2,72 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FAAE163FAF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 09:50:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6A16163FEE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:04:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5vFSAran4xzka3ixHvWRrNOF04r9y7OHB2kIMFtyh80=; b=HH1X4+yZg+m4xEzK2gVNoDB5N
-	LTmc58K0DH4obX8TYbEFpW80P3DNS+oVwawqOQUWS4EHEnN2TgFVsk0F8h8dJxCJX6EMhuNUyN7Tv
-	rkbzgelaDSaZxa96cuc9ikORcPWH7DFYtNC6yv7oVM5qtwc5sotgABa/tBcig9j0NEqs5DXDzEXMj
-	8x0vSh/6sYD0Y1VCN6gyr1hlDd5jPc75f1zVi/YSdDynzxi2XtLu26cs2DlRVYtC+yrvpaHUAyP22
-	NLiNNG3R9mWBfjZBDYMxM3HDGoaZp2//tf5RUzP0YVAqK/6w80MYlQubhlXTt7w6uYNemgFjWJblL
-	EKXpe8lAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=HhDlzK9E2ryXSMFoF4z7DD+dXJ3DJJdteWbq/tyBBEw=; b=ODs
+	TVsAr9BL5NaEtlKK3wqdRcZfKbujewlTVaEfXuO8CbNC8Mssw2+kBcVvpogdhXD4qwPCNTrM3Mul3
+	WBvtj5ONwQ/+9yPaHOwqERYwh/C9kvS7QR4ABJXUNPAfQonY/IyI38+vdRWaqdBphPvvC6GGphO7m
+	pY/TtykqfulQu00Q50Fg3dL1ZgjwotflXI2IUDOEJ+AD9KB8VukQmKIZxay5Q1uuaL6R0ZD0q9hHj
+	JR7Iu8f+DoWlbdMCQkohMZTMfThWtYaH4bEOYT5DRAWo3Qjnl2idOZgTglFsxYuGX6iD2QapWDYUH
+	BVlDqqWuKm3QqvhtyTVeDNw1pfCfgwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4L4F-0005vX-0P; Wed, 19 Feb 2020 08:50:51 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1j4LHg-0001dZ-OD; Wed, 19 Feb 2020 09:04:44 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4L3k-0005eI-CZ
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 08:50:22 +0000
-Received: from lhreml707-cah.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id 94A329A75D14FEA2E52C;
- Wed, 19 Feb 2020 08:50:16 +0000 (GMT)
-Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
- lhreml707-cah.china.huawei.com (10.201.108.48) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Wed, 19 Feb 2020 08:50:15 +0000
-Received: from [127.0.0.1] (10.210.170.116) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 19 Feb
- 2020 08:50:14 +0000
-Subject: Re: [PATCH RFC 0/7] perf pmu-events: Support event aliasing for
- system PMUs
-To: Mark Rutland <mark.rutland@arm.com>
-References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
- <20200218125707.GB20212@willie-the-truck>
- <a40903fe-d52f-96c6-a06a-fe834d71d625@huawei.com>
- <20200218133943.GF20212@willie-the-truck>
- <627cbc50-4b36-7f7f-179d-3d27d9e0215a@huawei.com>
- <20200218170803.GA9968@lakrids.cambridge.arm.com>
- <cb004f43-b2a4-ae23-9fd3-0f70bd69701b@huawei.com>
- <20200218181331.GB9968@lakrids.cambridge.arm.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <822114f9-8ff4-c769-66a0-7e637ce49cd5@huawei.com>
-Date: Wed, 19 Feb 2020 08:50:13 +0000
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
-MIME-Version: 1.0
-In-Reply-To: <20200218181331.GB9968@lakrids.cambridge.arm.com>
-Content-Language: en-US
-X-Originating-IP: [10.210.170.116]
-X-ClientProxiedBy: lhreml743-chm.china.huawei.com (10.201.108.193) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+ id 1j4LHY-0001cO-6j
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:04:38 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 2so12168996pfg.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 01:04:33 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=zzjNsVT7oFssvopVPRdGW/YTCcDi0QZYWBWNA17kwhg=;
+ b=eNHopnRDIVVrepw5vDCEHq2Oka1gXLsWwAXhAKzSHRO7h69Y9ZTIgAIKTw5sIE1zcr
+ dDFIvcL0ReVbdcKCQOIsJTxWs7E9rSs/Ehg6Sjqt7C804okv8FBBfTp8WyrqoQ7qfyZ1
+ um28qJXOkM72Gb0thvNp8UdV8ZDW5FB9sfqtK1Khzx5Lcw2l8j/DRfX3m6U/VHT3G7aO
+ VA5Ql/nTRfhqLJGefDkORrM6q+9nmHHIeRph1hJVh9wwvnEzIF6Qp868Orz+oAtG3xow
+ Cu4+wEg4IgD3AOV2KvTcJfY0sSWMMaac/CGvNqWXa9+rlA0eo1htT3NY7k7dZp/z5DPB
+ bobQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=zzjNsVT7oFssvopVPRdGW/YTCcDi0QZYWBWNA17kwhg=;
+ b=FdKAqHgTW/C89TiPPmx6s+1jrqJXiLnv3gsbVJzo+UwqSasXN32TS+kP4nTbB7i7yc
+ Z3ewGoe1r81MutLApRNYkmjQ6s6gX4LoLeOJwi6EF4dud3uwJI/EJXmyYtLKKaCiwMIu
+ 9QlA4Ckn6Tb85RU6XUfsGQb1+Nr+tQJ7BL9cGJyJZNXQH9BbAlKQzqbcoi81+aJh3ba0
+ W6RsGLDl0icY5VvzN3bkkevmiCAiQY+qqWtjUU/xGmvJbBBKO+eu0vz3w3CRG9EDJ3R/
+ 5aoy3fD4xpiopZcVPQhek0NN4Zu7RvYvU2Uh4JQrXTimAQ3jjL5RDQhb1ix3dssJ4KHi
+ f5Fw==
+X-Gm-Message-State: APjAAAWy4mElVpUaEaCOFW7Odhkyu9/SUD4WwNl0iDuPeoyV5y/TJLgS
+ OEJxVa4lejDkwrEFfVDu4go=
+X-Google-Smtp-Source: APXvYqyUx/ed9xaA7LIfb73jmGtEiSRQm+UAORQvBANl91x/+R19025joyq1EtFB4+oxNnDeYjNruQ==
+X-Received: by 2002:a63:2a02:: with SMTP id q2mr26247331pgq.198.1582103073166; 
+ Wed, 19 Feb 2020 01:04:33 -0800 (PST)
+Received: from localhost.localdomain ([101.13.197.106])
+ by smtp.gmail.com with ESMTPSA id b25sm1849858pfo.38.2020.02.19.01.04.30
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 19 Feb 2020 01:04:32 -0800 (PST)
+From: Jeff Chang <richtek.jeff.chang@gmail.com>
+To: lgirdwood@gmail.com
+Subject: [PATCH v2] ASoC: MT6660 update to 1.0.8_G
+Date: Wed, 19 Feb 2020 17:04:24 +0800
+Message-Id: <1582103064-25088-1-git-send-email-richtek.jeff.chang@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_005020_616125_C2B82399 
-X-CRM114-Status: GOOD (  23.99  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200219_010436_246544_BAAE5F79 
+X-CRM114-Status: GOOD (  14.01  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [richtek.jeff.chang[at]gmail.com]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,117 +93,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "ak@linux.intel.com" <ak@linux.intel.com>,
- "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
- "peterz@infradead.org" <peterz@infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "jolsa@redhat.com" <jolsa@redhat.com>, Linuxarm <linuxarm@huawei.com>,
- "acme@kernel.org" <acme@kernel.org>, Joakim Zhang <qiangqing.zhang@nxp.com>,
- Zhangshaokun <zhangshaokun@hisilicon.com>,
- "alexander.shishkin@linux.intel.com" <alexander.shishkin@linux.intel.com>,
- "mingo@redhat.com" <mingo@redhat.com>,
- "james.clark@arm.com" <james.clark@arm.com>,
- Sudeep Holla <sudeep.holla@arm.com>,
- "namhyung@kernel.org" <namhyung@kernel.org>, Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>
+Cc: alsa-devel@alsa-project.org, richtek.jeff.chang@gmail.com,
+ linux-kernel@vger.kernel.org, tiwai@suse.com, perex@perex.cz,
+ jeff_chang@richtek.com, broonie@kernel.org, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->>
->>> For system PMUs, I'd rather the system PMU driver exposed some sort of
->>> implementation ID. e.g. the SMMU_ID for SMMU. We can give that a generic name,
->>> and mandate that where a driver exposes it, the format/meaning is defined in
->>> the documentation for the driver.
->>
->> Then doesn't that per-PMU ID qualify as brittle and non-standard also?
-> 
-> Not in my mind; any instances of the same IP can have the same ID,
-> regardless of which SoC they're in. Once userspace learns about
-> device-foo-4000, it knows about it on all SoCs. That also means you can
-> support heterogeneous instances in the same SoC.
+From: Jeff Chang <jeff_chang@richtek.com>
 
-Sure, but this device-foo-4000 naming is a concern for standardization, 
-stable ABI, and perf tool support.
+1. add mt6660_component_settign for Component INIT Setting
 
-> 
-> If a device varies so much on a SoC-by-SoC basis and or the driver has
-> no idea what to expose, it could be legitimate for the PMU driver to
-> expose the SoC ID as its PMU-specific ID, but I don't think we should
-> make that the common/only case.
+Signed-off-by: Jeff Chang <jeff_chang@richtek.com>
+---
+ sound/soc/codecs/mt6660.c | 78 +++++++++++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 75 insertions(+), 3 deletions(-)
 
-But where does the PMU driver get the SoC ID? Does it have to check DT 
-machine ID, ACPI OEM ID, or SMCCC SOC ID?
 
-I can't imagine that you really want this stuff in the kernel PMU 
-drivers, but that's your call.
+changelogs between v2 & v1
+        - remove parse DT and apply function about Chip INIT SETTING.
+        - use hard coding for MT6660 Component INIT SETTING.
 
-> 
->> At least the SMC SoC ID is according to some standard.
->>
->> And typically most PMU HW would have no ID reg, so where to even get this
->> identification info? Joakim Zhang seems to have this problem for the imx8
->> DDRC PMU driver.
-> 
-> For imx8, the DT compat string or additional properties on the DDRC node
-> could be used to imply the id.
 
-Fine, but it's the ACPI case which is what I am concerned about.
+diff --git a/sound/soc/codecs/mt6660.c b/sound/soc/codecs/mt6660.c
+index a36c416..88cf228 100644
+--- a/sound/soc/codecs/mt6660.c
++++ b/sound/soc/codecs/mt6660.c
+@@ -9,7 +9,6 @@
+ #include <linux/i2c.h>
+ #include <linux/pm_runtime.h>
+ #include <linux/delay.h>
+-#include <linux/debugfs.h>
+ #include <sound/soc.h>
+ #include <sound/tlv.h>
+ #include <sound/pcm_params.h>
+@@ -225,14 +224,87 @@ static int _mt6660_chip_power_on(struct mt6660_chip *chip, int on_off)
+ 				 0x01, on_off ? 0x00 : 0x01);
+ }
+ 
++struct reg_table {
++	uint32_t addr;
++	uint32_t mask;
++	uint32_t val;
++};
++
++static const struct reg_table mt6660_setting_table[] = {
++	{ 0x20, 0x80, 0x00 },
++	{ 0x30, 0x01, 0x00 },
++	{ 0x50, 0x1c, 0x04 },
++	{ 0xB1, 0x0c, 0x00 },
++	{ 0xD3, 0x03, 0x03 },
++	{ 0xE0, 0x01, 0x00 },
++	{ 0x98, 0x44, 0x04 },
++	{ 0xB9, 0xff, 0x82 },
++	{ 0xB7, 0x7777, 0x7273 },
++	{ 0xB6, 0x07, 0x03 },
++	{ 0x6B, 0xe0, 0x20 },
++	{ 0x07, 0xff, 0x70 },
++	{ 0xBB, 0xff, 0x20 },
++	{ 0x69, 0xff, 0x40 },
++	{ 0xBD, 0xffff, 0x17f8 },
++	{ 0x70, 0xff, 0x15 },
++	{ 0x7C, 0xff, 0x00 },
++	{ 0x46, 0xff, 0x1d },
++	{ 0x1A, 0xffffffff, 0x7fdb7ffe },
++	{ 0x1B, 0xffffffff, 0x7fdb7ffe },
++	{ 0x51, 0xff, 0x58 },
++	{ 0xA2, 0xff, 0xce },
++	{ 0x33, 0xffff, 0x7fff },
++	{ 0x4C, 0xffff, 0x0116 },
++	{ 0x16, 0x1800, 0x0800 },
++	{ 0x68, 0x1f, 0x07 },
++};
++
++static int mt6660_component_setting(struct snd_soc_component *component)
++{
++	struct mt6660_chip *chip = snd_soc_component_get_drvdata(component);
++	int ret = 0;
++	size_t i = 0;
++
++	ret = _mt6660_chip_power_on(chip, 1);
++	if (ret < 0) {
++		dev_err(component->dev, "%s chip power on failed\n", __func__);
++		return ret;
++	}
++
++	for (i = 0; i < ARRAY_SIZE(mt6660_setting_table); i++) {
++		ret = snd_soc_component_update_bits(component,
++				mt6660_setting_table[i].addr,
++				mt6660_setting_table[i].mask,
++				mt6660_setting_table[i].val);
++		if (ret < 0) {
++			dev_err(component->dev, "%s update 0x%02x failed\n",
++				__func__, mt6660_setting_table[i].addr);
++			return ret;
++		}
++	}
++
++	ret = _mt6660_chip_power_on(chip, 0);
++	if (ret < 0) {
++		dev_err(component->dev, "%s chip power off failed\n", __func__);
++		return ret;
++	}
++
++	return 0;
++}
++
+ static int mt6660_component_probe(struct snd_soc_component *component)
+ {
+ 	struct mt6660_chip *chip = snd_soc_component_get_drvdata(component);
++	int ret;
+ 
+ 	dev_dbg(component->dev, "%s\n", __func__);
+ 	snd_soc_component_init_regmap(component, chip->regmap);
+ 
+-	return 0;
++	ret = mt6660_component_setting(component);
++	if (ret < 0)
++		dev_err(chip->dev, "mt6660 component setting failed\n");
++
++	return ret;
+ }
+ 
+ static void mt6660_component_remove(struct snd_soc_component *component)
+@@ -506,4 +578,4 @@ module_i2c_driver(mt6660_i2c_driver);
+ MODULE_AUTHOR("Jeff Chang <jeff_chang@richtek.com>");
+ MODULE_DESCRIPTION("MT6660 SPKAMP Driver");
+ MODULE_LICENSE("GPL");
+-MODULE_VERSION("1.0.7_G");
++MODULE_VERSION("1.0.8_G");
+-- 
+2.7.4
 
-> 
->>> That can be namespace by driver, so e.g. keys would be smmu_sysfs_name/<id> and
->>> ddrc_sysfs_name/<id>.
->>>
->>>>>> So even if it is solvable here, the kernel driver(s) will need to be
->>>>>> reworked. And that is just solving one case in many.
->>>>> PMU drivers will need to expose more information to userspace so that they
->>>>> can be identified more precisely, yes. I wouldn't say they would need to be
->>>>> "reworked".
->>>> OK, so some combination of changes would still be required for the SMMU
->>>> PMCG, IORT, and SMMUv3 drivers.
->>> To expose the SMMU ID, surely that's just the driver?
->>
->> This case is complicated, like others I anticipate.
->>
->> So the SMMU PMCG HW has no ID register itself, and this idea relies on using
->> the associated SMMUv3 IIDR in lieu. For that, we need to involve the IORT,
->> SMMUv3, and SMMU PMCG drivers to create this linkage, and even then I still
->> have my doubts on whether this is even proper.
-> 
-> Ok, I hadn't appreciated that the PMCG did not have an ID register
-> itself.
-> 
-> I think that the relationship between the SMMU and PMCG is a stronger
-> argument against using the SOC_ID. If the PMCGs in a system are
-> heterogeneous, then you must know the type of the specific instance.
-
-Perf tool PMU events can handle that. Each PMCG PMU instance has a 
-different name - the name encoding includes the HW base address, so 
-always unique per system - and then so the JSON can know this and have 
-events specific per instance.
-
-> 
->> Please see https://lore.kernel.org/linux-iommu/1569854031-237636-1-git-send-email-john.garry@huawei.com/
->> for reference.
->>
->> Or are there
->>> implementations where the ID register is bogus and have to be overridden?
->>>
->>
->> I will also note that perf tool PMU events framework relies today on
->> generating a table of events aliases per CPU and matching based on that. If
->> you want to totally disassociate a CPU or any SoC ID mapping, then this will
->> require big perf tool rework.
-> 
-> I think that might be necessary, as otherwise we're going to back
-> ourselves into a corner by building what's simple now.
-
-I appreciate what you're saying. I'll check this idea further.
-
-Cheers,
-John
 
 _______________________________________________
 linux-arm-kernel mailing list
