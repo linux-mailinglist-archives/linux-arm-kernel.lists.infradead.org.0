@@ -2,93 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFF63164733
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 15:40:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D675164777
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 15:52:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LI7/+QKGn7cvCderQ1IJojgsWfnDnATKk1/J3StgqWo=; b=dM2eATlTTuUW2W
-	fVeWvi39HGAoA3Ywci1drsdIXEds8O5nap2QPY25XsPUbzha8SVt5fPJTS6MuoKcG9nB7MURRRbNF
-	Y/Ri8E6KZhaUexmBW4S4Yl50jXqQZyXpGmvH9MsO77SrZYu8ts/+Sttp/airRNcsGUGGAE7hUYY+V
-	4+npOFAKUV25i32lwb/PYM7igFwDSHTTUD1BtzvLm8W7cjOq2csbUXilrTBK6preV+EPKmFKgkT71
-	SGlwgszDp81hu3meXGzSBwarqzEgixLuI793xvbou6TYvLVC+k3gotRxByw3nKvYUmzfXZdEc7Qn3
-	PaY2ei5lx4diBi4e/CTQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uqfHqM0NuZUlhLsMAw7DRtocpGxE9WDnf2fxqqpnYNs=; b=rVJOtIu/ggNLJh
+	vU2TMRuRoZJzS2ZW3dNse4cl8LzC4Vt07KtRYLwnp7nUh13J3jrOXyvm2i1EERfmjJFyM/FKUI6xQ
+	LMWnMCOn4l+S092135tnUNjhZ+jVCwJSxcdrOks4MMBECPdKA2vYsbQ64NCSFmtAuqrsRxOskvv3p
+	rL4y6Vjj+gv4ry48r0vd5qrgCuQfxt7w9MHF3BXUvH252voOMm5x2KuaVQEjVZlgVxkK27lILlOLP
+	AloJ4bv9jjhyRxW07k1w+mMlX4MXq6r9/amdDVuDfSeVHHkowiVjWhet9Yrva58A+Y8GJja00ZOfE
+	AMV4AcnAYZnPav51OCFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4QWM-0002bR-LD; Wed, 19 Feb 2020 14:40:14 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1j4QiQ-0007oG-Ny; Wed, 19 Feb 2020 14:52:42 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4QW6-0002b0-37
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 14:39:59 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01JEXi2Q030251; Wed, 19 Feb 2020 15:39:51 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=l0m5SnrqcSKwIcJ02I4m47wU3dRyUV2O0AFo1NvXshc=;
- b=z4egeqlSPY3kDhwoRhFHWlSX7bCPaRHnu200fjlGNsRRzK2edQk0z03w3v2mTlpvUSCZ
- Nkwzix9UVdDCFumMwEg+AIYxxO4DNRxzP+1rGsunFDhge+EwGUiVGiFi4pG0f6xWcMB0
- z573OCTee15n34WTnddH30iFeAQ2CgFu/+5bmHjx6sf2jKCrzVq3GKbrOF4Z8zeBptiy
- 8GiEiRmXmJWrIQ7I8m+S+0l7etv9fmwtxDtZ+7YJquIHuItyTg7eo/pLhvgWKPzWXBAg
- 4o+vllWecsmTeDOimek+tyLd1GF60R1x1H1EKxi9gsJMwqM98LtT33SsUkKe/XVn/Qot ag== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2y8ub1bhcd-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 19 Feb 2020 15:39:51 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B903710003D;
- Wed, 19 Feb 2020 15:39:44 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A1D342BEC6C;
- Wed, 19 Feb 2020 15:39:44 +0100 (CET)
-Received: from lmecxl0889.lme.st.com (10.75.127.45) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 19 Feb
- 2020 15:39:43 +0100
-Subject: Re: [PATCH 3/9] remoteproc: add support to skip firmware load when
- recovery
-To: <peng.fan@nxp.com>, <ohad@wizery.com>, <bjorn.andersson@linaro.org>,
- <robh+dt@kernel.org>, <shawnguo@kernel.org>, <s.hauer@pengutronix.de>,
- <kernel@pengutronix.de>, <festevam@gmail.com>
-References: <1582097265-20170-1-git-send-email-peng.fan@nxp.com>
- <1582097265-20170-4-git-send-email-peng.fan@nxp.com>
-From: Arnaud POULIQUEN <arnaud.pouliquen@st.com>
-Message-ID: <0d90b2c2-cb02-d052-57cb-b11c5f815f07@st.com>
-Date: Wed, 19 Feb 2020 15:39:42 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j4QiH-0007mn-Qk
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 14:52:35 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 66so357321otd.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 06:52:32 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=QQd+mLOG3Djgf9pAJU1+5MgOvviH0euD+JIlNG66B4U=;
+ b=AB6jXRnZQcnsL/jj1Lmk6Ym3jwZoL04cu/ix//5D6DIDQCSzekaZl6iQSjuZ3C+MFQ
+ AdFRZXJibCo82UhHI7zshhwZcFbmAMqfBMXpbunyjC2IXcUNgDnCLtLVa2xZTxeSKKuv
+ X+7o3bhbYZeZz3UTEObdRBrrHOEk03MQrN0U4zKNxMVcRuTHt3LZmNWWhcgYHrJOfZGt
+ lmjeahCKo+SCw5JejQD35hwogF3IoFJ51/8Ps8rg1UYcppAhEHnzb7RwPCR+6uvTwenz
+ AsWiN4EtOfXHmf5d4t7pOBth4MVkUoPIAUO4aslYMmyuw1Sdi6z2tg5CpN+s8Fo/axg0
+ Y+aw==
+X-Gm-Message-State: APjAAAUxLAoDYDpgiqxU2DGD0+Lyhr597XI1h6LoN3j6ZZmZH9vtAsSR
+ YmWd13Uk/xaD38te8a4Zjg==
+X-Google-Smtp-Source: APXvYqxLc1uqkSdx5A61GndakpE7hENl4nGHvYyySsvT2z371AUhrfW4GKZzZgnB1JAXwHj26eqB9w==
+X-Received: by 2002:a05:6830:22ca:: with SMTP id
+ q10mr21274221otc.280.1582123951275; 
+ Wed, 19 Feb 2020 06:52:31 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id r17sm691926otq.70.2020.02.19.06.52.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 19 Feb 2020 06:52:28 -0800 (PST)
+Received: (nullmailer pid 4462 invoked by uid 1000);
+ Wed, 19 Feb 2020 14:52:27 -0000
+Date: Wed, 19 Feb 2020 08:52:27 -0600
+From: Rob Herring <robh@kernel.org>
+To: Keerthy <j-keerthy@ti.com>
+Subject: Re: [PATCH v3 1/4] dt-bindings: thermal: k3: Add VTM bindings
+ documentation
+Message-ID: <20200219145227.GA1317@bogus>
+References: <20200219074314.22829-1-j-keerthy@ti.com>
+ <20200219074314.22829-2-j-keerthy@ti.com>
 MIME-Version: 1.0
-In-Reply-To: <1582097265-20170-4-git-send-email-peng.fan@nxp.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-19_03:2020-02-19,
- 2020-02-19 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200219074314.22829-2-j-keerthy@ti.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_063958_434855_2BBF0D12 
-X-CRM114-Status: GOOD (  22.03  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200219_065233_874255_E2E877FD 
+X-CRM114-Status: GOOD (  17.47  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,87 +96,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- linux-imx@nxp.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ amit.kucheria@verdurent.com, linux-pm@vger.kernel.org,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, t-kristo@ti.com,
+ rui.zhang@intel.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 2/19/20 8:27 AM, peng.fan@nxp.com wrote:
-> From: Peng Fan <peng.fan@nxp.com>
+On Wed, Feb 19, 2020 at 01:13:11PM +0530, Keerthy wrote:
+> Add VTM bindings documentation. In the Voltage Thermal
+> Management Module(VTM), K3 AM654 supplies a voltage
+> reference and a temperature sensor feature that are gathered in the band
+> gap voltage and temperature sensor (VBGAPTS) module. The band
+> gap provides current and voltage reference for its internal
+> circuits and other analog IP blocks. The analog-to-digital
+> converter (ADC) produces an output value that is proportional
+> to the silicon temperature.
 > 
-> Remote processor such as M4 inside i.MX8QXP is not handled by Linux
-> when it is configured to run inside its own hardware partition by
-> system control unit(SCU). So even remote processor crash reset, it is
-> handled by SCU, not linux. To such case, firmware load should be
-> ignored, So introduce skip_fw_load_recovery and platform driver
-> should set it if needed.
-> 
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> Signed-off-by: Keerthy <j-keerthy@ti.com>
 > ---
->  drivers/remoteproc/remoteproc_core.c | 19 +++++++++++--------
->  include/linux/remoteproc.h           |  1 +
->  2 files changed, 12 insertions(+), 8 deletions(-)
 > 
-> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> index 876b5420a32b..ca310e3582bf 100644
-> --- a/drivers/remoteproc/remoteproc_core.c
-> +++ b/drivers/remoteproc/remoteproc_core.c
-> @@ -1678,20 +1678,23 @@ int rproc_trigger_recovery(struct rproc *rproc)
->  	if (ret)
->  		goto unlock_mutex;
->  
-> -	/* generate coredump */
-> -	rproc_coredump(rproc);
-> +	if (!rproc->skip_fw_load_recovery) {
-> +		/* generate coredump */
-> +		rproc_coredump(rproc);
->  
-> -	/* load firmware */
-> -	ret = request_firmware(&firmware_p, rproc->firmware, dev);
-> -	if (ret < 0) {
-> -		dev_err(dev, "request_firmware failed: %d\n", ret);
-> -		goto unlock_mutex;
-> +		/* load firmware */
-> +		ret = request_firmware(&firmware_p, rproc->firmware, dev);
-> +		if (ret < 0) {
-> +			dev_err(dev, "request_firmware failed: %d\n", ret);
-> +			goto unlock_mutex;
-> +		}
+> Changes in v3:
+> 
+>   * Fixed errors seen with:
+>     dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+> 
+>  .../bindings/thermal/ti,am654-thermal.yaml    | 57 +++++++++++++++++++
+>  1 file changed, 57 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+> new file mode 100644
+> index 000000000000..b6dc95c3acab
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+> @@ -0,0 +1,57 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/thermal/ti,am654-thermal.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Texas Instruments AM654 VTM (DTS) binding
+> +
+> +maintainers:
+> +  - Keerthy <j-keerthy@ti.com>
+> +
+> +properties:
+> +  compatible:
+> +    const: ti,am654-vtm
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  power-domains:
+> +    maxItems: 1
+> +    description: phandle to the associated power domain
 
-Any specific reason to not reuse skip_fw_load here?
-FYI i'm reworking the Loic's patch and i plan to implement the recovery part using skip_fw_load...
+No need to redefine a standard property description.
 
-Regards
-Arnaud
+> +
+> +  "#thermal-sensor-cells":
+> +    const: 1
+> +
+> +required:
+> +  - "#thermal-sensor-cells"
+> +  - compatible
+> +  - reg
+> +  - power-domains
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/soc/ti,sci_pm_domain.h>
+> +    vtm: wkup_vtm0@42050000 {
 
->  	}
->  
->  	/* boot the remote processor up again */
->  	ret = rproc_start(rproc, firmware_p);
->  
-> -	release_firmware(firmware_p);
-> +	if (!rproc->skip_fw_load_recovery)
-> +		release_firmware(firmware_p);
->  
->  unlock_mutex:
->  	mutex_unlock(&rproc->lock);
-> diff --git a/include/linux/remoteproc.h b/include/linux/remoteproc.h
-> index 4fd5bedab4fa..fe6ee253b385 100644
-> --- a/include/linux/remoteproc.h
-> +++ b/include/linux/remoteproc.h
-> @@ -514,6 +514,7 @@ struct rproc {
->  	bool has_iommu;
->  	bool auto_boot;
->  	bool skip_fw_load;
-> +	bool skip_fw_load_recovery;
->  	struct list_head dump_segments;
->  	int nb_vdev;
->  };
+thermal-sensor@...
+
+Use generic node names and don't use '_' in node names.
+
+> +        compatible = "ti,am654-vtm";
+> +        reg = <0x0 0x42050000 0x0 0x25c>;
+> +        power-domains = <&k3_pds 80 TI_SCI_PD_EXCLUSIVE>;
+> +        #thermal-sensor-cells = <1>;
+> +    };
+> +
+> +    mpu0_thermal: mpu0_thermal {
+> +        polling-delay-passive = <250>; /* milliseconds */
+> +        polling-delay = <500>; /* milliseconds */
+> +        thermal-sensors = <&vtm0 0>;
+> +
+> +        trips {
+> +                mpu0_crit: mpu0_crit {
+> +                        temperature = <125000>; /* milliCelsius */
+> +                        hysteresis = <2000>; /* milliCelsius */
+> +                        type = "critical";
+> +                };
+> +        };
+> +    };
+> +...
+> -- 
+> 2.17.1
 > 
 
 _______________________________________________
