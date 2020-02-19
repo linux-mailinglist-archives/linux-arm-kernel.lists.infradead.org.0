@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64D3E1640A7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:44:09 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A72F81640AB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:44:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=CXc3CQwehw2zIIsFVOtNTCrhPfQ5b5h18fYxIMTzki4=; b=gj9CslPoilzRftLJNVgRCQX5Co
-	Pc0ZegZHOmQop7Gk7kjVb1uBn6FpyJw/u3HCI+zhYnK46PNWYCo2nNdKGvdvCWF0LiS/SrmYDzPZv
-	lBR4lOXRSaT53tdMn7dZoEx8xgSq7FGt5RO4Xe8MWPVdq4Lsc8fe3OuXZtSnSi+om/xWrtPO/uZvk
-	GBCxEp/EdWMvJfPh8HWfvsDuBJHmfZR4jEgRJx2l819v4Lpz6Ieq4RxfVtJoMygAeLJsJtQNGCaPT
-	V9ROItyxAfyyi532HzFb1Dgu5zwvvtNtDLJhpD14GWVWEpcHqC7szYc4ObL/9/NnfvjCsQ+pQaGC9
-	Z8EpvDFA==;
+	bh=8IvLRb37gLzeBc9lblsJWNXBE7Q8VWxOeyFW+Ig70CA=; b=KvzhoKx9lH3ZlLTEh/IsjKYdEa
+	bKSjtyUN5+w3DzgrGhPztuZAdBnAJjZ0iPIB4YaL5xIWAN7eODm9T1LN1HoSWamWExRcpbobtufE2
+	aNo0KAWjwViLu+G2rzZoKSJIQ9wsBJEZodd9yx9BzyvLpSEd/Y4mg1/xKFqsEcBeeP0PLoCVbQkyX
+	X1/0Ze1qkTSsiYbwNmWgSTcwnuvZy5uLPYv/H6LYa5TKsUMb4hjW31LS1I36jMJZA1AaAh+qENTq6
+	7w0Yez8KItlmUGrfQiI81ivIVEq+UZluvRQjuTR3rGaX1NwV1jD0wq4NgXWrFo38Sk0s2HBJJoyg4
+	6LjB9b1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Ltn-0001wH-E4; Wed, 19 Feb 2020 09:44:07 +0000
+	id 1j4LuE-0002K8-UQ; Wed, 19 Feb 2020 09:44:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4LtW-0001va-Qt
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:43:52 +0000
+ id 1j4LtY-0001wG-Nq
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:43:54 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DA20D24671;
- Wed, 19 Feb 2020 09:43:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D563F24673;
+ Wed, 19 Feb 2020 09:43:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582105430;
- bh=IFeKqUgeJV2n7+UfgpcbERriRaaDjRKasrOnKGYW4KE=;
+ s=default; t=1582105432;
+ bh=lFzKo6clSyD9Mf7ZXBNhtebcK98cxJK95ASmc7qCv0A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=p2MTQBZizJ4UrgefK5SkbPxOEESDJrHLVICZbwMsWK7jr1wha9aA37dROV0bjUsKX
- SVTyYC3YVlQYlwSV/GcPiMbRg4+LVDquCGj/r8DlVTcv3HXP5AUYtxk17/YEsqaSRa
- N2IWtLzo9GMmVN8yDtdNa7sROdhZcH5SzHSHcPd4=
+ b=F9Q+7DQ1awwTlQX09DLd8nNQb5ZjSnu+WpmzHjy4nZvjaCi2xkMZtt9CQZ/iInqdf
+ LMjgojxE/VsHoeND4tW+uiVOZAL7IRCXt+nv42rA4apeUiqN4v09RaoOLOHU8AS90H
+ 0gl4230tZ79ryLkkvlJNmq9Fv7pIhI3GYZGyJFPE=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [PATCH v2 1/4] efi/arm: work around missing cache maintenance in
- decompressor handover
-Date: Wed, 19 Feb 2020 10:43:37 +0100
-Message-Id: <20200219094340.16597-2-ardb@kernel.org>
+Subject: [PATCH v2 2/4] efi/arm: pass start and end addresses to
+ cache_clean_flush()
+Date: Wed, 19 Feb 2020 10:43:38 +0100
+Message-Id: <20200219094340.16597-3-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200219094340.16597-1-ardb@kernel.org>
 References: <20200219094340.16597-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_014350_893810_B6A5A84D 
-X-CRM114-Status: GOOD (  14.91  )
+X-CRM114-CacheID: sfid-20200219_014352_793304_60D80F1C 
+X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,71 +88,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The EFI stub executes within the context of the zImage as it was
-loaded by the firmware, which means it is treated as an ordinary
-PE/COFF executable, which is loaded into memory, and cleaned to
-the PoU to ensure that it can be executed safely while the MMU
-and caches are on.
+In preparation for turning the decompressor's cache clean/flush
+operations into proper by-VA maintenance for v7 cores, pass the
+start and end addresses of the regions that need cache maintenance
+into cache_clean_flush in registers r0 and r1.
 
-When the EFI stub hands over to the decompressor, we clean the caches
-by set/way and disable the MMU and D-cache, to comply with the Linux
-boot protocol for ARM. However, cache maintenance by set/way is not
-sufficient to ensure that subsequent instruction fetches and data
-accesses done with the MMU off see the correct data. This means that
-proceeding as we do currently is not safe, especially since we also
-perform data accesses with the MMU off, from a literal pool as well as
-the stack.
-
-So let's kick this can down the road a bit, and jump into the relocated
-zImage before disabling the caches. This removes the requirement to
-perform any by-VA cache maintenance on the original PE/COFF executable,
-but it does require that the relocated zImage is cleaned to the PoC,
-which is currently not the case. This will be addressed in a subsequent
+Currently, all implementations of cache_clean_flush ignore these
+values, so no functional change is expected as a result of this
 patch.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm/boot/compressed/head.S | 20 ++++++++++++++------
- 1 file changed, 14 insertions(+), 6 deletions(-)
+ arch/arm/boot/compressed/head.S | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 088b0a060876..6c98d3d2de2f 100644
+index 6c98d3d2de2f..c11b1b0a3ac6 100644
 --- a/arch/arm/boot/compressed/head.S
 +++ b/arch/arm/boot/compressed/head.S
-@@ -1461,6 +1461,19 @@ ENTRY(efi_stub_entry)
+@@ -1460,6 +1460,13 @@ ENTRY(efi_stub_entry)
+ 
  		@ Preserve return value of efi_entry() in r4
  		mov	r4, r0
- 		bl	cache_clean_flush
++		add	r1, r4, #SZ_2M			@ DT end
++		bl	cache_clean_flush
 +
-+		@ The PE/COFF loader might not have cleaned the code we are
-+		@ running beyond the PoU, and so calling cache_off below from
-+		@ inside the PE/COFF loader allocated region is unsafe. Let's
-+		@ assume our own zImage relocation code did a better job, and
-+		@ jump into its version of this routine before proceeding.
 +		ldr	r0, [sp]			@ relocated zImage
-+		ldr	r1, 0f
-+		sub	r1, r0, r1
-+		mov	pc, r1				@ no mode switch
++		adr	r2, __edata
++		ldr	r1, [r2]
++		add	r1, r1, r2			@ end of image
+ 		bl	cache_clean_flush
+ 
+ 		@ The PE/COFF loader might not have cleaned the code we are
+@@ -1489,6 +1496,8 @@ efi_load_fail:
+ 		ldr	r0, =0x80000001
+ 		ldmfd	sp!, {ip, pc}
+ ENDPROC(efi_stub_entry)
 +		.align	2
-+0:		.long	start - (. + 4)
-+
- 		bl	cache_off
++__edata:	.long	_edata - .
+ #endif
  
- 		@ Set parameters for booting zImage according to boot protocol
-@@ -1469,12 +1482,7 @@ ENTRY(efi_stub_entry)
- 		mov	r0, #0
- 		mov	r1, #0xFFFFFFFF
- 		mov	r2, r4
--
--		@ Branch to (possibly) relocated zImage that is in [sp]
--		ldr	lr, [sp]
--		ldr	ip, =start_offset
--		add	lr, lr, ip
--		mov	pc, lr				@ no mode switch
-+		b	__efi_start
- 
- efi_load_fail:
- 		@ Return EFI_LOAD_ERROR to EFI firmware on error.
+ 		.align
 -- 
 2.17.1
 
