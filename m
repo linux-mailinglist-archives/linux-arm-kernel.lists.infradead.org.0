@@ -2,70 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BCB01642B8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:54:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F4EF1642BC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:56:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oerrTRjd7RRluAb5kwiIZW1/f1I9yuWRML4UrdbfYIc=; b=nIWoYTM4LOJg4Z
-	M0p4YJKyfv7MZfdQ1o+ODSUbEPrUyoUD7JzZqa4Rt4BAfDG2NzVVQC8UECF7pNF9FvX3jLfLZFkut
-	WQciZWruoslWq9yCRGiU5zzKdfgyWEBG2no/fMCv3Ne5kN2ArE3z7sxo1UoW+u+L+OKoQ0hEXZPoy
-	K8c91ATNi7gRWugwANYFODKB9dq9uC97YZs8sA/MjZGkeGy3LuD2u7y/vLywzf/zimT69S567ZnOs
-	oi5cizEKhp++gyn3nvYjEEKGew+4GP4beSrHyF4w8w6TRNS2xFy6wG057BRW9uWwULBsVsBRObu6y
-	8hB3WmrA4ttC7YEVf3Jg==;
+	List-Owner; bh=468Qj8D9qsHWbs5B4Bf7WQD2AXwPwtAfcv1NaV+LJaM=; b=PtkbCim7ChDRji
+	8PyxRoDYRV0LQJW5o/xrSsMZw3UnIiLKEJjKp3bT1Ze+BRNiopzGTc3kissQeEOcSXObdbpPSW6Ap
+	M4jI0o3WNP4ldkJUxAnMMDICdjjRS9mxU6FGHfxr2mYvjnya+pANwF5mL7irywFtpwgdANyONp0FO
+	l1PrEStyuuAqOBRwx0/lWtbC0RFi4dLYyz5Z0QqupW6hL2PA42yR1A9QplTfmS+zh40H3GTLW2G5o
+	ffghVz8J3b3eEWmP6R8Qhlr9xlgb9Ok1Z0kpUukp11Ggou3pBxOGKsyc+wenjQp2HFUaRvUZGNUVq
+	2pONoQHXGG9zP+JtfLOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4N0F-0003iZ-3x; Wed, 19 Feb 2020 10:54:51 +0000
-Received: from first.geanix.com ([116.203.34.67])
+	id 1j4N2C-0005G8-Mu; Wed, 19 Feb 2020 10:56:52 +0000
+Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Mzq-0003Uk-TI
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:54:28 +0000
-Received: from localhost (_gateway [172.20.0.1])
- by first.geanix.com (Postfix) with ESMTPSA id 39F58C002E;
- Wed, 19 Feb 2020 10:54:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=geanix.com; s=first;
- t=1582109664; bh=VYzKQ++/LYo+JsJQba43uJIM0DxFk+Tyra4KIcUC6ok=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References;
- b=ToWkT2ZfnJ5WjreqQSliA3cmR8LK8Opg/rzbo23501MrL/0av9f+fF45I1FkFzNCe
- Xlcru5V6JEsg6nus6IyJMIqY1yDywGvWl7JuzR04Rf2vABGW3kvmXwSv+7syjwY/VP
- CoR1g+iUNtgxJnjSwAi3nZJWA9u5LCXey2nTLwwihHWzayBJ7xQzkVdhvsz2YQIlQA
- hFrLtcoo95giSTQF85ff7XcGZ9ZAQ9zHQrrHTQaSzUN7mPZya80WSiKQC9c2fYKbSU
- ZraIHf3N1o041Z1L5bgI9YCYl7bbzMqYJbeh4cX1j4qVMfGA2SHKRtfmSK3/mmfgS1
- PpJjCpfdJ5/jw==
-From: Esben Haabendal <esben@geanix.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net 4/4] net: ll_temac: Handle DMA halt condition caused by
- buffer underrun
-Date: Wed, 19 Feb 2020 11:54:23 +0100
-Message-Id: <b305e4487742986e23f6e7341df80b3063e3112e.1582108989.git.esben@geanix.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <cover.1582108989.git.esben@geanix.com>
-References: <cover.1582108989.git.esben@geanix.com>
+ id 1j4N1x-0005Fe-IB
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:56:38 +0000
+Received: by theia.8bytes.org (Postfix, from userid 1000)
+ id 9D7A536A; Wed, 19 Feb 2020 11:56:35 +0100 (CET)
+Date: Wed, 19 Feb 2020 11:56:34 +0100
+From: Joerg Roedel <joro@8bytes.org>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] iommu/qcom: Fix bogus detach logic
+Message-ID: <20200219105634.GF1961@8bytes.org>
+References: <be92829c6e5467634b109add002351e6cf9e18d2.1582049382.git.robin.murphy@arm.com>
 MIME-Version: 1.0
-X-Spam-Status: No, score=-1.7 required=4.0 tests=BAYES_00,DKIM_INVALID,
- DKIM_SIGNED,UNPARSEABLE_RELAY,URIBL_BLOCKED autolearn=disabled
- version=3.4.3
-X-Spam-Checker-Version: SpamAssassin 3.4.3 (2019-12-06) on eb9da72b0f73
+Content-Disposition: inline
+In-Reply-To: <be92829c6e5467634b109add002351e6cf9e18d2.1582049382.git.robin.murphy@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_025427_348984_853593C7 
-X-CRM114-Status: GOOD (  16.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200219_025637_754661_DB3E2B6F 
+X-CRM114-Status: GOOD (  10.94  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [81.169.241.247 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,154 +58,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Michal Simek <michal.simek@xilinx.com>,
- linux-kernel@vger.kernel.org, =?UTF-8?q?Petr=20=C5=A0tetiar?= <ynezz@true.cz>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: stephan@gerhold.net, linux-arm-msm@vger.kernel.org,
+ Naresh Kamboju <naresh.kamboju@linaro.org>, iommu@lists.linux-foundation.org,
+ robdclark@gmail.com, linux-arm-kernel@lists.infradead.org,
+ Brian Masney <masneyb@onstation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SDMA engine used by TEMAC halts operation when it has finished
-processing of the last buffer descriptor in the buffer ring.
-Unfortunately, no interrupt event is generated when this happens,
-so we need to setup another mechanism to make sure DMA operation is
-restarted when enough buffers have been added to the ring.
+On Tue, Feb 18, 2020 at 06:12:41PM +0000, Robin Murphy wrote:
+> Currently, the implementation of qcom_iommu_domain_free() is guaranteed
+> to do one of two things: WARN() and leak everything, or dereference NULL
+> and crash. That alone is terrible, but in fact the whole idea of trying
+> to track the liveness of a domain via the qcom_domain->iommu pointer as
+> a sanity check is full of fundamentally flawed assumptions. Make things
+> robust and actually functional by not trying to be quite so clever.
+> 
+> Reported-by: Brian Masney <masneyb@onstation.org>
+> Tested-by: Brian Masney <masneyb@onstation.org>
+> Reported-by: Naresh Kamboju <naresh.kamboju@linaro.org>
+> Fixes: 0ae349a0f33f ("iommu/qcom: Add qcom_iommu")
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  drivers/iommu/qcom_iommu.c | 28 ++++++++++++----------------
+>  1 file changed, 12 insertions(+), 16 deletions(-)
 
-Fixes: 92744989533c ("net: add Xilinx ll_temac device driver")
-Signed-off-by: Esben Haabendal <esben@geanix.com>
----
- drivers/net/ethernet/xilinx/ll_temac.h      |  3 ++
- drivers/net/ethernet/xilinx/ll_temac_main.c | 47 ++++++++++++++++++++-
- 2 files changed, 48 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/net/ethernet/xilinx/ll_temac.h b/drivers/net/ethernet/xilinx/ll_temac.h
-index 99fe059e5c7f..53fb8141f1a6 100644
---- a/drivers/net/ethernet/xilinx/ll_temac.h
-+++ b/drivers/net/ethernet/xilinx/ll_temac.h
-@@ -380,6 +380,9 @@ struct temac_local {
- 	/* DMA channel control setup */
- 	u32 tx_chnl_ctrl;
- 	u32 rx_chnl_ctrl;
-+	u8 coalesce_count_rx;
-+
-+	struct delayed_work restart_work;
- };
- 
- /* Wrappers for temac_ior()/temac_iow() function pointers above */
-diff --git a/drivers/net/ethernet/xilinx/ll_temac_main.c b/drivers/net/ethernet/xilinx/ll_temac_main.c
-index 255207f2fd27..90b486becb5b 100644
---- a/drivers/net/ethernet/xilinx/ll_temac_main.c
-+++ b/drivers/net/ethernet/xilinx/ll_temac_main.c
-@@ -51,6 +51,7 @@
- #include <linux/ip.h>
- #include <linux/slab.h>
- #include <linux/interrupt.h>
-+#include <linux/workqueue.h>
- #include <linux/dma-mapping.h>
- #include <linux/processor.h>
- #include <linux/platform_data/xilinx-ll-temac.h>
-@@ -920,6 +921,17 @@ temac_start_xmit(struct sk_buff *skb, struct net_device *ndev)
- 	return NETDEV_TX_OK;
- }
- 
-+static int ll_temac_recv_buffers_available(struct temac_local *lp)
-+{
-+	int available;
-+
-+	if (!lp->rx_skb[lp->rx_bd_ci])
-+		return 0;
-+	available = 1 + lp->rx_bd_tail - lp->rx_bd_ci;
-+	if (available <= 0)
-+		available += RX_BD_NUM;
-+	return available;
-+}
- 
- static void ll_temac_recv(struct net_device *ndev)
- {
-@@ -990,6 +1002,18 @@ static void ll_temac_recv(struct net_device *ndev)
- 			lp->rx_bd_ci = 0;
- 	} while (rx_bd != lp->rx_bd_tail);
- 
-+	/* DMA operations will halt when the last buffer descriptor is
-+	 * processed (ie. the one pointed to by RX_TAILDESC_PTR).
-+	 * When that happens, no more interrupt events will be
-+	 * generated.  No IRQ_COAL or IRQ_DLY, and not even an
-+	 * IRQ_ERR.  To avoid stalling, we schedule a delayed work
-+	 * when there is a potential risk of that happening.  The work
-+	 * will call this function, and thus re-schedule itself until
-+	 * enough buffers are available again.
-+	 */
-+	if (ll_temac_recv_buffers_available(lp) < lp->coalesce_count_rx)
-+		schedule_delayed_work(&lp->restart_work, HZ / 1000);
-+
- 	/* Allocate new buffers for those buffer descriptors that were
- 	 * passed to network stack.  Note that GFP_ATOMIC allocations
- 	 * can fail (e.g. when a larger burst of GFP_ATOMIC
-@@ -1045,6 +1069,18 @@ static void ll_temac_recv(struct net_device *ndev)
- 	spin_unlock_irqrestore(&lp->rx_lock, flags);
- }
- 
-+/* Function scheduled to ensure a restart in case of DMA halt
-+ * condition caused by running out of buffer descriptors.
-+ */
-+static void ll_temac_restart_work_func(struct work_struct *work)
-+{
-+	struct temac_local *lp = container_of(work, struct temac_local,
-+					      restart_work.work);
-+	struct net_device *ndev = lp->ndev;
-+
-+	ll_temac_recv(ndev);
-+}
-+
- static irqreturn_t ll_temac_tx_irq(int irq, void *_ndev)
- {
- 	struct net_device *ndev = _ndev;
-@@ -1137,6 +1173,8 @@ static int temac_stop(struct net_device *ndev)
- 
- 	dev_dbg(&ndev->dev, "temac_close()\n");
- 
-+	cancel_delayed_work_sync(&lp->restart_work);
-+
- 	free_irq(lp->tx_irq, ndev);
- 	free_irq(lp->rx_irq, ndev);
- 
-@@ -1258,6 +1296,7 @@ static int temac_probe(struct platform_device *pdev)
- 	lp->dev = &pdev->dev;
- 	lp->options = XTE_OPTION_DEFAULTS;
- 	spin_lock_init(&lp->rx_lock);
-+	INIT_DELAYED_WORK(&lp->restart_work, ll_temac_restart_work_func);
- 
- 	/* Setup mutex for synchronization of indirect register access */
- 	if (pdata) {
-@@ -1364,6 +1403,7 @@ static int temac_probe(struct platform_device *pdev)
- 		 */
- 		lp->tx_chnl_ctrl = 0x10220000;
- 		lp->rx_chnl_ctrl = 0xff070000;
-+		lp->coalesce_count_rx = 0x07;
- 
- 		/* Finished with the DMA node; drop the reference */
- 		of_node_put(dma_np);
-@@ -1395,11 +1435,14 @@ static int temac_probe(struct platform_device *pdev)
- 				(pdata->tx_irq_count << 16);
- 		else
- 			lp->tx_chnl_ctrl = 0x10220000;
--		if (pdata->rx_irq_timeout || pdata->rx_irq_count)
-+		if (pdata->rx_irq_timeout || pdata->rx_irq_count) {
- 			lp->rx_chnl_ctrl = (pdata->rx_irq_timeout << 24) |
- 				(pdata->rx_irq_count << 16);
--		else
-+			lp->coalesce_count_rx = pdata->rx_irq_count;
-+		} else {
- 			lp->rx_chnl_ctrl = 0xff070000;
-+			lp->coalesce_count_rx = 0x07;
-+		}
- 	}
- 
- 	/* Error handle returned DMA RX and TX interrupts */
--- 
-2.25.0
-
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
