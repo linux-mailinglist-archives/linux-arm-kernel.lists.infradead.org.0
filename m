@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E758163DDD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:39:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7760163DD6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:39:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QznXaUeaDTOJxlUuKyjJTAtj7ZhmjTu5nxuLceUJTIw=; b=u8ztjEPCzr0BWp
-	2zUgr84Odgbe0F/U9lon57q4i8CPcWeddIH5CHM/AXXC9SxoNU8ciaVA5FsEp3nVlkns3/tFyp+5o
-	QkFnFU43ApxQbwnVcakOcGk+iBiy9wk22GjWP3/ExMV7OajOvR6kW79pk/wm7knp/RG1qcH0NMYvF
-	Ev2Fq7lL2+S8xv9C2QJzzCBEyAxs/EMpknRgrRhoRHrWvTYBphD9aeonJ2P10n4arFloJB+OAThRh
-	+WVF4r+U/N55VPHDI2zwmiEAiKrj9gixtmtga6Hmz2pJCyNI3IxdKG3CE1jHNGQcu6dOPqnT6EfBc
-	zZ881nDxmUoaXmYlQjzg==;
+	List-Owner; bh=fyGd+W5tp5ln6s5nupSHmsfi5u0wJZ/s10c70hLNEUc=; b=iCS5wgKQ/KwLCH
+	VcudwkNuboXHas2GTLo6UOuzSEA7zy4QH0633K8fQ0QdUZ0YgGkS4UUtrJI3Izvn0GqvZFJ8TXnzj
+	GkKTeX7i5FE9XKxvnNcMTXVN4xKnB51fCXgC1NC/s9w/YpeJVkf9sicGw8akt1WhUGrXGLtcYc6Yb
+	JfYDVXo1OA4tbfQ6P+DBhdqCDynFVwChnxynI+QEGNuZJX47rJaJL6gJUflh1nLcKTvt7xuTI8IL9
+	DgvQWTw1Ap+Dsf/j9urdMP/pPX7viibbvQQ8U3mGOLL6qBSVErBA8T+iYPqCUV+5EssXXNjjt24IV
+	qeM1LuI0GvdvxJkfn9CA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4JxN-00050r-7Y; Wed, 19 Feb 2020 07:39:41 +0000
+	id 1j4Jwh-0004Pf-5J; Wed, 19 Feb 2020 07:38:59 +0000
 Received: from mail-vi1eur04on0608.outbound.protection.outlook.com
  ([2a01:111:f400:fe0e::608]
  helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Js6-0007YS-9n
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:34:16 +0000
+ id 1j4Js8-0007YS-Ou
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:34:18 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ZSunnbKRJg2/zznpg5UXQeEgLK5m+j0mnP3s3Qkjn0SIw1zxCleesYfRlTnfYQY3mYgi7pbZZUx2ln9B14SdhjEqpFwKCLHARVU4R3LXeWSZ0kzKarz6ecaSvzepuqC+iwKHoQJ2RdfnpZvTry2WO0bUyC0IWKkxcpV2Ckj6uEFCJsm30Fa9rJ7A/ro/iQ92Z5rQm97hTXjX4xZaSzSg5sqPWR0fJsKWQdKsZ8LsvXcQDVaxpjz9A3XfXHN9DTLGIdkoxhA/8Q1QB9xTpStadKMeek8RgesElisdr5YZ8yABpxavizzE/rZ+zTjTQ4OG+NY2WUvBf3QQAlymf27Kww==
+ b=QvNEwTMvJm4U90mrB1CdBSAUxwOAIbmBUbSKofVMCMOdlqGsmpIXT4Pu6YLEgDvJNm+y7l04f7ObS8Puyl/6/36sQzNUYSWLRGewYBz/fcMuH81UXzuXMGzp0M6cqesQDNFXCNDzJwO3V5Dr3+VEPK0f313PDyseUwxuv/kAuVhdl6xE0EnPsXp0Fpjw3SUjDM4gLzbUK/uGT8Ut6J5S8oficZOkoFE5yWoMlugUOPg2rdsc3k+6zEKq9ojPJU4DOBcHuY2hZFOjnPmJbPZakEg7a6StnZa2XsK+8UeVm0mqpvZ77PROKNchqvYKonEt/hji82Ij7Ob91NpmMSPgqw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Di6Xc2Kec+lh/UZnw+aO21NwG9ymOod2MojAnOUohSk=;
- b=OM6pgPQ0Jijed0PfX9H0i2S1sd7ydi1GsngTSMTch2ezpSy+mxFQbubfbdl+MHIFEhSjOU9Lf5a2ilq+ZtNW1n+cVuNz3yiVM2xypH/nIZ1laImhi9mOO8lAsjDEin1yFqC+mdrXn97516S0xADR9WYKIBlX+ZzDAd+XvttrT60QOm0POKJAr/WTTTsAqyC5tGdAkreMhUGvZE8TuMobmQULPPVqhPLn/uYXyfoYvZKSRbDQXNz3k9KhxGBkx+f1Eqdwg+fMnCEWcaYePv9ryKW30gNzhBTLYlhOUWtMzXo3uG0xII+V1FRmx/FbLnB/LUrhBmClug0Jae8d+F+1kQ==
+ bh=B/Vj60ZeOZ55CHjRFkSChc9Jzl90zgEyrE1PbkO2VyU=;
+ b=dKUSwffUM04Gh5cU/JJGjVDw0jhCHZP/LxKZoKoyqQK7vng0qZ/x/65hVOVw3i10J1J11heo8C3UBVvpygnmfsbPbNzIU5Q8DiJdG2ztDQgRv1Se30YbAS/N3ybEFMHtZOLeU1rk1V7cT74LnY8bQ8kxSnE1Xqum3IqRXFClAsXfn+I1VvVcIAs93Uvlz5OzspoH8XRHNQSCp3NUj1VGsBAWkK+E3wN2rz+iqHckwejSnoI3ukOwEB9Em5nFucOgnvnsZpwrA5UFLiC0mNymKQ7CZAwU6hTzysYK/A7Ruz/mdJZpVMIXaVDeuJSbAU6l5hC3MI+7vBb8QKXk5T38fA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Di6Xc2Kec+lh/UZnw+aO21NwG9ymOod2MojAnOUohSk=;
- b=SiShjaMiEgZjydPhxPt8kFUFCKZ8EVPlNCp0b+qgxcO1e/nDQkc/CA9AEjwclJD4BQUVPoIZFgiiE5p3rC+cZ/esYS4lJG7jdPu7ZIPhUh93V0T9TTts7zY+Gk3j2wYGK/NWPwOqPyQmqFBKCHPxdPyMSe86JgET4SD0+MT/Dv4=
+ bh=B/Vj60ZeOZ55CHjRFkSChc9Jzl90zgEyrE1PbkO2VyU=;
+ b=gRI8WZYQiJQqIboFbvZ/d5E9LHCNZ4QCeSzohmJLX4/FdjoSNO3hSwTlAjHRp1Wuq9V8SorA9ZoUuV5r0cJIDtx8avqQhU0KuSSs328LC/e/hgNLUV9Ci5MvhW8JLMaQLeDY6OcNClM3LeweJ0IJTsq9VpWLzWvBzK8lDhv/IsA=
 Authentication-Results: spf=none (sender IP is )
  smtp.mailfrom=peng.fan@nxp.com; 
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
  AM0PR04MB5233.eurprd04.prod.outlook.com (20.177.40.155) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2729.25; Wed, 19 Feb 2020 07:34:11 +0000
+ 15.20.2729.25; Wed, 19 Feb 2020 07:34:15 +0000
 Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422]) by AM0PR04MB4481.eurprd04.prod.outlook.com
  ([fe80::91e2:17:b3f4:d422%3]) with mapi id 15.20.2729.032; Wed, 19 Feb 2020
- 07:34:11 +0000
+ 07:34:15 +0000
 From: peng.fan@nxp.com
 To: ohad@wizery.com, bjorn.andersson@linaro.org, robh+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com
-Subject: [PATCH 8/9] remoteproc: imx_rproc: support i.MX7ULP
-Date: Wed, 19 Feb 2020 15:27:44 +0800
-Message-Id: <1582097265-20170-9-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH 9/9] remoteproc: imx_rproc: add i.MX8MM support
+Date: Wed, 19 Feb 2020 15:27:45 +0800
+Message-Id: <1582097265-20170-10-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1582097265-20170-1-git-send-email-peng.fan@nxp.com>
 References: <1582097265-20170-1-git-send-email-peng.fan@nxp.com>
@@ -66,16 +66,16 @@ MIME-Version: 1.0
 Received: from localhost.localdomain (119.31.174.66) by
  HK0PR03CA0115.apcprd03.prod.outlook.com (2603:1096:203:b0::31) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2729.23 via Frontend Transport; Wed, 19 Feb 2020 07:34:07 +0000
+ 15.20.2729.23 via Frontend Transport; Wed, 19 Feb 2020 07:34:11 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: e9c4be95-8cc6-4ee8-226b-08d7b50e1ca3
+X-MS-Office365-Filtering-Correlation-Id: eedee99b-8336-470f-e5f2-08d7b50e1f05
 X-MS-TrafficTypeDiagnostic: AM0PR04MB5233:|AM0PR04MB5233:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB52335BF9D76C41ECF5D48D1A88100@AM0PR04MB5233.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1388;
+X-Microsoft-Antispam-PRVS: <AM0PR04MB52330E3B6D50B87FD60C5B4F88100@AM0PR04MB5233.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:167;
 X-Forefront-PRVS: 0318501FAE
 X-Forefront-Antispam-Report: SFV:NSPM;
  SFS:(10009020)(4636009)(39860400002)(136003)(346002)(376002)(366004)(396003)(199004)(189003)(81166006)(52116002)(8676002)(2906002)(81156014)(5660300002)(8936002)(9686003)(6506007)(956004)(2616005)(6512007)(6666004)(66476007)(36756003)(4326008)(66946007)(316002)(66556008)(7416002)(69590400006)(6486002)(16526019)(478600001)(86362001)(186003)(26005);
@@ -86,19 +86,19 @@ Received-SPF: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: tcJYhfC/vyTqFdGIpfEc8hwRVwVndqkP6PytU8Cbc73+aVFwSCwapznm4peFNUiMIF9ZCDbKkfJ8kW/MjaL78LNYtYDDyA6v2Z1cXOcqNNqXIssrtD+c97r33jHmG5JyUsziMIEq5KOBl790f2rVfx4FfdeYnk79Ajb2/YNOaq7ofQ2L5SN0B3pEQhpNFhRBbHa+U6Kfp/s2BzjoUYyvdz7bUDyXb1twmY891WZCLc86EkgAGxrbIwm7MrkDH5ZLPGKRPv1XkF9oKqYQ83fRGTh8SusEogdTTM8jYbeZ/oKZ8h3Rvdq2A+PGZpXigjXxKJw6mK2RFTZobz4aJlNYuQIje4oyoz2ECbA+h9qZZEbyHrnLSvfzM/4J6hzU6cSM4gIlwMD6izofXYcXVgycPP/18jp9TpDFd/5CaVHdWrPLygJpKTzmlPJaF4aNzgt2mfhxkxi1ExUD8DoC+gB7gLa+LqLSwn2/bBrm1zWj7BuaWh1lVfbHfAyYtz9J8Z/E7ah/m+fOOetJbVEP7k5aU6HtzA5GUB7QNPGIQXk/8ns=
-X-MS-Exchange-AntiSpam-MessageData: Lqx16E4ncWZ/qf6GdMX6gDjf8kSQ118XRRfV7qKo4RxNVXcLXgACCsnBSxpSX8DCRoXaP4y9DDveLGUjJYgONEabrSg9bWxc5TKGLPKBc+j7skzqkmRYXZ1kK+PvC/+rCpnZT5GKzpBew7nTjE2NkQ==
+X-Microsoft-Antispam-Message-Info: EcdwqMAn7Sf5Op5bvSShrIPJWsv8jcvqj9mi9lxfTuo+KMOEcM7S2bSEF7eY0YT2vwDQ/bQr2bDsmlRQQEXclS7CZwCKMb+A8cLM6j60Q3ZjNT7pAlVo8jo4aZpXQcvh3IQSp17NQVU+z+Zr3L9W2KfcNrIfX+cVDSueyhVUeSGwCtDWF8Sgw6roQG0Oi5Ptdx/aQzoYKIkvtn1JpYSBKLtyP4Yw6xMPjyBuJKM48MlXO1fg0yRXa0p4PRFAlJKXt91UsDnvQylSDOzkfEOm19m2jBSS2n7qVh1fvHuBNkF7jghaZsBzuRIhvosmpSrWTwtV/mFaPZr3vkw2B5/RAzksXw7kyqol5JBJFmcztu2cEEe0ZpYiL9Xg160boAU2yDju/l4YCbAOEcG9CilI8JAFT3gaM845YHovpEM/NXm4u50Bw3v5iCLwcpGLDL5WlBBt/0ue5nJ4uhDfYLSq997bR97wJWRAPNp1reklziUxxpZ5b+uAkCLfz7hXMPmnhPwsui9x/Md1vBXMyGUp2wkQ/STVXtD2PW8AA2mqACE=
+X-MS-Exchange-AntiSpam-MessageData: qYbLIitO3bA0CISw2xONSf/ryeh/I1iXqXpnxhEeuKCFY7kxG4+zJXrCQPX9ewX7pjTX3Rg+wuhO+BIs5JilvHVnOl5AONSUvdWJVeThBG/YyXPEIwtaEOyg32wvC67WXU7SiIZqDGDdcY4Jd3xQuw==
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e9c4be95-8cc6-4ee8-226b-08d7b50e1ca3
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Feb 2020 07:34:11.2736 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: eedee99b-8336-470f-e5f2-08d7b50e1f05
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Feb 2020 07:34:15.4352 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: QW1h7v2tSEm1NkOdp3yYF9I7wRti1n10wbGy4e7cfSQCrH4KhxA9WaF8C4LDCoWElMYQTxokXOVQKofAPJXXDQ==
+X-MS-Exchange-CrossTenant-UserPrincipalName: cO8jX4zz92Kdjpo5X11MTNPu3rd5vVEhZL6Ga5su53jkMMT9qinRz0nH1JU5qfRalVDmVDpVk3aO5yt+XcydCQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5233
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_233414_375936_5F1F223D 
-X-CRM114-Status: GOOD (  14.12  )
+X-CRM114-CacheID: sfid-20200218_233416_826230_3DC8F0BE 
+X-CRM114-Status: GOOD (  10.97  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -139,85 +139,45 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-To i.MX7ULP, M4 is booted before Linux and it's in charge of
-the whole system. So M4 is surely have early_boot set.
+Add i.MX8MM support. Remote processor is under control of Cortex-A
+processor. Currently only early boot is supported.
 
 Signed-off-by: Peng Fan <peng.fan@nxp.com>
 ---
- drivers/remoteproc/imx_rproc.c | 25 +++++++++++++++++--------
- 1 file changed, 17 insertions(+), 8 deletions(-)
+ drivers/remoteproc/imx_rproc.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/drivers/remoteproc/imx_rproc.c b/drivers/remoteproc/imx_rproc.c
-index 003f9e5c2b0c..fc2a504bc350 100644
+index fc2a504bc350..d00c3cbcd87c 100644
 --- a/drivers/remoteproc/imx_rproc.c
 +++ b/drivers/remoteproc/imx_rproc.c
 @@ -56,6 +56,7 @@
  enum imx_rproc_variants {
  	IMX8QM,
  	IMX8QXP,
-+	IMX7ULP,
++	IMX8MM,
+ 	IMX7ULP,
  	IMX7D,
  	IMX6SX,
- };
-@@ -181,6 +182,10 @@ static const struct imx_rproc_dcfg imx_rproc_cfg_imx6sx = {
- 	.att_size	= ARRAY_SIZE(imx_rproc_att_imx6sx),
+@@ -194,6 +195,10 @@ static const struct imx_rproc_dcfg imx_rproc_cfg_imx8qm = {
+ 	.variant	= IMX8QM,
  };
  
-+static const struct imx_rproc_dcfg imx_rproc_cfg_imx7ulp = {
-+	.variant	= IMX7ULP,
++static const struct imx_rproc_dcfg imx_rproc_cfg_imx8mm = {
++	.variant	= IMX8MM,
 +};
 +
- static const struct imx_rproc_dcfg imx_rproc_cfg_imx8qxp = {
- 	.variant	= IMX8QXP,
- };
-@@ -529,7 +534,9 @@ static int imx_rproc_configure_mode(struct imx_rproc *priv)
- 	int ret;
- 	u32 val;
- 
--	if (of_get_property(dev->of_node, "early-booted", NULL)) {
-+	if (dcfg->variant == IMX7ULP) {
-+		priv->early_boot = true;
-+	} else if (of_get_property(dev->of_node, "early-booted", NULL)) {
- 		priv->early_boot = true;
- 	} else {
- 		ret = regmap_read(priv->regmap, dcfg->src_reg, &val);
-@@ -638,7 +645,14 @@ static int imx_rproc_probe(struct platform_device *pdev)
- 	struct regmap *regmap = NULL;
- 	int ret;
- 
--	if (!of_get_property(np, "early-booted", NULL)) {
-+	dcfg = of_device_get_match_data(dev);
-+	if (!dcfg) {
-+		ret = -EINVAL;
-+		return ret;
-+	}
-+
-+	if (!of_get_property(np, "early-booted", NULL) &&
-+	    !(dcfg->variant == IMX7ULP)) {
- 		regmap = syscon_regmap_lookup_by_phandle(np, "syscon");
- 		if (IS_ERR(regmap)) {
- 			dev_err(dev, "failed to find syscon\n");
-@@ -653,12 +667,6 @@ static int imx_rproc_probe(struct platform_device *pdev)
- 	if (!rproc)
- 		return -ENOMEM;
- 
--	dcfg = of_device_get_match_data(dev);
--	if (!dcfg) {
--		ret = -EINVAL;
--		goto err_put_rproc;
--	}
--
- 	priv = rproc->priv;
- 	priv->rproc = rproc;
- 	priv->regmap = regmap;
-@@ -775,6 +783,7 @@ static int imx_rproc_remove(struct platform_device *pdev)
- }
- 
- static const struct of_device_id imx_rproc_of_match[] = {
-+	{ .compatible = "fsl,imx7ulp-cm4", .data = &imx_rproc_cfg_imx7ulp },
- 	{ .compatible = "fsl,imx7d-cm4", .data = &imx_rproc_cfg_imx7d },
+ static int imx_rproc_start(struct rproc *rproc)
+ {
+ 	struct imx_rproc *priv = rproc->priv;
+@@ -788,6 +793,7 @@ static const struct of_device_id imx_rproc_of_match[] = {
  	{ .compatible = "fsl,imx6sx-cm4", .data = &imx_rproc_cfg_imx6sx },
  	{ .compatible = "fsl,imx8qxp-cm4", .data = &imx_rproc_cfg_imx8qxp },
+ 	{ .compatible = "fsl,imx8qm-cm4", .data = &imx_rproc_cfg_imx8qm },
++	{ .compatible = "fsl,imx8mm-cm4", .data = &imx_rproc_cfg_imx8mm },
+ 	{},
+ };
+ MODULE_DEVICE_TABLE(of, imx_rproc_of_match);
 -- 
 2.16.4
 
