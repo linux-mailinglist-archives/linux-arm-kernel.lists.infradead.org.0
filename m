@@ -2,90 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C846164D23
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 18:57:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B39E164D3A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 19:01:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1OUReQwSC9/6sy0uI7NShYsXQcWA+hfyjZgw5hRrToA=; b=tbeOmxENtoO2Bf8ua30qAoA4QX
-	zHgOsEqWdhobFEE14GXi219Dvd7ZxWjN7mNqz5CKQfbt2ZBELaNh2eMCXGo6GkZBis8xPwBFqS1kp
-	dkXgzmDrJm6nwRUlgdoqCm41ZKTPJqa+iZqvbYdohnrMUVDdi/thGL2dj1xk+mpbESQxhSi352vbo
-	7OY6st5tUmKRqi2Efx995GA4p/Z1NWjNj9V0h4G7d9GUxmqu0bs8TPEagqYiSD1UFLGCAVZMszHPb
-	qLljFz4rKVew9muYpKbNTjUZ4DqeNPm33mF+kNYJG1qjR2SX+aue28QIdu0t7TfqIK5g5SOmnNy6+
-	mAU3T+Ig==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2Yh04u/b3at9WID1z/3A164jnrxa8mPwUaA6yeBGv8s=; b=uLnmn/Dw/dBz3a
+	FkIIYAf5D2qCFXiOxNfySVGGalEkcER3G9PD7TxUQTv3g/1oW5V/UH2yAiqk/9BnpmvSY8jE8gCKj
+	uYMSPsLzYYgZmkfvpxnjB9mJRev8ZYze2e0bV4+8/UrRA8Hka4bTW9mXSHe8ThTEnZeGXyuM4nPhL
+	8LhpgxRcq668hDOOdQ9S4BRSeeFvfXC5OrNk27LZDETcJms+a4Fm/UzkJs7r/LibQnwz1JH/BeZkW
+	O6/jlWfIl8QO6bnwGGKAhvFh/7GjCHGzNfAiq3T89ExYwjxnr1VUXKpgxn5BZzlbBqP2vrFwyz2+y
+	bMWBcShgK3qSzTAG2/qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4TbR-0004Ea-E6; Wed, 19 Feb 2020 17:57:41 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j4TfD-0006Ut-HO; Wed, 19 Feb 2020 18:01:35 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4TbG-0004D0-Bo
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 17:57:32 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a9so1661261wmj.3
+ id 1j4Tf5-0006UR-M2
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 18:01:29 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id x18so896403vsq.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 09:57:30 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=KHboEJQ4V7KnKKRwo21hWQi19tJ6wvBUxs3FLeRZPmM=;
- b=NubdAZU+sSIbz0BV0mDakLLuTLcEqspzE4Up1DQtkWIpdW1mpgNM1v8RJ8ZZuhKvJi
- MWbF+35NEjHnzip03/uJuENbfIAdHWuamF8c69nFYf8zV/oVGHqSUZ630Fswm4XC1dXz
- 5YvgY7LY2WqHCTIKhYcdwQ+R6HX4cffTVm3cfpYzg4Eu5XyaxWurXKwAMWFatKDl7RdO
- PwF98nY3P7BdedA9YhLoKZf9L8cjS/aJl3c0DkPJ45wMIxscmqwbW4Gqu5RHDGZJzlOH
- 3ErQZHlJgoTkUGCUcLd9fsGwG4X59w8oZIXhFIykIQMVOmotCRQ/36uQA3DJfB4uT2nw
- EGiw==
+ Wed, 19 Feb 2020 10:01:26 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=lkHXwFRTyqTPxv+c/LKoXDAeY6A/OlAl/xcBXxo2cgo=;
+ b=gh6t3G5BECE9aN/9A6d1bwWVVZBG4fe4Jv0G9F7ySydWI5loDBjyb6KyvSnHC3H2xb
+ PiYI+vSfh6PGP3+tITPcVcHh8lERKC8od4oC2sH0ZseserCl8/SeCqlEtOKaPowUnmOE
+ 2eXS1KVuXlN0wfgWz9OeANM1/plXi4TktMssP2HUeiH/l+o/2AxWa3NY/kVCtRCjJr+f
+ dMd7adB5l/qvK2DvV3IcWYmCoMHtH9Kl4DGNXpxeVnHW2OLrpEsXBoFzatmkLtQ0Da/S
+ Do49a64NNoQSLpsZnbjyOORpErFk4A1akDXWP+T4B/uvtpfqQAguJp3M14618EN8fHqX
+ JuhQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=KHboEJQ4V7KnKKRwo21hWQi19tJ6wvBUxs3FLeRZPmM=;
- b=EFX3konwznEDj1EZAPeH9cLxhLa1QpN47rYLcy8Fe90/mxMX6j6tVSH5r7FmiWv68u
- ic4tnkivx+fCRWBXTAA9EIsV4neqTPc6J1cY+Ly2mI8rnEiHZR9g6gWkeJErOEToJgGJ
- MLzYU4/JWUe3r0N6SkdERSLQaz/f3Vg9OnqvWuYFP27b1zi01MHqtweYnnyBtKitV8av
- 9lFFvZrPCwTEVaH7MHK6a3RCfH2cvz6ye7wyqaqDammgvBuhUuXKKGPOtenFtlbIUjQD
- 99xsENvBjOduKDEqZD2QFqLJwbaJ6n6tpETpD+HATPJk39/2Gsm8B4bz3tXUPTDbDxL9
- IDhg==
-X-Gm-Message-State: APjAAAWdPdhMAET7rIx5TzhCFJPcUA445sMm741PAwbSHHBEO/uacUcl
- Z5e+h+TJDM+VW3Qhv9RqgqO0lw==
-X-Google-Smtp-Source: APXvYqzbs/Rr0atG2jUBRF7oE+i6F0iHSH+QTqV8GivqqqY0OmLGz1cSkAVCbjhN3skyuX9vVMLI2A==
-X-Received: by 2002:a05:600c:2207:: with SMTP id
- z7mr10879867wml.167.1582135048910; 
- Wed, 19 Feb 2020 09:57:28 -0800 (PST)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id f8sm771899wru.12.2020.02.19.09.57.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 09:57:28 -0800 (PST)
-References: <20200219084928.28707-1-narmstrong@baylibre.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 0/2] clk: meson: g12a: add support for the SPICC SCLK
- Source clocks
-In-reply-to: <20200219084928.28707-1-narmstrong@baylibre.com>
-Date: Wed, 19 Feb 2020 18:57:27 +0100
-Message-ID: <1jy2sywjco.fsf@starbuckisacylon.baylibre.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=lkHXwFRTyqTPxv+c/LKoXDAeY6A/OlAl/xcBXxo2cgo=;
+ b=gp1etbA+zjpS9BIfq9cPV2YAmPqq9IRGeH0mIhEeYCwGaKhCsZUZpJOgIm9Vwl7U9p
+ qhzWQ6GEWhpBMcfZp4oBqJKfLbkPq04zMAG8Lblhk8vxLkYZfB7jl9rlv5Ca+yNcnE/8
+ ORr+L/XNpDrwyhPQTPsq3BR/TApT4QoxrJlJYuDrOXiT/42OtTcSkYx6aLZpEnHmThCM
+ ynOHs7yOMsthZ+o4G38QM/gLkQ4vjMTEqMFgZmN26cwuxXMlVOO9wyRIsLKEUh1E2PYA
+ 1yRs0hL6Lp0KuGbbhuhXU711F1bgGts3P3oT0ZJAaHmE+BUuH+KxSsAR/eA9XDaTQEKs
+ BJ0A==
+X-Gm-Message-State: APjAAAVozBuLnPTJshbyy0w6CtCI/zQwWMF14Fwabxr8e8c4cdFEJpzQ
+ 1G5lCuk1GUr+F5A/heAX0QRDkhuedVveviO0HGTzlg==
+X-Google-Smtp-Source: APXvYqw3wiSQDj5QZ98aok1Lw9PhoU8kfJwXxmz9XhbJ0dJG+YvWrUVCRlfmeIwD1SQGOVaP3AytmkpGm/U6NhVXLLw=
+X-Received: by 2002:a05:6102:1c8:: with SMTP id
+ s8mr6086880vsq.44.1582135285718; 
+ Wed, 19 Feb 2020 10:01:25 -0800 (PST)
 MIME-Version: 1.0
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200219000817.195049-1-samitolvanen@google.com>
+ <20200219000817.195049-5-samitolvanen@google.com>
+ <20200219113351.GA14462@lakrids.cambridge.arm.com>
+In-Reply-To: <20200219113351.GA14462@lakrids.cambridge.arm.com>
+From: Sami Tolvanen <samitolvanen@google.com>
+Date: Wed, 19 Feb 2020 10:01:14 -0800
+Message-ID: <CABCJKufsYiBX6a0cmaX4D+3RDDKLLeRLAuTZgxO4=QryHYUptQ@mail.gmail.com>
+Subject: Re: [PATCH v8 04/12] scs: disable when function graph tracing is
+ enabled
+To: Mark Rutland <mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_095730_399031_0AF34EAC 
-X-CRM114-Status: GOOD (  11.22  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200219_100127_745746_2D394D02 
+X-CRM114-Status: GOOD (  15.81  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,32 +101,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Kees Cook <keescook@chromium.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Jann Horn <jannh@google.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ LKML <linux-kernel@vger.kernel.org>, Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
+ Marc Zyngier <maz@kernel.org>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On Wed 19 Feb 2020 at 09:49, Neil Armstrong <narmstrong@baylibre.com> wrote:
-
-> Like on the AXG SoCs, the SPICC controllers can make use of an external clock
-> source instead of it's internal divider over xtal to provide a better SCLK
-> clock frequency.
+On Wed, Feb 19, 2020 at 3:34 AM Mark Rutland <mark.rutland@arm.com> wrote:
+> Fangrui Song has implemented `-fpatchable-function-entry` in LLVM (for
+> 10.x onwards), so we can support this when DYNAMIC_FTRACE_WITH_REGS is
+> selected.
 >
-> This serie adds the new clock IDs and the associated clocks in the g12a driver.
+> This can be:
 >
-> Neil Armstrong (2):
->   dt-bindings: clk: g12a-clkc: add SPICC SCLK Source clock IDs
->   clk: meson: g12a: add support for the SPICC SCLK Source clocks
+>         depends on DYNAMIC_FTRACE_WITH_REGS || !FUNCTION_GRAPH_TRACER
 >
->  drivers/clk/meson/g12a.c              | 129 ++++++++++++++++++++++++++
->  drivers/clk/meson/g12a.h              |   6 +-
->  include/dt-bindings/clock/g12a-clkc.h |   2 +
->  3 files changed, 136 insertions(+), 1 deletion(-)
+> ... and we can update the commit message to something like:
+>
+> | With SCS the return address is taken from the shadow stack and the
+> | value in the frame record has no effect. The mcount based graph tracer
+> | hooks returns by modifying frame records on the (regular) stack, and
+> | thus is not compatible. The patchable-function-entry graph tracer
+> | used for DYNAMIC_FTRACE_WITH_REGS modifies the LR before it is saved
+> | to the shadow stack, and is compatible.
+> |
+> | Modifying the mcount based graph tracer to work with SCS would require
+> | a mechanism to determine the corresponding slot on the shadow stack
+> | (and to pass this through the ftrace infrastructure), and we expect
+> | that everyone will eventually move to the patchable-function-entry
+> | based graph tracer anyway, so for now let's disable SCS when the
+> | mcount-based graph tracer is enabled.
+> |
+> | SCS and patchable-function-entry are both supported from LLVM 10.x.
+>
+> Assuming you're happy with that:
+>
+> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 
-Applied. Thx
+Great, thanks for pointing that out! This looks good to me, I'll use this in v9.
+
+Sami
 
 _______________________________________________
 linux-arm-kernel mailing list
