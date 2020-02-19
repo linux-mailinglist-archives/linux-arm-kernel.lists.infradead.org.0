@@ -2,50 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74C38165306
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 00:20:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 752B1165327
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 00:44:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VHVbfClh3IzhcG52x2hx35tshVlebj25FtLuPs8UeVo=; b=b40zYkzGy8//hQ
-	4y/i41VHjxSp/YY74gYDk5pmGpJS4kUUy3yAKtHhTbKn9pr4GQ8Pa+csmdzc//h1lpJscjTLAUYuU
-	tW4gTk6l7LR70a/7ZRczsskhe0vzw2bBn/iFhCetCKEAlPMSuPZHwyj3+y5h1WpR7HJ43lh+LEx48
-	Wdb8oQVmi5KkBD9WTWAkfPpppYkFf3zcPWoxIU2pNrDDgRob8nKHfoaXoeJowjhLEC8/7Sh/NfIjB
-	aVmcBeMl2UW0A5B2sNK5Y1JNIvRidjchmf3lpGspSVKTa52dJNyTg+qOxbz5pKM4b9l1zW6euERR6
-	FMoaouuU0h3/QRzEzeDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BkfEKK/zlkDP3+u1OVqYaZ1ik09VF7bvA0GJkIPbSWQ=; b=MmrW7XTOOKyn5fOLsGFL0Fj4o
+	PA2pZaQaDZFEiYxld3fGVd4GD5y+Cbrc6NmhwTfpEQm3f5A5G9sxLlY5aCOzEneC+ZbWkQL/Z4tVw
+	FGJ7IJ+Cn7O7kt8iidBg4KOcouJxj8ZwCJML+U48WV7atwVdAOf0MOhrVwz1nTbR5YaN2mGyq4/dG
+	PtkZ0P8PCzQbVNbd+bOnfkdTwx2E7YOqRJP4F+3kwf6zqSc0HlSKmvY4SFaIZSUxaWUXkg38qBxDe
+	xp+bKGR9BMiduu4627UmULJqK5MY0L7n1C5CJ1tOiwjtddqT2VqB1E2YBZDDSaY4t/EaETAWYl0z/
+	Qg1KnlExw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4YdM-0000Fy-Cr; Wed, 19 Feb 2020 23:20:00 +0000
-Received: from lists.gateworks.com ([108.161.130.12])
+	id 1j4Z1O-0008GT-F7; Wed, 19 Feb 2020 23:44:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4YdE-0000FU-B5
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 23:19:53 +0000
-Received: from 68-189-91-139.static.snlo.ca.charter.com ([68.189.91.139]
- helo=rjones.pdc.gateworks.com)
- by lists.gateworks.com with esmtp (Exim 4.82)
- (envelope-from <rjones@gateworks.com>)
- id 1j4Ydv-0005r2-FZ; Wed, 19 Feb 2020 23:20:35 +0000
-From: Robert Jones <rjones@gateworks.com>
-To: Sunil Goutham <sgoutham@marvell.com>,
- Robert Richter <rrichter@marvell.com>, David Miller <davem@davemloft.net>
-Subject: [PATCH net v3] net: thunderx: workaround BGX TX Underflow issue
-Date: Wed, 19 Feb 2020 15:19:36 -0800
-Message-Id: <20200219231936.5531-1-rjones@gateworks.com>
-X-Mailer: git-send-email 2.25.0
+ id 1j4Z1G-0008Fz-7T
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 23:44:43 +0000
+Received: from earth.universe (unknown [185.62.205.105])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1D9C121D56;
+ Wed, 19 Feb 2020 23:44:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582155880;
+ bh=7Jwhbeg3NW/b7zKtfeleuO14hiDLfK4BEl3N5Su5gl0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=YkgX4bsYvHWMHYmBlyWxpFjKPR5cu4hbzmx05i0+WxrgHrLwOqK2Pj/2gdcEAE/2s
+ hH9P/IYxdRmjObD7kcM/CQGwLQGobex69sien3T4gjCaKZT7rQ0tIpUUffIlvYz3lq
+ N4taBPjSJ+DWFu6LgL/rN5LuZICRM1PbvtWuhz/o=
+Received: by earth.universe (Postfix, from userid 1000)
+ id A16013C0C83; Thu, 20 Feb 2020 00:44:37 +0100 (CET)
+Date: Thu, 20 Feb 2020 00:44:37 +0100
+From: Sebastian Reichel <sre@kernel.org>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [PATCH] backlight: add led-backlight driver
+Message-ID: <20200219234437.l6ac7usebu7rnzsy@earth.universe>
+References: <20200219191412.GA15905@amd> <20200219194540.GD37466@atomide.com>
 MIME-Version: 1.0
+In-Reply-To: <20200219194540.GD37466@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_151952_423753_5A373F0A 
-X-CRM114-Status: GOOD (  15.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200219_154442_311001_0D7D16FE 
+X-CRM114-Status: GOOD (  32.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,175 +76,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robert Jones <rjones@gateworks.com>,
- Maciej Fijalkowski <maciej.fijalkowski@intel.com>, netdev@vger.kernel.org,
- Tim Harvey <tharvey@gateworks.com>, linux-kernel@vger.kernel.org,
- Jakub Kicinski <kuba@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: daniel.thompson@linaro.org, mpartap@gmx.net, jingoohan1@gmail.com,
+ merlijn@wizzup.org, kernel list <linux-kernel@vger.kernel.org>,
+ dri-devel@lists.freedesktop.org, martin_rysavy@centrum.cz, nekit1000@gmail.com,
+ tomi.valkeinen@ti.com, Pavel Machek <pavel@ucw.cz>, jjhiblot@ti.com,
+ linux-omap@vger.kernel.org, Lee Jones <lee.jones@linaro.org>, agx@sigxcpu.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============4668497351711422841=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tim Harvey <tharvey@gateworks.com>
 
-While it is not yet understood why a TX underflow can easily occur
-for SGMII interfaces resulting in a TX wedge. It has been found that
-disabling/re-enabling the LMAC resolves the issue.
+--===============4668497351711422841==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="n6ehadolgogdw3bm"
+Content-Disposition: inline
 
-Signed-off-by: Tim Harvey <tharvey@gateworks.com>
-Reviewed-by: Robert Jones <rjones@gateworks.com>
----
-Changes in v2:
- - Changed bgx_register_intr() to a void return
- - Added pci_free_irq_vectors() calls to free irq if named/allocated
- - Use snprintf instead of sprintf for irq names
 
-Changes in v3:
- - Use pci_err() instead of dev_err() calls
- - Use pci_alloc_irq_vectors() for minimum vectors with PCI_IRQ_ALL_TYPES
- - Use pci_request_irq() instead of request_irq() with stored name
- - Move interrupt enable (and add disable) to bgx_lmac_rx_tx_enable()
- - Add pcim_enable_device(), pci_free_irq() calls and remove vector free calls
+--n6ehadolgogdw3bm
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
- .../net/ethernet/cavium/thunder/thunder_bgx.c | 62 ++++++++++++++++++-
- .../net/ethernet/cavium/thunder/thunder_bgx.h |  9 +++
- 2 files changed, 68 insertions(+), 3 deletions(-)
+On Wed, Feb 19, 2020 at 11:45:40AM -0800, Tony Lindgren wrote:
+> * Pavel Machek <pavel@ucw.cz> [200219 19:15]:
+> > From: Tomi Valkeinen <tomi.valkeinen@ti.com>
+> >=20
+> > This patch adds a led-backlight driver (led_bl), which is similar to
+> > pwm_bl except the driver uses a LED class driver to adjust the
+> > brightness in the HW. Multiple LEDs can be used for a single backlight.
+> >=20
+> > Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ti.com>
+> > Signed-off-by: Jean-Jacques Hiblot <jjhiblot@ti.com>
+> > Acked-by: Pavel Machek <pavel@ucw.cz>
+> > Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
+> > Acked-by: Lee Jones <lee.jones@linaro.org>
+> > Acked-by: Tony Lindgren <tony@atomide.com>
+> > Tested-by: Tony Lindgren <tony@atomide.com>
+> > Signed-off-by: Pavel Machek <pavel@ucw.cz>
+> > ---
+> >  drivers/video/backlight/Kconfig  |   7 ++
+> >  drivers/video/backlight/Makefile |   1 +
+> >  drivers/video/backlight/led_bl.c | 260 +++++++++++++++++++++++++++++++=
+++++++++
+> >  3 files changed, 268 insertions(+)
+> >  create mode 100644 drivers/video/backlight/led_bl.c
+> >=20
+> > Hi!
+> >=20
+> > Here's the version of the driver I have. AFAICT
+> > default-brightness-level handling is ok, so does not need to be
+> > changed.
+> >=20
+> > Lee, it would be easiest for me if you could apply it to your tree and
+> > push, but given enough time I can push it to Linus, too.
+>=20
+> Oh you're using quoted-printable for patches.. Got it applied now,
+> and it still works. Below is also the related dts change that
+> I tested with.
+>=20
+> Feel free to pick the dts change too, naturally that should
+> not be applied before the driver.
+>=20
+> If you guys instead want me to pick these both into my fixes
+> branch, just let me know and I'll do the explaining why these
+> are needed as fixes. Basically we no longer have a way to enable
+> the LCD backlight for droid4 manually starting with v5.6-rc1
+> unlike earlier.
+>=20
+> Regards,
+>=20
+> Tony
+>=20
+> 8< ------------------
+> From tony Mon Sep 17 00:00:00 2001
+> From: Tony Lindgren <tony@atomide.com>
+> Date: Wed, 19 Feb 2020 11:25:27 -0800
+> Subject: [PATCH] ARM: dts: droid4: Configure LED backlight for lm3532
+>=20
+> With the LED backlight changes merged, we still need the dts configured
+> to have backlight working for droid4. Based on an earlier patch from
+> Pavel Machek <pavel@ucw.cz>, let's configure the backlight but update
+> the value range to be more usable.
+>=20
+> We have a range of 256 register values split into 8 steps, so we can
+> generate the brightness levels backwards with:
+>=20
+> $ for i in 0 1 2 3 4 5 6 7; do echo "255 - ${i} * (256 / 8)" | bc; done
+>=20
+> To avoid more confusion why the LCD backlight is still not on, let's
+> also enable LED backlight as a loadable module for omap2plus_defconfig.
+>=20
+> Cc: Merlijn Wajer <merlijn@wizzup.org>
+> Cc: Pavel Machek <pavel@ucw.cz>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> ---
+>  arch/arm/boot/dts/motorola-mapphone-common.dtsi | 13 +++++++++++--
+>  arch/arm/configs/omap2plus_defconfig            |  1 +
+>  2 files changed, 12 insertions(+), 2 deletions(-)
+>=20
+> diff --git a/arch/arm/boot/dts/motorola-mapphone-common.dtsi b/arch/arm/b=
+oot/dts/motorola-mapphone-common.dtsi
+> --- a/arch/arm/boot/dts/motorola-mapphone-common.dtsi
+> +++ b/arch/arm/boot/dts/motorola-mapphone-common.dtsi
+> @@ -182,6 +182,14 @@ vibrator {
+>  		pwm-names =3D "enable", "direction";
+>  		direction-duty-cycle-ns =3D <10000000>;
+>  	};
+> +
+> +	backlight: backlight {
+> +		compatible =3D "led-backlight";
+> +
+> +		leds =3D <&backlight_led>;
+> +		brightness-levels =3D <31 63 95 127 159 191 223 255>;
+> +		default-brightness-level =3D <6>;
+> +	};
+>  };
+> =20
+>  &dss {
+> @@ -205,6 +213,8 @@ lcd0: display {
+>  		vddi-supply =3D <&lcd_regulator>;
+>  		reset-gpios =3D <&gpio4 5 GPIO_ACTIVE_HIGH>;	/* gpio101 */
+> =20
+> +		backlight =3D <&backlight>;
+> +
+>  		width-mm =3D <50>;
+>  		height-mm =3D <89>;
+> =20
+> @@ -393,12 +403,11 @@ led-controller@38 {
+>  		ramp-up-us =3D <1024>;
+>  		ramp-down-us =3D <8193>;
+> =20
+> -		led@0 {
+> +		backlight_led: led@0 {
+>  			reg =3D <0>;
+>  			led-sources =3D <2>;
+>  			ti,led-mode =3D <0>;
+>  			label =3D ":backlight";
+> -			linux,default-trigger =3D "backlight";
+>  		};
+> =20
+>  		led@1 {
+> diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap=
+2plus_defconfig
+> --- a/arch/arm/configs/omap2plus_defconfig
+> +++ b/arch/arm/configs/omap2plus_defconfig
+> @@ -375,6 +375,7 @@ CONFIG_BACKLIGHT_GENERIC=3Dm
+>  CONFIG_BACKLIGHT_PWM=3Dm
+>  CONFIG_BACKLIGHT_PANDORA=3Dm
+>  CONFIG_BACKLIGHT_GPIO=3Dm
+> +CONFIG_BACKLIGHT_LED=3Dm
+>  CONFIG_FRAMEBUFFER_CONSOLE=3Dy
+>  CONFIG_FRAMEBUFFER_CONSOLE_ROTATION=3Dy
+>  CONFIG_LOGO=3Dy
 
-diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
-index c4f6ec0cd183..00751771f662 100644
---- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
-+++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.c
-@@ -410,10 +410,19 @@ void bgx_lmac_rx_tx_enable(int node, int bgx_idx, int lmacid, bool enable)
- 	lmac = &bgx->lmac[lmacid];
- 
- 	cfg = bgx_reg_read(bgx, lmacid, BGX_CMRX_CFG);
--	if (enable)
-+	if (enable) {
- 		cfg |= CMR_PKT_RX_EN | CMR_PKT_TX_EN;
--	else
-+
-+		/* enable TX FIFO Underflow interrupt */
-+		bgx_reg_modify(bgx, lmacid, BGX_GMP_GMI_TXX_INT_ENA_W1S,
-+			       GMI_TXX_INT_UNDFLW);
-+	} else {
- 		cfg &= ~(CMR_PKT_RX_EN | CMR_PKT_TX_EN);
-+
-+		/* Disable TX FIFO Underflow interrupt */
-+		bgx_reg_modify(bgx, lmacid, BGX_GMP_GMI_TXX_INT_ENA_W1C,
-+			       GMI_TXX_INT_UNDFLW);
-+	}
- 	bgx_reg_write(bgx, lmacid, BGX_CMRX_CFG, cfg);
- 
- 	if (bgx->is_rgx)
-@@ -1535,6 +1544,48 @@ static int bgx_init_phy(struct bgx *bgx)
- 	return bgx_init_of_phy(bgx);
- }
- 
-+static irqreturn_t bgx_intr_handler(int irq, void *data)
-+{
-+	struct bgx *bgx = (struct bgx *)data;
-+	u64 status, val;
-+	int lmac;
-+
-+	for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
-+		status = bgx_reg_read(bgx, lmac, BGX_GMP_GMI_TXX_INT);
-+		if (status & GMI_TXX_INT_UNDFLW) {
-+			pci_err(bgx->pdev, "BGX%d lmac%d UNDFLW\n",
-+				bgx->bgx_id, lmac);
-+			val = bgx_reg_read(bgx, lmac, BGX_CMRX_CFG);
-+			val &= ~CMR_EN;
-+			bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
-+			val |= CMR_EN;
-+			bgx_reg_write(bgx, lmac, BGX_CMRX_CFG, val);
-+		}
-+		/* clear interrupts */
-+		bgx_reg_write(bgx, lmac, BGX_GMP_GMI_TXX_INT, status);
-+	}
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static void bgx_register_intr(struct pci_dev *pdev)
-+{
-+	struct bgx *bgx = pci_get_drvdata(pdev);
-+	int ret;
-+
-+	ret = pci_alloc_irq_vectors(pdev, BGX_LMAC_VEC_OFFSET,
-+				    BGX_LMAC_VEC_OFFSET, PCI_IRQ_ALL_TYPES);
-+	if (ret < 0) {
-+		pci_err(pdev, "Req for #%d msix vectors failed\n",
-+			BGX_LMAC_VEC_OFFSET);
-+		return;
-+	}
-+	ret = pci_request_irq(pdev, GMPX_GMI_TX_INT, bgx_intr_handler, NULL,
-+			      bgx, "BGX%d", bgx->bgx_id);
-+	if (ret)
-+		pci_free_irq(pdev, GMPX_GMI_TX_INT, bgx);
-+}
-+
- static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
- {
- 	int err;
-@@ -1550,7 +1601,7 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
- 
- 	pci_set_drvdata(pdev, bgx);
- 
--	err = pci_enable_device(pdev);
-+	err = pcim_enable_device(pdev);
- 	if (err) {
- 		dev_err(dev, "Failed to enable PCI device\n");
- 		pci_set_drvdata(pdev, NULL);
-@@ -1604,6 +1655,8 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
- 
- 	bgx_init_hw(bgx);
- 
-+	bgx_register_intr(pdev);
-+
- 	/* Enable all LMACs */
- 	for (lmac = 0; lmac < bgx->lmac_count; lmac++) {
- 		err = bgx_lmac_enable(bgx, lmac);
-@@ -1620,6 +1673,7 @@ static int bgx_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
- 
- err_enable:
- 	bgx_vnic[bgx->bgx_id] = NULL;
-+	pci_free_irq(pdev, GMPX_GMI_TX_INT, bgx);
- err_release_regions:
- 	pci_release_regions(pdev);
- err_disable_device:
-@@ -1637,6 +1691,8 @@ static void bgx_remove(struct pci_dev *pdev)
- 	for (lmac = 0; lmac < bgx->lmac_count; lmac++)
- 		bgx_lmac_disable(bgx, lmac);
- 
-+	pci_free_irq(pdev, GMPX_GMI_TX_INT, bgx);
-+
- 	bgx_vnic[bgx->bgx_id] = NULL;
- 	pci_release_regions(pdev);
- 	pci_disable_device(pdev);
-diff --git a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
-index 25888706bdcd..cdea49392185 100644
---- a/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
-+++ b/drivers/net/ethernet/cavium/thunder/thunder_bgx.h
-@@ -180,6 +180,15 @@
- #define BGX_GMP_GMI_TXX_BURST		0x38228
- #define BGX_GMP_GMI_TXX_MIN_PKT		0x38240
- #define BGX_GMP_GMI_TXX_SGMII_CTL	0x38300
-+#define BGX_GMP_GMI_TXX_INT		0x38500
-+#define BGX_GMP_GMI_TXX_INT_W1S		0x38508
-+#define BGX_GMP_GMI_TXX_INT_ENA_W1C	0x38510
-+#define BGX_GMP_GMI_TXX_INT_ENA_W1S	0x38518
-+#define  GMI_TXX_INT_PTP_LOST			BIT_ULL(4)
-+#define  GMI_TXX_INT_LATE_COL			BIT_ULL(3)
-+#define  GMI_TXX_INT_XSDEF			BIT_ULL(2)
-+#define  GMI_TXX_INT_XSCOL			BIT_ULL(1)
-+#define  GMI_TXX_INT_UNDFLW			BIT_ULL(0)
- 
- #define BGX_MSIX_VEC_0_29_ADDR		0x400000 /* +(0..29) << 4 */
- #define BGX_MSIX_VEC_0_29_CTL		0x400008
--- 
-2.25.0
+Finally :)
 
+Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+
+-- Sebastian
+
+--n6ehadolgogdw3bm
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl5NyFcACgkQ2O7X88g7
++pr98Q/+JkurT+hW4mT1GQB8xFAJUfN0+tfx9gqKE2NeSjDY+IsZL0qQZOueskzl
+k139MC29XV8DRDjX2xjOXhitc24UeCyoqwCKQsECpZ1ihpJtZyl985HVndgTwCC4
+kA6FCjp1Pb4VY0gUwheILkGFZSEMJzQK7++mgeOy1xUsKx8iZhrvTfkkG3dNoTck
+3dC6HgheQkr6QxL6yyF1yQqyaqwJPqo5zpkNTlyNgjoj8nynRnUfFx84Y2OYDBBM
+8bdmMi1hlPQQttBHbQiO0ztkaZQy8QJFKoiTf5bIn5Kus9NJSZiSQjSzoR3L9ltD
+U588aumKE7WKO9qClZh0f/CV1FFBH6eewN9wMFk977q9mj1+O2vf4ljvic8+qLMz
+6hK+Di9WpBvK8YEpu+4f4vtJyafzugoi/+xPQa/M2au0Ifs3tXqstyZ6MxbpYCPs
+wYMD8c8rcynS6KXhMZLTKdVSS20DnOXMYM7+4o7nq++kE8Pq6hHy0mJdy1YXvfij
+YDWFovSU+5E2/4i5+v/r3VuCpfL8EY/49kXU/UsDVPTTEbZlysCWoPeJMrmgIBGo
+OXLHVaY4KjJLxaMQ1/ixiiiYU/3X+d4eiDjN6P/L5cesP1O5FMePAYNPUX/FP5Xo
+XRqBsnAyQtmADxHklBlbGMmgyb37MYi/Z5QSa1sS1Up0a9JMiZ0=
+=ErQY
+-----END PGP SIGNATURE-----
+
+--n6ehadolgogdw3bm--
+
+
+--===============4668497351711422841==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4668497351711422841==--
+
