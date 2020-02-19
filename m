@@ -2,91 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4F5616440F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 13:19:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E07B8164419
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 13:21:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qHXA7I604BFfjSq1e++VY4M9x++ePpbAVjVNoUXW4KE=; b=AYC999TO8l3n7W
-	xnyM++YoLBxvC0qeWLlJCBNLqpivJIMQY3uIsTu8US7J6c6zd9biYld3uDeXv/1k062NDc5BnOLl5
-	KVfsa3tgfhDw7VI7gbSQ8o/CzcQPl0fO53kWf7VfZYVxtljrQiAZSkLSyJxK86d6Und77OiMlnxNc
-	YeZGuOjCUlInpEAsBJI1WGpOgtfh4t7Lhxa3Du1Dwzeur8wceTagCFrW7B4dkeszTtR3wceNrgQfv
-	0BEnb6o3BvHxKOORbP8eFx4wcMo1USKan4N17CsPDC2G8GGEEG4JYveVITJYj6lfnLBfPXpArH9Ky
-	QQbOkT6Y1XYk5v5WCh5g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=LSyzloJHoPsqooM/MgRZJa51FDHG9Pd8ak9xEZXM9Wg=; b=ETL
+	Zefv9wp7jgBGj6iP1Jjx10WQilAUYGfknJCQWPkCuNJ/xuPyY3ZHUTVeLlZG5WmhxXpts8GiCziXM
+	GUpTA0uIzYldmDEM8QcNdP1e0UGSBTKd66k/IlnP99vO+YAKvAJxjh9pqKDN1ZbpvMFBLueIqux+A
+	UQTUA/g7s2F2WCX6Yt9Dpwg1HKiaLIgc34ilCc0DBl1nQGjyLSPZce17tOYfAl0jGvC57byLfp28V
+	OTTh6lPQ6fWeh1gBNTW5X2OrjCzlXxBVaoqCgMvAFpB9w6FuNyHPPaNY0DsFD3BDvsCqGxcRLQvXQ
+	82r72rre2ndhVDHm4M0BmNmQ3ikeRdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4OJl-0006td-J8; Wed, 19 Feb 2020 12:19:05 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1j4OLi-0000Mm-AB; Wed, 19 Feb 2020 12:21:06 +0000
+Received: from atl4mhob09.registeredsite.com ([209.17.115.47])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4OJc-0006tJ-GL
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 12:18:57 +0000
-Received: by mail-pl1-x644.google.com with SMTP id t14so9640plr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 04:18:56 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=w3P9TdBjFh0vATkgitLWzvzr6wzTEMeglnTFjOVQk1I=;
- b=XerOxm05Ox54idaV/ojpa+K64U4Ude9W3bd91UbCClypYPfo7nYltMf4Vxx7wmh/jh
- rhE5IFQCHvBGufUyG76zEfBLuxfhCOr2x2MLX4HX3oOK/5lkxX1OKvN1eQBZdVfxjFwC
- cTS7yPv9EkIGyqd23njgAUV3rSETJNXURwEzqyEwivJ9wSWTlhmSggw2pQyOC+/zgreu
- pp0frEdCcOHneTIZtMpqgKa0NKq8gWu3Jhn8vHkC0D9hM0IIlWhCbBciem3awRct3arw
- P2f9PPW8hJnscmwnnVk8fnzZZQ7y+tNTwuHlHeHK6ftoH2878zg4VCwH5Z8vSHSSd2dz
- Lb2w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=w3P9TdBjFh0vATkgitLWzvzr6wzTEMeglnTFjOVQk1I=;
- b=mic1EYxUhP55NS6hMXMDD9xawmlCvhFX7YWAJzg21hD7pJzQyifIVo/YBzc+aCJayi
- syVJkTWl2fjqaOttf1TFKNZ8+F483lHbZ0FoN1uHARn9EXwIrjlvldqhsYywKdc5Phf3
- O2tNZ1lGJ+vsETaQ1/lhpJsYdXDS7WIb/lPSDAy0HEPo8US9OhuKPrXikevo5Xu7DkxY
- m0T7i6QmlgsPeNofJbx+pkNE1i1kjT/5pPadHMc+PaxSeYaCJ8uVkDFmdidthzcQyCgA
- vhnNpv8wzBCfRPZi7uSJ1v8ysX+tUBPoJvZF1hWiZOkScEBLXUW7SzhONY5tz4Wa64gN
- bVcw==
-X-Gm-Message-State: APjAAAU1DsziIDre+RiQpqL1nTiSadtNOuRkNS+eQMHkYcdYWJILbME/
- LltwXgFV7GqZwgvrBIix7/mJxKeps8QoOlAgJjJXXA==
-X-Google-Smtp-Source: APXvYqyW05FD/DL2/IoTnDevuDn+1c13YIyPNoh/rgaR5TH6AObZA4byaPNdHLew5ygfRbzqFij/FB9O/YlOBxLQPD4=
-X-Received: by 2002:a17:902:8486:: with SMTP id
- c6mr26696192plo.147.1582114735626; 
- Wed, 19 Feb 2020 04:18:55 -0800 (PST)
-MIME-Version: 1.0
-References: <20200218122310.72710-1-catalin.marinas@arm.com>
-In-Reply-To: <20200218122310.72710-1-catalin.marinas@arm.com>
-From: Andrey Konovalov <andreyknvl@google.com>
-Date: Wed, 19 Feb 2020 13:18:44 +0100
-Message-ID: <CAAeHK+xNm1vv6EdfAYFbJkyh_3-hVNeWT=m14sYsNwtOLByF2A@mail.gmail.com>
-Subject: Re: [PATCH] mm: Avoid creating virtual address aliases in
- brk()/mmap()/mremap()
-To: Catalin Marinas <catalin.marinas@arm.com>
+ id 1j4OLY-0000Lu-PN
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 12:20:59 +0000
+Received: from mailpod.hostingplatform.com
+ (atl4qobmail02pod0.registeredsite.com [10.30.71.204])
+ by atl4mhob09.registeredsite.com (8.14.4/8.14.4) with ESMTP id 01JCKoM6018140
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL)
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 19 Feb 2020 07:20:51 -0500
+Received: (qmail 9089 invoked by uid 0); 19 Feb 2020 12:20:50 -0000
+X-TCPREMOTEIP: 81.173.50.109
+X-Authenticated-UID: mike@milosoftware.com
+Received: from unknown (HELO mikebuntu.TOPIC.LOCAL)
+ (mike@milosoftware.com@81.173.50.109)
+ by 0 with ESMTPA; 19 Feb 2020 12:20:50 -0000
+From: Mike Looijmans <mike.looijmans@topic.nl>
+To: robh+dt@kernel.org, michal.simek@xilinx.com, mark.rutland@arm.com,
+ devicetree@vger.kernel.org
+Subject: [PATCH] devicetree: zynqmp.dtsi: Add bootmode selection support
+Date: Wed, 19 Feb 2020 13:20:36 +0100
+Message-Id: <20200219122036.24575-1-mike.looijmans@topic.nl>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_041856_568816_5F716776 
-X-CRM114-Status: GOOD (  21.79  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200219_042056_943307_70AA30DF 
+X-CRM114-Status: UNSURE (   8.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [209.17.115.47 listed in list.dnswl.org]
+ 0.9 SPF_FAIL               SPF: sender does not match SPF record (fail)
+ [SPF failed: Please see http://www.openspf.org/Why?s=mfrom;
+ id=mike.looijmans%40topic.nl; ip=209.17.115.47; r=bombadil.infradead.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,99 +67,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Weimer <fweimer@redhat.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Victor Stinner <vstinner@redhat.com>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Evgenii Stepanov <eugenis@google.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: rajan.vaja@xilinx.com, Mike Looijmans <mike.looijmans@topic.nl>,
+ nava.manne@xilinx.com, m.tretter@pengutronix.de, linux-kernel@vger.kernel.org,
+ manish.narani@xilinx.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 1:23 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
->
-> Currently the arm64 kernel ignores the top address byte passed to brk(),
-> mmap() and mremap(). When the user is not aware of the 56-bit address
-> limit or relies on the kernel to return an error, untagging such
-> pointers has the potential to create address aliases in user-space.
-> Passing a tagged address to munmap(), madvise() is permitted since the
-> tagged pointer is expected to be inside an existing mapping.
->
-> Remove untagging in the above functions by partially reverting commit
-> ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk"). In
-> addition, update the arm64 tagged-address-abi.rst document accordingly.
->
-> Fixes: ce18d171cb73 ("mm: untag user pointers in mmap/munmap/mremap/brk")
-> Cc: <stable@vger.kernel.org> # 5.4.x-
-> Cc: Andrey Konovalov <andreyknvl@google.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Florian Weimer <fweimer@redhat.com>
-> Reported-by: Victor Stinner <vstinner@redhat.com>
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+Add bootmode override support for ZynqMP devices. Allows one to select
+a boot device by running "reboot qspi32" for example. Activate config
+item CONFIG_SYSCON_REBOOT_MODE to make this work.
 
-Acked-by: Andrey Konovalov <andreyknvl@google.com>
+Signed-off-by: Mike Looijmans <mike.looijmans@topic.nl>
+---
+ arch/arm64/boot/dts/xilinx/zynqmp.dtsi | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
-> ---
->  Documentation/arm64/tagged-address-abi.rst | 7 +++++--
->  mm/mmap.c                                  | 4 ----
->  mm/mremap.c                                | 1 -
->  3 files changed, 5 insertions(+), 7 deletions(-)
->
-> diff --git a/Documentation/arm64/tagged-address-abi.rst b/Documentation/arm64/tagged-address-abi.rst
-> index d4a85d535bf9..1771a8b5712e 100644
-> --- a/Documentation/arm64/tagged-address-abi.rst
-> +++ b/Documentation/arm64/tagged-address-abi.rst
-> @@ -44,8 +44,11 @@ The AArch64 Tagged Address ABI has two stages of relaxation depending
->  how the user addresses are used by the kernel:
->
->  1. User addresses not accessed by the kernel but used for address space
-> -   management (e.g. ``mmap()``, ``mprotect()``, ``madvise()``). The use
-> -   of valid tagged pointers in this context is always allowed.
-> +   management (e.g. ``mprotect()``, ``madvise()``). The use of valid
-> +   tagged pointers in this context is allowed with the exception of
-> +   ``brk()``, ``mmap()`` and the ``new_address`` argument to
-> +   ``mremap()`` as these have the potential of aliasing with existing
-> +   user addresses.
->
->  2. User addresses accessed by the kernel (e.g. ``write()``). This ABI
->     relaxation is disabled by default and the application thread needs to
-> diff --git a/mm/mmap.c b/mm/mmap.c
-> index 6756b8bb0033..d681a20eb4ea 100644
-> --- a/mm/mmap.c
-> +++ b/mm/mmap.c
-> @@ -195,8 +195,6 @@ SYSCALL_DEFINE1(brk, unsigned long, brk)
->         bool downgraded = false;
->         LIST_HEAD(uf);
->
-> -       brk = untagged_addr(brk);
-> -
->         if (down_write_killable(&mm->mmap_sem))
->                 return -EINTR;
->
-> @@ -1557,8 +1555,6 @@ unsigned long ksys_mmap_pgoff(unsigned long addr, unsigned long len,
->         struct file *file = NULL;
->         unsigned long retval;
->
-> -       addr = untagged_addr(addr);
-> -
->         if (!(flags & MAP_ANONYMOUS)) {
->                 audit_mmap_fd(fd, flags);
->                 file = fget(fd);
-> diff --git a/mm/mremap.c b/mm/mremap.c
-> index 122938dcec15..af363063ea23 100644
-> --- a/mm/mremap.c
-> +++ b/mm/mremap.c
-> @@ -607,7 +607,6 @@ SYSCALL_DEFINE5(mremap, unsigned long, addr, unsigned long, old_len,
->         LIST_HEAD(uf_unmap);
->
->         addr = untagged_addr(addr);
-> -       new_addr = untagged_addr(new_addr);
->
->         if (flags & ~(MREMAP_FIXED | MREMAP_MAYMOVE))
->                 return ret;
+diff --git a/arch/arm64/boot/dts/xilinx/zynqmp.dtsi b/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
+index 26d926eb1431..4c38d77ecbba 100644
+--- a/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
++++ b/arch/arm64/boot/dts/xilinx/zynqmp.dtsi
+@@ -246,6 +246,30 @@
+ 			};
+ 		};
+ 
++		/* Clock and Reset control registers for LPD */
++		lpd_apb: apb@ff5e0000 {
++			compatible = "syscon", "simple-mfd";
++			reg = <0x0 0xff5e0000 0x0 0x400>;
++			reboot-mode {
++				compatible = "syscon-reboot-mode";
++				offset = <0x200>;
++				mask = <0xf100>;
++				/* Bit(8) is the "force user" bit */
++				mode-normal = <0x0000>;
++				mode-psjtag = <0x0100>;
++				mode-qspi24 = <0x1100>;
++				mode-qspi32 = <0x2100>;
++				mode-sd0    = <0x3100>;
++				mode-nand   = <0x4100>;
++				mode-sd1    = <0x6100>;
++				mode-emmc   = <0x6100>;
++				mode-usb0   = <0x7100>;
++				mode-pjtag0 = <0x8100>;
++				mode-pjtag1 = <0x9100>;
++				mode-sd1ls  = <0xe100>;
++			};
++		};
++
+ 		/* GDMA */
+ 		fpd_dma_chan1: dma@fd500000 {
+ 			status = "disabled";
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
