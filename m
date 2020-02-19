@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 445031640FA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:59:32 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03D3A1640FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:59:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WzMCUvIUebt58ChXALdV6jdsExtrV7CHkijwCZssY7Q=; b=Qgw2X1N53IQwkAshzNW7JOzvth
-	RIC/RMu4kU9q9FReZLLazgRLkV6Q020Psgt3D6J8vIXYyrJGc93CYHYqTYIWva92iVEGJc6adLoDw
-	5MeY4dboXt+3S7AIWZXVbeBAbGTks/FMJv5TLZIZ7mhV0oe/qzhE1zVZYxbUdBGq2qOLIYagHv4/n
-	itatMvwebl6bCN5WW3bRSoPL9J/D/uNEupaPIYrE5iG+xwo40w0IWBQ2Od9W6Wk0vv8uDqSdVaRQp
-	eKsU2BnALfuyWrn+EqpaL9USApvrhsU/bT1X+1XlTiuo9ZTKMmHOH8DyqtZQlQbpSuJQeBED+6nQM
-	gRBl1hQA==;
+	bh=GraQy4C9WIrxwbXIC09qJ3JjJWvpvq8iLjrb+HWusDA=; b=ZGtYAf1SbCIxN2fq1Hy4z6zIfC
+	DIGsWLvuf05kEdDglA6y/MnLyM0+V3zVmzTdanL3i8pcQZNH+w5AwzDwLiedpw+dSUt7HwqnDxtPY
+	ze/m+sYj/VF4PdEJ3PeOD1xHF09Yf5YGAxkNM5PMGRJtzjIlBCikhihA92PcNY6B/olhV898PadTy
+	5Yjec7m3WNjWxdrTHPUNfJOuoa20ZGiL+iirc8wUFvGtXh3qvTzFg01wB05NnqvD+xPk2iHBnIe/F
+	WI7ReZUQp4vNc72wl6jF7M0mvqMc/whQetpQBwkd1/z1RiVEqCl5jSLCkeDtV8q2H585qE+uZBJLp
+	ng0sOqQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4M8g-0001FB-O3; Wed, 19 Feb 2020 09:59:30 +0000
+	id 1j4M8s-0001US-Al; Wed, 19 Feb 2020 09:59:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4M8G-00014u-Pa
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:59:06 +0000
+ id 1j4M8L-00017M-5a
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:59:10 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2728EFEC;
- Wed, 19 Feb 2020 01:59:04 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40C7B1FB;
+ Wed, 19 Feb 2020 01:59:08 -0800 (PST)
 Received: from e123648.arm.com (unknown [10.37.12.28])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A9F373F6CF;
- Wed, 19 Feb 2020 01:59:00 -0800 (PST)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 885213F6CF;
+ Wed, 19 Feb 2020 01:59:04 -0800 (PST)
 From: lukasz.luba@arm.com
 To: kgene@kernel.org, krzk@kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
  devicetree@vger.kernel.org, linux-pm@vger.kernel.org
-Subject: [PATCH 1/2] ARM: dts: exynos: Add dynamic-power-coefficient to
- Exynos5422 CPUs
-Date: Wed, 19 Feb 2020 09:58:27 +0000
-Message-Id: <20200219095828.8063-2-lukasz.luba@arm.com>
+Subject: [PATCH 2/2] ARM: exynos_defconfig: Enable SCHED_MC and ENERGY_MODEL
+Date: Wed, 19 Feb 2020 09:58:28 +0000
+Message-Id: <20200219095828.8063-3-lukasz.luba@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200219095828.8063-1-lukasz.luba@arm.com>
 References: <20200219095828.8063-1-lukasz.luba@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_015904_869632_742C93B3 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20200219_015909_282060_3D657CE6 
+X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -75,90 +75,40 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Lukasz Luba <lukasz.luba@arm.com>
 
-To use Energy Aware Scheduler (EAS) the Energy Model (EM) should be
-registered for CPUs. Add dynamic-power-coefficient into CPU nodes which
-let CPUFreq subsystem register the EM structures. This will increase
-energy efficiency of big.LITTLE platforms.
+The Energy Model (EM) is needed to run Energy Aware Scheduler (EAS).
+Enable ENERGY_MODEL to make that happen. This will increase energy
+efficiency of the big.LITTLE platform by smart decisions in scheduling
+tasks in non-heavy workloads.
 
-The 'dynamic-power-coefficient' values have been obtained experimenting
-with different workloads. The power measurements taken from big CPU
-Cluster and LITTLE CPU Cluster has been compared with official documents
-and synthetic workloads estimations. The effective power ratio between
-Cortex-A7 and Cortex-A15 CPUs (~3x) is also aligned with documentation.
+Add SCHED_MC in order to create another level in scheduling domains: 'MC'.
+This improves scheduler's decisions on platforms with CPU clusters, such
+as big.LITTLE.
 
 Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
 ---
- arch/arm/boot/dts/exynos5422-cpus.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm/configs/exynos_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/arch/arm/boot/dts/exynos5422-cpus.dtsi b/arch/arm/boot/dts/exynos5422-cpus.dtsi
-index 1b8605cf2407..4b641b9b8179 100644
---- a/arch/arm/boot/dts/exynos5422-cpus.dtsi
-+++ b/arch/arm/boot/dts/exynos5422-cpus.dtsi
-@@ -31,6 +31,7 @@
- 			operating-points-v2 = <&cluster_a7_opp_table>;
- 			#cooling-cells = <2>; /* min followed by max */
- 			capacity-dmips-mhz = <539>;
-+			dynamic-power-coefficient = <90>;
- 		};
- 
- 		cpu1: cpu@101 {
-@@ -43,6 +44,7 @@
- 			operating-points-v2 = <&cluster_a7_opp_table>;
- 			#cooling-cells = <2>; /* min followed by max */
- 			capacity-dmips-mhz = <539>;
-+			dynamic-power-coefficient = <90>;
- 		};
- 
- 		cpu2: cpu@102 {
-@@ -55,6 +57,7 @@
- 			operating-points-v2 = <&cluster_a7_opp_table>;
- 			#cooling-cells = <2>; /* min followed by max */
- 			capacity-dmips-mhz = <539>;
-+			dynamic-power-coefficient = <90>;
- 		};
- 
- 		cpu3: cpu@103 {
-@@ -67,6 +70,7 @@
- 			operating-points-v2 = <&cluster_a7_opp_table>;
- 			#cooling-cells = <2>; /* min followed by max */
- 			capacity-dmips-mhz = <539>;
-+			dynamic-power-coefficient = <90>;
- 		};
- 
- 		cpu4: cpu@0 {
-@@ -79,6 +83,7 @@
- 			operating-points-v2 = <&cluster_a15_opp_table>;
- 			#cooling-cells = <2>; /* min followed by max */
- 			capacity-dmips-mhz = <1024>;
-+			dynamic-power-coefficient = <310>;
- 		};
- 
- 		cpu5: cpu@1 {
-@@ -91,6 +96,7 @@
- 			operating-points-v2 = <&cluster_a15_opp_table>;
- 			#cooling-cells = <2>; /* min followed by max */
- 			capacity-dmips-mhz = <1024>;
-+			dynamic-power-coefficient = <310>;
- 		};
- 
- 		cpu6: cpu@2 {
-@@ -103,6 +109,7 @@
- 			operating-points-v2 = <&cluster_a15_opp_table>;
- 			#cooling-cells = <2>; /* min followed by max */
- 			capacity-dmips-mhz = <1024>;
-+			dynamic-power-coefficient = <310>;
- 		};
- 
- 		cpu7: cpu@3 {
-@@ -115,6 +122,7 @@
- 			operating-points-v2 = <&cluster_a15_opp_table>;
- 			#cooling-cells = <2>; /* min followed by max */
- 			capacity-dmips-mhz = <1024>;
-+			dynamic-power-coefficient = <310>;
- 		};
- 	};
- };
+diff --git a/arch/arm/configs/exynos_defconfig b/arch/arm/configs/exynos_defconfig
+index c8e0c14092e8..90d376eb333b 100644
+--- a/arch/arm/configs/exynos_defconfig
++++ b/arch/arm/configs/exynos_defconfig
+@@ -8,6 +8,7 @@ CONFIG_PERF_EVENTS=y
+ CONFIG_ARCH_EXYNOS=y
+ CONFIG_CPU_ICACHE_MISMATCH_WORKAROUND=y
+ CONFIG_SMP=y
++CONFIG_SCHED_MC=y
+ CONFIG_BIG_LITTLE=y
+ CONFIG_NR_CPUS=8
+ CONFIG_HIGHMEM=y
+@@ -17,6 +18,7 @@ CONFIG_ZBOOT_ROM_BSS=0x0
+ CONFIG_ARM_APPENDED_DTB=y
+ CONFIG_ARM_ATAG_DTB_COMPAT=y
+ CONFIG_CMDLINE="root=/dev/ram0 rw ramdisk=8192 initrd=0x41000000,8M console=ttySAC1,115200 init=/linuxrc mem=256M"
++CONFIG_ENERGY_MODEL=y
+ CONFIG_CPU_FREQ=y
+ CONFIG_CPU_FREQ_STAT=y
+ CONFIG_CPU_FREQ_DEFAULT_GOV_ONDEMAND=y
 -- 
 2.17.1
 
