@@ -2,60 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1CE81640B0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:45:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D986A1640B3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 10:45:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0+P6Kbv4AramMqYybt55OtWPJCzrOMGBgQna44M8OBY=; b=An7JsljjzxtBQ6PqxzzQ6HB68F
-	HZ14eLWW7wtgRDi4RawkFW+I9NlA4QoYG8uR4Lxt/ppg9WfYNBHkmhvOdwl2C5j8T68HOG5kaMXzV
-	yuyNPaqnfMd8DcIGz3SSya3RKeRmHGv83/K1bGEHTQPtslQVb1Abi89cr0zu753kHS2Mzg0wzE0iZ
-	0rdX97lJwjDSS1tJ0onmEh82Whhkdpc5omokHaqE4COm2nfqWyZXG1MVOiNQDWIOV7xRwtuxGPhyg
-	fXAjLj/2A88IGFNaMGK7C7H6cncESVQ5YaAcnyErfLtx7//eV3gB45ocGeWcrKUIS0wXVcFJkTF8I
-	lKU5DqmQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0Qu91eLecJ+wbDxkt4P+PhQr/3+5ZQGMQQ+DgrUAuVM=; b=VM7yRUkRgFaHpR
+	re4XnI/FERYQFiPy4DK2wvgftktCdPluzKjWGZ++5qC4LgXUPYh6HzTO4Wej4U5QHbC9bm3szkACo
+	VbRljTEuTNhCC+e73On/BmdtVNK8CQyXvTIqC+29yMsWF3sZTvsxVK/G0OGiO3FgOEtv/xPrTMepF
+	SLWej5VDBBlYfzMwKQ2MKrb3DJ8tdDHJ2BqqomkdqWhUjtitTphRDG+GbZVkIfYucRKWC1hnFzcnw
+	T05kQdZSdC1VxJ8epRaZP/2YwXsdTZY7aFTAvv9UpDZEaUy3MARe0EuWU9eVEOfd28TPBjtER54TC
+	kOgdtCW0mP619RwoRx7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Lut-0002me-Fd; Wed, 19 Feb 2020 09:45:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j4LvB-0004LL-7n; Wed, 19 Feb 2020 09:45:33 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Ltc-0001za-NV
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:43:58 +0000
-Received: from e123331-lin.home
- (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CC8A92467A;
- Wed, 19 Feb 2020 09:43:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582105436;
- bh=rL4Q5BlyA/wHk/fFo19E0ftveK+fHEpxF2ql6xFxhEA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=aAgrqwwYdcW+sC9YH4v2VryvRKQLLuR/tb9XsVLmYgQn1tJgec8+QmV7mMPCcrdCp
- EVIRNLc9TjewRs2j6wDIiKabeutLoaWhiLG785xhiaFlHNLvIA5UnnvjA94Phq6R+X
- IcvXFDqzJsvAHOKk5R95l3Fctz/CO1BtTnJWp9bg=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-efi@vger.kernel.org
-Subject: [PATCH v2 4/4] ARM: decompressor: switch to by-VA cache maintenance
- for v7 cores
-Date: Wed, 19 Feb 2020 10:43:40 +0100
-Message-Id: <20200219094340.16597-5-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200219094340.16597-1-ardb@kernel.org>
-References: <20200219094340.16597-1-ardb@kernel.org>
+ id 1j4Luq-00043D-7P
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 09:45:17 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 4so12226748pfz.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 01:45:11 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=k2sHioBgitIhnFo2YiqI9nwJzMPQopbQYiLEimmzsTw=;
+ b=ZmeGzOyRoL/QKZoNhywtSO44lICxNKvYc//LurCRq9js/OnemH0nqVVJHQzSAPouuz
+ PFpbfs4nWJirOWL9OuQk0htkEWzskQT0iXypda/eZmZccBW77wNZtP6t3ycSDynpt0rz
+ mY8QUfeITpSvNZx5nYhAOhA3q12PKelPQ0f4edZqXN4ZXz6GDgNjB2tEHhBq3e/W+ei+
+ iSojJIatqnbBNKw3bJSZ1H+3g23SLU4eGAh6KyEj19kQeu9F709Shn4Qc5NK76gO9hOa
+ 3Bxjxc4OnyT9FdwP9pU0SqVy5iqzxeMWuG1/cZkJsrkQ9JaCDG5lj/vR+ZqspXkKBPGM
+ 43BQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=k2sHioBgitIhnFo2YiqI9nwJzMPQopbQYiLEimmzsTw=;
+ b=YBumkUNKFoX1VVnY9KPX2RKJp3MczMWKAIImZ/K7FVF1UB9N3owiLGFubH+B3Q8LRQ
+ s2TH4Umk6fU+hXQFpxZ6GGCj3rRVNTwMwSVyVG9k18hqow6Rk0QOOGk/FSfkLdpPh/ac
+ 6C8fdFZ0gEh+WIjzXdh6qValEIomEOUW6ozGSRBFHgaBV8ZJzLeYsjFpM9HsrDr1zGhy
+ d/seXP3v2I9iHXB9oc9fZNr81KIq3dQmFGI1vRhTjgWtlVCWKS8fMA+0KZJmqmxFd/HI
+ dXw1CpegAZh39IhrAfd9Dn9FOf4o1hguKjKrqkZWMzDcM36gj/nJThbpddnhbyiKI5x6
+ e4dg==
+X-Gm-Message-State: APjAAAWcQ9Ee+x1kP8KXhauuy/M0BDakaH2UiHxYuUGH6P6ec2AUx6q9
+ WSsSZs5i/2yp4RY6+7mcHcH2TA==
+X-Google-Smtp-Source: APXvYqw0pFDneFtW688nh18WrP7X4OhSccbWrIqI7ONYhXzLatnBM/oxLz41sfwbFVhqaoqM6Fx3Ig==
+X-Received: by 2002:aa7:9525:: with SMTP id c5mr26040665pfp.133.1582105511258; 
+ Wed, 19 Feb 2020 01:45:11 -0800 (PST)
+Received: from localhost ([223.226.55.170])
+ by smtp.gmail.com with ESMTPSA id z127sm1931611pgb.64.2020.02.19.01.45.10
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 19 Feb 2020 01:45:10 -0800 (PST)
+Date: Wed, 19 Feb 2020 15:15:08 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: Peng Fan <peng.fan@nxp.com>
+Subject: Re: [PATCH v2 10/14] cpufreq: dt: Allow platform specific
+ intermediate callbacks
+Message-ID: <20200219094508.trftyq22rwozzdh2@vireshk-i7>
+References: <1582099197-20327-1-git-send-email-peng.fan@nxp.com>
+ <1582099197-20327-11-git-send-email-peng.fan@nxp.com>
+ <20200219093526.hexyzhfuirb2lg4m@vireshk-i7>
+ <AM0PR04MB4481A321F1881B111D247BEB88100@AM0PR04MB4481.eurprd04.prod.outlook.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <AM0PR04MB4481A321F1881B111D247BEB88100@AM0PR04MB4481.eurprd04.prod.outlook.com>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_014356_860891_31601572 
-X-CRM114-Status: GOOD (  16.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200219_014512_419324_77C3F0CE 
+X-CRM114-Status: GOOD (  10.43  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -65,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,163 +101,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Pitre <nico@fluxnic.net>, Tony Lindgren <tony@atomide.com>,
- Marc Zyngier <maz@kernel.org>, Russell King <linux@armlinux.org.uk>,
- Catalin Marinas <catalin.marinas@arm.com>, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Abel Vesa <abel.vesa@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update the v7 cache_clean_flush routine to take into account the
-memory range passed in r0/r1, and perform cache maintenance by
-virtual address on this range instead of set/way maintenance, which
-is inappropriate for the purpose of maintaining the cached state of
-memory contents.
+On 19-02-20, 09:41, Peng Fan wrote:
+> In drivers/cpufreq/cpufreq.c, function __target_index. Line 2065, see below:
+> 
+> 2062         notify = !(cpufreq_driver->flags & CPUFREQ_ASYNC_NOTIFICATION);
+> 2063         if (notify) {
+> 2064                 /* Handle switching to intermediate frequency */
+> 2065                 if (cpufreq_driver->get_intermediate) {
+> 2066                         retval = __target_intermediate(policy, &freqs, index);
+> 2067                         if (retval)
+> 2068                                 return retval;
+> 2069
+> 2070                         intermediate_freq = freqs.new;
+> 2071                         /* Set old freq to intermediate */
+> 2072                         if (intermediate_freq)
+> 2073                                 freqs.old = freqs.new;
+> 2074                 }
+> 
+> Inspired from tegra20-cpufreq.c, use target_intermediate could handle
+> i.MX7ULP cpufreq easier.
 
-Since this removes any use of the stack in the implementation of
-cache_clean_flush(), we can also drop some code that manages the
-value of the stack pointer before calling it.
+Ahh, sorry about that. Completely forgot this stuff existed :)
 
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
----
- arch/arm/boot/compressed/head.S | 83 +++++++-------------
- 1 file changed, 30 insertions(+), 53 deletions(-)
-
-diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 5060a623e0d7..90de5404f402 100644
---- a/arch/arm/boot/compressed/head.S
-+++ b/arch/arm/boot/compressed/head.S
-@@ -524,11 +524,6 @@ dtb_check_done:
- 
- 		ldr	r1, [sp], #4		@ end of target region
- 		ldr	r0, [sp], #4		@ start of target region
--#ifndef CONFIG_ZBOOT_ROM
--		/* cache_clean_flush may use the stack, so relocate it */
--		add	sp, sp, r6
--#endif
--
- 		bl	cache_clean_flush
- 
- 		badr	r0, restart
-@@ -685,6 +680,24 @@ params:		ldr	r0, =0x10000100		@ params_phys for RPC
- 		.align
- #endif
- 
-+/*
-+ * dcache_line_size - get the minimum D-cache line size from the CTR register
-+ * on ARMv7.
-+ */
-+	.macro	dcache_line_size, reg, tmp
-+#ifdef CONFIG_CPU_V7M
-+	movw	\tmp, #:lower16:BASEADDR_V7M_SCB + V7M_SCB_CTR
-+	movt	\tmp, #:upper16:BASEADDR_V7M_SCB + V7M_SCB_CTR
-+	ldr     \tmp, [\tmp]
-+#else
-+	mrc	p15, 0, \tmp, c0, c0, 1		@ read ctr
-+#endif
-+	lsr	\tmp, \tmp, #16
-+	and	\tmp, \tmp, #0xf		@ cache line size encoding
-+	mov	\reg, #4			@ bytes per word
-+	mov	\reg, \reg, lsl \tmp		@ actual cache line size
-+	.endm
-+
- /*
-  * Turn on the cache.  We need to setup some page tables so that we
-  * can have both the I and D caches on.
-@@ -1177,8 +1190,6 @@ __armv7_mmu_cache_off:
- 		bic	r0, r0, #0x000c
- #endif
- 		mcr	p15, 0, r0, c1, c0	@ turn MMU and cache off
--		mov	r12, lr
--		bl	__armv7_mmu_cache_flush
- 		mov	r0, #0
- #ifdef CONFIG_MMU
- 		mcr	p15, 0, r0, c8, c7, 0	@ invalidate whole TLB
-@@ -1186,7 +1197,7 @@ __armv7_mmu_cache_off:
- 		mcr	p15, 0, r0, c7, c5, 6	@ invalidate BTC
- 		mcr	p15, 0, r0, c7, c10, 4	@ DSB
- 		mcr	p15, 0, r0, c7, c5, 4	@ ISB
--		mov	pc, r12
-+		mov	pc, lr
- 
- /*
-  * Clean and flush the cache to maintain consistency.
-@@ -1202,6 +1213,7 @@ __armv7_mmu_cache_off:
- 		.align	5
- cache_clean_flush:
- 		mov	r3, #16
-+		mov	r11, r1
- 		b	call_cache_fn
- 
- __armv4_mpu_cache_flush:
-@@ -1252,51 +1264,16 @@ __armv7_mmu_cache_flush:
- 		mcr	p15, 0, r10, c7, c14, 0	@ clean+invalidate D
- 		b	iflush
- hierarchical:
--		mcr	p15, 0, r10, c7, c10, 5	@ DMB
--		stmfd	sp!, {r0-r7, r9-r11}
--		mrc	p15, 1, r0, c0, c0, 1	@ read clidr
--		ands	r3, r0, #0x7000000	@ extract loc from clidr
--		mov	r3, r3, lsr #23		@ left align loc bit field
--		beq	finished		@ if loc is 0, then no need to clean
--		mov	r10, #0			@ start clean at cache level 0
--loop1:
--		add	r2, r10, r10, lsr #1	@ work out 3x current cache level
--		mov	r1, r0, lsr r2		@ extract cache type bits from clidr
--		and	r1, r1, #7		@ mask of the bits for current cache only
--		cmp	r1, #2			@ see what cache we have at this level
--		blt	skip			@ skip if no cache, or just i-cache
--		mcr	p15, 2, r10, c0, c0, 0	@ select current cache level in cssr
--		mcr	p15, 0, r10, c7, c5, 4	@ isb to sych the new cssr&csidr
--		mrc	p15, 1, r1, c0, c0, 0	@ read the new csidr
--		and	r2, r1, #7		@ extract the length of the cache lines
--		add	r2, r2, #4		@ add 4 (line length offset)
--		ldr	r4, =0x3ff
--		ands	r4, r4, r1, lsr #3	@ find maximum number on the way size
--		clz	r5, r4			@ find bit position of way size increment
--		ldr	r7, =0x7fff
--		ands	r7, r7, r1, lsr #13	@ extract max number of the index size
--loop2:
--		mov	r9, r4			@ create working copy of max way size
--loop3:
-- ARM(		orr	r11, r10, r9, lsl r5	) @ factor way and cache number into r11
-- ARM(		orr	r11, r11, r7, lsl r2	) @ factor index number into r11
-- THUMB(		lsl	r6, r9, r5		)
-- THUMB(		orr	r11, r10, r6		) @ factor way and cache number into r11
-- THUMB(		lsl	r6, r7, r2		)
-- THUMB(		orr	r11, r11, r6		) @ factor index number into r11
--		mcr	p15, 0, r11, c7, c14, 2	@ clean & invalidate by set/way
--		subs	r9, r9, #1		@ decrement the way
--		bge	loop3
--		subs	r7, r7, #1		@ decrement the index
--		bge	loop2
--skip:
--		add	r10, r10, #2		@ increment cache number
--		cmp	r3, r10
--		bgt	loop1
--finished:
--		ldmfd	sp!, {r0-r7, r9-r11}
--		mov	r10, #0			@ switch back to cache level 0
--		mcr	p15, 2, r10, c0, c0, 0	@ select current cache level in cssr
-+		dcache_line_size r1, r2		@ r1 := dcache min line size
-+		sub	r2, r1, #1		@ r2 := line size mask
-+		bic	r0, r0, r2		@ round down start to line size
-+		sub	r11, r11, #1		@ end address is exclusive
-+		bic	r11, r11, r2		@ round down end to line size
-+0:		cmp	r0, r11			@ finished?
-+		bgt	iflush
-+		mcr	p15, 0, r0, c7, c14, 1	@ Dcache clean/invalidate by VA
-+		add	r0, r0, r1
-+		b	0b
- iflush:
- 		mcr	p15, 0, r10, c7, c10, 4	@ DSB
- 		mcr	p15, 0, r10, c7, c5, 0	@ invalidate I+BTB
 -- 
-2.17.1
-
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
