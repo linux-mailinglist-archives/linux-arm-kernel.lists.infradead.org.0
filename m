@@ -2,44 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7792416390F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 02:10:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEA08163963
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 02:32:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ymy/MZLe3VB7fu+EM142hxmInswT+Kkf4Mb5BWvrd5o=; b=ImDxGlMSrSWbFY
-	5tC/4Tp4CYFTKTJhfMjThMN4roUJFNFMCbJj7pgt8Vf8fivhoN0EnWFYjATtCdiEF0JiJVnIYHlDa
-	yPcyrUIzzEaOTgwnIk+vCue+Nt7lP2kqB2UnBhqPTslpQzgbhOQwSC4xQbXTpKtzukDT6eF3kby/8
-	Rn8+ARc3Q6/D1wNIyupKUYGfpRCsQDha2OUrtIvRvLQF+PmyRCyVC6r2f9RAK1ES9Sw019VWeS6Vq
-	rqMPiGnp49itQrdsWjhbQptniyW+7JVc/HhoNNIop8O0sPh5fJ13aAMIZxR1NXCTouSFu3zOO3OWa
-	33u4ZpjFb+A/D1PJnRCg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zxb3Zr81LRxt6LRi/tMclRaltXsnHgP6LJzjUAohJoo=; b=Wemh6EOAUCBPls
+	dUXJsLcsMkydR2CPtAj1DuhstnuznF0xylUg9UBjWI0Z9bEpTMK7d6BdDZN7JMD+r7Ldx+S/TOE24
+	VqIj70V8Sv3PlZoAiCJQ3z6NRQquN8Fr7dPkSbD9acyDoDiHa+J4sVVit+19nuBft689ahoxRSDgK
+	aVrhraEireF0PXzC6o1bYGAJaWu7T8UO68kxdt7dMtz2UjXGTMW9FOrvD3jKT8QaovPgxJOg9wakv
+	I3EX3HhDfgK01T9Tvwfvze413/hfQpyShNMOUv0WFNCujFkb0vR1TncDU7j+5IlCTcuukyVr1U8tj
+	Evy3nVyXXf65CQUbwb0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Dsa-0008En-4C; Wed, 19 Feb 2020 01:10:20 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1j4EEI-0007ot-HI; Wed, 19 Feb 2020 01:32:46 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4DsK-0007Ze-66
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 01:10:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582074599; bh=Aeuv5iYbaAp7rr6i5ZST/n1JdcOfY/hR+2BNrgy8C+E=;
- h=From:To:Cc:Subject:Date:From;
- b=QHSn0XjACs3lffkvnSFb2Pb78S1/c0rmc4BVbXsaxeakyWxv3Mh/uhDOckugdgAqZ
- FcC8PID+c6c6kZWMrj4KvwtCzGJHnr4igAaFwpP17DnZYrxwk+t60tjSDIqWrlF0aD
- UjWgeF7tQbJzZPcmQflTg7yTojktxGRiFa4KFSkY=
-From: Ondrej Jirman <megous@megous.com>
-To: linux-sunxi@googlegroups.com
-Subject: [PATCH] bus: sunxi-rsb: Return correct data when mixing 16-bit and
- 8-bit reads
-Date: Wed, 19 Feb 2020 02:09:50 +0100
-Message-Id: <20200219010951.395599-1-megous@megous.com>
+ id 1j4EDx-0007o3-PA
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 01:32:28 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id e9so1815206pjr.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 18 Feb 2020 17:32:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=rdSydlYDtK82PfAE/bEAcB+kfEvpRvEP8E9yrLU0z7E=;
+ b=imgY3sLUfltWo0uKMUQBGNhdEFtihnDlh/hiuUlxqLNz8vYHiDlDnj+e+gidVVu2nZ
+ VZSp7MRfTJMt3gVOOQPNThYytwCIpELBiwQ6yO0O+OpD6w0po6QmPtM8VL+jlBgoNp8v
+ l6DcPZ5s5eNlVu+lyZPmsk5861zFqQIBumRWIrqsqwQ+wiiN4JB1CCQXKrGNfMYzVGQV
+ YPxnnkUI1jCbz29HkrQ2DXoyz2ex8aHpwDMhkUbcLKOjKIcaXS9VRTXYswqvCjaKQxVI
+ joUQlcwDiYYpzMU6tKsyII5/clCAVukg8j+q/pF2+rGGUQoa5jtzDFFrKbYQtrEY6/5L
+ GDxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rdSydlYDtK82PfAE/bEAcB+kfEvpRvEP8E9yrLU0z7E=;
+ b=XeDTqI7RyBHm5xWwzKrH9ZSg6niqtmobKjb/cMGICMCRhcWQL0Wg2PmTjZttE2IH7d
+ 9UUqaLczBYhqhT0btJOQ8wFI+rEeaukXvDoedjSBMOWKlAk/xs966cQoMmA6PhlEdrJl
+ gHh3jyv5C+U1L4pJMI7hBrSvA8qjaRvs0Wpq248ie/DXaomrTYHbK4jrOw/uChaLlxdh
+ UI0bAd3HVeMUjVq75dbrwEj0tKZH2vwgyTm63nEOOw7QtOcMTfwm3aWn9MAOZ0uOpxye
+ 0ZS8hHk80buTjx293QW2T78ZhMFoUuKtvH99h6RfObFrDxI2y7NOP5fVMXS5joTKxupq
+ VyEw==
+X-Gm-Message-State: APjAAAXPvP+sEMsMbH1ax2P2X5jXb5GhTC2fg5UcR0Pb286n1JH6U1CG
+ PWSIgoIl/ZU5Ry7VaLSbUpJKmw==
+X-Google-Smtp-Source: APXvYqwRPdAovkAZ2/O+M1SD4LO2zEZxW8I4CbrxngxJWSZSm6qZj8cDHOKrj+q0EdheibyTjfvJhg==
+X-Received: by 2002:a17:902:c509:: with SMTP id
+ o9mr23229451plx.112.1582075944675; 
+ Tue, 18 Feb 2020 17:32:24 -0800 (PST)
+Received: from leoy-ThinkPad-X240s ([2400:8902::f03c:91ff:fe3f:ee42])
+ by smtp.gmail.com with ESMTPSA id a17sm244743pfo.146.2020.02.18.17.32.18
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 18 Feb 2020 17:32:23 -0800 (PST)
+Date: Wed, 19 Feb 2020 09:32:14 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Arnaldo Carvalho de Melo <arnaldo.melo@gmail.com>
+Subject: Re: [PATCH v4 0/5] perf cs-etm: Fix synthesizing instruction samples
+Message-ID: <20200219013214.GA8932@leoy-ThinkPad-X240s>
+References: <20200213094204.2568-1-leo.yan@linaro.org>
+ <20200218184934.GA11448@xps15> <20200218193011.GB5365@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200218193011.GB5365@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_171004_565100_B1AB652E 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200218_173225_845496_847934D1 
+X-CRM114-Status: GOOD (  12.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -65,92 +96,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ondrej Jirman <megous@megous.com>, Samuel Holland <samuel@sholland.org>,
- open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Chen-Yu Tsai <wens@csie.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Coresight ML <coresight@lists.linaro.org>, linux-kernel@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ Robert Walker <robert.walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When doing a 16-bit read that returns data in the MSB byte, the
-RSB_DATA register will keep the MSB byte unchanged when doing
-the following 8-bit read. sunxi_rsb_read() will then return
-a result that contains high byte from 16-bit read mixed with
-the 8-bit result.
+Hi Mathieu, Arnaldo,
 
-The consequence is that after this happens the PMIC's regmap will
-look like this: (0x33 is the high byte from the 16-bit read)
+On Tue, Feb 18, 2020 at 04:30:11PM -0300, Arnaldo Carvalho de Melo wrote:
 
-% cat /sys/kernel/debug/regmap/sunxi-rsb-3a3/registers
-00: 33
-01: 33
-02: 33
-03: 33
-04: 33
-05: 33
-06: 33
-07: 33
-08: 33
-09: 33
-0a: 33
-0b: 33
-0c: 33
-0d: 33
-0e: 33
-[snip]
+[...]
 
-Fix this by masking the result of the read with the correct mask
-based on the size of the read. There are no 16-bit users in the
-mainline kernel, so this doesn't need to get into the stable tree.
+> > > Leo Yan (5):
+> > >   perf cs-etm: Swap packets for instruction samples
+> > >   perf cs-etm: Continuously record last branch
+> > >   perf cs-etm: Correct synthesizing instruction samples
+> > >   perf cs-etm: Optimize copying last branches
+> > >   perf cs-etm: Fix unsigned variable comparison to zero
+> > 
+> > For all the patches in this set:
+> > 
+> > Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> > 
+> > Unless Arnaldo says otherwise, I suggest you send a new V5 with Mike's RB for
+> > patch 3/5 and mine for all of them.  That way he doesn't have to edit the
+> > patches when applying them.
 
-Signed-off-by: Ondrej Jirman <megous@megous.com>
----
- drivers/bus/sunxi-rsb.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+Thanks for reviewing and suggestions.
 
-diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-index b8043b58568ac..8ab6a3865f569 100644
---- a/drivers/bus/sunxi-rsb.c
-+++ b/drivers/bus/sunxi-rsb.c
-@@ -316,6 +316,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
- {
- 	u32 cmd;
- 	int ret;
-+	u32 mask;
- 
- 	if (!buf)
- 		return -EINVAL;
-@@ -323,12 +324,15 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
- 	switch (len) {
- 	case 1:
- 		cmd = RSB_CMD_RD8;
-+		mask = 0xffu;
- 		break;
- 	case 2:
- 		cmd = RSB_CMD_RD16;
-+		mask = 0xffffu;
- 		break;
- 	case 4:
- 		cmd = RSB_CMD_RD32;
-+		mask = 0xffffffffu;
- 		break;
- 	default:
- 		dev_err(rsb->dev, "Invalid access width: %zd\n", len);
-@@ -345,7 +349,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
- 	if (ret)
- 		goto unlock;
- 
--	*buf = readl(rsb->regs + RSB_DATA);
-+	*buf = readl(rsb->regs + RSB_DATA) & mask;
- 
- unlock:
- 	mutex_unlock(&rsb->lock);
--- 
-2.25.1
+> Yeah, that would make things easier for me, always appreciated.
 
+Sure, will send out patch set V5.
+
+Thanks,
+Leo
 
 _______________________________________________
 linux-arm-kernel mailing list
