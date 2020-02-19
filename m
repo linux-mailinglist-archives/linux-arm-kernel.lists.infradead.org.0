@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6654716419D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:22:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A43BE1641A8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:23:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wNG+f0aVZwzkhNaJkxXO2ki7ECYntQve5TWWcHrJWKY=; b=TOsyQH2+qG4hsI
-	bTwt9yRLPIIYQomq5m5XZMl4YFb89gNidACdRRsx1oScbA6cRsltWxPBphD92/WtDX0rZtraGcYma
-	/AArzAtIVrzD4gZ1Jz/qn/EHJXzLMfcBNeH6hNu76+3nbOTjK++ON9aAmYczK3ZEyRYEayEKuCr9l
-	vRlRuRyw9BLdET6uFUcUKNpICdNmo0ZpDWn7LBH3a7KVZUr1UkY8c2f/v812geiGgOi+WDmsWGqVe
-	XM18s+k47jw0kK10Jc0ZqPeyZMbzG8ykNRwbyrHGO2NnVnOqR1Oc0Tx459jath6PiRF3tsxpB3az1
-	0FAbHMIYjNmiXBLAzqnw==;
+	List-Owner; bh=5Mzn4fOdirDZ4TFIgyNPPZb8Tfl9J8VMCsgVvCB9Nn4=; b=EGThYoyEbEAwfT
+	7TazUk32aQj3zcHLvfm+fqS+lqoLVn6Q1cy/60HEwZPdi893Nq8o09byxSYooOPNgw9jIcUwpDxjo
+	hEdbR+ddtGOxur58b2S6ygRN1fjbTuzYz+0NbFld3X2q7KyNP8K/ao2TEUr9L/EDAOArNotkas+0a
+	dQt8Axy16kOtZoRR1DX7sYon+wo4hDY1sjpLcGsG/0aiqStmktxiQTjc7hnqYvB+yIszRYTW4g4kt
+	hu/kvw9TuPLXR8g5/3L7MAQXmm+Cj5FZ3jf5y4PUYa+pQAblMUduef7aIWCzXikSdqbBIAaKbvOrL
+	L9ff4HOhK0lB8Bok/zog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4MVB-0004nF-GK; Wed, 19 Feb 2020 10:22:45 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1j4MVQ-0004z6-2y; Wed, 19 Feb 2020 10:23:00 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4MUk-0004VS-Fz
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:22:21 +0000
-Received: by mail-wr1-x442.google.com with SMTP id r11so27486879wrq.10
+ id 1j4MUm-0004VZ-QC
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:22:22 +0000
+Received: by mail-wr1-x444.google.com with SMTP id u6so27602446wrt.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 02:22:18 -0800 (PST)
+ Wed, 19 Feb 2020 02:22:19 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=CMpRLsmk2k79rSr4KQhFtq3ElR3/0UtAr1kCQ3We7NU=;
- b=O3jdQvb+9ovBVXNh5T60os5D7I3PwklUDEkTtY9Fd9ZxslmOCcFYC4A2/yLdbjk032
- FqeYnBrZcoCUFlQD3eyk2D16mIxakVQz+p2j+tZpcJ1x1CHjgdVbt6bxwMknwRIuv5/G
- z2vcwp88Gn5ikRGxdl6YqzL3Jl41rKE2zmDO8=
+ bh=YSnq2pVWW+HKeYXXYM7BB1vTVqLVzuXFgXE6h06xFu0=;
+ b=liIx7CqvQUzNFoG4ELSAG3R9vmPB0o85DvqOnShuce4VgyiZn/mciQMBO1AhL0XJWg
+ OjqpsJYMUaXd2uAVaUgmLW7I9Q0LCxuoUwB16ZRnK4xIZT3Zr6KbI1h43R1iQxSf1gxa
+ lNBDHZGDLOUpLkxXfaGxaExMwBJNCUM1/5Zs0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=CMpRLsmk2k79rSr4KQhFtq3ElR3/0UtAr1kCQ3We7NU=;
- b=kci9HJvNbU8SjGJm3Wx5hONv9CnpiGiw8CJHMGMIhgoBwO4W+syXYaAksGY960Eoj0
- pNKsOVyzXU2HVx6oanmAUAJb+JIZK886SJPtAz8YRpj9UtMw2nlMdOGrkOk7E2dbhY0f
- ooyBtG8PsW+O8U1M6JuUtXlRtWX8m3sZsNk9J1hqycHS7n8zwgHaephSlupO9JAkvg31
- f2jo5fTfevQQ6oBHPuquA9S/OcHdPOOXwlMRS6rtpOmvOeki9H22gdvESlfRqrF0EU/1
- g4ooG2U8OolBsK70n32ZZ15viDocPe3q5oOA+wzaNkj9Bj4iucj5Mw4BaPhPDApA00/4
- hWkw==
-X-Gm-Message-State: APjAAAXajVEgPVNc7Rkhq2KjCAUNouD2R+wa1UUmXUifXXfrsKyjK9Oj
- k7AMvIFQ202crqJCGyP5gLFB+Q==
-X-Google-Smtp-Source: APXvYqwzq2IJDg4cLJQDZGtlmKCnczEtj6OtQr/NmLMYBmqn9J5kT1N+Crv5wlJsBfOekrIHBGRkOg==
-X-Received: by 2002:adf:a35e:: with SMTP id d30mr32693147wrb.33.1582107736797; 
- Wed, 19 Feb 2020 02:22:16 -0800 (PST)
+ bh=YSnq2pVWW+HKeYXXYM7BB1vTVqLVzuXFgXE6h06xFu0=;
+ b=UGGLQvd/7rHIiE0tNoCyf2hKjVLCGlYds9g+YApg8DUA0QmokQk3eB4ncrx0JmqvD/
+ 8rUnS7YbwxI54HSnVUbnCjlWh803Lg5Gj97xeesKskqK9VjRTA6sIuxwnwHdz9cbCHeO
+ rcil1YZDabnoI9jinU1N6iqCrI1ArDcorD26dnaye3mW6smU6bxp2VDclb7xG9DsJs7U
+ GJtt1seJJALbGFxgRYUV5KPXkkuNH7CiYsJlwGZhwpF/jbxp6hACFrD+9g4V7qB7BqO3
+ KZUGJJsY7/++K0VFr1ZxOa9WzMSk84zDt3L5I5M9952AV7RXN9JWkP+CFePDo/aiAxza
+ vxqA==
+X-Gm-Message-State: APjAAAVy9ljej7bHb7UusGSKzbF5aMc6lzvgfURNS2YHxzAJHpHPza4f
+ A+JF3b8TJy4pAhFN7MiUag3R+w==
+X-Google-Smtp-Source: APXvYqy/e8jWrTjkXr2HY+OkVTrZXl8KRtvIPL5iL9prazJwu6GqRHfncrGgKjSWy6Dh2gzsPrnj6A==
+X-Received: by 2002:adf:f5cb:: with SMTP id k11mr34513767wrp.63.1582107738038; 
+ Wed, 19 Feb 2020 02:22:18 -0800 (PST)
 Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
- by smtp.gmail.com with ESMTPSA id s23sm2370339wra.15.2020.02.19.02.22.15
+ by smtp.gmail.com with ESMTPSA id s23sm2370339wra.15.2020.02.19.02.22.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 02:22:16 -0800 (PST)
+ Wed, 19 Feb 2020 02:22:17 -0800 (PST)
 From: Daniel Vetter <daniel.vetter@ffwll.ch>
 To: DRI Development <dri-devel@lists.freedesktop.org>
-Subject: [PATCH 38/52] drm/rockchip: Drop explicit drm_mode_config_cleanup call
-Date: Wed, 19 Feb 2020 11:21:08 +0100
-Message-Id: <20200219102122.1607365-39-daniel.vetter@ffwll.ch>
+Subject: [PATCH 39/52] drm/stm: Drop explicit drm_mode_config_cleanup call
+Date: Wed, 19 Feb 2020 11:21:09 +0100
+Message-Id: <20200219102122.1607365-40-daniel.vetter@ffwll.ch>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200219102122.1607365-1-daniel.vetter@ffwll.ch>
 References: <20200219102122.1607365-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_022218_577418_33613CF8 
-X-CRM114-Status: GOOD (  13.75  )
+X-CRM114-CacheID: sfid-20200219_022220_932257_1D68640B 
+X-CRM114-Status: GOOD (  13.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -93,46 +93,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?Heiko=20St=C3=BCbner?= <heiko@sntech.de>,
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>,
  Daniel Vetter <daniel.vetter@ffwll.ch>,
  Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
- Sandy Huang <hjc@rock-chips.com>, linux-rockchip@lists.infradead.org,
- Daniel Vetter <daniel.vetter@intel.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Philippe Cornu <philippe.cornu@st.com>, Yannick Fertre <yannick.fertre@st.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Daniel Vetter <daniel.vetter@intel.com>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SXQncyAoYWxtb3N0LCB0aGVyZSdzIHNvbWUgaW9tbXUgc3R1ZmYgd2l0aG91dCBzaWduaWZpY2Fu
-Y2UpIHJpZ2h0CmFib3ZlIHRoZSBkcm1fZGV2X3B1dCgpLgoKQXNpZGU6IEFub3RoZXIgZHJpdmVy
-IHdpdGggYSBiaXQgbXVjaCBkZXZtX2t6YWxsb2MsIHdoaWNoIHNob3VsZApwcm9iYWJseSB1c2Ug
-ZHJtbV9remFsbG9jIGluc3RlYWQgLi4uCgpTaWduZWQtb2ZmLWJ5OiBEYW5pZWwgVmV0dGVyIDxk
-YW5pZWwudmV0dGVyQGludGVsLmNvbT4KQ2M6IFNhbmR5IEh1YW5nIDxoamNAcm9jay1jaGlwcy5j
-b20+CkNjOiAiSGVpa28gU3TDvGJuZXIiIDxoZWlrb0BzbnRlY2guZGU+CkNjOiBsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKQ2M6IGxpbnV4LXJvY2tjaGlwQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKLS0tCiBkcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBfZHJtX2Rydi5j
-IHwgMTAgKysrLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgNyBkZWxl
-dGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vcm9ja2NoaXAvcm9ja2NoaXBf
-ZHJtX2Rydi5jIGIvZHJpdmVycy9ncHUvZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2RybV9kcnYuYwpp
-bmRleCAyMGVjYjE1MDhhMjIuLmQwZWJhMjFlZWJjOSAxMDA2NDQKLS0tIGEvZHJpdmVycy9ncHUv
-ZHJtL3JvY2tjaGlwL3JvY2tjaGlwX2RybV9kcnYuYworKysgYi9kcml2ZXJzL2dwdS9kcm0vcm9j
-a2NoaXAvcm9ja2NoaXBfZHJtX2Rydi5jCkBAIC0xMzUsNyArMTM1LDkgQEAgc3RhdGljIGludCBy
-b2NrY2hpcF9kcm1fYmluZChzdHJ1Y3QgZGV2aWNlICpkZXYpCiAJaWYgKHJldCkKIAkJZ290byBl
-cnJfZnJlZTsKIAotCWRybV9tb2RlX2NvbmZpZ19pbml0KGRybV9kZXYpOworCXJldCA9IGRybV9t
-b2RlX2NvbmZpZ19pbml0KGRybV9kZXYpOworCWlmIChyZXQpCisJCWdvdG8gZXJyX2ZyZWU7CiAK
-IAlyb2NrY2hpcF9kcm1fbW9kZV9jb25maWdfaW5pdChkcm1fZGV2KTsKIApAQCAtMTc0LDExICsx
-NzYsOCBAQCBzdGF0aWMgaW50IHJvY2tjaGlwX2RybV9iaW5kKHN0cnVjdCBkZXZpY2UgKmRldikK
-IGVycl91bmJpbmRfYWxsOgogCWNvbXBvbmVudF91bmJpbmRfYWxsKGRldiwgZHJtX2Rldik7CiBl
-cnJfbW9kZV9jb25maWdfY2xlYW51cDoKLQlkcm1fbW9kZV9jb25maWdfY2xlYW51cChkcm1fZGV2
-KTsKIAlyb2NrY2hpcF9pb21tdV9jbGVhbnVwKGRybV9kZXYpOwogZXJyX2ZyZWU6Ci0JZHJtX2Rl
-di0+ZGV2X3ByaXZhdGUgPSBOVUxMOwotCWRldl9zZXRfZHJ2ZGF0YShkZXYsIE5VTEwpOwogCWRy
-bV9kZXZfcHV0KGRybV9kZXYpOwogCXJldHVybiByZXQ7CiB9CkBAIC0xOTQsMTEgKzE5Myw4IEBA
-IHN0YXRpYyB2b2lkIHJvY2tjaGlwX2RybV91bmJpbmQoc3RydWN0IGRldmljZSAqZGV2KQogCiAJ
-ZHJtX2F0b21pY19oZWxwZXJfc2h1dGRvd24oZHJtX2Rldik7CiAJY29tcG9uZW50X3VuYmluZF9h
-bGwoZGV2LCBkcm1fZGV2KTsKLQlkcm1fbW9kZV9jb25maWdfY2xlYW51cChkcm1fZGV2KTsKIAly
-b2NrY2hpcF9pb21tdV9jbGVhbnVwKGRybV9kZXYpOwogCi0JZHJtX2Rldi0+ZGV2X3ByaXZhdGUg
-PSBOVUxMOwotCWRldl9zZXRfZHJ2ZGF0YShkZXYsIE5VTEwpOwogCWRybV9kZXZfcHV0KGRybV9k
-ZXYpOwogfQogCi0tIAoyLjI0LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+It's right above the drm_dev_put().
+
+Aside: Another driver with a bit much devm_kzalloc, which should
+probably use drmm_kzalloc instead ...
+
+Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+Cc: Yannick Fertre <yannick.fertre@st.com>
+Cc: Philippe Cornu <philippe.cornu@st.com>
+Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Cc: Vincent Abriou <vincent.abriou@st.com>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+---
+ drivers/gpu/drm/stm/drv.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/gpu/drm/stm/drv.c b/drivers/gpu/drm/stm/drv.c
+index ea9fcbdc68b3..5b374531dd8c 100644
+--- a/drivers/gpu/drm/stm/drv.c
++++ b/drivers/gpu/drm/stm/drv.c
+@@ -88,7 +88,9 @@ static int drv_load(struct drm_device *ddev)
+ 
+ 	ddev->dev_private = (void *)ldev;
+ 
+-	drm_mode_config_init(ddev);
++	ret = drm_mode_config_init(ddev);
++	if (ret)
++		return ret;
+ 
+ 	/*
+ 	 * set max width and height as default value.
+@@ -103,7 +105,7 @@ static int drv_load(struct drm_device *ddev)
+ 
+ 	ret = ltdc_load(ddev);
+ 	if (ret)
+-		goto err;
++		return ret;
+ 
+ 	drm_mode_config_reset(ddev);
+ 	drm_kms_helper_poll_init(ddev);
+@@ -111,9 +113,6 @@ static int drv_load(struct drm_device *ddev)
+ 	platform_set_drvdata(pdev, ddev);
+ 
+ 	return 0;
+-err:
+-	drm_mode_config_cleanup(ddev);
+-	return ret;
+ }
+ 
+ static void drv_unload(struct drm_device *ddev)
+@@ -122,7 +121,6 @@ static void drv_unload(struct drm_device *ddev)
+ 
+ 	drm_kms_helper_poll_fini(ddev);
+ 	ltdc_unload(ddev);
+-	drm_mode_config_cleanup(ddev);
+ }
+ 
+ static __maybe_unused int drv_suspend(struct device *dev)
+-- 
+2.24.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
