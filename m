@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D189165068
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 21:57:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3506816506F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 21:58:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=7U62H82eBBdYbPDv4uxpexp6ZQO7PqZzQoOxReqoxSU=; b=YkR
-	z45QsVJHGbVzKIBjJyHDdCJfDZZ635C+gRXYc3mH+vQc2RJnWYGNZyP/aPrhyxa0QaQBFt8S++41p
-	jRFxkt3vievHfvAddrLgP4txIAqLCXJ5ZHQttrU56sB9n7ScLFaF0KkmSTRRwgWMmrFfFkxy2CYjA
-	L2G1LCaP77vXj7mKCmFWh7/r5haRE9ofyymt5d3W+w3la6he/2S6E1yRJ8SJL0J1HVrKHLyQvJHLh
-	37ktbkPQAnSb6+ui+5aLv6lVmtEGUKzDtdPkd+6X5pHG8XgdWMEqjJUvvOOfGkDcF+Cqh+uXhUtXd
-	eyYoySr/fSc+AcToDdeQmF93rWFioog==;
+	References:List-Owner; bh=3n6Ge3D6PhkXQpxVj59YHmOKVeONOKlf03dxPqucZ00=; b=MLO
+	etG6PJm/QcshkbmDWfgO7uqSsFaO3BvdsCJxJCAUOi05Wuw1fuPnyBQmxjkhzvCptLnaZxv1+hEUs
+	nmSMxM5e5pU3mSqm1i3EFIK5atW8YbtqVmxiYwd2vbAe0cXeMnfTvpiRBkljC5s2eGD59Fe0gy5qf
+	CNSf+vrLsLYKkcP5cNyHN3EZvQTSOADQ88ECBkNTz7tADXYP1j/Di9q/dCtuhK8+kQHrMpS1ikGV8
+	4Owl2WZ3w4irGFUsEUDOjwHr9tjVFVdP7WuLmmcVXXYl3gS+lSiCU6Xxy7OqLeI6DtvL+l2k5Ha96
+	uiGVxoXBOxfaqh3ubvL0sec7K9S71Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4WPI-0005if-Mo; Wed, 19 Feb 2020 20:57:20 +0000
+	id 1j4WQA-0006Cy-QF; Wed, 19 Feb 2020 20:58:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4WP8-0005hO-Qh; Wed, 19 Feb 2020 20:57:12 +0000
+ id 1j4WPz-0006BA-Px
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 20:58:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2F106FEC;
- Wed, 19 Feb 2020 12:57:10 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D5892FEC;
+ Wed, 19 Feb 2020 12:58:02 -0800 (PST)
 Received: from localhost (unknown [10.37.6.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A63AE3F68F;
- Wed, 19 Feb 2020 12:57:09 -0800 (PST)
-Date: Wed, 19 Feb 2020 20:57:08 +0000
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A06E3F68F;
+ Wed, 19 Feb 2020 12:58:02 -0800 (PST)
+Date: Wed, 19 Feb 2020 20:58:00 +0000
 From: Mark Brown <broonie@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Applied "ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit" to
- the asoc tree
-In-Reply-To: <5bc383ed1832f0f5d1dcb3c97ad92fd68e5217e3.1581376744.git.robin.murphy@arm.com>
-Message-Id: <applied-5bc383ed1832f0f5d1dcb3c97ad92fd68e5217e3.1581376744.git.robin.murphy@arm.com>
+To: Jeff Chang <jeff_chang@richtek.com>
+Subject: Applied "ASoC: MT6660 update to 1.0.8_G" to the asoc tree
+In-Reply-To: <1582103064-25088-1-git-send-email-richtek.jeff.chang@gmail.com>
+Message-Id: <applied-1582103064-25088-1-git-send-email-richtek.jeff.chang@gmail.com>
 X-Patchwork-Hint: ignore
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_125710_954266_D13F6B4D 
-X-CRM114-Status: GOOD (  19.55  )
+X-CRM114-CacheID: sfid-20200219_125803_933624_53F9803D 
+X-CRM114-Status: GOOD (  17.97  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -62,9 +62,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org, heiko@sntech.de,
- lgirdwood@gmail.com, linux-rockchip@lists.infradead.org,
- Mark Brown <broonie@kernel.org>, pgwipeout@gmail.com,
+Cc: alsa-devel@alsa-project.org, richtek.jeff.chang@gmail.com, tiwai@suse.com,
+ lgirdwood@gmail.com, linux-kernel@vger.kernel.org, matthias.bgg@gmail.com,
+ Mark Brown <broonie@kernel.org>, jeff_chang@richtek.com,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -74,7 +74,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit
+   ASoC: MT6660 update to 1.0.8_G
 
 has been applied to the asoc tree at
 
@@ -99,111 +99,127 @@ to this mail.
 Thanks,
 Mark
 
-From 87d12d5545fa72d67d99d797cdb464c0c7efb9c9 Mon Sep 17 00:00:00 2001
-From: Robin Murphy <robin.murphy@arm.com>
-Date: Tue, 18 Feb 2020 21:31:59 +0000
-Subject: [PATCH] ASoC: rockchip: Make RK3328 GPIO_MUTE control explicit
+From eaa2330bfcbf1d600776e219c5d2080f36a3c59c Mon Sep 17 00:00:00 2001
+From: Jeff Chang <jeff_chang@richtek.com>
+Date: Wed, 19 Feb 2020 17:04:24 +0800
+Subject: [PATCH] ASoC: MT6660 update to 1.0.8_G
 
-The RK3328 reference design uses an external line driver IC as a buffer
-on the analog codec output, enabled by the GPIO_MUTE pin, and such a
-configuration is currently assumed in the codec driver's direct poking
-of GRF_SOC_CON10 to control the GPIO_MUTE output value. However, some
-boards wire up analog audio yet use that pin for some other purpose, so
-that assumption doesn't always hold. Update this functionality to rely
-on an explicit GPIO descriptor, such that it can be managed at the
-board level.
+1. add mt6660_component_settign for Component INIT Setting
 
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-Link: https://lore.kernel.org/r/5bc383ed1832f0f5d1dcb3c97ad92fd68e5217e3.1581376744.git.robin.murphy@arm.com
+Signed-off-by: Jeff Chang <jeff_chang@richtek.com>
+Link: https://lore.kernel.org/r/1582103064-25088-1-git-send-email-richtek.jeff.chang@gmail.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/codecs/rk3328_codec.c | 31 ++++++++++++++++---------------
- 1 file changed, 16 insertions(+), 15 deletions(-)
+ sound/soc/codecs/mt6660.c | 78 +++++++++++++++++++++++++++++++++++++--
+ 1 file changed, 75 insertions(+), 3 deletions(-)
 
-diff --git a/sound/soc/codecs/rk3328_codec.c b/sound/soc/codecs/rk3328_codec.c
-index 287c962ba00d..115706a55577 100644
---- a/sound/soc/codecs/rk3328_codec.c
-+++ b/sound/soc/codecs/rk3328_codec.c
-@@ -7,6 +7,7 @@
- #include <linux/clk.h>
+diff --git a/sound/soc/codecs/mt6660.c b/sound/soc/codecs/mt6660.c
+index 1a3515df1764..bcec82aa57fb 100644
+--- a/sound/soc/codecs/mt6660.c
++++ b/sound/soc/codecs/mt6660.c
+@@ -8,7 +8,6 @@
+ #include <linux/i2c.h>
+ #include <linux/pm_runtime.h>
  #include <linux/delay.h>
- #include <linux/device.h>
-+#include <linux/gpio/consumer.h>
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/platform_device.h>
-@@ -31,7 +32,7 @@
- 
- struct rk3328_codec_priv {
- 	struct regmap *regmap;
--	struct regmap *grf;
-+	struct gpio_desc *mute;
- 	struct clk *mclk;
- 	struct clk *pclk;
- 	unsigned int sclk;
-@@ -106,16 +107,6 @@ static int rk3328_set_dai_fmt(struct snd_soc_dai *dai, unsigned int fmt)
- 	return 0;
+-#include <linux/debugfs.h>
+ #include <sound/soc.h>
+ #include <sound/tlv.h>
+ #include <sound/pcm_params.h>
+@@ -224,14 +223,87 @@ static int _mt6660_chip_power_on(struct mt6660_chip *chip, int on_off)
+ 				 0x01, on_off ? 0x00 : 0x01);
  }
  
--static void rk3328_analog_output(struct rk3328_codec_priv *rk3328, int mute)
--{
--	unsigned int val = BIT(17);
--
--	if (mute)
--		val |= BIT(1);
--
--	regmap_write(rk3328->grf, RK3328_GRF_SOC_CON10, val);
--}
--
- static int rk3328_digital_mute(struct snd_soc_dai *dai, int mute)
- {
- 	struct rk3328_codec_priv *rk3328 =
-@@ -205,7 +196,7 @@ static int rk3328_codec_open_playback(struct rk3328_codec_priv *rk3328)
- 	}
- 
- 	msleep(rk3328->spk_depop_time);
--	rk3328_analog_output(rk3328, 1);
-+	gpiod_set_value(rk3328->mute, 0);
- 
- 	regmap_update_bits(rk3328->regmap, HPOUTL_GAIN_CTRL,
- 			   HPOUTL_GAIN_MASK, OUT_VOLUME);
-@@ -246,7 +237,7 @@ static int rk3328_codec_close_playback(struct rk3328_codec_priv *rk3328)
- {
- 	size_t i;
- 
--	rk3328_analog_output(rk3328, 0);
-+	gpiod_set_value(rk3328->mute, 1);
- 
- 	regmap_update_bits(rk3328->regmap, HPOUTL_GAIN_CTRL,
- 			   HPOUTL_GAIN_MASK, 0);
-@@ -446,7 +437,6 @@ static int rk3328_platform_probe(struct platform_device *pdev)
- 		dev_err(&pdev->dev, "missing 'rockchip,grf'\n");
- 		return PTR_ERR(grf);
- 	}
--	rk3328->grf = grf;
- 	/* enable i2s_acodec_en */
- 	regmap_write(grf, RK3328_GRF_SOC_CON2,
- 		     (BIT(14) << 16 | BIT(14)));
-@@ -458,7 +448,18 @@ static int rk3328_platform_probe(struct platform_device *pdev)
- 		rk3328->spk_depop_time = 200;
- 	}
- 
--	rk3328_analog_output(rk3328, 0);
-+	rk3328->mute = gpiod_get_optional(&pdev->dev, "mute", GPIOD_OUT_HIGH);
-+	if (IS_ERR(rk3328->mute))
-+		return PTR_ERR(rk3328->mute);
-+	/*
-+	 * Rock64 is the only supported platform to have widely relied on
-+	 * this; if we do happen to come across an old DTB, just leave the
-+	 * external mute forced off.
-+	 */
-+	if (!rk3328->mute && of_machine_is_compatible("pine64,rock64")) {
-+		dev_warn(&pdev->dev, "assuming implicit control of GPIO_MUTE; update devicetree if possible\n");
-+		regmap_write(grf, RK3328_GRF_SOC_CON10, BIT(17) | BIT(1));
++struct reg_table {
++	uint32_t addr;
++	uint32_t mask;
++	uint32_t val;
++};
++
++static const struct reg_table mt6660_setting_table[] = {
++	{ 0x20, 0x80, 0x00 },
++	{ 0x30, 0x01, 0x00 },
++	{ 0x50, 0x1c, 0x04 },
++	{ 0xB1, 0x0c, 0x00 },
++	{ 0xD3, 0x03, 0x03 },
++	{ 0xE0, 0x01, 0x00 },
++	{ 0x98, 0x44, 0x04 },
++	{ 0xB9, 0xff, 0x82 },
++	{ 0xB7, 0x7777, 0x7273 },
++	{ 0xB6, 0x07, 0x03 },
++	{ 0x6B, 0xe0, 0x20 },
++	{ 0x07, 0xff, 0x70 },
++	{ 0xBB, 0xff, 0x20 },
++	{ 0x69, 0xff, 0x40 },
++	{ 0xBD, 0xffff, 0x17f8 },
++	{ 0x70, 0xff, 0x15 },
++	{ 0x7C, 0xff, 0x00 },
++	{ 0x46, 0xff, 0x1d },
++	{ 0x1A, 0xffffffff, 0x7fdb7ffe },
++	{ 0x1B, 0xffffffff, 0x7fdb7ffe },
++	{ 0x51, 0xff, 0x58 },
++	{ 0xA2, 0xff, 0xce },
++	{ 0x33, 0xffff, 0x7fff },
++	{ 0x4C, 0xffff, 0x0116 },
++	{ 0x16, 0x1800, 0x0800 },
++	{ 0x68, 0x1f, 0x07 },
++};
++
++static int mt6660_component_setting(struct snd_soc_component *component)
++{
++	struct mt6660_chip *chip = snd_soc_component_get_drvdata(component);
++	int ret = 0;
++	size_t i = 0;
++
++	ret = _mt6660_chip_power_on(chip, 1);
++	if (ret < 0) {
++		dev_err(component->dev, "%s chip power on failed\n", __func__);
++		return ret;
 +	}
++
++	for (i = 0; i < ARRAY_SIZE(mt6660_setting_table); i++) {
++		ret = snd_soc_component_update_bits(component,
++				mt6660_setting_table[i].addr,
++				mt6660_setting_table[i].mask,
++				mt6660_setting_table[i].val);
++		if (ret < 0) {
++			dev_err(component->dev, "%s update 0x%02x failed\n",
++				__func__, mt6660_setting_table[i].addr);
++			return ret;
++		}
++	}
++
++	ret = _mt6660_chip_power_on(chip, 0);
++	if (ret < 0) {
++		dev_err(component->dev, "%s chip power off failed\n", __func__);
++		return ret;
++	}
++
++	return 0;
++}
++
+ static int mt6660_component_probe(struct snd_soc_component *component)
+ {
+ 	struct mt6660_chip *chip = snd_soc_component_get_drvdata(component);
++	int ret;
  
- 	rk3328->mclk = devm_clk_get(&pdev->dev, "mclk");
- 	if (IS_ERR(rk3328->mclk))
+ 	dev_dbg(component->dev, "%s\n", __func__);
+ 	snd_soc_component_init_regmap(component, chip->regmap);
+ 
+-	return 0;
++	ret = mt6660_component_setting(component);
++	if (ret < 0)
++		dev_err(chip->dev, "mt6660 component setting failed\n");
++
++	return ret;
+ }
+ 
+ static void mt6660_component_remove(struct snd_soc_component *component)
+@@ -505,4 +577,4 @@ module_i2c_driver(mt6660_i2c_driver);
+ MODULE_AUTHOR("Jeff Chang <jeff_chang@richtek.com>");
+ MODULE_DESCRIPTION("MT6660 SPKAMP Driver");
+ MODULE_LICENSE("GPL");
+-MODULE_VERSION("1.0.7_G");
++MODULE_VERSION("1.0.8_G");
 -- 
 2.20.1
 
