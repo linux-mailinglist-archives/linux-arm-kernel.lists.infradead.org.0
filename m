@@ -2,86 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB5C5164527
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 14:18:07 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6BE3164541
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 14:24:55 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bcdTllPTirVJxQV2W+PdQRBuUD2smytWXoG0y2asYyA=; b=EugQwKjCPNwlVX9EajH/IUGBs
-	H3U6BpbNqTGPjFZ5t8ZU8yq4z59SkfcxMZfBogrtv1+d7/1bzqN0SXhwd0/16wuM1JM5O+pQxZ9CK
-	0mKg3n+pdVblM8iVGweJqSXoxyOxTZgLONuOEFValluqpUJ6eejBPfTjr7WU6zTSrWX+1O69N1nAg
-	w0z8417sZ/b7n+g52XLxQ+5dEhHbD6kJaWWfOtCe7mLpL+Yff/Aq52z/8f7/38WN0/+LZYejSG8Sq
-	TIldLUuLvx1VbRxP7KV3XQhNG1MfSiFL3hHKZMESezod7gFURNzv4ixrmBrOI0ikm/2ogfw46UVpY
-	tlt+UN5Gg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ATOdSczEbkfElQXu4rjE/UtyFd4+ZMliSi4NVRSm19w=; b=hwiVfuGETN7xrm
+	njb945SZKwd2SFkWkBvNcMBuVg3MXKJYnmrhn5qzgcrvMo1P2lwRJBmlmRd81ip2V26XRHpnNM7mA
+	Z7PfRiBsyH6dgjBChQyO5lrhkS8QEQk7ixFDuTqdIMfM3mzOIINqBEx92qbPu5kNVnP/N7RXyOvMF
+	nwO3KhRndGQtzBCQ/MlbDbakqFxhuSD5dd6NHinE+AtQSK9naB1ETjTA+14MUlf1FBxXSRlVAH9XM
+	pv6dPRrpuiCt2jfm0srIgAuZvZ6tPSjtTN+JlsdBt5I5Q5+OA2xdwa7MxTbY/OzIiql45eNUL1DuU
+	mZSNgBbqaKiB/AEymGEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4PEr-0000d5-0g; Wed, 19 Feb 2020 13:18:05 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1j4PLQ-0002NZ-W2; Wed, 19 Feb 2020 13:24:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4PEj-0000cH-0O
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 13:17:58 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01JDE98i013103; Wed, 19 Feb 2020 14:17:41 +0100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=zifsjtq8jgW/VpIDS+qc8/zgoiL+Ci7sDrNfN7sef08=;
- b=te5G1smDpNOhPSlD+LLVY/1ijJNoOY1sRCQFnyTh7je65xUWwx5mkF8EQgsjhVcOn6j5
- U7d87r9UfnJJFcyO3+4aoujeY4Ld0GBabd665tb+afBx7W4fcmGNan/2/shRsrZlQMB8
- nlbe1nKZ34NuV14k1eOXfi1bACWdpWIy/pb5l04fX5xwBXL6R9CFz+Ucjn6tj7VLyfEW
- Pj2zMN9e6nhvnHr6XVamGnuPi3IqdFi7ZTHYFpJIcqa4HM/zK9k9RpTfM7lorirbH8Me
- LVN0lkmJcdaZhFWloStXUvNpze34lvH8JttQEl4kyUOnwGAs9a+RggPqYIkjA68m/G/P 7Q== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2y8ub5k72h-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 19 Feb 2020 14:17:41 +0100
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2A8BC10002A;
- Wed, 19 Feb 2020 14:17:38 +0100 (CET)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 169002B8970;
- Wed, 19 Feb 2020 14:17:38 +0100 (CET)
-Received: from lmecxl0912.lme.st.com (10.75.127.47) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 19 Feb
- 2020 14:17:36 +0100
-Subject: Re: [PATCH v2 1/2] irqchip/stm32: Add irq retrigger support
-To: Marc Zyngier <maz@kernel.org>
-References: <20200218131218.10789-1-alexandre.torgue@st.com>
- <20200218131218.10789-2-alexandre.torgue@st.com>
- <16d27f75-8157-7a92-ae61-b5b3ab05bdd9@st.com>
- <608d9c84813323ee3839f6ac21aa8f4e@kernel.org>
- <ae69e38a-78f9-ca68-c48c-86275e41b3bb@st.com>
- <10cabf9edf901fb148a1a2a5e2448845@kernel.org>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <716c20a0-bc18-8bb5-b380-14046a384a98@st.com>
-Date: Wed, 19 Feb 2020 14:17:35 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j4PLF-0002N6-Uf
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 13:24:43 +0000
+Received: from hump (unknown [147.67.241.226])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 02D8B24654;
+ Wed, 19 Feb 2020 13:24:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582118681;
+ bh=WeK8iDiz+u7KGQl8xdyYvIuPvj8pRW13k3gZGmGmUOU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=CrDKTg0KsoKO1U07yyagx89/mJ6hieOjLuM/lo6w3mB9Y9R+aQAidXZSv/ywuM3au
+ r4bYkFE2ZGGFM/SSIBeOb3LJun+6yquvbVIUq2PH+U+U65CCtHToRoSUxXZ4LnlfNf
+ XO/4CZv966+4qxBk+L+tbRqcMNDfbzR2x3+83oH0=
+Date: Wed, 19 Feb 2020 14:24:20 +0100
+From: Mike Rapoport <rppt@kernel.org>
+To: Christophe Leroy <christophe.leroy@c-s.fr>
+Subject: Re: [PATCH v2 07/13] powerpc: add support for folded p4d page tables
+Message-ID: <20200219132420.GA5559@hump>
+References: <20200216081843.28670-1-rppt@kernel.org>
+ <20200216081843.28670-8-rppt@kernel.org>
+ <5b7c3929-5833-8ceb-85c8-a8e92e6a138e@c-s.fr>
 MIME-Version: 1.0
-In-Reply-To: <10cabf9edf901fb148a1a2a5e2448845@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-19_03:2020-02-19,
- 2020-02-19 signatures=0
+Content-Disposition: inline
+In-Reply-To: <5b7c3929-5833-8ceb-85c8-a8e92e6a138e@c-s.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_051757_490791_56FAB9C0 
-X-CRM114-Status: GOOD (  19.06  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200219_052442_037963_7694620E 
+X-CRM114-Status: GOOD (  15.66  )
+X-Spam-Score: -3.7 (---)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-3.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [147.67.241.226 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -91,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,56 +79,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marex@denx.de, Jason Cooper <jason@lakedaemon.net>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>, linux-sh@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, linux-hexagon@vger.kernel.org,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Jonas Bonn <jonas@southpole.se>, linux-arch@vger.kernel.org,
+ Brian Cain <bcain@codeaurora.org>, Marc Zyngier <maz@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
+ Mike Rapoport <rppt@linux.ibm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ uclinux-h8-devel@lists.sourceforge.jp, Fenghua Yu <fenghua.yu@intel.com>,
+ Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ kvm-ppc@vger.kernel.org,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ openrisc@lists.librecores.org, Stafford Horne <shorne@gmail.com>,
+ Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
+ Tony Luck <tony.luck@intel.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Michael Ellerman <mpe@ellerman.id.au>, nios2-dev@lists.rocketboards.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAyLzE5LzIwIDI6MTMgUE0sIE1hcmMgWnluZ2llciB3cm90ZToKPiBPbiAyMDIwLTAyLTE5
-IDEzOjA3LCBBbGV4YW5kcmUgVG9yZ3VlIHdyb3RlOgo+PiBPbiAyLzE5LzIwIDEyOjQzIFBNLCBN
-YXJjIFp5bmdpZXIgd3JvdGU6Cj4+PiBPbiAyMDIwLTAyLTE5IDExOjMzLCBBbGV4YW5kcmUgVG9y
-Z3VlIHdyb3RlOgo+Pj4+IEZpeCBNYXJjIGVtYWlsIGFkZHJlc3MKPj4+Pgo+Pj4+IE9uIDIvMTgv
-MjAgMjoxMiBQTSwgQWxleGFuZHJlIFRvcmd1ZSB3cm90ZToKPj4+Pj4gVGhpcyBjb21taXQgaW50
-cm9kdWNlcyByZXRyaWdnZXIgc3VwcG9ydCBmb3Igc3RtMzJfZXh0X2ggY2hpcC4KPj4+Pj4gSXQg
-Y29uc2lzdHMgdG8gcmlzZSB0aGUgR0lDIGludGVycnVwdCBtYXBwZWQgdG8gYW4gRVhUSSBsaW5l
-Lgo+Pj4+Pgo+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBBbGV4YW5kcmUgVG9yZ3VlIDxhbGV4YW5kcmUu
-dG9yZ3VlQHN0LmNvbT4KPj4+Pj4KPj4+Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaXJxY2hpcC9p
-cnEtc3RtMzItZXh0aS5jIAo+Pj4+PiBiL2RyaXZlcnMvaXJxY2hpcC9pcnEtc3RtMzItZXh0aS5j
-Cj4+Pj4+IGluZGV4IGUwMGYyZmEyN2YwMC4uYzk3MWQxMTVlZGI0IDEwMDY0NAo+Pj4+PiAtLS0g
-YS9kcml2ZXJzL2lycWNoaXAvaXJxLXN0bTMyLWV4dGkuYwo+Pj4+PiArKysgYi9kcml2ZXJzL2ly
-cWNoaXAvaXJxLXN0bTMyLWV4dGkuYwo+Pj4+PiBAQCAtNjA0LDEyICs2MDQsMjQgQEAgc3RhdGlj
-IHZvaWQgc3RtMzJfZXh0aV9oX3N5c2NvcmVfZGVpbml0KHZvaWQpCj4+Pj4+IMKgwqDCoMKgwqAg
-dW5yZWdpc3Rlcl9zeXNjb3JlX29wcygmc3RtMzJfZXh0aV9oX3N5c2NvcmVfb3BzKTsKPj4+Pj4g
-wqAgfQo+Pj4+PiDCoCArc3RhdGljIGludCBzdG0zMl9leHRpX2hfcmV0cmlnZ2VyKHN0cnVjdCBp
-cnFfZGF0YSAqZCkKPj4+Pj4gK3sKPj4+Pj4gK8KgwqDCoCBzdHJ1Y3Qgc3RtMzJfZXh0aV9jaGlw
-X2RhdGEgKmNoaXBfZGF0YSA9IAo+Pj4+PiBpcnFfZGF0YV9nZXRfaXJxX2NoaXBfZGF0YShkKTsK
-Pj4+Pj4gK8KgwqDCoCBjb25zdCBzdHJ1Y3Qgc3RtMzJfZXh0aV9iYW5rICpzdG0zMl9iYW5rID0g
-Y2hpcF9kYXRhLT5yZWdfYmFuazsKPj4+Pj4gK8KgwqDCoCB2b2lkIF9faW9tZW0gKmJhc2UgPSBj
-aGlwX2RhdGEtPmhvc3RfZGF0YS0+YmFzZTsKPj4+Pj4gK8KgwqDCoCB1MzIgbWFzayA9IEJJVChk
-LT5od2lycSAlIElSUVNfUEVSX0JBTkspOwo+Pj4+PiArCj4+Pj4+ICvCoMKgwqAgd3JpdGVsX3Jl
-bGF4ZWQobWFzaywgYmFzZSArIHN0bTMyX2JhbmstPnN3aWVyX29mc3QpOwo+Pj4+PiArCj4+Pj4+
-ICvCoMKgwqAgcmV0dXJuIGlycV9jaGlwX3JldHJpZ2dlcl9oaWVyYXJjaHkoZCk7Cj4+Pgo+Pj4g
-Q2FsbGluZyBpcnFfY2hpcF9yZXRyaWdnZXJfaGllcmFyY2h5IGhlcmUgaXMgcmVhbGx5IG9kZC4g
-SWYgdGhlIHdyaXRlCj4+PiBhYm92ZSBoYXMgdGhlIGVmZmVjdCBvZiBtYWtpbmcgdGhlIGludGVy
-cnVwdCBwZW5kaW5nIGFnYWluLCB3aHkgZG8geW91Cj4+PiBuZWVkIHRvIGZvcmNlIHRoZSByZXRy
-aWdnZXIgYW55IGZ1cnRoZXI/Cj4+Cj4+IFRvIGJlIGhvbmVzdCwgYXMgd2UgdXNlIGhpZXJhcmNo
-aWNhbCBpcnFfY2hpcCwgSSB0aG91Z2h0IGl0IHdhcyB0aGUKPj4gd2F5IHRvIGZvbGxvdyAodG8g
-cmV0cmlnZ2VyIHBhcmVudCBpcnFfY2hpcCkuIEl0IG1ha2VzIG1heWJlIG5vIHNlbnMKPj4gaGVy
-ZS4KPiAKPiBJbmRlZWQsIGl0IGxvb2tzIHBlcmZlY3RseSBwb2ludGxlc3MuIFdoYXQgaXJxX2No
-aXBfcmV0cmlnZ2VyX2hpZXJhcmNoeSgpCj4gZG9lcyBpcyB0byBsb29rIGZvciB0aGUgZmlyc3Qg
-cGFyZW50IGlycWNoaXAgdGhhdCBpcyBhYmxlIHRvIHJldHJpZ2dlcgo+IHRoZSBpbnRlcnJ1cHQu
-IEd1ZXNzIHdoYXQsIHlvdSd2ZSBqdXN0IGRvbmUgdGhhdCBhbHJlYWR5LiBBbmQgb25jZSB5b3Un
-dmUKPiBnZW5lcmF0ZWQgdGhlIGludGVycnVwdCwgeW91IGRvbid0IG5lZWQgdG8gYXNrIHRoZSBv
-dGhlciBpcnFjaGlwcyBpbiB0aGUKPiBjaGFpbiB0byBkbyB0aGUgc2FtZSB0aGluZy4KCkkgYWdy
-ZWUuIEkgZ29ubmEgcmVtb3ZlIGl0IHYzLgoKVGhhbmtzIGZvciB0aGUgZmVlYmFjay4KQWxleAoK
-Pj4gVGhlIG1vc3QgaW1wb3J0YW50IHRvIHJlZ2VuZXJhdGUgZ2ljIGludGVycnVwdCAoYXNzb2Np
-YXRlIHRvIHRoZSBleHRpCj4+IGxpbmUpIGlzIHRvIHdyaXRlIGluIFNXSUVSIHJlZ2lzdGVyLgo+
-IAo+IFF1aXRlLiBIZW5jZSBteSBxdWVzdGlvbi4KPiAKPiAgwqDCoMKgwqDCoMKgwqAgTS4KCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+On Wed, Feb 19, 2020 at 01:07:55PM +0100, Christophe Leroy wrote:
+> =
+
+> Le 16/02/2020 =E0 09:18, Mike Rapoport a =E9crit=A0:
+> > diff --git a/arch/powerpc/mm/ptdump/ptdump.c b/arch/powerpc/mm/ptdump/p=
+tdump.c
+> > index 206156255247..7bd4b81d5b5d 100644
+> > --- a/arch/powerpc/mm/ptdump/ptdump.c
+> > +++ b/arch/powerpc/mm/ptdump/ptdump.c
+> > @@ -277,9 +277,9 @@ static void walk_pmd(struct pg_state *st, pud_t *pu=
+d, unsigned long start)
+> >   	}
+> >   }
+> > -static void walk_pud(struct pg_state *st, pgd_t *pgd, unsigned long st=
+art)
+> > +static void walk_pud(struct pg_state *st, p4d_t *p4d, unsigned long st=
+art)
+> >   {
+> > -	pud_t *pud =3D pud_offset(pgd, 0);
+> > +	pud_t *pud =3D pud_offset(p4d, 0);
+> >   	unsigned long addr;
+> >   	unsigned int i;
+> > @@ -293,6 +293,22 @@ static void walk_pud(struct pg_state *st, pgd_t *p=
+gd, unsigned long start)
+> >   	}
+> >   }
+> > +static void walk_p4d(struct pg_state *st, pgd_t *pgd, unsigned long st=
+art)
+> > +{
+> > +	p4d_t *p4d =3D p4d_offset(pgd, 0);
+> > +	unsigned long addr;
+> > +	unsigned int i;
+> > +
+> > +	for (i =3D 0; i < PTRS_PER_P4D; i++, p4d++) {
+> > +		addr =3D start + i * P4D_SIZE;
+> > +		if (!p4d_none(*p4d) && !p4d_is_leaf(*p4d))
+> > +			/* p4d exists */
+> > +			walk_pud(st, p4d, addr);
+> > +		else
+> > +			note_page(st, addr, 2, p4d_val(*p4d));
+> =
+
+> Level 2 is already used by walk_pud().
+> =
+
+> I think you have to increment the level used in walk_pud() and walk_pmd()
+> and walk_pte()
+
+Thanks for catching this!
+I'll fix the numbers in the next version.
+ =
+
+> > +	}
+> > +}
+> > +
+> >   static void walk_pagetables(struct pg_state *st)
+> >   {
+> >   	unsigned int i;
+> > @@ -306,7 +322,7 @@ static void walk_pagetables(struct pg_state *st)
+> >   	for (i =3D pgd_index(addr); i < PTRS_PER_PGD; i++, pgd++, addr +=3D =
+PGDIR_SIZE) {
+> >   		if (!pgd_none(*pgd) && !pgd_is_leaf(*pgd))
+> >   			/* pgd exists */
+> > -			walk_pud(st, pgd, addr);
+> > +			walk_p4d(st, pgd, addr);
+> >   		else
+> >   			note_page(st, addr, 1, pgd_val(*pgd));
+> >   	}
+> =
+
+> Christophe
+
+-- =
+
+Sincerely yours,
+Mike.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
