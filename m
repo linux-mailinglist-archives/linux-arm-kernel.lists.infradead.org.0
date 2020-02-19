@@ -2,70 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EC8E164707
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 15:33:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71CD3164701
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 15:33:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LhdHNTswAFgsMd9y676IodNOx5gzXCAtNwWgqNklOoQ=; b=AQVpAlcOCfF3q5
-	3nPFNjDYtP8YLr4oPOU+bKUplS9KQk1B4vYxh3poi+bsQfjPpDTPafLSEEhtykdAUt/TlCqpGCEVW
-	73S3S0ueBdflaZ1q8TFTC1WgW3E/8QAqdbfyLr6UIk6Xcgsjb7DVhbbojeV+V9+GHRrDGd+xpmBZN
-	H+m1cbYBM2n7kn/j6GooZk3Nv8YYS60mfHeLRuHdUew1gpTPUV9ihViGxEqi8uBL+4k7AEXTh5Yl0
-	oMUOQrJzzbxgFouKLM4xF3RX0q7i6Qh0TCQcAEI17f6ZgyXf0arHNE5BEV+fdCyjHCAd1+mQYcWeq
-	AOAlsptvofAZKcfUvLcQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=49WpZ08hsymk5VoPJFiS1EjzIU7HSpuLXoCaMIXffpY=; b=KnlCmwyiwX+KgV
+	6YvjW0QcoQYwQ2zzKIx76zxfXitjQQzR3qf2OYirEvj3IvRuyDi4dq/hnFelfbHm5nbhuFrvBBwyQ
+	KESHtMNA8gMLThCxf5uFpW7MG1Gs2alrsin588LTsYTCQLzSSO2NWCRqmP9YSSzISWzU1NWjUz9Ad
+	uhyzxR8ALqqWofca+nbxDbJRTrOIHf1/wnWGVMdFO9+G2mbP7uvDLv9NYCzcfYThwCJl18u4oipEI
+	EFGq3ZScyfi76ip2WjChPIvI0uYXrkKCCfzbM0lt5IaD8hYrjFk1U+mMjL7w5cIln+/bmCXhtIj22
+	gj+D6NmnG6X/p/XojbEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4QPX-0008Is-Mv; Wed, 19 Feb 2020 14:33:11 +0000
+	id 1j4QPJ-0008A1-V8; Wed, 19 Feb 2020 14:32:57 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4QPA-000892-GS
+ id 1j4QPA-000891-GT
  for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 14:32:50 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01JEWWHR016893; Wed, 19 Feb 2020 15:32:35 +0100
+ 01JES7bO001942; Wed, 19 Feb 2020 15:32:36 +0100
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=yVYeAkBr/Ft2oDd0dMTVl2kwlcLip9R6AePCGWxuxMw=;
- b=A1rBdxeVPUK94k7W2bT3X9yIQ9+tmEgoujjCkMuwgscVu+O3cVk2/o00J+uKZ0mDIXQO
- zv3BCA1w2cLnGH1wd8n2aMtXSA5hob9rrYjNkedLnLZ2XtBGSLignA0gdDWxK6i6Rp0q
- vyeSkkfWan2+6H0SOfdl+VyMszHBg0kX2V4BvNnT4TB6FPr3uRSUQYqS7xv1BOPtwZ1g
- XNvOfo8huh4wD/nS3PYiRw3UzvkXFb25E59BncK4YBXXSDTk0FrwjFv1aUrY8I34mPs4
- KQc2qUnwkIsTSnxvp2WD1pUUh+WuwAiDbn5+zSvX/yG+QoEbzp9ywxoLcPu1NxBk7/4J kA== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=0aye/Mln2NvmkOZxtnRrVlrGHhkkcd2paFim0fiOSGY=;
+ b=HWt1AHlCUmUJYwbzGfJtfqqd46XRz+v4oTGiQi0txpDP5ncTsHUb17py+WpxIufYVcLy
+ mq5AA/nHnR4yNjcPN/VgfEajmPymIibr7FEaz3o8GbQ5n9T1sMzIbG3wS+OTRXtMZsGq
+ /2S1ZochigIjOUO0VK7SoIwVEgB4n7RolzMwS5QzwFbS59aWjmxQTDsc3oj1rPEnhehH
+ bJZRuGHqer2woWyJN3JFkklHVCQ4G3MrqC6OGlvP5PYJU/DqVv0hZsorU27VgSOKSs01
+ NBiErFIYaNJUXGxhn+UZsVhjgZN0yzq5E2ahZrwIjc5omB9fmj6g9ssh+wJstDWrPJir fw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 2y8uafkjfe-1
+ by mx07-00178001.pphosted.com with ESMTP id 2y8ub5kjc4-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 19 Feb 2020 15:32:35 +0100
+ Wed, 19 Feb 2020 15:32:36 +0100
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1DEB610003A;
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id AFB1210003D;
  Wed, 19 Feb 2020 15:32:31 +0100 (CET)
 Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 0722A2BEC59;
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A59682BEC59;
  Wed, 19 Feb 2020 15:32:31 +0100 (CET)
-Received: from localhost (10.75.127.45) by SFHDAG3NODE2.st.com (10.75.127.8)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 19 Feb 2020 15:32:30
+Received: from localhost (10.75.127.47) by SFHDAG3NODE2.st.com (10.75.127.8)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 19 Feb 2020 15:32:31
  +0100
 From: Alexandre Torgue <alexandre.torgue@st.com>
 To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>, 
  Marc Zyngier <maz@kernel.org>, Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH v3 0/2] Add GPIO level-sensitive interrupt support
-Date: Wed, 19 Feb 2020 15:32:27 +0100
-Message-ID: <20200219143229.18084-1-alexandre.torgue@st.com>
+Subject: [PATCH v3 1/2] irqchip/stm32: Add irq retrigger support
+Date: Wed, 19 Feb 2020 15:32:28 +0100
+Message-ID: <20200219143229.18084-2-alexandre.torgue@st.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200219143229.18084-1-alexandre.torgue@st.com>
+References: <20200219143229.18084-1-alexandre.torgue@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE2.st.com
  (10.75.127.8)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
  definitions=2020-02-19_03:2020-02-19,
  2020-02-19 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_063249_021718_D9BD24E0 
-X-CRM114-Status: GOOD (  11.44  )
+X-CRM114-CacheID: sfid-20200219_063249_020952_402B565D 
+X-CRM114-Status: GOOD (  13.84  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -100,35 +103,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds the possibility to handle gpio interrupts on level.
+This commit introduces retrigger support for stm32_ext_h chip.
+It consists to rise the GIC interrupt mapped to an EXTI line.
 
-GPIO hardware block is directly linked to EXTI block but EXTI handles
-external interrupts only on edge. To be able to handle GPIO interrupt on
-level a "hack" is done in gpio irq chip: parent interrupt (exti irq chip)
-is retriggered following interrupt type and gpio line value.
+Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+Tested-by: Marek Vasut <marex@denx.de>
 
-In exti irq chip, retrigger ops function is added.
-
-Changes since v2:
- - Fix issues reported by Marc:
-   - do not retrigger uselessly a second time in exti irq retrigger callback
-   - minor comments in pinctrl patch
-
-Changes since v1:
- - Fix issue reported by Marek: return statment in "stm32_gpio_set_type"
-   function.
-
-regards
-alex
-
-Alexandre Torgue (2):
-  irqchip/stm32: Add irq retrigger support
-  pinctrl: stm32: Add level interrupt support to gpio irq chip
-
- drivers/irqchip/irq-stm32-exti.c      | 14 ++++++++-
- drivers/pinctrl/stm32/pinctrl-stm32.c | 45 +++++++++++++++++++++++++--
- 2 files changed, 56 insertions(+), 3 deletions(-)
-
+diff --git a/drivers/irqchip/irq-stm32-exti.c b/drivers/irqchip/irq-stm32-exti.c
+index e00f2fa27f00..faa8482c8246 100644
+--- a/drivers/irqchip/irq-stm32-exti.c
++++ b/drivers/irqchip/irq-stm32-exti.c
+@@ -604,12 +604,24 @@ static void stm32_exti_h_syscore_deinit(void)
+ 	unregister_syscore_ops(&stm32_exti_h_syscore_ops);
+ }
+ 
++static int stm32_exti_h_retrigger(struct irq_data *d)
++{
++	struct stm32_exti_chip_data *chip_data = irq_data_get_irq_chip_data(d);
++	const struct stm32_exti_bank *stm32_bank = chip_data->reg_bank;
++	void __iomem *base = chip_data->host_data->base;
++	u32 mask = BIT(d->hwirq % IRQS_PER_BANK);
++
++	writel_relaxed(mask, base + stm32_bank->swier_ofst);
++
++	return 0;
++}
++
+ static struct irq_chip stm32_exti_h_chip = {
+ 	.name			= "stm32-exti-h",
+ 	.irq_eoi		= stm32_exti_h_eoi,
+ 	.irq_mask		= stm32_exti_h_mask,
+ 	.irq_unmask		= stm32_exti_h_unmask,
+-	.irq_retrigger		= irq_chip_retrigger_hierarchy,
++	.irq_retrigger		= stm32_exti_h_retrigger,
+ 	.irq_set_type		= stm32_exti_h_set_type,
+ 	.irq_set_wake		= stm32_exti_h_set_wake,
+ 	.flags			= IRQCHIP_MASK_ON_SUSPEND,
 -- 
 2.17.1
 
