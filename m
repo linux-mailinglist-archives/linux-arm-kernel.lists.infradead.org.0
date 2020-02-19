@@ -2,69 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 064D4164978
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 17:07:16 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19B121649B0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 17:16:29 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6AKZc6KvSAsJeq+CoBaZZ4nokjPXEeSx7EyZZrmVbwo=; b=a1zWwS1OIokEqk
-	wT7NAoBkvOGJjSgWfZk5MxJP70IIl3pAGExM+AakXER/fm7nfz3epPjXJxL6/s8TRbAB2i4Dm3Fhn
-	zKziDUoPpDNQpyTmBnah5kjqeTXLxPrnD3wTCssQNaEixrJJPhcytfIHlDpePaId8FjUq296UGaPu
-	hyIcXGNQCsPgQzxzYPxtQ2ae9XqWTiTLiMxOW5tpcvGfwJ1pCxzV4iFRt7WjFV3FD0vylcTiZosUH
-	7Jp4jEZJiPPrksW3JxO5ci+apOse/RDV5hki7TvEF9DWYHHwWUljSAZMN+14IPdW+Vzwt0iFzHugG
-	nkP0OahELcaGWqkEgMzg==;
+	List-Owner; bh=FdoFP+3hhF+o705PX01JCcz9fjkfFHq7FIKzn5S4tsM=; b=pFsWjfJO9suvIE
+	XOfGnfi9ayxvR7LLyQPOSe+EXzk3h+GhYs4YLAhD2yzfJOBMySc5JSXumJHyWkHs4W7Q5CDa25GtM
+	URHhj1So6SrmNVLh9CcA6tKAk6eRWHibvX8+kvk0J4rPSWYn8oduloeKuBdifHQDxK+HZ3pcll6YJ
+	WSzRmGLlP5v/V3u1O8OXzYWWzrxRQa0CJNrHivfptoWTafJsk9NuR9+5U+R4Uer59tNt4FLzH+191
+	MwukwDnoMaK/6p8oiHw7lQvHYAksWUlVO6ZWZ4KzTyYxGW/e1nVAez7e1q69ftSDLtgTY53lyopjy
+	0mQZxUSH44vF7v9BDhIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4RsR-0002DK-TO; Wed, 19 Feb 2020 16:07:07 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4RsK-0002Cp-II
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 16:07:01 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 9778A52B;
- Wed, 19 Feb 2020 17:06:58 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1582128418;
- bh=rJBM2Gnp8sGsg4UIZMvUb7h2wsW/k0LNeeSa2VfEEa4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=VrkdB72GClhJCGPFukl1RsMjTQgw+Uz3H/bdlKKwOevD1SmVjL/yq0IItfutggc1Y
- npftcZQMgILD6IbF+Xcwtfw7XSq1/Y9PKw36ig7W0hkLlLaQhZUKFDWK4JgbPub+3g
- SjTC+SMHv04cVImPMuHlNIlvZvjO7f0PfL24RWeo=
-Date: Wed, 19 Feb 2020 18:06:40 +0200
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH v2 3/4] arm64: dts: renesas: rcar-gen3: Add reset control
- properties for display
-Message-ID: <20200219160640.GY5070@pendragon.ideasonboard.com>
-References: <20200218133019.22299-1-geert+renesas@glider.be>
- <20200218133019.22299-4-geert+renesas@glider.be>
- <20200219153339.GT5070@pendragon.ideasonboard.com>
- <CAMuHMdUjVqC=AsNjO1icMyNRrdeMVed_HxMzn6HY=fRt+LvUwQ@mail.gmail.com>
+	id 1j4S1R-0005mE-PE; Wed, 19 Feb 2020 16:16:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4S1D-0005lV-FH
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 16:16:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C6F231FB;
+ Wed, 19 Feb 2020 08:16:09 -0800 (PST)
+Received: from arrakis.emea.arm.com (arrakis.cambridge.arm.com [10.1.196.71])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ C4CF63F703; Wed, 19 Feb 2020 08:16:07 -0800 (PST)
+Date: Wed, 19 Feb 2020 16:16:05 +0000
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Peter Collingbourne <pcc@google.com>
+Subject: Re: [PATCH] arm64: mte: Do not service syscalls after async tag fault
+Message-ID: <20200219161605.GA84712@arrakis.emea.arm.com>
+References: <20191217180152.GO5624@arrakis.emea.arm.com>
+ <20191220013639.212396-1-pcc@google.com>
+ <20200212110903.GE488264@arrakis.emea.arm.com>
+ <CAMn1gO6bDenF95Rk2sUyGhm0f7PfEj6i_tmH+geVdU3ZqcRifw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAMuHMdUjVqC=AsNjO1icMyNRrdeMVed_HxMzn6HY=fRt+LvUwQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAMn1gO6bDenF95Rk2sUyGhm0f7PfEj6i_tmH+geVdU3ZqcRifw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_080700_756370_9C0D797E 
-X-CRM114-Status: GOOD (  18.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200219_081611_598623_E96B96A8 
+X-CRM114-Status: GOOD (  24.37  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,74 +64,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- Magnus Damm <magnus.damm@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ linux-mm@kvack.org, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Kevin Brodsky <kevin.brodsky@arm.com>,
+ Kostya Serebryany <kcc@google.com>, Evgenii Stepanov <eugenis@google.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
-
-On Wed, Feb 19, 2020 at 04:55:52PM +0100, Geert Uytterhoeven wrote:
-> On Wed, Feb 19, 2020 at 4:33 PM Laurent Pinchart wrote:
-> > On Tue, Feb 18, 2020 at 02:30:18PM +0100, Geert Uytterhoeven wrote:
-> > > Add reset control properties to the device nodes for the Display Units
-> > > on all supported R-Car Gen3 SoCs.  Note that on these SoCs, there is
-> > > only a single reset for each pair of DU channels.
+On Tue, Feb 18, 2020 at 01:59:34PM -0800, Peter Collingbourne wrote:
+> On Wed, Feb 12, 2020 at 3:09 AM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > On Thu, Dec 19, 2019 at 05:36:39PM -0800, Peter Collingbourne wrote:
+> > > When entering the kernel after an async tag fault due to a syscall, rather
+> > > than for another reason (e.g. preemption), we don't want to service the
+> > > syscall as it may mask the tag fault. Rewind the PC to the svc instruction
+> > > in order to give a userspace signal handler an opportunity to handle the
+> > > fault and resume, and skip all other syscall processing.
 > > >
-> > > The display nodes on R-Car V3M and V3H already had "resets" properties,
-> > > but lacked the corresponding "reset-names" properties.
+> > > Signed-off-by: Peter Collingbourne <pcc@google.com>
+> > > ---
+> > [...]
+> > >  arch/arm64/kernel/syscall.c | 22 +++++++++++++++++++---
+> > >  1 file changed, 19 insertions(+), 3 deletions(-)
 > > >
-> > > Join the clocks lines while at it, to increase uniformity.
+> > > diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
+> > > index 9a9d98a443fc..49ea9bb47190 100644
+> > > --- a/arch/arm64/kernel/syscall.c
+> > > +++ b/arch/arm64/kernel/syscall.c
+> > > @@ -95,13 +95,29 @@ static void el0_svc_common(struct pt_regs *regs, int scno, int sc_nr,
+> > >  {
+> > >       unsigned long flags = current_thread_info()->flags;
 > > >
-> > > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> 
-> > > --- a/arch/arm64/boot/dts/renesas/r8a77965.dtsi
-> > > +++ b/arch/arm64/boot/dts/renesas/r8a77965.dtsi
-> > > @@ -2503,10 +2503,11 @@
-> > >                       interrupts = <GIC_SPI 256 IRQ_TYPE_LEVEL_HIGH>,
-> > >                                    <GIC_SPI 268 IRQ_TYPE_LEVEL_HIGH>,
-> > >                                    <GIC_SPI 270 IRQ_TYPE_LEVEL_HIGH>;
-> > > -                     clocks = <&cpg CPG_MOD 724>,
-> > > -                              <&cpg CPG_MOD 723>,
-> > > +                     clocks = <&cpg CPG_MOD 724>, <&cpg CPG_MOD 723>,
-> > >                                <&cpg CPG_MOD 721>;
-> > >                       clock-names = "du.0", "du.1", "du.3";
-> > > +                     resets = <&cpg 724>, <&cpg 722>;
-> > > +                     reset-names = "du.0", "du.3";
+> > > -     regs->orig_x0 = regs->regs[0];
+> > > -     regs->syscallno = scno;
+> > > -
+> > >       cortex_a76_erratum_1463225_svc_handler();
+> > >       local_daif_restore(DAIF_PROCCTX);
+> > >       user_exit();
+> > >
+> > > +#ifdef CONFIG_ARM64_MTE
+> > > +     if (flags & _TIF_MTE_ASYNC_FAULT) {
+> > > +             /*
+> > > +              * We entered the kernel after an async tag fault due to a
+> > > +              * syscall, rather than for another reason (e.g. preemption).
+> > > +              * In this case, we don't want to service the syscall as it may
+> > > +              * mask the tag fault. Rewind the PC to the svc instruction in
+> > > +              * order to give a userspace signal handler an opportunity to
+> > > +              * handle the fault and resume, and skip all other syscall
+> > > +              * processing.
+> > > +              */
+> > > +             regs->pc -= 4;
+> > > +             return;
+> > > +     }
+> > > +#endif
+> > > +
+> > > +     regs->orig_x0 = regs->regs[0];
+> > > +     regs->syscallno = scno;
 > >
-> > I wonder if this should be du.2, especially given that 722 corresponds
-> > to the non-existing DU2 channel. It's a bit of a mess at the hardware
+> > I'm slightly worried about the interaction with single-step, other
+> > signals. It might be better if we just use the existing syscall
+> > restarting mechanism. Untested diff below:
+> >
+> > -------------------8<-------------------------------
+> > diff --git a/arch/arm64/kernel/syscall.c b/arch/arm64/kernel/syscall.c
+> > index a12c0c88d345..db25f5d6a07c 100644
+> > --- a/arch/arm64/kernel/syscall.c
+> > +++ b/arch/arm64/kernel/syscall.c
+> > @@ -102,6 +102,16 @@ static void el0_svc_common(struct pt_regs *regs, int scno, int sc_nr,
+> >         local_daif_restore(DAIF_PROCCTX);
+> >         user_exit();
+> >
+> > +       if (system_supports_mte() && (flags & _TIF_MTE_ASYNC_FAULT)) {
+> > +               /*
+> > +                * Process the asynchronous tag check fault before the actual
+> > +                * syscall. do_notify_resume() will send a signal to userspace
+> > +                * before the syscall is restarted.
+> > +                */
+> > +               regs->regs[0] = -ERESTARTNOINTR;
+> > +               return;
+> > +       }
+> > +
+> >         if (has_syscall_work(flags)) {
+> >                 /* set default errno for user-issued syscall(-1) */
+> >                 if (scno == NO_SYSCALL)
 > 
-> Just following the bindings: "du.3" is the lowest channel that is affected
-> by the reset.
-
-Yes I was looking at that, and replied to the DT bindings patch. If the
-outcome of the discussion there is to keep the bindings as-is, you can
-have my
-
-Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-
-for this whole series.
-
-> > level :-S
+> That works for me, and I verified that my small test program as well
+> as some larger unit tests behave as expected.
 > 
-> Note that supporting R-Car H3-N will make your^H^H^H^Hthe rcar-du device
-> driver writer's life even more miserable, as suddenly there is no longer
-> a DU2, while the single unified Display Unit node prevents the DTS
-> writer from not setting the DU2's status to "okay" in the board DTS
-> file. But you might look at the ports submode?
+> Tested-by: Peter Collingbourne <pcc@google.com>
 
-This will require a separate compatible string I'm afraid.
+Thanks Peter.
 
 -- 
-Regards,
-
-Laurent Pinchart
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
