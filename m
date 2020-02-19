@@ -2,83 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4BFC163E35
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:53:14 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E937D163E3C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:55:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sIrgToRYFPCCthpV6gSr45ZsUwyh/kG1hJfr34H1W10=; b=COb7PsW2O0dLZe
-	D4V+FsQmnW/o96jvHHfUNEIB4S4dUGP18s98isKoGgjieQwJc32T5ZroYBAZEjLQFyQXY9802CJpE
-	Gf5P4NFHEcgch5AsTR6pzyePeLN9avvKgbrfdBfTtGLbVmcI7lIWIqAC8vqEDlaFMr1dElC52KLyb
-	hl9hUFEtWA4o49PkMVeFpdDdvefbpiIYGGfSNycO28KXqzl+xfnaKRCcyNX/M8X+m7Bv8CwNm/Eah
-	JgL+MrtjKk7iR9gpRBs6gUmbNtmdFyoQ1SPdC+8ANf1EGlIDV015r40UhCWg4YQShfUnaP8h5XMKu
-	MzrzWidrIOJ/Rv4Tgj1A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2hy9IXksNHa7UCpG1p+hixeLtmLAaQ7nO3ZL4XJLUQY=; b=qhpLYDDlMmx+In
+	pNavdzdGWLQP1pDJE1LW5Fh/ewGPcoLpHim3+csL6LTAMLZl0ZuAV4aK1/ogG9v0+RT0C601SCnby
+	94xyH6mHJAD5qrXcyfPxT0DWD0ABVhu90FjazYGAFGAW2OPNRq+IR4v7CEyHcpwdA8vk+V7Jf7Dnk
+	6zxfaRtimKIZeem8LG+b2qBPlK0uUuTsbINJzj/XQTYbF8skdpxQ8wZcKdoYwxzwgwpHPZmM2b+B6
+	UxlOLYaico4g2V7rbLG+yXVWwE4irz3ykxb+f8WaAYT4Zq0+ad62WH/jwfVNqUmQjCr0P9O7MyTnR
+	LSi+YSLzVtUuiY9xlrPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4KAL-0004MD-RV; Wed, 19 Feb 2020 07:53:05 +0000
-Received: from mail-lf1-f65.google.com ([209.85.167.65])
+	id 1j4KCA-0004iU-81; Wed, 19 Feb 2020 07:54:58 +0000
+Received: from mga01.intel.com ([192.55.52.88])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4KA9-0004KM-Uv
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:52:55 +0000
-Received: by mail-lf1-f65.google.com with SMTP id n25so16657023lfl.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 23:52:53 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=pBcXvYpVbcpOivBpwH+KxMjwUZ99WUPQa/e/GZdQhGI=;
- b=agviuQGWm5rFhWEx/71ZfZ7evM4xonxxrNVSrhuiJtnIidKCFeJmWELD4HYDkQFGiS
- dtNZ4Vlq9eNIHyH3DKlykp1tZ/VD+JG5Tc2d3foFRLEY3VYMQIu4fPalCBcw3c84jh40
- iwhVqhyrDIoTB4Cc73IZD4NlUpoqDrXk6AEvT9wVWCzxiRebvbTwjokTjzyygX5T16fm
- preZ8/+ZZfEECVQ+PdZzoytZML2yeCHvBiR4USLQghnjWwI+0WxyKFdwNZlUdbRoKOCx
- CMcXiDR96sjWgxjacjDdOQ6x2euoWx4/oAhVVqObB1yjXMl270yh1AYN/R/r69w0iTw4
- 7hqw==
-X-Gm-Message-State: APjAAAW7BQwqTiKreWzp+/w+6EMDFdjX0e1KxZlZ/58yBUAXbLi1LFGx
- F7Tkdt3maSOGZXJ1WgDdFQI=
-X-Google-Smtp-Source: APXvYqxniWWWPPX2NX94mAjgrd5J+QVhCrkvaxE78uLY29DmvxjPj+m2MiISPdQ1Ugvp3CjlSMrY2w==
-X-Received: by 2002:ac2:58fa:: with SMTP id v26mr12695059lfo.84.1582098771710; 
- Tue, 18 Feb 2020 23:52:51 -0800 (PST)
-Received: from xi.terra (c-12aae455.07-184-6d6c6d4.bbcust.telenor.se.
- [85.228.170.18])
- by smtp.gmail.com with ESMTPSA id u25sm682904ljj.70.2020.02.18.23.52.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 23:52:50 -0800 (PST)
-Received: from johan by xi.terra with local (Exim 4.92.3)
- (envelope-from <johan@kernel.org>)
- id 1j4KA3-00080g-E8; Wed, 19 Feb 2020 08:52:47 +0100
-Date: Wed, 19 Feb 2020 08:52:47 +0100
-From: Johan Hovold <johan@kernel.org>
-To: Corentin Labbe <clabbe@baylibre.com>
-Subject: Re: [PATCH 00/20] usb: remove useless cast for driver.name
-Message-ID: <20200219075247.GE2090@localhost>
-References: <1582054383-35760-1-git-send-email-clabbe@baylibre.com>
+ id 1j4KBw-0004gJ-5o
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:54:45 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 18 Feb 2020 23:54:43 -0800
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.70,459,1574150400"; d="scan'208";a="436148633"
+Received: from linux.intel.com ([10.54.29.200])
+ by fmsmga006.fm.intel.com with ESMTP; 18 Feb 2020 23:54:42 -0800
+Received: from [10.125.252.130] (abudanko-mobl.ccr.corp.intel.com
+ [10.125.252.130])
+ by linux.intel.com (Postfix) with ESMTP id 40E9A580270;
+ Tue, 18 Feb 2020 23:54:36 -0800 (PST)
+Subject: Re: [PATCH v7 01/12] capabilities: introduce CAP_PERFMON to kernel
+ and user space
+To: James Morris <jmorris@namei.org>
+References: <c8de937a-0b3a-7147-f5ef-69f467e87a13@linux.intel.com>
+ <f56fbb5c-1477-44d5-7346-85a1ca0869dc@linux.intel.com>
+ <alpine.LRH.2.21.2002190621180.10165@namei.org>
+From: Alexey Budankov <alexey.budankov@linux.intel.com>
+Organization: Intel Corp.
+Message-ID: <4664bbc7-e4ef-5d6e-7f71-96e5567fcf60@linux.intel.com>
+Date: Wed, 19 Feb 2020 10:54:35 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1582054383-35760-1-git-send-email-clabbe@baylibre.com>
+In-Reply-To: <alpine.LRH.2.21.2002190621180.10165@namei.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_235253_999773_7791CA46 
-X-CRM114-Status: GOOD (  12.65  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200218_235444_225549_71FC890E 
+X-CRM114-Status: GOOD (  11.49  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.65 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.88 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jhovold[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [192.55.52.88 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,75 +77,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: balbi@kernel.org, alexandre.belloni@bootlin.com, mathias.nyman@intel.com,
- gregkh@linuxfoundation.org, linux-usb@vger.kernel.org, vz@mleia.com,
- ludovic.desroches@microchip.com, stern@rowland.harvard.edu,
- linux-arm-kernel@lists.infradead.org, slemieux.tyco@gmail.com, b-liu@ti.com,
- linux-kernel@vger.kernel.org
+Cc: linux-man@vger.kernel.org,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ "joonas.lahtinen@linux.intel.com" <joonas.lahtinen@linux.intel.com>,
+ Alexei Starovoitov <ast@kernel.org>, Stephane Eranian <eranian@google.com>,
+ Paul Mackerras <paulus@samba.org>, Jiri Olsa <jolsa@redhat.com>,
+ Ingo Molnar <mingo@kernel.org>, Andi Kleen <ak@linux.intel.com>,
+ Will Deacon <will@kernel.org>, Helge Deller <deller@gmx.de>,
+ Igor Lubashev <ilubashe@akamai.com>, oprofile-list@lists.sf.net,
+ Stephen Smalley <sds@tycho.nsa.gov>, Serge Hallyn <serge@hallyn.com>,
+ "selinux@vger.kernel.org" <selinux@vger.kernel.org>,
+ "intel-gfx@lists.freedesktop.org" <intel-gfx@lists.freedesktop.org>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "linux-parisc@vger.kernel.org" <linux-parisc@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ "linux-security-module@vger.kernel.org"
+ <linux-security-module@vger.kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Feb 18, 2020 at 07:32:43PM +0000, Corentin Labbe wrote:
-> This serie remove a useless (char*) cast for some xxx_driver.name.
-> pci_driver, device_driver, usb_composite_driver structures have a "name"
-> member which is const char * and all the driver patched assigned to it a
-> const char[] name, so the cast was bad and unnecessary.
+
+On 18.02.2020 22:21, James Morris wrote:
+> On Mon, 17 Feb 2020, Alexey Budankov wrote:
 > 
-> Corentin Labbe (20):
->   usb: gadget: legacy: gmidi: remove useless cast for driver.name
->   usb: gadget: legacy: inode: remove useless cast for driver.name
->   usb: gadget: udc: amd5536udc_pci: remove useless cast for driver.name
->   usb: gadget: at91_udc: remove useless cast for driver.name
->   usb: gadget: dummy_hcd: remove useless cast for driver.name
->   usb: gadget: fotg210-udc: remove useless cast for driver.name
->   usb: gadget: fusb300_udc: remove useless cast for driver.name
->   usb: gadget: goku_udc: remove useless cast for driver.name
->   usb: gadget: lpc32xx_udc: remove useless cast for driver.name
->   usb: gadget: m66592-udc: remove useless cast for driver.name
->   usb: gadget: net2280: remove useless cast for driver.name
->   usb: gadget: omap_udc: remove useless cast for driver.name
->   usb: gadget: r8a66597-udc: remove useless cast for driver.name
->   usb: gadget: renesas_usb3: remove useless cast for driver.name
->   usb: host: ehci-pci: remove useless cast for driver.name
->   usb: host: ohci-pci: remove useless cast for driver.name
->   usb: host: sl811-hcd: remove useless cast for driver.name
->   usb: host: uhci-pci: remove useless cast for driver.name
->   usb: host: xhci-pci: remove useless cast for driver.name
->   usb: musb: core: remove useless cast for driver.name
+>>
+>> Introduce CAP_PERFMON capability designed to secure system performance
+>> monitoring and observability operations so that CAP_PERFMON would assist
+>> CAP_SYS_ADMIN capability in its governing role for performance
+>> monitoring and observability subsystems.
+> 
+> 
+> Acked-by: James Morris <jamorris@linux.microsoft.com>
 
-Please do trivial conversions like this one in one patch per subsystem
-(e.g. all of USB) instead of 20 one-line patches.
+Thanks James! 
+I appreciate your involvement and collaboration 
+w.r.t to the whole patch set.
 
-You may also want to refer to commit 8d790d740858 ("[PATCH] make
-driver's name be const char *") for the historical background for this
-in the commit message.
-
->  drivers/usb/gadget/legacy/gmidi.c       | 2 +-
->  drivers/usb/gadget/legacy/inode.c       | 2 +-
->  drivers/usb/gadget/udc/amd5536udc_pci.c | 2 +-
->  drivers/usb/gadget/udc/at91_udc.c       | 2 +-
->  drivers/usb/gadget/udc/dummy_hcd.c      | 4 ++--
->  drivers/usb/gadget/udc/fotg210-udc.c    | 2 +-
->  drivers/usb/gadget/udc/fusb300_udc.c    | 2 +-
->  drivers/usb/gadget/udc/goku_udc.c       | 2 +-
->  drivers/usb/gadget/udc/lpc32xx_udc.c    | 2 +-
->  drivers/usb/gadget/udc/m66592-udc.c     | 2 +-
->  drivers/usb/gadget/udc/net2280.c        | 2 +-
->  drivers/usb/gadget/udc/omap_udc.c       | 2 +-
->  drivers/usb/gadget/udc/r8a66597-udc.c   | 2 +-
->  drivers/usb/gadget/udc/renesas_usb3.c   | 2 +-
->  drivers/usb/host/ehci-pci.c             | 2 +-
->  drivers/usb/host/ohci-pci.c             | 2 +-
->  drivers/usb/host/sl811-hcd.c            | 2 +-
->  drivers/usb/host/uhci-pci.c             | 2 +-
->  drivers/usb/host/xhci-pci.c             | 2 +-
->  drivers/usb/musb/musb_core.c            | 2 +-
->  20 files changed, 21 insertions(+), 21 deletions(-)
-
-Thanks,
-Johan
+Gratefully,
+Alexey
 
 _______________________________________________
 linux-arm-kernel mailing list
