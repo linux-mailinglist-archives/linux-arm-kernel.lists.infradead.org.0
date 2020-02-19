@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6B6B163A03
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 03:19:56 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB41B163A09
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 03:20:37 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=14vjSqHeGMo/iD2RG3dq6QvWvkCPLibzfwqTqGEV3TM=; b=jyOL53POEKRz9nivojeqpBjxtZ
-	slnA7av6OvuDJYztbBWZy1YJt6EUZEwEBD3kSMYALaJxAXtaoZ55Obthh8E+4PrsLjBfb2F2m3Yu8
-	GNHiyO9D7v8MlKnHgjW/T1DNBYwNORqaFo7oEwxF/nn4nrxw3qkOG/E6xpRusDEJGHS9ZjBh0sUJa
-	eMa93PW0o53usdryRhHpxoRqeWPTntl58XBqQoSWOx4ooS4nqWYqAXZDA4k5PPAqCpUouBYr7R9zA
-	SZIeNtJzJmX6jdm6TCdawub2CENlGuuZhEQ91zSNSfMwjx8o42nPhaqIIUK8T3GAZ4Tj9FDevVSXD
-	7ig1u24A==;
+	bh=V4YOlJvmr6w6D0/k2NCPMQ0MAULv74k/CrYWQsUZw7k=; b=THGIBBGTZYe2fEhyrtlCg0qwhQ
+	qNS6Nq/ijyNaSvZaXC9IJAWPlsIMCA0FfzecIMBahavdbmF8LX2cRW1De+cjqNluYrfii4MFmL+9S
+	n13DSIUk1AZS/t15c4ebTfWa5kDT4NDu9sHnSLToM/wXQUQrwKtc0p2vzAlhiVOTTGEUKHHfX7v0o
+	uNxIO+xUPvLQR/sriL05v4AUvtGXmffxhD1u91v6WZ8ljhhqTdd8W6/e0wwl8v0sowyO8+qdPdOIQ
+	7FaSsHHXX8gNX5spGOXo4lQXO43Z3YRagTc7RJfBYPJDw9sQf01ohHrLfR99UI4M8cYmtdgMXNbDX
+	+06AESCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Exu-0001G0-O2; Wed, 19 Feb 2020 02:19:54 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1j4EyS-0001Uj-D4; Wed, 19 Feb 2020 02:20:28 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ExL-0000te-Q1
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 02:19:21 +0000
-Received: by mail-pl1-x643.google.com with SMTP id e8so8885056plt.9
+ id 1j4ExZ-00016x-7A
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 02:19:36 +0000
+Received: by mail-pl1-x642.google.com with SMTP id t6so8885100plj.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 18:19:19 -0800 (PST)
+ Tue, 18 Feb 2020 18:19:32 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=8JY5jMUlCYWaE6NwiddTiun6+53F9fAjmLnJNKM4ks4=;
- b=oSN5fybMyY8jO1ur2M9Waav5BHCpghm10+gNMfvX3iPMYuCgKd6Zokwy7eY05UCl7Z
- BxFXeaGrPt/1osy904vjqYC6DIKxzXKFHgbJPE2FkmijWk+kMCj4tZaGCTiohtXYo1BE
- 2g1xnGQZl9DpqHYeKZTUy2Vk6gMQgcSToVwzv1cnq21rPZcppDIV43KrPL88dhJgdfmo
- LrIxJNAD+mSBJjn0zzlJSqQy7MzIGM3pUiAaunDRLh4yILkzteOFF+tFoB0Xo/xm+c/D
- 4HXYFG1e356D0qXptj0groSi2OkD23LdYK2TaHhvW0eo46Tnaso0rc3qhyBeXdP0VHF7
- uYqA==
+ bh=0n3bCMKVPcTL7ZDSsdKbGiesjZL6H1rMCnqz/XkRXJ8=;
+ b=ElOwfH5Onz8U8ol8oSfjBK0bPmP3l325hdSQjzWnNQhHXcDjV+SFvxlvtt43NbNSrA
+ pnulaAvng4VefC9rILZVbu07OUdV3qhymebe732MKgx0KDzbfmEr0BuUPzUrl+fXIYvC
+ BeNe1n02qOg9lDzkYOOG/YHngHJ0Fxy/Ygh37b9nGeCYQeB0GIFoGz2ZZlzMZAkmBdA1
+ rnJ1pomZ0ZIwz3YO+3jD1U30mAJS3x5cxCyDeG5UBMEW6YIvHEdD76zBbBYbaNxjPAKM
+ LN3Mx//kt9u/kY52UjTqc+crWNmD0u7IV0ppDu4OsmovP15N6MNmTK/2BXmSyaF+VH54
+ UEnw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=8JY5jMUlCYWaE6NwiddTiun6+53F9fAjmLnJNKM4ks4=;
- b=f2QbOsoJ0g+8o9jrPRMGHVru772SBvi179ycMyoFitkXqmPTf6lx/AkV+bLJbemIV6
- ousKpFdixeR4QS0PNCKZ8qTtcr1MUbqz3o7eGphLAiQanI60LyFfGLVb1stXxNcFfINQ
- SuDWiGVnNrH9va7QW6alrmIniPmq/2Xdxtz5yh1vmkGZ+zoTljO5yptZBPaKuE1//KC9
- +9HXvZDFlaoUBJgivkS0R2x7ughvdsr3JIpyKEShdAiYSP2eo2CDOyDCo6VCleJIbSxM
- nri8yjfC2gjRt5TyPOVFoZbwNn9XN+Wmr42+6FJciPuxuvrhWVRWP/9gd5gJADXixqf4
- A1eQ==
-X-Gm-Message-State: APjAAAUbpufVGxeYp+feBVgIoP1A2svXO/0raYRsiLGvvgomWqjtuhUg
- 7Zx/ul5CKy6Gn02D1riF7CMZIQ==
-X-Google-Smtp-Source: APXvYqxeQb5nu5YwhBkLDsrh7TuiaLfdBdP6z8ArH5UKKvWj3/CSGB+g+xD0YyF9NRX6V9Im+RT1uA==
-X-Received: by 2002:a17:90a:8d86:: with SMTP id
- d6mr6263677pjo.119.1582078759193; 
- Tue, 18 Feb 2020 18:19:19 -0800 (PST)
+ bh=0n3bCMKVPcTL7ZDSsdKbGiesjZL6H1rMCnqz/XkRXJ8=;
+ b=IZX9Cs8weCXWbbzeuE/oOMDyv/Rt+jqQdgt/20VMd7K4+/9oG5ycvkBaNWfp6RYtLh
+ crOSvuocAe04rCk8bHQMwIfnd4VKrTZnnv15k7b19gr/a3i7NxnEyUs3SSVwhOXh3q5E
+ QmchL52mPMKpEfj79v4PfwSqTHlQIgsiqNSrqC1lZKbJZ9Hb8tjZtOrc+E+9BdhtCCMW
+ 0K7VEZCL+VRXyj+UQI8L6+ILBCPGUBnpOuOm8rlKc1P/3cFfKKoqGa5+sfLDyXucnHma
+ P4uN4F2ORO3IZXQnmqkBp9Exyq6a33d8wHE29eJzyF5/7/alhtZeCps6UOm13k/7OoL+
+ L50g==
+X-Gm-Message-State: APjAAAUobQxK2phCL7AdXXCtLb31WMmuRcsbBCDQ+sPSPKkMeFxBA/6x
+ ShtZwMNQxccOxn8ZaHORNRU90A==
+X-Google-Smtp-Source: APXvYqwD9w+iDoltztRVgp/7slI+JKpGxGX4xI+qC2WnbgD6u5THByB9GOxIQT/5SsrJOkj/cck0dA==
+X-Received: by 2002:a17:902:820b:: with SMTP id
+ x11mr23692815pln.196.1582078772192; 
+ Tue, 18 Feb 2020 18:19:32 -0800 (PST)
 Received: from localhost.localdomain (li1441-214.members.linode.com.
  [45.118.134.214])
- by smtp.gmail.com with ESMTPSA id q11sm322698pff.111.2020.02.18.18.19.08
+ by smtp.gmail.com with ESMTPSA id q11sm322698pff.111.2020.02.18.18.19.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 18:19:18 -0800 (PST)
+ Tue, 18 Feb 2020 18:19:31 -0800 (PST)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
@@ -69,22 +69,22 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  Coresight ML <coresight@lists.linaro.org>
-Subject: [PATCH v5 4/5] perf cs-etm: Optimize copying last branches
-Date: Wed, 19 Feb 2020 10:18:10 +0800
-Message-Id: <20200219021811.20067-5-leo.yan@linaro.org>
+Subject: [PATCH v5 5/5] perf cs-etm: Fix unsigned variable comparison to zero
+Date: Wed, 19 Feb 2020 10:18:11 +0800
+Message-Id: <20200219021811.20067-6-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200219021811.20067-1-leo.yan@linaro.org>
 References: <20200219021811.20067-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_181919_864221_74F70C4C 
-X-CRM114-Status: GOOD (  14.95  )
+X-CRM114-CacheID: sfid-20200218_181933_288501_DBCDE89E 
+X-CRM114-Status: GOOD (  13.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -113,88 +113,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If an instruction range packet can generate multiple instruction
-samples, these samples share the same last branches; it's not necessary
-to copy the same last branches repeatedly for these samples within the
-same packet.
-
-This patch moves out the last branches copying from function
-cs_etm__synth_instruction_sample(), and execute it prior to generating
-instruction samples.
+The variable 'offset' in function cs_etm__sample() is u64 type, it's not
+appropriate to check it with 'while (offset > 0)'; this patch changes to
+'while (offset)'.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Reviewed-by: Mike Leach <mike.leach@linaro.org>
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- tools/perf/util/cs-etm.c | 22 +++++++++++++++++-----
- 1 file changed, 17 insertions(+), 5 deletions(-)
+ tools/perf/util/cs-etm.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 4b7d6c36ce3c..aa4b6d060ebb 100644
+index aa4b6d060ebb..bba969d48076 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -1151,10 +1151,8 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+@@ -962,7 +962,7 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
+ 	if (packet->isa == CS_ETM_ISA_T32) {
+ 		u64 addr = packet->start_addr;
  
- 	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->packet, &sample);
- 
--	if (etm->synth_opts.last_branch) {
--		cs_etm__copy_last_branch_rb(etmq, tidq);
-+	if (etm->synth_opts.last_branch)
- 		sample.branch_stack = tidq->last_branch;
--	}
- 
- 	if (etm->synth_opts.inject) {
- 		ret = cs_etm__inject_event(event, &sample,
-@@ -1429,6 +1427,10 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
- 		u64 offset = etm->instructions_sample_period - instrs_prev;
- 		u64 addr;
- 
-+		/* Prepare last branches for instruction sample */
-+		if (etm->synth_opts.last_branch)
-+			cs_etm__copy_last_branch_rb(etmq, tidq);
-+
- 		while (tidq->period_instructions >=
- 				etm->instructions_sample_period) {
- 			/*
-@@ -1506,6 +1508,11 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
- 
- 	if (etmq->etm->synth_opts.last_branch &&
- 	    tidq->prev_packet->sample_type == CS_ETM_RANGE) {
-+		u64 addr;
-+
-+		/* Prepare last branches for instruction sample */
-+		cs_etm__copy_last_branch_rb(etmq, tidq);
-+
- 		/*
- 		 * Generate a last branch event for the branches left in the
- 		 * circular buffer at the end of the trace.
-@@ -1513,7 +1520,7 @@ static int cs_etm__flush(struct cs_etm_queue *etmq,
- 		 * Use the address of the end of the last reported execution
- 		 * range
- 		 */
--		u64 addr = cs_etm__last_executed_instr(tidq->prev_packet);
-+		addr = cs_etm__last_executed_instr(tidq->prev_packet);
- 
- 		err = cs_etm__synth_instruction_sample(
- 			etmq, tidq, addr,
-@@ -1558,11 +1565,16 @@ static int cs_etm__end_block(struct cs_etm_queue *etmq,
- 	 */
- 	if (etmq->etm->synth_opts.last_branch &&
- 	    tidq->prev_packet->sample_type == CS_ETM_RANGE) {
-+		u64 addr;
-+
-+		/* Prepare last branches for instruction sample */
-+		cs_etm__copy_last_branch_rb(etmq, tidq);
-+
- 		/*
- 		 * Use the address of the end of the last reported execution
- 		 * range.
- 		 */
--		u64 addr = cs_etm__last_executed_instr(tidq->prev_packet);
-+		addr = cs_etm__last_executed_instr(tidq->prev_packet);
- 
- 		err = cs_etm__synth_instruction_sample(
- 			etmq, tidq, addr,
+-		while (offset > 0) {
++		while (offset) {
+ 			addr += cs_etm__t32_instr_size(etmq,
+ 						       trace_chan_id, addr);
+ 			offset--;
 -- 
 2.17.1
 
