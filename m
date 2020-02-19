@@ -2,83 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7525E164E6E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 20:06:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A5C0164E8A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 20:10:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	MIME-Version:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:References:Subject:To:From:Date:
-	Message-ID:Reply-To:Content-Transfer-Encoding:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yro85J161FTrTbk60E+Ha7ydahLIxcyvfQXZW/M0Toc=; b=Eyv0sTUrbsJZIS
-	G9JmcWb8CMzOFnwhCewoJlza3sV2pzV16fSiEc5GaRxD5sOGl3ZXKzhfSfga7bIeaVrwm5XZnswrX
-	KvH98D8VGiFo9OfiTgca21Tu4k8NuImvKWtExlvmxAsZvMwOTU9BAesMQPGPTUaeOQ/j+JR/rcZfu
-	ZBBC+hauMEbTYs6M8v15Q1Q1vUsqYj9UopGJsRFPlXJNUOO0bPnAffqssTuCjv2QfkcpddvjXcrEW
-	U730d74kLE6XL4XkRZJKn0gu5S7SqOrPI3VIUv+VbUCxWDtJBDpCAhPI4g4hrBpJNKTimvnWrcAbp
-	5FfZEQBA6gWeIVUtEueA==;
+	List-Owner; bh=me4HoawVWa8BIaYrmEoszje90jgjn2n+oTomBkIWZMs=; b=eAkagYNkL31AOO
+	jr7yvzHlZIuuunoOecayuJZNGrS7sPoYjZXBpBJ6vl9bjjFZQk9NG+TT3HsYT0joa0kD/wvowiiIy
+	bu5kZBv+mddyPjOJJf0oxi+Dq1bAw1mzoeFdi5+16Nz95Ijy43lMnUfFVFMNmQ+XCr7JFnOe36WE4
+	amHtjBlIeWc/NeYBavy0pwUW29XDIWpky1bH2rhODjeoCvjWdNkH/hK43KZLhEgMS3VzHY45zcV1z
+	2eVSgNnvPppWHf8v8wU6+CRPsQO9onQ7Amh8hlwE59JTVTOq6WJeLzuCiTb7TWjy4fusUyhlFks09
+	CxDv0uNxTCFhERg+Olgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Ug3-0007cz-0a; Wed, 19 Feb 2020 19:06:31 +0000
-Received: from mail-pl1-f193.google.com ([209.85.214.193])
+	id 1j4Ujy-0000qg-2o; Wed, 19 Feb 2020 19:10:34 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Uft-0007cE-Sa
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 19:06:23 +0000
-Received: by mail-pl1-f193.google.com with SMTP id b22so436536pls.12
+ id 1j4Ujp-0000pY-56
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 19:10:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1582139422;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=LLgaFIYXcSHF8geXp8D1KEQXzRlLaodTECH2wFDsVfY=;
+ b=ZyzJ85UZHSnbh6TGSJWuhL5XOUJaPbmUcOzHsMPIvvhncTaRXVi42+bBdEf6ugLh2vKjUS
+ 2XqlCvJjDlzvOG93cM8GBt0viAo/ZXeNO7NH0L3B6WwcDpidDoFAIKYk6K0UuWbGTLwp8o
+ V64eNEV01H2eUmWn1fLp3gZbugSvgH8=
+Received: from mail-qt1-f200.google.com (mail-qt1-f200.google.com
+ [209.85.160.200]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-48-U5PiQTfKNqy-FLVqcZsyQA-1; Wed, 19 Feb 2020 14:10:20 -0500
+Received: by mail-qt1-f200.google.com with SMTP id p12so844708qtu.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 11:06:18 -0800 (PST)
+ Wed, 19 Feb 2020 11:10:20 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:from:to:cc:cc:cc:subject
- :references:in-reply-to;
- bh=Li69D96UynYkf8JlXUUJ5Eri/Si/2jqwsMBbn3qmZS4=;
- b=Glg6xk9jm2Y1h/VQIFiE2U9f7yfPzeRjHgJ9gNZeD61PxXuU7B1ixzKMXlFhECdaJX
- Has2PBvSyGt9DcobDfOGxNRk4oQev+Zi1LT+XoWaJCxlomgtj7Mp/x3fU9HL8U5iMdFi
- CZv8yJmkQHcHlijuDTsQpXMjbjpYicYKLWzbsPfgLbNMziN5kcVnnwARIzBwvf2zFLcn
- lMBmfD0ccGWVZwyCgSyWSxLNmLt2AvlxbAm/fRmoUt5qv5/0XSz2zrdnN3JVCOk7jXKj
- sFFLY0gQ9/t13PDlPVhQhYRuSNdpmzZ2II/PR30MnMhuvuOoo9RVBKQ+OS3EZ3XXh5IF
- q0TQ==
-X-Gm-Message-State: APjAAAXf3BDPlLSL8Ou7t6fsQ4DwzK7fh8bbiPUcPmD7qTtO7rXPoGBD
- EFz+/il7m2OBr8+dLSlkloM=
-X-Google-Smtp-Source: APXvYqxEWtnBUAbhG3oyDrpABKMoy4uPAfK1vDTH8uFSy42bySZvvzQ185jRsvkELv1wDoR5r/7gOQ==
-X-Received: by 2002:a17:902:8546:: with SMTP id
- d6mr27599050plo.193.1582139177825; 
- Wed, 19 Feb 2020 11:06:17 -0800 (PST)
-Received: from localhost ([2601:646:8a00:9810:5af3:56d9:f882:39d4])
- by smtp.gmail.com with ESMTPSA id v5sm467463pgc.11.2020.02.19.11.06.17
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Iu+zDafgQ7GdYGR/n8pxbgWtAD7a9J36y82BGwKTfA0=;
+ b=d0ttOY+Xbp/tXoeCcYZ7QvvcAS8axzgqCOc+DmS5yzLyfzb/pVupy5rZK27dSwPWCa
+ ho6Sans7kYeeVRPACb0H6wy0sSVvIAC5pZpfoaq/l0VH998b2t958s4m0LnFR0sM5utG
+ VultqaSmMAohJMnp2zd6MDXYZ8IOQHc6taFfnOESKLiAX5mt5rDCHT8K4wLdXcml3QG0
+ HH2wlWUUGjPJQ6gMvv/YDeoIaVT/YYMNQQEhv69utF4wURfczt/7V4f+RoL9lJ+GjvmC
+ jz1xy3XFDDyZqXa1XQAoc7zgg5+UCnuUqXDIe4ewYtlpepHnZCBXA/Jd/kzoGYPpeLu7
+ bqYg==
+X-Gm-Message-State: APjAAAWtXn9jZAmng86TzL66pXlqrLQySOhlkkB/FstErXBwPML9SIj0
+ LLEGgW4OFMAq2k9yOdj7/3KOntbuilHJAyPQ8oGuJPpLIxcg8Wgn2gPvJBt86tdquzzOjzsUFhl
+ 5uM8sYLa23oVmqIuZOEVLyMQEOSLGPZJudyc=
+X-Received: by 2002:aed:29e2:: with SMTP id o89mr23723353qtd.353.1582139419973; 
+ Wed, 19 Feb 2020 11:10:19 -0800 (PST)
+X-Google-Smtp-Source: APXvYqyR4tvaG55rn+oIGW+9DmQY+Q5rgmtUB62N9SOWO2kSCX8x9uyUbBuaGecyF0GgmgJCEJ7bJQ==
+X-Received: by 2002:aed:29e2:: with SMTP id o89mr23723317qtd.353.1582139419685; 
+ Wed, 19 Feb 2020 11:10:19 -0800 (PST)
+Received: from xz-x1 ([104.156.64.75])
+ by smtp.gmail.com with ESMTPSA id m95sm453246qte.41.2020.02.19.11.10.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 11:06:17 -0800 (PST)
-Message-ID: <5e4d8729.1c69fb81.a8fdb.15ed@mx.google.com>
-Date: Wed, 19 Feb 2020 11:06:11 -0800
-From: Paul Burton <paulburton@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v2] MIPS: configs: Cleanup old Kconfig options
-References: <20200217165634.5362-1-krzk@kernel.org>
-In-Reply-To: <20200217165634.5362-1-krzk@kernel.org>
+ Wed, 19 Feb 2020 11:10:19 -0800 (PST)
+Date: Wed, 19 Feb 2020 14:10:17 -0500
+From: Peter Xu <peterx@redhat.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>
+Subject: Re: [PATCH v6 01/22] KVM: x86: Allocate new rmap and large page
+ tracking when moving memslot
+Message-ID: <20200219191017.GA37550@xz-x1>
+References: <20200218210736.16432-1-sean.j.christopherson@intel.com>
+ <20200218210736.16432-2-sean.j.christopherson@intel.com>
+MIME-Version: 1.0
+In-Reply-To: <20200218210736.16432-2-sean.j.christopherson@intel.com>
+X-MC-Unique: U5PiQTfKNqy-FLVqcZsyQA-1
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_110621_923695_F36984A0 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200219_111025_273692_F29CF86A 
+X-CRM114-Status: GOOD (  12.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.214.193 listed in list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [paulburton89[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [paulburton89[at]gmail.com]
- 0.0 PP_MIME_FAKE_ASCII_TEXT BODY: MIME text/plain claims to be ASCII
- but isn't 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.214.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,62 +108,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Paul Burton <paulburton@kernel.org>, linux-kernel@vger.kernel.org,
- linux-mips@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- =?utf-8?q?Philippe_Mathieu-Daud?= =?utf-8?q?=C3=A9?= <f4bug@amsat.org>,
- bcm-kernel-feedback-list@broadcom.com, Krzysztof Kozlowski <krzk@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="===============4724106645458064911=="
+Cc: Wanpeng Li <wanpengli@tencent.com>, kvm@vger.kernel.org,
+ David Hildenbrand <david@redhat.com>, linux-mips@vger.kernel.org,
+ Paul Mackerras <paulus@ozlabs.org>, kvmarm@lists.cs.columbia.edu,
+ Janosch Frank <frankja@linux.ibm.com>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Christian Borntraeger <borntraeger@de.ibm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, kvm-ppc@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>,
+ Cornelia Huck <cohuck@redhat.com>, Christoffer Dall <christoffer.dall@arm.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ Philippe =?utf-8?Q?Mathieu-Daud=C3=A9?= <f4bug@amsat.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============4724106645458064911==
-Content-Type: text/plain
-
-Hello,
-
-Krzysztof Kozlowski wrote:
-> CONFIG_MTD_NAND_IDS is gone and not needed (part of CONFIG_MTD_NAND)
-> since commit f16bd7ca0457 ("mtd: nand: Kill the MTD_NAND_IDS Kconfig
-> option").
+On Tue, Feb 18, 2020 at 01:07:15PM -0800, Sean Christopherson wrote:
+> Reallocate a rmap array and recalcuate large page compatibility when
+> moving an existing memslot to correctly handle the alignment properties
+> of the new memslot.  The number of rmap entries required at each level
+> is dependent on the alignment of the memslot's base gfn with respect to
+> that level, e.g. moving a large-page aligned memslot so that it becomes
+> unaligned will increase the number of rmap entries needed at the now
+> unaligned level.
 > 
-> CONFIG_IOSCHED_DEADLINE, CONFIG_IOSCHED_CFQ and CONFIG_DEFAULT_NOOP are
-> gone since commit f382fb0bcef4 ("block: remove legacy IO schedulers").
+> Not updating the rmap array is the most obvious bug, as KVM accesses
+> garbage data beyond the end of the rmap.  KVM interprets the bad data as
+> pointers, leading to non-canonical #GPs, unexpected #PFs, etc...
 > 
-> The IOSCHED_DEADLINE was replaced by MQ_IOSCHED_DEADLINE and it will be
-> now enabled by default (along with MQ_IOSCHED_KYBER).
+>   general protection fault: 0000 [#1] SMP
+>   CPU: 0 PID: 1909 Comm: move_memory_reg Not tainted 5.4.0-rc7+ #139
+>   Hardware name: QEMU Standard PC (Q35 + ICH9, 2009), BIOS 0.0.0 02/06/2015
+>   RIP: 0010:rmap_get_first+0x37/0x50 [kvm]
+>   Code: <48> 8b 3b 48 85 ff 74 ec e8 6c f4 ff ff 85 c0 74 e3 48 89 d8 5b c3
+>   RSP: 0018:ffffc9000021bbc8 EFLAGS: 00010246
+>   RAX: ffff00617461642e RBX: ffff00617461642e RCX: 0000000000000012
+>   RDX: ffff88827400f568 RSI: ffffc9000021bbe0 RDI: ffff88827400f570
+>   RBP: 0010000000000000 R08: ffffc9000021bd00 R09: ffffc9000021bda8
+>   R10: ffffc9000021bc48 R11: 0000000000000000 R12: 0030000000000000
+>   R13: 0000000000000000 R14: ffff88827427d700 R15: ffffc9000021bce8
+>   FS:  00007f7eda014700(0000) GS:ffff888277a00000(0000) knlGS:0000000000000000
+>   CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+>   CR2: 00007f7ed9216ff8 CR3: 0000000274391003 CR4: 0000000000162eb0
+>   Call Trace:
+>    kvm_mmu_slot_set_dirty+0xa1/0x150 [kvm]
+>    __kvm_set_memory_region.part.64+0x559/0x960 [kvm]
+>    kvm_set_memory_region+0x45/0x60 [kvm]
+>    kvm_vm_ioctl+0x30f/0x920 [kvm]
+>    do_vfs_ioctl+0xa1/0x620
+>    ksys_ioctl+0x66/0x70
+>    __x64_sys_ioctl+0x16/0x20
+>    do_syscall_64+0x4c/0x170
+>    entry_SYSCALL_64_after_hwframe+0x44/0xa9
+>   RIP: 0033:0x7f7ed9911f47
+>   Code: <48> 3d 01 f0 ff ff 73 01 c3 48 8b 0d 21 6f 2c 00 f7 d8 64 89 01 48
+>   RSP: 002b:00007ffc00937498 EFLAGS: 00000246 ORIG_RAX: 0000000000000010
+>   RAX: ffffffffffffffda RBX: 0000000001ab0010 RCX: 00007f7ed9911f47
+>   RDX: 0000000001ab1350 RSI: 000000004020ae46 RDI: 0000000000000004
+>   RBP: 000000000000000a R08: 0000000000000000 R09: 00007f7ed9214700
+>   R10: 00007f7ed92149d0 R11: 0000000000000246 R12: 00000000bffff000
+>   R13: 0000000000000003 R14: 00007f7ed9215000 R15: 0000000000000000
+>   Modules linked in: kvm_intel kvm irqbypass
+>   ---[ end trace 0c5f570b3358ca89 ]---
 > 
-> The BFQ_GROUP_IOSCHED is the only multiqueue scheduler which comes with
-> group scheduling so select it in configs previously choosing
-> CFQ_GROUP_IOSCHED.
-
-Applied to mips-next.
-
-> commit f6541f347bba
-> https://git.kernel.org/mips/c/f6541f347bba
+> The disallow_lpage tracking is more subtle.  Failure to update results
+> in KVM creating large pages when it shouldn't, either due to stale data
+> or again due to indexing beyond the end of the metadata arrays, which
+> can lead to memory corruption and/or leaking data to guest/userspace.
 > 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> Reviewed-by: Philippe Mathieu-Daudé <f4bug@amsat.org>
-> Signed-off-by: Paul Burton <paulburton@kernel.org>
+> Note, the arrays for the old memslot are freed by the unconditional call
+> to kvm_free_memslot() in __kvm_set_memory_region().
+> 
+> Fixes: 05da45583de9b ("KVM: MMU: large page support")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 
-Thanks,
-    Paul
+Reviewed-by: Peter Xu <peterx@redhat.com>
 
-[ This message was auto-generated; if you believe anything is incorrect
-  then please email paulburton@kernel.org to report it. ]
+-- 
+Peter Xu
 
-
---===============4724106645458064911==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4724106645458064911==--
