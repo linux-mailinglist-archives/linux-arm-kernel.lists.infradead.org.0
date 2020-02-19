@@ -2,104 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD15D163BC5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 05:03:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1ABC163BFF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 05:20:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oWUKP3+nr/FrD9CYMTCA2jGeqJlNfTaPEFZu0ip73ZE=; b=aa3UN5VHgINqCr
-	GlxvcrilqfpsFxNUHk4rizDWIsWMUrT3z9z2jAtSiEj+/J/eWz8fn8uO6UKLIEAKERa2l3izTyQpV
-	a/q/06rLHKKGYUdAzb2BnmDxWXWAQqKil7CsvLj7Wh6x8MAR1nT+vNepeLzbsYLIope6pb/wGj4Op
-	uWryIwr8jBUqnXSFdS/SKY+3zRcyo7RKw0Cal7JC3rGJI8mXIwCsSF7hNACOyCgwoUYUHvzzSgKEE
-	wmaxzzVywaQqBptV03/Brx2yF0TcqAb+5nhj0RJSz9luRAoxalFJrV5eE05RKpPDAV2aWy9TNrDxq
-	yyjjDsinl4Jh5La91HSw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fPs5lNj5EYlZXiDLqaovQfJPbZw2NjyBhnWPhIWHffo=; b=W9MwZS94O+ApXw
+	diS5JLozTo8ruwx4C42OuTXa3DZzG7WwP7lPxLlYeJi6G9s0bB5vGgYJI5qDH8hFpuBG8qQxOuS3m
+	DQMmybNVNNu9rSv3wEh9B+WjPzgG0uw2g0NeDY88Z9C0iXhvo4Au2Z85cbhrc5GGpeF/c9N49Vewq
+	zKeRL3agYwoil/3YB9WcaFNOfXRGmwmxoEnU6ffVFfr+LTmbE9q4Hf8iJWX7rZtwxPE6XXe8zp5jo
+	GW/aWSngSPNxnBxxAccwR3rNr2a9TaFt/6yX3syyGABQKbNMrWzMlFQEsgGyG+dcQ0RZR7y8+6qQo
+	8aToZ+OB+LQ84AX2mBnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4GaI-0007Fa-01; Wed, 19 Feb 2020 04:03:38 +0000
-Received: from userp2130.oracle.com ([156.151.31.86])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4GaA-0007EB-Mp; Wed, 19 Feb 2020 04:03:32 +0000
-Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
- by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01J43Dro116100;
- Wed, 19 Feb 2020 04:03:13 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : references : mime-version : content-type :
- in-reply-to; s=corp-2020-01-29;
- bh=4a082+unim5sSZcSwTAMdgcw2O0kQMVZyf+PWBOP5+Y=;
- b=ptZwoVIxZwWZK+1uDUkiLEiSYuN7xdBgP2DccB4ZIFHLsQbSYushQ7mdFkhOB3djz5hv
- FMtNsv7JvbGEp9MC0Vt6ojqdpR3Da9DvbnURgb3+aFHh9Tjm3z39YSfLKh9EM26ycF7w
- +fu50BAmCNgOV9xzbHPGsw/AczaaagTUKKSdCE2MS31hs9Y3bvFT2GlzOFdsYQ4K7lQy
- d7RtSiwn44l44MC6QNKlQdHUC+J06bqGfEfnvkgyyEZhE0JisC6WbADmxLxIbGuWZkrs
- tO0DHDmPQ63JPhXyLP782udUWehrHHlZ+dqrnDpFA4ASBTEvPk53rTxZBAl6fiOtUG/t 5Q== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2130.oracle.com with ESMTP id 2y8udd0d6c-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 19 Feb 2020 04:03:13 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 01J42KAJ075792;
- Wed, 19 Feb 2020 04:03:12 GMT
-Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
- by aserp3030.oracle.com with ESMTP id 2y8ud9njdy-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 19 Feb 2020 04:03:12 +0000
-Received: from abhmp0015.oracle.com (abhmp0015.oracle.com [141.146.116.21])
- by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 01J42tKC019491;
- Wed, 19 Feb 2020 04:02:55 GMT
-Received: from kadam (/129.205.23.165) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 18 Feb 2020 20:02:55 -0800
-Date: Wed, 19 Feb 2020 07:02:44 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Kaaira Gupta <kgupta@es.iitr.ac.in>
-Subject: Re: [PATCH] staging: bcm2835-camera: call function instead of macro
-Message-ID: <20200219040244.GI7838@kadam>
-References: <20200218160727.GA17010@kaaira-HP-Pavilion-Notebook>
- <20200218183711.GE19641@kadam>
- <20200218191747.GA12782@kaaira-HP-Pavilion-Notebook>
+	id 1j4GqK-0003t0-S5; Wed, 19 Feb 2020 04:20:12 +0000
+Received: from [2601:1c0:6280:3f0::19c2]
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4Gq7-0003eb-PE; Wed, 19 Feb 2020 04:19:59 +0000
+Subject: Re: [PATCH v8 01/12] add support for Clang's Shadow Call Stack (SCS)
+To: Sami Tolvanen <samitolvanen@google.com>, Will Deacon <will@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Steven Rostedt <rostedt@goodmis.org>, Masami Hiramatsu
+ <mhiramat@kernel.org>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Mark Rutland <mark.rutland@arm.com>, james.morse@arm.com
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200219000817.195049-1-samitolvanen@google.com>
+ <20200219000817.195049-2-samitolvanen@google.com>
+From: Randy Dunlap <rdunlap@infradead.org>
+Message-ID: <60ec3a49-7b71-df31-f231-b48ff135b718@infradead.org>
+Date: Tue, 18 Feb 2020 20:19:56 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200218191747.GA12782@kaaira-HP-Pavilion-Notebook>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9535
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- mlxscore=0 adultscore=0
- mlxlogscore=999 malwarescore=0 bulkscore=0 suspectscore=9 phishscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2001150001
- definitions=main-2002190028
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9535
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
- impostorscore=0
- mlxlogscore=999 malwarescore=0 mlxscore=0 suspectscore=9
- priorityscore=1501 bulkscore=0 adultscore=0 spamscore=0 lowpriorityscore=0
- clxscore=1015 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2001150001 definitions=main-2002190028
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_200330_832885_0C4319B1 
-X-CRM114-Status: GOOD (  22.58  )
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.86 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+In-Reply-To: <20200219000817.195049-2-samitolvanen@google.com>
+Content-Language: en-US
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,70 +50,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, devel@driverdev.osuosl.org,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Ray Jui <rjui@broadcom.com>, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, Marc Zyngier <maz@kernel.org>,
+ kernel-hardening@lists.openwall.com,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ clang-built-linux@googlegroups.com, Laura Abbott <labbott@redhat.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 12:47:47AM +0530, Kaaira Gupta wrote:
-> On Tue, Feb 18, 2020 at 09:37:11PM +0300, Dan Carpenter wrote:
-> > On Tue, Feb 18, 2020 at 09:37:28PM +0530, Kaaira Gupta wrote:
-> > > Fix checkpatch.pl warning of 'macro argument reuse' in bcm2835-camera.h
-> > > by removing the macro and calling the function, written in macro in
-> > > bcm2835-camera.h, directly in bcm2835-camera.c
-> > > 
-> > > Signed-off-by: Kaaira Gupta <kgupta@es.iitr.ac.in>
-> > > ---
-> > >  .../bcm2835-camera/bcm2835-camera.c           | 28 +++++++++++++++----
-> > >  .../bcm2835-camera/bcm2835-camera.h           | 10 -------
-> > >  2 files changed, 22 insertions(+), 16 deletions(-)
-> > > 
-> > > diff --git a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-> > > index 1ef31a984741..19b3ba80d0e7 100644
-> > > --- a/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-> > > +++ b/drivers/staging/vc04_services/bcm2835-camera/bcm2835-camera.c
-> > > @@ -919,9 +919,17 @@ static int vidioc_g_fmt_vid_cap(struct file *file, void *priv,
-> > >  	else
-> > >  		f->fmt.pix.colorspace = V4L2_COLORSPACE_SMPTE170M;
-> > >  	f->fmt.pix.priv = 0;
-> > > -
-> > > -	v4l2_dump_pix_format(1, bcm2835_v4l2_debug, &dev->v4l2_dev, &f->fmt.pix,
-> > > -			     __func__);
-> > > +	v4l2_dbg(1, bcm2835_v4l2_debug, &dev->v4l2_dev,
-> > > +		 "%s: w %u h %u field %u pfmt 0x%x bpl %u sz_img %u colorspace 0x%x priv %u\n",
-> > > +		  __func__,
-> > > +		 (&f->fmt.pix)->width,
-> > > +		 (&f->fmt.pix)->height,
-> > > +		 (&f->fmt.pix)->field,
-> > > +		 (&f->fmt.pix)->pixelformat,
-> > > +		 (&f->fmt.pix)->bytesperline,
-> > > +		 (&f->fmt.pix)->sizeimage,
-> > > +		 (&f->fmt.pix)->colorspace,
-> > > +		 (&f->fmt.pix)->priv);
-> > 
-> > This is not as nice to look at as the original.  Just ignore the
-> > warning.
-> > 
-> > regards,
-> > dan carpenter
-> >
-> So, is this warning to be ignored from everywhere in every driver, as it
-> doesn't look good? And if yes, then why is it there in the first place?
+Hi Sami,
 
-Obviously the reason for the warning is a good idea.  Do a google
-search for the dangers of c macros if you don't understand.
+a couple of minor tweaks:
 
-But at the same time uniformity and clean code is nice so it's a matter
-of setting priorities.  Checkpatch is just a Perl script and not the
-King of The World.  We can ignore it if we want to.
+On 2/18/20 4:08 PM, Sami Tolvanen wrote:
+> diff --git a/arch/Kconfig b/arch/Kconfig
+> index 98de654b79b3..66b34fd0df54 100644
+> --- a/arch/Kconfig
+> +++ b/arch/Kconfig
+> @@ -526,6 +526,40 @@ config STACKPROTECTOR_STRONG
+>  	  about 20% of all kernel functions, which increases the kernel code
+>  	  size by about 2%.
+>  
+> +config ARCH_SUPPORTS_SHADOW_CALL_STACK
+> +	bool
+> +	help
+> +	  An architecture should select this if it supports Clang's Shadow
+> +	  Call Stack, has asm/scs.h, and implements runtime support for shadow
+> +	  stack switching.
+> +
+> +config SHADOW_CALL_STACK
+> +	bool "Clang Shadow Call Stack"
+> +	depends on ARCH_SUPPORTS_SHADOW_CALL_STACK
+> +	help
+> +	  This option enables Clang's Shadow Call Stack, which uses a
+> +	  shadow stack to protect function return addresses from being
+> +	  overwritten by an attacker. More information can be found from
 
-regards,
-dan carpenter
+	                                                      found in
+
+> +	  Clang's documentation:
+> +
+> +	    https://clang.llvm.org/docs/ShadowCallStack.html
+> +
+> +	  Note that security guarantees in the kernel differ from the ones
+> +	  documented for user space. The kernel must store addresses of shadow
+> +	  stacks used by other tasks and interrupt handlers in memory, which
+> +	  means an attacker capable reading and writing arbitrary memory may
+
+	                    capable of
+
+> +	  be able to locate them and hijack control flow by modifying shadow
+> +	  stacks that are not currently in use.
+> +
+> +config SHADOW_CALL_STACK_VMAP
+> +	bool "Use virtually mapped shadow call stacks"
+> +	depends on SHADOW_CALL_STACK
+> +	help
+> +	  Use virtually mapped shadow call stacks. Selecting this option
+> +	  provides better stack exhaustion protection, but increases per-thread
+> +	  memory consumption as a full page is allocated for each shadow stack.
+> +
+> +
+>  config HAVE_ARCH_WITHIN_STACK_FRAMES
+>  	bool
+>  	help
+
+
+thanks.
+-- 
+~Randy
 
 
 _______________________________________________
