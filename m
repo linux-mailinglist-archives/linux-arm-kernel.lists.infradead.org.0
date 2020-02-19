@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C2321639E2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 03:13:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89EEF1639EF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 03:18:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=okrCSyinH7t4KcRIcD3VA7Ht0VyDx4UvxtpqOoy2VOE=; b=dyIgKEuA0GBTuG
-	82BG+sdKONbcrBLjbvyOv04R1FtSDGYpmNiwo1hOv70m7Z8VB7nu/vjRoQwi+6yUZxTa9tYAAfyFC
-	qkfPAA9ShjOBetdifYta24uPKxn0fYUmUFLYJxUkjLoHFBWCyCxS9z+gG1f1KKcqwItgZi07nKcAU
-	hmhg6DpQv8al51txsu5hTSG6Cs0sugfH54pVSeiQzmaZuOS/5GDTMa+JfxFBPFZZcas5cIPnFkoiI
-	0FfW7/TIxSUHY/6OUg2lkPlDq6tPp7zajILjXVsO98Jel+s57equ6xSe7v7qM8z7Jo7onWH8Yu5QG
-	uxKl+LDAqYt0r6XRK+1g==;
+	List-Owner; bh=2Kx91YfnNxjJbaClviD9uzrj21B9X3FN44aeaSWEsOg=; b=RjPP83g4v/Lh9f
+	KpLwMMNvy1hvtrb43ZkH4y8vxZVbH1jWGEOHpYoZJo4Bu06Lq6DUC2jrH8/D3iDHEFz+u+iy4xa7W
+	hzj1R/gKAYeBa/mfUuktSa/NFi9LM8CsLQ9vh+flIZHie4qiwZcE/FXbDby859UaC4L+GP1oGjddW
+	tBVQURh0v+OqYxO1y2R0yAL+qhCp6i3dtBEmNfjsfrPd8CXzCFayu9T4AjBkG3vEiq+c3idLsMWv/
+	c5rfqhtC6mBpLeSjQG8FDcWVUsTFlRxgpYdL/dulwXicmP/l6RX2KF6C8hgnrFFoLrMdmRlEPIzBq
+	uq3DtY1w58kVzjDHsa6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Ert-0006GF-6A; Wed, 19 Feb 2020 02:13:41 +0000
+	id 1j4EwH-0008QQ-J4; Wed, 19 Feb 2020 02:18:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Erl-0006Fj-T0
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 02:13:35 +0000
+ id 1j4EwA-0008Q6-EJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 02:18:07 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5011F2176D;
- Wed, 19 Feb 2020 02:13:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2EB64207FD;
+ Wed, 19 Feb 2020 02:18:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582078413;
- bh=K3Ru7H0q8Sc6wbkr3yPMVanZvfqlkzIjRR1+NpRGYCI=;
+ s=default; t=1582078686;
+ bh=JA4nav9WNgI9FlwXSrYprZ3MJTcNklbbd74cAeesTao=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Gbk036e3RN920NrEprLdIzrEFksiqdonXA6Qb2l30VGdivSNt9u5k7DKAlesLk9Ws
- C9/i7SoMQWOqJBn1+siQnLS4I56QxSf1emldxbOx7PkG6VKPqEO2OqXUEXn4d9Vf/x
- YAdvZv+ppaHhPuMaIBwNsopEHZs/sdsE0e527OzQ=
-Date: Wed, 19 Feb 2020 10:13:25 +0800
+ b=QjLa7jpibMwkMEZ6dsZGF21NFvuYGCVjsrB8PBrCOAj/dDBYiyaWwGdW6gBOMIq5x
+ ktRpjjgUdQLoHyt1Y8sRZQpMYc+U4CXlMJvGxb/nDV7qojG/5MuI/hovXfnabCdEud
+ DfCG106ea/qZCPjks7o7iuyUq4uad3EiNrszs87Y=
+Date: Wed, 19 Feb 2020 10:17:59 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH] arm64: dts: imx8qxp-mek: Remove unexisting Ethernet PHY
-Message-ID: <20200219021325.GI6075@dragon>
-References: <20200217191503.31444-1-festevam@gmail.com>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH v2 2/2] arm64: dts: ls1028a: add missing SPI nodes
+Message-ID: <20200219021758.GJ6075@dragon>
+References: <20200218171418.18297-1-michael@walle.cc>
+ <20200218171418.18297-2-michael@walle.cc>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200217191503.31444-1-festevam@gmail.com>
+In-Reply-To: <20200218171418.18297-2-michael@walle.cc>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_181333_956924_B7314C49 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20200218_181806_499541_3F61C1D6 
+X-CRM114-Status: GOOD (  10.82  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,26 +77,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, robh@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Feb 17, 2020 at 04:15:03PM -0300, Fabio Estevam wrote:
-> There is only on Ethernet port and one Ethernet PHY on imx8qxp-mek.
+On Tue, Feb 18, 2020 at 06:14:18PM +0100, Michael Walle wrote:
+> The LS1028A has three (dual) SPI controller. These are compatible with
+> the ones from the LS1021A. Add the nodes.
 > 
-> Remove the unexisting ethphy1 port.
+> The third controller was tested on a custom board.
 > 
-> This fixes a run-time warning:
-> 
-> mdio_bus 5b040000.ethernet-1: MDIO device at address 1 is missing.
-> 
-> Fixes: fdea904e85e1 ("arm64: dts: imx: add imx8qxp mek support")
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> Signed-off-by: Michael Walle <michael@walle.cc>
 
-Applied, thanks.
+Applied this version, instead.
+
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
