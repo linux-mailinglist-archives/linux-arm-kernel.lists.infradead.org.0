@@ -2,61 +2,122 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57FEA1639AB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 02:53:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E8701639B2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 02:55:48 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=xjL0vwP32rdl1WXm55lv07qsDdfECcnnO3j7lXoeWSI=; b=pkPkWeye7Lc2wBhFnGAec61XoE
-	rU2tzxchyc5Xk0K0K01M8v4fR5FAAFRsM2ArenuE1W+xxfcywZWYZ9v6H8Aatz2qb39Q8xa6xwZgN
-	sWgq9dL3lfYH85utJkyerrxVVC5M7kfhsXMhgxz1zWPvN+RGUan7n7bHuPtcZ6FIwwvrBTPBrJZ3T
-	OBu1OvcYUJB+nHwKjbk+pPFHj8ZHUM6rKzxizhKpiFfO+3zMFW6O3Dd3Z/Evwc4t5FerFcifTmkiI
-	puXvFMefDJ3DVYq7b5Mn7qZCq/HOOy5b/Rp3Ei8fifz4K897uuiFmkgp5Uv6bC7pNZwpOaj1VunSy
-	bj2S9FzA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/hjxy0Jl3nZRkOVjnBz/Y26RdIV/VgEv+3JY3u7+eaQ=; b=V/4YgEy1MOlY8Q
+	ezJyQreoUFQ+Rkuu2W64v9MiedvZaRoilJrE6KjxCzBX1vRkVyA1/My//tTVUD56wK4chbBdGEo/k
+	T0fhgJwKSMYWnp1FeLEICADWIxoct3kmI0SLippnWx7NbsfnZIi57agEZ3RzzgHO9rWzEkfOl7jFJ
+	0kAiVBeditLGa+DLVlkWmkHyo267OKYn+wiWdowMTkDLl/kiGXDnpkldtVy32SetFWQ4trlvHnU7s
+	1IcnaWaH9vNb52q1Istq6Hm4PPyTctAkujzXWXC1VYtR12vUdw1ALozOC4DJcaNchPQwkehMEbHFo
+	gPkZrKpyGWMejK2iDQrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4EY1-0006xw-HH; Wed, 19 Feb 2020 01:53:09 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4EXN-0006Tw-59
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 01:52:32 +0000
-Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 19 Feb 2020 10:52:26 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by kinkan-ex.css.socionext.com (Postfix) with ESMTP id D3CF0180B91;
- Wed, 19 Feb 2020 10:52:26 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Wed, 19 Feb 2020 10:52:26 +0900
-Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id 4CC5A1A01BB;
- Wed, 19 Feb 2020 10:52:26 +0900 (JST)
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-To: Vinod Koul <vkoul@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH v3 2/2] dmaengine: uniphier-xdmac: Add UniPhier external DMA
- controller driver
-Date: Wed, 19 Feb 2020 10:52:21 +0900
-Message-Id: <1582077141-16793-3-git-send-email-hayashi.kunihiko@socionext.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1582077141-16793-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1582077141-16793-1-git-send-email-hayashi.kunihiko@socionext.com>
+	id 1j4EaY-0000Jj-AK; Wed, 19 Feb 2020 01:55:46 +0000
+Received: from mail-eopbgr30070.outbound.protection.outlook.com ([40.107.3.70]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4EaL-0000J7-B8
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 01:55:34 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=eQ4al17Im9M4k/84EtfPiSa+Lq4dyfktbAlGS/qIgdEX+22KxwVJK7gzy0p6iVY4OrqOrgH1TouEKzUW8Rai/ruDuIQcQ6BG/iznFhsHZcpRFdPWdaVIcr2T1Ito9uR2lnousbaBqlp0y2emu0DtHOkshK5GWJgX8SlF5fxZVfXgWAjtW6PCCQa5NHv4+4IUzorCo3gLlxJ8LySjP++fY6WpTm5RVIm2GfdjM+VjApyfWo5BobJiuvr+3yKHhVXPITkV74Qi6Ue1a+XBvAHqm6KymIttpxBNm5Bv1sEZ8Z10EWeafnT8jd+8QHJR2+UgZZTPGDU5pWSWF2qM0A14sg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=AqiqtZaJYqKbUaL5ZYOjyCXW3t9xREclxiNxC5Klc8U=;
+ b=e3CSC+5vl2zrpJmVn+LzwXzN98xN9TnH77csdK9DZpQtRq759AFco9YqNaAb6aFQzRl7xkScxohd2vNrkWKMPu1z/+tZoD0TuLB0KqrbwK19LBAobgI9wXVwgFZrczw5QCwCYLZfRIKe6wlVLXgVgGTx+4XXC9XMM8g4qNrmun7R/6hXz7hB/OP7oYvaz8ANSzR5tFAO+vI0TBD/rwnqD4vObjtRh2x6/PfEC6qLGvA8aJsYTbCv8ryCFmP95gdt6uNcX26OnxvhiPKrEYLuBW8a8WzTEBj2UJUPBEHavVcFHW/yPcsB94iIO8kwQiD+C2qnmlMxq/1XPnFdUAlj2g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=AqiqtZaJYqKbUaL5ZYOjyCXW3t9xREclxiNxC5Klc8U=;
+ b=BsmlZbmwBxySODLH8t4zwl44IKxxvPSlt7/DdBTm09MUtDUB1aACUzrDdCAV9HsUpK8GoF0PDi1T3XocDMkg31Wx7yhvgNTFqDR7TYxnmX4u9nhkcbcCDOK/s61zZioUfUQqTEzAQ2WtsP3RDrgcgkn8LACdbAWGYzLmGvhcVAA=
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
+ DB7PR04MB4441.eurprd04.prod.outlook.com (52.135.141.151) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2729.25; Wed, 19 Feb 2020 01:55:28 +0000
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::5cb4:81c8:1618:5ca]) by DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::5cb4:81c8:1618:5ca%7]) with mapi id 15.20.2729.032; Wed, 19 Feb 2020
+ 01:55:28 +0000
+From: Joakim Zhang <qiangqing.zhang@nxp.com>
+To: Mark Rutland <mark.rutland@arm.com>, John Garry <john.garry@huawei.com>
+Subject: RE: [PATCH RFC 0/7] perf pmu-events: Support event aliasing for
+ system PMUs
+Thread-Topic: [PATCH RFC 0/7] perf pmu-events: Support event aliasing for
+ system PMUs
+Thread-Index: AQHV5nc2eARks93Kg0mXKllKiXweZKghLweAgAAOKwCAAAQfgIAAdZ8Q
+Date: Wed, 19 Feb 2020 01:55:28 +0000
+Message-ID: <DB7PR04MB46188F06D6CEA1430712E648E6100@DB7PR04MB4618.eurprd04.prod.outlook.com>
+References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
+ <20200218125707.GB20212@willie-the-truck>
+ <a40903fe-d52f-96c6-a06a-fe834d71d625@huawei.com>
+ <20200218133943.GF20212@willie-the-truck>
+ <627cbc50-4b36-7f7f-179d-3d27d9e0215a@huawei.com>
+ <20200218170803.GA9968@lakrids.cambridge.arm.com>
+ <cb004f43-b2a4-ae23-9fd3-0f70bd69701b@huawei.com>
+ <20200218181331.GB9968@lakrids.cambridge.arm.com>
+In-Reply-To: <20200218181331.GB9968@lakrids.cambridge.arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=qiangqing.zhang@nxp.com; 
+x-originating-ip: [222.93.234.203]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 20a59de5-13ba-49ae-cef0-08d7b4decb4a
+x-ms-traffictypediagnostic: DB7PR04MB4441:
+x-microsoft-antispam-prvs: <DB7PR04MB4441196CEF1BA5DFB1C273E0E6100@DB7PR04MB4441.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0318501FAE
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(376002)(396003)(366004)(136003)(346002)(189003)(199004)(5660300002)(81166006)(186003)(4326008)(26005)(6506007)(316002)(7696005)(53546011)(110136005)(2906002)(81156014)(8936002)(8676002)(54906003)(66476007)(33656002)(64756008)(478600001)(66556008)(66446008)(7416002)(55016002)(71200400001)(9686003)(76116006)(86362001)(52536014)(66946007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4441;
+ H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Z/QoKtsTcb7iYI0X19jrBJzv/FRhuUn1ZYjJFko8EY3r9c2M5xKDolemku5KN05y43odwRqa0Y36qAOmHY6FiAQ98Obb+ehnhzAW8Z+E6KvGKTxaUd6lDEfZU8QxCxE7TX8xoe/8NLSB+hxTjtXNoxOyhGTS1Ltt5yGoFKGfcqdyLZIgqJOJdzALnboitqtxqGPTdHENHboh74PnsSZ5NnY7ZjmarEaH9nIQSRuFLH55zwSi6+3sIu7oWQD2LL9sji5Pc4va9wIF/keY5ayUVqImXPVvDbtFXELrB0jQuIJ8BNJcfyx4rCQFisZXAzprJ6Mi2z/s4ytG5Ggwf20cZEeZrGdOP7plwT5Hoo/aHV4WYx2xkeDXvoelOitVID+uT92VBroqkaRP7s9P9aybrLjkQZgHz7m4f3059nDGalkhl47kuCEW+Cm2LbINCF2H
+x-ms-exchange-antispam-messagedata: 5qb3JSFXSwpmlM4lQKk4FGItIOXi6+Nt6iFNGXyUVz04ftAiSl0ZwXPp6jHHW6BG5alfNOERKl0Zj5B1Ula11BmQQlIagXVWvHKRobbaxlB8G9LFjHffPSpdVN18dXLcM2BhUD3rEnFmcLq6ibmnrw==
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 20a59de5-13ba-49ae-cef0-08d7b4decb4a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Feb 2020 01:55:28.1701 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: i1ReZOuTDlSAhkOpwahEQ7cNSgUCg5APUDUtpHtAPGAqv5296VgQzOXprYC64uKMHYoshM0sVo+WhhtjqnQZWQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4441
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_175229_788677_E84DC7B7 
-X-CRM114-Status: GOOD (  28.08  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200218_175533_387545_B2BA8E09 
+X-CRM114-Status: GOOD (  12.95  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [202.248.49.38 listed in list.dnswl.org]
+ no trust [40.107.3.70 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,690 +129,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>, linux-kernel@vger.kernel.org,
- Jassi Brar <jaswinder.singh@linaro.org>, dmaengine@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "ak@linux.intel.com" <ak@linux.intel.com>,
+ "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "jolsa@redhat.com" <jolsa@redhat.com>, Linuxarm <linuxarm@huawei.com>,
+ "acme@kernel.org" <acme@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Zhangshaokun <zhangshaokun@hisilicon.com>,
+ "alexander.shishkin@linux.intel.com" <alexander.shishkin@linux.intel.com>,
+ "mingo@redhat.com" <mingo@redhat.com>,
+ "james.clark@arm.com" <james.clark@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "namhyung@kernel.org" <namhyung@kernel.org>, Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>
+Content-Type: text/plain; charset="gb2312"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds external DMA controller driver implemented in Socionext
-UniPhier SoCs. This driver supports DMA_MEMCPY and DMA_SLAVE modes.
-
-Since this driver does not support the the way to transfer size
-unaligned to burst width, 'src_maxburst' or 'dst_maxburst' of
-dma_slave_config must be 1 to transfer arbitrary size. If transfer
-size is unaligned to burst size, the transfer isn't started and
-the driver displays an error message.
-
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
----
- drivers/dma/Kconfig          |  11 +
- drivers/dma/Makefile         |   1 +
- drivers/dma/uniphier-xdmac.c | 611 +++++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 623 insertions(+)
- create mode 100644 drivers/dma/uniphier-xdmac.c
-
-diff --git a/drivers/dma/Kconfig b/drivers/dma/Kconfig
-index 7af874b..2d1cb5e 100644
---- a/drivers/dma/Kconfig
-+++ b/drivers/dma/Kconfig
-@@ -608,6 +608,17 @@ config UNIPHIER_MDMAC
- 	  UniPhier platform.  This DMA controller is used as the external
- 	  DMA engine of the SD/eMMC controllers of the LD4, Pro4, sLD8 SoCs.
- 
-+config UNIPHIER_XDMAC
-+	tristate "UniPhier XDMAC support"
-+	depends on ARCH_UNIPHIER || COMPILE_TEST
-+	depends on OF
-+	select DMA_ENGINE
-+	select DMA_VIRTUAL_CHANNELS
-+	help
-+	  Enable support for the XDMAC (external DMA controller) on the
-+	  UniPhier platform. This DMA controller can transfer data from
-+	  memory to memory, memory to peripheral and peripheral to memory.
-+
- config XGENE_DMA
- 	tristate "APM X-Gene DMA support"
- 	depends on ARCH_XGENE || COMPILE_TEST
-diff --git a/drivers/dma/Makefile b/drivers/dma/Makefile
-index f5ce866..6452468 100644
---- a/drivers/dma/Makefile
-+++ b/drivers/dma/Makefile
-@@ -72,6 +72,7 @@ obj-$(CONFIG_TEGRA20_APB_DMA) += tegra20-apb-dma.o
- obj-$(CONFIG_TEGRA210_ADMA) += tegra210-adma.o
- obj-$(CONFIG_TIMB_DMA) += timb_dma.o
- obj-$(CONFIG_UNIPHIER_MDMAC) += uniphier-mdmac.o
-+obj-$(CONFIG_UNIPHIER_XDMAC) += uniphier-xdmac.o
- obj-$(CONFIG_XGENE_DMA) += xgene-dma.o
- obj-$(CONFIG_ZX_DMA) += zx_dma.o
- obj-$(CONFIG_ST_FDMA) += st_fdma.o
-diff --git a/drivers/dma/uniphier-xdmac.c b/drivers/dma/uniphier-xdmac.c
-new file mode 100644
-index 00000000..2f6fd51
---- /dev/null
-+++ b/drivers/dma/uniphier-xdmac.c
-@@ -0,0 +1,611 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * External DMA controller driver for UniPhier SoCs
-+ * Copyright 2019 Socionext Inc.
-+ * Author: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-+ */
-+
-+#include <linux/bitops.h>
-+#include <linux/bitfield.h>
-+#include <linux/iopoll.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/of_dma.h>
-+#include <linux/platform_device.h>
-+
-+#include "dmaengine.h"
-+#include "virt-dma.h"
-+
-+#define XDMAC_CH_WIDTH		0x100
-+
-+#define XDMAC_TFA		0x08
-+#define XDMAC_TFA_MCNT_MASK	GENMASK(23, 16)
-+#define XDMAC_TFA_MASK		GENMASK(5, 0)
-+#define XDMAC_SADM		0x10
-+#define XDMAC_SADM_STW_MASK	GENMASK(25, 24)
-+#define XDMAC_SADM_SAM		BIT(4)
-+#define XDMAC_SADM_SAM_FIXED	XDMAC_SADM_SAM
-+#define XDMAC_SADM_SAM_INC	0
-+#define XDMAC_DADM		0x14
-+#define XDMAC_DADM_DTW_MASK	XDMAC_SADM_STW_MASK
-+#define XDMAC_DADM_DAM		XDMAC_SADM_SAM
-+#define XDMAC_DADM_DAM_FIXED	XDMAC_SADM_SAM_FIXED
-+#define XDMAC_DADM_DAM_INC	XDMAC_SADM_SAM_INC
-+#define XDMAC_EXSAD		0x18
-+#define XDMAC_EXDAD		0x1c
-+#define XDMAC_SAD		0x20
-+#define XDMAC_DAD		0x24
-+#define XDMAC_ITS		0x28
-+#define XDMAC_ITS_MASK		GENMASK(25, 0)
-+#define XDMAC_TNUM		0x2c
-+#define XDMAC_TNUM_MASK		GENMASK(15, 0)
-+#define XDMAC_TSS		0x30
-+#define XDMAC_TSS_REQ		BIT(0)
-+#define XDMAC_IEN		0x34
-+#define XDMAC_IEN_ERRIEN	BIT(1)
-+#define XDMAC_IEN_ENDIEN	BIT(0)
-+#define XDMAC_STAT		0x40
-+#define XDMAC_STAT_TENF		BIT(0)
-+#define XDMAC_IR		0x44
-+#define XDMAC_IR_ERRF		BIT(1)
-+#define XDMAC_IR_ENDF		BIT(0)
-+#define XDMAC_ID		0x48
-+#define XDMAC_ID_ERRIDF		BIT(1)
-+#define XDMAC_ID_ENDIDF		BIT(0)
-+
-+#define XDMAC_MAX_CHANS		16
-+#define XDMAC_INTERVAL_CLKS	20
-+#define XDMAC_MAX_WORDS		XDMAC_TNUM_MASK
-+
-+/* cut lower bit for maintain alignment of maximum transfer size */
-+#define XDMAC_MAX_WORD_SIZE	(XDMAC_ITS_MASK & ~GENMASK(3, 0))
-+
-+#define UNIPHIER_XDMAC_BUSWIDTHS \
-+	(BIT(DMA_SLAVE_BUSWIDTH_1_BYTE) | \
-+	 BIT(DMA_SLAVE_BUSWIDTH_2_BYTES) | \
-+	 BIT(DMA_SLAVE_BUSWIDTH_4_BYTES) | \
-+	 BIT(DMA_SLAVE_BUSWIDTH_8_BYTES))
-+
-+struct uniphier_xdmac_desc_node {
-+	dma_addr_t src;
-+	dma_addr_t dst;
-+	u32 burst_size;
-+	u32 nr_burst;
-+};
-+
-+struct uniphier_xdmac_desc {
-+	struct virt_dma_desc vd;
-+
-+	unsigned int nr_node;
-+	unsigned int cur_node;
-+	enum dma_transfer_direction dir;
-+	struct uniphier_xdmac_desc_node nodes[];
-+};
-+
-+struct uniphier_xdmac_chan {
-+	struct virt_dma_chan vc;
-+	struct uniphier_xdmac_device *xdev;
-+	struct uniphier_xdmac_desc *xd;
-+	void __iomem *reg_ch_base;
-+	struct dma_slave_config	sconfig;
-+	int id;
-+	unsigned int req_factor;
-+};
-+
-+struct uniphier_xdmac_device {
-+	struct dma_device ddev;
-+	void __iomem *reg_base;
-+	int nr_chans;
-+	struct uniphier_xdmac_chan channels[];
-+};
-+
-+static struct uniphier_xdmac_chan *
-+to_uniphier_xdmac_chan(struct virt_dma_chan *vc)
-+{
-+	return container_of(vc, struct uniphier_xdmac_chan, vc);
-+}
-+
-+static struct uniphier_xdmac_desc *
-+to_uniphier_xdmac_desc(struct virt_dma_desc *vd)
-+{
-+	return container_of(vd, struct uniphier_xdmac_desc, vd);
-+}
-+
-+/* xc->vc.lock must be held by caller */
-+static struct uniphier_xdmac_desc *
-+uniphier_xdmac_next_desc(struct uniphier_xdmac_chan *xc)
-+{
-+	struct virt_dma_desc *vd;
-+
-+	vd = vchan_next_desc(&xc->vc);
-+	if (!vd)
-+		return NULL;
-+
-+	list_del(&vd->node);
-+
-+	return to_uniphier_xdmac_desc(vd);
-+}
-+
-+/* xc->vc.lock must be held by caller */
-+static void uniphier_xdmac_chan_start(struct uniphier_xdmac_chan *xc,
-+				      struct uniphier_xdmac_desc *xd)
-+{
-+	u32 src_mode, src_addr, src_width;
-+	u32 dst_mode, dst_addr, dst_width;
-+	u32 val, its, tnum;
-+	enum dma_slave_buswidth buswidth;
-+
-+	src_addr = xd->nodes[xd->cur_node].src;
-+	dst_addr = xd->nodes[xd->cur_node].dst;
-+	its      = xd->nodes[xd->cur_node].burst_size;
-+	tnum     = xd->nodes[xd->cur_node].nr_burst;
-+
-+	/*
-+	 * The width of MEM side must be 4 or 8 bytes, that does not
-+	 * affect that of DEV side and transfer size.
-+	 */
-+	if (xd->dir == DMA_DEV_TO_MEM) {
-+		src_mode = XDMAC_SADM_SAM_FIXED;
-+		buswidth = xc->sconfig.src_addr_width;
-+	} else {
-+		src_mode = XDMAC_SADM_SAM_INC;
-+		buswidth = DMA_SLAVE_BUSWIDTH_8_BYTES;
-+	}
-+	src_width = FIELD_PREP(XDMAC_SADM_STW_MASK, __ffs(buswidth));
-+
-+	if (xd->dir == DMA_MEM_TO_DEV) {
-+		dst_mode = XDMAC_DADM_DAM_FIXED;
-+		buswidth = xc->sconfig.dst_addr_width;
-+	} else {
-+		dst_mode = XDMAC_DADM_DAM_INC;
-+		buswidth = DMA_SLAVE_BUSWIDTH_8_BYTES;
-+	}
-+	dst_width = FIELD_PREP(XDMAC_DADM_DTW_MASK, __ffs(buswidth));
-+
-+	/* setup transfer factor */
-+	val = FIELD_PREP(XDMAC_TFA_MCNT_MASK, XDMAC_INTERVAL_CLKS);
-+	val |= FIELD_PREP(XDMAC_TFA_MASK, xc->req_factor);
-+	writel(val, xc->reg_ch_base + XDMAC_TFA);
-+
-+	/* setup the channel */
-+	writel(lower_32_bits(src_addr), xc->reg_ch_base + XDMAC_SAD);
-+	writel(upper_32_bits(src_addr), xc->reg_ch_base + XDMAC_EXSAD);
-+
-+	writel(lower_32_bits(dst_addr), xc->reg_ch_base + XDMAC_DAD);
-+	writel(upper_32_bits(dst_addr), xc->reg_ch_base + XDMAC_EXDAD);
-+
-+	src_mode |= src_width;
-+	dst_mode |= dst_width;
-+	writel(src_mode, xc->reg_ch_base + XDMAC_SADM);
-+	writel(dst_mode, xc->reg_ch_base + XDMAC_DADM);
-+
-+	writel(its, xc->reg_ch_base + XDMAC_ITS);
-+	writel(tnum, xc->reg_ch_base + XDMAC_TNUM);
-+
-+	/* enable interrupt */
-+	writel(XDMAC_IEN_ENDIEN | XDMAC_IEN_ERRIEN,
-+	       xc->reg_ch_base + XDMAC_IEN);
-+
-+	/* start XDMAC */
-+	val = readl(xc->reg_ch_base + XDMAC_TSS);
-+	val |= XDMAC_TSS_REQ;
-+	writel(val, xc->reg_ch_base + XDMAC_TSS);
-+}
-+
-+/* xc->vc.lock must be held by caller */
-+static int uniphier_xdmac_chan_stop(struct uniphier_xdmac_chan *xc)
-+{
-+	u32 val;
-+
-+	/* disable interrupt */
-+	val = readl(xc->reg_ch_base + XDMAC_IEN);
-+	val &= ~(XDMAC_IEN_ENDIEN | XDMAC_IEN_ERRIEN);
-+	writel(val, xc->reg_ch_base + XDMAC_IEN);
-+
-+	/* stop XDMAC */
-+	val = readl(xc->reg_ch_base + XDMAC_TSS);
-+	val &= ~XDMAC_TSS_REQ;
-+	writel(0, xc->reg_ch_base + XDMAC_TSS);
-+
-+	/* wait until transfer is stopped */
-+	return readl_poll_timeout(xc->reg_ch_base + XDMAC_STAT, val,
-+				  !(val & XDMAC_STAT_TENF), 100, 1000);
-+}
-+
-+/* xc->vc.lock must be held by caller */
-+static void uniphier_xdmac_start(struct uniphier_xdmac_chan *xc)
-+{
-+	struct uniphier_xdmac_desc *xd;
-+
-+	xd = uniphier_xdmac_next_desc(xc);
-+	if (xd)
-+		uniphier_xdmac_chan_start(xc, xd);
-+
-+	/* set desc to chan regardless of xd is null */
-+	xc->xd = xd;
-+}
-+
-+static void uniphier_xdmac_chan_irq(struct uniphier_xdmac_chan *xc)
-+{
-+	u32 stat;
-+	int ret;
-+
-+	spin_lock(&xc->vc.lock);
-+
-+	stat = readl(xc->reg_ch_base + XDMAC_ID);
-+
-+	if (stat & XDMAC_ID_ERRIDF) {
-+		ret = uniphier_xdmac_chan_stop(xc);
-+		if (ret)
-+			dev_err(xc->xdev->ddev.dev,
-+				"DMA transfer error with aborting issue\n");
-+		else
-+			dev_err(xc->xdev->ddev.dev,
-+				"DMA transfer error\n");
-+
-+	} else if ((stat & XDMAC_ID_ENDIDF) && xc->xd) {
-+		xc->xd->cur_node++;
-+		if (xc->xd->cur_node >= xc->xd->nr_node) {
-+			vchan_cookie_complete(&xc->xd->vd);
-+			uniphier_xdmac_start(xc);
-+		} else {
-+			uniphier_xdmac_chan_start(xc, xc->xd);
-+		}
-+	}
-+
-+	/* write bits to clear */
-+	writel(stat, xc->reg_ch_base + XDMAC_IR);
-+
-+	spin_unlock(&xc->vc.lock);
-+}
-+
-+static irqreturn_t uniphier_xdmac_irq_handler(int irq, void *dev_id)
-+{
-+	struct uniphier_xdmac_device *xdev = dev_id;
-+	int i;
-+
-+	for (i = 0; i < xdev->nr_chans; i++)
-+		uniphier_xdmac_chan_irq(&xdev->channels[i]);
-+
-+	return IRQ_HANDLED;
-+}
-+
-+static void uniphier_xdmac_free_chan_resources(struct dma_chan *chan)
-+{
-+	vchan_free_chan_resources(to_virt_chan(chan));
-+}
-+
-+static struct dma_async_tx_descriptor *
-+uniphier_xdmac_prep_dma_memcpy(struct dma_chan *chan, dma_addr_t dst,
-+			       dma_addr_t src, size_t len, unsigned long flags)
-+{
-+	struct virt_dma_chan *vc = to_virt_chan(chan);
-+	struct uniphier_xdmac_desc *xd;
-+	unsigned int nr;
-+	size_t burst_size, tlen;
-+	int i;
-+
-+	if (len > XDMAC_MAX_WORD_SIZE * XDMAC_MAX_WORDS)
-+		return NULL;
-+
-+	nr = 1 + len / XDMAC_MAX_WORD_SIZE;
-+
-+	xd = kzalloc(struct_size(xd, nodes, nr), GFP_NOWAIT);
-+	if (!xd)
-+		return NULL;
-+
-+	for (i = 0; i < nr; i++) {
-+		burst_size = min_t(size_t, len, XDMAC_MAX_WORD_SIZE);
-+		xd->nodes[i].src = src;
-+		xd->nodes[i].dst = dst;
-+		xd->nodes[i].burst_size = burst_size;
-+		xd->nodes[i].nr_burst = len / burst_size;
-+		tlen = rounddown(len, burst_size);
-+		src += tlen;
-+		dst += tlen;
-+		len -= tlen;
-+	}
-+
-+	xd->dir = DMA_MEM_TO_MEM;
-+	xd->nr_node = nr;
-+	xd->cur_node = 0;
-+
-+	return vchan_tx_prep(vc, &xd->vd, flags);
-+}
-+
-+static struct dma_async_tx_descriptor *
-+uniphier_xdmac_prep_slave_sg(struct dma_chan *chan, struct scatterlist *sgl,
-+			     unsigned int sg_len,
-+			     enum dma_transfer_direction direction,
-+			     unsigned long flags, void *context)
-+{
-+	struct virt_dma_chan *vc = to_virt_chan(chan);
-+	struct uniphier_xdmac_chan *xc = to_uniphier_xdmac_chan(vc);
-+	struct uniphier_xdmac_desc *xd;
-+	struct scatterlist *sg;
-+	enum dma_slave_buswidth buswidth;
-+	u32 maxburst;
-+	int i;
-+
-+	if (!is_slave_direction(direction))
-+		return NULL;
-+
-+	if (direction == DMA_DEV_TO_MEM) {
-+		buswidth = xc->sconfig.src_addr_width;
-+		maxburst = xc->sconfig.src_maxburst;
-+	} else {
-+		buswidth = xc->sconfig.dst_addr_width;
-+		maxburst = xc->sconfig.dst_maxburst;
-+	}
-+
-+	if (!maxburst)
-+		maxburst = 1;
-+	if (maxburst > xc->xdev->ddev.max_burst) {
-+		dev_err(xc->xdev->ddev.dev,
-+			"Exceed maximum number of burst words\n");
-+		return NULL;
-+	}
-+
-+	xd = kzalloc(struct_size(xd, nodes, sg_len), GFP_NOWAIT);
-+	if (!xd)
-+		return NULL;
-+
-+	for_each_sg(sgl, sg, sg_len, i) {
-+		xd->nodes[i].src = (direction == DMA_DEV_TO_MEM)
-+			? xc->sconfig.src_addr : sg_dma_address(sg);
-+		xd->nodes[i].dst = (direction == DMA_MEM_TO_DEV)
-+			? xc->sconfig.dst_addr : sg_dma_address(sg);
-+		xd->nodes[i].burst_size = maxburst * buswidth;
-+		xd->nodes[i].nr_burst =
-+			sg_dma_len(sg) / xd->nodes[i].burst_size;
-+
-+		/*
-+		 * Currently transfer that size doesn't align the unit size
-+		 * (the number of burst words * bus-width) is not allowed,
-+		 * because the driver does not support the way to transfer
-+		 * residue size. As a matter of fact, in order to transfer
-+		 * arbitrary size, 'src_maxburst' or 'dst_maxburst' of
-+		 * dma_slave_config must be 1.
-+		 */
-+		if (sg_dma_len(sg) % xd->nodes[i].burst_size) {
-+			dev_err(xc->xdev->ddev.dev,
-+				"Unaligned transfer size: %d", sg_dma_len(sg));
-+			kfree(xd);
-+			return NULL;
-+		}
-+
-+		if (xd->nodes[i].nr_burst > XDMAC_MAX_WORDS) {
-+			dev_err(xc->xdev->ddev.dev,
-+				"Exceed maximum transfer size");
-+			kfree(xd);
-+			return NULL;
-+		}
-+	}
-+
-+	xd->dir = direction;
-+	xd->nr_node = sg_len;
-+	xd->cur_node = 0;
-+
-+	return vchan_tx_prep(vc, &xd->vd, flags);
-+}
-+
-+static int uniphier_xdmac_slave_config(struct dma_chan *chan,
-+				       struct dma_slave_config *config)
-+{
-+	struct virt_dma_chan *vc = to_virt_chan(chan);
-+	struct uniphier_xdmac_chan *xc = to_uniphier_xdmac_chan(vc);
-+
-+	memcpy(&xc->sconfig, config, sizeof(*config));
-+
-+	return 0;
-+}
-+
-+static int uniphier_xdmac_terminate_all(struct dma_chan *chan)
-+{
-+	struct virt_dma_chan *vc = to_virt_chan(chan);
-+	struct uniphier_xdmac_chan *xc = to_uniphier_xdmac_chan(vc);
-+	unsigned long flags;
-+	int ret = 0;
-+	LIST_HEAD(head);
-+
-+	spin_lock_irqsave(&vc->lock, flags);
-+
-+	if (xc->xd) {
-+		vchan_terminate_vdesc(&xc->xd->vd);
-+		xc->xd = NULL;
-+		ret = uniphier_xdmac_chan_stop(xc);
-+	}
-+
-+	vchan_get_all_descriptors(vc, &head);
-+
-+	spin_unlock_irqrestore(&vc->lock, flags);
-+
-+	vchan_dma_desc_free_list(vc, &head);
-+
-+	return ret;
-+}
-+
-+static void uniphier_xdmac_synchronize(struct dma_chan *chan)
-+{
-+	vchan_synchronize(to_virt_chan(chan));
-+}
-+
-+static void uniphier_xdmac_issue_pending(struct dma_chan *chan)
-+{
-+	struct virt_dma_chan *vc = to_virt_chan(chan);
-+	struct uniphier_xdmac_chan *xc = to_uniphier_xdmac_chan(vc);
-+	unsigned long flags;
-+
-+	spin_lock_irqsave(&vc->lock, flags);
-+
-+	if (vchan_issue_pending(vc) && !xc->xd)
-+		uniphier_xdmac_start(xc);
-+
-+	spin_unlock_irqrestore(&vc->lock, flags);
-+}
-+
-+static void uniphier_xdmac_desc_free(struct virt_dma_desc *vd)
-+{
-+	kfree(to_uniphier_xdmac_desc(vd));
-+}
-+
-+static void uniphier_xdmac_chan_init(struct uniphier_xdmac_device *xdev,
-+				     int ch)
-+{
-+	struct uniphier_xdmac_chan *xc = &xdev->channels[ch];
-+
-+	xc->xdev = xdev;
-+	xc->reg_ch_base = xdev->reg_base + XDMAC_CH_WIDTH * ch;
-+	xc->vc.desc_free = uniphier_xdmac_desc_free;
-+
-+	vchan_init(&xc->vc, &xdev->ddev);
-+}
-+
-+static struct dma_chan *of_dma_uniphier_xlate(struct of_phandle_args *dma_spec,
-+					      struct of_dma *ofdma)
-+{
-+	struct uniphier_xdmac_device *xdev = ofdma->of_dma_data;
-+	int chan_id = dma_spec->args[0];
-+
-+	if (chan_id >= xdev->nr_chans)
-+		return NULL;
-+
-+	xdev->channels[chan_id].id = chan_id;
-+	xdev->channels[chan_id].req_factor = dma_spec->args[1];
-+
-+	return dma_get_slave_channel(&xdev->channels[chan_id].vc.chan);
-+}
-+
-+static int uniphier_xdmac_probe(struct platform_device *pdev)
-+{
-+	struct uniphier_xdmac_device *xdev;
-+	struct device *dev = &pdev->dev;
-+	struct dma_device *ddev;
-+	int irq;
-+	int nr_chans;
-+	int i, ret;
-+
-+	if (of_property_read_u32(dev->of_node, "dma-channels", &nr_chans))
-+		return -EINVAL;
-+	if (nr_chans > XDMAC_MAX_CHANS)
-+		nr_chans = XDMAC_MAX_CHANS;
-+
-+	xdev = devm_kzalloc(dev, struct_size(xdev, channels, nr_chans),
-+			    GFP_KERNEL);
-+	if (!xdev)
-+		return -ENOMEM;
-+
-+	xdev->nr_chans = nr_chans;
-+	xdev->reg_base = devm_platform_ioremap_resource(pdev, 0);
-+	if (IS_ERR(xdev->reg_base))
-+		return PTR_ERR(xdev->reg_base);
-+
-+	ddev = &xdev->ddev;
-+	ddev->dev = dev;
-+	dma_cap_zero(ddev->cap_mask);
-+	dma_cap_set(DMA_MEMCPY, ddev->cap_mask);
-+	dma_cap_set(DMA_SLAVE, ddev->cap_mask);
-+	ddev->src_addr_widths = UNIPHIER_XDMAC_BUSWIDTHS;
-+	ddev->dst_addr_widths = UNIPHIER_XDMAC_BUSWIDTHS;
-+	ddev->directions = BIT(DMA_DEV_TO_MEM) | BIT(DMA_MEM_TO_DEV) |
-+			   BIT(DMA_MEM_TO_MEM);
-+	ddev->residue_granularity = DMA_RESIDUE_GRANULARITY_BURST;
-+	ddev->max_burst = XDMAC_MAX_WORDS;
-+	ddev->device_free_chan_resources = uniphier_xdmac_free_chan_resources;
-+	ddev->device_prep_dma_memcpy = uniphier_xdmac_prep_dma_memcpy;
-+	ddev->device_prep_slave_sg = uniphier_xdmac_prep_slave_sg;
-+	ddev->device_config = uniphier_xdmac_slave_config;
-+	ddev->device_terminate_all = uniphier_xdmac_terminate_all;
-+	ddev->device_synchronize = uniphier_xdmac_synchronize;
-+	ddev->device_tx_status = dma_cookie_status;
-+	ddev->device_issue_pending = uniphier_xdmac_issue_pending;
-+	INIT_LIST_HEAD(&ddev->channels);
-+
-+	for (i = 0; i < nr_chans; i++)
-+		uniphier_xdmac_chan_init(xdev, i);
-+
-+	irq = platform_get_irq(pdev, 0);
-+	if (irq < 0) {
-+		dev_err(dev, "Failed to get IRQ\n");
-+		return irq;
-+	}
-+
-+	ret = devm_request_irq(dev, irq, uniphier_xdmac_irq_handler,
-+			       IRQF_SHARED, "xdmac", xdev);
-+	if (ret) {
-+		dev_err(dev, "Failed to request IRQ\n");
-+		return ret;
-+	}
-+
-+	ret = dma_async_device_register(ddev);
-+	if (ret) {
-+		dev_err(dev, "Failed to register XDMA device\n");
-+		return ret;
-+	}
-+
-+	ret = of_dma_controller_register(dev->of_node,
-+					 of_dma_uniphier_xlate, xdev);
-+	if (ret) {
-+		dev_err(dev, "Failed to register XDMA controller\n");
-+		goto out_unregister_dmac;
-+	}
-+
-+	platform_set_drvdata(pdev, xdev);
-+
-+	dev_info(&pdev->dev, "UniPhier XDMAC driver (%d channels)\n",
-+		 nr_chans);
-+
-+	return 0;
-+
-+out_unregister_dmac:
-+	dma_async_device_unregister(ddev);
-+
-+	return ret;
-+}
-+
-+static int uniphier_xdmac_remove(struct platform_device *pdev)
-+{
-+	struct uniphier_xdmac_device *xdev = platform_get_drvdata(pdev);
-+	struct dma_device *ddev = &xdev->ddev;
-+	struct dma_chan *chan;
-+	int ret;
-+
-+	/*
-+	 * Before reaching here, almost all descriptors have been freed by the
-+	 * ->device_free_chan_resources() hook. However, each channel might
-+	 * be still holding one descriptor that was on-flight at that moment.
-+	 * Terminate it to make sure this hardware is no longer running. Then,
-+	 * free the channel resources once again to avoid memory leak.
-+	 */
-+	list_for_each_entry(chan, &ddev->channels, device_node) {
-+		ret = dmaengine_terminate_sync(chan);
-+		if (ret)
-+			return ret;
-+		uniphier_xdmac_free_chan_resources(chan);
-+	}
-+
-+	of_dma_controller_free(pdev->dev.of_node);
-+	dma_async_device_unregister(ddev);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id uniphier_xdmac_match[] = {
-+	{ .compatible = "socionext,uniphier-xdmac" },
-+	{ /* sentinel */ }
-+};
-+MODULE_DEVICE_TABLE(of, uniphier_xdmac_match);
-+
-+static struct platform_driver uniphier_xdmac_driver = {
-+	.probe = uniphier_xdmac_probe,
-+	.remove = uniphier_xdmac_remove,
-+	.driver = {
-+		.name = "uniphier-xdmac",
-+		.of_match_table = uniphier_xdmac_match,
-+	},
-+};
-+module_platform_driver(uniphier_xdmac_driver);
-+
-+MODULE_AUTHOR("Kunihiko Hayashi <hayashi.kunihiko@socionext.com>");
-+MODULE_DESCRIPTION("UniPhier external DMA controller driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tDQo+IEZyb206IE1hcmsgUnV0bGFuZCA8bWFy
+ay5ydXRsYW5kQGFybS5jb20+DQo+IFNlbnQ6IDIwMjDE6jLUwjE5yNUgMjoxNA0KPiBUbzogSm9o
+biBHYXJyeSA8am9obi5nYXJyeUBodWF3ZWkuY29tPg0KPiBDYzogYWtAbGludXguaW50ZWwuY29t
+OyBKb2FraW0gWmhhbmcgPHFpYW5ncWluZy56aGFuZ0BueHAuY29tPjsNCj4gc3V6dWtpLnBvdWxv
+c2VAYXJtLmNvbTsgcGV0ZXJ6QGluZnJhZGVhZC5vcmc7IFdpbGwgRGVhY29uDQo+IDx3aWxsQGtl
+cm5lbC5vcmc+OyBMaW51eGFybSA8bGludXhhcm1AaHVhd2VpLmNvbT47IGFjbWVAa2VybmVsLm9y
+ZzsNCj4gbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZzsgWmhhbmdzaGFva3VuIDx6aGFuZ3No
+YW9rdW5AaGlzaWxpY29uLmNvbT47DQo+IGFsZXhhbmRlci5zaGlzaGtpbkBsaW51eC5pbnRlbC5j
+b207IG1pbmdvQHJlZGhhdC5jb207DQo+IGphbWVzLmNsYXJrQGFybS5jb207IG5hbWh5dW5nQGtl
+cm5lbC5vcmc7IGpvbHNhQHJlZGhhdC5jb207DQo+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
+cmFkZWFkLm9yZzsgcm9iaW4ubXVycGh5QGFybS5jb207IFN1ZGVlcCBIb2xsYQ0KPiA8c3VkZWVw
+LmhvbGxhQGFybS5jb20+DQo+IFN1YmplY3Q6IFJlOiBbUEFUQ0ggUkZDIDAvN10gcGVyZiBwbXUt
+ZXZlbnRzOiBTdXBwb3J0IGV2ZW50IGFsaWFzaW5nIGZvcg0KPiBzeXN0ZW0gUE1Vcw0KDQpbLi4u
+XQ0KPiA+IEFuZCB0eXBpY2FsbHkgbW9zdCBQTVUgSFcgd291bGQgaGF2ZSBubyBJRCByZWcsIHNv
+IHdoZXJlIHRvIGV2ZW4gZ2V0DQo+ID4gdGhpcyBpZGVudGlmaWNhdGlvbiBpbmZvPyBKb2FraW0g
+Wmhhbmcgc2VlbXMgdG8gaGF2ZSB0aGlzIHByb2JsZW0gZm9yDQo+ID4gdGhlIGlteDggRERSQyBQ
+TVUgZHJpdmVyLg0KPiANCj4gRm9yIGlteDgsIHRoZSBEVCBjb21wYXQgc3RyaW5nIG9yIGFkZGl0
+aW9uYWwgcHJvcGVydGllcyBvbiB0aGUgRERSQyBub2RlDQo+IGNvdWxkIGJlIHVzZWQgdG8gaW1w
+bHkgdGhlIGlkLg0KDQpIaSBNYXJrLA0KDQpZZXMsIGFjdHVhbGx5IHdlIGNhbiBleHBvc2Ugc29t
+ZXRoaW5nIGxpa2UgRERSQ19JRCB0byBpbmRpY2F0ZSBlYWNoIHNwZWNpZmljIEREUiBjb250cm9s
+bGVyLCB0byBwb2ludCBvdXQgdGhlIGZpbHRlciBmZWF0dXJlLg0KQnV0LCBldmVuIHRoZSBTb0Nz
+IGludGVncmF0ZWQgdGhlIHNhbWUgRERSQ19JRCwganVzdCBzYXkgdGhhdCB0aGV5IGhhdmUgdGhl
+IHNhbWUgRERSQyBjb250cm9sbGVyLg0KDQpGcm9tIHVzZXIgc3BhY2UsIHRoZSB1c2FnZSBpcyBk
+aWZmZXJlbnQsIGZvciBleGFtcGxlOg0KDQppLk1YOE1NIGFuZCBpLk1YOE1OLCB0aGV5IHVzZSB0
+aGUgc2FtZSBkcml2ZXIoRERSQ19JRCkgYW5kIGNvcnRleC1hNTMgaW50ZWdyYXRlZC4NCg0KSWYg
+d2Ugd2FudCB0byBtb25pdG9yIFZQVSwgdGhlaXIgKm1hc3RlciBpZCogaXMgZGlmZmVyZW50IGZy
+b20gU29Dcy4NCk9uIGkuTVg4TU0sIGV2ZW50IGlzIGlteDhfZGRyMC9heGlkLXJlYWQsYXhpX2lk
+PTB4MDgvDQpPbiBpLk1YOE1OLCBldmVudCBpcyBpbXg4X2RkcjAvYXhpZC1yZWFkLGF4aV9pZD0w
+eDEyLw0KDQpJIHRyeSB0byB3cml0ZSBhIEpTT04gZmlsZSB0byB1c2UgdGhlc2UgZXZlbnRzLCBm
+b3Igbm93LCBJIG9ubHkgY2FuIGxvY2F0ZSB0aGUgZmlsZSBhdCB0aGUgZGlyZWN0b3J5OiB0b29s
+cy9wZXJmL3BtdS1ldmVudHMvYXJjaC9hcm02NC9hcm0vY29ydGV4LWE1My8NCg0KUGVyZiB0b29s
+IGxvYWRzIGFsbCBldmVudHMgd2hlbiBDUFVJRCBtYXRjaGVkLCB3aGljaCBpcyBub3cgdW5yZWFz
+b25hYmxlLCB3ZSB3YW50IHJlbGF0ZWQgZXZlbnRzIGFyZSBsb2FkZWQgZm9yIHNwZWNpZmljIFNv
+Qy4NCg0KQWxsIGV2ZW50cyB3aWxsIGFsc28gYmUgbG9hZGVkIGlmIHdlIHVzZSBERFJDX0lEIHRv
+IG1hdGNoIGluIHRoZSBmdXR1cmUsIHRoaXMgc2VlbXMgdG8gbm90IGJlIGEgZ29vZCBpZGVhbC4N
+Cg0KQmVzdCBSZWdhcmRzLA0KSm9ha2ltIFpoYW5nDQoNClsuLi4uXQ0KX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
