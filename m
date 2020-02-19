@@ -2,143 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 612571643C4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 12:58:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEDA41643CB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 12:59:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1ccotGD/OMwbEWn1ENDEIOzNeBsN9WugCRNzZNcsPq8=; b=pS+2PxUDGk8dd0
-	y1WRDfdhiTmD0FV9rH4Ndl+Vv+ZBkJc6QY/Zj2Djo5Rk4CF9ejw31aYjIpCCFBUbNn2GMJLIZ+ys3
-	pdMAzXrjU/l5nS2OSc12usq+UJ1S442addCuBr89AjDF2Oo0+J8vL0NJGCjka3w9Q/if/LweoKLGm
-	tdCj8T4cWvZvtIuzcg/sxmUVt8g8L1ixkJKhIJLI4zCx5JRUY2Q+/AwBrNSv+M6G78nYOVTafraXL
-	ywSnudxL0OdUuDsTpBo5afiYE5g5rTsmP3vRqaWFTj3cJmNv2sghcPy0b4vwTULHsBavMmDn5Aq/G
-	HBFP7FALPlN6ZlFihPAw==;
+	List-Owner; bh=0B9nWxMoTBLq2WvKsT/VDhD9C70Dsn1SSjp9+dlk+1k=; b=ACT5AqQHmOIEQY
+	HZh+RpNv+NJ/BLXy+tV6kGnvJ6n3u/eGbHmpIGz8V7frXKhbuzsaFzGyxfq0B2As6EzuYuyaBEVYJ
+	YdlkM34DL9TtzDKINDVD1JnUznY6IOphHC6bx4eUWe9CYDbwSr4HgPnvlmFYqVewOEA0Pa9dHuHIt
+	/hncmnzmGZagFyHF53jmdtk7lSuEOff3iScI0qZtfR4zLmermAnOqK4D9KR1R/VFqnx0nzbP+VAqr
+	efqdLurrpDglGzQ3V97sEBmmnmkEwaLdazmhHtt9ffj5MGkiJTqFeDwSEjU9Y58251qnBsIxuqtvx
+	hD3Gok/k/pV4iE2L8AFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Nzq-0006id-3s; Wed, 19 Feb 2020 11:58:30 +0000
-Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
+	id 1j4O0V-00073Q-6x; Wed, 19 Feb 2020 11:59:11 +0000
+Received: from mail-wm1-f67.google.com ([209.85.128.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Nzh-0006i7-Ie
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 11:58:23 +0000
-Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
- by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 01JBuXu8008228; Wed, 19 Feb 2020 03:57:51 -0800
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=date : from : to :
- cc : subject : message-id : references : content-type : in-reply-to :
- mime-version; s=pfpt0818; bh=hVSYXq9QOrcLi3i8lVmT22lO2OcEHbVGSR8MrLGiwsU=;
- b=dwSV9A7NLj6iYOkcIyHZjim503SXuDNKBmYBrk09Z9jadKyTDEzEKrQC55c96FcK4Rs4
- QAHM9fT1BCaAs3ZiAmWSMAcpq1q57SV2WW2EmbBKOBZB42l0F1yBc3rYAbYyJ1w7g0BC
- 6mm8+YywEivro2v7D78yYfU6xtQC8PHq72fbn4YIenDSq0n8UI8/odLz1yQSLVu6LQUW
- 6ScKU3l3Wc/CVyZqBvJGwP/yeUw88pSC6QvzdlIyw7273oLCwvcVcSGlgCGVdkdMjmBL
- rIdfl7QW6kOA6ieYK90IWJOIG62+/3rGitxzinYKvfGXfECDo8//r2h+TdsSD+hc/3L1 vg== 
-Received: from sc-exch02.marvell.com ([199.233.58.182])
- by mx0b-0016f401.pphosted.com with ESMTP id 2y8ubv1wpy-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Wed, 19 Feb 2020 03:57:51 -0800
-Received: from DC5-EXCH02.marvell.com (10.69.176.39) by SC-EXCH02.marvell.com
- (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Wed, 19 Feb 2020 03:57:49 -0800
-Received: from SC-EXCH01.marvell.com (10.93.176.81) by DC5-EXCH02.marvell.com
- (10.69.176.39) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Wed, 19 Feb 2020 03:57:49 -0800
-Received: from NAM04-SN1-obe.outbound.protection.outlook.com (104.47.44.51) by
- SC-EXCH01.marvell.com (10.93.176.81) with Microsoft SMTP Server
- (TLS) id
- 15.0.1497.2 via Frontend Transport; Wed, 19 Feb 2020 03:57:48 -0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=KJmk45N0JG6u/q/dRrfz4kjQy+Mbr5vy6HZcs5Q6ua1XFVfjXoifI1WvIOjkPsWn8WIEgB0/njD3Ij7ry/E67QZD6SBZGwyxdQEx31cfeNugjr81CtMIiv+SLF7DB1pKBnEC3BFS4DKMIZR1a8lpXpgFhfrnUDIsWC0B9XYpTLZ2Mo//PveZEw8GnK6mZ/RoNOrecOZWTpRQWdRbRZVD7NQAt8u25H9gnCJYA8rgb1CQHnPzDqz42U1tmijF1QvEVBYj9TZ/YST5N80GAnclkCcTfvagYBxORVvB9ngKLAneCAvYe2YFLOhSnmJDt/nI/HaJnmnTMkOLqCEBcfTHYQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hVSYXq9QOrcLi3i8lVmT22lO2OcEHbVGSR8MrLGiwsU=;
- b=MJzZ8YEJsDP7GBlFMhZHEfpcP6TrwtUhFGuE7rzI28Mr7vsgbK2poUotvhBYr6bTp98s8V7SYr1ScYb5JOeaxCOLhA/0dUJLP/9wVsk/f7z7HH1sDrn7Lq7N1/6zkbSpfDmOH29g/BCLt5ZyVB9WDCvb0iHIgadPUMn+UIqXHBeXhG8uEFCs/BqbLp8MHysFx+aYiFhUecIo3osrSM6pRog4QVunYRPNEE5zIghETpzjxX2TZUWGD/q00yT5sLYndMlHnysUq8BlXEjTocdAV7ULl1nJVf6En8P4wUSA+TD+5oF+gDprJK3sQnxCRC0viJKbpz0BBnschlahOxZsOA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
- dkim=pass header.d=marvell.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=marvell.onmicrosoft.com; s=selector1-marvell-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hVSYXq9QOrcLi3i8lVmT22lO2OcEHbVGSR8MrLGiwsU=;
- b=XRvH903FZc19KWXmHX4gi2jtQImddIqRwsXhsgVsdmy5UfD+Fq5Q+i09LzMtyQmfUQpoaUag7M8Y+hbXOj+M9wmFbECM7NhqWOOhP3l5Ew+GYkdr3SraOp5qYZ0GoxSe9m5t4xdtl1QVhDL90FeBnAAjWXBqBErFoO3KGAR/l1E=
-Received: from MN2PR18MB3408.namprd18.prod.outlook.com (10.255.237.10) by
- MN2PR18MB2766.namprd18.prod.outlook.com (20.178.255.217) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2729.29; Wed, 19 Feb 2020 11:57:46 +0000
-Received: from MN2PR18MB3408.namprd18.prod.outlook.com
- ([fe80::30c4:52fe:fdf8:faff]) by MN2PR18MB3408.namprd18.prod.outlook.com
- ([fe80::30c4:52fe:fdf8:faff%7]) with mapi id 15.20.2729.033; Wed, 19 Feb 2020
- 11:57:46 +0000
-Date: Wed, 19 Feb 2020 12:57:36 +0100
-From: Robert Richter <rrichter@marvell.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [RFC PATCH 05/11] EDAC: Remove Calxeda drivers
-Message-ID: <20200219115736.tiussdepepqj2jtf@rric.localdomain>
-References: <20200218171321.30990-1-robh@kernel.org>
- <20200218171321.30990-6-robh@kernel.org>
-Content-Disposition: inline
-In-Reply-To: <20200218171321.30990-6-robh@kernel.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-ClientProxiedBy: HE1PR05CA0296.eurprd05.prod.outlook.com
- (2603:10a6:7:93::27) To MN2PR18MB3408.namprd18.prod.outlook.com
- (2603:10b6:208:165::10)
+ id 1j4O0J-000723-C5
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 11:59:04 +0000
+Received: by mail-wm1-f67.google.com with SMTP id b17so367728wmb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 03:58:58 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=hMj17EsNTTVBvIYortqF9yZ/0MuAB2i6oYeLezbsqUE=;
+ b=N1pQ73OoSCBLsEF2jV9tqmAq73Jts7MGPYyqddLziNF1HpTBI68WjfcdQa4n+Ltfnh
+ rQ9otIfacARjOjabldYhbmWMLpl2F56lCwfWmV2jeg6HkDT0+wRekG+V1lnnpO3m6C9g
+ PFaLaC/fh29yNf0FDv6e/puoZ0RrbFhqnvq38xQtPq7/MYMcP1myj4YhXroddEAkWfO+
+ NaTquwYjm80j10UXjRpGAfv5qCjT49VAQqmHBXfmgIfAmipxhI5vNatMzQPa8KV6CniC
+ dbMaEeUqpi9kZ/s5pj3juatgxLERJNJ+lSze6gZ6pZeLd8CMJ4tHKutX5fqKDLsyEvQs
+ 5KXw==
+X-Gm-Message-State: APjAAAWot6Y8lUsGUjPy5ZIXEHOhMCOeUAZ+oyQ011dTcum7TTlgwrBR
+ rumbJbsbH/T8IFvcTqQvVhI=
+X-Google-Smtp-Source: APXvYqyJLNBDsyGu5ycOv4YzZpKZsQi+8mdg5QMCtZtvivgqipvSvIX9TS7n9r8PLIChj38ff/LUbw==
+X-Received: by 2002:a7b:c190:: with SMTP id y16mr9797015wmi.107.1582113537324; 
+ Wed, 19 Feb 2020 03:58:57 -0800 (PST)
+Received: from localhost (prg-ext-pat.suse.com. [213.151.95.130])
+ by smtp.gmail.com with ESMTPSA id t1sm2829859wma.43.2020.02.19.03.58.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 19 Feb 2020 03:58:56 -0800 (PST)
+Date: Wed, 19 Feb 2020 12:58:55 +0100
+From: Michal Hocko <mhocko@kernel.org>
+To: Andrea Arcangeli <aarcange@redhat.com>
+Subject: Re: [PATCH 1/2] mm: use_mm: fix for arches checking mm_users to
+ optimize TLB flushes
+Message-ID: <20200219115855.GR4151@dhcp22.suse.cz>
+References: <20200203201745.29986-1-aarcange@redhat.com>
+ <20200203201745.29986-2-aarcange@redhat.com>
+ <20200218113103.GB4151@dhcp22.suse.cz>
+ <20200218185618.GB14027@redhat.com>
 MIME-Version: 1.0
-Received: from rric.localdomain (31.208.96.227) by
- HE1PR05CA0296.eurprd05.prod.outlook.com (2603:10a6:7:93::27) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2750.17 via Frontend Transport; Wed, 19 Feb 2020 11:57:42 +0000
-X-Originating-IP: [31.208.96.227]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: c0016273-6367-4ee4-ff14-08d7b532ef4d
-X-MS-TrafficTypeDiagnostic: MN2PR18MB2766:
-X-Microsoft-Antispam-PRVS: <MN2PR18MB2766A11793F4AC81A7F3A88ED9100@MN2PR18MB2766.namprd18.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:2399;
-X-Forefront-PRVS: 0318501FAE
-X-Forefront-Antispam-Report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(366004)(376002)(39860400002)(396003)(136003)(199004)(189003)(7696005)(316002)(956004)(52116002)(2906002)(6666004)(4744005)(8936002)(478600001)(4326008)(7416002)(16526019)(54906003)(7406005)(186003)(6506007)(53546011)(5660300002)(26005)(55016002)(81156014)(81166006)(6916009)(86362001)(66476007)(66946007)(9686003)(1076003)(8676002)(66556008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR18MB2766;
- H:MN2PR18MB3408.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-Received-SPF: None (protection.outlook.com: marvell.com does not designate
- permitted sender hosts)
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: J6Wj/XBr5++dQdwABbQqaKSkbsdO+0osP8bTZH9ijEX5ayw4fWZ5wstnRp6XL/qjJEBTTMxNNQ1W5gORvM6dGMlNu1KM0XOoLIy0KuI7/X48QdR62Nr9h9zVeCeEcvbyAfwZLK+unsq8flT4Ja2gP9g/HpbFgZcYVd2V6SDEGeABiAGYBUXIdTEYOih8pdhlNCzNpes3znC5EVHIKJ3EnPz9/B+EhlmHkaki29E87v1LAzae+RB6ue61pcqC48eEoff5nWfasoTrsDPOkG2lxFT580583pPdhzLsgrOQjWhucignr2KhQI3/IAs/WKzWK+ZkbXhu0i/XUQQtP5DBKB4gHsIq5tfbh6F0cFyAJqdYP7KbvjY5W3PjQ92jSI1cCK8o1P7YZ+NwSWYYM6hJ/J3VZBfi268ayDeyNnjPcP0oPFcsFiUTzJmX6xWPvjWL
-X-MS-Exchange-AntiSpam-MessageData: iLbix4Tt12DsgbwXFE1wBpRypSb188b3KAARX+qlgxt/MQbqsSlFlHU9qvAL+pizl5GEku86usfY9gVgsVFWY0P1E0aRCvDTKzkkeNKAIs7naFyH+d4Cvb2ByO+bvFZcOYOSDiWvCSCcVssdn1JPLw==
-X-MS-Exchange-CrossTenant-Network-Message-Id: c0016273-6367-4ee4-ff14-08d7b532ef4d
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 Feb 2020 11:57:46.6401 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: fKW7SCYVI9hUYCT9RFjp3gDDIndFWJJiYmDjeLQciNIKTypnY0UCcehmKtFOGvCh/p6eUSJllrbU5Aca/KqPqA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR18MB2766
-X-OriginatorOrg: marvell.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.572
- definitions=2020-02-19_03:2020-02-19,
- 2020-02-19 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200218185618.GB14027@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_035821_791381_1E2F9305 
-X-CRM114-Status: GOOD (  12.47  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200219_035902_698418_D56C23E0 
+X-CRM114-Status: GOOD (  25.10  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.156.173 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mstsxfx[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.67 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,62 +90,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Langsdorf <mlangsdo@redhat.com>, kvm@vger.kernel.org,
- Viresh Kumar <viresh.kumar@linaro.org>, linux-ide@vger.kernel.org,
- Will Deacon <will@kernel.org>, linux-clk@vger.kernel.org, soc@kernel.org,
- Joerg Roedel <joro@8bytes.org>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- devicetree@vger.kernel.org, Jon Loeliger <jdl@jdl.com>,
- linux-pm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
- Eric Auger <eric.auger@redhat.com>,
- Alex Williamson <alex.williamson@redhat.com>, Tony Luck <tony.luck@intel.com>,
- Alexander Graf <graf@amazon.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel@lists.infradead.org, linux-edac@vger.kernel.org,
- Jens Axboe <axboe@kernel.dk>, Matthias Brugger <mbrugger@suse.com>,
- Stephen Boyd <sboyd@kernel.org>, netdev@vger.kernel.org,
- Cornelia Huck <cohuck@redhat.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- James Morse <james.morse@arm.com>, Borislav Petkov <bp@alien8.de>, Robin
- Murphy <robin.murphy@arm.com>, "David S. Miller" <davem@davemloft.net>
+Cc: Rafael Aquini <aquini@redhat.com>, Jon Masters <jcm@jonmasters.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Mark Salter <msalter@redhat.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18.02.20 11:13:15, Rob Herring wrote:
-> Cc: Borislav Petkov <bp@alien8.de>
-> Cc: Mauro Carvalho Chehab <mchehab@kernel.org>
-> Cc: Tony Luck <tony.luck@intel.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Robert Richter <rrichter@marvell.com>
-> Cc: linux-edac@vger.kernel.org
-> Signed-off-by: Rob Herring <robh@kernel.org>
-> ---
-> Do not apply yet.
+On Tue 18-02-20 13:56:18, Andrea Arcangeli wrote:
+> Hi Michal!
 > 
->  MAINTAINERS                     |   6 -
->  drivers/edac/Kconfig            |  14 --
->  drivers/edac/Makefile           |   3 -
->  drivers/edac/highbank_l2_edac.c | 142 -----------------
->  drivers/edac/highbank_mc_edac.c | 272 --------------------------------
->  5 files changed, 437 deletions(-)
->  delete mode 100644 drivers/edac/highbank_l2_edac.c
->  delete mode 100644 drivers/edac/highbank_mc_edac.c
+> On Tue, Feb 18, 2020 at 12:31:03PM +0100, Michal Hocko wrote:
+> > On Mon 03-02-20 15:17:44, Andrea Arcangeli wrote:
+> > > alpha, ia64, mips, powerpc, sh, sparc are relying on a check on
+> > > mm->mm_users to know if they can skip some remote TLB flushes for
+> > > single threaded processes.
+> > > 
+> > > Most callers of use_mm() tend to invoke mmget_not_zero() or
+> > > get_task_mm() before use_mm() to ensure the mm will remain alive in
+> > > between use_mm() and unuse_mm().
+> > > 
+> > > Some callers however don't increase mm_users and they instead rely on
+> > > serialization in __mmput() to ensure the mm will remain alive in
+> > > between use_mm() and unuse_mm(). Not increasing mm_users during
+> > > use_mm() is however unsafe for aforementioned arch TLB flushes
+> > > optimizations. So either mmget()/mmput() should be added to the
+> > > problematic callers of use_mm()/unuse_mm() or we can embed them in
+> > > use_mm()/unuse_mm() which is more robust.
+> > 
+> > I would prefer we do not do that because then the real owner of the mm
+> > cannot really tear down the address space and the life time of it is
+> > bound to a kernel thread doing the use_mm. This is undesirable I would
+> > really prefer if the existing few users would use mmget only when they
+> > really need to access mm.
+> 
+> If the existing few users that don't already do the explicit mmget
+> will have to start doing it too, the end result will be exactly the
+> same that you described in your "cons" (lieftime of the mm will still
+> be up to who did mmget;use_mm and didn't call unuse_mm;mmput yet).
 
-> -EDAC-CALXEDA
-> -M:	Robert Richter <rric@kernel.org>
-> -L:	linux-edac@vger.kernel.org
-> -S:	Maintained
-> -F:	drivers/edac/highbank*
+Well, they should use mmget only for moments when they access the
+address space.
 
-Once upon a time in Texas...
+> One reason to prefer adding the mmget to the callers to forget it,
+> would be to avoid an atomic op in use_mm (for those callers that
+> didn't forget it), but if anybody is doing use_mm in a fast path that
+> won't be very fast anyway so I didn't think this was worth the
+> risk. If that microoptimization in a slow path is the reason we should
+> add mmget to the callers that forgot it that would be fine with me
+> although I think it's risky because if already happened once and it
+> could happen again (and when it happens it only bits a few arches if
+> used with a few drivers).
 
-If Andre wants to keep it, let's keep it.
-
-Otherwise:
-
-Acked-by: Robert Richter <rric@kernel.org>
-
-Goodbye Calxeda...
+The primary concern really is that use_mm is usually not bound in time
+and we do not want to pin the address space for such a long time without
+any binding to a killable process.
+-- 
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
