@@ -2,69 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3E87164879
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 16:25:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88EB416487D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 16:26:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=0k8au1otu9K2zbzQJ+jkTLfGvdWnaytC7mqyJdduSWY=; b=hEIfOw8N4BsjbgTv95jKjJtkeT
-	30sQ+3gRvf2fAOOJkpHltjAyAQUH893eX3puKe8uwJTigjTY5MV2QhJOsgXWiEsUv3C/5QKhXEYPm
-	KPqGifLr33szvLRgQkLDeeeSa2Mntdaq4y37Q5FVA46dggZ14qpFfsy96vb/l68gtQ+1xo5mSpNZ9
-	9FLz2NdW0SR6DBh+m3pNUIRXuxkAtpM/tV4YrwtxqVjhrpIFH0cMmHFwY3ncgvoK5ZWk5Zdbxk6uy
-	jAE2Ykw85Wk8gIsUDdrL8z1IYjbny/OOc8v4pb7iM0Sy792z3QU6hRiOc7f5UcO1wLo0ZDFGezpMQ
-	cDdAs2XA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=asmagdgoZtdXkA2voq/fh5NMFDqJvC7UQdJR1zvY7sc=; b=W+jGaHt3hkxvnz
+	w/21RUE/Kor6/1NIVEkcsIz8hm4NzDCkkGl0bbcs2Vx1FaVbxMvWieVPKvrm740SlzwXST/GrlSi2
+	KYLwQYMsZFdwOXQa2Sm9bTV917eBiyeqRSgGvCzCQhnEbi4Ev7ExXAeM76L6OcXVhEMOsesjIceyj
+	lB1SQmvYXZV/a2xuUjR1QhLeZNC2i4CEE906bYHD+lC15/3hQ8kxy+Xfk3LlbNq6xgzCCbv1OiGr9
+	Dcgir7E1SXFFFiBr6slf3r4bdIjTVAJx+4BIxv9ndxZvjsTjWiac3FHdB/oXaVigZi5zZa/VS8w6p
+	nJhUYlpkur89O/ddnIrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4REW-0008C2-Qj; Wed, 19 Feb 2020 15:25:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j4REl-0008WS-Mg; Wed, 19 Feb 2020 15:26:07 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4RDY-0006NA-5T
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 15:24:54 +0000
-Received: from cam-smtp0.cambridge.arm.com (fw-tnat.cambridge.arm.com
- [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 43EC224671;
- Wed, 19 Feb 2020 15:24:50 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582125891;
- bh=2Yifru4+OPwrLC2fBvFPYWlusQrWYJhTcoUViaqei20=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=rmvh1uFHrKb/9y86IWBe2/WFT5fhsXXm1bR0kRnF7Wjcd2LxxzQHUTfJlA4Q4dbPg
- kXg8vS8qGAyC+AY1UDBbz646bLwsc7kxVxhg0/6LxA653TJhQtLz6iLxIYnKklNSbL
- UViUXPRmvpVg8MAv38IcDRaJYhbjCWwqaL9kANBo=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-efi@vger.kernel.org
-Subject: [PATCH 3/3] efi/arm: rewrite FDT param discovery routines
-Date: Wed, 19 Feb 2020 16:24:40 +0100
-Message-Id: <20200219152440.11561-4-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200219152440.11561-1-ardb@kernel.org>
-References: <20200219152440.11561-1-ardb@kernel.org>
+ id 1j4REE-0008Dh-Sj
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 15:25:38 +0000
+Received: by mail-ot1-f65.google.com with SMTP id r27so474444otc.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 07:25:34 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=9A6Pw6ubtA8XD2+nVSoO+kGVpenKZJvMby8DWoqvDxQ=;
+ b=K5ygt5rRWEYUvcejw49+c9ljNAWUD3bMVehVmGz5gqvw8Zna6g46T3CnYI7amAICm4
+ V2GU/Q2pfuopjTJCQF38fN7v9rF1VqTrXdKmIwycMoate6hnimc8NikTP9iSNaKxt1xd
+ qNI17hCz9AruQZRD819J6va/CZIkfhXX54UiLbcytNe5B9jCOMle/uk1obxlhdg4bdXu
+ uVPNkPar26c4OOrs155PCI7HRjBQiQ/bpuiPxIGNCA8F17yO6xhPk4JlISUu0qm0wFSB
+ It+7qvPt8917yXfMTwsUkLwSaQoTikiRSXM0WDiWyWqGpuAf8LlShwhekAYXnd5I/qbC
+ tbnw==
+X-Gm-Message-State: APjAAAU2wqTNDj6O9mIDyeuI7w4bTgdojKDs2/O+mmmMbwyPYVyG7khy
+ PCFNO8G48Ql8qVYcgibBWA==
+X-Google-Smtp-Source: APXvYqz4EKkFWfBwsA+AUk6dcz7mZdu764nBiKi9eG73eELzPOgg8tPTfPvjMlS+TihdEuYh8ej3wA==
+X-Received: by 2002:a05:6830:607:: with SMTP id
+ w7mr21047225oti.155.1582125933500; 
+ Wed, 19 Feb 2020 07:25:33 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id z21sm11646oto.52.2020.02.19.07.25.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 19 Feb 2020 07:25:32 -0800 (PST)
+Received: (nullmailer pid 18178 invoked by uid 1000);
+ Wed, 19 Feb 2020 15:25:32 -0000
+Date: Wed, 19 Feb 2020 09:25:32 -0600
+From: Rob Herring <robh@kernel.org>
+To: Olivier Moysan <olivier.moysan@st.com>
+Subject: Re: [PATCH v2] ASoC: dt-bindings: stm32: convert sai to json-schema
+Message-ID: <20200219152532.GA10041@bogus>
+References: <20200212131259.18805-1-olivier.moysan@st.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200212131259.18805-1-olivier.moysan@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_072452_253770_158B1E0B 
-X-CRM114-Status: GOOD (  17.03  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200219_072534_998676_1CA1399E 
+X-CRM114-Status: GOOD (  25.82  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,279 +94,352 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: atish.patra@wdc.com, leif@nuviainc.com, Ard Biesheuvel <ardb@kernel.org>,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, alexandre.torgue@st.com,
+ linux-kernel@vger.kernel.org, tiwai@suse.com, lgirdwood@gmail.com,
+ broonie@kernel.org, perex@perex.cz, linux-stm32@st-md-mailman.stormreply.com,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The efi_get_fdt_params() routine uses the early OF device tree
-traversal helpers, that iterate over each node in the DT and invoke
-a caller provided callback that can inspect the node's contents and
-look for the required data. This requires a special param struct to
-be passed around, with pointers into param enumeration structs that
-contain (and duplicate) property names and offsets into yet another
-struct that carries the collected data.
+On Wed, Feb 12, 2020 at 02:12:59PM +0100, Olivier Moysan wrote:
+> Convert the STM32 SAI bindings to DT schema format using json-schema.
+> 
+> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+> ---
+> Changes in v2:
+> - use pattern for compatible of child nodes
+> - rework dmas and clocks properties
+> - add "additionalProperties"
+> ---
+>  .../bindings/sound/st,stm32-sai.txt           | 107 ----------
+>  .../bindings/sound/st,stm32-sai.yaml          | 191 ++++++++++++++++++
+>  2 files changed, 191 insertions(+), 107 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/sound/st,stm32-sai.txt
+>  create mode 100644 Documentation/devicetree/bindings/sound/st,stm32-sai.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/sound/st,stm32-sai.txt b/Documentation/devicetree/bindings/sound/st,stm32-sai.txt
+> deleted file mode 100644
+> index 944743dd9212..000000000000
+> --- a/Documentation/devicetree/bindings/sound/st,stm32-sai.txt
+> +++ /dev/null
+> @@ -1,107 +0,0 @@
+> -STMicroelectronics STM32 Serial Audio Interface (SAI).
+> -
+> -The SAI interface (Serial Audio Interface) offers a wide set of audio protocols
+> -as I2S standards, LSB or MSB-justified, PCM/DSP, TDM, and AC'97.
+> -The SAI contains two independent audio sub-blocks. Each sub-block has
+> -its own clock generator and I/O lines controller.
+> -
+> -Required properties:
+> -  - compatible: Should be "st,stm32f4-sai" or "st,stm32h7-sai"
+> -  - reg: Base address and size of SAI common register set.
+> -  - clocks: Must contain phandle and clock specifier pairs for each entry
+> -	in clock-names.
+> -  - clock-names: Must contain "pclk" "x8k" and "x11k"
+> -	"pclk": Clock which feeds the peripheral bus interface.
+> -	        Mandatory for "st,stm32h7-sai" compatible.
+> -	        Not used for "st,stm32f4-sai" compatible.
+> -	"x8k": SAI parent clock for sampling rates multiple of 8kHz.
+> -	"x11k": SAI parent clock for sampling rates multiple of 11.025kHz.
+> -  - interrupts: cpu DAI interrupt line shared by SAI sub-blocks
+> -
+> -Optional properties:
+> -  - resets: Reference to a reset controller asserting the SAI
+> -
+> -SAI subnodes:
+> -Two subnodes corresponding to SAI sub-block instances A et B can be defined.
+> -Subnode can be omitted for unsused sub-block.
+> -
+> -SAI subnodes required properties:
+> -  - compatible: Should be "st,stm32-sai-sub-a" or "st,stm32-sai-sub-b"
+> -	for SAI sub-block A or B respectively.
+> -  - reg: Base address and size of SAI sub-block register set.
+> -  - clocks: Must contain one phandle and clock specifier pair
+> -	for sai_ck which feeds the internal clock generator.
+> -	If the SAI shares a master clock, with another SAI set as MCLK
+> -	clock provider, SAI provider phandle must be specified here.
+> -  - clock-names: Must contain "sai_ck".
+> -	Must also contain "MCLK", if SAI shares a master clock,
+> -	with a SAI set as MCLK clock provider.
+> -  - dmas: see Documentation/devicetree/bindings/dma/stm32-dma.txt
+> -  - dma-names: identifier string for each DMA request line
+> -	"tx": if sai sub-block is configured as playback DAI
+> -	"rx": if sai sub-block is configured as capture DAI
+> -  - pinctrl-names: should contain only value "default"
+> -  - pinctrl-0: see Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
+> -
+> -SAI subnodes Optional properties:
+> -  - st,sync: specify synchronization mode.
+> -	By default SAI sub-block is in asynchronous mode.
+> -	This property sets SAI sub-block as slave of another SAI sub-block.
+> -	Must contain the phandle and index of the sai sub-block providing
+> -	the synchronization.
+> -  - st,iec60958: support S/PDIF IEC6958 protocol for playback
+> -	IEC60958 protocol is not available for capture.
+> -	By default, custom protocol is assumed, meaning that protocol is
+> -	configured according to protocol defined in related DAI link node,
+> -	such as i2s, left justified, right justified, dsp and pdm protocols.
+> -	Note: ac97 protocol is not supported by SAI driver
+> -   - #clock-cells: should be 0. This property must be present if the SAI device
+> -	is a master clock provider, according to clocks bindings, described in
+> -	Documentation/devicetree/bindings/clock/clock-bindings.txt.
+> -
+> -The device node should contain one 'port' child node with one child 'endpoint'
+> -node, according to the bindings defined in Documentation/devicetree/bindings/
+> -graph.txt.
+> -
+> -Example:
+> -sound_card {
+> -	compatible = "audio-graph-card";
+> -	dais = <&sai1b_port>;
+> -};
+> -
+> -sai1: sai1@40015800 {
+> -	compatible = "st,stm32h7-sai";
+> -	#address-cells = <1>;
+> -	#size-cells = <1>;
+> -	ranges = <0 0x40015800 0x400>;
+> -	reg = <0x40015800 0x4>;
+> -	clocks = <&rcc SAI1_CK>, <&rcc PLL1_Q>, <&rcc PLL2_P>;
+> -	clock-names = "pclk", "x8k", "x11k";
+> -	interrupts = <87>;
+> -
+> -	sai1a: audio-controller@40015804 {
+> -		compatible = "st,stm32-sai-sub-a";
+> -		reg = <0x4 0x1C>;
+> -		clocks = <&rcc SAI1_CK>;
+> -		clock-names = "sai_ck";
+> -		dmas = <&dmamux1 1 87 0x400 0x0>;
+> -		dma-names = "tx";
+> -		pinctrl-names = "default";
+> -		pinctrl-0 = <&pinctrl_sai1a>;
+> -
+> -		sai1b_port: port {
+> -			cpu_endpoint: endpoint {
+> -				remote-endpoint = <&codec_endpoint>;
+> -				format = "i2s";
+> -			};
+> -		};
+> -	};
+> -};
+> -
+> -audio-codec {
+> -	codec_port: port {
+> -		codec_endpoint: endpoint {
+> -			remote-endpoint = <&cpu_endpoint>;
+> -		};
+> -	};
+> -};
+> diff --git a/Documentation/devicetree/bindings/sound/st,stm32-sai.yaml b/Documentation/devicetree/bindings/sound/st,stm32-sai.yaml
+> new file mode 100644
+> index 000000000000..51dd2b3bdeb1
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/sound/st,stm32-sai.yaml
+> @@ -0,0 +1,191 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/sound/st,stm32-sai.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: STMicroelectronics STM32 Serial Audio Interface (SAI)
+> +
+> +maintainers:
+> +  - Olivier Moysan <olivier.moysan@st.com>
+> +
+> +description:
+> +  The SAI interface (Serial Audio Interface) offers a wide set of audio
+> +  protocols as I2S standards, LSB or MSB-justified, PCM/DSP, TDM, and AC'97.
+> +  The SAI contains two independent audio sub-blocks. Each sub-block has
+> +  its own clock generator and I/O lines controller.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - st,stm32f4-sai
+> +      - st,stm32h7-sai
+> +
+> +  reg:
+> +    items:
+> +      - description: Base address and size of SAI common register set.
+> +      - description: Base address and size of SAI identification register set.
+> +    minItems: 1
+> +    maxItems: 2
+> +
+> +  ranges:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  "#address-cells":
+> +    const: 1
+> +
+> +  "#size-cells":
+> +    const: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: pclk feeds the peripheral bus interface.
+> +      - description: x8k, SAI parent clock for sampling rates multiple of 8kHz.
+> +      - description: x11k, SAI parent clock for sampling rates multiple of 11.025kHz.
+> +
+> +  clock-names:
+> +    items:
+> +      - const: pclk
+> +      - const: x8k
+> +      - const: x11k
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - ranges
+> +  - "#address-cells"
+> +  - "#size-cells"
+> +  - clocks
+> +  - clock-names
+> +
+> +patternProperties:
+> +  "^audio-controller@[0-9a-f]+$":
+> +    type: object
+> +    description:
+> +      Two subnodes corresponding to SAI sub-block instances A et B
+> +      can be defined. Subnode can be omitted for unsused sub-block.
+> +
+> +    properties:
+> +      compatible:
+> +        description: Compatible for SAI sub-block A or B.
+> +        pattern: "st,stm32-sai-sub-[ab]"
+> +
+> +      "#sound-dai-cells":
+> +        const: 0
+> +
+> +      reg:
+> +        maxItems: 1
+> +
+> +      clocks:
+> +        items:
+> +          - description: sai_ck clock feeding the internal clock generator.
+> +          - description: MCLK clock from a SAI set as master clock provider.
+> +        minItems: 1
+> +        maxItems: 2
+> +
+> +      clock-names:
+> +        items:
+> +          - const: sai_ck
+> +          - const: MCLK
+> +        minItems: 1
+> +        maxItems: 2
+> +
+> +      dmas:
+> +        maxItems: 1
+> +
+> +      dma-names:
+> +        description: |
+> +          rx: SAI sub-block is configured as a capture DAI.
+> +          tx: SAI sub-block is configured as a playback DAI.
+> +        enum: [ rx, tx ]
+> +
+> +      st,sync:
+> +        description:
+> +          Configure the SAI sub-block as slave of another SAI sub-block.
+> +          By default SAI sub-block is in asynchronous mode.
+> +          Must contain the phandle and index of the SAI sub-block providing
+> +          the synchronization.
+> +        allOf:
+> +          - $ref: /schemas/types.yaml#definitions/phandle-array
+> +          - maxItems: 1
+> +
+> +      st,iec60958:
+> +        description:
+> +          If set, support S/PDIF IEC6958 protocol for playback.
+> +          IEC60958 protocol is not available for capture.
+> +          By default, custom protocol is assumed, meaning that protocol is
+> +          configured according to protocol defined in related DAI link node,
+> +          such as i2s, left justified, right justified, dsp and pdm protocols.
+> +        allOf:
+> +          - $ref: /schemas/types.yaml#definitions/flag
+> +
+> +      "#clock-cells":
+> +        description: Configure the SAI device as master clock provider.
+> +        const: 0
+> +
+> +    required:
+> +      - compatible
+> +      - "#sound-dai-cells"
+> +      - reg
+> +      - clocks
+> +      - clock-names
+> +      - dmas
+> +      - dma-names
+> +
+> +    additionalProperties: false
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          contains:
+> +            const: st,stm32f4-sai
+> +
+> +  - then:
 
-Since we know the data we look for is either under /hypervisor/uefi
-or under /chosen, it is much simpler to use the libfdt routines
-directly, and try to grab a reference to either node directly, and
-read each property in sequence.
+The '-' makes this 2 different schema.
 
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
----
- drivers/firmware/efi/fdtparams.c | 203 ++++++++------------
- 1 file changed, 85 insertions(+), 118 deletions(-)
+> +      properties:
+> +        clocks:
+> +          items:
+> +            - description: x8k, SAI parent clock for sampling rates multiple of 8kHz.
+> +            - description: x11k, SAI parent clock for sampling rates multiple of 11.025kHz.        
+> +
+> +        clock-names:
+> +          items:
+> +            - const: x8k
+> +            - const: x11k
 
-diff --git a/drivers/firmware/efi/fdtparams.c b/drivers/firmware/efi/fdtparams.c
-index 7a384b307c56..23af4062e913 100644
---- a/drivers/firmware/efi/fdtparams.c
-+++ b/drivers/firmware/efi/fdtparams.c
-@@ -5,154 +5,121 @@
- #include <linux/module.h>
- #include <linux/init.h>
- #include <linux/efi.h>
--#include <linux/of.h>
-+#include <linux/libfdt.h>
- #include <linux/of_fdt.h>
- 
--#include <asm/early_ioremap.h>
-+#include <asm/unaligned.h>
- 
--#define UEFI_PARAM(name, prop, field)			   \
--	{						   \
--		{ name },				   \
--		{ prop },				   \
--		offsetof(struct efi_fdt_params, field),    \
--		sizeof_field(struct efi_fdt_params, field) \
--	}
--
--struct efi_fdt_params {
--	u64 system_table;
--	u64 mmap;
--	u32 mmap_size;
--	u32 desc_size;
--	u32 desc_ver;
--};
--
--struct params {
--	const char name[32];
--	const char propname[32];
--	int offset;
--	int size;
-+enum {
-+	SYSTAB,
-+	MMBASE,
-+	MMSIZE,
-+	DCSIZE,
-+	DCVERS,
- };
- 
--static __initdata struct params fdt_params[] = {
--	UEFI_PARAM("System Table", "linux,uefi-system-table", system_table),
--	UEFI_PARAM("MemMap Address", "linux,uefi-mmap-start", mmap),
--	UEFI_PARAM("MemMap Size", "linux,uefi-mmap-size", mmap_size),
--	UEFI_PARAM("MemMap Desc. Size", "linux,uefi-mmap-desc-size", desc_size),
--	UEFI_PARAM("MemMap Desc. Version", "linux,uefi-mmap-desc-ver", desc_ver)
-+static __initconst const char name[][22] = {
-+	[SYSTAB] = "System Table         ",
-+	[MMBASE] = "MemMap Address       ",
-+	[MMSIZE] = "MemMap Size          ",
-+	[DCSIZE] = "MemMap Desc. Size    ",
-+	[DCVERS] = "MemMap Desc. Version ",
- };
- 
--static __initdata struct params xen_fdt_params[] = {
--	UEFI_PARAM("System Table", "xen,uefi-system-table", system_table),
--	UEFI_PARAM("MemMap Address", "xen,uefi-mmap-start", mmap),
--	UEFI_PARAM("MemMap Size", "xen,uefi-mmap-size", mmap_size),
--	UEFI_PARAM("MemMap Desc. Size", "xen,uefi-mmap-desc-size", desc_size),
--	UEFI_PARAM("MemMap Desc. Version", "xen,uefi-mmap-desc-ver", desc_ver)
--};
--
--#define EFI_FDT_PARAMS_SIZE	ARRAY_SIZE(fdt_params)
--
--static __initdata struct {
--	const char *uname;
--	const char *subnode;
--	struct params *params;
-+static __initconst const struct {
-+	const char	path[17];
-+	const char	params[5][26];
- } dt_params[] = {
--	{ "hypervisor", "uefi", xen_fdt_params },
--	{ "chosen", NULL, fdt_params },
--};
--
--struct param_info {
--	int found;
--	void *params;
--	const char *missing;
-+#ifdef CONFIG_XEN
-+	{
-+		"/hypervisor/uefi",
-+		{
-+			[SYSTAB] = "xen,uefi-system-table",
-+			[MMBASE] = "xen,uefi-mmap-start",
-+			[MMSIZE] = "xen,uefi-mmap-size",
-+			[DCSIZE] = "xen,uefi-mmap-desc-size",
-+			[DCVERS] = "xen,uefi-mmap-desc-ver",
-+		}
-+	},
-+#endif
-+	{
-+		"/chosen",
-+		{
-+			[SYSTAB] = "linux,uefi-system-table",
-+			[MMBASE] = "linux,uefi-mmap-start",
-+			[MMSIZE] = "linux,uefi-mmap-size",
-+			[DCSIZE] = "linux,uefi-mmap-desc-size",
-+			[DCVERS] = "linux,uefi-mmap-desc-ver",
-+		}
-+	}
- };
- 
--static int __init __find_uefi_params(unsigned long node,
--				     struct param_info *info,
--				     struct params *params)
-+static int __init efi_get_fdt_prop(const void *fdt, int node, int dtp, int pp,
-+				   void *var, int size)
- {
- 	const void *prop;
--	void *dest;
-+	int len;
- 	u64 val;
--	int i, len;
- 
--	for (i = 0; i < EFI_FDT_PARAMS_SIZE; i++) {
--		prop = of_get_flat_dt_prop(node, params[i].propname, &len);
--		if (!prop) {
--			info->missing = params[i].name;
--			return 0;
--		}
--
--		dest = info->params + params[i].offset;
--		info->found++;
-+	prop = fdt_getprop(fdt, node, dt_params[dtp].params[pp], &len);
-+	if (!prop) {
-+		pr_err("Can't find property '%s' in device tree!\n",
-+		       dt_params[dtp].params[pp]);
-+		return 1;
-+	}
- 
--		val = of_read_number(prop, len / sizeof(u32));
-+	val = (len == 4) ? (u64)be32_to_cpup(prop) : get_unaligned_be64(prop);
- 
--		if (params[i].size == sizeof(u32))
--			*(u32 *)dest = val;
--		else
--			*(u64 *)dest = val;
-+	if (size == 8)
-+		*(u64 *)var = val;
-+	else
-+		*(u32 *)var = (val <= U32_MAX) ? val : U32_MAX; // saturate
- 
--		if (efi_enabled(EFI_DBG))
--			pr_info("  %s: 0x%0*llx\n", params[i].name,
--				params[i].size * 2, val);
--	}
-+	if (efi_enabled(EFI_DBG))
-+		pr_info("  %s: 0x%0*llx\n", name[pp], size * 2, val);
- 
--	return 1;
-+	return 0;
- }
- 
--static int __init fdt_find_uefi_params(unsigned long node, const char *uname,
--				       int depth, void *data)
-+u64 __init efi_get_fdt_params(struct efi_memory_map_data *mm)
- {
--	struct param_info *info = data;
-+	const void *fdt = initial_boot_params;
-+	unsigned long systab;
-+	struct {
-+		void	*var;
-+		int	size;
-+	} target[] = {
-+		[SYSTAB] = { &systab,		sizeof(systab) },
-+		[MMBASE] = { &mm->phys_map,	sizeof(mm->phys_map) },
-+		[MMSIZE] = { &mm->size,		sizeof(mm->size) },
-+		[DCSIZE] = { &mm->desc_size,	sizeof(mm->desc_size) },
-+		[DCVERS] = { &mm->desc_version,	sizeof(mm->desc_version) },
-+	};
- 	int i;
- 
-+	BUILD_BUG_ON(ARRAY_SIZE(target) != ARRAY_SIZE(name));
-+	BUILD_BUG_ON(ARRAY_SIZE(target) != ARRAY_SIZE(dt_params[0].params));
-+
- 	for (i = 0; i < ARRAY_SIZE(dt_params); i++) {
--		const char *subnode = dt_params[i].subnode;
-+		int node;
-+		int j;
- 
--		if (depth != 1 || strcmp(uname, dt_params[i].uname) != 0) {
--			info->missing = dt_params[i].params[0].name;
-+		node = fdt_path_offset(fdt, dt_params[i].path);
-+		if (node < 0)
- 			continue;
--		}
- 
--		if (subnode) {
--			int err = of_get_flat_dt_subnode_by_name(node, subnode);
-+		if (efi_enabled(EFI_DBG))
-+			pr_info("Getting UEFI parameters from %s in DT:\n",
-+				dt_params[i].path);
- 
--			if (err < 0)
-+		for (j = 0; j < ARRAY_SIZE(target); j++) {
-+			if (efi_get_fdt_prop(fdt, node, i, j, target[j].var,
-+					     target[j].size)) {
- 				return 0;
--
--			node = err;
-+			}
- 		}
--
--		return __find_uefi_params(node, info, dt_params[i].params);
-+		return systab;
- 	}
--
-+	pr_info("UEFI not found.\n");
- 	return 0;
- }
--
--u64 __init efi_get_fdt_params(struct efi_memory_map_data *memmap)
--{
--	struct efi_fdt_params params;
--	struct param_info info;
--	int ret;
--
--	pr_info("Getting EFI parameters from FDT:\n");
--
--	info.found = 0;
--	info.params = &params;
--
--	ret = of_scan_flat_dt(fdt_find_uefi_params, &info);
--	if (!info.found) {
--		pr_info("UEFI not found.\n");
--		return 0;
--	} else if (!ret) {
--		pr_err("Can't find '%s' in device tree!\n", info.missing);
--		return 0;
--	}
--
--	memmap->desc_version	= params.desc_ver;
--	memmap->desc_size	= params.desc_size;
--	memmap->size		= params.mmap_size;
--	memmap->phys_map	= params.mmap;
--
--	return params.system_table;
--}
--- 
-2.17.1
+It is impossible for the first definition and this one to both be true. 
+You'll have to put the first definition in an 'else' clause here. 
 
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
+> +    #include <dt-bindings/clock/stm32mp1-clks.h>
+> +    #include <dt-bindings/reset/stm32mp1-resets.h>
+> +    sai1: sai@4400a000 {
+> +      compatible = "st,stm32h7-sai";
+> +      #address-cells = <1>;
+> +      #size-cells = <1>;
+> +      ranges = <0 0x4400a000 0x400>;
+> +      reg = <0x4400a000 0x4>, <0x4400a3f0 0x10>;
+> +      interrupts = <GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>;
+> +      clocks = <&rcc SAI1>, <&rcc PLL1_Q>, <&rcc PLL2_P>;
+> +      clock-names = "pclk", "x8k", "x11k";
+> +      resets = <&rcc SAI1_R>;
+> +
+> +      sai1a: audio-controller@4400a004 {
+> +        compatible = "st,stm32-sai-sub-a";
+> +        #sound-dai-cells = <0>;
+> +        reg = <0x4 0x1c>;
+> +        clocks = <&rcc SAI1_K>;
+> +        clock-names = "sai_ck";
+> +        dmas = <&dmamux1 87 0x400 0x01>;
+> +        dma-names = "tx";
+> +      };
+> +    };
+> +
+> +...
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
