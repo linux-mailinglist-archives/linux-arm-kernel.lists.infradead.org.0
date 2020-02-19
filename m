@@ -2,99 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8569A1643E5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 13:07:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29E011643E8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 13:07:31 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tS72sc2gNkijlafWoRNPaSK4SAciB8vG6HmfRz40RMw=; b=jqVLQ+O+CsqQ5SgmOObvsoKoN
-	SBj5t1ZcncLmI0FyRctYq0L4IyjDmWOQLxMPOjDenu8YFtP2drvF5c8MVdyDeG9skbsBah5p6/nqM
-	KrdF+NfdXrS4RS87AiY+64SSJlCBk7hi1GiX5TA+Pixbmie3XsAY/7rv3hp422ZG1BAD8KDhjPIEM
-	RNKf56N6ISNPSsdoIaJcuHCEO+CwD4iRnfuI7hEym+Kj2MzHbHd8q2bYO4SPb/CVggbzg4chvOOw2
-	GXiZEzXV1b+6eV+rxGVI761egB/EfPuTIfy24jzP3gfP+pQtr5p7TzvoN9zj3pOg4Sat2DJOIyGtt
-	X8WmrEjDA==;
+	 bh=8XmiKizKMXKP0Vj6zbt/6nkrStYKvxlMDy7BUSomH0k=; b=FTTkNwJgMcUG1nTQY1dLr7Ams
+	rxLAkSb5efOnOYVKI0HqYGv0OW3JgNL4WxtF4MJ5rRKQZI2MKRtP/61lgqRkW8vEdB5JSC0JmGHKW
+	jKxTQXhrtu8xZz5/WNGgswxMuw43DqD6z1M04yf3506O68CZO88TYfbev5BX0+tUZMUny7kIHT55Z
+	glgQvbJi0b369WP7OjKvhFEfGAKcnrVJZ6ocDBCNP3+sFjfxoC7CNtNamZM+fsoU2mAcvmQO2PH0B
+	GzYwYNu0eP0yqgnWc6vCT7ht7XKEB/9Or1PbXu2psWGhxfeZI+3iSlVeGWEd4P6ZTCieLx1wWJbbR
+	OPynuFRng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4O8A-0002Qf-Ip; Wed, 19 Feb 2020 12:07:06 +0000
-Received: from out1-smtp.messagingengine.com ([66.111.4.25])
+	id 1j4O8X-0002fV-70; Wed, 19 Feb 2020 12:07:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4O81-0002PL-C1
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 12:06:59 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id ABBEB216C5;
- Wed, 19 Feb 2020 07:06:47 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Wed, 19 Feb 2020 07:06:47 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=0b7LbPDRm66st08CrUavOtRc+x1
- odA9gkGMkT5ktnmU=; b=k7kORyPNOJ4/muCan8ztd46ndp40yfqjPuYND55cXgK
- Q/LxEy7BGBvzldTzVh0xnnHyeFuwJo5PQiGFt7tA0PisvH0nCMHGcPJGPYlSaK6c
- 3HcyghIqWRFT/BqR0FEkdR8C4EHwv3YNJuMWqdThnNbU2xp20s3nH1CKoY8cd0DP
- P5GO5zEAuZResXqG2ZzVwQIMJgP9Vm/SIsBQYzZB46n/CJzkdcYtSAaNichj7rPD
- /tpZoEWklRnS+jWfq0EjUYhzoVYw/zh3tEPnCTTpP0khdr8S3JBselFAGyz808hC
- euBM+DvJJxaIw7eN3x0Kv4TcPKYkZyyf1js8H/X9Uag==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=0b7LbP
- DRm66st08CrUavOtRc+x1odA9gkGMkT5ktnmU=; b=p0/CFXzGVcl+eymOIW0bNu
- 7G9DZWCUvkWv1zmpJ4WoSNh10axUg8wh3pmPqmfKhebJcHhmeEyOvOGZUH01Xu2R
- o2vFAC1mgTL9kSihugk4Pd9nhHs5vUa9zsSUTrZ/C8pS6h1ncaKNS7icWSMN5DWb
- 5C9CyCAFKC36eK3IoWVZMcx5rLqo7T+78Yb0Bfs3BUl9W0V2h5Nd6SVaTXdS3xhx
- aHQzlFEwlnWEZCtKhC/qN6d1jPxWvW8bbc3rNBImku3RPE8Gz+JnZDnKgJgz1PBl
- LTNdipdnsGWgvpRTbXvWPoTS9NinWiWrHejfc3ATl8ecZ0y5GwHeijRQI0SWcDcQ
- ==
-X-ME-Sender: <xms:1iRNXrob7Z3bWy1Tr7SqEPEogGObTqLXBw_UTg7-N28j9L4KgH0Ujg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedtgdefiecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:1iRNXkOxM9fK5R2wKUikCy6erQ1SdGUldRMwNggdz8hX9QC2q8jDSA>
- <xmx:1iRNXvyeCPTVypJrE1llUBTIasEVOn6IxEbor02W8UZ24jPhGQLd9w>
- <xmx:1iRNXju0W7FxgCJnDcB1dywqQCWoNEjnMogJk2QtTO1wEULYxv-TEA>
- <xmx:1yRNXvJPUfDjKIxCeuDe86diDXnSB6wBWymARLND8nSi4L5BrbuUJQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 4C19A3280064;
- Wed, 19 Feb 2020 07:06:46 -0500 (EST)
-Date: Wed, 19 Feb 2020 13:06:44 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Andrey Lebedev <andrey.lebedev@gmail.com>
-Subject: Re: [PATCH v2 2/2] ARM: sun7i: dts: Add LVDS panel support on A20
-Message-ID: <20200219120644.b74jmusyf4ny7euh@gilmour.lan>
-References: <20200210195633.GA21832@kedthinkpad>
- <20200212222355.17141-2-andrey.lebedev@gmail.com>
- <20200213094304.hf3glhgmquypxpyf@gilmour.lan>
- <20200213200823.GA28336@kedthinkpad>
- <20200214075218.huxdhmd4qfoakat2@gilmour.lan>
- <20200214084358.GA25266@kedthinkpad>
- <20200214085351.2whnfyulrmyex2va@gilmour.lan>
- <20200214213231.GA6583@kedthinkpad>
- <20200217175135.ldtqji4mrwz2wbn5@gilmour.lan>
- <20200218175033.GA25850@kedthinkpad>
+ id 1j4O8N-0002eU-IW
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 12:07:21 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9D2E124654;
+ Wed, 19 Feb 2020 12:07:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582114037;
+ bh=G0d/jtalHOC6e6qLE9M5tzztTcx+kJ1uXsVu0TxH0zo=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=nVFTh6cNOma4kRqJuBbNUn2KLIvtLdxO3qDOQXtV8bi5u17SibOCQKEdW/QObO3jd
+ Fi6q9XZfOsrEsQuNvN/mtJHCpzswo5a6DTc6YxHRdYZLOZUUeTtyoBi36sHpoD1xQM
+ MJ6peMN7fzrYIgiY23VgoKZ1XpUA+CMqCaa8d3Jo=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j4O8J-006Ut1-VU; Wed, 19 Feb 2020 12:07:16 +0000
 MIME-Version: 1.0
-In-Reply-To: <20200218175033.GA25850@kedthinkpad>
+Date: Wed, 19 Feb 2020 12:07:15 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Alexandre Torgue <alexandre.torgue@st.com>
+Subject: Re: [PATCH v2 2/2] pinctrl: stm32: Add level interrupt support to
+ gpio irq chip
+In-Reply-To: <f82caf02-5a47-ce3e-ec85-313712ef6de0@st.com>
+References: <20200218131218.10789-1-alexandre.torgue@st.com>
+ <20200218131218.10789-3-alexandre.torgue@st.com>
+ <f82caf02-5a47-ce3e-ec85-313712ef6de0@st.com>
+Message-ID: <53f72a8b241da3032a42b80c86b7c6ab@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: alexandre.torgue@st.com, tglx@linutronix.de,
+ jason@lakedaemon.net, linus.walleij@linaro.org, marex@denx.de,
+ linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_040657_553897_1574B2CF 
-X-CRM114-Status: GOOD (  21.88  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200219_040719_677632_7D9D4A3C 
+X-CRM114-Status: GOOD (  12.27  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.25 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.25 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -102,7 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,154 +93,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Andrey Lebedev <andrey@lebedev.lt>, wens@csie.org, daniel@ffwll.ch,
+Cc: marex@denx.de, Jason Cooper <jason@lakedaemon.net>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2522770502965707868=="
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2020-02-19 11:34, Alexandre Torgue wrote:
+> Fix Marc email address.
+> 
+> On 2/18/20 2:12 PM, Alexandre Torgue wrote:
+>> This patch adds level interrupt support to gpio irq chip.
 
---===============2522770502965707868==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="pppyecrcyak66akq"
-Content-Disposition: inline
+A commit message should not contain "this patch".
 
+>> 
+>> GPIO hardware block is directly linked to EXTI block but EXTI handles
+>> external interrupts only on edge. To be able to handle GPIO interrupt 
+>> on
+>> level a "hack" is done in gpio irq chip: parent interrupt (exti irq 
+>> chip)
+>> is retriggered following interrupt type and gpio line value.
+>> 
+>> Signed-off-by: Alexandre Torgue <alexandre.torgue@st.com>
+>> Tested-by: Marek Vasut <marex@denx.de>
+>> 
+>> diff --git a/drivers/pinctrl/stm32/pinctrl-stm32.c 
+>> b/drivers/pinctrl/stm32/pinctrl-stm32.c
+>> index 2d5e0435af0a..dae236562543 100644
+>> --- a/drivers/pinctrl/stm32/pinctrl-stm32.c
+>> +++ b/drivers/pinctrl/stm32/pinctrl-stm32.c
+>> @@ -92,6 +92,7 @@ struct stm32_gpio_bank {
+>>   	u32 bank_nr;
+>>   	u32 bank_ioport_nr;
+>>   	u32 pin_backup[STM32_GPIO_PINS_PER_BANK];
+>> +	u32 irq_type[STM32_GPIO_PINS_PER_BANK];
 
---pppyecrcyak66akq
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Do you really need a u32 here? an array of u8 seems enough. After all,
+you only need two bits of information per interrupts (level or not,
+low or high).
 
-On Tue, Feb 18, 2020 at 07:50:33PM +0200, Andrey Lebedev wrote:
-> On Mon, Feb 17, 2020 at 06:51:35PM +0100, Maxime Ripard wrote:
-> > > diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.h b/drivers/gpu/drm/sun4i/sun4i_tcon.h
-> > > index cfbf4e6c1679..bc87d28ee341 100644
-> > > --- a/drivers/gpu/drm/sun4i/sun4i_tcon.h
-> > > +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.h
-> > > @@ -235,6 +235,8 @@ struct sun4i_tcon_quirks {
-> > >  	bool	needs_de_be_mux; /* sun6i needs mux to select backend */
-> > >  	bool    needs_edp_reset; /* a80 edp reset needed for tcon0 access */
-> > >  	bool	supports_lvds;   /* Does the TCON support an LVDS output? */
-> > > +	/* "compatible" string of TCON that exclusively supports LVDS */
-> > > +	const char *lvds_compatible_tcon;
-> >
-> > However this is far more complicated than needed, you can simply add a
-> > new quirks structure associated to the tcon0 compatible in
-> > sun4i_tcon_of_table, and that will do
->
-> Aha! Does this look good to you?
->
-> From 4ad2978e404c63d4cca1b7890bc5bdd4d1e8965d Mon Sep 17 00:00:00 2001
-> From: Andrey Lebedev <andrey@lebedev.lt>
-> Date: Tue, 18 Feb 2020 19:47:33 +0200
-> Subject: [PATCH] Mark tcon0 to be the only tcon capable of LVDS on sun7i-a20
->
-> This allows to avoid warnings about reset line not provided for tcon1.
->
-> Signed-off-by: Andrey Lebedev <andrey@lebedev.lt>
-> ---
->  arch/arm/boot/dts/sun7i-a20.dtsi   |  6 ++++--
->  drivers/gpu/drm/sun4i/sun4i_tcon.c | 14 ++++++++++++--
->  2 files changed, 16 insertions(+), 4 deletions(-)
->
-> diff --git a/arch/arm/boot/dts/sun7i-a20.dtsi b/arch/arm/boot/dts/sun7i-a20.dtsi
-> index dc4f3f249aee..d50263c1ca9a 100644
-> --- a/arch/arm/boot/dts/sun7i-a20.dtsi
-> +++ b/arch/arm/boot/dts/sun7i-a20.dtsi
-> @@ -405,7 +405,8 @@
->  		};
->
->  		tcon0: lcd-controller@1c0c000 {
-> -			compatible = "allwinner,sun7i-a20-tcon";
-> +			compatible = "allwinner,sun7i-a20-tcon0",
-> +				     "allwinner,sun7i-a20-tcon";
->  			reg = <0x01c0c000 0x1000>;
->  			interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
->  			resets = <&ccu RST_TCON0>, <&ccu RST_LVDS>;
-> @@ -460,7 +461,8 @@
->  		};
->
->  		tcon1: lcd-controller@1c0d000 {
-> -			compatible = "allwinner,sun7i-a20-tcon";
-> +			compatible = "allwinner,sun7i-a20-tcon1",
-> +				     "allwinner,sun7i-a20-tcon";
->  			reg = <0x01c0d000 0x1000>;
->  			interrupts = <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>;
->  			resets = <&ccu RST_TCON1>;
+>>   };
+>>     struct stm32_pinctrl {
+>> @@ -303,6 +304,46 @@ static const struct gpio_chip stm32_gpio_template 
+>> = {
+>>   	.get_direction		= stm32_gpio_get_direction,
+>>   };
+>>   +void stm32_gpio_irq_eoi(struct irq_data *d)
+>> +{
+>> +	struct stm32_gpio_bank *bank = d->domain->host_data;
+>> +	int line;
+>> +
+>> +	irq_chip_eoi_parent(d);
+>> +
+>> +	/* If level interrupt type then retrig */
+>> +	line = stm32_gpio_get(&bank->gpio_chip, d->hwirq);
+>> +	if ((line == 0 && bank->irq_type[d->hwirq] == IRQ_TYPE_LEVEL_LOW) ||
+>> +	    (line == 1 && bank->irq_type[d->hwirq] == IRQ_TYPE_LEVEL_HIGH))
+>> +		irq_chip_retrigger_hierarchy(d);
 
-This needs to be in a separate patch
+s/line/level/
 
-> diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> index 800a9bd86112..d9605d331010 100644
-> --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> @@ -1479,7 +1479,7 @@ static const struct sun4i_tcon_quirks sun6i_a31s_quirks = {
->  	.dclk_min_div		= 1,
->  };
->
-> -static const struct sun4i_tcon_quirks sun7i_a20_quirks = {
-> +static const struct sun4i_tcon_quirks sun7i_a20_tcon0_quirks = {
->  	.supports_lvds		= true,
->  	.has_channel_0		= true,
->  	.has_channel_1		= true,
-> @@ -1489,6 +1489,15 @@ static const struct sun4i_tcon_quirks sun7i_a20_quirks = {
->  	.setup_lvds_phy		= sun4i_tcon_setup_lvds_phy,
->  };
->
-> +static const struct sun4i_tcon_quirks sun7i_a20_tcon1_quirks = {
-> +	.supports_lvds		= false,
-> +	.has_channel_0		= true,
-> +	.has_channel_1		= true,
-> +	.dclk_min_div		= 4,
-> +	/* Same display pipeline structure as A10 */
-> +	.set_mux		= sun4i_a10_tcon_set_mux,
-> +};
-> +
->  static const struct sun4i_tcon_quirks sun8i_a33_quirks = {
->  	.has_channel_0		= true,
->  	.has_lvds_alt		= true,
-> @@ -1534,7 +1543,8 @@ const struct of_device_id sun4i_tcon_of_table[] = {
->  	{ .compatible = "allwinner,sun5i-a13-tcon", .data = &sun5i_a13_quirks },
->  	{ .compatible = "allwinner,sun6i-a31-tcon", .data = &sun6i_a31_quirks },
->  	{ .compatible = "allwinner,sun6i-a31s-tcon", .data = &sun6i_a31s_quirks },
-> -	{ .compatible = "allwinner,sun7i-a20-tcon", .data = &sun7i_a20_quirks },
-> +	{ .compatible = "allwinner,sun7i-a20-tcon0", .data = &sun7i_a20_tcon0_quirks },
-> +	{ .compatible = "allwinner,sun7i-a20-tcon1", .data = &sun7i_a20_tcon1_quirks },
->  	{ .compatible = "allwinner,sun8i-a23-tcon", .data = &sun8i_a33_quirks },
->  	{ .compatible = "allwinner,sun8i-a33-tcon", .data = &sun8i_a33_quirks },
->  	{ .compatible = "allwinner,sun8i-a83t-tcon-lcd", .data = &sun8i_a83t_lcd_quirks },
+>> +};
+>> +
+>> +static int stm32_gpio_set_type(struct irq_data *d, unsigned int type)
+>> +{
+>> +	struct stm32_gpio_bank *bank = d->domain->host_data;
+>> +	u32 parent_type;
+>> +
+>> +	bank->irq_type[d->hwirq] = type;
 
-And we need to support older DT as well, so you shouldn't remove the
-older TCON compatible and its structure. Make sure to document the new
-compatibles too.
+It would make more sense if this this assignment was done *after*
+sanitizing the type value.
 
-Maxime
+>> +
+>> +	switch (type) {
+>> +	case IRQ_TYPE_EDGE_RISING:
+>> +	case IRQ_TYPE_EDGE_FALLING:
+>> +	case IRQ_TYPE_EDGE_BOTH:
+>> +		parent_type = type;
+>> +		break;
+>> +	case IRQ_TYPE_LEVEL_HIGH:
+>> +		parent_type = IRQ_TYPE_EDGE_RISING;
+>> +		break;
+>> +	case IRQ_TYPE_LEVEL_LOW:
+>> +		parent_type = IRQ_TYPE_EDGE_FALLING;
+>> +		break;
+>> +	default:
+>> +		return -EINVAL;
+>> +	}
+>> +
+>> +	return irq_chip_set_type_parent(d, parent_type);
+>> +};
+>> +
+>>   static int stm32_gpio_irq_request_resources(struct irq_data 
+>> *irq_data)
+>>   {
+>>   	struct stm32_gpio_bank *bank = irq_data->domain->host_data;
+>> @@ -332,11 +373,11 @@ static void 
+>> stm32_gpio_irq_release_resources(struct irq_data *irq_data)
+>>     static struct irq_chip stm32_gpio_irq_chip = {
+>>   	.name		= "stm32gpio",
+>> -	.irq_eoi	= irq_chip_eoi_parent,
+>> +	.irq_eoi	= stm32_gpio_irq_eoi,
+>>   	.irq_ack	= irq_chip_ack_parent,
+>>   	.irq_mask	= irq_chip_mask_parent,
+>>   	.irq_unmask	= irq_chip_unmask_parent,
+>> -	.irq_set_type	= irq_chip_set_type_parent,
+>> +	.irq_set_type	= stm32_gpio_set_type,
+>>   	.irq_set_wake	= irq_chip_set_wake_parent,
+>>   	.irq_request_resources = stm32_gpio_irq_request_resources,
+>>   	.irq_release_resources = stm32_gpio_irq_release_resources,
+>> 
 
---pppyecrcyak66akq
-Content-Type: application/pgp-signature; name="signature.asc"
+Thanks,
 
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXk0k1AAKCRDj7w1vZxhR
-xYhCAQCJoj0KSbx3DIdZ+6CIaEX2rZa7wJltBAhkCohwZJ8QqAEAotjnImKfiz/v
-GGord1FEAN/NstQoI/n/crBrpv43Iww=
-=Wm5B
------END PGP SIGNATURE-----
-
---pppyecrcyak66akq--
-
-
---===============2522770502965707868==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2522770502965707868==--
-
