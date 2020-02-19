@@ -2,76 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACAC7163E00
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:41:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF062163E08
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:43:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4KufoJ5tGeFTBMZ7EFbhs434CTI3TGg6u+WudZvIVcg=; b=bTexDfvy8MtXC1
-	ba19ROoytB7uA+w/xrlwFsWF6Yh8rzZtnOwubhZ9t7qdGBTSQ8KFyVHyC0UO8P5lZ3IVPyQlIhz6Y
-	7o+scxt2OQTqjceXEFGwt/QxkQJiOuHs+SM5kf8Sq2FBNv2dQE38JDSvlw7kFk5DJCsal3mHun102
-	nP4H+kH3JAcY62P6wPCaJVhwRG0BBdxYmLOd0rfMeJManYAfyDCwMfYW8dARfkqTch1LF+HCxlq7T
-	XFaJBAEf1jVps8RmdGmU5t3gSYK0rG7i+LTVUlTnvgEf/3QNeE4lYzvt4XDWxQH5c9L2yIvj+eFG5
-	lAO8OzGqTsaeGJaWvJUg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8CZx8vX8a0sHLve8P96CK/PngZmVUBh1nMNmZEecUEU=; b=Ooo3A6/hmENkoo
+	6jh8TyonleQpdg3RV4VUkXR4UybtoSmN7OSjzLXCrXn84J8z9RjHG4KLDUdVGsbI+TEtGYG6StwmE
+	MjLHVTJseJwLzrj7kpvb4r4Ra8SALWQ2Lbfd7/DdId5LjqDHpGQHrK5fxL51rdGC8R3qt4+ygoQF4
+	CWh9McqmtW5H0NyPtLW4itDf1wWpRTRGSWCIPXr8kBw9+yKfTdVKLKUn7q3Fepw+EYn3FO23nQSCx
+	Jp6WFfJQLnSH+et8v1JW8p0AMvSH3WYlS9E9aYYBUP6sdUv7NPI1ssN0yfp2a+0ae4/OA5uTa2cUr
+	yocBgs8gMi1nEvvuj7Fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Jyp-00071B-Kj; Wed, 19 Feb 2020 07:41:11 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j4K1H-0007Zh-TS; Wed, 19 Feb 2020 07:43:43 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Jyg-00070d-Ne
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:41:04 +0000
-Received: by mail-wr1-x441.google.com with SMTP id m16so26902663wrx.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 23:41:01 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+GRLqrD8FueaUCHAoE5W7lTJg+Amhm25j14mDfWmjkA=;
- b=kTNAFKeNi58a6U94aPNyk90UBSKG8JCWjWNuMiUHZEtRSl6WJsZaJcDG0H0NH/MESj
- CjnehUs+Mw5wnTTjyRcxVTT8DDO3TYKY0i49PAel3wB79hMGCm8kP6wc5AXe7RhLv4MG
- +BJtU+G3G+qHz0vhZxG2POr56LNKq9ITudB6s0ZRvs8mXQa3vl+MuBIH+nb5viJeO9EE
- WuqgXiODR0hhXK6X737HDKvNJ93MQgCsXeD80gmkLYPXyPNM4g+yhccOAZXmHVgNNDt/
- S9dtWANw0xDedARfY27ZmjbXLcmfUtUmkx35qyMjHNcc57H5Bs3W8aBX9QwmS7EiVRsL
- 6sIA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+GRLqrD8FueaUCHAoE5W7lTJg+Amhm25j14mDfWmjkA=;
- b=gPZI7ol7oBX9P1bqS9iazjQ51eoV/1xsR11+bYcTmFDfApTQ2okWCX+CoESfeMDYyn
- rPXsoXqORz/blOjw++tX0DyAX+HWxXUmi7Ls4E0JCcagNKSCCNt3n+s2Dj8fu7m14qZo
- 8REO8Fiyl83ysy/gqOTTaux4Kpq4sV/2HeK3fC0kZ/2dUTLLz4zhPJD/5GocfyNQ3Cgb
- LIg/4Kx/BIptAj7s2duTb8M91kYYMSf2ZMoqgrCeV9Q1TWS+jo3O7zmJzUwdZGl6DJiK
- dUh4inRmXzNVsRCp5QM6w1QFhHKFDlA3ppDKUuGst4P0FeU78EHxZgVQ+2cNM5qYEikU
- uBMg==
-X-Gm-Message-State: APjAAAXvleClWT2Ct1OyRbvlkMQNqI8JQlEmFI/sRN6WmVswq/R6ABoO
- JdN++whX0Q9wINJ4e1vq5mTWTpAkxEY3Bu0TM/M3QQ==
-X-Google-Smtp-Source: APXvYqwCy2jqrGLYe7fHN/XM0e6FNRRUyJj1Go/h3HngUYGMwgnjHkeOth6L5p2FLRI+tlLg9m6uzOIAHQ0dkTFKCQ4=
-X-Received: by 2002:a5d:5188:: with SMTP id k8mr34117209wrv.151.1582098060684; 
- Tue, 18 Feb 2020 23:41:00 -0800 (PST)
+ id 1j4K14-0007Z0-Oj
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:43:33 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01J7hOdE040693;
+ Wed, 19 Feb 2020 01:43:24 -0600
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1582098204;
+ bh=39unl09EiHVV1q7RtYXNt3apDWs2Z8nNFnTZL5Gg2lk=;
+ h=From:To:CC:Subject:Date;
+ b=h64cn8WI7kZBbPY9GFJVjgdBk0BJshC67I4ZGt4y9tPsrBZA+XNMha1PoIJoOQyv6
+ XOkG76suiFwei3F8vQDGtLBw5MLPgwrkvi3nqpILUOAOWASIKX9S4ij+DPr4U8scty
+ NtoROU/1bVyjeyVjHytZmXL/RfWF8FCXLQDZDEQI=
+Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01J7hOLm009995;
+ Wed, 19 Feb 2020 01:43:24 -0600
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Wed, 19
+ Feb 2020 01:43:24 -0600
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
+ Frontend Transport; Wed, 19 Feb 2020 01:43:24 -0600
+Received: from a0393675ula.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01J7hKCY068778;
+ Wed, 19 Feb 2020 01:43:20 -0600
+From: Keerthy <j-keerthy@ti.com>
+To: <rui.zhang@intel.com>, <robh+dt@kernel.org>, <daniel.lezcano@linaro.org>
+Subject: [PATCH v3 0/4] thermal: k3: Add support for bandgap sensors
+Date: Wed, 19 Feb 2020 13:13:10 +0530
+Message-ID: <20200219074314.22829-1-j-keerthy@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200219000817.195049-1-samitolvanen@google.com>
- <20200219000817.195049-13-samitolvanen@google.com>
-In-Reply-To: <20200219000817.195049-13-samitolvanen@google.com>
-From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Date: Wed, 19 Feb 2020 08:40:47 +0100
-Message-ID: <CAKv+Gu9HpKBO-r+Ker47sPxvHBWLa6NAHe4P71x=K4Wiy2ybwQ@mail.gmail.com>
-Subject: Re: [PATCH v8 12/12] efi/libstub: disable SCS
-To: Sami Tolvanen <samitolvanen@google.com>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_234102_800737_55DC10E7 
-X-CRM114-Status: GOOD (  17.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200218_234330_883478_5E150A05 
+X-CRM114-Status: GOOD (  12.70  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -81,6 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,61 +87,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Jann Horn <jannh@google.com>, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Kernel Hardening <kernel-hardening@lists.openwall.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
- Marc Zyngier <maz@kernel.org>, Laura Abbott <labbott@redhat.com>,
- Will Deacon <will@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ amit.kucheria@verdurent.com, linux-pm@vger.kernel.org, j-keerthy@ti.com,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 19 Feb 2020 at 01:09, Sami Tolvanen <samitolvanen@google.com> wrote:
->
-> Disable SCS for the EFI stub and allow x18 to be used.
->
-> Suggested-by: James Morse <james.morse@arm.com>
-> Signed-off-by: Sami Tolvanen <samitolvanen@google.com>
-> ---
->  drivers/firmware/efi/libstub/Makefile | 3 +++
->  1 file changed, 3 insertions(+)
->
-> diff --git a/drivers/firmware/efi/libstub/Makefile b/drivers/firmware/efi/libstub/Makefile
-> index 98a81576213d..dff9fa5a3f1c 100644
-> --- a/drivers/firmware/efi/libstub/Makefile
-> +++ b/drivers/firmware/efi/libstub/Makefile
-> @@ -30,6 +30,9 @@ KBUILD_CFLAGS                 := $(cflags-y) -DDISABLE_BRANCH_PROFILING \
->                                    $(call cc-option,-fno-stack-protector) \
->                                    -D__DISABLE_EXPORTS
->
-> +#  remove SCS flags from all objects in this directory
-> +KBUILD_CFLAGS := $(filter-out -ffixed-x18 $(CC_FLAGS_SCS), $(KBUILD_CFLAGS))
-> +
+Add VTM thermal support. In the Voltage Thermal
+Management Module(VTM), K3 AM654 supplies a voltage
+reference and a temperature sensor feature that are gathered in the band
+gap voltage and temperature sensor (VBGAPTS) module. The band
+gap provides current and voltage reference for its internal
+circuits and other analog IP blocks. The analog-to-digital
+converter (ADC) produces an output value that is proportional
+to the silicon temperature.
 
-I don't see why you'd need to remove -ffixed-x18 again here. Not using
-x18 anywhere in the kernel is a much more maintainable approach.
+Add support for bandgap sensors. Currently reading temperatures
+and trend computing is supported.
 
-In fact, now that I think of it, the EFI AArch64 platform binding
-forbids the use of x18, so it would be better to add the -ffixed-x18
-unconditionally for arm64 (even though the reason it forbids it is to
-ensure compatibility with an OS using it as a platform register, and
-so nothing is actually broken atm).
+Changes in v3:
 
->  GCOV_PROFILE                   := n
->  KASAN_SANITIZE                 := n
->  UBSAN_SANITIZE                 := n
-> --
-> 2.25.0.265.gbab2e86ba0-goog
->
+  * Fixed errors seen with:
+    dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+
+Changes in v2:
+
+  * Fixed yaml errors
+  * renamed am654-industrial-thermal.dtsi to k3-am654-industrial-thermal.dtsi
+    to follow the convention for k3 family.
+
+Keerthy (4):
+  dt-bindings: thermal: k3: Add VTM bindings documentation
+  thermal: k3: Add support for bandgap sensors
+  arm64: dts: ti: am654: Add thermal zones
+  arm64: dts: ti: am6: Add VTM node
+
+ .../bindings/thermal/ti,am654-thermal.yaml    |  57 +++
+ arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi    |  11 +
+ .../dts/ti/k3-am654-industrial-thermal.dtsi   |  45 +++
+ drivers/thermal/Kconfig                       |  12 +
+ drivers/thermal/Makefile                      |   1 +
+ drivers/thermal/k3_bandgap.c                  | 342 ++++++++++++++++++
+ 6 files changed, 468 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
+ create mode 100644 arch/arm64/boot/dts/ti/k3-am654-industrial-thermal.dtsi
+ create mode 100644 drivers/thermal/k3_bandgap.c
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
