@@ -2,89 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79475163FAE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 09:50:37 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FAAE163FAF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 09:50:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bXLaqxu9/nIUp7jgHxmEy6Ntins7mQhacDZTcO/qc7M=; b=Bep7aO6tC4qc8j
-	BUgf7sYXpQA25w0sSjUUvsPX6SB71LlD7FW36Tm91Ym8T8WOQPHJJFTpvHnAKgjVSb8EFivPgS9TK
-	KRsidlzbQJDcqpOSKUgbwLkMpbVIkwCIFqLrXfkgywN+dQNuoJhTSzT+oQzMGbQBc1yVrngk5zmYA
-	od/01xB2YEF7SEjIEYcFRJhW7OFic1fVo3BANWeJtnu1LiLz8ry8GXwf/HMkCzaie5+t+l/1u/iGH
-	YLrJRghyk15sfv8xlQtRwm59gdeA7au2Ti0OjDh5QC475V2joaKH6svjE5U1uDYLLrLpoik4tpnn5
-	gTkd3mh7A6HeM2LaYH/Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5vFSAran4xzka3ixHvWRrNOF04r9y7OHB2kIMFtyh80=; b=HH1X4+yZg+m4xEzK2gVNoDB5N
+	LTmc58K0DH4obX8TYbEFpW80P3DNS+oVwawqOQUWS4EHEnN2TgFVsk0F8h8dJxCJX6EMhuNUyN7Tv
+	rkbzgelaDSaZxa96cuc9ikORcPWH7DFYtNC6yv7oVM5qtwc5sotgABa/tBcig9j0NEqs5DXDzEXMj
+	8x0vSh/6sYD0Y1VCN6gyr1hlDd5jPc75f1zVi/YSdDynzxi2XtLu26cs2DlRVYtC+yrvpaHUAyP22
+	NLiNNG3R9mWBfjZBDYMxM3HDGoaZp2//tf5RUzP0YVAqK/6w80MYlQubhlXTt7w6uYNemgFjWJblL
+	EKXpe8lAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4L3z-0005gN-PA; Wed, 19 Feb 2020 08:50:35 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1j4L4F-0005vX-0P; Wed, 19 Feb 2020 08:50:51 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4L35-0003ox-CU
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 08:49:41 +0000
-Received: by mail-wr1-x441.google.com with SMTP id r11so27125021wrq.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 00:49:39 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=5GSg/xDxPp49oDbA6vFdut+q4shLY3Pk8HEGAuRFez0=;
- b=eluEgFKOncyKAGdAwn5OlTiyk2CNzP5MLYoMHFNmglRELyDY5Bk6FrEAlgWD7RuyYp
- cIRQuyIF/z2xm2TY2HA0ExnS0Px90I2YnFFe2YaEp8nRZe8AWjSJ+yXWyGKS+FtSe+i3
- SM4nfyn/zK9JP5yPnX1DcQrdxrAVI3xGW2dO320+301upQ6idUmjL64+5RLLV+F7l+R2
- EHQNCCqP7FZ8UpTmLCXdGOj9Ec6wfsrNuyRGOwNJQOc2+ezeoKKUbgZ5NW+eB1kiJz4X
- Xy/0uw/WlS0qq3ibJmSnCialEob3fLbK8sgqebp6PoO2HlZbIlAWjvIkZr4G71U1auup
- hNYw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=5GSg/xDxPp49oDbA6vFdut+q4shLY3Pk8HEGAuRFez0=;
- b=AA5Rjx1TZQZ3CesW9j2/apqdN6ApSz8XTU+38nwOX78yKUZNPEypzEBB3yfZ+ALr11
- I1R0D/Zp9J75W52YexexTxDYS4aT4UrwuDwHg5JgCo4mnWADF0B+uLQLoXtt5e86v69c
- 8qna7VWlmfcinzcmAzymc1m2TUGx24SP+2HDQaw11uQ0+rtWjGe20bG9HI3r3SdLFAGY
- UGElXQfuz8nJDNk/4EqfmXYJju2YyfzBJIX64xpb8jqK9knUYsT/soIs31m6NhfqSDHp
- gUZn4I7LAavOAbr2rNlZoUBoMcNK1UNXx+dTuhzwM45vu6OQlGgDwsTheDUy1rr0SBU9
- 6tfg==
-X-Gm-Message-State: APjAAAUg9mo1v4/wW/1OJUF6Y2MNzFRyfSkmzE85vwchc0eX+VHLw8XB
- uuiTEOeGDBXapiHFoK0M2WoSqYJBBq44mg==
-X-Google-Smtp-Source: APXvYqzIWUthaSqh0c9Ww016Eg2GCgQn8e5Ju2qinfSCQh/Y6SpPyxGTiNTOn47XES0XFKoKalCppg==
-X-Received: by 2002:a05:6000:1187:: with SMTP id
- g7mr34747098wrx.109.1582102178017; 
- Wed, 19 Feb 2020 00:49:38 -0800 (PST)
-Received: from bender.baylibre.local
- (laubervilliers-658-1-213-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id t13sm2021673wrw.19.2020.02.19.00.49.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 00:49:37 -0800 (PST)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: jbrunet@baylibre.com
-Subject: [PATCH 2/2] clk: meson: g12a: add support for the SPICC SCLK Source
- clocks
-Date: Wed, 19 Feb 2020 09:49:28 +0100
-Message-Id: <20200219084928.28707-3-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20200219084928.28707-1-narmstrong@baylibre.com>
-References: <20200219084928.28707-1-narmstrong@baylibre.com>
+ id 1j4L3k-0005eI-CZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 08:50:22 +0000
+Received: from lhreml707-cah.china.huawei.com (unknown [172.18.7.108])
+ by Forcepoint Email with ESMTP id 94A329A75D14FEA2E52C;
+ Wed, 19 Feb 2020 08:50:16 +0000 (GMT)
+Received: from lhreml724-chm.china.huawei.com (10.201.108.75) by
+ lhreml707-cah.china.huawei.com (10.201.108.48) with Microsoft SMTP Server
+ (TLS) id 14.3.408.0; Wed, 19 Feb 2020 08:50:15 +0000
+Received: from [127.0.0.1] (10.210.170.116) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Wed, 19 Feb
+ 2020 08:50:14 +0000
+Subject: Re: [PATCH RFC 0/7] perf pmu-events: Support event aliasing for
+ system PMUs
+To: Mark Rutland <mark.rutland@arm.com>
+References: <1579876505-113251-1-git-send-email-john.garry@huawei.com>
+ <20200218125707.GB20212@willie-the-truck>
+ <a40903fe-d52f-96c6-a06a-fe834d71d625@huawei.com>
+ <20200218133943.GF20212@willie-the-truck>
+ <627cbc50-4b36-7f7f-179d-3d27d9e0215a@huawei.com>
+ <20200218170803.GA9968@lakrids.cambridge.arm.com>
+ <cb004f43-b2a4-ae23-9fd3-0f70bd69701b@huawei.com>
+ <20200218181331.GB9968@lakrids.cambridge.arm.com>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <822114f9-8ff4-c769-66a0-7e637ce49cd5@huawei.com>
+Date: Wed, 19 Feb 2020 08:50:13 +0000
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
+In-Reply-To: <20200218181331.GB9968@lakrids.cambridge.arm.com>
+Content-Language: en-US
+X-Originating-IP: [10.210.170.116]
+X-ClientProxiedBy: lhreml743-chm.china.huawei.com (10.201.108.193) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_004939_438293_D877F244 
-X-CRM114-Status: GOOD (  13.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200219_005020_616125_C2B82399 
+X-CRM114-Status: GOOD (  23.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,213 +79,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Neil Armstrong <narmstrong@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "ak@linux.intel.com" <ak@linux.intel.com>,
+ "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
+ "peterz@infradead.org" <peterz@infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "jolsa@redhat.com" <jolsa@redhat.com>, Linuxarm <linuxarm@huawei.com>,
+ "acme@kernel.org" <acme@kernel.org>, Joakim Zhang <qiangqing.zhang@nxp.com>,
+ Zhangshaokun <zhangshaokun@hisilicon.com>,
+ "alexander.shishkin@linux.intel.com" <alexander.shishkin@linux.intel.com>,
+ "mingo@redhat.com" <mingo@redhat.com>,
+ "james.clark@arm.com" <james.clark@arm.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "namhyung@kernel.org" <namhyung@kernel.org>, Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds the clocks used for the Amlogic G12A and compatible SoCs SPICC
-controller to provide a more complete range of frequencies instead of the
-SPICC internal divider over Xtal.
+>>
+>>> For system PMUs, I'd rather the system PMU driver exposed some sort of
+>>> implementation ID. e.g. the SMMU_ID for SMMU. We can give that a generic name,
+>>> and mandate that where a driver exposes it, the format/meaning is defined in
+>>> the documentation for the driver.
+>>
+>> Then doesn't that per-PMU ID qualify as brittle and non-standard also?
+> 
+> Not in my mind; any instances of the same IP can have the same ID,
+> regardless of which SoC they're in. Once userspace learns about
+> device-foo-4000, it knows about it on all SoCs. That also means you can
+> support heterogeneous instances in the same SoC.
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- drivers/clk/meson/g12a.c | 129 +++++++++++++++++++++++++++++++++++++++
- drivers/clk/meson/g12a.h |   6 +-
- 2 files changed, 134 insertions(+), 1 deletion(-)
+Sure, but this device-foo-4000 naming is a concern for standardization, 
+stable ABI, and perf tool support.
 
-diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
-index d2760a021301..fad616cac01e 100644
---- a/drivers/clk/meson/g12a.c
-+++ b/drivers/clk/meson/g12a.c
-@@ -3862,6 +3862,111 @@ static struct clk_regmap g12a_ts = {
- 	},
- };
- 
-+/* SPICC SCLK source clock */
-+
-+static const struct clk_parent_data spicc_sclk_parent_data[] = {
-+	{ .fw_name = "xtal", },
-+	{ .hw = &g12a_clk81.hw },
-+	{ .hw = &g12a_fclk_div4.hw },
-+	{ .hw = &g12a_fclk_div3.hw },
-+	{ .hw = &g12a_fclk_div5.hw },
-+	{ .hw = &g12a_fclk_div7.hw },
-+};
-+
-+static struct clk_regmap g12a_spicc0_sclk_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = HHI_SPICC_CLK_CNTL,
-+		.mask = 7,
-+		.shift = 7,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spicc0_sclk_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = spicc_sclk_parent_data,
-+		.num_parents = ARRAY_SIZE(spicc_sclk_parent_data),
-+	},
-+};
-+
-+static struct clk_regmap g12a_spicc0_sclk_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = HHI_SPICC_CLK_CNTL,
-+		.shift = 0,
-+		.width = 6,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spicc0_sclk_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&g12a_spicc0_sclk_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap g12a_spicc0_sclk = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = HHI_SPICC_CLK_CNTL,
-+		.bit_idx = 6,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spicc0_sclk",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&g12a_spicc0_sclk_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap g12a_spicc1_sclk_sel = {
-+	.data = &(struct clk_regmap_mux_data){
-+		.offset = HHI_SPICC_CLK_CNTL,
-+		.mask = 7,
-+		.shift = 23,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spicc1_sclk_sel",
-+		.ops = &clk_regmap_mux_ops,
-+		.parent_data = spicc_sclk_parent_data,
-+		.num_parents = ARRAY_SIZE(spicc_sclk_parent_data),
-+	},
-+};
-+
-+static struct clk_regmap g12a_spicc1_sclk_div = {
-+	.data = &(struct clk_regmap_div_data){
-+		.offset = HHI_SPICC_CLK_CNTL,
-+		.shift = 16,
-+		.width = 6,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spicc1_sclk_div",
-+		.ops = &clk_regmap_divider_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&g12a_spicc1_sclk_sel.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
-+static struct clk_regmap g12a_spicc1_sclk = {
-+	.data = &(struct clk_regmap_gate_data){
-+		.offset = HHI_SPICC_CLK_CNTL,
-+		.bit_idx = 22,
-+	},
-+	.hw.init = &(struct clk_init_data){
-+		.name = "spicc1_sclk",
-+		.ops = &clk_regmap_gate_ops,
-+		.parent_hws = (const struct clk_hw *[]) {
-+			&g12a_spicc1_sclk_div.hw
-+		},
-+		.num_parents = 1,
-+		.flags = CLK_SET_RATE_PARENT,
-+	},
-+};
-+
- #define MESON_GATE(_name, _reg, _bit) \
- 	MESON_PCLK(_name, _reg, _bit, &g12a_clk81.hw)
- 
-@@ -4159,6 +4264,12 @@ static struct clk_hw_onecell_data g12a_hw_onecell_data = {
- 		[CLKID_VDEC_HEVCF]		= &g12a_vdec_hevcf.hw,
- 		[CLKID_TS_DIV]			= &g12a_ts_div.hw,
- 		[CLKID_TS]			= &g12a_ts.hw,
-+		[CLKID_SPICC0_SCLK_SEL]		= &g12a_spicc0_sclk_sel.hw,
-+		[CLKID_SPICC0_SCLK_DIV]		= &g12a_spicc0_sclk_div.hw,
-+		[CLKID_SPICC0_SCLK]		= &g12a_spicc0_sclk.hw,
-+		[CLKID_SPICC1_SCLK_SEL]		= &g12a_spicc1_sclk_sel.hw,
-+		[CLKID_SPICC1_SCLK_DIV]		= &g12a_spicc1_sclk_div.hw,
-+		[CLKID_SPICC1_SCLK]		= &g12a_spicc1_sclk.hw,
- 		[NR_CLKS]			= NULL,
- 	},
- 	.num = NR_CLKS,
-@@ -4408,6 +4519,12 @@ static struct clk_hw_onecell_data g12b_hw_onecell_data = {
- 		[CLKID_CPUB_CLK_AXI]		= &g12b_cpub_clk_axi.hw,
- 		[CLKID_CPUB_CLK_TRACE_SEL]	= &g12b_cpub_clk_trace_sel.hw,
- 		[CLKID_CPUB_CLK_TRACE]		= &g12b_cpub_clk_trace.hw,
-+		[CLKID_SPICC0_SCLK_SEL]		= &g12a_spicc0_sclk_sel.hw,
-+		[CLKID_SPICC0_SCLK_DIV]		= &g12a_spicc0_sclk_div.hw,
-+		[CLKID_SPICC0_SCLK]		= &g12a_spicc0_sclk.hw,
-+		[CLKID_SPICC1_SCLK_SEL]		= &g12a_spicc1_sclk_sel.hw,
-+		[CLKID_SPICC1_SCLK_DIV]		= &g12a_spicc1_sclk_div.hw,
-+		[CLKID_SPICC1_SCLK]		= &g12a_spicc1_sclk.hw,
- 		[NR_CLKS]			= NULL,
- 	},
- 	.num = NR_CLKS,
-@@ -4642,6 +4759,12 @@ static struct clk_hw_onecell_data sm1_hw_onecell_data = {
- 		[CLKID_CPU1_CLK]		= &sm1_cpu1_clk.hw,
- 		[CLKID_CPU2_CLK]		= &sm1_cpu2_clk.hw,
- 		[CLKID_CPU3_CLK]		= &sm1_cpu3_clk.hw,
-+		[CLKID_SPICC0_SCLK_SEL]		= &g12a_spicc0_sclk_sel.hw,
-+		[CLKID_SPICC0_SCLK_DIV]		= &g12a_spicc0_sclk_div.hw,
-+		[CLKID_SPICC0_SCLK]		= &g12a_spicc0_sclk.hw,
-+		[CLKID_SPICC1_SCLK_SEL]		= &g12a_spicc1_sclk_sel.hw,
-+		[CLKID_SPICC1_SCLK_DIV]		= &g12a_spicc1_sclk_div.hw,
-+		[CLKID_SPICC1_SCLK]		= &g12a_spicc1_sclk.hw,
- 		[NR_CLKS]			= NULL,
- 	},
- 	.num = NR_CLKS,
-@@ -4877,6 +5000,12 @@ static struct clk_regmap *const g12a_clk_regmaps[] = {
- 	&sm1_cpu1_clk,
- 	&sm1_cpu2_clk,
- 	&sm1_cpu3_clk,
-+	&g12a_spicc0_sclk_sel,
-+	&g12a_spicc0_sclk_div,
-+	&g12a_spicc0_sclk,
-+	&g12a_spicc1_sclk_sel,
-+	&g12a_spicc1_sclk_div,
-+	&g12a_spicc1_sclk,
- };
- 
- static const struct reg_sequence g12a_init_regs[] = {
-diff --git a/drivers/clk/meson/g12a.h b/drivers/clk/meson/g12a.h
-index 9df4068aced1..a8852556836e 100644
---- a/drivers/clk/meson/g12a.h
-+++ b/drivers/clk/meson/g12a.h
-@@ -255,8 +255,12 @@
- #define CLKID_DSU_CLK_DYN1			249
- #define CLKID_DSU_CLK_DYN			250
- #define CLKID_DSU_CLK_FINAL			251
-+#define CLKID_SPICC0_SCLK_SEL			256
-+#define CLKID_SPICC0_SCLK_DIV			257
-+#define CLKID_SPICC1_SCLK_SEL			259
-+#define CLKID_SPICC1_SCLK_DIV			260
- 
--#define NR_CLKS					256
-+#define NR_CLKS					262
- 
- /* include the CLKIDs that have been made part of the DT binding */
- #include <dt-bindings/clock/g12a-clkc.h>
--- 
-2.22.0
+> 
+> If a device varies so much on a SoC-by-SoC basis and or the driver has
+> no idea what to expose, it could be legitimate for the PMU driver to
+> expose the SoC ID as its PMU-specific ID, but I don't think we should
+> make that the common/only case.
 
+But where does the PMU driver get the SoC ID? Does it have to check DT 
+machine ID, ACPI OEM ID, or SMCCC SOC ID?
+
+I can't imagine that you really want this stuff in the kernel PMU 
+drivers, but that's your call.
+
+> 
+>> At least the SMC SoC ID is according to some standard.
+>>
+>> And typically most PMU HW would have no ID reg, so where to even get this
+>> identification info? Joakim Zhang seems to have this problem for the imx8
+>> DDRC PMU driver.
+> 
+> For imx8, the DT compat string or additional properties on the DDRC node
+> could be used to imply the id.
+
+Fine, but it's the ACPI case which is what I am concerned about.
+
+> 
+>>> That can be namespace by driver, so e.g. keys would be smmu_sysfs_name/<id> and
+>>> ddrc_sysfs_name/<id>.
+>>>
+>>>>>> So even if it is solvable here, the kernel driver(s) will need to be
+>>>>>> reworked. And that is just solving one case in many.
+>>>>> PMU drivers will need to expose more information to userspace so that they
+>>>>> can be identified more precisely, yes. I wouldn't say they would need to be
+>>>>> "reworked".
+>>>> OK, so some combination of changes would still be required for the SMMU
+>>>> PMCG, IORT, and SMMUv3 drivers.
+>>> To expose the SMMU ID, surely that's just the driver?
+>>
+>> This case is complicated, like others I anticipate.
+>>
+>> So the SMMU PMCG HW has no ID register itself, and this idea relies on using
+>> the associated SMMUv3 IIDR in lieu. For that, we need to involve the IORT,
+>> SMMUv3, and SMMU PMCG drivers to create this linkage, and even then I still
+>> have my doubts on whether this is even proper.
+> 
+> Ok, I hadn't appreciated that the PMCG did not have an ID register
+> itself.
+> 
+> I think that the relationship between the SMMU and PMCG is a stronger
+> argument against using the SOC_ID. If the PMCGs in a system are
+> heterogeneous, then you must know the type of the specific instance.
+
+Perf tool PMU events can handle that. Each PMCG PMU instance has a 
+different name - the name encoding includes the HW base address, so 
+always unique per system - and then so the JSON can know this and have 
+events specific per instance.
+
+> 
+>> Please see https://lore.kernel.org/linux-iommu/1569854031-237636-1-git-send-email-john.garry@huawei.com/
+>> for reference.
+>>
+>> Or are there
+>>> implementations where the ID register is bogus and have to be overridden?
+>>>
+>>
+>> I will also note that perf tool PMU events framework relies today on
+>> generating a table of events aliases per CPU and matching based on that. If
+>> you want to totally disassociate a CPU or any SoC ID mapping, then this will
+>> require big perf tool rework.
+> 
+> I think that might be necessary, as otherwise we're going to back
+> ourselves into a corner by building what's simple now.
+
+I appreciate what you're saying. I'll check this idea further.
+
+Cheers,
+John
 
 _______________________________________________
 linux-arm-kernel mailing list
