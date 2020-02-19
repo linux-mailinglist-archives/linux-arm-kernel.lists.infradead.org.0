@@ -2,67 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D53F9164266
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:41:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACEB3164270
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:43:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HrRP5kPu47ORhNm9f9rja5RM4dIp7jd3yWr3oAkqQh8=; b=Y4E/4JczGPWBpe
-	1vOeUrsO77va8DYMOlZhFpeFkNk6nbClMOELNc7H9swrR/GiQ5Aaj3lhYSc8sdcbUnjVqV7+RrnH8
-	yc8+xdE/Bzu8ZWGqifn1ujUB7R2vv7yxAWG3G5fO2irKLdvH6RQXUg7j5wkzWV/VNJgrgcnnOZ8wF
-	ApEvFPd36KdasOsxTUBckiwMsA+rGIXt8UOwe6Z5A5fC8s78y23TrQUqyXCaInN3bZ5TJnPDn8uZH
-	FoxRfpbrhW7Aia8i6MQDIftx5b2ZPeqkIwyAMJM4uH/g6EQksHI1d2VGKHcCUxYjZycwYcG2TxmlV
-	27Utk9dw1K60+dnS+wvA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fQ/lYjg6DoSZX0jTLws6QG8T3JBj45a/yZFL1pze7Wc=; b=KMl3ZVrkNaxMx8
+	1UbJcNKatVBgXV4h3xbvSuYjaLqQHFBjC+MGPDW4IL0xWLd/JKMrTmm48q61QMlHmdjA7zEHHznoP
+	SiFpTMAqaTpd0lt6EW+/1RucQwAs8xsfiibN72OGR1zOBN8XPexv2BI7EgSzyEBbN9lttWpaDZjOf
+	t2O0mB3U8xqj3fRg226jXR4jwf9IqLc78BILpUG6KFHAFRhUPjLkdgiQ0KTpeD8bin19euG2lGI28
+	WIHov2bgMwMkWT8Lmt+KTauhSo0OCBVGkQLvh5TaWeOrRw6rehuy4pD7v1GDKlfQXtHdBH493Sjwj
+	xDZgzrxCtviO3SGQixaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Mna-0006Lt-2t; Wed, 19 Feb 2020 10:41:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j4Mot-0006e7-ED; Wed, 19 Feb 2020 10:43:07 +0000
+Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
+ helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4MnQ-0006LY-G8
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:41:37 +0000
-Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
- [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3A1CE2465D;
- Wed, 19 Feb 2020 10:41:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582108896;
- bh=U6to4otLXJGLB13o6RzYw7pCZ5asKRv2pkOtt9vkGms=;
- h=From:To:Cc:Subject:Date:From;
- b=xl4Cp7xBchKZx9ZkeBPRExGYG3NrRV2PCihn+lHV5zD4r84NXFh3jeHZKCrz6r2IB
- GbtBQXOvH1G2/XsA22xsoXbh810x0EcpVZ4wvS7EWnE9NZwBWG5MKcrp5YAFMJWs5B
- jBjWek1zesELJmvQUDOSwpAsGZAHZLBL2AUA/rQo=
-From: Will Deacon <will@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: memory: Add missing brackets to untagged_addr() macro
-Date: Wed, 19 Feb 2020 10:41:31 +0000
-Message-Id: <20200219104131.18960-1-will@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ id 1j4Moi-0006d5-0H
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:42:57 +0000
+Received: by theia.8bytes.org (Postfix, from userid 1000)
+ id C31CF36C; Wed, 19 Feb 2020 11:42:45 +0100 (CET)
+Date: Wed, 19 Feb 2020 11:42:44 +0100
+From: Joerg Roedel <joro@8bytes.org>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH 00/10] PCI/ATS: Device-tree support and other improvements
+Message-ID: <20200219104244.GD1961@8bytes.org>
+References: <20200213165049.508908-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200213165049.508908-1-jean-philippe@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_024136_557453_D313BFEF 
-X-CRM114-Status: GOOD (  11.85  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200219_024256_197689_AF6EF7C3 
+X-CRM114-Status: UNSURE (   7.40  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,41 +58,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, Linus Torvalds <torvalds@linux-foundation.org>,
- Will Deacon <will@kernel.org>, stable@vger.kernel.org
+Cc: mark.rutland@arm.com, linux-doc@vger.kernel.org, linux-pci@vger.kernel.org,
+ liviu.dudau@arm.com, guohanjun@huawei.com, frowand.list@gmail.com,
+ lorenzo.pieralisi@arm.com, corbet@lwn.net, will@kernel.org,
+ linux-acpi@vger.kernel.org, lenb@kernel.org, devicetree@vger.kernel.org,
+ robh+dt@kernel.org, bhelgaas@google.com, linux-arm-kernel@lists.infradead.org,
+ dwmw2@infradead.org, rjw@rjwysocki.net, iommu@lists.linux-foundation.org,
+ sudeep.holla@arm.com, baolu.lu@linux.intel.com, robin.murphy@arm.com,
+ amurray@thegoodpenguin.co.uk
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add brackets around the evaluation of the 'addr' parameter to the
-untagged_addr() macro so that the case to 'u64' applies to the result
-of the expression.
+Hi Jean-Philippe,
 
-Cc: <stable@vger.kernel.org>
-Fixes: 597399d0cb91 ("arm64: tags: Preserve tags for addresses translated via TTBR1")
-Reported-by: Linus Torvalds <torvalds@linux-foundation.org>
-Signed-off-by: Will Deacon <will@kernel.org>
----
- arch/arm64/include/asm/memory.h | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index a4f9ca5479b0..4d94676e5a8b 100644
---- a/arch/arm64/include/asm/memory.h
-+++ b/arch/arm64/include/asm/memory.h
-@@ -213,7 +213,7 @@ static inline unsigned long kaslr_offset(void)
- 	((__force __typeof__(addr))sign_extend64((__force u64)(addr), 55))
- 
- #define untagged_addr(addr)	({					\
--	u64 __addr = (__force u64)addr;					\
-+	u64 __addr = (__force u64)(addr);					\
- 	__addr &= __untagged_addr(__addr);				\
- 	(__force __typeof__(addr))__addr;				\
- })
--- 
-2.25.0.265.gbab2e86ba0-goog
+On Thu, Feb 13, 2020 at 05:50:38PM +0100, Jean-Philippe Brucker wrote:
+> Jean-Philippe Brucker (11):
+>   dt-bindings: PCI: generic: Add ats-supported property
+>   PCI: Add ats_supported host bridge flag
+>   PCI: OF: Check whether the host bridge supports ATS
+>   ACPI/IORT: Check ATS capability in root complex node
+>   PCI/ATS: Gather checks into pci_ats_supported()
+>   iommu/amd: Use pci_ats_supported()
+>   iommu/arm-smmu-v3: Use pci_ats_supported()
+>   iommu/vt-d: Use pci_ats_supported()
+>   ACPI/IORT: Drop ATS fwspec flag
+>   arm64: dts: fast models: Enable PCIe ATS for Base RevC FVP
+>   Documentation: Generalize the "pci=noats" boot parameter 
 
+Nice patch-set! Thanks for the consolidation work. I can take it into
+the iommu-tree, given that the non-iommu parts get the necessary Acks.
+
+
+Regards,
+
+	Joerg
 
 _______________________________________________
 linux-arm-kernel mailing list
