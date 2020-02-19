@@ -2,43 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1ABC163BFF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 05:20:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48555163CEC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 07:10:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fPs5lNj5EYlZXiDLqaovQfJPbZw2NjyBhnWPhIWHffo=; b=W9MwZS94O+ApXw
-	diS5JLozTo8ruwx4C42OuTXa3DZzG7WwP7lPxLlYeJi6G9s0bB5vGgYJI5qDH8hFpuBG8qQxOuS3m
-	DQMmybNVNNu9rSv3wEh9B+WjPzgG0uw2g0NeDY88Z9C0iXhvo4Au2Z85cbhrc5GGpeF/c9N49Vewq
-	zKeRL3agYwoil/3YB9WcaFNOfXRGmwmxoEnU6ffVFfr+LTmbE9q4Hf8iJWX7rZtwxPE6XXe8zp5jo
-	GW/aWSngSPNxnBxxAccwR3rNr2a9TaFt/6yX3syyGABQKbNMrWzMlFQEsgGyG+dcQ0RZR7y8+6qQo
-	8aToZ+OB+LQ84AX2mBnA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=2OVDpMHNqG1NTvvJ0LgV2M/7va5rMc9WE5rLRoOYjpw=; b=o4p
+	BLqqV3m1GC6Ioqi89ip5vrug4S7h8gnN0lTzF1y9TDA4rvHL9Wv8puK+KGM+vHlOXWldFqBnIRFvp
+	CPkWXmZHPe2CRI4lDUG9igliBINcKoEpeUIoVo/R9ilM97ehk4GN6ZPUoaFKAmTsHsL24Kd9a1jzN
+	9euhRrBrTeqzjZ/RVMoQtoEWR8aFKMsSBvdxbOhoeznvJhpT3H8TNv5In+vjwZLQ8/K2Y7U/8+f5T
+	XVfrK9KmtUc/Mef5Y/djOUhFCfO2NMpAlnqwIP/amSbnTVex+ROzKDtFFF4s5u9NCP9uQ/aB//4oB
+	zu8aa6O9Fa/DebsELi1Bc++h7BMCGgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4GqK-0003t0-S5; Wed, 19 Feb 2020 04:20:12 +0000
-Received: from [2601:1c0:6280:3f0::19c2]
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Gq7-0003eb-PE; Wed, 19 Feb 2020 04:19:59 +0000
-Subject: Re: [PATCH v8 01/12] add support for Clang's Shadow Call Stack (SCS)
-To: Sami Tolvanen <samitolvanen@google.com>, Will Deacon <will@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Steven Rostedt <rostedt@goodmis.org>, Masami Hiramatsu
- <mhiramat@kernel.org>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Mark Rutland <mark.rutland@arm.com>, james.morse@arm.com
-References: <20191018161033.261971-1-samitolvanen@google.com>
- <20200219000817.195049-1-samitolvanen@google.com>
- <20200219000817.195049-2-samitolvanen@google.com>
-From: Randy Dunlap <rdunlap@infradead.org>
-Message-ID: <60ec3a49-7b71-df31-f231-b48ff135b718@infradead.org>
-Date: Tue, 18 Feb 2020 20:19:56 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <20200219000817.195049-2-samitolvanen@google.com>
-Content-Language: en-US
+	id 1j4IYy-00068n-CJ; Wed, 19 Feb 2020 06:10:26 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4IYm-0005tz-MG
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 06:10:14 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 202CA2032CA;
+ Wed, 19 Feb 2020 07:10:08 +0100 (CET)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 97E6C201283;
+ Wed, 19 Feb 2020 07:10:00 +0100 (CET)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 756AF402A0;
+ Wed, 19 Feb 2020 14:09:51 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: mturquette@baylibre.com, sboyd@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ robh+dt@kernel.org, mark.rutland@arm.com, abel.vesa@nxp.com,
+ peng.fan@nxp.com, fugang.duan@nxp.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/3] clk: imx8mp: Rename the IMX8MP_CLK_HDMI_27M clock
+Date: Wed, 19 Feb 2020 14:04:09 +0800
+Message-Id: <1582092251-19222-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200218_221012_874434_4B69CDEC 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -50,79 +69,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, Marc Zyngier <maz@kernel.org>,
- kernel-hardening@lists.openwall.com,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
- clang-built-linux@googlegroups.com, Laura Abbott <labbott@redhat.com>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sami,
+On i.MX8MP, internal HDMI 27M clock is actually 24MHz, so rename
+the IMX8MP_CLK_HDMI_27M to IMX8MP_CLK_HDMI_24M.
 
-a couple of minor tweaks:
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/clk/imx/clk-imx8mp.c             | 4 ++--
+ include/dt-bindings/clock/imx8mp-clock.h | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
-On 2/18/20 4:08 PM, Sami Tolvanen wrote:
-> diff --git a/arch/Kconfig b/arch/Kconfig
-> index 98de654b79b3..66b34fd0df54 100644
-> --- a/arch/Kconfig
-> +++ b/arch/Kconfig
-> @@ -526,6 +526,40 @@ config STACKPROTECTOR_STRONG
->  	  about 20% of all kernel functions, which increases the kernel code
->  	  size by about 2%.
->  
-> +config ARCH_SUPPORTS_SHADOW_CALL_STACK
-> +	bool
-> +	help
-> +	  An architecture should select this if it supports Clang's Shadow
-> +	  Call Stack, has asm/scs.h, and implements runtime support for shadow
-> +	  stack switching.
-> +
-> +config SHADOW_CALL_STACK
-> +	bool "Clang Shadow Call Stack"
-> +	depends on ARCH_SUPPORTS_SHADOW_CALL_STACK
-> +	help
-> +	  This option enables Clang's Shadow Call Stack, which uses a
-> +	  shadow stack to protect function return addresses from being
-> +	  overwritten by an attacker. More information can be found from
-
-	                                                      found in
-
-> +	  Clang's documentation:
-> +
-> +	    https://clang.llvm.org/docs/ShadowCallStack.html
-> +
-> +	  Note that security guarantees in the kernel differ from the ones
-> +	  documented for user space. The kernel must store addresses of shadow
-> +	  stacks used by other tasks and interrupt handlers in memory, which
-> +	  means an attacker capable reading and writing arbitrary memory may
-
-	                    capable of
-
-> +	  be able to locate them and hijack control flow by modifying shadow
-> +	  stacks that are not currently in use.
-> +
-> +config SHADOW_CALL_STACK_VMAP
-> +	bool "Use virtually mapped shadow call stacks"
-> +	depends on SHADOW_CALL_STACK
-> +	help
-> +	  Use virtually mapped shadow call stacks. Selecting this option
-> +	  provides better stack exhaustion protection, but increases per-thread
-> +	  memory consumption as a full page is allocated for each shadow stack.
-> +
-> +
->  config HAVE_ARCH_WITHIN_STACK_FRAMES
->  	bool
->  	help
-
-
-thanks.
+diff --git a/drivers/clk/imx/clk-imx8mp.c b/drivers/clk/imx/clk-imx8mp.c
+index 3adc8aa..a6313cf 100644
+--- a/drivers/clk/imx/clk-imx8mp.c
++++ b/drivers/clk/imx/clk-imx8mp.c
+@@ -342,7 +342,7 @@ static const char * const imx8mp_hdmi_fdcc_tst_sels[] = {"osc_24m", "sys_pll1_26
+ 							 "sys_pll1_800m", "sys_pll2_1000m", "sys_pll3_out",
+ 							 "audio_pll2_out", "video_pll1_out", };
+ 
+-static const char * const imx8mp_hdmi_27m_sels[] = {"osc_24m", "sys_pll1_160m", "sys_pll2_50m",
++static const char * const imx8mp_hdmi_24m_sels[] = {"osc_24m", "sys_pll1_160m", "sys_pll2_50m",
+ 						    "sys_pll3_out", "audio_pll1_out", "video_pll1_out",
+ 						    "audio_pll2_out", "sys_pll1_133m", };
+ 
+@@ -632,7 +632,7 @@ static int imx8mp_clocks_probe(struct platform_device *pdev)
+ 	hws[IMX8MP_CLK_IPP_DO_CLKO1] = imx8m_clk_hw_composite("ipp_do_clko1", imx8mp_ipp_do_clko1_sels, ccm_base + 0xba00);
+ 	hws[IMX8MP_CLK_IPP_DO_CLKO2] = imx8m_clk_hw_composite("ipp_do_clko2", imx8mp_ipp_do_clko2_sels, ccm_base + 0xba80);
+ 	hws[IMX8MP_CLK_HDMI_FDCC_TST] = imx8m_clk_hw_composite("hdmi_fdcc_tst", imx8mp_hdmi_fdcc_tst_sels, ccm_base + 0xbb00);
+-	hws[IMX8MP_CLK_HDMI_27M] = imx8m_clk_hw_composite("hdmi_27m", imx8mp_hdmi_27m_sels, ccm_base + 0xbb80);
++	hws[IMX8MP_CLK_HDMI_24M] = imx8m_clk_hw_composite("hdmi_24m", imx8mp_hdmi_24m_sels, ccm_base + 0xbb80);
+ 	hws[IMX8MP_CLK_HDMI_REF_266M] = imx8m_clk_hw_composite("hdmi_ref_266m", imx8mp_hdmi_ref_266m_sels, ccm_base + 0xbc00);
+ 	hws[IMX8MP_CLK_USDHC3] = imx8m_clk_hw_composite("usdhc3", imx8mp_usdhc3_sels, ccm_base + 0xbc80);
+ 	hws[IMX8MP_CLK_MEDIA_CAM1_PIX] = imx8m_clk_hw_composite("media_cam1_pix", imx8mp_media_cam1_pix_sels, ccm_base + 0xbd00);
+diff --git a/include/dt-bindings/clock/imx8mp-clock.h b/include/dt-bindings/clock/imx8mp-clock.h
+index 2fab631..00d4d22 100644
+--- a/include/dt-bindings/clock/imx8mp-clock.h
++++ b/include/dt-bindings/clock/imx8mp-clock.h
+@@ -173,7 +173,7 @@
+ #define IMX8MP_CLK_IPP_DO_CLKO1			164
+ #define IMX8MP_CLK_IPP_DO_CLKO2			165
+ #define IMX8MP_CLK_HDMI_FDCC_TST		166
+-#define IMX8MP_CLK_HDMI_27M			167
++#define IMX8MP_CLK_HDMI_24M			167
+ #define IMX8MP_CLK_HDMI_REF_266M		168
+ #define IMX8MP_CLK_USDHC3			169
+ #define IMX8MP_CLK_MEDIA_CAM1_PIX		170
 -- 
-~Randy
+2.7.4
 
 
 _______________________________________________
