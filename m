@@ -2,68 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 787BB1651DE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 22:47:08 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DD40165220
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 23:07:05 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=STgeGBm+Xvnx22VYsCrOyJJaKOO74RzdEgdAVpEFjQA=; b=q6mA5szw+RJVfq
-	i+xcSIXj5JP91XjIN/eLhACDQCJgu4FBxbtmy+GVsaslscrxy/eyCIMZ4vuBeQ+a3+d8YPl6ZYv0Z
-	hfHew7zUfHIfpYMPqbLz2f364iY5DkWHH0AQx2r8sPlSWcAIbK5ayTgXqfawnzHxq0dzvwKhwsix4
-	5lckNdbAVB97r7leYTNKwmZGXvYW0Efok1Ki7X70zdITfl4MOrWlO8jBAgBrxRdolHKk6mU70EqyU
-	xFId3O7DrR/nMryakss9RMJ5w7m3vTehfMnYnQ71e24IE61pcHdHQpijONQJazoYk/hPG2twKw45B
-	Hcldsadaya8/hSOgnhMw==;
+	List-Owner; bh=K8D3vM1Uu04q63QZ8EkvLoRYKpev2n1G3C8Vzd5gxBc=; b=Ylw0uQ+wnc1aks
+	BZ+LMwhDibmtk9DjCIjJ7aSn5wQ2WkYzKhfACVVvWjSm+M1LDgmO31J4cLyUp+2mFolIVsX/Y6ya0
+	OnLOa+J2UqBKJegTcvPNSk/DrMir/BzNhVFy1C8hsxVHXXIbKHWiADkpuBKjj3TW8GYSTCUfeYQKa
+	TV7Wr7wN/oNXrKIL4AupDreSe0qpv1225baTRVLjezzocmX+du0tRN3ZYz45xLJY2BtGuU9f4WW1z
+	7qjDYyWoHszkIR01F0DG8EBHOUGYIG2dyobVjZ4teZth6c5HlZPOQKShQsmzaYDJjhKwfga7ibCtZ
+	JoLU5sdKU3Ee4p9Tm4hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4XBK-0001Qs-1z; Wed, 19 Feb 2020 21:46:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j4XUc-00017b-6Q; Wed, 19 Feb 2020 22:06:54 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4XB9-0001QG-L0
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 21:46:49 +0000
-Received: from X1 (nat-ab2241.sltdut.senawave.net [162.218.216.4])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7624424654;
- Wed, 19 Feb 2020 21:46:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582148806;
- bh=HxfYRjJj58z+qAAsFwPuZfJ0KZbNY+dKSV+60i8qVIs=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Muu7wuj9ri3Wvcl3mc3d8sk4smKoASDoa02eUn9plYSjI6agD+f8aGFYssTJjKK05
- dExvMbtjpSDHMgolAcpGJveYtVAWzY4uSeZlmuieDqqfaCRrfzk1yP2uHek5RCXGkW
- HgHG5zDMhlIzFXL1XRhWZW9L3976VnXD5qU+VTjk=
-Date: Wed, 19 Feb 2020 13:46:45 -0800
-From: Andrew Morton <akpm@linux-foundation.org>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [RFC PATCH] memory_hotplug: disable the functionality for 32b
- (was: Re: [Bug 206401] kernel panic on Hyper-V after 5 minutes due to)
- memory hot-add
-Message-Id: <20200219134645.7430db57e0e59f69e7386f46@linux-foundation.org>
-In-Reply-To: <20200218100532.GA4151@dhcp22.suse.cz>
-References: <20200218084700.GD21113@dhcp22.suse.cz>
- <200218181900.M0115079@vega.pgw.jp>
- <20200218100532.GA4151@dhcp22.suse.cz>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ id 1j4XUU-000177-6W; Wed, 19 Feb 2020 22:06:47 +0000
+Received: by mail-ot1-f65.google.com with SMTP id w6so1759064otk.0;
+ Wed, 19 Feb 2020 14:06:45 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=nX8xqwF3vuVz6SMuQkjOYa0QQbZHhMZp1SMRDtGWins=;
+ b=j7OJQ/m+pDjcIeUpIl5O6iso68togHGD09cdS5FKZe+ONsug7nSJs3nBF/YQ5+fCbk
+ eQ8tw3oAHxNYYrZ/M6i7p0+QiI9pNcXn5kjzADhFtf36fj0Eha/GmGBicaI4QRlB4ytu
+ 8WUfLim+G/Av87WdDHBbodfnT1E+xX9stFsvHLOgfcqUPoVQM6j4NqtKfeLVmrj+zGHU
+ hCax05RIj6bsMN6t4eic2fGog5sBXnHV/zkC85t+sXSAlkX+1YnFjvKwVF0BKInWjWvs
+ cEkGMxXw7WSC6l67k+6bWADjPOCI7Rqj1qT9Oiri7M020OYh5ZadPDh7glYPZLqj8lCx
+ uYtA==
+X-Gm-Message-State: APjAAAXCVxI2UkQ+bt3FrBcf08gh2IYLORHvxq5OkisoXEOfEHS8Z+0K
+ rTSNLP+xvwS0uiGeS25mAA==
+X-Google-Smtp-Source: APXvYqyzDpAsYbjMChkiOsp8vQqnGzBRtPAhURMvfp0Uf1xlLNMzHvlqRbrPr1aAJf+7mljlZu6F6g==
+X-Received: by 2002:a9d:6548:: with SMTP id q8mr19241216otl.356.1582150005300; 
+ Wed, 19 Feb 2020 14:06:45 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id z10sm406828oih.1.2020.02.19.14.06.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 19 Feb 2020 14:06:44 -0800 (PST)
+Received: (nullmailer pid 21809 invoked by uid 1000);
+ Wed, 19 Feb 2020 22:06:43 -0000
+Date: Wed, 19 Feb 2020 16:06:43 -0600
+From: Rob Herring <robh@kernel.org>
+To: =?iso-8859-1?Q?N=EDcolas_F=2E_R=2E_A=2E?= Prado <nfraprado@protonmail.com>
+Subject: Re: [PATCH] dt-bindings: rng: Convert BCM2835 to DT schema
+Message-ID: <20200219220643.GA14392@bogus>
+References: <20200207231347.2908737-1-nfraprado@protonmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200207231347.2908737-1-nfraprado@protonmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_134647_780328_D01DA797 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200219_140646_240389_E4B937FF 
+X-CRM114-Status: GOOD (  20.80  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,43 +92,194 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, bhe@redhat.com, david@redhat.com,
- bugzilla-daemon@bugzilla.kernel.org, linux-mm@kvack.org,
- richardw.yang@linux.intel.com, n-horiguchi@ah.jp.nec.com, kkabe@vega.pgw.jp,
- linux-arm-kernel@lists.infradead.org, osalvador@suse.de
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>, linux-arm-kernel@lists.infradead.org,
+ Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-crypto@vger.kernel.org,
+ Matt Mackall <mpm@selenic.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 18 Feb 2020 11:05:32 +0100 Michal Hocko <mhocko@kernel.org> wrote:
+On Fri, Feb 07, 2020 at 11:14:12PM +0000, N=EDcolas F. R. A. Prado wrote:
+> Convert BCM2835/6368 Random number generator bindings to DT schema.
+> =
 
-> Subject: [PATCH] memory_hotplug: disable the functionality for 32b
-> 
-> Memory hotlug is broken for 32b systems at least since c6f03e2903c9
-> ("mm, memory_hotplug: remove zone restrictions") which has considerably
-> reworked how can be memory associated with movable/kernel zones. The
-> same is not really trivial to achieve in 32b where only lowmem is the
-> kernel zone. While we can tweak this immediate problem around there are
-> likely other land mines hidden at other places.
-> 
-> It is also quite dubious that there is a real usecase for the memory
-> hotplug on 32b in the first place. Low memory is just too small to be
-> hotplugable (for hot add) and generally unusable for hotremove. Adding
-> more memory to highmem is also dubious because it would increase the
-> low mem or vmalloc space pressure for memmaps.
-> 
-> Restrict the functionality to 64b systems. This will help future
-> development to focus on usecases that have real life application.  We
-> can remove this restriction in future in presence of a real life usecase
-> of course but until then make it explicit that hotplug on 32b is broken
-> and requires a non trivial amount of work to fix.
+> Signed-off-by: N=EDcolas F. R. A. Prado <nfraprado@protonmail.com>
+> ---
+> =
 
-(cc linux-arch)
+> Hi,
+> wasn't really clear to me who to add as maintainer for this dt-binding.
+> The three names added here as maintainers were based on the get_maintainer
+> script and on previous commits on this file.
+> Please tell me whether these are the right maintainers for this file or n=
+ot.
 
-(and linux-arm-kernel, as ARM is a major 32-bit user)
+Whoever knows the h/w ideally, not who is going to apply patches.
 
-Does anyone see a problem with disabling memory hotplug on 32-bit builds?
+> =
+
+> This patch was tested with:
+> make ARCH=3Darm DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/rng/b=
+rcm,bcm2835.yaml dt_binding_check
+
+You also need to make sure without DT_SCHEMA_FILES set everything is =
+
+fine. That tests the example against all schemas.
+
+> make ARCH=3Darm DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/rng/b=
+rcm,bcm2835.yaml dtbs_check
+> =
+
+> Thanks,
+> N=EDcolas
+> =
+
+>  .../devicetree/bindings/rng/brcm,bcm2835.txt  | 40 ------------
+>  .../devicetree/bindings/rng/brcm,bcm2835.yaml | 61 +++++++++++++++++++
+>  2 files changed, 61 insertions(+), 40 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/rng/brcm,bcm2835.txt
+>  create mode 100644 Documentation/devicetree/bindings/rng/brcm,bcm2835.ya=
+ml
+> =
+
+> diff --git a/Documentation/devicetree/bindings/rng/brcm,bcm2835.txt b/Doc=
+umentation/devicetree/bindings/rng/brcm,bcm2835.txt
+> deleted file mode 100644
+> index aaac7975f61c..000000000000
+> --- a/Documentation/devicetree/bindings/rng/brcm,bcm2835.txt
+> +++ /dev/null
+> @@ -1,40 +0,0 @@
+> -BCM2835/6368 Random number generator
+> -
+> -Required properties:
+> -
+> -- compatible : should be one of
+> -	"brcm,bcm2835-rng"
+> -	"brcm,bcm-nsp-rng"
+> -	"brcm,bcm5301x-rng" or
+> -	"brcm,bcm6368-rng"
+> -- reg : Specifies base physical address and size of the registers.
+> -
+> -Optional properties:
+> -
+> -- clocks : phandle to clock-controller plus clock-specifier pair
+> -- clock-names : "ipsec" as a clock name
+> -
+> -Optional properties:
+> -
+> -- interrupts: specify the interrupt for the RNG block
+> -
+> -Example:
+> -
+> -rng {
+> -	compatible =3D "brcm,bcm2835-rng";
+> -	reg =3D <0x7e104000 0x10>;
+> -	interrupts =3D <2 29>;
+> -};
+> -
+> -rng@18033000 {
+> -	compatible =3D "brcm,bcm-nsp-rng";
+> -	reg =3D <0x18033000 0x14>;
+> -};
+> -
+> -random: rng@10004180 {
+> -	compatible =3D "brcm,bcm6368-rng";
+> -	reg =3D <0x10004180 0x14>;
+> -
+> -	clocks =3D <&periph_clk 18>;
+> -	clock-names =3D "ipsec";
+> -};
+> diff --git a/Documentation/devicetree/bindings/rng/brcm,bcm2835.yaml b/Do=
+cumentation/devicetree/bindings/rng/brcm,bcm2835.yaml
+> new file mode 100644
+> index 000000000000..b1621031721e
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/rng/brcm,bcm2835.yaml
+> @@ -0,0 +1,61 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/rng/brcm,bcm2835.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: BCM2835/6368 Random number generator
+> +
+> +maintainers:
+> +  - Stefan Wahren <stefan.wahren@i2se.com>
+> +  - Florian Fainelli <f.fainelli@gmail.com>
+> +  - Herbert Xu <herbert@gondor.apana.org.au>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - brcm,bcm2835-rng
+> +      - brcm,bcm-nsp-rng
+> +      - brcm,bcm5301x-rng
+> +      - brcm,bcm6368-rng
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    description: phandle to clock-controller plus clock-specifier pair
+
+No need to redefine a common property.
+
+> +    maxItems: 1
+> +
+> +  clock-names:
+> +    const: ipsec
+> +
+> +  interrupts:
+> +    description: specify the interrupt for the RNG block
+
+Same here.
+
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +
+> +examples:
+> +  - |
+> +    rng {
+> +        compatible =3D "brcm,bcm2835-rng";
+> +        reg =3D <0x7e104000 0x10>;
+> +        interrupts =3D <2 29>;
+> +    };
+> +
+> +  - |
+> +    rng@18033000 {
+> +        compatible =3D "brcm,bcm-nsp-rng";
+> +        reg =3D <0x18033000 0x14>;
+> +    };
+> +
+> +  - |
+> +    random: rng@10004180 {
+
+Drop the label.
+
+> +        compatible =3D "brcm,bcm6368-rng";
+> +        reg =3D <0x10004180 0x14>;
+> +
+> +        clocks =3D <&periph_clk 18>;
+> +        clock-names =3D "ipsec";
+> +    };
+> -- =
+
+> 2.25.0
+> =
+
+> =
+
 
 _______________________________________________
 linux-arm-kernel mailing list
