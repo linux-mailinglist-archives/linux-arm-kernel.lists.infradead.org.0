@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D2D2163DCD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:37:25 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72CDF163DCA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 08:36:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g3KHX/ChhKmq6hRxzOa8FhOwwPiHOiMudlOXJ8IqBmc=; b=THiIZoDjyMPIlI
-	SGK8m0m3xnk8aA0yrstU5gc/wKY1DYxx00hoTYPsg65g7BjeT4M6Jl9KVgy9e4i0sZhL1D2ISk5ho
-	lKj9Rlb2HHyDnf5TmgIpPRIVhk1hQP9+BhZfnfPADldQlMuwTOiWIwJ06nbck9kaXXTegEeEmwf8W
-	66hMdlmQVtnG4bH3RoFTclu97X0yHtMd005E08JvMyZspIXpNJ35nTkdEIBwT5c+m8iQpm3vrOu8i
-	fqN4lIrFEwqvE+7MjAl7datkIAdkHmaJsas/dr9R0pscwDQCrghh6nugdOhxXZu7UMzq/55xdmbRB
-	F3YkxH14YuHPPKMgderQ==;
+	List-Owner; bh=SUWz3y2BkXEcUsn6xl/Uz/u+2w/ySfA1RJZ1L5bchlU=; b=irYUYJWiye1XnX
+	m0WpnTkib6Jo9cSv2gslkU3EQe1vHY/TfI9UfwUbos6vQq1mmfLE5unQ/vnUGu3yeXtU7lUd7FYmN
+	tyLpojB2e7zDaYRG6RR+qea9hlGlXRlAzGf2vHOtRr0nSFm1u1HUzAMu6/cA3qk1sRyTFfOBj85NI
+	hy0wplqW4W8fDBDxB3mYhNNc8vbEjhTEPeBcRdlBb8yo2M2Z2D04EqO1QcIhjG+ydMved/DYrYGMl
+	OYIfDUJavBkoqdnrdUu4hfKMJDesADk1Q4QMebA4xYX2rFQzunaP0dyCU42c1RtIxhCMCf23T1Pwx
+	BvkjlPPHSBGIQeKv8edw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4JvA-0002rf-1g; Wed, 19 Feb 2020 07:37:24 +0000
+	id 1j4JuR-00021H-R7; Wed, 19 Feb 2020 07:36:39 +0000
 Received: from [167.172.186.51] (helo=shell.v3.sk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Js0-0007Sy-Fs
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:34:10 +0000
+ id 1j4Js0-0007Sv-Oq
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 07:34:11 +0000
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 950EDE0074;
- Wed, 19 Feb 2020 07:34:22 +0000 (UTC)
+ by zimbra.v3.sk (Postfix) with ESMTP id E367FE0046;
+ Wed, 19 Feb 2020 07:34:21 +0000 (UTC)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id x4ftYDOkYapY; Wed, 19 Feb 2020 07:34:15 +0000 (UTC)
+ with ESMTP id tRQ7l11uIYi5; Wed, 19 Feb 2020 07:34:16 +0000 (UTC)
 Received: from localhost (localhost.localdomain [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 92531DFCA2;
- Wed, 19 Feb 2020 07:34:15 +0000 (UTC)
+ by zimbra.v3.sk (Postfix) with ESMTP id 336AFE0074;
+ Wed, 19 Feb 2020 07:34:16 +0000 (UTC)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id BvZCu-CvgOHj; Wed, 19 Feb 2020 07:34:14 +0000 (UTC)
+ with ESMTP id ciOnyxmKWg_h; Wed, 19 Feb 2020 07:34:15 +0000 (UTC)
 Received: from furthur.lan (unknown [109.183.109.54])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 89EB4E0070;
+ by zimbra.v3.sk (Postfix) with ESMTPSA id E433CE0046;
  Wed, 19 Feb 2020 07:34:14 +0000 (UTC)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH 05/10] clk: mmp2: Stop pretending PLL outputs are constant
-Date: Wed, 19 Feb 2020 08:33:48 +0100
-Message-Id: <20200219073353.184336-6-lkundrak@v3.sk>
+Subject: [PATCH 06/10] dt-bindings: clock: Add MMP3 compatible string
+Date: Wed, 19 Feb 2020 08:33:49 +0100
+Message-Id: <20200219073353.184336-7-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200219073353.184336-1-lkundrak@v3.sk>
 References: <20200219073353.184336-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_233408_703599_5B505D54 
-X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-CacheID: sfid-20200218_233409_017604_105E06EA 
+X-CRM114-Status: UNSURE (   8.29  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -80,71 +80,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The hardcoded values for PLL1 and PLL2 are wrong. PLL1 is slightly off -- it
-defaults to 797.33 MHz, not 800 MHz. PLL2 is disabled by default, but also
-configurable.
-
-Tested on a MMP2-based OLPC XO-1.75 laptop, with PLL1=797.33 and various
-values of PLL2 set via set-pll2-520mhz, set-pll2-910mhz and
-set-pll2-988mhz Open Firmware words.
+This binding describes the PMUs that are found on MMP3 as well. Add the
+compatible strings and adjust the description.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- drivers/clk/mmp/clk-of-mmp2.c | 16 ++++++++++++++--
- 1 file changed, 14 insertions(+), 2 deletions(-)
+ .../devicetree/bindings/clock/marvell,mmp2-clock.yaml  | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/clk/mmp/clk-of-mmp2.c b/drivers/clk/mmp/clk-of-mmp2.c
-index ee086d9714160..251d8d0e78abb 100644
---- a/drivers/clk/mmp/clk-of-mmp2.c
-+++ b/drivers/clk/mmp/clk-of-mmp2.c
-@@ -3,6 +3,7 @@
-  *
-  * Copyright (C) 2012 Marvell
-  * Chao Xie <xiechao.mail@gmail.com>
-+ * Copyright (C) 2020 Lubomir Rintel <lkundrak@v3.sk>
-  *
-  * This file is licensed under the terms of the GNU General Public
-  * License version 2. This program is licensed "as is" without any
-@@ -55,7 +56,11 @@
- #define APMU_CCIC1	0xf4
- #define APMU_USBHSIC0	0xf8
- #define APMU_USBHSIC1	0xfc
-+
-+#define MPMU_FCCR	0x8
-+#define MPMU_POSR	0x10
- #define MPMU_UART_PLL	0x14
-+#define MPMU_PLL2_CR	0x34
+diff --git a/Documentation/devicetree/bindings/clock/marvell,mmp2-clock.yaml b/Documentation/devicetree/bindings/clock/marvell,mmp2-clock.yaml
+index c5fc2ad0236dd..e2b6ac96bbcb0 100644
+--- a/Documentation/devicetree/bindings/clock/marvell,mmp2-clock.yaml
++++ b/Documentation/devicetree/bindings/clock/marvell,mmp2-clock.yaml
+@@ -4,14 +4,14 @@
+ $id: http://devicetree.org/schemas/clock/marvell,mmp2-clock.yaml#
+ $schema: http://devicetree.org/meta-schemas/core.yaml#
  
- struct mmp2_clk_unit {
- 	struct mmp_clk_unit unit;
-@@ -67,11 +72,14 @@ struct mmp2_clk_unit {
- static struct mmp_param_fixed_rate_clk fixed_rate_clks[] = {
- 	{MMP2_CLK_CLK32, "clk32", NULL, 0, 32768},
- 	{MMP2_CLK_VCTCXO, "vctcxo", NULL, 0, 26000000},
--	{MMP2_CLK_PLL1, "pll1", NULL, 0, 800000000},
--	{MMP2_CLK_PLL2, "pll2", NULL, 0, 960000000},
- 	{MMP2_CLK_USB_PLL, "usb_pll", NULL, 0, 480000000},
- };
+-title: Marvell MMP2 Clock Controller
++title: Marvell MMP2 and MMP3 Clock Controller
  
-+static struct mmp_param_pll_clk pll_clks[] = {
-+	{MMP2_CLK_PLL1,   "pll1",   797330000, MPMU_FCCR,          0x4000, MPMU_POSR,     0},
-+	{MMP2_CLK_PLL2,   "pll2",           0, MPMU_PLL2_CR,       0x0300, MPMU_PLL2_CR, 10},
-+};
-+
- static struct mmp_param_fixed_factor_clk fixed_factor_clks[] = {
- 	{MMP2_CLK_PLL1_2, "pll1_2", "pll1", 1, 2, 0},
- 	{MMP2_CLK_PLL1_4, "pll1_4", "pll1_2", 1, 2, 0},
-@@ -113,6 +121,10 @@ static void mmp2_pll_init(struct mmp2_clk_unit *pxa_unit)
- 	mmp_register_fixed_rate_clks(unit, fixed_rate_clks,
- 					ARRAY_SIZE(fixed_rate_clks));
+ maintainers:
+   - Lubomir Rintel <lkundrak@v3.sk>
  
-+	mmp_register_pll_clks(unit, pll_clks,
-+				pxa_unit->mpmu_base,
-+				ARRAY_SIZE(pll_clks));
-+
- 	mmp_register_fixed_factor_clks(unit, fixed_factor_clks,
- 					ARRAY_SIZE(fixed_factor_clks));
+ description: |
+-  The MMP2 clock subsystem generates and supplies clock to various
+-  controllers within the MMP2 SoC.
++  The clock subsystem on MMP2 or MMP3 generates and supplies clock to various
++  controllers within the SoC.
  
+   Each clock is assigned an identifier and client nodes use this identifier
+   to specify the clock which they consume.
+@@ -20,7 +20,9 @@ description: |
+ 
+ properties:
+   compatible:
+-    const: marvell,mmp2-clock # controller compatible with MMP2 SoC
++    enum:
++      - marvell,mmp2-clock # controller compatible with MMP2 SoC
++      - marvell,mmp3-clock # controller compatible with MMP3 SoC
+ 
+   reg:
+     items:
 -- 
 2.24.1
 
