@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D70116516D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 22:15:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4E97165176
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 22:17:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=35n2cSeJZLFoJx06gFkQAEMPEeruw7z2TWFWDztJsVI=; b=rJ2jb5keEe9YNM
-	0QayBEsNMQK+VBAjXtHpgSEYsgPQw2Cq/bziIc9n86N67i4Ar+4oj/r3QE2yKVFaMkP0nYXwNC/Zx
-	UwKAb/uIdU9HNRrF7+ctlM31FKJLuowoKdNeaxdZOPmwYfs608JETwVTeQLUQpX7Ur2EmDcSiWnkf
-	HbIfFORTNoIMOZXsQn7iCp1bCdqob1ZciEZNmf2h5WK5F1QNP2noXdqorNdQjEMEaJh95fF98KT3y
-	h/XpGl5I3cZpN5+BwiPWb/qoydrTWLDDxNGGibDKGucdnUT6m3ZQ6qcH/lRznGpeFDIrT1AZpXlzu
-	8bs2G9sBRCPne++oYmxg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PyVUbh1efy50h8Dtp1NiHoUjNXzGDy94JlembgSOUQ0=; b=b7SqVmlDh9Z36c
+	rNJW97sHPIyDXac/Cy1/vK3kpnx5OAeU1kP0xA0dcuKrPvV6YcTAYIGu0IChkQxL7e6UxXulC2irN
+	Puz/rmSPqabB+lSdeapFCXjTjhLoELUrgkl0SJYPZxyLe/qbfY6iIHlJIJUrpvTGK3aSjztX/4TfC
+	/vz6/E8gOR/KXnWNSoISDI4fHkijikkY6g2RXGvjKH9VsyOfehJ6rv0LnCudRAh+mm7/PVl2ohlee
+	Qc1xrSanJPoZmOfu9ue2Mb9elILmdCxh7797AxJwfAZYCc7QCEw9PRPD5frC02nSUnSdY0m6RVmOD
+	nnM7iQtP+yDJwskJMU2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Wgp-0005qa-Fe; Wed, 19 Feb 2020 21:15:27 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Wgg-0005q0-SR
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 21:15:20 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 09A4980F3;
- Wed, 19 Feb 2020 21:16:00 +0000 (UTC)
-Date: Wed, 19 Feb 2020 13:15:13 -0800
-From: Tony Lindgren <tony@atomide.com>
-To: Pavel Machek <pavel@ucw.cz>
-Subject: Re: [PATCH] backlight: add led-backlight driver
-Message-ID: <20200219211513.GE37466@atomide.com>
-References: <20200219191412.GA15905@amd> <20200219194540.GD37466@atomide.com>
- <20200219205322.GA1227@duo.ucw.cz>
+	id 1j4Wis-0006K3-0k; Wed, 19 Feb 2020 21:17:34 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4Wih-0006JO-IF; Wed, 19 Feb 2020 21:17:25 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: koike) with ESMTPSA id C31D428DE65
+Subject: Re: [RFC PATCH V5 0/3] media: support Mediatek sensor interface driver
+To: Louis Kuo <louis.kuo@mediatek.com>, hans.verkuil@cisco.com,
+ laurent.pinchart+renesas@ideasonboard.com, tfiga@chromium.org,
+ keiichiw@chromium.org, matthias.bgg@gmail.com, mchehab@kernel.org
+References: <20200129081650.8027-1-louis.kuo@mediatek.com>
+From: Helen Koike <helen.koike@collabora.com>
+Message-ID: <f825b943-610e-ba19-cbfd-eea2dae2245f@collabora.com>
+Date: Wed, 19 Feb 2020 18:17:10 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200219205322.GA1227@duo.ucw.cz>
+In-Reply-To: <20200129081650.8027-1-louis.kuo@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_131518_961786_66E566B8 
-X-CRM114-Status: GOOD (  22.24  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200219_131723_734827_D4CF102C 
+X-CRM114-Status: GOOD (  17.68  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [46.235.227.227 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,70 +62,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: daniel.thompson@linaro.org, mpartap@gmx.net, jingoohan1@gmail.com,
- merlijn@wizzup.org, martin_rysavy@centrum.cz,
- kernel list <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
- sre@kernel.org, nekit1000@gmail.com, tomi.valkeinen@ti.com, jjhiblot@ti.com,
- linux-omap@vger.kernel.org, Lee Jones <lee.jones@linaro.org>, agx@sigxcpu.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com,
+ "kernel@collabora.com" <kernel@collabora.com>, Rynn.Wu@mediatek.com,
+ srv_heupstream@mediatek.com, Jerry-ch.Chen@mediatek.com,
+ jungo.lin@mediatek.com, sj.huang@mediatek.com, yuzhao@chromium.org,
+ linux-mediatek@lists.infradead.org, zwisler@chromium.org,
+ christie.yu@mediatek.com, frederic.chen@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Pavel Machek <pavel@ucw.cz> [200219 20:54]:
-> Hi!
+Hi Louis,
+
+On 1/29/20 6:16 AM, Louis Kuo wrote:
+> Hello,
 > 
-> > > This patch adds a led-backlight driver (led_bl), which is similar to
-> > > pwm_bl except the driver uses a LED class driver to adjust the
-> > > brightness in the HW. Multiple LEDs can be used for a single backlight.
-> > > 
-> > > Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ti.com>
-> > > Signed-off-by: Jean-Jacques Hiblot <jjhiblot@ti.com>
-> > > Acked-by: Pavel Machek <pavel@ucw.cz>
-> > > Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
-> > > Acked-by: Lee Jones <lee.jones@linaro.org>
-> > > Acked-by: Tony Lindgren <tony@atomide.com>
-> > > Tested-by: Tony Lindgren <tony@atomide.com>
-> > > Signed-off-by: Pavel Machek <pavel@ucw.cz>
-> > > ---
-> > >  drivers/video/backlight/Kconfig  |   7 ++
-> > >  drivers/video/backlight/Makefile |   1 +
-> > >  drivers/video/backlight/led_bl.c | 260 +++++++++++++++++++++++++++++++++++++++
-> > >  3 files changed, 268 insertions(+)
-> > >  create mode 100644 drivers/video/backlight/led_bl.c
+> This is the RFC patch adding Sensor Inferface(seninf) driver on Mediatek mt8183 SoC, which will be used
+> in camera features on CrOS application.
+> It belongs to the first Mediatek's camera driver series based on V4L2 and media controller framework.
+> I posted the main part of the seninf driver as RFC to discuss first and would like some review comments
+> on the overall structure of the driver.
 > 
-> > > Here's the version of the driver I have. AFAICT
-> > > default-brightness-level handling is ok, so does not need to be
-> > > changed.
-> > > 
-> > > Lee, it would be easiest for me if you could apply it to your tree and
-> > > push, but given enough time I can push it to Linus, too.
-> > 
-> > Oh you're using quoted-printable for patches.. Got it applied now,
-> > and it still works. Below is also the related dts change that
-> > I tested with.
-> > 
-> > Feel free to pick the dts change too, naturally that should
-> > not be applied before the driver.
-> > 
-> > If you guys instead want me to pick these both into my fixes
-> > branch, just let me know and I'll do the explaining why these
-> > are needed as fixes. Basically we no longer have a way to enable
-> > the LCD backlight for droid4 manually starting with v5.6-rc1
-> > unlike earlier.
+> The driver is implemented with V4L2 framework.
+> 1. Register as a V4L2 sub-device.
+> 2. Only one entity with sink pads linked to camera sensors for choosing desired camera sensor by setup link
+>    and with source pads linked to cam-io for routing different types of decoded packet datas to PASS1 driver
+>    to generate sensor image frame and meta-data.
+
+If I understood correctly, the subdevice represents a bridge, with 4 sink pads and 8 source pads (12 total) right?
+And you can only route a sink to a source at a time and you can't use multiple sensors simultaneously, correct?
+
 > 
-> If you are willing to do that, it looks like good solution from my
-> point of view.
+> The overall file structure of the seninf driver is as following:
+> 
+> * mtk_seninf.c: Implement software and HW control flow of seninf driver.
+> * mtk_seninf_def.h: Define data structure and enumeration.
+> * mtk_seninf_reg.h: Define HW register R/W macros and HW register names.
+> 
+> [ V5: use recommended coding style, revise DT binding documentation]
+> 
+>   media: platform: mtk-isp: Add Mediatek sensor interface driver
 
-OK. I'll apply them but won't push out yet in case Lee is already
-applying the driver change..
+It looks like patch 1/3 didn't reach linux-media mailing list
+    https://patchwork.linuxtv.org/project/linux-media/list/?series=1706
+I guess it's because of its size, you might need to break it into smaller patches.
+I see that mtk_seninf_reg.h is really big and not all of it is used, maybe you can split it up.
 
-Pavel, care to ack the dts patch?
 
-Regards,
+>   dt-bindings: mt8183: Add sensor interface dt-bindings
+>   dts: arm64: mt8183: Add sensor interface nodes
+> 
+>  .../bindings/media/mediatek-seninf.txt        |   66 +
+>  arch/arm64/boot/dts/mediatek/mt8183.dtsi      |   12 +
+>  drivers/media/platform/Makefile               |    1 +
+>  drivers/media/platform/mtk-isp/Kconfig        |   17 +
+>  .../media/platform/mtk-isp/isp_50/Makefile    |    3 +
+>  .../platform/mtk-isp/isp_50/seninf/Makefile   |    6 +
+>  .../mtk-isp/isp_50/seninf/mtk_seninf.c        | 1112 +++
+>  .../mtk-isp/isp_50/seninf/mtk_seninf_def.h    |   72 +
+>  .../mtk-isp/isp_50/seninf/mtk_seninf_reg.h    | 7747 +++++++++++++++++
+>  9 files changed, 9036 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/mediatek-seninf.txt
+>  create mode 100644 drivers/media/platform/mtk-isp/Kconfig
+>  create mode 100644 drivers/media/platform/mtk-isp/isp_50/Makefile
+>  create mode 100644 drivers/media/platform/mtk-isp/isp_50/seninf/Makefile
+>  create mode 100644 drivers/media/platform/mtk-isp/isp_50/seninf/mtk_seninf.c
+>  create mode 100644 drivers/media/platform/mtk-isp/isp_50/seninf/mtk_seninf_def.h
+>  create mode 100644 drivers/media/platform/mtk-isp/isp_50/seninf/mtk_seninf_reg.h
+> 
 
-Tony
+Thanks
+Helen
 
 _______________________________________________
 linux-arm-kernel mailing list
