@@ -2,86 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8EC9164224
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:30:03 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71E8816423B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 11:33:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xQscl8HS6EhfUrBgeqvVoIdfe0/Vw+pJYE8KxWnCRqo=; b=IFyxMULxIAkzfM
-	j0tfm7GO7nINTYK6X0mOu7Y3ImZ4xjsFt4pLymerYhLkbPldu8Etjh3kLl8lQhPJeXI+F0bhD+eo3
-	QeWQn4wRh9VYEZx4iNfKnzY9t8QVvWFJjM+LMk0zwbRu16pOlyAjiDnOgOC+tgzuKI4vKvkEttk/x
-	KXNe6GjlcwSqS3M9cQQH2plVLM0Myj+9tIgSzDnogynUn+PfnbSoblMLag8YfKpzouSN82ui1dgAB
-	sWRs/+glc+d4K9Wc81syaZMzEPQkCjido7yB1vESiYNj7/wu2ne7UmQQxgjt8urQUP8ju5CYGx4ah
-	3U0FHbmbcrfTm+DkPdVA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mxO0I/1jrrlvRoqfo/y3r9gnZlZ6TISrXn/4ohCG0VE=; b=Jli9VHXFRa6OjSI6dqHD7suAg
+	YKOJlGUl2bahgriD9mc9Dg2FxeobHVfiPl7jHVxJeJq9/T+NmcxBG8/+u9i9XEYXz8q27+CR97Ecf
+	5mDai9na7fcRlbCatvibxs4i0if6kyzDm8wMJ6v2xIU/8NPcHSKOX6tHMRU061HFpFuYCghxZ/HcH
+	/q3oEsyx4tKaEGrdEiiAP8NPKPeiM75UMuFTnCH9j4joP7WVnwcwp12sCZsZaXEkBO+o9j4crO0Db
+	5exNxKb/PiSz6qiPQicjdsWL9i5Ps5Xm6UXf3azrYMyCNc90SUKr9DjD4Kr1B+/w9xAWhTp1GJSqo
+	6zfnQ0+0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4Mc9-0000M7-QW; Wed, 19 Feb 2020 10:29:57 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1j4Mfu-0002X8-Sc; Wed, 19 Feb 2020 10:33:50 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Mbp-0000D9-0q
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:29:38 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id a2so15089515vso.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 02:29:36 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=N/FWsOslLeWJ8wc9PPiLEWzxti0Lz4tyLMKB84GK8Qg=;
- b=zzcA9hwk8oBqEzK/Sk5smaykWWWhkqLgdN2ggNaL0cspzNwa1q+GoinNOOoh2h9V51
- Lv7ZUcQx+nj4ydcgo+MumePOIXyd+adldZYvoZGHUzMACLER4enSZC94mRb28MJr6c1A
- J0zDWaHD7YQ525Kl6Y1gatEtQ406L9F6WgmgJkakqPk8Q+C9ZZgLDbcn0PVAxkoeaFBp
- u1Zh99N7KbfqvYQDnfJFNmIip0HZ15FT2UcLc3U/w813BeSgu1q8swKVqPbRLuHM9XJ3
- Uxz065dq2yY9KSl+injyEt5q+2tCcO4d067fxfYm7S/GKS+XZflxxlWeTWxnoNcErJqI
- wpGA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=N/FWsOslLeWJ8wc9PPiLEWzxti0Lz4tyLMKB84GK8Qg=;
- b=fFHrBH8Z0ZH54F0Te3rQk/yJmI2p00gVhDYuVOpsA1cj/ej2n+f76s3/qQMkveb+7q
- H8ukTyozrh363Vopbp10TnhchX0Hbm/koAs7HvgQDVLsuiQ3fa0l3FZ/36RWHIjWJM3N
- PYSzVQ7EXl1tmX+pclY5L6SN/LTUZF02bA123n7/FAMfRmYRoIvY7LFBfNmSIFNbeto/
- fXLWQuV0C0GlzW+bJ0FMq8mRQqJRRX49Wvlr8FFFr0CytGgJASH952XMrMUvqtzbMAfm
- lOUC6fFvyJCuud9uZMyRCNzBQWlMAykmzD26bQNr0IUex+UtL2TFjMX21RLV340wuLpI
- tsYQ==
-X-Gm-Message-State: APjAAAV0if9VHvjvMTx7UpRKTKUJh+TtEBXoUIo6gYAIEpkqOnW98mpX
- EL8c2htZo1aJ/CY3KnoHp5qKGR497mruKL/sXukJcfaE
-X-Google-Smtp-Source: APXvYqwdd1WVvropN/Ah9GWZ4j1iP+qWglk6pATFnqpFpANspIETm+lPq1ohJHYuPnh9a1IcHgjcTAcwzRPQ36OkB7Q=
-X-Received: by 2002:a67:5e45:: with SMTP id s66mr13897757vsb.200.1582108175469; 
- Wed, 19 Feb 2020 02:29:35 -0800 (PST)
+ id 1j4Mfk-0002Vg-Fy
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 10:33:42 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1582108420; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=rw6UHf0KTPLkHoH94qTywzRb5mw/2w3OWlPPBjvpPNw=;
+ b=LycX8pjNY9DYfIl86xCiomj8yvGMeZ1bdmKgjHH3JTjnoGw6AzzQxCKsWMk5prAo37EaarSd
+ UzjVTRGXJV+q9MhH1I85/ncreYQ0c0iqSB21NRo0u/hQTl4MnN+2GGHLyv7W+OVNaIfryfDc
+ +lsbSfwweu9R2bA7Xq++CkHRECo=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5e4d0eff.7f54d13c78b8-smtp-out-n01;
+ Wed, 19 Feb 2020 10:33:35 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 53BE2C447A3; Wed, 19 Feb 2020 10:33:35 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested) (Authenticated sender: cang)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 75BA6C43383;
+ Wed, 19 Feb 2020 10:33:34 +0000 (UTC)
 MIME-Version: 1.0
-References: <20200128090636.13689-1-ludovic.barre@st.com>
- <20200128090636.13689-10-ludovic.barre@st.com>
- <853f4b14-a188-f329-34e5-8e88fcafa775@st.com>
-In-Reply-To: <853f4b14-a188-f329-34e5-8e88fcafa775@st.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 19 Feb 2020 11:28:59 +0100
-Message-ID: <CAPDyKFrKunZ1nDiSR-6ZgZNxkxs=_R-i3N9QWNovnZ4iY=DP=g@mail.gmail.com>
-Subject: Re: [PATCH V2 9/9] mmc: mmci: add sdmmc variant revision 2.0
-To: Ludovic BARRE <ludovic.barre@st.com>
+Date: Wed, 19 Feb 2020 18:33:34 +0800
+From: Can Guo <cang@codeaurora.org>
+To: Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH v1 1/2] scsi: ufs: add required delay after gating
+ reference clock
+In-Reply-To: <1582103495.26304.42.camel@mtksdccf07>
+References: <20200217093559.16830-1-stanley.chu@mediatek.com>
+ <20200217093559.16830-2-stanley.chu@mediatek.com>
+ <c6874825dd60ea04ed401fbd1b5cb568@codeaurora.org>
+ <1581945168.26304.4.camel@mtksdccf07>
+ <e518c4d1d94ec15e9c4c31c34a9e42d1@codeaurora.org>
+ <1581946449.26304.15.camel@mtksdccf07>
+ <56c1fc80919491d058d904fcc7301835@codeaurora.org>
+ <a8cd5beee0a1e12a40da752c6cd9b5de@codeaurora.org>
+ <1582103495.26304.42.camel@mtksdccf07>
+Message-ID: <bbb0b0637d9667d4691a9a28f9988dea@codeaurora.org>
+X-Sender: cang@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_022937_067268_43B4B532 
-X-CRM114-Status: GOOD (  15.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200219_023340_829691_4EDC9A0E 
+X-CRM114-Status: GOOD (  19.22  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,68 +94,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: chun-hung.wu@mediatek.com, linux-scsi@vger.kernel.org,
+ martin.petersen@oracle.com, andy.teng@mediatek.com, jejb@linux.ibm.com,
+ peter.wang@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, avri.altman@wdc.com,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ alim.akhtar@samsung.com, matthias.bgg@gmail.com, beanhuo@micron.com,
+ bvanassche@acm.org, hongwus@codeaurora.org, asutoshd@codeaurora.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAxMSBGZWIgMjAyMCBhdCAxNTo0NCwgTHVkb3ZpYyBCQVJSRSA8bHVkb3ZpYy5iYXJy
-ZUBzdC5jb20+IHdyb3RlOgo+Cj4gaGkgVWxmCj4KPiBMZSAxLzI4LzIwIMOgIDEwOjA2IEFNLCBM
-dWRvdmljIEJhcnJlIGEgw6ljcml0IDoKPiA+IFRoaXMgcGF0Y2ggYWRkcyBhIHNkbW1jIHZhcmlh
-bnQgcmV2aXNpb24gMi4wLgo+ID4gVGhpcyByZXZpc2lvbiBpcyBiYWNrd2FyZCBjb21wYXRpYmxl
-IHdpdGggMS4xLCBhbmQgYWRkcyBkbWEKPiA+IGxpbmsgbGlzdCBzdXBwb3J0Lgo+ID4KPiA+IFNp
-Z25lZC1vZmYtYnk6IEx1ZG92aWMgQmFycmUgPGx1ZG92aWMuYmFycmVAc3QuY29tPgo+ID4gLS0t
-Cj4gPiAgIGRyaXZlcnMvbW1jL2hvc3QvbW1jaS5jIHwgMzAgKysrKysrKysrKysrKysrKysrKysr
-KysrKysrKysrCj4gPiAgIDEgZmlsZSBjaGFuZ2VkLCAzMCBpbnNlcnRpb25zKCspCj4gPgo+ID4g
-ZGlmZiAtLWdpdCBhL2RyaXZlcnMvbW1jL2hvc3QvbW1jaS5jIGIvZHJpdmVycy9tbWMvaG9zdC9t
-bWNpLmMKPiA+IGluZGV4IDI0ZTYzMDE4M2VkNC4uYTc3NGMzMjljMjEyIDEwMDY0NAo+ID4gLS0t
-IGEvZHJpdmVycy9tbWMvaG9zdC9tbWNpLmMKPiA+ICsrKyBiL2RyaXZlcnMvbW1jL2hvc3QvbW1j
-aS5jCj4gPiBAQCAtMjc1LDYgKzI3NSwzMSBAQCBzdGF0aWMgc3RydWN0IHZhcmlhbnRfZGF0YSB2
-YXJpYW50X3N0bTMyX3NkbW1jID0gewo+ID4gICAgICAgLmluaXQgICAgICAgICAgICAgICAgICAg
-PSBzZG1tY192YXJpYW50X2luaXQsCj4gPiAgIH07Cj4gPgo+ID4gK3N0YXRpYyBzdHJ1Y3QgdmFy
-aWFudF9kYXRhIHZhcmlhbnRfc3RtMzJfc2RtbWN2MiA9IHsKPiA+ICsgICAgIC5maWZvc2l6ZSAg
-ICAgICAgICAgICAgID0gMTYgKiA0LAo+ID4gKyAgICAgLmZpZm9oYWxmc2l6ZSAgICAgICAgICAg
-PSA4ICogNCwKPiA+ICsgICAgIC5mX21heCAgICAgICAgICAgICAgICAgID0gMjA4MDAwMDAwLAo+
-ID4gKyAgICAgLnN0bTMyX2Nsa2RpdiAgICAgICAgICAgPSB0cnVlLAo+ID4gKyAgICAgLmNtZHJl
-Z19jcHNtX2VuYWJsZSAgICAgPSBNQ0lfQ1BTTV9TVE0zMl9FTkFCTEUsCj4gPiArICAgICAuY21k
-cmVnX2xyc3BfY3JjICAgICAgICA9IE1DSV9DUFNNX1NUTTMyX0xSU1BfQ1JDLAo+ID4gKyAgICAg
-LmNtZHJlZ19zcnNwX2NyYyAgICAgICAgPSBNQ0lfQ1BTTV9TVE0zMl9TUlNQX0NSQywKPiA+ICsg
-ICAgIC5jbWRyZWdfc3JzcCAgICAgICAgICAgID0gTUNJX0NQU01fU1RNMzJfU1JTUCwKPiA+ICsg
-ICAgIC5jbWRyZWdfc3RvcCAgICAgICAgICAgID0gTUNJX0NQU01fU1RNMzJfQ01EU1RPUCwKPiA+
-ICsgICAgIC5kYXRhX2NtZF9lbmFibGUgICAgICAgID0gTUNJX0NQU01fU1RNMzJfQ01EVFJBTlMs
-Cj4gPiArICAgICAuaXJxX3Bpb19tYXNrICAgICAgICAgICA9IE1DSV9JUlFfUElPX1NUTTMyX01B
-U0ssCj4gPiArICAgICAuZGF0YWN0cmxfZmlyc3QgICAgICAgICA9IHRydWUsCj4gPiArICAgICAu
-ZGF0YWNudF91c2VsZXNzICAgICAgICA9IHRydWUsCj4gPiArICAgICAuZGF0YWxlbmd0aF9iaXRz
-ICAgICAgICA9IDI1LAo+ID4gKyAgICAgLmRhdGFjdHJsX2Jsb2Nrc3ogICAgICAgPSAxNCwKPiA+
-ICsgICAgIC5kYXRhY3RybF9hbnlfYmxvY2tzeiAgID0gdHJ1ZSwKPiA+ICsgICAgIC5zdG0zMl9p
-ZG1hYnNpemVfbWFzayAgID0gR0VOTUFTSygxNiwgNSksCj4gPiArICAgICAuZG1hX2xsaSAgICAg
-ICAgICAgICAgICA9IHRydWUsCj4gPiArICAgICAuYnVzeV90aW1lb3V0ICAgICAgICAgICA9IHRy
-dWUsCj4KPiBJIGZvcmdldCAiYnVzeV9kZXRlY3QgICAgICAgICAgID0gdHJ1ZSwiIHByb3BlcnR5
-Cj4gSSBhZGQgdGhpcyBpbiBuZXh0IHBhdGNoIHNldAoKTm8gbmVlZCBmb3IgYSByZS1zZW5kLCBJ
-IGFtZW5kZWQgdGhpcyB3aGVuIEkgYXBwbGllZCBpdC4KCj4KPiA+ICsgICAgIC5idXN5X2RldGVj
-dF9mbGFnICAgICAgID0gTUNJX1NUTTMyX0JVU1lEMCwKPiA+ICsgICAgIC5idXN5X2RldGVjdF9t
-YXNrICAgICAgID0gTUNJX1NUTTMyX0JVU1lEMEVORE1BU0ssCj4gPiArICAgICAuaW5pdCAgICAg
-ICAgICAgICAgICAgICA9IHNkbW1jX3ZhcmlhbnRfaW5pdCwKPiA+ICt9Owo+ID4gKwo+ID4gICBz
-dGF0aWMgc3RydWN0IHZhcmlhbnRfZGF0YSB2YXJpYW50X3Fjb20gPSB7Cj4gPiAgICAgICAuZmlm
-b3NpemUgICAgICAgICAgICAgICA9IDE2ICogNCwKPiA+ICAgICAgIC5maWZvaGFsZnNpemUgICAg
-ICAgICAgID0gOCAqIDQsCj4gPiBAQCAtMjM0Myw2ICsyMzY4LDExIEBAIHN0YXRpYyBjb25zdCBz
-dHJ1Y3QgYW1iYV9pZCBtbWNpX2lkc1tdID0gewo+ID4gICAgICAgICAgICAgICAubWFzayAgID0g
-MHhmMGZmZmZmZiwKPiA+ICAgICAgICAgICAgICAgLmRhdGEgICA9ICZ2YXJpYW50X3N0bTMyX3Nk
-bW1jLAo+ID4gICAgICAgfSwKPiA+ICsgICAgIHsKPiA+ICsgICAgICAgICAgICAgLmlkICAgICA9
-IDB4MDAyNTMxODAsCj4gPiArICAgICAgICAgICAgIC5tYXNrICAgPSAweGYwZmZmZmZmLAo+ID4g
-KyAgICAgICAgICAgICAuZGF0YSAgID0gJnZhcmlhbnRfc3RtMzJfc2RtbWN2MiwKPiA+ICsgICAg
-IH0sCj4gPiAgICAgICAvKiBRdWFsY29tbSB2YXJpYW50cyAqLwo+ID4gICAgICAgewo+ID4gICAg
-ICAgICAgICAgICAuaWQgICAgID0gMHgwMDA1MTE4MCwKPiA+CgpLaW5kIHJlZ2FyZHMKVWZmZQoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+Hi Stanley,
+
+On 2020-02-19 17:11, Stanley Chu wrote:
+> Hi Can,
+> 
+> On Wed, 2020-02-19 at 10:35 +0800, Can Guo wrote:
+> 
+>> Since we all need this delay here, how about put the delay in the
+>> entrence of ufshcd_setup_clocks(), before vops_setup_clocks()?
+>> If so, we can remove all the delays we added in our vops since the
+>> delay anyways delays everything inside ufshcd_setup_clocks().
+>> 
+> 
+> Always putting the delay in the entrance of ufshcd_setup_clocks() may
+> add unwanted delay for vendors, just like your current implementation,
+> or some other vendors who do not want to disable the reference clock.
+> 
+> I think current patch is more reasonable because the delay is applied 
+> to
+> clock only named as "ref_clk" specifically.
+> 
+> If you needs to keep "ref_clk" in DT, would you consider to remove the
+> delay in your ufs_qcom_dev_ref_clk_ctrl() and let the delay happens via
+> common ufshcd_setup_clocks() only? However you may still need delay if
+> call path comes from ufs_qcom_pwr_change_notify().
+> 
+> What do you think?
+> 
+
+I agree current change is more reasonable from what it looks, but the 
+fact
+is that I canont remove the delay in ufs_qcom_dev_ref_clk_ctrl() even 
+with
+this change. On our platforms, ref_clk in DT serves multipule purposes,
+the ref_clk provided to UFS device is actually controlled in
+ufs_qcom_dev_ref_clk_ctrl(), which comes before where this change kicks 
+start,
+so if I remove the delay in ufs_qcom_dev_ref_clk_ctrl(), this change 
+cannot
+provide us the correct delay before gate the ref_clk provided to UFS 
+device.
+
+> Always putting the delay in the entrance of ufshcd_setup_clocks() may
+> add unwanted delay for vendors, just like your current implementation,
+> or some other vendors who do not want to disable the reference clock.
+
+I meant if we put the delay in the entrance, I will be able to remove
+the delay in ufs_qcom_dev_ref_clk_ctrl(). Meanwhile, we can add proper
+checks before the delay to make sure it is initiated only if ref_clk 
+needs
+to be disabled, i.e:
+
+if(!on && !skip_ref_clk && hba->dev_info.clk_gating_wait_us)
+     usleep_range();
+
+Does this look better to you?
+
+Anyways, we will see regressions with this change on our platforms, can 
+we
+have more discussions before get it merged? It should be OK if you go 
+with
+patch #2 alone first, right? Thanks.
+
+Best regards,
+Can Guo.
+
+>> Meanwhile, if you want to modify the delay
+>> (hba->dev_info.clk_gating_wait_us) for some reasons, say for specific
+>> UFS devices, you still can do it in vops_apply_dev_quirks().
+>> 
+>> What do you say?
+>> 
+>> Thanks,
+>> Can Guo.
+> 
+> Thanks,
+> Stanley Chu
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
