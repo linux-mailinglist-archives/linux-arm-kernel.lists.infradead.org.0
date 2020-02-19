@@ -2,81 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D1191643F4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 13:08:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BB761643FE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 13:14:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=C/DppMneaukXJHqE13U+P83A4UcRWt6isc8qiV8smtE=; b=OSp6iyEETckqiE/7zimUXFbCw
-	DThLybKI60iMwkvbHgHAuyRvrkG4D5j+BBRI16wTcWkDK/5gx8CICar1LBlphCnQlWKam/LhTLs+U
-	z2p70ZgxLMCPDdkkboylX1VUDeORt1dB79wV2sDxE1ARH1tXWa+o9MCZbaL8M50cw5OWxkkzm1aNJ
-	Z73cHtVrAy7Rqfl0ELJYry1VPMOICTNP86XIjwY4Hxsjl6ljAZeDaAOuYHQKLWq9kd+FuP3Jg5p3L
-	7PBZJ8QoVZk9oHuBzxpLBnnPf7OnQe7CIvaBf5Y5p3B6MYcqCOkkWfNznSL0GJa7aPM77ZLqPt6CG
-	+u1W1F4ig==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pDEqf6KYnLu0lEUvagZaeTQq0SqC2OgIwzpNHKDJ/QU=; b=aO+889qV8aeK7R
+	x57NbumD+W2EJv3jazsCCD/hSn1iY2VqNPTLupd9a6SgKrAM6A+140xNzfd4+Ids6ULPDXScNllaL
+	K5E9k0Z+27MFjl6TXGCbBlYkOaPiGoyxwQ859adiM2blz3I3XInOabrz4JyMlUU2NA99+u1LEcN9O
+	t5Qimmg7bydCD1jcKvtBmckiLJMn6InAsLaaZMOXLaH+hfed20YmrGTHlQeSUerwBOmPunlkXt5ni
+	KHvQ8IUxwWOSO656gT5PVSK58IQh1csr1dqM3QsFxJstNt/3cVAMR7j0Q0W5xGBWFddIR06dpmunM
+	Hx8obvln6/oXhKWtY6Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4O9X-0002wB-QB; Wed, 19 Feb 2020 12:08:31 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1j4OFV-0004tX-SI; Wed, 19 Feb 2020 12:14:41 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4O9E-0002uV-Qf
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 12:08:19 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 48MxLg3psQz9v9Dt;
- Wed, 19 Feb 2020 13:07:55 +0100 (CET)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=XonlV0Z+; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id AFyfJZVf4xTO; Wed, 19 Feb 2020 13:07:55 +0100 (CET)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 48MxLg2Kzcz9v9Ds;
- Wed, 19 Feb 2020 13:07:55 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1582114075; bh=SUPm/xbOXqzg/7rTrLgpDJn6K3q1CABhJDtHqKqTUfA=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=XonlV0Z+kSYp9DXtpHiZkNHEHxFMw6PZijdFfIFeuIK/K+RCtqkXv0VtzGY+2wuZu
- xOicb9401xVMMs8rHDmTPmm6KlS2ffHsw+cSbAZdq3j0YAum02eQePHOFl9npiNl8S
- akY+ce7GONPJifLUkacYEEGeIusgoWWVvfKmbJes=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 8CDA98B83F;
- Wed, 19 Feb 2020 13:07:56 +0100 (CET)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id ix2R2LHOLPeo; Wed, 19 Feb 2020 13:07:56 +0100 (CET)
-Received: from [172.25.230.102] (po15451.idsi0.si.c-s.fr [172.25.230.102])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id B4B6E8B837;
- Wed, 19 Feb 2020 13:07:55 +0100 (CET)
-Subject: Re: [PATCH v2 07/13] powerpc: add support for folded p4d page tables
-To: Mike Rapoport <rppt@kernel.org>
-References: <20200216081843.28670-1-rppt@kernel.org>
- <20200216081843.28670-8-rppt@kernel.org>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <5b7c3929-5833-8ceb-85c8-a8e92e6a138e@c-s.fr>
-Date: Wed, 19 Feb 2020 13:07:55 +0100
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1j4OFL-0004sM-3b
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 12:14:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1582114465; bh=LBA0OH0LGSn5q2o3L6sg17qe8iS+vJij63Yj2IJHsB0=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=dvGcwYJJZLS/xFu1ybo56J0BAjHKnrYfVUk3M+k4oXa0oOJ+vK/r+mmexvgN/O3+7
+ V4ZYYZ970DFyi3RfWCLmndM3lhr8HDwymiDHyO/HXJP9xib7xnnjK77E0/9tpT9p1T
+ T7QrfHCKnH+F5eHduStJqxSTxzYMELJI1oPd1y24=
+Date: Wed, 19 Feb 2020 13:14:24 +0100
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: [PATCH] bus: sunxi-rsb: Return correct data when mixing 16-bit
+ and 8-bit reads
+Message-ID: <20200219121424.dfvrwfcavupmwbvw@core.my.home>
+Mail-Followup-To: Chen-Yu Tsai <wens@csie.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ Maxime Ripard <mripard@kernel.org>,
+ Samuel Holland <samuel@sholland.org>,
+ Stephen Boyd <swboyd@chromium.org>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>, 
+ open list <linux-kernel@vger.kernel.org>
+References: <20200219010951.395599-1-megous@megous.com>
+ <CAGb2v67BLODmDmQOJH-m-KWVtXS2EGrnPxi9czj6oipHPDTfjw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200216081843.28670-8-rppt@kernel.org>
-Content-Language: fr
+Content-Disposition: inline
+In-Reply-To: <CAGb2v67BLODmDmQOJH-m-KWVtXS2EGrnPxi9czj6oipHPDTfjw@mail.gmail.com>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_040813_161921_CF03B7CB 
-X-CRM114-Status: GOOD (  19.14  )
+X-CRM114-CacheID: sfid-20200219_041431_323513_B5073655 
+X-CRM114-Status: GOOD (  22.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 T_SPF_HELO_TEMPERROR   SPF: test of HELO record failed (temperror)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,100 +78,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-sh@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, linux-hexagon@vger.kernel.org,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Jonas Bonn <jonas@southpole.se>, linux-arch@vger.kernel.org,
- Brian Cain <bcain@codeaurora.org>, Marc Zyngier <maz@kernel.org>,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Mike Rapoport <rppt@linux.ibm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- uclinux-h8-devel@lists.sourceforge.jp, Fenghua Yu <fenghua.yu@intel.com>,
- Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- openrisc@lists.librecores.org, Stafford Horne <shorne@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Tony Luck <tony.luck@intel.com>, Yoshinori Sato <ysato@users.sourceforge.jp>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Michael Ellerman <mpe@ellerman.id.au>, nios2-dev@lists.rocketboards.org,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Samuel Holland <samuel@sholland.org>,
+ open list <linux-kernel@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>, linux-sunxi <linux-sunxi@googlegroups.com>,
+ "moderated list:ARM/Allwinner sunXi SoC support"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpMZSAxNi8wMi8yMDIwIMOgIDA5OjE4LCBNaWtlIFJhcG9wb3J0IGEgw6ljcml0wqA6Cj4gRnJv
-bTogTWlrZSBSYXBvcG9ydCA8cnBwdEBsaW51eC5pYm0uY29tPgo+IAo+IEltcGxlbWVudCBwcmlt
-aXRpdmVzIG5lY2Vzc2FyeSBmb3IgdGhlIDR0aCBsZXZlbCBmb2xkaW5nLCBhZGQgd2Fsa3Mgb2Yg
-cDRkCj4gbGV2ZWwgd2hlcmUgYXBwcm9wcmlhdGUgYW5kIHJlcGxhY2UgNWxldmVsLWZpeHVwLmgg
-d2l0aCBwZ3RhYmxlLW5vcDRkLmguCj4gCj4gU2lnbmVkLW9mZi1ieTogTWlrZSBSYXBvcG9ydCA8
-cnBwdEBsaW51eC5pYm0uY29tPgo+IFRlc3RlZC1ieTogQ2hyaXN0b3BoZSBMZXJveSA8Y2hyaXN0
-b3BoZS5sZXJveUBjLXMuZnI+ICMgOHh4IGFuZCA4M3h4Cj4gLS0tCj4gICBhcmNoL3Bvd2VycGMv
-aW5jbHVkZS9hc20vYm9vazNzLzMyL3BndGFibGUuaCAgfCAgMSAtCj4gICBhcmNoL3Bvd2VycGMv
-aW5jbHVkZS9hc20vYm9vazNzLzY0L2hhc2guaCAgICAgfCAgNCArLQo+ICAgYXJjaC9wb3dlcnBj
-L2luY2x1ZGUvYXNtL2Jvb2szcy82NC9wZ2FsbG9jLmggIHwgIDQgKy0KPiAgIGFyY2gvcG93ZXJw
-Yy9pbmNsdWRlL2FzbS9ib29rM3MvNjQvcGd0YWJsZS5oICB8IDU4ICsrKysrKysrKystLS0tLS0t
-LQo+ICAgYXJjaC9wb3dlcnBjL2luY2x1ZGUvYXNtL2Jvb2szcy82NC9yYWRpeC5oICAgIHwgIDYg
-Ky0KPiAgIGFyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9ub2hhc2gvMzIvcGd0YWJsZS5oICB8ICAx
-IC0KPiAgIGFyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9ub2hhc2gvNjQvcGdhbGxvYy5oICB8ICAy
-ICstCj4gICAuLi4vaW5jbHVkZS9hc20vbm9oYXNoLzY0L3BndGFibGUtNGsuaCAgICAgICAgfCAz
-MiArKysrKy0tLS0tCj4gICBhcmNoL3Bvd2VycGMvaW5jbHVkZS9hc20vbm9oYXNoLzY0L3BndGFi
-bGUuaCAgfCAgNiArLQo+ICAgYXJjaC9wb3dlcnBjL2luY2x1ZGUvYXNtL3BndGFibGUuaCAgICAg
-ICAgICAgIHwgIDggKysrCj4gICBhcmNoL3Bvd2VycGMva3ZtL2Jvb2szc182NF9tbXVfcmFkaXgu
-YyAgICAgICAgfCA1OSArKysrKysrKysrKysrKysrLS0tCj4gICBhcmNoL3Bvd2VycGMvbGliL2Nv
-ZGUtcGF0Y2hpbmcuYyAgICAgICAgICAgICAgfCAgNyArKy0KPiAgIGFyY2gvcG93ZXJwYy9tbS9i
-b29rM3MzMi9tbXUuYyAgICAgICAgICAgICAgICB8ICAyICstCj4gICBhcmNoL3Bvd2VycGMvbW0v
-Ym9vazNzMzIvdGxiLmMgICAgICAgICAgICAgICAgfCAgNCArLQo+ICAgYXJjaC9wb3dlcnBjL21t
-L2Jvb2szczY0L2hhc2hfcGd0YWJsZS5jICAgICAgIHwgIDQgKy0KPiAgIGFyY2gvcG93ZXJwYy9t
-bS9ib29rM3M2NC9yYWRpeF9wZ3RhYmxlLmMgICAgICB8IDE5ICsrKystLQo+ICAgYXJjaC9wb3dl
-cnBjL21tL2Jvb2szczY0L3N1YnBhZ2VfcHJvdC5jICAgICAgIHwgIDYgKy0KPiAgIGFyY2gvcG93
-ZXJwYy9tbS9odWdldGxicGFnZS5jICAgICAgICAgICAgICAgICB8IDI4ICsrKysrLS0tLQo+ICAg
-YXJjaC9wb3dlcnBjL21tL2thc2FuL2thc2FuX2luaXRfMzIuYyAgICAgICAgIHwgIDggKy0tCj4g
-ICBhcmNoL3Bvd2VycGMvbW0vbWVtLmMgICAgICAgICAgICAgICAgICAgICAgICAgfCAgNCArLQo+
-ICAgYXJjaC9wb3dlcnBjL21tL25vaGFzaC80MHguYyAgICAgICAgICAgICAgICAgIHwgIDQgKy0K
-PiAgIGFyY2gvcG93ZXJwYy9tbS9ub2hhc2gvYm9vazNlX3BndGFibGUuYyAgICAgICB8IDE1ICsr
-Ky0tCj4gICBhcmNoL3Bvd2VycGMvbW0vcGd0YWJsZS5jICAgICAgICAgICAgICAgICAgICAgfCAy
-NSArKysrKysrLQo+ICAgYXJjaC9wb3dlcnBjL21tL3BndGFibGVfMzIuYyAgICAgICAgICAgICAg
-ICAgIHwgMjggKysrKystLS0tCj4gICBhcmNoL3Bvd2VycGMvbW0vcGd0YWJsZV82NC5jICAgICAg
-ICAgICAgICAgICAgfCAxMCArKy0tCj4gICBhcmNoL3Bvd2VycGMvbW0vcHRkdW1wL2hhc2hwYWdl
-dGFibGUuYyAgICAgICAgfCAyMCArKysrKystCj4gICBhcmNoL3Bvd2VycGMvbW0vcHRkdW1wL3B0
-ZHVtcC5jICAgICAgICAgICAgICAgfCAyMiArKysrKystCj4gICBhcmNoL3Bvd2VycGMveG1vbi94
-bW9uLmMgICAgICAgICAgICAgICAgICAgICAgfCAxNyArKysrKy0KPiAgIDI4IGZpbGVzIGNoYW5n
-ZWQsIDI4NCBpbnNlcnRpb25zKCspLCAxMjAgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBh
-L2FyY2gvcG93ZXJwYy9tbS9wdGR1bXAvcHRkdW1wLmMgYi9hcmNoL3Bvd2VycGMvbW0vcHRkdW1w
-L3B0ZHVtcC5jCj4gaW5kZXggMjA2MTU2MjU1MjQ3Li43YmQ0YjgxZDViNWQgMTAwNjQ0Cj4gLS0t
-IGEvYXJjaC9wb3dlcnBjL21tL3B0ZHVtcC9wdGR1bXAuYwo+ICsrKyBiL2FyY2gvcG93ZXJwYy9t
-bS9wdGR1bXAvcHRkdW1wLmMKPiBAQCAtMjc3LDkgKzI3Nyw5IEBAIHN0YXRpYyB2b2lkIHdhbGtf
-cG1kKHN0cnVjdCBwZ19zdGF0ZSAqc3QsIHB1ZF90ICpwdWQsIHVuc2lnbmVkIGxvbmcgc3RhcnQp
-Cj4gICAJfQo+ICAgfQo+ICAgCj4gLXN0YXRpYyB2b2lkIHdhbGtfcHVkKHN0cnVjdCBwZ19zdGF0
-ZSAqc3QsIHBnZF90ICpwZ2QsIHVuc2lnbmVkIGxvbmcgc3RhcnQpCj4gK3N0YXRpYyB2b2lkIHdh
-bGtfcHVkKHN0cnVjdCBwZ19zdGF0ZSAqc3QsIHA0ZF90ICpwNGQsIHVuc2lnbmVkIGxvbmcgc3Rh
-cnQpCj4gICB7Cj4gLQlwdWRfdCAqcHVkID0gcHVkX29mZnNldChwZ2QsIDApOwo+ICsJcHVkX3Qg
-KnB1ZCA9IHB1ZF9vZmZzZXQocDRkLCAwKTsKPiAgIAl1bnNpZ25lZCBsb25nIGFkZHI7Cj4gICAJ
-dW5zaWduZWQgaW50IGk7Cj4gICAKPiBAQCAtMjkzLDYgKzI5MywyMiBAQCBzdGF0aWMgdm9pZCB3
-YWxrX3B1ZChzdHJ1Y3QgcGdfc3RhdGUgKnN0LCBwZ2RfdCAqcGdkLCB1bnNpZ25lZCBsb25nIHN0
-YXJ0KQo+ICAgCX0KPiAgIH0KPiAgIAo+ICtzdGF0aWMgdm9pZCB3YWxrX3A0ZChzdHJ1Y3QgcGdf
-c3RhdGUgKnN0LCBwZ2RfdCAqcGdkLCB1bnNpZ25lZCBsb25nIHN0YXJ0KQo+ICt7Cj4gKwlwNGRf
-dCAqcDRkID0gcDRkX29mZnNldChwZ2QsIDApOwo+ICsJdW5zaWduZWQgbG9uZyBhZGRyOwo+ICsJ
-dW5zaWduZWQgaW50IGk7Cj4gKwo+ICsJZm9yIChpID0gMDsgaSA8IFBUUlNfUEVSX1A0RDsgaSsr
-LCBwNGQrKykgewo+ICsJCWFkZHIgPSBzdGFydCArIGkgKiBQNERfU0laRTsKPiArCQlpZiAoIXA0
-ZF9ub25lKCpwNGQpICYmICFwNGRfaXNfbGVhZigqcDRkKSkKPiArCQkJLyogcDRkIGV4aXN0cyAq
-Lwo+ICsJCQl3YWxrX3B1ZChzdCwgcDRkLCBhZGRyKTsKPiArCQllbHNlCj4gKwkJCW5vdGVfcGFn
-ZShzdCwgYWRkciwgMiwgcDRkX3ZhbCgqcDRkKSk7CgpMZXZlbCAyIGlzIGFscmVhZHkgdXNlZCBi
-eSB3YWxrX3B1ZCgpLgoKSSB0aGluayB5b3UgaGF2ZSB0byBpbmNyZW1lbnQgdGhlIGxldmVsIHVz
-ZWQgaW4gd2Fsa19wdWQoKSBhbmQgCndhbGtfcG1kKCkgYW5kIHdhbGtfcHRlKCkKCj4gKwl9Cj4g
-K30KPiArCj4gICBzdGF0aWMgdm9pZCB3YWxrX3BhZ2V0YWJsZXMoc3RydWN0IHBnX3N0YXRlICpz
-dCkKPiAgIHsKPiAgIAl1bnNpZ25lZCBpbnQgaTsKPiBAQCAtMzA2LDcgKzMyMiw3IEBAIHN0YXRp
-YyB2b2lkIHdhbGtfcGFnZXRhYmxlcyhzdHJ1Y3QgcGdfc3RhdGUgKnN0KQo+ICAgCWZvciAoaSA9
-IHBnZF9pbmRleChhZGRyKTsgaSA8IFBUUlNfUEVSX1BHRDsgaSsrLCBwZ2QrKywgYWRkciArPSBQ
-R0RJUl9TSVpFKSB7Cj4gICAJCWlmICghcGdkX25vbmUoKnBnZCkgJiYgIXBnZF9pc19sZWFmKCpw
-Z2QpKQo+ICAgCQkJLyogcGdkIGV4aXN0cyAqLwo+IC0JCQl3YWxrX3B1ZChzdCwgcGdkLCBhZGRy
-KTsKPiArCQkJd2Fsa19wNGQoc3QsIHBnZCwgYWRkcik7Cj4gICAJCWVsc2UKPiAgIAkJCW5vdGVf
-cGFnZShzdCwgYWRkciwgMSwgcGdkX3ZhbCgqcGdkKSk7Cj4gICAJfQoKQ2hyaXN0b3BoZQoKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
-cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAo=
+On Wed, Feb 19, 2020 at 10:49:18AM +0800, Chen-Yu Tsai wrote:
+> On Wed, Feb 19, 2020 at 9:10 AM Ondrej Jirman <megous@megous.com> wrote:
+> >
+> > When doing a 16-bit read that returns data in the MSB byte, the
+> > RSB_DATA register will keep the MSB byte unchanged when doing
+> > the following 8-bit read. sunxi_rsb_read() will then return
+> > a result that contains high byte from 16-bit read mixed with
+> > the 8-bit result.
+> >
+> > The consequence is that after this happens the PMIC's regmap will
+> > look like this: (0x33 is the high byte from the 16-bit read)
+> >
+> > % cat /sys/kernel/debug/regmap/sunxi-rsb-3a3/registers
+> > 00: 33
+> > 01: 33
+> > 02: 33
+> > 03: 33
+> > 04: 33
+> > 05: 33
+> > 06: 33
+> > 07: 33
+> > 08: 33
+> > 09: 33
+> > 0a: 33
+> > 0b: 33
+> > 0c: 33
+> > 0d: 33
+> > 0e: 33
+> > [snip]
+> >
+> > Fix this by masking the result of the read with the correct mask
+> > based on the size of the read. There are no 16-bit users in the
+> > mainline kernel, so this doesn't need to get into the stable tree.
+> >
+> > Signed-off-by: Ondrej Jirman <megous@megous.com>
+> 
+> Acked-by: Chen-Yu Tsai <wens@csie.org>
+> 
+> for the fix, however it's not entirely clear to me how the MSB 0x33
+> value got into the regmap. Looks like I expected the regmap core to
+> handle any overflows, or didn't expect the lingering MSB from 16-bit
+> reads, as I didn't have any 16-bit register devices back when I wrote
+> this.
+
+Now I feel like I masked some other bug. Though explanation may be quite simple.
+
+For example when AXP core does regmap_read on some values for showing charging
+current or battery voltage, because regmap_read works with unsigned int, it
+will simply get a number that's too big. And that was the major symptom
+I observed. I got readings from sysfs that my tablet is consuming 600A or 200A,
+etc. And this value was jumping around based on AC100 activity (as the MSB
+byte got changed).
+
+In other places where the driver does regmap_update_bits, I think nothing bad
+happened. The write after the read would simply discard the MSB byte.
+
+And for the debugfs/regmap/*/registers, those are printed such:
+
+https://elixir.bootlin.com/linux/latest/source/drivers/base/regmap/regmap-debugfs.c#L256
+
+	snprintf(buf + buf_pos, count - buf_pos,
+		"%.*x", map->debugfs_val_len, val);
+	
+This doesn't truncate values, so the larger number gets printed to (for example):
+
+        33fe
+
+But regmap debugfs code truncates this by cutting off the formatted string to
+this length:
+
+  https://elixir.bootlin.com/linux/latest/source/drivers/base/regmap/regmap-debugfs.c#L189
+
+So in the end, only:
+
+        00: 33
+
+remains, instead of the correct value of:
+
+        00: fe
+
+So in the case of debugfs this is just a cosmetic/formatting issue, that didn't
+affect anything else.
+
+I think regmap_bus->reg_read API simply expects the returned value to not exceed
+the sensible range.
+
+regards,
+	o.
+
+
+> ChenYu
+> 
+> 
+> > ---
+> >  drivers/bus/sunxi-rsb.c | 6 +++++-
+> >  1 file changed, 5 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
+> > index b8043b58568ac..8ab6a3865f569 100644
+> > --- a/drivers/bus/sunxi-rsb.c
+> > +++ b/drivers/bus/sunxi-rsb.c
+> > @@ -316,6 +316,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
+> >  {
+> >         u32 cmd;
+> >         int ret;
+> > +       u32 mask;
+> >
+> >         if (!buf)
+> >                 return -EINVAL;
+> > @@ -323,12 +324,15 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
+> >         switch (len) {
+> >         case 1:
+> >                 cmd = RSB_CMD_RD8;
+> > +               mask = 0xffu;
+> >                 break;
+> >         case 2:
+> >                 cmd = RSB_CMD_RD16;
+> > +               mask = 0xffffu;
+> >                 break;
+> >         case 4:
+> >                 cmd = RSB_CMD_RD32;
+> > +               mask = 0xffffffffu;
+> >                 break;
+> >         default:
+> >                 dev_err(rsb->dev, "Invalid access width: %zd\n", len);
+> > @@ -345,7 +349,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
+> >         if (ret)
+> >                 goto unlock;
+> >
+> > -       *buf = readl(rsb->regs + RSB_DATA);
+> > +       *buf = readl(rsb->regs + RSB_DATA) & mask;
+> >
+> >  unlock:
+> >         mutex_unlock(&rsb->lock);
+> > --
+> > 2.25.1
+> >
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
