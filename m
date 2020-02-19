@@ -2,75 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63494163AB4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 04:03:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78F83163AB7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 19 Feb 2020 04:04:02 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8ABDpTOPIEz2PiebEYeYwQRqycOZLnSCgvmtbyeZ5z4=; b=XtNyDLcQQZq/ba
-	asyuTQfcIFOJ4KsbeKFnW1Myw/+oxGown50ysTuFN0Jn++loCI6mWceXczV9rGdgpvLtomMKc0GjZ
-	seMtlAzhqM5YS/VHAhqDMdVztlOqhtCllcWHjkwKOfhCfPfJVEfTdwwRDkuQML7XmmPIyD3aLRzCm
-	DmB28Fmo53b+BXnYA3IjB0ADUak/YbbcTSgGCHKhPM02Vd+ek5meTPfgmspWOGFE/huJdsb4xfg5W
-	bMT6Vryx688cpW12EOoeLipa9ZQhb6scpFdb9WGAQHKGC0k6JOWADVwSVLSnpGKstGGkTNujxJQyA
-	8IyUzRrKNypZ4OomsjHA==;
+	List-Owner; bh=1AkqDgbz6fP3+zIDKyoqZGa1J7UVgzOVIpTPScVKleg=; b=HW5c5KClzSn7Q5
+	wGj4NVSYUd3hhFS4nbaKjtpfGU1YEwbADyT757hoVscuyY6dPwAtGWqOWkQwwYdTy8S5wHB+2Zl6l
+	AULvyxq6nLULSYTOODol6sRYbs1KS0VrO/UeNJEImLaJEOE3mHTIMj/DJZn9fXtAjyoV4SfthIUT4
+	Yfu9KLRiqDZB+7i5uORgB6fE8euGzqtjX67T/M6zfQKlY309xIWSypmtgmOIVSgU9lqeNMwz2dsE8
+	Qrd4zw8YbjzfbNUOv/hfU4ZHRuuZgtWZfFw37iLjwybkA5WYv/fZR3JNxSN0s1TvVIUZFqmujkEjG
+	6aPQuhqViDQRBlOOiDtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4FeD-0001rS-5S; Wed, 19 Feb 2020 03:03:37 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
+	id 1j4FeU-00025H-Fo; Wed, 19 Feb 2020 03:03:54 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4Fe4-0001qe-HM
- for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 03:03:29 +0000
-Received: by mail-oi1-f195.google.com with SMTP id c16so22415963oic.3
+ id 1j4FeJ-000240-Sn
+ for linux-arm-kernel@lists.infradead.org; Wed, 19 Feb 2020 03:03:45 +0000
+Received: by mail-ot1-f68.google.com with SMTP id r27so21696447otc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 18 Feb 2020 19:03:28 -0800 (PST)
+ Tue, 18 Feb 2020 19:03:43 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:content-transfer-encoding
  :in-reply-to:user-agent;
- bh=Hf1f6QP19rHdaFJBEywe6mRYXkeEBsQdT49X3f8AQCs=;
- b=RAHQq2Ds90PZuc6zrDYGRYjG+x4ONkQKJW7nDSWNMHuR4fFOWNwBL4pPgMLeUz91Jm
- ANL2TVmVn8yLMkHgVu+cv7dEa5Wi20oTX2jXcB89IALLCYDUyuLtsCBAJ6fAhlYEAuKJ
- ohGY4XF6oMwOPx34DH1rEnYIJ8Wt0z4u5T0n5BulUFP6DqhALwZtUliEGe38iE8qxUp2
- 0LIV93sEE+dz1OHUgyyLd/wLf+CJ4KFMOyTvjpPuzcfx/Rg5vfRoGlpKjK2uT6hI69Bq
- JrJml17XqvMttUmEq7k3IDD/8Mh4CuRY/7hK1LaEhcxxxf/cZ1LLG3pj3Y83dd9jdIuv
- wuEg==
-X-Gm-Message-State: APjAAAVWkUekZ7IliSddrgNutb6N7ib84fOfo7frN5KfVSr6sGUWnLW0
- 6yTnZ3bqRdcI/35iw1PFJg==
-X-Google-Smtp-Source: APXvYqzb9WboKkTWigfur8GY+H5M6QkRTHO++ZcVsbVhsDtpZ0hlIVyOR7AyTXVJ5W9SnTQCgMCmfQ==
-X-Received: by 2002:aca:4c90:: with SMTP id z138mr3411041oia.140.1582081406582; 
- Tue, 18 Feb 2020 19:03:26 -0800 (PST)
+ bh=3ww9jD9BZoI0pj8Fh4zqJj/5ENJzlS5CiCEh5EfEMME=;
+ b=deeTmyk/gr2bFEgOWDKqd0WjiPq/+w+T/p7bOptKrfRrQ+adljSHxjOljg7SYcHVaL
+ 6rKk7nGVpqeM0KZFBN6tlh9j5HeUsP4TUnpgxrgFdgE78NXfp/oh4eCKf8wQMWunqKk9
+ 0nYAYrvoHUYKMBG56jCEsyK853kR523BioqukV/81wrYN5lFQH5jaDrMqGqtH3Wp8Rgj
+ o8cljvM3liPqgzL/KGUT3I1j0dxNQosCp7HskHoKzSP79/Ui2pmREiutuLqry8x3msJa
+ gu0pKejCscJ3GKDPE7+YoYDDBlnCd4LbORoEnjtqf/Rx4Rx3umOAW0RPxra+LiE5B2S1
+ C0Pg==
+X-Gm-Message-State: APjAAAWbktB20eaoJoFtO/QQe9AmH5GWgPu96YoFCwbW21IRyrDkKdZ2
+ 1XOVQr9QkEqDlOiCB7Q6ZA==
+X-Google-Smtp-Source: APXvYqzTdqeuboLoLPJb+yflZq5A5EEQsO0iTNPuA/QcWSn7buqxIsiMpRFFdj7EAa+AdIsqcpxByw==
+X-Received: by 2002:a9d:48d:: with SMTP id 13mr16994562otm.249.1582081423252; 
+ Tue, 18 Feb 2020 19:03:43 -0800 (PST)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id b145sm303254oii.31.2020.02.18.19.03.25
+ by smtp.gmail.com with ESMTPSA id u18sm211383otq.26.2020.02.18.19.03.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 18 Feb 2020 19:03:26 -0800 (PST)
-Received: (nullmailer pid 16294 invoked by uid 1000);
- Wed, 19 Feb 2020 03:03:24 -0000
-Date: Tue, 18 Feb 2020 21:03:24 -0600
+ Tue, 18 Feb 2020 19:03:42 -0800 (PST)
+Received: (nullmailer pid 16790 invoked by uid 1000);
+ Wed, 19 Feb 2020 03:03:41 -0000
+Date: Tue, 18 Feb 2020 21:03:41 -0600
 From: Rob Herring <robh@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V3 RESEND 1/7] ARM: dts: imx6sx: Improve UART pins macro
- defines
-Message-ID: <20200219030324.GA16230@bogus>
+Subject: Re: [PATCH V3 RESEND 2/7] ARM: dts: imx6sx: Add missing UART RTS/CTS
+ pins mux
+Message-ID: <20200219030341.GA16734@bogus>
 References: <1581938021-16259-1-git-send-email-Anson.Huang@nxp.com>
+ <1581938021-16259-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1581938021-16259-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1581938021-16259-2-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200218_190328_570476_808B93C9 
-X-CRM114-Status: GOOD (  11.34  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200218_190343_930554_37C4B13A 
+X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -79,8 +81,9 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,22 +106,18 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 17 Feb 2020 19:13:35 +0800, Anson Huang wrote:
-> Add DCE/DTE to UART pins macro defines to distinguish the
-> DCE and DTE functions, keep old defines at the end of file
-> for some time to make it backward compatible.
+On Mon, 17 Feb 2020 19:13:36 +0800, Anson Huang wrote:
+> Some of UART RTS/CTS pins' DCE/DTE mux function are missing,
+> add them.
 > =
 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
 > ---
-> Changes since V2:
-> 	- Adjust the definitions order to make DCE always before DTE, no other c=
-hange.
+> No change.
 > ---
->  arch/arm/boot/dts/imx6sx-pinfunc.h | 260 +++++++++++++++++++++++++------=
-------
->  1 file changed, 174 insertions(+), 86 deletions(-)
+>  arch/arm/boot/dts/imx6sx-pinfunc.h | 26 ++++++++++++++++++++++++++
+>  1 file changed, 26 insertions(+)
 > =
 
 
