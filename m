@@ -2,66 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38D0C165A80
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 10:53:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FD47165A95
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 10:55:43 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ceztl/Jp+5eASEZTsu9o2IB3z0Dr5NFrfBTeE6l5WBY=; b=fRzuLqjqKwB+dqYqQWKOZKj37
-	PkHRezQOisyjFimYPoiahli9DM8s89QAl/1B0ZdVIFonhxSrYc4rBemaULHSIGKF3KFT2Rt6plvWE
-	CEiG1p9P4E2lHHGRQ01fj+WDmCHi6BMTpGCGJ6g9QscRlYIX+oVrJrMOfZesKuTOA8RRpNiQHtO14
-	+e+fCe4sDCguMEQ/fvHqsRQHp/3/jCmZGJF5Rp2PmU2YB288prI3ScaN+2+Q5ac8qdRddswwWu3B0
-	gaXGijb0iq8iSJWT+T/eH7Vmgif0GeR4KWf+0uz0dtK9sEmhl4/zJDS/CvbKYUKTxPhImeO1BSL9l
-	koDteVEkA==;
+	 bh=N7f2b5Wl8w9NW119CXwDHvrRmwc42McAphvdWFnY96Y=; b=M2t7FXzxud4dtOWUh+n8Sw38H
+	d+xFtjWRzzY5kToKVROcGdM4fnHPq7eEf7aFREBw9yD9O9PJNtMjVlITsaM6IE0C2dMhMKStkZVR5
+	zzbmQ0QoH6y9GtigEwuSJbKlA2J+SPx/xu9m4KBID4b3v20Tvqcir1+/5Nx9ST118TfOzgYxmVLci
+	X9quJXteELutGY9PQohrAopOTAzrwSkXk+kQDDFUCbWahepBbH7DUEXC0SK2UAKlqu/dlyr8DOKRC
+	0yXL7OnIvf9Xs3BVWwYxJMbmr8Vjh/16cVGWdJUHegoutOz1fBp1+q5oaGzbdlT3Pxj+O6YqlYKQ4
+	TygxyQqqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4iVu-0006lN-SW; Thu, 20 Feb 2020 09:52:58 +0000
-Received: from smtpng1.m.smailru.net ([94.100.181.251])
+	id 1j4iYQ-0000mc-Gq; Thu, 20 Feb 2020 09:55:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4iVi-0006ko-TS; Thu, 20 Feb 2020 09:52:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=orpaltech.com; s=mailru; 
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject;
- bh=thCv06GhN62SfH95yKiOQdnlyErpdK43iNvF6bo7UC8=; 
- b=HpMH2AIGBg7VHZ4y+eFihTTaOlK14DrAREoekeHy0rsHBnH6UVKNZq8CXCPb5XqSu0puMGqwD9/JOQMiSTUSJlsiADSvy7/o/EZ7Y8zcSdGJnYLGSnKIF0BrtoGWSh6lcbSeoL0Z0nTYSmD52Xzj7ZO9Mxx4GnbpM/7cnAwmaeg=;
-Received: by smtpng1.m.smailru.net with esmtpa (envelope-from
- <ssuloev@orpaltech.com>)
- id 1j4iVe-0004m5-Vl; Thu, 20 Feb 2020 12:52:43 +0300
-Subject: Re: vc4 on rpi3 A+
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
-References: <8b353626-f62a-2aff-96b4-91712ed36095@orpaltech.com>
- <4850fa1006d5a329c2e6d4e61ec6fb9420125414.camel@suse.de>
-From: Sergey Suloev <ssuloev@orpaltech.com>
-Message-ID: <0dab6579-78db-4537-619f-449f910116c2@orpaltech.com>
-Date: Thu, 20 Feb 2020 12:52:42 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j4iYI-0000m9-9k
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 09:55:27 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5F8BF2465D;
+ Thu, 20 Feb 2020 09:55:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582192524;
+ bh=fTdICJ3dMVHeDTNi9f6HouXkZBodmF1U1uDuflaWG2g=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=qyVexSEE5jIe2Y+HytoAi4Oj4pp0YZxDqBbS7ZBRQEElXH1NExD4jAZqNilphocN7
+ WXb/DOKAyNAPJzPXGtJ+TuEMAp7Z9Moym7HSaL0+u5I0vkTbamj3pzmrZuD+5T/Bya
+ 2vNoQo7hWVw+j+fRDyhfDzHoiead+ixCwGR0MN0o=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1j4iYE-006hIv-Ke; Thu, 20 Feb 2020 09:55:22 +0000
 MIME-Version: 1.0
-In-Reply-To: <4850fa1006d5a329c2e6d4e61ec6fb9420125414.camel@suse.de>
-Content-Language: en-US
-Authentication-Results: smtpng1.m.smailru.net;
- auth=pass smtp.auth=ssuloev@orpaltech.com
- smtp.mailfrom=ssuloev@orpaltech.com
-X-7564579A: 646B95376F6C166E
-X-77F55803: 0A44E481635329DB0E1AA8A03B392317D32E5E4886521736714D0EA31FF800922AC705C7BA8F5525F688BCB05C26794D2348F7A7273D6CFE207E81FDC8985EC7768F72F97BC0F708713C65106E7FA372
-X-7FA49CB5: 0D63561A33F958A56B272A5C5DEA2C3B0A9E75FA917AEDCBAD54F7FD1D0EFB2C8941B15DA834481FA18204E546F3947CEDCF5861DED71B2F389733CBF5DBD5E9C8A9BA7A39EFB7666BA297DBC24807EA117882F44604297287769387670735209ECD01F8117BC8BEA471835C12D1D977C4224003CC836476C0CAF46E325F83A522CA9DD8327EE4930A3850AC1BE2E7352629B07FD02F83A6C4224003CC836476C0CAF46E325F83A50BF2EBBBDD9D6B0F05F538519369F3743B503F486389A921A5CC5B56E945C8DA
-X-D57D3AED: Y8kq8+OzVoxvgW9Op3aR8Fxwo7H2ZNxGP5qz8aO2mjTJzjHGC4ogvVuzB3zfVUBtENeZ6b5av1fnCBE34JUDkaJinJwwHx5ysVv9/YfT9ufdCMnJxRF9AA==
-X-Mailru-Sender: 689FA8AB762F73930799C7A3FA23A2707E5128F47E140C3F5E4AC6F48EA1EBC0778B5FB1219D8779F6BCD4B1DE95BF653AE5922765F965CDF1D7D1B96E5495AE10FCEA6DFE3E0A150D4ABDE8C577C2ED
-X-Mras: Ok
+Date: Thu, 20 Feb 2020 09:55:22 +0000
+From: Marc Zyngier <maz@kernel.org>
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Subject: Re: [PATCH v8 00/12] add support for Clang's Shadow Call Stack
+In-Reply-To: <CAKv+Gu8gHcYW_5G5pfS=yVA7J5JPq0tWqYRcVBAxS0ZYjw9jPw@mail.gmail.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200219000817.195049-1-samitolvanen@google.com>
+ <0386ecad-f3d6-f1dc-90da-7f05b2793839@arm.com>
+ <CAKv+Gu8gHcYW_5G5pfS=yVA7J5JPq0tWqYRcVBAxS0ZYjw9jPw@mail.gmail.com>
+Message-ID: <0cc8538672d3a6abe5893701187a452e@kernel.org>
+X-Sender: maz@kernel.org
+User-Agent: Roundcube Webmail/1.3.10
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: ard.biesheuvel@linaro.org, james.morse@arm.com,
+ samitolvanen@google.com, will@kernel.org, catalin.marinas@arm.com,
+ rostedt@goodmis.org, mhiramat@kernel.org, mark.rutland@arm.com,
+ Dave.Martin@arm.com, keescook@chromium.org, labbott@redhat.com,
+ ndesaulniers@google.com, jannh@google.com, miguel.ojeda.sandonis@gmail.com,
+ yamada.masahiro@socionext.com, clang-built-linux@googlegroups.com,
+ kernel-hardening@lists.openwall.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_015247_136924_C8CC47DB 
-X-CRM114-Status: GOOD (  17.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200220_015526_380908_156411BC 
+X-CRM114-Status: GOOD (  22.40  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [94.100.181.251 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -71,6 +85,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,70 +97,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>,
- bcm-kernel-feedback-list@broadcom.com,
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
+ Sami Tolvanen <samitolvanen@google.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Laura Abbott <labbott@redhat.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Nicolas,
+On 2020-02-19 18:53, Ard Biesheuvel wrote:
+> On Wed, 19 Feb 2020 at 19:38, James Morse <james.morse@arm.com> wrote:
+>> 
+>> Hi Sami,
+>> 
+>> (CC: +Marc)
+>> 
+>> On 19/02/2020 00:08, Sami Tolvanen wrote:
+>> > This patch series adds support for Clang's Shadow Call Stack
+>> > (SCS) mitigation, which uses a separately allocated shadow stack
+>> > to protect against return address overwrites.
+>> 
+>> I took this for a spin on some real hardware. cpu-idle, kexec 
+>> hibernate etc all work
+>> great... but starting a KVM guest causes the CPU to get stuck in EL2.
+>> 
+>> With CONFIG_SHADOW_CALL_STACK disabled, this doesn't happen ... so its 
+>> something about the
+>> feature being enabled.
+>> 
+>> 
+>> I'm using clang-9 from debian bullseye/sid. (I tried to build tip of 
+>> tree ... that doesn't
+>> go so well on arm64)
+>> 
+>> KVM takes an instruction abort from EL2 to EL2, because some of the 
+>> code it runs is not
+>> mapped at EL2:
+>> 
+>> | ffffa00011588308 <__kvm_tlb_flush_local_vmid>:
+>> | ffffa00011588308:       d10103ff        sub     sp, sp, #0x40
+>> | ffffa0001158830c:       f90013f3        str     x19, [sp, #32]
+>> | ffffa00011588310:       a9037bfd        stp     x29, x30, [sp, #48]
+>> | ffffa00011588314:       9100c3fd        add     x29, sp, #0x30
+>> | ffffa00011588318:       97ae18bf        bl      ffffa0001010e614 
+>> <__kern_hyp_va>
+>> 
+>> INSTRUCTION ABORT!
+>> 
+>> | ffffa0001158831c:       f9400000        ldr     x0, [x0]
+>> | ffffa00011588320:       97ae18bd        bl      ffffa0001010e614 
+>> <__kern_hyp_va>
+>> | ffffa00011588324:       aa0003f3        mov     x19, x0
+>> | ffffa00011588328:       97ae18c1        bl      ffffa0001010e62c 
+>> <has_vhe>
+>> 
+>> 
+>> __kern_hyp_va() is static-inline which is patched wherever it appears 
+>> at boot with the EL2
+>> ASLR values, it converts a kernel linear-map address to its EL2 KVM 
+>> alias:
+>> 
+>> | ffffa0001010dc5c <__kern_hyp_va>:
+>> | ffffa0001010dc5c:       92400000        and     x0, x0, #0x1
+>> | ffffa0001010dc60:       93c00400        ror     x0, x0, #1
+>> | ffffa0001010dc64:       91000000        add     x0, x0, #0x0
+>> | ffffa0001010dc68:       91400000        add     x0, x0, #0x0, lsl 
+>> #12
+>> | ffffa0001010dc6c:       93c0fc00        ror     x0, x0, #63
+>> | ffffa0001010dc70:       d65f03c0        ret
+>> 
+>> 
+>> The problem here is where __kern_hyp_va() is. Its outside the 
+>> __hyp_text section:
+>> | morse@eglon:~/kernel/linux-pigs$ nm -s vmlinux | grep hyp_text
+>> | ffffa0001158b800 T __hyp_text_end
+>> | ffffa000115838a0 T __hyp_text_start
+>> 
+>> 
+>> If I disable CONFIG_SHADOW_CALL_STACK in Kconfig, I get:
+>> | ffffa00011527fe0 <__kvm_tlb_flush_local_vmid>:
+>> | ffffa00011527fe0:       d100c3ff        sub     sp, sp, #0x30
+>> | ffffa00011527fe4:       a9027bfd        stp     x29, x30, [sp, #32]
+>> | ffffa00011527fe8:       910083fd        add     x29, sp, #0x20
+>> | ffffa00011527fec:       92400000        and     x0, x0, #0x1
+>> | ffffa00011527ff0:       93c00400        ror     x0, x0, #1
+>> | ffffa00011527ff4:       91000000        add     x0, x0, #0x0
+>> | ffffa00011527ff8:       91400000        add     x0, x0, #0x0, lsl 
+>> #12
+>> | ffffa00011527ffc:       93c0fc00        ror     x0, x0, #63
+>> | ffffa00011528000:       f9400000        ldr     x0, [x0]
+>> | ffffa00011528004:       910023e1        add     x1, sp, #0x8
+>> | ffffa00011528008:       92400000        and     x0, x0, #0x1
+>> | ffffa0001152800c:       93c00400        ror     x0, x0, #1
+>> | ffffa00011528010:       91000000        add     x0, x0, #0x0
+>> | ffffa00011528014:       91400000        add     x0, x0, #0x0, lsl 
+>> #12
+>> | ffffa00011528018:       93c0fc00        ror     x0, x0, #63
+>> | ffffa0001152801c:       97ffff78        bl      ffffa00011527dfc 
+>> <__tlb_switch_>
+>> | ffffa00011528020:       d508871f        tlbi    vmalle1
+>> | ffffa00011528024:       d503201f        nop
+>> 
+>> 
+>> This looks like reserving x18 is causing Clang to not-inline the 
+>> __kern_hyp_va() calls,
+>> losing the vitally important section information. (I can see why the 
+>> compiler thinks this
+>> is fair)
+>> 
+>> Is this a known, er, thing, with clang-9?
+>> 
+>> From eyeballing the disassembly __always_inline on __kern_hyp_va() is 
+>> enough of a hint to
+>> stop this, ... with this configuration of clang-9. But KVM still 
+>> doesn't work, so it isn't
+>> the only inlining decision KVM relies on that is changed by SCS.
+>> 
+>> I suspect repainting all KVM's 'inline' with __always_inline will fix 
+>> it. (yuck!) I'll try
+>> tomorrow.
+>> 
+> 
+> If we are relying on the inlining for correctness, these should have
+> been __always_inline to begin with, and yuckness aside, I don't think
+> there's anything wrong with that.
 
-On 2/20/20 12:25 PM, Nicolas Saenz Julienne wrote:
-> Hi Sergey,
->
-> On Thu, 2020-02-20 at 11:21 +0300, Sergey Suloev wrote:
->> Hello, guys,
->>
->> could anyone clarify the status of vc4 drm support on RPI 3A+ ?
-> I don't have one so I can't really tell for that specific board, but I'm going
-> to try to reproduce it on a rpi3b.
->
->> I tried to build kernel 5.5 and 5.6-rc2 in 32bit and aarch64
->> configurations with VC4 turned ON but both unsuccessful - vc4 drm driver
->> is listed in memory but not working and not producing any typical DRM
->> log output.
-> AFAIK there is a known issue in 5.6-rc2, which has already been addressed[1].
-> Note that the driver fails on probe so there is some amount of DRM output.
->
-> I tried to reproduce your issue with v5.5, but vc4 seems to probe alright
-> (rpi3b+aarch64+defconfig):
->
-> 	[   15.443047] vc4_hdmi 3f902000.hdmi: vc4-hdmi-hifi <-> 3f902000.hdmi mapping ok
-> 	[   15.452864] vc4_hdmi 3f902000.hdmi: ASoC: no DMI vendor name!
-> 	[   15.459836] vc4-drm soc:gpu: bound 3f902000.hdmi (ops vc4_hdmi_ops [vc4])
-> 	[   15.467062] vc4-drm soc:gpu: bound 3f806000.vec (ops vc4_vec_ops [vc4])
-> 	[   15.478722] vc4-drm soc:gpu: bound 3f004000.txp (ops vc4_txp_ops [vc4])
-> 	[   15.485749] vc4-drm soc:gpu: bound 3f400000.hvs (ops vc4_hvs_ops [vc4])
-> 	[   15.499009] vc4-drm soc:gpu: bound 3f206000.pixelvalve (ops vc4_crtc_ops [vc4])
-> 	[   15.526217] vc4-drm soc:gpu: bound 3f207000.pixelvalve (ops vc4_crtc_ops [vc4])
-> 	[   15.542257] vc4-drm soc:gpu: bound 3f807000.pixelvalve (ops vc4_crtc_ops [vc4])
-> 	[   15.560113] vc4-drm soc:gpu: bound 3fc00000.v3d (ops vc4_v3d_ops [vc4])
-> 	[   15.574684] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
-> 	[   15.587375] [drm] Driver supports precise vblank timestamp query.
-> 	[   15.606831] [drm] Initialized vc4 0.0.0 20140616 for soc:gpu on minor 0
-> 	[   15.617505] Console: switching to colour frame buffer device 90x30
-> 	[   15.627858] vc4-drm soc:gpu: fb0: vc4drmfb frame buffer device
->
-> Could it be that you forgot to update the device tree or kernel modules?
->
-> Regards,
-> Nicolas
->
-> [1] https://lkml.kernel.org/lkml/20200219102526.692126-1-jbrunet@baylibre.com/T/
->
+Agreed. Not having __always_inline is definitely an oversight, and we
+should fix it ASAP (hell knows what another compiler could produce...).
+And the whole EL2 aliasing is utter yuck already, this isn't going to
+make things much worse...
 
-the patch [1] has already been included into 5.6-rc2, so the issue with 
-Rpi 3A+ isn't related to that.
+I can queue something today for __kern_hyp_va(), but I'd like to make
+sure there isn't other silly mistakes like this one somewhere...
 
-[1] 
-https://lkml.kernel.org/lkml/20200219102526.692126-1-jbrunet@baylibre.com/T/
+>> I don't think keeping the compiler-flags as they are today for KVM is 
+>> the right thing to
+>> do, it could lead to x18 getting corrupted with the shared vhe/non-vhe 
+>> code. Splitting
+>> that code up would lead to duplication.
+>> 
+>> (hopefully objtool will be able to catch these at build time)
+>> 
+> 
+> I don't see why we should selectively en/disable the reservation of
+> x18 (as I argued in the context of the EFI libstub patch as well).
+> Just reserving it everywhere shouldn't hurt performance, and removes
+> the need to prove that we reserved it in all the right places.
 
+I'd certainly like to keep things simple if we can.
 
-Thank you
-
+           M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
