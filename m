@@ -2,81 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE03A166754
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 20:41:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEB59166784
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 20:51:44 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mQH8IxtKj2F2xxp13djN3VHWHi208oYWEE0Gqtnygms=; b=KLi1oU2UUxgFWC
-	hjQ9WjhJWS458CGrD6rcHV1cvZrWjC5GJTY82x1A2OanSjB/jTYmuHJEoGeAbXxNhFC5MW3Nv5vtT
-	fP9gbrLBXt544UqSWoKLJdtukL3p0BUdORaHTheNHpFNwoO34QFbFYt3xX7xl1SFhTQjFtndtvQad
-	2ioHZr4Da6TUO4ktO7k0rR42AyKz5+jCMpjLeAcfKNFyr5UAEEoulVik6O1hx1LokHRZesZlEXrGC
-	mHmV4F/7PtcmViAuKZ5DRLVBxZDcDrlKNqIHsRM74F50XVnMV6jCgeZkujOsSjoeN/556GtJMma/1
-	lWLiI7VSEOukFC/etLUg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vttw01FdM6qJKcN8w5GaqwOAZYGU+ulutt7CuyY2P50=; b=A9ly86uWXbV+ZGrBHluN2xz2E
+	CiNnqP58fDd/LDp2HweOT0fHzokqki3seu0R3csEq+C+KfRq7r/WtetvCHQe4nXmKCl+XLBc4JpjU
+	aox4fKPQb4pkIpj8rRUf0y9hiGZSguigFkxBSQo/jRliF47193C4JHNtiy7jql6YS8mRIAkdpLZ55
+	G1m3snaW/LDgl88Ozh4rb5HSyXEJnVn/TsRdpuJ7x9nG7EdlGhLHVH0X6Kozclptqb8YWz9ypHxsg
+	91L8oHxzYvVfKLzjd7PYSriPfZdE5QsLGlrcOddlhx3hrGaYbdsomSz8dNbxwjsqqODpuRt+wz2zs
+	BwWilk/aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4rhA-00031Q-Gt; Thu, 20 Feb 2020 19:41:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4rgz-000311-Up
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 19:41:03 +0000
-Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
- [209.85.160.176])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7326A2467A
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 19:41:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582227661;
- bh=0wre2PhbpSA1aEnoeMZ1bcwtIXAHkDXm1zKnDVREcMk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=onGUmZ4W5YgNq6a6cohwh4PcfU3bSROgWlTISRwk6Tu4qja+yGJdoTcfTIuItS4X0
- 6/noPkMXCG2AWjgYUOGkW9pJOBQCNtOmEfYnV9poABQ5qG7X3jEsN2ArrSIhZNy2U4
- fDOntJCGfiV/LN5jbMQQCuHJNcVw1mjFRCTOtOpM=
-Received: by mail-qt1-f176.google.com with SMTP id v25so3752962qto.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 11:41:01 -0800 (PST)
-X-Gm-Message-State: APjAAAWiQxwwxR6nQw38EoNofCWEydMJl5dc6KP5eyPs3QHKrAIvhbN8
- 6EKuPudCcfjjav2Oy0ohIxvPgdKgeh0BI1uzEA==
-X-Google-Smtp-Source: APXvYqzDn8h46fe/CUa7KJYYUBSmCXArXpHfC06sW0cJBJhvkkTyV8xOPINS5zIjiic0Sfqc+1Sca27kEmFwAHiwRwU=
-X-Received: by 2002:ac8:6747:: with SMTP id n7mr28142441qtp.224.1582227660541; 
- Thu, 20 Feb 2020 11:41:00 -0800 (PST)
+	id 1j4rrI-000719-LX; Thu, 20 Feb 2020 19:51:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4rr6-000705-HR; Thu, 20 Feb 2020 19:51:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D90DF30E;
+ Thu, 20 Feb 2020 11:51:24 -0800 (PST)
+Received: from localhost (unknown [10.37.6.21])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4EF083F68F;
+ Thu, 20 Feb 2020 11:51:24 -0800 (PST)
+Date: Thu, 20 Feb 2020 19:51:22 +0000
+From: Mark Brown <broonie@kernel.org>
+To: Chuanhong Guo <gch981213@gmail.com>
+Subject: Re: [PATCH 0/2] rewrite mtk-quadspi spi-nor driver with spi-mem
+Message-ID: <20200220195122.GL3926@sirena.org.uk>
+References: <20200215065826.739102-1-gch981213@gmail.com>
+ <20200218125557.GD4232@sirena.org.uk>
+ <CAJsYDVL03KJv7eewGekBPCfpbOuTX0tJ6qZaydvJnBDzZ5vEwg@mail.gmail.com>
 MIME-Version: 1.0
-References: <20200219074314.22829-1-j-keerthy@ti.com>
- <20200219074314.22829-2-j-keerthy@ti.com>
- <20200219145227.GA1317@bogus> <55b68963-b931-bf67-482e-146e42af4298@ti.com>
-In-Reply-To: <55b68963-b931-bf67-482e-146e42af4298@ti.com>
-From: Rob Herring <robh@kernel.org>
-Date: Thu, 20 Feb 2020 13:40:49 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqJAdCT-xpqxYxkZO+JBHCcewhzb2ebiNJvPzSUyCcmP9g@mail.gmail.com>
-Message-ID: <CAL_JsqJAdCT-xpqxYxkZO+JBHCcewhzb2ebiNJvPzSUyCcmP9g@mail.gmail.com>
-Subject: Re: [PATCH v3 1/4] dt-bindings: thermal: k3: Add VTM bindings
- documentation
-To: Keerthy <j-keerthy@ti.com>
+In-Reply-To: <CAJsYDVL03KJv7eewGekBPCfpbOuTX0tJ6qZaydvJnBDzZ5vEwg@mail.gmail.com>
+X-Cookie: You are number 6!  Who is number one?
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_114102_027415_B991F5A2 
-X-CRM114-Status: GOOD (  18.72  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200220_115128_644900_C06B4E4C 
+X-CRM114-Status: GOOD (  12.00  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,110 +65,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Zhang Rui <rui.zhang@intel.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
+ linux-spi@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5876605383312021416=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 10:13 PM Keerthy <j-keerthy@ti.com> wrote:
->
->
->
-> On 19/02/20 8:22 pm, Rob Herring wrote:
-> > On Wed, Feb 19, 2020 at 01:13:11PM +0530, Keerthy wrote:
-> >> Add VTM bindings documentation. In the Voltage Thermal
-> >> Management Module(VTM), K3 AM654 supplies a voltage
-> >> reference and a temperature sensor feature that are gathered in the band
-> >> gap voltage and temperature sensor (VBGAPTS) module. The band
-> >> gap provides current and voltage reference for its internal
-> >> circuits and other analog IP blocks. The analog-to-digital
-> >> converter (ADC) produces an output value that is proportional
-> >> to the silicon temperature.
-> >>
-> >> Signed-off-by: Keerthy <j-keerthy@ti.com>
-> >> ---
-> >>
-> >> Changes in v3:
-> >>
-> >>    * Fixed errors seen with:
-> >>      dt_binding_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
-> >>
-> >>   .../bindings/thermal/ti,am654-thermal.yaml    | 57 +++++++++++++++++++
-> >>   1 file changed, 57 insertions(+)
-> >>   create mode 100644 Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
-> >> new file mode 100644
-> >> index 000000000000..b6dc95c3acab
-> >> --- /dev/null
-> >> +++ b/Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
-> >> @@ -0,0 +1,57 @@
-> >> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> >> +%YAML 1.2
-> >> +---
-> >> +$id: http://devicetree.org/schemas/thermal/ti,am654-thermal.yaml#
-> >> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> >> +
-> >> +title: Texas Instruments AM654 VTM (DTS) binding
-> >> +
-> >> +maintainers:
-> >> +  - Keerthy <j-keerthy@ti.com>
-> >> +
-> >> +properties:
-> >> +  compatible:
-> >> +    const: ti,am654-vtm
-> >> +
-> >> +  reg:
-> >> +    maxItems: 1
-> >> +
-> >> +  power-domains:
-> >> +    maxItems: 1
-> >> +    description: phandle to the associated power domain
-> >
-> > No need to redefine a standard property description.
->
-> Okay.
->
-> >
-> >> +
-> >> +  "#thermal-sensor-cells":
-> >> +    const: 1
-> >> +
-> >> +required:
-> >> +  - "#thermal-sensor-cells"
-> >> +  - compatible
-> >> +  - reg
-> >> +  - power-domains
-> >> +
-> >> +additionalProperties: false
-> >> +
-> >> +examples:
-> >> +  - |
-> >> +    #include <dt-bindings/soc/ti,sci_pm_domain.h>
-> >> +    vtm: wkup_vtm0@42050000 {
-> >
-> > thermal-sensor@...
-> >
-> > Use generic node names and don't use '_' in node names
->
-> vtm stands for voltage thermal manager and comprises of multiple
-> sensors. This is similar to omap bandgap. Should i replace vtm with more
-> generic name like thermal? as used in:
 
-'vtm' is a label and source construct only (until you do overlays), so
-I don't care what you put really.
+--===============5876605383312021416==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="kaF1vgn83Aa7CiXN"
+Content-Disposition: inline
 
-Rob
+
+--kaF1vgn83Aa7CiXN
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, Feb 20, 2020 at 07:58:06AM +0800, Chuanhong Guo wrote:
+> On Tue, Feb 18, 2020 at 8:55 PM Mark Brown <broonie@kernel.org> wrote:
+
+> > This is an ABI break so you shouldn't be doing this, if the existing
+> > binding works it should continue to work.
+
+> The missing spi-max-frequency is the only part preventing old
+> device tree to work with this driver.
+> If the goal is to make existing dt binding work, I could patch dt using
+> of_add_property in v2. I saw similar device tree patching for legacy
+> bindings in pinctrl-single driver.
+
+That's fine I think, so long as old DTs continue to work.
+
+--kaF1vgn83Aa7CiXN
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl5O4zkACgkQJNaLcl1U
+h9CnhQf/csTFVBvPtYuq5Xz1OdgQcpPuRzKFr7JAXvgpfAUv5qPV/34M4juJxze6
+ei2b2s9UlxK2Naa8GFKqAEKOK79jnk5HrI7QkELb2UpQPSJQKubjc8iHzDsQ8rgC
+V7Qf/2Lv2J/NW4R2XzC0ZXMeSnEMBQepx/pUCQnwXOqReWiy/l2X7pLEJsI4J4pR
+ba9BzEWWAXYoP4SYj/cVlqhWrBh807h6owmwTlV86VrwRRh2cxosTUZVMx6nRNq6
+MBFLZ/vayfFd9LF7BQ5r2isKv+BUrZZ8bd06Gt8vZrrLBoH4YiGhXDLL3CGWvFhk
+6M/bBGLDrkTKwSBb6zMaLOsygszigQ==
+=rZ8a
+-----END PGP SIGNATURE-----
+
+--kaF1vgn83Aa7CiXN--
+
+
+--===============5876605383312021416==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5876605383312021416==--
+
