@@ -2,50 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B476165DA8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 13:36:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA380165DB4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 13:41:07 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=5RyOiojCVK2VWlQ3AFIitIdvKRPd1RiivX8J2R6fXmY=; b=IiyGAwvWze4PYaIUPHnadpbLn
-	d54Z48+WEMphJlBDtTvNIXDT/rh5wHbPxPF41LSQJTaMfdYW8MxsICuW/Td1U2uuwsCArXjIf/C/S
-	LtvRt+quTsmxSSVhW1A2q6Xn61Ha77YFrUhDSNEdLhaeL6oH7nIK5EMPN2ds85qe+XHhieiVvQNql
-	+clbluUckxdnLxiCbGHQLnY+OMFp5cYAHg1UCCn1/DIkFj1pa1QNQH1meoarNnygqDF8QMthjHOo2
-	x0/x3BqOQim1MO/ZKvwb/tLR52qY49+6F8eP6HZXEceCmIWibpfh7oBn9JrRpbNoPIBSqzb3wmCTb
-	Uuqk0eBZQ==;
+	 bh=CIN3u9j1QFKxo7uadXsuVCias7aQ2NG2rZk6ko6zcdY=; b=hOb5rJu9zPTwlaq/+ajJfHoSU
+	Lp6xZ574jNbwTMAGM3RPaM0OplC9fkpitRWAujy5BkYBsLZXkWpNKsmVQV23hqD8ka7lyOzVAYjVj
+	N1jS3eNHv2kB1VWW+Xrx6PfGQ46iG/hts7QKP27/dgLXqLEMdlVwSRmIzvs4s3c/haePIzJiHyk85
+	7x9qGaFlcjfHr/i0mVzTj9fHdtB7rAwUrl0gu6GRXpSoa2CSOoreeNPg6cjlepd7ha4TTXcXjSeaq
+	YLI/DdU5FzO+kV8zwE1r8r67xOp24tgfz8zwu15xZIg6Vt6B4xexBmrj1v6indF2qt1ySokNMULKO
+	IoTzPNQNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4l49-0005X4-5a; Thu, 20 Feb 2020 12:36:29 +0000
+	id 1j4l8U-0007I1-Oq; Thu, 20 Feb 2020 12:40:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4l3x-0005WB-A2
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 12:36:18 +0000
+ id 1j4l8L-0007Hh-Nf
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 12:40:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2624130E;
- Thu, 20 Feb 2020 04:36:16 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 341BC30E;
+ Thu, 20 Feb 2020 04:40:49 -0800 (PST)
 Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 568E83F6CF;
- Thu, 20 Feb 2020 04:36:15 -0800 (PST)
-Subject: Re: [PATCH 1/5] arm64/vdso: use the fault callback to map vvar pages
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5EB883F6CF;
+ Thu, 20 Feb 2020 04:40:48 -0800 (PST)
+Subject: Re: [PATCH 0/5] arm64: add the time namespace support
 To: Andrei Vagin <avagin@gmail.com>
 References: <20200204175913.74901-1-avagin@gmail.com>
- <20200204175913.74901-2-avagin@gmail.com>
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-Pep-Version: 2.0
-Message-ID: <c85bc366-dc23-a241-ed45-5110c0533a02@arm.com>
-Date: Thu, 20 Feb 2020 12:36:14 +0000
+Message-ID: <2d982452-12e5-5c0b-6e4c-adadb7a34616@arm.com>
+Date: Thu, 20 Feb 2020 12:40:47 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200204175913.74901-2-avagin@gmail.com>
-Content-Type: multipart/mixed; boundary="------------D1C904B22F818155C2CA1222"
+In-Reply-To: <20200204175913.74901-1-avagin@gmail.com>
+Content-Type: multipart/mixed; boundary="------------0028FCA932D7F0B766D44C25"
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_043617_439604_89661335 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20200220_044049_865789_B318CACF 
+X-CRM114-Status: GOOD (  19.16  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,38 +71,75 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This is a multi-part message in MIME format.
---------------D1C904B22F818155C2CA1222
+--------------0028FCA932D7F0B766D44C25
 Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
 Hi Andrei,
 
 On 04/02/2020 17:59, Andrei Vagin wrote:
-> This is required to support time namespaces where a time namespace data=
-
-> page is different for each namespace.
+> Allocate the time namespace page among VVAR pages and add the logic
+> to handle faults on VVAR properly.
 >=20
-> Signed-off-by: Andrei Vagin <avagin@gmail.com>
-> ---
-[...]
+> If a task belongs to a time namespace then the VVAR page which contains=
 
-> @@ -206,6 +210,8 @@ static int aarch32_vdso_mremap(const struct vm_spec=
-ial_mapping *sm,
->  #define C_SIGPAGE	1
->  #define C_PAGES		(C_SIGPAGE + 1)
->  #endif /* CONFIG_COMPAT_VDSO */
-> +static vm_fault_t vvar_fault(const struct vm_special_mapping *sm,
-> +		      struct vm_area_struct *vma, struct vm_fault *vmf);
+> the system wide VDSO data is replaced with a namespace specific page
+> which has the same layout as the VVAR page. That page has vdso_data->se=
+q
+> set to 1 to enforce the slow path and vdso_data->clock_mode set to
+> VCLOCK_TIMENS to enforce the time namespace handling path.
+>=20
+> The extra check in the case that vdso_data->seq is odd, e.g. a concurre=
+nt
+> update of the VDSO data is in progress, is not really affecting regular=
 
-I think you forgot to remove this one :)
+> tasks which are not part of a time namespace as the task is spin waitin=
+g
+> for the update to finish and vdso_data->seq to become even again.
+>=20
+> If a time namespace task hits that code path, it invokes the correspond=
+ing
+> time getter function which retrieves the real VVAR page, reads host tim=
+e
+> and then adds the offset for the requested clock which is stored in the=
 
-[...]
+> special VVAR page.
+>=20
+
+Thank you for adding the arm64 support of time namespaces. Overall it loo=
+ks fine
+to me even if I have few comments. I will test it in the coming days just=
+ to
+make sure I did not miss something major. I will keep you updated on the =
+results.
+
+> Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Dmitry Safonov <dima@arista.com>
+>=20
+> Andrei Vagin (5):
+>   arm64/vdso: use the fault callback to map vvar pages
+>   arm64/vdso: Zap vvar pages when switching to a time namespace
+>   arm64/vdso: Add time napespace page
+>   arm64/vdso: Handle faults on timens page
+>   arm64/vdso: Restrict splitting VVAR VMA
+>=20
+>  arch/arm64/Kconfig                            |   1 +
+>  .../include/asm/vdso/compat_gettimeofday.h    |  11 ++
+>  arch/arm64/include/asm/vdso/gettimeofday.h    |   8 ++
+>  arch/arm64/kernel/vdso.c                      | 134 ++++++++++++++++--=
+
+>  arch/arm64/kernel/vdso/vdso.lds.S             |   3 +-
+>  arch/arm64/kernel/vdso32/vdso.lds.S           |   3 +-
+>  include/vdso/datapage.h                       |   1 +
+>  7 files changed, 147 insertions(+), 14 deletions(-)
+>=20
 
 --=20
 Regards,
 Vincenzo
 
---------------D1C904B22F818155C2CA1222
+--------------0028FCA932D7F0B766D44C25
 Content-Type: application/pgp-keys;
  name="pEpkey.asc"
 Content-Transfer-Encoding: quoted-printable
@@ -331,7 +367,7 @@ GrFxzNOCDuNG1w=3D=3D
 =3DVSiF
 -----END PGP PUBLIC KEY BLOCK-----
 
---------------D1C904B22F818155C2CA1222
+--------------0028FCA932D7F0B766D44C25
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -342,5 +378,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---------------D1C904B22F818155C2CA1222--
+--------------0028FCA932D7F0B766D44C25--
 
