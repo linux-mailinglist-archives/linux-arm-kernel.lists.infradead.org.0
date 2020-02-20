@@ -2,82 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 061CF16684A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 21:28:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40329166850
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 21:29:58 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wmLbK2prRnX6tlmoN2IB5+jiWCs4lCVQuuGS9nLE6Pg=; b=VJhHKRpysdKhZE
-	1h+xH4OKDl4qGTixk1ahOtMfPbMinWc8QreG8XniNdP2dWePEntU3hO19URopxqlPPcq4Gc51AVNC
-	YXKuap/LCItrXWc82DnW/PftOTUs6ulPRmz4fnifMqYBwZjZO+A/2Ir9YDFQ+rLPlhhMnGModBTnD
-	OhJw8YVngmGtX9mb9EeQ28AqSNfhmolIRMHn6Z8VlU02s2lpVWfBaJ8FZcZqcNepSUh1KxQ99vPNF
-	/x+aTuavJ9kXiuG+ZZA8jYk9AkrESuxMUdacFC7x1vGQzmQkg1DDWV0F22Un7CKwgZuIuQYgwYMkp
-	AnEmxt5bn9l82U6rf3Wg==;
+	List-Owner; bh=dRzitdiHlA45TgRj4j0URDIt25Qbc9+WjwgG+H7zn4w=; b=qex5pZZpMtOmGb
+	c+t09Ci9SxyJNjswbcE5GVJUECLklMnHZi+j1a9F4UP9H8Kz1JrGMiM9oufElsskhF7RrsHcguSgq
+	XSqH0+O+oy+9wKTKA8v+nAe7uRaQqTN4QgTHnELI4AhubFrZyAlBSD0VstH4/cH9QyJmrtk0kR3A+
+	V06dNFOOXIwHPt405h2MsjfHZCjnTbV+8rBs79EFCnC1xmUjEd694PKNLt9Ni48JQtQ1zNF3zKYMf
+	jw8FCDlmKTk3tNrOSn6yiZHW1uOSZaUUq4yN+UJ+YxeJbDJw/pJ9sf5AdL/XnqmVGbFC8rC/rwYWP
+	k+RgfyORk99MwMUrh2VQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4sQt-0004kb-DN; Thu, 20 Feb 2020 20:28:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j4sSE-0005Ai-17; Thu, 20 Feb 2020 20:29:50 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4sQl-0004ji-ND
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 20:28:21 +0000
-Received: from mail-qv1-f52.google.com (mail-qv1-f52.google.com
- [209.85.219.52])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A274C24656
+ id 1j4sS6-0005AJ-Dx
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 20:29:43 +0000
+Received: by mail-ot1-f65.google.com with SMTP id p8so4910600oth.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 20:28:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582230498;
- bh=e7Roq7Daj5Bqc+VwP6/Sbq5H7ZycqvJy9VIdcG29uAU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=gCipvhE+WLOUNhhRUhdv9GnOviF1bpzSd4O4+SyTc7qCQJ8MOKPQWuOyI0UssKMYl
- 16z7KFtQbq0rYvQB02+iSTnpJVaoGtGRCnXD1Wr5CgNhSyQVafuQkezbVt6XE4mppi
- Eavwf9gf4xktUuOxqN7oBdjmhH2/RaZ0MafFUZLY=
-Received: by mail-qv1-f52.google.com with SMTP id q9so4972qvu.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 12:28:18 -0800 (PST)
-X-Gm-Message-State: APjAAAWDHno41eYFVM+EAqwbUEW2rcM50n/yZ0suKQlVl+GrY8uXkQUE
- 7CkQjhzSZJv65xOT7JmQq7yc7lZDSSstSzcQww==
-X-Google-Smtp-Source: APXvYqzKZv8uzFgFFGlqw1uQdbtON0g1jljHhpVNKgnhHAnH7T+6Bku3pHRk4YpmaohQNiGnHzdhLZliMv9F7naBmsg=
-X-Received: by 2002:a05:6214:11ac:: with SMTP id
- u12mr27563384qvv.85.1582230497726; 
- Thu, 20 Feb 2020 12:28:17 -0800 (PST)
-MIME-Version: 1.0
-References: <20200214063443.23589-1-j-keerthy@ti.com>
- <20200214063443.23589-2-j-keerthy@ti.com>
- <20200218202048.GA32279@bogus> <6895cf5e-9195-c914-f4ce-a83f36027dbf@ti.com>
-In-Reply-To: <6895cf5e-9195-c914-f4ce-a83f36027dbf@ti.com>
+ Thu, 20 Feb 2020 12:29:41 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=4y11Rw9Quj6ChkrwsaKBH1Q0T5iRPrjR3ZQy3ZsS7xA=;
+ b=OnHqaN8KOOVdi6/03C+o4IkZ4OBokmUhC9WA8lIPSqCPAhhHvlPJMTPp86rlmiAPMV
+ QI5ayRI4bwzdsA9mVP4HKuvA3l0kv8cJFqx2BDrJ9O4PEsLzSKoWmPL9p69qNLfIvhgP
+ 2ulztSgAWu+/oISy5OekcTnb3iQe+7fogkp15Vfpv24N+miYoJE34m4ERD006h+aDWde
+ 05lLDq4gON4RYeRNbVxDhCZZeJhYw+/QRWEHuHipCvHI2tC/0GENbSg4cdvfg+Qk28pB
+ sFREYYvrSX2awUQqNZYhkOMmrHaWu4/UMf0RBe0HE3vywwnTpFecQZNj6AeFzojGj75D
+ vMZw==
+X-Gm-Message-State: APjAAAVpuEPvi7pGUlz6E7eiUV4OS3kylse3qs6Y8xYvExcTyfsp5DHe
+ QtFZTW2n2di5J4l4BWVQHQ==
+X-Google-Smtp-Source: APXvYqxqNmvtY+8v4lmPFwBx32CjiYTpN6LA3c1fXpwH+kIAQ9BKjTQ21m1UkbGpGxeL1RGLpLDftw==
+X-Received: by 2002:a05:6830:1d7b:: with SMTP id
+ l27mr23581373oti.251.1582230581148; 
+ Thu, 20 Feb 2020 12:29:41 -0800 (PST)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id l207sm128716oih.25.2020.02.20.12.29.39
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 20 Feb 2020 12:29:40 -0800 (PST)
+Received: (nullmailer pid 7275 invoked by uid 1000);
+ Thu, 20 Feb 2020 20:29:39 -0000
+Date: Thu, 20 Feb 2020 14:29:39 -0600
 From: Rob Herring <robh@kernel.org>
-Date: Thu, 20 Feb 2020 14:28:06 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLamx4hdXLJ5SCP1FPHRP11JP6V-1=NyRY2QM1bvtMtpg@mail.gmail.com>
-Message-ID: <CAL_JsqLamx4hdXLJ5SCP1FPHRP11JP6V-1=NyRY2QM1bvtMtpg@mail.gmail.com>
-Subject: Re: [PATCH v2 1/4] dt-bindings: thermal: k3: Add VTM bindings
- documentation
-To: Keerthy <j-keerthy@ti.com>
+To: Olivier Moysan <olivier.moysan@st.com>
+Subject: Re: [PATCH v3] ASoC: dt-bindings: stm32: convert sai to json-schema
+Message-ID: <20200220202939.GA6480@bogus>
+References: <20200219161733.9317-1-olivier.moysan@st.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200219161733.9317-1-olivier.moysan@st.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_122819_803745_0410971D 
-X-CRM114-Status: GOOD (  21.14  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200220_122942_469937_A49B5633 
+X-CRM114-Status: GOOD (  12.61  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,91 +94,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Zhang Rui <rui.zhang@intel.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, robh@kernel.org, alsa-devel@alsa-project.org,
+ olivier.moysan@st.com, alexandre.torgue@st.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, tiwai@suse.com, lgirdwood@gmail.com,
+ broonie@kernel.org, perex@perex.cz, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 19, 2020 at 1:40 AM Keerthy <j-keerthy@ti.com> wrote:
->
->
->
-> On 19/02/20 1:50 am, Rob Herring wrote:
-> > On Fri, 14 Feb 2020 12:04:40 +0530, Keerthy wrote:
-> >> Add VTM bindings documentation. In the Voltage Thermal
-> >> Management Module(VTM), K3 AM654 supplies a voltage
-> >> reference and a temperature sensor feature that are gathered in the band
-> >> gap voltage and temperature sensor (VBGAPTS) module. The band
-> >> gap provides current and voltage reference for its internal
-> >> circuits and other analog IP blocks. The analog-to-digital
-> >> converter (ADC) produces an output value that is proportional
-> >> to the silicon temperature.
-> >>
-> >> Signed-off-by: Keerthy <j-keerthy@ti.com>
-> >> ---
-> >>
-> >> Changes in v2:
-> >>
-> >>    * Fixed make dt_binding_check errors.
-> >>
-> >>   .../bindings/thermal/ti,am654-thermal.yaml    | 57 +++++++++++++++++++
-> >>   1 file changed, 57 insertions(+)
-> >>   create mode 100644 Documentation/devicetree/bindings/thermal/ti,am654-thermal.yaml
-> >>
-> >
-> > My bot found errors running 'make dt_binding_check' on your patch:
-> >
-> > Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
-> > Error: Documentation/devicetree/bindings/thermal/ti,am654-thermal.example.dts:21.41-42 syntax error
-> > FATAL ERROR: Unable to parse input tree
-> > scripts/Makefile.lib:300: recipe for target 'Documentation/devicetree/bindings/thermal/ti,am654-thermal.example.dt.yaml' failed
-> > make[1]: *** [Documentation/devicetree/bindings/thermal/ti,am654-thermal.example.dt.yaml] Error 1
-> > Makefile:1263: recipe for target 'dt_binding_check' failed
-> > make: *** [dt_binding_check] Error 2
-> >
-> > See https://patchwork.ozlabs.org/patch/1237882
-> > Please check and re-submit.
->
-> Rob,
->
-> I am using:
->
-> Tree: https//github.com/devicetree-org/dt-schema.git
-> branch: master
->
-> I have make dt_binding_check working for
-> Documentation/devicetree/bindings/thermal/ti,am654-thermal.example.dt.yaml
->
-> Documentation/devicetree/bindings/thermal/ti,am654-thermal.example.dts
-> is created without any errors :
->
-> https://pastebin.ubuntu.com/p/6MkMbKPpbY/
->
-> I did not see any errors as the other files erred out.
+On Wed, 19 Feb 2020 17:17:33 +0100, Olivier Moysan wrote:
+> Convert the STM32 SAI bindings to DT schema format using json-schema.
+> 
+> Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+> ---
+> Changes in v2:
+> - use pattern for compatible of child nodes
+> - rework dmas and clocks properties
+> - add "additionalProperties"
+> 
+> Changes in v3:
+> - move clocks properties for st,stm32h7-sai compatible, to 'else' clause
+> ---
+>  .../bindings/sound/st,stm32-sai.txt           | 107 ----------
+>  .../bindings/sound/st,stm32-sai.yaml          | 193 ++++++++++++++++++
+>  2 files changed, 193 insertions(+), 107 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/sound/st,stm32-sai.txt
+>  create mode 100644 Documentation/devicetree/bindings/sound/st,stm32-sai.yaml
+> 
 
-'make -k' is your friend.
+My bot found errors running 'make dt_binding_check' on your patch:
 
-What branch are you on. Only linux-next breaks generally.
+Documentation/devicetree/bindings/display/simple-framebuffer.example.dts:21.16-37.11: Warning (chosen_node_is_root): /example-0/chosen: chosen node must be at root node
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/sound/st,stm32-sai.example.dt.yaml: sai@4400a000: 'clock-names', 'clocks' do not match any of the regexes: '^audio-controller@[0-9a-f]+$', 'pinctrl-[0-9]+'
 
-> Today i tried with DT_SCHEMA_FILES option and then finally reproduced
-> the errors. It is a bit confusing for the first time users.
->
-> Now i have it compiled without any errors.
->
-> Posting v3 in a bit.
->
-> - Keerthy
->
->
-> >
+See https://patchwork.ozlabs.org/patch/1240792
+Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
