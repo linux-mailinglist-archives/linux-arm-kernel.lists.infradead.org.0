@@ -2,94 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81F39166548
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:48:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC0E216657D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:53:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TKi4tFOTga14hIWeGUhA6v49Q3GrJpbax2wI42ETa9w=; b=AALEooYdlG9l4j8O4DRp9qKBB
-	LS+zP/RVTji2FK63/qapXJVW0wdQNiVtdxP0eq7w/9AqtDGF/Lt19BJ7eOcKhNbb6vEJQQqEzF+dC
-	028+iE1EOOEyp6iq7QXvKeqDZtvNq+vAG+yn3Ldh5sZVQlXYSPI/HBsVhKAB2VJwq01fbwhRTnBgY
-	YJOxdoFv58vlaijg0LOv1TCR87xhldzXk7gy5JbX0L9kLuY8h5h+1doWz/xs/JWcY6/0UfryFvIn/
-	ubI/ZWtSaNa/2YB+p0Tm5MH+46FWPdnC6dLJ3P5AWClfJHru55ZatzGGdYkK7rkEnpf5MOYh/LSQk
-	E8AIZCqtw==;
+	 bh=zvjfBXTGkSULKrSli7MG72MFee3MG0qBoeN6YP0DK8M=; b=I13MSTGKvLNWibvCrJgoXFtij
+	Hks3ctMD6jZFd7qXI1NOYczZTnNcwDHTx0G/5eDZ125Wl+/2cbnGXEq9T4WYztFIWicpHSowTEe49
+	2KHgdYGeKmanl1ZPqa9aCzeO7nZy0p8lSgZAxsa66CF/FQ5NxhCa6q9yG4sWDPODcrfE7jvWbmbO0
+	vOAEwra47J3UwOx6oos5QaOEIyx0VPXNva0K57BldCdEznQjjLEAJPlj5stV7XZFZicnwDibkuVEj
+	fOJa6P/DDZiCVwkbfPQAKgAqaPeZ/vY4tlrEvZTHG7fe9We2TyRht+s+snhHOb/ANJRnZqm5vPUUo
+	p7J9b76OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4pvi-0002hW-SL; Thu, 20 Feb 2020 17:48:06 +0000
-Received: from out1-smtp.messagingengine.com ([66.111.4.25])
+	id 1j4q1F-0004nl-Qo; Thu, 20 Feb 2020 17:53:49 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4pvX-0002gr-C9
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:47:57 +0000
+ id 1j4q0k-0004O9-Cf
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:53:21 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 29CCD21B82;
- Thu, 20 Feb 2020 12:47:53 -0500 (EST)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 6AF3F45C6;
+ Thu, 20 Feb 2020 12:53:11 -0500 (EST)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Thu, 20 Feb 2020 12:47:53 -0500
+ by compute3.internal (MEProxy); Thu, 20 Feb 2020 12:53:11 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=OzZ5s0/+nPTILqp5qR3suIDlHla
- J5VfGwJdDzxiCG14=; b=SW1Wt5DPZub7FFigeTeXlQpSM8LZ6gVC61HOI9/kv1d
- OpiZc95TH2v3BcTOXKnHryH58+qEPeJJXAi4wi6CPiG78w7BiAELymaNs7f44xrp
- R74/kQwSh3Zlj4e3m8A03b1z3KAbWAX7mFXXKSA3PtHoFjaev/rCcHsfFgf3R/iM
- jiXTX9y+Xl8oEJas6DXUse6MbdYUpals/GUrAydIEriJfowz20tAEyytMk/GMKa0
- Te5ripKwZnUrU1xPxz0xrytRqdsMtVQxdKnd+TLXkIlT51/19NEV5nr7YW2smuCx
- BoD41TLhg5v07UzrCjcDipofT/gzQdn9urEO0GrKuxA==
+ :content-type:in-reply-to; s=fm2; bh=/ilAHo2sD8DPbarnR+eiZM1rIcY
+ n1q22Nc/a+Tg05HI=; b=f1hD521jZfmjXhb2Ix5sj5gSKqUVPAXbw6V3y9kE6to
+ Cll7dmh1ytx1gz0v7/WzNRkO017HHxEVzRsEfZYA36oZWZ9toV3BM/IW2c5nah9B
+ 1WCwYv2NVPAqppW5jUf3IAiX61sG0O4PTWthwM/vEsZAy6FT4JCUb9y/x+tVaLaG
+ m44s7f5lD10J/Jpw0zSIiaypESbdgai2wam5PUGGo67kBVdY7Vcdvp2i0opakcCe
+ FIKrdBRtMs6kBBm/ZOlOUZefss7+jVUzBrGzpDzbWHAK30uudPdUeh1PD+qYfS2S
+ tlIpYlLjfroJrQcomnBnmLa83nQ4+tu09px9McT3BQg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=OzZ5s0
- /+nPTILqp5qR3suIDlHlaJ5VfGwJdDzxiCG14=; b=w8pJuTV132EgFBMoe2QE65
- GESqRBWBAlWW4Foj4E3n9InYMPM89MlLcWdK4yLZhOXIJA+jDXYsCUnqLTh8DPU4
- 1QrRCcWhxIi8IHaA14peWCIh1GMgHWiGE3SaCMNSGcodK6sslyUBYq6ynlCdK01V
- 4KyZfW2y8Et1YIYppwvI3Rt6lV3kxg7P+lFb0szFIROkkzkbmBrk2xT8IXff3Sjp
- vFNM9bTL50KyY39C9l5UEMPh7rOpfELFb7fn5ogPOFGJuR5wASFugDT2bJ7TNCl2
- vjtKLi1TsLXE/W6glbtOlGA7TEiMG7csuys2yemPhrA5AV685MH5TNLxvohBWsug
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=/ilAHo
+ 2sD8DPbarnR+eiZM1rIcYn1q22Nc/a+Tg05HI=; b=AgvqZ90LDH3mg6xf3AmP0+
+ 8lLwrAeegt4SKMn8A9U5nzO399hyVW11EKkH1o0+cMXq1hWPHEQ16kW/VNFhWFOZ
+ wYwfEDJnszpJDMOfr09xeV4PKlpQ2z0X1jsfMG4aohU/gV5ORABH9wiMnoPX4ZiM
+ lDgJ9zZdXmv/wIPHDOMwkurMPHQmtfU7TvzemD/65KJs+7ZtRXGp+UkjbnxzwQg2
+ EFWkjx53S5gNm+pgmSnYRhFO2TAMGAPW3QBwJV6/+HUWm4FBBcA2/A+q6egp0Y+r
+ y8XzF1e8cyQshaRYFQmgayC16/yG33jLyGj/SJH9+NVkiLlMUXOqoVDr33ePFdiw
  ==
-X-ME-Sender: <xms:R8ZOXuTRwC9E3WP6cRy9axgkTnlp3ZOD0x0M5lMqyMVUwvv5e4Ve4A>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedvgddutdejucetufdoteggodetrfdotf
+X-ME-Sender: <xms:hcdOXrHALdbQKHZDF-p5-V8U6h6NgOsgZV7Wlr5no_8FOvCfK5aSlg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedvgddutdekucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- goufhushhpvggtthffohhmrghinhculdegledmnecujfgurhepfffhvffukfhfgggtuggj
- sehgtderredttdejnecuhfhrohhmpeforgigihhmvgcutfhiphgrrhguuceomhgrgihimh
- gvsegtvghrnhhordhtvggthheqnecuffhomhgrihhnpehigidrihhonecukfhppeeltddr
- keelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilh
- hfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:R8ZOXtFQZvJPU359f3JzCx8yJ0rxAANuubZGxec8WsTLgaFACDKGPw>
- <xmx:R8ZOXoPuHeGQ0xiCv0zWqfUn406LPPunfI7firkigt6mtM_-ukia_g>
- <xmx:R8ZOXhlglNRMFqx8QNA--N3h1kPm1O0LAERLbCxP0Jcl8uOo630rgA>
- <xmx:ScZOXh8wSbiGXZfzswMdCmKY7XJc6tB5KYkH2OpAg6YSIbzHoLkrlA>
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:hcdOXsmtwDvPaLgeLEHxx2j4cLwJjScGaARsUg-I99Jqz_bs0ve5fw>
+ <xmx:hcdOXguIyRKNu6lVir6e10c7mhQS-VgW-Alp2MxTtX_o-8p7Eg6heg>
+ <xmx:hcdOXoPfWFzbyApop1EhhdLZpJ6CPfeQ3lfOKDQzHO90pEWhXT9g1Q>
+ <xmx:h8dOXkkOITkjN6nbD5jPx4U_IsLY2jD4xnSKGOWk05WsgkQcD2MHMw>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 550143280060;
- Thu, 20 Feb 2020 12:47:51 -0500 (EST)
-Date: Thu, 20 Feb 2020 18:47:49 +0100
+ by mail.messagingengine.com (Postfix) with ESMTPA id 90EBE3280059;
+ Thu, 20 Feb 2020 12:53:09 -0500 (EST)
+Date: Thu, 20 Feb 2020 18:53:07 +0100
 From: Maxime Ripard <maxime@cerno.tech>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 1/2] rtc: sun6i: Make external 32k oscillator optional
-Message-ID: <20200220174749.ih3pcj3oxiwvuurz@gilmour.lan>
-References: <20200213211427.33004-1-jernej.skrabec@siol.net>
- <20200213211427.33004-2-jernej.skrabec@siol.net>
- <20200214081443.ajz2sxh5ztk6qb2i@gilmour.lan>
- <5326350.DvuYhMxLoT@jernej-laptop>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH 1/2] dt-bindings: display: sun4i-tcon: Add LVDS Dual Link
+ property
+Message-ID: <20200220175307.qool442lm7qjqb5h@gilmour.lan>
+References: <20200214123244.109300-1-maxime@cerno.tech>
+ <20200214131025.GI4831@pendragon.ideasonboard.com>
+ <20200214154405.f5zuicm6uhhiczfs@gilmour.lan>
+ <20200214154953.GJ4831@pendragon.ideasonboard.com>
+ <20200217174253.mj53us4bb7h2lyca@gilmour.lan>
+ <20200217181006.GE4830@pendragon.ideasonboard.com>
 MIME-Version: 1.0
-In-Reply-To: <5326350.DvuYhMxLoT@jernej-laptop>
+In-Reply-To: <20200217181006.GE4830@pendragon.ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_094755_554929_2C5953B9 
-X-CRM114-Status: GOOD (  26.45  )
+X-CRM114-CacheID: sfid-20200220_095318_619155_9D55F744 
+X-CRM114-Status: GOOD (  26.17  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.25 listed in list.dnswl.org]
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.25 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -109,131 +111,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, a.zummo@towertech.it, alexandre.belloni@bootlin.com,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, wens@csie.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rtc@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============0700272482372810597=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, Sean Paul <seanpaul@chromium.org>,
+ Daniel Vetter <daniel.vetter@intel.com>, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4947409376925781802=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0700272482372810597==
+--===============4947409376925781802==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qx7cvp6xg6zw344o"
+	protocol="application/pgp-signature"; boundary="o5bnojo4ldqgcpzr"
 Content-Disposition: inline
 
 
---qx7cvp6xg6zw344o
-Content-Type: text/plain; charset=utf-8
+--o5bnojo4ldqgcpzr
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-On Fri, Feb 14, 2020 at 05:42:13PM +0100, Jernej =C5=A0krabec wrote:
+On Mon, Feb 17, 2020 at 08:10:06PM +0200, Laurent Pinchart wrote:
 > Hi Maxime,
 >
-> Dne petek, 14. februar 2020 ob 09:14:43 CET je Maxime Ripard napisal(a):
-> > Hi Jernej,
+> On Mon, Feb 17, 2020 at 06:42:53PM +0100, Maxime Ripard wrote:
+> > On Fri, Feb 14, 2020 at 05:49:53PM +0200, Laurent Pinchart wrote:
+> > > On Fri, Feb 14, 2020 at 04:44:05PM +0100, Maxime Ripard wrote:
+> > > > On Fri, Feb 14, 2020 at 03:10:25PM +0200, Laurent Pinchart wrote:
+> > > > > On Fri, Feb 14, 2020 at 01:32:43PM +0100, Maxime Ripard wrote:
+> > > > > > SoCs that have multiple TCONs can use the two set of pins on the first TCON
+> > > > > > to drive a dual-link display. Add a property to enable the dual link.
+> > > > > >
+> > > > > > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> > > > > > ---
+> > > > > >  .../bindings/display/allwinner,sun4i-a10-tcon.yaml         | 7 +++++++
+> > > > > >  1 file changed, 7 insertions(+)
+> > > > > >
+> > > > > > diff --git a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> > > > > > index 86ad617d2327..aa6dd8409dbc 100644
+> > > > > > --- a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> > > > > > +++ b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> > > > > > @@ -105,6 +105,13 @@ properties:
+> > > > > >          - const: edp
+> > > > > >          - const: lvds
+> > > > > >
+> > > > > > +  allwinner,lvds-dual-link:
+> > > > > > +    type: boolean
+> > > > > > +    description: |
+> > > > > > +      On a SoC with two TCON with LVDS support, the first TCON can
+> > > > > > +      operate over both pins sets to output in a dual-link setup. This
+> > > > > > +      will be triggered by setting this property.
+> > > > >
+> > > > > Could you maybe provide an example of how this property is supposed to
+> > > > > be used ? I'm especially wondering what ports are used in that case and
+> > > > > how they're connected.
+> > > >
+> > > > It's pretty trivial to support, it's only a property to set on the
+> > > > encoder node itself.
+> > > >
+> > > > I'm not really sure what you meant by your question with the ports
+> > > > though :/
+> > >
+> > > I assume that, in the single-link case, you have two TCON instances that
+> > > operate independently, each of them with one port that models an LVDS
+> > > connection to a panel.
 > >
-> > Thanks for taking care of this
+> > Indeed,
 > >
-> > On Thu, Feb 13, 2020 at 10:14:26PM +0100, Jernej Skrabec wrote:
-> > > Some boards, like OrangePi PC2 (H5), OrangePi Plus 2E (H3) and Tanix =
-TX6
-> > > (H6) don't have external 32kHz oscillator. Till H6, it didn't really
-> > > matter if external oscillator was enabled because HW detected error a=
-nd
-> > > fall back to internal one. H6 has same functionality but it's the fir=
-st
-> > > SoC which have "auto switch bypass" bit documented and always enabled=
- in
-> > > driver. This prevents RTC to work correctly if external crystal is not
-> > > present on board. There are other side effects - all peripherals which
-> > > depends on this clock also don't work (HDMI CEC for example).
-> > >
-> > > Make clocks property optional. If it is present, select external
-> > > oscillator. If not, stay on internal.
-> > >
-> > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > > ---
-> > >
-> > >  drivers/rtc/rtc-sun6i.c | 14 ++++++--------
-> > >  1 file changed, 6 insertions(+), 8 deletions(-)
-> > >
-> > > diff --git a/drivers/rtc/rtc-sun6i.c b/drivers/rtc/rtc-sun6i.c
-> > > index 852f5f3b3592..538cf7e19034 100644
-> > > --- a/drivers/rtc/rtc-sun6i.c
-> > > +++ b/drivers/rtc/rtc-sun6i.c
-> > > @@ -250,19 +250,17 @@ static void __init sun6i_rtc_clk_init(struct
-> > > device_node *node,>
-> > >  		writel(reg, rtc->base + SUN6I_LOSC_CTRL);
-> > >
-> > >  	}
-> > >
-> > > -	/* Switch to the external, more precise, oscillator */
-> > > -	reg |=3D SUN6I_LOSC_CTRL_EXT_OSC;
-> > > -	if (rtc->data->has_losc_en)
-> > > -		reg |=3D SUN6I_LOSC_CTRL_EXT_LOSC_EN;
-> > > +	/* Switch to the external, more precise, oscillator, if present */
-> > > +	if (of_get_property(node, "clocks", NULL)) {
-> > > +		reg |=3D SUN6I_LOSC_CTRL_EXT_OSC;
-> > > +		if (rtc->data->has_losc_en)
-> > > +			reg |=3D SUN6I_LOSC_CTRL_EXT_LOSC_EN;
-> > > +	}
-> > >
-> > >  	writel(reg, rtc->base + SUN6I_LOSC_CTRL);
-> > >
-> > >  	/* Yes, I know, this is ugly. */
-> > >  	sun6i_rtc =3D rtc;
-> > >
-> > > -	/* Deal with old DTs */
-> > > -	if (!of_get_property(node, "clocks", NULL))
-> > > -		goto err;
-> > > -
+> > > In the dual-link mode, how does that look like ? Does the TCON
+> > > instance that operate in dual-link mode have two ports in DT ? There
+> > > are two physical ports, so I think it makes sense to always have two
+> > > ports in DT. That's what we're doing for the LVDS encoders on R-Car
+> > > Gen3, in order to specify in DT which LVDS input of the dual-link
+> > > panel is connected to which LVDS output of the SoC. That allows
+> > > configuring the LVDS encoder to send the even and odd pixels on the
+> > > right port.
 > >
-> > Doesn't that prevent the parents to be properly set if there's an
-> > external crystal?
+> > As far as I can tell, you can't control that in our TCON. It just on
+> > more lanes, that's it. Also, we currently have multiple ports, to map
+> > another feature of the TCON, which is that it can drive directly a
+> > panel, or will send its output to the HDMI / TV encoders. Adding
+> > another port in that will break the current binding we have.
 >
-> No, why?
->
-> Check these two clk_summary:
-> http://ix.io/2bHY Tanix TX6 (no external crystal)
-> http://ix.io/2bI2 OrangePi 3 (external crystal present)
+> This will create one issue though, in that the dual-link sinks are
+> supposed to have two input ports, in order to expose the odd and even
+> pixels ordering. If you have a single ouput port in your TCON, how will
+> you interface with such sinks ?
 
-I was concerned about the "other" parent. In the case where you don't
-have a clocks property (so the check that you are removing), the code
-then registers a clock with two parents: the one that we create (the
-internal oscillator) and the one coming from the clocks property.
-
-clk_summary only shows the current parent, which is going to be right
-with your patch, but in the case where you have no clocks property,
-you still (attempts to) register two parents, the second one being
-non-functional.
-
-Further looking at it, we might be good because we allocate an array
-of two clocks, but only register of_clk_get_parent_count(node) + 1
-clocks, so 1 if clocks is missing.
-
-Still, I think this should be more obvious, through a comment or
-shuffling a bit the parent registration maybe?
+I guess we could create multiple endpoints in the same port? That's
+not going to be trivial either though given the current binding we
+have :/
 
 Maxime
 
---qx7cvp6xg6zw344o
+--o5bnojo4ldqgcpzr
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXk7GRQAKCRDj7w1vZxhR
-xQesAQC0dLTkjQRPv7nN8RoGvwkfQKD3MlJW0DS82ULs76MWzQD/XsYEwCgNWukt
-Jfxdu03CMK7a7R+nH2HNRolTJSWwpgQ=
-=5PFt
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXk7HgwAKCRDj7w1vZxhR
+xcM8AQCpa6c0h8xK/CcS02Pjk8iW05AziHyjvBQHFtCVXRiR8gD+JzClYTbONPVl
+oCYyx0aKehSbr6qn6kDEgIeDEfuHoQ0=
+=TIhH
 -----END PGP SIGNATURE-----
 
---qx7cvp6xg6zw344o--
+--o5bnojo4ldqgcpzr--
 
 
---===============0700272482372810597==
+--===============4947409376925781802==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -244,5 +231,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0700272482372810597==--
+--===============4947409376925781802==--
 
