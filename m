@@ -2,59 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11B2F1665F9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:14:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B3A516660B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:15:40 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2fvSpg/mL43iKMOB2rYsQYDIa4RX982FHV5JuBEDqAk=; b=Dnigumqi4IWz0/4gn/e6+dfaO
-	Pnf7fmJbkVhFYyRsdePvIZRB/4FezCXYEfgbKcWfyVany10ZFyEtvt6RW2N+PnxPTjEtDBhEG91P3
-	2nJkdoERUdj6jJLNZ1Ptuv1QBnud8qoFVPf1g9llVgK2NMZ3H8y/jbzM+wEQf0m1ooqKM9igYv4iL
-	x7XAuLaeK+dNzPpkWtE3LqgWqz5osypBMxjdNDLCNDR7gkRcA96bk0kQZb48Tf89VtH+Z3Cdf3gUy
-	pTc6cxqn10Ll/BjwmCNodg72yA7YrYbr6tiAzm739JI5DV7vhRLvaNeci0/uilv2lMWd0LXIDOmLc
-	UUYUeihGA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jUgwL2F9fWkLqyUccrv3BISz94KpjIYTN29alGxlKz8=; b=SNXFT3IempJ2zr
+	TWF0c0J16Xl/k8t+gU5d1AQMEDdJ6uo+UbgM5sZhLV+wKKDU0H+fwMUg2pwfYBIoO8Iz4jJq26ASl
+	U0WNGSZFBTPuZFv2Cij0D73WBlm/l66GlPBUGXF00gvWbpFH0EMvn/rKPKRhYqJu+Wsg55XoBhEKd
+	/eO9GKCMMQJhjQ3eEHRq3gU7aXyNsLFxDHmXi/rU5V4r/h3wuHtYObSQobuhxEHdMFe3JezVeadTS
+	kCTu+eDnMWQPHPs+krglihlXLHY8DMOqTJCYGBIBUFqGtvO3jEuvq51WSLLKssg5Y9Wen+G8d6/cB
+	Ug04J2KG85uK6iq4wwvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4qLK-0000HP-Ry; Thu, 20 Feb 2020 18:14:34 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1j4qMF-0001o9-Ui; Thu, 20 Feb 2020 18:15:31 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4qLC-0000Ge-2n; Thu, 20 Feb 2020 18:14:27 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 13AACAC16;
- Thu, 20 Feb 2020 18:14:23 +0000 (UTC)
-Message-ID: <cab8c0d70fd30c49579199d002b81b87ed34a920.camel@suse.de>
-Subject: Re: [PATCH v2 3/4] PCI: brcmstb: Wait for Raspberry Pi's firmware
- when present
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <florian.fainelli@broadcom.com>, 
- linux-kernel@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>, 
- bcm-kernel-feedback-list@broadcom.com, Lorenzo Pieralisi
- <lorenzo.pieralisi@arm.com>, Andrew Murray <amurray@thegoodpenguin.co.uk>
-Date: Thu, 20 Feb 2020 19:14:20 +0100
-In-Reply-To: <10a53db8-960e-eea7-1e8d-790de9a79e71@broadcom.com>
-References: <20200219123933.2792-1-nsaenzjulienne@suse.de>
- <20200219123933.2792-4-nsaenzjulienne@suse.de>
- <10a53db8-960e-eea7-1e8d-790de9a79e71@broadcom.com>
-User-Agent: Evolution 3.34.4 
+ id 1j4qM5-0001n5-EH
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 18:15:22 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 7FA3A21E6A;
+ Thu, 20 Feb 2020 13:15:20 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Thu, 20 Feb 2020 13:15:20 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm2; bh=bTY04C+O+M5VoNh7o4Q2CKTee3
+ XA402Zn2WokekNQ4g=; b=uD/51iPXR6UQ+mLunvu1VciARUfS67NKWlzivratHe
+ T3J91p/XxhI3LA7K5BLWMi09qvjJ1b/P0JIc91kac6NWCHnLiZqaxN9Ee1zMVDFz
+ zdV8x9KBD2oH0LsPxXcrTRoZXEwCkNOtzvLZbgwjPq4u/V67lW6X2i1yjcRz2dkf
+ CG4uS4GgIjKgt9umzpeV8vOSmNMj1BS5bUxMlMYXtYZguarz/fSWYwmA5u53v1Sy
+ 6sKC5AW+mxGIHTMQh4z1yb3d6fJR2ImAc1HPKcn8ndysXXibElzKMdoriu2kNMSF
+ eda/oZF2sylMCQDSOVjsJ/HOYoV28wYDXDk1JvqzumBA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=bTY04C+O+M5VoNh7o
+ 4Q2CKTee3XA402Zn2WokekNQ4g=; b=l8Fh8IJJf4UjcISRG7CtRjzxk88/OBY3o
+ mOXzK8CaoNfJE62lYtQ0Nl+zXGCKuwg55smzhkjBOV85V3dXj+XPpwgN68EtmKXz
+ jKueU6zmeuybkiOSooZr8kMPcd2PZVFeLYG/G/B7gYkAp2B5wz2VhXlXX1pJW6Fd
+ WCj6AhhXNR720mkyO5g1T621MGd4Hx0oEZcG09zJse6BPUszhMcx/9Mv4NLqk4fT
+ /t9K20LDaQtqdB5YKo9cbj/PlEGZeeE05vRMlNyDq/VhryN1Pf4Xpn8ZEy5wnOAd
+ RbMWiAG+aG406Rvdb4aWTXVw+9k+hqOo8HXJHlZ08faI0biT7sJ8g==
+X-ME-Sender: <xms:t8xOXrgPoQaAyMBXfjzlsYrIIU36Yn4Bgh1eEPlNGhYldNsRJo4kuw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedvgdduudefucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhephffvufffkffoggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcu
+ tfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltddrke
+ elrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhf
+ rhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:t8xOXpgdGlY4YknBhal7OL7MTehCLvwZtEO5Ib6mcMDAlkFnfRkC1w>
+ <xmx:t8xOXju47exmKdTUbBzm5illLucTRA_ghazYHhSGTKFkiIw9oy71YQ>
+ <xmx:t8xOXqSFebpkxj1GX7s-L375DhI_wkIp3wFXYrTueQBn2TBsybKYVw>
+ <xmx:uMxOXgPizo3iIBiQps2hulvk78eDkxvvVOOzqzHwP90F3XhP_OOm4Q>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id B4C8C3280062;
+ Thu, 20 Feb 2020 13:15:18 -0500 (EST)
+From: Maxime Ripard <maxime@cerno.tech>
+To: Joerg Roedel <joro@8bytes.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>
+Subject: [PATCH v2 0/4] iommu: Add Allwinner H6 IOMMU driver
+Date: Thu, 20 Feb 2020 19:15:12 +0100
+Message-Id: <cover.a31c229a83f1d92e6928ae2adb70887da0fd44b3.1582222496.git-series.maxime@cerno.tech>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_101426_266818_EB9EDC49 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200220_101521_626484_7EF07A16 
+X-CRM114-Status: GOOD (  13.21  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ [66.111.4.25 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -67,82 +105,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tim.gover@raspberrypi.org, gregkh@linuxfoundation.org,
- linux-usb@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
-Content-Type: multipart/mixed; boundary="===============5572862504974660042=="
+Cc: devicetree@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============5572862504974660042==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-RsrYh3XIvQNMFLjrdUpB"
+Here's a series adding support for the IOMMU introduced in the Allwinner
+H6. The driver from Allwinner hints at more SoCs using it in the future
+(with more masters), so we can bet on that IOMMU becoming pretty much
+standard in new SoCs from Allwinner.
 
+One thing I wasn't really sure about was how to expose the statistics
+reported by the IOMMU PMU (TLB hit rates, latencies, and so on). The
+Allwinner driver exposes them through custom sysfs files, while they would
+be best represented through perf I guess? Anyway, I'm planning to support
+them later on.
 
---=-RsrYh3XIvQNMFLjrdUpB
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Let me know what you think,
+Maxime
 
-On Wed, 2020-02-19 at 11:21 -0800, Florian Fainelli wrote:
-> On 2/19/20 4:39 AM, Nicolas Saenz Julienne wrote:
-> > xHCI's PCI fixup, run at the end of pcie-brcmstb's probe, depends on
-> > RPi4's VideoCore firmware interface to be up and running. It's possible
-> > for both initializations to race, so make sure it's available prior
-> > starting.
-> >=20
-> > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->=20
-> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
->=20
-> It does not look like there is something making sure that
-> CONFIG_RASPBERRYPI_FIRMWARE is being selected or depended on, should we
-> have a "default XHCI_PCI" added to drivers/firmware/Kconfig?
+Changes from v1:
+  - Add a patch to configure the IOMMU on the virtual DRM device
+  - Rework the domain allocation / freeing
+  - Remove the runtime_pm handling to power up the device and rely on
+    refcounting
+  - use map gfp argument for kmem cache allocation
+  - Removed unused macros
+  - Switched from BIT(0) to 1 for the page table entry valid flag to make
+    it more obvious that it's over multiple bits.
+  - Switch to module_initcall
+  - Make accesses to the fwspec more consistant
+  - Removed dev_info logs
+  - Reworked invalidation / flushing
+  - Allow for compilation with COMPILE_TEST
 
-I think having that would enable the firmware interface for all XHCI_PCI us=
-ers,
-which isn't ideal. The firmware call has stubs for the case the firmware
-interace isn't compiled, so no problem there. Ultimately we want to enable
-CONFIG_RASPBERRYPI_FIRMWARE only when the built image targets the RPi4
-(reglardless of being arm64/arm32). But I don't think that's feasible.
+Maxime Ripard (4):
+  dt-bindings: iommu: Add Allwinner H6 IOMMU bindings
+  iommu: Add Allwinner H6 IOMMU driver
+  arm64: dts: allwinner: h6: Add IOMMU
+  drm/sun4i: mixer: Call of_dma_configure if there's an IOMMU
 
-Regards,
-Nicolas
+ Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml |   61 ++++-
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi                           |   10 +-
+ drivers/gpu/drm/sun4i/sun8i_mixer.c                                    |   13 +-
+ drivers/iommu/Kconfig                                                  |    9 +-
+ drivers/iommu/Makefile                                                 |    1 +-
+ drivers/iommu/sun50i-iommu.c                                           | 1072 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 6 files changed, 1166 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml
+ create mode 100644 drivers/iommu/sun50i-iommu.c
 
-
---=-RsrYh3XIvQNMFLjrdUpB
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl5OzHwACgkQlfZmHno8
-x/7JXggAp1+xWNqaL/5ExpM/n9Su+Z/6pLAFYSYbVlKAzipGxgOD4a9FH3jJ8p4J
-mACCkp+9psxkkQfoNW4s+edRXTKEJ8rH/Zv1tRJ3CpViHb8b95XW3zO6xWb2BLln
-Y+Q8VVvplVzQxci+Qo6oQki1hgvwm2lvTcbnD6w3yu0U3LUKKDzkZHQLVUtvXU9m
-thco7iOswNEq9FshjSLyrUdeZvtuYjx3zHNO5tFz7+Zo226CTPe9teoUjBMmlppv
-iLDJwBPAmT1QJNjDCP+ziduGh2IH14Wmf5IMofn7p9wnxCvvlL4CfZp9+QLtI2UH
-A7w2lxIPiOh0ERYep91DEHD/Jy3Hcw==
-=mdiV
------END PGP SIGNATURE-----
-
---=-RsrYh3XIvQNMFLjrdUpB--
-
-
-
---===============5572862504974660042==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+base-commit: bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9
+-- 
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5572862504974660042==--
-
-
