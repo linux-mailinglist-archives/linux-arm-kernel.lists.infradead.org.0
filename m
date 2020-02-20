@@ -2,100 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 511C7166497
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:26:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58BA9166498
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:26:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Ewa5hL9bmjkpgiwjgranKGUxf9WgLFMBYI/3d5QNHZg=; b=L48y2WDXEV4og9j1GpiDaBokR
-	YKANkJhtdv503flwGxNpN0Ez0VrkPFPDZyZYzkGpQWpa1p65fGjr4QDrXG8f8jrcdh25COdo7rWPr
-	wai29K1RulfU6v2ocnapHUqqMAYrPZrQ3sBXHwwDqaLxl/38Q/mafUXgebn/nsNNiSb9e0F+HPCaD
-	0urHVkSBm+422cEKoEkj9TJ8Kd4xa6zfqhY0dJzjE6n9qXvy0DSoA9Z5u3vD0aim1NdMduCeciLg+
-	N4UGMJbYrWgdcUCRi6mSWsV07JYvYoCspSR+WcgcH1otEKZVrtkvcD1Lb111Vbt+S8dCdvcUrIUr5
-	onLET6QFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FbacVs8mqmh7GM4WWX1TP8biQvB8f+cTktNtYk7La44=; b=tPUipyU+Y3p7R4
+	5HxlzJ6bYuwqUC34bc6lgUkjPMOW5Muc5+3jGMsNcW2jEGkps9qVXRBgTTb+SM2jIBDZYU7BHIoUg
+	eD6Wi1fXmjJ5KNtk0q6rJTT1AtdEmfDsq55VNByObhjWmnv/nvjrsgKey3mTBNAIcAb9Xh6WxvUE9
+	KFghHyT3JK6qZjx1bTyyxqTK+HvGMjTdvPXGphA3aXvTNBjDRKlNgz69Mvz5GBooykNnq8sely8VP
+	rcMxvU/MqIUVerlT0mpDUjqCQQVbgUKL/lTn3bpLMy31iFvk6fDOS1UUZGrptGFQssJS5mh+o/9e6
+	L8MWameBNz0OF8D5iFPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4paP-0007Dk-PA; Thu, 20 Feb 2020 17:26:05 +0000
-Received: from out1-smtp.messagingengine.com ([66.111.4.25])
+	id 1j4pai-0007Xk-99; Thu, 20 Feb 2020 17:26:24 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4pZa-0005dj-UT
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:25:18 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id CEE3522085;
- Thu, 20 Feb 2020 12:25:13 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Thu, 20 Feb 2020 12:25:13 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=CmeCB3EedI4a6cWfKVdd/aDqAGy
- NtRjQTLkKMzwbjVw=; b=nTKo5PKjyq1NZxjw2fBMnS1gEb72o3x2VarDP8wMIBX
- mvsSxAh0WI87NeM/0jWE7yYPXLX8b/fHWd5IzodG9Fr1iUTMCWcrrlB7POHcfczH
- 00gtZTLAgXEkVjolqBjcy91vXe3w8Uvd/UE43VFaBJqiOQEVAZ1vhevBrlBXYAvD
- Mb100qku+sgsLzE+CFf3EIQP33ktZH1Sk1fOTZccL6kbpUF/ZZtWidmCZxOXimoe
- KdffWN2ZSKgNAnZjihwyYOQJ4Iy3J41rOEVgY/2DFlIfS7/yrujlzLZk8iPU3vAX
- scqQ7IOmqIXYpx/w03mWaDb+fBSbzMy6HF0Z9A95UPw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=CmeCB3
- EedI4a6cWfKVdd/aDqAGyNtRjQTLkKMzwbjVw=; b=NfzWIUGidz0DyNGf8iTI9F
- MPMgfxJ+ofG7dFjM/AlLZShZWpiWNU0ncYPXnQEAKmG0gz8xhDEfYEDPhVQCMA4k
- hf2Fov4AZm0a5H6imgpc/brzbaosv24+agYlKqZ6GKgo7hN7sTHAiVZv6TaMCXZ/
- 08RcpGNj/fktMc8/JFJ8v3ZWII8inDte+L0FWNJ36lEUTTDP7sA5UNAzUYSH5+2x
- mXYUzEnuI6Itu3dySNAUw4l94vw9BDVrJVzXBwI7ez6zF9NNfM+QWFPCBByDsWS4
- BncBbk+cn2eIgO43Y/rsBx9KDI9BLT8zohzl1YD04Eo1EXX5DhzT6L/+80DQdDvw
- ==
-X-ME-Sender: <xms:-cBOXv88wPuMH1Llg_UxFyu9nT6vA7c8hruXgoGrhofOXkkcGY48GA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedvgddutdefucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:-cBOXjTyMwBnhd-563HYuuyq6YuTeUGkRZBwdg_dS0yJJn2HtwIiSA>
- <xmx:-cBOXkn14MXT89knvPLbxLKp85rlEfpjRmelxVRGA-tE6m1Iq8GTCg>
- <xmx:-cBOXraNplfJQ27KkI-_mkGnekuNBSawhVgc4JQ8k0xYCD-lcAl3Tw>
- <xmx:-cBOXq4xkfQBLiLS-vZCiInT5w63KndcSnrhxj6ArMMVKOl-zYn4bQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 723713280063;
- Thu, 20 Feb 2020 12:25:13 -0500 (EST)
-Date: Thu, 20 Feb 2020 18:25:12 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Andrey Lebedev <andrey.lebedev@gmail.com>
-Subject: Re: [PATCH 5/5] drm/sun4i: tcon: Support LVDS output on Allwinner A20
-Message-ID: <20200220172512.dmjtqgyay73x3ubx@gilmour.lan>
-References: <20200210195633.GA21832@kedthinkpad>
- <20200219180858.4806-1-andrey.lebedev@gmail.com>
- <20200219180858.4806-6-andrey.lebedev@gmail.com>
+ id 1j4pZp-0005qU-Ur
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:25:34 +0000
+Received: by mail-wm1-x342.google.com with SMTP id c84so2940414wme.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 09:25:29 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=thegoodpenguin-co-uk.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=6yo/wEFYTgODGKnbWEUDj+nf8O3PSpjHxesG5sknQ/A=;
+ b=KYzgbjNX1K0CzUdOqySZxyADNE1VkZOd+lFmYKJzXNKvDdxhmo4+L5Z+A9zUWAZm6Y
+ MXOaTeHGZYDQeZuL9/XRuAHG6o5QpfwBWIuhIi5k5Fh112a1u4Fy+65475Ko8TjrjHTu
+ FgBtGghky4L0w6i64qMwjwuWxgYOPPL2kH1i7YYoOQOnEglhbyux1AeBVzsvu79Qb9yH
+ cVXsZLya4qevlYaCviYxBRU7Rp93DncQYLGRYjBwiKZSlR8z36kiIve9ZIjVmQdw3uaF
+ Q0wZ0sFjblB5LjlFdl3ZxALrBPX/05fn/MH2oRzRc5ZYx3PmJCjJ7Q8CsgXrKtlI95ne
+ kXwQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=6yo/wEFYTgODGKnbWEUDj+nf8O3PSpjHxesG5sknQ/A=;
+ b=EE/HoxOVwBUEYh65JmJToXPQVIkJboXmoU42n8SXfDA6hgvDDOWSHX0+sWCYP4J+OG
+ zem0kTkw7AFZqcKFUuG7aX20Igb3UMUrsYvIDlIWt2+1lVSbF7bEcZW0l6qqSyWgykL2
+ JXKWEKM8TdzvR91ZBVUiBCF7GFn+lChmws6E0tjPE6md6bmQOuq1TKkkrVKJt25pKPKS
+ opycrXgYpiwAFID/nAE1xxjttMn7eErVBF70KIDhrysXA67TDZLvDpsBwr27RWDx0Xyk
+ 4uI7bK4oS5zQ78h1U0DzdnNJbvC5yBBp6m9ysQ0Kr2Bh3d4cuZIkthjHYX8aNZCNBboZ
+ NJ/g==
+X-Gm-Message-State: APjAAAWiILGpHzHWgAjXK/9FhENnFioK4XumUBiHBFSn8I53bJO/qPPu
+ NuIxuHMd19YJOlPJyhg62kcp1g==
+X-Google-Smtp-Source: APXvYqxFOHbigA4u8XgOj9oDgXx9MToMJN0LilNw8H81qX/4WzYdOGoBOHPXL6cb43VJZ9gbrJzAmQ==
+X-Received: by 2002:a7b:c8c5:: with SMTP id f5mr5442945wml.44.1582219528295;
+ Thu, 20 Feb 2020 09:25:28 -0800 (PST)
+Received: from big-machine ([2a00:23c5:dd80:8400:98d8:49e6:cdcc:25df])
+ by smtp.gmail.com with ESMTPSA id r1sm267897wrx.11.2020.02.20.09.25.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 20 Feb 2020 09:25:27 -0800 (PST)
+Date: Thu, 20 Feb 2020 17:25:25 +0000
+From: Andrew Murray <amurray@thegoodpenguin.co.uk>
+To: Zhiqiang Hou <Zhiqiang.Hou@nxp.com>
+Subject: Re: [PATCHv10 05/13] PCI: mobiveil: Add callback function for
+ interrupt initialization
+Message-ID: <20200220172525.GG19388@big-machine>
+References: <20200213040644.45858-1-Zhiqiang.Hou@nxp.com>
+ <20200213040644.45858-6-Zhiqiang.Hou@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20200219180858.4806-6-andrey.lebedev@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200213040644.45858-6-Zhiqiang.Hou@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_092515_158939_18A91FFB 
-X-CRM114-Status: GOOD (  13.69  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200220_092530_295927_72AEBDC8 
+X-CRM114-Status: GOOD (  17.46  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.25 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.25 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,120 +95,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: airlied@linux.ie, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Andrey Lebedev <andrey@lebedev.lt>, wens@csie.org, daniel@ffwll.ch,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6269425842580059793=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ m.karthikeyan@mobiveil.co.in, arnd@arndb.de, linux-pci@vger.kernel.org,
+ l.subrahmanya@mobiveil.co.in, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, leoyang.li@nxp.com, Minghuan.Lian@nxp.com,
+ robh+dt@kernel.org, Mingkai.Hu@nxp.com, Xiaowei.Bao@nxp.com,
+ catalin.marinas@arm.com, bhelgaas@google.com, andrew.murray@arm.com,
+ shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Feb 13, 2020 at 12:06:36PM +0800, Zhiqiang Hou wrote:
+> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
+> 
+> The Mobiveil GPEX internal MSI/INTx controller may not be used
+> by other platforms in which the Mobiveil GPEX is integrated.
+> This patch is to allow these platforms to implement their
+> specific interrupt initialization.
+> 
+> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 
---===============6269425842580059793==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="qbnnqotkbijgn4ey"
-Content-Disposition: inline
+Reviewed-by: Andrew Murray <amurray@thegoodpenguin.co.uk>
 
-
---qbnnqotkbijgn4ey
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Wed, Feb 19, 2020 at 08:08:58PM +0200, Andrey Lebedev wrote:
-> From: Andrey Lebedev <andrey@lebedev.lt>
->
-> A20 SoC (found in Cubieboard 2 among others) requires different LVDS set
-> up procedure than A33. Timing controller (tcon) driver only implements
-> sun6i-style procedure, that doesn't work on A20 (sun7i).
->
-> Signed-off-by: Andrey Lebedev <andrey@lebedev.lt>
 > ---
->  drivers/gpu/drm/sun4i/sun4i_tcon.c | 37 +++++++++++++++++++++++++++++-
->  drivers/gpu/drm/sun4i/sun4i_tcon.h | 11 +++++++++
->  2 files changed, 47 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> index b7234eef3c7b..09ee6e8c6914 100644
-> --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> @@ -114,6 +114,30 @@ static void sun4i_tcon_channel_set_status(struct sun4i_tcon *tcon, int channel,
->  	}
+> V10:
+>  - Introduced a helper function mobiveil_pcie_integrated_interrupt_init().
+> 
+>  drivers/pci/controller/mobiveil/pcie-mobiveil-host.c | 12 +++++++++++-
+>  drivers/pci/controller/mobiveil/pcie-mobiveil.h      |  7 +++++++
+>  2 files changed, 18 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/pci/controller/mobiveil/pcie-mobiveil-host.c b/drivers/pci/controller/mobiveil/pcie-mobiveil-host.c
+> index ea90d2f8692e..53ab8412a1de 100644
+> --- a/drivers/pci/controller/mobiveil/pcie-mobiveil-host.c
+> +++ b/drivers/pci/controller/mobiveil/pcie-mobiveil-host.c
+> @@ -499,7 +499,7 @@ static int mobiveil_pcie_init_irq_domain(struct mobiveil_pcie *pcie)
+>  	return 0;
 >  }
->
-> +static void sun4i_tcon_setup_lvds_phy(struct sun4i_tcon *tcon,
-> +				      const struct drm_encoder *encoder)
+>  
+> -static int mobiveil_pcie_interrupt_init(struct mobiveil_pcie *pcie)
+> +static int mobiveil_pcie_integrated_interrupt_init(struct mobiveil_pcie *pcie)
+>  {
+>  	struct platform_device *pdev = pcie->pdev;
+>  	struct device *dev = &pdev->dev;
+> @@ -539,6 +539,16 @@ static int mobiveil_pcie_interrupt_init(struct mobiveil_pcie *pcie)
+>  	return 0;
+>  }
+>  
+> +static int mobiveil_pcie_interrupt_init(struct mobiveil_pcie *pcie)
 > +{
-> +	regmap_write(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
-> +		     SUN4I_TCON0_LVDS_ANA0_CK_EN |
-> +		     SUN4I_TCON0_LVDS_ANA0_REG_V |
-> +		     SUN4I_TCON0_LVDS_ANA0_REG_C |
-> +		     SUN4I_TCON0_LVDS_ANA0_EN_MB |
-> +		     SUN4I_TCON0_LVDS_ANA0_PD |
-> +		     SUN4I_TCON0_LVDS_ANA0_DCHS);
+> +	struct mobiveil_root_port *rp = &pcie->rp;
 > +
-> +	udelay(2); /* delay at least 1200 ns */
-> +	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA1_REG,
-> +			   SUN4I_TCON0_LVDS_ANA1_INIT,
-> +			   SUN4I_TCON0_LVDS_ANA1_INIT);
-> +	udelay(1); /* delay at least 120 ns */
-> +	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA1_REG,
-> +			   SUN4I_TCON0_LVDS_ANA1_UPDATE,
-> +			   SUN4I_TCON0_LVDS_ANA1_UPDATE);
-> +	regmap_update_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
-> +			   SUN4I_TCON0_LVDS_ANA0_EN_MB,
-> +			   SUN4I_TCON0_LVDS_ANA0_EN_MB);
+> +	if (rp->ops->interrupt_init)
+> +		return rp->ops->interrupt_init(pcie);
+> +
+> +	return mobiveil_pcie_integrated_interrupt_init(pcie);
 > +}
 > +
->  static void sun6i_tcon_setup_lvds_phy(struct sun4i_tcon *tcon,
->  				      const struct drm_encoder *encoder)
+>  int mobiveil_pcie_host_probe(struct mobiveil_pcie *pcie)
 >  {
-> @@ -1455,7 +1479,18 @@ static const struct sun4i_tcon_quirks sun6i_a31s_quirks = {
->  	.dclk_min_div		= 1,
+>  	struct mobiveil_root_port *rp = &pcie->rp;
+> diff --git a/drivers/pci/controller/mobiveil/pcie-mobiveil.h b/drivers/pci/controller/mobiveil/pcie-mobiveil.h
+> index 81ffbbd48c08..0e6b5468c026 100644
+> --- a/drivers/pci/controller/mobiveil/pcie-mobiveil.h
+> +++ b/drivers/pci/controller/mobiveil/pcie-mobiveil.h
+> @@ -130,10 +130,17 @@ struct mobiveil_msi {			/* MSI information */
+>  	DECLARE_BITMAP(msi_irq_in_use, PCI_NUM_MSI);
 >  };
->
-> +static const struct sun4i_tcon_quirks sun7i_a20_tcon0_quirks = {
-> +	.supports_lvds		= true,
-> +	.has_channel_0		= true,
-> +	.has_channel_1		= true,
-> +	.dclk_min_div		= 4,
-> +	/* Same display pipeline structure as A10 */
-> +	.set_mux		= sun4i_a10_tcon_set_mux,
-> +	.setup_lvds_phy		= sun4i_tcon_setup_lvds_phy,
+>  
+> +struct mobiveil_pcie;
+> +
+> +struct mobiveil_rp_ops {
+> +	int (*interrupt_init)(struct mobiveil_pcie *pcie);
 > +};
 > +
->  static const struct sun4i_tcon_quirks sun7i_a20_quirks = {
-> +	.supports_lvds		= false,
-
-False is already the default here.
-
-I've removed it while applying
-
-Maxime
-
---qbnnqotkbijgn4ey
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXk7A+AAKCRDj7w1vZxhR
-xayeAQDILhx+HqIc9ELL8w3aXArAebOzGMH9WytljuIvons+JAEA3kY2DIgA9alq
-IOF7a7Q4pPKQWirbPIzwYsb2BRGiJQo=
-=C6AH
------END PGP SIGNATURE-----
-
---qbnnqotkbijgn4ey--
-
-
---===============6269425842580059793==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>  struct mobiveil_root_port {
+>  	char root_bus_nr;
+>  	void __iomem *config_axi_slave_base;	/* endpoint config base */
+>  	struct resource *ob_io_res;
+> +	struct mobiveil_rp_ops *ops;
+>  	int irq;
+>  	raw_spinlock_t intx_mask_lock;
+>  	struct irq_domain *intx_domain;
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6269425842580059793==--
-
