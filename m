@@ -2,62 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0464166991
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 22:07:53 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id A35681669AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 22:15:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=osJU2JaMocx61pwTJqadW+MeDxpxczxYC0gxyyqTV2s=; b=nudcHHGDv0TLsl
-	w5eA5D1sbQB/yalDffesKLNqsGLQKr6kc8rnFsg8fOD1+P08Kmuisd5+Y0FV1alH/t2NxJ+cQuwqm
-	PlxibnwLJKnG6v7AMCQWMiKvr+j9sL5aYxqtO97k3alaVlfW6pNnplK0p3uO6SKqLwM/VCNgB8Tu4
-	4utKghW5lKL9uBvMLpVfk3cEgBuySoyoCNyfOqo1ldYiu1QXmDAJ7uHPWpmeJHpaPH6GHobvbGCC9
-	Kn8gssJJzj2l9YP38e3VQLSXo1f9LukzaeHqUIw7D6i5Fc8in2jS9PiLc6nObo1yoDsW/ze8+Feni
-	N3FTcACprp+Jg8KoHGZg==;
+	List-Owner; bh=cBKWa4BBe0KQ02bHeTzoxuY0E2eq/lHf/iMuu8joqw8=; b=PurfxvAUptr8Qv
+	ADK+fgBbMeTLT4Ti7BVMzfChegCdrtQlyH+JiIJC882yVq2BtCK+3TZpigpjQVx/kokRjb/pnRLo0
+	kGQ9KqjpNNkumwnt/icr3i6nmBJaH4RJzgfda86h76uLu+Xq4rE1PutYoqS/pnGbjYGxxWLlIA1hu
+	Sj5D7ZG0Z0QqynfhEe9TPrlTsxgm3Wxh4j8qCwiCY2N/wZD2xA65nIDnmw8CfyIjEE6bg0sJ4hfkK
+	eeBCHf/Hfkf4jO9dbaSKH5Kfr71HQB6D3+NfJFaa+nc3EPS6zi8KZmwLF4RzSAlgPbN9Byant5pVb
+	7rc5gHm/3WXABoGP3GBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4t2o-0001Iz-I5; Thu, 20 Feb 2020 21:07:39 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1j4tAS-0004gy-Pi; Thu, 20 Feb 2020 21:15:32 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4t2d-0001Hz-19
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 21:07:28 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1j4t2W-000495-Ch; Thu, 20 Feb 2020 22:07:20 +0100
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1j4t2V-0002Rs-0N; Thu, 20 Feb 2020 22:07:19 +0100
-Date: Thu, 20 Feb 2020 22:07:18 +0100
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH] pwm: bcm2835: Dynamically allocate base
-Message-ID: <20200220210718.4vrn6u2c2remeuhm@pengutronix.de>
-References: <20200203213536.32226-1-f.fainelli@gmail.com>
- <08e2b640f0a7713d905295fc4f75df49617be6c1.camel@suse.de>
- <3b22decc-9ebd-3522-4fd7-e5721c8b25b2@gmail.com>
+ id 1j4tAE-0004fH-T6; Thu, 20 Feb 2020 21:15:20 +0000
+Received: by mail-ed1-x543.google.com with SMTP id m13so35421740edb.6;
+ Thu, 20 Feb 2020 13:15:18 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=E0r8UtKklC8vn0exQFm1xc2bM7Px85fwUILOFwxpfXc=;
+ b=Zk+cdZTJrrQGLS4LPCXUuDR4TnwujssZT/tflyRWzR4m5EuB74oGIb4XNsW8ZpTcV6
+ 0bMOKocFAC5Aws/uPZuTdgEtDPOjoyukKgAGlNmDCD977jXJDA419hAYFYPI1NXVuJQo
+ h430UdKqeKyZxLWCK4GO4NKiUkni6qDd7foBhauhsIrn9EgNs9smHTIWE+gilQ/16aAA
+ qfn6Hasa8dA4DT4sDD1+nxpUPc7G2OPFgzjY066Dx0k/Rav91/e4+SBstXos/38maA95
+ wnZg7wriDejBaAEUGOUJBhPWdWDn0GFAE47f0mBxFDKwa5X6dxLRje0PnLK0qSHVgZ26
+ oMsw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=E0r8UtKklC8vn0exQFm1xc2bM7Px85fwUILOFwxpfXc=;
+ b=DktQ0ADLk0yIomADJM/oBKZ+oz3KyvjicwJJLh4XSSqZjUYOJFHaQsybXc4lkHrTRI
+ tmVXj8Jy6rcFLQ7cOOBySk4w/KG7HzdAphzPnDJfTR31bs5dY1TaARPp4Xz+UEIOZ8sH
+ Z2AkA+p6MWhKosIgQZhNvMo/e220p1qzhd3k6KFmRNZLivvbb3oezX9JVythWQ5MqOrP
+ ZuuRYK+4oU7HUqHCHaJmKh/yoxgCGO+cq6m1k+eDOswaEhVKqSyDiRI0YkOeQjAhQkRv
+ iXYH1gKqQsLAybhYupWd9KxAUckEjM7YRhKotRwqZV8cG7aMDUBbu4tOofvgadX2rd5K
+ xJQw==
+X-Gm-Message-State: APjAAAU/1t2juVZ0GjUawswdu/etU/73TjFVKu+VawIcdNajzy5roLms
+ tLz34mV8j/tCZKdjfAUXepAGNGKZidiYUR5jMe4=
+X-Google-Smtp-Source: APXvYqwXYPTGE8gx5kvAp7lnVSFQVA+NMeL3QVC6+h/cuRK/8EgB3ahTv0Vbyn5nmgxN9HxsBKLSAoZv7ayNwuuXxTA=
+X-Received: by 2002:a05:6402:2037:: with SMTP id
+ ay23mr29262250edb.146.1582233317366; 
+ Thu, 20 Feb 2020 13:15:17 -0800 (PST)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3b22decc-9ebd-3522-4fd7-e5721c8b25b2@gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <20200216173446.1823-1-linux.amoon@gmail.com>
+ <20200216173446.1823-4-linux.amoon@gmail.com>
+ <1jmu9hzlo2.fsf@starbuckisacylon.baylibre.com>
+ <CANAwSgSaQgU=H3h0S9deT11HA8z9R=Fhy5Kawii9tSBxKf2Wgw@mail.gmail.com>
+In-Reply-To: <CANAwSgSaQgU=H3h0S9deT11HA8z9R=Fhy5Kawii9tSBxKf2Wgw@mail.gmail.com>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Date: Thu, 20 Feb 2020 22:15:06 +0100
+Message-ID: <CAFBinCCSosE1XfwbKZOR9G+DVYg8zFcKShmTNWUhh1e8W0VoAQ@mail.gmail.com>
+Subject: Re: [PATCHv1 3/3] clk: meson: g12a: set cpu clock divider flags too
+ CLK_IS_CRITICAL
+To: Anand Moon <linux.amoon@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_130727_070077_D3AE3A6B 
-X-CRM114-Status: GOOD (  12.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200220_131518_935988_47B7477C 
+X-CRM114-Status: GOOD (  14.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [martin.blumenstingl[at]googlemail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,53 +96,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:PWM SUBSYSTEM" <linux-pwm@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
- Stephen Warren <swarren@wwwdotorg.org>, Ray Jui <rjui@broadcom.com>,
- linux-kernel@vger.kernel.org,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Neil Armstrong <narmstrong@baylibre.com>, Stephen Boyd <sboyd@kernel.org>,
+ Kevin Hilman <khilman@baylibre.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Linux Kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-amlogic@lists.infradead.org,
+ "open list:COMMON CLK FRAMEWORK" <linux-clk@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jerome Brunet <jbrunet@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-W0Ryb3BwaW5nIEJhcnQgVGFuZ2hlIGZyb20gcmVjaXBlbnRzIGFzIHRoZSBhZGRyZXNzIGJvdW5j
-ZXNdCgpIZWxsbyBUaGllcnJ5LAoKT24gVGh1LCBGZWIgMjAsIDIwMjAgYXQgMTE6MTQ6MDBBTSAt
-MDgwMCwgRmxvcmlhbiBGYWluZWxsaSB3cm90ZToKPiBPbiAyLzQvMjAgMToxNyBBTSwgTmljb2xh
-cyBTYWVueiBKdWxpZW5uZSB3cm90ZToKPiA+IE9uIE1vbiwgMjAyMC0wMi0wMyBhdCAxMzozNSAt
-MDgwMCwgRmxvcmlhbiBGYWluZWxsaSB3cm90ZToKPiA+PiBUaGUgbmV3ZXIgMjcxMSBhbmQgNzIx
-MSBjaGlwcyBoYXZlIHR3byBQV00gY29udHJvbGxlcnMgYW5kIGZhaWx1cmUgdG8KPiA+PiBkeW5h
-bWljYWxseSBhbGxvY2F0ZSB0aGUgUFdNIGJhc2Ugd291bGQgcHJldmVudCB0aGUgc2Vjb25kIFBX
-TQo+ID4+IGNvbnRyb2xsZXIgaW5zdGFuY2UgYmVpbmcgcHJvYmVkIGZvciBzdWNjZWVkaW5nIHdp
-dGggYW4gLUVFWElTVCBlcnJvcgo+ID4+IGZyb20gYWxsb2NfcHdtcygpLgo+ID4+Cj4gPj4gRml4
-ZXM6IGU1YTA2ZGM1YWMxZiAoInB3bTogQWRkIEJDTTI4MzUgUFdNIGRyaXZlciIpCj4gPj4gU2ln
-bmVkLW9mZi1ieTogRmxvcmlhbiBGYWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+Cj4gPj4g
-LS0tCj4gPiAKPiA+IFJldmlld2VkLWJ5OiBOaWNvbGFzIFNhZW56IEp1bGllbm5lIDxuc2Flbnpq
-dWxpZW5uZUBzdXNlLmRlPgo+IAo+IFRoaWVycnksIGlzIHRoZXJlIGFueSBjaGFuY2Ugd2UgY2Fu
-IGdldCB0aGlzIGFwcGxpZWQgZm9yIGFuIHVwY29taW5nCj4gNS42LXJjWD8gVGhhbmsgeW91IQoK
-dG8gYXNzaXN0IHlvdSB3aXRoIHBhdGNoIHNvcnRpbmc6CgojIHJldmlzaW9ucyA8IHY2IG9mICJD
-b252ZXJ0IHBlcmlvZCBhbmQgZHV0eSBjeWNsZSB0byB1NjQiCnB3Y2xpZW50IC1zIFN1cGVyc2Vk
-ZWQgMTIzNzAyMCAxMjM3MDE5IDEyMjkwNDkgMTIyOTA1MCAxMjIyMzk2CgojIG1vc3Qgb2YgIkFk
-ZCBzdXBwb3J0IGZvciBBem90ZXEgSVFTNjIwQS82MjEvNjIyLzYyNC82MjUiIHY1IGlzbid0IGZv
-ciBwd20KcHdjbGllbnQgLXMgIk5vdCBBcHBsaWNhYmxlIiAxMjM4OTA4IDEyMzg5MDcgMTIzODkw
-NiAxMjM4OTA0IDEyMzg5MDMgMTIzODkwMQoKIyBtb3N0IG9mICJBZGQgc3VwcG9ydCBmb3IgQXpv
-dGVxIElRUzYyMEEvNjIxLzYyMi82MjQvNjI1IiB2NCBpc24ndCBmb3IgcHdtCnB3Y2xpZW50IC1z
-ICJOb3QgQXBwbGljYWJsZSIgMTIyNDU5OCAxMjI0NTk3IDEyMjQ1OTYgMTIyNDU5NCAxMjI0NTkz
-IDEyMjQ1OTIKcHdjbGllbnQgLXMgIlN1cGVyc2VlZGVkIiAxMjI0NTk1CgojICJiYWNrbGlnaHQ6
-IHB3bV9ibDogVXNlIGdwaW9kX2dldF92YWx1ZV9jYW5zbGVlcCgpIHRvIGdldCBpbml0aWFsCiMg
-c3RhdGUiIGFscmVhZHkgYXBwbGllZCBieSBMZWUgSm9uZXMKcHdjbGllbnQgLXMgIk5vdCBBcHBs
-aWNhYmxlIiAxMDMxNTg2CgojIFByb2JsZW0gcmVzb2x2ZWQgYnkgTWljaGFsIFZva8OhxI0KcHdj
-bGllbnQgLXMgIlJlamVjdGVkIiAgMTA1OTI2NwoKKE5vdCBzdXJlICJSZWplY3RlZCIgaXMgdGhl
-IHJpZ2h0IHN0YXRlLikKCkJlc3QgcmVnYXJkcwpVd2UKCi0tIApQZW5ndXRyb25peCBlLksuICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgfCBVd2UgS2xlaW5lLUvDtm5pZyAgICAgICAgICAgIHwK
-SW5kdXN0cmlhbCBMaW51eCBTb2x1dGlvbnMgICAgICAgICAgICAgICAgIHwgaHR0cHM6Ly93d3cu
-cGVuZ3V0cm9uaXguZGUvIHwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Anand,
+
+On Mon, Feb 17, 2020 at 2:30 PM Anand Moon <linux.amoon@gmail.com> wrote:
+[...]
+> > > @@ -681,7 +682,7 @@ static struct clk_regmap g12b_cpub_clk = {
+> > >                       &g12a_sys_pll.hw
+> > >               },
+> > >               .num_parents = 2,
+> > > -             .flags = CLK_SET_RATE_PARENT,
+> > > +             .flags = CLK_SET_RATE_PARENT | CLK_IS_CRITICAL,
+> >
+> > Why not. Neil what do you think of this ?
+> > If nothing is claiming this clock and enabling it then I suppose it
+> > could make sense.
+> >
+> I would like core developers to handle this.
+> Sorry for the noise.
+can you please resend this patch with only the change to g12b_cpub_clk?
+I have no G12B board myself so it would be great if you could take care of this!
+
+
+Martin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
