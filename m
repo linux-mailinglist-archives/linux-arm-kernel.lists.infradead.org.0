@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B5F5165B73
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 11:26:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6ECBB165B76
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 11:27:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/glUIfiOqld39cGtJddjw35o4qwDav2ugfWcViKLggY=; b=pQe8gRMvQHjX0E
-	/lF70oNsf0c8MiE7UKx/MT4l1ytSyaigzpdy5CvPgdxHgh5wMARJfxXH+54g9i1m7ckF1Dsz3xr+w
-	urmDUHMmbbq68viOEfrp1nRAAFlfF6Ay4LkeFovm9+U6su74VVjvSyYA7q5Lle6rb31Znz/+CzKAQ
-	c6HMXoEEEha1qsIOm93Twa/mnfBjTxDmhGIKKjOI37CT0Lb2HbgOFp1EWBbNtFyke9zwd9gGWRdgZ
-	+RAB5VcBaQQVyYfVX00GbpYyNFsNIQ6scwMlxTF2XmaJ8spHGLavWa6iZ0BivEzZLRbF0kEJ5zBc1
-	fW99trXIxiXWxOO7dnEQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uXXsk/yJw3t1UaTEFn6esdl7ZieX60vdY78X5GP1zj0=; b=Qydw2XUvRIeYPf
+	5yEPH1GM9ZiCAwQwSizCqnO2QBKvDzVLmsGeoJYTzIGG6wsvZIZHE5vwDuARe6yALuvcqbPEl0sBi
+	aZTvcM4KAyktmV4m4cU1cp/kK8oQert2w5587u8KgddXBlp06kS3FxQJrmCf7uynUdr3/YukMQVaV
+	4ku06VWZymExzdkAPljeXdXhy6CeDnNbWFFiNE73N8On+88BzWerwclEHso183mtB6ztfqwBeAvGO
+	VRdlSvS+XO2afMcWawiG8qSDgVJaVxOnRPe/FS9D2ncm5dD2EGABbjloxxlHYqPPDGOQr8+/5hoLF
+	eL93em+Tj6uqSy0nTWgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4j2b-0005vE-0W; Thu, 20 Feb 2020 10:26:45 +0000
+	id 1j4j2n-000670-Sl; Thu, 20 Feb 2020 10:26:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4j2R-0005up-Lz
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 10:26:36 +0000
+ id 1j4j2T-0005vC-Fh
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 10:26:38 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 697D520801;
- Thu, 20 Feb 2020 10:26:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B996324656;
+ Thu, 20 Feb 2020 10:26:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582194394;
- bh=knx4Hgx/CQsPzc3qhbTlsEci9Vu+cNKPN13+ZBa+OjQ=;
- h=From:To:Cc:Subject:Date:From;
- b=UOkzX+M1c99UqqKhr4svRsN2562BewZJrAgnDGHKFxyYpMgahf65G5FLB+rRp5Srm
- gu4l6KVq2RwkcZUHoZ6vad/HAQDJgsExrDkfKkK/PVTnVblWvV1eJNaoXffS7ux3Ip
- BWoNhfyknyu8zo/cAQdaAXpC9SEEOE8Y2RjIPcBc=
+ s=default; t=1582194397;
+ bh=daVsCmO1v3JL3U9U9GNYclPkuq++4cP0R8XAHe7Vg8k=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=g2145Zze13qEK073wjwE5VbuPHwN52BSdqZifhIV/6Sm4hpwmnnUnIc+cWNOBNh6Y
+ oHFa0p1m7guvVv5E9/HImZ+8k8/cS3nidAIHNGA0Uz16nS1PWMlrrNzUzWwifoV9Gw
+ M6SUN6lyZfdFA/BUEUeZ3t9xiSnxwLlAiWJfXLs0=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-serial@vger.kernel.org
-Subject: [PATCH 1/2] tty: serial: samsung_tty: build it for any platform
-Date: Thu, 20 Feb 2020 11:26:27 +0100
-Message-Id: <20200220102628.3371996-1-gregkh@linuxfoundation.org>
+Subject: [PATCH 2/2] tty: serial: samsung_tty: remove SERIAL_SAMSUNG_DEBUG
+Date: Thu, 20 Feb 2020 11:26:28 +0100
+Message-Id: <20200220102628.3371996-2-gregkh@linuxfoundation.org>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200220102628.3371996-1-gregkh@linuxfoundation.org>
+References: <20200220102628.3371996-1-gregkh@linuxfoundation.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_022635_737386_5A3E0CD3 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20200220_022637_570356_4B31CD99 
+X-CRM114-Status: GOOD (  11.96  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -81,8 +83,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no need to tie this driver to only a specific SoC, or compile
-test, so remove that dependancy from the Kconfig rules.
+Since a05025d0ce72 ("tty: serial: samsung_tty: use standard debugging
+macros") this configuration option is not used at all, so remove it from
+the Kconfig file.
 
 Cc: Kukjin Kim <kgene@kernel.org>
 Cc: Donghoon Yu <hoony.yu@samsung.com>
@@ -97,23 +100,29 @@ Cc: linux-serial@vger.kernel.org
 Cc: linux-kernel@vger.kernel.org
 Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 ---
- drivers/tty/serial/Kconfig | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/tty/serial/Kconfig | 9 ---------
+ 1 file changed, 9 deletions(-)
 
 diff --git a/drivers/tty/serial/Kconfig b/drivers/tty/serial/Kconfig
-index 52eaac21ff9f..a310bd22f1e2 100644
+index a310bd22f1e2..fa4380b0b869 100644
 --- a/drivers/tty/serial/Kconfig
 +++ b/drivers/tty/serial/Kconfig
-@@ -237,7 +237,6 @@ config SERIAL_CLPS711X_CONSOLE
- 
- config SERIAL_SAMSUNG
- 	tristate "Samsung SoC serial support"
--	depends on PLAT_SAMSUNG || ARCH_EXYNOS || COMPILE_TEST
- 	select SERIAL_CORE
+@@ -259,15 +259,6 @@ config SERIAL_SAMSUNG_UARTS
  	help
- 	  Support for the on-chip UARTs on the Samsung S3C24XX series CPUs,
-
-base-commit: 11a48a5a18c63fd7621bb050228cebf13566e4d8
+ 	  Select the number of available UART ports for the Samsung S3C
+ 	  serial driver
+-	
+-config SERIAL_SAMSUNG_DEBUG
+-	bool "Samsung SoC serial debug"
+-	depends on SERIAL_SAMSUNG && DEBUG_LL
+-	help
+-	  Add support for debugging the serial driver. Since this is
+-	  generally being used as a console, we use our own output
+-	  routines that go via the low-level debug printascii()
+-	  function.
+ 
+ config SERIAL_SAMSUNG_CONSOLE
+ 	bool "Support for console on Samsung SoC serial port"
 -- 
 2.25.1
 
