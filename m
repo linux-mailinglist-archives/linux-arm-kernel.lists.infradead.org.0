@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6D3B16660D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:16:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B4F716660F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:16:46 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=49ZRXkpQjDCAGG319qAYlIvJ7dwmPfqN3LKbZ05wuUs=; b=PykbsV/gwk5Eb9
-	UMF/xJWHG5+7w7aEIKS8vtNnXEZMIVGfiJzX82e0Z2J2S784nAYWPWLIVa5kszL4zVpFT5nslAwgk
-	UpmWIRtMKUSg6n5BDgdFRE1shDIKgFjMl15pkdT7CUzbn942X+G0tsHTfWdzFzzfusbAtYX0/C54e
-	WUKLTk+lbwCxD2jqPnToniJSkYdlLsnZ7xPaRzCFjIukmsM6sC2UUsujOZ5OxX/mxURRPlXAOxauf
-	hBDXQ4TLr4Gn6i8zWX/OsjOa3VlWdWSLQh/PvhV7981+Nqvn/OSe0ffjXM460hsti0Y3YSj9ThiRO
-	iYfZgyAXTpagFE7hPkgg==;
+	List-Owner; bh=3brxEgNKnBbE/U/xs03XSwxnpskG6//EjiCsQWB7NMg=; b=TlSyXNkNHDUMjD
+	I1lU7jkXFvwQOcMmTdNmtKJbY7MPZvDQD3mqvu7tmQEu8Fe1FRT3tYxa94/ttJzwM5l2NswA7NngA
+	5NyXGj6sbr/92cw3nBAK3ZzaAks9tSkaX39CYj0EvzshV0vh6n//6Eda7vjNxNAxX20uHI0Iviz7r
+	FDRr17kA/JmXuyX18TZPDhKT/ixq3Pe9qRGbY+ZMXAV79sESBSedTUlP+NRIlgJRaMdGTKd/PoYcr
+	ICkxhU2z5pqJjWT9KNgEPV+F4IKkeDRINsXjOiyKvsvVeHpoQAeUDgcWgW/Qpy/jFxA1z4luAqPfe
+	aVQr3bU4ZNo0SHqhEJmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4qMs-0002Ii-10; Thu, 20 Feb 2020 18:16:10 +0000
+	id 1j4qNK-0002t4-9B; Thu, 20 Feb 2020 18:16:38 +0000
 Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4qM9-0001oZ-M8
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 18:15:27 +0000
+ id 1j4qMB-0001pk-0O
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 18:15:29 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 0800621F1E;
- Thu, 20 Feb 2020 13:15:25 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute3.internal (MEProxy); Thu, 20 Feb 2020 13:15:25 -0500
+ by mailout.nyi.internal (Postfix) with ESMTP id 585E221E5B;
+ Thu, 20 Feb 2020 13:15:26 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute3.internal (MEProxy); Thu, 20 Feb 2020 13:15:26 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=1BfdN/koG36m/
- f9DbPf89uTtUlItLarQ7BWkFlRXBOs=; b=iJ1MFhPkb8XKx37Q4eJJEYJFC4mxg
- TW+9XgktIv6sNoTdgGCpCmR43le3RIdOttSkYXwNPcP1XQLNh6jakyc4yLrccb1+
- T1LdPsVDBevSlP/9c4/3o0geAFBFKXYOEoeLckoPaq/E6NdNIl/7ReFYYzae6Ccm
- XRFt7jfMNElb+9LjGM75BZA3aj1Jnp31KL4v9XKq17fhMDfwpJUnbgjPc73Q/D47
- PaXndkO9Gy6t7lRwpv1AXBx2OBA7KgfVXOgEku1mkzTyE3htL6wegtyCL5KKNHvE
- pkgd2UzvqI5n93KHVy4Jeoqp4OBUE4Pj81/2BgcVknqbOhSB+onPF5Sxw==
+ :mime-version:content-transfer-encoding; s=fm2; bh=EO4iHaNxeieQg
+ LG+TqEp9sUs9WIn/s4CrJUTMJBjELo=; b=zrqAodOpNdj3RUp2IZomKJmh1InYg
+ DMIunaYe5pwFkSN/OH4Ai+zPqSZz1CAr3ifV+fLVrw+0mz+nuYaEe9cMdKp9tyo0
+ Yqxv0nUPkF3AdMZ0bFmMulwH+p0g/fr6KbTqSHnpU9m3v8d6yOurE4jXBkyT7ai+
+ vgfcEI1FccxP0gqit2UGJWpuvZnpD/hdBaxNxicsqQ7fNT56PwHScjNL/EcsMpxP
+ 71prnuPNmeJMIN0oD5Ndj6y+PxnmXpowIWaWll52n8FKVA5AE5tGeIjwmZm+XXd2
+ PEOXxHtsdyDhbVPlGTHB4QTvt2pfxJ8go7AxsbopTLh+PP7UCRHK6I32g==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=1BfdN/koG36m/f9DbPf89uTtUlItLarQ7BWkFlRXBOs=; b=ZFgmTXNq
- 0Z77UeSd/q2WPKclmS+cia2i0YrtWEQ5p4SPcX8LTODbZBWIgeoc5nztzCzWPPiU
- 8ysdEIk9nnaawWaViDRDMZ7HRZoPkyTsKCeS83kMUl4LHs6G7ijEKtHEyv5F1GKS
- XY0sVP80rDRvS139iBVRS2s0k7wZumdLvzfedPBtzSRdilfKmzR1G1ViHuOQMBpt
- CT4EfF7vFmvXJox9lVD1Pvs0iIdVfoh040ErM8PTEqXwfBSumHAnIS6eJDsXDxEg
- nkOBww9VqFejySAdHXJMYj3NJgTXE+3x+UMHv5JfM6tE3T7qVAYqsh+etX/4s8ru
- AHp/bs5sGZwE2A==
-X-ME-Sender: <xms:vMxOXthaKzDQB2Ekf5FZFKGJJTw1v_ikjo8JDAhmbRlSs838l91hRg>
+ fm2; bh=EO4iHaNxeieQgLG+TqEp9sUs9WIn/s4CrJUTMJBjELo=; b=WgmsgJ/Z
+ QiEtmM4Vhn7AFskFoNxWrwLynxpIGfDQuuU+eWufiFZyi8Kfj5cqYXmA887NYTwr
+ a7Qrp2FuT6DAzhG0DMcQVv7+HRHu7i91eQ5tC6InJ4t+WSayfYCbu/Lov8llIu9T
+ Qo/Qi0CJyo4OAyFgCfHf+aye/RAWAMOKa0wX2xQ16ptSeFgKFzoT/V7jp6DXWL3S
+ mHB8AJeAx9DYuQY2EvvThNE00u6Cauv/WDp3wbWOdME6LdkJ6zArJHfQF2o2OhxA
+ EGG+mubs5UWZBp8nMx16EFf65/UPyQJnmBvsJ3Tp4ZANt6C0H6ZX4CFwcOOR3USj
+ MiXwjlSCj7PvVQ==
+X-ME-Sender: <xms:vsxOXmD_DXlqg-MRJQ-TFjnTVARVW0sWdrzqvhrfeqDJadCwrD6BjQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedvgdduudefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepvdenucfrrghrrghmpehmrghi
  lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:vMxOXtP7MlV-ObceaIWIa4d0RoiicYXHB58zS2l6VHEi0qMbdING7g>
- <xmx:vMxOXg5JsXFv7B7DDQCUrYaBMQ1uoNLxEHv2KIpA5G7_d52N-SjYjQ>
- <xmx:vMxOXsm0swspw0daTL_WhGreioTi6uh9hEZYPYRIp7DP05iZujhU6w>
- <xmx:vcxOXnrr3_DifvpJHd49N-0scaAVWt1CbTW17IU-Le6QL0FTXL1Xvg>
+X-ME-Proxy: <xmx:vsxOXtQlS2l-d4RUiFJYpaAyTw5fLRQ2WwP5b8Lv9GgymxKNoeruHA>
+ <xmx:vsxOXpJdjdhXq6XXMqODEBwTrehRQ-Wiky4s0_o3eY3Hekd1es2Vxw>
+ <xmx:vsxOXtZdPuhj9cGfKZHaV0HtBZDNtYaguuXcLD01keRny_wZDGAHpQ>
+ <xmx:vsxOXpYIOC4sgdyyG8UsVTT5drBHzNrjBvckfOMvapPA3Ilfz9oV3w>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 97E5F3060C21;
- Thu, 20 Feb 2020 13:15:24 -0500 (EST)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 0BC893280060;
+ Thu, 20 Feb 2020 13:15:25 -0500 (EST)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Joerg Roedel <joro@8bytes.org>, Chen-Yu Tsai <wens@csie.org>,
  Maxime Ripard <mripard@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH v2 3/4] arm64: dts: allwinner: h6: Add IOMMU
-Date: Thu, 20 Feb 2020 19:15:15 +0100
-Message-Id: <435c75d9cbccbf32f501ea897775351a73e065f7.1582222496.git-series.maxime@cerno.tech>
+Subject: [PATCH v2 4/4] drm/sun4i: mixer: Call of_dma_configure if there's an
+ IOMMU
+Date: Thu, 20 Feb 2020 19:15:16 +0100
+Message-Id: <5ebdf117248c6189e7e4a2631a6681cf9909bd66.1582222496.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <cover.a31c229a83f1d92e6928ae2adb70887da0fd44b3.1582222496.git-series.maxime@cerno.tech>
 References: <cover.a31c229a83f1d92e6928ae2adb70887da0fd44b3.1582222496.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_101525_894613_CD3209A2 
-X-CRM114-Status: GOOD (  10.85  )
+X-CRM114-CacheID: sfid-20200220_101527_223012_FF831664 
+X-CRM114-Status: GOOD (  14.66  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -115,41 +116,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have a driver for the IOMMU, let's start using it.
+The main DRM device is actually a virtual device so it doesn't have the
+iommus property, which is instead on the DMA masters, in this case the
+mixers.
+
+Add a call to of_dma_configure with the mixers DT node but on the DRM
+virtual device to configure it in the same way than the mixers.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ drivers/gpu/drm/sun4i/sun8i_mixer.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-index 3329283e38ab..2d0777ad39aa 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi
-@@ -131,6 +131,7 @@
- 				clock-names = "bus",
- 					      "mod";
- 				resets = <&display_clocks RST_MIXER0>;
-+				iommus = <&iommu 0>;
+diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.c b/drivers/gpu/drm/sun4i/sun8i_mixer.c
+index 7c24f8f832a5..85b8930e334c 100644
+--- a/drivers/gpu/drm/sun4i/sun8i_mixer.c
++++ b/drivers/gpu/drm/sun4i/sun8i_mixer.c
+@@ -372,6 +372,19 @@ static int sun8i_mixer_bind(struct device *dev, struct device *master,
+ 	mixer->engine.ops = &sun8i_engine_ops;
+ 	mixer->engine.node = dev->of_node;
  
- 				ports {
- 					#address-cells = <1>;
-@@ -370,6 +371,15 @@
- 			#interrupt-cells = <3>;
- 		};
- 
-+		iommu: iommu@30f0000 {
-+			compatible = "allwinner,sun50i-h6-iommu";
-+			reg = <0x030f0000 0x10000>;
-+			interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&ccu CLK_BUS_IOMMU>;
-+			resets = <&ccu RST_BUS_IOMMU>;
-+			#iommu-cells = <1>;
-+		};
++	if (of_find_property(dev->of_node, "iommus", NULL)) {
++		/*
++		 * This assume we have the same DMA constraints for
++		 * all our the mixers in our pipeline. This sounds
++		 * bad, but it has always been the case for us, and
++		 * DRM doesn't do per-device allocation either, so we
++		 * would need to fix DRM first...
++		 */
++		ret = of_dma_configure(drm->dev, dev->of_node, true);
++		if (ret)
++			return ret;
++	}
 +
- 		mmc0: mmc@4020000 {
- 			compatible = "allwinner,sun50i-h6-mmc",
- 				     "allwinner,sun50i-a64-mmc";
+ 	/*
+ 	 * While this function can fail, we shouldn't do anything
+ 	 * if this happens. Some early DE2 DT entries don't provide
 -- 
 git-series 0.9.1
 
