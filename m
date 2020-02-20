@@ -2,88 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DA8A16648A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:25:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A4A016648F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:25:50 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O7wQE4BKfuKLqyMWmVq5PxSuXoDFQwaj+II8FAVrsKQ=; b=BYHyhkA1bNiVcs
-	sYZy7wIUhgMSnW/bLIiC9h2yXIHWIodaZkzdEd/MP+chjN0CI4iVXH57yOCLko7Xock2VHBT2hHxn
-	o5+VSZUIFm/Lc0qBkI4EFTCD8EIlA5v2SpG86yOacSOj5kVGt3ArQf0KIiV9YOcBPObjkLRZcgqr6
-	RCKSQvKFUK/rGRpqKwFOl1Ld8l7f0hL951QThIPZMizoEF51Ao2SbfLR//sUiAtmcQm1ELTx8lDFY
-	0Wz7epG+Sm3SA5V2AqNPXo8dAlWULFWUgGa1GeCK+8wrBGbaSM1iGNJcFBGQVfhBpKCPKqE6PYm5i
-	JIF0K8teoaSemfRTAaYg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=euNdnuiU09HlRWYkZAFx59htz2i3YHxg85+ZisXs+Gc=; b=kbU2Zyj5Fa7aYup/4vZ5/U5vX
+	MXf2eXD4aionFGgveUOpVRy6zX4PVMPWdIG+ZrPy50JxVRh1vxg+tp0ECd621t6ZmBbg9i628/6Uf
+	gjzxb9IpY6pd0io3UUpRL2eKdG+kgIB0hy5xEGcLbFeOOxKccEUXKr/DvWPy08RNpB/oTLCV9o3SV
+	OceLyKO7qTxgL3GRGABeSv0syq+7Jkm1l1RekLKch73t50SmV/3GAQ+E7XUS5bz/03XnFYDcWP3dq
+	0P7fsAabR+5a7D4+iGcA5F1/IQmyQexTNkpkc9M7FVEQXlaaw1zAd7nEkeKxm7bAr6722A/puqrL6
+	1280mzJDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4pZe-0005Si-9P; Thu, 20 Feb 2020 17:25:18 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1j4pa8-0005kt-Db; Thu, 20 Feb 2020 17:25:48 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4pYG-0003pZ-CW
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:23:54 +0000
-Received: by mail-wm1-x342.google.com with SMTP id a9so2929675wmj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 09:23:52 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=thegoodpenguin-co-uk.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=DP+WeV+eCsLNcM+0j7VvT82QxXGphPuPG6yUJrTyu2U=;
- b=R78Qigu18fQdSDHxyFt+gW5wubpXXtRHLj65ytZxFXLLy3m/Co+0ptUws9rqJFpJTg
- 5+KMf7B15USerdDLnaoM9irKTCXrd4+J95sO5zPCYQiTRs1Gx8H+H+x3G2CiCAvuyJu5
- /U/9vm5hgp+xuWqrMkrMZg0yyxMQOx5fXOOBCnAmpu0LyPxTUnE7Woy2rl4jTb9Ms9hr
- BzKxrwajcq3cp0lXRn35Sj3uf/H+DPPJh2HtZNdDHWmp+kfRaedRNapGWL/oRqlgLd9B
- vgTlVOzYwGfyHr6qIwYaKx8aSkCjt4Qex3WgH9VjUUnUTQGJ47QI/fkm1+Agh9LLL/qK
- l0SA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=DP+WeV+eCsLNcM+0j7VvT82QxXGphPuPG6yUJrTyu2U=;
- b=eYrRQR+Fg8GS3XmMNQP5keqYmcPP3uPkrWIz80tETtL4b+aQSReeoni89KPsXdT10D
- Eep3Wd7DMzRSeW6nHpzCCcI07prjPPUbB56bLqg7w1NHwtrIL7dk3bK6Rd3dq8UGQKVp
- nrpW9nfBYlwHA+g+1U4E5QT3K6zTTCz304UfYtro9nIe68QWFUsjnn6uYTA3PHLr5taq
- ENZpqSXt3DLXWP/jWxCwFGxMsj57K+GWj7NwCcHAgXSacEsLfFg47RGMLw1diJm6SmvB
- 4xFcB5Gw0K4C79RJniId5NvTiZEwNirX7IEOoCxNdBr1CCBBai8vW4CB8Z8s8m5sEzLf
- BVhA==
-X-Gm-Message-State: APjAAAVLTsGiSdsX8mCb/fEduvG8UMbq64tJSNAWJ2RRGxT9Kp0CYC8m
- wYUS71Ch3IPiDTbykGnwBU/+mg==
-X-Google-Smtp-Source: APXvYqwoOtD3d5ksvVjxWcwZ0/DxwY7u+cyjGgOanzGPTjCQXXfMerwF375wbaNtGgrElDDsrXncyg==
-X-Received: by 2002:a1c:b789:: with SMTP id h131mr5560317wmf.148.1582219430876; 
- Thu, 20 Feb 2020 09:23:50 -0800 (PST)
-Received: from big-machine ([2a00:23c5:dd80:8400:98d8:49e6:cdcc:25df])
- by smtp.gmail.com with ESMTPSA id c77sm5261153wmd.12.2020.02.20.09.23.49
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 20 Feb 2020 09:23:50 -0800 (PST)
-Date: Thu, 20 Feb 2020 17:23:48 +0000
-From: Andrew Murray <amurray@thegoodpenguin.co.uk>
-To: Zhiqiang Hou <Zhiqiang.Hou@nxp.com>
-Subject: Re: [PATCHv10 03/13] PCI: mobiveil: Collect the interrupt related
- operations into a function
-Message-ID: <20200220172348.GF19388@big-machine>
-References: <20200213040644.45858-1-Zhiqiang.Hou@nxp.com>
- <20200213040644.45858-4-Zhiqiang.Hou@nxp.com>
+ id 1j4pZC-0005Al-Qy
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:24:52 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailout.nyi.internal (Postfix) with ESMTP id 339E821D6E;
+ Thu, 20 Feb 2020 12:24:49 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Thu, 20 Feb 2020 12:24:49 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=te6hdqtQBQi0OFmy4I46vtfMUfG
+ loiIkQJHlJUAw1Po=; b=jYZ2RHNbhZSEidhluJIDU6jVeGxE/iCJM/du3cp/Ae9
+ aC4NNCcOaF5a1u04qZeMKjF/fHiD/BikSUcTZwytD6iTqppOcXkJ58ic50VnNNhy
+ tP/IJMdwKd9AKmEVi0E6f9qa5eo88DcSggqpz4wU1boO8YxeiUk7CO1MmtHoXyCy
+ oFqdEQJ6tf9/kd7YM+bZ+/PDvfQUn/Kc31mrtnryLvWBGrnv3UbE3FCg5s4Miw1D
+ d6uoNw0SGFFL+lcArMkzdMEEcBbW5SBnbngpACskbT5QjRvhMQP4uIEuIkUdcAoF
+ SddU2/FJtpCtLTMF/Gtiw2ifA3oo1JcFYXOjl694scA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=te6hdq
+ tQBQi0OFmy4I46vtfMUfGloiIkQJHlJUAw1Po=; b=iKlzhwNoehwx38inZe86Sp
+ MEMG6KRTstc2sT9ZNSGtmbr1E7eP0D7Wlk6tBBR7Vg6HsexHL8EnLv4AW1HSD18K
+ jFc4hhQ+1d2MbnG9qWCNHR68jfuxgAUJCoz0vz5FiT6TQt1bE5Iul3hktQmfAAlV
+ yyfbiMsQjCeM2ipKCcEkWt/KDRJ4Qd5TZA7TwK0xjJytTrmdJP/7+x+khplgNbeV
+ WXKixC2GXYDnwAm8VswRgMGGcRzpVLoa2zJNbVVyWnAn2VxSwqcwDoAUAKawYKWI
+ 4ml3miuKfjbSmsooTvL1MOvngeQWb21Ih7TY5CG9bucivKaeVQTQ8UJr/8AQ2kwg
+ ==
+X-ME-Sender: <xms:38BOXsUyNFFHbTkUI4L6lSmEuBpN2to3bnumg5QKeZUwpWa5nK7cQA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedvgddutddvucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepfeenucfrrghrrghmpehmrghi
+ lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:38BOXtPnDlk2fotdqkIJYqsppoZXUNXEjhVlabcenoCtDlaazpySgQ>
+ <xmx:38BOXmysRKSbfQ9lAMIu7F-OMkpWLMdLX4gSC0sTV_i62YKi3muq7Q>
+ <xmx:38BOXlMIRB3K6gQeHz6LwzDvEyJ_gJSb0Rb_WfV1HHEj4OKssfzQaQ>
+ <xmx:4cBOXprXyGmrPIxveegUBiPvy01hCRzkkJlR9OlNDZ7shuWsZoqYFA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 6E60C3060C21;
+ Thu, 20 Feb 2020 12:24:47 -0500 (EST)
+Date: Thu, 20 Feb 2020 18:24:46 +0100
+From: Maxime Ripard <maxime@cerno.tech>
+To: Andrey Lebedev <andrey.lebedev@gmail.com>
+Subject: Re: [PATCH 4/5] dt-bindings: display: sun4i: New compatibles for A20
+ tcons
+Message-ID: <20200220172446.gg746z5efmzwtfdz@gilmour.lan>
+References: <20200210195633.GA21832@kedthinkpad>
+ <20200219180858.4806-1-andrey.lebedev@gmail.com>
+ <20200219180858.4806-5-andrey.lebedev@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200213040644.45858-4-Zhiqiang.Hou@nxp.com>
+In-Reply-To: <20200219180858.4806-5-andrey.lebedev@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_092352_445702_6B399D57 
-X-CRM114-Status: GOOD (  18.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200220_092451_062219_375D3D31 
+X-CRM114-Status: GOOD (  11.08  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.25 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.25 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,155 +108,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- m.karthikeyan@mobiveil.co.in, arnd@arndb.de, linux-pci@vger.kernel.org,
- l.subrahmanya@mobiveil.co.in, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, leoyang.li@nxp.com, Minghuan.Lian@nxp.com,
- robh+dt@kernel.org, Mingkai.Hu@nxp.com, Xiaowei.Bao@nxp.com,
- catalin.marinas@arm.com, bhelgaas@google.com, andrew.murray@arm.com,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: airlied@linux.ie, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Andrey Lebedev <andrey@lebedev.lt>, wens@csie.org, daniel@ffwll.ch,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7780885459471386845=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 13, 2020 at 12:06:34PM +0800, Zhiqiang Hou wrote:
-> From: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-> 
-> Collect the interrupt initialization related operations into
-> a new function such that it is more readable.
-> 
-> Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 
-Reviewed-by: Andrew Murray <amurray@thegoodpenguin.co.uk>
+--===============7780885459471386845==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="j2564guncf3jyy2w"
+Content-Disposition: inline
 
+
+--j2564guncf3jyy2w
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Wed, Feb 19, 2020 at 08:08:57PM +0200, Andrey Lebedev wrote:
+> From: Andrey Lebedev <andrey@lebedev.lt>
+>
+> Document new compatibles used to differentiate between timing
+> controllers on A20 (sun7i)
+>
+> Signed-off-by: Andrey Lebedev <andrey@lebedev.lt>
 > ---
-> V10:
->  - Refined the subject and change log.
-> 
->  drivers/pci/controller/pcie-mobiveil.c | 65 +++++++++++++++++---------
->  1 file changed, 42 insertions(+), 23 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/pcie-mobiveil.c b/drivers/pci/controller/pcie-mobiveil.c
-> index 01df04ea5b48..9449528bb14f 100644
-> --- a/drivers/pci/controller/pcie-mobiveil.c
-> +++ b/drivers/pci/controller/pcie-mobiveil.c
-> @@ -454,12 +454,6 @@ static int mobiveil_pcie_parse_dt(struct mobiveil_pcie *pcie)
->  		return PTR_ERR(pcie->csr_axi_slave_base);
->  	pcie->pcie_reg_base = res->start;
->  
-> -	/* map MSI config resource */
-> -	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "apb_csr");
-> -	pcie->apb_csr_base = devm_pci_remap_cfg_resource(dev, res);
-> -	if (IS_ERR(pcie->apb_csr_base))
-> -		return PTR_ERR(pcie->apb_csr_base);
-> -
->  	/* read the number of windows requested */
->  	if (of_property_read_u32(node, "apio-wins", &pcie->apio_wins))
->  		pcie->apio_wins = MAX_PIO_WINDOWS;
-> @@ -467,12 +461,6 @@ static int mobiveil_pcie_parse_dt(struct mobiveil_pcie *pcie)
->  	if (of_property_read_u32(node, "ppio-wins", &pcie->ppio_wins))
->  		pcie->ppio_wins = MAX_PIO_WINDOWS;
->  
-> -	rp->irq = platform_get_irq(pdev, 0);
-> -	if (rp->irq <= 0) {
-> -		dev_err(dev, "failed to map IRQ: %d\n", rp->irq);
-> -		return -ENODEV;
-> -	}
-> -
->  	return 0;
->  }
->  
-> @@ -618,9 +606,6 @@ static int mobiveil_host_init(struct mobiveil_pcie *pcie)
->  	pab_ctrl |= (1 << AMBA_PIO_ENABLE_SHIFT) | (1 << PEX_PIO_ENABLE_SHIFT);
->  	mobiveil_csr_writel(pcie, pab_ctrl, PAB_CTRL);
->  
-> -	mobiveil_csr_writel(pcie, (PAB_INTP_INTX_MASK | PAB_INTP_MSI_MASK),
-> -			    PAB_INTP_AMBA_MISC_ENB);
-> -
->  	/*
->  	 * program PIO Enable Bit to 1 and Config Window Enable Bit to 1 in
->  	 * PAB_AXI_PIO_CTRL Register
-> @@ -670,9 +655,6 @@ static int mobiveil_host_init(struct mobiveil_pcie *pcie)
->  	value |= (PCI_CLASS_BRIDGE_PCI << 16);
->  	mobiveil_csr_writel(pcie, value, PAB_INTP_AXI_PIO_CLASS);
->  
-> -	/* setup MSI hardware registers */
-> -	mobiveil_pcie_enable_msi(pcie);
-> -
->  	return 0;
->  }
->  
-> @@ -873,6 +855,46 @@ static int mobiveil_pcie_init_irq_domain(struct mobiveil_pcie *pcie)
->  	return 0;
->  }
->  
-> +static int mobiveil_pcie_interrupt_init(struct mobiveil_pcie *pcie)
-> +{
-> +	struct platform_device *pdev = pcie->pdev;
-> +	struct device *dev = &pdev->dev;
-> +	struct mobiveil_root_port *rp = &pcie->rp;
-> +	struct resource *res;
-> +	int ret;
+>  .../bindings/display/allwinner,sun4i-a10-tcon.yaml          | 6 ++++++
+>  1 file changed, 6 insertions(+)
+>
+> diff --git a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> index 86ad617d2327..c0f6bb16fa34 100644
+> --- a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> +++ b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
+> @@ -46,6 +46,12 @@ properties:
+>            - allwinner,sun50i-h6-tcon-tv
+>          - const: allwinner,sun8i-a83t-tcon-tv
+>
+> +      - items:
+> +        - enum:
+> +          - allwinner,sun7i-a20-tcon0
+> +          - allwinner,sun7i-a20-tcon1
+> +        - const: allwinner,sun7i-a20-tcon
 > +
-> +	/* map MSI config resource */
-> +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "apb_csr");
-> +	pcie->apb_csr_base = devm_pci_remap_cfg_resource(dev, res);
-> +	if (IS_ERR(pcie->apb_csr_base))
-> +		return PTR_ERR(pcie->apb_csr_base);
-> +
-> +	/* setup MSI hardware registers */
-> +	mobiveil_pcie_enable_msi(pcie);
-> +
-> +	rp->irq = platform_get_irq(pdev, 0);
-> +	if (rp->irq <= 0) {
-> +		dev_err(dev, "failed to map IRQ: %d\n", rp->irq);
-> +		return -ENODEV;
-> +	}
-> +
-> +	/* initialize the IRQ domains */
-> +	ret = mobiveil_pcie_init_irq_domain(pcie);
-> +	if (ret) {
-> +		dev_err(dev, "Failed creating IRQ Domain\n");
-> +		return ret;
-> +	}
-> +
-> +	irq_set_chained_handler_and_data(rp->irq, mobiveil_pcie_isr, pcie);
-> +
-> +	/* Enable interrupts */
-> +	mobiveil_csr_writel(pcie, (PAB_INTP_INTX_MASK | PAB_INTP_MSI_MASK),
-> +			    PAB_INTP_AMBA_MISC_ENB);
-> +
-> +
-> +	return 0;
-> +}
-> +
->  static int mobiveil_pcie_host_probe(struct mobiveil_pcie *pcie)
->  {
->  	struct mobiveil_root_port *rp = &pcie->rp;
-> @@ -906,15 +928,12 @@ static int mobiveil_pcie_host_probe(struct mobiveil_pcie *pcie)
->  		return ret;
->  	}
->  
-> -	/* initialize the IRQ domains */
-> -	ret = mobiveil_pcie_init_irq_domain(pcie);
-> +	ret = mobiveil_pcie_interrupt_init(pcie);
->  	if (ret) {
-> -		dev_err(dev, "Failed creating IRQ Domain\n");
-> +		dev_err(dev, "Interrupt init failed\n");
->  		return ret;
->  	}
->  
-> -	irq_set_chained_handler_and_data(rp->irq, mobiveil_pcie_isr, pcie);
-> -
->  	/* Initialize bridge */
->  	bridge->dev.parent = dev;
->  	bridge->sysdata = pcie;
-> -- 
-> 2.17.1
-> 
+>    reg:
+>      maxItems: 1
+
+It wasn't ordered propertly, I've fixed it up while applying
+
+Maxime
+
+--j2564guncf3jyy2w
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXk7A3gAKCRDj7w1vZxhR
+xfwVAP9fqMR6S5QNlK723niU/vA0ow7ntEjfO/d+1F6+P/qUHgEA8pTIZG3N0KC4
+EDlYflE0dcgyudMkCjaHcAa7PgUxPAY=
+=41w8
+-----END PGP SIGNATURE-----
+
+--j2564guncf3jyy2w--
+
+
+--===============7780885459471386845==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7780885459471386845==--
+
