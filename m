@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5FC11662FE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 17:32:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56F8F1662FD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 17:32:24 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yYKYkhjd6e5Oz/bJ1JxWjGD0QoyZVX6yI0WI50zm2AM=; b=gl+PPvo4bG0jIgAtQV0eVlqAUk
-	Xx+oXXHXrL8hFy+pRW2LFBIoYtge4pYhme2Bw29ua0Npy7NtmEAxJY2CL34czYEHQ/R3V8TMYNdLN
-	RD+qRpG9Qe4pzKSWkisbdQSHgv8oUVOObC1o0cMO5yHNVvXnC5fFSWNxm+PbfwyESf2qyiasn8GBP
-	y+R28PNWiwND7r9KNpuuzne8KlfxF3dz8tVJuDD1ARc/cIPiuPZgTUIE27ngwz0jE0SnjdTh+S3fJ
-	G1hq2PpC0fT2wv55z9uV97dx+Zv+StXNReF2zaXk273SoVFKA2iHd5uqOBbk4FmnAZtfNfjIopzUe
-	qBXnrqUw==;
+	bh=REfIxLMCqElkveSzYP4l0V9g2IEWRnIIEgxHvPiIdas=; b=LjvQEiN8qtycT32U52Lr3sIFt8
+	mHtxwHaL7lBveDjrdGRa1zyE0A0ZtFrPx52t4sxcImSLRXEBX+nzaNUera0V8JicrxpLvSTcO/DG6
+	vpSm2oh/ENQVv1GsTL/IFjW1CHKMmA9KZk+hPfUPtc2Ufarryl3nvWi4R8gzV2lIoRbdvMDdxcWlZ
+	tVmolrqThrNM+RZhKa1/FiJiUDYZXzUkFErDl/mTz2pEMuLPKpUsS4wRCCAxDKvhK8obJJK+ydCkY
+	O9isiwiIezs+z8rRi+yLSjw4E/dG1yYol88Fv//BaZaWBJWGZcZup/WX2lKD3pdyyV9KdE4n3m5r7
+	cSR5hkkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4oke-00019I-GW; Thu, 20 Feb 2020 16:32:36 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j4okQ-0000w4-4P; Thu, 20 Feb 2020 16:32:22 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4oi1-0005yR-Bm
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 16:29:55 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 05B50201078;
- Thu, 20 Feb 2020 17:29:52 +0100 (CET)
+ id 1j4oi2-0005zX-ID
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 16:29:56 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 32D181A18F2;
+ Thu, 20 Feb 2020 17:29:53 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id EAFE1200BC7;
- Thu, 20 Feb 2020 17:29:51 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 268531A18C4;
+ Thu, 20 Feb 2020 17:29:53 +0100 (CET)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id CBACC20328;
- Thu, 20 Feb 2020 17:29:50 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 0CF2820328;
+ Thu, 20 Feb 2020 17:29:52 +0100 (CET)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Shawn Guo <shawnguo@kernel.org>,
 	Dong Aisheng <aisheng.dong@nxp.com>
-Subject: [PATCH v2 7/8] rtc: imx-sc: Align imx sc msg structs to 4
-Date: Thu, 20 Feb 2020 18:29:38 +0200
-Message-Id: <13404bac8360852d86c61fad5ae5f0c91ffc4cb6.1582216144.git.leonard.crestez@nxp.com>
+Subject: [PATCH v2 8/8] soc: imx-scu: Align imx sc msg structs to 4
+Date: Thu, 20 Feb 2020 18:29:39 +0200
+Message-Id: <ab23d248f2254ce0425017559eee693b9b60bafa.1582216144.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1582216144.git.leonard.crestez@nxp.com>
 References: <cover.1582216144.git.leonard.crestez@nxp.com>
@@ -48,15 +48,16 @@ In-Reply-To: <cover.1582216144.git.leonard.crestez@nxp.com>
 References: <cover.1582216144.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_082953_568869_5B2F59EB 
-X-CRM114-Status: GOOD (  10.47  )
+X-CRM114-CacheID: sfid-20200220_082954_809156_E8316B28 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,30 +93,29 @@ This produces many oopses with CONFIG_KASAN=y.
 
 Fix by marking with __aligned(4).
 
-Fixes: a3094fc1a15e ("rtc: imx-sc: add rtc alarm support")
+Fixes: 73feb4d0f8f1 ("soc: imx-scu: Add SoC UID(unique identifier) support")
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
-Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 ---
- drivers/rtc/rtc-imx-sc.c | 2 +-
+ drivers/soc/imx/soc-imx-scu.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/rtc/rtc-imx-sc.c b/drivers/rtc/rtc-imx-sc.c
-index cf2c12107f2b..a5f59e6f862e 100644
---- a/drivers/rtc/rtc-imx-sc.c
-+++ b/drivers/rtc/rtc-imx-sc.c
-@@ -35,11 +35,11 @@ struct imx_sc_msg_timer_rtc_set_alarm {
- 	u8 mon;
- 	u8 day;
- 	u8 hour;
- 	u8 min;
- 	u8 sec;
+diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
+index fb70b8a3f7c5..20d37eaeb5f2 100644
+--- a/drivers/soc/imx/soc-imx-scu.c
++++ b/drivers/soc/imx/soc-imx-scu.c
+@@ -23,11 +23,11 @@ struct imx_sc_msg_misc_get_soc_id {
+ 		} __packed req;
+ 		struct {
+ 			u32 id;
+ 		} resp;
+ 	} data;
 -} __packed;
 +} __packed __aligned(4);
  
- static int imx_sc_rtc_read_time(struct device *dev, struct rtc_time *tm)
- {
- 	struct imx_sc_msg_timer_get_rtc_time msg;
- 	struct imx_sc_rpc_msg *hdr = &msg.hdr;
+ struct imx_sc_msg_misc_get_soc_uid {
+ 	struct imx_sc_rpc_msg hdr;
+ 	u32 uid_low;
+ 	u32 uid_high;
 -- 
 2.17.1
 
