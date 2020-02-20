@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9112165D34
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 13:03:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 610BD165D42
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 13:07:41 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
 	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ifcgOc8DyAj3E90AzxY/lYwxj6N2x7+xYvr9iVnPMAM=; b=YigSsu/GNIcFbyxoS1V2ROBb/
-	MNHZ3AMWIMTEhezoCrjTSPqIq3hYqxRgUSo6qjWZwu8It+CH38yh2Udz5tp2J5uq88W642V9DDZRR
-	68nmr50POVll0OVtAgIR1xX7FK55Ckgo6iUd+CWESv7djui3PJeljL6zYA92fZXWyR0z4rqVVyHeK
-	P8aPP98WiqeS+/mQJTD/OBQdB1LKsc3l7xUB5vz3OSi4/60vbduewwsqAxe3skySVYDsfoF9ZARSS
-	MtHW2jinGQ9IjXWIv0bjtFmVlzR3Ey1MN3rUnZ0+MBDG8FuonBOl+/n68Rifxvo146fMXCnAx0MQ1
-	m1D8qSQeQ==;
+	 bh=HfSPynOvtxVb0N+w64qTK14H+CwDw6c79v+/w+93IeU=; b=JoIQwh9SUwfR4krxkhV9tycvY
+	qQAcTxtNTiakycqXWO99rbQGYH4CVc1r+ptB9tVmATZONyMFXVajade1+rrnunipR4LG4SHP16RYz
+	MzNdOA812XaOOFIoeWU9ReccAjYNq3bCP93zH377MI1pttHpJT6vbMX4GS81fLA7eGdGqp28v1ZIu
+	GFZJZDyBRvDV9FBTuvHTee1FXmao3+DgVp7HNXz7K3WHzKp+d4j0PmEJRwZMfMXp+b0aA1Wh8PZ6w
+	zNPP7fPZBtintApFf0oHTCJ5OgtptOMkobkE+wH/z1AoSUT2zi2e2mc3L+cBt0IzL1gs817nfU9/c
+	c2KDWzOdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4kYR-0001B7-2P; Thu, 20 Feb 2020 12:03:43 +0000
+	id 1j4kc8-0002sb-Sg; Thu, 20 Feb 2020 12:07:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4kYG-000191-If
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 12:03:34 +0000
+ id 1j4kbz-0002rY-0t
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 12:07:24 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D7AC830E;
- Thu, 20 Feb 2020 04:03:29 -0800 (PST)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E1A181FB;
+ Thu, 20 Feb 2020 04:07:21 -0800 (PST)
 Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 178483F6CF;
- Thu, 20 Feb 2020 04:03:28 -0800 (PST)
-Subject: Re: [PATCH 3/5] arm64/vdso: Add time napespace page
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1EA113F6CF;
+ Thu, 20 Feb 2020 04:07:21 -0800 (PST)
+Subject: Re: [PATCH 4/5] arm64/vdso: Handle faults on timens page
 To: Andrei Vagin <avagin@gmail.com>
 References: <20200204175913.74901-1-avagin@gmail.com>
- <20200204175913.74901-4-avagin@gmail.com>
+ <20200204175913.74901-5-avagin@gmail.com>
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-Pep-Version: 2.0
-Message-ID: <792d60e9-547a-0b0a-7af7-b57755a9493e@arm.com>
-Date: Thu, 20 Feb 2020 12:03:27 +0000
+Message-ID: <37e8eb1d-906b-bf58-93aa-4752998e2c38@arm.com>
+Date: Thu, 20 Feb 2020 12:07:20 +0000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200204175913.74901-4-avagin@gmail.com>
-Content-Type: multipart/mixed; boundary="------------86648045BC467A5FBDACF9A0"
+In-Reply-To: <20200204175913.74901-5-avagin@gmail.com>
+Content-Type: multipart/mixed; boundary="------------59908B14300839D4D2E98B75"
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_040332_710545_46F45FF3 
-X-CRM114-Status: GOOD (  29.68  )
+X-CRM114-CacheID: sfid-20200220_040723_156208_7FB2D01C 
+X-CRM114-Status: GOOD (  19.36  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,252 +72,115 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This is a multi-part message in MIME format.
---------------86648045BC467A5FBDACF9A0
+--------------59908B14300839D4D2E98B75
 Content-Type: text/plain; charset=utf-8
 Content-Transfer-Encoding: quoted-printable
 
 Hi Andrei,
 
 On 04/02/2020 17:59, Andrei Vagin wrote:
-> Allocate the time namespace page among VVAR pages.  Provide
-> __arch_get_timens_vdso_data() helper for VDSO code to get the
-> code-relative position of VVARs on that special page.
->=20
 > If a task belongs to a time namespace then the VVAR page which contains=
 
 > the system wide VDSO data is replaced with a namespace specific page
-> which has the same layout as the VVAR page. That page has vdso_data->se=
-q
-> set to 1 to enforce the slow path and vdso_data->clock_mode set to
-> VCLOCK_TIMENS to enforce the time namespace handling path.
->=20
-> The extra check in the case that vdso_data->seq is odd, e.g. a concurre=
-nt
-> update of the VDSO data is in progress, is not really affecting regular=
-
-> tasks which are not part of a time namespace as the task is spin waitin=
-g
-> for the update to finish and vdso_data->seq to become even again.
->=20
-> If a time namespace task hits that code path, it invokes the correspond=
-ing
-> time getter function which retrieves the real VVAR page, reads host tim=
-e
-> and then adds the offset for the requested clock which is stored in the=
-
-> special VVAR page.
+> which has the same layout as the VVAR page.
 >=20
 > Signed-off-by: Andrei Vagin <avagin@gmail.com>
 > ---
->  arch/arm64/Kconfig                               |  1 +
->  .../arm64/include/asm/vdso/compat_gettimeofday.h | 11 +++++++++++
->  arch/arm64/include/asm/vdso/gettimeofday.h       |  8 ++++++++
->  arch/arm64/kernel/vdso.c                         | 16 +++++++++++++---=
+>  arch/arm64/kernel/vdso.c | 55 +++++++++++++++++++++++++++++++++++++---=
 
->  arch/arm64/kernel/vdso/vdso.lds.S                |  3 ++-
->  arch/arm64/kernel/vdso32/vdso.lds.S              |  3 ++-
->  include/vdso/datapage.h                          |  1 +
->  7 files changed, 38 insertions(+), 5 deletions(-)
+>  1 file changed, 51 insertions(+), 4 deletions(-)
 >=20
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index e688dfad0b72..a671c2e36e5f 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -109,6 +109,7 @@ config ARM64
->  	select GENERIC_STRNLEN_USER
->  	select GENERIC_TIME_VSYSCALL
->  	select GENERIC_GETTIMEOFDAY
-> +	select GENERIC_VDSO_TIME_NS
->  	select HANDLE_DOMAIN_IRQ
->  	select HARDIRQS_SW_RESEND
->  	select HAVE_PCI
-
-Could you please add the selection in a separate patch at the end of this=
- series?
-
-> diff --git a/arch/arm64/include/asm/vdso/compat_gettimeofday.h b/arch/a=
-rm64/include/asm/vdso/compat_gettimeofday.h
-> index 537b1e695365..30a674f598c7 100644
-> --- a/arch/arm64/include/asm/vdso/compat_gettimeofday.h
-> +++ b/arch/arm64/include/asm/vdso/compat_gettimeofday.h
-> @@ -161,6 +161,17 @@ static __always_inline const struct vdso_data *__a=
-rch_get_vdso_data(void)
->  	return ret;
->  }
-> =20
-> +#ifdef CONFIG_TIME_NS
-> +static __always_inline const struct vdso_data *__arch_get_timens_vdso_=
-data(void)
-> +{
-> +	const struct vdso_data *ret;
-> +
-> +	asm volatile("mov %0, %1" : "=3Dr"(ret) : "r"(_timens_data));
-> +
-> +	return ret;
-> +}
-> +#endif
-> +
->  #endif /* !__ASSEMBLY__ */
-> =20
->  #endif /* __ASM_VDSO_GETTIMEOFDAY_H */
-> diff --git a/arch/arm64/include/asm/vdso/gettimeofday.h b/arch/arm64/in=
-clude/asm/vdso/gettimeofday.h
-> index b08f476b72b4..aa38e80dfbc4 100644
-> --- a/arch/arm64/include/asm/vdso/gettimeofday.h
-> +++ b/arch/arm64/include/asm/vdso/gettimeofday.h
-> @@ -98,6 +98,14 @@ const struct vdso_data *__arch_get_vdso_data(void)
->  	return _vdso_data;
->  }
-> =20
-> +#ifdef CONFIG_TIME_NS
-> +static __always_inline
-> +const struct vdso_data *__arch_get_timens_vdso_data(void)
-> +{
-> +	return _timens_data;
-> +}
-> +#endif
-> +
->  #endif /* !__ASSEMBLY__ */
-> =20
->  #endif /* __ASM_VDSO_GETTIMEOFDAY_H */
 > diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
-> index 5ef808ddf08c..bc93e26ae485 100644
+> index bc93e26ae485..2e553468b183 100644
 > --- a/arch/arm64/kernel/vdso.c
 > +++ b/arch/arm64/kernel/vdso.c
-> @@ -46,6 +46,10 @@ enum arch_vdso_type {
->  #define VDSO_TYPES		(ARM64_VDSO + 1)
->  #endif /* CONFIG_COMPAT_VDSO */
+> @@ -23,6 +23,7 @@
+>  #include <vdso/datapage.h>
+>  #include <vdso/helpers.h>
+>  #include <vdso/vsyscall.h>
+> +#include <linux/time_namespace.h>
 > =20
-> +#define VVAR_DATA_PAGE_OFFSET	0
-> +#define VVAR_TIMENS_PAGE_OFFSET	1
-> +#define VVAR_NR_PAGES		2
+
+Nit: Could you please group this with the linux/ headers and keep the
+alphabetical order.
+
+>  #include <asm/cacheflush.h>
+>  #include <asm/signal32.h>
+> @@ -171,15 +172,61 @@ int vdso_join_timens(struct task_struct *task, st=
+ruct time_namespace *ns)
+>  	up_write(&mm->mmap_sem);
+>  	return 0;
+>  }
 > +
-
-Maybe we could change this in an enumeration. Something like:
-
-enum vvar_pages {
-	VVAR_DATA_PAGE_OFFSET =3D 0,
-#ifdef CONFIG_TIME_NS
-	VVAR_TIMENS_PAGE_OFFSET =3D 1,
-#endif /* CONFIG_TIME_NS */
-	VVAR_NR_PAGES =3D __VDSO_PAGES,
-	(look at the change suggested below for vdso.h)
-};
-
->  struct __vdso_abi {
->  	const char *name;
->  	const char *vdso_code_start;
-> @@ -81,6 +85,12 @@ static union {
->  } vdso_data_store __page_aligned_data;
->  struct vdso_data *vdso_data =3D vdso_data_store.data;
-> =20
-> +
-> +struct vdso_data *arch_get_vdso_data(void *vvar_page)
+> +static struct page *find_timens_vvar_page(struct vm_area_struct *vma)
 > +{
-> +	return (struct vdso_data *)(vvar_page);
-> +}
+> +	if (likely(vma->vm_mm =3D=3D current->mm))
+> +		return current->nsproxy->time_ns->vvar_page;
 > +
->  static int __vdso_remap(enum arch_vdso_type arch_index,
->  			const struct vm_special_mapping *sm,
->  			struct vm_area_struct *new_vma)
-> @@ -182,7 +192,7 @@ static int __setup_additional_pages(enum arch_vdso_=
-type arch_index,
+> +	/*
+> +	 * VM_PFNMAP | VM_IO protect .fault() handler from being called
+> +	 * through interfaces like /proc/$pid/mem or
+> +	 * process_vm_{readv,writev}() as long as there's no .access()
+> +	 * in special_mapping_vmops().
+> +	 * For more details check_vma_flags() and __access_remote_vm()
+> +	 */
+> +
+> +	WARN(1, "vvar_page accessed remotely");
+> +
+> +	return NULL;
+> +}
+> +#else
+> +static inline struct page *find_timens_vvar_page(struct vm_area_struct=
+ *vma)
+> +{
+> +	return NULL;
+> +}
+>  #endif
 > =20
->  	vdso_text_len =3D vdso_lookup[arch_index].vdso_pages << PAGE_SHIFT;
->  	/* Be sure to map the data page */
-> -	vdso_mapping_len =3D vdso_text_len + PAGE_SIZE;
-> +	vdso_mapping_len =3D vdso_text_len + VVAR_NR_PAGES * PAGE_SIZE;
-> =20
->  	vdso_base =3D get_unmapped_area(NULL, 0, vdso_mapping_len, 0, 0);
->  	if (IS_ERR_VALUE(vdso_base)) {
-> @@ -190,13 +200,13 @@ static int __setup_additional_pages(enum arch_vds=
-o_type arch_index,
->  		goto up_fail;
->  	}
-> =20
-> -	ret =3D _install_special_mapping(mm, vdso_base, PAGE_SIZE,
-> +	ret =3D _install_special_mapping(mm, vdso_base, VVAR_NR_PAGES * PAGE_=
-SIZE,
->  				       VM_READ|VM_MAYREAD|VM_PFNMAP,
->  				       vdso_lookup[arch_index].dm);
->  	if (IS_ERR(ret))
->  		goto up_fail;
-> =20
-> -	vdso_base +=3D PAGE_SIZE;
-> +	vdso_base +=3D VVAR_NR_PAGES * PAGE_SIZE;
->  	mm->context.vdso =3D (void *)vdso_base;
->  	ret =3D _install_special_mapping(mm, vdso_base, vdso_text_len,
->  				       VM_READ|VM_EXEC|
-> diff --git a/arch/arm64/kernel/vdso/vdso.lds.S b/arch/arm64/kernel/vdso=
-/vdso.lds.S
-> index 7ad2d3a0cd48..a90b7d14e990 100644
-> --- a/arch/arm64/kernel/vdso/vdso.lds.S
-> +++ b/arch/arm64/kernel/vdso/vdso.lds.S
-> @@ -17,7 +17,8 @@ OUTPUT_ARCH(aarch64)
-> =20
->  SECTIONS
+>  static vm_fault_t vvar_fault(const struct vm_special_mapping *sm,
+>  		      struct vm_area_struct *vma, struct vm_fault *vmf)
 >  {
-> -	PROVIDE(_vdso_data =3D . - PAGE_SIZE);
-> +	PROVIDE(_vdso_data =3D . - 2 * PAGE_SIZE);
-
-Maybe we could have some conditional definition on CONFIG_TIME_NS in vdso=
-=2Eh:
-
-#ifdef CONFIG_TIME_NS
-#define __VVAR_PAGES	2
-#else
-#define __VVAR_PAGES 	1
-#endif
-
-and then here:
-
-PROVIDE(_vdso_data =3D . - __VVAR_PAGES * PAGE_SIZE);
-
-just to not forget what "2" stands for. What do you think?
-
-> +	PROVIDE(_timens_data =3D _vdso_data + PAGE_SIZE);
->  	. =3D VDSO_LBASE + SIZEOF_HEADERS;
+> -	if (vmf->pgoff =3D=3D 0)
+> -		return vmf_insert_pfn(vma, vmf->address,
+> -				sym_to_pfn(vdso_data));
+> -	return VM_FAULT_SIGBUS;
+> +	struct page *timens_page =3D find_timens_vvar_page(vma);
+> +	unsigned long pfn;
+> +
+> +	switch (vmf->pgoff) {
+> +	case VVAR_DATA_PAGE_OFFSET:
+> +		if (timens_page)
+> +			pfn =3D page_to_pfn(timens_page);
+> +		else
+> +			pfn =3D sym_to_pfn(vdso_data);
+> +		break;
+> +	case VVAR_TIMENS_PAGE_OFFSET:
+> +		/*
+> +		 * If a task belongs to a time namespace then a namespace
+> +		 * specific VVAR is mapped with the VVAR_DATA_PAGE_OFFSET and
+> +		 * the real VVAR page is mapped with the VVAR_TIMENS_PAGE_OFFSET
+> +		 * offset.
+> +		 * See also the comment near timens_setup_vdso_data().
+> +		 */
+> +		if (!timens_page)
+> +			return VM_FAULT_SIGBUS;
+> +		pfn =3D sym_to_pfn(vdso_data);
+> +		break;
+> +	default:
+> +		return VM_FAULT_SIGBUS;
+> +	}
+> +
+> +	return vmf_insert_pfn(vma, vmf->address, pfn);
+>  }
 > =20
->  	.hash		: { *(.hash) }			:text
-> diff --git a/arch/arm64/kernel/vdso32/vdso.lds.S b/arch/arm64/kernel/vd=
-so32/vdso.lds.S
-> index a3944927eaeb..3e432b536e53 100644
-> --- a/arch/arm64/kernel/vdso32/vdso.lds.S
-> +++ b/arch/arm64/kernel/vdso32/vdso.lds.S
-> @@ -17,7 +17,8 @@ OUTPUT_ARCH(arm)
-> =20
->  SECTIONS
->  {
-> -	PROVIDE_HIDDEN(_vdso_data =3D . - PAGE_SIZE);
-> +	PROVIDE_HIDDEN(_vdso_data =3D . - 2 * PAGE_SIZE);
-
-Ditto.
-
-> +	PROVIDE_HIDDEN(_timens_data =3D _vdso_data + PAGE_SIZE);
->  	. =3D VDSO_LBASE + SIZEOF_HEADERS;
-> =20
->  	.hash		: { *(.hash) }			:text
-> diff --git a/include/vdso/datapage.h b/include/vdso/datapage.h
-> index c5f347cc5e55..57eec6caca69 100644
-> --- a/include/vdso/datapage.h
-> +++ b/include/vdso/datapage.h
-> @@ -100,6 +100,7 @@ struct vdso_data {
->   * relocation, and this is what we need.
->   */
->  extern struct vdso_data _vdso_data[CS_BASES] __attribute__((visibility=
-("hidden")));
-> +extern struct vdso_data _timens_data[CS_BASES] __attribute__((visibili=
-ty("hidden")));
-> =20
->  #endif /* !__ASSEMBLY__ */
-> =20
+>  static int __setup_additional_pages(enum arch_vdso_type arch_index,
 >=20
 
 --=20
 Regards,
 Vincenzo
 
---------------86648045BC467A5FBDACF9A0
+--------------59908B14300839D4D2E98B75
 Content-Type: application/pgp-keys;
  name="pEpkey.asc"
 Content-Transfer-Encoding: quoted-printable
@@ -545,7 +408,7 @@ GrFxzNOCDuNG1w=3D=3D
 =3DVSiF
 -----END PGP PUBLIC KEY BLOCK-----
 
---------------86648045BC467A5FBDACF9A0
+--------------59908B14300839D4D2E98B75
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -556,5 +419,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---------------86648045BC467A5FBDACF9A0--
+--------------59908B14300839D4D2E98B75--
 
