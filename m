@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82DF8165F28
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 14:49:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01183165F21
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 14:49:16 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=n27UzqeOA9ZzjMnhxoG2AtmWoyNcBnkV87rH2ezr0TI=; b=tz7NWF/3k6Xt6O
-	lml3xNezWiN93YCZc+UEdmqa3xvrSSaCUZ0Cj9/1Vb+cDMa+xV250Ac6qCHjIN/vAoXctNymbQkWf
-	8eUNBR3UEPDAECsbQgUwZfnQylw0ItsbANcKvv+eotPU8GIMFH61Bpl8g4aMKFGgYzmrkrFKZH/Cd
-	uzGLrBl87UCLDUwNwlYkDE5LD2rwbzrbwKxe6Qi5uPvmKuxbh2rsSV1a5btjC69G6ytB4g5L2yHkf
-	Jsya15b7uHxJRcaVSs2gdfzgzE8HWvpk73Md8ftyMBqubCj7Vshb7ZuvFyRTjgl5N1Sihr7Zf7a+p
-	kcwljdzkKVxTHnC6atng==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J26NYYXAojH65G5GtN8UqcI7NnVigahD+s/7+zlafB8=; b=Fv1ody9RxvR8rh
+	MrQlY+x9Zp9r0rOfLkEK3PD7slYB5gSk6hvEmgkiWxETbePEzzAUoNb/HVQxOimUvFTnXiHDt0O9O
+	T0xqLZSPTOlhwwGQyyoPrhoQ49Akj8/XIX8KeoaLuGkh0dGkfMfH9TYUEEALPxZvtrRimD/hHESoW
+	fPvu5Jwi2jX6yrJyX8A9wQYfYwQQQkv9zwFaYdFtMEluroKS3VvR4jS4CqokZHv1BVEFQhjHMD7y3
+	jrr0DuCxIrjLpGRT39aFvTIQTdXuv4NIP6S7HQ0bkYuGOdod/VxwBHBpXRQDJ0AqDc44zbcJaA9JQ
+	5oCsr4zpKj+q4YyBx/2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4mCm-0006ny-NU; Thu, 20 Feb 2020 13:49:28 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1j4mCP-0006VL-JX; Thu, 20 Feb 2020 13:49:05 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4mCS-0006fi-1J; Thu, 20 Feb 2020 13:49:09 +0000
-X-UUID: a1fb60b189ce4cb1ae3de7c72a67d661-20200220
+ id 1j4mCE-0006Tk-Rt; Thu, 20 Feb 2020 13:48:56 +0000
+X-UUID: 092ee87abc6f4752b17417d381563e8d-20200220
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=KmAGgXrlCHQ77cMErepngIlOvfaHprPW+G8GQkksoF0=; 
- b=A6pnecmcTdlSi1ZSgE1r/8Gm8+b1CfJzrHrXI21KMXpVQMUtbnR1ULeFJ5AMSoHys3Pjl7hI6Rxh8O7MCrqkIjRaulrYyqJRvk7CfJ/pcv2NsaswXNjIh4pGgufYFJR29yC54BJwHQ0axPehVdk1nLjddVq+ODX8qB2IzFd0tuE=;
-X-UUID: a1fb60b189ce4cb1ae3de7c72a67d661-20200220
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=j1shUdhIMGXtvTw4SkKdC2CAhrzkCOkweoDSyilUUBo=; 
+ b=JuGyWgg0RsaKFLxSk6fjV3FIRJ1bjIHfLJD/lwDYvFI29QK150I1/LVKDfZhQPlZP2R3f4maAU7TjKRmtV5IuQ7BLtPmwL3qjPPKXghufc0F24H7uYSZ1m5f0+0qR8DN1YiDSd7vi8ie7gLwSBMWpndL7+idFV/LgUtqHsiPA9U=;
+X-UUID: 092ee87abc6f4752b17417d381563e8d-20200220
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 908554262; Thu, 20 Feb 2020 05:49:05 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ with ESMTP id 1175834965; Thu, 20 Feb 2020 05:48:52 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 20 Feb 2020 05:49:03 -0800
+ 15.0.1395.4; Thu, 20 Feb 2020 05:48:51 -0800
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 20 Feb 2020 21:46:20 +0800
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 20 Feb 2020 21:49:57 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Thu, 20 Feb 2020 21:46:45 +0800
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v2 0/1] scsi: ufs: fix waiting time for reference clock
-Date: Thu, 20 Feb 2020 21:48:47 +0800
-Message-ID: <20200220134848.8807-1-stanley.chu@mediatek.com>
+Subject: [PATCH v2 1/1] scsi: ufs: ufs-mediatek: add waiting time for
+ reference clock
+Date: Thu, 20 Feb 2020 21:48:48 +0800
+Message-ID: <20200220134848.8807-2-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20200220134848.8807-1-stanley.chu@mediatek.com>
+References: <20200220134848.8807-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: A530EFBDC78C0C129A69103C87BA3A3A8647BB6446C1DE1CFF13CD807CE25A6D2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_054908_129583_53302051 
-X-CRM114-Status: UNSURE (   5.34  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200220_054854_914774_28A0FA07 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
@@ -96,20 +99,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Some delays may be required either after gating or before ungating
+reference clock for device according to vendor requirements.
 
-This patchset adds waiting time for reference clock provided to UFS device in MediaTek UFS implementation.
+Note that in UFS 3.0, the delay time after gating reference
+clock can be defined by attribute bRefClkGatingWaitTime. Use the
+formal value instead if it can be queried from device.
 
-v1 -> v2:
-  - Drop patch #1 "scsi: ufs: add required delay after gating reference clock" since it will impact ufs-qcom flow without solid conclusion yet.
-
-Stanley Chu (1):
-  scsi: ufs: ufs-mediatek: add waiting time for reference clock
-
+Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+---
  drivers/scsi/ufs/ufs-mediatek.c | 46 +++++++++++++++++++++++++++++++--
  drivers/scsi/ufs/ufs-mediatek.h |  2 ++
  2 files changed, 46 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
+index 9d05962feb15..de650822c9d9 100644
+--- a/drivers/scsi/ufs/ufs-mediatek.c
++++ b/drivers/scsi/ufs/ufs-mediatek.c
+@@ -100,6 +100,17 @@ static int ufs_mtk_bind_mphy(struct ufs_hba *hba)
+ 	return err;
+ }
+ 
++static void ufs_mtk_udelay(unsigned long us)
++{
++	if (!us)
++		return;
++
++	if (us < 10)
++		udelay(us);
++	else
++		usleep_range(us, us + 10);
++}
++
+ static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
+ {
+ 	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+@@ -112,6 +123,7 @@ static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
+ 
+ 	if (on) {
+ 		ufs_mtk_ref_clk_notify(on, res);
++		ufs_mtk_udelay(host->ref_clk_ungating_wait_us);
+ 		ufshcd_writel(hba, REFCLK_REQUEST, REG_UFS_REFCLK_CTRL);
+ 	} else {
+ 		ufshcd_writel(hba, REFCLK_RELEASE, REG_UFS_REFCLK_CTRL);
+@@ -137,12 +149,29 @@ static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
+ 
+ out:
+ 	host->ref_clk_enabled = on;
+-	if (!on)
++	if (!on) {
++		ufs_mtk_udelay(host->ref_clk_gating_wait_us);
+ 		ufs_mtk_ref_clk_notify(on, res);
++	}
+ 
+ 	return 0;
+ }
+ 
++static void ufs_mtk_setup_ref_clk_wait_us(struct ufs_hba *hba,
++					  u16 gating_us, u16 ungating_us)
++{
++	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
++
++	if (hba->dev_info.clk_gating_wait_us) {
++		host->ref_clk_gating_wait_us =
++			hba->dev_info.clk_gating_wait_us;
++	} else {
++		host->ref_clk_gating_wait_us = gating_us;
++	}
++
++	host->ref_clk_ungating_wait_us = ungating_us;
++}
++
+ static u32 ufs_mtk_link_get_state(struct ufs_hba *hba)
+ {
+ 	u32 val;
+@@ -502,10 +531,23 @@ static void ufs_mtk_dbg_register_dump(struct ufs_hba *hba)
+ static int ufs_mtk_apply_dev_quirks(struct ufs_hba *hba)
+ {
+ 	struct ufs_dev_info *dev_info = &hba->dev_info;
++	u16 mid = dev_info->wmanufacturerid;
+ 
+-	if (dev_info->wmanufacturerid == UFS_VENDOR_SAMSUNG)
++	if (mid == UFS_VENDOR_SAMSUNG)
+ 		ufshcd_dme_set(hba, UIC_ARG_MIB(PA_TACTIVATE), 6);
+ 
++	/*
++	 * Decide waiting time before gating reference clock and
++	 * after ungating reference clock according to vendors'
++	 * requirements.
++	 */
++	if (mid == UFS_VENDOR_SAMSUNG)
++		ufs_mtk_setup_ref_clk_wait_us(hba, 1, 1);
++	else if (mid == UFS_VENDOR_SKHYNIX)
++		ufs_mtk_setup_ref_clk_wait_us(hba, 30, 30);
++	else if (mid == UFS_VENDOR_TOSHIBA)
++		ufs_mtk_setup_ref_clk_wait_us(hba, 100, 32);
++
+ 	return 0;
+ }
+ 
+diff --git a/drivers/scsi/ufs/ufs-mediatek.h b/drivers/scsi/ufs/ufs-mediatek.h
+index 492414e5f481..4c787b99fe41 100644
+--- a/drivers/scsi/ufs/ufs-mediatek.h
++++ b/drivers/scsi/ufs/ufs-mediatek.h
+@@ -92,6 +92,8 @@ struct ufs_mtk_host {
+ 	struct ufs_hba *hba;
+ 	struct phy *mphy;
+ 	bool ref_clk_enabled;
++	u16 ref_clk_ungating_wait_us;
++	u16 ref_clk_gating_wait_us;
+ };
+ 
+ #endif /* !_UFS_MEDIATEK_H */
 -- 
 2.18.0
 _______________________________________________
