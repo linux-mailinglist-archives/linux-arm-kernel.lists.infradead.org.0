@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75E6F1655C1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 04:37:23 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D50D1655E5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 04:56:00 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=adGi2byvuvZBUoFDeOj4HJgvZUNWEVeeQWGJeQjY5Ic=; b=uksDM/50nIa1lfTQIcAEM1zUB
-	Mslezip18zesPy4jQfhw6XxvBRWgdwEhHnFZHGyF+7VZJpirvJscqjM/efckNClMWg866EfvnX+SO
-	DoJnRml8qssI7uNn7TCAtweqNlusmx3Z5PQ9+4zp1O2kd4TnKQjwKCfnf1E9paWxH0HnfE+1L70TP
-	qq5DSE7oODKsiP/LFVTY4oaKIKrScH3/W2rd1PrPnmAvM1JOEmATWCoOuxtKdV4VIkeK2dsWnpkKf
-	t8CsIpXBpuPkUjelJHAKSg4nYYjsiaIGlRlkKWBFyyXWhlACYIDmik603S9PE241zaTCOSKyhLvXi
-	9ptC43QDw==;
+	 bh=S1DFZ6cpaXXzYkT3ehdZbgsjk6NGtBI0+n0lylaIc2M=; b=Wqp9EUmc7BLWuj7Tde3uHK3NG
+	GvG3z9I38KVjfuksmvKdOF/BNxo5c3m4Gzi85cpRimgEJNvTuIS0ugQY4BIyWiCIiuYPjPdhzy7gH
+	9wOzcp3VaQjENextTq1tlK6lhCpBsupsW7562PNZOw5KSOIKk2Lzo8Rr814TP1kxkg+u2B4O53IIM
+	6hOoejgTt09+vdReTrTioYp2VMJ8U2ph4R8i3VI0akc73gCal6B6wKnlRoER2nTUQiHc7R7o6UWiQ
+	sy7F3ph3ZIaJeaKNGsyXmoPjOBF8zLzLbdI94rUuNPMrPlLX4cJsUtAKXbR4GvKCL0SbAzSNsfRRF
+	TChDEyXkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ceO-0006jt-3F; Thu, 20 Feb 2020 03:37:20 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1j4cwJ-0005zX-OW; Thu, 20 Feb 2020 03:55:51 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ceE-0006jO-4z
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 03:37:11 +0000
-Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 2580BC2684EA7326FDBC;
- Thu, 20 Feb 2020 11:37:08 +0800 (CST)
-Received: from [127.0.0.1] (10.173.222.27) by DGGEMS403-HUB.china.huawei.com
- (10.3.19.203) with Microsoft SMTP Server id 14.3.439.0; Thu, 20 Feb 2020
- 11:37:01 +0800
-Subject: Re: [PATCH v4 09/20] irqchip/gic-v4.1: Plumb set_vcpu_affinity SGI
- callbacks
+ id 1j4cw8-0005yR-6W
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 03:55:41 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 9FA318B7216BCCE18721;
+ Thu, 20 Feb 2020 11:55:34 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.439.0; Thu, 20 Feb 2020
+ 11:55:26 +0800
+Subject: Re: [PATCH v4 16/20] KVM: arm64: GICv4.1: Allow SGIs to switch
+ between HW and SW interrupts
 To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <kvmarm@lists.cs.columbia.edu>, <kvm@vger.kernel.org>,
  <linux-kernel@vger.kernel.org>
 References: <20200214145736.18550-1-maz@kernel.org>
- <20200214145736.18550-10-maz@kernel.org>
+ <20200214145736.18550-17-maz@kernel.org>
 From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <38b42ac1-5a5d-2f10-2cba-b50f37c7a965@huawei.com>
-Date: Thu, 20 Feb 2020 11:37:00 +0800
+Message-ID: <6798eb13-a7e9-2a92-91b2-9b657962ea79@huawei.com>
+Date: Thu, 20 Feb 2020 11:55:24 +0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.2.0
 MIME-Version: 1.0
-In-Reply-To: <20200214145736.18550-10-maz@kernel.org>
+In-Reply-To: <20200214145736.18550-17-maz@kernel.org>
 Content-Language: en-US
 X-Originating-IP: [10.173.222.27]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_193710_363257_F04A18F1 
-X-CRM114-Status: GOOD (  16.27  )
+X-CRM114-CacheID: sfid-20200219_195540_409142_04D52A64 
+X-CRM114-Status: GOOD (  12.37  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,91 +82,38 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Marc,
 
 On 2020/2/14 22:57, Marc Zyngier wrote:
-> As for VLPIs, there is a number of configuration bits that cannot
-
-As for vSGIs,
-
-> be directly communicated through the normal irqchip API, and we
-> have to use our good old friend set_vcpu_affinity.
+> In order to let a guest buy in the new, active-less SGIs, we
+> need to be able to switch between the two modes.
 > 
-> This is used to configure group and priority for a given vSGI.
+> Handle this by stopping all guest activity, transfer the state
+> from one mode to the other, and resume the guest.
 > 
 > Signed-off-by: Marc Zyngier <maz@kernel.org>
 
-Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
+[...]
 
-> ---
->   drivers/irqchip/irq-gic-v3-its.c   | 18 ++++++++++++++++++
->   include/linux/irqchip/arm-gic-v4.h |  5 +++++
->   2 files changed, 23 insertions(+)
-> 
-> diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
-> index a9753435c4ff..a2e824eae43f 100644
-> --- a/drivers/irqchip/irq-gic-v3-its.c
-> +++ b/drivers/irqchip/irq-gic-v3-its.c
-> @@ -3969,6 +3969,23 @@ static int its_sgi_get_irqchip_state(struct irq_data *d,
->   	return 0;
->   }
+> diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
+> index 1bc09b523486..2c9fc13e2c59 100644
+> --- a/virt/kvm/arm/vgic/vgic-v3.c
+> +++ b/virt/kvm/arm/vgic/vgic-v3.c
+> @@ -540,6 +540,8 @@ int vgic_v3_map_resources(struct kvm *kvm)
+>   		goto out;
+>   	}
 >   
-> +static int its_sgi_set_vcpu_affinity(struct irq_data *d, void *vcpu_info)
-> +{
-> +	struct its_vpe *vpe = irq_data_get_irq_chip_data(d);
-> +	struct its_cmd_info *info = vcpu_info;
-> +
-> +	switch (info->cmd_type) {
-> +	case PROP_UPDATE_SGI:
-> +		vpe->sgi_config[d->hwirq].priority = info->priority;
-> +		vpe->sgi_config[d->hwirq].group = info->group;
-> +		its_configure_sgi(d, false);
-> +		return 0;
-> +
-> +	default:
-> +		return -EINVAL;
-> +	}
-> +}
-> +
->   static struct irq_chip its_sgi_irq_chip = {
->   	.name			= "GICv4.1-sgi",
->   	.irq_mask		= its_sgi_mask_irq,
-> @@ -3976,6 +3993,7 @@ static struct irq_chip its_sgi_irq_chip = {
->   	.irq_set_affinity	= its_sgi_set_affinity,
->   	.irq_set_irqchip_state	= its_sgi_set_irqchip_state,
->   	.irq_get_irqchip_state	= its_sgi_get_irqchip_state,
-> +	.irq_set_vcpu_affinity	= its_sgi_set_vcpu_affinity,
->   };
+> +	if (kvm_vgic_global_state.has_gicv4_1)
+> +		vgic_v4_configure_vsgis(kvm);
+>   	dist->ready = true;
 >   
->   static int its_sgi_irq_domain_alloc(struct irq_domain *domain,
-> diff --git a/include/linux/irqchip/arm-gic-v4.h b/include/linux/irqchip/arm-gic-v4.h
-> index 30b4855bf766..a1a9d40266f5 100644
-> --- a/include/linux/irqchip/arm-gic-v4.h
-> +++ b/include/linux/irqchip/arm-gic-v4.h
-> @@ -98,6 +98,7 @@ enum its_vcpu_info_cmd_type {
->   	SCHEDULE_VPE,
->   	DESCHEDULE_VPE,
->   	INVALL_VPE,
-> +	PROP_UPDATE_SGI,
+>   out:
 
-Maybe better to use 'PROP_UPDATE_VSGI'?
+Is there any reason to invoke vgic_v4_configure_vsgis() here?
+This is called on the first VCPU run, through kvm_vgic_map_resources().
+Shouldn't the vSGI configuration only driven by a GICD_CTLR.nASSGIreq
+writing (from guest, or from userspace maybe)?
 
 
 Thanks,
 Zenghui
-
->   };
->   
->   struct its_cmd_info {
-> @@ -110,6 +111,10 @@ struct its_cmd_info {
->   			bool		g0en;
->   			bool		g1en;
->   		};
-> +		struct {
-> +			u8		priority;
-> +			bool		group;
-> +		};
->   	};
->   };
->   
-> 
 
 
 _______________________________________________
