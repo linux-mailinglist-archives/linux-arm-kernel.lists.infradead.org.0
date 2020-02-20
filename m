@@ -2,52 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53FE6166B18
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 00:42:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BFB0166B26
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 21 Feb 2020 00:48:34 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Uot8qkWvBYWfAYav+ig+I83KDs10VvK4Zkx+DTVcrxQ=; b=EZTPFwYSlyz9JEJR6NjweJMG/
-	/x6QhK+1U4sHU5jW+XIIJ7PsFAaNua/8+xazwn5SiROMwv1AEW9kyMJ/ut6++oNFscdfIWdk+UR9D
-	s6nyTAaBgttk4A1jh76bRnQZ1j1f+5RQ0lmM7W4sqCV0oLE4uyR8iUwaA1nH2Rfs5dMJM+1I1rSyc
-	Hdv1jmIbX6pZu5UngR9WGeUhkkW87mVVzufqPtjqw4qR6SDcTCAI21rDuA6gLE0qNbM3gXAAbylJo
-	o/BIlEEuAYA5lsW/+upEkgYfINiokNFe94jBSrTqhQeMp5iBIdC451c6ncHN829M3A0Vg4PHw7UTi
-	YNjypkV8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p503DYUbLFwd5nVAJclSy+vSZrQRoi1Yx05nl6fHHjI=; b=rao9wNkKct3bOI
+	dpzYgr4/CJ8O7qUKdVlS24rGNx0tjK6O1UEBLxKGgDucx8eIfWCNp7FL9E6S0RcdQ8AcwIU5YF4KU
+	ZBMOVzdzTRojzNUEWwEiN0R+w+WbOpGPixi4cLKJJJmbrtq95+8WHidqQ/iaGEGXu45ilolol7nFf
+	gfoqVD37N9dSyvMRBRQr+qyizELmiL6SxZ7pKwlqxTNuQ70FsAZWI4VHCpxxXOrc4jajTqCh/T2w3
+	M2PA/KH43F2apxChUhFIGdg3c8gF8HfA9NJs8M2hfjWlkeBWxdJ9mYFxi9b8PeNcgPGQ15fMSmMjm
+	RFMX9NAaBqIw6i/kLT8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4vSO-0005W1-QT; Thu, 20 Feb 2020 23:42:12 +0000
-Received: from jabberwock.ucw.cz ([46.255.230.98])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4vSG-0005VU-MD
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 23:42:06 +0000
-Received: by jabberwock.ucw.cz (Postfix, from userid 1017)
- id 5FD9B1C0141; Fri, 21 Feb 2020 00:41:51 +0100 (CET)
-Date: Fri, 21 Feb 2020 00:41:51 +0100
-From: Pavel Machek <pavel@ucw.cz>
-To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-Subject: Camera LED on Librem 5 was Re: [PATCH] backlight: add led-backlight
- driver
-Message-ID: <20200220234151.GB1544@amd>
-References: <20200219191412.GA15905@amd>
- <20200220082956.GA3383@bogon.m.sigxcpu.org>
+	id 1j4vYR-0007kb-O5; Thu, 20 Feb 2020 23:48:27 +0000
+Received: from [2601:1c0:6280:3f0::19c2]
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4vYF-0007k0-KU; Thu, 20 Feb 2020 23:48:15 +0000
+Subject: Re: [PATCH v8 1/6] drm/mediatek: Use regmap for register access
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ robh+dt@kernel.org, mark.rutland@arm.com, ck.hu@mediatek.com,
+ p.zabel@pengutronix.de, airlied@linux.ie, mturquette@baylibre.com,
+ sboyd@kernel.org, ulrich.hecht+renesas@gmail.com,
+ laurent.pinchart@ideasonboard.com
+References: <20200220172147.919996-1-enric.balletbo@collabora.com>
+ <20200220172147.919996-2-enric.balletbo@collabora.com>
+From: Randy Dunlap <rdunlap@infradead.org>
+Message-ID: <0b2046b9-90de-c894-7502-993b5df12e7a@infradead.org>
+Date: Thu, 20 Feb 2020 15:48:12 -0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200220082956.GA3383@bogon.m.sigxcpu.org>
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_154204_876419_DCF4DFDD 
-X-CRM114-Status: GOOD (  12.40  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.255.230.98 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+In-Reply-To: <20200220172147.919996-2-enric.balletbo@collabora.com>
+Content-Language: en-US
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,74 +49,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel list <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============7316409298698018817=="
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>, dri-devel@lists.freedesktop.org,
+ Richard Fontana <rfontana@redhat.com>,
+ Collabora Kernel ML <kernel@collabora.com>, linux-clk@vger.kernel.org,
+ Weiyi Lu <weiyi.lu@mediatek.com>, wens@csie.org,
+ linux-arm-kernel@lists.infradead.org, mtk01761 <wendell.lin@mediatek.com>,
+ linux-media@vger.kernel.org, devicetree@vger.kernel.org,
+ frank-w@public-files.de, Seiya Wang <seiya.wang@mediatek.com>,
+ sean.wang@mediatek.com, Houlong Wei <houlong.wei@mediatek.com>,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Allison Randal <allison@lohutok.net>, Matthias Brugger <mbrugger@suse.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, matthias.bgg@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2/20/20 9:21 AM, Enric Balletbo i Serra wrote:
+> From: Matthias Brugger <mbrugger@suse.com>
+> 
+> The mmsys memory space is shared between the drm and the
+> clk driver. Use regmap to access it.
+> 
+> Signed-off-by: Matthias Brugger <mbrugger@suse.com>
+> Reviewed-by: Philipp Zabel <p.zabel@pengutronix.de>
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> ---
+> 
+> Changes in v8: None
+> Changes in v7:
+> - Add R-by from CK
+> 
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c |  4 +-
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp.c  | 50 +++++++++++--------------
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp.h  |  4 +-
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 13 ++-----
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  2 +-
+>  5 files changed, 30 insertions(+), 43 deletions(-)
 
---===============7316409298698018817==
-Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="cmJC7u66zC7hs+87"
-Content-Disposition: inline
+Hi. Just a quick question:
 
+Do you need to select REGMAP or one of its derivatives to make sure
+that the proper interfaces are available for this driver?
 
---cmJC7u66zC7hs+87
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+thanks.
+-- 
+~Randy
 
-Hi!
-
-> > This patch adds a led-backlight driver (led_bl), which is similar to
-> > pwm_bl except the driver uses a LED class driver to adjust the
-> > brightness in the HW. Multiple LEDs can be used for a single backlight.
->=20
-> Tested-by: Guido G=FCnther <agx@sigxcpu.org>
-
-Thanks for testing!
-
-I noticed blog post about using Librem 5 torch. Unfortunately, it used
-very strange/non-standard interface, first using LED as a GPIO to
-enable LED controller, then direct i2c access. That is not acceptable
-interface for mainline, and it would be better not to advertise such
-code, as it will likely become broken in future.
-
-https://puri.sm/posts/easy-librem-5-app-development-flashlight/
-
-Best regards,
-									Pavel
---=20
-(english) http://www.livejournal.com/~pavelmachek
-(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
-g.html
-
---cmJC7u66zC7hs+87
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: Digital signature
-
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1
-
-iEUEARECAAYFAl5PGT8ACgkQMOfwapXb+vKXXACgieHtSmG/OaQuYS/IMFe6SvbQ
-kJgAmL4xWRvXq6Hjsr2Tnlx3h5AuUig=
-=Poch
------END PGP SIGNATURE-----
-
---cmJC7u66zC7hs+87--
-
-
---===============7316409298698018817==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7316409298698018817==--
-
