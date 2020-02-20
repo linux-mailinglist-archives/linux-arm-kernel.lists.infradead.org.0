@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A6111656ED
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 06:29:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id C08D91656F1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 06:30:23 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FKGhU/DldQ+f/KFFgWpl66LUw53Aqg1p+4zF/Bo1aHc=; b=Ys6hWgHxj6amwQGMxeBXh8rYm0
-	Z9XtY0kVvRDMYYwWkQa7OczEO+J2XKuVMcKxS8DhX9k2SiTg8lsSgb3LqV7YDsgFmfvcr5ZryzwSJ
-	Sr9BQDgY6aRmi2HG3CQ1jsDQzGC+4sYi6mPgWwIa483fZ5CO6Ku58lduL+Zj72SuxbHIQUTqa5gtO
-	g8+L8x3tWn0VaxxSZDzxzcHI3x57nPYt4SzV+FTQTlq/zW5M96kkrxZMxzuAPK447Hjp0R7OvjDAO
-	oO6C78JwrANzfeoXiHB2cqSkSF2et4m09zuyP1fj2RtwxOeVKclgdggkbDFTdt0Eq8pbVIQRmVN42
-	2tj6E5gw==;
+	bh=5gDv5W0vn/HJgdP+JfMOjpDR8C65gW0NOMu1TNMlads=; b=OoySHSYtZSvWAX4PlVWmTpo3yC
+	qgHe8Z+mq7+earvWw6pKDMy1TJTEl1sV2zON+GANNlu4nGudZtw9f8bWXo2Vor/AgSCM9gDK2lflO
+	cQm8WiPbZ1OixinEQEdmGMprvNabImFwzBvWX/z9vjKZlszSKkYlAVazmYRYiW2zZw1t0VSGod8Bi
+	Q0VBtvHGvfMutMp23DpHZtj5ZMe4g79Cu3sgBWkDadC+H4xJ5ItEleO5mMQKBQUdQWSHYZNLVTG8y
+	7RdhLVuAY5EIzhz+zDwmYqSDG+a6EDADjIegq0FqCb1E2dxeaEBvWMaD0pNy27Z/csC5YIrfbGhQ0
+	EExy5/aw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ePF-0003Hb-FI; Thu, 20 Feb 2020 05:29:49 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1j4ePX-0003UR-Iy; Thu, 20 Feb 2020 05:30:07 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4eOS-0002WZ-HZ
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 05:29:04 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t14so1075425plr.8
+ id 1j4eOa-0002i8-NJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 05:29:10 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id q39so387655pjc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 21:29:00 -0800 (PST)
+ Wed, 19 Feb 2020 21:29:08 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=leyno95cobAtAcNQFGrlVZ0utmyIUUJFgDrYtk3rO3A=;
- b=ssb5jO6qvG1aojB3oqYW76CRN/TETCqlTpGBQUhq3KQfF8uaQftqD1BQfIPG8lDkC7
- 79WIqFOVmqnqIb0KYR6Meyy4JB40F6kgOkFiLeIBEjhOa/EaOwH1bx49dEsbQM6JY0q2
- tt3CxtpQFRWCgs1YcCf59oV82Sss663tZJhUJfj9sRNSla4Q40sXRW8ewBIWzb4A9l8S
- payzUUOQA52An/Ng3ie75+detcANzNCmgzEH6W+lVqjnbVYpcDzGmNz2fWFq6NGRK9RW
- dWP7qH5y5WRGndesIr5WehhcLQKiYsEVYoP+c1unPljkPoQvRrH4s1IAmG2DLfQ8HaDA
- AJPw==
+ bh=3qk48O5iP5UI83BGLtFK/DPXjcS2SRQP8TVMgp2fJpo=;
+ b=bRhVmrGGpBmtuhmW7mF9VhV7BpnN10S3RU3sTcIlAIM6YOGdKjZ3Muy0pfFZe2HjrE
+ +ivyFn3B0QqL0Ol5NTaEMo8clTBpXV+uTp8jhp82ceKiaBLhs86pcSsLjIXMlQiYMOQn
+ U7/pghcJB7bzkbFeytV2N+2VSre7MAF5HzQr4a9xJo8EdiiZV9e4SCRrsqsLuzX3baYS
+ Sjr0EPpXA0sO0qCXUn903Cva3jEeYbKONPZfRXl24FlLLEG2TWe1L+i/JUlqlfkDfgcr
+ AI/yVONdmuXUT8egRIDZyGN4l3PIV0VubOxrHCzNjswERFv82GKMpG494kJbaaCd4IbE
+ 2WdA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=leyno95cobAtAcNQFGrlVZ0utmyIUUJFgDrYtk3rO3A=;
- b=iDht1aiTRzt3jA2CqRfNwPnIfvXbne2RGAVFa+FupsY8sWSux2RUddsciD8gnhJyD3
- SSUIQaG21L/l/uAuixgy4l7vQkMyVsIrkU46zZfuQonMhAjJmAvfWsMIOsqWGNo3GG1n
- kerBje5jngzksR+r7zl4/mop/l0G7P5TRAMQZYdYjwldlbM8mPK9vXZnr+NDODmNxtOK
- aN69tO8A7wR20QXRZL/1GGCmbfL/GtkB42POWxE6Cp+7gJAi7LFTdLtJUHlVctgXsBLG
- oZ+ZNn4vO8ZOWwipvPRkNPidtgmR48IfefFdEBTG9HBz0G6Y6aa6suwJRanlrSfrQjCt
- 9dNw==
-X-Gm-Message-State: APjAAAXQem3xfGW74sMFey1cdX/Y+G+75/5wjBPQS7GAsihe7qt8E+bS
- 7dGv7AJQxKZyWA+v9ogikow5ew==
-X-Google-Smtp-Source: APXvYqw+bW5EqKGykBiDWFo04XmcY84U5/oexdvpR3ClTdeonThzRPh5LAsuxd9zv9R1t7JndxijgA==
-X-Received: by 2002:a17:90a:2223:: with SMTP id
- c32mr1627110pje.15.1582176539000; 
- Wed, 19 Feb 2020 21:28:59 -0800 (PST)
+ bh=3qk48O5iP5UI83BGLtFK/DPXjcS2SRQP8TVMgp2fJpo=;
+ b=kU9ydK7TbG3efdOTDbst4sUT0CzXT2GLAXywdiKiBZEqJjzexj37ZZMJv3fxssw48z
+ 1GV5bH+yZmUtBwLahjaqnX7PMEay27oPyKBvFmNNzwETkF/eqJJSc5+tC5iE12NRDTAr
+ IAX2OOkSWtfQG7BZxuuDWXyNhcjQ1qWs23GTbWE+0gC3X/ihiHwsPgRKcvn+rfPuzNbn
+ OLuBWn2sa8jlh0Nz6Dn+H/9axwiZsY+/AesBL4PGzBl+Dbjv8M6Ma7tHc4jcJI2Piopp
+ uQG/SWebiSzF/Ft/YAcz2IN9kZau6Y7sQWYAChwjQsHEuALcsiiK3STevNkK6/0UpBgQ
+ Kf/Q==
+X-Gm-Message-State: APjAAAWoaGUSjhj0nbf+5Pb9NfgQgZJ/bWypMR4WuJMUMWN/ki4axLJd
+ Y4s8bRWXa+tTWDETG5i3ko4VkQ==
+X-Google-Smtp-Source: APXvYqwRsniVe9jr9X/SxVEMR87rh2T9LKg7rl7y/G3tSgvH3gz7yNnWze0GXZlxv9TewDyIjcISZw==
+X-Received: by 2002:a17:902:b617:: with SMTP id
+ b23mr30197151pls.285.1582176547616; 
+ Wed, 19 Feb 2020 21:29:07 -0800 (PST)
 Received: from localhost.localdomain (li1441-214.members.linode.com.
  [45.118.134.214])
- by smtp.gmail.com with ESMTPSA id l69sm1535663pgd.1.2020.02.19.21.28.50
+ by smtp.gmail.com with ESMTPSA id l69sm1535663pgd.1.2020.02.19.21.28.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 21:28:58 -0800 (PST)
+ Wed, 19 Feb 2020 21:29:07 -0800 (PST)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
@@ -69,23 +69,20 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  Coresight ML <coresight@lists.linaro.org>
-Subject: [PATCH v5 7/9] perf cs-etm: Fixup exception entry for thread stack
-Date: Thu, 20 Feb 2020 13:26:59 +0800
-Message-Id: <20200220052701.7754-8-leo.yan@linaro.org>
+Subject: [PATCH v5 8/9] perf thread: Add helper to get top return address
+Date: Thu, 20 Feb 2020 13:27:00 +0800
+Message-Id: <20200220052701.7754-9-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200220052701.7754-1-leo.yan@linaro.org>
 References: <20200220052701.7754-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_212900_599677_2EFF5018 
-X-CRM114-Status: GOOD (  17.75  )
+X-CRM114-CacheID: sfid-20200219_212908_793545_BA5A61AE 
+X-CRM114-Status: GOOD (  13.40  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -113,98 +110,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In theory when an exception is taken, the thread stack is pushed with an
-expected return address (ret_addr): from_ip + insn_len; and later when
-the exception returns back, it compares the return address (from the new
-packet's to_ip) with the ret_addr in the of thread stack, if have the
-same values then the thread stack will be popped.
+For the instruction emulation or single step in kernel, when return to
+the user space, the return address is not possible to be the same with
+the ret_addr in thread stack.
 
-When a branch instruction's target address triggers an exception, the
-thread stack's ret_addr is the branch target address plus instruction
-length for exception entry; but this branch instruction is not taken,
-the exception return address is the branch target address, thus the
-thread stack's ret_addr cannot match with the exception return address,
-so the thread stack cannot pop properly.
-
-This patch fixes up the ret_addr at the exception entry, when it detects
-the exception is triggered by a branch target address, it sets
-'insn_len' to zero.  This allows the thread stack can pop properly when
-return from exception.
-
-Before:
-
-  # perf script --itrace=g16l64i100
-
-  main  3258        100      instructions:
-          ffff800010082c1c el0_sync+0x5c ([kernel.kallsyms])
-              ffffad816a14 memcpy+0x4 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
-              ffffad800820 _dl_start_final+0x48 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
-              ffffad800b00 _dl_start+0x200 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
-              ffffad800048 _start+0x8 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
-              ffffad800044 _start+0x4 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
-
-The issues in the output:
-memcpy+0x4 => The function call memcpy() causes exception; it's return
-              address should be memcpy+0x0.
-_start+0x4 => The thread stack is not popped correctly, this is a stale
-              data which is left in the previous exception flow.
-
-After:
-
-  # perf script --itrace=g16l64i100
-
-  main  3258        100      instructions:
-          ffff800010082c1c el0_sync+0x5c ([kernel.kallsyms])
-              ffffad816a10 memcpy+0x0 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
-              ffffad800820 _dl_start_final+0x48 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
-              ffffad800b00 _dl_start+0x200 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
-              ffffad800048 _start+0x8 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
+This patch adds a helper to read out the top return address from thread
+stack, this can be used for specific calibration in up case.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- tools/perf/util/cs-etm.c | 22 ++++++++++++++++++++++
- 1 file changed, 22 insertions(+)
+ tools/perf/util/thread-stack.c | 10 ++++++++++
+ tools/perf/util/thread-stack.h |  1 +
+ 2 files changed, 11 insertions(+)
 
-diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index d9c22c145307..4800daf0dc3d 100644
---- a/tools/perf/util/cs-etm.c
-+++ b/tools/perf/util/cs-etm.c
-@@ -1160,6 +1160,7 @@ static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
- 	u8 trace_chan_id = tidq->trace_chan_id;
- 	int insn_len;
- 	u64 from_ip, to_ip;
-+	u32 flags;
+diff --git a/tools/perf/util/thread-stack.c b/tools/perf/util/thread-stack.c
+index 0885967d5bc3..60cd6fdca8de 100644
+--- a/tools/perf/util/thread-stack.c
++++ b/tools/perf/util/thread-stack.c
+@@ -497,6 +497,16 @@ void thread_stack__sample(struct thread *thread, int cpu,
+ 	chain->nr = i;
+ }
  
- 	if (etm->synth_opts.callchain || etm->synth_opts.thread_stack) {
- 		from_ip = cs_etm__last_executed_instr(tidq->prev_packet);
-@@ -1168,6 +1169,27 @@ static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
- 		insn_len = cs_etm__instr_size(etmq, trace_chan_id,
- 					      tidq->prev_packet->isa, from_ip);
- 
-+		/*
-+		 * Fixup the exception entry.
-+		 *
-+		 * If the packet's start_addr is same with its end_addr, this
-+		 * packet was altered from a exception packet to a range packet;
-+		 * the detailed info is described in cs_etm__exception(), which
-+		 * is used to handle the case for a branch instruction is not
-+		 * taken but the branch triggers an exception.
-+		 *
-+		 * In this case, fixup 'insn_len' to zero so that allow the
-+		 * thread stack's return address can match with the exception
-+		 * return address, finally can pop up thread stack properly when
-+		 * return from exception.
-+		 */
-+		flags = PERF_IP_FLAG_BRANCH | PERF_IP_FLAG_CALL |
-+			PERF_IP_FLAG_INTERRUPT;
-+		if (tidq->prev_packet->flags == flags &&
-+		    tidq->prev_packet->start_addr ==
-+		    tidq->prev_packet->end_addr)
-+			insn_len = 0;
++u64 thread_stack__get_top_ret_addr(struct thread *thread, int cpu)
++{
++	struct thread_stack *ts = thread__stack(thread, cpu);
 +
- 		/*
- 		 * Create thread stacks by keeping track of calls and returns;
- 		 * any call pushes thread stack, return pops the stack, and
++	if (!ts || !ts->cnt)
++		return UINT64_MAX;
++
++	return ts->stack[ts->cnt--].ret_addr;
++}
++
+ struct call_return_processor *
+ call_return_processor__new(int (*process)(struct call_return *cr, u64 *parent_db_id, void *data),
+ 			   void *data)
+diff --git a/tools/perf/util/thread-stack.h b/tools/perf/util/thread-stack.h
+index e1ec5a58f1b2..b9d07a3be6c2 100644
+--- a/tools/perf/util/thread-stack.h
++++ b/tools/perf/util/thread-stack.h
+@@ -88,6 +88,7 @@ void thread_stack__sample(struct thread *thread, int cpu, struct ip_callchain *c
+ int thread_stack__flush(struct thread *thread);
+ void thread_stack__free(struct thread *thread);
+ size_t thread_stack__depth(struct thread *thread, int cpu);
++u64 thread_stack__get_top_ret_addr(struct thread *thread, int cpu);
+ 
+ struct call_return_processor *
+ call_return_processor__new(int (*process)(struct call_return *cr, u64 *parent_db_id, void *data),
 -- 
 2.17.1
 
