@@ -2,75 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B63F1165EC2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 14:28:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCE0D165EC5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 14:28:33 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=l8UzUxCqHTBeqpbVXP84N2azJ2IfyN8zAotTUXkHAqA=; b=aTc
-	PpBpeJ0hBA5FUZiN2uSl/oi/aInagYkRQyvfy8uMzMbUvwWW3asz7lnQtssYucTfMY+heEbkMpetK
-	8xvxK1PK4j8uezXJxg/26UuhkqC9Vhm58iKgmorEFV/C50xCT+tm6FwRJRqL6gJpgoi8pAiHtVR7M
-	HP96wA4govI+buEplbWXd2C7VPa43qE3b9R9ZNOdArz6uyDsrnFvsR4QZdLjCe15f09/td25R1gBL
-	KGTxjKEXdspz/cY/OcDkFz/7MI63bke5OPqy11QMSfJiIZ3RsYM4RFy4bS0YrO/Hu4e5GHCvuR6oZ
-	FqEOJZ2m/80ob6NiHPzJZyOkD4p02tQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nYVsMWcLsgsZFBeerWk7EOm66CQFht/Qa45e/Gtcuro=; b=W5/dpWBWO4WVhb
+	fU//ADtkEvWjdH1adBRsBJlemetoIU5r/j6JhJYQpurkknT3KxtKmXekzKP5eMit75KJ7PJeDWYDY
+	gwdMBspgtcTZNHIcYCVbuJnUeudjyO2uF7a0kxwBTsuMt+AIDdQxXxMVZiXX8t6klVtHNBphTuNie
+	TBtKvlq412QzAuaXxFVc+235Smf+6i7QWgOWjkpUv3lfts+KopVfpQoV4LolAxycYME6YEBrJeNxa
+	iP/qTgiog5hzfg2MHN/qTN79CzbKB1IuO/pxh0bSj2ZhwoJGyhkxEm+2W933cRQz4wzPpR3yIb9L/
+	kCB/wasLvtvebXlXHsSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ls5-00050G-Vi; Thu, 20 Feb 2020 13:28:05 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1j4lsQ-0005Lq-Ln; Thu, 20 Feb 2020 13:28:26 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4lrv-0004yM-Vn
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 13:27:57 +0000
-Received: by mail-pf1-x444.google.com with SMTP id 185so1943256pfv.3
- for <linux-arm-kernel@lists.infradead.org>;
+ id 1j4lrw-0004yO-Mp; Thu, 20 Feb 2020 13:27:59 +0000
+Received: from mail-qk1-f173.google.com (mail-qk1-f173.google.com
+ [209.85.222.173])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C1CC2208C4;
+ Thu, 20 Feb 2020 13:27:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582205275;
+ bh=LRERjOY5swhgYq3TNDFqarey7d7DB+nwUJMGhi6oW7I=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=ETWCB9au7GNELIvo2IGphOuMC7YLOuI9PCos8dfJeskBQpqRE9gfhSM/3dYm1hNfQ
+ 2+spmMhLjQy3O803GwZkQTSPkJ/g6oQqkLq/GAlXUOKsIRrlaqsih03lVpecyg5ceO
+ j/kEiaLM42UzlHx+s3/fjdb6NH2uMpau8TVCPWH8=
+Received: by mail-qk1-f173.google.com with SMTP id j8so3468041qka.11;
  Thu, 20 Feb 2020 05:27:55 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=hF0MYOxyxn24x/ZYtlarhD9w/8tgL/0AbysCyIWUqB0=;
- b=lWPdtbceOs2cC0MFwqkm4JZMtIDewpsnrzs+5eIkhjoMV2SJvYChWk3tQPO3sjcpkM
- 0JRFxORvBnqb715+jTuwsvbkljzaEdBcepRokDPscyhItPgPH+t4fPcI5jox0PwRS3BU
- gv11eSFh0I619wG7GnAGNs+xrvC5o5Bj5h+wo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=hF0MYOxyxn24x/ZYtlarhD9w/8tgL/0AbysCyIWUqB0=;
- b=HlBF1BAYdkbzG/wqZptAaBL08zxAX6JAdN01cATieIAWFnAw06w6dytmepUI0XRZHe
- eRRJ5msaWZuYfmgpLz0TbiPtGSFTWWhxSD6vS9rTILYu6sprvzfDPrZaGakv/jCnZzH2
- jp+9sP3UN3mTgdBMpVOG71HZmlGP4e+S4hcPftC63YQRC9S33H6dSN6M9PTl4YpxFazG
- kVbBWkuZ0rgHfafLtfJ9saT6TuIOGMQjsjw/rDM9z1+4tOkeYHpUMMSkeg9f8Hf6QoTs
- yNWXXau37CoaEKNNt2fqNe4xmsNKRh1tnCagLRh2Tzgmt0MNY97miv1dmoSIcH1QQMls
- MC5w==
-X-Gm-Message-State: APjAAAURza8yR62fWJStJGLN2UqIyZoGZySztyMGnXXQRyfyda4F9s8v
- Qt3s8A5+h2thEYbnLyjuoU3QCkOgCexdRw==
-X-Google-Smtp-Source: APXvYqwLKJcZDrK2vGjpR2o1+UZVY6CiHiTRMZ76Tp2Fd8qa2KqcFHdMflOCt8bmXidsxemy6zDUHg==
-X-Received: by 2002:a63:df02:: with SMTP id u2mr31473112pgg.403.1582205274678; 
+X-Gm-Message-State: APjAAAVLrAn/6hAjJR4qb5XIJmy0UVKeHKa6+r2Ofx8p0sCpyu/XbwL3
+ HuZl1GMeFvGOmIXwF81JrxmcsT9jdfnIHAbFQQ==
+X-Google-Smtp-Source: APXvYqxZVZomqdZk3IaaKKbZU5jEWBttIla8w6bWDNkZ/rJVdlHm/dja7DRh0sdZhj/Rpu1qHX+SAaGxb8OtZWG18r4=
+X-Received: by 2002:a37:6457:: with SMTP id y84mr28648400qkb.254.1582205274941; 
  Thu, 20 Feb 2020 05:27:54 -0800 (PST)
-Received: from localhost.localdomain ([49.206.201.34])
- by smtp.gmail.com with ESMTPSA id 84sm3974646pgg.90.2020.02.20.05.27.51
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 20 Feb 2020 05:27:53 -0800 (PST)
-From: sunil@amarulasolutions.com
-To: heiko@sntech.de,
-	catalin.marinas@arm.com,
-	will@kernel.org
-Subject: [PATCH] arm64: defconfig: Enable REGULATOR_MP8859
-Date: Thu, 20 Feb 2020 18:57:39 +0530
-Message-Id: <1582205259-15274-1-git-send-email-sunil@amarulasolutions.com>
-X-Mailer: git-send-email 2.7.4
+MIME-Version: 1.0
+References: <1579087831-94965-1-git-send-email-jianxin.pan@amlogic.com>
+ <1579087831-94965-3-git-send-email-jianxin.pan@amlogic.com>
+In-Reply-To: <1579087831-94965-3-git-send-email-jianxin.pan@amlogic.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 20 Feb 2020 07:27:43 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJwYChw_S4anOPGhH4r3uwD9SVCnRqa_5BwRvwVicjwrg@mail.gmail.com>
+Message-ID: <CAL_JsqJwYChw_S4anOPGhH4r3uwD9SVCnRqa_5BwRvwVicjwrg@mail.gmail.com>
+Subject: Re: [PATCH v6 2/4] dt-bindings: power: add Amlogic secure power
+ domains bindings
+To: Jianxin Pan <jianxin.pan@amlogic.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_052756_457000_B2561586 
-X-CRM114-Status: GOOD (  10.11  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200220_052756_791029_9777F937 
+X-CRM114-Status: GOOD (  16.03  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,6 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,54 +84,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Markus Reichl <m.reichl@fivetechno.de>, linux-rockchip@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jagan Teki <jagan@amarulasolutions.com>
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Victor Wan <victor.wan@amlogic.com>,
+ "open list:THERMAL" <linux-pm@vger.kernel.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Kevin Hilman <khilman@baylibre.com>, Neil Armstrong <narmstrong@baylibre.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Jian Hu <jian.hu@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jagan Teki <jagan@amarulasolutions.com>
+On Wed, Jan 15, 2020 at 5:30 AM Jianxin Pan <jianxin.pan@amlogic.com> wrote:
+>
+> Add the bindings for the Amlogic Secure power domains, controlling the
+> secure power domains.
+>
+> The bindings targets the Amlogic A1 and C1 compatible SoCs, in which the
+> power domain registers are in secure world.
+>
+> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+> ---
+>  .../bindings/power/amlogic,meson-sec-pwrc.yaml     | 40 ++++++++++++++++++++++
+>  include/dt-bindings/power/meson-a1-power.h         | 32 +++++++++++++++++
+>  2 files changed, 72 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+>  create mode 100644 include/dt-bindings/power/meson-a1-power.h
+>
+> diff --git a/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+> new file mode 100644
+> index 00000000..af32209
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.yaml
+> @@ -0,0 +1,40 @@
+> +# SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +# Copyright (c) 2019 Amlogic, Inc
+> +# Author: Jianxin Pan <jianxin.pan@amlogic.com>
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/power/amlogic,meson-sec-pwrc.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: Amlogic Meson Secure Power Domains
+> +
+> +maintainers:
+> +  - Jianxin Pan <jianxin.pan@amlogic.com>
+> +
+> +description: |+
+> +  Secure Power Domains used in Meson A1/C1 SoCs, and should be the child node
+> +  of secure-monitor.
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - amlogic,meson-a1-pwrc
+> +
+> +  "#power-domain-cells":
+> +    const: 1
+> +
+> +required:
+> +  - compatible
+> +  - "#power-domain-cells"
+> +
+> +examples:
+> +  - |
+> +    secure-monitor {
+> +        compatible = "amlogic,meson-gxbb-sm";
+> +
+> +        pwrc: power-controller {
+> +            compatible = "amlogic,meson-a1-pwrc";
+> +            #power-domain-cells = <1>;
+> +        };
+> +    }
 
-RK3399 boards like ROC-RK3399-PC is using MP8859 DC/DC converter
-for 12V supply.
+Missing ';':
 
-roc-rk3399-pc initially used 12V fixed regulator for this supply,
-but the below commit has switched to use MP8859.
+Error: Documentation/devicetree/bindings/power/amlogic,meson-sec-pwrc.example.dts:27.5-6
+syntax error
+FATAL ERROR: Unable to parse input tree
 
-commit <1fc61ed04d309b0b8b3562acf701ab988eee12de> "arm64: dts: rockchip:
-Enable mp8859 regulator on rk3399-roc-pc"
+Please fix this as linux-next is now failing dt_binding_check.
 
-So, enable bydefault on the defconfig.
-
-Signed-off-by: Jagan Teki <jagan@amarulasolutions.com>
-Cc: Markus Reichl <m.reichl@fivetechno.de>
-Tested-by: Suniel Mahesh <sunil@amarulasolutions.com>
----
-Note:
-This change set is applied on top of linux-rockchip, branch v5.7-armsoc/dts64.
-(git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git -b v5.7-armsoc/dts64)
-This change set was tested on ROC-RK3399-PC, an rk3399 based target.
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 0f21288..973a493 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -505,6 +505,7 @@ CONFIG_REGULATOR_QCOM_RPMH=y
- CONFIG_REGULATOR_QCOM_SMD_RPM=y
- CONFIG_REGULATOR_QCOM_SPMI=y
- CONFIG_REGULATOR_RK808=y
-+CONFIG_REGULATOR_MP8859=y
- CONFIG_REGULATOR_S2MPS11=y
- CONFIG_REGULATOR_VCTRL=m
- CONFIG_RC_CORE=m
--- 
-2.7.4
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
