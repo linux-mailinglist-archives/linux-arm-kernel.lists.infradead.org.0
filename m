@@ -2,61 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91C6716652B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:43:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07A4516652C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:44:21 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NinymtKhLSx7MASvI0SXFWXjxrZE/hJ+820N/mSNWBY=; b=tV0nBpqL+dDsyO
-	Q9TNtFpPS/csGQiW8QMR2j/xGJVVBuLNHgX7WOGw6lGKv4Y7Q1gdn6peYs4I/EDzwCtjxY6sFJM3S
-	PXT6FkPgx5SCT20juls52KnATEDdEniHOBVPciSccFssEM6whuCr56FGvUMRQJTdfWXEFbUmWAQaQ
-	RITEZ8ibytGcs+PU64zss4nom+Ez+lCcnhr3Lq59jW1oy10kxS7a28No5FIITsJ2MEt+U0l+UJtq1
-	Ozt2h01yckzYh04M07ZI7qwQ58HFwkWpsrXHIOVk7UpIvj2M+x0Hs3kyVnsch16QcS9HArZ2ITv1Y
-	X1YsWXPC0Hf4z+9kxtpw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dZkYcv2BzUggw33ibDWMULxiSqrWkzCUzat9jTk/uY0=; b=jILL71Gn90XCrE
+	OjKsZyEc4zIujW4mldMseEO/V3zFKxcwEKK091ysCjJTOIqONP9FUge1gKkFaFnZbgqOf3t6L3kiP
+	ZZcQn/OF9I/ockk9vGL6ph8hD1MsMnJcxFGxkawgp6EJsbV9PkMxjlNjSbQpB9n1GvkGCAmysxia+
+	i71svg+ER9ahc0g+JJy+ySBRh+ofWfEbegwEJ7lHabZLI4HXM6PZuMoaGJSkDeVERul37BPhegift
+	5JTA7v4anubhRsPcQSep8ZWvtUaHMH2s14fQJyGJDHkZ6V8imJAu13D/geDKHpFrq8I4W3u4NwITZ
+	3+LZ/LyTmof7wWXlXnfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4prY-0007ha-Vv; Thu, 20 Feb 2020 17:43:48 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1j4prx-0007zy-IC; Thu, 20 Feb 2020 17:44:13 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4prA-0007V7-K0
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:43:27 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1582220599; bh=7BG+1cfDaleCgWG24+EuOoEzF99bjlW8TOxBcqOLLHE=;
- h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=FTWiBs2aUKamgHDVx6vgZ9w6hXR8jmaN8JU03i78l+qL+vFRL+h15NlLNSmjfiqD6
- ow4N0zIQwLZl1jalCRnOTLJ/h+86nSVPuIJ/Xk6SBuw/YMvABrREICM1eghjwjcra7
- xBq3p240BfMgWfnZbXxGIl4vwxTSs8rHITGyaFew=
-Date: Thu, 20 Feb 2020 18:43:19 +0100
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH] bus: sunxi-rsb: Return correct data when mixing 16-bit
- and 8-bit reads
-Message-ID: <20200220174319.k2icqoxlubu5o2fu@core.my.home>
-Mail-Followup-To: Maxime Ripard <maxime@cerno.tech>,
- linux-sunxi@googlegroups.com, Chen-Yu Tsai <wens@csie.org>,
- Samuel Holland <samuel@sholland.org>,
- Stephen Boyd <swboyd@chromium.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>, 
- open list <linux-kernel@vger.kernel.org>
-References: <20200219010951.395599-1-megous@megous.com>
- <20200220173213.s2ytf3zdi6q3bxli@gilmour.lan>
+ id 1j4prk-0007x5-1s
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:44:01 +0000
+Received: from mwalle01.sab.local. (unknown [213.135.10.150])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
+ SHA256) (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 2916C23D22;
+ Thu, 20 Feb 2020 18:43:44 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1582220631;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=s6EOAobt5saGFt58QDGrFmkjtzz3qIh/p10CWvZHnSU=;
+ b=k0JCfTYyL8MAXZKhXwW/bGvI7bFU2v2Yfg5AX71LWPyopv+J3LmwTNRyCD99nmdoHOqUm4
+ abzjqYU8LWZGQXXpb0Q5ooeFI/+03n/CusbWc75NaW2EHmOCB1biYlox4+6puh6L6vKNj3
+ a78z0p3Lhigjxfjx3+AaRBtBRyVGdpY=
+From: Michael Walle <michael@walle.cc>
+To: linux-serial@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/7] Revert "tty: serial: fsl_lpuart: drop EARLYCON_DECLARE"
+Date: Thu, 20 Feb 2020 18:43:28 +0100
+Message-Id: <20200220174334.23322-1-michael@walle.cc>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200220173213.s2ytf3zdi6q3bxli@gilmour.lan>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
+X-Spamd-Bar: ++++++
+X-Spam-Level: ******
+X-Rspamd-Server: web
+X-Spam-Status: Yes, score=6.40
+X-Spam-Score: 6.40
+X-Rspamd-Queue-Id: 2916C23D22
+X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
+ TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
+ MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
+ NEURAL_SPAM(0.00)[0.503]; DKIM_SIGNED(0.00)[];
+ RCPT_COUNT_TWELVE(0.00)[14]; MID_CONTAINS_FROM(1.00)[];
+ RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
+ MIME_TRACE(0.00)[0:+];
+ ASN(0.00)[asn:12941, ipnet:213.135.0.0/19, country:DE];
+ SUSPICIOUS_RECIPS(1.50)[]
+X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_094325_033544_CF85B12B 
-X-CRM114-Status: GOOD (  19.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200220_094400_248375_7AB41281 
+X-CRM114-Status: GOOD (  10.25  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -77,108 +94,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Samuel Holland <samuel@sholland.org>,
- open list <linux-kernel@vger.kernel.org>, Stephen Boyd <swboyd@chromium.org>,
- linux-sunxi@googlegroups.com, Chen-Yu Tsai <wens@csie.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Peng Fan <peng.fan@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Li Yang <leoyang.li@nxp.com>,
+ Michael Walle <michael@walle.cc>, Rob Herring <robh+dt@kernel.org>,
+ Yuan Yao <yao.yuan@nxp.com>, Vabhav Sharma <vabhav.sharma@nxp.com>,
+ Jiri Slaby <jslaby@suse.com>, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+This reverts commit a659652f6169240a5818cb244b280c5a362ef5a4.
 
-On Thu, Feb 20, 2020 at 06:32:13PM +0100, Maxime Ripard wrote:
-> On Wed, Feb 19, 2020 at 02:09:50AM +0100, Ondrej Jirman wrote:
-> > When doing a 16-bit read that returns data in the MSB byte, the
-> > RSB_DATA register will keep the MSB byte unchanged when doing
-> > the following 8-bit read. sunxi_rsb_read() will then return
-> > a result that contains high byte from 16-bit read mixed with
-> > the 8-bit result.
-> >
-> > The consequence is that after this happens the PMIC's regmap will
-> > look like this: (0x33 is the high byte from the 16-bit read)
-> >
-> > % cat /sys/kernel/debug/regmap/sunxi-rsb-3a3/registers
-> > 00: 33
-> > 01: 33
-> > 02: 33
-> > 03: 33
-> > 04: 33
-> > 05: 33
-> > 06: 33
-> > 07: 33
-> > 08: 33
-> > 09: 33
-> > 0a: 33
-> > 0b: 33
-> > 0c: 33
-> > 0d: 33
-> > 0e: 33
-> > [snip]
-> >
-> > Fix this by masking the result of the read with the correct mask
-> > based on the size of the read. There are no 16-bit users in the
-> > mainline kernel, so this doesn't need to get into the stable tree.
-> >
-> > Signed-off-by: Ondrej Jirman <megous@megous.com>
-> > ---
-> >  drivers/bus/sunxi-rsb.c | 6 +++++-
-> >  1 file changed, 5 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-> > index b8043b58568ac..8ab6a3865f569 100644
-> > --- a/drivers/bus/sunxi-rsb.c
-> > +++ b/drivers/bus/sunxi-rsb.c
-> > @@ -316,6 +316,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
-> >  {
-> >  	u32 cmd;
-> >  	int ret;
-> > +	u32 mask;
-> >
-> >  	if (!buf)
-> >  		return -EINVAL;
-> > @@ -323,12 +324,15 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
-> >  	switch (len) {
-> >  	case 1:
-> >  		cmd = RSB_CMD_RD8;
-> > +		mask = 0xffu;
-> >  		break;
-> >  	case 2:
-> >  		cmd = RSB_CMD_RD16;
-> > +		mask = 0xffffu;
-> >  		break;
-> >  	case 4:
-> >  		cmd = RSB_CMD_RD32;
-> > +		mask = 0xffffffffu;
-> >  		break;
-> >  	default:
-> >  		dev_err(rsb->dev, "Invalid access width: %zd\n", len);
-> > @@ -345,7 +349,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
-> >  	if (ret)
-> >  		goto unlock;
-> >
-> > -	*buf = readl(rsb->regs + RSB_DATA);
-> > +	*buf = readl(rsb->regs + RSB_DATA) & mask;
-> 
-> Thanks for debugging this and the extensive commit log.
-> 
-> I guess it would be cleaner to just use GENMASK(len * 8, 0) here?
+This broke the earlycon on LS1021A processors because the order of the
+earlycon_setup() functions were changed. Before the commit the normal
+lpuart32_early_console_setup() was called. After the commit the
+lpuart32_imx_early_console_setup() is called instead.
 
-GENMASK most probably fails with value (32,0) I think.
+Fixes: a659652f6169 ("tty: serial: fsl_lpuart: drop EARLYCON_DECLARE")
+Signed-off-by: Michael Walle <michael@walle.cc>
+---
+ drivers/tty/serial/fsl_lpuart.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-#define GENMASK(h, l) \
-	(((~UL(0)) - (UL(1) << (l)) + 1) & \
-	 (~UL(0) >> (BITS_PER_LONG - 1 - (h))))
-
-would give ~0 >> -1
-
-regards,
-	o.
-
-> Maxime
-
+diff --git a/drivers/tty/serial/fsl_lpuart.c b/drivers/tty/serial/fsl_lpuart.c
+index 91e2805e6441..27fdc131c352 100644
+--- a/drivers/tty/serial/fsl_lpuart.c
++++ b/drivers/tty/serial/fsl_lpuart.c
+@@ -2390,6 +2390,8 @@ static int __init lpuart32_imx_early_console_setup(struct earlycon_device *devic
+ OF_EARLYCON_DECLARE(lpuart, "fsl,vf610-lpuart", lpuart_early_console_setup);
+ OF_EARLYCON_DECLARE(lpuart32, "fsl,ls1021a-lpuart", lpuart32_early_console_setup);
+ OF_EARLYCON_DECLARE(lpuart32, "fsl,imx7ulp-lpuart", lpuart32_imx_early_console_setup);
++EARLYCON_DECLARE(lpuart, lpuart_early_console_setup);
++EARLYCON_DECLARE(lpuart32, lpuart32_early_console_setup);
+ 
+ #define LPUART_CONSOLE	(&lpuart_console)
+ #define LPUART32_CONSOLE	(&lpuart32_console)
+-- 
+2.20.1
 
 
 _______________________________________________
