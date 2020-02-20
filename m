@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 257131662E3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 17:31:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58C0F1662F2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 17:31:39 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=nkh6cunrseXJb06UMTavrcShpvXsBAxyE7nRX4sIZKU=; b=jf2kjXYVCFMpTsBb8Sw0dhxdjU
-	oKsRUmQaOQoso1bJyrG6SGEC+UMyAdVpGvxU4XlllxCQQzzOrAvh41Xam3+JQP+oj7/WcV/pr60Lq
-	bc6RZOhVnUVMKYNxOrvYvMd7zbBrLhjT0O06tdjkh0c1Vj+1dnnSYM+m6FpnkaKxoCx8pJQyC+ToB
-	6i00kac0mwnn7q0o+kXmahTLa7IJqYSmAp34nNXTbSFhMHYz9GHNsZNcKOZW2JYIr90VuHcP5cmZN
-	LbmXUEI7OpzRCKjeIU9ezGpsMTDFeSYhUvZkmLjSqeLFeLikBBgOfa+9dYMa38nxenrM/ob4l5ndQ
-	f3GiSZDA==;
+	bh=pKTgsJdJk3FcLU1ao3fI5H0LjHMIEl02d1dvE1v3eHE=; b=WC8VlP03qRszfASppEu9F4iYp+
+	d0xKxAjzAdftenmrX1mfPr8uyh6UfJM5nssfC9MRcxEZ8TT8r1rW0ggHToemRhN644653JEV877b1
+	rykXU1oDx4OB29ESNnpFEw9AkpN8FOMmLhfou/6xEu04QDMvEZoSdl5gToL0rkD+imSc8dNTKk/2Z
+	txT8bAg9AsjCf0VKVl4qvJ/uCyflgOizvmr5GTj8leCyhhje5YL6PkXqgUThVNqdOlBGJgDKhRqai
+	nU8v6hnoiI+xSyx1AQWLkGosNryNm2ZydXzrgnQ+9bDXau3Lk98Dwq2Zw4gzqxsbHH1ycfjO/9DqH
+	rSnII/Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ojO-0008Ap-8W; Thu, 20 Feb 2020 16:31:18 +0000
+	id 1j4ojc-0008Rv-7U; Thu, 20 Feb 2020 16:31:32 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ohx-0005vI-IW
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 16:29:51 +0000
+ id 1j4ohy-0005wU-TF
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 16:29:52 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 490732012B1;
- Thu, 20 Feb 2020 17:29:48 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7E159200ED5;
+ Thu, 20 Feb 2020 17:29:49 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 3889D201298;
- Thu, 20 Feb 2020 17:29:48 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6F59A200BB5;
+ Thu, 20 Feb 2020 17:29:49 +0100 (CET)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 0ECED20328;
- Thu, 20 Feb 2020 17:29:47 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 544A420328;
+ Thu, 20 Feb 2020 17:29:48 +0100 (CET)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Shawn Guo <shawnguo@kernel.org>,
 	Dong Aisheng <aisheng.dong@nxp.com>
-Subject: [PATCH v2 4/8] firmware: imx: scu-pd: Align imx sc msg structs to 4
-Date: Thu, 20 Feb 2020 18:29:35 +0200
-Message-Id: <23b7eb459829d088fb4da188aa8063c2011fc2ac.1582216144.git.leonard.crestez@nxp.com>
+Subject: [PATCH v2 5/8] firmware: imx: Align imx_sc_msg_req_cpu_start to 4
+Date: Thu, 20 Feb 2020 18:29:36 +0200
+Message-Id: <a74fdf9dd976a6b3198844880ec2f4c6f1c70dca.1582216144.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1582216144.git.leonard.crestez@nxp.com>
 References: <cover.1582216144.git.leonard.crestez@nxp.com>
@@ -48,8 +48,8 @@ In-Reply-To: <cover.1582216144.git.leonard.crestez@nxp.com>
 References: <cover.1582216144.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_082949_796473_1830EFAC 
-X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-CacheID: sfid-20200220_082951_114755_E254CF32 
+X-CRM114-Status: UNSURE (   9.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -93,29 +93,29 @@ This produces many oopses with CONFIG_KASAN=y.
 
 Fix by marking with __aligned(4).
 
-Fixes: c800cd7824bd ("firmware: imx: add SCU power domain driver")
+Fixes: d90bf296ae18 ("firmware: imx: Add support to start/stop a CPU")
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- drivers/firmware/imx/scu-pd.c | 2 +-
+ drivers/firmware/imx/misc.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/imx/scu-pd.c b/drivers/firmware/imx/scu-pd.c
-index 09cfa268c6bd..cbc9a47ff44f 100644
---- a/drivers/firmware/imx/scu-pd.c
-+++ b/drivers/firmware/imx/scu-pd.c
-@@ -59,11 +59,11 @@
- /* SCU Power Mode Protocol definition */
- struct imx_sc_msg_req_set_resource_power_mode {
+diff --git a/drivers/firmware/imx/misc.c b/drivers/firmware/imx/misc.c
+index 6a21ff942f82..d073cb3ce699 100644
+--- a/drivers/firmware/imx/misc.c
++++ b/drivers/firmware/imx/misc.c
+@@ -22,11 +22,11 @@ struct imx_sc_msg_req_cpu_start {
  	struct imx_sc_rpc_msg hdr;
+ 	u32 address_hi;
+ 	u32 address_lo;
  	u16 resource;
- 	u8 mode;
+ 	u8 enable;
 -} __packed;
 +} __packed __aligned(4);
  
- #define IMX_SCU_PD_NAME_SIZE 20
- struct imx_sc_pm_domain {
- 	struct generic_pm_domain pd;
- 	char name[IMX_SCU_PD_NAME_SIZE];
+ struct imx_sc_msg_req_misc_get_ctrl {
+ 	struct imx_sc_rpc_msg hdr;
+ 	u32 ctrl;
+ 	u16 resource;
 -- 
 2.17.1
 
