@@ -2,102 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B4F716660F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:16:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76B3616661A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:19:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3brxEgNKnBbE/U/xs03XSwxnpskG6//EjiCsQWB7NMg=; b=TlSyXNkNHDUMjD
-	I1lU7jkXFvwQOcMmTdNmtKJbY7MPZvDQD3mqvu7tmQEu8Fe1FRT3tYxa94/ttJzwM5l2NswA7NngA
-	5NyXGj6sbr/92cw3nBAK3ZzaAks9tSkaX39CYj0EvzshV0vh6n//6Eda7vjNxNAxX20uHI0Iviz7r
-	FDRr17kA/JmXuyX18TZPDhKT/ixq3Pe9qRGbY+ZMXAV79sESBSedTUlP+NRIlgJRaMdGTKd/PoYcr
-	ICkxhU2z5pqJjWT9KNgEPV+F4IKkeDRINsXjOiyKvsvVeHpoQAeUDgcWgW/Qpy/jFxA1z4luAqPfe
-	aVQr3bU4ZNo0SHqhEJmw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IE3Ck455IG4Rhh3TG5TrSzyQ4EWkUGefo/9v2qAfx50=; b=jLDMetgasuUjQLQVRa71NKeqD
+	rDgr3wDafl3CTnoUceYsAKsN28jXUEMyxB9OhyYj6eO/UJjgBpBsIumkLnyJsgkgfScvRTrtYFvMb
+	WqrebFweM5NTFk9yguC6uiZawcf6TH1zdiTGd5fYLoQpkYMi8EO99eatkG/HC3rBtPSnXtRQ4fdq5
+	Oev+71AuM0NKeBTeKyU7D4gjg7jH4Fy88qHS9ZK1Iv+ZH8dhF0Wlq8+xRrEqScxPfDUNjH/GpjQ8c
+	dP4k9OijYDW3F//fHSAyMDWpJ7NneO4Xv4nL4pqyS9bYy4edrMMb5meUpXunSkSpiCEzU3HOx8Vl6
+	vtJcFWCFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4qNK-0002t4-9B; Thu, 20 Feb 2020 18:16:38 +0000
-Received: from out1-smtp.messagingengine.com ([66.111.4.25])
+	id 1j4qPx-0003sm-Bj; Thu, 20 Feb 2020 18:19:21 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4qMB-0001pk-0O
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 18:15:29 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 585E221E5B;
- Thu, 20 Feb 2020 13:15:26 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Thu, 20 Feb 2020 13:15:26 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=EO4iHaNxeieQg
- LG+TqEp9sUs9WIn/s4CrJUTMJBjELo=; b=zrqAodOpNdj3RUp2IZomKJmh1InYg
- DMIunaYe5pwFkSN/OH4Ai+zPqSZz1CAr3ifV+fLVrw+0mz+nuYaEe9cMdKp9tyo0
- Yqxv0nUPkF3AdMZ0bFmMulwH+p0g/fr6KbTqSHnpU9m3v8d6yOurE4jXBkyT7ai+
- vgfcEI1FccxP0gqit2UGJWpuvZnpD/hdBaxNxicsqQ7fNT56PwHScjNL/EcsMpxP
- 71prnuPNmeJMIN0oD5Ndj6y+PxnmXpowIWaWll52n8FKVA5AE5tGeIjwmZm+XXd2
- PEOXxHtsdyDhbVPlGTHB4QTvt2pfxJ8go7AxsbopTLh+PP7UCRHK6I32g==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=EO4iHaNxeieQgLG+TqEp9sUs9WIn/s4CrJUTMJBjELo=; b=WgmsgJ/Z
- QiEtmM4Vhn7AFskFoNxWrwLynxpIGfDQuuU+eWufiFZyi8Kfj5cqYXmA887NYTwr
- a7Qrp2FuT6DAzhG0DMcQVv7+HRHu7i91eQ5tC6InJ4t+WSayfYCbu/Lov8llIu9T
- Qo/Qi0CJyo4OAyFgCfHf+aye/RAWAMOKa0wX2xQ16ptSeFgKFzoT/V7jp6DXWL3S
- mHB8AJeAx9DYuQY2EvvThNE00u6Cauv/WDp3wbWOdME6LdkJ6zArJHfQF2o2OhxA
- EGG+mubs5UWZBp8nMx16EFf65/UPyQJnmBvsJ3Tp4ZANt6C0H6ZX4CFwcOOR3USj
- MiXwjlSCj7PvVQ==
-X-ME-Sender: <xms:vsxOXmD_DXlqg-MRJQ-TFjnTVARVW0sWdrzqvhrfeqDJadCwrD6BjQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedvgdduudefucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepvdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:vsxOXtQlS2l-d4RUiFJYpaAyTw5fLRQ2WwP5b8Lv9GgymxKNoeruHA>
- <xmx:vsxOXpJdjdhXq6XXMqODEBwTrehRQ-Wiky4s0_o3eY3Hekd1es2Vxw>
- <xmx:vsxOXtZdPuhj9cGfKZHaV0HtBZDNtYaguuXcLD01keRny_wZDGAHpQ>
- <xmx:vsxOXpYIOC4sgdyyG8UsVTT5drBHzNrjBvckfOMvapPA3Ilfz9oV3w>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 0BC893280060;
- Thu, 20 Feb 2020 13:15:25 -0500 (EST)
-From: Maxime Ripard <maxime@cerno.tech>
-To: Joerg Roedel <joro@8bytes.org>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Ripard <mripard@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH v2 4/4] drm/sun4i: mixer: Call of_dma_configure if there's an
- IOMMU
-Date: Thu, 20 Feb 2020 19:15:16 +0100
-Message-Id: <5ebdf117248c6189e7e4a2631a6681cf9909bd66.1582222496.git-series.maxime@cerno.tech>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <cover.a31c229a83f1d92e6928ae2adb70887da0fd44b3.1582222496.git-series.maxime@cerno.tech>
-References: <cover.a31c229a83f1d92e6928ae2adb70887da0fd44b3.1582222496.git-series.maxime@cerno.tech>
+ id 1j4qPi-0003rs-7K
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 18:19:07 +0000
+Received: by mail-lf1-x141.google.com with SMTP id s23so1895599lfs.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 10:19:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=lebedev-lt.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=BMudXWRavzU8ncImx/aSRyw9UQtZ0RxHFgnxmYTgr/o=;
+ b=Xj26QZhSq3ROB90ZKv65EPbntTSjJUf3ya+rYi7+K0z+zCwE2HDMhX6XR2ngsFAHrk
+ WqseTzGt6xHvQJvJmqulNHCpJczepO4PqkrxTfihTZO2iq5t0TofG1ZTnI4uoRA7ufvL
+ qskk6GiWl9zsd3upI1+AWYLf1LoNDh+dEFxaEfWRQuYAl7dYFxZN46AOnn2OtFxwXt+g
+ 5CbB0cbMdLH72cWILlpauiaDrf7+0Zk+frFtn8HCuzccfS1fxF5bKeLitpE7V23PVtEF
+ BWNTIpUXt8oEvVgKoMo1Ycii4G0XS7B9lo4Wl/9WHMu9xDvuroOt5XWmNBsN7kEsIwsy
+ 763A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=BMudXWRavzU8ncImx/aSRyw9UQtZ0RxHFgnxmYTgr/o=;
+ b=mxfJlHBOpEJhC9alZ8IWbS12m3X9c2NldHa+c0nBlXBilzOZDnES2j/VwITQQ0pMpn
+ mLOb1YNsuMEON/Rv2ngZ35HZ17YM3Wn7/cCfvbTVaj9laz2/RU3xRHPE9LdFbNOS+ABc
+ vqlESGzXLbcrcnDg2g99hH+XeC1L7tELcw+fmbX6NVwIltKR7Mm0Nk4KQIjJkLA67zuo
+ TWCZyCTDs5j0hrwXrTr2o9pRVj8uJfVNqNhveMAZ4th6wLmSHR5O1XN52t4nfaPBEBzR
+ mpxuVT/Yfr88XTEFjVa/cBGDqyv7IPke0CWv0l32qjH5rQEVK02hIce0GHezUdmz2/ar
+ FvHw==
+X-Gm-Message-State: APjAAAU24TvnvnRfdfnigMRJQMNsl3SBZr1vVCVED84Jngbpj6eHmLH0
+ 4+lYu85PsNizRjtQl2uOZdmatA==
+X-Google-Smtp-Source: APXvYqwHMD7TjvA9qSHLAjro81EJY6e+tgA6JElGztVdIMsefhnoFuMqmbeC+l1pV9gnkOJ6fpFbKQ==
+X-Received: by 2002:a19:97:: with SMTP id 145mr16976846lfa.98.1582222743500;
+ Thu, 20 Feb 2020 10:19:03 -0800 (PST)
+Received: from [192.168.1.108] ([5.20.204.163])
+ by smtp.gmail.com with ESMTPSA id m21sm156300lfb.59.2020.02.20.10.19.02
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 20 Feb 2020 10:19:02 -0800 (PST)
+Subject: Re: [PATCH 1/5] drm/sun4i: tcon: Introduce LVDS setup routine setting
+To: Maxime Ripard <maxime@cerno.tech>,
+ Andrey Lebedev <andrey.lebedev@gmail.com>
+References: <20200210195633.GA21832@kedthinkpad>
+ <20200219180858.4806-1-andrey.lebedev@gmail.com>
+ <20200219180858.4806-2-andrey.lebedev@gmail.com>
+ <20200220172154.22gw55s2mzyr45tj@gilmour.lan>
+From: Andrey Lebedev <andrey@lebedev.lt>
+Message-ID: <1002d964-28c9-ed69-64fe-6527418092bb@lebedev.lt>
+Date: Thu, 20 Feb 2020 20:19:01 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
+In-Reply-To: <20200220172154.22gw55s2mzyr45tj@gilmour.lan>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_101527_223012_FF831664 
-X-CRM114-Status: GOOD (  14.66  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200220_101906_324752_876811BC 
+X-CRM114-Status: GOOD (  10.13  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.25 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.25 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,51 +100,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, iommu@lists.linux-foundation.org,
- Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: airlied@linux.ie, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org, wens@csie.org,
+ daniel@ffwll.ch, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The main DRM device is actually a virtual device so it doesn't have the
-iommus property, which is instead on the DMA masters, in this case the
-mixers.
+On 2/20/20 7:21 PM, Maxime Ripard wrote:
+>> +	regmap_write_bits(tcon->regs, SUN4I_TCON0_LVDS_ANA0_REG,
+>> +			  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(0xf),
+>> +			  SUN6I_TCON0_LVDS_ANA0_EN_DRVD(val));
+>> +
+>> +}
+>> +
+> There's an extra blank line here that was reported by checkpatch. I've
+> fixed it up while applying.
 
-Add a call to of_dma_configure with the mixers DT node but on the DRM
-virtual device to configure it in the same way than the mixers.
+Weird, checkpatch didn't warn me about that:
 
-Signed-off-by: Maxime Ripard <maxime@cerno.tech>
----
- drivers/gpu/drm/sun4i/sun8i_mixer.c | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+./scripts/checkpatch.pl 
+patches/0001-drm-sun4i-tcon-Introduce-LVDS-setup-routine-setting.patch
+total: 0 errors, 0 warnings, 103 lines checked
 
-diff --git a/drivers/gpu/drm/sun4i/sun8i_mixer.c b/drivers/gpu/drm/sun4i/sun8i_mixer.c
-index 7c24f8f832a5..85b8930e334c 100644
---- a/drivers/gpu/drm/sun4i/sun8i_mixer.c
-+++ b/drivers/gpu/drm/sun4i/sun8i_mixer.c
-@@ -372,6 +372,19 @@ static int sun8i_mixer_bind(struct device *dev, struct device *master,
- 	mixer->engine.ops = &sun8i_engine_ops;
- 	mixer->engine.node = dev->of_node;
- 
-+	if (of_find_property(dev->of_node, "iommus", NULL)) {
-+		/*
-+		 * This assume we have the same DMA constraints for
-+		 * all our the mixers in our pipeline. This sounds
-+		 * bad, but it has always been the case for us, and
-+		 * DRM doesn't do per-device allocation either, so we
-+		 * would need to fix DRM first...
-+		 */
-+		ret = of_dma_configure(drm->dev, dev->of_node, true);
-+		if (ret)
-+			return ret;
-+	}
-+
- 	/*
- 	 * While this function can fail, we shouldn't do anything
- 	 * if this happens. Some early DE2 DT entries don't provide
+patches/0001-drm-sun4i-tcon-Introduce-LVDS-setup-routine-setting.patch 
+has no obvious style problems and is ready for submission.
+
+In any case, thanks for correcting it!
+
 -- 
-git-series 0.9.1
+Andrey Lebedev aka -.- . -.. -.. . .-.
+Software engineer
+Homepage: http://lebedev.lt/
 
 _______________________________________________
 linux-arm-kernel mailing list
