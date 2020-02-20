@@ -2,96 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC0E216657D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:53:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 786D816658D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:55:26 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zvjfBXTGkSULKrSli7MG72MFee3MG0qBoeN6YP0DK8M=; b=I13MSTGKvLNWibvCrJgoXFtij
-	Hks3ctMD6jZFd7qXI1NOYczZTnNcwDHTx0G/5eDZ125Wl+/2cbnGXEq9T4WYztFIWicpHSowTEe49
-	2KHgdYGeKmanl1ZPqa9aCzeO7nZy0p8lSgZAxsa66CF/FQ5NxhCa6q9yG4sWDPODcrfE7jvWbmbO0
-	vOAEwra47J3UwOx6oos5QaOEIyx0VPXNva0K57BldCdEznQjjLEAJPlj5stV7XZFZicnwDibkuVEj
-	fOJa6P/DDZiCVwkbfPQAKgAqaPeZ/vY4tlrEvZTHG7fe9We2TyRht+s+snhHOb/ANJRnZqm5vPUUo
-	p7J9b76OA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WF55Dcatbm1abFOWWHCyY0PCY9sunJt496LTRzi1R6I=; b=bAT2Ap6aDD3jEu
+	UTFc27icQU7KQpPPDBsuTIFXRQ7I63cBoVECldWmfAEBwiNWDj/cwEPnJqkoHfKVGr435QS4V4dTx
+	PKK7Aemrkfz+U3aOZFHu3k6Q0eu/bFc5YD1Ius4MfTmcbkpCKNdRpPR+Do2q/1SVV2oYN7Ih4uSJG
+	wXfEG4N0mEBphBZu9rhFC+Hrz/nS+8GycEVVkE6A7Im4F8JenK4QlhXdQ0LI8dVfh/oIqd2E24RqA
+	9fExoG5mY4p0ogg7WLmP6LUmwGrlPbhmTLfpmejCZWIW8+X5zuyQeAKiYsHsC70D3q4dLGcKeUEZ0
+	/WzlqR2RleR6LAJAcI2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4q1F-0004nl-Qo; Thu, 20 Feb 2020 17:53:49 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
+	id 1j4q2g-0006Vm-5J; Thu, 20 Feb 2020 17:55:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4q0k-0004O9-Cf
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:53:21 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 6AF3F45C6;
- Thu, 20 Feb 2020 12:53:11 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Thu, 20 Feb 2020 12:53:11 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=/ilAHo2sD8DPbarnR+eiZM1rIcY
- n1q22Nc/a+Tg05HI=; b=f1hD521jZfmjXhb2Ix5sj5gSKqUVPAXbw6V3y9kE6to
- Cll7dmh1ytx1gz0v7/WzNRkO017HHxEVzRsEfZYA36oZWZ9toV3BM/IW2c5nah9B
- 1WCwYv2NVPAqppW5jUf3IAiX61sG0O4PTWthwM/vEsZAy6FT4JCUb9y/x+tVaLaG
- m44s7f5lD10J/Jpw0zSIiaypESbdgai2wam5PUGGo67kBVdY7Vcdvp2i0opakcCe
- FIKrdBRtMs6kBBm/ZOlOUZefss7+jVUzBrGzpDzbWHAK30uudPdUeh1PD+qYfS2S
- tlIpYlLjfroJrQcomnBnmLa83nQ4+tu09px9McT3BQg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=/ilAHo
- 2sD8DPbarnR+eiZM1rIcYn1q22Nc/a+Tg05HI=; b=AgvqZ90LDH3mg6xf3AmP0+
- 8lLwrAeegt4SKMn8A9U5nzO399hyVW11EKkH1o0+cMXq1hWPHEQ16kW/VNFhWFOZ
- wYwfEDJnszpJDMOfr09xeV4PKlpQ2z0X1jsfMG4aohU/gV5ORABH9wiMnoPX4ZiM
- lDgJ9zZdXmv/wIPHDOMwkurMPHQmtfU7TvzemD/65KJs+7ZtRXGp+UkjbnxzwQg2
- EFWkjx53S5gNm+pgmSnYRhFO2TAMGAPW3QBwJV6/+HUWm4FBBcA2/A+q6egp0Y+r
- y8XzF1e8cyQshaRYFQmgayC16/yG33jLyGj/SJH9+NVkiLlMUXOqoVDr33ePFdiw
- ==
-X-ME-Sender: <xms:hcdOXrHALdbQKHZDF-p5-V8U6h6NgOsgZV7Wlr5no_8FOvCfK5aSlg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedvgddutdekucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:hcdOXsmtwDvPaLgeLEHxx2j4cLwJjScGaARsUg-I99Jqz_bs0ve5fw>
- <xmx:hcdOXguIyRKNu6lVir6e10c7mhQS-VgW-Alp2MxTtX_o-8p7Eg6heg>
- <xmx:hcdOXoPfWFzbyApop1EhhdLZpJ6CPfeQ3lfOKDQzHO90pEWhXT9g1Q>
- <xmx:h8dOXkkOITkjN6nbD5jPx4U_IsLY2jD4xnSKGOWk05WsgkQcD2MHMw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 90EBE3280059;
- Thu, 20 Feb 2020 12:53:09 -0500 (EST)
-Date: Thu, 20 Feb 2020 18:53:07 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH 1/2] dt-bindings: display: sun4i-tcon: Add LVDS Dual Link
- property
-Message-ID: <20200220175307.qool442lm7qjqb5h@gilmour.lan>
-References: <20200214123244.109300-1-maxime@cerno.tech>
- <20200214131025.GI4831@pendragon.ideasonboard.com>
- <20200214154405.f5zuicm6uhhiczfs@gilmour.lan>
- <20200214154953.GJ4831@pendragon.ideasonboard.com>
- <20200217174253.mj53us4bb7h2lyca@gilmour.lan>
- <20200217181006.GE4830@pendragon.ideasonboard.com>
+ id 1j4q2A-0006CT-7h
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:54:50 +0000
+Received: from mail-qt1-f180.google.com (mail-qt1-f180.google.com
+ [209.85.160.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3247D2467E
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 17:54:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582221284;
+ bh=EwdbSo+REwOs2qVdAv6GStA05o5bWUzD2nRPNF+IpAE=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=HXytJb3CXTBYZL79/soOYzSLAcU4DsW95nOcIZNUh8vxAR4tQDh7qxXfGftn91veV
+ YoKpSTwztnEzAIkvdXTM6nL41lTKsbetXFfOXdmAccOfhdxvHG0fvh4y6QyZXhLgls
+ OT8QIzAp1FLezQ1Wx0urXmWNphBrRrbnJ43eGCCc=
+Received: by mail-qt1-f180.google.com with SMTP id j23so3476751qtr.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 09:54:44 -0800 (PST)
+X-Gm-Message-State: APjAAAXY9hd3gL8B2aFZWg9R8VyGPe3bZdhRRH6O6tB1DND3+O0uCioS
+ 3qw51feEayGJ39N3tJ8D7MrYTRZ6quOlFv07hQ==
+X-Google-Smtp-Source: APXvYqxZN+jCFQCr8b1XU/DNPGuk6dRtYzlRjcyhCQXp43N4KHHgxdU3ZzM4r/i9XqzJJKlEKsN2+EoI8i37o4qc2jw=
+X-Received: by 2002:ac8:6747:: with SMTP id n7mr27696918qtp.224.1582221283250; 
+ Thu, 20 Feb 2020 09:54:43 -0800 (PST)
 MIME-Version: 1.0
-In-Reply-To: <20200217181006.GE4830@pendragon.ideasonboard.com>
+References: <20200117211628.27888-1-robh@kernel.org>
+ <2d04f201-3457-08ad-db8e-735f8315d74e@redhat.com>
+ <7ac3f864-6c39-76e9-ee4a-21be03abc044@arm.com>
+ <CAL_JsqJRSD-7U8UH1tevBdD2P6qPWzApQLpXU-SVBmZ8=Yiy0A@mail.gmail.com>
+ <d49b62f2-74f4-c3e0-ad97-a4fedd169b27@arm.com>
+In-Reply-To: <d49b62f2-74f4-c3e0-ad97-a4fedd169b27@arm.com>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 20 Feb 2020 11:54:31 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKY1_WmwLOKySwBasyZ5Kb=Rx-Y6m8bDppRKVxzoY58xg@mail.gmail.com>
+Message-ID: <CAL_JsqKY1_WmwLOKySwBasyZ5Kb=Rx-Y6m8bDppRKVxzoY58xg@mail.gmail.com>
+Subject: Re: [PATCH v2] iommu/arm-smmu-v3: Add SMMUv3.2 range invalidation
+ support
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_095318_619155_9D55F744 
-X-CRM114-Status: GOOD (  26.17  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200220_095446_351864_DFA298F2 
+X-CRM114-Status: GOOD (  37.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.221 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.221 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -99,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,125 +90,226 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- dri-devel@lists.freedesktop.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Sean Paul <seanpaul@chromium.org>,
- Daniel Vetter <daniel.vetter@intel.com>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4947409376925781802=="
+Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ Joerg Roedel <joro@8bytes.org>, Auger Eric <eric.auger@redhat.com>,
+ Linux IOMMU <iommu@lists.linux-foundation.org>, Will Deacon <will@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============4947409376925781802==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="o5bnojo4ldqgcpzr"
-Content-Disposition: inline
-
-
---o5bnojo4ldqgcpzr
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Mon, Feb 17, 2020 at 08:10:06PM +0200, Laurent Pinchart wrote:
-> Hi Maxime,
+On Mon, Feb 17, 2020 at 1:17 PM Robin Murphy <robin.murphy@arm.com> wrote:
 >
-> On Mon, Feb 17, 2020 at 06:42:53PM +0100, Maxime Ripard wrote:
-> > On Fri, Feb 14, 2020 at 05:49:53PM +0200, Laurent Pinchart wrote:
-> > > On Fri, Feb 14, 2020 at 04:44:05PM +0100, Maxime Ripard wrote:
-> > > > On Fri, Feb 14, 2020 at 03:10:25PM +0200, Laurent Pinchart wrote:
-> > > > > On Fri, Feb 14, 2020 at 01:32:43PM +0100, Maxime Ripard wrote:
-> > > > > > SoCs that have multiple TCONs can use the two set of pins on the first TCON
-> > > > > > to drive a dual-link display. Add a property to enable the dual link.
-> > > > > >
-> > > > > > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> > > > > > ---
-> > > > > >  .../bindings/display/allwinner,sun4i-a10-tcon.yaml         | 7 +++++++
-> > > > > >  1 file changed, 7 insertions(+)
-> > > > > >
-> > > > > > diff --git a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
-> > > > > > index 86ad617d2327..aa6dd8409dbc 100644
-> > > > > > --- a/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
-> > > > > > +++ b/Documentation/devicetree/bindings/display/allwinner,sun4i-a10-tcon.yaml
-> > > > > > @@ -105,6 +105,13 @@ properties:
-> > > > > >          - const: edp
-> > > > > >          - const: lvds
-> > > > > >
-> > > > > > +  allwinner,lvds-dual-link:
-> > > > > > +    type: boolean
-> > > > > > +    description: |
-> > > > > > +      On a SoC with two TCON with LVDS support, the first TCON can
-> > > > > > +      operate over both pins sets to output in a dual-link setup. This
-> > > > > > +      will be triggered by setting this property.
-> > > > >
-> > > > > Could you maybe provide an example of how this property is supposed to
-> > > > > be used ? I'm especially wondering what ports are used in that case and
-> > > > > how they're connected.
-> > > >
-> > > > It's pretty trivial to support, it's only a property to set on the
-> > > > encoder node itself.
-> > > >
-> > > > I'm not really sure what you meant by your question with the ports
-> > > > though :/
-> > >
-> > > I assume that, in the single-link case, you have two TCON instances that
-> > > operate independently, each of them with one port that models an LVDS
-> > > connection to a panel.
+> On 13/02/2020 9:49 pm, Rob Herring wrote:
+> > On Thu, Jan 30, 2020 at 11:34 AM Robin Murphy <robin.murphy@arm.com> wrote:
+> >>
+> >> On 30/01/2020 3:06 pm, Auger Eric wrote:
+> >>> Hi Rob,
+> >>> On 1/17/20 10:16 PM, Rob Herring wrote:
+> >>>> Arm SMMUv3.2 adds support for TLB range invalidate operations.
+> >>>> Support for range invalidate is determined by the RIL bit in the IDR3
+> >>>> register.
+> >>>>
+> >>>> The range invalidate is in units of the leaf page size and operates on
+> >>>> 1-32 chunks of a power of 2 multiple pages. First, we determine from the
+> >>>> size what power of 2 multiple we can use. Then we calculate how many
+> >>>> chunks (1-31) of the power of 2 size for the range on the iteration. On
+> >>>> each iteration, we move up in size by at least 5 bits.
+> >>>>
+> >>>> Cc: Eric Auger <eric.auger@redhat.com>
+> >>>> Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> >>>> Cc: Will Deacon <will@kernel.org>
+> >>>> Cc: Robin Murphy <robin.murphy@arm.com>
+> >>>> Cc: Joerg Roedel <joro@8bytes.org>
+> >>>> Signed-off-by: Rob Herring <robh@kernel.org>
 > >
-> > Indeed,
 > >
-> > > In the dual-link mode, how does that look like ? Does the TCON
-> > > instance that operate in dual-link mode have two ports in DT ? There
-> > > are two physical ports, so I think it makes sense to always have two
-> > > ports in DT. That's what we're doing for the LVDS encoders on R-Car
-> > > Gen3, in order to specify in DT which LVDS input of the dual-link
-> > > panel is connected to which LVDS output of the SoC. That allows
-> > > configuring the LVDS encoder to send the even and odd pixels on the
-> > > right port.
+> >>>> @@ -2003,7 +2024,7 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
+> >>>>    {
+> >>>>       u64 cmds[CMDQ_BATCH_ENTRIES * CMDQ_ENT_DWORDS];
+> >>>>       struct arm_smmu_device *smmu = smmu_domain->smmu;
+> >>>> -    unsigned long start = iova, end = iova + size;
+> >>>> +    unsigned long start = iova, end = iova + size, num_pages = 0, tg = 0;
+> >>>>       int i = 0;
+> >>>>       struct arm_smmu_cmdq_ent cmd = {
+> >>>>               .tlbi = {
+> >>>> @@ -2022,12 +2043,50 @@ static void arm_smmu_tlb_inv_range(unsigned long iova, size_t size,
+> >>>>               cmd.tlbi.vmid   = smmu_domain->s2_cfg.vmid;
+> >>>>       }
+> >>>>
+> >>>> +    if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
+> >>>> +            /* Get the leaf page size */
+> >>>> +            tg = __ffs(smmu_domain->domain.pgsize_bitmap);
+> >>>> +
+> >>>> +            /* Convert page size of 12,14,16 (log2) to 1,2,3 */
+> >>>> +            cmd.tlbi.tg = ((tg - ilog2(SZ_4K)) / 2) + 1;
+> >>
+> >> Given the comment, I think "(tg - 10) / 2" would suffice ;)
 > >
-> > As far as I can tell, you can't control that in our TCON. It just on
-> > more lanes, that's it. Also, we currently have multiple ports, to map
-> > another feature of the TCON, which is that it can drive directly a
-> > panel, or will send its output to the HDMI / TV encoders. Adding
-> > another port in that will break the current binding we have.
+> > Well, duh...
+> >
+> >>
+> >>>> +
+> >>>> +            /* Determine what level the granule is at */
+> >>>> +            cmd.tlbi.ttl = 4 - ((ilog2(granule) - 3) / (tg - 3));
+> >>
+> >> Is it possible to rephrase that with logs and shifts to avoid the division?
+> >
+> > Well, with a loop is the only other way I came up with:
+> >
+> > bpl = tg - 3;
+> > ttl = 3;
+> > mask = BIT(bpl) - 1;
+> > while ((granule & (mask << ((4 - ttl) * bpl + 3))) == 0)
+> >      ttl--;
+> >
+> > Doesn't seem like much improvement to me given we have h/w divide...
 >
-> This will create one issue though, in that the dual-link sinks are
-> supposed to have two input ports, in order to expose the odd and even
-> pixels ordering. If you have a single ouput port in your TCON, how will
-> you interface with such sinks ?
+> Sure, it doesn't take too many extra instructions to start matching
+> typical IDIV latency, so there's no point being silly if there really
+> isn't a clean alternative.
+>
+> Some quick scribbling suggests "4 - ilog2(granule) / 10" might actually
+> be close enough, but perhaps that's a bit too cheeky.
 
-I guess we could create multiple endpoints in the same port? That's
-not going to be trivial either though given the current binding we
-have :/
+How does divide by 10 save a divide?
 
-Maxime
+> >>>> +            num_pages = size / (1UL << tg);
+> >>
+> >> Similarly, in my experience GCC has always seemed too cautious to elide
+> >> non-constant division even in a seemingly-obvious case like this, so
+> >> explicit "size >> tg" might be preferable.
+> >
+> > My experience has been gcc is smart enough. I checked and there's only
+> > one divide and it is the prior one. But I'll change it anyways.
+>
+> Now that I think about it, the case that frustrated me may have had the
+> shift and divide in separate statements - that's probably a lot harder
+> to analyse than a single expression. Either way, the simple right shift
+> is easier to read IMO.
+>
+> >>>> +    }
+> >>>> +
+> >>>>       while (iova < end) {
+> >>>>               if (i == CMDQ_BATCH_ENTRIES) {
+> >>>>                       arm_smmu_cmdq_issue_cmdlist(smmu, cmds, i, false);
+> >>>>                       i = 0;
+> >>>>               }
+> >>>>
+> >>>> +            if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
+> >>>> +                    /*
+> >>>> +                     * On each iteration of the loop, the range is 5 bits
+> >>>> +                     * worth of the aligned size remaining.
+> >>>> +                     * The range in pages is:
+> >>>> +                     *
+> >>>> +                     * range = (num_pages & (0x1f << __ffs(num_pages)))
+> >>>> +                     */
+> >>>> +                    unsigned long scale, num;
+> >>>> +
+> >>>> +                    /* Determine the power of 2 multiple number of pages */
+> >>>> +                    scale = __ffs(num_pages);
+> >>>> +                    cmd.tlbi.scale = scale;
+> >>>> +
+> >>>> +                    /* Determine how many chunks of 2^scale size we have */
+> >>>> +                    num = (num_pages >> scale) & CMDQ_TLBI_RANGE_NUM_MAX;
+> >>>> +                    cmd.tlbi.num = num - 1;
+> >>>> +
+> >>>> +                    /* range is num * 2^scale * pgsize */
+> >>>> +                    granule = num << (scale + tg);
+> >>>> +
+> >>>> +                    /* Clear out the lower order bits for the next iteration */
+> >>>> +                    num_pages -= num << scale;
+> >>> Regarding the 2 options given in
+> >>> https://lore.kernel.org/linux-arm-kernel/CAL_JsqKABoE+0crGwyZdNogNgEoG=MOOpf6deQgH6s73c0UNdA@mail.gmail.com/raw,
+> >>>
+> >>> I understand you implemented 2) but I still do not understand why you
+> >>> preferred that one against 1).
+> >>>
+> >>> In your case of 1023*4k pages this will invalidate by 31 32*2^0*4K +
+> >>> 31*2^0*4K pages
+> >>> whereas you could achieve that with 10 invalidations with the 1st algo.
+> >>> I did not get the case where it is more efficient. Please can you detail.
+> >>
+> >> I guess essentially we want to solve for two variables to get a range as
+> >> close to size as possible. There might be a more elegant numerical
+> >> method, but for the numbers involved brute force is probably good enough
+> >> for the real world. 5 minutes alone with the architecture spec and a
+> >> blank editor begat this pseudo-implementation:
+> >>
+> >>          size_t npages = size >> pgshift;
+> >>          while (npages) {
+> >>                  unsigned long range;
+> >>                  unsigned int delta, best = UINT_MAX;
+> >>                  int num, scale = min(31, __ffs(npages));
+> >>
+> >>                  while (scale) {
+> >>                          num = min(32, npages >> scale);
+> >>                          if (num == 32)
+> >>                                  break;
+> >>
+> >>                          delta = npages & ((1 << scale) - 1);
+> >>                          if (!delta || delta > best)
+> >>                                  break;
+> >>
+> >>                          best = delta;
+> >>                          scale--;
+> >>                  }
+> >>
+> >>                  //invalidate
+> >>
+> >>                  range = num << scale;
+> >>                  npages -= range;
+> >>                  iova += (range) << pgshift;
+> >>          }
+> >>
+> >> Modulo any obvious thinkos, what do you reckon?
+> >
+> > I don't think this is an improvement. See my other reply.
+>
+> Indeed, I hadn't quite got my head round your algorithm at first, so
+> deriving this was as much to help me get a better feel for the problem
+> as anything. Now I see that "minimise the remainder" really boils down
+> to "remove up to 5 high-order bits each time", which in turn is
+> essentially the same thing just done in the other direction (and in a
+> slightly more cumbersome manner). Now that I do get it, your algorithm
+> is in fact really neat, sorry for doubting :)
+>
+> FWIW it might be a little more efficient to maintain scale outside the
+> loop, such that num_pages can simply be shifted right to lose the
+> low-order bits each iteration, but other than that I think it's pretty
+> much as good as it can get.
 
---o5bnojo4ldqgcpzr
-Content-Type: application/pgp-signature; name="signature.asc"
+I think I understand what you're getting at. We'd need to have the
+total running 'scale' and the incremental 'scale' for each loop
+iteration. We could do that by using cmd.tlbi.scale to keep the
+running total. So something like this (untested)?:
 
------BEGIN PGP SIGNATURE-----
+if (smmu->features & ARM_SMMU_FEAT_RANGE_INV) {
+    unsigned long scale, num;
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXk7HgwAKCRDj7w1vZxhR
-xcM8AQCpa6c0h8xK/CcS02Pjk8iW05AziHyjvBQHFtCVXRiR8gD+JzClYTbONPVl
-oCYyx0aKehSbr6qn6kDEgIeDEfuHoQ0=
-=TIhH
------END PGP SIGNATURE-----
+    /* Determine the power of 2 multiple number of pages */
+    scale = __ffs(num_pages);
+    cmd.tlbi.scale += scale;
 
---o5bnojo4ldqgcpzr--
+    /* Determine how many chunks of 2^scale size we have */
+    num = (num_pages >> scale) & CMDQ_TLBI_RANGE_NUM_MAX;
+    cmd.tlbi.num = num - 1;
 
+    /* range is num * 2^scale * pgsize */
+    granule = num << (cmd.tlbi.scale + tg);
 
---===============4947409376925781802==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+    /* Clear out the lower order bits for the next iteration */
+    num_pages >>= 5 + scale;
+}
+
+That's actually worse by 1 add and probably a memory (re)load of
+cmd.tlbi.scale AFAICT.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4947409376925781802==--
-
