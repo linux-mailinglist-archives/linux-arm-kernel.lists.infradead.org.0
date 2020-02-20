@@ -2,67 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9701166A1C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 22:59:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82764166A2C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 23:06:47 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lqxKA51oo9jLHSVsmf3Wk4gWLqoP1q98hJpnDWi0z5g=; b=OscCkYeBP0cIcH
-	0pL5DSGbadkXJ/kbI205Sig04+fUl1nms5pOlwSKN5nP/Qnuhi6hlv6WieEq16FQncNzi1qWo3Dyg
-	wpMI4RmY9Vbvd3WsQpKGbt2Fd0tT2/UbmDL34H791qj8PEOy80bTP22cEtOzAbbRNsy9TYXDP+Ou4
-	UzSmrqiOSwaPsZSdS3pAqrjtSpOhB12Jd30qt6ko4ApfMbKgC7g8u/SzT45dl6dLCwwX+VvhZUBUd
-	suD6TknzL/636SN51GMGqRIzYEEEtOSQ9BS9LDZqb+E4JkhFQkvMFJtPg39X5m4J36dLisYVRLAkc
-	u2O7DpGjCdxoVEIBkMLw==;
+	List-Owner; bh=NuTNitX3/S7Nfwdli0facgNfs7u5qjYimuOL+nB8BmE=; b=EtkgSlt2yGS9aR
+	CHy5EDHlhJa1cO466DFslDfuxXees298gFIvgeayWxNNvXkr/hOhxS3V+67sjMvHXJuA50nkOy6Ft
+	c++/Uv2kPLAQeB8HxCZ+HO5EtRiu5kr49cmKGIK1Clr3UoazWkv+pSFYUGGH6LeMjsYXvn5Dbn3tA
+	QPf89ouvz1A2ZZaiTg0X2NAubc+SrkoJrTW1j4kQpEqze+znkvRkGv87nOG5xnNbzW9tzUzxtkDMP
+	W+hYF++69aXPmrvrTlJOVLB1cjB1W9FYUZXer07NW2JcbEE3h7yQxbLL43vu64SCX82Fj+cgdOfLS
+	gfJztHyJ+04EkVomq4lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4trH-0007dk-IX; Thu, 20 Feb 2020 21:59:47 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1j4ty0-0002nz-Qo; Thu, 20 Feb 2020 22:06:44 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4tr8-0007cd-AE; Thu, 20 Feb 2020 21:59:39 +0000
-Received: by mail-wr1-x443.google.com with SMTP id g3so6278190wrs.12;
- Thu, 20 Feb 2020 13:59:37 -0800 (PST)
+ id 1j4txs-0002mu-6F; Thu, 20 Feb 2020 22:06:37 +0000
+Received: by mail-wr1-x441.google.com with SMTP id t3so6326880wru.7;
+ Thu, 20 Feb 2020 14:06:31 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=BjqISWsyGNt/OrpyI0FBvIS4xHBzRF9POC4AcIoX3w8=;
- b=t2Zumk2Lxqbndlbs5st73rxGE1YmqwLg/3EINY/+VeKiwFK0htcQdLzIxltyI4bu9b
- GEVEQ6N0eF9GMHwHWCjG5lUXXzaFMxxKMf5h6YWSko2Kue+KyuVrlFBrl6aYxgwt27z+
- Gq+guScegqrrVLGZ6/0r3ddnc4t/PFDBo+UOaHtXshDEdRXML9WbK7n/FXo3yoYkEPc1
- cI2AFKDtAGTqx9zxD2ZYj7Frgor7QX28pAD4yf1vA0KBcNmk/Fq+9HnyZy03Ey6BqZjG
- 1SbtrPjRarQQgEKaeJcco2lo8BOosPgNXhdDvOgVkDzCJQRyS7kEjv95X176SV9QyY8Z
- XX7w==
+ bh=gFZYtwWsOJiAfSxxUlqRa+9DDsc5/g3T59cg2TasU4Y=;
+ b=Lw4u+qOmOnz/QyLfekH1agNEhJQe2x+O13swKNEmvu3HA9spp0lh444i0SeGJVf6uT
+ 4btriFh/O9bm6Hecp1jf+rxZ7UxSfjesYieLvUWY5nv080Al6xddIPmi79f9J95UZjKW
+ W3+tfGnmWAmWPR+QBBEott21JaqRkyDse9inREGkyllf3JohjVhu2VhZgj86UwQzrOrj
+ mZnwUMJz9goLXt7NOrg/vQGYeqV7o1vl8Dh5VLbVA4edgAs6WWXuZFa17H6oIIXob5zI
+ rvSpIz+fQVupRkkXHYPhHL1gkcq6vkVQmj0TDH/UFPc0aX3HB9ZJQA5cJCdLvU2QCF2d
+ jTjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=BjqISWsyGNt/OrpyI0FBvIS4xHBzRF9POC4AcIoX3w8=;
- b=KN50d24wXkxbdDWEfImqfhSjAHHcvtSohLcuJTUUBwJd6Af0S+R8t80xQ1gLk3ygyH
- qRVQRhe82El9cSXbA0PLgbl/uzv9uZHbWf6DzFdQ00WHuG+hT6nrSf+Lew3j46cN85ya
- JxrR3mtfJ929gDk2feeF1j+mQM7bMCuzTbAfS+ztOEjKC6FImmKwb2Xc/7w+cpZ2HGiG
- ON1nAwVBDzelj4gBV+pUqH/+QFt2SzZe18rbED2r/GLiq0MfrmcUn16ZHT/4COTPODyF
- MwF8/SU8qT6RX3k9N2go9iIPueHdsRbIbRhGOrrm+j6BqNm8epLfV+S5G+jwbSZwwl//
- 8udg==
-X-Gm-Message-State: APjAAAXALhm7Z0xgOwXKVNajGbk2n1j+cPReMC9JAlr95njWAdcINtAx
- O99oll2cE2U1F84v8NeUBqEu9Zos
-X-Google-Smtp-Source: APXvYqzcpDacHycw0Grq1vpWdaPG5q7F4YE9fUeHL6FSrlzn3vN1Ng7nwGZalsOW6p3lVxlIbK3sdg==
-X-Received: by 2002:adf:f14b:: with SMTP id y11mr21718686wro.90.1582235976319; 
- Thu, 20 Feb 2020 13:59:36 -0800 (PST)
+ bh=gFZYtwWsOJiAfSxxUlqRa+9DDsc5/g3T59cg2TasU4Y=;
+ b=Y3eJTgQAekCw6UbBMbgCUJQ9Bzz8D0kLzupW65q5Uy+epkUzPWcq0b4FooL7bDQ5VB
+ l4SAnZX3SDVE+9p2RVPbiZ7GY21EU89l76bOUAQj8xR3IaC/jtiW6hLGkZXOAEXaGoeO
+ IvRSOC9Vs73KxBEFMUGteoVFKCBsi5SCPmv5d61yKC41k1Aqf9aabyUCd7rxPXWPnivn
+ ZZQTOZ/TFqejzuFRF4EIO/n3oJAASWcuwEKP1ixaTU7ZvFfuHTm4H1fEkFIFy2/KHdOp
+ +Lv0aQqqviaucg5HUcFg0iLlAyWh38C6l3FUeU/FmnsOvmfHEIGwW8L+ehdz+gNKruPl
+ EsiQ==
+X-Gm-Message-State: APjAAAWZ6GsV04zgvk7FSeA49EK5Ln6JfJVUv/tmttUg/q1qv6MzicC0
+ +6QW/a2iGMqhRhZ41TK1QNQR6bOhHiw=
+X-Google-Smtp-Source: APXvYqzQsk2HWs8t9gFw6i8Bv/TRvSwDsY+48IdxNFD9s74DUxr4m8NiV07+d3FEcJ5scDbwWy7Gvw==
+X-Received: by 2002:adf:ea48:: with SMTP id j8mr46871194wrn.363.1582236390473; 
+ Thu, 20 Feb 2020 14:06:30 -0800 (PST)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id 18sm931043wmf.1.2020.02.20.13.59.34
+ by smtp.gmail.com with ESMTPSA id h13sm1215039wrw.54.2020.02.20.14.06.28
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 20 Feb 2020 13:59:35 -0800 (PST)
-Subject: Re: [PATCH v3,3/8] arm64: dts: mt8183: Add #cooling-cells to CPU nodes
-To: Michael Kao <michael.kao@mediatek.com>, Zhang Rui <rui.zhang@intel.com>,
- Eduardo Valentin <edubezval@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- hsinyi@chromium.org, linux-pm@vger.kernel.org, srv_heupstream@mediatek.com
-References: <20200103064407.19861-1-michael.kao@mediatek.com>
- <20200103064407.19861-4-michael.kao@mediatek.com>
+ Thu, 20 Feb 2020 14:06:29 -0800 (PST)
+Subject: Re: [PATCH v3 4/4] dt-bindings: mmc: mediatek: Add document for mt6779
+To: Rob Herring <robh@kernel.org>, Chun-Hung Wu <chun-hung.wu@mediatek.com>
+References: <1581922564-24914-1-git-send-email-chun-hung.wu@mediatek.com>
+ <1581922564-24914-5-git-send-email-chun-hung.wu@mediatek.com>
+ <20200219030225.GA14824@bogus>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -138,23 +135,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <6e37f3e5-d56b-980e-f269-15b15f70d91b@gmail.com>
-Date: Thu, 20 Feb 2020 22:59:33 +0100
+Message-ID: <96e4df17-999e-2356-f203-4cef26a8d66d@gmail.com>
+Date: Thu, 20 Feb 2020 23:06:27 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200103064407.19861-4-michael.kao@mediatek.com>
+In-Reply-To: <20200219030225.GA14824@bogus>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_135938_384459_4DBA94AF 
-X-CRM114-Status: GOOD (  15.56  )
+X-CRM114-CacheID: sfid-20200220_140636_257539_9D38837C 
+X-CRM114-Status: GOOD (  15.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [matthias.bgg[at]gmail.com]
@@ -178,8 +175,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kate Stewart <kstewart@linuxfoundation.org>,
+ Ulf Hansson <ulf.hansson@linaro.org>, wsd_upstream@mediatek.com,
+ devicetree@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Kuohong Wang <kuohong.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ Mathieu Malaterre <malat@debian.org>, linux-mediatek@lists.infradead.org,
+ Allison Randal <allison@lohutok.net>, Pavel Machek <pavel@ucw.cz>,
+ linux-mmc@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ Stanley Chu <stanley.chu@mediatek.com>, kernel-team@android.com,
+ Pan Bian <bianpan2016@163.com>, Chaotian Jing <chaotian.jing@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -187,99 +196,24 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 03/01/2020 07:44, Michael Kao wrote:
-> From: "michael.kao" <michael.kao@mediatek.com>
+On 19/02/2020 04:02, Rob Herring wrote:
+> On Mon, 17 Feb 2020 14:56:04 +0800, Chun-Hung Wu wrote:
+>> Add compatible node for mt6779 mmc
+>>
+>> Signed-off-by: Chun-Hung Wu <chun-hung.wu@mediatek.com>
+>> ---
+>>  Documentation/devicetree/bindings/mmc/mtk-sd.txt | 1 +
+>>  1 file changed, 1 insertion(+)
+>>
 > 
-> The #cooling-cells property needs to be specified to allow a CPU
-> to be used as cooling device.
+> Acked-by: Rob Herring <robh@kernel.org>
 > 
-> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
 
-Applied to v5.6-next/dts64
+With the commit from patch 3/4 the compatible should be:
+"mediatek,mt6779-mmc", "mediatek,mt8183-mmc": for mmc host ip compatible with mt6779
 
-Thanks
-
-> ---
->  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 9 +++++++++
->  1 file changed, 9 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> index cfb74af260e0..63378ae14a16 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> @@ -9,6 +9,7 @@
->  #include <dt-bindings/interrupt-controller/arm-gic.h>
->  #include <dt-bindings/interrupt-controller/irq.h>
->  #include "mt8183-pinfunc.h"
-> +#include <dt-bindings/thermal/thermal.h>
->  
->  / {
->  	compatible = "mediatek,mt8183";
-> @@ -74,6 +75,7 @@
->  			enable-method = "psci";
->  			capacity-dmips-mhz = <741>;
->  			dynamic-power-coefficient = <84>;
-> +			#cooling-cells = <2>;
->  		};
->  
->  		cpu1: cpu@1 {
-> @@ -83,6 +85,7 @@
->  			enable-method = "psci";
->  			capacity-dmips-mhz = <741>;
->  			dynamic-power-coefficient = <84>;
-> +			#cooling-cells = <2>;
->  		};
->  
->  		cpu2: cpu@2 {
-> @@ -92,6 +95,7 @@
->  			enable-method = "psci";
->  			capacity-dmips-mhz = <741>;
->  			dynamic-power-coefficient = <84>;
-> +			#cooling-cells = <2>;
->  		};
->  
->  		cpu3: cpu@3 {
-> @@ -101,6 +105,7 @@
->  			enable-method = "psci";
->  			capacity-dmips-mhz = <741>;
->  			dynamic-power-coefficient = <84>;
-> +			#cooling-cells = <2>;
->  		};
->  
->  		cpu4: cpu@100 {
-> @@ -110,6 +115,7 @@
->  			enable-method = "psci";
->  			capacity-dmips-mhz = <1024>;
->  			dynamic-power-coefficient = <211>;
-> +			#cooling-cells = <2>;
->  		};
->  
->  		cpu5: cpu@101 {
-> @@ -119,6 +125,7 @@
->  			enable-method = "psci";
->  			capacity-dmips-mhz = <1024>;
->  			dynamic-power-coefficient = <211>;
-> +			#cooling-cells = <2>;
->  		};
->  
->  		cpu6: cpu@102 {
-> @@ -128,6 +135,7 @@
->  			enable-method = "psci";
->  			capacity-dmips-mhz = <1024>;
->  			dynamic-power-coefficient = <211>;
-> +			#cooling-cells = <2>;
->  		};
->  
->  		cpu7: cpu@103 {
-> @@ -137,6 +145,7 @@
->  			enable-method = "psci";
->  			capacity-dmips-mhz = <1024>;
->  			dynamic-power-coefficient = <211>;
-> +			#cooling-cells = <2>;
->  		};
->  	};
->  
-> 
+Regards,
+Matthias
 
 _______________________________________________
 linux-arm-kernel mailing list
