@@ -2,72 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C324C166404
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:09:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7246E1663F6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:08:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LY/ank7EmhYdBNPHZO7NJqGRvI7Zy1SSCQ26hQiNvYE=; b=qKoWmVyEr/hRds7FnQbQXTrQW
-	EUExqWh5hPwTQ6GMe4JTEVXqPzWPkhbl9ij9xcSU7T1kU5DpUHJlRlLHXK4I6izO300FXCX2hxa5b
-	AI9NQneKdYfh5hXf5EgTtFFJZQyt+hFSE/wi2OxH5/56PyyYXJfHehBsJt230eW0sLLUOqvQIw5yb
-	D7R95zvMCCgl/yMerzaBeVjHM1dbdoT/FXLP6sa4akfhcqAfsGyctEB0aJleNwmRzruTQJ5WwL3mO
-	yk9OaAPZn4MDF6ZaA3fBzPFWYPCFzyNI7z5dGtlpcrKQEZK+N99aTOzH0qjqEheH+/3azV9oTny91
-	YmMdsLtQQ==;
+	 bh=2ALk2wnnOkEC5amIcXSGVdaaNJw9c1aRkhHtMaRn0Sc=; b=Io7VW/M1O4pK6pYdFJrpThwwr
+	QS/3QhsGSC37B7EFKYt21FLUdwUCko1gpCRhEg0Zy0jb6+7IxCdeJqvyMzismhUE4Wmx+BIrEaFE+
+	OfzEq5PMOe9MpopNV9AjiXqNcd+xjr7TNFw+syNff5akeZ3TeEXPpZKlwAzeIJLdbhi7t6/RGJ9sW
+	puK2eV8mnxO1eFXGQwdgNC/h/0nBLAQSN4DKGaqyt2qsZbRkqxZXx7H9qvdzAKLgllfFzlmSQuGB+
+	E5eEGmA6kU+L6/DN68Srxa1xp4h+tMdTqxoG2+OaRJFk9rM3czhU2UnaRVQES28nw4RgEvchU6MPw
+	T4hAsdFgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4pJn-0003DR-8i; Thu, 20 Feb 2020 17:08:55 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+	id 1j4pIy-0002ws-Hh; Thu, 20 Feb 2020 17:08:04 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4pJc-0003D2-9P
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:08:45 +0000
+ id 1j4pIo-0002v5-99
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:07:56 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1582218523;
+ s=mimecast20190719; t=1582218467;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=3M6kLg4BjF+DuWA5DcTOS8t/8X/cJ0Opg0BqCTy4sKU=;
- b=X5rk54vwXwaoCMKl8b5tjRTFeinP0xhu/QV+cowCMN7GdknG38mLYb5PG0hdUTofX6vFET
- GgAK8XA2LZJeqqFBVzJ67YSa5AgrqqshSnLxn9V+u6P9AAdGKQMlrpRUEXpPEyWwsJjeuI
- 8ePog4c1rc683OiMDqpQp8Ia55qJEPI=
+ bh=fRyl+HNCJYGuzif7UHbBNmoq+TguvgwSchvSmXTT2m8=;
+ b=giUHMUtfIAB0HemHQWmprLxqBb5rPV6Kp6+MEPN2dWwBtGo+ZL3ggisJjLdiIw6hkntwNn
+ e+FBi/TY/0gbeligtFHiyER+7m3jhFhm7o1HaF+crlbQfXQ+6jbu1y3waJi/baKoCcM8AU
+ BCIczJnJFZMJDaimAuasbIm+PHZ00Uw=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-287-Y7n3AiXIOXK816aJw8_wdQ-1; Thu, 20 Feb 2020 12:06:46 -0500
-X-MC-Unique: Y7n3AiXIOXK816aJw8_wdQ-1
-Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
- [10.5.11.23])
+ us-mta-387-o5UPWaBQMDeQ-SMDPVJK3A-1; Thu, 20 Feb 2020 12:07:44 -0500
+X-MC-Unique: o5UPWaBQMDeQ-SMDPVJK3A-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 44F09100550E;
- Thu, 20 Feb 2020 17:06:42 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E3649800EB4;
+ Thu, 20 Feb 2020 17:07:38 +0000 (UTC)
 Received: from redhatnow.users.ipa.redhat.com (ovpn-117-1.phx2.redhat.com
  [10.3.117.1])
- by smtp.corp.redhat.com (Postfix) with ESMTP id D2E0419756;
- Thu, 20 Feb 2020 17:06:32 +0000 (UTC)
-Subject: Re: [RFC PATCH 04/11] cpufreq: Remove Calxeda driver
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 1A06D90F65;
+ Thu, 20 Feb 2020 17:07:29 +0000 (UTC)
+Subject: Re: [RFC PATCH 02/11] ata: Remove Calxeda AHCI driver
 To: Rob Herring <robh@kernel.org>, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, soc@kernel.org,
  Andre Przywara <andre.przywara@arm.com>,
  Robert Richter <rrichter@marvell.com>, Jon Loeliger <jdl@jdl.com>,
  Alexander Graf <graf@amazon.com>, Matthias Brugger <mbrugger@suse.com>
 References: <20200218171321.30990-1-robh@kernel.org>
- <20200218171321.30990-5-robh@kernel.org>
+ <20200218171321.30990-3-robh@kernel.org>
 From: Mark Langsdorf <mlangsdo@redhat.com>
-Message-ID: <16a38b0d-8609-653a-64e8-3a0d4f4b1a45@redhat.com>
-Date: Thu, 20 Feb 2020 11:06:32 -0600
+Message-ID: <bf1291f2-597e-bff9-6780-ec233f5c2a20@redhat.com>
+Date: Thu, 20 Feb 2020 11:07:29 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200218171321.30990-5-robh@kernel.org>
+In-Reply-To: <20200218171321.30990-3-robh@kernel.org>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_090844_603500_BD1731AC 
-X-CRM114-Status: GOOD (  11.93  )
+X-CRM114-CacheID: sfid-20200220_090754_397572_2223D8FF 
+X-CRM114-Status: GOOD (  11.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -114,9 +114,8 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 2/18/20 11:13 AM, Rob Herring wrote:
-> Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-> Cc: Viresh Kumar <viresh.kumar@linaro.org>
-> Cc: linux-pm@vger.kernel.org
+> Cc: Jens Axboe <axboe@kernel.dk>
+> Cc: linux-ide@vger.kernel.org
 > Signed-off-by: Rob Herring <robh@kernel.org>
 > ---
 
