@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58C0F1662F2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 17:31:39 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B80F1662F9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 17:31:52 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=pKTgsJdJk3FcLU1ao3fI5H0LjHMIEl02d1dvE1v3eHE=; b=WC8VlP03qRszfASppEu9F4iYp+
-	d0xKxAjzAdftenmrX1mfPr8uyh6UfJM5nssfC9MRcxEZ8TT8r1rW0ggHToemRhN644653JEV877b1
-	rykXU1oDx4OB29ESNnpFEw9AkpN8FOMmLhfou/6xEu04QDMvEZoSdl5gToL0rkD+imSc8dNTKk/2Z
-	txT8bAg9AsjCf0VKVl4qvJ/uCyflgOizvmr5GTj8leCyhhje5YL6PkXqgUThVNqdOlBGJgDKhRqai
-	nU8v6hnoiI+xSyx1AQWLkGosNryNm2ZydXzrgnQ+9bDXau3Lk98Dwq2Zw4gzqxsbHH1ycfjO/9DqH
-	rSnII/Gw==;
+	bh=LoEmFD39yAV19uEFdqsOx4CC6+doMhPOyE96zmzXofA=; b=LPYcIVgH8MB7Y66XOpXeGKQ9Hc
+	gYnMRqlWx9LCY1UUFcWF5V57ECq+iXEh4hi9bQaGrPiXnl0BkH0VRtybKN7ZG9lNaOpKYzn2md01A
+	TlhYqWA31JMTZfeNolYed0m8RJx6ThrBwsBooxT7QQH10/nCH/aNh09HQcZA+wKpxNC6ugveARIDU
+	G81ZFiFUXVgUliBD8y2gPNbtty98+cReF3KOdVu8e2f6JUySGzhqeTScIpwKPTgMfREG4ziw9CVU7
+	Yhdjq0C+k3g/d7fUUZFrw+Y19M4U2PpuGjdFK0hjEc+IFq6hg2n9qp0ulmz/0+ASa4wwsU3M3wS+w
+	zC1LCh+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ojc-0008Rv-7U; Thu, 20 Feb 2020 16:31:32 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j4ojt-0000Gi-Le; Thu, 20 Feb 2020 16:31:49 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ohy-0005wU-TF
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 16:29:52 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7E159200ED5;
- Thu, 20 Feb 2020 17:29:49 +0100 (CET)
+ id 1j4oi0-0005xT-6i
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 16:29:54 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id BEC3B1A17AF;
+ Thu, 20 Feb 2020 17:29:50 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6F59A200BB5;
- Thu, 20 Feb 2020 17:29:49 +0100 (CET)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B261F1A0D00;
+ Thu, 20 Feb 2020 17:29:50 +0100 (CET)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 544A420328;
- Thu, 20 Feb 2020 17:29:48 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 8A2F820328;
+ Thu, 20 Feb 2020 17:29:49 +0100 (CET)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Shawn Guo <shawnguo@kernel.org>,
 	Dong Aisheng <aisheng.dong@nxp.com>
-Subject: [PATCH v2 5/8] firmware: imx: Align imx_sc_msg_req_cpu_start to 4
-Date: Thu, 20 Feb 2020 18:29:36 +0200
-Message-Id: <a74fdf9dd976a6b3198844880ec2f4c6f1c70dca.1582216144.git.leonard.crestez@nxp.com>
+Subject: [PATCH v2 6/8] pinctrl: imx: scu: Align imx sc msg structs to 4
+Date: Thu, 20 Feb 2020 18:29:37 +0200
+Message-Id: <bd7ad5fd755739a6d8d5f4f65e03b3ca4f457bd2.1582216144.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1582216144.git.leonard.crestez@nxp.com>
 References: <cover.1582216144.git.leonard.crestez@nxp.com>
@@ -48,8 +48,8 @@ In-Reply-To: <cover.1582216144.git.leonard.crestez@nxp.com>
 References: <cover.1582216144.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_082951_114755_E254CF32 
-X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-CacheID: sfid-20200220_082952_420275_CBF0C379 
+X-CRM114-Status: UNSURE (   8.35  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -57,7 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -93,29 +93,35 @@ This produces many oopses with CONFIG_KASAN=y.
 
 Fix by marking with __aligned(4).
 
-Fixes: d90bf296ae18 ("firmware: imx: Add support to start/stop a CPU")
+Fixes: b96eea718bf6 ("pinctrl: fsl: add scu based pinctrl support")
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- drivers/firmware/imx/misc.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/pinctrl/freescale/pinctrl-scu.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/firmware/imx/misc.c b/drivers/firmware/imx/misc.c
-index 6a21ff942f82..d073cb3ce699 100644
---- a/drivers/firmware/imx/misc.c
-+++ b/drivers/firmware/imx/misc.c
-@@ -22,11 +22,11 @@ struct imx_sc_msg_req_cpu_start {
+diff --git a/drivers/pinctrl/freescale/pinctrl-scu.c b/drivers/pinctrl/freescale/pinctrl-scu.c
+index 73bf1d9f9cc6..23cf04bdfc55 100644
+--- a/drivers/pinctrl/freescale/pinctrl-scu.c
++++ b/drivers/pinctrl/freescale/pinctrl-scu.c
+@@ -21,16 +21,16 @@ enum pad_func_e {
+ 
+ struct imx_sc_msg_req_pad_set {
  	struct imx_sc_rpc_msg hdr;
- 	u32 address_hi;
- 	u32 address_lo;
- 	u16 resource;
- 	u8 enable;
+ 	u32 val;
+ 	u16 pad;
 -} __packed;
 +} __packed __aligned(4);
  
- struct imx_sc_msg_req_misc_get_ctrl {
+ struct imx_sc_msg_req_pad_get {
  	struct imx_sc_rpc_msg hdr;
- 	u32 ctrl;
- 	u16 resource;
+ 	u16 pad;
+-} __packed;
++} __packed __aligned(4);
+ 
+ struct imx_sc_msg_resp_pad_get {
+ 	struct imx_sc_rpc_msg hdr;
+ 	u32 val;
+ } __packed;
 -- 
 2.17.1
 
