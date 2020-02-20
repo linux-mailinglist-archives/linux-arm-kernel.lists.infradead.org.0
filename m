@@ -2,89 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66C0F165C74
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 12:08:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A22F165C7A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 12:09:56 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bqIuiBnSVAxp+CrCsA5vvM4tdtJOkArx7l60E1j7cTU=; b=id6n+dYGmpWpMu
-	pxRYzmC+KbvuGeB3S+IsP/lLi6grOpBCq2zkiol9uVu/GVLLEEMyyXnubmMYkrhAxDBs2kzbKvjbE
-	p95h9wDNPqE96tFr3fPU73NWGFFz+I2BBNMWiLhhItBW4zL9QXwt9EsrnjKSw/OfHollcSnwG4FXl
-	D+90yGp9ijs+2GGJprIui5FJQAn6ImJQlWFi7PHRJrjTyAa2m+pwuOAmBuHSqzYqf7RQqtM3CmU2x
-	QBJk9JeZUgw8/O2NN+Ro+GovCf0yA6huqRXl3JEeSVDc6f39ub7j09ZXrzzVxQl5eRHtMVj/qm0m4
-	rQReSkIfO+Iy4p5XPZvw==;
+	List-Owner; bh=8TxbvqSjM+uOrmHUJiXR3frQobKua+J+OP4P4QhYpKs=; b=eQzyBUAswyzal/
+	wUifDFgxPHVRrA1wHlN8mlCGghoFOxIDKCDUTNj1yLIn9CF1DvI+NtveRZ+eJdzN/wn2R8j5u/gwi
+	G1DTpAQoY0VMRJ3JZPbToiwcMAqGjON+OTHKMPBN+R4KBpN/bkuP8uJAvOlRtUcmfjP5OQq7FBagO
+	GXiN/s9zgzF1Y2wnHHJNTrGwLeDxBQ1xGVz9SA7sIMKJBHs/lTnoL/hGKS3dew0SLhHGQIwEdDXy6
+	WcWRjqbvHBqfJ0JoWnG59j9sYfunSpiHGL6+oAO7TMgNEMeSdZlQxC4DH5th3Rq37NrXU/WXFr7lt
+	fR5uJPB5rlXL4iKE192Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4jgp-0005rQ-Al; Thu, 20 Feb 2020 11:08:19 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1j4jiG-0006FA-SF; Thu, 20 Feb 2020 11:09:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4jgh-0005qq-Bw
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 11:08:12 +0000
-Received: by mail-wm1-x343.google.com with SMTP id p17so1568330wma.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 03:08:10 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ar2G2uxRG/czZkeC4MUfsnBfTqnZVt+SalROTcfSNAY=;
- b=LdSMyATcrqVq+1wkPrk2DT2ZfZt2yYVUkGrN3dZc2e9GCaYjFW2jfg6adajl9cTeR0
- Sh46U1Lcksm7ZWGzs9357FvencneOf4Dp7RBf084zYNUYdX4qccvc8UnIwJf5oim0agh
- LWbiNjL8OUKDNZtHvK9cY5QCnjbIBhUkorV/r3rF+Frpkmt0cwXzR5YsCFboiMgcAEiy
- t8UhNn8EQJIZfgdjftYudM4OBUMDpguUrTzk5yE64pCoD2MRltDerrR9/n/PT5Ef+mGg
- rdEU4d3BkHzR9UiwvQQu3JIRYqedO1eikPrL4Boi/NNf355DcVTNDVgYXX9VLinZdRyz
- Q24g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ar2G2uxRG/czZkeC4MUfsnBfTqnZVt+SalROTcfSNAY=;
- b=XN59OWwvozwqD04v+eM7U4K/qvJUZ1ckgyYZ7w/6tnXD4pMaIJBEWRB8jrbZGRByvj
- HXWzZYcTN1tGw+G0hwP2japykavXQBF8oM3lpYeu80pzOcXgSrr+4vIoLHFinHFkkJXJ
- LqB9P1fMycotHDMERIzVEG6lAUx6LEPRcAaX7g7UfAJhbjTdF4D2cL+uWs3fvTFAfqol
- bksduzgXsxt75uvMQx6WMKdvzgzSOQijMAw+yTUsSggPMsibwpJTV2XRrpFbSiA6fl8/
- r7IFHGzouFGtLx/ihZo8GeivvI8HXf3dQlX+u/wcolDztAuXUR/ko2pXG9F12p+qQz8D
- dgOw==
-X-Gm-Message-State: APjAAAWgmM/fAPa1JXz+1mgOjkTgT9SjUrcSCf3znyhQN7ab0qRZaChO
- 9odbpK01t3EVNwxGaBz3ikDdHwZpTXH9gryTV6U=
-X-Google-Smtp-Source: APXvYqwdc8JQs/LddLHuBYujJ23zXBp/eT+FPZZtoMagGjYaa1MnuIvWCAZ57NpM1eGriyGn0BTbc3wrw1d/1bZ5oYw=
-X-Received: by 2002:a7b:cc97:: with SMTP id p23mr3838372wma.89.1582196889370; 
- Thu, 20 Feb 2020 03:08:09 -0800 (PST)
+ id 1j4ji5-0006Eg-IY
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 11:09:41 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C722024654;
+ Thu, 20 Feb 2020 11:09:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1582196977;
+ bh=5jznYIffxvU6eZSgRtNjQDXxHiq8x9que/YSIcqNoO4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=HnQATuvonnFZRK8jNgZHTiyoH2pbNcWyCMPwZlxxY0d+PlUlNftiRhrnDM8c/m3he
+ bA+vX8Z+3LGvDvrnOgBIw0C9VyjpbpqYkPJ+sUJCrEJFapbygLBeuS4cf/jgYeeJ2W
+ Hzom6XFfHM6e+Qt2Szygw+IeF9/RooxD5rwKLWm0=
+Date: Thu, 20 Feb 2020 12:09:34 +0100
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH 2/2] tty: serial: samsung_tty: remove SERIAL_SAMSUNG_DEBUG
+Message-ID: <20200220110934.GA3374196@kroah.com>
+References: <20200220102628.3371996-1-gregkh@linuxfoundation.org>
+ <20200220102628.3371996-2-gregkh@linuxfoundation.org>
+ <20200220105541.GB24587@pi3>
 MIME-Version: 1.0
-References: <20200213025930.27943-1-jaedon.shin@gmail.com>
- <20200213025930.27943-3-jaedon.shin@gmail.com>
- <aaa85a4d-8b36-893e-3e7a-dc27b4d6bae5@gmail.com>
-In-Reply-To: <aaa85a4d-8b36-893e-3e7a-dc27b4d6bae5@gmail.com>
-From: Gregory Fong <gregory.0xf0@gmail.com>
-Date: Thu, 20 Feb 2020 03:07:41 -0800
-Message-ID: <CADtm3G40-2EQcQxisiDTd=DkPbMP4gCi4E5TsvDRL6ph51TEVQ@mail.gmail.com>
-Subject: Re: [PATCH 2/3] PCI: brcmstb: Add regulator support
-To: Florian Fainelli <f.fainelli@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200220105541.GB24587@pi3>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_030811_433577_6965B79F 
-X-CRM114-Status: GOOD (  16.21  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200220_030940_727355_6499E59A 
+X-CRM114-Status: GOOD (  12.01  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [gregory.0xf0[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [gregory.0xf0[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,65 +74,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-gpio@vger.kernel.org,
- linux-pci@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Jaedon Shin <jaedon.shin@gmail.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- linux-arm-kernel@lists.infradead.org, Jim Quinlan <james.quinlan@broadcom.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
+Cc: Donghoon Yu <hoony.yu@samsung.com>, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Shinbeom Choi <sbeom.choi@samsung.com>,
+ Hyunki Koo <kkoos00@naver.com>, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
+ Jiri Slaby <jslaby@suse.com>, HYUN-KI KOO <hyunki00.koo@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Feb 12, 2020 at 7:58 PM Florian Fainelli <f.fainelli@gmail.com> wrote:
-> On 2/12/2020 6:59 PM, Jaedon Shin wrote:
-> > ARM-based Broadcom STB SoCs have GPIO-based voltage regulator for PCIe
-> > turning off/on power supplies.
-> >
-> > Signed-off-by: Jaedon Shin <jaedon.shin@gmail.com>
+On Thu, Feb 20, 2020 at 11:55:41AM +0100, Krzysztof Kozlowski wrote:
+> On Thu, Feb 20, 2020 at 11:26:28AM +0100, Greg Kroah-Hartman wrote:
+> > Since a05025d0ce72 ("tty: serial: samsung_tty: use standard debugging
+> > macros") this configuration option is not used at all, so remove it from
+> > the Kconfig file.
+> > 
+> > Cc: Kukjin Kim <kgene@kernel.org>
+> > Cc: Donghoon Yu <hoony.yu@samsung.com>
+> > Cc: Hyunki Koo <kkoos00@naver.com>
+> > Cc: HYUN-KI KOO <hyunki00.koo@samsung.com>
+> > Cc: Shinbeom Choi <sbeom.choi@samsung.com>
+> > Cc: Krzysztof Kozlowski <krzk@kernel.org>
+> > Cc: Jiri Slaby <jslaby@suse.com>
+> > Cc: linux-arm-kernel@lists.infradead.org
+> > Cc: linux-samsung-soc@vger.kernel.org
+> > Cc: linux-serial@vger.kernel.org
+> > Cc: linux-kernel@vger.kernel.org
+> > Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 > > ---
-> >  drivers/gpio/gpio-brcmstb.c           | 13 ++++-
-> >  drivers/pci/controller/pcie-brcmstb.c | 76 +++++++++++++++++++++++++++
-> >  2 files changed, 88 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/gpio/gpio-brcmstb.c b/drivers/gpio/gpio-brcmstb.c
-> > index 05e3f99ae59c..0cee5fcd2782 100644
-> > --- a/drivers/gpio/gpio-brcmstb.c
-> > +++ b/drivers/gpio/gpio-brcmstb.c
-> > @@ -777,7 +777,18 @@ static struct platform_driver brcmstb_gpio_driver = {
-> >       .remove = brcmstb_gpio_remove,
-> >       .shutdown = brcmstb_gpio_shutdown,
-> >  };
-> > -module_platform_driver(brcmstb_gpio_driver);
-> > +
-> > +static int __init brcmstb_gpio_init(void)
-> > +{
-> > +     return platform_driver_register(&brcmstb_gpio_driver);
-> > +}
-> > +subsys_initcall(brcmstb_gpio_init);
-> > +
-> > +static void __exit brcmstb_gpio_exit(void)
-> > +{
-> > +     platform_driver_unregister(&brcmstb_gpio_driver);
-> > +}
-> > +module_exit(brcmstb_gpio_exit);
->
-> We do this in the downstream tree, but there is no reason, we should
-> just deal with EPROBE_DEFER being returned from the regulator subsystem
-> until the GPIO provide is available.
->
+> >  drivers/tty/serial/Kconfig | 9 ---------
+> >  1 file changed, 9 deletions(-)
+> 
+> Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
 
-Agreed, also see this thread from January 2016:
-https://lore.kernel.org/linux-mips/568EAA99.1020603@gmail.com/
+Thanks for the quick review of both of these!
 
-Best regards,
-Gregory
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
