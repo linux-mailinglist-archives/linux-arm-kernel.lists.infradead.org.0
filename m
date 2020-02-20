@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 143931656EC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 06:29:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A6111656ED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 06:29:51 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DjF+6jktaHWowmxc945bz7itwU98yne2VKmS3lxv5DY=; b=REXWrpRLNeSF7PMLEbVgRmAUcA
-	oAE7b8gQ0DKBjbvCGirIYiKppY5Z0sG+kikqqH7bDWqDZjl5Hu325G0xPcWgzT3M6Ge++iYFpI2Fd
-	T/0qW/zUwpYUixQUCRmogulhNSxjydTaNcu+lsg+Kjl/2eUi9E4iEbqOf+U79HSEX0KcCTXhhHVuI
-	el7xpxzdeOGOKhyGxq0PMErJeb2reK0l/STrtps3z0mJejuJiHD/EkFRbTHjH4OFTZx5E7bGP7DA8
-	NFBqhqDw3OVik8Fz6uQZRuILoV1Y3ZxY7OyiRfYU2oYdC1LiwhgcFnK2DXALiqE/BYD8wdAacxTUK
-	B3S2NfMQ==;
+	bh=FKGhU/DldQ+f/KFFgWpl66LUw53Aqg1p+4zF/Bo1aHc=; b=Ys6hWgHxj6amwQGMxeBXh8rYm0
+	Z9XtY0kVvRDMYYwWkQa7OczEO+J2XKuVMcKxS8DhX9k2SiTg8lsSgb3LqV7YDsgFmfvcr5ZryzwSJ
+	Sr9BQDgY6aRmi2HG3CQ1jsDQzGC+4sYi6mPgWwIa483fZ5CO6Ku58lduL+Zj72SuxbHIQUTqa5gtO
+	g8+L8x3tWn0VaxxSZDzxzcHI3x57nPYt4SzV+FTQTlq/zW5M96kkrxZMxzuAPK447Hjp0R7OvjDAO
+	oO6C78JwrANzfeoXiHB2cqSkSF2et4m09zuyP1fj2RtwxOeVKclgdggkbDFTdt0Eq8pbVIQRmVN42
+	2tj6E5gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4eOy-0002xJ-So; Thu, 20 Feb 2020 05:29:32 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1j4ePF-0003Hb-FI; Thu, 20 Feb 2020 05:29:49 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4eOI-0002Mj-IS
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 05:28:54 +0000
-Received: by mail-pg1-x542.google.com with SMTP id z12so1330379pgl.4
+ id 1j4eOS-0002WZ-HZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 05:29:04 +0000
+Received: by mail-pl1-x643.google.com with SMTP id t14so1075425plr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 19 Feb 2020 21:28:50 -0800 (PST)
+ Wed, 19 Feb 2020 21:29:00 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=TeeLY19U9Qm1lmufQWPD8xckoKI640rgPBtuJB+/FwY=;
- b=IBYpEukEu5qXnwTS6Ec0BfReGEwKVlKusOwzm6vhP/FdeZ8stntycaOaV9jmlBFFoz
- cqN+gacOLi6g2ZfmJiqIBRIWmv8W7YycCTQop2YGsDaUCv4IVPc6GEdLMOrTJgCyoxQE
- YXDedXb+4g+xaGDSXd6DKqE7rZ4VE32DA5DWzvfYsca5Nn7sqigbWYBpbZKWDTNb7cGt
- /XaA4FKAFeJi32VjEulICOEBuR0RAM9yuNZvvook85eoMjwpzlOCsNuA6YcPwXjIZFPz
- fv0LCvigJktvn7hbrRLWzrlD5m239vgl/D08CBnwQQFFdSHrPkSu93V+5ZYEdmqYixmQ
- RyEA==
+ bh=leyno95cobAtAcNQFGrlVZ0utmyIUUJFgDrYtk3rO3A=;
+ b=ssb5jO6qvG1aojB3oqYW76CRN/TETCqlTpGBQUhq3KQfF8uaQftqD1BQfIPG8lDkC7
+ 79WIqFOVmqnqIb0KYR6Meyy4JB40F6kgOkFiLeIBEjhOa/EaOwH1bx49dEsbQM6JY0q2
+ tt3CxtpQFRWCgs1YcCf59oV82Sss663tZJhUJfj9sRNSla4Q40sXRW8ewBIWzb4A9l8S
+ payzUUOQA52An/Ng3ie75+detcANzNCmgzEH6W+lVqjnbVYpcDzGmNz2fWFq6NGRK9RW
+ dWP7qH5y5WRGndesIr5WehhcLQKiYsEVYoP+c1unPljkPoQvRrH4s1IAmG2DLfQ8HaDA
+ AJPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=TeeLY19U9Qm1lmufQWPD8xckoKI640rgPBtuJB+/FwY=;
- b=isFjat/IgLhOOlZ6D+xX1AdT7oG5mitDIcoisCxD67wZSkUFBo7XLbTDkg+LwGIoyW
- 8Ri15rpu+GdcaHabtX11TW0sB4V8/FNFtfj0b3qOR0UfClP1rUB7Aar+hHTY+MaJNvPx
- +hJtRmdx0KB15vNb+rTO5CN/lRveJrg5cUgGRF/Tmas63bBdOM9dOihHl6J9Jm5OnurI
- jBQcTIl3f1YTUK3HQM2yeL7iHS2z/cy5CPSr+nXqvnCZznGjuVsbhKfz/E9fknUdZCQy
- ntsKAdKS0YVUxw7FkDAJqvVdovKOjbC6Vdyf1Cto0rDIP60d6u++nMdpM0kqxcr+hjJH
- 03ig==
-X-Gm-Message-State: APjAAAVFrOIi1T6Ow/6U4ftpAKPX1xNKScF7DLHQ6mkCJwjuAiXvdN/S
- ZYVJRrPN/5xlKjqN/OzrtXRfRA==
-X-Google-Smtp-Source: APXvYqxijhrS/R7MxxozM41eyGA8ujSLdJr2BX3YsxobItuF0mWIzrh8U/3IImToeQS4R7H7rkQF0A==
-X-Received: by 2002:a62:7a8a:: with SMTP id
- v132mr31759212pfc.111.1582176529518; 
- Wed, 19 Feb 2020 21:28:49 -0800 (PST)
+ bh=leyno95cobAtAcNQFGrlVZ0utmyIUUJFgDrYtk3rO3A=;
+ b=iDht1aiTRzt3jA2CqRfNwPnIfvXbne2RGAVFa+FupsY8sWSux2RUddsciD8gnhJyD3
+ SSUIQaG21L/l/uAuixgy4l7vQkMyVsIrkU46zZfuQonMhAjJmAvfWsMIOsqWGNo3GG1n
+ kerBje5jngzksR+r7zl4/mop/l0G7P5TRAMQZYdYjwldlbM8mPK9vXZnr+NDODmNxtOK
+ aN69tO8A7wR20QXRZL/1GGCmbfL/GtkB42POWxE6Cp+7gJAi7LFTdLtJUHlVctgXsBLG
+ oZ+ZNn4vO8ZOWwipvPRkNPidtgmR48IfefFdEBTG9HBz0G6Y6aa6suwJRanlrSfrQjCt
+ 9dNw==
+X-Gm-Message-State: APjAAAXQem3xfGW74sMFey1cdX/Y+G+75/5wjBPQS7GAsihe7qt8E+bS
+ 7dGv7AJQxKZyWA+v9ogikow5ew==
+X-Google-Smtp-Source: APXvYqw+bW5EqKGykBiDWFo04XmcY84U5/oexdvpR3ClTdeonThzRPh5LAsuxd9zv9R1t7JndxijgA==
+X-Received: by 2002:a17:90a:2223:: with SMTP id
+ c32mr1627110pje.15.1582176539000; 
+ Wed, 19 Feb 2020 21:28:59 -0800 (PST)
 Received: from localhost.localdomain (li1441-214.members.linode.com.
  [45.118.134.214])
- by smtp.gmail.com with ESMTPSA id l69sm1535663pgd.1.2020.02.19.21.28.37
+ by smtp.gmail.com with ESMTPSA id l69sm1535663pgd.1.2020.02.19.21.28.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 19 Feb 2020 21:28:48 -0800 (PST)
+ Wed, 19 Feb 2020 21:28:58 -0800 (PST)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
@@ -69,22 +69,22 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  Coresight ML <coresight@lists.linaro.org>
-Subject: [PATCH v5 6/9] perf cs-etm: Support callchain for instruction sample
-Date: Thu, 20 Feb 2020 13:26:58 +0800
-Message-Id: <20200220052701.7754-7-leo.yan@linaro.org>
+Subject: [PATCH v5 7/9] perf cs-etm: Fixup exception entry for thread stack
+Date: Thu, 20 Feb 2020 13:26:59 +0800
+Message-Id: <20200220052701.7754-8-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200220052701.7754-1-leo.yan@linaro.org>
 References: <20200220052701.7754-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_212850_681803_8690574B 
-X-CRM114-Status: GOOD (  16.55  )
+X-CRM114-CacheID: sfid-20200219_212900_599677_2EFF5018 
+X-CRM114-Status: GOOD (  17.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -113,173 +113,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now CoreSight has supported the thread stack; based on the thread stack
-we can synthesize call chain for the instruction sample; the call chain
-can be injected by option '--itrace=g'.
+In theory when an exception is taken, the thread stack is pushed with an
+expected return address (ret_addr): from_ip + insn_len; and later when
+the exception returns back, it compares the return address (from the new
+packet's to_ip) with the ret_addr in the of thread stack, if have the
+same values then the thread stack will be popped.
 
-Note the stack event must be processed prior to synthesizing instruction
-sample; this can ensure the thread stack to push and pop synchronously
-with instruction sample and the thread stack can be generated correctly
-for instruction samples.  Add a comment for related info.
+When a branch instruction's target address triggers an exception, the
+thread stack's ret_addr is the branch target address plus instruction
+length for exception entry; but this branch instruction is not taken,
+the exception return address is the branch target address, thus the
+thread stack's ret_addr cannot match with the exception return address,
+so the thread stack cannot pop properly.
+
+This patch fixes up the ret_addr at the exception entry, when it detects
+the exception is triggered by a branch target address, it sets
+'insn_len' to zero.  This allows the thread stack can pop properly when
+return from exception.
 
 Before:
 
   # perf script --itrace=g16l64i100
-            main  1579        100      instructions:  ffff0000102137f0 group_sched_in+0xb0 ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff000010213b78 flexible_sched_in+0xf0 ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff0000102135ac event_sched_in.isra.57+0x74 ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff000010219344 perf_swevent_add+0x6c ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
-  [...]
+
+  main  3258        100      instructions:
+          ffff800010082c1c el0_sync+0x5c ([kernel.kallsyms])
+              ffffad816a14 memcpy+0x4 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
+              ffffad800820 _dl_start_final+0x48 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
+              ffffad800b00 _dl_start+0x200 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
+              ffffad800048 _start+0x8 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
+              ffffad800044 _start+0x4 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
+
+The issues in the output:
+memcpy+0x4 => The function call memcpy() causes exception; it's return
+              address should be memcpy+0x0.
+_start+0x4 => The thread stack is not popped correctly, this is a stale
+              data which is left in the previous exception flow.
 
 After:
 
   # perf script --itrace=g16l64i100
 
-  main  1579        100      instructions:
-          ffff000010213b78 flexible_sched_in+0xf0 ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-
-  main  1579        100      instructions:
-          ffff0000102135ac event_sched_in.isra.57+0x74 ([kernel.kallsyms])
-          ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
-          ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-
-  main  1579        100      instructions:
-          ffff000010219344 perf_swevent_add+0x6c ([kernel.kallsyms])
-          ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
-          ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
-          ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-  [...]
+  main  3258        100      instructions:
+          ffff800010082c1c el0_sync+0x5c ([kernel.kallsyms])
+              ffffad816a10 memcpy+0x0 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
+              ffffad800820 _dl_start_final+0x48 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
+              ffffad800b00 _dl_start+0x200 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
+              ffffad800048 _start+0x8 (/usr/lib/aarch64-linux-gnu/ld-2.28.so)
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- tools/perf/util/cs-etm.c | 40 ++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 38 insertions(+), 2 deletions(-)
+ tools/perf/util/cs-etm.c | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
 
 diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
-index 1b08b650b090..d9c22c145307 100644
+index d9c22c145307..4800daf0dc3d 100644
 --- a/tools/perf/util/cs-etm.c
 +++ b/tools/perf/util/cs-etm.c
-@@ -17,6 +17,7 @@
- #include <stdlib.h>
- 
- #include "auxtrace.h"
-+#include "callchain.h"
- #include "color.h"
- #include "cs-etm.h"
- #include "cs-etm-decoder/cs-etm-decoder.h"
-@@ -74,6 +75,7 @@ struct cs_etm_traceid_queue {
- 	size_t last_branch_pos;
- 	union perf_event *event_buf;
- 	struct thread *thread;
-+	struct ip_callchain *chain;
- 	struct branch_stack *last_branch;
- 	struct branch_stack *last_branch_rb;
- 	struct cs_etm_packet *prev_packet;
-@@ -251,6 +253,16 @@ static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
- 	if (!tidq->prev_packet)
- 		goto out_free;
- 
-+	if (etm->synth_opts.callchain) {
-+		size_t sz = sizeof(struct ip_callchain);
-+
-+		/* Add 1 to callchain_sz for callchain context */
-+		sz += (etm->synth_opts.callchain_sz + 1) * sizeof(u64);
-+		tidq->chain = zalloc(sz);
-+		if (!tidq->chain)
-+			goto out_free;
-+	}
-+
- 	if (etm->synth_opts.last_branch) {
- 		size_t sz = sizeof(struct branch_stack);
- 
-@@ -273,6 +285,7 @@ static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
- out_free:
- 	zfree(&tidq->last_branch_rb);
- 	zfree(&tidq->last_branch);
-+	zfree(&tidq->chain);
- 	zfree(&tidq->prev_packet);
- 	zfree(&tidq->packet);
- out:
-@@ -561,6 +574,7 @@ static void cs_etm__free_traceid_queues(struct cs_etm_queue *etmq)
- 		zfree(&tidq->event_buf);
- 		zfree(&tidq->last_branch);
- 		zfree(&tidq->last_branch_rb);
-+		zfree(&tidq->chain);
- 		zfree(&tidq->prev_packet);
- 		zfree(&tidq->packet);
- 		zfree(&tidq);
-@@ -1147,7 +1161,7 @@ static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
+@@ -1160,6 +1160,7 @@ static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
+ 	u8 trace_chan_id = tidq->trace_chan_id;
  	int insn_len;
  	u64 from_ip, to_ip;
++	u32 flags;
  
--	if (etm->synth_opts.thread_stack) {
-+	if (etm->synth_opts.callchain || etm->synth_opts.thread_stack) {
+ 	if (etm->synth_opts.callchain || etm->synth_opts.thread_stack) {
  		from_ip = cs_etm__last_executed_instr(tidq->prev_packet);
- 		to_ip = cs_etm__first_executed_instr(tidq->packet);
+@@ -1168,6 +1169,27 @@ static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
+ 		insn_len = cs_etm__instr_size(etmq, trace_chan_id,
+ 					      tidq->prev_packet->isa, from_ip);
  
-@@ -1203,6 +1217,14 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
- 
- 	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->packet, &sample);
- 
-+	if (etm->synth_opts.callchain) {
-+		thread_stack__sample(tidq->thread, tidq->packet->cpu,
-+				     tidq->chain,
-+				     etm->synth_opts.callchain_sz + 1,
-+				     sample.ip, etm->kernel_start);
-+		sample.callchain = tidq->chain;
-+	}
++		/*
++		 * Fixup the exception entry.
++		 *
++		 * If the packet's start_addr is same with its end_addr, this
++		 * packet was altered from a exception packet to a range packet;
++		 * the detailed info is described in cs_etm__exception(), which
++		 * is used to handle the case for a branch instruction is not
++		 * taken but the branch triggers an exception.
++		 *
++		 * In this case, fixup 'insn_len' to zero so that allow the
++		 * thread stack's return address can match with the exception
++		 * return address, finally can pop up thread stack properly when
++		 * return from exception.
++		 */
++		flags = PERF_IP_FLAG_BRANCH | PERF_IP_FLAG_CALL |
++			PERF_IP_FLAG_INTERRUPT;
++		if (tidq->prev_packet->flags == flags &&
++		    tidq->prev_packet->start_addr ==
++		    tidq->prev_packet->end_addr)
++			insn_len = 0;
 +
- 	if (etm->synth_opts.last_branch)
- 		sample.branch_stack = tidq->last_branch;
- 
-@@ -1385,6 +1407,8 @@ static int cs_etm__synth_events(struct cs_etm_auxtrace *etm,
- 		attr.sample_type &= ~(u64)PERF_SAMPLE_ADDR;
- 	}
- 
-+	if (etm->synth_opts.callchain)
-+		attr.sample_type |= PERF_SAMPLE_CALLCHAIN;
- 	if (etm->synth_opts.last_branch)
- 		attr.sample_type |= PERF_SAMPLE_BRANCH_STACK;
- 
-@@ -1426,6 +1450,11 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
- 	    tidq->prev_packet->last_instr_taken_branch)
- 		cs_etm__update_last_branch_rb(etmq, tidq);
- 
-+	/*
-+	 * The stack event must be processed prior to synthesizing
-+	 * instruction sample; this can ensure the instruction samples
-+	 * to generate correct thread stack.
-+	 */
- 	if (tidq->prev_packet->last_instr_taken_branch)
- 		cs_etm__add_stack_event(etmq, tidq);
- 
-@@ -2776,7 +2805,6 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
- 	} else {
- 		itrace_synth_opts__set_default(&etm->synth_opts,
- 				session->itrace_synth_opts->default_no_sample);
--		etm->synth_opts.callchain = false;
- 		etm->synth_opts.thread_stack =
- 				session->itrace_synth_opts->thread_stack;
- 	}
-@@ -2788,6 +2816,14 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
- 		etm->branches_filter |= PERF_IP_FLAG_RETURN |
- 					PERF_IP_FLAG_TRACE_BEGIN;
- 
-+	if (etm->synth_opts.callchain && !symbol_conf.use_callchain) {
-+		symbol_conf.use_callchain = true;
-+		if (callchain_register_param(&callchain_param) < 0) {
-+			symbol_conf.use_callchain = false;
-+			etm->synth_opts.callchain = false;
-+		}
-+	}
-+
- 	err = cs_etm__synth_events(etm, session);
- 	if (err)
- 		goto err_delete_thread;
+ 		/*
+ 		 * Create thread stacks by keeping track of calls and returns;
+ 		 * any call pushes thread stack, return pops the stack, and
 -- 
 2.17.1
 
