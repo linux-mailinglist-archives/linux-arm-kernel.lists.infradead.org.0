@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F132165F8F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 15:16:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A6F8165F95
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 15:17:59 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X8Hk8EC3YwQLRmLqahl3Xvs2edGHyw9W+kohnarJdYg=; b=mPm2Vkx1VGgVnk
-	0CBpP+0KNQymUcgDZCy/cJnZzTobsI47sr8AfPbes8GXl3j+6XsxBPKU83xx+0mxLkblS+urFVxE6
-	0qR94sgYsZLlpXi7loyYCRmYFvLUU8phpEJINz+ASDjeCYLiMXbq3+G4I2oo+T1J47Sn3v/AgACNU
-	tBzSThpp7eruTIaeDr+skjZ3hwh8qLCu6/qXRJeFbHvdQISXtO4rTRAMmdBvAveT3m90Qaznu/FTp
-	rwKQbsdAot18RUtm9XahpkfExwWl29lNnGeuqo7trbiV3pbT8RNYuf6EA5n7x4HiuZaXrKAdvWmjl
-	Kls4Jqgr7vH/0FNnV81w==;
+	List-Owner; bh=IzN+ABaKsUUH4Gw0uJE0oQOYy//h5R7xq5Z+eAly0x8=; b=InSbJvoIfzBnRj
+	a9VC+NWRJxkSS29xdIBHPRUKAd4rQ5aDB9m1UsDrmNUbd86oAJmtKnbCmE11gfiMorgIowGAIvb3a
+	VqqnFRUntcTPSvIxuyFNLQ8OXZuDjKcPM3vTAJk3wf1xMXer9+W/rVozPB5hjnADufaeFUp6ubdGM
+	Q3ev0sMT0MpDjin+xtBOI48W4u43FA7P/zFhz/qwmF+p0bhG1jAArwVnQTgwP6ETI9or5ruNWmcJX
+	fPJaUALbnTKtpeQBug+ug+T9CiYlmDytZ4dQ5f4Kcdq0DYg+OK+gBhEpGQ80r02g2vAPKznKqfaIr
+	b0AxpQGV8x6gud/x9tiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4mdG-0002ff-9w; Thu, 20 Feb 2020 14:16:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j4meK-00031A-S1; Thu, 20 Feb 2020 14:17:56 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4md7-0002fH-W1
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 14:16:43 +0000
-Received: from localhost (static-140-208-78-212.thenetworkfactory.nl
- [212.78.208.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EC20B208E4;
- Thu, 20 Feb 2020 14:16:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1582208201;
- bh=ELL3hEpGo9sAinW5R6kKrZvV1yKEFg4R0dnJKKl/e5E=;
+ id 1j4meC-00030H-0F
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 14:17:49 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id B7561563;
+ Thu, 20 Feb 2020 15:17:43 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1582208263;
+ bh=bI53Zug+890prNNaPfPGhR8GpYv+Klbg8yJ37Qnbv4A=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=QbjHw5kA8g04sBo+4CIz97a/75O3v3KPnvVZEWPkhLl9HNfY8YSJVGOU0eHiS6wBI
- sGzdXyEQ5LQVkLw+CI8Ti/rlYUV+mrdoF+jILKt7dL6Bb8Buoh5f5oR35Sf7QC0ijM
- yqtry28uArBqZ/Forgszj6uh9kyddJIl9X41IZdA=
-Date: Thu, 20 Feb 2020 15:16:37 +0100
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Marc Gonzalez <marc.w.gonzalez@free.fr>
-Subject: Re: [RESEND RFC PATCH v3] clk: Use new helper in managed functions
-Message-ID: <20200220141637.GA3433108@kroah.com>
-References: <f48d1df3-fc1f-ac5c-b11e-330f18aad539@free.fr>
- <20200220112700.GJ3374196@kroah.com>
- <8866e533-967f-e208-1ec8-888d72f3052e@free.fr>
+ b=KGwHxUG7b/Z2UkYUp9M/oxLXj3mb0DpKs8DSFQyfN6VrcdC9FiYW/vH3DHE9hKJiM
+ qtAGmy5/ZUui2EMb2r4xc911A8o4H9PS8FCT7JlsTFVzthx1bNVc/UHvri25X+ueKc
+ abTm7XDPazs+OtI+5sUlO+NXZFjNOd/npqA+0alY=
+Date: Thu, 20 Feb 2020 16:17:25 +0200
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Vasily Khoruzhick <anarsoul@gmail.com>
+Subject: Re: [PATCH 6/6] arm64: allwinner: a64: enable LCD-related hardware
+ for Pinebook
+Message-ID: <20200220141725.GG4998@pendragon.ideasonboard.com>
+References: <20200220083508.792071-1-anarsoul@gmail.com>
+ <20200220083508.792071-7-anarsoul@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8866e533-967f-e208-1ec8-888d72f3052e@free.fr>
+In-Reply-To: <20200220083508.792071-7-anarsoul@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_061642_068285_940E2A13 
-X-CRM114-Status: GOOD (  18.18  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200220_061748_192823_B516DCD8 
+X-CRM114-Status: GOOD (  17.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,81 +74,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-clk <linux-clk@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
- Suzuki Poulose <suzuki.poulose@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Rafael Wysocki <rjw@rjwysocki.net>, Russell King <linux@armlinux.org.uk>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>,
- Sudip Mukherjee <sudipm.mukherjee@gmail.com>,
- Guenter Roeck <linux@roeck-us.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ Linus Walleij <linus.walleij@linaro.org>, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
+ Sam Ravnborg <sam@ravnborg.org>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Samuel Holland <samuel@sholland.org>,
+ Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ Chen-Yu Tsai <wens@csie.org>, Icenowy Zheng <icenowy@aosc.io>,
+ Stephan Gerhold <stephan@gerhold.net>, Jonas Karlman <jonas@kwiboo.se>,
+ Torsten Duwe <duwe@suse.de>, Rob Herring <robh+dt@kernel.org>,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org,
+ Jernej Skrabec <jernej.skrabec@siol.net>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Daniel Vetter <daniel@ffwll.ch>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 03:05:54PM +0100, Marc Gonzalez wrote:
-> On 20/02/2020 12:27, Greg Kroah-Hartman wrote:
-> 
-> > On Thu, Feb 20, 2020 at 11:04:58AM +0100, Marc Gonzalez wrote:
-> >
-> >> Introduce devm_add() to wrap devres_alloc() / devres_add() calls.
-> >>
-> >> Using that helper produces simpler code, and smaller object size.
-> >> E.g. with gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu:
-> >>
-> >>     text	   data	    bss	    dec	    hex	filename
-> >> -   1708	     80	      0	   1788	    6fc	drivers/clk/clk-devres.o
-> >> +   1524	     80	      0	   1604	    644	drivers/clk/clk-devres.o
-> >>
-> >> Signed-off-by: Marc Gonzalez <marc.w.gonzalez@free.fr>
-> >> ---
-> >> Differences from v2 to v3
-> >> x Make devm_add() return an error-code rather than the raw data pointer
-> >>   (in case devres_alloc ever returns an ERR_PTR) as suggested by Geert
-> >> x Provide a variadic version devm_vadd() to work with structs as suggested
-> >>   by Geert
-> >> x Don't use nested ifs in clk_devm* implementations (hopefully simpler
-> >>   code logic to follow) as suggested by Geert
-> >>
-> >> Questions:
-> >> x This patch might need to be split in two? (Introduce the new API, then use it)
-> >> x Convert other subsystems to show the value of this proposal?
-> >> x Maybe comment the API usage somewhere
-> >> ---
-> >>  drivers/base/devres.c    | 15 ++++++
-> >>  drivers/clk/clk-devres.c | 99 ++++++++++++++--------------------------
-> >>  include/linux/device.h   |  3 ++
-> >>  3 files changed, 53 insertions(+), 64 deletions(-)
-> >>
-> >> diff --git a/drivers/base/devres.c b/drivers/base/devres.c
-> >> index 0bbb328bd17f..b2603789755b 100644
-> >> --- a/drivers/base/devres.c
-> >> +++ b/drivers/base/devres.c
-> >> @@ -685,6 +685,21 @@ int devres_release_group(struct device *dev, void *id)
-> >>  }
-> >>  EXPORT_SYMBOL_GPL(devres_release_group);
-> >>  
-> >> +int devm_add(struct device *dev, dr_release_t func, void *arg, size_t size)
-> > 
-> > Please add a bunch of kerneldoc here, as I have no idea what this
-> > function does just by looking at the name of it :(
-> 
-> Fair enough. (This was one of my "Questions" in the patch comments.)
-> 
-> Note: My patch adds a new function, then makes use of said function.
-> Is this typically done in two patches or one?
-> 
-> Patch 1/2 augmenting the API.
-> Patch 2/2 making use of the new function.
+Hi Vasily,
 
-2 is usual.
+Thank you for the patch.
+
+On Thu, Feb 20, 2020 at 12:35:08AM -0800, Vasily Khoruzhick wrote:
+> From: Icenowy Zheng <icenowy@aosc.io>
+> 
+> Pinebook has an ANX6345 bridge connected to the RGB666 LCD output and
+> eDP panel input. The bridge is controlled via I2C that's connected to
+> R_I2C bus.
+> 
+> Enable all this hardware in device tree.
+> 
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> Signed-off-by: Vasily Khoruzhick <anarsoul@gmail.com>
+> ---
+>  .../dts/allwinner/sun50i-a64-pinebook.dts     | 69 ++++++++++++++++++-
+>  1 file changed, 68 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
+> index c06c540e6c08..f5633f550d8a 100644
+> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
+> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinebook.dts
+> @@ -48,6 +48,18 @@ lid_switch {
+>  		};
+>  	};
+>  
+> +	panel_edp: panel-edp {
+> +		compatible = "neweast,wjfh116008a";
+> +		backlight = <&backlight>;
+> +		power-supply = <&reg_dc1sw>;
+> +
+> +		port {
+> +			panel_edp_in: endpoint {
+> +				remote-endpoint = <&anx6345_out_edp>;
+> +			};
+> +		};
+> +	};
+> +
+>  	reg_vbklt: vbklt {
+>  		compatible = "regulator-fixed";
+>  		regulator-name = "vbklt";
+> @@ -109,6 +121,10 @@ &dai {
+>  	status = "okay";
+>  };
+>  
+> +&de {
+> +	status = "okay";
+> +};
+> +
+>  &ehci0 {
+>  	phys = <&usbphy 0>;
+>  	phy-names = "usb";
+> @@ -119,6 +135,10 @@ &ehci1 {
+>  	status = "okay";
+>  };
+>  
+> +&mixer0 {
+> +	status = "okay";
+> +};
+> +
+>  &mmc0 {
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&mmc0_pins>;
+> @@ -177,12 +197,45 @@ &pwm {
+>  	status = "okay";
+>  };
+>  
+> -/* The ANX6345 eDP-bridge is on r_i2c */
+>  &r_i2c {
+>  	clock-frequency = <100000>;
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&r_i2c_pl89_pins>;
+>  	status = "okay";
+> +
+> +	anx6345: anx6345@38 {
+> +		compatible = "analogix,anx6345";
+> +		reg = <0x38>;
+> +		reset-gpios = <&pio 3 24 GPIO_ACTIVE_LOW>; /* PD24 */
+> +		dvdd25-supply = <&reg_dldo2>;
+> +		dvdd12-supply = <&reg_fldo1>;
+> +
+> +		ports {
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +
+> +			anx6345_in: port@0 {
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +				reg = <0>;
+> +				anx6345_in_tcon0: endpoint@0 {
+> +					reg = <0>;
+> +					remote-endpoint = <&tcon0_out_anx6345>;
+> +				};
+
+As there's a single endpoint, you can drop the reg property, the @0
+suffix, and the #address-cells and #size-cells property in the port@0
+node (but not in the ports node).
+
+> +			};
+> +
+> +			anx6345_out: port@1 {
+> +				#address-cells = <1>;
+> +				#size-cells = <0>;
+> +				reg = <1>;
+> +
+> +				anx6345_out_edp: endpoint@0 {
+> +					reg = <0>;
+> +					remote-endpoint = <&panel_edp_in>;
+> +				};
+
+Same here.
+
+Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+
+> +			};
+> +		};
+> +	};
+>  };
+>  
+>  &r_pio {
+> @@ -357,6 +410,20 @@ &sound {
+>  			"MIC2", "Internal Microphone Right";
+>  };
+>  
+> +&tcon0 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&lcd_rgb666_pins>;
+> +
+> +	status = "okay";
+> +};
+> +
+> +&tcon0_out {
+> +	tcon0_out_anx6345: endpoint@0 {
+> +		reg = <0>;
+> +		remote-endpoint = <&anx6345_in_tcon0>;
+> +	};
+> +};
+> +
+>  &uart0 {
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&uart0_pb_pins>;
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
