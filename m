@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E58D6166107
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 16:34:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EBE016611E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 16:39:11 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lG7oQDMVhD3biZWfdc2gZ7hw448VuTugynzVa4lj+y4=; b=J+1
-	t/5L82CkZE4ejgLKkHMgv1I5sPThphhd5aX8YB04PyFe2ymClDr2Tk57d25a1Hs1mp0D5x0I6OwKm
-	Ws1GUm8AtG8lYHiJVCCi4kUEK7/xWXFd1Pac79W0nr9QbSYXXgbFglkWi3w97IV+E9j+bop8dTvNJ
-	liWpeyuN1JrzCTVAnABR1MXjyrvv3wD79uEBVkmCdXNG2KNr4F6z7teNkgAzDRu6a3ZzUiQxGPA+P
-	6ItZ8Og9+eXDl+ZT7MXWATNhTTKd8yGsROe/zHrRLgsS9Yvddoh2GiiR9zJ9CJx0JAIzrF8utKRFK
-	C8TIv0nsOaAeR9Udc+dpcbEhRjGEMSA==;
+	References:List-Owner; bh=s7F02goOTfeFhTz0g6R85mC6eS31A1xE1TMIpUkYV+g=; b=iOa
+	DO0vA6ZsNUrxlzOjSv0EkCQ+pq9jf9W2a14yyce2Mh52FyKlz8oP7QzkgzqGGcm+0P/E30e/jSETX
+	TTiomLsJgFJWuM5LGlktlr0CjKtsTFDcXrA80E8/nuB+Wa+8RZhcJHN6ZuDnWK12VUnRX05ZyBffl
+	WYWFo/oSLfUAz6w4Kbl9UuV87J4u1sbfQbOKuJV/ZF2IrzRVOXtuGmqvX6/hTA1ocBt7sTZJ51/x4
+	efxXAN8jtEh5BUudCr9Thcfukuq8pWXz0LmY5bnmXZKFOpe6mTMW/WrWnUMTDf+3Cy5pHpUfzxwij
+	mPdftEa7bS4UUx8xNxEV9kUdiaeh00Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4nqA-0007n8-KG; Thu, 20 Feb 2020 15:34:14 +0000
-Received: from mail-lj1-x22d.google.com ([2a00:1450:4864:20::22d])
+	id 1j4nuq-0001Vo-4C; Thu, 20 Feb 2020 15:39:04 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4npy-0007mY-CS; Thu, 20 Feb 2020 15:34:03 +0000
-Received: by mail-lj1-x22d.google.com with SMTP id h23so4673696ljc.8;
- Thu, 20 Feb 2020 07:34:01 -0800 (PST)
+ id 1j4nuj-0001VM-10; Thu, 20 Feb 2020 15:38:58 +0000
+Received: by mail-lf1-x144.google.com with SMTP id n25so3480760lfl.0;
+ Thu, 20 Feb 2020 07:38:56 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id;
- bh=5019G7yq0avtfjWMAOLceayBMfSqRFTAMAXEQqHSZug=;
- b=PsI+M80qxN2gYjTcQsbtfNJtVJnILU6F6Pv0qT2SjfyhK7SbCDRjMkVsmi0o58N92h
- jo1mk5IJLbW1Sk6MFhu5ArFVWD8JLaSvfqyMXdkjA4LpSPjO3bML7zdrgMZSzLXpCZRp
- 8iycMu+EvI+4tGPi/zOrMKWYEQV6JJ52eBc36UdfycUYYNtzG4qAYMCLxmgNHL+J2dzQ
- nIMCbMTBfJL4irXeigijEE8IoCits1/LDSTG3cC8hRebJB11KN/PN9LKSCySNQX9hxAq
- txCc9nafhCKlncTgwzei8TsKc1XsE1RrwlCyMERKM8EtDl/N/oaV9svC/1PI0UvfO0v7
- G49Q==
+ bh=LTSTcBgb9GGJQllk/olrBiwlUBbpPRVx+sqTluRMzLs=;
+ b=SWh6C6VJobFRpWMlRyr9Ir9oQp9/szZB1jyFZRDk+ZrhKC2bkfTXQMYeQIARVZpm0r
+ TOWj0G3U9aDhmnR+8o4jlbZcdL2sRDk4+lj+C5B+MRk9b8tnmMTQMtV1PxQJNzAw2pwT
+ Tx8mSXkH5ETJp6KyFGAEpyirq/WzJa9B84AWRBKl4vLKKx2nbH+eLeA4m0mCJrZlAQsl
+ 1IQv8vu92Opd0LdrF68FanQmRXzvMFodiA3UufFAGiByXZEEJaZxOuPcMycNhsYyCumo
+ SW2QQK8xcNAmu6vt4hwdcJcab+Dh+uqtqPa22KHYu/HBc7gGoyLNhnrKnFbGvgTvOxuj
+ SM2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=5019G7yq0avtfjWMAOLceayBMfSqRFTAMAXEQqHSZug=;
- b=YHCjmQMYKuKb6bUywI1g+Nm0CZtqF2Rl907WWXhFFXs3YMkgjSz3qUGmHIuNsch+xP
- qWYCqrEbUWBGs/oV8LWw83eCk4zevB3ctvFgMlkDDrDGY49TPlHclrbefHiynH6z1d2/
- eHEv1cTbNtzI7bTlwIZE7evymqizDrLKQvSkmhjwryo2avWwgR1fyDAt0PTq1zS2X7jy
- L4WlYHeP+7CUJzJZYnvxm8WF1iLeFl6qt1Yj2mq/5XL5Oa/abarevMR+T826wB/UMXQT
- TdTqz9LbFAEf8Q4cbjN9kkpZ3MBamGwb+lz+qAa79VGhi+gQcaPZXJnD7yMUdxKTt9gH
- xp1w==
-X-Gm-Message-State: APjAAAXU2PZW8IMn5aslNLWPoJHBhaVw/DwjamWPKYzAh9NjLHRTtPyp
- jkWY71o1VbC/X7CopCwD++J/JGTmweQ=
-X-Google-Smtp-Source: APXvYqxaGUst+wKhSuMt86KQ7TYw1ssovVjk09fGgxif+X+Hf39ciAP//EaX7mfFGKuhhUseY3kzUg==
-X-Received: by 2002:a2e:8698:: with SMTP id l24mr19404158lji.94.1582212840413; 
- Thu, 20 Feb 2020 07:34:00 -0800 (PST)
+ bh=LTSTcBgb9GGJQllk/olrBiwlUBbpPRVx+sqTluRMzLs=;
+ b=XrgPj/RfiF5COe2W/t01JHbsJv/upgKdISUgQmTJwE0jXaTWF7fGqklnlozsAVvHuY
+ LpAg0j5CcvnBJ99ogoTxGKGe8hVb1OU2NW/ZTQ6FfkAcOJbQCeGEEZ1OG3EynxYbwAQe
+ w5gtKqD+4007wYAmCZFuuiJY7+DfnNRBK6qhxY1HMojhLk/x6g7Zag8CoVEX8IPiG0+5
+ vLemDLKcHPUo9Aj4Af+BxvL0OFBK8CVRcOSydd8zL0ZV5SfqJd9sHgvH1vyleOpSTXtQ
+ 9mLPyJ9n4D3ZjAhOXye0NjIvrmgLQ3C9u//+LXF1Uq0mgsWSVpX4Bscje4aIJS4rRAy/
+ aXGg==
+X-Gm-Message-State: APjAAAUwsZaP6B8GxCCH+MMLQD3YEY8JzoHUh6YU1U8Pa2ZUQM0TgWA2
+ eM2ZxVA0sbi0jrBkEvuwl48=
+X-Google-Smtp-Source: APXvYqyxn2s0jyOgdFy3o8g+SEhzmAWcmuIT+Q8DAV3EzVkzptKp/H9zuaGay43R3j85QjPRMaUAeQ==
+X-Received: by 2002:a05:6512:6cb:: with SMTP id
+ u11mr7885481lff.69.1582213135029; 
+ Thu, 20 Feb 2020 07:38:55 -0800 (PST)
 Received: from localhost.localdomain ([87.200.95.144])
- by smtp.gmail.com with ESMTPSA id u13sm2162285lfq.19.2020.02.20.07.33.57
+ by smtp.gmail.com with ESMTPSA id f26sm2000083ljn.104.2020.02.20.07.38.52
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 20 Feb 2020 07:33:59 -0800 (PST)
+ Thu, 20 Feb 2020 07:38:54 -0800 (PST)
 From: Christian Hewitt <christianshewitt@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH] arm64: dts: meson: fix gxm-khadas-vim2 wifi
-Date: Thu, 20 Feb 2020 19:33:10 +0400
-Message-Id: <1582212790-11402-1-git-send-email-christianshewitt@gmail.com>
+Subject: [PATCH] arm64: dts: meson-gxbb-odroid-c2: add rc-odroid ir keymap
+Date: Thu, 20 Feb 2020 19:38:05 +0400
+Message-Id: <1582213085-11656-1-git-send-email-christianshewitt@gmail.com>
 X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_073402_448166_E2D5521C 
-X-CRM114-Status: GOOD (  11.88  )
+X-CRM114-CacheID: sfid-20200220_073857_068596_78DD43A8 
+X-CRM114-Status: GOOD (  11.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:22d listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [christianshewitt[at]gmail.com]
@@ -94,51 +95,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Art Nikpal <email2tema@gmail.com>,
- Christian Hewitt <christianshewitt@gmail.com>
+Cc: Christian Hewitt <christianshewitt@gmail.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fixes: adc52bf7ef16 ("arm64: dts: meson: fix mmc v2 chips max frequencies")
+Add the rc-odroid keymap to the Odroid C2 device-tree.
 
-before
-
-[6.418252] brcmfmac: F1 signature read @0x18000000=0x17224356
-[6.435663] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac4356-sdio for chip BCM4356/2
-[6.551259] brcmfmac: brcmf_sdiod_ramrw: membytes transfer failed
-[6.551275] brcmfmac: brcmf_sdio_verifymemory: error -84 on reading 2048 membytes at 0x00184000
-[6.551352] brcmfmac: brcmf_sdio_download_firmware: dongle image file download failed
-
-after
-
-[6.657165] brcmfmac: F1 signature read @0x18000000=0x17224356
-[6.660807] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac4356-sdio for chip BCM4356/2
-[6.918643] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac4356-sdio for chip BCM4356/2
-[6.918734] brcmfmac: brcmf_c_process_clm_blob: no clm_blob available (err=-2), device may have limited channels available
-[6.922724] brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM4356/2 wl0: Jun 16 2015 14:25:06 version 7.35.184.r1 (TOB) (r559293) FWID 01-b22ae69c
-
-Suggested-by: Art Nikpal <email2tema@gmail.com>
 Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-index f82f25c..d5dc128 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxm-khadas-vim2.dts
-@@ -327,7 +327,7 @@
- 	#size-cells = <0>;
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
+index 6ded279..b46ef98 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
+@@ -248,6 +248,7 @@
+ 	status = "okay";
+ 	pinctrl-0 = <&remote_input_ao_pins>;
+ 	pinctrl-names = "default";
++	linux,rc-map-name = "rc-odroid";
+ };
  
- 	bus-width = <4>;
--	max-frequency = <50000000>;
-+	max-frequency = <60000000>;
- 
- 	non-removable;
- 	disable-wp;
+ &gpio_ao {
 -- 
 2.7.4
 
