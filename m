@@ -2,70 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F07AF1669F6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 22:37:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2593F1669F9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 22:38:06 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JwPUSqyWPEYH4Roc2ZMUC0RUYGjbn/sZx03pMtk0X/g=; b=EEbl1ovHFgP79S
-	x+oYeBUc8FUEmJSRNMEVRJvJjKXZVjJMvNbPWf0pS96lZGKODBgnCJ4/nXta1aDFPwl9mDLsDp2wX
-	cyzuwihEMXaVg1nUF8MdhFS5Xp0rEyGeMc763sdkYeHLfolDoBno0QC/oAzmiFH95XTAfcnlrgkj1
-	g8hLd9r3irgbUA8lRALjIK1e/erP49FHlb2+kRx6Qg7zOFqywvqlOeFB+NoEfaWUFBzBbQ9IVvE1M
-	esoqEweKLNdH8Hv4HjZE0Ah5eygg/vIHFwLhskdf81UvKI9j7u2t6iinzinmn2FCDZ3BRHZO8QJ7Y
-	U0X2Nly15/o/qTHWCKwA==;
+	List-Owner; bh=4DTL52wR020gINVp+b9PWFWUqao1wYki8hQdLhX2mNg=; b=lM6CSlayEIpeFx
+	U9RyUgOQN1YppXziGR4sCYcYzvjTsZ+ovrq05EQ0jyqMd/lhLXI6+svu4sVFncLSiCsVx8o/Kydsm
+	4KhSmILAdHk4jWbusev6ia8oLi8KlMVZuOKPUussFzfaWEgReCu9J8JujRWc4lvKsj9kDgrZfjmU8
+	atqgVprD++H3T5FWGi3ysv3cY/EbzFptkGHgbl85dgZRE+9dwTHVg1UdTkT0VinLXmtyfUdZroDaZ
+	yBEeHw1xzCMJVSLWy+cfoQSgxnj4DruP3NeYM366IEnmKmdm5X9B5xpMlwyGVvsi2Vzo6Dqft2mZY
+	YtQawqeeQRsRy9z9OvAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4tVz-0007AG-Es; Thu, 20 Feb 2020 21:37:47 +0000
+	id 1j4tWF-0007M3-PR; Thu, 20 Feb 2020 21:38:03 +0000
 Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4tVe-00072J-JW
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 21:37:30 +0000
-Received: by mail-qk1-x741.google.com with SMTP id b7so5053211qkl.7
+ id 1j4tVl-00079L-AF
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 21:37:35 +0000
+Received: by mail-qk1-x741.google.com with SMTP id j8so5025858qka.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 13:37:26 -0800 (PST)
+ Thu, 20 Feb 2020 13:37:33 -0800 (PST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Oh9NnMK5dEkxSL8LqLeezQXMtkg2eo9bP7+6KDERK7c=;
- b=dkZ+fmKTL4NxfsQL//wkNrqdn+7ALxc9PWB4/cJdjaMYai6+a2ObaTrZTi3QiRCL0V
- TMTIpnezZMnaC9KNCUXgF5o59tmklGM0vyhpkCSUldlOCdklJMYjN8kgqicn7b0H5uvR
- mRyrf9vU9fUmbYaeaIRealAwfliz91+76OSwSjZRyYEy8UDGoP0f0sy8JOKnLJPzFxbC
- rMegihWdjYtYGneebotaZntHloXNCy8nrj2aAhjn/yFq/gWFTTJg6TRppJoIn0GMcVsY
- NpvhM1m57XvH2otQn99m5FFoJbCjQ9wgnJAVRPPA+LBskBn1YeWZ4SpX//vhyZqwvvN3
- mFZQ==
+ :cc; bh=AYj5LNpCUCCnBa2oy1JmbMYUv7Pxu05SUX364TAcUFQ=;
+ b=D531YR+wxORn5yMqquYHuw0LOWJwbMGqJ/HNHEyXBvdaX61mb84C66r8YuwEn3FbWt
+ B/4c623opxfVqQ+1xjlyGZUz1cj4ayk53VLlmQwfrriCzxb33kj2nNxvYuk1dMe2nX61
+ l3AU+Tji7SjC591I2p8T9VMcXTtwLNlxZBdUZzHGQQRX0OIgYU0bKXkGmYdNWOFO3DSi
+ n6lUEqkPx+kB698msH6xwbOr0YZFMTxcQGTpEqDjyHB4k6ZX2WksZV05JoWvHdAbMvuq
+ spgfJOviI3N/k8F6SjsJ5Jq4wq3N7rNdG4rv0BPhG2hNi+8F2rSq252ySBXhEcw7BNvt
+ YtiQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Oh9NnMK5dEkxSL8LqLeezQXMtkg2eo9bP7+6KDERK7c=;
- b=n8Nn2oKDuZtG1fjTwOop/BDCM3JGXUT92uajNbmUp/aQyJL2MgoMWviAKRrcOkw6yp
- aTQnw8VQ46sl8Kx8KBKWVdRqBGFG/rMKsMr2n4CB31lhHAlEYwyl6Pq2YpMMJPUtV2EZ
- QiisB1jvPbOHOtz62QIMXFb++zl58+MFYeXzqjQ6+VkW637O9uZn/c/aD4usfoWuTAZj
- IS5W3Tv8lJ/oPa8o47KWl3wComVjr/UB/uMKfGY1QiTUnaRJyLnvHdhpp6l3I6zHCkuA
- ABtMoYsHkJenfyqiwtErF/grehjzriNK0APEpkey5yRVe9ncHSp4LOaa32d4TT1utAlW
- URGQ==
-X-Gm-Message-State: APjAAAUbt8XSa2bVc4jLSi4Q6dx3k42+lz5YmxWmFXdRKkO7jTOTpPO9
- Ez+NbOvLyFnm6vU42hTaD/MZ11LOORknG7OyKNE=
-X-Google-Smtp-Source: APXvYqxbMtUxwi5PqTgTmL0zS8fcAZIOH3LG0rqKdR9B+eNvxbGatS+IgDq4lagM0iirCc+ygm9t5HGOeR8kbKdfxTs=
-X-Received: by 2002:a05:620a:1426:: with SMTP id
- k6mr30609606qkj.276.1582234645770; 
- Thu, 20 Feb 2020 13:37:25 -0800 (PST)
+ bh=AYj5LNpCUCCnBa2oy1JmbMYUv7Pxu05SUX364TAcUFQ=;
+ b=fRPso3pRjWKmbWg0uUxIHuWDh46pcDOCgV0dR2fjWGp/E/0A+qoPM24YeH/RQYnTSs
+ SVowmpZ35kAg3mfiHq8GB3uvb0keHABaBcgEwpedL4EAtluley96C7KwomXxaX/xCEnL
+ gHeLlK489KVMMDhdFffPjWdZ2UO0HEo9GNmmUOXCGGpXKS5cL4NhnXjspfagbL8uSwne
+ HxqlUXR6h1/fuv5IysLApokh5QoMlrCSo4LfUYj2MxITCOv6A9SDDTBpATvgerma74J/
+ 0HiC+/2aMAhH7g3+M9+83KnsJOdodny1ZoEN2XsSpEbBJmnesQmYMuitaqM/Cabmzn84
+ syQA==
+X-Gm-Message-State: APjAAAXcV7TX9m65WTI2qbOJrBT9fFDvlj3XUxp9Ep9UUDN1emMw+BnZ
+ syivVEVGrE4rhG7LR8iANegGjS8rN+BAU/E10mo=
+X-Google-Smtp-Source: APXvYqwplzoe4CvRRPMOeVSyg+GmZ7Xr+hoa90z86t8lCC8IWOl3oqq6wqqyXavOdlPzo69TGu/dWGFBrsXKgjK6BPo=
+X-Received: by 2002:a37:a581:: with SMTP id
+ o123mr28961726qke.131.1582234652483; 
+ Thu, 20 Feb 2020 13:37:32 -0800 (PST)
 MIME-Version: 1.0
 References: <20200220083508.792071-1-anarsoul@gmail.com>
  <20200220083508.792071-4-anarsoul@gmail.com>
- <20200220093528.GA10402@ravnborg.org>
-In-Reply-To: <20200220093528.GA10402@ravnborg.org>
+ <20200220135608.GE4998@pendragon.ideasonboard.com>
+In-Reply-To: <20200220135608.GE4998@pendragon.ideasonboard.com>
 From: Vasily Khoruzhick <anarsoul@gmail.com>
-Date: Thu, 20 Feb 2020 13:37:12 -0800
-Message-ID: <CA+E=qVf2eGddyBd7G5+W0cScLSQF3qmPgw-ja_F=4LeEMeLn5Q@mail.gmail.com>
+Date: Thu, 20 Feb 2020 13:37:19 -0800
+Message-ID: <CA+E=qVeYUgPZMxmp5oHu1W8LYYqaJfEK6=L-3wadG6s-a2NPEw@mail.gmail.com>
 Subject: Re: [PATCH 3/6] dt-bindings: Add Guangdong Neweast Optoelectronics
  CO. LTD vendor prefix
-To: Sam Ravnborg <sam@ravnborg.org>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_133726_804290_04D4BC10 
-X-CRM114-Status: GOOD (  13.54  )
+X-CRM114-CacheID: sfid-20200220_133733_411684_DAC4EC37 
+X-CRM114-Status: GOOD (  15.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,8 +101,8 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Linus Walleij <linus.walleij@linaro.org>,
  dri-devel <dri-devel@lists.freedesktop.org>,
  Andrzej Hajda <a.hajda@samsung.com>, Thierry Reding <thierry.reding@gmail.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Stephen Rothwell <sfr@canb.auug.org.au>, Samuel Holland <samuel@sholland.org>,
+ Sam Ravnborg <sam@ravnborg.org>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Samuel Holland <samuel@sholland.org>,
  Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
  Chen-Yu Tsai <wens@csie.org>, Icenowy Zheng <icenowy@aosc.io>,
  Stephan Gerhold <stephan@gerhold.net>, Jonas Karlman <jonas@kwiboo.se>,
@@ -117,9 +117,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 1:35 AM Sam Ravnborg <sam@ravnborg.org> wrote:
+On Thu, Feb 20, 2020 at 5:56 AM Laurent Pinchart
+<laurent.pinchart@ideasonboard.com> wrote:
 >
-> Hi Vasily
+> Hi Vasily,
+
+Hi Laurent,
+
+> Thank you for the patch.
 >
 > On Thu, Feb 20, 2020 at 12:35:05AM -0800, Vasily Khoruzhick wrote:
 > > Add vendor prefix for Guangdong Neweast Optoelectronics CO. LTD
@@ -140,13 +145,23 @@ On Thu, Feb 20, 2020 at 1:35 AM Sam Ravnborg <sam@ravnborg.org> wrote:
 > > +  "^neweast,.*":
 > > +    description: Guangdong Neweast Optoelectronics CO., LT
 >
-> Alphabetical order.
-> "new" comes before "nex".
+> Google only returns two hits for this name, beside the ones related to
+> this patch series. Are you sure this is the correct company name ?
 
-Will fix in v2
+That is what datasheet says:
 
+http://files.pine64.org/doc/datasheet/pinebook/11.6inches-1080P-IPS-LCD-Panel-spec-WJFH116008A.pdf
+
+
+
+> >    "^newhaven,.*":
+> >      description: Newhaven Display International
+> >    "^ni,.*":
 >
->         Sam
+> --
+> Regards,
+>
+> Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
