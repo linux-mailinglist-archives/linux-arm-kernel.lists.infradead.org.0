@@ -2,72 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECB4716590A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 09:21:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7D08165934
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 09:30:18 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
-	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
-	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
-	bh=rCZmQU4m4pUpwvY1gBT4GCADfodaDACo8ZxSGT1xkBQ=; b=LyxUyRNoVXDdCJMZSE9A/UweHx
-	UR0Q96gokOM25Ocl0zUlKlwHD15+ASwz72IS5TlniO3T6BQN51t8fhzH3OnR4hk1n3NpblKV3Qxx8
-	7CWVw3XM0Cj5OUi2tSrwjWoT6obDhcfLSjzgL3mzhaXCiMgUL6DphP4JS98YJQW42kq0OI/C6zcv/
-	G3qvpGBZ3+VTWE607zBifXXPyt7S0wHCnwM4WvSz+8ZKlDTMuZMhIyrk/M0d2CW8CXK5qLOF7/uVR
-	+5Ng87CKNK9VHm3lWNZSx10oNAnchFeNbcPax0WTZbqLmV4h80CsspEAg4gIfBxD/vAgj+Cm+jEDf
-	kagJbzHQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DO7w87cYSosG6mI+VeNqaJ0bO30K0/DIu2sO+wHKRM8=; b=FmOKoFKygj4ABN
+	FZJxlq6xFbYlpFicEe67eqt8covUqfQYZQPtk3TZWoJ9kDPc7Yqnc4ulys9DTQQLvco3diUIQOKDr
+	FQs83Ent66rvGwijoQOcKVAu2mx7oq4kh3ePpyBGAKa9RiA8opqPoonSG7pJOVVKjsFvsW7kQd1X7
+	wrCtpWdunEl7wcmsr39WXvjGrBOgk2IVXjgF4qnPvTtGhZ0Asf/cb7NwXlkAIxo3f68OazqXXDHJ9
+	xjB9HZovbFihwI6ek/e3uqWOoLLdI/G6fyMwMRPZJ3ZzKo8halNGMr+FefJrhQeS8mrtD+jQa/zry
+	/2FScUwYWfyaSF6A9qKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4h5U-0001Rp-OE; Thu, 20 Feb 2020 08:21:36 +0000
-Received: from smtpng3.m.smailru.net ([94.100.177.149])
+	id 1j4hDs-0005r1-Ke; Thu, 20 Feb 2020 08:30:16 +0000
+Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4h5L-0001R5-FH; Thu, 20 Feb 2020 08:21:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=orpaltech.com; s=mailru; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:Message-ID:Subject:From:Cc:To;
- bh=n9mLrYl2rzflgjD4ntXo272yW/SUmgpRuec1+i3cV/Y=; 
- b=fOCFnpj4e1AM/dWMw4tV1LOS89DAxUJWxqj/J6PfYe7v5oEwfXZUo8zm4aWIqi4AuNu+bKysOQk/a/ES7b4djqnt4AIGkL774fXbxrl7hqgsdoKijIvY5CpuO6YQjN4sdZ6pU+t5J7Fx4xFVzq5SByjYxTJCMPSpZXDgyQZKbIo=;
-Received: by smtpng3.m.smailru.net with esmtpa (envelope-from
- <ssuloev@orpaltech.com>)
- id 1j4h5G-0002YV-0i; Thu, 20 Feb 2020 11:21:22 +0300
-To: linux-rpi-kernel@lists.infradead.org
-From: Sergey Suloev <ssuloev@orpaltech.com>
-Subject: vc4 on rpi3 A+
-Message-ID: <8b353626-f62a-2aff-96b4-91712ed36095@orpaltech.com>
-Date: Thu, 20 Feb 2020 11:21:21 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j4hDj-0004do-CS
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 08:30:10 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by honk.sigxcpu.org (Postfix) with ESMTP id C8BE0FB03;
+ Thu, 20 Feb 2020 09:29:59 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
+Received: from honk.sigxcpu.org ([127.0.0.1])
+ by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id zMjbSs77NzEe; Thu, 20 Feb 2020 09:29:57 +0100 (CET)
+Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
+ id 7B4B5405C2; Thu, 20 Feb 2020 09:29:56 +0100 (CET)
+Date: Thu, 20 Feb 2020 09:29:56 +0100
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: Pavel Machek <pavel@ucw.cz>
+Subject: Re: [PATCH] backlight: add led-backlight driver
+Message-ID: <20200220082956.GA3383@bogon.m.sigxcpu.org>
+References: <20200219191412.GA15905@amd>
 MIME-Version: 1.0
-Content-Language: en-US
-Authentication-Results: smtpng3.m.smailru.net;
- auth=pass smtp.auth=ssuloev@orpaltech.com
- smtp.mailfrom=ssuloev@orpaltech.com
-X-7564579A: 646B95376F6C166E
-X-77F55803: 0A44E481635329DB0E1AA8A03B392317D32E5E4886521736714D0EA31FF80092F5FF9959873BB261F688BCB05C26794D1814CBB712D2988316D055344148C1BA62FC0F0734C5A28F9A9D2A8ACCD75E1D
-X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE781C4E570E9C9D556C2099A533E45F2D0395957E7521B51C2CFCAF695D4D8E9FCEA1F7E6F0F101C6778DA827A17800CE7ED6B9921EE2920938F08D7030A58E5AD6BA297DBC24807EAA9D420A4CFB5DD3E9DA2E410B3308CDE4D125387B11E1BAAAF8F674D84899D4A8941B15DA834481FA18204E546F3947CD166953D3EA3826BF6B57BC7E64490618DEB871D839B7333395957E7521B51C2545D4CF71C94A83E9FA2833FD35BB23D27C277FBC8AE2E8BEC1C9C6CFAD2A0F5A471835C12D1D977C4224003CC836476C0CAF46E325F83A522CA9DD8327EE4930A3850AC1BE2E735B58781B77DE60D36C4224003CC836476C0CAF46E325F83A50BF2EBBBDD9D6B0F05F538519369F3743B503F486389A921A5CC5B56E945C8DA
-X-D57D3AED: Y8kq8+OzVoxvgW9Op3aR8Fxwo7H2ZNxGP5qz8aO2mjTJzjHGC4ogvVuzB3zfVUBtENeZ6b5av1fnCBE34JUDkaJinJwwHx5ysVv9/YfT9ud3AV4nHq/+9Q==
-X-Mailru-Sender: 689FA8AB762F73930799C7A3FA23A2701C91C185D95CB344F1D52F011957DA03778B5FB1219D8779F6BCD4B1DE95BF653AE5922765F965CDF1D7D1B96E5495AE10FCEA6DFE3E0A150D4ABDE8C577C2ED
-X-Mras: Ok
+Content-Disposition: inline
+In-Reply-To: <20200219191412.GA15905@amd>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_002127_703827_0A2BE6BF 
-X-CRM114-Status: UNSURE (   7.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200220_003007_765301_59C05329 
+X-CRM114-Status: GOOD (  29.43  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [94.100.177.149 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [24.134.29.49 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,27 +65,370 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+Cc: daniel.thompson@linaro.org, mpartap@gmx.net,
+ Tony Lindgren <tony@atomide.com>, jingoohan1@gmail.com, merlijn@wizzup.org,
+ martin_rysavy@centrum.cz, kernel list <linux-kernel@vger.kernel.org>,
+ dri-devel@lists.freedesktop.org, sre@kernel.org, nekit1000@gmail.com,
+ tomi.valkeinen@ti.com, jjhiblot@ti.com, linux-omap@vger.kernel.org,
+ Lee Jones <lee.jones@linaro.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello, guys,
+Hi,
+On Wed, Feb 19, 2020 at 08:14:12PM +0100, Pavel Machek wrote:
+> From: Tomi Valkeinen <tomi.valkeinen@ti.com>
+> =
 
-could anyone clarify the status of vc4 drm support on RPI 3A+ ?
+> This patch adds a led-backlight driver (led_bl), which is similar to
+> pwm_bl except the driver uses a LED class driver to adjust the
+> brightness in the HW. Multiple LEDs can be used for a single backlight.
+> =
 
-I tried to build kernel 5.5 and 5.6-rc2 in 32bit and aarch64 
-configurations with VC4 turned ON but both unsuccessful - vc4 drm driver 
-is listed in memory but not working and not producing any typical DRM 
-log output.
+> Signed-off-by: Tomi Valkeinen <tomi.valkeinen@ti.com>
+> Signed-off-by: Jean-Jacques Hiblot <jjhiblot@ti.com>
+> Acked-by: Pavel Machek <pavel@ucw.cz>
+> Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
+> Acked-by: Lee Jones <lee.jones@linaro.org>
+> Acked-by: Tony Lindgren <tony@atomide.com>
+> Tested-by: Tony Lindgren <tony@atomide.com>
+> Signed-off-by: Pavel Machek <pavel@ucw.cz>
 
+Tested-by: Guido G=FCnther <agx@sigxcpu.org>
 
-Thank you
+Cheers,
+ -- Guido
+
+> ---
+>  drivers/video/backlight/Kconfig  |   7 ++
+>  drivers/video/backlight/Makefile |   1 +
+>  drivers/video/backlight/led_bl.c | 260 +++++++++++++++++++++++++++++++++=
+++++++
+>  3 files changed, 268 insertions(+)
+>  create mode 100644 drivers/video/backlight/led_bl.c
+> =
+
+> Hi!
+> =
+
+> Here's the version of the driver I have. AFAICT
+> default-brightness-level handling is ok, so does not need to be
+> changed.
+> =
+
+> Lee, it would be easiest for me if you could apply it to your tree and
+> push, but given enough time I can push it to Linus, too.
+> =
+
+> Thanks,
+> 								Pavel
+> =
+
+> diff --git a/drivers/video/backlight/Kconfig b/drivers/video/backlight/Kc=
+onfig
+> index 403707a3e503..0093bbd0d326 100644
+> --- a/drivers/video/backlight/Kconfig
+> +++ b/drivers/video/backlight/Kconfig
+> @@ -456,6 +456,13 @@ config BACKLIGHT_RAVE_SP
+>  	help
+>  	  Support for backlight control on RAVE SP device.
+>  =
+
+> +config BACKLIGHT_LED
+> +	tristate "Generic LED based Backlight Driver"
+> +	depends on LEDS_CLASS && OF
+> +	help
+> +	  If you have a LCD backlight adjustable by LED class driver, say Y
+> +	  to enable this driver.
+> +
+>  endif # BACKLIGHT_CLASS_DEVICE
+>  =
+
+>  endmenu
+> diff --git a/drivers/video/backlight/Makefile b/drivers/video/backlight/M=
+akefile
+> index 6f8777037c37..0c1a1524627a 100644
+> --- a/drivers/video/backlight/Makefile
+> +++ b/drivers/video/backlight/Makefile
+> @@ -57,3 +57,4 @@ obj-$(CONFIG_BACKLIGHT_TPS65217)	+=3D tps65217_bl.o
+>  obj-$(CONFIG_BACKLIGHT_WM831X)		+=3D wm831x_bl.o
+>  obj-$(CONFIG_BACKLIGHT_ARCXCNN) 	+=3D arcxcnn_bl.o
+>  obj-$(CONFIG_BACKLIGHT_RAVE_SP)		+=3D rave-sp-backlight.o
+> +obj-$(CONFIG_BACKLIGHT_LED)		+=3D led_bl.o
+> diff --git a/drivers/video/backlight/led_bl.c b/drivers/video/backlight/l=
+ed_bl.c
+> new file mode 100644
+> index 000000000000..3f66549997c8
+> --- /dev/null
+> +++ b/drivers/video/backlight/led_bl.c
+> @@ -0,0 +1,260 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (C) 2015-2019 Texas Instruments Incorporated -  http://www.=
+ti.com/
+> + * Author: Tomi Valkeinen <tomi.valkeinen@ti.com>
+> + *
+> + * Based on pwm_bl.c
+> + */
+> +
+> +#include <linux/backlight.h>
+> +#include <linux/leds.h>
+> +#include <linux/module.h>
+> +#include <linux/platform_device.h>
+> +
+> +struct led_bl_data {
+> +	struct device		*dev;
+> +	struct backlight_device	*bl_dev;
+> +	struct led_classdev	**leds;
+> +	bool			enabled;
+> +	int			nb_leds;
+> +	unsigned int		*levels;
+> +	unsigned int		default_brightness;
+> +	unsigned int		max_brightness;
+> +};
+> +
+> +static void led_bl_set_brightness(struct led_bl_data *priv, int level)
+> +{
+> +	int i;
+> +	int bkl_brightness;
+> +
+> +	if (priv->levels)
+> +		bkl_brightness =3D priv->levels[level];
+> +	else
+> +		bkl_brightness =3D level;
+> +
+> +	for (i =3D 0; i < priv->nb_leds; i++)
+> +		led_set_brightness(priv->leds[i], bkl_brightness);
+> +
+> +	priv->enabled =3D true;
+> +}
+> +
+> +static void led_bl_power_off(struct led_bl_data *priv)
+> +{
+> +	int i;
+> +
+> +	if (!priv->enabled)
+> +		return;
+> +
+> +	for (i =3D 0; i < priv->nb_leds; i++)
+> +		led_set_brightness(priv->leds[i], LED_OFF);
+> +
+> +	priv->enabled =3D false;
+> +}
+> +
+> +static int led_bl_update_status(struct backlight_device *bl)
+> +{
+> +	struct led_bl_data *priv =3D bl_get_data(bl);
+> +	int brightness =3D bl->props.brightness;
+> +
+> +	if (bl->props.power !=3D FB_BLANK_UNBLANK ||
+> +	    bl->props.fb_blank !=3D FB_BLANK_UNBLANK ||
+> +	    bl->props.state & BL_CORE_FBBLANK)
+> +		brightness =3D 0;
+> +
+> +	if (brightness > 0)
+> +		led_bl_set_brightness(priv, brightness);
+> +	else
+> +		led_bl_power_off(priv);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct backlight_ops led_bl_ops =3D {
+> +	.update_status	=3D led_bl_update_status,
+> +};
+> +
+> +static int led_bl_get_leds(struct device *dev,
+> +			   struct led_bl_data *priv)
+> +{
+> +	int i, nb_leds, ret;
+> +	struct device_node *node =3D dev->of_node;
+> +	struct led_classdev **leds;
+> +	unsigned int max_brightness;
+> +	unsigned int default_brightness;
+> +
+> +	ret =3D of_count_phandle_with_args(node, "leds", NULL);
+> +	if (ret < 0) {
+> +		dev_err(dev, "Unable to get led count\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	nb_leds =3D ret;
+> +	if (nb_leds < 1) {
+> +		dev_err(dev, "At least one LED must be specified!\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	leds =3D devm_kzalloc(dev, sizeof(struct led_classdev *) * nb_leds,
+> +			    GFP_KERNEL);
+> +	if (!leds)
+> +		return -ENOMEM;
+> +
+> +	for (i =3D 0; i < nb_leds; i++) {
+> +		leds[i] =3D devm_of_led_get(dev, i);
+> +		if (IS_ERR(leds[i]))
+> +			return PTR_ERR(leds[i]);
+> +	}
+> +
+> +	/* check that the LEDs all have the same brightness range */
+> +	max_brightness =3D leds[0]->max_brightness;
+> +	for (i =3D 1; i < nb_leds; i++) {
+> +		if (max_brightness !=3D leds[i]->max_brightness) {
+> +			dev_err(dev, "LEDs must have identical ranges\n");
+> +			return -EINVAL;
+> +		}
+> +	}
+> +
+> +	/* get the default brightness from the first LED from the list */
+> +	default_brightness =3D leds[0]->brightness;
+> +
+> +	priv->nb_leds =3D nb_leds;
+> +	priv->leds =3D leds;
+> +	priv->max_brightness =3D max_brightness;
+> +	priv->default_brightness =3D default_brightness;
+> +
+> +	return 0;
+> +}
+> +
+> +static int led_bl_parse_levels(struct device *dev,
+> +			   struct led_bl_data *priv)
+> +{
+> +	struct device_node *node =3D dev->of_node;
+> +	int num_levels;
+> +	u32 value;
+> +	int ret;
+> +
+> +	if (!node)
+> +		return -ENODEV;
+> +
+> +	num_levels =3D of_property_count_u32_elems(node, "brightness-levels");
+> +	if (num_levels > 1) {
+> +		int i;
+> +		unsigned int db;
+> +		u32 *levels =3D NULL;
+> +
+> +		levels =3D devm_kzalloc(dev, sizeof(u32) * num_levels,
+> +				      GFP_KERNEL);
+> +		if (!levels)
+> +			return -ENOMEM;
+> +
+> +		ret =3D of_property_read_u32_array(node, "brightness-levels",
+> +						levels,
+> +						num_levels);
+> +		if (ret < 0)
+> +			return ret;
+> +
+> +		/*
+> +		 * Try to map actual LED brightness to backlight brightness
+> +		 * level
+> +		 */
+> +		db =3D priv->default_brightness;
+> +		for (i =3D 0 ; i < num_levels; i++) {
+> +			if ((i && db > levels[i-1]) && db <=3D levels[i])
+> +				break;
+> +		}
+> +		priv->default_brightness =3D i;
+> +		priv->max_brightness =3D num_levels - 1;
+> +		priv->levels =3D levels;
+> +	} else if (num_levels >=3D 0)
+> +		dev_warn(dev, "Not enough levels defined\n");
+> +
+> +	ret =3D of_property_read_u32(node, "default-brightness-level", &value);
+> +	if (!ret && value <=3D priv->max_brightness)
+> +		priv->default_brightness =3D value;
+> +	else if (!ret  && value > priv->max_brightness)
+> +		dev_warn(dev, "Invalid default brightness. Ignoring it\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static int led_bl_probe(struct platform_device *pdev)
+> +{
+> +	struct backlight_properties props;
+> +	struct led_bl_data *priv;
+> +	int ret, i;
+> +
+> +	priv =3D devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	platform_set_drvdata(pdev, priv);
+> +
+> +	priv->dev =3D &pdev->dev;
+> +
+> +	ret =3D led_bl_get_leds(&pdev->dev, priv);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret =3D led_bl_parse_levels(&pdev->dev, priv);
+> +	if (ret < 0) {
+> +		dev_err(&pdev->dev, "Failed to parse DT data\n");
+> +		return ret;
+> +	}
+> +
+> +	memset(&props, 0, sizeof(struct backlight_properties));
+> +	props.type =3D BACKLIGHT_RAW;
+> +	props.max_brightness =3D priv->max_brightness;
+> +	props.brightness =3D priv->default_brightness;
+> +	props.power =3D (priv->default_brightness > 0) ? FB_BLANK_POWERDOWN :
+> +		      FB_BLANK_UNBLANK;
+> +	priv->bl_dev =3D backlight_device_register(dev_name(&pdev->dev),
+> +			&pdev->dev, priv, &led_bl_ops, &props);
+> +	if (IS_ERR(priv->bl_dev)) {
+> +		dev_err(&pdev->dev, "Failed to register backlight\n");
+> +		return PTR_ERR(priv->bl_dev);
+> +	}
+> +
+> +	for (i =3D 0; i < priv->nb_leds; i++)
+> +		led_sysfs_disable(priv->leds[i]);
+> +
+> +	backlight_update_status(priv->bl_dev);
+> +
+> +	return 0;
+> +}
+> +
+> +static int led_bl_remove(struct platform_device *pdev)
+> +{
+> +	struct led_bl_data *priv =3D platform_get_drvdata(pdev);
+> +	struct backlight_device *bl =3D priv->bl_dev;
+> +	int i;
+> +
+> +	backlight_device_unregister(bl);
+> +
+> +	led_bl_power_off(priv);
+> +	for (i =3D 0; i < priv->nb_leds; i++)
+> +		led_sysfs_enable(priv->leds[i]);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id led_bl_of_match[] =3D {
+> +	{ .compatible =3D "led-backlight" },
+> +	{ }
+> +};
+> +
+> +MODULE_DEVICE_TABLE(of, led_bl_of_match);
+> +
+> +static struct platform_driver led_bl_driver =3D {
+> +	.driver		=3D {
+> +		.name		=3D "led-backlight",
+> +		.of_match_table	=3D of_match_ptr(led_bl_of_match),
+> +	},
+> +	.probe		=3D led_bl_probe,
+> +	.remove		=3D led_bl_remove,
+> +};
+> +
+> +module_platform_driver(led_bl_driver);
+> +
+> +MODULE_DESCRIPTION("LED based Backlight Driver");
+> +MODULE_LICENSE("GPL");
+> +MODULE_ALIAS("platform:led-backlight");
+> -- =
+
+> 2.11.0
+
 
 
 _______________________________________________
