@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D343F16658C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:55:11 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1E4F166583
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:54:35 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4SXDfwi4Z0M84LFFGfBNkQO7bnK6rsi2woig3ySZ3ok=; b=o8GJ2Fvp4/4l61
-	mK02nCq3VNyIgDrEzIVlasvRbwAMmEmHOOnIkaSbAty27njJYSCRE5CLTpwOKQskC2rWQ/ngY9vVA
-	nVbd4E3tEIJufFrjWALc2qWzKqFlYkQx7Fo6Ce2ZiF5GOJpe/nSzlLQiASfQBQ8Zf15EQDdkD6di1
-	HxC2BDQN+9RsRjJmLjj2jTOA1OIs85cAoAVkP3B8Bz7J/r6eJMb7Fdc2UIpz1T/EGFiOf3k1Yk0oy
-	wmR3KppXZHH+HO5l5oz6aApGYM3zoiCIlthkajGgomV0+98k7uLF15tzUmKAeYOS8hXvQoLA5REQ1
-	XldMtzcbtkynZZtbH3Ag==;
+	List-Owner; bh=oMWgarNoNGql62SALs+m1luCWywLQx2jwevIoMaIVZo=; b=UwTCv7QVeWMCNg
+	K833XPSUYwdy7KL7M8dbINTctJXPupO0YuduGjJmfk+9lJ+Mq+2ojTjQQpb5w9cCdfRk/Z4AWoPup
+	PVOZcXy8BvMtHtZj3A7qfZ70q8JFq9enQHmLbhlAHVdwKzyDr8qTIra7bFkqHWRppjRdBYb9DPc4r
+	hv0zeZcwSwX8besPWv0Ow3PnHXoBK7/KYLb9ta0bac+bQEpARHzK7tP70CepJz1/1sDXCfRaWm/aH
+	gcKF224xTt3boxxVWctYDQ3wpkR66RVCrtQvFkKpK/tyhKodRLKxGpoMpnpClxYemneV8vT2WkAkQ
+	ybh+id7/tPbAY8gPEwyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4q2T-00069o-JQ; Thu, 20 Feb 2020 17:55:05 +0000
+	id 1j4q1r-0005UC-D7; Thu, 20 Feb 2020 17:54:27 +0000
 Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4q19-0004sX-TL
+ id 1j4q19-0004sa-U9
  for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:53:46 +0000
 Received: from mwalle01.sab.local. (unknown [213.135.10.150])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 55A3D23E59;
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 9890223E5E;
  Thu, 20 Feb 2020 18:43:54 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
  s=mail2016061301; t=1582220634;
@@ -35,16 +35,16 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=YHLtwMRu0PRuLRywNXxx+73saKhgeS5z/r5jOFf8BV4=;
- b=vueBheQgHOiGjTI4A6UQrmPon7HdOaPeaKM9kB7c4+bVY+y0bNyy4z80PpDVDACIXHRidE
- L5lDNWwYsvqwZOi03CdGAish8L19WeYlFakhLZK3fgNYEWkfpsTPtTe4aMc+t1oPwwCfpR
- Upqx/X4AfRzUz+nrTd4tXcxulGxTulU=
+ bh=Vo4eabfDiU5MAlK7m5sK1wPAUvsnHzowKf/DJBK9M+Q=;
+ b=AcfzjqavTlY6+PDzgIl2PH9++YzTtNvI3obaIk7y6bg/0SCZpTTI0yJfIqplpKvAqSBqr9
+ lDAoNusvzqMO12HEisI3ByCqYQbi9dmBaFr6U5QKBZfxS26+/eSF/HjoVpPADVYtk2jdlk
+ os2A33Bej4vBjTfCEchEqqnCAWZwVaI=
 From: Michael Walle <michael@walle.cc>
 To: linux-serial@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 6/7] tty: serial: fsl_lpuart: add LS1028A earlycon support
-Date: Thu, 20 Feb 2020 18:43:33 +0100
-Message-Id: <20200220174334.23322-6-michael@walle.cc>
+Subject: [PATCH 7/7] arm64: dts: ls1028a: add missing LPUART nodes
+Date: Thu, 20 Feb 2020 18:43:34 +0100
+Message-Id: <20200220174334.23322-7-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200220174334.23322-1-michael@walle.cc>
 References: <20200220174334.23322-1-michael@walle.cc>
@@ -54,12 +54,13 @@ X-Spam-Level: ******
 X-Rspamd-Server: web
 X-Spam-Status: Yes, score=6.40
 X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: 55A3D23E59
+X-Rspamd-Queue-Id: 9890223E5E
 X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
  TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
  MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- NEURAL_SPAM(0.00)[0.471]; DKIM_SIGNED(0.00)[];
+ NEURAL_SPAM(0.00)[0.487]; DKIM_SIGNED(0.00)[];
+ DBL_PROHIBIT(0.00)[0.34.241.80:email,0.34.124.32:email,0.34.202.64:email,0.34.163.48:email];
  RCPT_COUNT_TWELVE(0.00)[14]; MID_CONTAINS_FROM(1.00)[];
  RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
  MIME_TRACE(0.00)[0:+];
@@ -67,8 +68,9 @@ X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
  SUSPICIOUS_RECIPS(1.50)[]
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_095344_261143_027C5E45 
-X-CRM114-Status: GOOD (  13.37  )
+X-CRM114-CacheID: sfid-20200220_095344_130586_1E94FE58 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -106,114 +108,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a early_console_setup() for the LS1028A SoC with 32bit, little
-endian access. If the bootloader does a fixup of the clock-frequency
-node the baudrate divisor register will automatically be set.
+The LS1028A has six LPUART controllers. Add the nodes.
+
+This was tested on a custom board.
 
 Signed-off-by: Michael Walle <michael@walle.cc>
 ---
- drivers/tty/serial/fsl_lpuart.c | 51 +++++++++++++++++++++++++++------
- 1 file changed, 43 insertions(+), 8 deletions(-)
+ .../arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 55 +++++++++++++++++++
+ 1 file changed, 55 insertions(+)
 
-diff --git a/drivers/tty/serial/fsl_lpuart.c b/drivers/tty/serial/fsl_lpuart.c
-index 6953eea166dc..4386ffdfe275 100644
---- a/drivers/tty/serial/fsl_lpuart.c
-+++ b/drivers/tty/serial/fsl_lpuart.c
-@@ -1834,11 +1834,12 @@ lpuart_set_termios(struct uart_port *port, struct ktermios *termios,
- 	spin_unlock_irqrestore(&sport->port.lock, flags);
- }
- 
--static void
--lpuart32_serial_setbrg(struct lpuart_port *sport, unsigned int baudrate)
-+static void __lpuart32_serial_setbrg(struct uart_port *port,
-+				     unsigned int baudrate, bool use_rx_dma,
-+				     bool use_tx_dma)
- {
- 	u32 sbr, osr, baud_diff, tmp_osr, tmp_sbr, tmp_diff, tmp;
--	u32 clk = sport->port.uartclk;
-+	u32 clk = port->uartclk;
- 
- 	/*
- 	 * The idea is to use the best OSR (over-sampling rate) possible.
-@@ -1884,10 +1885,10 @@ lpuart32_serial_setbrg(struct lpuart_port *sport, unsigned int baudrate)
- 
- 	/* handle buadrate outside acceptable rate */
- 	if (baud_diff > ((baudrate / 100) * 3))
--		dev_warn(sport->port.dev,
-+		dev_warn(port->dev,
- 			 "unacceptable baud rate difference of more than 3%%\n");
- 
--	tmp = lpuart32_read(&sport->port, UARTBAUD);
-+	tmp = lpuart32_read(port, UARTBAUD);
- 
- 	if ((osr > 3) && (osr < 8))
- 		tmp |= UARTBAUD_BOTHEDGE;
-@@ -1898,14 +1899,23 @@ lpuart32_serial_setbrg(struct lpuart_port *sport, unsigned int baudrate)
- 	tmp &= ~UARTBAUD_SBR_MASK;
- 	tmp |= sbr & UARTBAUD_SBR_MASK;
- 
--	if (!sport->lpuart_dma_rx_use)
-+	if (!use_rx_dma)
- 		tmp &= ~UARTBAUD_RDMAE;
--	if (!sport->lpuart_dma_tx_use)
-+	if (!use_tx_dma)
- 		tmp &= ~UARTBAUD_TDMAE;
- 
--	lpuart32_write(&sport->port, tmp, UARTBAUD);
-+	lpuart32_write(port, tmp, UARTBAUD);
-+}
-+
-+static void lpuart32_serial_setbrg(struct lpuart_port *sport,
-+				   unsigned int baudrate)
-+{
-+	__lpuart32_serial_setbrg(&sport->port, baudrate,
-+				 sport->lpuart_dma_rx_use,
-+				 sport->lpuart_dma_tx_use);
- }
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+index 40d82c49b174..f30ffc46063d 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
+@@ -390,6 +390,61 @@
+ 			status = "disabled";
+ 		};
  
 +
- static void
- lpuart32_set_termios(struct uart_port *port, struct ktermios *termios,
- 		   struct ktermios *old)
-@@ -2399,6 +2409,30 @@ static int __init lpuart32_early_console_setup(struct earlycon_device *device,
- 	return 0;
- }
- 
-+static int __init ls1028a_early_console_setup(struct earlycon_device *device,
-+					      const char *opt)
-+{
-+	u32 cr;
++		lpuart0: serial@2260000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x2260000 0x0 0x1000>;
++			interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			status = "disabled";
++		};
 +
-+	if (!device->port.membase)
-+		return -ENODEV;
++		lpuart1: serial@2270000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x2270000 0x0 0x1000>;
++			interrupts = <GIC_SPI 233 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			status = "disabled";
++		};
 +
-+	device->port.iotype = UPIO_MEM32;
-+	device->con->write = lpuart32_early_write;
++		lpuart2: serial@2280000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x2280000 0x0 0x1000>;
++			interrupts = <GIC_SPI 234 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			status = "disabled";
++		};
 +
-+	/* set the baudrate */
-+	if (device->port.uartclk && device->baud)
-+		__lpuart32_serial_setbrg(&device->port, device->baud,
-+					 false, false);
++		lpuart3: serial@2290000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x2290000 0x0 0x1000>;
++			interrupts = <GIC_SPI 235 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			status = "disabled";
++		};
 +
-+	/* enable transmitter */
-+	cr = lpuart32_read(&device->port, UARTCTRL);
-+	cr |= UARTCTRL_TE;
-+	lpuart32_write(&device->port, cr, UARTCTRL);
++		lpuart4: serial@22a0000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x22a0000 0x0 0x1000>;
++			interrupts = <GIC_SPI 236 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			status = "disabled";
++		};
 +
-+	return 0;
-+}
++		lpuart5: serial@22b0000 {
++			compatible = "fsl,ls1028a-lpuart";
++			reg = <0x0 0x22b0000 0x0 0x1000>;
++			interrupts = <GIC_SPI 237 IRQ_TYPE_LEVEL_HIGH>;
++			clocks = <&clockgen 4 1>;
++			clock-names = "ipg";
++			status = "disabled";
++		};
 +
- static int __init lpuart32_imx_early_console_setup(struct earlycon_device *device,
- 						   const char *opt)
- {
-@@ -2413,6 +2447,7 @@ static int __init lpuart32_imx_early_console_setup(struct earlycon_device *devic
- }
- OF_EARLYCON_DECLARE(lpuart, "fsl,vf610-lpuart", lpuart_early_console_setup);
- OF_EARLYCON_DECLARE(lpuart32, "fsl,ls1021a-lpuart", lpuart32_early_console_setup);
-+OF_EARLYCON_DECLARE(lpuart32, "fsl,ls1028a-lpuart", ls1028a_early_console_setup);
- OF_EARLYCON_DECLARE(lpuart32, "fsl,imx7ulp-lpuart", lpuart32_imx_early_console_setup);
- EARLYCON_DECLARE(lpuart, lpuart_early_console_setup);
- EARLYCON_DECLARE(lpuart32, lpuart32_early_console_setup);
+ 		edma0: dma-controller@22c0000 {
+ 			#dma-cells = <2>;
+ 			compatible = "fsl,ls1028a-edma";
 -- 
 2.20.1
 
