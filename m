@@ -2,81 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27A5B166623
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:23:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FB63166646
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:27:49 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6ysaaUXWLPImJ63+nUd5vvWz3NREhE6cH5hxQmvHNbY=; b=Z/dNalG6P84GFI
-	dl1KBieLYVFaU+hB8PRlGGM62+9az7aZXIT6i+mf+O6RV1yL4DhZdpHL4nqntcjoPmElY1lGcPHZy
-	JkeiVK5md6ljnGFqWRhbECElgib27agtci1FWNwt0Go62DsXyJrxUGpChmrLD2oiw3QTMScARwDM7
-	w3tlyJ5ElUXfBghHEy+CtfCCP5OAJOY93VtURkDzxPUhfo+r66ZBQ3hf3vKwma6j390i9VS6hAl5l
-	AxJq7rtNqTNQGyfKxKMzJXqvjk1RWPoCibqYbdh5D7XEpwZvYzCb4JdrzWtGiPifTJvpFpZsnF6aR
-	U1tTIyx2MoSUie/lWQeg==;
+	List-Owner; bh=4+x6U7P1j+2oHHMMmVMdvMhE8haSRyyMhAZ0a8AyUl4=; b=V6XBQMWPUQsvRZ
+	XOe2ujAg+wLcya815ft05kXqb0P63rKPE6wrK8zCq7ayiUOtxCjoaG0/KwOfaRN5PWt2ZYdbaIPb/
+	UtuxJ7k5WHKndkq26/AK1lTHPUTGKP+1SwBRPovUiAqwXq1H6q2v2f2DU+TsBrZEGiIBMVBHMTKPr
+	u4y+qUMAL7gEtcF6atcpqZ/lb2yUkcfiEyc2OSHdXaRmkRF6vs/OKR/M0+rrFFEmLBTzRW5V2x4HB
+	OU+NuK8Fu3gqnllXUa/N/Xm+cJPvNYP9i+NyHM6nInxxwEyRRC6Mdue7AWLNiitmvI4VVJP81Hv+G
+	fLmHJMg2MEVuAJJcK9kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4qTU-0005tF-4O; Thu, 20 Feb 2020 18:23:00 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1j4qY7-0007qT-Ca; Thu, 20 Feb 2020 18:27:47 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4qTL-0005sk-Mo
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 18:22:53 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 01KIMSYg068103;
- Thu, 20 Feb 2020 12:22:28 -0600
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1582222948;
- bh=K5dPu3+Wa7CxKbU5shKv6WcPAdBvfaqlk76SVCdHdLA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=l0M0ZVSv3fmfMS9j84mE8lFOURm3UA0yk69gHqQocp+dURS2y8WzJ7wefa+JZ3r6h
- Zm1UAWCanpIgV89obYfddTMQ1IV1OVIPpzf0e1wfh4cD4NN2mZBsj+NLmFgA//Rgo4
- ikfFFtZjBcSv/8X0vbpbrdV8Hk+XNV6a/8s7ZMUg=
-Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 01KIMSfh002895
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 20 Feb 2020 12:22:28 -0600
-Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3; Thu, 20
- Feb 2020 12:22:28 -0600
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE109.ent.ti.com
- (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1847.3 via
- Frontend Transport; Thu, 20 Feb 2020 12:22:28 -0600
-Received: from [10.250.77.18] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 01KIMRVw100737;
- Thu, 20 Feb 2020 12:22:27 -0600
-Subject: Re: omap-secure.c:undefined reference to `__arm_smccc_smc'
-To: Tony Lindgren <tony@atomide.com>
-References: <202002131856.VeW4PhBJ%lkp@intel.com>
- <20200220155429.GH37466@atomide.com>
- <55ddcd29-ed8b-529e-dd54-cbac5cf74e42@ti.com>
- <20200220162012.GI37466@atomide.com>
- <d7b685b6-16a2-3743-1786-a5240726ed9c@ti.com>
- <20200220163703.GK37466@atomide.com> <20200220171305.GL37466@atomide.com>
- <281e895b-720d-5bab-63cf-8b3e389dc767@ti.com>
- <20200220175744.GQ37466@atomide.com> <20200220181141.GR37466@atomide.com>
-From: "Andrew F. Davis" <afd@ti.com>
-Message-ID: <333dd36f-e760-64b3-9e0f-3a316df9ad10@ti.com>
-Date: Thu, 20 Feb 2020 13:22:27 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1j4qXy-0007pv-Ow; Thu, 20 Feb 2020 18:27:40 +0000
+Received: by mail-pl1-x641.google.com with SMTP id a6so1882172plm.3;
+ Thu, 20 Feb 2020 10:27:38 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=VmqpUfS7f2aoqYJkutvBUagv5kF3shz4Bp6Brv8E6os=;
+ b=O+AGTFn04M7aP/iVgcnqG40JcbHTAudN3ibVIwRVostevCW1xNddYtNqPcfeLq0XI5
+ DdbyWFD9QUMwXAyAZw79yEMqocyTBCu9h+tRN6CGIcbQPzJI2l3PuO98OpSKUQCzCU5o
+ 1TT37+bgBTc6E1Z5zkrgybQguIBtv2v7Q8rfEgBpZZUFWCMc7YXJL93s8fEXp2c/xBJm
+ ubFyOeGpFIlEgDhquJV8HlzQ0oObWariqEqMvO6BVRJKS+0wQA8IuQKUmzMKCyw1GxD+
+ aJwrQ3zs2iHUKJT/Z7Eb4hnvY34aepPaPLNYsCHk0HCH50oSO7qYnTVTuJNrjojTiuXg
+ QXWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=VmqpUfS7f2aoqYJkutvBUagv5kF3shz4Bp6Brv8E6os=;
+ b=tszh7tVJ4WvstGXF80z97wmjkv+2RzlWfjjiNvwNvwJpsq1szg94B19DEAuxercpxO
+ w3vkP4+1+ttD4M5vHTRyN5Tc5g9g5SS5Qk1JYDM4txTmXitOSB5DBR9YJuPcqCMG04B9
+ AmIgmQH/PAiNhPYWzl2yrmwTYatJSsAvfNXUWht+xQpQaUfiFxJ6+y53w5EdXCwjEFQH
+ 2ycecvUILXcJhIEU4OypO4PWRERFW0RMDtxM4TaNl4BuLRMAxOmI2n0DmBhb2aDqhOtP
+ w9BlA+VcQoJAEbEjKBCMGXsu0jJxxF2dwJbWc2zSSFU/dh7tzO6EE72MxweG75LbhUoY
+ YUpQ==
+X-Gm-Message-State: APjAAAU0OaqNctkM82t803KQSm4WAZK8lNOao0QJjA7fYx+YTt14LJyY
+ 6AMEON6LwGzwHqqFz+minS0=
+X-Google-Smtp-Source: APXvYqyROkZ2zjGVppqnrtM/2nfRTP4DSo0oorLg/5xmp0QtM7hX9pcEpDTyuqSWCjh9UxQ9nj7rlw==
+X-Received: by 2002:a17:90a:6545:: with SMTP id
+ f5mr5265540pjs.42.1582223258050; 
+ Thu, 20 Feb 2020 10:27:38 -0800 (PST)
+Received: from [10.69.78.90] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id d3sm272300pfn.113.2020.02.20.10.27.36
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 20 Feb 2020 10:27:37 -0800 (PST)
+Subject: Re: [PATCH v2 3/4] PCI: brcmstb: Wait for Raspberry Pi's firmware
+ when present
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Florian Fainelli <florian.fainelli@broadcom.com>,
+ linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
+References: <20200219123933.2792-1-nsaenzjulienne@suse.de>
+ <20200219123933.2792-4-nsaenzjulienne@suse.de>
+ <10a53db8-960e-eea7-1e8d-790de9a79e71@broadcom.com>
+ <cab8c0d70fd30c49579199d002b81b87ed34a920.camel@suse.de>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; keydata=
+ mQGiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
+ xGlkaOSDuu09rxuW+69Y2f1TzjFuGpBk4ysWOR85O2Nx8AJ6fYGCoeTbovrNlGT1M9obSFGQ
+ X3IzRnWoqlfudjTO5TKoqkbOgpYqIo5n1QbEjCCwCwCg3DOH/4ug2AUUlcIT9/l3pGvoRJ0E
+ AICDzi3l7pmC5IWn2n1mvP5247urtHFs/uusE827DDj3K8Upn2vYiOFMBhGsxAk6YKV6IP0d
+ ZdWX6fqkJJlu9cSDvWtO1hXeHIfQIE/xcqvlRH783KrihLcsmnBqOiS6rJDO2x1eAgC8meAX
+ SAgsrBhcgGl2Rl5gh/jkeA5ykwbxA/9u1eEuL70Qzt5APJmqVXR+kWvrqdBVPoUNy/tQ8mYc
+ nzJJ63ng3tHhnwHXZOu8hL4nqwlYHRa9eeglXYhBqja4ZvIvCEqSmEukfivk+DlIgVoOAJbh
+ qIWgvr3SIEuR6ayY3f5j0f2ejUMYlYYnKdiHXFlF9uXm1ELrb0YX4GMHz7QnRmxvcmlhbiBG
+ YWluZWxsaSA8Zi5mYWluZWxsaUBnbWFpbC5jb20+iGYEExECACYCGyMGCwkIBwMCBBUCCAME
+ FgIDAQIeAQIXgAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2DvCVAJ4u4/bPF4P3jxb4qEY8I2gS
+ 6hG0gACffNWlqJ2T4wSSn+3o7CCZNd7SLSC5BA0ESM+4EhAQAL/o09boR9D3Vk1Tt7+gpYr3
+ WQ6hgYVON905q2ndEoA2J0dQxJNRw3snabHDDzQBAcqOvdi7YidfBVdKi0wxHhSuRBfuOppu
+ pdXkb7zxuPQuSveCLqqZWRQ+Cc2QgF7SBqgznbe6Ngout5qXY5Dcagk9LqFNGhJQzUGHAsIs
+ hap1f0B1PoUyUNeEInV98D8Xd/edM3mhO9nRpUXRK9Bvt4iEZUXGuVtZLT52nK6Wv2EZ1TiT
+ OiqZlf1P+vxYLBx9eKmabPdm3yjalhY8yr1S1vL0gSA/C6W1o/TowdieF1rWN/MYHlkpyj9c
+ Rpc281gAO0AP3V1G00YzBEdYyi0gaJbCEQnq8Vz1vDXFxHzyhgGz7umBsVKmYwZgA8DrrB0M
+ oaP35wuGR3RJcaG30AnJpEDkBYHznI2apxdcuTPOHZyEilIRrBGzDwGtAhldzlBoBwE3Z3MY
+ 31TOpACu1ZpNOMysZ6xiE35pWkwc0KYm4hJA5GFfmWSN6DniimW3pmdDIiw4Ifcx8b3mFrRO
+ BbDIW13E51j9RjbO/nAaK9ndZ5LRO1B/8Fwat7bLzmsCiEXOJY7NNpIEpkoNoEUfCcZwmLrU
+ +eOTPzaF6drw6ayewEi5yzPg3TAT6FV3oBsNg3xlwU0gPK3v6gYPX5w9+ovPZ1/qqNfOrbsE
+ FRuiSVsZQ5s3AAMFD/9XjlnnVDh9GX/r/6hjmr4U9tEsM+VQXaVXqZuHKaSmojOLUCP/YVQo
+ 7IiYaNssCS4FCPe4yrL4FJJfJAsbeyDykMN7wAnBcOkbZ9BPJPNCbqU6dowLOiy8AuTYQ48m
+ vIyQ4Ijnb6GTrtxIUDQeOBNuQC/gyyx3nbL/lVlHbxr4tb6YkhkO6shjXhQh7nQb33FjGO4P
+ WU11Nr9i/qoV8QCo12MQEo244RRA6VMud06y/E449rWZFSTwGqb0FS0seTcYNvxt8PB2izX+
+ HZA8SL54j479ubxhfuoTu5nXdtFYFj5Lj5x34LKPx7MpgAmj0H7SDhpFWF2FzcC1bjiW9mjW
+ HaKaX23Awt97AqQZXegbfkJwX2Y53ufq8Np3e1542lh3/mpiGSilCsaTahEGrHK+lIusl6mz
+ Joil+u3k01ofvJMK0ZdzGUZ/aPMZ16LofjFA+MNxWrZFrkYmiGdv+LG45zSlZyIvzSiG2lKy
+ kuVag+IijCIom78P9jRtB1q1Q5lwZp2TLAJlz92DmFwBg1hyFzwDADjZ2nrDxKUiybXIgZp9
+ aU2d++ptEGCVJOfEW4qpWCCLPbOT7XBr+g/4H3qWbs3j/cDDq7LuVYIe+wchy/iXEJaQVeTC
+ y5arMQorqTFWlEOgRA8OP47L9knl9i4xuR0euV6DChDrguup2aJVU4hPBBgRAgAPAhsMBQJU
+ X9LxBQkeXB3fAAoJEGFXmRW1Y3YOj4UAn3nrFLPZekMeqX5aD/aq/dsbXSfyAKC45Go0YyxV
+ HGuUuzv+GKZ6nsysJ7kCDQRXG8fwARAA6q/pqBi5PjHcOAUgk2/2LR5LjjesK50bCaD4JuNc
+ YDhFR7Vs108diBtsho3w8WRd9viOqDrhLJTroVckkk74OY8r+3t1E0Dd4wHWHQZsAeUvOwDM
+ PQMqTUBFuMi6ydzTZpFA2wBR9x6ofl8Ax+zaGBcFrRlQnhsuXLnM1uuvS39+pmzIjasZBP2H
+ UPk5ifigXcpelKmj6iskP3c8QN6x6GjUSmYx+xUfs/GNVSU1XOZn61wgPDbgINJd/THGdqiO
+ iJxCLuTMqlSsmh1+E1dSdfYkCb93R/0ZHvMKWlAx7MnaFgBfsG8FqNtZu3PCLfizyVYYjXbV
+ WO1A23riZKqwrSJAATo5iTS65BuYxrFsFNPrf7TitM8E76BEBZk0OZBvZxMuOs6Z1qI8YKVK
+ UrHVGFq3NbuPWCdRul9SX3VfOunr9Gv0GABnJ0ET+K7nspax0xqq7zgnM71QEaiaH17IFYGS
+ sG34V7Wo3vyQzsk7qLf9Ajno0DhJ+VX43g8+AjxOMNVrGCt9RNXSBVpyv2AMTlWCdJ5KI6V4
+ KEzWM4HJm7QlNKE6RPoBxJVbSQLPd9St3h7mxLcne4l7NK9eNgNnneT7QZL8fL//s9K8Ns1W
+ t60uQNYvbhKDG7+/yLcmJgjF74XkGvxCmTA1rW2bsUriM533nG9gAOUFQjURkwI8jvMAEQEA
+ AYkCaAQYEQIACQUCVxvH8AIbAgIpCRBhV5kVtWN2DsFdIAQZAQIABgUCVxvH8AAKCRCH0Jac
+ RAcHBIkHD/9nmfog7X2ZXMzL9ktT++7x+W/QBrSTCTmq8PK+69+INN1ZDOrY8uz6htfTLV9+
+ e2W6G8/7zIvODuHk7r+yQ585XbplgP0V5Xc8iBHdBgXbqnY5zBrcH+Q/oQ2STalEvaGHqNoD
+ UGyLQ/fiKoLZTPMur57Fy1c9rTuKiSdMgnT0FPfWVDfpR2Ds0gpqWePlRuRGOoCln5GnREA/
+ 2MW2rWf+CO9kbIR+66j8b4RUJqIK3dWn9xbENh/aqxfonGTCZQ2zC4sLd25DQA4w1itPo+f5
+ V/SQxuhnlQkTOCdJ7b/mby/pNRz1lsLkjnXueLILj7gNjwTabZXYtL16z24qkDTI1x3g98R/
+ xunb3/fQwR8FY5/zRvXJq5us/nLvIvOmVwZFkwXc+AF+LSIajqQz9XbXeIP/BDjlBNXRZNdo
+ dVuSU51ENcMcilPr2EUnqEAqeczsCGpnvRCLfVQeSZr2L9N4svNhhfPOEscYhhpHTh0VPyxI
+ pPBNKq+byuYPMyk3nj814NKhImK0O4gTyCK9b+gZAVvQcYAXvSouCnTZeJRrNHJFTgTgu6E0
+ caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
+ 6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9qfUATKC9NgZjRvBztfqy4
+ a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
+Message-ID: <816cccb3-be5d-f0d5-77bd-6afdba3c0848@gmail.com>
+Date: Thu, 20 Feb 2020 10:27:35 -0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200220181141.GR37466@atomide.com>
+In-Reply-To: <cab8c0d70fd30c49579199d002b81b87ed34a920.camel@suse.de>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_102251_829471_A34157A5 
-X-CRM114-Status: GOOD (  20.54  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200220_102738_811271_7F0876F5 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,7 +151,6 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,130 +162,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, kbuild-all@lists.01.org,
- kbuild test robot <lkp@intel.com>, Arnd Bergmann <arnd@arndb.de>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Marc Zyngier <maz@kernel.org>,
- linux-kernel@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: tim.gover@raspberrypi.org, gregkh@linuxfoundation.org,
+ linux-usb@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
+ linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/20/20 1:11 PM, Tony Lindgren wrote:
-> * Tony Lindgren <tony@atomide.com> [200220 17:58]:
->> * Andrew F. Davis <afd@ti.com> [200220 17:39]:
->>> On 2/20/20 12:13 PM, Tony Lindgren wrote:
->>>> * Tony Lindgren <tony@atomide.com> [200220 16:37]:
->>>>> * Andrew F. Davis <afd@ti.com> [200220 16:24]:
->>>>>> On 2/20/20 11:20 AM, Tony Lindgren wrote:
->>>>>>> * Andrew F. Davis <afd@ti.com> [200220 16:04]:
->>>>>>>> On 2/20/20 10:54 AM, Tony Lindgren wrote:
->>>>>>>>> Andrew,
->>>>>>>>>
->>>>>>>>> * kbuild test robot <lkp@intel.com> [200213 10:27]:
->>>>>>>>>> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git master
->>>>>>>>>> head:   0bf999f9c5e74c7ecf9dafb527146601e5c848b9
->>>>>>>>>> commit: c37baa06f8a970e4a533d41f7d33e5e57de5ad25 ARM: OMAP2+: Fix undefined reference to omap_secure_init
->>>>>>>>>> date:   3 weeks ago
->>>>>>>>>> config: arm-randconfig-a001-20200213 (attached as .config)
->>>>>>>>>> compiler: arm-linux-gnueabi-gcc (GCC) 7.5.0
->>>>>>>>>> reproduce:
->>>>>>>>>>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
->>>>>>>>>>         chmod +x ~/bin/make.cross
->>>>>>>>>>         git checkout c37baa06f8a970e4a533d41f7d33e5e57de5ad25
->>>>>>>>>>         # save the attached .config to linux build tree
->>>>>>>>>>         GCC_VERSION=7.5.0 make.cross ARCH=arm 
->>>>>>>>>>
->>>>>>>>>> If you fix the issue, kindly add following tag
->>>>>>>>>> Reported-by: kbuild test robot <lkp@intel.com>
->>>>>>>>>>
->>>>>>>>>> All errors (new ones prefixed by >>):
->>>>>>>>>>
->>>>>>>>>>    arch/arm/mach-omap2/omap-secure.o: In function `omap_smccc_smc':
->>>>>>>>>>>> omap-secure.c:(.text+0x94): undefined reference to `__arm_smccc_smc'
->>>>>>>>>
->>>>>>>>> Have you looked at this one? Looks like there's still an unhandled
->>>>>>>>> randconfig build case.
->>>>>>>>>
->>>>>>>>
->>>>>>>>
->>>>>>>> I've had a quick look, all the ARM config does:
->>>>>>>>
->>>>>>>> select HAVE_ARM_SMCCC if CPU_V7
->>>>>>>>
->>>>>>>> so I don't think this will happen in any real config, but if we want to
->>>>>>>> prevent randconfig issue this we could force ARCH_OMAP2PLUS to "depend"
->>>>>>>> on it.
->>>>>>>
->>>>>>> Seems to happen at least with omap2 only config where we don't have
->>>>>>> CPU_V7. Something like below seems to fix it.
->>>>>>>
->>>>>>> If that looks OK to you, I'll send out a proper fix.
->>>>>>>
->>>>>>
->>>>>>
->>>>>> This looks fine to me.
->>>>>>
->>>>>> A better later fix might be to later stub out the actual __arm_smccc_smc
->>>>>> in common code if CONFIG_HAVE_ARM_SMCCC is not set, so any platform will
->>>>>> get the fix.
->>>>>
->>>>> Yeah seems that might be better. Adding Aaro and Marc to Cc.
->>>>
->>>> But if we can in theory have some arm11 machine with smccc, then this
->>>> local ifdef below is probably the way to go.
->>>>
+
+
+On 2/20/2020 10:14 AM, Nicolas Saenz Julienne wrote:
+> On Wed, 2020-02-19 at 11:21 -0800, Florian Fainelli wrote:
+>> On 2/19/20 4:39 AM, Nicolas Saenz Julienne wrote:
+>>> xHCI's PCI fixup, run at the end of pcie-brcmstb's probe, depends on
+>>> RPi4's VideoCore firmware interface to be up and running. It's possible
+>>> for both initializations to race, so make sure it's available prior
+>>> starting.
 >>>
->>> If the machine has SMCCC then it will also have the
->>> CONFIG_HAVE_ARM_SMCCC set and so nothing would change.
+>>> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 >>
->> Hmm yeah good point.
+>> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+>>
+>> It does not look like there is something making sure that
+>> CONFIG_RASPBERRYPI_FIRMWARE is being selected or depended on, should we
+>> have a "default XHCI_PCI" added to drivers/firmware/Kconfig?
 > 
-> So the patch below seems like the way to go then. Anybody have issues
-> with the patch below?
-> 
-> Regards,
-> 
-> Tony
-> 
-> 8< -------------------------
-> diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-> --- a/include/linux/arm-smccc.h
-> +++ b/include/linux/arm-smccc.h
-> @@ -121,6 +121,7 @@ struct arm_smccc_quirk {
->  	} state;
->  };
->  
-> +#ifdef CONFIG_HAVE_ARM_SMCCC
->  /**
->   * __arm_smccc_smc() - make SMC calls
->   * @a0-a7: arguments passed in registers 0 to 7
-> @@ -137,6 +138,14 @@ asmlinkage void __arm_smccc_smc(unsigned long a0, unsigned long a1,
->  			unsigned long a2, unsigned long a3, unsigned long a4,
->  			unsigned long a5, unsigned long a6, unsigned long a7,
->  			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk);
-> +#else
-> +static inline void __arm_smccc_smc(unsigned long a0, unsigned long a1,
-> +			unsigned long a2, unsigned long a3, unsigned long a4,
-> +			unsigned long a5, unsigned long a6, unsigned long a7,
-> +			struct arm_smccc_res *res, struct arm_smccc_quirk *quirk)
-> +{
+> I think having that would enable the firmware interface for all XHCI_PCI users,
+> which isn't ideal. The firmware call has stubs for the case the firmware
+> interace isn't compiled, so no problem there. Ultimately we want to enable
+> CONFIG_RASPBERRYPI_FIRMWARE only when the built image targets the RPi4
+> (reglardless of being arm64/arm32). But I don't think that's feasible.
 
-
-Maybe a warning? If you do not have SMC on your platform but are still
-making SMC calls then something is broken and it looks like it would
-fail silently here.
-
-Andrew
-
-
-> +}
-> +#endif
->  
->  /**
->   * __arm_smccc_hvc() - make HVC calls
-> 
+It would enable the driver, which is only functional if the matching
+Device Tree node is present, that seems like a reasonable price to pay
+for a multiplatform kernel. After all, this is a functional dependency
+for the Pi4.
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
