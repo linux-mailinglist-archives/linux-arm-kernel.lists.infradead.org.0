@@ -2,76 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FB351658FF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 09:18:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECB4716590A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 09:21:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DI+aZHdiP+Jax26/lLrfTU3E2eurT31G5lr/Yg8eb1k=; b=rc3ASsO8zoavBS
-	Vsa4fPxidmQRWlv0Hle4LWaV2990dC8GGpWKQENcLl8mbKthcO70ccfx+ShPl1SM1kW33ImlZliF0
-	X5r+xQgDGDWa0lJNWo8NklzfmcM5jxXZzN9mXc6T77WD3sXTdPpLzA/IQwtkxV01qW+l2WM6CPJZp
-	VuUJVwfn4XVxypbBFcfVLf0N1g/iAnvUeMBTGUVs+AAvreALOlcgStIgxpSmKXIj7Z374n0Z9Tx51
-	xBaSaj1FAatVNZ/5bECqTH+CSWG3tWBTnNN3PJkFUnwz29jJFkyQCQDbiDVd37nTGgMn8TKnHJ4gz
-	O6yZFNYikE78mKj/sDNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
+	Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+	:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Owner;
+	bh=rCZmQU4m4pUpwvY1gBT4GCADfodaDACo8ZxSGT1xkBQ=; b=LyxUyRNoVXDdCJMZSE9A/UweHx
+	UR0Q96gokOM25Ocl0zUlKlwHD15+ASwz72IS5TlniO3T6BQN51t8fhzH3OnR4hk1n3NpblKV3Qxx8
+	7CWVw3XM0Cj5OUi2tSrwjWoT6obDhcfLSjzgL3mzhaXCiMgUL6DphP4JS98YJQW42kq0OI/C6zcv/
+	G3qvpGBZ3+VTWE607zBifXXPyt7S0wHCnwM4WvSz+8ZKlDTMuZMhIyrk/M0d2CW8CXK5qLOF7/uVR
+	+5Ng87CKNK9VHm3lWNZSx10oNAnchFeNbcPax0WTZbqLmV4h80CsspEAg4gIfBxD/vAgj+Cm+jEDf
+	kagJbzHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4h2B-00081T-GC; Thu, 20 Feb 2020 08:18:11 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1j4h5U-0001Rp-OE; Thu, 20 Feb 2020 08:21:36 +0000
+Received: from smtpng3.m.smailru.net ([94.100.177.149])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4h24-000812-Eh
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 08:18:05 +0000
-Received: by mail-lf1-x143.google.com with SMTP id b15so2368240lfc.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 20 Feb 2020 00:18:03 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bfzGIR3YDiF6H+a6zuyFtqFo96c/AxsGVVSXFrBtaro=;
- b=MAROxxGOlLyeUqubF+UzqU7IGScwIIckR/engdSUpg/yhzEcnTd6TRsz4ccQypWssp
- LEfIOKYp5tifBf7tyUVNPtpff9QDzVaJ0aktej1Tsngo7E1JQ/6SIHabsh+XxwcwBIgY
- pAiUaTIwclmpgYtKpBd8zYoKwO22rmqOT/IA8pER8YiQEgs5rUJq8wtOrs9ufZJsnIrH
- 1hMHsm4aWnFNhNQpyQ7jw9MBMK7ra8vVebDyUxCBQeigRtet9NwAI3FxNF2fIVwY8g5/
- Etn+ssi5+onBUy68zTSsWMb6ULREGRKn8CGU87a0how/RKua0mnOk0w+ApaAP5B7Of56
- O9bw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=bfzGIR3YDiF6H+a6zuyFtqFo96c/AxsGVVSXFrBtaro=;
- b=OX0BZ5jCefayyDWmG2jJLtCrwvH/uKvRfPh5C/F6vu9s77GqLB0hvhsClCzIwtl6e9
- Y9gJGbSakEB3GC0IOtBW2ICsp01t9MOxQzhpyvI2PT7+meBzXoahkeZtjk/Jt3DXSexf
- TvQKbwr5twiI/TBMBCv38x6FSZQsRdK9TpXT4bft4Is5NK4AvWCtZtoPj85De8PbJDfl
- jMmLFQc78u9vNJ5GV3FKsTe24FmEgXbex+S6/C2I4sZtkdDMis8R2HYe8BLL+ltuIDGa
- pPqTlLRwr7cCJKphSoh/Xhx+hdU8K0oaJHW17xcJ20gzas8yBXpx8Ln3caQcVt8u/ekc
- 9dJQ==
-X-Gm-Message-State: APjAAAVoQklz/Gnb+JTMMF8uk52I9hHDeUpF1llnCLxjUGvS5RYIVRoz
- vJwaprAwOqiLMR8KD+d1bEdD5K18v/TI6ERThdr7oQ==
-X-Google-Smtp-Source: APXvYqxjTpOkXxHXkogdm1rBBTRQ/jNvpMrr9lmcSMi5VuYw9rJcTzPLj16dSa445cLIR6/04e9vqkvnuwR87v+M7Js=
-X-Received: by 2002:ac2:44a5:: with SMTP id c5mr4263584lfm.4.1582186682486;
- Thu, 20 Feb 2020 00:18:02 -0800 (PST)
+ id 1j4h5L-0001R5-FH; Thu, 20 Feb 2020 08:21:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=orpaltech.com; s=mailru; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:Message-ID:Subject:From:Cc:To;
+ bh=n9mLrYl2rzflgjD4ntXo272yW/SUmgpRuec1+i3cV/Y=; 
+ b=fOCFnpj4e1AM/dWMw4tV1LOS89DAxUJWxqj/J6PfYe7v5oEwfXZUo8zm4aWIqi4AuNu+bKysOQk/a/ES7b4djqnt4AIGkL774fXbxrl7hqgsdoKijIvY5CpuO6YQjN4sdZ6pU+t5J7Fx4xFVzq5SByjYxTJCMPSpZXDgyQZKbIo=;
+Received: by smtpng3.m.smailru.net with esmtpa (envelope-from
+ <ssuloev@orpaltech.com>)
+ id 1j4h5G-0002YV-0i; Thu, 20 Feb 2020 11:21:22 +0300
+To: linux-rpi-kernel@lists.infradead.org
+From: Sergey Suloev <ssuloev@orpaltech.com>
+Subject: vc4 on rpi3 A+
+Message-ID: <8b353626-f62a-2aff-96b4-91712ed36095@orpaltech.com>
+Date: Thu, 20 Feb 2020 11:21:21 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <20200206173247.GX25745@shell.armlinux.org.uk>
-In-Reply-To: <20200206173247.GX25745@shell.armlinux.org.uk>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 20 Feb 2020 09:17:51 +0100
-Message-ID: <CACRpkdbzjBnaeXJg3XvZ6G2FdtQQa0u7MPy9bgN-uo-F1vSpbQ@mail.gmail.com>
-Subject: Re: [REGRESSION] gpio hogging fails with pinctrl gpio drivers
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>, 
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Peter Rosin <peda@axentia.se>
+Content-Language: en-US
+Authentication-Results: smtpng3.m.smailru.net;
+ auth=pass smtp.auth=ssuloev@orpaltech.com
+ smtp.mailfrom=ssuloev@orpaltech.com
+X-7564579A: 646B95376F6C166E
+X-77F55803: 0A44E481635329DB0E1AA8A03B392317D32E5E4886521736714D0EA31FF80092F5FF9959873BB261F688BCB05C26794D1814CBB712D2988316D055344148C1BA62FC0F0734C5A28F9A9D2A8ACCD75E1D
+X-7FA49CB5: FF5795518A3D127A4AD6D5ED66289B5278DA827A17800CE781C4E570E9C9D556C2099A533E45F2D0395957E7521B51C2CFCAF695D4D8E9FCEA1F7E6F0F101C6778DA827A17800CE7ED6B9921EE2920938F08D7030A58E5AD6BA297DBC24807EAA9D420A4CFB5DD3E9DA2E410B3308CDE4D125387B11E1BAAAF8F674D84899D4A8941B15DA834481FA18204E546F3947CD166953D3EA3826BF6B57BC7E64490618DEB871D839B7333395957E7521B51C2545D4CF71C94A83E9FA2833FD35BB23D27C277FBC8AE2E8BEC1C9C6CFAD2A0F5A471835C12D1D977C4224003CC836476C0CAF46E325F83A522CA9DD8327EE4930A3850AC1BE2E735B58781B77DE60D36C4224003CC836476C0CAF46E325F83A50BF2EBBBDD9D6B0F05F538519369F3743B503F486389A921A5CC5B56E945C8DA
+X-D57D3AED: Y8kq8+OzVoxvgW9Op3aR8Fxwo7H2ZNxGP5qz8aO2mjTJzjHGC4ogvVuzB3zfVUBtENeZ6b5av1fnCBE34JUDkaJinJwwHx5ysVv9/YfT9ud3AV4nHq/+9Q==
+X-Mailru-Sender: 689FA8AB762F73930799C7A3FA23A2701C91C185D95CB344F1D52F011957DA03778B5FB1219D8779F6BCD4B1DE95BF653AE5922765F965CDF1D7D1B96E5495AE10FCEA6DFE3E0A150D4ABDE8C577C2ED
+X-Mras: Ok
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_001804_526342_C46F354F 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20200220_002127_703827_0A2BE6BF 
+X-CRM114-Status: UNSURE (   7.60  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ no trust [94.100.177.149 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,41 +79,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Smirnov <andrew.smirnov@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 6, 2020 at 6:33 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
+Hello, guys,
 
-> It seems that sometime between 4.20 and 5.5, something has broken the
-> ability to specify gpio-hogs in DT for GPIOs that are written around
-> pinctrl drivers.
-(explanation that makes perfect sense)
-> Consequently, adding a gpio-hog to DT for this driver results in the
-> driver endlessly returning -EPROBE_DEFER.
+could anyone clarify the status of vc4 drm support on RPI 3A+ ?
 
-I suspect this is sx150x-specific and suspect these two commits:
+I tried to build kernel 5.5 and 5.6-rc2 in 32bit and aarch64 
+configurations with VC4 turned ON but both unsuccessful - vc4 drm driver 
+is listed in memory but not working and not producing any typical DRM 
+log output.
 
-1a1d39e1b8dd pinctrl: sx150x: Register pinctrl before adding the gpiochip
-b930151e5b55 pinctrl: sx150x: Add a static gpio/pinctrl pin range mapping
 
-I suppose people weren't using hogs very much with the sx150x and
-it didn't turn up in testing so far.
+Thank you
 
-I don't think for example pinctrl-stmfx.c has this problem, as it registers
-the pin ranges from the device tree as part of the core code.
-But other drivers calling gpiochip_add_pin_range() may be experiencing
-this.
-
-Peter/Andrey, do you have some idea? Have you tested this usecase (hogs)
-with the sx150x?
-
-Yours,
-Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
