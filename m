@@ -2,86 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72021165343
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 00:58:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A07B165359
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 01:08:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7nO3ErE5zW0iDGrXkYA7QnKLOge76rG5LxvgJV0Hrtg=; b=V+6D1PEKDPCUdC
-	d0KMXHfxLbgCJgYQ8y6U0L6V2nnDG3G6ilPcEIufEDyrJBD6ok8pmZLbx+bMPRSqFEwGYqtjENlqa
-	hFzbPDwCuyGRjQYiTGyhChCfBIov0Oc13P5mVYCTZlsd50Mh4RDjy5lfgjMMzBdT99KwJsBIkZ/Qh
-	tkjyxd8qIFYny+vXw30RAytuDyjn+wWBCh96v2FT9xhFHnrGKB6np3uCcNtRrQeKwyPm0fXpGypfU
-	yokj0UREjhKLi720kGOVNQHeC0aeOR7ySKCTfgKEHrA0ICR0Rm11UWiM2zaJ7Gp1sgSKR0qrQFbS3
-	MfsqSktcjDU/XO48i9aA==;
+	List-Owner; bh=wuu/X8zdmnXJuHra76L1mHwoQ2N9VwPLGUgscK88L4A=; b=gHkxN20gjqVhsj
+	Lq9G7oiTNEPOnQ7hlwo2auyn48idoKxp8wUO9ckd3h+Of9+TH7kpHDcmW9oup+1ZWj6cDURMI/Wet
+	2BAHe4Wjm8IgyDTwbpbku+ZN3pQ1n4EDZxEcSpudiYQdwPUBkQ+pdfA+TSWG8Q69pv0/1kJ822YN4
+	v3QzBs7iej7/ZhDGadoe5foiCv0Zvh5wYgc/g32n3Vy8A1jw6BESAuHy/6nrvzoGOObxRB/FloQlg
+	LJkzuNQHXkTMmDugnTSyYH+XTze/8tqDSmRb6q7Qvgzhy8EwBvdejhSmp2AM9z3t/52CyU45akinl
+	6KoD6DUEHh4JSrG+ZPQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ZEn-00055y-2V; Wed, 19 Feb 2020 23:58:41 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1j4ZNw-0000Jy-L9; Thu, 20 Feb 2020 00:08:08 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ZER-0004uF-5F; Wed, 19 Feb 2020 23:58:20 +0000
-Received: by mail-oi1-x241.google.com with SMTP id c16so25737794oic.3;
- Wed, 19 Feb 2020 15:58:18 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BX9+oiU9NUzGK1+aV9/Uah0G+lhW9/DtCwBAHxWnn3I=;
- b=KU1uqUYVxkoQfS26YEi+ztZu7uQD6NmCYAjnD4WbMrS3FbUgBPMQxL4cToOQRD6Uov
- nHqZX7QwUxnmIRKEcKaP8NEsh/58I2e78+wWxDrpu1BXApMDiJMolk2hwg9CzqcOf9sW
- YE4tYRCZaEyh/x1674lcZY1l/H0F0ArPvwmZIxON3DfEjagSV1uN/AxJKPXKBeA241xL
- WqwyGwfYPVg0aO9XUojnJGQxro+u25NEoqXrbNR09NiA6eBYzNO4I80Q2dLPiRbdLZkb
- 04tkTaqeTm6+rrMCyLbyFF+HCBtuFvxa0v0YSX5dAdbBWko9TEenvJpgjmfSY9CevQ+/
- hitw==
+ id 1j4ZNn-0000JF-Sf
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 00:08:01 +0000
+Received: by mail-ot1-f68.google.com with SMTP id j16so2033736otl.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 16:07:57 -0800 (PST)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=BX9+oiU9NUzGK1+aV9/Uah0G+lhW9/DtCwBAHxWnn3I=;
- b=uaHmbNI+fHWgYYRGZ/vrLituSI6l2iSFLq4EwM5G1NMTrrH1o0mvO2mn5kyOzE/26h
- 1J27xxEyThzRnUzlbkn4d8+E2m6Tj53sidS9dT6hbWkX+FdLdgYsVbPXC5MysvkFZ9aZ
- +8fYXM7BnfrvGduD7cv4qkePBj4f4dLngNssUGMA5cf1EHc7WEzPCqCqzFmrG7dVOe56
- VMKT+LyXLd+mcrrlLG3ZdQIewwmNC0XniR3l2CNav2mj72a+7rEON7OtBmu/3rxsTTYt
- blkEoQhwNF9hNiKUnHWTQhAK1VVpiWIMaML6KrD5xfzOhcd8zYu75IZEiH5qckVCrY5Q
- /Z+w==
-X-Gm-Message-State: APjAAAXQrA9GZR/2Bt6syu/PJkJRc0Za0Mpjrg9s9S6IPUtdZCHiv54w
- VWpoHI0CACsZBK5hLhvt1FZBQoPQZOfCEss5N1w=
-X-Google-Smtp-Source: APXvYqwRxzwlvasanDAZCzqmiAcIi+8du+kTb0XmBWuXgm+lcYoRDBqJdLFMRLpwiKeOks5taARgUtmAle4aHBvqjI0=
-X-Received: by 2002:aca:ddc2:: with SMTP id u185mr185041oig.24.1582156697455; 
- Wed, 19 Feb 2020 15:58:17 -0800 (PST)
+ bh=fs7aFUGuQDQwKtAq2jogalwziBPX7+a0D4piqySvYe0=;
+ b=UnLloTtvh2E3GJi8v2mtK9v+RnZrfPvrBWCJuC1LqhYD8/67ucw4OtWuesPjXOSvoV
+ hI74drKa5PmftPT4Y2R2QLCsfm50K6iNYPsZ+2lJhKBfCx+wvpOdwJfs2SWNwvTPDQpE
+ bj/ywdvkaJ5yVYLEua8HJwSW9w1pBMIJP2h3xXQiJTWQTZPqasR1LwBbARRdhfdkCcWa
+ 6JGtYK4Xfe19GtUrcjICmGA1si0CUW6mpFc3qf3zfB0aYE3EG53mMn7CZJRfqO5ijEWB
+ o2wYRdUAXobUk/wMOMAwehhY/UNFovIuzTwJReH2LyOgnzL66cXnlKUoNHnLxhU/Ogkn
+ ymzQ==
+X-Gm-Message-State: APjAAAV3kEZWxj+uUB71bYvxRyN5eg6o/pAXC4ea98Am85oCCCw6UZqs
+ 67SGLT/dTcuoCQdrT4Vwh8G67uCg
+X-Google-Smtp-Source: APXvYqzQsTLyf5YO8tJlvys8kpS5yIcdg5MYs17ZecS72j39wdFGLlZxjeKJmp4ojnnB5kiN3+ExyQ==
+X-Received: by 2002:a9d:5e82:: with SMTP id f2mr20705217otl.240.1582157276533; 
+ Wed, 19 Feb 2020 16:07:56 -0800 (PST)
+Received: from mail-ot1-f41.google.com (mail-ot1-f41.google.com.
+ [209.85.210.41])
+ by smtp.gmail.com with ESMTPSA id n2sm502156oia.58.2020.02.19.16.07.55
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 19 Feb 2020 16:07:56 -0800 (PST)
+Received: by mail-ot1-f41.google.com with SMTP id b3so806458otp.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 19 Feb 2020 16:07:55 -0800 (PST)
+X-Received: by 2002:a05:6830:1c8:: with SMTP id
+ r8mr8886101ota.63.1582157275705; 
+ Wed, 19 Feb 2020 16:07:55 -0800 (PST)
 MIME-Version: 1.0
-References: <20200215065826.739102-1-gch981213@gmail.com>
- <20200218125557.GD4232@sirena.org.uk>
-In-Reply-To: <20200218125557.GD4232@sirena.org.uk>
-From: Chuanhong Guo <gch981213@gmail.com>
-Date: Thu, 20 Feb 2020 07:58:06 +0800
-Message-ID: <CAJsYDVL03KJv7eewGekBPCfpbOuTX0tJ6qZaydvJnBDzZ5vEwg@mail.gmail.com>
-Subject: Re: [PATCH 0/2] rewrite mtk-quadspi spi-nor driver with spi-mem
-To: Mark Brown <broonie@kernel.org>
+References: <1576170032-3124-1-git-send-email-youri.querry_1@nxp.com>
+ <a46accbc-becf-ad23-8504-70ce619e2b11@oss.nxp.com>
+In-Reply-To: <a46accbc-becf-ad23-8504-70ce619e2b11@oss.nxp.com>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Wed, 19 Feb 2020 18:07:44 -0600
+X-Gmail-Original-Message-ID: <CADRPPNQ4UK6EvYG6ffdU=dvO-tD7crWJ==diq8ueBBAyCvEdLw@mail.gmail.com>
+Message-ID: <CADRPPNQ4UK6EvYG6ffdU=dvO-tD7crWJ==diq8ueBBAyCvEdLw@mail.gmail.com>
+Subject: Re: [PATCH 0/3] soc: fsl: dpio: Enable QMAN batch enqueuing
+To: Roy Pledge <roy.pledge@oss.nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_155819_225081_D5BA6EAD 
-X-CRM114-Status: GOOD (  12.01  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200219_160759_925704_4964EAC3 
+X-CRM114-Status: GOOD (  13.13  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [gch981213[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [gch981213[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ provider [pku.leo[at]gmail.com]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,45 +96,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Vignesh Raghavendra <vigneshr@ti.com>,
- Richard Weinberger <richard@nod.at>, open list <linux-kernel@vger.kernel.org>,
- linux-spi@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Roy Pledge <roy.pledge@nxp.com>,
+ Alexandru Marginean <alexandru.marginean@nxp.com>,
+ Youri Querry <youri.querry_1@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi!
-
-On Tue, Feb 18, 2020 at 8:55 PM Mark Brown <broonie@kernel.org> wrote:
-> This is an ABI break so you shouldn't be doing this, if the existing
-> binding works it should continue to work.
-
-The missing spi-max-frequency is the only part preventing old
-device tree to work with this driver.
-If the goal is to make existing dt binding work, I could patch dt using
-of_add_property in v2. I saw similar device tree patching for legacy
-bindings in pinctrl-single driver.
-
+On Thu, Feb 6, 2020 at 2:41 PM Roy Pledge <roy.pledge@oss.nxp.com> wrote:
 >
-> > 3. removing the old driver. I'll create this commit after 1 and 2 are
-> >    applied to avoid possible rebasing due to any changes in the old
-> >    driver.
->
-> This isn't great as it means we have a period with two drivers for the
-> same thing in tree which is at best going to be confusing.  There's no
-> advantage to splitting this out.
+> On 12/12/2019 12:01 PM, Youri Querry wrote:
+> > This patch set consists of:
+> > - We added an interface to enqueue several packets at a time and
+> >    improve performance.
+> > - Make the algorithm decisions once at initialization and use
+> >    function pointers to improve performance.
+> > - Replaced the QMAN enqueue array mode algorithm with a ring
+> >    mode algorithm. This is to make the enqueue of several frames
+> >    at a time more effective.
+> >
+> > Youri Querry (3):
+> >    soc: fsl: dpio: Adding QMAN multiple enqueue interface.
+> >    soc: fsl: dpio: QMAN performance improvement. Function pointer
+> >      indirection.
+> >    soc: fsl: dpio: Replace QMAN array mode by ring mode enqueue.
+> >
+> >   drivers/soc/fsl/dpio/dpio-service.c |  69 +++-
+> >   drivers/soc/fsl/dpio/qbman-portal.c | 766 ++++++++++++++++++++++++++++++++----
+> >   drivers/soc/fsl/dpio/qbman-portal.h | 158 +++++++-
+> >   include/soc/fsl/dpaa2-io.h          |   6 +-
+> >   4 files changed, 907 insertions(+), 92 deletions(-)
+> >
+> Acked-by: Roy Pledge <roy.pledge@nxp.com>
 
-Got it. I'll add this patch in v2.
+Series applied with some clean up and typo fix in the title/commit message.
 
---
 Regards,
-Chuanhong Guo
+Leo
 
 _______________________________________________
 linux-arm-kernel mailing list
