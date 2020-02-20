@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B5E91662E1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 17:30:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F5861662E2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 17:31:09 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,36 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=x+DDwcd45FHwDQnbAmzO/wYx3x/Dvar5lAtc9sIm8+8=; b=m4/XvQKS1hV9DTJ2q4e/LBu9If
-	TD+o9YmpMWqM58GDOg3P7+iA8C5Qx2POKEdy4UZUk0Xvup4MJEJQHOQ5il/KtFKH3vbWWmVL0UJhX
-	6W0pxt5kBvsTnBdJmpwaEE+bhI1qA/fX+6AMlDYg9q8+XalwNfYQaNnm+Mof2tTdujbPR7pkk5PEY
-	Kd1jGKPZUZ9/1urGtONLhTU9SAzv8gwBp8Tzqg9kISCb/R7K4Bb0y2bhA5Fc8mSsAt1bYa0dgMTJy
-	MN6ReKFKDxGWNEv52nKbHXfRqQPXiz5z12TlUYe/r9piqLlFlSPAccFn7yE4DkuMtR2pvIXTE2BgA
-	r3EmjYIg==;
+	bh=DyJuXtc1ZBmI2etbR2rjLuxXOy7rcNbIuUPICWCmtX8=; b=owHsjHtir2OJxg0cfyda9pHBBu
+	B0yrOSVhyBVD2GdwEeZ0XZgSV9QYIP0rbNTxIrVN/luO5n7zN4bc/T2WpopUa9MYyaA2mV1O0ktJv
+	9Szc37LyoNWp53CLEITYX1iTHSMMqjwtmeDJCUlRXB0pbaDT3+3MtgykrTAUmoJS3xEUv4qWfJJpp
+	XF8JcDPTuJQ3p6kyBR3xe/H1RqYrzLkjvfbPlpPXWa/fCnCgdQZRLj5jt0AzsFj+qryVvtxICnUDD
+	/gFylhDVKHEYfpKoW5WtPO9PvdglybUbR11P/AFOFz89J2oiuhFUA37Pxc803+PdHBcAncgJQuwqQ
+	F73LI7+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4ois-0007Z9-Ls; Thu, 20 Feb 2020 16:30:46 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1j4oj8-0007tJ-Pp; Thu, 20 Feb 2020 16:31:02 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ohv-0005uY-7W
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 16:29:48 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C24B81A16C8;
- Thu, 20 Feb 2020 17:29:45 +0100 (CET)
+ id 1j4ohw-0005un-8X
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 16:29:49 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0415C200D79;
+ Thu, 20 Feb 2020 17:29:47 +0100 (CET)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B5BD91A0D00;
- Thu, 20 Feb 2020 17:29:45 +0100 (CET)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E8CE9200BB5;
+ Thu, 20 Feb 2020 17:29:46 +0100 (CET)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id B2F6420328;
- Thu, 20 Feb 2020 17:29:44 +0100 (CET)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id CB87D20328;
+ Thu, 20 Feb 2020 17:29:45 +0100 (CET)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Shawn Guo <shawnguo@kernel.org>,
 	Dong Aisheng <aisheng.dong@nxp.com>
-Subject: [PATCH v2 2/8] clk: imx: Align imx sc clock parent msg structs to 4
-Date: Thu, 20 Feb 2020 18:29:33 +0200
-Message-Id: <aad021e432b3062c142973d09b766656eec18fde.1582216144.git.leonard.crestez@nxp.com>
+Subject: [PATCH v2 3/8] firmware: imx: misc: Align imx sc msg structs to 4
+Date: Thu, 20 Feb 2020 18:29:34 +0200
+Message-Id: <582b80361beb66bd1844fda785aac2e800155d64.1582216144.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1582216144.git.leonard.crestez@nxp.com>
 References: <cover.1582216144.git.leonard.crestez@nxp.com>
@@ -48,8 +48,8 @@ In-Reply-To: <cover.1582216144.git.leonard.crestez@nxp.com>
 References: <cover.1582216144.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_082947_408918_24A10B0B 
-X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-CacheID: sfid-20200220_082948_450025_B66C71C7 
+X-CRM114-Status: UNSURE (   9.21  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
@@ -57,7 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -89,33 +89,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 The imx SC api strongly assumes that messages are composed out of
 4-bytes words but some of our message structs have odd sizeofs.
 
-This produces many oopses with CONFIG_KASAN=y.
+This produces many oopses with CONFIG_KASAN=y:
 
-Fix by marking with __aligned(4).
+    BUG: KASAN: stack-out-of-bounds in imx_mu_send_data+0x108/0x1f0
 
-Fixes: 666aed2d13ee ("clk: imx: scu: add set parent support")
+It shouldn't cause an issues in normal use because these structs are
+always allocated on the stack.
+
+Fixes: 15e1f2bc8b3b ("firmware: imx: add misc svc support")
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- drivers/clk/imx/clk-scu.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/firmware/imx/misc.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
-index 3c5c42d8833e..b8b2072742a5 100644
---- a/drivers/clk/imx/clk-scu.c
-+++ b/drivers/clk/imx/clk-scu.c
-@@ -82,11 +82,11 @@ struct imx_sc_msg_get_clock_parent {
+diff --git a/drivers/firmware/imx/misc.c b/drivers/firmware/imx/misc.c
+index 4b56a587dacd..6a21ff942f82 100644
+--- a/drivers/firmware/imx/misc.c
++++ b/drivers/firmware/imx/misc.c
+@@ -14,11 +14,11 @@
+ struct imx_sc_msg_req_misc_set_ctrl {
  	struct imx_sc_rpc_msg hdr;
- 	union {
- 		struct req_get_clock_parent {
- 			__le16 resource;
- 			u8 clk;
--		} __packed req;
-+		} __packed __aligned(4) req;
- 		struct resp_get_clock_parent {
- 			u8 parent;
- 		} resp;
- 	} data;
- };
+ 	u32 ctrl;
+ 	u32 val;
+ 	u16 resource;
+-} __packed;
++} __packed __aligned(4);
+ 
+ struct imx_sc_msg_req_cpu_start {
+ 	struct imx_sc_rpc_msg hdr;
+ 	u32 address_hi;
+ 	u32 address_lo;
+@@ -28,16 +28,16 @@ struct imx_sc_msg_req_cpu_start {
+ 
+ struct imx_sc_msg_req_misc_get_ctrl {
+ 	struct imx_sc_rpc_msg hdr;
+ 	u32 ctrl;
+ 	u16 resource;
+-} __packed;
++} __packed __aligned(4);
+ 
+ struct imx_sc_msg_resp_misc_get_ctrl {
+ 	struct imx_sc_rpc_msg hdr;
+ 	u32 val;
+-} __packed;
++} __packed __aligned(4);
+ 
+ /*
+  * This function sets a miscellaneous control value.
+  *
+  * @param[in]     ipc         IPC handle
 -- 
 2.17.1
 
