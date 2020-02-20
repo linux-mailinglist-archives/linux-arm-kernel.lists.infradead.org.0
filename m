@@ -2,99 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA1F51664E5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:32:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A76D1664EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 18:33:38 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bHYNebbWTeeR3C1LUosWMamtOV16I0lBVTFiLUmGoLU=; b=d4iK/307iX4/Bdu5EPSD8c+CI
-	sO6B/9x+M/8eIk46YeknVZGEUqxm6fXYbmSuNWJ6qYHU+eK3APN8YAtTABmg7wqLsbl3fJOEdkUJq
-	SoQEOP0fZ+i7A1yiG3fAV8MlvkcxRHgIuArpf147KHUu12PXckBPaF+gYli+yAK61vinboH+QLDME
-	aXVla7XOcc2t+7gdfsgQuF8hX8koGy9cp3FvgxVHoUP+cFPhet0zdaEnxh/A7Mgd4kAFCX5upzb7g
-	SXxV5Jz8osMgQqL1REv6tmEGEA/TLwQrkaQ+E0vZfr82kLUBNQb3yIiozqEBop49q1Z+pD+inMCAY
-	xNbuqb8uQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=C6r3b/kAZNFEt3RzxGFbfMwve25Kt53CR319k2gvUTw=; b=J//csaj4awBvO1
+	qoYsshzxtV+3vyfQBjybPrCIA517Jf51t6Ophb7+bnLKbrVp0p8lzfldqgudJO0Wj+V+qJoRn6AVQ
+	SqZ87nHQnJavJ8LSNmAjV46fmACY4OqaUpqj0I1JwFB1/STmkmCq8FzqX1HHd/dzGd0rAlE8vXqyk
+	9xJ/pXWUZhdjz0R2zcHDO28i836yAiZBks8FE7Xv0CPA5NFLz/y8/ja+aEYR1Fsg306XQp3hRRfFc
+	Pq+88+BNp+YV+8T78XDhj+FMrL6NNyTpVC+DS6tw1VlhHOH32Y0WOh1ZU3VsqaSYOglsaxqEOtIzs
+	GJ8gyza9aIm5Jz6QsTcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4pgZ-0003Fk-Fz; Thu, 20 Feb 2020 17:32:27 +0000
-Received: from out1-smtp.messagingengine.com ([66.111.4.25])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4pgP-0003FQ-F3
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:32:18 +0000
-Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailout.nyi.internal (Postfix) with ESMTP id 862EC21AB4;
- Thu, 20 Feb 2020 12:32:16 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute3.internal (MEProxy); Thu, 20 Feb 2020 12:32:16 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=Ay1v4I3raYISAcTCBgfWLbl1z8B
- K11fKSxA2zB0pXj8=; b=yw55C4gff4dd9drT8w4Q4u7N5Q0zhfB/9hoHZ9XoGyo
- v6CvPSkKBlPsnJUEbiS7GM3aoW/M00z2cOAH3oPEFUQoHnG/0l8iZWC9dDMFIFS3
- 05ThvLt6MoRFpnwkuhQid6gbuGRqunZ30CnB4j/iqXQ2xSldiUmYLvGwaR6tOzVR
- VOk+FezMjuKLib5pfMtUBIZhXiASx/XXMlBKzKG4OG5E+u6gUIX4ftDpy1F9UaKD
- Dg+22JbBeEi4cm1L3mS3W57vWwkZTuqCM7NPenF3obLADklU0RVv4nNO++h7bcVN
- fbqxjx17pPzjxJV/jGrbVaX6h+rxE3L3D9xAu6Syxag==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=Ay1v4I
- 3raYISAcTCBgfWLbl1z8BK11fKSxA2zB0pXj8=; b=E/TUP4W+gjBqbTrrQTK9Bu
- tDzxiE2dMHFS89Zih1vemTPTbpLx0Tct0H3CeUFVUrJO1yioRS0EFTpaT9ntvJ/n
- Sudrb1k8R5xNu6/8FVA//vBjJ7iDa7E+W5MPN9VJVEnXMGFxZASPSSZ1IxGVBSJ+
- 0+qlstr/Fb9xoNc0zuh669UIfncJ0E576HjsYEzMSUwtXi+lxyQWMz0LuDvn4AqB
- e7nLmB+HD0bDzi1X6MIKLAo0kryLjI18+02wh8kfOtdrQGe5cfVy0VcBSfbizK0W
- Vwsrvl2Hw3cV0VjVbNmhR8Rd+muTsGkdl12xcNPfjSPrlKjjUBPwUUDEvS89LEng
- ==
-X-ME-Sender: <xms:n8JOXiiM3A93u8SHlXFFgbUXnF_UIDzJwFk21GT0a1-b02RrIs9oPQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedugedrkedvgddutdegucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
- drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
- lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:n8JOXutsVth5QITUpKCPwf4NneECws8jZhZV7sZT_zKPzNvUhZD53w>
- <xmx:n8JOXkzbk5FwE4A4CRvAWtmTpMqGV0lWN0158ZgAFwfjrlphgGXjhg>
- <xmx:n8JOXsPuNLMWK3osy2RHvSstRaz8-b_fXGxZDpoK9NJ8WF_CQ3vYxA>
- <xmx:oMJOXiPuIzLV7FPq6YQRW6ykLphRz9PNUiz-4au70YZJ0wAd8FPGUQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 450D2328005E;
- Thu, 20 Feb 2020 12:32:15 -0500 (EST)
-Date: Thu, 20 Feb 2020 18:32:13 +0100
-From: Maxime Ripard <maxime@cerno.tech>
-To: Ondrej Jirman <megous@megous.com>
-Subject: Re: [PATCH] bus: sunxi-rsb: Return correct data when mixing 16-bit
- and 8-bit reads
-Message-ID: <20200220173213.s2ytf3zdi6q3bxli@gilmour.lan>
-References: <20200219010951.395599-1-megous@megous.com>
+	id 1j4phf-0003Y8-DY; Thu, 20 Feb 2020 17:33:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4phU-0003Xc-BU
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 17:33:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2613531B;
+ Thu, 20 Feb 2020 09:33:23 -0800 (PST)
+Received: from [10.1.196.105] (eglon.cambridge.arm.com [10.1.196.105])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B3073F68F;
+ Thu, 20 Feb 2020 09:33:21 -0800 (PST)
+Subject: Re: [PATCH 0/3] KVM: arm64: Ask the compiler to __always_inline
+ functions used by KVM at HYP
+To: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+References: <20200220165839.256881-1-james.morse@arm.com>
+ <CAKv+Gu-tPOWyxjsKrL-auC=ZxeNJPgAPyQ2rBd9S8sgMbb=r_w@mail.gmail.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <1ecedad2-1b3e-0d37-42e8-7022ac5a8370@arm.com>
+Date: Thu, 20 Feb 2020 17:33:18 +0000
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200219010951.395599-1-megous@megous.com>
+In-Reply-To: <CAKv+Gu-tPOWyxjsKrL-auC=ZxeNJPgAPyQ2rBd9S8sgMbb=r_w@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_093217_672325_A39A695C 
-X-CRM114-Status: GOOD (  18.45  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200220_093324_436031_6171ADB2 
+X-CRM114-Status: GOOD (  11.03  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.25 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.25 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,128 +65,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Samuel Holland <samuel@sholland.org>,
- open list <linux-kernel@vger.kernel.org>, Stephen Boyd <swboyd@chromium.org>,
- linux-sunxi@googlegroups.com, Chen-Yu Tsai <wens@csie.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============3651013201833824952=="
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Sami Tolvanen <samitolvanen@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ kvmarm <kvmarm@lists.cs.columbia.edu>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Ard,
 
---===============3651013201833824952==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="4qmk5mkxpxvl2c2h"
-Content-Disposition: inline
+On 20/02/2020 17:04, Ard Biesheuvel wrote:
+> On Thu, 20 Feb 2020 at 17:58, James Morse <james.morse@arm.com> wrote:
+>> It turns out KVM relies on the inline hint being honoured by the compiler
+>> in quite a few more places than expected. Something about the Shadow Call
+>> Stack support[0] causes the compiler to avoid inline-ing and to place
+>> these functions outside the __hyp_text. This ruins KVM's day.
+>>
+>> Add the simon-says __always_inline annotation to all the static
+>> inlines that KVM calls from HYP code.
 
+> This isn't quite as yuck as I expected, fortunately, but it does beg
+> the question whether we shouldn't simply map the entire kernel at EL2
+> instead?
 
---4qmk5mkxpxvl2c2h
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Wed, Feb 19, 2020 at 02:09:50AM +0100, Ondrej Jirman wrote:
-> When doing a 16-bit read that returns data in the MSB byte, the
-> RSB_DATA register will keep the MSB byte unchanged when doing
-> the following 8-bit read. sunxi_rsb_read() will then return
-> a result that contains high byte from 16-bit read mixed with
-> the 8-bit result.
->
-> The consequence is that after this happens the PMIC's regmap will
-> look like this: (0x33 is the high byte from the 16-bit read)
->
-> % cat /sys/kernel/debug/regmap/sunxi-rsb-3a3/registers
-> 00: 33
-> 01: 33
-> 02: 33
-> 03: 33
-> 04: 33
-> 05: 33
-> 06: 33
-> 07: 33
-> 08: 33
-> 09: 33
-> 0a: 33
-> 0b: 33
-> 0c: 33
-> 0d: 33
-> 0e: 33
-> [snip]
->
-> Fix this by masking the result of the read with the correct mask
-> based on the size of the read. There are no 16-bit users in the
-> mainline kernel, so this doesn't need to get into the stable tree.
->
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> ---
->  drivers/bus/sunxi-rsb.c | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/bus/sunxi-rsb.c b/drivers/bus/sunxi-rsb.c
-> index b8043b58568ac..8ab6a3865f569 100644
-> --- a/drivers/bus/sunxi-rsb.c
-> +++ b/drivers/bus/sunxi-rsb.c
-> @@ -316,6 +316,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
->  {
->  	u32 cmd;
->  	int ret;
-> +	u32 mask;
->
->  	if (!buf)
->  		return -EINVAL;
-> @@ -323,12 +324,15 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
->  	switch (len) {
->  	case 1:
->  		cmd = RSB_CMD_RD8;
-> +		mask = 0xffu;
->  		break;
->  	case 2:
->  		cmd = RSB_CMD_RD16;
-> +		mask = 0xffffu;
->  		break;
->  	case 4:
->  		cmd = RSB_CMD_RD32;
-> +		mask = 0xffffffffu;
->  		break;
->  	default:
->  		dev_err(rsb->dev, "Invalid access width: %zd\n", len);
-> @@ -345,7 +349,7 @@ static int sunxi_rsb_read(struct sunxi_rsb *rsb, u8 rtaddr, u8 addr,
->  	if (ret)
->  		goto unlock;
->
-> -	*buf = readl(rsb->regs + RSB_DATA);
-> +	*buf = readl(rsb->regs + RSB_DATA) & mask;
-
-Thanks for debugging this and the extensive commit log.
-
-I guess it would be cleaner to just use GENMASK(len * 8, 0) here?
-
-Maxime
-
---4qmk5mkxpxvl2c2h
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXk7CnQAKCRDj7w1vZxhR
-xYwdAQDlHMlf/FdIX+Eumbe45KdrYyQhhaHzGmbiyBwtrtgxMgEAnMJqK4ffi3Lb
-e+5SIgZ8ZAhD5GxFQ06Ui8UaoF4B+Qc=
-=g9qg
------END PGP SIGNATURE-----
-
---4qmk5mkxpxvl2c2h--
+If the kernel is big enough to need internal veneers (the 128M range?), these would
+certainly go horribly wrong because its running somewhere other than the relocation-time
+address. We would need a way of telling the linker to keep the bits of KVM close together...
 
 
---===============3651013201833824952==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3651013201833824952==--
-
