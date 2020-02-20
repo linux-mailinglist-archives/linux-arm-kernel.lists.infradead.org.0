@@ -2,70 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CE3716591F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 09:24:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4FB351658FF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 09:18:22 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=u4mQSxdW6c9mzLiHncSwFLyCoxc9VtAUJYWG+l8mxjU=; b=YaxyZgKmAecm9Z5rKSm3/s3juI
-	b/RlePRtsWmGW7RLJex8q9oq9/kF64SvePeCcnBfLZ6zpFeheOLDd7ZZtxCXPX+F3i2FTCeXEciFr
-	G7d8BTADzMUku+yu1AYCaMn6+mknVYx5B5aSbLYavv7nAcT88sbGJ6hmpeRm3JnSn+Lk/DhBQxJ/h
-	ppH+Vc2X5He+TyrxtHFVZkFXzTIuvECYyDr3/zLDIk5iv3pzPIpsHTbqryS7D/nG+NermiCGs29Yy
-	Vv7fywGy/dd1wHZMBG42hXjWcydLxmYXHF+eMZahowffgP+UZpYMp+eJNgCUWkpY7GPsLinIKsO9L
-	eBVfjQEA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DI+aZHdiP+Jax26/lLrfTU3E2eurT31G5lr/Yg8eb1k=; b=rc3ASsO8zoavBS
+	Vsa4fPxidmQRWlv0Hle4LWaV2990dC8GGpWKQENcLl8mbKthcO70ccfx+ShPl1SM1kW33ImlZliF0
+	X5r+xQgDGDWa0lJNWo8NklzfmcM5jxXZzN9mXc6T77WD3sXTdPpLzA/IQwtkxV01qW+l2WM6CPJZp
+	VuUJVwfn4XVxypbBFcfVLf0N1g/iAnvUeMBTGUVs+AAvreALOlcgStIgxpSmKXIj7Z374n0Z9Tx51
+	xBaSaj1FAatVNZ/5bECqTH+CSWG3tWBTnNN3PJkFUnwz29jJFkyQCQDbiDVd37nTGgMn8TKnHJ4gz
+	O6yZFNYikE78mKj/sDNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4h8F-0002Gm-9w; Thu, 20 Feb 2020 08:24:27 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1j4h2B-00081T-GC; Thu, 20 Feb 2020 08:18:11 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4h7b-0001qU-Mw
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 08:23:50 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C3F3E201B99;
- Thu, 20 Feb 2020 09:23:43 +0100 (CET)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 87D902048C7;
- Thu, 20 Feb 2020 09:23:28 +0100 (CET)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 31EE3402E6;
- Thu, 20 Feb 2020 16:23:15 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: rui.zhang@intel.com, daniel.lezcano@linaro.org,
- amit.kucheria@verdurent.com, robh+dt@kernel.org, mark.rutland@arm.com,
- shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, catalin.marinas@arm.com, will@kernel.org,
- leonard.crestez@nxp.com, daniel.baluta@nxp.com, shengjiu.wang@nxp.com,
- peng.fan@nxp.com, ping.bai@nxp.com, jun.li@nxp.com,
- bjorn.andersson@linaro.org, olof@lixom.net, vkoul@kernel.org,
- dinguyen@kernel.org, marcin.juszkiewicz@linaro.org,
- linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH RESEND 4/4] arm64: dts: imx8mm: Add thermal zone support
-Date: Thu, 20 Feb 2020 16:17:26 +0800
-Message-Id: <1582186646-22096-4-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1582186646-22096-1-git-send-email-Anson.Huang@nxp.com>
-References: <1582186646-22096-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1j4h24-000812-Eh
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 08:18:05 +0000
+Received: by mail-lf1-x143.google.com with SMTP id b15so2368240lfc.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 00:18:03 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=bfzGIR3YDiF6H+a6zuyFtqFo96c/AxsGVVSXFrBtaro=;
+ b=MAROxxGOlLyeUqubF+UzqU7IGScwIIckR/engdSUpg/yhzEcnTd6TRsz4ccQypWssp
+ LEfIOKYp5tifBf7tyUVNPtpff9QDzVaJ0aktej1Tsngo7E1JQ/6SIHabsh+XxwcwBIgY
+ pAiUaTIwclmpgYtKpBd8zYoKwO22rmqOT/IA8pER8YiQEgs5rUJq8wtOrs9ufZJsnIrH
+ 1hMHsm4aWnFNhNQpyQ7jw9MBMK7ra8vVebDyUxCBQeigRtet9NwAI3FxNF2fIVwY8g5/
+ Etn+ssi5+onBUy68zTSsWMb6ULREGRKn8CGU87a0how/RKua0mnOk0w+ApaAP5B7Of56
+ O9bw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=bfzGIR3YDiF6H+a6zuyFtqFo96c/AxsGVVSXFrBtaro=;
+ b=OX0BZ5jCefayyDWmG2jJLtCrwvH/uKvRfPh5C/F6vu9s77GqLB0hvhsClCzIwtl6e9
+ Y9gJGbSakEB3GC0IOtBW2ICsp01t9MOxQzhpyvI2PT7+meBzXoahkeZtjk/Jt3DXSexf
+ TvQKbwr5twiI/TBMBCv38x6FSZQsRdK9TpXT4bft4Is5NK4AvWCtZtoPj85De8PbJDfl
+ jMmLFQc78u9vNJ5GV3FKsTe24FmEgXbex+S6/C2I4sZtkdDMis8R2HYe8BLL+ltuIDGa
+ pPqTlLRwr7cCJKphSoh/Xhx+hdU8K0oaJHW17xcJ20gzas8yBXpx8Ln3caQcVt8u/ekc
+ 9dJQ==
+X-Gm-Message-State: APjAAAVoQklz/Gnb+JTMMF8uk52I9hHDeUpF1llnCLxjUGvS5RYIVRoz
+ vJwaprAwOqiLMR8KD+d1bEdD5K18v/TI6ERThdr7oQ==
+X-Google-Smtp-Source: APXvYqxjTpOkXxHXkogdm1rBBTRQ/jNvpMrr9lmcSMi5VuYw9rJcTzPLj16dSa445cLIR6/04e9vqkvnuwR87v+M7Js=
+X-Received: by 2002:ac2:44a5:: with SMTP id c5mr4263584lfm.4.1582186682486;
+ Thu, 20 Feb 2020 00:18:02 -0800 (PST)
+MIME-Version: 1.0
+References: <20200206173247.GX25745@shell.armlinux.org.uk>
+In-Reply-To: <20200206173247.GX25745@shell.armlinux.org.uk>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 20 Feb 2020 09:17:51 +0100
+Message-ID: <CACRpkdbzjBnaeXJg3XvZ6G2FdtQQa0u7MPy9bgN-uo-F1vSpbQ@mail.gmail.com>
+Subject: Re: [REGRESSION] gpio hogging fails with pinctrl gpio drivers
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>, 
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Peter Rosin <peda@axentia.se>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_002348_028100_5C434776 
-X-CRM114-Status: UNSURE (   7.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200220_001804_526342_C46F354F 
+X-CRM114-Status: GOOD (  11.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,114 +92,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add thermal zone and tmu node to support i.MX8MM thermal
-driver, ONLY cpu thermal zone is supported, and cpu cooling
-is also added.
+On Thu, Feb 6, 2020 at 6:33 PM Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 43 +++++++++++++++++++++++++++++++
- 1 file changed, 43 insertions(+)
+> It seems that sometime between 4.20 and 5.5, something has broken the
+> ability to specify gpio-hogs in DT for GPIOs that are written around
+> pinctrl drivers.
+(explanation that makes perfect sense)
+> Consequently, adding a gpio-hog to DT for this driver results in the
+> driver endlessly returning -EPROBE_DEFER.
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index b3d0b29..e438095 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -68,6 +68,7 @@
- 			nvmem-cells = <&cpu_speed_grade>;
- 			nvmem-cell-names = "speed_grade";
- 			cpu-idle-states = <&cpu_pd_wait>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		A53_1: cpu@1 {
-@@ -80,6 +81,7 @@
- 			next-level-cache = <&A53_L2>;
- 			operating-points-v2 = <&a53_opp_table>;
- 			cpu-idle-states = <&cpu_pd_wait>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		A53_2: cpu@2 {
-@@ -92,6 +94,7 @@
- 			next-level-cache = <&A53_L2>;
- 			operating-points-v2 = <&a53_opp_table>;
- 			cpu-idle-states = <&cpu_pd_wait>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		A53_3: cpu@3 {
-@@ -104,6 +107,7 @@
- 			next-level-cache = <&A53_L2>;
- 			operating-points-v2 = <&a53_opp_table>;
- 			cpu-idle-states = <&cpu_pd_wait>;
-+			#cooling-cells = <2>;
- 		};
- 
- 		A53_L2: l2-cache0 {
-@@ -204,6 +208,38 @@
- 		arm,no-tick-in-suspend;
- 	};
- 
-+	thermal-zones {
-+		cpu-thermal {
-+			polling-delay-passive = <250>;
-+			polling-delay = <2000>;
-+			thermal-sensors = <&tmu>;
-+			trips {
-+				cpu_alert0: trip0 {
-+					temperature = <85000>;
-+					hysteresis = <2000>;
-+					type = "passive";
-+				};
-+
-+				cpu_crit0: trip1 {
-+					temperature = <95000>;
-+					hysteresis = <2000>;
-+					type = "critical";
-+				};
-+			};
-+
-+			cooling-maps {
-+				map0 {
-+					trip = <&cpu_alert0>;
-+					cooling-device =
-+						<&A53_0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+						<&A53_1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+						<&A53_2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+						<&A53_3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-+				};
-+			};
-+		};
-+	};
-+
- 	usbphynop1: usbphynop1 {
- 		compatible = "usb-nop-xceiv";
- 		clocks = <&clk IMX8MM_CLK_USB_PHY_REF>;
-@@ -363,6 +399,13 @@
- 				gpio-ranges = <&iomuxc 0 119 30>;
- 			};
- 
-+			tmu: tmu@30260000 {
-+				compatible = "fsl,imx8mm-tmu";
-+				reg = <0x30260000 0x10000>;
-+				clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
-+				#thermal-sensor-cells = <0>;
-+			};
-+
- 			wdog1: watchdog@30280000 {
- 				compatible = "fsl,imx8mm-wdt", "fsl,imx21-wdt";
- 				reg = <0x30280000 0x10000>;
--- 
-2.7.4
+I suspect this is sx150x-specific and suspect these two commits:
 
+1a1d39e1b8dd pinctrl: sx150x: Register pinctrl before adding the gpiochip
+b930151e5b55 pinctrl: sx150x: Add a static gpio/pinctrl pin range mapping
+
+I suppose people weren't using hogs very much with the sx150x and
+it didn't turn up in testing so far.
+
+I don't think for example pinctrl-stmfx.c has this problem, as it registers
+the pin ranges from the device tree as part of the core code.
+But other drivers calling gpiochip_add_pin_range() may be experiencing
+this.
+
+Peter/Andrey, do you have some idea? Have you tested this usecase (hogs)
+with the sx150x?
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
