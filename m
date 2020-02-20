@@ -2,154 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FB63166646
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:27:49 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3AEE166652
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 19:30:17 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4+x6U7P1j+2oHHMMmVMdvMhE8haSRyyMhAZ0a8AyUl4=; b=V6XBQMWPUQsvRZ
-	XOe2ujAg+wLcya815ft05kXqb0P63rKPE6wrK8zCq7ayiUOtxCjoaG0/KwOfaRN5PWt2ZYdbaIPb/
-	UtuxJ7k5WHKndkq26/AK1lTHPUTGKP+1SwBRPovUiAqwXq1H6q2v2f2DU+TsBrZEGiIBMVBHMTKPr
-	u4y+qUMAL7gEtcF6atcpqZ/lb2yUkcfiEyc2OSHdXaRmkRF6vs/OKR/M0+rrFFEmLBTzRW5V2x4HB
-	OU+NuK8Fu3gqnllXUa/N/Xm+cJPvNYP9i+NyHM6nInxxwEyRRC6Mdue7AWLNiitmvI4VVJP81Hv+G
-	fLmHJMg2MEVuAJJcK9kQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mDBqLyG/IRfkeBC52crxAEBBCTbQQieqEEj4Da+yVwU=; b=LTy67EjDerSS8j
+	dDOLbbEeCstH/fl9xQrzeQfq9AGfVffBgvKIWp5D0MqtudBjZ1VBSvVs3QtdmntNizTjPiUajsQU3
+	lZ0XkMe4lZ5beY3tAcagu7aFYIJZm/lORWw7VoYgN+aqc67naDspMFUO90jyS3qXZ0zsIcBRtkuGK
+	Uo0RXl3wn/iIG69Y9b0XWEIpRd7dmPKalqxzwwPofrafOgB2kG0oQ95SdRexvuW+rMIAVGPL7eIMf
+	h3/YnpZoKVVFcMrLX9EixDEQV0xBKmO8AMnVFFWKqFU6tY6GCJ067hBb3Htmuoa4WykLEOC2FcBZ7
+	vE7YgWxf9Uf1LCqKIz7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4qY7-0007qT-Ca; Thu, 20 Feb 2020 18:27:47 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1j4qaV-0000pw-S6; Thu, 20 Feb 2020 18:30:15 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4qXy-0007pv-Ow; Thu, 20 Feb 2020 18:27:40 +0000
-Received: by mail-pl1-x641.google.com with SMTP id a6so1882172plm.3;
- Thu, 20 Feb 2020 10:27:38 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=VmqpUfS7f2aoqYJkutvBUagv5kF3shz4Bp6Brv8E6os=;
- b=O+AGTFn04M7aP/iVgcnqG40JcbHTAudN3ibVIwRVostevCW1xNddYtNqPcfeLq0XI5
- DdbyWFD9QUMwXAyAZw79yEMqocyTBCu9h+tRN6CGIcbQPzJI2l3PuO98OpSKUQCzCU5o
- 1TT37+bgBTc6E1Z5zkrgybQguIBtv2v7Q8rfEgBpZZUFWCMc7YXJL93s8fEXp2c/xBJm
- ubFyOeGpFIlEgDhquJV8HlzQ0oObWariqEqMvO6BVRJKS+0wQA8IuQKUmzMKCyw1GxD+
- aJwrQ3zs2iHUKJT/Z7Eb4hnvY34aepPaPLNYsCHk0HCH50oSO7qYnTVTuJNrjojTiuXg
- QXWA==
+ id 1j4qaL-00004u-EB
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 18:30:07 +0000
+Received: by mail-wr1-x441.google.com with SMTP id n10so5801957wrm.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 20 Feb 2020 10:30:04 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=nuviainc-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=rpcE/RwUFcc0SDsm9ejjXXsVqa+BppFjkRUEvinhf4Q=;
+ b=0UhvMwLpSQTQKF4fGL2Kzg8XXbMh5iYsjGE79A6icNxEepbvH+bMk9YWgTOlQET2oR
+ gPp7WwE9z6T6t3/jGbl7HoKhAMzB14P9dRPnJivNzPGXL+Ekmkucb+5qxn2dkqjsfEJm
+ gK2huI0mYaK6Uc6LsCsnsSQbAWAQUrJLwSBYPDcMnwe70WJZT8OFS/jc3ZtWRysEw9uz
+ /5Co/wHaDmYmSSc2wK5jLRiz8Cch3XrEI1CIU7RMu7S2Q4yYiNPUPkGb3+LdWE+bzrog
+ LlS/N9XcalRkxqyx1TiNSL6EvYXXP0qmopcNTzU71WvnpiI8/UEysxeY2dQMHVPeYEUf
+ xkKg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=VmqpUfS7f2aoqYJkutvBUagv5kF3shz4Bp6Brv8E6os=;
- b=tszh7tVJ4WvstGXF80z97wmjkv+2RzlWfjjiNvwNvwJpsq1szg94B19DEAuxercpxO
- w3vkP4+1+ttD4M5vHTRyN5Tc5g9g5SS5Qk1JYDM4txTmXitOSB5DBR9YJuPcqCMG04B9
- AmIgmQH/PAiNhPYWzl2yrmwTYatJSsAvfNXUWht+xQpQaUfiFxJ6+y53w5EdXCwjEFQH
- 2ycecvUILXcJhIEU4OypO4PWRERFW0RMDtxM4TaNl4BuLRMAxOmI2n0DmBhb2aDqhOtP
- w9BlA+VcQoJAEbEjKBCMGXsu0jJxxF2dwJbWc2zSSFU/dh7tzO6EE72MxweG75LbhUoY
- YUpQ==
-X-Gm-Message-State: APjAAAU0OaqNctkM82t803KQSm4WAZK8lNOao0QJjA7fYx+YTt14LJyY
- 6AMEON6LwGzwHqqFz+minS0=
-X-Google-Smtp-Source: APXvYqyROkZ2zjGVppqnrtM/2nfRTP4DSo0oorLg/5xmp0QtM7hX9pcEpDTyuqSWCjh9UxQ9nj7rlw==
-X-Received: by 2002:a17:90a:6545:: with SMTP id
- f5mr5265540pjs.42.1582223258050; 
- Thu, 20 Feb 2020 10:27:38 -0800 (PST)
-Received: from [10.69.78.90] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id d3sm272300pfn.113.2020.02.20.10.27.36
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 20 Feb 2020 10:27:37 -0800 (PST)
-Subject: Re: [PATCH v2 3/4] PCI: brcmstb: Wait for Raspberry Pi's firmware
- when present
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Florian Fainelli <florian.fainelli@broadcom.com>,
- linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-References: <20200219123933.2792-1-nsaenzjulienne@suse.de>
- <20200219123933.2792-4-nsaenzjulienne@suse.de>
- <10a53db8-960e-eea7-1e8d-790de9a79e71@broadcom.com>
- <cab8c0d70fd30c49579199d002b81b87ed34a920.camel@suse.de>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; keydata=
- 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
- a9BQwACgnzGuH1BVeT2J0Ra+ZYgkx7DaPR0=
-Message-ID: <816cccb3-be5d-f0d5-77bd-6afdba3c0848@gmail.com>
-Date: Thu, 20 Feb 2020 10:27:35 -0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=rpcE/RwUFcc0SDsm9ejjXXsVqa+BppFjkRUEvinhf4Q=;
+ b=q/p2/cHRwM4Q+Hpfo08SooDTdhF5E7sRY64iHCazlou8rdN7wPxuxzv6UMGCZbxB6X
+ wKdlvo2kJpk6udpOYHuNBCBwM44ytiC4LVAiha9UBQkxVKXfGlRSMGx2Np8tRcJX/CjD
+ KkYXyDkzZpUxHdT6zXZLKkpMF+5lg/b91KsUBGZm6hMlkdRru17UqqFD5iYn4ECITLsI
+ 6CRDsGQnqVHRjFUKN2smzpvGie+AAtYRixXODKTtJfFoF09thoopxYqEKf6fGzLheWDd
+ 3dsWJ6vv6JKik4MgPZ+6L8iSHXzua2hb9RQPwjoIYFlGGfxwIo/oV7ujvTdoL7sVXa1h
+ ULxg==
+X-Gm-Message-State: APjAAAU9H2fctqZ3Fxc4vJS4KUV7Dgu3M9d5R4QEIbZrYX22n6kb2Pop
+ nxobl1dIKXirNV/lM+VMpq++4Q==
+X-Google-Smtp-Source: APXvYqxqXyv0X+BkWYCzwSSpwZm52wJdjImOFNbuLxX9cBOAw7OEeImvi4bPZe0O2M55ElxHwjHAzQ==
+X-Received: by 2002:adf:f401:: with SMTP id g1mr42843118wro.129.1582223403229; 
+ Thu, 20 Feb 2020 10:30:03 -0800 (PST)
+Received: from bivouac.eciton.net (bivouac.eciton.net.
+ [2a00:1098:0:86:1000:23:0:2])
+ by smtp.gmail.com with ESMTPSA id q14sm481830wrj.81.2020.02.20.10.30.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 20 Feb 2020 10:30:02 -0800 (PST)
+Date: Thu, 20 Feb 2020 18:30:01 +0000
+From: Leif Lindholm <leif@nuviainc.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH 3/3] efi/arm: rewrite FDT param discovery routines
+Message-ID: <20200220183001.GE23627@bivouac.eciton.net>
+References: <20200219152440.11561-1-ardb@kernel.org>
+ <20200219152440.11561-4-ardb@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <cab8c0d70fd30c49579199d002b81b87ed34a920.camel@suse.de>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200219152440.11561-4-ardb@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200220_102738_811271_7F0876F5 
-X-CRM114-Status: GOOD (  13.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200220_103005_564962_BF5ACEB5 
+X-CRM114-Status: GOOD (  25.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -162,45 +96,297 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tim.gover@raspberrypi.org, gregkh@linuxfoundation.org,
- linux-usb@vger.kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org, wahrenst@gmx.net
+Cc: atish.patra@wdc.com, linux-efi@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 2/20/2020 10:14 AM, Nicolas Saenz Julienne wrote:
-> On Wed, 2020-02-19 at 11:21 -0800, Florian Fainelli wrote:
->> On 2/19/20 4:39 AM, Nicolas Saenz Julienne wrote:
->>> xHCI's PCI fixup, run at the end of pcie-brcmstb's probe, depends on
->>> RPi4's VideoCore firmware interface to be up and running. It's possible
->>> for both initializations to race, so make sure it's available prior
->>> starting.
->>>
->>> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
->>
->> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
->>
->> It does not look like there is something making sure that
->> CONFIG_RASPBERRYPI_FIRMWARE is being selected or depended on, should we
->> have a "default XHCI_PCI" added to drivers/firmware/Kconfig?
+On Wed, Feb 19, 2020 at 16:24:40 +0100, Ard Biesheuvel wrote:
+> The efi_get_fdt_params() routine uses the early OF device tree
+> traversal helpers, that iterate over each node in the DT and invoke
+> a caller provided callback that can inspect the node's contents and
+> look for the required data. This requires a special param struct to
+> be passed around, with pointers into param enumeration structs that
+> contain (and duplicate) property names and offsets into yet another
+> struct that carries the collected data.
 > 
-> I think having that would enable the firmware interface for all XHCI_PCI users,
-> which isn't ideal. The firmware call has stubs for the case the firmware
-> interace isn't compiled, so no problem there. Ultimately we want to enable
-> CONFIG_RASPBERRYPI_FIRMWARE only when the built image targets the RPi4
-> (reglardless of being arm64/arm32). But I don't think that's feasible.
+> Since we know the data we look for is either under /hypervisor/uefi
+> or under /chosen, it is much simpler to use the libfdt routines
+> directly, and try to grab a reference to either node directly, and
+> read each property in sequence.
+> 
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> ---
+>  drivers/firmware/efi/fdtparams.c | 203 ++++++++------------
+>  1 file changed, 85 insertions(+), 118 deletions(-)
+> 
+> diff --git a/drivers/firmware/efi/fdtparams.c b/drivers/firmware/efi/fdtparams.c
+> index 7a384b307c56..23af4062e913 100644
+> --- a/drivers/firmware/efi/fdtparams.c
+> +++ b/drivers/firmware/efi/fdtparams.c
+> @@ -5,154 +5,121 @@
+>  #include <linux/module.h>
+>  #include <linux/init.h>
+>  #include <linux/efi.h>
+> -#include <linux/of.h>
+> +#include <linux/libfdt.h>
+>  #include <linux/of_fdt.h>
+>  
+> -#include <asm/early_ioremap.h>
+> +#include <asm/unaligned.h>
+>  
+> -#define UEFI_PARAM(name, prop, field)			   \
+> -	{						   \
+> -		{ name },				   \
+> -		{ prop },				   \
+> -		offsetof(struct efi_fdt_params, field),    \
+> -		sizeof_field(struct efi_fdt_params, field) \
+> -	}
+> -
+> -struct efi_fdt_params {
+> -	u64 system_table;
+> -	u64 mmap;
+> -	u32 mmap_size;
+> -	u32 desc_size;
+> -	u32 desc_ver;
+> -};
+> -
+> -struct params {
+> -	const char name[32];
+> -	const char propname[32];
+> -	int offset;
+> -	int size;
+> +enum {
+> +	SYSTAB,
+> +	MMBASE,
+> +	MMSIZE,
+> +	DCSIZE,
+> +	DCVERS,
+>  };
+>  
+> -static __initdata struct params fdt_params[] = {
+> -	UEFI_PARAM("System Table", "linux,uefi-system-table", system_table),
+> -	UEFI_PARAM("MemMap Address", "linux,uefi-mmap-start", mmap),
+> -	UEFI_PARAM("MemMap Size", "linux,uefi-mmap-size", mmap_size),
+> -	UEFI_PARAM("MemMap Desc. Size", "linux,uefi-mmap-desc-size", desc_size),
+> -	UEFI_PARAM("MemMap Desc. Version", "linux,uefi-mmap-desc-ver", desc_ver)
+> +static __initconst const char name[][22] = {
 
-It would enable the driver, which is only functional if the matching
-Device Tree node is present, that seems like a reasonable price to pay
-for a multiplatform kernel. After all, this is a functional dependency
-for the Pi4.
--- 
-Florian
+I was going to complain about that 22, and I still think it looks a
+bit iffy, but I can't find a compiler that doesn't throw a warning if
+the value changes, so I guess I'm being over sensitive.
+
+> +	[SYSTAB] = "System Table         ",
+> +	[MMBASE] = "MemMap Address       ",
+> +	[MMSIZE] = "MemMap Size          ",
+> +	[DCSIZE] = "MemMap Desc. Size    ",
+> +	[DCVERS] = "MemMap Desc. Version ",
+>  };
+>  
+> -static __initdata struct params xen_fdt_params[] = {
+> -	UEFI_PARAM("System Table", "xen,uefi-system-table", system_table),
+> -	UEFI_PARAM("MemMap Address", "xen,uefi-mmap-start", mmap),
+> -	UEFI_PARAM("MemMap Size", "xen,uefi-mmap-size", mmap_size),
+> -	UEFI_PARAM("MemMap Desc. Size", "xen,uefi-mmap-desc-size", desc_size),
+> -	UEFI_PARAM("MemMap Desc. Version", "xen,uefi-mmap-desc-ver", desc_ver)
+> -};
+> -
+> -#define EFI_FDT_PARAMS_SIZE	ARRAY_SIZE(fdt_params)
+> -
+> -static __initdata struct {
+> -	const char *uname;
+> -	const char *subnode;
+> -	struct params *params;
+> +static __initconst const struct {
+> +	const char	path[17];
+> +	const char	params[5][26];
+
+And I guess the same is true here, but the 5 *could* theoretically be
+replaced by a compile-time calculation of DCVERS - SYSTAB + 1. That
+may not be less error prone however. Finishing the enum on a
+somethingMAX entry might make it slightly better?
+
+But the error checking isn't really what I'm after, but getting rid of
+the opaqueness. Could we have comments about which specific string
+lengths we're matching against here for us bears of very little brain?
+
+/
+    Leif
+
+>  } dt_params[] = {
+> -	{ "hypervisor", "uefi", xen_fdt_params },
+> -	{ "chosen", NULL, fdt_params },
+> -};
+> -
+> -struct param_info {
+> -	int found;
+> -	void *params;
+> -	const char *missing;
+> +#ifdef CONFIG_XEN
+> +	{
+> +		"/hypervisor/uefi",
+> +		{
+> +			[SYSTAB] = "xen,uefi-system-table",
+> +			[MMBASE] = "xen,uefi-mmap-start",
+> +			[MMSIZE] = "xen,uefi-mmap-size",
+> +			[DCSIZE] = "xen,uefi-mmap-desc-size",
+> +			[DCVERS] = "xen,uefi-mmap-desc-ver",
+> +		}
+> +	},
+> +#endif
+> +	{
+> +		"/chosen",
+> +		{
+> +			[SYSTAB] = "linux,uefi-system-table",
+> +			[MMBASE] = "linux,uefi-mmap-start",
+> +			[MMSIZE] = "linux,uefi-mmap-size",
+> +			[DCSIZE] = "linux,uefi-mmap-desc-size",
+> +			[DCVERS] = "linux,uefi-mmap-desc-ver",
+> +		}
+> +	}
+>  };
+>  
+> -static int __init __find_uefi_params(unsigned long node,
+> -				     struct param_info *info,
+> -				     struct params *params)
+> +static int __init efi_get_fdt_prop(const void *fdt, int node, int dtp, int pp,
+> +				   void *var, int size)
+>  {
+>  	const void *prop;
+> -	void *dest;
+> +	int len;
+>  	u64 val;
+> -	int i, len;
+>  
+> -	for (i = 0; i < EFI_FDT_PARAMS_SIZE; i++) {
+> -		prop = of_get_flat_dt_prop(node, params[i].propname, &len);
+> -		if (!prop) {
+> -			info->missing = params[i].name;
+> -			return 0;
+> -		}
+> -
+> -		dest = info->params + params[i].offset;
+> -		info->found++;
+> +	prop = fdt_getprop(fdt, node, dt_params[dtp].params[pp], &len);
+> +	if (!prop) {
+> +		pr_err("Can't find property '%s' in device tree!\n",
+> +		       dt_params[dtp].params[pp]);
+> +		return 1;
+> +	}
+>  
+> -		val = of_read_number(prop, len / sizeof(u32));
+> +	val = (len == 4) ? (u64)be32_to_cpup(prop) : get_unaligned_be64(prop);
+>  
+> -		if (params[i].size == sizeof(u32))
+> -			*(u32 *)dest = val;
+> -		else
+> -			*(u64 *)dest = val;
+> +	if (size == 8)
+> +		*(u64 *)var = val;
+> +	else
+> +		*(u32 *)var = (val <= U32_MAX) ? val : U32_MAX; // saturate
+>  
+> -		if (efi_enabled(EFI_DBG))
+> -			pr_info("  %s: 0x%0*llx\n", params[i].name,
+> -				params[i].size * 2, val);
+> -	}
+> +	if (efi_enabled(EFI_DBG))
+> +		pr_info("  %s: 0x%0*llx\n", name[pp], size * 2, val);
+>  
+> -	return 1;
+> +	return 0;
+>  }
+>  
+> -static int __init fdt_find_uefi_params(unsigned long node, const char *uname,
+> -				       int depth, void *data)
+> +u64 __init efi_get_fdt_params(struct efi_memory_map_data *mm)
+>  {
+> -	struct param_info *info = data;
+> +	const void *fdt = initial_boot_params;
+> +	unsigned long systab;
+> +	struct {
+> +		void	*var;
+> +		int	size;
+> +	} target[] = {
+> +		[SYSTAB] = { &systab,		sizeof(systab) },
+> +		[MMBASE] = { &mm->phys_map,	sizeof(mm->phys_map) },
+> +		[MMSIZE] = { &mm->size,		sizeof(mm->size) },
+> +		[DCSIZE] = { &mm->desc_size,	sizeof(mm->desc_size) },
+> +		[DCVERS] = { &mm->desc_version,	sizeof(mm->desc_version) },
+> +	};
+>  	int i;
+>  
+> +	BUILD_BUG_ON(ARRAY_SIZE(target) != ARRAY_SIZE(name));
+> +	BUILD_BUG_ON(ARRAY_SIZE(target) != ARRAY_SIZE(dt_params[0].params));
+> +
+>  	for (i = 0; i < ARRAY_SIZE(dt_params); i++) {
+> -		const char *subnode = dt_params[i].subnode;
+> +		int node;
+> +		int j;
+>  
+> -		if (depth != 1 || strcmp(uname, dt_params[i].uname) != 0) {
+> -			info->missing = dt_params[i].params[0].name;
+> +		node = fdt_path_offset(fdt, dt_params[i].path);
+> +		if (node < 0)
+>  			continue;
+> -		}
+>  
+> -		if (subnode) {
+> -			int err = of_get_flat_dt_subnode_by_name(node, subnode);
+> +		if (efi_enabled(EFI_DBG))
+> +			pr_info("Getting UEFI parameters from %s in DT:\n",
+> +				dt_params[i].path);
+>  
+> -			if (err < 0)
+> +		for (j = 0; j < ARRAY_SIZE(target); j++) {
+> +			if (efi_get_fdt_prop(fdt, node, i, j, target[j].var,
+> +					     target[j].size)) {
+>  				return 0;
+> -
+> -			node = err;
+> +			}
+>  		}
+> -
+> -		return __find_uefi_params(node, info, dt_params[i].params);
+> +		return systab;
+>  	}
+> -
+> +	pr_info("UEFI not found.\n");
+>  	return 0;
+>  }
+> -
+> -u64 __init efi_get_fdt_params(struct efi_memory_map_data *memmap)
+> -{
+> -	struct efi_fdt_params params;
+> -	struct param_info info;
+> -	int ret;
+> -
+> -	pr_info("Getting EFI parameters from FDT:\n");
+> -
+> -	info.found = 0;
+> -	info.params = &params;
+> -
+> -	ret = of_scan_flat_dt(fdt_find_uefi_params, &info);
+> -	if (!info.found) {
+> -		pr_info("UEFI not found.\n");
+> -		return 0;
+> -	} else if (!ret) {
+> -		pr_err("Can't find '%s' in device tree!\n", info.missing);
+> -		return 0;
+> -	}
+> -
+> -	memmap->desc_version	= params.desc_ver;
+> -	memmap->desc_size	= params.desc_size;
+> -	memmap->size		= params.mmap_size;
+> -	memmap->phys_map	= params.mmap;
+> -
+> -	return params.system_table;
+> -}
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
