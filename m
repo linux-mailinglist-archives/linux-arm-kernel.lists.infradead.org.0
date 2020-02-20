@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10994165474
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 02:40:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E15401654AC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 20 Feb 2020 02:46:20 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:References:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hi+utICFjM2TjeUuExNjJkWsLAXKJ0FdWTa7SMAVaSM=; b=UGd2NtKYDszs/q
-	JuRlzGsN2l4vci5yd7SobNGQ0iv7YLfTc9Kkw2LbNhav21JTNNon3K9SceLhqP8+bIps/yQCYykwX
-	/lIdEapvgYQaAKLLUcWj8HFkHoYV1AAapW8NyIdvYLXcIxfaplUmLQ0qSSK3GHDBhooccGalyt72s
-	d59Eza4RRqZOntvfCd9Nz1yQx6zyMnJdhjw5EICveSiZRwu5eb94jzBAiW/vM0kSIN7GlyBVYpCsh
-	kE1SIgjPPjfDlK5aNJguZBE6scju0C5B+XvWLNEx+iwwdp+i3r6wt7iOc6xDfzcSFbjITVWfEFJXx
-	lUf/WatJRAX3hGRVwL2Q==;
+	List-Owner; bh=l0SIokNWxdTdR/L+/aIfPaGkslc2GkfL+zUVKA7A3Dk=; b=iNyWGVOCyRLPkh
+	VwPoMKuL9rCK8HNLLGPfReZnSJip+8M88NEycz89AAfkOyKQ62rmS6RbgGAKQE/B8YxKHjvMTV3Mv
+	GxUD2ZpSfXviRASYcImuqL4v6/2EwiAUQ+DTM3+rxvzmrPMWQ3f8/SohPpa/Dto9Tx07KHX1w6CmH
+	d/upxHksMcKlWwGiKtiwz54Opm1goKGNUomAO7SQI63TUlUBS/avTmu+DzeeXsS5KydwdIYoKdzet
+	z9zPhUWb1G/gw9IuyvfdiXgxvzsGTLS7pw5fCTSaA356nu62NiEZYYzwbw9pZ7RjI4yRqOV+75sLx
+	Ymz8lK0c7liRATez8jSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j4apH-0000gU-Hb; Thu, 20 Feb 2020 01:40:27 +0000
-Received: from kernel.crashing.org ([76.164.61.194])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j4ap8-0000fz-AF
- for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 01:40:20 +0000
-Received: from localhost (gate.crashing.org [63.228.1.57])
- (authenticated bits=0)
- by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 01K1dkWX028195
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Wed, 19 Feb 2020 19:39:49 -0600
-Message-ID: <55e77bcb37ec780094b8d226f89bd5557e30d913.camel@kernel.crashing.org>
-Subject: Re: [PATCH 2/2] usb: gadget: aspeed: fixup usb1 device descriptor
- at init time
-From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-To: rentao.bupt@gmail.com, Felipe Balbi <balbi@kernel.org>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>,
- Joel Stanley <joel@jms.id.au>, Andrew Jeffery <andrew@aj.id.au>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Colin Ian King <colin.king@canonical.com>, Stephen Boyd
- <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- openbmc@lists.ozlabs.org, taoren@fb.com
-Date: Thu, 20 Feb 2020 12:39:45 +1100
-In-Reply-To: <20200218235600.6763-3-rentao.bupt@gmail.com>
-References: <20200218235600.6763-1-rentao.bupt@gmail.com>
- <20200218235600.6763-3-rentao.bupt@gmail.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+	id 1j4auv-0002Wg-OV; Thu, 20 Feb 2020 01:46:17 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j4aum-0002VN-Mp
+ for linux-arm-kernel@lists.infradead.org; Thu, 20 Feb 2020 01:46:10 +0000
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 20 Feb 2020 10:46:07 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 4F39418008C;
+ Thu, 20 Feb 2020 10:46:07 +0900 (JST)
+Received: from 172.31.9.53 (172.31.9.53) by m-FILTER with ESMTP;
+ Thu, 20 Feb 2020 10:46:07 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by iyokan.css.socionext.com (Postfix) with ESMTP id 27FAC40376;
+ Thu, 20 Feb 2020 10:46:07 +0900 (JST)
+Received: from [10.213.132.48] (unknown [10.213.132.48])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id EC1FE12047F;
+ Thu, 20 Feb 2020 10:46:06 +0900 (JST)
+Date: Thu, 20 Feb 2020 10:46:07 +0900
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v3 1/2] dt-bindings: dmaengine: Add UniPhier external DMA
+ controller bindings
+In-Reply-To: <20200219135344.GA15319@bogus>
+References: <1582077141-16793-2-git-send-email-hayashi.kunihiko@socionext.com>
+ <20200219135344.GA15319@bogus>
+Message-Id: <20200220104606.53AA.4A936039@socionext.com>
+MIME-Version: 1.0
+X-Mailer: Becky! ver. 2.70 [ja]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200219_174019_045697_51F877F5 
-X-CRM114-Status: GOOD (  18.31  )
+X-CRM114-CacheID: sfid-20200219_174608_865277_52BE2179 
+X-CRM114-Status: GOOD (  19.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [202.248.49.38 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,72 +70,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, Vinod Koul <vkoul@kernel.org>,
+ dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2020-02-18 at 15:56 -0800, rentao.bupt@gmail.com wrote:
-> From: Tao Ren <rentao.bupt@gmail.com>
-> 
-> This patch moves fixup-usb1-device-descriptor logic from get_descriptor
-> handler to "ast_vhub_fixup_dev_desc" function so the device descriptor
-> is only patched once (at vhub init time).
+Hi Rob,
+Thanks for pointing out.
 
-I don't like this either. We should make ast_vhub_dev_desc and patch a
-copy here too. I know today there's only one instance of the vhub in a
-given SoC but that might not always be the case.
+On Wed, 19 Feb 2020 07:53:44 -0600 <robh@kernel.org> wrote:
 
-> Signed-off-by: Tao Ren <rentao.bupt@gmail.com>
-> ---
->  drivers/usb/gadget/udc/aspeed-vhub/hub.c | 20 +++++++++-----------
->  1 file changed, 9 insertions(+), 11 deletions(-)
+> On Wed, 19 Feb 2020 10:52:20 +0900, Kunihiko Hayashi wrote:
+> > Add devicetree binding documentation for external DMA controller
+> > implemented on Socionext UniPhier SOCs.
+> > 
+> > Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> > ---
+> >  .../bindings/dma/socionext,uniphier-xdmac.yaml     | 63 ++++++++++++++++++++++
+> >  1 file changed, 63 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml
+> > 
 > 
-> diff --git a/drivers/usb/gadget/udc/aspeed-vhub/hub.c b/drivers/usb/gadget/udc/aspeed-vhub/hub.c
-> index 4e3ef83283a6..b8bf54b12adc 100644
-> --- a/drivers/usb/gadget/udc/aspeed-vhub/hub.c
-> +++ b/drivers/usb/gadget/udc/aspeed-vhub/hub.c
-> @@ -76,13 +76,6 @@ static struct usb_device_descriptor ast_vhub_dev_desc = {
->  	.bNumConfigurations	= 1,
->  };
->  
-> -/* Patches to the above when forcing USB1 mode */
-> -static void ast_vhub_patch_dev_desc_usb1(struct usb_device_descriptor *desc)
-> -{
-> -	desc->bcdUSB = cpu_to_le16(0x0100);
-> -	desc->bDeviceProtocol = 0;
-> -}
-> -
->  /*
->   * Configuration descriptor: same comments as above
->   * regarding handling USB1 mode.
-> @@ -316,10 +309,6 @@ static int ast_vhub_rep_desc(struct ast_vhub_ep *ep,
->  	if (len > dsize)
->  		len = dsize;
->  
-> -	/* Patch it if forcing USB1 */
-> -	if (desc_type == USB_DT_DEVICE && ep->vhub->force_usb1)
-> -		ast_vhub_patch_dev_desc_usb1(ep->buf);
-> -
->  	/* Shoot it from the EP buffer */
->  	return ast_vhub_reply(ep, NULL, len);
->  }
-> @@ -878,6 +867,15 @@ static void ast_vhub_fixup_dev_desc(struct ast_vhub *vhub)
->  		if (of_str[id])
->  			ast_vhub_str_array[i].s = of_str[id];
->  	}
-> +
-> +	/*
-> +	 * Update USB Release Number and Protocol code if vhub is running
-> +	 * at USB 1.x speed.
-> +	 */
-> +	if (vhub->force_usb1) {
-> +		ast_vhub_dev_desc.bcdUSB = cpu_to_le16(0x0100);
-> +		ast_vhub_dev_desc.bDeviceProtocol = 0;
-> +	}
->  }
->  
->  void ast_vhub_init_hub(struct ast_vhub *vhub)
+> My bot found errors running 'make dt_binding_check' on your patch:
+> 
+> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml: Additional properties are not allowed ('additinalProperties' was unexpected)
+> /builds/robherring/linux-dt-review/Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.yaml: Additional properties are not allowed ('additinalProperties' was unexpected)
+> Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.example.dts' failed
+> make[1]: *** [Documentation/devicetree/bindings/dma/socionext,uniphier-xdmac.example.dts] Error 1
+> Makefile:1263: recipe for target 'dt_binding_check' failed
+> make: *** [dt_binding_check] Error 2
+> 
+> See https://patchwork.ozlabs.org/patch/1240464
+> Please check and re-submit.
+
+Something was missing the string by mistake.
+I'll resubmit it.
+
+Thank you,
+
+---
+Best Regards,
+Kunihiko Hayashi
 
 
 _______________________________________________
